@@ -10,11 +10,11 @@ ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
 ms.openlocfilehash: 5bc133e81f9917aafb406a6bfb27922cdba48ef5
-ms.sourcegitcommit: f331186a967d21c302a128299f60402e89035a8d
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58190011"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60612242"
 ---
 # <a name="azure-iot-edge-supported-systems"></a>Поддерживаемые Azure IoT Edge системы
 
@@ -52,37 +52,37 @@ Azure IoT Edge работает в большинстве операционны
 ![Совпадает с базовой ОС гостевой ОС](./media/support/edge-on-device.png)
 </center>
 
-### <a name="tier-1"></a>Уровень 1
+### <a name="tier-1"></a>Уровень 1
 Общедоступная версия
 
 | Операционная система | AMD64 | ARM32v7 |
 | ---------------- | ----- | ----- |
-| Raspbian-stretch | Нет  | Yes|
-| Ubuntu Server 16.04 | Yes | Нет  |
-| Ubuntu Server 18.04 | Yes | Нет  |
+| Raspbian-stretch | Нет | Да|
+| Ubuntu Server 16.04 | Да | Нет |
+| Ubuntu Server 18.04 | Да | Нет |
 
 Общедоступная предварительная версия
 
 | Операционная система | AMD64 | ARM32v7 |
 | ---------------- | ----- | ----- |
-| Windows 10 IoT Core сборки 17763 | Yes | Нет  |
-| Windows 10 IoT Корпоративная сборки 17763 | Yes | Нет  |
-| Windows Server 2019 | Yes | Нет  |
+| Windows 10 IoT Core сборки 17763 | Да | Нет |
+| Windows 10 IoT Корпоративная сборки 17763 | Да | Нет |
+| Windows Server 2019 | Да | Нет |
 
 Операционные системы Windows, указанные выше приведены требования для устройств под управлением Windows в контейнеры Windows. Эта конфигурация является единственной поддерживаемой конфигурацией для рабочей среды. Установочные пакеты Azure IoT Edge для Windows на использование контейнеров Linux в Windows; Однако эта конфигурация является только для разработки и тестирования. Контейнеры Linux в Windows не поддерживаются в рабочей среде. Для этого сценария разработки подойдет любая версия Windows 10 сборки 14393 или более поздней и Windows Server 2016 или более поздней версии.
 
-### <a name="tier-2"></a>Уровень 2
+### <a name="tier-2"></a>Уровень 2
 
 | Операционная система | AMD64 | ARM32v7 |
 | ---------------- | ----- | ----- |
-| CentOS 7.5 | Yes | Yes |
-| Debian 8; | Yes | Yes |
-| Debian 9 | Yes | Yes |
-| RHEL 7.5 | Yes | Yes |
-| Ubuntu 18.04 | Yes | Yes |
-| Ubuntu 16.04. | Yes | Yes |
-| Wind River 8 | Yes | Нет  |
-| Yocto | Yes | Нет  |
+| CentOS 7.5 | Да | Да |
+| Debian 8; | Да | Да |
+| Debian 9 | Да | Да |
+| RHEL 7.5 | Да | Да |
+| Ubuntu 18.04 | Да | Да |
+| Ubuntu 16.04 | Да | Да |
+| Wind River 8 | Да | Нет |
+| Yocto | Да | Нет |
 
 
 ## <a name="virtual-machines"></a>Виртуальные машины

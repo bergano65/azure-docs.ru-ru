@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 10/15/2017
 ms.author: dekapur
 ms.openlocfilehash: ee2ce03fccc3e6556f9d261687edb050c8cfa1cc
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58661451"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60628155"
 ---
 # <a name="secure-a-standalone-cluster-on-windows-by-using-x509-certificates"></a>Защита автономного кластера под управлением Windows с помощью сертификатов X.509
 В этой статье описано, как обезопасить обмен данными между разными узлами автономного кластера Windows. Кроме того, здесь рассматриваются способы аутентификации для клиентов, которые подключаются к кластеру при помощи сертификатов X.509. Аутентификация гарантирует, что только авторизованные пользователи могут получить доступ к кластеру и развернутым приложениям для выполнения задач управления. Безопасность на основе сертификатов необходимо включить в кластере при его создании.  
@@ -347,7 +347,7 @@ ms.locfileid: "58661451"
 .\CreateServiceFabricCluster.ps1 -ClusterConfigFilePath .\ClusterConfig.X509.MultiMachine.json
 ```
 
-Обеспечив защиту автономного кластера под управлением Windows и настройки прошедших проверку подлинности клиентов, которые могут к нему подключаться, выполните инструкции по [подключению к кластеру с помощью PowerShell](service-fabric-connect-to-secure-cluster.md#connect-to-a-cluster-using-powershell). Например: 
+Обеспечив защиту автономного кластера под управлением Windows и настройки прошедших проверку подлинности клиентов, которые могут к нему подключаться, выполните инструкции по [подключению к кластеру с помощью PowerShell](service-fabric-connect-to-secure-cluster.md#connect-to-a-cluster-using-powershell). Пример.
 
 ```powershell
 $ConnectArgs = @{  ConnectionEndpoint = '10.7.0.5:19000';  X509Credential = $True;  StoreLocation = 'LocalMachine';  StoreName = "MY";  ServerCertThumbprint = "057b9544a6f2733e0c8d3a60013a58948213f551";  FindType = 'FindByThumbprint';  FindValue = "057b9544a6f2733e0c8d3a60013a58948213f551"   }

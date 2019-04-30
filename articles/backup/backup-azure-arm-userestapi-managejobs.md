@@ -1,5 +1,5 @@
 ---
-title: 'Azure Backup: управление заданиями архивации с использованием REST API'
+title: 'Azure Backup: Управление заданиями архивации с помощью REST API'
 description: Управление заданиями архивации и восстановления Azure Backup с помощью REST API
 services: backup
 author: pvrk
@@ -11,11 +11,11 @@ ms.date: 08/03/2018
 ms.author: pullabhk
 ms.assetid: b234533e-ac51-4482-9452-d97444f98b38
 ms.openlocfilehash: eb8b7dc77d180eb56c2585e93e60a36742f6c84c
-ms.sourcegitcommit: 02ce0fc22a71796f08a9aa20c76e2fa40eb2f10a
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51289431"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60646628"
 ---
 # <a name="track-backup-and-restore-jobs-using-rest-api"></a>Отслеживание заданий резервного копирования и восстановления с помощью REST API
 
@@ -23,7 +23,7 @@ ms.locfileid: "51289431"
 
 ## <a name="fetch-job-information-from-operations"></a>Получение информации о задании из операций
 
-Операция, такая как активация резервного копирования, будет всегда возвращать jobID. Например, окончательный ответ [операции активации резервного копирования REST API](backup-azure-arm-userestapi-backupazurevms.md#example-responses-3) выглядит следующим образом:
+Операция, такая как активация резервного копирования, будет всегда возвращать jobID. Для eg: Окончательный ответ [активировать операции резервного копирования REST API](backup-azure-arm-userestapi-backupazurevms.md#example-responses-3) выглядит следующим образом:
 
 ```http
 {
@@ -49,11 +49,11 @@ GET https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{
 
 Имя задания `{jobName}` — JobId, упомянутое выше. Ответ — всегда 200 OК с полем status, указывающим текущее состояние задания. Когда вы получите состояние Completed или CompletedWithWarnings, в разделе extendedInfo отобразятся дополнительные сведения о задании.
 
-### <a name="response"></a>Ответ
+### <a name="response"></a>Отклик
 
-|ИМЯ  |type  |ОПИСАНИЕ  |
+|ИМЯ  |Тип  |Описание  |
 |---------|---------|---------|
-|200 ОК     | [JobResource](https://docs.microsoft.com/rest/api/backup/jobdetails/get#jobresource)        | ОК        |
+|200 ОК     | [JobResource](https://docs.microsoft.com/rest/api/backup/jobdetails/get#jobresource)        | OК        |
 
 #### <a name="example-response"></a>Пример ответа
 

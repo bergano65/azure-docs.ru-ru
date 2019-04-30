@@ -15,11 +15,11 @@ ms.workload: infrastructure-services
 ms.date: 07/27/2018
 ms.author: labattul
 ms.openlocfilehash: c5cb840035c5d0d5694982324c7237c58001e689
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57993866"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60731606"
 ---
 # <a name="set-up-dpdk-in-a-linux-virtual-machine"></a>Настройка DPDK в виртуальной машине Linux
 
@@ -42,7 +42,7 @@ DPDK может работать на виртуальных машинах Azur
 
 | ОС Linux     | Версия ядра        |
 |--------------|----------------       |
-| Ubuntu 16.04. | 4.15.0-1015-azure     |
+| Ubuntu 16.04 | 4.15.0-1015-azure     |
 | Ubuntu 18.04 | 4.15.0-1015-azure     |
 | SLES 15      | 4.12.14-5.5-azure     |
 | RHEL 7.5     | 3.10.0-862.9.1.el7    |
@@ -62,7 +62,7 @@ DPDK может работать на виртуальных машинах Azur
 
 ## <a name="install-dpdk-dependencies"></a>Установка зависимостей DPDK
 
-### <a name="ubuntu-1604"></a>Ubuntu 16.04.
+### <a name="ubuntu-1604"></a>Ubuntu 16.04
 
 ```bash
 sudo add-apt-repository ppa:canonical-server/dpdk-azure -y
@@ -152,7 +152,7 @@ zypper \
 
 Чтобы запустить *testpmd* в режиме root, выполните сначала команду `sudo`.
 
-### <a name="basic-sanity-check-failsafe-adapter-initialization"></a>Базовый уровень: Проверка исправности, failsafe инициализации адаптера
+### <a name="basic-sanity-check-failsafe-adapter-initialization"></a>Basic: Проверка исправности, failsafe инициализации адаптера
 
 1. Выполните следующие команды, чтобы запустить приложение testpmdс с одним портом:
 
@@ -180,7 +180,7 @@ zypper \
 
 Предыдущие команды запускают *testpmd* в интерактивном режиме, что и рекомендуется, чтобы попробовать выполнить команды testpmd.
 
-### <a name="basic-single-sendersingle-receiver"></a>Базовый уровень: Единый отправителя и одним получателем
+### <a name="basic-single-sendersingle-receiver"></a>Basic: Единый отправителя и одним получателем
 
 Следующие команды периодически выводят статистику пакетов в секунду:
 

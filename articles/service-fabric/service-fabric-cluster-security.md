@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 08/14/2018
 ms.author: aljo
 ms.openlocfilehash: 6d67fa4af031480fda4a91f7356bff69830a654c
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58667605"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60711509"
 ---
 # <a name="service-fabric-cluster-security-scenarios"></a>Сценарии защиты кластера Service Fabric
 Кластер Azure Service Fabric — это ресурс, владельцем которого вы являетесь. Вам следует защитить кластеры, чтобы к ним не смогли подключиться неавторизованные пользователи. Защита кластера особенно важна при выполнении на нем производственных рабочих нагрузок. Конечно, вы можете создать незащищенный кластер, что позволит анонимным пользователям подключаться к нему (если конечные точки управления им общедоступны через Интернет). Незащищенные кластеры нельзя использовать для выполнения производственных задач. 

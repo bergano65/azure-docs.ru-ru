@@ -9,11 +9,11 @@ ms.topic: article
 ms.date: 12/27/2018
 ms.author: raynew
 ms.openlocfilehash: cefde79cf8c544a6900b1efa5dbcefbc43638d40
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58009968"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60679335"
 ---
 # <a name="prepare-network-mapping-for-hyper-v-vm-disaster-recovery-to-azure"></a>Подготовка сетевого сопоставления для аварийного восстановления виртуальных машин Hyper-V в Azure
 
@@ -57,9 +57,9 @@ ms.locfileid: "58009968"
 **Местоположение.** | **Сервер VMM** | **Сети виртуальных машин** | **Сопоставление**
 ---|---|---|---
 Нью-Йорк | VMM-NewYork| VMNetwork1-NewYork | Сопоставляется с VMNetwork1-Chicago
- |  | VMNetwork2-NewYork | Не сопоставлена
+ |  | VMNetwork2-NewYork | Не сопоставлено
 Чикаго | VMM-Chicago| VMNetwork1-Chicago | Сопоставляется с VMNetwork1-NewYork
- | | VMNetwork2-Chicago | Не сопоставлена
+ | | VMNetwork2-Chicago | Не сопоставлено
 
 В данном примере:
 
@@ -92,9 +92,9 @@ SilverCloud2 | <p>Нет данных</p><p></p> | <p>LogicalNetwork1-NewYork</p
 **Выбор** | **Защищенное облако** | **Защита облака** | **Доступная целевая сеть**
 ---|---|---|---
 VMNetwork1-Chicago | SilverCloud1 | SilverCloud2 | Доступна
- | GoldCloud1 | GoldCloud2 | Доступна
+ | GoldCloud1 | GoldCloud2 | Доступно
 VMNetwork2-Chicago | SilverCloud1 | SilverCloud2 | Недоступно
- | GoldCloud1 | GoldCloud2 | Доступна
+ | GoldCloud1 | GoldCloud2 | Доступно
 
 
 Если целевая сеть включает несколько подсетей и одна из этих подсетей имеет то же имя, что и подсеть, в которой размещается исходная виртуальная машина, то после отработки отказа реплика виртуальной машины будет подключена к этой целевой подсети. Если нет подсетей с таким же именем, виртуальная машина будет подключена к первой подсети в сети.
@@ -107,7 +107,7 @@ VMNetwork2-Chicago | SilverCloud1 | SilverCloud2 | Недоступно
 
 **Виртуальная машина** | **Подключенная сеть виртуальных машин**
 ---|---
-VM1 | VMNetwork1-Network
+ВМ1 | VMNetwork1-Network
 VM2 (реплика VM1) | VMNetwork1-Chicago
 
 Приняв эти параметры, рассмотрим, что происходит в нескольких возможных сценариях.

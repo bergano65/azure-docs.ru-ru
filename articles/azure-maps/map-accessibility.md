@@ -12,11 +12,11 @@ documentationcenter: ''
 manager: timlt
 ms.devlang: na
 ms.openlocfilehash: ef948b4dca3d3800a81ac52f3a73beee2558d21c
-ms.sourcegitcommit: da3459aca32dcdbf6a63ae9186d2ad2ca2295893
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51247234"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60769708"
 ---
 # <a name="building-an-accessible-application"></a>Создание доступного приложения
 
@@ -32,7 +32,7 @@ ms.locfileid: "51247234"
 
 Как вариант, для этого можно использовать класс [Popup](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.popup?view=azure-iot-typescript-latest). В примере поиска выше всплывающее окно с текстовой информацией добавляется на карту для каждой размещенной на ней метки. При использовании метода [attach](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.popup?view=azure-iot-typescript-latest#attach) [всплывающего окна](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.popup?view=azure-iot-typescript-latest) устройство чтения с экрана может распознавать это окно без его визуального отображения на карте.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о классе Popup и методах работы со всплывающим окном, которые используются в этой статье:
 

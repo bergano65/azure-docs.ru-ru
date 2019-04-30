@@ -11,11 +11,11 @@ ms.date: 02/26/2019
 ms.author: pullabhk
 ms.assetid: 01169af5-7eb0-4cb0-bbdb-c58ac71bf48b
 ms.openlocfilehash: 15bb64917fa58ba2d13c6f372640957508ab29c1
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59494565"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60700301"
 ---
 # <a name="monitoring-at-scale-using-azure-monitor"></a>Мониторинг в нужном масштабе с помощью Azure Monitor
 
@@ -250,7 +250,7 @@ on BackupItemUniqueId_s
 
 Вот хранилища служб восстановления, сам ресурс, и таким образом необходимо повторить те же действия для всех хранилищ, в которых требуется уведомление о журналах действий. Условие не будет иметь любое пороговое значение, точка, частота, так как это оповещение на основе событий. Как только создается журнал соответствующих действий, предупреждения.
 
-## <a name="recommendation"></a>Рекомендации
+## <a name="recommendation"></a>Рекомендация
 
 ***Все оповещения, созданные из журналов действий и рабочих областей LA можно просмотреть в Azure Monitor в области «Оповещения» слева.***
 

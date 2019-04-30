@@ -11,11 +11,11 @@ ms.topic: article
 ms.assetid: bd229179-7199-4aab-bae0-1baf072c7659
 ms.date: 05/26/2017
 ms.openlocfilehash: 620ede672d71338abeff5198fd5f94e92dc193d0
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57895861"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60681871"
 ---
 # <a name="create-custom-apis-you-can-call-from-azure-logic-apps"></a>Создание пользовательских API, которые можно вызывать из Azure Logic Apps
 
@@ -175,8 +175,8 @@ API-интерфейсы можно разместить в [службе при
 
 | Включает ли запрос `triggerState`? | Ответ API | 
 | -------------------------------- | -------------| 
-| Нет  | Возврат данных состояния HTTP `202 ACCEPTED` и заголовка `location` (для `triggerState` установлено текущее время, а для `retry-after` — интервал в 15 секунд). | 
-| Yes | Проверка службы на наличие файлов, добавленных после `DateTime` для `triggerState`. | 
+| Нет | Возврат данных состояния HTTP `202 ACCEPTED` и заголовка `location` (для `triggerState` установлено текущее время, а для `retry-after` — интервал в 15 секунд). | 
+| Да | Проверка службы на наличие файлов, добавленных после `DateTime` для `triggerState`. | 
 ||| 
 
 | Количество найденных файлов | Ответ API | 

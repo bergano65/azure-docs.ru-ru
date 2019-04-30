@@ -9,11 +9,11 @@ ms.topic: article
 ms.date: 04/14/2019
 ms.author: ramamill
 ms.openlocfilehash: 075f86b24e2915d9689db8097889a830bade74c5
-ms.sourcegitcommit: c884e2b3746d4d5f0c5c1090e51d2056456a1317
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60149365"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60723432"
 ---
 # <a name="set-up-the-source-environment-for-vmware-to-azure-replication"></a>Настройка исходного окружения для репликации из VMware в Azure
 
@@ -69,7 +69,7 @@ ms.locfileid: "60149365"
   - C:\ProgramData\ASRSetupLogs.
   - C:\ProgramData\LogUploadServiceLogs.
   - C:\inetpub.
-  - Каталог установки сервера ASR. Например:  E:\Program Files (x86) \Microsoft Azure Site Recovery.
+  - Каталог установки сервера ASR. Пример. E:\Program Files (x86) \Microsoft Azure Site Recovery.
 
 ### <a name="if-antivirus-software-is-active-on-scale-out-process-servermaster-target"></a>Антивирусное программное обеспечение работает на горизонтально масштабируемом сервере процессов или главном целевом объекте
 

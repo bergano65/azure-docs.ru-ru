@@ -9,11 +9,11 @@ ms.topic: article
 ms.date: 08/23/2018
 ms.author: meladie
 ms.openlocfilehash: c17f16ce796c9f296facd69c18de4effc7ff5258
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57440987"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60610163"
 ---
 # <a name="azure-security-and-compliance-blueprint---paas-web-application-for-australia-protected"></a>Схема безопасности и соответствия требованиям Azure. Веб-приложение PaaS для среды AU-PROTECTED
 
@@ -52,12 +52,12 @@ ms.locfileid: "57440987"
 - Среда службы приложений Azure версии 2
 - Служба автоматизации Azure
 - Azure DNS
-- Хранилище ключей Azure
-- Azure Load Balancer
+- Хранилище Azure Key Vault
+- Балансировщик нагрузки Azure
 - Azure Monitor
 - Azure Resource Manager
 - Центр безопасности Azure
-- Базы данных SQL Azure
+- База данных SQL Azure
 - Хранилище Azure
 - Журналы Azure Monitor
 - Виртуальная сеть Azure
@@ -250,7 +250,7 @@ Azure по умолчанию шифрует весь обмен данными 
 -   оставьте значения по умолчанию для параметров [предотвращения случайного удаления](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnectsync-feature-prevent-accidental-deletes) и [автоматического обновления](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-feature-automatic-upgrade).
 
 
-## <a name="disclaimer"></a>Отказ от ответственности
+## <a name="disclaimer"></a>Заявление об отказе
 
  - Этот документ является исключительно информационным. МАЙКРОСОФТ НЕ ПРЕДОСТАВЛЯЕТ НИКАКИХ ГАРАНТИЙ, ЯВНЫХ, КОСВЕННЫХ ИЛИ ПРЕДУСМОТРЕННЫХ ЗАКОНОМ, В ОТНОШЕНИИ ИНФОРМАЦИИ В ЭТОМ ДОКУМЕНТЕ. Данный документ предоставляется "как есть". Сведения и мнения, представленные в данном документе, включая URL-адреса и ссылки на другие веб-сайты, могут быть изменены без предварительного уведомления. Клиенты, читающие этот документ, берут ответственность за его использование на себя.
  - Настоящий документ не предоставляет клиентам юридических прав на интеллектуальную собственность в отношении продуктов или решений корпорации Майкрософт.

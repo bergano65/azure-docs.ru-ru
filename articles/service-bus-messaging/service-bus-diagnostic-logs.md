@@ -16,11 +16,11 @@ ms.workload: data-services
 ms.date: 01/23/2019
 ms.author: aschhab
 ms.openlocfilehash: 7d4cb8e55c5d1561c09cf85122550a66e3671f17
-ms.sourcegitcommit: c712cb5c80bed4b5801be214788770b66bf7a009
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57216345"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60714138"
 ---
 # <a name="service-bus-diagnostic-logs"></a>Журналы диагностики служебной шины
 
@@ -68,11 +68,11 @@ ms.locfileid: "57216345"
 ------- | -------
 ActivityId | Внутренний идентификатор, используемый для отслеживания
 EventName | Имя операции           
-ResourceId | Идентификатор ресурса Azure Resource Manager
+resourceId | Идентификатор ресурса Azure Resource Manager
 SubscriptionId | Идентификатор подписки
 EventTimeString | Время операции
 EventProperties | Свойства операции
-Status | Состояние операции
+Статус | Состояние операции
 Caller | Объект, вызвавший операцию (портал Azure или клиент управления)
 category | OperationalLogs
 

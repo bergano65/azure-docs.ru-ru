@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 02/22/2019
 ms.author: makromer
 ms.openlocfilehash: 856f4bd9c2b04ff10ed598c5e641955e1de99398
-ms.sourcegitcommit: d89b679d20ad45d224fd7d010496c52345f10c96
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57792418"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60557604"
 ---
 # <a name="execute-data-flow-activity-in-azure-data-factory"></a>Выполнить действие потока данных в фабрике данных Azure
 Действие потока данных execute используется для выполнения потока данных ADF в конвейер debug (песочница) и активируется конвейер.
@@ -51,7 +51,7 @@ ms.locfileid: "57792418"
 
 ![Выполнение потока данных](media/data-flow/activity-data-flow.png "выполнения потока данных")
 
-### <a name="run-on"></a>Запуск на
+### <a name="run-on"></a>Время запуска
 
 Выберите вычислительную среду для этого выполнения потока данных. По умолчанию используется среда выполнения интеграции Azure по умолчанию автоматическое разрешение. Этот выбор будет выполняться поток данных в среде Spark в одном регионе с фабрикой данных. Тип вычисления будет кластера заданий, это означает, что вычислительная среда может занять несколько минут для запуска.
 

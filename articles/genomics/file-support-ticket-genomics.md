@@ -1,5 +1,5 @@
 ---
-title: Microsoft Genomics. Как зарегистрировать запрос на поддержку | Документы Майкрософт
+title: 'Microsoft Genomics: Как отправить запрос в службу поддержки | Документация Майкрософт'
 titleSuffix: Azure
 description: Здесь описываются общие сведения о регистрации запроса на поддержку для обращения в службу поддержки Microsoft Genomics. Вы можете обратиться за помощью, если не можете устранить проблему с помощью руководства по устранению неполадок или часто задаваемых вопросов.
 keywords: troubleshooting, error, debugging, support
@@ -10,12 +10,12 @@ ms.author: grhuynh
 ms.service: genomics
 ms.topic: article
 ms.date: 05/23/2018
-ms.openlocfilehash: d5e33f5b22012b297cdceacbe38425934f0f65b4
-ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
-ms.translationtype: HT
+ms.openlocfilehash: ed37d42d8ec1692cc5edb62b68536803f47205f5
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45734375"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60721289"
 ---
 # <a name="how-to-contact-microsoft-genomics-for-support"></a>Как обращаться в службу поддержки Microsoft Genomics
 Здесь описываются общие сведения о регистрации запроса на поддержку для обращения в службу поддержки Microsoft Genomics. Вы можете обратиться за помощью, если не можете устранить проблему с помощью [руководства по устранению неполадок](troubleshooting-guide-genomics.md) или [часто задаваемых вопросов](frequently-asked-questions-genomics.md). 
@@ -45,5 +45,5 @@ ms.locfileid: "45734375"
 
 ![Контактные данные для запроса на поддержку](./media/file-support-ticket/support-request-contact.png "Контактные данные для запроса на поддержку")
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В этой статье вы узнали, как отправить запрос на поддержку. Чтобы устранить распространенные проблемы, перейдите к статье с [часто задаваемыми вопросами](frequently-asked-questions-genomics.md) и нашему [руководству по устранению неполадок](troubleshooting-guide-genomics.md). 

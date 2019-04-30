@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Softeon WMS | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Softeon WMS | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении Softeon WMS.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.date: 05/15/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 1e5dc81b8e4f761eb6288832b0e82e4484e0214f
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56176226"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62108581"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-softeon-wms"></a>Руководство. Интеграция Azure Active Directory с Softeon WMS
+# <a name="tutorial-azure-active-directory-integration-with-softeon-wms"></a>Руководство по Интеграция Azure Active Directory с Softeon WMS
 
 В этом руководстве описано, как интегрировать Softeon WMS с Azure Active Directory (Azure AD).
 
@@ -34,7 +34,7 @@ ms.locfileid: "56176226"
 
 Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Чтобы настроить интеграцию Azure AD с Softeon WMS, вам потребуется:
 
@@ -66,11 +66,11 @@ ms.locfileid: "56176226"
 
 1. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
 
-    ![ПРИЛОЖЕНИЯ][2]
+    ![Приложения][2]
     
 1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![ПРИЛОЖЕНИЯ][3]
+    ![Приложения][3]
 
 1. В поле поиска введите **Softeon WMS**.
 
@@ -163,11 +163,11 @@ ms.locfileid: "56176226"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    б) В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    2. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
  
 ### <a name="creating-a-softeon-wms-test-user"></a>Создание тестового пользователя Softeon WMS
 

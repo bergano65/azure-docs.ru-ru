@@ -8,11 +8,11 @@ ms.date: 09/18/2018
 ms.author: snmuvva
 ms.subservice: alerts
 ms.openlocfilehash: 117b65265c853194e93a97fe5e2b2dcc6e9f5bc2
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54807394"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60712999"
 ---
 # <a name="create-view-and-manage-metric-alerts-using-azure-monitor"></a>Создание и просмотр оповещений метрик, а также управление ими с помощью Azure Monitor
 
@@ -126,7 +126,7 @@ ms.locfileid: "54807394"
     az monitor metrics alert delete -g {ResourceGroup} -n {AlertRuleName}
     ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Создание классического оповещения метрики с помощью шаблона Resource Manager](../../azure-monitor/platform/alerts-enable-template.md).
 - [Сведения о работе оповещений метрики в Azure Monitor](alerts-metric-overview.md).

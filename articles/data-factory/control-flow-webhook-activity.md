@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 03/25/2019
 ms.author: shlo
 ms.openlocfilehash: 6ec43b06ce266b9ceaddb5dd21cbf52f509d6596
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59495914"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60764311"
 ---
 # <a name="webhook-activity-in-azure-data-factory"></a>Веб-перехватчика действия в фабрике данных Azure
 Обработчик веб-действие можно использовать для управления выполнением конвейеров через пользовательский код. Использование действия веб-перехватчика, клиенты могут вызвать конечную точку и передать URL-адрес обратного вызова. Запуск конвейера ожидает обратного вызова, вызываемый перед переходом к следующему действию.
@@ -56,14 +56,14 @@ ms.locfileid: "59495914"
 
 Свойство | ОПИСАНИЕ | Допустимые значения | Обязательно для заполнения
 -------- | ----------- | -------------- | --------
-name | Имя веб-перехватчик действия | Строка | Yes |
-Тип | Должно быть присвоено **веб-перехватчика**. | Строка | Yes |
-метод | Метод REST API для целевой конечной точки. | Строка. Поддерживаемые типы: «POST» | Yes |
-URL-адрес | Целевая конечная точка и путь | Строка (или выражение с типом результата "строка"). | Yes |
+name | Имя веб-перехватчик действия | String | Да |
+тип | Должно быть присвоено **веб-перехватчика**. | String | Да |
+метод | Метод REST API для целевой конечной точки. | Строка. Поддерживаемые типы: «POST» | Да |
+url | Целевая конечная точка и путь | Строка (или выражение с типом результата "строка"). | Да |
 Заголовки | Заголовки, которые отправляются в запрос. Например, чтобы задать язык и тип в запросе: «заголовки»: {«Accept-Language»: «en-us», «Content-Type»: «application/json»}. | Строка (или выражение с типом результата "строка") | Да, требуется заголовок Content-type. "headers":{ "Content-Type":"application/json"} |
-текст | Представляет полезные данные, отправляемые конечной точке. | Текст передается обратно в обратный вызов URI должен быть допустимым JSON. Просмотрите схему полезных данных запроса в разделе [Схема полезных данных запроса](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fazure%2Fdata-factory%2Fcontrol-flow-web-activity%23request-payload-schema&amp;data=02%7C01%7Cshlo%40microsoft.com%7Cde517eae4e7f4f2c408d08d6b167f6b1%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C636891457414397501&amp;sdata=ljUZv5csQQux2TT3JtTU9ZU8e1uViRzuX5DSNYkL0uE%3D&amp;reserved=0). | Yes |
-authentication | Метод проверки подлинности, используемый для вызова конечной точки. Поддерживаемые типы: «Базовый» или «ClientCertificate.» Дополнительные сведения см. в разделе [Проверка подлинности](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fazure%2Fdata-factory%2Fcontrol-flow-web-activity%23authentication&amp;data=02%7C01%7Cshlo%40microsoft.com%7Cde517eae4e7f4f2c408d08d6b167f6b1%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C636891457414397501&amp;sdata=GdA1%2Fh2pAD%2BSyWJHSW%2BSKucqoAXux%2F4L5Jgndd3YziM%3D&amp;reserved=0). Если проверка подлинности не требуется, исключите это свойство. | Строка (или выражение с типом результата "строка") | Нет  |
-timeout | Время ожидания для действия &#39;callBackUri&#39; вызываемого. Как долго будет ожидать действие «callBackUri» должен быть вызван. Значение по умолчанию — 10mins («00: параметра»). Формат имеет Timespan д.чч:мм:сс т. е. | Строка | Нет  |
+Текст | Представляет полезные данные, отправляемые конечной точке. | Текст передается обратно в обратный вызов URI должен быть допустимым JSON. Просмотрите схему полезных данных запроса в разделе [Схема полезных данных запроса](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fazure%2Fdata-factory%2Fcontrol-flow-web-activity%23request-payload-schema&amp;data=02%7C01%7Cshlo%40microsoft.com%7Cde517eae4e7f4f2c408d08d6b167f6b1%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C636891457414397501&amp;sdata=ljUZv5csQQux2TT3JtTU9ZU8e1uViRzuX5DSNYkL0uE%3D&amp;reserved=0). | Да |
+проверка подлинности | Метод проверки подлинности, используемый для вызова конечной точки. Поддерживаемые типы: «Базовый» или «ClientCertificate.» Дополнительные сведения см. в разделе [Проверка подлинности](https://nam06.safelinks.protection.outlook.com/?url=https%3A%2F%2Fdocs.microsoft.com%2Fen-us%2Fazure%2Fdata-factory%2Fcontrol-flow-web-activity%23authentication&amp;data=02%7C01%7Cshlo%40microsoft.com%7Cde517eae4e7f4f2c408d08d6b167f6b1%7C72f988bf86f141af91ab2d7cd011db47%7C1%7C0%7C636891457414397501&amp;sdata=GdA1%2Fh2pAD%2BSyWJHSW%2BSKucqoAXux%2F4L5Jgndd3YziM%3D&amp;reserved=0). Если проверка подлинности не требуется, исключите это свойство. | Строка (или выражение с типом результата "строка") | Нет |
+время ожидания | Время ожидания для действия &#39;callBackUri&#39; вызываемого. Как долго будет ожидать действие «callBackUri» должен быть вызван. Значение по умолчанию — 10mins («00: параметра»). Формат имеет Timespan д.чч:мм:сс т. е. | String | Нет |
 
 ## <a name="additional-notes"></a>Дополнительные замечания
 

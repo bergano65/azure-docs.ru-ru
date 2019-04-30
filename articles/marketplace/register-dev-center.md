@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 10/05/2018
 ms.author: ellacroi
 ms.openlocfilehash: 682c9e209c4fa4a9f4971af5da901faf1ec58c22
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57889749"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60735794"
 ---
 # <a name="register-in-dev-center"></a>Регистрация в центре разработки  
 Чтобы не входить в личную учетную запись в браузере, откройте новое окно в режиме инкогнито в браузере Chrome или запустите режим InPrivate в браузере Internet Explorer.  
@@ -75,9 +75,9 @@ ms.locfileid: "57889749"
     Нажмите кнопку "Готово", чтобы получить сообщение электронной почты с подтверждением.  
 11. Выберите дальнейшие действия, используя модель выставления счетов для вашего предложения.  
 
-    | Модель выставления счетов | Дальнейшие действия |  
+    | Модель оплаты | Дальнейшие действия |  
     |:--- |:--- |  
-    | Free | Перейдите на портал Cloud Partner.<ul> <li>Чтобы публиковать в Azure Marketplace, посетите страницу портала Cloud Partner по адресу [cloudpartner.azure.com](https://cloudpartner.azure.com).</li> </ul> |  
+    | Бесплатные | Перейдите на портал Cloud Partner.<ul> <li>Чтобы публиковать в Azure Marketplace, посетите страницу портала Cloud Partner по адресу [cloudpartner.azure.com](https://cloudpartner.azure.com).</li> </ul> |  
     | Коммерческая (транзакция) | Обновите сведения об учетной записи.<ul> <li>Дополнительные сведения о добавлении данных об учетной записи см. в разделе, посвященном [добавлению банковской и налоговой информации](#add-bank-information).</li> </ul> |  
 
     *   Примером коммерческого предложения является предложение виртуальной машины с ежечасной моделью выставления счетов.  

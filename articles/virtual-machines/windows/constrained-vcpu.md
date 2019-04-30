@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 03/09/2018
 ms.author: jonbeck
-ms.openlocfilehash: 0ed14cc0978baaea5e334eef14d0354d8d6edcfb
-ms.sourcegitcommit: 0a84b090d4c2fb57af3876c26a1f97aac12015c5
-ms.translationtype: HT
+ms.openlocfilehash: ebcb58e0cdfc896ae90115fab58cc6d11fe7ef09
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38652186"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60844229"
 ---
 # <a name="constrained-vcpu-capable-vm-sizes"></a>Размеры виртуальных машин, поддерживающие ограниченное число виртуальных ЦП
 
@@ -34,6 +34,6 @@ ms.locfileid: "38652186"
 - [GPU](sizes-gpu.md)
 - [Для высокопроизводительных вычислений](sizes-hpc.md)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Узнайте больше о том, как с помощью [единиц вычислений Azure (ACU)](acu.md) сравнить производительность вычислений для различных номеров SKU Azure.
 

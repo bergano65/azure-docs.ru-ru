@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory со Spotinst | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory со Spotinst | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Spotinst.
 services: active-directory
 documentationCenter: na
@@ -16,11 +16,11 @@ ms.date: 07/25/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: f0bffdf439a192fb10fe695fbfa18e8c7abf8077
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57846690"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60542089"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-spotinst"></a>Руководство по Интеграция Azure Active Directory со Spotinst
 
@@ -125,7 +125,7 @@ ms.locfileid: "57846690"
 
     | Имя атрибута | Значение атрибута |
     | ---------------| --------------- |
-    | Email | user.mail |
+    | Электронная почта | user.mail |
     | FirstName | user.givenname |
     | LastName | user.surname |
     
@@ -257,7 +257,7 @@ ms.locfileid: "57846690"
 
 7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
     
-### <a name="test-single-sign-on"></a>Проверка единого входа
+### <a name="test-single-sign-on"></a>Тест единого входа
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 

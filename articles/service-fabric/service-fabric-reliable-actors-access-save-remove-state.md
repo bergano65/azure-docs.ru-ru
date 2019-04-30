@@ -15,11 +15,11 @@ ms.workload: NA
 ms.date: 03/19/2018
 ms.author: vturecek
 ms.openlocfilehash: 7c10d00916ef65767c98616c7337bfa444c339a9
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58664732"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60725403"
 ---
 # <a name="access-save-and-remove-reliable-actors-state"></a>Доступ к состоянию Reliable Actors, а аткже его сохранение и удаление
 [Reliable Actors](service-fabric-reliable-actors-introduction.md) — это однопотоковые объекты для инкапсуляции логики и состояния, а также для поддержки надежного состояния. У каждого экземпляра субъекта есть собственный [диспетчер состояний](service-fabric-reliable-actors-state-management.md): структура данных, подобная словарю, которая надежно хранит пары "ключ — значение". Диспетчер состояний — это оболочка вокруг поставщика состояний. Его можно использовать для хранения данных независимо от того, какой [параметр сохраняемости](service-fabric-reliable-actors-state-management.md#state-persistence-and-replication) применяется.

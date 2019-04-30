@@ -15,11 +15,11 @@ ms.workload: multiple
 ms.date: 12/06/2018
 ms.author: bikang
 ms.openlocfilehash: 42a82ab0be37f260a48a1da6cecab5120c24d293
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58669271"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60556344"
 ---
 # <a name="sfctl-settings-telemetry"></a>sfctl settings telemetry
 Настройте локальные параметры телеметрии этого экземпляра sfctl.
@@ -28,7 +28,7 @@ sfctl telemetry собирает имя команды без предостав
 
 ## <a name="commands"></a>Команды
 
-|Команда|ОПИСАНИЕ|
+|Команда|Описание|
 | --- | --- |
 | set-telemetry | Включение и отключение телеметрии. |
 
@@ -37,14 +37,14 @@ sfctl telemetry собирает имя команды без предостав
 
 ### <a name="arguments"></a>Аргументы
 
-|Аргумент|ОПИСАНИЕ|
+|Аргумент|Описание|
 | --- | --- |
 | --off | Отключение телеметрии. |
 | --on | Включение телеметрии. Это значение по умолчанию. |
 
 ### <a name="global-arguments"></a>Глобальные аргументы
 
-|Аргумент|ОПИСАНИЕ|
+|Аргумент|Описание|
 | --- | --- |
 | --debug | Увеличение уровня детализации ведения журнала для отображения всех журналов отладки. |
 | --help -h | Отображение этого справочного сообщения и выход. |

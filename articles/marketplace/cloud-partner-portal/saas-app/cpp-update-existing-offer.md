@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 12/04/2018
 ms.author: pbutlerm
 ms.openlocfilehash: 9d490a0ec09e351e4cee00e7c30c9161bdfac3e6
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53196498"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60594271"
 ---
 # <a name="update-an-existing-saas-application-offer"></a>Обновление имеющегося предложения приложения SaaS
 
@@ -85,6 +85,6 @@ ms.locfileid: "53196498"
 На странице Audit history (Журнал аудита) можно искать конкретные предложения и применить фильтры, например по издателю, предложению и типу события (например, OfferGoLiveRequested). Вы также можете скачать журнал аудита в виде CSV-файла.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Предложение приложения SaaS](./cpp-saas-offer.md)

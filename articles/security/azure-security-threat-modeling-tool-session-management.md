@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 02/07/2017
 ms.author: jegeib
 ms.openlocfilehash: e8f3cf3889b3f79e930630ff0e768a0c4875eec6
-ms.sourcegitcommit: 223604d8b6ef20a8c115ff877981ce22ada6155a
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58361733"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60611693"
 ---
 # <a name="security-frame-session-management"></a>Механизм безопасности. Управление сеансом
 | Продукт или служба | Статья |
@@ -37,7 +37,7 @@ ms.locfileid: "58361733"
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
 | **Компонент**               | Azure AD | 
-| **Этап SDL**               | Создание |  
+| **Этап SDL**               | Сборка |  
 | **Применимые технологии** | Универсальный |
 | **Атрибуты**              | Н/Д  |
 | **Справочные материалы**              | Н/Д  |
@@ -72,7 +72,7 @@ HttpContext.GetOwinContext().Authentication.SignOut(OpenIdConnectAuthenticationD
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
 | **Компонент**               | Устройства Интернета вещей | 
-| **Этап SDL**               | Создание |  
+| **Этап SDL**               | Сборка |  
 | **Применимые технологии** | Универсальный |
 | **Атрибуты**              | Н/Д  |
 | **Справочные материалы**              | Н/Д  |
@@ -83,7 +83,7 @@ HttpContext.GetOwinContext().Authentication.SignOut(OpenIdConnectAuthenticationD
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
 | **Компонент**               | Azure DocumentDB | 
-| **Этап SDL**               | Создание |  
+| **Этап SDL**               | Сборка |  
 | **Применимые технологии** | Универсальный |
 | **Атрибуты**              | Н/Д  |
 | **Справочные материалы**              | Н/Д  |
@@ -94,7 +94,7 @@ HttpContext.GetOwinContext().Authentication.SignOut(OpenIdConnectAuthenticationD
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
 | **Компонент**               | ADFS | 
-| **Этап SDL**               | Создание |  
+| **Этап SDL**               | Сборка |  
 | **Применимые технологии** | Универсальный |
 | **Атрибуты**              | Н/Д  |
 | **Справочные материалы**              | Н/Д  |
@@ -143,7 +143,7 @@ HttpContext.GetOwinContext().Authentication.SignOut(OpenIdConnectAuthenticationD
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
 | **Компонент**               | Сервер удостоверений | 
-| **Этап SDL**               | Создание |  
+| **Этап SDL**               | Сборка |  
 | **Применимые технологии** | Универсальный |
 | **Атрибуты**              | Н/Д  |
 | **Справочные материалы**              | [Сведения о федеративном выходе на платформе IdentityServer3](https://identityserver.github.io/Documentation/docsv2/advanced/federated-signout.html) |
@@ -153,8 +153,8 @@ HttpContext.GetOwinContext().Authentication.SignOut(OpenIdConnectAuthenticationD
 
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
-| **Компонент**               | Веб-приложение | 
-| **Этап SDL**               | Создание |  
+| **Компонент**               | Web Application | 
+| **Этап SDL**               | Сборка |  
 | **Применимые технологии** | Универсальный |
 | **Атрибуты**              | EnvironmentType: OnPrem |
 | **Справочные материалы**              | [Элемент httpCookies (схема параметров ASP.NET)](https://msdn.microsoft.com/library/ms228262(v=vs.100).aspx), [Свойство HttpCookie.Secure](https://msdn.microsoft.com/library/system.web.httpcookie.secure.aspx) |
@@ -172,8 +172,8 @@ HttpContext.GetOwinContext().Authentication.SignOut(OpenIdConnectAuthenticationD
 
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
-| **Компонент**               | Веб-приложение | 
-| **Этап SDL**               | Создание |  
+| **Компонент**               | Web Application | 
+| **Этап SDL**               | Сборка |  
 | **Применимые технологии** | Веб-формы, MVC 5 |
 | **Атрибуты**              | EnvironmentType: OnPrem |
 | **Справочные материалы**              | Н/Д  |
@@ -194,8 +194,8 @@ HttpContext.GetOwinContext().Authentication.SignOut(OpenIdConnectAuthenticationD
 
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
-| **Компонент**               | Веб-приложение | 
-| **Этап SDL**               | Создание |  
+| **Компонент**               | Web Application | 
+| **Этап SDL**               | Сборка |  
 | **Применимые технологии** | Универсальный |
 | **Атрибуты**              | Н/Д  |
 | **Справочные материалы**              | [Сведения об атрибуте secure в файлах cookie](https://en.wikipedia.org/wiki/HTTP_cookie#Secure_cookie) |
@@ -215,8 +215,8 @@ HttpContext.GetOwinContext().Authentication.SignOut(OpenIdConnectAuthenticationD
 
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
-| **Компонент**               | Веб-приложение | 
-| **Этап SDL**               | Создание |  
+| **Компонент**               | Web Application | 
+| **Этап SDL**               | Сборка |  
 | **Применимые технологии** | Веб-формы |
 | **Атрибуты**              | Н/Д  |
 | **Справочные материалы**              | [Свойство FormsAuthentication.RequireSSL](https://msdn.microsoft.com/library/system.web.security.formsauthentication.requiressl.aspx) |
@@ -232,8 +232,8 @@ HttpContext.GetOwinContext().Authentication.SignOut(OpenIdConnectAuthenticationD
 
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
-| **Компонент**               | Веб-приложение | 
-| **Этап SDL**               | Создание |  
+| **Компонент**               | Web Application | 
+| **Этап SDL**               | Сборка |  
 | **Применимые технологии** | MVC5 |
 | **Атрибуты**              | EnvironmentType: OnPrem |
 | **Справочные материалы**              | [Запись блога о конфигурации Windows Identity Foundation (WIF). Часть 2](https://blogs.msdn.microsoft.com/alikl/2011/02/01/windows-identity-foundation-wif-configuration-part-ii-cookiehandler-chunkedcookiehandler-customcookiehandler/) |
@@ -257,8 +257,8 @@ HttpContext.GetOwinContext().Authentication.SignOut(OpenIdConnectAuthenticationD
 
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
-| **Компонент**               | Веб-приложение | 
-| **Этап SDL**               | Создание |  
+| **Компонент**               | Web Application | 
+| **Этап SDL**               | Сборка |  
 | **Применимые технологии** | Универсальный |
 | **Атрибуты**              | Н/Д  |
 | **Справочные материалы**              | Н/Д  |
@@ -266,8 +266,8 @@ HttpContext.GetOwinContext().Authentication.SignOut(OpenIdConnectAuthenticationD
 
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
-| **Компонент**               | Веб-приложение | 
-| **Этап SDL**               | Создание |  
+| **Компонент**               | Web Application | 
+| **Этап SDL**               | Сборка |  
 | **Применимые технологии** | MVC 5, MVC 6 |
 | **Атрибуты**              | Н/Д  |
 | **Справочные материалы**              | [Сведения о предотвращении подделки межсайтовых запросов в ASP.NET MVC и на веб-страницах ASP.NET](https://www.asp.net/mvc/overview/security/xsrfcsrf-prevention-in-aspnet-mvc-and-web-pages) |
@@ -290,7 +290,7 @@ HttpContext.GetOwinContext().Authentication.SignOut(OpenIdConnectAuthenticationD
 ```
 
 ### <a name="example"></a>Пример
-В то же время Html.AntiForgeryToken() предоставляет посетителю файл cookie __RequestVerificationToken с таким же значением, как и случайное скрытое значение, показанное выше. Затем добавьте в целевой метод действия фильтр [ValidateAntiForgeryToken], чтобы проверить входящую форму POST. Например: 
+В то же время Html.AntiForgeryToken() предоставляет посетителю файл cookie __RequestVerificationToken с таким же значением, как и случайное скрытое значение, показанное выше. Затем добавьте в целевой метод действия фильтр [ValidateAntiForgeryToken], чтобы проверить входящую форму POST. Пример.
 ```
 [ValidateAntiForgeryToken]
 public ViewResult SubmitUpdate()
@@ -352,8 +352,8 @@ void ValidateRequestHeader(HttpRequestMessage request)
 
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
-| **Компонент**               | Веб-приложение | 
-| **Этап SDL**               | Создание |  
+| **Компонент**               | Web Application | 
+| **Этап SDL**               | Сборка |  
 | **Применимые технологии** | Веб-формы |
 | **Атрибуты**              | Н/Д  |
 | **Справочные материалы**              | [Сведения о предотвращении сетевых атак с помощью встроенных функций ASP.NET](https://msdn.microsoft.com/library/ms972969.aspx#securitybarriers_topic2) |
@@ -372,8 +372,8 @@ void Page_Init (object sender, EventArgs e) {
 
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
-| **Компонент**               | Веб-приложение | 
-| **Этап SDL**               | Создание |  
+| **Компонент**               | Web Application | 
+| **Этап SDL**               | Сборка |  
 | **Применимые технологии** | Универсальный |
 | **Атрибуты**              | Н/Д  |
 | **Справочные материалы**              | [Свойство HttpSessionState.Timeout](https://msdn.microsoft.com/library/system.web.sessionstate.httpsessionstate.timeout(v=vs.110).aspx) |
@@ -392,8 +392,8 @@ void Page_Init (object sender, EventArgs e) {
 
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
-| **Компонент**               | Веб-приложение | 
-| **Этап SDL**               | Создание |  
+| **Компонент**               | Web Application | 
+| **Этап SDL**               | Сборка |  
 | **Применимые технологии** | Веб-формы |
 | **Атрибуты**              | Н/Д  |
 | **Справочные материалы**              | [Элемент Forms для проверки подлинности (схема параметров ASP.NET)](https://msdn.microsoft.com/library/1d3t3c61(v=vs.100).aspx) |
@@ -407,8 +407,8 @@ void Page_Init (object sender, EventArgs e) {
 
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
-| **Компонент**               | Веб-приложение | 
-| **Этап SDL**               | Создание |  
+| **Компонент**               | Web Application | 
+| **Этап SDL**               | Сборка |  
 | **Применимые технологии** | Веб-формы, MVC 5 |
 | **Атрибуты**              | EnvironmentType: OnPrem |
 | **Справочные материалы**              | [asdeqa](https://skf.azurewebsites.net/Mitigations/Details/wefr) |
@@ -442,8 +442,8 @@ Set-ADFSRelyingPartyTrust -TargetName “<RelyingPartyWebApp>” -ClaimsProvider
 
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
-| **Компонент**               | Веб-приложение | 
-| **Этап SDL**               | Создание |  
+| **Компонент**               | Web Application | 
+| **Этап SDL**               | Сборка |  
 | **Применимые технологии** | Универсальный |
 | **Атрибуты**              | Н/Д  |
 | **Справочные материалы**              | Н/Д  |
@@ -453,8 +453,8 @@ Set-ADFSRelyingPartyTrust -TargetName “<RelyingPartyWebApp>” -ClaimsProvider
 
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
-| **Компонент**               | Веб-интерфейс API | 
-| **Этап SDL**               | Создание |  
+| **Компонент**               | Веб-API | 
+| **Этап SDL**               | Сборка |  
 | **Применимые технологии** | Универсальный |
 | **Атрибуты**              | Н/Д  |
 | **Справочные материалы**              | Н/Д  |
@@ -462,8 +462,8 @@ Set-ADFSRelyingPartyTrust -TargetName “<RelyingPartyWebApp>” -ClaimsProvider
 
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
-| **Компонент**               | Веб-интерфейс API | 
-| **Этап SDL**               | Создание |  
+| **Компонент**               | Веб-API | 
+| **Этап SDL**               | Сборка |  
 | **Применимые технологии** | MVC 5, MVC 6 |
 | **Атрибуты**              | Н/Д  |
 | **Справочные материалы**              | [Статья о предотвращении риска атак с подделкой межсайтовых запросов в веб-интерфейсах API ASP.NET](https://www.asp.net/web-api/overview/security/preventing-cross-site-request-forgery-csrf-attacks) |
@@ -534,7 +534,7 @@ void ValidateRequestHeader(HttpRequestMessage request)
 ```
 
 ### <a name="example"></a>Пример
-В то же время Html.AntiForgeryToken() предоставляет посетителю файл cookie __RequestVerificationToken с таким же значением, как и случайное скрытое значение, показанное выше. Затем добавьте в целевой метод действия фильтр [ValidateAntiForgeryToken], чтобы проверить входящую форму POST. Например: 
+В то же время Html.AntiForgeryToken() предоставляет посетителю файл cookie __RequestVerificationToken с таким же значением, как и случайное скрытое значение, показанное выше. Затем добавьте в целевой метод действия фильтр [ValidateAntiForgeryToken], чтобы проверить входящую форму POST. Пример.
 ```
 [ValidateAntiForgeryToken]
 public ViewResult SubmitUpdate()
@@ -549,8 +549,8 @@ public ViewResult SubmitUpdate()
 
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
-| **Компонент**               | Веб-интерфейс API | 
-| **Этап SDL**               | Создание |  
+| **Компонент**               | Веб-API | 
+| **Этап SDL**               | Сборка |  
 | **Применимые технологии** | MVC 5, MVC 6 |
 | **Атрибуты**              | Поставщик удостоверений — ADFS или Azure AD |
 | **Справочные материалы**              | [Статья об обеспечении безопасности веб-интерфейсов API с помощью отдельной учетной записи и локального имени входа в веб-API ASP.NET 2.2](https://www.asp.net/web-api/overview/security/individual-accounts-in-web-api) |

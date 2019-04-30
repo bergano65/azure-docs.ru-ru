@@ -16,13 +16,13 @@ ms.topic: article
 ms.date: 02/01/2016
 ms.author: cynthn
 ms.openlocfilehash: f9e0582a1338bcae7b330c7ece7c3d8cc8593cfa
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58004496"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60543945"
 ---
-# <a name="how-to-install-mysql-on-azure"></a>Как установить MySQL в Azure
+# <a name="how-to-install-mysql-on-azure"></a>Установка MySQL в Azure
 Из этой статьи вы узнаете, как установить и настроить СУБД MySQL на виртуальной машине Azure под управлением Linux.
 
 [!INCLUDE [learn-about-deployment-models](../../../includes/learn-about-deployment-models-both-include.md)]
@@ -53,11 +53,11 @@ ms.locfileid: "58004496"
   
     Во время установки вы увидите диалоговое окно отображаться вам необходимо задать пароль пользователя root MySQL ниже, и здесь вам установить пароль.
   
-    ![изображение](./media/mysql-install/virtual-machines-linux-install-mysql-p1.png)
+    ![image](./media/mysql-install/virtual-machines-linux-install-mysql-p1.png)
 
     Для подтверждения введите пароль еще раз.
 
-    ![изображение](./media/mysql-install/virtual-machines-linux-install-mysql-p2.png)
+    ![image](./media/mysql-install/virtual-machines-linux-install-mysql-p2.png)
 
 * Шаг 2. Вход на MySQL Server
   
@@ -176,6 +176,6 @@ ms.locfileid: "58004496"
 
            #[root@mysqlnode ~]# insserv mysql
 
-### <a name="next-step"></a>Дальнейшее действие
+### <a name="next-step"></a>Следующий шаг
 Дополнительные сведения и сведения об использовании MySQL см. [здесь](https://www.mysql.com/).
 

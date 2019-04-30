@@ -15,11 +15,11 @@ ms.date: 02/24/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.openlocfilehash: bb23cbc275e01eab5361504c547c020b0a29f4c3
-ms.sourcegitcommit: 7f7c2fe58c6cd3ba4fd2280e79dfa4f235c55ac8
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "56805296"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60532970"
 ---
 # <a name="manage-access-to-azure-resources-using-rbac-and-the-azure-portal"></a>Управление доступом к ресурсам Azure с помощью RBAC и портала Azure
 
@@ -181,7 +181,7 @@ ms.locfileid: "56805296"
 
    Через несколько секунд пользователю будет назначена роль владельца в области действия подписки.
 
-## <a name="remove-role-assignments"></a>Удаление назначений ролей
+## <a name="remove-role-assignments"></a>Удалить назначения ролей
 
 В RBAC, чтобы удалить доступ, нужно удалить назначение роли. Чтобы закрыть доступ, выполните следующие действия.
 
@@ -205,7 +205,7 @@ ms.locfileid: "56805296"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Руководство Предоставление доступа пользователю с помощью RBAC и портала Azure](quickstart-assign-role-user-portal.md)
-* [Руководство Предоставление доступа пользователям с помощью RBAC и Azure PowerShell](tutorial-role-assignments-user-powershell.md)
+* [Учебник. Предоставление доступа пользователю с помощью RBAC и портала Azure](quickstart-assign-role-user-portal.md)
+* [Учебник. Предоставление доступа пользователям с помощью RBAC и Azure PowerShell](tutorial-role-assignments-user-powershell.md)
 * [Устранение неполадок RBAC в Azure](troubleshooting.md)
 * [Упорядочение ресурсов с помощью групп управления Azure](../governance/management-groups/index.md)

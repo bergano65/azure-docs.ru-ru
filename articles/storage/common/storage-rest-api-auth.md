@@ -9,11 +9,11 @@ ms.date: 03/21/2019
 ms.author: tamram
 ms.subservice: common
 ms.openlocfilehash: 9f6698eebf184d1df80920b7779512e2fda83a0c
-ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58369094"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60729347"
 ---
 # <a name="using-the-azure-storage-rest-api"></a>Использование REST API службы хранилища Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "58369094"
 Приложение перечисляет контейнеры в хранилище BLOB-объектов учетной записи хранения. Чтобы выполнить код, описанный в этой статье, необходимо следующее. 
 
 * Установите [Visual Studio 2017](https://www.visualstudio.com/visual-studio-homepage-vs.aspx) с указанной ниже рабочей нагрузкой:
-    - разработка Azure;
+    - Разработка для Azure
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 

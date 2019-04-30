@@ -14,13 +14,13 @@ ms.date: 01/22/2019
 ms.reviewer: sdash
 ms.author: lagayhar
 ms.openlocfilehash: 9f48303396d1ecd03fdffd2c6ab1e0c122615a21
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59005743"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60701728"
 ---
-# <a name="monitor-availability-and-responsiveness-of-any-web-site"></a>Наблюдение за доступностью и скоростью реагирования веб-сайта
+# <a name="monitor-availability-and-responsiveness-of-any-web-site"></a>Отслеживание доступности и скорости реагирования любого веб-сайта
 Развернув веб-приложение или веб-сайт на любом сервере, вы можете настроить тесты для наблюдения за его доступностью и скоростью реагирования. [Azure Application Insights](../../azure-monitor/app/app-insights-overview.md) отправляет веб-запросы через одинаковые промежутки времени из разных точек по всему миру. Эта надстройка предупреждает вас, если приложение реагирует медленно или не реагирует вообще.
 
 Вы можете настроить тесты доступности для любой конечной точки HTTP или HTTPS, доступной из Интернета. На тестируемый веб-сайт не нужно ничего добавлять. Этот сайт даже может принадлежать кому-то другому. Вы можете протестировать службу REST API, от которой зависит ваш сайт.

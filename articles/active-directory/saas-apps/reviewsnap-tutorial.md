@@ -17,11 +17,11 @@ ms.date: 05/16/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 24f4983f2ba1567241a6dfc6231a4925805947cd
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58878440"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60526738"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-reviewsnap"></a>Руководство по Интеграция Azure Active Directory с Reviewsnap
 
@@ -202,7 +202,7 @@ ms.locfileid: "58878440"
 
 1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
     
-### <a name="test-single-sign-on"></a>Проверка единого входа
+### <a name="test-single-sign-on"></a>Тест единого входа
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 

@@ -15,11 +15,11 @@ ms.workload: NA
 ms.date: 09/17/2018
 ms.author: masnider
 ms.openlocfilehash: 085d5e560eec090ab76c263f8f93140786f2d734
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58668452"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60543212"
 ---
 # <a name="service-fabric-terminology-overview"></a>Общие сведения о терминологии Service Fabric
 Azure Service Fabric — это платформа распределенных систем, которая дает возможность не только легко упаковывать и развертывать масштабируемые и надежные микрослужбы, но и управлять ими.  Вы можете [разместить кластеры Service Fabric где угодно](service-fabric-deploy-anywhere.md): в локальном центре обработки данных Azure или любого другого поставщика облачных служб.  Service Fabric — это оркестратор, лежащий в основе службы [Сетка Azure Service Fabric](/azure/service-fabric-mesh). Для записи служб можно использовать любую платформу. Кроме того, место для запуска приложения можно выбрать из нескольких сред. В этой статье описана терминология Service Fabric, повсеместно используемая в документации.
@@ -149,7 +149,7 @@ Azure Service Fabric — это платформа распределенных 
 ### <a name="docker-compose"></a>Docker Compose 
 [Docker Compose](https://docs.docker.com/compose/) является частью проекта Docker. Service Fabric предоставляет ограниченную поддержку [развертывания приложений с помощью модели Docker Compose](service-fabric-docker-compose.md).
 
-## <a name="environments"></a>средами;
+## <a name="environments"></a>Окружения
 
 Service Fabric — это платформа технологий с открытым кодом, основанная на нескольких различных службах и продуктах. Корпорация Майкрософт предоставляет следующие решения.
 

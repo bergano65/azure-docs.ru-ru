@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 01/22/2019
 ms.author: mbullwin
 ms.openlocfilehash: 5c659ca2f40d47450227d16963499a6b27c9e313
-ms.sourcegitcommit: 98645e63f657ffa2cc42f52fea911b1cdcd56453
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54817123"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60700893"
 ---
 # <a name="exploring-metrics-in-application-insights"></a>Исследование метрик в Application Insights
 Метрики в [Application Insights][start] — это измеренные значения и счетчики событий, которые передаются как данные телеметрии из приложения. Они помогают обнаруживать проблемы производительности и отслеживать тенденции в использовании приложения. Существует широкий спектр стандартных метрик, и можно также создавать собственные пользовательские метрики и события.
@@ -184,7 +184,7 @@ ms.locfileid: "54817123"
 ### <a name="power-bi"></a>Power BI
 Если вам нужны представления данных с еще большими возможностями, данные можно [экспортировать в Power BI](https://blogs.msdn.com/b/powerbi/archive/2015/11/04/explore-your-application-insights-data-with-power-bi.aspx).
 
-## <a name="analytics"></a>Analytics
+## <a name="analytics"></a>Аналитика
 [Аналитика](../../azure-monitor/app/analytics.md) является более гибким способом анализа телеметрии с помощью мощного языка запросов. Используйте ее, если требуется объединить или вычислить результаты метрик либо тщательно изучить последние данные производительности приложения. 
 
 На диаграмме с метриками можно щелкнуть значок "Аналитика", чтобы перейти непосредственно к эквивалентному запросу "Аналитика".
@@ -202,7 +202,7 @@ ms.locfileid: "54817123"
 
 > [!VIDEO https://channel9.msdn.com/events/Connect/2016/112/player]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * [Отслеживание использования Application Insights.](../../azure-monitor/app/usage-overview.md)
 * [Использование диагностического поиска](../../azure-monitor/app/diagnostic-search.md)
 

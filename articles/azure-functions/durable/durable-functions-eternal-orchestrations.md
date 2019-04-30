@@ -2,20 +2,21 @@
 title: Нескончаемые оркестрации в устойчивых функциях — Azure
 description: Узнайте, как реализовать нескончаемые оркестрации с помощью расширения устойчивых функций для Функций Azure.
 services: functions
-author: ggailey777
+author: kashimiz
 manager: jeconnoc
 keywords: ''
 ms.service: azure-functions
 ms.devlang: multiple
 ms.topic: conceptual
-ms.date: 12/07/2018
-ms.author: azfuncdf
+origin.date: 12/07/2018
+ms.date: 12/25/2018
+ms.author: v-junlch
 ms.openlocfilehash: c4adffd457338ffebfd1c9c7727023f82088dc57
-ms.sourcegitcommit: 5f348bf7d6cf8e074576c73055e17d7036982ddb
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59607744"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60732422"
 ---
 # <a name="eternal-orchestrations-in-durable-functions-azure-functions"></a>Нескончаемые оркестрации в устойчивых функциях (Функции Azure)
 
@@ -84,3 +85,4 @@ module.exports = df.orchestrator(function*(context) {
 
 > [!div class="nextstepaction"]
 > [Узнайте, как реализовать одноэкземплярные оркестрации](durable-functions-singletons.md)
+

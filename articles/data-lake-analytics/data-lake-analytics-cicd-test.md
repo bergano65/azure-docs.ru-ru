@@ -11,11 +11,11 @@ ms.topic: conceptual
 ms.workload: big-data
 ms.date: 07/03/2018
 ms.openlocfilehash: 4532e0c6e8095c9d64897410e0492e2135d8a478
-ms.sourcegitcommit: 6678e16c4b273acd3eaf45af310de77090137fa1
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/01/2018
-ms.locfileid: "50747938"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60630111"
 ---
 # <a name="test-your-azure-data-lake-analytics-code"></a>Тестирование кода Azure Data Lake Analytics
 
@@ -143,7 +143,7 @@ CPPSDK — это пакет, включающий Microsoft Visual C++ 14 и Wi
 * Microsoft.Analytics.Types
 * Microsoft.Analytics.UnitTest
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Настройка конвейера CI/CD для Azure Data Lake Analytics](data-lake-analytics-cicd-overview.md)
 - [Запуск скриптов U-SQL на локальном компьютере](data-lake-analytics-data-lake-tools-local-run.md)

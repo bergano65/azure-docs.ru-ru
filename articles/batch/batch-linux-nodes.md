@@ -16,11 +16,11 @@ ms.date: 06/01/2018
 ms.author: lahugh
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: e228e73283685988247c8d419ba0a97b8c7b2974
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57546971"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60776158"
 ---
 # <a name="provision-linux-compute-nodes-in-batch-pools"></a>Подготовка вычислительных узлов Linux в пулах пакетной службы
 
@@ -45,10 +45,10 @@ ms.locfileid: "57546971"
 
 | **Свойства ссылки на образ** | **Пример** |
 | --- | --- |
-| ИЗДАТЕЛЬ |Canonical |
-| ПРЕДЛОЖЕНИЕ |UbuntuServer |
+| Издатель |Canonical |
+| Предложение |UbuntuServer |
 | SKU |14.04.4-LTS |
-| Version (версия) |последняя |
+| Version |latest |
 
 > [!TIP]
 > Дополнительные сведения об этих свойствах и о том, как получить список образов из Marketplace, см. в статье [Выбор образов виртуальных машин Linux с помощью интерфейса командной строки Azure (Azure CLI)](../virtual-machines/linux/cli-ps-findimage.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json). Обратите внимание, что не все образы из Marketplace в настоящее время совместимы с пакетной службой. Дополнительные сведения см. в разделе [Номер SKU агента узла](#node-agent-sku).
@@ -216,33 +216,33 @@ ImageReference imageReference = new ImageReference(
 
 | **Издатель** | **ПРЕДЛОЖЕНИЕ** | **Номер SKU образа** | **Версия** | **Идентификатор SKU агента узла** |
 | ------------- | --------- | ------------- | ----------- | --------------------- |
-|  или пакетный | rendering-centos73 | rendering | последняя | batch.node.centos 7 |
-|  или пакетный | rendering-windows2016 | rendering | последняя | batch.node.windows amd64 |
-| Canonical | UbuntuServer | 16.04-LTS | последняя | batch.node.ubuntu 16.04 |
-| Canonical | UbuntuServer | 14.04.5-LTS | последняя | batch.node.ubuntu 14.04 |
-| Credativ | Debian | 9 | последняя | batch.node.debian 9 |
-| Credativ | Debian | 8 | последняя | batch.node.debian 8 |
-| microsoft-ads | linux-data-science-vm | linuxdsvm | последняя | batch.node.centos 7 |
-| microsoft-ads | standard-data-science-vm | standard-data-science-vm | последняя | batch.node.windows amd64 |
-| microsoft-azure-batch | centos-container | 7-4 | последняя | batch.node.centos 7 |
-| microsoft-azure-batch | centos-container-rdma | 7-4 | последняя | batch.node.centos 7 |
-| microsoft-azure-batch | ubuntu-server-container | 16-04-lts | последняя | batch.node.ubuntu 16.04 |
-| microsoft-azure-batch | ubuntu-server-container-rdma | 16-04-lts | последняя | batch.node.ubuntu 16.04 |
-| MicrosoftWindowsServer | WindowsServer | 2016-Datacenter | последняя | batch.node.windows amd64 |
-| MicrosoftWindowsServer | WindowsServer | 2016-Datacenter-smalldisk | последняя | batch.node.windows amd64 |
-| MicrosoftWindowsServer | WindowsServer | 2016-Datacenter-with-Containers | последняя | batch.node.windows amd64 |
-| MicrosoftWindowsServer | WindowsServer | 2012-R2-Datacenter | последняя | batch.node.windows amd64 |
-| MicrosoftWindowsServer | WindowsServer | 2012-R2-Datacenter-smalldisk | последняя | batch.node.windows amd64 |
-| MicrosoftWindowsServer | WindowsServer | 2012-Datacenter | последняя | batch.node.windows amd64 |
-| MicrosoftWindowsServer | WindowsServer | 2012-Datacenter-smalldisk | последняя | batch.node.windows amd64 |
-| MicrosoftWindowsServer | WindowsServer | 2008-R2-SP1 | последняя | batch.node.windows amd64 |
-| MicrosoftWindowsServer | WindowsServer | 2008-R2-SP1-smalldisk | последняя | batch.node.windows amd64 |
-| OpenLogic | CentOS | 7.4 | последняя | batch.node.centos 7 |
-| OpenLogic | CentOS-HPC | 7.4 | последняя | batch.node.centos 7 |
-| OpenLogic | CentOS-HPC | 7.3 | последняя | batch.node.centos 7 |
-| OpenLogic | CentOS-HPC | 7.1. | последняя | batch.node.centos 7 |
-| Oracle | Oracle-Linux | 7.4 | последняя | batch.node.centos 7 |
-| SUSE | SLES-HPC | 12-SP2 | последняя | batch.node.opensuse 42.1 |
+| пакетная_служба | rendering-centos73 | rendering | latest | batch.node.centos 7 |
+| пакетная_служба | rendering-windows2016 | rendering | latest | batch.node.windows amd64 |
+| Canonical | UbuntuServer | 16.04-LTS | latest | batch.node.ubuntu 16.04 |
+| Canonical | UbuntuServer | 14.04.5-LTS | latest | batch.node.ubuntu 14.04 |
+| Credativ | Debian | 9 | latest | batch.node.debian 9 |
+| Credativ | Debian | 8 | latest | batch.node.debian 8 |
+| microsoft-ads | linux-data-science-vm | linuxdsvm | latest | batch.node.centos 7 |
+| microsoft-ads | standard-data-science-vm | standard-data-science-vm | latest | batch.node.windows amd64 |
+| microsoft-azure-batch | centos-container | 7-4 | latest | batch.node.centos 7 |
+| microsoft-azure-batch | centos-container-rdma | 7-4 | latest | batch.node.centos 7 |
+| microsoft-azure-batch | ubuntu-server-container | 16-04-lts | latest | batch.node.ubuntu 16.04 |
+| microsoft-azure-batch | ubuntu-server-container-rdma | 16-04-lts | latest | batch.node.ubuntu 16.04 |
+| MicrosoftWindowsServer | WindowsServer | 2016-Datacenter | latest | batch.node.windows amd64 |
+| MicrosoftWindowsServer | WindowsServer | 2016-Datacenter-smalldisk | latest | batch.node.windows amd64 |
+| MicrosoftWindowsServer | WindowsServer | 2016-Datacenter-with-Containers | latest | batch.node.windows amd64 |
+| MicrosoftWindowsServer | WindowsServer | 2012-R2-Datacenter | latest | batch.node.windows amd64 |
+| MicrosoftWindowsServer | WindowsServer | 2012-R2-Datacenter-smalldisk | latest | batch.node.windows amd64 |
+| MicrosoftWindowsServer | WindowsServer | 2012-Datacenter | latest | batch.node.windows amd64 |
+| MicrosoftWindowsServer | WindowsServer | 2012-Datacenter-smalldisk | latest | batch.node.windows amd64 |
+| MicrosoftWindowsServer | WindowsServer | 2008-R2-SP1 | latest | batch.node.windows amd64 |
+| MicrosoftWindowsServer | WindowsServer | 2008-R2-SP1-smalldisk | latest | batch.node.windows amd64 |
+| OpenLogic | CentOS | 7.4 | latest | batch.node.centos 7 |
+| OpenLogic | CentOS-HPC | 7.4 | latest | batch.node.centos 7 |
+| OpenLogic | CentOS-HPC | 7.3 | latest | batch.node.centos 7 |
+| OpenLogic | CentOS-HPC | 7.1 | latest | batch.node.centos 7 |
+| Oracle | Oracle-Linux | 7.4 | latest | batch.node.centos 7 |
+| SUSE | SLES-HPC | 12-SP2 | latest | batch.node.opensuse 42.1 |
 
 ## <a name="connect-to-linux-nodes-using-ssh"></a>Подключение к узлам Linux с помощью SSH
 Во время разработки или устранения неполадок может потребоваться войти на узлы в пуле. В отличие от вычислительных узлов Windows, для подключения к узлам Linux нельзя использовать протокол удаленного рабочего стола (RDP). Вместо этого пакетная служба включает доступ по протоколу SSH на каждом узле для удаленного подключения.

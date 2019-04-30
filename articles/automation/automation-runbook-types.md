@@ -10,17 +10,17 @@ ms.date: 03/05/2019
 ms.topic: conceptual
 manager: carmonm
 ms.openlocfilehash: 7a3990366814beda83852fc7c07c896445388c23
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57454907"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60737165"
 ---
 # <a name="azure-automation-runbook-types"></a>Типы модулей Runbook в службе автоматизации Azure
 
 Служба автоматизации Azure поддерживает несколько типов модулей Runbook, кратко описанных в приведенной ниже таблице.  Следующие разделы содержат дополнительную информацию о каждом типе, включая рекомендацию по использованию.
 
-| type | ОПИСАНИЕ |
+| type | Описание |
 |:--- |:--- |
 | [Графический](#graphical-runbooks)|Опирается на Windows PowerShell, а полностью создается и редактируется в графическом редакторе на портале Azure. |
 | [Графический модуль рабочего процесса PowerShell](#graphical-runbooks)|Опирается на рабочий процесс Windows PowerShell, а полностью создается и редактируется в графическом редакторе на портале Azure. |

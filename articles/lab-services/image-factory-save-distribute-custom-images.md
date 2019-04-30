@@ -13,13 +13,13 @@ ms.topic: article
 ms.date: 03/25/2019
 ms.author: spelluru
 ms.openlocfilehash: feabd055833e5f0d850138af528cce1da82cae49
-ms.sourcegitcommit: 70550d278cda4355adffe9c66d920919448b0c34
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58440103"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60622683"
 ---
-# <a name="save-custom-images-and-distribute-to-multiple-labs"></a>Сохранение пользовательских образов и распространять в несколько лабораторий
+# <a name="save-custom-images-and-distribute-to-multiple-labs"></a>Сохранение пользовательских образов и их распространение в несколько лабораторий
 В этой статье рассматриваются предоставляет действия для сохранения пользовательских образов из уже созданных виртуальных машин (ВМ). Кроме того, здесь рассматривается, как для распространения этих пользовательских образов для других DevTest Labs, в организации.
 
 ## <a name="prerequisites"></a>Технические условия

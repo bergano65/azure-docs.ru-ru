@@ -9,17 +9,17 @@ ms.author: tarcher
 ms.date: 03/22/2019
 ms.topic: article
 ms.openlocfilehash: c103bc0a314f1e5a4a0afef3f7969f53b6a0dccd
-ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58621606"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60640979"
 ---
 # <a name="jenkins-plugins-for-azure"></a>Подключаемые модули Jenkins для Azure
 
 Следующие подключаемые модули Jenkins поддерживает различные функции для использования с Azure.
   
-| Подключаемый модуль Jenkins | ОПИСАНИЕ                                   |
+| Подключаемый модуль Jenkins | Описание                                   |
 |------------------------------------------------------------------------------|
 | [Подключаемый модуль службы приложений Azure](https://plugins.jenkins.io/azure-app-service)     | Подключаемый модуль Jenkins для развертывания службы приложений Azure (в настоящее время поддерживает только веб-приложения). | 
 | [Подключаемый модуль Azure AD](https://plugins.jenkins.io/azure-ad)                       | Подключаемый модуль Jenkins, который поддерживает проверку подлинности и авторизация через Azure Active Directory. | 

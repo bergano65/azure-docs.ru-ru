@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 08/02/2018
 ms.author: rogirdh
-ms.openlocfilehash: 93fbd5bbba91b45e1afd123a2466b249302e2354
-ms.sourcegitcommit: eaad191ede3510f07505b11e2d1bbfbaa7585dbd
-ms.translationtype: HT
+ms.openlocfilehash: c41f13a6437f69121d3bbb387c96d8e13f2be0b3
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/03/2018
-ms.locfileid: "39492846"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60567081"
 ---
 # <a name="back-up-and-recover-an-oracle-database-12c-database-on-an-azure-linux-virtual-machine"></a>Создание резервных копий и восстановление базы данных Oracle Database 12c на виртуальной машине Linux в Azure
 
@@ -30,14 +30,14 @@ ms.locfileid: "39492846"
 
 ## <a name="prepare-the-environment"></a>Подготовка среды
 
-### <a name="step-1-prerequisites"></a>Шаг 1. Предварительные требования
+### <a name="step-1-prerequisites"></a>Шаг 1. Технические условия
 
 *   Для резервного копирования и восстановления вам необходимо сначала создать виртуальную машину Linux с установленным экземпляром базы данных Oracle Database 12c. Имя образа Marketplace, который вы будете использовать для создания виртуальных машин, — *Oracle:Oracle-Database-Ee:12.1.0.2:latest*.
 
     Инструкции по созданию базы данных Oracle см. в статье [Создание базы данных Oracle 12c на виртуальной машине Azure](https://docs.microsoft.com/azure/virtual-machines/workloads/oracle/oracle-database-quick-create).
 
 
-### <a name="step-2-connect-to-the-vm"></a>Шаг 2. Подключение к виртуальной машине
+### <a name="step-2-connect-to-the-vm"></a>Шаг 2. Подключение к виртуальной машине
 
 *   Используйте следующую команду для создания сеанса Secure Shell (SSH) с виртуальной машиной. Замените сочетание IP-адреса и имени узла значением `publicIpAddress` вашей виртуальной машины.
 
@@ -45,7 +45,7 @@ ms.locfileid: "39492846"
     ssh <publicIpAddress>
     ```
 
-### <a name="step-3-prepare-the-database"></a>Шаг 3. Подготовка базы данных
+### <a name="step-3-prepare-the-database"></a>Шаг 3. Подготовка базы данных
 
 1.  Чтобы перейти к выполнению этого шага, у вас должен быть экземпляр Oracle (cdb1), выполняющийся на виртуальной машине с именем *myVM*.
 
@@ -133,7 +133,7 @@ ms.locfileid: "39492846"
     RMAN> backup database plus archivelog;
     ```
 
-### <a name="step-4-application-consistent-backup-for-linux-vms"></a>Шаг 4. Согласованное с приложениями резервное копирование для виртуальных машин Linux
+### <a name="step-4-application-consistent-backup-for-linux-vms"></a>Шаг 4. Резервное копирование с согласованием приложений для виртуальных машин Linux
 
 Согласованное с приложениями резервное копирование — это новая функция в службе Azure Backup. Можно создавать скрипты и выбирать скрипты для выполнения до и после создания моментального снимка виртуальной машины.
 
@@ -170,7 +170,7 @@ ms.locfileid: "39492846"
 
 4. Измените файл JSON.
 
-    Измените файл VMSnapshotScriptPluginConfig.json, добавив в него параметры `PreScriptLocation` и `PostScriptlocation`. Например: 
+    Измените файл VMSnapshotScriptPluginConfig.json, добавив в него параметры `PreScriptLocation` и `PostScriptlocation`. Пример.
 
     ```azurecli
     {
@@ -266,7 +266,7 @@ ms.locfileid: "39492846"
 Дополнительные сведения см. в записи блога [Announcing application consistent backup for Linux VMs using Azure Backup](https://azure.microsoft.com/blog/announcing-application-consistent-backup-for-linux-vms-using-azure-backup/) (Объявление согласованного с приложениями резервного копирования для виртуальных машин Linux).
 
 
-### <a name="step-5-use-azure-recovery-services-vaults-to-back-up-the-vm"></a>Шаг 5. Использование хранилищ служб восстановления Azure для резервного копирования виртуальной машины
+### <a name="step-5-use-azure-recovery-services-vaults-to-back-up-the-vm"></a>Шаг 5. Хранилища служб восстановления Azure используйте резервное копирование виртуальной Машины
 
 1.  На портале Azure найдите **Хранилища служб восстановления**.
 
@@ -307,7 +307,7 @@ ms.locfileid: "39492846"
 
     ![Команда "Создать резервную копию" в хранилищах служб восстановления](./media/oracle-backup-recovery/recovery_service_09.png)
 
-10. Нажмите кнопку **Архивация**. Дождитесь завершения процесса резервного копирования. Затем перейдите к разделу [Шаг 6. Удаление файлов базы данных](#step-6-remove-the-database-files).
+10. Нажмите кнопку **Архивация**. Дождитесь завершения процесса резервного копирования. Перейдите к [шаг 6: Удалите файлы базы данных](#step-6-remove-the-database-files).
 
     Чтобы просмотреть состояние задания резервного копирования, щелкните **Задания**.
 
@@ -319,7 +319,7 @@ ms.locfileid: "39492846"
 
 11. Для согласованных с приложениями резервных копий устраните все ошибки в файле журнала. Файл журнала находится в каталоге /var/log/azure/Microsoft.Azure.RecoveryServices.VMSnapshotLinux/1.0.9114.0.
 
-### <a name="step-6-remove-the-database-files"></a>Шаг 6. Удаление файлов базы данных 
+### <a name="step-6-remove-the-database-files"></a>Шаг 6. Удалите файлы базы данных 
 Далее в этой статье вы узнаете, как выполнить тестирование процесса восстановления. Перед тестированием процесса восстановления вам нужно удалить файлы базы данных.
 
 1.  Удалите файлы табличного пространства и резервных копий:
@@ -452,13 +452,13 @@ ms.locfileid: "39492846"
 
 Вместо того чтобы восстанавливать удаленные файлы из хранилищ служб восстановления, можно восстановить всю виртуальную машину.
 
-### <a name="step-1-delete-myvm"></a>Ша 1. Удаление myVM
+### <a name="step-1-delete-myvm"></a>Шаг 1. Удаление myVM
 
 *   На портале Azure перейдите в хранилище **myVM1**, а затем выберите **Удалить**.
 
     ![Команда удаления хранилища](./media/oracle-backup-recovery/recover_vm_01.png)
 
-### <a name="step-2-recover-the-vm"></a>Шаг 2. Восстановление виртуальной машины
+### <a name="step-2-recover-the-vm"></a>Шаг 2. Восстановление виртуальной Машины
 
 1.  Перейдите в **Хранилища служб восстановления**, а затем выберите **myVault**.
 
@@ -496,7 +496,7 @@ ms.locfileid: "39492846"
 
     ![Состояние процесса восстановления](./media/oracle-backup-recovery/recover_vm_09.png)
 
-### <a name="step-3-set-the-public-ip-address"></a>Шаг 3. Задание общедоступного IP-адреса
+### <a name="step-3-set-the-public-ip-address"></a>Шаг 3. Настройка общедоступного IP-адреса
 После восстановления виртуальной машины необходимо настроить общедоступный IP-адрес.
 
 1.  В поле поиска введите **общедоступный IP-адрес**.
@@ -519,7 +519,7 @@ ms.locfileid: "39492846"
 
     ![Значение IP-адреса](./media/oracle-backup-recovery/create_ip_04.png)
 
-### <a name="step-4-connect-to-the-vm"></a>Шаг 4. Подключение к виртуальной машине
+### <a name="step-4-connect-to-the-vm"></a>Шаг 4. Подключение к виртуальной машине
 
 *   Чтобы подключиться к виртуальной машине, используйте следующий скрипт:
 
@@ -527,7 +527,7 @@ ms.locfileid: "39492846"
     ssh <publicIpAddress>
     ```
 
-### <a name="step-5-test-whether-the-database-is-accessible"></a>Шаг 5. Проверка доступности базы данных
+### <a name="step-5-test-whether-the-database-is-accessible"></a>Шаг 5. Проверить, является ли база данных доступна
 *   Чтобы проверить доступность, используйте следующий скрипт:
 
     ```bash 
@@ -537,9 +537,9 @@ ms.locfileid: "39492846"
     ```
 
     > [!IMPORTANT]
-    > Если команда базы данных **startup** вызывает ошибку, то чтобы восстановить базу данных, используйте инструкции, [описанные в шаге 6](#step-6-optional-use-rman-to-recover-the-database).
+    > Если базы данных **запуска** команда вызывает ошибку, чтобы восстановить базу данных, см. в разделе [шаг 6: Используйте RMAN для восстановления базы данных](#step-6-optional-use-rman-to-recover-the-database).
 
-### <a name="step-6-optional-use-rman-to-recover-the-database"></a>(Необязательно) Шаг 6. Использование RMAN для восстановления базы данных
+### <a name="step-6-optional-use-rman-to-recover-the-database"></a>Шаг 6. (Необязательно) Использование RMAN для восстановления базы данных
 *   Чтобы восстановить базу данных, используйте следующий скрипт:
 
     ```bash
@@ -562,9 +562,9 @@ ms.locfileid: "39492846"
 az group delete --name myResourceGroup
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Изучите [руководство по созданию высокодоступных виртуальных машин](../../linux/create-cli-complete.md).
+[Учебник. Создание высокодоступных виртуальных машин](../../linux/create-cli-complete.md)
 
 [Изучите примеры развертывания виртуальных машин с помощью интерфейса командной строки](../../linux/cli-samples.md).
 

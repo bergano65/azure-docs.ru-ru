@@ -17,11 +17,11 @@ ms.date: 10/17/2016
 ms.author: roiyz
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 1defa08b0eb9ede2adec3b7ac12c873522dd6c37
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58011590"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60800213"
 ---
 # <a name="understanding-and-using-the-azure-linux-agent"></a>Что такое агент Linux для Azure и как его использовать
 
@@ -63,7 +63,7 @@ ms.locfileid: "58011590"
   * Вставка компонента, созданного корпорацией Майкрософт и ее партнерами, в виртуальную машину Linux (IaaS) для включения программного обеспечения и автоматизации настройки
   * Эталонная реализация расширения виртуальной машины на сайте [https://github.com/Azure/azure-linux-extensions](https://github.com/Azure/azure-linux-extensions).
 
-## <a name="communication"></a>Обмен данными
+## <a name="communication"></a>Связь
 Поток информации от платформы к агенту передается по двум каналам:
 
 * Прилагаемый DVD, используемый во время загрузки, для развернутых приложений IaaS. На этом DVD содержится OVF-совместимый файл конфигурации, включающий всю информацию для подготовки кроме самих пар ключей SSH.

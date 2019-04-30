@@ -1,17 +1,21 @@
 ---
 title: Библиотеки подключений для базы данных Azure для PostgreSQL
 description: В этой статье описывается несколько библиотек и драйверов, которые разработчики могут использовать при написании кода приложений для подключения и запроса базы данных Azure для PostgreSQL.
-author: rachel-msft
-ms.author: raagyema
+services: postgresql
+author: WenJason
+ms.author: v-jay
+manager: digimobile
+editor: jasonwhowell
 ms.service: postgresql
-ms.topic: conceptual
-ms.date: 02/28/2018
+ms.topic: article
+origin.date: 02/28/2018
+ms.date: 12/03/2018
 ms.openlocfilehash: 0e762a2d7cf82e2957fb276fcea0a20553f719e3
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53536021"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60559778"
 ---
 # <a name="connection-libraries-for-azure-database-for-postgresql"></a>Библиотеки подключений для базы данных Azure для PostgreSQL
 В этой статье перечисляются библиотеки и драйверы, которые разработчики могут использовать при разработке приложений для подключения к базе данных Azure для PostgreSQL и выполнения запросов к ней.
@@ -32,7 +36,7 @@ ms.locfileid: "53536021"
 | C | [libpq](https://www.postgresql.org/docs/9.6/static/libpq.html) | Основной интерфейс для языка C | Включено |
 | C++ | [libpqxx](http://pqxx.org/) | Новый стиль интерфейса для языка C++ | [Загрузить](http://pqxx.org/download/software/) |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь с этими краткими руководствами по подключению к базе данных Azure для PostgreSQL и выполнению запросов к ней, выбрав язык по своему усмотрению.
 
 [Python](./connect-python.md) | [Node.JS](./connect-nodejs.md) | [Java](./connect-java.md) | [Ruby](./connect-ruby.md) | [PHP](./connect-php.md) | [.NET (C#)](./connect-csharp.md) | [Go](./connect-go.md)

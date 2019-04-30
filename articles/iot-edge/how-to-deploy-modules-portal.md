@@ -11,11 +11,11 @@ ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
 ms.openlocfilehash: 9d7729dce5419c5813de3c4dfce55c40098f5988
-ms.sourcegitcommit: 9aa9552c4ae8635e97bdec78fccbb989b1587548
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56430120"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60595243"
 ---
 # <a name="deploy-azure-iot-edge-modules-from-the-azure-portal"></a>Развертывание модулей IoT Edge Azure с помощью портала Azure
 
@@ -23,7 +23,7 @@ ms.locfileid: "56430120"
 
 В этой статье описано, как с помощью портала Azure создать манифест развертывания и отправить это развертывание на устройство IoT Edge. Информацию о создании развертываний, предназначенных для нескольких устройств с определенными значениями тегов, см. в разделе [Развертывание и мониторинг модулей IoT Edge в нужном масштабе (предварительная версия)](how-to-deploy-monitor.md)
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * [Центр Интернета вещей](../iot-hub/iot-hub-create-through-portal.md) в подписке Azure.
 * [Устройство IoT Edge](how-to-register-device-portal.md) с установленной средой выполнения IoT Edge.
@@ -55,7 +55,7 @@ ms.locfileid: "56430120"
 
 1. Выберите **Модуль IoT Edge**.
 
-1. Введите имя модуля и выберите образ контейнера. Например: 
+1. Введите имя модуля и выберите образ контейнера. Пример.
 
    * **Имя** — tempSensor
    * **URI образа** — mcr.microsoft.com/azureiotedge-simulated-temperature-sensor:1.0.
@@ -107,6 +107,6 @@ Azure Marketplace — это интернет-магазин приложени
 
 1. Выберите **Создать** для продолжения стандартного процесса настройки манифеста развертывания, при желании включая добавление других модулей. Сведения новых модулей, например URI образа, параметры создания или требуемые свойства, предопределены, но их можно изменить.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Изучите раздел [Развертывание и мониторинг модулей IoT Edge в нужном масштабе (предварительная версия)](how-to-deploy-monitor.md)

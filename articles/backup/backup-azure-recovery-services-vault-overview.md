@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 8/10/2018
 ms.author: raynew
 ms.openlocfilehash: 924b36701ecf21f6bd84938aeefbf25e47fcbaa7
-ms.sourcegitcommit: b0f39746412c93a48317f985a8365743e5fe1596
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/04/2018
-ms.locfileid: "52878675"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60699256"
 ---
 # <a name="recovery-services-vaults-overview"></a>Обзор хранилищ служб восстановления
 
@@ -74,7 +74,7 @@ ms.locfileid: "52878675"
 
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Следующие шаги
 Ознакомьтесь со следующими статьями:</br>
 [Подготовка среды к архивации виртуальных машин, развернутых с помощью Resource Manager](backup-azure-arm-vms-prepare.md)</br>
 [Подготовка к резервному копированию рабочих нагрузок с использованием сервера службы архивации Azure](backup-azure-microsoft-azure-backup.md)</br>

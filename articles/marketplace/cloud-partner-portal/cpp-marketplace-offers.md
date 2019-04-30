@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 03/27/2019
 ms.author: pbutlerm
 ms.openlocfilehash: f537a43f5d4d0431e1659daa258e0c1453f2295b
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59010589"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60565877"
 ---
 # <a name="azure-and-appsource-marketplace-offers"></a>Предложения Azure и AppSource Marketplace
 
@@ -50,7 +50,7 @@ ms.locfileid: "59010589"
 
 В следующей таблице перечислены типы текущего предложения, поддерживаемые [Порталом Cloud Partner](https://cloudpartner.azure.com).  Для каждого типа предложения перечислены магазины marketplace, в которых может быть указано предложение, а также общее описание технологии решения предложения.
 
-|                Тип предложения                |  Marketplace  |   ОПИСАНИЕ                                                           |
+|                Тип предложения                |  Marketplace  |   Описание                                                           |
 |                ----------                |  -----------  |   -----------                                                           |
 | [Приложение Azure](./azure-applications/cpp-azure-app-offer.md) | Таблицы Azure | Решение представляет собой одну или несколько виртуальных машин, необязательный пользовательский код Azure, развернутый с помощью шаблона Azure Resource Manger.  Развертывание может осуществляться клиентом через шаблон решения или под управлением издателя. Этот тип используется для предоставления большей гибкости, чем предоставлена типом предложения виртуальной машины.  |
 | [Консультационная услуга](./consulting-services/cloud-partner-portal-consulting-services-publishing-offer.md) | Оба варианта | Квалифицированные консультанты Microsoft могут размещать свои доменные службы на Azure Marketplace или в AppSource.  Их опыт помогает клиентам оценивать свои проблемы, а также создавать и развертывать правильные решения для достижения своих бизнес-целей.  |

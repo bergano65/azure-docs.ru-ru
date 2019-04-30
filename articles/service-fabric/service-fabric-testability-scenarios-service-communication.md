@@ -15,11 +15,11 @@ ms.workload: NA
 ms.date: 11/02/2017
 ms.author: vturecek
 ms.openlocfilehash: 529c8d74b6e0a63a7969f31d5b5e8073ecb79411
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58665752"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60543229"
 ---
 # <a name="service-fabric-testability-scenarios-service-communication"></a>Сценарии тестирования Service Fabric: Взаимодействие служб
 Микрослужбы и стили сервисноориентированной архитектуры естественным образом развертываются на платформе Azure Service Fabric. В распределенных архитектурах этих типов компонентные приложения микрослужб обычно состоят из нескольких служб, которые должны взаимодействовать друг с другом. Даже в простейших случаях у вас обычно есть как минимум веб-служба без отслеживания состояния и служба хранилища данных с отслеживанием состояния, которые должны взаимодействовать друг с другом.

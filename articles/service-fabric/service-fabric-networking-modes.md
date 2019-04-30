@@ -15,11 +15,11 @@ ms.workload: NA
 ms.date: 2/23/2018
 ms.author: aljo, subramar
 ms.openlocfilehash: 6f14b3184cabd1dfd84f04260f6b8c831037cbcf
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58668132"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60718161"
 ---
 # <a name="service-fabric-container-networking-modes"></a>Сетевые режимы контейнеров Service Fabric
 
@@ -200,14 +200,14 @@ ms.locfileid: "58668132"
  
 3. Только для кластеров Windows: настройте правило группы безопасности сети (NSG) Azure, которое открывает порт UDP/53 для виртуальной сети, со следующими значениями:
 
-   |Параметр |Значение | |
+   |Параметр |Value | |
    | --- | --- | --- |
    |Приоритет |2000 | |
    |ИМЯ |Custom_Dns  | |
    |Источник |Виртуальная сеть | |
    |Место назначения | Виртуальная сеть | |
    |Service | DNS (UDP/53) | |
-   |Действие | РАЗРЕШИТЬ  | |
+   |Действие | Allow  | |
    | | |
 
 4. Укажите сетевой режим в манифесте приложения для каждой службы: `<NetworkConfig NetworkType="Open">`. При использовании **открытого** сетевого режима служба получит выделенный IP-адрес. Если режим не указан, по умолчанию служба использует режим **NAT**. В следующем примере манифеста видно, что службы `NodeContainerServicePackage1` и `NodeContainerServicePackage2` могут ожидать передачи данных на одном и том же порту (обе службы прослушивают `Endpoint1`). Если установлен открытый режим сети, вы не сможете задать конфигурации `PortBinding`.

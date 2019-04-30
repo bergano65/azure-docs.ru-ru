@@ -17,11 +17,11 @@ ms.date: 12/13/2018
 ms.author: akjosh; cynthn
 ms.custom: ''
 ms.openlocfilehash: 4bba8a14096e420a539974ebf520cebda3b13c91
-ms.sourcegitcommit: 63b996e9dc7cade181e83e13046a5006b275638d
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54188289"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60711634"
 ---
 # <a name="shared-image-gallery-overview"></a>Обзор коллекции общих образов
 
@@ -29,6 +29,6 @@ ms.locfileid: "54188289"
 [!INCLUDE [virtual-machines-common-shared-image-galleries](../../../includes/virtual-machines-common-shared-image-galleries.md)]
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Узнайте, как [развертывать общие образы с помощью Azure PowerShell](shared-images.md).

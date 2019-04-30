@@ -8,11 +8,11 @@ ms.topic: article
 ms.service: azure
 ms.assetid: 58a0ca9d-86d2-469a-9714-3b8320c33cf5
 ms.openlocfilehash: d98d0637c6d520193b11f4267c59016772ef063a
-ms.sourcegitcommit: d89b679d20ad45d224fd7d010496c52345f10c96
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57792486"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60809819"
 ---
 # <a name="azure-role-based-access-control-rbac-to-control-access-rights-to-create-and-manage-support-requests"></a>Контроль прав доступа для создания запросов в службу поддержки и управления ими с помощью управления доступом на основе ролей (RBAC) Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "57792486"
 
 В следующей статье объясняется, как можно использовать управление доступом на основе ролей (RBAC) для создания запросов на поддержку на портале Azure и управления ими.
 
-## <a name="getting-started"></a>Приступая к работе
+## <a name="getting-started"></a>Начало работы
 
 Если возникла такая ситуация, как в описанном выше примере, вы можете создать запрос на поддержку для ресурса, если владелец подписки назначил вам пользовательские роли RBAC.
 [Настраиваемые роли RBAC](https://azure.microsoft.com/documentation/articles/role-based-access-control-custom-roles/) можно создавать с помощью Azure PowerShell, интерфейса командной строки (CLI) Azure и интерфейса REST API.
@@ -89,7 +89,7 @@ ms.locfileid: "57792486"
 
 7. Если он нажмет "Новый запрос в службу поддержки" в колонке "Справка и поддержка", то сможет создать запросы на поддержку для Visual Studio Ultimate с подпиской MSDN.
 
-    ![Новый запрос на техническую поддержку](./media/create-manage-support-requests-using-access-control/new-support-request.png)
+    ![Новый запрос в службу поддержки](./media/create-manage-support-requests-using-access-control/new-support-request.png)
 
 8. Щелкнув "Все запросы на поддержку", Дмитрий может просмотреть список запросов на поддержку, созданных для этой подписки. ![Представление сведений об обращении](./media/create-manage-support-requests-using-access-control/case-details-view.png)
 

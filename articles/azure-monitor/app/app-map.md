@@ -14,11 +14,11 @@ ms.date: 03/15/2019
 ms.reviewer: sdash
 ms.author: mbullwin
 ms.openlocfilehash: 89aa5006882680205816e7e5d1e7e55b9c4b2ab0
-ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59678553"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60693417"
 ---
 # <a name="application-map-triage-distributed-applications"></a>Схема приложений: рассмотрение распределенных приложений
 
@@ -58,7 +58,7 @@ ms.locfileid: "59678553"
 
 ![Снимок экрана с интерфейсом анализа сбоев](media/app-map/failures.png)
 
-### <a name="investigate-performance"></a>Исследование производительности
+### <a name="investigate-performance"></a>Анализ работы
 
 Чтобы устранить неполадки с производительностью, нажмите кнопку **Анализ работы**.
 
@@ -66,7 +66,7 @@ ms.locfileid: "59678553"
 
 ![Снимок экрана с интерфейсом анализа производительности](media/app-map/performance.png)
 
-### <a name="go-to-details"></a>Переход к сведениям
+### <a name="go-to-details"></a>Перейти к сведениям
 
 Выберите **Перейти к сведениям**, чтобы просмотреть сведения о сквозных транзакциях в интерфейсе с представлениями, которые включают данные с уровня стека вызовов.
 

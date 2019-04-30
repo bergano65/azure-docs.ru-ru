@@ -10,11 +10,11 @@ ms.date: 12/07/2018
 ms.author: lahugh
 ms.custom: seodec18
 ms.openlocfilehash: 912e3342b4e8031b4404dffb56f1add2cc705f8e
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57772591"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60721765"
 ---
 # <a name="overview-of-batch-apis-and-tools"></a>Общие сведения об API-интерфейсах и средствах пакетной службы
 
@@ -37,7 +37,7 @@ ms.locfileid: "57772591"
 
 Приложения и службы могут напрямую вызывать REST API или использовать следующие клиентские библиотеки для выполнения рабочих нагрузок пакетной службы Azure и управления ими.
 
-| API | Справочник по API | Download (Скачать) | Учебник | Примеры кода | Подробнее |
+| API | Справочные материалы по API | Download (Скачать) | Учебник | Примеры кода | Подробнее |
 | --- | --- | --- | --- | --- | --- |
 | **Пакетная служба (REST)** |[docs.microsoft.com][batch_rest] |Н/Д |- |- | [Поддерживаемые версии](/rest/api/batchservice/batch-service-rest-api-versioning) |
 | **Пакетная служба (.NET)** |[docs.microsoft.com][api_net] |[NuGet][api_net_nuget] |[Руководство](tutorial-parallel-dotnet.md) |[GitHub][api_sample_net] | [Заметки о выпуске](https://aka.ms/batch-net-dataplane-changelog) |
@@ -49,7 +49,7 @@ ms.locfileid: "57772591"
 
 API-интерфейсы Azure Resource Manager для пакетной службы предоставляют программный доступ к учетным записям пакетной службы. Применяя эти API, можно программно управлять учетными записями пакетной службы, квотами, пакетами приложений и другими ресурсами через поставщик Microsoft.Batch.  
 
-| API | Справочник по API | Download (Скачать) | Учебник | Примеры кода |
+| API | Справочные материалы по API | Download (Скачать) | Учебник | Примеры кода |
 | --- | --- | --- | --- | --- |
 | **REST для управления пакетной службой** |[docs.microsoft.com][api_rest_mgmt] |Н/Д |- |[GitHub](https://github.com/Azure-Samples/batch-dotnet-manage-batch-accounts) |
 | **Библиотека .NET для управления пакетной службой** |[docs.microsoft.com][api_net_mgmt] |[NuGet][api_net_mgmt_nuget] | [Руководство](batch-management-dotnet.md) |[GitHub][api_sample_net] |

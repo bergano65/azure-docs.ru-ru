@@ -15,11 +15,11 @@ ms.workload: infrastructure-services
 ms.date: 02/23/2017
 ms.author: subsarma
 ms.openlocfilehash: c2ef842fd62ef060f06536d66387c3facd0627b5
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57994690"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60640384"
 ---
 # <a name="use-dynamic-dns-to-register-hostnames-in-your-own-dns-server"></a>Использование DDNS для регистрации имен узлов на собственном DNS-сервере
 
@@ -35,7 +35,7 @@ ms.locfileid: "57994690"
 ## <a name="linux-clients"></a>Клиенты Linux
 Клиенты Linux обычно не регистрируются на DNS-сервере при запуске — предполагается, что это делает DHCP-сервер. DHCP-серверы Azure не имеют учетных данных для регистрации записей на вашем DNS-сервере. Для отправки обновлений DDNS можно использовать инструмент `nsupdate`, который входит в пакет Bind. Так как протокол DDNS является стандартизованным, инструмент `nsupdate` можно применять даже в том случае, если Bind не используется на DNS-сервере.
 
-Чтобы создавать и поддерживать записи имени узла на DNS-сервере, можно использовать обработчики, предоставляемые DHCP-клиентом. Во время цикла DHCP клиент выполняет скрипты в расположении */etc/dhcp/dhclient-exit-hooks.d/*. Эти обработчики можно использовать для регистрации нового IP-адреса с помощью `nsupdate`. Например: 
+Чтобы создавать и поддерживать записи имени узла на DNS-сервере, можно использовать обработчики, предоставляемые DHCP-клиентом. Во время цикла DHCP клиент выполняет скрипты в расположении */etc/dhcp/dhclient-exit-hooks.d/*. Эти обработчики можно использовать для регистрации нового IP-адреса с помощью `nsupdate`. Пример.
 
 ```bash
 #!/bin/sh

@@ -15,11 +15,11 @@ ms.reviewer: vanto
 manager: craigg
 ms.date: 04/08/2019
 ms.openlocfilehash: 6ada2a5e505bfe37f4f9a956570d8b6f38f55e55
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59357428"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60702933"
 ---
 # <a name="get-started-with-azure-sql-database-managed-instance-auditing"></a>Начало работы с аудитом управляемого экземпляра Базы данных SQL Azure
 
@@ -74,7 +74,7 @@ ms.locfileid: "59357428"
 
         - Настройте SAS следующим образом.
 
-          - **Допустимые службы**: BLOB-объект
+          - **Допустимые службы**: BLOB-объекты
 
           - **Дата начала**: чтобы избежать проблем, связанных с часовыми поясами, выберите вчерашний день.
 

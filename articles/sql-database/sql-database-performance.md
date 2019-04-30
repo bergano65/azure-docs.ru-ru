@@ -6,17 +6,18 @@ ms.subservice: performance
 ms.custom: ''
 ms.devlang: ''
 ms.topic: conceptual
-author: danimir
-ms.author: danil
+author: WenJason
+ms.author: v-jay
 ms.reviewer: jrasnik, carlrab
-manager: craigg
-ms.date: 01/25/2019
+manager: digimobile
+origin.date: 01/25/2019
+ms.date: 02/25/2019
 ms.openlocfilehash: adbccd5f9cfd5ddd1912e304f800f3ebe04912c7
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55453014"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60584834"
 ---
 # <a name="monitor-and-improve-performance"></a>Мониторинг и повышение производительности
 
@@ -63,7 +64,7 @@ ms.locfileid: "55453014"
 
 Базы данных SQL Azure могут автоматически настраивать производительность, применяя [рекомендации по производительности](sql-database-advisor.md). Чтобы узнать больше, прочитайте статью [Автоматическая настройка](sql-database-automatic-tuning.md). Кроме того, вы можете узнать, [как включить автоматическую настройку](sql-database-automatic-tuning-enable.md).
 
-## <a name="query-performance-insight"></a>анализ производительности запросов
+## <a name="query-performance-insight"></a>Сведения о производительности запросов
 
 [Анализ производительности запросов](sql-database-query-performance.md) позволяет тратить меньше времени на устранение неполадок с производительностью базы данных, предоставляя следующие возможности.
 

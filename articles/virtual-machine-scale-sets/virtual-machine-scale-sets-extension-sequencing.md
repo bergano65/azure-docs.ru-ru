@@ -16,11 +16,11 @@ ms.topic: article
 ms.date: 01/30/2019
 ms.author: manayar
 ms.openlocfilehash: 2e5dfda16c4828b3113fc50d4cffc79fe6ff19e8
-ms.sourcegitcommit: ba035bfe9fab85dd1e6134a98af1ad7cf6891033
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/01/2019
-ms.locfileid: "55564006"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60620178"
 ---
 # <a name="sequence-extension-provisioning-in-virtual-machine-scale-sets"></a>Подготовка последовательности расширений в масштабируемых наборах виртуальных машин
 Расширения виртуальных машин Azure предоставляют такие возможности, как настройка и управление после развертывания, мониторинг, безопасность и многое другое. Для достижения желаемых результатов в рабочих развертываниях обычно используется сочетание нескольких расширений, настроенных для экземпляров виртуальной машины.
@@ -29,7 +29,7 @@ ms.locfileid: "55564006"
 
 В этой статье описывается порядок настройки расширений для экземпляров виртуальных машин в масштабируемых наборах виртуальных машин.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Для работы с этой статьей нужны знания в следующих областях:
 -   [Расширениями](../virtual-machines/extensions/overview.md) виртуальной машины Azure.
 -   [Изменением](virtual-machine-scale-sets-upgrade-scale-set.md) масштабируемых наборов виртуальных машин.
@@ -255,5 +255,5 @@ az vmss extension set \
 ### <a name="not-able-to-remove-extensions"></a>Не удается удалить расширения
 Убедитесь, что удаляемые расширения не перечислены в разделе provisionAfterExtensions для других расширений.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Узнайте, как [развертывать приложение](virtual-machine-scale-sets-deploy-app.md) в масштабируемых наборах виртуальных машин.

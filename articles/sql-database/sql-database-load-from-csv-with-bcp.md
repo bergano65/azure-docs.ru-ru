@@ -7,17 +7,18 @@ ms.subservice: data-movement
 ms.custom: ''
 ms.devlang: ''
 ms.topic: conceptual
-author: CarlRabeler
-ms.author: carlrab
+author: WenJason
+ms.author: v-jay
 ms.reviewer: carlrab
-manager: craigg
-ms.date: 01/25/2019
+manager: digimobile
+origin.date: 01/25/2019
+ms.date: 03/04/2019
 ms.openlocfilehash: 8d0d81d9c140c15f2e60d3f6e3033a8b0b629228
-ms.sourcegitcommit: 39397603c8534d3d0623ae4efbeca153df8ed791
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56100923"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60702475"
 ---
 # <a name="load-data-from-csv-into-azure-sql-database-flat-files"></a>Загрузка данных из CSV-файла в базу данных SQL Azure (неструктурированные файлы)
 
@@ -25,7 +26,7 @@ ms.locfileid: "56100923"
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
-### <a name="prerequisites"></a>Предварительные требования
+### <a name="prerequisites"></a>Технические условия
 
 Для выполнения задач из этой статьи необходимо следующее:
 
@@ -114,7 +115,7 @@ sqlcmd.exe -S <server name> -d <database name> -U <username> -P <password> -I -Q
 | 20151101 |4. |2 |
 | 20151201 |4. |2 |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Миграция базы данных SQL Server описана в статье [Миграция базы данных SQL Server в базу данных SQL в облаке](sql-database-single-database-migrate.md).
 
@@ -124,3 +125,4 @@ sqlcmd.exe -S <server name> -d <database name> -U <username> -P <password> -I -Q
 
 <!--Other Web references-->
 [Microsoft Download Center]: https://www.microsoft.com/download/details.aspx?id=36433
+<!--Update_Description: update metadata-->

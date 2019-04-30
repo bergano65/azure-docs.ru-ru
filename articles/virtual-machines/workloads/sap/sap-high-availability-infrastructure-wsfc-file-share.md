@@ -18,11 +18,11 @@ ms.date: 05/05/2017
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 58cd76e93b9d0888211e8339ae17170685e71e74
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58480016"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60637760"
 ---
 # <a name="prepare-azure-infrastructure-for-sap-high-availability-by-using-a-windows-failover-cluster-and-file-share-for-sap-ascsscs-instances"></a>Подготовка высокодоступной инфраструктуры Azure для SAP с помощью отказоустойчивого кластера Windows и файлового ресурса для экземпляров SAP ASCS/SCS
 
@@ -209,7 +209,7 @@ ms.locfileid: "58480016"
 
 В этой статье документе описываются шаги по подготовке инфраструктуры Azure, необходимые для установки и настройки высокодоступных систем SAP в отказоустойчивом кластере Windows (WSFC) с использованием масштабируемого файлового ресурса для кластеризации экземпляров SAP ASCS/SCS.
 
-## <a name="prerequisite"></a>Предварительные требования
+## <a name="prerequisite"></a>Необходимое условие
 
 Прежде чем начать установку, ознакомьтесь со следующей статьей:
 

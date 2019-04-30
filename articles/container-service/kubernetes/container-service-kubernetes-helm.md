@@ -10,11 +10,11 @@ ms.date: 04/10/2017
 ms.author: saudas
 ms.custom: mvc
 ms.openlocfilehash: 05edbf40e8cd5f8edbdc8b74b540962b1a25c8de
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52997883"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60712312"
 ---
 # <a name="deprecated-use-helm-to-deploy-containers-on-a-kubernetes-cluster"></a>(УСТАРЕЛО) Использование Helm для развертывания контейнеров в кластере Kubernetes
 
@@ -30,7 +30,7 @@ Helm состоит из двух компонентов:
 
 * **Tiller** — сервер, который выполняется в кластере Kubernetes и управляет жизненным циклом приложений Kubernetes. 
  
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * [Создание кластера Kubernetes](container-service-kubernetes-walkthrough.md) в Службе контейнеров Azure
 
@@ -149,7 +149,7 @@ sudo mysql –h v1-mariadb
  
  
  
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения об управлении чартами Kubernetes см. в [документации по Helm](https://github.com/kubernetes/helm/blob/master/docs/index.md). 
 

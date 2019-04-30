@@ -2,7 +2,6 @@
 title: Пример машинного обучения с использованием Spark MLlib в HDInsight — Azure
 description: Узнайте, как использовать Spark MLlib для создания приложения машинного обучения, которое анализирует набор данных с помощью классификации посредством логистической регрессии.
 keywords: машинное обучение spark, пример машинного обучения spark
-services: hdinsight
 author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
@@ -10,12 +9,12 @@ ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 02/26/2019
 ms.author: hrasheed
-ms.openlocfilehash: bf29fd8d9b707636fb5965669ad800517a6cf58f
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: MT
+ms.openlocfilehash: 31755dcc247ea3be5fb38249afd98dc72dcbc544
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58075567"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62097105"
 ---
 # <a name="use-apache-spark-mllib-to-build-a-machine-learning-application-and-analyze-a-dataset"></a>Использование Apache Spark MLlib для создания приложения машинного обучения и анализа набора данных
 
@@ -23,7 +22,7 @@ ms.locfileid: "58075567"
 
 MLlib — это основная библиотека Spark, содержащая множество служебных программ, которые подходят для задач машинного обучения, в частности:
 
-* классификация;
+* Классификация
 * Регрессия
 * Кластеризация
 * тематического моделирования;
@@ -200,12 +199,12 @@ MLlib — это основная библиотека Spark, содержаща
 
     Чтобы спрогнозировать результат проверки пищевых продуктов, вам нужно разработать модель для анализа нарушений. Логистическая регрессия является методом двоичной классификации, а значит, данные целесообразно разделить на две категории: **Fail** и **Pass**.
 
-   - Pass;
-       - Pass;
+   - Этап
+       - Этап
        - Pass w/ conditions;
-   - Fail;
-       - Fail;
-   - Игнорировать
+   - Ошибка
+       - Ошибка
+   - Отменить
        - Business not located;
        - Out of Business.
 

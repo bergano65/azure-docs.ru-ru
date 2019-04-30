@@ -12,11 +12,11 @@ author: nabhishek
 ms.author: abnarain
 manager: craigg
 ms.openlocfilehash: 2c674f77ef0f779c9764771e2e0ae7a4aea47548
-ms.sourcegitcommit: 30a0007f8e584692fe03c0023fe0337f842a7070
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57575228"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60622113"
 ---
 # <a name="transform-data-in-azure-data-factory"></a>Преобразование данных в фабрике данных Azure
 > [!div class="op_single_selector"]
@@ -60,10 +60,10 @@ ms.locfileid: "57575228"
 
 Дополнительные сведения об этих действиях машинного обучения см. в разделе [Создание прогнозных конвейеров с помощью действий машинного обучения Azure](transform-data-using-machine-learning.md). 
 
-## <a name="stored-procedure-activity"></a>Действие хранимой процедуры
+## <a name="stored-procedure-activity"></a>Операция хранимой процедуры
 С помощью действия "Хранимая процедура SQL Server" в конвейере Фабрики данных можно вызвать хранимую процедуру в одном из таких хранилищ данных: База данных Azure SQL, Хранилище данных SQL Azure, база данных SQL Server в вашей организации или на виртуальной машине Azure. Дополнительные сведения см. в статье [Преобразование данных с помощью действия хранимой процедуры SQL Server в фабрике данных Azure](transform-data-using-stored-procedure.md).  
 
-## <a name="data-lake-analytics-u-sql-activity"></a>Действие U-SQL Data Lake Analytics
+## <a name="data-lake-analytics-u-sql-activity"></a>Действия U-SQL Data Lake Analytics
 Действие U-SQL Data Lake Analytics запускает скрипт U-SQL для кластера Azure Data Lake Analytics. Дополнительные сведения см. в статье [Преобразование данных с помощью сценариев U-SQL в Azure Data Lake Analytics](transform-data-using-data-lake-analytics.md). 
 
 ## <a name="databricks-notebook-activity"></a>Действие Notebook в Databricks
@@ -78,7 +78,7 @@ ms.locfileid: "57575228"
 
 Действие Python в Azure Databricks в конвейере Фабрики данных позволяет запустить файл Python в кластере Azure Databricks. Azure Databricks — это управляемая платформа для запуска Apache Spark. См. раздел [Преобразование данных с помощью выполнения действий Python в Azure Databricks](transform-data-databricks-python.md).
 
-## <a name="custom-activity"></a>Настраиваемое действие
+## <a name="custom-activity"></a>Пользовательская операция
 Если вам нужно преобразовать данные способом, который не поддерживается фабрикой данных Azure, то можно создать настраиваемое действие с собственной логикой обработки данных и использовать это действие в конвейере. Можно настроить запуск настраиваемого действия .NET с помощью пакетной службы Azure или кластера HDInsight. Дополнительные сведения см. в разделе [Использование настраиваемых действий в конвейере фабрики данных Azure](transform-data-using-dotnet-custom-activity.md). 
 
 Можно создать настраиваемое действие для выполнения сценариев R в кластере HDInsight, где установлена среда R. Ознакомьтесь с примером в репозитории GitHub [Run R Script using Azure Data Factory](https://github.com/Azure/Azure-DataFactory/tree/master/Samples/RunRScriptUsingADFSample) (Запуск сценария R с помощью фабрики данных Azure). 

@@ -16,11 +16,11 @@ ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: it-pro
 ms.openlocfilehash: f505f922685cd192525814df25cca1a1401d2913
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59281222"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60749331"
 ---
 # <a name="built-in-roles-for-azure-resources"></a>Встроенные роли для ресурсов Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "59281222"
 В таблице ниже содержится краткое описание каждой из встроенных ролей. Щелкните имя роли, чтобы просмотреть список `Actions`, `NotActions`, `DataActions` и `NotDataActions` для каждой роли. Сведения о значении этих действий и как они применяются в области управления и области данных см. в статье [Общие сведения об определениях ролей для ресурсов Azure](role-definitions.md).
 
 
-| Встроенные роли | ОПИСАНИЕ |
+| Встроенные роли | Описание |
 | --- | --- |
 | [Владелец](#owner) | Позволяет управлять всем, в том числе доступом к ресурсам. |
 | [Участник](#contributor) | Позволяет управлять всем, кроме доступа к ресурсам. |

@@ -11,11 +11,11 @@ ms.service: azure-blockchain
 ms.reviewer: zeyadr
 manager: femila
 ms.openlocfilehash: 2df0fea4d1dbdfb532cff663ceabfef80d61fe45
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57994396"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60867965"
 ---
 # <a name="manage-users-in-azure-blockchain-workbench"></a>Управление пользователями в Azure Blockchain Workbench
 
@@ -87,11 +87,11 @@ Azure Blockchain Workbench использует Azure Active Directory (Azure AD
 1. Выберите плитку участника, чтобы отобразить список текущих участников.
 2. Выберите **Добавить участников**.
 
-    ![Добавление членов](./media/manage-users/application-add-members.png)
+    ![Добавить участников](./media/manage-users/application-add-members.png)
 
 3. Найдите имя пользователя.  В списке будут представлены только пользователи Azure AD, которые есть в клиенте Blockchain Workbench. Если пользователь не найден, вам необходимо [добавить пользователей Azure AD](#add-azure-ad-users).
 
-    ![Добавление членов](./media/manage-users/find-user.png)
+    ![Добавить участников](./media/manage-users/find-user.png)
 
 4. В раскрывающемся меню выберите **роль**.
 

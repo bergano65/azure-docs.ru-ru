@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/09/2018
 ms.author: alkohli
-ms.openlocfilehash: bc1e8a5abc85af95448570497177030f17649d87
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: b968cc29a7139a4a6db5d2dea8dd6f8f4e1c7ccd
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58877590"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60630791"
 ---
 # <a name="configure-mpio-on-a-storsimple-host-running-centos"></a>Настройка MPIO на узле StorSimple под управлением CentOS
 В этой статье описаны этапы настройки многоканального ввода-вывода (MPIO) на сервере узла под управлением CentOS 6.6. Сервер узла подключен к устройству Microsoft Azure StorSimple через инициаторы iSCSI для обеспечения высокой доступности. Здесь также подробно описано автоматическое обнаружение устройств с поддержкой нескольких каналов ввода-вывода и приведены настройки для томов StorSimple.
@@ -420,7 +420,7 @@ ms.locfileid: "58877590"
 Дополнительные сведения см. в статье об [использовании интерактивной команды для устранения неполадок многоканального ввода-вывода](http://www.centos.org/docs/5/html/5.1/DM_Multipath/multipath_config_confirm.html).
 
 ## <a name="list-of-useful-commands"></a>Список полезных команд
-| При появлении запроса на подтверждение нажмите клавишу  | Команда | ОПИСАНИЕ |
+| При появлении запроса на подтверждение нажмите клавишу  | Команда | Описание |
 | --- | --- | --- |
 | **iSCSI** |`service iscsid start` |Запуск службы iSCSI |
 | &nbsp; |`service iscsid stop` |Остановка службы iSCSI |

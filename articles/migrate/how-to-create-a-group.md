@@ -7,11 +7,11 @@ ms.topic: article
 ms.date: 11/28/2018
 ms.author: raynew
 ms.openlocfilehash: c11d2f22fa08417107b0eecdd902b4521410b358
-ms.sourcegitcommit: 1c1f258c6f32d6280677f899c4bb90b73eac3f2e
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/11/2018
-ms.locfileid: "53252428"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60544929"
 ---
 # <a name="group-machines-for-assessment"></a>Группирование компьютеров для оценки
 
@@ -30,7 +30,7 @@ ms.locfileid: "53252428"
 
 После создания группы ее можно изменить, выбрав группу на странице **Группы**, а затем добавив или удалив компьютеры.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Узнайте, как использовать [сопоставление зависимостей компьютеров](how-to-create-group-machine-dependencies.md), чтобы создать группы с высокой достоверностью.
 - [Узнайте больше](concepts-assessment-calculation.md) о вычислении оценок.

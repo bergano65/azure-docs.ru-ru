@@ -10,11 +10,11 @@ ms.topic: article
 ms.date: 02/27/2019
 ms.author: ellacroi
 ms.openlocfilehash: 516cb10fe368334d8fe30d998857d0688dcae972
-ms.sourcegitcommit: c712cb5c80bed4b5801be214788770b66bf7a009
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57220742"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60726913"
 ---
 # <a name="cloud-solution-providers"></a>Поставщики облачных решений
 
@@ -28,11 +28,11 @@ ms.locfileid: "57220742"
 
 | **Тип предложения**    | **BYOL**  |  **Бесплатный** | **(PAYG)**   |
 | :---------------- | :---------|:----------|:-----------|
-| Виртуальные машины  | Yes | Да | Yes |
-| Контейнеры | Н/Д | Yes | Н/Д |
-| Шаблоны решений | Н/Д | Yes | Н/Д |
-| Управляемые приложения | Н/Д | Yes | Yes |
-| ИТ-решение SaaS (модель ценообразования сайта) | Н/Д | Yes | Yes |
+| Виртуальные машины  | Да | Да | Да |
+| Контейнеры | Н/Д | Да | Н/Д |
+| Шаблоны решений | Н/Д | Да | Н/Д |
+| Управляемые приложения | Н/Д | Да | Да |
+| ИТ-решение SaaS (модель ценообразования сайта) | Н/Д | Да | Да |
 |   |   |   |
 
 ## <a name="how-to-opt-in"></a>Как согласиться

@@ -16,13 +16,13 @@ ms.date: 05/16/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 8b5ec711f0e43d9d29d962d43ed8b1d86338db87
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: MT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57881220"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62114936"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-xmatters-ondemand"></a>Руководство. Интеграция Azure Active Directory с xMatters OnDemand
+# <a name="tutorial-azure-active-directory-integration-with-xmatters-ondemand"></a>Руководство по Интеграция Azure Active Directory с xMatters OnDemand
 
 В этом руководстве описано, как интегрировать xMatters OnDemand с Azure Active Directory (Azure AD).
 
@@ -66,11 +66,11 @@ ms.locfileid: "57881220"
 
 1. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
 
-    ![ПРИЛОЖЕНИЯ][2]
+    ![Приложения][2]
     
 1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![ПРИЛОЖЕНИЯ][3]
+    ![Приложения][3]
 
 1. В поле поиска введите **xMatters OnDemand**.
 

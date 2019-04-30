@@ -12,11 +12,11 @@ ms.date: 03/15/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=fboylu, previous-ms.author=fboylu
 ms.openlocfilehash: e2f0f1e7ac8f510c4ff5be7933c55278fef74694
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57885442"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60715660"
 ---
 # <a name="technical-guide-to-the-cortana-intelligence-solution-template-for-predictive-maintenance-in-aerospace"></a>Техническое руководство по шаблону решения Cortana Intelligence для прогнозируемого обслуживания в аэрокосмических компаниях
 
@@ -69,7 +69,7 @@ ms.locfileid: "57885442"
 С помощью [службы "Машинное обучение Azure"](https://azure.microsoft.com/services/machine-learning/) (оркестрация с помощью фабрики данных Azure) создайте прогнозы на оставшийся период эксплуатации (RUL) конкретного двигателя самолета с учетом полученных входных данных. 
 
 ## <a name="data-publishing"></a>Публикация данных
-### <a name="azure-sql-database"></a>Базы данных SQL Azure
+### <a name="azure-sql-database"></a>База данных SQL Azure
 С помощью службы [База данных SQL Azure](https://azure.microsoft.com/services/sql-database/) сохраняйте прогнозы, полученные службой "Машинное обучение Azure", которые затем будут использоваться на панели мониторинга [Power BI](https://powerbi.microsoft.com).
 
 ## <a name="data-consumption"></a>Использование данных

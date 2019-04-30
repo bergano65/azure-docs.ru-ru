@@ -8,11 +8,11 @@ ms.topic: article
 ms.date: 12/06/2018
 ms.author: dacoulte
 ms.openlocfilehash: f94cec7919edc6cf6ebb6618d38b8591feb1278b
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59796092"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60683246"
 ---
 # <a name="overview-of-management-services-in-azure"></a>Обзор служб управления в Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "59796092"
 
 В следующих разделах кратко описаны разные области управления и предоставлены ссылки на подробные материалы об основных службах Azure.
 
-## <a name="monitor"></a>Мониторинг
+## <a name="monitor"></a>Монитор
 
 Мониторинг — это процесс сбора и анализа данных для аудита производительности, работоспособности и доступности ресурсов. Эффективная стратегия мониторинга поможет вам понять работу компонентов и увеличить время работы с уведомлениями. Дополнительные сведения о мониторинге см. в статье [Общие сведения о службе Azure Monitor](../monitoring/monitoring-overview.md).
 

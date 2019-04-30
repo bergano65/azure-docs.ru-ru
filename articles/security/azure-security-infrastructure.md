@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 07/06/2018
 ms.author: terrylan
 ms.openlocfilehash: dc9b4db37e811d8bac6df2d532fd3629d98c9650
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56104780"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60586578"
 ---
 # <a name="azure-infrastructure-security"></a>Безопасность инфраструктуры Azure
 Microsoft Azure работает в центрах обработки данных, управляемых и обслуживаемых корпорацией Майкрософт. Эти географически распределенные центры обработки данных соответствуют основным отраслевым стандартам обеспечения безопасности и надежности, например ISO/IEC 27001:2013 и NIST SP 800-53. Контроль, управление и администрирование центров обработки данных осуществляется операционным персоналом Майкрософт. Наши специалисты имеют многолетний опыт обслуживания крупнейшей в мире сети веб-служб с круглосуточным доступом.
@@ -51,7 +51,7 @@ Microsoft Azure работает в центрах обработки данны
 
 Убедитесь, что вы понимаете разделение обязанностей между вами и корпорацией Майкрософт в развертывании SaaS, PaaS и IaaS. Дополнительные сведения см. на странице [общих обязанностей для облачных вычислений](https://gallery.technet.microsoft.com/Shared-Responsibilities-81d0ff91/file/153019/1/Shared%20responsibilities%20for%20cloud%20computing.pdf).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о действиях корпорации Майкрософт для защиты инфраструктуры Azure приведены в следующих статьях:
 
 - [Объекты, локальная среда и физическая безопасность в Azure](azure-physical-security.md)

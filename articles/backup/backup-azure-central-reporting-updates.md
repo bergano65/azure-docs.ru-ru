@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 01/30/2019
 ms.author: kasinh
 ms.openlocfilehash: 87bc7ed3bb59266484858f534080fa87a7230981
-ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55293967"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60641967"
 ---
 # <a name="update-the-azure-backup-central-reporting-content-pack"></a>Обновление пакета содержимого централизованных отчетов службы Azure Backup 
 
@@ -28,7 +28,7 @@ ms.locfileid: "55293967"
 Рекомендуется импортировать пакет содержимого в [настраиваемую рабочую область](https://youtu.be/26zyOtyHPJM?t=1m57s). Теперь отчеты можно редактировать.
 Как упоминалось ранее, при изменении пакета содержимого в Power BI появится уведомление. Можно выбрать вариант с задержкой получения пакета содержимого. 
 
-## <a name="coming-soon"></a>Скоро
+## <a name="coming-soon"></a>Ожидается в ближайшее время
    
 Обновление пакета содержимого службы Azure Backup выполняется для того, чтобы поддерживать дополнительные рабочие нагрузки. В рабочие нагрузки включена архивация виртуальных машин Базы данных SQL Azure для IaaS и System Center Data Protection Manager. Данная поддержка будет добавлена для службы Azure Backup и архивных копий виртуальных машин Azure. Это значит, что просмотр и анализ всех данных архивации можно выполнять в одном централизованном месте. [Отчеты также можно настроить](https://youtu.be/26zyOtyHPJM) в соответствии с потребностями организации.
 
@@ -42,16 +42,16 @@ ms.locfileid: "55293967"
 
 ![Выставление счетов](./media/backup-azure-central-reporting/AzBackup-Central-Reporting-Billing.png)
 
-### <a name="compliance"></a>Соответствие нормативным требованиям
+### <a name="compliance"></a>Соответствие требованиям
 
-![Соответствие нормативным требованиям](./media/backup-azure-central-reporting/AzBackup-Central-Reporting-Compliance.png)
+![Соответствие требованиям](./media/backup-azure-central-reporting/AzBackup-Central-Reporting-Compliance.png)
 
 ### <a name="storage"></a>Хранилище
 
 ![Хранилище](./media/backup-azure-central-reporting/AzBackup-Central-Reporting-Storage.png)
 
-### <a name="backup-items"></a>Архивные элементы
-![Архивные элементы](./media/backup-azure-central-reporting/AzBackup-Central-Reporting-BackupItem.png)
+### <a name="backup-items"></a>Элементы архивации
+![Элементы архивации](./media/backup-azure-central-reporting/AzBackup-Central-Reporting-BackupItem.png)
 
 ### <a name="alerts"></a>Оповещения
 
@@ -62,7 +62,7 @@ ms.locfileid: "55293967"
 ![Задания](./media/backup-azure-central-reporting/AzBackup-Central-Reporting-Jobs.png)
     
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Видеоролик [How to share reports using email | Azure Backup Tips and Tricks](https://youtu.be/26zyOtyHPJM) (Как обмениваться отчетами по электронной почте | Советы и хитрости службы Azure Backup)
 * [Часто задаваемые вопросы о службе архивации Azure](backup-azure-backup-faq.md)

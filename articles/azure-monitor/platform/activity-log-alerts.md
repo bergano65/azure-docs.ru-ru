@@ -9,11 +9,11 @@ ms.date: 09/17/2018
 ms.author: vinagara
 ms.subservice: alerts
 ms.openlocfilehash: 3459ef4caa99a2147144354165bef7d2852e87cc
-ms.sourcegitcommit: 9999fe6e2400cf734f79e2edd6f96a8adf118d92
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/22/2019
-ms.locfileid: "54433369"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60777820"
 ---
 # <a name="alerts-on-activity-log"></a>Оповещения на основе журнала действий 
 
@@ -60,10 +60,9 @@ ms.locfileid: "54433369"
 Дополнительные сведения о группах действия см. в статье [Создание групп действий и управление ими на портале Azure](../../azure-monitor/platform/action-groups.md).
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Ознакомьтесь с [обзором оповещений](../../azure-monitor/platform/alerts-overview.md).
 - Узнайте, как [создавать и изменять оповещения для журнала действий](../../azure-monitor/platform/alerts-activity-log.md).
 - Просмотрите схему веб-перехватчика оповещений журнала действий в статье [Объекты webhook для оповещений журнала действий Azure](activity-log-alerts-webhook.md).
 - Дополнительные сведения об уведомлениях о работоспособности службы см. в [этой статье](../../azure-monitor/platform/service-notifications.md).
-
 

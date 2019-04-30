@@ -14,11 +14,11 @@ ms.topic: conceptual
 ms.date: 08/16/2018
 ms.author: bwren
 ms.openlocfilehash: 07d0866bd697587da170a00e8077a57035989d32
-ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56269422"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60594000"
 ---
 # <a name="creating-charts-and-diagrams-from-azure-monitor-log-queries"></a>Создание диаграмм и схем из запросов журнала Azure Monitor
 
@@ -92,7 +92,7 @@ SecurityEvent
 
 ![Гистограмма AccountType](media/charts/charts-and-diagrams-multiDimension2.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 Ознакомьтесь с другими статьями по использованию [языка запросов Kusto](/azure/kusto/query/) с данными журналов Azure Monitor.
 
 - [Работа со строками](string-operations.md)

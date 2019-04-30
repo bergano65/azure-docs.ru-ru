@@ -13,18 +13,18 @@ ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: mbullwin
 ms.openlocfilehash: c77b5810164aef7508f717a0f75d90cf6cba2089
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59273113"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60691381"
 ---
 # <a name="set-up-application-insights-dependency-tracking"></a>Настройка Application Insights: отслеживание зависимостей
 *Зависимость* – это внешний компонент, который вызывается приложением. Как правило, это служба, вызываемая с использованием HTTP, база данных или файловая система. [Application Insights](../../azure-monitor/app/app-insights-overview.md) измеряет время, в течение которого приложение ожидает зависимости, и определяет, как часто происходит сбой вызова зависимости. Можно изучить определенные вызовы и установить их взаимосвязь с теми или иными запросами и исключениями.
 
 Сейчас монитор зависимостей по умолчанию предоставляет отчеты о вызовах зависимостей таких типов:
 
-* сервер;
+* Сервер
   * базы данных SQL;
   * веб-службы и службы WCF ASP.NET, использующие привязки на основе HTTP;
   * локальные или удаленные HTTP-вызовы;
@@ -42,7 +42,7 @@ ms.locfileid: "59273113"
 ## <a name="set-up-dependency-monitoring"></a>Настройка мониторинга зависимостей
 Неполные сведения о зависимостях собираются автоматически [пакетом SDK для Application Insights](asp-net.md). Чтобы получить полные данные, установите соответствующий агент для сервера узла.
 
-| платформа | Install |
+| платформа | Установка |
 | --- | --- |
 | Сервер IIS |[Установите монитор состояний на сервере](../../azure-monitor/app/monitor-performance-live-website-now.md) или [обновите свое приложение до .NET Framework 4.6 или более поздней версии](https://go.microsoft.com/fwlink/?LinkId=528259) и установите в нем [пакет SDK для Application Insights](asp-net.md). |
 | Веб-приложение Azure |На панели управления веб-приложения [откройте колонку "Application Insights"](../../azure-monitor/app/azure-web-apps.md) и при появлении соответствующего запроса выберите "Установить". |
@@ -85,7 +85,7 @@ ms.locfileid: "59273113"
 
 Не имеете представления, куда девается время? [Профилировщик Application Insights](../../azure-monitor/app/profiler.md) трассировки HTTP вызывает активному веб-сайту и показывает, какие функции в коде выполнялись дольше.
 
-## <a name="analytics"></a>Analytics
+## <a name="analytics"></a>Аналитика
 Вы можете отслеживать зависимости, используя [язык запросов Kusto](/azure/kusto/query/). Ниже приведены некоторые примеры.
 
 * Поиск неудачно завершенных вызовов зависимостей:
@@ -158,7 +158,7 @@ ms.locfileid: "59273113"
 
 Просмотрите таблицу ниже и проверьте, правильную ли конфигурацию вы выбрали для мониторинга зависимостей своего приложения.
 
-| платформа | Install |
+| платформа | Установка |
 | --- | --- |
 | Сервер IIS |Либо [установите Монитор состояния на сервер](../../azure-monitor/app/monitor-performance-live-website-now.md), либо [обновите в своем приложении .NET Framework до версии 4.6 (или новее)](https://go.microsoft.com/fwlink/?LinkId=528259) и установите в него [пакет SDK для Application Insights](asp-net.md). |
 | IIS Express. |Вместо этого используйте сервер IIS. |

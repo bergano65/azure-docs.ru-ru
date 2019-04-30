@@ -7,11 +7,11 @@ ms.topic: article
 ms.service: service-health
 ms.date: 11/14/2017
 ms.openlocfilehash: b78c155fb2f3a13c27f4ff71c4dd37df2dbd2f36
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55883055"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60621020"
 ---
 # <a name="configure-service-health-alerts-with-pagerduty"></a>Настройка оповещений о работоспособности служб для PagerDuty
 
@@ -28,9 +28,9 @@ ms.locfileid: "55883055"
 
 1.  В разделе **Integration Settings** (Параметры интеграции) выберите следующее:
 
-    a. **Тип интеграции**: Microsoft Azure.
+    a. **Тип интеграции**: Microsoft Azure
 
-    б) **Имя интеграции**: \<имя\>
+    2. **Имя интеграции**: \<имя\>
 
     ![Раздел параметров интеграции в PagerDuty](./media/webhook-alerts/pagerduty-integration-settings.png)
 
@@ -48,7 +48,7 @@ ms.locfileid: "55883055"
 
     a. **Тип действия:** *webhook*
 
-    б) **Подробности:** **URL-адрес интеграции** для PagerDuty, который вы сохранили ранее.
+    2. **Подробности:** **URL-адрес интеграции** для PagerDuty, который вы сохранили ранее.
 
     c. **Имя:** имя, псевдоним или идентификатор веб-перехватчика.
 
@@ -65,7 +65,7 @@ ms.locfileid: "55883055"
 
     a. **Тип действия:** *webhook*
 
-    б) **Подробности:** **URL-адрес интеграции** для PagerDuty, который вы сохранили ранее.
+    2. **Подробности:** **URL-адрес интеграции** для PagerDuty, который вы сохранили ранее.
 
     c. **Имя:** имя, псевдоним или идентификатор веб-перехватчика.
 
@@ -87,7 +87,7 @@ ms.locfileid: "55883055"
 
 1. Откройте [PagerDuty](https://www.pagerduty.com/) и убедитесь, что интеграция настроена успешно.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Узнайте, [как настроить уведомления веб-перехватчика для существующих систем управления проблемами](service-health-alert-webhook-guide.md).
 - Просмотрите схему веб-перехватчика оповещений журнала действий в статье [Объекты webhook для оповещений журнала действий Azure](../azure-monitor/platform/activity-log-alerts-webhook.md). 
 - Дополнительные сведения об уведомлениях о работоспособности службы см. в [этой статье](../azure-monitor/platform/service-notifications.md).

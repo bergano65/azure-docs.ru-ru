@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 06/29/2018
 ms.author: rkarlin
 ms.openlocfilehash: 6ba21c6eacd5b72d13706c08f0cc9883ccc91388
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58107480"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60704837"
 ---
 # <a name="investigate-incidents-and-alerts-in-azure-security-center-preview"></a>Изучение инцидентов и оповещений в центре безопасности Azure (предварительная версия)
 Этот документ поможет вам использовать функцию изучения в центре безопасности Azure для изучения инцидентов и оповещений системы безопасности.
@@ -38,7 +38,7 @@ ms.locfileid: "58107480"
 ## <a name="how-investigation-works"></a>Как работает изучение
 Изучение происходит при помощи графика, который занимает центральную область панели мониторинга изучения. График всегда ориентирован на конкретную сущность и представляет связанные с ней сущности. Сущность может быть предупреждением системы безопасности, пользователем, компьютером или инцидентом.
 
-![Сопоставление](./media/security-center-investigation/security-center-investigation-fig1.png)
+![Карта](./media/security-center-investigation/security-center-investigation-fig1.png)
 
 Пользователь может перейти от одной сущности к другой, щелкнув ее на графике. График автоматически обновляется для выбранной сущности и связанных с ней сущностей. Сущности, которые больше не являются релевантными, могут быть удалены из графика.
 
@@ -47,7 +47,7 @@ ms.locfileid: "58107480"
 
 ![Путь](./media/security-center-investigation/security-center-investigation-fig2.png)
 
-### <a name="general-information"></a>Общие сведения
+### <a name="general-information"></a>Общая информация
 Когда сущность представлена на графике, на вкладке отображаются дополнительные сведения об этой сущности. На вкладке **Сведения** представлены общие сведения о сущности из различных доступных источников.
 
 ![Общие сведения](./media/security-center-investigation/security-center-investigation-fig3.png)
@@ -68,11 +68,11 @@ ms.locfileid: "58107480"
 
 ![поиска](./media/security-center-investigation/security-center-investigation-fig5.png)
 
-### <a name="exploration"></a>Исследование
+### <a name="exploration"></a>Изучение
 
 Вкладка **Exploration** (Исследование) позволяет исследователю изучать данные, относящиеся к различным проблемам, связанным с сущностью. Например, при изучении компьютера список выполняемых на ней процессов представлен на вкладке исследования. В некоторых случаях вкладка исследования представляет данные, которые дают основание подозревать о существовании проблемы. Исследователь может изучить данные на вкладке или открыть их на экране поиска, чтобы изучить большие наборы данных и использовать расширенные параметры поиска, такие как фильтрация и экспорт в Excel.
 
-![Исследование](./media/security-center-investigation/security-center-investigation-fig6.png)
+![Изучение](./media/security-center-investigation/security-center-investigation-fig6.png)
 
 ### <a name="timeline"></a>Временная шкала
 
@@ -102,7 +102,7 @@ ms.locfileid: "58107480"
 2.  Щелкните **Оповещения системы безопасности** и выберите инцидент, который требуется изучить.
 3.  На странице инцидента нажмите кнопку **Start Investigation** (Начать анализ), после чего появится панель мониторинга **Investigation** (Исследование).
 
-    ![Предупреждение](./media/security-center-investigation/security-center-investigation-fig8.png)
+    ![Оповещение](./media/security-center-investigation/security-center-investigation-fig8.png)
 
 4. На этой панели вы можете выбрать сущность на карте, и соответствующие сведения о сущности появятся в правой части экрана.
 

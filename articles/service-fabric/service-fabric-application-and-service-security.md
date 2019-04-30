@@ -15,11 +15,11 @@ ms.workload: NA
 ms.date: 03/16/2018
 ms.author: aljo
 ms.openlocfilehash: b4d3699c0327bb2771a358d3e3c2921bdc39ee5e
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58670427"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60621570"
 ---
 # <a name="service-fabric-application-and-service-security"></a>Безопасность приложений и служб Service Fabric
 Архитектура микрослужб может обеспечить [множество преимуществ](service-fabric-overview-microservices.md). Тем не менее управление безопасностью микрослужб является непростой задачей и отличается от управления безопасностью традиционных неделимых приложений. 
@@ -28,7 +28,7 @@ ms.locfileid: "58670427"
 
 Эта статья не является руководством по безопасности микрослужбами, в Интернете представлено достаточно таких материалов. В ней описываются различные аспекты безопасности, реализуемые в Service Fabric.
 
-## <a name="authentication-and-authorization"></a>Аутентификация и авторизация
+## <a name="authentication-and-authorization"></a>Проверка подлинности и авторизация
 Часто возникает необходимость ограничить доступ к ресурсам и интерфейсам API службы, предоставив его определенным доверенным пользователям или клиентам. Аутентификация — это процесс надежной проверки подлинности пользователя.  Авторизация — это процесс, который позволяет предоставить интерфейсы API или службы некоторым из аутентифицированных пользователей.
 
 ### <a name="authentication"></a>Authentication

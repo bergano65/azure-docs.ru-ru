@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 06/13/2018
 ms.author: ellacroi
 ms.openlocfilehash: 2755232ea81f1551477431f4eb1f0aeab8b8bfe8
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56734047"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60726658"
 ---
 # <a name="determine-your-publishing-option"></a>Выбор варианта публикации
 Вариант публикации, выбранный для вашего предложения, определяется требованиями соответствия и преимуществами GTM в Marketplace. Что более важно, выбор варианта публикации и типа предложения на портале Cloud Partner определяет, каким образом пользователи будут взаимодействовать с вашим предложением в Marketplace.

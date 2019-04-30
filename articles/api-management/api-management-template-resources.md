@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 01/09/2017
 ms.author: apimpm
 ms.openlocfilehash: 673dcbeb630899eebc328cd4fae16f7fe8f47a55
-ms.sourcegitcommit: 563f8240f045620b13f9a9a3ebfe0ff10d6787a2
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/01/2019
-ms.locfileid: "58757598"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60557891"
 ---
 # <a name="azure-api-management-template-resources"></a>Ресурсы шаблонов управления API Azure
 Служба управления API Azure предоставляет следующие типы ресурсов для использования в шаблонах портала разработчика:  
@@ -47,7 +47,7 @@ ms.locfileid: "58757598"
   
 Поддерживаются следующие параметры локализации:
 
-| Языковой стандарт    | Язык               |
+| Язык    | Язык               |
 |-----------|------------------------|
 | en      | «Английский»              |
 | «cs»      | "Čeština"              |
@@ -112,13 +112,13 @@ ms.locfileid: "58757598"
   
 ###  <a name="ApisStrings"></a> ApisStrings  
   
-|ИМЯ|текст|  
+|ИМЯ|Text|  
 |----------|----------|  
 |PageTitleApis|Интерфейсы API|  
   
 ###  <a name="AppDetailsStrings"></a> AppDetailsStrings  
   
-|ИМЯ|текст|  
+|ИМЯ|Text|  
 |----------|----------|  
 |WebApplicationsDetailsTitle|Предварительная версия приложения|  
 |WebApplicationsRequirementsHeader|Требования|  
@@ -127,29 +127,29 @@ ms.locfileid: "58757598"
   
 ###  <a name="ApplicationListStrings"></a> ApplicationListStrings  
   
-|ИМЯ|текст|  
+|ИМЯ|Text|  
 |----------|----------|  
 |WebDevelopersAppDeleteConfirmation|Вы действительно хотите удалить приложение?|  
 |WebDevelopersAppNotPublished|Не опубликовано|  
-|WebDevelopersAppNotSubmitted|Не отправлено|  
-|WebDevelopersAppTableCategoryHeader|Категория|  
+|WebDevelopersAppNotSubmitted|Не отправлен|  
+|WebDevelopersAppTableCategoryHeader|Category|  
 |WebDevelopersAppTableNameHeader|ИМЯ|  
 |WebDevelopersAppTableStateHeader|Состояние|  
-|WebDevelopersEditLink|Редактирование|  
+|WebDevelopersEditLink|Изменить|  
 |WebDevelopersRegisterAppLink|Регистрация приложения|  
 |WebDevelopersRemoveLink|Удалить|  
-|WebDevelopersSubmitLink|Submit|  
+|WebDevelopersSubmitLink|Отправить|  
 |WebDevelopersYourApplicationsHeader|Ваши приложения|  
   
 ###  <a name="AppStrings"></a> AppStrings  
   
-|ИМЯ|текст|  
+|ИМЯ|Text|  
 |----------|----------|  
-|WebApplicationsHeader|ПРИЛОЖЕНИЯ|  
+|WebApplicationsHeader|Приложения|  
   
 ###  <a name="CommonResources"></a> CommonResources  
   
-|ИМЯ|текст|  
+|ИМЯ|Text|  
 |----------|----------|  
 |NoItemsToDisplay|Результаты отсутствуют.|  
 |GeneralExceptionMessage|Возникла проблема. Возможно, это временный сбой или ошибка. Повторите попытку позже.|  
@@ -160,7 +160,7 @@ ms.locfileid: "58757598"
   
 ###  <a name="CommonStrings"></a> CommonStrings  
   
-|ИМЯ|текст|  
+|ИМЯ|Text|  
 |----------|----------|  
 |ButtonLabelCancel|Отмена|  
 |ButtonLabelSave|Сохранить|  
@@ -180,11 +180,11 @@ ms.locfileid: "58757598"
 |PagerLabelPageSize|Размер страницы|  
 |CurtainLabelLoading|Загрузка...|  
 |TablePlaceholderNothingToDisplay|Нет данных для выбранного периода и области|  
-|ButtonLabelClose|закройте|  
+|ButtonLabelClose|Закрыть|  
   
 ###  <a name="Documentation"></a> Documentation  
   
-|ИМЯ|текст|  
+|ИМЯ|Text|  
 |----------|----------|  
 |WebDocumentationInvalidHeaderErrorMessage|Недопустимый заголовок {0}|  
 |WebDocumentationInvalidRequestErrorMessage|Недопустимый URL-адрес запроса|  
@@ -282,9 +282,9 @@ ms.locfileid: "58757598"
 |OAuth2Scope_AuthorizationCodeGrant_AuthorizationRequest|Необязательный параметр. Область запроса доступа.|  
 |OAuth2Scope_AuthorizationCodeGrant_TokenResponse|Необязательный параметр, если он идентичен области, запрошенной клиентом, в противном случае — обязательный.|  
 |OAuth2Scope_ClientCredentialsGrant_TokenRequest|Необязательный параметр. Область запроса доступа.|  
-|OAuth2Scope_ClientCredentialsGrant_TokenResponse|Необязательный параметр, если он идентичен области, запрошенной клиентом, в противном случае — обязательный.|  
+|OAuth2Scope_ClientCredentialsGrant_TokenResponse|Необязательно, если совпадает с областью, запрошенной клиентом; в противном случае обязательно.|  
 |OAuth2Scope_ImplicitGrant_AuthorizationRequest|Необязательный параметр. Область запроса доступа.|  
-|OAuth2Scope_ImplicitGrant_AuthorizationResponse|Необязательный параметр, если он идентичен области, запрошенной клиентом, в противном случае — обязательный.|  
+|OAuth2Scope_ImplicitGrant_AuthorizationResponse|Необязательно, если совпадает с областью, запрошенной клиентом; в противном случае обязательно.|  
 |OAuth2Scope_ResourceOwnerPasswordCredentialsGrant_TokenRequest|Необязательный параметр. Область запроса доступа.|  
 |OAuth2Scope_ResourceOwnerPasswordCredentialsGrant_TokenResponse|Необязательный параметр, если он идентичен области, запрошенной клиентом, в противном случае — обязательный.|  
 |OAuth2State_AuthorizationCodeGrant_AuthorizationErrorResponse|Обязательный параметр, если параметр state присутствовал в запросе на авторизацию клиента.  Точное значение предоставляет клиент.|  
@@ -320,19 +320,19 @@ ms.locfileid: "58757598"
 |BadRequestParameterExpected|"Ожидается параметр {0}".|  
 |TooltipTextDoubleClickToSelectAll|Дважды щелкните, чтобы выделить все.|  
 |TooltipTextHideRevealSecret|Показать или скрыть|  
-|ButtonLinkOpenConsole|Попробовать|  
-|SectionHeadingRequestBody|Тело запроса|  
+|ButtonLinkOpenConsole|Попробуйте!|  
+|SectionHeadingRequestBody|Текст запроса|  
 |SectionHeadingRequestParameters|Параметры запроса|  
 |SectionHeadingRequestUrl|Request URL (URL-адрес запроса)|  
-|SectionHeadingResponse|Ответ|  
+|SectionHeadingResponse|Отклик|  
 |SectionHeadingRequestHeaders|Заголовки запросов|  
-|FormLabelSubtextOptional|необязательный|  
+|FormLabelSubtextOptional|дополнительный|  
 |SectionHeadingCodeSamples|Примеры кода|  
 |TextblockOpenidConnectHeaderDescription|Маркер идентификатора OpenID Connect, полученный из <i\>{0}</i\>. Поддерживаемые типы предоставления: <i\>{1}</i\>.|  
   
 ###  <a name="ErrorPageStrings"></a> ErrorPageStrings  
   
-|ИМЯ|текст|  
+|ИМЯ|Text|  
 |----------|----------|  
 |LinkLabelBack|Назад|  
 |LinkLabelHomePage|домашняя страница|  
@@ -350,7 +350,7 @@ ms.locfileid: "58757598"
   
 ###  <a name="IssuesStrings"></a> IssuesStrings  
   
-|ИМЯ|текст|  
+|ИМЯ|Text|  
 |----------|----------|  
 |WebIssuesIndexTitle|Проблемы|  
 |WebIssuesNoActiveSubscriptions|У вас нет активных подписок. Чтобы сообщить о проблеме, необходимо подписаться на продукт.|  
@@ -361,13 +361,13 @@ ms.locfileid: "58757598"
   
 ###  <a name="NotFoundStrings"></a> NotFoundStrings  
   
-|ИМЯ|текст|  
+|ИМЯ|Text|  
 |----------|----------|  
 |LinkLabelHomePage|домашняя страница|  
 |LinkLabelSendUsEmail|Отправьте нам сообщение электронной почты.|  
 |PageTitleNotFound|К сожалению, запрашиваемая страница не найдена.|  
 |TextblockPotentialCauseMisspelledUrl|Возможно, вы допустили опечатку при вводе URL-адреса.|  
-|TextblockPotentialCauseOldLink|Возможно, ссылка, которую вы щелкнули, старая или больше не указывает на правильное расположение.|  
+|TextblockPotentialCauseOldLink|Ссылка, которую вы щелкнули, возможно, устарела и больше не указывает на допустимое расположение.|  
 |TextblockPotentialSolutionRetype|Попробуйте повторно ввести URL-адрес.|  
 |TextblockPotentialSolutionStartOver|Начните отсюда: {0}.|  
 |TextReportProblem|{0} описывает проблему, которую мы рассмотрим в кратчайшие сроки.|  
@@ -376,15 +376,15 @@ ms.locfileid: "58757598"
   
 ###  <a name="ProductDetailsStrings"></a> ProductDetailsStrings  
   
-|ИМЯ|текст|  
+|ИМЯ|Text|  
 |----------|----------|  
 |WebProductsAgreement|Подписавшись на продукт `<a data-toggle='modal' href='#legal-terms'\>Terms of Use</a\>`, я принимаю {0}.|  
 |WebProductsLegalTermsLink|Условия использования|  
 |WebProductsSubscribeButton|Подписаться|  
-|WebProductsUsageLimitsHeader|Ограничения использования|  
+|WebProductsUsageLimitsHeader|Ограничения на использование|  
 |WebProductsYouAreNotSubscribed|Вы подписаны на продукт.|  
 |WebProductsYouRequestedSubscription|Вы запросили подписку на этот продукт.|  
-|ErrorYouNeedToAgreeWithLegalTerms|Прежде чем продолжить, необходимо принять условия использования.|  
+|ErrorYouNeedToAgreeWithLegalTerms|Прежде чем продолжить, примите Условия использования.|  
 |ButtonLabelAddSubscription|Добавить подписку|  
 |LinkLabelChangeSubscriptionName|Изменить|  
 |ButtonLabelConfirm|Подтверждение|  
@@ -398,13 +398,13 @@ ms.locfileid: "58757598"
   
 ###  <a name="ProductsStrings"></a> ProductsStrings  
   
-|ИМЯ|текст|  
+|ИМЯ|Text|  
 |----------|----------|  
 |PageTitleProducts|Продукты|  
   
 ###  <a name="ProviderInfoStrings"></a> ProviderInfoStrings  
   
-|ИМЯ|текст|  
+|ИМЯ|Text|  
 |----------|----------|  
 |TextboxExternalIdentitiesDisabled|В данный момент вход отключен администратором.|  
 |TextboxExternalIdentitiesSigninInvitation|Вход можно выполнить с помощью|  
@@ -412,7 +412,7 @@ ms.locfileid: "58757598"
   
 ###  <a name="SigninResources"></a> SigninResources  
   
-|ИМЯ|текст|  
+|ИМЯ|Text|  
 |----------|----------|  
 |PrincipalNotFound|Субъект не найден или недопустимая подпись.|  
 |ErrorSsoAuthenticationFailed|Сбой проверки подлинности SSO.|  
@@ -431,7 +431,7 @@ ms.locfileid: "58757598"
 |WebAuthenticationEmailHasBeenRevertedNotice|Ваш адрес электронной почты уже существует. Запрос отменен.|  
 |ValidationErrorEmailAlreadyExists|Адрес электронной почты уже существует.|  
 |ValidationErrorEmailInvalid|Недопустимый адрес электронной почты.|  
-|TextboxLabelEmail|Email|  
+|TextboxLabelEmail|Электронная почта|  
 |ValidationErrorEmailRequired|Требуется указать адрес электронной почты.|  
 |WebAuthenticationErrorNoticeHeader|Ошибка|  
 |WebAuthenticationFieldLengthErrorMessage|Максимальная длина {0} — {1}.|  
@@ -447,7 +447,7 @@ ms.locfileid: "58757598"
 |WebAuthenticationLinkExpiredNotice|Истек срок действия отправленной вам ссылки подтверждения. `<a href={0}?token={1}>Resend confirmation email.</a\>`|  
 |NoticePasswordResetLinkInvalidOrExpired|Ваша ссылка для сброса пароля недопустима или ее срок действия истек.|  
 |WebAuthenticationLinkExpiredNoticeTitle|Ссылка отправлена.|  
-|WebAuthenticationNewPasswordLabel|Новый пароль.|  
+|WebAuthenticationNewPasswordLabel|Новый пароль|  
 |ValidationMessageNewPasswordRequired|Требуется новый пароль.|  
 |TextboxLabelNotificationsSenderEmail|Электронная почта отправителя уведомлений|  
 |TextboxLabelOrganizationName|Название организации|  
@@ -455,7 +455,7 @@ ms.locfileid: "58757598"
 |WebAuthenticationPasswordChangedNotice|Ваш пароль успешно обновлен.|  
 |WebAuthenticationPasswordChangedNoticeTitle|Пароль обновлен.|  
 |WebAuthenticationPasswordCompareErrorMessage|Пароли не совпадают.|  
-|WebAuthenticationPasswordConfirmLabel|Подтверждение пароля.|  
+|WebAuthenticationPasswordConfirmLabel|Подтвердите пароль|  
 |ValidationErrorPasswordInvalidDetailed|Пароль слишком ненадежный.|  
 |WebAuthenticationPasswordLabel|Пароль|  
 |ValidationErrorPasswordRequired|Требуется указать пароль.|  
@@ -473,8 +473,8 @@ ms.locfileid: "58757598"
 |WebAuthenticationUserAlreadyRegisteredNotice|Похоже, что пользователь с этим адресом электронной почты уже зарегистрирован в системе. Если вы забыли пароль, попробуйте восстановить его или обратитесь к специалисту службы поддержки.|  
 |WebAuthenticationUserAlreadyRegisteredNoticeHeader|Пользователь уже зарегистрирован.|  
 |WebAuthenticationUserAlreadyRegisteredNoticeTitle|Уже зарегистрирован.|  
-|ButtonLabelChangePassword|Изменить пароль|  
-|ButtonLabelChangeAccountInfo|Изменение сведений об учетной записи|  
+|ButtonLabelChangePassword|Сменить пароль|  
+|ButtonLabelChangeAccountInfo|Изменение данных учетной записи|  
 |ButtonLabelCloseAccount|Закрыть учетную запись|  
 |WebAuthenticationInvalidCaptchaErrorMessage|Введенный текст не соответствует тексту на изображении. Повторите попытку позже.|  
 |ValidationErrorCredentialsInvalid|Недопустимый адрес электронной почты или пароль. Исправьте ошибки и повторите попытку.|  
@@ -483,7 +483,7 @@ ms.locfileid: "58757598"
 |WebAuthenticationInvalidEmailFormated|Адрес электронной почты {0} недопустимый.|  
 |WebAuthenticationUserNotFound|Не удалось найти пользователя.|  
 |WebAuthenticationTenantNotRegistered|Ваша учетная запись принадлежит клиенту Azure Active Directory, у которого нет доступа к этому порталу.|  
-|WebAuthenticationAuthenticationFailed|Сбой проверки подлинности.|  
+|WebAuthenticationAuthenticationFailed|Проверка подлинности не пройдена.|  
 |WebAuthenticationGooglePlusNotEnabled|Сбой проверки подлинности. Если приложение авторизовано, обратитесь к администратору, чтобы убедиться, что проверка подлинности Google настроена надлежащим образом.|  
 |ValidationErrorAllowedTenantIsRequired|Требуется разрешенный клиент.|  
 |ValidationErrorTenantIsNotValid|Клиент Azure Active Directory {0} недопустимый.|  
@@ -491,10 +491,10 @@ ms.locfileid: "58757598"
 |WebAuthenticationLoginUsingYourProvider|Войдите со своей учетной записью {0}.|  
 |WebAuthenticationUserLimitNotice|В этой службе достигнуто максимальное число разрешенных пользователей. `<a href="mailto:{0}"\>contact the administrator</a\>`, чтобы обновить службу и повторно включить регистрацию пользователей.|  
 |WebAuthenticationUserLimitNoticeHeader|Регистрация пользователей отключена.|  
-|WebAuthenticationUserLimitNoticeTitle|Регистрация пользователей отключена.|  
+|WebAuthenticationUserLimitNoticeTitle|Регистрация пользователей отключена|  
 |WebAuthenticationUserRegistrationDisabledNotice|Регистрация пользователей отключена администратором. Войдите в систему с помощью внешнего поставщика удостоверений.|  
-|WebAuthenticationUserRegistrationDisabledNoticeHeader|Регистрация пользователей отключена.|  
-|WebAuthenticationUserRegistrationDisabledNoticeTitle|Регистрация пользователей отключена.|  
+|WebAuthenticationUserRegistrationDisabledNoticeHeader|Регистрация пользователей отключена|  
+|WebAuthenticationUserRegistrationDisabledNoticeTitle|Регистрация пользователей отключена|  
 |WebAuthenticationSignupPendingConfirmationNotice|Прежде чем мы сможем завершить создание вашей учетной записи, нам необходимо проверить ваш адрес электронной почты. Мы отправили сообщение электронной почты на этот адрес: {0}. Чтобы активировать учетную запись, следуйте инструкциям в этом сообщении. Если вы не получите сообщение электронной почты в течение нескольких минут, проверьте папку нежелательной почты.|  
 |WebAuthenticationSignupPendingConfirmationAccountFoundNotice|Мы обнаружили неподтвержденную учетную запись, связанную с адресом электронной почты {0}. Чтобы завершить создание вашей учетной записи, нам необходимо проверить ваш адрес электронной почты. Мы отправили сообщение электронной почты на этот адрес: {0}. Чтобы активировать учетную запись, следуйте инструкциям в этом сообщении. Если вы не получили сообщение электронной почты в течение нескольких минут, проверьте папку нежелательной почты.|  
 |WebAuthenticationSignupConfirmationAlmostDone|Все почти готово.|  
@@ -508,7 +508,7 @@ ms.locfileid: "58757598"
   
 ###  <a name="SigninStrings"></a> SigninStrings  
   
-|ИМЯ|текст|  
+|ИМЯ|Text|  
 |----------|----------|  
 |WebAuthenticationForgotPassword|Забыли пароль?|  
 |WebAuthenticationIfAdministrator|Если вы являетесь администратором, войдите `<a href="{0}"\>here</a\>`.|  
@@ -520,17 +520,17 @@ ms.locfileid: "58757598"
   
 ###  <a name="SignupStrings"></a> SignupStrings  
   
-|ИМЯ|текст|  
+|ИМЯ|Text|  
 |----------|----------|  
-|PageTitleSignup|Регистрация|  
+|PageTitleSignup|Зарегистрироваться|  
 |WebAuthenticationAlreadyAMember|Уже являетесь участником?|  
 |WebAuthenticationCreateNewAccount|Создайте учетную запись для управления API.|  
 |WebAuthenticationSigninNow|Войдите сейчас.|  
-|ButtonLabelSignup|Регистрация|  
+|ButtonLabelSignup|Зарегистрироваться|  
   
 ###  <a name="SubscriptionListStrings"></a> SubscriptionListStrings  
   
-|ИМЯ|текст|  
+|ИМЯ|Text|  
 |----------|----------|  
 |SubscriptionCancelConfirmation|Вы действительно хотите отменить эту подписку?|  
 |SubscriptionRenewConfirmation|Вы действительно хотите обновить эту подписку?|  
@@ -539,7 +539,7 @@ ms.locfileid: "58757598"
 |WebDevelopersRegenerateLink|Повторно создать|  
 |WebDevelopersSecondaryKey|Вторичный ключ|  
 |ButtonLabelShowKey|Показать|  
-|ButtonLabelRenewSubscription|Возобновление|  
+|ButtonLabelRenewSubscription|Обновление|  
 |WebDevelopersSubscriptionRequested|Дата запроса: {0}.|  
 |WebDevelopersSubscriptionRequestedState|Запрошено|  
 |WebDevelopersSubscriptionTableNameHeader|ИМЯ|  
@@ -549,11 +549,11 @@ ms.locfileid: "58757598"
 |SubscriptionPropertyLabelRequestedDate|Дата запроса|  
 |SubscriptionPropertyLabelStartedDate|Дата запуска|  
 |PageTitleRenameSubscription|Переименовать подписку|  
-|SubscriptionPropertyLabelName|Имя подписки|  
+|SubscriptionPropertyLabelName|Название подписки|  
   
 ###  <a name="SubscriptionStrings"></a> SubscriptionStrings  
   
-|ИМЯ|текст|  
+|ИМЯ|Text|  
 |----------|----------|  
 |SectionHeadingCloseAccount|Хотите закрыть учетную запись?|  
 |PageTitleDeveloperProfile|Профиль|  
@@ -564,32 +564,32 @@ ms.locfileid: "58757598"
   
 ###  <a name="UpdateProfileStrings"></a> UpdateProfileStrings  
   
-|ИМЯ|текст|  
+|ИМЯ|Text|  
 |----------|----------|  
 |ButtonLabelUpdateProfile|Обновить профиль|  
 |PageTitleUpdateProfile|Обновить сведения об учетной записи|  
   
 ###  <a name="UserProfile"></a> UserProfile  
   
-|ИМЯ|текст|  
+|ИМЯ|Text|  
 |----------|----------|  
 |ButtonLabelChangeAccountInfo|Изменение сведений об учетной записи|  
 |ButtonLabelChangePassword|Изменить пароль|  
 |ButtonLabelCloseAccount|Закрыть учетную запись|  
-|TextboxLabelEmail|Email|  
+|TextboxLabelEmail|Электронная почта|  
 |TextboxLabelEmailFirstName|Имя|  
 |TextboxLabelEmailLastName|Фамилия|  
 |TextboxLabelNotificationsSenderEmail|Электронная почта отправителя уведомлений|  
 |TextboxLabelOrganizationName|Название организации|  
-|SubscriptionStateActive|Активна|  
-|SubscriptionStateCancelled|Отменено|  
-|SubscriptionStateExpired|Срок действия истек|  
+|SubscriptionStateActive|Активен|  
+|SubscriptionStateCancelled|Отменена|  
+|SubscriptionStateExpired|Истек срок|  
 |SubscriptionStateRejected|Отклонено|  
 |SubscriptionStateRequested|Запрошено|  
-|SubscriptionStateSuspended|Приостановлено|  
+|SubscriptionStateSuspended|Приостановлен|  
 |DefaultSubscriptionNameTemplate|{0} (значение по умолчанию).|  
 |SubscriptionNameTemplate|Доступ для разработчика #{0}.|  
-|TextboxLabelSubscriptionName|Имя подписки|  
+|TextboxLabelSubscriptionName|Название подписки|  
 |ValidationMessageSubscriptionNameRequired|Имя подписки не может быть пустым.|  
 |ApiManagementUserLimitReached|В этой службе достигнуто максимальное число разрешенных пользователей. Выполните обновление до более высокой ценовой категории.|  
   

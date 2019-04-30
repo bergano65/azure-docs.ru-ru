@@ -15,18 +15,18 @@ ms.topic: article
 ms.date: 06/05/2018
 ms.author: ellacroi
 ms.openlocfilehash: 223eff79d809a78d531d86d315fff80282cd29bb
-ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58620161"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60625522"
 ---
 # <a name="become-a-cloud-marketplace-publisher"></a>Регистрация в качестве издателя в облаке Marketplace
 
 В этой статье рассматривается регистрация в качестве издателя в облаке Marketplace. В зависимости от выбранного вами варианта публикации и текущего членства в партнерской сети Microsoft Partner Network некоторые шаги выполнять не нужно. После регистрации вы сможете создавать предложения Marketplace для Microsoft Azure Marketplace или AppSource.
 
 
-|  | Шаг регистрации | Duration | Сведения |  
+|  | Шаг регистрации | Длительность | Сведения |  
 |:--- |:--- |:--- |:--- |  
 | 1 | Регистрация в партнерской сети Microsoft Partner Network | 15 мин. | [Регистрация в партнерской сети Microsoft Partner Network](https://docs.microsoft.com/azure/marketplace/become-publisher#1-register-in-microsoft-partner-network) |  
 | 2 | Создание учетной записи Майкрософт <ul>(требуется для предложений типа "Транзакция" Microsoft Azure Marketplace; рекомендуется для других)</ul> | 15 мин. | [Создание идентификатора Майкрософт](https://docs.microsoft.com/azure/marketplace/become-publisher#2-create-a-microsoft-account) |  

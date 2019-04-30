@@ -15,21 +15,21 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/29/2017
 ms.author: cherylmc
-ms.openlocfilehash: a8f0c95acf872431fe7538acbd4ff1023c1496c0
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
-ms.translationtype: HT
+ms.openlocfilehash: 20e8269f0ee7463dcff9a5f66e46ebd81cb3df84
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46961235"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60652860"
 ---
 # <a name="modify-local-network-gateway-settings-using-the-azure-cli"></a>Изменение параметров шлюза локальной сети с помощью Azure CLI
 
 Иногда такие параметры шлюза локальной сети, как AddressPrefix или GatewayIPAddress, могут изменяться. В этой статье описывается, как изменить параметры шлюза локальной сети. Эти параметры можно изменить с использованием другого метода, выбрав вариант из следующего списка:
 
 > [!div class="op_single_selector"]
-> * [портала Azure](vpn-gateway-modify-local-network-gateway-portal.md)
+> * [портал Azure](vpn-gateway-modify-local-network-gateway-portal.md)
 > * [PowerShell](vpn-gateway-modify-local-network-gateway.md)
-> * [интерфейс командной строки Azure](vpn-gateway-modify-local-network-gateway-cli.md)
+> * [Интерфейс командной строки Azure](vpn-gateway-modify-local-network-gateway-cli.md)
 >
 >
 
@@ -47,7 +47,7 @@ ms.locfileid: "46961235"
 
 [!INCLUDE [modify-gateway-IP](../../includes/vpn-gateway-modify-lng-gateway-ip-cli-include.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Проверьте подключение шлюза. См. статью [Проверка подключения шлюза](vpn-gateway-verify-connection-resource-manager.md).
 

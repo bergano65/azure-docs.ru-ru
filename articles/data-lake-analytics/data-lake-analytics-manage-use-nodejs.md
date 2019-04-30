@@ -10,11 +10,11 @@ ms.assetid: 9de1bcf4-b15b-4d0b-9284-8889ecf0c438
 ms.topic: conceptual
 ms.date: 12/05/2016
 ms.openlocfilehash: 3b5b11b148910e9bd1348b20a25fa8383fc2ec9c
-ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "53974681"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60812752"
 ---
 # <a name="manage-azure-data-lake-analytics-using-azure-sdk-for-nodejs"></a>Управление аналитикой озера данных Azure с помощью пакета SDK Azure для Node.js
 [!INCLUDE [manage-selector](../../includes/data-lake-analytics-selector-manage.md)]
@@ -27,7 +27,7 @@ ms.locfileid: "53974681"
 * **Версия REST API для каталога: 2015-10-01-preview**
 * **Версия REST API для задания: 2016-03-20-preview**
 
-## <a name="features"></a>Функции
+## <a name="features"></a>Компоненты
 * Управление учетными записями: создание, получение, получение списков, обновление и удаление.
 * Управление заданиями: отправка, получение, перечисление и отмена.
 * Управление каталогами: получение и перечисление.

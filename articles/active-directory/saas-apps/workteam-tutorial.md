@@ -16,13 +16,13 @@ ms.date: 08/28/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a7cd986544dfb1472f5cc8a013fec951dca42a59
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57898658"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60523977"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-workteam"></a>Руководство. Интеграция Azure Active Directory с Workteam
+# <a name="tutorial-azure-active-directory-integration-with-workteam"></a>Руководство по Интеграция Azure Active Directory с Workteam
 
 В этом руководстве описано, как интегрировать Workteam с Azure Active Directory (Azure AD).
 
@@ -200,7 +200,7 @@ ms.locfileid: "57898658"
 
     a. В текстовое поле **Name** (Имя) введите имя пользователя, например **Brittasimon**.
 
-    2. В **электронной почты** текста введите адрес электронной почты пользователя, например **Brittasimon\@contoso.com**.
+    2. В текстовом поле **Email** (Адрес электронной почты) введите адрес электронной почты пользователя, например **Brittasimon\@contoso.com**.
 
     c. Последовательно выберите **ОК**.
 
@@ -234,7 +234,7 @@ ms.locfileid: "57898658"
 
 7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
     
-### <a name="test-single-sign-on"></a>Проверка единого входа
+### <a name="test-single-sign-on"></a>Тест единого входа
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 

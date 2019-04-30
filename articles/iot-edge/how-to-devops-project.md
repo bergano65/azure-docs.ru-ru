@@ -10,11 +10,11 @@ ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
 ms.openlocfilehash: 02977032c5975de4098600ddbebccfcbb9b0fafd
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58122898"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60595500"
 ---
 # <a name="create-a-cicd-pipeline-for-iot-edge-with-azure-devops-projects-preview"></a>Создание конвейера CI/CD для IoT Edge с помощью Azure DevOps Projects (предварительная версия)
 
@@ -22,7 +22,7 @@ ms.locfileid: "58122898"
 
 Если у вас нет активной подписки Azure, перед началом работы создайте [бесплатную учетную запись](https://azure.microsoft.com/free).
 
-## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
+## <a name="sign-in-to-the-azure-portal"></a>Войдите на портал Azure
 
 DevOps Projects создает конвейер CI/CD в Azure DevOps. Вы можете создать новую организацию Azure DevOps или использовать существующую. DevOps Projects также создает ресурсы Azure в требуемой подписке Azure.
 

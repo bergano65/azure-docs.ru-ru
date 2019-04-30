@@ -1,5 +1,5 @@
 ---
-title: Azure Backup. Резервное копирование виртуальных машин Azure с помощью REST API
+title: 'Azure Backup: Резервное копирование виртуальных машин Azure с помощью REST API'
 description: Управление операциями резервного копирования виртуальных машин Azure с помощью REST API
 services: backup
 author: pvrk
@@ -11,11 +11,11 @@ ms.date: 08/03/2018
 ms.author: pullabhk
 ms.assetid: b80b3a41-87bf-49ca-8ef2-68e43c04c1a3
 ms.openlocfilehash: 8a47d3cf346d7961e9f8b1c4fa615a2faa6b1da0
-ms.sourcegitcommit: 02ce0fc22a71796f08a9aa20c76e2fa40eb2f10a
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/08/2018
-ms.locfileid: "51289581"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60646781"
 ---
 # <a name="back-up-an-azure-vm-using-azure-backup-via-rest-api"></a>Резервное копирование виртуальных машин Azure с помощью службы Azure Backup и REST API
 
@@ -43,11 +43,11 @@ POST https://management.azure.com/Subscriptions/00000000-0000-0000-0000-00000000
 
 #### <a name="responses"></a>Ответы
 
-Операция обновления — это [асинхронная операция](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-async-operations). Это означает, что эта операция создает другую операцию, которая должна отслеживаться отдельно.
+Операция обновления — это [асинхронная операция](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-async-operations). Это означает, что такая операция создает другую операцию, которая должна отслеживаться отдельно.
 
-Она возвращает два ответа: 202 (принято), когда создается другая операция, и 200 (ОК), когда эта операция завершается.
+Она возвращает два ответа: 202 (принято), когда создается другая операция, и 200 (ОК), когда эта операция завершается.
 
-|ИМЯ  |type  |ОПИСАНИЕ  |
+|ИМЯ  |Тип  |Описание  |
 |---------|---------|---------|
 |204 No Content (содержимое отсутствует)     |         |  ОК (без содержимого, которое возвращаются)      |
 |202 — принято     |         |     Принято    |
@@ -110,9 +110,9 @@ URI *GET* имеет все необходимые параметры. Для э
 
 #### <a name="responses"></a>Ответы
 
-|ИМЯ  |type  |ОПИСАНИЕ  |
+|ИМЯ  |Тип  |Описание  |
 |---------|---------|---------|
-|200 ОК     | [WorkloadProtectableItemResourceList](https://docs.microsoft.com/rest/api/backup/backupprotectableitems/list#workloadprotectableitemresourcelist)        |       ОК |
+|200 ОК     | [WorkloadProtectableItemResourceList](https://docs.microsoft.com/rest/api/backup/backupprotectableitems/list#workloadprotectableitemresourcelist)        |       OК |
 
 ##### <a name="example-responses"></a>Примеры ответов
 
@@ -186,7 +186,7 @@ PUT https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000
 
 Чтобы создать защищенный элемент, используйте компоненты текста запроса.
 
-|ИМЯ  |type  |ОПИСАНИЕ  |
+|ИМЯ  |Тип  |Описание  |
 |---------|---------|---------|
 |properties     | AzureIaaSVMProtectedItem        |Свойства ресурса ProtectedItem         |
 
@@ -210,13 +210,13 @@ PUT https://management.azure.com/Subscriptions/00000000-0000-0000-0000-000000000
 
 #### <a name="responses"></a>Ответы
 
-Создание защищенного элемента — это [асинхронная операция](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-async-operations). Это означает, что эта операция создает другую операцию, которая должна отслеживаться отдельно.
+Создание защищенного элемента — это [асинхронная операция](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-async-operations). Это означает, что такая операция создает другую операцию, которая должна отслеживаться отдельно.
 
-Она возвращает два ответа: 202 (принято), когда создается другая операция, и 200 (ОК), когда эта операция завершается.
+Она возвращает два ответа: 202 (принято), когда создается другая операция, и 200 (ОК), когда эта операция завершается.
 
-|ИМЯ  |type  |ОПИСАНИЕ  |
+|ИМЯ  |Тип  |Описание  |
 |---------|---------|---------|
-|200 ОК     |    [ProtectedItemResource](https://docs.microsoft.com/rest/api/backup/protecteditemoperationresults/get#protecteditemresource)     |  ОК       |
+|200 ОК     |    [ProtectedItemResource](https://docs.microsoft.com/rest/api/backup/protecteditemoperationresults/get#protecteditemresource)     |  OК       |
 |202 — принято     |         |     Принято    |
 
 ##### <a name="example-responses"></a>Примеры ответов
@@ -300,7 +300,7 @@ POST https://management.azure.com/Subscriptions/00000000-0000-0000-0000-00000000
 
 Чтобы активировать резервное копирование по запросу, используйте компоненты текста запроса.
 
-|ИМЯ  |type  |ОПИСАНИЕ  |
+|ИМЯ  |Тип  |Описание  |
 |---------|---------|---------|
 |properties     | [IaaSVMBackupRequest](https://docs.microsoft.com/rest/api/backup/backups/trigger#iaasvmbackuprequest)        |Свойства BackupRequestResource         |
 
@@ -323,9 +323,9 @@ POST https://management.azure.com/Subscriptions/00000000-0000-0000-0000-00000000
 
 Активация резервного копирования по запросу — это [асинхронная операция](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-async-operations). Это означает, что такая операция создает другую операцию, которая должна отслеживаться отдельно.
 
-Она возвращает два ответа: 202 (принято), когда создается другая операция, и 200 (ОК), когда эта операция завершается.
+Она возвращает два ответа: 202 (принято), когда создается другая операция, и 200 (ОК), когда эта операция завершается.
 
-|ИМЯ  |type  |ОПИСАНИЕ  |
+|ИМЯ  |Тип  |Описание  |
 |---------|---------|---------|
 |202 — принято     |         |     Принято    |
 
@@ -393,7 +393,7 @@ X-Powered-By: ASP.NET
 
 ### <a name="changing-the-policy-of-protection"></a>Изменение политики защиты
 
-Чтобы изменить политику, с помощью которой обеспечивается защита виртуальной машины, можно использовать тот же формат, что при [включении защиты](#enabling-protection-for-the-azure-vm). Просто укажите идентификатор политики в [тексте запроса](#example-request-body) и отправьте запрос. Например, чтобы изменить для testVM политику DefaultPolicy на ProdPolicy, укажите идентификатор ProdPolicy в тексте запроса.
+Чтобы изменить политику, с помощью которой обеспечивается защита виртуальной машины, можно использовать тот же формат, что при [включении защиты](#enabling-protection-for-the-azure-vm). Просто укажите идентификатор политики в [тексте запроса](#example-request-body) и отправьте запрос. Для eg: Чтобы изменить политику testVM из «DefaultPolicy» для «ProdPolicy», укажите идентификатор «ProdPolicy» в тексте запроса.
 
 ```http
 {
@@ -443,18 +443,18 @@ DELETE https://management.azure.com//Subscriptions/00000000-0000-0000-0000-00000
 
 *DELETE* — это [асинхронная операция](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-async-operations). Это означает, что такая операция создает другую операцию, которая должна отслеживаться отдельно.
 
-Она возвращает два ответа: 202 (принято), когда создается другая операция, и 204 (содержимое отсутствует), когда эта операция завершается.
+Она возвращает два ответа: 202 (принято), когда создается другая операция, а затем 204 (NoContent), после завершения этой операции.
 
-|ИМЯ  |type  |ОПИСАНИЕ  |
+|ИМЯ  |Тип  |Описание  |
 |---------|---------|---------|
 |204 NoContent (содержимое отсутствует)     |         |  NoContent       |
 |202 — принято     |         |     Принято    |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 [Восстановление данных из резервной копии виртуальной машины Azure](backup-azure-arm-userestapi-restoreazurevms.md)
 
 Дополнительные сведения о REST API Azure Backup см. в следующих документах:
 
-- [REST API поставщика Служб восстановления Azure](/rest/api/recoveryservices/)
+- [Recovery Services](/rest/api/recoveryservices/) (Службы восстановления)
 - [Начало работы с Azure REST API](/rest/api/azure/)

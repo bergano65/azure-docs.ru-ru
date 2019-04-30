@@ -9,11 +9,11 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.openlocfilehash: 414ca7156fd59ec1dc08e45c73e9eb30835078d4
-ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58259930"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60694099"
 ---
 # <a name="manage-authentication-in-azure-maps"></a>Управление аутентификацией в Azure Maps
 
@@ -67,7 +67,7 @@ ms.locfileid: "58259930"
 
 2. В **добавить назначение роли** окна в разделе **роли**выберите **Azure Maps дату чтения (Предварительная версия)**. В поле **Назначение доступа к** выберите **Пользователь, группа или субъект-служба Azure AD**. В разделе **выберите**, выберите пользователя или приложения. Щелкните **Сохранить**.
 
-    ![Добавление назначения роли](./media/how-to-manage-authentication/add-role-assignment.png)
+    ![Добавить назначение ролей](./media/how-to-manage-authentication/add-role-assignment.png)
 
 ## <a name="view-available-azure-maps-rbac-roles"></a>Просмотр доступных ролей RBAC Azure Maps
 

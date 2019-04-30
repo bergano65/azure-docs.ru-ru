@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 11/16/2016
 ms.author: alkohli
 ms.openlocfilehash: 9d0c8c01ae0d87c944922dece74e13f00879b02f
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58010250"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60629259"
 ---
 # <a name="safely-install-and-operate-your-storsimple-device"></a>Безопасная установка и эксплуатация устройства StorSimple
 ![Значок "Внимание!"](./media/storsimple-safety/IC740879.png)
@@ -30,7 +30,7 @@ ms.locfileid: "58010250"
 ## <a name="safety-icon-conventions"></a>Условные обозначения сведений о безопасности
 Ниже приведены условные обозначения, встречающиеся в описаниях мер предосторожности, которые необходимо соблюдать при настройке и эксплуатации устройства Microsoft Azure StorSimple.
 
-| Значок | ОПИСАНИЕ |
+| Значок | Описание |
 |:--- |:--- |
 | ![Значок "Опасность"](./media/storsimple-safety/IC740879.png) **ОПАСНОСТЬ!** |Указывает на опасную ситуацию, которая наверняка приведет к смерти или серьезной травме. Это условное обозначение применяется только к самым крайним случаям. |
 | ![Значок "Внимание!"](./media/storsimple-safety/IC740879.png) **ВНИМАНИЕ!** |Указывает на опасную ситуацию, которая может привести к смерти или серьезной травме. |

@@ -14,11 +14,11 @@ ms.workload: infrastructure
 ms.date: 10/08/2018
 ms.author: genli
 ms.openlocfilehash: e828a8fc4211a0f0c4b53a9e18fa1c2fb6f6916b
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58010147"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60593225"
 ---
 # <a name="windows-shows-critical-service-failed-on-blue-screen-when-booting-an-azure-vm"></a>Windows отображает ошибку "Сбой критически важной службы" на синем экране при загрузке виртуальной машины Azure
 В этой статье описывается ошибка "Сбой критически важной службы", которая может возникнуть при загрузке виртуальной машины Windows в Microsoft Azure. Здесь приведены действия по устранению неполадок. 

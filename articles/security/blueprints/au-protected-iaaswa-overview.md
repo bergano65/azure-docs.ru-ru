@@ -9,11 +9,11 @@ ms.topic: article
 ms.date: 08/23/2018
 ms.author: meladie
 ms.openlocfilehash: 3c82a88ea15b52672f9bed428e2e7af40a65309c
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57446424"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60610199"
 ---
 # <a name="azure-security-and-compliance-blueprint---iaas-web-application-for-australia-protected"></a>Схема безопасности и соответствия требованиям Azure. Веб-приложение IaaS для среды AU-PROTECTED
 
@@ -51,8 +51,8 @@ ms.locfileid: "57446424"
         - Набор правил: OWASP 3.0
         - Порт прослушивания: 443
 - Облако-свидетель Azure.
-- Хранилище ключей Azure
-- Azure Load Balancer
+- Хранилище Azure Key Vault
+- Балансировщик нагрузки Azure
 - Azure Monitor
 - Azure Resource Manager
 - Центр безопасности Azure
@@ -160,7 +160,7 @@ Azure по умолчанию шифрует весь обмен данными 
 - [пользовательские пробы работоспособности](https://docs.microsoft.com/azure/application-gateway/application-gateway-create-gateway-portal);
 - [Центр безопасности Azure](https://azure.microsoft.com/services/security-center) и [Помощник Azure](https://docs.microsoft.com/azure/advisor/advisor-security-recommendations) обеспечивают дополнительную защиту и уведомления. Центр безопасности Azure также предоставляет систему репутации.
 
-### <a name="business-continuity"></a>Непрерывность бизнес-процессов
+### <a name="business-continuity"></a>Непрерывная работа
 **Высокий уровень доступности**. Решение развертывает все виртуальные машины в группе доступности. Дополнительные сведения см. в [этом руководстве](https://docs.microsoft.com/azure/virtual-machines/windows/tutorial-availability-sets). Группа доступности распределяет виртуальные машины между несколькими изолированными аппаратными кластерами, чтобы повысить уровень доступности. Во время планового или внепланового технического обслуживания доступна как минимум одна виртуальная машина, что соответствует соглашению об уровне обслуживания Azure, гарантирующему доступность в течение 99,95 % времени.
 
 **Хранилище служб восстановления**. [Хранилище Служб восстановления](https://docs.microsoft.com/azure/backup/backup-azure-recovery-services-vault-overview) содержит резервные копии данных и защищает все конфигурации виртуальных машин Azure в этой архитектуре. С помощью хранилища служб восстановления клиенты могут восстановить отдельные файлы и папки виртуальной машины IaaS, а не всю виртуальную машину. Это сокращает время восстановления.
@@ -229,7 +229,7 @@ Azure по умолчанию шифрует весь обмен данными 
 - [отключите обратную запись устройств](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-feature-device-writeback);
 - оставьте значения по умолчанию для параметров [предотвращения случайного удаления](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnectsync-feature-prevent-accidental-deletes) и [автоматического обновления](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-feature-automatic-upgrade).
 
-## <a name="disclaimer"></a>Отказ от ответственности
+## <a name="disclaimer"></a>Заявление об отказе
 - Этот документ является исключительно информационным. МАЙКРОСОФТ НЕ ПРЕДОСТАВЛЯЕТ НИКАКИХ ГАРАНТИЙ, ЯВНЫХ, КОСВЕННЫХ ИЛИ ПРЕДУСМОТРЕННЫХ ЗАКОНОМ, В ОТНОШЕНИИ ИНФОРМАЦИИ В ЭТОМ ДОКУМЕНТЕ. Данный документ предоставляется "как есть". Сведения и мнения, представленные в данном документе, включая URL-адреса и ссылки на другие веб-сайты, могут быть изменены без предварительного уведомления. Клиенты, читающие этот документ, берут ответственность за его использование на себя.
 - Настоящий документ не предоставляет клиентам юридических прав на интеллектуальную собственность в отношении продуктов или решений корпорации Майкрософт.
 - Клиенты могут скопировать и использовать данный документ для внутренних справочных целей.

@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 04/08/2019
 ms.author: raynew
 ms.openlocfilehash: 5df82d811d3807b988cb950bccddd1767baba5c6
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59361833"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60565960"
 ---
 # <a name="architecture-for-vmwarephysical-server-replication-to-a-secondary-on-premises-site"></a>Архитектура для репликации виртуальных машин VMware или физических серверов в дополнительном локальном расположении
 
@@ -22,7 +22,7 @@ ms.locfileid: "59361833"
 
 ## <a name="architectural-components"></a>Компоненты архитектуры
 
-**Область** | **Компонент** | **Дополнительные сведения**
+**Область** | **Компонент** | **Сведения**
 --- | --- | ---
 **Таблицы Azure** | Разверните этот сценарий с помощью InMage Scout. | Для использования InMage Scout необходимо иметь подписку Azure.<br/><br/> Создайте хранилище служб восстановления, затем скачайте InMage Scout и установите последние обновления, чтобы настроить развертывание.
 **Сервер обработки** | Расположен на основном сайте | Разверните сервер обработки, который будет выполнять кэширование, сжатие и оптимизацию данных.<br/><br/> Кроме того, он обеспечивает принудительную установку единого агента на компьютеры, которые необходимо защитить.

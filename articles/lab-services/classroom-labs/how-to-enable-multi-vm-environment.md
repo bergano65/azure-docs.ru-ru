@@ -14,11 +14,11 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: spelluru
 ms.openlocfilehash: 6faf32232c42f863bff52fdfb3c0714aee8e9b88
-ms.sourcegitcommit: f331186a967d21c302a128299f60402e89035a8d
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58190597"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60702442"
 ---
 # <a name="create-an-environment-with-multiple-vms-inside-a-template-vm-of-a-classroom-lab"></a>Создание среды с несколькими виртуальными машинами внутри шаблона виртуальной Машины лаборатории аудитории
 В настоящее время службы лабораторий Azure позволяет настроить один шаблон виртуальной машины в лаборатории и сделать одну копию доступным для каждого пользователя. Но если профессором преподаванием класс ИТ о том, как настроить брандмауэры или серверов, может потребоваться предоставить каждой из своих учащихся в среде, в которой несколько виртуальных машин могут взаимодействовать друг с другом по сети.
@@ -65,7 +65,7 @@ ms.locfileid: "58190597"
         > Запишите имя пользователя и пароль. Они больше не будут отображаться.
     3. Нажмите кнопку **Создать**. 
 
-        ![Настройка учетных данных](../media/tutorial-setup-classroom-lab/set-credentials.png)
+        ![Задайте учетные данные](../media/tutorial-setup-classroom-lab/set-credentials.png)
 6. На странице **настройки шаблона** отображаются сведения о состоянии создания лаборатории. Создание шаблона лаборатории занимает до 20 минут. 
 
     ![Настройка шаблона](../media/tutorial-setup-classroom-lab/configure-template.png)

@@ -14,11 +14,11 @@ ms.workload: infrastructure-services
 ms.date: 04/27/2017
 ms.author: bwren
 ms.openlocfilehash: d6d2414935bb5d1f095ad2b200acafa97b3b9b32
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53192708"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60596656"
 ---
 # <a name="best-practices-for-creating-management-solutions-in-azure-preview"></a>Рекомендации по созданию решений по управлению в Azure (предварительная версия)
 > [!NOTE]
@@ -38,7 +38,7 @@ ms.locfileid: "53192708"
 - Включите в решение [модуль IngestionAPI](https://www.powershellgallery.com/packages/OMSIngestionAPI/1.5), который будет использоваться модулями Runbook при записи данных в репозиторий Log Analytics.  Настройте в решении [ссылку](solutions-solution-file.md#solution-resource) на этот ресурс, чтобы он сохранялся в случае удаления решения.  Это позволит нескольким решениям совместно использовать модуль.
 - Используйте [переменные автоматизации](../../automation/automation-schedules.md), чтобы задать в решении значения, которые пользователи затем смогут изменить.  Даже если в соответствии с настройками решение содержит переменную, то это значение можно изменить.
 
-## <a name="views"></a>Views
+## <a name="views"></a>Представления
 - Все решения должны содержать одно представление, отображаемое на портале пользователя.  Представление может содержать несколько [элементов визуализации](../../azure-monitor/platform/view-designer-parts.md) для демонстрации различных наборов данных.
 - Добавьте также сообщение о [проверке потока данных](../../azure-monitor/platform/view-designer-tiles.md) во все представления своего решения, где требуется сообщить пользователю об источниках данных, которые должны быть настроены для сбора необходимых данных.
 - Настройте решение таким образом, чтобы оно [содержало](solutions-solution-file.md#solution-resource) представление. В этом случае оно будет удаляться при удалении решения.
@@ -48,7 +48,7 @@ ms.locfileid: "53192708"
 - Настройте в решении [ссылку](solutions-solution-file.md#solution-resource) на правила оповещения, чтобы пользователи могли изменить свою конфигурацию.  Им может потребоваться внести изменения, например изменить список получателей или пороговое значение для оповещения, а также отключить правило оповещения. 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Ознакомьтесь с базовым процессом [разработки и создания решения по управлению](solutions-creating.md).
 * Узнайте, как [создать файл решения](solutions-solution-file.md).
 * [Добавьте сохраненные поиски и оповещения](solutions-resources-searches-alerts.md) в решение для управления.

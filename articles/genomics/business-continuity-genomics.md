@@ -10,12 +10,12 @@ ms.author: grhuynh
 ms.service: genomics
 ms.topic: article
 ms.date: 04/06/2018
-ms.openlocfilehash: be678648ab93fcbdfd0a0baa1b01dcb273060ce2
-ms.sourcegitcommit: 1b561b77aa080416b094b6f41fce5b6a4721e7d5
-ms.translationtype: HT
+ms.openlocfilehash: 7a51477dbbf6f4e50959a6d979342961c7e49ad9
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/17/2018
-ms.locfileid: "45729458"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60641115"
 ---
 # <a name="overview-of-business-continuity-with-microsoft-genomics"></a>Обзор обеспечения непрерывности бизнес-процессов с помощью Microsoft Genomics
 В этом обзоре описываются возможности Microsoft Genomics по обеспечению непрерывности бизнес-процессов и аварийного восстановления. Здесь вы узнаете о вариантах восстановления после аварийных событий, таких как сбой региона Azure, которые могут привести к потере данных. 
@@ -45,5 +45,5 @@ ms.locfileid: "45729458"
 * определить соответствующий дополнительный регион и заблаговременно создать учетную запись Genomics в этом регионе;
 * дублировать данные в основном и дополнительном регионе, чтобы данные были незамедлительно доступны в дополнительном регионе. Это можно сделать вручную или с помощью [геоизбыточного хранилища](https://docs.microsoft.com/azure/storage/common/storage-redundancy), доступного в хранилище Azure. 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В этой статье были рассмотрены варианты обеспечения непрерывности бизнес-процессов и аварийного восстановления при использовании службы Microsoft Genomics. Дополнительные сведения о непрерывности бизнес-процессов и аварийном восстановлении в рамках Azure в целом см. в [техническом руководстве по обеспечению устойчивости в Azure](https://docs.microsoft.com/azure/architecture/resiliency/recovery-loss-azure-region). 

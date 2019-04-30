@@ -13,11 +13,11 @@ ms.workload: big-compute
 ms.date: 02/07/2019
 ms.author: lahugh
 ms.openlocfilehash: 9902f38ddfd3035adcce697c2eb5b77bdc1d8c9c
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57874767"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60782237"
 ---
 # <a name="azure-batch-compute-node-environment-variables"></a>Переменные среды вычислительного узла пакетной службы Azure
 
@@ -39,7 +39,7 @@ ms.locfileid: "57874767"
 
 ## <a name="environment-variables"></a>Переменные среды
 
-| Имя переменной                     | ОПИСАНИЕ                                                              | Доступность | Пример |
+| Имя переменной                     | Описание                                                              | Доступность | Пример |
 |-----------------------------------|--------------------------------------------------------------------------|--------------|---------|
 | AZ_BATCH_ACCOUNT_NAME           | Имя учетной записи пакетной службы, к которой относится задача.                  | Все задачи.   | mybatchaccount |
 | AZ_BATCH_ACCOUNT_URL            | URL-адрес учетной записи пакетной службы. | Все задачи. | `https://myaccount.westus.batch.azure.com` |

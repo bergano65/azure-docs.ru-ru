@@ -15,23 +15,23 @@ ms.workload: na
 ms.date: 01/16/2019
 ms.author: tomsh
 ms.openlocfilehash: 06a1903e5e27d748310c1b7846105b8069b73437
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56111380"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60611545"
 ---
 # <a name="azure-service-fabric-security-checklist"></a>Контрольный список для обеспечения безопасности Azure Service Fabric
 Эта статья содержит удобный контрольный список, который поможет обеспечить защиту среды Azure Service Fabric.
 
-## <a name="introduction"></a>Введение
-Azure Service Fabric — это платформа распределенных систем, которая дает возможность не только легко упаковывать и развертывать масштабируемые и надежные микрослужбы, но и управлять ими. Service Fabric также позволяет разрешить значительные трудности, возникающие при разработке облачных приложений и управлении ими. Получая гарантированную масштабируемость, надежность и управляемость, разработчики и администраторы могут сосредоточиться на реализации критически важных и ресурсоемких рабочих нагрузок вместо того, чтобы тратить силы на решение сложных проблем с инфраструктурой.
+## <a name="introduction"></a>Общие сведения
+Azure Service Fabric — это платформа распределенных систем, которая дает возможность не только легко упаковывать и развертывать масштабируемые и надежные микрослужбы, но и управлять ими. Service Fabric также позволяет разрешить значительные трудности, возникающие при разработке облачных приложений и управлении ими. Разработчики и администраторы могут не тратить силы на решение сложных проблем с инфраструктурой, а сосредоточиться на реализации критически важных и ресурсоемких рабочих нагрузок, которые являются масштабируемыми, надежными и управляемыми.
 
 ## <a name="checklist"></a>Контрольный список
 Благодаря ему вы не пропустите важные моменты, касающиеся настройки безопасного решение Azure Service Fabric и управления им.
 
 
-|Категория контрольного списка| ОПИСАНИЕ |
+|Категория контрольного списка| Описание |
 | ------------ | -------- |
 |[Управление доступом на основе ролей (RBAC)](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-security-roles) | <ul><li>Благодаря контролю доступа администратор кластера может ограничить доступ разных групп пользователей на выполнение определенных операций в кластере, повысив тем самым уровень безопасности кластера.</li><li>Администраторы имеют полный доступ к возможностям управления (включая возможности чтения и записи). </li><li> Пользователи по умолчанию имеют доступ только на чтение для управления (например, при работе с запросами) и возможность разрешения приложений и служб.</li></ul>|
 |[Сертификаты X.509 и Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-security) | <ul><li>[Сертификаты](https://docs.microsoft.com/dotnet/framework/wcf/feature-details/working-with-certificates), которые используются в кластерах, выполняющих рабочие нагрузки в рабочей среде, следует создать с помощью правильно настроенной службы сертификации Windows Server или получить из утвержденного [центра сертификации](https://en.wikipedia.org/wiki/Certificate_authority).</li><li>Никогда не используйте в рабочей среде какие-либо [временные или тестовые сертификаты](https://docs.microsoft.com/dotnet/framework/wcf/feature-details/how-to-create-temporary-certificates-for-use-during-development), созданные с помощью таких инструментов, как [MakeCert.exe](https://msdn.microsoft.com/library/windows/desktop/aa386968.aspx). </li><li>Можно использовать [самозаверяющий сертификат](https://docs.microsoft.com/azure/service-fabric/service-fabric-windows-cluster-x509-security), но это следует делать только для тестовых кластеров, а не в рабочей среде.</li></ul>|
@@ -47,7 +47,7 @@ Azure Service Fabric — это платформа распределенных 
 |Key Vault| <ul><li>Используется для управления сертификатами кластеров Service Fabric в Azure.  </li></ul>|
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Рекомендации по безопасности Azure Service Fabric](azure-service-fabric-security-best-practices.md)
 - [Обновление кластера Service Fabric](https://docs.microsoft.com/azure/service-fabric/service-fabric-cluster-upgrade)

@@ -15,11 +15,11 @@ ms.date: 03/20/2017
 ms.author: bwren
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: ef1af4d3d27bc098341a4de716e293557baa946a
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57761393"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60595810"
 ---
 # <a name="design-and-build-a-management-solution-in-azure-preview"></a>Проектирование и сборка решения по управлению в Azure (предварительная версия)
 > [!NOTE]
@@ -34,7 +34,7 @@ ms.locfileid: "57761393"
 Основная стратегия заключается в том, что решение по управлению запускается при создании отдельных компонентов в среде Azure.  Если все компоненты работают правильно, вы можете упаковать их в [файл решения по управлению]( solutions-solution-file.md). 
 
 
-## <a name="design-your-solution"></a>Разработка решения
+## <a name="design-your-solution"></a>Создайте свое решение
 Самый распространенный шаблон для решения по управлению показан на следующей схеме.  Разные компоненты этого шаблона описываются ниже.
 
 ![Обзор решения для управления](media/solutions-creating/solution-overview.png)
@@ -59,7 +59,7 @@ ms.locfileid: "57761393"
 
 Если решению требуются внешние функции для обработки оповещения, вы можете использовать [ответ webhook](../../azure-monitor/platform/alerts-metric.md).  Этот ответ позволяет вызывать внешнюю веб-службу, отправляя информацию из оповещения.
 
-### <a name="views"></a>Views
+### <a name="views"></a>Представления
 Представления в Log Analytics используются для визуализации данных из репозитория Log Analytics.  Каждое решение обычно содержит одно представление с [плиткой](../../azure-monitor/platform/view-designer-tiles.md), которая отображается на основной панели мониторинга пользователя.  Представление может содержать сколько угодно [частей визуализации](../../azure-monitor/platform/view-designer-parts.md), чтобы пользователь мог просматривать разные визуализации собранных данных.
 
 [Создавайте пользовательские представления с помощью конструктора представлений](../../azure-monitor/platform/view-designer.md), которые вы сможете потом экспортировать в файл решения.  

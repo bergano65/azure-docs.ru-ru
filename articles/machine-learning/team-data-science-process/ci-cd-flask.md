@@ -12,11 +12,11 @@ ms.date: 05/22/2018
 ms.author: tdsp
 ms.custom: seodec18, previous-author=jainr, previous-ms.author=jainr
 ms.openlocfilehash: d99149f8112c19a07208523a1ee26ba1c36e5362
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55474230"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62103576"
 ---
 # <a name="creating-continuous-integration-pipeline-on-azure-using-docker-kubernetes-and-python-flask-application"></a>Создание конвейера непрерывной интеграции в Azure с помощью приложения Docker, Kubernetes или Flask Python
 Для приложения AI существуют часто используемые два рабочих потока, создаваемые модели машинного обучения с помощью обработки и анализа данных и разработчики приложений, которые создают приложение и предоставляют его для потребления конечным пользователям. В этой статье будет продемонстрирована реализация конвейера непрерывной интеграции (CI) или непрерывной доставки (CD) для приложения AI. AI-приложение является сочетанием кода приложения, который внедрен в модель предварительного машинного обучения (ML). Из этой статьи вы узнаете, как извлекать предварительно обработанную модель из частной учетной записи хранения BLOB-объектов (вместо нее можно использовать учетную запись AWS S3). В этой статье будут использованы простые примеры веб-приложения Flask Python.
@@ -29,7 +29,7 @@ ms.locfileid: "55474230"
 ## <a name="github-repository-with-document-and-code"></a>Код и документы репозитория GitHub
 Исходный код можно скачать с [GitHub](https://github.com/Azure/DevOps-For-AI-Apps). Более подробное руководство доступно [здесь](https://github.com/Azure/DevOps-For-AI-Apps/blob/master/Tutorial.md).
 
-## <a name="pre-requisites"></a>Предварительные требования
+## <a name="pre-requisites"></a>Технические условия
 Ниже приведены условия, необходимые для выполнения описанного конвейера CI/CD:
 * [организация Azure DevOps](https://docs.microsoft.com/azure/devops/organizations/accounts/create-organization-msa-or-work-student);
 * [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest)
@@ -60,7 +60,7 @@ ms.locfileid: "55474230"
 10. Пользовательский запрос приложения проходит через DNS-сервер.
 11. DNS-сервер передает запрос балансировщику нагрузки и отправляет ответ пользователю.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Чтобы соответствовать требованиям и реализовать конвейер CI/CD для собственного приложения, обратитесь к [руководству](https://github.com/Azure/DevOps-For-AI-Apps/blob/master/Tutorial.md).
 
 ## <a name="references"></a>Ссылки

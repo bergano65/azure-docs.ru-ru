@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 04/03/2018
 ms.author: yurid
 ms.openlocfilehash: 7de085766ae700b5c76d9eca49c1127aabdddb9b
-ms.sourcegitcommit: ad019f9b57c7f99652ee665b25b8fef5cd54054d
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57244650"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60703410"
 ---
 # <a name="azure-security-center-readiness-roadmap"></a>План подготовки к работе с центром безопасности Azure
 Этот документ содержит план подготовки, который поможет вам приступить к работе с центром безопасности Azure.
@@ -33,7 +33,7 @@ ms.locfileid: "57244650"
 * [Введение в Центр безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-intro)
 * [Краткое руководство по центру безопасности Azure](https://docs.microsoft.com/azure/security-center/security-center-get-started)
 
-Видеоролики
+Видео
 * [Introduction to Azure Security Center](https://azure.microsoft.com/resources/videos/introduction-to-azure-security-center/) (Ознакомительное видео о центре безопасности Azure)
 * [Overview of Security Center Prevention, Detection and Response Capabilities](https://azure.microsoft.com/resources/videos/azurecon-2015-new-azure-security-center-helps-you-prevent-detect-and-respond-to-threats/) (Видеообзор возможностей предотвращения, обнаружения и ответных действий центра безопасности)
 
@@ -81,7 +81,7 @@ ms.locfileid: "57244650"
 
 Ознакомьтесь со следующими ресурсами, что узнать, как центр безопасности можно интегрировать в процесс реагирования на инциденты.
 
-Видеоролики  
+Видео  
 * [Azure Security Center in Incident Response](https://channel9.msdn.com/Blogs/Azure-Security-Videos/Azure-Security-Center-in-Incident-Response) (Реагирование на инциденты с помощью центра безопасности)
 * [Respond quickly to threats with next-generation security operation, and investigation](https://youtu.be/e8iFCz5RM4g) (Быстрая реакция на угрозы с помощью современных операций и анализа безопасности)
 
@@ -95,7 +95,7 @@ ms.locfileid: "57244650"
 
 В следующих ресурсах объясняется, как использовать эти возможности в центре безопасности.
 
-Видеоролики  
+Видео  
 * [Azure Security Center – Just-in-Time VM Access](https://youtu.be/UOQb2FcdQnU) (Центр безопасности Azure — JIT-доступ к виртуальной машине)
 * [Центр безопасности Azure — адаптивные элементы управления приложениями](https://youtu.be/wWWekI1Y9ck)
 

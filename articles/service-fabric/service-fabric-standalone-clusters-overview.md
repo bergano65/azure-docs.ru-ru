@@ -15,11 +15,11 @@ ms.workload: NA
 ms.date: 02/01/2019
 ms.author: dekapur
 ms.openlocfilehash: b4b7759d1dc23c1a1b3a9b5aeb2a181923e14d40
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58670716"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60543742"
 ---
 # <a name="overview-of-service-fabric-standalone-clusters"></a>Общие сведения об изолированных кластерах Service Fabric
 
@@ -57,7 +57,7 @@ Service Fabric также поддерживает управление дост
 
 [Масштабирование автономных кластеров Service Fabric](service-fabric-cluster-scaling-standalone.md).
 
-## <a name="upgrading"></a>Обновление
+## <a name="upgrading"></a>Идет обновление
 
 Автономный кластер является ресурсом, который полностью принадлежит вам. Вы отвечаете за исправления базовой операционной системы и запуск обновлений Service Fabric. Вы можете настроить для кластера автоматическое обновление среды выполнения по мере выпуска новых версий корпорацией Майкрософт или же выбрать нужную версию в списке поддерживаемых. Кроме обновлений Service Fabric вы также можете применить исправления для операционной системы и обновить конфигурацию кластера, например сертификаты или порты приложения. 
 

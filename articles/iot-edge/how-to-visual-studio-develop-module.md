@@ -10,11 +10,11 @@ ms.topic: article
 ms.service: iot-edge
 ms.custom: seodec18
 ms.openlocfilehash: f2228726d4edc25efe46a660d25d398959c3ea59
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58851943"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60596010"
 ---
 # <a name="use-visual-studio-2017-to-develop-and-debug-modules-for-azure-iot-edge-preview"></a>Использовать Visual Studio 2017 для разработки и отладки модулей для Azure IoT Edge (Предварительная версия)
 
@@ -96,7 +96,7 @@ ms.locfileid: "58851943"
 
 1. В **новый проект** диалоговом окне выберите **установленные**выберите **Интернета вещей Azure**выберите **Azure IoT Edge**, введите имя проекта и Укажите расположение, а затем выберите **ОК**. Имя проекта по умолчанию — **AzureIoTEdgeApp1**.
 
-   ![Новый проект](./media/how-to-visual-studio-develop-csharp-module/create-new.jpg)
+   ![Создать проект](./media/how-to-visual-studio-develop-csharp-module/create-new.jpg)
 
 1. В **Добавление приложения Edge Интернета вещей и модуль** выберите **Linux Amd64**, **Windows Amd64**, так и в качестве платформы приложений. При выборе вариантов, создайте решение с двумя проектами, которые ссылаются на модуль кода по умолчанию.
 

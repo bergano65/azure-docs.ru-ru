@@ -1,5 +1,5 @@
 ---
-title: С помощью Непрерывной интеграции и разработки Azure пробелов
+title: Использование CI/CD в Azure Dev Spaces
 titleSuffix: Azure Dev Spaces
 services: azure-dev-spaces
 ms.service: azure-dev-spaces
@@ -11,11 +11,11 @@ manager: yuvalm
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Container Service, containers
 ms.openlocfilehash: 983af0dd75e6ae62630c85d04ac3819c7e260439
-ms.sourcegitcommit: 5fbca3354f47d936e46582e76ff49b77a989f299
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57768286"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60687373"
 ---
 # <a name="use-cicd-with-azure-dev-spaces"></a>Использование CI/CD в Azure Dev Spaces
 
@@ -33,7 +33,7 @@ ms.locfileid: "57768286"
     * Доступные данные [учетной записи администратора](../../container-registry/container-registry-authentication.md#admin-account) Реестра контейнеров Azure.
 * [Кластер AKS с разрешениями на извлечение данных из Реестра контейнеров Azure](../../container-registry/container-registry-auth-aks.md).
 
-## <a name="download-sample-code"></a>Скачивание примера кода
+## <a name="download-sample-code"></a>Загрузить пример кода
 Ради экономии времени создадим вилку примера кода из репозитория GitHub. Перейдите на страницу https://github.com/Azure/dev-spaces и щелкните **Fork** (Вилка). После создания вилки **клонируйте** версию вилки репозитория локально. По умолчанию будет извлечена ветвь _master_, но мы включили несколько изменений в ветвь _azds_updates_, которую также следует перенести во время создания вилки. Эти изменения позволят сэкономить время. Ветвь _azds_updates_ содержит обновления, которые следует внести вручную, как описано в разделах руководства по Dev Spaces, а также некоторые готовые файлы YAML и JSON для оптимизации развертывания системы CI/CD. С помощью команды `git checkout -b azds_updates origin/azds_updates` можно извлечь ветвь _azds_updates_ в локальном репозитории.
 
 ## <a name="dev-spaces-setup"></a>Настройка Dev Spaces

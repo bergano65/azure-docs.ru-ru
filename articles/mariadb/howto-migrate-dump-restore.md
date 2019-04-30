@@ -7,11 +7,11 @@ ms.service: mariadb
 ms.topic: conceptual
 ms.date: 09/24/2018
 ms.openlocfilehash: bcb76fcbba02bf53b48cc462e3dad8f264db02ed
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53540450"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60745966"
 ---
 # <a name="migrate-your-mariadb-database-to-azure-database-for-mariadb-using-dump-and-restore"></a>Перенос базы данных MariaDB в базу данных Azure для MariaDB с помощью резервного копирования и восстановления
 В этой статье описываются два распространенных способа архивации и восстановления баз данных в базе данных Azure для MariaDB.
@@ -123,7 +123,7 @@ $ mysql -h mydemoserver.mariadb.database.azure.com -u myadmin@mydemoserver -p te
 5. Нажмите кнопку **обзора**, чтобы найти файл базы данных. 
 6. Нажмите кнопку **Перейти**, чтобы экспортировать резервную копию, выполнить команды SQL и повторно создать базу данных.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - [Подключение приложений к базе данных Azure для MariaDB](./howto-connection-string.md).
  
 <!--

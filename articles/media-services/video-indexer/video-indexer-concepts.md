@@ -10,11 +10,11 @@ ms.topic: article
 ms.date: 02/10/2019
 ms.author: juliako
 ms.openlocfilehash: c7bbe8c6b2ad51ed7272cd215552807c7cea3aee
-ms.sourcegitcommit: e69fc381852ce8615ee318b5f77ae7c6123a744c
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/11/2019
-ms.locfileid: "55991513"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60559830"
 ---
 # <a name="video-indexer-concepts"></a>Основные понятия, связанные с Индексатором видео
  
@@ -32,7 +32,7 @@ TimeRange — диапазон времени в исходном видео. Ad
 
 Блоки предназначены для упрощения восприятия данных. Например, разделение на блоки происходит, когда меняется докладчик или возникает длинная пауза.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в руководстве по [регистрации и отправке видео](video-indexer-get-started.md).
 

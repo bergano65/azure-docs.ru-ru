@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 03/27/2019
 ms.author: mbullwin
 ms.openlocfilehash: 6e2803590740d84bc99327ce78886f41f3c600df
-ms.sourcegitcommit: 956749f17569a55bcafba95aef9abcbb345eb929
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58630448"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60794449"
 ---
 # <a name="application-insights-api-for-custom-events-and-metrics"></a>API Application Insights для пользовательских событий и метрик
 
@@ -53,7 +53,7 @@ ms.locfileid: "58630448"
   * [проект Java;](../../azure-monitor/app/java-get-started.md)
   * [проект Node.js;](../../azure-monitor/app/nodejs.md)
   * [JavaScript на каждой веб-странице.](../../azure-monitor/app/javascript.md) 
-* В программный код устройства или веб-сервера необходимо добавить:
+* В коде устройства или веб-сервера включите:
 
     *C#:* `using Microsoft.ApplicationInsights;`
 
@@ -529,7 +529,7 @@ exceptions
 | summarize sum(itemCount) by type
 ```
 
-Большая часть важных сведений о стеке уже извлечена в отдельные переменные, однако вы можете разобрать структуру `details`, чтобы получить дополнительные сведения. Так как это динамическая структура, результат следует привести к требуемому типу. Например: 
+Большая часть важных сведений о стеке уже извлечена в отдельные переменные, однако вы можете разобрать структуру `details`, чтобы получить дополнительные сведения. Так как это динамическая структура, результат следует привести к требуемому типу. Пример.
 
 ```kusto
 exceptions
@@ -581,7 +581,7 @@ trackTrace(message: string, properties?: {[string]:string}, severityLevel?: AI.S
 
 Зарегистрируйте событие диагностики, например вход в метод или выход из него.
 
- Параметр | ОПИСАНИЕ
+ Параметр | Описание
 ---|---
 `message` | Диагностические данные Могут содержать не только имя.
 `properties` | Построчное сопоставление. Дополнительные данные, используемые для [фильтрации исключений](https://azure.microsoft.com/documentation/articles/app-insights-api-custom-events-metrics/#properties) на портале. Значение по умолчанию: empty.
@@ -592,7 +592,7 @@ trackTrace(message: string, properties?: {[string]:string}, severityLevel?: AI.S
 Ограничения по размеру `message` гораздо выше, чем ограничение для свойств.
 Преимуществом TrackTrace является возможность добавления в сообщения относительно длинных данных,  например данных POST.  
 
-Кроме того, вы можете настроить для сообщения уровень серьезности. Как и для других данных телеметрии, вы можете добавлять значения свойства, используемые для фильтрации или поиска различных наборов трассировки. Например: 
+Кроме того, вы можете настроить для сообщения уровень серьезности. Как и для других данных телеметрии, вы можете добавлять значения свойства, используемые для фильтрации или поиска различных наборов трассировки. Пример.
 
 *C#*
 
@@ -736,7 +736,7 @@ telemetry.flush();
 
 Желательно использовать в действии завершения работы для приложения метод flush().
 
-## <a name="authenticated-users"></a>Прошедшие проверку пользователи
+## <a name="authenticated-users"></a>Пользователи, прошедшие проверку подлинности
 
 В веб-приложении пользователи по умолчанию идентифицируются файлами cookie. Пользователь может быть учтен более одного раза при доступе к приложению с другого компьютера или браузера либо при удалении файлов cookie.
 
@@ -1151,7 +1151,7 @@ var appInsights = window.appInsights || function(config){ ...
 
 ## <a name="telemetrycontext"></a>Класс TelemetryContext
 
-Экземпляр TelemetryClient включает свойство Context, содержащее несколько значений, которые отправляются вместе со всеми данными телеметрии. Как правило, их задают модули стандартной телеметрии, но их также можно задать самостоятельно. Например: 
+Экземпляр TelemetryClient включает свойство Context, содержащее несколько значений, которые отправляются вместе со всеми данными телеметрии. Как правило, их задают модули стандартной телеметрии, но их также можно задать самостоятельно. Пример.
 
 ```csharp
 telemetry.Context.Operation.Name = "MyOperationName";
@@ -1179,7 +1179,7 @@ telemetry.Context.Operation.Name = "MyOperationName";
 
 Сведения о том, как определить, как долго хранятся данные, см. в статье [Сбор и хранение данных в Application Insights](../../azure-monitor/app/data-retention-privacy.md).
 
-## <a name="reference-docs"></a>Справочная документация
+## <a name="reference-docs"></a>Справочные документы
 
 * [Справочник по ASP.NET](https://msdn.microsoft.com/library/dn817570.aspx)
 * [Справочник по Java](http://dl.windowsazure.com/applicationinsights/javadoc/)
@@ -1208,5 +1208,5 @@ telemetry.Context.Operation.Name = "MyOperationName";
 
 ## <a name="next"></a>Дальнейшие действия
 
-* [Поиск в Application Insights](../../azure-monitor/app/diagnostic-search.md)
+* [Поиск событий и журналов](../../azure-monitor/app/diagnostic-search.md)
 * [Устранение неполадок](../../azure-monitor/app/troubleshoot-faq.md)

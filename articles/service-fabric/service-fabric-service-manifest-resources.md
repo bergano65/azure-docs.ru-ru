@@ -15,11 +15,11 @@ ms.workload: NA
 ms.date: 2/23/2018
 ms.author: subramar
 ms.openlocfilehash: 8707a9cb90afe1bf72f3aef6377f8ada409a1c64
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58667129"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60837765"
 ---
 # <a name="specify-resources-in-a-service-manifest"></a>Указание ресурсов в манифесте службы
 ## <a name="overview"></a>Обзор
@@ -192,7 +192,7 @@ Service Fabric автоматически создает список управ
   </Parameters>
 ```
 
-При развертывании приложения эти значения можно передать в качестве объекта ApplicationParameters.  Например: 
+При развертывании приложения эти значения можно передать в качестве объекта ApplicationParameters.  Пример.
 
 ```powershell
 PS C:\> New-ServiceFabricApplication -ApplicationName fabric:/myapp -ApplicationTypeName "AppType" -ApplicationTypeVersion "1.0.0" -ApplicationParameter @{Port='1001'; Protocol='https'; Type='Input'; Port1='2001'; Protocol='http'}
@@ -200,7 +200,7 @@ PS C:\> New-ServiceFabricApplication -ApplicationName fabric:/myapp -Application
 
 Примечание. Если не заданы значения для ApplicationParameters, берется значение по умолчанию, предоставленное в ServiceManifest для соответствующего параметра EndPointName.
 
-Например: 
+Пример.
 
 Допустим, в ServiceManifest заданы следующие значения:
 

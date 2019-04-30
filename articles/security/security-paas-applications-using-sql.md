@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 09/28/2018
 ms.author: terrylan
 ms.openlocfilehash: 22db43413b5c752decf6785a75dff22ff4a68039
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56109374"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60596674"
 ---
 # <a name="best-practices-for-securing-paas-databases-in-azure"></a>Рекомендации по защите баз данных PaaS в Azure
 
@@ -82,7 +82,7 @@ SQL Azure обеспечивает шифрование столбцов с по
 
 Для защиты базы данных можно принять дополнительные меры предосторожности, такие как проектирование безопасной системы, шифрование конфиденциальных ресурсов и создание брандмауэра на серверах базы данных.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 В этой статье представлен набор рекомендаций по безопасности Базы данных SQL и хранилища данных SQL, предназначенных для защиты веб-приложений и мобильных приложений PaaS. Дополнительные сведения о безопасности развернутых служб PaaS см. в следующих статьях:
 
 - [Защита развернутых приложений PaaS](security-paas-deployments.md)

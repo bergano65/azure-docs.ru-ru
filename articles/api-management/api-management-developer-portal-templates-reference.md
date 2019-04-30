@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 11/19/2017
 ms.author: apimpm
 ms.openlocfilehash: 0f339984a9db1a337f97e6db24571004cc34f679
-ms.sourcegitcommit: 5aed7f6c948abcce87884d62f3ba098245245196
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/28/2018
-ms.locfileid: "52445486"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60657651"
 ---
 # <a name="developer-portal-templates"></a>Шаблоны портала разработчика
 
@@ -61,7 +61,7 @@ ms.locfileid: "52445486"
     -   [Регистрация](api-management-page-templates.md#SignUp)  
     -   [Страница не найдена](api-management-page-templates.md#PageNotFound)
 
-## <a name="next-steps"></a>Дополнительная информация  
+## <a name="next-steps"></a>Дальнейшие действия  
 
 + [Справочник по шаблонам](api-management-developer-portal-templates-reference.md)  
 + [Справочник по моделям данных](api-management-template-data-model-reference.md)  

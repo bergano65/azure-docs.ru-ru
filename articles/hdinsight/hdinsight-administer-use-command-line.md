@@ -1,7 +1,6 @@
 ---
 title: Управление кластерами Apache Hadoop с помощью классического CLI Azure в Azure HDInsight
 description: Узнайте, как использовать классический интерфейс командной строки Azure для управления кластерами Apache Hadoop в Azure HDInsight.
-services: hdinsight
 ms.reviewer: jasonh
 author: tylerfox
 ms.service: hdinsight
@@ -9,12 +8,12 @@ ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 11/06/2018
 ms.author: tyfox
-ms.openlocfilehash: 61be4088034d8cc557c67c5b6de4972766654a39
-ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
-ms.translationtype: MT
+ms.openlocfilehash: 94ef5a60ecc5d943d78b16a386660049cc52d82e
+ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58202390"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "62096015"
 ---
 # <a name="manage-apache-hadoop-clusters-in-hdinsight-using-the-azure-classic-cli"></a>Управление кластерами Apache Hadoop в HDInsight с помощью классического интерфейса командной строки (CLI) Azure
 [!INCLUDE [selector](../../includes/hdinsight-portal-management-selector.md)]
@@ -41,7 +40,7 @@ ms.locfileid: "58202390"
     azure config mode arm
     ```
 
-Чтобы получить справку, используйте параметр **-h** .  Например: 
+Чтобы получить справку, используйте параметр **-h** .  Пример.
 
 ```cli
 azure hdinsight cluster create -h

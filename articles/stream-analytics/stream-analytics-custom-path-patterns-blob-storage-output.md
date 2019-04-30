@@ -10,11 +10,11 @@ ms.topic: conceptual
 ms.date: 02/07/2019
 ms.custom: seodec18
 ms.openlocfilehash: 9cdf99884845a9cb83ac26723c3ea0e7a779ebff
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55982681"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60771863"
 ---
 # <a name="azure-stream-analytics-custom-blob-output-partitioning"></a>Секционирование выходных данных пользовательского большого двоичного объекта Azure Stream Analytics
 
@@ -72,7 +72,7 @@ Azure Stream Analytics поддерживает секционирование �
 
 Следующие токены спецификатора формата могут использоваться отдельно или в комбинациях для настройки пользовательских форматов даты и времени:
 
-|Спецификатор формата   |ОПИСАНИЕ   |Результаты для примера 2018-01-02T10:06:08|
+|Спецификатор формата   |Описание   |Результаты для примера 2018-01-02T10:06:08|
 |----------|-----------|------------|
 |{datetime:yyyy}|Год как четырехзначное число|2018|
 |{datetime:MM}|Месяц от 01 до 12|01|
@@ -130,6 +130,6 @@ MSCK REPAIR TABLE while hive.exec.dynamic.partition true
 
 ![Выходные данные больших двоичных объектов Stream Analytics с пользовательским шаблоном пути](./media/stream-analytics-custom-path-patterns-blob-storage-output/stream-analytics-blob-output-folder-structure.png)
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Описание выходных данных из Azure Stream Analytics](stream-analytics-define-outputs.md)

@@ -9,11 +9,11 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: alkohli
 ms.openlocfilehash: e80b03f696a78887676e9f16750055a4dcfac230
-ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58401598"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60755228"
 ---
 # <a name="azure-data-box-gateway-limits"></a>Ограничения Azure шлюз поле данных
 
@@ -28,7 +28,7 @@ ms.locfileid: "58401598"
 
 В следующей таблице описаны ограничения для устройства шлюза Data Box.
 
-| ОПИСАНИЕ | Значение |
+| Описание | Value |
 |---|---|
 |№ файлов на каждом устройстве |100 млн <br> Ограничение составляет ~25 миллионов файлов на каждые 2 ТБ места на диске с максимальным ограничением 100 миллионов |
 |№ общих папок на каждом устройстве |24 |

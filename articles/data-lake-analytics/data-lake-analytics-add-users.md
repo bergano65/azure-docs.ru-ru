@@ -9,12 +9,12 @@ ms.reviewer: jasonwhowell
 ms.assetid: db35f16e-1565-4873-a851-bd987accdc58
 ms.topic: conceptual
 ms.date: 05/24/2018
-ms.openlocfilehash: f48dc07e27c6cb01a842f1f6d720ed6476028ef7
-ms.sourcegitcommit: f983187566d165bc8540fdec5650edcc51a6350a
-ms.translationtype: HT
+ms.openlocfilehash: 8323c4e1b236444f55dab826d2567491f5f0f736
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/13/2018
-ms.locfileid: "45542318"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60629328"
 ---
 # <a name="adding-a-user-in-the-azure-portal"></a>Добавление пользователя на портале Azure
 
@@ -42,7 +42,7 @@ ms.locfileid: "45542318"
 
 ## <a name="adding-a-user-using-powershell"></a>Добавление пользователя с помощью PowerShell
 
-1. Следуйте инструкциям в руководстве по [установке и настройке Azure PowerShell](https://azure.microsoft.com/documentation/articles/powershell-install-configure/).
+1. Следуйте инструкциям в этом руководстве: [общими сведениями об Azure PowerShell](https://azure.microsoft.com/documentation/articles/powershell-install-configure/).
 2. Скачайте сценарий PowerShell [Add-AdlaJobUser.ps1](https://github.com/Azure/AzureDataLake/blob/master/Samples/PowerShell/ADLAUsers/Add-AdlaJobUser.ps1).
 3. Запустите сценарий PowerShell. 
 
@@ -51,7 +51,7 @@ ms.locfileid: "45542318"
 `Add-AdlaJobUser.ps1 -Account myadlsaccount -EntityToAdd 546e153e-0ecf-417b-ab7f-aa01ce4a7bff -EntityType User -FullReplication`
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Обзор аналитики озера данных Microsoft Azure](data-lake-analytics-overview.md)
 * [Начало работы с Azure Data Lake Analytics с помощью портала Azure](data-lake-analytics-get-started-portal.md)

@@ -2,18 +2,18 @@
 title: Конечные точки безопасности в службе подготовки устройств Интернета вещей | Документация Майкрософт
 description: Основные понятия. Управление доступом к службе "Подготовка устройств Интернета вещей" для серверных приложений. Эта статья включает сведения о маркерах безопасности.
 author: wesmc7777
-manager: philmea
+manager: timlt
 ms.service: iot-dps
 services: iot-dps
 ms.topic: conceptual
-ms.date: 04/09/2019
+ms.date: 09/28/2017
 ms.author: wesmc
 ms.openlocfilehash: 7ff622ceac9c49eda7ba6bca1a8bb3aaabccb816
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59495436"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60626660"
 ---
 # <a name="control-access-to-azure-iot-hub-device-provisioning-service"></a>Управление доступом к службе подготовки устройств Центра Интернета вещей Azure
 
@@ -75,7 +75,7 @@ SharedAccessSignature sr =
 
 Это ожидаемые значения:
 
-| Значение | ОПИСАНИЕ |
+| Value | Описание |
 | --- | --- |
 | {signature} |Строка подписи HMAC-SHA256 формата `{URL-encoded-resourceURI} + "\n" + expiry`. **Важно!** Ключ шифруется в кодировке base64 и используется для вычислений HMAC-SHA256.|
 | {expiry} |Строки в формате UTF8, отображающие количество секунд с начала эры 00:00:00 (в формате UTC) 1 января 1970 г. |
@@ -141,7 +141,7 @@ def generate_sas_token(uri, key, policy_name, expiry=3600):
 
 Ниже приведены функции службы, предоставляемые в конечных точках.
 
-| Конечная точка | Функции |
+| Конечная точка | Функция |
 | --- | --- |
 | `{your-service}.azure-devices-provisioning.net/enrollments` |Предоставляет операции регистрации устройства в службе подготовки устройств. |
 | `{your-service}.azure-devices-provisioning.net/enrollmentGroups` |Предоставляет операции для управления группами регистрации устройств. |

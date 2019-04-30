@@ -10,11 +10,11 @@ ms.topic: article
 ms.date: 02/10/2019
 ms.author: anzaman
 ms.openlocfilehash: 7b81b53c03104023823bef75beb4ac6077feede7
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58918694"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60555434"
 ---
 # <a name="customize-a-language-model-with-the-video-indexer-website"></a>Настройка языковой модели с помощью веб-сайта Индексатора видео
 
@@ -60,10 +60,10 @@ ms.locfileid: "58918694"
 
 * Нажмите кнопку **Передать** в верхней части страницы. 
 
-    ![Передать](./media/customize-language-model/upload.png)
+    ![Отправка](./media/customize-language-model/upload.png)
 * Поместите аудио- или видеофайл в круг или же перейдите к своему файлу.
 
-    ![Передать](./media/customize-language-model/upload2.png)
+    ![Отправка](./media/customize-language-model/upload2.png)
 
 Это даст вам возможность выбрать **исходный язык видео**. Щелкните раскрывающийся список и выберите созданную языковую модель. В ней должны быть указаны язык вашей языковой модели и заданное имя в скобках.
 

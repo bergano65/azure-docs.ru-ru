@@ -1,5 +1,5 @@
 ---
-title: Azure Cosmos DB — API, пакет SDK и ресурсы для SQL Java
+title: 'Azure Cosmos DB: API, пакет SDK и ресурсы для SQL Java'
 description: Сведения о пакете SDK и API-интерфейсе SQL Java, включая даты выхода и прекращения использования, а также изменения, внесенные в каждую версию пакета SDK SQL Java для Azure Cosmos DB.
 author: SnehaGunda
 ms.service: cosmos-db
@@ -9,11 +9,11 @@ ms.topic: reference
 ms.date: 03/13/2019
 ms.author: sngun
 ms.openlocfilehash: cb8a97a29a14ecd5601495048bcbe1aff748d892
-ms.sourcegitcommit: fec96500757e55e7716892ddff9a187f61ae81f7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59617138"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60626780"
 ---
 # <a name="azure-cosmos-db-java-sdk-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB: заметки о выпуске и материалы
 > [!div class="op_single_selector"]
@@ -221,7 +221,7 @@ ms.locfileid: "59617138"
 
 <br/>
 
-| Version (версия) | Дата выпуска | Дата вывода |
+| Version | Дата выпуска | Дата вывода |
 | --- | --- | --- |
 | [2.1.3](#2.1.3) |13 марта 2018 г. |--- |
 | [2.1.2](#2.1.2) |09 марта 2018 г. |--- |
@@ -231,7 +231,7 @@ ms.locfileid: "59617138"
 | [1.16.4](#1.16.4) |10 сентября 2018 г. |--- |
 | [1.16.3](#1.16.3) |9 сентября 2018 г. |--- |
 | [1.16.2](#1.16.2) |29 июня 2018 г. |--- |
-| [1.16.1](#1.16.1) |16 мая 2018 г. |--- |
+| [1.16.1](#1.16.1) |16 мая 2018 г. |--- |
 | [1.16.0](#1.16.0) |15 марта 2018 г. |--- |
 | [1.15.0](#1.15.0) |14 ноября 2017 г. |--- |
 | [1.14.0](#1.14.0) |28 октября 2017 г. |--- |

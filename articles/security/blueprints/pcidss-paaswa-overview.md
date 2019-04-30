@@ -9,11 +9,11 @@ ms.topic: article
 ms.date: 07/03/2018
 ms.author: meladie
 ms.openlocfilehash: 5452a1adb419a2f57e2124d5aac49f9cdcff615a
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58111673"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60609982"
 ---
 # <a name="azure-security-and-compliance-blueprint-paas-web-application-for-pci-dss"></a>Схема безопасности и соответствия требованиям Azure. Веб-приложение PaaS для PCI DSS
 
@@ -59,12 +59,12 @@ ms.locfileid: "58111673"
 - Azure Active Directory
 - Служба автоматизации Azure
 - Azure DNS
-- Хранилище ключей Azure
-- Azure Load Balancer
+- Хранилище Azure Key Vault
+- Балансировщик нагрузки Azure
 - Azure Monitor
 - Azure Resource Manager
 - Центр безопасности Azure
-- Базы данных SQL Azure
+- База данных SQL Azure
 - Хранилище Azure
 - Виртуальная сеть Azure
     - (1) Сеть /16
@@ -222,7 +222,7 @@ Azure по умолчанию шифрует весь обмен данными 
 ## <a name="deploy-this-solution"></a>Развертывание этого решения
 Это решение автоматизации схемы безопасности и соответствия требованиям Azure состоит из файлов конфигурации JSON и сценариев PowerShell, которые обрабатываются службой API Azure Resource Manager для развертывания ресурсов в Azure. Подробные инструкции по развертыванию см. в [этой статье](https://aka.ms/pcidss-paaswa-repo).
 
-#### <a name="quickstart"></a>Быстрый запуск
+#### <a name="quickstart"></a>Краткое руководство
 1. Клонируйте или скачайте [этот](https://aka.ms/pcidss-paaswa-repo) репозиторий GitHub на локальную рабочую станцию.
 
 2. Просмотрите 0-Setup-AdministrativeAccountAndPermission.md и выполните предоставленные команды.
@@ -245,7 +245,7 @@ Azure по умолчанию шифрует весь обмен данными 
 
 См. [рекомендации](https://docs.microsoft.com/azure/architecture/reference-architectures/dmz/secure-vnet-hybrid) по реализации защищенной гибридной сети, расширяющей локальную сеть в Azure.
 
-## <a name="disclaimer"></a>Отказ от ответственности
+## <a name="disclaimer"></a>Заявление об отказе
 
 - Этот документ является исключительно информационным. МАЙКРОСОФТ НЕ ПРЕДОСТАВЛЯЕТ НИКАКИХ ГАРАНТИЙ, ЯВНЫХ, КОСВЕННЫХ ИЛИ ПРЕДУСМОТРЕННЫХ ЗАКОНОМ, В ОТНОШЕНИИ ИНФОРМАЦИИ В ЭТОМ ДОКУМЕНТЕ. Данный документ предоставляется &quot;как есть&quot;. Сведения и мнения, представленные в данном документе, включая URL-адреса и ссылки на другие веб-сайты, могут быть изменены без предварительного уведомления. Клиенты, читающие этот документ, берут ответственность за его использование на себя.
 - Настоящий документ не предоставляет клиентам юридических прав на интеллектуальную собственность в отношении продуктов или решений корпорации Майкрософт.

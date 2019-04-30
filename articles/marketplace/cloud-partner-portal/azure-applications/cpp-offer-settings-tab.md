@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: pbutlerm
 ms.openlocfilehash: 85cdd05de3415637620500cde10adf717bb1e173
-ms.sourcegitcommit: 5b869779fb99d51c1c288bc7122429a3d22a0363
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53196251"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60744910"
 ---
 # <a name="azure-application-offer-settings-tab"></a>Вкладка параметров предложения приложения Azure
 
@@ -42,6 +42,6 @@ ms.locfileid: "53196251"
 
 Нажмите кнопку **Сохранить**, чтобы сохранить параметры предложения.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Как настроить номера SKU для вашего предложения, см. [здесь](./cpp-skus-tab.md).

@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 1/29/2019
 ms.author: barclayn
 ms.openlocfilehash: 13183282e5e607f0052194a474203f97e0160adb
-ms.sourcegitcommit: ad019f9b57c7f99652ee665b25b8fef5cd54054d
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57246140"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60610915"
 ---
 # <a name="security-services-and-technologies-available-on-azure"></a>Службы и технологии безопасности, доступные в Azure
 
@@ -30,7 +30,7 @@ ms.locfileid: "57246140"
 Со временем этот список будет дополнен — также, как и линейка предложений Azure. Просматривайте эту страницу время от времени, чтобы быть в курсе последних новостей о наших услугах и технологиях, связанных с безопасностью.
 
 ## <a name="general-azure-security"></a>Общая безопасность Azure
-|Service|ОПИСАНИЕ|
+|Service|Описание|
 |--------|--------|
 |[Центр&nbsp;безопасности&nbsp;Azure](../security-center/security-center-intro.md)| Облачное решение защиты рабочих нагрузок обеспечивает управление безопасностью и расширенную защиту от угроз для гибридных облачных рабочих нагрузок.|
 |[Хранилище ключей Azure](../key-vault/key-vault-overview.md)| Защищенное хранилище секретов для паролей, строк подключения и другой информации, необходимой для работы приложения. |
@@ -39,8 +39,8 @@ ms.locfileid: "57246140"
 
 <!---|[Azure&nbsp;Disk&nbsp;Encryption](azure-security-disk-encryption-overview.md)| THIS WILL GO TO THE NEW OVERVIEW TOPIC MEGHAN STEWART IS WRITING|--->
 
-## <a name="storage-security"></a>Безопасность хранилищ
-|Service|ОПИСАНИЕ|
+## <a name="storage-security"></a>Безопасность хранилища
+|Service|Описание|
 |------|--------|
 | [Шифрование&nbsp;службы&nbsp;хранения&nbsp;Azure](../storage/common/storage-service-encryption.md)|Функция безопасности, которая автоматически шифрует данные в хранилище Azure.   |
 |[Гибридное хранилище, зашифрованное с помощью StorSimple](../storsimple/storsimple-ova-overview.md)| Решение интегрированного хранилища, которое управляет задачами хранилища на локальных устройствах и в облачном хранилище Azure.|
@@ -53,7 +53,7 @@ ms.locfileid: "57246140"
 <!------>
 
 ## <a name="database-security"></a>Безопасность базы данных
-|Service|ОПИСАНИЕ|
+|Service|Описание|
 |------|--------|
 | [Брандмауэр&nbsp;SQL&nbsp;Azure](../sql-database/sql-database-firewall-configure.md)|Функция управления доступом сети, обеспечивающая защиту от сетевых атак базы данных. |
 |[Уровень шифрования&nbsp;ячейки&nbsp;SQL&nbsp;Azure](https://blogs.msdn.microsoft.com/sqlsecurity/2015/05/12/recommendations-for-using-cell-level-encryption-in-azure-sql-database/)| Технология безопасности базы данных, которая обеспечивает шифрование на более детальном уровне.  |
@@ -63,8 +63,8 @@ ms.locfileid: "57246140"
 | [Аудит баз данных SQL Azure](../sql-database/sql-database-auditing.md)|Возможность аудита базы данных SQL, позволяющая отслеживать события базы данных и записывать их в журнал аудита в учетной записи хранения Azure.  |
 
 
-## <a name="identity-and-access-management"></a>Управление удостоверениями и доступом
-|Service|ОПИСАНИЕ|
+## <a name="identity-and-access-management"></a>Управление идентификационной информацией и доступом
+|Service|Описание|
 |------|--------|
 | [Управление доступом&nbsp;на основе&nbsp;ролей&nbsp;Azure](../active-directory/role-based-access-control-configure.md)|Функция контроля доступа, которая позволяет предоставлять пользователям доступ только к ресурсам, доступ к которым основан на их ролях в рамках организации.  |
 | [Azure Active Directory](../active-directory/fundamentals/active-directory-whatis.md)|Облачный репозиторий аутентификации, который поддерживает несколько клиентов, облачный каталог и несколько служб управления удостоверениями в рамках Azure.  |
@@ -73,13 +73,13 @@ ms.locfileid: "57246140"
 | [Многофакторная идентификация Azure](../active-directory/authentication/multi-factor-authentication.md)| Подготовка безопасности, которая использует несколько различных форм аутентификации и проверки перед предоставлением защищенной информации. |
 
 ## <a name="backup-and-disaster-recovery"></a>Резервное копирование и аварийное восстановление
-|Service|ОПИСАНИЕ|
+|Service|Описание|
 |------|--------|
 | [Azure&nbsp;Backup](../backup/backup-introduction-to-azure-backup.md)| Служба Azure, используемая для резервного копирования и восстановления данных в облаке Azure. |
 | [Azure&nbsp;Site&nbsp;Recovery](../site-recovery/site-recovery-overview.md)|Онлайн-служба, которая реплицирует рабочие нагрузки, выполняемые на физических и виртуальных машинах, с основного сайта в дополнительное расположение, чтобы включить восстановление служб после сбоя. |
 
 ## <a name="networking"></a>Сеть
-|Service|ОПИСАНИЕ|
+|Service|Описание|
 |------|--------|
 | [Группы&nbsp;безопасности&nbsp;сети](../virtual-network/virtual-networks-nsg.md)| Функция управления доступом на основе сети, использующая 5 кортежей для разрешения и запрета.  |
 | [VPN-шлюз Azure](../vpn-gateway/vpn-gateway-about-vpngateways.md)| Сетевое устройство, используемое в качестве конечной точки VPN для обеспечения доступа между локальными сетями к виртуальным сетям Azure.  |

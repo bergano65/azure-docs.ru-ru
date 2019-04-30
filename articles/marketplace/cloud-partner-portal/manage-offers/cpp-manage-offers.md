@@ -15,11 +15,11 @@ ms.topic: conceptual
 ms.date: 01/09/2019
 ms.author: pbutlerm
 ms.openlocfilehash: fa5280fd834d6defaf2816167a73bf72dc3d0a1c
-ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54355356"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60729874"
 ---
 # <a name="manage-azure-and-appsource-marketplace-offers"></a>Управление предложениями Azure и AppSource Marketplace
 
@@ -30,7 +30,7 @@ ms.locfileid: "54355356"
 
 На Портале Cloud Partner издатель может выполнять следующие основные операции над предложением.
 
-|     Операция      |  ОПИСАНИЕ                                           |
+|     Операция      |  Описание                                           |
 |     ---------      |  -----------                                           |
 | [Создание предложения](./cpp-create-offer.md)   | Создает запись предложения ожидания в репозитории подключения, но автоматически не публикует его в Microsoft Marketplace. | 
 | [Просмотр сведений о состоянии предложения](./cpp-view-status-offer.md)   | Предоставляет состояние публикации предложения.  На портале существует несколько мест, где отображаются сведения о состоянии. |
@@ -40,6 +40,6 @@ ms.locfileid: "54355356"
 |  |  |
   
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Изучите статью [Знакомство с Порталом Cloud Partner](../portal-tour/cpp-portal-tour.md), если еще не знаете о возможностях и пользовательском интерфейсе Портала Cloud Partner.  После чего ознакомьтесь со статьей [Create Azure Marketplace and AppSource offers](./cpp-create-offer.md) (Создание предложений Azure Marketplace and AppSource).

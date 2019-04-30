@@ -8,16 +8,16 @@ ms.topic: conceptual
 ms.date: 04/08/2019
 ms.author: sutalasi
 ms.openlocfilehash: b60d8a8fb9b9300a6914ad33b2f760fb5adde3b4
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59792459"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60723515"
 ---
 # <a name="configure-and-manage-replication-policies-for-vmware-disaster-recovery-to-azure"></a>Настройка и администрирование политик репликации для аварийного восстановления VMware в Azure
 Из этой статьи вы узнаете, как настроить политику репликации при репликации виртуальных машин VMware в Azure с помощью [Azure Site Recovery](site-recovery-overview.md).
 
-## <a name="create-a-policy"></a>Создание политики
+## <a name="create-a-policy"></a>Создать политику
 
 1. Выберите **Управление** > **Site Recovery Infrastructure** (Инфраструктура Site Recovery).
 2. В разделе **For VMware and Physical machines** (Для виртуальных машин VMware и физических компьютеров) выберите **Политики репликации**.

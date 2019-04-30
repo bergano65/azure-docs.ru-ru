@@ -17,11 +17,11 @@ ms.workload: infrastructure-services
 ms.date: 03/15/2019
 ms.author: sedusch
 ms.openlocfilehash: 90ec7cf4964440d39b3f69eb9ae9708eaafe3748
-ms.sourcegitcommit: 48a41b4b0bb89a8579fc35aa805cea22e2b9922c
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59579042"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60710698"
 ---
 # <a name="high-availability-for-sap-netweaver-on-azure-vms-on-suse-linux-enterprise-server-for-sap-applications"></a>Руководство по обеспечению высокого уровня доступности виртуальных машин Azure для SAP NetWeaver на SUSE Linux Enterprise Server для приложений SAP
 
@@ -93,9 +93,9 @@ NFS-сервер, SAP NetWeaver ASCS, SAP NetWeaver SCS, SAP NetWeaver ERS и б
   * IP-адрес 10.0.0.7
 * Конфигурация серверной части:
   * подключена к основным сетевым интерфейсам всех виртуальных машин, которые должны быть частью кластера (A)SCS/ERS.
-* Порт пробы:
+* Порт пробы
   * порт 620<strong>&lt;nr&gt;</strong>.
-* загрузить 
+* Загрузка 
 * правила балансировки
   * 32<strong>&lt;nr&gt;</strong> TCP;
   * 36<strong>&lt;nr&gt;</strong> TCP;
@@ -111,7 +111,7 @@ NFS-сервер, SAP NetWeaver ASCS, SAP NetWeaver SCS, SAP NetWeaver ERS и б
   * IP-адрес 10.0.0.8
 * Конфигурация серверной части:
   * подключена к основным сетевым интерфейсам всех виртуальных машин, которые должны быть частью кластера (A)SCS/ERS.
-* Порт пробы:
+* Порт пробы
   * Порт 621<strong>&lt;nr&gt;</strong>.
 * Правила балансировки нагрузки
   * 33<strong>&lt;nr&gt;</strong> TCP;
@@ -160,7 +160,7 @@ SAP NetWeaver требует общее хранилище для каталог
 Сначала необходимо создать виртуальные машины для этого кластера NFS. После этого следует создать подсистему балансировки нагрузки и использовать виртуальные машины во внутренних пулах.
 
 1. Создание группы ресурсов
-1. Создайте виртуальную сеть
+1. Создать виртуальную сеть
 1. Создание группы доступности.  
    Настройка максимального числа доменов обновления.
 1. Создание виртуальной машины 1.  

@@ -9,11 +9,11 @@ ms.date: 11/20/2017
 author: wmengmsft
 ms.author: wmeng
 ms.openlocfilehash: 257d55fd0c7d843934c4f07a798247c5271d8ed7
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54044303"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60576243"
 ---
 # <a name="azure-cosmos-db-table-api-sdk-for-python-release-notes-and-resources"></a>Пакет SDK для API таблиц Azure Cosmos DB для Python Заметки о выпуске и ресурсы
 > [!div class="op_single_selector"]
@@ -51,7 +51,7 @@ ms.locfileid: "54044303"
 
 <br/>
 
-| Version (версия) | Дата выпуска | Дата вывода |
+| Version | Дата выпуска | Дата вывода |
 | --- | --- | --- |
 | [1.0.0](#1.0.0) |15 ноября 2017 г. |--- |
 | [0.37.1](#0.37.1) |5 октября 2017 г. |--- |

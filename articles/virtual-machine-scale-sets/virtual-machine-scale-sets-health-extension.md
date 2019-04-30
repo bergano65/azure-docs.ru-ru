@@ -16,11 +16,11 @@ ms.topic: article
 ms.date: 01/30/2019
 ms.author: manayar
 ms.openlocfilehash: d1cff1011e190e5fbb2874657cbdfbdc68bde0c0
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58084401"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60619830"
 ---
 # <a name="using-application-health-extension-with-virtual-machine-scale-sets"></a>Использование расширения "Работоспособность приложения" с масштабируемыми наборами виртуальных машин
 Мониторинг работоспособности приложения предоставляет важные сведения, которые позволяют определить, когда требуется администрирование и обновление развертывания. Масштабируемые наборы виртуальных машин Azure поддерживают [последовательные обновления](virtual-machine-scale-sets-upgrade-scale-set.md#how-to-bring-vms-up-to-date-with-the-latest-scale-set-model), включая [автоматические обновления образа ОС](virtual-machine-scale-sets-automatic-upgrade.md), которые зависят от мониторинга работоспособности отдельных экземпляров для обновления развертывания.
@@ -65,18 +65,18 @@ ms.locfileid: "58084401"
 
 | ИМЯ | Значение и пример | Тип данных
 | ---- | ---- | ---- 
-| версия_API | `2018-10-01` | дата |
-| publisher | `Microsoft.ManagedServices` | строка |
-| Тип | `ApplicationHealthLinux` (Linux), `ApplicationHealthWindows` (Windows) | строка |
+| версия_API | `2018-10-01` | date |
+| publisher | `Microsoft.ManagedServices` | string |
+| тип | `ApplicationHealthLinux` (Linux), `ApplicationHealthWindows` (Windows) | string |
 | typeHandlerVersion | `1.0` | int |
 
 ### <a name="settings"></a>Параметры
 
 | ИМЯ | Значение и пример | Тип данных
 | ---- | ---- | ----
-| protocol | `http` или `tcp` | строка |
+| протокол | `http` или `tcp` | string |
 | порт | Необязательно, если используется протокол `http`; обязательно, если используется протокол `tcp` | int |
-| requestPath | Обязательно, если используется протокол `http`; не разрешено, если используется протокол `tcp` | строка |
+| requestPath | Обязательно, если используется протокол `http`; не разрешено, если используется протокол `tcp` | string |
 
 ## <a name="deploy-the-application-health-extension"></a>Развертывание расширение "Работоспособность приложения"
 Существует несколько способов развертывания расширения "Работоспособность приложения" в масштабируемые наборы, которые описаны в приведенных ниже примерах.

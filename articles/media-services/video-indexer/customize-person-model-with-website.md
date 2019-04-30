@@ -10,11 +10,11 @@ ms.topic: article
 ms.date: 03/19/2019
 ms.author: anzaman
 ms.openlocfilehash: 8dd535d97e40fe1dd4358d782db60940af1dd95d
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58892846"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60556072"
 ---
 # <a name="customize-a-person-model-with-the-video-indexer-website"></a>Настройка модели Person с помощью веб-сайта Индексатора видео
 
@@ -90,7 +90,7 @@ ms.locfileid: "58892846"
 
     ![Удаление пользователя](./media/customize-face-model/delete-person.png)
     
-    Всплывающее окно будет отображаться и уведомит о том, что это действие приведет к удалению модели лица и всех людей и файлы, содержащиеся в нем. Это действие невозможно отменить. 
+    Всплывающее окно будет отображаться и уведомит о том, что это действие приведет к удалению модели лица и всех людей и файлы, содержащиеся в нем. Это действие необратимо. 
 
     ![Удаление пользователя](./media/customize-face-model/delete-person2.png)
 1. Если вы уверены, нажмите кнопку delete еще раз.
@@ -133,14 +133,14 @@ ms.locfileid: "58892846"
 
 1. Нажмите кнопку **отправить** кнопку в верхней части страницы.
 
-    ![Передать](./media/customize-face-model/upload.png)
+    ![Отправка](./media/customize-face-model/upload.png)
 1. DROP к видеофайлу в круге или найдите файл.
 1. Щелкните стрелку Дополнительные параметры.
 
-    ![Передать](./media/customize-face-model/upload2.png)
+    ![Отправка](./media/customize-face-model/upload2.png)
 1. Щелкните раскрывающийся список и выберите созданной модели пользователя.
 
-    ![Передать](./media/customize-face-model/upload3.png)
+    ![Отправка](./media/customize-face-model/upload3.png)
 1. Выберите параметр передачи в нижней части страницы и новые видео будут индексироваться с помощью вашей модели пользователя.
 
 Если не указать модель пользователя во время загрузки, индексатор видео будет проиндексировать видео с помощью модели по умолчанию пользователь в вашей учетной записи.

@@ -14,11 +14,11 @@ ms.topic: conceptual
 ms.date: 11/28/2018
 ms.author: banders
 ms.openlocfilehash: f907ebcfc1efc2e6eb9b458f83ab11d868871946
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57858343"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60615809"
 ---
 # <a name="create-an-additional-subscription-in-the-azure-portal"></a>Создание дополнительной подписки на портале Azure
 
@@ -48,6 +48,6 @@ ms.locfileid: "57858343"
 - [Создание групп управления для упорядочения ресурсов и управления ими](../governance/management-groups/create.md?toc=/azure/billing/TOC.json)
 - [Отмена подписки в Azure](billing-how-to-cancel-azure-subscription.md)
 
-## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
+## <a name="need-help-contact-us"></a>Нужна помощь? Связаться с нами.
 
 Если у вас есть вопросы или нужна помощь, [создать запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).

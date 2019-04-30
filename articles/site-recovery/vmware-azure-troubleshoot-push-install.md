@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.author: ramamill
 ms.date: 02/27/2019
 ms.openlocfilehash: 0278332105f2102fc82122c5a74db6326f011e81
-ms.sourcegitcommit: cf971fe82e9ee70db9209bb196ddf36614d39d10
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58541199"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60564685"
 ---
 # <a name="troubleshoot-mobility-service-push-installation-issues"></a>Устранение неполадок с принудительной установкой службы Mobility Service
 
@@ -167,7 +167,7 @@ ms.locfileid: "58541199"
 ## <a name="enable-protection-failed-as-device-name-mentioned-in-the-grub-configuration-instead-of-uuid-errorid-95320"></a>Не удалось включить защиту, так как в конфигурации GRUB указано имя устройства вместо его UUID (код ошибки: 95320)
 
 **Возможная причина:** </br>
-Файлы конфигурации GRUB ("/boot/grub/menu.lst", "/boot/grub/grub.cfg", "/boot/grub2/grub.cfg" или "/ etc / default / grub") могут содержать значение для параметров **root** и **resume** в качестве фактических имен устройств вместо UUID. Site Recovery требует наличие подхода UUID, поскольку имя устройства может меняться при перезагрузке виртуальной машины, а виртуальная машина может не выдавать одно и то же имя при сбое, что приводит к ошибкам. Например:  </br>
+Файлы конфигурации GRUB ("/boot/grub/menu.lst", "/boot/grub/grub.cfg", "/boot/grub2/grub.cfg" или "/ etc / default / grub") могут содержать значение для параметров **root** и **resume** в качестве фактических имен устройств вместо UUID. Site Recovery требует наличие подхода UUID, поскольку имя устройства может меняться при перезагрузке виртуальной машины, а виртуальная машина может не выдавать одно и то же имя при сбое, что приводит к ошибкам. Пример. </br>
 
 
 - Следующая строка из файла GRUB **/boot/grub2/grub.cfg**. <br>
@@ -183,7 +183,7 @@ ms.locfileid: "58541199"
 Имена устройств должны быть заменены на соответствующий UUID.<br>
 
 
-1. Найти идентификатор UUID устройства с помощью команды «blkid \<имя устройства >». Например: <br>
+1. Найти идентификатор UUID устройства с помощью команды «blkid \<имя устройства >». Пример.<br>
    ```
    blkid /dev/sda1
    /dev/sda1: UUID="6f614b44-433b-431b-9ca1-4dd2f6f74f6b" TYPE="swap"
@@ -266,7 +266,7 @@ ms.locfileid: "58541199"
 
     Отмена регистрации существующего приложения...  Создайте объект каталог получения коллекции приложений 
 
-    Ошибка.
+    Ошибка:
 
     - Код ошибки:-2147164145 [0x8004E00F]
     - Код завершения: 802

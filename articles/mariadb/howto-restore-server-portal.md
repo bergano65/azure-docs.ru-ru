@@ -7,11 +7,11 @@ ms.service: mariadb
 ms.topic: conceptual
 ms.date: 04/15/2019
 ms.openlocfilehash: 23d683fea494ad0509af359d6e49519f2bc6aa99
-ms.sourcegitcommit: fec96500757e55e7716892ddff9a187f61ae81f7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59615784"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60746644"
 ---
 # <a name="how-to-backup-and-restore-a-server-in-azure-database-for-mariadb-using-the-azure-portal"></a>Как создать резервную копию сервера в службе "База данных Azure для MariaDB" и восстановить его с помощью портала Azure
 
@@ -79,7 +79,7 @@ ms.locfileid: "59615784"
 ## <a name="geo-restore"></a>Геовосстановление
 Если вы настроили сервер для геоизбыточного резервного копирования, из резервной копии можно создать новый сервер. Его можно создать в любом регионе, где доступна служба "База данных Azure для MariaDB".  
 
-1. Выберите **баз данных** > **база данных Azure для MariaDB**. Можно также ввести **MariaDB** в поле поиска для поиска службы.
+1. Выберите **Базы данных** > **База данных Azure для MariaDB**. Чтобы найти службу, вы также можете ввести в поле поиска **MariaDB**.
 
    ![Параметр Базы данных Azure для MariaDB](./media/howto-restore-server-portal/2_navigate-to-mariadb.png)
 

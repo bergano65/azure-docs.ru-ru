@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 01/12/2019
 ms.author: ellacroi
 ms.openlocfilehash: 026b8a85bf353dfe384077b1dc8e284d7c373046
-ms.sourcegitcommit: a1cf88246e230c1888b197fdb4514aec6f1a8de2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54355286"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60740137"
 ---
 # <a name="promote-your-business-with-microsoft"></a>Развитие бизнеса с помощью решений Майкрософт
 
@@ -39,7 +39,7 @@ ms.locfileid: "54355286"
 | Заработайте компетенцию облачной платформы | Получение компетенции поможет вам: <ul> <li> выделиться среди других партнеров корпорации Майкрософт и </li> <li> продемонстрировать технический опыт и успех на рынке. </li> </ul> Компетенция является обязательным условием для многих ключевых партнерских программ, таких как совместные продажи. Дополнительные сведения см. на сайте [Продавайте с Microsoft](https://partner.microsoft.com/reach-customers/selling-with-microsoft). |
 | Примите участие в программе IP Co-Sell Ready | Возможно, вы имеете право на участие в программе IP Co-Sell Ready.  Эта программа позволяет следующее: <ul> <li> напрямую сотрудничать с продавцами и другими партнерами корпорации Майкрософт и совместно работать над целевыми возможностями клиентов и планированием счетов; </li> <li> сделать ваше решение видимым для продавцов корпорации Майкрософт в каталоге решений продавца. </li> <li> Продавцы Майкрософт вознаграждаются за сотрудничество с вами. </li> </ul> Дополнительные сведения о требованиях к участию см. на странице [Продавайте с Microsoft](https://partner.microsoft.com/reach-customers/selling-with-microsoft). |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы узнать больше о службах выхода на рынок в marketplace, посетите [эту страницу](https://partner.microsoft.com/reach-customers/gtm).
 

@@ -9,11 +9,11 @@ ms.date: 02/22/2019
 ms.topic: conceptual
 ms.service: azure-spatial-anchors
 ms.openlocfilehash: 134023c0884ce3a402b99806f1bf19dcb59ecc32
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57882834"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60564873"
 ---
 # <a name="logging-and-diagnostics-in-azure-spatial-anchors"></a>Ведение журнала и диагностики в Azure пространственных привязки
 
@@ -56,7 +56,7 @@ Azure пространственных привязки предоставляе
 
 В следующих разделах показано, как включить режим диагностики, а также отправка журналов диагностики в корпорацию Майкрософт.
 
-### <a name="enable-diagnostics-logging"></a>Включение ведения журналов диагностики
+### <a name="enable-diagnostics-logging"></a>Включение ведения журнала диагностики
 
 Когда вы включаете сеанс для ведения журнала диагностики, все операции в сеансе имеют соответствующий ведении журналов диагностики в локальной файловой системе. Во время ведения журнала, образы среды сохраняются на диск.
 

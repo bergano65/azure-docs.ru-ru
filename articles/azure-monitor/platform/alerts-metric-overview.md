@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.service: azure-monitor
 ms.subservice: alerts
 ms.openlocfilehash: 59973d9530bf1c3ab3e77290b25e50860f9de0ca
-ms.sourcegitcommit: fcb674cc4e43ac5e4583e0098d06af7b398bd9a9
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/18/2019
-ms.locfileid: "56342989"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60712871"
 ---
 # <a name="understand-how-metric-alerts-work-in-azure-monitor"></a>Сведения о работе оповещений о метриках в Azure Monitor
 
@@ -27,9 +27,9 @@ ms.locfileid: "56342989"
 Предположим, что вы создали простое правило генерации оповещений о метрике со статическим пороговым значением следующим образом:
 
 - Целевой ресурс (ресурс Azure, который требуется отслеживать): myVM.
-- Метрика: Percentage CPU
-- Тип условия: Статическое
-- Агрегат времени (Статистический показатель, который выполняется в необработанных значениях метрик. Поддерживаемые агрегаты времени: Min, Max, Avg, Total) — Средняя
+- Метрика: Загрузка ЦП
+- Тип условия: Статические
+- Агрегат времени (Статистический показатель, который выполняется в необработанных значениях метрик. Поддерживаемые агрегаты времени: Min, Max, Avg, Total) — Средние
 - Период (окно, в рамках которого проверяются значения метрик): за последние 5 минут
 - Частота (частота, с которой оповещение о метрике проверяет, соблюдены ли условия): 1 мин
 - Оператор: Больше чем
@@ -42,13 +42,13 @@ ms.locfileid: "56342989"
 Предположим, что вы создали простое правило генерации оповещений о метрике с динамическим пороговым значением следующим образом:
 
 - Целевой ресурс (ресурс Azure, который требуется отслеживать): myVM.
-- Метрика: Percentage CPU
-- Тип условия: Динамический
-- Агрегат времени (Статистический показатель, который выполняется в необработанных значениях метрик. Поддерживаемые агрегаты времени: Min, Max, Avg, Total) — Средняя
+- Метрика: Загрузка ЦП
+- Тип условия: Динамические
+- Агрегат времени (Статистический показатель, который выполняется в необработанных значениях метрик. Поддерживаемые агрегаты времени: Min, Max, Avg, Total) — Средние
 - Период (окно, в рамках которого проверяются значения метрик): за последние 5 минут
 - Частота (частота, с которой оповещение о метрике проверяет, соблюдены ли условия): 1 мин
 - Оператор: Больше чем
-- Уровень конфиденциальности: Средний
+- Уровень конфиденциальности: Средние
 - Периоды поиска: 4.
 - Число нарушений: 4.
 
@@ -73,11 +73,11 @@ ms.locfileid: "56342989"
 Предположим, что у вас есть план службы приложений для веб-сайта. Вы хотите отследить использование ЦП на нескольких экземплярах, на которых запущен веб-сайт или приложение. Это можно сделать следующим образом, используя правило генерации оповещений о метрике.
 
 - Целевой ресурс: myAppServicePlan
-- Метрика: Percentage CPU
-- Тип условия: Статическое
-- Измерения
+- Метрика: Загрузка ЦП
+- Тип условия: Статические
+- Размеры
   - Экземпляр = InstanceName1, InstanceName2
-- Агрегат времени: Средняя
+- Агрегат времени: Средние
 - Период: за последние 5 минут
 - Частота: 1 мин
 - Оператор: GreaterThan
@@ -88,11 +88,11 @@ ms.locfileid: "56342989"
 Скажем, у вас есть веб-приложение, которое очень часто используется, и вам нужно добавить больше экземпляров. Правило выше по-прежнему отслеживает только два экземпляра. Тем не менее можно создать правило следующим образом.
 
 - Целевой ресурс: myAppServicePlan
-- Метрика: Percentage CPU
-- Тип условия: Статическое
-- Измерения
+- Метрика: Загрузка ЦП
+- Тип условия: Статические
+- Размеры
   - Экземпляр = *
-- Агрегат времени: Средняя
+- Агрегат времени: Средние
 - Период: за последние 5 минут
 - Частота: 1 мин
 - Оператор: GreaterThan
@@ -105,15 +105,15 @@ ms.locfileid: "56342989"
 Предположим, у вас есть веб-приложение со множеством экземпляров и вы не знаете, какой порог является наиболее подходящим. Приведенные выше правила всегда будут использовать порог 70 %. Тем не менее можно создать правило следующим образом.
 
 - Целевой ресурс: myAppServicePlan
-- Метрика: Percentage CPU
-- Тип условия: Динамический
-- Измерения
+- Метрика: Загрузка ЦП
+- Тип условия: Динамические
+- Размеры
   - Экземпляр = *
-- Агрегат времени: Средняя
+- Агрегат времени: Средние
 - Период: за последние 5 минут
 - Частота: 1 мин
 - Оператор: GreaterThan
-- Уровень конфиденциальности: Средний
+- Уровень конфиденциальности: Средние
 - Периоды поиска: 1
 - Число нарушений: 1
 
@@ -145,39 +145,39 @@ ms.locfileid: "56342989"
 
 |Тип ресурса, который поддерживается стандартными оповещениями метрики | Поддерживаются оповещениями метрики |
 |-------------------------------------------------|----------------------------|
-| Microsoft.ApiManagement/service | Yes |
-| Microsoft.Batch/batchAccounts| Yes|
-|Microsoft.Cache/redis| Yes |
-|Microsoft.classicСompute/virtualMachines | Нет  |
-|Microsoft.ClassicCompute/domainNames/slots/roles | Нет |
-|Microsoft.CognitiveServices/accounts | Нет  |
-|Microsoft.Compute/virtualMachines | Yes|
-|Microsoft.Compute/virtualMachineScaleSets;| Yes|
-|Microsoft.ClassicStorage/storageAccounts| Нет  |
-|Microsoft.DataFactory/datafactories | Yes|
-|Microsoft.DBforMySQL/servers| Yes|
-|Microsoft.DBforPostgreSQL/servers| Yes|
-|Microsoft.Devices/IotHubs | Нет |
-|Microsoft.DocumentDB/databaseAccounts| Yes|
-|Microsoft.EventHub/namespaces | Yes|
-|Microsoft.Logic/workflows | Yes|
-|Microsoft.Network/loadBalancers |Yes|
-|Microsoft.Network/publicIPAddresses| Yes|
-|Microsoft.Network/applicationGateways| Yes|
-|Microsoft.Network/expressRouteCircuits| Yes|
-|Microsoft.Network/trafficManagerProfiles | Yes|
-|Microsoft.Search/searchServices | Yes|
-|Microsoft.ServiceBus/namespaces| Yes |
-|Microsoft.Storage/storageAccounts | Yes|
-|Microsoft.StreamAnalytics/streamingjobs| Yes|
-|Microsoft.TimeSeriesInsights/environments | Yes|
-|Microsoft. Web/serverfarms | Yes |
-|Microsoft. Web/sites (за исключением функций) | Yes|
-|Microsoft. Web/hostingEnvironments/multiRolePools | Нет |
-|Microsoft. Web/hostingEnvironments/workerPools| Нет  |
-|Microsoft.SQL/Servers | Нет  |
+| Microsoft.ApiManagement/service | Да |
+| Microsoft.Batch/batchAccounts| Да|
+|Microsoft.Cache/redis| Да |
+|Microsoft.ClassicCompute/virtualMachines | Нет |
+|Microsoft.ClassicCompute/domainNames/slots/roles | Нет|
+|Microsoft.CognitiveServices/accounts | Нет |
+|Microsoft.Compute/virtualMachines | Да|
+|Microsoft.Compute/virtualMachineScaleSets| Да|
+|Microsoft.ClassicStorage/storageAccounts| Нет |
+|Microsoft.DataFactory/datafactories | Да|
+|Microsoft.DBforMySQL/servers| Да|
+|Microsoft.DBforPostgreSQL/servers| Да|
+|Microsoft.Devices/IotHubs | Нет|
+|Microsoft.DocumentDB/databaseAccounts| Да|
+|Microsoft.EventHub/namespaces | Да|
+|Microsoft.Logic/workflows | Да|
+|Microsoft.Network/loadBalancers |Да|
+|Microsoft.Network/publicIPAddresses| Да|
+|Microsoft.Network/applicationGateways| Да|
+|Microsoft.Network/expressRouteCircuits| Да|
+|Microsoft.Network/trafficManagerProfiles | Да|
+|Microsoft.Search/searchServices | Да|
+|Microsoft.ServiceBus/namespaces| Да |
+|Microsoft.Storage/storageAccounts | Да|
+|Microsoft.StreamAnalytics/streamingjobs| Да|
+|Microsoft.TimeSeriesInsights/environments | Да|
+|Microsoft. Web/serverfarms | Да |
+|Microsoft. Web/sites (за исключением функций) | Да|
+|Microsoft. Web/hostingEnvironments/multiRolePools | Нет|
+|Microsoft. Web/hostingEnvironments/workerPools| Нет |
+|Microsoft.SQL/Servers | Нет |
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Создание и просмотр оповещений о метриках, а также управление ими с помощью Azure Monitor](alerts-metric.md)
 - [Сведения о развертывании оповещений о метриках с помощью шаблонов Azure Resource Manager](../../azure-monitor/platform/alerts-metric-create-templates.md)

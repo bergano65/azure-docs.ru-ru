@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 02/07/2017
 ms.author: jegeib
 ms.openlocfilehash: 0803ade7613480621a0cd87f9944ee5f55bf432c
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57899491"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60586311"
 ---
 # <a name="security-frame-input-validation--mitigations"></a>Механизм безопасности. Проверка входных данных | Снижение риска 
 | Продукт или служба | Статья |
@@ -34,8 +34,8 @@ ms.locfileid: "57899491"
 
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
-| **Компонент**               | Веб-приложение | 
-| **Этап SDL**               | Создание |  
+| **Компонент**               | Web Application | 
+| **Этап SDL**               | Сборка |  
 | **Применимые технологии** | Универсальный |
 | **Атрибуты**              | Н/Д  |
 | **Справочные материалы**              | [Безопасность XSLT](https://msdn.microsoft.com/library/ms763800(v=vs.85).aspx), [XsltSettings.EnableScript Property](https://msdn.microsoft.com/library/system.xml.xsl.xsltsettings.enablescript.aspx) (Свойство XsltSettings.EnableScript) |
@@ -66,8 +66,8 @@ doc.setProperty("AllowXsltScript", false); // CORRECT. Setting to false disables
 
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
-| **Компонент**               | Веб-приложение | 
-| **Этап SDL**               | Создание |  
+| **Компонент**               | Web Application | 
+| **Этап SDL**               | Сборка |  
 | **Применимые технологии** | Универсальный |
 | **Атрибуты**              | Н/Д  |
 | **Справочные материалы**              | [IE8 Security Part V — Comprehensive Protection](https://blogs.msdn.com/ie/archive/2008/07/02/ie8-security-part-v-comprehensive-protection.aspx) (Безопасность IE8, часть 5: комплексная защита)  |
@@ -135,8 +135,8 @@ this.Response.Headers[""X-Content-Type-Options""] = ""nosniff"";
 
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
-| **Компонент**               | Веб-приложение | 
-| **Этап SDL**               | Создание |  
+| **Компонент**               | Web Application | 
+| **Этап SDL**               | Сборка |  
 | **Применимые технологии** | Универсальный |
 | **Атрибуты**              | Н/Д  |
 | **Справочные материалы**              | [XML Entity Expansion](https://capec.mitre.org/data/definitions/197.html) (Расширения сущностей XML), [XML Denial of Service Attacks and Defenses](https://msdn.microsoft.com/magazine/ee335713.aspx) (XML: атаки типа "отказ в обслуживании" и способы защиты от них), [Общие сведения о безопасности MSXML](https://msdn.microsoft.com/library/ms754611(v=VS.85).aspx), [Рекомендации по обеспечению безопасности кода MSXML](https://msdn.microsoft.com/library/ms759188(VS.85).aspx), [NSXMLParserDelegate Protocol Reference](https://developer.apple.com/library/ios/#documentation/cocoa/reference/NSXMLParserDelegate_Protocol/Reference/Reference.html) (Справочник по протоколу NSXMLParserDelegate), [Разрешение внешних ресурсов](https://msdn.microsoft.com/library/5fcwybb2.aspx) |
@@ -182,7 +182,7 @@ XmlReader reader = XmlReader.Create(stream, settings);
 ```
 
 ### <a name="example"></a>Пример
-Если необходимо разрешать встроенные сущности, но не внешние сущности, задайте для свойства XmlReaderSettings.XmlResolver значение null. Например:  
+Если необходимо разрешать встроенные сущности, но не внешние сущности, задайте для свойства XmlReaderSettings.XmlResolver значение null. Пример. 
 
 ```csharp
 XmlReaderSettings settings = new XmlReaderSettings();
@@ -197,8 +197,8 @@ XmlReader reader = XmlReader.Create(stream, settings);
 
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
-| **Компонент**               | Веб-приложение | 
-| **Этап SDL**               | Создание |  
+| **Компонент**               | Web Application | 
+| **Этап SDL**               | Сборка |  
 | **Применимые технологии** | Универсальный |
 | **Атрибуты**              | Н/Д  |
 | **Справочные материалы**              | Н/Д  |
@@ -208,8 +208,8 @@ XmlReader reader = XmlReader.Create(stream, settings);
 
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
-| **Компонент**               | Веб-приложение | 
-| **Этап SDL**               | Создание |  
+| **Компонент**               | Web Application | 
+| **Этап SDL**               | Сборка |  
 | **Применимые технологии** | Универсальный |
 | **Атрибуты**              | Н/Д  |
 | **Справочные материалы**              | [Unrestricted File Upload](https://www.owasp.org/index.php/Unrestricted_File_Upload) (Неограниченная передача файлов), [File Signature Table](https://www.garykessler.net/library/file_sigs.html) (Таблица подписей файлов) |
@@ -324,8 +324,8 @@ XmlReader reader = XmlReader.Create(stream, settings);
 
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
-| **Компонент**               | Веб-приложение | 
-| **Этап SDL**               | Создание |  
+| **Компонент**               | Web Application | 
+| **Этап SDL**               | Сборка |  
 | **Применимые технологии** | Универсальный |
 | **Атрибуты**              | Н/Д  |
 | **Справочные материалы**              | Н/Д  |
@@ -354,8 +354,8 @@ myCommand.Fill(userDataset);
 
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
-| **Компонент**               | Веб-приложение | 
-| **Этап SDL**               | Создание |  
+| **Компонент**               | Web Application | 
+| **Этап SDL**               | Сборка |  
 | **Применимые технологии** | MVC 5, MVC 6 |
 | **Атрибуты**              | Н/Д  |
 | **Справочные материалы**              | [Класс MetadataTypeAttribute](https://msdn.microsoft.com/library/system.componentmodel.dataannotations.metadatatypeattribute), [Public Key Security Vulnerability And Mitigation](https://github.com/blog/1068-public-key-security-vulnerability-and-mitigation) (Уязвимость системы безопасности в виде открытого ключа и способы ее устранения), [Complete Guide to Mass Assignment in ASP.NET MVC](https://odetocode.com/Blogs/scott/archive/2012/03/11/complete-guide-to-mass-assignment-in-asp-net-mvc.aspx) (Полное руководство по массовому назначению в ASP.NET MVC), [Getting Started with EF using MVC](https://www.asp.net/mvc/tutorials/getting-started-with-ef-using-mvc/implementing-basic-crud-functionality-with-the-entity-framework-in-asp-net-mvc-application#overpost) (Начало работы с EF с использованием MVC) |
@@ -365,8 +365,8 @@ myCommand.Fill(userDataset);
 
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
-| **Компонент**               | Веб-приложение | 
-| **Этап SDL**               | Создание |  
+| **Компонент**               | Web Application | 
+| **Этап SDL**               | Сборка |  
 | **Применимые технологии** | Универсальные, веб-формы, MVC 5, MVC 6 |
 | **Атрибуты**              | Н/Д  |
 | **Справочные материалы**              | [How to prevent Cross-site scripting in ASP.NET](https://msdn.microsoft.com/library/ms998274.aspx) (Защита от использования межсайтовых сценариев в ASP.NET), [Cross-site Scripting](https://cwe.mitre.org/data/definitions/79.html) (Использование межсайтовых сценариев), [XSS (Cross Site Scripting) Prevention Cheat Sheet](https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet) (Памятка по защите от использования межсайтовых сценариев (XSS)) |
@@ -390,8 +390,8 @@ myCommand.Fill(userDataset);
 
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
-| **Компонент**               | Веб-приложение | 
-| **Этап SDL**               | Создание |  
+| **Компонент**               | Web Application | 
+| **Этап SDL**               | Сборка |  
 | **Применимые технологии** | Универсальные, MVC 5, MVC 6 |
 | **Атрибуты**              | Н/Д  |
 | **Справочные материалы**              | [Adding Validation](https://www.asp.net/mvc/overview/getting-started/introduction/adding-validation) (Добавление проверки), [Validating Model Data in an MVC Application](https://msdn.microsoft.com/library/dd410404(v=vs.90).aspx) (Проверка данных модели в приложении MVC), [Основные принципы ваших приложений ASP.NET MVC](https://msdn.microsoft.com/magazine/dd942822.aspx) |
@@ -401,8 +401,8 @@ myCommand.Fill(userDataset);
 
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
-| **Компонент**               | Веб-приложение | 
-| **Этап SDL**               | Создание |  
+| **Компонент**               | Web Application | 
+| **Этап SDL**               | Сборка |  
 | **Применимые технологии** | Универсальный |
 | **Атрибуты**              | Н/Д  |
 | **Справочные материалы**              | [Кодирование небезопасных входных данных](https://msdn.microsoft.com/library/ff647397.aspx#paght000003_step3), [HTML Sanitizer](https://github.com/mganss/HtmlSanitizer) (Библиотека HtmlSanitizer) |
@@ -412,8 +412,8 @@ myCommand.Fill(userDataset);
 
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
-| **Компонент**               | Веб-приложение | 
-| **Этап SDL**               | Создание |  
+| **Компонент**               | Web Application | 
+| **Этап SDL**               | Сборка |  
 | **Применимые технологии** | Универсальный |
 | **Атрибуты**              | Н/Д  |
 | **Справочные материалы**              | Н/Д  |
@@ -434,8 +434,8 @@ $('body').append(resHTML);
 
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
-| **Компонент**               | Веб-приложение | 
-| **Этап SDL**               | Создание |  
+| **Компонент**               | Web Application | 
+| **Этап SDL**               | Сборка |  
 | **Применимые технологии** | Универсальный |
 | **Атрибуты**              | Н/Д  |
 | **Справочные материалы**              | [The OAuth 2.0 Authorization Framework — Open Redirectors](https://tools.ietf.org/html/rfc6749#section-10.15) (OAuth 2.0 Authorization Framework: открытые средства перенаправления) |
@@ -445,8 +445,8 @@ $('body').append(resHTML);
 
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
-| **Компонент**               | Веб-приложение | 
-| **Этап SDL**               | Создание |  
+| **Компонент**               | Web Application | 
+| **Этап SDL**               | Сборка |  
 | **Применимые технологии** | Универсальные, MVC 5, MVC 6 |
 | **Атрибуты**              | Н/Д  |
 | **Справочные материалы**              | [Validating Model Data in an MVC Application](https://msdn.microsoft.com/library/dd410404(v=vs.90).aspx) (Проверка данных модели в приложении MVC), [Основные принципы ваших приложений ASP.NET MVC](https://msdn.microsoft.com/magazine/dd942822.aspx) |
@@ -456,8 +456,8 @@ $('body').append(resHTML);
 
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
-| **Компонент**               | Веб-приложение | 
-| **Этап SDL**               | Создание |  
+| **Компонент**               | Web Application | 
+| **Этап SDL**               | Сборка |  
 | **Применимые технологии** | Универсальные, веб-формы, MVC 5, MVC 6  |
 | **Атрибуты**              | Н/Д  |
 | **Справочные материалы**              | [DefaultRegexMatchTimeout Property](https://msdn.microsoft.com/library/system.web.configuration.httpruntimesection.defaultregexmatchtimeout.aspx) |
@@ -474,8 +474,8 @@ $('body').append(resHTML);
 
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
-| **Компонент**               | Веб-приложение | 
-| **Этап SDL**               | Создание |  
+| **Компонент**               | Web Application | 
+| **Этап SDL**               | Сборка |  
 | **Применимые технологии** | MVC 5, MVC 6 |
 | **Атрибуты**              | Н/Д  |
 | **Справочные материалы**              | Н/Д  |
@@ -500,7 +500,7 @@ $('body').append(resHTML);
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
 | **Компонент**               | База данных | 
-| **Этап SDL**               | Создание |  
+| **Этап SDL**               | Сборка |  
 | **Применимые технологии** | Универсальный |
 | **Атрибуты**              | Н/Д  |
 | **Справочные материалы**              | Н/Д  |
@@ -559,8 +559,8 @@ AS
 
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
-| **Компонент**               | Веб-интерфейс API | 
-| **Этап SDL**               | Создание |  
+| **Компонент**               | Веб-API | 
+| **Этап SDL**               | Сборка |  
 | **Применимые технологии** | MVC 5, MVC 6 |
 | **Атрибуты**              | Н/Д  |
 | **Справочные материалы**              | [Проверка модели в веб-API ASP.NET](https://www.asp.net/web-api/overview/formats-and-model-binding/model-validation-in-aspnet-web-api) |
@@ -616,8 +616,8 @@ namespace MyApi.Controllers
 
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
-| **Компонент**               | Веб-интерфейс API | 
-| **Этап SDL**               | Создание |  
+| **Компонент**               | Веб-API | 
+| **Этап SDL**               | Сборка |  
 | **Применимые технологии** | Универсальные, MVC 5, MVC 6 |
 | **Атрибуты**              | Н/Д  |
 | **Справочные материалы**              | [Validating Model Data in an MVC Application](https://msdn.microsoft.com/library/dd410404(v=vs.90).aspx) (Проверка данных модели в приложении MVC), [Основные принципы ваших приложений ASP.NET MVC](https://msdn.microsoft.com/magazine/dd942822.aspx) |
@@ -627,8 +627,8 @@ namespace MyApi.Controllers
 
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
-| **Компонент**               | Веб-интерфейс API | 
-| **Этап SDL**               | Создание |  
+| **Компонент**               | Веб-API | 
+| **Этап SDL**               | Сборка |  
 | **Применимые технологии** | Универсальный |
 | **Атрибуты**              | Н/Д  |
 | **Справочные материалы**              | Н/Д  |
@@ -658,7 +658,7 @@ myCommand.Fill(userDataset);
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
 | **Компонент**               | Azure DocumentDB | 
-| **Этап SDL**               | Создание |  
+| **Этап SDL**               | Сборка |  
 | **Применимые технологии** | Универсальный |
 | **Атрибуты**              | Н/Д  |
 | **Справочные материалы**              | [Announcing SQL Parameterization in Azure Cosmos DB](https://azure.microsoft.com/blog/announcing-sql-parameterization-in-documentdb/) (Объявление о параметризации SQL в Azure Cosmos DB) |
@@ -669,7 +669,7 @@ myCommand.Fill(userDataset);
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
 | **Компонент**               | WCF | 
-| **Этап SDL**               | Создание |  
+| **Этап SDL**               | Сборка |  
 | **Применимые технологии** | Универсальные, .NET Framework 3 |
 | **Атрибуты**              | Н/Д  |
 | **Справочные материалы**              | [MSDN](https://msdn.microsoft.com/library/ff647820.aspx) |
@@ -680,7 +680,7 @@ myCommand.Fill(userDataset);
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
 | **Компонент**               | WCF | 
-| **Этап SDL**               | Создание |  
+| **Этап SDL**               | Сборка |  
 | **Применимые технологии** | Универсальные, .NET Framework 3 |
 | **Атрибуты**              | Н/Д  |
 | **Справочные материалы**              | [MSDN](https://msdn.microsoft.com/library/ff647875.aspx) |

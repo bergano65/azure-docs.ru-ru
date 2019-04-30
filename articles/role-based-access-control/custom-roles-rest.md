@@ -16,11 +16,11 @@ ms.date: 04/18/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.openlocfilehash: 4024f6fdb40c752ef61f348d15f681e81d81c08c
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59999780"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60596680"
 ---
 # <a name="create-custom-roles-for-azure-resources-using-the-rest-api"></a>Создание пользовательских ролей для ресурсов Azure с помощью REST API
 
@@ -38,7 +38,7 @@ ms.locfileid: "59999780"
 
 1. Замените *{фильтр}* с типом роли.
 
-    | Фильтр | ОПИСАНИЕ |
+    | Фильтр | Описание |
     | --- | --- |
     | `$filter=type%20eq%20'CustomRole'` | Фильтрация в зависимости от типа CustomRole |
 
@@ -58,11 +58,11 @@ ms.locfileid: "59999780"
     | --- | --- |
     | `subscriptions/{subscriptionId}` | Подписка |
     | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | Группа ресурсов |
-    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1/ providers/Microsoft.Web/sites/mysite1` | Ресурс |
+    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1/ providers/Microsoft.Web/sites/mysite1` | Resource |
 
 1. Замените *{фильтр}* с типом роли.
 
-    | Фильтр | ОПИСАНИЕ |
+    | Фильтр | Описание |
     | --- | --- |
     | `$filter=type%20eq%20'CustomRole'` | Фильтрация в зависимости от типа CustomRole |
 
@@ -82,11 +82,11 @@ ms.locfileid: "59999780"
     | --- | --- |
     | `subscriptions/{subscriptionId}` | Подписка |
     | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | Группа ресурсов |
-    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1/ providers/Microsoft.Web/sites/mysite1` | Ресурс |
+    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1/ providers/Microsoft.Web/sites/mysite1` | Resource |
 
 1. Замените *{фильтр}* с отображаемым именем для роли.
 
-    | Фильтр | ОПИСАНИЕ |
+    | Фильтр | Описание |
     | --- | --- |
     | `$filter=roleName%20eq%20'{roleDisplayName}'` | Используйте точное отображаемое имя роли в формате URL-адреса. Например, `$filter=roleName%20eq%20'Virtual%20Machine%20Contributor'` |
 
@@ -108,7 +108,7 @@ ms.locfileid: "59999780"
     | --- | --- |
     | `subscriptions/{subscriptionId}` | Подписка |
     | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | Группа ресурсов |
-    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1/ providers/Microsoft.Web/sites/mysite1` | Ресурс |
+    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1/ providers/Microsoft.Web/sites/mysite1` | Resource |
 
 1. Замените *{roleDefinitionId}* на идентификатор GUID определения роли.
 
@@ -156,7 +156,7 @@ ms.locfileid: "59999780"
     | --- | --- |
     | `subscriptions/{subscriptionId}` | Подписка |
     | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | Группа ресурсов |
-    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1/ providers/Microsoft.Web/sites/mysite1` | Ресурс |
+    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1/ providers/Microsoft.Web/sites/mysite1` | Resource |
 
 1. Замените *{role-definition-id}* на идентификатор GUID пользовательской роли.
 
@@ -203,7 +203,7 @@ ms.locfileid: "59999780"
     }
     ```
 
-## <a name="update-a-custom-role"></a>Обновление пользовательской роли
+## <a name="update-a-custom-role"></a>Обновление настраиваемой роли
 
 Чтобы обновить пользовательскую роль, используйте REST API [Определения ролей — создание или обновление](/rest/api/authorization/roledefinitions/createorupdate). Чтобы вызвать этот API, необходимо войти учетную запись пользователя, которой назначены роли, который имеет `Microsoft.Authorization/roleDefinitions/write` разрешение на всех `assignableScopes`. Из встроенных ролей, только [владельца](built-in-roles.md#owner) и [администратор доступа пользователей](built-in-roles.md#user-access-administrator) включает это разрешение.
 
@@ -221,7 +221,7 @@ ms.locfileid: "59999780"
     | --- | --- |
     | `subscriptions/{subscriptionId}` | Подписка |
     | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | Группа ресурсов |
-    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1/ providers/Microsoft.Web/sites/mysite1` | Ресурс |
+    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1/ providers/Microsoft.Web/sites/mysite1` | Resource |
 
 1. Замените *{role-definition-id}* на идентификатор GUID пользовательской роли.
 
@@ -305,7 +305,7 @@ ms.locfileid: "59999780"
     | --- | --- |
     | `subscriptions/{subscriptionId}` | Подписка |
     | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | Группа ресурсов |
-    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1/ providers/Microsoft.Web/sites/mysite1` | Ресурс |
+    | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1/ providers/Microsoft.Web/sites/mysite1` | Resource |
 
 1. Замените *{role-definition-id}* на идентификатор GUID пользовательской роли.
 
