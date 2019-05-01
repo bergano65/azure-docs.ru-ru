@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: conceptual
 ms.date: 02/21/2019
 ms.author: v-jansko
-ms.openlocfilehash: b9a182da0ce03bf3964b6da30f1ed68de38c8141
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 71856865eb7a0445cdcf39def9c0fc89c1f8dcec
+ms.sourcegitcommit: 807c318f5c034f8256f91c241e9d6f8f4d7de90a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61468369"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64951428"
 ---
 # <a name="customize-your-text-translations"></a>Настройка переводов текста
 
@@ -43,7 +43,7 @@ Custom Translator позволяет создавать нейронные си�
 ## <a name="microsoft-translator-hub"></a>Microsoft Translator Hub
 
 > [!NOTE]
-> Устаревших центров Microsoft Translator будет прекращена 30 апреля 2019 г. [Просмотреть сведения о важных миграции и даты](https://www.microsoft.com/translator/business/hub/).  
+> 17 мая 2019 г. будет прекращено устаревших центров Microsoft Translator. [Просмотреть сведения о важных миграции и даты](https://www.microsoft.com/translator/business/hub/).  
 
 ## <a name="custom-translator-versus-hub"></a>Сравнение Custom Translator и центра
 
@@ -60,8 +60,6 @@ Custom Translator позволяет создавать нейронные си�
 
 > [!NOTE]
 > По состоянию на 1 февраля 2018 г. AddTranslation() и AddTranslationArray() больше не доступны для использования в API перевода текстов версии 2.0. Эти методы возвращают ошибку и ничего не записывают. API перевода текстов версии 3.0 не поддерживает эти методы.
-> 
-> Аналогичные функциональные возможности доступны в API для Translator Hub. Дополнительные сведения см. на странице [https://hub.microsofttranslator.com/swagger](https://hub.microsofttranslator.com/swagger).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

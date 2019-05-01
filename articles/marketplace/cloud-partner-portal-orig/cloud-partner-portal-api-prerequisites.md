@@ -1,25 +1,18 @@
 ---
-title: Предварительные требования для API | Документация Майкрософт
+title: Предварительные требования для API | Azure Marketplace
 description: Предварительные требования для использования API Портала Cloud Partner.
 services: Azure, Marketplace, Cloud Partner Portal,
-documentationcenter: ''
 author: v-miclar
-manager: Patrick.Butler
-editor: ''
-ms.assetid: ''
 ms.service: marketplace
-ms.workload: ''
-ms.tgt_pltfrm: ''
-ms.devlang: ''
 ms.topic: conceptual
 ms.date: 09/13/2018
-ms.author: pbutlerm
-ms.openlocfilehash: 0d743d89c344ce9cb6eec116ed9c3e0cbe56f86e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.author: pabutler
+ms.openlocfilehash: a973ab0a406168756af61900fd35947c8be6d03b
+ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60720885"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64935382"
 ---
 <a name="api-prerequisites"></a>Предварительные требования для API
 ================

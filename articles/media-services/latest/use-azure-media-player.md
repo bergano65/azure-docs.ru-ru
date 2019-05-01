@@ -11,12 +11,12 @@ ms.workload: ''
 ms.topic: article
 ms.date: 01/03/2018
 ms.author: juliako
-ms.openlocfilehash: 6de626323c82689d0ead4f5aaad2a2e43187ebd0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: fd5bf9f7bca9c667191d0d3f83be6e29a96c8dbe
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61466652"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64926514"
 ---
 # <a name="azure-media-player-overview"></a>Обзор Проигрывателя мультимедиа Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "61466652"
 
 Службы мультимедиа Microsoft Azure поддерживают форматы потоковой передачи HLS, DASH и Smooth Streaming для воспроизведения содержимого. Проигрыватель мультимедиа Azure учитывает эти различные форматы и автоматически воспроизводит наиболее подходящую ссылку в зависимости от возможностей платформы или браузера. Службы мультимедиа также позволяют динамически шифровать ресурсы с использованием PlayReady или 128-битного шифрования AES. Проигрыватель мультимедиа Azure поддерживает расшифровку содержимого, зашифрованного с помощью PlayReady и 128-битного алгоритма шифрования AES, если заданы соответствующие параметры. 
 
-[Начните бесплатное пробное использование](https://azure.microsoft.com/en-us/pricing/free-trial/)
+[Начните бесплатное пробное использование](https://azure.microsoft.com/pricing/free-trial/)
 
 ## <a name="use-azure-media-player-demo-page"></a>Использование демонстрационной страницы Проигрывателя мультимедиа Azure
 

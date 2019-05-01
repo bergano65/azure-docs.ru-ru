@@ -9,20 +9,20 @@ ms.topic: conceptual
 ms.reviewer: jmartens
 ms.author: aashishb
 author: aashishb
-ms.date: 02/05/2019
+ms.date: 04/29/2019
 ms.custom: seodec18
-ms.openlocfilehash: 1a6aa75f3d25cd88cd1edb9b2cdcfabc3b4ec8f9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: ece32754ae51bde5db52d20ab44f0d748bf46533
+ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60818544"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64943940"
 ---
 # <a name="use-ssl-to-secure-web-services-with-azure-machine-learning-service"></a>Использование SSL для защиты веб-служб, развернутых с помощью Службы машинного обучения Azure
 
 В этой статье вы узнаете, как защитить веб-службы, развернутые с помощью службы Машинного обучения Azure. Можно ограничить доступ к веб-служб и защиты данных, отправленных клиентами с помощью [гипертекстовый протокол безопасного (HTTPS)](https://en.wikipedia.org/wiki/HTTPS).
 
-HTTPS используется для защиты обмена данными между клиентом и веб-службу, шифровать обмен данными между ними. Шифрование осуществляется с использованием [безопасности транспортного уровня (TLS)](https://en.wikipedia.org/wiki/Transport_Layer_Security). Иногда это по-прежнему упоминается как Secure Sockets Layer (SSL), которая была создана до TLS.
+HTTPS используется для защиты обмена данными между клиентом и веб-службу, шифровать обмен данными между ними. Шифрование осуществляется с использованием [безопасности транспортного уровня (TLS)](https://en.wikipedia.org/wiki/Transport_Layer_Security). Иногда TLS по-прежнему упоминается как Secure Sockets Layer (SSL), которая была создана до TLS.
 
 > [!TIP]
 > Пакета SDK для Azure Machine Learning используется термин «SSL» для свойств, связанных с включением защиты обмена данными. Это не означает, что TLS не используется веб-службой, так же, протокол SSL — это более запоминающееся термин для многих читателей.
@@ -34,7 +34,7 @@ TLS и SSL, используют __цифровые сертификаты__, к
 >
 > HTTPS также позволяет клиенту проверки подлинности сервера, который соединяется с. Это позволяет защитить клиентов от [man-in--middle](https://en.wikipedia.org/wiki/Man-in-the-middle_attack) атак.
 
-Защита новой веб-службы или уже существующей выглядит следующим образом:
+Защита новой веб-службы или существующий общий процесс выглядит следующим образом:
 
 1. Получите имя домена.
 
@@ -43,6 +43,9 @@ TLS и SSL, используют __цифровые сертификаты__, к
 3. Разверните или обновите веб-службу со включенным параметром SSL.
 
 4. Обновите имя DNS, чтобы оно указывало на веб-службу.
+
+> [!IMPORTANT]
+> Если вы выполняете развертывание для службы Azure Kubernetes (AKS), можно предоставить собственный сертификат или используется сертификат, предоставленный корпорацией Майкрософт. Если используется предоставленный сертификат Microsoft, вы не обязательно должны получить доменное имя или SSL-сертификат. Дополнительные сведения см. в разделе [включить SSL и развернуть](#enable) раздел.
 
 При защите веб-служб в разных [целевых объектах развертывания](how-to-deploy-and-where.md) есть небольшие отличия.
 
@@ -65,19 +68,49 @@ TLS и SSL, используют __цифровые сертификаты__, к
 > [!WARNING]
 > Эти самозаверяющие сертификаты следует использовать только для разработки. Они не должны использоваться в рабочей среде. Самозаверяющие сертификаты могут вызвать проблемы в клиентских приложениях. Дополнительные сведения см. в документации для сетевых библиотек, используемых в клиентском приложении.
 
-## <a name="enable-ssl-and-deploy"></a>Включение SSL и развертывание службы
+## <a id="enable"></a> Включить SSL и развертывание
 
-Чтобы развернуть (или развернуть повторно) службу со включенным SSL, установите для параметра `ssl_enabled` значение `True` везде, где это применимо. Установите для параметра `ssl_certificate` значение файла __сертификата__, а для параметра `ssl_key` значение __ключа__.
+Чтобы развернуть (или повторного развертывания) в службу с поддержкой протокола SSL, задайте `ssl_enabled` параметр `True`, везде, где это применимо. Установите для параметра `ssl_certificate` значение файла __сертификата__, а для параметра `ssl_key` значение __ключа__.
 
 + **Развертывание в Службе Azure Kubernetes (AKS)**
 
-  При подготовке кластера AKS укажите значения для параметров, связанных с SSL, как показано во фрагменте кода:
+  При развертывании в AKS, можно создать новый кластер AKS или присоединить имеющийся. Создание кластера использует [AksCompute.provisionining_configuration()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.akscompute?view=azure-ml-py#provisioning-configuration-agent-count-none--vm-size-none--ssl-cname-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--location-none--vnet-resourcegroup-name-none--vnet-name-none--subnet-name-none--service-cidr-none--dns-service-ip-none--docker-bridge-cidr-none-) во время присоединения существующего кластера использует [AksCompute.attach_configuration()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.akscompute?view=azure-ml-py#attach-configuration-resource-group-none--cluster-name-none--resource-id-none-). Обе возвращают объект конфигурации, который имеет `enable_ssl` метод.
+
+  `enable_ssl` Метод можно использовать сертификат, предоставленный Майкрософт или тот, который вы указали.
+
+  * При использовании сертификата __предоставленных корпорацией Майкрософт__, необходимо использовать `leaf_domain_label` параметра. С помощью этого параметра будет создать службу с помощью сертификата, предоставляемого корпорацией Майкрософт. `leaf_domain_label` Используется для создания DNS-имя для службы. Например, значение `myservice` создает доменное имя `myservice<6-random-characters>.<azureregion>.cloudapp.azure.com`, где `<azureregion>` — регион, который содержит службу. При необходимости можно использовать `overwrite_existing_domain` параметр для перезаписи существующих конечных метку домена.
+
+    Чтобы развернуть (или развернуть повторно) службу со включенным SSL, установите для параметра `ssl_enabled` значение `True` везде, где это применимо. Установите для параметра `ssl_certificate` значение файла __сертификата__, а для параметра `ssl_key` значение __ключа__.
+
+    > [!IMPORTANT]
+    > При использовании сертификата, предоставляемого корпорацией Майкрософт, вы не обязательно должны приобрести собственное имя сертификата или домена.
+
+    Следующий пример демонстрирует создание конфигурации, позволяющие сертификат SSL, созданные корпорацией Майкрософт:
 
     ```python
     from azureml.core.compute import AksCompute
-
-    provisioning_config = AksCompute.provisioning_configuration(ssl_cert_pem_file="cert.pem", ssl_key_pem_file="key.pem", ssl_cname="www.contoso.com")
+    # Config used to create a new AKS cluster and enable SSL
+    provisioning_config = AksCompute.provisioning_configuration().enable_ssl(leaf_domain_label = "myservice")
+    # Config used to attach an existing AKS cluster to your workspace and enable SSL
+    attach_config = AksCompute.attach_configuration(resource_group = resource_group,
+                                          cluster_name = cluster_name).enable_ssl(leaf_domain_label = "myservice")
     ```
+
+  * При использовании __сертификат, который вы приобрели__, использовать `ssl_cert_pem_file`, `ssl_key_pem_file`, и `ssl_cname` параметров.  Следующий пример демонстрирует создание конфигурации, которые используют сертификат SSL, укажите с помощью `.pem` файлы:
+
+    ```python
+    from azureml.core.compute import AksCompute
+    # Config used to create a new AKS cluster and enable SSL
+    provisioning_config = AksCompute.provisioning_configuration(ssl_cert_pem_file="cert.pem", ssl_key_pem_file="key.pem", ssl_cname="www.contoso.com")
+    provisioning_config = AksCompute.provisioning_configuration().enable_ssl(ssl_cert_pem_file="cert.pem",
+                                        ssl_key_pem_file="key.pem", ssl_cname="www.contoso.com")
+    # Config used to attach an existing AKS cluster to your workspace and enable SSL
+    attach_config = AksCompute.attach_configuration(resource_group = resource_group,
+                                         cluster_name = cluster_name).enable_ssl(ssl_cert_pem_file="cert.pem",
+                                        ssl_key_pem_file="key.pem", ssl_cname="www.contoso.com")
+    ```
+
+  Дополнительные сведения о `enable_ssl`, см. в разделе [AksProvisioningConfiguration.enable_ssl()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.aks.aksprovisioningconfiguration?view=azure-ml-py#enable-ssl-ssl-cname-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--leaf-domain-label-none--overwrite-existing-domain-false-) и [AksAttachConfiguration.enable_ssl()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.aks.aksattachconfiguration?view=azure-ml-py#enable-ssl-ssl-cname-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--leaf-domain-label-none--overwrite-existing-domain-false-).
 
 + **Развертывание в Экземплярах контейнеров Azure (ACI)**
 
@@ -89,15 +122,7 @@ TLS и SSL, используют __цифровые сертификаты__, к
     aci_config = AciWebservice.deploy_configuration(ssl_enabled=True, ssl_cert_pem_file="cert.pem", ssl_key_pem_file="key.pem", ssl_cname="www.contoso.com")
     ```
 
-+ **Развертывание в программируемых пользователем вентильных матрицах (FPGA)**
-
-  При развертывании в FPGA укажите значения для параметров, связанных с SSL, как показано во фрагменте кода:
-
-    ```python
-    from azureml.contrib.brainwave import BrainwaveWebservice
-
-    deployment_config = BrainwaveWebservice.deploy_configuration(ssl_enabled=True, ssl_cert_pem_file="cert.pem", ssl_key_pem_file="key.pem")
-    ```
+  Дополнительные сведения см. в разделе [AciWebservice.deploy_configuration()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.aciwebservice?view=azure-ml-py#deploy-configuration-cpu-cores-none--memory-gb-none--tags-none--properties-none--description-none--location-none--auth-enabled-none--ssl-enabled-none--enable-app-insights-none--ssl-cert-pem-file-none--ssl-key-pem-file-none--ssl-cname-none-).
 
 ## <a name="update-your-dns"></a>Обновление DNS
 
@@ -111,11 +136,15 @@ TLS и SSL, используют __цифровые сертификаты__, к
 
 + **Для AKS**:
 
+  > [!WARNING]
+  > Если вы использовали `leaf_domain_label` для создания службы с помощью сертификата, предоставленных корпорацией Майкрософт, не обновить вручную значения DNS для кластера. Значение должно быть установлено автоматически.
+
   Обновите имя DNS на вкладке "Конфигурация" окна "Общедоступный IP-адрес" кластера AKS, как показано на изображении. Общедоступный IP-адрес можно найти как один из типов ресурсов в группе ресурсов, содержащей узлы агента AKS и другие сетевые ресурсы.
 
   ![Служба машинного обучения Azure. Защита веб-служб с помощью SSL](./media/how-to-secure-web-service/aks-public-ip-address.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
-На вебинаре будут рассматриваться следующие темы:
+Вы узнаете, как выполнять следующие задачи:
 + [Использование модели Машинного обучения, развернутой в качестве веб-службы](how-to-consume-web-service.md)
 + [Безопасное выполнение экспериментов и формирование выводов в пределах виртуальной сети Azure](how-to-enable-virtual-network.md)
+

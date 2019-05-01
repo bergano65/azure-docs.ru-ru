@@ -1,6 +1,6 @@
 ---
-title: Переменные среды вычислительного узла — пакетная служба Azure | Документация Майкрософт
-description: Справочник по переменным среды вычислительного узла для пакетной аналитики Azure.
+title: Задача переменные среды выполнения - пакетной службы Azure | Документация Майкрософт
+description: Задача среды выполнения среды переменной руководства и справочник по пакетной аналитики Azure.
 services: batch
 author: laurenhughes
 manager: jeconnoc
@@ -10,16 +10,16 @@ ms.devlang: multiple
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: big-compute
-ms.date: 02/07/2019
+ms.date: 04/23/2019
 ms.author: lahugh
-ms.openlocfilehash: 9902f38ddfd3035adcce697c2eb5b77bdc1d8c9c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: c46f75c447becc8b15d4a6b8f979330db7ab95c7
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60782237"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64575596"
 ---
-# <a name="azure-batch-compute-node-environment-variables"></a>Переменные среды вычислительного узла пакетной службы Azure
+# <a name="azure-batch-runtime-environment-variables"></a>Переменные среды выполнения пакетной службы Azure
 
 [Пакетная служба Azure](https://azure.microsoft.com/services/batch/) задает на вычислительных узлах указанные ниже переменные среды. Вы можете ссылаться на них в командных строках задач, а также в программах и сценариях, запускаемых этими командными строками.
 
@@ -28,6 +28,12 @@ ms.locfileid: "60782237"
 ## <a name="environment-variable-visibility"></a>Видимость переменных среды
 
 Эти переменные среды видимы только в контексте **пользователя задачи** — учетной записи пользователя на узле, с помощью которой выполняется задача. Вы *не* увидите их, если [удаленно подключитесь](https://azure.microsoft.com/documentation/articles/batch-api-basics/#connecting-to-compute-nodes) к вычислительному узлу через протокол удаленного рабочего стола (RDP) или Secure Shell (SSH) и отобразите список переменных среды. Это вызвано тем, что учетная запись, используемая для удаленного подключения, отличается от учетной записи, используемой задачей.
+
+Чтобы получить текущее значение переменной среды, запустите `cmd.exe` на Windows вычислительный узел или `/bin/sh` на узле Linux:
+
+`cmd /c set <ENV_VARIABLE_NAME>`
+
+`/bin/sh printenv <ENV_VARIABLE_NAME>`
 
 ## <a name="command-line-expansion-of-environment-variables"></a>Расширение переменных среды в командной строке
 
@@ -39,7 +45,7 @@ ms.locfileid: "60782237"
 
 ## <a name="environment-variables"></a>Переменные среды
 
-| Имя переменной                     | Описание                                                              | Доступность | Пример |
+| Имя переменной                     | ОПИСАНИЕ                                                              | Доступность | Пример |
 |-----------------------------------|--------------------------------------------------------------------------|--------------|---------|
 | AZ_BATCH_ACCOUNT_NAME           | Имя учетной записи пакетной службы, к которой относится задача.                  | Все задачи.   | mybatchaccount |
 | AZ_BATCH_ACCOUNT_URL            | URL-адрес учетной записи пакетной службы. | Все задачи. | `https://myaccount.westus.batch.azure.com` |

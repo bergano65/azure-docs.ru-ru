@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 04/03/2019
 ms.author: monhaber
 ms.manager: shaik
-ms.openlocfilehash: 78338ece1bc70d8410bd71183a34aaf1a52f2d1b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: c42867ff7aea2210f20a2cd2adb5c067b8f36c80
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61484220"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64926503"
 ---
 # <a name="advanced-threat-protection-for-azure-storage"></a>Расширенная защита от угроз для службы хранилища Azure
 
@@ -23,14 +23,14 @@ ms.locfileid: "61484220"
 
 > [!NOTE]
 > * Advanced Threat Protection для службы хранилища Azure в настоящее время доступна только для хранилища BLOB-объектов.
-> * Информация о ценах, включая бесплатную 30-дневной пробной, см. в разделе [странице с ценами на Центр безопасности Azure]( https://azure.microsoft.com/en-us/pricing/details/security-center/).
+> * Информация о ценах, включая бесплатную 30-дневной пробной, см. в разделе [странице с ценами на Центр безопасности Azure]( https://azure.microsoft.com/pricing/details/security-center/).
 > * ATP для компонента службы хранилища Azure сейчас недоступна в Azure для государственных организаций и независимых облачных регионов.
 
 Advanced Threat Protection для службы хранилища Azure принимает журналы диагностики, чтения, записи и запросов на удаление в хранилище BLOB-объектов для обнаружения угроз. Для изучения оповещения из Advanced Threat Protection, можно просмотреть связанные системы хранения данных, с помощью журнала службы аналитики хранилища. Дополнительные сведения см. в разделе Практическое [настроить ведение журнала аналитики хранилища](storage-monitor-storage-account.md#configure-logging).
 
 ## <a name="set-up-advanced-threat-protection"></a>Настройка Advanced Threat Protection 
 
-### <a name="using-the-portal"></a>Использование портала
+### <a name="using-the-portal"></a>С помощью портала
 
 1. Запустите портал Azure: [https://portal.azure.com](https://portal.azure.com/).
 
@@ -70,7 +70,7 @@ Advanced Threat Protection для службы хранилища Azure прин
 
     ![Страница определения политики](./media/storage-advanced-threat-protection/storage-atp-policy1.png)
 
-### <a name="using-rest-api"></a>Использование REST API
+### <a name="using-rest-api"></a>Использование интерфейса REST API
 Команды Rest API для создания, обновления или получить параметры Advanced Threat Protection для определенной учетной записи хранения.
 
 * [Создание Advanced Threat Protection.](https://docs.microsoft.com/rest/api/securitycenter/advancedthreatprotection/create)

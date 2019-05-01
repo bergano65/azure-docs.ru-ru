@@ -2,24 +2,17 @@
 title: Службы для выхода на рынок. Развитие бизнеса с помощью корпорации Майкрософт | Azure
 description: Службы для выхода на рынок. В этом разделе издатели могут узнать, как развивать свой бизнес с помощью Майкрософт.
 services: Azure, Marketplace, Compute, Storage, Networking, Blockchain, Security
-documentationcenter: ''
 author: qianw211
-manager: Patrick.Butler
-editor: ''
-ms.assetid: ''
 ms.service: marketplace
-ms.workload: ''
-ms.tgt_pltfrm: ''
-ms.devlang: ''
 ms.topic: article
 ms.date: 01/12/2019
 ms.author: ellacroi
-ms.openlocfilehash: 026b8a85bf353dfe384077b1dc8e284d7c373046
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 8bb064deae87e6545d003ffb1fa85058926f5dee
+ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60740137"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64938038"
 ---
 # <a name="promote-your-business-with-microsoft"></a>Развитие бизнеса с помощью решений Майкрософт
 

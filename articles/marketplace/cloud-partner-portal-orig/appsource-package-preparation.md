@@ -1,25 +1,19 @@
 ---
-title: Подготовка пакета AppSource | Документация Майкрософт
+title: Подготовка пакета AppSource | Azure Marketplace
 description: Сведения о подготовке и сборке пакетов AppSource.
 services: Azure, Marketplace, Cloud Partner Portal,
-documentationcenter: ''
 author: pbutlerm
 manager: Ricardo.Villalobos
-editor: ''
-ms.assetid: ''
 ms.service: marketplace
-ms.workload: ''
-ms.tgt_pltfrm: ''
-ms.devlang: ''
 ms.topic: conceptual
 ms.date: 09/13/2018
-ms.author: pbutlerm
-ms.openlocfilehash: cc06ddf2fce93bef27e7aaee85b47179608e192b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.author: pabutler
+ms.openlocfilehash: ff822e87bfec5daa161172c0d47975eb06cc2808
+ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60625473"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64935649"
 ---
 # <a name="appsource-package-preparation"></a>Подготовка пакета AppSource
 
@@ -117,7 +111,7 @@ ms.locfileid: "60625473"
 |SolutionAnchorName |Имя ZIP-файла решения в Package Deployer, который используется для отображаемого имени и описания ресурсов решения.|
 | StartDate| Это день, когда пакет решения станет доступен. Формат — ММ/ДД/ГГГГ.|
 |EndDate|Это день, когда пакет решений станет недоступным. Формат — ММ/ДД/ГГГГ. |
-|SupportedCountries |Это список разделенных запятыми стран, в которых пакет будет доступен. За списком всех текущих кодов стран обратитесь к веб-службам. В то время написания этой статьи список был: AE, AL, AM, AO, АРГЕНТИНА, AT, AU, ШТАТ АРИЗОНА, BA, BB, BD, БЫТЬ, BG, BH, BM, BN, BO, BR ПО ЦС, CH, CI, CL, CM, ШТАТ КОЛОРАДО, CR, CV, CW, CY, CZ, DE, DK,, DZ, EC, EE, НАПРИМЕР, ES, FI, FR, ГБ, GE, GH, GR, GT, HK , HN, HR, ВЕНГРИЯ, КОД, IE, IL, IN, IQ, ЯВЛЯЕТСЯ, ОН, JM, ДЖО, JP, KE, КГ, KN, КОРЕЯ, КВТ, KY, KZ, БАЛАНСИРОВКИ НАГРУЗКИ, LK, LT, LU, LV, LY, ШТАТ МАССАЧУСЕТС, MC, MD, МНЕ, MK, MN, MO, MT, ЦЕНТРА ОБНОВЛЕНИЯ МАЙКРОСОФТ, MX, MY, NG, NI, NL, НЕТ, NZ, OM, PA, PE, PH , PK, PL, ЗАПРОС НА ВЫТЯГИВАНИЕ, PS, PT, PY, КОНТРОЛЯ КАЧЕСТВА, RO, RS, RU, RW, SA, SE, SG, SI, SK, SN, SV, TH, TM, TN, TR, TT, TW, UA, США, UY, UZ, VE, VI, VN, ZA, ZW |
+|SupportedCountries |Это разделенный запятыми список стран и регионов, которые будут доступны этого пакета. За списком всех текущих кодов стран обратитесь к веб-службам. В то время написания этой статьи список был: AE, AL, AM, AO, АРГЕНТИНА, AT, AU, ШТАТ АРИЗОНА, BA, BB, BD, БЫТЬ, BG, BH, BM, BN, BO, BR ПО ЦС, CH, CI, CL, CM, ШТАТ КОЛОРАДО, CR, CV, CW, CY, CZ, DE, DK,, DZ, EC, EE, НАПРИМЕР, ES, FI, FR, ГБ, GE, GH, GR, GT, HK , HN, HR, ВЕНГРИЯ, КОД, IE, IL, IN, IQ, ЯВЛЯЕТСЯ, ОН, JM, ДЖО, JP, KE, КГ, KN, КОРЕЯ, КВТ, KY, KZ, БАЛАНСИРОВКИ НАГРУЗКИ, LK, LT, LU, LV, LY, ШТАТ МАССАЧУСЕТС, MC, MD, МНЕ, MK, MN, MO, MT, ЦЕНТРА ОБНОВЛЕНИЯ МАЙКРОСОФТ, MX, MY, NG, NI, NL, НЕТ, NZ, OM, PA, PE, PH , PK, PL, ЗАПРОС НА ВЫТЯГИВАНИЕ, PS, PT, PY, КОНТРОЛЯ КАЧЕСТВА, RO, RS, RU, RW, SA, SE, SG, SI, SK, SN, SV, TH, TM, TN, TR, TT, TW, UA, США, UY, UZ, VE, VI, VN, ZA, ZW |
 |LearnMoreLink | URL-адрес страницы с дополнительными сведениями для этого пакета. |
 |Locales|Один экземпляр этого узла для каждого языка пользовательского интерфейса, который должен поддерживаться в предпочтительном пользовательском интерфейсе решения. Этот узел содержит дочерние элементы, которые описывают языковой стандарт, логотип и термины каждого языка.|
 |Языковые стандарты: PackageLocale.Code|Код языка для этого узла. Пример: Английский (США) — 1033|

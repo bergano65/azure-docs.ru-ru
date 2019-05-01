@@ -1,25 +1,18 @@
 ---
-title: Заполнение формы для сведений об онлайн-магазине | Документация Майкрософт
+title: Инструкции по заполнению формы для сведений об онлайн-магазине
 description: Описание значений формы для сведений об онлайн-магазине для нового приложения Dynamics 365 Business Central.
 services: Azure, Marketplace, Cloud Partner Portal,
-documentationcenter: ''
 author: v-miclar
-manager: Patrick.Butler
-editor: ''
-ms.assetid: ''
 ms.service: marketplace
-ms.workload: ''
-ms.tgt_pltfrm: ''
-ms.devlang: ''
 ms.topic: conceptual
 ms.date: 09/17/2018
-ms.author: pbutlerm
-ms.openlocfilehash: f69a7f9ca94c0a83098300f01e9413b342bd4ae8
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.author: pabutler
+ms.openlocfilehash: a22a2ebe870280ddcdf18c037141b92894742400
+ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60397963"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64935028"
 ---
 <a name="how-to-fill-out-the-storefront-details-form"></a>Инструкции по заполнению формы для сведений об онлайн-магазине
 ===========================================
@@ -57,9 +50,9 @@ ms.locfileid: "60397963"
 
 ### <a name="supported-countriesregions"></a>Поддерживаемые страны или регионы
 
-Это поле определяет страны и регионы, в которых ваше предложение будет доступно на период пробной версии. Можно выбрать только те страны, в которых Microsoft Dynamics 365 Business Central уже доступен или находится в предварительной версии. Текущий список см. в разделе [Countries and Translations Supported](https://docs.microsoft.com/dynamics-nav/compliance/apptest-countries-and-translations) (Поддерживаемые страны и переводы).
+Это поле определяет страны и регионы, в которых ваше предложение будет доступно на период пробной версии. Можно выбрать только странах и регионах, где Microsoft Dynamics 365 Business Central уже доступна или находится в предварительной версии. Текущий список, см. в разделе [стран или регионов и поддерживает переводов](https://docs.microsoft.com/dynamics-nav/compliance/apptest-countries-and-translations).
 
-![Выбор поддерживаемых стран и переводов](./media/d365-financials/image008.png)
+![Выберите страны и регионы и поддерживает переводов](./media/d365-financials/image008.png)
 
 
 ### <a name="supported-languages"></a>Поддерживаемые языки

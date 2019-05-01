@@ -10,12 +10,12 @@ ms.topic: article
 ms.custom: seodec18
 ms.date: 12/06/2018
 ms.author: shvija
-ms.openlocfilehash: d1ed16465efb6c70b4426f22e8b9983112142c79
-ms.sourcegitcommit: 301128ea7d883d432720c64238b0d28ebe9aed59
-ms.translationtype: HT
+ms.openlocfilehash: ce9c6a83d664bc9ad1798792f7762556c9a0d541
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56162651"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64690275"
 ---
 # <a name="event-hubs-frequently-asked-questions"></a>Часто задаваемые вопросы о Центрах событий
 
@@ -50,6 +50,47 @@ ms.locfileid: "56162651"
 
 ### <a name="how-do-i-monitor-my-event-hubs"></a>Как применить мониторинг для концентраторов событий?
 Концентраторы событий создают метрики, которые предоставляют в [Azure Monitor](../azure-monitor/overview.md) полные данные о состоянии ресурсов. Они позволяют оценить общую работоспособность службы Центров событий не только на уровне пространства имен, но также и на уровне сущностей. Узнайте, какие возможности мониторинга поддерживаются для [Центров событий Azure](event-hubs-metrics-azure-monitor.md).
+
+### <a name="what-ports-do-i-need-to-open-on-the-firewall"></a>Какие порты необходимо открыть на брандмауэре? 
+Для отправки и получения сообщений со служебной шиной Azure можно использовать следующие протоколы:
+
+- Протокол AMQP
+- HTTP
+- Apache Kafka
+
+См. в следующей таблице исходящие порты, которые необходимо открыть, чтобы использовать эти протоколы для взаимодействия с концентраторами событий Azure. 
+
+| Protocol | порты; | Сведения | 
+| -------- | ----- | ------- | 
+| AMQP | 5671 и 5672 | См. в разделе [руководство по использованию протокола AMQP](../service-bus-messaging/service-bus-amqp-protocol-guide.md) | 
+| HTTP, HTTPS | 80, 443 |  |
+| Kafka | 9092 | См. в разделе [использование концентраторов событий из приложений Kafka](event-hubs-for-kafka-ecosystem-overview.md)
+
+### <a name="what-ip-addresses-do-i-need-to-whitelist"></a>Какие IP-адреса необходимо добавить в список разрешений?
+Чтобы найти правой IP-адреса в список разрешений для подключений, выполните следующие действия.
+
+1. Выполните следующую команду из командной строки: 
+
+    ```
+    nslookup <YourNamespaceName>.servicebus.windows.net
+    ```
+2. Запишите IP-адрес, возвращаемый в `Non-authoritative answer`. Этот IP-адрес является статическим. Единственный момент времени, при этом изменяются является его восстановить пространство имен на другом кластере.
+
+Если вы используете избыточности зон для пространства имен, вам потребуется выполнить несколько дополнительных действий. 
+
+1. Во-первых можно запустить команду nslookup в пространстве имен.
+
+    ```
+    nslookup <yournamespace>.servicebus.windows.net
+    ```
+2. Запишите имя в **не заслуживающего доверия ответов** раздела, в котором находится в одном из следующих форматов: 
+
+    ```
+    <name>-s1.servicebus.windows.net
+    <name>-s2.servicebus.windows.net
+    <name>-s3.servicebus.windows.net
+    ```
+3. Запустить команду nslookup для каждого из них с помощью суффиксов s1, s2 и s3, чтобы получить IP-адреса всех трех экземпляров, работающих в трех зонах доступности 
 
 ## <a name="apache-kafka-integration"></a>Интеграция с Apache Kafka
 
@@ -199,7 +240,7 @@ bootstrap.servers=dummynamespace.servicebus.windows.net:9093 request.timeout.ms=
 
 Дополнительные сведения о соглашении об уровне обслуживания см. на странице [Соглашения об уровне обслуживания](https://azure.microsoft.com/support/legal/sla/).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о Центрах событий см. в следующих источниках:
 

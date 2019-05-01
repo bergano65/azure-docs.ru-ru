@@ -1,25 +1,19 @@
 ---
-title: Как создать предложение Dynamics 365 for Operations с помощью портала Cloud Partner | Документация Майкрософт
+title: Создание предложения Dynamics 365 for Operations с помощью портала Cloud Partner
 description: Создание предложения Dynamics 365 for Operations с помощью портала Cloud Partner
 services: Azure, Marketplace, Cloud Partner Portal,
-documentationcenter: ''
 author: pbutlerm
 manager: Ricardo.Villalobos
-editor: ''
-ms.assetid: ''
 ms.service: marketplace
-ms.workload: ''
-ms.tgt_pltfrm: ''
-ms.devlang: ''
 ms.topic: conceptual
 ms.date: 09/13/2018
-ms.author: pbutlerm
-ms.openlocfilehash: 93c70e038589667ae97acb86663a6179dcc81637
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.author: pabutler
+ms.openlocfilehash: a9ada25641e2a56beb9083b145a507c8fd41a46f
+ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60776768"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64935109"
 ---
 # <a name="how-to-create-dynamics-365-for-operations-offer-via-cloud-partner-portal"></a>Создание предложения Dynamics 365 for Operations с помощью портала Cloud Partner
 
@@ -128,7 +122,7 @@ ms.locfileid: "60776768"
 2. **Demo videos** (Демонстрационные видео) — щелкните \"+ New\" (Новое). Отправьте демонстрационное видео с вашим решением (только ссылки на YouTube или Vimeo) \*\*. Обязательно отправьте эскиз определенного размера, чтобы видео отображалось на промежуточном этапе.
 3. **Documents** (Документы) — отправьте все документы, относящиеся к решению, и не забудьте ввести имя для документа.
 
-### <a name="legal"></a>Юридические сведения
+### <a name="legal"></a>Юридическая информация
 
 В этом разделе указываются ссылки на политику конфиденциальности и условия использования. Введите URL-адрес политики конфиденциальности, а также условий использования для решения. \*\*Клиент сможет просмотреть эти политики на портале.
 

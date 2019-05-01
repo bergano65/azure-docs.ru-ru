@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.author: ramamill
 ms.date: 02/27/2019
-ms.openlocfilehash: 0278332105f2102fc82122c5a74db6326f011e81
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 58c09c71aad2b6244f6e2f3d144c033665932f50
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60564685"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64925566"
 ---
 # <a name="troubleshoot-mobility-service-push-installation-issues"></a>Устранение неполадок с принудительной установкой службы Mobility Service
 
@@ -167,7 +167,7 @@ ms.locfileid: "60564685"
 ## <a name="enable-protection-failed-as-device-name-mentioned-in-the-grub-configuration-instead-of-uuid-errorid-95320"></a>Не удалось включить защиту, так как в конфигурации GRUB указано имя устройства вместо его UUID (код ошибки: 95320)
 
 **Возможная причина:** </br>
-Файлы конфигурации GRUB ("/boot/grub/menu.lst", "/boot/grub/grub.cfg", "/boot/grub2/grub.cfg" или "/ etc / default / grub") могут содержать значение для параметров **root** и **resume** в качестве фактических имен устройств вместо UUID. Site Recovery требует наличие подхода UUID, поскольку имя устройства может меняться при перезагрузке виртуальной машины, а виртуальная машина может не выдавать одно и то же имя при сбое, что приводит к ошибкам. Пример. </br>
+Файлы конфигурации GRUB ("/boot/grub/menu.lst", "/boot/grub/grub.cfg", "/boot/grub2/grub.cfg" или "/ etc / default / grub") могут содержать значение для параметров **root** и **resume** в качестве фактических имен устройств вместо UUID. Site Recovery требует наличие подхода UUID, поскольку имя устройства может меняться при перезагрузке виртуальной машины, а виртуальная машина может не выдавать одно и то же имя при сбое, что приводит к ошибкам. Например:  </br>
 
 
 - Следующая строка из файла GRUB **/boot/grub2/grub.cfg**. <br>
@@ -183,7 +183,7 @@ ms.locfileid: "60564685"
 Имена устройств должны быть заменены на соответствующий UUID.<br>
 
 
-1. Найти идентификатор UUID устройства с помощью команды «blkid \<имя устройства >». Пример.<br>
+1. Найти идентификатор UUID устройства с помощью команды «blkid \<имя устройства >». Например: <br>
    ```
    blkid /dev/sda1
    /dev/sda1: UUID="6f614b44-433b-431b-9ca1-4dd2f6f74f6b" TYPE="swap"
@@ -231,13 +231,13 @@ ms.locfileid: "60564685"
 
 ### <a name="vss-error--2147023824-0x80070430---exit-code-517"></a>Ошибка VSS 2147023824 [0x80070430] — код выхода 517
 
-Эта ошибка возникает, когда служба поставщика VSS Azure Site Recovery [помечена для удаления](https://msdn.microsoft.com/en-us/library/ms838153.aspx). Попробуйте вручную установить VSS на исходный компьютер, запустив следующую командную строку:
+Эта ошибка возникает, когда служба поставщика VSS Azure Site Recovery [помечена для удаления](https://msdn.microsoft.com/library/ms838153.aspx). Попробуйте вручную установить VSS на исходный компьютер, запустив следующую командную строку:
 
 `C:\Program Files (x86)\Microsoft Azure Site Recovery\agent>"C:\Program Files (x86)\Microsoft Azure Site Recovery\agent\InMageVSSProvider_Install.cmd"`
 
 ### <a name="vss-error--2147023841-0x8007041f---exit-code-512"></a>Ошибка VSS 2147023841 [0x8007041F] — код выхода 512
 
-Эта ошибка возникает, когда база данных службы поставщика VSS Azure Site Recovery [заблокирована](https://msdn.microsoft.com/en-us/library/ms833798.aspx). Попробуйте вручную установить VSS на исходный компьютер, запустив следующую командную строку:
+Эта ошибка возникает, когда база данных службы поставщика VSS Azure Site Recovery [заблокирована](https://msdn.microsoft.com/library/ms833798.aspx). Попробуйте вручную установить VSS на исходный компьютер, запустив следующую командную строку:
 
 `C:\Program Files (x86)\Microsoft Azure Site Recovery\agent>"C:\Program Files (x86)\Microsoft Azure Site Recovery\agent\InMageVSSProvider_Install.cmd"`
 
@@ -266,7 +266,7 @@ ms.locfileid: "60564685"
 
     Отмена регистрации существующего приложения...  Создайте объект каталог получения коллекции приложений 
 
-    Ошибка:
+    Ошибка.
 
     - Код ошибки:-2147164145 [0x8004E00F]
     - Код завершения: 802

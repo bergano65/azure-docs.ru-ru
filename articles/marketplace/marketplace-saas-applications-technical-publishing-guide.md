@@ -2,24 +2,17 @@
 title: Техническое руководство по публикации SaaS-приложений в Azure Marketplace
 description: Пошаговое руководство и контрольный список по публикации SaaS-приложений в Azure Marketplace
 services: Marketplace, Compute, Storage, Networking, Blockchain, Security, SaaS
-documentationcenter: ''
 author: keithcharlie
-manager: nunoc
-editor: keithcharlie
-ms.assetid: ''
 ms.service: marketplace
-ms.workload: ''
-ms.tgt_pltfrm: ''
-ms.devlang: ''
 ms.topic: article
 ms.date: 07/09/2018
 ms.author: keithcharlie
-ms.openlocfilehash: b653b0276cedea1e3b45adf7a9dc390b24f0d03f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 5106b22500b73b650742e7fe0f881c2a4c984eff
+ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60765403"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64937711"
 ---
 # <a name="saas-applications-offer-publishing-guide"></a>Руководство по публикации SaaS-приложений
 
@@ -32,16 +25,16 @@ ms.locfileid: "60765403"
 | Вариант онлайн-магазина | Вывод списка | Пробная версия или транзакция |  
 | --- | --- | --- |  
 | AppSource | Да (связаться со мной) | Да (PowerBI, Dynamics) |
-| Azure Marketplace | Нет | Да (приложения SaaS) |   
+| Azure Marketplace | Нет  | Да (приложения SaaS) |   
 
 **Список**.  Вариант публикации "Список" включает тип предложения "Свяжитесь со мной" и используется, когда реализовать пробную версию или транзакцию нецелесообразно. Преимущество такого подхода заключается в том, что он позволяет издателям, решения которых уже опубликованы, немедленно получать сведения о потенциальных клиентах, с которыми можно заключить сделки, стимулирующие рост бизнеса.  
 **Пробная версия или транзакция.**  Заказчик может непосредственно купить или запросить пробную версию вашего решения. Предоставление пробной версии положительно влияет на взаимодействие с клиентами и позволяет им изучить решение до покупки. Благодаря этому у вас будет больше шансов на продвижение в онлайн-магазинах, что позволит получать больше сведений о потенциальных клиентах. Для бесплатных пробных версий должна предоставляться бесплатная поддержка, по крайней мере на протяжении пробного периода.  
 
 | Предложение приложений SaaS | Бизнес-требования | Технические требования |  
 | --- | --- | --- |  
-| **Связаться с нами** | Да | Нет |  
-| **PowerBI, Dynamics** | Да | Да (интеграция с Azure AD) |  
-| **Приложения SaaS**| Да | Да (интеграция с Azure AD) |     
+| **Связаться с нами** | Yes | Нет  |  
+| **PowerBI, Dynamics** | Yes | Да (интеграция с Azure AD) |  
+| **Приложения SaaS**| Yes | Да (интеграция с Azure AD) |     
 
 ## <a name="saas-list"></a>Список SaaS
 

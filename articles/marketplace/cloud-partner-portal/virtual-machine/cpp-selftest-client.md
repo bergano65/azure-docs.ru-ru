@@ -1,25 +1,18 @@
 ---
-title: Клиент самопроверки для предварительной проверки виртуальной машины — Microsoft Azure Marketplace | Документация Майкрософт
+title: Самопроверки клиента для предварительной проверки виртуальной машины | Azure Marketplace
 description: Как создать клиент самопроверки для предварительной проверки образа виртуальной машины для Microsoft Azure Marketplace.
 services: Azure, Marketplace, Cloud Partner Portal, Virtual Machine
-documentationcenter: ''
 author: dan-wesley
-manager: Patrick.Butler
-editor: ''
-ms.assetid: ''
 ms.service: marketplace
-ms.workload: ''
-ms.tgt_pltfrm: ''
-ms.devlang: ''
 ms.topic: conceptual
 ms.date: 01/23/2018
-ms.author: pbutlerm
-ms.openlocfilehash: ae01b0fb088035240e670c16d4d457d8abda1bfa
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.author: pabutler
+ms.openlocfilehash: 117249feea04381b34f8fc1d95f77c2c1a567dba
+ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60847090"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64938722"
 ---
 # <a name="create-a-self-test-client-to-pre-validate-an-azure-virtual-machine-image"></a>Создание клиента самопроверки для предварительной проверки образа виртуальной машины Azure
 
@@ -69,7 +62,7 @@ Request body:    The Request body parameters should use the following JSON forma
 В следующей таблице описаны поля API.
 
 
-|      Поле         |    Описание    |
+|      Поле         |    ОПИСАНИЕ    |
 |  ---------------   |  ---------------  |
 |  Авторизация     |  Строка "Bearer xxxx-xxxx-xxxx-xxxxx" содержит маркер клиента AAD, который можно создать с помощью PowerShell.          |
 |  DNSName           |  DNS-имя виртуальной машины, которую нужно проверить    |
@@ -300,7 +293,7 @@ https://isvapp.azurewebsites.net/selftest-vm
 
 Для создания и получения маркера через OAuth REST API вы можете использовать любую из следующих программ:
 
-- Postman
+- postman
 - cURL в Linux;
 - C&#35;
 - PowerShell

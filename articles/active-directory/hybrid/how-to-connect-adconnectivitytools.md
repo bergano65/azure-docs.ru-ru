@@ -1,28 +1,28 @@
 ---
 title: 'Azure AD Connect выполняет следующие функции: Модуль PowerShell ADConnectivityTools | Документация Майкрософт'
-description: В этом документе представлен новый модуль PowerShell ADConnectivity.
+description: В этом документе представлены новый модуль ADConnectivity PowerShell и как его можно использовать для устранения неполадок.
 services: active-directory
 author: billmath
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 10/19/2018
+ms.date: 4/25/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5b2471b28132b26c41844b620f6dcf49e3802a6e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: cd5340cd8c802df4ffbe0207b5401d2fee4e207e
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60245661"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64571118"
 ---
-# <a name="what-is-the-adconnectivitytool-powershell-module"></a>Что такое модуль PowerShell ADConnectivityTools?
+# <a name="troubleshoot-azure-ad-connectivity-with-the-adconnectivitytool-powershell-module"></a>Устранение неполадок подключения Azure AD с помощью модуля ADConnectivityTool PowerShell
 
 Инструмент ADConnectivity представляет собой модуль PowerShell, который используется в одном из следующих случаев.
 
-- Во время установки, когда сбой сетевого подключения препятствует успешной проверке учетных данных Active Directory, указанных пользователем в мастере.
+- Во время установки при успешной проверке предотвращает ли неполадки сетевого подключения Active Directory учетные данные пользователя, указанный в мастере.
 - После установки используется пользователем, который вызывает функции из сеанса PowerShell.
 
 Средство находится здесь: **C:\Program Files\Microsoft Azure Active Directory Connect\Tools\ ADConnectivityTool.psm1**. 

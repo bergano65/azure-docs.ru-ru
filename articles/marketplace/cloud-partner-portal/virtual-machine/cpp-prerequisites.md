@@ -1,25 +1,18 @@
 ---
-title: Предварительные требования к виртуальной машине для Microsoft Azure | Документация Майкрософт
+title: Требования к виртуальной машины для Microsoft Azure | Azure Marketplace
 description: Список предварительных требований, необходимых для публикации предложения виртуальной машины в Azure Marketplace.
 services: Azure, Marketplace, Cloud Partner Portal
-documentationcenter: ''
 author: v-miclar
-manager: Patrick.Butler
-editor: ''
-ms.assetid: ''
 ms.service: marketplace
-ms.workload: ''
-ms.tgt_pltfrm: ''
-ms.devlang: ''
 ms.topic: article
 ms.date: 03/13/2019
-ms.author: pbutlerm
-ms.openlocfilehash: 5c26fd3d6c2593217aef8588e2a58377a86412ae
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.author: pabutler
+ms.openlocfilehash: 65ff96ba3aea889ff5b2e2431578f9344f6d840b
+ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60844046"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64938065"
 ---
 # <a name="virtual-machine-prerequisites"></a>Предварительные требования к виртуальным машинам
 
@@ -49,7 +42,7 @@ ms.locfileid: "60844046"
     > Следует использовать одну и ту же учетную запись регистрации Центра разработки для Майкрософт для входа на [портал Cloud Partner](https://cloudpartner.azure.com).
     > У вас должна быть только одна учетная запись Майкрософт для публикации предложений в Azure Marketplace. Эта запись не должна быть привязана к конкретным службам или предложениям.
     
-- Ваша компания (или ее филиал) должна находиться в стране, на территории которой могут осуществляться продажи в Azure Marketplace.  Текущий список этих стран см. в разделе [Политики участия в Microsoft Azure Marketplace](https://azure.microsoft.com/support/legal/marketplace/participation-policies/).
+- Ваша компания (или ее филиал) должна находиться в продажи — от страны или региона поддерживаемыми Azure Marketplace.  Текущий список этих стран или регионов см. в разделе [политики участия в Microsoft Azure Marketplace](https://azure.microsoft.com/support/legal/marketplace/participation-policies/).
 - Продукт должен иметь лицензию, совместимую с моделями выставления счетов, которые поддерживает Azure Marketplace.  Подробнее см. статью [Варианты выставления счетов за использование Azure Marketplace](https://docs.microsoft.com/azure/marketplace/billing-options-azure-marketplace). 
 - Вы должны предоставить клиентам техническую поддержку экономически обоснованным образом. Поддержка может быть платной, бесплатной или обеспечиваться посредством поддержки от сообщества.
 - Вы несете ответственность за лицензирование программного обеспечения, а также любых зависимостей от стороннего программного обеспечения.

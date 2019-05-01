@@ -9,11 +9,11 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/15/2018
 ms.openlocfilehash: b4eced461f798f3cbf3ce968dae59cfb8f1a0363
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
-ms.translationtype: HT
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62115100"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64697618"
 ---
 # <a name="analyze-logs-for-apache-kafka-on-hdinsight"></a>Анализ журналов для Apache Kafka в HDInsight
 
@@ -65,7 +65,7 @@ ms.locfileid: "62115100"
 
      Кроме того, вы можете ввести `*` для поиска всех типов данных журнала. В настоящее время для запросов доступны следующие журналы:
 
-     | Тип журнала | Описание |
+     | Тип журнала | ОПИСАНИЕ |
      | ---- | ---- |
      | log\_kafkaserver\_CL | Брокер Kafka, server.log |
      | log\_kafkacontroller\_CL | Брокер Kafka, controller.log |

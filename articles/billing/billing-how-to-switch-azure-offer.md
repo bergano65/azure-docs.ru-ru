@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/11/2018
 ms.author: banders
-ms.openlocfilehash: bbdcbdc7ef288eeeb279c7e5e59baee492e1f292
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 11d3deb029ef0d8478844b64c54db7982ed1091e
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60918784"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64570987"
 ---
 # <a name="change-your-azure-pay-as-you-go-subscription-to-a-different-offer"></a>Переход с подписки с оплатой по мере использования на другое предложение
 
@@ -30,7 +30,7 @@ ms.locfileid: "60918784"
 
 ## <a name="whats-supported"></a>Поддерживаемые функции
 
-| От | До |
+| Из | Кому |
 | --- | --- |
 | Оплата по мере использования |[Разработка и тестирование с оплатой по мере использования](https://azure.microsoft.com/offers/ms-azr-0023p/) |
 | Оплата по мере использования |[Visual Studio Professional](https://azure.microsoft.com/offers/ms-azr-0059p/) |
@@ -64,7 +64,7 @@ ms.locfileid: "60918784"
 1. Вы можете переименовать подписку. По умолчанию ей присваивается имя нового предложения. Чтобы завершить процедуру, щелкните **Переключить предложение** .
 
    ![Нажмите зеленую кнопку.](./media/billing-how-to-switch-azure-offer/confirmpage.png)
-1. Выполнено! Подписка переведена на новое предложение.
+1. Готово! Подписка переведена на новое предложение.
 
 ## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 
@@ -86,7 +86,7 @@ ms.locfileid: "60918784"
 ### <a name="why-do-i-see-there-are-no-offers-available-in-your-region-or-country-at-this-time"></a>Почему отображается сообщение: "На данный момент предложения для вашей страны или вашего региона отсутствуют"?
 
 * Возможно, у вас нет права на изменение предложения. Проверьте [список доступных предложений, на которые можно перейти](#whats-supported), и убедитесь в том, что у вас активированы правильные преимущества в Visual Studio или BizSpark.
-* Некоторые предложения могут быть доступны не во всех странах.
+* Некоторые предложения не могут быть доступны во всех странах и регионах.
 
 ### <a name="what-does-switching-azure-offers-do-to-my-service-and-billing"></a>Как переключение предложений Azure повлияет на мою службу и выставление счетов?
 
@@ -114,6 +114,6 @@ ms.locfileid: "60918784"
 * Вы можете перенести ресурсы в новую подписку напрямую. Дополнительные сведения см. в статье [Перемещение ресурсов в новую группу ресурсов или подписку](../azure-resource-manager/resource-group-move-resources.md).
 * Чтобы передать права собственности на подписку Azure и на все ресурсы в ней другому пользователю, см. [эту статью](billing-subscription-transfer.md)
 
-## <a name="need-help-contact-us"></a>Нужна помощь? Связаться с нами.
+## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
 
 Если у вас есть вопросы или нужна помощь, [создать запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).

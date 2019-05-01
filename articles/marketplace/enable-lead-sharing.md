@@ -2,24 +2,18 @@
 title: Получение сведений о потенциальных клиентах в Azure Marketplace | Azure
 description: Сведения о получении сведений о потенциальных клиентах в Azure Marketplace и AppSource для издателей служб и приложений.
 services: Azure, Marketplace, Compute, Storage, Networking, Blockchain, Security
-documentationcenter: ''
 author: jm-aditi-ms
 manager: pabutler
-editor: ''
-ms.assetid: ''
 ms.service: marketplace
-ms.workload: ''
-ms.tgt_pltfrm: ''
-ms.devlang: ''
 ms.topic: article
 ms.date: 06/05/2018
 ms.author: ellacroi
-ms.openlocfilehash: 346ebd9636623a2fc8b08d42c2170a21a5e9a316
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.openlocfilehash: 9aecef81547131e6f843fdd55db259d2c4299c9c
+ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62121084"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64938681"
 ---
 # <a name="enable-lead-sharing"></a>Возможность общего доступа к данным о потенциальных клиентах
 Убедитесь, что управление потенциальными клиентами включено для вашего предложения в [Azure Marketplace](https://azuremarketplace.microsoft.com) или [Microsoft AppSource](https://appsource.microsoft.com), чтобы вы могли получать контактную информацию для следующих категорий аудитории.
@@ -45,8 +39,8 @@ ms.locfileid: "62121084"
 
 | Онлайн-магазин | Вывод списка |
 |:--- |:--- |
-| AppSource | <table> <tr><td>приложение</td></tr> <tr><td>Консультационные услуги</td></tr> </table> |
-| Azure Marketplace | <table> <tr><td>Предложение</td></tr> <tr><td>Технология</td></tr> </table> |
+| AppSource | <table> <tr><td>Приложение</td></tr> <tr><td>Консультационные услуги</td></tr> </table> |
+| Azure Marketplace | <table> <tr><td>ПРЕДЛОЖЕНИЕ</td></tr> <tr><td>Технология</td></tr> </table> |
 
 У вас должен быть налажен процесс для работы с потенциальными клиентами, как описано в следующей таблице:
 

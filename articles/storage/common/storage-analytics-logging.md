@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 03/11/2019
 ms.author: fryu
 ms.subservice: common
-ms.openlocfilehash: 09a5a6d823240b724e6ec88de38df068a58982d9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 3daea17a491af8950b38f1e3183583fef63751e2
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61483508"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64926494"
 ---
 # <a name="azure-storage-analytics-logging"></a>Ведение журналов аналитики хранилища Azure
 
@@ -76,7 +76,7 @@ ms.locfileid: "61483508"
  }  
  ```  
 
-Сведения о программном см. в разделе [перечисление ресурсов BLOB-объектов](http://msdn.microsoft.com/library/azure/hh452233.aspx) и [параметр и получение свойств и метаданных для ресурсов BLOB-объектов](http://msdn.microsoft.com/library/azure/dd179404.aspx).  
+Сведения о программном см. в разделе [перечисление ресурсов BLOB-объектов](https://msdn.microsoft.com/library/azure/hh452233.aspx) и [параметр и получение свойств и метаданных для ресурсов BLOB-объектов](https://msdn.microsoft.com/library/azure/dd179404.aspx).  
 
 ### <a name="log-naming-conventions"></a>Соглашения об именовании журналов
 
@@ -86,7 +86,7 @@ ms.locfileid: "61483508"
 
  В следующей таблице описан каждый атрибут в имени.
 
-|Атрибут|Описание|
+|Атрибут|ОПИСАНИЕ|
 |---------------|-----------------|
 |`<service-name>`|имя службы хранилища. Например: `blob`, `table`, или `queue`|
 |`YYYY`|Четырехзначное обозначение года создания журнала. Например: `2011`|
@@ -110,7 +110,7 @@ ms.locfileid: "61483508"
 
  Все большие двоичные объекты журнала хранятся с метаданными, с помощью которых можно определить, какие данные журнала содержит большой двоичный объект. В следующей таблице описаны каждый атрибут метаданных:
 
-|Атрибут|Описание|
+|Атрибут|ОПИСАНИЕ|
 |---------------|-----------------|
 |`LogType`|Описывает, содержит ли журнал информацию, относящуюся к операциям чтения, записи или удаления. Это значение может содержать данные одного типа или сочетание всех трех типов данных, разделенных запятыми.<br /><br /> Пример 1: `write`<br /><br /> Пример 2: `read,write`<br /><br /> Пример 3. `read,write,delete`|
 |`StartTime`|Самое раннее время записи в журнале в форме `YYYY-MM-DDThh:mm:ssZ`. Например: `2011-07-31T18:21:46Z`|

@@ -5,13 +5,13 @@ author: rachel-msft
 ms.author: raagyema
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 11/10/2018
-ms.openlocfilehash: f34e32b9bda83ac1185d0c7b7dcaaaa7b47161a1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 04/29/2019
+ms.openlocfilehash: babe2ac55953940370daa0731463ed6ed8988502
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60332814"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64925913"
 ---
 # <a name="monitoring-in-azure-database-for-mariadb"></a>Мониторинг в Базе данных Azure для MariaDB
 Мониторинг данных о серверах помогает устранять неполадки и оптимизировать рабочую нагрузку. База данных Azure для MariaDB предоставляет различные метрики, позволяющие понять действия сервера.
@@ -41,7 +41,7 @@ ms.locfileid: "60332814"
 |network_bytes_ingress|Сеть (входящий трафик)|Байты|Входящий сетевой трафик по активным подключениям.|
 
 ## <a name="server-logs"></a>Журналы сервера
-Можно включить ведение журнала медленных запросов на сервере. Дополнительные сведения о ведении журналов см. на странице [Журналы сервера в базе данных Azure для PostgreSQL](concepts-server-logs.md).
+Можно включить ведение журнала медленных запросов на сервере. Эти журналы доступны журналах диагностики Azure в Azure Monitor журналы концентраторов событий и учетной записи хранения. Дополнительные сведения о ведении журналов см. в разделе  [Журналы сервера в базе данных Azure для MySQL](concepts-server-logs.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о доступе к метрикам и их экспорте с помощью портала Azure, REST API или интерфейса командной строки см. в статье [Обзор метрик в Microsoft Azure](../monitoring-and-diagnostics/monitoring-overview-metrics.md).

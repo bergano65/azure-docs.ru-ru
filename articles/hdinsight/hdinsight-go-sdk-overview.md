@@ -8,11 +8,11 @@ ms.date: 09/21/2018
 ms.author: tyfox
 ms.custom: seodec18
 ms.openlocfilehash: 2e5b7816fda89e25dcb0de26f526e5187e0640b9
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
-ms.translationtype: HT
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62098564"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64700604"
 ---
 # <a name="hdinsight-go-management-sdk-preview"></a>Предварительная версия пакета SDK Go для HDInsight
 
@@ -375,7 +375,7 @@ extClient.GetMonitoringStatus(context.Background(), "<Resource Group Name", "Clu
 extClient.DisableMonitoring(context.Background(), "<Resource Group Name", "Cluster Name")
 ```
 
-## <a name="script-actions"></a>Действия скрипта
+## <a name="script-actions"></a>Действия сценария
 
 В кластерах HDInsight поддерживается функция конфигурации с использованием действий сценариев, которая вызывает пользовательские сценарии настройки кластера.
 

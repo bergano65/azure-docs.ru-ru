@@ -15,12 +15,12 @@ ms.workload: iaas-sql-server
 ms.date: 02/13/2019
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: c68bae87440bddf704d18b575aeb1f4ba4760bbb
-ms.sourcegitcommit: 48a41b4b0bb89a8579fc35aa805cea22e2b9922c
+ms.openlocfilehash: 3f62557d024f56b7014784b6956f15a950f8cca7
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59578249"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64926250"
 ---
 # <a name="how-to-change-the-licensing-model-for-a-sql-server-virtual-machine-in-azure"></a>Изменение модели лицензирования для виртуальной машины SQL Server в Azure
 В этой статье описывается процесс, позволяющий изменить модель лицензирования для виртуальной машины SQL Server в Azure с помощью нового поставщика ресурсов виртуальной машины SQL **Microsoft.SqlVirtualMachine**. Существуют две модели для виртуальной машины (VM), где размещен SQL Server — по мере использования, лицензирования и использовать собственную лицензию (BYOL). И теперь, с помощью портала Azure, Azure CLI или PowerShell можно изменить какую модель лицензирования использует виртуальную Машину SQL Server. 
@@ -33,10 +33,13 @@ ms.locfileid: "59578249"
 
 ## <a name="remarks"></a>Примечания
 
+
  - Клиенты CSP могут использовать преимущества AHB, сначала развернув виртуальную машину с оплатой по мере использования, а затем преобразовав ее для использования собственной лицензии. 
  - При регистрации пользовательского образа виртуальной Машины SQL Server с поставщиком ресурсов, укажите тип лицензии = «AHUB». При этом лицензии введите как пустой либо указав «PAYG» приведет к регистрации переход на другой. 
  - Если удалить ресурс виртуальной Машины SQL Server, будет выполнен переход обратно параметр жестко лицензии изображения. 
+ - Добавление виртуальной Машины SQL Server в группу доступности требует повторного создания ВМ. Как такие, все виртуальные машины, добавление в доступности набора вернусь к типу лицензии с оплатой по мере использования по умолчанию и потребуется снова включить Преимущество гибридного использования AZURE. 
  - Возможность изменить модель лицензирования входит в состав поставщика ресурсов виртуальной Машины SQL. Развертывание образа marketplace на портале Azure автоматически регистрирует виртуальную Машину SQL Server с поставщиком ресурсов. Тем не менее клиенты, которые самостоятельно при установке SQL Server потребуется вручную [зарегистрировать их виртуальной Машине SQL Server](#register-sql-server-vm-with-the-sql-vm-resource-provider). 
+ 
 
  
 ## <a name="limitations"></a>Ограничения
@@ -172,7 +175,7 @@ az sql vm create -n <VMName> -g <ResourceGroupName> -l <VMLocation>
 # Register your existing SQL Server VM with the new resource provider
 # example: $vm=Get-AzVm -ResourceGroupName AHBTest -Name AHBTest
 $vm=Get-AzVm -ResourceGroupName <ResourceGroupName> -Name <VMName>
-New-AzResource -ResourceName $vm.Name -ResourceGroupName $vm.ResourceGroupName -Location $vm.Location -ResourceType Microsoft.SqlVirtualMachine/sqlVirtualMachines -Proper
+New-AzResource -ResourceName $vm.Name -ResourceGroupName $vm.ResourceGroupName -Location $vm.Location -ResourceType Microsoft.SqlVirtualMachine/sqlVirtualMachines -Properties @{virtualMachineResourceId=$vm.Id}
 ```
 
 
@@ -190,7 +193,7 @@ New-AzResource -ResourceName $vm.Name -ResourceGroupName $vm.ResourceGroupName -
   > Так как установка расширения SQL IaaS приводит к перезапуску службы SQL Server, ее следует выполнять только в период обслуживания. Дополнительные сведения см. в разделе [Установка](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-server-agent-extension#installation). 
 
 
-### <a name="the-resource-microsoftsqlvirtualmachinesqlvirtualmachinesresource-group-under-resource-group-resource-group-was-not-found-the-property-sqlserverlicensetype-cannot-be-found-on-this-object-verify-that-the-property-exists-and-can-be-set"></a>Не удалось найти ресурс «Microsoft.SqlVirtualMachine/SqlVirtualMachines/ < группа_ресурсов >» в группе ресурсов «< группа_ресурсов >». Не удалось найти свойство «sqlServerLicenseType» для этого объекта. Убедитесь, что свойство существует и можно задать.
+### <a name="the-resource-microsoftsqlvirtualmachinesqlvirtualmachinesresource-group-under-resource-group-resource-group-was-not-found-the-property-sqlserverlicensetype-cannot-be-found-on-this-object-verify-that-the-property-exists-and-can-be-set"></a>Ресурс "Microsoft.SqlVirtualMachine/SqlVirtualMachines/\<группы ресурсов >" в группе ресурсов "\<группы ресурсов >" не найден. Не удалось найти свойство «sqlServerLicenseType» для этого объекта. Убедитесь, что свойство существует и можно задать.
 Эта ошибка возникает при попытке изменить модель лицензирования на виртуальную Машину SQL Server, который не был зарегистрирован с помощью поставщика ресурсов SQL. Вам потребуется зарегистрировать поставщик ресурсов должен вашей [подписки](#register-sql-vm-resource-provider-with-subscription), а затем зарегистрировать виртуальную Машину SQL Server в SQL [поставщика ресурсов](#register-sql-server-vm-with-sql-resource-provider). 
 
 ### <a name="cannot-validate-argument-on-parameter-sku"></a>Не удается проверить аргумент в параметре "Sku"

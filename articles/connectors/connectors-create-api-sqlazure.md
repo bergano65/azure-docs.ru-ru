@@ -11,12 +11,12 @@ services: logic-apps
 ms.reviewer: klam, LADocs
 ms.suite: integration
 tags: connectors
-ms.openlocfilehash: 29d53c7fbd26d3c8e2356ce82ff25c7e1b165728
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 998fcba50636cd92b14bdbe1633c2548e84a6bfc
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60541157"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64696420"
 ---
 # <a name="connect-to-sql-server-or-azure-sql-database-from-azure-logic-apps"></a>Подключение к SQL Server или Базе данных SQL Azure из Azure Logic Apps
 
@@ -116,23 +116,26 @@ ms.locfileid: "60541157"
 
 [!INCLUDE [Create a connection to SQL Server or Azure SQL Database](../../includes/connectors-create-api-sqlazure.md)]
 
-## <a name="process-data-in-bulk"></a>Обработка данных в пакетном режиме
+## <a name="handle-bulk-data"></a>Дескриптор массовых данных
 
-Иногда требуется управлять размером и структурой результирующих наборов или приходится работать с результирующими наборами, которые настолько велики, что соединитель не может вернуть все результаты в рамках одного действия. В таких случаях можно использовать *разбиение на страницы*, которое позволяет обрабатывать результаты в виде небольших наборов. 
+В некоторых случаях может потребоваться работать с результирующими наборами, настолько большим, что соединитель не возвращает все результаты, в то же время, или хотите лучше контролировать размер и структуру для результирующих наборов. Ниже приведен ряд способов, что вы можете обрабатывать такие большие результирующие наборы.
 
-[!INCLUDE [Set up pagination for results exceeding default page size](../../includes/connectors-pagination-bulk-data-transfer.md)]
+* Чтобы помочь в управлении результаты в виде небольших наборов, включите *разбиение на страницы*. Дополнительные сведения см. в разделе [получить массовых данных, записи и элементы с помощью разбиения на страницы](../logic-apps/logic-apps-exceed-default-page-size-with-pagination.md).
 
-### <a name="create-a-stored-procedure"></a>Создание хранимой процедуры
+* Создайте хранимую процедуру, которая упорядочивает результаты нужным образом.
 
-При получении или вставке нескольких строк приложение логики может выполнять итерацию этих элементов с помощью [*цикла until*](../logic-apps/logic-apps-control-flow-loops.md#until-loop) в пределах этих [ограничений](../logic-apps/logic-apps-limits-and-config.md). Но иногда приложение логики должно работать с настолько большими наборами данных, например с тысячами или миллионами строк, что целесообразно сократить расходы на вызовы к базе данных. 
+  При получении или вставка нескольких строк, приложение логики может выполнять итерацию эти строки с помощью [ *цикл until* ](../logic-apps/logic-apps-control-flow-loops.md#until-loop) в этих [ограничения](../logic-apps/logic-apps-limits-and-config.md). 
+  Тем не менее, если приложение логики имеет для работы с наборами записей большого размера, например, тысяч или миллионов строк, что вы хотите свести к минимуму затраты, полученный в результате вызовов к базе данных.
 
-Вместо этого можно создать <a href="https://docs.microsoft.com/sql/relational-databases/stored-procedures/stored-procedures-database-engine" target="blank">*хранимую процедуру*</a>, которая выполняется в экземпляре SQL и использует инструкцию **SELECT - ORDER BY** для упорядочивания результатов должным образом. Это решение позволяет управлять размером и структурой полученных результатов. Приложение логики вызывает хранимую процедуру с помощью действия **выполнения хранимой процедуры** соединителя SQL Server. 
+  Чтобы упорядочить результаты в нужным образом, можно создать [ *хранимой процедуры* ](https://docs.microsoft.com/sql/relational-databases/stored-procedures/stored-procedures-database-engine) , выполняется в экземпляре SQL и использует **SELECT — предложение ORDER BY** инструкции. 
+  Это решение позволяет управлять размером и структурой полученных результатов. 
+  Приложение логики вызывает хранимую процедуру с помощью действия **выполнения хранимой процедуры** соединителя SQL Server.
 
-См. дополнительные сведения:
+  См. дополнительные сведения:
 
-* <a href="https://social.technet.microsoft.com/wiki/contents/articles/40060.sql-pagination-for-bulk-data-transfer-with-logic-apps.aspx" target="_blank">Разбиение на страницы в SQL для массовой передачи данных с помощью Logic Apps</a>
+  * [Разбиение на страницы в SQL для массовой передачи данных с помощью Logic Apps](https://social.technet.microsoft.com/wiki/contents/articles/40060.sql-pagination-for-bulk-data-transfer-with-logic-apps.aspx)
 
-* <a href="https://docs.microsoft.com/sql/t-sql/queries/select-order-by-clause-transact-sql" target="_blank">Предложение SELECT - ORDER BY</a>
+  * [Предложение SELECT - ORDER BY](https://docs.microsoft.com/sql/t-sql/queries/select-order-by-clause-transact-sql)
 
 ## <a name="connector-specific-details"></a>Сведения о соединителях
 

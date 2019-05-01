@@ -1,25 +1,18 @@
 ---
-title: Руководство по публикации в Azure Marketplace и AppSource | Azure
+title: Руководство по публикации в Azure Marketplace и AppSource
 description: Обзор Azure Marketplace и Microsoft AppSource для издателей приложений и служб.
 services: Azure, Marketplace, Compute, Storage, Networking, Blockchain, Security
-documentationcenter: ''
 author: ellacroi
-manager: nunoc
-editor: ''
-ms.assetid: e8d228c8-f9e8-4a80-9319-7b94d41c43a6
 ms.service: marketplace
-ms.workload: ''
-ms.tgt_pltfrm: ''
-ms.devlang: ''
 ms.topic: article
 ms.date: 06/05/2018
 ms.author: ellacroi
-ms.openlocfilehash: 5c53545a6a5421bd20622fd132bb5c0b2c0940d9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: a3d75f09ac21fcdb4862cf8eefff0b5c05fd3369
+ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60764226"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64937606"
 ---
 # <a name="azure-marketplace-and-appsource-publishing-guide"></a>Руководство по публикации в Azure Marketplace и AppSource
 
@@ -55,7 +48,7 @@ Marketplace — это стартовая площадка для маркети
 
 Повышайте дополнительные и перекрестные продажи решений, решая проблемы клиентов после перемещения рабочих нагрузок в облако. Продавая или развертывая решения через Marketplace, можно сократить циклы продаж, активизировать проекты и повысить рентабельность сделок путем продажи готовых решений, предназначенных для конкретных рабочих нагрузок и отраслевых сценариев. 
 
-### <a name="get-actionable-insights"></a>Ценная практическая информация 
+### <a name="get-actionable-insights"></a>Получение ценной практической информации 
 
 Получайте сведения о производительности своих предложений из аналитической информации, доступной через Marketplace. Получайте больше сведений об эффективности кампаний, заказах и выплатах, а также о возможностях повысить эффективность маркетинговой кампании для продвигаемого решения.
 

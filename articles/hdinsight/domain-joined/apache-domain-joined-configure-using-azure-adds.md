@@ -8,26 +8,26 @@ ms.reviewer: jasonh
 ms.topic: conceptual
 ms.custom: seodec18
 ms.date: 04/23/2019
-ms.openlocfilehash: 7ad6d4b3a1f465f3d15e00f0164da9f2778f7f1c
-ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
-ms.translationtype: HT
+ms.openlocfilehash: ed2611896f2c23a3cf1d2fec5d9e711f518a65c6
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63760799"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64926352"
 ---
 # <a name="configure-a-hdinsight-cluster-with-enterprise-security-package-by-using-azure-active-directory-domain-services"></a>Настройка кластера HDInsight с корпоративным пакетом безопасности с помощью доменных служб Azure Active Directory
 
-Кластеры Azure HDInsight с корпоративным пакетом безопасности предоставляют многопользовательский режим доступа. Кластеры HDInsight с корпоративным пакетом безопасности подключаются к доменам. Таким образом, пользователи домена могут использовать свои учетные данные домена для проверки подлинности в кластерах и выполнения заданий по обработке больших объемов данных. 
+Кластеры Azure HDInsight с корпоративным пакетом безопасности предоставляют многопользовательский режим доступа. Кластеры HDInsight с корпоративным пакетом безопасности подключаются к доменам. Таким образом, пользователи домена могут использовать свои учетные данные домена для проверки подлинности в кластерах и выполнения заданий по обработке больших объемов данных.
 
 Из этой статьи вы узнаете, как настроить присоединенный к домену кластер HDInsight с корпоративным пакетом безопасности с помощью доменных служб Azure Active Directory (Azure AD-DS).
 
 > [!NOTE]  
-> Общедоступная версия корпоративного пакета безопасности включена в HDI версии 3.6 для Apache Spark, Interactive и Apache Hadoop. Корпоративный пакет безопасности для типов кластеров Apache HBase и Apache Kafka находится на этапе предварительной версии.
+> ESP общедоступна в HDI 3.6 для типов кластера: Apache Spark, интерактивный и Apache Hadoop. Корпоративный пакет безопасности для типов кластеров Apache HBase и Apache Kafka находится на этапе предварительной версии.
 
 ## <a name="enable-azure-ad-ds"></a>Включение Azure AD-DS
 
 > [!NOTE]  
-> Только администраторы клиента имеют разрешение на включение Azure AD-DS. Если системой хранения данных кластера является Azure Data Lake Storage (ADLS) 1-го или 2-го поколения, необходимо отключить MFA только для тех пользователей, которым будет предоставлен доступ к кластеру с использованием базовой аутентификации Kerberose. Вы можете использовать [доверенные IP-адреса](../../active-directory/authentication/howto-mfa-mfasettings.md#trusted-ips) или [условный доступ](../../active-directory/conditional-access/overview.md), чтобы отключить MFA только для определенных пользователей, когда они получают доступ к диапазону IP-адресов виртуальной сети кластера HDInsight. Если вы используете условный доступ, убедитесь, что эту конечную точку службы AD в включена в виртуальной сети HDInsight.
+> Только администраторы клиента имеют разрешение на включение Azure AD-DS. Если хранилище кластера является хранилище Озера данных Azure (ADLS) Gen1 и Gen2, необходимо отключить многофакторную идентификацию (MFA) только для пользователей, которым потребуется доступ к кластеру с помощью Обычная проверка подлинности Kerberos. Вы можете использовать [доверенные IP-адреса](../../active-directory/authentication/howto-mfa-mfasettings.md#trusted-ips) или [условный доступ](../../active-directory/conditional-access/overview.md), чтобы отключить MFA только для определенных пользователей, когда они получают доступ к диапазону IP-адресов виртуальной сети кластера HDInsight. При использовании условного доступа убедитесь, что эта конечная точка службы AD включена в виртуальной сети HDInsight.
 >
 > Если системой хранения данных кластера является хранилище BLOB-объектов Azure (WASB), оставьте Многофакторную идентификацию включенной.
 
@@ -44,7 +44,7 @@ $lifetime=Get-Date
 New-SelfSignedCertificate -Subject contoso100.onmicrosoft.com `
   -NotAfter $lifetime.AddDays(365) -KeyUsage DigitalSignature, KeyEncipherment `
   -Type SSLServerAuthentication -DnsName *.contoso100.onmicrosoft.com, contoso100.onmicrosoft.com
-``` 
+```
 
 ## <a name="check-azure-ad-ds-health-status"></a>Проверка состояния работоспособности Azure AD DS
 Просмотрите состояние работоспособности доменных служб Active Directory Azure, выбрав **Работоспособность** в категории **Управление**. Убедитесь, что состояние Azure AD DS отображается с зеленым значком (выполняется) и синхронизация завершена.
@@ -68,7 +68,7 @@ New-SelfSignedCertificate -Subject contoso100.onmicrosoft.com `
 ## <a name="networking-considerations"></a>Рекомендации по работе с сетями
 
 > [!NOTE]  
-> Azure AD-DS необходимо развертывать в виртуальной сети на базе Azure Resource Manager (ARM). Azure AD-DS не поддерживает классические виртуальные сети. Дополнительные сведения см. [Включение служб Azure Active Directory домена с помощью портала Azure](../../active-directory-domain-services/active-directory-ds-getting-started-network.md).
+> Azure AD-DS необходимо развертывать в виртуальной сети на базе Azure Resource Manager (ARM). Azure AD-DS не поддерживает классические виртуальные сети. Дополнительные сведения см. в статье [Включение доменных служб Azure Active Directory с помощью портала Azure](../../active-directory-domain-services/active-directory-ds-getting-started-network.md).
 
 После включения доменных служб Azure AD локальный сервер службы доменных имен (DNS) будет запущен на виртуальных машинах AD. Настройте виртуальную сеть Azure AD DS, чтобы использовать эти настраиваемые DNS-серверы. Чтобы найти нужные IP-адреса, выберите **Свойства** в категории **управления** и просмотрите IP-адреса, появившиеся в списке под параметром **IP-адрес в виртуальной сети**.
 
@@ -87,7 +87,7 @@ New-SelfSignedCertificate -Subject contoso100.onmicrosoft.com `
 Если вы используете правила групп безопасности сети (NSG) в подсети HDInsight, следует разрешить [необходимые IP-адреса](../hdinsight-extend-hadoop-virtual-network.md) для входящего и исходящего трафика. 
 
 **Чтобы проверить** правильность установки сети, присоедините виртуальную машину Windows к виртуальной сети или подсети HDInsight и проверьте связь по доменному имени (оно должно разрешить протокол IP), а затем запустите **ldp.exe** для доступа к домену Azure AD DS. Затем **присоедините эту виртуальную машину Windows к домену, чтобы подтвердить**, что все необходимые вызовы RPC между клиентом и сервером успешно выполнены. Можно также использовать **nslookup** для подтверждения сетевого доступа к учетной записи хранения или любой внешней базе данных (например, внешнему хранилищу метаданных Hive или базе данных Ranger).
-Убедитесь, что все [необходимые порты](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd772723(v=ws.10)#communication-to-domain-controllers) нужных в список разрешений в схеме доменных Служб AAD правила группы безопасности сети, если AAD DS защищен с помощью группы безопасности сети. Если присоединение к домену этого окна виртуальной машины прошло успешно, можно переходить к следующему шагу и создавать кластеры ESP.
+Если доменные службы AAD защищены группой безопасности сети, убедитесь, что все [необходимые порты](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/dd772723(v=ws.10)#communication-to-domain-controllers) находятся в списке разрешений в правилах NSG подсети AAD DS. Если присоединение к домену этого окна виртуальной машины прошло успешно, можно переходить к следующему шагу и создавать кластеры ESP.
 
 ## <a name="create-a-hdinsight-cluster-with-esp"></a>Создание кластера HDInsight с корпоративным пакетом безопасности
 
@@ -95,7 +95,6 @@ New-SelfSignedCertificate -Subject contoso100.onmicrosoft.com `
 
 > [!NOTE]  
 > Первые шесть символов имени кластера ESP должно быть уникальными в вашей среде. Например, если имеется несколько кластеров ESP в разных виртуальных сетях, следует использовать соглашение об именовании, гарантирующее, что первые шесть символов имени кластера будут уникальными.
-
 
 ![Проверка домена Azure HDInsight с корпоративным пакетом безопасности](./media/apache-domain-joined-configure-using-azure-adds/hdinsight-create-cluster-esp-domain-validate.png)
 
@@ -119,7 +118,7 @@ New-SelfSignedCertificate -Subject contoso100.onmicrosoft.com `
 
 ![Конфигурация доменных служб Active Directory в Azure HDInsight с корпоративным пакетом безопасности](./media/apache-domain-joined-configure-using-azure-adds/hdinsight-identity-managed-identity.png).
 
-
 ## <a name="next-steps"></a>Дальнейшие действия
+
 * Сведения о настройке политик Hive и выполнении запросов Hive см. в статье [Настройка политик Apache Hive в HDInsight с Корпоративным пакетом безопасности](apache-domain-joined-run-hive.md).
 * Сведения о подключении к кластерам HDInsight с корпоративным пакетом безопасности с использованием SSH см. в разделе [Проверка подлинности при использовании присоединенного к домену кластера HDInsight](../hdinsight-hadoop-linux-use-ssh-unix.md#domainjoined).

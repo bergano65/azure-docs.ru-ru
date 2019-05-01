@@ -2,24 +2,18 @@
 title: Руководство по публикации предложения "Контейнеры" в Azure Marketplace
 description: В этой статье описываются требования к публикации предложения "Контейнеры" в Marketplace.
 services: Azure, Marketplace, Compute, Storage, Networking, Blockchain, Security
-documentationcenter: ''
 author: ellacroi
 manager: nunoc
-editor: ''
-ms.assetid: ''
 ms.service: marketplace
-ms.workload: ''
-ms.tgt_pltfrm: ''
-ms.devlang: ''
 ms.topic: article
 ms.date: 07/09/2018
 ms.author: ellacroi
-ms.openlocfilehash: e81f2b42e725e50473c09622a486586fb6721ad5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 41a09be36262ff09c383b8ccb64a94230a11d3f1
+ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60882186"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64937916"
 ---
 # <a name="containers-offer-publishing-guide"></a>Руководство по публикации предложения "Контейнеры"
 

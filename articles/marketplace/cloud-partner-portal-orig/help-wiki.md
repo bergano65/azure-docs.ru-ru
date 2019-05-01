@@ -1,25 +1,19 @@
 ---
-title: Вики-сайт справки Dynamics 365 for Operations | Документация Майкрософт
+title: Вики-сайт справки Dynamics 365 for Operations
 description: Dynamics 365 for Operations на странице справки вики-сайта
 services: Azure, Marketplace, Cloud Partner Portal,
-documentationcenter: ''
 author: pbutlerm
 manager: Ricardo.Villalobos
-editor: ''
-ms.assetid: ''
 ms.service: marketplace
-ms.workload: ''
-ms.tgt_pltfrm: ''
-ms.devlang: ''
 ms.topic: conceptual
 ms.date: 09/13/2018
-ms.author: pbutlerm
-ms.openlocfilehash: 9bbb6a8f8edf42ceb2ffb6d8e632f66a3ad9c6a6
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.author: pabutler
+ms.openlocfilehash: d957055a3545d790b9419ed1523352155ecc3add
+ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60776681"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64935183"
 ---
 # <a name="dynamics-365-for-operations-help-wiki"></a>Вики-сайт справки Dynamics 365 for Operations
 

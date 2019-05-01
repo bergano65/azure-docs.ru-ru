@@ -5,15 +5,15 @@ services: expressroute
 author: cherylmc
 ms.service: expressroute
 ms.topic: conceptual
-ms.date: 01/29/2019
+ms.date: 04/24/2019
 ms.author: cherylmc
 ms.custom: seodec18
-ms.openlocfilehash: 6d1ce56ef66d224b89f49a00c2883ebbf22a5745
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: e1f94b7b2ab71afaa40831446e5e5aede00db7b1
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60365066"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64570843"
 ---
 # <a name="create-and-modify-peering-for-an-expressroute-circuit"></a>Создание и изменение пиринга для канала ExpressRoute
 
@@ -91,7 +91,7 @@ ms.locfileid: "60365066"
 
 ### <a name="getmsft"></a>Просмотр сведений о пиринге Майкрософт
 
-Чтобы посмотреть свойства общедоступного пиринга Azure, выберите нужный пиринг.
+Можно просмотреть свойства пиринга, выберите нужный пиринг Майкрософт.
 
 ![](./media/expressroute-howto-routing-portal-resource-manager/rmicrosoft3.png)
 
@@ -159,6 +159,10 @@ ms.locfileid: "60365066"
 ## <a name="public"></a>Общедоступный пиринг Azure
 
 Этот раздел поможет создать, получить, обновить и (или) удалить конфигурацию общедоступного пиринга Azure для канала ExpressRoute.
+
+> [!Note]
+> Общедоступный пиринг Azure является устаревшим для новых каналов. Дополнительные сведения см. в разделе [пиринга ExpressRoute](expressroute-circuit-peerings.md).
+>
 
 ### <a name="to-create-azure-public-peering"></a>Создание общедоступного пиринга Azure
 

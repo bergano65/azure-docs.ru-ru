@@ -5,15 +5,15 @@ services: storage
 author: yzheng-msft
 ms.service: storage
 ms.topic: conceptual
-ms.date: 3/20/2019
+ms.date: 4/29/2019
 ms.author: yzheng
 ms.subservice: common
-ms.openlocfilehash: 2de194e501c05ba0bdb9971ca6045e67a42b0fd9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: f1fdd1b239301a5340716e1d5d098487afe27f9f
+ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60392472"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64938570"
 ---
 # <a name="manage-the-azure-blob-storage-lifecycle"></a>Управление хранилищем BLOB-объектов Azure жизненного цикла
 
@@ -42,7 +42,7 @@ ms.locfileid: "60392472"
 
 ## <a name="add-or-remove-a-policy"></a>Добавление или удаление политики 
 
-Можно добавить, изменить или удалить политику с помощью портала Azure, [Azure PowerShell](https://github.com/Azure/azure-powershell/releases), Azure CLI, [интерфейсов REST API](https://docs.microsoft.com/en-us/rest/api/storagerp/managementpolicies), или это клиентское средство. В этой статье показано, как управлять политикой с помощью портала и методы PowerShell.  
+Можно добавить, изменить или удалить политику с помощью портала Azure, [Azure PowerShell](https://github.com/Azure/azure-powershell/releases), Azure CLI, [интерфейсов REST API](https://docs.microsoft.com/rest/api/storagerp/managementpolicies), или это клиентское средство. В этой статье показано, как управлять политикой с помощью портала и методы PowerShell.  
 
 > [!NOTE]
 > Если вы настроили для учетной записи хранения правила брандмауэра, запросы на управление жизненным циклом могут быть заблокированы. Их можно разблокировать, настроив исключения. Требуется обход проверки являются: `Logging,  Metrics,  AzureServices`. Дополнительные сведения см. в разделе об исключениях в статье [Настройка брандмауэров службы хранилища Azure и виртуальных сетей](https://docs.microsoft.com/azure/storage/common/storage-network-security#exceptions).
@@ -80,7 +80,47 @@ $rule1 = New-AzStorageAccountManagementPolicyRule -Name Test -Action $action -Fi
 $policy = Set-AzStorageAccountManagementPolicy -ResourceGroupName $rgname -StorageAccountName $accountName -Rule $rule1
 
 ```
+## <a name="arm-template-with-lifecycle-management-policy"></a>Шаблон ARM с помощью политики управления жизненным циклом
 
+Можно определить и развернуть управление жизненным циклом как часть развертывания решения Azure с помощью шаблонов ARM. Ниже приведен пример шаблона для развертывания учетной записи хранения GPv2 RA-GRS с политикой управления жизненным циклом. 
+
+```json
+{
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {},
+  "variables": {
+    "storageAccountName": "[uniqueString(resourceGroup().id)]"
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Storage/storageAccounts",
+      "name": "[variables('storageAccountName')]",
+      "location": "[resourceGroup().location]",
+      "apiVersion": "2019-04-01",
+      "sku": {
+        "name": "Standard_RAGRS"
+      },
+      "kind": "StorageV2",
+      "properties": {
+        "networkAcls": {}
+      }
+    },
+    {
+      "name": "[concat(variables('storageAccountName'), '/default')]",
+      "type": "Microsoft.Storage/storageAccounts/managementPolicies",
+      "apiVersion": "2019-04-01",
+      "dependsOn": [
+        "[variables('storageAccountName')]"
+      ],
+      "properties": {
+        "policy": {...}
+      }
+    }
+  ],
+  "outputs": {}
+}
+```
 
 ## <a name="policy"></a>Политика
 
@@ -115,7 +155,7 @@ $policy = Set-AzStorageAccountManagementPolicy -ResourceGroupName $rgname -Stora
 
 | Имя параметра | Тип параметра | Примечания | Обязательно для заполнения |
 |----------------|----------------|-------|----------|
-| name           | String |Имя правила может содержать до 256 буквенно-цифровые символы. В именах правил учитывается регистр.  Имя должно быть уникальным в пределах политики. | Истина |
+| name           | Строка |Имя правила может содержать до 256 буквенно-цифровые символы. В именах правил учитывается регистр.  Имя должно быть уникальным в пределах политики. | Истина |
 | Включено | Boolean | Необязательное логическое значение, разрешающее правило для временного отключена. Значение по умолчанию имеет значение true, если оно не задано. | False | 
 | Тип           | Значение перечисления | Текущий тип допустимым является `Lifecycle`. | Истина |
 | Определение     | Объект, который определяет правило жизненного цикла | Каждое определение состоит из набора фильтров и набора действий. | Истина |
@@ -305,8 +345,8 @@ $policy = Set-AzStorageAccountManagementPolicy -ResourceGroupName $rgname -Stora
   ]
 }
 ```
-## <a name="faq---i-created-a-new-policy-why-are-the-actions-not-run-immediately"></a>Вопрос. Мною создана политика, но указанные действия не выполняются немедленно. Почему? 
-
+## <a name="faq"></a>Часто задаваемые вопросы 
+**Я создал новую политику, почему действия не выполняются немедленно?**  
 Платформа выполняет политики жизненного цикла один раз в день. После настройки политики для запуска в первый раз может занять до 24 часов для некоторых действий (например, распределение по уровням и удаления).  
 
 ## <a name="next-steps"></a>Дальнейшие действия

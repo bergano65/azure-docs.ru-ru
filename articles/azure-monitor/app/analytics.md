@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 02/02/2019
 ms.author: mbullwin
-ms.openlocfilehash: 4c3ecdd01106cc8d305764206bc75535fa4dac3a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: d75544a30a441b5178a1e9dd368f1ce41cd4d321
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60691958"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64574262"
 ---
 # <a name="analytics-in-application-insights"></a>Аналитика в Application Insights
 Analytics — это мощный инструмент [Application Insights](app-insights-overview.md) для поиска и создания запросов. Analytics — это веб-инструмент, поэтому дополнительная настройка не требуется.
@@ -38,7 +38,7 @@ Analytics — это мощный инструмент [Application Insights](ap
 
 ## <a name="query-data-in-analytics"></a>Запрос данных в Analytics
 Типичный запрос содержит имя таблицы и ряд *операторов*, разделенных символом `|`.
-Например, давайте узнаем, сколько запросов наше приложение получило из разных стран в течение последних трех часов:
+Например давайте узнать, сколько запросов наше приложение получило из разных странах и регионах, за последние 3 часа:
 ```AIQL
 requests
 | where timestamp > ago(3h)

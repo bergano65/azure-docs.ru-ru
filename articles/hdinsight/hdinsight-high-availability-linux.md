@@ -7,22 +7,20 @@ keywords: Высокая доступность Hadoop
 ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
-ms.date: 03/22/2018
+ms.date: 04/24/2019
 ms.author: hrasheed
-ms.openlocfilehash: 596b53d468a7dfc719c16dc6e6339492381d7f41
-ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
-ms.translationtype: HT
+ms.openlocfilehash: 6cb72730ef3dbef81e2b2c9bc1c5cfd3bbd88b65
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63763794"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64704923"
 ---
 # <a name="availability-and-reliability-of-apache-hadoop-clusters-in-hdinsight"></a>Доступность и надежность кластеров Apache Hadoop в HDInsight
 
 В кластерах HDInsight предусмотрены два головных узла, повышающие доступность и надежность выполняемых служб и заданий Apache Hadoop.
 
 Платформа Hadoop обеспечивает высокий уровень доступности и надежности, реплицируя службы и данные на нескольких узлах в кластере. Однако стандартные дистрибутивы Hadoop обычно имеют один головной узел. Любой сбой такого узла может вызвать прекращение работы кластера. HDInsight предоставляет два головных узла для повышения доступности и надежности Hadoop.
-
-[!INCLUDE [windows-retirement-notice](../../includes/windows-retirement-notice.md)]
 
 ## <a name="availability-and-reliability-of-nodes"></a>Доступность и надежность узлов
 
@@ -104,7 +102,7 @@ ms.locfileid: "63763794"
 
 ### <a name="ambari-web-ui"></a>Веб-интерфейс Ambari
 
-Веб-интерфейс Ambari можно просмотреть по ссылке https://CLUSTERNAME.azurehdinsight.net. Замените **CLUSTERNAME** именем кластера. При появлении запроса введите учетные данные пользователя HTTP для кластера. По умолчанию используются имя пользователя HTTP **admin** и пароль, который вы ввели при создании кластера.
+Веб-интерфейс Ambari можно просмотреть по ссылке `https://CLUSTERNAME.azurehdinsight.net`. Замените **CLUSTERNAME** именем кластера. При появлении запроса введите учетные данные пользователя HTTP для кластера. По умолчанию используются имя пользователя HTTP **admin** и пароль, который вы ввели при создании кластера.
 
 Открыв страницу Ambari, слева вы увидите список установленных служб.
 
@@ -247,27 +245,25 @@ URL-адрес указывает, что сейчас служба работа
 
 ## <a name="how-to-configure-the-node-size"></a>Настройка размера узла
 
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
-
 Размер узла можно выбрать только во время создания кластера. Список различных размеров виртуальных машин, доступных для HDInsight, можно найти на [странице цен на HDInsight](https://azure.microsoft.com/pricing/details/hdinsight/).
 
-При создании кластера можно указать размер узлов. Далее приведены инструкции, как указать размер узла с помощью [портала Azure][preview-portal], [Azure PowerShell][azure-powershell] и [Azure Classic CLI][azure-cli].
+При создании кластера можно указать размер узлов. Ниже приведены рекомендации, о том, как указать размер с помощью [портала Azure][preview-portal], [модуля Azure PowerShell Az][azure-powershell], и [Azure CLI][azure-cli]:
 
 * **Портал Azure**: При создании кластера можно задать размер для узлов этого кластера:
 
     ![Изображение мастера создания кластера с выбором размера узла](./media/hdinsight-high-availability-linux/headnodesize.png)
 
-* **Классический Azure CLI.** При использовании команды `azure hdinsight cluster create` можно задать размер головного, рабочего узла и узла ZooKeeper с помощью параметров `--headNodeSize`, `--workerNodeSize` и `--zookeeperNodeSize`.
+* **Azure CLI.** При использовании [создания az hdinsight](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-create) команды можно задать размер головного, рабочего и узлов ZooKeeper с помощью `--headnode-size`, `--workernode-size`, и `--zookeepernode-size` параметров.
 
-* **Azure PowerShell** При использовании командлета `New-AzHDInsightCluster` можно задать размер головного, рабочего узла и узла ZooKeeper с помощью параметров `-HeadNodeVMSize`, `-WorkerNodeSize` и `-ZookeeperNodeSize`.
+* **Azure PowerShell** При использовании [New AzHDInsightCluster](https://docs.microsoft.com/powershell/module/az.hdinsight/new-azhdinsightcluster) командлета, можно задать размер головного, рабочего и узлов ZooKeeper с помощью `-HeadNodeSize`, `-WorkerNodeSize`, и `-ZookeeperNodeSize` параметров.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы получить дополнительные сведения о вопросах, упомянутых в этой статье, используйте следующие ресурсы.
 
 * [Справочник по REST Apache Ambari](https://github.com/apache/ambari/blob/trunk/ambari-server/docs/api/v1/index.md)
-* [Установка и настройка Azure Classic CLI](../cli-install-nodejs.md)
-* [Установка и настройка Azure PowerShell](/powershell/azure/overview)
+* [Установка и настройка CLI Azure](https://docs.microsoft.com//cli/azure/install-azure-cli?view=azure-cli-latest)
+* [Установка и настройка Azure PowerShell модуль Az](/powershell/azure/overview)
 * [Управление кластерами HDInsight с помощью веб-интерфейса Ambari](hdinsight-hadoop-manage-ambari.md)
 * [«Подготовка кластеров HDInsight на основе Linux»](hdinsight-hadoop-provision-linux-clusters.md)
 

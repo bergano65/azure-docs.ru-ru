@@ -1,25 +1,18 @@
 ---
-title: Предложение консультационных услуг в Dynamics 365 и Azure — публикация | Документация Майкрософт
-description: Руководство по публикации предложения консультационных услуг в Azure или Dynamics 365 в портале Microsoft Cloud Partner.
+title: Azure и Dynamics 365 консультационные службы предлагают публикации | Azure Marketplace
+description: Публикация Azure или Dynamics 365 предложения консультационных услуг в облачный портал для партнеров для Azure Marketplace или AppSource.
 services: Azure, Marketplace, Cloud Partner Portal,
-documentationcenter: ''
 author: qianw211
-manager: Patrick.Butler
-editor: ''
-ms.assetid: ''
 ms.service: marketplace
-ms.workload: ''
-ms.tgt_pltfrm: ''
-ms.devlang: ''
 ms.topic: conceptual
 ms.date: 11/30/2018
-ms.author: pbutlerm
-ms.openlocfilehash: dae86dcdd3ada10164be0120b49a8f5f7b642ccd
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.author: pabutler
+ms.openlocfilehash: 44fe7f11d365761c351e488d834a63392ea9cac1
+ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60865431"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64942795"
 ---
 # <a name="publish-a-consulting-service-offer"></a>Публикация предложения консультационных услуг
 

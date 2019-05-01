@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 1/17/2019
 ms.author: srrengar
-ms.openlocfilehash: 36d01a9e6e55ae54377ba3f983f779dbc692c49a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 520961fb4bd126ef878a779c10fb5689b8692c73
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60392932"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64683728"
 ---
 # <a name="eventstore-service-overview"></a>Общие сведения о службе EventStore
 
@@ -89,7 +89,7 @@ ms.locfileid: "60392932"
               {
                 "name": "MinReplicaSetSize",
                 "value": "1"
-              }
+              },
               {
                 "name": "PlacementConstraints",
                 "value": "(NodeType==<node_type_name_here>)"

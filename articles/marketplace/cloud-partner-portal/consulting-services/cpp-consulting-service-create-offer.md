@@ -1,27 +1,20 @@
 ---
-title: Предложение консультационных услуг в Dynamics 365 и Azure. Создание предложения | Документация Майкрософт
-description: Руководство по созданию предложения консультационных услуг в Azure или Dynamics 365 в портале Microsoft Cloud Partner.
+title: Создание консультационное предложение | Azure Marketplace
+description: Создайте Azure или Dynamics 365 предложения консультационных услуг в облачный портал для партнеров для Azure Marketplace.
 services: Azure, Marketplace, Cloud Partner Portal,
-documentationcenter: ''
 author: qianw211
-manager: Patrick.Butler
-editor: ''
-ms.assetid: ''
 ms.service: marketplace
-ms.workload: ''
-ms.tgt_pltfrm: ''
-ms.devlang: ''
 ms.topic: conceptual
 ms.date: 11/30/2018
-ms.author: pbutlerm
-ms.openlocfilehash: f130f20643ba80bf706b8b5ba8f4b7eab0acaa59
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.author: pabutler
+ms.openlocfilehash: 09b9dce8e30ed3ba5ad0bac58929cd2c6d71793c
+ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60865413"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64942833"
 ---
-# <a name="create-an-offer"></a>Создание предложения
+# <a name="create-a-consulting-offer"></a>Создание консультационное предложение
 
 В этой статье описывается, как создать и опубликовать предложение консультационных услуг.
 

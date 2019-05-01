@@ -2,19 +2,17 @@
 title: Интегрированные решения | Azure
 description: Интегрированные решения в Azure Marketplace и AppSource
 services: Azure, Marketplace, Compute, Storage, Networking
-documentationcenter: ''
 author: qianw211
-manager: Patrick.Butler
 ms.service: marketplace
 ms.topic: article
 ms.date: 02/27/2019
 ms.author: ellacroi
-ms.openlocfilehash: f0bda0e0d70d325afd84dc64ddacfa4c0f18a4df
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 4cbc0b399bddbaebd4cb951dcd116e090c2e0c09
+ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60733969"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64938024"
 ---
 # <a name="integrated-solutions-in-azure-marketplace-and-appsource"></a>Интегрированные решения в Azure Marketplace и AppSource
 

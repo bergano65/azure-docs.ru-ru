@@ -3,7 +3,7 @@ title: Создание виртуальной Машины со статиче�
 description: Узнайте, как создать виртуальную машину с помощью частного IP-адреса, с помощью PowerShell.
 services: virtual-network
 documentationcenter: na
-author: jimdial
+author: KumudD
 manager: twooley
 editor: ''
 tags: azure-resource-manager
@@ -14,14 +14,14 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/07/2019
-ms.author: jdial
+ms.author: kumud
 ms.custom: ''
-ms.openlocfilehash: 812b3752bfffd16c09b466b036fb0ac91e77d5a4
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 9115386b0543e1ac840aec29fc7f57e7c98c03bb
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58104358"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64685333"
 ---
 # <a name="create-a-virtual-machine-with-a-static-private-ip-address-using-powershell"></a>Создание виртуальной машины статический частный IP-адрес, с помощью PowerShell
 
@@ -100,7 +100,7 @@ ms.locfileid: "58104358"
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Если больше не нужен, можно использовать [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup) для удаления группы ресурсов и все содержащиеся в ней ресурсы:
+Вы можете удалить ненужную группу ресурсов и все содержащиеся в ней ресурсы с помощью командлета [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup):
 
 ```azurepowershell-interactive
 Remove-AzResourceGroup -Name myResourceGroup -Force

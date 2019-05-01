@@ -5,15 +5,15 @@ services: automation
 ms.service: automation
 author: georgewallace
 ms.author: gwallace
-ms.date: 10/25/2018
+ms.date: 04/26/2019
 ms.topic: article
 manager: carmonm
-ms.openlocfilehash: e865d4e9cbad2c2064d961bc6e407440ce8556fc
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: fe0547c1ddb89b8d9ab3e876e83bbdea17a58743
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60772076"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64570598"
 ---
 # <a name="run-shell-scripts-in-your-linux-vm-with-run-command"></a>Выполнение скриптов оболочки в виртуальной машине Linux с помощью команды запуска
 
@@ -78,9 +78,9 @@ az vm run-command invoke -g myResourceGroup -n myVm --command-id RunShellScript 
 
 ## <a name="limiting-access-to-run-command"></a>Ограничение доступа к команде запуска
 
-Для перечисления команд запуска или отображения деталей команды требуется разрешение `Microsoft.Compute/locations/runCommands/read`, встроенное в роль [Читатель](../../role-based-access-control/built-in-roles.md#reader) и выше.
+Перечисление выполнение команд или отображение сведений о команде требуется `Microsoft.Compute/locations/runCommands/read` разрешение на уровне подписки, который встроенной [чтения](../../role-based-access-control/built-in-roles.md#reader) роли и более поздней версии.
 
-Для запуска команды требуется разрешение`Microsoft.Compute/virtualMachines/runCommand/action`, которое имеет роль [Участник](../../role-based-access-control/built-in-roles.md#virtual-machine-contributor) и выше.
+Для выполнения команды необходимо `Microsoft.Compute/virtualMachines/runCommand/action` разрешение на уровне подписки, который [участник виртуальных машин](../../role-based-access-control/built-in-roles.md#virtual-machine-contributor) роли и более поздней версии.
 
 Можно использовать одну из [встроенных](../../role-based-access-control/built-in-roles.md) ролей или создать [пользовательскую](../../role-based-access-control/custom-roles.md) роль для запуска команды.
 

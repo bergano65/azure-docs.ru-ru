@@ -5,15 +5,15 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: article
-ms.date: 02/25/2019
+ms.date: 04/29/2019
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: 67d3dcad4ec73ee09ec40282b2fbdea945daefe4
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
-ms.translationtype: HT
+ms.openlocfilehash: 21944c62f09518e20619313cd6ac28fb2ad600c7
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62122682"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64925281"
 ---
 # <a name="static-website-hosting-in-azure-storage"></a>Размещение статических веб-сайтов в службе хранилища Azure
 Учетные записи хранения GPv2 Azure позволяют передавать статическое содержимое (HTML, CSS, JavaScript и файлы изображений) непосредственно из контейнера хранилища с именем *$web*. Преимущества размещения в службе хранилища Azure заключаются в использовании бессерверной архитектуры, в том числе [Функций Azure](/azure/azure-functions/functions-overview) и других служб PaaS.
@@ -52,18 +52,23 @@ https://contoso.z4.web.core.windows.net/image.png
 
 ## <a name="cdn-and-ssl-support"></a>Поддержка CDN и SSL
 
-Сведения о том, как сделать доступными статические файлы веб-сайта по протоколу HTTPS, см. в статье [Использование Azure CDN для доступа к BLOB-объектам с пользовательскими доменами по протоколу HTTPS](storage-https-custom-domain-cdn.md). В ходе этого процесса необходимо *указать для CDN конечную точку веб-содержимого*, а не конечную точку BLOB-объекта. Может потребоваться подождать несколько минут, прежде чем содержимое отобразится, так как конфигурация CDN выполняется не мгновенно.
+Чтобы сделать доступным файлов статического веб-сайта по личного домена и HTTPS, см. в разделе [использование Azure CDN для доступа к большим двоичным объектам с пользовательскими доменами по протоколу HTTPS](storage-https-custom-domain-cdn.md). В ходе этого процесса необходимо *указать для CDN конечную точку веб-содержимого*, а не конечную точку BLOB-объекта. Может потребоваться подождать несколько минут, прежде чем содержимое отобразится, так как конфигурация CDN выполняется не мгновенно.
 
 При обновлении вашей статического веб-сайта, не забудьте очистить кэшированное содержимое на пограничных серверах CDN, очистка конечной точки CDN. Дополнительные сведения см. в статье [Очистка конечной точки сети CDN Azure](../../cdn/cdn-purge-endpoint.md).
+
+> [!NOTE]
+> HTTPS поддерживается для скомпилированных в собственном коде с помощью сетевой конечной точке учетной записи. Использование пользовательских доменов по протоколу HTTPS требует использования Azure CDN в настоящее время. 
+>
+> Конечная точка web общей учетной записи по протоколу HTTPS: `https://<ACCOUNT_NAME>.<ZONE_NAME>.web.core.windows.net/<FILE_NAME>`
 
 ## <a name="custom-domain-names"></a>Имена пользовательских доменов
 
 Вы можете [настроить личное имя домена для учетной записи службы хранилища Azure](storage-custom-domain-name.md) для предоставления вашего статического веб-сайта через личный домен. Подробные сведения о размещении вашего домена в Azure см. в статье [Размещение домена в Azure DNS](../../dns/dns-delegate-domain-azure-dns.md).
 
 ## <a name="pricing"></a>Цены
-Размещение статических веб-сайтов осуществляется бесплатно. Дополнительные сведения о ценах на хранилище BLOB-объектов Azure см. на [странице цен](https://azure.microsoft.com/pricing/details/storage/blobs/).
+Включение размещения статического веб-сайта предоставляется бесплатно. Взимается для используемых больших двоичных объектов хранилища и операций затрат. Дополнительные сведения о ценах на хранилище BLOB-объектов Azure см. на [странице цен](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
-## <a name="quickstart"></a>Краткое руководство
+## <a name="quickstart"></a>Быстрый запуск
 
 ### <a name="azure-portal"></a>Портал Azure
 Сначала зайдите на портал Azure по адресу https://portal.azure.com и выполните следующие действия в вашей учетной записи хранения GPv2:
@@ -159,7 +164,10 @@ az storage blob upload-batch -s <SOURCE_PATH> -d \$web --account-name <ACCOUNT_N
 Да, для новой конечной веб-точки действуют правила виртуальной сети и брандмауэра, настроенные для учетной записи хранения.
 
 **Конечная веб-точка чувствительна к регистру?**  
-Да, конечная веб-точка чувствительна к регистру так же, как и конечная точка BLOB-объектов. 
+Да, конечная веб-точка чувствительна к регистру так же, как и конечная точка BLOB-объектов.
+
+**Доступен сетевой конечной точке по протоколам HTTP и HTTPS?**
+Да, сетевой конечной точке доступен через HTTP и HTTPS. Тем не менее если учетной записи хранения настроен на требование безопасной передачи по протоколу HTTPS, пользователи должны использовать конечную точку HTTPS. Дополнительные сведения см. в разделе [требование безопасной передачи в службе хранилища Azure](../common/storage-require-secure-transfer.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Использование Azure CDN для доступа к BLOB-объектам с помощью личных доменов по протоколу HTTPS](storage-https-custom-domain-cdn.md)
@@ -167,4 +175,4 @@ az storage blob upload-batch -s <SOURCE_PATH> -d \$web --account-name <ACCOUNT_N
 * [Функции Azure](/azure/azure-functions/functions-overview)
 * [службе приложений Azure](/azure/app-service/overview)
 * [Создание первого бессерверного веб-приложения](https://docs.microsoft.com/azure/functions/tutorial-static-website-serverless-api-with-database)
-* [Учебник. по размещению домена в Azure DNS](../../dns/dns-delegate-domain-azure-dns.md)
+* [Руководство по размещению домена в Azure DNS](../../dns/dns-delegate-domain-azure-dns.md)

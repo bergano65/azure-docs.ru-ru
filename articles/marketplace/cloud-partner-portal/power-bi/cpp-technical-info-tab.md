@@ -1,25 +1,18 @@
 ---
-title: Техническая информация для предложений приложений Power BI | Документация Майкрософт
+title: Технические сведения для предложения приложение Power BI | Azure Marketplace
 description: Настройка полей технической информации для предложений приложений Power BI для Microsoft AppSource Marketplace.
 services: Azure, AppSource, Marketplace, Cloud Partner Portal, Power BI
-documentationcenter: ''
 author: v-miclar
-manager: Patrick.Butler
-editor: ''
-ms.assetid: ''
 ms.service: marketplace
-ms.workload: ''
-ms.tgt_pltfrm: ''
-ms.devlang: ''
 ms.topic: conceptual
-ms.date: 01/29/2019
-ms.author: pbutlerm
-ms.openlocfilehash: ca77da897eed51c8d832cad7052c2144d6ada562
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.date: 04/24/2019
+ms.author: pabutler
+ms.openlocfilehash: 15f4e2a76724a70c15411dea767cc9bc433e4d4a
+ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60725774"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64943219"
 ---
 # <a name="power-bi-apps-technical-info-tab"></a>Вкладка технической информации о приложениях Power BI
 
@@ -32,9 +25,9 @@ ms.locfileid: "60725774"
 
 На **технические сведения о** вкладку, завершите полях, описанных в следующей таблице. Символ звездочки (*) в конце метку поля означает, что поле является обязательным.
 
-|        Поле          |  Описание                                                                 |
+|        Поле          |  ОПИСАНИЕ                                                                 |
 |    ---------------    |  ----------------------------------------------------------------------------|
-| **Installer URL** (URL-адрес установщика)     | Power BI создает этот URL-адрес, при публикации приложения и его распространение в рабочей среде.  Дополнительные сведения см. в разделе [публикация приложений с помощью панели мониторинга и отчеты в Power BI](https://docs.microsoft.com/power-bi/service-create-distribute-apps).  |
+| **URL-адрес установщика\***     | Power BI создает этот URL-адрес, при публикации приложения и его распространение в рабочей среде.  Дополнительные сведения см. в разделе [публикация приложений с помощью панели мониторинга и отчеты в Power BI](https://docs.microsoft.com/power-bi/service-create-distribute-apps).  |
 |  **Validation instructions** (Инструкции по проверке)  |  Если вы хотите добавьте инструкции (до 3000 символов), чтобы помочь группе Microsoft проверки настройки, подключения и тестирование приложения. Включить типичных параметров конфигурации, учетные записи, параметры или другие сведения, которые можно использовать для тестирования режим подключения данных. Эта информация будет видна только команда проверки, и он используется только для целей проверки.  |
 | **Is this app created as a Power BI content pack?** (Создается ли это приложение в виде пакета содержимого Power BI?) | В настоящее время это поле используется только для внутреннего использования. Оставьте значение по умолчанию **нет**. Если вы измените значение параметра на **Да**, можно остановить процесс публикации.  |  
 |  |  |

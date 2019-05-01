@@ -5,15 +5,15 @@ services: automation
 ms.service: automation
 author: georgewallace
 ms.author: gwallace
-ms.date: 10/25/2018
+ms.date: 04/26/2019
 ms.topic: article
 manager: carmonm
-ms.openlocfilehash: d199a9db879263bbca49298df190c5a127444c42
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 23973445992ceaeb0cd3bc0589665f2fac5b64e5
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60251247"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64575327"
 ---
 # <a name="run-powershell-scripts-in-your-windows-vm-with-run-command"></a>Выполнение сценариев PowerShell в виртуальной машине Windows с помощью команды "Выполнить"
 
@@ -83,9 +83,9 @@ Invoke-AzVMRunCommand -ResourceGroupName '<myResourceGroup>' -Name '<myVMName>' 
 
 ## <a name="limiting-access-to-run-command"></a>Ограничение доступа к команде запуска
 
-Для перечисления команд запуска или отображения деталей команды требуется разрешение `Microsoft.Compute/locations/runCommands/read`, встроенное в роль [Читатель](../../role-based-access-control/built-in-roles.md#reader) и выше.
+Перечисление выполнение команд или отображение сведений о команде требуется `Microsoft.Compute/locations/runCommands/read` разрешение на уровне подписки, который встроенной [чтения](../../role-based-access-control/built-in-roles.md#reader) роли и более поздней версии.
 
-Для выполнения команды необходимо `Microsoft.Compute/virtualMachines/runCommand/action` разрешение, который [участник виртуальных машин](../../role-based-access-control/built-in-roles.md#virtual-machine-contributor) роли и более поздней версии.
+Для выполнения команды необходимо `Microsoft.Compute/virtualMachines/runCommand/action` разрешение на уровне подписки, который [участник виртуальных машин](../../role-based-access-control/built-in-roles.md#virtual-machine-contributor) роли и более поздней версии.
 
 Можно использовать одну из [встроенных](../../role-based-access-control/built-in-roles.md) ролей или создать [пользовательскую](../../role-based-access-control/custom-roles.md) роль для запуска команды.
 

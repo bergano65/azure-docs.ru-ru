@@ -14,18 +14,18 @@ ms.workload: infrastructure-services
 ms.date: 03/27/2019
 ms.author: magoedte
 ms.openlocfilehash: f0c9b84f31810a4b0cec93738f7ce327bc24d8d0
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
-ms.translationtype: HT
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62101614"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64685624"
 ---
 # <a name="how-to-update-azure-monitor-for-containers-to-enable-metrics"></a>Как обновить Azure Monitor для контейнеров, чтобы включить метрики
 Azure Monitor для контейнеров предоставляет поддержку для сбора метрик из узлов кластеров службы Azure Kubernetes (AKS) и модулей и их записи в хранилище данных метрик Azure Monitor. Это изменение призван обеспечивают улучшенную своевременность при представлении статистические вычисления (Avg, Count, Max, Min, Sum), на диаграммах производительности, поддержку закрепления диаграмм производительности в панели мониторинга портала Azure и поддерживают оповещения на основе метрик.
 
 В рамках этой функции будут доступны следующие метрики:
 
-| Пространство имен метрик | Метрика | Описание |
+| Пространство имен метрик | Метрика | ОПИСАНИЕ |
 |------------------|--------|-------------|
 | Insights.Container/nodes | cpuUsageMillicores, cpuUsagePercentage, memoryRssBytes, memoryRssPercentage, memoryWorkingSetBytes, memoryWorkingSetPercentage, nodesCount | Это *узел* метрик и включают *узла* как измерения и они также включают<br> Имя узла в качестве значения для *узла* измерения. |
 | Insights.Container/PODS | podCount | Это *pod* метрик и включают следующее как измерения - Имя_контроллера, пространств имен Kubernetes, имя, этап. |

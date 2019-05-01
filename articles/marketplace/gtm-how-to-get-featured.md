@@ -2,24 +2,17 @@
 title: Службы выхода на рынок — как разместить предложение в marketplace | Azure
 description: 'Службы выхода на рынок: в этом разделе описывается, как разместить предложение в списке в Microsoft Azure Marketplace'
 services: Azure, Marketplace, Compute, Storage, Networking, Blockchain, Security
-documentationcenter: ''
 author: qianw211
-manager: Patrick.Butler
-editor: ''
-ms.assetid: ''
 ms.service: marketplace
-ms.workload: ''
-ms.tgt_pltfrm: ''
-ms.devlang: ''
 ms.topic: article
 ms.date: 12/21/2018
 ms.author: ellacroi
-ms.openlocfilehash: bda94e648891ad5c4de810195e874a5774d6b498
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 5194bdcd5b77b0527ccdefc1af85bf03bdac2cab
+ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60736352"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64938173"
 ---
 # <a name="how-to-get-featured-in-appsource-and-azure-marketplace"></a>Как разместить предложение в AppSource и Microsoft Azure Marketplace
 

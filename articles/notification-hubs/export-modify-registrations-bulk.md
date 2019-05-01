@@ -12,12 +12,12 @@ ms.devlang: ''
 ms.topic: article
 ms.date: 03/18/2019
 ms.author: jowargo
-ms.openlocfilehash: c24fcd5f007b641bb594bb07348491f70c03ea41
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: d7e38e8eca58c06fc6896887522b320a797fc42e
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60623992"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64575298"
 ---
 # <a name="export-and-import-azure-notification-hubs-registrations-in-bulk"></a>Экспорт и импорт регистраций концентраторов уведомлений Azure в пакетном режиме
 Существуют сценарии, в которых она необходима для создания или изменения большого числа регистраций в концентраторе уведомлений. Некоторые из этих сценариев — это обновления тегов после пакетных вычислений или перенос извещающей реализации для использования концентраторов уведомлений.
@@ -34,7 +34,7 @@ ms.locfileid: "60623992"
 
 - Провизионированный концентратор уведомлений.
 - Контейнер больших двоичных объектов хранилища Azure.
-- Ссылки на [пакет NuGet хранилища Azure](https://www.nuget.org/packages/windowsazure.storage/) и [пакета NuGet для центров уведомлений](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/1.0.9).
+- Ссылки на [пакет NuGet хранилища Azure](https://www.nuget.org/packages/windowsazure.storage/) и [пакета NuGet для центров уведомлений](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/).
 
 ### <a name="create-input-file-and-store-it-in-a-blob"></a>Создание входного файла и сохраните его в большой двоичный объект
 Входной файл содержит список регистраций, сериализованных в формате XML, по одному на строку. С помощью пакета SDK для Azure, в следующем примере кода показано, как проводится сериализация регистраций и отправлять их в контейнер больших двоичных объектов.

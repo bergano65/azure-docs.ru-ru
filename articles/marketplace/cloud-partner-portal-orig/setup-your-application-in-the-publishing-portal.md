@@ -1,25 +1,19 @@
 ---
-title: Настройка приложения на портале публикации | Документация Майкрософт
+title: Настройка приложения на портале публикации
 description: Инструкции по настройке приложения на облачном портале публикации.
 services: Azure, Marketplace, Cloud Partner Portal,
-documentationcenter: ''
 author: pbutlerm
 manager: Ricardo.Villalobos
-editor: ''
-ms.assetid: ''
 ms.service: marketplace
-ms.workload: ''
-ms.tgt_pltfrm: ''
-ms.devlang: ''
 ms.topic: conceptual
 ms.date: 09/13/2018
-ms.author: pbutlerm
-ms.openlocfilehash: 8ac0fbb1c62e4162e1c4ad040365a16d055e4552
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.author: pabutler
+ms.openlocfilehash: 6da80bd3b5fe487a44400f4f3c21e8fa49da75d4
+ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60483235"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64943560"
 ---
 # <a name="setup-your-application-in-the-publishing-portal"></a>Настройка приложения на портале публикации
 
@@ -59,7 +53,7 @@ ms.locfileid: "60483235"
 
 Этот раскрывающийся список позволяет выбрать профиль издателя, используемый для публикации этого предложения. После активации предложения это поле блокируется.
 
-### <a name="name"></a>Name
+### <a name="name"></a>ИМЯ
 
 Это отображаемое имя для предложения. Это же имя будет отображаться в [AppSource](https://appsource.microsoft.com/). Его длина не должна превышать 50 символов.
 
@@ -88,7 +82,7 @@ ms.locfileid: "60483235"
 
 ### <a name="crm-package-availability"></a>Доступность пакета CRM
 
-В этом разделе нужно выбрать, в каких регионах CRM будет доступен ваш пакет. Сведения о соответствии регионов и стран можно найти на этой странице: [https://o365datacentermap.azurewebsites.net/](https://o365datacentermap.azurewebsites.net/).
+В этом разделе нужно выбрать, в каких регионах CRM будет доступен ваш пакет. Сведения, на какие CRM региона обслуживают которой странах и регионах, Дополнительные сведения см.: [https://o365datacentermap.azurewebsites.net/](https://o365datacentermap.azurewebsites.net/)
 
 Примечание. Для развертывания в национальное облако Германии и национальное облако для государственных организаций США требуется СПЕЦИАЛЬНОЕ РАЗРЕШЕНИЕ и ПРОВЕРКА В ПРОЦЕССЕ СЕРТИФИКАЦИИ.
 

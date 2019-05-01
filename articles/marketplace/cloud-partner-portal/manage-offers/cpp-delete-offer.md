@@ -1,25 +1,18 @@
 ---
-title: Удаление предложений Marketplace для Azure Marketplace | Документация Майкрософт
+title: Удаление предложения marketplace | Azure Marketplace
 description: Удаление предложений в Azure Marketplace и AppSource с помощью Портала Cloud Partner
 services: Azure, AppSource, Marketplace, Cloud Partner Portal,
-documentationcenter: ''
 author: v-miclar
-manager: Patrick.Butler
-editor: ''
-ms.assetid: ''
 ms.service: marketplace
-ms.workload: ''
-ms.tgt_pltfrm: ''
-ms.devlang: ''
 ms.topic: conceptual
 ms.date: 01/09/2019
-ms.author: pbutlerm
-ms.openlocfilehash: 1d5d02d65dd3dcf5978639818fba4ebe36ffaaff
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.author: pabutler
+ms.openlocfilehash: 542bc611ac8820385c3f749aa151afc1dcdf6db5
+ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60825155"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64942133"
 ---
 # <a name="delete-azure-marketplace-and-appsource-offers-or-skus"></a>Удаление предложений Azure Marketplace и AppSource или номеров SKU
 
@@ -28,7 +21,7 @@ ms.locfileid: "60825155"
 - *Удаление предложения* гарантирует, что новые клиенты больше не смогут приобрести или развернуть ваше предложение (однако это никак не повлияет на имеющихся клиентов, предложения которых вы должны поддерживать согласно лицензированному соглашению и надлежащим законам). 
 - *Завершение предложения* — это процесс прекращения действия соглашения об обслуживании и лицензировании между вами и имеющимися клиентами. 
 
-Рекомендации и политики, связанные с удалением и завершением предложения, регулируются [соглашения с издателем Microsoft Marketplace](https://go.microsoft.com/fwlink/?LinkID=699560) и [политики участия в](https://azure.microsoft.com/support/legal/marketplace/participation-policies/) (раздел [предложения Приостановка и удаление](https://docs.microsoft.com/en-us/legal/marketplace/participation-policy#offering-suspension-and-removal)). 
+Рекомендации и политики, связанные с удалением и завершением предложения, регулируются [соглашения с издателем Microsoft Marketplace](https://go.microsoft.com/fwlink/?LinkID=699560) и [политики участия в](https://azure.microsoft.com/support/legal/marketplace/participation-policies/) (раздел [предложения Приостановка и удаление](https://docs.microsoft.com/legal/marketplace/participation-policy#offering-suspension-and-removal)). 
 
 В статье рассматриваются разные поддерживаемые сценарии удаления и шаги, необходимые для их выполнения.  
 

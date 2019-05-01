@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/16/2018
 ms.author: sedusch
-ms.openlocfilehash: 62356ee35631373b5a5d38ed356bbb2fb489807b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 0758105c7e2a18e976bc0c210eaf4e55e418a22d
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60710664"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64925725"
 ---
 # <a name="setting-up-pacemaker-on-suse-linux-enterprise-server-in-azure"></a>Настройка кластера Pacemaker в SUSE Linux Enterprise Server в Azure.
 
@@ -578,7 +578,7 @@ sudo crm configure primitive <b>stonith-sbd</b> stonith:external/sbd \
 
 ## <a name="pacemaker-configuration-for-azure-scheduled-events"></a>Под Azure конфигурацию pacemaker запланированные события
 
-Azure предлагает [запланированные события](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/scheduled-events). Запланированные события предоставляются через службу метаданных и выделить время для приложения, чтобы подготовиться к событиям, как завершение работы виртуальной Машины, повторное развертывание виртуальной Машины и т. д. Агент ресурсов **[мероприятия azure](https://github.com/ClusterLabs/resource-agents/pull/1161)** мониторы запланированных событий Azure. При обнаружении события, агент попытается остановить все ресурсы в затронутой виртуальной Машины и переместите их на другой узел в кластере. Должен быть настроен для достижения этого дополнительные ресурсы Pacemaker. 
+Azure предлагает [запланированные события](https://docs.microsoft.com/azure/virtual-machines/linux/scheduled-events). Запланированные события предоставляются через службу метаданных и выделить время для приложения, чтобы подготовиться к событиям, как завершение работы виртуальной Машины, повторное развертывание виртуальной Машины и т. д. Агент ресурсов **[мероприятия azure](https://github.com/ClusterLabs/resource-agents/pull/1161)** мониторы запланированных событий Azure. При обнаружении события, агент попытается остановить все ресурсы в затронутой виртуальной Машины и переместите их на другой узел в кластере. Должен быть настроен для достижения этого дополнительные ресурсы Pacemaker. 
 
 1. **[A]**  Установить **мероприятия azure** агента. 
 

@@ -1,27 +1,22 @@
 ---
-title: Развитие бизнеса с помощью Майкрософт | Azure
+title: Продвижение бизнеса вместе с корпорацией Майкрософт | Azure Marketplace
 description: Развитие бизнеса с помощью Azure Marketplace и AppSource для издателей приложений и служб
 services: Azure, Marketplace, Compute, Storage, Networking, Blockchain, Security
-documentationcenter: ''
 author: jm-aditi-ms
 manager: pabutler
-editor: ''
-ms.assetid: ''
 ms.service: marketplace
-ms.workload: ''
-ms.tgt_pltfrm: ''
-ms.devlang: ''
 ms.topic: article
 ms.date: 06/04/2018
 ms.author: ellacroi
-ms.openlocfilehash: 3bd2361547a8210ae287eabaa67b60e8ba1f26e3
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: f21c5f94c595fe3718a0a59a80deff8f1c53b9fc
+ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60735890"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64937650"
 ---
-# <a name="promote-your-business-with-microsoft"></a>Развитие бизнеса с помощью Майкрософт  
+# <a name="promote-your-business-with-microsoft"></a>Развитие бизнеса с помощью Майкрософт 
+
 Цель корпорации Майкрософт — поддерживать партнеров (вас), а также упростить продажу приложений и предложений в онлайн-магазинах в Marketplace. Публикуя предложения в Marketplace, вы получаете доступ к размещенным там программам и ресурсам. 
 
 Если вы еще не зарегистрировались в Microsoft Partner Network (MPN), следует сделать это, прежде чем продолжить.  
@@ -34,7 +29,7 @@ MPN предоставляет рекомендации по следующим 
 
 Чтобы повысить уровень предложения или приложения, используйте следующую таблицу для доступа к дополнительным преимуществам и ресурсам. 
 
-| Преимущество | ресурсы |  
+| Преимущество | ресурсов |  
 |:--- |:--- |  
 | Используйте основные преимущества | В рамках партнерской сети Microsoft Partner Network вы получаете набор основных преимуществ, которые помогут сэкономить время и деньги. Эти преимущества также помогут развивать бизнес, лучше обслуживать клиентов и создавать взаимодействия, чтобы максимально реализовать потенциал бизнеса.<ul> <li>Дополнительные сведения об основных преимуществах и требованиях см. по адресу [partner.microsoft.com/membership/core-benefits](https://partner.microsoft.com/membership/core-benefits).</li> </ul> |  
 | Заработайте компетенцию облачной платформы | Получение компетенции поможет вам выделиться среди других партнеров корпорации Майкрософт. продемонстрировать технический опыт и успех на рынке. Компетенция является обязательным условием для многих ключевых партнерских программ, таких как совместные продажи.<ul> <li>Дополнительные сведения о компетенции облачной платформы см. по адресу [partner.microsoft.com/membership/cloud-platform-competency](https://partner.microsoft.com/membership/cloud-platform-competency).</li> </ul> |  

@@ -1,28 +1,19 @@
 ---
 title: MapReduce и подключение SSH к Apache Hadoop в HDInsight — Azure
 description: Узнайте, как использовать SSH для выполнения заданий MapReduce с помощью Apache Hadoop в HDInsight.
-services: hdinsight
-documentationcenter: ''
-author: Blackmist
-manager: cgronlunb
-editor: cgronlun
-tags: azure-portal
-ms.assetid: 844678ba-1e1f-4fda-b9ef-34df4035d547
+author: hrasheed-msft
+ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: big-data
-origin.date: 04/10/2018
-ms.date: 01/14/2019
-ms.author: v-yiso
+ms.date: 04/10/2018
+ms.author: hrasheed
 ms.openlocfilehash: 3448a5e89f6930a5bdcb7d0d77b92576e58fc90b
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
-ms.translationtype: HT
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62129388"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64687297"
 ---
 # <a name="use-mapreduce-with-apache-hadoop-on-hdinsight-with-ssh"></a>Использование MapReduce с Apache Hadoop в HDInsight с помощью SSH
 
@@ -47,13 +38,13 @@ ms.locfileid: "62129388"
 Подключитесь к кластеру с помощью SSH. Например, следующая команда позволяет подключиться к кластеру с именем **myhdinsight** с учетной записью **sshuser**:
 
 ```bash
-ssh sshuser@myhdinsight-ssh.azurehdinsight.cn
+ssh sshuser@myhdinsight-ssh.azurehdinsight.net
 ```
 
 **Если вы используете ключ сертификата для аутентификации SSH**, возможно, потребуется указать расположение закрытого ключа в клиентской системе. Пример:
 
 ```bash
-ssh -i ~/mykey.key sshuser@myhdinsight-ssh.azurehdinsight.cn
+ssh -i ~/mykey.key sshuser@myhdinsight-ssh.azurehdinsight.net
 ```
 
 **Если вы используете пароль для аутентификации SSH**, его необходимо ввести при запросе.
@@ -88,7 +79,7 @@ ssh -i ~/mykey.key sshuser@myhdinsight-ssh.azurehdinsight.cn
 
     Эта команда отображает два файла — `_SUCCESS` и `part-r-00000`. Файл `part-r-00000` содержит выходные данные этого задания.
 
-    > [!NOTE]
+    > [!NOTE]  
     > Некоторые задания MapReduce могут разделять результаты на несколько файлов **part-r-№№№№№** . В этом случае используйте суффикс №№№№№, чтобы определить порядок файлов.
 
 4. Чтобы просмотреть выходные данные, используйте следующую команду:

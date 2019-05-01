@@ -1,25 +1,18 @@
 ---
-title: Создание предложения приложения Power BI в Azure Marketplace | Документация Майкрософт
+title: Создание предложения приложение Power BI | Azure Marketplace
 description: Создание предложения приложения Power BI для Microsoft AppSource Marketplace.
 services: Azure, AppSource, Marketplace, Cloud Partner Portal, Power BI
-documentationcenter: ''
 author: v-miclar
-manager: Patrick.Butler
-editor: ''
-ms.assetid: ''
 ms.service: marketplace
-ms.workload: ''
-ms.tgt_pltfrm: ''
-ms.devlang: ''
 ms.topic: conceptual
 ms.date: 01/29/2019
-ms.author: pbutlerm
-ms.openlocfilehash: 6a4f7daa337618278c3652fad3053c20557a9e28
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.author: pabutler
+ms.openlocfilehash: 702be34a5be69c050b809713a5742c2189892a27
+ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62102056"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64943322"
 ---
 # <a name="create-a-power-bi-app-offer"></a>Создание предложения приложения Power BI
 
@@ -27,7 +20,7 @@ ms.locfileid: "62102056"
 
 Группы основных ресурсов описаны в таблице ниже.
 
-|   Группа ресурсов      | Описание                                                                         |
+|   Группа ресурсов      | ОПИСАНИЕ                                                                         |
 | ----------------   | ----------------                                                                    |
 | Параметры предложения     | Первичные идентифицирующие данные и название предложения.                                      |
 | Технические сведения     | URL-адрес установщика, используемый для установки приложения в рабочей области Power BI клиента. Дополнительные сведения о создании этого URL-адреса см. в [документации по приложениям Power BI](https://go.microsoft.com/fwlink/?linkid=2028636). |

@@ -1,25 +1,18 @@
 ---
-title: Заметки о выпуске функции Seller Insights | Документация Майкрософт
+title: Заметки о выпуске Seller Insights
 description: Сведения об изменениях в функции Seller Insights.
 services: Azure, Marketplace, Cloud Partner Portal,
-documentationcenter: ''
 author: v-miclar
-manager: Patrick.Butler
-editor: ''
-ms.assetid: ''
 ms.service: marketplace
-ms.workload: ''
-ms.tgt_pltfrm: ''
-ms.devlang: ''
 ms.topic: conceptual
 ms.date: 3/3/2019
-ms.author: pbutlerm
-ms.openlocfilehash: 7df96d53b02e80283f263901dc7e26ed4edb947d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.author: pabutler
+ms.openlocfilehash: c6e9e4fe672c7e171ed4b1cd60655f9e71a562e6
+ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60311008"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64943127"
 ---
 # <a name="seller-insights-release-notes"></a>Заметки о выпуске функции Seller Insights 
 

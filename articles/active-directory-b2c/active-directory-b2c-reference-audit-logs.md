@@ -10,12 +10,12 @@ ms.workload: identity
 ms.date: 08/04/2017
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: 117d58f6f56fe1b24539c7bfe950f1a23d6de51a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: fdc3578fe78e60086a148e4204019a8293030b83
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60317705"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64688753"
 ---
 # <a name="accessing-azure-ad-b2c-audit-logs"></a>Обращение к журналам аудита Azure AD B2C
 
@@ -33,7 +33,7 @@ Azure Active Directory B2C (Azure AD B2C) создает журналы ауди
 |Каталог |Действия, связанные с атрибутами каталога, полученными при входе администратора через портал Azure |
 |Приложение | Операции CRUD для приложений B2C |
 |Ключ |Операции CRUD для ключей, хранящихся в контейнере ключей B2C |
-|Ресурс |Операции CRUD для ресурсов B2C (например, политик и поставщиков удостоверений)
+|Resource |Операции CRUD для ресурсов B2C (например, политик и поставщиков удостоверений)
 |Authentication |Проверка учетных данных пользователя и выдача токенов|
 
 > [!NOTE]

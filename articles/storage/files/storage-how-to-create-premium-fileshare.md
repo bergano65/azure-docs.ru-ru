@@ -1,6 +1,6 @@
 ---
-title: Создайте учетную запись хранилища файлов Azure уровня "премиум"
-description: В этой статье вы узнаете, как создать учетную запись хранилища Azure уровня "премиум" файла и общей папки "премиум".
+title: Создайте учетную запись хранилища Azure хранилище файлов
+description: В этой статье вы узнаете, как создать хранилище файлов (Предварительная версия) и общей папки "премиум".
 services: storage
 author: roygara
 ms.service: storage
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 03/25/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 72dec14dde47580313e57bb3b8d7315604929277
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 0eca706c9082b1fa60e13a0878fbb3061425c9bf
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60844565"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64574411"
 ---
 # <a name="how-to-create-an-azure-premium-file-share"></a>Как создать файловый ресурс Azure уровня "премиум"
 
@@ -101,7 +101,7 @@ Install-Module Az.Storage -Repository PSGallery -AllowPrerelease -AllowClobber -
 Login-AzAccount
 ```
 
-### <a name="create-a-resource-group"></a>Создать группу ресурсов
+### <a name="create-a-resource-group"></a>Создание группы ресурсов
 
 Чтобы создать группу ресурсов с помощью PowerShell, выполните команду [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup).
 
@@ -158,7 +158,7 @@ az login
 
 Для этого с помощью Cloud Shell или локальный оболочки введите следующую команду: `az extension add --name storage-preview`
 
-### <a name="create-a-resource-group"></a>Создать группу ресурсов
+### <a name="create-a-resource-group"></a>Создание группы ресурсов
 
 Чтобы создать группу ресурсов с помощью Azure CLI, используйте команду [az group create](/cli/azure/group).
 

@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 4/22/2019
 ms.author: victorh
-ms.openlocfilehash: 7c31801156ee321fe93d73de41fc68179835261a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 06930171552843a5620d9a2bfb379a60e91a3915
+ms.sourcegitcommit: ed66a704d8e2990df8aa160921b9b69d65c1d887
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60831118"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64946745"
 ---
 # <a name="configure-ssl-termination-with-key-vault-certificates-using-azure-powershell"></a>Настройка моста SSL с помощью сертификаты Key Vault с помощью Azure PowerShell
 
@@ -21,9 +21,6 @@ ms.locfileid: "60831118"
 Дополнительные сведения см. в разделе [завершение запросов SSL с сертификатами в Key Vault](key-vault-certs.md).
 
 В этой статье показан сценарий Azure PowerShell для интеграции хранилища ключей с помощью шлюза приложений для завершения SSL-сертификатов.
-
-> [!IMPORTANT]
-> Интеграция хранилища ключей шлюза приложения находится в общедоступной предварительной версии. Предварительная версия предоставляется без соглашения об уровне обслуживания. Не рекомендуем использовать ее в рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. См. [дополнительные условия использования для предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 

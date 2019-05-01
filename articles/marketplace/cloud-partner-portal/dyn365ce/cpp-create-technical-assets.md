@@ -1,25 +1,18 @@
 ---
-title: Создание технических ресурсов Dynamics 365 для взаимодействия с клиентами (Azure Marketplace) | Документация Майкрософт
+title: Создание Dynamics 365 для взаимодействия с клиентами технических средств | Azure Marketplace
 description: Создание технических ресурсов для предложения приложения Dynamics 365 для взаимодействия с клиентами.
 services: Dynamics 365 for Customer Engagement, Azure, Marketplace, Cloud Partner Portal, AppSource
-documentationcenter: ''
 author: v-miclar
-manager: Patrick.Butler
-editor: ''
-ms.assetid: ''
 ms.service: marketplace
-ms.workload: ''
-ms.tgt_pltfrm: ''
-ms.devlang: ''
 ms.topic: article
 ms.date: 12/29/2018
-ms.author: pbutlerm
-ms.openlocfilehash: 50c4fd512206cdf17ebb555acb88de2a3f74c2bd
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.author: pabutler
+ms.openlocfilehash: eff175264677d6b8ffb885229b5e68b306424335
+ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61472674"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64943110"
 ---
 # <a name="create-technical-assets-for-azure-application-offer"></a>Создание технических ресурсов для предложения приложения Azure
 
