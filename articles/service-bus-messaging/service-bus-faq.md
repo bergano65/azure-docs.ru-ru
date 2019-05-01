@@ -1,6 +1,6 @@
 ---
 title: Часто задаваемые вопросы о служебной шине Azure | Документация Майкрософт
-description: Ответы на некоторые часто задаваемые вопросы о служебной шине Azure.
+description: Содержит ответы на некоторые часто задаваемые вопросы о служебной шине Azure.
 services: service-bus-messaging
 author: axisc
 manager: timlt
@@ -9,12 +9,12 @@ ms.service: service-bus-messaging
 ms.topic: article
 ms.date: 01/23/2019
 ms.author: aschhab
-ms.openlocfilehash: 41a5f08be833d1235146d6e748580751af2c9d73
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 8461764a3f1f682ffb97420a4efdf2803f518872
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60311035"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64707136"
 ---
 # <a name="service-bus-faq"></a>Часто задаваемые вопросы о служебной шине
 
@@ -41,6 +41,48 @@ ms.locfileid: "60311035"
 При использовании секционированных сущностей их упорядоченность не гарантируется. Если раздел недоступен, вы по-прежнему можете отправлять и получать сообщения из других секций.
 
  Секционированные сущности больше не поддерживаются в [номере SKU уровня "Премиум"](service-bus-premium-messaging.md). 
+
+### <a name="what-ports-do-i-need-to-open-on-the-firewall"></a>Какие порты необходимо открыть на брандмауэре? 
+Для отправки и получения сообщений со служебной шиной Azure можно использовать следующие протоколы:
+
+- Протокол AMQP
+- Протокол SBMP
+- HTTP
+
+См. в следующей таблице исходящие порты, которые необходимо открыть, чтобы использовать эти протоколы для взаимодействия с концентраторами событий Azure. 
+
+| Protocol | порты; | Сведения | 
+| -------- | ----- | ------- | 
+| AMQP | 5671 и 5672 | См. в разделе [руководство по использованию протокола AMQP](service-bus-amqp-protocol-guide.md) | 
+| SBMP | 9350-9354 | См. в разделе [режим подключения](/dotnet/api/microsoft.servicebus.connectivitymode?view=azure-dotnet) |
+| HTTP, HTTPS | 80, 443 | 
+
+### <a name="what-ip-addresses-do-i-need-to-whitelist"></a>Какие IP-адреса необходимо добавить в список разрешений?
+Чтобы найти правой IP-адреса в список разрешений для подключений, выполните следующие действия.
+
+1. Выполните следующую команду из командной строки: 
+
+    ```
+    nslookup <YourNamespaceName>.servicebus.windows.net
+    ```
+2. Запишите IP-адрес, возвращаемый в `Non-authoritative answer`. Этот IP-адрес является статическим. Единственный момент времени, при этом изменяются является его восстановить пространство имен на другом кластере.
+
+Если вы используете избыточности зон для пространства имен, вам потребуется выполнить несколько дополнительных действий. 
+
+1. Во-первых можно запустить команду nslookup в пространстве имен.
+
+    ```
+    nslookup <yournamespace>.servicebus.windows.net
+    ```
+2. Запишите имя в **не заслуживающего доверия ответов** раздела, в котором находится в одном из следующих форматов: 
+
+    ```
+    <name>-s1.servicebus.windows.net
+    <name>-s2.servicebus.windows.net
+    <name>-s3.servicebus.windows.net
+    ```
+3. Запустить команду nslookup для каждого из них с помощью суффиксов s1, s2 и s3, чтобы получить IP-адреса всех трех экземпляров, работающих в трех зонах доступности 
+
 
 ## <a name="best-practices"></a>Рекомендации
 ### <a name="what-are-some-azure-service-bus-best-practices"></a>Рекомендации по работе со служебной шиной Azure

@@ -3,17 +3,16 @@ title: Azure Marketplace политики и условия | Azure
 description: Microsoft Azure Marketplace политики и условия применяются для всех издателей и предложений в Microsoft Azure Marketplace.
 services: Azure, Marketplace, AppSource
 author: qianw211
-manager: Patrick.Butler
 ms.service: marketplace
 ms.topic: article
 ms.date: 02/25/2019
 ms.author: v-qiwe
-ms.openlocfilehash: 9dc4bfa1f2435488f7d6513f9c14e82da33a4d64
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: c5041e9f7b19508480ff27311ba61d180f4a5a01
+ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60322759"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64937633"
 ---
 # <a name="azure-marketplace-policies-and-terms"></a>Политики и условия Azure Marketplace
 
@@ -26,9 +25,12 @@ ms.locfileid: "60322759"
 
 ## <a name="policies-and-terms"></a>Политики и условия
 
-* [Общие политики список и предложения](https://docs.microsoft.com/legal/marketplace/general-policies)
+* [Политики сертификации Azure Marketplace](https://docs.microsoft.com/legal/marketplace/certification-policies)
+
 * [Политики участия](https://docs.microsoft.com/legal/marketplace/participation-policy)
+
 * [Политики оценки и проверки](https://docs.microsoft.com/legal/marketplace/rating-review-policies)
+
 * [Условия Azure Marketplace](https://docs.microsoft.com/legal/marketplace/terms)
 
 ## <a name="next-steps"></a>Дальнейшие действия

@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 11/13/2018
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: f8309424b8e1eed97d66fbd168444418cc1f98fd
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 083ed7209efd88d3d221b55cfb53fe3998dd2987
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60383938"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64703287"
 ---
 # <a name="enable-age-gating-in-azure-active-directory-b2c"></a>Включение фильтрации по возрасту в Azure Active Directory B2C
 
@@ -48,7 +48,7 @@ Azure AD B2C использует введенные сведения, чтоб�
 | EG | Египет | Нет | 21 |
 | ES | Испания | 13 | 18 |
 | СВ | Франция | 16 | 18 |
-| GB | Великобритания | 13 | 18 |
+| GB | Соединенное королевство | 13 | 18 |
 | GR | Греция | 16 | 18 |
 | HR | Хорватия | 16 | 18 |
 | HU | Венгрия | 16 | 18 |

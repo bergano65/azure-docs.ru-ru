@@ -12,12 +12,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 11/15/2017
 ms.custom: seodec18
-ms.openlocfilehash: f6c2c8c49f34c707c7b0fb4d525337fbfa169a3e
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
-ms.translationtype: HT
+ms.openlocfilehash: fcdfc78a62d901bdaf50c18e9286e6f2d30c5b13
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55692431"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64714132"
 ---
 # <a name="how-to-scale-your-time-series-insights-environment"></a>Как масштабировать среду Azure Time Series Insights
 
@@ -59,6 +59,6 @@ ms.locfileid: "55692431"
 
 4. Выберите **Сохранить**, чтобы масштабировать среду. Индикатор хода выполнения будет отображаться, пока изменения не зафиксируются. 
 
-## <a name="next-steps"></a>Дополнительная информация
-> [!div class="nextstepaction"]
-> [Убедитесь, что новой емкости достаточно для предотвращения регулирования](time-series-insights-diagnose-and-solve-problems.md).
+## <a name="next-steps"></a>Дальнейшие действия
+
+- Убедитесь, что новое значение емкости [недостаточно для предотвращения регулирования](time-series-insights-diagnose-and-solve-problems.md).

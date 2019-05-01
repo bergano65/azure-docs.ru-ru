@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 12/04/2018
 ms.author: gokuma
-ms.openlocfilehash: 0b8349c6c59ac64be15c75b28c083a4483f2f68a
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 1f9ee5cf28de8fdb824bebf222e5e8d80e22c34f
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57896268"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64712435"
 ---
 # <a name="provision-a-windows-data-science-virtual-machine-on-azure"></a>Подготовка Виртуальной машины Windows для обработки и анализа данных в Azure
 
@@ -116,7 +116,7 @@ ms.locfileid: "57896268"
 
 Machine Learning Server поддерживает разнообразную статистику для больших данных, прогнозное моделирование и машинное обучение. Для вас будет доступен полный спектр аналитических задач: исследование, анализ, визуализация и моделирование. Machine Learning Server использует расширенную поддержку открытого кода на R и Python. Платформа полностью совместима со скриптами и функциями R и Python. Также обеспечена совместимость с пакетами CRAN, pip и Conda для анализа данных на корпоративном уровне.
 
-Machine Learning Server обходит ограничения R по обработке кода в памяти, реализуя параллельную и фрагментарную обработку данных. Это позволяет выполнять анализ данных, размер которых намного превышает объем доступной памяти. Виртуальная машина содержит также Visual Studio Community. Этот инструмент содержит средства Python для Visual Studio и расширение "Инструменты Python для Visual Studio" (PTVS), которые предоставляют полную среду IDE для работы с R или Python. Кроме того, на виртуальной машине доступны другие среды IDE, например [RStudio](http://www.rstudio.com) и [выпуск PyCharm Community](https://www.jetbrains.com/pycharm/).
+Machine Learning Server обходит ограничения R по обработке кода в памяти, реализуя параллельную и фрагментарную обработку данных. Это позволяет выполнять анализ данных, размер которых намного превышает объем доступной памяти. Виртуальная машина содержит также Visual Studio Community. Этот инструмент содержит средства Python для Visual Studio и расширение "Инструменты Python для Visual Studio" (PTVS), которые предоставляют полную среду IDE для работы с R или Python. Кроме того, на виртуальной машине доступны другие среды IDE, например [RStudio](https://www.rstudio.com) и [выпуск PyCharm Community](https://www.jetbrains.com/pycharm/).
 
 ### <a name="python"></a>Python
 

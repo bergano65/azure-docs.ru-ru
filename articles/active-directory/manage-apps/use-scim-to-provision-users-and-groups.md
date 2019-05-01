@@ -16,12 +16,12 @@ ms.author: celested
 ms.reviewer: asmalser
 ms.custom: aaddev;it-pro;seohack1
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a404b5e6769c7bb91b4f7b5830cea18372ec456d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 0bb7032c2741cc8c407c8d7d0285e58647f0bfd5
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60291421"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64918538"
 ---
 # <a name="using-system-for-cross-domain-identity-management-scim-to-automatically-provision-users-and-groups-from-azure-active-directory-to-applications"></a>Использование системы для управления удостоверениями между доменами (SCIM) для автоматической подготовки пользователей и групп из Azure Active Directory в приложения
 
@@ -128,7 +128,7 @@ Azure AD можно настроить автоматическую подгот
      - `and`
 * Не требуют с учетом регистра структурные элементы в SCIM, определенного исправление `op` значения операций, как определено в https://tools.ietf.org/html/rfc7644#section-3.5.2. Azure AD выдает значения «op» как `Add`, `Replace`, и `Remove`.
 * Microsoft Azure AD выполняет запрос для получения случайных пользователей и групп, чтобы убедиться, что конечной точке и учетные данные допустимы. Он также выполняется как часть **проверить подключение** потока в [портала Azure](https://portal.azure.com). 
-* Атрибут, который можно запросить ресурсы в должна быть задана как соответствующий атрибут в приложении в [портала Azure](https://portal.azure.com). Дополнительные сведения см. в разделе [Настройка сопоставления атрибутов подготовки пользователей](https://docs.microsoft.com/en-us/azure/active-directory/active-directory-saas-customizing-attribute-mappings)
+* Атрибут, который можно запросить ресурсы в должна быть задана как соответствующий атрибут в приложении в [портала Azure](https://portal.azure.com). Дополнительные сведения см. в разделе [Настройка сопоставления атрибутов подготовки пользователей](https://docs.microsoft.com/azure/active-directory/active-directory-saas-customizing-attribute-mappings)
 
 ### <a name="user-provisioning-and-de-provisioning"></a>Подготовка и отзыв пользователей
 На следующем рисунке показано сообщения, которые Azure Active Directory отправляет службе SCIM для управления жизненным циклом пользователя в хранилище удостоверений приложения.  

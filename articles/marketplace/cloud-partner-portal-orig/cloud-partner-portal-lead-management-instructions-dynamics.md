@@ -1,25 +1,18 @@
 ---
-title: Dynamics CRM | Документация Майкрософт
+title: Dynamics CRM | Azure Marketplace
 description: Настройка управления интересами в Dynamics CRM.
 services: Azure, Marketplace, Cloud Partner Portal,
-documentationcenter: ''
 author: dan-wesley
-manager: Patrick.Butler
-editor: ''
-ms.assetid: ''
 ms.service: marketplace
-ms.workload: ''
-ms.tgt_pltfrm: ''
-ms.devlang: ''
 ms.topic: conceptual
 ms.date: 09/14/2018
-ms.author: pbutlerm
-ms.openlocfilehash: a1398d172a5c578ec3c0f16627eadd1da3fd1e45
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.author: pabutler
+ms.openlocfilehash: 6fdab26bb5a4da5402a3a0a895a7c8835ef22c2f
+ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60778159"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64935802"
 ---
 # <a name="configure-lead-management-for-dynamics-crm-online"></a>Настройка управления потенциальными клиентами в Dynamics CRM Online
 
@@ -110,7 +103,7 @@ ms.locfileid: "60778159"
 
 3. Нажмите **Добавить пользователя**.
 
-    ![Добавление пользователя](./media/cloud-partner-portal-lead-management-instructions-dynamics/crmonline4.png)
+    ![Добавление пользователей](./media/cloud-partner-portal-lead-management-instructions-dynamics/crmonline4.png)
 
 4. Создайте пользователя для службы модуля записи интересов. Настройте следующие параметры:
 
@@ -146,7 +139,7 @@ ms.locfileid: "60778159"
 
 ## <a name="wrap-up"></a>Заключение
 
-Завершите настройку Dynamics CRM для управления потенциальными клиентами, добавив сведения о созданной учетной записи на портале Cloud Partner. Пример.
+Завершите настройку Dynamics CRM для управления потенциальными клиентами, добавив сведения о созданной учетной записи на портале Cloud Partner. Например: 
 
 -   **Azure Active Directory** - **идентификатор приложения** (пример: *23456052-AAAA-bbbb-8662-1234df56788f*), **идентификатор каталога** (пример: *12345678-8af1-4asf-1234-12234d01db47*), и **ключ приложения** (пример: *1234ABCDEDFRZ/G/FdY0aUABCEDcqhbLn/ST122345nBc=*).
 -   **Office 365** - **URL-адрес** (пример: *https://contoso.crm4.dynamics.com*), **имя пользователя** (пример: *contoso\@ Contoso.onmicrosoft.com*), и **пароль** (пример: *P\@ssw0rd*).

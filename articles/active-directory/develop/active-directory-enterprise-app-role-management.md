@@ -12,16 +12,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 02/21/2019
+ms.date: 04/22/2019
 ms.author: jeedes
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a354fdf8ea75d9446c2a5e5ee6a70489cf9dbfb5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: cb426eb15d20a4bbd628897ed1c3b29c37f32afd
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60412360"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64723300"
 ---
 # <a name="how-to-configure-the-role-claim-issued-in-the-saml-token-for-enterprise-applications"></a>Практическое руководство: настройка утверждения роли, выдаваемого в токене SAML для корпоративных приложений
 
@@ -152,7 +152,7 @@ ms.locfileid: "60412360"
 
 8. Обновите таблицу **Атрибуты**, чтобы определить настраиваемое сопоставление утверждения роли.
 
-9. В диалоговом окне **Единый вход** в разделе **User Attributes & Claims** (Атрибуты и утверждения пользователя) настройте атрибут токена SAML, как показано на рисунке, и сделайте следующее.
+9. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** выполните следующие действия, чтобы добавить атрибут токена SAML, как показано в приведенной ниже таблице.
 
     | Имя атрибута | Значение атрибута |
     | -------------- | ----------------|
@@ -161,11 +161,11 @@ ms.locfileid: "60412360"
     >[!NOTE]
     >Если значение утверждения роли имеет значение null, затем Azure AD не будет отправлять это значение в маркере, и это значение по умолчанию в соответствии с проектирования.
 
-    a. Нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
+    a. Нажмите кнопку **изменить** значок, чтобы открыть **атрибуты пользователя и утверждения** диалоговое окно.
 
       ![Кнопка "Добавить атрибут"](./media/active-directory-enterprise-app-role-management/editattribute.png)
 
-    2. Выберите **Добавить атрибут**, чтобы открыть область **Управление утверждениями пользователя**.
+    2. В **управляет утверждениями пользователя** диалоговое окно, добавьте атрибут токена SAML, щелкнув **добавить новое утверждение**.
 
       ![Кнопка "Добавить атрибут"](./media/active-directory-enterprise-app-role-management/tutorial_attribute_04.png)
 

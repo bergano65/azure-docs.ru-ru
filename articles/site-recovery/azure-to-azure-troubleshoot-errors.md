@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 04/08/2019
 ms.author: sujayt
-ms.openlocfilehash: c7c91a2cf9a25d0a5a4aeed6621e89f9c7cc18f0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: fafa791039397e93e9bf8ab6be04a2190e8ed784
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60789900"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64699080"
 ---
 # <a name="troubleshoot-azure-to-azure-vm-replication-issues"></a>Устранение неполадок репликации виртуальных машин из Azure в Azure
 
@@ -221,7 +221,17 @@ ms.locfileid: "60789900"
 
 Если проблема не исчезнет, обратитесь в службу поддержки.
 
+## <a name="one-or-more-disks-are-available-for-protectionerror-code-153039"></a>Один или несколько дисков доступны для защиты (код ошибки 153039)
+- **Возможная причина** </br>
+  - Если один или несколько дисков были недавно добавлены к виртуальной машине после установки защиты. 
+  - Если один или несколько дисков были инициализированы позже, после защиты виртуальной машины.
 
+### <a name="fix-the-problem"></a>Устранение проблемы
+Вы можете либо для защиты дисков или пропустить это предупреждение, чтобы вновь сделать работоспособное состояние репликации виртуальной машины.</br>
+1. Для защиты дисков. Перейдите к реплицированные элементы > виртуальной Машины > диски > нажмите кнопку на незащищенном диске > включить репликацию.
+ ![add_disks](./media/azure-to-azure-troubleshoot-errors/add-disk.png)
+2. Чтобы отклонить предупреждение. Перейдите к реплицированные элементы > виртуальной Машины > Щелкните Закрыть оповещение, в разделе "Обзор".
+![dismiss_warning](./media/azure-to-azure-troubleshoot-errors/dismiss-warning.png)
 ## <a name="unable-to-see-the-azure-vm-for-selection-in-enable-replication"></a>При включении репликации не видны виртуальные машины Azure для выбора
 
  **Причина 1.  Группа ресурсов и исходная виртуальная машина находятся в разных расположениях** <br>
@@ -301,7 +311,7 @@ ms.locfileid: "60789900"
 ## <a name="enable-protection-failed-as-device-name-mentioned-in-the-grub-configuration-instead-of-uuid-error-code-151126"></a>Включение защити завершилось сбоем, поскольку имя устройства, указанное в конфигурации GRUB вместо UUID (код ошибки 151126)
 
 **Возможная причина:** </br>
-Файлы конфигурации GRUB ("/boot/grub/menu.lst", "/boot/grub/grub.cfg", "/boot/grub2/grub.cfg" или "/ etc / default / grub") могут содержать значение для параметров **root** и **resume** в качестве фактических имен устройств вместо UUID. Site Recovery требует наличие подхода UUID, поскольку имя устройства может меняться при перезагрузке виртуальной машины, а виртуальная машина может не выдавать одно и то же имя при сбое, что приводит к ошибкам. Пример. </br>
+Файлы конфигурации GRUB ("/boot/grub/menu.lst", "/boot/grub/grub.cfg", "/boot/grub2/grub.cfg" или "/ etc / default / grub") могут содержать значение для параметров **root** и **resume** в качестве фактических имен устройств вместо UUID. Site Recovery требует наличие подхода UUID, поскольку имя устройства может меняться при перезагрузке виртуальной машины, а виртуальная машина может не выдавать одно и то же имя при сбое, что приводит к ошибкам. Например:  </br>
 
 
 - Следующая строка из файла GRUB **/boot/grub2/grub.cfg**. <br>
@@ -317,7 +327,7 @@ ms.locfileid: "60789900"
 Имена устройств должны быть заменены на соответствующий UUID.<br>
 
 
-1. Найти идентификатор UUID устройства с помощью команды «blkid \<имя устройства >». Пример.<br>
+1. Найти идентификатор UUID устройства с помощью команды «blkid \<имя устройства >». Например: <br>
    ```
    blkid /dev/sda1
    ```<br>

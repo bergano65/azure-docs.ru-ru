@@ -13,12 +13,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 03/28/2019
 ms.author: cephalin
-ms.openlocfilehash: 11d0648ee5090f02cb96c2d42a8d90cc3ea0ed28
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: dc6d3fd2239624e6fccecfbd565eb815b372ed3d
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60853309"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64920428"
 ---
 # <a name="configure-a-linux-php-app-for-azure-app-service"></a>Настройка приложения Linux PHP для службы приложений Azure
 
@@ -141,7 +141,7 @@ if (isset($_SERVER['X-Forwarded-Proto']) && $_SERVER['X-Forwarded-Proto'] === 'h
 
 ## <a name="customize-phpini-settings"></a>Настройка параметров php.ini
 
-Если вам нужно внести изменения в установку PHP, можно изменить любой из [директив php.ini](http://www.php.net/manual/ini.list.php) , выполнив следующие действия.
+Если вам нужно внести изменения в установку PHP, можно изменить любой из [директив php.ini](https://www.php.net/manual/ini.list.php) , выполнив следующие действия.
 
 > [!NOTE]
 > Оптимальный способ увидеть версию PHP и текущий *php.ini* конфигурации заключается в вызове [phpinfo()](https://php.net/manual/function.phpinfo.php) в вашем приложении.
@@ -149,9 +149,9 @@ if (isset($_SERVER['X-Forwarded-Proto']) && $_SERVER['X-Forwarded-Proto'] === 'h
 
 ### <a name="customize-non-phpinisystem-directives"></a>Настройка не PHP_INI_SYSTEM директивы
 
-Для настройки PHP_INI_USER PHP_INI_PERDIR и PHP_INI_ALL директивы (см. в разделе [директив php.ini](http://www.php.net/manual/ini.list.php)), добавьте *.htaccess* файл в корневой каталог приложения.
+Для настройки PHP_INI_USER PHP_INI_PERDIR и PHP_INI_ALL директивы (см. в разделе [директив php.ini](https://www.php.net/manual/ini.list.php)), добавьте *.htaccess* файл в корневой каталог приложения.
 
-В *.htaccess* добавьте с помощью директивы `php_value <directive-name> <value>` синтаксис. Пример.
+В *.htaccess* добавьте с помощью директивы `php_value <directive-name> <value>` синтаксис. Например: 
 
 ```
 php_value upload_max_filesize 1000M
@@ -165,11 +165,11 @@ php_value upload_max_filesize 10M
 
 Повторное развертывание приложения с помощью изменения и перезапустите его. При развертывании с использованием Kudu (например, с помощью [Git](../deploy-local-git.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json)), оно автоматически перезапускается после развертывания.
 
-В качестве альтернативы использованию *.htaccess*, можно использовать [ini_set()](http://www.php.net/manual/function.ini-set.php) в вашем приложении, чтобы настроить эти директивы не PHP_INI_SYSTEM.
+В качестве альтернативы использованию *.htaccess*, можно использовать [ini_set()](https://www.php.net/manual/function.ini-set.php) в вашем приложении, чтобы настроить эти директивы не PHP_INI_SYSTEM.
 
 ### <a name="customize-phpinisystem-directives"></a>Настройка PHP_INI_SYSTEM директивы
 
-Чтобы настроить PHP_INI_SYSTEM директивы (см. в разделе [директив php.ini](http://www.php.net/manual/ini.list.php)), нельзя использовать *.htaccess* подход. Служба приложений предоставляет отдельный механизм, с помощью `PHP_INI_SCAN_DIR` параметр приложения.
+Чтобы настроить PHP_INI_SYSTEM директивы (см. в разделе [директив php.ini](https://www.php.net/manual/ini.list.php)), нельзя использовать *.htaccess* подход. Служба приложений предоставляет отдельный механизм, с помощью `PHP_INI_SCAN_DIR` параметр приложения.
 
 Во-первых, выполните следующую команду [Cloud Shell](https://shell.azure.com) добавить параметр приложения `PHP_INI_SCAN_DIR`:
 
@@ -233,11 +233,11 @@ zend_extension=/home/site/wwwroot/bin/xdebug.so
 При работающем приложении PHP работает по-разному, в службе приложений или содержит ошибки, попробуйте сделайте следующее:
 
 - [Получите доступ к потоку журнала](#access-diagnostic-logs).
-- Тестирование приложения локально в рабочем режиме. Служба приложений запускает приложения Node.js в рабочем режиме, поэтому необходимо убедиться, что проект работает надлежащим образом в рабочем режиме локально. Пример.
+- Тестирование приложения локально в рабочем режиме. Служба приложений запускает приложения Node.js в рабочем режиме, поэтому необходимо убедиться, что проект работает надлежащим образом в рабочем режиме локально. Например: 
     - В зависимости от вашей *composer.json*, разные пакеты могут быть установлены для рабочий режим (`require` и `require-dev`).
     - Некоторые веб-платформы может развернуть статические файлы по-разному в рабочем режиме.
     - Некоторые веб-платформы может использовать специальные сценарии, при выполнении в рабочем режиме.
-- Запустите приложение в службе приложений в режиме отладки. Например, в [Laravel](http://meanjs.org/), можно настроить приложение для вывода сообщения отладки в производственной среде с [параметр `APP_DEBUG` параметр приложения для `true` ](../web-sites-configure.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json).
+- Запустите приложение в службе приложений в режиме отладки. Например, в [Laravel](https://meanjs.org/), можно настроить приложение для вывода сообщения отладки в производственной среде с [параметр `APP_DEBUG` параметр приложения для `true` ](../web-sites-configure.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json).
 
 ### <a name="robots933456"></a>robots933456
 
@@ -252,7 +252,7 @@ zend_extension=/home/site/wwwroot/bin/xdebug.so
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Учебник. по приложению PHP с MySQL](tutorial-php-mysql-app.md)
+> [Руководство по приложению PHP с MySQL](tutorial-php-mysql-app.md)
 
 > [!div class="nextstepaction"]
 > [Служба приложений под управлением Linux: вопросы и ответы](app-service-linux-faq.md)

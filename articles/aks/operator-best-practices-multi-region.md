@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: conceptual
 ms.date: 11/28/2018
 ms.author: lastcoolnameleft
-ms.openlocfilehash: 926f470b8a4dbdb6d6cbfe09ee61349a819600e7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 5cac42505cd015cb018664b765e88f40667b1759
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60464598"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64920460"
 ---
 # <a name="best-practices-for-business-continuity-and-disaster-recovery-in-azure-kubernetes-service-aks"></a>Рекомендации по обеспечению непрерывности бизнес-процессов и аварийного восстановления в Службе Azure Kubernetes (AKS)
 
@@ -33,7 +33,7 @@ ms.locfileid: "60464598"
 
 Кластер AKS развертывается в одном регионе. Для защиты от регионального сбоя разверните приложение в нескольких кластерах AKS, размещенных в разных регионах. При выборе регионов для развертывания кластера AKS учитывайте следующее.
 
-* [Доступность AKS по регионам](https://docs.microsoft.com/azure/aks/container-service-quotas#region-availability):
+* [Доступность AKS по регионам](https://docs.microsoft.com/azure/aks/quotas-skus-regions#region-availability):
   * выбирайте регионы, расположенные недалеко от пользователей. Список регионов, поддерживающих AKS, постоянно расширяется.
 * [Пары регионов Azure](https://docs.microsoft.com/azure/best-practices-availability-paired-regions)
   * Выберите в своей географической области два региона, которые составляют пару. Для таких пар регионов при необходимости координируется обновление платформы и устанавливается приоритетность действий по восстановлению.
@@ -62,7 +62,7 @@ ms.locfileid: "60464598"
 
 ### <a name="layer-7-application-routing-with-azure-front-door"></a>Маршрутизация приложений 7-го уровня с помощью Azure Front Door
 
-Диспетчер трафика Azure использует для распределения трафика службу DNS (3-й уровень). [Azure двери (в настоящее время в предварительной версии)](https://docs.microsoft.com/azure/frontdoor/front-door-overview) предоставляет возможность маршрутизации HTTP/HTTPS (уровень 7). Дополнительные возможности Front Door включают SSL-терминацию, личный домен, брандмауэр веб-приложения, переопределение URL-адресов и сходство сеансов.
+Диспетчер трафика Azure использует для распределения трафика службу DNS (3-й уровень). [Azure двери](https://docs.microsoft.com/azure/frontdoor/front-door-overview) предоставляет возможность маршрутизации HTTP/HTTPS (уровень 7). Дополнительные возможности Front Door включают SSL-терминацию, личный домен, брандмауэр веб-приложения, переопределение URL-адресов и сходство сеансов.
 
 Оцените требования к трафику для приложения, чтобы выбрать оптимальное решение.
 

@@ -10,12 +10,12 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 04/03/2019
 ms.author: rambala
-ms.openlocfilehash: 4923c7f2048b7368af6314d5e2288216115bc3bc
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 3bc189cf269084fdb26f141a36755c96554cad7b
+ms.sourcegitcommit: e7d4881105ef17e6f10e8e11043a31262cfcf3b7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60368882"
+ms.lasthandoff: 04/29/2019
+ms.locfileid: "64866003"
 ---
 # <a name="cross-network-connectivity"></a>Возможность подключения нескольких сетей
 
@@ -119,7 +119,7 @@ ms.locfileid: "60368882"
 
 См. в разделе [вопросы по виртуальным сетям][VNet-FAQ]для дальнейшего любым вопросам о виртуальной сети и пиринг виртуальной сети. См. в разделе [вопросы и ответы по ExpressRoute] [ ER-FAQ] для каких-либо вопросов на ExpressRoute и виртуальных сетевых подключений.
 
-Global Reach развертывается постепенно для разных стран. Информацию о доступности Global Reach в нужных вам странах вы найдете в статье [ExpressRoute Global Reach (Предварительная версия)][Global Reach].
+В мире реализована на основе страны или региона, страны или региона. Если глобальным доступом доступен в странах и регионах, которые должны см. в разделе [глобальным доступом ExpressRoute][Global Reach].
 
 <!--Image References-->
 [1]: ./media/cross-network-connectivity/premergerscenario.png "Сценарий приложения"

@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 04/02/2019
 ms.author: diberry
-ms.openlocfilehash: eb125133138c6de173fdeb90024a9e5d961a929d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: a82452f4b41aee9c4ea6f269d92fbc91a5697d16
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60597098"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64916939"
 ---
 # <a name="export-and-delete-your-customer-data-in-language-understanding-luis-in-cognitive-services"></a>Экспорт и удаление данных клиентов в Интеллектуальной службе распознавания речи (LUIS) в Cognitive Services
 
@@ -58,7 +58,7 @@ LUIS пользователи имеют полный доступ для про
 * [Австралия](#australia)
 * [США](#united-states)
 
-За исключением активное обучение данных (см. ниже), следует за LUIS [по использованию хранилища данных для региональных служб](http://azuredatacentermap.azurewebsites.net/). 
+За исключением активное обучение данных (см. ниже), следует за LUIS [по использованию хранилища данных для региональных служб](https://azuredatacentermap.azurewebsites.net/). 
 
 ### <a name="europe"></a>Европа
 

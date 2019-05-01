@@ -9,12 +9,12 @@ ms.service: media-services
 ms.topic: article
 ms.date: 01/12/2019
 ms.author: juliako
-ms.openlocfilehash: affa6f9a808543401b7d57812c7d2bef4324a83c
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: HT
+ms.openlocfilehash: 08f2dac6317f294c3c7360cc00cf9aaa60c9a7ca
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59796551"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64715098"
 ---
 # <a name="create-a-video-indexer-account-connected-to-azure"></a>Создание учетной записи Индексатора видео, подключенной к Azure
 
@@ -103,7 +103,7 @@ ms.locfileid: "59796551"
 
 1. С помощью портала [Azure](https://portal.azure.com/) создайте учетную запись Служб мультимедиа Azure, как описано в [этой статье](../previous/media-services-portal-create-account.md).
 
-    При создании учетной записи хранения для учетной записи Служб мультимедиа выберите тип учетной записи **StorageV2** и тип репликации **Геоизбыточное (RGS)** в соответствующих полях.
+    При создании учетной записи хранения для вашей учетной записи служб мультимедиа, выберите **StorageV2** для типа учетной записи и **геоизбыточное (GRS)** для полей репликации.
 
     ![Новая учетная запись Службы мультимедиа](./media/create-account/create-ams-account1.png)
 

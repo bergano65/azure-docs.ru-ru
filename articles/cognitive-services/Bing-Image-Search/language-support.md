@@ -10,12 +10,12 @@ ms.subservice: bing-image-search
 ms.topic: article
 ms.date: 03/04/2019
 ms.author: aahi
-ms.openlocfilehash: a4c315d2696b081a4f2ac646d097e76ff9562380
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 57a96648e480c89d1112f069676edb1abcc7cfc3
+ms.sourcegitcommit: e7d4881105ef17e6f10e8e11043a31262cfcf3b7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60917216"
+ms.lasthandoff: 04/29/2019
+ms.locfileid: "64869854"
 ---
 # <a name="language-and-region-support-for-the-bing-image-search-api"></a>Поддержка языков и регионов в API Bing для поиска изображений
 
@@ -32,7 +32,7 @@ API Bing для поиска изображений поддерживает б�
 > - en-AU (английский, Австралия)
 > - zh-CN (китайский, Китай)
 
-## <a name="countries"></a>Страны
+## <a name="countriesregions"></a>Страны/регионы
 
 |Страна или регион|Код|
 |-------|----|

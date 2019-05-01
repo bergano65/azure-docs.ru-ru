@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 03/22/2018
 ms.author: magoedte
-ms.openlocfilehash: e5cf89b7fe01946de9944a7026ec448cd55dd6dc
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 26ddb0cdd2728f9dff5d45494a14841cdc1a20cd
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60741690"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64922885"
 ---
 # <a name="connect-configuration-manager-to-azure-monitor"></a>Подключение Configuration Manager к Azure Monitor
 Можно подключить среду System Center Configuration Manager к Azure Monitor для синхронизации данных коллекций устройств и указания этих коллекций в Azure Monitor и службы автоматизации Azure.  
@@ -67,7 +67,7 @@ Azure Monitor поддерживает текущей ветви System Center C
    
 2. На экране **Общие** убедитесь, что вы выполнили следующие действия и указали сведения по каждому пункту, а затем щелкните **Далее**.
 
-   1. На портале Azure вы зарегистрировали Configuration Manager как веб-приложение и (или) приложение веб-API, и у вас есть [идентификатор клиента, полученный при регистрации](../../active-directory/develop/quickstart-v1-add-azure-ad-app.md).
+   1. На портале Azure вы зарегистрировали Configuration Manager как веб-приложение и (или) приложение веб-API, и у вас есть [идентификатор клиента, полученный при регистрации](../../active-directory/develop/quickstart-register-app.md).
    2. На портале Azure вы создали секретный ключ приложения для зарегистрированного приложения в Azure Active Directory.  
    3. На портале Azure вы указали зарегистрированное веб-приложение с разрешением на доступ к рабочей области Log Analytics в Azure Monitor.  
       ![Страница "Общие" мастера подключений к Log Analytics](./media/collect-sccm/sccm-console-general01.png)

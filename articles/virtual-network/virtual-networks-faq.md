@@ -4,20 +4,21 @@ titlesuffix: Azure Virtual Network
 description: Ответы на наиболее часто задаваемые вопросы о виртуальных сетях Microsoft Azure.
 services: virtual-network
 documentationcenter: na
-author: jimdial
+author: KumudD
+manager: twooley
 ms.service: virtual-network
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/12/2019
-ms.author: jdial
-ms.openlocfilehash: 19fdf2e7e1c7c56b6bfe8ddbf7329d3722f4e8de
-ms.sourcegitcommit: f331186a967d21c302a128299f60402e89035a8d
+ms.author: kumud
+ms.openlocfilehash: 131d62fd2cea3ed76342f0fd179b7a9e0fd673e5
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58188617"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64925260"
 ---
 # <a name="azure-virtual-network-frequently-asked-questions-faq"></a>Виртуальная сеть Azure: часто задаваемые вопросы
 
@@ -243,7 +244,7 @@ DNS, предоставленная Azure, — это мультитенант�
 - SQL Always on
 - SQL MI
 - API управления
-- ADDS
+- Доменная служба Active Directory (ADDS)
 - Logic Apps
 - HD Insight
 -   Пакетная служба Azure

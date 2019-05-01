@@ -2,32 +2,26 @@
 title: Стратегия развития Azure Marketplace и AppSource | Azure
 description: Стратегический план развития Marketplace
 services: Azure, Marketplace, Compute
-documentationcenter: ''
 author: qianw211
 manager: MaggiePucciEvans
-editor: ''
-ms.assetid: ''
 ms.service: marketplace
-ms.workload: ''
-ms.tgt_pltfrm: ''
-ms.devlang: ''
 ms.topic: article
 ms.date: 03/29/2019
 ms.author: BrianLevenson
-ms.openlocfilehash: 4a1586d965a51a3c655346994274159b99ab0a9a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 881d62cd7b7b9d4434a807a2aab62b75e9a8e97b
+ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60764276"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64937781"
 ---
 # <a name="azure-marketplace-and-appsource-roadmap"></a>Стратегия развития Azure Marketplace и AppSource
 
 Сведения о том, что ожидает Azure Marketplace, AppSource и связанные с ними партнерские программы. Он охватывает некоторые из важных функций, мы были зафиксированы, приблизительные сроки при можно ожидать их и будет обновлен каждый месяц. Он не полный список всех новых функций, но предназначен для обеспечения видимости неполный. Эти возможности и сроки текущей и может быть изменена.
 
-Ждем ваших предложений! Присоединяйтесь к обсуждениям в [сообществе партнеров Майкрософт](https://www.microsoftpartnercommunity.com/), чтобы получать последние новости о новых возможностях, программах и событиях.
+Мы приветствуем ваши предложения! Присоединяйтесь к обсуждениям в [сообществе партнеров Майкрософт](https://www.microsoftpartnercommunity.com/), чтобы получать последние новости о новых возможностях, программах и событиях.
 
-## <a name="roadmap"></a>Схема
+## <a name="roadmap"></a>Стратегия
 ![](./media/marketplace-publishers-guide/roadmap.png)
 
 ## <a name="recent-releases"></a>Последние выпуски

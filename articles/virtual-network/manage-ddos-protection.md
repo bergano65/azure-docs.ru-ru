@@ -4,8 +4,8 @@ titlesuffix: Azure Virtual Network
 description: Сведения о том, как устранить атаку с помощью данных телеметрии службы защиты от атак DDoS Azure уровня "Стандартный" в Azure Monitor.
 services: virtual-network
 documentationcenter: na
-author: jimdial
-manager: jeconnoc
+author: KumudD
+manager: twooley
 editor: ''
 tags: azure-resource-manager
 ms.assetid: ''
@@ -15,13 +15,13 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/06/2018
-ms.author: jdial
-ms.openlocfilehash: 32c4516c7dc68b04826b362d34841160936d682d
-ms.sourcegitcommit: ad019f9b57c7f99652ee665b25b8fef5cd54054d
+ms.author: kumud
+ms.openlocfilehash: 6b1d62f4cedb7add843a5ddae24125019130d58f
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/02/2019
-ms.locfileid: "57244525"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64728345"
 ---
 # <a name="manage-azure-ddos-protection-standard-using-the-azure-portal"></a>Управление защитой от атак DDoS Azure уровня "Стандартный" с помощью портала Azure
 
@@ -47,7 +47,7 @@ ms.locfileid: "57244525"
     |ИМЯ           | myDdosProtectionPlan                              |
     |Подписка   | Выберите свою подписку.                         |
     |Группа ресурсов | Выберите **Создать новую**, а затем введите *myResourceGroup*. |
-    |Расположение       | Восточная часть США                                           |
+    |Location       | Восточная часть США                                           |
 
 ## <a name="enable-ddos-for-a-new-virtual-network"></a>Включение защиты от атак DDoS для новой виртуальной сети
 
@@ -60,7 +60,7 @@ ms.locfileid: "57244525"
     | ИМЯ            | myVirtualNetwork                                             |
     | Подписка    | Выберите свою подписку.                                    |
     | Группа ресурсов  | Щелкните **Use existing** (Использовать существующую), а затем выберите **myResourceGroup**. |
-    | Расположение        | Восточная часть США                                                      |
+    | Location        | Восточная часть США                                                      |
     | Защита от атак DDoS | Выберите **Стандартный**, затем в разделе **Защита от атак DDoS** выберите **myDdosProtectionPlan**. Выбираемый план не обязательно должен находиться в той же подписке, что и виртуальная сеть, но обе подписки должны быть связаны с одним клиентом Azure Active Directory.|
 
 Невозможно переместить виртуальную сеть в другую группу ресурсов или подписку, если для этой сети включена защита от атак DDoS уровня "Стандартный". Если необходимо перенести такую виртуальную сеть, сначала отключите защиту от атак DDoS уровня "Стандартный", переместите виртуальную сеть и затем включите защиту от атак DDoS уровня "Стандартный". После перемещения сбрасываются автоматически настраиваемые пороговые значения политик для всех защищенных общедоступных IP-адресов в виртуальной сети.
@@ -101,7 +101,7 @@ ms.locfileid: "57244525"
     |ИМЯ                     | myDdosAlert                                                                                        |
     |Подписка             | Выберите подписку, содержащую общедоступный IP-адрес, для которого требуется получать оповещения.        |
     |Группа ресурсов           | Выберите группу ресурсов, содержащую общедоступный IP-адрес, для которого требуется получать оповещения.      |
-    |Ресурс                 | Выберите ресурс, содержащий общедоступный IP-адрес, для которого требуется получать оповещения. Служба защиты от атак DDoS отслеживает общедоступные IP-адреса, которые назначаются ресурсам в виртуальной сети. При отсутствии в виртуальной сети ресурсов с общедоступными IP-адресами необходимо сначала создать ресурс с общедоступным IP-адресом. Вы можете отслеживать общедоступные IP-адреса всех ресурсов, развернутых с помощью Resource Manager (а не классической модели), которые указаны в разделе [Интеграция виртуальной сети для служб Azure](virtual-network-for-azure-services.md#services-that-can-be-deployed-into-a-virtual-network), за исключением сред службы приложений Azure и VPN-шлюза Azure. Чтобы продолжить работу с этим руководством, можно быстро создать виртуальную машину [Windows](../virtual-machines/windows/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) или [Linux](../virtual-machines/linux/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json).                   |
+    |Resource                 | Выберите ресурс, содержащий общедоступный IP-адрес, для которого требуется получать оповещения. Служба защиты от атак DDoS отслеживает общедоступные IP-адреса, которые назначаются ресурсам в виртуальной сети. При отсутствии в виртуальной сети ресурсов с общедоступными IP-адресами необходимо сначала создать ресурс с общедоступным IP-адресом. Вы можете отслеживать общедоступные IP-адреса всех ресурсов, развернутых с помощью Resource Manager (а не классической модели), которые указаны в разделе [Интеграция виртуальной сети для служб Azure](virtual-network-for-azure-services.md#services-that-can-be-deployed-into-a-virtual-network), за исключением сред службы приложений Azure и VPN-шлюза Azure. Чтобы продолжить работу с этим руководством, можно быстро создать виртуальную машину [Windows](../virtual-machines/windows/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) или [Linux](../virtual-machines/linux/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json).                   |
     |Метрика                   | Выполняется ли атака DDoS                                                                            |
     |Threshold (Пороговое значение)                | Значение **1** означает, что вы подвергаетесь атаке. Значение **0** означает, что вы не подвергаетесь атаке.                         |
     |Период                   | Выберите любое значение на свой выбор.                                                                   |
@@ -159,7 +159,7 @@ ms.locfileid: "57244525"
 
     - **Архивировать в учетной записи хранения**. Запись данных в учетную запись хранения Azure. Дополнительные сведения об этом параметре см. в разделе [Архивирование журналов диагностики](../azure-monitor/platform/archive-diagnostic-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
     - **Передать в концентратор событий**. Позволяет получателю журнала принимать журналы с помощью концентратора событий Azure. Центры событий обеспечивают интеграцию со Splunk или другими системами SIEM. Дополнительные сведения об этом параметре см. в разделе [Потоковая передача журналов диагностики Azure в концентратор событий](../azure-monitor/platform/diagnostic-logs-stream-event-hubs.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
-    - **Отправить в Log Analytics**. Записывает журналы в службу Azure Monitor. Дополнительные сведения об этом параметре см. в разделе [сбор журналов для использования в журналах Azure Monitor](../azure-monitor/platform/collect-azure-metrics-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
+    - **Отправить в Log Analytics.** Записывает журналы в службу Azure Monitor. Дополнительные сведения об этом параметре см. в разделе [сбор журналов для использования в журналах Azure Monitor](../azure-monitor/platform/collect-azure-metrics-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
 
 Добавочный отчет об устранении рисков и отчет после устранения рисков атаки содержат приведенные ниже поля.
 - "Attack vectors" (Направления атаки).
@@ -181,7 +181,7 @@ ms.locfileid: "57244525"
 
     - **Архивировать в учетной записи хранения**. Запись данных в учетную запись хранения Azure. Дополнительные сведения об этом параметре см. в разделе [Архивирование журналов диагностики](../azure-monitor/platform/archive-diagnostic-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
     - **Передать в концентратор событий**. Позволяет получателю журнала принимать журналы с помощью концентратора событий Azure. Центры событий обеспечивают интеграцию со Splunk или другими системами SIEM. Дополнительные сведения об этом параметре см. в разделе [Потоковая передача журналов диагностики Azure в концентратор событий](../azure-monitor/platform/diagnostic-logs-stream-event-hubs.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
-    - **Отправить в Log Analytics**. Записывает журналы в службу Azure Monitor. Дополнительные сведения об этом параметре см. в разделе [сбор журналов для использования в журналах Azure Monitor](../azure-monitor/platform/collect-azure-metrics-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
+    - **Отправить в Log Analytics.** Записывает журналы в службу Azure Monitor. Дополнительные сведения об этом параметре см. в разделе [сбор журналов для использования в журналах Azure Monitor](../azure-monitor/platform/collect-azure-metrics-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
 1. Чтобы просматривать данные журналов потоков на панели мониторинга Аналитики Azure, вы можете импортировать пример панели мониторинга из https://github.com/Anupamvi/Azure-DDoS-Protection/raw/master/flowlogsbyip.zip.
 
 Журналы потоков будут содержать следующие поля: 

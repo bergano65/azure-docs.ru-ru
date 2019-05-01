@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/29/2018
 ms.author: rkarlin
-ms.openlocfilehash: 9bf4f604386b47e4ca36df69fb140124b097f548
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 2573ad64830247d232bbd6d156fac7f50d65f410
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60912620"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64925085"
 ---
 # <a name="custom-alert-rules-in-azure-security-center-preview"></a>Настраиваемые правила генерации оповещений в центре безопасности Azure (предварительная версия)
 В этом документе описана процедура создания настраиваемых правил генерации оповещений в центре безопасности Azure.
@@ -29,17 +29,17 @@ ms.locfileid: "60912620"
 
 ## <a name="retirement-of-custom-alert-rules-in-azure-security-center"></a>Правила вывода из эксплуатации настраиваемые оповещения в центре безопасности Azure
 
-Пользовательские оповещения будет прекращено 30 июня 2019 г., из-за прекращения использования службы классических оповещений Azure Monitor. В период до устаревания пользователи будут иметь возможность редактировать существующие настраиваемые правила генерации оповещений, но не сможете добавить новые.
-Пользователям рекомендуется включить [Azure Sentinel](https://azure.microsoft.com/en-us/services/azure-sentinel/) с подключением одним щелчком, чтобы автоматически перенести свои существующие оповещения и создавать новые или также повторно создать свои оповещения с помощью Azure Monitor оповещения журнала.
+Пользовательские оповещения будет прекращено 30 июня 2019 г., из-за прекращения использования базовой инфраструктуры, оно зависит. В период до устаревания пользователи будут иметь возможность редактировать существующие настраиваемые правила генерации оповещений, но не сможете добавить новые.
+Пользователям рекомендуется включить [Azure Sentinel](https://azure.microsoft.com/services/azure-sentinel/) с подключением одним щелчком, чтобы автоматически перенести свои существующие оповещения и создавать новые или также повторно создать свои оповещения с помощью Azure Monitor оповещения журнала.
                                      
 Чтобы сохранить существующие оповещения и перенести их в Azure Sentinel, пожалуйста, [запуска Azure Sentinel](https://portal.azure.com/#create/Microsoft.ASI/preview). В качестве первого шага выберите рабочую область, где хранятся ваши пользовательские оповещения и выберите пункт меню «Аналитика», чтобы автоматически перенести ваши оповещения.
 
 > [!NOTE]
 > Миграция настраиваемые оповещения для Azure Sentinel — однократный перенос пользовательских оповещений в выбранной рабочей области. После завершения переноса, настраиваемые оповещения для выбранной рабочей области не будут доступны через Центр безопасности Azure.
 >
-> Пользовательские оповещения с помощью [поиска](https://docs.microsoft.com/en-us/azure/azure-monitor/log-query/search-queries) или [объединения](https://docs-analytics-eus.azurewebsites.net/queryLanguage/query_language_unionoperator.html) операторы запросов не поддерживаются в Azure Sentinel и не будет подвергнуто миграции. Измените эти оповещения перед выполнением миграции.
+> Пользовательские оповещения с помощью [поиска](https://docs.microsoft.com/azure/azure-monitor/log-query/search-queries) или [объединения](https://docs-analytics-eus.azurewebsites.net/queryLanguage/query_language_unionoperator.html) операторы запросов не поддерживаются в Azure Sentinel и не будет подвергнуто миграции. Измените эти оповещения перед выполнением миграции.
 
-Для повторного создания оповещения с помощью оповещений журнала Azure Monitor, см.: [Создавать, просматривать и управлять ими с помощью Azure Monitor оповещения журнала](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/alerts-log) инструкции по созданию оповещений журнала. Общие сведения о оповещения журнала в Azure Monitor, щелкните [здесь](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/alerts-unified-log).
+Для повторного создания оповещения с помощью оповещений журнала Azure Monitor, см.: [Создавать, просматривать и управлять ими с помощью Azure Monitor оповещения журнала](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-log) инструкции по созданию оповещений журнала. Общие сведения о оповещения журнала в Azure Monitor, щелкните [здесь](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-unified-log).
 
 ## <a name="what-are-custom-alert-rules-in-security-center"></a>Что такое настраиваемые правила генерации оповещений в центре безопасности
 
@@ -92,7 +92,7 @@ ms.locfileid: "60912620"
 
 Когда новое правило генерации оповещений будет создано, оно появится в соответствующем списке. Как только условия этого правила будут выполнены, будет активировано новое оповещение, которое вы сможете увидеть на панели мониторинга **Оповещения безопасности**.
 
-![Оповещение](./media/security-center-custom-alert/security-center-custom-alert-fig5.png)
+![Предупреждение](./media/security-center-custom-alert/security-center-custom-alert-fig5.png)
 
 Обратите внимание, что параметры (поисковый запрос, пороговое значение и т. д.), которые были установлены во время создания правила, доступны в оповещении для этого настраиваемого правила.
 

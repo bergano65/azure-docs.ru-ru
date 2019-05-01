@@ -1,24 +1,24 @@
 ---
-title: Как использовать элемент управления Android map в "карты Azure" | Документация Майкрософт
+title: Приступая к работе с элементом управления Android карты в "карты Azure" | Документация Майкрософт
 description: Элемент управления Android карты в "карты Azure".
 author: walsehgal
 ms.author: v-musehg
-ms.date: 02/12/2019
+ms.date: 04/26/2019
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: 15706addbe6b7f6310223978130158c792a47c89
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: e655b442ba9290d4b4525108521f2d1a0c766b48
+ms.sourcegitcommit: e7d4881105ef17e6f10e8e11043a31262cfcf3b7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60770371"
+ms.lasthandoff: 04/29/2019
+ms.locfileid: "64869822"
 ---
-# <a name="how-to-use-the-azure-maps-android-sdk"></a>Как использовать пакет SDK Android карт Azure
+# <a name="getting-started-with-azure-maps-android-sdk"></a>Приступая к работе с Azure Maps пакета SDK для Android
 
-Azure Maps Android SDK — это библиотека карты вектор для Android. В этой статье поможет выполнить процесс установки Azure Maps Android SDK, загрузка карту и размещение ПИН-кода на карте.
+Azure Maps Android SDK — это библиотека карты вектор для Android. В этой статье поможет выполнить процесс установки Android SDK для карты и загрузке карту.
 
 ## <a name="prerequisites"></a>Технические условия
 
@@ -28,7 +28,7 @@ Azure Maps Android SDK — это библиотека карты вектор �
 
 ### <a name="download-android-studio"></a>Скачать Android Studio
 
-Необходимо скачать Android Studio и создайте проект с пустым действием, перед установкой Azure Maps пакета SDK для Android. Вы можете [скачать Android Studio](https://developer.android.com/studio/) бесплатно от Google. 
+Необходимо скачать Android Studio и создайте проект с пустым действием, прежде чем устанавливать пакет Azure Maps Android SDK. Вы можете [скачать Android Studio](https://developer.android.com/studio/) бесплатно от Google. 
 
 ## <a name="create-a-project-in-android-studio"></a>Создание проекта в Android Studio
 
@@ -55,7 +55,7 @@ Android Studio позволяет настроить виртуальное ус
 
 Следующий шаг в создании приложения является установки Azure Maps Android SDK. Выполните следующие действия, чтобы установить пакет SDK.
 
-1. Добавьте следующий код, чтобы **все проекты**, **репозиториев** блока в вашей **build.gradle** файла.
+1. Откройте верхнего уровня **build.gradle** файл и добавьте следующий код, чтобы **все проекты**, **репозиториев** блокировать раздел:
 
     ```
     maven {
@@ -64,8 +64,10 @@ Android Studio позволяет настроить виртуальное ус
     ```
 
 2. Обновление вашей **app/build.gradle** и добавьте в него следующий код:
+    
+    1. Убедитесь, что ваш проект **minSdkVersion** API 21 или более поздней версии.
 
-    1. Добавьте следующий код в блок Android:
+    2. Добавьте следующий код в раздел Android:
 
         ```
         compileOptions {
@@ -73,24 +75,16 @@ Android Studio позволяет настроить виртуальное ус
             targetCompatibility JavaVersion.VERSION_1_8
         }
         ```
-    2. Обновите свой блок зависимостей и добавьте в него следующий код:
+    3. Обновите свой блок зависимостей и добавьте новую строку реализации зависимостей для последней Azure Maps Android SDK:
 
         ```
-        implementation "com.microsoft.azure.maps:mapcontrol:0.1"
+        implementation "com.microsoft.azure.maps:mapcontrol:0.2"
         ```
 
-3. Настройка разрешений, добавив следующий код XML для вашей **AndroidManifest.xml** файла:
+    > [!Note]
+    > Azure Maps пакета SDK для Android выполняется регулярно обновлены и улучшены. Вы увидите [Приступая к работе с элементом управления Android карты](https://docs.microsoft.com/azure/azure-maps/how-to-use-android-map-control-library) документации, чтобы получить номер последней версии реализации службы карт Azure. Кроме того можно задать номер версии из «0,2» на «0 +», чтобы он всегда указывать до последней версии.
 
-    ```xml
-    <?xml version="1.0" encoding="utf-8"?>
-    <manifest>
-        ...
-        <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-        ...
-    </manifest>
-    ```
-
-4. Изменить **res** > **макета** > **activity_main.xml** чтобы он выглядел этот XML-код:
+3. Изменить **res** > **макета** > **activity_main.xml** и замените его следующим:
     
     ```XML
     <?xml version="1.0" encoding="utf-8"?>
@@ -105,16 +99,20 @@ Android Studio позволяет настроить виртуальное ус
             android:id="@+id/mapcontrol"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            app:mapcontrol_cameraTargetLat="47.64"
-            app:mapcontrol_cameraTargetLng="-122.33"
-            app:mapcontrol_cameraZoom="12"
             />
-
     </FrameLayout>
     ```
 
-5. Отредактируйте **MainActivity.java**, чтобы создать класс действий представления карты. После изменения его, он должен выглядеть как этот класс:
+4. В **MainActivity.java** файл, вам потребуется:
+    
+    * добавить оператор imports для пакета SDK Azure Maps
+    * набор сведений для проверки подлинности службы карт Azure
+    * получить экземпляр элемента управления map в **onCreate** метод
 
+    Сведения о проверке подлинности в классе AzureMaps глобально с помощью методов setSubscriptionKey или setAadProperties становится его, вам не придется добавить сведений для проверки подлинности для каждого представления. Элемент управления map содержит собственные методы жизненного цикла для управления жизненным циклом Android OpenGL, который должен вызываться непосредственно из содержащего их действия. Чтобы приложение правильно, вызывать методы жизненного цикла элемента управления картой необходимо переопределите следующие методы жизненного цикла в действии, которое содержит элемент управления картой и вызвать метод управления соответствующей карты. 
+
+    Изменить **MainActivity.java** файл следующим образом:
+    
     ```java
     package com.example.myapplication;
 
@@ -129,7 +127,7 @@ Android Studio позволяет настроить виртуальное ус
     public class MainActivity extends AppCompatActivity {
         
         static {
-            AzureMaps.setSubscriptionKey("{subscription-key}");
+            AzureMaps.setSubscriptionKey("<Your Azure Maps subscription key>");
         }
 
         MapControl mapControl;
@@ -197,97 +195,21 @@ Android Studio позволяет настроить виртуальное ус
 
 Android Studio займет несколько секунд для построения приложения. После завершения сборки необходимо протестировать приложение в Android эмулированного устройства. Вы должны увидеть карту следующего вида:
 
-![Карта Android](./media/how-to-use-android-map-control-library/android-map.png)
+<center>
 
-## <a name="add-a-marker-to-the-map"></a>Добавление метки на карту
+![Android карты](./media/how-to-use-android-map-control-library/android-map.png)</center>
 
-Чтобы добавить маркер в сопоставление, добавьте `mapView.getMapAsync()` функция `MainActivity.java`. Последний `MainActivity.java` код должен выглядеть следующим образом:
+## <a name="next-steps"></a>Дальнейшие действия
 
-```java
-package com.example.myapplication;
+Чтобы добавить содержимое на карту, см. в разделе:
 
-import android.app.Activity;
-import android.os.Bundle;
-import com.mapbox.geojson.Feature;
-import com.mapbox.geojson.Point;
-import com.microsoft.azure.maps.mapcontrol.AzureMaps;
-import com.microsoft.azure.maps.mapcontrol.MapControl;
-import com.microsoft.azure.maps.mapcontrol.layer.SymbolLayer;
-import com.microsoft.azure.maps.mapcontrol.source.DataSource;
-import static com.microsoft.azure.maps.mapcontrol.options.SymbolLayerOptions.iconImage;
-public class MainActivity extends AppCompatActivity {
-    
-    static{
-            AzureMaps.setSubscriptionKey("{subscription-key}");
-        }
+> [!div class="nextstepaction"]
+> [Добавьте символ слой в карту Android](https://review.docs.microsoft.com/azure/azure-maps/how-to-add-symbol-to-android-map)
 
-    MapControl mapControl;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+> [!div class="nextstepaction"]
+> [Добавление фигур в Android карту](https://docs.microsoft.com/azure/azure-maps/how-to-add-shapes-to-android-map)
 
-        mapControl = findViewById(R.id.mapcontrol);
+> [!div class="nextstepaction"]
+> [Изменение стилей карт в Android maps](https://docs.microsoft.com/azure/azure-maps/set-android-map-styles)
 
-        mapControl.onCreate(savedInstanceState);
 
-        mapControl.getMapAsync(map -> {
-            DataSource dataSource = new DataSource();
-            dataSource.add(Feature.fromGeometry(Point.fromLngLat(-122.33, 47.64)));
-
-            SymbolLayer symbolLayer = new SymbolLayer(dataSource);
-            symbolLayer.setOptions(iconImage("my-icon"));
-
-            map.images.add("my-icon", R.drawable.mapcontrol_marker_red);
-            map.sources.add(dataSource);
-            map.layers.add(symbolLayer);
-        });
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        mapControl.onStart();
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-        mapControl.onResume();
-    }
-
-    @Override
-    public void onPause() {
-        super.onPause();
-        mapControl.onPause();
-    }
-
-    @Override
-    public void onStop() {
-        super.onStop();
-        mapControl.onStop();
-    }
-
-    @Override
-    public void onLowMemory() {
-        super.onLowMemory();
-        mapControl.onLowMemory();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        mapControl.onDestroy();
-    }
-
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        mapControl.onSaveInstanceState(outState);
-    }
-}
-```
-
-Повторный запуск приложения. Вы должны увидеть маркер на карте, как показано ниже:
-
-![Метка на карте Android](./media/how-to-use-android-map-control-library/android-map-pin.png)

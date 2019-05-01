@@ -1,25 +1,18 @@
 ---
-title: Развертывание виртуальной машины из виртуальных жестких дисков в Azure Marketplace | Документация Майкрософт
+title: Развертывание виртуальной Машины из виртуальных жестких дисков для Azure Marketplace
 description: Здесь описано, как зарегистрировать виртуальную машину из виртуального жесткого диска, развернутого в Azure.
 services: Azure, Marketplace, Cloud Partner Portal,
-documentationcenter: ''
 author: v-miclar
-manager: Patrick.Butler
-editor: ''
-ms.assetid: ''
 ms.service: marketplace
-ms.workload: ''
-ms.tgt_pltfrm: ''
-ms.devlang: ''
 ms.topic: article
 ms.date: 11/30/2018
-ms.author: pbutlerm
-ms.openlocfilehash: f37ab1b9eef5be4aff6e5f8aecebc3688592f040
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.author: pabutler
+ms.openlocfilehash: a393620f28d45ec494c4e899f01e7e9a92b3ceba
+ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59046688"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64938287"
 ---
 # <a name="deploy-a-vm-from-your-vhds"></a>Развертывание виртуальной машины из дисков VHD
 
@@ -71,7 +64,7 @@ ms.locfileid: "59046688"
    | Пароль администратора              | Пароль учетной записи администратора для новой виртуальной машины                                  |
    | тип ОС;                     | Операционная система виртуальной машины: `Windows` \| `Linux`                                    |
    | Идентификатор подписки             | Идентификатор выбранной подписки                                      |
-   | Расположение                    | Географическое расположение развертывания                                        |
+   | Location                    | Географическое расположение развертывания                                        |
    | Размер виртуальной машины                     | [Размер виртуальной машины Azure](https://docs.microsoft.com/azure/virtual-machines/windows/sizes), например `Standard_A2` |
    | Имя общедоступного IP-адреса      | Имя общедоступного IP-адреса                                               |
    | Имя виртуальной машины                     | Имя новой виртуальной машины                                                           |

@@ -2,24 +2,18 @@
 title: Регистрация в центре разработки | Azure
 description: Сведения о регистрации в центре разработки.
 services: Azure, Marketplace, Compute, Storage, Networking, Blockchain, Security
-documentationcenter: ''
 author: jm-aditi-ms
 manager: pabutler
-editor: ''
-ms.assetid: ''
 ms.service: marketplace
-ms.workload: ''
-ms.tgt_pltfrm: ''
-ms.devlang: ''
 ms.topic: article
 ms.date: 10/05/2018
 ms.author: ellacroi
-ms.openlocfilehash: 682c9e209c4fa4a9f4971af5da901faf1ec58c22
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 559b5a519a48d4aa8022961a59f6f29cef28f948
+ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60735794"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64937604"
 ---
 # <a name="register-in-dev-center"></a>Регистрация в центре разработки  
 Чтобы не входить в личную учетную запись в браузере, откройте новое окно в режиме инкогнито в браузере Chrome или запустите режим InPrivate в браузере Internet Explorer.  
@@ -34,7 +28,7 @@ ms.locfileid: "60735794"
     ![Сведения об учетной записи с полем страны или региона](./media/marketplace-publishers-guide/devcenterregistrationaccountinfo.png)  
    
     >[!WARNING]
-    >Для продажи своих услуг в Azure Marketplace ваше зарегистрированное юридическое лицо должно быть из одной из утвержденных стран *продаж*. Ограничение расположения необходимо для осуществления выплат и налогообложения. 
+    >Для продажи своих услуг в Azure Marketplace, убедитесь, что ваше зарегистрированное юридическое лицо из одного из утвержденных *продажи* странах и регионах. Ограничение расположения необходимо для осуществления выплат и налогообложения. 
     >*   Дополнительные сведения см. на странице политик участия в Azure Marketplace по адресу [azure.microsoft.com/support/legal/marketplace/participation-policies](https://azure.microsoft.com/support/legal/marketplace/participation-policies).  
 
 4.  В разделе *Тип учетной записи* выберите переключатель `Company`.  
@@ -75,9 +69,9 @@ ms.locfileid: "60735794"
     Нажмите кнопку "Готово", чтобы получить сообщение электронной почты с подтверждением.  
 11. Выберите дальнейшие действия, используя модель выставления счетов для вашего предложения.  
 
-    | Модель оплаты | Дальнейшие действия |  
+    | Модель выставления счетов | Дальнейшие действия |  
     |:--- |:--- |  
-    | Бесплатные | Перейдите на портал Cloud Partner.<ul> <li>Чтобы публиковать в Azure Marketplace, посетите страницу портала Cloud Partner по адресу [cloudpartner.azure.com](https://cloudpartner.azure.com).</li> </ul> |  
+    | Free | Перейдите на портал Cloud Partner.<ul> <li>Чтобы публиковать в Azure Marketplace, посетите страницу портала Cloud Partner по адресу [cloudpartner.azure.com](https://cloudpartner.azure.com).</li> </ul> |  
     | Коммерческая (транзакция) | Обновите сведения об учетной записи.<ul> <li>Дополнительные сведения о добавлении данных об учетной записи см. в разделе, посвященном [добавлению банковской и налоговой информации](#add-bank-information).</li> </ul> |  
 
     *   Примером коммерческого предложения является предложение виртуальной машины с ежечасной моделью выставления счетов.  

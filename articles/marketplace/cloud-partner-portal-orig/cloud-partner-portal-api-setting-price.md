@@ -1,25 +1,18 @@
 ---
-title: Цены на предложения виртуальных машин | Документация Майкрософт
+title: Цены для предложений виртуальных машин | Azure Marketplace
 description: В этом разделе описывается три способа указания цены для предложений виртуальных машин.
 services: Azure, Marketplace, Cloud Partner Portal,
-documentationcenter: ''
 author: v-miclar
-manager: Patrick.Butler
-editor: ''
-ms.assetid: ''
 ms.service: marketplace
-ms.workload: ''
-ms.tgt_pltfrm: ''
-ms.devlang: ''
 ms.topic: conceptual
 ms.date: 09/13/2018
-ms.author: pbutlerm
-ms.openlocfilehash: a029477dfd8046863ebfe34cd839562a0b1f3d87
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.author: pabutler
+ms.openlocfilehash: dde3e04dc8f30ea5657139d50dd4456e5dfb57c2
+ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61094464"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64935729"
 ---
 <a name="pricing-for-virtual-machine-offers"></a>Цены на предложения виртуальных машин
 ==================================
@@ -97,7 +90,7 @@ ms.locfileid: "61094464"
      }
 ```
 
-<a name="regions"></a>Регионы
+<a name="regions"></a>регионы
 -------
 
 В следующей таблице показаны разные регионы, которые можно указать для настраиваемых цен за ядро, и их соответствующие коды валют.
@@ -117,9 +110,9 @@ ms.locfileid: "61094464"
 | CL         | Чили                | CLP               |
 | CO         | Колумбия             | КОП               |
 | CR         | Коста-Рика           | CRC               |
-| Управление персоналом         | Хорватия              | HRK               |
+| HR         | Хорватия              | HRK               |
 | CY         | Кипр               | EUR               |
-| CZ         | Чехия       | CZK               |
+| CZ         | Чешская Республика       | CZK               |
 | DK         | Дания              | DKK               |
 | DO         | Доминиканская Республика   | USD               |
 | EC         | Эквадор              | USD               |
@@ -128,17 +121,17 @@ ms.locfileid: "61094464"
 | EE         | Эстония              | EUR               |
 | FI         | Финляндия              | EUR               |
 | СВ         | Франция               | EUR               |
-| Германия         | Германия              | EUR               |
+| DE         | Германия              | EUR               |
 | GR         | Греция               | EUR               |
 | GT         | Гватемала            | GTQ               |
-| HK         | Гонконг (ОАР)        | HKD               |
+| HK         | Гонконг, САР        | HKD               |
 | HU         | Венгрия              | HUF               |
 | IS         | Исландия              | ISK               |
 | IN         | Индия                | INR               |
 | ИД         | Индонезия            | IDR               |
 | IE         | Ирландия              | EUR               |
 | IL         | Израиль               | ILS               |
-| ИТ         | Италия                | EUR               |
+| IT         | Италия                | EUR               |
 | JP         | Япония                | JPY               |
 | JO         | Иордания               | JOD               |
 | KZ         | Казахстан           | KZT               |
@@ -176,7 +169,7 @@ ms.locfileid: "61094464"
 | SG         | Сингапур            | SGD               |
 | SK         | Словакия             | EUR               |
 | SI         | Словения             | EUR               |
-| ZA         | Южная Африка         | ZAR               |
+| ZA         | ЮАР         | ZAR               |
 | ES         | Испания                | EUR               |
 | LK         | Шри-Ланка            | USD               |
 | SE         | Швеция               | SEK               |

@@ -12,22 +12,22 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 05/30/2018
+ms.date: 04/29/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.custom: seohack1
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e734b932976896b2fb4d86e2627b7827d40a2545
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 056d0caf2bfc6e99d5d659a2561bc41844feb79a
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60454893"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64918780"
 ---
 # <a name="plan-for-enhancing-data-security-through-a-strong-identity-solution"></a>Планирование повышения безопасности данных благодаря надежному решению для идентификации
 Первым шагом в защите данных является определение того, кто может получить доступ к этим данным. Кроме того, у вас должно быть решение для идентификации, которое можно интегрировать с вашей системой для обеспечения возможностей аутентификации и авторизации. Проверку подлинности и авторизацию часто путают друг с другом, понимая их роли неправильно. На самом деле между ними есть различия, как показано на рисунке ниже.
 
-![](./media/plan-hybrid-identity-design-considerations/mobile-devicemgt-lifecycle.png)
+![жизненный цикл мобильных устройств](./media/plan-hybrid-identity-design-considerations/mobile-devicemgt-lifecycle.png)
 
 **Этапы жизненного цикла управления мобильными устройствами**
 
@@ -44,7 +44,7 @@ ms.locfileid: "60454893"
 Однако есть некоторые аспекты безопасности, которые необходимо изучить и проверить независимо от отрасли.
 
 ## <a name="data-protection-paths"></a>Пути защиты данных
-![](./media/plan-hybrid-identity-design-considerations/data-protection-paths.png)
+![Пути защиты данных](./media/plan-hybrid-identity-design-considerations/data-protection-paths.png)
 
 **Пути защиты данных**
 

@@ -10,18 +10,18 @@ ms.subservice: acoustics
 ms.topic: how-to
 ms.date: 03/20/2019
 ms.author: kegodin
-ms.openlocfilehash: aa7c5c513d65310bf9bffab29c1d18e7e7a85b49
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 8605fe2ea86f875b5c5fd8ea451a287442dcd51b
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60389514"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64922493"
 ---
 # <a name="project-acoustics-unity-integration"></a>Интеграция с Unity шума проекта
 В этом практическом руководстве объясняется интеграция Unity шума проекта подключаемого модуля в проект Unity.
 
 Требования к программному обеспечению:
-* [Unity 2018.2+](http://unity3d.com) для Windows;
+* [Unity 2018.2+](https://unity3d.com) для Windows;
 * [Пакет проекта Unity шума](https://www.microsoft.com/download/details.aspx?id=57346)
 
 ## <a name="import-the-plugin"></a>Импорт подключаемого модуля

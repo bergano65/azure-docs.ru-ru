@@ -9,11 +9,11 @@ ms.topic: article
 ms.workload: powerbi
 ms.date: 09/20/2017
 ms.openlocfilehash: 9ef9416abb4aaf0927d1e072286ef83a4d8c39cb
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
-ms.translationtype: HT
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62118813"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64724021"
 ---
 # <a name="whats-new-in-power-bi-workspace-collections"></a>Новые возможности в коллекциях рабочих областей Power BI
 
@@ -59,7 +59,7 @@ ms.locfileid: "62118813"
 * Все новые пакеты SDK для JavaScript, которые поддерживают [расширенные возможности фильтрации и навигации по страницам](interact-with-reports.md).
 * Коллекции рабочих областей Power BI теперь поддерживаются в центре обработки данных, расположенном в Центральной Канаде. Проверьте [состояние центра обработки данных](https://azure.microsoft.com/status/).
 
-## <a name="july-11-2016"></a>11 июля 2016 года
+## <a name="july-11-2016"></a>11 июля 2016 г.
 В этот выпуск включены перечисленные ниже возможности.
 
 * **Отличные новости!** Служба коллекций рабочих областей Power BI больше не предоставляется на условиях предварительной версии. Теперь выпущена ее общедоступная версия.  

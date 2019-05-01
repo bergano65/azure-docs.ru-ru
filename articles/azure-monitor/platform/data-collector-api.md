@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 04/02/2019
 ms.author: bwren
-ms.openlocfilehash: 9fd65dc0a6d2a5756acd2de7cb46fbf7943a8758
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 0f5a996d68c80fd9b1f55a36de37579ea245d99d
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60931827"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64922779"
 ---
 # <a name="send-log-data-to-azure-monitor-with-the-http-data-collector-api-public-preview"></a>Отправка данных журналов в Azure Monitor c помощью API сборщика данных HTTP (общедоступная предварительная версия)
 В этой статье показано, как с помощью API сборщика данных HTTP отправлять данные журналов в Azure Monitor из клиента REST API.  Здесь также описано, как отформатировать данные, собранные скриптом или приложением, добавить их в запрос и авторизовать этот запрос в Azure Monitor.  В этой статье приведены примеры для PowerShell, C# и Python.
@@ -476,7 +476,7 @@ post_data(customer_id, shared_key, body, log_type)
 
 | Вместо | Описание | Лучше всего подходит для |
 |---|---|---|
-| [Пользовательские события](https://docs.microsoft.com/en-us/azure/azure-monitor/app/api-custom-events-metrics?toc=%2Fazure%2Fazure-monitor%2Ftoc.json#properties): Собственный приема данных на основе пакета SDK в Application Insights | Application Insights, обычно инструментированного пакета SDK в приложении, и предлагает возможность для отправки пользовательских данных с помощью пользовательских событий. | <ul><li> Данные, сгенерированные приложением, но не забирается SDK посредством одного из типов данных по умолчанию (т. е: запросы, зависимости, исключения и т. д).</li><li> Данные, обычно связанные с другими данными приложения в Application Insights </li></ul> |
+| [Пользовательские события](https://docs.microsoft.com/azure/azure-monitor/app/api-custom-events-metrics?toc=%2Fazure%2Fazure-monitor%2Ftoc.json#properties): Собственный приема данных на основе пакета SDK в Application Insights | Application Insights, обычно инструментированного пакета SDK в приложении, и предлагает возможность для отправки пользовательских данных с помощью пользовательских событий. | <ul><li> Данные, сгенерированные приложением, но не забирается SDK посредством одного из типов данных по умолчанию (т. е: запросы, зависимости, исключения и т. д).</li><li> Данные, обычно связанные с другими данными приложения в Application Insights </li></ul> |
 | [API сборщика данных](https://docs.microsoft.com/azure/log-analytics/log-analytics-data-collector-api) в журналах Azure Monitor | API сборщика данных в журналах Azure Monitor — это полностью открытыми для приема данных. Здесь могут отправляться данные, отформатированные в объекте JSON. После отправки, он будет обработан, и доступных в журналах, чтобы быть соотносятся с другими данными в журналах или от других Application Insights данные. <br/><br/> Это довольно легко передавать данные как файлы в большой двоичный объект BLOB-объектов Azure с где этих файлов будет обработано и передаются в Log Analytics. См. в разделе [это](https://docs.microsoft.com/azure/log-analytics/log-analytics-create-pipeline-datacollector-api) статье пример реализации подобного конвейера. | <ul><li> Данные, которые не обязательно создается в приложении инструментирования в Application Insights.</li><li> Примеры таблиц фактов и подстановки, ссылочные данные, предварительно сводные статистические данные, и т.д. </li><li> Предназначен для данных, которые будут построены перекрестные ссылки от других данных Azure Monitor (например, Application Insights, других типов данных журналов, Центр безопасности, Azure Monitor для контейнеров или виртуальных машин и т. д). </li></ul> |
 | [Обозреватель данных Azure](https://docs.microsoft.com/azure/data-explorer/ingest-data-overview) | Azure обозреватель данных (ADX) — это платформа данных, обеспечивающий работу журналов Azure Monitor и Application Insights Analytics. Теперь общедоступные («GA»), с помощью платформы данных в необработанном виде предоставляет полный гибкость (но требующих затраты на управление) нагрузку в кластере (RBAC, коэффициент удержания, схемы и т. д). ADX предоставляет множество [вариантов приема в](https://docs.microsoft.com/azure/data-explorer/ingest-data-overview#ingestion-methods) включая [CSV, TSV и JSON](https://docs.microsoft.com/azure/kusto/management/mappings?branch=master) файлов. | <ul><li> Данные, которые не удается сопоставить с другими данными в Application Insights или журналов. </li><li> Данные требования advanced приема, и сейчас недоступно в журналов Azure Monitor возможности обработки. </li></ul> |
 

@@ -4,16 +4,16 @@ description: Как экспортировать данные из прилож�
 services: iot-central
 author: viv-liu
 ms.author: viviali
-ms.date: 12/07/2018
+ms.date: 03/20/2019
 ms.topic: conceptual
 ms.service: iot-central
 manager: peterpr
-ms.openlocfilehash: 700e8e9fe0dac182d71df8ca66800fa03cf25a2e
-ms.sourcegitcommit: ab6fa92977255c5ecbe8a53cac61c2cd2a11601f
+ms.openlocfilehash: b0a34cd8eebdd816cb780b34de936a6cc56d0994
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58295799"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64730235"
 ---
 # <a name="export-your-data-in-azure-iot-central"></a>Экспорт данных в Azure IoT Central
 

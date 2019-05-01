@@ -7,12 +7,12 @@ ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 04/07/2019
-ms.openlocfilehash: 8492f736e64366802b3601f9b5fc8bd1d9b6ea79
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: cb5e41feb9be978592a1c1708ade0188ba20d504
+ms.sourcegitcommit: 8a681ba0aaba07965a2adba84a8407282b5762b2
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60827435"
+ms.lasthandoff: 04/29/2019
+ms.locfileid: "64873147"
 ---
 # <a name="time-series-analysis-in-azure-data-explorer"></a>Анализ временных рядов в службе Azure Data Explorer
 
@@ -34,7 +34,7 @@ demo_make_series1 | take 10
 
 |   |   |   |   |   |
 | --- | --- | --- | --- | --- |
-|   | Метка времени | BrowserVer (версия браузера) | OsVer (версия ОС) | Страна |
+|   | TimeStamp | BrowserVer (версия браузера) | OsVer (версия ОС) | Страна |
 |   | 2016-08-25 09:12:35.4020000 | Chrome 51.0 | Windows 7 | Соединенное королевство |
 |   | 2016-08-25 09:12:41.1120000 | Chrome 52.0 | Windows 10 |   |
 |   | 2016-08-25 09:12:46.2300000 | Chrome 52.0 | Windows 7 | Соединенное королевство |
@@ -142,7 +142,7 @@ demo_series3
 
 |   |   |   |   |
 | --- | --- | --- | --- |
-|   | periods | scores (баллы) | дн. |
+|   | periods | scores (баллы) | days |
 |   | 84 | 0,820622786055595 | 7 |
 |   | 12 | 0,764601405803502 | 1 |
 
@@ -180,7 +180,7 @@ demo_many_series1
 
 |   |   |   |   |   |   |
 | --- | --- | --- | --- | --- | --- |
-|   | ВРЕМЕННАЯ МЕТКА | Loc | anonOp | DB | DataRead |
+|   | TIMESTAMP | Loc | anonOp | DB | DataRead |
 |   | 2016-09-11 21:00:00.0000000 | Loc 9 | 5117853934049630089 | 262 | 0 |
 |   | 2016-09-11 21:00:00.0000000 | Loc 9 | 5117853934049630089 | 241 | 0 |
 |   | 2016-09-11 21:00:00.0000000 | Loc 9 | -865998331941149874 | 262 | 279862 |
@@ -260,3 +260,8 @@ demo_many_series1
 Менее чем за две минуты служба ADX проанализировала около 20 000 временных рядов и обнаружила два ряда с отклонениями, в которых число операций чтения неожиданно уменьшилось.
 
 Эти расширенные возможности в сочетании с высокой производительностью ADX предоставляют уникальное и эффективное решение для анализа временных рядов.
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+* Дополнительные сведения о [серии обнаружение аномалий и прогнозирование](/azure/data-explorer/anomaly-detection) в обозреватель данных Azure.
+* Дополнительные сведения о [машинного обучения возможности](/azure/data-explorer/machine-learning-clustering) в обозреватель данных Azure.

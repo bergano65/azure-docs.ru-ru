@@ -3,8 +3,8 @@ title: Вопросы и ответы об Аналитике трафика Azu
 description: Ответы на некоторые вопросы об Аналитике трафика Azure.
 services: network-watcher
 documentationcenter: na
-author: jimdial
-manager: jeconnoc
+author: KumudD
+manager: twooley
 editor: ''
 ms.service: network-watcher
 ms.devlang: na
@@ -12,13 +12,13 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/08/2018
-ms.author: jdial
-ms.openlocfilehash: 0a5bbc0bb4b934ae9e60cbd8233b5efbae2a6e6e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.author: kumud
+ms.openlocfilehash: 88acfebcc6dd8489703014d790f09313ab9302ec
+ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60236616"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64939911"
 ---
 # <a name="traffic-analytics-frequently-asked-questions"></a>Часто задаваемые вопросы по Аналитике трафика Azure
 
@@ -241,7 +241,7 @@ armclient post "https://management.azure.com/subscriptions/<NSG subscription id>
 
 ## <a name="how-frequently-does-traffic-analytics-process-data"></a>Как часто аналитики трафика обработки данных?
 
-Ссылаться на [раздел статистической обработки данных](https://docs.microsoft.com/en-us/azure/network-watcher/traffic-analytics-schema#data-aggregation) схема аналитики трафика и документе статистической обработки данных
+Ссылаться на [раздел статистической обработки данных](https://docs.microsoft.com/azure/network-watcher/traffic-analytics-schema#data-aggregation) схема аналитики трафика и документе статистической обработки данных
 
 ## <a name="how-does-traffic-analytics-decide-that-an-ip-is-malicious"></a>Как аналитика трафика определяет, что IP-адрес является вредоносным? 
 
@@ -253,14 +253,14 @@ armclient post "https://management.azure.com/subscriptions/<NSG subscription id>
 - Адресе можно использовать для Log Analytics в аналитике трафика Azure. 
 - Используйте [здесь описаны схемы](traffic-analytics-schema.md) для написания запросов 
 - Нажмите кнопку «Новое правило генерации оповещений» Создание оповещения
-- Ссылаться на [документации по оповещениям журнала](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/alerts-log) Создание оповещения
+- Ссылаться на [документации по оповещениям журнала](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-log) Создание оповещения
 
 ## <a name="how-can-i-navigate-by-using-the-keyboard-in-the-geo-map-view"></a>Как перемещаться в представлении географической карты с помощью клавиатуры?
 
 На странице географической карты есть два основных раздела:
     
-- **Баннер.** Баннер в верхней части географической карты предоставляет кнопки для выбора фильтров распределения трафика (например, "Развертывание", "Трафик из стран" и "Вредоносный"). При нажатии кнопки соответствующий фильтр применяется на карте. Например, если нажать кнопку "Активный", карта выделит активные центры обработки данных в развертывании.
-- **Карта.** Под баннером в разделе карты показано распределение трафика между центрами обработки данных Azure и странами.
+- **Баннер.** Баннер в верхней части карты расположены кнопки, чтобы выбирать фильтры распространения трафика (например, развертывания, трафик из стран/регионов и вредоносными). При нажатии кнопки соответствующий фильтр применяется на карте. Например, если нажать кнопку "Активный", карта выделит активные центры обработки данных в развертывании.
+- **Карта.** Ниже баннер «карта» отображается распределение трафика между центрами обработки данных Azure и страны и регионы.
     
 ### <a name="keyboard-navigation-on-the-banner"></a>Навигация по баннеру с помощью клавиатуры
     

@@ -10,12 +10,12 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 12/04/2018
 ms.custom: seodec18
-ms.openlocfilehash: 6126a9d56059435be32299bcd1f03050f031f81b
-ms.sourcegitcommit: fea5a47f2fee25f35612ddd583e955c3e8430a95
-ms.translationtype: HT
+ms.openlocfilehash: eeab01146c938ec118deae08a30af85af4186a2e
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55507830"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64714062"
 ---
 # <a name="time-series-model"></a>Модель временных рядов
 
@@ -201,11 +201,11 @@ ms.locfileid: "55507830"
 
 Дополнительные сведения о параметрах моделей временных рядов см. в [Справочной документации](https://docs.microsoft.com/rest/api/time-series-insights/preview-model#model-settings-api).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-См. [Data storage and ingress in Azure Time Series Insights Preview](./time-series-insights-update-storage-ingress.md) (Хранилище данных и входящий трафик в службе "Аналитика временных рядов Azure (предварительная версия)").
+- См. [Data storage and ingress in Azure Time Series Insights Preview](./time-series-insights-update-storage-ingress.md) (Хранилище данных и входящий трафик в службе "Аналитика временных рядов Azure (предварительная версия)").
 
-См. новый раздел [Time Series Model](https://docs.microsoft.com/rest/api/time-series-insights/preview-model) (Модель временного ряда).
+- См. новый раздел [Time Series Model](https://docs.microsoft.com/rest/api/time-series-insights/preview-model) (Модель временного ряда).
 
 <!-- Images -->
 [1]: media/v2-update-tsm/tsm.png

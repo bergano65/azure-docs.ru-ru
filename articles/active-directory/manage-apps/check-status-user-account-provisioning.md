@@ -16,11 +16,11 @@ ms.author: celested
 ms.reviewer: asmalser
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e293eb555269a1f8beeeccd74000358abe1ef5c8
-ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
-ms.translationtype: HT
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63759761"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64721069"
 ---
 # <a name="tutorial-reporting-on-automatic-user-account-provisioning"></a>Руководство по Отчеты об автоматической подготовке учетных записей пользователей
 

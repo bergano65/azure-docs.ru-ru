@@ -16,12 +16,12 @@ ms.author: celested
 ms.reviewer: brandwe
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e79b73123b33a012c062a89fb9748fa101fabcea
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 1d90af62c8d6267001ede567c71b7e1204f6ce74
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60299623"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64917211"
 ---
 # <a name="how-to-enable-cross-app-sso-on-ios-using-adal"></a>Практическое руководство: включение единого входа в нескольких приложениях iOS с помощью ADAL
 
@@ -44,7 +44,7 @@ ms.locfileid: "60299623"
 
 В этих инструкциях предполагается, что вы знаете следующее.
 
-* Подготовить приложения с помощью предыдущей версии портала для Azure AD. Дополнительные сведения см. в статье [Quickstart: Register an app with the Azure Active Directory v1.0 endpoint](quickstart-v1-add-azure-ad-app.md) (Краткое руководство по регистрации приложения с помощью конечной точки Azure AD версии 1.0).
+* Подготовить приложения с помощью предыдущей версии портала для Azure AD. Дополнительные сведения см. в разделе [Регистрация приложения](quickstart-register-app.md)
 * Интегрировать приложение с помощью [пакета SDK Azure AD для iOS](https://github.com/AzureAD/azure-activedirectory-library-for-objc).
 
 ## <a name="single-sign-on-concepts"></a>Основные понятия единого входа

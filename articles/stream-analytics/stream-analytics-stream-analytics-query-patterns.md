@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 08/08/2017
-ms.openlocfilehash: 9c9a5f219af0d474e1608f98595abe027b894117
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: ef302ecaa6defc6ac0dc1dd58d4f8acc0f2fd263
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58001745"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64711453"
 ---
 # <a name="query-examples-for-common-stream-analytics-usage-patterns"></a>Примеры запросов для распространенных шаблонов использования Stream Analytics
 
@@ -537,7 +537,7 @@ GROUP BY
 
 **Входные данные**
 
-| Twitter в режиме реального | deviceId | sensorName | value |
+| time | deviceId | sensorName | value |
 | --- | --- | --- | --- |
 | "2018-01-01T16:01:00" | "Oven1" (Печь 1) | "temp" (температура) |120 |
 | "2018-01-01T16:01:00" | "Oven1" (Печь 1) | "power" (питание) |15 |
@@ -605,7 +605,7 @@ WHERE
 **Объяснение**. В первом запросе `max_power_during_last_3_mins` используется [скользящее окно](https://msdn.microsoft.com/azure/stream-analytics/reference/sliding-window-azure-stream-analytics), чтобы найти максимальное значение датчика питания для каждого устройства за последние 3 минуты. Второй запрос объединяется с первым запросом, чтобы найти значение питания в последнем окне, которое связано с текущим событием. Затем, если условия выполняются, создается оповещение для устройства.
 
 ## <a name="query-example-process-events-independent-of-device-clock-skew-substreams"></a>Пример запроса. Обработка событий, независимо от рассинхронизации часов устройства (подпотоки)
-**Описание** События могут поступать с опозданием или не по порядку из-за рассинхронизации часов поставщиков событий, секций или сетевой задержки. В следующем примере часы TollID 2 на десять секунд отстают от часов TollID 1, а часы TollID 3 — на пять секунд от TollID 1. 
+**Описание** События могут поступать с опозданием или не по порядку из-за рассинхронизации часов поставщиков событий, секций или сетевой задержки. В следующем примере часы для TollID 2 — пять секунд за TollID 1 и часы для TollID 3 составляет десять секунд за TollID 1. 
 
 
 **Входные данные**
@@ -650,7 +650,7 @@ GROUP BY TUMBLINGWINDOW(second, 5), TollId
 
 **Входные данные**  
 
-| deviceId | Время | Атрибут | Значение |
+| deviceId | Время | Атрибут | Value |
 | --- | --- | --- | --- |
 | 1 |2018-07-27T00:00:01.0000000Z |температура; |50 |
 | 1 |2018-07-27T00:00:01.0000000Z |температура; |50 |

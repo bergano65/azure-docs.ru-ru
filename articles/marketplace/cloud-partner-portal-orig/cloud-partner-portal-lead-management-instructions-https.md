@@ -1,25 +1,18 @@
 ---
-title: Конечная точка HTTPS | Документация Майкрософт
+title: Конечная точка HTTPS | Azure Marketplace
 description: Настройка управления интересами для конечной точки HTTPS.
 services: Azure, Marketplace, Cloud Partner Portal,
-documentationcenter: ''
 author: dan-wesley
-manager: Patrick.Butler
-editor: ''
-ms.assetid: ''
 ms.service: marketplace
-ms.workload: ''
-ms.tgt_pltfrm: ''
-ms.devlang: ''
 ms.topic: conceptual
 ms.date: 12/24/2018
-ms.author: pbutlerm
-ms.openlocfilehash: cfcd154b2f44c9e8acf12a9666abc9ce95fb3c26
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.author: pabutler
+ms.openlocfilehash: 058ab30358811cb66ae033fb464974639569ae18
+ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62124066"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64935260"
 ---
 # <a name="configure-lead-management-using-an-https-endpoint"></a>Настройка управления интересами с помощью конечной точки HTTPS
 
@@ -59,7 +52,7 @@ ms.locfileid: "62124066"
 1. Выберите **+ Новый шаг**.
 2. Выберите систему управления отношениями с клиентами по своему усмотрению и с помощью действия создайте новую запись. На приведенном ниже снимке экрана показан пример действия **Dynamics 365 для создания записи**.
 
-    ![Создать новую запись](./media/cloud-partner-portal-lead-management-instructions-https/https-image009.png)
+    ![Создание записи](./media/cloud-partner-portal-lead-management-instructions-https/https-image009.png)
 
 3. Укажите **имя организации**, которое является входными данными для подключения соединителя. Выберите **Интересы** в раскрывающемся списке **Имя сущности**.
 
@@ -67,7 +60,7 @@ ms.locfileid: "62124066"
 
 4. В службе Flow отобразится форма для предоставления информации о потенциальном клиенте. Вы можете сопоставить элементы из запроса ввода, выбрав динамическое содержимое. На приведенном ниже снимке экрана показан пример **OfferTitle**.
 
-    ![Добавить динамическое содержимое](./media/cloud-partner-portal-lead-management-instructions-https/https-image013.png)
+    ![Добавление динамического содержимого](./media/cloud-partner-portal-lead-management-instructions-https/https-image013.png)
 
 5. Сопоставьте нужные поля и сохраните поток нажав **эту** кнопку.
 
@@ -105,7 +98,7 @@ ms.locfileid: "62124066"
 
 Когда вы настраиваете информацию управления интересами для своего предложения, выберите **конечную точку HTTPS** в качестве **назначения интереса** и вставьте URL-адрес HTTP POST, который был скопирован на предыдущем шаге.  
 
-![Добавить динамическое содержимое](./media/cloud-partner-portal-lead-management-instructions-https/https-image017.png)
+![Добавление динамического содержимого](./media/cloud-partner-portal-lead-management-instructions-https/https-image017.png)
 
 При создании интересов корпорация Майкрософт отправляет их в службу Flow. Затем выполняется маршрутизация в систему CRM или на адрес электронной почты, настроенные вами.
 

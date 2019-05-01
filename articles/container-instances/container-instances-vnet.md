@@ -7,12 +7,12 @@ ms.service: container-instances
 ms.topic: article
 ms.date: 03/26/2019
 ms.author: danlep
-ms.openlocfilehash: a4da7a23d6dcb50164829507130fed145abeebbd
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 25f9d4e02bcb354acf1c771157622f07c5f4bcc1
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60684219"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64712799"
 ---
 # <a name="deploy-container-instances-into-an-azure-virtual-network"></a>Развертывание экземпляров контейнеров в виртуальной сети Azure
 
@@ -251,7 +251,7 @@ appcontaineryaml  myResourceGroup  Running   mcr.microsoft.com/azuredocs/aci-hel
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-### <a name="delete-container-instances"></a>Удалить экземпляры контейнеров
+### <a name="delete-container-instances"></a>Удаление экземпляров контейнеров
 
 Когда завершите работу с созданными экземплярами контейнеров, удалите их с помощью следующих команд:
 
@@ -265,7 +265,7 @@ az container delete --resource-group myResourceGroup --name appcontaineryaml -y
 
 В первоначальной предварительной версии этой функции требуется несколько дополнительных команд для удаления сетевых ресурсов, созданных ранее. Если вы использовали примеры команд из предыдущих разделов этой статьи для создания виртуальной сети и подсети, можно удалить эти сетевые ресурсы с помощью следующего скрипта.
 
-Перед выполнением скрипта задайте в качестве переменной `RES_GROUP` имя группы ресурсов, содержащей виртуальную сеть и подсеть, которые следует удалить. Скрипт отформатирован для оболочки Bash. Если вы предпочитаете использовать другую оболочку, например PowerShell или командную строку, измените методы доступа и присваивание значения переменной соответствующим образом.
+Перед выполнением скрипта задайте в качестве переменной `RES_GROUP` имя группы ресурсов, содержащей виртуальную сеть и подсеть, которые следует удалить. Обновить имена виртуальной сети и подсети, в том случае, если вы не использовали `aci-vnet` и `aci-subnet` имена приведенным выше. Скрипт отформатирован для оболочки Bash. Если вы предпочитаете использовать другую оболочку, например PowerShell или командную строку, измените методы доступа и присваивание значения переменной соответствующим образом.
 
 > [!WARNING]
 > Этот скрипт удаляет ресурсы! Он удаляет виртуальную сеть и все подсети, которые в ней содержатся. Убедитесь, что вам больше *не* требуются ресурсы в этой виртуальной сети, включая все содержащиеся в ней подсети, прежде чем запускать этот скрипт. После удаления **эти ресурсы восстановить невозможно**.
@@ -281,6 +281,8 @@ NETWORK_PROFILE_ID=$(az network profile list --resource-group $RES_GROUP --query
 az network profile delete --id $NETWORK_PROFILE_ID -y
 
 # Get the service association link (SAL) ID
+# Replace aci-vnet and aci-subnet with your VNet and subnet names in the following commands
+
 SAL_ID=$(az network vnet subnet show --resource-group $RES_GROUP --vnet-name aci-vnet --name aci-subnet --query id --output tsv)/providers/Microsoft.ContainerInstance/serviceAssociationLinks/default
 
 # Delete the default SAL ID for the subnet

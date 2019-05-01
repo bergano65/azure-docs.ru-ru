@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.service: service-health
 ms.date: 01/29/2019
 ms.workload: Supportability
-ms.openlocfilehash: b4062b3f0bc389de4403ac81b56688508f5ea50e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 03c5fb0f399e43af2584743655eeea8af4c5b2f5
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60620833"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64924449"
 ---
 # <a name="azure-resource-health-faq"></a>Часто задаваемые вопросы о службе "Работоспособность ресурсов Azure"
 Найдите ответы на часто задаваемые вопросы о службе "Работоспособность ресурсов Azure".
@@ -50,7 +50,7 @@ ms.locfileid: "60620833"
 На портале инициированные пользователем действия выделяются с помощью синего значка уведомления, а запланированные и незапланированные события — с помощью красного значка предупреждения. Дополнительные сведения см. в статье [Обзор службы "Работоспособность ресурсов Azure"](Resource-health-overview.md).  
 
 ## <a name="can-i-integrate-resource-health-with-my-monitoring-tools"></a>Можно ли интегрировать службу "Работоспособность ресурсов" и средства мониторинга?
-Служба работоспособности ресурсов имеет [предварительную версию поддержки](resource-health-alert-arm-template-guide.md) для журнала действий на основе оповещений. Журнал действий оповещений используются [группы действий](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/action-groups) для уведомления пользователей о том, что оповещение было запущено. Группы действий поддерживает разнообразные каналы уведомления по электронной почте, SMS, веб-перехватчика и действия ITSM.
+Служба работоспособности ресурсов имеет [предварительную версию поддержки](resource-health-alert-arm-template-guide.md) для журнала действий на основе оповещений. Журнал действий оповещений используются [группы действий](https://docs.microsoft.com/azure/azure-monitor/platform/action-groups) для уведомления пользователей о том, что оповещение было запущено. Группы действий поддерживает разнообразные каналы уведомления по электронной почте, SMS, веб-перехватчика и действия ITSM.
 
 ## <a name="where-do-i-find-resource-health"></a>Где найти службу "Работоспособность ресурсов"?
 Войдя на портал Azure, доступ к службе "Работоспособность ресурсов" можно получить несколькими способами.

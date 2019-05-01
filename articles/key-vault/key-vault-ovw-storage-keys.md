@@ -1,20 +1,19 @@
 ---
-ms.assetid: ''
 title: Учетная запись хранения, управляемая с помощью Azure Key Vault, — CLI
 description: Ключи учетной записи хранения обеспечивают простую интеграцию с Azure Key Vault с возможностью доступа на основе ключа к учетной записи службы хранилища Azure.
 ms.topic: conceptual
 services: key-vault
 ms.service: key-vault
-author: prashanthyv
-ms.author: prashanthyv
+author: mbaldwin
+ms.author: mbaldwin
 manager: barbkess
 ms.date: 03/01/2019
-ms.openlocfilehash: 0812d1523c6db077bf93a16a9a14771f5534d712
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: eefdb4d644c97bb55342e21c9a2fcf0a122a6ec5
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60304920"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64724775"
 ---
 # <a name="azure-key-vault-managed-storage-account---cli"></a>Учетная запись хранения, управляемая с помощью Azure Key Vault, — CLI
 

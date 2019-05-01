@@ -1,5 +1,5 @@
 ---
-title: Доступа к устройству Microsoft Azure Data Box Edge, эффективность и режим подключения | Документация Майкрософт
+title: Azure доступа к устройству Edge поле данных, power и режим подключения | Документация Майкрософт
 description: Описывает способ управления доступом "," power "и" режим подключения для устройства Edge поле данных Azure, что позволяет передавать данные в Azure
 services: databox
 author: alkohli
@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: article
 ms.date: 03/25/2019
 ms.author: alkohli
-ms.openlocfilehash: 813563b500b9365289285a89536f2724fb87acad
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 5fbe8f3eb05ac60918e488c68869c3fe44051a3f
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60757335"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64924367"
 ---
 # <a name="manage-access-power-and-connectivity-mode-for-your-azure-data-box-edge"></a>Управление доступом, эффективность и режим подключения для Microsoft Edge в поле данных Azure
 
@@ -38,7 +38,7 @@ ms.locfileid: "60757335"
 1. В локальном пользовательском веб-интерфейсе перейдите в раздел **Обслуживания > Изменение пароля**.
 2. Введите текущий пароль, а затем — новый. Длина пароля должна быть не меньше 8 и не больше 16 знаков. Пароль должен содержать 3 знака из следующих категорий: прописные буквы, строчные буквы, цифры и специальные знаки. Подтвердите новый пароль.
 
-    ![Сменить пароль](media/data-box-edge-manage-access-power-connectivity-mode/change-password-1.png)
+    ![Изменить пароль](media/data-box-edge-manage-access-power-connectivity-mode/change-password-1.png)
 
 3. Щелкните **Изменить пароль**.
  
@@ -83,7 +83,7 @@ ms.locfileid: "60757335"
 1. В локальном пользовательском веб-интерфейсе последовательно выберите **Обслуживание > Настройки питания**.
 2. Выберите **завершение работы** или **перезапустите** в зависимости от того, что требуется сделать.
 
-    ![Настройки питания](media/data-box-edge-manage-access-power-connectivity-mode/shut-down-restart-1.png)
+    ![Параметры питания](media/data-box-edge-manage-access-power-connectivity-mode/shut-down-restart-1.png)
 
 3. При появлении запроса на подтверждение, выберите **Да** для продолжения.
 

@@ -6,14 +6,14 @@ author: iainfoulds
 manager: jeconnoc
 ms.service: container-service
 ms.topic: article
-ms.date: 08/17/2018
+ms.date: 04/25/2019
 ms.author: iainfou
-ms.openlocfilehash: ae92a5c894b186a1c8b471c1b446a88299742aec
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 04ed95317311b81af49f5d96addb203b7cfeb74a
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60466381"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64725649"
 ---
 # <a name="frequently-asked-questions-about-azure-kubernetes-service-aks"></a>Вопросы и ответы о Службе Azure Kubernetes (AKS)
 
@@ -53,10 +53,27 @@ ms.locfileid: "60466381"
 
 Каждое развертывание AKS охватывает две группы ресурсов:
 
-- Первая группа ресурсов создается пользователем и содержит только ресурс службы Kubernetes. Во время развертывания поставщик ресурсов AKS автоматически создает вторую группу, такую как *MC_myResourceGroup_myAKSCluster_eastus*.
+- Первая группа ресурсов создается пользователем и содержит только ресурс службы Kubernetes. Во время развертывания поставщик ресурсов AKS автоматически создает вторую группу, такую как *MC_myResourceGroup_myAKSCluster_eastus*. Сведения о том, как можно указать имя этой второй группы ресурсов см. в разделе в следующем разделе.
 - Эта вторая группа ресурсов, такая как *MC_myResourceGroup_myAKSCluster_eastus*, содержит все ресурсы инфраструктуры, связанные с кластером. Эти ресурсы включают виртуальные машины узла Kubernetes, виртуальную сеть и хранилище. Эта отдельная группа ресурсов создается, чтобы упростить процесс очистки ресурсов.
 
 Если вы создаете ресурсы для использования с кластером AKS (например, учетные записи хранения или зарезервированные общедоступные IP-адреса), поместите их в автоматически созданную группу ресурсов.
+
+## <a name="can-i-provide-my-own-name-for-the-aks-infrastructure-resource-group"></a>Предоставить собственный имя группы ресурсов AKS инфраструктуры?
+
+Да. По умолчанию поставщик ресурсов AKS автоматически создает дополнительный группу ресурсов во время развертывания, такие как *MC_myResourceGroup_myAKSCluster_eastus*. Чтобы соответствовать корпоративной политике, разработчик может предоставить собственное имя для этого управляемого кластера (*MC_*) группы ресурсов.
+
+Чтобы задать собственное имя группы ресурсов, установите [предварительной версии aks] [ aks-preview-cli] версия расширения Azure CLI *версии 0.3.2* или более поздней версии. При создании кластера AKS с помощью [создать az aks] [ az-aks-create] команды, используйте *--узел resource-group* параметр и укажите имя группы ресурсов. Если вы [использовать шаблон Azure Resource Manager] [ aks-rm-template] развертывание кластера AKS, можно определить имя группы ресурсов с помощью *nodeResourceGroup* свойство.
+
+* Эта группа ресурсов создается автоматически, поставщик ресурсов Azure в вашей подписке.
+* Имя группы ресурсов можно указать только в том случае, при создании кластера.
+
+Не поддерживаются следующие сценарии:
+
+* Нельзя указать существующую группу ресурсов для *MC_* группы.
+* Нельзя указать другой подписки для *MC_* группы ресурсов.
+* Невозможно изменить *MC_* имя группы ресурсов после создания кластера.
+* Нельзя указать имена для управляемых ресурсов в пределах *MC_* группы ресурсов.
+* Нельзя изменить или удалить теги из управляемых ресурсов в пределах *MC_* группы ресурсов (см. Дополнительные сведения в следующем разделе).
 
 ## <a name="can-i-modify-tags-and-other-properties-of-the-aks-resources-in-the-mc-resource-group"></a>Можно ли изменять теги и другие свойства ресурсов AKS в группе ресурсов MC_*?
 
@@ -100,6 +117,9 @@ AKS поддерживает следующие [контроллеры допу
 [aks-advanced-networking]: ./configure-azure-cni.md
 [aks-rbac-aad]: ./azure-ad-integration.md
 [node-updates-kured]: node-updates-kured.md
+[aks-preview-cli]: /cli/azure/ext/aks-preview/aks
+[az-aks-create]: /cli/azure/aks#az-aks-create
+[aks-rm-template]: /rest/api/aks/managedclusters/createorupdate#managedcluster
 
 <!-- LINKS - external -->
 
@@ -108,4 +128,3 @@ AKS поддерживает следующие [контроллеры допу
 [hexadite]: https://github.com/Hexadite/acs-keyvault-agent
 [admission-controllers]: https://kubernetes.io/docs/reference/access-authn-authz/admission-controllers/
 [keyvault-flexvolume]: https://github.com/Azure/kubernetes-keyvault-flexvol
-

@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 10/30/2018
 ms.author: yili
 ms.custom: seodec18
-ms.openlocfilehash: e3b6eed6f70eb2803ef4fa4e6b5d32fb0a4d843a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 7cc3a4d98901e618369c98ceee8125d2abbe94e3
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60851159"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64919968"
 ---
 # <a name="azure-app-service-on-linux-faq"></a>Служба приложений Azure на платформе Linux: вопросы и ответы
 
@@ -47,7 +47,7 @@ ms.locfileid: "60851159"
 | .NET Core. | имя скомпилированной библиотеки DLL, как `dotnet <myapp>.dll`                                 |
 | Ruby      | скрипт Ruby, который вы хотите инициализировать приложение                     |
 
-## <a name="management"></a>Управление
+## <a name="management"></a>управления
 
 **Что происходит при нажатии кнопки перезагрузки на портале Azure?**
 
@@ -136,7 +136,7 @@ const io = require('socket.io')(server,{
 
 **Можно ли предоставить несколько портов в образе настраиваемого контейнера?**
 
-В настоящее время нет возможности поддерживать более чем один порт.
+Мы не поддерживаем, предоставление доступа к более чем один порт.
 
 **Можно ли использовать собственное хранилище?**
 
@@ -154,11 +154,11 @@ const io = require('socket.io')(server,{
 
 Нет, платформа обрабатывает завершение протокола HTTPS на общих внешних интерфейсах.
 
-## <a name="multi-container-with-docker-compose-and-kubernetes"></a>Мультиконтейнер с Docker Compose и Kubernetes
+## <a name="multi-container-with-docker-compose"></a>Несколькими контейнерами с помощью Docker Compose
 
 **Как настроить Реестр контейнеров Azure (ACR) для использования с мультиконтейнером?**
 
-Для использования ACR с мультиконтейнером **все образы контейнеров** должны размещаться на одном сервере реестра ACR. Если они находятся на одном сервере реестра, необходимо создать параметры приложения, а затем изменить файл конфигурации Docker Compose или Kubernetes, включив в него имя образа ACR.
+Для использования ACR с мультиконтейнером **все образы контейнеров** должны размещаться на одном сервере реестра ACR. Как только они на один и тот же сервер реестра, необходимо будет создавать параметры приложения и затем обновите файл конфигурации Docker Compose образа имя ACR.
 
 Создайте следующие параметры приложений:
 

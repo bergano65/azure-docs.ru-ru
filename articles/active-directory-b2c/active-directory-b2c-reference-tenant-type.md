@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 04/10/2017
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: 928c6316ea964472faadc82213c4c1ff81c3e038
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 8c5d39244c835de7d46c074e62dae32d4ace0f67
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60317110"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64719777"
 ---
 # <a name="azure-active-directory-b2c-region-availability--data-residency"></a>Azure Active Directory B2C Доступность в регионах и размещение данных
 Доступность в регионах и местонахождение данных — это два разных понятия, которые применяются к Azure AD B2C не так, как к другим службам Azure. В этой статье рассматриваются различия между этими двумя понятиями и сравнивается то, как они применяются к Azure AD B2C и к Azure в целом.

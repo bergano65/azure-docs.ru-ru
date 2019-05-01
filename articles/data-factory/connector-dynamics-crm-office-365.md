@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 11/28/2018
+ms.date: 04/26/2019
 ms.author: jingwang
-ms.openlocfilehash: 772b9b191a2e6464ff481ff6661308e00ef6033a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 6a52749c78cd0f090e66220fe51e3d04985f96e7
+ms.sourcegitcommit: e7d4881105ef17e6f10e8e11043a31262cfcf3b7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60535326"
+ms.lasthandoff: 04/29/2019
+ms.locfileid: "64869533"
 ---
 # <a name="copy-data-from-and-to-dynamics-365-common-data-service-or-dynamics-crm-by-using-azure-data-factory"></a>Копирование данных из Dynamics 365 (Common Data Service) или Dynamics CRM и в эти решения с помощью фабрики данных Azure
 
@@ -69,9 +69,6 @@ ms.locfileid: "60535326"
 | password | Введите пароль для учетной записи пользователя, указанной для выбранного имени пользователя. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Yes |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. | "Нет" для источника, "Да" для приемника, если связанная с источником служба не имеет среды выполнения интеграции |
 
->[!IMPORTANT]
->При копировании данных в Dynamics среду выполнения интеграции Azure по умолчанию нельзя использовать для копирования. Другими словами, если связанная служба источника не имеет указанной среды выполнения интеграции, явным образом создайте [IR Azure](create-azure-integration-runtime.md#create-azure-ir) в расположении вблизи экземпляра Dynamics. Найти расположение экземпляра Dynamics, ссылаясь на [списка регионов для Dynamics 365](https://docs.microsoft.com/dynamics365/customer-engagement/admin/datacenter/new-datacenter-regions). Как показано в следующем примере, ассоциируйте ее в связанной службе Dynamics.
-
 >[!NOTE]
 >Соединитель Dynamics, используемый для необязательного свойства organizationName, чтобы идентифицировать экземпляр Dynamics CRM или 365 Online. Во время работы соединителя вам предлагается вместо этого указать новое свойство serviceUri, чтобы повысить производительность обнаружения экземпляра.
 
@@ -117,9 +114,6 @@ ms.locfileid: "60535326"
 | password | Введите пароль для учетной записи пользователя, указанной для выбранного имени пользователя. Вы можете обозначить это поле как SecureString, чтобы безопасно хранить его в ADF, или сохранить пароль в Azure Key Vault и передавать его оттуда в действие копирования при фактическом копировании данных. Подробнее это описано в статье [о хранении учетных данных в Key Vault](store-credentials-in-key-vault.md). | Yes |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. | "Нет" для источника, "Да" для приемника |
 
->[!IMPORTANT]
->Чтобы скопировать данные в Dynamics, явно [создайте среду выполнения интеграции Azure](create-azure-integration-runtime.md#create-azure-ir) в расположении рядом с экземпляром Dynamics. Как показано в следующем примере, ассоциируйте ее в связанной службе.
-
 **Пример. Dynamics (локальная версия) с IFD с использованием проверки подлинности**
 
 ```json
@@ -160,8 +154,8 @@ ms.locfileid: "60535326"
 | entityName | Логическое имя сущности, которое требуется получить. | "Нет" для источника (если свойство query указано в источнике действия), "Да" для приемника |
 
 > [!IMPORTANT]
->- При копировании данных из Dynamics раздел structure необязателен, но рекомендуется в наборе данных Dynamics, чтобы обеспечить детерминированный результат копирования. Он определяет столбец имени и тип данных для данных Dynamics, которые требуется скопировать. Дополнительные сведения см. в разделах [Структура набора данных](concepts-datasets-linked-services.md#dataset-structure) и [Сопоставление типов данных для Dynamics](#data-type-mapping-for-dynamics).
->- При импорте схемы в пользовательском интерфейсе разработки ADF выводит схему путем выборки верхних строк из результата запроса Dynamics для инициализации создания структуры. При этом столбцы без значений будут опущены. Вы можете просмотреть схему и при необходимости добавить в нее или структуру набора данных Dynamics дополнительные столбцы, которые будут учитываться во время копирования.
+>- При копировании данных из Dynamics, в разделе «structure», необязательно, но настоятельно recommanded в наборе данных Dynamics, чтобы результат детерминированным копирования. Он определяет столбец имени и тип данных для данных Dynamics, которые требуется скопировать. Дополнительные сведения см. в разделах [Структура набора данных](concepts-datasets-linked-services.md#dataset-structure-or-schema) и [Сопоставление типов данных для Dynamics](#data-type-mapping-for-dynamics).
+>- При импорте схемы в пользовательском интерфейсе разработки ADF выводит схему путем выборки верхних строк из результата запроса Dynamics для инициализации создания структуры. При этом столбцы без значений будут опущены. Это также применяется для копирования выполнений, если нет определения явной структуры. Вы можете просмотреть схему и при необходимости добавить в нее или структуру набора данных Dynamics дополнительные столбцы, которые будут учитываться во время копирования.
 >- При копировании данных в Dynamics раздел structure является необязательным в наборе данных Dynamics. В какие столбцы выполняется копирование, определяет схема исходных данных. Если источником является CSV-файл без заголовка, во входном наборе данных укажите параметр structure с именем столбца и тип данных. Они последовательно сопоставляются с полями в CSV-файле.
 
 **Пример.**
@@ -330,20 +324,20 @@ ms.locfileid: "60535326"
 |:--- |:--- |:--- |:--- |
 | AttributeTypeCode.BigInt | длинное целое | ✓ | ✓ |
 | AttributeTypeCode.Boolean | Boolean | ✓ | ✓ |
-| AttributeType.Customer | Guid | ✓ | | 
+| AttributeType.Customer | Guid | ✓ | |
 | AttributeType.DateTime | DateTime | ✓ | ✓ |
 | AttributeType.Decimal | Decimal | ✓ | ✓ |
 | AttributeType.Double | Double | ✓ | ✓ |
-| AttributeType.EntityName | String | ✓ | ✓ |
+| AttributeType.EntityName | Строка | ✓ | ✓ |
 | AttributeType.Integer | Int32 | ✓ | ✓ |
 | AttributeType.Lookup | Guid | ✓ | ✓ (связанный с одним объектом) |
 | AttributeType.ManagedProperty | Boolean | ✓ | |
-| AttributeType.Memo | String | ✓ | ✓ |
+| AttributeType.Memo | Строка | ✓ | ✓ |
 | AttributeType.Money | Decimal | ✓ | ✓ |
 | AttributeType.Owner | Guid | ✓ | |
 | AttributeType.Picklist | Int32 | ✓ | ✓ |
 | AttributeType.Uniqueidentifier | Guid | ✓ | ✓ |
-| AttributeType.String | String | ✓ | ✓ |
+| AttributeType.String | Строка | ✓ | ✓ |
 | AttributeType.State | Int32 | ✓ | ✓ |
 | AttributeType.Status | Int32 | ✓ | ✓ |
 

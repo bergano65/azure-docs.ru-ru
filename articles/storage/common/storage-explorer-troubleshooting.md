@@ -7,12 +7,12 @@ ms.service: virtual-machines
 ms.topic: troubleshooting
 ms.date: 06/15/2018
 ms.author: delhan
-ms.openlocfilehash: 3e26365c4273611c81682a760695522575f3875d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 385eee6223487e9d7ca5cc3b213d180bb0f1da46
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61483380"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64710866"
 ---
 # <a name="azure-storage-explorer-troubleshooting-guide"></a>Руководство по устранению неполадок обозреватель службы хранилища Azure
 
@@ -96,10 +96,10 @@ ms.locfileid: "61483380"
 
 Пустой диалоговые окна входа в систему чаще всего вызваны ADFS запросом обозреватель службы хранилища для выполнения перенаправления, который не поддерживается программой Electron. Чтобы решить эту проблему вы можете попытаться использовать для входа поток кода устройства. Для этого выполните следующие действия:
 
-1. «Перейти к предварительной версии» -> «Использовать вход устройств кода».
+1. Меню: Предварительный Просмотр -> «Использовать вход устройств кода».
 2. Откройте диалоговое окно "Подключить" (либо с помощью значка подключения в левом вертикальном меню, либо используя "Добавить учетную запись" на панели учетной записи).
 3. Выберите какое окружение вы хотите войти.
-4. Нажмите кнопку "Войти".
+4. Нажмите кнопку «Вход».
 5. Следуйте инструкциям на следующей панели.
 
 Если вы находитесь возникли проблемы при входе в учетной записи, которую вы хотите использовать, так как браузер по умолчанию уже осуществил вход в другую учетную запись, вы можете либо:
@@ -247,20 +247,20 @@ ms.locfileid: "61483380"
 
 1. Скачивание обозревателя службы хранилища
 2. Установить среду выполнения .NET Core, самой последней версии проверенных: [2.0.8](https://dotnet.microsoft.com/download/linux-package-manager/ubuntu18-04/runtime-2.0.8) (Если вы уже установили более новой версии, может потребоваться исправление обозревателя службы хранилища, см. ниже)
-3. Выполнить `sudo apt-get install libgconf-2-4`
-4. Выполнить `sudo apt install libgnome-keyring-common libgnome-keyring-dev`
+3. Запустите `sudo apt-get install libgconf-2-4`
+4. Запустите `sudo apt install libgnome-keyring-common libgnome-keyring-dev`
 
 # <a name="ubuntu-1604tab1604"></a>[Ubuntu 16.04](#tab/1604)
 
 1. Скачивание обозревателя службы хранилища
 2. Установить среду выполнения .NET Core, самой последней версии проверенных: [2.0.8](https://dotnet.microsoft.com/download/linux-package-manager/ubuntu16-04/runtime-2.0.8) (Если вы уже установили более новой версии, может потребоваться исправление обозревателя службы хранилища, см. ниже)
-3. Выполнить `sudo apt install libgnome-keyring-dev`
+3. Запустите `sudo apt install libgnome-keyring-dev`
 
 # <a name="ubuntu-1404tab1404"></a>[Ubuntu 14.04](#tab/1404)
 
 1. Скачивание обозревателя службы хранилища
 2. Установить среду выполнения .NET Core, самой последней версии проверенных: [2.0.8](https://dotnet.microsoft.com/download/linux-package-manager/ubuntu14-04/runtime-2.0.8) (Если вы уже установили более новой версии, может потребоваться исправление обозревателя службы хранилища, см. ниже)
-3. Выполнить `sudo apt install libgnome-keyring-dev`
+3. Запустите `sudo apt install libgnome-keyring-dev`
 
 ---
 

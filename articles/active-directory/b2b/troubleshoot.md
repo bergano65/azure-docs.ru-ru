@@ -7,29 +7,28 @@ ms.subservice: B2B
 ms.topic: conceptual
 ms.date: 05/25/2017
 ms.author: mimart
-author: msmimart
+author: v-miegge
 manager: daveba
 ms.reviewer: sasubram
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: af106650f6e1d139ec7af2c8d243dc50f2e963fc
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: c2a0eaf75debf694421ac9e5f2f7eb13891a20cf
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60412426"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64917351"
 ---
 # <a name="troubleshooting-azure-active-directory-b2b-collaboration"></a>Устранение неполадок службы совместной работы Azure Active Directory B2B
 
 В этой статье описаны способы устранения распространенных проблем, возникающих в службе совместной работы Azure Active Directory (Azure AD) B2B.
 
-
 ## <a name="ive-added-an-external-user-but-do-not-see-them-in-my-global-address-book-or-in-the-people-picker"></a>После добавления внешнего пользователя он не отображается в глобальной адресной книге или в средстве выбора пользователей
 
 В тех случаях, когда данные внешних пользователей не заполняются в списке, репликация объекта может занять несколько минут.
 
-## <a name="a-b2b-guest-user-is-not-showing-up-in-sharepoint-onlineonedrive-people-picker"></a>Гостевой пользователь B2B не отображается в средстве выбора людей SharePoint Online или OneDrive 
- 
+## <a name="a-b2b-guest-user-is-not-showing-up-in-sharepoint-onlineonedrive-people-picker"></a>Гостевой пользователь B2B не отображается в средстве выбора людей SharePoint Online или OneDrive
+
 Возможность поиска существующих гостевых пользователей в средстве выбора пользователей SharePoint Online (SPO) отключена по умолчанию для согласования с поведением предыдущих версий.
 
 Вы можете включить эту функцию, используя параметр ShowPeoplePickerSuggestionsForGuestUsers на уровне семейства веб-сайтов и коллекции клиентов. Задать параметр этой функции можно с помощью командлетов SPOTenant и SPOSite, которые позволяют участникам искать всех существующих гостевых пользователей в каталоге. Изменения в области клиента не влияют на уже подготовленные сайты SPO.
@@ -79,10 +78,20 @@ ms.locfileid: "60412426"
 
 Если вам важно использовать именно этот сценарий, вы можете запретить отправку сообщения с приглашением из API-интерфейса, и отправить его через любой другой механизм отправки электронной почты. Проконсультируйтесь к юристом своей организации, чтобы убедиться, что отправляемые таким образом сообщения не нарушают требования законов о защите конфиденциальности данных.
 
+## <a name="you-receive-an-aadsts65005-error-when-you-try-to-log-in-to-an-azure-resource"></a>Произошла ошибка «AADSTS65005» при попытке войти в ресурс Azure
+
+Пользователь, имеющий гостевая учетная запись не может войти в систему и получает следующее сообщение об ошибке:
+
+    AADSTS65005: Using application 'AppName' is currently not supported for your organization contoso.com because it is in an unmanaged state. An administrator needs to claim ownership of the company by DNS validation of contoso.com before the application AppName can be provisioned.
+
+Пользователь имеет учетную запись пользователя Azure и вирусном клиенте, прерван или неуправляемый. Кроме того, существует не глобальных или Корпоративные администраторы в клиенте.
+
+Чтобы устранить эту проблему, необходимо выполнить над Брошенный клиента. Ссылаться на [перехватить неуправляемого каталога от имени администратора в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/users-groups-roles/domains-admin-takeover). Также необходимо обращаться к DNS Интернета для рассматриваемого суффикс домена для прямого доказательства того, вы можете контролировать пространства имен. После клиента возвращаются в управляемом состоянии, вам следует обсудить с клиентом ли удаления пользователей и проверенное имя домена является наилучшим вариантом для своей организации.
+
 ## <a name="a-guest-user-with-a-just-in-time-or-viral-tenant-is-unable-to-reset-their-password"></a>Гостевому пользователю клиента JIT или "вирусного" клиента не удается сбросить пароль
 
 Если клиентом удостоверений является клиент JIT или вирусный клиент (то есть отдельный неуправляемый клиент Azure), только гостевой пользователь может сбросить пароль. Иногда организация будет [управлять вирусными клиентами](https://docs.microsoft.com/azure/active-directory/users-groups-roles/domains-admin-takeover), которые создаются, когда сотрудники используют свои рабочие электронные адреса для регистрации в службах. После получения организацией контроля над вирусным клиентом только администратор в организации может сбросить пароль пользователя или включить SSPR. При необходимости приглашающая организация может удалить учетную запись гостя из каталога и повторно отправить приглашение.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Получение поддержки для службы совместной работы B2B](get-support.md)
+[Получение поддержки для службы совместной работы B2B](get-support.md)

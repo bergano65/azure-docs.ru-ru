@@ -14,17 +14,17 @@ ms.topic: article
 ms.date: 04/21/2019
 ms.author: juliako
 ms.openlocfilehash: a36ca880387ee1a3c5f749dbd6b9d7dcb9e6d79d
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
-ms.translationtype: HT
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62103814"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64708976"
 ---
 # <a name="live-events-and-live-outputs"></a>События и выходные данные прямой трансляции
 
 Службы мультимедиа Azure дают возможность предоставлять клиентам события прямой трансляции в облаке Azure. Для настройки динамических потоковой передачи событий в версии 3 службы мультимедиа, необходимо понимать концепции, описанные в этой статье. <br/>Список разделов, отображается в правой части страницы.
 
-## <a name="live-events"></a>События в прямом эфире
+## <a name="live-events"></a>Динамические события
 
 [События потоковой трансляции](https://docs.microsoft.com/rest/api/media/liveevents) отвечают за прием и обработку видеопотоков. При создании события потоковой трансляции формируется входная конечная точка, которая используется для передачи сигнала с удаленного кодировщика в реальном времени. Удаленный динамический кодировщик транслирует в эту точку канал доставки, используя протокол [RTMP](https://www.adobe.com/devnet/rtmp.html) или [Smooth Streaming](https://msdn.microsoft.com/library/ff469518.aspx) (фрагментированный MP4). Для протокола приема Smooth Streaming поддерживаются следующие схемы URL-адресов: `http://` или `https://`. Для протокола приема RTMP поддерживаются следующие схемы URL-адресов: `rtmp://` или `rtmps://`. 
 

@@ -2,18 +2,19 @@
 title: Рекомендации по настройке производительности Storm в Azure Data Lake Storage 2-го поколения | Документация Майкрософт
 description: Рекомендации по настройке производительности Storm в Azure Data Lake Storage 2-го поколения
 services: storage
-author: swums
+author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.service: storage
 ms.topic: conceptual
 ms.date: 12/06/2018
-ms.author: stewu
-ms.openlocfilehash: 2401c74b55df78014a2f642b5166b4cf0017d87d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.author: normesta
+ms.reviewer: stewu
+ms.openlocfilehash: aa3c942448be6444044981eacc2bbc3214b9c1b4
+ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60392591"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64939394"
 ---
 # <a name="performance-tuning-guidance-for-storm-on-hdinsight-and-azure-data-lake-storage-gen2"></a>Рекомендации по настройке производительности Storm в HDInsight и Azure Data Lake Storage 2-го поколения
 

@@ -2,18 +2,19 @@
 title: Копирование данных в Azure Data Lake Storage 2-го поколения с помощью DistCp | Документация Майкрософт
 description: Использование средства DistCp для копирования данных из Azure Data Lake Storage 2-го поколения и обратно
 services: storage
-author: seguler
+author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.service: storage
 ms.topic: conceptual
 ms.date: 12/06/2018
-ms.author: seguler
-ms.openlocfilehash: 3b58dc8dabc55ba428ce6e35091a6947e5f4a824
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.author: normesta
+ms.reviewer: seguler
+ms.openlocfilehash: 0e85d2b2c7e9a3022e7fea2063ffa0aa915abb53
+ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61481808"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64939056"
 ---
 # <a name="use-distcp-to-copy-data-between-azure-storage-blobs-and-azure-data-lake-storage-gen2"></a>Использование средства DistCp для копирования данных между Azure Storage Blob и Azure Data Lake Storage 2-го поколения
 

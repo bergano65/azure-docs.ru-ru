@@ -7,16 +7,16 @@ manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 03/19/2018
+ms.date: 04/29/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3485639062f33d013152cd30f6785df4d1c79790
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 7ae0e87fddabee9f42cbb5506dce4cd7a5f4f082
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60350380"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64918854"
 ---
 # <a name="move-azure-ad-connect-database-from-sql-server-express-to-sql-server"></a>Перемещение базы данных Azure AD Connect с SQL Server Express на SQL Server 
 
@@ -25,7 +25,7 @@ ms.locfileid: "60350380"
 ## <a name="about-this-scenario"></a>Сведения об этом сценарии
 Ниже представлена краткая информация об этом сценарии.  В соответствии с ним база данных Azure AD Connect версии (1.1.819.0) установлена на одном контроллере домена Windows Server 2016.  Для своей базы данных он использует встроенный SQL Server 2012 Express Edition.  База данных будет перемещена на сервер SQL Server 2017.
 
-![](media/how-to-connect-install-move-db/move1.png)
+![Архитектура сценария](media/how-to-connect-install-move-db/move1.png)
 
 ## <a name="move-the-azure-ad-connect-database"></a>Перемещение базы данных Azure AD Connect
 Выполните следующие действия, чтобы переместить базу данных Azure AD Connect на удаленный сервер SQL Server.
@@ -37,7 +37,7 @@ ms.locfileid: "60350380"
 5. На удаленном сервере SQL Server откройте SQL Server Management Studio.
 6. Правой кнопкой мыши щелкните элемент "Базы данных" и выберите пункт "Вложить".
 7. На экране **Присоединение баз данных** щелкните **Добавить** и перейдите к файлу ADSync.mdf.  Последовательно выберите **ОК**.
-   ![](media/how-to-connect-install-move-db/move2.png)
+   ![Присоединение базы данных](media/how-to-connect-install-move-db/move2.png)
 
 8. После присоединения базы данных вернитесь на сервер Azure AD Connect и установите базу данных Azure AD Connect.
 9. По завершении установки MSI мастер Azure AD Connect запускается с настройкой режима Express. Закройте экран, щелкнув значок "Выход".

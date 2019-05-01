@@ -17,12 +17,12 @@ ms.author: celested
 ms.reviewer: saeeda, jmprieur, andret
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ef180fb444e32e8b055837fd418e21162ff58339
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: aa4b68d48ec3f4fbb61c7144a133d9c42938c723
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60411202"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64917284"
 ---
 # <a name="application-types-in-v10"></a>Типы приложений в версии 1.0
 
@@ -63,7 +63,7 @@ Azure Active Directory (Azure AD) поддерживает проверку по
   * **Ключ** — ключ, который отправляется вместе с идентификатором приложения при проверке подлинности в Azure AD для вызова веб-API.
 * Службе Azure AD необходимо убедиться, что приложение содержит необходимые разрешения для доступа к данным вашего каталога, другим приложениям в вашей организации и т. д.
 
-Дополнительные сведения см. в статье о [регистрации приложения в конечной точке Azure AD версии 1.0](quickstart-v1-add-azure-ad-app.md).
+Дополнительные сведения см. в статье о [регистрации приложения](quickstart-register-app.md).
 
 ## <a name="single-tenant-and-multi-tenant-apps"></a>Однотенантные и мультитенантные приложения
 

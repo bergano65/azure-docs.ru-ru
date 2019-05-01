@@ -17,12 +17,12 @@ ms.date: 11/21/2018
 ms.author: joflore
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8b59471cd8af02513186fa4437a2249b056cc324
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 12d603ddbba9e36d562c8dcd6e3844af28c91255
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60354524"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64918836"
 ---
 # <a name="how-to-plan-your-azure-ad-join-implementation"></a>Практическое руководство: Планирование реализации присоединения к Azure AD
 
@@ -135,7 +135,11 @@ ms.locfileid: "60354524"
 
 ### <a name="management-platform"></a>Платформа управления
 
-Управление устройствами для устройств, подключенных к Azure AD, основано на платформе MDM (например, Intune) и поставщиках служб информации MDM. В Windows 10 есть встроенный агент MDM, работающий со всеми совместимыми решениями MDM.
+Управление устройствами для устройств, присоединенных к Azure AD основана на основе платформы управления мобильными Устройствами, таких как Intune и MDM CSP. В Windows 10 есть встроенный агент MDM, работающий со всеми совместимыми решениями MDM.
+
+> [!NOTE]
+> Групповые политики не поддерживаются в устройства, присоединенные к Azure AD, как они не подключены к локальной Active Directory. Управление устройствами, присоединенные к Azure AD возможен только с помощью MDM
+
 
 Существует два подхода к управлению устройствами, подключенными к Azure AD:
 
@@ -143,7 +147,6 @@ ms.locfileid: "60354524"
 
 - **Совместное управление** — устройством управляют поставщик MDM и SCCM. При таком подходе агент SCCM устанавливается на устройстве с MDM для администрирования определенных аспектов.
 
-Устройства, присоединенные к Azure AD, не подключаются к локальной службе Active Directory, поэтому групповые политики не поддерживаются.
 
 
 Если вы используете групповые политики, оцените четность политик MDM с помощью [средства анализа миграции MDM (MMAT)](https://github.com/WindowsDeviceManagement/MMAT). 

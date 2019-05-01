@@ -15,11 +15,11 @@ ms.date: 09/19/2018
 ms.author: dadobali
 ms.custom: include file
 ms.openlocfilehash: e72c4b0cf8f77a057ff07f8bce7acae4e834e28d
-ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
-ms.translationtype: HT
+ms.sourcegitcommit: 807c318f5c034f8256f91c241e9d6f8f4d7de90a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59502948"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64951383"
 ---
 ## <a name="setting-up-your-ios-application"></a>Настройка приложения iOS
 
@@ -91,7 +91,7 @@ $(SRCROOT)/Carthage/Build/iOS/MSAL.framework
 
 Файл Main.storyboard должен быть создан автоматически, как часть шаблона проекта. Следуйте инструкциям для создания пользовательского интерфейса приложения:
 
-1.  Щелкните `Main.storyboard`, удерживая клавишу CTRL, чтобы открыть контекстное меню, затем щелкните `Open As` > .`Source Code`
+1.  Щелкните `Main.storyboard`, удерживая клавишу CTRL, чтобы открыть контекстное меню, затем щелкните `Open As` > `Source Code`.
 2.  Замените узел `<scenes>` на следующий код:
 
 ```xml

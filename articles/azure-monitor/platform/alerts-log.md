@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 09/15/2018
 ms.author: vinagara
 ms.subservice: alerts
-ms.openlocfilehash: d3285a6b2aa09dd78bbb63c384bd1f65c17034ff
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: d893fb1023188498260813642678397a39bb2442
+ms.sourcegitcommit: 8a681ba0aaba07965a2adba84a8407282b5762b2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59006952"
+ms.lasthandoff: 04/29/2019
+ms.locfileid: "64872375"
 ---
 # <a name="create-view-and-manage-log-alerts-using-azure-monitor"></a>Создание и просмотр оповещений журнала, а также управление ими с помощью Azure Monitor
 
@@ -312,7 +312,7 @@ ms.locfileid: "59006952"
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-API правил запланированных запросов в Azure Monitor](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules/) — это интерфейс REST API, который полностью совместим с REST API Azure Resource Manager. Поэтому он может использоваться в PowerShell с помощью командлета Resource Manager, а также в Azure CLI.
+Azure Monitor - [API правил запроса Scheduled](https://docs.microsoft.com/rest/api/monitor/scheduledqueryrules/) является полностью совместимы с REST API Azure Resource Manager и REST API. Поэтому он может использоваться в PowerShell с помощью командлета Resource Manager, а также в Azure CLI.
 
 
 > [!NOTE]
@@ -328,11 +328,13 @@ New-AzResourceGroupDeployment -ResourceGroupName "contosoRG" -TemplateFile "D:\A
 
 ```azurecli
 az group deployment create --resource-group contosoRG --template-file sampleScheduledQueryRule.json
-On successful operation, 201 will be returned to state new alert rule creation or 200 will be returned if an existing alert rule was modified.
+```
 
-## Next steps
+После успешного выполнения возвращается код 201, который означает, что новое правило создано. Если было изменено существующее правило генерации оповещений, то возвращается код 200.
 
-* Learn about [Log Alerts in Azure Alerts](../../azure-monitor/platform/alerts-unified-log.md)
-* Understand [Webhook actions for log alerts](../../azure-monitor/platform/alerts-log-webhook.md)
-* Learn more about [Application Insights](../../azure-monitor/app/analytics.md)
-* Learn more about [log queries](../log-query/log-query-overview.md).
+## <a name="next-steps"></a>Дальнейшие действия
+
+* Дополнительные сведения см. в статье [Оповещения журнала в Azure Monitor. Интерфейс оповещений](../../azure-monitor/platform/alerts-unified-log.md).
+* Общие сведения о [действиях веб-перехватчиков для оповещений журнала](../../azure-monitor/platform/alerts-log-webhook.md)
+* Дополнительные сведения об [Application Insights](../../azure-monitor/app/analytics.md)
+* Дополнительные сведения о [журнал запросов](../log-query/log-query-overview.md).

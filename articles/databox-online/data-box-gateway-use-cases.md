@@ -1,18 +1,19 @@
 ---
 title: Варианты использования шлюз поле данных Microsoft Azure | Документация Майкрософт
-description: Описывает варианты использования для шлюза поле данных для Azure, решение хранилища виртуальное устройство, которое обеспечивает передачу данных в Azure
+description: Описывает варианты использования для шлюза поле данных для Azure, решение хранилища виртуальное устройство, которое позволяет передавать данные в Azure
 services: databox
 author: alkohli
 ms.service: databox
+ms.subservice: gateway
 ms.topic: article
-ms.date: 03/2/2019
+ms.date: 03/02/2019
 ms.author: alkohli
-ms.openlocfilehash: 37ec1d05d07f33343b9ff21380a277d00b242b7c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: cdc1b07b93386c0225c1e6c5f570ea1247e450b5
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60754187"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64924393"
 ---
 # <a name="use-cases-for-azure-data-box-gateway"></a>Сценарии использования для шлюза Azure Data Box
 

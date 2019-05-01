@@ -1,31 +1,24 @@
 ---
-title: Просмотр состояния предложений в Marketplace — Azure Marketplace | Документация Майкрософт
+title: Просмотреть состояние предложения marketplace | Azure Marketplace
 description: Просмотр состояния предложений в AppSource и Azure Marketplace с помощью Портала Cloud Partner
 services: Azure, AppSource, Marketplace, Cloud Partner Portal,
-documentationcenter: ''
 author: v-miclar
-manager: Patrick.Butler
-editor: ''
-ms.assetid: ''
 ms.service: marketplace
-ms.workload: ''
-ms.tgt_pltfrm: ''
-ms.devlang: ''
 ms.topic: conceptual
 ms.date: 01/11/2019
-ms.author: pbutlerm
-ms.openlocfilehash: bdec2d699e8448c8e2303dfbabcb4d176a9ca389
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.author: pabutler
+ms.openlocfilehash: b8113552edf9dd2f886b5752b2ebc69afc0fda08
+ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60729787"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64942388"
 ---
 # <a name="view-the-publishing-status-of-azure-marketplace-and-appsource-offers"></a>Просмотр состояния публикации предложений в Azure Marketplace и AppSource
 
 После создания предложения, в особенности во время публикации, вы можете просмотреть состояние предложения на Портале Cloud Partner.  Общее состояние публикации доступно на страницах портала [**Все предложения**](../portal-tour/cpp-all-offers-page.md) и [**Утверждения**](../portal-tour/cpp-approvals-page.md).  Для каждого предложения должен отображаться один из следующих индикаторов состояния.  
 
-|            Статус              |   Описание                                                           |
+|            Статус              |   ОПИСАНИЕ                                                           |
 |            ------              |   -----------                                                           |
 | **-**                          | Предложение создано, но процесс публикации еще не начался.            |
 | **Publish in progress** (Публикация выполняется)        | Предложение проходит процесс публикации.   |

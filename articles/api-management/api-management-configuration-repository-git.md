@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/12/2019
 ms.author: apimpm
-ms.openlocfilehash: adf4d8d5cfcef2dde8193ce1b7f2805a44e2d93d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: b5bf778f06ff0223fd48a1282aadf223ff032b0f
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60657930"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64919858"
 ---
 # <a name="how-to-save-and-configure-your-api-management-service-configuration-using-git"></a>Сохранение и настройка конфигурации службы управления API с помощью Git
 
@@ -149,7 +149,7 @@ git push
 
 В файлах и папках в локальном репозитории Git содержатся сведения о конфигурации для экземпляра службы.
 
-| Элемент | Описание |
+| Элемент | ОПИСАНИЕ |
 | --- | --- |
 | Корневая папка api-management |Содержит конфигурацию верхнего уровня для экземпляра службы |
 | Папка apis |Содержит конфигурацию для API в экземпляре службы |
@@ -161,7 +161,7 @@ git push
 
 В каждой папке может находиться один или несколько файлов и в некоторых случаях одна или несколько папок, например папка для каждого API, продукта или группы. Файлы в каждой папке специфичны для типа сущности, описанного в имени папки.
 
-| Тип файла | Цель |
+| Тип файла | Назначение |
 | --- | --- |
 | json |Сведения о конфигурации соответствующей сущности |
 | html |Описания сущности, часто отображаемые на портале разработчика |
@@ -173,9 +173,9 @@ git push
 > [!NOTE]
 > Указанные далее сущности отсутствуют в репозитории Git и не могут быть настроены с помощью Git.
 >
-> * [Пользователи](https://docs.microsoft.com/en-us/rest/api/apimanagement/user)
-> * [Подписки](https://docs.microsoft.com/en-us/rest/api/apimanagement/subscription)
-> * [Именованные значения](https://docs.microsoft.com/en-us/rest/api/apimanagement/property)
+> * [Пользователи](https://docs.microsoft.com/rest/api/apimanagement/user)
+> * [Подписки](https://docs.microsoft.com/rest/api/apimanagement/subscription)
+> * [Именованные значения](https://docs.microsoft.com/rest/api/apimanagement/property)
 > * Сущности портала разработчика, отличные от стилей
 >
 

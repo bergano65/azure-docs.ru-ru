@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 04/01/2019
 ms.author: diberry
-ms.openlocfilehash: 35f1521884de3a4a0971b6e1c00f92a9094a8550
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 3bad247263af09462a44e04329e7f911afa3ad5c
+ms.sourcegitcommit: e7d4881105ef17e6f10e8e11043a31262cfcf3b7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60812804"
+ms.lasthandoff: 04/29/2019
+ms.locfileid: "64867718"
 ---
 # <a name="extract-data-from-utterance-text-with-intents-and-entities"></a>Извлечение данных из текста utterance с намерения и сущности
 Служба LUIS дает возможность получать информацию из высказываний на естественном языке пользователя. Информация извлекается таким образом, который позволяет использовать ее программой, приложением или чат-ботом для выполнения определенных действий. В следующих разделах содержатся сведения о данных, возвращаемых из намерений и сущностей, с примерами JSON.
@@ -48,7 +48,7 @@ LUIS предоставляет данные из опубликованной [
 
 |Объект данных|Тип данных|Расположение данных|Value|
 |--|--|--|--|
-|Намерение|String|topScoringIntent.intent|"GetStoreInfo"|
+|Намерение|Строка|topScoringIntent.intent|"GetStoreInfo"|
 
 Если чат-бот или вызывающее приложение LUIS принимает решение на основе нескольких оценок намерения, возвращаются все оценки намерения, задав параметр строки запроса `verbose=true`. Ответ конечной точки:
 
@@ -77,8 +77,8 @@ LUIS предоставляет данные из опубликованной [
 
 |Объект данных|Тип данных|Расположение данных|Value|Оценка|
 |--|--|--|--|:--|
-|Намерение|String|intents[0].intent|"GetStoreInfo"|0,984749258|
-|Намерение|String|intents[1].intent|"None"|0,0168218873|
+|Намерение|Строка|intents[0].intent|"GetStoreInfo"|0,984749258|
+|Намерение|Строка|intents[1].intent|"None"|0,0168218873|
 
 При добавлении готовых предметных областей имя намерения указывает предметную область, такую как `Utilties` или `Communication`, а также намерение:
 
@@ -108,9 +108,9 @@ LUIS предоставляет данные из опубликованной [
 
 |Домен|Объект данных|Тип данных|Расположение данных|Value|
 |--|--|--|--|--|
-|Техническое оборудование|Намерение|String|intents[0].intent|"<b>Utilities</b>.ShowNext"|
-|Обмен данными|Намерение|String|intents[1].intent|<b>Communication</b>.StartOver"|
-||Намерение|String|intents[2].intent|"None"|
+|Техническое оборудование|Намерение|Строка|intents[0].intent|"<b>Utilities</b>.ShowNext"|
+|Обмен данными|Намерение|Строка|intents[1].intent|<b>Communication</b>.StartOver"|
+||Намерение|Строка|intents[2].intent|"None"|
 
 
 ## <a name="data-from-entities"></a>Данные из сущностей
@@ -441,7 +441,7 @@ LUIS предоставляет данные из опубликованной [
 
 ### <a name="names-of-places"></a>Имена мест
 
-Имена расположений имен задаются и известны как города, округа, штаты, области и страны. Использовать предварительно созданные сущности **[geographyV2](luis-reference-prebuilt-geographyv2.md)** для извлечения сведений.
+Имена расположений задаются и известные как города, округа, состояний, областей и страны и регионы. Использовать предварительно созданные сущности **[geographyV2](luis-reference-prebuilt-geographyv2.md)** для извлечения сведений.
 
 ### <a name="new-and-emerging-names"></a>Новые имена
 

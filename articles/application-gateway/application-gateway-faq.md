@@ -6,14 +6,14 @@ author: vhorne
 ms.service: application-gateway
 ms.topic: article
 ms.workload: infrastructure-services
-ms.date: 3/20/2019
+ms.date: 4/30/2019
 ms.author: victorh
-ms.openlocfilehash: 3c8a2fe9f4486fe4d33754b58f4e7ebec1b3252d
-ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
+ms.openlocfilehash: 72eaa18d570e85274efbea80f12e9a7301eecbfa
+ms.sourcegitcommit: ed66a704d8e2990df8aa160921b9b69d65c1d887
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59682957"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64947069"
 ---
 # <a name="frequently-asked-questions-about-application-gateway"></a>Часто задаваемые вопросы о шлюзе приложений
 
@@ -119,7 +119,7 @@ ms.locfileid: "59682957"
 
 ### <a name="does-application-gateway-support-autoscaling"></a>Шлюз приложений поддерживает автоматическое масштабирование?
 
-Да, номер SKU Шлюза приложений версии 2 поддерживает автоматическое масштабирование. Дополнительные сведения см. в разделе [автоматическое масштабирование и избыточность в пределах зоны шлюза приложений (Предварительная версия)](https://docs.microsoft.com/azure/application-gateway/application-gateway-autoscaling-zone-redundant).
+Да, номер SKU Шлюза приложений версии 2 поддерживает автоматическое масштабирование. Дополнительные сведения см. в разделе [автоматическое масштабирование и избыточность в пределах зоны шлюза приложений](application-gateway-autoscaling-zone-redundant.md).
 
 ### <a name="does-manual-scale-up-or-scale-down-cause-downtime"></a>Не ручное масштабирование и уменьшить время простоя причина?
 
@@ -267,7 +267,7 @@ ms.locfileid: "59682957"
 
 ### <a name="does-application-gateway-natively-integrate-with-azure-key-vault"></a>Интегрируется ли шлюз приложений в собственном коде с хранилищем ключей Azure?
 
-№
+Да, номер SKU шлюза приложений версии 2 поддерживает хранилище ключей. Дополнительные сведения см. в разделе [завершение запросов SSL с сертификатами в Key Vault](key-vault-certs.md).
 
 ### <a name="how-do-i-configure-https-listeners-for-com-and-net-sites"></a>Как настроить HTTPS-прослушивателей для сайтов .com и .net? 
 

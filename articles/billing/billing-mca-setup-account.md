@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 02/28/2019
 ms.author: banders
-ms.openlocfilehash: 90f832319fa2343003af58bd99eb64c0cbd94dd8
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 284480ab8b9973c02f365dbf3ebfd3a103ef4b42
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60371805"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64919151"
 ---
 # <a name="set-up-your-billing-account-for-a-microsoft-customer-agreement"></a>Настройка учетной записи выставления счетов для клиента соглашение Microsoft
 
@@ -108,7 +108,7 @@ ms.locfileid: "60371805"
 
 Новая учетная запись поддерживает только пользователей из клиента, который был выбран при подписании соглашения с клиентом Microsoft. Если пользователи с разрешениями администратора в соглашении Enterprise являются частью клиента, они сможете получить доступ к новой учетной записи выставления счетов во время установки. Если они не являются частью клиента, они не сможете получить доступ к новой учетной записи выставления счетов, если их приглашение.
 
-Приглашая пользователей, они добавляются к клиенту в качестве гостевых пользователей и получить доступ к учетной записи выставления счетов. Чтобы пригласить пользователей, гостевой доступ должен быть включен для клиента. Дополнительные сведения см. в разделе [управления гостевым доступом в Azure Active Directory](https://docs.microsoft.com/en-us/microsoftteams/teams-dependencies#control-guest-access-in-azure-active-directory). Если гостевой доступ отключен, обратитесь в службу глобальных администраторов вашего клиента, чтобы включить его. <!-- Todo - How can they find their global administrator -->
+Приглашая пользователей, они добавляются к клиенту в качестве гостевых пользователей и получить доступ к учетной записи выставления счетов. Чтобы пригласить пользователей, гостевой доступ должен быть включен для клиента. Дополнительные сведения см. в разделе [управления гостевым доступом в Azure Active Directory](https://docs.microsoft.com/microsoftteams/teams-dependencies#control-guest-access-in-azure-active-directory). Если гостевой доступ отключен, обратитесь в службу глобальных администраторов вашего клиента, чтобы включить его. <!-- Todo - How can they find their global administrator -->
 
 ## <a name="view-features-replaced-by-the-new-billing-account"></a>Просмотреть функции, заменяется новой учетной записи выставления счетов
 

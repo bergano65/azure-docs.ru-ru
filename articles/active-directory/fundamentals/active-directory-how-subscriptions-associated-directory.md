@@ -13,12 +13,12 @@ ms.author: lizross
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b141de4c22ba1ba1325982d8e027fa46e0909fbb
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 06b6fdf7a3d21a6b7dc84c4347824d4eaeac046f
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60248788"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64918411"
 ---
 # <a name="associate-or-add-an-azure-subscription-to-your-azure-active-directory-tenant"></a>Связывание или добавление подписки Azure в клиент Azure Active Directory
 
@@ -31,7 +31,7 @@ ms.locfileid: "60248788"
 > [!Important]
 > При связывании подписки в другой каталог пользователей, которым назначены с помощью роли [управления доступом на основе ролей (RBAC)](../../role-based-access-control/role-assignments-portal.md) их доступ будет прекращен. Классические Администраторы подписки (администратор службы и Соадминистраторов) также потеряют доступ.
 > 
-> Кроме того перемещение кластера Azure Kubernetes Service (AKS) в другую подписку или при переносе подписки-владелец кластера в новый клиент вызывает кластера перестанут работать из-за назначения потеряны ролей и прав участников службы. Дополнительные сведения о AKS, см. в разделе [службы Azure Kubernetes (AKS)](https://docs.microsoft.com/en-us/azure/aks/).
+> Кроме того перемещение кластера Azure Kubernetes Service (AKS) в другую подписку или при переносе подписки-владелец кластера в новый клиент вызывает кластера перестанут работать из-за назначения потеряны ролей и прав участников службы. Дополнительные сведения о AKS, см. в разделе [службы Azure Kubernetes (AKS)](https://docs.microsoft.com/azure/aks/).
 
 ## <a name="before-you-begin"></a>Перед началом работы
 

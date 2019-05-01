@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 04/08/2019
-ms.openlocfilehash: ac1a0e4eadc0b84fdd2a170c2e0f6e0a2f2af3a4
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 2724451d44a793023f7b69196b186f68f6fc6a26
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60921999"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64720469"
 ---
 # <a name="compare-storage-options-for-use-with-azure-hdinsight-clusters"></a>Сравнение вариантов хранения для использования с кластерами Azure HDInsight
 
@@ -31,8 +31,12 @@ ms.locfileid: "60921999"
 |Хранилище Azure Data Lake Gen2| Общего назначения версии 2 | Иерархическое (файловая система) | BLOB-объект | Стандартная | "Горячий", "холодный", архивировать | 3.6+ | Все |
 |Хранилище Azure| Общего назначения версии 2 | Object | BLOB-объект | Стандартная | "Горячий", "холодный", архивировать | 3.6+ | Все |
 |Хранилище Azure| Общего назначения версии 1 | Object | BLOB-объект | Стандартная | Н/Д | Все | Все |
-|Хранилище Azure| Хранилище BLOB-объектов | Object | BLOB-объект | Стандартная | "Горячий", "холодный", архивировать | Все | Все |
+|Хранилище Azure| Хранилище BLOB-объектов ** | Object | Блочный BLOB-объект | Стандартная | "Горячий", "холодный", архивировать | Все | Все |
 |Хранилище Azure Data Lake Gen1| Н/Д | Иерархическое (файловая система) | Н/Д | Н/Д | Н/Д | Только 3.6 | Все, кроме HBase |
+
+** Для кластеров HDInsight только учетные записи дополнительное хранилище может иметь тип BlobStorage.
+
+Дополнительные сведения о типах учетных записей хранения Azure, см. в разделе [Обзор учетной записи хранения Azure](../storage/common/storage-account-overview.md)
 
 Дополнительные сведения о уровни доступа к службе хранилища Azure, см. в разделе [хранилище BLOB-объектов Azure: "Премиум" (Предварительная версия), "Горячий", "холодный" и архивный уровни хранилища](../storage/blobs/storage-blob-storage-tiers.md)
 
@@ -40,14 +44,14 @@ ms.locfileid: "60921999"
 
 | Версия HDInsight | Основное хранилище | Дополнительное хранилище | Поддерживаются |
 |---|---|---|---|
-| 3.6 & 4.0 | Стандартный BLOB-объектов | Стандартный BLOB-объектов | Yes |
-| 3.6 & 4.0 | Стандартный BLOB-объектов | Data Lake Storage Gen2 | Нет  |
-| 3.6 & 4.0 | Стандартный BLOB-объектов | Data Lake Storage Gen1 | Yes |
+| 3.6 & 4.0 | Общего назначения версии 1, общего назначения версии 2 | Общего назначения версии 1, общего назначения версии 2, BlobStorage (блочные BLOB-объекты) | Yes |
+| 3.6 & 4.0 | Общего назначения версии 1, общего назначения версии 2 | Data Lake Storage Gen2 | Нет  |
+| 3.6 & 4.0 | Общего назначения версии 1, общего назначения версии 2 | Data Lake Storage Gen1 | Yes |
 | 3.6 & 4.0 | 2-го поколения хранилища Озера данных * | Data Lake Storage Gen2 | Yes |
-| 3.6 & 4.0 | 2-го поколения хранилища Озера данных * | Стандартный BLOB-объектов | Yes |
+| 3.6 & 4.0 | 2-го поколения хранилища Озера данных * | Общего назначения версии 1, общего назначения версии 2, BlobStorage (блочные BLOB-объекты) | Yes |
 | 3.6 & 4.0 | Data Lake Storage Gen2 | Data Lake Storage Gen1 | Нет  |
 | 3.6 | Data Lake Storage Gen1 | Data Lake Storage Gen1 | Yes |
-| 3.6 | Data Lake Storage Gen1 | Стандартный BLOB-объектов | Yes |
+| 3.6 | Data Lake Storage Gen1 | Общего назначения версии 1, общего назначения версии 2, BlobStorage (блочные BLOB-объекты) | Yes |
 | 3.6 | Data Lake Storage Gen1 | Data Lake Storage Gen2 | Нет  |
 | 4,0 | Data Lake Storage Gen1 | Любой | Нет  |
 

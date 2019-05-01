@@ -5,14 +5,14 @@ services: container-service
 author: iainfoulds
 ms.service: container-service
 ms.topic: conceptual
-ms.date: 03/04/2019
+ms.date: 04/25/2019
 ms.author: iainfou
-ms.openlocfilehash: dc2e2f010de3dfe265cddbbaa6c050d081bd05dc
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: a1fe8929b5ae39c82850aa08899c7b3e6bb98c7e
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60464938"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64725307"
 ---
 # <a name="service-principals-with-azure-kubernetes-service-aks"></a>Субъекты-службы со службой Azure Kubernetes
 
@@ -126,7 +126,7 @@ az role assignment create --assignee <appId> --scope <resourceScope> --role Cont
 - По умолчанию учетные данные субъекта-службы действительны в течение одного года. Вы можете [обновления или смены учетных данных субъекта-службы] [ update-credentials] в любое время.
 - Все субъекты-службы связаны с определенными приложениями Azure AD. Субъект-служба для кластера Kubernetes может быть связана с любым допустимым именем приложения Azure AD (например *https://www.contoso.org/example*). URL-адрес приложения не обязательно должен быть реальной конечной точкой.
 - При указании **идентификатора клиента** субъект-службы используйте значение `appId`.
-- На главной виртуальной машине и виртуальной машине узла в кластере Kubernetes учетные данные субъект-службы хранятся в файле `/etc/kubernetes/azure.json`.
+- На узле агент виртуальных машин в кластере Kubernetes учетные данные субъекта-службы хранятся в файле `/etc/kubernetes/azure.json`
 - При использовании команды [az aks create][az-aks-create] для автоматического создания субъект-службы учетные данные субъект-службы записываются в файл `~/.azure/aksServicePrincipal.json` на компьютере, с которого выполняется команда.
 - При удалении кластера AKS, созданного с помощью команды [az aks create][az-aks-create], автоматически созданная субъект-служба не удаляется.
     - Чтобы удалить субъект-службу, выполните запрос для кластера *servicePrincipalProfile.clientId*, а затем удалите субъект-службу с помощью команды [az ad app delete][az-ad-app-delete]. Замените имена группы ресурсов и кластера собственными значениями.

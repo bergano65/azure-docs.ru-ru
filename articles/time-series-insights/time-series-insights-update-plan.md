@@ -10,12 +10,12 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 12/03/2018
 ms.custom: seodec18
-ms.openlocfilehash: 251e95744f57d9b5e42df9bdc3743f4880ff5381
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 0472f53d11ec4c990fcf6face633444fe66ba937
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58077002"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64702347"
 ---
 # <a name="plan-your-azure-time-series-insights-preview-environment"></a>Запланируйте среду службы"Аналитика временных рядов Azure (предварительная версия)"
 
@@ -90,9 +90,7 @@ ms.locfileid: "58077002"
 Дополнительные сведения о встроенных функциях Azure для обеспечения непрерывности бизнеса и аварийного восстановления (BCDR) см. в статье [Проектирование устойчивых приложений для Azure](https://docs.microsoft.com/azure/resiliency/resiliency-technical-guidance). Руководство по архитектуре стратегий для приложений Azure для обеспечения высокой доступности и аварийного восстановления см. в документе [Проектирование устойчивых приложений для Azure](https://docs.microsoft.com/azure/architecture/resiliency/index).
 
 > [!NOTE]
-> 
->  Служба "Аналитика временных рядов Azure" не имеет встроенного BCDR.
-> По умолчанию в службах хранилища Microsoft Azure, концентратор Центра Интернета вещей Azure и концентраторы событий Azure встроено восстановление.
+> Служба "Аналитика временных рядов Azure" не имеет встроенного BCDR. По умолчанию в службах хранилища Microsoft Azure, концентратор Центра Интернета вещей Azure и концентраторы событий Azure встроено восстановление.
 
 Чтобы узнать больше, ознакомьтесь со статьями:
 
@@ -115,7 +113,6 @@ ms.locfileid: "58077002"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Чтобы узнать больше, ознакомьтесь со статьями:
+- Дополнительные сведения о [хранилища и входящих данных](./time-series-insights-update-storage-ingress.md) в предварительной версии Insights ряда времени.
 
-- [Data storage and ingress in Azure Time Series Insights Preview](./time-series-insights-update-storage-ingress.md) (Хранилище данных и входящий трафик в службе "Аналитика временных рядов Azure (предварительная версия)")
-- [Data modeling](./time-series-insights-update-tsm.md) (Моделирование данных)
+- Дополнительные сведения о [моделирование данных](./time-series-insights-update-tsm.md) в предварительной версии Insights ряда времени.

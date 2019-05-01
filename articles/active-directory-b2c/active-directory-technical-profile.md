@@ -3,19 +3,19 @@ title: Определение технического профиля Azure Acti
 description: Определение технического профиля Azure Active Directory в пользовательской политике Azure Active Directory B2C.
 services: active-directory-b2c
 author: davidmu1
-manager: daveba
+manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
 ms.date: 09/10/2018
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: b8dac47d1aa91eb8a8ee1ef9515809607b267437
-ms.sourcegitcommit: d3200828266321847643f06c65a0698c4d6234da
-ms.translationtype: HT
+ms.openlocfilehash: 433307791201e3799b3bc9e54aec765d9fbeb4af
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/29/2019
-ms.locfileid: "55190707"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64718703"
 ---
 # <a name="define-an-azure-active-directory-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Определение технического профиля Azure Active Directory в пользовательской политике Azure Active Directory B2C
 
@@ -23,7 +23,7 @@ ms.locfileid: "55190707"
 
 Azure Active Directory (Azure AD) B2C обеспечивает поддержку управления пользователями Azure Active Directory. В этой статье описаны особенности технического профиля для взаимодействия с поставщиком утверждений, который поддерживает этот стандартизированный протокол.
 
-## <a name="protocol"></a>Протокол
+## <a name="protocol"></a>Protocol
 
 Атрибуту **Name** элемента **Protocol** необходимо присвоить значение `Proprietary`. Атрибут **handler** должен содержать полное имя сборки обработчика протокола `Web.TPEngine.Providers.AzureActiveDirectoryProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null`.
 
@@ -252,7 +252,7 @@ Azure Active Directory (Azure AD) B2C обеспечивает поддержк�
 ```
 ## <a name="metadata"></a>Метаданные
 
-| Атрибут | Обязательно | ОПИСАНИЕ |
+| Атрибут | Обязательно для заполнения | ОПИСАНИЕ |
 | --------- | -------- | ----------- |
 | Операция | Yes | Операция, которая выполняется. Возможные значения: `Read`, `Write`, `DeleteClaims` или `DeleteClaimsPrincipal`. | 
 | RaiseErrorIfClaimsPrincipalDoesNotExist | Нет  | Вызывает ошибку, если объект пользователя не существует в каталоге. Возможные значения: `true` или `false`. | 

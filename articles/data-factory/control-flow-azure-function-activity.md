@@ -11,12 +11,12 @@ ms.date: 01/09/2019
 author: sharonlo101
 ms.author: shlo
 manager: craigg
-ms.openlocfilehash: b98d20a1f96a6ab4a0dc72330e85fdc98ba04eae
-ms.sourcegitcommit: 30a0007f8e584692fe03c0023fe0337f842a7070
+ms.openlocfilehash: 82786b8f01ce409179f4ddd37127679f9357cd0e
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57576384"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64727055"
 ---
 # <a name="azure-function-activity-in-azure-data-factory"></a>Действие функции Azure в Фабрике данных Azure
 
@@ -28,7 +28,7 @@ ms.locfileid: "57576384"
 
 ## <a name="azure-function-linked-service"></a>Связанные службы функции Azure
 
-Тип возвращаемого значения функции Azure должен быть допустимым объектом `JObject`. (Имейте в виду, что [JArray](https://www.newtonsoft.com/json/help/html/T_Newtonsoft_Json_Linq_JArray.htm)*не* является `JObject`.) При указании типов, отличных от `JObject`, происходит сбой и выдается общая пользовательская ошибка *Ошибка вызова конечной точки*.
+Тип возвращаемого значения функции Azure должен быть допустимым объектом `JObject`. (Имейте в виду, что [JArray](https://www.newtonsoft.com/json/help/html/T_Newtonsoft_Json_Linq_JArray.htm)*не* является `JObject`.) Тип возвращаемого значения отличные от `JObject` завершается ошибкой и происходит ошибка пользователя *содержимое ответа не является допустимым JObject*.
 
 | **Свойство** | **Описание** | **Обязательный** |
 | --- | --- | --- |
@@ -45,18 +45,25 @@ ms.locfileid: "57576384"
 | Тип  | Тип действия – "AzureFunctionActivity" | Строка | Да |
 | linked service | Связанная служба функции Azure для соответствующего приложения-функции Azure  | Ссылка на связанную службу | Да |
 | function name  | Имя функции, которую вызывает это действие в приложении-функции Azure | Строка | Да |
-| метод  | Метод REST API для вызова функции | Поддерживаемые типы строки: "GET", "POST", "PUT"   | Да |
+| method  | Метод REST API для вызова функции | Поддерживаемые типы строки: "GET", "POST", "PUT"   | Да |
 | Верхний колонтитул  | Заголовки, которые отправляются в запрос. Например, задать язык и тип в запросе: "headers": { "Accept-Language": "en-us", "Content-Type": "application/json" } | Строка (или выражение с типом результата "строка") | Нет  |
 | текст  | Текст, который отправляется вместе с запросом для функции метода API  | Строка (или выражение с типом результата "строка") или объект.   | Необходимо для методов PUT или POST |
 |   |   |   | |
 
 Просмотрите схему полезных данных запроса в разделе  [Схема полезных данных запроса](control-flow-web-activity.md#request-payload-schema) .
 
-## <a name="more-info"></a>Подробнее
+## <a name="routing-and-queries"></a>Маршрутизация и запросы
 
-Действие функции Azure поддерживает **маршрутизацию**. Например, если приложение использует маршрутизацию `https://functionAPP.azurewebsites.net/api/functionName/{value}?code=<secret>`, то `functionName` представляет собой `functionName/{value}`, которое можно параметризовать для получения нужного `functionName` во время выполнения.
+Действие функции Azure поддерживает **маршрутизацию**. Например, если функция Azure есть конечная точка `https://functionAPP.azurewebsites.net/api/<functionName>/<value>?code=<secret>`, а затем `functionName` для использования в активности функции Azure — `<functionName>/<value>`. Позволяют задавать параметры для этой функции для обеспечения нужной `functionName` во время выполнения.
 
-Действие функции Azure поддерживает **запросы**. Запрос должен быть частью `functionName`, например `HttpTriggerCSharp2?name=hello`, где `function name` равно `HttpTriggerCSharp2`.
+Действие функции Azure поддерживает **запросы**. Запрос должен быть частью `functionName`. Например, если имя функции является `HttpTriggerCSharp` и является запрос, который требуется включить `name=hello`, а затем можно создать `functionName` в активности функции Azure, как `HttpTriggerCSharp?name=hello`. Эта функция может быть параметризовано, поэтому значение может быть определено во время выполнения.
+
+## <a name="timeout-and-long-running-functions"></a>Время ожидания и долго выполняющиеся функции
+
+Azure функции времени ожидания после 230 секунд, вне зависимости от `functionTimeout` параметр настроен в параметрах. Дополнительные сведения см. в [этой статье](../azure-functions/functions-versions.md#timeout). Чтобы обойти это поведение, выполните это асинхронный шаблон или использовать устойчивые функции. Преимуществом устойчивых функций является, они предоставляют собственный механизм отслеживания состояния, поэтому вам не придется реализовать собственный.
+
+Дополнительные сведения об устойчивых функций в [в этой статье](../azure-functions/durable/durable-functions-overview.md). Действие функции Azure можно настроить для вызова устойчивой функции, которая вернет ответ с другой идентификатор URI, таких как [в этом примере](../azure-functions/durable/durable-functions-http-api.md#http-api-url-discovery). Так как `statusQueryGetUri` возвращает HTTP 202 состояния, тогда как функция работает, можно запросить состояние функции с помощью веб-действие. Просто настройте веб-действие с `url` поле "значение" `@activity('<AzureFunctionActivityName>').output.statusQueryGetUri`. По завершении устойчивой функции выходные данные функции будут выходные данные веб-действия.
+
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

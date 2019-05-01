@@ -1,23 +1,23 @@
 ---
-title: Руководство по администрированию Azure Data Box на портале Azure | Документация Майкрософт
+title: Управление Azure Data Box с помощью портала Azure | Документация Майкрософт
 description: В этой статье описывается администрирование устройства Azure Data Box с помощью портала Azure.
 services: databox
 author: alkohli
 ms.service: databox
 ms.subservice: pod
-ms.topic: overview
+ms.topic: article
 ms.date: 04/15/2019
 ms.author: alkohli
-ms.openlocfilehash: 483e1e0f6a472132446b20a161d012e69d83c4ac
-ms.sourcegitcommit: 5f348bf7d6cf8e074576c73055e17d7036982ddb
-ms.translationtype: HT
+ms.openlocfilehash: bf1d810733df4eaae17d092caba42888a63cc59f
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59607115"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64919246"
 ---
-# <a name="use-the-azure-portal-to-administer-your-data-box"></a>Использование портала Azure для администрирования Data Box
+# <a name="use-the-azure-portal-to-administer-your-azure-data-box"></a>Администрировать устройство Azure Data Box с помощью портала Azure
 
-В этой статье описываются некоторые сложные рабочие процессы и задачи управления, которые могут выполняться в Data Box. Вы можете управлять Data Box на портале Azure или с помощью локального пользовательского веб-интерфейса. 
+В этой статье описываются некоторые сложные рабочие процессы и задачи управления, которые могут быть выполнены на Azure Data Box. Вы можете управлять Data Box на портале Azure или с помощью локального пользовательского веб-интерфейса.
 
 В этой статье речь идет о задачах, выполняемых с использованием портала Azure. Используйте портал Azure для управления заказами и Data Box, а также отслеживания состояния заказа, когда он переходит на последний этап.
 
@@ -213,6 +213,6 @@ ms.locfileid: "59607115"
 
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения об [устранении проблем с Data Box](data-box-faq.md).

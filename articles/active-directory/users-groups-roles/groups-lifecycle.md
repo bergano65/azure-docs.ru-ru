@@ -15,12 +15,12 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5c19ee3bdd14ee6a2c5b59294f475f6c18b570fa
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 1be88f0938a16302be4cf2308ba463900c067104
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60471986"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64920150"
 ---
 # <a name="configure-the-expiration-policy-for-office-365-groups"></a>Настройка политики срока действия для групп Office 365
 
@@ -86,7 +86,7 @@ ms.locfileid: "60471986"
 Если восстанавливаемая группа содержит документы, сайты SharePoint или другие постоянные объекты, полное восстановление группы и ее содержимого может занять до 24 часов.
 
 ## <a name="how-to-retrieve-office-365-group-expiration-date"></a>Как получить дату окончания срока действия группы Office 365
-В дополнение к панели доступа, где пользователи могут просматривать сведения о группе, включая дату окончания срока действия и Дата последнего обновленных дату окончания срока действия группы Office 365 можно получить из бета-версия REST API Microsoft Graph. expirationDateTime как свойство группы был включен в бета-версии Microsoft Graph. Его можно получить с помощью запроса GET. Для получения дополнительных сведений обратитесь к [в этом примере](https://docs.microsoft.com/en-us/graph/api/group-get?view=graph-rest-beta#example).
+В дополнение к панели доступа, где пользователи могут просматривать сведения о группе, включая дату окончания срока действия и Дата последнего обновленных дату окончания срока действия группы Office 365 можно получить из бета-версия REST API Microsoft Graph. expirationDateTime как свойство группы был включен в бета-версии Microsoft Graph. Его можно получить с помощью запроса GET. Для получения дополнительных сведений обратитесь к [в этом примере](https://docs.microsoft.com/graph/api/group-get?view=graph-rest-beta#example).
 
 > [!NOTE]
 > «Ограничение доступа к группам в панель доступа» для управление членством в группах, на панели доступа, необходимо установить значение «Нет» в Azure Active Directory группы Общие параметры.
@@ -101,10 +101,10 @@ ms.locfileid: "60471986"
 ## <a name="powershell-examples"></a>Примеры для PowerShell
 Ниже приведены примеры того, как можно использовать командлеты PowerShell для настройки срока действия групп Office 365 в клиенте.
 
-1. Установите предварительную версию модуля PowerShell 2.0 (2.0.0.137) и выполните вход в командной строке PowerShell.
+1. Установка модуля PowerShell версии 2.0 и вход в командной строке PowerShell:
    ```powershell
-   Install-Module -Name AzureADPreview
-   connect-azuread 
+   Install-Module -Name AzureAD
+   Connect-AzureAD
    ```
 2. Настройте параметры срока действия с помощью командлета New-AzureADMSGroupLifecyclePolicy.  Этот командлет задает время существования всех групп Office 365 в клиенте на 365 дней. Уведомления о продлении действия групп Office 365 без владельцев будут отправляться на адрес emailaddress@contoso.com.
   

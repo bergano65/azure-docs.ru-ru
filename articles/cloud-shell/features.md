@@ -12,14 +12,14 @@ ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-linux
 ms.devlang: na
 ms.topic: article
-ms.date: 04/10/2019
+ms.date: 04/26/2019
 ms.author: damaerte
-ms.openlocfilehash: 46c9350dd2a33d0d25fe193b2ae50c954f2d1f95
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: f873f20f97b822e1f4dee716cb69535b0522dc2c
+ms.sourcegitcommit: e7d4881105ef17e6f10e8e11043a31262cfcf3b7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60614329"
+ms.lasthandoff: 04/29/2019
+ms.locfileid: "64866501"
 ---
 # <a name="features--tools-for-azure-cloud-shell"></a>Функции и средства для Azure Cloud Shell
 
@@ -50,6 +50,18 @@ PowerShell в Cloud Shell запускается на диске Azure (`Azure:`
 Любые изменения, внесенные в ресурсы Azure непосредственно на портале Azure или с помощью командлетов Azure PowerShell, отражаются на диске Azure.  Для обновления ресурсов можно запустить `dir -Force`.
 
 ![](media/features-powershell/azure-drive.png)
+
+### <a name="manage-exchange-online"></a>Управление Exchange Online
+
+PowerShell в Cloud Shell содержит закрытое построение модуль Exchange Online.  Запустите `Connect-EXOPSSession` получить командлеты Exchange.
+
+![](media/features-powershell/exchangeonline.png)
+
+ Запустите `Get-Command -Module tmp_*`
+> [!NOTE]
+> Имя модуля должно начинаться с `tmp_`, если вы установили модули с одинаковым префиксом, их командлеты будут также отображаться. 
+
+![](media/features-powershell/exchangeonlinecmdlets.png)
 
 ### <a name="deep-integration-with-open-source-tooling"></a>Глубокая интеграция со средствами с открытым кодом
 

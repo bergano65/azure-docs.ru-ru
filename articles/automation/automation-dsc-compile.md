@@ -9,12 +9,12 @@ ms.author: robreed
 ms.date: 09/10/2018
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: f2c6f45081b78d330033570ff322f90cd06e50dd
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 847c928681451b4fef93198e2f2272d5bb04b1b8
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61074195"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64919805"
 ---
 # <a name="compiling-dsc-configurations-in-azure-automation-state-configuration"></a>Компилирование конфигураций DSC в службе "Настройка состояния службы автоматизации Azure"
 
@@ -224,7 +224,7 @@ $ConfigData = @{
 Start-AzureRmAutomationDscCompilationJob -ResourceGroupName 'MyResourceGroup' -AutomationAccountName 'MyAutomationAccount' -ConfigurationName 'ConfigurationDataSample' -ConfigurationData $ConfigData
 ```
 
-## <a name="assets"></a>Ресурсы
+## <a name="assets"></a>Активы
 
 Ссылки на ресурсы одинаковы в конфигурациях и модулях Runbook службы "Настройка состояния службы автоматизации Azure". Дополнительную информацию см. в следующих статьях:
 
@@ -287,11 +287,11 @@ Start-AzureRmAutomationDscCompilationJob -ResourceGroupName 'MyResourceGroup' -A
 
 ## <a name="partial-configuration"></a>Частичные конфигурации
 
-Конфигурация состояния службы автоматизации Azure поддерживает использование [частичные конфигурации](https://docs.microsoft.com/en-us/powershell/dsc/pull-server/partialconfigs).
+Конфигурация состояния службы автоматизации Azure поддерживает использование [частичные конфигурации](https://docs.microsoft.com/powershell/dsc/pull-server/partialconfigs).
 В этом случае DSC будет настроена для управления несколькими конфигурациями независимо друг от друга, и каждая конфигурация является retreieved из службы автоматизации Azure.
 Тем не менее можно назначить только одну конфигурацию узла на одну учетную запись службы автоматизации.
 Это означает, что если вы используете две конфигурации для узла, потребуются две учетные записи службы автоматизации.
-Дополнительные сведения о том, как группы могут работать вместе для совместного управления серверами с использованием конфигурации в виде кода см. в разделе [роли основные сведения о DSC в конвейере CI/CD](https://docs.microsoft.com/en-us/powershell/dsc/overview/authoringadvanced).
+Дополнительные сведения о том, как группы могут работать вместе для совместного управления серверами с использованием конфигурации в виде кода см. в разделе [роли основные сведения о DSC в конвейере CI/CD](https://docs.microsoft.com/powershell/dsc/overview/authoringadvanced).
 
 ## <a name="importing-node-configurations"></a>Импорт конфигураций узлов
 

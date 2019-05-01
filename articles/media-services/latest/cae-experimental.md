@@ -12,16 +12,16 @@ ms.topic: article
 ms.date: 04/05/2019
 ms.author: sethm
 ms.custom: ''
-ms.openlocfilehash: 3c50502a8b873503ee937914fac5f2d92cb23a2b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: b0b5a74a6ca0085f945075a8896c05a724ff062c
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60733492"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64717964"
 ---
 # <a name="experimental-preset-for-content-aware-encoding"></a>Экспериментальные предустановку для кодирования с учетом содержимого
 
-Для подготовки содержимого для поставки [потоковой передачи с переменной скоростью](https://en.wikipedia.org/wiki/Adaptive_bitrate_streaming), видео должен быть закодирован при нескольких-скорости потока (высокого на низкий). Чтобы обеспечить Постепенное снижение качества, как скорость уменьшается таким образом является разрешение видео. В результате так называемые кодирования лестница — таблицу разрешений и скоростей, как показано в некоторые из наших основных предварительных настроек кодирования, таких как [H264MultipleBitrate1080p](../previous/media-services-mes-preset-h264-multiple-bitrate-1080p.md).
+Для подготовки содержимого для поставки [потоковой передачи с переменной скоростью](https://en.wikipedia.org/wiki/Adaptive_bitrate_streaming), видео должен быть закодирован при нескольких-скорости потока (высокого на низкий). Чтобы обеспечить Постепенное снижение качества, как скорость уменьшается таким образом является разрешение видео. Это приводит к так называемые кодирования лестница — таблицу разрешений и скоростей; см. в разделе служб мультимедиа [встроенных предварительных настроек кодирования](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#encodernamedpreset).
 
 ## <a name="overview"></a>Обзор
 

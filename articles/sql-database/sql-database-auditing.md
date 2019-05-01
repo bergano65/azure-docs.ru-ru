@@ -12,12 +12,12 @@ ms.author: arib
 ms.reviewer: vanto
 manager: craigg
 ms.date: 04/16/2019
-ms.openlocfilehash: add3521a3961f230188e04ff23dda5aac537571a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 15d195361b9fe8523ae6e46ba035ca5927c4d242
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61418494"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64924754"
 ---
 # <a name="get-started-with-sql-database-auditing"></a>Приступая к работе с аудитом базы данных SQL
 
@@ -90,7 +90,7 @@ ms.locfileid: "61418494"
 5. **Новое.** Теперь есть несколько вариантов настройки расположения для записи журналов аудита. Можно записывать журналы в учетную запись хранилища Azure, в рабочую область Log Analytics для использования Azure Monitor журналов или в концентратор событий для использования с помощью концентратора событий. Вы также можете настроить любое сочетание этих вариантов, и журналы аудита будут записываться в каждый из них.
 
    > [!WARNING]
-   > Включение аудита для Log Analytics приведет к дополнительным затратам, на основе тарифов для приема. Имейте в виду стоимости, связанные с с помощью этого [параметр](https://azure.microsoft.com/en-us/pricing/details/monitor/), или рассмотрите возможность хранения Аудит журналов в учетную запись хранилища Azure.
+   > Включение аудита для Log Analytics приведет к дополнительным затратам, на основе тарифов для приема. Имейте в виду стоимости, связанные с с помощью этого [параметр](https://azure.microsoft.com/pricing/details/monitor/), или рассмотрите возможность хранения Аудит журналов в учетную запись хранилища Azure.
 
     ![варианты хранилищ](./media/sql-database-auditing-get-started/auditing-select-destination.png)
 

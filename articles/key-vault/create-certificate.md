@@ -9,12 +9,12 @@ ms.service: key-vault
 ms.topic: conceptual
 ms.date: 01/07/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 53b4d03ac8f5d22595d3a4e840a04583f7ec963d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 7eb4d80933e06b9eceb072bee93e2b127cfa9ffe
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60640854"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64727436"
 ---
 # <a name="certificate-creation-methods"></a>Способы создания сертификатов
 
@@ -81,7 +81,7 @@ ms.locfileid: "60640854"
 
 |Поставщик|Тип сертификата|  
 |--------------|----------------------|  
-|DigiCert|Key Vault предоставляет OV или EV SSL-сертификаты в DigiCert|
+|DigiCert;|Key Vault предоставляет OV или EV SSL-сертификаты в DigiCert|
 |GlobalCert|Key Vault предоставляет OV или EV SSL-сертификаты в GlobalSign|
 
  Издатель сертификата — это сущность, представленная в Azure Key Vault (KV) как ресурс CertificateIssuer. Она используется для предоставления сведений об источнике сертификата KV, имени издателя, поставщика, учетных данных и других административных сведений.

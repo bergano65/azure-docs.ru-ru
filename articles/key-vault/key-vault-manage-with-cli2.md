@@ -9,12 +9,12 @@ ms.service: key-vault
 ms.topic: conceptual
 ms.date: 01/10/2019
 ms.author: barclayn
-ms.openlocfilehash: 1679fbe0dedc88ca3e8293512f9a79bb7da69790
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: d7d76458601b2afecafc1313e334215bf08b6545
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60641030"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64713834"
 ---
 # <a name="manage-key-vault-using-the-azure-cli"></a>Управление Key Vault с помощью интерфейса командной строки Azure 
 
@@ -94,7 +94,7 @@ az account set --subscription <subscription name or ID>
 
 Дополнительные сведения о настройке кроссплатформенного интерфейса командной строки Azure см. в разделе [Установка Azure CLI 1.0](/cli/azure/install-azure-cli).
 
-### <a name="create-a-new-resource-group"></a>Создать группу ресурсов
+### <a name="create-a-new-resource-group"></a>Создание новой группы ресурсов
 
 При использовании диспетчера ресурсов Azure все связанные ресурсы создаются внутри группы ресурсов. Хранилище ключей можно создать в существующей группе ресурсов. Чтобы использовать новую группу ресурсов, создайте ее.
 

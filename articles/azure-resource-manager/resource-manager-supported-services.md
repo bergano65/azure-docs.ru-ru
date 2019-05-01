@@ -10,14 +10,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 03/25/2019
+ms.date: 04/19/2019
 ms.author: tomfitz
-ms.openlocfilehash: 520aeb8e47b5e94e6346e682f21f46cb0814f8f3
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: a3c6eca548eb61d6b7b239b4292b9c77ca2dec6f
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60389717"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64702702"
 ---
 # <a name="azure-resource-providers-and-types"></a>Поставщики и типы ресурсов Azure
 
@@ -31,6 +31,8 @@ ms.locfileid: "60389717"
 * просмотр допустимых версий API для типа ресурса.
 
 Это можно сделать эти шаги с помощью портала Azure, Azure PowerShell или Azure CLI.
+
+Для списка, который сопоставляет поставщиков ресурсов для служб Azure, см. в разделе [поставщиков ресурсов для служб Azure](azure-services-resource-providers.md).
 
 ## <a name="azure-portal"></a>Портал Azure
 
@@ -291,5 +293,5 @@ West US
 
 * Сведения о создании шаблонов Resource Manager см. в статье [Создание шаблонов диспетчера ресурсов Azure](resource-group-authoring-templates.md). 
 * Схемы шаблонов поставщиков ресурсов см. в статье [Define resources in Azure Resource Manager templates](/azure/templates/) (Определение ресурсов в шаблонах Azure Resource Manager).
-* Сведения о развертывании ресурсов см. в статье [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure PowerShell](resource-group-template-deploy.md).
+* Для списка, который сопоставляет поставщиков ресурсов для служб Azure, см. в разделе [поставщиков ресурсов для служб Azure](azure-services-resource-providers.md).
 * Чтобы просмотреть операции для поставщика ресурсов, ознакомьтесь с [Azure REST API](/rest/api/).

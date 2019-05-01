@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 04/22/2019
 ms.author: magoedte
-ms.openlocfilehash: 328433664d22925b4e991f2f18c858c5505cade1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: b410dab40d5434a6f23950a9f151e50240ace63b
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60782015"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64916363"
 ---
 # <a name="collect-log-data-with-the-azure-log-analytics-agent"></a>Сбор данных журнала с помощью агента Azure Log Analytics
 
@@ -38,7 +38,7 @@ ms.locfileid: "60782015"
 
 Агент для Windows может отправлять отчет в четыре рабочих области Log Analytics, а агент для Linux поддерживает отчетность только для одной рабочей области.  
 
-Агент для Linux и Windows не только для подключения к Azure Monitor, она также поддерживает службы автоматизации Azure для размещения гибридной рабочей роли Runbook и других служб, таких как [отслеживания изменений](../../automation/automation-change-tracking.md) и [управления обновлениями](../../automation/automation-update-management.md). Дополнительные сведения о гибридной рабочей роли Runbook см. в разделе [Общие сведения об архитектуре автоматизации](../../automation/automation-hybrid-runbook-worker.md).  
+Агент для Linux и Windows не только для подключения к Azure Monitor, она также поддерживает службы автоматизации Azure для размещения гибридной рабочей роли Runbook и других служб, таких как [отслеживания изменений](../../automation/change-tracking.md) и [управления обновлениями](../../automation/automation-update-management.md). Дополнительные сведения о гибридной рабочей роли Runbook см. в разделе [Общие сведения об архитектуре автоматизации](../../automation/automation-hybrid-runbook-worker.md).  
 
 ## <a name="supported-windows-operating-systems"></a>Поддерживаемые операционные системы Windows
 Для агента Windows официально поддерживаются следующие версии операционной системы Windows:

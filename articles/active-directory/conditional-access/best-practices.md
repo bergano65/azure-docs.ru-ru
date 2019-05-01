@@ -18,12 +18,12 @@ ms.date: 01/25/2019
 ms.author: joflore
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 11d4d319fa31dd2493810dc7293d415554f79d94
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 54cb8c3017b2b0a4c476095ba639985fb9418441
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60411744"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64917316"
 ---
 # <a name="best-practices-for-conditional-access-in-azure-active-directory"></a>Рекомендации по работе с условным доступом в Azure Active Directory
 
@@ -109,7 +109,7 @@ Azure Active Directory применяет обе политики, и польз
 
 ### <a name="does-conditional-access-work-with-exchange-activesync"></a>Работает ли условный доступ с Exchange Active Sync?
 
-Да, вы можете использовать Exchange ActiveSync в политике условного доступа с некоторыми [ограничения](https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/conditional-access-for-exo-and-spo#exchange-activesync). 
+Да, вы можете использовать Exchange ActiveSync в политике условного доступа с некоторыми [ограничения](https://docs.microsoft.com/azure/active-directory/conditional-access/conditional-access-for-exo-and-spo#exchange-activesync). 
 
 ### <a name="how-should-you-configure-conditional-access-with-office-365-apps"></a>Как следует настроить условный доступ с помощью приложений Office 365?
 

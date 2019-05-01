@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 11/14/2017
 ms.author: ashishth
-ms.openlocfilehash: 31a20f8faa712aef94b69c605ec57985bc334009
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
-ms.translationtype: HT
+ms.openlocfilehash: f96171e1c75676a185edf4a1901ef65b7181135a
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62122087"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64720992"
 ---
 # <a name="analyze-apache-hadoop-logs"></a>Анализ журналов Apache Hadoop
 
@@ -32,14 +32,14 @@ ms.locfileid: "62122087"
 * ambariserverlog
 * ambariagentlog
 
-Имена файлов таблиц имеют формат **u<ClusterName>DDMonYYYYatHHMMSSsss<TableName>**.
+Имена файлов таблиц имеют **u\<Имя_кластера > DDMonYYYYatHHMMSSsss\<имя_таблицы >**.
 
 Эти таблицы содержат следующие поля:
 
 * ClusterDnsName
 * ComponentName
 * EventTimestamp
-* Хост
+* Узел
 * MALoggingHash
 * Сообщение
 * Нет
@@ -47,7 +47,7 @@ ms.locfileid: "62122087"
 * Роль
 * RowIndex
 * Клиент
-* ВРЕМЕННАЯ МЕТКА
+* TIMESTAMP
 * TraceLevel
 
 ### <a name="tools-for-accessing-the-logs"></a>Средства для доступа к журналам
@@ -89,7 +89,7 @@ Power Query можно установить со страницы скачива
 3. В **Cloud Explorer** выберите **Типы ресурсов**.  Другой доступный вариант — **Группы ресурсов**.
 4. Разверните **Учетные записи хранения**, выберите учетную запись хранения по умолчанию для кластера, а затем выберите **Таблицы**.
 5. Дважды щелкните **hadoopservicelog**.
-6. Добавьте фильтр. Пример.
+6. Добавьте фильтр. Например: 
    
         TraceLevel eq 'ERROR'
    

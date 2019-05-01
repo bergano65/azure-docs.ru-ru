@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.workload: big-data
 ms.date: 11/21/2017
 ms.custom: seodec18
-ms.openlocfilehash: 172e6f53b25a1aeef67afea0c1769e6fcaf497cd
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.openlocfilehash: 3b6c4b8cebdff772ea1bd4ac95e4c8c06043f5d5
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58487878"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64728163"
 ---
 # <a name="share-a-custom-view-using-a-parameterized-url"></a>Предоставление общего доступа к пользовательскому представлению с помощью параметризованного URL-адреса
 
@@ -63,13 +63,13 @@ ms.locfileid: "58487878"
 
 Параметр `timeSeriesDefinitions=<collection of term objects>` указывает условия представления службы "Аналитика временных рядов", которые содержат такие элементы:
 
-- "name":"<string>"
+- «name»:»\<строка >»
   - имя *условия*;
-- "splitBy":"<string>"
+- «splitBy»:»\<строка >»
   - имя столбца, по которому выполняется *разбиение*;
-- "measureName":"<string>"
+- «measureName»:»\<строка >»
   - имя столбца *меры*;
-- "predicate":"<string>"
+- «Предикат»:»\<строка >»
   - предложение *where* для фильтрации на стороне сервера.
 - "useSum":"true"
   - Это необязательный параметр, который определяет использование функции суммирования для меры.  Обратите внимание: если выбрана мера "События", число выбрано по умолчанию.  Обратите внимание: если мера "События" не выбрана, по умолчанию выбирается среднее значение.  
@@ -121,4 +121,5 @@ https://insights.timeseries.azure.com/samples?environmentId=10000000-0000-0000-0
 ![Представление диаграммы](media/parameterized-url/url2.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
-[Запрос данных с помощью C#](time-series-insights-query-data-csharp.md)
+
+- Узнайте, как [запрос данных с помощью C# ](time-series-insights-query-data-csharp.md).

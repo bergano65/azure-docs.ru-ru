@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.reviewer: mbullwin
 ms.date: 08/06/2018
 ms.author: cweining
-ms.openlocfilehash: 9603c45443c6339a127f977600eeff2ba57a283f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 2bc32e28ffd6dd9dab2da61078684791a04709cc
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61228238"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64922988"
 ---
 # <a name="configure-application-insights-profiler"></a>Настройка Application Insights Profiler
 
@@ -41,7 +41,7 @@ ms.locfileid: "61228238"
 ## <a id="profileondemand"></a> Запуск профилировщика вручную
 
 ### <a name="minimum-requirements"></a>Минимальные требования 
-Пользователь может вручную запустить сеанс профилировщика им требуется как минимум «запись» на своей роли для компонента Application Insights. В большинстве случаев вы получаете доступ автоматически и дополнительных действий не требуется. Если у вас возникают проблемы, роль области подписку для добавления бы роль «Участник компонента Application Insights». [Узнайте больше об управлении доступом роли со службой мониторинга Azure](https://docs.microsoft.com/en-us/azure/azure-monitor/app/resources-roles-access-control).
+Пользователь может вручную запустить сеанс профилировщика им требуется как минимум «запись» на своей роли для компонента Application Insights. В большинстве случаев вы получаете доступ автоматически и дополнительных действий не требуется. Если у вас возникают проблемы, роль области подписку для добавления бы роль «Участник компонента Application Insights». [Узнайте больше об управлении доступом роли со службой мониторинга Azure](https://docs.microsoft.com/azure/azure-monitor/app/resources-roles-access-control).
 
 Вы можете запустить средство Profiler вручную одним щелчком. Предположим, вы выполняете веб-тест производительности. Чтобы понять, как работает ваше веб-приложение под нагрузкой, вам потребуются трассировки. Очень важна возможность контролировать время записи трассировок, так как вам известно, когда будет выполняться нагрузочный тест. Однако это время может не совпадать с интервалом случайной выборки.
 
@@ -96,7 +96,7 @@ ms.locfileid: "61228238"
   
 Перейдите на панель **Параметры приложений** служб приложений и проверьте, заданы ли следующие параметры:
 * **APPINSIGHTS_INSTRUMENTATIONKEY** — замените правильным ключом инструментирования для Application Insights.
-* **APPINSIGHTS_PORTALINFO** — ASP.NET
+* **APPINSIGHTS_PORTALINFO** — ASP.NET:
 * **APPINSIGHTS_PROFILERFEATURE_VERSION** — 1.0.0. 1.0.0
 
 Если установлены не все указанные выше параметры, установите последнее расширение сайта следующим образом:
@@ -115,7 +115,7 @@ ms.locfileid: "61228238"
 
 1. Вернитесь на панель **Параметры приложений** Службы приложений, чтобы убедиться, что заданы следующие значения:
    * **APPINSIGHTS_INSTRUMENTATIONKEY** — замените правильным ключом инструментирования для Application Insights.
-   * **APPINSIGHTS_PORTALINFO** — ASP.NET 
+   * **APPINSIGHTS_PORTALINFO** — ASP.NET: 
    * **APPINSIGHTS_PROFILERFEATURE_VERSION** — 1.0.0. 1.0.0
 
      ![Параметры приложений для Profiler][app-settings-for-profiler]

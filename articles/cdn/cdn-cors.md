@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/23/2017
 ms.author: mazha
-ms.openlocfilehash: 3dbf0aea50f382a0b325bf068a200cde42098733
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 337f2a31d60d54b47c692b06b5d63c28c0964061
+ms.sourcegitcommit: 2c09af866f6cc3b2169e84100daea0aac9fc7fd0
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60679876"
+ms.lasthandoff: 04/29/2019
+ms.locfileid: "64876222"
 ---
 # <a name="using-azure-cdn-with-cors"></a>Использование Azure CDN с CORS
 ## <a name="what-is-cors"></a>Что такое CORS?
@@ -30,13 +30,13 @@ CORS (общий доступ к ресурсам независимо от ис
 
 ### <a name="for-simple-requests"></a>Простые запросы
 
-1. Браузер отправляет запрос CORS с дополнительным заголовком HTTP-запроса **Origin**. Значение этого заголовка является источником, обслужившим родительскую страницу, который определяется как сочетание *протокола*, *домена* и *порта*.  Когда на странице https://www.contoso.com произойдет попытка получить доступ к данным пользователя в источнике fabrikam.com, на fabrikam.com отправится запрос со следующим заголовком:
+1. Браузер отправляет запрос CORS с дополнительным заголовком HTTP-запроса **Origin**. Значение этого заголовка является источником, обслужившим родительскую страницу, который определяется как сочетание *протокола*, *домена* и *порта*.  Когда на странице https\:/ / www.contoso.com пытается получить доступ к данным пользователя в источнике fabrikam.com, следующий заголовок запроса будет передаваться для fabrikam.com:
 
-   `Origin: https:\//www.contoso.com`
+   `Origin: https://www.contoso.com`
 
 2. Сервер может отправить в ответ следующее:
 
-   * Ответ с заголовком **Access-Control-Allow-Origin**, который указывает, какие исходные сайты разрешены. Пример.
+   * Ответ с заголовком **Access-Control-Allow-Origin**, который указывает, какие исходные сайты разрешены. Например: 
 
      `Access-Control-Allow-Origin: https://www.contoso.com`
 

@@ -5,13 +5,13 @@ author: rachel-msft
 ms.author: raagyema
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 09/24/2018
-ms.openlocfilehash: a26f61eb199d8f370e1a9dd010932dc868b74ae4
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.date: 04/29/2019
+ms.openlocfilehash: 8a78a9b8f0772a83e45ac2b926878e61e6ee2e61
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61041264"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64926334"
 ---
 # <a name="server-logs-in-azure-database-for-mariadb"></a>Журналы сервера в базе данных Azure для MariaDB
 В базе данных Azure для MariaDB пользователям доступен журнал медленных запросов. Доступ к журналам транзакций не поддерживается. Журнал медленных запросов можно использовать для выявления проблем с производительностью при устранении неполадок.
@@ -23,7 +23,7 @@ ms.locfileid: "61041264"
 
 На портале Azure выберите нужный сервер Базы данных Azure для MariaDB. В разделе **Мониторинг** найдите страницу **Журналы сервера**.
 
-<!-- For more information on Azure CLI, see [Configure and access server logs using Azure CLI](howto-configure-server-logs-in-cli.md).-->
+Описание работы с Azure CLI см. в статье [Настройка журналов сервера и получение к ним доступа с помощью Azure CLI](howto-configure-server-logs-cli.md).
 
 ## <a name="log-retention"></a>Хранение журналов
 Журналы доступны в течение семи дней с момента создания. Если общий объем доступных журналов превышает 7 ГБ, по мере необходимости удаляются самые старые файлы.
@@ -42,5 +42,41 @@ ms.locfileid: "61041264"
 
 Полное описание параметров журнала медленных запросов см. в [соответствующей документации к MariaDB](https://mariadb.com/kb/en/library/slow-query-log-overview/).
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="diagnostic-logs"></a>Журналы диагностики
+База данных Azure для MariaDB интегрирована с журналами диагностики Azure Monitor. После включения журналы медленных запросов на сервере MariaDB, вы можете их передаваемый журналы Azure Monitor, концентраторы событий или хранилища Azure. Дополнительные сведения о том, как включить журналы диагностики, см. в статье [Сбор и использование данных журнала из ресурсов Azure](../azure-monitor/platform/diagnostic-logs-overview.md).
+
+> [!IMPORTANT]
+> Эта функция диагностических журналов сервера доступна только в общего назначения и оптимизированных для памяти [ценовые категории](concepts-pricing-tiers.md).
+
+В приведенной ниже таблице описывается содержимое каждого журнала. Порядок появления выбранных полей зависит от выбранного метода вывода.
+
+| **Свойство** | **Описание** |
+|---|---|
+| `TenantId` | Идентификатор клиента |
+| `SourceSystem` | `Azure` |
+| `TimeGenerated` [UTC] | Метка времени, когда журнал был записан в формате UTC |
+| `Type` | Тип журнала Всегда `AzureDiagnostics` |
+| `SubscriptionId` | Идентификатор GUID для подписки, принадлежащей серверу |
+| `ResourceGroup` | Имя группы ресурсов, принадлежащей серверу |
+| `ResourceProvider` | Имя поставщика ресурсов. Всегда `MICROSOFT.DBFORMARIADB` |
+| `ResourceType` | `Servers` |
+| `ResourceId` | Универсальный код ресурса (URI) |
+| `Resource` | Имя сервера |
+| `Category` | `MySqlSlowLogs` |
+| `OperationName` | `LogEvent` |
+| `Logical_server_name_s` | Имя сервера |
+| `start_time_t` [UTC] | Время начала запроса. |
+| `query_time_s` | Общее время, которое потребовалось для выполнения запроса. |
+| `lock_time_s` | Общее время блокировки запроса. |
+| `user_host_s` | Имя пользователя |
+| `rows_sent_s` | Количество отправленных строк. |
+| `rows_examined_s` | Число проверенных строк. |
+| `last_insert_id_s` | [last_insert_id](https://mariadb.com/kb/en/library/last_insert_id/) |
+| `insert_id_s` | Вставьте идентификатор |
+| `sql_text_s` | Полный запрос. |
+| `server_id_s` | Идентификатор сервера |
+| `thread_id_s` | Идентификатор потока |
+| `\_ResourceId` | Универсальный код ресурса (URI) |
+
+## <a name="next-steps"></a>Дальнейшие действия
 - [Настройка и использование журналов сервера с помощью портала Azure](howto-configure-server-logs-portal.md).

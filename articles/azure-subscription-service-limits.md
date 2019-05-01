@@ -10,12 +10,12 @@ ms.service: billing
 ms.topic: article
 ms.date: 04/19/2019
 ms.author: byvinyal
-ms.openlocfilehash: b09de67cddcec26a1083bb64d13b9bbc47c3d5e5
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.openlocfilehash: ae6547b7940ee4007c747847e6cec7b0c67a9d3c
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59998487"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64717441"
 ---
 # <a name="azure-subscription-and-service-limits-quotas-and-constraints"></a>Подписка Azure, границы, квоты и ограничения службы
 В этом документе указаны некоторые из наиболее распространенных ограничений Microsoft Azure, которые иногда называются квотами. Этот документ на текущий момент охватывает не все службы Azure. Со временем список будет расширен и обновлен, чтобы охватить больше служб.
@@ -77,6 +77,7 @@ ms.locfileid: "59998487"
 * [Центр Интернета вещей](#iot-hub-limits)
 * [Служба подготовки устройств для Центра Интернета вещей](#iot-hub-device-provisioning-service-limits)
 * [хранилище ключей;](#key-vault-limits)
+* [Балансировщик нагрузки](#load-balancer)
 * [Служба Log Analytics](#log-analytics-limits)
 * [Службы мультимедиа](#media-services-limits)
 * [Мобильные службы](#mobile-services-limits)
@@ -84,6 +85,7 @@ ms.locfileid: "59998487"
 * [Сеть](#networking-limits)
 * [Наблюдатель за сетями](#network-watcher-limits)
 * [Центры уведомлений](#notification-hubs-limits)
+* [Общедоступный IP-адрес](#publicip-address)
 * [Группа ресурсов](#resource-group-limits)
 * [Контроль доступа на основе ролей](#role-based-access-control-limits)
 * [Планировщик](#scheduler-limits)
@@ -137,10 +139,10 @@ ms.locfileid: "59998487"
 [!INCLUDE [container-service-limits](../includes/container-service-limits.md)]
 
 ### <a name="networking-limits"></a>Ограничения сети
-[!INCLUDE [expressroute-limits](../includes/expressroute-limits.md)]
-
-#### <a name="networking-limits"></a>Ограничения сети
 [!INCLUDE [azure-virtual-network-limits](../includes/azure-virtual-network-limits.md)]
+
+#### <a name="expressroute-limits"></a>Ограничения ExpressRoute
+[!INCLUDE [expressroute-limits](../includes/expressroute-limits.md)]
 
 #### <a name="application-gateway-limits"></a>Ограничения шлюза приложений
 

@@ -9,14 +9,14 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 04/10/2019
+ms.date: 04/24/2019
 ms.author: juliako
-ms.openlocfilehash: d6e5142bec29f58671c553b7b32bb72202cae263
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: d99e3661fd51b481a20404cfeb55157ac803c220
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60322708"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64706150"
 ---
 # <a name="azure-media-services-v3-frequently-asked-questions"></a>Часто задаваемые вопросы о Службах мультимедиа Azure версии 3
 
@@ -41,6 +41,10 @@ ms.locfileid: "60322708"
 ### <a name="how-does-pagination-work"></a>Как работает разбиение на страницы?
 
 При использовании разбиения на страницы для перечисления коллекции всегда нужно использовать следующую ссылку, которая не зависит от конкретного размера страницы. Дополнительные сведения и примеры см. в [этой статье о фильтрации, упорядочении и разбиении на страницы](entities-overview.md).
+
+### <a name="what-features-are-not-yet-available-in-azure-media-services-v3"></a>Какие функции еще не доступны в версии 3 службы мультимедиа Azure?
+
+Дополнительные сведения см. в разделе [компонентов пропуски по отношению к версии 2 API-интерфейсы](migrate-from-v2-to-v3.md#feature-gaps-with-respect-to-v2-apis).
 
 ## <a name="live-streaming"></a>Потоковая передача в реальном времени 
 

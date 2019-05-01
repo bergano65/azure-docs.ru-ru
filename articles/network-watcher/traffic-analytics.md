@@ -3,8 +3,8 @@ title: Аналитика трафика Azure | Документация Май
 description: Узнайте, как анализировать журналы потоков группы безопасности сети Azure с помощью решения "Аналитика трафика".
 services: network-watcher
 documentationcenter: na
-author: jimdial
-manager: jeconnoc
+author: KumudD
+manager: twooley
 editor: ''
 ms.service: network-watcher
 ms.devlang: na
@@ -12,13 +12,13 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/15/2018
-ms.author: yagup;jdial
-ms.openlocfilehash: 2f283421a851914822f5b0c9d05ed6bc929d28c4
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.author: yagup;kumud
+ms.openlocfilehash: a4ae997398c85dc99af8711f1c6ce4e743592d73
+ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60430127"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64939890"
 ---
 # <a name="traffic-analytics"></a>Аналитика трафика
 
@@ -176,7 +176,7 @@ New-AzStorageAccount `
 
     ![Выбор учетной записи хранения, рабочей области Log Analytics и включение решения "Аналитика трафика"](./media/traffic-analytics/selection-of-storage-account-log-analytics-workspace-and-traffic-analytics-enablement-nsg-flowlogs-v2.png)
 
-Повторите шаги выше для любых других групп NSG, для которых нужно включить решение "Аналитика трафика". Данные из журналов потоков отправляются в рабочую область, поэтому проверьте, разрешено ли в соответствии с законом и правилами в вашей стране размещать хранилище данных в регионе, где есть рабочая область.
+Повторите шаги выше для любых других групп NSG, для которых нужно включить решение "Аналитика трафика". Данные из журналов потоков отправляются в рабочую область, поэтому убедитесь, что местным законам и нормам в вашей страны/региона разрешает хранения данных в регионе, где есть рабочая область.
 
 Можно также настроить с помощью аналитики трафика [AzNetworkWatcherConfigFlowLog набора](/powershell/module/az.network/set-aznetworkwatcherconfigflowlog) командлет PowerShell в Azure PowerShell. Выполните `Get-Module -ListAvailable Az`, чтобы узнать установленную версию. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-Az-ps).
 
@@ -270,13 +270,13 @@ New-AzStorageAccount `
 
     ![Панель мониторинга с отображением распределения трафика](./media/traffic-analytics/dashboard-showcasing-traffic-distribution.png)
 
-- На географической карте в верхней ленте показаны параметры, например центры обработки данных (развернутые и наоборот, активные, неактивные, с включенным решением "Аналитика трафика" или нет), а также страны, из которых в активное развертывание направляется неопасный или вредоносный трафик:
+- На географической карте показано в верхней ленте выбора параметров, например в центрах обработки данных ("включена развернутые No развертывания/Active/Inactive/аналитики трафика" / "не включена аналитика трафика") и страны и регионы, направляющими трафик, Неопасных, вредоносных активного Развертывание:
 
     ![Представление географической карты с отображением активного развертывания](./media/traffic-analytics/geo-map-view-showcasing-active-deployment.png)
 
-- На географической карте линии синего цвета обозначают распределение неопасного трафика в центр обработки данных из стран и континентов, а линии красного цвета — распределение вредоносного трафика.
+- На географической карте показано распределение трафика в центр обработки данных из стран и континентов в синий (Неопасный трафик), а красный (вредоносный трафик) выделены строки:
 
-    ![Представление географической карты с отображением распределения трафика между странами и континентами](./media/traffic-analytics/geo-map-view-showcasing-traffic-distribution-to-countries-and-continents.png)
+    ![Представление географической карты с отображением распределения трафика для стран и континентов](./media/traffic-analytics/geo-map-view-showcasing-traffic-distribution-to-countries-and-continents.png)
 
     ![Сведения о потоке для распределения трафика в поиске по журналам](./media/traffic-analytics/flow-details-for-traffic-distribution-in-log-search.png)
 

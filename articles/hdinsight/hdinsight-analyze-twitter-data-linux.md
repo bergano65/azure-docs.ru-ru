@@ -9,11 +9,11 @@ ms.date: 06/26/2018
 ms.author: hrasheed
 ms.custom: H1Hack27Feb2017,hdinsightactive
 ms.openlocfilehash: e10717b0fe14d2ed6ee720a2414e753bdd2474f1
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
-ms.translationtype: HT
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62095937"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64708889"
 ---
 # <a name="analyze-twitter-data-using-apache-hive-and-apache-hadoop-on-hdinsight"></a>Анализ данных Twitter с помощью Apache Hive и Apache Hadoop в HDInsight
 
@@ -39,7 +39,7 @@ Twitter позволяет получать данные для каждого �
    | Поле | Value |
    |:--- |:--- |
    | ИМЯ |MyHDInsightApp |
-   | Описание |MyHDInsightApp |
+   | ОПИСАНИЕ |MyHDInsightApp |
    | Веб-сайт |https:\//www.myhdinsightapp.com |
 
 4. Установите флажок **Я принимаю** и нажмите кнопку **Создать приложение Twitter**.

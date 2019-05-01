@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 2/23/2018
 ms.author: subramar
-ms.openlocfilehash: 9f738ab5022d1378925d920818e3f89fc2a1ee6d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 49d06c05af085624a0d495a65e139d3857a13fc4
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60947080"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64712622"
 ---
 # <a name="prepare-your-development-environment-on-linux"></a>Подготовка среды разработки в Linux
 > [!div class="op_single_selector"]
@@ -177,10 +177,10 @@ sudo yum install servicefabricsdkcommon
 
 Среда выполнения Service Fabric, которая поставляется с установкой пакета SDK, содержит пакеты, перечисленные в следующей таблице. 
 
- | | DotNetCore | Java | Python | NodeJs | 
+ | | DotNetCore | Java | Python | NodeJS | 
 --- | --- | --- | --- |---
-Ubuntu | 2.0.0 | AzulJDK 1.8 | Неявно с использованием npm | latest |
-RHEL | - | OpenJDK 1.8 | Неявно с использованием npm | latest |
+Ubuntu | 2.0.0 | AzulJDK 1.8 | Неявно с использованием npm | последняя |
+RHEL | - | OpenJDK 1.8 | Неявно с использованием npm | последняя |
 
 ## <a name="set-up-a-local-cluster"></a>Настройка локального кластера
 Запустите локальный кластер после завершения установки.

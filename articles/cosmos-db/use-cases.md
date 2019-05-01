@@ -6,12 +6,12 @@ author: SnehaGunda
 ms.author: sngun
 ms.topic: conceptual
 ms.date: 05/07/2017
-ms.openlocfilehash: 935c6ff03485c2b8e4d3e2f3df51c740ec1e8371
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 7ac4b54740b03a8b3fa09486a8e09f3262f67555
+ms.sourcegitcommit: e7d4881105ef17e6f10e8e11043a31262cfcf3b7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60770283"
+ms.lasthandoff: 04/29/2019
+ms.locfileid: "64866880"
 ---
 # <a name="common-azure-cosmos-db-use-cases"></a>Распространенные примеры использования Azure Cosmos DB
 В этой статье представлен обзор нескольких распространенных примеров использования Azure Cosmos DB.  Рекомендации в данной статье служат отправной точкой для разработки приложений с использованием Cosmos DB.   
@@ -78,7 +78,7 @@ Azure Cosmos DB используется в таких играх, как [The 
 
 ![Эталонная архитектура игры на основе Azure Cosmos DB](./media/use-cases/gaming.png)
 
-## <a name="web-and-mobile-applications"></a>Мобильные приложения и веб-приложения
+## <a name="web-and-mobile-applications"></a>Веб-приложения и мобильные приложения
 Служба Azure Cosmos DB часто используется с веб-приложениями и мобильными приложениями. Она хорошо подходит для моделирования социального взаимодействия, интеграции со службами сторонних поставщиков, а также для создания разнообразных персонализированных возможностей. Пакеты SDK Cosmos DB можно использовать для создания многофункциональных приложений iOS и Android с помощью популярной [платформы Xamarin](mobile-apps-with-xamarin.md).  
 
 ### <a name="social-applications"></a>Приложения социальных сетей
@@ -108,7 +108,7 @@ JSON — это эффективный формат, поддерживаемы
 * [Citrix](https://customers.microsoft.com/story/citrix). Компания Citrix занимается разработкой решения единого входа, используя службы Azure Service Fabric и Azure Cosmos DB.
 * [TEXA](https://customers.microsoft.com/story/texaspa) — революционное решение Интернета вещей, предназначенное для владельцев автомобилей, которое позволяет сэкономить время, деньги, расходы, а также продлить срок службы деталей машины.
 * [Domino's Pizza](https://www.dominos.com). Domino's Pizza, Inc. — американская сеть пиццерий.
-* [Johnson Controls](https://www.johnsoncontrols.com). Johnson Controls является глобально распространенным производителем технологических решений и многоотраслевым лидером, обслуживающим различных клиентов в более чем 150 странах.
+* [Johnson Controls](https://www.johnsoncontrols.com). Johnson Controls является глобально распространенным производителем технологических и многоотраслевым лидером, обслуживающим широкий спектр клиентов в более чем 150 странах и регионах.
 * [Microsoft Windows, Универсальный Магазин, Центр Интернета вещей Azure, Xbox Live и другие веб-службы](https://azure.microsoft.com/blog/how-azure-documentdb-planet-scale-nosql-helps-run-microsoft-s-own-businesses/). Создание корпорацией Майкрософт служб высокой масштабируемости с помощью Azure Cosmos DB.
 * [Группа Microsoft Data and Analytics](https://customers.microsoft.com/story/microsoftdataandanalytics) С помощью Azure Cosmos DB группа специалистов по анализу и обработке данных Майкрософт получила глобально масштабируемую коллекцию больших данных.
 * [Sulekha.com](https://customers.microsoft.com/story/sulekha-uses-azure-documentdb-to-connect-customers-and-businesses-across-india). В компании Sulekha использовали Azure Cosmos DB для подключения пользователей и предприятий в Индии.

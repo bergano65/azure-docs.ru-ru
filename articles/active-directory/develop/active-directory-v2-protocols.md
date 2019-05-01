@@ -18,12 +18,12 @@ ms.author: celested
 ms.reviewer: hirsin
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dad05221376fa5871aadf6d89dcb15dff55a6dfa
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 7471bb82aece2b4c11f5071b6b3746f1a55a4a60
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60300185"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64917340"
 ---
 # <a name="microsoft-identity-platform-protocols"></a>Протоколы платформы удостоверений Microsoft
 
@@ -51,7 +51,7 @@ ms.locfileid: "60300185"
 * **Универсальный код ресурса (URI) перенаправления** или **Идентификатор пакета**, которые можно использовать для возврата ответов к приложению.
 * Несколько других зависящих от сценария значений.
 
-Дополнительные сведения см. в статье о [регистрации приложения](quickstart-v2-register-an-app.md).
+Дополнительные сведения см. в статье о [регистрации приложения](quickstart-register-app.md).
 
 ## <a name="endpoints"></a>Конечные точки
 

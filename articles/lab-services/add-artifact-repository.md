@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 02/15/2019
 ms.author: spelluru
-ms.openlocfilehash: 42b59c8da9e66b0f749d067e3df867911c7108e9
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: c1e74efa9cf99e8510ea17aedc840ce3b0731c3b
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58106837"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64916676"
 ---
 # <a name="add-an-artifact-repository-to-your-lab-in-devtest-labs"></a>Добавить репозиторий артефактов в лабораторию в DevTest Labs
 DevTest Labs позволяет указать артефакт для добавления к виртуальной Машине во время создания виртуальной Машины или после создания виртуальной Машины. Это средство или приложение, которое вы хотите установить на виртуальной Машине, может быть этого артефакта. Артефакты определены в JSON-файл загружен из репозитория GitHub или VSTS Git. 
@@ -232,7 +232,7 @@ Folder under which artifacts can be found. Defaults to '/Artifacts'
 
 .PARAMETER PersonalAccessToken
 Security token for access to GitHub or VSOGit repository.
-See https://azure.microsoft.com/en-us/documentation/articles/devtest-lab-add-artifact-repo/ for instructions to get personal access token
+See https://azure.microsoft.com/documentation/articles/devtest-lab-add-artifact-repo/ for instructions to get personal access token
 
 .PARAMETER SourceType
 Whether artifact is VSOGit or GitHub repository.
@@ -373,7 +373,7 @@ if ($ArtifactRepositoryName -eq $null){
 | Команды PowerShell | Примечания |
 | ------------------ | ----- |
 | [Get-AzResource](/powershell/module/az.resources/get-azresource) | Эта команда используется для получения сведений о лаборатории, такие как его расположение. |
-| [Новый AzResource](/powershell/module/az.resources/new-azresource) | Нет определенной команды для добавления репозитории артефактов. Универсальный [New AzResource](/powershell/module/az.resources/new-azresource) командлет выполняет свою задачу. Этот командлет должен либо **ResourceId** или **ResourceName** и **ResourceType** пары знать тип создаваемого ресурса. Этот пример сценария использует имя ресурса и парой тип ресурса. <br/><br/>Обратите внимание на то, что вы создаете источник артефакта репозитория, в том же расположении и в той же группе ресурсов, что и лаборатория.|
+| [New-AzResource](/powershell/module/az.resources/new-azresource) | Нет определенной команды для добавления репозитории артефактов. Универсальный [New AzResource](/powershell/module/az.resources/new-azresource) командлет выполняет свою задачу. Этот командлет должен либо **ResourceId** или **ResourceName** и **ResourceType** пары знать тип создаваемого ресурса. Этот пример сценария использует имя ресурса и парой тип ресурса. <br/><br/>Обратите внимание на то, что вы создаете источник артефакта репозитория, в том же расположении и в той же группе ресурсов, что и лаборатория.|
 
 Сценарий добавляет новый ресурс в текущей подписке. Используйте [Get-AzContext](/powershell/module/az.accounts/get-azcontext) для просмотра этих сведений. Используйте [AzContext набора](/powershell/module/az.accounts/set-azcontext) для задания текущего клиента и подписки.
 

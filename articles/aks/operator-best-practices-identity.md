@@ -5,14 +5,14 @@ services: container-service
 author: iainfoulds
 ms.service: container-service
 ms.topic: conceptual
-ms.date: 11/26/2018
+ms.date: 04/24/2019
 ms.author: iainfou
-ms.openlocfilehash: 42f6fefa930a36fbfcca7b3f792cc749723f7b99
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 1c20e7796d152c9198786c491f9a61752d88ea6f
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60464497"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64726615"
 ---
 # <a name="best-practices-for-authentication-and-authorization-in-azure-kubernetes-service-aks"></a>Рекомендации по аутентификации и авторизации в службе Azure Kubernetes (AKS)
 
@@ -108,7 +108,8 @@ roleRef:
 1. Разработчик развертывает контейнеры pod с управляемым удостоверением, которые запрашивают маркер доступа через сервер NMI.
 1. Маркер возвращается контейнерам pod и используется для доступа к экземпляру Azure SQL Server.
 
-Pod управляемого удостоверения — это проект с открытым исходным кодом AKS, а не поддерживается по технической поддержке Azure. Он предоставляется для сбора отзывов и ошибки нашего сообщества. Проект не рекомендуется для использования в рабочей среде.
+> [!NOTE]
+> Pod управляемого удостоверения — это проект с открытым исходным кодом и не поддерживается по технической поддержке Azure.
 
 Чтобы использовать удостоверения pod, назначьте [удостоверения Azure Active Directory для приложений Kubernetes][aad-pod-identity].
 

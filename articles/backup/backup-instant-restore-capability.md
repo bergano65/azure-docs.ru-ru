@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: sogup
 ms.openlocfilehash: c375eac0de3dd89986421f8c6628d0a13784a60d
-ms.sourcegitcommit: a95dcd3363d451bfbfea7ec1de6813cad86a36bb
-ms.translationtype: HT
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62733879"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64726429"
 ---
 # <a name="get-improved-backup-and-restore-performance-with-azure-backup-instant-restore-capability"></a>Улучшенное резервное копирование и восстановление с помощью функции мгновенного восстановления Azure Backup
 
@@ -68,7 +68,7 @@ ms.locfileid: "62733879"
 
 ![Возможность мгновенного восстановления](./media/backup-azure-vms/instant-restore-capability.png)
 
-### <a name="using-powershell"></a>Использование PowerShell
+### <a name="using-powershell"></a>с использованием PowerShell.
 
 >[!NOTE]
 > С помощью PowerShell Az версии 1.6.0 и более поздние версии вы можете обновить срок хранения моментальных снимков мгновенное восстановление в политике, с помощью PowerShell

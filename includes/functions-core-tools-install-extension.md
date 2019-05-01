@@ -2,33 +2,48 @@
 title: включение файла
 description: включение файла
 services: functions
-author: ggailey777
+author: craigshoemaker
 ms.service: functions
 ms.topic: include
-ms.date: 09/21/2018
-ms.author: glenga
+ms.date: 09/25/2018
+ms.author: cshoe
 ms.custom: include file
-ms.openlocfilehash: f1b53c53b1e5fb089eb9b8a9b816b11a1eea126d
-ms.sourcegitcommit: 4ecc62198f299fc215c49e38bca81f7eb62cdef3
-ms.translationtype: HT
+ms.openlocfilehash: fc5b43dcdee394fea023124171fb42c1a18224dc
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47044515"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64733274"
 ---
-Если вы разрабатываете функции локально, можете установить необходимые расширения из терминала или командной строки с помощью основных инструментов службы "Функции Azure".
+Пакеты расширения сделать все привязки, опубликованных группой функций Azure, доступные посредством параметра в *host.json* файла. Для локальной разработки гарантировать использование последней версии [основных инструментов функций Azure](../articles/azure-functions/functions-run-local.md#install-the-azure-functions-core-tools).
 
-После обновления файла *function.json* для включения всех привязок, необходимых для функции, выполните следующую команду в папке проекта.
+Чтобы использовать пакеты расширения, обновите *host.json* файл, чтобы включить следующую запись для `extensionBundle`:
 
-```bash
-func extensions install
+```json
+{
+    "version": "2.0",
+    "extensionBundle": {
+        "id": "Microsoft.Azure.Functions.ExtensionBundle",
+        "version": "[1.*, 2.0.0)"
+    }
+}
 ```
 
-Эта команда считывает файл *function.json*, чтобы определить, какие пакеты требуются, а затем устанавливает их и перестраивает проект расширений. Затем добавляются все новые привязки в текущей версии, но существующие привязки не обновляются. Используйте параметр `--force`, чтобы обновить существующие привязки до последней версии при установке новых пакетов.
+- `id` Ссылается на пространство имен для пакетов расширения функций Microsoft Azure.
+- `version` Ссылается на версию пакета.
 
-Если вы хотите установить определенную версию пакета или установить пакеты до изменения файла *function.json*, используйте команду `func extensions install`, указав имя пакета, как показано в следующем примере.
+Увеличение версии пакета как пакеты в пакет изменений. Основной номер версии изменения вступают в силу только в том случае, когда пакеты в пакете перемещает основной номер версии. `version` Используется в свойстве [записью интервал для указания диапазонов версий](https://docs.microsoft.com/nuget/reference/package-versioning#version-ranges-and-wildcards). Среда выполнения функций всегда выбирает максимальную допустимую версию определяется диапазон версий или интервал.
 
-```bash
-func extensions install --package Microsoft.Azure.WebJobs.ServiceBus --version <target_version>
-```
+После расширения пакеты ссылаетесь в своем проекте, все привязки по умолчанию становятся доступными для ваших функций. Привязки, доступные в [пакета расширения](https://github.com/Azure/azure-functions-extension-bundles/blob/master/src/Microsoft.Azure.Functions.ExtensionBundle/extensions.json) являются:
 
-Замените `<target_version>` определенной версией пакета, например `3.0.0-beta5`. Допустимые версии перечислены на страницах отдельных пакетов на сайте [NuGet.org](https://nuget.org).
+|Package  |Version  |
+|---------|---------|
+|Microsoft.Azure.WebJobs.Extensions.CosmosDB|3.0.3|
+|Microsoft.Azure.WebJobs.Extensions.DurableTask|1.8.0|
+|Microsoft.Azure.WebJobs.Extensions.EventGrid|2.0.0|
+|Microsoft.Azure.WebJobs.Extensions.EventHubs|3.0.3|
+|Microsoft.Azure.WebJobs.Extensions.SendGrid|3.0.0|
+|Microsoft.Azure.WebJobs.Extensions.ServiceBus|3.0.3|
+|Microsoft.Azure.WebJobs.Extensions.SignalRService|1.0.0|
+|Microsoft.Azure.WebJobs.Extensions.Storage|3.0.4|
+|Microsoft.Azure.WebJobs.Extensions.Twilio|3.0.0|

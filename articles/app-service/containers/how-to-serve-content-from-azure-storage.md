@@ -8,16 +8,16 @@ ms.workload: web
 ms.topic: article
 ms.date: 2/04/2019
 ms.author: msangapu-msft
-ms.openlocfilehash: 40aa032654d81c947e2c31e9d93954ee050f78a2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 01e86d9769b07a57d44ae21b2c76d894ac29e8bc
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60849954"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64920046"
 ---
 # <a name="serve-content-from-azure-storage-in-app-service-on-linux"></a>Обработка содержимого из службы хранилища Azure в Службе приложений на платформе Linux
 
-В этом руководстве показано, как обрабатывать статическое содержимое в Службе приложений на платформе Linux с помощью [службы хранилища Azure](/azure/storage/common/storage-introduction). Преимущества включают защищенное содержимое, его переносимость, доступ к нескольким приложениям и несколько методов для передачи. В этом руководстве вы узнаете, как передавать содержимое в службе хранилища Azure, настроив пользовательского хранилища.
+В этом руководстве показано, как обрабатывать статическое содержимое в Службе приложений на платформе Linux с помощью [службы хранилища Azure](/azure/storage/common/storage-introduction). Преимущества включают защищенное содержимое, его переносимость, доступ к нескольким приложениям и несколько методов для передачи. 
 
 ## <a name="prerequisites"></a>Технические условия
 
@@ -62,12 +62,25 @@ az webapp config storage-account add --resource-group <group_name> --name <app_n
 
 Для всех остальных каталогов, которые вы хотите связать с учетной записью хранения, следует сделать то же самое.
 
-## <a name="verify"></a>Проверьте
+## <a name="verify"></a>Проверка
 
 Проверить, связан ли контейнер хранилища с веб-приложением, можно, выполнив следующую команду.
 
 ```azurecli
-az webapp config storage-account list --resource-group <group_name> --name <app_name>
+az webapp config storage-account list --resource-group <resource_group> --name <app_name>
+```
+
+## <a name="use-custom-storage-in-docker-compose"></a>Использование пользовательского хранилища в Docker Compose
+
+Служба хранилища Azure можно подключить с многоконтейнерных приложений с помощью пользовательских id. Чтобы просмотреть имя custom-id, выполните [ `az webapp config storage-account list --name <app_name> --resource-group <resource_group>` ](/cli/azure/webapp/config/storage-account?view=azure-cli-latest#az-webapp-config-storage-account-list).
+
+В вашей *docker-compose.yml* файл "," Карта `volumes` равным `custom-id`. Например: 
+
+```yaml
+wordpress:
+  image: wordpress:latest
+  volumes:
+  - <custom-id>:<path_in_container>
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия

@@ -10,12 +10,12 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 12/05/2018
 ms.custom: seodec18
-ms.openlocfilehash: eba4c70a25cba2e456ed418a98b938f2029c4c1f
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.openlocfilehash: fe6848caad7cdac98d6717b7cea4860e7ce2db8f
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57438369"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64725740"
 ---
 # <a name="data-storage-and-ingress-in-azure-time-series-insights-preview"></a>Хранилище данных и входящий трафик в Аналитике временных рядов Azure (предварительная версия)
 
@@ -193,9 +193,9 @@ Parquet – это столбцово-ориентированный форма
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-См. статью [Хранилище данных и входящий трафик в Аналитике временных рядов Azure (предварительная версия)](./time-series-insights-update-storage-ingress.md).
+- См. статью [Хранилище данных и входящий трафик в Аналитике временных рядов Azure (предварительная версия)](./time-series-insights-update-storage-ingress.md).
 
-О новой модели данных читайте [здесь](./time-series-insights-update-tsm.md).
+- О новой модели данных читайте [здесь](./time-series-insights-update-tsm.md).
 
 <!-- Images -->
 [1]: media/v2-update-storage-ingress/storage-architecture.png

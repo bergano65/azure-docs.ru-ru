@@ -10,11 +10,11 @@ ms.topic: conceptual
 ms.date: 01/29/2019
 ms.author: hrasheed
 ms.openlocfilehash: 37fed781629351475b384ac843a588bdaf7b5b66
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
-ms.translationtype: HT
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62121849"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64718164"
 ---
 # <a name="connect-excel-to-apache-hadoop-in-azure-hdinsight-with-the-microsoft-hive-odbc-driver"></a>Подключение Excel к Apache Hadoop с помощью драйвера Microsoft Hive ODBC в Azure HDInsight
 
@@ -48,11 +48,11 @@ ms.locfileid: "62121849"
 
 4. Введите или выберите следующие значения:
    
-   | Свойство | Описание |
+   | Свойство | ОПИСАНИЕ |
    | --- | --- |
    |  Имя источника данных |Присвойте имя источнику данных |
    |  Узлы |Введите &lt;имя_кластера_HDInsight&gt;.azurehdinsight.net. Например, myHDICluster.azurehdinsight.net |
-   |  Port |Используйте <strong>443</strong>. (Этот порт был изменен с 563 на 443.) |
+   |  Порт |Используйте <strong>443</strong>. (Этот порт был изменен с 563 на 443.) |
    |  База данных |Используйте <strong>значение по умолчанию</strong>. |
    |  Механизм |Выберите <strong>Служба Azure HDInsight</strong>. |
    |  Имя пользователя |Введите имя пользователя HTTP кластера HDInsight. Имя пользователя по умолчанию — <strong>admin</strong>. |
@@ -61,7 +61,7 @@ ms.locfileid: "62121849"
    
 5. Необязательно: Выберите **Дополнительные параметры...**  
    
-   | Параметр | Описание |
+   | Параметр | ОПИСАНИЕ |
    | --- | --- |
    |  Использовать исходный запрос |При выборе этого параметра драйвер ODBC НЕ пытается преобразовать TSQL в HiveQL. Следует использовать только при 100% уверенности в отправке действительных инструкций HiveQL. При подключении к серверу SQL Server или базе данных Azure SQL необходимо снять этот флажок. |
    |  Строки, загружаемые для каждого блока |При получении большого объема записей включение этого параметра может обеспечить оптимальную производительность. |

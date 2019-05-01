@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/27/2017
 ms.author: mikeray
-ms.openlocfilehash: 463ef5f4a655617074915078fb4ced9e596f8957
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 8a9d4699ba625f575cdcba2a85af900a7c04843e
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61478411"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64924466"
 ---
 # <a name="high-availability-and-disaster-recovery-for-sql-server-in-azure-virtual-machines"></a>Высокий уровень доступности и аварийное восстановление для SQL Server на виртуальных машинах Azure
 
@@ -59,7 +59,7 @@ ms.locfileid: "61478411"
 | Технология | Примеры архитектур |
 | --- | --- |
 | **Группы доступности** |Реплики доступности, выполняемые в нескольких центрах обработки данных на виртуальных машинах Azure для аварийного восстановления. Это межрегиональное решение обеспечивает защиту от простоя всего сайта. <br/> ![Группы доступности](./media/virtual-machines-windows-sql-high-availability-dr/azure_only_dr_alwayson.png)<br/>В пределах региона все реплики должны находиться в одной облачной службе и одной виртуальной сети. Так как каждый регион будет включать отдельную виртуальную сеть, для этих решений требуется подключение между виртуальными сетями. Чтобы узнать больше, ознакомьтесь с разделом [Настройка подключения между виртуальными сетями на портале Azure](../../../vpn-gateway/vpn-gateway-howto-vnet-vnet-resource-manager-portal.md). Подробные инструкции см. в статье [Настройка группы доступности AlwaysOn на виртуальных машинах Azure в разных регионах](virtual-machines-windows-portal-sql-availability-group-dr.md).|
-| **Зеркальное отображение базы данных** |Основной, зеркальный и другие серверы, выполняемые в разных центрах обработки данных для аварийного восстановления. Для развертывания необходимо использовать сертификаты сервера, так как домен Active Directory не может охватывать несколько центров обработки данных.<br/>![Зеркальное отображение базы данных](./media/virtual-machines-windows-sql-high-availability-dr/azure_only_dr_dbmirroring.gif) |
+| **Зеркальное отображение базы данных** |Основной, зеркальный и другие серверы, выполняемые в разных центрах обработки данных для аварийного восстановления. Необходимо выполнить развертывание с использованием сертификатов сервера. <br/>![Зеркальное отображение базы данных](./media/virtual-machines-windows-sql-high-availability-dr/azure_only_dr_dbmirroring.gif) |
 | **Резервное копирование и восстановление с помощью службы хранилища больших двоичных объектов Azure** |Рабочие базы данных архивируются напрямую в хранилище BLOB-объектов в другом центре обработки данных для аварийного восстановления.<br/>![Резервное копирование и восстановление](./media/virtual-machines-windows-sql-high-availability-dr/azure_only_dr_backup_restore.gif)<br/>Дополнительные сведения см. в статье [Резервное копирование и восстановление SQL Server в виртуальных машинах Azure](virtual-machines-windows-sql-backup-recovery.md). |
 | **Репликация и отработка отказа SQL Server в Azure с помощью Azure Site Recovery** |Рабочая среда SQL Server одного из центров обработки данных Azure реплицируется непосредственно в службу хранилища Azure в другом центре обработки данных Azure в целях аварийного восстановления.<br/>![Репликация с помощью Azure Site Recovery](./media/virtual-machines-windows-sql-high-availability-dr/azure_only_dr_standalone_sqlserver-asr.png)<br/>Дополнительные сведения см. в разделе [Защита SQL Server с помощью аварийного восстановления SQL Server и Azure Site Recovery](../../../site-recovery/site-recovery-sql.md). |
 
@@ -137,7 +137,7 @@ ms.locfileid: "61478411"
 
 Другие темы, связанные с запуском SQL Server на виртуальных машинах Azure, рассматриваются в статье [SQL Server на виртуальных машинах Azure](virtual-machines-windows-sql-server-iaas-overview.md).
 
-### <a name="other-resources"></a>Другие ресурсы
+### <a name="other-resources"></a>Другие ресурсы:
 * [Установка нового леса Active Directory в виртуальной сети Azure](../../../active-directory/active-directory-new-forest-virtual-machine.md)
 * [Создание отказоустойчивого кластера для групп доступности на виртуальной машине Azure](https://gallery.technet.microsoft.com/scriptcenter/Create-WSFC-Cluster-for-7c207d3a)
 

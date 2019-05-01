@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 04/14/2019
 ms.author: rajanaki
-ms.openlocfilehash: 8bb790571e1499bd45fb8bee27f4f1896046cbc2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: a7fcd4deb0446577af310ff5380ffddf05ba87be
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60749111"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64719823"
 ---
 # <a name="troubleshoot-hyper-v-to-azure-replication-and-failover"></a>Устранение неполадок с отработкой отказа и репликацией из Hyper-V в Azure
 
@@ -129,12 +129,12 @@ ms.locfileid: "60749111"
 
 2. Чтобы создавать моментальные снимки VSS для виртуальной машины, установите на виртуальной машине службы Integration Services Hyper-V и включите службу интеграции резервного копирования (VSS).
     - Убедитесь, что службы или управляющие программы Integration Services VSS выполняются на гостевой виртуальной машине и находятся в состоянии **ОК**.
-    - Это можно проверить из сеанса PowerShell с повышенными привилегиями на узле Hyper-V с помощью команды **et-VMIntegrationService -VMName<VMName>-Name VSS**. Эту информацию можно также получить, войдя на гостевую виртуальную машину. [Узнайте больше](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services).
+    - Это можно проверить из сеанса PowerShell с повышенными привилегиями на узле Hyper-V с помощью команды **et-VMIntegrationService - VMName\<VMName >-Name VSS** эту информацию можно также получить, войдя на гостевую виртуальную Машину. [Узнайте больше](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services).
     - Убедитесь, что службы интеграции резервного копирования или VSS на виртуальной машине запущены и находятся в работоспособном состоянии. В противном случае перезапустите эти службы и службу запросов на теневое копирование томов Hyper-V на сервере узла Hyper-V.
 
 ### <a name="common-errors"></a>Распространенные ошибки
 
-**Код ошибки** | **Сообщение** | **Сведения**
+**Код ошибки** | **Сообщение** | **Дополнительные сведения**
 --- | --- | ---
 **0x800700EA** | "Hyper-V failed to generate VSS snapshot set for virtual machine: More data is available. (0x800700EA). VSS snapshot set generation can fail if backup operation is in progress.<br/><br/> Replication operation for virtual machine failed: More data is available" (Hyper-V не удалось создать набор моментальных снимков VSS для виртуальной машины. Доступно больше данных. (0x800700EA). Процесс создания моментальных снимков VSS может завершиться неудачно, если выполняется операция резервного копирования. Не удалось выполнить операцию репликации для виртуальной машины. Доступно больше данных). | Проверьте, включен ли на виртуальной машине динамический диск. Эта возможность не поддерживается.
 **0x80070032** | "Hyper-V Volume Shadow Copy Requestor failed to connect to virtual machine <./VMname> because the version does not match the version expected by Hyper-V" (Не удалось подключить службу запросов на теневое копирование томов Hyper-V к виртуальной машине <./имя ВМ>, так как имеющаяся версия не соответствует ожидаемый Hyper-V). | Проверьте, установлены ли последние обновления Windows.<br/><br/> [Обновите](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services#keep-integration-services-up-to-date) службы Integration Services до последней версии.
@@ -156,7 +156,7 @@ ms.locfileid: "60749111"
 
 ### <a name="event-log-locations"></a>Расположения журналов событий
 
-**Журнал событий** | **Сведения** |
+**Журнал событий** | **Дополнительные сведения** |
 --- | ---
 **Applications and Service Logs/Microsoft/VirtualMachineManager/Server/Admin** (сервер VMM) | Журналы, с помощью которых можно устранять проблемы с VMM.
 **Applications and Service Logs/MicrosoftAzureRecoveryServices/Replication** (узел Hyper-V) | Журналы, с помощью которых можно устранять проблемы с агентом служб восстановления Microsoft Azure. 

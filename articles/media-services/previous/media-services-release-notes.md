@@ -13,12 +13,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: ea5a6a70372571daf82e7639fc31c125d69fa44f
-ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
+ms.openlocfilehash: 25da9fd787c467bdddb7c8dcd68b9df518d018b7
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58621436"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64728034"
 ---
 # <a name="azure-media-services-release-notes"></a>Заметки о выпуске служб мультимедиа Azure
 
@@ -321,10 +321,6 @@ REST API служб мультимедиа обновлены до версии 
 * Сейчас невозможно принять потоковую передачу RTMP по SSL-соединению.
 * Потоковая передача через соединение SSL возможна, только если содержимое доставляется из конечной точки потоковой передачи, созданной после 10 сентября 2014 года. Все URL-адреса потоковой передачи, основанные на созданных после 10 сентября 2014 года конечных точках потоковой передачи, имеют новый формат, то есть содержат строку streaming.mediaservices.windows.net. URL-адреса потоковой передачи, которые содержат origin.mediaservices.windows.net (старый формат), не поддерживают SSL. Если URL-адрес имеет старый формат и необходимо выполнить потоковую передачу по протоколу SSL, [создайте конечную точку потоковой передачи](media-services-portal-manage-streaming-endpoints.md). С помощью URL-адресов на основе новой конечной точки потоковой передачи можно выполнить потоковую передачу содержимого по протоколу SSL.
 
-## <a id="october_changes_14"></a>Выпуск: октябрь 2014 г.
-### <a id="new_encoder_release"></a>Выпуск кодировщика служб мультимедиа
- Объявление о новом выпуске кодировщика служб мультимедиа Azure. Новый кодировщик мультимедиа тарифицируется только по количеству ГБ вывода. В остальном он полностью функционально совместим с предыдущей версией. Дополнительные сведения см. на странице [цен на службы мультимедиа].
-
 ### <a id="oct_sdk"></a>Пакет SDK служб мультимедиа для .NET
 Пакет SDK служб мультимедиа для расширений .NET теперь имеет версию 2.0.0.3.
 
@@ -396,14 +392,6 @@ REST API служб мультимедиа обновлены до версии 
   * Теперь неустранимые ошибки обрабатываются быстрее, если вы столкнетесь с исключениями веб-приложений (например, во время запроса токена службы контроля доступа).
 
 Дополнительные сведения см. в статье [Логика повторного выполнения операций в пакете SDK служб мультимедиа для .NET].
-
-## <a id="april_changes_14"></a>Выпуск кодировщика: апрель 2014 г.
-### <a name="april_14_enocer_changes"></a>Обновления кодировщика служб мультимедиа
-* Добавлена поддержка для получения AVI-файлов, созданных в нелинейном редакторе Grass Valley EDIUS. В этом процессе видеоданные незначительно сжимаются с помощью кодека Grass Valley HQ/HQX. Дополнительные сведения см. в статье [Grass Valley announces EDIUS 7 streaming through the cloud] (Grass Valley представляет потоковую передачу EDIUS 7 в облаке).
-*  Добавлена поддержка для указания соглашения об именовании файлов, созданных кодировщиком служб мультимедиа. Дополнительные сведения см. в статье [Настройка предустановок MES для расширенного кодирования](https://msdn.microsoft.com/library/azure/dn303341.aspx).
-*  Добавлена поддержка наложения видео- и аудиоданных. Дополнительные сведения см. в статье [Настройка предустановок MES для расширенного кодирования](https://msdn.microsoft.com/library/azure/dn640496.aspx).
-*  Добавлена поддержка стыковки нескольких сегментов видео. Дополнительные сведения см. в статье [Настройка предустановок MES для расширенного кодирования](https://msdn.microsoft.com/library/azure/dn640504.aspx).
-* Исправлена ошибка, связанная с перекодированием файлов MP4, в которых аудиопоток получал кодировку MPEG-1 Audio Layer 3 (также известную как MP3).
 
 ## <a id="jan_feb_changes_14"></a>Выпуски: январь — февраль 2014 г.
 ### <a name="jan_fab_14_donnet_changes"></a>Выпуски 3.0.0.1, 3.0.0.2 и 3.0.0.3 пакета SDK служб мультимедиа для .NET
@@ -556,7 +544,7 @@ REST API служб мультимедиа обновлены до версии 
 <!--- URLs. --->
 [форуме MSDN по службам мультимедиа Azure]: https://social.msdn.microsoft.com/forums/azure/home?forum=MediaServices
 [этой статье]: https://docs.microsoft.com/rest/api/media/operations/azure-media-services-rest-api-reference
-[цен на службы мультимедиа]: https://azure.microsoft.com/pricing/details/media-services/
+[Media Services pricing details]: https://azure.microsoft.com/pricing/details/media-services/
 [входных]: https://msdn.microsoft.com/library/azure/dn783120.aspx
 [выходных метаданных]: https://msdn.microsoft.com/library/azure/dn783217.aspx
 [Deliver content]: https://msdn.microsoft.com/library/azure/hh973618.aspx
@@ -573,7 +561,7 @@ REST API служб мультимедиа обновлены до версии 
 [Nick Drouin's blog]: http://blog-ndrouin.azurewebsites.net/hls-v3-new-old-thing/
 [Protect Smooth Streaming with PlayReady]: https://msdn.microsoft.com/library/azure/dn189154.aspx
 [Логика повторного выполнения операций в пакете SDK служб мультимедиа для .NET]: https://msdn.microsoft.com/library/azure/dn745650.aspx
-[Grass Valley announces EDIUS 7 streaming through the cloud]: https://www.streamingmedia.com/Producer/Articles/ReadArticle.aspx?ArticleID=96351&utm_source=dlvr.it&utm_medium=twitter (Grass Valley представляет потоковую передачу EDIUS 7 в облаке)
+[Grass Valley announces EDIUS 7 streaming through the cloud]: https://www.streamingmedia.com/Producer/Articles/ReadArticle.aspx?ArticleID=96351&utm_source=dlvr.it&utm_medium=twitter
 [Control Media Services Encoder output file names]: https://msdn.microsoft.com/library/azure/dn303341.aspx
 [Create overlays]: https://msdn.microsoft.com/library/azure/dn640496.aspx
 [Stitch video segments]: https://msdn.microsoft.com/library/azure/dn640504.aspx

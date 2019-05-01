@@ -11,12 +11,12 @@ author: aashishb
 ms.reviewer: larryfr
 ms.date: 04/02/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: a6ef53d56fa293791658b37b16cbaff94aee6ef3
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 60e4d29e5d0750e50d99e954f48ee5181255533a
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60819845"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64914906"
 ---
 # <a name="deploy-models-with-the-azure-machine-learning-service"></a>Развертывание моделей с помощью Службы машинного обучения Azure
 
@@ -26,7 +26,7 @@ ms.locfileid: "60819845"
 
 Использование пакета SDK для Azure Machine Learning развертывание обученной модели в следующие расположения:
 
-| Целевой объект вычисления | Тип развертывания | Описание |
+| Целевой объект вычисления | Тип развертывания | ОПИСАНИЕ |
 | ----- | ----- | ----- |
 | [Служба Azure Kubernetes (AKS)](#aks) | Вывод в режиме реального времени | Подходит для крупномасштабных рабочих развертываний. Она обеспечивает автоматическое масштабирование и малое время отклика. |
 | [Azure вычислений для машинного обучения (amlcompute)](#azuremlcompute) | Определение пакета | Запустите пакетный прогноз на бессерверных вычислений. Поддерживает нормальные и низкоприоритетные виртуальные машины. |
@@ -105,7 +105,7 @@ image_config = ContainerImage.image_configuration(execution_script = "score.py",
 
 В следующей таблице описаны важные параметры, используемые в этом примере:
 
-| Параметр | Описание |
+| Параметр | ОПИСАНИЕ |
 | ----- | ----- |
 | `execution_script` | Указывает сценарий Python, который используется для получения запросов, отправленных в службу. В этом примере сценарий содержится в файле `score.py`. Дополнительные сведения см. в разделе [Сценарий выполнения](#script). |
 | `runtime` | Указывает, что образ использует Python. Другой вариант — `spark-py`, который использует Python с Apache Spark. |
@@ -246,7 +246,7 @@ image = ContainerImage.create(name = "myimage",
 
 На этапе развертывания процесс немного отличается в зависимости от целевого объекта вычислений, на котором оно выполняется. Из следующих разделов вы узнаете, как развернуть:
 
-| Целевой объект вычисления | Тип развертывания | Описание |
+| Целевой объект вычисления | Тип развертывания | ОПИСАНИЕ |
 | ----- | ----- | ----- |
 | [Служба Azure Kubernetes (AKS)](#aks) | Веб-службы (в режиме реального времени получение)| Подходит для крупномасштабных рабочих развертываний. Она обеспечивает автоматическое масштабирование и малое время отклика. |
 | [Вычислений для машинного Обучения Azure](#azuremlcompute) | Веб-службы (получение пакетной службы)| Запустите пакетный прогноз на бессерверных вычислений. Поддерживает нормальные и низкоприоритетные виртуальные машины. |
@@ -257,7 +257,7 @@ image = ContainerImage.create(name = "myimage",
 > [!IMPORTANT]
 > Предоставление общего доступа к ресурсам независимо от источника (CORS) при развертывании модели в качестве веб-службы сейчас не поддерживается.
 
-В примерах этого раздела используется [deploy_from_image](https://docs.microsoft.com/en-us/python/api/azureml-core/azureml.core.webservice(class)?view=azure-ml-py#deploy-from-model-workspace--name--models--image-config--deployment-config-none--deployment-target-none-), который необходимо зарегистрировать модель и образ перед выполнением развертывания. Дополнительные сведения о методах развертывания см. в разделе [развертывание](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice(class)?view=azure-ml-py#deploy-workspace--name--model-paths--image-config--deployment-config-none--deployment-target-none-) и [deploy_from_model](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice(class)?view=azure-ml-py#deploy-from-model-workspace--name--models--image-config--deployment-config-none--deployment-target-none-).
+В примерах этого раздела используется [deploy_from_image](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice(class)?view=azure-ml-py#deploy-from-model-workspace--name--models--image-config--deployment-config-none--deployment-target-none-), который необходимо зарегистрировать модель и образ перед выполнением развертывания. Дополнительные сведения о методах развертывания см. в разделе [развертывание](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice(class)?view=azure-ml-py#deploy-workspace--name--model-paths--image-config--deployment-config-none--deployment-target-none-) и [deploy_from_model](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice(class)?view=azure-ml-py#deploy-from-model-workspace--name--models--image-config--deployment-config-none--deployment-target-none-).
 
 ### <a id="aci"></a> Развертывание в экземпляры контейнеров Azure (DEVTEST)
 
@@ -332,7 +332,7 @@ concurrentRequests = targetRps * reqTime / targetUtilization
 replicas = ceil(concurrentRequests / maxReqPerContainer)
 ```
 
-Дополнительные сведения о параметр `autoscale_target_utilization`, `autoscale_max_replicas`, и `autoscale_min_replicas`, см. в разделе [AksWebservice.deploy_configuration](https://docs.microsoft.com/en-us/python/api/azureml-core/azureml.core.webservice.akswebservice?view=azure-ml-py#deploy-configuration-autoscale-enabled-none--autoscale-min-replicas-none--autoscale-max-replicas-none--autoscale-refresh-seconds-none--autoscale-target-utilization-none--collect-model-data-none--auth-enabled-none--cpu-cores-none--memory-gb-none--enable-app-insights-none--scoring-timeout-ms-none--replica-max-concurrent-requests-none--max-request-wait-time-none--num-replicas-none--primary-key-none--secondary-key-none--tags-none--properties-none--description-none-) ссылки.
+Дополнительные сведения о параметр `autoscale_target_utilization`, `autoscale_max_replicas`, и `autoscale_min_replicas`, см. в разделе [AksWebservice.deploy_configuration](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.akswebservice?view=azure-ml-py#deploy-configuration-autoscale-enabled-none--autoscale-min-replicas-none--autoscale-max-replicas-none--autoscale-refresh-seconds-none--autoscale-target-utilization-none--collect-model-data-none--auth-enabled-none--cpu-cores-none--memory-gb-none--enable-app-insights-none--scoring-timeout-ms-none--replica-max-concurrent-requests-none--max-request-wait-time-none--num-replicas-none--primary-key-none--secondary-key-none--tags-none--properties-none--description-none-) ссылки.
 
 #### <a name="create-a-new-cluster"></a>Создание кластера:
 

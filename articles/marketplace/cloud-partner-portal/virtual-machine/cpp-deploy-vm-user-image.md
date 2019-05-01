@@ -1,25 +1,18 @@
 ---
-title: Развертывание виртуальной машины Azure из пользовательского виртуального жесткого диска | Документация Майкрософт
+title: Разверните виртуальную Машину Azure из виртуального жесткого диска пользователя | Azure Marketplace
 description: В этой статье описывается развертывание пользовательского образа виртуального жесткого диска для создания экземпляра виртуальной машины Azure.
 services: Azure, Marketplace, Cloud Partner Portal,
-documentationcenter: ''
 author: v-miclar
-manager: Patrick.Butler
-editor: ''
-ms.assetid: ''
 ms.service: marketplace
-ms.workload: ''
-ms.tgt_pltfrm: ''
-ms.devlang: ''
 ms.topic: article
 ms.date: 11/29/2018
-ms.author: pbutlerm
-ms.openlocfilehash: 0885b187c4b9e9636144a3ab2a94b941008bec20
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.author: pabutler
+ms.openlocfilehash: e4da523fa54a513fe77fda037aea0a5fd530250b
+ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59046741"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64938243"
 ---
 # <a name="deploy-an-azure-vm-from-a-user-vhd"></a>Развертывание виртуальной машины Azure из виртуального жесткого диска пользователя
 
@@ -38,7 +31,7 @@ ms.locfileid: "59046741"
 | userStorageAccountName     | Имя учетной записи хранения                                                    |
 | sNameForPublicIP           | DNS-имя для общедоступного IP-адреса. Используются только строчные символы                                  |
 | subscriptionId             | Идентификатор подписки Azure                                                  |
-| Расположение                   | Стандартное географическое расположение Azure для группы ресурсов                       |
+| Location                   | Стандартное географическое расположение Azure для группы ресурсов                       |
 | vmName                     | Имя виртуальной машины                                                    |
 | vaultName                  | Имя хранилища ключей.                                                          |
 | vaultResourceGroup         | Группа ресурсов хранилища ключей.

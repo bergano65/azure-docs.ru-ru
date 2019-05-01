@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/16/2018
 ms.author: apimpm
-ms.openlocfilehash: 95e501eca0f7765cc5201f7b315703c3ca43df8f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 422c2a8a61b1df36b452c153aa6cd78ba7e2dcef
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60529481"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64723640"
 ---
 # <a name="authorize-developer-accounts-by-using-azure-active-directory-in-azure-api-management"></a>Авторизация учетных записей разработчиков с помощью Azure Active Directory в управлении API Azure
 
@@ -79,12 +79,12 @@ ms.locfileid: "60529481"
 
 После сохранения изменений пользователи в указанной службе Azure AD могут входить на портал разработчика, выполняя действия, которые описаны в разделе [Вход на портал разработчика с помощью учетной записи Azure Active Directory](#log_in_to_dev_portal).
 
-
 ## <a name="add-an-external-azure-ad-group"></a>Добавление внешней группы Azure AD
 
 После включения доступа для пользователей в экземпляре Azure AD вы можете добавлять группы Azure AD в службе управления API, чтобы упростить управление связью разработчиков в такой группе с требуемыми продуктами.
 
-Чтобы настроить внешнюю группу Azure AD, необходимо сначала настроить экземпляр Azure AD на вкладке **удостоверений**, выполнив процедуру, описанную в предыдущем разделе. 
+ > [!IMPORTANT]
+ > Чтобы добавить внешнюю группу Azure AD, необходимо сначала настроить экземпляр Azure AD на **удостоверения** вкладку, выполнив процедуру, описанную в предыдущем разделе. Кроме того, приложения должен быть предоставлен доступ к API Azure AD Graph с помощью `Directory.Read.All` разрешение. 
 
 Внешние группы Azure AD добавляются с вкладки **Группы** в экземпляре службы управления API.
 

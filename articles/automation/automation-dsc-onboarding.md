@@ -9,12 +9,12 @@ ms.author: robreed
 ms.topic: conceptual
 ms.date: 08/08/2018
 manager: carmonm
-ms.openlocfilehash: b81dccf3c71fbaff7b0cbb9ba00f13b458156e73
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: f9f15c558e507742a641239ed25ba136dca0671a
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61074600"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64919992"
 ---
 # <a name="onboarding-machines-for-management-by-azure-automation-state-configuration"></a>Подключение компьютеров для управления с помощью службы "Настройка состояния службы автоматизации Azure"
 
@@ -62,8 +62,8 @@ ms.locfileid: "61074600"
 
 ### <a name="azure-resource-manager-templates"></a>Шаблоны Azure Resource Manager
 
-Виртуальные машины Azure можно развернуть и подключить к службе "Настройка состояния службы автоматизации Azure" с помощью шаблонов Azure Resource Manager. См. в разделе [сервер под управлением службы Desired State Configuration](https://azure.microsoft.com/en-us/resources/templates/101-automation-configuration/) пример шаблона, подключающего существующую виртуальную Машину для настройки состояния службы автоматизации Azure.
-Если вы управляете масштабируемого набора виртуальных машин, см. в разделе Пример шаблона [конфигурации набор масштабирования виртуальной Машины под управлением службы автоматизации Azure](https://azure.microsoft.com/en-us/resources/templates/201-vmss-automation-dsc/).
+Виртуальные машины Azure можно развернуть и подключить к службе "Настройка состояния службы автоматизации Azure" с помощью шаблонов Azure Resource Manager. См. в разделе [сервер под управлением службы Desired State Configuration](https://azure.microsoft.com/resources/templates/101-automation-configuration/) пример шаблона, подключающего существующую виртуальную Машину для настройки состояния службы автоматизации Azure.
+Если вы управляете масштабируемого набора виртуальных машин, см. в разделе Пример шаблона [конфигурации набор масштабирования виртуальной Машины под управлением службы автоматизации Azure](https://azure.microsoft.com/resources/templates/201-vmss-automation-dsc/).
 
 ### <a name="powershell"></a>PowerShell
 
@@ -72,7 +72,7 @@ ms.locfileid: "61074600"
 ### <a name="registering-virtual-machines-across-azure-subscriptions"></a>Регистрация виртуальных машин в подписках Azure
 
 Для регистрации виртуальных машин из других подписок Azure рекомендуется использовать расширение DSC в шаблоне развертывания Azure Resource Manager.
-Примеры приведены в [расширение Desired State Configuration с использованием шаблонов Azure Resource Manager](https://docs.microsoft.com/en-us/azure/virtual-machines/extensions/dsc-template).
+Примеры приведены в [расширение Desired State Configuration с использованием шаблонов Azure Resource Manager](https://docs.microsoft.com/azure/virtual-machines/extensions/dsc-template).
 Чтобы найти ключ регистрации и регистрации URL-адрес для использования в качестве параметров в шаблоне, см. в следующих [ **безопасная регистрация** ](#secure-registration) раздел.
 
 ## <a name="azure-virtual-machines-classic"></a>Виртуальные машины Azure (классические).

@@ -1,25 +1,19 @@
 ---
-title: Управление профилем издателя Azure Marketplace и AppSource | Документация Майкрософт
+title: Управление профилем издателя Azure Marketplace и AppSource | Azure Marketplace
 description: Объясняет, как для управления профилями издателя Azure Marketplace и AppSource
 services: Azure, Marketplace, AppSource, Cloud Partner Portal
-documentationcenter: ''
 author: v-miclar
 manager: pbutlerm
-editor: ''
-ms.assetid: ''
 ms.service: marketplace
-ms.workload: ''
-ms.tgt_pltfrm: ''
-ms.devlang: ''
 ms.topic: conceptual
 ms.date: 03/12/2019
-ms.author: pbutlerm
-ms.openlocfilehash: fd3f5750f050db0d57a8747b28798c04f666b077
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.author: pabutler
+ms.openlocfilehash: 6ca0eb23dad218262eff5d80543628df273022c9
+ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60525593"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64942238"
 ---
 # <a name="manage-your-azure-marketplace-and-appsource-publisher-profile"></a>Управление профилем издателя Azure Marketplace и AppSource
 

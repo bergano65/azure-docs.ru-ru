@@ -14,12 +14,12 @@ ms.subservice: users-groups-roles
 ms.custom: it-pro
 ms.reviewer: martincoetzer; MarkMorow
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 81d09978c3333a5b76c09f8c7dac85998d342f03
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: f4b61b661d9da0748bc354b8defa4e6d67a047a2
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60472899"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64920479"
 ---
 # <a name="securing-privileged-access-for-hybrid-and-cloud-deployments-in-azure-ad"></a>Защита привилегированного доступа для гибридных и облачных развертываний в Azure AD
 
@@ -261,7 +261,7 @@ Azure AD PIM входит в состав Azure AD Premium P2 и EMS E5. Эти 
 
 #### <a name="determine-exposure-to-password-based-sign-in-protocols-if-using-exchange-online"></a>Определение доступа к протоколам входа на основе пароля (при использовании Exchange Online)
 
-В прошлом предполагалось, что комбинации имени пользователя и пароля были встроены в устройства, учетные записи электронной почты, телефоны и т. д. Но теперь из за опасности кибератак в облаке мы рекомендуем идентифицировать всех потенциальных пользователей, компрометирование учетных данных которых будет катастрофическим для организации, и запретить им выполнять вход в электронную почту с помощью имени пользователя и пароля, реализовав строгие требования к аутентификации и условному доступу. Вы можете заблокировать [проверки подлинности с помощью условного доступа](https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/block-legacy-authentication). Ознакомьтесь со сведениями на [блокировка обычной проверки подлинности](https://docs.microsoft.com/en-us/exchange/clients-and-mobile-in-exchange-online/disable-basic-authentication-in-exchange-online) через Exchnage через Интернет. 
+В прошлом предполагалось, что комбинации имени пользователя и пароля были встроены в устройства, учетные записи электронной почты, телефоны и т. д. Но теперь из за опасности кибератак в облаке мы рекомендуем идентифицировать всех потенциальных пользователей, компрометирование учетных данных которых будет катастрофическим для организации, и запретить им выполнять вход в электронную почту с помощью имени пользователя и пароля, реализовав строгие требования к аутентификации и условному доступу. Вы можете заблокировать [проверки подлинности с помощью условного доступа](https://docs.microsoft.com/azure/active-directory/conditional-access/block-legacy-authentication). Ознакомьтесь со сведениями на [блокировка обычной проверки подлинности](https://docs.microsoft.com/exchange/clients-and-mobile-in-exchange-online/disable-basic-authentication-in-exchange-online) через Exchnage через Интернет. 
 
 #### <a name="complete-a-roles-review-assessment-for-office-365-roles-if-using-office-365"></a>Анализ проверки ролей для ролей Office 365 (при использовании Office 365)
 

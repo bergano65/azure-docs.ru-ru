@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 03/14/2018
 ms.author: raynew
-ms.openlocfilehash: ea5495867d5f453db014e000e01d533d049dc628
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: f5ec5a64f1de39cd0d196242fb1a93669dbab15d
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60849413"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64681842"
 ---
 # <a name="manage-and-monitor-backed-up-sql-server-databases"></a>Мониторинг резервных копий баз данных SQL Server и управление ими
 
@@ -129,9 +129,9 @@ ms.locfileid: "60849413"
 
 3. В меню **Защищенные серверы** выберите сервер, для которого необходимо отменить регистрацию. Чтобы удалить хранилище, необходимо отменить регистрацию всех серверов.
 
-4. Щелкните правой кнопкой мыши на защищенном сервере и выберите **удалить**.
+4. Щелкните правой кнопкой мыши на защищенном сервере и выберите **Unregister**.
 
-   ![Выбор "Удалить"](./media/backup-azure-sql-database/delete-protected-server.png)
+   ![Выбор "Удалить"](./media/backup-azure-sql-database/delete-protected-server.jpg)
 
 ## <a name="re-register-extension-on-the-sql-server-vm"></a>Повторно зарегистрировать расширение на виртуальной Машине SQL Server
 

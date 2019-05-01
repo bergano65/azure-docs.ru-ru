@@ -1,25 +1,18 @@
 ---
-title: Обязательные требования для предложения приложения Azure | Документация Майкрософт
+title: Предварительные условия предложения приложения Azure | Azure Marketplace
 description: Предварительные условия для публикации предложения приложения Azure в Azure Marketplace.
 services: Azure, Marketplace, Cloud Partner Portal,
-documentationcenter: ''
 author: v-miclar
-manager: Patrick.Butler
-editor: ''
-ms.assetid: ''
 ms.service: marketplace
-ms.workload: ''
-ms.tgt_pltfrm: ''
-ms.devlang: ''
 ms.topic: conceptual
 ms.date: 03/13/2019
-ms.author: pbutlerm
-ms.openlocfilehash: df127eec662f8598246f276ef9b1608ae3021512
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.author: pabutler
+ms.openlocfilehash: 296f843f9d09b57e12e867700f456126eca128b3
+ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60744930"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64942882"
 ---
 # <a name="azure-application-prerequisites"></a>Необходимые условия для приложения Azure
 
@@ -35,8 +28,8 @@ ms.locfileid: "60744930"
 *   Дополнительные сведения о шаблонах Azure Resource Manager см. в статье [Описание структуры и синтаксиса шаблонов Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-authoring-templates). В этой статье описана структура шаблона Azure Resource Manager. Статья содержит информацию о разных разделах шаблона и свойствах, которые доступны в этих разделах. Шаблон состоит из JSON и выражений, на основе которых можно создавать значения для развертывания. 
 * Шаблоны быстрого запуска Azure.<br> Дополнительные сведения можно найти в разделе 
 
-  * [Шаблоны быстрого запуска Azure](https://azure.microsoft.com/documentation/templates/). Развертывайте ресурсы Azure из Azure Resource Manager с помощью созданных сообществом шаблонов, которые позволяют выполнять больший объем работы. Диспетчер ресурсов Azure позволяет подготавливать приложения с помощью декларативного шаблона. В одном шаблоне можно развернуть несколько служб наряду с компонентами, от которых зависит их работа. Вы используете один и тот же шаблон для многократного развертывания вашего приложения на каждой стадии его жизненного цикла.
-  * [GitHub. Шаблоны быстрого запуска Azure Resource Manager](https://github.com/azure/azure-quickstart-templates). Этот репозиторий содержит все доступные на данный момент шаблоны Azure Resource Manager, предоставленные сообществом. Индекс для поиска шаблона поддерживается на https://azure.microsoft.com/en-us/documentation/templates/.
+  * [Шаблоны быстрого запуска Azure](https://azure.microsoft.com/documentation/templates/). Развертывайте ресурсы Azure из Azure Resource Manager с помощью созданных сообществом шаблонов, которые позволяют выполнять больший объем работы. Диспетчер ресурсов Azure позволяет подготавливать приложения с помощью декларативного шаблона. В одном шаблоне можно развернуть несколько служб наряду с компонентами, от которых зависит их работа. Один шаблон используется для развертывания приложения на каждом этапе его жизненного цикла.
+  * [GitHub. Шаблоны быстрого запуска Azure Resource Manager](https://github.com/azure/azure-quickstart-templates). Этот репозиторий содержит все доступные на данный момент шаблоны Azure Resource Manager, предоставленные сообществом. Индекс для поиска шаблона поддерживается на https://azure.microsoft.com/documentation/templates/.
 * Создание определения пользовательского интерфейса<br>
 Подробнее см. статью [Создание пользовательского интерфейса на портале Azure для управляемого приложения](https://docs.microsoft.com/azure/azure-resource-manager/managed-application-createuidefinition-overview). В этой статье описывается файл createUiDefinition.json. На основе этого файла портал Azure создает пользовательский интерфейс для создания управляемого приложения.
 
@@ -50,7 +43,7 @@ ms.locfileid: "60744930"
 >[!NOTE]
 >Следует использовать одну и ту же учетную запись регистрации Центра разработки для Майкрософт для входа на портал Cloud Partner. У вас должна быть только одна учетная запись Майкрософт для публикации предложений в Azure Marketplace. Эта учетная запись не должна быть привязана к конкретным службам или предложениям.
 
-* Ваша компания (или ее филиал) должна находиться в стране, на территории которой могут осуществляться продажи в Azure Marketplace. Текущий список этих стран см. в разделе [Политики участия в Microsoft Azure Marketplace](https://azure.microsoft.com/support/legal/marketplace/participation-policies/).
+* Ваша компания (или ее филиал) должна находиться в продажи — от страны или региона поддерживаемыми Azure Marketplace. Текущий список этих стран или регионов см. в разделе [политики участия в Microsoft Azure Marketplace](https://azure.microsoft.com/support/legal/marketplace/participation-policies/).
 * Продукт должен иметь лицензию, совместимую с моделями выставления счетов, которые поддерживает Azure Marketplace. Подробнее см. статью [Варианты выставления счетов за использование Azure Marketplace](https://docs.microsoft.com/azure/marketplace/marketplace-commercial-transaction-capabilities-and-considerations).
 * Вы должны предоставить клиентам техническую поддержку экономически обоснованным образом. Поддержка может быть платной, бесплатной или обеспечиваться посредством поддержки от сообщества.
 * Вы несете ответственность за лицензирование программного обеспечения, а также любых зависимостей от стороннего программного обеспечения.

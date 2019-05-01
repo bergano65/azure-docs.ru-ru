@@ -1,25 +1,18 @@
 ---
-title: Частные номера SKU и планы | Документация Майкрософт
+title: Частные номера SKU и планы | Azure Marketplace
 description: Как использовать частные номера SKU для управления доступностью предложений.
 services: Azure, Marketplace, Cloud Partner Portal,
-documentationcenter: ''
 author: dan-wesley
-manager: Patrick.Butler
-editor: ''
-ms.assetid: ''
 ms.service: marketplace
-ms.workload: ''
-ms.tgt_pltfrm: ''
-ms.devlang: ''
 ms.topic: conceptual
 ms.date: 09/13/2018
-ms.author: pbutlerm
-ms.openlocfilehash: dcc8b9fef75ba13b607d7fdda5bd55cc710165b9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.author: pabutler
+ms.openlocfilehash: 6efdb1c28777d9230727066fdba03d2850be62b0
+ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60561987"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64935905"
 ---
 <a name="private-skus-and-plans"></a>Частные номера SKU и планы
 ============

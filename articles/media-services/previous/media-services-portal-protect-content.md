@@ -14,14 +14,19 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/19/2019
 ms.author: juliako
-ms.openlocfilehash: c0571e202448951de0994d34f68e1649eabd5519
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 65e5b5502b7d63d89845781487443f539a708816
+ms.sourcegitcommit: e7d4881105ef17e6f10e8e11043a31262cfcf3b7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61128190"
+ms.lasthandoff: 04/29/2019
+ms.locfileid: "64866963"
 ---
 # <a name="configure-content-protection-policies-by-using-the-azure-portal"></a>Настройка политик защиты содержимого с помощью портала Azure
+
+> [!NOTE]
+> Для работы с этим учебником требуется учетная запись Azure. Дополнительные сведения см. в разделе [Бесплатная пробная версия Azure](https://azure.microsoft.com/pricing/free-trial/).   > Не новые компоненты или функциональные возможности добавляются в службы мультимедиа v2. <br/>Ознакомьтесь с новейшей версией Служб мультимедиа — [версией 3](https://docs.microsoft.com/azure/media-services/latest/). Кроме того, см. в разделе [руководство по миграции из версии 2 версии 3](../latest/migrate-from-v2-to-v3.md)
+>
+
  Службы мультимедиа Azure позволяют защитить данные мультимедиа, покидающие ваш компьютер, на этапах их хранения, обработки и доставки. С помощью служб мультимедиа Azure можно доставлять содержимое, динамически шифруемое с помощью алгоритма AES с 128-разрядным ключом шифрования. При использовании управления цифровыми правами (DRM) PlayReady и (или) Widevine и Apple FairPlay можно использовать шифрование CENC. 
 
 Службы мультимедиа также обеспечивают доставку лицензий DRM и незащищенных ключей AES авторизованным клиентам. На портале Azure можно создать единую политику авторизации ключей и лицензий для всех типов шифрования.
@@ -37,7 +42,7 @@ ms.locfileid: "61128190"
 
     ![Защита содержимого](./media/media-services-portal-content-protection/media-services-content-protection001.png)
 
-## <a name="keylicense-authorization-policy"></a>Политика авторизации ключа или лицензии
+## <a name="keylicense-authorization-policy"></a>политику авторизации ключей и лицензий
 Службы мультимедиа поддерживают несколько способов аутентификации пользователей, запрашивающих ключи или лицензии. Потребуется настроить политику авторизации для ключа содержимого. Чтобы клиенту можно было доставлять ключ или лицензию, он должен соответствовать политике. Для политики авторизации ключа содержимого можно задать одно или несколько ограничений: открытая авторизация или авторизация с помощью маркера.
 
 На портале можно создать единую политику авторизации ключей и лицензий для всех типов шифрования.
@@ -50,7 +55,7 @@ ms.locfileid: "61128190"
 
 При настройке политики ограничения по маркеру необходимо задать такие параметры, как основной ключ проверки, издатель и аудитория. Основной ключ проверки содержит ключ, которым был подписан маркер. Издателем является служба токенов безопасности, которая выдает токен. Аудитория (иногда называется областью) описывает назначение маркера или ресурс, доступ к которому обеспечивает маркер. Служба доставки ключей служб мультимедиа проверяет, соответствуют ли эти значения в маркере значениям в шаблоне.
 
-![Политика авторизации ключа или лицензии](./media/media-services-portal-content-protection/media-services-content-protection002.png)
+![политику авторизации ключей и лицензий](./media/media-services-portal-content-protection/media-services-content-protection002.png)
 
 ## <a name="playready-license-template"></a>Шаблон лицензии PlayReady
 Шаблон лицензии PlayReady позволяет включить функции в лицензии PlayReady. Дополнительные сведения о шаблоне лицензии PlayReady см. в статье [Обзор шаблонов лицензий PlayReady служб мультимедиа](media-services-playready-license-template-overview.md).
@@ -76,10 +81,10 @@ ms.locfileid: "61128190"
 
 ![Расширенная защита содержимого](./media/media-services-portal-content-protection/media-services-content-protection005.png)
 
-## <a name="fairplay-configuration"></a>Конфигурация FairPlay
+## <a name="fairplay-configuration"></a>Настройка FairPlay
 Чтобы включить шифрование FairPlay, выберите **Конфигурация FairPlay**. Выберите **Сертификат приложения** и введите **Секретный ключ приложения**. Дополнительные требования и сведения о конфигурации FairPlay см. в разделе [Защита содержимого HLS с помощью Apple FairPlay или Microsoft PlayReady](media-services-protect-hls-with-FairPlay.md).
 
-![Конфигурация FairPlay](./media/media-services-portal-content-protection/media-services-content-protection006.png)
+![Настройка FairPlay](./media/media-services-portal-content-protection/media-services-content-protection006.png)
 
 ## <a name="apply-dynamic-encryption-to-your-asset"></a>Применение динамического шифрования к ресурсу-контейнеру
 Чтобы воспользоваться преимуществами динамического шифрования, необходимо закодировать исходный файл в набор MP4-файлов с переменной скоростью.

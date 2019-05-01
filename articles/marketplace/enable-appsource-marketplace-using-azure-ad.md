@@ -2,24 +2,18 @@
 title: Включение описания в Microsoft AppSource и Azure Marketplace с помощью Azure Active Directory | Azure
 description: Включение типа описания с помощью Azure Active Directory в Azure Marketplace и AppSource для издателей приложений и служб.
 services: Azure, AppSource, Marketplace, Compute, Storage, Networking, Blockchain, Security
-documentationcenter: ''
 author: qianw211
 manager: pabutler
-editor: ''
-ms.assetid: ''
 ms.service: marketplace
-ms.workload: ''
-ms.tgt_pltfrm: ''
-ms.devlang: ''
 ms.topic: article
 ms.date: 09/12/2018
 ms.author: qianw211
-ms.openlocfilehash: 247a45a38d732ace0455c6ca2ebbd5c44c384004
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 981d9427dc8407c7300f01c941e39ba9723d53a8
+ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60734258"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64938085"
 ---
 # <a name="enable-an-appsource-and-marketplace-listing-by-using-azure-active-directory"></a>Включение описания в AppSource и Marketplace с помощью Azure Active Directory
 
@@ -40,13 +34,13 @@ ms.locfileid: "60734258"
 
 | **Тип предложения**    | **Требования к единому входу в Azure AD**  |  |   |  |
 | :------------------- | :-------------------|:-------------------|:-------------------|:-------------------|
-|  | Свяжитесь со мной | Пробная версия | Тестовый выпуск | Обращение |
-| Виртуальная машина | Н/Д | Нет | Нет | Нет |
+|  | Связь со мной | Пробная версия | Тестовый выпуск | "Транзакция" |
+| Виртуальная машина | Н/Д | Нет  | Нет  | Нет  |
 | Приложения Azure (шаблон решения)  | Н/Д | Н/Д | Н/Д | Н/Д |
-| Управляемые приложения  | Н/Д | Н/Д | Н/Д | Нет |
-| SaaS  | Нет | Да | Да | Да |
-| Контейнеры  | Н/Д | Н/Д | Н/Д | Нет |
-| Консультационные услуги  | Нет | Н/Д | Н/Д | Н/Д |
+| Управляемые приложения  | Н/Д | Н/Д | Н/Д | Нет  |
+| SaaS  | Нет  | Да | Да | Yes |
+| Контейнеры  | Н/Д | Н/Д | Н/Д | Нет  |
+| Консультационные услуги  | Нет  | Н/Д | Н/Д | Н/Д |
 
 Дополнительные сведения о технических требованиях к SaaS см. в статье [Руководство по публикации SaaS-приложений](https://docs.microsoft.com/azure/marketplace/marketplace-saas-applications-technical-publishing-guide).
 

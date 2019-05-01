@@ -9,11 +9,11 @@ ms.topic: article
 ms.workload: powerbi
 ms.date: 09/20/2017
 ms.openlocfilehash: 2d0c8629e4abf9e27cd204b9a13b79808b177501
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
-ms.translationtype: HT
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62103639"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64715201"
 ---
 # <a name="row-level-security-with-power-bi-workspace-collections"></a>Безопасность уровня строк в коллекциях рабочих областей Power BI
 
@@ -55,7 +55,7 @@ ms.locfileid: "62103639"
 
 Если в рамках этой схемы к столбцу **Региональный менеджер** в таблице "Район" применить фильтр, соответствующий пользователю, просматривающему отчет, таблицы **Хранилище** и **Продажи** будут также отфильтрованы. В результате отобразятся данные только для этого конкретного регионального менеджера.
 
-Этот процесс описан далее.
+Этот процесс описывается далее.
 
 1. На вкладке "Моделирование" щелкните **Управление ролями**.  
    ![Кнопка "Управление ролями" на ленте "Моделирование"](media/row-level-security/modeling-tab-5.png)
@@ -99,7 +99,7 @@ ms.locfileid: "62103639"
 
     var embedToken = PowerBIToken.CreateReportEmbedToken(this.workspaceCollection, this.workspaceId, report.Id);
 
-до
+значение
 
     var embedToken = PowerBIToken.CreateReportEmbedToken(this.workspaceCollection, this.workspaceId, report.Id, "Andrew Ma", ["Manager"]);'
 

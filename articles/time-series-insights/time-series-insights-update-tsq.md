@@ -10,12 +10,12 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 12/04/2018
 ms.custom: seodec18
-ms.openlocfilehash: 7885473d029556e10663675a9886c7ea3b9c709c
-ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
-ms.translationtype: HT
+ms.openlocfilehash: 0b1c43cb82d6dc2b7f0708dee8471f077befe349
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53555427"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64722156"
 ---
 # <a name="data-querying"></a>Запрашивание данных
 
@@ -73,13 +73,13 @@ ms.locfileid: "53555427"
 
   Поддерживаемые типы статистических выражений: `Min`, `Max`, `Sum`, `Count`, `Average`
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-См. следующие сведения:
+- Дополнительные сведения о [хранилища и входящих данных](./time-series-insights-update-storage-ingress.md) предварительной версии Azure время Series Insights.
 
-- [Хранилище и входящий трафик в предварительной версии службы "Аналитика временных рядов Azure"](./time-series-insights-update-storage-ingress.md)
-- [Моделирование данных](./time-series-insights-update-tsm.md)
-- [Лучшие методики при выборе идентификатора временного ряда](./time-series-insights-update-how-to-id.md)
+- Чтение предварительного просмотра Insights рядов во время [моделирование данных](./time-series-insights-update-tsm.md) статьи.
+
+- Обнаружение [советы и рекомендации при выборе идентификатор ряда времени](./time-series-insights-update-how-to-id.md).
 
 <!-- Images -->
 [1]: media/v2-update-tsq/tsq.png

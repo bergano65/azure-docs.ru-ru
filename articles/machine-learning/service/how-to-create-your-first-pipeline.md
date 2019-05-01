@@ -9,14 +9,14 @@ ms.topic: conceptual
 ms.reviewer: sgilley
 ms.author: sanpil
 author: sanpil
-ms.date: 01/08/2019
+ms.date: 05/02/2019
 ms.custom: seodec18
-ms.openlocfilehash: 2e6bc0fd9de4fdba1188b40c49ebf9459d684d38
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 3ec3e915c26abf38653d1bddfe0a5ba44d5e6de1
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60819890"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64914892"
 ---
 # <a name="create-and-run-a-machine-learning-pipeline-by-using-azure-machine-learning-sdk"></a>Создание и запуск конвейера машинного обучения с помощью пакета SDK для машинного обучения Azure
 
@@ -113,7 +113,7 @@ output_data1 = PipelineData(
 
 * Вычислительная среда Машинного обучения Azure;
 * Azure Databricks 
-* Azure Data Lake Analytics
+* Аналитика озера данных Azure
 
 ### <a name="azure-machine-learning-compute"></a>Вычислительная среда Машинного обучения Azure;
 
@@ -359,6 +359,7 @@ response = requests.post(published_pipeline1.endpoint,
     json={"ExperimentName": "My_Pipeline",
         "ParameterAssignments": {"pipeline_arg": 20}})
 ```
+
 ## <a name="view-results"></a>Просмотр результатов
 
 Просмотрите список всех конвейеров и подробные сведения об их запуске.
@@ -368,6 +369,25 @@ response = requests.post(published_pipeline1.endpoint,
  ![Список конвейеров машинного обучения](./media/how-to-create-your-first-pipeline/list_of_pipelines.png)
  
 1. Выберите конкретный конвейер, чтобы просмотреть результаты его запуска.
+
+## <a name="caching--reuse"></a>Кэширование и повторное использование  
+
+Чтобы оптимизировать и настроить поведение конвейеров можно выполнить ряд действий по кэширование и повторное использование. Например вы можете:
++ **Отключить повторное использование по умолчанию выходные данные запуска шага** , задав `allow_reuse=False` во время [шаг определения](https://docs.microsoft.com/python/api/azureml-pipeline-steps/?view=azure-ml-py)
++ **Расширить хэширования за пределами скрипта**, включив в абсолютный путь или относительные пути к исходный_каталог на другие файлы и каталоги с помощью `hash_paths=['<file or directory']` 
++ **Выполните принудительное пересоздание выходные данные для всех шагов в сеансе** с `pipeline_run = exp.submit(pipeline, regenerate_outputs=False)`
+
+По умолчанию шаг повторно использовать включен и хэшируется только основного файла сценария. Таким образом, если скрипт для данного шага остается неизменным (`script_name`, входные данные и параметры), выходные данные предыдущего выполнения шага используется повторно, задание не будет отправлено для вычислительных ресурсов и результаты из предыдущего запуска сразу к следующему шагу вместо них доступны .  
+
+```python
+step = PythonScriptStep(name="Hello World", 
+                        script_name="hello_world.py",  
+                        compute_target=aml_compute,  
+                        source_directory= source_directory, 
+                        allow_reuse=False, 
+                        hash_paths=['hello_world.ipynb']) 
+```
+ 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - Используйте [эти записные книжки Jupyter на сайте GitHub](https://aka.ms/aml-pipeline-readme), чтобы подробнее изучить конвейеры машинного обучения.

@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 04/02/2018
 ms.author: wesmc
 ms.openlocfilehash: 49e0db690818e67f96f5bcefa4f581b1db6da451
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
-ms.translationtype: HT
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62125582"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64697336"
 ---
 # <a name="choose-the-right-iot-hub-tier-for-your-solution"></a>Выбор правильного уровня Центра Интернета вещей для решения
 
@@ -37,20 +37,20 @@ ms.locfileid: "62125582"
 
 | Функция | Уровень Basic | Уровня "бесплатно" или "стандартный" |
 | ---------- | ---------- | ------------- |
-| [Телеметрия "С устройства в облако"](iot-hub-devguide-messaging.md) | Да | Да |
-| [Удостоверение для каждого устройства](iot-hub-devguide-identity-registry.md) | Да | Да |
-| [Маршрутизация сообщений](iot-hub-devguide-messages-read-custom.md) и [интеграция службы "Сетка событий"](iot-hub-event-grid.md) | Да | Да |
-| [Протоколы HTTP, AMQP и MQTT](iot-hub-devguide-protocols.md) | Да | Да |
-| [Служба подготовки устройств](../iot-dps/about-iot-dps.md) | Да | Да |
-| [Мониторинг и диагностика](iot-hub-monitor-resource-health.md) | Да | Да |
-| [Передача сообщений из облака на устройство](iot-hub-devguide-c2d-guidance.md) |   | Да |
-| [Двойники устройств](iot-hub-devguide-device-twins.md), [двойники модулей](iot-hub-devguide-module-twins.md) и [управление устройствами](iot-hub-device-management-overview.md) |   | Да |
-| [Потоки устройств (предварительная версия)](iot-hub-device-streams-overview.md) |   | Да |
-| [Edge Интернета вещей Azure](../iot-edge/about-iot-edge.md) |   | Да |
+| [Телеметрия "С устройства в облако"](iot-hub-devguide-messaging.md) | Yes | Yes |
+| [Удостоверение для каждого устройства](iot-hub-devguide-identity-registry.md) | Yes | Yes |
+| [Маршрутизация сообщений](iot-hub-devguide-messages-read-custom.md) и [интеграция службы "Сетка событий"](iot-hub-event-grid.md) | Yes | Yes |
+| [Протоколы HTTP, AMQP и MQTT](iot-hub-devguide-protocols.md) | Yes | Yes |
+| [Служба подготовки устройств](../iot-dps/about-iot-dps.md) | Yes | Yes |
+| [Мониторинг и диагностика](iot-hub-monitor-resource-health.md) | Yes | Yes |
+| [Передача сообщений из облака на устройство](iot-hub-devguide-c2d-guidance.md) |   | Yes |
+| [Двойники устройств](iot-hub-devguide-device-twins.md), [двойники модулей](iot-hub-devguide-module-twins.md) и [управление устройствами](iot-hub-device-management-overview.md) |   | Yes |
+| [Потоки устройств (предварительная версия)](iot-hub-device-streams-overview.md) |   | Yes |
+| [Edge Интернета вещей Azure](../iot-edge/about-iot-edge.md) |   | Yes |
 
 Центр Интернета вещей также предлагает уровень "Бесплатный", который предназначен для тестирования и оценки. Он обладает всеми возможностями уровня "Стандартный", но ограничен квотами на сообщения. С уровня "Бесплатный" нельзя обновиться до уровня "Базовый" или "Стандартный".
 
-## <a name="partitions"></a>Секции
+## <a name="partitions"></a>Разделы
 
 Центры Интернета вещей Azure содержат несколько основных компонентов [Центров событий Azure](../event-hubs/event-hubs-features.md), включая [секции](../event-hubs/event-hubs-features.md#partitions). Потоки событий для Центров Интернета вещей обычно заполняются входящими данными телеметрии, которые сообщают различные устройства Интернета вещей. Секционирование потока событий используется для сокращения конфликтов, возникающих при одновременном считывании потоков событий и записи в эти потоки.
 
@@ -68,34 +68,34 @@ ms.locfileid: "62125582"
 
 | API | Уровень Basic | Уровня "бесплатно" или "стандартный" |
 | --- | ---------- | ------------- |
-| [Удаление устройства](https://docs.microsoft.com/rest/api/iothub/service/deletedevice) | Да | Да |
-| [Получение устройства](https://docs.microsoft.com/rest/api/iothub/service/getdevice) | Да | Да |
-| Удаление модуля | Да | Да |
-| Получение модуля | Да | Да |
-| [Получение статистики реестра](https://docs.microsoft.com/rest/api/iothub/service/getdeviceregistrystatistics) | Да | Да |
-| [Получение статистики службы](https://docs.microsoft.com/rest/api/iothub/service/getservicestatistics) | Да | Да |
-| [Создание или обновление устройства](https://docs.microsoft.com/rest/api/iothub/service/createorupdatedevice) | Да | Да |
-| Отправка модуля | Да | Да |
-| [Отправка запроса в Центр Интернета вещей](https://docs.microsoft.com/rest/api/iothub/service/queryiothub) | Да | Да |
-| Запрос модулей | Да | Да |
-| [Создание URI SAS отправки файла](https://docs.microsoft.com/rest/api/iothub/device/createfileuploadsasuri) | Да | Да |
-| [Получение связанного с устройством уведомления](https://docs.microsoft.com/rest/api/iothub/device/receivedeviceboundnotification) | Да | Да |
-| [Отправка события устройства](https://docs.microsoft.com/rest/api/iothub/device/senddeviceevent) | Да | Да |
-| Отправка события модуля | Да | Да |
-| [Обновление состояния отправки устройства](https://docs.microsoft.com/rest/api/iothub/device/updatefileuploadstatus) | Да | Да |
-| [Массовые операции устройств](/rest/api/iot-dps/runbulkenrollmentgroupoperation/runbulkenrollmentgroupoperation) | Да, за исключением возможностей IoT Edge | Да | 
-| [Очистка очереди команд](https://docs.microsoft.com/rest/api/iothub/service/purgecommandqueue) |   | Да |
-| [Получение двойника устройства](https://docs.microsoft.com/rest/api/iothub/service/gettwin) |   | Да |
-| Получение двойника модуля |   | Да |
-| [Вызов метода устройства](https://docs.microsoft.com/rest/api/iothub/service/invokedevicemethod) |   | Да |
-| [Обновление двойников устройств](https://docs.microsoft.com/rest/api/iothub/service/updatetwin) |   | Да | 
-| Обновление двойника модуля |   | Да | 
-| [Отказ от связанного с устройством уведомления](https://docs.microsoft.com/rest/api/iothub/device/abandondeviceboundnotification) |   | Да |
-| [Полное связанное с устройством уведомление](https://docs.microsoft.com/rest/api/iothub/device/completedeviceboundnotification) |   | Да |
-| [Отмена задания](https://docs.microsoft.com/rest/api/iothub/service/canceljob) |   | Да |
-| [Создание задания](https://docs.microsoft.com/rest/api/iothub/service/createjob) |   | Да |
-| [Получение задания](https://docs.microsoft.com/rest/api/iothub/service/getjob) |   | Да |
-| [Запрос заданий](https://docs.microsoft.com/rest/api/iothub/service/queryjobs) |   | Да |
+| [Удаление устройства](https://docs.microsoft.com/rest/api/iothub/service/deletedevice) | Yes | Yes |
+| [Получение устройства](https://docs.microsoft.com/rest/api/iothub/service/getdevice) | Yes | Yes |
+| Удаление модуля | Yes | Yes |
+| Получение модуля | Yes | Yes |
+| [Получение статистики реестра](https://docs.microsoft.com/rest/api/iothub/service/getdeviceregistrystatistics) | Yes | Yes |
+| [Получение статистики службы](https://docs.microsoft.com/rest/api/iothub/service/getservicestatistics) | Yes | Yes |
+| [Создание или обновление устройства](https://docs.microsoft.com/rest/api/iothub/service/createorupdatedevice) | Yes | Yes |
+| Отправка модуля | Yes | Yes |
+| [Отправка запроса в Центр Интернета вещей](https://docs.microsoft.com/rest/api/iothub/service/queryiothub) | Yes | Yes |
+| Запрос модулей | Yes | Yes |
+| [Создание URI SAS отправки файла](https://docs.microsoft.com/rest/api/iothub/device/createfileuploadsasuri) | Yes | Yes |
+| [Получение связанного с устройством уведомления](https://docs.microsoft.com/rest/api/iothub/device/receivedeviceboundnotification) | Yes | Yes |
+| [Отправка события устройства](https://docs.microsoft.com/rest/api/iothub/device/senddeviceevent) | Yes | Yes |
+| Отправка события модуля | Yes | Yes |
+| [Обновление состояния отправки устройства](https://docs.microsoft.com/rest/api/iothub/device/updatefileuploadstatus) | Yes | Yes |
+| [Массовые операции устройств](/rest/api/iot-dps/runbulkenrollmentgroupoperation/runbulkenrollmentgroupoperation) | Да, за исключением возможностей IoT Edge | Yes | 
+| [Очистка очереди команд](https://docs.microsoft.com/rest/api/iothub/service/purgecommandqueue) |   | Yes |
+| [Получение двойника устройства](https://docs.microsoft.com/rest/api/iothub/service/gettwin) |   | Yes |
+| Получение двойника модуля |   | Yes |
+| [Вызов метода устройства](https://docs.microsoft.com/rest/api/iothub/service/invokedevicemethod) |   | Yes |
+| [Обновление двойников устройств](https://docs.microsoft.com/rest/api/iothub/service/updatetwin) |   | Yes | 
+| Обновление двойника модуля |   | Yes | 
+| [Отказ от связанного с устройством уведомления](https://docs.microsoft.com/rest/api/iothub/device/abandondeviceboundnotification) |   | Yes |
+| [Полное связанное с устройством уведомление](https://docs.microsoft.com/rest/api/iothub/device/completedeviceboundnotification) |   | Yes |
+| [Отмена задания](https://docs.microsoft.com/rest/api/iothub/service/canceljob) |   | Yes |
+| [Создание задания](https://docs.microsoft.com/rest/api/iothub/service/createjob) |   | Yes |
+| [Получение задания](https://docs.microsoft.com/rest/api/iothub/service/getjob) |   | Yes |
+| [Запрос заданий](https://docs.microsoft.com/rest/api/iothub/service/queryjobs) |   | Yes |
 
 ## <a name="message-throughput"></a>Пропускная способность сообщений
 

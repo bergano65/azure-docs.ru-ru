@@ -11,12 +11,12 @@ ms.author: davidph
 ms.reviewer: carlrab
 manager: cgronlun
 ms.date: 03/01/2019
-ms.openlocfilehash: 172bf201e2327f5ae8db0ac3c82f2f07e3f0ffc9
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.openlocfilehash: b33561ad80207a5d649ac1fd497c9d6c7add78c6
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59997484"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64723987"
 ---
 # <a name="azure-sql-database-machine-learning-services-with-r-preview"></a>SQL базы данных службы машинного обучения Azure с помощью R (Предварительная версия)
 
@@ -69,6 +69,6 @@ In addition to the pre-installed packages, you can [install additional packages]
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- См. [Key differences for Machine Learning Services (with R) in Azure SQL Database (Preview) Overview](sql-database-machine-learning-services-differences.md) (Общие сведения об основных различиях для Служб машинного обучения (с использованием R) в Базе данных SQL Azure (предварительная версия)).
-- См. [Краткое руководство: использование Служб машинного обучения (с использованием R) в Базе данных SQL Azure (предварительная версия)](sql-database-connect-query-r.md).
-- [Руководства по языку R в SQL Server](https://docs.microsoft.com/sql/advanced-analytics/tutorials/sql-server-r-tutorials)
+- См. в разделе [основные различия от службы машинного обучения SQL Server](sql-database-machine-learning-services-differences.md).
+- Чтобы узнать, как использовать R для запроса SQL базы данных служб машинного обучения Azure (Предварительная версия), см. в разделе [краткого руководства по](sql-database-connect-query-r.md).
+- Чтобы начать работу с некоторые простые скрипты R, см. в разделе [Создание и выполнение простых сценариев R в SQL базы данных служб машинного обучения Azure (Предварительная версия)](sql-database-quickstart-r-create-script.md).

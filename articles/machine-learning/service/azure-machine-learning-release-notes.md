@@ -10,12 +10,12 @@ ms.author: larryfr
 author: Blackmist
 ms.date: 04/08/2019
 ms.custom: seodec18
-ms.openlocfilehash: e79e610638b5ff271607da2e8855003707ea5932
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: cdd639f690d98651661226fbd340964dfdc7861f
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60821287"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64914920"
 ---
 # <a name="azure-machine-learning-service-release-notes"></a>Заметки о выпуске службы "Машинное обучение Azure"
 
@@ -38,7 +38,7 @@ ms.locfileid: "60821287"
   + Теперь можно использовать преобразование Pivot.
     + Руководство: [Записная книжка PIVOT](https://aka.ms/aml-data-prep-pivot-nb)
   + Теперь можно использовать регулярные выражения в собственных функций.
-    + Примеры.
+    + Примеры:
       + `dflow.filter(dprep.RegEx('pattern').is_match(dflow['column_name']))`
       + `dflow.assert_value('column_name', dprep.RegEx('pattern').is_match(dprep.value))`
   + Теперь вы можете использовать `to_upper`  и `to_lower`  функций в язык выражений.
@@ -69,7 +69,7 @@ ms.locfileid: "60821287"
 + **Новые функции**
   + Пакета SDK для Azure Machine Learning теперь поддерживает Python 3.7.
   + Azure Machine Learning DNN совместном теперь предоставляют встроенную поддержку нескольких версий. Например `TensorFlow`  оценщика теперь принимает `framework_version` версию «1.10"или «1.12" можно указать параметр и пользователей. Список версий, поддерживаемых текущего выпуска пакета SDK, вызовите `get_supported_versions()` в классе нужной платформы (например `TensorFlow.get_supported_versions()`).
-  Список версий, поддерживаемых последним выпуском пакета SDK, см. в разделе [документации оценщика DNN](https://docs.microsoft.com/en-us/python/api/azureml-train-core/azureml.train.dnn?view=azure-ml-py).
+  Список версий, поддерживаемых последним выпуском пакета SDK, см. в разделе [документации оценщика DNN](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn?view=azure-ml-py).
 
 ### <a name="azure-machine-learning-data-prep-sdk-v111"></a>Пакет SDK версии 1.1.1 подготовки данных машинного обучения Azure
 
@@ -143,13 +143,13 @@ ms.locfileid: "60821287"
 
 + **Новые функции**
 
-  + Машинное обучение Azure теперь предоставляет первоклассную поддержку для популярная платформа DNN формирователя цепочки. С помощью [ `Chainer` ](https://docs.microsoft.com/en-us/python/api/azureml-train-core/azureml.train.dnn.chainer?view=azure-ml-py) класс пользователям легко обучать и развертывать модели формирователя цепочки.
+  + Машинное обучение Azure теперь предоставляет первоклассную поддержку для популярная платформа DNN формирователя цепочки. С помощью [ `Chainer` ](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.chainer?view=azure-ml-py) класс пользователям легко обучать и развертывать модели формирователя цепочки.
     + Узнайте, как [запуска распределенного обучения с ChainerMN](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training-with-deep-learning/distributed-chainer/distributed-chainer.ipynb)
     + Узнайте, как [выполнения настройки гиперпараметров с помощью HyperDrive формирователя цепочки](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training-with-deep-learning/train-hyperparameter-tune-deploy-with-chainer/train-hyperparameter-tune-deploy-with-chainer.ipynb)
   + Azure конвейеры машинного обучения добавлен триггер возможность выполнения конвейера на основании изменений в хранилище данных. Конвейер [записной книжки расписание](https://aka.ms/pl-schedule) обновляется, чтобы продемонстрировать эту функцию.
 
 + **Исправления ошибок и улучшения**
-  + Добавлена поддержка Azure конвейеры машинного обучения для задания этого свойства source_directory_data_store нужное хранилище данных (например, хранилище BLOB-объектов) на [RunConfigurations](https://docs.microsoft.com/en-us/python/api/azureml-core/azureml.core.runconfig.runconfiguration?view=azure-ml-py) , будут заданы [ PythonScriptStep](https://docs.microsoft.com/en-us/python/api/azureml-pipeline-steps/azureml.pipeline.steps.python_script_step.pythonscriptstep?view=azure-ml-py). По умолчанию действия используют хранилище файлов Azure в резервное хранилище данных запускается в проблем регулирования, когда большое количество действия выполняются параллельно.
+  + Добавлена поддержка Azure конвейеры машинного обучения для задания этого свойства source_directory_data_store нужное хранилище данных (например, хранилище BLOB-объектов) на [RunConfigurations](https://docs.microsoft.com/python/api/azureml-core/azureml.core.runconfig.runconfiguration?view=azure-ml-py) , будут заданы [ PythonScriptStep](https://docs.microsoft.com/python/api/azureml-pipeline-steps/azureml.pipeline.steps.python_script_step.pythonscriptstep?view=azure-ml-py). По умолчанию действия используют хранилище файлов Azure в резервное хранилище данных запускается в проблем регулирования, когда большое количество действия выполняются параллельно.
 
 ### <a name="azure-portal"></a>Портал Azure
 
@@ -263,7 +263,7 @@ ms.locfileid: "60821287"
 + **Обновления**
   * [Примеры записных книжек](https://aka.ms/aml-data-prep-notebooks) для руководств по началу работы, примеров использования и практических руководств.
 
-## <a name="2018-12-04-general-availability"></a>04.12.2018: Общая доступность
+## <a name="2018-12-04-general-availability"></a>04.12.2018: Общедоступная версия
 
 Выпущена общедоступная версия Службы машинного обучения Azure.
 

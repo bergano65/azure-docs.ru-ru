@@ -10,14 +10,14 @@ ms.reviewer: jehollan, klam, LADocs
 ms.topic: article
 ms.assetid: 19cbd921-7071-4221-ab86-b44d0fc0ecef
 ms.date: 08/25/2018
-ms.openlocfilehash: 1d3c4039ae823d3797e768af5892333d4d925268
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 89e1330dae65e0cea891407764a0ef20a2f41d81
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60996313"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64916428"
 ---
-# <a name="scenario-trigger-logic-apps-with-azure-functions-and-azure-service-bus"></a>Сценарий: Запуск приложения логики с помощью функций Azure и служебной шины Azure
+# <a name="scenario-trigger-logic-apps-with-azure-functions-and-azure-service-bus"></a>Сценарий. Запуск приложения логики с помощью функций Azure и служебной шины Azure
 
 Можно использовать функции Azure для создания триггера приложения логики, когда требуется развернуть долго выполняющиеся прослушиватели или задачи. Например, можно создать функцию, которая ожидает передачи данных из очереди и немедленно запускает извещающим триггером приложение логики.
 
@@ -39,7 +39,7 @@ ms.locfileid: "60996313"
 
 1. В поле поиска введите фильтр "HTTP-запрос". В списке триггеров выберите триггер: **При получении HTTP-запроса**
 
-   ![Выбрать триггер](./media/logic-apps-scenario-function-sb-trigger/when-http-request-received-trigger.png)
+   ![Выбор триггера](./media/logic-apps-scenario-function-sb-trigger/when-http-request-received-trigger.png)
 
 1. Для триггера **Запрос** вы можете при необходимости ввести схему JSON для использования с сообщением очереди. Схемы JSON помогают конструктору приложений логики понять структуру входных данных и упрощают выбор выходов в рабочем процессе. 
 

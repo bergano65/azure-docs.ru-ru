@@ -5,16 +5,16 @@ services: service-fabric-mesh
 keywords: ''
 author: chackdan
 ms.author: chackdan
-ms.date: 12/12/2018
+ms.date: 4/23/2019
 ms.topic: troubleshooting
 ms.service: service-fabric-mesh
 manager: jeanpaul.connock
-ms.openlocfilehash: 27cf4d31f11eaf861d1cafc093d912aa15c8bec0
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
-ms.translationtype: HT
+ms.openlocfilehash: 7f3bed454bce90d797ca5829043c7e5f8ce5b051
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55979757"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64728580"
 ---
 # <a name="commonly-asked-service-fabric-mesh-questions"></a>Распространенные вопросы о службе "Сетка Service Fabric"
 
@@ -28,7 +28,7 @@ ms.locfileid: "55979757"
 
 ### <a name="what-is-the-cost-of-participating-in-the-preview"></a>Какова стоимость использования предварительной версии?
 
-Плата за развертывание приложений или контейнеров в предварительной версии службы "Сетка" на данный момент не взимается. Тем не менее рекомендуется удалять развернутые ресурсы и не оставлять их работающими, если только они не используются для тестирования.
+Плата за развертывание приложений или контейнеров в предварительной версии службы "Сетка" на данный момент не взимается. Тем не менее, мы рекомендуем удалить ресурсы, развертывания и не оставляйте их выполнение, если вы тестируете активно их.
 
 ### <a name="is-there-a-quota-limit-of-the-number-of-cores-and-ram"></a>Существует ли предел квоты числа ядер и объема ОЗУ?
 
@@ -77,7 +77,9 @@ ms.locfileid: "55979757"
 
 Чтобы удалить группу ресурсов, используйте команду `az group delete <nameOfResourceGroup>`.
 
-## <a name="supported-container-os-images"></a>Поддерживаемые образы ОС контейнера
+## <a name="deployments"></a>Развернутые приложения
+
+### <a name="what-container-images-are-supported"></a>Какие образы контейнера поддерживаются?
 
 При разработке на компьютере с обновлением Windows Fall Creators (версия 1709) можно использовать только образы Docker для Windows версии 1709.
 
@@ -90,6 +92,10 @@ ms.locfileid: "55979757"
     - Windows Server, версия 1803
 - Linux
     - Известные ограничения отсутствуют
+
+### <a name="what-types-of-applications-can-i-deploy"></a>Какие типы приложений можно развернуть? 
+
+Вы можете развернуть все, что выполняется в контейнерах, которые соответствуют ограничениям по уделено ресурса приложения (см. выше Дополнительные сведения о квотах). Если будет обнаружено, при использовании сетки для выполнения рабочих нагрузок недопустимые или отправку системы (т. е. интеллектуального анализа данных), затем мы оставляем за собой право в прекратить развертываний и списка блокировок свою подписку на службу. Свяжитесь с нами, если у вас есть вопросы о выполнении конкретной рабочей нагрузки. 
 
 ## <a name="developer-experience-issues"></a>Проблемы, с которыми может столкнуться разработчик
 
@@ -155,6 +161,6 @@ EXPOSE 80
 
 Над устранением этой ошибки работают.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы узнать больше о службе "Сетка Service Fabric", прочитайте этот [обзор](service-fabric-mesh-overview.md).

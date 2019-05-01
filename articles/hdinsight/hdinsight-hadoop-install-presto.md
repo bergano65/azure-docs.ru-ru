@@ -1,7 +1,6 @@
 ---
 title: Установка Presto в кластерах Azure HDInsight на основе Linux
 description: Узнайте, как устанавливать Presto и Airpal в кластерах HDInsight Hadoop на основе Linux с помощью действий сценария.
-services: hdinsight
 author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
@@ -9,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 01/01/2019
 ms.author: hrasheed
-ms.openlocfilehash: 435c041bb5fb0a398f92914f943166108cc20080
-ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
+ms.openlocfilehash: 2bd5e1ae02ffbb62b9a5a95846aabeeab2b448b5
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58258349"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64704808"
 ---
 # <a name="install-and-use-presto-on-hadoop-based-hdinsight-clusters"></a>Установка и использование Presto в кластерах HDInsight Hadoop
 
@@ -26,7 +25,7 @@ ms.locfileid: "58258349"
 > Для выполнения действий, описанных в этой статье, необходим кластер Hadoop для HDInsight 3.5 под управлением Linux. Linux — это единственная операционная система, используемая для работы с HDInsight 3.4 или более поздних версий. Дополнительные сведения см. в статье [Что представляют собой различные компоненты и версии Hadoop, доступные в HDInsight?](hdinsight-component-versioning.md)
 
 ## <a name="what-is-presto"></a>Что такое Presto?
-[Presto](https://prestodb.io/overview.html) представляет собой быстрый распределенный модуль SQL-запросов для больших данных. Presto подходит для интерактивных запросов петабайт данных. Дополнительные сведения о компонентах Presto и их совместной работе см. в статье [Presto Concepts](https://github.com/prestodb/presto/blob/master/presto-docs/src/main/sphinx/overview/concepts.rst) (Концепции Presto).
+[Presto](https://prestosql.io) представляет собой быстрый распределенный модуль SQL-запросов для больших данных. Presto подходит для интерактивных запросов петабайт данных. Дополнительные сведения о компонентах Presto и их совместной работе см. в статье [Presto Concepts](https://prestosql.io/docs/current/overview/concepts.html) (Концепции Presto).
 
 > [!WARNING]  
 > Компоненты, поставляемые с кластером HDInsight, полностью поддерживаются. Служба поддержки Майкрософт помогает выявлять и устранять проблемы, связанные с этими компонентами.
@@ -86,9 +85,9 @@ ms.locfileid: "58258349"
    
     `select count (*) from hivesampletable;`
    
-    По умолчанию соединители [Apache Hive](https://prestodb.io/docs/current/connector/hive.html) и [TPCH](https://prestodb.io/docs/current/connector/tpch.html) для Presto уже настроены. Соединитель Hive настроен на использование установки Hive по умолчанию. Таким образом, все таблицы из Hive автоматически отображаются в Presto.
+    По умолчанию соединители [Apache Hive](https://prestosql.io/docs/current/connector/hive.html) и [TPCH](https://prestosql.io/docs/current/connector/tpch.html) для Presto уже настроены. Соединитель Hive настроен на использование установки Hive по умолчанию. Таким образом, все таблицы из Hive автоматически отображаются в Presto.
 
-    Дополнительные сведения см. в [документации по Presto](https://prestodb.io/docs/current/index.html).
+    Дополнительные сведения см. в [документации по Presto](https://prestosql.io/docs/current/index.html).
 
 ## <a name="use-airpal-with-presto"></a>Использование Airpal с Presto
 
@@ -151,7 +150,7 @@ ms.locfileid: "58258349"
    
     Дополнительные сведения см. в руководстве по [подключению к HDInsight (Apache Hadoop) с помощью SSH](hdinsight-hadoop-linux-use-ssh-unix.md).
 
-2. Внесите изменения конфигурации в файл `/var/lib/presto/presto-hdinsight-master/appConfig-default.json`. Дополнительные сведения о конфигурации Presto см. в статье [Presto Configuration Options for YARN-Based Clusters](https://prestodb.io/presto-yarn/installation-yarn-configuration-options.html) (Конфигурация параметров Presto для кластеров на базе YARN).
+2. Внесите изменения конфигурации в файл `/var/lib/presto/presto-hdinsight-master/appConfig-default.json`. Дополнительные сведения о конфигурации Presto см. в статье [Presto Configuration Options for YARN-Based Clusters](https://prestosql.github.io/presto-yarn/installation-yarn-configuration-options.html) (Конфигурация параметров Presto для кластеров на базе YARN).
 
 3. Остановите и отмените текущий выполняемый экземпляр Presto.
 

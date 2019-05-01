@@ -8,12 +8,12 @@ ms.devlang: multiple
 ms.topic: article
 ms.date: 04/22/2019
 ms.author: cawa
-ms.openlocfilehash: 3db1d638aa1e0d8488c310593a593465c2b9b336
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
-ms.translationtype: HT
+ms.openlocfilehash: 4ee91a91a20cbffebf7453ba573266962aa35806
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62128285"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64924735"
 ---
 # <a name="get-started-with-storage-explorer"></a>Начало работы с Обозревателем службы хранилища
 
@@ -55,7 +55,7 @@ ms.locfileid: "62128285"
 
 Обозреватель службы хранилища Azure может работать на других дистрибутивах, но официальная поддержка предоставляется только для дистрибутивов, приведенных выше.
 
-Помощь при установке обозревателя службы хранилища в Linux, см. в разделе [руководство по устранению неполадок](https://docs.microsoft.com/en-us/azure/storage/common/storage-explorer-troubleshooting#linux-dependencies).
+Помощь при установке обозревателя службы хранилища в Linux, см. в разделе [руководство по устранению неполадок](https://docs.microsoft.com/azure/storage/common/storage-explorer-troubleshooting#linux-dependencies).
 
 В [заметках о выпуске](https://go.microsoft.com/fwlink/?LinkId=838275&clcid=0x409) для Обозревателя службы хранилища Azure содержатся конкретные инструкции для некоторых дистрибутивов.
 

@@ -7,14 +7,14 @@ author: mrbullwinkle
 manager: carmonm
 ms.service: application-insights
 ms.topic: conceptual
-ms.date: 04/01/2019
+ms.date: 04/26/2019
 ms.author: mbullwin
-ms.openlocfilehash: 25f620cb36c2bfb548ecf08c33dc04b37118a256
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: c447a14f72c56e3e1e244011aa215a33b3f222a6
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59489628"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64922464"
 ---
 # <a name="monitor-azure-app-service-performance"></a>Мониторинг производительности Службы приложений Azure
 
@@ -40,6 +40,10 @@ ms.locfileid: "59489628"
 > Если на основе агента мониторинга и вручную пакет SDK на основе инструментирования обнаруживается, что будет учитываться только параметры инструментирование вручную. Это позволяет предотвратить дублирование данных с отправлено. Дополнительные сведения об этом извлечение [разделе об устранении неполадок](https://docs.microsoft.com/azure/azure-monitor/app/azure-web-apps#troubleshooting) ниже.
 
 ## <a name="enable-agent-based-monitoring-net"></a>Включение мониторинга .NET на основе агента
+
+> [!NOTE]
+> сочетание APPINSIGHTS_JAVASCRIPT_ENABLED и urlCompression не поддерживается. Дополнительные сведения см. объяснение [разделе об устранении неполадок](https://docs.microsoft.com/azure/azure-monitor/app/azure-web-apps#troubleshooting).
+
 
 1. На панели управления Azure **выберите Application Insights** для своей службы приложений.
 
@@ -134,7 +138,7 @@ ms.locfileid: "59489628"
 
 ### <a name="application-settings-definitions"></a>Определения параметров приложения
 
-|Имя параметра приложения |  Определение | Значение |
+|Имя параметра приложения |  Определение | Value |
 |-----------------|:------------|-------------:|
 |ApplicationInsightsAgent_EXTENSION_VERSION | Основным расширением, управляющий мониторинг среды выполнения. | `~2` |
 |XDT_MicrosoftApplicationInsights_Mode |  По умолчанию режим только, основные возможности для обеспечения оптимальной производительности. | `default` или `recommended`. |
@@ -352,6 +356,15 @@ $app = Set-AzWebApp -AppSettings $newAppSettings -ResourceGroupName $app.Resourc
 |`AppContainsAspNetTelemetryCorrelationAssembly: true` | Это значение указывает, что расширение обнаружила ссылки на `Microsoft.AspNet.TelemetryCorrelation` в приложении и будет переключения в пассивный режим. | Удалите ссылку.
 |`AppContainsDiagnosticSourceAssembly**:true`|Это значение указывает, что расширение обнаружила ссылки на `System.Diagnostics.DiagnosticSource` в приложении и будет переключения в пассивный режим.| Удалите ссылку.
 |`IKeyExists:false`|Это значение указывает, что ключ инструментирования отсутствует в AppSetting `APPINSIGHTS_INSTRUMENTATIONKEY`. Возможные причины: Значения может быть случайно удален, забыли задайте значения в сценарий автоматизации и т. д. | Убедитесь, что параметр присутствует в параметрах приложения службы приложений.
+
+### <a name="appinsightsjavascriptenabled-and-urlcompression-is-not-supported"></a>APPINSIGHTS_JAVASCRIPT_ENABLED и urlCompression не поддерживается
+
+Если вы используете APPINSIGHTS_JAVASCRIPT_ENABLED = true в случаях, где кодировки содержимого, могут возникнуть ошибки, например: 
+
+- 500 — Ошибка перезаписи URL-адрес
+- 500.53 Ошибка модуля переопределения URL-адрес с сообщением, исходящие правила переопределения не может использоваться, когда содержимое HTTP-ответа кодировке («gzip»). 
+
+Это из-за параметра APPINSIGHTS_JAVASCRIPT_ENABLED приложения задается значение true и content-encoding они отсутствуют, в то же время. Этот сценарий еще не поддерживается. Обходной путь заключается в удалении APPINSIGHTS_JAVASCRIPT_ENABLED из настроек приложения. К сожалению, это означает, что если по-прежнему требуется клиент/браузером JavaScript инструментирования, вручную ссылки на пакет SDK требуется для веб-страниц. Следуйте [инструкции](https://github.com/Microsoft/ApplicationInsights-JS#snippet-setup-ignore-if-using-npm-setup) для инструментирование вручную с помощью пакета SDK для JavaScript.
 
 Последние сведения о агент/расширение Application Insights, извлечь [заметки о выпуске](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/app-insights-web-app-extensions-releasenotes.md).
 

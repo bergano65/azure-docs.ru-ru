@@ -13,16 +13,16 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
-ms.date: 11/18/2018
+ms.date: 04/25/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a8fefc2eb2e642b5c7ac93b8a1cfc25a54c3b646
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: fdf28418e7e1335dcb1f664964fa6ef03174aa1f
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60437181"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64709195"
 ---
 # <a name="sign-in-activity-report-error-codes"></a>Коды ошибок отчета о действиях при входе 
 
@@ -177,6 +177,7 @@ ms.locfileid: "60437181"
 |90051| Делегирование недопустимый токен. Указан недопустимый национальных облачных идентификатор ({cloudId}).|
 |90072| Учетную запись сначала нужно добавить в качестве внешнего пользователя в клиент. Выполните выход и снова войдите, используя другую учетную запись Azure AD.|
 |90094| Для предоставления требуются права администратора. Попросите администратора клиента дать согласие на это приложение.|
+|500121| Сбой проверки подлинности во время выполнения строгой проверки подлинности запроса.|
 |500133| Превышен допустимый диапазон времени для утверждения. Убедитесь, что срок действия маркера доступа не истек, прежде чем использовать его для утверждения пользователя. Либо запросите новый маркер.|
 |530021|Приложение не соответствует требованиям условного доступа утвержденные приложения.|
 

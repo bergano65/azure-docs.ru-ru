@@ -15,18 +15,18 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 02/19/2019
 ms.author: banders
-ms.openlocfilehash: 6cc965f8e775e02e9dec9f610516739a9a2c1936
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
-ms.translationtype: HT
+ms.openlocfilehash: 000315a2d751a05d3e401ee1bb9f593c6e321194
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62127723"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64922899"
 ---
 # <a name="add-or-change-azure-subscription-administrators"></a>Добавление или изменение администраторов подписки Azure
 
 Чтобы управлять доступом к ресурсам Azure, требуется соответствующая роль администратора. Azure обладает системой авторизации "Управление доступом на основе ролей" (RBAC) вместе с несколькими встроенными ролями, которые можно выбирать. Их можно назначать различным областям, например группе управления, подписке или группе ресурсов.
 
-Корпорация Майкрософт рекомендует применять RBAC для управления доступом к ресурсам. Если вы по-прежнему используете классическую модель развертывания и управляете классически ресурсами с помощью [модуля PowerShell для управления службами Azure](https://docs.microsoft.com/en-us/powershell/module/servicemanagement/azure), вам потребуется роль классического администратора. 
+Корпорация Майкрософт рекомендует применять RBAC для управления доступом к ресурсам. Если вы по-прежнему используете классическую модель развертывания и управляете классически ресурсами с помощью [модуля PowerShell для управления службами Azure](https://docs.microsoft.com/powershell/module/servicemanagement/azure), вам потребуется роль классического администратора. 
 
 > [!TIP]
 > Если же вы управляете классическими ресурсами только с помощью портала Azure, вам не потребуется использовать роль классического администратора.
@@ -69,9 +69,9 @@ ms.locfileid: "62127723"
 
 * [Что такое управление доступом на основе ролей (RBAC)?](../role-based-access-control/overview.md)
 * [Сведения о различных ролях в Azure](../role-based-access-control/rbac-and-directory-admin-roles.md)
-* [Практическое руководство. Связывание или добавление подписки Azure в клиент Azure Active Directory](../active-directory/fundamentals/active-directory-how-subscriptions-associated-directory.md).
+* [How to: Связывание или добавление подписки Azure в клиент Azure Active Directory](../active-directory/fundamentals/active-directory-how-subscriptions-associated-directory.md).
 * [Разрешения роли администратора в Azure Active Directory](../active-directory/users-groups-roles/directory-assign-admin-roles.md)
 
-## <a name="need-help-contact-support"></a>Нужна помощь? Обращение в службу поддержки
+## <a name="need-help-contact-support"></a>Требуется помощь? Обратитесь в службу поддержки.
 
 Если вам все еще нужна помощь, [обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), которая поможет быстро устранить проблему.

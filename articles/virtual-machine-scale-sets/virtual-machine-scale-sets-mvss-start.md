@@ -1,10 +1,10 @@
 ---
 title: Сведения о шаблонах масштабируемых наборов виртуальных машин | Документация Майкрософт
-description: Узнайте, как создать шаблон минимально приемлемого масштабируемого набора виртуальных машин.
+description: Узнайте, как создать шаблон простой масштабируемый набор для масштабируемых наборов виртуальных машин
 services: virtual-machine-scale-sets
 documentationcenter: ''
 author: mayanknayar
-manager: jeconnoc
+manager: drewm
 editor: ''
 tags: azure-resource-manager
 ms.assetid: 76ac7fd7-2e05-4762-88ca-3b499e87906e
@@ -13,27 +13,21 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 06/01/2017
+ms.date: 04/26/2019
 ms.author: manayar
-ms.openlocfilehash: d4a3dd6ae390fd48a8085cca33063a6bb74bd96c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 8b6a6b78dc74572b22d397b5536efa1394401bbc
+ms.sourcegitcommit: e7d4881105ef17e6f10e8e11043a31262cfcf3b7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60805581"
+ms.lasthandoff: 04/29/2019
+ms.locfileid: "64868898"
 ---
 # <a name="learn-about-virtual-machine-scale-set-templates"></a>Подробнее о шаблонах масштабируемых наборов виртуальных машин
-[Шаблоны Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview#template-deployment) прекрасно подходят для развертывания группы связанных ресурсов. В этой серии руководств показано, как создать шаблон минимального приемлемого масштабируемого набора и изменить его в соответствии с различными сценариями. Все примеры взяты из этого [репозитория GitHub](https://github.com/gatneil/mvss). 
+[Шаблоны Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview#template-deployment) прекрасно подходят для развертывания группы связанных ресурсов. В этой серии руководств показано, как создать шаблон простой масштабируемый набор и как изменить этот шаблон в соответствии с различными сценариями. Все примеры взяты из этого [репозитория GitHub](https://github.com/gatneil/mvss).
 
 Этот шаблон должен быть простым. Полные примеры шаблонов масштабируемых наборов можно найти в [репозитории шаблонов быстрого запуска Azure на сайте GitHub](https://github.com/Azure/azure-quickstart-templates). Папки с этими шаблонами содержат строку `vmss`.
 
 Если вы уже умеете создавать шаблоны, можете смело переходите к разделу "Дальнейшие действия", где мы расскажем, как нужно изменить этот шаблон.
-
-## <a name="review-the-template"></a>Изучение шаблона
-
-Изучите представленный на GitHub шаблон минимально приемлемого масштабируемого набора [azuredeploy.json](https://raw.githubusercontent.com/gatneil/mvss/minimum-viable-scale-set/azuredeploy.json).
-
-В этом руководстве будут рассмотрены различия между файлами (`git diff master minimum-viable-scale-set`) для поэтапного выстраивания шаблона минимально приемлемого масштабируемого набора.
 
 ## <a name="define-schema-and-contentversion"></a>Определение элементов $schema и contentVersion
 Сначала в шаблоне необходимо определить `$schema` и `contentVersion`. Элемент `$schema` определяет версию языка шаблона. Он используется для разметки синтаксиса в редакторе Visual Studio и других функций проверки кода. Элемент `contentVersion` не используется в Azure, но позволяет отслеживать версию шаблона.
@@ -43,6 +37,7 @@ ms.locfileid: "60805581"
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json",
   "contentVersion": "1.0.0.0",
 ```
+
 ## <a name="define-parameters"></a>Определение параметров
 Далее определите два параметра: `adminUsername` и `adminPassword`. Параметры — это значения, которые пользователь задает во время развертывания. Параметр `adminUsername` будет иметь простейший тип `string`, но для параметра `adminPassword` необходимо назначить тип `securestring`, так как он содержит секретную информацию. Позднее эти параметры будут переданы в конфигурацию масштабируемого набора.
 
@@ -70,13 +65,13 @@ ms.locfileid: "60805581"
    "resources": [
 ```
 
-Каждый ресурс должен иметь свойства `type`, `name`, `apiVersion` и `location`. В этом примере первого ресурса указан тип [Microsoft.Network/virtualNetwork](/azure/templates/microsoft.network/virtualnetworks) с именем `myVnet` и apiVersion `2016-03-30`. (Последнюю версию API для типа ресурса см. в [справочнике по шаблонам Azure Resource Manager](/azure/templates/).)
+Каждый ресурс должен иметь свойства `type`, `name`, `apiVersion` и `location`. В этом примере первого ресурса указан тип [Microsoft.Network/virtualNetwork](/azure/templates/microsoft.network/virtualnetworks) с именем `myVnet` и apiVersion `2018-11-01`. (Последнюю версию API для типа ресурса см. в [справочнике по шаблонам Azure Resource Manager](/azure/templates/).)
 
 ```json
      {
        "type": "Microsoft.Network/virtualNetworks",
        "name": "myVnet",
-       "apiVersion": "2016-12-01",
+       "apiVersion": "2018-11-01",
 ```
 
 ## <a name="specify-location"></a>Определение расположения
@@ -117,7 +112,7 @@ ms.locfileid: "60805581"
      {
        "type": "Microsoft.Compute/virtualMachineScaleSets",
        "name": "myScaleSet",
-       "apiVersion": "2016-04-30-preview",
+       "apiVersion": "2019-03-01",
        "location": "[resourceGroup().location]",
        "dependsOn": [
          "Microsoft.Network/virtualNetworks/myVnet"
@@ -136,7 +131,7 @@ ms.locfileid: "60805581"
 ```
 
 ### <a name="choose-type-of-updates"></a>Выбор типа обновления
-Кроме того, нужно указать способ обновления масштабируемого набора. Сейчас поддерживаются два варианта: `Manual` и `Automatic`. Дополнительные сведения о различиях между этими двумя способами см. в документации по [обновлению масштабируемого набора](./virtual-machine-scale-sets-upgrade-scale-set.md).
+Кроме того, нужно указать способ обновления масштабируемого набора. В настоящее время существует три варианта `Manual`, `Rolling` и `Automatic`. Дополнительные сведения о различиях между этими двумя способами см. в документации по [обновлению масштабируемого набора](./virtual-machine-scale-sets-upgrade-scale-set.md#how-to-bring-vms-up-to-date-with-the-latest-scale-set-model).
 
 ```json
        "properties": {

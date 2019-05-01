@@ -2,18 +2,19 @@
 title: Рекомендации по использованию Azure Data Lake Storage 2-го поколения | Документация Майкрософт
 description: Ознакомьтесь с рекомендациями по приему и безопасности данных, а также по производительности, связанные с использованием Azure Data Lake Storage 2-го поколения (прежнее название — Azure Data Lake Store).
 services: storage
-author: sachinsbigdata
+author: normesta
 ms.subservice: data-lake-storage-gen2
 ms.service: storage
 ms.topic: article
 ms.date: 12/06/2018
-ms.author: sachins
-ms.openlocfilehash: e371ac848eff0e66390fe17bc23934725fca35f9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.author: normesta
+ms.reviewer: sachins
+ms.openlocfilehash: 8b39866b990812913924118c564a5e93f898b1cb
+ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60708538"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64939468"
 ---
 # <a name="best-practices-for-using-azure-data-lake-storage-gen2"></a>Рекомендации по использованию Azure Data Lake Storage 2-го поколения
 

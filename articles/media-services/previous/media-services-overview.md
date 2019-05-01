@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 04/19/2019
 ms.author: juliako
-ms.openlocfilehash: efdc3f657712794325f8af6f1b0178915e7a8e6b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 7f0a071012685ee192d4f866396a5953d0a4508c
+ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61463503"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64937249"
 ---
 # <a name="azure-media-services-overview"></a>Общие сведения о службах мультимедиа Azure 
 
@@ -50,7 +50,10 @@ ms.locfileid: "61463503"
 
 * [REST API для службы мультимедиа.](https://docs.microsoft.com/rest/api/media/operations/azure-media-services-rest-api-reference)
 * Один из доступных клиентских пакетов SDK:
-    * [Пакет SDK служб мультимедиа Azure для .NET](https://github.com/Azure/azure-sdk-for-media-services).
+    * Пакет SDK служб мультимедиа Azure для .NET
+    
+        * [Пакет NuGet](https://www.nuget.org/packages/windowsazure.mediaservices/).
+        * [Исходный код Github](https://github.com/Azure/azure-sdk-for-media-services)
     * [Пакет Azure SDK для Java](https://github.com/Azure/azure-sdk-for-java).
     * [Пакет Azure SDK для PHP](https://github.com/Azure/azure-sdk-for-php).
     * [Службы мультимедиа Azure для Node.js](https://github.com/michelle-becker/node-ams-sdk/blob/master/lib/request.js) (это версия пакета SDK для Node.js сторонних производителей. Она поддерживается сообществом и в настоящее время не обладает полным покрытием всех интерфейсов API AMS).
@@ -74,7 +77,7 @@ ms.locfileid: "61463503"
 
 Дополнительные сведения см. в статье [Scenarios and availability of features and services across data centers](scenarios-and-availability.md) (Сценарии и доступность функций служб мультимедиа в центрах обработки данных).
 
-## <a name="service-level-agreement-sla"></a>Соглашение об уровне обслуживания
+## <a name="service-level-agreement-sla"></a>Соглашение об уровне обслуживания (SLA):
 
 Дополнительные сведения можно найти в разделе [Соглашение об уровне обслуживания Microsoft Azure](https://azure.microsoft.com/support/legal/sla/).
 

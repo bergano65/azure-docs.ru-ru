@@ -9,12 +9,12 @@ ms.date: 09/11/2018
 ms.topic: conceptual
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: 'Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s '
-ms.openlocfilehash: 044e997703f5b274215fb05c7152186948b331b4
-ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
-ms.translationtype: HT
+ms.openlocfilehash: 508fe597a494ed89b4c2f406337c6b565943387a
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63761405"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64728817"
 ---
 # <a name="troubleshooting-guide"></a>Руководство по устранению неполадок
 
@@ -157,7 +157,7 @@ kubectl delete pod -n kube-system -l app=addon-http-application-routing-nginx-in
 
 ### <a name="try"></a>Попробуйте выполнить следующее.
 
-1. Попробуйте найти azds.exe в расположении %ProgramFiles%/Microsoft SDKs\Azure\Azure Dev Spaces CLI (Preview). Если файл есть в этой папке, добавьте это расположение в переменную среды PATH.
+1. Проверьте расположение %ProgramFiles%/Microsoft SDKs\Azure\Azure разработки пробелы CLI для azds.exe. Если файл есть в этой папке, добавьте это расположение в переменную среды PATH.
 2. Если средство azds.exe не установлено, выполните следующую команду:
 
     ```cmd
@@ -292,6 +292,16 @@ Container image build failed
 
 ### <a name="try"></a>Попробуйте выполнить следующее.
 Перезапуск узлов агента в кластере обычно устраняет эту проблему.
+
+## <a name="error-release-azds-identifier-spacename-servicename-failed-services-servicename-already-exists-or-pull-access-denied-for-servicename-repository-does-not-exist-or-may-require-docker-login"></a>«Ошибка: выпуск azds\<идентификатор\>-\<spacename\>-\<servicename\> сбой: служб\<servicename\>"уже существует» или «Отказано в доступе для извлечения \<servicename\>, репозиторий не существует или может потребоваться «docker login»»
+
+### <a name="reason"></a>Причина
+Эти ошибки могут возникать, если перепутать прямой Helm команды (такие как `helm install`, `helm upgrade`, или `helm delete`) с командами разработки пробелов (такие как `azds up` и `azds down`) в одно и то же пространство разработки. Они происходят потому, что пробелы разработки имеет свой собственный экземпляр Tiller, который конфликтует с вашего собственного экземпляра Tiller в одно и то же пространство разработки.
+
+### <a name="try"></a>Попробуйте выполнить следующее.
+Это можно использовать команды Helm и команды разработки пробелы для одного кластера AKS, но каждое пространство имен с поддержкой разработки пробелы следует использовать одно из них.
+
+Например предположим, что команда Helm для запуска всего приложения в родительское пространство разработки. Можно создавать дочерние пробелы разработки off родительского элемента, используйте пробелы разработки для запуска отдельных служб внутри дочернего пробелы разработки и тестирования служб вместе. Когда вы будете готовы вернуть изменения, используйте команду Helm для развертывания обновленного кода в пространстве разработки родительского. Не используйте `azds up` к обновленной службы в родительском объекте разработки пространство выполнения, потому что он будет конфликтовать со службой, сначала запустить с помощью Helm.
 
 ## <a name="azure-dev-spaces-proxy-can-interfere-with-other-pods-running-in-a-dev-space"></a>Прокси-сервер Azure Dev Spaces может конфликтовать с модулями pod, запущенными в пространстве разработки
 

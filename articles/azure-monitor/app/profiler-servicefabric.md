@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.reviewer: mbullwin
 ms.date: 08/06/2018
 ms.author: cweining
-ms.openlocfilehash: 0b1a06d181fc4d2a44d389d47d1f9480c2fdcb40
-ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
+ms.openlocfilehash: 5c01c2721a29bf142ee0ba53c9bc29ec66a7278f
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58401104"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64727910"
 ---
 # <a name="profile-live-azure-service-fabric-applications-with-application-insights"></a>Профилирование запущенных приложений Azure Service Fabric с помощью Application Insights
 
@@ -32,7 +32,7 @@ Application Insights Profiler поставляется в комплекте с 
 
 Чтобы настроить среду, выполните следующие действия.
 
-1. Чтобы использовать [.NET Framework версии 4.6.1](https://docs.microsoft.com/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed) и выше, разверните ОС версии `Windows Server 2012 R2` и выше.
+1. Profiler поддерживает .NET Framework и.Net Core. Если вы используете .NET Framework, убедитесь, что вы используете [.NET Framework 4.6.1](https://docs.microsoft.com/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed) или более поздней версии. Достаточно убедиться, что разверните ОС `Windows Server 2012 R2` или более поздней версии. Profiler поддерживает .NET Core 2.1 и более новых приложений.
 
 1. Найдите расширение [системы диагностики Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/azure-diagnostics) в файле шаблона развертывания.
 
@@ -55,11 +55,10 @@ Application Insights Profiler поставляется в комплекте с 
   Если все параметры верны, при установке расширения системы диагностики Azure будет установлен и включен Application Insights Profiler. 
 
 1. Добавьте Application Insights в приложение Service Fabric.  
-  Для Profiler для сбора профили для ваших запросов приложения должны быть Отслеживание операций с помощью Application Insights. API без отслеживания состояния, см. в инструкциях по [отслеживание запросов для профилирования](profiler-trackrequests.md?toc=/azure/azure-monitor/toc.json). Дополнительные сведения об отслеживании пользовательских операций в другие виды приложений см. [отслеживания пользовательских операций с помощью пакета SDK .NET Application Insights](custom-operations-tracking.md?toc=/azure/azure-monitor/toc.json).
+  Для Profiler для сбора профили для ваших запросов приложения должны быть Отслеживание операций с помощью Application Insights. API без отслеживания состояния, см. в инструкциях по [отслеживание запросов для профилирования](profiler-trackrequests.md?toc=/azure/azure-monitor/toc.json). Дополнительные сведения об отслеживании пользовательских операций в другие виды приложений см. в разделе [отслеживания пользовательских операций с помощью пакета SDK .NET Application Insights](custom-operations-tracking.md?toc=/azure/azure-monitor/toc.json).
 
 1. Разверните приложение заново.
 
-> [ПОДСКАЗКА] Вместо описанных выше действий на основе JSON для виртуальных машин можно использовать портал Azure. Откройте раздел **Виртуальные машины** > **Параметры диагностики** > **Приемники** > присвойте отправке данных диагностики в Application Insights значение **Включено** и выберите учетную запись Application Insights или определенный ikey.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

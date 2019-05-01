@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/11/2019
 ms.author: apimpm
-ms.openlocfilehash: 738dd451ca44801c799d793e6501c547655bd0e0
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.openlocfilehash: 7db40de921c0eb8826a2fee832c1a51c57796f6d
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59524155"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64919839"
 ---
 # <a name="using-azure-api-management-service-with-an-internal-virtual-network"></a>Использование службы управления API Azure совместно с внутренней виртуальной сетью
 Служба управления API Azure в сочетании с виртуальными сетями Azure позволяет работать с интерфейсами API, которые недоступны из Интернета. Подключение можно создать с применением разных технологий VPN. Управление API можно развернуть в виртуальной сети в одном из двух основных режимов:
@@ -48,7 +48,7 @@ ms.locfileid: "59524155"
 + При развертывании службы управления API в виртуальной сети, [список портов](./api-management-using-with-vnet.md#required-ports) используются и должны быть открытыми. 
 
 ## <a name="enable-vpn"> </a>Создание управления API во внутренней виртуальной сети
-Служба управления API во внутренней виртуальной сети размещается за [внутренней подсистемы балансировки нагрузки (Классическая модель)](https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-get-started-ilb-classic-cloud). Это является единственным доступным параметром и не может быть изменено.
+Служба управления API во внутренней виртуальной сети размещается за [внутренней подсистемы балансировки нагрузки (Классическая модель)](https://docs.microsoft.com/azure/load-balancer/load-balancer-get-started-ilb-classic-cloud). Это является единственным доступным параметром и не может быть изменено.
 
 ### <a name="enable-a-virtual-network-connection-using-the-azure-portal"></a>Настройка подключения к виртуальной сети с помощью портала Azure
 

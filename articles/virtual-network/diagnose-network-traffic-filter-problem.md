@@ -3,8 +3,8 @@ title: Диагностика проблемы с фильтрацией тра�
 description: Узнайте, как диагностировать проблему с фильтрацией трафика на виртуальной машине, просмотрев действующие правила безопасности для виртуальной машины.
 services: virtual-network
 documentationcenter: na
-author: jimdial
-manager: jeconnoc
+author: KumudD
+manager: twooley
 editor: ''
 tags: azure-resource-manager
 ms.assetid: a54feccf-0123-4e49-a743-eb8d0bdd1ebc
@@ -14,13 +14,13 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/29/2018
-ms.author: jdial
-ms.openlocfilehash: fecab4dc3a0674b0b64638676f4538af145b52ac
-ms.sourcegitcommit: a4efc1d7fc4793bbff43b30ebb4275cd5c8fec77
+ms.author: kumud
+ms.openlocfilehash: f84e8a24e8f28cdccc987afbd1449cb17422ce0c
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56652651"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64712668"
 ---
 # <a name="diagnose-a-virtual-machine-network-traffic-filter-problem"></a>Диагностика проблемы с фильтрацией трафика на виртуальной машине
 
@@ -168,13 +168,13 @@ az vm show \
 
 При использовании как [портала](#diagnose-using-azure-portal) Azure, так и [PowerShell](#diagnose-using-powershell) или [Azure CLI](#diagnose-using-azure-cli) для диагностики проблемы, представленной в [сценарии](#scenario) этой статьи, решение будет одним. Нужно создать правило сетевой безопасности со следующими свойствами:
 
-| Свойство                | Значение                                                                              |
+| Свойство                | Value                                                                              |
 |---------                |---------                                                                           |
 | Источник                  | Любой                                                                                |
 | Диапазоны исходных портов      | Любой                                                                                |
 | Место назначения             | IP-адрес виртуальной машины, диапазон IP-адресов или все адреса в подсети. |
 | Диапазоны портов назначения | 80                                                                                 |
-| Протокол                | TCP                                                                                |
+| Protocol                | TCP                                                                                |
 | Действие                  | РАЗРЕШИТЬ                                                                              |
 | Приоритет                | 100                                                                                |
 | ИМЯ                    | Allow-HTTP-All                                                                     |

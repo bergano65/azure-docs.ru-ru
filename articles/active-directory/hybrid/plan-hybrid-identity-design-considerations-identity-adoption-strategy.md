@@ -12,17 +12,17 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 05/30/2018
+ms.date: 04/29/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.custom: seohack1
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 73d64cac3812d8daf8ac34b93c91338e1dfab88a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 39495e11e42853bf3cf9481475d970667c56223f
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60382001"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64919105"
 ---
 # <a name="define-a-hybrid-identity-adoption-strategy"></a>Определение стратегии внедрения гибридной идентификации
 В этой статье вы определяете стратегию внедрения гибридной идентификации для гибридных решений идентификации, которая соответствует бизнес-требованиям, выработанным вами с помощью таких статей:
@@ -37,7 +37,7 @@ ms.locfileid: "60382001"
 ## <a name="define-an-integration-strategy"></a>Определение стратегии интеграции
 Корпорация Майкрософт поддерживает три основных сценария интеграции: облачная идентификация, синхронизированная идентификация и федеративная идентификация.  Вам нужно выбрать одну из этих трех стратегий интеграции.  Стратегии могут быть разными. Выбор зависит, например, от требуемого типа взаимодействия с пользователем, от наличия инфраструктуры, а также от стоимости реализации стратегий.  
 
-![](./media/plan-hybrid-identity-design-considerations/integration-scenarios.png)
+![Сценарии интеграции](./media/plan-hybrid-identity-design-considerations/integration-scenarios.png)
 
 На рисунке выше указаны такие сценарии:
 
@@ -111,14 +111,14 @@ ms.locfileid: "60382001"
 ### <a name="supported-topologies"></a>Поддерживаемые топологии
 Когда вы выбираете стратегию синхронизации, нужно сначала определить используемую топологию. Вы можете определить оптимальную топологию на основании выводов, которые были сделаны на шаге 2. Самой распространенной является топология «один лес, один экземпляр Azure AD». В нее входят один лес Active Directory и один экземпляр Azure AD.  Она будет использоваться в большинстве случаев и именно она нужна в процессе установки Azure AD Connect Express, как показано на рисунке ниже.
 
-![](./media/plan-hybrid-identity-design-considerations/single-forest.png) Сценарии с одним лесом. Многие крупные, а иногда и небольшие организации используют несколько лесов, как показано на рисунке 5.
+![Поддерживаемые топологии](./media/plan-hybrid-identity-design-considerations/single-forest.png) одного леса сценарий довольно часто крупные, а иногда и небольшие организации используют несколько лесов, как показано на рис. 5.
 
 > [!NOTE]
 > Дополнительные сведения о синхронизации с применением Azure AD Connect в различных топологиях локальной среды и Azure AD вы найдете в статье [Топологии Azure AD Connect](plan-connect-topologies.md).
 > 
 > 
 
-![](./media/plan-hybrid-identity-design-considerations/multi-forest.png) 
+![Топология с несколькими лесами](./media/plan-hybrid-identity-design-considerations/multi-forest.png) 
 
 Сценарий с несколькими лесами
 
@@ -140,7 +140,7 @@ ms.locfileid: "60382001"
 
 Если указанные выше условия не соблюдаются, то есть существует более одной активной учетной записи или более одного почтового ящика, Azure AD Connect выберет один из этих параметров и отбросит другой.  Если у пользователя есть связанные почтовые ящики, но нет других учетных записей, Azure AD не будет экспортировать такую учетную запись и этот пользователь не будет членом ни одной группы.  DirSync ранее использовал другой алгоритм. Такие изменения внесены намеренно для лучшего соответствия сценарию с несколькими лесами. На рисунке ниже показан сценарий с несколькими лесами.
 
-![](./media/plan-hybrid-identity-design-considerations/multiforest-multipleAzureAD.png) 
+![Несколько клиентов Azure AD](./media/plan-hybrid-identity-design-considerations/multiforest-multipleAzureAD.png) 
 
 **Сценарий «несколько лесов, несколько экземпляров Azure AD»**
 
@@ -148,7 +148,7 @@ ms.locfileid: "60382001"
 
 Система поддерживает такой сценарий, когда один локальный экземпляр Active Directory связан с несколькими каталогами Azure AD, как показано на рисунке ниже.
 
-![](./media/plan-hybrid-identity-design-considerations/single-forest-flitering.png) 
+![Фильтрация одного леса](./media/plan-hybrid-identity-design-considerations/single-forest-flitering.png) 
 
 **Сценарий фильтрации с одним лесом**
 

@@ -9,12 +9,12 @@ ms.service: backup
 ms.topic: troubleshooting
 ms.date: 12/03/2018
 ms.author: genli
-ms.openlocfilehash: ae89ab811015fca9bcb50fcc149534754533c25f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 826a38dd80db7cd0e6e500949d2c259c3808c0a9
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60337748"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64914944"
 ---
 # <a name="troubleshoot-azure-backup-failure-issues-with-the-agent-or-extension"></a>Устранение неполадок службы Azure Backup. Проблемы с агентом или расширением
 
@@ -121,9 +121,9 @@ ms.locfileid: "60337748"
 3. В меню панели мониторинга хранилища щелкните **Задания резервного копирования**, чтобы отобразить все задания.
 
     * Если задание резервного копирования выполняется, дождитесь его завершения или отмените его.
-        * Чтобы отменить задание резервного копирования, щелкните его правой кнопкой мыши, а затем щелкните **Отмена** или используйте [PowerShell](https://docs.microsoft.com/en-us/powershell/module/az.recoveryservices/stop-azrecoveryservicesbackupjob?view=azps-1.4.0).
+        * Чтобы отменить задание резервного копирования, щелкните его правой кнопкой мыши, а затем щелкните **Отмена** или используйте [PowerShell](https://docs.microsoft.com/powershell/module/az.recoveryservices/stop-azrecoveryservicesbackupjob?view=azps-1.4.0).
     * Если вы перенастроили резервное копирование в другом хранилище, убедитесь, что в старом хранилище не выполняются задания резервного копирования. Если задание резервного копирования существует, отмените его.
-        * Чтобы отменить задание резервного копирования, щелкните его правой кнопкой мыши, а затем щелкните **Отмена** или используйте [PowerShell](https://docs.microsoft.com/en-us/powershell/module/az.recoveryservices/stop-azrecoveryservicesbackupjob?view=azps-1.4.0).
+        * Чтобы отменить задание резервного копирования, щелкните его правой кнопкой мыши, а затем щелкните **Отмена** или используйте [PowerShell](https://docs.microsoft.com/powershell/module/az.recoveryservices/stop-azrecoveryservicesbackupjob?view=azps-1.4.0).
 4. Повторите операцию резервного копирования.
 
 Если запланированная операция резервного копирования занимает больше времени, что вызывает конфликт со следующей конфигурацией резервного копирования, просмотрите разделы [Рекомендации](backup-azure-vms-introduction.md#best-practices), [Производительность резервного копирования](backup-azure-vms-introduction.md#backup-performance) и [Рекомендации относительно восстановления](backup-azure-vms-introduction.md#backup-and-restore-considerations).

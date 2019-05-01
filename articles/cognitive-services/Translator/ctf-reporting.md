@@ -10,21 +10,19 @@ ms.subservice: translator-text
 ms.topic: conceptual
 ms.date: 12/14/2017
 ms.author: v-jansko
-ms.openlocfilehash: da321aa2a4db441fa5bb51e4986d00889cb7482d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 178747ffddbadb06751ce0db7d16701c3cea7416
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60513714"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64712820"
 ---
 # <a name="how-to-use-collaborative-translation-framework-ctf-reporting"></a>Как использовать отчеты на платформе для совместного перевода CTF
 
 > [!NOTE]
 > Этот метод устарел и более не поддерживается. Он не доступен в версии 3.0-API перевода текстов.
 > 
-> Платформа для совместного перевода (CTF), ранее доступная для версии 2.0 API перевода текстов, устарела с 1 февраля 2018 года. Функции AddTranslation и AddTranslationArray позволяют пользователям вводить исправления на платформе для совместного перевода. После 31 января 2018 года эти две функции не принимали новые предложения и пользователи получали сообщение об ошибке. Эти функции были выведены из эксплуатации и не будут заменены.
-> 
-> Подобная функциональность доступна в API Translator Hub, позволяя вам создать собственную систему перевода с вашей терминологией и стилем. Ее можно вызвать помощью идентификатора категории в API перевода текстов. Translator Hub: [https://hub.microsofttranslator.com](https://hub.microsofttranslator.com). API Translator Hub: [https://hub.microsofttranslator.com/swagger](https://hub.microsofttranslator.com/swagger).
+> Платформа для совместного перевода (CTF), ранее доступная для версии 2.0 API перевода текстов, устарела с 1 февраля 2018 года. Функции AddTranslation и AddTranslationArray позволяют пользователям вводить исправления на платформе для совместного перевода. После 31 января 2018 года эти две функции не принимали новые предложения и пользователи получали сообщение об ошибке. Эти функции были удалены и не будет заменена.
 
 API отчетов платформы для совместного перевода (CTF) возвращает статистику и фактическое содержимое в хранилище CTF. Этот API отличается от метода GetTranslations(), потому что он:
 * Возвращает переведенное содержимое и его общее количество только из вашей учетной записи (appId или Azure Marketplace).
@@ -36,7 +34,7 @@ API отчетов платформы для совместного перево
 
 
 ## <a name="methods"></a>Методы
-| Name |    ОПИСАНИЕ|
+| ИМЯ |    ОПИСАНИЕ|
 |:---|:---|
 | Метод GetUserTranslationCounts | Получает количество переводов, созданных пользователем. |
 | Метод GetUserTranslations | Возвращает переводы, созданные пользователем. |

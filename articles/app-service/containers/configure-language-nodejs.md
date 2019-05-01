@@ -13,12 +13,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 03/28/2019
 ms.author: cephalin
-ms.openlocfilehash: 43dc76e6d1e1ec2a6167f1d3e3cc7b8780f843db
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 3074048dd4426a10e706e37e6d375ea4995fcbbb
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60850254"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64919780"
 ---
 # <a name="configure-a-linux-nodejs-app-for-azure-app-service"></a>Настройка приложения Node.js в Linux для службы приложений Azure
 
@@ -55,7 +55,7 @@ az webapp config set --resource-group <resource-group-name> --name <app-name> --
 
 ## <a name="configure-nodejs-server"></a>Настройка сервера Node.js
 
-Состав контейнеров Node.js [PM2](http://pm2.keymetrics.io/), диспетчера рабочих процессов. Можно настроить приложение для запуска PM2, или с помощью NPM или с пользовательской команды.
+Состав контейнеров Node.js [PM2](https://pm2.keymetrics.io/), диспетчера рабочих процессов. Можно настроить приложение для запуска PM2, или с помощью NPM или с пользовательской команды.
 
 - [Выполнить настраиваемую команду](#run-custom-command)
 - [Запустите npm start](#run-npm-start)
@@ -71,7 +71,7 @@ az webapp config set --resource-group <resource-group-name> --name <app-name> --
 
 ### <a name="run-npm-start"></a>Запустите npm start
 
-Чтобы запустить приложение, нажав `npm start`, просто убедитесь, что `start` сценарий находится в *package.json* файла. Пример.
+Чтобы запустить приложение, нажав `npm start`, просто убедитесь, что `start` сценарий находится в *package.json* файла. Например: 
 
 ```json
 {
@@ -99,12 +99,12 @@ az webapp config set --resource-group <resource-group-name> --name <app-name> --
 - *app.js*
 - *index.js*
 - *hostingstart.js*
-- Одно из следующих [файлы PM2](http://pm2.keymetrics.io/docs/usage/application-declaration/#process-file): *process.json* и *ecosystem.config.js*
+- Одно из следующих [файлы PM2](https://pm2.keymetrics.io/docs/usage/application-declaration/#process-file): *process.json* и *ecosystem.config.js*
 
 Можно также настроить файл настраиваемой начальной, со следующими расширениями:
 
 - Объект *.js* файла
-- Объект [файл PM2](http://pm2.keymetrics.io/docs/usage/application-declaration/#process-file) с расширением *.json*, *. config.js*, *.yaml*, или *.yml*
+- Объект [файл PM2](https://pm2.keymetrics.io/docs/usage/application-declaration/#process-file) с расширением *.json*, *. config.js*, *.yaml*, или *.yml*
 
 Чтобы добавить файл настраиваемой начальной, выполните следующую команду в [Cloud Shell](https://shell.azure.com):
 
@@ -119,7 +119,7 @@ az webapp config set --resource-group <resource-group-name> --name <app-name> --
 
 Можно отлаживать приложения Node.js удаленно в среде [Visual Studio Code](https://code.visualstudio.com/) если его необходимо настроить для [работы PM2](#run-with-pm2), за исключением при запуске его с помощью *. config.js, *.yml, или *.yaml*.
 
-В большинстве случаев никакая дополнительная настройка не является обязательным для приложения. Если приложение выполняется с *process.json* файла (по умолчанию или пользовательский), он должен иметь `script` свойства в корне JSON. Пример.
+В большинстве случаев никакая дополнительная настройка не является обязательным для приложения. Если приложение выполняется с *process.json* файла (по умолчанию или пользовательский), он должен иметь `script` свойства в корне JSON. Например: 
 
 ```json
 {
@@ -147,7 +147,7 @@ process.env.NODE_ENV
 
 По умолчанию выполняется Kudu `npm install --production` при обнаружении развертывается приложение Node.js. Если приложению требуются некоторые средства популярные службы автоматизации, например Grunt, Bower или Gulp, необходимо предоставить [пользовательский скрипт развертывания](https://github.com/projectkudu/kudu/wiki/Custom-Deployment-Script) для его запуска.
 
-Чтобы включить репозиторий, чтобы запускать эти средства, необходимо добавить их к зависимостям в *package.json.* Пример.
+Чтобы включить репозиторий, чтобы запускать эти средства, необходимо добавить их к зависимостям в *package.json.* Например: 
 
 ```json
 "dependencies": {
@@ -226,7 +226,7 @@ fi
 
 В Службе приложений [завершение SSL-запросов](https://wikipedia.org/wiki/TLS_termination_proxy) происходит в подсистеме балансировки нагрузки сети, поэтому все HTTPS-запросы достигают вашего приложения в виде незашифрованных HTTP-запросов. Если логика вашего приложения проверяет, зашифрованы ли пользовательские запросы, проверяйте заголовок `X-Forwarded-Proto`.
 
-Популярные веб-платформы позволяют получить доступ к информации `X-Forwarded-*` в стандартном шаблоне приложения. В [Express](https://expressjs.com/), можно использовать [доверия прокси-серверы](http://expressjs.com/guide/behind-proxies.html). Пример.
+Популярные веб-платформы позволяют получить доступ к информации `X-Forwarded-*` в стандартном шаблоне приложения. В [Express](https://expressjs.com/), можно использовать [доверия прокси-серверы](https://expressjs.com/guide/behind-proxies.html). Например: 
 
 ```javascript
 app.set('trust proxy', 1)
@@ -249,16 +249,16 @@ if (req.secure) {
 Когда рабочее приложение Node.js работает по-разному, в службе приложений или содержит ошибки, попробуйте сделайте следующее:
 
 - [Получите доступ к потоку журнала](#access-diagnostic-logs).
-- Тестирование приложения локально в рабочем режиме. Служба приложений запускает приложения Node.js в рабочем режиме, поэтому необходимо убедиться, что проект работает надлежащим образом в рабочем режиме локально. Пример.
+- Тестирование приложения локально в рабочем режиме. Служба приложений запускает приложения Node.js в рабочем режиме, поэтому необходимо убедиться, что проект работает надлежащим образом в рабочем режиме локально. Например: 
     - В зависимости от вашей *package.json*, разные пакеты могут быть установлены для рабочий режим (`dependencies` и `devDependencies`).
     - Некоторые веб-платформы может развернуть статические файлы по-разному в рабочем режиме.
     - Некоторые веб-платформы может использовать специальные сценарии, при выполнении в рабочем режиме.
-- Запустите приложение в службе приложений в режиме разработки. Например, в [MEAN.js](http://meanjs.org/), можно задать свое приложение в режим разработки в среде выполнения с [параметр `NODE_ENV` параметр приложения](../web-sites-configure.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json).
+- Запустите приложение в службе приложений в режиме разработки. Например, в [MEAN.js](https://meanjs.org/), можно задать свое приложение в режим разработки в среде выполнения с [параметр `NODE_ENV` параметр приложения](../web-sites-configure.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Учебник. Приложение Node.js с MongoDB](tutorial-nodejs-mongodb-app.md)
+> [Руководство Приложение Node.js с MongoDB](tutorial-nodejs-mongodb-app.md)
 
 > [!div class="nextstepaction"]
 > [Служба приложений под управлением Linux: вопросы и ответы](app-service-linux-faq.md)

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 02/20/2018
 ms.author: abshamsft
-ms.openlocfilehash: 0c4b8d1646ba851acc6a0e2d9a3b920634098846
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
-ms.translationtype: HT
+ms.openlocfilehash: 3eb53fa88a0757d22fc4575e9d9f402d6eebee13
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62119341"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64719306"
 ---
 # <a name="service-connectivity-monitor"></a>Монитор подключений службы
 
@@ -59,7 +59,7 @@ netsh advfirewall firewall add rule name="NPMDICMPV6TimeExceeded" protocol="icmp
 Начните создавать тесты для отслеживания сетевых подключений к конечным точкам службы.
 
 1. Перейдите на вкладку **Монитор подключений службы**.
-2. Нажмите кнопку **Добавить тест** и введите имя и описание теста. 
+2. Нажмите кнопку **Добавить тест** и введите имя и описание теста. Можно создать максимальное 450 тестов в рабочей области. 
 3. Выберите тип теста.<br>
 
     * Выберите **Веб**, чтобы отслеживать подключение к службе, которая отвечает на запросы HTTP(S), например outlook.office365.com или bing.com.<br>
