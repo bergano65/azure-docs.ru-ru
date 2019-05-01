@@ -14,11 +14,11 @@ ms.reviewer: kasimpso
 ms.custom: user-help, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 578ca5fa1de338a92280e2dc7cc252fb616e2111
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60483413"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64706696"
 ---
 # <a name="update-your-groups-info-from-the-my-apps-portal"></a>Обновите сведения учетной записи группы с портала Мои приложения
 На веб-портале **Мои приложения** можно использовать рабочую или учебную учетную запись, чтобы просматривать и запускать многие облачные приложения вашей организации, обновлять сведения о профиле и учетной записи, просматривать сведения о **группах** и выполнять **проверки доступа** к приложениям и группам. Если у вас нет доступа к порталу **Мои приложения**, обратитесь за разрешением в службу технической поддержки.

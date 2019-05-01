@@ -11,12 +11,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 11/30/2018
 ms.custom: seodec18
-ms.openlocfilehash: 933d411f67655b49b4aef7bf413dfe5f87e4ff08
-ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
-ms.translationtype: HT
+ms.openlocfilehash: ee52cde6feeb69f9140df497a9abee300c93fd71
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53556736"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64692104"
 ---
 # <a name="add-an-iot-hub-event-source-to-your-time-series-insights-environment"></a>Добавление в среду службы "Аналитика временных рядов Azure" источник событий центра Интернета вещей
 
@@ -25,7 +25,7 @@ ms.locfileid: "53556736"
 > [!NOTE]
 > Инструкции в этой статье применяются к средам "Аналитика временных рядов" общедоступной и предварительной версий.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Создайте [среду службы "Аналитика временных рядов Azure"](time-series-insights-update-create-environment.md).
 * Создайте [центр Интернета вещей с помощью портала Azure](../iot-hub/iot-hub-create-through-portal.md).
@@ -104,10 +104,12 @@ ms.locfileid: "53556736"
 
 1. После создания источника событий служба "Аналитика временных рядов" автоматически запустит потоковую передачу данных в среду.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Определите политики доступа к данным](time-series-insights-data-access.md), чтобы защитить ваши данные.
+
 * [Отправьте события](time-series-insights-send-events.md) в источник событий.
+
 * Получите доступ к своей среде в [обозревателе службы "Аналитика временных рядов"](https://insights.timeseries.azure.com).
 
 <!-- Images -->

@@ -14,11 +14,11 @@ ms.workload: infrastructure-services
 ms.date: 03/27/2019
 ms.author: magoedte
 ms.openlocfilehash: b5ba9a0abe8ec0f72cfaf42c747616e733fb3f32
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
-ms.translationtype: HT
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62101161"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64702854"
 ---
 # <a name="how-to-onboard-azure-monitor-for-containers"></a>Подключение Azure Monitor для контейнеров  
 
@@ -49,7 +49,7 @@ Azure Monitor для контейнеров можно включить для �
 >[!NOTE] 
 >Если вы уже развернули кластер AKS, то можете включить мониторинг с помощью Azure CLI или предоставив шаблон Azure Resource Manager, как показано далее в этой статье. Невозможно использовать `kubectl` для обновления, удаления, повторного развертывания или развертывания агента. Развертывание шаблона должно проходить в той же группе ресурсов, что и у кластера.
 
-## <a name="sign-in-to-the-azure-portal"></a>Войдите на портал Azure
+## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 Войдите на [портале Azure](https://portal.azure.com). 
 
 ## <a name="enable-monitoring-for-a-new-cluster"></a>Включение мониторинга для нового кластера

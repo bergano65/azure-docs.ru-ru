@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/16/2018
 ms.author: kumud
-ms.openlocfilehash: acd7a88acb31b9d3bd3ba714387561e91b3524a6
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 3843b5022aaf218bf91e25ecf6d9c36bb2db2dee
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61034745"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64575426"
 ---
 # <a name="plan-virtual-networks"></a>Планирование виртуальных сетей
 
@@ -77,7 +77,7 @@ ms.locfileid: "61034745"
 - Если для разных виртуальных машин в подсети необходимо применить различные правила безопасности, вы можете связать сетевой интерфейс виртуальной машины с одной или несколькими группами безопасности приложения. Правило безопасности может указать группу безопасности приложения как в источнике, так и в назначении. Это правило затем применяется только к сетевым интерфейсам, которые входят в группу безопасности приложения. Ознакомьтесь с дополнительными сведениями о группах безопасности [сети](security-overview.md) и [приложения](security-overview.md#application-security-groups).
 - Azure создает несколько стандартных правил безопасности в каждой группе безопасности сети. Одно стандартное правило разрешает передачу всего трафика между всеми ресурсами в виртуальной сети. Это поведение можно изменить с помощью групп безопасности сети, настраиваемой маршрутизации для перенаправления трафика в виртуальный сетевой модуль, или используя оба метода. Рекомендуется ознакомиться со всеми [стандартными правилами безопасности](security-overview.md#default-security-rules) Azure и понять, как правила безопасности сети применяются к ресурсам.
 
-Вы можете просмотреть примеры проектирования для реализации сети периметра между Azure и Интернетом с помощью [виртуальных сетевых модулей](/azure/architecture/reference-architectures/dmz/secure-vnet-dmz?toc=%2Fazure%2Fvirtual-network%2Ftoc.json) или [групп безопасности сети](virtual-networks-dmz-nsg.md).
+Можно просмотреть образец схемы для реализации сети периметра (также называемой демилитаризованной ЗОНОЙ) между Azure и Интернета, используя [NVA](/azure/architecture/reference-architectures/dmz/secure-vnet-dmz?toc=%2Fazure%2Fvirtual-network%2Ftoc.json) или [группы безопасности сети](virtual-networks-dmz-nsg.md).
 
 ### <a name="traffic-routing"></a>Маршрутизация трафика
 

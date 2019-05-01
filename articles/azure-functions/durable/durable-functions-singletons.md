@@ -8,15 +8,14 @@ keywords: ''
 ms.service: azure-functions
 ms.devlang: multiple
 ms.topic: conceptual
-origin.date: 12/07/2018
-ms.date: 01/16/2019
-ms.author: v-junlch
-ms.openlocfilehash: aca7aa30744c79cefd3c7704a8fde1df203b2c9d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.date: 12/07/2018
+ms.author: azfuncdf
+ms.openlocfilehash: c032ba046668310ff71d067d22a805fc6446667c
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60731317"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64683799"
 ---
 # <a name="singleton-orchestrators-in-durable-functions-azure-functions"></a>Одноэлементные экземпляры в устойчивых функциях (Функции Azure)
 
@@ -59,14 +58,41 @@ public static async Task<HttpResponseMessage> RunSingle(
 
 ### <a name="javascript-functions-2x-only"></a>JavaScript (только для решения "Функции" версии 2.x)
 
+Ниже показан файл function.json:
+```json
+{
+  "bindings": [
+    {
+      "authLevel": "function",
+      "name": "req",
+      "type": "httpTrigger",
+      "direction": "in",
+      "route": "orchestrators/{functionName}/{instanceId}",
+      "methods": ["post"]
+    },
+    {
+      "name": "starter",
+      "type": "orchestrationClient",
+      "direction": "in"
+    },
+    {
+      "name": "$return",
+      "type": "http",
+      "direction": "out"
+    }
+  ]
+}
+```
+
+Ниже показан код JavaScript.
 ```javascript
 const df = require("durable-functions");
 
-modules.exports = async function(context, req) {
+module.exports = async function(context, req) {
     const client = df.getClient(context);
 
     const instanceId = req.params.instanceId;
-    const functionName = req.params.functionsName;
+    const functionName = req.params.functionName;
 
     // Check if an instance with the specified ID already exists.
     const existingInstance = await client.getStatus(instanceId);
@@ -100,5 +126,3 @@ modules.exports = async function(context, req) {
 
 > [!div class="nextstepaction"]
 > [Сведения о вызове вложенных оркестраций](durable-functions-sub-orchestrations.md)
-
-<!-- Update_Description: wording update -->

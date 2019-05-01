@@ -12,12 +12,12 @@ ms.author: sstein
 ms.reviewer: sashan, moslake, carlrab
 manager: craigg
 ms.date: 02/23/2019
-ms.openlocfilehash: 6a027e6c0afd526139484240f288205fa946d557
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
-ms.translationtype: HT
+ms.openlocfilehash: e2230bc8adf13825692f93b1e2bc33a4b79076e2
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62111805"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64574370"
 ---
 # <a name="azure-sql-database-service-tiers"></a>Уровни служб в Базе данных SQL Azure
 
@@ -63,5 +63,5 @@ ms.locfileid: "62111805"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Дополнительные сведения о конкретных объемах вычислительных ресурсов и доступных размерах хранилища для отдельной базы данных на уровнях службы "Общее назначение" и "Критически важный для бизнеса" см. в разделе [Отдельная база данных: размеры хранилища и объемы вычислительных ресурсов](sql-database-vcore-resource-limits-single-databases.md#general-purpose-service-tier).
-- Дополнительные сведения о конкретных объемах вычислительных ресурсов и доступных размерах хранилища для эластичных пулов на уровнях службы "Общее назначение" и "Критически важный для бизнеса" см. в разделе [Эластичный пул: размеры хранилища и объемы вычислительных ресурсов](sql-database-vcore-resource-limits-elastic-pools.md#general-purpose-service-tier-storage-sizes-and-compute-sizes).
+- Дополнительные сведения о конкретных объемах вычислительных ресурсов и доступных размерах хранилища для отдельной базы данных на уровнях службы "Общее назначение" и "Критически важный для бизнеса" см. в разделе [Отдельная база данных: размеры хранилища и объемы вычислительных ресурсов](sql-database-vcore-resource-limits-single-databases.md).
+- Дополнительные сведения о конкретных объемах вычислительных ресурсов и доступных размерах хранилища для эластичных пулов на уровнях службы "Общее назначение" и "Критически важный для бизнеса" см. в разделе [Эластичный пул: размеры хранилища и объемы вычислительных ресурсов](sql-database-vcore-resource-limits-elastic-pools.md).

@@ -3,16 +3,16 @@ title: Определение причин несоответствия треб
 description: Если ресурс является несоответствующим, существует множество возможных причин. Узнайте, как выяснения причины несоответствия.
 author: DCtheGeek
 ms.author: dacoulte
-ms.date: 03/30/2019
+ms.date: 04/26/2019
 ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
-ms.openlocfilehash: 0af3fd8596bf558f9d5cc97c95be773aa40954cc
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 2f856e9c42b26d4e286493e2eb5d019a8cff6c23
+ms.sourcegitcommit: e7d4881105ef17e6f10e8e11043a31262cfcf3b7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60499365"
+ms.lasthandoff: 04/29/2019
+ms.locfileid: "64868703"
 ---
 # <a name="determine-causes-of-non-compliance"></a>Определение причин несоответствия требованиям
 
@@ -47,7 +47,7 @@ ms.locfileid: "60499365"
 
    ![Сведения о соответствия и причины несоответствия](../media/determine-non-compliance/compliance-details-pane.png)
 
-   Для **auditIfNotExists** или **deployIfNotExists** Определение политики, эти сведения включают **details.type** свойство и любые дополнительные свойства. Список, см. в разделе [свойства auditIfNotExists](../concepts/effects.md#auditifnotexists-properties) и [deployIfNotExists свойства](../concepts/effects.md#deployifnotexists-properties). **Последняя проверка ресурсов** является ресурсом, связанных с **сведения** часть определения.
+   Для **auditIfNotExists** или **deployIfNotExists** Определение политики, эти сведения включают **details.type** свойство и любые дополнительные свойства. Список, см. в разделе [свойства auditIfNotExists](../concepts/effects.md#auditifnotexists-properties) и [deployIfNotExists свойства](../concepts/effects.md#deployifnotexists-properties). **Последняя проверка ресурсов** имеет связанный ресурс из **сведения** часть определения.
 
    Пример частичной **deployIfNotExists** определение:
 
@@ -105,9 +105,107 @@ ms.locfileid: "60499365"
 |Текущее значение не должно без учета регистра соответствовать целевому значению. |notMatchInsensitively или **не** matchInsensitively |
 |Нет связанных ресурсов, соответствующих сведениям о воздействии в определении политики. |Ресурс типа, определенного в **then.details.type** и связанный ресурс, определенный в **Если** часть правила политики не существует. |
 
-## <a name="change-history-preview"></a>Журнал изменений (предварительная версия)
+## <a name="compliance-details-for-guest-configuration"></a>Сведения о соответствии для конфигурации гостевой
 
-Как часть нового **общедоступной предварительной версии**, последние 14 дней изменений журнал доступен для всех ресурсов Azure, которые поддерживают [завершить режим удаления](../../../azure-resource-manager/complete-mode-deletion.md). Журнал изменений содержит подробные сведения о том, когда было обнаружено изменение и _отличия между визуальными элементами_ для каждого изменения. Обнаружение изменений активируется в том случае, когда добавлены, удалены или изменены свойства Resource Manager.
+Для _аудита_ политик в _конфигурации гостевой_ категории, может существовать несколько параметров, вычисляется в виртуальной Машине, и вам потребуется просмотреть подробные сведения для каждого параметра. Например, если вы аудит список установленных приложений и состояние назначения является _несоответствующие_, вам потребуется знать, какие конкретные приложения отсутствуют.
+
+Также у вас нет доступа для входа на виртуальную машину напрямую, но вам нужно сообщить, на которой находится виртуальная машина _несоответствующие_. Например можно аудит, что виртуальные машины присоединены к правильному домену и включает текущего членства в домене в сведениях об отчетности.
+
+### <a name="azure-portal"></a>Портал Azure
+
+1. Запустите службу "Политика Azure" на портале Azure, щелкнув **Все службы**, а затем выполнив поиск и выбрав **Политика**.
+
+1. На **Обзор** или **соответствия** выберите назначение политики для любой инициативы, которая содержит определение политики конфигурации гостевой что _несоответствующие_.
+
+1. Выберите _аудита_ политики в рамках инициативы что _несоответствующие_.
+
+   ![Просмотр сведений о определение аудита](../media/determine-non-compliance/guestconfig-audit-compliance.png)
+
+1. На **соответствие ресурсов** вкладке приводятся следующие сведения:
+
+   - **Имя** -имя назначения конфигурации гостевой.
+   - **Родительский ресурс** -виртуальной машины в _несоответствующие_ состояния для выбранной конфигурации гостевой назначения.
+   - **Тип ресурса** - _guestConfigurationAssignments_ полное имя.
+   - **Последнее вычисление** — время последней конфигурации гостевой служба уведомление о политике Azure о состоянии целевой виртуальной машины.
+
+   ![Просмотрите сведения о соответствии.](../media/determine-non-compliance/guestconfig-assignment-view.png)
+
+1. Выберите имя Назначение конфигурации гостевой в **имя** столбца, чтобы открыть **соответствие ресурсов** страницы.
+
+1. Выберите **ресурс представления** кнопку в верхней части страницы, чтобы открыть **назначения гостевой** страницы.
+
+**Назначения гостевой** странице отображаются все сведения о доступных соответствия. Каждая строка в представлении представляет вычисление, которое было выполнено на виртуальной машине. В **Причина** столбец, фразы, описывающий, почему он гостевой назначен _несоответствующие_ отображается. Например, если аудит, что виртуальные машины должен быть присоединен к домену **Причина** столбец будет отображать текст, включая членство в текущем домене.
+
+![Просмотрите сведения о соответствии.](../media/determine-non-compliance/guestconfig-compliance-details.png)
+
+### <a name="azure-powershell"></a>Azure PowerShell
+
+Можно также просмотреть сведения о соответствии с помощью Azure PowerShell. Во-первых убедитесь, что вы установили модуль конфигурации гостевой.
+
+```azurepowershell-interactive
+Install-Module Az.GuestConfiguration
+```
+
+Можно просматривать текущее состояние всех назначений гостя для виртуальной Машины, используя следующую команду:
+
+```azurepowershell-interactive
+Get-AzVMGuestPolicyReport -ResourceGroupName <resourcegroupname> -VMName <vmname>
+```
+
+```output
+PolicyDisplayName                                                         ComplianceReasons
+-----------------                                                         -----------------
+Audit that an application is installed inside Windows VMs                 {[InstalledApplication]bwhitelistedapp}
+Audit that an application is not installed inside Windows VMs.            {[InstalledApplication]NotInstalledApplica...
+```
+
+Чтобы просмотреть только _Причина_ фразу, которая описывает, почему виртуальная машина не _несоответствующие_, возвращают только причина дочернее свойство.
+
+```azurepowershell-interactive
+Get-AzVMGuestPolicyReport -ResourceGroupName <resourcegroupname> -VMName <vmname> | % ComplianceReasons | % Reasons | % Reason
+```
+
+```output
+The following applications are not installed: '<name>'.
+```
+
+Можно также выводить журнал соответствия для назначений гостя в области для виртуальной машины. Выходные данные этой команды содержит сведения о каждом отчете для виртуальной Машины.
+
+> [!NOTE]
+> Выходные данные могут возвращать большое количество данных. Рекомендуется сохранить выходные данные в переменной.
+
+```azurepowershell-interactive
+$guestHistory = Get-AzVMGuestPolicyStatusHistory -ResourceGroupName <resourcegroupname> -VMName <vmname>
+$guestHistory
+```
+
+```output
+PolicyDisplayName                                                         ComplianceStatus ComplianceReasons StartTime              EndTime                VMName LatestRepor
+                                                                                                                                                                  tId
+-----------------                                                         ---------------- ----------------- ---------              -------                ------ -----------
+[Preview]: Audit that an application is installed inside Windows VMs      NonCompliant                       02/10/2019 12:00:38 PM 02/10/2019 12:00:41 PM VM01  ../17fg0...
+<truncated>
+```
+
+Чтобы упростить это представление, используйте **ShowChanged** параметра. Выходные данные этой команды включает только отчеты, за которой изменение состояния соответствия.
+
+```azurepowershell-interactive
+$guestHistory = Get-AzVMGuestPolicyStatusHistory -ResourceGroupName <resourcegroupname> -VMName <vmname> -ShowChanged
+$guestHistory
+```
+
+```output
+PolicyDisplayName                                                         ComplianceStatus ComplianceReasons StartTime              EndTime                VMName LatestRepor
+                                                                                                                                                                  tId
+-----------------                                                         ---------------- ----------------- ---------              -------                ------ -----------
+Audit that an application is installed inside Windows VMs                 NonCompliant                       02/10/2019 10:00:38 PM 02/10/2019 10:00:41 PM VM01  ../12ab0...
+Audit that an application is installed inside Windows VMs.                Compliant                          02/09/2019 11:00:38 AM 02/09/2019 11:00:39 AM VM01  ../e3665...
+Audit that an application is installed inside Windows VMs                 NonCompliant                       02/09/2019 09:00:20 AM 02/09/2019 09:00:23 AM VM01  ../15ze1...
+```
+
+## <a name="a-namechange-historychange-history-preview"></a><a name="change-history"/>Журнал изменений (Предварительная версия)
+
+Как часть нового **общедоступной предварительной версии**, за последние 14 дней, историю изменений доступны для всех ресурсов Azure, которые поддерживают [завершить режим удаления](../../../azure-resource-manager/complete-mode-deletion.md). Журнал изменений содержит подробные сведения о том, когда было обнаружено изменение и _отличия между визуальными элементами_ для каждого изменения. Обнаружение изменений активируется в том случае, когда добавлены, удалены или изменены свойства Resource Manager.
 
 1. Запустите службу "Политика Azure" на портале Azure, щелкнув **Все службы**, а затем выполнив поиск и выбрав **Политика**.
 
@@ -129,10 +227,10 @@ _Отличия между визуальными элементами_ позв
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- См. другие [примеры шаблонов для службы "Политика Azure"](../samples/index.md).
-- См. дополнительные сведения о [структуре определения политики](../concepts/definition-structure.md).
+- Просмотрите примеры доступны на [примеры политик Azure](../samples/index.md).
+- См. дополнительные сведения о [структуре определения Политики Azure](../concepts/definition-structure.md).
 - См. дополнительные сведения о [действиях политик](../concepts/effects.md).
-- См. сведения о [программном создании политик](programmatically-create.md).
-- Узнайте о том, как получить [подробные сведения о соответствии](getting-compliance-data.md).
-- См. сведения о том, как [исправлять несоответствующие ресурсы](remediate-resources.md).
-- См. дополнительные сведения о группе управления в разделе [Упорядочение ресурсов с помощью групп управления Azure](../../management-groups/overview.md)
+- Понять, как [программное создание политик](programmatically-create.md).
+- Узнайте, как [получить данные о соответствии](getting-compliance-data.md).
+- Узнайте, как [исправлять несоответствующие ресурсы](remediate-resources.md).
+- Просмотрите, какие группы управления — с [упорядочение ресурсов с помощью групп управления Azure](../../management-groups/overview.md).

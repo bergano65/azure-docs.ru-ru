@@ -10,18 +10,18 @@ ms.subservice: face-api
 ms.topic: conceptual
 ms.date: 02/01/2019
 ms.author: lewlu
-ms.openlocfilehash: 30ceb0e396597530071c70c4448761d914acb4ac
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.openlocfilehash: 02e9b64c89eda1471d644e0116bbf8c1c061ccc3
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59548410"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64682521"
 ---
 # <a name="migrate-your-face-data-to-a-different-face-subscription"></a>Перенос данных распознавания лиц в другую подписку API распознавания лиц
 
 В этом руководстве показано, как переместить данные распознавания лиц (например, сохраненную группу **PersonGroup**) в другую подписку API распознавания лиц с помощью функции моментального снимка. Это позволяет избежать необходимости многократного создания и обучения группы **PersonGroup** или списка **FaceList** при перемещении или расширении операций. Например, вы создали группу **PersonGroup** в бесплатной пробной подписке и теперь хотите перенести ее в платную подписку или синхронизировать данные распознавания лиц между регионами для крупной корпоративной операции.
 
-Эта же стратегия переноса применяется к объектам **LargePersonGroup** и **LargeFaceList**. Если вы не знакомы с понятиями, упоминаемыми в этом руководстве, их определения можно найти в [глоссарии](../Glossary.md). В этом руководстве используется клиентская библиотека API распознавания лиц для .NET с C#.
+Эта же стратегия переноса применяется к объектам **LargePersonGroup** и **LargeFaceList**. Если вы не знакомы с основными понятиями в этом руководстве, см. в разделе их определения в [сталкиваются распознавание концепции](../concepts/face-recognition.md) руководства. В этом руководстве используется клиентская библиотека API распознавания лиц для .NET с C#.
 
 ## <a name="prerequisites"></a>Технические условия
 
@@ -29,15 +29,13 @@ ms.locfileid: "59548410"
 - Строка идентификатора подписки API распознавания лиц, соответствующая целевой подписке (находится в колонке **Обзор** на портале Azure). 
 - Любой выпуск [Visual Studio 2015 или 2017](https://www.visualstudio.com/downloads/).
 
-
 ## <a name="create-the-visual-studio-project"></a>Создание проекта Visual Studio
 
 В этом руководстве для переноса данных распознавания лиц используется простое консольное приложение. Полную реализацию см. в [примере моментального снимка API распознавания лиц](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/app-samples/FaceApiSnapshotSample/FaceApiSnapshotSample) на GitHub.
 
-1. В Visual Studio создайте проект **Консольное приложение (.NET Framework)** и назовите его **FaceApiSnapshotSample**. 
+1. В Visual Studio создайте проект **Консольное приложение (.NET Framework)** и назовите его **FaceApiSnapshotSample**.
 1. Получите необходимые пакеты NuGet. В обозревателе решений щелкните свой проект правой кнопкой мыши и выберите **Управление пакетами NuGet**. Нажмите кнопку **Обзор** и выберите **Включить предварительные выпуски**, а затем найдите и установите следующий пакет:
     - [Microsoft.Azure.CognitiveServices.Vision.Face 2.3.0-preview](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Vision.Face/2.2.0-preview).
-
 
 ## <a name="create-face-clients"></a>Создание клиентов для распознавания лиц
 
@@ -226,7 +224,9 @@ private static async Task IdentifyInPersonGroup(IFaceClient client, string perso
 await FaceClientEastAsia.Snapshot.DeleteAsync(snapshotId);
 ```
 
-## <a name="related-topics"></a>Связанные темы
+## <a name="next-steps"></a>Дальнейшие действия
+
+Далее см. в разделе соответствующей справочную документацию по API, изучите пример приложения, использующего функции создания моментальных снимков или выполните руководство по использованию других операций API, упомянутые здесь.
 
 - [Справочная документация по моментальным снимкам (SDK для .NET)](https://docs.microsoft.com/dotnet/api/microsoft.azure.cognitiveservices.vision.face.snapshotoperations?view=azure-dotnet)
 - [Пример моментального снимка API распознавания лиц](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/app-samples/FaceApiSnapshotSample/FaceApiSnapshotSample)

@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/23/2019
 ms.author: aschhab
-ms.openlocfilehash: c767406ceec703b5c14680ec96fdf703c2316044
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 2c206d42e220534225cfef0415a65c1f9494f761
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60403775"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64569793"
 ---
 # <a name="message-sessions-first-in-first-out-fifo"></a>Сеансы сообщений и обработка в порядке очереди (FIFO) 
 
@@ -79,8 +79,7 @@ ms.locfileid: "60403775"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Полный пример](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/GettingStarted/Microsoft.Azure.ServiceBus/BasicSendReceiveUsingQueueClient) отправки и получения сообщений на основе сеанса через очереди служебной шины с помощью библиотеки .NET Standard.
-- [Пример](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/Microsoft.ServiceBus.Messaging/Sessions), использующий клиент .NET Framework для обработки сообщений с поддержкой сеансов. 
+- См. в статье [примеры Microsoft.Azure.ServiceBus](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/Microsoft.Azure.ServiceBus/Sessions) или [Microsoft.ServiceBus.Messaging примеры](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/Microsoft.ServiceBus.Messaging/Sessions) пример, использующий клиент .NET Framework для обработки сообщений с поддержкой сеанса. 
 
 Дополнительные сведения об обмене сообщениями через служебную шину см. в следующих статьях:
 

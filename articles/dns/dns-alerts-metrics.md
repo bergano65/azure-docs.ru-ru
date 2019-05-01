@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/17/2018
 ms.author: victorh
-ms.openlocfilehash: baa2a09adeba133c5348449b12e037d4a9cb3213
-ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
+ms.openlocfilehash: a9d8bc172eb5f5e0e119a0bde56fb167f7a0c2b2
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59683041"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64699155"
 ---
 # <a name="azure-dns-metrics-and-alerts"></a>Метрики и оповещения Azure DNS
 Azure DNS является службой размещения доменов DNS, осуществляющей разрешение имен на базе инфраструктуры Microsoft Azure. В этой статье описываются метрики и оповещения службы Azure DNS.
@@ -36,7 +36,7 @@ Azure DNS предоставляет клиентские метрики, поз
 >[!NOTE]
 > В настоящее время эти метрики доступны только для общедоступных зон DNS, размещенных в Azure DNS. При наличии в DNS Azure частных зон метрики не предоставляют данных по этим зонам. Кроме того, метрики и компоненты системы предупреждений поддерживаются только в общедоступном облаке Azure. В дальнейшем будет осуществляться поддержка частных облаков. 
 
-Степень детализации измерения для этих метрик реализуется зоной DNS.
+Наиболее детализированные элемент, вы можете просматривать метрики такое зона DNS. Метрики для отдельных записей ресурсов в пределах зоны не отображается в данный момент.
 
 ### <a name="query-volume"></a>Объем запросов
 

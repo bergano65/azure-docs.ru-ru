@@ -11,12 +11,12 @@ ms.workload: ''
 ms.topic: article
 ms.date: 04/21/2019
 ms.author: juliako
-ms.openlocfilehash: a4c643ecff5c33ec19c607da6ef8db41cfeb90c6
-ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
-ms.translationtype: HT
+ms.openlocfilehash: 9154e5d58a36bde1827d63d11d57a77b4289a781
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63762812"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64689373"
 ---
 # <a name="analyzing-video-and-audio-files"></a>Анализ видео- и аудиофайлов
 
@@ -35,7 +35,7 @@ ms.locfileid: "63762812"
 |---|---|---|
 |[AudioAnalyzerPreset](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#audioanalyzerpreset)|Анализ аудио|Эта предустановка применяет предопределенный набор операций анализа на основе ИИ, включая транскрибирование речи. В настоящее время она поддерживает обработку содержимого с одной звуковой дорожкой, содержащей речь на одном языке. Можно указать язык для полезных данных аудио во входных данных. Для этого используется формат BCP-47 "тег языка — регион". Поддерживаемые языки: английский ("en-US" и "en-GB"), испанский ("es-ES" и "es-MX"), французский ("fr-FR"), итальянский ("it-IT"), японский ("ja-JP"), португальский ("pt-BR"), китайский ("zh-CN"), немецкий ("de-DE"), арабский ("ar-EG"), русский ("ru-RU"), хинди ("hi-IN") и корейский ("ko-KR").<br/><br/> Если язык не указан или имеет значение NULL, функция автоматического распознавания языка выберет первый обнаруженный язык и обработает весь файл, используя этот язык. Функция автоматического определения языка сейчас поддерживается для таких языков: английский, китайский, французский, немецкий, итальянский, японский, испанский, русский и португальский. Сейчас она не поддерживает динамическое переключение между языками после распознавания первого языка. Автоматическое распознавание языка лучше всего работает с аудиозаписями с четко различимой речью. Если функции автоматического определения языка не удается определить язык, расшифровка будет вестись на английском.|
 |[VideoAnalyzerPreset](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#videoanalyzerpreset)|Анализ аудио и видео|Извлекает из аудио и видео аналитические данные (подробные метаданные) и выдает файл в формате JSON. Можно указать, если нужно извлекать аналитические данные только для аудио при обработке видеофайла. Дополнительные сведения см. в статье [Руководство. Анализ видео с помощью Служб мультимедиа Azure](analyze-videos-tutorial-with-api.md).|
-|[FaceDetectorPreset](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#facedetectorpreset)||Описывает параметры, которые будут использоваться при анализе видео для обнаружения всех лиц, которые присутствуют.|
+|[FaceDetectorPreset](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#facedetectorpreset)|Обнаружение всех лиц в видео|Описывает параметры, которые будут использоваться при анализе видео для обнаружения всех лиц, которые присутствуют.|
 
 ### <a name="audioanalyzerpreset"></a>AudioAnalyzerPreset
 

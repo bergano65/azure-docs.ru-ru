@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 04/16/2019
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: 11361bc6ab75e873e1b4081dcfc6492abc093b54
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: ac3c2132fc28d9813a9322898f79c7cdfffa12d7
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60316941"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64681893"
 ---
 # <a name="overview-of-tokens-in-azure-active-directory-b2c"></a>Общие сведения о маркеров в Azure Active Directory B2C
 
@@ -50,7 +50,7 @@ Azure AD B2C поддерживает [протоколы OAuth 2.0 и OpenID Co
 
 Ниже перечислены утверждения, что можно ожидать, что в маркерах Идентификации и доступа к токенам в Azure AD B2C.
 
-| Name | Утверждение | Пример значения | ОПИСАНИЕ |
+| ИМЯ | Утверждение | Пример значения | ОПИСАНИЕ |
 | ---- | ----- | ------------- | ----------- |
 | Аудитория | `aud` | `90c0fe63-bcf2-44d5-8fb7-b8bbc0b29dc6` | Определяет целевого получателя маркера. Для Azure AD B2C аудитория — идентификатор приложения. Приложение должно проверить это значение и отклонить маркер, если он не соответствует. Аудитория ассоциируется с ресурсом. |
 | Издатель | `iss` |`https://{tenant}.b2clogin.com/775527ff-9a37-4307-8b3d-cc311f58d925/v2.0/` | Обозначает службу токенов безопасности (STS), которая создает и возвращает токен. Она также определяет каталог, в котором пользователь прошел проверку. Приложение должно проверить утверждение издателя и убедитесь, что маркер пришел от соответствующей конечной точке. |

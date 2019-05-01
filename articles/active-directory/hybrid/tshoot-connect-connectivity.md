@@ -1,5 +1,5 @@
 ---
-title: 'Azure AD Connect выполняет следующие функции: устранение неполадок подключения | Документация Майкрософт'
+title: 'Azure AD Connect выполняет следующие функции: Устранение неполадок Azure AD проблемы с подключением | Документация Майкрософт'
 description: Сведения об устранении неполадок подключения в Azure AD Connect.
 services: active-directory
 documentationcenter: ''
@@ -12,18 +12,18 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/18/2017
+ms.date: 04/25/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c0afc31bf08a5037d91885bc6a85c6aeaf858825
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 7519f47037d2d7ff37564ab27c1cc58b65ff6c14
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60386691"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64572779"
 ---
-# <a name="troubleshoot-connectivity-issues-with-azure-ad-connect"></a>Устранение неполадок подключения в Azure AD Connect
+# <a name="troubleshoot-azure-ad-connectivity"></a>Устранение неполадок подключения Azure AD
 В этой статье рассказывается, как работает подключение между Azure AD Connect и Azure AD и как устранять неполадки подключения. Как правило, проблемы возникают в среде с прокси-сервером.
 
 ## <a name="troubleshoot-connectivity-issues-in-the-installation-wizard"></a>Устранение неполадок подключения в мастере установки

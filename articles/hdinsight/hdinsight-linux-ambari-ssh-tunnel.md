@@ -1,21 +1,19 @@
 ---
 title: Использование туннелирования SSH для доступа к Azure HDInsight
 description: Узнайте, как безопасно просматривать веб-ресурсы, размещенные на узлах HDInsight под управлением Linux, с помощью туннеля SSH.
-services: hdinsight
 author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
-origin.date: 04/30/2018
-ms.date: 02/04/2019
+ms.date: 12/15/2018
 ms.author: hrasheed
 ms.openlocfilehash: 0361539cefbacb8fc0473a1f863cf2ae4638b444
-ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
-ms.translationtype: HT
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63766759"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64682541"
 ---
 # <a name="use-ssh-tunneling-to-access-apache-ambari-web-ui-jobhistory-namenode-apache-oozie-and-other-web-uis"></a>Использование туннелирования SSH для доступа к пользовательскому веб-интерфейсу Apache Ambari, JobHistory, NameNode, Apache Oozie и другим пользовательским веб-интерфейсам
 
@@ -35,7 +33,7 @@ ms.locfileid: "63766759"
 
 При использовании действий скриптов для настройки кластера туннель SSH требуется для всех служб и программ, которые вы установили для доступа к веб-службе. Например, если вы установили Hue с помощью действия сценария, для доступа к веб-интерфейсу Hue потребуется туннель SSH.
 
-> [!IMPORTANT]
+> [!IMPORTANT]  
 > Если у вас есть прямой доступ к HDInsight через виртуальную сеть, то вам не нужно использовать туннели SSH. Пример прямого доступа к HDInsight через виртуальную сеть см. в статье о [подключении HDInsight к локальной сети](connect-on-premises-network.md).
 
 ## <a name="what-is-an-ssh-tunnel"></a>Что такое туннель SSH?
@@ -48,7 +46,7 @@ ms.locfileid: "63766759"
 
 * Веб-браузер, который можно настроить на использование прокси-сервера SOCKS5.
 
-    > [!WARNING]
+    > [!WARNING]  
     > Встроенная в параметры Интернета в Windows поддержка прокси-сервера SOCKS не применяется к SOCKS5 и не работает при выполнении действий в этом документе. Следующие браузеры используют параметры прокси-сервера Windows и в настоящее время не будут работать при выполнении действий в этом документе.
     >
     > * Microsoft Edge
@@ -111,14 +109,14 @@ ssh -C2qTnNf -D 9876 sshuser@clustername-ssh.azurehdinsight.net
 
 ## <a name="use-the-tunnel-from-your-browser"></a>Использование туннеля из браузера
 
-> [!IMPORTANT]
+> [!IMPORTANT]  
 > Для действий, описанных в этом разделе, используется браузер FireFox, так как предоставляет те же параметры прокси-сервера на всех платформах. Для других современных браузеров, например Google Chrome, может потребоваться расширение, например FoxyProxy, для работы с туннелем.
 
 1. Настроить браузер для использования **localhost** и порта, использованного при создании туннеля, в качестве прокси-сервера **SOCKS 5**. Вот как выглядят параметры Firefox. Если используется порт, отличный от 9876, измените номер порта соответствующим образом.
    
     ![изображение параметров Firefox](./media/hdinsight-linux-ambari-ssh-tunnel/firefoxproxy.png)
    
-   > [!NOTE]
+   > [!NOTE]  
    > Если выбрать параметр **Remote DNS** (Удаленная служба DNS), то запросы службы доменных имен (DNS) будут разрешаться с помощью кластера HDInsight. Этот параметр разрешает запросы DNS с помощью головного узла кластера.
 
 2. Чтобы проверить, работает ли туннель, зайдите на сайт [https://www.whatismyip.com/](https://www.whatismyip.com/). Возвращаемый IP-адрес должен быть адресом, который используется центром обработки данных Microsoft Azure.
@@ -140,7 +138,7 @@ ssh -C2qTnNf -D 9876 sshuser@clustername-ssh.azurehdinsight.net
 
     ![Изображение с развернутым меню "Быстрые ссылки"](./media/hdinsight-linux-ambari-ssh-tunnel/namenodedropdown.png)
 
-   > [!NOTE]
+   > [!NOTE]  
    > При выборе меню __Быстрые ссылки__ может появиться индикатор ожидания. Это может произойти, если подключение к Интернету медленное. Подождите одну-две минуты для получения данных с сервера, а затем повторите попытку.
    >
    > Некоторые записи в меню **Быстрые ссылки** могут быть обрезаны правым краем экрана. В этом случае разверните меню с помощью мыши и используйте клавишу со стрелкой вправо, чтобы прокрутить экран вправо и увидеть остальную часть меню.

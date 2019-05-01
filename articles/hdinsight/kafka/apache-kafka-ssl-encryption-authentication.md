@@ -1,21 +1,19 @@
 ---
 title: Настройка шифрования и проверки подлинности SSL для Apache Kafka в Azure HDInsight
 description: Настройка шифрования SSL для обмена данными между клиентами Kafka и брокерами Kafka, а также между брокерами Kafka. Настройка проверки подлинности клиентов по протоколу SSL.
-services: hdinsight
 author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
-origin.date: 01/15/2019
-ms.date: 04/15/2019
-ms.author: v-yiso
+ms.date: 01/15/2019
+ms.author: hrasheed
 ms.openlocfilehash: 9d8d5e57d0dd7d7022e65a061360c8450848fb4b
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
-ms.translationtype: HT
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62114963"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64682918"
 ---
 # <a name="setup-secure-sockets-layer-ssl-encryption-and-authentication-for-apache-kafka-in-azure-hdinsight"></a>Настройка шифрования и проверки подлинности SSL для Apache Kafka в Azure HDInsight
 

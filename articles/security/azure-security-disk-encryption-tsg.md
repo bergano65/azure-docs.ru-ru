@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 03/12/2019
 ms.custom: seodec18
-ms.openlocfilehash: 3c6c552a6605278d8ab31264f5d180206e0badac
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 4715ec92c4ee45733cc0eb2839c533f9ee8968fe
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59490048"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64694115"
 ---
 # <a name="azure-disk-encryption-troubleshooting-guide"></a>Руководство по устранению неполадок шифрования дисков Azure
 
@@ -52,7 +52,7 @@ uname -a
 
 ## <a name="update-the-azure-virtual-machine-agent-and-extension-versions"></a>Обновление версий расширения и агент виртуальной машины Azure
 
-Возможен сбой операции шифрования дисков Azure образы виртуальных машин с использованием неподдерживаемых версий агент виртуальной машины Azure. Дополнительные сведения, обратитесь к [Минимальная поддержка версий для агентов виртуальных машин в Azure](https://support.microsoft.com/en-us/help/4049215/extensions-and-virtual-machine-agent-minimum-version-support).  
+Возможен сбой операции шифрования дисков Azure образы виртуальных машин с использованием неподдерживаемых версий агент виртуальной машины Azure. Образы Linux с версиями агента в более ранних, чем 2.2.38 должны обновляться перед включением шифрования. Дополнительные сведения см. в разделе [как обновить агент Linux для Azure на виртуальной Машине](../virtual-machines/extensions/update-linux-agent.md) и [Минимальная поддержка версий для агентов виртуальных машин в Azure](https://support.microsoft.com/en-us/help/4049215/extensions-and-virtual-machine-agent-minimum-version-support).
 
 Правильная версия расширение Microsoft.Azure.Security.AzureDiskEncryption или Microsoft.Azure.Security.AzureDiskEncryptionForLinux гостевого агента также является обязательным. Обслуживание и обновляется автоматически платформой, когда удовлетворяются требования к агенту виртуальной машины Azure и используется поддерживаемая версия агента виртуальной машины версии расширения.
 

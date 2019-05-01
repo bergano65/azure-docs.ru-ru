@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2fcf2ef10cbc8f6f54a65e596ea003a98f410a7b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 78889cb3c04b9854a4cebb27c35488d5142ad3a7
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60415010"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64694840"
 ---
 # <a name="what-is-password-writeback"></a>Что такое компонент обратной записи паролей?
 
@@ -85,9 +85,6 @@ ms.locfileid: "60415010"
    * В ссылке из объекта соединителя Active Directory на MV должно быть правило синхронизации `Microsoft.InfromADUserAccountEnabled.xxx`.
    
    Когда поступает вызов из облака, модуль синхронизации использует атрибут **cloudAnchor**, чтобы найти объект пространства соединителя Azure Active Directory. Посл этого он переходит по ссылке к объекту MV, а затем — к объекту Active Directory. Так как для одного и того же пользователя может существовать несколько объектов Active Directory (несколько лесов), обработчик синхронизации полагается на ссылку `Microsoft.InfromADUserAccountEnabled.xxx` для выбора нужного из них.
-
-   > [!Note]
-   > В результате этой логики Azure AD Connect должен иметь возможность связаться с эмулятором основного контроллера домена, чтобы компонент обратной записи паролей работал. Если необходимо включить эту функцию вручную, можно подключить Azure AD Connect к эмулятору основного контроллера домена. Щелкните правой кнопкой мыши **Свойства** для соединителя синхронизации Active Directory, затем выберите **configure directory partitions** (Настройка разделов каталога). Здесь найдите раздел **domain controller connection settings** (Параметры подключения контроллера домена) и установите флажок **only use preferred domain controllers** (Использовать только предпочитаемые контроллеры домена). Если предпочитаемый контроллер домена не является эмулятором основного контроллера домена, Azure AD Connect все равно попытается подключиться к основному контроллеру домена для обратной записи паролей.
 
 1. После нахождения учетной записи пользователя предпринимается попытка сброса пароля непосредственно в соответствующем лесу Active Directory.
 1. Если операция установки пароля прошла успешно, пользователь уведомляется о том, что его пароль изменен.

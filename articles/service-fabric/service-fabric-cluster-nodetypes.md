@@ -14,15 +14,15 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 03/23/2018
 ms.author: chackdan
-ms.openlocfilehash: 7f9397ee21f74fe6a776881940e5721264216b0f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: a5f8735df2b230de2b0ddcdcccff09430bada9e3
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60386131"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64684689"
 ---
 # <a name="azure-service-fabric-node-types-and-virtual-machine-scale-sets"></a>Типы узлов Azure Service Fabric и масштабируемые наборы виртуальных машин
-[Масштабируемые наборы виртуальных машин](/azure/virtual-machine-scale-sets) являются вычислительными ресурсами Azure. Их можно использовать для развертывания коллекций виртуальных машин и управления ими в качестве набора. Каждый тип узла, который вы определяете в Azure Service Fabric, настраивает отдельный масштабируемый набор.  Среда выполнения Service Fabric устанавливается на каждой виртуальной машине в масштабируемом наборе. Все типы узлов можно масштабировать независимо друг от друга, изменять номер SKU операционной системы, работающей на узле кластера, открывать разные наборы портов и использовать различные метрики производительности.
+[Масштабируемые наборы виртуальных машин](/azure/virtual-machine-scale-sets) являются вычислительными ресурсами Azure. Их можно использовать для развертывания коллекций виртуальных машин и управления ими в качестве набора. Каждый тип узла, который вы определяете в Azure Service Fabric, настраивает отдельный масштабируемый набор.  Среда выполнения Service Fabric установлена на каждой виртуальной машине в масштабируемом наборе с помощью расширения Microsoft.Azure.ServiceFabric виртуальной машины. Все типы узлов можно масштабировать независимо друг от друга, изменять номер SKU операционной системы, работающей на узле кластера, открывать разные наборы портов и использовать различные метрики производительности.
 
 На следующем рисунке показан кластер с двумя типами узлов, которые называются FrontEnd и BackEnd. Каждый тип узла имеет пять узлов.
 
@@ -38,6 +38,56 @@ ms.locfileid: "60386131"
 
 ![Ресурсы][Resources]
 
+## <a name="service-fabric-virtual-machine-extension"></a>Расширение виртуальной машины Service Fabric
+Расширение виртуальной машины Service Fabric используется для начальной загрузки средства Service Fabric на виртуальные машины Azure и настроить параметры безопасности узла.
+
+Ниже приведен фрагмент расширение виртуальной машины Service Fabric.
+
+```json
+"extensions": [
+  {
+    "name": "[concat('ServiceFabricNodeVmExt','_vmNodeType0Name')]",
+    "properties": {
+      "type": "ServiceFabricLinuxNode",
+      "autoUpgradeMinorVersion": true,
+      "protectedSettings": {
+        "StorageAccountKey1": "[listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('supportLogStorageAccountName')),'2015-05-01-preview').key1]",
+       },
+       "publisher": "Microsoft.Azure.ServiceFabric",
+       "settings": {
+         "clusterEndpoint": "[reference(parameters('clusterName')).clusterEndpoint]",
+         "nodeTypeRef": "[variables('vmNodeType0Name')]",
+         "durabilityLevel": "Silver",
+         "enableParallelJobs": true,
+         "nicPrefixOverride": "[variables('subnet0Prefix')]",
+         "certificate": {
+           "commonNames": [
+             "[parameters('certificateCommonName')]"
+           ],
+           "x509StoreName": "[parameters('certificateStoreValue')]"
+         }
+       },
+       "typeHandlerVersion": "1.1"
+     }
+   },
+```
+
+Ниже приведены описания свойств.
+
+| **Имя** | **Допустимые значения** | ** --- ** | **Рекомендация или краткое описание** |
+| --- | --- | --- | --- |
+| name | string | --- | уникальное имя для расширения |
+| Тип | «ServiceFabricLinuxNode» или «ServiceFabricWindowsNode | --- | Идентифицирует начальной загрузке для операционной системы Service Fabric |
+| autoUpgradeMinorVersion | Значение true или false | --- | Включить автообновление SF незначительные версий |
+| publisher | Microsoft.Azure.ServiceFabric | --- | Имя издателя расширения Service Fabric |
+| clusterEndpont | string | --- | URI:Port к конечной точке управления |
+| nodeTypeRef | string | --- | Имя типа узла |
+| значение durabilityLevel | бронза, серебро, золото, platinum | --- | допустимое время для приостановки Неизменяемая инфраструктура Azure |
+| enableParallelJobs | Значение true или false | --- | Включить ParallelJobs вычислений, как удалить виртуальную Машину и виртуальную Машину в той же шкале, наборе в параллельном режиме |
+| nicPrefixOverride | string | --- | Префикс подсети, например «10.0.0.0/24» |
+| commonNames | string[] | --- | Имена общих сертификатов установленных кластера |
+| X509StoreName | string | --- | Имя Store, где находится сертификат установленных кластера |
+| typeHandlerVersion | 1,1 | --- | Версия расширения. Рекомендуется использовать для обновления до 1.1 1.0 классической версии расширения |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения о возможности развертывания в любом месте и сравнении с кластерами под управлением Azure см. в статье [Создание кластеров Service Fabric в Windows Server или Linux](service-fabric-deploy-anywhere.md).

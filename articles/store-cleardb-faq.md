@@ -1,5 +1,5 @@
 ---
-title: Вопросы и ответы об использовании баз данных MySQL ClearDB в службе приложений Azure
+title: Часто задаваемые вопросы о базах данных ClearDB MySql в службе приложений Azure
 description: Ответы на распространенные вопросы об использовании баз данных ClearDB MySQL со службой приложений Azure.
 documentationcenter: php
 services: mysql
@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 10/27/2016
 ms.author: sumuth
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: 0887f58ca455dfec0474c8d6a1acba584224f0d7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 1838dbb627a6dec46f817101fc1d0cca0961ef77
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60929456"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64574181"
 ---
 # <a name="faq-for-cleardb-mysql-databases-with-azure-app-service"></a>Часто задаваемые вопросы о базах данных ClearDB MySql в службе приложений Azure
 Ответы на часто задаваемые вопросы об использовании и покупке баз данных ClearDB MySql для службы веб-приложений Azure.
@@ -49,7 +49,7 @@ ms.locfileid: "60929456"
 ## <a name="i-am-running-mysql-on-my-own-azure-virtual-machine-can-i-connect-my-azure-web-app-to-my-database"></a>Я использую MySQL на собственной виртуальной машине Azure. Могу ли я подключить к этой базе данных веб-приложение Azure?
 Да. Веб-приложение можно подключить к базе данных, если у виртуальной машины Azure есть удаленный доступ к этому веб-приложению. Дополнительные сведения см. в статье об [установке MySQL на виртуальной машине](virtual-machines/windows/classic/mysql-2008r2.md?toc=%2fazure%2fvirtual-machines%2fwindows%2fclassic%2ftoc.json).
 
-## <a name="in-which-countries-are-cleardb-premium-mysql-clusters-supported"></a>В каких странах поддерживаются кластеры ClearDB MySQL Premium?
+## <a name="in-which-countriesregions-are-cleardb-premium-mysql-clusters-supported"></a>В котором страны и регионы будут поддерживаются кластеры ClearDB Premium MySQL?
 Кластеры ClearDB MySQL Premium доступны во всех регионах Azure, кроме Индии, Австралии, Южной Бразилии и Китая.
 
 ## <a name="can-i-create-a-new-cluster-prior-to-creating-a-database-with-cleardb-premium-cluster-solution"></a>Можно ли создать новый кластер до создания базы данных с использованием кластера ClearDB Premium?
@@ -68,7 +68,7 @@ Azure Marketplace недоступен для клиентов из Азерба
 На [портале Azure](https://portal.azure.com) можно увеличить масштаб общей базы данных размещения ClearDB. Дополнительные сведения см. в [этой статье](https://blogs.msdn.microsoft.com/appserviceteam/2016/10/06/upgrade-your-cleardb-mysql-database-in-azure-portal/). В настоящее время обновление для кластеров ClearDB Premium на портале Azure не поддерживается.
 
 ## <a name="i-cant-see-my-cleardb-database-in-azure-portal"></a>Я не вижу свою базу данных ClearDB на портале Azure!
-Если база данных ClearDB создана на классическом портале Azure, она не будет отображаться на [новом портале Azure](https://portal.azure.com). Решения этой проблемы нет.
+Если вы создали базу данных ClearDB в классической модели, вы не сможете см. в разделе базы данных в [портала Azure](https://portal.azure.com). Решения этой проблемы нет.
 
 ## <a name="who-do-i-contact-for-support-when-my-database-is-down"></a>Куда обращаться за помощью в случае отказа базы данных?
 По всем вопросам, связанным с базами данных, обращайтесь в [службу поддержки ClearDB](https://www.cleardb.com/developers/help/support) . Вам нужно будет сообщить данные вашей подписки Azure.

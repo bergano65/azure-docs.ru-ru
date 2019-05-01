@@ -12,12 +12,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 03/23/2018
 ms.custom: seodec18
-ms.openlocfilehash: 72059862b3faf155bf08c5e2ca643fc32582c6a1
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
-ms.translationtype: HT
+ms.openlocfilehash: 8c0a27ff623626b5a5ceb1897fa0f9f60ad80a3c
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55696152"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64705123"
 ---
 # <a name="query-data-from-the-azure-time-series-insights-environment-using-c"></a>Запрос данных из среды Azure Time Series Insights с помощью C#
 
@@ -455,6 +455,6 @@ namespace TimeSeriesInsightsQuerySample
 }
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
-> [!div class="nextstepaction"]
-> [Справочник по API-интерфейсам запросов](/rest/api/time-series-insights/ga-query-api)
+## <a name="next-steps"></a>Дальнейшие действия
+
+- Дополнительные сведения о запросах к [Справочник по API запроса](/rest/api/time-series-insights/ga-query-api).

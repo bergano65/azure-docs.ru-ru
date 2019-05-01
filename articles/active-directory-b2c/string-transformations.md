@@ -3,19 +3,19 @@ title: Примеры преобразования утверждений стр
 description: Примеры преобразования утверждений строк для схемы инфраструктуры процедур идентификации Azure Active Directory B2C.
 services: active-directory-b2c
 author: davidmu1
-manager: daveba
+manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
 ms.date: 09/10/2018
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: 32acee78b1aadbe5a461de6ea4475cf28503c325
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 6c6b90cb2b24f6a87504a3a0dbd47f998b67ebc1
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58113033"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64707458"
 ---
 # <a name="string-claims-transformations"></a>Преобразования утверждений строк
 
@@ -29,9 +29,9 @@ ms.locfileid: "58113033"
 
 | Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
-| InputClaim | inputClaim1 | строка | Тип первого утверждения, которое необходимо сравнить. |
-| inputClaim | inputClaim2 | строка | Тип второго утверждения, которое необходимо сравнить. |
-| InputParameter | stringComparison | строка | сравнение строк, одно из значений: Ordinal, OrdinalIgnoreCase. |
+| InputClaim | inputClaim1 | string | Тип первого утверждения, которое необходимо сравнить. |
+| inputClaim | inputClaim2 | string | Тип второго утверждения, которое необходимо сравнить. |
+| InputParameter | stringComparison | string | сравнение строк, одно из значений: Ordinal, OrdinalIgnoreCase. |
 
 Преобразование строк **AssertStringClaimsAreEqual** всегда выполняется из [технического профиля проверки](validation-technical-profile.md), вызываемого с помощью [самоподтвержденного технического профиля](self-asserted-technical-profile.md). Метаданные самоподтвержденного технического профиля **UserMessageIfClaimsTransformationStringsAreNotEqual** управляют сообщением об ошибке, представляемым пользователю.
 
@@ -90,9 +90,9 @@ ms.locfileid: "58113033"
 
 | Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
-| InputClaim | inputClaim1 | строка | Параметр ClaimType, который необходимо изменить. |
-| InputParameter | toCase | строка | Одно из следующих значений: `LOWER` или `UPPER`. |
-| outputClaim | outputClaim | строка | Параметр ClaimType, который создается после вызова этого преобразования утверждений. |
+| InputClaim | inputClaim1 | string | Параметр ClaimType, который необходимо изменить. |
+| InputParameter | toCase | string | Одно из следующих значений: `LOWER` или `UPPER`. |
+| outputClaim | outputClaim | string | Параметр ClaimType, который создается после вызова этого преобразования утверждений. |
 
 С помощью этого преобразования утверждений можно изменить любой строковый тип ClaimType в нижний или верхний регистр.  
 
@@ -125,8 +125,8 @@ ms.locfileid: "58113033"
 
 | Элемент | TransformationClaimType | Тип данных | Примечания |
 |----- | ----------------------- | --------- | ----- |
-| InputParameter | value | строка | Строка, которую необходимо задать |
-| OutputClaim | createdClaim | строка | Параметр ClaimType, который создается после вызова этого преобразования утверждений, со значением, указанным во входном параметре. |
+| InputParameter | value | string | Строка, которую необходимо задать |
+| OutputClaim | createdClaim | string | Параметр ClaimType, который создается после вызова этого преобразования утверждений, со значением, указанным во входном параметре. |
 
 Это преобразование утверждения позволяет задать строковое значение параметра ClaimType.
 
@@ -154,9 +154,9 @@ ms.locfileid: "58113033"
 
 | Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
-| InputClaim | inputClaim1 | строка | Тип первого утверждения, которое необходимо сравнить. |
-| inputClaim | inputClaim2 | строка | Тип второго утверждения, которое необходимо сравнить. |
-| InputParameter | operator | строка | Возможные значения: `EQUAL` или `NOT EQUAL`. |
+| InputClaim | inputClaim1 | string | Тип первого утверждения, которое необходимо сравнить. |
+| inputClaim | inputClaim2 | string | Тип второго утверждения, которое необходимо сравнить. |
+| InputParameter | operator | string | Возможные значения: `EQUAL` или `NOT EQUAL`. |
 | InputParameter | ignoreCase | Логическое | Указывает, следует ли в этом сравнении игнорировать регистр сравниваемых строк. |
 | outputClaim | outputClaim | Логическое | Параметр ClaimType, который создается после вызова этого преобразования утверждений. |
 
@@ -195,9 +195,9 @@ ms.locfileid: "58113033"
 
 | Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
-| InputClaim | inputClaim1 | строка | Тип утверждения, которое необходимо сравнить. |
-| InputParameter | operator | строка | Возможные значения: `EQUAL` или `NOT EQUAL`. |
-| InputParameter | compareTo | строка | сравнение строк, одно из значений: Ordinal, OrdinalIgnoreCase. |
+| InputClaim | inputClaim1 | string | Тип утверждения, которое необходимо сравнить. |
+| InputParameter | operator | string | Возможные значения: `EQUAL` или `NOT EQUAL`. |
+| InputParameter | compareTo | string | сравнение строк, одно из значений: Ordinal, OrdinalIgnoreCase. |
 | InputParameter | ignoreCase | Логическое | Указывает, следует ли в этом сравнении игнорировать регистр сравниваемых строк. |
 | outputClaim | outputClaim | Логическое | Параметр ClaimType, который создается после вызова этого преобразования утверждений. |
 
@@ -235,12 +235,12 @@ ms.locfileid: "58113033"
 
 | Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
-| InputParameter | randomGeneratorType | строка | Указывает случайное значение, которое необходимо создать: `GUID` (глобальный уникальный идентификатор) или `INTEGER` (число). |
-| InputParameter | stringFormat | строка | [Необязательно.] Формат случайного значения. |
+| InputParameter | randomGeneratorType | string | Указывает случайное значение, которое необходимо создать: `GUID` (глобальный уникальный идентификатор) или `INTEGER` (число). |
+| InputParameter | stringFormat | string | [Необязательно.] Формат случайного значения. |
 | InputParameter | base64 | Логическое | [Необязательно.] Преобразование случайного значения в Base64. Если применяется формат строки, значение после формата строки кодируется в Base64. |
 | InputParameter | maximumNumber | int | [Необязательно.] Только для типа randomGeneratorType `INTEGER`. Укажите максимальное число. |
 | InputParameter | начальное значение  | int | [Необязательно.] Только для типа randomGeneratorType `INTEGER`. Укажите начальное значение для случайного значения. Примечание. Такое же начальное значение обеспечивает такую же последовательность случайных чисел. |
-| outputClaim | outputClaim | строка | Параметр ClaimType, который будет создан после вызова этого преобразования утверждений. Случайное значение. |
+| outputClaim | outputClaim | string | Параметр ClaimType, который будет создан после вызова этого преобразования утверждений. Случайное значение. |
 
 В следующем примере создается глобальный уникальный идентификатор. С помощью этого преобразования утверждений создается случайное имя участника-пользователя.
 
@@ -294,9 +294,9 @@ ms.locfileid: "58113033"
 
 | Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
-| InputClaim | InputClaim |строка |Элемент ClaimType, который выступает в качестве параметра {0} формата строки. |
-| InputParameter | stringFormat | строка | Формат строки, включая параметр {0}. |
-| outputClaim | outputClaim | строка | Параметр ClaimType, который создается после вызова этого преобразования утверждений. |
+| InputClaim | InputClaim |string |Элемент ClaimType, который выступает в качестве параметра {0} формата строки. |
+| InputParameter | stringFormat | string | Формат строки, включая параметр {0}. |
+| outputClaim | outputClaim | string | Параметр ClaimType, который создается после вызова этого преобразования утверждений. |
 
 Используйте это преобразование утверждений для форматирования любой строки с одним параметром {0}. В следующем примере создается **userPrincipalName**. Технические профили всех поставщиков удостоверений в социальных сетях, такие как `Facebook-OAUTH`, вызывают **CreateUserPrincipalName** для создания **userPrincipalName**.   
 
@@ -329,10 +329,10 @@ ms.locfileid: "58113033"
 
 | Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
-| InputClaim | InputClaim |строка | Элемент ClaimType, который выступает в качестве параметра {0} формата строки. |
-| inputClaim | InputClaim | строка | Элемент ClaimType, который выступает в качестве параметра {1} формата строки. |
-| InputParameter | stringFormat | строка | Формат строки, включая параметры {0} и {1}. |
-| outputClaim | outputClaim | строка | Параметр ClaimType, который создается после вызова этого преобразования утверждений. |
+| InputClaim | InputClaim |string | Элемент ClaimType, который выступает в качестве параметра {0} формата строки. |
+| inputClaim | InputClaim | string | Элемент ClaimType, который выступает в качестве параметра {1} формата строки. |
+| InputParameter | stringFormat | string | Формат строки, включая параметры {0} и {1}. |
+| outputClaim | outputClaim | string | Параметр ClaimType, который создается после вызова этого преобразования утверждений. |
 
 Используйте это преобразование утверждений для форматирования любой строки с двумя параметрами: {0} и {1}. В следующем примере создается **displayName** с указанным форматом:
 
@@ -367,8 +367,8 @@ ms.locfileid: "58113033"
 
 | Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
-| InputClaim | mapFromClaim | строка | Утверждение, содержащее текст, поиск которого будет выполняться в утверждениях **restrictionValueClaim** с коллекцией **Restriction**.  |
-| OutputClaim | restrictionValueClaim | строка | Утверждение, содержащее коллекцию **Restriction**. После вызова преобразования утверждений значение этого утверждения будет содержать значение выбранного элемента. |
+| InputClaim | mapFromClaim | string | Утверждение, содержащее текст, поиск которого будет выполняться в утверждениях **restrictionValueClaim** с коллекцией **Restriction**.  |
+| OutputClaim | restrictionValueClaim | string | Утверждение, содержащее коллекцию **Restriction**. После вызова преобразования утверждений значение этого утверждения будет содержать значение выбранного элемента. |
 
 В следующем примере выполняется поиск описания сообщения об ошибке на основе ключа ошибки. Утверждение **ResponseMsg** содержит коллекцию сообщений об ошибках для представления пользователю или отправки проверяющей стороне.
 
@@ -410,10 +410,10 @@ ms.locfileid: "58113033"
 
 | Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
-| InputClaim | inputParameterId | строка | Утверждение, содержащее значение подстановки. |
-| InputParameter | |строка | Коллекция inputParameters. |
+| InputClaim | inputParameterId | string | Утверждение, содержащее значение подстановки. |
+| InputParameter | |string | Коллекция inputParameters. |
 | InputParameter | errorOnFailedLookup | Логическое | Контролирует, будет ли возвращена ошибка, если значение подстановки не найдено. |
-| OutputClaim | inputParameterId | строка | Параметр ClaimType, который будет создан после вызова этого преобразования утверждений. Значение соответствующего идентификатора. |
+| OutputClaim | inputParameterId | string | Параметр ClaimType, который будет создан после вызова этого преобразования утверждений. Значение соответствующего идентификатора. |
 
 В следующем примере выполняется поиск доменного имени в одной из коллекций inputParameters. Преобразование утверждений ищет доменное имя в идентификаторе и возвращает его значение (идентификатор приложения).
 
@@ -452,7 +452,7 @@ ms.locfileid: "58113033"
 
 | Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
-| outputClaim | claim_to_null | строка | Устанавливает для утверждения значение NULL. |
+| outputClaim | claim_to_null | string | Устанавливает для утверждения значение NULL. |
 
 Это преобразование утверждений используется для удаления ненужных данных из контейнера свойств утверждения. Таким образом файл cookie сеанса будет меньшего размера. В следующем примере удаляется значение типа утверждения `TermsOfService`.
 
@@ -475,8 +475,8 @@ ms.locfileid: "58113033"
 
 | Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
-| InputClaim | emailAddress | строка | Параметр ClaimType, содержащий адрес электронной почты. |
-| outputClaim | Домен | строка | Параметр ClaimType, который создается после вызова этого преобразования утверждений, со значением домена. |
+| InputClaim | emailAddress | string | Параметр ClaimType, содержащий адрес электронной почты. |
+| outputClaim | Домен | string | Параметр ClaimType, который создается после вызова этого преобразования утверждений, со значением домена. |
 
 Это преобразование утверждений используется для анализа доменного имени после символа @ пользователя. Это может быть полезно при удалении персональных данных (PII) из данных аудита. В следующих преобразованиях утверждений показано, как проанализировать доменное имя из утверждения **email**.
 
@@ -504,13 +504,13 @@ ms.locfileid: "58113033"
 
 | Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
-| InputClaim | InputClaim | строка | Тип утверждения, которое необходимо сравнить. |
-| InputParameter | matchTo | строка | Строка для сравнения с `inputClaim`. |
-| InputParameter | stringComparison | строка | Возможные значения: `Ordinal` или `OrdinalIgnoreCase`. |
-| InputParameter | stringMatchMsg | строка | Первое значение, которое необходимо задать, если строки равны. |
-| InputParameter | stringMatchMsgCode | строка | Второе значение, которое необходимо задать, если строки равны. |
-| OutputClaim | outputClaim1 | строка | Если строки равны, это исходящее утверждение содержит значение входного параметра `stringMatchMsg`. |
-| OutputClaim | outputClaim2 | строка | Если строки равны, это исходящее утверждение содержит значение входного параметра `stringMatchMsgCode`. |
+| InputClaim | InputClaim | string | Тип утверждения, которое необходимо сравнить. |
+| InputParameter | matchTo | string | Строка для сравнения с `inputClaim`. |
+| InputParameter | stringComparison | string | Возможные значения: `Ordinal` или `OrdinalIgnoreCase`. |
+| InputParameter | stringMatchMsg | string | Первое значение, которое необходимо задать, если строки равны. |
+| InputParameter | stringMatchMsgCode | string | Второе значение, которое необходимо задать, если строки равны. |
+| OutputClaim | outputClaim1 | string | Если строки равны, это исходящее утверждение содержит значение входного параметра `stringMatchMsg`. |
+| OutputClaim | outputClaim2 | string | Если строки равны, это исходящее утверждение содержит значение входного параметра `stringMatchMsgCode`. |
 | OutputClaim | stringCompareResultClaim | Логическое | Тип исходящего утверждения результата сравнения, для которого необходимо задать значение `true` или `false` на основе результата сравнения. |
 
 С помощью этого преобразования можно проверить, равно ли утверждение указанному значению. Например, следующее преобразование утверждений проверяет, равно ли значение утверждения **termsOfUseConsentVersion** значению `v1`. Если да, измените значение на `v2`. 
@@ -553,11 +553,11 @@ ms.locfileid: "58113033"
 
 | Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
-| InputClaim | claimToMatch | строка | Тип утверждения, которое необходимо сравнить. |
-| InputParameter | matchTo | строка | Строка для сравнения с inputClaim. |
-| InputParameter | stringComparison | строка | Возможные значения: `Ordinal` или `OrdinalIgnoreCase`. |
-| InputParameter | outputClaimIfMatched | строка | Значение, которое необходимо задать, если строки равны. |
-| outputClaim | outputClaim | строка | Если строки равны, это исходящее утверждение содержит значение входного параметра `outputClaimIfMatched`. Или значение NULL, если строки не совпадают. |
+| InputClaim | claimToMatch | string | Тип утверждения, которое необходимо сравнить. |
+| InputParameter | matchTo | string | Строка для сравнения с inputClaim. |
+| InputParameter | stringComparison | string | Возможные значения: `Ordinal` или `OrdinalIgnoreCase`. |
+| InputParameter | outputClaimIfMatched | string | Значение, которое необходимо задать, если строки равны. |
+| outputClaim | outputClaim | string | Если строки равны, это исходящее утверждение содержит значение входного параметра `outputClaimIfMatched`. Или значение NULL, если строки не совпадают. |
 | OutputClaim | stringCompareResultClaim | Логическое | Тип исходящего утверждения результата сравнения, для которого необходимо задать значение `true` или `false` на основе результата сравнения. |
 
 Например, следующее преобразование утверждений проверяет, равно ли значение утверждения **ageGroup** значению `Minor`. Если да, возвращает значение для `B2C_V1_90001`. 

@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1f78a3135fca290d50370652b33fe0a4d16a6f83
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 64d4c48697d38cfa5942e09cb672af37c27eede2
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60358809"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64688674"
 ---
 # <a name="reports-in-azure-multi-factor-authentication"></a>Отчеты в службе Многофакторной идентификации Azure
 
@@ -122,7 +122,9 @@ ms.locfileid: "60358809"
 - Элементы управления сеансов
 - Результат
 
-## <a name="powershell-reporting"></a>Создание отчетов PowerShell
+## <a name="powershell-reporting-on-users-registered-for-mfa"></a>PowerShell, отчеты о пользователей, зарегистрированных для многофакторной проверки Подлинности
+
+Во-первых, убедитесь, что у вас есть [модуля MSOnline PowerShell версии 1](https://docs.microsoft.com/powershell/azure/active-directory/overview?view=azureadps-1.0) установлен.
 
 Определите пользователей, зарегистрированных для многофакторной проверки подлинности с помощью Powershell:
 

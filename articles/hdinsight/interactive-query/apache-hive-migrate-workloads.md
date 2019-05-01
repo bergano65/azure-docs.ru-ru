@@ -2,17 +2,17 @@
 title: Перенос рабочих нагрузок Azure HDInsight 3.6 Hive в HDInsight 4.0
 description: Сведения о переносе рабочих нагрузок на Apache Hive в HDInsight 3.6 4.0 HDInsight.
 ms.service: hdinsight
-author: hrasheed-msft
-ms.author: hrasheed
+author: msft-tacox
+ms.author: tacox
 ms.reviewer: jasonh
 ms.topic: howto
-ms.date: 04/15/2019
-ms.openlocfilehash: 144e0ada0ce3a15a5dcd13b31f46f50162750a74
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
-ms.translationtype: HT
+ms.date: 04/24/2019
+ms.openlocfilehash: b181edc08c51a5afa8682858b330acc84da7d73d
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62126568"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64707014"
 ---
 # <a name="migrate-azure-hdinsight-36-hive-workloads-to-hdinsight-40"></a>Перенос рабочих нагрузок Azure HDInsight 3.6 Hive в HDInsight 4.0
 
@@ -98,6 +98,8 @@ alter table myacidtable compact 'major';
 В HDInsight 3.6 клиентское приложение для взаимодействия с сервером Hive является представление Hive Ambari. HDInsight 4.0 заменяет представления Hive с Hortonworks Data Analytics Studio (DAS). DAS не поставляются с HDInsight кластеров out-of-box и не является официально поддерживаемых пакетом. Тем не менее DAS может устанавливаться в кластере следующим образом:
 
 Действие сценария в кластере, с «Головных узла» запустите от имени типа узла для выполнения. Вставьте следующий URI в текстовое поле, помеченные «URI Bash-скрипта»: https://hdiconfigactions.blob.core.windows.net/dasinstaller/LaunchDASInstaller.sh
+
+Studio для аналитики данных, которые могут запускаться с URL-адрес: https://<clustername>.azurehdinsight.net/das/
 
 
 

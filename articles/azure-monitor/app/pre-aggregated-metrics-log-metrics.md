@@ -10,12 +10,12 @@ ms.date: 09/18/2018
 ms.service: application-insights
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 0b544bfcb59bf4c2b44e6b666fcd33e9fb493692
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 96d4c2c8d6c2dd7722b7377dd7a0ffd42acd3126
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60256659"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64572517"
 ---
 # <a name="log-based-and-pre-aggregated-metrics-in-application-insights"></a>Метрики на основе журналов и предварительно агрегированные метрики в Application Insights
 
@@ -63,7 +63,7 @@ ms.locfileid: "60256659"
 
 ## <a name="creating-charts-and-exploring-log-based-and-standard-pre-aggregated-metrics"></a>Создание диаграмм и изучение метрик на основе журналов и стандартных предварительно агрегированных метрик
 
-С помощью обозревателя метрик Azure Monitor вы можете строить диаграммы, используя предварительно агрегированные метрики и метрики на основе журналов, а также создавать панели мониторинга с диаграммами. Выбрав нужный ресурс Application Insights, с помощью средства выбора пространства имен вы можете переключаться между стандартными (ознакомительная версия) метриками и метриками на основе журналов либо выбирать пространства имен пользовательских метрик:
+Используйте [обозреватель метрик Azure Monitor](../platform/metrics-getting-started.md) для построения диаграммы из предварительно вычисленные и на основе журнала метрик, а также автор панелей мониторинга с диаграммами. Выбрав нужный ресурс Application Insights, с помощью средства выбора пространства имен вы можете переключаться между стандартными (ознакомительная версия) метриками и метриками на основе журналов либо выбирать пространства имен пользовательских метрик:
 
 ![Пространство имен метрик](./media/pre-aggregated-metrics-log-metrics/002-metric-namespace.png)
 

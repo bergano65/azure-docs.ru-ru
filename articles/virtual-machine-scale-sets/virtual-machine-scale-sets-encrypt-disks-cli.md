@@ -13,46 +13,27 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/30/2018
+ms.date: 04/26/2019
 ms.author: cynthn
-ms.openlocfilehash: 417772b2e955b1a3664dd495f292a76ab2819165
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
-ms.translationtype: HT
+ms.openlocfilehash: 1264c7e4ebaf5e948e624fa49dc5fb0b4cdb31f0
+ms.sourcegitcommit: e7d4881105ef17e6f10e8e11043a31262cfcf3b7
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55734527"
+ms.lasthandoff: 04/29/2019
+ms.locfileid: "64869057"
 ---
-# <a name="encrypt-os-and-attached-data-disks-in-a-virtual-machine-scale-set-with-the-azure-cli-preview"></a>Шифрование диска ОС и подключенных дисков данных в масштабируемом наборе виртуальных машин с помощью Azure CLI (предварительная версия)
+# <a name="encrypt-os-and-attached-data-disks-in-a-virtual-machine-scale-set-with-the-azure-cli"></a>Шифрование диска ОС и подключенных дисков данных в масштабируемый набор виртуальных машин с помощью Azure CLI
 
 Масштабируемые наборы виртуальных машин поддерживают шифрование дисков Azure, позволяя защитить неактивные данные с помощью стандартной отраслевой технологии шифрования. Шифрование можно включить для масштабируемых наборов виртуальных машин Windows и Linux. Дополнительные сведения см. в статье [Шифрование дисков Azure для Linux и Windows](../security/azure-security-disk-encryption.md).
-
-> [!NOTE]
->  Служба шифрования дисков Azure для масштабируемых наборов виртуальных машин в настоящее время находится на этапе общедоступной предварительной версии, которая доступна во всех общедоступных регионах Azure.
 
 Шифрование дисков Azure поддерживается:
 - для масштабируемых наборов, созданных с помощью управляемых дисков, и не поддерживается для масштабируемых наборов на основе собственных (или неуправляемых) дисков;
 - для дисков ОС и томов данных в масштабируемых наборах Windows; отключение шифрования поддерживается для томов операционной системы и данных в масштабируемых наборах Windows;
-- для томов данных в масштабируемых наборах Linux. Шифрование дисков ОС НЕ поддерживается в текущей предварительной версии для масштабируемых наборов Linux.
-
-В текущей предварительной версии не поддерживаются операции пересоздания образа и обновления виртуальных машин в масштабируемом наборе. Использование предварительной версии службы шифрования дисков Azure для масштабируемых наборов виртуальных машин рекомендуется только в тестовой среде. Не следует с помощью предварительной версии включать шифрование дисков в рабочих средах, в которых может потребоваться обновить образ операционной системы в зашифрованном масштабируемом наборе.
+- для томов данных в масштабируемых наборах Linux. Шифрование диска операционной системы не поддерживается для масштабируемых наборов Linux.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
 Чтобы установить и использовать интерфейс командной строки локально, для работы с этим руководством вам понадобится Azure CLI 2.0.31 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli).
-
-## <a name="register-for-disk-encryption-preview"></a>Регистрация для получения предварительной версии службы шифрования дисков
-
-Для работы предварительной версии службы шифрования дисков Azure для масштабируемых наборов виртуальных машин необходимо самостоятельно зарегистрировать подписку с помощью команды [az feature register](/cli/azure/feature). Указанные ниже действия нужно выполнить только при первом использовании предварительной версии функции шифрования дисков.
-
-```azurecli-interactive
-az feature register --name UnifiedDiskEncryption --namespace Microsoft.Compute
-```
-
-Распространение запроса на регистрацию может занять 10 минут. Состояние регистрации можно проверить с помощью команды [az feature show](/cli/azure/feature). Когда `State` будет иметь значение *Registered*, повторно зарегистрируйте поставщик *Microsoft.Compute* с помощью команды [az provider register](/cli/azure/provider):
-
-```azurecli-interactive
-az provider register --namespace Microsoft.Compute
-```
 
 ## <a name="create-a-scale-set"></a>Создание масштабируемого набора
 
@@ -135,6 +116,30 @@ az vmss encryption enable \
 
 Так как для набора масштабирования, созданного ранее, задана политика *автоматического* обновления, процесс шифрования для экземпляров виртуальных машин запускается автоматически. Если для масштабируемого набора задана политика обновления вручную, запустите шифрование для экземпляров виртуальных машин с помощью команды [az vmss update-instances](/cli/azure/vmss#az-vmss-update-instances).
 
+### <a name="enable-encryption-using-kek-to-wrap-the-key"></a>Включить шифрование с помощью ключа шифрования КЛЮЧЕЙ ключ
+
+Также можно использовать ключ шифрования ключа для повышения безопасности при шифровании масштабируемый набор виртуальных машин.
+
+```azurecli-interactive
+# Get the resource ID of the Key Vault
+vaultResourceId=$(az keyvault show --resource-group myResourceGroup --name $keyvault_name --query id -o tsv)
+
+# Enable encryption of the data disks in a scale set
+az vmss encryption enable \
+    --resource-group myResourceGroup \
+    --name myScaleSet \
+    --disk-encryption-keyvault $vaultResourceId \
+    --key-encryption-key myKEK \
+    --key-encryption-keyvault $vaultResourceId \
+    --volume-type DATA
+```
+
+> [!NOTE]
+>  Полный идентификатор строки используется следующий синтаксис для значения параметра дискового шифрования хранилище ключей:</br>
+/ subscriptions/[subscription-id-guid]/resourceGroups/[resource-group-name]/providers/Microsoft.KeyVault/vaults/[keyvault-name]</br></br>
+> Полный URI для ключа шифрования КЛЮЧЕЙ, как показано на используется следующий синтаксис для значения параметра ключа шифрования ключа:</br>
+https://[keyvault-name].Vault.Azure.NET/Keys/[kekname]/[kek-UNIQUE-ID]
+
 ## <a name="check-encryption-progress"></a>Проверка хода выполнения шифрования
 
 Чтобы проверить состояние шифрования диска, используйте команду [az vmss encryption show](/cli/azure/vmss/encryption#az-vmss-encryption-show):
@@ -178,8 +183,8 @@ az vmss encryption show --resource-group myResourceGroup --name myScaleSet
 az vmss encryption disable --resource-group myResourceGroup --name myScaleSet
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-В этой статье вы зашифровали масштабируемый набор виртуальных машин с помощью Azure CLI. Для этого можно использовать также [Azure PowerShell](virtual-machine-scale-sets-encrypt-disks-ps.md) и шаблоны для [Windows](https://github.com/Azure/azure-quickstart-templates/tree/master/201-encrypt-vmss-windows-jumpbox) или [Linux](https://github.com/Azure/azure-quickstart-templates/tree/master/201-encrypt-vmss-linux-jumpbox).
-
-Полный пример пакетного файла для шифрования дисков данных масштабируемого набора Linux можно найти [здесь](https://gist.githubusercontent.com/ejarvi/7766dad1475d5f7078544ffbb449f29b/raw/03e5d990b798f62cf188706221ba6c0c7c2efb3f/enable-linux-vmss.bat). Этот пример создает группу ресурсов и масштабируемый набор Linux, подключает диск данных размером 5 ГБ и шифрует этот масштабируемый набор виртуальных машин.
+- В этой статье вы зашифровали масштабируемый набор виртуальных машин с помощью Azure CLI. Для этого можно использовать также [Azure PowerShell](virtual-machine-scale-sets-encrypt-disks-ps.md) и шаблоны для [Windows](https://github.com/Azure/azure-quickstart-templates/tree/master/201-encrypt-vmss-windows-jumpbox) или [Linux](https://github.com/Azure/azure-quickstart-templates/tree/master/201-encrypt-vmss-linux-jumpbox).
+- Если вы хотите иметь шифрования дисков Azure применяется после подготовки другое расширение, можно использовать [расширения виртуализации](virtual-machine-scale-sets-extension-sequencing.md). Можно использовать [эти примеры](../security/azure-security-disk-encryption-extension-sequencing.md#sample-azure-templates) Чтобы приступить к работе.
+- Полный пример пакетного файла для шифрования дисков данных масштабируемого набора Linux можно найти [здесь](https://gist.githubusercontent.com/ejarvi/7766dad1475d5f7078544ffbb449f29b/raw/03e5d990b798f62cf188706221ba6c0c7c2efb3f/enable-linux-vmss.bat). Этот пример создает группу ресурсов и масштабируемый набор Linux, подключает диск данных размером 5 ГБ и шифрует этот масштабируемый набор виртуальных машин.

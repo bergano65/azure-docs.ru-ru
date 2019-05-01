@@ -7,14 +7,14 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
-ms.date: 05/16/2018
+ms.date: 04/25/2019
 ms.author: hrasheed
-ms.openlocfilehash: 5fd2d27533d725102a4c334f1e8a1abed6cd78cc
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
-ms.translationtype: HT
+ms.openlocfilehash: f0251e3926c569b45ebebcd18b98df5af4564443
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62121900"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64706662"
 ---
 # <a name="run-the-mapreduce-examples-included-in-hdinsight"></a>Выполнение примеров MapReduce, включенных в HDInsight
 
@@ -24,12 +24,9 @@ ms.locfileid: "62121900"
 
 ## <a name="prerequisites"></a>Технические условия
 
-* **Кластер HDInsight**. Дополнительные сведения см. в статье [Краткое руководство. Использование Apache Hadoop и Apache Hive в Azure HDInsight с шаблоном Resource Manager](apache-hadoop-linux-tutorial-get-started.md) (для Linux).
+* Кластер Apache Hadoop в HDInsight. См. в разделе [начало работы с HDInsight на платформе Linux](./apache-hadoop-linux-tutorial-get-started.md).
 
-    > [!IMPORTANT]  
-    > Linux — это единственная операционная система, используемая для работы с HDInsight 3.4 или более поздних версий. Дополнительные сведения см. в разделе [Приближается дата прекращения сопровождения HDI версии 3.3](../hdinsight-component-versioning.md#hdinsight-windows-retirement).
-
-* **Клиент SSH**. Дополнительные сведения см. в статье [Использование SSH с Hadoop на основе Linux в HDInsight из Linux, Unix или OS X](../hdinsight-hadoop-linux-use-ssh-unix.md).
+* Клиент SSH. Дополнительные сведения см. в руководстве по [подключению к HDInsight (Apache Hadoop) с помощью SSH](../hdinsight-hadoop-linux-use-ssh-unix.md).
 
 ## <a name="the-mapreduce-examples"></a>Примеры MapReduce
 
@@ -64,7 +61,11 @@ ms.locfileid: "62121900"
 
 ## <a name="run-the-wordcount-example"></a>Запуск примера для подсчета слов
 
-1. Подключитесь к HDInsight с помощью протокола SSH. Дополнительные сведения см. в статье [Использование SSH с Hadoop на основе Linux в HDInsight из Linux, Unix или OS X](../hdinsight-hadoop-linux-use-ssh-unix.md).
+1. Подключитесь к HDInsight с помощью протокола SSH. Замените `CLUSTER` с именем кластера и введите следующую команду:
+
+    ```cmd
+    ssh sshuser@CLUSTER-ssh.azurehdinsight.net
+    ```
 
 2. В командной строке `username@#######:~$` введите следующую команду, чтобы вывести список примеров:
 
@@ -86,7 +87,7 @@ ms.locfileid: "62121900"
 
     Это сообщение означает, что можно указать несколько входных путей для исходных документов. Окончательный путь — это место, где сохраняются выходные данные (число слов в исходных документах).
 
-4. Для подсчета всех слов в книге «Записи Леонардо да Винчи», которая поставляется с кластером и служит примером исходных данных, используйте следующую команду:
+4. Используйте следующие параметры для подсчета всех слов в записные книжки из Леонардо да Винчи, которые предоставляются в качестве образца данных с кластером.
 
     ```bash
     yarn jar /usr/hdp/current/hadoop-mapreduce-client/hadoop-mapreduce-examples.jar wordcount /example/data/gutenberg/davinci.txt /example/data/davinciwordcount
@@ -162,11 +163,11 @@ yarn jar /usr/hdp/current/hadoop-mapreduce-client/hadoop-mapreduce-examples.jar 
 
 Команда должна возвращать значение наподобие **3,14159155000000000000**. Для справки, первые 10 знаков числа пи: 3,1415926535.
 
-## <a name="10-gb-greysort-example"></a>Пример Greysort для 10 ГБ данных
+## <a name="10-gb-graysort-example"></a>Пример сортировки GraySort 10 ГБ
 
 GraySort — это измерение производительности сортировки. Его показателем служит скорость (ТБ/мин), достигаемая при сортировке очень больших объемов данных, обычно не менее 100 ТБ.
 
-В этом примере используется небольшой объем данных, 10 ГБ, чтобы можно было выполнить сортировку достаточно быстро. Используются приложения MapReduce, разработанные Оуэном О'Мэлли (Owen O'Malley) и Аруном Мёрти (Arun Murthy). Эти приложения победили в 2009 году на конкурсе приложений сортировки общего назначения (daytona) для больших объемов данных, показав скорость 0,578 ТБ/мин (100 ТБ за 173 минуты). Дополнительные сведения об этом и других измерениях производительности сортировки см. на веб-сайте [Sortbenchmark](https://sortbenchmark.org/).
+В этом примере используется небольшой объем данных, 10 ГБ, чтобы можно было выполнить сортировку достаточно быстро. Используются приложения MapReduce, разработанные Оуэном О'Мэлли (Owen O'Malley) и Аруном Мёрти (Arun Murthy). Эти приложения выиграла годовой тестирования сортировки общего назначения терабайт («году») в 2009 г., показав скорость 0,578 ТБ/мин (100 ТБ за 173 минуты). Дополнительные сведения об этом и других производительности сортировки см. в разделе [тест производительности сортировки](https://sortbenchmark.org/) сайта.
 
 В этом примере используются три набора программ MapReduce.
 
@@ -211,7 +212,3 @@ GraySort — это измерение производительности со
 * [Использование Apache Pig с Apache Hadoop в HDInsight](hdinsight-use-pig.md)
 * [Использование Apache Hive с Apache Hadoop в HDInsight](hdinsight-use-hive.md)
 * [Использование MapReduce в Apache Hadoop в HDInsight](hdinsight-use-mapreduce.md)
-
-[hdinsight-submit-jobs]:submit-apache-hadoop-jobs-programmatically.md
-[hdinsight-introduction]:apache-hadoop-introduction.md
-

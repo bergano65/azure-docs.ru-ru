@@ -5,20 +5,20 @@ services: container-service
 author: iainfoulds
 ms.service: container-service
 ms.topic: article
-ms.date: 08/09/2018
+ms.date: 04/26/2019
 ms.author: iainfou
-ms.openlocfilehash: db92526bd02ba55be5df7ce6999e3099e72b8fa5
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
-ms.translationtype: HT
+ms.openlocfilehash: c23c13969fd4e2814fdc1894a98a3f876da7315b
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62116784"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64574306"
 ---
 # <a name="integrate-azure-active-directory-with-azure-kubernetes-service"></a>rbИнтеграция Azure Active Directory со службой Azure Kubernetes
 
 Службу Azure Kubernetes (AKS) можно настроить на использование Azure Active Directory (AD) для проверки подлинности пользователей. В этой конфигурации можно войдите в кластер AKS с помощью маркер проверки подлинности Azure Active Directory. Кроме того Администраторы кластера могут настроить управление доступом на основе ролей Kubernetes (RBAC), на основе членства в группе удостоверений или каталог пользователя.
 
-В этой статье показано, как развернуть необходимые компоненты для AKS и Azure AD, а затем о развертывании кластера Azure с поддержкой AD и создать базовый роль RBAC в кластере AKS.
+В этой статье показано, как развернуть необходимые компоненты для AKS и Azure AD, а затем о развертывании кластера Azure с поддержкой AD и создать базовый роль RBAC в кластере AKS с помощью портала Azure. Вы также можете [выполните следующие действия, с помощью Azure CLI][azure-ad-cli].
 
 Действительны следующие ограничения.
 
@@ -46,7 +46,7 @@ ms.locfileid: "62116784"
 
 2. Выберите **Манифест** и в качестве значения `groupMembershipClaims` выберите `"All"`.
 
-   Сохраните изменения.
+   **Сохранить** после завершения обновления.
 
    ![Обновление членства в группе — установка значения All](media/aad-integration/edit-manifest.png)
 
@@ -64,11 +64,11 @@ ms.locfileid: "62116784"
 
    ![Установка разрешений Graph приложения](media/aad-integration/read-directory.png)
 
-6. В разделе **Делегированные разрешения** установите флажки рядом с параметрами **Вход и чтение профиля пользователя** и **Чтение данных каталога**. Сохраните обновления после изменения.
+6. В разделе **Делегированные разрешения** установите флажки рядом с параметрами **Вход и чтение профиля пользователя** и **Чтение данных каталога**. Выберите **выберите** чтобы сохранить изменения.
 
    ![Установка разрешений Graph приложения](media/aad-integration/delegated-permissions.png)
 
-   Нажмите кнопку **Готово**.
+   Выберите **сделать**.
 
 7. Выберите *Microsoft Graph* из списка API, а затем щелкните **Предоставление разрешений**. Этот шаг завершится ошибкой, если текущая учетная запись не является администратором клиента.
 
@@ -96,11 +96,13 @@ ms.locfileid: "62116784"
 
    ![Настройка разрешений для приложения](media/aad-integration/select-api.png)
 
-3. Установите флажок рядом с приложением и щелкните **Выбрать**.
+    Выберите серверное приложение, а затем выберите **выберите**.
+
+3. Вернитесь на *добавить доступ через API* окно, выберите **Выбор разрешений**. Пожалуйста, флажок в столбце *делегированные разрешения* для доступа к приложению, затем выберите **выберите**.
 
    ![Выбор конечной точки приложения сервера AAD в AKS](media/aad-integration/select-server-app.png)
 
-   Щелкните **Готово**.
+   Вернитесь на *добавить доступ через API* выберите **сделать**.
 
 4. Выберите свой API сервера из списка, а затем щелкните **Предоставить разрешения**:
 
@@ -259,3 +261,4 @@ error: You must be logged in to the server (Unauthorized)
 [rbac-authorization]: concepts-identity.md#role-based-access-controls-rbac
 [operator-best-practices-identity]: operator-best-practices-identity.md
 [azure-ad-rbac]: azure-ad-rbac.md
+[azure-ad-cli]: azure-ad-integration-cli.md

@@ -14,12 +14,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.author: jowargo
 ms.date: 04/08/2019
-ms.openlocfilehash: 64c2cd0ed1572fdaaa42f4731519ba6d5c320f1c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 5a70eec15003a1f75a80740f269f6df3523012a8
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61457742"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64685394"
 ---
 # <a name="registration-management"></a>Управление регистрацией
 
@@ -31,7 +31,7 @@ ms.locfileid: "61457742"
 
 Регистрация устройств в центре уведомлений осуществляется через **регистрацию** или **установку**.
 
-### <a name="registrations"></a>Регистрации
+### <a name="registrations"></a>Регистрация
 
 Регистрация связывает маркер службы отправки уведомлений платформы (PNS) для устройства с тегами и, возможно, шаблоном. Маркером PNS может быть ChannelURI, маркер устройства или регистрационный идентификатор FCM. Теги используются для направления уведомлений правильному набору маркеров устройств. Дополнительные сведения см. в статье [Маршрутизация и выражения тегов](notification-hubs-tags-segment-push-message.md). Шаблоны используются для преобразований в рамках регистрации. Дополнительные сведения см. в статье [Шаблоны](notification-hubs-templates-cross-platform-push-messages.md).
 
@@ -40,7 +40,7 @@ ms.locfileid: "61457742"
 
 ### <a name="installations"></a>Установка
 
-Установка — это расширенная регистрация, включающая набор свойств, связанных с push-уведомлениями. Это новый и рекомендуемый способ регистрации устройств. Однако в настоящее время он не поддерживается пакетом SDK .NET на стороне клиента ([пакетом SDK центра уведомлений для серверных операций](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/)).  Это означает, что при регистрации с самого клиентского устройства вам потребуется использовать [REST API концентраторов уведомлений](https://docs.microsoft.com/en-us/rest/api/notificationhubs/create-overwrite-installation) для поддержки установки. При использовании внутренней службы должна иметься возможность применения [пакета SDK концентратора уведомлений для серверных операций](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/).
+Установка — это расширенная регистрация, включающая набор свойств, связанных с push-уведомлениями. Это новый и рекомендуемый способ регистрации устройств. Однако в настоящее время он не поддерживается пакетом SDK .NET на стороне клиента ([пакетом SDK центра уведомлений для серверных операций](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/)).  Это означает, что при регистрации с самого клиентского устройства вам потребуется использовать [REST API концентраторов уведомлений](https://docs.microsoft.com/rest/api/notificationhubs/create-overwrite-installation) для поддержки установки. При использовании внутренней службы должна иметься возможность применения [пакета SDK концентратора уведомлений для серверных операций](https://www.nuget.org/packages/Microsoft.Azure.NotificationHubs/).
 
 Ниже приведены некоторые ключевые преимущества регистрации через установку.
 
@@ -48,7 +48,7 @@ ms.locfileid: "61457742"
 - Модель установки поддерживает формат специальный тег (`$InstallationId:{INSTALLATION_ID}`), позволяющий отправки уведомления непосредственно для конкретного устройства. Например, если в код приложения задает идентификатор установки `joe93developer` для этого конкретного устройства, разработчик предназначенных для этого устройства при отправке уведомления `$InstallationId:{joe93developer}` тега. Это позволяет для конкретного устройства без необходимости создавать дополнительный код.
 - Установка также позволяет частично обновлять регистрацию. Частичное обновление установки запрашивается с помощью метода PATCH из [стандарта JSON-Patch](https://tools.ietf.org/html/rfc6902). Это удобно в тех случаях, когда нужно обновить теги в регистрации. Нет необходимости удалять всю регистрацию и заново отправлять все прошлые теги.
 
-Установка может содержать следующие свойства. Полный список свойств установки см. в статье об [установке или перезаписи установки с помощью REST API](https://docs.microsoft.com/en-us/rest/api/notificationhubs/create-overwrite-installation) или в статье [Класс Installation](https://msdn.microsoft.com/library/azure/microsoft.azure.notificationhubs.installation_properties.aspx).
+Установка может содержать следующие свойства. Полный список свойств установки см. в статье об [установке или перезаписи установки с помощью REST API](https://docs.microsoft.com/rest/api/notificationhubs/create-overwrite-installation) или в статье [Класс Installation](https://docs.microsoft.com/dotnet/api/microsoft.azure.notificationhubs.installation).
 
 ```json
 // Example installation format to show some supported properties
@@ -95,7 +95,7 @@ ms.locfileid: "61457742"
 
 Если вы хотите использовать [шаблоны](notification-hubs-templates-cross-platform-push-messages.md), то установка устройства содержит все шаблоны, связанные с этим устройством, в формате JSON (см. пример выше). Названия шаблонов помогают связывать разные шаблоны с одним устройством.
 
-Имя каждого шаблона сопоставляется с текстом шаблона и необязательным набором тегов. Кроме того, каждая платформа может иметь дополнительные свойства шаблонов. Для Магазина Windows (при использовании WNS) и Windows Phone 8 (при использовании MPNS) в состав шаблона может входить дополнительный набор заголовков. Для имени точки доступа (APN) в свойстве окончания срока действия можно задать фиксированное значение или связать его с выражением шаблона. Полный список свойств установки см. в статье о [создании или замене установки с помощью REST](https://msdn.microsoft.com/library/azure/mt621153.aspx).
+Имя каждого шаблона сопоставляется с текстом шаблона и необязательным набором тегов. Кроме того, каждая платформа может иметь дополнительные свойства шаблонов. Для Магазина Windows (при использовании WNS) и Windows Phone 8 (при использовании MPNS) в состав шаблона может входить дополнительный набор заголовков. Для имени точки доступа (APN) в свойстве окончания срока действия можно задать фиксированное значение или связать его с выражением шаблона. Полный список свойств установки см. в статье о [создании или замене установки с помощью REST](https://docs.microsoft.com/rest/api/notificationhubs/create-overwrite-installation).
 
 ### <a name="secondary-tiles-for-windows-store-apps"></a>Вспомогательные плитки для приложений из Магазина Windows
 
@@ -120,7 +120,7 @@ ms.locfileid: "61457742"
 
 ### <a name="example-code-to-register-with-a-notification-hub-from-a-device-using-an-installation"></a>Пример кода регистрации в центре уведомлений с устройства с помощью установки
 
-В настоящее время эта процедура поддерживается только с помощью [API REST центра уведомлений](https://msdn.microsoft.com/library/mt621153.aspx).
+В настоящее время эта процедура поддерживается только с помощью [API REST центра уведомлений](https://docs.microsoft.com/rest/api/notificationhubs/create-overwrite-installation).
 
 Для обновления установки также можно использовать метод PATCH из [стандарта JSON-Patch](https://tools.ietf.org/html/rfc6902) .
 
@@ -314,7 +314,7 @@ public async Task<HttpResponseMessage> Put(DeviceInstallation deviceUpdate)
 
 ### <a name="example-code-to-register-with-a-notification-hub-from-a-device-using-a-registration-id"></a>Пример кода регистрации в центре уведомлений с устройства, использующего идентификатор регистрации
 
-Из серверной части приложения с регистрациями можно выполнять основные операции CRUDS. Пример.
+Из серверной части приложения с регистрациями можно выполнять основные операции CRUDS. Например: 
 
 ```
 var hub = NotificationHubClient.CreateClientFromConnectionString("{connectionString}", "hubName");

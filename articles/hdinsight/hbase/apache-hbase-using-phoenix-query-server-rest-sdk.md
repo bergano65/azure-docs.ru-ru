@@ -9,11 +9,11 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 12/04/2017
 ms.openlocfilehash: 1f468cac29579d8748f61a47b548a67d36ff8279
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
-ms.translationtype: HT
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62123065"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64695953"
 ---
 # <a name="apache-phoenix-query-server-rest-sdk"></a>Пакет REST SDK для Apache Phoenix Query Server
 
@@ -71,7 +71,7 @@ await client.ConnectionSyncRequestAsync(connId, connProperties, options);
 
 Ниже приведены некоторые важные свойства.
 
-| Свойство | Описание |
+| Свойство | ОПИСАНИЕ |
 | -- | -- |
 | AutoCommit | Логическое значение, обозначающее, включено ли свойство `autoCommit` для транзакций Phoenix. |
 | ReadOnly | Логическое значение, обозначающее, является ли подключение доступным только для чтения. |
@@ -82,7 +82,7 @@ await client.ConnectionSyncRequestAsync(connId, connProperties, options);
 
 Возможные значения `TransactionIsolation`:
 
-| Значение изоляции | Описание |
+| Значение изоляции | ОПИСАНИЕ |
 | -- | -- |
 | 0 | Транзакции не поддерживаются. |
 | 1 | Могут возникать операции чтения "грязных" данных, а также неповторяемые и фантомные операции чтения. |
@@ -90,7 +90,7 @@ await client.ConnectionSyncRequestAsync(connId, connProperties, options);
 | 4. | Операции чтения "грязных" данных и неповторяемые операции чтения предотвращаются, но могут возникать фантомные операции чтения. |
 | 8 | Все операции чтения "грязных" данных, неповторяемые и фантомные операции чтения предотвращаются. |
 
-## <a name="create-a-new-table"></a>Создать таблицу
+## <a name="create-a-new-table"></a>Создание таблицы
 
 В HBase, как и в любой другой реляционной СУБД, данные хранятся в таблицах. Phoenix использует стандартные запросы SQL для создания новых таблиц при определении первичного ключа и типов столбцов.
 
@@ -393,7 +393,7 @@ finally
 
 В одной тестовой среде вставка 300 новых записей по отдельности заняла почти 2 минуты. А для пакетной вставки 300 записей потребовалось всего 6 секунд.
 
-## <a name="select-data"></a>Выбрать данные
+## <a name="select-data"></a>Выбор данных
 
 В этом примере показано, как повторно использовать одно подключение для выполнения нескольких запросов:
 

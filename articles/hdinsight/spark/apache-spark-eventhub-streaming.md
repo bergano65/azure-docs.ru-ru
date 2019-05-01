@@ -9,11 +9,11 @@ ms.custom: hdinsightactive,mvc
 ms.topic: conceptual
 ms.date: 12/28/2018
 ms.openlocfilehash: 02f7bbca127ba33fcfdd15d6f00d1660bf72970c
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
-ms.translationtype: HT
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62124362"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64704941"
 ---
 # <a name="tutorial-process-tweets-using-azure-event-hubs-and-apache-spark-in-hdinsight"></a>Руководство по Обработка твитов с помощью Центров событий Azure и Apache Spark в HDInsight
 
@@ -70,7 +70,7 @@ ms.locfileid: "62124362"
 
     ![Создание концентратора событий для примера приложения потоковой передачи Spark](./media/apache-spark-eventhub-streaming/hdinsight-create-event-hub-for-spark-streaming.png "Создание концентратора событий для примера приложения потоковой передачи Spark")
 
-4. Выберите **+ добавить**.
+4. Щелкните **+ Добавить**.
 5. Для пространства имен нового Центра событий введите следующие значения.
 
     - **Имя.** Введите имя для Центра событий.  В этом руководстве используется имя **myeventhubns20180403**.
@@ -253,7 +253,7 @@ ms.locfileid: "62124362"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом руководстве вы узнали, как:
+Из этого руководства вы узнали, как выполнить следующие задачи:
 
 * чтение сообщений из концентратора событий.
 Перейдите к следующей статье, чтобы создать приложение машинного обучения. 

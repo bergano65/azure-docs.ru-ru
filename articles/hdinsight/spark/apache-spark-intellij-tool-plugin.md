@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 02/15/2019
 ms.author: maxluk
 ms.openlocfilehash: 682b2266442f3aba6696385862844e1b4b93aa3d
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
-ms.translationtype: HT
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62124260"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64702031"
 ---
 # <a name="use-azure-toolkit-for-intellij-to-create-apache-spark-applications-for-an-hdinsight-cluster"></a>Создание приложений Apache Spark для кластера HDInsight с помощью Azure Toolkit for IntelliJ
 
@@ -65,7 +65,7 @@ ms.locfileid: "62124260"
 
 6. В окне **New Project** (Новый проект) укажите следующую информацию:  
 
-    |  Свойство   | Описание   |  
+    |  Свойство   | ОПИСАНИЕ   |  
     | ----- | ----- |  
     |Имя проекта| Введите имя.  В этом руководстве используется `myApp`.|  
     |Project&nbsp;location (Расположение проекта)| Введите необходимое расположение для сохранения проекта.|
@@ -123,7 +123,7 @@ ms.locfileid: "62124260"
 ## <a name="connect-to-your-hdinsight-cluster"></a>Подключение к кластеру HDInsight
 Пользователь может [войти в подписку Azure](#sign-in-to-your-azure-subscription) или [связать кластер HDInsight](#link-a-cluster) с помощью имени пользователя и пароля Ambari или учетных данных присоединения к домену, чтобы подключить свой кластер HDInsight.
 
-### <a name="sign-in-to-your-azure-subscription"></a>Войдите в подписку Azure.
+### <a name="sign-in-to-your-azure-subscription"></a>Войдите в свою подписку Azure.
 
 1. В строке меню выберите **Представление** > **Окно инструментов** > **Azure Explorer**.
        
@@ -164,7 +164,7 @@ ms.locfileid: "62124260"
         |----|----|
         |Link Resource Type (Связать тип ресурса)|Из раскрывающегося списка выберите **HDInsight Cluster** (Кластер HDInsight).|
         |Cluster Name/URL (Имя или URL-адрес кластера)| Введите имя кластера.|
-        |Тип проверки подлинности| Оставьте значение **Basic Authentication** (Обычная аутентификация)|
+        |тип проверки подлинности;| Оставьте значение **Basic Authentication** (Обычная аутентификация)|
         |Имя пользователя| Введите имя пользователя кластера. Значение по умолчанию — admin.|
         |Пароль| Введите пароль для этого имени пользователя.|
     
@@ -176,9 +176,9 @@ ms.locfileid: "62124260"
         |----|----|
         |Link Resource Type (Связать тип ресурса)|Из раскрывающегося списка выберите **Livy Service** (Служба Livy).|
         |Livy Endpoint (Конечная точка Livy)| Введите конечную точку Livy|
-        |Имя кластера| Введите имя кластера.|
+        |Имя кластера,| Введите имя кластера.|
         |Yarn Endpoint (Конечная точка Yarn)|Необязательный элемент.|
-        |Тип проверки подлинности| Оставьте значение **Basic Authentication** (Обычная аутентификация)|
+        |тип проверки подлинности;| Оставьте значение **Basic Authentication** (Обычная аутентификация)|
         |Имя пользователя| Введите имя пользователя кластера. Значение по умолчанию — admin.|
         |Пароль| Введите пароль для этого имени пользователя.|
 
@@ -210,7 +210,7 @@ ms.locfileid: "62124260"
     |Main class name (Имя основного класса)|В выбранном файле основной класс является значением по умолчанию. Класс можно изменить, выбрав кнопку с многоточием (**...**) и другой класс.|
     |Job configurations (Конфигурация заданий)|Вы можете изменить значения по умолчанию ключами или значениями. Дополнительные сведения см. в статье [Apache Livy REST API](https://livy.incubator.apache.org./docs/latest/rest-api.html).|
     |Аргументы командной строки|При необходимости можно ввести аргументы для основного класса, разделив их пробелом.|
-    |Referenced Jars (Ссылки на JAR-файлы) и Referenced Files (Ссылки на файлы)|Вы можете указать пути ссылки на JAR-файлы и обычные файлы, если они есть. Дополнительные сведения см. здесь: [Apache Spark Configuration](https://spark.apache.org/docs/latest/configuration.html#runtime-environment) (Сведения о конфигурации Spark).  Ознакомьтесь также со статьей [Краткое руководство. Использование Обозревателя службы хранилища Azure для создания большого двоичного объекта в хранилище объекта](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-storage-explorer).|
+    |Referenced Jars (Ссылки на JAR-файлы) и Referenced Files (Ссылки на файлы)|Вы можете указать пути ссылки на JAR-файлы и обычные файлы, если они есть. Дополнительные сведения [Apache Spark Configuration](https://spark.apache.org/docs/latest/configuration.html#runtime-environment) (Сведения о конфигурации Spark).  Ознакомьтесь также со статьей [Краткое руководство. Использование Обозревателя службы хранилища Azure для создания большого двоичного объекта в хранилище объекта](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-storage-explorer).|
     |Job Upload Storage (Хранилище обновлений заданий)|Разверните раздел, чтобы отобразить дополнительные параметры.|
     |тип хранилища;|Из раскрывающегося списка выберите **Use Azure Blob to upload** (Для передачи использовать большой двоичный объект Azure).|
     |Учетная запись хранения|Введите имя своей учетной записи хранения.|

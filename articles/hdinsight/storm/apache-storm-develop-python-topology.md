@@ -1,7 +1,6 @@
 ---
-title: Использование Apache Storm с компонентами Python в Azure HDInsight
+title: Apache Storm с компонентами Python - Azure HDInsight
 description: Сведения о создании топологии Apache Storm, использующей компоненты Python.
-services: hdinsight
 author: hrasheed-msft
 ms.reviewer: jasonh
 keywords: apache storm python
@@ -10,12 +9,12 @@ ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 04/30/2018
 ms.author: hrasheed
-ms.openlocfilehash: 87d13f8b0df4d9a357218b34035993663dfda8b3
-ms.sourcegitcommit: c94cf3840db42f099b4dc858cd0c77c4e3e4c436
-ms.translationtype: HT
+ms.openlocfilehash: a5cbd54dd07143688b676c063133bb1a73bed01a
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53634598"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64694390"
 ---
 # <a name="develop-apache-storm-topologies-using-python-on-hdinsight"></a>Разработка топологий Apache Storm с помощью Python в HDInsight
 
@@ -26,7 +25,7 @@ ms.locfileid: "53634598"
 
 Код для этого проекта можно найти по адресу [https://github.com/Azure-Samples/hdinsight-python-storm-wordcount](https://github.com/Azure-Samples/hdinsight-python-storm-wordcount).
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Python 2.7 или выше;
 
@@ -144,9 +143,8 @@ storm jar WordCount-1.0-SNAPSHOT.jar org.apache.storm.flux.Flux -l -R /topology.
 > * нажмите кнопку **Kill** (Завершить) в пользовательском интерфейсе Storm.
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Чтобы узнать о других способах использования Python с HDInsight, см. следующие документы.
 
-* [Использование Python для потоковой передачи заданий MapReduce.](../hadoop/apache-hadoop-streaming-python.md)
 * [Использование определяемых пользователем функций Python (UDF) в Apache Pig и Apache Hive](../hadoop/python-udf-hdinsight.md)

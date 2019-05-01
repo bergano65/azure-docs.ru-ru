@@ -2,18 +2,17 @@
 title: Рекомендации для оператора — расширенные возможности планировщика в службе Azure Kubernetes (AKS)
 description: Ознакомьтесь с рекомендациями для операторов по использованию расширенных возможностей планировщика в службе Azure Kubernetes (AKS), включая отметки и толерантности, селекторы узлов, подобие, подобие модулей pod и анти-подобие
 services: container-service
-author: rockboyfor
+author: iainfoulds
 ms.service: container-service
 ms.topic: conceptual
-origin.date: 11/26/2018
-ms.date: 04/08/2019
-ms.author: v-yeche
-ms.openlocfilehash: 27c9c872f4dfb82b4a1389189d62c4e1f06ee272
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.date: 11/26/2018
+ms.author: iainfou
+ms.openlocfilehash: 9aa394a405e5b4392f900d1e7520d93e6d152e49
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60464974"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64690467"
 ---
 # <a name="best-practices-for-advanced-scheduler-features-in-azure-kubernetes-service-aks"></a>Рекомендации по расширенным возможностям планировщика в службе Azure Kubernetes (AKS)
 
@@ -37,7 +36,7 @@ ms.locfileid: "60464974"
 * **Отметка** применяется к узлу, указывая, что на него могут назначаться только определенные модули pod.
 * Затем к модулям pod применяется параметр **toleration**, указывающий, что они *допускают* метку узла.
 
-При развертывании модуля pod в кластере AKS модули назначаются только на те узлы, толерантность которых соответствует имеющейся отметке. Например, представим, что у нас в кластере AKS есть пул для узлов с поддержкой GPU. Задаем имя, например *gpu*, и значение для назначения. Если задано значение *NoSchedule*, планировщик Kubernetes не может назначить на этот узел модули pod, для которых не задана соответствующая толерантность.
+При развертывании модуля pod в кластере AKS модули назначаются только на те узлы, толерантность которых соответствует имеющейся отметке. Например предположим, что поддерживает пул узлов в кластере AKS для узлов с графическим Процессором. Задаем имя, например *gpu*, и значение для назначения. Если задано значение *NoSchedule*, планировщик Kubernetes не может назначить на этот узел модули pod, для которых не задана соответствующая толерантность.
 
 ```console
 kubectl taint node aks-nodepool1 sku=gpu:NoSchedule
@@ -53,7 +52,7 @@ metadata:
 spec:
   containers:
   - name: tf-mnist
-    image: dockerhub.azk8s.cn/microsoft/samples-tf-mnist-demo:gpu
+    image: microsoft/samples-tf-mnist-demo:gpu
   resources:
     requests:
       cpu: 0.5
@@ -73,6 +72,23 @@ spec:
 Если вы применяете отметки, обсудите с владельцами и разработчиками приложений, какие толерантности нужны им для развертывания.
 
 Дополнительные сведения см. в статье, посвященной [применению отметок и толерантностей][k8s-taints-tolerations].
+
+### <a name="behavior-of-taints-and-tolerations-in-aks"></a>Поведение taints и tolerations в AKS
+
+При обновлении пул узлов в AKS, taints и tolerations выполните заданному шаблону применяемые на новых узлах.
+
+- **По умолчанию кластеры без поддержки масштабирования виртуальной машины**
+  - Предположим, у вас есть кластер с двумя узлами - *node1* и *node2*. При обновлении, дополнительный узел (*node3*) создается.
+  - Taints из *node1* применяются к *node3*, затем *node1* удаляется.
+  - Создается другой новый узел (с именем *node1*, с момента предыдущего *node1* была удалена) и *node2* taints применяются к новому *node1*. Затем *node2* удаляется.
+  - По сути *node1* становится *node3*, и *node2* становится *node1*.
+
+- **Кластеры, использующие виртуальную машину масштабируемых наборов** (сейчас в предварительной версии в AKS)
+  - Опять же, давайте предположим, у вас есть кластер с двумя узлами - *node1* и *node2*. Вы обновить пуле узла.
+  - Создаются два дополнительных узла, *node3* и *node4*, а taints передаются в соответственно.
+  - Исходный *node1* и *node2* удаляются.
+
+При масштабировании пул узлов в AKS taints и tolerations без выполнения посредством конструктора.
 
 ## <a name="control-pod-scheduling-using-node-selectors-and-affinity"></a>Управление назначением моделей pod с помощью селекторов узлов и подобия
 
@@ -96,7 +112,7 @@ metadata:
 spec:
   containers:
   - name: tf-mnist
-    image: dockerhub.azk8s.cn/microsoft/samples-tf-mnist-demo:gpu
+    image: microsoft/samples-tf-mnist-demo:gpu
     resources:
       requests:
         cpu: 0.5
@@ -126,7 +142,7 @@ metadata:
 spec:
   containers:
   - name: tf-mnist
-    image: dockerhub.azk8s.cn/microsoft/samples-tf-mnist-demo:gpu
+    image: microsoft/samples-tf-mnist-demo:gpu
     resources:
       requests:
         cpu: 0.5

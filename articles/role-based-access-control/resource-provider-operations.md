@@ -10,15 +10,15 @@ ms.devlang: na
 ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 04/01/2019
+ms.date: 04/25/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 6c3accdd74ce3277181f6cdfc890de0d8c55bf07
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 13db0406681f676f47a3764cf2a59c4dbf251715
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60344637"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64729197"
 ---
 # <a name="azure-resource-manager-resource-provider-operations"></a>Операции поставщиков ресурсов Azure Resource Manager
 
@@ -38,6 +38,9 @@ ms.locfileid: "60344637"
 > | Действие | Microsoft.AAD/domainServices/oucontainer/read | Чтение контейнеров подразделения |
 > | Действие | Microsoft.AAD/domainServices/oucontainer/write | Запись в контейнер подразделения |
 > | Действие | Microsoft.AAD/domainServices/read | Чтение доменных служб |
+> | Действие | Microsoft.AAD/domainServices/ReplicaSets/delete | Удалить узел кластера |
+> | Действие | Microsoft.AAD/domainServices/ReplicaSets/read | Узел кластера для чтения |
+> | Действие | Microsoft.AAD/domainServices/ReplicaSets/write | Запись узла кластера |
 > | Действие | Microsoft.AAD/domainServices/write | Запись службы домена |
 > | Действие | Microsoft.AAD/locations/operationresults/read |  |
 > | Действие | Microsoft.AAD/Operations/read |  |
@@ -100,9 +103,7 @@ ms.locfileid: "60344637"
 > | Действие | Microsoft.ADHybridHealthService/reports/availabledeployments/read | Получает список доступных регионов, используемых командой DevOps для поддержки инцидентов клиентов. |
 > | Действие | Microsoft.ADHybridHealthService/reports/badpassword/read | Получает список попыток неправильного ввода пароля для всех пользователей в службе федерации Active Directory. |
 > | Действие | Microsoft.ADHybridHealthService/reports/badpassworduseridipfrequency/read | Получает универсальный код ресурса SAS большого двоичного объекта, содержащий состояние и конечный результат недавно поставленного в очередь задания отчета для определения частоты попыток неправильного ввода имени пользователя или пароля на каждый идентификатор пользователя по каждому IP-адресу в день для данного клиента. |
-> | Действие | Microsoft.ADHybridHealthService/reports/blobUris/read | Получает все ненадежном IP-адресе отчета идентификаторы URI для за последние 7 дней. |
 > | Действие | Microsoft.ADHybridHealthService/reports/consentedtodevopstenants/read | Получает список клиентов, получивших согласие DevOps. Обычно используется для поддержки клиентов. |
-> | Действие | Microsoft.ADHybridHealthService/reports/generateBlobUri/action | Создает отчет об опасных IP-адрес и возвращает URI, указывающий на него. |
 > | Действие | Microsoft.ADHybridHealthService/reports/isdevops/read | Получение значения, указывающего, имеет ли клиент согласие DevOps. |
 > | Действие | Microsoft.ADHybridHealthService/reports/selectdevopstenant/read | Обновляет идентификатор пользователя (идентификатор объекта) выбранного клиента DevOps. |
 > | Действие | Microsoft.ADHybridHealthService/reports/selecteddeployment/read | Возвращает выбранное развертывание для данного клиента. |
@@ -125,7 +126,9 @@ ms.locfileid: "60344637"
 > | Действие | Microsoft.ADHybridHealthService/services/monitoringconfigurations/write | Добавляет или обновляет конфигурации мониторинга для службы. |
 > | Действие | Microsoft.ADHybridHealthService/services/premiumcheck/read | Этот API возвращает список всех подключенных служб для клиента категории "Премиум". |
 > | Действие | Microsoft.ADHybridHealthService/services/read | Считывает экземпляры службы в клиенте. |
+> | Действие | Microsoft.ADHybridHealthService/services/reports/blobUris/read | Получает все ненадежном IP-адресе отчета идентификаторы URI для за последние 7 дней. |
 > | Действие | Microsoft.ADHybridHealthService/services/reports/details/read | Возвращает отчет о первых 50 пользователях, вводивших неправильный пароль, за последние 7 дней. |
+> | Действие | Microsoft.ADHybridHealthService/services/reports/generateBlobUri/action | Создает отчет об опасных IP-адрес и возвращает URI, указывающий на него. |
 > | Действие | Microsoft.ADHybridHealthService/services/servicemembers/action | Создает экземпляр службы в клиенте. |
 > | Действие | Microsoft.ADHybridHealthService/services/servicemembers/alerts/read | Считывает оповещения для сервера. |
 > | Действие | Microsoft.ADHybridHealthService/services/servicemembers/credentials/read | Во время регистрации сервера этот API вызывается, чтобы получить учетные данные для подключения новых серверов. |
@@ -213,163 +216,169 @@ ms.locfileid: "60344637"
 > | Действие | Microsoft.ApiManagement/operations/read | Чтение всех операций API для ресурса Microsoft.ApiManagement. |
 > | Действие | Microsoft.ApiManagement/register/action | Регистрирует подписку для поставщика ресурсов Microsoft.ApiManagement. |
 > | Действие | Microsoft.ApiManagement/reports/read | Получение отчетов, объединенных по периодам времени, географическим регионам, разработчикам, продуктам, API-интерфейсам, операциям, подпискам и запросам. |
-> | Действие | Microsoft.ApiManagement/service/apis/delete | Удаляет существующий API. |
-> | Действие | Microsoft.ApiManagement/service/apis/diagnostics/delete | Удаление существующих данных диагностики. |
-> | Действие | Microsoft.ApiManagement/service/apis/diagnostics/read | Получение списка диагностики или сведений о диагностике. |
-> | Действие | Microsoft.ApiManagement/service/apis/diagnostics/write | Добавление новых данных диагностики или обновление существующих диагностических сведений. |
-> | Действие | Microsoft.ApiManagement/service/apis/issues/attachments/delete | Удаление существующего вложения. |
-> | Действие | Microsoft.ApiManagement/service/apis/issues/attachments/read | Получение вложений, касающихся проблем, или сведений о вложениях, касающихся проблем со службой управления API. |
-> | Действие | Microsoft.ApiManagement/service/apis/issues/attachments/write | Добавление вложения, касающегося проблемы с API. |
-> | Действие | Microsoft.ApiManagement/service/apis/issues/comments/delete | Удаление имеющегося комментария. |
-> | Действие | Microsoft.ApiManagement/service/apis/issues/comments/read | Возвращение примечаний к проблеме или сведений о примечании к проблеме со службой управления API. |
-> | Действие | Microsoft.ApiManagement/service/apis/issues/comments/write | Добавление примечания к проблеме с API. |
-> | Действие | Microsoft.ApiManagement/service/apis/issues/delete | Удаление имеющейся проблемы. |
-> | Действие | Microsoft.ApiManagement/service/apis/issues/read | Получение сведений о проблемах, связанных с API, или сведений о проблеме со службой управления API. |
-> | Действие | Microsoft.ApiManagement/service/apis/issues/write | Добавление или обновление проблемы с API. |
-> | Действие | Microsoft.ApiManagement/service/apis/operations/delete | Удаляет существующую операцию API. |
-> | Действие | Microsoft.ApiManagement/service/apis/operations/policies/delete | Удаление конфигурации политики из политик операций API. |
-> | Действие | Microsoft.ApiManagement/service/apis/operations/policies/read | Получение политик для операций API или получение сведений о конфигурации политики для операций API. |
-> | Действие | Microsoft.ApiManagement/service/apis/operations/policies/write | Определение сведений о конфигурации политики для операции API. |
-> | Действие | Microsoft.ApiManagement/service/apis/operations/policy/delete | Удаляет конфигурацию политики из операции. |
-> | Действие | Microsoft.ApiManagement/service/apis/operations/policy/read | Возвращает сведения о конфигурации политики для операции. |
-> | Действие | Microsoft.ApiManagement/service/apis/operations/policy/write | Задает сведения о конфигурации политики для операции. |
-> | Действие | Microsoft.ApiManagement/service/apis/operations/read | Возвращает список существующих операций API или сведения о конкретной операции API. |
-> | Действие | Microsoft.ApiManagement/service/apis/operations/tags/delete | Удаление связи существующего тега с существующей операцией. |
-> | Действие | Microsoft.ApiManagement/service/apis/operations/tags/read | Получение тегов, связанных с операцией, или сведений о теге. |
-> | Действие | Microsoft.ApiManagement/service/apis/operations/tags/write | Связывание существующего тега с существующей операцией. |
-> | Действие | Microsoft.ApiManagement/service/apis/operations/write | Создает новую операцию API или обновляет существующую. |
-> | Действие | Microsoft.ApiManagement/service/apis/operationsByTags/read | Получение списка сопоставлений операций или тегов. |
-> | Действие | Microsoft.ApiManagement/service/apis/policies/delete | Удаление конфигурации политики из политик API. |
-> | Действие | Microsoft.ApiManagement/service/apis/policies/read | Получение политик для API или получение сведений о конфигурации политики для API. |
-> | Действие | Microsoft.ApiManagement/service/apis/policies/write | Задает сведения о конфигурации политики для API. |
-> | Действие | Microsoft.ApiManagement/service/apis/policy/delete | Удаляет конфигурацию политики из API. |
-> | Действие | Microsoft.ApiManagement/service/apis/policy/read | Возвращает сведения о конфигурации политики для API. |
-> | Действие | Microsoft.ApiManagement/service/apis/policy/write | Задает сведения о конфигурации политики для API. |
-> | Действие | Microsoft.ApiManagement/service/apis/products/read | Получение всех продуктов, частью которых является API. |
-> | Действие | Microsoft.ApiManagement/service/apis/read | Возвращает список всех зарегистрированных интерфейсов API или сведения об API. |
-> | Действие | Microsoft.ApiManagement/service/apis/releases/delete | Удаление всех версий API или выпуска API. |
-> | Действие | Microsoft.ApiManagement/service/apis/releases/read | Получение списка выпусков API или сведений о выпуске API. |
-> | Действие | Microsoft.ApiManagement/service/apis/releases/write | Создание нового выпуска API или обновление существующего. |
+> | Действие | Microsoft.ApiManagement/service/apis/delete | Удаляет указанный API экземпляра службы управления API. |
+> | Действие | Microsoft.ApiManagement/service/apis/diagnostics/delete | Удаляет указанный диагностики с помощью API. |
+> | Действие | Microsoft.ApiManagement/service/apis/diagnostics/read | Список всех диагностических сведений из API. или получение параметров диагностики для API, указанного по его идентификатору. |
+> | Действие | Microsoft.ApiManagement/service/apis/diagnostics/write | Создает новый диагностики для API или обновляет существующий. или обновление параметров диагностики для API, указанного по его идентификатору. |
+> | Действие | Microsoft.ApiManagement/service/apis/issues/attachments/delete | Удаляет указанный комментарий с проблемой. |
+> | Действие | Microsoft.ApiManagement/service/apis/issues/attachments/read | Списки все вложения, указывающие на данную проблему, связанный с указанного API. или получает сведения о проблеме вложения для API, указанного по его идентификатору. |
+> | Действие | Microsoft.ApiManagement/service/apis/issues/attachments/write | Создает новое вложение проблемы в интерфейсе API или обновляет существующий. |
+> | Действие | Microsoft.ApiManagement/service/apis/issues/comments/delete | Удаляет указанный комментарий с проблемой. |
+> | Действие | Microsoft.ApiManagement/service/apis/issues/comments/read | Списки все комментарии, проблемы, связанные с указанного API. или получает сведения о проблеме комментарий для API, указанного по его идентификатору. |
+> | Действие | Microsoft.ApiManagement/service/apis/issues/comments/write | Создает новый комментарий для проблемы в API или обновляет существующий. |
+> | Действие | Microsoft.ApiManagement/service/apis/issues/delete | Удаляет указанный проблему с помощью API. |
+> | Действие | Microsoft.ApiManagement/service/apis/issues/read | Список всех проблем, связанных с указанного API. или получает сведения о проблеме для API, указанного по его идентификатору. |
+> | Действие | Microsoft.ApiManagement/service/apis/issues/write | Создает новую проблему для API или обновляет существующий. или обновления существующего выпуска для API. |
+> | Действие | Microsoft.ApiManagement/service/apis/operations/delete | Удаляет указанную операцию в API. |
+> | Действие | Microsoft.ApiManagement/service/apis/operations/policies/delete | Удаляет конфигурацию политики во время операции Api. |
+> | Действие | Microsoft.ApiManagement/service/apis/operations/policies/read | Получение списка конфигурации политики на уровне операций API. или возвращает конфигурацию политики на уровне операций API. |
+> | Действие | Microsoft.ApiManagement/service/apis/operations/policies/write | Создает или обновляет конфигурацию политики для уровня API-операции. |
+> | Действие | Microsoft.ApiManagement/service/apis/operations/policy/delete | Удалить конфигурацию политики на уровне операции |
+> | Действие | Microsoft.ApiManagement/service/apis/operations/policy/read | Возвращает конфигурацию политики на уровне операции |
+> | Действие | Microsoft.ApiManagement/service/apis/operations/policy/write | Создание политики конфигурации во время операции уровня |
+> | Действие | Microsoft.ApiManagement/service/apis/operations/read | Перечисляет коллекцию операций для указанного API. или получает сведения об операции API, указанного по его идентификатору. |
+> | Действие | Microsoft.ApiManagement/service/apis/operations/tags/delete | Отсоединение тега из операции. |
+> | Действие | Microsoft.ApiManagement/service/apis/operations/tags/read | Перечислены все теги, связанные с операцией. или тег, связанный с операцией. |
+> | Действие | Microsoft.ApiManagement/service/apis/operations/tags/write | Назначьте тег операцию. |
+> | Действие | Microsoft.ApiManagement/service/apis/operations/write | Создает новую операцию в API или обновляет существующий. или обновления, сведения об операции в API, указанного по его идентификатору. |
+> | Действие | Microsoft.ApiManagement/service/apis/operationsByTags/read | Перечисляет коллекцию операций, связанных с тегами. |
+> | Действие | Microsoft.ApiManagement/service/apis/policies/delete | Удаляет конфигурацию политики в Api. |
+> | Действие | Microsoft.ApiManagement/service/apis/policies/read | Возвращает конфигурацию политики на уровне API. или возвращает конфигурацию политики на уровне API. |
+> | Действие | Microsoft.ApiManagement/service/apis/policies/write | Создает или обновляет конфигурацию политики для API. |
+> | Действие | Microsoft.ApiManagement/service/apis/policy/delete | Удалить конфигурацию политики на уровне API |
+> | Действие | Microsoft.ApiManagement/service/apis/policy/read | Возвращает конфигурацию политики на уровне API |
+> | Действие | Microsoft.ApiManagement/service/apis/policy/write | Создание политики конфигурации в API уровня |
+> | Действие | Microsoft.ApiManagement/service/apis/products/read | Перечислены все продукты, которые API-Интерфейс является частью. |
+> | Действие | Microsoft.ApiManagement/service/apis/read | Перечисляет все API-интерфейсы экземпляра службы управления API. или получает сведения об интерфейсе API, указанного по его идентификатору. |
+> | Действие | Microsoft.ApiManagement/service/apis/releases/delete | Удаление всех версий API или удаляет указанным выпуском в API. |
+> | Действие | Microsoft.ApiManagement/service/apis/releases/read | Перечислены все выпуски API.<br>В выпуске API создается при выполнении текущего редакцию API.<br>Выпуски также используются для отката к предыдущей редакции.<br>Результаты будут выгружаться и может быть ограничена параметрами $top и $skip.<br>или возвращает сведения о API выпуска. |
+> | Действие | Microsoft.ApiManagement/service/apis/releases/write | Создает новый выпуск для API. или обновления, сведения о выпуске API-интерфейса, указанного по его идентификатору. |
 > | Действие | Microsoft.ApiManagement/service/apis/revisions/delete | Удаление всех редакций API. |
-> | Действие | Microsoft.ApiManagement/service/apis/revisions/read | Получение списка редакций, относящихся к API. |
-> | Действие | Microsoft.ApiManagement/service/apis/schemas/delete | Удаление существующей схемы. |
-> | Действие | Microsoft.ApiManagement/service/apis/schemas/document/read | Получение документа, описывающего схему. |
-> | Действие | Microsoft.ApiManagement/service/apis/schemas/document/write | Обновление документа, описывающего схему. |
-> | Действие | Microsoft.ApiManagement/service/apis/schemas/read | Получение всех схем для данного API или получение схем, используемых API. |
-> | Действие | Microsoft.ApiManagement/service/apis/schemas/write | Определение схем, используемых API. |
-> | Действие | Microsoft.ApiManagement/service/apis/tagDescriptions/delete | Удаление описания тега из API. |
-> | Действие | Microsoft.ApiManagement/service/apis/tagDescriptions/read | Получение описаний тегов или описания тега в области API. |
-> | Действие | Microsoft.ApiManagement/service/apis/tagDescriptions/write | Создание или изменение описания тега в области API. |
-> | Действие | Microsoft.ApiManagement/service/apis/tags/delete | Удаление существующего сопоставления API и тега. |
-> | Действие | Microsoft.ApiManagement/service/apis/tags/read | Получение всех сопоставлений API и тега или сведений о сопоставлении API и тега. |
-> | Действие | Microsoft.ApiManagement/service/apis/tags/write | Добавление нового сопоставления API и тега. |
-> | Действие | Microsoft.ApiManagement/service/apis/write | Создает новый API или обновляет данные существующего API. |
-> | Действие | Microsoft.ApiManagement/service/apisByTags/read | Получение списка сопоставлений API и тега. |
-> | Действие | Microsoft.ApiManagement/service/apiVersionSets/delete | Удаление существующего набора версий. |
-> | Действие | Microsoft.ApiManagement/service/apiVersionSets/read | Получение списка сущностей группы версий или получение сведений о наборе версий. |
+> | Действие | Microsoft.ApiManagement/service/apis/revisions/read | Список всех редакций API. |
+> | Действие | Microsoft.ApiManagement/service/apis/schemas/delete | Удаляет конфигурацию схемы в Api. |
+> | Действие | Microsoft.ApiManagement/service/apis/schemas/read | Получите конфигурацию схемы на уровне API. или получить конфигурацию схемы на уровне API. |
+> | Действие | Microsoft.ApiManagement/service/apis/schemas/write | Создает или обновляет конфигурацию схемы для API. |
+> | Действие | Microsoft.ApiManagement/service/apis/tagDescriptions/delete | Удаление описания тега для Api. |
+> | Действие | Microsoft.ApiManagement/service/apis/tagDescriptions/read | Список всех описаний тегов в области API. Модель, аналогичную swagger — tagDescription определен на уровне API, но тега может быть назначен операции или получить описания тега в области API. |
+> | Действие | Microsoft.ApiManagement/service/apis/tagDescriptions/write | Создание или обновление описания тега в области API-интерфейса. |
+> | Действие | Microsoft.ApiManagement/service/apis/tags/delete | Отсоединение тега из Api. |
+> | Действие | Microsoft.ApiManagement/service/apis/tags/read | Список всех тегов, сопоставленных с помощью API. или тег, связанный с интерфейсом API. |
+> | Действие | Microsoft.ApiManagement/service/apis/tags/write | Назначьте тег Api. |
+> | Действие | Microsoft.ApiManagement/service/apis/write | Создает новые или обновляет существующий указанный API экземпляра службы управления API. или обновления указанный API экземпляра службы управления API. |
+> | Действие | Microsoft.ApiManagement/service/apisByTags/read | Перечисляет коллекцию API, связанных с тегами. |
+> | Действие | Microsoft.ApiManagement/service/apiVersionSets/delete | Удаляет набор определенной версии Api. |
+> | Действие | Microsoft.ApiManagement/service/apiVersionSets/read | Перечисляет коллекцию наборов API версии в указанном экземпляре службы. или получает сведения о версии Api, значение указанного по его идентификатору. |
 > | Действие | Microsoft.ApiManagement/service/apiVersionSets/versions/read | Получение списка сущностей версии. |
-> | Действие | Microsoft.ApiManagement/service/apiVersionSets/write | Создание нового набора версий или обновление сведений о существующем наборе. |
+> | Действие | Microsoft.ApiManagement/service/apiVersionSets/write | Создает или обновляет набор версию Api. или обновления параметров набора версий Api, указанного по его идентификатору. |
 > | Действие | Microsoft.ApiManagement/service/applynetworkconfigurationupdates/action | Обновляет ресурсы Microsoft.ApiManagement, работающие в виртуальной сети, для применения обновленных параметров сети. |
-> | Действие | Microsoft.ApiManagement/service/authorizationServers/delete | Удаляет существующий сервер авторизации. |
-> | Действие | Microsoft.ApiManagement/service/authorizationServers/read | Возвращает список серверов авторизации или сведения о сервере авторизации. |
-> | Действие | Microsoft.ApiManagement/service/authorizationServers/write | Создает новый сервер авторизации или обновляет данные существующего. |
-> | Действие | Microsoft.ApiManagement/service/backends/delete | Удаляет существующую серверную часть. |
-> | Действие | Microsoft.ApiManagement/service/backends/read | Возвращает список серверных частей или сведения о серверной части. |
-> | Действие | Microsoft.ApiManagement/service/backends/reconnect/action | Создание запроса на повторное подключение. |
-> | Действие | Microsoft.ApiManagement/service/backends/write | Добавляет новую серверную часть или обновляет данные существующей. |
+> | Действие | Microsoft.ApiManagement/service/authorizationServers/delete | Удаляет экземпляр сервера специфической авторизации. |
+> | Действие | Microsoft.ApiManagement/service/authorizationServers/read | Перечисляет коллекцию серверов авторизации в указанном экземпляре службы. или получение сведений о сервере авторизации, указанного по его идентификатору. |
+> | Действие | Microsoft.ApiManagement/service/authorizationServers/write | Создает новый сервер авторизации или обновляет существующий сервер авторизации. или обновления сведений о сервере авторизации, указанного по его идентификатору. |
+> | Действие | Microsoft.ApiManagement/service/backends/delete | Удаляет указанную серверную часть. |
+> | Действие | Microsoft.ApiManagement/service/backends/read | Перечисляет коллекцию внутренних серверов в указанном экземпляре службы. или получает сведения о серверной части, указанной ее идентификатором. |
+> | Действие | Microsoft.ApiManagement/service/backends/reconnect/action | Уведомляет прокси-сервера службы управления API, создайте новое соединение в серверную часть после указанного времени ожидания. Если время ожидания не указано, используется время ожидания в течение 2 минут. |
+> | Действие | Microsoft.ApiManagement/service/backends/write | Создание или обновление серверной части. или обновляет существующую. |
 > | Действие | Microsoft.ApiManagement/service/backup/action | Архивирует службу управления API в указанный контейнер в предоставленной пользователем учетной записи хранения. |
-> | Действие | Microsoft.ApiManagement/service/certificates/delete | Удаляет существующий сертификат. |
-> | Действие | Microsoft.ApiManagement/service/certificates/read | Возвращает список сертификатов или сведения о сертификате. |
-> | Действие | Microsoft.ApiManagement/service/certificates/write | Добавляет новый сертификат. |
+> | Действие | Microsoft.ApiManagement/service/caches/delete | Удаляет указанным кэшем. |
+> | Действие | Microsoft.ApiManagement/service/caches/read | Перечисляет коллекцию всех внешних кэшей в указанном экземпляре службы. или получение сведений о кэше, указанного по его идентификатору. |
+> | Действие | Microsoft.ApiManagement/service/caches/write | Создает или обновляет External Cache для использования в экземпляр службы управления Api. или обновления сведений о кэше, указанного по его идентификатору. |
+> | Действие | Microsoft.ApiManagement/service/certificates/delete | Удаляет указанный сертификат. |
+> | Действие | Microsoft.ApiManagement/service/certificates/read | Перечисляет коллекцию всех сертификатов в указанном экземпляре службы. или получение сведений о сертификате, указанного по его идентификатору. |
+> | Действие | Microsoft.ApiManagement/service/certificates/write | Создает или обновляет сертификат, используемый для проверки подлинности с серверной частью. |
 > | Действие | Microsoft.ApiManagement/service/contentTypes/contentItems/delete | Удаляет указанный элемент содержимого. |
 > | Действие | Microsoft.ApiManagement/service/contentTypes/contentItems/read | Возвращает список элементов содержимого или сведения об элементе содержимого. |
 > | Действие | Microsoft.ApiManagement/service/contentTypes/contentItems/write | Создает новый элемент содержимого или обновляет указанный элемент содержимого. |
 > | Действие | Microsoft.ApiManagement/service/contentTypes/read | Возвращает список типов содержимого. |
 > | Действие | Microsoft.ApiManagement/service/delete | Удаляет экземпляр службы управления API. |
-> | Действие | Microsoft.ApiManagement/service/diagnostics/delete | Удаление существующих данных диагностики. |
-> | Действие | Microsoft.ApiManagement/service/diagnostics/read | Получение списка диагностики или сведений о диагностике. |
-> | Действие | Microsoft.ApiManagement/service/diagnostics/write | Добавление новых данных диагностики или обновление существующих диагностических сведений. |
+> | Действие | Microsoft.ApiManagement/service/diagnostics/delete | Удаляет указанный диагностики. |
+> | Действие | Microsoft.ApiManagement/service/diagnostics/read | Перечислены все средства диагностики экземпляра службы управления API. или получение данных диагностики, указанного по его идентификатору. |
+> | Действие | Microsoft.ApiManagement/service/diagnostics/write | Создает новый диагностики или обновляет существующий. или обновление параметров диагностики, указанного по его идентификатору. |
 > | Действие | Microsoft.ApiManagement/service/getssotoken/action | Возвращает маркер единого входа, который может использоваться для входа на портал прежней версии службы управления API от имени администратора. |
-> | Действие | Microsoft.ApiManagement/service/groups/delete | Удаляет существующую группу. |
-> | Действие | Microsoft.ApiManagement/service/groups/read | Возвращает список групп или сведения о группе. |
+> | Действие | Microsoft.ApiManagement/service/groups/delete | Удаляет определенную группу в экземпляр службы управления API. |
+> | Действие | Microsoft.ApiManagement/service/groups/read | Перечисляет коллекцию групп в указанном экземпляре службы. или получение сведений о группе, указанной ее идентификатором. |
 > | Действие | Microsoft.ApiManagement/service/groups/users/delete | Удаляет пользователя из существующей группы. |
-> | Действие | Microsoft.ApiManagement/service/groups/users/read | Возвращает список пользователей группы. |
+> | Действие | Microsoft.ApiManagement/service/groups/users/read | Перечисляет коллекцию пользовательские сущности, связанные с группой. |
 > | Действие | Microsoft.ApiManagement/service/groups/users/write | Добавляет существующего пользователя в существующий продукт. |
-> | Действие | Microsoft.ApiManagement/service/groups/write | Создает новую группу или обновляет данные существующей. |
-> | Действие | Microsoft.ApiManagement/service/identityProviders/delete | Удаляет существующий поставщик удостоверений. |
-> | Действие | Microsoft.ApiManagement/service/identityProviders/read | Возвращает список поставщиков удостоверений или сведения о поставщике удостоверений. |
-> | Действие | Microsoft.ApiManagement/service/identityProviders/write | Создает новый поставщик удостоверений или обновляет данные существующего. |
+> | Действие | Microsoft.ApiManagement/service/groups/write | Создает или обновляет группу. или обновления сведений о группе, указанной ее идентификатором. |
+> | Действие | Microsoft.ApiManagement/service/identityProviders/delete | Удаляет конфигурацию поставщика указанное удостоверение. |
+> | Действие | Microsoft.ApiManagement/service/identityProviders/read | Перечисляет коллекцию поставщика удостоверений, настроенного в указанном экземпляре службы. или возвращает информацию о конфигурации поставщика удостоверений настроен в указанном экземпляре службы. |
+> | Действие | Microsoft.ApiManagement/service/identityProviders/write | Создает или обновляет конфигурацию поставщика удостоверений. или обновляет существующую конфигурацию поставщика удостоверений. |
+> | Действие | Microsoft.ApiManagement/service/issues/read | Перечисляет коллекцию проблемы в указанном экземпляре службы. или сведения о проблеме управления API. |
 > | Действие | Microsoft.ApiManagement/service/locations/networkstatus/read | Получение состояния доступа к сетевым ресурсам, от которых зависит служба в расположении. |
-> | Действие | Microsoft.ApiManagement/service/loggers/delete | Удаляет существующее средство ведения журнала. |
-> | Действие | Microsoft.ApiManagement/service/loggers/read | Возвращает список средств ведения журнала или сведения о средстве ведения журнала. |
-> | Действие | Microsoft.ApiManagement/service/loggers/write | Добавляет новое средство ведения журнала или обновляет существующее. |
+> | Действие | Microsoft.ApiManagement/service/loggers/delete | Удаляет указанного регистратора. |
+> | Действие | Microsoft.ApiManagement/service/loggers/read | Перечисляет коллекцию средств ведения журнала в указанном экземпляре службы. или получение сведений средства ведения журнала, указанного по его идентификатору. |
+> | Действие | Microsoft.ApiManagement/service/loggers/write | Создание или обновление средства ведения журнала. или обновляет существующее средство ведения журнала. |
 > | Действие | Microsoft.ApiManagement/service/managedeployments/action | Позволяет изменить номер SKU или единицы, а также добавить или удалить региональные развертывания службы управления API. |
 > | Действие | Microsoft.ApiManagement/service/networkstatus/read | Получение состояния доступа к сетевым ресурсам, от которых зависит служба. |
 > | Действие | Microsoft.ApiManagement/service/notifications/action | Отправление уведомления указанному пользователю. |
-> | Действие | Microsoft.ApiManagement/service/notifications/read | Получение всех уведомлений издателя управления API или сведений об этих уведомлениях. |
-> | Действие | Microsoft.ApiManagement/service/notifications/recipientEmails/delete | Удаление существующего адреса электронной почты, связанного с уведомлением. |
-> | Действие | Microsoft.ApiManagement/service/notifications/recipientEmails/read | Получение списка получателей, связанных с уведомлением издателя управления API. |
-> | Действие | Microsoft.ApiManagement/service/notifications/recipientEmails/write | Создание нового получателя уведомлений электронной почты. |
-> | Действие | Microsoft.ApiManagement/service/notifications/recipientUsers/delete | Удаление пользователя, связанного с получателями уведомлений. |
-> | Действие | Microsoft.ApiManagement/service/notifications/recipientUsers/read | Получение списка получателей, связанных с уведомлением. |
-> | Действие | Microsoft.ApiManagement/service/notifications/recipientUsers/write | Добавление пользователя в список получателей уведомлений. |
-> | Действие | Microsoft.ApiManagement/service/notifications/write | Создание или обновление уведомления издателя управления API. |
-> | Действие | Microsoft.ApiManagement/service/openidConnectProviders/delete | Удаляет существующий поставщик OpenID Connect. |
-> | Действие | Microsoft.ApiManagement/service/openidConnectProviders/read | Возвращает список поставщиков OpenID Connect или сведения о поставщике OpenID Connect. |
-> | Действие | Microsoft.ApiManagement/service/openidConnectProviders/write | Создает новый поставщик OpenID Connect или обновляет данные существующего. |
+> | Действие | Microsoft.ApiManagement/service/notifications/read | Перечисляет коллекцию свойств, определенных в экземпляре службы. или получает сведения об уведомлении, указанного по его идентификатору. |
+> | Действие | Microsoft.ApiManagement/service/notifications/recipientEmails/delete | Удаляет сообщения электронной почты из списка уведомлений. |
+> | Действие | Microsoft.ApiManagement/service/notifications/recipientEmails/read | Получает список получателей уведомлений по электронной почте, которые подписаны на уведомления. |
+> | Действие | Microsoft.ApiManagement/service/notifications/recipientEmails/write | Добавляет адрес электронной почты в список получателей уведомления. |
+> | Действие | Microsoft.ApiManagement/service/notifications/recipientUsers/delete | Удаление пользователя службы управления API в списке уведомлений. |
+> | Действие | Microsoft.ApiManagement/service/notifications/recipientUsers/read | Получает список пользователя получателя уведомлений подписаться на уведомления. |
+> | Действие | Microsoft.ApiManagement/service/notifications/recipientUsers/write | Добавляет пользователя API управления в список получателей уведомления. |
+> | Действие | Microsoft.ApiManagement/service/notifications/write | Создание или уведомления издателя управления API обновления. |
+> | Действие | Microsoft.ApiManagement/service/openidConnectProviders/delete | Удаляет конкретного поставщика OpenID Connect экземпляра службы управления API. |
+> | Действие | Microsoft.ApiManagement/service/openidConnectProviders/read | Содержит список всех поставщика OpenId Connect. или получает конкретного поставщика OpenID Connect. |
+> | Действие | Microsoft.ApiManagement/service/openidConnectProviders/write | Создает или обновляет поставщик OpenID Connect. или обновления конкретного поставщика OpenID Connect. |
 > | Действие | Microsoft.ApiManagement/service/operationresults/read | Возвращает текущее состояние длительной операции. |
-> | Действие | Microsoft.ApiManagement/service/policies/delete | Удаление конфигурации политики из политик клиента. |
-> | Действие | Microsoft.ApiManagement/service/policies/read | Получение политик клиента или сведений о конфигурации политик клиента. |
-> | Действие | Microsoft.ApiManagement/service/policies/write | Определение сведений о конфигурации политик клиента. |
-> | Действие | Microsoft.ApiManagement/service/policySnippets/read | Получение всех фрагментов кода политики. |
-> | Действие | Microsoft.ApiManagement/service/portalsettings/read | Получение параметров регистрации на портале, параметров для входа на портал или параметров делегирования для портала. |
-> | Действие | Microsoft.ApiManagement/service/portalsettings/write | Обновление параметров регистрации на портале, параметров для входа на портал или параметров делегирования для портала. |
-> | Действие | Microsoft.ApiManagement/service/products/apis/delete | Удаляет API из существующего продукта. |
-> | Действие | Microsoft.ApiManagement/service/products/apis/read | Возвращает список интерфейсов API, добавленных в существующий продукт. |
-> | Действие | Microsoft.ApiManagement/service/products/apis/write | Добавляет API в существующий продукт. |
-> | Действие | Microsoft.ApiManagement/service/products/delete | Удаляет существующий продукт. |
-> | Действие | Microsoft.ApiManagement/service/products/groups/delete | Удаляет связь между существующими продуктом и группой разработчиков. |
-> | Действие | Microsoft.ApiManagement/service/products/groups/read | Возвращает список групп разработчиков, связанных с продуктом. |
-> | Действие | Microsoft.ApiManagement/service/products/groups/write | Устанавливает связь между существующими продуктом и группой разработчиков. |
-> | Действие | Microsoft.ApiManagement/service/products/policies/delete | Удаление конфигурации политики из политик продукта. |
-> | Действие | Microsoft.ApiManagement/service/products/policies/read | Получение политик продукта или сведений о конфигурации политики продукта. |
-> | Действие | Microsoft.ApiManagement/service/products/policies/write | Настройка сведений о конфигурации политики продукта. |
-> | Действие | Microsoft.ApiManagement/service/products/policy/delete | Удаляет конфигурацию политики из существующего продукта. |
-> | Действие | Microsoft.ApiManagement/service/products/policy/read | Возвращает конфигурацию политики существующего продукта. |
-> | Действие | Microsoft.ApiManagement/service/products/policy/write | Задает конфигурацию политики существующего продукта. |
-> | Действие | Microsoft.ApiManagement/service/products/read | Возвращает список продуктов или сведения о продукте. |
-> | Действие | Microsoft.ApiManagement/service/products/subscriptions/read | Возвращает список подписок на продукт. |
-> | Действие | Microsoft.ApiManagement/service/products/tags/delete | Удаление связи существующего тега с существующим продуктом. |
-> | Действие | Microsoft.ApiManagement/service/products/tags/read | Получение тегов, связанных с продуктом, или сведений о теге. |
-> | Действие | Microsoft.ApiManagement/service/products/tags/write | Связывание существующего тега с существующим продуктом. |
-> | Действие | Microsoft.ApiManagement/service/products/write | Создает новый продукт или обновляет данные существующего. |
-> | Действие | Microsoft.ApiManagement/service/productsByTags/read | Получение списка сопоставлений продуктов и тегов. |
-> | Действие | Microsoft.ApiManagement/service/properties/delete | Удаляет существующее свойство. |
-> | Действие | Microsoft.ApiManagement/service/properties/read | Возвращает список всех свойств или сведения об указанном свойстве. |
-> | Действие | Microsoft.ApiManagement/service/properties/write | Создает новое свойство или обновляет значение указанного свойства. |
+> | Действие | Microsoft.ApiManagement/service/policies/delete | Удаляет конфигурацию глобальной политики службы управления Api. |
+> | Действие | Microsoft.ApiManagement/service/policies/read | Список всех определений глобальной политики службы управления Api. или получения определения глобальной политики службы управления Api. |
+> | Действие | Microsoft.ApiManagement/service/policies/write | Создает или обновляет конфигурацию глобальной политики службы управления Api. |
+> | Действие | Microsoft.ApiManagement/service/policy/delete | Удалить конфигурацию политики на уровне клиента |
+> | Действие | Microsoft.ApiManagement/service/policy/read | Возвращает конфигурацию политики на уровне клиента |
+> | Действие | Microsoft.ApiManagement/service/policy/write | Создание уровня конфигурации политики в клиент |
+> | Действие | Microsoft.ApiManagement/service/policySnippets/read | Список всех фрагментов кода политики. |
+> | Действие | Microsoft.ApiManagement/service/portalsettings/read | Получите входа в параметры для портала или Get входа вверх параметры для портала или параметров делегирования для портала. |
+> | Действие | Microsoft.ApiManagement/service/portalsettings/write | Обновите параметры входа в систему. или параметры Create или Update входа в систему. или параметров регистрации обновления или обновления регистрации параметры или параметров делегирования. или параметры Create или Update делегирования. |
+> | Действие | Microsoft.ApiManagement/service/products/apis/delete | Удаляет указанный API из указанного продукта. |
+> | Действие | Microsoft.ApiManagement/service/products/apis/read | Списки коллекция API-интерфейсов, связанных с продуктом. |
+> | Действие | Microsoft.ApiManagement/service/products/apis/write | Добавляет API к указанному продукту. |
+> | Действие | Microsoft.ApiManagement/service/products/delete | Удалите продукт. |
+> | Действие | Microsoft.ApiManagement/service/products/groups/delete | Удаляет связь между указанной группой и продуктом. |
+> | Действие | Microsoft.ApiManagement/service/products/groups/read | Перечисляет коллекцию групп разработчиков, связанных с указанным продуктом. |
+> | Действие | Microsoft.ApiManagement/service/products/groups/write | Добавляет связь между указанную группу разработчиков с указанным продуктом. |
+> | Действие | Microsoft.ApiManagement/service/products/policies/delete | Удаляет конфигурацию политики на продукт. |
+> | Действие | Microsoft.ApiManagement/service/products/policies/read | Возвращает конфигурацию политики на уровне продукта. или возвращает конфигурацию политики на уровне продукта. |
+> | Действие | Microsoft.ApiManagement/service/products/policies/write | Создает или обновляет конфигурацию политики для продукта. |
+> | Действие | Microsoft.ApiManagement/service/products/policy/delete | Удалить конфигурацию политики на уровне продукта |
+> | Действие | Microsoft.ApiManagement/service/products/policy/read | Возвращает конфигурацию политики на уровне продукта |
+> | Действие | Microsoft.ApiManagement/service/products/policy/write | Создание политики конфигурации продукт уровня |
+> | Действие | Microsoft.ApiManagement/service/products/read | Перечисляет коллекцию продуктов в указанном экземпляре службы. или получение сведений о продукте, указанного по его идентификатору. |
+> | Действие | Microsoft.ApiManagement/service/products/subscriptions/read | Перечисляет коллекцию подписок на указанный продукт. |
+> | Действие | Microsoft.ApiManagement/service/products/tags/delete | Отсоединение тега из продукта. |
+> | Действие | Microsoft.ApiManagement/service/products/tags/read | Перечислены все теги, связанные с продуктом. или тег, связанный с продуктом. |
+> | Действие | Microsoft.ApiManagement/service/products/tags/write | Назначьте тег продукта. |
+> | Действие | Microsoft.ApiManagement/service/products/write | Создает или обновляет продукта. или обновляет данные существующего. |
+> | Действие | Microsoft.ApiManagement/service/productsByTags/read | Перечисляет коллекцию продуктов, связанных с тегами. |
+> | Действие | Microsoft.ApiManagement/service/properties/delete | Удаляет указанное свойство из экземпляра службы управления API. |
+> | Действие | Microsoft.ApiManagement/service/properties/read | Перечисляет коллекцию свойств, определенных в экземпляре службы. или получает сведения о свойстве, указанного по его идентификатору. |
+> | Действие | Microsoft.ApiManagement/service/properties/write | Создает или обновляет свойства. или обновляет определенные свойства. |
 > | Действие | Microsoft.ApiManagement/service/quotas/periods/read | Получение значения счетчика квоты за период. |
 > | Действие | Microsoft.ApiManagement/service/quotas/periods/write | Настройка текущего значения счетчика квоты. |
 > | Действие | Microsoft.ApiManagement/service/quotas/read | Получение значений квоты. |
 > | Действие | Microsoft.ApiManagement/service/quotas/write | Настройка текущего значения счетчика квоты. |
 > | Действие | Microsoft.ApiManagement/service/read | Чтение метаданных для экземпляра службы управления API. |
+> | Действие | Microsoft.ApiManagement/service/regions/read | Список всех регионах azure, в которых служба существует. |
 > | Действие | Microsoft.ApiManagement/service/reports/read | Получение отчета, объединенного по периодам времени, по географическим регионам или по разработчикам;<br>получение отчета, объединенного по продуктам;<br>получение отчета, объединенного по API-интерфейсам, операциям или по подпискам;<br>получение запросов, передающих данные. |
 > | Действие | Microsoft.ApiManagement/service/restore/action | Восстановление службы управления API из указанного контейнера в предоставленной пользователем учетной записи хранения. |
-> | Действие | Microsoft.ApiManagement/service/subscriptions/delete | Удаляет подписку. С помощью этой операции можно удалить подписку. |
-> | Действие | Microsoft.ApiManagement/service/subscriptions/read | Возвращает список подписок на продукт или сведения о подписке на продукт. |
-> | Действие | Microsoft.ApiManagement/service/subscriptions/regeneratePrimaryKey/action | Повторно создает первичный ключ подписки. |
-> | Действие | Microsoft.ApiManagement/service/subscriptions/regenerateSecondaryKey/action | Повторно создает вторичный ключ подписки. |
-> | Действие | Microsoft.ApiManagement/service/subscriptions/write | Подписывает существующего пользователя на имеющийся продукт или обновляет данные существующей подписки. С помощью этой операции можно обновить подписку. |
-> | Действие | Microsoft.ApiManagement/service/tagResources/read | Получение списка тегов со связанными ресурсами. |
-> | Действие | Microsoft.ApiManagement/service/tags/delete | Удаление существующего тега. |
-> | Действие | Microsoft.ApiManagement/service/tags/read | Получение списка тегов или сведений о теге. |
-> | Действие | Microsoft.ApiManagement/service/tags/write | Добавление нового тега или обновление сведений о существующем. |
+> | Действие | Microsoft.ApiManagement/service/subscriptions/delete | Удаляет указанную подписку. |
+> | Действие | Microsoft.ApiManagement/service/subscriptions/read | Перечислены все подписки экземпляра службы управления API. Получает указанную сущность подписки или. |
+> | Действие | Microsoft.ApiManagement/service/subscriptions/regeneratePrimaryKey/action | Повторно создает первичный ключ из существующей подписки экземпляра службы управления API. |
+> | Действие | Microsoft.ApiManagement/service/subscriptions/regenerateSecondaryKey/action | Повторно создает вторичный ключ из существующей подписки экземпляра службы управления API. |
+> | Действие | Microsoft.ApiManagement/service/subscriptions/write | Создание или обновление подписки указанного пользователя на указанный продукт. или обновления сведений о подписке, указанной ее идентификатором. |
+> | Действие | Microsoft.ApiManagement/service/tagResources/read | Перечисляет коллекцию ресурсов, связанных с тегами. |
+> | Действие | Microsoft.ApiManagement/service/tags/delete | Удаляет указанный тег экземпляра службы управления API. |
+> | Действие | Microsoft.ApiManagement/service/tags/read | Перечисляет коллекцию тегов в указанном экземпляре службы. или получает сведения о теге, указанного по его идентификатору. |
+> | Действие | Microsoft.ApiManagement/service/tags/write | Создает тег. или обновления сведений о теге, указанного по его идентификатору. |
 > | Действие | Microsoft.ApiManagement/service/templates/delete | Сброс к шаблону электронного сообщения по умолчанию службы управления API. |
 > | Действие | Microsoft.ApiManagement/service/templates/read | Получение всех шаблонов сообщений или сведений о шаблоне сообщения службы управления API. |
 > | Действие | Microsoft.ApiManagement/service/templates/write | Создание или обновление шаблона сообщения службы управления API. |
 > | Действие | Microsoft.ApiManagement/service/tenant/delete | Удаляет конфигурацию политики для клиента. |
 > | Действие | Microsoft.ApiManagement/service/tenant/deploy/action | Выполняет задачу развертывания для применения изменений из указанной ветви Git к конфигурации в базе данных. |
 > | Действие | Microsoft.ApiManagement/service/tenant/operationResults/read | Возвращает список результатов операций или результат определенной операции. |
-> | Действие | Microsoft.ApiManagement/service/tenant/read | Получение конфигурации политики для клиента или сведений о доступе к клиенту. |
+> | Действие | Microsoft.ApiManagement/service/tenant/read | Получение определения глобальной политики службы управления Api. или сведения о доступе клиента Get |
 > | Действие | Microsoft.ApiManagement/service/tenant/regeneratePrimaryKey/action | Повторно создает первичный ключ доступа. |
 > | Действие | Microsoft.ApiManagement/service/tenant/regenerateSecondaryKey/action | Повторно создает вторичный ключ доступа. |
 > | Действие | Microsoft.ApiManagement/service/tenant/save/action | Создает фиксацию с использованием моментального снимка конфигурации для указанной ветви в репозитории. |
@@ -379,21 +388,16 @@ ms.locfileid: "60344637"
 > | Действие | Microsoft.ApiManagement/service/updatecertificate/action | Передает SSL-сертификата для службы управления API. |
 > | Действие | Microsoft.ApiManagement/service/updatehostname/action | Позволяет настроить, обновить или удалить имена личных доменов для службы управления API. |
 > | Действие | Microsoft.ApiManagement/service/users/action | Регистрация нового пользователя. |
-> | Действие | Microsoft.ApiManagement/service/users/applications/attachments/delete | Удаление вложения. |
-> | Действие | Microsoft.ApiManagement/service/users/applications/attachments/read | Получение вложений приложения или вложения. |
-> | Действие | Microsoft.ApiManagement/service/users/applications/attachments/write | Добавление вложения в приложение. |
-> | Действие | Microsoft.ApiManagement/service/users/applications/delete | Удаление существующего приложения. |
-> | Действие | Microsoft.ApiManagement/service/users/applications/read | Получение списка всех пользовательских приложений или сведений о приложении службы управления API. |
-> | Действие | Microsoft.ApiManagement/service/users/applications/write | Регистрация приложения в службе управления API или обновление сведений о приложении. |
 > | Действие | Microsoft.ApiManagement/service/users/confirmations/send/action | Отправляет подтверждение. |
-> | Действие | Microsoft.ApiManagement/service/users/delete | Удаляет учетную запись пользователя. |
-> | Действие | Microsoft.ApiManagement/service/users/generateSsoUrl/action | Создает URL-адрес единого входа. URL-адрес, который можно использовать для доступа к порталу администрирования. |
-> | Действие | Microsoft.ApiManagement/service/users/groups/read | Возвращает список групп пользователя. |
-> | Действие | Microsoft.ApiManagement/service/users/keys/read | Возвращает список ключей пользователя. |
-> | Действие | Microsoft.ApiManagement/service/users/read | Возвращает список зарегистрированных пользователей или сведения об учетной записи пользователя. |
-> | Действие | Microsoft.ApiManagement/service/users/subscriptions/read | Возвращает список подписок пользователя. |
-> | Действие | Microsoft.ApiManagement/service/users/token/action | Получение токена доступа для пользователя. |
-> | Действие | Microsoft.ApiManagement/service/users/write | Регистрирует нового пользователя или обновляет данные учетной записи существующего пользователя. |
+> | Действие | Microsoft.ApiManagement/service/users/delete | Удаляет конкретного пользователя. |
+> | Действие | Microsoft.ApiManagement/service/users/generateSsoUrl/action | Извлекает URL-адрес перенаправления, содержащий маркер проверки подлинности для входа данного пользователя на портал разработчика. |
+> | Действие | Microsoft.ApiManagement/service/users/groups/read | Список всех групп пользователей. |
+> | Действие | Microsoft.ApiManagement/service/users/identities/read | Список всех удостоверений пользователей. |
+> | Действие | Microsoft.ApiManagement/service/users/keys/read | Получить ключи, связанные с пользователем |
+> | Действие | Microsoft.ApiManagement/service/users/read | Перечисляет коллекцию пользователей, зарегистрированных в указанном экземпляре службы. или получает данные пользователя, указанного по его идентификатору. |
+> | Действие | Microsoft.ApiManagement/service/users/subscriptions/read | Перечисляет коллекцию подписки указанного пользователя. |
+> | Действие | Microsoft.ApiManagement/service/users/token/action | Получает маркер авторизации общего доступа для пользователя. |
+> | Действие | Microsoft.ApiManagement/service/users/write | Создает или обновляет пользователя. или обновления данных пользователя, указанного по его идентификатору. |
 > | Действие | Microsoft.ApiManagement/service/write | Создание экземпляра службы управления API. |
 > | Действие | Microsoft.ApiManagement/unregister/action | Отменяет регистрацию подписки для поставщика ресурсов Microsoft.ApiManagement. |
 
@@ -718,11 +722,13 @@ ms.locfileid: "60344637"
 > | Тип действия | Операция | ОПИСАНИЕ |
 > | --- | --- | --- |
 > | Действие | Microsoft.Capacity/appliedreservations/read | Чтение всех резервирований. |
+> | Действие | Microsoft.Capacity/calculateexchange/action | Вычисляет сумму exchange и цена новой покупки и возвращает политику ошибок. |
 > | Действие | Microsoft.Capacity/calculateprice/action | Вычисление цены резервирования. |
 > | Действие | Microsoft.Capacity/catalogs/read | Чтение каталога резервирования. |
 > | Действие | Microsoft.Capacity/checkoffers/action | Проверка наличия предложений для подписок. |
 > | Действие | Microsoft.Capacity/checkscopes/action | Проверка наличия подписок. |
 > | Действие | Microsoft.Capacity/commercialreservationorders/read | Получение заказов на резервирование, созданных в любом клиенте. |
+> | Действие | Microsoft.Capacity/exchange/action | Exchange резервирования. |
 > | Действие | Microsoft.Capacity/operations/read | Чтение любой операции. |
 > | Действие | Microsoft.Capacity/register/action | Регистрация поставщика ресурсов емкости и разрешение создания ресурсов емкости. |
 > | Действие | Microsoft.Capacity/reservationorders/action | Обновление резервирования. |
@@ -1448,15 +1454,24 @@ ms.locfileid: "60344637"
 > [!div class="mx-tdCol2BreakAll"]
 > | Тип действия | Операция | ОПИСАНИЕ |
 > | --- | --- | --- |
+> | Действие | Microsoft.CostManagement/cloudConnectors/delete | Удаление указанного cloudConnector. |
+> | Действие | Microsoft.CostManagement/cloudConnectors/read | Список cloudConnectors для проверенного пользователя. |
+> | Действие | Microsoft.CostManagement/cloudConnectors/write | Создание или обновление указанной cloudConnector. |
 > | Действие | Microsoft.CostManagement/dimensions/read | Вывод списка всех поддерживаемых измерений в области. |
 > | Действие | Microsoft.CostManagement/exports/action | Выполнение указанной операции экспорта. |
 > | Действие | Microsoft.CostManagement/exports/delete | Удаление указанной операции экспорта. |
 > | Действие | Microsoft.CostManagement/exports/read | Вывод списка операций экспорта по области. |
+> | Действие | Microsoft.CostManagement/exports/run/action | Выполните экспорт. |
 > | Действие | Microsoft.CostManagement/exports/write | Создание или обновление указанной операции экспорта. |
+> | Действие | Microsoft.CostManagement/externalBillingAccounts/externalSubscriptions/read | Список externalSubscriptions в externalBillingAccount для проверенного пользователя. |
+> | Действие | Microsoft.CostManagement/externalBillingAccounts/read | Список externalBillingAccounts для проверенного пользователя. |
+> | Действие | Microsoft.CostManagement/externalSubscriptions/read | Список externalSubscriptions для проверенного пользователя. |
+> | Действие | Microsoft.CostManagement/externalSubscriptions/write | Обновление группы управления связанного externalSubscription |
 > | Действие | Microsoft.CostManagement/query/action | Запрос данных об использовании в области. |
 > | Действие | Microsoft.CostManagement/query/read | Запрос данных об использовании в области. |
 > | Действие | Microsoft.CostManagement/reports/action | Планирование создания отчетов о данных об использовании в области. |
 > | Действие | Microsoft.CostManagement/reports/read | Планирование создания отчетов о данных об использовании в области. |
+> | Действие | Microsoft.CostManagement/tenants/register/action | Зарегистрируйте действие для области Microsoft.CostManagement клиента. |
 
 ## <a name="microsoftcustomerinsights"></a>Microsoft.CustomerInsights
 
@@ -1587,6 +1602,7 @@ ms.locfileid: "60344637"
 > | Действие | Microsoft.DataBoxEdge/dataBoxEdgeDevices/alerts/read | Выводит список оповещений или возвращает их |
 > | Действие | Microsoft.DataBoxEdge/dataBoxEdgeDevices/alerts/read | Выводит список оповещений или возвращает их |
 > | Действие | Microsoft.DataBoxEdge/dataBoxEdgeDevices/bandwidthSchedules/delete | Удаляет расписания пропускной способности |
+> | Действие | Microsoft.DataBoxEdge/dataBoxEdgeDevices/bandwidthSchedules/operationResults/read | Возвращает результат операции или выводит их список |
 > | Действие | Microsoft.DataBoxEdge/dataBoxEdgeDevices/bandwidthSchedules/read | Выводит список расписаний пропускной способности или возвращает их |
 > | Действие | Microsoft.DataBoxEdge/dataBoxEdgeDevices/bandwidthSchedules/read | Выводит список расписаний пропускной способности или возвращает их |
 > | Действие | Microsoft.DataBoxEdge/dataBoxEdgeDevices/bandwidthSchedules/write | Создает или обновляет расписания пропускной способности |
@@ -1597,8 +1613,10 @@ ms.locfileid: "60344637"
 > | Действие | Microsoft.DataBoxEdge/dataBoxEdgeDevices/installUpdates/action | Устанавливает обновления на устройство |
 > | Действие | Microsoft.DataBoxEdge/dataBoxEdgeDevices/jobs/read | Выводит список заданий или возвращает их |
 > | Действие | Microsoft.DataBoxEdge/dataBoxEdgeDevices/networkSettings/read | Выводит список параметров сети устройства или возвращает их |
+> | Действие | Microsoft.DataBoxEdge/dataBoxEdgeDevices/operationResults/read | Возвращает результат операции или выводит их список |
 > | Действие | Microsoft.DataBoxEdge/dataBoxEdgeDevices/operationsStatus/read | Выводит список или возвращает состояние операции |
 > | Действие | Microsoft.DataBoxEdge/dataBoxEdgeDevices/orders/delete | Удаляет заказы |
+> | Действие | Microsoft.DataBoxEdge/dataBoxEdgeDevices/orders/operationResults/read | Возвращает результат операции или выводит их список |
 > | Действие | Microsoft.DataBoxEdge/dataBoxEdgeDevices/orders/read | Выводит список или возвращает заказы |
 > | Действие | Microsoft.DataBoxEdge/dataBoxEdgeDevices/orders/read | Выводит список или возвращает заказы |
 > | Действие | Microsoft.DataBoxEdge/dataBoxEdgeDevices/orders/write | Создает или обновляет заказы |
@@ -1606,27 +1624,33 @@ ms.locfileid: "60344637"
 > | Действие | Microsoft.DataBoxEdge/dataBoxEdgeDevices/read | Выводит список устройств Data Box Edge или возвращает их |
 > | Действие | Microsoft.DataBoxEdge/dataBoxEdgeDevices/read | Выводит список устройств Data Box Edge или возвращает их |
 > | Действие | Microsoft.DataBoxEdge/dataBoxEdgeDevices/roles/delete | Удаление ролей |
+> | Действие | Microsoft.DataBoxEdge/dataBoxEdgeDevices/roles/operationResults/read | Возвращает результат операции или выводит их список |
 > | Действие | Microsoft.DataBoxEdge/dataBoxEdgeDevices/roles/read | Получает роли или выводит их список |
 > | Действие | Microsoft.DataBoxEdge/dataBoxEdgeDevices/roles/read | Получает роли или выводит их список |
 > | Действие | Microsoft.DataBoxEdge/dataBoxEdgeDevices/roles/write | Создает или обновляет роли |
 > | Действие | Microsoft.DataBoxEdge/dataBoxEdgeDevices/scanForUpdates/action | Проверяет на наличие обновлений |
+> | Действие | Microsoft.DataBoxEdge/dataBoxEdgeDevices/securitySettings/operationResults/read | Возвращает результат операции или выводит их список |
 > | Действие | Microsoft.DataBoxEdge/dataBoxEdgeDevices/securitySettings/update/action | Обновляет параметры безопасности |
 > | Действие | Microsoft.DataBoxEdge/dataBoxEdgeDevices/shares/delete | Удаляет общедоступные ресурсы |
+> | Действие | Microsoft.DataBoxEdge/dataBoxEdgeDevices/shares/operationResults/read | Возвращает результат операции или выводит их список |
 > | Действие | Microsoft.DataBoxEdge/dataBoxEdgeDevices/shares/read | Выводит список общедоступных ресурсов или возвращает их |
 > | Действие | Microsoft.DataBoxEdge/dataBoxEdgeDevices/shares/read | Выводит список общедоступных ресурсов или возвращает их |
 > | Действие | Microsoft.DataBoxEdge/dataBoxEdgeDevices/shares/refresh/action | Обновить метаданные общих папок данными из облака |
 > | Действие | Microsoft.DataBoxEdge/dataBoxEdgeDevices/shares/write | Создает общие папки или обновляет их |
 > | Действие | Microsoft.DataBoxEdge/dataBoxEdgeDevices/storageAccountCredentials/delete | Удаляет данные учетной записи хранения |
+> | Действие | Microsoft.DataBoxEdge/dataBoxEdgeDevices/storageAccountCredentials/operationResults/read | Возвращает результат операции или выводит их список |
 > | Действие | Microsoft.DataBoxEdge/dataBoxEdgeDevices/storageAccountCredentials/read | Выводит список данных учетной записи хранения или возвращает их |
 > | Действие | Microsoft.DataBoxEdge/dataBoxEdgeDevices/storageAccountCredentials/read | Выводит список данных учетной записи хранения или возвращает их |
 > | Действие | Microsoft.DataBoxEdge/dataBoxEdgeDevices/storageAccountCredentials/write | Создает данные учетной записи хранения или обновляет их |
 > | Действие | Microsoft.DataBoxEdge/dataBoxEdgeDevices/triggers/delete | Удаление триггеров |
+> | Действие | Microsoft.DataBoxEdge/dataBoxEdgeDevices/triggers/operationResults/read | Возвращает результат операции или выводит их список |
 > | Действие | Microsoft.DataBoxEdge/dataBoxEdgeDevices/triggers/read | Выводит список или получает триггеры |
 > | Действие | Microsoft.DataBoxEdge/dataBoxEdgeDevices/triggers/read | Выводит список или получает триггеры |
 > | Действие | Microsoft.DataBoxEdge/dataBoxEdgeDevices/triggers/write | Создает или обновляет триггеры |
 > | Действие | Microsoft.DataBoxEdge/dataBoxEdgeDevices/updateSummary/read | Выводит сводку обновлений или возвращает ее |
 > | Действие | Microsoft.DataBoxEdge/dataBoxEdgeDevices/uploadCertificate/action | Отправляет сертификат для регистрации устройства |
 > | Действие | Microsoft.DataBoxEdge/dataBoxEdgeDevices/users/delete | Удаляет пользователей общих ресурсов |
+> | Действие | Microsoft.DataBoxEdge/dataBoxEdgeDevices/users/operationResults/read | Возвращает результат операции или выводит их список |
 > | Действие | Microsoft.DataBoxEdge/dataBoxEdgeDevices/users/read | Выводит список пользователей общих ресурсов или возвращает их |
 > | Действие | Microsoft.DataBoxEdge/dataBoxEdgeDevices/users/read | Выводит список пользователей общих ресурсов или возвращает их |
 > | Действие | Microsoft.DataBoxEdge/dataBoxEdgeDevices/users/write | Создает пользователей общих ресурсов или обновляет их |
@@ -1651,13 +1675,12 @@ ms.locfileid: "60344637"
 > [!div class="mx-tdCol2BreakAll"]
 > | Тип действия | Операция | ОПИСАНИЕ |
 > | --- | --- | --- |
-> | Действие | Microsoft.DataCatalog/catalogs/delete | Удаляет каталог. |
-> | Действие | Microsoft.DataCatalog/catalogs/read | Возвращает свойства каталога или каталогов в подписке или группе ресурсов. |
-> | Действие | Microsoft.DataCatalog/catalogs/write | Создает каталог или обновляет теги и свойства каталога. |
-> | Действие | Microsoft.DataCatalog/checkNameAvailability/action | Проверяет доступность имени каталога для клиента. |
-> | Действие | Microsoft.DataCatalog/operations/read | Получение списка операций, доступных в поставщике ресурсов Microsoft.DataCatalog. |
-> | Действие | Microsoft.DataCatalog/register/action | Регистрация подписки в поставщике ресурсов Microsoft.DataCatalog. |
-> | Действие | Microsoft.DataCatalog/unregister/action | Отмена регистрации подписки в поставщике ресурсов Microsoft.DataCatalog. |
+> | Действие | Microsoft.DataCatalog/datacatalogs/delete | Удалите ресурс DataCatalog для поставщика ресурсов каталога данных. |
+> | Действие | Microsoft.DataCatalog/datacatalogs/read | Чтение ресурса DataCatalog для поставщика ресурсов каталога данных. |
+> | Действие | Microsoft.DataCatalog/datacatalogs/write | Написание DataCatalog ресурсов для поставщика ресурсов каталога данных. |
+> | Действие | Microsoft.DataCatalog/operations/read | Считывает все доступные операции в поставщике ресурсов каталога данных. |
+> | Действие | Microsoft.DataCatalog/register/action | Зарегистрировать подписку для поставщика ресурсов каталога данных |
+> | Действие | Microsoft.DataCatalog/unregister/action | Отмените регистрацию подписки для поставщика ресурсов каталога данных |
 
 ## <a name="microsoftdatafactory"></a>Microsoft.DataFactory
 
@@ -1873,26 +1896,40 @@ ms.locfileid: "60344637"
 > [!div class="mx-tdCol2BreakAll"]
 > | Тип действия | Операция | ОПИСАНИЕ |
 > | --- | --- | --- |
+> | Действие | Microsoft.DBforMariaDB/locations/azureAsyncOperation/read | Результаты операции возврата сервера MariaDB |
+> | Действие | Microsoft.DBforMariaDB/locations/operationResults/read | Возвращаемое группа ресурсов на основе результатов операции сервера MariaDB |
+> | Действие | Microsoft.DBforMariaDB/locations/operationResults/read | Результаты операции возврата сервера MariaDB |
 > | Действие | Microsoft.DBforMariaDB/locations/performanceTiers/read | Получение списка доступных уровней производительности. |
+> | Действие | Microsoft.DBforMariaDB/locations/securityAlertPoliciesAzureAsyncOperation/read | Возвращение списка результат операции обнаружения угроз на сервер. |
+> | Действие | Microsoft.DBforMariaDB/locations/securityAlertPoliciesOperationResults/read | Возвращение списка результат операции обнаружения угроз на сервер. |
+> | Действие | Microsoft.DBforMariaDB/operations/read | Возвращение списка операций MariaDB. |
 > | Действие | Microsoft.DBforMariaDB/performanceTiers/read | Получение списка доступных уровней производительности. |
+> | Действие | Microsoft.DBforMariaDB/register/action | Регистрация поставщика ресурсов MariaDB |
 > | Действие | Microsoft.DBforMariaDB/servers/configurations/read | Возвращает список конфигураций для сервера или получает свойства для указанной конфигурации. |
 > | Действие | Microsoft.DBforMariaDB/servers/configurations/write | Обновляет значение для указанной конфигурации. |
+> | Действие | Microsoft.DBforMariaDB/servers/databases/delete | Удаляет существующую базу данных MariaDB. |
+> | Действие | Microsoft.DBforMariaDB/servers/databases/read | Возвращение списка баз данных MariaDB или получение свойств для указанной базы данных. |
+> | Действие | Microsoft.DBforMariaDB/servers/databases/write | Создает базу данных MariaDB с указанными параметрами либо обновление свойств указанной базы данных. |
 > | Действие | Microsoft.DBforMariaDB/servers/delete | Удаление существующего сервера. |
 > | Действие | Microsoft.DBforMariaDB/servers/firewallRules/delete | Удаление существующего правила брандмауэра. |
 > | Действие | Microsoft.DBforMariaDB/servers/firewallRules/read | Возвращение списка правил брандмауэра для сервера или получение свойств для указанного правила брандмауэра. |
 > | Действие | Microsoft.DBforMariaDB/servers/firewallRules/write | Создание правила брандмауэра с указанными параметрами или обновление существующего правила. |
+> | Действие | Microsoft.DBforMariaDB/servers/logFiles/read | Возвращение списка MariaDB LogFiles. |
 > | Действие | Microsoft.DBforMariaDB/servers/providers/Microsoft.Insights/diagnosticSettings/read | Получение параметра диагностики для ресурса. |
 > | Действие | Microsoft.DBforMariaDB/servers/providers/Microsoft.Insights/diagnosticSettings/write | Создает или обновляет параметр диагностики для ресурса. |
 > | Действие | Microsoft.DBforMariaDB/servers/providers/Microsoft.Insights/logDefinitions/read | Получает доступные журналы для серверов MariaDB. |
 > | Действие | Microsoft.DBforMariaDB/servers/providers/Microsoft.Insights/metricDefinitions/read | Возвращает типы метрик, доступных для баз данных. |
+> | Действие | Microsoft.DBforMariaDB/servers/queryTexts/action | Возвращать тексты список запросов |
 > | Действие | Microsoft.DBforMariaDB/servers/read | Возвращение списка серверов или получение свойств для указанного сервера. |
 > | Действие | Microsoft.DBforMariaDB/servers/recoverableServers/read | Возвращает восстанавливаемые данные сервера MariaDB |
 > | Действие | Microsoft.DBforMariaDB/servers/securityAlertPolicies/read | Извлекает сведения о политике обнаружения угроз, настроенной на данном сервере. |
 > | Действие | Microsoft.DBforMariaDB/servers/securityAlertPolicies/write | Изменение политики обнаружения угроз для заданного сервера. |
+> | Действие | Microsoft.DBforMariaDB/servers/topQueryStatistics/read | Возвращает список статистики запросов для наиболее ресурсоемких запросов. |
 > | Действие | Microsoft.DBforMariaDB/servers/updateConfigurations/action | Обновляет конфигурации для указанного сервера. |
 > | Действие | Microsoft.DBforMariaDB/servers/virtualNetworkRules/delete | Удаление существующего правила виртуальной сети. |
 > | Действие | Microsoft.DBforMariaDB/servers/virtualNetworkRules/read | Возвращение списка правил виртуальной сети или свойств указанного правила виртуальной сети. |
 > | Действие | Microsoft.DBforMariaDB/servers/virtualNetworkRules/write | Создание правила виртуальной сети с указанными параметрами либо обновление свойств или тегов указанного правила виртуальной сети. |
+> | Действие | Microsoft.DBforMariaDB/servers/waitStatistics/read | Возвращает статистику ожидания для экземпляра |
 > | Действие | Microsoft.DBforMariaDB/servers/write | Создание сервера с указанными параметрами либо обновление свойств или тегов указанного сервера. |
 
 ## <a name="microsoftdbformysql"></a>Microsoft.DBforMySQL
@@ -1900,14 +1937,25 @@ ms.locfileid: "60344637"
 > [!div class="mx-tdCol2BreakAll"]
 > | Тип действия | Операция | ОПИСАНИЕ |
 > | --- | --- | --- |
+> | Действие | Microsoft.DBforMySQL/locations/azureAsyncOperation/read | Результаты операции возврата сервера MySQL |
+> | Действие | Microsoft.DBforMySQL/locations/operationResults/read | Возвращаемое группа ресурсов на основе результатов операции сервера MySQL |
+> | Действие | Microsoft.DBforMySQL/locations/operationResults/read | Результаты операции возврата сервера MySQL |
 > | Действие | Microsoft.DBforMySQL/locations/performanceTiers/read | Получение списка доступных уровней производительности. |
+> | Действие | Microsoft.DBforMySQL/locations/securityAlertPoliciesAzureAsyncOperation/read | Возвращение списка результат операции обнаружения угроз на сервер. |
+> | Действие | Microsoft.DBforMySQL/locations/securityAlertPoliciesOperationResults/read | Возвращение списка результат операции обнаружения угроз на сервер. |
+> | Действие | Microsoft.DBforMySQL/operations/read | Возвращение списка операций MySQL. |
 > | Действие | Microsoft.DBforMySQL/performanceTiers/read | Получение списка доступных уровней производительности. |
+> | Действие | Microsoft.DBforMySQL/register/action | Регистрация поставщика ресурсов MySQL |
 > | Действие | Microsoft.DBforMySQL/servers/configurations/read | Возвращает список конфигураций для сервера или получает свойства для указанной конфигурации. |
 > | Действие | Microsoft.DBforMySQL/servers/configurations/write | Обновляет значение для указанной конфигурации. |
+> | Действие | Microsoft.DBforMySQL/servers/databases/delete | Удаляет существующую базу данных MySQL. |
+> | Действие | Microsoft.DBforMySQL/servers/databases/read | Возвращение списка баз данных MySQL или получение свойств для указанной базы данных. |
+> | Действие | Microsoft.DBforMySQL/servers/databases/write | Создает базу данных MySQL с указанными параметрами либо обновление свойств указанной базы данных. |
 > | Действие | Microsoft.DBforMySQL/servers/delete | Удаление существующего сервера. |
 > | Действие | Microsoft.DBforMySQL/servers/firewallRules/delete | Удаление существующего правила брандмауэра. |
 > | Действие | Microsoft.DBforMySQL/servers/firewallRules/read | Возвращение списка правил брандмауэра для сервера или получение свойств для указанного правила брандмауэра. |
 > | Действие | Microsoft.DBforMySQL/servers/firewallRules/write | Создание правила брандмауэра с указанными параметрами или обновление существующего правила. |
+> | Действие | Microsoft.DBforMySQL/servers/logFiles/read | Возвращение списка PostgreSQL LogFiles. |
 > | Действие | Microsoft.DBforMySQL/servers/providers/Microsoft.Insights/diagnosticSettings/read | Получение параметра диагностики для ресурса. |
 > | Действие | Microsoft.DBforMySQL/servers/providers/Microsoft.Insights/diagnosticSettings/write | Создает или обновляет параметр диагностики для ресурса. |
 > | Действие | Microsoft.DBforMySQL/servers/providers/Microsoft.Insights/logDefinitions/read | Получает доступные журналы для серверов MySQL |
@@ -1922,6 +1970,7 @@ ms.locfileid: "60344637"
 > | Действие | Microsoft.DBforMySQL/servers/virtualNetworkRules/delete | Удаление существующего правила виртуальной сети. |
 > | Действие | Microsoft.DBforMySQL/servers/virtualNetworkRules/read | Возвращение списка правил виртуальной сети или свойств указанного правила виртуальной сети. |
 > | Действие | Microsoft.DBforMySQL/servers/virtualNetworkRules/write | Создание правила виртуальной сети с указанными параметрами либо обновление свойств или тегов указанного правила виртуальной сети. |
+> | Действие | Microsoft.DBforMySQL/servers/waitStatistics/read | Возвращает статистику ожидания для экземпляра |
 > | Действие | Microsoft.DBforMySQL/servers/write | Создание сервера с указанными параметрами либо обновление свойств или тегов указанного сервера. |
 
 ## <a name="microsoftdbforpostgresql"></a>Microsoft.DBforPostgreSQL
@@ -1929,17 +1978,28 @@ ms.locfileid: "60344637"
 > [!div class="mx-tdCol2BreakAll"]
 > | Тип действия | Операция | ОПИСАНИЕ |
 > | --- | --- | --- |
+> | Действие | Microsoft.DBforPostgreSQL/locations/azureAsyncOperation/read | Результаты операции возврата сервера PostgreSQL |
+> | Действие | Microsoft.DBforPostgreSQL/locations/operationResults/read | Возвращаемое группа ресурсов на основе результатов операции сервера PostgreSQL |
+> | Действие | Microsoft.DBforPostgreSQL/locations/operationResults/read | Результаты операции возврата сервера PostgreSQL |
 > | Действие | Microsoft.DBforPostgreSQL/locations/performanceTiers/read | Получение списка доступных уровней производительности. |
+> | Действие | Microsoft.DBforPostgreSQL/locations/securityAlertPoliciesAzureAsyncOperation/read | Возвращение списка результат операции обнаружения угроз на сервер. |
+> | Действие | Microsoft.DBforPostgreSQL/locations/securityAlertPoliciesOperationResults/read | Возвращение списка результат операции обнаружения угроз на сервер. |
+> | Действие | Microsoft.DBforPostgreSQL/operations/read | Возвращение списка операций PostgreSQL. |
 > | Действие | Microsoft.DBforPostgreSQL/performanceTiers/read | Получение списка доступных уровней производительности. |
+> | Действие | Microsoft.DBforPostgreSQL/register/action | Регистрация поставщика ресурсов PostgreSQL |
 > | Действие | Microsoft.DBforPostgreSQL/servers/advisors/read | Возвращает список консультантов. |
 > | Действие | Microsoft.DBforPostgreSQL/servers/advisors/recommendedActions/read | Возвращает список рекомендуемых действий |
 > | Действие | Microsoft.DBforPostgreSQL/servers/advisors/recommendedActionSessions/action | Предоставление рекомендаций |
 > | Действие | Microsoft.DBforPostgreSQL/servers/configurations/read | Возвращает список конфигураций для сервера или получает свойства для указанной конфигурации. |
 > | Действие | Microsoft.DBforPostgreSQL/servers/configurations/write | Обновляет значение для указанной конфигурации. |
+> | Действие | Microsoft.DBforPostgreSQL/servers/databases/delete | Удаляет существующую базу данных PostgreSQL. |
+> | Действие | Microsoft.DBforPostgreSQL/servers/databases/read | Возвращение списка базы данных PostgreSQL или получение свойств для указанной базы данных. |
+> | Действие | Microsoft.DBforPostgreSQL/servers/databases/write | Создает базу данных PostgreSQL с указанными параметрами либо обновление свойств указанной базы данных. |
 > | Действие | Microsoft.DBforPostgreSQL/servers/delete | Удаление существующего сервера. |
 > | Действие | Microsoft.DBforPostgreSQL/servers/firewallRules/delete | Удаление существующего правила брандмауэра. |
 > | Действие | Microsoft.DBforPostgreSQL/servers/firewallRules/read | Возвращение списка правил брандмауэра для сервера или получение свойств для указанного правила брандмауэра. |
 > | Действие | Microsoft.DBforPostgreSQL/servers/firewallRules/write | Создание правила брандмауэра с указанными параметрами или обновление существующего правила. |
+> | Действие | Microsoft.DBforPostgreSQL/servers/logFiles/read | Возвращение списка PostgreSQL LogFiles. |
 > | Действие | Microsoft.DBforPostgreSQL/servers/providers/Microsoft.Insights/diagnosticSettings/read | Получение параметра диагностики для ресурса. |
 > | Действие | Microsoft.DBforPostgreSQL/servers/providers/Microsoft.Insights/diagnosticSettings/write | Создает или обновляет параметр диагностики для ресурса. |
 > | Действие | Microsoft.DBforPostgreSQL/servers/providers/Microsoft.Insights/logDefinitions/read | Получает доступные журналы серверов Postgres. |
@@ -1957,6 +2017,10 @@ ms.locfileid: "60344637"
 > | Действие | Microsoft.DBforPostgreSQL/servers/virtualNetworkRules/write | Создание правила виртуальной сети с указанными параметрами либо обновление свойств или тегов указанного правила виртуальной сети. |
 > | Действие | Microsoft.DBforPostgreSQL/servers/waitStatistics/read | Возвращает статистику ожидания для экземпляра |
 > | Действие | Microsoft.DBforPostgreSQL/servers/write | Создание сервера с указанными параметрами либо обновление свойств или тегов указанного сервера. |
+> | Действие | Microsoft.DBforPostgreSQL/serversv2/providers/Microsoft.Insights/diagnosticSettings/read | Получение параметра диагностики для ресурса. |
+> | Действие | Microsoft.DBforPostgreSQL/serversv2/providers/Microsoft.Insights/diagnosticSettings/write | Создает или обновляет параметр диагностики для ресурса. |
+> | Действие | Microsoft.DBforPostgreSQL/serversv2/providers/Microsoft.Insights/logDefinitions/read | Получает доступные журналы серверов Postgres. |
+> | Действие | Microsoft.DBforPostgreSQL/serversv2/providers/Microsoft.Insights/metricDefinitions/read | Возвращает типы метрик, доступных для баз данных. |
 
 ## <a name="microsoftdevices"></a>Microsoft.Devices
 
@@ -2055,6 +2119,7 @@ ms.locfileid: "60344637"
 > | Действие | Microsoft.DevSpaces/controllers/listConnectionDetails/action | Сведения о подключении списка для инфраструктуры контроллера Azure Dev Spaces |
 > | Действие | Microsoft.DevSpaces/controllers/read | Чтение свойств контроллера Azure Dev Spaces |
 > | Действие | Microsoft.DevSpaces/controllers/write | Создание или обновление свойств контроллера Azure Dev Spaces |
+> | Действие | Microsoft.DevSpaces/locations/operationresults/read | Чтение состояния асинхронной операции |
 > | Действие | Microsoft.DevSpaces/register/action | Создание поставщика ресурсов Microsoft Dev Spaces с подпиской |
 
 ## <a name="microsoftdevtestlab"></a>Microsoft.DevTestLab
@@ -2105,6 +2170,12 @@ ms.locfileid: "60344637"
 > | Действие | Microsoft.DevTestLab/labs/serviceRunners/delete | Удаляет средства выполнения служб. |
 > | Действие | Microsoft.DevTestLab/labs/serviceRunners/read | Считывает средства выполнения служб. |
 > | Действие | Microsoft.DevTestLab/labs/serviceRunners/write | Добавляет или изменяет средства выполнения служб. |
+> | Действие | Microsoft.DevTestLab/labs/sharedGalleries/delete | Удаление общей коллекции. |
+> | Действие | Microsoft.DevTestLab/labs/sharedGalleries/read | Чтение общего галереи. |
+> | Действие | Microsoft.DevTestLab/labs/sharedGalleries/sharedImages/delete | Удалите общие образы. |
+> | Действие | Microsoft.DevTestLab/labs/sharedGalleries/sharedImages/read | Прочитайте общие образы. |
+> | Действие | Microsoft.DevTestLab/labs/sharedGalleries/sharedImages/write | Добавляет или изменяет общие образы. |
+> | Действие | Microsoft.DevTestLab/labs/sharedGalleries/write | Добавление или изменение общих коллекций. |
 > | Действие | Microsoft.DevTestLab/labs/users/delete | Удаляет профили пользователей. |
 > | Действие | Microsoft.DevTestLab/labs/users/disks/Attach/action | Подключает диск к виртуальной машине и создает аренду для него. |
 > | Действие | Microsoft.DevTestLab/labs/users/disks/delete | Удаляет диски. |
@@ -2170,6 +2241,41 @@ ms.locfileid: "60344637"
 > | Тип действия | Операция | ОПИСАНИЕ |
 > | --- | --- | --- |
 > | Действие | Microsoft.DocumentDB/databaseAccountNames/read | Проверяет доступность имени. |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/databases/collections/delete | Удаление коллекции. Применимо только к типам API: «mongodb». |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/databases/collections/read | Чтение коллекцию или перечисление всех коллекций. Применимо только к типам API: «mongodb». |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/databases/collections/settings/throughput/read | Чтение коллекции еще и пропускную способность. Применимо только к типам API: «mongodb». |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/databases/collections/settings/throughput/write | Обновление коллекции еще и пропускную способность. Применимо только к типам API: «mongodb». |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/databases/collections/write | Создание или обновление коллекции. Применимо только к типам API: «mongodb». |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/databases/containers/delete | Удаление контейнера. Применимо только к типам API: «sql». |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/databases/containers/read | Чтение контейнера или перечислить все контейнеры. Применимо только к типам API: «sql». |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/databases/containers/settings/throughput/read | Чтение пропускной способности контейнера. Применимо только к типам API: «sql». |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/databases/containers/settings/throughput/write | Обновление пропускной способности контейнера. Применимо только к типам API: «sql». |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/databases/containers/write | Создание или обновление контейнера. Применимо только к типам API: «sql». |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/databases/delete | Удаление базы данных. Применимо только к типам API: «sql», «mongodb», «gremlin». |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/databases/graphs/delete | Удаление графа. Применимо только к типам API: «gremlin». |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/databases/graphs/read | Чтение графа или перечисление всех диаграмм. Применимо только к типам API: «gremlin». |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/databases/graphs/settings/throughput/read | Чтение графа еще и пропускную способность. Применимо только к типам API: «gremlin». |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/databases/graphs/settings/throughput/write | Обновите пропускную способность графа. Применимо только к типам API: «gremlin». |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/databases/graphs/write | Создать или обновить диаграмму. Применимо только к типам API: «gremlin». |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/databases/read | Чтение базы данных или список всех баз данных. Применимо только к типам API: «sql», «mongodb», «gremlin». |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/databases/settings/throughput/read | Чтение пропускную способность баз данных. Применимо только к типам API: «sql», «mongodb», «gremlin». |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/databases/settings/throughput/write | Обновите пропускную способность баз данных. Применимо только к типам API: «sql», «mongodb», «gremlin». |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/databases/write | создавать базу данных; Применимо только к типам API: «sql», «mongodb», «gremlin». |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/keyspaces/delete | Удалите ключевое пространство. Применимо только к типам API: «cassandra». |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/keyspaces/read | Чтение пространства ключей или перечисление всех пространств ключей. Применимо только к типам API: «cassandra». |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/keyspaces/settings/throughput/read | Чтение пространства ключей еще и пропускную способность. Применимо только к типам API: «cassandra». |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/keyspaces/settings/throughput/write | Обновите пространства ключей еще и пропускную способность. Применимо только к типам API: «cassandra». |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/keyspaces/tables/delete | Удаление таблицы. Применимо только к типам API: «cassandra». |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/keyspaces/tables/read | Чтение таблицы или списка всех таблиц. Применимо только к типам API: «cassandra». |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/keyspaces/tables/settings/throughput/read | Чтение таблицы еще и пропускную способность. Применимо только к типам API: «cassandra». |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/keyspaces/tables/settings/throughput/write | Обновите таблицу еще и пропускную способность. Применимо только к типам API: «cassandra». |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/keyspaces/tables/write | Создание или обновление таблицы. Применимо только к типам API: «cassandra». |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/keyspaces/write | Создайте пространство ключей. Применимо только к типам API: «cassandra». |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/tables/delete | Удаление таблицы. Применимо только к типам API: «table». |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/tables/read | Чтение таблицы или списка всех таблиц. Применимо только к типам API: «table». |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/tables/settings/throughput/read | Чтение таблицы еще и пропускную способность. Применимо только к типам API: «table». |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/tables/settings/throughput/write | Обновите таблицу еще и пропускную способность. Применимо только к типам API: «table». |
+> | Действие | Microsoft.DocumentDB/databaseAccounts/apis/tables/write | Создание или обновление таблицы. Применимо только к типам API: «table». |
 > | Действие | Microsoft.DocumentDB/databaseAccounts/backup/action | Отправка запроса на настройку резервного копирования |
 > | Действие | Microsoft.DocumentDB/databaseAccounts/changeResourceGroup/action | Изменяет группу ресурсов для учетной записи базы данных. |
 > | Действие | Microsoft.DocumentDB/databaseAccounts/databases/collections/metricDefinitions/read | Считывает определения метрик коллекции. |
@@ -2653,6 +2759,7 @@ ms.locfileid: "60344637"
 > | Действие | Microsoft.Insights/MetricDefinitions/Microsoft.Insights/Read | Чтение определений метрик |
 > | Действие | Microsoft.Insights/MetricDefinitions/providers/Microsoft.Insights/Read | Чтение определений метрик |
 > | Действие | Microsoft.Insights/MetricDefinitions/Read | Чтение определений метрик |
+> | Действие | Microsoft.Insights/Metricnamespaces/Read | Чтение метрик пространства имен |
 > | Действие | Microsoft.Insights/Metrics/Action | Действие метрики |
 > | Действие | Microsoft.Insights/Metrics/Microsoft.Insights/Read | Метрик считано |
 > | Действие | Microsoft.Insights/Metrics/providers/Metrics/Read | Метрик считано |
@@ -2689,6 +2796,7 @@ ms.locfileid: "60344637"
 > [!div class="mx-tdCol2BreakAll"]
 > | Тип действия | Операция | ОПИСАНИЕ |
 > | --- | --- | --- |
+> | Действие | Microsoft.IoTCentral/appTemplates/action | Возвращает все шаблоны приложений, доступных на Azure IoT Central |
 > | Действие | Microsoft.IoTCentral/checkNameAvailability/action | Проверка доступности для имени приложения IoT Central |
 > | Действие | Microsoft.IoTCentral/checkSubdomainAvailability/action | Проверка доступности для поддомена приложения IoT Central |
 > | Действие | Microsoft.IoTCentral/IoTApps/delete | Удаление приложений IoT Central |
@@ -3602,6 +3710,7 @@ ms.locfileid: "60344637"
 > | Действие | Microsoft.Network/locations/checkDnsNameAvailability/read | Проверяет, доступна ли метка DNS в указанном расположении. |
 > | Действие | Microsoft.Network/locations/operationResults/read | Возвращает результат асинхронной операции POST или DELETE. |
 > | Действие | Microsoft.Network/locations/operations/read | Возвращает ресурс операции, представляющий состояние асинхронной операции. |
+> | Действие | Microsoft.Network/locations/serviceTags/read | Получение тегов службы |
 > | Действие | Microsoft.Network/locations/supportedVirtualMachineSizes/read | Возвращает поддерживаемые размеры виртуальных машин. |
 > | Действие | Microsoft.Network/locations/usages/read | Возвращает метрики использования ресурсов. |
 > | Действие | Microsoft.Network/locations/virtualNetworkAvailableEndpointServices/read | Получение списка доступных служб конечных точек виртуальной сети. |
@@ -3911,7 +4020,9 @@ ms.locfileid: "60344637"
 > | --- | --- | --- |
 > | Действие | Microsoft.OperationalInsights/linkTargets/read | Выводит список существующих учетных записей, которые не связаны с подпиской Azure. Чтобы связать эту подписку Azure с рабочей областью, укажите идентификатор клиента, возвращаемый этой операцией, в свойстве идентификатора клиента в операции создания рабочей области. |
 > | Действие | microsoft.operationalinsights/operations/read | Отображение списка всех доступных операций REST API OperationalInsights. |
+> | Действие | Microsoft.operationalinsights/Register/Action | Rergisters подписки. |
 > | Действие | Microsoft.OperationalInsights/register/action | Регистрирует подписку для поставщика ресурсов. |
+> | Действие | Microsoft.operationalinsights/unregister/Action | Отмена регистрации подписки. |
 > | Действие | Microsoft.OperationalInsights/workspaces/analytics/query/action | Поиск с помощью нового механизма. |
 > | Действие | Microsoft.OperationalInsights/workspaces/analytics/query/schema/read | Получение схемы поиска версии 2. |
 > | Действие | Microsoft.OperationalInsights/workspaces/api/query/action | Поиск с помощью нового механизма. |
@@ -3963,6 +4074,16 @@ ms.locfileid: "60344637"
 > | Действие | Microsoft.OperationalInsights/workspaces/query/ContainerLog/read | Чтение данных из таблицы ContainerLog. |
 > | Действие | Microsoft.OperationalInsights/workspaces/query/ContainerNodeInventory/read | Чтение данных из таблицы ContainerNodeInventory |
 > | Действие | Microsoft.OperationalInsights/workspaces/query/ContainerServiceLog/read | Чтение данных из таблицы ContainerServiceLog. |
+> | Действие | Microsoft.OperationalInsights/workspaces/query/DatabricksAccounts/read | Чтение данных из таблицы DatabricksAccounts |
+> | Действие | Microsoft.OperationalInsights/workspaces/query/DatabricksClusters/read | Чтение данных из таблицы DatabricksClusters |
+> | Действие | Microsoft.OperationalInsights/workspaces/query/DatabricksDBFS/read | Чтение данных из таблицы DatabricksDBFS |
+> | Действие | Microsoft.OperationalInsights/workspaces/query/DatabricksJobs/read | Чтение данных из таблицы DatabricksJobs |
+> | Действие | Microsoft.OperationalInsights/workspaces/query/DatabricksNotebook/read | Чтение данных из таблицы DatabricksNotebook |
+> | Действие | Microsoft.OperationalInsights/workspaces/query/DatabricksSecrets/read | Чтение данных из таблицы DatabricksSecrets |
+> | Действие | Microsoft.OperationalInsights/workspaces/query/DatabricksSQLPermissions/read | Чтение данных из таблицы DatabricksSQLPermissions |
+> | Действие | Microsoft.OperationalInsights/workspaces/query/DatabricksSSH/read | Чтение данных из таблицы DatabricksSSH |
+> | Действие | Microsoft.OperationalInsights/workspaces/query/DatabricksTables/read | Чтение данных из таблицы DatabricksTables |
+> | Действие | Microsoft.OperationalInsights/workspaces/query/DatabricksWorkspace/read | Чтение данных из таблицы DatabricksWorkspace |
 > | Действие | Microsoft.OperationalInsights/workspaces/query/DeviceAppCrash/read | Чтение данных из таблицы DeviceAppCrash. |
 > | Действие | Microsoft.OperationalInsights/workspaces/query/DeviceAppLaunch/read | Чтение данных из таблицы DeviceAppLaunch. |
 > | Действие | Microsoft.OperationalInsights/workspaces/query/DeviceCalendar/read | Чтение данных из таблицы DeviceCalendar. |
@@ -3993,6 +4114,7 @@ ms.locfileid: "60344637"
 > | Действие | Microsoft.OperationalInsights/workspaces/query/HuntingBookmark/read | Чтение данных из таблицы HuntingBookmark |
 > | Действие | Microsoft.OperationalInsights/workspaces/query/IISAssessmentRecommendation/read | Чтение данных из таблицы IISAssessmentRecommendation. |
 > | Действие | Microsoft.OperationalInsights/workspaces/query/InboundConnection/read | Чтение данных из таблицы InboundConnection. |
+> | Действие | Microsoft.OperationalInsights/workspaces/query/InsightsMetrics/read | Чтение данных из таблицы InsightsMetrics |
 > | Действие | Microsoft.OperationalInsights/workspaces/query/IntuneAuditLogs/read | Чтение данных из таблицы IntuneAuditLogs. |
 > | Действие | Microsoft.OperationalInsights/workspaces/query/IntuneOperationalLogs/read | Чтение данных из таблицы IntuneOperationalLogs. |
 > | Действие | Microsoft.OperationalInsights/workspaces/query/KubeEvents/read | Чтение данных из таблицы KubeEvents |
@@ -4010,6 +4132,7 @@ ms.locfileid: "60344637"
 > | Действие | Microsoft.OperationalInsights/workspaces/query/MADeploymentPlan/read | Чтение данных из таблицы MADeploymentPlan. |
 > | Действие | Microsoft.OperationalInsights/workspaces/query/MADevice/read | Чтение данных из таблицы MADevice. |
 > | Действие | Microsoft.OperationalInsights/workspaces/query/MADeviceNotEnrolled/read | Считывание данных из таблицы MADeviceNotEnrolled |
+> | Действие | Microsoft.OperationalInsights/workspaces/query/MADeviceNRT/read | Чтение данных из таблицы MADeviceNRT |
 > | Действие | Microsoft.OperationalInsights/workspaces/query/MADevicePnPHealth/read | Считывает данные из таблицы MADevicePnPHealth. |
 > | Действие | Microsoft.OperationalInsights/workspaces/query/MADevicePnPHealthAlternativeVersions/read | Считывает данные из таблицы MADevicePnPHealthAlternativeVersions. |
 > | Действие | Microsoft.OperationalInsights/workspaces/query/MADevicePnPHealthIssues/read | Считывает данные из таблицы MADevicePnPHealthIssues. |
@@ -4035,7 +4158,9 @@ ms.locfileid: "60344637"
 > | Действие | Microsoft.OperationalInsights/workspaces/query/MAOfficeCurrencyAssessment/read | Чтение данных из таблицы MAOfficeCurrencyAssessment. |
 > | Действие | Microsoft.OperationalInsights/workspaces/query/MAOfficeCurrencyAssessmentDailyCounts/read | Чтение данных из таблицы MAOfficeCurrencyAssessmentDailyCounts. |
 > | Действие | Microsoft.OperationalInsights/workspaces/query/MAOfficeDeploymentStatus/read | Чтение данных из таблицы MAOfficeDeploymentStatus. |
+> | Действие | Microsoft.OperationalInsights/workspaces/query/MAOfficeDeploymentStatusNRT/read | Чтение данных из таблицы MAOfficeDeploymentStatusNRT |
 > | Действие | Microsoft.OperationalInsights/workspaces/query/MAOfficeMacroErrorNRT/read | Чтение данных из таблицы MAOfficeMacroErrorNRT |
+> | Действие | Microsoft.OperationalInsights/workspaces/query/MAOfficeMacroGlobalHealth/read | Чтение данных из таблицы MAOfficeMacroGlobalHealth |
 > | Действие | Microsoft.OperationalInsights/workspaces/query/MAOfficeMacroHealth/read | Считывает данные из таблицы MAOfficeMacroHealth. |
 > | Действие | Microsoft.OperationalInsights/workspaces/query/MAOfficeMacroHealthIssues/read | Считывает данные из таблицы MAOfficeMacroHealthIssues. |
 > | Действие | Microsoft.OperationalInsights/workspaces/query/MAOfficeMacroIssueInstanceReadiness/read | Считывает данные из таблицы MAOfficeMacroIssueInstanceReadiness. |
@@ -4048,6 +4173,7 @@ ms.locfileid: "60344637"
 > | Действие | Microsoft.OperationalInsights/workspaces/query/MAWindowsCurrencyAssessment/read | Чтение данных из таблицы MAWindowsCurrencyAssessment. |
 > | Действие | Microsoft.OperationalInsights/workspaces/query/MAWindowsCurrencyAssessmentDailyCounts/read | Чтение данных из таблицы MAWindowsCurrencyAssessmentDailyCounts. |
 > | Действие | Microsoft.OperationalInsights/workspaces/query/MAWindowsDeploymentStatus/read | Чтение данных из таблицы MAWindowsDeploymentStatus. |
+> | Действие | Microsoft.OperationalInsights/workspaces/query/MAWindowsDeploymentStatusNRT/read | Чтение данных из таблицы MAWindowsDeploymentStatusNRT |
 > | Действие | Microsoft.OperationalInsights/workspaces/query/MAWindowsSysReqInstanceReadiness/read | Считывает данные из таблицы MAWindowsSysReqInstanceReadiness. |
 > | Действие | Microsoft.OperationalInsights/workspaces/query/NetworkMonitoring/read | Чтение данных из таблицы NetworkMonitoring. |
 > | Действие | Microsoft.OperationalInsights/workspaces/query/OfficeActivity/read | Чтение данных из таблицы OfficeActivity. |
@@ -4162,6 +4288,7 @@ ms.locfileid: "60344637"
 > | Тип действия | Операция | ОПИСАНИЕ |
 > | --- | --- | --- |
 > | Действие | Microsoft.PolicyInsights/asyncOperationResults/read | Получает результат асинхронной операции. |
+> | Действие | Microsoft.PolicyInsights/operations/read | Получает поддерживаемые операции на пространство имен Microsoft.PolicyInsights |
 > | Действие | Microsoft.PolicyInsights/policyEvents/queryResults/action | Запрашивает сведения о событиях политики. |
 > | Действие | Microsoft.PolicyInsights/policyEvents/queryResults/read | Запрашивает сведения о событиях политики. |
 > | Действие | Microsoft.PolicyInsights/policyStates/queryResults/action | Запрашивает сведения о состояниях политики. |
@@ -4466,6 +4593,7 @@ ms.locfileid: "60344637"
 > | Действие | Microsoft.Resources/deployments/operations/read | Получает или перечисляет операции развертывания. |
 > | Действие | Microsoft.Resources/deployments/read | Получает или перечисляет развертывания. |
 > | Действие | Microsoft.Resources/deployments/validate/action | Проверяет развертывание. |
+> | Действие | Microsoft.Resources/deployments/whatIf/action | Прогнозирует изменения в развертывании шаблона. |
 > | Действие | Microsoft.Resources/deployments/write | Создает или обновляет развертывание. |
 > | Действие | Microsoft.Resources/links/delete | Удаляет ссылку на ресурс. |
 > | Действие | Microsoft.Resources/links/read | Возвращает ссылки на ресурсы или выводит их список. |
@@ -5052,7 +5180,7 @@ ms.locfileid: "60344637"
 > | Действие | Microsoft.Sql/servers/importExportOperationResults/read | Получение выполняемых операций импорта и экспорта. |
 > | Действие | Microsoft.Sql/servers/interfaceEndpointProfiles/delete | Удаляет профиль определенной конечной точки интерфейса |
 > | Действие | Microsoft.Sql/servers/interfaceEndpointProfiles/read | Возвращает свойства для профиля указанной конечной точки интерфейса |
-> | Действие | Microsoft.Sql/servers/interfaceEndpointProfiles/write | Создает профиль конечной точки интерфейса с указанными параметрами или обновление свойств или тегов для указанного интерфейса конечной точки |
+> | Действие | Microsoft.Sql/servers/interfaceEndpointProfiles/write | Создает профиль конечной точки интерфейса с указанными параметрами либо обновляет свойства или теги указанной конечной точки интерфейса |
 > | Действие | Microsoft.Sql/servers/jobAgents/delete | Удаляет агент задания базы данных SQL Azure |
 > | Действие | Microsoft.Sql/servers/jobAgents/read | Получает агент задания базы данных SQL Azure |
 > | Действие | Microsoft.Sql/servers/jobAgents/write | Создает или изменяет агент задания базы данных SQL Azure |
@@ -5060,6 +5188,8 @@ ms.locfileid: "60344637"
 > | Действие | Microsoft.Sql/servers/keys/read | Возвращение списка ключей сервера или возвращение свойств указанного ключа сервера. |
 > | Действие | Microsoft.Sql/servers/keys/write | Создание ключа с указанными параметрами либо обновление свойств или тегов указанного ключа сервера. |
 > | Действие | Microsoft.Sql/servers/operationResults/read | Возвращение выполняемых операций сервера. |
+> | Действие | Microsoft.Sql/servers/privateEndpointConnections/delete | Удаляет существующее подключение частной конечной точки |
+> | Действие | Microsoft.Sql/servers/privateEndpointConnections/read | Возвращает список соединений частную конечную точку или получение свойств для указанного частную конечную точку подключения. |
 > | Действие | Microsoft.Sql/servers/providers/Microsoft.Insights/metricDefinitions/read | Возвращение типов метрик, доступных для серверов. |
 > | Действие | Microsoft.Sql/servers/read | Возвращение списка серверов или получение свойств для указанного сервера. |
 > | Действие | Microsoft.Sql/servers/recommendedElasticPools/databases/read | Извлекает метрики для рекомендуемых пулов эластичных баз данных для заданного сервера. |
@@ -5106,7 +5236,6 @@ ms.locfileid: "60344637"
 > | DataAction | Microsoft.Storage/storageAccounts/blobServices/containers/blobs/deleteAutomaticSnapshot/action | Возвращает результат, полученный при удалении автоматического моментального снимка |
 > | DataAction | Microsoft.Storage/storageAccounts/blobServices/containers/blobs/filter/action | Возвращает список больших двоичных объектов в учетной записи с соответствующими фильтру тегами |
 > | DataAction | Microsoft.Storage/storageAccounts/blobServices/containers/blobs/read | Возвращение большого двоичного объекта или списка таких объектов. |
-> | DataAction | Microsoft.Storage/storageAccounts/blobServices/containers/blobs/runAsSuperUser/action | Возвращает результат выполнения команды для BLOB-объекта |
 > | DataAction | Microsoft.Storage/storageAccounts/blobServices/containers/blobs/tags/read | Возвращает результат чтения тегов большого двоичного объекта |
 > | DataAction | Microsoft.Storage/storageAccounts/blobServices/containers/blobs/tags/write | Возвращает результат записи тегов большого двоичного объекта |
 > | DataAction | Microsoft.Storage/storageAccounts/blobServices/containers/blobs/write | Возвращает результат записи BLOB-объекта |

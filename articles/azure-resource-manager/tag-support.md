@@ -4,14 +4,14 @@ description: В этой статье описываются типы ресур
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: reference
-ms.date: 02/13/2019
+ms.date: 04/26/2019
 ms.author: tomfitz
-ms.openlocfilehash: dd6836ef4f859ce77c1a56095d32373d8e08f468
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 32156f39d36d8485c76dada5fd00f9ea0918598c
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60388069"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64575460"
 ---
 # <a name="tag-support-for-azure-resources"></a>Поддержка тегов для ресурсов Azure
 В этой статье приводятся сведения о поддержке типом ресурса функции [тегов](resource-group-using-tags.md).
@@ -862,7 +862,7 @@ ms.locfileid: "60388069"
 | dnszones/SOA | Нет  | 
 | dnszones/SRV | Нет  | 
 | dnszones/TXT | Нет  | 
-| expressRouteCircuits | Yes | 
+| expressRouteCircuits | Да (значение тега не отображается в данный момент в отчет о стоимости) | 
 | expressRouteServiceProviders | Нет  | 
 | frontdoors | Yes | 
 | frontdoorWebApplicationFirewallPolicies | Yes | 
@@ -876,7 +876,7 @@ ms.locfileid: "60388069"
 | networkInterfaces | Yes | 
 | networkProfiles | Yes | 
 | networkSecurityGroups | Yes | 
-| networkWatchers | Yes | 
+| networkWatchers | Да (значение тега не отображается в данный момент в отчет о стоимости) | 
 | networkWatchers/connectionMonitors | Yes | 
 | networkWatchers/lenses | Yes | 
 | networkWatchers/pingMeshes | Yes | 
@@ -892,9 +892,10 @@ ms.locfileid: "60388069"
 | virtualHubs | Yes | 
 | virtualNetworkGateways | Yes | 
 | virtualNetworks | Yes | 
+| рамках/подсетей | Нет  | 
 | virtualNetworkTaps | Yes | 
 | virtualWans | Yes | 
-| vpnGateways | Yes | 
+| vpnGateways | Да (значение тега не отображается в данный момент в отчет о стоимости) | 
 | vpnSites | Yes | 
 | webApplicationFirewallPolicies | Yes | 
 

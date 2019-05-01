@@ -8,18 +8,22 @@ ms.topic: article
 ms.date: 04/26/2018
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 0f87645537576f49ee04b823341acf8853798f88
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: ad6d7a60700727b73b87a78e364fde3fa1caa8c3
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60730061"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64572572"
 ---
 # <a name="transfer-data-with-azcopy-on-linux"></a>Перенос данных с помощью AzCopy для Linux
 
 AzCopy — это служебная программа командной строки. Она предназначена для копирования данных из хранилища BLOB-объектов и хранилища файлов Microsoft Azure (и обратно) с помощью простых команд, обеспечивающих оптимальную производительность. Вы можете перемещать данные между файловой системой и учетной записью хранения или между разными учетными записями хранения.  
 
-Существуют две версии AzCopy, которые можно скачать. AzCopy для Linux предназначена для платформ Linux и использует параметры командной строки в стиле POSIX. [AzCopy для Windows](../storage-use-azcopy.md) работает с параметрами командной строки в стиле Windows. В этой статье рассматривается AzCopy для Linux. 
+> [!IMPORTANT]
+> В этой статье описывается более старой версии AzCopy.
+>Чтобы установить самую последнюю версию AzCopy, см. в разделе [AzCopy v10](storage-use-azcopy-v10.md).
+
+Если вы решили установить более раннюю версию AzCopy (AzCopy v8.1), существует несколько версий v8.1 AzCopy, который можно загрузить. AzCopy для Linux предназначена для платформ Linux и использует параметры командной строки в стиле POSIX. [AzCopy для Windows](../storage-use-azcopy.md) работает с параметрами командной строки в стиле Windows. В этой статье рассматривается AzCopy для Linux. 
 
 > [!NOTE]  
 > Начиная с версии AzCopy 7.2 зависимости .NET Core упаковываются в пакет AzCopy. Если вы используете версию 7.2 или более позднюю, предварительно устанавливать .NET Core уже не нужно.
@@ -211,7 +215,7 @@ azcopy \
     --exclude-older
 ```
 
-## <a name="blob-upload"></a>Большой двоичный объект: Отправка
+## <a name="blob-upload"></a>Большой двоичный объект: Передать
 ### <a name="upload-single-file"></a>Отправка одного файла
 
 ```azcopy
@@ -444,7 +448,7 @@ azcopy \
 
 Обратите внимание на то, что пустые папки не скачиваются.
 
-## <a name="file-upload"></a>File (Файл): Отправка
+## <a name="file-upload"></a>File (Файл): Передать
 ### <a name="upload-single-file"></a>Отправка одного файла
 
 ```azcopy

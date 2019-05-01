@@ -10,11 +10,11 @@ ms.topic: conceptual
 ms.date: 02/26/2019
 ms.author: hrasheed
 ms.openlocfilehash: 31755dcc247ea3be5fb38249afd98dc72dcbc544
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
-ms.translationtype: HT
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62097105"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64717117"
 ---
 # <a name="use-apache-spark-mllib-to-build-a-machine-learning-application-and-analyze-a-dataset"></a>Использование Apache Spark MLlib для создания приложения машинного обучения и анализа набора данных
 
@@ -22,7 +22,7 @@ ms.locfileid: "62097105"
 
 MLlib — это основная библиотека Spark, содержащая множество служебных программ, которые подходят для задач машинного обучения, в частности:
 
-* Классификация
+* классификация;
 * Регрессия
 * Кластеризация
 * тематического моделирования;
@@ -199,12 +199,12 @@ MLlib — это основная библиотека Spark, содержаща
 
     Чтобы спрогнозировать результат проверки пищевых продуктов, вам нужно разработать модель для анализа нарушений. Логистическая регрессия является методом двоичной классификации, а значит, данные целесообразно разделить на две категории: **Fail** и **Pass**.
 
-   - Этап
-       - Этап
+   - Pass;
+       - Pass;
        - Pass w/ conditions;
-   - Ошибка
-       - Ошибка
-   - Отменить
+   - Fail;
+       - Fail;
+   - Игнорировать
        - Business not located;
        - Out of Business.
 

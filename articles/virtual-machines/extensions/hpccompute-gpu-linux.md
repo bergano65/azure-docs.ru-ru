@@ -15,11 +15,11 @@ ms.workload: infrastructure-services
 ms.date: 02/11/2019
 ms.author: roiyz
 ms.openlocfilehash: 5a184c72da8af0d451902a164c8b71a94a01883f
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
-ms.translationtype: HT
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62129082"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64683174"
 ---
 # <a name="nvidia-gpu-driver-extension-for-linux"></a>Расширение драйвера GPU NVIDIA для Linux
 
@@ -35,10 +35,10 @@ ms.locfileid: "62129082"
 
 Это расширение поддерживает указанные ниже дистрибутивы, в зависимости от поддержки драйвера в конкретной версии ОС.
 
-| Дистрибуция | Version |
+| Дистрибутив | Version |
 |---|---|
 | Linux: Ubuntu | 16.04 LTS, 18.04 LTS |
-| Linux: Red Hat Enterprise Linux | 7.3, 7.4, 7.5, 7.6 |
+| Linux: Red Hat Enterprise Linux. | 7.3, 7.4, 7.5, 7.6 |
 | Linux: CentOS | 7.3, 7.4, 7.5, 7.6 |
 
 ### <a name="internet-connectivity"></a>Подключение к Интернету
@@ -75,17 +75,17 @@ ms.locfileid: "62129082"
 | ---- | ---- | ---- |
 | версия_API | 2015-06-15 | date |
 | publisher | Microsoft.HpcCompute | string |
-| тип | NvidiaGpuDriverLinux | string |
+| Тип | NvidiaGpuDriverLinux | string |
 | typeHandlerVersion | 1.2 | int |
 
 ### <a name="settings"></a>Параметры
 
 Все эти параметры не являются обязательными. По умолчанию ядро не обновляется (если это не требуется для установки драйвера), устанавливается последний поддерживаемый драйвер и набор инструментов CUDA Toolkit (если это применимо).
 
-| ИМЯ | Описание | Значение по умолчанию | Допустимые значения | Тип данных |
+| ИМЯ | ОПИСАНИЕ | По умолчанию | Допустимые значения | Тип данных |
 | ---- | ---- | ---- | ---- | ---- |
 | updateOS | Обновление ядра, даже если для установки драйвера это не требуется | false | true, false | Логическое |
-| driverVersion | NV: версия драйвера GRID.<br> NC/ND: версия набора инструментов CUDA Toolkit. Последние версии драйверов для выбранного набора CUDA Toolkit устанавливаются автоматически. | latest | GRID: "418.70", "410.92", "410.71", "390.75", "390.57", "390.42"<br> CUDA: 10.0.130, 9.2.88, 9.1.85. | string |
+| driverVersion | NV: версия драйвера GRID.<br> NC/ND: версия набора инструментов CUDA Toolkit. Последние версии драйверов для выбранного набора CUDA Toolkit устанавливаются автоматически. | последняя | GRID: "418.70", "410.92", "410.71", "390.75", "390.57", "390.42"<br> CUDA: 10.0.130, 9.2.88, 9.1.85. | string |
 | installCUDA | Установка набора инструментов CUDA Toolkit. Это относится только к виртуальным машинам серии NC/ND. | Да | true, false | Логическое |
 
 
@@ -174,7 +174,7 @@ az vm extension list --resource-group myResourceGroup --vm-name myVM -o table
 
 ### <a name="exit-codes"></a>Коды выхода
 
-| Код завершения | Значение | Возможное действие |
+| Код выхода | Значение | Возможное действие |
 | :---: | --- | --- |
 | 0 | Операция выполнена успешно |
 | 1 | Неправильное использование расширения | Проверьте выходные данные журнала выполнения |

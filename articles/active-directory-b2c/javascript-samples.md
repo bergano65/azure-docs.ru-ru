@@ -1,5 +1,5 @@
 ---
-title: Примеры JavaScript для Azure Active Directory B2C | Документация Майкрософт
+title: Примеры JavaScript — Azure Active Directory B2C | Документация Майкрософт
 description: Узнайте, как использовать JavaScript в Azure Active Directory B2C.
 services: active-directory-b2c
 author: davidmu1
@@ -7,25 +7,28 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 12/05/2018
+ms.date: 04/25/2019
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: 3645945400bcc58cdf11721458bfab529d89f0b7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 972c8ec1b67161a3998a1b165072f584db2f7fbb
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60397096"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64570525"
 ---
 # <a name="javascript-samples-for-use-in-azure-active-directory-b2c"></a>Примеры JavaScript для Azure Active Directory B2C
 
 [!INCLUDE [active-directory-b2c-public-preview](../../includes/active-directory-b2c-public-preview.md)]
 
-К приложениям Azure Active Directory (Azure AD) B2C можно добавить собственный код JavaScript на стороне клиента. В этой статье объясняется, как изменить [поток пользователя](user-flow-javascript-overview.md) или [настраиваемые политики](active-directory-b2c-overview-custom.md), чтобы разрешить выполнение скриптов.
+К приложениям Azure Active Directory (Azure AD) B2C можно добавить собственный код JavaScript на стороне клиента. Чтобы включить JavaScript для приложений, необходимо добавить элемент к вашей [настраиваемой политики](active-directory-b2c-overview-custom.md)выберите [контракта страницы](page-contract.md)и использовать [b2clogin.com](b2clogin.md) в запросах. Этой статье описывается, как можно изменить пользовательских политик для разрешения выполнения сценариев.
+
+> [!NOTE]
+> Если вы хотите включить JavaScript для пользователя потоков, см. в разделе [JavaScript и странице контракта версии в Azure Active Directory B2C](user-flow-javascript-overview.md).
 
 ## <a name="prerequisites"></a>Технические условия
 
-Выберите [контракт страницы](page-contract.md) для элементов пользовательского интерфейса приложения. Если вы планируете использовать JavaScript, нужно определить версию контракта страницы для всех определений содержимого в потоке пользователя или настраиваемой политике.
+Выберите контракт страница для элементов пользовательского интерфейса приложения. Если вы планируете использовать JavaScript, нужно определить версию контракта страницы для всех определений содержимого в настраиваемой политике.
 
 ## <a name="add-the-scriptexecution-element"></a>Добавление элемента ScriptExecution
 
@@ -140,7 +143,7 @@ function addTermsOfUseLink() {
 }
 ```
 
-Замените `termsOfUseUrl` ссылкой на ваше соглашение об условиях использования. Создайте атрибут пользователя **termsOfUse** и включите **termsOfUse** как атрибут пользователя в свой поток пользователей.
+Замените `termsOfUseUrl` ссылкой на ваше соглашение об условиях использования. Для каталога, создайте новый атрибут пользователя **termsOfUse** и включите **termsOfUse** как атрибут пользователя.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

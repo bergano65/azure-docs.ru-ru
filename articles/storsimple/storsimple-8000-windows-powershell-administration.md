@@ -15,11 +15,11 @@ ms.workload: TBD
 ms.date: 01/09/2018
 ms.author: alkohli@microsoft.com
 ms.openlocfilehash: 564c121aa90746498a94022fd0fb8d8529142c91
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
-ms.translationtype: HT
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62128589"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64698402"
 ---
 # <a name="use-windows-powershell-for-storsimple-to-administer-your-device"></a>Администрирование устройства с помощью Windows PowerShell для StorSimple
 
@@ -64,7 +64,7 @@ Windows PowerShell для StorSimple — это интерфейс команд�
    | Клавиши HOME и END |Стандартная |
    | Функциональные клавиши и дополнительная клавиатура |ESC[n~ |
    | Начальное состояние клавиш управления курсором |В обычном режиме |
-   | Начальное состояние числовой клавиатуры |Обычная |
+   | Начальное состояние числовой клавиатуры |В обычном режиме |
    | Включение компонентов на дополнительной клавиатуре |Control-Alt отличается от AltGr |
    
     ![Поддерживаемые параметры PuTTY](./media/storsimple-windows-powershell-administration/IC740877.png)

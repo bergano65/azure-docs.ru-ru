@@ -12,12 +12,12 @@ ms.devlang: nodejs
 ms.topic: reference
 ms.date: 02/24/2019
 ms.author: glenga
-ms.openlocfilehash: 9ef7dd7603b93f6b15988cc4cca089f0486eb3b0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 37d00abbbf726dc1b92bdcc5f39b16301de9b93d
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61032433"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64697837"
 ---
 # <a name="azure-functions-javascript-developer-guide"></a>Руководство разработчика JavaScript для Функций Azure
 
@@ -52,7 +52,7 @@ FunctionsProject
 
 В корневой папке проекта существует общий файл [host.json](functions-host-json.md), который может использоваться для настройки приложения-функции. У каждой функции есть папка с собственным файлом кода (JS) и файлом конфигурации привязки (function.json). Имя родительского каталога файла `function.json` всегда является именем этой функции.
 
-Расширения привязки, необходимые в [версии 2.x](functions-versions.md) среды выполнения функций, определены в файле `extensions.csproj` с фактическими файлами библиотеки в папке `bin`. При локальной разработке необходимо [зарегистрировать расширения привязки](./functions-bindings-register.md#local-development-azure-functions-core-tools). При разработке функций на портале Azure эта регистрация выполняется автоматически.
+Расширения привязки, необходимые в [версии 2.x](functions-versions.md) среды выполнения функций, определены в файле `extensions.csproj` с фактическими файлами библиотеки в папке `bin`. При локальной разработке необходимо [зарегистрировать расширения привязки](./functions-bindings-register.md#local-development-with-azure-functions-core-tools-and-extension-bundles). При разработке функций на портале Azure эта регистрация выполняется автоматически.
 
 ## <a name="exporting-a-function"></a>Экспорт функции
 
@@ -136,7 +136,7 @@ module.exports = async function (context, req) {
    };
    ```
 
-### <a name="outputs"></a>Выходные данные
+### <a name="outputs"></a>outputs
 Выходные данные (привязки `direction === "out"`) могут быть записаны в функцию несколькими способами. Во всех случаях свойство `name` привязки, определенное в файле *function.json*, соответствует имени элемента объекта, записанного в функции. 
 
 Можно назначить выходные привязки данных в одном из следующих способов (эти методы не Сочетайте):
@@ -271,7 +271,7 @@ context.log(message)
 Этот метод позволяет делать записи в потоковые журналы функций на уровне трассировки по умолчанию. В `context.log` доступны дополнительные методы ведения журнала, позволяющие выполнять запись в журналы функций на других уровнях трассировки:
 
 
-| Метод                 | Описание                                |
+| Метод                 | ОПИСАНИЕ                                |
 | ---------------------- | ------------------------------------------ |
 | **error(_message_)**   | Записывает сообщение в журнал на уровне ошибок или более низком.   |
 | **warn(_message_)**    | Записывает сообщение в журнал на уровне предупреждений или более низком. |
@@ -348,7 +348,7 @@ context.log('Request Headers = ', JSON.stringify(req.headers));
 
 У объекта (запроса) `context.req` есть следующие свойства:
 
-| Свойство      | Описание                                                    |
+| Свойство      | ОПИСАНИЕ                                                    |
 | ------------- | -------------------------------------------------------------- |
 | _body_        | Объект, содержащий текст запроса.               |
 | _headers_     | Объект, содержащий заголовок запроса.                   |
@@ -363,7 +363,7 @@ context.log('Request Headers = ', JSON.stringify(req.headers));
 
 У объекта (ответа) `context.res` есть следующие свойства:
 
-| Свойство  | Описание                                               |
+| Свойство  | ОПИСАНИЕ                                               |
 | --------- | --------------------------------------------------------- |
 | _body_    | Объект, содержащий текст ответа.         |
 | _headers_ | Объект, содержащий заголовок ответа.             |
@@ -577,7 +577,7 @@ module.exports = myObj;
 
 То, что вы локально разрабатывать и развертывать из проекта TypeScript зависит от ваших средств разработки.
 
-### <a name="visual-studio-code"></a>Код Visual Studio
+### <a name="visual-studio-code"></a>Visual Studio Code.
 
 [Функций Azure для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) расширение позволяет разрабатывать функции с помощью TypeScript. Основные инструменты — требование для расширения функций Azure.
 

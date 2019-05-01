@@ -14,11 +14,11 @@ ms.topic: article
 ms.date: 10/30/2017
 ms.author: apimpm
 ms.openlocfilehash: 644cc2a4175043b523d53b39f17483c6f3acfe96
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60558486"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64696732"
 ---
 # <a name="how-to-authorize-developer-accounts-by-using-azure-active-directory-b2c-in-azure-api-management"></a>Как авторизовать учетные записи разработчиков с помощью Azure Active Directory B2C в службе управления API Azure
 
@@ -101,7 +101,7 @@ Azure Active Directory B2C — это облачное решение, позв
    > [!NOTE]
    > Если Azure Active Directory B2C является единственным активным параметром на вкладке **Удостоверения** на портале издателя, вы будете сразу перенаправлены к политике регистрации.
 
-   ![Портал разработчика][api-management-howto-aad-b2c-dev-portal-b2c-options]
+   ![Developer portal][api-management-howto-aad-b2c-dev-portal-b2c-options]
 
    После завершения регистрации вы будете перенаправлены обратно на портал разработчика. Теперь вы вошли на портал разработчика вашего экземпляра службы управления API.
 

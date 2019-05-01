@@ -10,12 +10,12 @@ ms.topic: reference
 ms.date: 09/10/2018
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: 3fe839de8cbaa0b321b0b0602b000b7575224dde
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 7b3d579e9d4ceb92ee961778ba6083292461c144
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60361104"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64699828"
 ---
 # <a name="define-an-oauth1-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Определить OAuth1 технического профиля в настраиваемую политику Azure Active Directory B2C
 
@@ -23,7 +23,7 @@ ms.locfileid: "60361104"
 
 Azure Active Directory (Azure AD) B2C поддерживает [протокол OAuth 1.0](https://tools.ietf.org/html/rfc5849) для поставщиков удостоверений. В этой статье описаны особенности технического профиля для взаимодействия с поставщиком утверждений, который поддерживает этот стандартизированный протокол. С помощью OAuth1 технического профиля можно использовать для федерации с поставщиком удостоверений на основе OAuth1, таких как Twitter. Федеративные отношения с поставщиком удостоверений позволяет пользователям вход с помощью существующие социальных сетей или корпоративными удостоверениями.
 
-## <a name="protocol"></a>Протокол
+## <a name="protocol"></a>Protocol
 
 Атрибуту **Name** элемента **Protocol** необходимо присвоить значение `OAuth1`. Например, `OAuth1` — это протокол для технического профиля **Twitter-OAUTH1**.
 

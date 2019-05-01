@@ -9,12 +9,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 04/16/2019
 ms.author: mbaldwin
-ms.openlocfilehash: cf012a452d1e43134d955e03ccf34e153b1282ad
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 7bc4fd42f64bba09fd20fedf5e06dc30c3b2cc49
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60253819"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64680812"
 ---
 # <a name="common-security-attributes-for-azure-backup"></a>Общие атрибуты безопасности для службы Azure Backup
 
@@ -27,7 +27,7 @@ ms.locfileid: "60253819"
 | Атрибут безопасности | Да/нет | Примечания |
 |---|---|--|
 | Шифрование при хранении:<ul><li>Шифрование на стороне сервера</li><li>Шифрование на стороне сервера с использованием управляемых клиентом ключей</li><li>Другие возможности шифрования (например, на стороне клиента, постоянное шифрование и т. д.)</ul>| Yes | Использование шифрования службы хранилища для учетных записей хранения. |
-| Шифрование при передаче:<ul><li>Шифрование ExpressRoute</li><li>Шифрование в виртуальной сети</li><li>Шифрование между виртуальными сетями</ul>| Нет  | С использованием HTTPS. |
+| Шифрование при передаче:<ul><li>Шифрование ExpressRoute</li><li>При шифровании виртуальной сети</li><li>Шифрование между виртуальными сетями</ul>| Нет  | С использованием HTTPS. |
 | Управление ключами шифрования (CMK, BYOK, и т.д.)| Нет  |  |
 | Шифрование на уровне столбцов (службы данных Azure)| Нет  |  |
 | Вызовы API в зашифрованном виде| Yes |  |

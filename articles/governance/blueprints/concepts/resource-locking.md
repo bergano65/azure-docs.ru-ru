@@ -3,17 +3,17 @@ title: Концепция блокировки ресурсов
 description: Узнайте о возможности блокировки для защиты ресурсов при назначении схемы.
 author: DCtheGeek
 ms.author: dacoulte
-ms.date: 03/28/2019
+ms.date: 04/24/2019
 ms.topic: conceptual
 ms.service: blueprints
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: 232d823f364f9f98d1da1bade50ba369b898a57d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: db0b5bbe1261c7bdf76393c69a1189d2a850cd07
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60683024"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64719752"
 ---
 # <a name="understand-resource-locking-in-azure-blueprints"></a>Общие сведения о блокировке ресурсов в Azure Blueprint
 
@@ -53,6 +53,13 @@ ms.locfileid: "60683024"
 Действие [запрета назначений](../../../role-based-access-control/deny-assignments.md) RBAC применяется к ресурсам артефактов во время назначения схемы, если для назначения выбрано состояние **Только чтение** или **Do Not Delete** (Не удалять). Запрещающее действие добавляется управляемым удостоверением назначения схемы и может быть удалено из ресурсов артефактов только тем же управляемым удостоверением. Эта мера предосторожности обеспечивает механизм блокировки и предотвращает попытки удалить блокировку схемы за пределами схемы.
 
 ![В рамках схемы deny назначения в группе ресурсов](../media/resource-locking/blueprint-deny-assignment.png)
+
+[Запретить назначение свойства](../../../role-based-access-control/deny-assignments.md#deny-assignment-properties) для каждого из режимов, следующим образом:
+
+|Mode |Permissions.Actions |Permissions.NotActions |Субъекты [i]. Тип |ExcludePrincipals [i]. Идентификатор | DoNotApplyToChildScopes |
+|-|-|-|-|-|-|
+|Только чтение |**\*** |**\*/ чтение** |SystemDefined («все») |Схема назначения и определяемых пользователем в **excludedPrincipals** |Группа ресурсов — _true_; Ресурс - _false_ |
+|Не удалять |**\*/ DELETE** | |SystemDefined («все») |Схема назначения и определяемых пользователем в **excludedPrincipals** |Группа ресурсов — _true_; Ресурс - _false_ |
 
 > [!IMPORTANT]
 > Azure Resource Manager кэширует сведения о назначении роли на срок до 30 минут. Это означает, что действие запрета назначений для ресурсов схемы может не сразу вступать в полную силу. В течение этого периода сохраняется возможность удалить ресурс, который должен быть защищен блокировками схемы.

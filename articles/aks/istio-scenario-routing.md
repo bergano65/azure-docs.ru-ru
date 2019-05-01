@@ -2,18 +2,17 @@
 title: Интеллектуальная маршрутизация и ранние выпуски с использованием Istio в Службе Azure Kubernetes (AKS)
 description: Сведения об использовании Istio для обеспечения интеллектуальной маршрутизации и развертывания ранних выпусков в кластере Службы Azure Kubernetes (AKS)
 services: container-service
-author: rockboyfor
+author: paulbouwer
 ms.service: container-service
 ms.topic: article
-origin.date: 12/03/2018
-ms.date: 03/04/2019
-ms.author: v-yeche
-ms.openlocfilehash: 0a4e5e7e310a9949ee59291c2032eafda46955a9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 04/19/2019
+ms.author: pabouwer
+ms.openlocfilehash: bd660a2b6ffb96478c3170cc7013ff22518b758f
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60465945"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64702203"
 ---
 # <a name="use-intelligent-routing-and-canary-releases-with-istio-in-azure-kubernetes-service-aks"></a>Интеллектуальная маршрутизация и ранние выпуски с использованием Istio в службе Azure Kubernetes (AKS)
 
@@ -31,25 +30,28 @@ ms.locfileid: "60465945"
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
-В этой статье предполагается, что у вас есть кластер AKS (Kubernetes версии 1.10 и выше с поддержкой RBAC), к которому установлено подключение `kubectl`. Также в кластере потребуется установить Istio.
+> [!NOTE]
+> Этот сценарий был проверен на соответствие версии Istio `1.1.3`.
 
-Если требуется помощь по любому из этих вопросов, см. [краткое руководство по AKS][aks-quickstart] и [руководство по установке Istio в AKS][istio-install].
+Действия, описанные в этой статье предполагается, вы создали кластер службы контейнеров AZURE (Kubernetes `1.11` и более поздних версий, с помощью RBAC включен) и установить `kubectl` соединение с кластером. Вам также потребуется Istio, установленный в кластере.
+
+Если вам нужна помощь с любой из этих элементов, затем см. в разделе [краткое руководство AKS] [ aks-quickstart] и [установить Istio в AKS] [ istio-install] рекомендации.
 
 ## <a name="about-this-application-scenario"></a>Сведения об этом сценарии приложения
 
-Пример приложения AKS для голосования предоставляет пользователям два варианта голосования (кошки или собаки). Предоставляется компонент хранения, который сохраняет число голосов за каждый вариант. Кроме того, есть компонент аналитики, предоставляющий подробные сведения о голосах, поданных за каждый вариант.
+Приложение для голосования AKS образец предоставляет два варианта голосования (**кошки** или **собаки**) для пользователей. Предоставляется компонент хранения, который сохраняет число голосов за каждый вариант. Кроме того, есть компонент аналитики, предоставляющий подробные сведения о голосах, поданных за каждый вариант.
 
-В этой статье описано, как развернуть версию *1.0* приложения для голосования и версию *1.0* компонента аналитики. Компонент аналитики обеспечивает простой подсчет количества голосов. Приложение для голосования и компонент аналитики взаимодействуют с версией *1.0* компонента хранения, поддержку которого обеспечивает Redis.
+В этом случае приложение, начните с развертывания версии `1.0` приложение для голосования и версии `1.0` компонента аналитики. Компонент аналитики обеспечивает простой подсчет количества голосов. Приложение для голосования и analytics компонента взаимодействуют с версии `1.0` компонента хранилища, поддерживаемый Redis.
 
-Выполняется обновление компонента аналитики до версии *1.1*, которая предоставляет счетчики, а также итоги и проценты.
+Обновление компонента аналитики до версии `1.1`, который предоставляет счетчики и теперь итогов и процентов.
 
-Часть пользователей тестирует версию *2.0* приложения в виде раннего выпуска. В этой новой версии используется компонент хранения, поддерживаемый базой данных MySQL.
+Подмножество пользователей тестовой версии `2.0` приложения с помощью раннего выпуска. В этой новой версии используется компонент хранения, поддерживаемый базой данных MySQL.
 
-Убедившись в том, что версия *2.0* работает ожидаемым образом у группы пользователей, вы выпускаете версию *2.0* для всех пользователей.
+Когда вы уверены в этой версии `2.0` работает нужным образом на подмножеством пользователей, развертыванием версии `2.0` для всех пользователей.
 
 ## <a name="deploy-the-application"></a>Развертывание приложения
 
-Начнем с развертывания приложения в кластере службы Azure Kubernetes (AKS). На следующей схеме показано, что выполняется в конце этого раздела — версия *1.0* всех компонентов с обслуживанием входящих запросов через шлюз входящего трафика Istio:
+Начнем с развертывания приложения в кластере службы Azure Kubernetes (AKS). На следующей схеме показано, что работает в конце этого раздела — версия `1.0` всех компонентов с помощью входящих запросов, обслуживаемых через шлюз входящего трафика Istio:
 
 ![Компоненты и маршрутизация приложения AKS для голосования.](media/istio/components-and-routing-01.png)
 
@@ -65,27 +67,27 @@ git clone https://github.com/Azure-Samples/aks-voting-app.git
 cd scenarios/intelligent-routing-with-istio
 ```
 
-Прежде всего создайте пространство имен в кластере AKS для примера приложения AKS для голосования с именем *voting* следующим образом:
+Во-первых, создание пространства имен в кластере AKS для примера AKS голосования приложения с именем `voting` следующим образом:
 
-```console
+```azurecli
 kubectl create namespace voting
 ```
 
 Задайте для пространства имен метку `istio-injection=enabled`. Эта метка указывает Istio автоматически внедрить прокси-серверы istio-proxy в качестве службы-расширения во все группы pod в этом пространстве имен.
 
-```console
+```azurecli
 kubectl label namespace voting istio-injection=enabled
 ```
 
-Теперь давайте создадим компоненты для приложения AKS Voting. Эти компоненты следует создать в пространстве имен *voting*, созданном на предыдущем шаге.
+Теперь давайте создадим компоненты для приложения AKS Voting. Создание этих компонентов в `voting` пространство имен, созданное на предыдущем шаге.
 
-```console
+```azurecli
 kubectl apply -f kubernetes/step-1-create-voting-app.yaml --namespace voting
 ```
 
-В следующем примере выходных данных показано, что ресурсы успешно созданы:
+В следующем примере выходных данных показаны создаваемые ресурсы:
 
-```
+```console
 deployment.apps/voting-storage-1-0 created
 service/voting-storage created
 deployment.apps/voting-analytics-1-0 created
@@ -99,28 +101,28 @@ service/voting-app created
 
 Чтобы просмотреть созданные группы pod, выполните команду [kubectl get pods][kubectl-get] следующим образом:
 
-```console
+```azurecli
 kubectl get pods -n voting
 ```
 
-В следующем примере выходных данных показано, что существуют три экземпляра pod *voting-app* и по одному экземпляру pod *voting-analytics* и *voting-storage*. Каждая группа pod содержит два контейнера. Один из этих контейнеров представляет собой компонент, а другой — *istio-proxy*:
+В следующем примере выходных данных показано, существует три экземпляра `voting-app` pod и один экземпляр оба `voting-analytics` и `voting-storage` модулей POD. Каждая группа pod содержит два контейнера. Один из этих контейнеров — это компонент, а другой — `istio-proxy`:
 
-```
+```console
 NAME                                    READY     STATUS    RESTARTS   AGE
-voting-analytics-1-0-669f99dcc8-lzh7k   2/2       Running   0          1m
-voting-app-1-0-6c65c4bdd4-bdmld         2/2       Running   0          1m
-voting-app-1-0-6c65c4bdd4-gcrng         2/2       Running   0          1m
-voting-app-1-0-6c65c4bdd4-strzc         2/2       Running   0          1m
-voting-storage-1-0-7954799d96-5fv9r     2/2       Running   0          1m
+voting-analytics-1-0-57c7fccb44-ng7dl   2/2       Running   0          39s
+voting-app-1-0-956756fd-d5w7z           2/2       Running   0          39s
+voting-app-1-0-956756fd-f6h69           2/2       Running   0          39s
+voting-app-1-0-956756fd-wsxvt           2/2       Running   0          39s
+voting-storage-1-0-5d8fcc89c4-2jhms     2/2       Running   0          39s
 ```
 
 Чтобы просмотреть сведения о группе pod, воспользуйтесь командой [kubectl describe pod][kubectl-describe]. Замените имя группы pod ее именем в вашем кластере AKS из предыдущих выходных данных:
 
-```console
-kubectl describe pod voting-app-1-0-6c65c4bdd4-bdmld --namespace voting
+```azurecli
+kubectl describe pod voting-app-1-0-956756fd-d5w7z --namespace voting
 ```
 
-Контейнер *istio-proxy* автоматически был внедрен средствами Istio для управления входящим и исходящим сетевым трафиком компонентов, как показано в следующем примере выходных данных:
+`istio-proxy` Контейнера автоматически был вставлен с Istio для управления сетевым трафиком и из компонентов, как показано в следующем примере выходных данных:
 
 ```
 [...]
@@ -129,68 +131,90 @@ Containers:
     Image:         mcr.microsoft.com/aks/samples/voting/app:1.0
     ...
   istio-proxy:
-    Image:         dockerhub.azk8s.cn/istio/proxyv2:1.0.4
+    Image:         docker.io/istio/proxyv2:1.1.3
 [...]
 ```
 
 Подключиться к приложению для голосования не удастся до тех пор, пока не будут созданы [шлюз Istio][istio-reference-gateway] и [виртуальная служба][istio-reference-virtualservice]. Эти ресурсы Istio направляют трафик из шлюза Istio для входящего трафика по умолчанию в наше приложение.
 
 > [!NOTE]
-> *Шлюз* — это компонент на границе сетки служб, который получает входящий или исходящий трафик HTTP и TCP.
->
-> *Виртуальная служба* определяет набор правил маршрутизации для одной или нескольких служб назначения.
+> **Шлюз** — это компонент на границе сетки служб, который получает входящий или исходящий трафик HTTP и TCP.
+> 
+> **Виртуальная служба** определяет набор правил маршрутизации для одной или нескольких служб назначения.
 
-С помощью клиентского двоичного файла `istioctl` выполните развертывание YAML шлюза и виртуальной службы. Как и в случае команды `kubectl apply`, не забудьте указать пространство имен, в котором развертываются эти ресурсы.
+Используйте `kubectl apply` команду, чтобы развернуть yaml шлюза и службы виртуальной сети. Не забудьте указать пространство имен, эти ресурсы развертываются в.
+
+```azurecli
+kubectl apply -f istio/step-1-create-voting-app-gateway.yaml --namespace voting
+```
+
+В следующем примере выходных данных показывает новый шлюз и создаваемой виртуальной службы:
 
 ```console
-istioctl create -f istio/step-1-create-voting-app-gateway.yaml --namespace voting
+virtualservice.networking.istio.io/voting-app created
+gateway.networking.istio.io/voting-app-gateway created
 ```
 
 Получите IP-адрес шлюза входящего трафика Istio с помощью следующей команды:
 
-```console
+```azurecli
 kubectl get service istio-ingressgateway --namespace istio-system -o jsonpath='{.status.loadBalancer.ingress[0].ip}'
 ```
 
 В следующем примере выходных данных показан IP-адрес шлюза входящего трафика:
 
 ```
-52.187.250.239
+20.188.211.19
 ```
 
 Откройте браузер и вставьте в адресную строку IP-адрес. Отобразится пример приложения AKS для голосования.
 
 ![Приложение AKS для голосования, работающее в кластере AKS с поддержкой Istio.](media/istio/deploy-app-01.png)
 
-Сведения в нижней части экрана показывают, что приложение использует версию *1.0* *voting-app* и версию *1.0* (Redis) в качестве средства хранения.
+Информация в нижней части экрана показывает, что приложение использует версию `1.0` из `voting-app` и версии `1.0` из `voting-storage` (Redis).
 
 ## <a name="update-the-application"></a>Обновление приложения
 
-Давайте развернем новую версию компонента аналитики. Эта новая версия *1.1* отображает итоги и проценты в дополнение к подсчету голосов за каждую категорию.
+Давайте развернем новую версию компонента аналитики. Эта новая версия `1.1` отображает суммы и проценты в дополнение к счетчик для каждой категории.
 
-На следующей схеме показано, что выполняется в конце этого раздела — трафик из компонента *voting-app* направляется только в версию *1.1* нашего компонента *voting-analytics*. Хотя версия *1.0* нашего компонента *voting-analytics* продолжает выполняться и на нее ссылается служба *voting-analytics*, прокси-серверы Istio запрещают трафик к ней и от нее.
+На следующей схеме показано, что выполняется в конце этого раздела — только версии `1.1` из наших `voting-analytics` компонент имеет трафик направляется из `voting-app` компонента. Несмотря на то что версия `1.0` из наших `voting-analytics` компонент продолжает выполняться и ссылается `voting-analytics` службы, прокси-серверы Istio запрещают трафик к и из него.
 
 ![Компоненты и маршрутизация приложения AKS для голосования.](media/istio/components-and-routing-02.png)
 
-Давайте развернем версию *1.1* компонента *voting-analytics*. Создайте этот компонент в пространстве имен *voting*:
+Давайте Развернем версии `1.1` из `voting-analytics` компонента. Создать этот компонент в `voting` пространство имен:
 
 ```console
 kubectl apply -f kubernetes/step-2-update-voting-analytics-to-1.1.yaml --namespace voting
 ```
 
+В следующем примере выходных данных показаны создаваемые ресурсы:
+
+```console
+deployment.apps/voting-analytics-1-1 created
+```
+
 Откройте снова пример приложения AKS для голосования в браузере, используя IP-адрес шлюза входящего трафика Istio, полученный на предыдущем шаге.
 
-Браузер переключается между двумя представлениями, показанными ниже. Так как [служба Kubernetes][kubernetes-service] используется для компонента *voting-analytics* только с селектором одиночной метки (`app: voting-analytics`), Kubernetes применяет поведение по умолчанию — циклическое переключение между группами pod, соответствующими этому селектору. В нашем примере это обе версии *1.0* и *1.1* групп pod *voting-analytics*.
+Браузер переключается между двумя представлениями, показанными ниже. Так как при использовании Kubernetes [службы] [ kubernetes-service] для `voting-analytics` компонент с помощью только одну метку селектора (`app: voting-analytics`), Kubernetes использует поведение по умолчанию циклического модули, которые соответствуют этом селекторе. В данном случае это обе версии `1.0` и `1.1` из вашей `voting-analytics` модулей POD.
 
 ![Версия 1.0 компонента аналитики, выполняющаяся в приложении AKS Voting.](media/istio/deploy-app-01.png)
 
 ![Версия 1.1 компонента аналитики, выполняющаяся в приложении AKS Voting.](media/istio/update-app-01.png)
 
-Можно визуализировать переключение между двумя версиями компонента *voting-analytics* следующим образом. Не забудьте указать IP-адрес вашего шлюза входящего трафика Istio.
+Вы можете визуализировать, переключение между двумя версиями `voting-analytics` компонент следующим образом. Не забудьте указать IP-адрес вашего шлюза входящего трафика Istio.
 
-```console
-INGRESS_IP=52.187.250.239
+Bash 
+
+```bash
+INGRESS_IP=20.188.211.19
 for i in {1..5}; do curl -si $INGRESS_IP | grep results; done
+```
+
+PowerShell
+
+```powershell
+$INGRESS_IP="20.188.211.19"
+(1..5) |% { (Invoke-WebRequest -Uri $INGRESS_IP).Content.Split("`n") | Select-String -Pattern "results" }
 ```
 
 В следующем примере выходных данных показана значимая часть возвращаемого веб-сайта при переключении между версиями.
@@ -205,59 +229,51 @@ for i in {1..5}; do curl -si $INGRESS_IP | grep results; done
 
 ### <a name="lock-down-traffic-to-version-11-of-the-application"></a>Ограничение трафика версией 1.1 приложения
 
-Теперь давайте заблокируем трафик, чтобы он поступал только к версии *1.1* компонента *voting-analytics* и версии *1.0* компонента *voting-storage*. Затем следует определить правила маршрутизации для всех остальных компонентов.
+Теперь давайте заблокировать трафик только версии `1.1` из `voting-analytics` компонента и до версии `1.0` из `voting-storage` компонента. Затем следует определить правила маршрутизации для всех остальных компонентов.
 
-> * *Виртуальная служба* определяет набор правил маршрутизации для одной или нескольких служб назначения.
-> * *Правило назначения* определяет политики трафика и политики, связанные с определенной версией.
-> * *Политика* определяет, какие методы проверки подлинности допустимы для рабочих нагрузок.
+> * **Виртуальная служба** определяет набор правил маршрутизации для одной или нескольких служб назначения.
+> * **Правило назначения** определяет политики трафика и политики, связанные с определенной версией.
+> * **Политика** определяет, какие методы проверки подлинности допустимы для рабочих нагрузок.
 
-С помощью клиентского двоичного файла `istioctl` следует заменить определение виртуальной службы для *voting-app* и добавить [целевые правила][istio-reference-destinationrule] и [виртуальные службы][istio-reference-virtualservice] для остальных компонентов.
+Используйте `kubectl apply` команду, чтобы заменить определение службы виртуальной сети на ваш `voting-app` и добавьте [правила назначения] [ istio-reference-destinationrule] и [виртуальные службы] [ istio-reference-virtualservice] для других компонентов. Вы добавите [политики] [ istio-reference-policy] для `voting` пространства имен, чтобы убедиться, что все обмена данными между службами защищается с помощью сертификатов клиента и взаимной TLS.
 
-Также следует добавить [политику][istio-reference-policy] к пространству имен *voting*, чтобы обеспечить защиту всех передаваемых между службами данных с помощью взаимной поддржки TLS и сертификатов клиентов.
+* Политика имеет `peers.mtls.mode` присвоено `STRICT` чтобы обеспечить соблюдение взаимной TLS между службами в `voting` пространства имен.
+* Мы также зададим `trafficPolicy.tls.mode` для `ISTIO_MUTUAL` в все наши правила назначения. Istio предоставляет службы с надежными удостоверениями и обеспечивает защиту обмена данными между службами с помощью взаимной поддержки TLS и сертификатов клиентов, которыми Istio управляет прозрачным образом.
 
-Так как есть существующее определение виртуальной службы для *voting-app*, которое заменяется, выполните команду `istioctl replace` следующим образом:
+```azurecli
+kubectl apply -f istio/step-2-update-and-add-routing-for-all-components.yaml --namespace voting
+```
+
+В следующем примере выходных данных показано новую политику, правила назначения, а также виртуальной службы, будут обновлены или создать.
 
 ```console
-istioctl replace -f istio/step-2a-update-voting-app-virtualservice.yaml --namespace voting
+virtualservice.networking.istio.io/voting-app configured
+policy.authentication.istio.io/default created
+destinationrule.networking.istio.io/voting-app created
+destinationrule.networking.istio.io/voting-analytics created
+virtualservice.networking.istio.io/voting-analytics created
+destinationrule.networking.istio.io/voting-storage created
+virtualservice.networking.istio.io/voting-storage created
 ```
 
-В следующем примере выходных данных показано, что виртуальная служба Istio успешно обновлена:
-
-```
-Updated config virtual-service/voting/voting-app to revision 141902
-```
-
-Далее воспользуйтесь командой `istioctl create` для добавления новой политики, а также новых правил назначения и виртуальных служб для всех остальных компонентов.
-
-* В политике для `peers.mtls.mode` устанавливается значение `STRICT`, принудительно применяющее взаимную поддержку TLS для обмена данными между службами в пределах пространства имен *voting*.
-* Также следует задать для `trafficPolicy.tls.mode` значение `ISTIO_MUTUAL` во всех правилах назначения. Istio предоставляет службы с надежными удостоверениями и обеспечивает защиту обмена данными между службами с помощью взаимной поддержки TLS и сертификатов клиентов, которыми Istio управляет прозрачным образом.
-
-```console
-istioctl create -f istio/step-2b-add-routing-for-all-components.yaml --namespace voting
-```
-
-В следующем примере выходных данных показано, что новая политика, правила назначения и виртуальные службы успешно созданы:
-
-```
-Created config policy/voting/default to revision 142118
-Created config destination-rule/voting/voting-app at revision 142119
-Created config destination-rule/voting/voting-analytics at revision 142120
-Created config virtual-service/voting/voting-analytics at revision 142121
-Created config destination-rule/voting/voting-storage at revision 142122
-Created config virtual-service/voting/voting-storage at revision 142123
-```
-
-Если снова открыть в браузере приложение AKS Voting, компонентом *voting-app* будет использоваться только новая версия *1.1* компонента *voting-analytics*.
+При открытии в нем приложение Vote AKS в браузере снова, только новая версия `1.1` из `voting-analytics` компонент используется `voting-app` компонента.
 
 ![Версия 1.1 компонента аналитики, выполняющаяся в приложении AKS Voting.](media/istio/update-app-01.png)
 
-Можно еще проще отобразить перенаправление к версии *1.1* компонента *voting-analytics* следующим образом. Не забудьте указать IP-адрес вашего шлюза входящего трафика Istio.
+Вы можете визуализировать, что вы теперь только направляются к версии `1.1` из вашей `voting-analytics` компонент следующим образом. Не забудьте указать IP-адрес вашего шлюза входящего трафика Istio:
 
-Можно отобразить перенаправление только к версии *1.1* компонента *voting-analytics* следующим образом. Не забудьте указать IP-адрес вашего шлюза входящего трафика Istio:
+Bash 
 
-```azurecli
-INGRESS_IP=52.187.250.239
+```bash
+INGRESS_IP=20.188.211.19
 for i in {1..5}; do curl -si $INGRESS_IP | grep results; done
+```
+
+PowerShell
+
+```powershell
+$INGRESS_IP="20.188.211.19"
+(1..5) |% { (Invoke-WebRequest -Uri $INGRESS_IP).Content.Split("`n") | Select-String -Pattern "results" }
 ```
 
 В следующем примере выходных данных показана требуемая часть возвращаемого веб-сайта:
@@ -270,67 +286,114 @@ for i in {1..5}; do curl -si $INGRESS_IP | grep results; done
   <div id="results"> Cats: 2/6 (33%) | Dogs: 4/6 (67%) </div>
 ```
 
-Убедитесь, что Istio использует взаимную поддержку TLS для защиты обмена данными между каждой из наших служб. Следующие команды проверяют параметры TLS для каждой из служб *voting-app*:
+Давайте теперь убедитесь, что Istio использует взаимной TLS для защиты обмена данными между каждым из наших служб. Для этого мы будем использовать [проверка tls authn] [ istioctl-authn-tls-check] команды `istioctl` клиент двоичных данных, который имеет следующий вид.
 
 ```console
-istioctl authn tls-check voting-app.voting.svc.cluster.local
-istioctl authn tls-check voting-analytics.voting.svc.cluster.local
-istioctl authn tls-check voting-storage.voting.svc.cluster.local
+istioctl authn tls-check <pod-name[.namespace]> [<service>]
 ```
 
-В следующем примере выходных данных показано, что взаимная поддержка TLS принудительно применяется для каждой из служб с помощью политики и целевых правил:
+Этот набор команд предоставляют сведения о доступе к указанным службам из всех модулей, которые находятся в пространстве имен и соответствовать набору метки:
 
+Bash
+
+```bash
+# mTLS configuration between each of the istio ingress pods and the voting-app service
+kubectl get pod -n istio-system -l app=istio-ingressgateway | grep Running | cut -d ' ' -f1 | xargs -n1 -I{} istioctl authn tls-check {}.istio-system voting-app.voting.svc.cluster.local
+
+# mTLS configuration between each of the voting-app pods and the voting-analytics service
+kubectl get pod -n voting -l app=voting-app | grep Running | cut -d ' ' -f1 | xargs -n1 -I{} istioctl authn tls-check {}.voting voting-analytics.voting.svc.cluster.local
+
+# mTLS configuration between each of the voting-app pods and the voting-storage service
+kubectl get pod -n voting -l app=voting-app | grep Running | cut -d ' ' -f1 | xargs -n1 -I{} istioctl authn tls-check {}.voting voting-storage.voting.svc.cluster.local
+
+# mTLS configuration between each of the voting-analytics version 1.1 pods and the voting-storage service
+kubectl get pod -n voting -l app=voting-analytics,version=1.1 | grep Running | cut -d ' ' -f1 | xargs -n1 -I{} istioctl authn tls-check {}.voting voting-storage.voting.svc.cluster.local
 ```
+
+PowerShell
+
+```powershell
+# mTLS configuration between each of the istio ingress pods and the voting-app service
+(kubectl get pod -n istio-system -l app=istio-ingressgateway | Select-String -Pattern "Running").Line |% { $_.Split()[0] |% { istioctl authn tls-check $($_ + ".istio-system") voting-app.voting.svc.cluster.local } }
+
+# mTLS configuration between each of the voting-app pods and the voting-analytics service
+(kubectl get pod -n voting -l app=voting-app | Select-String -Pattern "Running").Line |% { $_.Split()[0] |% { istioctl authn tls-check $($_ + ".voting") voting-analytics.voting.svc.cluster.local } }
+
+# mTLS configuration between each of the voting-app pods and the voting-storage service
+(kubectl get pod -n voting -l app=voting-app | Select-String -Pattern "Running").Line |% { $_.Split()[0] |% { istioctl authn tls-check $($_ + ".voting") voting-storage.voting.svc.cluster.local } }
+
+# mTLS configuration between each of the voting-analytics version 1.1 pods and the voting-storage service
+(kubectl get pod -n voting -l app=voting-analytics,version=1.1 | Select-String -Pattern "Running").Line |% { $_.Split()[0] |% { istioctl authn tls-check $($_ + ".voting") voting-storage.voting.svc.cluster.local } }
+```
+
+Это ниже показано пример применения взаимной TLS для каждого из наших запросов выше. Выходные данные также показывает, политики и правила назначения, обеспечивающий взаимной TLS:
+
+```console
+# mTLS configuration between istio ingress pods and the voting-app service
 HOST:PORT                                    STATUS     SERVER     CLIENT     AUTHN POLICY       DESTINATION RULE
 voting-app.voting.svc.cluster.local:8080     OK         mTLS       mTLS       default/voting     voting-app/voting
 
+# mTLS configuration between each of the voting-app pods and the voting-analytics service
+HOST:PORT                                          STATUS     SERVER     CLIENT     AUTHN POLICY       DESTINATION RULE
+voting-analytics.voting.svc.cluster.local:8080     OK         mTLS       mTLS       default/voting     voting-analytics/voting
+HOST:PORT                                          STATUS     SERVER     CLIENT     AUTHN POLICY       DESTINATION RULE
+voting-analytics.voting.svc.cluster.local:8080     OK         mTLS       mTLS       default/voting     voting-analytics/voting
 HOST:PORT                                          STATUS     SERVER     CLIENT     AUTHN POLICY       DESTINATION RULE
 voting-analytics.voting.svc.cluster.local:8080     OK         mTLS       mTLS       default/voting     voting-analytics/voting
 
+# mTLS configuration between each of the voting-app pods and the voting-storage service
+HOST:PORT                                        STATUS     SERVER     CLIENT     AUTHN POLICY       DESTINATION RULE
+voting-storage.voting.svc.cluster.local:6379     OK         mTLS       mTLS       default/voting     voting-storage/voting
+HOST:PORT                                        STATUS     SERVER     CLIENT     AUTHN POLICY       DESTINATION RULE
+voting-storage.voting.svc.cluster.local:6379     OK         mTLS       mTLS       default/voting     voting-storage/voting
+HOST:PORT                                        STATUS     SERVER     CLIENT     AUTHN POLICY       DESTINATION RULE
+voting-storage.voting.svc.cluster.local:6379     OK         mTLS       mTLS       default/voting     voting-storage/voting
+
+# mTLS configuration between each of the voting-analytics version 1.1 pods and the voting-storage service
 HOST:PORT                                        STATUS     SERVER     CLIENT     AUTHN POLICY       DESTINATION RULE
 voting-storage.voting.svc.cluster.local:6379     OK         mTLS       mTLS       default/voting     voting-storage/voting
 ```
 
 ## <a name="roll-out-a-canary-release-of-the-application"></a>Ранний выпуск приложения
 
-Теперь давайте развернем новую версию *2.0* компонентов *voting-app*, *voting-analytics* и *voting-storage*. В новом компоненте *voting-storage* используется MySQL вместо Redis, а компоненты *voting-app* и *voting-analytics* обновляются, что позволяет им использовать новый компонент *voting-storage*.
+Теперь давайте Развернем новую версию `2.0` из `voting-app`, `voting-analytics`, и `voting-storage` компонентов. Новый `voting-storage` компонент использовать MySQL вместо Redis и `voting-app` и `voting-analytics` компоненты обновляются, чтобы они могли использовать это новое `voting-storage` компонента.
 
-Теперь компонент *voting-app* поддерживает использование флага компонента. Флаг компонента позволяет протестировать возможность Istio осуществить ранний выпуск для группы пользователей.
+`voting-app` Компонент теперь поддерживает флаг функциональные возможности. Флаг компонента позволяет протестировать возможность Istio осуществить ранний выпуск для группы пользователей.
 
-На следующей схеме показано, что выполняется в конце этого раздела.
+На следующей схеме показано, что у вас будет в конце этого раздела.
 
-* Версия *1.0* компонента *voting-app*, версия *1.1* компонента *voting-analytics* и версия *1.0* компонента *voting-storage* способны обмениваться данными друг с другом.
-* Версия *2.0* компонента *voting-app*, версия *2.0* компонента *voting-analytics* и версия *2.0* компонента *voting-storage* способны обмениваться данными друг с другом.
-* Версия *2.0* компонента *voting-app* доступна только пользователям, для которых установлен определенный флаг компонента. Управление этим изменением осуществляется с помощью флага компонента через файл cookie.
+* Версия `1.0` из `voting-app` компонент, версия `1.1` из `voting-analytics` компонент и версия `1.0` из `voting-storage` компонента, могут взаимодействовать друг с другом.
+* Версия `2.0` из `voting-app` компонент, версия `2.0` из `voting-analytics` компонент и версия `2.0` из `voting-storage` компонента, могут взаимодействовать друг с другом.
+* Версия `2.0` из `voting-app` компонентов доступны только тем пользователям, которым установлен флаг определенной функции. Управление этим изменением осуществляется с помощью флага компонента через файл cookie.
 
 ![Компоненты и маршрутизация приложения AKS для голосования.](media/istio/components-and-routing-03.png)
 
 Прежде всего обновите правила назначения и виртуальные службы Istio для работы с новыми компонентами. Это гарантирует, что трафик не будет несоответствующим образом направляться к новым компонентам, и пользователи не получат доступ непредвиденным образом:
 
-```console
-istioctl replace -f istio/step-3-add-routing-for-2.0-components.yaml --namespace voting
+```azurecli
+kubectl apply -f istio/step-3-add-routing-for-2.0-components.yaml --namespace voting
 ```
 
-В следующем примере выходных данных показано, что целевые правила и виртуальные службы успешно обновлены:
-
-```
-Updated config destination-rule/voting/voting-app to revision 150930
-Updated config virtual-service/voting/voting-app to revision 150931
-Updated config destination-rule/voting/voting-analytics to revision 150937
-Updated config virtual-service/voting/voting-analytics to revision 150939
-Updated config destination-rule/voting/voting-storage to revision 150940
-Updated config virtual-service/voting/voting-storage to revision 150941
-```
-
-Далее добавим объекты Kubernetes для компонентов новой версии *2.0*. Следует также обновить службу *voting-storage*, чтобы включить в нее порт *3306* для MySQL:
+В следующем примере выходных данных показано правила назначения и обновление виртуальных служб.
 
 ```console
+destinationrule.networking.istio.io/voting-app configured
+virtualservice.networking.istio.io/voting-app configured
+destinationrule.networking.istio.io/voting-analytics configured
+virtualservice.networking.istio.io/voting-analytics configured
+destinationrule.networking.istio.io/voting-storage configured
+virtualservice.networking.istio.io/voting-storage configured
+```
+
+Далее добавим объекты Kubernetes для новой версии `2.0` компонентов. Можно также обновить `voting-storage` сервису включать `3306` порт для MySQL:
+
+```azurecli
 kubectl apply -f kubernetes/step-3-update-voting-app-with-new-storage.yaml --namespace voting
 ```
 
 В следующем примере выходных данных показано, что объекты Kubernetes успешно обновлены или созданы:
 
-```
+```console
 service/voting-storage configured
 secret/voting-storage-secret created
 deployment.apps/voting-storage-2-0 created
@@ -339,13 +402,13 @@ deployment.apps/voting-analytics-2-0 created
 deployment.apps/voting-app-2-0 created
 ```
 
-Подождите, пока не будут выполняться все группы pod версии *2.0*. Воспользуйтесь командой [kubectl get pods][kubectl-get] для просмотра всех групп pod в пространстве имен *voting*:
+Подождите, пока все версии `2.0` POD будут запущены. Используйте [kubectl get pods] [ kubectl-get] команду, чтобы просмотреть все модули в `voting` пространство имен:
 
 ```azurecli
 kubectl get pods --namespace voting
 ```
 
-Теперь у вас должна быть возможность переключаться между версией *1.0* и версией *2.0* (ранний выпуск) приложения для голосования. Переключатель флага компонента в нижней части экрана устанавливает файл cookie. Этот файл cookie используется виртуальной службой *voting-app* для направления пользователей к новой версии *2.0*.
+Теперь можно переключиться между версией `1.0` и версии `2.0` (ранний) приложения для голосования. Переключатель флага компонента в нижней части экрана устанавливает файл cookie. Этот файл cookie используется `voting-app` виртуальной службы для перенаправления пользователей в новой версии `2.0`.
 
 ![Версия 1.0 приложения AKS Voting — флаг компонента НЕ задан.](media/istio/canary-release-01.png)
 
@@ -355,7 +418,7 @@ kubectl get pods --namespace voting
 
 ## <a name="finalize-the-rollout"></a>Финализация выпуска
 
-После успешного тестирования раннего выпуска, обновите виртуальную службу *voting-app*, чтобы направить весь трафик к версии *2.0* компонента *voting-app*. После этого всем пользователям будет отображаться версия *2.0* приложения, независимо от того, задан ли флаг компонента:
+После успешного тестирования раннего выпуска, обновить `voting-app` виртуальной службы, чтобы направить весь трафик к версии `2.0` из `voting-app` компонента. Затем будет видна всем пользователям версии `2.0` приложения, независимо от того, задан ли флаг компонента:
 
 ![Компоненты и маршрутизация приложения AKS для голосования.](media/istio/components-and-routing-04.png)
 
@@ -367,22 +430,39 @@ kubectl get pods --namespace voting
 
 Вы успешно выпустили новую версию приложения для голосования AKS Voting.
 
+## <a name="clean-up"></a>Очистка 
+
+Можно удалить приложение голосования AKS, мы использовали в этом сценарии из кластера AKS, удалив `voting` пространства имен следующим образом:
+
+```azurecli
+kubectl delete namespace voting
+```
+
+В следующем примере выходных данных показано, что все компоненты приложения голосования AKS были удалены из кластера AKS.
+
+```console
+namespace "voting" deleted
+```
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Вы можете исследовать дополнительные сценарии, используя [пример приложения Istio Bookinfo][istio-bookinfo-example].
 
 <!-- LINKS - external -->
 [github-azure-sample]: https://github.com/Azure-Samples/aks-voting-app
+[istio-github]: https://github.com/istio/istio
+
 [istio]: https://istio.io
 [istio-docs-concepts]: https://istio.io/docs/concepts/what-is-istio/
-[istio-github]: https://github.com/istio/istio
-[istio-requirements-pods-and-services]: https://istio.io/docs/setup/kubernetes/spec-requirements/
-[istio-reference-gateway]: https://istio.io/docs/reference/config/istio.networking.v1alpha3/#Gateway
+[istio-requirements-pods-and-services]: https://istio.io/docs/setup/kubernetes/prepare/requirements/
+[istio-reference-gateway]: https://istio.io/docs/reference/config/networking/v1alpha3/gateway/
 [istio-reference-policy]: https://istio.io/docs/reference/config/istio.authentication.v1alpha1/#Policy
-[istio-reference-virtualservice]: https://istio.io/docs/reference/config/istio.networking.v1alpha3/#VirtualService
-[istio-reference-destinationrule]: https://istio.io/docs/reference/config/istio.networking.v1alpha3/#DestinationRule
-[kubernetes-service]: https://kubernetes.io/docs/concepts/services-networking/service/
+[istio-reference-virtualservice]: https://istio.io/docs/reference/config/networking/v1alpha3/virtual-service/
+[istio-reference-destinationrule]: https://istio.io/docs/reference/config/networking/v1alpha3/destination-rule/
 [istio-bookinfo-example]: https://istio.io/docs/examples/bookinfo/
+[istioctl-authn-tls-check]: https://istio.io/docs/reference/commands/istioctl/#istioctl-authn-tls-check
+
+[kubernetes-service]: https://kubernetes.io/docs/concepts/services-networking/service/
 [kubectl-get]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#get
 [kubectl-describe]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#describe
 

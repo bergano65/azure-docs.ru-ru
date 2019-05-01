@@ -2,23 +2,19 @@
 title: Что делать, если прерывание работы службы Azure влияет на Azure Key Vault — Azure Key Vault | Документация Майкрософт
 description: Узнайте, что делать, если прерывание работы службы Azure влияет на хранилище ключей Azure.
 services: key-vault
-documentationcenter: ''
 author: barclayn
 manager: barbkess
 editor: ''
-ms.assetid: 19a9af63-3032-447b-9d1a-b0125f384edb
 ms.service: key-vault
-ms.workload: key-vault
-ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 01/07/2019
 ms.author: barclayn
-ms.openlocfilehash: dd1d2af174f93cceabccd62a78d45a0e4fbed502
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 9346f3f9bd9395ac863af87d05724a76ae83fb2f
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60305447"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64702332"
 ---
 # <a name="azure-key-vault-availability-and-redundancy"></a>Доступность и избыточность хранилища ключей Azure
 

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: 7bb25aa1f77a49363fe2e08d1430282b9b33caae
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 87f86f861ffc036077b25a2514fbd2d0c57da735
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60311647"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64716768"
 ---
 # <a name="azure-policy-definition-structure"></a>Структура определения службы "Политика Azure"
 
@@ -66,7 +66,7 @@ ms.locfileid: "60311647"
 }
 ```
 
-Все примеры политик Azure см. [здесь](../samples/index.md).
+Все примеры политик Azure находятся на [примеры политик Azure](../samples/index.md).
 
 [!INCLUDE [az-powershell-update](../../../../includes/updated-for-az.md)]
 
@@ -99,6 +99,7 @@ ms.locfileid: "60311647"
   - `description`: Объясняет назначение параметра. Можно использовать для примеров допустимых значений.
   - `displayName`: Понятное имя параметра, которое отображается на портале.
   - `strongType`: (Необязательно.) Используется при назначении определения политики через портал. Предоставляет список с учетом контекста. См. дополнительные сведения о [вложенном свойстве strongType](#strongtype).
+  - `assignPermissions`: (Необязательно) Задать в качестве _true_ для портала Azure создать назначения ролей во время назначения политики. Это свойство полезно в случае, если вы хотите назначить разрешения за пределами области назначения. Есть одно назначение ролей на определение роли в политике (или на определение роли, во всех политик в инициативу). Значение параметра должен быть действительный ресурс или области.
 - `defaultValue`: (Необязательно.) Устанавливает значение параметра в назначении, если значение не указано. Это свойство необходимо при обновлении существующего назначенного определения политики.
 - `allowedValues`: (Необязательно) Предоставляет массив значений, которые принимает параметр во время назначения.
 
@@ -148,6 +149,7 @@ ms.locfileid: "60311647"
 - `omsWorkspace`
 - `Microsoft.EventHub/Namespaces/EventHubs`
 - `Microsoft.EventHub/Namespaces/EventHubs/AuthorizationRules`
+- `Microsoft.EventHub/Namespaces/AuthorizationRules`
 - `Microsoft.RecoveryServices/vaults`
 - `Microsoft.RecoveryServices/vaults/backupPolicies`
 
@@ -375,7 +377,7 @@ ms.locfileid: "60311647"
 
 ### <a name="effect"></a>Эффект
 
-Политика поддерживает следующие типы действий:
+"Политика Azure" поддерживает следующие типы действий:
 
 - **Deny** записывает событие в журнал действий и отвергает запрос;
 - **Audit** записывает предупреждение в журнал действий, но не отвергает запрос;
@@ -410,7 +412,7 @@ ms.locfileid: "60311647"
 }
 ```
 
-Подробные сведения о каждом эффекте, порядке оценки и свойствах, а также примеры см. в статье [Действия политик](effects.md).
+Для получения дополнительных сведений о каждой эффект, порядок вычисления, свойств и примерами см. в разделе [эффекты политики Azure понимание](effects.md).
 
 ### <a name="policy-functions"></a>Функции политики
 
@@ -593,9 +595,9 @@ ms.locfileid: "60311647"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- См. другие [примеры шаблонов для службы "Политика Azure"](../samples/index.md).
+- Просмотрите примеры доступны на [примеры политик Azure](../samples/index.md).
 - См. дополнительные сведения о [действиях политик](effects.md).
-- См. сведения о [программном создании политик](../how-to/programmatically-create.md).
-- Узнайте о том, как получить [подробные сведения о соответствии](../how-to/getting-compliance-data.md).
-- См. сведения о том, как [исправлять несоответствующие ресурсы](../how-to/remediate-resources.md).
-- См. дополнительные сведения о группе управления в разделе [Упорядочение ресурсов с помощью групп управления Azure](../../management-groups/overview.md)
+- Понять, как [программное создание политик](../how-to/programmatically-create.md).
+- Узнайте, как [получить данные о соответствии](../how-to/getting-compliance-data.md).
+- Узнайте, как [исправлять несоответствующие ресурсы](../how-to/remediate-resources.md).
+- Просмотрите, какие группы управления — с [упорядочение ресурсов с помощью групп управления Azure](../../management-groups/overview.md).

@@ -11,11 +11,11 @@ ms.topic: article
 ms.assetid: 4fd48d2d-2008-4080-b6a1-8ae183b48131
 ms.date: 01/27/2017
 ms.openlocfilehash: 4a19462f4f849602fd14fe1204f1c7e3c01e6ec4
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
-ms.translationtype: HT
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62106525"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64701446"
 ---
 # <a name="decode-x12-messages-in-azure-logic-apps-with-enterprise-integration-pack"></a>Декодирование сообщений X12 в Azure Logic Apps с помощью Пакета интеграции Enterprise
 
@@ -59,7 +59,7 @@ ms.locfileid: "62106525"
 
     ![создано подключение к учетной записи интеграции](media/logic-apps-enterprise-integration-x12-decode/x12decodeimage6.png) 
 
-    Пример.
+    Например: 
 
     ![Выбор неструктурированного файла сообщения X12 для декодирования](media/logic-apps-enterprise-integration-x12-decode/x12decodeimage7.png) 
 

@@ -14,11 +14,11 @@ ms.topic: article
 ms.date: 04/19/2019
 ms.author: juliako
 ms.openlocfilehash: 6a3c02c1f14c37317a03cb6ebe63bcddc92f3253
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
-ms.translationtype: HT
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62117014"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64710166"
 ---
 # <a name="azure-media-services-community"></a>Сообщество служб мультимедиа Azure  
 
@@ -52,7 +52,7 @@ ms.locfileid: "62117014"
 
 В следующей таблице перечислены адреса электронной почты подгрупп разработчиков различных функций.
 
-| Компонент | Электронная почта |
+| Функция | Email |
 | --- | --- |
 | Проигрыватель мультимедиа Azure |ampinfo@microsoft.com |
 | Обозреватель мультимедиа Azure |amse@microsoft.com |

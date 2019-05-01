@@ -10,12 +10,12 @@ ms.topic: reference
 ms.date: 09/10/2018
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: 86f2a8fa11becdf24c0a10c0325893946a033c3d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: da769093794a559e4b856f7ae4f211c3900632c6
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60360135"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64711044"
 ---
 # <a name="technicalprofiles"></a>TechnicalProfiles
 
@@ -85,7 +85,7 @@ ms.locfileid: "60360135"
 | Домен | 0:1 | Доменное имя технического профиля. Например, если в техническом профиле указан поставщик удостоверений Facebook, доменное имя будет иметь значение Facebook.com. |
 | DisplayName | 0:1 | Имя технического профиля, отображаемое для пользователей. |
 | ОПИСАНИЕ | 0:1 | Описание технического профиля, отображаемое для пользователей. |
-| Протокол | 0:1 | Протокол, используемый для взаимодействия с другой стороной. |
+| Protocol | 0:1 | Протокол, используемый для взаимодействия с другой стороной. |
 | Метаданные | 0:1 | Коллекция пар "ключ-значение", которые используются в протоколе взаимодействия с конечной точкой во время транзакции. |
 | InputTokenFormat | 0:1 | Формат входного маркера. Возможные значения: `JSON`, `JWT`, `SAML11` или `SAML2`. Значение `JWT` обозначает JSON Web Token по спецификации IETF. Значение `SAML11` обозначает веб-маркер SAML 1.1 по спецификации OASIS.  Значение `SAML2` обозначает веб-маркер SAML 2.0 по спецификации OASIS. |
 | OutputTokenFormat | 0:1 | Формат выходного маркера. Возможные значения: `JSON`, `JWT`, `SAML11` или `SAML2`. |
@@ -102,7 +102,7 @@ ms.locfileid: "60360135"
 | UseTechnicalProfileForSessionManagement | 0:1 | Другой технический профиль, который нужно использовать для управления сеансами. |
 |EnabledForUserJourneys| 0:1 |Указывает, выполняется ли технический профиль в пути взаимодействия пользователя.  |
 
-### <a name="protocol"></a>Протокол
+### <a name="protocol"></a>Protocol
 
 Элемент **Protocol** содержит следующие атрибуты.
 

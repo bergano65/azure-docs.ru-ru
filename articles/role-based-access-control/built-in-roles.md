@@ -11,16 +11,16 @@ ms.devlang: ''
 ms.topic: reference
 ms.tgt_pltfrm: ''
 ms.workload: identity
-ms.date: 04/01/2019
+ms.date: 04/25/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: it-pro
-ms.openlocfilehash: f505f922685cd192525814df25cca1a1401d2913
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 36a98ea52ea48c9828ca5857dc480742632056fb
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60749331"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64689864"
 ---
 # <a name="built-in-roles-for-azure-resources"></a>Встроенные роли для ресурсов Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "60749331"
 В таблице ниже содержится краткое описание каждой из встроенных ролей. Щелкните имя роли, чтобы просмотреть список `Actions`, `NotActions`, `DataActions` и `NotDataActions` для каждой роли. Сведения о значении этих действий и как они применяются в области управления и области данных см. в статье [Общие сведения об определениях ролей для ресурсов Azure](role-definitions.md).
 
 
-| Встроенные роли | Описание |
+| Встроенные роли | ОПИСАНИЕ |
 | --- | --- |
 | [Владелец](#owner) | Позволяет управлять всем, в том числе доступом к ресурсам. |
 | [Участник](#contributor) | Позволяет управлять всем, кроме доступа к ресурсам. |
@@ -87,6 +87,7 @@ ms.locfileid: "60749331"
 | [Участник учетной записи DocumentDB](#documentdb-account-contributor) | Может управлять учетными записями Azure Cosmos DB Служба Azure Cosmos DB раньше называлась DocumentDB. |
 | [Участник EventGrid EventSubscription](#eventgrid-eventsubscription-contributor) | Позволяет управлять операциями с подписками на события Сетки событий. |
 | [Читатель EventGrid EventSubscription](#eventgrid-eventsubscription-reader) | Позволяет получить доступ на чтение к подпискам на события Сетки событий. |
+| [Оператор кластера HDInsight](#hdinsight-cluster-operator) | Позволяет читать и изменять конфигурации кластера HDInsight. |
 | [Участник доменных служб HDInsight](#hdinsight-domain-services-contributor) | Позволяет читать, создавать, изменять и удалять операции, связанные с доменными службами, необходимыми для Корпоративного пакета безопасности HDInsight |
 | [Участник учетной записи интеллектуальных систем](#intelligent-systems-account-contributor) | Позволяет управлять учетными записями интеллектуальных систем, но не доступом к ним. |
 | [Участник Key Vault](#key-vault-contributor) | Позволяет управлять хранилищами ключей, но не доступом к ним. |
@@ -121,6 +122,7 @@ ms.locfileid: "60749331"
 | [Владелец учетной записи пространственных привязки](#spatial-anchors-account-owner) | Позволяет управлять пространственными привязками в вашей учетной записи, в том числе удалять их. |
 | [Средство чтения пространственных привязки учетной записи](#spatial-anchors-account-reader) | Позволяет найти и прочитать свойства пространственных привязок в вашей учетной записи. |
 | [Участник базы данных SQL](#sql-db-contributor) | Позволяет управлять базами данных SQL, но не доступом к ним. Кроме того, не позволяет управлять их политиками безопасности или родительскими серверами SQL Server. |
+| [Управляемый экземпляр участника SQL](#sql-managed-instance-contributor) | Позволяет управлять управляемые экземпляры SQL и необходимые сетевые конфигурации, но не может предоставлять доступ другим пользователям. |
 | [Диспетчер безопасности SQL](#sql-security-manager) | Позволяет управлять политиками безопасности серверов SQL Server и баз данных SQL, но не доступом к ним. |
 | [Участник SQL Server](#sql-server-contributor) | Позволяет управлять серверами SQL Server и базами данных SQL, но не доступом к ним и их политиками безопасности. |
 | [Участник учетной записи хранения](#storage-account-contributor) | Позволяет управлять учетными записями хранения, но не доступом к ним. |
@@ -327,7 +329,7 @@ ms.locfileid: "60749331"
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Получает или перечисляет группы ресурсов. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
 > | **NotActions** |  |
-> | Microsoft.ApiManagement/service/users/keys/read | Возвращает список ключей пользователя. |
+> | Microsoft.ApiManagement/service/users/keys/read | Получить ключи, связанные с пользователем |
 > | **Действия с данными** |  |
 > | *Нет* |  |
 > | **NotDataActions** |  |
@@ -349,7 +351,7 @@ ms.locfileid: "60749331"
 > | Microsoft.Resources/subscriptions/resourceGroups/read | Получает или перечисляет группы ресурсов. |
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
 > | **NotActions** |  |
-> | Microsoft.ApiManagement/service/users/keys/read | Возвращает список ключей пользователя. |
+> | Microsoft.ApiManagement/service/users/keys/read | Получить ключи, связанные с пользователем |
 > | **Действия с данными** |  |
 > | *Нет* |  |
 > | **NotDataActions** |  |
@@ -1385,6 +1387,28 @@ ms.locfileid: "60749331"
 > | **NotDataActions** |  |
 > | *Нет* |  |
 
+## <a name="hdinsight-cluster-operator"></a>Оператор кластера HDInsight
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Описание** | Позволяет читать и изменять конфигурации кластера HDInsight. |
+> | **Id** | 61ed4efc-fab3-44fd-b111-e24485cc132a |
+> | **Действия** |  |
+> | Microsoft.HDInsight/*/read |  |
+> | Microsoft.HDInsight/clusters/getGatewaySettings/action | Получить параметры шлюза для кластера HDInsight |
+> | Microsoft.HDInsight/clusters/updateGatewaySettings/action | Обновите параметры шлюза для кластера HDInsight |
+> | Microsoft.HDInsight/clusters/configurations/* |  |
+> | Microsoft.Resources/subscriptions/resourceGroups/read | Получает или перечисляет группы ресурсов. |
+> | Microsoft.Resources/deployments/operations/read | Получает или перечисляет операции развертывания. |
+> | Microsoft.Insights/alertRules/* | Создание правил оповещения Insights и управление ими |
+> | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
 ## <a name="hdinsight-domain-services-contributor"></a>Участник доменных служб HDInsight
 > [!div class="mx-tableFixed"]
 > | | |
@@ -1807,6 +1831,7 @@ ms.locfileid: "60749331"
 > | **Id** | c12c1c16-33a1-487b-954d-41c89c60f349 |
 > | **Действия** |  |
 > | Microsoft.Storage/storageAccounts/listKeys/action | Возвращает ключи доступа для указанной учетной записи хранения. |
+> | Microsoft.Storage/storageAccounts/ListAccountSas/action | Возвращает маркер SAS для указанной учетной записи хранения. |
 > | Microsoft.Storage/storageAccounts/read | Возвращает список учетных записей хранения или получает свойства для указанной учетной записи хранения. |
 > | **NotActions** |  |
 > | *Нет* |  |
@@ -2228,6 +2253,34 @@ ms.locfileid: "60749331"
 > | Microsoft.Sql/servers/databases/vulnerabilityAssessmentScans/* |  |
 > | Microsoft.Sql/servers/databases/vulnerabilityAssessmentSettings/* |  |
 > | Microsoft.Sql/servers/vulnerabilityAssessments/* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+## <a name="sql-managed-instance-contributor"></a>Управляемый экземпляр участника SQL
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Описание** | Позволяет управлять управляемые экземпляры SQL и необходимые сетевые конфигурации, но не может предоставлять доступ другим пользователям. |
+> | **Id** | 4939a1f6-9ae0-4e48-a1e0-f2cbe897382d |
+> | **Действия** |  |
+> | Microsoft.ResourceHealth/availabilityStatuses/read | Получает состояния доступности для всех ресурсов в указанной области |
+> | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
+> | Microsoft.Resources/subscriptions/resourceGroups/read | Получает или перечисляет группы ресурсов. |
+> | Microsoft.Network/networkSecurityGroups/* |  |
+> | Microsoft.Network/routeTables/* |  |
+> | Microsoft.Sql/locations/*/read |  |
+> | Microsoft.Sql/managedInstances/* |  |
+> | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | Microsoft.Network/virtualNetworks/subnets/* |  |
+> | Microsoft.Network/virtualNetworks/* |  |
+> | Microsoft.Authorization/*/read | Чтение ролей и назначений ролей |
+> | Microsoft.Insights/alertRules/* | Создание правил оповещения Insights и управление ими |
+> | Microsoft.Insights/metrics/read | Метрик считано |
+> | Microsoft.Insights/metricDefinitions/read | Чтение определений метрик |
+> | **NotActions** |  |
+> | *Нет* |  |
 > | **Действия с данными** |  |
 > | *Нет* |  |
 > | **NotDataActions** |  |

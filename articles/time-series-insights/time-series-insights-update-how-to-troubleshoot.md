@@ -10,12 +10,12 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.custom: seodec18
-ms.openlocfilehash: 381ecd4681bf1d7abfc8939e256bf84db9bc2172
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 3ab3c680f7279ff78e0319f28f67c1cc8c203b47
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60460622"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64708032"
 ---
 # <a name="diagnose-and-troubleshoot"></a>Диагностирование и устранение неполадок
 
@@ -109,7 +109,8 @@ ms.locfileid: "60460622"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Data modeling in Azure Time Series Insights Preview](./time-series-insights-update-how-to-tsm.md) (Моделирование данных в службе "Аналитика временных рядов Azure" (предварительная версия))
-- [Формирование JSON для достижения максимальной производительности запросов](./how-to-shape-query-json.md)
+
+- Дополнительные сведения о [поддерживаемые формы JSON](./how-to-shape-query-json.md).
 
 <!-- Images -->
 [1]: media/v2-update-diagnose-and-troubleshoot/environment.png

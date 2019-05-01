@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 04/05/2019
 ms.author: hrasheed
 ms.openlocfilehash: 1bd06507bd8a20cf504c1ff4cd9fe7e3b9196a3c
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
-ms.translationtype: HT
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62129320"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64687765"
 ---
 # <a name="migrate-on-premises-apache-hadoop-clusters-to-azure-hdinsight---infrastructure-best-practices"></a>Миграция локальных кластеров Apache Hadoop в HDInsight Azure — рекомендации по использованию инфраструктуры
 
@@ -55,7 +55,7 @@ ms.locfileid: "62129320"
 |Ignite|IaaS
 |Jethro|IaaS 
 |Mapador|IaaS 
-|Монго|IaaS (CosmosDB — альтернатива в Azure)
+|Mongo|IaaS (CosmosDB — альтернатива в Azure)
 |NiFi|IaaS 
 |Presto|IaaS или HDInsight граничный узел
 |Python 2;|PaaS 
@@ -67,7 +67,7 @@ ms.locfileid: "62129320"
 |Waterline|HDInsight граничный узел
 |Наборы потоков|HDInsight edge 
 |Palantir|IaaS 
-|SailPoint|IaaS 
+|Sailpoint|IaaS 
 
 Дополнительные сведения см. в статье [Компоненты Hadoop, доступные в разных версиях HDInsight](../hdinsight-component-versioning.md#apache-hadoop-components-available-with-different-hdinsight-versions)
 
@@ -86,8 +86,8 @@ HDInsight предоставляет предварительно созданн
 - установка Presto;
 - установка Solr;
 - установка Giraph;
-- Предварительно загрузить библиотеки Hive
-- Установить или обновить Mono
+- предварительная загрузка библиотек Hive.
+- Установка или обновление Mono
 
 > [!Note]  
 > HDInsight не обеспечивает прямую поддержку пользовательских компонентов Hadoop или компонентов, установленных с помощью действий сценариев.

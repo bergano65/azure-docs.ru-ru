@@ -1,21 +1,19 @@
 ---
 title: Структурированная потоковая передача Spark в Azure HDInsight
 description: Инструкции по использованию приложений структурированной потоковой передачи Spark в кластерах HDInsight Spark.
-services: hdinsight
 author: maxluk
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
-orgin.date: 02/05/2018
-ms.date: 04/01/2019
-ms.author: v-yiso
+ms.date: 02/05/2018
+ms.author: maxluk
 ms.openlocfilehash: 0e9d87e5b344b7091a2a0cf41d6f7fa3484dfcf3
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
-ms.translationtype: HT
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62098581"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64711325"
 ---
 # <a name="overview-of-apache-spark-structured-streaming"></a>Обзор структурированной потоковой передачи Apache Spark
 
@@ -25,9 +23,9 @@ ms.locfileid: "62098581"
 
 При структурированной потоковой передаче создается долго выполняющийся запрос, в рамках которого ко входным данным применяются такие операции, как выбор, проецирование, агрегация, разграничение по временным окнам и объединение потокового кадра данных с запрашиваемыми кадрами данных. Затем результаты выводятся в хранилище файлов (Azure Storage Blob или Data Lake Storage) или в любое хранилище данных с использованием специального кода (например, базы данных SQL или Power BI). Кроме того, при структурированной потоковой передаче данные выводятся на консоль для отладки в локальной среде и в таблицу в памяти, чтобы вы могли видеть данные, созданные для отладки в HDInsight. 
 
-![Потоковая обработка с помощью HDInsight и структурированной потоковой передачи Spark ](./media/apache-spark-structured-streaming-overview/hdinsight-spark-structured-streaming.png)
+![Потоковая обработка с помощью HDInsight и структурированной потоковой передачи Spark](./media/apache-spark-structured-streaming-overview/hdinsight-spark-structured-streaming.png)
 
-> [!NOTE]
+> [!NOTE]  
 > Структурированная потоковая передача Spark заменяет потоковую передачу Spark (потоки DStream). Забегая вперед, для структурированной потоковой передачи планируется усовершенствование и обслуживание, а функция потоков DStream будет находиться только в режиме обслуживания. Структурированная потоковая передача в настоящее время не является готовой функцией, как потоковая передача DStream для источников и приемников, поддерживаемых без дополнительной настройки, поэтому проанализируйте требования для выбора соответствующего варианта потоковой обработки Spark. 
 
 ## <a name="streams-as-tables"></a>Потоки как таблицы
