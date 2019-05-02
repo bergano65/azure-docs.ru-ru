@@ -57,7 +57,7 @@ $SSISDBPricingTier = "<pricing tier of your Azure SQL server. Examples: Basic, S
 ```
 
 ## <a name="azuressislocation"></a>AzureSSISLocation
-**AzureSSISLocation** — расположение для рабочего узла среды выполнения интеграции. Рабочий узел поддерживает постоянное подключение к базе данных каталога SSIS (SSISDB) в базе данных Azure SQL. Задайте для **AzureSSISLocation** то же расположение, что и для сервера базы данных SQL, на котором размещена SSISDB, что позволяет среде выполнения интеграции работать максимально эффективно.
+**AzureSSISLocation** — расположение для рабочего узла среды выполнения интеграции. Рабочий узел поддерживает постоянное подключение к базе данных каталога SSIS (SSISDB) в базе данных Azure SQL. Задайте для **AzureSSISLocation** то же расположение, что и для сервера Базы данных SQL, на котором размещена SSISDB, что позволяет среде выполнения интеграции работать максимально эффективно.
 
 ## <a name="azuressisnodesize"></a>AzureSSISNodeSize
 Служба "Фабрика данных Azure", включая среду выполнения интеграции MSSQL Integration Services Azure, поддерживает следующие параметры:

@@ -99,7 +99,7 @@ ALTER DATABASE current SET AUTOMATIC_TUNING (FORCE_LAST_GOOD_PLAN = ON, CREATE_I
 > В случае активной георепликации нужно настроить автоматическую настройку только на базу данных-источник, подробнее см. в [этой статье](sql-database-auto-failover-group.md). Действия по настройке, которые применяются автоматически, например создание индекса или удаление, будут автоматически реплицированы в дополнение только для чтения. При попытке включения автоматической настройки с помощью T-SQL для дополнения только для чтения произойдет сбой, поскольку для него не поддерживаются различные конфигурации настроек.
 >
 
-Дополнительные сведения о параметрах T-SQL для конфигурации автонастройки см. в статье [Параметры ALTER DATABASE SET (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql-set-options?view=azuresqldb-current).
+Дополнительные сведения о параметрах T-SQL для конфигурации автонастройки см. в статье [Параметры ALTER DATABASE SET (Transact-SQL) для сервера Базы данных SQL](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql-set-options?view=azuresqldb-current).
 
 ## <a name="disabled-by-the-system"></a>Отключено системой
 

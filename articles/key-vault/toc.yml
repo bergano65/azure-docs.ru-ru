@@ -74,7 +74,7 @@
       href: key-vault-ovw-soft-delete.md
     - name: Регулирование
       href: key-vault-ovw-throttling.md
-    - name: Конечные точки службы виртуальной сети
+    - name: Конечные точки служб для виртуальной сети
       href: key-vault-overview-vnet-service-endpoints.md
     - name: 'Аутентификация, запросы и ответы'
       href: authentication-requests-and-responses.md

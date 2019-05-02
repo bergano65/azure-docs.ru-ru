@@ -128,7 +128,7 @@ az sql server create --name <server_name> --resource-group myResourceGroup --loc
 
 ### <a name="configure-a-server-firewall-rule"></a>Настройка правил брандмауэра сервера
 
-Создайте [правило брандмауэра серверного уровня для Базы данных SQL Azure](../sql-database/sql-database-firewall-configure.md) с помощью команды [`az sql server firewall create`](/cli/azure/sql/server/firewall-rule?view=azure-cli-latest#az-sql-server-firewall-rule-create). Если для начального и конечного IP-адресов задано значение 0.0.0.0, брандмауэр открыт только для других ресурсов Azure. 
+Создайте [правило брандмауэра уровня сервера Базы данных SQL Azure](../sql-database/sql-database-firewall-configure.md) с помощью команды [`az sql server firewall create`](/cli/azure/sql/server/firewall-rule?view=azure-cli-latest#az-sql-server-firewall-rule-create). Если для начального и конечного IP-адресов задано значение 0.0.0.0, брандмауэр открыт только для других ресурсов Azure. 
 
 ```azurecli-interactive
 az sql server firewall-rule create --resource-group myResourceGroup --server <server_name> --name AllowYourIp --start-ip-address 0.0.0.0 --end-ip-address 0.0.0.0

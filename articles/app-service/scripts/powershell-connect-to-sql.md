@@ -53,7 +53,7 @@ Remove-AzResourceGroup -Name myResourceGroup -Force
 | [New-AzAppServicePlan](/powershell/module/az.websites/new-azappserviceplan) | Создает план службы приложений. |
 | [New-AzWebApp](/powershell/module/az.websites/new-azwebapp) | Создает приложение Службы приложений. |
 | [New-AzSQLServer](/powershell/module/az.sql/new-azsqlserver) | Создает сервер базы данных SQL. |
-| [New-AzSqlServerFirewallRule](/powershell/module/az.sql/new-azsqlserverfirewallrule) | Создает правило брандмауэра для сервера базы данных SQL. |
+| [New-AzSqlServerFirewallRule](/powershell/module/az.sql/new-azsqlserverfirewallrule) | Создает правило брандмауэра для сервера Базы данных SQL. |
 | [New-AzSQLDatabase](/powershell/module/az.sql/new-azsqldatabase) | Создает базу данных или эластичную базу данных. |
 | [Set-AzWebApp](/powershell/module/az.websites/set-azwebapp) | Изменяет конфигурацию приложения Службы приложений. |
 

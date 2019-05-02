@@ -1,7 +1,6 @@
 ---
 title: Заметки о выпуске Azure HDInsight
 description: Последние заметки о выпуске Azure HDInsight. Ознакомьтесь с советами по разработке и подробными сведениями о Hadoop, Spark, R Server, Hive и т. д.
-services: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
@@ -9,12 +8,12 @@ ms.custom: hdinsightactive
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 04/15/2019
-ms.openlocfilehash: 9ca3635e93c8d66d23c74c3774ccee2c563d85b4
-ms.sourcegitcommit: fec96500757e55e7716892ddff9a187f61ae81f7
+ms.openlocfilehash: 95a530ea57237453a3b0d7d8dd42963f4b9c3dde
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59618232"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64713041"
 ---
 # <a name="release-notes-for-azure-hdinsight"></a>Заметки о выпуске Azure HDInsight
 

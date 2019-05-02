@@ -14,7 +14,7 @@ manager: craigg
 ms.date: 03/12/2019
 ms.openlocfilehash: 6362084c11ce7aa9078823758700239694162765
 ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/18/2019
 ms.locfileid: "59359153"
@@ -44,10 +44,10 @@ ms.locfileid: "59359153"
 |[Get-AzSqlInstance](https://docs.microsoft.com/powershell/module/az.sql/get-azsqlinstance)|Возвращает информацию об Управляемом экземпляре SQL Azure|
 |[Set-AzSqlInstance](https://docs.microsoft.com/powershell/module/az.sql/set-azsqlinstance)|Задает свойства для Управляемого экземпляра Базы данных SQL Azure|
 |[Remove-AzSqlInstance](https://docs.microsoft.com/powershell/module/az.sql/remove-azsqlinstance)|Удаляет Управляемый экземпляр Базы данных SQL Azure|
-|[New-AzSqlInstanceDatabase](https://docs.microsoft.com/powershell/module/az.sql/new-azsqlinstancedatabase)|Создает базу данных Управляемого экземпляра Базы данных SQL Azure|
-|[Get-AzSqlInstanceDatabase](https://docs.microsoft.com/powershell/module/az.sql/get-azsqlinstancedatabase)|Возвращает информацию о базе данных Управляемого экземпляра Базы данных SQL Azure|
-|[Remove-AzSqlInstanceDatabase](https://docs.microsoft.com/powershell/module/az.sql/remove-azsqlinstancedatabase)|Удаляет базу данных Управляемого экземпляра Базы данных SQL Azure|
-|[Restore-AzSqlInstanceDatabase](https://docs.microsoft.com/powershell/module/az.sql/restore-azsqlinstancedatabase)|Восстанавливает базу данных Управляемого экземпляра Базы данных SQL Azure|
+|[New-AzSqlInstanceDatabase](https://docs.microsoft.com/powershell/module/az.sql/new-azsqlinstancedatabase)|Создает базу данных управляемого экземпляра Базы данных SQL Azure|
+|[Get-AzSqlInstanceDatabase](https://docs.microsoft.com/powershell/module/az.sql/get-azsqlinstancedatabase)|Возвращает информацию о базе данных управляемого экземпляра Базы данных SQL Azure|
+|[Remove-AzSqlInstanceDatabase](https://docs.microsoft.com/powershell/module/az.sql/remove-azsqlinstancedatabase)|Удаляет базу данных управляемого экземпляра Базы данных SQL Azure|
+|[Restore-AzSqlInstanceDatabase](https://docs.microsoft.com/powershell/module/az.sql/restore-azsqlinstancedatabase)|Восстанавливает базу данных управляемого экземпляра Базы данных SQL Azure|
 
 ## <a name="azure-cli-create-and-manage-managed-instances"></a>Azure CLI: Создание управляемых экземпляров и управление ими
 
@@ -68,9 +68,9 @@ ms.locfileid: "59359153"
 |[az sql midb restore](https://docs.microsoft.com/cli/azure/sql/midb#az-sql-midb-restore)|Восстанавливает управляемую базу данных|
 |[az sql midb delete](https://docs.microsoft.com/cli/azure/sql/midb#az-sql-midb-delete)|Удаляет управляемую базу данных|
 
-## <a name="transact-sql-create-and-manage-instance-databases"></a>Transact-SQL: Создание и управление базами данных управляемого экземпляра
+## <a name="transact-sql-create-and-manage-instance-databases"></a>Transact-SQL: Создание баз данных экземпляров и управление ими
 
-Для создания базы данных управляемого экземпляра и управления ею после создания Управляемого экземпляра используйте следующие команды T-SQL. Эти команды можно выполнить с помощью портала Azure, [SQL Server Management Studio](/sql/ssms/use-sql-server-management-studio), [Azure Data Studio](https://docs.microsoft.com/sql/azure-data-studio/what-is), [Visual Studio Code](https://code.visualstudio.com/docs) или любой другой программы, которая может подключаться к серверу Базы данных SQL Azure и передавать команды Transact-SQL.
+Для создания базы данных управляемого экземпляра и управления ею после создания управляемого экземпляра используйте следующие команды T-SQL. Эти команды можно выполнить с помощью портала Azure, [SQL Server Management Studio](/sql/ssms/use-sql-server-management-studio), [Azure Data Studio](https://docs.microsoft.com/sql/azure-data-studio/what-is), [Visual Studio Code](https://code.visualstudio.com/docs) или любой другой программы, которая может подключаться к серверу Базы данных SQL Azure и передавать команды Transact-SQL.
 
 > [!TIP]
 > Краткие руководства для настройки и подключения к Управляемому экземпляру с помощью SQL Server Management Studio в Microsoft Windows см. в статье [Краткое руководство. Настройка виртуальной машины Azure для подключения к Управляемому экземпляру Базы данных SQL Azure](sql-database-managed-instance-configure-vm.md) и [Краткое руководство. Настройка подключения "точка — сеть" к Управляемому экземпляру Базы данных SQL Azure с локального компьютера](sql-database-managed-instance-configure-p2s.md).
@@ -79,8 +79,8 @@ ms.locfileid: "59359153"
 
 | Команда | ОПИСАНИЕ |
 | --- | --- |
-|[CREATE DATABASE](https://docs.microsoft.com/sql/t-sql/statements/create-database-transact-sql?view=azuresqldb-mi-current)|Создает базу данных Управляемого экземпляра. Для создания базы данных требуется подключение к базе данных master.|
-| [ALTER DATABASE](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-mi-current) |Изменяет базу данных Управляемого экземпляра SQL Azure.|
+|[CREATE DATABASE](https://docs.microsoft.com/sql/t-sql/statements/create-database-transact-sql?view=azuresqldb-mi-current)|Создает базу данных управляемого экземпляра. Для создания базы данных требуется подключение к базе данных master.|
+| [ALTER DATABASE](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-mi-current) |Изменяет базу данных управляемого экземпляра SQL Azure.|
 
 ## <a name="rest-api-create-and-manage-managed-instances"></a>REST API: Создание управляемых экземпляров и управление ими
 

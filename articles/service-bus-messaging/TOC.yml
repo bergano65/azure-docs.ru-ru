@@ -138,7 +138,7 @@
           items:
             - name: Использование брандмауэров
               href: service-bus-ip-filtering.md
-            - name: Конечные точки службы виртуальной сети
+            - name: Конечные точки служб для виртуальной сети
               href: service-bus-service-endpoints.md
             - name: Очереди недоставленных сообщений
               href: service-bus-dead-letter-queues.md

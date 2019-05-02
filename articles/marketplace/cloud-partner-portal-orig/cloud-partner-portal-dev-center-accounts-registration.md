@@ -1,25 +1,18 @@
 ---
-title: Создание учетной записи разработчика Майкрософт | Документация Майкрософт
+title: Создание учетной записи разработчика Майкрософт | Azure Marketplace
 description: Требования и шаги по созданию учетной записи разработчика Майкрософт.
 services: Azure, Marketplace, Cloud Partner Portal,
-documentationcenter: ''
 author: v-miclar
-manager: Patrick.Butler
-editor: ''
-ms.assetid: ''
 ms.service: marketplace
-ms.workload: ''
-ms.tgt_pltfrm: ''
-ms.devlang: ''
 ms.topic: conceptual
 ms.date: 09/13/2018
-ms.author: pbutlerm
-ms.openlocfilehash: adfe0af646fae79bc9a954cd5d654626880915d3
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.author: pabutler
+ms.openlocfilehash: 4fde5d81fb97bec23fdb46ff53b05874c88d9d67
+ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60326843"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64935867"
 ---
 <a name="create-a-microsoft-developer-account"></a>Создание учетной записи разработчика Майкрософт
 ====================================
@@ -106,7 +99,7 @@ ms.locfileid: "60326843"
    ![Выбор страны или региона](./media/cloud-partner-portal-create-dev-center-registration/imgRegisterCo_04.png)
 
     >[!WARNING]
-    >Допустимые страны продажи. Чтобы продавать услуги через Microsoft Azure Marketplace, юридическое лицо должно быть зарегистрировано в одной из утвержденных стран продажи, которые перечислены в раскрывающемся списке. Это ограничение связано с выплатами и налогообложением. Дополнительные сведения см. в описании политик участия в Marketplace.
+    >«Продажа — от» странах и регионах: Для продажи своих услуг в Azure Marketplace, ваше зарегистрированное юридическое должно быть в одной из утвержденных «Продажа — от» страны (регионы) в раскрывающемся списке. Это ограничение связано с выплатами и налогообложением. Дополнительные сведения см. в описании политик участия в Marketplace.
 
 5. Для параметра "Тип учетной записи" выберите значение **Компания** и щелкните **Далее**.
 

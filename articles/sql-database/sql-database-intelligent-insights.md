@@ -21,7 +21,7 @@ ms.locfileid: "60703217"
 ---
 # <a name="intelligent-insights-using-ai-to-monitor-and-troubleshoot-database-performance"></a>Функция Intelligent Insights использует искусственный интеллект для мониторинга производительности базы данных и устранения связанных с ней проблем.
 
-Intelligent Insights для Базы данных SQL Azure позволяет узнать, что происходит с производительностью Базы данных SQL Azure и баз данных Управляемых экземпляров.
+Intelligent Insights для Базы данных SQL Azure позволяет узнать, что происходит с производительностью Базы данных SQL Azure и баз данных управляемых экземпляров.
 
 Intelligent Insights использует встроенный аналитический механизм базы данных постоянного отслеживания использования базы данных с помощью искусственного интеллекта и обнаружения аварийных событий, снижающих производительность. После обнаружения выполняется подробный анализ и интеллектуальная оценка проблемы, после чего полученные результаты записываются в журнал диагностики. Эта оценка состоит из анализа первопричин проблемы с производительностью базы данных и возможных рекомендаций по повышению производительности.
 
@@ -65,7 +65,7 @@ Intelligent Insights анализирует производительность
 > [!VIDEO https://channel9.msdn.com/Shows/Azure-Friday/Get-Intelligent-Insights-for-Improving-Azure-SQL-Database-Performance/player]
 >
 
-Intelligent Insights является непревзойденным решением для обнаружения и устранения проблем производительности базы данных SQL. Чтобы устранить проблемы производительности Базы данных SQL и баз данных Управляемого экземпляра с помощью Intelligent Insights, ознакомьтесь с разделом [Устранение проблем с производительностью базы данных SQL Azure с помощью Intelligent Insights](sql-database-intelligent-insights-troubleshoot-performance.md).
+Intelligent Insights является непревзойденным решением для обнаружения и устранения проблем производительности базы данных SQL. Чтобы устранить проблемы производительности Базы данных SQL и баз данных управляемых экземпляров с помощью Intelligent Insights, ознакомьтесь с разделом [Устранение проблем с производительностью базы данных SQL Azure с помощью Intelligent Insights](sql-database-intelligent-insights-troubleshoot-performance.md).
 
 ## <a name="configure-intelligent-insights"></a>Настройка Intelligent Insights
 

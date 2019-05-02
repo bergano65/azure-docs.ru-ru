@@ -19,7 +19,7 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 04/18/2019
 ms.locfileid: "59356673"
 ---
-# <a name="use-powershell-to-create-a-single-azure-sql-database-and-configure-a-sql-database-server-firewall-rule"></a>Создание отдельной базы данных SQL Azure и настройка правила брандмауэра для сервера базы данных SQL с помощью PowerShell
+# <a name="use-powershell-to-create-a-single-azure-sql-database-and-configure-a-sql-database-server-firewall-rule"></a>Создание отдельной базы данных SQL Azure и настройка правила брандмауэра для сервера Базы данных SQL с помощью PowerShell
 
 Этот пример сценария PowerShell создает базу данных SQL Azure и настраивает правило брандмауэра уровня сервера. После успешного выполнения скрипта доступ к базе данных SQL можно получить из всех служб Azure, а также по настроенному IP-адресу.
 

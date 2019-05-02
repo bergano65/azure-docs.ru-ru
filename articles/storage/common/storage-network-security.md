@@ -115,7 +115,7 @@ ms.locfileid: "64917020"
 
 Включите [конечную точку службы](/azure/virtual-network/virtual-network-service-endpoints-overview) для службы хранилища Azure, входящей в нужную виртуальную сеть. Эта конечная точка обеспечит оптимальный маршрут трафика к службе хранилища Azure. В каждом запросе также передаются удостоверения виртуальной сети и подсети. Потом администраторы настроят сетевые правила для учетной записи хранения, разрешающие получение запросов из определенных подсетей в виртуальной сети. Клиенты, которым предоставлен доступ по этим сетевым правилам, по прежнему должны выполнять требования авторизации учетной записи хранения, чтобы получать доступ к данным.
 
-Каждая учетная запись хранения поддерживает до 100 правил виртуальной сети, которые можно объединить с [правилами IP-сети](#grant-access-from-an-internet-ip-range).
+Каждая учетная запись хранения поддерживает до 100 правил виртуальной сети, которые можно объединить с [правилами IP-сети](#grant-access-from-an-internet-ip-range).
 
 ### <a name="available-virtual-network-regions"></a>Доступные регионы виртуальной сети
 
@@ -132,9 +132,9 @@ ms.locfileid: "64917020"
 
 Учетная запись хранения и виртуальные сети, которым предоставлен доступ, могут находиться в разных подписках, но эти подписки должны быть частью одного клиента Azure AD.
 
-### <a name="managing-virtual-network-rules"></a>Управление правилами для виртуальных сетей
+### <a name="managing-virtual-network-rules"></a>Управление правилами виртуальной сети
 
-Правилами виртуальных сетей для учетных записей хранения можно управлять с помощью портала Azure, PowerShell или CLI версии 2.
+Правилами виртуальной сети для учетных записей хранения можно управлять с помощью портала Azure, PowerShell или CLI версии 2.
 
 #### <a name="azure-portal"></a>Портал Azure
 
@@ -157,7 +157,7 @@ ms.locfileid: "64917020"
 
 1. Установите [Azure PowerShell](/powershell/azure/install-Az-ps) и [выполните вход](/powershell/azure/authenticate-azureps).
 
-1. Выведите список правил для виртуальной сети.
+1. Выведите список правил виртуальной сети.
 
     ```powershell
     (Get-AzStorageAccountNetworkRuleSet -ResourceGroupName "myresourcegroup" -AccountName "mystorageaccount").VirtualNetworkRules
@@ -190,7 +190,7 @@ ms.locfileid: "64917020"
 
 1. Установите [Azure CLI](/cli/azure/install-azure-cli) и [выполните вход](/cli/azure/authenticate-azure-cli).
 
-1. Выведите список правил для виртуальной сети.
+1. Выведите список правил виртуальной сети.
 
     ```azurecli
     az storage account network-rule list --resource-group "myresourcegroup" --account-name "mystorageaccount" --query virtualNetworkRules

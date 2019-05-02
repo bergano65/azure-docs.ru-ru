@@ -222,7 +222,7 @@ ms.locfileid: "64723144"
     sudo apt-get --assume-yes install freetds-dev freetds-bin
     ```
 
-3. После завершения установки используйте следующую команду для подключения к серверу базы данных SQL. Замените **serverName** именем сервера базы данных SQL. Замените **adminLogin** и **adminPassword** именем для входа и паролем для базы данных SQL. Замените **databaseName** именем базы данных.
+3. После завершения установки используйте следующую команду для подключения к серверу Базы данных SQL. Замените **serverName** именем сервера Базы данных SQL. Замените **adminLogin** и **adminPassword** именем для входа и паролем для базы данных SQL. Замените **databaseName** именем базы данных.
 
     ```bash
     TDSVER=8.0 tsql -H <serverName>.database.windows.net -U <adminLogin> -p 1433 -D <databaseName>

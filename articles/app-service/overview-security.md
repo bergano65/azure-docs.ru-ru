@@ -87,7 +87,7 @@ ms.locfileid: "60838966"
 
 Когда приложение подключается к ресурсам Azure, например [базе данных SQL](https://azure.microsoft.com/services/sql-database/) и [службе хранилища Azure](/azure/storage/), оно остается в пределах Azure и не пересекает границы сети. Однако оно проходит через общедоступную сеть в Azure, поэтому всегда проверяйте, зашифровано ли оно. 
 
-Если приложение размещено в [среде службы приложений](environment/intro.md), вы должны [подключиться к поддерживаемым службам Azure с использованием конечных точек службы виртуальной сети](../virtual-network/virtual-network-service-endpoints-overview.md).
+Если приложение размещено в [среде службы приложений](environment/intro.md), вы должны [подключиться к поддерживаемым службам Azure с использованием конечных точек служб для виртуальной сети](../virtual-network/virtual-network-service-endpoints-overview.md).
 
 ### <a name="resources-inside-an-azure-virtual-network"></a>Ресурсы внутри виртуальной сети Azure
 

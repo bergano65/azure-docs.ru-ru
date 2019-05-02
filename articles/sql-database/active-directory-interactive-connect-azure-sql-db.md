@@ -14,7 +14,7 @@ ms.date: 03/12/2019
 manager: craigg
 ms.openlocfilehash: bc7274308b8a349d16866f107eac4a57e115be9e
 ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/18/2019
 ms.locfileid: "58850166"
@@ -50,7 +50,7 @@ ms.locfileid: "58850166"
 
 ## <a name="configure-your-c-application-in-the-azure-portal"></a>Настройка приложения C# на портале Azure
 
-Перед началом работы вам необходимо убедиться, что [сервер службы "База данных SQL Azure"](sql-database-get-started-portal.md) создан и доступен.
+Перед началом работы вам необходимо убедиться, что [сервер Базы данных SQL Azure](sql-database-get-started-portal.md) создан и доступен.
 
 ### <a name="register-your-app-and-set-permissions"></a>Регистрация приложения и установка разрешений
 
@@ -80,7 +80,7 @@ ms.locfileid: "58850166"
 
     ![Делегирование разрешений API для службы "База данных SQL Azure"](media/active-directory-interactive-connect-azure-sql-db/sshot-add-api-access-azure-sql-db-delegated-permissions-checkbox-e14.png)
 
-### <a name="set-an-azure-ad-admin-for-your-sql-database-server"></a>Определение администратора Azure AD для сервера службы "База данных SQL"
+### <a name="set-an-azure-ad-admin-for-your-sql-database-server"></a>Определение администратора Azure AD для сервера Базы данных SQL Azure
 
 Для вашего C# программы для запуска, необходимые администратору сервера Azure SQL для назначения администратора Azure AD для сервера базы данных SQL. 
 
@@ -131,7 +131,7 @@ ms.locfileid: "58850166"
 
 ### <a name="verify-sql-database-firewall-ip-addresses"></a>Проверка IP-адресов брандмауэра службы "База данных SQL"
 
-Запустите SSMS с того же компьютера в том же здании, где вы планируете выполнять программу C#. Для этого теста любой **проверки подлинности** режим — ОК. Если что-либо указывает на то, что брандмауэр сервера баз данных не принимает ваш IP-адрес, ознакомьтесь с [правилами брандмауэра уровня сервера и уровня базы данных службы "База данных SQL Azure"](sql-database-firewall-configure.md), чтобы получить помощь.
+Запустите SSMS с того же компьютера в том же здании, где вы планируете выполнять программу C#. Для этого теста любой **проверки подлинности** режим — ОК. Если что-либо указывает на то, что брандмауэр сервера баз данных не принимает ваш IP-адрес, ознакомьтесь с [правилами брандмауэра уровня базы данных и уровня сервера Базы данных SQL Azure](sql-database-firewall-configure.md), чтобы получить помощь.
 
 ### <a name="verify-azure-active-directory-multi-factor-authentication"></a>Проверка многофакторной идентификации Azure Active Directory
 

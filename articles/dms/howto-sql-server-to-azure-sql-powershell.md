@@ -97,7 +97,7 @@ $sourceConnInfo = New-AzDmsConnInfo -ServerType SQL `
   -TrustServerCertificate:$true
 ```
 
-В следующем примере показано создание сведений о подключении для сервера базы данных SQL Azure с именем SQLAzureTarget с использованием проверки подлинности SQL.
+В следующем примере показано создание сведений о подключении для сервера Базы данных SQL Azure с именем SQLAzureTarget с использованием проверки подлинности SQL.
 
 ```powershell
 $targetConnInfo = New-AzDmsConnInfo -ServerType SQL `

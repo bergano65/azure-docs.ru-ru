@@ -21,7 +21,7 @@ ms.locfileid: "59356593"
 ---
 # <a name="use-powershell-to-monitor-and-scale-an-elastic-pool-in-azure-sql-database"></a>Отслеживание и масштабирование эластичного пула в Базе данных SQL Azure с помощью PowerShell
 
-Этот пример сценария PowerShell отслеживает метрики производительности эластичного пула, увеличивает его вычислительную мощность и создает правило генерации оповещений для одной из метрик производительности.
+Этот пример сценария PowerShell отслеживает метрики производительности эластичного пула, увеличивает объем его вычислительных ресурсов и создает правило генерации оповещений для одной из метрик производительности.
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]

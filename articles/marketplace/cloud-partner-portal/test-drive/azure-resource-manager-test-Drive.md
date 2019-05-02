@@ -1,25 +1,19 @@
 ---
-title: Тестовый выпуск Azure Resource Manager | Документация Майкрософт
+title: Azure Resource Manager тестовый выпуск | Azure Marketplace
 description: Создание тестового выпуска для Marketplace с помощью Azure Resource Mаnager
 services: Azure, Marketplace, Cloud Partner Portal,
-documentationcenter: ''
 author: pbutlerm
 manager: Patrick .Butler
-editor: ''
-ms.assetid: ''
 ms.service: marketplace
-ms.workload: ''
-ms.tgt_pltfrm: ''
-ms.devlang: ''
 ms.topic: conceptual
 ms.date: 09/13/2018
-ms.author: pbutlerm
-ms.openlocfilehash: 2fe1a1fc1ff82415a5c2f88c72ae707b12cd5283
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.author: pabutler
+ms.openlocfilehash: 7665050dfc9a561f42fec00c40d0a40dfa5cc183
+ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60774527"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64941576"
 ---
 # <a name="azure-resource-manager-test-drive"></a>Тестовый выпуск Azure Resource Manager
 
@@ -88,14 +82,14 @@ ms.locfileid: "60774527"
 
 ### <a name="accepted-parameter-metadata-types"></a>Допустимые типы метаданных параметров
 
-| Тип метаданных   | Тип параметра  | Описание     | Образец значения    |
+| Тип метаданных   | Тип параметра  | ОПИСАНИЕ     | Образец значения    |
 |---|---|---|---|
 | **baseuri**     | string          | Базовый универсальный код ресурса (URI) пакета развертывания| https:\//\<\..\>.blob.core.windows.net/\<\..\> |
 | **username**    | string          | Новое случайное имя пользователя.| admin68876      |
 | **password**    | защищенная строка    | Новый случайный пароль | Lp!ACS\^2kh     |
 | **session id**   | string          | Уникальный идентификатор сеанса тестового выпуска (GUID)    | b8c8693e-5673-449c-badd-257a405a6dee |
 
-#### <a name="username"></a>имя пользователя
+#### <a name="username"></a>Имя пользователя
 
 Тестовый выпуск инициализирует этот параметр с помощью **базового URI** пакета развертывания, поэтому с помощью этого параметра можно создать URI любого файла, включенного в пакет.
 
@@ -122,7 +116,7 @@ ms.locfileid: "60774527"
 }
 ```
 
-#### <a name="username"></a>имя пользователя
+#### <a name="username"></a>Имя пользователя
 
 Тестовый выпуск инициализирует этот параметр с помощью нового случайного имени пользователя:
 
@@ -215,7 +209,7 @@ ms.locfileid: "60774527"
 
 Дополнительные сведения о правилах и ограничениях именования ресурсов можно найти в [этой статье](https://docs.microsoft.com/azure/guidance/guidance-naming-conventions).
 
-### <a name="deployment-location"></a>Местоположение развертывания
+### <a name="deployment-location"></a>Расположение развертывания
 
 Тестовый выпуск можно сделать доступным в разных регионах Azure. Идея в том, чтобы позволить пользователю выбрать ближайший регион для максимального удобства работы.
 
@@ -263,7 +257,7 @@ ms.locfileid: "60774527"
 
 Необходимо гарантировать, что подписка может развернуть все ресурсы, которые нужно развернуть в каждом из выбранных вами регионов. Также необходимо убедиться, что образы виртуальных машин доступны во всех регионах, которые планируется включить. В противном случае шаблон развертывания не будет работать в некоторых регионах.
 
-### <a name="outputs"></a>Выходные данные
+### <a name="outputs"></a>outputs
 
 Обычно с помощью шаблонов Resource Manager можно выполнить развертывание без выходных данных. Причина в том, что вам известны все значения, используемые для заполнения параметров шаблона, и всегда можно вручную проверить свойства любого ресурса.
 

@@ -9,11 +9,11 @@ ms.custom: hdinsightactive,seodec18
 ms.topic: conceptual
 ms.date: 04/16/2019
 ms.openlocfilehash: a4c601e81390efa3bb53a6f07225bb6e939bc9bb
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
-ms.translationtype: HT
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62114416"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64726441"
 ---
 # <a name="build-java-applications-for-apache-hbase"></a>Создание приложений Java для Apache HBase
 
@@ -105,7 +105,7 @@ notepad pom.xml
 | Версия кластера HDInsight | Используемая версия Apache HBase |
 | --- | --- |
 | 3.6 | 1.1.2 |
-| 4.0 | 2.0.0 |
+| 4,0 | 2.0.0 |
 
 Дополнительные сведения о версиях и компонентах HDInsight см. в статье [Что представляют собой различные компоненты Apache Hadoop, доступные в HDInsight?](../hdinsight-component-versioning.md)
 

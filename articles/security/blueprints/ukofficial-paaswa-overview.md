@@ -149,7 +149,7 @@ ms.locfileid: "62109333"
 
 Функция [Шифрование службы хранилища](https://docs.microsoft.com/azure/storage/common/storage-service-encryption) при записи всех данных в службу хранилища Azure использует 256-битное шифрование AES, то есть самую надежную технологию блочного шифрования на сегодняшний день. Вы можете использовать ключи шифрования с SSE, управляемые корпорацией Майкрософт, или [собственные ключи шифрования](https://docs.microsoft.com/azure/storage/common/storage-service-encryption-customer-managed-keys).
 
-Учетные записи хранения можно защитить с помощью [конечных точек службы виртуальной сети](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoints-overview) и [правил виртуальной сети](https://docs.microsoft.com/azure/storage/common/storage-network-security).
+Учетные записи хранения можно защитить с помощью [конечных точек служб для виртуальной сети](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoints-overview) и [правил виртуальной сети](https://docs.microsoft.com/azure/storage/common/storage-network-security).
 
 Подробные сведения о защите службы хранилища Azure можно найти в [руководстве по безопасности](https://docs.microsoft.com/azure/storage/common/storage-security-guide).
 

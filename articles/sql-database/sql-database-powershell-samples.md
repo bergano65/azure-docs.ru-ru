@@ -1,6 +1,6 @@
 ---
 title: Примеры скриптов Azure PowerShell для базы данных SQL | Документация Майкрософт
-description: Примеры скриптов Azure PowerShell помогут вам создать серверы базы данных SQL, эластичные пулы, базы данных и брандмауэры, а также помогут управлять ими.
+description: Примеры скриптов Azure PowerShell помогут вам создать серверы Базы данных SQL Azure, эластичные пулы, базы данных и брандмауэры, а также помогут управлять ими.
 services: sql-database
 ms.service: sql-database
 ms.subservice: development
@@ -36,14 +36,14 @@ ms.locfileid: "59259989"
 |---|---|
 |**Создание и настройка отдельных баз данных и эластичных пулов**||
 | [Создание отдельной базы данных и настройка правила брандмауэра для сервера базы данных](scripts/sql-database-create-and-configure-database-powershell.md?toc=%2fpowershell%2fmodule%2ftoc.json) | Этот скрипт PowerShell создает отдельную базу данных SQL Azure и настраивает правило брандмауэра на уровне сервера. |
-| [Создание эластичных пулов и перемещение баз данных в составе пулов](scripts/sql-database-move-database-between-pools-powershell.md?toc=%2fpowershell%2fmodule%2ftoc.json) | Этот сценарий PowerShell создает эластичные пулы базы данных SQL Azure и перемещает базы данных в составе пулов, а также изменяет их вычислительную мощность.|
+| [Создание эластичных пулов и перемещение баз данных в составе пулов](scripts/sql-database-move-database-between-pools-powershell.md?toc=%2fpowershell%2fmodule%2ftoc.json) | Этот сценарий PowerShell создает эластичные пулы базы данных SQL Azure и перемещает базы данных в составе пулов, а также изменяет объемы вычислительных ресурсов.|
 |**Настройка георепликации и отработка отказа**||
 | [Настройка активной георепликации для отдельной базы данных SQL Azure с помощью PowerShell](scripts/sql-database-setup-geodr-and-failover-database-powershell.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Этот скрипт PowerShell настраивает активную георепликацию для отдельной базы данных SQL Azure и выполняет для нее отработку отказа во вторичную реплику. |
 | [Настройка активной георепликации для базы данных SQL Azure в составе пула с помощью PowerShell](scripts/sql-database-setup-geodr-and-failover-pool-powershell.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Этот скрипт PowerShell настраивает активную георепликацию для базы данных SQL Azure в эластичном пуле SQL и выполняет для нее отработку отказа во вторичную реплику. |
-| [Настройка и отработка отказа для группы отработки отказа для отдельной базы данных](scripts/sql-database-setup-geodr-failover-database-failover-group-powershell.md?toc=%2fpowershell%2fmodule%2ftoc.json) | Этот скрипт PowerShell настраивает группу отработки отказа для экземпляра сервера базы данных SQL Azure, добавляет базу данных в группу отработки отказа и выполняет для нее отработку отказа на сервер-получатель. |
+| [Настройка и отработка отказа для группы отработки отказа для отдельной базы данных](scripts/sql-database-setup-geodr-failover-database-failover-group-powershell.md?toc=%2fpowershell%2fmodule%2ftoc.json) | Этот скрипт PowerShell настраивает группу отработки отказа для экземпляра сервера Базы данных SQL Azure, добавляет базу данных в группу отработки отказа и выполняет для нее отработку отказа на сервер-получатель. |
 |**Масштабирование отдельной базы данных и эластичного пула**||
-| [Масштабирование отдельной базы данных](scripts/sql-database-monitor-and-scale-database-powershell.md?toc=%2fpowershell%2fmodule%2ftoc.json) | Этот сценарий PowerShell отслеживает метрики производительности базы данных SQL Azure, увеличивает ее вычислительную мощность и создает правило генерации оповещений для одной из метрик производительности. |
-| [Масштабирование эластичного пула](scripts/sql-database-monitor-and-scale-pool-powershell.md?toc=%2fpowershell%2fmodule%2ftoc.json) | Этот сценарий PowerShell отслеживает метрики производительности эластичного пула базы данных SQL Azure, увеличивает его вычислительную мощность и создает правило генерации оповещений для одной из метрик производительности.  |
+| [Масштабирование отдельной базы данных](scripts/sql-database-monitor-and-scale-database-powershell.md?toc=%2fpowershell%2fmodule%2ftoc.json) | Этот сценарий PowerShell отслеживает метрики производительности базы данных SQL Azure, увеличивает объем ее вычислительных ресурсов и создает правило генерации оповещений для одной из метрик производительности. |
+| [Масштабирование эластичного пула](scripts/sql-database-monitor-and-scale-pool-powershell.md?toc=%2fpowershell%2fmodule%2ftoc.json) | Этот сценарий PowerShell отслеживает метрики производительности эластичного пула базы данных SQL Azure, увеличивает объем его вычислительных ресурсов и создает правило генерации оповещений для одной из метрик производительности.  |
 | **Аудит и обнаружение угроз** |
 | [Настройка аудита и обнаружения угроз](scripts/sql-database-auditing-and-threat-detection-powershell.md?toc=%2fpowershell%2fmodule%2ftoc.json)| Этот скрипт PowerShell настраивает политики аудита и обнаружения угроз для базы данных SQL Azure. |
 | **Восстановление, копирование и импорт базы данных**||

@@ -152,7 +152,7 @@ ms.locfileid: "60390585"
 > [!TIP]
 > Чтобы потом удалить учетную запись администратора, в верхней части страницы "Администратор Active Directory" щелкните **Удалить администратора**, а затем нажмите кнопку **Сохранить**.
 
-## <a name="provision-an-azure-active-directory-administrator-for-your-azure-sql-database-server"></a>Подготовка администратора Azure Active Directory для сервера базы данных SQL Azure
+## <a name="provision-an-azure-active-directory-administrator-for-your-azure-sql-database-server"></a>Подготовка администратора Azure Active Directory для сервера Базы данных SQL Azure
 
 > [!IMPORTANT]
 > Выполните следующие действия, только если вы подготавливаете сервер базы данных SQL Azure или хранилище данных Azure.

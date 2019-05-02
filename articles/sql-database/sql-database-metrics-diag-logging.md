@@ -14,7 +14,7 @@ manager: craigg
 ms.date: 03/12/2019
 ms.openlocfilehash: fe53dd4419c06d376a1cc46db0d2621ccbc06f23
 ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/13/2019
 ms.locfileid: "59548648"
@@ -133,7 +133,7 @@ ms.locfileid: "59548648"
    - Можно создать до трех параллельных соединений для потоковой передачи диагностических данных телеметрии.
    - Выберите **+Add diagnostic setting** (+ Добавить параметр диагностики), чтобы настроить параллельную потоковую передачу данных диагностики на несколько ресурсов.
 
-   ![Включение диагностики для отдельных баз данных, баз данных в пуле или баз данных экземпляра](./media/sql-database-metrics-diag-logging/diagnostics-settings-database-sql-enable.png)
+   ![Включение диагностики для отдельных баз данных, баз данных в пуле или баз данных экземпляров](./media/sql-database-metrics-diag-logging/diagnostics-settings-database-sql-enable.png)
 1. Введите имя настройки для вашей собственной ссылки.
 1. Выберите целевой ресурс для потоковой передачи диагностических данных: **Архивировать в учетной записи хранения**, **Передать в концентратор событий** или **Отправить в Log Analytics**.
 1. Для стандартного мониторинга на основе событий установите следующие флажки для данных телеметрии журнала диагностики базы данных: **SQLInsights**, **AutomaticTuning**, **QueryStoreRuntimeStatistics**, **QueryStoreWaitStatistics**, **Errors**, **DatabaseWaitStatistics**, **Timeouts**, **Blocks** и **Deadlocks**.
@@ -195,7 +195,7 @@ ms.locfileid: "59548648"
    - Вы можете создать до трех (3) параллельных соединений для потоковой передачи диагностических данных телеметрии.
    - Выберите **+Add diagnostic setting** (+ Добавить параметр диагностики), чтобы настроить параллельную потоковую передачу данных диагностики на несколько ресурсов.
 
-   ![Включение диагностики для баз данных экземпляра](./media/sql-database-metrics-diag-logging/diagnostics-settings-database-mi-enable.png)
+   ![Включение диагностики для баз данных экземпляров](./media/sql-database-metrics-diag-logging/diagnostics-settings-database-mi-enable.png)
 
 1. Введите имя настройки для вашей собственной ссылки.
 1. Выберите целевой ресурс для потоковой передачи диагностических данных: **Архивировать в учетной записи хранения**, **Передать в концентратор событий** или **Отправить в Log Analytics**.

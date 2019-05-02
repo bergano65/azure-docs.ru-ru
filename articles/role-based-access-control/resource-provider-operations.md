@@ -4451,7 +4451,7 @@ ms.locfileid: "64729197"
 > | Действие | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/repairReplication/action | Исправляет репликацию. |
 > | Действие | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/reProtect/action | Повторно защищает защищенный элемент. |
 > | Действие | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/submitFeedback/action | Отправить отзыв |
-> | Действие | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/targetComputeSizes/read | Считывание размеров целевой службы вычислений |
+> | Действие | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/targetComputeSizes/read | Считывание целевых объемов вычислительных ресурсов |
 > | Действие | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/testFailover/action | Тестовая отработка отказа |
 > | Действие | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/testFailoverCleanup/action | Тестирует очистку отработки отказа. |
 > | Действие | Microsoft.RecoveryServices/vaults/replicationFabrics/replicationProtectionContainers/replicationProtectedItems/unplannedFailover/action | Отработка отказа |
@@ -4936,7 +4936,7 @@ ms.locfileid: "64729197"
 > | Действие | Microsoft.Sql/locations/syncMemberOperationResults/read | Получение результата операции синхронизации элемента. |
 > | Действие | Microsoft.Sql/locations/usages/read | Получение коллекции метрик использования для этой подписки в расположении. |
 > | Действие | Microsoft.Sql/locations/virtualNetworkRulesAzureAsyncOperation/read | Возвращение сведений об асинхронной операции Azure для указанных правил виртуальной сети.  |
-> | Действие | Microsoft.Sql/locations/virtualNetworkRulesOperationResults/read | Возвращение сведений о правилах операции для указанных правил виртуальной сети.  |
+> | Действие | Microsoft.Sql/locations/virtualNetworkRulesOperationResults/read | Возвращение сведений об операции для указанных правил виртуальной сети.  |
 > | Действие | Microsoft.Sql/managedInstances/administrators/delete | Удаление существующего администратора управляемого экземпляра. |
 > | Действие | Microsoft.Sql/managedInstances/administrators/read | Получение списка администраторов управляемого экземпляра. |
 > | Действие | Microsoft.Sql/managedInstances/administrators/write | Создание или обновление администратора управляемого экземпляра с указанными параметрами. |
@@ -4946,7 +4946,7 @@ ms.locfileid: "64729197"
 > | Действие | Microsoft.Sql/managedInstances/databases/delete | Удаление существующей управляемой базы данных. |
 > | Действие | Microsoft.Sql/managedInstances/databases/providers/Microsoft.Insights/diagnosticSettings/read | Возвращает параметр диагностики для ресурса. |
 > | Действие | Microsoft.Sql/managedInstances/databases/providers/Microsoft.Insights/diagnosticSettings/write | Создает или обновляет параметр диагностики для ресурса. |
-> | Действие | Microsoft.Sql/managedInstances/databases/providers/Microsoft.Insights/logDefinitions/read | Получение доступных журналов для баз данных управляемого экземпляра |
+> | Действие | Microsoft.Sql/managedInstances/databases/providers/Microsoft.Insights/logDefinitions/read | Получение доступных журналов для баз данных управляемых экземпляров |
 > | Действие | Microsoft.Sql/managedInstances/databases/read | Получение существующей управляемой базы данных. |
 > | Действие | Microsoft.Sql/managedInstances/databases/recommendedSensitivityLabels/read | Получение списка меток конфиденциальности для конкретной базы данных. |
 > | Действие | Microsoft.Sql/managedInstances/databases/schemas/read | Получите схему управляемой базы данных. |

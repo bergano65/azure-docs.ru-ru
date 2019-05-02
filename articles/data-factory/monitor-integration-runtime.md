@@ -13,7 +13,7 @@ ms.author: gamal
 manager: craigg
 ms.openlocfilehash: b62cbe75730da8c5764839d41887deb7e6cd0e90
 ms.sourcegitcommit: 30a0007f8e584692fe03c0023fe0337f842a7070
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/07/2019
 ms.locfileid: "57576342"
@@ -171,7 +171,7 @@ Get-AzDataFactoryV2IntegrationRuntimeMetric -name $integrationRuntimeName -Resou
 | CatalogServerEndpoint | Конечная точка имеющегося сервера базы данных или управляемого экземпляра SQL Azure для размещения SSISDB. |
 | CatalogAdminUserName | Имя пользователя администратора имеющегося сервера базы данных или управляемого экземпляра SQL Azure. Служба фабрики данных использует эти сведения для подготовки SSISDB и управления ею от вашего имени. |
 | CatalogAdminPassword | Пароль администратора имеющегося сервера базы данных или управляемого экземпляра SQL Azure. |
-| CatalogPricingTier | Ценовая категория для SSISDB, размещенной на имеющемся сервере базы данных SQL Azure.  Неприменимо к Управляемому экземпляру базы данных SQL Azure, на котором размещена SSISDB. |
+| CatalogPricingTier | Ценовая категория для SSISDB, размещенной на имеющемся сервере Базы данных SQL Azure.  Неприменимо к Управляемому экземпляру базы данных SQL Azure, на котором размещена SSISDB. |
 | VNetId | Идентификатор ресурса виртуальной сети, к которой нужно присоединить среду выполнения интеграции SQL Server Integration Services Azure. |
 | Подсеть | Имя подсети, к которой нужно присоединить среду выполнения интеграции SSIS Azure. |
 | ИД | Идентификатор ресурса среды выполнения интеграции SSIS Azure. |

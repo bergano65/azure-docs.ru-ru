@@ -12,7 +12,7 @@ ms.author: rortloff
 ms.reviewer: igorstan
 ms.openlocfilehash: 5f6e24dfa1b5c4ea4f0748af81104edfe88ceeae
 ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 03/18/2019
 ms.locfileid: "58099109"
@@ -100,7 +100,7 @@ WITH
 Чтобы просмотреть текущие параметры DWU, сделайте следующее:
 
 1. Откройте обозреватель объектов SQL Server в Visual Studio.
-2. Подключитесь к базе данных master, связанной с логическим сервером базы данных SQL.
+2. Подключитесь к базе данных master, связанной с логическим сервером Базы данных SQL.
 3. Выберите в sys.database_service_objectives динамическое административное представление. Вот пример:  
 
 ```sql
@@ -140,7 +140,7 @@ Set-AzSqlDatabase -DatabaseName "MySQLDW" -ServerName "MyServer" -RequestedServi
 
 Чтобы изменить параметры DWU или cDWU, сделайте следующее:
 
-1. Подключитесь к базе данных master, связанной с логическим сервером базы данных SQL.
+1. Подключитесь к базе данных master, связанной с логическим сервером Базы данных SQL.
 2. Используйте оператор TSQL [ALTER DATABASE](/sql/t-sql/statements/alter-database-transact-sql) . В приведенном ниже примере для базы данных MySQLDW устанавливается цель уровня обслуживания DW1000. 
 
 ```Sql
@@ -176,7 +176,7 @@ Content-Type: application/json; charset=UTF-8
 
 Чтобы проверить состояние изменений DWU, сделайте следующее:
 
-1. Подключитесь к базе данных master, связанной с логическим сервером базы данных SQL.
+1. Подключитесь к базе данных master, связанной с логическим сервером Базы данных SQL.
 2. Отправьте запрос ниже, чтобы проверить состояние базы данных.
 
 

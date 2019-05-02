@@ -172,7 +172,7 @@ az ad group member list -g $groupid
 
 ### <a name="reconfigure-azure-ad-administrator"></a>Перенастройка администратора Azure AD
 
-Ранее вы назначили для управляемого удостоверения роль администратора Azure AD в Базе данных SQL. Вы не можете использовать это удостоверение для интерактивного входа (для добавления пользователей базы данных), поэтому вам нужно использовать настоящего пользователя Azure AD. Чтобы сделать это, выполните шаги, описанные в разделе [Подготовка администратора Azure Active Directory для сервера базы данных SQL Azure](../sql-database/sql-database-aad-authentication-configure.md#provision-an-azure-active-directory-administrator-for-your-azure-sql-database-server). 
+Ранее вы назначили для управляемого удостоверения роль администратора Azure AD в Базе данных SQL. Вы не можете использовать это удостоверение для интерактивного входа (для добавления пользователей базы данных), поэтому вам нужно использовать настоящего пользователя Azure AD. Чтобы сделать это, выполните шаги, описанные в разделе [Подготовка администратора Azure Active Directory для сервера Базы данных SQL Azure](../sql-database/sql-database-aad-authentication-configure.md#provision-an-azure-active-directory-administrator-for-your-azure-sql-database-server). 
 
 > [!IMPORTANT]
 > После добавления не удаляйте этот администратор Azure AD для базы данных SQL, только если вы не хотите полностью отключить доступ Azure AD к базе данных SQL (из всех учетных записей Azure AD).

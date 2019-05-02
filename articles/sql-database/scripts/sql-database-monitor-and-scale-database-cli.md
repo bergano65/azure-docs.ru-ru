@@ -21,7 +21,7 @@ ms.locfileid: "59361595"
 ---
 # <a name="use-cli-to-monitor-and-scale-a-single-sql-database"></a>Мониторинг и масштабирование отдельной базы данных SQL с помощью интерфейса командной строки
 
-Этот пример сценария Azure CLI масштабирует отдельную базу данных SQL Azure до другого уровня вычислительной мощности после запроса на получение сведений о размере базы данных.
+Этот пример сценария Azure CLI масштабирует отдельную базу данных SQL Azure до другого объема вычислительных ресурсов после запроса на получение сведений о размере базы данных.
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
@@ -53,7 +53,7 @@ az group delete --name myResourceGroup
 | [az group create](https://docs.microsoft.com/cli/azure/group#az-group-create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [az sql server create](https://docs.microsoft.com/cli/azure/sql/server#az-sql-server-create) | Создает сервер Базы данных SQL, на котором размещены отдельные базы данных и эластичные пулы. |
 | [az sql db show-usage](https://docs.microsoft.com/cli/azure/sql#az-sql-show-usage) | Отображает сведения об используемом размере отдельной базы данных или базы данных в пуле. |
-| [az sql db update](https://docs.microsoft.com/cli/azure/sql/db#az-sql-db-update) | Обновляет свойства базы данных (например, уровень служб или вычислительную мощность) или перемещает базу данных в эластичный пул, из него или между эластичными пулами. |
+| [az sql db update](https://docs.microsoft.com/cli/azure/sql/db#az-sql-db-update) | Обновляет свойства базы данных (например, уровень служб или объем вычислительных ресурсов) или перемещает базу данных в эластичный пул, из него или между эластичными пулами. |
 | [az group delete](https://docs.microsoft.com/cli/azure/vm/extension#az-vm-extension-set) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 |||
 

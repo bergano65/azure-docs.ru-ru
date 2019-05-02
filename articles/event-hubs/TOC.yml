@@ -129,7 +129,7 @@
           href: event-hubs-messaging-exceptions.md
     - name: Использование брандмауэров
       href: event-hubs-ip-filtering.md
-    - name: Использование конечных точек службы виртуальной сети
+    - name: Использование конечных точек служб для виртуальной сети
       href: event-hubs-service-endpoints.md
     - name: Автоматическое масштабирование единиц пропускной способности
       href: event-hubs-auto-inflate.md

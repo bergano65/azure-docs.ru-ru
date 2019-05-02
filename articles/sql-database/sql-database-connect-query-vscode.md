@@ -93,7 +93,7 @@ ln -s /usr/local/opt/openssl/lib/libssl.1.0.0.dylib /usr/local/lib/
 
 ## <a name="connect-to-your-database"></a>Подключение к базе данных
 
-С помощью Visual Studio Code подключитесь к серверу базы данных SQL Azure.
+С помощью Visual Studio Code подключитесь к серверу Базы данных SQL Azure.
 
 > [!IMPORTANT]
 > Прежде чем продолжить, приготовьте сервер и данные для входа. Если при вводе данных профиля подключения переключиться с Visual Studio Code, понадобится начать создание профиля заново.
