@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/07/2019
 ms.author: jeedes
-ms.openlocfilehash: d3459f7bcfc0e2e61cb55b38a05b7b6a21ea3e9e
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: d84a7060fadcb3f3d80b7fbbff9d91f8812388b2
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59283517"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64920608"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-te-express"></a>Руководство по Интеграция Azure Active Directory с T&E Express
 
@@ -110,7 +110,7 @@ ms.locfileid: "59283517"
     b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<domain>.tyeexpress.com/authorize/samlConsume.aspx`.
 
     > [!NOTE]
-    > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Мы рекомендуем использовать уникальное значение строки идентификатора. Чтобы получить эти значения, обратитесь в [группу поддержки клиентов T&E Express](http://www.tyeexpress.com/contacto.aspx). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Мы рекомендуем использовать уникальное значение строки идентификатора. Чтобы получить эти значения, обратитесь в [группу поддержки клиентов T&E Express](https://www.tyeexpress.com/contacto.aspx). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
 

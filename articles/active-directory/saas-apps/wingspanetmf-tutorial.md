@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: jeedes
-ms.openlocfilehash: a41bdda303c9e636929fba00a2fe4279002e42b3
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 6c3a7a8644e0e391f8817a7ae3a4cb9b8af5dab7
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59280763"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64920378"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-wingspan-etmf"></a>Руководство по Интеграция Azure Active Directory с Wingspan eTMF
 
@@ -112,7 +112,7 @@ ms.locfileid: "59280763"
     c. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<customer name>.<instance name>.mywingspan.com/`.
 
     > [!NOTE]
-    > Эти значения приведены для примера. Укажите вместо них фактические значения URL-адреса для входа, идентификатора и URL-адреса ответа. Чтобы получить их, обратитесь в [службу поддержки клиентов Wingspan eTMF](http://www.wingspan.com/contact-us/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Эти значения приведены для примера. Укажите вместо них фактические значения URL-адреса для входа, идентификатора и URL-адреса ответа. Чтобы получить их, обратитесь в [службу поддержки клиентов Wingspan eTMF](https://www.wingspan.com/contact-us/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
 
@@ -130,7 +130,7 @@ ms.locfileid: "59280763"
 
 ### <a name="configure-wingspan-etmf-single-sign-on"></a>Настройка единого входа в Wingspan eTMF
 
-Чтобы настроить единый вход на стороне **Wingspan eTMF**, вам необходимо отправить скачанный файл **XML метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, [группе поддержки Wingspan eTMF](http://www.wingspan.com/contact-us/). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **Wingspan eTMF**, вам необходимо отправить скачанный файл **XML метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, [группе поддержки Wingspan eTMF](https://www.wingspan.com/contact-us/). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
@@ -184,7 +184,7 @@ ms.locfileid: "59280763"
 
 ### <a name="create-wingspan-etmf-test-user"></a>Создание тестового пользователя Wingspan eTMF
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Wingspan eTMF. Обратитесь в  [группу поддержки Wingspan eTMF](http://www.wingspan.com/contact-us/), чтобы добавить пользователей на платформу Wingspan eTMF. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении Wingspan eTMF. Обратитесь в  [группу поддержки Wingspan eTMF](https://www.wingspan.com/contact-us/), чтобы добавить пользователей на платформу Wingspan eTMF. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа 
 

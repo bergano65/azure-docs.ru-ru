@@ -97,6 +97,8 @@
       href: 'https://www.powershellgallery.com/packages/Az.Blueprint'
     - name: PSGallery (модуль сообщества)
       href: 'https://www.powershellgallery.com/packages/Manage-AzureRMBlueprint'
+    - name: Функции схемы
+      href: ./reference/blueprint-functions.md
 - name: Ресурсы
   items:
     - name: 'GitHub: примеры для Azure Blueprints'

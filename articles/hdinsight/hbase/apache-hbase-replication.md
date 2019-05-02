@@ -9,11 +9,11 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 09/15/2018
 ms.openlocfilehash: 95a1055df283765b24322f6f8efe3efcb9b19022
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
-ms.translationtype: HT
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62123088"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64707979"
 ---
 # <a name="set-up-apache-hbase-cluster-replication-in-azure-virtual-networks"></a>Настройка репликации кластера Apache HBase в виртуальных сетях Azure
 
@@ -260,7 +260,7 @@ sudo service bind9 status
 В каждой виртуальной сети создайте кластер [Apache HBase](https://hbase.apache.org/) со следующей конфигурацией:
 
 - **Имя группы ресурсов.** Используйте те же имена групп ресурсов, как при создании виртуальных сетей.
-- **Тип кластера.** HBase
+- **Тип кластера.** hbase
 - **Версия.** HBase 1.1.2 (HDI 3.6)
 - **Расположение.** Используйте расположение, в котором находится виртуальная сеть.  По умолчанию для виртуальной сети 1 указано расположение *западная часть США*, а для виртуальной сети 2 — *восточная часть США*.
 - **Хранилище** Создайте учетную запись хранения для кластера.
@@ -288,7 +288,7 @@ sudo service bind9 status
 5. Выберите или введите следующие сведения.
 
    1. **Имя.** Укажите **Включение репликации**.
-   2. **URI bash-скрипта.** Укажите https://raw.githubusercontent.com/Azure/hbase-utils/master/replication/hdi_enable_replication.sh**.
+   2. **URI bash-скрипта.** Укажите **https://raw.githubusercontent.com/Azure/hbase-utils/master/replication/hdi_enable_replication.sh**.
    3. **Головной узел.** Выберите этот тип узла. Отмените выбор других типов узлов.
    4. **Параметры.** Параметры в следующем примере позволяют включить репликацию для всех имеющихся таблиц, а затем копировать все данные из исходного кластера в целевой.
 
@@ -301,7 +301,7 @@ sudo service bind9 status
 
 Ниже приведены обязательные аргументы.
 
-|ИМЯ|Описание|
+|ИМЯ|ОПИСАНИЕ|
 |----|-----------|
 |-s, --src-cluster | Указывает DNS-имя исходного кластера HBase. например -s hbsrccluster, --src-cluster=hbsrccluster. |
 |-d, --dst-cluster | Указывает DNS-имя кластера назначения (реплики) HBase. например -s dsthbcluster, --src-cluster=dsthbcluster. |
@@ -310,7 +310,7 @@ sudo service bind9 status
 
 Необязательные аргументы для этой команды.
 
-|ИМЯ|Описание|
+|ИМЯ|ОПИСАНИЕ|
 |----|-----------|
 |-su, --src-ambari-user | Указывает имя пользователя-администратора для Ambari в исходном кластере HBase. Значение по умолчанию — **admin**. |
 |-du, --dst-ambari-user | Указывает имя пользователя-администратора для Ambari в целевом кластере HBase. Значение по умолчанию — **admin**. |

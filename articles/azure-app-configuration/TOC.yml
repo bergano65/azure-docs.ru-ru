@@ -1,64 +1,59 @@
-items:
 - name: Документация по предварительной версии службы "Конфигурация приложений Azure"
   href: index.yml
 - name: Обзор
   items:
-  - name: Сведения о службе "Конфигурация приложений Azure"
-    href: overview.md
+    - name: Сведения о службе "Конфигурация приложений Azure"
+      href: overview.md
 - name: Быстрое начало работы
-  items:
-  - name: Создание приложения ASP.NET Core
-    href: quickstart-aspnet-core-app.md
-  - name: Создание приложения .NET Core
-    href: quickstart-dotnet-core-app.md
-  - name: Создание приложения .NET Framework
-    href: quickstart-dotnet-app.md
-  - name: Создание функции Azure
-    href: quickstart-azure-function-csharp.md
-  - name: Создание приложения Java Spring
-    href: quickstart-java-spring-app.md
   expanded: true
+  items:
+    - name: Создание приложения ASP.NET Core
+      href: quickstart-aspnet-core-app.md
+    - name: Создание приложения .NET Core
+      href: quickstart-dotnet-core-app.md
+    - name: Создание приложения .NET Framework
+      href: quickstart-dotnet-app.md
+    - name: Создание функции Azure
+      href: quickstart-azure-function-csharp.md
+    - name: Создание приложения Java Spring
+      href: quickstart-java-spring-app.md
 - name: Учебники
   items:
-  - name: Включение динамической конфигурации в ASP.NET Core
-    href: enable-dynamic-configuration-aspnet-core.md
-  - name: Интеграция с конвейером CI/CD
-    href: integrate-ci-cd-pipeline.md
+    - name: Включение динамической конфигурации в ASP.NET Core
+      href: enable-dynamic-configuration-aspnet-core.md
+    - name: Интеграция с конвейером CI/CD
+      href: integrate-ci-cd-pipeline.md
 - name: Примеры
   items:
-  - name: Инфраструктура CLI Azure
-    href: cli-samples.md
+    - name: Инфраструктура CLI Azure
+      href: cli-samples.md
 - name: Основные понятия
   items:
-  - name: Хранилище ключ-значение
-    href: concept-key-value.md
-  - name: Моментальный снимок на определенный момент времени
-    href: concept-point-time-snapshot.md
+    - name: Хранилище ключ-значение
+      href: concept-key-value.md
+    - name: Моментальный снимок на определенный момент времени
+      href: concept-point-time-snapshot.md
 - name: Практические руководства
   items:
-  - name: Интеграция с функцией "Управляемое удостоверение службы Azure"
-    href: howto-integrate-azure-managed-service-identity.md
-  - name: Импорт и экспорт данных конфигурации
-    href: howto-import-export-data.md
+    - name: Интеграция с функцией "Управляемое удостоверение службы Azure"
+      href: howto-integrate-azure-managed-service-identity.md
+    - name: Импорт и экспорт данных конфигурации
+      href: howto-import-export-data.md
 - name: Справочные материалы
   items:
-  - name: Поставщик конфигурации .NET Core
-    href: https://go.microsoft.com/fwlink/?linkid=2074664
-  - name: Построитель конфигураций .NET Framework
-    href: https://go.microsoft.com/fwlink/?linkid=2074663
-  - name: Поставщик конфигурации Java Spring
-    href: https://github.com/Microsoft/spring-cloud-azure/tree/azure-config/spring-cloud-azure-starters/spring-cloud-starter-azure-config
-  - name: Пакет Azure SDK для .NET
-    href: https://github.com/Azure/azure-sdk-for-net/tree/master/src/SDKs/Azure.ApplicationModel.Configuration/data-plane
-  - name: REST
-    href: https://go.microsoft.com/fwlink/?linkid=2078296
+    - name: Поставщик конфигурации .NET Core
+      href: 'https://go.microsoft.com/fwlink/?linkid=2074664'
+    - name: Построитель конфигураций .NET Framework
+      href: 'https://go.microsoft.com/fwlink/?linkid=2074663'
+    - name: Поставщик конфигурации Java Spring
+      href: 'https://github.com/Microsoft/spring-cloud-azure/tree/azure-config/spring-cloud-azure-starters/spring-cloud-starter-azure-config'
+    - name: Пакет Azure SDK для .NET
+      href: 'https://github.com/Azure/azure-sdk-for-net/tree/master/src/SDKs/Azure.ApplicationModel.Configuration/data-plane'
+    - name: REST
+      href: 'https://go.microsoft.com/fwlink/?linkid=2078296'
 - name: Ресурсы
   items:
-  - name: Отзыв о продукте
-    href: https://github.com/Azure/AppConfiguration
-ms.openlocfilehash: 74de90cd0e8274f7192b177c41aba165eabbed40
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59699616"
+    - name: Видео о начале работы
+      href: 'https://channel9.msdn.com/Shows/Azure-Friday/Getting-started-with-Azure-App-Configuration'
+    - name: Отзыв о продукте
+      href: 'https://github.com/Azure/AppConfiguration/issues'

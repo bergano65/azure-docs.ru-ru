@@ -110,7 +110,7 @@ DTU лучше всего помогают определить относите
 
 ## <a name="purchase-models-frequently-asked-questions-faq"></a>Приобрести моделей: часто задаваемые вопросы (FAQ)
 
-### <a name="do-i-need-to-take-my-application-offline-to-convert-from-a-dtu-based-database-to-a-vcore-based-service-tier"></a>Нужно ли отключать приложение для перехода с базы данных на основе DTU на уровень службы на основе виртуальных ядер?
+### <a name="do-i-need-to-take-my-application-offline-to-convert-from-a-dtu-based-database-to-a-vcore-based-service-tier"></a>Нужно ли отключать приложение для перехода с базы данных на основе DTU на уровень служб на основе виртуальных ядер?
 
 Новые уровни служб предлагают простой автоматический метод преобразования, который аналогичен имеющемуся процессу обновления баз данных с уровня служб "Стандартный" на "Премиум" и наоборот. Это преобразование можно инициировать с помощью портала Azure, PowerShell, Azure CLI, T-SQL или REST API. Ознакомьтесь со статьями [Управление ресурсами отдельной базы данных в Базе данных SQL Azure](sql-database-single-database-scale.md) и [Управление несколькими базами данных SQL Azure и их масштабирование с помощью эластичных пулов](sql-database-elastic-pool.md).
 

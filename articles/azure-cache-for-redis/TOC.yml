@@ -5,6 +5,7 @@
     - name: Общие сведения о кэше Azure для Redis
       href: cache-overview.md
 - name: Быстрое начало работы
+  expanded: true
   items:
     - name: Создание приложения ASP.NET
       href: cache-web-app-howto.md

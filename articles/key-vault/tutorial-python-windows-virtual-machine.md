@@ -2,24 +2,21 @@
 title: Руководство. Использование Azure Key Vault с виртуальной машиной Windows на языке Python | Документация Майкрософт
 description: Благодаря этому руководству вы настроите приложение ASP.NET Core для считывания секрета из хранилища ключей.
 services: key-vault
-documentationcenter: ''
-author: prashanthyv
+author: mbaldwin
 manager: rajvijan
-ms.assetid: 0e57f5c7-6f5a-46b7-a18a-043da8ca0d83
 ms.service: key-vault
-ms.workload: key-vault
 ms.topic: tutorial
 ms.date: 09/05/2018
 ms.author: pryerram
 ms.custom: mvc
-ms.openlocfilehash: 133de5410d5e506c9528e2dba90dd4c00d8fcc2d
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.openlocfilehash: 58d1b9d293e88612853aec9303f4c4110d6a5cd2
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57438216"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64701951"
 ---
-# <a name="tutorial-use-azure-key-vault-with-a-windows-virtual-machine-in-python"></a>Руководство. Использование Azure Key Vault с виртуальной машиной Windows на языке Python
+# <a name="tutorial-use-azure-key-vault-with-a-windows-virtual-machine-in-python"></a>Руководство по Использование Azure Key Vault с виртуальной машиной Windows на языке Python
 
 Azure Key Vault помогает защитить секреты, такие как ключи API, строки подключения к базам данных, необходимые для доступа к приложениям, службам и ИТ-ресурсам.
 

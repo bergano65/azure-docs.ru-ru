@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/30/2017
 ms.author: diviso
-ms.openlocfilehash: a973d8dbab18e9ea66afb5ffff83f47c3ad98f93
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 9cb7172fb529d8f0cd8650db7c06a78176ef342d
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60845006"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64729552"
 ---
 # <a name="automating-azure-virtual-machine-deployment-with-chef"></a>Автоматизация развертывания виртуальной машины Azure с помощью Chef
 [!INCLUDE [learn-about-deployment-models](../../../includes/learn-about-deployment-models-both-include.md)]
@@ -134,7 +134,9 @@ cookbook_path       ["#{current_dir}/cookbooks"]
 
 Добавьте следующие сведения в файл knife.rb:
 
-validation_client_name   "myorg-validator" validation_key           ""#{текущий_каталог}/myorg.pem"
+validation_client_name «myorg-проверяющий элемент управления»
+
+validation_key           "#{current_dir}/myorg.pem"
 
 Кроме того, добавьте следующие строки с учетом имени своего файла параметров публикации Azure.
 

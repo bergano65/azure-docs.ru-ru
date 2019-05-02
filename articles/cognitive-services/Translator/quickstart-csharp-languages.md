@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: quickstart
 ms.date: 02/07/2019
 ms.author: erhopf
-ms.openlocfilehash: dea66cfe63f566afc1f0186f0386525f90564708
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: efa8399d20f6bacb41720d77e14336833f085323
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58175740"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64916564"
 ---
 # <a name="quickstart-use-the-translator-text-api-to-get-a-list-of-supported-languages-using-c"></a>Краткое руководство. Получение списка поддерживаемых языков с помощью C# и API перевода текстов
 
@@ -142,7 +142,7 @@ dotnet run
 
 ## <a name="sample-response"></a>Пример ответа
 
-Найдите сокращенное наименование страны в этом [списке языков](https://docs.microsoft.com/en-us/azure/cognitive-services/translator/language-support).
+Найдите сокращенное наименование страны в этом [списке языков](https://docs.microsoft.com/azure/cognitive-services/translator/language-support).
 
 ```json
 {

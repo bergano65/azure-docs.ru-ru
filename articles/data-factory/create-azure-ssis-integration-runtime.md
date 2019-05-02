@@ -14,7 +14,7 @@ ms.reviewer: douglasl
 manager: craigg
 ms.openlocfilehash: d30ec0765627ec173f0027e49f44cb77f6b26ac6
 ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 04/18/2019
 ms.locfileid: "59361474"
@@ -159,7 +159,7 @@ ms.locfileid: "59361474"
 
     Е. В поле **Пароль администратора** введите пароль входа SQL для проверки подлинности базы данных сервера узла SSISDB.
 
-    ж. В поле **Catalog Database Server Tier** (Каталог уровней службы базы данных) выберите уровень службы для сервера базы данных, на котором будет размещаться SSISDB: Basic (Базовый), Standard (Стандартный), Premium (Премиум) или укажите имя эластичного пула.
+    ж. В поле **Catalog Database Service Tier** (Каталог уровней служб базы данных) выберите уровень служб для сервера базы данных, на котором будет размещаться SSISDB: Basic (Базовый), Standard (Стандартный), Premium (Премиум) или укажите имя эластичного пула.
 
     h. Нажмите копку **Проверить подключение**, и если проверка прошла успешно, щелкните **Далее**.
 

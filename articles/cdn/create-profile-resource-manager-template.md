@@ -15,12 +15,12 @@ ms.topic: quickstart
 ms.date: 03/05/2019
 ms.author: magattus
 ms.custom: mvc
-ms.openlocfilehash: 5c393916bc977f4e0bc51913bdb2dfbbd6677c97
-ms.sourcegitcommit: 235cd1c4f003a7f8459b9761a623f000dd9e50ef
+ms.openlocfilehash: c26c9021637b1b6ec2b3808db1307de9955bb660
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/11/2019
-ms.locfileid: "57727640"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64922394"
 ---
 # <a name="quickstart-create-an-azure-cdn-profile-and-endpoint-using-resource-manager-template"></a>Краткое руководство. Создание профиля Azure CDN и конечной точки с помощью шаблона Resource Manager
 
@@ -51,7 +51,7 @@ az group create --name cdn --location eastus
 
 На этом шаге вы создадите файл шаблона, который развертывает ресурсы.
 
-Хотя в этом примере рассматривается сценарий общего ускорения веб-сайта, есть и множество других параметров, которые могут быть настроены. Эти параметры доступны в ссылке на шаблон Azure Resource Manager. См. ссылки для [профиля CDN](https://docs.microsoft.com/en-us/azure/templates/microsoft.cdn/2017-10-12/profiles) и [конечной точки профиля CDN](https://docs.microsoft.com/en-us/azure/templates/microsoft.cdn/2017-10-12/profiles/endpoints).
+Хотя в этом примере рассматривается сценарий общего ускорения веб-сайта, есть и множество других параметров, которые могут быть настроены. Эти параметры доступны в ссылке на шаблон Azure Resource Manager. См. ссылки для [профиля CDN](https://docs.microsoft.com/azure/templates/microsoft.cdn/2017-10-12/profiles) и [конечной точки профиля CDN](https://docs.microsoft.com/azure/templates/microsoft.cdn/2017-10-12/profiles/endpoints).
 
 Обратите внимание на то, что Microsoft CDN не поддерживает изменение списка типов содержимого.
 
@@ -224,8 +224,8 @@ az group delete --name cdn
 
 ## <a name="references"></a>Ссылки
 
-* Для профиля CDN — [Справочник по шаблону Azure Resource Manager](https://docs.microsoft.com/en-us/azure/templates/microsoft.cdn/2017-10-12/profiles).
-* Для конечной точки CDN — [Справочная документация по шаблону Azure Resource Manager](https://docs.microsoft.com/en-us/azure/templates/microsoft.cdn/2017-10-12/profiles/endpoints).
+* Для профиля CDN — [Справочник по шаблону Azure Resource Manager](https://docs.microsoft.com/azure/templates/microsoft.cdn/2017-10-12/profiles).
+* Для конечной точки CDN — [Справочная документация по шаблону Azure Resource Manager](https://docs.microsoft.com/azure/templates/microsoft.cdn/2017-10-12/profiles/endpoints).
 
 ## <a name="next-steps"></a>Дополнительная информация
 

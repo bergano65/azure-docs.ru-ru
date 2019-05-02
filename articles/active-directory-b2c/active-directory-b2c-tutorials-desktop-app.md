@@ -3,21 +3,21 @@ title: Руководство. Включение проверки подлин�
 description: Руководство по предоставлению пользователю данных для входа в классическое приложение .NET с помощью Azure Active Directory B2C.
 services: active-directory-b2c
 author: davidmu1
-manager: daveba
+manager: celestedg
 ms.author: davidmu
 ms.date: 02/04/2019
 ms.custom: mvc
 ms.topic: tutorial
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: a1842859723173412df2053a242ebe9ca4cf7f32
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
+ms.openlocfilehash: 3df54c6805c5117e627afe0a2b4caa0ddd94b182
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55754036"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64723701"
 ---
-# <a name="tutorial-enable-authentication-in-a-native-client-application-using-azure-active-directory-b2c"></a>Руководство. Включение проверки подлинности в собственном клиентском приложении с помощью Azure Active Directory B2C
+# <a name="tutorial-enable-authentication-in-a-native-client-application-using-azure-active-directory-b2c"></a>Руководство по Включение проверки подлинности в собственном клиентском приложении с помощью Azure Active Directory B2C
 
 В этом руководстве описано использование Azure Active Directory (Azure AD) B2C для входа и регистрации пользователей в классическом приложении Windows Presentation Foundation (WPF). Azure AD B2C позволяет приложениям выполнять проверку подлинности учетных записей социальных сетей, корпоративных учетных записей и учетных записей Azure Active Directory с помощью стандартных протоколов.
 

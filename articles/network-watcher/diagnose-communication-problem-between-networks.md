@@ -3,8 +3,8 @@ title: Руководство по диагностике проблем с об
 description: Дополнительные сведения о диагностике проблем с обменом данными между виртуальной сетью Azure, подключенной к локальной или другой виртуальной сети через шлюз виртуальной сети Azure, с помощью функции диагностики VPN службы "Наблюдатель за сетями".
 services: network-watcher
 documentationcenter: na
-author: jimdial
-manager: jeconnoc
+author: KumudD
+manager: twooley
 editor: ''
 Customer intent: I need to determine why resources in a virtual network can't communicate with resources in a different network.
 ms.service: network-watcher
@@ -13,14 +13,14 @@ ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/27/2018
-ms.author: jdial
+ms.author: kumud
 ms.custom: mvc
-ms.openlocfilehash: 4f5fbbb9d06f9fcb8858625b57957fc18c5c1f1f
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: e4dc66a5ca6e18b12586b5b03742fba3d6c3d6c4
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59046917"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64704219"
 ---
 # <a name="tutorial-diagnose-a-communication-problem-between-networks-using-the-azure-portal"></a>Руководство по Диагностика проблем с обменом данными между сетями на портале Azure
 

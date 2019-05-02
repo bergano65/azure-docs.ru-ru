@@ -1,5 +1,5 @@
 ---
-title: Руководство. Подготовка сервера Базы данных Azure для MySQL с помощью шаблона Azure Resource Manager
+title: Руководство по Подготовка сервера Базы данных Azure для MySQL с помощью шаблона Azure Resource Manager
 description: В этом руководстве объясняется, как подготовить и автоматизировать развертывания на сервере Базы данных Azure для MySQL с помощью шаблона Azure Resource Manager.
 author: savjani
 ms.author: pariks
@@ -8,18 +8,18 @@ ms.devlang: json
 ms.topic: tutorial
 ms.date: 12/21/2018
 ms.custom: mvc
-ms.openlocfilehash: 5d5398f4da7563c6f53c17d0305f54c4360f1c65
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 6e4bb7622fe51c0cab4fc45e945e5bb07b1d32f1
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58076859"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64925839"
 ---
-# <a name="tutorial-provision-an-azure-database-for-mysql-server-using-azure-resource-manager-template"></a>Руководство. Подготовка сервера Базы данных Azure для MySQL с помощью шаблона Azure Resource Manager
+# <a name="tutorial-provision-an-azure-database-for-mysql-server-using-azure-resource-manager-template"></a>Руководство по Подготовка сервера Базы данных Azure для MySQL с помощью шаблона Azure Resource Manager
 
 [REST API Базы данных Azure для MySQL](https://docs.microsoft.com/rest/api/mysql/) позволяет инженерам DevOps автоматизировать и интегрировать процессы подготовки, настройки и эксплуатации управляемых серверов MySQL и баз данных в Azure.  Этот интерфейс API позволяет создавать, перечислять, настраивать и удалять серверы MySQL и базы данных в службе Базы данных Azure для MySQL.
 
-Azure Resource Manager с помощью базового REST API объявляет и программирует ресурсы Azure, необходимые для развертывания в любом масштабе, соблюдая концепцию "инфраструктура как код". Шаблон параметризует имя ресурса Azure, номер SKU, конфигурацию брандмауэра и другие параметры, что позволяет один раз создать шаблон для многократного использования.  Шаблоны Azure Resource Manager можно легко создать с помощью [портала Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-quickstart-create-templates-use-the-portal) или [Visual Studio Code](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-quickstart-create-templates-use-visual-studio-code?tabs=CLI). Они позволяют организовать упаковку приложений, стандартизацию и автоматизацию развертывания, а также интеграцию в конвейер DevOps CI/CD.  Например, если вы намерены быстро развернуть службу веб-приложений с серверной частью на основе Базы данных Azure для MySQL, полное развертывание можно выполнить с помощью этого [шаблона быстрого запуска](https://azure.microsoft.com/en-us/resources/templates/101-webapp-managed-mysql/) из коллекции GitHub.
+Azure Resource Manager с помощью базового REST API объявляет и программирует ресурсы Azure, необходимые для развертывания в любом масштабе, соблюдая концепцию "инфраструктура как код". Шаблон параметризует имя ресурса Azure, номер SKU, конфигурацию брандмауэра и другие параметры, что позволяет один раз создать шаблон для многократного использования.  Шаблоны Azure Resource Manager можно легко создать с помощью [портала Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-quickstart-create-templates-use-the-portal) или [Visual Studio Code](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-quickstart-create-templates-use-visual-studio-code?tabs=CLI). Они позволяют организовать упаковку приложений, стандартизацию и автоматизацию развертывания, а также интеграцию в конвейер DevOps CI/CD.  Например, если вы намерены быстро развернуть службу веб-приложений с серверной частью на основе Базы данных Azure для MySQL, полное развертывание можно выполнить с помощью этого [шаблона быстрого запуска](https://azure.microsoft.com/resources/templates/101-webapp-managed-mysql/) из коллекции GitHub.
 
 При работе с этим руководством вы будете использовать шаблон Azure Resource Manager и другие средства, чтобы выполнить следующие операции:
 

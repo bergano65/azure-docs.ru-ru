@@ -59,7 +59,7 @@
     - name: Отслеживание изменений
       items:
         - name: Общие сведения о службе "Отслеживание изменений"
-          href: automation-change-tracking.md
+          href: change-tracking.md
           displayName: 'wildcard, recursion, environment variables, registry'
         - name: Просмотр содержимого отслеживаемых файлов
           href: change-tracking-file-contents.md

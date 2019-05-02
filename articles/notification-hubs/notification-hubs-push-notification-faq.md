@@ -15,12 +15,12 @@ ms.devlang: multiple
 ms.topic: article
 ms.date: 03/11/2019
 ms.author: jowargo
-ms.openlocfilehash: 642e586371a0ce6abe362f8b10b54bfd8baff678
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 8af545f5700e90303562174a3c27cc5438b28e24
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60872043"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64925881"
 ---
 # <a name="push-notifications-with-azure-notification-hubs-frequently-asked-questions"></a>Отправка push-уведомлений с помощью Центров уведомлений Azure: Часто задаваемые вопросы
 
@@ -218,7 +218,7 @@ Push-уведомления поддерживаются на платформа
 [Безопасные push-уведомления посредством центров уведомлений Azure]: https://azure.microsoft.com/documentation/articles/notification-hubs-aspnet-backend-ios-secure-push/
 [Центры уведомлений Azure — рекомендации по диагностике]: https://azure.microsoft.com/documentation/articles/notification-hubs-diagnosing/
 [Метрики]: ../azure-monitor/platform/metrics-supported.md#microsoftnotificationhubsnamespacesnotificationhubs
-[Экспорт и импорт регистраций]: https://docs.microsoft.com/en-us/azure/notification-hubs/export-modify-registrations-bulk
+[Экспорт и импорт регистраций]: https://docs.microsoft.com/azure/notification-hubs/export-modify-registrations-bulk
 [портал Azure]: https://portal.azure.com
 [complete samples]: https://github.com/Azure/azure-notificationhubs-samples
 [Мобильные приложения]: https://azure.microsoft.com/services/app-service/mobile/

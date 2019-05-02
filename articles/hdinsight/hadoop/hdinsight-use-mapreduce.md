@@ -1,7 +1,6 @@
 ---
 title: Использование MapReduce в Apache Hadoop в HDInsight
 description: Узнайте, как запускать задания MapReduce в Apache Hadoop в кластере HDInsight.
-services: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
@@ -9,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 03/20/2019
-ms.openlocfilehash: f2baaf598be8ede69fd6e1fa49a5f5a6b64c24ff
-ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
+ms.openlocfilehash: 9da6b6ba3ab697887e55f9077b44cf6fa100a981
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58521206"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64707964"
 ---
 # <a name="use-mapreduce-in-apache-hadoop-on-hdinsight"></a>Использование MapReduce в Apache Hadoop в HDInsight
 
@@ -49,11 +48,9 @@ Apache Hadoop MapReduce — это программная платформа д�
 
 Дополнительные сведения см. в документации по [потоковой передаче Hadoop](https://hadoop.apache.org/docs/r1.2.1/streaming.html).
 
-Примеры использования потоковой передачи Hadoop с HDInsight приведены в следующих документах:
+Примеры использования потоковой передачи Hadoop с HDInsight см. в следующем документе:
 
 * [Использование языка C# для потоковой передачи MapReduce в Hadoop в HDInsight](apache-hadoop-dotnet-csharp-mapreduce-streaming.md)
-
-* [Разработка заданий Python MapReduce](apache-hadoop-streaming-python.md)
 
 ## <a id="data"></a>Демонстрационные данные
 
@@ -137,11 +134,9 @@ public class WordCount {
 }
 ```
 
-Инструкции по написанию приложений MapReduce см. в следующих документах:
+Инструкции по написанию приложений MapReduce см. следующий документ:
 
 * [Разработка программ MapReduce на Java для Hadoop в HDInsight на платформе Linux](apache-hadoop-develop-deploy-java-mapreduce-linux.md)
-
-* [Разработка программ потоковой передачи на Python для HDInsight](apache-hadoop-streaming-python.md)
 
 ## <a id="run"></a>Запуск MapReduce
 
@@ -158,8 +153,6 @@ HDInsight может выполнять задания HiveQL, использу�
 Чтобы узнать больше о работе с данными в HDInsight, ознакомьтесь со следующими документами:
 
 * [Разработка программ MapReduce на Java для HDInsight](apache-hadoop-develop-deploy-java-mapreduce-linux.md)
-
-* [Разработка программ MapReduce с потоковой передачей Python для HDInsight](apache-hadoop-streaming-python.md)
 
 * [Использование Apache Hive с HDInsight][hdinsight-use-hive]
 

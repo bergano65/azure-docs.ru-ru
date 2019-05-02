@@ -3,20 +3,19 @@ title: Управление единым входом и настройкой т
 description: Сведения об управлении единым входом и настройкой токенов с помощью пользовательских политик в Azure Active Directory B2C.
 services: active-directory-b2c
 author: davidmu1
-manager: daveba
+manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-origin.date: 10/09/2018
-ms.date: 04/01/2019
-ms.author: v-junlch
+ms.date: 10/09/2018
+ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: c0f5be7fd77ae195b66f8a8fb052ab8573d48171
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 2033d37a4a847380003fb95243138082df804bbf
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60317179"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64703375"
 ---
 # <a name="manage-sso-and-token-customization-using-custom-policies-in-azure-active-directory-b2c"></a>Управление единым входом и настройкой токенов с помощью пользовательских политик в Azure Active Directory B2C
 
@@ -24,7 +23,11 @@ ms.locfileid: "60317179"
 
 ## <a name="token-lifetimes-and-claims-configuration"></a>Конфигурация времени существования токенов и утверждений
 
-Чтобы изменить настройки времени существования токенов, добавьте элемент [ClaimsProviders](claimsproviders.md) в файл проверяющей стороны политики, которую следует изменить.  Элемент **ClaimsProviders** является дочерним элементом [TrustFrameworkPolicy](trustframeworkpolicy.md). Внутри необходимо разместить сведения, влияющие на время существования токенов. Пример XML выглядит так:
+Чтобы изменить настройки времени существования токенов, добавьте элемент [ClaimsProviders](claimsproviders.md) в файл проверяющей стороны политики, которую следует изменить.  Элемент **ClaimsProviders** является дочерним элементом [TrustFrameworkPolicy](trustframeworkpolicy.md). 
+
+Вставьте элемент ClaimsProviders между элементами BasePolicy и RelyingParty доверяющей стороной файла.
+
+Внутри необходимо разместить сведения, влияющие на время существования токенов. Пример XML выглядит так:
 
 ```XML
 <ClaimsProviders>
@@ -101,4 +104,3 @@ ms.locfileid: "60317179"
 - **Включение единого входа (SSO).** Включение единого входа (SSO) настроено с помощью **SingleSignOn**. Применимые значения — `Tenant`, `Application`, `Policy` и `Suppressed`. 
 - **Время существования сеанса веб-приложения (в минутах).** Время существования сеанса веб-приложения устанавливается с помощью элемента **SessionExpiryInSeconds**. Значение по умолчанию составляет 86400 секунд (1440 минут).
 - **Время ожидания сеанса веб-приложения.** Время ожидания сеанса веб-приложения устанавливается с помощью элемента **SessionExpiryType**. Применимые значения — `Absolute` и `Rolling`.
-

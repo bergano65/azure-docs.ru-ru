@@ -131,7 +131,7 @@ ms.locfileid: "64717441"
 [!INCLUDE [container-instances-limits](../includes/container-instances-limits.md)]
 
 ### <a name="container-registry-limits"></a>Ограничения реестра контейнера
-В следующей таблице приведены сведения о возможностях и ограничениях [уровней обслуживания](./container-registry/container-registry-skus.md) "Базовый", "Стандартный" и "Премиум".
+В следующей таблице приведены сведения о возможностях и ограничениях [уровней служб](./container-registry/container-registry-skus.md) "Базовый", "Стандартный" и "Премиум".
 
 [!INCLUDE [container-registry-limits](../includes/container-registry-limits.md)]
 

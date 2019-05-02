@@ -1,5 +1,5 @@
 ---
-title: Руководство. Создание среды Azure Time Series Insights | Документация Майкрософт
+title: Руководство по Создание среды Azure Time Series Insights | Документация Майкрософт
 description: Здесь описано, как создать среду службы "Аналитика временных рядов" и заполнить ее данными из имитированных устройств.
 services: time-series-insights
 author: ashannon7
@@ -9,12 +9,12 @@ ms.date: 12/05/2018
 ms.author: anshan
 manager: cshankar
 ms.custom: seodec18
-ms.openlocfilehash: 58b19a039bb6aebcd2687ab80cdd29c5f378645e
-ms.sourcegitcommit: d4f728095cf52b109b3117be9059809c12b69e32
+ms.openlocfilehash: c974e011e6f101eab617a370b24306f80c249b90
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/10/2019
-ms.locfileid: "54200213"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64718420"
 ---
 # <a name="tutorial-create-an-azure-time-series-insights-environment"></a>Руководство. Создание среды службы "Аналитика временных рядов Azure"
 
@@ -29,7 +29,7 @@ ms.locfileid: "54200213"
 
 ## <a name="video"></a>Видео
 
-В этом видео мы покажем, как с помощью акселератора решений Интернета вещей Azure создать данные, которые можно использовать, чтобы приступить к работе с Аналитикой временных рядов.
+### <a name="in-this-video-we-show-you-how-to-use-an-azure-iot-solution-accelerator-to-generate-data-that-can-be-used-to-get-started-with-time-series-insights-br"></a>В этом видео мы покажем, как с помощью акселератора решений Интернета вещей Azure создать данные, которые можно использовать, чтобы приступить к работе с Аналитикой временных рядов. </br>
 
 > [!VIDEO https://www.youtube.com/embed/6ehNf6AJkFo]
 

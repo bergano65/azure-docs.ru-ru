@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 03/31/2017
 ms.author: johnkem
 ms.subservice: alerts
-ms.openlocfilehash: 0ea34fe4862941bde882b3ea8ed5dbaa111ac742
-ms.sourcegitcommit: 1902adaa68c660bdaac46878ce2dec5473d29275
+ms.openlocfilehash: 9b86df3d08ec6dfcb3100cff333c4dc5653ee1c7
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/11/2019
-ms.locfileid: "57731505"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64688341"
 ---
 # <a name="webhooks-for-azure-activity-log-alerts"></a>Веб-перехватчики для оповещений журнала действий Azure
 В определении группы действий можно настроить конечные точки веб-перехватчика для получения уведомлений об оповещениях журнала действий. С помощью веб-перехватчика можно направлять эти уведомления в другие системы для последующей обработки или выполнения настраиваемых действий. В этой статье показано, как выглядят полезные данные HTTP POST для webhook.
@@ -21,6 +21,10 @@ ms.locfileid: "57731505"
 Дополнительные сведения об оповещениях журнала действий см. в статье [Создание оповещений журнала действий](activity-log-alerts.md).
 
 Сведения о группах действия см. в разделе [Создание групп действий и управление ими на портале Azure](../../azure-monitor/platform/action-groups.md).
+
+> [!NOTE]
+> Можно также использовать [общей схеме оповещений](https://aka.ms/commonAlertSchemaDocs), который предоставляет преимущества размещения одной расширяемой и единой полезных данных оповещения всех оповещений службы в Azure Monitor для интеграции веб-перехватчика. [Дополнительные сведения о стандартные определения оповещений схемы.](https://aka.ms/commonAlertSchemaDefinitions)
+
 
 ## <a name="authenticate-the-webhook"></a>Аутентификация веб-перехватчика
 При необходимости веб-перехватчик может использовать авторизацию на основе токенов для аутентификации. URI веб-перехватчика сохраняется вместе с идентификатором токена, например `https://mysamplealert/webcallback?tokenid=sometokenid&someparameter=somevalue`.
@@ -176,7 +180,7 @@ ms.locfileid: "57731505"
 | description |Описание оповещения, которое задается при его создании. |
 | subscriptionId |Идентификатор подписки Azure. |
 |  timestamp |Время создания события службой Azure, которая обработала запрос. |
-| ResourceId |Идентификатор ресурса для затронутого ресурса. |
+| resourceId |Идентификатор ресурса для затронутого ресурса. |
 | имя_группы_ресурсов |Имя группы ресурсов для затронутого ресурса. |
 | properties |Набор пар `<Key, Value>` (например, `Dictionary<String, String>`), содержащий сведения о событии. |
 | event |Элемент, содержащий метаданные о событии. |

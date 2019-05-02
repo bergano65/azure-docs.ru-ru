@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 09/12/2018
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 8a07136e78984f76355ade68dbeb926974513b0d
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: a5563d0bab76d11af895165a28fc0544864cfcd1
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "47004190"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60460139"
 ---
 На странице **Глобальные сети (WAN)** выберите созданную глобальную сеть. В меню слева перейдите на страницу **Начало работы**. На этой странице отображается порядок, согласно которому создаются ресурсы виртуальной глобальной сети. Для создания функциональной глобальной сети необходимо выполнить шаги 1–4. Сайты и центры можно создавать в любом порядке, так как они не зависят друг от друга. При этом их нужно создать, прежде чем их связывать.
 

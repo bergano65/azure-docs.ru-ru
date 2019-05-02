@@ -10,11 +10,11 @@ ms.date: 05/24/2018
 ms.author: anshan
 ms.custom: seodec18
 ms.openlocfilehash: 2d42b7ebdee291e7c71351fa2c3a5583a121b79e
-ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
-ms.translationtype: HT
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63760675"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64712771"
 ---
 # <a name="how-to-shape-json-to-maximize-query-performance"></a>Формирование JSON для достижения максимальной производительности запросов 
 
@@ -200,4 +200,4 @@ ms.locfileid: "63760675"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Для практического применения этих рекомендаций см. статью [Azure Time Series Insights query syntax](/rest/api/time-series-insights/ga-query-syntax) (Синтаксис запросов Аналитики временных рядов Azure). Она содержит дополнительные сведения о синтаксисе запросов к данным TSI интерфейса REST API.
+- Для практического применения этих рекомендаций см. статью [Azure Time Series Insights query syntax](/rest/api/time-series-insights/ga-query-syntax) (Синтаксис запросов Аналитики временных рядов Azure). Она содержит дополнительные сведения о синтаксисе запросов к данным TSI интерфейса REST API.

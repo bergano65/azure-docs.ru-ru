@@ -12,12 +12,12 @@ ms.topic: sample
 ms.date: 07/04/2018
 ms.author: glenga
 ms.custom: mvc
-ms.openlocfilehash: 5299675656ea23b85f78b3dbfdc02814ab332a8b
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 8874039d148cc89d3f47979370e64dd78777f268
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46979055"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60325754"
 ---
 # <a name="map-a-custom-domain-to-a-function-app"></a>Сопоставление личного домена с приложением-функцией
 
@@ -40,9 +40,9 @@ ms.locfileid: "46979055"
 
 ## <a name="script-explanation"></a>Описание скрипта
 
-В этом сценарии используются следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
+Этот сценарий использует следующие команды: Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Get-Help | Примечания |
+| Команда | Примечания |
 |---|---|
 | [az group create](https://docs.microsoft.com/cli/azure/group#az-group-create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [az storage account create](https://docs.microsoft.com/cli/azure/storage/account#az-storage-account-create) | Создает учетную запись хранения, необходимую для приложения-функции. |

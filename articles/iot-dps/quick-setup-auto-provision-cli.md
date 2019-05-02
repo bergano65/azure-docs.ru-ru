@@ -9,12 +9,12 @@ ms.service: iot-dps
 services: iot-dps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: c9e3bbbc4fbe8a9aade3364d6cbe9e93b5798595
-ms.sourcegitcommit: f057c10ae4f26a768e97f2cb3f3faca9ed23ff1b
+ms.openlocfilehash: 3062fb640985498ba35e23f6310828a2bd59bfed
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/17/2018
-ms.locfileid: "42022350"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60363722"
 ---
 # <a name="set-up-the-iot-hub-device-provisioning-service-with-azure-cli"></a>Настройка службы подготовки устройств к добавлению в Центр Интернета вещей с помощью Azure CLI
 
@@ -26,8 +26,6 @@ Azure CLI используется для создания ресурсов Azur
 > Центр Интернета вещей и служба подготовки, которые вы создадите в этом кратком руководстве, будут общедоступными как конечные точки DNS, поэтому не используйте конфиденциальную информацию при изменении имен этих ресурсов.
 >
 
-
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов

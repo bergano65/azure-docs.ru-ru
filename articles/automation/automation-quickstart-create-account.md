@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.service: automation
 ms.subservice: process-automation
 ms.custom: mvc
-ms.openlocfilehash: 7f7905a4b09e685ad98a1663333aa32bc1d7ae90
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 89f32499d02978294398aae7be21f63b5d6aa028
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59009518"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64919815"
 ---
 # <a name="create-an-azure-automation-account"></a>Создание учетной записи службы автоматизации Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "59009518"
     ![Ввод сведений об учетной записи службы автоматизации на странице](./media/automation-quickstart-create-account/create-automation-account-portal-blade.png)  
 
     > [!NOTE]
-    > Обновленный список расположений, в которых можно развернуть учетную запись службы автоматизации, см. на странице [Доступность продуктов по регионам](https://azure.microsoft.com/en-us/global-infrastructure/services/?products=automation&regions=all).
+    > Обновленный список расположений, в которых можно развернуть учетную запись службы автоматизации, см. на странице [Доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=automation&regions=all).
 
 1. По завершении развертывания щелкните **Все службы**, выберите **Учетные записи службы автоматизации** и выберите созданную учетную запись.
 

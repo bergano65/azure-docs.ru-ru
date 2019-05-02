@@ -2,7 +2,6 @@
 title: Краткое руководство. Создание кластеров Apache Hadoop с помощью Resource Manager и запрашивание данных с помощью Apache Hive в Azure HDInsight
 description: Узнайте, как создать кластеры HDInsight и запросить данные с помощью Hive.
 keywords: начало работы с hadoop, hadoop под управлением linux, краткое руководство по hadoop, начало работы с hive, краткое руководство по hive
-services: hdinsight
 ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
@@ -10,12 +9,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive,hdiseo17may2017,mvc,seodec18
 ms.topic: quickstart
 ms.date: 12/27/2018
-ms.openlocfilehash: 220549c4ac3b6db584654b2c8bf27d9b4519b54a
-ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
+ms.openlocfilehash: f192c0bcd11aacde90992e06c2736e1412f85505
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58225813"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64729414"
 ---
 # <a name="quickstart-get-started-with-apache-hadoop-and-apache-hive-in-azure-hdinsight-using-resource-manager-template"></a>Краткое руководство. Использование Apache Hadoop и Apache Hive в Azure HDInsight с шаблоном Resource Manager
 

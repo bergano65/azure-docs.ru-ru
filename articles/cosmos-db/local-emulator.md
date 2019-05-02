@@ -6,12 +6,12 @@ ms.topic: tutorial
 ms.date: 04/20/2018
 author: deborahc
 ms.author: dech
-ms.openlocfilehash: 1db103fe46db292e2aa41b648c0ace16fd450d90
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.openlocfilehash: ac2510b97e083cbbcd6529feb6f02fa17455fcb8
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59525428"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64925506"
 ---
 # <a name="use-the-azure-cosmos-emulator-for-local-development-and-testing"></a>Использование эмулятора Azure Cosmos для разработки и тестирования в локальной среде
 
@@ -153,7 +153,7 @@ table.Execute(TableOperation.Insert(new DynamicTableEntity("partitionKey", "rowK
 
 * [Установите Python 2.7](https://www.python.org/downloads/release/python-2716/).
 
-* [Установите Cassandra CLI/CQLSH](http://cassandra.apache.org/download/)
+* [Установите Cassandra CLI/CQLSH](https://cassandra.apache.org/download/)
 
 * Выполните следующие команды в обычном окне командной строки:
 
@@ -181,7 +181,7 @@ table.Execute(TableOperation.Insert(new DynamicTableEntity("partitionKey", "rowK
 
 Запустите эмулятор из командной строки с правами администратора, указав параметр /EnableGremlinEndpoint. В качестве альтернативы можно также задать переменную среды `AZURE_COSMOS_EMULATOR_GREMLIN_ENDPOINT=true`.
 
-* [Установите apache-tinkerpop-gremlin-console-3.3.4](http://tinkerpop.apache.org/downloads.html)
+* [Установите apache-tinkerpop-gremlin-console-3.3.4](https://tinkerpop.apache.org/downloads.html)
 
 * В обозревателе данных эмулятора создайте базу данных db1 и коллекцию coll1, указав параметр /name для ключа раздела
 

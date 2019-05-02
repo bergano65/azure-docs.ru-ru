@@ -12,12 +12,12 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 12/03/2018
 ms.custom: seodec18
-ms.openlocfilehash: 424476b91537c60a6d7f0f9a854453353bf98633
-ms.sourcegitcommit: b767a6a118bca386ac6de93ea38f1cc457bb3e4e
-ms.translationtype: HT
+ms.openlocfilehash: 55b19a6cf71730858fcf42880f71a2c9c07a3b31
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/18/2018
-ms.locfileid: "53557025"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64683977"
 ---
 # <a name="send-events-to-a-time-series-insights-environment-by-using-an-event-hub"></a>Отправка событий в среду службы "Аналитика временных рядов" с помощью концентратора событий
 
@@ -91,7 +91,7 @@ ms.locfileid: "53557025"
 
 ### <a name="sample-1"></a>Пример 1
 
-#### <a name="input"></a>Входные данные
+#### <a name="input"></a>Вход
 
 Простой объект JSON:
 
@@ -110,7 +110,7 @@ ms.locfileid: "53557025"
 
 ### <a name="sample-2"></a>Пример 2
 
-#### <a name="input"></a>Входные данные
+#### <a name="input"></a>Вход
 
 Массив JSON с двумя объектами JSON. Каждый объект JSON преобразуется в событие.
 
@@ -136,7 +136,7 @@ ms.locfileid: "53557025"
 
 ### <a name="sample-3"></a>Пример 3
 
-#### <a name="input"></a>Входные данные
+#### <a name="input"></a>Вход
 
 Объект JSON с вложенным массивом JSON, содержащий два объекта JSON:
 
@@ -167,7 +167,7 @@ ms.locfileid: "53557025"
 
 ### <a name="sample-4"></a>Пример 4
 
-#### <a name="input"></a>Входные данные
+#### <a name="input"></a>Вход
 
 Объект JSON со вложенным массивом JSON, содержащий два объекта JSON. Эти входные данные указывают на то, что глобальные свойства могут быть представлены сложным объектом JSON.
 
@@ -208,10 +208,9 @@ ms.locfileid: "53557025"
 |WestUs|manufacturer1|EastUs|device1|2016-01-08T01:08:00Z|pressure|psi|108.09|
 |WestUs|manufacturer1|EastUs|device2|2016-01-08T01:17:00Z|vibration|abs G|217.09|
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-> [!div class="nextstepaction"]
-> [Просмотрите свою среду в обозревателе службы "Аналитика временных рядов"](https://insights.timeseries.azure.com).
+- [Просмотрите свою среду](https://insights.timeseries.azure.com) в обозревателе Time Series Insights.
 
 <!-- Images -->
 [1]: media/send-events/updated.png

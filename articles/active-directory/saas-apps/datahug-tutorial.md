@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 01/25/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1a72b2c44550c0e481f7be4e37152e3bbe3a22f3
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 08de78e598ef7fa751c5474a248f8d901c694ea8
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57889868"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64918374"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-datahug"></a>Руководство. Интеграция Azure Active Directory с Datahug
+# <a name="tutorial-azure-active-directory-integration-with-datahug"></a>Руководство по Интеграция Azure Active Directory с Datahug
 
 В этом руководстве описано, как интегрировать приложение Datahug с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Datahug обеспечивает следующие преимущества:
@@ -116,7 +116,7 @@ ms.locfileid: "57889868"
     В текстовом поле **URL-адрес входа** введите URL-адрес: `https://apps.datahug.com/`.
 
     > [!NOTE]
-    > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Datahug](http://datahug.com/about/contact-us/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Datahug](https://datahug.com/about/contact-us/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 6. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
 
@@ -146,7 +146,7 @@ ms.locfileid: "57889868"
 
 ### <a name="configure-datahug-single-sign-on"></a>Настройка единого входа в Datahug
 
-Чтобы настроить единый вход на стороне **Datahug**, нужно отправить скачанный файл **XML метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, в [группу поддержки Datahug](http://datahug.com/about/contact-us/). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **Datahug**, нужно отправить скачанный файл **XML метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, в [группу поддержки Datahug](https://datahug.com/about/contact-us/). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 

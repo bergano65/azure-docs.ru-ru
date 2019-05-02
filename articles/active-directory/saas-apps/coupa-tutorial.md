@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Coupa | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Coupa | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Coupa.
 services: active-directory
 documentationCenter: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/25/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4156ef264069b5f926f28f766a201dceb29a512b
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 29ca16e149852d044fdd6f6ea0baf0b11ccb75cf
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57834801"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64709574"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-coupa"></a>Руководство по Интеграция Azure Active Directory с Coupa
 
@@ -114,16 +114,16 @@ ms.locfileid: "57834801"
 
     | Среда  | URL-адрес |
     |:-------------|----|
-    | Песочница | `devsso35.coupahost.com`|
-    | Производство | `prdsso40.coupahost.com`|
+    | Песочница | `sso-stg1.coupahost.com`|
+    | Производство | `sso-prd1.coupahost.com`|
     | | |
 
     c. В текстовом поле **URL-адрес ответа** введите URL-адрес:
 
     | Среда | URL-адрес |
     |------------- |----|
-    | Песочница | `https://devsso35.coupahost.com/sp/ACS.saml2`|
-    | Производство | `https://prdsso40.coupahost.com/sp/ACS.saml2`|
+    | Песочница | `https://sso-stg1.coupahost.com/sp/ACS.saml2`|
+    | Производство | `https://sso-prd1.coupahost.com/sp/ACS.saml2`|
     | | |
 
 4. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
@@ -176,7 +176,7 @@ ms.locfileid: "57834801"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

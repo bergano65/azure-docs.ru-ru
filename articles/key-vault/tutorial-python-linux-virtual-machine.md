@@ -2,24 +2,21 @@
 title: Руководство. Использование виртуальной машины Linux и приложения Python для хранения секретов в Azure Key Vault | Документация Майкрософт
 description: Из этого руководства вы узнаете, как настроить приложение Python для чтения секрета из Azure Key Vault.
 services: key-vault
-documentationcenter: ''
-author: prashanthyv
+author: mbaldwin
 manager: rajvijan
-ms.assetid: 0e57f5c7-6f5a-46b7-a18a-043da8ca0d83
 ms.service: key-vault
-ms.workload: key-vault
 ms.topic: tutorial
 ms.date: 09/05/2018
 ms.author: pryerram
 ms.custom: mvc
-ms.openlocfilehash: b7077653ec959f99491cecd71573c091772448f4
-ms.sourcegitcommit: e88188bc015525d5bead239ed562067d3fae9822
+ms.openlocfilehash: a5923c3d5ea7888a3737d7976caded8eef9c1661
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/24/2019
-ms.locfileid: "56749636"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64702106"
 ---
-# <a name="tutorial-use-a-linux-vm-and-a-python-app-to-store-secrets-in-azure-key-vault"></a>Руководство. Использование виртуальной машины Linux и приложения Python для хранения секретов в Azure Key Vault
+# <a name="tutorial-use-a-linux-vm-and-a-python-app-to-store-secrets-in-azure-key-vault"></a>Руководство по Использование виртуальной машины Linux и приложения Python для хранения секретов в Azure Key Vault
 
 Azure Key Vault помогает защитить секреты (например, ключи API и строки подключения к базе данных), необходимые для доступа к приложениям, службам и ИТ-ресурсам.
 

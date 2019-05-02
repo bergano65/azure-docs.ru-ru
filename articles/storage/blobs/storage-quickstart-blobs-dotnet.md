@@ -8,12 +8,12 @@ ms.service: storage
 ms.topic: quickstart
 ms.date: 11/14/2018
 ms.author: tamram
-ms.openlocfilehash: 50bb13ecaa9e6076f00749d54b492a1e6663a93e
-ms.sourcegitcommit: 8a59b051b283a72765e7d9ac9dd0586f37018d30
+ms.openlocfilehash: 2708efc22d373db6ee55dfee6b8adfa35bd450ef
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58287118"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64924341"
 ---
 # <a name="quickstart-use-net-to-create-a-blob-in-object-storage"></a>Краткое руководство. Использование .NET для создания большого двоичного объекта в хранилище объектов
 
@@ -48,13 +48,13 @@ ms.locfileid: "58287118"
 
 Пример приложения, используемый в этом кратком руководстве, является простым консольным приложением. Пример приложения можно найти на сайте [GitHub](https://github.com/Azure-Samples/storage-blobs-dotnet-quickstart).
 
-Используйте команду [git](https://git-scm.com/), чтобы скачать копию приложения в среду разработки. 
+Используйте команду [git](https://git-scm.com/), чтобы скачать копию приложения в среду разработки.
 
 ```bash
 git clone https://github.com/Azure-Samples/storage-blobs-dotnet-quickstart.git
 ```
 
-Эта команда клонирует репозиторий в локальную папку git. Чтобы открыть решение Visual Studio, найдите папку *storage-blobs-dotnet-quickstart*, откройте ее и дважды щелкните файл *storage-blobs-dotnet-quickstart.sln*. 
+Эта команда клонирует репозиторий в локальную папку git. Чтобы открыть решение Visual Studio, найдите папку *storage-blobs-dotnet-quickstart*, откройте ее и дважды щелкните файл *storage-blobs-dotnet-quickstart.sln*.
 
 [!INCLUDE [storage-copy-connection-string-portal](../../../includes/storage-copy-connection-string-portal.md)]
 
@@ -70,7 +70,7 @@ git clone https://github.com/Azure-Samples/storage-blobs-dotnet-quickstart.git
 setx storageconnectionstring "<yourconnectionstring>"
 ```
 
-После добавления переменной среды может потребоваться перезапустить все запущенные приложения, которым может понадобиться считать переменную среды, в том числе окно консоли. Например, если вы используете Visual Studio в качестве редактора, перезапустите Visual Studio перед запуском примера. 
+После добавления переменной среды может потребоваться перезапустить все запущенные приложения, которым может понадобиться считать переменную среды, в том числе окно консоли. Например, если вы используете Visual Studio в качестве редактора, перезапустите Visual Studio перед запуском примера.
 
 # <a name="linuxtablinux"></a>[Linux](#tab/linux)
 
@@ -85,7 +85,7 @@ export storageconnectionstring=<yourconnectionstring>
 Измените .bash_profile и добавьте переменную среды.
 
 ```bash
-export STORAGE_CONNECTION_STRING=<yourconnectionstring>
+export storageconnectionstring=<yourconnectionstring>
 ```
 
 После добавления переменной среды запустите `source .bash_profile` из окна консоли, чтобы применить изменения.
@@ -94,15 +94,15 @@ export STORAGE_CONNECTION_STRING=<yourconnectionstring>
 
 ## <a name="run-the-sample"></a>Запуск примера
 
-В этом примере тестовый файл создается в локальной папке **My Documents**, а затем отправляется в хранилище BLOB-объектов. После этого выводится список больших двоичных объектов в контейнере, а затем файл загружается с новым именем, чтобы можно было сравнить старый и новый файлы. 
+В этом примере тестовый файл создается в локальной папке **My Documents**, а затем отправляется в хранилище BLOB-объектов. После этого выводится список больших двоичных объектов в контейнере, а затем файл загружается с новым именем, чтобы можно было сравнить старый и новый файлы.
 
 # <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
-Если вы используете Visual Studio в качестве редактора, нажмите клавишу **F5** для запуска. 
+Если вы используете Visual Studio в качестве редактора, нажмите клавишу **F5** для запуска.
 
 Или перейдите к каталогу приложения и запустите приложение с помощью команды `dotnet run`.
 
-```
+```console
 dotnet run
 ```
 
@@ -110,7 +110,7 @@ dotnet run
 
 Перейдите к каталогу приложения и запустите приложение с помощью команды `dotnet run`.
 
-```
+```console
 dotnet run
 ```
 
@@ -118,7 +118,7 @@ dotnet run
 
 Перейдите к каталогу приложения и запустите приложение с помощью команды `dotnet run`.
 
-```
+```console
 dotnet run
 ```
 
@@ -126,7 +126,7 @@ dotnet run
 
 Выходные данные в этом примере приложения будут выглядеть примерно так:
 
-```
+```output
 Azure Blob storage - .NET Quickstart sample
 
 Created container 'quickstartblobs33c90d2a-eabd-4236-958b-5cc5949e731f'
@@ -144,7 +144,7 @@ Press any key to delete the sample files and example container.
 
 Если нажать клавишу **ВВОД**, приложение удалит контейнер хранилища и файлы. Перед удалением проверьте наличие двух файлов в папке **MyDocuments**. Вы можете открыть их и убедиться, что они идентичны. Скопируйте URL-адрес большого двоичного объекта из окна консоли и вставьте его в адресную строку браузера, чтобы просмотреть содержимое большого двоичного объекта.
 
-После проверки файлов нажмите любую клавишу для завершения демонстрации и удаления тестовых файлов. Теперь, когда известна функциональность примера, откройте файл Program.cs, чтобы взглянуть на код. 
+После проверки файлов нажмите любую клавишу для завершения демонстрации и удаления тестовых файлов. Теперь, когда известна функциональность примера, откройте файл Program.cs, чтобы взглянуть на код.
 
 ## <a name="understand-the-sample-code"></a>Разбор примера кода
 
@@ -184,23 +184,22 @@ else
 
 Затем пример создает контейнер и настраивает разрешения, чтобы предоставить доступ ко всем большим двоичным объектам в контейнере. Если большой двоичный объект общедоступен, к нему может получить анонимный доступ любой клиент.
 
-Для создания контейнера необходимо сначала создать экземпляр объекта [CloudBlobClient](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblobclient), указывающий на хранилище BLOB-объектов в учетной записи хранения. Затем создайте экземпляр объекта [CloudBlobContainer](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblobcontainer). А после этого можно создать контейнер. 
+Для создания контейнера необходимо сначала создать экземпляр объекта [CloudBlobClient](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblobclient), указывающий на хранилище BLOB-объектов в учетной записи хранения. Затем создайте экземпляр объекта [CloudBlobContainer](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblobcontainer). А после этого можно создать контейнер.
 
 В этом случае для создания контейнера пример вызывает метод [CreateAsync](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblobcontainer.createasync). Чтобы сделать имя контейнера уникальным, к нему добавляется значение GUID. В рабочей среде для создания контейнера (если он не имеется) и во избежание конфликтов имен предпочтительнее использовать метод [CreateIfNotExistsAsync](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblobcontainer.createifnotexistsasync).
 
 > [!IMPORTANT]
 > Имена контейнеров должны состоять из знаков нижнего регистра. Дополнительные сведения об именовании контейнеров и больших двоичных объектов см. в статье [Naming and Referencing Containers, Blobs, and Metadata](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata) (Именование контейнеров, больших двоичных объектов и метаданных и ссылка на них).
 
-
 ```csharp
 // Create the CloudBlobClient that represents the Blob storage endpoint for the storage account.
 CloudBlobClient cloudBlobClient = storageAccount.CreateCloudBlobClient();
 
-// Create a container called 'quickstartblobs' and append a GUID value to it to make the name unique. 
+// Create a container called 'quickstartblobs' and append a GUID value to it to make the name unique.
 CloudBlobContainer cloudBlobContainer = cloudBlobClient.GetContainerReference("quickstartblobs" + Guid.NewGuid().ToString());
 await cloudBlobContainer.CreateAsync();
 
-// Set the permissions so the blobs are public. 
+// Set the permissions so the blobs are public.
 BlobContainerPermissions permissions = new BlobContainerPermissions
 {
     PublicAccess = BlobContainerPublicAccessType.Blob
@@ -210,7 +209,7 @@ await cloudBlobContainer.SetPermissionsAsync(permissions);
 
 ### <a name="upload-blobs-to-the-container"></a>Отправка BLOB-объектов в контейнер
 
-Затем пример отправляет локальный файл в блочный BLOB-объект. Пример кода получает ссылку на объект **CloudBlockBlob**, вызвав метод [GetBlockBlobReference](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblobcontainer.getblockblobreference) для созданного ранее контейнера. После этого он передает выбранный файл в большой двоичный объект, вызвав метод [UploadFromFileAsync](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblockblob.uploadfromfileasync). С помощью этого метода создается большой двоичный объект, если он не был создан ранее, или же, если он имеется, происходит его замещение. 
+Затем пример отправляет локальный файл в блочный BLOB-объект. Пример кода получает ссылку на объект **CloudBlockBlob**, вызвав метод [GetBlockBlobReference](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblobcontainer.getblockblobreference) для созданного ранее контейнера. После этого он передает выбранный файл в большой двоичный объект, вызвав метод [UploadFromFileAsync](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblockblob.uploadfromfileasync). С помощью этого метода создается большой двоичный объект, если он не был создан ранее, или же, если он имеется, происходит его замещение.
 
 ```csharp
 // Create a file in your local MyDocuments folder to upload to a blob.
@@ -248,7 +247,7 @@ do
     {
         Console.WriteLine(item.Uri);
     }
-} while (blobContinuationToken != null); // Loop while the continuation token is not null. 
+} while (blobContinuationToken != null); // Loop while the continuation token is not null.
 
 ```
 
@@ -257,7 +256,7 @@ do
 Кроме того, пример загружает созданный ранее большой двоичный объект в локальную файловую систему с помощью метода [DownloadToFileAsync](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblob.downloadtofileasync). Пример кода добавляет суффикс _DOWNLOADED в имя большого двоичного объекта, чтобы можно было просмотреть оба файла в локальной файловой системе.
 
 ```csharp
-// Download the blob to a local file, using the reference created earlier. 
+// Download the blob to a local file, using the reference created earlier.
 // Append the string "_DOWNLOADED" before the .txt extension so that you can see both files in MyDocuments.
 destinationFile = sourceFile.Replace(".txt", "_DOWNLOADED.txt");
 Console.WriteLine("Downloading blob to {0}", destinationFile);
@@ -288,7 +287,7 @@ File.Delete(destinationFile);
 
 ### <a name="binaries-and-source-code"></a>Двоичные файлы и исходный код
 
-- Скачайте пакет NuGet для последней версии [клиентской библиотеки .NET](https://www.nuget.org/packages/WindowsAzure.Storage/) для службы хранилища Azure. 
+- Скачайте пакет NuGet для последней версии [клиентской библиотеки .NET](https://www.nuget.org/packages/WindowsAzure.Storage/) для службы хранилища Azure.
 - См. [исходный код клиентской библиотеки .NET](https://github.com/Azure/azure-storage-net) на сайте GitHub.
 
 ### <a name="client-library-reference-and-samples"></a>Справочник по клиентской библиотеке и примеры
@@ -298,7 +297,7 @@ File.Delete(destinationFile);
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом кратком руководстве вы узнали, как передавать, загружать и перечислять файлы в большие двоичные объекты с помощью .NET. 
+В этом кратком руководстве вы узнали, как передавать, загружать и перечислять файлы в большие двоичные объекты с помощью .NET.
 
 Сведения о создании веб-приложения, которое передает образ в хранилище BLOB-объектов, см. в статье [Передача данных изображений в облако с помощью службы хранилища Azure](storage-upload-process-images.md).
 
@@ -307,4 +306,3 @@ File.Delete(destinationFile);
 
 - Дополнительные сведения о .NET Core см. в статье [Get started with .NET in 10 minutes](https://www.microsoft.com/net/learn/get-started/) (Быстрое начало работы с .NET).
 - Пример приложения, которое можно развернуть из Visual Studio для Windows, см. в записи блога [.NET Photo Gallery Web Application Sample with Azure Blob Storage](https://azure.microsoft.com/resources/samples/storage-blobs-dotnet-webapp/) (Пример веб-приложения .NET "Фотоальбом" с хранилищем BLOB-объектов Azure).
- 

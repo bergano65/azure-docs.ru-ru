@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/01/2019
 ms.author: jeedes
-ms.openlocfilehash: a0f21165af0bcbd8bda28f0eae20d3ee837f3be9
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 964d7af92b087bd9905113a25513e2b2f7a3df17
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59275663"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64922338"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-mozy-enterprise"></a>Руководство по Интеграция Azure Active Directory с Mozy Enterprise
 
@@ -107,7 +107,7 @@ ms.locfileid: "59275663"
     В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://<tenantname>.Mozyenterprise.com`.
 
     > [!NOTE]
-    > Это значение приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Обратитесь к [группе поддержки клиентов Mozy Enterprise](http://support.mozy.com/), чтобы получить это значение. Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Это значение приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Обратитесь к [группе поддержки клиентов Mozy Enterprise](https://support.mozy.com/), чтобы получить это значение. Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Загрузить**, чтобы загрузить требуемый **сертификат (Base64)** из предложенных вариантов, и сохраните его на компьютере.
 

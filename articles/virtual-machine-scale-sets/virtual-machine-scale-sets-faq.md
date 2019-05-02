@@ -4,7 +4,7 @@ description: Ответы на часто задаваемые вопросы о
 services: virtual-machine-scale-sets
 documentationcenter: ''
 author: mayanknayar
-manager: jeconnoc
+manager: drewm
 editor: ''
 tags: azure-resource-manager
 ms.assetid: 76ac7fd7-2e05-4762-88ca-3b499e87906e
@@ -13,15 +13,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/13/2019
+ms.date: 04/25/2019
 ms.author: manayar
 ms.custom: na
-ms.openlocfilehash: 56a31770c374cdccaec4dbee751925a6da00fa59
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: b5af6c5007130d71f94e1fa748adc333a8d08a48
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60620249"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64689325"
 ---
 # <a name="azure-virtual-machine-scale-sets-faqs"></a>Часто задаваемые вопросы о масштабируемых наборах виртуальных машин Azure
 
@@ -69,10 +69,10 @@ ms.locfileid: "60620249"
 
 ### <a name="do-scale-sets-work-with-azure-availability-zones"></a>Работают ли масштабируемые наборы с зонами доступности Azure?
 
-Да. Дополнительные сведения см. в [документации по зонам масштабируемых наборов](./virtual-machine-scale-sets-use-availability-zones.md).
+ Да! Дополнительные сведения см. в [документации по зонам масштабируемых наборов](./virtual-machine-scale-sets-use-availability-zones.md).
 
 
-## <a name="autoscale"></a>Автоматическое масштабирование
+## <a name="autoscale"></a>Autoscale
 
 ### <a name="what-are-best-practices-for-azure-autoscale"></a>Существуют ли рекомендации по автомасштабированию Azure?
 
@@ -140,7 +140,7 @@ ms.locfileid: "60620249"
 
 ## <a name="certificates"></a>Сертификаты
 
-### <a name="how-do-i-securely-ship-a-certificate-to-the-vm-how-do-i-provision-a-virtual-machine-scale-set-to-run-a-website-where-the-ssl-for-the-website-is-shipped-securely-from-a-certificate-configuration-the-common-certificate-rotation-operation-would-be-almost-the-same-as-a-configuration-update-operation-do-you-have-an-example-of-how-to-do-this"></a>Как осуществляется безопасная отправка сертификата на виртуальную машину? Как подготовить масштабируемый набор виртуальных машин к запуску веб-сайта, где SSL для веб-сайта безопасно отправляется из конфигурации сертификата? (Обычная операция смены сертификатов практически такая же, как и операция обновления конфигурации.) Существует ли пример того, как это можно сделать?
+### <a name="how-do-i-securely-ship-a-certificate-to-the-vm"></a>Как осуществляется безопасная отправка сертификата на виртуальную машину?
 
 Чтобы безопасно отправить сертификат на виртуальную машину, вы можете установить сертификат клиента из хранилища ключей непосредственно в хранилище сертификатов Windows.
 
@@ -167,14 +167,12 @@ ms.locfileid: "60620249"
 Дополнительные сведения см. в разделе о [создании и обновлении масштабируемого набора виртуальных машин](https://msdn.microsoft.com/library/mt589035.aspx).
 
 
-### <a name="example-of-self-signed-certificates-provisioned-for-azure-service-fabric-clusters"></a>Пример самозаверяющих сертификатов, подготовленных для кластеров Azure Service Fabric
+### <a name="how-do-i-use-self-signed-certificates-provisioned-for-azure-service-fabric-clusters"></a>Как использовать самозаверяющие сертификаты, подготовленных для кластерах Azure Service Fabric?
 Чтобы получить последний пример, используйте следующую инструкцию CLI Azure в оболочке Azure, прочите документацию к примеру модуля CLI Service Fabrics, которая будет выведена в stdout.
 
 ```bash
 az sf cluster create -h
 ```
-
-Актуальные поддерживаемые операции с сертификатами в Azure см. в документации к хранилищам ключей.
 
 Самозаверяющие сертификаты нельзя использовать для отношений распределенного доверия, предоставляемых центром сертификации, и для кластеров Service Fabric, предназначенных для размещения корпоративных рабочих решений. Дополнительные рекомендации по безопасности Service Fabric см. в статьях [Рекомендации по безопасности Azure Service Fabric](https://docs.microsoft.com/azure/security/azure-service-fabric-security-best-practices) и [Сценарии защиты кластера Service Fabric](https://azure.microsoft.com/documentation/articles/service-fabric-cluster-security/).
 
@@ -202,9 +200,7 @@ az sf cluster create -h
 }
 ```
 
-Этот блок JSON используется в [шаблоне быстрого запуска 101-vm-sshkey на сайте GitHub](https://github.com/Azure/azure-quickstart-templates/blob/master/101-vm-sshkey/azuredeploy.json).
-
-Раздел osProfile также используется в [шаблоне быстрого запуска grelayhost.json на сайте GitHub](https://github.com/ExchMaster/gadgetron/blob/master/Gadgetron/Templates/grelayhost.json).
+Этот блок JSON используется в [этот шаблон быстрого запуска Azure](https://github.com/Azure/azure-quickstart-templates/blob/master/101-vm-sshkey/azuredeploy.json).
 
 Дополнительные сведения см. в разделе о [создании и обновлении масштабируемого набора виртуальных машин](https://msdn.microsoft.com/library/azure/mt589035.aspx#linuxconfiguration).
 
@@ -212,9 +208,9 @@ az sf cluster create -h
 
 Чтобы удалить устаревший сертификат, его необходимо удалить из списка сертификатов в хранилище. Не удаляйте сертификаты, которые вы хотите оставить на компьютере. В этом случае сертификат не удаляется со всех виртуальных машин, но он и не добавляется на новые виртуальные машины, созданные в масштабируемом наборе.
 
-Чтобы удалить сертификат из имеющихся виртуальных машин, напишите расширение пользовательского скрипта, которое позволяет удалить сертификат из хранилища сертификатов вручную.
+Удалить сертификат из имеющихся виртуальных машин, используйте расширение пользовательского скрипта, чтобы вручную удалить сертификаты из хранилища сертификатов.
 
-### <a name="how-do-i-inject-an-existing-ssh-public-key-into-the-virtual-machine-scale-set-ssh-layer-during-provisioning-i-want-to-store-the-ssh-public-key-values-in-azure-key-vault-and-then-use-them-in-my-resource-manager-template"></a>Как во время подготовки внедрить имеющийся открытый ключ SSH на уровень SSH масштабируемого набора виртуальных машин? Я хочу сохранить значения открытых ключей SSH в Azure Key Vault, чтобы затем использовать их в своем шаблоне Resource Manager.
+### <a name="how-do-i-inject-an-existing-ssh-public-key-into-the-virtual-machine-scale-set-ssh-layer-during-provisioning"></a>Как во время подготовки внедрить имеющийся открытый ключ SSH на уровень SSH масштабируемого набора виртуальных машин?
 
 Если вы устанавливаете на виртуальные машины только открытый ключ SSH, его не нужно отправлять в Key Vault. Открытые ключи не являются секретом.
 
@@ -233,11 +229,11 @@ az sf cluster create -h
 }
 ```
 
-Имя элемента конфигурации Linux | Обязательно для заполнения | type | Описание
---- | --- | --- | --- 
-ssh | Нет | Коллекция | Указывает конфигурацию ключа SSH для операционной системы Linux.
-путь | Да | String | Указывает путь к файлу Linux, где должны храниться ключи SSH или сертификат.
-keyData | Да | String | Указывает открытый ключ SSH в кодировке Base64.
+Имя элемента конфигурации Linux | Обязательно для заполнения | type | ОПИСАНИЕ
+--- | --- | --- | ---
+ssh | Нет  | Коллекция | Указывает конфигурацию ключа SSH для операционной системы Linux.
+path | Yes | Строка | Указывает путь к файлу Linux, где должны храниться ключи SSH или сертификат.
+keyData | Yes | Строка | Указывает открытый ключ SSH в кодировке Base64.
 
 Пример см. в [шаблоне быстрого запуска 101-vm-sshkey на сайте GitHub](https://github.com/Azure/azure-quickstart-templates/blob/master/101-vm-sshkey/azuredeploy.json).
 
@@ -303,16 +299,6 @@ Update-AzVmss -VirtualMachineScaleSet $vmss -ResourceGroup $rg -Name $vmssName
 
 Эта проблема не влияет на масштабирование, так как в Azure Service Fabric хранится кэшированная копия секрета (в модели с одним клиентом Fabric).
 
-### <a name="why-do-i-have-to-specify-the-exact-location-for-the-certificate-url-httpsname-of-the-vaultvaultazurenet443secretsexact-location-as-indicated-in-service-fabric-cluster-security-scenarioshttpsazuremicrosoftcomdocumentationarticlesservice-fabric-cluster-security"></a>Почему нужно указать точное расположение URL-адрес сертификата (https:\/\/\<имя хранилища >.vault.azure.net:443/secrets/\<точное расположение >), как указано в [Service Fabric сценарии защиты кластера](https://azure.microsoft.com/documentation/articles/service-fabric-cluster-security/)?
-
-В соответствии с документацией по Azure Key Vault, если версия секрета не указана, REST API получения секрета должен вернуть последнюю версию.
-
-Метод | URL-адрес
---- | ---
-GET | <https://mykeyvault.vault.azure.net/secrets/{secret-name}/{secret-version}?api-version={api-version}>
-
-Замените параметры {*имя_секрета*} и {*версия_секрета*} именем и версией секрета, которую необходимо получить. Версию секрета можно не указывать. В этом случае извлекается текущая версия.
-
 ### <a name="why-do-i-have-to-specify-the-certificate-version-when-i-use-key-vault"></a>Почему при использовании Key Vault необходимо указать версию сертификата?
 
 Указание версии сертификата в Key Vault позволяет пользователям понять, какой сертификат развернут на их виртуальных машинах.
@@ -325,7 +311,7 @@ GET | <https://mykeyvault.vault.azure.net/secrets/{secret-name}/{secret-version}
 
 Дополнительные сведения о методе X509Certificate.Export см. в [этой статье](https://msdn.microsoft.com/library/24ww6yzk(v=vs.110.aspx)).
 
-### <a name="i-do-not-see-an-option-for-users-to-pass-in-certificates-as-base64-strings-most-other-resource-providers-have-this-option"></a>Я не вижу параметр для передачи сертификатов в виде строк в формате Base64. Большинство других поставщиков ресурсов предоставляют этот параметр.
+### <a name="how-do-i-pass-in-certificates-as-base64-strings"></a>Как передавать сертификатов в виде строки base64?
 
 Чтобы выполнить эмуляцию передачи сертификата в виде строки в формате Base64, можно извлечь последнюю версию URL-адреса в шаблоне Resource Manager. Включите в шаблон Resource Manager следующее свойство JSON:
 
@@ -355,10 +341,10 @@ GET | <https://mykeyvault.vault.azure.net/secrets/{secret-name}/{secret-version}
 
 ### <a name="does-managed-identities-for-azure-resourceshttpsdocsmicrosoftcomazureactive-directorymsi-overview-work-with-virtual-machine-scale-sets"></a>Работают ли [управляемые удостоверения для ресурсов Azure](https://docs.microsoft.com/azure/active-directory/msi-overview) с масштабируемыми наборами виртуальных машин?
 
-Да. Некоторые примеры шаблонов MSI доступны в шаблонах быстрого запуска Azure. Для Linux — [https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-msi](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-msi). Для Windows — [https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-msi](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-msi).
+Да. Вы увидите некоторые примеры шаблонов MSI в шаблонах быстрого запуска Azure для [Linux](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-msi) и [Windows](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-msi).
 
 
-## <a name="extensions"></a>Расширения
+## <a name="extensions"></a>расширения.
 
 ### <a name="how-do-i-delete-a-virtual-machine-scale-set-extension"></a>Как удалить расширение масштабируемого набора виртуальных машин?
 
@@ -378,46 +364,19 @@ Update-AzVmss -ResourceGroupName "resource_group_name" -VMScaleSetName "vmssName
 
 Пример шаблона, которое интегрируется с Azure Monitor журналы набора масштабирования виртуальных машин, см. в разделе во втором примере в [развертывание кластера Azure Service Fabric и включении мониторинга с помощью журналов Azure Monitor](https://github.com/krnese/AzureDeploy/tree/master/OMS/MSOMS/ServiceFabric).
 
-### <a name="extensions-seem-to-run-in-parallel-on-virtual-machine-scale-sets-this-causes-my-custom-script-extension-to-fail-what-can-i-do-to-fix-this"></a>Похоже, что расширения выполняются в масштабируемых наборах виртуальных машин одновременно. В результате этого выполнение операции настраиваемого расширения скриптов завершается сбоем. Как это исправить?
-
-Дополнительные сведения о виртуализации расширений в масштабируемых наборах виртуальных машин см. в [этой статье](https://msftstack.wordpress.com/2016/05/12/extension-sequencing-in-azure-vm-scale-sets/).
-
-### <a name="how-do-i-reset-the-password-for-vms-in-my-virtual-machine-scale-set"></a>Как сбросить пароль виртуальных машин в масштабируемом наборе?
-
-Сбросить пароль виртуальных машин в масштабируемом наборе можно двумя способами.
-
-- Измените модель масштабируемого набора виртуальных машин. Доступно для API вычислений версии 2017-12-01 и более поздней.
-
-    Обновите учетные данные администратора непосредственно в модели масштабируемого набора (например, с помощью обозревателя ресурсов Azure, PowerShell или CLI). После обновления масштабируемого набора у всех новых виртуальных машин будут новые учетные данные. Для имеющихся виртуальных машин новые данные доступны только в том случае, если они будут пересозданы с использованием нового образа.
-
-- Сбросьте пароль с помощью расширений доступа к виртуальной машине.
-
-    Используйте следующий пример сценария PowerShell:
-
-    ```powershell
-    $vmssName = "myvmss"
-    $vmssResourceGroup = "myvmssrg"
-    $publicConfig = @{"UserName" = "newuser"}
-    $privateConfig = @{"Password" = "********"}
-
-    $extName = "VMAccessAgent"
-    $publisher = "Microsoft.Compute"
-    $vmss = Get-AzVmss -ResourceGroupName $vmssResourceGroup -VMScaleSetName $vmssName
-    $vmss = Add-AzVmssExtension -VirtualMachineScaleSet $vmss -Name $extName -Publisher $publisher -Setting $publicConfig -ProtectedSetting $privateConfig -Type $extName -TypeHandlerVersion "2.0" -AutoUpgradeMinorVersion $true
-    Update-AzVmss -ResourceGroupName $vmssResourceGroup -Name $vmssName -VirtualMachineScaleSet $vmss
-    ```
-
 ### <a name="how-do-i-add-an-extension-to-all-vms-in-my-virtual-machine-scale-set"></a>Как добавить расширение для всех виртуальных машин в масштабируемом наборе?
 
 Если политика обновления настроена на **автоматическое** обновление, при повторном развертывании шаблона новые свойства расширения применяются на всех виртуальных машинах.
 
 Если политика обновления настроена на обновление **вручную**, сначала обновите расширение, а затем вручную обновите все экземпляры на виртуальных машинах.
 
-### <a name="if-the-extensions-associated-with-an-existing-virtual-machine-scale-set-are-updated-are-existing-vms-affected-that-is-will-the-vms-not-match-the-virtual-machine-scale-set-model-or-are-they-ignored-when-an-existing-machine-is-service-healed-or-reimaged-are-the-scripts-that-are-currently-configured-on-the-virtual-machine-scale-set-executed-or-are-the-scripts-that-were-configured-when-the-vm-was-first-created-used"></a>Если обновить расширения, связанные с имеющимся масштабируемым набором, повлияет ли это на имеющиеся виртуальные машины? (То есть *не* перестанут ли виртуальные машины соответствовать требованиям модели масштабируемого набора виртуальных машин?) Или они игнорируются? После пересоздания образа или восстановления имеющейся машины будут ли выполняться скрипты, настроенные в настоящее время в масштабируемом наборе, или будут использоваться скрипты, настроенные при первом создании машины виртуальной машины?
+### <a name="if-the-extensions-associated-with-an-existing-virtual-machine-scale-set-are-updated-are-existing-vms-affected"></a>Если обновить расширения, связанные с имеющимся масштабируемым набором, повлияет ли это на имеющиеся виртуальные машины?
 
 Если обновляется определение расширения в модели масштабируемого набора виртуальных машин, а для свойства upgradePolicy задано значение **automatic**, обновляются и виртуальные машины. Если для свойства upgradePolicy задано значение **manual**, расширения помечаются как несоответствующие требованиям модели.
 
-Если виртуальная машина восстановлена, она рассматривается как прошедшая перезагрузку, и расширения повторно не запускаются. Пересоздание образа напоминает замену диска ОС на исходный образ. В этом случае запускаются все специализации, например расширения, из последней модели.
+### <a name="are-extensions-run-again-when-an-existing-machine-is-service-healed-or-reimaged"></a>Расширения запускаются снова при существующей машины восстановлена или повторного создания образов?
+
+Если существующая виртуальная машина восстановлена, она рассматривается как прошедшая перезагрузку, и расширения повторно не запускаются. При повторном создании образа виртуальной Машины, процесс аналогичен замену диска ОС на исходный образ. Все специализации из последней модели, такие как расширения, запускаются снова.
 
 ### <a name="how-do-i-join-a-virtual-machine-scale-set-to-an-active-directory-domain"></a>Как присоединить масштабируемый набор виртуальных машин к домену Active Directory?
 
@@ -450,7 +409,7 @@ Update-AzVmss -ResourceGroupName "resource_group_name" -VMScaleSetName "vmssName
 }
 ```
 
-### <a name="my-virtual-machine-scale-set-extension-is-trying-to-install-something-that-requires-a-reboot-for-example-commandtoexecute-powershellexe--executionpolicy-unrestricted-install-windowsfeature-name-fs-resource-manager-includemanagementtools"></a>Расширение масштабируемого набора виртуальных машин пытается установить что-то, требующее перезагрузки. Например, "commandToExecute": "powershell.exe -ExecutionPolicy Unrestricted Install-WindowsFeature –Name FS-Resource-Manager –IncludeManagementTools".
+### <a name="my-virtual-machine-scale-set-extension-is-trying-to-install-something-that-requires-a-reboot"></a>Расширение масштабируемого набора виртуальных машин пытается установить что-то, требующее перезагрузки.
 
 Если расширение масштабируемого набора виртуальных машин пытается установить что-то, требующее перезагрузки, вы можете использовать расширение настройки требуемого состояния службы автоматизации Azure (Automation DSC). При использовании операционной системы Windows Server 2012 R2 Azure запрашивает установку и перезагрузку Windows Management Framework (WMF) 5.0, а затем выполняет настройку.
 
@@ -473,9 +432,36 @@ Add-AzVmssExtension -VirtualMachineScaleSet $VMSS -Name "IaaSAntimalware" -Publi
 Update-AzVmss -ResourceGroupName $rgname -Name $vmssname -VirtualMachineScaleSet $VMSS
 ```
 
-### <a name="i-need-to-execute-a-custom-script-thats-hosted-in-a-private-storage-account-the-script-runs-successfully-when-the-storage-is-public-but-when-i-try-to-use-a-shared-access-signature-sas-it-fails-this-message-is-displayed-missing-mandatory-parameters-for-valid-shared-access-signature-linksas-works-fine-from-my-local-browser"></a>Мне нужно выполнить настраиваемый скрипт, размещенный в учетной записи частного хранилища. При использовании общедоступного хранилища скрипт выполняется успешно, но когда я использую подписанный URL-адрес, он завершается сбоем и отображается следующее сообщение об ошибке: "Отсутствуют обязательные параметры для допустимой подписи коллективного доступа". В локальном браузере проблемы с подписанным URL-адресом и ссылкой не возникали.
+### <a name="how-do-i-execute-a-custom-script-thats-hosted-in-a-private-storage-account"></a>Как использовать пользовательский скрипт, который размещен в учетной записи частного хранилища?
 
-Чтобы выполнить настраиваемый скрипт, размещенный в учетной записи частного хранилища, настройте защищенные параметры с использованием имени и ключа учетной записи хранения. Дополнительные сведения см. в статье [Расширение Custom Script в ОС Windows](https://azure.microsoft.com/documentation/articles/virtual-machines-windows-extensions-customscript/#template-example-for-a-windows-vm-with-protected-settings).
+Чтобы выполнить настраиваемый скрипт, размещенный в учетной записи частного хранилища, настройте защищенные параметры с использованием имени и ключа учетной записи хранения. Дополнительные сведения см. в разделе [расширение пользовательских скриптов](https://azure.microsoft.com/documentation/articles/virtual-machines-windows-extensions-customscript/#template-example-for-a-windows-vm-with-protected-settings).
+
+## <a name="passwords"></a>Пароли
+
+### <a name="how-do-i-reset-the-password-for-vms-in-my-virtual-machine-scale-set"></a>Как сбросить пароль виртуальных машин в масштабируемом наборе?
+
+Сбросить пароль виртуальных машин в масштабируемом наборе можно двумя способами.
+
+- Измените модель масштабируемого набора виртуальных машин. Состав API 2017-12-01 и более поздних версий.
+
+    Обновите учетные данные администратора непосредственно в модели масштабируемого набора (например, с помощью обозревателя ресурсов Azure, PowerShell или CLI). После обновления масштабируемого набора у всех новых виртуальных машин будут новые учетные данные. Для имеющихся виртуальных машин новые данные доступны только в том случае, если они будут пересозданы с использованием нового образа.
+
+- Сбросьте пароль с помощью расширений доступа к виртуальной машине.
+
+    Используйте следующий пример сценария PowerShell:
+
+    ```powershell
+    $vmssName = "myvmss"
+    $vmssResourceGroup = "myvmssrg"
+    $publicConfig = @{"UserName" = "newuser"}
+    $privateConfig = @{"Password" = "********"}
+
+    $extName = "VMAccessAgent"
+    $publisher = "Microsoft.Compute"
+    $vmss = Get-AzVmss -ResourceGroupName $vmssResourceGroup -VMScaleSetName $vmssName
+    $vmss = Add-AzVmssExtension -VirtualMachineScaleSet $vmss -Name $extName -Publisher $publisher -Setting $publicConfig -ProtectedSetting $privateConfig -Type $extName -TypeHandlerVersion "2.0" -AutoUpgradeMinorVersion $true
+    Update-AzVmss -ResourceGroupName $vmssResourceGroup -Name $vmssName -VirtualMachineScaleSet $vmss
+    ```
 
 ## <a name="networking"></a>Сеть
 
@@ -533,10 +519,6 @@ IP-адреса выбираются из указанной подсети.
 
 Чтобы развернуть масштабируемый набор виртуальных машин в имеющейся виртуальной сети Azure, используйте [этот шаблон](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-existing-vnet).
 
-### <a name="how-do-i-add-the-ip-address-of-the-first-vm-in-a-virtual-machine-scale-set-to-the-output-of-a-template"></a>Как добавить IP-адрес первой виртуальной машины в масштабируемом наборе к выходным данным шаблона?
-
-Дополнительные сведения о добавлении IP-адреса первой виртуальной машины в масштабируемом наборе к выходным данным шаблона см. в ответе на вопрос о [получении частных IP-адресов VMSS в Azure Resource Manager](https://stackoverflow.com/questions/42790392/arm-get-vmsss-private-ips).
-
 ### <a name="can-i-use-scale-sets-with-accelerated-networking"></a>Можно ли использовать масштабируемые наборы с ускоренной сетью?
 
 Да. Чтобы использовать ускоренную сеть, в настройках networkInterfaceConfigurations масштабируемого набора задайте для параметра enableAcceleratedNetworking значение true. Например:
@@ -580,9 +562,9 @@ IP-адреса выбираются из указанной подсети.
 
 ### <a name="can-i-configure-a-scale-set-to-work-with-multiple-application-gateways"></a>Можно ли настроить масштабируемый набор для работы с несколькими шлюзами приложений?
 
-Да. Можно добавить идентификаторы ресурсов для нескольких серверных пулов адресов шлюза приложений в список _applicationGatewayBackendAddressPools_ в разделе _ipConfigurations_ сетевого профиля масштабируемого набора.
+Да. Вы можете добавить идентификаторы ресурсов для нескольких пулов адресов серверной части шлюза приложений для _applicationGatewayBackendAddressPools_ в списке _IP-конфигураций_ сеть задать раздел масштабирования профиль.
 
-## <a name="scale"></a>Масштабирование
+## <a name="scale"></a>Масштаб
 
 ### <a name="in-what-case-would-i-create-a-virtual-machine-scale-set-with-fewer-than-two-vms"></a>В каких случаях следует создавать масштабируемый набор с одной виртуальной машиной или без них?
 
@@ -592,7 +574,7 @@ IP-адреса выбираются из указанной подсети.
 
 ### <a name="how-do-i-change-the-number-of-vms-in-a-virtual-machine-scale-set"></a>Как изменить количество виртуальных машин в масштабируемом наборе?
 
-Чтобы изменить число виртуальных машин в масштабируемом наборе на портале Azure, в разделе свойств масштабируемого набора виртуальных машин щелкните колонку "Масштабирование" и воспользуйтесь ползунком. Другие способы изменения количества экземпляров см. в статье [Change the instance count of an Azure VM Scale Set](https://msftstack.wordpress.com/2016/05/13/change-the-instance-count-of-an-azure-vm-scale-set/) (Изменение количества экземпляров в масштабируемом наборе виртуальных машин).
+Чтобы изменить число виртуальных машин в масштабируемом наборе на портале Azure, в разделе свойств масштабируемого набора виртуальных машин щелкните колонку "Масштабирование" и воспользуйтесь ползунком.
 
 ### <a name="how-do-i-define-custom-alerts-for-when-certain-thresholds-are-reached"></a>Как настроить пользовательские оповещения, отображающиеся при достижении определенных пороговых значений?
 
@@ -623,7 +605,7 @@ IP-адреса выбираются из указанной подсети.
                 },
                 "webhooks": [
                     {
-                        "serviceUri": "https://events.pagerduty.com/integration/0b75b57246814149b4d87fa6e1273687/enqueue",
+                        "serviceUri": "<service uri>",
                         "properties": {
                             "key1": "custommetric",
                             "key2": "scalevmss"
@@ -636,7 +618,6 @@ IP-адреса выбираются из указанной подсети.
 }
 ```
 
-В этом примере при достижении порогового значения оповещение отправляется на сайт Pagerduty.com.
 
 ## <a name="patching-and-operations"></a>Установка исправлений и эксплуатация
 
@@ -655,8 +636,6 @@ IP-адреса выбираются из указанной подсети.
 ### <a name="can-i-use-the-reimage-operation-to-reset-a-vm-without-changing-the-image-that-is-i-want-reset-a-vm-to-factory-settings-rather-than-to-a-new-image"></a>Можно ли использовать операцию пересоздания образа, чтобы сбросить параметры виртуальной машины, не изменяя образ? (То есть я хочу сбросить параметры виртуальной машины к значениям по умолчанию, а не создавать новый образ.)
 
 Да. Операцию пересоздания образа можно использовать, чтобы сбросить параметры виртуальной машины, не изменяя образ. Тем не менее, если масштабируемый набор виртуальных машин ссылается на образ платформы последней версии (значение `version = latest`), образ ОС виртуальной машины можно обновить на более позднюю версию при вызове операции `reimage`.
-
-Дополнительные сведения см. в статье об [управлении всеми виртуальными машинами в масштабируемом наборе](https://docs.microsoft.com/rest/api/virtualmachinescalesets/manage-all-vms-in-a-set).
 
 ### <a name="is-it-possible-to-integrate-scale-sets-with-azure-monitor-logs"></a>Существует возможность интегрировать масштабируемые наборы с журналами Azure Monitor?
 
@@ -707,7 +686,7 @@ az vmss extension set --name MicrosoftMonitoringAgent --publisher Microsoft.Ente
 
 Нет. Вы не можете передать разные аргументы расширения на разные виртуальные машины в масштабируемом наборе. Но расширения могут действовать на основе уникальных свойств виртуальной машины, на которых они выполняются, таких как имя машины. Кроме того, расширения могут запрашивать метаданные экземпляра на сайте http://169.254.169.254, чтобы получить дополнительные сведения о виртуальной машине.
 
-### <a name="why-are-there-gaps-between-my-virtual-machine-scale-set-vm-machine-names-and-vm-ids-for-example-0-1-3"></a>Почему между именами виртуальных машин в масштабируемом наборе и их идентификаторами существуют пропуски? Пример. 0, 1, 3...
+### <a name="why-are-there-gaps-between-my-virtual-machine-scale-set-vm-machine-names-and-vm-ids-for-example-0-1-3"></a>Почему между именами виртуальных машин в масштабируемом наборе и их идентификаторами существуют пропуски? Например:  0, 1, 3...
 
 Пропуски между именами виртуальных машин в масштабируемом наборе и их идентификаторами возникают, потому что для свойства **overprovision** масштабируемого набора задано стандартное значение **true**. Если значение избыточной подготовки — **true**, создается большее количество виртуальных машин, чем запрашивалось. Лишние виртуальные машины удаляются. Это позволит повысить надежность развертывания, но повлияет на связанные правила преобразования сетевых адресов и именования.
 
@@ -722,25 +701,25 @@ az vmss extension set --name MicrosoftMonitoringAgent --publisher Microsoft.Ente
   - Вы создали собственную подсистему автомасштабирования и хотите быстрее выполнить сквозное масштабирование (касательно этого сценария).
 - У вас есть масштабируемый набор, неравномерно распределенный между доменами сбоя и обновления. Причиной этого может быть выборочное удаление или удаление после избыточной подготовки виртуальных машин. Чтобы равномерно распределить виртуальные машины между доменами сбоя и обновления, выполните команду `stop deallocate`, а затем — `start`.
 
-### <a name="how-do-i-take-a-snapshot-of-a-vmss-instance"></a>Как создать моментальный снимок к экземпляру масштабируемого набора виртуальных МАШИН?
-Создайте моментальный снимок из экземпляра VMSS.
+### <a name="how-do-i-take-a-snapshot-of-a-virtual-machine-scale-set-instance"></a>Как создать моментальный снимок экземпляру масштабируемого набора виртуальных машин?
+Создайте моментальный снимок из экземпляра масштабируемого набора виртуальных машин.
 
 ```azurepowershell-interactive
 $rgname = "myResourceGroup"
 $vmssname = "myVMScaleSet"
 $Id = 0
 $location = "East US"
- 
+
 $vmss1 = Get-AzVmssVM -ResourceGroupName $rgname -VMScaleSetName $vmssname -InstanceId $Id     
 $snapshotconfig = New-AzSnapshotConfig -Location $location -AccountType Standard_LRS -OsType Windows -CreateOption Copy -SourceUri $vmss1.StorageProfile.OsDisk.ManagedDisk.id
 New-AzSnapshot -ResourceGroupName $rgname -SnapshotName 'mySnapshot' -Snapshot $snapshotconfig
-``` 
- 
+```
+
 Создание управляемого диска из моментального снимка.
 
 ```azurepowershell-interactive
 $snapshotName = "myShapshot"
 $snapshot = Get-AzSnapshot -ResourceGroupName $rgname -SnapshotName $snapshotName  
 $diskConfig = New-AzDiskConfig -AccountType Premium_LRS -Location $location -CreateOption Copy -SourceResourceId $snapshot.Id
-$osDisk = New-AzDisk -Disk $diskConfig -ResourceGroupName $rgname -DiskName ($snapshotName + '_Disk') 
+$osDisk = New-AzDisk -Disk $diskConfig -ResourceGroupName $rgname -DiskName ($snapshotName + '_Disk')
 ```

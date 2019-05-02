@@ -1,254 +1,249 @@
-items:
 - name: Документация по обмену сообщениями через служебную шину
   href: index.yml
 - name: Обзор
   items:
-  - name: Что такое обмен сообщениями с помощью служебной шины?
-    href: service-bus-messaging-overview.md
-  - name: Сравнение служб обмена сообщениями
-    href: ../event-grid/compare-messaging-services.md
-    maintainContext: true
+    - name: Что такое обмен сообщениями с помощью служебной шины?
+      href: service-bus-messaging-overview.md
+    - name: Сравнение служб обмена сообщениями
+      href: ../event-grid/compare-messaging-services.md
+      maintainContext: true
 - name: Быстрое начало работы
   items:
-  - name: Очереди служебной шины
-    items:
-    - name: Создание очереди служебной шины
+    - name: Очереди служебной шины
       items:
-      - name: Портал Azure
-        href: service-bus-quickstart-portal.md
-      - name: Azure PowerShell
-        href: service-bus-quickstart-powershell.md
-      - name: Инфраструктура CLI Azure
-        href: service-bus-quickstart-cli.md
-    - name: Отправка и получение сообщений
+        - name: Создание очереди служебной шины
+          items:
+            - name: Портал Azure
+              href: service-bus-quickstart-portal.md
+            - name: Azure PowerShell
+              href: service-bus-quickstart-powershell.md
+            - name: Инфраструктура CLI Azure
+              href: service-bus-quickstart-cli.md
+        - name: Отправка и получение сообщений
+          items:
+            - name: .NET
+              href: service-bus-dotnet-get-started-with-queues.md
+            - name: Java
+              href: service-bus-java-how-to-use-queues.md
+            - name: Node.js
+              href: service-bus-nodejs-how-to-use-queues.md
+            - name: PHP
+              href: service-bus-php-how-to-use-queues.md
+            - name: Python
+              href: service-bus-python-how-to-use-queues.md
+            - name: Ruby
+              href: service-bus-ruby-how-to-use-queues.md
+    - name: Разделы и подписки служебной шины
       items:
-      - name: .NET
-        href: service-bus-dotnet-get-started-with-queues.md
-      - name: Java
-        href: service-bus-java-how-to-use-queues.md
-      - name: Node.js
-        href: service-bus-nodejs-how-to-use-queues.md
-      - name: PHP
-        href: service-bus-php-how-to-use-queues.md
-      - name: Python
-        href: service-bus-python-how-to-use-queues.md
-      - name: Ruby
-        href: service-bus-ruby-how-to-use-queues.md
-  - name: Разделы и подписки служебной шины
-    items:
-    - name: Создание разделов и подписок
-      href: service-bus-quickstart-topics-subscriptions-portal.md
-    - name: Шаблон "публикация/подписка" для обмена сообщениями
-      items:
-      - name: .NET
-        href: service-bus-dotnet-how-to-use-topics-subscriptions.md
-      - name: Java
-        href: service-bus-java-how-to-use-topics-subscriptions.md
-      - name: Node.js
-        href: service-bus-nodejs-how-to-use-topics-subscriptions.md
-      - name: PHP
-        href: service-bus-php-how-to-use-topics-subscriptions.md
-      - name: Python
-        href: service-bus-python-how-to-use-topics-subscriptions.md
-      - name: Ruby
-        href: service-bus-ruby-how-to-use-topics-subscriptions.md
+        - name: Создание разделов и подписок
+          href: service-bus-quickstart-topics-subscriptions-portal.md
+        - name: Шаблон "публикация/подписка" для обмена сообщениями
+          items:
+            - name: .NET
+              href: service-bus-dotnet-how-to-use-topics-subscriptions.md
+            - name: Java
+              href: service-bus-java-how-to-use-topics-subscriptions.md
+            - name: Node.js
+              href: service-bus-nodejs-how-to-use-topics-subscriptions.md
+            - name: PHP
+              href: service-bus-php-how-to-use-topics-subscriptions.md
+            - name: Python
+              href: service-bus-python-how-to-use-topics-subscriptions.md
+            - name: Ruby
+              href: service-bus-ruby-how-to-use-topics-subscriptions.md
 - name: Учебники
   items:
-  - name: Обновление инвентаризации с помощью PowerShell
-    href: service-bus-tutorial-topics-subscriptions-powershell.md
-  - name: Обновление инвентаризации с помощью портала
-    href: service-bus-tutorial-topics-subscriptions-portal.md
-  - name: Обновление инвентаризации с помощью CLI
-    href: service-bus-tutorial-topics-subscriptions-cli.md
+    - name: Обновление инвентаризации с помощью PowerShell
+      href: service-bus-tutorial-topics-subscriptions-powershell.md
+    - name: Обновление инвентаризации с помощью портала
+      href: service-bus-tutorial-topics-subscriptions-portal.md
+    - name: Обновление инвентаризации с помощью CLI
+      href: service-bus-tutorial-topics-subscriptions-cli.md
 - name: Примеры
   items:
-  - name: 'Служебная шина: примеры'
-    href: service-bus-samples.md
+    - name: 'Служебная шина: примеры'
+      href: service-bus-samples.md
 - name: Основные понятия
   items:
-  - name: Управляемые удостоверения для ресурсов Azure
-    href: service-bus-managed-service-identity.md
-  - name: Управление доступом на основе ролей (предварительная версия)
-    href: service-bus-role-based-access-control.md
-  - name: 'Обмен сообщениями: уровень "Премиум"'
-    href: service-bus-premium-messaging.md
-  - name: Сравнение очередей Azure и очередей служебной шины
-    href: service-bus-azure-and-service-bus-queues-compared-contrasted.md
-  - name: Оптимизация производительности
-    href: service-bus-performance-improvements.md
-  - name: Геоизбыточное аварийное восстановление и георепликация
-    href: service-bus-geo-dr.md
-  - name: Асинхронный обмен сообщениями и высокий уровень доступности
-    href: service-bus-async-messaging.md
-  - name: Обработка сбоев и аварийных ситуаций
-    href: service-bus-outages-disasters.md
+    - name: Управляемые удостоверения для ресурсов Azure
+      href: service-bus-managed-service-identity.md
+    - name: Управление доступом на основе ролей (предварительная версия)
+      href: service-bus-role-based-access-control.md
+    - name: 'Обмен сообщениями: уровень "Премиум"'
+      href: service-bus-premium-messaging.md
+    - name: Сравнение очередей Azure и очередей служебной шины
+      href: service-bus-azure-and-service-bus-queues-compared-contrasted.md
+    - name: Оптимизация производительности
+      href: service-bus-performance-improvements.md
+    - name: Геоизбыточное аварийное восстановление и георепликация
+      href: service-bus-geo-dr.md
+    - name: Асинхронный обмен сообщениями и высокий уровень доступности
+      href: service-bus-async-messaging.md
+    - name: Обработка сбоев и аварийных ситуаций
+      href: service-bus-outages-disasters.md
+    - name: Общие атрибуты безопасности Azure
+      href: service-bus-messaging-security-attributes.md
 - name: Практические руководства
   items:
-  - name: Создание пространства имен
-    href: service-bus-create-namespace-portal.md
-  - name: Разработка
-    items:
-    - name: Обработка сообщений
+    - name: Создание пространства имен
+      href: service-bus-create-namespace-portal.md
+    - name: Разработка
       items:
-      - name: Очереди, разделы и подписки
-        href: service-bus-queues-topics-subscriptions.md
-      - name: Сообщения, полезные данные и сериализация
-        href: service-bus-messages-payloads.md
-      - name: Передача, блокировка и согласование сообщений
-        href: message-transfers-locks-settlement.md
-      - name: Последовательность сообщений и метки времени
-        href: message-sequencing.md
-      - name: Срок действия сообщения (срок жизни)
-        href: message-expiration.md
-      - name: Обработка сообщений с помощью службы "Сетка событий Azure"
-        href: service-bus-to-event-grid-integration-concept.md
-      - name: 'Сетка событий Azure: примеры'
-        href: service-bus-to-event-grid-integration-example.md
-    - name: Аутентификация и авторизация
-      href: service-bus-authentication-and-authorization.md
+        - name: Обработка сообщений
+          items:
+            - name: 'Очереди, разделы и подписки'
+              href: service-bus-queues-topics-subscriptions.md
+            - name: 'Сообщения, полезные данные и сериализация'
+              href: service-bus-messages-payloads.md
+            - name: 'Передача, блокировка и согласование сообщений'
+              href: message-transfers-locks-settlement.md
+            - name: Последовательность сообщений и метки времени
+              href: message-sequencing.md
+            - name: Срок действия сообщения (срок жизни)
+              href: message-expiration.md
+            - name: Обработка сообщений с помощью службы "Сетка событий Azure"
+              href: service-bus-to-event-grid-integration-concept.md
+            - name: 'Сетка событий Azure: примеры'
+              href: service-bus-to-event-grid-integration-example.md
+        - name: Аутентификация и авторизация
+          href: service-bus-authentication-and-authorization.md
+          items:
+            - name: Миграция из ACS в SAS
+              href: service-bus-migrate-acs-sas.md
+            - name: Аутентификация с помощью подписанных URL-адресов
+              href: service-bus-sas.md
+        - name: Фильтры и действия разделов
+          href: topic-filters.md
+        - name: Миграция из пространства имен ценовой категории "Стандартный" в пространство имен категории "Премиум"
+          href: service-bus-migrate-standard-premium.md
+        - name: Секционированные очереди и разделы
+          href: service-bus-partitioning.md
+        - name: Сеансы обмена сообщениями
+          href: message-sessions.md
+        - name: AMQP
+          items:
+            - name: Общие сведения об AMQP
+              href: service-bus-amqp-overview.md
+            - name: .NET
+              href: service-bus-amqp-dotnet.md
+            - name: Java Message Service и AMQP
+              href: service-bus-java-how-to-use-jms-api-amqp.md
+            - name: 'AMQP: руководство по использованию'
+              href: service-bus-amqp-protocol-guide.md
+            - name: 'AMQP: операции c запросами и ответами'
+              href: service-bus-amqp-request-response.md
+            - name: Ошибки AMQP
+              href: service-bus-amqp-troubleshoot.md
+        - name: Дополнительные функции
+          items:
+            - name: Использование брандмауэров
+              href: service-bus-ip-filtering.md
+            - name: Конечные точки службы виртуальной сети
+              href: service-bus-service-endpoints.md
+            - name: Очереди недоставленных сообщений
+              href: service-bus-dead-letter-queues.md
+            - name: Предварительная выборка сообщений
+              href: service-bus-prefetch.md
+            - name: Обнаружение повторяющихся сообщений
+              href: duplicate-detection.md
+            - name: Счетчики сообщений
+              href: message-counters.md
+            - name: Откладывание сообщений
+              href: message-deferral.md
+            - name: Просмотр сообщений
+              href: message-browsing.md
+            - name: Объединение в цепочки сущностей с помощью автоматической пересылки
+              href: service-bus-auto-forwarding.md
+            - name: Обработка транзакций
+              href: service-bus-transactions.md
+        - name: Комплексная трассировка и диагностика
+          href: service-bus-end-to-end-tracing.md
+        - name: Создание многоуровневого приложения Служебной шины
+          href: service-bus-dotnet-multi-tier-app-using-service-bus-queues.md
+    - name: управление
       items:
-      - name: Миграция из ACS в SAS
-        href: service-bus-migrate-acs-sas.md
-      - name: Аутентификация с помощью подписанных URL-адресов
-        href: service-bus-sas.md
-    - name: Фильтры и действия разделов
-      href: topic-filters.md
-    - name: Миграция из пространства имен ценовой категории "Стандартный" в пространство имен категории "Премиум"
-      href: service-bus-migrate-standard-premium.md
-    - name: Секционированные очереди и разделы
-      href: service-bus-partitioning.md
-    - name: Сеансы обмена сообщениями
-      href: message-sessions.md
-    - name: AMQP
+        - name: Подготовка сущностей с помощью Azure PowerShell
+          href: service-bus-manage-with-ps.md
+        - name: Мониторинг Служебной шины с помощью Azure Monitor
+          href: service-bus-metrics-azure-monitor.md
+        - name: Библиотеки управления служебной шины
+          href: service-bus-management-libraries.md
+        - name: Журналы диагностики
+          href: service-bus-diagnostic-logs.md
+        - name: Приостановка и повторная активация сущностей обмена сообщениями
+          href: entity-suspend.md
+        - name: Использование шаблонов диспетчера ресурсов Azure
+          href: service-bus-resource-manager-overview.md
+          items:
+            - name: Создание пространства имен
+              href: service-bus-resource-manager-namespace.md
+            - name: Создание пространства имен и очереди
+              href: service-bus-resource-manager-namespace-queue.md
+            - name: Создание пространства имен с разделом и подпиской
+              href: service-bus-resource-manager-namespace-topic.md
+            - name: Создание правила авторизации для пространства имен и очереди
+              href: service-bus-resource-manager-namespace-auth-rule.md
+            - name: 'Создание пространства имен с разделом, подпиской и правилом'
+              href: service-bus-resource-manager-namespace-topic-with-rule.md
+    - name: Устранение неполадок
       items:
-      - name: Общие сведения об AMQP
-        href: service-bus-amqp-overview.md
-      - name: .NET
-        href: service-bus-amqp-dotnet.md
-      - name: Java Message Service и AMQP
-        href: service-bus-java-how-to-use-jms-api-amqp.md
-      - name: 'AMQP: руководство по использованию'
-        href: service-bus-amqp-protocol-guide.md
-      - name: 'AMQP: операции c запросами и ответами'
-        href: service-bus-amqp-request-response.md
-      - name: Ошибки AMQP
-        href: service-bus-amqp-troubleshoot.md
-    - name: Дополнительные функции
-      items:
-      - name: Использование брандмауэров
-        href: service-bus-ip-filtering.md
-      - name: Конечные точки службы виртуальной сети
-        href: service-bus-service-endpoints.md
-      - name: Очереди недоставленных сообщений
-        href: service-bus-dead-letter-queues.md
-      - name: Предварительная выборка сообщений
-        href: service-bus-prefetch.md
-      - name: Обнаружение повторяющихся сообщений
-        href: duplicate-detection.md
-      - name: Счетчики сообщений
-        href: message-counters.md
-      - name: Откладывание сообщений
-        href: message-deferral.md
-      - name: Просмотр сообщений
-        href: message-browsing.md
-      - name: Объединение в цепочки сущностей с помощью автоматической пересылки
-        href: service-bus-auto-forwarding.md
-      - name: Обработка транзакций
-        href: service-bus-transactions.md
-    - name: Комплексная трассировка и диагностика
-      href: service-bus-end-to-end-tracing.md
-    - name: Создание многоуровневого приложения Служебной шины
-      href: service-bus-dotnet-multi-tier-app-using-service-bus-queues.md
-  - name: управление
-    items:
-    - name: Подготовка сущностей с помощью Azure PowerShell
-      href: service-bus-manage-with-ps.md
-    - name: Мониторинг Служебной шины с помощью Azure Monitor
-      href: service-bus-metrics-azure-monitor.md
-    - name: Библиотеки управления служебной шины
-      href: service-bus-management-libraries.md
-    - name: Журналы диагностики
-      href: service-bus-diagnostic-logs.md
-    - name: Приостановка и повторная активация сущностей обмена сообщениями
-      href: entity-suspend.md
-    - name: Использование шаблонов диспетчера ресурсов Azure
-      href: service-bus-resource-manager-overview.md
-      items:
-      - name: Создание пространства имен
-        href: service-bus-resource-manager-namespace.md
-      - name: Создание пространства имен и очереди
-        href: service-bus-resource-manager-namespace-queue.md
-      - name: Создание пространства имен с разделом и подпиской
-        href: service-bus-resource-manager-namespace-topic.md
-      - name: Создание правила авторизации для пространства имен и очереди
-        href: service-bus-resource-manager-namespace-auth-rule.md
-      - name: Создание пространства имен с разделом, подпиской и правилом
-        href: service-bus-resource-manager-namespace-topic-with-rule.md
-  - name: Устранение неполадок
-    items:
-    - name: Исключения
-      href: service-bus-messaging-exceptions.md
+        - name: Исключения
+          href: service-bus-messaging-exceptions.md
 - name: Справочные материалы
   items:
-  - name: .NET
-    items:
-    - name: Microsoft.ServiceBus.Messaging (.NET Framework)
-      href: /dotnet/api/microsoft.servicebus.messaging
-    - name: Microsoft.Azure.ServiceBus (.NET Standard)
-      href: /dotnet/api/microsoft.azure.servicebus
-  - name: Java
-    href: /java/api/overview/azure/servicebus
-  - name: Python
-    href: /python/api/overview/azure/servicebus?view=azure-python
-  - name: Node.js
-    href: /javascript/api/overview/azure/service-bus
-  - name: PHP
-    href: https://github.com/Azure/azure-sdk-for-php
-  - name: Ruby
-    href: https://github.com/Azure/azure-sdk-for-ruby
-  - name: Go
-    href: https://github.com/Azure/azure-service-bus-go
-  - name: Azure PowerShell
-    href: /powershell/module/az.servicebus
-  - name: REST
-    href: /rest/api/servicebus
-  - name: Шаблон Resource Manager
-    href: /azure/templates/microsoft.servicebus/allversions
-  - name: Квоты
-    href: service-bus-quotas.md
-  - name: Синтаксис SQLFilter
-    href: service-bus-messaging-sql-filter.md
-  - name: Синтаксис SQLRuleAction
-    href: service-bus-messaging-sql-rule-action.md
+    - name: .NET
+      items:
+        - name: Microsoft.ServiceBus.Messaging (.NET Framework)
+          href: /dotnet/api/microsoft.servicebus.messaging
+        - name: Microsoft.Azure.ServiceBus (.NET Standard)
+          href: /dotnet/api/microsoft.azure.servicebus
+    - name: Java
+      href: /java/api/overview/azure/servicebus
+    - name: Python
+      href: /python/api/overview/azure/servicebus?view=azure-python
+    - name: Node.js
+      href: /javascript/api/overview/azure/service-bus
+    - name: PHP
+      href: 'https://github.com/Azure/azure-sdk-for-php'
+    - name: Ruby
+      href: 'https://github.com/Azure/azure-sdk-for-ruby'
+    - name: Go
+      href: 'https://github.com/Azure/azure-service-bus-go'
+    - name: Azure PowerShell
+      href: /powershell/module/az.servicebus
+    - name: REST
+      href: /rest/api/servicebus
+    - name: Шаблон Resource Manager
+      href: /azure/templates/microsoft.servicebus/allversions
+    - name: Квоты
+      href: service-bus-quotas.md
+    - name: Синтаксис SQLFilter
+      href: service-bus-messaging-sql-filter.md
+    - name: Синтаксис SQLRuleAction
+      href: service-bus-messaging-sql-rule-action.md
 - name: Ресурсы
   items:
-  - name: Часто задаваемые вопросы
-    href: service-bus-faq.md
-  - name: Развитие навыков с помощью Microsoft Learn
-    href: /learn/browse/?products=azure-service-bus
-  - name: Стратегия развития Azure
-    href: https://azure.microsoft.com/roadmap/?category=enterprise-integration
-  - name: Блог
-    href: https://blogs.msdn.microsoft.com/servicebus/
-  - name: Форумы MSDN
-    href: https://social.msdn.microsoft.com/forums/home?forum=servbus
-  - name: Цены
-    href: https://azure.microsoft.com/pricing/details/service-bus/
-  - name: Калькулятор цен
-    href: https://azure.microsoft.com/pricing/calculator/
-  - name: Serverless360
-    href: https://www.serverless360.com/
-  - name: Service Bus Explorer
-    href: https://github.com/paolosalvatori/ServiceBusExplorer
-  - name: Обновления службы
-    href: https://azure.microsoft.com/updates/?product=service-bus
-  - name: Переполнение стека
-    href: https://stackoverflow.com/questions/tagged/azureservicebus
-  - name: Видеоролики
-    href: https://azure.microsoft.com/documentation/videos/index/?services=service-bus
-ms.openlocfilehash: 51bda2ae37de4cf9865549501b30518fa98c20d6
-ms.sourcegitcommit: 5f348bf7d6cf8e074576c73055e17d7036982ddb
-ms.translationtype: HT
-ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59609302"
+    - name: Часто задаваемые вопросы
+      href: service-bus-faq.md
+    - name: Развитие навыков с помощью Microsoft Learn
+      href: /learn/browse/?products=azure-service-bus
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/?category=enterprise-integration'
+    - name: Блог
+      href: 'https://blogs.msdn.microsoft.com/servicebus/'
+    - name: Форумы MSDN
+      href: 'https://social.msdn.microsoft.com/forums/home?forum=servbus'
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/details/service-bus/'
+    - name: Калькулятор цен
+      href: 'https://azure.microsoft.com/pricing/calculator/'
+    - name: Serverless360
+      href: 'https://www.serverless360.com/'
+    - name: Service Bus Explorer
+      href: 'https://github.com/paolosalvatori/ServiceBusExplorer'
+    - name: Обновления службы
+      href: 'https://azure.microsoft.com/updates/?product=service-bus'
+    - name: Переполнение стека
+      href: 'https://stackoverflow.com/questions/tagged/azureservicebus'
+    - name: Видеоролики
+      href: 'https://azure.microsoft.com/documentation/videos/index/?services=service-bus'

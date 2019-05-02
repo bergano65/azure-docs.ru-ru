@@ -5,40 +5,48 @@ services: container-service
 author: paulbouwer
 ms.service: container-service
 ms.topic: article
-ms.date: 12/3/2018
+ms.date: 04/19/2019
 ms.author: pabouwer
-ms.openlocfilehash: d85b830b63e2d52f3eeb5df8645edccfccf43c76
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: b83db323f6799b4677bcbb3a3d84b79329ec814a
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60465348"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64691857"
 ---
 # <a name="install-and-use-istio-in-azure-kubernetes-service-aks"></a>Установка и использование Istio в Службе Azure Kubernetes (AKS)
 
 Сетка [Istio][istio-github] — это решение с открытым исходным кодом, которое предоставляет набор ключевых функций для микрослужб в кластере Kubernetes, включая управление трафиком, удостоверения служб и защиту служб, а также применение политик и возможность мониторинга. См. дополнительные сведения об [Istio][istio-docs-concepts].
 
-В этой статье описано, как установить Istio. Двоичный файл клиента Istio `istioctl` устанавливается на клиентском компьютере, а затем компоненты Istio устанавливаются в кластер Kubernetes в AKS. Представленные здесь инструкции относятся к версии Istio *1.0.4*. Другие версии Istio вы найдете в репозитории [GitHub с выпусками Istio][istio-github-releases].
+В этой статье описано, как установить Istio. Istio `istioctl` двоичный файл клиента устанавливается на клиентском компьютере и Istio компоненты устанавливаются в кластер Kubernetes в AKS.
+
+> [!NOTE]
+> Эти инструкции ссылаются на версии Istio `1.1.3`.
+>
+> Istio `1.1.x` выпуски будут проверены командой Istio для версий Kubernetes `1.11`, `1.12`, `1.13`. Можно найти дополнительные версии Istio в [GitHub - освобождает Istio] [ istio-github-releases] и сведения о каждом из выпусков в [Istio - заметки о выпуске] [ istio-release-notes].
 
 В этой статье раскрываются следующие темы:
 
 > [!div class="checklist"]
 > * скачивание Istio;
-> * установка двоичного файла клиента Istio;
-> * установка компонентов Istio для Kubernetes;
-> * проверка установки
+> * Установка клиента istioctl Istio двоичные
+> * Установка Istio CRDs в AKS
+> * Установите компоненты Istio в AKS
+> * Проверка установки Istio
+> * Доступ к надстройкам
+> * Удалить Istio с AKS
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
-В этой статье предполагается, что у вас есть кластер AKS (Kubernetes 1.10 или более новой версии с поддержкой RBAC), к которому установлено подключение `kubectl`. Дополнительные сведения см. в [кратком руководстве по AKS][aks-quickstart].
+Действия, описанные в этой статье предполагается, что вы создали кластер службы контейнеров AZURE (Kubernetes `1.11` и более поздних версий, с помощью RBAC включен) и установить `kubectl` соединение с кластером. Дополнительные сведения см. в [кратком руководстве по AKS][aks-quickstart].
 
-Чтобы установить Istio, вам потребуется [Helm][helm] версии *2.10.0* или выше с правильной установкой и настройкой в этом кластере. Дополнительные сведения см. в [руководстве по установке AKS Helm][helm-install]. Если вы уже установили Helm версии *2.10.0* или выше, можно выполнить обновление. Другие варианты установки см. в [руководстве по установке Istio с помощью Helm][istio-install-helm].
+Вам потребуется [Helm] [ helm] выполните эти инструкции и установить Istio. Рекомендуется использовать версию `2.12.2` или более поздней версии правильно установлен и настроен в кластере. Если вам нужна помощь при установке Helm, затем см. в разделе [инструкции по установке AKS Helm][helm-install].
 
-В этой статье инструкции по установке Istio разделены на несколько этапов. Каждое из этих действий подробно описано, что позволит вам разобраться не только в особенностях установке Istio, но и во взаимодействии Istio с Kubernetes. Результат установки будет идентичным результату согласно [официальной инструкции][istio-install-k8s-quickstart].
+В этой статье инструкции по установке Istio разделены на несколько этапов. Результат установки будет идентичным результату согласно [официальной инструкции][istio-install-helm].
 
 ## <a name="download-istio"></a>Скачивание Istio
 
-Прежде всего, скачайте и извлеките последний выпуск Istio. Шаги для оболочки bash в MacOS, Linux или подсистеме Windows для Linux, а также для оболочки PowerShell немного отличаются. Выберите один из следующих вариантов установки для используемого окружения.
+Прежде всего, скачайте и извлеките последний выпуск Istio. Шаги для оболочки bash в MacOS, Linux или подсистеме Windows для Linux, а также для оболочки PowerShell немного отличаются. Выберите один из следующих шагов установки, извлекающий предпочтительные окружения.
 
 * [Bash для MacOS, Linux или подсистемы Linux для Windows](#bash)
 * [PowerShell](#powershell)
@@ -49,7 +57,7 @@ ms.locfileid: "60465348"
 
 ```bash
 # Specify the Istio version that will be leveraged throughout these instructions
-ISTIO_VERSION=1.0.4
+ISTIO_VERSION=1.1.3
 
 # MacOS
 curl -sL "https://github.com/istio/istio/releases/download/$ISTIO_VERSION/istio-$ISTIO_VERSION-osx.tar.gz" | tar xz
@@ -59,30 +67,38 @@ curl -sL "https://github.com/istio/istio/releases/download/$ISTIO_VERSION/istio-
 
 ```bash
 # Specify the Istio version that will be leveraged throughout these instructions
-ISTIO_VERSION=1.0.4
+ISTIO_VERSION=1.1.3
 
 curl -sL "https://github.com/istio/istio/releases/download/$ISTIO_VERSION/istio-$ISTIO_VERSION-linux.tar.gz" | tar xz
 ```
 
+Теперь перейти к раздела [установить двоичные клиент istioctl Istio](#install-the-istio-istioctl-client-binary).
+
 ### <a name="powershell"></a>PowerShell
 
-В PowerShell выполните [Invoke-WebRequest][Invoke-WebRequest], чтобы скачать последний выпуск Istio, и извлеките его с помощью [Expand-Archive][Expand-Archive], как показано ниже:
+В PowerShell, используйте `Invoke-WebRequest` загрузить последний выпуск Istio и извлеките с `Expand-Archive` следующим образом:
 
 ```powershell
 # Specify the Istio version that will be leveraged throughout these instructions
-$ISTIO_VERSION="1.0.4"
+$ISTIO_VERSION="1.1.3"
 
 # Windows
 $ProgressPreference = 'SilentlyContinue'; Invoke-WebRequest -URI "https://github.com/istio/istio/releases/download/$ISTIO_VERSION/istio-$ISTIO_VERSION-win.zip" -OutFile "istio-$ISTIO_VERSION.zip"
 Expand-Archive -Path "istio-$ISTIO_VERSION.zip" -DestinationPath .
 ```
 
-## <a name="install-the-istio-client-binary"></a>Установка двоичного файла клиента Istio
+Теперь перейти к раздела [установить двоичные клиент istioctl Istio](#install-the-istio-istioctl-client-binary).
 
-Двоичный файл клиента `istioctl` выполняется на клиентском компьютере и позволяет управлять правилами и политиками маршрутизации Istio. Инструкции по установке также немного отличаются в разных клиентских операционных системах. Выберите один из следующих вариантов установки для используемого окружения.
+## <a name="install-the-istio-istioctl-client-binary"></a>Установка клиента istioctl Istio двоичные
 
 > [!IMPORTANT]
 > Выполняйте шаги в этом разделе описано, из папки верхнего уровня выпуск Istio, который вы загрузили и извлекли.
+
+`istioctl` Двоичный файл клиента выполняется на клиентском компьютере и позволяет взаимодействовать с ней Istio. Инструкции по установке немного отличаются друг от друга клиентских операционных систем. Выберите один из следующих шагов установки, извлекающий предпочтительные окружения.
+
+* [MacOS](#macos)
+* [Linux или подсистеме Windows для Linux](#linux-or-windows-subsystem-for-linux)
+* [Windows](#windows)
 
 ### <a name="macos"></a>MacOS
 
@@ -90,8 +106,8 @@ Expand-Archive -Path "istio-$ISTIO_VERSION.zip" -DestinationPath .
 
 ```bash
 cd istio-$ISTIO_VERSION
-chmod +x ./bin/istioctl
-sudo mv ./bin/istioctl /usr/local/bin/istioctl
+sudo cp ./bin/istioctl /usr/local/bin/istioctl
+sudo chmod +x /usr/local/bin/istioctl
 ```
 
 Если вам нужна функция завершения командной строки для двоичного файла `istioctl` клиента Istio, настройте ее следующим образом:
@@ -106,7 +122,7 @@ source ~/completions/istioctl.bash
 echo "source ~/completions/istioctl.bash" >> ~/.bashrc
 ```
 
-Теперь перейдите в раздел для [установки компонентов Istio для Kubernetes](#install-the-istio-kubernetes-components).
+Теперь перейдем к следующему разделу, чтобы [установить Istio CRDs в AKS](#install-the-istio-crds-on-aks).
 
 ### <a name="linux-or-windows-subsystem-for-linux"></a>Linux или подсистема Linux для Windows
 
@@ -114,8 +130,8 @@ echo "source ~/completions/istioctl.bash" >> ~/.bashrc
 
 ```bash
 cd istio-$ISTIO_VERSION
-chmod +x ./bin/istioctl
-sudo mv ./bin/istioctl /usr/local/bin/istioctl
+sudo cp ./bin/istioctl /usr/local/bin/istioctl
+sudo chmod +x /usr/local/bin/istioctl
 ```
 
 Если вам нужна функция завершения командной строки для двоичного файла `istioctl` клиента Istio, настройте ее следующим образом:
@@ -130,45 +146,202 @@ source ~/completions/istioctl.bash
 echo "source ~/completions/istioctl.bash" >> ~/.bashrc
 ```
 
-Теперь перейдите в раздел для [установки компонентов Istio для Kubernetes](#install-the-istio-kubernetes-components).
+Теперь перейдем к следующему разделу, чтобы [установить Istio CRDs в AKS](#install-the-istio-crds-on-aks).
 
 ### <a name="windows"></a> Windows
 
-Чтобы установить двоичный файл `istioctl` клиента Istio в оболочке Powershell в Windows, используйте следующие команды. Эти команды копируют двоичный файл клиента `istioctl` в расположение программ для нового пользователя и делают его доступным через `PATH`.
+Чтобы установить Istio `istioctl` в двоичные файлы клиента **Powershell**-на основе оболочки на Windows, используйте следующие команды. Эти команды копируют `istioctl` двоичный файл в папку Istio клиента и сделать его постоянно доступным через ваш `PATH`. Не требуется привилегий (администратор) для выполнения этих команд.
 
 ```powershell
 cd istio-$ISTIO_VERSION
-New-Item -ItemType Directory -Force -Path "C:/Program Files/Istio"
-mv ./bin/istioctl.exe "C:/Program Files/Istio/"
+New-Item -ItemType Directory -Force -Path "C:\Istio"
+Copy-Item -Path .\bin\istioctl.exe -Destination "C:\Istio\"
 $PATH = [environment]::GetEnvironmentVariable("PATH", "User")
-[environment]::SetEnvironmentVariable("PATH", $PATH + "; C:\Program Files\Istio\", "User")
+[environment]::SetEnvironmentVariable("PATH", $PATH + "; C:\Istio\", "User")
 ```
 
-## <a name="install-the-istio-kubernetes-components"></a>Установка компонентов Istio для Kubernetes
+Теперь перейдем к следующему разделу, чтобы [установить Istio CRDs в AKS](#install-the-istio-crds-on-aks).
+
+## <a name="install-the-istio-crds-on-aks"></a>Установка Istio CRDs в AKS
 
 > [!IMPORTANT]
 > Выполняйте шаги в этом разделе описано, из папки верхнего уровня выпуск Istio, который вы загрузили и извлекли.
 
-> [!NOTE]
-> Версии `1.0.6` и более новой версии на диаграмме Istio Helm содержит критические изменения. Если выбрать для установки этой версии, теперь необходимо будет вручную создать секрет для Kiali. Также необходимо будет вручную создать секрет для Grafana, если вы задали `grafana.security.enabled=true`. См. в диаграмме Helm Istio [README.md](https://github.com/istio/istio/tree/master/install/kubernetes/helm/istio#installing-the-chart) Дополнительные сведения о том, как создать эти секреты.
-
-Чтобы установить компоненты Istio в кластере AKS, используйте Helm. Установите ресурсы Istio в пространстве имен `istio-system` и включите дополнительные параметры безопасности и мониторинга, как показано ниже:
+Использует Istio [определения пользовательских ресурсов (CRDs)] [ kubernetes-crd] управление его конфигурацией среды выполнения. Нам нужно установить Istio CRDs во-первых, в том случае, так как компоненты Istio зависят от их. Использование Helm и `istio-init` диаграмму, чтобы установить CRDs Istio в `istio-system` пространства имен в кластере AKS:
 
 ```azurecli
+helm install install/kubernetes/helm/istio-init --name istio-init --namespace istio-system
+```
+
+[Задания] [ kubernetes-jobs] были развернуты как часть `istio-init` Чарта Helm для установки CRDs. Эти задания может занять от 1 до 2 минут, в зависимости от вашей кластерной среды. Вы можете убедиться, что задания успешно выполнить следующим образом:
+
+```azurecli
+kubectl get jobs -n istio-system
+```
+
+В следующем примере выходных данных показано, успешно выполненные задания.
+
+```console
+NAME                COMPLETIONS   DURATION   AGE
+istio-init-crd-10   1/1           16s        18s
+istio-init-crd-11   1/1           15s        18s
+```
+
+Теперь, когда мы подтверждения успешного завершения задания, Давайте проверим, что у нас есть правильное количество CRDs Istio установлен. Чтобы узнать, что все 53 CRDs Istio были установлены, выполнив команду, соответствующую вашей среде. Команда должна вернуть номер `53`.
+
+Bash
+
+```bash
+kubectl get crds | grep 'istio.io' | wc -l
+```
+
+PowerShell
+
+```powershell
+(kubectl get crds | Select-String -Pattern 'istio.io').Count
+```
+
+Если у вас есть к этой точке, то это означает, что Istio CRDs успешно установлен. Теперь перейдем к следующему разделу, чтобы [установки компонентов Istio в AKS](#install-the-istio-components-on-aks).
+
+## <a name="install-the-istio-components-on-aks"></a>Установите компоненты Istio в AKS
+
+> [!IMPORTANT]
+> Выполняйте шаги в этом разделе описано, из папки верхнего уровня выпуск Istio, который вы загрузили и извлекли.
+
+Мы будет устанавливаться [Grafana] [ grafana] и [Kiali] [ kiali] как часть наших Istio установки. Grafana аналитику и панели мониторинга, и Kiali предоставляет возможность наблюдения сетки панели мониторинга обслуживания. В нашей программе установки, каждый из этих компонентов требуются учетные данные, необходимо передать в качестве [секрет][kubernetes-secrets].
+
+Прежде чем можно установить компоненты Istio, необходимо создать секреты Kiali и Grafana. Создайте эти секреты, выполнив соответствующие команды для вашей среды.
+
+### <a name="add-grafana-secret"></a>Добавление секрета Grafana
+
+Замените `REPLACE_WITH_YOUR_SECURE_PASSWORD` маркеров с помощью пароля и выполните следующие команды:
+
+#### <a name="macos-linux"></a>MacOS, Linux
+
+```bash
+GRAFANA_USERNAME=$(echo -n "grafana" | base64)
+GRAFANA_PASSPHRASE=$(echo -n "REPLACE_WITH_YOUR_SECURE_PASSWORD" | base64)
+
+cat <<EOF | kubectl apply -f -
+apiVersion: v1
+kind: Secret
+metadata:
+  name: grafana
+  namespace: istio-system
+  labels:
+    app: grafana
+type: Opaque
+data:
+  username: $GRAFANA_USERNAME
+  passphrase: $GRAFANA_PASSPHRASE
+EOF
+```
+
+#### <a name="windows"></a> Windows
+
+```powershell
+$GRAFANA_USERNAME=[Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes("grafana"))
+$GRAFANA_PASSPHRASE=[Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes("REPLACE_WITH_YOUR_SECURE_PASSWORD"))
+
+"apiVersion: v1
+kind: Secret
+metadata:
+  name: grafana
+  namespace: istio-system
+  labels:
+    app: grafana
+type: Opaque
+data:
+  username: $GRAFANA_USERNAME
+  passphrase: $GRAFANA_PASSPHRASE" | kubectl apply -f -
+```
+
+### <a name="add-kiali-secret"></a>Добавление секрета Kiali
+
+Замените `REPLACE_WITH_YOUR_SECURE_PASSWORD` маркеров с помощью пароля и выполните следующие команды:
+
+#### <a name="macos-linux"></a>MacOS, Linux
+
+```bash
+KIALI_USERNAME=$(echo -n "kiali" | base64)
+KIALI_PASSPHRASE=$(echo -n "REPLACE_WITH_YOUR_SECURE_PASSWORD" | base64)
+
+cat <<EOF | kubectl apply -f -
+apiVersion: v1
+kind: Secret
+metadata:
+  name: kiali
+  namespace: istio-system
+  labels:
+    app: kiali
+type: Opaque
+data:
+  username: $KIALI_USERNAME
+  passphrase: $KIALI_PASSPHRASE
+EOF
+```
+
+#### <a name="windows"></a> Windows
+
+```powershell
+$KIALI_USERNAME=[Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes("kiali"))
+$KIALI_PASSPHRASE=[Convert]::ToBase64String([System.Text.Encoding]::UTF8.GetBytes("REPLACE_WITH_YOUR_SECURE_PASSWORD"))
+
+"apiVersion: v1
+kind: Secret
+metadata:
+  name: kiali
+  namespace: istio-system
+  labels:
+    app: kiali
+type: Opaque
+data:
+  username: $KIALI_USERNAME
+  passphrase: $KIALI_PASSPHRASE" | kubectl apply -f -
+```
+
+### <a name="install-istio-components"></a>Установка компонентов Istio
+
+Теперь, когда мы успешно создали Grafana и Kiali секреты в нашем кластере AKS, пришло время для установки компонентов Istio. Использование Helm и `istio` диаграмму, чтобы установить компоненты Istio в `istio-system` пространства имен в кластере AKS. Используйте соответствующие команды для вашей среды.
+
+> [!NOTE]
+> Как часть нашей установки мы используем следующие параметры:
+> - `global.controlPlaneSecurityEnabled=true` -взаимной TLS включена для плоскости управления
+> - `mixer.adapters.useAdapterCRDs=false` -удалить контролируемые данные в адаптере mixer CRDs, как они будет признан устаревшим и это улучшит производительность
+> - `grafana.enabled=true` -включить развертывание Grafana для аналитики и панели мониторинга
+> - `grafana.security.enabled=true` -Включите проверку подлинности для Grafana
+> - `tracing.enabled=true` -включить развертывание Jaeger для трассировки
+> - `kiali.enabled=true` -включить развертывание Kiali для панели мониторинга обслуживания наблюдаемость сетки
+
+Bash
+
+```bash
 helm install install/kubernetes/helm/istio --name istio --namespace istio-system \
   --set global.controlPlaneSecurityEnabled=true \
-  --set grafana.enabled=true \
+  --set mixer.adapters.useAdapterCRDs=false \
+  --set grafana.enabled=true --set grafana.security.enabled=true \
   --set tracing.enabled=true \
   --set kiali.enabled=true
 ```
 
-Схема Helm развертывает большое число объектов. В зависимости от окружения кластера развертывание может занять 2–3 минуты.
+PowerShell
 
-## <a name="validate-the-installation"></a>проверка установки
+```powershell
+helm install install/kubernetes/helm/istio --name istio --namespace istio-system `
+  --set global.controlPlaneSecurityEnabled=true `
+  --set mixer.adapters.useAdapterCRDs=false `
+  --set grafana.enabled=true --set grafana.security.enabled=true `
+  --set tracing.enabled=true `
+  --set kiali.enabled=true
+```
 
-Чтобы убедиться, что развертывание Istio прошло успешно, давайте проверим установку.
+`istio` Чарта Helm развертывает большое число объектов. Вы можете увидеть список из выходных данных вашей `helm install` команды выше. Развертывание компонентов Istio может занять 4 – 5 минут, в зависимости от вашей кластерной среды.
 
-Сначала убедитесь, что созданы все нужные службы. Используйте команду [kubectl get svc][kubectl-get], чтобы просмотреть список запущенных служб. Создайте запрос к пространству имен *istio-system*, где установлены компоненты и выполнена надстройка Istio с помощью схемы Helm:
+На этом этапе вы развернули Istio в кластере AKS. Чтобы убедиться, что у нас есть успешное развертывание Istio, давайте перейдем к следующему разделу, чтобы [проверка установки Istio](#validate-the-istio-installation).
+
+## <a name="validate-the-istio-installation"></a>Проверка установки Istio
+
+Сначала убедитесь, что созданы все нужные службы. Используйте команду [kubectl get svc][kubectl-get], чтобы просмотреть список запущенных служб. Запрос `istio-system` пространства имен, где были установлены компоненты Istio и надстройки, `istio` чарта Helm:
 
 ```console
 kubectl get svc --namespace istio-system --output wide
@@ -176,35 +349,34 @@ kubectl get svc --namespace istio-system --output wide
 
 В следующем примере выходных данных показаны службы, которые должны быть запущены:
 
-- службы *istio-**;
-- службы надстройки для трассировки *jaeger-**, *tracing* и *zipkin*;
-- служба надстройки метрик *prometheus*;
-- служба надстройки панели аналитики и мониторинга *grafana*;
-- служба надстройки панели мониторинга для сетки служб *kiali*.
+- `istio-*` службы
+- `jaeger-*`, `tracing`, и `zipkin` трассировки службы надстройки
+- `prometheus` метрики службы надстройки
+- `grafana` Надстройка аналитики и наблюдающую функцию на панели мониторинга
+- `kiali` Надстройка службы сетки панели мониторинга службы
 
 Если `istio-ingressgateway` отображает значение `<pending>` в поле внешнего IP-адреса, подождите несколько минут, пока сеть Azure не назначит новый IP-адрес.
 
 ```console
-NAME                     TYPE           CLUSTER-IP     EXTERNAL-IP      PORT(S)                                                                                                                   AGE       SELECTOR
-grafana                  ClusterIP      10.0.26.60     <none>           3000/TCP                                                                                                                  3m        app=grafana
-istio-citadel            ClusterIP      10.0.88.87     <none>           8060/TCP,9093/TCP                                                                                                         3m        istio=citadel
-istio-egressgateway      ClusterIP      10.0.115.115   <none>           80/TCP,443/TCP                                                                                                            3m        app=istio-egressgateway,istio=egressgateway
-istio-galley             ClusterIP      10.0.104.183   <none>           443/TCP,9093/TCP                                                                                                          3m        istio=galley
-istio-ingressgateway     LoadBalancer   10.0.12.216    52.187.250.239   80:31380/TCP,443:31390/TCP,31400:31400/TCP,15011:30469/TCP,8060:31999/TCP,853:31235/TCP,15030:32000/TCP,15031:30293/TCP   3m        app=istio-ingressgateway,istio=ingressgateway
-istio-pilot              ClusterIP      10.0.38.134    <none>           15010/TCP,15011/TCP,8080/TCP,9093/TCP                                                                                     3m        istio=pilot
-istio-policy             ClusterIP      10.0.253.81    <none>           9091/TCP,15004/TCP,9093/TCP                                                                                               3m        istio-mixer-type=policy,istio=mixer
-istio-sidecar-injector   ClusterIP      10.0.181.186   <none>           443/TCP                                                                                                                   3m        istio=sidecar-injector
-istio-telemetry          ClusterIP      10.0.177.113   <none>           9091/TCP,15004/TCP,9093/TCP,42422/TCP                                                                                     3m        istio-mixer-type=telemetry,istio=mixer
-jaeger-agent             ClusterIP      None           <none>           5775/UDP,6831/UDP,6832/UDP                                                                                                3m        app=jaeger
-jaeger-collector         ClusterIP      10.0.112.81    <none>           14267/TCP,14268/TCP                                                                                                       3m        app=jaeger
-jaeger-query             ClusterIP      10.0.179.193   <none>           16686/TCP                                                                                                                 3m        app=jaeger
-kiali                    ClusterIP      10.0.211.63    <none>           20001/TCP                                                                                                                 3m        app=kiali
-prometheus               ClusterIP      10.0.70.113    <none>           9090/TCP                                                                                                                  3m        app=prometheus
-tracing                  ClusterIP      10.0.139.121   <none>           80/TCP                                                                                                                    3m        app=jaeger
-zipkin                   ClusterIP      10.0.60.155    <none>           9411/TCP                                                                                                                  3m        app=jaeger
+NAME                     TYPE           CLUSTER-IP     EXTERNAL-IP     PORT(S)                                                                                                                                      AGE       SELECTOR
+grafana                  ClusterIP      10.0.81.182    <none>          3000/TCP                                                                                                                                     119s      app=grafana
+istio-citadel            ClusterIP      10.0.96.33     <none>          8060/TCP,15014/TCP                                                                                                                           119s      istio=citadel
+istio-galley             ClusterIP      10.0.237.158   <none>          443/TCP,15014/TCP,9901/TCP                                                                                                                   119s      istio=galley
+istio-ingressgateway     LoadBalancer   10.0.154.12    20.188.211.19   15020:30603/TCP,80:31380/TCP,443:31390/TCP,31400:31400/TCP,15029:31198/TCP,15030:30610/TCP,15031:30937/TCP,15032:31344/TCP,15443:31499/TCP   119s      app=istio-ingressgateway,istio=ingressgateway,release=istio
+istio-pilot              ClusterIP      10.0.178.56    <none>          15010/TCP,15011/TCP,8080/TCP,15014/TCP                                                                                                       119s      istio=pilot
+istio-policy             ClusterIP      10.0.116.118   <none>          9091/TCP,15004/TCP,15014/TCP                                                                                                                 119s      istio-mixer-type=policy,istio=mixer
+istio-sidecar-injector   ClusterIP      10.0.31.160    <none>          443/TCP                                                                                                                                      119s      istio=sidecar-injector
+istio-telemetry          ClusterIP      10.0.187.246   <none>          9091/TCP,15004/TCP,15014/TCP,42422/TCP                                                                                                       119s      istio-mixer-type=telemetry,istio=mixer
+jaeger-agent             ClusterIP      None           <none>          5775/UDP,6831/UDP,6832/UDP                                                                                                                   119s      app=jaeger
+jaeger-collector         ClusterIP      10.0.116.63    <none>          14267/TCP,14268/TCP                                                                                                                          119s      app=jaeger
+jaeger-query             ClusterIP      10.0.22.108    <none>          16686/TCP                                                                                                                                    119s      app=jaeger
+kiali                    ClusterIP      10.0.142.50    <none>          20001/TCP                                                                                                                                    119s      app=kiali
+prometheus               ClusterIP      10.0.138.134   <none>          9090/TCP                                                                                                                                     119s      app=prometheus
+tracing                  ClusterIP      10.0.165.210   <none>          80/TCP                                                                                                                                       118s      app=jaeger
+zipkin                   ClusterIP      10.0.126.211   <none>          9411/TCP                                                                                                                                     118s      app=jaeger
 ```
 
-Затем убедитесь, что созданы все необходимые группы pod. Используйте команду [kubectl get pods][kubectl-get] и снова создайте запрос к пространству имен *istio-system*:
+Затем убедитесь, что созданы все необходимые группы pod. Используйте [kubectl get pods] [ kubectl-get] команды и снова запроса `istio-system` пространство имен:
 
 ```console
 kubectl get pods --namespace istio-system
@@ -212,36 +384,39 @@ kubectl get pods --namespace istio-system
 
 В следующем примере выходных данных представлены запущенные группы pod:
 
-- pod *istio -**;
-- pod надстройки *prometheus-* метрик;
-- pod надстройки *grafana* панели аналитики и мониторинга;
-- pod надстройки *kiali* панели мониторинга сетки служб.
+- `istio-*` модулей
+- `prometheus-*` pod метрики надстройки
+- `grafana-*` надстройку аналитики и мониторинга pod панели мониторинга
+- `kiali` pod информационной панели сетки службы надстройки
 
 ```console
 NAME                                     READY     STATUS      RESTARTS   AGE
-grafana-59b787b9b-cr6d7                  1/1       Running     0          6m
-istio-citadel-78df8c67d9-9lfpf           1/1       Running     0          6m
-istio-egressgateway-6b96cd7f5-k848h      1/1       Running     0          6m
-istio-galley-58f566cb66-8mhbv            1/1       Running     0          6m
-istio-ingressgateway-6cbbf596f6-6jz8g    1/1       Running     0          6m
-istio-pilot-8449d555fc-sl6kp             2/2       Running     0          6m
-istio-policy-6b99d88bc5-55s52            2/2       Running     0          6m
-istio-sidecar-injector-b88dfb954-8m86s   1/1       Running     0          6m
-istio-telemetry-675cb4cb9d-8s7wd         2/2       Running     0          6m
-istio-tracing-7596597bd7-sbnt9           1/1       Running     0          6m
-kiali-5fbd6ffb-4qcxw                     1/1       Running     0          6m
-prometheus-76db5fddd5-2tkxs              1/1       Running     0          6m
+grafana-88779954d-nzpm7                  1/1       Running     0          6m26s
+istio-citadel-7f699dc8c8-n7q8g           1/1       Running     0          6m26s
+istio-galley-649bc8cd97-wfjzm            1/1       Running     0          6m26s
+istio-ingressgateway-65dfbd566-42wkn     1/1       Running     0          6m26s
+istio-init-crd-10-tmtw5                  0/1       Completed   0          20m38s
+istio-init-crd-11-ql25l                  0/1       Completed   0          20m38s
+istio-pilot-958dd8cc4-4ckf9              2/2       Running     0          6m26s
+istio-policy-86b4b7cf9-zf7v7             2/2       Running     4          6m26s
+istio-sidecar-injector-d48786c5c-pmrj9   1/1       Running     0          6m26s
+istio-telemetry-7f6996fdcc-84w94         2/2       Running     3          6m26s
+istio-tracing-79db5954f-h7hmz            1/1       Running     0          6m26s
+kiali-5c4cdbb869-s28dv                   1/1       Running     0          6m26s
+prometheus-67599bf55b-pgxd8              1/1       Running     0          6m26s
 ```
 
-Все группы pod отображают состояние `Running`. Если группы pod имеют другое состояние, подождите пару минут, чтобы отобразилось нужное. Если для групп pod отображаются проблемы, выполните команду [describe pod][kubectl-describe], чтобы просмотреть выходные данные и состояние.
+Должно быть два `istio-init-crd-*` модулей с `Completed` состояния. Эти модули были отвечает за запуск заданий, которые созданы CRDs на предыдущем шаге. Все другие модули должно отображаться состояние `Running`. Если группы pod имеют другое состояние, подождите пару минут, чтобы отобразилось нужное. Если для групп pod отображаются проблемы, выполните команду [describe pod][kubectl-describe], чтобы просмотреть выходные данные и состояние.
 
 ## <a name="accessing-the-add-ons"></a>Доступ к надстройкам
 
-В ходе описанного выше процесса для Istio устанавливается несколько надстроек, которые предоставляют дополнительные функции. Пользовательские интерфейсы для надстроек не предоставляются в открытый доступ через внешний IP-адрес. Чтобы получить доступ к пользовательским интерфейсам надстроек, используйте команду [kubectl port-forward][kubectl-port-forward]. Эта команда создает безопасное подключение между локальным портом на клиентском компьютере и соответствующей группой pod в кластере AKS.
+В ходе описанного выше процесса для Istio устанавливается несколько надстроек, которые предоставляют дополнительные функции. Пользовательские интерфейсы для надстроек не предоставляются в открытый доступ через внешний IP-адрес. Чтобы получить доступ к пользовательским интерфейсам надстроек, используйте команду [kubectl port-forward][kubectl-port-forward]. Эта команда создает безопасное подключение между клиентском компьютере и соответствующие pod в кластере AKS.
+
+Мы добавили дополнительный уровень безопасности для Grafana и Kiali, указав учетные данные для их ранее в этой статье.
 
 ### <a name="grafana"></a>Grafana
 
-Панель аналитики и мониторинга для Istio предоставляется [Grafana][grafana]. Перенаправьте локальный порт клиентского компьютера *3000* на порт группы pod *3000*, в которой выполняется Grafana в кластере AKS:
+Аналитика и мониторинг панели мониторинга для Istio предоставляются [Grafana][grafana]. Пересылать локальный порт `3000` на клиентском компьютере с портом `3000` на pod, который выполняется в кластере AKS Grafana:
 
 ```console
 kubectl -n istio-system port-forward $(kubectl -n istio-system get pod -l app=grafana -o jsonpath='{.items[0].metadata.name}') 3000:3000
@@ -254,11 +429,11 @@ Forwarding from 127.0.0.1:3000 -> 3000
 Forwarding from [::1]:3000 -> 3000
 ```
 
-Теперь вы можете обратиться к Grafana по следующему URL-адресу на клиентском компьютере — [http://localhost:3000](http://localhost:3000).
+Теперь вы можете обратиться к Grafana по следующему URL-адресу на клиентском компьютере — [http://localhost:3000](http://localhost:3000). Не забывайте использовать учетные данные, которые были созданы с помощью Grafana секретный ранее при появлении запроса.
 
 ### <a name="prometheus"></a>Prometheus
 
-Обозреватель выражений для метрик предоставляется [Prometheus][prometheus]. Перенаправьте локальный порт клиентского компьютера *9090* на порт группы pod *9090*, в которой выполняется Prometheus в кластере AKS:
+Метрики для Istio, предоставляются [Prometheus][prometheus]. Пересылать локальный порт `9090` на клиентском компьютере с портом `9090` на pod, который выполняется в кластере AKS Prometheus:
 
 ```console
 kubectl -n istio-system port-forward $(kubectl -n istio-system get pod -l app=prometheus -o jsonpath='{.items[0].metadata.name}') 9090:9090
@@ -275,7 +450,7 @@ Forwarding from [::1]:9090 -> 9090
 
 ### <a name="jaeger"></a>Jaeger
 
-Пользовательский интерфейс трассировки предоставляется [Jaeger][jaeger]. Перенаправьте локальный порт клиентского компьютера *16686* на порт группы pod *16686*, в которой выполняется Jaeger в кластере AKS:
+Трассировка в Istio обеспечивается [Jaeger][jaeger]. Пересылать локальный порт `16686` на клиентском компьютере с портом `16686` на pod, который выполняется в кластере AKS Jaeger:
 
 ```console
 kubectl port-forward -n istio-system $(kubectl get pod -n istio-system -l app=jaeger -o jsonpath='{.items[0].metadata.name}') 16686:16686
@@ -292,7 +467,7 @@ Forwarding from [::1]:16686 -> 16686
 
 ### <a name="kiali"></a>Kiali
 
-Панель мониторинга для сетки служб предоставляется [Kiali][kiali]. Перенаправьте локальный порт клиентского компьютера *20001* на порт группы pod *20001*, в которой выполняется Kiali в кластере AKS:
+Панель мониторинга для сетки служб предоставляется [Kiali][kiali]. Пересылать локальный порт `20001` на клиентском компьютере с портом `20001` на pod, который выполняется в кластере AKS Kiali:
 
 ```console
 kubectl port-forward -n istio-system $(kubectl get pod -n istio-system -l app=kiali -o jsonpath='{.items[0].metadata.name}') 20001:20001
@@ -305,20 +480,54 @@ Forwarding from 127.0.0.1:20001 -> 20001
 Forwarding from [::1]:20001 -> 20001
 ```
 
-Теперь вы можете обратиться к панели мониторинга Kiali для мониторинга сетки служб по следующему URL-адресу на клиентском компьютере — [http://localhost:20001](http://localhost:20001).
+Теперь вы можете обратиться к панели мониторинга Kiali для мониторинга сетки служб по следующему URL-адресу на клиентском компьютере — [http://localhost:20001/kiali/console/](http://localhost:20001/kiali/console/). Не забывайте использовать учетные данные, которые были созданы через Kiali секретный ранее при появлении запроса.
 
-По умолчанию для панели мониторинга Kiali используются следующие имя пользователя и пароль: *username:admin/password:admin*. Эти учетные данные можно настроить с помощью параметров Helm *kiali.dashboard.username* и *kiali.dashboard.passphrase*.
+## <a name="uninstall-istio-from-aks"></a>Удалить Istio с AKS
+
+> [!WARNING]
+> Удаление Istio из работающей системы может привести к трафика проблемы между службами. Убедитесь, что внесены подготавливает системы, чтобы по-прежнему работать без Istio прежде чем продолжить.
+
+### <a name="remove-istio-components-and-namespace"></a>Удаление компонентов Istio и пространства имен
+
+Чтобы удалить Istio из кластера AKS, используйте следующие команды. `helm delete` Команды удаляют `istio` и `istio-init` диаграмм и `kubectl delete ns` команда удалит `istio-system` пространства имен.
+
+```azurecli
+helm delete --purge istio
+helm delete --purge istio-init
+kubectl delete ns istio-system
+```
+
+### <a name="remove-istio-crds"></a>Удалить Istio CRDs
+
+Указанные выше команды удаления всех компонентов Istio и пространство имен, но мы по-прежнему остаются с Istio CRDs. Чтобы удалить CRDs, можно использовать один следующих подходов.
+
+Подход 1 # - Эта команда предполагает, что этот шаг выполняется в папке верхнего уровня выпуска скачанного и извлеченного Istio, который использовался для установки Istio с.
+
+```azure-cli
+kubectl delete -f install/kubernetes/helm/istio-init/files
+```
+
+Подход #2 - используйте один из этих команд, если отсутствует доступ к выпуску скачанного и извлеченного Istio, который использовался для установки Istio с. Эта команда займет немного больше - это может занять несколько минут.
+
+Bash
+```bash
+kubectl get crds -o name | grep 'istio.io' | xargs -n1 kubectl delete
+```
+
+PowerShell
+```powershell
+kubectl get crds -o name | Select-String -Pattern 'istio.io' |% { kubectl delete $_ }
+```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о том, как можно использовать Istio для организации интеллектуальной маршрутизации между несколькими версиями приложения и развертывания раннего выпуска, см. здесь:
+В следующей документации описаны способы Istio для intelligent маршрутизации, чтобы развернуть раннего выпуска:
 
 > [!div class="nextstepaction"]
 > [Описание сценария интеллектуальной маршрутизации Istio для AKS][istio-scenario-routing]
 
 Дополнительные сведения о других вариантах установки и настройки для Istio см. здесь:
 
-- [Istio - Kubernetes installation quickstart][istio-install-k8s-quickstart] (Istio: краткое руководство по установке Kubernetes)
 - [Istio - Helm installation guide][istio-install-helm] (Istio: руководство по установке Helm)
 - [Istio - Helm installation options][istio-install-helm-options] (Istio: параметры установки Helm)
 
@@ -327,27 +536,30 @@ Forwarding from [::1]:20001 -> 20001
 <!-- LINKS - external -->
 [istio]: https://istio.io
 [helm]: https://helm.sh
+
 [istio-docs-concepts]: https://istio.io/docs/concepts/what-is-istio/
 [istio-github]: https://github.com/istio/istio
 [istio-github-releases]: https://github.com/istio/istio/releases
+[istio-release-notes]: https://istio.io/about/notes/
 [istio-install-download]: https://istio.io/docs/setup/kubernetes/download-release/
-[istio-install-k8s-quickstart]: https://istio.io/docs/setup/kubernetes/quick-start/
-[istio-install-helm]: https://istio.io/docs/setup/kubernetes/helm-install/
+[istio-install-helm]: https://istio.io/docs/setup/kubernetes/install/helm/
 [istio-install-helm-options]: https://istio.io/docs/reference/config/installation-options/
 [istio-bookinfo-example]: https://istio.io/docs/examples/bookinfo/
 [install-wsl]: https://docs.microsoft.com/windows/wsl/install-win10
-[kubernetes-crd]: https://kubernetes.io/docs/tasks/access-kubernetes-api/custom-resources/custom-resource-definitions/
+
+[kubernetes-crd]: https://kubernetes.io/docs/concepts/extend-kubernetes/api-extension/custom-resources/#customresourcedefinitions
+[kubernetes-jobs]: https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/
+[kubernetes-secrets]: https://kubernetes.io/docs/concepts/configuration/secret/
+[kubectl-get]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#get
+[kubectl-describe]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#describe
+[kubectl-port-forward]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#port-forward
+
 [grafana]: https://grafana.com/
 [prometheus]: https://prometheus.io/
 [jaeger]: https://www.jaegertracing.io/
 [kiali]: https://www.kiali.io/
-[kubectl-get]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#get
-[kubectl-describe]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#describe
-[kubectl-port-forward]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#port-forward
 
 <!-- LINKS - internal -->
 [aks-quickstart]: ./kubernetes-walkthrough.md
 [istio-scenario-routing]: ./istio-scenario-routing.md
 [helm-install]: ./kubernetes-helm.md
-[Invoke-WebRequest]: /powershell/module/microsoft.powershell.utility/invoke-webrequest
-[Expand-Archive]: /powershell/module/Microsoft.PowerShell.Archive/Expand-Archive

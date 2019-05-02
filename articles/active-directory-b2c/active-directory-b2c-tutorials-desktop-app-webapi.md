@@ -3,19 +3,19 @@ title: Руководство. Предоставление доступа к в
 description: Руководство по использованию Active Directory B2C для защиты веб-API Node.js и его вызова из классического приложения NET.
 services: active-directory-b2c
 author: davidmu1
-manager: daveba
+manager: celestedg
 ms.author: davidmu
 ms.date: 02/04/2019
 ms.custom: mvc
 ms.topic: tutorial
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: 90a6a88ff0dc5aab1163e471b24cd1d00e548a1b
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
+ms.openlocfilehash: ef48c0f78083217581594b481b15a74a49fef4f9
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55755124"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64715847"
 ---
 # <a name="tutorial-grant-access-to-a-nodejs-web-api-from-a-desktop-app-using-azure-active-directory-b2c"></a>Руководство. Предоставление доступа к веб-API Node.js из классического приложения с помощью Azure Active Directory B2C
 

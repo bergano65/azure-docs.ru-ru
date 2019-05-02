@@ -1,7 +1,6 @@
 ---
 title: 'Руководство. Выполнение операций извлечения, преобразования и загрузки (ETL) с использованием Hive в Azure HDInsight '
 description: Сведения об извлечении данных из необработанного набора данных в формате CSV, их преобразовании с помощью Hive в HDInsight и загрузке преобразованных данных в базу данных SQL Azure с помощью Apache Sqoop.
-services: hdinsight
 author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
@@ -9,12 +8,12 @@ ms.topic: tutorial
 ms.date: 05/07/2018
 ms.author: hrasheed
 ms.custom: H1Hack27Feb2017,hdinsightactive,mvc
-ms.openlocfilehash: b8a45f3014b3fd5d0f5592b3f9bd408fc37b387b
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: eb86dc8c5c3b215a2c90380b4009efd00d2a243c
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57999951"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64723144"
 ---
 # <a name="tutorial-extract-transform-and-load-data-using-apache-hive-on-azure-hdinsight"></a>Руководство. Извлечение, преобразование и загрузка данных с помощью Apache Hive в Azure HDInsight
 
@@ -320,7 +319,7 @@ ms.locfileid: "57999951"
 * [Использование Apache Hive с HDInsight][hdinsight-use-hive]
 * [Использование Apache Pig с HDInsight][hdinsight-use-pig]
 * [Разработка программ MapReduce на Java для Apache Hadoop в HDInsight][hdinsight-develop-mapreduce]
-* [Разработка программ MapReduce с потоковой передачей Python для HDInsight][hdinsight-develop-streaming]
+
 * [Использование Apache Oozie с HDInsight][hdinsight-use-oozie]
 * [Использование Apache Sqoop с HDInsight][hdinsight-use-sqoop]
 
@@ -342,7 +341,7 @@ ms.locfileid: "57999951"
 [hdinsight-get-started]: hadoop/apache-hadoop-linux-tutorial-get-started.md
 [hdinsight-use-sqoop]:hadoop/apache-hadoop-use-sqoop-mac-linux.md
 [hdinsight-use-pig]:hadoop/hdinsight-use-pig.md
-[hdinsight-develop-streaming]:hadoop/apache-hadoop-streaming-python.md
+
 [hdinsight-develop-mapreduce]:hadoop/apache-hadoop-develop-deploy-java-mapreduce-linux.md
 
 [hadoop-hiveql]: https://cwiki.apache.org/confluence/display/Hive/LanguageManual+DDL

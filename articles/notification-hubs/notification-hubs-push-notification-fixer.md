@@ -14,12 +14,12 @@ ms.devlang: multiple
 ms.topic: article
 ms.date: 04/04/2019
 ms.author: jowargo
-ms.openlocfilehash: 4fc4175c03baa4ddb81507dd4001fcdbe7c7058b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: eebf9ef63a8622c4cc431322b786fdf30f6352fe
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61458781"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64925821"
 ---
 # <a name="diagnose-dropped-notifications-in-azure-notification-hubs"></a>Диагностика пропущенных уведомлений в центрах уведомлений Azure
 
@@ -123,7 +123,7 @@ ms.locfileid: "61458781"
 
 #### <a name="push-notification-service-developer-portal"></a>Портале разработчика службы Push-уведомлений ####
 
-Проверьте учетные данные на соответствующем портале разработчика службы push-уведомлений (APNs, FCM, служба уведомлений Windows и т. д.). Дополнительные сведения см. в статье [Руководство отправке уведомлений в приложения универсальной платформы Windows с использованием Центров уведомлений Azure](https://docs.microsoft.com/en-us/azure/notification-hubs/notification-hubs-windows-store-dotnet-get-started-wns-push-notification).
+Проверьте учетные данные на соответствующем портале разработчика службы push-уведомлений (APNs, FCM, служба уведомлений Windows и т. д.). Дополнительные сведения см. в статье [Руководство. отправке уведомлений в приложения универсальной платформы Windows с использованием Центров уведомлений Azure](https://docs.microsoft.com/azure/notification-hubs/notification-hubs-windows-store-dotnet-get-started-wns-push-notification).
 
 #### <a name="azure-portal"></a>Портал Azure ####
 
@@ -160,7 +160,7 @@ ms.locfileid: "61458781"
 > [!NOTE]
 > Visual Studio можно используйте для изменения регистрации только во время разработки и тестирования, а также с помощью ограниченного числа регистраций. Если вам нужно редактирования регистраций в пакетном режиме, рассмотрите возможность использования экспорта и импорта регистраций, описанной в [How To: Экспорт и изменение регистраций в пакетном режиме](https://msdn.microsoft.com/library/dn790624.aspx).
 
-#### <a name="service-bus-explorer"></a>Обозреватель служебной шины ####
+#### <a name="service-bus-explorer"></a>Service Bus Explorer ####
 
 Многие клиенты используют [Service Bus Explorer](https://github.com/paolosalvatori/ServiceBusExplorer) для просмотра и управления их центров уведомлений. который представляет собой проект с открытым кодом. 
 
@@ -180,7 +180,7 @@ ms.locfileid: "61458781"
 
 Дополнительные сведения об использовании Центров уведомлений с помощью обозревателя серверов в Visual Studio см. в следующих статьях:
 
-* [Просмотр регистраций устройства в центры уведомлений](https://docs.microsoft.com/en-us/previous-versions/windows/apps/dn792122(v=win.10))
+* [Просмотр регистраций устройства в центры уведомлений](https://docs.microsoft.com/previous-versions/windows/apps/dn792122(v=win.10))
 * [Deep Dive: Visual Studio 2013 Update 2 RC and Azure SDK 2.3] (Подробный обзор. Релиз-кандидат Visual Studio 2013 с обновлением 2 и пакет Azure SDK 2.3)
 * [Объявление о выпуске Visual Studio 2013 с обновлением 3 и пакета Azure SDK 2.4]
 
@@ -194,7 +194,7 @@ ms.locfileid: "61458781"
 
 Информацию об ошибках службы push-уведомлений можно получить с помощью свойства [Сведения о свойстве EnableTestSend]. Оно автоматически включается при отправке тестового сообщения с портала или клиентского приложения Visual Studio Это свойство позволяет просматривать подробную отладочную информацию, а также через API-интерфейсы. Сейчас его можно использовать в пакете SDK для .NET. Оно будет добавляться ко всем пакетам SDK клиента со временем.
 
-Чтобы использовать свойство `EnableTestSend` с вызовом REST, добавьте параметр строки запроса с именем *test* в конце вызова отправки. Пример.
+Чтобы использовать свойство `EnableTestSend` с вызовом REST, добавьте параметр строки запроса с именем *test* в конце вызова отправки. Например: 
 
 ```text
 https://mynamespace.servicebus.windows.net/mynotificationhub/messages?api-version=2013-10&test
@@ -261,7 +261,7 @@ The Token obtained from the Token Provider is wrong
 
 #### <a name="programmatic-access"></a>Программный доступ ####
 
-Дополнительные сведения о программном доступе см. в разделе [программный доступ](https://docs.microsoft.com/en-us/previous-versions/azure/azure-services/dn458823(v=azure.100)).
+Дополнительные сведения о программном доступе см. в разделе [программный доступ](https://docs.microsoft.com/previous-versions/azure/azure-services/dn458823(v=azure.100)).
 
 > [!NOTE]
 > Некоторые функции, связанные с телеметрией, например экспорт и импорт данных регистраций и доступ к телеметрии с помощью API, доступны только на уровне службы "Стандартный". При попытке использовать эти функции бесплатный "или" базовый уровень обслуживания, вы получите сообщение об исключении, если вы используете пакет SDK. Если вы используете функции непосредственно из интерфейсов REST API, вы получите ошибку HTTP 403 (запрещено).

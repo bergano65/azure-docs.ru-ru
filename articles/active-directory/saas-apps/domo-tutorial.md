@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 01/31/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1bc4118e54b2049f7e5d6cf4ed3b92bfc5e41ae7
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 011991a3951adde9a0d062b40584caa74d172023
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57904956"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64918735"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-domo"></a>Руководство. Интеграция Azure Active Directory с Domo
+# <a name="tutorial-azure-active-directory-integration-with-domo"></a>Руководство по Интеграция Azure Active Directory с Domo
 
 В этом руководстве описано, как интегрировать Domo с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Domo обеспечивает следующие преимущества:
@@ -130,7 +130,7 @@ ms.locfileid: "57904956"
 
 5. Приложение Domo ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно в разделе **Атрибуты пользователя** на странице интеграции приложения. На странице **Настройка единого входа с помощью SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
 
-    ![изображение](common/edit-attribute.png)
+    ![image](common/edit-attribute.png)
 
 6. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** измените утверждения, щелкнув значок **Изменить**, или добавьте утверждение, нажав кнопку **Добавить новое утверждение**, чтобы настроить атрибут токена SAML, как показано на рисунке выше, и выполните следующие действия. 
 
@@ -142,9 +142,9 @@ ms.locfileid: "57904956"
 
     a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![изображение](common/new-save-attribute.png)
+    ![image](common/new-save-attribute.png)
 
-    ![изображение](common/new-attribute-details.png)
+    ![image](common/new-attribute-details.png)
 
     b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
@@ -174,7 +174,7 @@ ms.locfileid: "57904956"
 
 ### <a name="configure-domo-single-sign-on"></a>Настройка единого входа в Domo
 
-Чтобы настроить единый вход на стороне **Domo**, перейдите к статье базы знаний Domo, размещенной [здесь](http://knowledge.domo.com?cid=azuread), и следуйте инструкциям.
+Чтобы настроить единый вход на стороне **Domo**, перейдите к статье базы знаний Domo, размещенной [здесь](https://knowledge.domo.com?cid=azuread), и следуйте инструкциям.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
@@ -194,7 +194,7 @@ ms.locfileid: "57904956"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

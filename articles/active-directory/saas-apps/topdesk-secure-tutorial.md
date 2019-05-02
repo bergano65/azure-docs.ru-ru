@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с TOPdesk — Secure | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с TOPdesk — Secure | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и TOPdesk - Secure.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 12/27/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2a559191bb4e84b3b60529bf20a25e381c72f42a
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 845ca13bdd8e3677f559bac373efa078f3b951be
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57840942"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64920379"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-topdesk---secure"></a>Руководство. Интеграция Azure Active Directory с TOPdesk — Secure
+# <a name="tutorial-azure-active-directory-integration-with-topdesk---secure"></a>Руководство по Интеграция Azure Active Directory с TOPdesk — Secure
 
 В этом руководстве описано, как интегрировать TOPdesk - Secure с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением TOPdesk - Secure обеспечивает следующие преимущества.
@@ -180,7 +180,7 @@ ms.locfileid: "57840942"
 
     b. Чтобы отправить файл сертификата, напротив пункта **Certificate (RSA)** (Сертификат (RSA)) нажмите кнопку **Browse** (Обзор).
 
-    c. Для **закрытого ключа (RSA, PKCS8, DER)** вы можете загрузить свой собственный закрытый ключ или связаться с [группой поддержки клиентов TOPdesk — Secure ](http://www.topdesk.com/us/support), чтобы получить закрытый ключ.
+    c. Для **закрытого ключа (RSA, PKCS8, DER)** вы можете загрузить свой собственный закрытый ключ или связаться с [группой поддержки клиентов TOPdesk — Secure ](https://www.topdesk.com/us/support), чтобы получить закрытый ключ.
 
     d. Чтобы отправить файл с логотипом, полученный от службы поддержки TOPdesk, напротив пункта **Logo icon** (Значок логотипа) нажмите кнопку **Browse** (Обзор).
 
@@ -208,7 +208,7 @@ ms.locfileid: "57840942"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

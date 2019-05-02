@@ -10,14 +10,14 @@ ms.service: media-services
 ms.workload: ''
 ms.topic: tutorial
 ms.custom: mvc
-ms.date: 02/18/2019
+ms.date: 04/22/2019
 ms.author: juliako
-ms.openlocfilehash: 704c26670f9fe2a3d7d0011fee4621a8e8c33028
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.openlocfilehash: 54e52cfc60c42cc48a5c2d33cc6b7e64e75cf27c
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58314966"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64707651"
 ---
 # <a name="tutorial-encode-a-remote-file-based-on-url-and-stream-the-video---rest"></a>Руководство по Кодирование удаленного файла на основе URL-адреса и потоковой передачи видео с помощью REST
 
@@ -363,6 +363,10 @@ https://amsaccount-usw22.streaming.media.azure.net/cdb80234-1d94-42a9-b056-0eefa
 ```azurecli
 az group delete --name amsResourceGroup
 ```
+
+## <a name="provide-feedback"></a>Отзывы
+
+Прочитайте статью [сообщества Служб мультимедиа Azure](media-services-community.md), чтобы узнать, как задавать вопросы, оставлять отзывы и получать новости о Службах мультимедиа.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

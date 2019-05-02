@@ -3,8 +3,8 @@ title: Руководство по регистрации потока сете�
 description: Дополнительные сведения о регистрации потока сетевого трафика на виртуальную машину и обратно с помощью функции журналов потока NSG службы "Наблюдатель за сетями".
 services: network-watcher
 documentationcenter: na
-author: jimdial
-manager: jeconnoc
+author: KumudD
+manager: twooley
 editor: ''
 tags: azure-resource-manager
 Customer intent: I need to log the network traffic to and from a VM so I can analyze it for anomalies.
@@ -15,16 +15,16 @@ ms.topic: tutorial
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/30/2018
-ms.author: jdial
+ms.author: kumud
 ms.custom: mvc
-ms.openlocfilehash: bfe4abe4a83a6b22d05942f91f4152d5c0e62be9
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 550755b1215dd25045845d78ab3d6248ef840062
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58124103"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64705954"
 ---
-# <a name="tutorial-log-network-traffic-to-and-from-a-virtual-machine-using-the-azure-portal"></a>Руководство. Регистрация потока входящего и исходящего сетевого трафика виртуальной машины с помощью портала Azure
+# <a name="tutorial-log-network-traffic-to-and-from-a-virtual-machine-using-the-azure-portal"></a>Руководство по Регистрация потока входящего и исходящего сетевого трафика виртуальной машины с помощью портала Azure
 
 Группа безопасности сети (NSG) позволяет выполнять фильтрацию входящего и исходящего трафика на виртуальную машину и с нее. Вы можете регистрировать сетевой трафик, проходящий через NSG, с помощью функции журналов потока NSG службы "Наблюдатель за сетями". Из этого руководства вы узнаете, как выполнять следующие задачи:
 

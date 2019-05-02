@@ -2,18 +2,18 @@
 title: Руководство. Расширение файловых серверов Windows с использованием службы "Синхронизация файлов Azure" | Документация Майкрософт
 description: Узнайте, как расширить файловые серверы Windows с помощью службы "Синхронизация файлов Azure" от начала до конца.
 services: storage
-author: wmgries
+author: roygara
 ms.service: storage
 ms.topic: tutorial
 ms.date: 10/23/2018
-ms.author: wgries
+ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 9d7162eca3c2979b1dd333bdaf95c7c43e875b9d
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: df3850a839ac789957a9adffb7122a0b58987781
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59049155"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64705071"
 ---
 # <a name="tutorial-extend-windows-file-servers-with-azure-file-sync"></a>Руководство по Расширение файловых серверов Windows с использованием службы "Синхронизация файлов Azure"
 

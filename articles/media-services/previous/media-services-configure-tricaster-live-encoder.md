@@ -14,12 +14,12 @@ ms.devlang: ne
 ms.topic: article
 ms.date: 03/14/2019
 ms.author: juliako;cenkd;anilmur
-ms.openlocfilehash: adacce5c8307f3be972920bd3aef6d8ea912eb30
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 6e09ce83296fccfbcb4a04913d55961e0da4de79
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57992001"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64720798"
 ---
 # <a name="use-the-newtek-tricaster-encoder-to-send-a-single-bitrate-live-stream"></a>Использование кодировщика NewTek TriCaster для отправки односкоростного обновляющегося потока  
 > [!div class="op_single_selector"]
@@ -30,7 +30,7 @@ ms.locfileid: "57992001"
 >
 >
 
-В этой статье показано, как настроить динамический кодировщик [NewTek TriCaster](http://newtek.com/products/tricaster-40.html) для отправки односкоростного потока в каналы AMS, которые выполняют кодирование в реальном времени. Дополнительные сведения можно найти в разделе [Работа с каналами, выполняющими кодирование в реальном времени с помощью служб мультимедиа Azure](media-services-manage-live-encoder-enabled-channels.md).
+В этой статье показано, как настроить динамический кодировщик [NewTek TriCaster](https://newtek.com/products/tricaster-40.html) для отправки односкоростного потока в каналы AMS, которые выполняют кодирование в реальном времени. Дополнительные сведения можно найти в разделе [Работа с каналами, выполняющими кодирование в реальном времени с помощью служб мультимедиа Azure](media-services-manage-live-encoder-enabled-channels.md).
 
 В этом учебнике показано, как управлять службами мультимедиа Azure (AMS) с помощью Обозревателя служб мультимедиа Azure. Это средство запускается только на компьютерах с ОС Windows. Если вы используете Mac или Linux, воспользуйтесь классическим порталом Azure для создания [каналов](media-services-portal-creating-live-encoder-enabled-channel.md#create-a-channel) и [программ](media-services-portal-creating-live-encoder-enabled-channel.md).
 

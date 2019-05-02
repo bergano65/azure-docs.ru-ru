@@ -7,12 +7,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 03/05/2018
 ms.author: pullabhk
-ms.openlocfilehash: 83fe8d17699c19d442fd734d71d828eb9fd9d6ed
-ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
+ms.openlocfilehash: 46719d3f72c57a44fb48489891e2348bb418da1e
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58258366"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64918954"
 ---
 # <a name="back-up-and-restore-azure-files-with-powershell"></a>Резервное копирование и восстановление файлов Azure с помощью PowerShell
 
@@ -241,7 +241,7 @@ testAzureFS       ConfigureBackup      Completed            11/12/2018 2:15:26 P
 Используйте [AzRecoveryServicesBackupItem резервного копирования](https://docs.microsoft.com/powershell/module/az.recoveryservices/backup-azrecoveryservicesbackupitem?view=azps-1.4.0) чтобы выполнять резервное копирование по запросу для защищенных файлового ресурса Azure.
 
 1. Получение учетной записи хранения и файловый ресурс из контейнера в хранилище, которое содержит данные резервного копирования с [Get-AzRecoveryServicesBackupContainer](/powershell/module/az.recoveryservices/get-Azrecoveryservicesbackupcontainer).
-2. Чтобы запустить задание резервного копирования, необходимо получить сведения о виртуальной Машине с [Get-AzRecoveryServicesBackupItem](/powershell/module/az.recoveryservices/Get-AzRecoveryServicesBackupItem).
+2. Чтобы запустить задание резервного копирования, получите сведения о виртуальной машине с помощью командлета [Get-AzRecoveryServicesBackupItem](/powershell/module/az.recoveryservices/Get-AzRecoveryServicesBackupItem).
 3. Выполнять резервное копирование по запросу с[AzRecoveryServicesBackupItem резервного копирования](/powershell/module/az.recoveryservices/backup-Azrecoveryservicesbackupitem).
 
 Выполните резервное копирование по требованию следующим образом:
@@ -317,7 +317,7 @@ BackupManagementType : AzureStorage
 
 ### <a name="restore-an-azure-file-share-to-an-alternate-location"></a>Восстановить файловый ресурс Azure в альтернативное расположение
 
-Используйте [AzRecoveryServicesBackupItem восстановления](https://docs.microsoft.com/en-us/powershell/module/az.recoveryservices/restore-azrecoveryservicesbackupitem?view=azps-1.4.0) восстановить до выбранной точки восстановления. Укажите эти параметры для определения альтернативного расположения: 
+Используйте [AzRecoveryServicesBackupItem восстановления](https://docs.microsoft.com/powershell/module/az.recoveryservices/restore-azrecoveryservicesbackupitem?view=azps-1.4.0) восстановить до выбранной точки восстановления. Укажите эти параметры для определения альтернативного расположения: 
 
 - **TargetStorageAccountName**. Учетная запись хранения, в которую восстанавливается резервное содержимое. Целевая учетная запись хранения должна быть в том же расположении, что и хранилище.
 - **TargetFileShareName**. Файловые ресурсы находятся в целевой учетной записи хранения, в которую восстанавливается резервное содержимое.
@@ -340,7 +340,7 @@ testAzureFS        Restore              InProgress           12/10/2018 9:56:38 
 
 ### <a name="restore-an-azure-file-to-an-alternate-location"></a>Восстановление в альтернативное расположение файла Azure
 
-Используйте [AzRecoveryServicesBackupItem восстановления](https://docs.microsoft.com/en-us/powershell/module/az.recoveryservices/restore-azrecoveryservicesbackupitem?view=azps-1.4.0) восстановить до выбранной точки восстановления. Указать эти параметры для определения альтернативного расположения, а для однозначной идентификации файла требуется выполнить восстановление.
+Используйте [AzRecoveryServicesBackupItem восстановления](https://docs.microsoft.com/powershell/module/az.recoveryservices/restore-azrecoveryservicesbackupitem?view=azps-1.4.0) восстановить до выбранной точки восстановления. Указать эти параметры для определения альтернативного расположения, а для однозначной идентификации файла требуется выполнить восстановление.
 
 * **TargetStorageAccountName**. Учетная запись хранения, в которую восстанавливается резервное содержимое. Целевая учетная запись хранения должна быть в том же расположении, что и хранилище.
 * **TargetFileShareName**. Файловые ресурсы находятся в целевой учетной записи хранения, в которую восстанавливается резервное содержимое.

@@ -1,7 +1,6 @@
 ---
 title: Основные сведения об Apache Kafka в HDInsight — Azure
 description: Сведения об Apache Kafka в HDInsight. Предназначение, выполняемые функции, а также сведения о том, где найти примеры и информацию по началу работы.
-services: hdinsight
 ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
@@ -9,12 +8,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: overview
 ms.date: 04/11/2018
-ms.openlocfilehash: 4d054542d600f2569170f40b8f6c053e005fc8af
-ms.sourcegitcommit: 24906eb0a6621dfa470cb052a800c4d4fae02787
+ms.openlocfilehash: 50a67ca5c7d1fa3165889b1e59565d1a1030690d
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56889194"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64712138"
 ---
 # <a name="what-is-apache-kafka-on-hdinsight"></a>Что такое Apache Kafka в HDInsight?
 
@@ -94,8 +93,8 @@ Apache ZooKeeper управляет состоянием кластера Kafka.
 
 Ниже приведены ссылки на статьи об использовании Apache Kafka в HDInsight.
 
-* [Краткое руководство. Создание Apache Kafka в кластере HDInsight](apache-kafka-get-started.md)
+* [Краткое руководство Создание Apache Kafka в кластере HDInsight](apache-kafka-get-started.md)
 
-* [Руководство. Использование Apache Spark с Apache Kafka в HDInsight](../hdinsight-apache-spark-with-kafka.md)
+* [Руководство Использование Apache Spark с Apache Kafka в HDInsight](../hdinsight-apache-spark-with-kafka.md)
 
-* [Руководство. Использование Apache Storm с Apache Kafka в HDInsight](../hdinsight-apache-storm-with-kafka.md)
+* [Руководство Использование Apache Storm с Apache Kafka в HDInsight](../hdinsight-apache-storm-with-kafka.md)

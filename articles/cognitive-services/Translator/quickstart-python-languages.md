@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: quickstart
 ms.date: 02/21/2019
 ms.author: erhopf
-ms.openlocfilehash: e455b0167810c6e08853f3bce665cb6f314eec52
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 0b006f3860c1b00dc8ef0b0fa4d77e1fd9034a17
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58181458"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64922276"
 ---
 # <a name="quickstart-use-the-translator-text-api-to-get-a-list-of-supported-languages-using-python"></a>Краткое руководство. Получение списка поддерживаемых языков с помощью Python и API перевода текстов
 
@@ -96,7 +96,7 @@ python get-languages.py
 
 ## <a name="sample-response"></a>Пример ответа
 
-Найдите сокращенное наименование страны в этом [списке языков](https://docs.microsoft.com/en-us/azure/cognitive-services/translator/language-support).
+Найдите сокращенное наименование страны в этом [списке языков](https://docs.microsoft.com/azure/cognitive-services/translator/language-support).
 
 Этот пример мы сократили, чтобы показать фрагмент результата:
 

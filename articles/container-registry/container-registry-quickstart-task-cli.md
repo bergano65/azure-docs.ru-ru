@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.date: 04/02/2019
 ms.author: danlep
 ms.custom: ''
-ms.openlocfilehash: 61a17842158326c927f049af893a00818f3acc55
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: be120ea8ae588da486c9a5acd4eb7bfdb4e45dee
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59793392"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64701568"
 ---
 # <a name="quickstart-build-and-run-a-container-image-using-azure-container-registry-tasks"></a>Краткое руководство. Сборка и запуск образа контейнера с помощью Задач Реестра контейнеров Azure
 
@@ -45,14 +45,14 @@ az group create --name myResourceGroup --location eastus
 az acr create --resource-group myResourceGroup --name myContainerRegistry008 --sku Basic
 ```
 
-В этом примере создается реестр ценовой категории *Базовый*; это экономный вариант для разработчиков, изучающих Реестр контейнеров Azure. См. дополнительные сведения о [доступных номерах SKU реестра контейнеров][container-registry-skus].
+В этом примере создается реестр ценовой категории *Базовый*; это экономный вариант для разработчиков, изучающих Реестр контейнеров Azure. См. дополнительные сведения об уровнях служб в статье [Номера SKU реестра контейнеров][container-registry-skus].
 
 ## <a name="build-an-image-from-a-dockerfile"></a>Создание образа с помощью Dockerfile
 
 Теперь используйте Реестр контейнеров Azure для создания образа. Во-первых, создайте рабочий каталог, а затем создайте Dockerfile с именем *Dockerfile* и следующим содержимым. Это простой пример создания образа контейнера Linux, но вы можете создавать собственные стандартные Dockerfile и создавать образы для других платформ.
 
 ```bash
-echo "FROM hello-world" > Dockerfile
+echo FROM hello-world > Dockerfile
 ```
 
 Выполните команду [az acr build][az-acr-build], чтобы создать образ. После успешной сборки образ помещается в реестр. В примере ниже показан перенос образа `sample/hello-world:v1`. Символ `.` в конце команды задает расположение Dockerfile, в данном случае это текущий каталог.

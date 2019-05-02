@@ -10,18 +10,18 @@ ms.subservice: acoustics
 ms.topic: quickstart
 ms.date: 03/20/2019
 ms.author: kegodin
-ms.openlocfilehash: 468c5584d21c226d6ffce55ff3981e629d872c56
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.openlocfilehash: 1c790e0fa726c719d5b888d42b5f59739777566b
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58317193"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64917121"
 ---
 # <a name="project-acoustics-unity-quickstart"></a>Краткое руководство по использованию Project Acoustics с Unity
 При работе с этой статьей вы поэкспериментируете с элементами управления для проектирования с поддержкой моделирования, используя пример содержимого Project Acoustics для Unity.
 
 Требования к программному обеспечению:
-* [Unity 2018.2+](http://unity3d.com) для Windows;
+* [Unity 2018.2+](https://unity3d.com) для Windows;
 * [Пример пакета содержимого Project Acoustics](https://www.microsoft.com/download/details.aspx?id=57346).
 
 Что входит в пример пакета?

@@ -10,25 +10,30 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 04/23/2019
+ms.date: 04/29/2019
 ms.author: jingwang
-ms.openlocfilehash: 8f1e2aebae88d34334200504915be4043f32013b
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
-ms.translationtype: HT
+ms.openlocfilehash: 319ea3eaac2fcaa3c8e29680e125b7e29018ecc3
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62107385"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64926599"
 ---
 # <a name="copy-data-to-or-from-azure-sql-data-warehouse-by-using-azure-data-factory"></a>Копирование данных в хранилище данных Azure SQL и из него с помощью фабрики данных Azure 
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you're using:"]
 > * [Версия 1](v1/data-factory-azure-sql-data-warehouse-connector.md)
 > * [Текущая версия](connector-azure-sql-data-warehouse.md)
 
-В этой статье описывается, как с помощью действия копирования в фабрике данных Azure копировать данные в хранилище данных SQL Azure или из него. Это продолжение [статьи об обзоре действия копирования](copy-activity-overview.md), в которой представлены общие сведения о действии копирования.
+В этой статье описывается, как копировать данные из хранилища данных SQL Azure. Дополнительные сведения о Фабрике данных Azure см. во [вводной статье](introduction.md).
 
 ## <a name="supported-capabilities"></a>Поддерживаемые возможности
 
-Данные из хранилища данных SQL Azure можно скопировать в любое поддерживаемое хранилище данных приемника. Вы можете скопировать данные из любого поддерживаемого исходного хранилища данных в хранилище данных SQL Azure. Список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования, приведен в таблице [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats).
+Этот соединитель больших двоичных объектов Azure поддерживается для следующих действий:
+
+- [Действие копирования](copy-activity-overview.md) с [поддерживается источника и приемника матрицы](copy-activity-overview.md) таблицы
+- [Процесс сопоставления данных](concepts-data-flow-overview.md)
+- [Действие поиска](control-flow-lookup-activity.md)
+- [Действие получения метаданных в Фабрике данных Azure](control-flow-get-metadata-activity.md)
 
 Этот соединитель хранилища данных SQL Azure поддерживает такие функции:
 
@@ -136,12 +141,12 @@ ms.locfileid: "62107385"
 2. **[Подготовьте администратора Azure Active Directory](../sql-database/sql-database-aad-authentication-configure.md#provision-an-azure-active-directory-administrator-for-your-azure-sql-database-server)** для Azure SQL Server на портале Azure (если вы этого еще не сделали). Администратором Azure AD может быть пользователь Azure AD или группа Azure AD. При предоставлении группе с управляемыми удостоверениями роль администратора, пропустите шаги 3 и 4. Администратор будет иметь полный доступ к базе данных.
 
 3. **[Создайте пользователей автономной базы данных](../sql-database/sql-database-aad-authentication-configure.md#create-contained-database-users-in-your-database-mapped-to-azure-ad-identities)** для субъекта-службы. Подключитесь к хранилищу данных, из которого или в которое требуется скопировать данные с помощью таких средств, как среда SSMS, используя удостоверение Azure AD, у которого есть хотя бы разрешение ALTER ANY USER. Выполните следующую инструкцию T-SQL:
-    
+  
     ```sql
     CREATE USER [your application name] FROM EXTERNAL PROVIDER;
     ```
 
-4. **Предоставьте субъекту-службе необходимые разрешения** точно так же, как вы предоставляете разрешения пользователям SQL или другим пользователям. Выполните следующий код, или см. Дополнительные параметры [здесь](https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-addrolemember-transact-sql?view=sql-server-2017).
+4. **Предоставьте субъекту-службе необходимые разрешения** точно так же, как вы предоставляете разрешения пользователям SQL или другим пользователям. Выполните следующий код, или см. Дополнительные параметры [здесь](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-addrolemember-transact-sql?view=sql-server-2017).
 
     ```sql
     EXEC sp_addrolemember [role name], [your application name];
@@ -186,12 +191,12 @@ ms.locfileid: "62107385"
 1. **[Подготовьте администратора Azure Active Directory](../sql-database/sql-database-aad-authentication-configure.md#provision-an-azure-active-directory-administrator-for-your-azure-sql-database-server)** для Azure SQL Server на портале Azure (если вы этого еще не сделали). Администратором Azure AD может быть пользователь Azure AD или группа Azure AD. При предоставлении группе с управляемыми удостоверениями роль администратора, пропустите шаги 3 и 4. Администратор будет иметь полный доступ к базе данных.
 
 2. **[Создание пользователей автономной базы данных](../sql-database/sql-database-aad-authentication-configure.md#create-contained-database-users-in-your-database-mapped-to-azure-ad-identities)**  для управляемого удостоверения для фабрики данных. Подключитесь к хранилищу данных, из которого или в которое требуется скопировать данные с помощью таких средств, как среда SSMS, используя удостоверение Azure AD, у которого есть хотя бы разрешение ALTER ANY USER. Выполните следующую инструкцию T-SQL. 
-    
+  
     ```sql
     CREATE USER [your Data Factory name] FROM EXTERNAL PROVIDER;
     ```
 
-3. **Предоставьте управляемое удостоверение для фабрики данных необходимые разрешения** обычным образом для пользователей SQL и другим пользователям. Выполните следующий код, или см. Дополнительные параметры [здесь](https://docs.microsoft.com/en-us/sql/relational-databases/system-stored-procedures/sp-addrolemember-transact-sql?view=sql-server-2017).
+3. **Предоставьте управляемое удостоверение для фабрики данных необходимые разрешения** обычным образом для пользователей SQL и другим пользователям. Выполните следующий код, или см. Дополнительные параметры [здесь](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-addrolemember-transact-sql?view=sql-server-2017).
 
     ```sql
     EXEC sp_addrolemember [role name], [your Data Factory name];
@@ -416,7 +421,7 @@ PolyBase хранилища данных SQL напрямую поддержив
     | [Хранилище Azure Data Lake Gen1](connector-azure-data-lake-store.md) | Проверка подлинности субъекта-службы |
     | [Хранилище Azure Data Lake Storage 2-го поколения](connector-azure-data-lake-storage.md) | Проверка подлинности на основе ключа учетной записи |
 
-2. **Формат набора данных источника** имеет **ParquetFormat**, **OrcFormat**, или **TextFormat**, со следующими конфигурациями:
+2. **Формат исходных данных** имеет **Parquet**, **ORC**, или **с разделителями текста**, со следующими конфигурациями:
 
    1. `folderPath` и `fileName` не содержат фильтр с подстановочными знаками.
    2. Параметр `rowDelimiter` должен иметь значение **\n**.
@@ -424,20 +429,6 @@ PolyBase хранилища данных SQL напрямую поддержив
    4. Параметру `encodingName` присваивается значение **utf-8**, которое является значением по умолчанию.
    5. `escapeChar`, `quoteChar` и `skipLineCount` не указываются. Поддержка PolyBase пропускает строку заголовка, которую в файле определения приложения можно настроить как `firstRowAsHeader`.
    6. Параметр `compression` может иметь значение **no compression**, **GZip** или **Deflate**.
-
-      ```json
-      "typeProperties": {
-        "folderPath": "<path>",
-        "format": {
-            "type": "TextFormat",
-            "columnDelimiter": "<any delimiter>",
-            "rowDelimiter": "\n",
-            "nullValue": "",
-            "encodingName": "utf-8",
-            "firstRowAsHeader": <any>
-        }
-      },
-      ```
 
 ```json
 "activities":[
@@ -556,6 +547,10 @@ All columns of the table must be specified in the INSERT BULK statement.
 ```
 
 Значение NULL рассматривается как вариант значения по умолчанию. Если столбец допускает значение NULL, входные данные большого двоичного объекта для этого столбца могут быть пустыми. Но они не могут отсутствовать во входном наборе данных. Для пустых значений PolyBase будет использовать значение NULL в хранилище данных SQL Azure.
+
+## <a name="mapping-data-flow-properties"></a>Сопоставление свойств потока данных
+
+Дополнительные сведения см. в [преобразование исходного](data-flow-source.md) и [приемника преобразования](data-flow-sink.md) в сопоставление потока данных.
 
 ## <a name="data-type-mapping-for-azure-sql-data-warehouse"></a>Сопоставление типов данных для хранилища данных SQL Azure
 

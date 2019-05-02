@@ -16,14 +16,14 @@ ms.tgt_pltfrm: ''
 ms.workload: infrastructure
 ms.date: 06/14/2018
 ms.author: kumud
-ms.openlocfilehash: 888808c94115e2ea136e90eb635faf28e7d92fd2
-ms.sourcegitcommit: 1d850f6cae47261eacdb7604a9f17edc6626ae4b
+ms.openlocfilehash: 121d3f941f3d00373bd2821534c3e601107e97e6
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/02/2018
-ms.locfileid: "39431024"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60506966"
 ---
-# <a name="azure-cli-script-example-load-balance-traffic-to-vms-for-high-availability"></a>Пример сценария Azure CLI. Распределение трафика на виртуальных машинах для обеспечения высокой доступности
+# <a name="azure-cli-script-example-load-balance-traffic-to-vms-for-high-availability"></a>Пример скрипта Azure CLI. Балансировка трафика на виртуальных машинах для обеспечения высокой доступности
 
 Этот пример скрипта Azure CLI позволяет создать все необходимые компоненты для запуска нескольких виртуальных машин Ubuntu, настроенных в высокодоступной конфигурации с распределением нагрузки в пределах определенной зоны доступности. После выполнения этого скрипта будут созданы три виртуальные машины в одной группе доступности в пределах региона. Доступ к ним можно будет получить с помощью Azure Load Balancer категории "Стандартный". 
 
@@ -168,7 +168,7 @@ az group delete --name myResourceGroup
 
 Для создания группы ресурсов, виртуальной машины, группы доступности, балансировщика нагрузки и всех связанных ресурсов этот скрипт использует следующие команды. Для каждой команды в таблице приведены ссылки на соответствующую документацию.
 
-| Get-Help | Примечания |
+| Команда | Примечания |
 |---|---|
 | [az group create](https://docs.microsoft.com/cli/azure/group#az-group-create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [az network vnet create](https://docs.microsoft.com/cli/azure/network/vnet#az-network-vnet-create) | Создает виртуальную сеть и подсеть Azure. |

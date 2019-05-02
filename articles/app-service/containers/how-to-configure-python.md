@@ -15,12 +15,12 @@ ms.topic: quickstart
 ms.date: 03/28/2019
 ms.author: astay;cephalin;kraigb
 ms.custom: seodec18
-ms.openlocfilehash: f8894132dae179be2d5d9d9b6887851be78d7746
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.openlocfilehash: 7bbbe9629404733a76064d270480a0e162e2612b
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59548159"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64919892"
 ---
 # <a name="configure-a-linux-python-app-for-azure-app-service"></a>Настройка приложения Python в Linux для Службы приложений Azure
 
@@ -182,8 +182,6 @@ if 'X-Forwarded-Proto' in request.headers and request.headers['X-Forwarded-Proto
 - [Получите доступ к потоку журнала](#access-diagnostic-logs).
 
 ## <a name="next-steps"></a>Дополнительная информация
-
-Сейчас встроенный образ Python в Службе приложений на платформе Linux доступен в предварительной версии. Вы можете настроить команду для запуска приложения. Также приложения Python для рабочей среды можно создавать с помощью настраиваемого контейнера.
 
 > [!div class="nextstepaction"]
 > [Руководство по использованию приложения Python с PostgreSQL](tutorial-python-postgresql-app.md)

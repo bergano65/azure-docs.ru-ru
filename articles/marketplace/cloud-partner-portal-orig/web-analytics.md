@@ -1,25 +1,19 @@
 ---
-title: Веб-аналитика | Документация Майкрософт
+title: Веб-аналитика
 description: .
 services: Azure, Marketplace, Cloud Partner Portal,
-documentationcenter: ''
 author: pbutlerm
 manager: Ricardo.Villalobos
-editor: ''
-ms.assetid: ''
 ms.service: marketplace
-ms.workload: ''
-ms.tgt_pltfrm: ''
-ms.devlang: ''
 ms.topic: conceptual
 ms.date: 09/13/2018
-ms.author: pbutlerm
-ms.openlocfilehash: 89cc8c4bffe910de0861d7f44925a10df3811fdb
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.author: pabutler
+ms.openlocfilehash: 4b75b2cbd629204e7edbf1196eec9b03cb7a6736
+ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60745708"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64943163"
 ---
 <a name="web-analytics"></a>Веб-аналитика
 =============
@@ -60,7 +54,7 @@ ms.locfileid: "60745708"
 
 Вы можете выбрать комбинацию из нескольких идентификаторов кампаний для дальнейшего определения нескольких источников, создающих трафик для кампании, например, откуда пришел клиент (электронная почта, блог, источник в социальных сетях и т. д.).
 
-Пример.
+Например: 
 
 1. Ссылка на информационный бюллетень: <https://appsource.microsoft.com/product/dynamics-365/contoso.offername?mktcmpid=NewCampaign&src=newsletter>
 2. Ссылка на LinkedIn: <https://appsource.microsoft.com/product/dynamics-365/contoso.offername?mktcmpid=NewCampaign&src=LinkedIn>

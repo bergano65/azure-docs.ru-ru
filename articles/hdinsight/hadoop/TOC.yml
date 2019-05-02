@@ -136,8 +136,6 @@
         - name: Использование пустых граничных узлов
           href: ../hdinsight-apps-use-edge-node.md
           maintainContext: true
-        - name: Разработка программ потоковой передачи на языке Python
-          href: apache-hadoop-streaming-python.md
         - name: Обработка и анализ документов JSON
           href: using-json-in-hive.md
         - name: 'Использование определяемых пользователем функций C#'

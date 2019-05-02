@@ -9,14 +9,14 @@ ms.topic: conceptual
 ms.date: 03/27/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 3b31e796b07bea8c11bccb3f2bb306a4279f2ca3
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 21c75c0f377f55614e2c7fa0bb27628cf598e3e7
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61291659"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64924592"
 ---
-# <a name="how-to-implement-faceted-navigation-in-azure-search"></a>Как реализовать многоаспектную навигацию в поиске Azure
+# <a name="how-to-implement-faceted-navigation-in-azure-search"></a>Как реализовать фасетную навигацию в службе поиска Azure
 Фасетная навигация представляет собой механизм фильтрации, обеспечивающий самоуправляемую детализированную навигацию в приложениях поиска. Термин "фасетная навигация" может быть неизвестен вам, но вы, вероятно, использовали этот механизм ранее. Как показано в следующем примере, фасетная навигации — это не что иное, как категории, с помощью которых фильтруются результаты.
 
  ![Демоверсия портала поиска работы, использующего Поиск Azure][1]
@@ -34,7 +34,7 @@ ms.locfileid: "61291659"
 ## <a name="sample-code-and-demo"></a>Пример кода и демонстрация
 В этой статье в качестве примера используется портал поиска работы. Он реализован в виде приложения ASP.NET MVC.
 
--   Просмотреть и протестировать рабочую демоверсию в режиме реального времени можно [здесь](http://azjobsdemo.azurewebsites.net/).
+-   Просмотреть и протестировать рабочую демоверсию в режиме реального времени можно [здесь](https://azjobsdemo.azurewebsites.net/).
 
 -   Скачайте код из [репозитория примеров Azure на GitHub](https://github.com/Azure-Samples/search-dotnet-asp-net-mvc-jobs).
 

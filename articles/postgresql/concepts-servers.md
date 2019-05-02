@@ -64,6 +64,6 @@ ms.locfileid: "60422105"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - Общие сведения о службе приведены в статье  [Что такое База данных Azure для PostgreSQL](overview.md).
-- Сведения о квотах и ограничениях для конкретных ресурсов с учетом вашего  **уровня служб** см. в статье об  [уровнях обслуживания](concepts-pricing-tiers.md).
+- Сведения о квотах и ограничениях для конкретных ресурсов с учетом вашего  **уровня служб** см. в статье об  [уровнях служб](concepts-pricing-tiers.md).
 - Сведения о подключении к службе см. в статье  [Библиотеки подключений для Базы данных Azure для PostgreSQL](concepts-connection-libraries.md).
 - Просмотр и изменение параметров сервера с помощью [портала Azure](howto-configure-server-parameters-using-portal.md) или [Azure CLI](howto-configure-server-parameters-using-cli.md).

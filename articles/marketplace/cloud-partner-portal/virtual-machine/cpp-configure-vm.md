@@ -1,25 +1,18 @@
 ---
-title: Настройка размещенной в Microsoft Azure виртуальной машины для Azure Marketplace | Документация Майкрософт
+title: Настройка размещенной в Azure виртуальной Машины Майкрософт для Azure Marketplace
 description: Информация об оценке размера, обновлении и обобщении для размещенной в Azure виртуальной машины.
 services: Azure, Marketplace, Cloud Partner Portal,
-documentationcenter: ''
 author: v-miclar
-manager: Patrick.Butler
-editor: ''
-ms.assetid: ''
 ms.service: marketplace
-ms.workload: ''
-ms.tgt_pltfrm: ''
-ms.devlang: ''
 ms.topic: conceptual
 ms.date: 10/19/2018
-ms.author: pbutlerm
-ms.openlocfilehash: 9cf363bc5f4230306c2fec99eb6287b23e598a4c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.author: pabutler
+ms.openlocfilehash: 3d38efadfb8ad13d072056ef851be99d9540ad4b
+ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60744352"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64938433"
 ---
 # <a name="configure-the-azure-hosted-vm"></a>Настройка размещенной в Azure виртуальной машины
 
@@ -62,7 +55,7 @@ ms.locfileid: "60744352"
 Дополнительные сведения о настройке Linux см. в обзоре [расширений и компонентов виртуальной машины для Linux](https://docs.microsoft.com/azure/virtual-machines/extensions/features-linux).
 
 
-## <a name="generalize-the-image"></a>Образ следует сделать максимально общим по сути
+## <a name="generalize-the-image"></a>Обобщение образа
 
 Все образы в Azure Marketplace должны быть доступны для повторного использования в первоначальном виде. Чтобы достичь этой возможности повторного использования, виртуальный жесткий диск для операционной системы необходимо *обобщить*. Эта операция удаляет с виртуальной машины все идентификаторы, относящиеся к определенному экземпляру, и программные драйверы.
 

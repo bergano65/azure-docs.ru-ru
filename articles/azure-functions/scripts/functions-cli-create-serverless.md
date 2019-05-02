@@ -12,12 +12,12 @@ ms.topic: sample
 ms.date: 07/03/2018
 ms.author: glenga
 ms.custom: mvc
-ms.openlocfilehash: a41f6582879387352a65978049261a3f3ce55b47
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 265c4fa3c28783f0d9e5d789348c3cd2e249eb29
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46989963"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "60325727"
 ---
 # <a name="create-a-function-app-for-serverless-code-execution"></a>Создание приложения-функции для выполнения кода без сервера
 
@@ -43,7 +43,7 @@ ms.locfileid: "46989963"
 
 Для каждой команды в таблице приведены ссылки на соответствующую документацию. Этот сценарий использует следующие команды:
 
-| Get-Help | Примечания |
+| Команда | Примечания |
 |---|---|
 | [az group create](/cli/azure/group#az-group-create) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [az storage account create](/cli/azure/storage/account#az-storage-account-create) | Создает учетную запись хранения Azure. |

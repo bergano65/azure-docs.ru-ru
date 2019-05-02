@@ -1,5 +1,5 @@
 ---
-title: События формирования в предварительной версии службы "Аналитика временных рядов Azure". Формирование событий с помощью предварительной версии службы "Аналитика временных рядов Azure" | Документация Майкрософт
+title: Формирование событий с помощью службы "Аналитика временных рядов Azure" (предварительная версия) | Документация Майкрософт
 description: Общие сведения о формировании событий в службе "Аналитика временных рядов Azure" (предварительная версия).
 author: ashannon7
 ms.author: anshan
@@ -10,12 +10,12 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 12/03/2018
 ms.custom: seodec18
-ms.openlocfilehash: b0ce3b5bbd58c594147f64de9f06f248f4a87fc3
-ms.sourcegitcommit: 7fd404885ecab8ed0c942d81cb889f69ed69a146
-ms.translationtype: HT
+ms.openlocfilehash: 344f3a8b1bdfb789251479baffeb4df15bbf2842
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53269079"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64718363"
 ---
 # <a name="shape-events-with-azure-time-series-insights-preview"></a>Формирование событий с помощью предварительной версии службы "Аналитика временных рядов Azure"
 
@@ -127,8 +127,8 @@ ms.locfileid: "53269079"
 > Поля экземпляра не хранятся с данными телеметрии. Они хранятся с метаданными в **модели временных рядов**.
 > В приведенной выше таблице приводится представление запроса.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-Чтобы применить эти рекомендации на практике, ознакомьтесь со статьей [Запрос данных из среды Azure Time Series Insights с помощью C#](./time-series-insights-query-data-csharp.md). Вы узнаете больше о синтаксисе запроса для REST API доступа к данным предварительной версии службы "Аналитика временных рядов".
+- Чтобы применить эти рекомендации на практике, ознакомьтесь со статьей [Запрос данных из среды Azure Time Series Insights с помощью C#](./time-series-insights-query-data-csharp.md). Вы узнаете больше о синтаксисе запроса для REST API доступа к данным предварительной версии службы "Аналитика временных рядов".
 
-Дополнительные сведения о поддерживаемых формах JSON см. в [этом](./time-series-insights-send-events.md#json) разделе статьи "Отправка событий в среду Time Series Insights через концентратор событий".
+- Дополнительные сведения о поддерживаемых формах JSON см. в [этом](./time-series-insights-send-events.md#json) разделе статьи "Отправка событий в среду Time Series Insights через концентратор событий".

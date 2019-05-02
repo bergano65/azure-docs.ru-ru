@@ -3,21 +3,21 @@ title: Руководство. Предоставление доступа к в
 description: Руководство по использованию Active Directory B2C для защиты веб-API ASP.NET и его вызова из веб-приложения ASP.NET.
 services: active-directory-b2c
 author: davidmu1
-manager: daveba
+manager: celestedg
 ms.author: davidmu
 ms.date: 02/04/2019
 ms.custom: mvc
 ms.topic: tutorial
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: cc4db0f2fe8f5db41f6e8332a398029bd105f3af
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
+ms.openlocfilehash: 77e3eaeffba862c727e021427e5f27967fcf35bd
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55756348"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64688000"
 ---
-# <a name="tutorial-grant-access-to-an-aspnet-web-api-using-azure-active-directory-b2c"></a>Руководство. Предоставление доступа к веб-API ASP.NET с помощью Azure Active Directory B2C
+# <a name="tutorial-grant-access-to-an-aspnet-web-api-using-azure-active-directory-b2c"></a>Руководство по Предоставление доступа к веб-API ASP.NET с помощью Azure Active Directory B2C
 
 В этом руководстве показано, как вызывать защищенный ресурс веб-API в Azure Active Directory (Azure AD) B2C из веб-приложения ASP.NET.
 
@@ -64,7 +64,7 @@ ms.locfileid: "55756348"
 
 ## <a name="grant-permissions"></a>Предоставление разрешений
 
-Чтобы вызвать защищенный веб-API из приложения, необходимо предоставить приложению разрешения на доступ к API. Как часть предварительного требования, вы создали веб-приложение *webapp1* в Azure AD B2C, следуя руководству. Используйте это приложение для вызова веб-API.
+Чтобы вызвать защищенный веб-API из приложения, необходимо предоставить приложению разрешения на доступ к API. Как часть предварительного требования, вы создали веб-приложение *webapp1* в Azure AD B2C. Используйте это приложение для вызова веб-API.
 
 1. Щелкните **Приложения**, а затем выберите *webapp1*.
 2. Щелкните **Доступ через API**, а затем выберите **Добавить**.
@@ -158,4 +158,4 @@ ms.locfileid: "55756348"
 > * Настройка примера для использования приложения.
 
 > [!div class="nextstepaction"]
-> [Руководство по добавлению поставщиков удостоверений для приложений в Azure Active Directory B2C](tutorial-add-identity-providers.md)
+> [Руководство Добавление поставщиков удостоверений приложениям в Azure Active Directory B2C](tutorial-add-identity-providers.md)

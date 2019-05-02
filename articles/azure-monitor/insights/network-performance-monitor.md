@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 02/20/2018
 ms.author: vinigam
-ms.openlocfilehash: 29826f7f842f8dfbd7cd2a754c919f06542a161c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: a5d5a9e07c28ab3059872f4d187c96586456a200
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60401995"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64916764"
 ---
 # <a name="network-performance-monitor-solution-in-azure"></a>Решение "Монитор производительности сети" в Azure
 
@@ -263,8 +263,8 @@ ms.locfileid: "60401995"
 3. Если вы решили использовать группы действий, необходимо выбрать группу действий, созданную ранее. Дополнительные сведения о создании группы действий см. [здесь.](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-action-groups#create-an-action-group-by-using-the-azure-portal) 
 4. После успешного создания оповещения можно воспользоваться ссылкой "Управление оповещениями" для управления оповещениями. 
 
-Каждый раз при создании оповещения NPM создает запрос на основе правила генерации оповещений журнала в Azure Monitor. Этот запрос запускается каждые 5 минут, по умолчанию. Azure Monitor не взимает плату за первые 250 созданных правил генерации оповещений журналов. Если количество превысит 250, плата будет взиматься, как указано [здесь](https://azure.microsoft.com/en-us/pricing/details/monitor/).
-За уведомления плата взимается отдельно, как указано на странице [Цены на Azure Monitor](https://azure.microsoft.com/en-us/pricing/details/monitor/).
+Каждый раз при создании оповещения NPM создает запрос на основе правила генерации оповещений журнала в Azure Monitor. Этот запрос запускается каждые 5 минут, по умолчанию. Azure Monitor не взимает плату за первые 250 созданных правил генерации оповещений журналов. Если количество превысит 250, плата будет взиматься, как указано [здесь](https://azure.microsoft.com/pricing/details/monitor/).
+За уведомления плата взимается отдельно, как указано на странице [Цены на Azure Monitor](https://azure.microsoft.com/pricing/details/monitor/).
 
 
 ## <a name="pricing"></a>Цены
