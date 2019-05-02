@@ -70,7 +70,7 @@ ms.locfileid: "60702340"
 
 ### <a name="connecting-to-a-database-by-using-sql-server-management-studio"></a>Подключение к базе данных с помощью SQL Server Management Studio
 
-Пошаговые инструкции по созданию сервера, базы данных, правил брандмауэра протокола IP на уровне сервера и использованию SQL Server Management Studio для отправки запросов к базе данных см. в руководстве [Начало работы с серверами баз данных SQL Azure, базами данных и правилами брандмауэра с использованием портала Azure и SQL Server Management Studio](sql-database-single-database-get-started.md).
+Пошаговые инструкции по созданию сервера, базы данных, правил брандмауэра протокола IP на уровне сервера и использованию SQL Server Management Studio для отправки запросов к базе данных см. в руководстве [Начало работы с серверами Базы данных SQL Azure, базами данных и правилами брандмауэра с использованием портала Azure и SQL Server Management Studio](sql-database-single-database-get-started.md).
 
 > [!IMPORTANT]
 > Чтобы обеспечить синхронизацию с обновлениями Microsoft Azure и Базой данных SQL, рекомендуется всегда использовать последнюю версию Management Studio. [Обновите среду SQL Server Management Studio](https://msdn.microsoft.com/library/mt238290.aspx).
