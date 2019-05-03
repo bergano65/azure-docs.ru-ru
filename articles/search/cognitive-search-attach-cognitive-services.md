@@ -7,15 +7,15 @@ services: search
 ms.service: search
 ms.devlang: NA
 ms.topic: conceptual
-ms.date: 04/14/2019
+ms.date: 05/02/2019
 ms.author: luisca
 ms.custom: seodec2018
-ms.openlocfilehash: 09695f764ff71b274e125e90835f5314eb25c980
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: bad64f439d45581f8f4b55ea1ac849db1e27cb76
+ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60344552"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "65024584"
 ---
 # <a name="attach-a-cognitive-services-resource-with-a-skillset-in-azure-search"></a>Подключение ресурса Cognitive Services с набором навыков в службе "Поиск Azure" 
 
@@ -28,8 +28,7 @@ ms.locfileid: "60344552"
 > [!NOTE]
 > По мере расширения области действия путем увеличения частоты обработки, добавления большего количества документов или добавления новых алгоритмов ИИ вам необходимо будет подключить оплачиваемый ресурс Cognitive Services. Плата взимается при вызове API в Cognitive Services и извлечении изображений при открытии документов в службе "Поиск Azure". За извлечение текста из документов плата не взимается.
 >
-> Выполнение [встроенные когнитивные навыки](cognitive-search-predefined-skills.md) выполнения оплачивается по [Cognitive Services оплаты как то перейти цена](https://azure.microsoft.com/pricing/details/cognitive-services), в же оценить, как если бы вы выполнили задачи напрямую. Извлечение образа взимается поиска Azure, отражаются на [странице с ценами на службу поиска Azure](https://go.microsoft.com/fwlink/?linkid=2042400).
-
+> Выполнение встроенных навыков оплачивается по существующий [Cognitive Services оплаты как то перейти цена](https://azure.microsoft.com/pricing/details/cognitive-services/). Цены на извлечение образа описан на [странице с ценами на службу поиска Azure](https://go.microsoft.com/fwlink/?linkid=2042400).
 
 ## <a name="use-free-resources"></a>Использование бесплатных ресурсов
 
@@ -100,7 +99,7 @@ ms.locfileid: "60344552"
 Этот шаблон приведен в примере ниже. Обратите внимание на раздел cognitiveServices в нижней части определения
 
 ```http
-PUT https://[servicename].search.windows.net/skillsets/[skillset name]?api-version=2017-11-11-Preview
+PUT https://[servicename].search.windows.net/skillsets/[skillset name]?api-version=2019-05-06
 api-key: [admin key]
 Content-Type: application/json
 ```
@@ -110,7 +109,7 @@ Content-Type: application/json
     "skills": 
     [
       {
-        "@odata.type": "#Microsoft.Skills.Text.NamedEntityRecognitionSkill",
+        "@odata.type": "#Microsoft.Skills.Text.EntityRecognitionSkill",
         "categories": [ "Organization" ],
         "defaultLanguageCode": "en",
         "inputs": [
@@ -142,7 +141,7 @@ Content-Type: application/json
 + по одному образу на странице (6000 образов);
 + З000 символов в месяц.
 
-Предположим, что конвейер состоит из открытия документа с извлечением из каждого файла PDF изображения и текста, анализа изображений и распознавания текста (OCR), а также распознавания именованных сущностей организаций. 
+Предположим, конвейер, состоящий из открытие документов каждого PDF-файла с извлечением изображение и текст, оптическое распознавание символов (OCR), изображений и распознавание сущностей организаций. 
 
 В этом упражнении мы взяли самый дорогой тариф за одну транзакцию. Фактические расходы могут быть и ниже в связи с дифференцированной тарификацией. См. [Цены на Cognitive Services](https://azure.microsoft.com/pricing/details/cognitive-services).
 

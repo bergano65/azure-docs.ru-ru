@@ -7,15 +7,15 @@ manager: cgronlun
 tags: azure-portal
 ms.service: search
 ms.topic: conceptual
-ms.date: 04/15/2019
+ms.date: 05/02/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 9c48703676dad16f5f86035400056a8c90f28f60
-ms.sourcegitcommit: 8a681ba0aaba07965a2adba84a8407282b5762b2
+ms.openlocfilehash: 3e813b8a1709675d0d870d64df83428ab82e25b3
+ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64873118"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "65024292"
 ---
 # <a name="choose-a-pricing-tier-for-azure-search"></a>Выбор ценовой категории службы "Поиск Azure"
 
@@ -173,7 +173,7 @@ ms.locfileid: "64873118"
 
 |  | L1 | L2 |  |  |  |  |  |
 |--|----|----|--|--|--|--|--|
-| Размер секции|  1 TБ | 2 ТБ |  |  |  |  |  |
+| Размер секции|  1 ТБ | 2 ТБ |  |  |  |  |  |
 | Ограничения индекса и индексатора| 10 | 10 |  |  |  |  |  |
 
 *L2* предлагает дважды емкости хранилища для *L1*.  Выберите уровень на максимальный объем данных, которые вы считаете, что ваш индекс должен основе.  *L1* уровня секции масштабирования вверх в 1 ТБ с шагом в 12 ТБ, хотя *L2* увеличены 2 ТБ на секцию, но не более 24 ТБ.

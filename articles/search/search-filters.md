@@ -6,15 +6,15 @@ manager: cgronlun
 services: search
 ms.service: search
 ms.topic: conceptual
-ms.date: 04/20/2018
+ms.date: 05/02/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: a9e8d2cbc067fd92208fac778ba17c58bdc7a5e4
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 49f971fb50d0a8a6a0dab09158f780206a4d32f1
+ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61289592"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "65024844"
 ---
 # <a name="filters-in-azure-search"></a>Фильтры в службе "Поиск Azure" 
 
@@ -73,10 +73,10 @@ ms.locfileid: "61289592"
 
 ```http
 # Option 1:  Use $filter for GET
-GET https://[service name].search.windows.net/indexes/hotels/docs?search=*&$filter=baseRate lt 150&$select=hotelId,description&api-version=2017-11-11
+GET https://[service name].search.windows.net/indexes/hotels/docs?search=*&$filter=baseRate lt 150&$select=hotelId,description&api-version=2019-05-06
 
 # Option 2: Use filter for POST and pass it in the header
-POST https://[service name].search.windows.net/indexes/hotels/docs/search?api-version=2017-11-11
+POST https://[service name].search.windows.net/indexes/hotels/docs/search?api-version=2019-05-06
 {
     "search": "*",
     "filter": "baseRate lt 150",
@@ -146,14 +146,14 @@ POST https://[service name].search.windows.net/indexes/hotels/docs/search?api-ve
 
 ## <a name="text-filter-fundamentals"></a>Принципы работы текстовых фильтров
 
-Текстовые фильтры допустимы для строковых полей, из которых нужно запросить произвольный набор документов на основе значений в искомых данных.
+Текстовые фильтры допустимы для строковых полей, из которых вы хотите запросить произвольный набор документов на основе значений в индексе поиска.
 
 Для текстовых фильтров, состоящих из строк, нет лексического анализа или разбиения на слова, поэтому сравнения предназначены только для точных совпадений. Например, предположим, что поле *f*, которое содержит атрибут "солнечный день", не соответствует `$filter=f eq 'Sunny'`, а `$filter=f eq 'Sunny day'` соответствует. 
 
 Текстовые строки учитывают регистр. В словах в верхнем регистре нет нижнего регистра: по `$filter=f eq 'Sunny day'` не будет найдено словосочетание "солнечный день".
 
 
-| Подход | Описание | 
+| Подход | ОПИСАНИЕ | 
 |----------|-------------|
 | [search.in()](https://docs.microsoft.com/rest/api/searchservice/odata-expression-syntax-for-azure-search) | Функция, предоставляющая список строк с разделителями-запятыми для заданного поля. Строки содержат критерии фильтра, которые применяются к каждому полю в области запроса. <br/><br/>`search.in(f, ‘a, b, c’)` семантически эквивалентен `f eq ‘a’ or f eq ‘b’ or f eq ‘c’`, за исключением того, что он выполняется намного быстрее с большим списком значений.<br/><br/>Мы рекомендуем использовать функцию **search.in** для [фильтров безопасности](search-security-trimming-for-azure-search.md) и любых фильтров, состоящих из необработанного текста, который будет сопоставляться со значениями в заданном поле. Этот подход предназначен для повышения быстродействия. При этом гарантирована обработка сотен или тысяч значений со временем отклика меньше секунды. Несмотря на отсутствие явного ограничения на количество элементов, которые вы можете передать функции, задержка увеличивается пропорционально указываемому количеству строк. | 
 | [search.ismatch()](https://docs.microsoft.com/rest/api/searchservice/odata-expression-syntax-for-azure-search) | Функция, которая позволяет совместно использовать операции полнотекстового поиска вместе с операциями строго логического фильтра в одном выражении фильтра. Она позволяет использовать несколько сочетаний фильтра и запроса в одном запросе. Вы также можете использовать ее для фильтра *contains* (для фильтрации в частичной строке в контексте большей строки). |  

@@ -9,14 +9,14 @@ ms.topic: conceptual
 ms.reviewer: jmartens
 author: ph-com
 ms.author: pahusban
-ms.date: 09/24/2018
+ms.date: 05/02/2019
 ms.custom: seodec18
-ms.openlocfilehash: 3f40606d5fae3b3784ac7f1fdcf4977b7fd9eb1f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 3b55282adf56bedb0724eca578b8eaea00c26074
+ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60819428"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "65023978"
 ---
 # <a name="export-or-delete-your-machine-learning-service-workspace-data"></a>Экспорт или удаление данных рабочей области Службы машинного обучения 
 
@@ -231,3 +231,29 @@ ms.locfileid: "60819428"
 Источники данных можно получить с помощью вызова:
 
     https://{location}.aether.ms/api/v1.0/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MachineLearningServices/workspaces/{workspaceName}/DataSources/{id}
+
+## <a name="delete-visual-interface-assets"></a>Удаление средств визуального интерфейса
+
+В визуальный интерфейс, которой вы создали эксперимент удалите отдельные ресурсы:
+
+1. В левой части выберите тип ресурса, который требуется удалить.
+
+    ![Удаление ресурсов](media/how-to-export-delete-data.md/delete-experiment.png)
+
+1. В списке выберите отдельные ресурсы для удаления.
+
+1. В нижней части выберите **удалить**.
+
+## <a name="export-visual-interface-data"></a>Экспорт данных визуального интерфейса
+
+В визуальный интерфейс, которой вы создали эксперимент экспортируйте данные, которые были добавлены:
+
+1. С левой стороны экрана выберите **данных**.
+
+1. В верхней части, выберите **Мои наборы данных** или **примеры** поиск данных, необходимо экспортировать.
+
+    ![Загрузка данных](media/how-to-export-delete-data.md/download-data.png)
+
+1. В списке выберите отдельные наборы данных для экспорта.
+
+1. В нижней части выберите **загрузить**.

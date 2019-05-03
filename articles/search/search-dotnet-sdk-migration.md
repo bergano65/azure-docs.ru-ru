@@ -7,17 +7,29 @@ services: search
 ms.service: search
 ms.devlang: dotnet
 ms.topic: conceptual
-ms.date: 01/15/2018
+ms.date: 05/02/2019
 ms.author: brjohnst
 ms.custom: seodec2018
-ms.openlocfilehash: 4acf609ca1f81e69babfa1a319b43e20e84a8395
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 488a9fe24fb8fca0b7309dea63d0640a6384f95c
+ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61291541"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "65024102"
 ---
 # <a name="upgrading-to-the-azure-search-net-sdk-version-3"></a>Обновление пакета SDK службы поиска Azure для .NET до версии 3
+
+> [!Important]
+> Это содержимое является еще находятся в разработке. Версия 9.0 пакета SDK для .NET для поиска Azure доступна в NuGet. Мы работаем над этой статье объясняется, как выполнить обновление до версии 9.0. 
+> 
+
+<!--- DETAILS in the word doc
+cosmosdb
+NER v1 skill 
+Indexer execution result errors no longer have status
+the data source API will no longer return in the response of any REST operation, the connection string specified by the user.
+--->
+
 Если вы используете версию 2.0-preview [пакета SDK службы поиска Azure для .NET](https://aka.ms/search-sdk) или более раннюю, то эта статья поможет вам обновить приложение для использования версии 3.
 
 Более общее пошаговое руководство по пакету SDK, включая примеры, см. в разделе [Использование службы поиска Azure в приложении .NET](search-howto-dotnet-sdk.md).
