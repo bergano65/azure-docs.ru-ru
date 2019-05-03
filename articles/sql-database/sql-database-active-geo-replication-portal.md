@@ -1,6 +1,6 @@
 ---
 title: 'Портал Azure: георепликация Базы данных SQL | Документация Майкрософт'
-description: Настройка георепликации для отдельных или объединенных баз данных в Базе данных SQL Azure с помощью портала Azure и запуск отработки отказа
+description: Настройка георепликации для отдельных баз данных или баз данных в пуле в Базе данных SQL Azure с помощью портала Azure и запуск отработки отказа
 services: sql-database
 ms.service: sql-database
 ms.subservice: high-availability
@@ -21,9 +21,9 @@ ms.locfileid: "60864138"
 ---
 # <a name="configure-active-geo-replication-for-azure-sql-database-in-the-azure-portal-and-initiate-failover"></a>Настройка активной георепликации для базы данных SQL Azure с помощью портала Azure и запуск отработки отказа
 
-В этой статье объясняется, как настроить [активную георепликацию для отдельной базы данных и базы данных в составе пула](sql-database-active-geo-replication.md#active-geo-replication-terminology-and-capabilities) в Базе данных SQL Azure с помощью [портала Azure](https://portal.azure.com) и запустить отработку отказа.
+В этой статье объясняется, как настроить [активную георепликацию для отдельной базы данных и базы данных в пуле](sql-database-active-geo-replication.md#active-geo-replication-terminology-and-capabilities) в Базе данных SQL Azure с помощью [портала Azure](https://portal.azure.com) и запустить отработку отказа.
 
-Сведения о группах автоматической отработки отказа с отдельными и объединенными базами данных см. в [этом разделе](sql-database-auto-failover-group.md#best-practices-of-using-failover-groups-with-single-databases-and-elastic-pools). Сведения о группах автоматической отработки отказа с Управляемым экземпляром (предварительная версия) см. в разделе [Рекомендации по использованию групп отработки отказа с Управляемыми экземплярами](sql-database-auto-failover-group.md#best-practices-of-using-failover-groups-with-managed-instances).
+Сведения о группах автоматической отработки отказа с отдельными базами данных и базами данных в пуле см. в [этом разделе](sql-database-auto-failover-group.md#best-practices-of-using-failover-groups-with-single-databases-and-elastic-pools). Сведения о группах автоматической отработки отказа с Управляемым экземпляром (предварительная версия) см. в разделе [Рекомендации по использованию групп отработки отказа с Управляемыми экземплярами](sql-database-auto-failover-group.md#best-practices-of-using-failover-groups-with-managed-instances).
 
 ## <a name="prerequisites"></a>Технические условия
 
@@ -40,7 +40,7 @@ ms.locfileid: "60864138"
 
 Добавить базу данных-получатель может только владелец или совладелец подписки.
 
-Базе данных-получателю присваивается такое же имя, как у базы данных-источника, и по умолчанию тот же уровень служб и объем вычислительных ресурсов. База данных-получатель может быть отдельной базой данных или базой данных в составе пула. Изучите дополнительные сведения о моделях приобретения на основе [единиц DTU](sql-database-service-tiers-dtu.md) и [виртуальных ядер](sql-database-service-tiers-vcore.md).
+Базе данных-получателю присваивается такое же имя, как у базы данных-источника, и по умолчанию тот же уровень служб и объем вычислительных ресурсов. База данных-получатель может быть отдельной базой данных или базой данных в пуле. Изучите дополнительные сведения о моделях приобретения на основе [единиц DTU](sql-database-service-tiers-dtu.md) и [виртуальных ядер](sql-database-service-tiers-vcore.md).
 После создания и заполнения базы данных-получателя начинается репликация данных из базы данных-источника в новую базу данных-получателя.
 
 > [!NOTE]

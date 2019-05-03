@@ -89,7 +89,7 @@ ms.locfileid: "61075244"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Дополнительные сведения см. в статье [Ограничения ресурсов для отдельной базы данных в Базе данных SQL Azure при использовании модели приобретения на основе виртуальных ядер](sql-database-vcore-resource-limits-single-databases.md).
+- См. подробнее об [ограничениях ресурсов для отдельной базы данных в Базе данных SQL Azure при использовании модели приобретения на основе виртуальных ядер](sql-database-vcore-resource-limits-single-databases.md).
 - [Ограничения для эластичных пулов в службе "База данных SQL Azure" в модели приобретения на основе виртуальных ядер](sql-database-vcore-resource-limits-elastic-pools.md).
 - [Ограничения ресурсов для эластичных пулов в модели приобретения на основе DTU](sql-database-dtu-resource-limits-elastic-pools.md).
 - [Общие сведения об ограничениях ресурсов Управляемого экземпляра Базы данных SQL Azure](sql-database-managed-instance-resource-limits.md).

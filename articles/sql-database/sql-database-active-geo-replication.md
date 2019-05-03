@@ -146,7 +146,7 @@ ms.locfileid: "60387457"
 
 Как уже говорилось ранее, активной георепликацией можно также управлять программно с помощью Azure PowerShell и REST API. В приведенных ниже таблицах описан доступный для этого набор команд. Активная георепликация включает в себя набор API-интерфейсов Azure Resource Manager для управления, в том числе [REST API базы данных SQL Azure](https://docs.microsoft.com/rest/api/sql/) и [командлеты Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview). Эти интерфейсы API требуют использования групп ресурсов и поддерживают безопасность на основе ролей (RBAC). Дополнительные сведения о том, как реализовать контроль доступа на основе ролей, см. в статье [Использование управления доступом на основе ролей для контроля доступа к ресурсам в подписке Azure](../role-based-access-control/overview.md).
 
-### <a name="t-sql-manage-failover-of-single-and-pooled-databases"></a>T-SQL: управление отработкой отказа для отдельных и объединенных в пул баз данных
+### <a name="t-sql-manage-failover-of-single-and-pooled-databases"></a>T-SQL: управление отработкой отказа для отдельных баз данных и баз данных в пуле
 
 > [!IMPORTANT]
 > Приведенные ниже команды Transact-SQL применяются только к активной георепликации — они неприменимы к группам отработки отказа. Как таковые, они также не применяются к Управляемым экземплярам, так как они поддерживают только группы отработки отказа.
@@ -162,7 +162,7 @@ ms.locfileid: "60387457"
 | [sp_wait_for_database_copy_sync](/sql/relational-databases/system-stored-procedures/active-geo-replication-sp-wait-for-database-copy-sync) |Указывает приложению ждать, пока все зафиксированные транзакции не будут реплицированы и подтверждены активной базой данных-получателем. |
 |  | |
 
-### <a name="powershell-manage-failover-of-single-and-pooled-databases"></a>PowerShell: управление отработкой отказа для отдельных и объединенных в пул баз данных
+### <a name="powershell-manage-failover-of-single-and-pooled-databases"></a>PowerShell: управление отработкой отказа для отдельных баз данных и баз данных в пуле
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 > [!IMPORTANT]
@@ -178,9 +178,9 @@ ms.locfileid: "60387457"
 |  | |
 
 > [!IMPORTANT]
-> Дополнительные сведения о примерах сценариев см. в статьях [Настройка активной георепликации для отдельной базы данных SQL Azure с помощью PowerShell](scripts/sql-database-setup-geodr-and-failover-database-powershell.md) и [Настройка активной георепликации для базы данных SQL Azure в составе пула с помощью PowerShell](scripts/sql-database-setup-geodr-and-failover-pool-powershell.md).
+> Дополнительные сведения о примерах сценариев см. в статьях [Настройка активной георепликации для отдельной базы данных SQL Azure с помощью PowerShell](scripts/sql-database-setup-geodr-and-failover-database-powershell.md) и [Настройка активной георепликации для базы данных SQL Azure в пуле с помощью PowerShell](scripts/sql-database-setup-geodr-and-failover-pool-powershell.md).
 
-### <a name="rest-api-manage-failover-of-single-and-pooled-databases"></a>REST API: управление отработкой отказа для отдельных и объединенных в пул баз данных
+### <a name="rest-api-manage-failover-of-single-and-pooled-databases"></a>REST API: управление отработкой отказа для отдельных баз данных и баз данных в пуле
 
 | API | ОПИСАНИЕ |
 | --- | --- |

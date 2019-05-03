@@ -24,7 +24,7 @@ ms.locfileid: "61487542"
 В статье представлены общие сведения об ограничениях ресурсов Управляемого экземпляра Базы данных SQL Azure и сведения о том, как создать запрос на поддержку, чтобы увеличить ограничения по умолчанию для подписок по регионам.
 
 > [!NOTE]
-> Сведения о других ограничениях Управляемого экземпляра см. в разделах [Модель покупки на основе числа виртуальных ядер](sql-database-managed-instance.md#vcore-based-purchasing-model) и [Уровни служб Управляемого экземпляра](sql-database-managed-instance.md#managed-instance-service-tiers). Различия в поддерживаемых функциях и инструкциях T-SQL см. в статьях [Сравнение функций Базы данных SQL Azure и SQL Server](sql-database-features.md) и [Различия T-SQL между Управляемым экземпляром Базы данных SQL Azure и SQL Server](sql-database-managed-instance-transact-sql-information.md).
+> См. подробнее о других ограничениях Управляемого экземпляра в описании [модели приобретения на основе виртуальных ядер](sql-database-managed-instance.md#vcore-based-purchasing-model) и [уровней служб Управляемого экземпляра](sql-database-managed-instance.md#managed-instance-service-tiers). Различия в поддерживаемых функциях и инструкциях T-SQL см. в статьях [Сравнение функций Базы данных SQL Azure и SQL Server](sql-database-features.md) и [Различия T-SQL между Управляемым экземпляром Базы данных SQL Azure и SQL Server](sql-database-managed-instance-transact-sql-information.md).
 
 ## <a name="instance-level-resource-limits"></a>Ограничения ресурсов на уровне экземпляра
 

@@ -49,11 +49,11 @@ Remove-AzResourceGroup -ResourceGroupName $resourcegroupname
 |---|---|
 | [New-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [New-AzSqlServer](/powershell/module/az.sql/new-azsqlserver) | Создает сервер Базы данных SQL, на котором размещена отдельная база данных или пул эластичных баз данных. |
-| [New-AzSqlDatabase](/powershell/module/az.sql/new-azsqldatabase) | Создает на сервере Базы данных SQL отдельную базу данных или базу данных в составе пула. |
-[Get-AzSqlDatabaseGeoBackup](/powershell/module/az.sql/get-azsqldatabasegeobackup) | Получает геоизбыточную резервную копию отдельной базы данных или базы данных в составе пула. |
-| [Restore-AzSqlDatabase](/powershell/module/az.sql/restore-azsqldatabase) | Восстанавливает отдельную базу данных SQL или базу данных SQL в составе пула. |
-|[Remove-AzSqlDatabase](/powershell/module/az.sql/remove-azsqldatabase) | Удаляет отдельную базу данных SQL Azure или базу данных SQL Azure в составе пула. |
-| [Get-AzSqlDeletedDatabaseBackup](/powershell/module/az.sql/get-azsqldeleteddatabasebackup) | Получает удаленную отдельную базу данных или базу данных в составе пула, которую можно восстановить. |
+| [New-AzSqlDatabase](/powershell/module/az.sql/new-azsqldatabase) | Создает на сервере Базы данных SQL отдельную базу данных или базу данных в пуле. |
+[Get-AzSqlDatabaseGeoBackup](/powershell/module/az.sql/get-azsqldatabasegeobackup) | Получает геоизбыточную резервную копию отдельной базы данных или базы данных в пуле. |
+| [Restore-AzSqlDatabase](/powershell/module/az.sql/restore-azsqldatabase) | Восстанавливает отдельную базу данных SQL или базу данных SQL в пуле. |
+|[Remove-AzSqlDatabase](/powershell/module/az.sql/remove-azsqldatabase) | Удаляет отдельную базу данных SQL Azure или базу данных SQL Azure в пуле. |
+| [Get-AzSqlDeletedDatabaseBackup](/powershell/module/az.sql/get-azsqldeleteddatabasebackup) | Получает удаленную отдельную базу данных или базу данных в пуле, которую можно восстановить. |
 | [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup) | Удаляет группу ресурсов со всеми вложенными ресурсами. |
 
 ## <a name="next-steps"></a>Дополнительная информация

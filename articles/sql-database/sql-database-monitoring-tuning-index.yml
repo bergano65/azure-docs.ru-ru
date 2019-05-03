@@ -26,7 +26,7 @@ sections:
         items:
           - title: Сведения о производительности запросов
             href: /azure/sql-database/sql-database-query-performance
-            html: <p>Встроенные возможности мониторинга на портале Azure позволяют с легкостью отслеживать использование ресурсов в базе данных SQL Azure (отдельной или находящейся в пуле).</p>
+            html: <p>Встроенные возможности мониторинга на портале Azure позволяют с легкостью отслеживать использование ресурсов в базе данных SQL Azure (отдельной или в пуле).</p>
           - title: Azure SQL Analytics
             href: 'https://docs.microsoft.com/azure/log-analytics/log-analytics-azure-sql?toc=/azure/sql-database/toc.json'
             html: '<p>Мониторинг Azure SQL Analytics позволяет легко отслеживать большой парк баз данных, эластичных пулов и экземпляров на одной стеклянной панели.</p>'

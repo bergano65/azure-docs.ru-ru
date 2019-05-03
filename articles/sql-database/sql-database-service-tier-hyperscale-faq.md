@@ -220,7 +220,7 @@ Yes
 
 ### <a name="can-i-move-my--on-premises-sql-server-database-or-my-sql-server-virtual-machine-database-to-hyperscale"></a>Можно ли перенести локальную базу данных SQL Server или базу данных на виртуальной машине SQL Server на уровень "Гипермасштабирование"
 
-Да. Для миграции можно использовать все имеющиеся технологии миграции, включая BACPAC, репликацию транзакций, загрузку логических данных. Дополнительные сведения см. в статье [Что такое Azure Database Migration Service?](../dms/dms-overview.md).
+Да. Для миграции на уровень служб "Гипермасштабирование" можно использовать все имеющиеся технологии миграции, включая BACPAC, репликацию транзакций, загрузку логических данных. Дополнительные сведения см. в статье [Что такое Azure Database Migration Service?](../dms/dms-overview.md).
 
 ### <a name="what-is-my-downtime-during-migration-from-an-on-premises-or-virtual-machine-environment-to-hyperscale-and-how-can-i-minimize-it"></a>Что такое простой во время миграции из локальной среды или виртуальной машины на уровень "Гипермасштабирование", и как свести его минимуму
 
@@ -243,7 +243,7 @@ Yes
 
 ### <a name="what-is-the-oldest-sql-server-version-will-sql-database-hyperscale-support-migration-from"></a>Какова самая старая версия SQL Server, поддерживающая миграция на уровень "Гипермасштабирование" Базы данных SQL
 
-SQL Server 2005. Дополнительные сведения см. в разделе [Перенос в отдельную базу данных или базу данных в составе пула](sql-database-single-database-migrate.md#migrate-to-a-single-database-or-a-pooled-database). Дополнительные сведения см. в разделе [Устранение проблем совместимости при миграции базы данных](sql-database-single-database-migrate.md#resolving-database-migration-compatibility-issues).
+SQL Server 2005. Дополнительные сведения см. в разделе [Перенос в отдельную базу данных или базу данных в пуле](sql-database-single-database-migrate.md#migrate-to-a-single-database-or-a-pooled-database). Дополнительные сведения см. в разделе [Устранение проблем совместимости при миграции базы данных](sql-database-single-database-migrate.md#resolving-database-migration-compatibility-issues).
 
 ### <a name="does-sql-database-hyperscale-support-migration-from-other-data-sources-such-as-aurora-mysql-oracle-db2-and-other-database-platforms"></a>Поддерживается ли на уровне "Гипермасштабирование" Базы данных SQL миграция из других источников данных, таких как Aurora, MySQL, Oracle, DB2 и прочих платформ баз данных
 

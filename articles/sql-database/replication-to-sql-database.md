@@ -19,9 +19,9 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "60646814"
 ---
-# <a name="replication-to-sql-database-single-and-pooled-databases"></a>Репликация в отдельную базу данных и в базы данных в составе пула службы "База данных SQL Azure"
+# <a name="replication-to-sql-database-single-and-pooled-databases"></a>Репликация в отдельную базу данных и в базы данных в пуле службы "База данных SQL Azure"
 
-На [сервере Базы данных SQL](sql-database-servers.md) в Базе данных SQL Azure репликацию SQL Server можно настроить как для отдельной базы данных, так и для базы данных в составе пула.  
+На [сервере Базы данных SQL](sql-database-servers.md) в Базе данных SQL Azure репликацию SQL Server можно настроить как для отдельной базы данных, так и для базы данных в пуле.  
 
 ## <a name="supported-configurations"></a>**Поддерживаемые конфигурации**
   

@@ -349,7 +349,7 @@ ms.locfileid: "61417364"
 | Switch-AzureRmSqlDatabaseInstanceFailoverGroup |Запускает отработку отказа группы отработки отказа на сервер-получатель.|
 | Remove-AzureRmSqlDatabaseInstanceFailoverGroup | Удаляет группу отработки отказа.|
 
-### <a name="rest-api-manage-sql-database-failover-groups-with-single-and-pooled-databases"></a>REST API: Управление группами отработки отказа базы данных SQL с отдельными базами данных или с базами данных в составе пула
+### <a name="rest-api-manage-sql-database-failover-groups-with-single-and-pooled-databases"></a>REST API: Управление группами отработки отказа базы данных SQL с отдельными базами данных или с базами данных в пуле
 
 | API | Описание |
 | --- | --- |

@@ -10,25 +10,28 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 01/25/2019
+ms.date: 04/29/2019
 ms.author: jingwang
-ms.openlocfilehash: 547edc2fdfc78f9c22cd62ad2707515f010f2d58
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 627d0a305268b6814a3f48a0f9eee88c097627a6
+ms.sourcegitcommit: 2c09af866f6cc3b2169e84100daea0aac9fc7fd0
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57852429"
+ms.lasthandoff: 04/29/2019
+ms.locfileid: "64876769"
 ---
 # <a name="copy-data-from-hdfs-using-azure-data-factory"></a>Копирование данных из HDFS с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
 > * [Версия 1](v1/data-factory-hdfs-connector.md)
 > * [Текущая версия](connector-hdfs.md)
 
-Из этой статьи вы узнаете, как с помощью действия копирования в фабрике данных Azure копировать данные из HDFS. Это продолжение [статьи об обзоре действия копирования](copy-activity-overview.md), в которой представлены общие сведения о действии копирования.
+В этой статье описывается, как копировать данные из сервера HDFS. Дополнительные сведения о Фабрике данных Azure см. во [вводной статье](introduction.md).
 
 ## <a name="supported-capabilities"></a>Поддерживаемые возможности
 
-Данные из HDFS можно скопировать в любое поддерживаемое хранилище данных, используемое в качестве приемника. Список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования, см. в таблице [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats).
+Этот соединитель HDFS поддерживается для следующих действий:
+
+- [Действие копирования](copy-activity-overview.md) с [поддерживается матрицы источника и приемника](copy-activity-overview.md)
+- [Действие поиска](control-flow-lookup-activity.md)
 
 В частности, этот соединитель HDFS поддерживает:
 
@@ -55,8 +58,8 @@ ms.locfileid: "57852429"
 
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Свойству type необходимо задать значение **Hdfs**. | Yes |
-| URL-адрес |URL-адрес в HDFS |Yes |
+| type | Свойству type необходимо задать значение **Hdfs**. | Yes |
+| url |URL-адрес в HDFS |Yes |
 | authenticationType | Допустимые значения: **Anonymous** (анонимная) или **Windows**. <br><br> Чтобы использовать **аутентификацию Kerberos** для соединителя HDFS, настройте локальную среду, как описано [здесь](#use-kerberos-authentication-for-hdfs-connector). |Yes |
 | userName |Имя пользователя для проверки подлинности Windows. Для проверки подлинности Kerberos укажите `<username>@<domain>.com`. |Да (для проверки подлинности Windows) |
 | password |Пароль для проверки подлинности Windows. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). |Да (для проверки подлинности Windows) |
@@ -108,13 +111,57 @@ ms.locfileid: "57852429"
 
 ## <a name="dataset-properties"></a>Свойства набора данных
 
-Полный список разделов и свойств, доступных для определения наборов данных, см. в статье о наборах данных. Этот раздел содержит список свойств, поддерживаемых набором данных HDFS.
+Полный список разделов и свойств, доступных для определения наборов данных, см. в статье о [наборах данных](concepts-datasets-linked-services.md). 
 
-Чтобы скопировать данные из FTP, установите свойство типа набора данных **FileShare**. Поддерживаются следующие свойства:
+- Для **Parquet и текстовый формат с разделителями**, см. [Parquet и текстовый файл с разделителями, формат набора данных](#parquet-and-delimited-text-format-dataset) раздел.
+- Для других форматов, например **формата ORC и Avro/JSON/двоичных файлов**, см. [другой набор данных в формате](#other-format-dataset) раздел.
+
+### <a name="parquet-and-delimited-text-format-dataset"></a>Parquet и набор данных формат с разделителями
+
+Чтобы скопировать данные из HDFS в **Parquet или текстовый формат с разделителями**, см. [формат Parquet](format-parquet.md) и [текстовый формат с разделителями](format-delimited-text.md) статья на основе формат набора данных и поддерживается Параметры. Следующие свойства поддерживаются для HDFS в разделе `location` параметры в наборе данных на основе формата:
+
+| Свойство   | ОПИСАНИЕ                                                  | Обязательно для заполнения |
+| ---------- | ------------------------------------------------------------ | -------- |
+| Тип       | Свойство типа в списке `location` в наборе данных должно быть присвоено **HdfsLocation**. | Yes      |
+| folderPath | Путь к папке. Если вы хотите использовать подстановочный знак в папку фильтра, пропустить этот параметр и укажите в параметрах исходного действия. | Нет        |
+| fileName   | Имя файла, в разделе данной folderPath. Если вы хотите использовать подстановочный знак для фильтрации файлов, пропустите этот параметр и укажите в параметрах исходного действия. | Нет        |
+
+> [!NOTE]
+> **Общая папка** типа набора данных в формате Parquet или текст, описанные в следующем разделе по-прежнему поддерживается в качестве-для действия копирования и поиска для обеспечения обратной совместимости. Рекомендуется использовать эту новую модель, в дальнейшем и разработки пользовательского интерфейса ADF изменился на создание этих новых типов.
+
+**Пример.**
+
+```json
+{
+    "name": "DelimitedTextDataset",
+    "properties": {
+        "type": "DelimitedText",
+        "linkedServiceName": {
+            "referenceName": "<HDFS linked service name>",
+            "type": "LinkedServiceReference"
+        },
+        "schema": [ < physical schema, optional, auto retrieved during authoring > ],
+        "typeProperties": {
+            "location": {
+                "type": "HdfsLocation",
+                "folderPath": "root/folder/subfolder"
+            },
+            "columnDelimiter": ",",
+            "quoteChar": "\"",
+            "firstRowAsHeader": true,
+            "compressionCodec": "gzip"
+        }
+    }
+}
+```
+
+### <a name="other-format-dataset"></a>Другой набор данных в формате
+
+Чтобы скопировать данные из HDFS в **формата ORC и Avro/JSON/двоичных файлов**, поддерживаются следующие свойства:
 
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Для свойства type набора данных необходимо задать следующее значение: **FileShare**. |Yes |
+| type | Для свойства type набора данных необходимо задать следующее значение: **FileShare**. |Yes |
 | folderPath | Путь к папке, Фильтр с подстановочными знаками поддерживается. Допустимые подстановочные знаки: `*` (соответствует нулю или большему количеству знаков) и `?` (соответствует нулю или одному знаку). Для экранирования используйте `^`, если имя фактического файла содержит подстановочный знак или escape-символ. <br/><br/>Примеры: rootfolder/subfolder/. Дополнительные примеры см. в разделе [Примеры фильтров папок и файлов](#folder-and-file-filter-examples). |Yes |
 | fileName |  **Имя или фильтр шаблонов** для файлов по указанному folderPath. Если этому свойству не присвоить значение, набор данных будет указывать на все файлы в папке. <br/><br/>Допустимые знаки подстановки для фильтра: `*` (соответствует нулю или нескольким символам) и `?` (соответствует нулю или одному символу).<br/>Пример 1. `"fileName": "*.csv"`<br/>Пример 2. `"fileName": "???20180427.txt"`<br/>Используйте `^` для экранирования знаков, если фактическое имя папки содержит подстановочный знак или этот escape-символ. |Нет  |
 | modifiedDatetimeStart | Фильтр файлов на основе атрибута: последнее изменение. Файлы будут выбраны, если время их последнего изменения находится в диапазоне времени `modifiedDatetimeStart` и `modifiedDatetimeEnd`. Время представлено часовым поясом UTC в формате "2018-12-01T05:00:00Z". <br/><br/> Свойства могут иметь значение NULL. Это означает, что фильтры атрибута файла не будут применяться к набору данных.  Если для параметра `modifiedDatetimeStart` задано значение даты и времени, но параметр `modifiedDatetimeEnd` имеет значение NULL, то будут выбраны файлы, чей атрибут последнего изменения больше указанного значения даты и времени или равен ему.  Если для параметра `modifiedDatetimeEnd` задано значение даты и времени, но параметр `modifiedDatetimeStart` имеет значение NULL, то будут выбраны все файлы, чей атрибут последнего изменения меньше указанного значения даты и времени.| Нет  |
@@ -155,35 +202,86 @@ ms.locfileid: "57852429"
 }
 ```
 
-### <a name="folder-and-file-filter-examples"></a>Примеры фильтров папок и файлов
-
-В этом разделе описываются результаты применения фильтров с подстановочными знаками к пути папки и имени файла.
-
-| folderPath | fileName | recursive | Структура исходной папки и результат фильтрации (извлекаются файлы, выделенные **полужирным** шрифтом)|
-|:--- |:--- |:--- |:--- |
-| `Folder*` | (пусто, используйте по умолчанию) | false | ПапкаA<br/>&nbsp;&nbsp;&nbsp;&nbsp;**Файл1.csv**<br/>&nbsp;&nbsp;&nbsp;&nbsp;**Файл2.json**<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3.csv<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4.json<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5.csv<br/>Другая_папкаB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл6.csv |
-| `Folder*` | (пусто, используйте по умолчанию) | Да | ПапкаA<br/>&nbsp;&nbsp;&nbsp;&nbsp;**Файл1.csv**<br/>&nbsp;&nbsp;&nbsp;&nbsp;**Файл2.json**<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Файл3.csv**<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Файл4.json**<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Файл5.csv**<br/>Другая_папкаB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл6.csv |
-| `Folder*` | `*.csv` | false | ПапкаA<br/>&nbsp;&nbsp;&nbsp;&nbsp;**Файл1.csv**<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2.json<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3.csv<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4.json<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5.csv<br/>Другая_папкаB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл6.csv |
-| `Folder*` | `*.csv` | Да | ПапкаA<br/>&nbsp;&nbsp;&nbsp;&nbsp;**Файл1.csv**<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2.json<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Файл3.csv**<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4.json<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Файл5.csv**<br/>Другая_папкаB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл6.csv |
-
 ## <a name="copy-activity-properties"></a>Свойства действия копирования
 
 Полный список разделов и свойств, используемых для определения действий, см. в статье [Конвейеры и действия в фабрике данных Azure](concepts-pipelines-activities.md). Этот раздел содержит список свойств, поддерживаемых источником HDFS.
 
 ### <a name="hdfs-as-source"></a>HDFS в качестве источника
 
-Чтобы копировать данные из HDFS, установите тип источника в действии копирования **HdfsSource**. В разделе **source** действия копирования поддерживаются следующие свойства:
+- Для копирования из **Parquet и текстовый формат с разделителями**, см. [Parquet и исходный формат с разделителями](#parquet-and-delimited-text-format-source) раздел.
+- Для копирования из других форматов, например **формата ORC и Avro/JSON/двоичных файлов**, см. [другого формата источника](#other-format-source) раздел.
+
+#### <a name="parquet-and-delimited-text-format-source"></a>Parquet и исходный формат с разделителями
+
+Чтобы скопировать данные из HDFS в **Parquet или текстовый формат с разделителями**, см. [формат Parquet](format-parquet.md) и [текстовый формат с разделителями](format-delimited-text.md) статьи на источника действия копирования на основе формата и Поддерживаемые параметры. Следующие свойства поддерживаются для HDFS в разделе `storeSettings` параметры источника копирования на основе формата:
+
+| Свойство                 | ОПИСАНИЕ                                                  | Обязательно для заполнения                                      |
+| ------------------------ | ------------------------------------------------------------ | --------------------------------------------- |
+| Тип                     | Свойство типа в списке `storeSettings` должно быть присвоено **HdfsReadSetting**. | Yes                                           |
+| recursive                | Указывает, следует ли читать данные рекурсивно из вложенных папок или только из указанной папки. Обратите внимание, что если для свойства recursive задано значение true, а приемником является файловое хранилище, пустые папки и вложенные папки не создаются в приемнике. Допустимые значения: **true** (по умолчанию) и **false**. | Нет                                             |
+| wildcardFolderPath       | Путь к папке с использованием подстановочных знаков для фильтрации исходных папках. <br>Допустимые подстановочные знаки: `*` (соответствует нулю или большему количеству знаков) и `?` (соответствует нулю или одному знаку). Для экранирования используйте `^`, если фактическое имя папки содержит подстановочный знак или escape-символ. <br>Дополнительные примеры приведены в разделе [Примеры фильтров папок и файлов](#folder-and-file-filter-examples). | Нет                                             |
+| wildcardFileName         | Имя файла с использованием подстановочных знаков в заданной folderPath/wildcardFolderPath к исходным файлам фильтра. <br>Допустимые подстановочные знаки: `*` (соответствует нулю или большему количеству знаков) и `?` (соответствует нулю или одному знаку). Для экранирования используйте `^`, если фактическое имя папки содержит подстановочный знак или escape-символ.  Дополнительные примеры приведены в разделе [Примеры фильтров папок и файлов](#folder-and-file-filter-examples). | Да, в том случае, если `fileName` не указан в наборе данных |
+| modifiedDatetimeStart    | Фильтр файлов на основе атрибута: последнее изменение. Файлы будут выбраны, если время их последнего изменения находится в диапазоне времени `modifiedDatetimeStart` и `modifiedDatetimeEnd`. Время представлено часовым поясом UTC в формате "2018-12-01T05:00:00Z". <br> Свойства могут иметь значение NULL. Это означает, что фильтры атрибута файла не будут применяться к набору данных.  Если для параметра `modifiedDatetimeStart` задано значение даты и времени, но параметр `modifiedDatetimeEnd` имеет значение NULL, то будут выбраны файлы, чей атрибут последнего изменения больше указанного значения даты и времени или равен ему.  Если для параметра `modifiedDatetimeEnd` задано значение даты и времени, но параметр `modifiedDatetimeStart` имеет значение NULL, то будут выбраны все файлы, чей атрибут последнего изменения меньше указанного значения даты и времени. | Нет                                             |
+| modifiedDatetimeEnd      | То же, что и выше.                                               | Нет                                             |
+| maxConcurrentConnections | Число подключений для подключения к хранилищу хранилища, одновременно. Укажите только в том случае, если вы хотите ограничить максимальное количество одновременных подключений к хранилищу данных. | Нет                                             |
+
+> [!NOTE]
+> Для Parquet/текстового формата с разделителями **FileSystemSource** источника действия копирования типа, описанные в следующем разделе по-прежнему поддерживается в качестве-подходит для обеспечения обратной совместимости. Рекомендуется использовать эту новую модель, в дальнейшем и разработки пользовательского интерфейса ADF изменился на создание этих новых типов.
+
+**Пример.**
+
+```json
+"activities":[
+    {
+        "name": "CopyFromHDFS",
+        "type": "Copy",
+        "inputs": [
+            {
+                "referenceName": "<Delimited text input dataset name>",
+                "type": "DatasetReference"
+            }
+        ],
+        "outputs": [
+            {
+                "referenceName": "<output dataset name>",
+                "type": "DatasetReference"
+            }
+        ],
+        "typeProperties": {
+            "source": {
+                "type": "DelimitedTextSource",
+                "formatSettings":{
+                    "type": "DelimitedTextReadSetting",
+                    "skipLineCount": 10
+                },
+                "storeSettings":{
+                    "type": "HdfsReadSetting",
+                    "recursive": true
+                }
+            },
+            "sink": {
+                "type": "<sink type>"
+            }
+        }
+    }
+]
+```
+
+#### <a name="other-format-source"></a>Другой источник формат
+
+Чтобы скопировать данные из HDFS в **формата ORC и Avro/JSON/двоичных файлов**, в действии копирования поддерживаются следующие свойства **источника** раздел:
 
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Свойству type источника действия копирования необходимо задать значение **HdfsSource**. |Yes |
+| type | Свойству type источника действия копирования необходимо задать значение **HdfsSource**. |Yes |
 | recursive | Указывает, следует ли читать данные рекурсивно из вложенных папок или только из указанной папки. Обратите внимание, что если для свойства recursive задано значение true, а приемником является файловое хранилище, в приемнике не будут создаваться пустые папки и вложенные папки.<br/>Допустимые значения: **true** (по умолчанию), **false**. | Нет  |
 | distcpSettings | Группа свойств при использовании HDFS DistCp. | Нет  |
 | resourceManagerEndpoint | Конечная точка YARN ResourceManager | Да, если используется DistCp |
 | tempScriptPath | Путь к папке для хранения временного командного скрипта DistCp. Файл скрипта создает фабрика данных, и после завершения задания копирования файл удаляется. | Да, если используется DistCp |
 | distcpOptions | Дополнительные параметры для команды DistCp. | Нет  |
+| maxConcurrentConnections | Число подключений для подключения к хранилищу хранилища, одновременно. Укажите только в том случае, если вы хотите ограничить максимальное количество одновременных подключений к хранилищу данных. | Нет  |
 
-**Пример. Источник HDFS в действии копирования с использованием UNLOAD**
+**Пример. Источник HDFS в действии копирования, с помощью DistCp**
 
 ```json
 "source": {
@@ -197,6 +295,17 @@ ms.locfileid: "57852429"
 ```
 
 Дополнительные сведения о том, как использовать DistCp для эффективного копирования данных из HDFS, см. в следующем разделе.
+
+### <a name="folder-and-file-filter-examples"></a>Примеры фильтров папок и файлов
+
+В этом разделе описываются результаты применения фильтров с подстановочными знаками к пути папки и имени файла.
+
+| folderPath | fileName             | recursive | Структура исходной папки и результат фильтрации (извлекаются файлы, выделенные **полужирным** шрифтом) |
+| :--------- | :------------------- | :-------- | :----------------------------------------------------------- |
+| `Folder*`  | (пусто, используйте по умолчанию) | false     | ПапкаA<br/>&nbsp;&nbsp;&nbsp;&nbsp;**Файл1.csv**<br/>&nbsp;&nbsp;&nbsp;&nbsp;**Файл2.json**<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3.csv<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4.json<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5.csv<br/>Другая_папкаB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл6.csv |
+| `Folder*`  | (пусто, используйте по умолчанию) | Да      | ПапкаA<br/>&nbsp;&nbsp;&nbsp;&nbsp;**Файл1.csv**<br/>&nbsp;&nbsp;&nbsp;&nbsp;**Файл2.json**<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Файл3.csv**<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Файл4.json**<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Файл5.csv**<br/>Другая_папкаB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл6.csv |
+| `Folder*`  | `*.csv`              | false     | ПапкаA<br/>&nbsp;&nbsp;&nbsp;&nbsp;**Файл1.csv**<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2.json<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл3.csv<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4.json<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл5.csv<br/>Другая_папкаB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл6.csv |
+| `Folder*`  | `*.csv`              | Да      | ПапкаA<br/>&nbsp;&nbsp;&nbsp;&nbsp;**Файл1.csv**<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл2.json<br/>&nbsp;&nbsp;&nbsp;&nbsp;Вложенная_папка1<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Файл3.csv**<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Файл4.json<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Файл5.csv**<br/>Другая_папкаB<br/>&nbsp;&nbsp;&nbsp;&nbsp;Файл6.csv |
 
 ## <a name="use-distcp-to-copy-data-from-hdfs"></a>Использовать DistCp для копирования данных из HDFS
 
@@ -220,43 +329,7 @@ ms.locfileid: "57852429"
 
 ### <a name="configurations"></a>Конфигурации
 
-Ниже приведен пример конфигурации действия копирования для копирования данных из HDFS в большой двоичный объект Azure с помощью DistCp:
-
-**Пример.**
-
-```json
-"activities":[
-    {
-        "name": "CopyFromHDFSToBlob",
-        "type": "Copy",
-        "inputs": [
-            {
-                "referenceName": "HDFSDataset",
-                "type": "DatasetReference"
-            }
-        ],
-        "outputs": [
-            {
-                "referenceName": "BlobDataset",
-                "type": "DatasetReference"
-            }
-        ],
-        "typeProperties": {
-            "source": {
-                "type": "HdfsSource",
-                "distcpSettings": {
-                    "resourceManagerEndpoint": "resourcemanagerendpoint:8088",
-                    "tempScriptPath": "/usr/hadoop/tempscript",
-                    "distcpOptions": "-strategy dynamic -map 100"
-                }
-            },
-            "sink": {
-                "type": "BlobSink"
-            }
-        }
-    }
-]
-```
+DistCp см. в разделе конфигурации и примеры, связанные с [HDFS в качестве источника](#hdfs-as-source) раздел.
 
 ## <a name="use-kerberos-authentication-for-hdfs-connector"></a>Использование аутентификации Kerberos для соединителя HDFS
 
@@ -314,7 +387,7 @@ ms.locfileid: "57852429"
             default = FILE:/var/log/krb5libs.log
             kdc = FILE:/var/log/krb5kdc.log
             admin_server = FILE:/var/log/kadmind.log
-
+            
            [libdefaults]
             default_realm = REALM.COM
             dns_lookup_realm = false
@@ -322,7 +395,7 @@ ms.locfileid: "57852429"
             ticket_lifetime = 24h
             renew_lifetime = 7d
             forwardable = true
-
+            
            [realms]
             REALM.COM = {
              kdc = node.REALM.COM
@@ -332,13 +405,13 @@ ms.locfileid: "57852429"
             kdc = windc.ad.com
             admin_server = windc.ad.com
            }
-
+            
            [domain_realm]
             .REALM.COM = REALM.COM
             REALM.COM = REALM.COM
             .ad.com = AD.COM
             ad.com = AD.COM
-
+            
            [capaths]
             AD.COM = {
              REALM.COM = .

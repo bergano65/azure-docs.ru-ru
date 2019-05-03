@@ -165,7 +165,7 @@ ms.locfileid: "58620484"
 
 ### <a name="rest-api"></a>REST API
 
-Восстановление отдельной базы данных или базы данных в составе пула с помощью REST API:
+Восстановление отдельной базы данных или базы данных в пуле с помощью REST API:
 
 | API | ОПИСАНИЕ |
 | --- | --- |
@@ -174,7 +174,7 @@ ms.locfileid: "58620484"
 
 ### <a name="azure-cli"></a>Инфраструктура CLI Azure
 
-- Для восстановления отдельной базы данных или базы данных в составе пула с помощью Azure CLI см. описание команды [az sql db restore](/cli/azure/sql/db#az-sql-db-restore).
+- Для восстановления отдельной базы данных или базы данных в пуле с помощью Azure CLI см. описание команды [az sql db restore](/cli/azure/sql/db#az-sql-db-restore).
 - Чтобы восстановить управляемого экземпляра с помощью Azure CLI, см. в разделе [восстановление midb az sql](/cli/azure/sql/midb#az-sql-midb-restore)
 
 ## <a name="summary"></a>Сводка
