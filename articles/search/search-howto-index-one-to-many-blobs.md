@@ -1,7 +1,7 @@
 ---
 title: Индексирование больших двоичных объектов, содержащий несколько поиска индексации документов из индексатор больших двоичных объектов Azure для полнотекстового поиска — поиска Azure
 description: Обход содержимого больших двоичных объектов Azure для текстового содержимого, с помощью индексатора больших двоичных объектов поиска Azure. Каждый большой двоичный объект может содержать один или несколько документов в индекс поиска Azure.
-ms.date: 02/12/2019
+ms.date: 05/02/2019
 author: arv100kri
 manager: briansmi
 ms.author: arjagann
@@ -10,21 +10,18 @@ ms.service: search
 ms.devlang: rest-api
 ms.topic: conceptual
 ms.custom: seofeb2018
-ms.openlocfilehash: e95eff015340659b642dff800a03f615e22c1577
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 628ced069c9d32c6e874c2e36a1e3b752c476003
+ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60871205"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "65024652"
 ---
 # <a name="indexing-blobs-producing-multiple-search-documents"></a>Индексирование BLOB-объектов, создания нескольких документов поиска
 По умолчанию индексатор больших двоичных объектов будет обрабатывать содержимое большого двоичного объекта как один документ. Определенные **parsingMode** значения поддержки сценариев, где отдельных больших двоичных объектов может привести к несколько документов поиска. Различные типы **parsingMode** , позволяющие индексатор для извлечения более поиска документа из большого двоичного объекта являются:
 + `delimitedText`
 + `jsonArray`
 + `jsonLines`
-
-> [!IMPORTANT]
-> `jsonLines` Режим анализа в общедоступной предварительной версии и не следует использовать в рабочих средах. Дополнительные сведения см. в статье [REST api-version=2017-11-11-Preview](search-api-2017-11-11-preview.md) (REST API версии 2017-11-11-Preview). 
 
 ## <a name="one-to-many-document-key"></a>Ключ документа один ко многим
 Ключ документа однозначно идентифицируется каждого документа, который отображается в индекс службы поиска Azure. 
@@ -64,7 +61,7 @@ _Blob2.JSON_
 
 Эта конфигурация приведет к в индекс поиска Azure, содержащий следующие сведения (сокращены для краткости код в кодировке base64)
 
-| идентификатор | Температура | pressure |  timestamp |
+| id | Температура | pressure |  timestamp |
 |----|-------------|----------|-----------|
 | aHR0... YjEuanNvbjsx | 100 | 100 | 2019-02-13T00:00:00Z |
 | aHR0... YjEuanNvbjsy | 33 | 30 | 2019-02-14T00:00:00Z |
@@ -106,7 +103,7 @@ _Blob2.JSON_
 + [Индексаторы в службе поиска Azure](search-indexer-overview.md)
 + [Индексирование BLOB-объектов JSON с помощью индексатора BLOB-объектов службы поиска Azure](search-howto-index-json-blobs.md)
 + [Индексирование BLOB-объектов в формате CSV с помощью индексатора BLOB-объектов службы поиска Azure](search-howto-index-csv-blobs.md)
-+ [Индексирование больших двоичных объектов JSON с помощью индексатора больших двоичных объектов поиска Azure](search-howto-index-csv-blobs.md)
++ [Индексирование больших двоичных объектов JSON с помощью индексатора больших двоичных объектов поиска Azure](search-howto-index-json-blobs.md)
 
 ## <a name="NextSteps"></a>Дальнейшие действия
 * Дополнительные сведения о службе поиска Azure см. на [этой странице](https://azure.microsoft.com/services/search/).

@@ -8,15 +8,15 @@ services: search
 ms.service: search
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 04/04/2019
+ms.date: 05/02/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: f4a0cba18f27c9cabfc03d1934469e6899c5cd18
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: bf78cd9b70aa4a82ef96fdd529d3ee5b1641038c
+ms.sourcegitcommit: eea74d11a6d6ea6d187e90e368e70e46b76cd2aa
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60564788"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65035356"
 ---
 # <a name="monitor-resource-consumption-and-query-activity-in-azure-search"></a>Мониторинг использования ресурсов и обработки запросов в Поиске Azure
 
@@ -114,7 +114,7 @@ resourceId=/subscriptions/<subscriptionID>/resourcegroups/<resourceGroupName>/pr
 | Twitter в режиме реального |Datetime |"2018-12-07T00:00:43.6872559Z" |Метка времени операции |
 | ResourceId |строка |"/SUBSCRIPTIONS/11111111-1111-1111-1111-111111111111/<br/>RESOURCEGROUPS/DEFAULT/PROVIDERS/<br/>  MICROSOFT.SEARCH/SEARCHSERVICES/SEARCHSERVICE" |Идентификатор вашего ресурса |
 | operationName |строка |"Query.Search" |Имя операции |
-| operationVersion |строка |"2017-11-11" |Используемая версия API |
+| operationVersion |string |"2019-05-06" |Используемая версия API |
 | category |строка |"OperationLogs" |константа |
 | resultType |строка |Success |Возможные значения: Success или Failure |
 | resultSignature |int |200 |Код результата HTTP |
@@ -126,7 +126,7 @@ resourceId=/subscriptions/<subscriptionID>/resourcegroups/<resourceGroupName>/pr
 | ИМЯ | type | Пример | Примечания |
 | --- | --- | --- | --- |
 | ОПИСАНИЕ |строка |"GET /indexes('content')/docs" |Конечная точка операции |
-| Запрос |строка |"?search=AzureSearch&$count=true&api-version=2017-11-11" |Параметры запроса |
+| Запрос |string |"?search=AzureSearch&$count=true&api-version=2019-05-06" |Параметры запроса |
 | Документы |int |42 |Количество обработанных документов |
 | IndexName |строка |"testindex" |Имя индекса, связанного с операцией |
 
