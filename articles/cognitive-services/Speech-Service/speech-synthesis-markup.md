@@ -11,25 +11,51 @@ ms.topic: conceptual
 ms.date: 12/13/2018
 ms.author: erhopf
 ms.custom: seodec18
-ms.openlocfilehash: 57fc7e699d88dbe777750e3acdb7f96794b66fc0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 9871e0106ee6caf11c5a1e24459fbd2044f5f3d7
+ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61460292"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "65021443"
 ---
 # <a name="speech-synthesis-markup-language-ssml"></a>Язык разметки синтеза речи (SSML)
 
-Speech Synthesis Markup Language (SSML) — это язык разметки на базе XML, который позволяет контролировать произношение и *интонацию* при преобразовании текста в речь. (Интонацией называют ритм и тон речи — ее музыкальное звучание, если можно так выразиться.) С его помощью слова можно обозначать фонетически, добавлять указания по интерпретации чисел, вставлять паузы, контролировать тон, громкость, скорость речи и многое другое. Дополнительные сведения см. на странице, посвященной [Speech Synthesis Markup Language (SSML) версии 1.0](https://www.w3.org/TR/2009/REC-speech-synthesis-20090303/).
+Speech Synthesis Markup Language (SSML) — это язык разметки на базе XML, который позволяет контролировать произношение и *интонацию* при преобразовании текста в речь. (Интонацией называют ритм и тон речи — ее музыкальное звучание, если можно так выразиться.) С его помощью слова можно обозначать фонетически, добавлять указания по интерпретации чисел, вставлять паузы, контролировать тон, громкость, скорость речи и многое другое. Дополнительные сведения см. на странице, посвященной [Speech Synthesis Markup Language (SSML) версии 1.0](https://www.w3.org/TR/2009/REC-speech-synthesis-20090303/). 
 
 Полный список поддерживаемых языков, языковых стандартов и голосовых моделей (нейронных и стандартных) см. в разделе [языковой поддержки](language-support.md#text-to-speech).
 
 В следующих разделах представлены примеры распространенных задач синтеза речи.
 
+## <a name="adjust-speaking-style-for-neural-voices"></a>Настроить разговорным стилем для нейронных голоса
+
+SSML можно использовать для корректировки разговорным стилем, при использовании одного из нейронной голоса.
+
+По умолчанию службу преобразования текста в речь синтезирует нейтральный текст. Нейронной голоса расширить SSML с `<mstts:express-as>` элемент, который преобразует текст в синтезированную речь в разных говоря стили. В настоящее время стиля теги поддерживаются только с помощью этих голоса:
+
+* `en-US-JessaNeural` 
+* `zh-CN-XiaoxiaoNeural`.
+
+Говоря изменения стиля могут применяться на уровне предложений. Стили различаются в зависимости от голоса. Если тип стиля не поддерживается, служба вернет синтезированную речь, нейтральный по умолчанию.
+
+| Голосовая связь | Style | ОПИСАНИЕ | 
+|-----------|-----------------|----------|
+| `en-US-JessaNeural` | type=`cheerful` | Выражает Эмоция положительным и удачного |
+| | type=`empathy` | Выражает чувства проявлением заботы о и основные сведения о |
+| `zh-CN-XiaoxiaoNeural` | type=`newscast` | Выражает формальных звуковой сигнал, аналогичную широковещательных рассылок новостей |
+| | type=`sentiment ` | Передает сообщение распознается или истории |
+
+```xml
+<speak version='1.0' xmlns="https://www.w3.org/2001/10/synthesis" xmlns:mstts="https://www.w3.org/2001/mstts" xml:lang="en-US">
+<voice name='en-US-JessaNeural'>
+<mstts:express-as type="cheerful"> 
+    That'd be just amazing! 
+</mstts:express-as></voice></speak>
+```
+
 ## <a name="add-a-break"></a>Добавление паузы
 ```xml
 <speak version='1.0' xmlns="https://www.w3.org/2001/10/synthesis" xml:lang='en-US'>
-<voice  name='Microsoft Server Speech Text to Speech Voice (en-US, Jessa24kRUS)'>
+<voice  name='en-US-Jessa24kRUS'>
     Welcome to Microsoft Cognitive Services <break time="100ms" /> Text-to-Speech API.
 </voice> </speak>
 ```
@@ -40,7 +66,7 @@ Speech Synthesis Markup Language (SSML) — это язык разметки н�
 
 ```xml
 <speak version='1.0' xmlns="https://www.w3.org/2001/10/synthesis" xml:lang='en-US'>
-<voice  name='Microsoft Server Speech Text to Speech Voice (en-US, Guy24kRUS)'>
+<voice  name='en-US-Guy24kRUS'>
 <prosody rate="+30.00%">
     Welcome to Microsoft Cognitive Services Text-to-Speech API.
 </prosody></voice> </speak>
@@ -49,7 +75,7 @@ Speech Synthesis Markup Language (SSML) — это язык разметки н�
 ## <a name="pronunciation"></a>Произношение
 ```xml
 <speak version='1.0' xmlns="https://www.w3.org/2001/10/synthesis" xml:lang='en-US'>
-<voice  name='Microsoft Server Speech Text to Speech Voice (en-US, Jessa24kRUS)'>
+<voice  name='en-US-Jessa24kRUS'>
     <phoneme alphabet="ipa" ph="t&#x259;mei&#x325;&#x27E;ou&#x325;"> tomato </phoneme>
 </voice> </speak>
 ```
@@ -60,7 +86,7 @@ Speech Synthesis Markup Language (SSML) — это язык разметки н�
 
 ```xml
 <speak version='1.0' xmlns="https://www.w3.org/2001/10/synthesis" xml:lang='en-US'>
-<voice  name='Microsoft Server Speech Text to Speech Voice (en-US, JessaRUS)'>
+<voice  name='en-US-Jessa24kRUS'>
 <prosody volume="+20.00%">
     Welcome to Microsoft Cognitive Services Text-to-Speech API.
 </prosody></voice> </speak>
@@ -72,7 +98,7 @@ Speech Synthesis Markup Language (SSML) — это язык разметки н�
 
 ```xml
 <speak version='1.0' xmlns="https://www.w3.org/2001/10/synthesis" xml:lang='en-US'>
-    <voice  name='Microsoft Server Speech Text to Speech Voice (en-US, Guy24kRUS)'>
+    <voice  name='en-US-Guy24kRUS'>
     Welcome to <prosody pitch="high">Microsoft Cognitive Services Text-to-Speech API.</prosody>
 </voice> </speak>
 ```
@@ -84,7 +110,7 @@ Speech Synthesis Markup Language (SSML) — это язык разметки н�
 
 ```xml
 <speak version='1.0' xmlns="https://www.w3.org/2001/10/synthesis" xml:lang='en-US'>
-<voice  name='Microsoft Server Speech Text to Speech Voice (en-US, JessaRUS)'>
+<voice  name='en-US-Jessa24kRUS'>
 <prosody contour="(80%,+20%) (90%,+30%)" >
     Good morning.
 </prosody></voice> </speak>
@@ -93,10 +119,10 @@ Speech Synthesis Markup Language (SSML) — это язык разметки н�
 ## <a name="use-multiple-voices"></a>Использование нескольких голосов
 ```xml
 <speak version='1.0' xmlns="https://www.w3.org/2001/10/synthesis" xml:lang='en-US'>
-<voice  name='Microsoft Server Speech Text to Speech Voice (en-US, JessaRUS)'>
+<voice  name='en-US-Jessa24kRUS'>
     Good morning!
 </voice>
-<voice  name='Microsoft Server Speech Text to Speech Voice (en-US, Guy24kRUS)'>
+<voice  name='en-US-Guy24kRUS'>
     Good morning to you too Jessa!
 </voice> </speak>
 ```

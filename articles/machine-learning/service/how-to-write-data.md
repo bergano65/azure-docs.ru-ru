@@ -10,18 +10,21 @@ ms.author: sihhu
 author: MayMSFT
 manager: cgronlun
 ms.reviewer: jmartens
-ms.date: 12/04/2018
+ms.date: 05/02/2019
 ms.custom: seodec18
-ms.openlocfilehash: 92f04d80ea956f3036d7778a5d6de62e53b969ad
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: d8644c2c0d4ee5b6ee4dcf16e470e4f2fa478237
+ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60817376"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "65023726"
 ---
-# <a name="write-and-configure-data-using-azure-machine-learning"></a>Запись и настроить данные, с помощью машинного обучения Azure
+# <a name="write-and-configure-data--with-the-azure-machine-learning-data-prep-sdk"></a>Запись и настроить данные с помощью пакета SDK Azure Machine Learning данных подготовки
 
 В этой статье вы узнаете, различные методы для записи данных с помощью [машины обучения данные подготовки пакета SDK Azure Python](https://aka.ms/data-prep-sdk) и настройке этих данных для экспериментов с [Azure Machine Learning и пакет SDK для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py).  Выходные данные могут быть написаны в любой момент в потоке данных. Записи добавляются в результирующий поток данных и эти шаги выполнения каждый раз запусков потока данных. Если разрешить параллельные операции записи, данные будут записываться в несколько файлов раздела.
+
+> [!Important]
+> Если вы создаете новое решение, попробуйте [наборы данных обучения машины Azure](how-to-explore-prepare-data.md) (Предварительная версия) для преобразования данных, данные моментального снимка и хранения определений с версией набора данных. Наборы данных — следующая версия пакета SDK, предлагая расширенными функциональными возможностями для управления наборами данных в решения искусственного Интеллекта подготовки данных.
 
 Так как нет никаких ограничений по количеству шагов записи в конвейере, можно легко добавить дополнительные шаги записи, чтобы устранить неполадки или передать их для других конвейеров.
 
@@ -35,8 +38,8 @@ ms.locfileid: "60817376"
 
 Пакет SDK данных подготовки Python Azure Machine Learning может записывать данные:
 + локальную файловую систему;
-+ Хранилище BLOB-объектов Azure
-+ Служба хранилища Azure Data Lake
++ Хранилище больших двоичных объектов Azure
++ Хранилище Azure Data Lake.
 
 ## <a name="spark-considerations"></a>Рекомендации для Spark
 

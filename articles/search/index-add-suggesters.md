@@ -1,7 +1,7 @@
 ---
 title: Добавление typeahead запросов в индекс - поиска Azure
 description: Включение упреждающих запросов действий в службе поиска Azure, создав средства подбора и составления запросов, вызывающих автозаполнения или autosuggested терминов запроса.
-ms.date: 03/22/2019
+ms.date: 05/02/2019
 services: search
 ms.service: search
 ms.topic: conceptual
@@ -19,12 +19,12 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: a8bc86c2d3511fa04e595b8b2988d9a98bf084b2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 400b1613a87d4de65879a512642e16884c7d03b4
+ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60844445"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "65021872"
 ---
 # <a name="add-suggesters-to-an-index-for-typeahead-in-azure-search"></a>Добавление средств подбора в индекс для typeahead в службе поиска Azure
 
@@ -39,9 +39,6 @@ ms.locfileid: "60844445"
 + Компонент индекса — средство подбора. Портала, REST API или пакет SDK для .NET можно использовать для создания средств подбора. 
 
 + Компонент запроса — это действие, указанному в запросе запроса (предложение или автозаполнения действие). 
-
-> [!Important]
-> Автозаполнение находится в предварительной версии, доступна в предварительной версии API-интерфейсов REST и пакета SDK для .NET. Он не предназначен для рабочих приложений. 
 
 Для каждого поля включена поддержка поиска как то type. Вы можете реализовать оба механизма typeahead, в то же решение поиска, если требуется интерфейс аналогичную, указанная на снимке экрана. Оба целевых запросов *документов* коллекцию определенных индекса и ответы возвращаются после предоставления по крайней мере три символа входной строки.
 
@@ -75,7 +72,7 @@ ms.locfileid: "60844445"
   ```
 После создания средств подбора, добавить [API предложений](https://docs.microsoft.com/rest/api/searchservice/suggestions) или [API автозаполнения](https://docs.microsoft.com/rest/api/searchservice/autocomplete) в логике запроса для вызова функции.
 
-### <a name="use-the-net-sdk"></a>Использование пакета .NET SDK
+### <a name="use-the-net-sdk"></a>Использование пакета SDK для .NET
 
 В C#, определить [объект средства подбора](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.suggester?view=azure-dotnet). `Suggesters` — Это коллекция, но он может принять только один элемент. 
 
@@ -98,15 +95,15 @@ private static void CreateHotelsIndex(SearchServiceClient serviceClient)
 }
 ```
 
-## <a name="property-reference"></a>Справочник по свойствам
+## <a name="property-reference"></a>Справочные данные по свойствам
 
 Ключевые моменты, которые уведомление об использовании средств подбора — это имя (средства подбора указываются по именам в запросе), searchMode (в настоящее время только один «analyzingInfixMatching») и список полей, для которых включен typeahead. 
 
 Для него задаются перечисленные ниже свойства.
 
-|Свойство      |Описание      |
+|Свойство      |ОПИСАНИЕ      |
 |--------------|-----------------|
-|`name`        |Имя средства подбора. Используйте имя средства подбора, при вызове [API REST предложений](https://docs.microsoft.com/rest/api/searchservice/suggestions) или [автозаполнения REST API (Предварительная версия)](https://docs.microsoft.com/rest/api/searchservice/autocomplete).|
+|`name`        |Имя средства подбора. Используйте имя средства подбора, при вызове [API REST предложений](https://docs.microsoft.com/rest/api/searchservice/suggestions) или [REST API автозаполнения](https://docs.microsoft.com/rest/api/searchservice/autocomplete).|
 |`searchMode`  |Стратегия, используемая для поиска фраз кандидата. В настоящее время поддерживается только режим `analyzingInfixMatching`, в рамках которого выполняется гибкий поиск совпадений в начале и середине фраз.|
 |`sourceFields`|Список из одного или нескольких полей, которые служат источником содержимого для предложений. Источниками могут быть только поля типов `Edm.String` и `Collection(Edm.String)`. Можно использовать только поля, для которых не задан настраиваемый языковой анализатор.<p/>Укажите только те поля, которые предоставляются для ожидаемых и соответствующий ответ, будь то готовая строка в строке поиска или в раскрывающемся списке.<p/>Название отеля является хорошим кандидатом, так как он имеет точность. Verbose полей, таких как описания и комментарии являются слишком плотными. Аналогичным образом повторяющиеся поля, такие как категории и теги, менее эффективны. В примерах мы включаем «категория» в любом случае для демонстрации того, что может включать несколько полей. |
 
@@ -120,7 +117,7 @@ private static void CreateHotelsIndex(SearchServiceClient serviceClient)
 
 Как было отмечено выше можно использовать средство подбора для предлагаемых запросов и автозаполнения. 
 
-Средство подбора ссылается на запрос, а также операции. Например, на вызов GET REST укажите либо `suggest` или `autocomplete` набора documents. REST, после создания средств подбора можно использовать [API предложений](https://docs.microsoft.com/rest/api/searchservice/suggestions) или [автозаполнения API (Предварительная версия)](https://docs.microsoft.com/rest/api/searchservice/autocomplete) в логике запроса.
+Средство подбора ссылается на запрос, а также операции. Например, на вызов GET REST укажите либо `suggest` или `autocomplete` набора documents. REST, после создания средств подбора можно использовать [API предложений](https://docs.microsoft.com/rest/api/searchservice/suggestions) или [API автозаполнения](https://docs.microsoft.com/rest/api/searchservice/autocomplete) в логике запроса.
 
 Для .NET, используйте [SuggestWithHttpMessagesAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.idocumentsoperations.suggestwithhttpmessagesasync?view=azure-dotnet-preview) или [AutocompleteWithHttpMessagesAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.idocumentsoperations.autocompletewithhttpmessagesasync?view=azure-dotnet-preview&viewFallbackFrom=azure-dotnet).
 

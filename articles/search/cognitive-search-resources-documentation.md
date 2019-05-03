@@ -7,19 +7,19 @@ author: HeidiSteen
 ms.service: search
 ms.devlang: NA
 ms.topic: conceptual
-ms.date: 05/04/2018
+ms.date: 05/02/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 609b5d990cffce10733f6fc82e6b1032ad0f06bb
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 225ac86efba8a32b085a5fb7fc41bed48c499eab
+ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60951804"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "65022170"
 ---
 # <a name="documentation-resources-for-cognitive-search-workloads"></a>Ресурсы документации для рабочих нагрузок когнитивного поиска
 
-Когнитивный поиск теперь находится в общедоступной предварительной версии. Это новый информационный слой индексирования в службе "Поиск Azure", который находит скрытые сведения в нетекстовых источниках и неразделенном тексте, преобразуя их в текстовое содержимое с полными возможностями поиска в службе "Поиск Azure".
+Когнитивный поиск, теперь общедоступны, — это новый обогащение слой в индексирование поиска Azure, находит скрытые сведения в текстовых источников и взаимозаменяемыми недифференцированными текста, преобразуя его в полный текст для поиска содержимого в службе поиска Azure.
 
 Далее представлена полная документация со статьями по когнитивному поиску.
 
@@ -51,9 +51,9 @@ ms.locfileid: "60951804"
   + [Microsoft.Skills.Vision.OcrSkill](cognitive-search-skill-ocr.md)
   + [Microsoft.Skills.Util.ShaperSkill](cognitive-search-skill-shaper.md)
 
-+ [Предварительная версия REST API](search-api-2017-11-11-preview.md)
-  + [Создание набора квалификационных навыков (api-version=2017-11-11-Preview)](https://docs.microsoft.com/rest/api/searchservice/create-skillset)
-  + [Создание индексатора (api-version=2017-11-11-Preview)](https://docs.microsoft.com/rest/api/searchservice/create-indexer)
++ [REST API](https://docs.microsoft.com/rest/api/searchservice/)
+  + [Создать набор навыков (api-version = 2019-05-06)](https://docs.microsoft.com/rest/api/searchservice/create-skillset)
+  + [Создание индексатора (api-version = 2019-05-06)](https://docs.microsoft.com/rest/api/searchservice/create-indexer)
 
 ## <a name="see-also"></a>См. также
 

@@ -6,16 +6,16 @@ services: search
 ms.service: search
 ms.devlang: rest-api
 ms.topic: conceptual
-ms.date: 04/20/2018
+ms.date: 05/02/2019
 manager: jlembicz
 ms.author: brjohnst
 ms.custom: seodec2018
-ms.openlocfilehash: 4383cc327d8058ca44acd892f41a7a256e3b1727
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 567124f50745080da12178a458957a0f6c8266b5
+ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61281808"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "65024320"
 ---
 # <a name="synonyms-in-azure-search"></a>Синонимы в службе "Поиск Azure"
 
@@ -23,11 +23,13 @@ Synonyms представляет собой поисковые системы, 
 
 В Поиске Azure добавление синонимов выполняется во время обработки запроса. Можно добавить карту синонимов в службу, не прерывая текущие операции. Можно добавить свойство **synonymMaps** в определение поля, не перестраивая индекс.
 
-## <a name="feature-availability"></a>Доступность функций
+## <a name="create-synonyms"></a>Создание синонимов
 
-Сейчас функция синонимов поддерживается только последней версией API (версия API 2017-11-11). Портал Azure такую поддержку пока не предоставляет.
+Отсутствует поддержка портала для создания синонимы, но можно использовать REST API или пакет SDK для .NET. Чтобы приступить к работе с REST, мы рекомендуем [с помощью Postman](search-fiddler.md) и формирование запросов, с помощью этого API: [Создание карт синонимов](https://docs.microsoft.com/rest/api/searchservice/create-synonym-map). Для C# разработчиков, вы можете начать работу с [Добавление синонимов в поиске Azure с помощью C# ](search-synonyms-tutorial-sdk.md).
 
-## <a name="how-to-use-synonyms-in-azure-search"></a>Как использовать синонимы в Поиске Azure
+При необходимости Если вы используете [управляемых клиентом ключей](search-security-manage-encryption-keys.md) для со стороны службы шифрования при хранении, эта защита можно применить к содержимому карты синонимов.
+
+## <a name="use-synonyms"></a>Использование синонимов
 
 В Поиске Azure функция синонимов основана на картах синонимов, определяемых и передаваемых в службу пользователем. Эти карты представляют собой независимый ресурс (как индексы или источники данных) и могут использоваться любым полем, поддерживающим поиск, в любом индекс в службе поиска.
 
@@ -49,7 +51,7 @@ Synonyms представляет собой поисковые системы, 
 
 Карту синонимов можно создать с помощью запроса HTTP POST, как показано в следующем примере.
 
-    POST https://[servicename].search.windows.net/synonymmaps?api-version=2017-11-11
+    POST https://[servicename].search.windows.net/synonymmaps?api-version=2019-05-06
     api-key: [admin key]
 
     {
@@ -62,7 +64,7 @@ Synonyms представляет собой поисковые системы, 
 
 Кроме того, можно использовать запрос PUT и указать имя карты синонимов в универсальном коде ресурса (URI). Если такой карты синонимов не существует, она будет создана.
 
-    PUT https://[servicename].search.windows.net/synonymmaps/mysynonymmap?api-version=2017-11-11
+    PUT https://[servicename].search.windows.net/synonymmaps/mysynonymmap?api-version=2019-05-06
     api-key: [admin key]
 
     {
@@ -74,38 +76,38 @@ Synonyms представляет собой поисковые системы, 
 
 ##### <a name="apache-solr-synonym-format"></a>Формат синонимов Apache Solr
 
-Формат Solr поддерживает эквивалентные и явные сопоставления синонимов. Правила сопоставления соответствуют спецификации фильтра синонимов с открытым кодом Apache Solr, описанной в этом документе: [SynonymFilter](https://cwiki.apache.org/confluence/display/solr/Filter+Descriptions#FilterDescriptions-SynonymFilter). Ниже приведен пример правила для эквивалентных синонимов.
+Формат Solr поддерживает эквивалентные и явные сопоставления синонимов. Правила сопоставления соответствуют спецификации фильтра синонимов с открытым исходным кодом Apache solr, описанной в этом документе: [SynonymFilter](https://cwiki.apache.org/confluence/display/solr/Filter+Descriptions#FilterDescriptions-SynonymFilter). Ниже приведен пример правила для эквивалентных синонимов.
 ```
 USA, United States, United States of America
 ```
 
 При использовании этого правила поисковый запрос "США" будет расширен до следующего запроса: "США" ИЛИ "Соединенные Штаты" ИЛИ "Соединенные Штаты Америки".
 
-Явное сопоставление обозначается стрелкой "=>". При указании такого сопоставления последовательность терминов поискового запроса, которая соответствует левой части сопоставления "=>", будет заменена альтернативными вариантами из правой части. Согласно приведенному ниже правилу, поисковые запросы "Санкт-Петербург", "Питер" или "СПБ" будут перезаписаны запросом "СПБ". Явное сопоставление применяется только в указанном направлении, и в этом случае запрос "СПБ" не будет перезаписан запросом "Санкт-Петербург".
+Явное сопоставление обозначается стрелкой "=>". При указании такого сопоставления последовательность терминов поискового запроса, соответствующий левый операнд оператора «= >» будет заменена альтернативными вариантами соответствует источнику справа. Согласно приведенному ниже правилу, поисковые запросы "Санкт-Петербург", "Питер" или "СПБ" будут перезаписаны запросом "СПБ". Явное сопоставление применяется только в указанном направлении, и в этом случае запрос "СПБ" не будет перезаписан запросом "Санкт-Петербург".
 ```
 Washington, Wash., WA => WA
 ```
 
 #### <a name="list-synonym-maps-under-your-service"></a>Вывод карт синонимов в службе.
 
-    GET https://[servicename].search.windows.net/synonymmaps?api-version=2017-11-11
+    GET https://[servicename].search.windows.net/synonymmaps?api-version=2019-05-06
     api-key: [admin key]
 
 #### <a name="get-a-synonym-map-under-your-service"></a>Получение карты синонимов в службе.
 
-    GET https://[servicename].search.windows.net/synonymmaps/mysynonymmap?api-version=2017-11-11
+    GET https://[servicename].search.windows.net/synonymmaps/mysynonymmap?api-version=2019-05-06
     api-key: [admin key]
 
 #### <a name="delete-a-synonyms-map-under-your-service"></a>Удаление карты синонимов в службе.
 
-    DELETE https://[servicename].search.windows.net/synonymmaps/mysynonymmap?api-version=2017-11-11
+    DELETE https://[servicename].search.windows.net/synonymmaps/mysynonymmap?api-version=2019-05-06
     api-key: [admin key]
 
 ### <a name="configure-a-searchable-field-to-use-the-synonym-map-in-the-index-definition"></a>Настройка поля, поддерживающего поиск, для использования карты синонимов в определении индекса.
 
 Новое свойство поля **synonymMaps** можно использовать для указания карты синонимов для поля, поддерживающего поиск. Карты синонимов — это ресурсы уровня службы, и на них может ссылаться любое поле индекса в службе.
 
-    POST https://[servicename].search.windows.net/indexes?api-version=2017-11-11
+    POST https://[servicename].search.windows.net/indexes?api-version=2019-05-06
     api-key: [admin key]
 
     {

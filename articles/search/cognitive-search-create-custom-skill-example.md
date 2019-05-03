@@ -7,15 +7,15 @@ services: search
 ms.service: search
 ms.devlang: NA
 ms.topic: conceptual
-ms.date: 03/12/2019
+ms.date: 05/02/2019
 ms.author: luisca
 ms.custom: seodec2018
-ms.openlocfilehash: f3b4e6cd18a362775443bb296560a076aaa1497d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 82d49a6a82251f440c06db03edc92851fce87741
+ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61344166"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "65023614"
 ---
 # <a name="example-create-a-custom-skill-using-the-text-translate-api"></a>Пример: создание пользовательского навыка с помощью API перевода текста
 
@@ -243,7 +243,7 @@ POST https://localhost:7071/api/Translate
 
 1. Следуйте инструкциям на экране. Вам будет предложено указать учетную запись Azure, группу ресурсов, план размещения и учетную запись хранения, которые вы хотите использовать. При отсутствии группы ресурсов, плана размещения и учетной записи хранения их можно создать. По завершении выберите **Создать**.
 
-1. После завершения развертывания запомните URL-адрес сайта. Это адрес приложения-функции в Azure. 
+1. После завершения развертывания Обратите внимание, что URL-адрес сайта. Это адрес приложения-функции в Azure. 
 
 1. На [портале Azure](https://portal.azure.com) перейдите в группу ресурсов и найдите опубликованную функцию перевода. В разделе **Управление** должны отображаться ключи узла. Выберите значок **копирования** для ключа узла *по умолчанию*.  
 
@@ -254,7 +254,7 @@ POST https://localhost:7071/api/Translate
 ```http
 POST https://translatecogsrch.azurewebsites.net/api/Translate?code=[enter default host key here]
 ```
-### <a name="request-body"></a>Тело запроса
+### <a name="request-body"></a>Текст запроса
 ```json
 {
    "values": [
@@ -282,7 +282,7 @@ POST https://translatecogsrch.azurewebsites.net/api/Translate?code=[enter defaul
       {
         "@odata.type": "#Microsoft.Skills.Custom.WebApiSkill",
         "description": "Our new translator custom skill",
-        "uri": "http://translatecogsrch.azurewebsites.net/api/Translate?code=[enter default host key here]",
+        "uri": "https://translatecogsrch.azurewebsites.net/api/Translate?code=[enter default host key here]",
         "batchSize":1,
         "context": "/document",
         "inputs": [

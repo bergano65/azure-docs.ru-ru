@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/12/2019
 ms.author: panosper
 ms.custom: seodec18
-ms.openlocfilehash: eb3697eefb5835305b2ec80ca1e77ccade19e44f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 83cea56cecf9792c829e062965fe39b63201af3e
+ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60480669"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "65020665"
 ---
 # <a name="speech-service-supported-regions"></a>Поддерживаемые регионы для службы "Речь"
 
@@ -28,9 +28,9 @@ ms.locfileid: "60480669"
 
 В [пакете SDK для службы "Речь"](speech-sdk.md) регионы указанны в виде строки (например, в качестве параметра `SpeechConfig.FromSubscription` в пакете SDK службы "Речь" для C#).
 
-### <a name="speech-recognition-and-translation"></a>Распознавание и преобразование речи
+### <a name="speech-to-text-text-to-speech-and-translation"></a>Речи в текст, текст в речь и перевод
 
-Пакет SDK службы "Речь" доступен в следующих регионах для **распознавания речи** и **перевода**:
+Speech SDK доступна в этих регионах для **распознавания речи**, **преобразования текста в речь**, и **перевода**:
 
   Регион | Параметр пакета SDK для службы "Речь" | Портал настройки распознавания речи
  ------|-------|--------

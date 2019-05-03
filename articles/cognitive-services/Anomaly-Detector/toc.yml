@@ -20,6 +20,14 @@
   items:
     - name: Определение аномалий в данных
       href: how-to/identify-anomalies.md
+    - name: Использование контейнеров
+      items:
+        - name: Установка и запуск контейнеров
+          displayName: 'docker, container, package, packaged app, swagger, open api, openapi, train, publish, az, acr, cli, tps, core, curl, try it now, import, pull'
+          href: anomaly-detector-container-howto.md
+        - name: Настройка контейнеров
+          href: anomaly-detector-container-configuration.md
+          displayName: 'docker, container, apikey, billing, log, mount, run, pull, port'
 - name: Основные понятия
   items:
     - name: Рекомендации по работе с API Детектора аномалий

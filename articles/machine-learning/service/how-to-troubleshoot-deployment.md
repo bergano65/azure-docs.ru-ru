@@ -9,20 +9,20 @@ ms.topic: conceptual
 author: chris-lauren
 ms.author: clauren
 ms.reviewer: jmartens
-ms.date: 12/04/2018
+ms.date: 05/02/2018
 ms.custom: seodec18
-ms.openlocfilehash: f81aea22014a2c7d5b37c500a546f0b5350b6435
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 90e85e0030a696dd024dd65d27a0f4dbdc7e3cdc
+ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64925384"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "65023674"
 ---
 # <a name="troubleshooting-azure-machine-learning-service-aks-and-aci-deployments"></a>Устранение неполадок при развертывании AKS и ACI с помощью Службы машинного обучения Azure
 
-Из этой статьи вы узнаете, как обойти или устранить распространенные проблемы развертывания Docker с Экземплярами контейнеров Azure (ACI) и Службой Azure Kubernetes (AKS) с помощью Службы машинного обучения Azure.
+Узнайте, как обойти или устранить распространенных ошибок развертывания в Docker с помощью экземпляров контейнеров Azure (ACI) и Azure Kubernetes Service (AKS) с помощью службы машинного обучения Azure.
 
-При развертывании модели в службе машинного обучения Azure система выполняет ряд задач. Это сложная последовательность событий, и иногда возникают проблемы. Ниже перечислены задачи развертывания.
+При развертывании модели в службе машинного обучения Azure система выполняет ряд задач. Ниже перечислены задачи развертывания.
 
 1. Регистрация модели в реестре моделей рабочей области.
 
@@ -33,6 +33,9 @@ ms.locfileid: "64925384"
     4. создание нового образа Docker с помощью файла dockerfile;
     5. регистрацию образа Docker с помощью реестра контейнеров Azure, связанного с рабочей областью.
 
+    > [!IMPORTANT]
+    > В зависимости от кода создания образа происходит автоматически без входных данных.
+
 3. Развертывание образа Docker в службу "Экземпляр контейнера Azure" (ACI) или службу Azure Kubernetes (AKS).
 
 4. Запуск новых контейнеров в ACI или AKS. 
@@ -41,9 +44,9 @@ ms.locfileid: "64925384"
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
-Если возникнут какие-либо проблемы, прежде всего следует разбить задачу развертывания (описанную ранее) на отдельные шаги, чтобы установить причину проблемы. 
+Если возникнут какие-либо проблемы, прежде всего следует разбить задачу развертывания (описанную ранее) на отдельные шаги, чтобы установить причину проблемы.
 
-Это может оказаться полезным, если вы используете `Webservice.deploy` API, или `Webservice.deploy_from_model` API, так как эти функции сгруппировать упомянутые выше шаги в рамках одной операции. Обычно эти API удобны, но он позволяет разбить действия при устранении неполадок, заменив их с помощью ниже вызовов API.
+Формирование задачи развертывания полезна, если вы используете [Webservice.deploy()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice%28class%29?view=azure-ml-py#deploy-workspace--name--model-paths--image-config--deployment-config-none--deployment-target-none-) API, или [Webservice.deploy_from_model()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice%28class%29?view=azure-ml-py#deploy-from-model-workspace--name--models--image-config--deployment-config-none--deployment-target-none-) API, как обе эти функции выполните действия, упомянутые выше, одним действием. Обычно эти API удобны, но он позволяет разбить действия при устранении неполадок, заменив их с помощью ниже вызовов API.
 
 1. Регистрация модели. Ниже приведен пример кода.
 
@@ -86,7 +89,8 @@ ms.locfileid: "64925384"
 После разбиения процесса развертывания на отдельные задачи можно взглянуть на самые распространенные ошибки.
 
 ## <a name="image-building-fails"></a>Сбой создания образа
-Если система не может создать образ Docker, вызов `image.wait_for_creation()` завершается сбоем, выдавая сообщения об ошибках, в которых могут быть предложены некоторые подсказки. Более подробную информацию об ошибках также можно найти в журнале сборки образа. Ниже приведен пример кода, в котором отображено обнаружение кода URI журнала сборки образа.
+
+Если образ Docker не может быть построен, [image.wait_for_creation()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.image.image(class)?view=azure-ml-py#wait-for-creation-show-output-false-) или [service.wait_for_deployment()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice(class)?view=azure-ml-py#wait-for-deployment-show-output-false-) вызов завершается неудачно с некоторые сообщения об ошибках, которые может предложить некоторые особенности. Более подробную информацию об ошибках также можно найти в журнале сборки образа. Ниже приведен пример кода, в котором отображено обнаружение кода URI журнала сборки образа.
 
 ```python
 # if you already have the image object handy
@@ -99,13 +103,14 @@ print(ws.images['myimg'].image_build_log_uri)
 for name, img in ws.images.items():
     print (img.name, img.version, img.image_build_log_uri)
 ```
+
 Код URI журнала образа — это URL-адрес SAS, указывающий на файл журнала, сохраненный в хранилище BLOB-объектов Azure. Просто скопируйте код URI и вставьте его в окно браузера, и вы сможете загрузить и просмотреть файл журнала.
 
 ### <a name="azure-key-vault-access-policy-and-azure-resource-manager-templates"></a>Политика доступа к Azure Key Vault и шаблонов Azure Resource Manager
 
 Сборка образа может также ошибкой из-за проблемы с политикой доступа в Azure Key Vault. Это может произойти при использовании шаблона Azure Resource Manager для создания рабочей области и связанных ресурсов (включая хранилище ключей Azure), несколько раз. Например с помощью шаблона несколько раз с теми же параметрами, как часть непрерывной интеграции и развертывания конвейера.
 
-Большинство операций создания ресурсов через шаблоны являются идемпотентными, но очищает хранилище ключей, политики доступа каждый раз при использовании шаблона. Это нарушает логику доступа к Key Vault для любой существующей рабочей области, который ее использует. В результате ошибки при попытке создать новые образы. Ниже приведены примеры ошибок, которые могут получать:
+Большинство операций создания ресурсов через шаблоны являются идемпотентными, но очищает хранилище ключей, политики доступа каждый раз при использовании шаблона. Удаление политики разрывы доступ к Key Vault для любой существующей рабочей области, который ее использует. В результате ошибки при попытке создать новые образы. Ниже приведены примеры ошибок, которые могут получать:
 
 __Портал__.
 ```text
@@ -144,16 +149,81 @@ b\'{"code":"InternalServerError","statusCode":500,"message":"An internal server 
 Чтобы избежать этой проблемы, рекомендуется один из следующих подходов:
 
 * Не развертывайте шаблон более одного раза для те же параметры. Или удалить существующие ресурсы перед использованием шаблона, чтобы повторно создать их.
-* Проверьте политики доступа Key Vault и используйте его для задания `accessPolicies` свойства шаблона.
+* Проверьте политики доступа хранилища ключей и затем использовать эти политики для задания `accessPolicies` свойства шаблона.
 * Проверьте, существует ли уже ресурса хранилища ключей. В этом случае не создавайте его с помощью шаблона. Например добавьте параметр, который позволяет отключить создание ресурса хранилища ключей, если он уже существует.
 
-## <a name="service-launch-fails"></a>Сбой запуска службы
-После успешной сборки образа система пытается запустить контейнер в ACI или AKS в зависимости от конфигурации развертывания. Рекомендуется сначала ACI развертывания, так как это простое развертывание в одном контейнере. Таким образом затем можно исключить все связанные с AKS проблемы.
+## <a name="debug-locally"></a>Локальная отладка
 
-В ходе процесса запуска контейнера системой вызывается функция `init()` в скрипте оценки. При наличии неперехваченных исключений в функции `init()` в сообщении об ошибке может появиться ошибка **CrashLoopBackOff**. Ниже приведены некоторые советы по устранению этой проблемы.
+Если возникли проблемы при развертывании модели в ACI и AKS, попробуйте развернуть его как локальный веб-службы. С помощью локального веб-служба облегчает Устранение неполадок. Образ Docker, содержащий модель загружается и работы в локальной системе.
 
-### <a name="inspect-the-docker-log"></a>Проверка журнала Docker
-Можно распечатать подробные сообщения журнала ядра Docker из объекта службы.
+> [!IMPORTANT]
+> Развертывания локального веб-служб требуется рабочая установки Docker в локальной системе. Docker должна быть запущена перед развертыванием локальных веб-службы. Сведения об установке и использовании Docker см. в разделе [ https://www.docker.com/ ](https://www.docker.com/).
+
+> [!WARNING]
+> Развертывания локального веб-служб не поддерживаются для производственных сценариев.
+
+Для локального развертывания, измените код, чтобы использовать `LocalWebservice.deploy_configuration()` для создания конфигурации развертывания. Затем с помощью `Model.deploy()` для развертывания службы. В следующем примере развертывается модель (содержится в `model` переменной) как локальные веб-службы:
+
+```python
+from azureml.core.model import InferenceConfig
+from azureml.core.webservice import LocalWebservice
+
+# Create inferencing configuration. This creates a docker image that contains the model.
+inference_config = InferenceConfig(runtime= "python", 
+                                   execution_script="score.py",
+                                   conda_file="myenv.yml")
+
+# Create a local deployment, using port 8890 for the web service endpoint
+deployment_config = LocalWebservice.deploy_configuration(port=8890)
+# Deploy the service
+service = Model.deploy(ws, "mymodel", [model], inference_config, deployment_config)
+# Wait for the deployment to complete
+service.wait_for_deployment(True)
+# Display the port that the web service is available on
+print(service.port)
+```
+
+На этом этапе можно работать со службой в обычном режиме. Например следующий код демонстрирует отправку данных в службу:
+
+```python
+import json
+
+test_sample = json.dumps({'data': [
+    [1,2,3,4,5,6,7,8,9,10], 
+    [10,9,8,7,6,5,4,3,2,1]
+]})
+
+test_sample = bytes(test_sample,encoding = 'utf8')
+
+prediction = service.run(input_data=test_sample)
+print(prediction)
+```
+
+### <a name="update-the-service"></a>Обновление службы
+
+Во время локального тестирования, может потребоваться обновить `score.py` файл, чтобы добавить ведение журнала или попытайтесь устранить любые проблемы, которые вы ознакомились с. Чтобы перезагрузить изменения для `score.py` файла следует использовать `reload()`. Например следующий код перезагружает сценарий для службы и отправляет данные. Данные оцениваются с помощью обновленного `score.py` файла:
+
+```python
+service.reload()
+print(service.run(input_data=test_sample))
+```
+
+> [!NOTE]
+> Скрипт загружается из расположения, указанного `InferenceConfig` объект, используемый службой.
+
+Чтобы изменить модель, с зависимостями Conda или конфигурации развертывания, используйте [update()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice%28class%29?view=azure-ml-py#update--args-). В следующем примере обновляется модель, используемая службой:
+
+```python
+service.update([different_model], inference_config, deployment_config)
+```
+
+### <a name="delete-the-service"></a>Удалить службу
+
+Чтобы удалить службу, используйте [delete()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice%28class%29?view=azure-ml-py#delete--).
+
+### <a id="dockerlog"></a> Проверьте журнал Docker
+
+Можно распечатать подробные сообщения журнала ядра Docker из объекта службы. Можно просмотреть журнал для локальных развертываний, ACI и AKS. Следующий пример демонстрирует способ печати журналы.
 
 ```python
 # if you already have the service object handy
@@ -163,82 +233,15 @@ print(service.get_logs())
 print(ws.webservices['mysvc'].get_logs())
 ```
 
-### <a name="debug-the-docker-image-locally"></a>Локальная отладка образа Docker
-Иногда журнал Docker не выдает достаточно информации о том, что пошло не так. Можно пойти дальше и извлечь созданный образ Docker, запустить локальный контейнер и провести отладку непосредственно внутри динамического контейнера в интерактивном режиме. Для запуска локального контейнера ядро Docker должно выполняться локально, а также работу значительно упростит наличие установленного [azure-cli](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest).
+## <a name="service-launch-fails"></a>Сбой запуска службы
 
-Сначала необходимо определить расположение образа.
+После успешной сборки образа система пытается запустить контейнер с помощью конфигурации развертывания. В ходе процесса запуска контейнера системой вызывается функция `init()` в скрипте оценки. При наличии неперехваченных исключений в функции `init()` в сообщении об ошибке может появиться ошибка **CrashLoopBackOff**.
 
-```python
-# print image location
-print(image.image_location)
-```
-
-Расположение образа имеет следующий формат: `<acr-name>.azurecr.io/<image-name>:<version-number>`, например `myworkpaceacr.azurecr.io/myimage:3`. 
-
-Теперь перейдите к окну командной строки. Если azure-cli установлен, можно ввести следующие команды для входа в ACR (реестр контейнеров Azure), связанный с рабочей областью, в которой хранится образ. 
-
-```sh
-# log on to Azure first if you haven't done so before
-$ az login
-
-# make sure you set the right subscription in case you have access to multiple subscriptions
-$ az account set -s <subscription_name_or_id>
-
-# now let's log in to the workspace ACR
-# note the acr-name is the domain name WITHOUT the ".azurecr.io" postfix
-# e.g.: az acr login -n myworkpaceacr
-$ az acr login -n <acr-name>
-```
-Если azure-cli не установлен, для входа в ACR можно использовать команду `docker login`. Но сначала нужно получить имя пользователя и пароль ACR с портала Azure.
-
-После входа в ACR можно извлечь образ Docker и запустить контейнер локально, а затем запустить сеанс Bash для отладки с помощью команды `docker run`.
-
-```sh
-# note the image_id is <acr-name>.azurecr.io/<image-name>:<version-number>
-# for example: myworkpaceacr.azurecr.io/myimage:3
-$ docker run -it <image_id> /bin/bash
-```
-
-После запуска сеанса Bash в выполняющемся контейнере скрипты оценки можно найти в папке `/var/azureml-app`. Затем можно запустить сеанс Python, чтобы отладить скрипты оценки. 
-
-```sh
-# enter the directory where scoring scripts live
-cd /var/azureml-app
-
-# find what Python packages are installed in the python environment
-pip freeze
-
-# sanity-check on score.py
-# you might want to edit the score.py to trigger init().
-# as most of the errors happen in init() when you are trying to load the model.
-python score.py
-```
-При необходимости использовать текстовый редактор для изменения скриптов установите Vim, Nano, Emacs или другой предпочитаемый редактор.
-
-```sh
-# update package index
-apt-get update
-
-# install a text editor of your choice
-apt-get install vim
-apt-get install nano
-apt-get install emacs
-
-# launch emacs (for example) to edit score.py
-emacs score.py
-
-# exit the container bash shell
-exit
-```
-
-Также можно запустить веб-службу локально и направлять в нее трафик HTTP. Сервер Flask в контейнере Docker работает через порт 5001. Можно сопоставить сервер с любым доступным на хост-компьютере портом.
-```sh
-# you can find the scoring API at: http://localhost:8000/score
-$ docker run -p 8000:5001 <image_id>
-```
+Используйте сведения в [Проверьте журнал Docker](#dockerlog) раздела, чтобы проверить журналы.
 
 ## <a name="function-fails-getmodelpath"></a>Ошибка выполнения функции: get_model_path()
-Часто в рамках функции `init()` в скрипте оценки вызывается функция `Model.get_model_path()`, чтобы найти файл модели или папку с файлами модели в контейнере. Это часто становится источником ошибок, если не удается найти файл модели или папку с файлами. Самый простой способ устранить эту ошибку — это выполнить приведенный ниже код Python в оболочке контейнера.
+
+Часто в `init()` функции в скрипт оценки, [Model.get_model_path()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#get-model-path-model-name--version-none---workspace-none-) функция вызывается, чтобы найти файл модели или папки с файлами модели в контейнере. Если не удается найти модель файла или папки, то функция завершается с ошибкой. Самый простой способ устранить эту ошибку — это выполнить приведенный ниже код Python в оболочке контейнера.
 
 ```python
 import logging
@@ -247,11 +250,12 @@ from azureml.core.model import Model
 print(Model.get_model_path(model_name='my-best-model'))
 ```
 
-Он выводит локальный путь (относительно `/var/azureml-app`) в контейнер, где скрипт оценки ожидает найти файл модели или папку с файлами. Затем можно проверить, действительно ли файл или папка находится там, где нужно.
+В этом примере выводит локальный путь (относительно `/var/azureml-app`) в контейнере, где ваш скрипт оценки ожидает найти модель файла или папки. Затем можно проверить, действительно ли файл или папка находится там, где нужно.
 
-При установке уровня ведения журнала DEBUG (для отладки) в журнале может регистрироваться дополнительная информация, которая может быть полезна для определения причины сбоя.
+Установка уровня ведения журнала отладки может привести Дополнительные сведения для записи, которые могут быть полезны для обнаружения сбоя.
 
 ## <a name="function-fails-runinputdata"></a>Ошибка выполнения функции: run(input_data)
+
 Если служба успешно развернута, но аварийно завершает работу при публикации данных в конечную точку оценки, можно добавить оператор для перехвата ошибок в функцию `run(input_data)`, чтобы она возвращала подробное сообщение об ошибке. Например: 
 
 ```python
@@ -266,7 +270,8 @@ def run(input_data):
         # return error message back to the client
         return json.dumps({"error": result})
 ```
-**Примечание**. Возврат сообщений об ошибках из вызова `run(input_data)` следует выполнять только в целях отладки. Делать это в рабочей среде не рекомендуется из соображений безопасности.
+
+**Примечание**. Возврат сообщений об ошибках из вызова `run(input_data)` следует выполнять только в целях отладки. По соображениям безопасности вы не должны возвращать сообщения об ошибках таким образом в рабочей среде.
 
 ## <a name="http-status-code-503"></a>Код состояния HTTP 503
 
@@ -312,7 +317,7 @@ def run(input_data):
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о развертывании см. в статьях, представленных ниже. 
-* [Развертывание моделей с помощью Службы машинного обучения Azure](how-to-deploy-and-where.md)
+Дополнительные сведения о развертывании см. в статьях, представленных ниже.
 
+* [Развертывание моделей с помощью Службы машинного обучения Azure](how-to-deploy-and-where.md)
 * [Руководство. Обучение и развертывание моделей](tutorial-train-models-with-aml.md)

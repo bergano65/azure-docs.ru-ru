@@ -7,15 +7,15 @@ services: search
 ms.service: search
 ms.devlang: NA
 ms.topic: conceptual
-ms.date: 04/20/2018
+ms.date: 05/02/2019
 ms.author: jlembicz
 ms.custom: seodec2018
-ms.openlocfilehash: d504635121c5153367cd0b89ce593b093bb3cd39
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: cb8e42400847ba9fb13568d05dffac86d9cec85f
+ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60198824"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "65024623"
 ---
 # <a name="how-full-text-search-works-in-azure-search"></a>Как работает полнотекстовый поиск в службе поиска Azure
 
@@ -54,7 +54,7 @@ ms.locfileid: "60198824"
 Ниже приведен пример поискового запроса, который можно отправить в службу поиска Azure с помощью [интерфейса REST API](https://docs.microsoft.com/rest/api/searchservice/search-documents).  
 
 ~~~~
-POST /indexes/hotels/docs/search?api-version=2017-11-11 
+POST /indexes/hotels/docs/search?api-version=2019-05-06
 {
     "search": "Spacious, air-condition* +\"Ocean view\"",
     "searchFields": "description, title",
@@ -288,7 +288,7 @@ Spacious,||air-condition*+"Ocean view"
 | shore | 2
 | spacious | 1
 | the | 1, 2
-| значение | 1
+| до | 1
 | view | 1, 2, 3
 | walking | 1
 | на | 3

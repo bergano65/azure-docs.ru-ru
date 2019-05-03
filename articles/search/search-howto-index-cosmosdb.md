@@ -1,7 +1,7 @@
 ---
 title: Индексирование источника данных Azure Cosmos DB — Поиск Azure
 description: Сканирование источника данных Azure Cosmos DB и прием данных в полнотекстовый индекс с поддержкой поиска в службе "Поиск Azure". Индексаторы автоматизируют прием данных из выбранных источников, таких как Azure Cosmos DB.
-ms.date: 02/28/2019
+ms.date: 05/02/2019
 author: mgottein
 manager: cgronlun
 ms.author: magottei
@@ -10,12 +10,12 @@ ms.service: search
 ms.devlang: rest-api
 ms.topic: conceptual
 ms.custom: seodec2018
-ms.openlocfilehash: 019945c48342238a1caa7611bdff6d06fd1e2bd9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: d10a1df402fc4931c4d6cc513aa5e22cfe7ec2ba
+ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60871721"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "65024714"
 ---
 # <a name="how-to-index-cosmos-db-using-an-azure-search-indexer"></a>Как индексировать Cosmos DB с помощью индексатора поиска Azure
 
@@ -122,9 +122,8 @@ ms.locfileid: "60871721"
 
 В учетной записи Cosmos DB вы можете указать, должна ли коллекция автоматически индексировать все документы. По умолчанию все документы автоматически индексируются, но вы можете отключить эту функцию. При выключенном индексировании документы могут быть доступны только через собственные ссылки или запросы, использующие идентификатор документа. Для службы "Поиск Azure" требуется включить автоматическое индексирование Cosmos DB в коллекции, которую эта служба будет индексировать. 
 
-> [!NOTE]
-> Azure Cosmos DB — это база данных DocumentDB нового поколения. Несмотря на изменение имени продукта в индексаторах службы поиска Azure по-прежнему применяется синтаксис `documentdb` для обеспечения обратной совместимости с API-интерфейсами службы поиска Azure и страницами портала. При настройке индексаторов не забудьте указать синтаксис `documentdb`, как описано в этой статье.
-
+> [!WARNING]
+> Azure Cosmos DB — это база данных DocumentDB нового поколения. Ранее с помощью версии API **2017-11-11** можно использовать `documentdb` синтаксис. Это означало, что можно указать типа источника данных, как `cosmosdb` или `documentdb`. Начиная с версии API **2019-05-06** портал и API-интерфейсов поиска Azure поддерживают только `cosmosdb` синтаксис, как описано в этой статье. Это означает, что тип источника данных должны `cosmosdb` Если вы хотите подключаться к конечной точке Cosmos DB.
 
 ### <a name="1---assemble-inputs-for-the-request"></a>1 — Создание входных данных для запроса
 
@@ -150,13 +149,13 @@ ms.locfileid: "60871721"
 
 Чтобы создать источник данных, сформулируйте запрос POST:
 
-    POST https://[service name].search.windows.net/datasources?api-version=2017-11-11
+    POST https://[service name].search.windows.net/datasources?api-version=2019-05-06
     Content-Type: application/json
     api-key: [Search service admin key]
 
     {
-        "name": "mydocdbdatasource",
-        "type": "documentdb",
+        "name": "mycosmosdbdatasource",
+        "type": "cosmosdb",
         "credentials": {
             "connectionString": "AccountEndpoint=https://myCosmosDbEndpoint.documents.azure.com;AccountKey=myCosmosDbAuthKey;Database=myCosmosDbDatabaseId"
         },
@@ -169,12 +168,12 @@ ms.locfileid: "60871721"
 
 Текст запроса содержит определение источника данных, который должен включать следующие поля.
 
-| Поле   | Описание |
+| Поле   | ОПИСАНИЕ |
 |---------|-------------|
-| **name** | Обязательный. Выберите любое имя для представления объектом источника данных. |
-|**type**| Обязательный. Этот параметр должен содержать значение `documentdb`. |
-|**credentials** | Обязательный. Должен быть строкой подключения Cosmos DB.<br/>Для коллекций SQL строки подключения, в следующем формате: `AccountEndpoint=<Cosmos DB endpoint url>;AccountKey=<Cosmos DB auth key>;Database=<Cosmos DB database id>`<br/>Для коллекций MongoDB добавьте **типа API = MongoDb** строку подключения:<br/>`AccountEndpoint=<Cosmos DB endpoint url>;AccountKey=<Cosmos DB auth key>;Database=<Cosmos DB database id>;ApiKind=MongoDb`<br/>Не рекомендуется указывать номера портов в URL-адресе конечной точки. Если вы укажете номер порта, служба поиска Azure не сможет индексировать базу данных Azure Cosmos DB.|
-| **container** | содержит следующие элементы: <br/>**name**. Обязательный. Укажите идентификатор коллекции базы данных для индексирования.<br/>**query**. Необязательный элемент. Можно указать запрос на сведение произвольного документа JSON в неструктурированную схему, индексируемую поиском Azure.<br/>Для коллекций MongoDB запросы не поддерживаются. |
+| **name** | Обязательный элемент. Выберите любое имя для представления объектом источника данных. |
+|**type**| Обязательный элемент. Этот параметр должен содержать значение `cosmosdb`. |
+|**credentials** | Обязательный элемент. Должен быть строкой подключения Cosmos DB.<br/>Для коллекций SQL строки подключения, в следующем формате: `AccountEndpoint=<Cosmos DB endpoint url>;AccountKey=<Cosmos DB auth key>;Database=<Cosmos DB database id>`<br/>Для коллекций MongoDB добавьте **типа API = MongoDb** строку подключения:<br/>`AccountEndpoint=<Cosmos DB endpoint url>;AccountKey=<Cosmos DB auth key>;Database=<Cosmos DB database id>;ApiKind=MongoDb`<br/>Не рекомендуется указывать номера портов в URL-адресе конечной точки. Если вы укажете номер порта, служба поиска Azure не сможет индексировать базу данных Azure Cosmos DB.|
+| **container** | содержит следующие элементы: <br/>**name**. Обязательный элемент. Укажите идентификатор коллекции базы данных для индексирования.<br/>**query**. Необязательный элемент. Можно указать запрос на сведение произвольного документа JSON в неструктурированную схему, индексируемую поиском Azure.<br/>Для коллекций MongoDB запросы не поддерживаются. |
 | **dataChangeDetectionPolicy** | (рекомендуется). Ознакомьтесь с разделом [Индексация измененных документов](#DataChangeDetectionPolicy).|
 |**dataDeletionDetectionPolicy** | Необязательный элемент. Ознакомьтесь с разделом [удаленных документов](#DataDeletionDetectionPolicy).|
 
@@ -193,7 +192,7 @@ ms.locfileid: "60871721"
             "lastName": "hoh"
         },
         "company": "microsoft",
-        "tags": ["azure", "documentdb", "search"]
+        "tags": ["azure", "cosmosdb", "search"]
     }
 
 Запрос на фильтрацию:
@@ -219,7 +218,7 @@ ms.locfileid: "60871721"
 
 [Создайте целевой индекс поиска Azure](/rest/api/searchservice/create-index) Если вы не сделали. В следующем примере создается индекс с Идентификатором и описанием полем:
 
-    POST https://[service name].search.windows.net/indexes?api-version=2017-11-11
+    POST https://[service name].search.windows.net/indexes?api-version=2019-05-06
     Content-Type: application/json
     api-key: [Search service admin key]
 
@@ -250,10 +249,10 @@ ms.locfileid: "60871721"
 ### <a name="mapping-between-json-data-types-and-azure-search-data-types"></a>Сопоставление типов данных JSON и типов данных службы поиска Azure
 | Тип данных JSON | Совместимые типы полей целевого индекса |
 | --- | --- |
-| Логический |Edm.Boolean, Edm.String |
+| Bool |Edm.Boolean, Edm.String |
 | Числа, которые выглядят как целые числа |Edm.Int32, Edm.Int64, Edm.String |
 | Числа, которые выглядят как числа с плавающей запятой |Edm.Double, Edm.String |
-| String |Edm.String |
+| Строка |Edm.String |
 | Массивы типов-примитивов, например [a, b, c] |Collection(Edm.String) |
 | Строки, которые выглядят как даты |Edm.DateTimeOffset, Edm.String |
 | Объекты GeoJSON, например { "type": "Point", "coordinates": [long, lat] } |Edm.GeographyPoint |
@@ -263,13 +262,13 @@ ms.locfileid: "60871721"
 
 Когда индекс и источник данных уже созданы, можно создать индексатор:
 
-    POST https://[service name].search.windows.net/indexers?api-version=2017-11-11
+    POST https://[service name].search.windows.net/indexers?api-version=2019-05-06
     Content-Type: application/json
     api-key: [admin key]
 
     {
-      "name" : "mydocdbindexer",
-      "dataSourceName" : "mydocdbdatasource",
+      "name" : "mycosmosdbindexer",
+      "dataSourceName" : "mycosmosdbdatasource",
       "targetIndexName" : "mysearchindex",
       "schedule" : { "interval" : "PT2H" }
     }
@@ -334,17 +333,17 @@ ms.locfileid: "60871721"
 
 В следующем примере создается источник данных с политикой мягкого удаления:
 
-    POST https://[service name].search.windows.net/datasources?api-version=2017-11-11
+    POST https://[service name].search.windows.net/datasources?api-version=2019-05-06
     Content-Type: application/json
     api-key: [Search service admin key]
 
     {
-        "name": "mydocdbdatasource",
-        "type": "documentdb",
+        "name": "mycosmosdbdatasource",
+        "type": "cosmosdb",
         "credentials": {
-            "connectionString": "AccountEndpoint=https://myDocDbEndpoint.documents.azure.com;AccountKey=myDocDbAuthKey;Database=myDocDbDatabaseId"
+            "connectionString": "AccountEndpoint=https://myCosmosDbEndpoint.documents.azure.com;AccountKey=myCosmosDbAuthKey;Database=myCosmosDbDatabaseId"
         },
-        "container": { "name": "myDocDbCollectionId" },
+        "container": { "name": "myCosmosDbCollectionId" },
         "dataChangeDetectionPolicy": {
             "@odata.type": "#Microsoft.Azure.Search.HighWaterMarkChangeDetectionPolicy",
             "highWaterMarkColumnName": "_ts"

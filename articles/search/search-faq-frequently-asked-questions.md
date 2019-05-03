@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 08/03/2017
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 9ea4e4ec78e5613758bd9e5ff7a4fbd3273208c6
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: c77f26187914b2c6e52426bb2a07303b22ccb2b0
+ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61290454"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "65023997"
 ---
 # <a name="azure-search---frequently-asked-questions-faq"></a>Часто задаваемые вопросы о службе "Поиск Azure"
 
@@ -64,7 +64,7 @@ ms.locfileid: "61290454"
 
 Нет, эта операция не поддерживается. Поиск всегда ограничивается одним индексом.
 
-### <a name="can-i-restrict-search-corpus-access-by-user-identity"></a>Можно ли ограничить доступ к данным поиска по удостоверению пользователя?
+### <a name="can-i-restrict-search-index-access-by-user-identity"></a>Можно ограничить доступ к индексу поиска по удостоверению пользователя?
 
 Вы можете реализовать [фильтры безопасности](https://docs.microsoft.com/azure/search/search-security-trimming-for-azure-search) с помощью фильтра `search.in()`. Этот фильтр отлично сочетается со [службами управления удостоверениями, такими как Azure Active Directory (AAD)](https://docs.microsoft.com/azure/search/search-security-trimming-for-azure-search-with-aad), позволяя фильтровать результаты поиска на основе определенного членства в группе.
 

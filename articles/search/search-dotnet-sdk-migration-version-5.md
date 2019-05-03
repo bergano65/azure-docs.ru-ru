@@ -7,17 +7,22 @@ services: search
 ms.service: search
 ms.devlang: dotnet
 ms.topic: conceptual
-ms.date: 01/24/2019
+ms.date: 05/02/2019
 ms.author: brjohnst
 ms.custom: seodec2018
-ms.openlocfilehash: d7684aa79ac9f58c2a047b01a6d9f5263795221d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 980f16680ecc65bf8ac30a49e02f39b0f18a15f6
+ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61291713"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "65024118"
 ---
 # <a name="upgrading-to-the-azure-search-net-sdk-version-5"></a>Обновление пакета SDK службы поиска Azure для .NET до версии 5
+
+> [!Important]
+> Это содержимое является еще находятся в разработке. Версия 9.0 пакета SDK для .NET для поиска Azure доступна в NuGet. Мы работаем над этой статье объясняется, как выполнить обновление до версии 9.0. 
+> 
+
 Если вы используете версию 4.0-preview [пакета SDK .NET для службы поиска Azure](https://aka.ms/search-sdk) или более раннюю версию, то сведения в этой статье помогут вам обновить приложение для использования версии 5.
 
 Более общее пошаговое руководство по пакету SDK, включая примеры, см. в разделе [Использование службы поиска Azure в приложении .NET](search-howto-dotnet-sdk.md).

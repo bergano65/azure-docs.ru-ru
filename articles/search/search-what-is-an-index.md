@@ -7,14 +7,14 @@ ms.author: heidist
 services: search
 ms.service: search
 ms.topic: conceptual
-ms.date: 02/13/2019
+ms.date: 05/02/2019
 ms.custom: seodec2018
-ms.openlocfilehash: 645f3177913b903e8262c1fec08c452130e2a671
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 462a99ffab8038f34b1ffd038ce5c8e8ec9a8565
+ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60308250"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "65024427"
 ---
 # <a name="create-a-basic-index-in-azure-search"></a>Создание простого индекса в службе "Поиск Azure"
 
@@ -54,7 +54,7 @@ ms.locfileid: "60308250"
 
 Схема индекса в службе "Поиск Azure" содержит описанные ниже элементы. 
 
-[*Коллекция полей*](#fields-collection) обычно будет самой крупной частью индекса. Здесь каждому полю присвоены имя, тип и атрибуты, обозначающие допустимые поведения и порядок использования полей. Также здесь есть такие элементы, как [средства подбора](#suggesters), [профили повышения](#scoring-profiles), [анализаторы](#analyzers) с компонентами для поддержки настройки и параметры [CORS](#cors).
+[*Коллекция полей*](#fields-collection) обычно будет самой крупной частью индекса. Здесь каждому полю присвоены имя, тип и атрибуты, обозначающие допустимые поведения и порядок использования полей. Другие элементы включают [средств подбора](#suggesters), [профили оценки](#scoring-profiles), [анализаторы](#analyzers) с компоненты для поддержки настройки, [CORS](#cors) и [ключ шифрования](#encryption-key) параметры.
 
 ```json
 {
@@ -126,6 +126,15 @@ ms.locfileid: "60308250"
   "corsOptions": (optional) {
     "allowedOrigins": ["*"] | ["origin_1", "origin_2", ...],
     "maxAgeInSeconds": (optional) max_age_in_seconds (non-negative integer)
+  },
+  "encryptionKey":(optional){
+    "keyVaultUri": "azure_key_vault_uri",
+    "keyVaultKeyName": "name_of_azure_key_vault_key",
+    "keyVaultKeyVersion": "version_of_azure_key_vault_key",
+    "accessCredentials":(optional){
+      "applicationId": "azure_active_directory_application_id",
+      "applicationSecret": "azure_active_directory_application_authentication_key"
+    }
   }
 }
 ```
@@ -166,7 +175,7 @@ ms.locfileid: "60308250"
 
 Выбранные атрибуты оказывают влияние на размер хранилища. На следующем снимке экрана показаны шаблоны хранения индекса, полученные в результате различных сочетаний атрибутов.
 
-Источником данных для индекса является [встроенный пример данных о недвижимости](search-get-started-portal.md), который можно индексировать на портале, а затем отправлять к нему запросы. Хотя схемы индексов не показаны, атрибуты можно определить на основе имени индекса. Например, для индекса *realestate-searchable* выбран только атрибут **searchable**, для индекса *realestate-retrievable* выбран только атрибут **retrievable** и т. д.
+Индекс основан на [пример встроенные недвижимости](search-get-started-portal.md) источника данных, которые можно индексировать и запросов на портале. Хотя схемы индексов не показаны, атрибуты можно определить на основе имени индекса. Например, для индекса *realestate-searchable* выбран только атрибут **searchable**, для индекса *realestate-retrievable* выбран только атрибут **retrievable** и т. д.
 
 ![Размер индекса в зависимости от выбора атрибутов](./media/search-what-is-an-index/realestate-index-size.png "Размер индекса в зависимости от выбора атрибутов")
 
@@ -203,6 +212,10 @@ ms.locfileid: "60308250"
   Если вы хотите разрешить доступ всем источникам, добавьте в массив **allowedOrigins** единственный элемент `*`. *Этот вариант не рекомендуется для служб поиска в рабочей среде*, но часто он удобен для разработки и отладки.
 
 + **MaxAgeInSeconds** (необязательно). На основании этого значения браузеры определяют длительность (в секундах) кэширования предварительных ответов CORS. Это значение должно быть целой неотрицательной величиной. Чем оно больше, чем выше производительность, однако при этом применение изменений в политике CORS занимает больше времени. Если это значение не задано, длительность по умолчанию составляет 5 минут.
+
+## <a name="encryption-key"></a>Ключ шифрования
+
+Хотя все индексы поиска Azure, шифруются по умолчанию, с помощью ключей, управляемых Майкрософт, для индексов можно настроить шифрование с **клиент управляет ключами** в хранилище ключей. Дополнительные сведения см. в разделе [управлять ключами шифрования в службе поиска Azure](search-security-manage-encryption-keys.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

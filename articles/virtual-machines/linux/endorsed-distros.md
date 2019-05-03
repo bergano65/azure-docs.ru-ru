@@ -13,38 +13,56 @@ ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-linux
 ms.devlang: na
 ms.topic: article
-ms.date: 11/21/2017
+ms.date: 05/01/2019
 ms.author: szark
-ms.openlocfilehash: c0124d133fe2db9acb16251bc21ffb19f1b1268f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: db10c95c982132c41193ed1cccfdcdca6f60ba5e
+ms.sourcegitcommit: abeefca6cd5ca01c3e0b281832212aceff08bf3e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60743451"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "64993084"
 ---
-# <a name="linux-distributions-endorsed-on-azure"></a>Дистрибутивы Linux, рекомендованные для использования в Azure
+# <a name="endorsed-linux-distributions-on-azure"></a>Рекомендованные дистрибутивы Linux в Azure
 Партнеры предоставляют образы Linux в Azure Marketplace. Мы активно сотрудничаем с разными сообществами Linux, чтобы расширить список рекомендованных дистрибутивов. Если дистрибутив Linux недоступен в Marketplace, всегда можно использовать собственный, следуя инструкциям в статье [Информация о нерекомендованных дистрибутивах](https://docs.microsoft.com/azure/virtual-machines/linux/create-upload-generic).
 
 ## <a name="supported-distributions-and-versions"></a>Поддерживаемые дистрибутивы и версии
-В следующей таблице перечислены дистрибутивы и версии Linux, поддерживаемые в Azure. Подробные сведения о поддержке Linux и технологий с открытым кодом в Azure см. в статье [Поддержка Linux и технологии с открытым исходным кодом в Azure](https://support.microsoft.com/help/2941892/support-for-linux-and-open-source-technology-in-azure).
+В следующей таблице перечислены дистрибутивы и версии Linux, поддерживаемые в Azure. Ссылаться на [поддержка образов Linux в Microsoft Azure](https://support.microsoft.com/help/2941892/support-for-linux-and-open-source-technology-in-azure) более подробные сведения о поддержке Linux и технологии с открытым исходным кодом в Azure.
 
-Драйверы Linux Integration Services (LIS) для Hyper-V и Azure представляют из себя модули ядра, которые Майкрософт встраивает непосредственно в основное ядро Linux.  Некоторые драйверы LIS встроены в ядро дистрибутива по умолчанию. Более старые дистрибутивы на основе Red Hat Enterprise (RHEL) и CentOS можно отдельно скачать на странице [служб интеграции Linux (LIS) 4.2 для Hyper-V и Azure](https://www.microsoft.com/en-us/download/details.aspx?id=55106). Дополнительные сведения о драйверах LIS см. в разделе [Рекомендации по ядру Linux](create-upload-generic.md#linux-kernel-requirements).
+Драйверы Linux Integration Services (LIS) для Hyper-V и Azure представляют из себя модули ядра, которые Майкрософт встраивает непосредственно в основное ядро Linux.  Некоторые драйверы LIS встроены в ядро дистрибутива по умолчанию. Более старые дистрибутивы на основе Red Hat Enterprise (RHEL) и CentOS можно отдельно скачать на странице [служб интеграции Linux (LIS) 4.2 для Hyper-V и Azure](https://www.microsoft.com/download/details.aspx?id=55106). Дополнительные сведения о драйверах LIS см. в разделе [Рекомендации по ядру Linux](create-upload-generic.md#linux-kernel-requirements).
 
 Агент Linux для Azure уже предварительно установлен в образах Azure Marketplace и обычно доступен из репозитория пакета дистрибутива. Исходный код можно найти на сайте [GitHub](https://github.com/azure/walinuxagent).
 
   
-| Дистрибуция | Version | Драйверы | Агент |
+| Дистрибутив | Version | Драйверы | Агент |
 | --- | --- | --- | --- |
-| CentOS |CentOS 6.3+, 7.0+ |CentOS 6.3: [скачать LIS](https://www.microsoft.com/en-us/download/details.aspx?id=55106)<p>CentOS 6.4+: В ядре |Пакет: в [репозитории](http://olcentgbl.trafficmanager.net/openlogic/6/openlogic/x86_64/RPMS/) под именем WALinuxAgent <br/>Исходный код: [GitHub](https://github.com/Azure/WALinuxAgent) |
+| CentOS |CentOS 6.3+, 7.0+ |CentOS 6.3: [скачать LIS](https://www.microsoft.com/download/details.aspx?id=55106)<p>CentOS 6.4+: В ядре |Пакет: в [репозитории](http://olcentgbl.trafficmanager.net/openlogic/6/openlogic/x86_64/RPMS/) под именем WALinuxAgent <br/>Исходный код: [GitHub](https://github.com/Azure/WALinuxAgent) |
 | [CoreOS](https://coreos.com/docs/running-coreos/cloud-providers/azure/) |494.4.0 + |В ядре |Исходный код: [GitHub](https://github.com/coreos/coreos-overlay/tree/master/app-emulation/wa-linux-agent) |
 | Debian |Debian 7.9+, 8.2+ |В ядре |Пакет: в репозитории под именем waagent <br/>Исходный код: [GitHub](https://github.com/Azure/WALinuxAgent) |
 | Oracle Linux |6.4+, 7.0+ |В ядре |Пакет: в репозитории под именем WALinuxAgent <br/>Исходный код: [GitHub](https://go.microsoft.com/fwlink/p/?LinkID=250998) |
-| Red Hat Enterprise Linux |RHEL 6.7 или более поздней версии, 7.1 или более поздней версии |В ядре |Пакет: в репозитории под именем WALinuxAgent <br/>Исходный код: [GitHub](https://github.com/Azure/WALinuxAgent) |
+| Red Hat Enterprise Linux. |RHEL 6.7 или более поздней версии, 7.1 или более поздней версии |В ядре |Пакет: в репозитории под именем WALinuxAgent <br/>Исходный код: [GitHub](https://github.com/Azure/WALinuxAgent) |
 | SUSE Linux Enterprise |SLES или SLES for SAP<br>11 SP4<br>12 SP1 или более поздняя версия<br>15|В ядре |Пакет:<p> для версии 11: в репозитории [Cloud:Tools](https://build.opensuse.org/project/show/Cloud:Tools);<br>для версии 12: входит в состав модуля Public Cloud в python-azure-agent.<br/>Исходный код: [GitHub](https://go.microsoft.com/fwlink/p/?LinkID=250998) |
 | openSUSE |openSUSE LEAP 42.2+ |В ядре |Пакет: в репозитории [Cloud:Tools](https://build.opensuse.org/project/show/Cloud:Tools) под именем python-azure-agent <br/>Исходный код: [GitHub](https://github.com/Azure/WALinuxAgent) |
 | Ubuntu |Ubuntu 12.04+ **<sup>1</sup>** |В ядре |Пакет: в репозитории под именем walinuxagent <br/>Исходный код: [GitHub](https://github.com/Azure/WALinuxAgent) |
 
-  - **<sup>1</sup>** Сведения о поддержке Ubuntu 12.04 в Azure см. в статье [Ubuntu 12.04 (Precise Pangolin) nearing end-of-life](https://azure.microsoft.com/blog/ubuntu-12-04-precise-pangolin-nearing-end-of-life/) (Окончание срока действия Ubuntu 12.04 (Precise Pangolin)).
+  - **<sup>1</sup>**  сведения о расширенной поддержке Ubuntu 12.04 и 14.04 можно найти здесь: [Ubuntu расширенной безопасности обслуживания](https://www.ubuntu.com/esm).
+
+
+## <a name="image-update-cadence"></a>Периодичность обновления образа
+Azure требует регулярного обновления издателей из рекомендуемых дистрибутивов Linux свои образы в Azure Marketplace с последние пакеты обновления и исправления безопасности, в квартал или быстрее периодичности. Обновленные образы в Azure Marketplace доступны автоматически для клиентов новой версии образа SKU. Дополнительные сведения о поиске образов Linux: [Поиск образов виртуальных Машин Linux в Azure Marketplace](https://docs.microsoft.com/azure/virtual-machines/linux/cli-ps-findimage).
+
+### <a name="additional-links"></a>Дополнительные ссылки
+ - [Жизненным циклом образа SUSE общедоступное облако](https://www.suse.com/c/suse-public-cloud-image-life-cycle/)
+
+## <a name="azure-tuned-kernels"></a>Настраиваемые Azure ядра
+
+Azure тесно сотрудничает с различных рекомендованных дистрибутивов Linux, чтобы оптимизировать изображения, которые они опубликованы в Azure Marketplace. Один из аспектов этой совместной работы заключается в разработке «настроенном» ядра Linux, которые оптимизированы для платформы Azure и доставляется как полностью поддерживаются компоненты дистрибутива Linux. Ядра настраиваемые Azure включить новые функции и улучшения производительности и в (обычно квартальным) чаще по сравнению с по умолчанию или универсального ядра, доступные из дистрибутива.
+
+В большинстве случаев вы найдете эти ядра, предварительно установлен в образах по умолчанию в Azure Marketplace, и таким образом Azure клиенты сразу же получат преимущества этих оптимизированного ядер. Дополнительные сведения об этих ядер настраиваемые Azure можно найти по следующим ссылкам:
+
+ - CentOS настраиваемые Azure ядра - виртуализация CentOS SIG - [Дополнительные сведения](https://wiki.centos.org/SpecialInterestGroup/Virtualization)
+ - Облако ядра Debian — Debian 10 и образа Debian 9 «бэкпортированным» в Azure — [дополнительная информация](https://wiki.debian.org/Cloud/MicrosoftAzure)
+ - SLES Azure настроены ядра - [Дополнительные сведения](https://www.suse.com/c/a-different-builtin-kernel-for-azure-on-demand-images/)
+ - Настраиваемые Azure ядра Ubuntu - [Дополнительные сведения](https://blog.ubuntu.com/2017/09/21/microsoft-and-canonical-increase-velocity-with-azure-tailored-kernel)
 
 
 ## <a name="partners"></a>Партнеры
@@ -64,7 +82,7 @@ Credativ представляет собой независимую компан
 ### <a name="oracle"></a>Oracle
 [https://www.oracle.com/technetwork/topics/cloud/faq-1963009.html](https://www.oracle.com/technetwork/topics/cloud/faq-1963009.html)
 
-Oracle предлагает широкий набор решений для общедоступных и частных облаков. Это дает клиентам свободу выбора и гибкость при развертывании программного обеспечения Oracle в облаках Oracle, а также в других облаках. Партнерство Oracle и Майкрософт обеспечивает надежное развертывание программного обеспечения Oracle в общедоступных и частных облаках Майкрософт благодаря сертификации и поддержке Oracle.  Заинтересованность компании Oracle и ее инвестиции в решения для общедоступных и частных облаков Oracle остаются неизменными.
+Oracle предлагает широкий набор решений для общедоступных и частных облаков. Это дает клиентам свободу выбора и гибкость при развертывании программного обеспечения Oracle в облаках Oracle, а также в других облаках. Партнерство Oracle с корпорацией Майкрософт позволяет клиентам развертывать программное обеспечение Oracle в общедоступных и частных облаках Майкрософт при обеспечении сертификации и поддержки от Oracle.  Заинтересованность компании Oracle и ее инвестиции в решения для общедоступных и частных облаков Oracle остаются неизменными.
 
 ### <a name="red-hat"></a>Red Hat
 [https://www.redhat.com/en/partners/strategic-alliance/microsoft](https://www.redhat.com/en/partners/strategic-alliance/microsoft)

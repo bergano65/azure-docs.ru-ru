@@ -8,15 +8,15 @@ ms.service: search
 ms.devlang: NA
 ms.workload: search
 ms.topic: conceptual
-ms.date: 02/25/2019
+ms.date: 05/02/2019
 ms.author: luisca
 ms.custom: seodec2018
-ms.openlocfilehash: e4849487c2dd9330dbf9e6b6cf0ed4d1b6b96020
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: f773cd298c8faaac90b30d88a74e8ddcb51c3afa
+ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60637524"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "65021952"
 ---
 # <a name="deprecated-cognitive-search-skills"></a>Устаревшие навыки когнитивного поиска
 
@@ -31,7 +31,7 @@ ms.locfileid: "60637524"
 
 ### <a name="last-available-api-version"></a>Последняя доступная версия API
 
-2017-11-11-preview
+2019-05-06-preview
 
 ### <a name="end-of-support"></a>Дата окончания поддержки
 
@@ -43,7 +43,8 @@ ms.locfileid: "60637524"
 
 Для перехода на [навык распознавания сущностей](cognitive-search-skill-entity-recognition.md) необходимо внести одно или несколько следующих изменений в определение навыка. Вы можете обновить определение навыков с помощью [API обновления набора навыков](https://docs.microsoft.com/rest/api/searchservice/update-skillset).
 
-_Примечание_. Сейчас оценка достоверности не поддерживается в качестве концепции. Эта возможность будет добавлена в ближайшем будущем. Параметр `minimumPrecision` содержится в `EntityRecognitionSkill` для использования в будущем, а также для обеспечения обратной совместимости.
+> [!NOTE]
+> Сейчас оценка достоверности не поддерживается в качестве концепции. Параметр `minimumPrecision` содержится в `EntityRecognitionSkill` для использования в будущем, а также для обеспечения обратной совместимости.
 
 1. *(Обязательно.)* Измените `@odata.type` с `"#Microsoft.Skills.Text.NamedEntityRecognitionSkill"` на `"#Microsoft.Skills.Text.EntityRecognitionSkill"`.
 

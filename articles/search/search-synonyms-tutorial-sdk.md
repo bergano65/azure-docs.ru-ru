@@ -6,15 +6,15 @@ author: HeidiSteen
 services: search
 ms.service: search
 ms.topic: conceptual
-ms.date: 03/18/2019
+ms.date: 05/02/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: f9cadfcf0c027f4aec4f9d4928872709ee7d3e99
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 5b81e4b9a8773cc8e4cc76582ccf2df88565d3d8
+ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61281783"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "65025171"
 ---
 # <a name="example-add-synonyms-for-azure-search-in-c"></a>Пример: Добавление синонимов в Поиск Azure на C#
 
@@ -23,13 +23,15 @@ ms.locfileid: "61281783"
 В Поиске Azure синонимы определены в *сопоставлении синонимов* с помощью *правил сопоставления*, связывающих эквивалентные термины. В этом примере рассматриваются основные шаги для добавления и использование синонимов с существующего индекса. Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
-> * Включать синонимы путем создания и публикации правил сопоставления. 
-> * Создавать ссылки на карты синонимов в строке запроса.
+> * Создать синоним карты с помощью [SynonymMap](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.synonymmap?view=azure-dotnet) класса. 
+> * Задайте [SynonymMaps](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.field.synonymmaps?view=azure-dotnet) свойства для полей, которые должны поддерживать расширения запроса через синонимы.
+
+Вы можете запрашивать поля с поддержкой синоним обычным образом. Нет никакой дополнительный запрос синтаксис, необходимые для доступа к синонимы.
 
 Вы можете создать несколько сопоставлений синонимов, разместить их как ресурс служб, доступный для любого индекса, а затем указать ссылку на используемый на уровне поля. Во время выполнения запроса, кроме поиска индекса, Поиск Azure обязательно просмотрит сопоставление синонимов, если один из них указан в каком-либо поле, используемом в этом запросе.
 
 > [!NOTE]
-> Сейчас функция синонимов поддерживается только в последних версиях API (версия 2017-11-11) и пакета SDK (версия 5.0.0). Портал Azure такую поддержку пока не предоставляет. Если вы считаете, что нам следует добавить поддержку синонимов на портале Azure, оставьте свой отзыв на [UserVoice](https://feedback.azure.com/forums/263029-azure-search).
+> Синонимы могут создаваться программным способом, но не на портале. Если вы считаете, что нам следует добавить поддержку синонимов на портале Azure, оставьте свой отзыв на [UserVoice](https://feedback.azure.com/forums/263029-azure-search).
 
 ## <a name="prerequisites"></a>Технические условия
 
@@ -172,7 +174,7 @@ Name: Roach Motel       Category: Budget        Tags: [motel, budget]
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-В этом примере показано [API REST для синонимов](https://aka.ms/rgm6rq) в C# код, чтобы создать и опубликовать правила сопоставления и затем вызывать карты синонимов в запрос. См. дополнительные сведения о [пакете SDK для .NET ](https://docs.microsoft.com/dotnet/api/microsoft.azure.search) и [REST API](https://docs.microsoft.com/rest/api/searchservice/).
+В этом примере демонстрируются возможности синонимов в C# код, чтобы создать и опубликовать правила сопоставления и затем вызывать карты синонимов в запрос. См. дополнительные сведения о [пакете SDK для .NET ](https://docs.microsoft.com/dotnet/api/microsoft.azure.search) и [REST API](https://docs.microsoft.com/rest/api/searchservice/).
 
 > [!div class="nextstepaction"]
 > [Как использовать синонимы в Поиске Azure](search-synonyms.md)

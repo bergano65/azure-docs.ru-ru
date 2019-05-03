@@ -21,7 +21,7 @@ ms.locfileid: "61315579"
 ---
 # <a name="sql-server-instance-migration-to-azure-sql-database-managed-instance"></a>Перенос экземпляра SQL Server в управляемый экземпляр Базы данных SQL Azure
 
-В этой статье вы узнаете о методах переноса экземпляра SQL Server 2005 или более поздней версии в [управляемый экземпляр Базы данных SQL Azure](sql-database-managed-instance.md). Дополнительные сведения см. в разделе о [миграции в отдельную базу данных или эластичный пул](sql-database-cloud-migrate.md). Сведения о миграции из других платформ см. [здесь](https://datamigration.microsoft.com/).
+В этой статье вы узнаете о методах переноса экземпляра SQL Server 2005 или более поздней версии в [управляемый экземпляр Базы данных SQL Azure](sql-database-managed-instance.md). Дополнительные сведения см. в разделе о [миграции в отдельную базу данных или базу данных в пуле](sql-database-cloud-migrate.md). Сведения о миграции из других платформ см. [здесь](https://datamigration.microsoft.com/).
 
 В общем процесс переноса базы данных выглядит примерно так:
 

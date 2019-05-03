@@ -11,12 +11,12 @@ author: mx-iao
 ms.reviewer: sgilley
 ms.date: 04/19/2019
 ms.custom: seodec18
-ms.openlocfilehash: 78db7d21774750892c831ac220244c54594b78f3
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: cedd45d4142633e48d0d9dd41870f57c16d860c8
+ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60817706"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "65023838"
 ---
 # <a name="train-tensorflow-and-keras-models-with-azure-machine-learning-service"></a>Обучение модели TensorFlow и Keras со службой машинного обучения Azure
 
@@ -45,14 +45,14 @@ tf_est = TensorFlow(source_directory='./my-tf-proj',
 
 Укажем следующие параметры в конструкторе TensorFlow.
 
-Параметр | Описание
+Параметр | ОПИСАНИЕ
 --|--
 `source_directory` | Локальный каталог, который содержит весь код, необходимый для задания обучения. Эта папка копируется с локального компьютера на удаленный вычислительный ресурс.
 `script_params` | Словарь, указав аргументы командной строки в сценарий обучения `entry_script`, в виде < аргумент командной строки, значение > пары.  Чтобы указать подробные флаг в `script_params`, используйте `<command-line argument, "">`.
 `compute_target` | Удаленный целевой объект вычислений, на котором будет выполняться сценарий обучения. В нашем случае это кластер Вычислительной среды Машинного обучения Azure ([AmlCompute](how-to-set-up-training-targets.md#amlcompute)).
 `entry_script` | Путь к файлу (относительно `source_directory`) сценария обучения, который будет выполняться на удаленном вычислительном ресурсе. В этой папке должны быть расположены этот файл и дополнительные файлы, от которых он зависит.
 `conda_packages` | Необходимый для сценария обучения список пакетов Python, которые нужно установить с помощью conda. В этом случае сценарий обучения использует `sklearn` для загрузки данных, поэтому необходимо указать этот пакет для установки.  Параметр `pip_packages` конструктора можно использовать для всех необходимых пакетов pip.
-`use_gpu` | Присвойте этому флагу значение `True`, чтобы использовать GPU для обучения. По умолчанию — `False`.
+`use_gpu` | Присвойте этому флагу значение `True`, чтобы использовать GPU для обучения. По умолчанию равен `False`.
 
 Так как вы работаете со средством оценки TensorFlow, контейнер, используемый для обучения, по умолчанию будет содержать пакет TensorFlow и связанные зависимости, необходимые для обучения в ЦП и GPU.
 
@@ -103,7 +103,7 @@ tf_est = TensorFlow(source_directory='./my-tf-proj',
 
 В приведенном выше коде показаны следующие новые параметры в конструкторе TensorFlow.
 
-Параметр | Описание | значение по умолчанию
+Параметр | ОПИСАНИЕ | значение по умолчанию
 --|--|--
 `node_count` | Количество узлов, которые будут использоваться для задания обучения. | `1`
 `process_count_per_node` | Количество процессов (или рабочих ролей), запускаемых на каждом узле.|`1`
@@ -144,7 +144,7 @@ tf_est = TensorFlow(source_directory='./my-tf-proj',
 
 Обратите внимание на следующие параметры в конструкторе TensorFlow в приведенном выше коде.
 
-Параметр | Описание | значение по умолчанию
+Параметр | ОПИСАНИЕ | значение по умолчанию
 --|--|--
 `worker_count` | Количество рабочих ролей. | `1`
 `parameter_server_count` | Количество серверов параметров. | `1`
@@ -185,6 +185,10 @@ cluster_spec = tf.train.ClusterSpec(cluster)
 ```Python
 run = exp.submit(tf_est)
 ```
+
+## <a name="export-to-onnx"></a>Экспорт в ONNX
+
+Для получения выводов, оптимизированный с [среды выполнения ONNX](concept-onnx.md), можно преобразовать в формат ONNX обученной модели TensorFlow. См. [пример](https://github.com/onnx/tensorflow-onnx/blob/master/examples/call_coverter_via_python.py).
 
 ## <a name="examples"></a>Примеры
 

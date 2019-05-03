@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 04/25/2019
 ms.author: sukumari
 ms.reviewer: azmetadata
-ms.openlocfilehash: cc333cc1a46d6d7e72faeeb8a4e59a70cc0f27ed
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 84821a24ceb8624a1a7033c43c44548fe5eff315
+ms.sourcegitcommit: abeefca6cd5ca01c3e0b281832212aceff08bf3e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64925530"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "64993139"
 ---
 # <a name="azure-instance-metadata-service"></a>Служба метаданных экземпляров Azure
 
@@ -640,6 +640,8 @@ openssl x509 -noout -issuer -in intermediate.pem
 openssl verify -verbose -CAfile /etc/ssl/certs/Baltimore_CyberTrust_Root.pem -untrusted intermediate.pem signer.pem
 ```
 
+В случаях, где промежуточный сертификат, не могут быть загружены из-за ограничений сети во время проверки можно закрепить промежуточный сертификат. Тем не менее Azure будет Смена сертификатов в соответствии с общепринятой практикой PKI. Закрепленные сертификаты потребуется обновляться, когда происходит смена. Каждый раз, когда планируется изменение обновить промежуточный сертификат обновляется BLOB-объектов Azure и Azure клиенты получат уведомление. Промежуточные сертификаты можно найти [здесь](https://www.microsoft.com/pki/mscorp/cps/default.htm). Промежуточные сертификаты для каждого из регионов может быть разным.
+
 ### <a name="failover-clustering-in-windows-server"></a>Отказоустойчивая кластеризация в Windows Server
 
 В некоторых ситуациях при запросе службы метаданных экземпляров с отказоустойчивой кластеризацией необходимо добавить маршрут в таблицу маршрутизации.
@@ -688,11 +690,13 @@ route add 169.254.169.254/32 10.0.1.10 metric 1 -p
 ### <a name="custom-data"></a>Пользовательские данные
 Служба метаданных экземпляров обеспечивают для виртуальной Машины, чтобы иметь доступ к его пользовательские данные. Двоичные данные должны быть меньше 64 КБ и предоставляется на виртуальную машину в кодировке base64. Дополнительные сведения о том, как создать виртуальную Машину с пользовательскими данными, см. в разделе [развертывание виртуальной машины с помощью CustomData](https://github.com/Azure/azure-quickstart-templates/tree/master/101-vm-customdata).
 
+Пользовательские данные будут доступны для всех процессов, запущенных на виртуальной машине. Предполагается, что клиенты не вставляйте секретной информации в пользовательских данных.
+
 #### <a name="retrieving-custom-data-in-virtual-machine"></a>Извлечение пользовательских данных в виртуальной машине
 Служба метаданных экземпляров содержит пользовательские данные на виртуальную машину в кодировке base64. Следующий пример расшифровывает строку в кодировке base64.
 
 > [!NOTE]
-> Пользовательские данные в этом примере интерпретируется как строку ASCII, данными, «Мои загадкой.».
+> Пользовательские данные в этом примере интерпретируется как строку ASCII, который считывает «Мои пользовательские данные.».
 
 **Запрос**
 
@@ -703,7 +707,7 @@ curl -H "Metadata:true" "http://169.254.169.254/metadata/instance/compute/custom
 **Ответ**
 
 ```text
-My super secret data.
+My custom data.
 ```
 
 ### <a name="examples-of-calling-metadata-service-using-different-languages-inside-the-vm"></a>Примеры вызова службы метаданных с использованием различных языков в виртуальной машине

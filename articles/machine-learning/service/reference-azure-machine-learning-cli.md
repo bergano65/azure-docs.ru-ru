@@ -9,14 +9,14 @@ ms.topic: conceptual
 ms.reviewer: jmartens
 ms.author: jordane
 author: jpe316
-ms.date: 04/30/2019
+ms.date: 05/02/2019
 ms.custom: seodec18
-ms.openlocfilehash: 2992ec9f43aac9e0d80c5e42873d26ac3a9c3fd1
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 9cc6ad4f7b33de4d132efe63ff11c34f10b614af
+ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64916979"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "65023386"
 ---
 # <a name="use-the-cli-extension-for-azure-machine-learning-service"></a>Использование расширения интерфейса командной строки для Службы машинного обучения Azure
 
@@ -80,7 +80,6 @@ az extension remove -n azure-cli-ml
     ```
 
 + Присоединение конфигурации рабочей области в папку, чтобы включить отслеживание контекста интерфейса командной строки.
-
     ```azurecli-interactive
     az ml folder attach -w myworkspace -g myresourcegroup
     ```
@@ -90,26 +89,14 @@ az extension remove -n azure-cli-ml
     ```azurecli-interactive
     az ml datastore attach-blob  -n datastorename -a accountname -c containername
     ```
-
+    
 + Подключите кластер службы контейнеров AZURE в качестве целевого объекта вычислений.
 
     ```azurecli-interactive
     az ml computetarget attach aks -n myaks -i myaksresourceid -g myrg -w myworkspace
     ```
 
-+ Создать новую цель AMLcompute
-
-    ```azurecli-interactive
-    az ml computetarget create amlcompute -n cpu --min-nodes 1 --max-nodes 1 -s STANDARD_D3_V2
-    ```
-    
 ## <a id="experiments"></a>Запускать эксперименты
-
-+ Присоединение конфигурации рабочей области в папку, чтобы включить отслеживание контекста интерфейса командной строки.
-
-    ```azurecli-interactive
-    az ml folder attach -w myworkspace -g myresourcegroup
-    ```
 
 * Запустите выполнение эксперимента. При использовании этой команды, укажите имя файла runconfig (текста до \*.runconfig, если вы ищете систему) для параметра - c.
 
@@ -123,7 +110,7 @@ az extension remove -n azure-cli-ml
     az ml experiment list
     ```
 
-## <a name="model-registration-profiling-deployment"></a>Регистрация модели, профилирование, развертывание
+## <a name="model-registration-profiling--deployment"></a>Модель регистрации, профилирование и развертывания
 
 Следующие команды демонстрируют регистрацию обученной модели, а затем ее развертывание в качестве рабочей службы:
 

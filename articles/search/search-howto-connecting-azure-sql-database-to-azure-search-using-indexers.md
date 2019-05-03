@@ -1,7 +1,7 @@
 ---
 title: Подключение к Базе данных SQL Azure и индексирование ее содержимого с помощью индексаторов в службе Поиска Azure
 description: Сведения о сканировании данных в Базе данных SQL Azure с помощью индексаторов для полнотекстового поиска в службе "Поиск Azure". В этой статье описываются подключения, конфигурация индексатора и прием данных.
-ms.date: 03/01/2019
+ms.date: 05/02/2019
 author: mgottein
 manager: cgronlun
 ms.author: magottei
@@ -10,12 +10,12 @@ ms.service: search
 ms.devlang: rest-api
 ms.topic: conceptual
 ms.custom: seodec2018
-ms.openlocfilehash: 5453bcdd371c0639cb1d3568f05a1768e6204d3d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: c23933e7f379a438d436fd99c5fea7899c5891ef
+ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60817169"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "65025360"
 ---
 # <a name="connect-to-and-index-azure-sql-database-content-using-azure-search-indexers"></a>Подключение к Базе данных SQL Azure и индексирование ее содержимого с помощью индексаторов службы Поиска Azure
 
@@ -63,7 +63,7 @@ ms.locfileid: "60817169"
 1. Создайте источник данных:
 
    ```
-    POST https://myservice.search.windows.net/datasources?api-version=2017-11-11
+    POST https://myservice.search.windows.net/datasources?api-version=2019-05-06
     Content-Type: application/json
     api-key: admin-key
 
@@ -82,7 +82,7 @@ ms.locfileid: "60817169"
 3. Создайте индексатор, задав ему имя и связав источник данных с целевым индексом:
 
     ```
-    POST https://myservice.search.windows.net/indexers?api-version=2017-11-11
+    POST https://myservice.search.windows.net/indexers?api-version=2019-05-06
     Content-Type: application/json
     api-key: admin-key
 
@@ -95,7 +95,7 @@ ms.locfileid: "60817169"
 
 У индексатора, созданного таким образом, нет расписания. Он автоматически выполняется один раз сразу после создания. Вы можете снова выполнить его в любой момент с помощью запроса на **запуск индексатора** :
 
-    POST https://myservice.search.windows.net/indexers/myindexer/run?api-version=2017-11-11
+    POST https://myservice.search.windows.net/indexers/myindexer/run?api-version=2019-05-06
     api-key: admin-key
 
 Вы можете настроить несколько аспектов поведения индексатора, например размер пакета и сколько документов можно пропустить, прежде чем выполнение индексатора завершится с ошибкой. Чтобы узнать больше, ознакомьтесь с [API создания индексатора](https://docs.microsoft.com/rest/api/searchservice/Create-Indexer).
@@ -104,7 +104,7 @@ ms.locfileid: "60817169"
 
 Для наблюдения за состоянием индексатора и журналом выполнения (количество проиндексированных элементов, ошибки и т. д.) используйте запрос на получение **состояния индексатора**:
 
-    GET https://myservice.search.windows.net/indexers/myindexer/status?api-version=2017-11-11
+    GET https://myservice.search.windows.net/indexers/myindexer/status?api-version=2019-05-06
     api-key: admin-key
 
 Ответ должен выглядеть так:
@@ -146,7 +146,7 @@ ms.locfileid: "60817169"
 ## <a name="run-indexers-on-a-schedule"></a>Запуск индексаторов по расписанию
 Вы также можете организовать запуск индикатора по расписанию. Для этого добавьте свойство **schedule** при создании или обновлении индексатора. В примере ниже показан PUT- запрос для обновления индексатора:
 
-    PUT https://myservice.search.windows.net/indexers/myindexer?api-version=2017-11-11
+    PUT https://myservice.search.windows.net/indexers/myindexer?api-version=2019-05-06
     Content-Type: application/json
     api-key: admin-key
 
@@ -266,7 +266,7 @@ ms.locfileid: "60817169"
     }
 
 ### <a name="soft-delete-column-deletion-detection-policy"></a>Политика обнаружения обратимого удаления столбца
-Строки, удаляемые из исходной таблицы, вероятно, также следует удалить из индекса поиска. Если вы используете интегрированную политику отслеживания изменений SQL, это происходит автоматически. Однако политика отслеживания изменений максимального уровня не затрагивает удаленные строки. Что же делать в этом случае?
+Строки, удаляемые из исходной таблицы, вероятно, также следует удалить из индекса поиска. Если вы используете интегрированную политику отслеживания изменений SQL, это происходит автоматически. Однако политика отслеживания изменений максимального уровня не затрагивает удаленные строки. Что делать?
 
 Если строки физически удалены из таблицы, то Поиску Azure не удастся определить присутствие уже несуществующих записей.  Тем не менее можно использовать метод обратимого удаления, чтобы логически удалять строки, не удаляя их из таблицы. Добавьте специальный столбец в таблицу или представление и помечайте удаленные строки с помощью этого столбца.
 
@@ -303,7 +303,7 @@ ms.locfileid: "60817169"
 ## <a name="configuration-settings"></a>Параметры конфигурации
 Индексатор SQL предоставляет несколько параметров конфигурации.
 
-| Параметр | Тип данных | Цель | Значение по умолчанию |
+| Параметр | Тип данных | Назначение | Значение по умолчанию |
 | --- | --- | --- | --- |
 | queryTimeout |string |Задает время ожидания для выполнения запроса SQL. |5 мин ("00:05:00") |
 | disableOrderByHighWaterMarkColumn |bool |Указывает SQL-запросу, используемому политикой верхнего предела, опустить предложение ORDER BY. Ознакомьтесь с [политикой верхнего предела](#HighWaterMarkPolicy). |false |
@@ -340,7 +340,7 @@ ms.locfileid: "60817169"
 
 **Вопрос. Можно ли использовать вторичную реплику в [отказоустойчивом кластере](https://docs.microsoft.com/azure/sql-database/sql-database-geo-replication-overview) в качестве источника данных?**
 
-Это зависит от ряда обстоятельств. Для полной индексации таблицы или представления можно использовать вторичные реплики. 
+Здесь возможны варианты в зависимости от обстоятельств. Для полной индексации таблицы или представления можно использовать вторичные реплики. 
 
 Поиск Azure поддерживает две политики отслеживания изменений для добавочного индексирования: интегрированная политика отслеживания изменений SQL и политика обнаружения изменений максимального уровня.
 

@@ -7,14 +7,14 @@ ms.author: heidist
 services: search
 ms.service: search
 ms.topic: conceptual
-ms.date: 03/25/2019
+ms.date: 05/02/2019
 ms.custom: seodec2018
-ms.openlocfilehash: cfc9b44963f6880e97859bc7ab77bff12d258471
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 7ed675e4c6988cf4c1340613323440de55a36843
+ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61283530"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "65024469"
 ---
 # <a name="how-to-compose-a-query-in-azure-search"></a>Как создать запрос в службе "Поиск Azure"
 
@@ -26,7 +26,7 @@ ms.locfileid: "61283530"
 
 В таблице ниже представлены интерфейсы API и методы на основе инструментов для отправки запросов.
 
-| Методика | Описание |
+| Методика | ОПИСАНИЕ |
 |-------------|-------------|
 | [Обозреватель Поиска (портал)](search-explorer.md) | Предоставляет панель поиска и параметры для выбора индекса и значения api-version. Будут возвращены результаты в виде документов JSON. <br/>[Подробнее.](search-get-started-portal.md#query-index) | 
 | [Postman или Fiddler](search-fiddler.md) | Веб-инструменты тестирования идеально подходят для формирования вызовов REST. REST API поддерживает все возможные операции в службе "Поиск Azure". В этой статье описывается, как настроить заголовки и текст HTTP-запроса для отправки запросов к службе "Поиск Azure".  |

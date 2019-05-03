@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 2/20/2019
 ms.author: chlandsi
-ms.openlocfilehash: ee0be31b10c86651fa36577ad0dffccc3dc7bf59
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 347969ac129faa9cbe841be097e2bc7fd66c6b8e
+ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59009277"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "65020572"
 ---
 # <a name="quickstart-recognize-speech-in-objective-c-on-ios-using-the-speech-sdk"></a>Краткое руководство. Распознавание речи в iOS с помощью Objective-C и пакета SDK службы "Речь"
 
@@ -35,7 +35,7 @@ ms.locfileid: "59009277"
 
 [!INCLUDE [License Notice](../../../includes/cognitive-services-speech-service-license-notice.md)]
 
-Текущая версия пакета SDK для распознавания речи для Cognitive Services — `1.4.0`.
+Текущая версия пакета SDK для распознавания речи для Cognitive Services — `1.5.0`.
 
 Пакет SDK службы "Речь" для Cognitive Services для iOS сейчас доступен в виде Cocoa Framework.
 Скачать его можно [здесь](https://aka.ms/csspeech/iosbinary). Загрузите файл в домашний каталог.
