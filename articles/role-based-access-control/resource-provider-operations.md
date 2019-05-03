@@ -694,9 +694,9 @@ ms.locfileid: "64729197"
 > | Действие | Microsoft.Cache/operations/read | Вывод списка операций, которые поддерживает поставщик Microsoft.Cache. |
 > | Действие | Microsoft.Cache/redis/delete | Удаляет весь кэш Redis. |
 > | Действие | Microsoft.Cache/redis/export/action | Экспортирует данные Redis в большие двоичные объекты с префиксом в службе хранилища в указанном формате. |
-> | Действие | Microsoft.Cache/redis/firewallRules/delete | Удаляет правила IP-адресов брандмауэра для кэша Redis. |
-> | Действие | Microsoft.Cache/redis/firewallRules/read | Возвращает правила IP-адресов брандмауэра для кэша Redis. |
-> | Действие | Microsoft.Cache/redis/firewallRules/write | Изменяет правила IP-адресов брандмауэра для кэша Redis. |
+> | Действие | Microsoft.Cache/redis/firewallRules/delete | Удаляет правила брандмауэра для IP-адресов для кэша Redis. |
+> | Действие | Microsoft.Cache/redis/firewallRules/read | Возвращает правила брандмауэра для IP-адресов для кэша Redis. |
+> | Действие | Microsoft.Cache/redis/firewallRules/write | Изменяет правила брандмауэра для IP-адресов для кэша Redis. |
 > | Действие | Microsoft.Cache/redis/forceReboot/action | Принудительно перезапускает экземпляр кэша. При этом возможна потеря данных. |
 > | Действие | Microsoft.Cache/redis/import/action | Импортирует в Redis данные в указанном формате из нескольких больших двоичных объектов. |
 > | Действие | Microsoft.Cache/redis/linkedservers/delete | Удаляет связанный сервер из кэша Redis. |

@@ -1,6 +1,6 @@
 ---
 title: Пример для PowerShell. Активная георепликация базы данных SQL Azure в пуле | Документация Майкрософт
-description: Пример скрипта Azure PowerShell, который позволяет настроить активную георепликацию и выполнить отработку отказа для базы данных в составе пула в Базе данных SQL Azure.
+description: Пример скрипта Azure PowerShell, который позволяет настроить активную георепликацию и выполнить отработку отказа для базы данных в пуле в Базе данных SQL Azure.
 services: sql-database
 ms.service: sql-database
 ms.subservice: high-availability
@@ -19,9 +19,9 @@ ms.contentlocale: ru-RU
 ms.lasthandoff: 04/23/2019
 ms.locfileid: "60390109"
 ---
-# <a name="use-powershell-to-configure-active-geo-replication-for-a-pooled-database-in-azure-sql-database"></a>Настройка активной георепликации для базы данных в составе пула в Базе данных SQL Azure с помощью PowerShell
+# <a name="use-powershell-to-configure-active-geo-replication-for-a-pooled-database-in-azure-sql-database"></a>Настройка активной георепликации для базы данных в пуле в Базе данных SQL Azure с помощью PowerShell
 
-Этот пример скрипта PowerShell настраивает активную георепликацию для базы данных в составе пула в Базе данных SQL Azure и выполняет для нее отработку отказа во вторичную реплику базы данных.
+Этот пример скрипта PowerShell настраивает активную георепликацию для базы данных в пуле в Базе данных SQL Azure и выполняет для нее отработку отказа во вторичную реплику базы данных.
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
@@ -51,7 +51,7 @@ Remove-AzResourceGroup -ResourceGroupName $secondaryresourcegroupname
 | [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup) | Создает группу ресурсов, в которой хранятся все ресурсы. |
 | [New-AzSqlServer](/powershell/module/az.sql/new-azsqlserver) | Создает сервер Базы данных SQL, на котором размещены отдельные базы данных и эластичные пулы. |
 | [New-AzSqlElasticPool](/powershell/module/az.sql/new-azsqlelasticpool) | Создает эластичный пул. |
-| [New-AzSqlDatabase](/powershell/module/az.sql/new-azsqldatabase) | Создает отдельную базу данных или базу данных в составе пула. |
+| [New-AzSqlDatabase](/powershell/module/az.sql/new-azsqldatabase) | Создает отдельную базу данных или базу данных в пуле. |
 | [Set-AzSqlDatabase](/powershell/module/az.sql/set-azsqldatabase) | Обновляет свойства базы данных или перемещает базу данных в эластичный пул, из него или между эластичными пулами. |
 | [New-AzSqlDatabaseSecondary](/powershell/module/az.sql/new-azsqldatabasesecondary)| Создает базу данных-получатель для существующей базы данных и начинает репликацию данных. |
 | [Get-AzSqlDatabase](/powershell/module/az.sql/get-azsqldatabase)| Получает одну или несколько баз данных. |

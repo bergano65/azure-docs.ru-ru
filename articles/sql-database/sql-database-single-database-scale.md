@@ -114,7 +114,7 @@ if(-not [string]::IsNullOrEmpty($OperationName))
 
 ## <a name="change-storage-size"></a>Изменение размера хранилища
 
-### <a name="vcore-based-purchasing-model"></a>Модель покупки на основе числа виртуальных ядер
+### <a name="vcore-based-purchasing-model"></a>Модель приобретения на основе виртуальных ядер
 
 - Хранилище может быть расширено до максимально возможного размера с шагом приращения в 1 ГБ. Минимальный настраиваемый размер хранилища данных составляет 5 ГБ.
 - Хранилище для отдельной базы данных можно подготовить, увеличив или уменьшив ее максимальный размер с помощью [портала Azure](https://portal.azure.com), [Transact-SQL](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-current#examples-1), [PowerShell](/powershell/module/az.sql/set-azsqldatabase), [Azure CLI](/cli/azure/sql/db#az-sql-db-update) или [REST API](https://docs.microsoft.com/rest/api/sql/databases/update).
