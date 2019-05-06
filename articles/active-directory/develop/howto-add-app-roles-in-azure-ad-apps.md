@@ -17,12 +17,12 @@ ms.author: kkrishna
 ms.reviewer: ''
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 427e293c28f634df9f66a7210d79e0df0d4d063c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: df0d0b02efe7e99253b64ba02a5d9e77bb968993
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60410354"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65138360"
 ---
 # <a name="how-to-add-app-roles-in-your-application-and-receive-them-in-the-token"></a>Практическое руководство: Добавление ролей приложения в приложение, зарегистрированное в Azure Active Directory, и их получение в токене
 
@@ -51,7 +51,9 @@ ms.locfileid: "60410354"
 1. Измените манифест приложения. Для этого найдите параметр `appRoles` и добавьте все имеющиеся роли приложения.
 
      > [!NOTE]
-     > Каждое определение роли в этом манифесте должно иметь разные допустимые значения **Guid** для свойства Id. Свойство `"value"` каждой роли должно точно соответствовать строкам, используемым в коде приложения.
+     > Каждое определение роли приложения в этом манифесте должен иметь другой допустимый GUID для `id` свойство. 
+     > 
+     > `value` Свойства определения роли каждого приложения, строки, которые используются в коде приложения должно полностью совпадать. `value` Свойство не может содержать пробелы. В этом случае вы получите ошибку при сохранении манифеста.
      
 1. Сохраните манифест.
 

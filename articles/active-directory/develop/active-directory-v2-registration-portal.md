@@ -18,18 +18,18 @@ ms.author: celested
 ms.reviewer: lenalepa
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b77b5185056329113ee1fd17fa3ed3f364380ca2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 9b77f2a403bd4f410665d00bc69b3b1bcf0c3aaa
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60411221"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65139173"
 ---
 # <a name="app-registration-reference"></a>Справка по регистрации приложений
 Этот документ содержит контекст и описания различных функций, доступных на [портале регистрации приложений](https://apps.dev.microsoft.com/?referrer=https://azure.microsoft.com/).
 
 > [!NOTE]
-> Мы прекращаем поддержку регистрации приложений и управления ими со схождением и Azure AD в [портал регистрации приложений](https://apps.dev.microsoft.com/?referrer=https://azure.microsoft.com/) начала мая 2019 г. Мы рекомендуем управлять существующими приложениями и регистрация новых приложений с помощью [регистрация приложений (Предварительная версия)](https://aka.ms/appregistrations) на портале Azure.
+> Мы прекращаем поддержку регистрации приложений и управления ими со схождением и Azure AD в [портал регистрации приложений](https://apps.dev.microsoft.com/?referrer=https://azure.microsoft.com/) начала мая 2019 г. Мы рекомендуем управлять существующими приложениями и регистрация новых приложений с помощью [регистрация приложений](https://aka.ms/appregistrations) на портале Azure.
 
 ## <a name="my-applications-or-converged-applications"></a>Мои приложения или конвергированные приложения
 Список содержит все приложения, зарегистрированные для использования с конечной точкой Azure AD 2.0. Эти приложения позволяют пользователям с личными учетными записями Майкрософт и рабочими или учебными учетными записями Azure Active Directory выполнять вход. Дополнительные сведения о конечной точке Azure AD 2.0 приведены в [обзоре версии 2.0](active-directory-appmodel-v2-overview.md). Эти приложения можно также интегрировать с конечной точки проверки подлинности учетных записей Microsoft `https://login.live.com`.
