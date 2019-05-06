@@ -40,10 +40,10 @@
       href: best-practices.md
     - name: Блокировка устаревших методов проверки подлинности
       href: block-legacy-authentication.md
-    - name: Управление доступом к Exchange Online и SharePoint Online
-      href: conditional-access-for-exo-and-spo.md
     - name: Перенос классических политик
       href: policy-migration.md
+    - name: Элементы управления сохраняемости браузера и частотой входов
+      href: howto-conditional-access-session-lifetime.md
     - name: Требование доступа из утвержденных клиентских приложений
       href: app-based-conditional-access.md
     - name: Требование политики защиты приложений

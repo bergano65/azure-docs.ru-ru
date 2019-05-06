@@ -129,6 +129,8 @@
           href: platform/activity-log-alerts.md
         - name: Общая схема оповещений
           href: platform/alerts-common-schema.md
+        - name: Правила действий
+          href: platform/alerts-action-rules.md
     - name: Визуализируйте данные
       href: visualizations.md
     - name: Интеграция с партнерскими решениями
@@ -309,6 +311,29 @@
                   href: app/asp-net.md
                 - name: Монитор состояния
                   href: app/monitor-performance-live-website-now.md
+                - name: "Монитор состояния версии\_2"
+                  href: app/status-monitor-v2-overview.md
+                  items:
+                    - name: Приступая к работе
+                      href: app/status-monitor-v2-get-started.md
+                    - name: Подробные инструкции
+                      href: app/status-monitor-v2-detailed-instructions.md
+                    - name: Устранение неполадок и известные проблемы
+                      href: app/status-monitor-v2-troubleshoot.md
+                    - name: API Disable-InstrumentationEngine
+                      href: app/status-monitor-v2-api-disable-instrumentation-engine.md
+                    - name: API Disable-ApplicationInsightsMonitoring
+                      href: app/status-monitor-v2-api-disable-monitoring.md
+                    - name: API Enable-InstrumentationEngine
+                      href: app/status-monitor-v2-api-enable-instrumentation-engine.md
+                    - name: API Enable-ApplicationInsightsMonitoring
+                      href: app/status-monitor-v2-api-enable-monitoring.md
+                    - name: API Get-ApplicationInsightsMonitoringConfig
+                      href: app/status-monitor-v2-api-get-config.md
+                    - name: API Get-ApplicationInsightsMonitoringStatus
+                      href: app/status-monitor-v2-api-get-status.md
+                    - name: API Set-ApplicationInsightsMonitoringConfig
+                      href: app/status-monitor-v2-api-set-config.md
                 - name: Службы Windows
                   href: app/windows-services.md
                 - name: Классические приложения Windows
@@ -560,6 +585,8 @@
               href: insights/containers.md
             - name: Мониторинг приложений Docker
               href: app/docker.md
+            - name: Application Insights для Kubernetes
+              href: app/kubernetes.md
         - name: Мониторинг групп ресурсов
           href: insights/resource-group-insights.md
         - name: Мониторинг баз данных
@@ -684,6 +711,8 @@
               href: platform/metrics-charts.md
             - name: Примеры диаграмм метрик
               href: platform/metric-chart-samples.md
+            - name: Устранение неполадок с диаграммами метрик
+              href: platform/metrics-troubleshoot.md
         - name: Журналы
           items:
             - name: Запросы журнала

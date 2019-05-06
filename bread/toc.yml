@@ -105,6 +105,9 @@
     - name: Служба автоматизации
       tocHref: /azure/automation/
       topicHref: /azure/automation/
+    - name: Служба "Блокчейн Azure"
+      tocHref: /azure/blockchain/service
+      topicHref: /azure/blockchain/service
     - name: Azure Databricks
       tocHref: /azure/azure-databricks/
       topicHref: /azure/azure-databricks/
@@ -145,6 +148,9 @@
     - name: Azure NetApp Files
       tocHref: /azure/azure-netapp-files/
       topicHref: /azure/azure-netapp-files/
+    - name: Решение VMware в Azure от CloudSimple
+      tocHref: /azure/vmware-cloudsimple/
+      topicHref: /azure/vmware-cloudsimple/
     - name: Настройка портала Azure
       tocHref: /azure/azure-portal/
       topicHref: /azure/azure-portal/\
@@ -476,6 +482,10 @@
         - name: Service
           tocHref: /azure/machine-learning/service
           topicHref: /azure/machine-learning/service/
+          items:
+            - name: Справочник по алгоритмам и модулям
+              tocHref: /azure/machine-learning/algorithm-module-reference
+              topicHref: /azure/machine-learning/algorithm-module-reference/module-reference.md
         - name: Студия
           tocHref: /azure/machine-learning/studio
           topicHref: /azure/machine-learning/studio/
@@ -532,6 +542,9 @@
     - name: Центры уведомлений
       tocHref: /azure/notification-hubs/
       topicHref: /azure/notification-hubs/
+    - name: Open Datasets
+      tocHref: /azure/open-datasets/
+      topicHref: /azure/open-datasets/
     - name: Operations Management Suite
       tocHref: /azure/operations-management-suite/
       topicHref: /azure/operations-management-suite/

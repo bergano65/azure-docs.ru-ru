@@ -143,17 +143,6 @@
             - name: Политики индексирования
               displayName: 'consistent, none'
               href: index-policy.md
-        - name: Веб-канал изменений
-          items:
-            - name: Обзор
-              href: change-feed.md
-            - name: Чтение канала изменений
-              href: read-change-feed.md
-            - name: Обработчик канала изменений
-              href: change-feed-processor.md
-            - name: Активация Функций Azure
-              displayName: change feed
-              href: change-feed-functions.md
         - name: Срок жизни
           displayName: 'delete, delete data, ttl'
           href: time-to-live.md
@@ -498,6 +487,9 @@
           href: data-explorer.md
         - name: Управление политиками индексирования
           href: how-to-manage-indexing-policy.md
+        - name: Примеры вложенных запросов SQL
+          displayName: 'subquery, exists'
+          href: how-to-sql-subquery.md
     - name: Канал изменений
       items:
         - name: "Использование нескольких триггеров Azure Cosmos\_DB"

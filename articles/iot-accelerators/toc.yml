@@ -97,7 +97,7 @@
           href: iot-accelerators-remote-monitoring-rbac.md
         - name: Просмотр данных телеметрии
           items:
-            - name: Визуализация данных телеметрии с помощью Power BI
+            - name: "Визуализация телеметрии с помощью Power\_BI"
               href: iot-accelerators-integrate-data-powerbi.md
             - name: Интеграция службы "Аналитика временных рядов Azure" с решением удаленного мониторинга
               href: iot-accelerators-remote-monitoring-integrate-time-series-insights.md
@@ -133,26 +133,22 @@
       items:
         - name: Что собой представляет промышленный Интернет вещей
           href: overview-iot-industrial.md
-        - name: Двойник OPC
-          items:
-            - name: Что собой представляет двойник OPC
-              href: overview-opc-twin.md
-            - name: Архитектура двойника OPC
-              href: overview-opc-twin-architecture.md
-        - name: Хранилище OPC
-          items:
-            - name: Что собой представляет хранилище OPC
-              href: overview-opc-vault.md
-        - name: Подключенная фабрика
-          items:
-            - name: Общие сведения о подключенной фабрике
-              href: iot-accelerators-connected-factory-features.md
-            - name: Архитектура подключенной фабрики
-              href: iot-accelerators-connected-factory-sample-walkthrough.md
+        - name: Что собой представляет двойник OPC
+          href: overview-opc-twin.md
+        - name: Что собой представляет хранилище OPC
+          href: overview-opc-vault.md
+        - name: Общие сведения о подключенной фабрике
+          href: iot-accelerators-connected-factory-features.md
     - name: Быстрое начало работы
       items:
         - name: Пробное использование решения подключенной фабрики
           href: quickstart-connected-factory-deploy.md
+    - name: Основные понятия
+      items:
+        - name: Архитектура двойника OPC
+          href: overview-opc-twin-architecture.md
+        - name: Архитектура подключенной фабрики
+          href: iot-accelerators-connected-factory-sample-walkthrough.md
     - name: Практические руководства
       items:
         - name: Подключенная фабрика

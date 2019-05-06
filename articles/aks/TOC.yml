@@ -7,10 +7,15 @@
 - name: Быстрое начало работы
   expanded: true
   items:
-    - name: Создание кластера AKS с помощью CLI
-      href: kubernetes-walkthrough.md
-    - name: Создание кластера AKS с помощью портала
-      href: kubernetes-walkthrough-portal.md
+    - name: Создание кластера AKS
+      expanded: true
+      items:
+        - name: Использование Azure CLI
+          href: kubernetes-walkthrough.md
+        - name: Использование портала Azure
+          href: kubernetes-walkthrough-portal.md
+        - name: Использование шаблона Resource Manager
+          href: kubernetes-walkthrough-rm-template.md
     - name: Разработка приложений
       expanded: true
       items:
@@ -87,7 +92,7 @@
             - name: Обеспечение безопасности pod
               href: developer-best-practices-pod-security.md
     - name: Квоты и региональные ограничения
-      href: container-service-quotas.md
+      href: quotas-skus-regions.md
     - name: Миграция из ACS в AKS
       href: acs-aks-migration.md
     - name: Поддерживаемая версия Kubernetes

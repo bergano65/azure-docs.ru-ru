@@ -68,6 +68,8 @@
       href: resource-group-delete.md
     - name: Развертывание с помощью Azure Resource Manager и классическая модель развертывания
       href: resource-manager-deployment-model.md
+    - name: Общие атрибуты безопасности Azure
+      href: azure-resource-manager-security-attributes.md
 - name: Практическое руководство
   items:
     - name: Создание шаблонов
@@ -225,6 +227,8 @@
           href: move-support-resources.md
         - name: Поддержка тегов
           href: tag-support.md
+    - name: Поставщики ресурсов по службам
+      href: azure-services-resource-providers.md
     - name: "REST\_— Resource Manager"
       href: /rest/api/resources/
     - name: "REST\_— диспетчер развертывания"

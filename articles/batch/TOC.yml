@@ -49,6 +49,8 @@
       href: batch-pool-vm-sizes.md
     - name: Высокий уровень доступности и аварийное восстановление
       href: high-availability-disaster-recovery.md
+    - name: Переменные среды выполнения задания
+      href: batch-compute-node-environment-variables.md
 - name: Практические руководства
   items:
     - name: Управление учетными записями пакетной службы
@@ -199,8 +201,6 @@
           href: batch-task-complete-event.md
         - name: Событие сбоя выполнения задачи
           href: batch-task-fail-event.md
-    - name: Переменные среды вычислительного узла пакетной службы Azure
-      href: batch-compute-node-environment-variables.md
 - name: Ресурсы
   items:
     - name: Стратегия развития Azure

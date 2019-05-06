@@ -1,7 +1,7 @@
 ---
 title: Индексирование содержимого хранилища таблиц Azure для полнотекстового поиска — Поиск Azure
 description: Вы можете узнать, как индексировать данные в хранилище таблиц Azure с помощью индексатора поиска Azure.
-ms.date: 03/01/2019
+ms.date: 05/02/2019
 author: mgottein
 manager: cgronlun
 ms.author: magottei
@@ -10,12 +10,12 @@ ms.service: search
 ms.devlang: rest-api
 ms.topic: conceptual
 ms.custom: seodec2018
-ms.openlocfilehash: e1b411ab54a5b666849893ba9d246eff85e7e54e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 5f0e7feb52b34a4bd29bef01925bf9ea8f84d7db
+ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60871240"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "65024784"
 ---
 # <a name="index-azure-table-storage-with-azure-search"></a>Индексирование хранилища таблиц Azure с помощью поиска Azure
 В этой статье показано, как использовать поиск Azure для индексирования данных в хранилище таблиц Azure.
@@ -49,7 +49,7 @@ ms.locfileid: "60871240"
 
 Создание источника данных:
 
-    POST https://[service name].search.windows.net/datasources?api-version=2017-11-11
+    POST https://[service name].search.windows.net/datasources?api-version=2019-05-06
     Content-Type: application/json
     api-key: [admin key]
 
@@ -67,7 +67,7 @@ ms.locfileid: "60871240"
 
 Учетные данные для таблицы можно указать одним из описанных ниже способов. 
 
-- **Строка подключения учетной записи хранения с полным доступом**: `DefaultEndpointsProtocol=https;AccountName=<your storage account>;AccountKey=<your account key>` Строку подключения можно получить на портале Azure, перейдя в **колонку учетной записи хранения** и щелкнув **Параметры** > **Ключи** (для классических учетных записей хранения) или **Параметры** > **Ключи доступа** (для учетных записей хранения Azure Resource Manager).
+- **Строка подключения учетной записи хранения с полным доступом**: `DefaultEndpointsProtocol=https;AccountName=<your storage account>;AccountKey=<your account key>` Строку подключения можно получить на портале Azure, перейдя в **колонку учетной записи хранения** >  и щелкнув **Параметры** > **Ключи** (для классических учетных записей хранения) или **Параметры** > **Ключи доступа** (для учетных записей хранения Azure Resource Manager).
 - Строка подключения с **подписанным URL-адресом учетной записи хранения**: `TableEndpoint=https://<your account>.table.core.windows.net/;SharedAccessSignature=?sv=2016-05-31&sig=<the signature>&spr=https&se=<the validity end time>&srt=co&ss=t&sp=rl` Подписанный URL-адрес должен иметь разрешения "Список" и "Чтение" для контейнеров (в данном случае таблиц) и объектов (строк таблицы).
 -  **Подписанный URL-адрес таблицы**: `ContainerSharedAccessUri=https://<your storage account>.table.core.windows.net/<table name>?tn=<table name>&sv=2016-05-31&sig=<the signature>&se=<the validity end time>&sp=r` Подписанный URL-адрес должен иметь разрешения на запрос (чтение) для таблицы.
 
@@ -81,7 +81,7 @@ ms.locfileid: "60871240"
 
 Создание индекса:
 
-    POST https://[service name].search.windows.net/indexes?api-version=2017-11-11
+    POST https://[service name].search.windows.net/indexes?api-version=2019-05-06
     Content-Type: application/json
     api-key: [admin key]
 
@@ -95,12 +95,12 @@ ms.locfileid: "60871240"
 
 Дополнительные сведения о создании индексов см. в статье [Создание индекса](https://docs.microsoft.com/rest/api/searchservice/create-index).
 
-### <a name="step-3-create-an-indexer"></a>Шаг 3. Создать индексатор
+### <a name="step-3-create-an-indexer"></a>Шаг 3. Создание индексатора
 Индексатор соединяет источник данных с целевым индексом поиска и предоставляет расписание для автоматизации обновления данных. 
 
 После создания индекса и источника данных можно создать индексатор:
 
-    POST https://[service name].search.windows.net/indexers?api-version=2017-11-11
+    POST https://[service name].search.windows.net/indexers?api-version=2019-05-06
     Content-Type: application/json
     api-key: [admin key]
 
@@ -133,7 +133,7 @@ ms.locfileid: "60871240"
 
 Чтобы указать, что определенные документы необходимо удалить из индекса, можно использовать стратегию обратимого удаления. Вместо удаления строки добавьте свойство, чтобы указать, что она удалена, и настройте политику обнаружения обратимого удаления в источнике данных. Например, следующая политика считает строку удаленной, если строка имеет свойство `IsDeleted` со значением `"true"`:
 
-    PUT https://[service name].search.windows.net/datasources?api-version=2017-11-11
+    PUT https://[service name].search.windows.net/datasources?api-version=2019-05-06
     Content-Type: application/json
     api-key: [admin key]
 

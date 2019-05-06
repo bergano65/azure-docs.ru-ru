@@ -80,6 +80,8 @@
               href: storage-create-geo-redundant-storage.md
             - name: "2.\_Имитация сбоя в хранилище RA-GRS"
               href: storage-simulate-failure-ragrs-account-app.md
+        - name: Шифрование и расшифровка больших двоичных объектов с помощью Azure Key Vault
+          href: storage-encrypt-decrypt-blobs-key-vault.md
         - name: Поиск неструктурированных данных
           href: storage-unstructured-search.md
     - name: Примеры
@@ -98,6 +100,10 @@
           href: ../common/storage-account-overview.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
         - name: Безопасность
           items:
+            - name: Обзор безопасности
+              href: ../common/storage-security-guide.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+            - name: Шифрование службы хранилища
+              href: ../common/storage-service-encryption.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: Авторизация
               href: ../common/storage-auth.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
               items:
@@ -109,24 +115,10 @@
                   href: ../common/storage-dotnet-shared-access-signature-part-1.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
                 - name: Анонимный доступ к большим двоичным объектам
                   href: storage-manage-access-to-resources.md
-            - name: Руководство по обеспечению безопасности
-              href: ../common/storage-security-guide.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-            - name: Настройка брандмауэров и виртуальных сетей
-              href: ../common/storage-network-security.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-            - name: Шифрование неактивных данных
-              href: ../common/storage-service-encryption.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-            - name: Шифрование при хранении с помощью ключей пользователя
-              href: ../common/storage-service-encryption-customer-managed-keys.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-            - name: Использование Azure CDN для доступа к BLOB-объектам с пользовательскими доменами по протоколу HTTPs
-              href: storage-https-custom-domain-cdn.md
             - name: Неизменяемые большие двоичные объекты
               href: storage-blob-immutable-storage.md
-            - name: Advanced Threat Protection
+            - name: Дополнительная защита от угроз
               href: ../common/storage-advanced-threat-protection.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-            - name: Включение безопасного TLS для клиента службы хранилища Azure
-              href: ../common/storage-security-tls.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-            - name: Требование безопасной передачи
-              href: ../common/storage-require-secure-transfer.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: Общие атрибуты безопасности Azure
               href: ../common/storage-security-attributes.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
         - name: Избыточность данных
@@ -288,7 +280,7 @@
           href: storage-blob-pageblob-overview.md
     - name: Практическое руководство
       items:
-        - name: учетные записи хранения;
+        - name: Управление учетными записями хранения
           items:
             - name: Создание учетной записи хранения блочных BLOB-объектов
               href: storage-blob-create-account-block-blob.md
@@ -296,7 +288,7 @@
               href: ../common/storage-account-manage.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: Обновление учетной записи хранения
               href: ../common/storage-account-upgrade.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-        - name: Безопасность
+        - name: Защищенные данные большого двоичного объекта
           items:
             - name: Авторизация доступа к данным больших двоичных объектов
               items:
@@ -304,16 +296,16 @@
                   items:
                     - name: Microsoft Azure
                       href: ../common/storage-access-blobs-queues-portal.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-                    - name: CLI или PowerShell
+                    - name: PowerShell или Azure CLI
                       href: ../common/storage-auth-aad-script.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
                 - name: Управление правами доступа с помощью RBAC
                   items:
                     - name: Microsoft Azure
                       href: ../common/storage-auth-aad-rbac-portal.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-                    - name: Интерфейс командной строки
-                      href: ../common/storage-auth-aad-rbac-cli.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
                     - name: PowerShell
                       href: ../common/storage-auth-aad-rbac-powershell.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+                    - name: Инфраструктура CLI Azure
+                      href: ../common/storage-auth-aad-rbac-cli.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
                 - name: "Проверка подлинности с помощью Azure\_AD"
                   items:
                     - name: Аутентификация на основе управляемого удостоверения
@@ -323,14 +315,18 @@
                 - name: Авторизация с помощью общего ключа
                   items:
                     - name: Настройте строки подключения
-                      href: ../common/storage-configure-connection-string.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json
+                      href: ../common/storage-configure-connection-string.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
                     - name: Использование REST API службы хранилища Azure
                       href: ../common/storage-rest-api-auth.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-            - name: Настройка брандмауэров и виртуальных сетей
-              href: ../common/storage-network-security.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json
-            - name: Шифрование и расшифровка больших двоичных объектов с помощью Azure Key Vault
-              href: storage-encrypt-decrypt-blobs-key-vault.md
-            - name: шифрования на стороне клиента
+            - name: Настройка управляемых пользователем ключей для шифрования службы
+              items:
+                - name: Microsoft Azure
+                  href: ../common/storage-encryption-keys-portal.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+                - name: PowerShell
+                  href: ../common/storage-encryption-keys-powershell.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+                - name: Инфраструктура CLI Azure
+                  href: ../common/storage-encryption-keys-cli.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+            - name: Настройка шифрования на стороне клиента
               items:
                 - name: .NET
                   href: ../common/storage-client-side-encryption.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
@@ -338,10 +334,14 @@
                   href: ../common/storage-client-side-encryption-java.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
                 - name: Python
                   href: ../common/storage-client-side-encryption-python.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-            - name: Включение безопасного TLS для клиента службы хранилища Azure
-              href: ../common/storage-security-tls.md
-            - name: Требование безопасной передачи
-              href: ../common/storage-require-secure-transfer.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json
+            - name: Настройка безопасности сети
+              items:
+                - name: Настройка брандмауэров и виртуальных сетей
+                  href: ../common/storage-network-security.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+                - name: Требование безопасной передачи
+                  href: ../common/storage-require-secure-transfer.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+                - name: Включение протокола TLS
+                  href: ../common/storage-security-tls.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
         - name: Аварийное восстановление
           items:
             - name: Инициирование отработки отказа учетной записи
@@ -354,6 +354,8 @@
           href: storage-properties-metadata.md
         - name: Размещение статического веб-сайта
           href: storage-blob-static-website.md
+        - name: Сопоставление Azure CDN с личным доменом для доступа по HTTPS
+          href: storage-https-custom-domain-cdn.md
         - name: Настройка личного домена
           href: storage-custom-domain-name.md
         - name: Маршрутизация событий в пользовательскую конечную точку
@@ -557,11 +559,9 @@
           href: data-lake-storage-best-practices.md
         - name: Безопасность
           items:
-            - name: Руководство по обеспечению безопасности аналитики больших данных
-              href: ../common/storage-data-lake-storage-security-guide.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-            - name: Шифрование службы хранилища Azure
-              href: ../common/storage-service-encryption.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-            - name: Контроль доступа
+            - name: Общие сведения о защите службы хранилища
+              href: ../common/storage-security-guide.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+            - name: управление доступом;
               href: data-lake-storage-access-control.md
     - name: Практическое руководство
       items:
@@ -575,16 +575,22 @@
           items:
             - name: Настройка брандмауэров и виртуальных сетей
               href: ../common/storage-network-security.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-            - name: Управление пользовательскими ключами для шифрования службы хранилища Azure
-              href: ../common/storage-service-encryption-customer-managed-keys.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+            - name: Настройка управляемых пользователем ключей для шифрования службы
+              items:
+                - name: Microsoft Azure
+                  href: ../common/storage-encryption-keys-portal.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+                - name: PowerShell
+                  href: ../common/storage-encryption-keys-powershell.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+                - name: Инфраструктура CLI Azure
+                  href: ../common/storage-encryption-keys-cli.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: Управление правами доступа с помощью RBAC
               items:
                 - name: Microsoft Azure
                   href: ../common/storage-auth-aad-rbac-portal.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-                - name: Интерфейс командной строки
-                  href: ../common/storage-auth-aad-rbac-cli.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
                 - name: PowerShell
                   href: ../common/storage-auth-aad-rbac-powershell.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
+                - name: Инфраструктура CLI Azure
+                  href: ../common/storage-auth-aad-rbac-cli.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: Настройка разрешений на уровне файлов и каталогов
               href: ../blobs/data-lake-storage-how-to-set-permissions-storage-explorer.md
         - name: Интеграция со службами Azure

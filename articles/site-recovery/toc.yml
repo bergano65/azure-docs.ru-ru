@@ -93,9 +93,11 @@
           href: vmware-azure-about-disaster-recovery.md
         - name: Часто задаваемые вопросы
           href: vmware-azure-common-questions.md
-        - name: Матрица поддержки Azure "VMware или физический сервер"
+        - name: "Матрица поддержки \"VMware или физический сервер\_— Azure\""
           href: vmware-physical-azure-support-matrix.md
-        - name: Требования к поддержке при развертывании сервера конфигурации
+        - name: О компонентах Site Recovery (настройка/обработка/главный целевой сервер)
+          href: vmware-physical-azure-config-process-server-overview.md
+        - name: Требования к поддержке для серверов конфигурации и обработки
           href: vmware-azure-configuration-server-requirements.md
         - name: "Архитектура: репликация из VMware\_в Azure"
           href: vmware-azure-architecture.md
@@ -113,7 +115,7 @@
           href: hyper-v-azure-architecture.md
     - name: Сведения об аварийном восстановлении физического сервера в Azure
       items:
-        - name: Матрица поддержки Azure "VMware или физический сервер"
+        - name: "Матрица поддержки \"VMware или физический сервер\_— Azure\""
           href: vmware-physical-azure-support-matrix.md
         - name: Архитектура репликация физических серверов в Azure
           href: physical-azure-architecture.md
@@ -197,6 +199,8 @@
               items:
                 - name: Обзор и предварительные требования
                   href: site-recovery-deployment-planner.md
+                - name: Журнал версий Планировщика развертывания
+                  href: site-recovery-deployment-planner-history.md
                 - name: Запуск средства "Планировщик развертывания"
                   href: site-recovery-vmware-deployment-planner-run.md
                 - name: Анализ созданного отчета
@@ -319,6 +323,8 @@
               items:
                 - name: Обзор и предварительные требования
                   href: hyper-v-deployment-planner-overview.md
+                - name: Журнал версий Планировщика развертывания
+                  href: site-recovery-deployment-planner-history.md
                 - name: Запуск средства "Планировщик развертывания"
                   href: hyper-v-deployment-planner-run.md
                 - name: Анализ созданного отчета
@@ -425,10 +431,14 @@
           href: site-recovery-extension-troubleshoot.md
     - name: VMware или физический сервер
       items:
+        - name: Мониторинг серверов обработки
+          href: vmware-physical-azure-monitor-process-server.md
         - name: Устранение неполадок с репликацией VMware — Azure
           href: vmware-azure-troubleshoot-replication.md
         - name: Устранение неполадок с сервером конфигурации
           href: vmware-azure-troubleshoot-configuration-server.md
+        - name: Устранение неполадок с серверами обработки
+          href: vmware-physical-azure-troubleshoot-process-server.md
         - name: Устранение неполадок с принудительной установкой Mobility Service для виртуальных машин VMware или физических серверов
           href: vmware-azure-troubleshoot-push-install.md
         - name: Устранение неполадок с отработкой отказа в Azure

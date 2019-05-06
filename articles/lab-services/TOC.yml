@@ -107,7 +107,7 @@
               href: image-factory-save-distribute-custom-images.md
             - name: Установка политики хранения и выполнение сценариев очистки
               href: image-factory-set-retention-policy-cleanup.md
-        - name: Настройка инфраструктуры DevTest Labs на предприятии
+        - name: Использование DevTest Labs на предприятии
           href: devtest-lab-guidance-prescriptive-adoption.md
           items:
             - name: Эталонная архитектура

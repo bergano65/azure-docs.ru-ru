@@ -60,16 +60,22 @@
     - name: Общие сведения о приеме данных
       displayName: 'pipelines, connectors, plugins, Python, .NET, Java, Node, REST'
       href: ingest-data-overview.md
-    - name: Аналитика временных рядов
-      href: time-series-analysis.md
 - name: Практические руководства
   items:
     - name: Начало работы
       items:
-        - name: Написание запросов
-          href: write-queries.md
         - name: Принятие демонстрационных данных
           href: ingest-sample-data.md
+    - name: Запрос данных
+      items:
+        - name: Написание запросов
+          href: write-queries.md
+        - name: Аналитика временных рядов
+          href: time-series-analysis.md
+        - name: Обнаружение аномалий и прогнозирование
+          href: anomaly-detection.md
+        - name: Машинное обучение
+          href: machine-learning-clustering.md
     - name: управление
       items:
         - name: Управление разрешениями базы данных
@@ -90,6 +96,8 @@
           href: using-metrics.md
     - name: Работа с другими средствами
       items:
+        - name: Соединитель Apache Spark
+          href: spark-connector.md
         - name: Подключение из Databricks с помощью Python
           href: connect-from-databricks.md
         - name: Анализ данных в Jupyter Notebook и Kqlmagic

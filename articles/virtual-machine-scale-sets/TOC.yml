@@ -152,6 +152,8 @@
         - name: Квоты на виртуальные ЦП
           href: ../virtual-machines/windows/quotas.md
           maintainContext: true
+    - name: Вопросы и ответы о масштабируемых наборах
+      href: virtual-machine-scale-sets-faq.md
 - name: Практическое руководство
   items:
     - name: Планирование и проектирование
@@ -183,6 +185,9 @@
               href: virtual-machine-scale-sets-autoscale-portal.md
             - name: Расширенное автомасштабирование
               href: ../azure-monitor/platform/autoscale-virtual-machine-scale-sets.md
+              maintainContext: true
+            - name: Устранение неполадок автомасштабирования
+              href: virtual-machine-scale-sets-troubleshoot.md
         - name: Приложения в масштабируемых наборах
           href: virtual-machine-scale-sets-deploy-app.md
         - name: Расширения в масштабируемых наборах
@@ -199,6 +204,9 @@
               href: virtual-machine-scale-sets-encrypt-disks-ps.md
             - name: Использование Azure CLI
               href: virtual-machine-scale-sets-encrypt-disks-cli.md
+            - name: Шифрование диска с помощью последовательности расширений
+              href: ../security/azure-security-disk-encryption-extension-sequencing.md
+              maintainContext: true
         - name: Работа с большими масштабируемыми наборами
           href: virtual-machine-scale-sets-placement-groups.md
         - name: Преобразование шаблона масштабируемого набора для использования управляемого диска
@@ -238,7 +246,7 @@
           href: virtual-machine-scale-sets-maintenance-notifications.md
     - name: Использование Ansible
       items:
-        - name: Создание и администрирование масштабируемых наборов
+        - name: Создание и администрирование масштабируемого набора
           href: /azure/ansible/ansible-create-configure-vmss
           maintainContext: true
         - name: Развертывание приложений в масштабируемые наборы
@@ -247,14 +255,6 @@
         - name: Автоматическое масштабирование масштабируемого набора
           href: /azure/ansible/ansible-auto-scale-vmss
           maintainContext: true
-    - name: Устранение неполадок
-      items:
-        - name: Autoscale
-          href: virtual-machine-scale-sets-troubleshoot.md
-    - name: Часто задаваемые вопросы
-      items:
-        - name: Вопросы и ответы о масштабируемых наборах
-          href: virtual-machine-scale-sets-faq.md
 - name: Справочные материалы
   items:
     - name: Azure PowerShell

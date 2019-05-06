@@ -61,6 +61,8 @@
           href: logic-apps-scenario-function-sb-trigger.md
         - name: 'Вызов, активация или вкладывание приложений логики'
           href: logic-apps-http-endpoint.md
+        - name: Получение пакетных данных с разбиением на страницы
+          href: logic-apps-exceed-default-page-size-with-pagination.md
         - name: Пакетная обработка сообщений
           href: logic-apps-batch-process-send-receive-messages.md
         - name: Создание определений JSON
@@ -103,11 +105,8 @@
           href: logic-apps-enterprise-integration-b2b.md
         - name: Обмен сообщениями AS2
           href: logic-apps-enterprise-integration-as2.md
-          items:
-            - name: Кодирование AS2
-              href: logic-apps-enterprise-integration-as2-encode.md
-            - name: Декодирование AS2
-              href: logic-apps-enterprise-integration-as2-decode.md
+        - name: Параметры сообщений AS2
+          href: logic-apps-enterprise-integration-as2-message-settings.md
         - name: Обмен сообщениями EDIFACT
           href: logic-apps-enterprise-integration-edifact.md
           items:

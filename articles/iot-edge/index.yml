@@ -43,15 +43,13 @@ sections:
       - type: paragraph
         text: 'Узнайте, как установить и настроить IoT Edge, развернуть модули и использовать службы Azure, например Stream Analytics и Пользовательскую службу визуального распознавания, на пограничных устройствах.'
       - type: list
-        style: unordered
+        style: ordered
         items:
+          - html: Настройка компьютера разработки и сведения о модулях IoT Edge для устройств <a href="/azure/iot-edge/tutorial-develop-for-linux">Linux</a> и <a href="/azure/iot-edge/tutorial-develop-for-windows">Windows</a>.
+          - html: 'Разработка пользовательских модулей кода для устройств Linux на <a href="/azure/iot-edge/tutorial-c-module">C</a>, <a href="/azure/iot-edge/tutorial-csharp-module">C#</a>, <a href="/azure/iot-edge/tutorial-python-module">Python</a>, <a href="/azure/iot-edge/tutorial-node-module">Node.js</a> и <a href="/azure/iot-edge/tutorial-java-module">Java</a>.'
+          - html: 'Разработка настраиваемых модулей кода для устройств Linux на <a href="/azure/iot-edge/tutorial-c-module-windows">C</a> и <a href="/azure/iot-edge/tutorial-csharp-module-windows">C#</a>.'
           - html: <a href="/azure/iot-edge/tutorial-deploy-function">Фильтрация сообщений с помощью службы "Функции Azure"</a>
           - html: '<a href="/azure/iot-edge/tutorial-deploy-stream-analytics">Определение средних значений с помощью решения Azure Stream Analytics, используемого в качестве модуля</a>'
           - html: '<a href="/azure/iot-edge/tutorial-deploy-machine-learning">Оценка данных с помощью службы "Машинное обучение Azure", используемой в качестве модуля</a>'
           - html: <a href="/azure/iot-edge/tutorial-deploy-custom-vision">Классификация изображений с использованием Пользовательской службы визуального распознавания в качестве модуля</a>
-          - html: '<a href="/azure/iot-edge/tutorial-csharp-module">Фильтрация данных с помощью модуля C#</a>'
-          - html: <a href="/azure/iot-edge/tutorial-python-module">Фильтрация данных с помощью модуля Python</a>
-          - html: <a href="/azure/iot-edge/tutorial-node-module">Фильтрация данных с помощью модуля Node.js</a>
-          - html: <a href="/azure/iot-edge/tutorial-java-module">Фильтрация данных с помощью модуля Java</a>
-          - html: <a href="/azure/iot-edge/tutorial-c-module">Фильтрация данных с помощью модуля C</a>
           - html: <a href="/azure/iot-edge/tutorial-store-data-sql-server">Хранение данных в граничной системе с помощью SQL Server</a>

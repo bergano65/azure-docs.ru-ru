@@ -25,7 +25,7 @@
       href: tutorial-custom-images.md
     - name: 5. Высокодоступные виртуальные машины
       href: tutorial-availability-sets.md
-    - name: 6. Создание масштабируемого набора виртуальных машин
+    - name: 6. Создание масштабируемого набора
       href: tutorial-create-vmss.md
     - name: 7. Балансировка нагрузки виртуальных машин
       href: tutorial-load-balancer.md
@@ -219,7 +219,7 @@
               href: ../../active-directory-domain-services/active-directory-ds-join-centos-linux-vm.md
             - name: Ubuntu
               href: ../../active-directory-domain-services/active-directory-ds-join-ubuntu-linux-vm.md
-        - name: Войти с использованием учетных данных Azure Active Directory
+        - name: Вход с использованием учетных данных Azure Active Directory
           href: login-using-aad.md
         - name: Обновления и исправления
           items:
@@ -259,6 +259,8 @@
               href: shared-image-galleries.md
             - name: Создание общих образов с помощью CLI
               href: shared-images.md
+            - name: Microsoft Azure
+              href: shared-images-portal.md
             - name: Устранение неполадок с общими образами
               href: troubleshooting-shared-images.md
         - name: Поиск и использование образов

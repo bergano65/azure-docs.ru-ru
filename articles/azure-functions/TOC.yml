@@ -19,6 +19,8 @@
       href: functions-create-first-java-maven.md
     - name: 'Создание функции: Python'
       href: functions-create-first-function-python.md
+    - name: "Создание функции\_— PowerShell"
+      href: functions-create-first-function-powershell.md
     - name: 'Создание функции: Azure CLI'
       href: functions-create-first-azure-function-azure-cli.md
     - name: 'Создание функции: портал'
@@ -39,7 +41,9 @@
       items:
         - name: Azure Cosmos DB
           href: functions-integrate-store-unstructured-data-cosmosdb.md
-        - name: Хранилище
+        - name: "Хранилище\_— Python"
+          href: functions-add-output-binding-storage-queue-python.md
+        - name: "Хранилище\_— портал"
           href: functions-integrate-storage-queue-output-binding.md
 - name: Учебники
   items:
@@ -100,6 +104,8 @@
           href: functions-reference-node.md
         - name: Java
           href: functions-reference-java.md
+        - name: PowerShell
+          href: functions-reference-powershell.md
         - name: Python
           href: functions-reference-python.md
     - name: Диагностика
@@ -134,6 +140,8 @@
           href: functions-create-maven-eclipse.md
         - name: Создание приложения-функции Linux
           href: create-function-app-linux-app-service-plan.md
+        - name: Отладка локальных функций PowerShell
+          href: functions-debug-powershell-local.md
         - name: Управление подключениями
           href: manage-connections.md
         - name: Обработка ошибок
@@ -148,6 +156,8 @@
       items:
         - name: Непрерывное развертывание
           href: functions-continuous-deployment.md
+        - name: Создание и развертывание с помощью Azure Pipelines
+          href: functions-how-to-azure-devops.md
         - name: Развертывание из ZIP-файла
           href: deployment-zip-push.md
         - name: Запуск из пакета

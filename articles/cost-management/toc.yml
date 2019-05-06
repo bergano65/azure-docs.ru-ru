@@ -34,6 +34,10 @@
           href: assign-access-acm-data.md
         - name: Использование оповещений о затратах
           href: cost-mgt-alerts-monitor-usage-spending.md
+        - name: Установка и настройка интеграции AWS
+          href: aws-integration-set-up-configure.md
+        - name: Управление затратами и использованием AWS
+          href: aws-integration-manage.md
     - name: Справочные материалы
       items:
         - name: REST API Управления затратами Azure

@@ -45,6 +45,8 @@
       href: container-instances-region-availability.md
     - name: Связь с оркестраторами
       href: container-instances-orchestrator-relationship.md
+    - name: Вопросы безопасности
+      href: container-instances-image-security.md
 - name: Практические руководства
   items:
     - name: Развертывание
@@ -69,6 +71,8 @@
           href: container-instances-managed-identity.md
         - name: Использование ресурсов GPU (предварительная версия)
           href: container-instances-gpu.md
+        - name: Включение конечной точки SSL
+          href: container-instances-container-group-ssl.md
     - name: Подключение томов данных
       items:
         - name: Общая папка Azure

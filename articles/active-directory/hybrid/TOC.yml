@@ -186,7 +186,7 @@
           href: how-to-connect-configure-ad-ds-connector-account.md
         - name: "Изменение пароля учетной записи службы Azure\_AD Sync"
           href: how-to-connect-sync-change-serviceacct-pass.md
-        - name: "Изменение учетной записи соединителя Azure\_AD"
+        - name: "Изменение пароля учетной записи соединителя Azure\_AD"
           href: how-to-connect-azureadaccount.md
         - name: "Изменение пароля учетной записи соединителя AD\_DS"
           href: how-to-connect-sync-change-addsacct-pass.md

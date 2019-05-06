@@ -228,6 +228,8 @@
           href: custom-translator/how-to-manage-settings.md
         - name: Перенос из концентратора
           href: custom-translator/how-to-migrate.md
+        - name: Развертывания неподдерживаемых языков
+          href: custom-translator/unsupported-language-deployments.md
     - name: Ресурсы
       items:
         - name: Поддержка языков

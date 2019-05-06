@@ -4,6 +4,8 @@
       href: index.yml
     - name: Быстрое начало работы
       items:
+        - name: Командная разработка
+          href: quickstart-team-development.md
         - name: Java (VS Code и CLI)
           href: quickstart-java.md
         - name: .NET Core (VS Code и CLI)

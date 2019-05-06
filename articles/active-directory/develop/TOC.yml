@@ -14,20 +14,14 @@
         - name: Настройка приложения
           items:
             - name: регистрация приложения;
-              href: quickstart-v1-add-azure-ad-app.md
-            - name: Обновление приложения
-              href: quickstart-v1-update-azure-ad-app.md
-            - name: Удаление приложения
-              href: quickstart-v1-remove-azure-ad-app.md
-            - name: Регистрация приложения (предварительная версия)
               href: quickstart-register-app.md
-            - name: Настройка приложения для доступа к веб-API (предварительная версия)
+            - name: Настройка приложения для доступа к веб-API
               href: quickstart-configure-app-access-web-apis.md
-            - name: Настройка приложения для предоставления веб-API (предварительная версия)
+            - name: Настройка приложения для предоставления веб-API
               href: quickstart-configure-app-expose-web-apis.md
-            - name: 'Изменение учетных записей, поддерживаемых приложением (предварительная версия)'
+            - name: 'Изменение учетных записей, поддерживаемых приложением'
               href: quickstart-modify-supported-accounts.md
-            - name: Удаление приложения (предварительная версия)
+            - name: Удаление приложения
               href: quickstart-remove-app.md
         - name: Одностраничные приложения
           items:
@@ -243,20 +237,14 @@
         - name: Настройка приложения
           items:
             - name: регистрация приложения;
-              href: quickstart-v2-register-an-app.md
-            - name: Обновление приложения
-              href: quickstart-v1-update-azure-ad-app.md
-            - name: Удаление приложения
-              href: quickstart-v1-remove-azure-ad-app.md
-            - name: Регистрация приложения (предварительная версия)
               href: quickstart-register-app.md
-            - name: Настройка приложения для доступа к веб-API (предварительная версия)
+            - name: Настройка приложения для доступа к веб-API
               href: quickstart-configure-app-access-web-apis.md
-            - name: Настройка приложения для предоставления веб-API (предварительная версия)
+            - name: Настройка приложения для предоставления веб-API
               href: quickstart-configure-app-expose-web-apis.md
-            - name: 'Изменение учетных записей, поддерживаемых приложением (предварительная версия)'
+            - name: 'Изменение учетных записей, поддерживаемых приложением'
               href: quickstart-modify-supported-accounts.md
-            - name: Удаление приложения (предварительная версия)
+            - name: Удаление приложения
               href: quickstart-remove-app.md
         - name: Одностраничные приложения
           items:
@@ -350,6 +338,8 @@
               href: active-directory-certificate-credentials.md
         - name: Конфигурация приложений
           items:
+            - name: Руководство по регистрации приложений
+              href: app-registrations-training-guide.md
             - name: Приложения и субъекты-службы
               href: app-objects-and-service-principals.md
             - name: Одно- и мультитенантные приложения

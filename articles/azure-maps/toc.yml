@@ -42,7 +42,7 @@
           href: render-coverage.md
         - name: Наличие информации о маршрутизации
           href: routing-coverage.md
-    - name: Поддерживаемые языки
+    - name: Поддержка локализации
       href: supported-languages.md
     - name: Поддерживаемые стили карт
       href: supported-map-styles.md
@@ -74,11 +74,11 @@
       items:
         - name: Управление картами
           items:
-            - name: Использование элемента управления картой
+            - name: Начало работы с элементами управления веб-картой
               href: how-to-use-map-control.md
             - name: Создание карты
               href: map-create.md
-            - name: Выбор стиля карты
+            - name: Изменение стиля карты
               href: choose-map-style.md
             - name: Добавление элементов управления на карту
               href: map-add-controls.md
@@ -120,8 +120,14 @@
               href: map-route.md
     - name: Разработка с помощью пакета SDK для Android
       items:
-        - name: Как использовать элемент управления картой в Android
+        - name: Начало работы с элементами управления картой Android
           href: how-to-use-android-map-control-library.md
+        - name: Добавление слоя символов
+          href: how-to-add-symbol-to-android-map.md
+        - name: Добавление фигур
+          href: how-to-add-shapes-to-android-map.md
+        - name: Изменение стиля карты
+          href: set-android-map-styles.md
 - name: Справочные материалы
   items:
     - name: Расширения параметров и API

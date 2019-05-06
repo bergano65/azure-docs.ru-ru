@@ -13,28 +13,44 @@
       href: quickstart.md
 - name: Учебники
   items:
-    - name: Фильтрация данных с помощью службы "Функции Azure"
-      href: tutorial-deploy-function.md
-    - name: Определение средних значений с помощью ASA
-      href: tutorial-deploy-stream-analytics.md
-    - name: Оценка данных с помощью Службы машинного обучения Azure
-      href: tutorial-deploy-machine-learning.md
-    - name: Классификация изображений с помощью Пользовательской службы визуального распознавания
-      href: tutorial-deploy-custom-vision.md
-    - name: Локальное хранение данных с помощью SQL
-      href: tutorial-store-data-sql-server.md
-    - name: Разработка модулей пользовательского кода
+    - name: 1. Настройка среды разработки
       items:
+        - name: Разработка для устройств Linux
+          href: tutorial-develop-for-linux.md
+        - name: Разработка для устройств Windows
+          href: tutorial-develop-for-windows.md
+    - name: 2. Разработка модулей пользовательского кода
+      items:
+        - name: C
+          items:
+            - name: Модули C для устройств Linux
+              href: tutorial-c-module.md
+            - name: Модули C для устройств Windows
+              href: tutorial-c-module-windows.md
         - name: 'C#'
-          href: tutorial-csharp-module.md
-        - name: Python
-          href: tutorial-python-module.md
-        - name: Node.js
-          href: tutorial-node-module.md
+          items:
+            - name: 'Модули C# для устройств Linux'
+              href: tutorial-csharp-module.md
+            - name: 'Модули C# для устройств Windows'
+              href: tutorial-csharp-module-windows.md
         - name: Java
           href: tutorial-java-module.md
-        - name: C
-          href: tutorial-c-module.md
+        - name: Node.js
+          href: tutorial-node-module.md
+        - name: Python
+          href: tutorial-python-module.md
+    - name: 3. Развертывание служб Azure как модулей
+      items:
+        - name: Фильтрация данных с помощью службы "Функции Azure"
+          href: tutorial-deploy-function.md
+        - name: Определение средних значений с помощью ASA
+          href: tutorial-deploy-stream-analytics.md
+        - name: Оценка данных с помощью Службы машинного обучения Azure
+          href: tutorial-deploy-machine-learning.md
+        - name: Классификация изображений с помощью Пользовательской службы визуального распознавания
+          href: tutorial-deploy-custom-vision.md
+        - name: Локальное хранение данных с помощью SQL
+          href: tutorial-store-data-sql-server.md
 - name: Основные понятия
   items:
     - name: Среда выполнения IoT Edge

@@ -70,41 +70,10 @@
           href: analysis-services-deploy.md
         - name: "Обновление с помощью REST\_API"
           href: analysis-services-async-refresh.md
-        - name: Моделирование данных в Visual Studio. Руководство по Adventure Works (1400)
-          href: tutorials/aas-adventure-works-tutorial.md
-          items:
-            - name: "1.\_Создание проекта табличной модели"
-              href: tutorials/aas-lesson-1-create-a-new-tabular-model-project.md
-            - name: "2.\_Получение данных"
-              href: tutorials/aas-lesson-2-get-data.md
-            - name: "3.\_Обозначение таблицы дат"
-              href: tutorials/aas-lesson-3-mark-as-date-table.md
-            - name: "4.\_Создание связей"
-              href: tutorials/aas-lesson-4-create-relationships.md
-            - name: "5.\_Создание вычисляемых столбцов"
-              href: tutorials/aas-lesson-5-create-calculated-columns.md
-            - name: "6.\_Создание мер"
-              href: tutorials/aas-lesson-6-create-measures.md
-            - name: "7.\_Создание ключевых показателей эффективности"
-              href: tutorials/aas-lesson-7-create-key-performance-indicators.md
-            - name: "8.\_Создание перспектив"
-              href: tutorials/aas-lesson-8-create-perspectives.md
-            - name: "9.\_Создание иерархий"
-              href: tutorials/aas-lesson-9-create-hierarchies.md
-            - name: "10.\_Создание секций"
-              href: tutorials/aas-lesson-10-create-partitions.md
-            - name: "11.\_Создание ролей"
-              href: tutorials/aas-lesson-11-create-roles.md
-            - name: "12.\_Анализ в Excel"
-              href: tutorials/aas-lesson-12-analyze-in-excel.md
-            - name: "13.\_Развертывание"
-              href: tutorials/aas-lesson-13-deploy.md
-            - name: Дополнительное занятие. Строки детализации
-              href: tutorials/aas-supplemental-lesson-detail-rows.md
-            - name: Дополнительное занятие. Динамическая безопасность
-              href: tutorials/aas-supplemental-lesson-dynamic-security.md
-            - name: Дополнительное занятие. Неоднородные иерархии
-              href: tutorials/aas-supplemental-lesson-ragged-hierarchies.md
+        - name: Обновление с помощью Logic Apps
+          href: analysis-services-refresh-logic-app.md
+        - name: Обновление с помощью службы автоматизации Azure
+          href: analysis-services-refresh-azure-automation.md
     - name: Безопасность
       items:
         - name: Управление пользователями баз данных

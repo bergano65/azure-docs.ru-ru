@@ -1,0 +1,170 @@
+- name: Решение VMware от CloudSimple
+  href: /azure/vmware-cloudsimple
+  items:
+    - name: Обзор
+      items:
+        - name: Решение VMware от CloudSimple
+          href: cloudsimple-vmware-solutions-overview.md
+        - name: Основные понятия об администрировании
+          href: 'https://docs.azure.cloudsimple.com/key-concepts/'
+    - name: Быстрый запуск
+      expanded: true
+      items:
+        - name: Инициализация и приобретение емкости
+          href: quickstart-create-cloudsimple-service.md
+        - name: Настройка среды частного облака
+          href: quickstart-create-private-cloud.md
+        - name: Создание виртуальной машины VMware в частном облаке
+          href: 'https://docs.azure.cloudsimple.com/quickstart-create-private-cloud-vmware-virtual-machine/'
+        - name: Использование виртуальных машин VMware в Azure
+          href: quickstart-create-vmware-virtual-machine.md
+    - name: Основные понятия
+      items:
+        - name: Service
+          href: 'https://docs.azure.cloudsimple.com/cloudsimple-service/'
+        - name: Nodes
+          href: cloudsimple-node.md
+        - name: Частное облако
+          href: cloudsimple-private-cloud.md
+        - name: Виртуальные машины
+          href: cloudsimple-virtual-machines.md
+        - name: Виртуальные локальные сети и подсети
+          href: cloudsimple-vlans-subnets.md
+        - name: Таблицы брандмауэра
+          href: cloudsimple-firewall-tables.md
+        - name: VPN-шлюзы
+          href: cloudsimple-vpn-gateways.md
+        - name: Общедоступный IP-адрес
+          href: cloudsimple-public-ip-address.md
+        - name: Подключение к сети Azure
+          href: cloudsimple-azure-network-connection.md
+        - name: Управление учетными записями
+          href: cloudsimple-account.md
+        - name: Управление действиями
+          href: 'https://docs.azure.cloudsimple.com/cloudsimple-activity/'
+        - name: Использование VMware в частном облаке
+          href: 'https://docs.azure.cloudsimple.com/vmware-components/'
+        - name: Обзор безопасности
+          href: 'https://docs.azure.cloudsimple.com/cloudsimple-security/'
+        - name: Квота на узлы
+          href: 'https://docs.azure.cloudsimple.com/node-quota/'
+        - name: Обслуживание и обновления
+          href: 'https://docs.azure.cloudsimple.com/cloudsimple-maintenance-updates/'
+        - name: Часто задаваемые вопросы
+          href: 'https://docs.azure.cloudsimple.com/cloudsimple-faq/'
+    - name: Учебники
+      items:
+        - name: Включение поставщика ресурсов
+          href: 'https://docs.azure.cloudsimple.com/enable-cloudsimple-service/'
+        - name: Создание службы CloudSimple
+          href: 'https://docs.azure.cloudsimple.com/create-cloudsimple-service/'
+        - name: Доступ к порталу CloudSimple
+          href: 'https://docs.azure.cloudsimple.com/access-cloudsimple-portal/'
+        - name: Управление узлами
+          items:
+            - name: Приобретение узлов
+              href: create-nodes.md
+        - name: Управление ресурсами частного облака
+          items:
+            - name: Создание частного облака
+              href: 'https://docs.azure.cloudsimple.com/create-private-cloud/'
+            - name: Управление частными облаками
+              href: 'https://docs.azure.cloudsimple.com/manage-private-cloud/'
+            - name: Расширение частного облака
+              href: 'https://docs.azure.cloudsimple.com/expand-private-cloud/'
+            - name: Сжатие частного облака
+              href: 'https://docs.azure.cloudsimple.com/shrink-private-cloud/'
+            - name: Просмотр списка стоек частного облака
+              href: 'https://docs.azure.cloudsimple.com/view-cloud-racks/'
+            - name: Сопоставление подписки Azure
+              href: 'https://docs.azure.cloudsimple.com/azure-subscription-mapping/'
+            - name: Эскалация привилегий
+              href: 'https://docs.azure.cloudsimple.com/escalate-private-cloud-privileges/'
+        - name: Мониторинг действия CloudSimple
+          href: 'https://docs.azure.cloudsimple.com/activity/'
+        - name: Настройка сети для частного облака
+          items:
+            - name: Создание и администрирование виртуальных локальных сетей и подсетей
+              href: 'https://docs.azure.cloudsimple.com/create-vlan-subnet/'
+            - name: Настройка таблиц и правил брандмауэра
+              href: 'https://docs.azure.cloudsimple.com/firewall/'
+            - name: Назначение общедоступных IP-адресов
+              href: 'https://docs.azure.cloudsimple.com/public-ips/'
+            - name: Настройка VPN-подключений
+              href: 'https://docs.azure.cloudsimple.com/vpn-gateway/'
+            - name: Получение сведений о кэширующем узле для виртуального сетевого подключения к CloudSimple
+              href: 'https://docs.azure.cloudsimple.com/virtual-network-connection/'
+            - name: Доступ к привилегиям эскалации клиента vSphere для выполнения задач администрирования
+              href: 'https://docs.azure.cloudsimple.com/vsphere-access/'
+        - name: Управление учетными записями портала CloudSimple
+          items:
+            - name: Просмотр сводки об учетной записи
+              href: 'https://docs.azure.cloudsimple.com/account/'
+            - name: Просмотр списка пользователей
+              href: 'https://docs.azure.cloudsimple.com/users/'
+            - name: Просмотр журнала использования
+              href: 'https://docs.azure.cloudsimple.com/usage/'
+            - name: Настройка виртуального сетевого подключения к частному облаку
+              href: 'https://docs.azure.cloudsimple.com/virtual-network-connection/'
+            - name: Изменение профиля пользователя
+              href: 'https://docs.azure.cloudsimple.com/editprofile/'
+        - name: Настройка виртуальных машин VMware для частного облака
+          items:
+            - name: Создание виртуальной машины в Azure
+              href: 'https://docs.azure.cloudsimple.com/azure-create-vm/'
+    - name: Практические руководства
+      items:
+        - name: Защита среды
+          href: 'https://docs.azure.cloudsimple.com/private-cloud-secure/'
+        - name: Управление частным облаком
+          items:
+            - name: Настройка DNS и DHCP рабочей нагрузки
+              href: 'https://docs.azure.cloudsimple.com/dns-dhcp-setup/'
+            - name: "Использование VPN NSX уровня\_2 для миграции"
+              href: 'https://docs.azure.cloudsimple.com/migrate-workloads/#migrating-vms-using-nsx-layer-2-vpn'
+        - name: Сети для частного облака
+          items:
+            - name: VPN-подключение между локальной средой и частным облаком
+              href: 'https://docs.azure.cloudsimple.com/set-up-vpn/'
+            - name: Локальное сетевое подключение с помощью ExpressRoute
+              href: 'https://docs.azure.cloudsimple.com/on-premises-connection/'
+            - name: Виртуальное сетевое подключение Azure с помощью ExpressRoute
+              href: 'https://docs.azure.cloudsimple.com/azure-expressroute-connection/'
+        - name: Платформа VMware
+          items:
+            - name: Обучение модели разрешений частного облака
+              href: 'https://docs.azure.cloudsimple.com/learn-private-cloud-permissions/'
+            - name: Источники удостоверений vCenter
+              href: 'https://docs.azure.cloudsimple.com/set-vcenter-identity/'
+            - name: Использование Шлюза приложений Azure с виртуальными машинами VMware
+              href: 'https://docs.azure.cloudsimple.com/azure-application-gateway/'
+            - name: Использование общедоступной службы Azure Load Balancer с виртуальными машинами VMware
+              href: 'https://docs.azure.cloudsimple.com/load-balancers/'
+            - name: Настройка сервера vCenter для частного облака в качестве конечной точки автоматизации vRealize
+              href: 'https://docs.azure.cloudsimple.com/configure-server-vra-endpoint/'
+            - name: Перенос рабочей нагрузки виртуальных машин в частное облако
+              href: 'https://docs.azure.cloudsimple.com/migrate-workloads/'
+            - name: Обеспечение высокой доступности приложения в VMware в Azure
+              href: 'https://docs.azure.cloudsimple.com/ha-ensuring/'
+        - name: Экосистема VMware
+          items:
+            - name: Решения аварийного восстановления
+              href: 'https://docs.azure.cloudsimple.com/zerto-solutionguide/'
+            - name: Аварийное восстановление с использованием VMware SRM
+              href: 'https://docs.azure.cloudsimple.com/disaster-recovery-srm/'
+            - name: Резервное копирование виртуальных машин рабочей нагрузки
+              href: 'https://docs.azure.cloudsimple.com/veeam/'
+            - name: Руководство по решению VMware Horizon
+              href: 'https://docs.azure.cloudsimple.com/horizon-guide/'
+            - name: Настройка шифрования vSAN для частного облака
+              href: 'https://docs.azure.cloudsimple.com/vsan-encryption/'
+            - name: Развертывание Oracle RAC в частном облаке CloudSimple
+              href: 'https://docs.azure.cloudsimple.com/oracle-rac/'
+        - name: Интеграция основных компонентов Azure
+          items:
+            - name: "Использование источника удостоверений Azure\_AD в vCenter частного облака"
+              href: 'https://docs.azure.cloudsimple.com/azure-ad/'
+            - name: Локальное сетевое подключение с помощью ExpressRoute
+              href: 'https://docs.azure.cloudsimple.com/er-connection/'
+            - name: Виртуальное сетевое подключение Azure с помощью ExpressRoute
+              href: 'https://docs.azure.cloudsimple.com/azure-er-connection/'

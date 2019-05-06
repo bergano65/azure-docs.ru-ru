@@ -5,13 +5,13 @@
   expanded: false
   items:
     - name: Расширенные возможности обнаружения угроз
-      displayName: 'vulnerability, virus, ids, incident'
+      displayName: 'vulnerability, virus, IDs, incident'
       href: azure-threat-detection.md
     - name: Ведение журналов и аудит Azure
       displayName: incident
       href: azure-log-audit.md
     - name: Сетевая безопасность Azure
-      displayName: 'firewall, ssl, vpn, ids, gateway, https, application gateway, azure application gateway, ips, waf'
+      displayName: 'firewall, ssl, vpn, IDs, gateway, https, application gateway, azure application gateway, ips, waf'
       href: abstract-azure-network-security.md
     - name: Безопасность бессерверной платформы Azure
       href: abstract-serverless-platform-security.md
@@ -50,7 +50,7 @@
         - name: Шифрование дисков для виртуальных машин IaaS
           items:
             - name: Общие сведения о шифровании дисков Azure
-              displayName: 'bitlocker, bek'
+              displayName: 'Bitlocker, bek'
               href: azure-security-disk-encryption-overview.md
             - name: Быстрое начало работы
               items:
@@ -141,7 +141,7 @@
           displayName: identity
           href: azure-security-global-admin.md
     - name: Безопасность сети
-      displayName: 'firewall, ssl, vpn, ids, gateway, https, azure application gateway, application gateway, ips, waf'
+      displayName: 'firewall, ssl, vpn, IDs, gateway, https, azure application gateway, application gateway, ips, waf'
       href: security-network-overview.md
       items:
         - name: Рекомендации
@@ -270,6 +270,11 @@
           href: ./blueprints/pcidss-iaaswa-overview.md
         - name: Веб-приложение PaaS
           href: ./blueprints/pcidss-paaswa-overview.md
+    - name: SCCA
+      displayName: 'blueprint, privacy, certifications'
+      items:
+        - name: Безопасная архитектура вычислительных ресурсов Azure
+          href: ./compliance/secure-azure-computing-architecture.md
     - name: Доверительное интернет-соединение
       displayName: 'blueprint, privacy, certifications'
       items:
@@ -327,9 +332,9 @@
         - name: Выпуски
           href: azure-security-threat-modeling-tool-releases.md
           items:
-            - name: "Средство моделирования угроз, выпуск общедоступной версии\_7.1.5091.2\_ — 12.09.2018"
+            - name: "Threat Modeling Tool, общедоступный выпуск\_7.1.5091.2 от 12.09.2018"
               href: azure-security-threat-modeling-tool-releases-71509112.md
-            - name: "Threat Modeling Tool, выпуск обновления\_7.1.51023.1\_— 1.11.2018"
+            - name: "Threat Modeling Tool, выпуск обновления\_7.1.51023.1 от 01.11.2018"
               href: azure-security-threat-modeling-tool-releases-71510231.md
             - name: "Threat Modeling Tool, выпуск обновления\_7.1.60126.1 от 29.01.2019"
               href: azure-security-threat-modeling-tool-releases-71601261.md

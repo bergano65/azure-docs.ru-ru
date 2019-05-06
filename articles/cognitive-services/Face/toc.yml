@@ -45,14 +45,22 @@
           href: Tutorials/FaceAPIinCSharpTutorial.md
         - name: Android
           href: Tutorials/FaceAPIinJavaForAndroidTutorial.md
-- name: Практические руководства
+- name: Основные понятия
   items:
     - name: Обнаружение лиц
-      href: Face-API-How-to-Topics/HowtoDetectFacesinImage.md
+      href: concepts/face-detection.md
     - name: Распознавание лиц
+      href: concepts/face-recognition.md
+- name: Практические руководства
+  items:
+    - name: Распознавание лиц
+      href: Face-API-How-to-Topics/HowtoDetectFacesinImage.md
+    - name: Идентификация лиц
       href: Face-API-How-to-Topics/HowtoIdentifyFacesinImage.md
     - name: Добавление лиц
       href: Face-API-How-to-Topics/how-to-add-faces.md
+    - name: Использование HeadPose для поворота прямоугольника
+      href: Face-API-How-to-Topics/how-to-use-headpose.md
     - name: Указание модели распознавания лиц
       href: Face-API-How-to-Topics/specify-recognition-model.md
     - name: Использование функции для увеличения масштаба
@@ -69,10 +77,6 @@
           href: face-resource-container-config.md
     - name: Использование подключенной службы API распознавания лиц
       href: vs-face-connected-service.md
-- name: Примеры
-  items:
-    - name: Примеры кода
-      href: 'https://azure.microsoft.com/resources/samples/?service=cognitive-services&term=Face'
 - name: Справочные материалы
   items:
     - name: API распознавания лиц
@@ -93,10 +97,10 @@
           href: 'https://github.com/Microsoft/Cognitive-Face-iOS'
 - name: Ресурсы
   items:
-    - name: Глоссарий
-      href: Glossary.md
-    - name: Часто задаваемые вопросы
-      href: FAQ.md
+    - name: Примеры
+      items:
+        - name: Примеры API Распознавания лиц
+          href: 'https://azure.microsoft.com/resources/samples/?service=cognitive-services&term=Face'
     - name: Цены и ограничения
       href: 'https://azure.microsoft.com/pricing/details/cognitive-services/face-api'
     - name: UserVoice
