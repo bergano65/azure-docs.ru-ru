@@ -2,18 +2,19 @@
 title: Создание большого двоичного объекта в службе хранилища Azure с использованием клиентской библиотеки для Node.js версии 2
 description: Создайте учетную запись хранения и контейнер в хранилище объектов (больших двоичных объектов). Затем с помощью клиентской библиотеки Службы хранилища Azure для Node.js версии 2 передайте BLOB-объект в Службу хранилища Azure, скачайте его и перечислите все BLOB-объекты в контейнере.
 services: storage
-author: tamram
+author: mhopkins-msft
 ms.custom: mvc
 ms.service: storage
 ms.topic: conceptual
 ms.date: 02/04/2019
-ms.author: tamram
-ms.openlocfilehash: 182315c705360d254c3bf342cd9c64ffafa0c021
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.author: mhopkins
+ms.reviewer: seguler
+ms.openlocfilehash: 7ca1eacd1add7453833b4b9ad1d4bd0fbef13ca7
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62121544"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65149420"
 ---
 # <a name="how-to-upload-download-and-list-blobs-using-the-client-library-for-nodejs-v2"></a>Отправка, скачивание и перечисление больших двоичных объектов с использованием клиентской библиотеки для Node.js версии 2
 
@@ -129,7 +130,7 @@ const listContainers = async () => {
 
 Размер групп можно настроить с помощью [ListContainersOptions](/javascript/api/azure-storage/azurestorage.services.blob.blobservice.blobservice.listcontaineroptions?view=azure-node-latest). Вызов *listContainersSegmented* возвращает метаданные большого двоичного объекта в виде массива экземпляров [ContainerResult](/javascript/api/azure-storage/azurestorage.services.blob.blobservice.blobservice.containerresult?view=azure-node-latest). Результаты возвращаются в 5000 пакетов увеличения (сегментов). Если в контейнере имеется более чем 5000 больших двоичных объектов, то результаты включают в себя значение для маркера *continuationToken*. Чтобы вывести список последующих сегментов из контейнера больших двоичных объектов, можно передать маркер продолжения обратно в *listContainersSegment* в качестве второго аргумента.
 
-### <a name="create-a-container"></a>Создать контейнер
+### <a name="create-a-container"></a>Создание контейнера
 
 Функция *CreateContainer* вызывает команду [createContainerIfNotExists](/javascript/api/azure-storage/azurestorage.services.blob.blobservice.blobservice?view=azure-node-latest) и задает соответствующий уровень доступа для большого двоичного объекта.
 

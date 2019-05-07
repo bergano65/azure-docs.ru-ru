@@ -2,18 +2,19 @@
 title: Копирование или перемещение данных в службу хранилища Azure с помощью AzCopy v10 | Документация Майкрософт
 description: Используйте программу командной строки AzCopy для перемещения или копирования данных и из BLOB-объектов, data lake и содержимое файла. Копируйте данные в хранилище Azure из локальных файлов, а также внутри учетной записи хранения и из одной такой учетной записи в другую. Легко переносите данные в хранилище Azure.
 services: storage
-author: seguler
+author: normesta
 ms.service: storage
 ms.topic: article
 ms.date: 04/23/2019
-ms.author: seguler
+ms.author: normesta
+ms.reviewer: seguler
 ms.subservice: common
-ms.openlocfilehash: c1de40b6bf3bb4dc6854a11eca92902203d492c3
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: d05cbd30565ced73352736508fc4bcc376985554
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64723184"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65149037"
 ---
 # <a name="transfer-data-with-azcopy-v10"></a>Передача данных с помощью AzCopy версии 10
 

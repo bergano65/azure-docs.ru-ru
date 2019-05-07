@@ -2,18 +2,19 @@
 title: Вывод списка ресурсов службы хранилища Azure с помощью клиентской библиотеки службы хранилища для C++ | Документация Майкрософт
 description: Узнайте, как использовать API-интерфейсов перечисления в клиентской библиотеке для службы хранилища Microsoft Azure для C++ для получения списка контейнеров, больших двоичных объектов, очередей, таблиц и сущностей.
 services: storage
-author: dineshmurthy
+author: mhopkins-msft
 ms.service: storage
 ms.topic: article
 ms.date: 01/23/2017
-ms.author: dineshm
+ms.author: mhopkins
+ms.reviewer: dineshm
 ms.subservice: common
-ms.openlocfilehash: 13ddb4d64908421e999174623003acd2fb24024d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: edf50b97ff25a67b41bad266df9236145f288409
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61483457"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65146880"
 ---
 # <a name="list-azure-storage-resources-in-c"></a>Перечисление ресурсов хранилища Azure в C++
 Операции перечисления необходимы для многих сценариев разработки с использованием хранилища Azure. В этой статье описано, как наиболее эффективно перечислять объекты в хранилище Azure с помощью API-интерфейсов, предоставленных в клиентской библиотеке для службы хранилища Microsoft Azure для C++.
@@ -34,7 +35,7 @@ ms.locfileid: "61483457"
 Каждый из этих методов продемонстрирован с использованием различных перегрузок для разных сценариев.
 
 ## <a name="asynchronous-versus-synchronous"></a>Асинхронный или синхронный
-Так как клиентская библиотека хранилища для C++ основана на [библиотеке C++ REST](https://github.com/Microsoft/cpprestsdk), мы поддерживаем асинхронные операции с использованием [pplx::task](https://microsoft.github.io/cpprestsdk/classpplx_1_1task.html). Пример.
+Так как клиентская библиотека хранилища для C++ основана на [библиотеке C++ REST](https://github.com/Microsoft/cpprestsdk), мы поддерживаем асинхронные операции с использованием [pplx::task](https://microsoft.github.io/cpprestsdk/classpplx_1_1task.html). Например: 
 
 ```cpp
 pplx::task<list_blob_item_segment> list_blobs_segmented_async(continuation_token& token) const;

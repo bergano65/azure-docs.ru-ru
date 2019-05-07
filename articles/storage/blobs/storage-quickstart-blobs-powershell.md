@@ -2,18 +2,18 @@
 title: Краткое руководство Azure. Создание большого двоичного объекта в хранилище объектов с помощью Azure PowerShell | Документация Майкрософт
 description: В рамках этого краткого руководства вы используете Azure PowerShell в хранилище объектов (больших двоичных объектов). отправите большой двоичный объект в службу хранилища Azure, скачаете его и составите список больших двоичных объектов в контейнере с помощью Azure PowerShell.
 services: storage
-author: roygara
+author: tamram
 ms.custom: mvc
 ms.service: storage
 ms.topic: quickstart
 ms.date: 02/14/2019
-ms.author: rogarana
-ms.openlocfilehash: 464f3db86c2b6dc4cfe51c74b224a8da4d512103
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.author: tamram
+ms.openlocfilehash: c0a5f7271628e11dbc8fa8b18b21358923f567cc
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58485600"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65149404"
 ---
 # <a name="quickstart-upload-download-and-list-blobs-by-using-azure-powershell"></a>Краткое руководство. Передача, скачивание и составление списка больших двоичных объектов с помощью Azure PowerShell
 

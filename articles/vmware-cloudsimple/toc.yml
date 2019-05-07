@@ -41,15 +41,15 @@
         - name: Управление учетными записями
           href: cloudsimple-account.md
         - name: Управление действиями
-          href: 'https://docs.azure.cloudsimple.com/cloudsimple-activity/'
+          href: cloudsimple-activity.md
         - name: Использование VMware в частном облаке
-          href: 'https://docs.azure.cloudsimple.com/vmware-components/'
+          href: vmware-components.md
         - name: Обзор безопасности
           href: 'https://docs.azure.cloudsimple.com/cloudsimple-security/'
         - name: Квота на узлы
-          href: 'https://docs.azure.cloudsimple.com/node-quota/'
+          href: node-quota.md
         - name: Обслуживание и обновления
-          href: 'https://docs.azure.cloudsimple.com/cloudsimple-maintenance-updates/'
+          href: cloudsimple-maintenance-updates.md
         - name: Часто задаваемые вопросы
           href: 'https://docs.azure.cloudsimple.com/cloudsimple-faq/'
     - name: Учебники

@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 09/19/2018
 ms.reviewer: olegan
 ms.author: mbullwin
-ms.openlocfilehash: 1a5b6d435dcc82b59c30302f9cd711975864594c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 3957fefb44bd8e4732f74f69d5522bd499100d0b
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60901916"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65149865"
 ---
 # <a name="configuring-the-application-insights-sdk-with-applicationinsightsconfig-or-xml"></a>Настройка пакета SDK для Application Insights с использованием файла ApplicationInsights.config или ApplicationInsights.xml
 Пакет SDK .NET Application Insights состоит из нескольких пакетов NuGet. [Основной пакет](https://www.nuget.org/packages/Microsoft.ApplicationInsights) предоставляет API для отправки телеметрии в Application Insights. [Дополнительные пакеты](https://www.nuget.org/packages?q=Microsoft.ApplicationInsights) предоставляют *модули* и *инициализаторы* телеметрии для автоматического отслеживания телеметрии вашего приложения и его контекста. При настройке файла конфигурации можно включить или отключить модули телеметрии и задать для них параметры.
@@ -79,13 +79,13 @@ ms.locfileid: "60901916"
 * [Application Insights Windows Server](https://www.nuget.org/packages/Microsoft.ApplicationInsights.WindowsServer/) .
 
 ### <a name="eventsource-tracking"></a>Отслеживание EventSource
-`EventSourceTelemetryModule` позволяет настроить отправку событий EventSource в Application Insights в качестве трассировок. Сведения об отслеживании событий EventSource см. в разделе [Использование событий EventSource](../../azure-monitor/app/asp-net-trace-logs.md#using-eventsource-events).
+`EventSourceTelemetryModule` позволяет настроить отправку событий EventSource в Application Insights в качестве трассировок. Сведения об отслеживании событий EventSource см. в разделе [Использование событий EventSource](../../azure-monitor/app/asp-net-trace-logs.md#use-eventsource-events).
 
 * `Microsoft.ApplicationInsights.EventSourceListener.EventSourceTelemetryModule`
 * [Microsoft.ApplicationInsights.EventSourceListener](https://www.nuget.org/packages/Microsoft.ApplicationInsights.EventSourceListener) 
 
 ### <a name="etw-event-tracking"></a>Трассировка событий Windows
-`EtwCollectorTelemetryModule` позволяет настроить отправку событий от поставщиков трассировки событий Windows в Application Insights в качестве трассировок. Сведения об отслеживании событий трассировки событий Windows см. в разделе [Использование событий трассировки событий Windows](../../azure-monitor/app/asp-net-trace-logs.md#using-etw-events).
+`EtwCollectorTelemetryModule` позволяет настроить отправку событий от поставщиков трассировки событий Windows в Application Insights в качестве трассировок. Сведения об отслеживании событий трассировки событий Windows см. в разделе [Использование событий трассировки событий Windows](../../azure-monitor/app/asp-net-trace-logs.md#use-etw-events).
 
 * `Microsoft.ApplicationInsights.EtwCollector.EtwCollectorTelemetryModule`
 * [Microsoft.ApplicationInsights.EtwCollector](https://www.nuget.org/packages/Microsoft.ApplicationInsights.EtwCollector) 

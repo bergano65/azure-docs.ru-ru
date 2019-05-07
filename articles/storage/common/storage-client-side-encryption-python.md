@@ -2,19 +2,20 @@
 title: Шифрование на стороне клиента с помощью Python для службы хранилища Microsoft Azure | Документация Майкрософт
 description: Клиентская библиотека службы хранилища Azure для Python поддерживает шифрование на стороне клиента для обеспечения максимальной защиты ваших приложений службы хранилища Azure.
 services: storage
-author: lakasa
+author: tamram
 ms.service: storage
 ms.devlang: python
 ms.topic: article
 ms.date: 05/11/2017
-ms.author: lakasa
+ms.author: tamram
+ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: ecfd86a7e4a8ef97663cc930906fd909b6f0fae8
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: d04c1e137a190b01554106c041853aa2fd6786d7
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58011117"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65146911"
 ---
 # <a name="client-side-encryption-with-python-for-microsoft-azure-storage"></a>Шифрование на стороне клиента с помощью Python для службы хранилища Microsoft Azure
 [!INCLUDE [storage-selector-client-side-encryption-include](../../../includes/storage-selector-client-side-encryption-include.md)]
@@ -138,7 +139,7 @@ KEK должен реализовывать следующие методы дл
   * Сопоставитель ключа вызывается, если он нужен для получения ключа. Если сопоставитель указан, но он не имеет данных, сопоставимых с идентификатором ключа, возникает ошибка.
   * Если сопоставитель не указан, но указан ключ, ключ используется, если его идентификатор соответствует требуемому идентификатору ключа. Если идентификатор не совпадает, выдается ошибка.
 
-    В статье с примерами шифрования (azure.storage.samples <fix URL>) показан подробный комплексный сценарий для больших двоичных объектов, очередей и таблиц.
+    В примерах шифрования azure.storage.samples демонстрируются подробный сценарий end-to-end для больших двоичных объектов, очередей и таблиц.
       Примеры реализации KEK и сопоставителя ключей предоставлены среди примеров файлов. Это KeyWrapper и KeyResolver, соответственно.
 
 ### <a name="requireencryption-mode"></a>Режим RequireEncryption
