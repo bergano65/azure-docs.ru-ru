@@ -2,18 +2,19 @@
 title: Краткое руководство Azure. Создание очереди в службе хранилища Azure с помощью портала Azure | Документация Майкрософт
 description: В этом руководстве с помощью портала Azure вы создадите очередь, Затем используйте портал Azure, чтобы добавить сообщение, просмотреть свойства сообщения и вывести сообщение из очереди.
 services: storage
-author: tamram
+author: mhopkins-msft
 ms.custom: mvc
 ms.service: storage
 ms.topic: quickstart
 ms.date: 03/06/2019
-ms.author: tamram
-ms.openlocfilehash: 8a5dba5f949d5c20e0fbf752caac4125b8aecd52
-ms.sourcegitcommit: 235cd1c4f003a7f8459b9761a623f000dd9e50ef
+ms.author: mhopkins
+ms.reviewer: cbrooks
+ms.openlocfilehash: 3b355aa2f3fd5e381ca922ada1444dd281fe74ec
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/11/2019
-ms.locfileid: "57726249"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65138275"
 ---
 # <a name="quickstart-create-a-queue-and-add-a-message-with-the-azure-portal"></a>Краткое руководство. Создание очереди и добавление сообщения в нее с помощью портала Azure
 

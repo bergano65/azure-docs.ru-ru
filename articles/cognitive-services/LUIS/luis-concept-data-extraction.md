@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 04/01/2019
 ms.author: diberry
-ms.openlocfilehash: 3bad247263af09462a44e04329e7f911afa3ad5c
-ms.sourcegitcommit: e7d4881105ef17e6f10e8e11043a31262cfcf3b7
+ms.openlocfilehash: 15d6b0d28f926bdb39b35b763b89422cddcccc84
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64867718"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65150686"
 ---
 # <a name="extract-data-from-utterance-text-with-intents-and-entities"></a>Извлечение данных из текста utterance с намерения и сущности
 Служба LUIS дает возможность получать информацию из высказываний на естественном языке пользователя. Информация извлекается таким образом, который позволяет использовать ее программой, приложением или чат-ботом для выполнения определенных действий. В следующих разделах содержатся сведения о данных, возвращаемых из намерений и сущностей, с примерами JSON.
@@ -172,34 +172,6 @@ LUIS предоставляет данные из опубликованной [
 |--|--|--|
 |Простая сущность|`Customer`|`bob jones`|
 
-## <a name="hierarchical-entity-data"></a>Данные иерархической сущности
-
-**Иерархические сущности со временем будет считаться устаревшим. Используйте [сущности роли](luis-concept-roles.md) для определения подтипам сущностей, вместо иерархические сущности.**
-
-[Иерархические](luis-concept-entity-types.md) сущности прошли машинное обучение и могут содержать слово или фразу. Дочерние элементы определяются по контексту. Если вам требуется связь "родители — потомки" с точным текстовым совпадением, используйте сущность [списка](#list-entity-data).
-
-`book 2 tickets to paris`
-
-В предыдущем высказывании сущность `paris` помечена как дочерняя сущность `Location::ToLocation` иерархической сущности `Location`.
-
-Данные, возвращаемые из конечной точки, содержат имя сущности и имя дочерней сущности, обнаруженный текст из высказывания, расположение обнаруженного текста, а также оценку:
-
-```JSON
-"entities": [
-  {
-    "entity": "paris",
-    "type": "Location::ToLocation",
-    "startIndex": 18,
-    "endIndex": 22,
-    "score": 0.6866132
-  }
-]
-```
-
-|Объект данных|Родительский элемент|Дочерний|Value|
-|--|--|--|--|
-|Иерархическая сущность|Location|ToLocation|"paris"|
-
 ## <a name="composite-entity-data"></a>Данные составной сущности
 [Составные](luis-concept-entity-types.md) сущности прошли машинное обучение и могут содержать слово или фразу. Рассмотрим составную сущность предварительно созданных `number` и `Location::ToLocation` со следующим высказыванием:
 
@@ -212,53 +184,54 @@ LUIS предоставляет данные из опубликованной [
 Составные сущности возвращаются в массиве `compositeEntities`, а все сущности в рамках составной возвращаются в массиве `entities`:
 
 ```JSON
-  "entities": [
+
+"entities": [
     {
-      "entity": "paris",
-      "type": "Location::ToLocation",
-      "startIndex": 18,
-      "endIndex": 22,
-      "score": 0.956998169
+    "entity": "2 tickets to cairo",
+    "type": "ticketInfo",
+    "startIndex": 0,
+    "endIndex": 17,
+    "score": 0.67200166
     },
     {
-      "entity": "2",
-      "type": "builtin.number",
-      "startIndex": 5,
-      "endIndex": 5,
-      "resolution": {
+    "entity": "2",
+    "type": "builtin.number",
+    "startIndex": 0,
+    "endIndex": 0,
+    "resolution": {
+        "subtype": "integer",
         "value": "2"
-      }
+    }
     },
     {
-      "entity": "2 tickets to paris",
-      "type": "Order",
-      "startIndex": 5,
-      "endIndex": 22,
-      "score": 0.7714499
+    "entity": "cairo",
+    "type": "builtin.geographyV2",
+    "startIndex": 13,
+    "endIndex": 17
     }
-  ],
-  "compositeEntities": [
+],
+"compositeEntities": [
     {
-      "parentType": "Order",
-      "value": "2 tickets to paris",
-      "children": [
+    "parentType": "ticketInfo",
+    "value": "2 tickets to cairo",
+    "children": [
         {
-          "type": "builtin.number",
-          "value": "2"
+        "type": "builtin.geographyV2",
+        "value": "cairo"
         },
         {
-          "type": "Location::ToLocation",
-          "value": "paris"
+        "type": "builtin.number",
+        "value": "2"
         }
-      ]
+    ]
     }
-  ]
+]
 ```    
 
 |Объект данных|Имя сущности|Value|
 |--|--|--|
 |Предварительно созданная сущность — число|"builtin.number"|"2"|
-|Иерархическая сущность — расположение|"Location::ToLocation"|"paris"|
+|Предварительно созданные сущности - GeographyV2|"Location::ToLocation"|"paris"|
 
 ## <a name="list-entity-data"></a>Данные сущности списка
 
@@ -268,8 +241,8 @@ LUIS предоставляет данные из опубликованной [
 
 |Элемент списка|Синонимы элемента|
 |---|---|
-|Сиэтл;|sea-tac, sea, 98101, 206, +1 |
-|Париж|cdg, roissy, ory, 75001, 1, +33|
+|`Seattle`|`sea-tac`, `sea`, `98101`, `206`, `+1` |
+|`Paris`|`cdg`, `roissy`, `ory`, `75001`, `1`, `+33`|
 
 `book 2 tickets to paris`
 

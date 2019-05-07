@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 04/08/2019
+ms.date: 04/29/2019
 ms.author: jingwang
-ms.openlocfilehash: d04bb965ddf9616aaa01f4c8822ac42aea6dab2d
-ms.sourcegitcommit: e7d4881105ef17e6f10e8e11043a31262cfcf3b7
+ms.openlocfilehash: 8f5a7d3f6300be100feffd23b98bd7dcd8f48148
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64869570"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65150882"
 ---
 # <a name="copy-activity-in-azure-data-factory"></a>Действие копирования в фабрике данных Azure
 
@@ -176,12 +176,14 @@ ms.locfileid: "64869570"
 | dataRead | Размер данных, считанных из источника. | Значение Int64 в **байтах** |
 | dataWritten | Размер данных, записанных в приемник. | Значение Int64 в **байтах** |
 | filesRead | Число файлов, скопированных из хранилища файлов. | Значение Int64 (не единица измерения) |
-| fileScanned | Количество файлов, сканируемых из исходного хранилища файлов. | Значение Int64 (не единица измерения) |
 | filesWritten | Число файлов, скопированных в хранилище файлов. | Значение Int64 (не единица измерения) |
-| rowsCopied | Число скопированных строк (неприменимо для двоичного копирования). | Значение Int64 (не единица измерения) |
+| rowsRead | Число строк, считываемых из источника (неприменимо для двоичного копирования). | Значение Int64 (не единица измерения) |
+| rowsCopied | Количество строк, копируемых в приемник (неприменимо для двоичного копирования). | Значение Int64 (не единица измерения) |
 | rowsSkipped | Число пропущенных несовместимых строк. Эту возможность можно включить, задав свойству enableSkipIncompatibleRow значение true. | Значение Int64 (не единица измерения) |
-| throughput | Отношение, с которым передаются данные. | Число с плавающей запятой (**КБ/с**) |
+| throughput | Отношение, которой передаются данные. | Число с плавающей запятой (**КБ/с**) |
 | copyDuration | Длительность копирования. | Значение Int32 в секундах |
+| sourcePeakConnections | Пиковое число параллельных подключений для источника данных во время копирования. | Значение Int32 |
+| sinkPeakConnections| Пиковое число параллельных подключений в приемник данных во время копирования.| Значение Int32 |
 | sqlDwPolyBase | Если при копировании данных в хранилище данных SQL используется PolyBase. | Boolean |
 | redshiftUnload | Если при копировании данных из Redshift используется команда UNLOAD. | Boolean |
 | hdfsDistcp | Если при копировании данных из HDFS используется DistCp. | Boolean |

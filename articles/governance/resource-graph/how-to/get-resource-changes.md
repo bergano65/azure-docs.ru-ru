@@ -8,12 +8,12 @@ ms.date: 04/20/2019
 ms.topic: conceptual
 ms.service: resource-graph
 manager: carmonm
-ms.openlocfilehash: 0ae85b45dfcd80056316ed5f2099aab4057d24c8
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 81cb5e62c8abc93aa5defb690628c7178fd2a869
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64720344"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65142538"
 ---
 # <a name="get-resource-changes"></a>Получение данных об изменении ресурса
 
@@ -29,7 +29,7 @@ ms.locfileid: "64720344"
 - Сохранение базы данных управления конфигурацией, известный как CMDB актуальном состоянии. Вместо обновления все ресурсы и их полное свойство наборы с заданной частотой, получить только что изменилось.
 - Основные сведения о какие-либо другие свойства могут измениться после ресурса изменилось состояние соответствия. Оценка этих дополнительных свойств можно получить представление о других свойств, которым необходимо управлять с помощью определения политики Azure.
 
-В этой статье показано, как для сбора этой информации с помощью пакета SDK график ресурсов. Чтобы просмотреть эти сведения на портале Azure, см. в разделе Политика Azure [журнал изменений](../../policy/how-to/determine-non-compliance.md#change-history-preview).
+В этой статье показано, как для сбора этой информации с помощью пакета SDK график ресурсов. Чтобы просмотреть эти сведения на портале Azure, см. в разделе Политика Azure [журнал изменений](../../policy/how-to/determine-non-compliance.md#change-history-preview) или журнал действий Azure [журнал изменений](../../../azure-monitor/platform/activity-logs-overview.md#view-change-history).
 
 > [!NOTE]
 > Измените данные в график ресурсов предназначены для свойств Resource Manager. Для отслеживания изменений на виртуальной машине, см. в разделе службы автоматизации Azure [отслеживание изменений](../../../automation/automation-change-tracking.md) или политики Azure [конфигурации гостевых виртуальных машин](../../policy/concepts/guest-configuration.md).

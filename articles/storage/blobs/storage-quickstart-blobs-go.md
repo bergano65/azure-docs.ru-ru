@@ -2,18 +2,19 @@
 title: Краткое руководство Azure. Создание большого двоичного объекта в хранилище объектов с помощью Go | Документация Майкрософт
 description: В рамках этого краткого руководства вы создадите учетную запись хранения и контейнер в хранилище объектов (больших двоичных объектов). Затем используете клиентскую библиотеку службы хранилища для языка Go, чтобы отправить большой двоичный объект в службу хранилища Azure, скачать его и составить список больших двоичных объектов в контейнере.
 services: storage
-author: seguler
+author: mhopkins-msft
 ms.custom: mvc
 ms.service: storage
 ms.topic: quickstart
 ms.date: 11/14/2018
-ms.author: seguler
-ms.openlocfilehash: 69895fff5e1daaf02caec54a6d38052e36ad8d49
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.author: mhopkins
+ms.reviewer: seguler
+ms.openlocfilehash: 5b5d0663166c6889d25c0fdd578aadbac3436931
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57999058"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65152779"
 ---
 # <a name="quickstart-upload-download-and-list-blobs-using-go"></a>Краткое руководство. Отправка, скачивание и составление списка больших двоичных объектов с помощью Go
 

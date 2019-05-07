@@ -10,13 +10,13 @@ ms.service: dms
 ms.workload: data-services
 ms.custom: mvc, tutorial
 ms.topic: article
-ms.date: 04/03/2019
-ms.openlocfilehash: 363377dde6d8f4d5f2e51a223c6315fcb93fe237
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.date: 05/01/2019
+ms.openlocfilehash: ea6e58b4a06b7856aec3ed19643cb312b3547e93
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59797250"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65136705"
 ---
 # <a name="tutorial-migrate-sql-server-to-a-single-database-or-pooled-database-in-azure-sql-database-offline-using-dms"></a>Руководство по Автономная миграция из SQL Server в отдельную базу данных или базу данных в пуле в Базе данных SQL Azure с помощью DMS
 
@@ -179,9 +179,7 @@ Azure Database Migration Service можно использовать для пе
 
     Дополнительные сведения о ценовых категориях и затратах см. на [странице с описанием цен](https://aka.ms/dms-pricing).
 
-    Если вам нужна помощь в выборе подходящей категории Azure Database Migration Service, см. рекомендации в [этой записи блога](https://go.microsoft.com/fwlink/?linkid=861067).  
-
-     ![Настройка параметров экземпляра Database Migration Service](media/tutorial-sql-server-to-azure-sql/dms-settings2.png)
+    ![Настройка параметров экземпляра Database Migration Service](media/tutorial-sql-server-to-azure-sql/dms-settings2.png)
 
 7. Выберите **Создать**, чтобы создать службу.
 

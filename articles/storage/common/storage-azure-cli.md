@@ -2,19 +2,20 @@
 title: Использование интерфейса командной строки Azure со службой хранилища Azure | Документация Майкрософт
 description: Узнайте, как использовать интерфейс командной строки Azure (Azure CLI) для создания учетных записей хранения и управления ими, а также для работы с большими двоичными объектами и файлами Azure в службе хранилища Azure.
 services: storage
-author: roygara
+author: tamram
 ms.service: storage
 ms.devlang: azurecli
 ms.topic: article
 ms.date: 06/02/2017
-ms.author: rogarana
+ms.author: tamram
+ms.reviewer: seguler
 ms.subservice: common
-ms.openlocfilehash: f485f38d4c580937b027bb76d0c34c98f699ed93
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: ea7e4757aac0fccf60a44c70e9de6a63c1ec9498
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61483577"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65147006"
 ---
 # <a name="using-the-azure-cli-with-azure-storage"></a>Использование интерфейса командной строки (CLI) Azure со службой хранилища Azure
 
@@ -29,7 +30,7 @@ ms.locfileid: "61483577"
 ## <a name="prerequisites"></a>Технические условия
 В этом руководстве предполагается, что вам знакомы основные понятия службы хранилища Azure. Также предполагается, что вы можете выполнить требования для создания учетной записи и службы хранилища Azure. Эти требования перечислены ниже.
 
-### <a name="accounts"></a>Учетные записи
+### <a name="accounts"></a>учетные записи;
 * **Учетная запись Azure.** Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/).
 * **Учетная запись хранения**. См. статью [Создание учетной записи хранения](storage-quickstart-create-account.md) в документации [по учетным записям хранения Azure](storage-create-storage-account.md).
 
@@ -233,7 +234,7 @@ export AZURE_STORAGE_CONNECTION_STRING="<connection_string>"
 ## <a name="create-and-manage-blobs"></a>Создание больших двоичных объектов (BLOB-объектов) и управление ими
 Хранилище BLOB-объектов Azure — это служба хранения большого количества неструктурированных данных, таких как текстовые или бинарные файлы, к которым можно получить доступ практически из любой точки мира по протоколу HTTP или HTTPS. В этом разделе предполагается, что вы уже знакомы с понятиями службы хранилища BLOB-объектов Azure. Дополнительные сведения см. в статьях [Приступая к работе с хранилищем BLOB-объектов Azure с помощью .NET](../blobs/storage-dotnet-how-to-use-blobs.md) и [Основные понятия службы BLOB-объектов](/rest/api/storageservices/blob-service-concepts).
 
-### <a name="create-a-container"></a>Создать контейнер
+### <a name="create-a-container"></a>Создание контейнера
 Каждый BLOB-объект в хранилище Azure должен находиться в контейнере. Вы можете создать контейнер с помощью команды `az storage container create`:
 
 ```azurecli

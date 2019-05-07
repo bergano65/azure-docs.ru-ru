@@ -1,5 +1,5 @@
 ---
-title: 'Синхронизация Azure AD Connect:  изменение пароля учетной записи синхронизации | Документация Майкрософт'
+title: 'Синхронизация Azure AD Connect:  Изменение учетной записи службы ADSync | Документация Майкрософт'
 description: В этой статье описывается назначение ключа шифрования и его прерывание после изменения пароля.
 services: active-directory
 keywords: учетная запись службы синхронизации Azure AD, пароль
@@ -13,25 +13,25 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 10/31/2018
+ms.date: 05/02/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 15d0d537a23e21eeda3b284e7ec706cde2b443e7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 077671ab4e964d7641aa3a0f0b435b39117eb6aa
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60241687"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65139392"
 ---
-# <a name="changing-the-azure-ad-connect-sync-service-account-password"></a>Изменение пароля учетной записи Azure AD Connect Sync
-Если вы измените пароль учетной записи для Azure AD Connect Sync, служба синхронизации не сможет правильно запуститься, пока вы не сбросите ключ шифрования и не выполните повторную инициализацию пароля учетной записи для Azure AD Connect. 
+# <a name="changing-the-adsync-service-account-password"></a>Изменение пароля учетной записи службы ADSync
+Если изменить пароль учетной записи службы ADSync, служба синхронизации не будет возможности запуска правильно пока вы сбросите ключ шифрования и повторную инициализацию пароля учетной записи службы ADSync. 
 
-Azure AD Connect входит в состав служб синхронизации. Она использует ключ шифрования для хранения паролей учетных записей служб AD DS и Azure AD.  Эти учетные записи шифруются перед сохранением в базе данных. 
+Как часть служб синхронизации Azure AD Connect использует ключ шифрования для хранения паролей учетной записи соединителя AD DS и учетной записи службы ADSync.  Эти учетные записи шифруются перед сохранением в базе данных. 
 
-Используемый ключ шифрования защищается с помощью [защиты данных Windows (DPAPI)](https://msdn.microsoft.com/library/ms995355.aspx). DPAPI защищает ключ шифрования с помощью **пароля учетной записи для службы синхронизации Azure AD Connect**. 
+Используемый ключ шифрования защищается с помощью [защиты данных Windows (DPAPI)](https://msdn.microsoft.com/library/ms995355.aspx). DPAPI защищает ключ шифрования при помощи **учетной записи службы ADSync**. 
 
-Если вам нужно изменить пароль учетной записи для службы, вы можете использовать процедуры из раздела [прерывание ключа шифрования в службе синхронизации Azure АD Connect](#abandoning-the-azure-ad-connect-sync-encryption-key).  Эти процедуры вам пригодятся и в том случае, когда по какой-либо причине вам понадобится сбросить ключ шифрования.
+Если вам нужно изменить пароль учетной записи службы можно использовать процедуры, описанные в [сброс ключа шифрования учетной записи службы в ADSync](#abandoning-the-adsync-service-account-encryption-key) для выполнения этой задачи.  Эти процедуры вам пригодятся и в том случае, когда по какой-либо причине вам понадобится сбросить ключ шифрования.
 
 ## <a name="issues-that-arise-from-changing-the-password"></a>Проблемы, которые возникают из-за смены пароля
 Есть две вещи, которые необходимо выполнить при изменении пароля учетной записи службы.
@@ -48,9 +48,9 @@ Azure AD Connect входит в состав служб синхронизац
 - Если попытаться запустить службу синхронизации, которая не может получить ключ шифрования, в диспетчере управления службами Windows возникает ошибка "<strong>Windows could not start the Microsoft Azure AD Sync on Local Computer. Дополнительные сведения см. в журнале системных событий. If this is a non-Microsoft service, contact the service vendor, and refer to service-specific error code -21451857952</strong>" (Windows не может запустить синхронизацию Microsoft Azure AD на локальном компьютере. Дополнительные сведения см. в журнале системных событий. Если это не служба корпорации Майкрософт, обратитесь к разработчику и укажите код ошибки для этой службы -21451857952).
 - В средстве просмотра событий Windows, в журнале событий приложений содержит ошибку с **Идентификатором 6028** и сообщение об ошибке *«не может получить ключ шифрования сервера.»*
 
-Чтобы избежать появления этих ошибок, при изменении пароля выполните процедуры, описанные в разделе [Сброс ключа шифрования в службе синхронизации Azure AD Connect](#abandoning-the-azure-ad-connect-sync-encryption-key).
+Чтобы убедиться, что вы не получаете эти ошибки, выполните процедуры, описанные в [сброс ключа шифрования учетной записи службы в ADSync](#abandoning-the-adsync-service-account-encryption-key) при изменении пароля.
  
-## <a name="abandoning-the-azure-ad-connect-sync-encryption-key"></a>Сброс ключа шифрования в службе синхронизации Azure AD Connect
+## <a name="abandoning-the-adsync-service-account-encryption-key"></a>Сброс ключа шифрования учетной записи службы в ADSync
 >[!IMPORTANT]
 >Следующие процедуры применимы только к Azure AD Connect с номером сборки 1.1.443.0 или более ранних версий.
 
@@ -64,9 +64,9 @@ Azure AD Connect входит в состав служб синхронизац
 
 1. [Сброс существующего ключа шифрования](#abandon-the-existing-encryption-key)
 
-2. [Настройка пароля учетной записи для службы AD DS](#provide-the-password-of-the-ad-ds-account)
+2. [Введите пароль учетной записи соединителя AD DS](#provide-the-password-of-the-ad-ds-connector-account)
 
-3. [Повторная инициализация пароля учетной записи синхронизации Azure AD](#reinitialize-the-password-of-the-azure-ad-sync-account)
+3. [Повторная инициализация пароля учетной записи службы ADSync](#reinitialize-the-password-of-the-adsync-service-account)
 
 4. [Запуск службы синхронизации](#start-the-synchronization-service)
 
@@ -80,7 +80,7 @@ Azure AD Connect входит в состав служб синхронизац
 #### <a name="abandon-the-existing-encryption-key"></a>Сброс существующего ключа шифрования
 Чтобы создать новый ключ шифрования, нужно сначала сбросить существующий ключ шифрования.
 
-1. Войдите на сервер Azure AD Connect от имени администратора.
+1. Войдите на сервер Azure AD Connect от имени администратора.
 
 2. Запустите сеанс PowerShell.
 
@@ -90,8 +90,8 @@ Azure AD Connect входит в состав служб синхронизац
 
 ![Служебная программа для ключа шифрования в службе синхронизации Azure AD Connect](./media/how-to-connect-sync-change-serviceacct-pass/key5.png)
 
-#### <a name="provide-the-password-of-the-ad-ds-account"></a>Настройка пароля учетной записи для службы AD DS
-Так как расшифровка существующих паролей, которые хранятся в базе данных, стала невозможной, необходимо предоставить службе синхронизации пароль для учетной записи службы AD DS. Служба синхронизации зашифрует пароли, с помощью нового ключа шифрования.
+#### <a name="provide-the-password-of-the-ad-ds-connector-account"></a>Введите пароль учетной записи соединителя AD DS
+Так как существующие пароли, хранящиеся в базе данных больше не могут быть расшифрованы, необходимо предоставить службе синхронизации пароль этой учетной записи соединителя AD DS. Служба синхронизации зашифрует пароли, с помощью нового ключа шифрования.
 
 1. Запустите Synchronization Service Manager ("Запуск" → "Служба синхронизации").
 </br>![Диспетчер службы синхронизации](./media/how-to-connect-sync-change-serviceacct-pass/startmenu.png)  
@@ -103,7 +103,7 @@ Azure AD Connect входит в состав служб синхронизац
 7. Нажмите кнопку **ОК**, чтобы сохранить новый пароль и закрыть всплывающее диалоговое окно.
 ![Служебная программа для ключа шифрования в службе синхронизации Azure AD Connect](./media/how-to-connect-sync-change-serviceacct-pass/key6.png)
 
-#### <a name="reinitialize-the-password-of-the-azure-ad-sync-account"></a>Повторная инициализация пароля учетной записи синхронизации Azure AD
+#### <a name="reinitialize-the-password-of-the-adsync-service-account"></a>Повторная инициализация пароля учетной записи службы ADSync
 Пароль учетной записи службы Azure AD нельзя напрямую передать в службу синхронизации. Вместо этого нужно использовать командлет **Add-ADSyncAADServiceAccount** для повторной инициализации учетной записи службы Azure AD. Этот командлет сбрасывает пароль учетной записи и передает его в службу синхронизации.
 
 1. Запустите новый сеанс PowerShell на сервере Azure AD Connect.

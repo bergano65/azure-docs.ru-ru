@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: erhopf
-ms.openlocfilehash: 2d56aba6d62d70c482ed1489a09276eeaa11f956
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: 6d602491c66669007ae220c3b8143ce3e805246f
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65025848"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65147988"
 ---
 # <a name="fine-tune-text-to-speech-output"></a>Настроить преобразование текста в речь
 
@@ -43,7 +43,7 @@ ms.locfileid: "65025848"
    * Найдите и выберите **все подписки**.  
    * Выберите **Connect existing subscription** (Подключение к имеющейся подписке).  
      ![Подключение существующей подписки](./media/custom-voice/custom-voice-connect-subscription.png).
-   * Введите ключ подписки служб речи Azure на портале Azure, а затем выберите **добавить**. Ключи подписки доступны на портале Azure на панели управления ресурсами.  Можно также получить ключи из списка подписки на портале голосовой помощник по настройке.
+   * Введите ключ подписки Azure Speech Services, а затем выберите **добавить**. Ключи подписки доступны на портале речи настройки из [странице подписки](https://go.microsoft.com/fwlink/?linkid=2090458). Ключи также можно получить из области управления ресурсами в [портала Azure](https://portal.azure.com/). 
    * Если у вас есть несколько подписок служб речи, который планируется использовать, повторите эти шаги для каждой подписки.
 
 ## <a name="customize-the-text-to-speech-output"></a>Настройка преобразования текста в речь выходные данные

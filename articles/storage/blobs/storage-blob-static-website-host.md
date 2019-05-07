@@ -2,18 +2,19 @@
 title: Руководство. Размещение статического веб-сайта в хранилище BLOB-объектов (служба хранилища Azure)
 description: Узнайте, как настроить учетную запись хранения для размещения статического веб-сайта и развернуть его в службе хранилища Azure.
 services: storage
-author: tamram
+author: normesta
 ms.service: storage
 ms.topic: tutorial
 ms.date: 12/31/2018
-ms.author: tamram
+ms.author: normesta
+ms.reviewer: seguler
 ms.custom: seodec18
-ms.openlocfilehash: eb472465c0d35150f2a13563058905751219411d
-ms.sourcegitcommit: 803e66de6de4a094c6ae9cde7b76f5f4b622a7bb
+ms.openlocfilehash: e3f2dd74d00b36016549cd33d76b866de241d977
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/02/2019
-ms.locfileid: "53976466"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65148479"
 ---
 <!---Customer intent: I want to host files for a static website in Blob storage and access the website from an Azure endpoint.--->
 

@@ -12,12 +12,12 @@ ms.devlang: multiple
 ms.topic: quickstart
 ms.date: 02/22/2019
 ms.author: alkarche
-ms.openlocfilehash: 5fd9f51185b8461269d498b254d9e9d9f4118270
-ms.sourcegitcommit: 8b41b86841456deea26b0941e8ae3fcdb2d5c1e1
+ms.openlocfilehash: 860fedb13e84054e8ba264116be4e452445b7e9b
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57344101"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65143103"
 ---
 # <a name="create-a-function-using-azure-for-students-starter"></a>Создание функции с помощью службы "Начальный набор Microsoft Azure для учащихся"
 
@@ -76,8 +76,6 @@ ms.locfileid: "57344101"
 
 8. Выберите **Перейти к ресурсу** для просмотра нового приложения-функции.
 
-> [!TIP]
-> Если при поиске приложений-функций на портале возникают трудности, попробуйте [добавить приложения-функции в избранное на портале Azure](./functions-how-to-use-azure-function-app-settings.md#favorite).
 Затем создайте функцию в новом приложении-функции.
 
 ## <a name="create-function"></a>Создание функции, активируемой HTTP

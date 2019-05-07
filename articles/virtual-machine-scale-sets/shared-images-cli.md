@@ -13,15 +13,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 09/20/2018
+ms.date: 04/25/2019
 ms.author: akjosh; cynthn
 ms.custom: ''
-ms.openlocfilehash: 2aa1f71d0e8e73ae793fc5396b8b654b9ca875bc
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
-ms.translationtype: HT
+ms.openlocfilehash: 294a4afc138e25ddc70cd4fdec59310664671ae3
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55733558"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65149669"
 ---
 # <a name="create-and-use-shared-images-for-virtual-machine-scale-sets-with-the-azure-cli-20"></a>Создание и использование общих образов для масштабируемых наборов виртуальных машин с помощью Azure CLI 2.0
 
@@ -47,7 +47,7 @@ ms.locfileid: "55733558"
 [!INCLUDE [virtual-machines-common-shared-images-cli](../../includes/virtual-machines-common-shared-images-cli.md)]
 
 ## <a name="create-a-scale-set-from-the-custom-vm-image"></a>Создание масштабируемого набора на основе пользовательского образа виртуальной машины
-Создайте масштабируемый набор с помощью команды [az vmss create](/cli/azure/vmss#az-vmss-create). Вместо образа платформы, например *UbuntuLTS* или *CentOS*, укажите имя своего пользовательского образа виртуальной машины. В следующем примере создается масштабируемый набор с именем *myScaleSet*, использующий пользовательский образ *myImage* из предыдущего шага.
+Создание масштабируемого набора с [ `az vmss create` ](/cli/azure/vmss#az-vmss-create). Вместо образа платформы, например *UbuntuLTS* или *CentOS*, укажите имя своего пользовательского образа виртуальной машины. В следующем примере создается масштабируемый набор с именем *myScaleSet*, использующий пользовательский образ *myImage* из предыдущего шага.
 
 ```azurecli-interactive
 az vmss create \
@@ -72,7 +72,7 @@ az group delete --name myResourceGroup --no-wait --yes
 ```
 
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Вы также можете создать ресурс коллекции общих образов с помощью шаблонов. Существует несколько шаблонов быстрого запуска Azure: 
 

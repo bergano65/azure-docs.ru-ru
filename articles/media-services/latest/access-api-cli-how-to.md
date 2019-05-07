@@ -10,14 +10,14 @@ ms.service: media-services
 ms.workload: ''
 ms.topic: article
 ms.custom: mvc
-ms.date: 04/15/2019
+ms.date: 05/01/2019
 ms.author: juliako
-ms.openlocfilehash: 8374e4c49012a2c49de41001be0fdb30f9151332
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: a27f7597ddc934b925d63507a816ac5816b682d6
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60733510"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65151045"
 ---
 # <a name="access-azure-media-services-api-with-the-azure-cli"></a>Доступ к API Служб мультимедиа Azure с помощью Azure CLI
  
@@ -54,7 +54,11 @@ ms.locfileid: "60733510"
 - [Создание сетки событий с помощью CLI](./scripts/cli-create-event-grid.md)
 - [Публикация ресурса с помощью CLI](./scripts/cli-publish-asset.md)
 - [Фильтрация с помощью CLI](filters-dynamic-manifest-cli-howto.md)
+- [Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/ams?view=azure-cli-latest)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/ams?view=azure-cli-latest)
+Конечная точка потоковой передачи, из которого требуется выполнять потоковую передачу содержимого должна находиться в состоянии выполнения. Следующая команда интерфейса командной строки запускает конечной точки потоковой передачи по умолчанию:
+
+
+`az ams streaming-endpoint start -n default -a <amsaccount> -g <amsResourceGroup>`

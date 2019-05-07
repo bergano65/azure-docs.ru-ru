@@ -7,13 +7,13 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 06/15/2018
-ms.openlocfilehash: b4eced461f798f3cbf3ce968dae59cfb8f1a0363
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.date: 05/02/2019
+ms.openlocfilehash: 1e141aea3b22bfdcb981513f03e595b6c2f15466
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64697618"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65147971"
 ---
 # <a name="analyze-logs-for-apache-kafka-on-hdinsight"></a>Анализ журналов для Apache Kafka в HDInsight
 
@@ -21,25 +21,15 @@ ms.locfileid: "64697618"
 
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../../includes/azure-monitor-log-analytics-rebrand.md)]
 
-[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
-
 ## <a name="enable-azure-monitor-logs-for-apache-kafka"></a>Включить журналы Azure Monitor для Apache Kafka
 
 Действия, чтобы включить журналы Azure Monitor для HDInsight одинаковы для всех кластеров HDInsight. Чтобы узнать, как создать и настроить необходимые службы, воспользуйтесь ссылками ниже.
 
-1. Создание рабочей области Log Analytics. Дополнительные сведения см. в документе [Начало работы с рабочей областью Log Analytics](https://docs.microsoft.com/azure/log-analytics).
+1. Создание рабочей области Log Analytics. Дополнительные сведения см. в разделе [журналы в Azure Monitor](../../azure-monitor/platform/data-platform-logs.md) документа.
 
 2. Создание Kafka в кластере HDInsight. Дополнительные сведения см. в документе [Приступая к работе с Apache Kafka (предварительная версия) в HDInsight](apache-kafka-get-started.md).
 
 3. Настройка кластера Kafka и использовать журналы Azure Monitor. Дополнительные сведения см. в разделе [журналов использования Azure Monitor для мониторинга HDInsight](../hdinsight-hadoop-oms-log-analytics-tutorial.md) документа.
-
-    > [!NOTE]  
-    > Можно также настроить кластер для использования Azure Monitor журналы с помощью `Enable-AzHDInsightOperationsManagementSuite` командлета. Для использования этого командлета требуется указанная ниже информация.
-    >
-    > * Имя кластера HDInsight.
-    > * Идентификатор рабочей области для журналов Azure Monitor. Идентификатор рабочей области можно найти в рабочей области Log Analytics.
-    > * Первичный ключ для подключения к log analytics. Чтобы найти первичный ключ, откройте рабочую область на портале Azure и выберите __Дополнительные параметры__ в меню слева. В разделе "Дополнительные параметры" последовательно выберите __Подключенные источники__>__Серверы с Linux__.
-
 
 > [!IMPORTANT]  
 > Может занять около 20 минут, прежде чем данные будут доступны для журналов Azure Monitor.
@@ -48,38 +38,68 @@ ms.locfileid: "64697618"
 
 1. На [портале Azure](https://portal.azure.com) выберите рабочую область Log Analytics.
 
-2. Выберите __Поиск по журналам__. Здесь можно выполнять поиск данных, собранных из Kafka. Ниже приведены некоторые примеры поисковых запросов:
+2. В меню слева в разделе **Общие**выберите **журналы**. Здесь можно выполнять поиск данных, собранных из Kafka. Введите запрос в окне запроса, а затем выберите **запуска**. Ниже приведены некоторые примеры поисковых запросов:
 
-   * Использование дискового пространства: `Perf | where ObjectName == "Logical Disk" and CounterName == "Free Megabytes" and InstanceName == "_Total" and ((Computer startswith_cs "hn" and Computer contains_cs "-") or (Computer startswith_cs "wn" and Computer contains_cs "-")) | summarize AggregatedValue = avg(CounterValue) by Computer, bin(TimeGenerated, 1h)`
+* Использование дискового пространства:
 
-   * Загрузка ЦП: `Perf | where CounterName == "% Processor Time" and InstanceName == "_Total" and ((Computer startswith_cs "hn" and Computer contains_cs "-") or (Computer startswith_cs "wn" and Computer contains_cs "-")) | summarize AggregatedValue = avg(CounterValue) by Computer, bin(TimeGenerated, 1h)`
+    ```kusto
+    Perf 
+    | where ObjectName == "Logical Disk" and CounterName == "Free Megabytes" and InstanceName == "_Total" and ((Computer startswith_cs "hn" and Computer contains_cs "-") or (Computer startswith_cs "wn" and Computer contains_cs "-")) 
+    | summarize AggregatedValue = avg(CounterValue) by Computer, bin(TimeGenerated, 1h)
+    ```
 
-   * Входящих сообщений в секунду: `metrics_kafka_CL | where ClusterName_s == "your_kafka_cluster_name" and InstanceName_s == "kafka-BrokerTopicMetrics-MessagesInPerSec-Count" | summarize AggregatedValue = avg(kafka_BrokerTopicMetrics_MessagesInPerSec_Count_value_d) by HostName_s, bin(TimeGenerated, 1h)`
+* Загрузка ЦП:
 
-   * Входящих байт в секунду: `metrics_kafka_CL | where HostName_s == "wn0-kafka" and InstanceName_s == "kafka-BrokerTopicMetrics-BytesInPerSec-Count" | summarize AggregatedValue = avg(kafka_BrokerTopicMetrics_BytesInPerSec_Count_value_d) by bin(TimeGenerated, 1h)`
+    ```kusto
+    Perf 
+    | where CounterName == "% Processor Time" and InstanceName == "_Total" and ((Computer startswith_cs "hn" and Computer contains_cs "-") or (Computer startswith_cs "wn" and Computer contains_cs "-")) 
+    | summarize AggregatedValue = avg(CounterValue) by Computer, bin(TimeGenerated, 1h)
+    ```
 
-   * Исходящих байт в секунду: `metrics_kafka_CL | where ClusterName_s == "your_kafka_cluster_name" and InstanceName_s == "kafka-BrokerTopicMetrics-BytesOutPerSec-Count" | summarize AggregatedValue = avg(kafka_BrokerTopicMetrics_BytesOutPerSec_Count_value_d) by bin(TimeGenerated, 1h)`
+* Входящих сообщений в секунду:
 
-     > [!IMPORTANT]  
-     > Замените значения запроса своими сведениями об определенном кластере. Например, для параметра `ClusterName_s` укажите имя кластера. `HostName_s` должно быть присвоено доменное имя рабочего узла в кластере.
+    ```kusto
+    metrics_kafka_CL 
+    | where ClusterName_s == "your_kafka_cluster_name" and InstanceName_s == "kafka-BrokerTopicMetrics-MessagesInPerSec-Count" 
+    | summarize AggregatedValue = avg(kafka_BrokerTopicMetrics_MessagesInPerSec_Count_value_d) by HostName_s, bin(TimeGenerated, 1h)
+    ```
 
-     Кроме того, вы можете ввести `*` для поиска всех типов данных журнала. В настоящее время для запросов доступны следующие журналы:
+* Входящих байт в секунду:
 
-     | Тип журнала | ОПИСАНИЕ |
-     | ---- | ---- |
-     | log\_kafkaserver\_CL | Брокер Kafka, server.log |
-     | log\_kafkacontroller\_CL | Брокер Kafka, controller.log |
-     | metrics\_kafka\_CL | Метрики Kafka JMX |
+    ```kusto
+    metrics_kafka_CL 
+    | where HostName_s == "wn0-kafka" and InstanceName_s == "kafka-BrokerTopicMetrics-BytesInPerSec-Count" 
+    | summarize AggregatedValue = avg(kafka_BrokerTopicMetrics_BytesInPerSec_Count_value_d) by bin(TimeGenerated, 1h)
+    ```
 
-     ![Окно поиска сведений об использовании ЦП](./media/apache-kafka-log-analytics-operations-management/kafka-cpu-usage.png)
+* Исходящих байт в секунду:
+
+    ```kusto
+    metrics_kafka_CL 
+    | where ClusterName_s == "your_kafka_cluster_name" and InstanceName_s == "kafka-BrokerTopicMetrics-BytesOutPerSec-Count" 
+    | summarize AggregatedValue = avg(kafka_BrokerTopicMetrics_BytesOutPerSec_Count_value_d) by bin(TimeGenerated, 1h)
+    ```
+
+    > [!IMPORTANT]  
+    > Замените значения запроса своими сведениями об определенном кластере. Например, для параметра `ClusterName_s` укажите имя кластера. `HostName_s` должно быть присвоено доменное имя рабочего узла в кластере.
+    
+    Кроме того, вы можете ввести `*` для поиска всех типов данных журнала. В настоящее время для запросов доступны следующие журналы:
+    
+    | Тип журнала | ОПИСАНИЕ |
+    | ---- | ---- |
+    | log\_kafkaserver\_CL | Брокер Kafka, server.log |
+    | log\_kafkacontroller\_CL | Брокер Kafka, controller.log |
+    | metrics\_kafka\_CL | Метрики Kafka JMX |
+    
+    ![Окно поиска сведений об использовании ЦП](./media/apache-kafka-log-analytics-operations-management/kafka-cpu-usage.png)
  
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о Azure Monitor, см. в разделе [Обзор Azure Monitor](../../log-analytics/log-analytics-get-started.md) документа.
+Дополнительные сведения о Azure Monitor, см. в разделе [Обзор Azure Monitor](../../log-analytics/log-analytics-get-started.md), и [журналы запросов Azure Monitor для мониторинга кластеров HDInsight](../hdinsight-hadoop-oms-log-analytics-use-queries.md).
 
 Дополнительные сведения о работе с Apache Kafka см. в следующих документах:
 
- * [Зеркальное отображение Apache Kafka в кластерах HDInsight](apache-kafka-mirroring.md)
- * [Повышение уровня масштабируемости Apache Kafka в HDInsight](apache-kafka-scalability.md)
- * [Использование потоковой передачи Apache Spark (DStream) с Apache Kafka](../hdinsight-apache-spark-with-kafka.md)
- * [Использование структурированной потоковой передачи Apache Spark с Apache Kafka](../hdinsight-apache-kafka-spark-structured-streaming.md)
+* [Зеркальное отображение Apache Kafka в кластерах HDInsight](apache-kafka-mirroring.md)
+* [Повышение уровня масштабируемости Apache Kafka в HDInsight](apache-kafka-scalability.md)
+* [Использование потоковой передачи Apache Spark (DStream) с Apache Kafka](../hdinsight-apache-spark-with-kafka.md)
+* [Использование структурированной потоковой передачи Apache Spark с Apache Kafka](../hdinsight-apache-kafka-spark-structured-streaming.md)
