@@ -1,22 +1,22 @@
 ---
-title: Обработка временных ошибок подключения к Базе данных Azure для PostgreSQL
-description: Узнайте, как обрабатывать временные ошибки подключения к Базе данных Azure для PostgreSQL.
-keywords: подключение postgresql,строка подключения,проблемы с подключением, временная ошибка,ошибка подключения
+title: 'Обработки ошибок временного характера подключений для базы данных Azure для PostgreSQL: один сервер'
+description: 'Узнайте, как обрабатывать ошибки временного характера подключений для базы данных Azure для PostgreSQL: один сервер.'
+keywords: postgresql connection,connection string,connectivity issues,transient error,connection error
 author: jan-eng
 ms.author: janeng
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 11/09/2018
-ms.openlocfilehash: 264656da38608026e3f9e866e2184ff55ba102d8
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 5/6/2019
+ms.openlocfilehash: ea90de612dcfb2559b29fbffce8306278beb45b9
+ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60559901"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65073517"
 ---
-# <a name="handling-of-transient-connectivity-errors-for-azure-database-for-postgresql"></a>Обработка временных ошибок подключения к Базе данных Azure для PostgreSQL
+# <a name="handling-transient-connectivity-errors-for-azure-database-for-postgresql---single-server"></a>Обработка ошибок временного характера подключений для базы данных Azure для PostgreSQL: один сервер
 
-В этой статье описывается, как обрабатывать временные ошибки, связанные с подключением к Базе данных Azure для PostgreSQL.
+В этой статье описывается, как для обработки временных ошибок подключения к базе данных Azure для PostgreSQL.
 
 ## <a name="transient-errors"></a>Временные ошибки
 

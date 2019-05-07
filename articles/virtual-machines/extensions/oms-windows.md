@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 03/14/2017
+ms.date: 04/29/2019
 ms.author: roiyz
-ms.openlocfilehash: 7c56b54f2d5be2bd47644e07369120468bb6015e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 2287a0c39a82509e21ff35d8c3786cf1c85b1b24
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61468386"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65142879"
 ---
 # <a name="azure-monitor-virtual-machine-extension-for-windows"></a>Расширение виртуальной машины Azure Monitor для Windows
 
@@ -32,7 +32,10 @@ ms.locfileid: "61468386"
 
 ### <a name="operating-system"></a>Операционная система
 
-Расширение агента Log Analytics для Windows может выполняться на выпусках Windows Server 2008 R2, Windows Server 2012, Windows Server 2012 R2 и Windows Server 2016.
+Расширение агента Log Analytics для Windows поддерживает следующие версии операционной системы Windows:
+
+- Windows Server 2019
+- Windows Server 2008 R2, 2012, 2012 R2, 2016 г., версии 1709 и 1803
 
 ### <a name="azure-security-center"></a>Центр безопасности Azure
 
@@ -43,7 +46,7 @@ ms.locfileid: "61468386"
 
 ## <a name="extension-schema"></a>Схема расширения
 
-В следующем объекте JSON показана схема для расширения агента Log Analytics. Для расширения требуется идентификатор и ключ из целевой рабочей области Log Analytics. Их можно найти в разделе параметров рабочей области на портале Azure. Так как ключ рабочей области должен рассматриваться в качестве конфиденциальных данных, его следует хранить в защищенной конфигурации параметров. Данные защищенных параметров расширения виртуальной машины Azure зашифрованы. Они расшифровываются только на целевой виртуальной машине. Обратите внимание, что в **workspaceId** и **workspaceKey** учитывается регистр знаков.
+В следующем объекте JSON показана схема для расширения агента Log Analytics. Расширение требует идентификатор и ключ из целевой рабочей области Log Analytics. Их можно найти в разделе параметров рабочей области на портале Azure. Так как ключ рабочей области должен рассматриваться в качестве конфиденциальных данных, его следует хранить в защищенной конфигурации параметров. Данные защищенных параметров расширения виртуальной машины Azure зашифрованы. Они расшифровываются только на целевой виртуальной машине. Обратите внимание, что в **workspaceId** и **workspaceKey** учитывается регистр знаков.
 
 ```json
 {
@@ -74,7 +77,7 @@ ms.locfileid: "61468386"
 | ---- | ---- |
 | версия_API | 2015-06-15 |
 | publisher | Microsoft.EnterpriseCloud.Monitoring |
-| тип | MicrosoftMonitoringAgent |
+| Тип | MicrosoftMonitoringAgent |
 | typeHandlerVersion | 1.0 |
 | workspaceID (пример)* | 6f680a37-00c6-41c7-a93f-1437e3462574 |
 | workspaceKey (пример) | z4bU3p1/GrnWpQkky4gdabWXAhbWSTz70hm4m2Xt92XI+rSRgE8qVvRhsGo9TXffbrTahyrwv35W0pOqQAU7uQ== |
@@ -84,6 +87,9 @@ ms.locfileid: "61468386"
 ## <a name="template-deployment"></a>Развертывание шаблона
 
 Расширения виртуальной машины Azure можно развернуть с помощью шаблонов Azure Resource Manager. Для запуска расширения агента Log Analytics во время развертывания шаблона Azure Resource Manager в нем можно использовать схему JSON, описанную в предыдущем разделе. Пример шаблона, включающего в себя расширение виртуальной машины агента Log Analytics, можно найти в [коллекции быстрого запуска Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/201-oms-extension-windows-vm). 
+
+>[!NOTE]
+>Шаблон не поддерживает указание более одного идентификатора рабочей области и ключ рабочей области, если вы хотите настроить агент для отправки отчетов в несколько рабочих областей. Чтобы настроить агент для отправки отчетов в несколько рабочих областей, см. в разделе [Добавление или удаление рабочей области](../../azure-monitor/platform/agent-manage.md#adding-or-removing-a-workspace).  
 
 JSON для расширения виртуальной машины можно вложить в ресурс виртуальной машины или поместить в корень или на верхний уровень JSON-файла шаблона Resource Manager. Размещение JSON влияет на значения имени и типа ресурса. Дополнительные сведения см. в разделе [Указание имени и типа дочернего ресурса в шаблоне Resource Manager](../../azure-resource-manager/resource-group-authoring-templates.md#child-resources). 
 

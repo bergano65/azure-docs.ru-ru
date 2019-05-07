@@ -15,12 +15,12 @@ ms.date: 04/25/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: it-pro
-ms.openlocfilehash: 36a98ea52ea48c9828ca5857dc480742632056fb
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: ce23b891decd20db239e653702533ac7af21b980
+ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64689864"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65073343"
 ---
 # <a name="built-in-roles-for-azure-resources"></a>Встроенные роли для ресурсов Azure
 
@@ -74,6 +74,7 @@ ms.locfileid: "64689864"
 | [Модуль чтения данных Cognitive Services (Предварительная версия)](#cognitive-services-data-reader-preview) | Позволяет считывать данные Cognitive Services. |
 | [Пользователь служб Cognitive Services](#cognitive-services-user) | Позволяет создавать и читать список ключей служб Cognitive Services. |
 | [Роль читателя учетных записей Cosmos DB](#cosmos-db-account-reader-role) | Позволяет считывать данные учетных записей Azure Cosmos DB. Сведения об управлении учетными записями Azure Cosmos DB см. в разделе [Участник учетной записи DocumentDB](#documentdb-account-contributor). |
+| [Оператор Cosmos DB](#cosmos-db-operator) | Позволяет управлять учетными записями Azure Cosmos DB, но не на доступ к данным в них. Запрещает доступ к ключам учетной записи и строки подключения. |
 | [CosmosBackupOperator](#cosmosbackupoperator) | Позволяет отправлять запрос на восстановление контейнера или базы данных Cosmos DB для учетной записи. |
 | [Участник службы "Управление затратами"](#cost-management-contributor) | Позволяет просматривать расходы и управлять конфигурацией затрат (например, бюджеты, экспорты) |
 | [Читатель службы "Управление затратами"](#cost-management-reader) | Позволяет просматривать данные о расходах и конфигурации (например, бюджеты, экспорты) |
@@ -1080,6 +1081,30 @@ ms.locfileid: "64689864"
 > | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
 > | **NotActions** |  |
 > | *Нет* |  |
+> | **Действия с данными** |  |
+> | *Нет* |  |
+> | **NotDataActions** |  |
+> | *Нет* |  |
+
+## <a name="cosmos-db-operator"></a>Оператор Cosmos DB
+> [!div class="mx-tableFixed"]
+> | | |
+> | --- | --- |
+> | **Описание** | Позволяет управлять учетными записями Azure Cosmos DB, но не на доступ к данным в них. Запрещает доступ к ключам учетной записи и строки подключения. |
+> | **Id** | 230815da-be43-4aae-9cb4-875f7bd000aa |
+> | **Действия** |  |
+> | Microsoft.DocumentDb/databaseAccounts/* |  |
+> | Microsoft.Insights/alertRules/* | Создание правил оповещения Insights и управление ими |
+> | Microsoft.Authorization/*/read | Чтение ролей и назначений ролей |
+> | Microsoft.ResourceHealth/availabilityStatuses/read | Получает состояния доступности для всех ресурсов в указанной области |
+> | Microsoft.Resources/deployments/* | Создание развертываний группы ресурсов и управление ими |
+> | Microsoft.Resources/subscriptions/resourceGroups/read | Получает или перечисляет группы ресурсов. |
+> | Microsoft.Support/* | Создание запросов в службу поддержки и управление ими |
+> | **NotActions** |  |
+> | Microsoft.DocumentDB/databaseAccounts/readonlyKeys/* |  |
+> | Microsoft.DocumentDB/databaseAccounts/regenerateKey/* |  |
+> | Microsoft.DocumentDB/databaseAccounts/listKeys/* |  |
+> | Microsoft.DocumentDB/databaseAccounts/listConnectionStrings/* |  |
 > | **Действия с данными** |  |
 > | *Нет* |  |
 > | **NotDataActions** |  |

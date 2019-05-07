@@ -6,12 +6,12 @@ ms.author: mjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 03/18/2019
-ms.openlocfilehash: 70ead36e20861026e08e864f438071948c526844
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: b90e495e0901c0caa14d9451f365e17f6c075e2b
+ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60889052"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65070805"
 ---
 # <a name="global-data-distribution-with-azure-cosmos-db---overview"></a>Общие сведения о глобальном распределении данных с помощью Azure Cosmos DB
 
@@ -51,6 +51,6 @@ Azure Cosmos DB — это глобально распределенная сл
 
 * [Глобальное распределение (взгляд изнутри)](global-dist-under-the-hood.md)
 * [Настройка нескольких источников в приложениях в Azure Cosmos DB](how-to-multi-master.md)
-* [Настройка клиентов для поддержки нескольких веб-сайтов](how-to-manage-database-account.md#configure-clients-for-multi-homing)
+* [Настройка клиентов для поддержки нескольких веб-сайтов](how-to-manage-database-account.md#configure-multiple-write-regions)
 * [Добавление и удаление регионов из учетной записи Azure Cosmos DB](how-to-manage-database-account.md#addremove-regions-from-your-database-account)
 * [Создание настраиваемой политики разрешения конфликтов для учетных записей API SQL](how-to-manage-conflicts.md#create-a-custom-conflict-resolution-policy)

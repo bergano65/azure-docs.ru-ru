@@ -8,12 +8,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 4/16/2019
 ms.author: yoafr
-ms.openlocfilehash: 392782310d8bc3b38a3dd1349cb1760ca287acd1
-ms.sourcegitcommit: 2c09af866f6cc3b2169e84100daea0aac9fc7fd0
+ms.openlocfilehash: ac677a7f9586dbe893cbcbc480564aceac0149a0
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64875587"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65147926"
 ---
 # <a name="retirement-of-security-center-features-july-2019"></a>Прекращении работы функции центра безопасности (июля 2019 г.)
 
@@ -155,7 +155,7 @@ ms.locfileid: "64875587"
 
 ### <a name="edit-security-configurations---new-experience"></a>Изменение конфигураций безопасности - новые возможности
 
-Центр безопасности будет поддерживать [в гостевой агент](https://docs.microsoft.com/azure/governance/policy/concepts/guest-configuration) в ближайшем будущем, позволяя богаче набор функций — включая поддержку для дополнительных операционных систем и интеграции с конфигурацией гостевой политикам Azure (в гостевой системе политики). Кроме того, это позволит обеспечить возможность управления в масштабе и автоматически применять новые ресурсы.
+Центр безопасности будет поддерживать [конфигурации гостевого агента](https://docs.microsoft.com/azure/governance/policy/concepts/guest-configuration) в ближайшем будущем, позволяя богаче набор функций - поддержку для дополнительных операционных систем и интеграция с гостевой конфигурации с помощью политики Azure (включая политики в гостевой системе). Кроме того, это позволит обеспечить возможность управления в масштабе и автоматически применять новые ресурсы.
 
 ## Безопасность и аудит панель мониторинга (изначально используется на портале OMS) для рабочих областей Log Analytics<a name="menu_securityomsdashboard"></a>
 

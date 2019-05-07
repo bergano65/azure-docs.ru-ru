@@ -1,23 +1,23 @@
 ---
-title: Основные понятия работы со службой "База данных Azure для PostgreSQL"
-description: В этой статье приведены советы и рекомендации по настройке серверов службы "База данных Azure для PostgreSQL" и управлению ими.
+title: 'Основные понятия сервера в базе данных Azure для PostgreSQL: один сервер'
+description: 'В этой статье приведены рекомендации и указания по настройке и управление базой данных Azure для PostgreSQL: один сервер.'
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 11/07/2018
-ms.openlocfilehash: a5b6db9f4bfbe9a11119270e9236580b41fae8c7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 5/6/2019
+ms.openlocfilehash: bc135e58d0fbabc809f3718915e9f4e35b8ed875
+ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60422105"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65067158"
 ---
-# <a name="azure-database-for-postgresql-servers"></a>Серверы службы "База данных Azure для PostgreSQL"
-В этой статье приведены рекомендации и указания по работе с серверами базы данных Azure для PostgreSQL.
+# <a name="azure-database-for-postgresql---single-server"></a>База данных Azure для PostgreSQL — один сервер
+В этой статье приведены рекомендации и указания по работе с базой данных Azure для PostgreSQL: один сервер.
 
 ## <a name="what-is-an-azure-database-for-postgresql-server"></a>Что такое сервер базы данных Azure для PostgreSQL?
-Сервер базы данных Azure для PostgreSQL является центральной точкой администрирования нескольких баз данных. Подобная серверная конструкция PostgreSQL может быть вам знакома по работе в локальной среде. В частности, служба PostgreSQL является управляемой, предоставляет гарантии производительности, обеспечивает доступ и функциональность на уровне сервера.
+Сервер в базе данных Azure для PostgreSQL — вариант развертывания одного сервера является центральной точкой администрирования нескольких баз данных. Подобная серверная конструкция PostgreSQL может быть вам знакома по работе в локальной среде. В частности, служба PostgreSQL является управляемой, предоставляет гарантии производительности, обеспечивает доступ и функциональность на уровне сервера.
 
 Сервер базы данных Azure для PostgreSQL:
 

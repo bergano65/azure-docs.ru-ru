@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 04/16/2019
+ms.date: 05/07/2019
 ms.author: diberry
-ms.openlocfilehash: 93803a7d885bb68c1d5d6637eaf90fb090dabeb2
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.openlocfilehash: 7c3b93db18cb8e2660118927da47ffe95abb900f
+ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60000272"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65073005"
 ---
 # <a name="install-and-run-luis-docker-containers"></a>Установка и запуск контейнеров Docker в LUIS
  
@@ -271,7 +271,7 @@ ApiKey={ENDPOINT_KEY}
 
 |Параметр запроса|type|Назначение|
 |--|--|--|
-|`q`|строка|Фраза пользователя.|
+|`q`|string|Фраза пользователя.|
 |`timezoneOffset`|number|Параметр timezoneOffset позволяет [изменить часовой пояс](luis-concept-data-alteration.md#change-time-zone-of-prebuilt-datetimev2-entity), используемый предварительно созданной сущностью datetimeV2.|
 |`verbose`|Логическое|Возвращает все намерения и их оценки, если задано значение true. По умолчанию задано значение false, при котором возвращается только верхнее намерение.|
 |`staging`|Логическое|Возвращает запрос из результатов промежуточной среды, если задано значение true. |
@@ -337,19 +337,28 @@ curl -X GET \
 
 Дополнительные сведения об этих параметрах см. в статье [Настройка контейнеров](luis-container-configuration.md).
 
-## <a name="unsupported-dependencies"></a>Неподдерживаемые зависимости
+## <a name="supported-dependencies-for-latest-container"></a>Поддерживается зависимости для `latest` контейнера
+
+Последний контейнер, выпущена 2019 / / сборки, будет поддерживать:
+
+* Проверка орфографии Bing: запросы к конечной точке прогнозирующего запроса с `&spellCheck=true&bing-spell-check-subscription-key={bingKey}` параметры строки запроса. Используйте [проверки орфографии Bing версии 7 учебника](luis-tutorial-bing-spellcheck.md) для получения дополнительных сведений. Если эта функция используется, контейнер отправляет utterance в ресурс версии 7 проверки орфографии Bing.
+* [Новый предварительно созданных доменов](luis-reference-prebuilt-domains.md): эти домены, ориентированному на интересы предприятия включают сущности, пример фразы и шаблоны. Расширьте эти домены в собственных целях. 
+
+<a name="unsupported-dependencies"></a>
+
+## <a name="unsupported-dependencies-for-latest-container"></a>Неподдерживаемый зависимости для `latest` контейнера
+
+Если приложением LUIS содержит неподдерживаемый зависимости, вы не сможете [экспорта для контейнера](#export-packaged-app-from-luis) пока вы не удалите неподдерживаемые функции. При попытке экспортировать для контейнера на портале LUIS сообщает о неподдерживаемых функций, которые необходимо удалить.
 
 Приложение LUIS можно использовать, если оно **не содержит** следующие зависимости:
 
 Неподдерживаемые конфигурации приложения|Сведения|
 |--|--|
-|Неподдерживаемые языки и региональные параметры контейнеров| Немецкий (de-DE)<br>Нидерландский (nl-NL)<br>Японский (ja-JP)<br>|
-|Неподдерживаемые области|Предварительно созданные области, включая намерения и сущности в них|
+|Неподдерживаемые языки и региональные параметры контейнеров| Нидерландский (nl-NL)<br>Японский (ja-JP)<br>Немецкий поддерживается только с [1.0.1 лексического анализатора или более поздней версии](luis-language-support.md#custom-tokenizer-versions).|
 |Неподдерживаемые сущности для всех языков и региональных параметров|Предварительно созданная сущность [KeyPhrase](https://docs.microsoft.com/azure/cognitive-services/luis/luis-reference-prebuilt-keyphrase) для всех языков и региональных параметров|
 |Неподдерживаемые сущности для языка и региональных параметров "Английский (en-US)"|Предварительно созданные сущности [GeographyV2](https://docs.microsoft.com/azure/cognitive-services/luis/luis-reference-prebuilt-geographyv2)|
 |Подготовка речи|Внешние зависимости не поддерживаются в контейнере.|
 |Анализ мнений|Внешние зависимости не поддерживаются в контейнере.|
-|Проверка орфографии Bing|Внешние зависимости не поддерживаются в контейнере.|
 
 ## <a name="summary"></a>Сводка
 

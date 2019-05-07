@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: travisw
-ms.openlocfilehash: 16e4bcbb1514cfd5bbddc22b663d636292095231
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: 8427417c9b579c7dfa21f834ce1ca77099159eb2
+ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65025900"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65072609"
 ---
 # <a name="voice-first-virtual-assistants-preview-frequently-asked-questions"></a>Голоса с начала виртуального помощники предварительной версии. Часто задаваемые вопросы
 
@@ -29,7 +29,7 @@ ms.locfileid: "65025900"
 
 **Вопрос. Как начать работу?**
 
-**Ответ.** Лучший способ начинается с создания виртуальные помощники voice-first — начать с [Создание основные программы-робота, Bot Framework](https://docs.microsoft.com/azure/bot-service/bot-builder-tutorial-basic-deploy?view=azure-bot-service-4.0). Подключите ботом [канала прямой линии речи](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-directlinespeech.md).
+**Ответ.** Лучший способ начинается с создания виртуальные помощники voice-first — начать с [Создание основные программы-робота, Bot Framework](https://docs.microsoft.com/azure/bot-service/bot-builder-tutorial-basic-deploy?view=azure-bot-service-4.0). Подключите ботом [канала прямой линии речи](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-directlinespeech).
 
 ## <a name="debugging"></a>Отладка
 
@@ -41,7 +41,7 @@ ms.locfileid: "65025900"
 
 **Вопрос. Вернуть распознавания текста из речи прямой линии, но я вижу ошибку "1011" и ничего из моей программ-роботов. Почему?**
 
-**Ответ.** Эта ошибка указывает на проблему между программ-роботов и прямой линии речи. Убедитесь, что [подключения канала прямой линии речи](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-directlinespeech.md), [добавлена поддержка протокола потоковой передачи](https://aka.ms/botframework/addstreamingprotocolsupport) для программ-роботов (с соответствующим поддержкой веб-сокет), а затем убедитесь, что ваш бот отвечает на входящие запросы из канала.
+**Ответ.** Эта ошибка указывает на проблему между программ-роботов и прямой линии речи. Убедитесь, что [подключения канала прямой линии речи](https://docs.microsoft.com/azure/bot-service/bot-service-channel-connect-directlinespeech), [добавлена поддержка протокола потоковой передачи](https://aka.ms/botframework/addstreamingprotocolsupport) для программ-роботов (с соответствующим поддержкой веб-сокет), а затем убедитесь, что ваш бот отвечает на входящие запросы из канала.
 
 **Вопрос. Это по-прежнему не работает и/или другую ошибку при использовании SpeechBotConnector и порождаются неясно, что следует сделать. Что *следует* делать?**
 

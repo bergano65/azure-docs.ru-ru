@@ -9,12 +9,12 @@ ms.date: 4/23/2019
 ms.topic: troubleshooting
 ms.service: service-fabric-mesh
 manager: jeanpaul.connock
-ms.openlocfilehash: 7f3bed454bce90d797ca5829043c7e5f8ce5b051
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 950f9ac89b9d3224db29b32fe2d1e403ccc98116
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64728580"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65143287"
 ---
 # <a name="commonly-asked-service-fabric-mesh-questions"></a>Распространенные вопросы о службе "Сетка Service Fabric"
 
@@ -28,7 +28,7 @@ ms.locfileid: "64728580"
 
 ### <a name="what-is-the-cost-of-participating-in-the-preview"></a>Какова стоимость использования предварительной версии?
 
-Плата за развертывание приложений или контейнеров в предварительной версии службы "Сетка" на данный момент не взимается. Тем не менее, мы рекомендуем удалить ресурсы, развертывания и не оставляйте их выполнение, если вы тестируете активно их.
+Плата в настоящее время не для развертывания приложений или контейнеров к предварительной версии сетки. Просмотрите наличие обновлений в мае для включения для выставления счетов. Тем не менее, мы рекомендуем удалить ресурсы, развертывания и не оставляйте их выполнение, если вы тестируете активно их.
 
 ### <a name="is-there-a-quota-limit-of-the-number-of-cores-and-ram"></a>Существует ли предел квоты числа ядер и объема ОЗУ?
 
@@ -88,10 +88,15 @@ ms.locfileid: "64728580"
 Ниже приведены образы ОС контейнера, которые можно использовать для развертывания служб.
 
 - Windows: windowsservercore и nanoserver
-    - Windows Server, версия 1709
-    - Windows Server, версия 1803
+    - Windows Server 1709;
+    - Windows Server 1803.
+    - Windows Server 1809
+    - Windows Server 2019 LTSC
 - Linux
     - Известные ограничения отсутствуют
+
+> [!NOTE]
+> Инструментам Visual Studio для сетки не еще поддерживает развертывание в Windows Server 2019 и 1809 контейнеров.
 
 ### <a name="what-types-of-applications-can-i-deploy"></a>Какие типы приложений можно развернуть? 
 
@@ -138,6 +143,10 @@ EXPOSE 80
 В кластере с одним узлом нельзя развернуть несколько приложений. Чтобы устранить эту проблему, сделайте следующее.
 - Используйте кластер из пяти узлов при развертывании нескольких приложений в локальный кластер.
 - Удалите приложения, которые вы в данный момент не тестируете.
+
+### <a name="vs-tooling-has-limited-support-for-windows-containers"></a>Инструментарий VS обеспечивает ограниченную поддержку для контейнеров Windows
+
+Инструменты Visual Studio поддерживают развертывание только контейнеры Windows с базовой версией ОС Windows Server 1709 и 1803 уже сегодня. 
 
 ## <a name="feature-gaps-and-other-known-issues"></a>Пробелы в функциях и другие известные проблемы
 

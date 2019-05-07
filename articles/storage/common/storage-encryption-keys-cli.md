@@ -7,13 +7,14 @@ ms.service: storage
 ms.topic: article
 ms.date: 04/16/2019
 ms.author: tamram
+ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: dc9f660ddf7cd003ac113725a9bf7b66189807b6
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: ca2cfc9369fd6fb001b2a2dc401c33e5ddfd38c8
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61593597"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65142913"
 ---
 # <a name="configure-customer-managed-keys-for-azure-storage-encryption-from-azure-cli"></a>Настройка управляемых пользователем ключей для шифрования службы хранилища Azure с помощью Azure CLI
 
@@ -72,7 +73,7 @@ az keyvault set-policy \
     --key-permissions get recover unwrapKey wrapKey
 ```
 
-## <a name="create-a-new-key"></a>Создайте ключ
+## <a name="create-a-new-key"></a>Создание ключа
 
 Создайте ключ в хранилище ключей. Чтобы создать ключ, вызовите [создать az keyvault key](/cli/azure/keyvault/key#az-keyvault-key-create). Не забудьте заменить значения заполнителей в квадратные скобки, своими собственными значениями.
 

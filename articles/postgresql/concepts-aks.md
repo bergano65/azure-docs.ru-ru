@@ -1,24 +1,24 @@
 ---
-title: Подключение Службы Azure Kubernetes (AKS) к Базе данных Azure для PostgreSQL
-description: Сведения о подключении Службы Azure Kubernetes к Базе данных Azure для PostgreSQL
+title: Подключение службы Azure Kubernetes (AKS) с базой данных Azure для PostgreSQL — один сервер
+description: 'Дополнительные сведения о подключении службы Azure Kubernetes с базой данных Azure для PostgreSQL: один сервер'
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
-ms.date: 11/27/2018
+ms.date: 5/6/2019
 ms.topic: conceptual
-ms.openlocfilehash: f25d87c7c557404071d777f4efcf22e53886d96d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: a98d9b89db0406d67d1b067c3e53eb5c3dae7957
+ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61456195"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65068944"
 ---
-# <a name="connecting-azure-kubernetes-service-and-azure-database-for-postgresql"></a>Подключение Службы Azure Kubernetes к Базе данных Azure для PostgreSQL
+# <a name="connecting-azure-kubernetes-service-and-azure-database-for-postgresql---single-server"></a>Подключение службы Kubernetes Azure и база данных Azure для PostgreSQL — один сервер
 
 Служба Azure Kubernetes (AKS) предоставляет управляемый кластер Kubernetes для использования в Azure. Ниже приведены некоторые настройки, которые можно использовать при создании приложения с помощью AKS и Базы данных Azure для PostgreSQL.
 
 
-## <a name="accelerated-networking"></a>Ускоренная сеть
+## <a name="accelerated-networking"></a>Ускорение работы в сети
 Используйте в кластере AKS базовые виртуальные машины с поддержкой ускоренной работы в сети. Если на виртуальной машине включена ускоренная работа в сети, на машине наблюдается снижение задержки, дрожания и загрузки ЦП. Дополнительные сведения об ускоренной работе в сети, поддерживаемых версиях ОС и экземплярах виртуальных машин Linux см. в статье [Создание виртуальной машины Linux с ускоренной сетью](../virtual-network/create-vm-accelerated-networking-cli.md).
 
 С ноября 2018 года AKS поддерживает ускоренные сети на поддерживаемых экземплярах виртуальных машин. Для новых кластеров AKS, которые используют эти виртуальные машины, ускоренная работа в сети включена по умолчанию.

@@ -2,18 +2,18 @@
 title: Управление службой хранилища в независимых от Azure облаках с помощью Azure PowerShell | Документация Майкрософт
 description: Управление службой хранилища в облаках для Китая, Германии и государственных организаций с помощью Azure PowerShell
 services: storage
-author: roygara
+author: tamram
 ms.service: storage
 ms.topic: article
 ms.date: 10/24/2017
-ms.author: rogarana
+ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 6a3fe8c7235a0cf475f188a3379e372cd777ce8c
-ms.sourcegitcommit: 698a3d3c7e0cc48f784a7e8f081928888712f34b
-ms.translationtype: HT
+ms.openlocfilehash: 69707eec0ea1f2260ee50a48ce1dcb82dc9ddd8f
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55477647"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65145867"
 ---
 # <a name="managing-storage-in-the-azure-independent-clouds-using-powershell"></a>Управление службой хранилища в независимых от Azure облаках с помощью Azure PowerShell
 
@@ -96,10 +96,10 @@ Get-AzEnvironment -Name AzureGermanCloud
 
 Результаты должны выглядеть следующим образом:
 
-|Имя свойства|Значение|
+|Имя свойства|Value|
 |----|----|
 | ИМЯ | AzureGermanCloud |
-| EnableAdfsAuthentication | Ложь |
+| EnableAdfsAuthentication | False |
 | ActiveDirectoryServiceEndpointResourceI | http://management.core.cloudapi.de/ |
 | GalleryURL | https://gallery.cloudapi.de/ |
 | ManagementPortalUrl | https://portal.microsoftazure.de/ | 
@@ -162,7 +162,7 @@ table endpoint = http://myexistingstorageaccount.table.core.usgovcloudapi.net/
 Remove-AzResourceGroup -Name $resourceGroup
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Использование учетных данных для входа в разных сеансах PowerShell](/powershell/azure/context-persistence).
 * [Azure Government storage](../../azure-government/documentation-government-services-storage.md) (Хранилище Azure для государственных организаций).

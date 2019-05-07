@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: conceptual
 ms.date: 11/26/2018
 ms.author: iainfou
-ms.openlocfilehash: 9aa394a405e5b4392f900d1e7520d93e6d152e49
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 78f54e9e86de7a8b1b80300e0ed79a5e54f29282
+ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64690467"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65074189"
 ---
 # <a name="best-practices-for-advanced-scheduler-features-in-azure-kubernetes-service-aks"></a>Рекомендации по расширенным возможностям планировщика в службе Azure Kubernetes (AKS)
 
@@ -30,6 +30,8 @@ ms.locfileid: "64690467"
 **Рекомендация.** Ограничьте ресурсоемким приложениям (например, контроллерам входящего трафика) доступ к определенным узлам. Сохраните ресурсы для нуждающихся в них важных рабочих нагрузок, не разрешая назначать другие нагрузки на эти узлы.
 
 При создании кластера AKS можно развернуть узлы с поддержкой GPU или множеством мощных процессоров. Такие узлы часто используются для рабочих нагрузок по обработке больших массивов данных, например для задач машинного обучения или искусственного интеллекта. Так как обычно подобное оборудование — дорогостоящий для развертывания ресурс, имеет смысл ограничить рабочую нагрузку, которую можно назначить на эти узлы. Или же можно выделить определенные узлы в кластере специально для служб входящего трафика, исключив для них другую рабочую нагрузку.
+
+Эта поддержка для различных узлов предоставляется с помощью нескольких пулов узлов. Кластер службы контейнеров AZURE предоставляет один или несколько пулов узлов. Поддержка нескольких пулов узлов в AKS доступна в предварительной версии.
 
 Для ограничения рабочих нагрузок, которые могут выполняться на узлах, в планировщике Kubernetes используются параметры taint (отметка) и toleration (толерантность).
 
@@ -53,13 +55,13 @@ spec:
   containers:
   - name: tf-mnist
     image: microsoft/samples-tf-mnist-demo:gpu
-  resources:
-    requests:
-      cpu: 0.5
-      memory: 2Gi
-    limits:
-      cpu: 4.0
-      memory: 16Gi
+    resources:
+      requests:
+        cpu: 0.5
+        memory: 2Gi
+      limits:
+        cpu: 4.0
+        memory: 16Gi
   tolerations:
   - key: "sku"
     operator: "Equal"
@@ -72,6 +74,8 @@ spec:
 Если вы применяете отметки, обсудите с владельцами и разработчиками приложений, какие толерантности нужны им для развертывания.
 
 Дополнительные сведения см. в статье, посвященной [применению отметок и толерантностей][k8s-taints-tolerations].
+
+Дополнительные сведения об использовании нескольких пулов узлов в AKS, см. в разделе [создать и управлять несколькими пулы узлов в кластере AKS][use-multiple-node-pools].
 
 ### <a name="behavior-of-taints-and-tolerations-in-aks"></a>Поведение taints и tolerations в AKS
 
@@ -195,3 +199,4 @@ spec:
 [aks-best-practices-scheduler]: operator-best-practices-scheduler.md
 [aks-best-practices-cluster-isolation]: operator-best-practices-cluster-isolation.md
 [aks-best-practices-identity]: operator-best-practices-identity.md
+[use-multiple-node-pools]: use-multiple-node-pools.md

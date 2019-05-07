@@ -5,15 +5,15 @@ author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 12/19/2018
+ms.date: 04/30/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: f13dd1282a6384a0acca4c6936fe7900a051795f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: b35977061b7e5806d15f4b7b0087fcafa4f291ef
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60497407"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65141153"
 ---
 # <a name="connecting-to-on-premises-data-sources-with-on-premises-data-gateway"></a>Подключение к локальным источникам данных с помощью локального шлюза данных
 Локальный шлюз данных обеспечивает защищенную передачу данных между локальными источниками данных и серверами служб Azure Analysis Services в облаке. Последняя версия шлюза работает с несколькими серверами служб Azure Analysis Services в том же регионе, а также с Azure Logic Apps, Power BI, Power Apps и Microsoft Flow. Несколько служб в одном регионе и одной подписке можно связать с одним шлюзом. 
@@ -176,30 +176,9 @@ ms.locfileid: "60497407"
 
 `C:\Users\<username>\AppData\Local\Microsoft\On-premises data gateway\GatewayConfigurator.log`
 
-
 #### <a name="event-logs"></a>Журналы событий
 
 Журналы шлюза управления данными и PowerBIGateway находятся в разделе **Журналы приложения и служб**.
-
-
-## <a name="telemetry"></a>Телеметрия
-Телеметрию можно использовать для мониторинга и устранения неполадок. По умолчанию
-
-**Включение телеметрии**
-
-1.  Проверьте клиентский каталог локального шлюза данных на компьютере. Обычно это каталог **%системный_диск%\Program Files\On-premises data gateway**. Также можно открыть консоль служб и проверить путь к исполняемому файлу: свойство службы "Локальный шлюз данных".
-2.  В файле Microsoft.PowerBI.DataMovement.Pipeline.GatewayCore.dll.config в каталоге клиента выполните указанные ниже действия. Измените значение параметра SendTelemetry на true.
-        
-    ```
-        <setting name="SendTelemetry" serializeAs="String">
-                    <value>true</value>
-        </setting>
-    ```
-
-3.  Сохраните изменения и перезапустите службу Windows: служба "Локальный шлюз данных".
-
-
-
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Установка и настройка локального шлюза данных](analysis-services-gateway-install.md)   

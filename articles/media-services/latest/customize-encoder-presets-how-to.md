@@ -10,14 +10,14 @@ ms.service: media-services
 ms.workload: ''
 ms.topic: article
 ms.custom: seodec18
-ms.date: 03/11/2019
+ms.date: 05/03/2019
 ms.author: juliako
-ms.openlocfilehash: ed2ae50aa9d7a26ed6e0569264ee981f7be35525
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 2167a74dc81bdbb2562211cf5c0195a755941d9d
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60733680"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65148337"
 ---
 # <a name="how-to-encode-with-a-custom-transform---net"></a>Как кодировать с помощью пользовательского преобразования — .NET
 
@@ -32,7 +32,7 @@ ms.locfileid: "60733680"
 
 ## <a name="prerequisites"></a>Технические условия 
 
-[Создание учетной записи Служб мультимедиа](create-account-cli-how-to.md). <br/>Обязательно запомните имя группы ресурсов и имя учетной записи Служб мультимедиа. 
+[Создание учетной записи Служб мультимедиа](create-account-cli-how-to.md)
 
 ## <a name="download-the-sample"></a>Скачивание примера приложения
 
@@ -46,7 +46,7 @@ ms.locfileid: "60733680"
 
 ## <a name="create-a-transform-with-a-custom-preset"></a>Создание преобразования с помощью настраиваемой предустановки 
 
-При создании [преобразования](https://docs.microsoft.com/rest/api/media/transforms) необходимо указать, что требуется создать в качестве выходных данных. Обязательный параметр — это объект [TransformOutput](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#transformoutput), как показано в приведенном ниже примере кода. Каждый объект **TransformOutput** содержит **предустановку** (Preset). **Предустановка** описывает пошаговые инструкции для операций обработки видео и звука, которые будут использоваться для создания нужного объекта **TransformOutput**. Следующая предустановка **TransformOutput** создает настраиваемый кодек и параметры слоя вывода.
+При создании [преобразования](https://docs.microsoft.com/rest/api/media/transforms) необходимо указать, что требуется создать в качестве выходных данных. Обязательный параметр — это объект [TransformOutput](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#transformoutput), как показано в приведенном ниже примере кода. Каждый объект **TransformOutput** содержит **предустановку** (Preset). **Предустановку** описаны пошаговые инструкции, видео- и аудиоданных обработки операций, которые должны использоваться для создания нужного **TransformOutput**. Следующая предустановка **TransformOutput** создает настраиваемый кодек и параметры слоя вывода.
 
 При создании [преобразования](https://docs.microsoft.com/rest/api/media/transforms) сначала проверьте, существует ли оно, с помощью метода **Get**, как показано в следующем коде. В Службах мультимедиа версии 3 методы **Get**, отправленные к сущностям, возвращают значение **NULL**, если сущность не существует (проверка по имени без учета регистра).
 

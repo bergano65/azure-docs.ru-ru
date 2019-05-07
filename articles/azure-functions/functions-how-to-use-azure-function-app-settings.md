@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/28/2018
 ms.author: glenga
 ms.custom: cc996988-fb4f-47
-ms.openlocfilehash: 7497255dcad55cea86e0c640e2f1423d7d763a7f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 096f39eeef54f3a4a1e3d8928dd13b7c22847c8d
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60738099"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65143181"
 ---
 # <a name="how-to-manage-a-function-app-in-the-azure-portal"></a>Управление приложением-функцией на портале Azure 
 
@@ -25,24 +25,6 @@ ms.locfileid: "60738099"
 Для начала перейдите на [портал Azure](https://portal.azure.com) и войдите, используя свою учетную запись Azure. На панели поиска в верхней части портала введите имя приложения-функции и выберите его в списке. После выбора приложения-функции появляется следующая страница:
 
 ![Обзор приложения-функции на портале Azure](./media/functions-how-to-use-azure-function-app-settings/azure-function-app-main.png)
-
-## <a name="favorite"></a>Избранные функции на портале 
-
-Иногда бывает трудно найти ресурсы на [портал Azure]. Чтобы упростить поиск приложений-функций, которые вы создали, добавьте их в список "Избранное" на портале. 
-
-1. Войдите на [портал Azure].
-
-2. Щелкните стрелку в нижнем левом углу, чтобы развернуть все службы, введите `Functions` в поле **Фильтр**, а затем щелкните звездочку рядом с пунктом **Приложения-функции**.  
- 
-    ![Создание приложения-функции на портале Azure](./media/functions-how-to-use-azure-function-app-settings/functions-favorite-function-apps.png)
-
-    При этом значок Функций добавится в меню слева на портале.
-
-3. Закройте меню, а затем прокрутите вниз, чтобы увидеть значок функции. Щелкните этот значок, чтобы просмотреть список всех приложений-функций. Щелкните приложение-функцию для работы с функциями в этом приложении. 
- 
-    ![Приложения-функции в разделе "Избранное"](./media/functions-how-to-use-azure-function-app-settings/functions-function-apps-hub.png)
- 
-[портал Azure]: https://portal.azure.com/
 
 ## <a name="manage-app-service-settings"></a>Вкладка параметров приложения-функции
 
@@ -69,7 +51,7 @@ ms.locfileid: "60738099"
 + [Дополнительные инструменты (Kudu)](#kudu)
 + [Варианты развертывания](#deployment)
 + [CORS](#cors)
-+ [Authentication](#auth)
++ [Проверка подлинности](#auth)
 + [Определение интерфейса API](#swagger)
 
 Дополнительные сведения о работе с параметрами службы приложений см. в статье [Настройка параметров в службе приложений Azure](../app-service/web-sites-configure.md).

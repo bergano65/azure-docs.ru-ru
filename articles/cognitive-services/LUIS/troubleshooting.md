@@ -9,14 +9,14 @@ services: cognitive-services
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 03/21/2019
+ms.date: 05/07/2019
 ms.author: diberry
-ms.openlocfilehash: 672c9d43007f954d870f8195bcad63d9cee69523
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: ea3bb551a32fdfb7e4a378c36858860808e27419
+ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58894463"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65072773"
 ---
 # <a name="language-understanding-frequently-asked-questions-faq"></a>Часто задаваемые вопросы о службе "Распознавание речи"
 
@@ -240,7 +240,7 @@ Get-AzCognitiveServicesAccountUsage -ResourceGroupName <your-resource-group> -Na
 #### <a name="resolve-issue-in-luis"></a>Устранение проблемы в LUIS
 Выполните передачу требуемого речевого фрагмента в LUIS из [конечной точки LUIS ](luis-get-started-create-app.md#query-the-endpoint-with-a-different-utterance). Если произошла ошибка, устраните ее в LUIS таким образом, чтобы предотвратить ее повторное появление. Ниже перечислены распространенные ошибки.
 
-* `Out of call volume quota. Quota will be replenished in <time>.`. Данная ошибка указывает о необходимости изменения ключа разработки на [ключ конечной точки](luis-how-to-azure-subscription.md) или изменения [уровней службы](luis-how-to-azure-subscription.md#change-pricing-tier). 
+* `Out of call volume quota. Quota will be replenished in <time>.`. Данная ошибка указывает о необходимости изменения ключа разработки на [ключ конечной точки](luis-how-to-azure-subscription.md) или изменения [уровней служб](luis-how-to-azure-subscription.md#change-pricing-tier). 
 
 #### <a name="resolve-issue-in-azure-bot-service"></a>Устранение ошибок в службе Azure Bot
 
@@ -282,27 +282,19 @@ Get-AzCognitiveServicesAccountUsage -ResourceGroupName <your-resource-group> -Na
 
 Да. Вы можете использовать [контейнер](luis-container-howto.md) LUIS в таких сценариях, если у вас есть подключение для измерения использования. 
 
-### <a name="at-the-build-2018-conference-i-heard-about-a-language-understanding-feature-or-demo-but-i-dont-remember-what-it-was-called"></a>На конференции Build 2018 г. говорилось об одной функции или демоверсии службы "Распознавание речи", но я не помню ее названия.
+## <a name="migrating-to-the-next-version"></a>Переход к следующей версии
 
-На конференции сборки 2018 г были выпущены следующие возможности:
+### <a name="how-do-i-migrate-to-preview-v3-api"></a>Как выполнить перенос для предварительного просмотра V3 API? 
 
-|ИМЯ|Содержимое|
-|--|--|
-|Улучшения|Сущности [регулярного выражения](luis-concept-data-extraction.md##regular-expression-entity-data) и [ключевой фразы](luis-concept-data-extraction.md#key-phrase-extraction-entity-data)
-|Шаблоны|Шаблоны [понятие](luis-concept-patterns.md), [руководство](luis-tutorial-pattern.md), [инструкции](luis-how-to-model-intent-pattern.md)<br>Концепция сущности [Patterns.Any](luis-concept-entity-types.md), включающая понятие [явного списка](luis-concept-patterns.md#explicit-lists) для исключений<br>Концепция [ролей](luis-concept-roles.md)|
-|Интеграции|Интеграция [текстовой аналитики](https://docs.microsoft.com/azure/cognitive-services/text-analytics/) [анализа тональности](luis-how-to-publish-app.md#enable-sentiment-analysis)<br>Интеграция службы [Речь](https://docs.microsoft.com/azure/cognitive-services/speech) для подготовки речи в сочетании с [пакетом SDK службы "Речь"](https://aka.ms/SpeechSDK)|
-|Средство подготовки к отправке|Часть [BotBuilder-tools](https://github.com/Microsoft/botbuilder-tools), [инструмент](luis-concept-enterprise.md#when-you-need-to-combine-several-luis-and-qna-maker-apps) командной строки подготовки к отправке для объединения нескольких приложений LUIS и QnA Maker в одно приложение LUIS и улучшения распознавания намерений в ботах
+См. в разделе [руководство по API версии 2 для миграции v3 для приложения LUIS](luis-migration-api-v3.md)
 
-Включено создание дополнительных [API маршрутов](https://github.com/Azure-Samples/cognitive-services-language-understanding/blob/master/authoring-routes.md).
+## <a name="build-2019-conference-announcements"></a>Объявления конференции Build 2019 г.
 
-Видеоролики:
-* [Build 2018: серия "Пятница с Azure". Cognitive Services и Интеллектуальная служба распознавания речи (LUIS)](https://channel9.msdn.com/Shows/Azure-Friday/At-Build-2018-Cognitive-Services-Language-LUIS/player)
-* [Build 2018: канал об искусственном интеллекте. Новые возможности службы "Распознавание речи"](https://channel9.msdn.com/Shows/AI-Show/Whats-New-with-Language-Understanding-Service-LUIS/player)
-* [Build 2018. Интеллектуальные функции ботов, функции распознавания речи и рекомендации по использованию NLU](https://channel9.msdn.com/events/Build/2018/BRK3208)
-* [ Build 2018. Обновления LUIS](https://channel9.msdn.com/events/Build/2018/THR3118/player)
+На конференции 2019 сборки были выпущены следующие функции:
 
-Проекты:
-* Пример [бота Contoso Cafe](https://github.com/botbuilderbuild2018/build2018demo) (исходный код на GitHub)
+* [Предварительную версию V3 API руководство по миграции](luis-migration-api-v3.md)
+* [Улучшенные панели мониторинга](luis-how-to-use-dashboard.md)
+* [Улучшенная предварительно созданных доменов](luis-reference-prebuilt-domains.md) рабочей V2 и V3 API-интерфейсы
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

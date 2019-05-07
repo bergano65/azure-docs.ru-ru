@@ -1,22 +1,21 @@
 ---
-title: Как использовать хранилище очередей из Node.js | Документация Майкрософт
+title: Как использовать хранилище очередей из Node.js — хранилища Azure
 description: Вы узнаете, как использовать службы очередей Azure для создания и удаления очередей, вставки, получения и удаления сообщений. Примеры кода написаны на Node.js.
 services: storage
-author: WenJason
+author: mhopkins-msft
 ms.service: storage
-ms.tgt_pltfrm: na
 ms.devlang: nodejs
 ms.topic: article
-origin.date: 12/08/2016
-ms.date: 12/10/2018
-ms.author: v-jay
-ms.component: queues
-ms.openlocfilehash: 31f0be804085643d048a35dd61da9156f291f7da
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.date: 12/08/2016
+ms.author: mhopkins
+ms.reviewer: cbrooks
+ms.subservice: queues
+ms.openlocfilehash: 01afe1ab7b9028f3f77d52f7d6f8ced27f6a79c7
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62109600"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65142709"
 ---
 # <a name="how-to-use-queue-storage-from-nodejs"></a>Использование хранилища очередей из Node.js
 [!INCLUDE [storage-selector-queue-include](../../../includes/storage-selector-queue-include.md)]
@@ -65,7 +64,7 @@ var azure = require('azure-storage');
 ## <a name="setup-an-azure-storage-connection"></a>Настройка подключения к службе хранилища Azure
 Модуль Azure считывает переменные среды AZURE\_STORAGE\_ACCOUNT и AZURE\_STORAGE\_ACCESS\_KEY или AZURE\_STORAGE\_CONNECTION\_STRING, чтобы получить информацию, необходимую для подключения к учетной записи хранения Azure. Если эти переменные среды не заданы, при вызове **createQueueService**необходимо указать сведения об учетной записи.
 
-## <a name="how-to-create-a-queue"></a>Практическое руководство. Создать очередь
+## <a name="how-to-create-a-queue"></a>Практическое руководство. Создание очереди
 Следующий пример кода создает объект **QueueService** , который позволяет работать с очередями.
 
 ```javascript
@@ -284,7 +283,7 @@ sharedQueueService.createMessage('myqueue', 'Hello world from SAS!', function(er
 
 Поскольку подпись SAS была создана только для доступа добавления, если выполняется попытка чтения, обновления или удаления сообщений, будет возвращена ошибка.
 
-### <a name="access-control-lists"></a>Списки управления доступом
+### <a name="access-control-lists"></a>Доступ к спискам управления
 Можно также использовать список управления доступом (ACL) для задания политики доступа подписи SAS. Это может оказаться полезным, когда необходимо предоставить доступ к очереди нескольким клиентам, но с различной политикой доступа для каждого из них.
 
 ACL реализуется с помощью массива политик доступа, каждая из которых связана со своим идентификатором. В следующем примере определяются две политики, по одной для пользователей user1 и user2:
@@ -336,14 +335,14 @@ queueSAS = queueSvc.generateSharedAccessSignature('myqueue', { Id: 'user2' });
 
 [Azure Storage SDK for Node]: https://github.com/Azure/azure-storage-node
 
-[using the REST API]: http://msdn.microsoft.com/library/azure/hh264518.aspx
+[using the REST API]: https://msdn.microsoft.com/library/azure/hh264518.aspx
 
-[Azure Portal]: https://portal.azure.cn
+[Azure Portal]: https://portal.azure.com
 
 [Создание веб-приложения Node.js в службе приложений Azure](../../app-service/app-service-web-get-started-nodejs.md)
 
 [Построение и развертывание приложения Node.js в облачной службе Azure](../../cloud-services/cloud-services-nodejs-develop-deploy-app.md)
 
-[Azure Storage Team Blog]: http://blogs.msdn.com/b/windowsazurestorage/
+[Azure Storage Team Blog]: https://blogs.msdn.com/b/windowsazurestorage/
 
 [Build and deploy a Node.js web app to Azure using Web Matrix]: https://www.microsoft.com/web/webmatrix/

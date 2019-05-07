@@ -8,18 +8,15 @@ author: ecfan
 ms.author: estfan
 ms.reviewer: klam, LADocs
 ms.topic: article
-ms.date: 03/11/2019
-ms.openlocfilehash: b53cd54afdf6243769602971ab77145cfa9ba9cc
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 05/06/2019
+ms.openlocfilehash: 0206fd2b2ea0a7cfaf79aaf19052e0174645780b
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60506841"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65143109"
 ---
 # <a name="access-to-azure-virtual-network-resources-from-azure-logic-apps-by-using-integration-service-environments-ises"></a>Доступ к ресурсам виртуальных сетей Azure из Azure Logic Apps с использованием сред службы интеграции (ISE)
-
-> [!NOTE]
-> Эта функция предоставляется в [ *общедоступной предварительной версии*](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 В некоторых случаях приложениям логики и учетным записям интеграции требуется доступ к защищенным ресурсам, таким как виртуальные машины и другие системы или службы в [виртуальной сети Azure](../virtual-network/virtual-networks-overview.md). Для настройки такого доступа можно [создать *среду службы интеграции* (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment.md) для выполнения приложений логики и учетных записей интеграции. При создании интегрированную среду Сценариев Azure развертывает частных и изолированного экземпляра службы Logic Apps в виртуальной сети Azure. Частный экземпляр использует выделенные ресурсы, такие как служба хранилища, и выполняется отдельно от общедоступной глобальной службы Logic Apps. Отделение изолированного экземпляра закрытый и открытый глобальный экземпляр также помогает уменьшить влияние других клиентов Azure на производительность вашего приложения, который также называется [влияния «шумных соседей»](https://en.wikipedia.org/wiki/Cloud_computing_issues#Performance_interference_and_noisy_neighbors).
 
@@ -70,11 +67,6 @@ ms.locfileid: "60506841"
 ## <a name="integration-accounts-with-ise"></a>Учетные записи интеграции в ISE
 
 Учетные записи интеграции с приложениями логики можно использовать в среде службы интеграции. Тем не менее эти учетные записи интеграции должны использовать *ту же ISE*, что и связанные приложения логики. Приложения логики в среде ISE могут ссылаться только на те учетные записи интеграции, которые находятся в одной с ними среде ISE. При создании учетной записи интеграции можно выбрать среду ISE в качестве расположения учетной записи интеграции.
-
-## <a name="get-support"></a>Получение поддержки
-
-* Если у вас возникли вопросы, то посетите <a href="https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps" target="_blank">форум Azure Logic Apps</a>.
-* Отправить идею по поводу возможности или проголосовать за нее вы можете на <a href="https://aka.ms/logicapps-wish" target="_blank">сайте отзывов пользователей Logic Apps</a>.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

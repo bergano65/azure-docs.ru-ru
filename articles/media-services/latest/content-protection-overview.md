@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 04/21/2019
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: 40e7ebcddb5cc215e071f1a34dfa8f3f4ea95141
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: e13bcb7d4eeded691669277b64aba9048f3bbefa
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64684569"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65150420"
 ---
 # <a name="content-protection-with-dynamic-encryption"></a>Защита содержимого при использовании динамического шифрования
 
@@ -128,7 +128,7 @@ MPEG-DASH протокол поддерживает следующие форм�
 
 Протокол Smooth Streaming поддерживает следующие форматы контейнеров и схемы шифрования.
 
-|Protocol|Формат контейнера|Схема шифрования|
+|Протокол|Формат контейнера|Схема шифрования|
 |---|---|---|
 |fMP4|AES||
 |fMP4 | CENC (PlayReady) |`https://amsv3account-usw22.streaming.media.azure.net/<id>/ignite.ism/manifest(encryption=cenc)`|
@@ -206,7 +206,7 @@ streamingPolicy.EnvelopEncryption.customKeyAcquisitionUrlTemplate = "https://myk
 
 Если возникают ошибки, которые заканчиваются `_NOT_SPECIFIED_IN_URL`, убедитесь, что указывать формат шифрования в URL-адрес. Например, `…/manifest(format=m3u8-cmaf,encryption=cbcs-aapl)`. См. в разделе [потоковых протоколов и типов шифрования](#streaming-protocols-and-encryption-types).
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="ask-questions-give-feedback-get-updates"></a>Задавайте вопросы, отзыв, получить обновления
 
 Прочитайте статью [сообщества Служб мультимедиа Azure](media-services-community.md), чтобы узнать, как задавать вопросы, оставлять отзывы и получать новости о Службах мультимедиа.
 

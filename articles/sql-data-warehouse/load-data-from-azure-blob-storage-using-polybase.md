@@ -2,20 +2,20 @@
 title: Руководство по Загрузка данных о такси Нью-Йорка в Хранилище данных SQL Azure | Документация Майкрософт
 description: В этом руководстве используется портал Azure и SQL Server Management Studio для загрузки данных такси Нью-Йорка из общедоступного большого двоичного объекта Azure в хранилище данных SQL Azure.
 services: sql-data-warehouse
-author: mlee3gsd
+author: kevinvngo
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.subservice: implement
-ms.date: 03/27/2019
-ms.author: mlee3gsd
+ms.date: 04/26/2019
+ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: 57ca749aec2a72379e92c46764eb9b6558653e29
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: ca4084fb271320eb4cdfdeb6cb9026367761be0a
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61079063"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65143662"
 ---
 # <a name="tutorial-load-new-york-taxicab-data-to-azure-sql-data-warehouse"></a>Руководство по Загрузка данных о такси Нью-Йорка в Хранилище данных SQL Azure
 
@@ -561,6 +561,49 @@ ms.locfileid: "61079063"
 
     ![Просмотр загруженных таблиц](media/load-data-from-azure-blob-storage-using-polybase/view-loaded-tables.png)
 
+## <a name="authenticate-using-managed-identities-to-load-optional"></a>Проверка подлинности с помощью управляемых удостоверений для загрузки (необязательно)
+Загрузка с помощью PolyBase и проверки подлинности с помощью управляемых удостоверений — это наиболее безопасный механизм и позволяет использовать конечные точки службы виртуальной сети со службой хранилища Azure. 
+
+### <a name="prerequisites"></a>Технические условия
+1.  Установите Azure PowerShell, следуя инструкциям в этом [руководстве](https://docs.microsoft.com/powershell/azure/install-az-ps).
+2.  При наличии учетной записи хранения общего назначения версии 1 или учетной записи хранилища BLOB-объектов необходимо сначала выполнить обновление до учетной записи хранения общего назначения версии 2, следуя инструкциям в этом [руководстве](https://docs.microsoft.com/azure/storage/common/storage-account-upgrade).
+3.  Необходимо включить параметр **Разрешить доверенным службам Майкрософт доступ к этой учетной записи хранения** в меню параметров **Брандмауэры и виртуальные сети** учетной записи службы хранилища Azure. Дополнительные сведения см. в [этом руководстве](https://docs.microsoft.com/azure/storage/common/storage-network-security#exceptions).
+
+#### <a name="steps"></a>Действия
+1. В PowerShell **зарегистрируйте сервер Базы данных SQL** с помощью Azure Active Directory (AAD):
+
+   ```powershell
+   Connect-AzAccount
+   Select-AzSubscription -SubscriptionId your-subscriptionId
+   Set-AzSqlServer -ResourceGroupName your-database-server-resourceGroup -ServerName your-database-servername -AssignIdentity
+   ```
+    
+   1. Создайте **учетную запись хранения общего назначения версии 2** с помощью этого [руководства](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account).
+
+   > [!NOTE]
+   > - При наличии учетной записи хранения общего назначения версии 1 или учетной записи хранилища BLOB-объектов необходимо **сначала выполнить обновление до учетной записи хранения версии 2**, следуя инструкциям в этом [руководстве](https://docs.microsoft.com/azure/storage/common/storage-account-upgrade).
+    
+1. В учетной записи хранения перейдите к элементу **Управление доступом (IAM)** и нажмите кнопку **Добавить назначение ролей**. Назначить **участник для данных больших двоичных объектов хранилища** роли RBAC, к серверу базы данных SQL.
+
+   > [!NOTE] 
+   > Этот шаг могут выполнять только участники с правами владельца. Сведения о различных встроенных ролях для ресурсов Azure см. в этом [руководстве](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles).
+  
+1. **Установка подключения Polybase к учетной записи службы хранилища Azure:**
+    
+   1. Создание учетных данных для базы данных с помощью **IDENTITY = «Управляемое удостоверение службы»**:
+
+       ```SQL
+       CREATE DATABASE SCOPED CREDENTIAL msi_cred WITH IDENTITY = 'Managed Service Identity';
+       ```
+       > [!NOTE] 
+       > - Не нужно указывать СЕКРЕТ с использованием ключа доступа к хранилищу Azure, так как на самом деле этот механизм использует [управляемое удостоверение](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview).
+       > - Имя УДОСТОВЕРЕНИЯ должен быть **«Управляемое удостоверение службы»** для подключения PolyBase к работе с учетной записью службы хранилища Azure.
+    
+   1. Создание внешнего источника данных, указав учетные данные области базы данных с помощью управляемого удостоверения службы.
+        
+   1. Выполните запрос как обычно, используя [внешние таблицы](https://docs.microsoft.com/sql/t-sql/statements/create-external-table-transact-sql).
+
+Со следующими разделами, [документации] (https://docs.microsoft.com/azure/sql-database/sql-database-vnet-service-endpoint-rule-overview ) Если вы хотите настроить конечные точки службы виртуальной сети для хранилища данных SQL. 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

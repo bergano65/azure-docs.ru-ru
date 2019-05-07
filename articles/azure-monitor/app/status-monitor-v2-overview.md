@@ -12,14 +12,14 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: tilee
-ms.openlocfilehash: fac14281365ccf3c191684af8cfdebda69e734e0
-ms.sourcegitcommit: e7d4881105ef17e6f10e8e11043a31262cfcf3b7
+ms.openlocfilehash: 77c2cd9e0eac6717d91a73a6fc033dcaa2390444
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64870452"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65145032"
 ---
-# <a name="status-monitor-v2"></a>Состояние монитора v2
+# <a name="status-monitor-v2"></a>Монитор состояния версии 2
 
 Состояние монитора v2 представляет собой модуль PowerShell, опубликованные в [PowerShellGallery](https://www.powershellgallery.com/packages/Az.ApplicationMonitor) и является заменой для [монитор состояния](https://docs.microsoft.com/azure/azure-monitor/app/monitor-performance-live-website-now). Этот модуль предоставляет инструментарий без использования кода .NET веб-приложений, размещенных в IIS.
 Данные телеметрии отправляются на портал Azure здесь можно [монитор](https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview) приложения.
@@ -61,3 +61,19 @@ https://www.powershellgallery.com/packages/Az.ApplicationMonitor
 - Проверка подключения выполнена успешно?
 
    Нам не нужно проверить успешность этого Включение командлета. Мы рекомендуем использовать [Live Metrics](https://docs.microsoft.com/azure/azure-monitor/app/live-stream) Чтобы быстро просматривать, если приложение может отправлять нам данные телеметрии.
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+Просмотр телеметрии:
+
+* [Изучите метрики](../../azure-monitor/app/metrics-explorer.md), чтобы отслеживать производительность и использование.
+* [Поиск событий и журналов](../../azure-monitor/app/diagnostic-search.md) для диагностики проблем
+* [Аналитика](../../azure-monitor/app/analytics.md) для создания расширенных запросов.
+* [Создайте панели мониторинга](../../azure-monitor/app/app-insights-dashboards.md)
+
+Добавление данных телеметрии:
+
+* [Создание веб-тестов](monitor-web-app-availability.md) чтобы убедиться, что ваш сайт продолжает работать.
+* [Добавьте телеметрию веб-клиента](../../azure-monitor/app/javascript.md) чтобы просматривать исключения в коде веб-страницы и вставлять вызовы трассировки.
+* [Добавьте пакет SDK Application Insights в код](../../azure-monitor/app/asp-net.md) , можно вставить трассировки и журналов вызовов
+

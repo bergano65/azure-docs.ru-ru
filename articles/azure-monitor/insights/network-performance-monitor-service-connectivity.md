@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 02/20/2018
 ms.author: abshamsft
-ms.openlocfilehash: 3eb53fa88a0757d22fc4575e9d9f402d6eebee13
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 01410fb59135e9b1f54e4a3c75b206c7d30abeed
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64719306"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65145016"
 ---
 # <a name="service-connectivity-monitor"></a>Монитор подключений службы
 
@@ -64,6 +64,7 @@ netsh advfirewall firewall add rule name="NPMDICMPV6TimeExceeded" protocol="icmp
 
     * Выберите **Веб**, чтобы отслеживать подключение к службе, которая отвечает на запросы HTTP(S), например outlook.office365.com или bing.com.<br>
     * Выберите **Сеть**, чтобы отслеживать подключение к службе, которая отвечает на запрос TCP, но не отвечает на запросы HTTP(S), например SQL Server, FTP-сервер или SSH-порт. 
+    * Например:  Чтобы создать веб-теста в учетную запись хранилища BLOB-объектов, выберите **Web** и введите в качестве целевого объекта <your storageaccount>. blob.core.windows.net. Аналогичным образом можно создавать тесты для других хранилище таблиц, хранилище очередей и файлов Azure с использованием [эту ссылку.](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-overview#storage-account-endpoints)
 4. Если вы не хотите выполнять такие измерения сети, как задержки сети, потери пакетов, а также обнаружение топологии, снимите флажок **Проведите измерения сети**. Оставьте этот флажок установленным, чтобы получить максимальные преимущества от возможности. 
 5. В поле **Цель** введите URL-адрес, полное доменное имя или IP-адрес, сетевое подключение к которому необходимо отслеживать.
 6. В поле **Номер порта** введите номер порта целевой службы. 

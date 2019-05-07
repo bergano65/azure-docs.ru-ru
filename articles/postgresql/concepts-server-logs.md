@@ -1,19 +1,19 @@
 ---
-title: Журналы сервера в базе данных Azure для PostgreSQL
-description: В этой статье объясняется, как служба "База данных Azure для PostgreSQL" создает журналы запросов и ошибок и как настраивается срок хранения журналов.
+title: Журналы сервера в базе данных Azure для PostgreSQL — один сервер
+description: В этой статье описывается база данных Azure для PostgreSQL — один сервер создает запрос и журналы ошибок и как настроить срок хранения журнала.
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 02/28/2019
-ms.openlocfilehash: 99deef907818ffdb1ce858c8e988e26cbd53a1a1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 5/6/2019
+ms.openlocfilehash: 4d1cf2c59e324cedd9b747b1ac65d6edcb9deb45
+ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60871535"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65067386"
 ---
-# <a name="server-logs-in-azure-database-for-postgresql"></a>Журналы сервера в базе данных Azure для PostgreSQL 
+# <a name="server-logs-in-azure-database-for-postgresql---single-server"></a>Журналы сервера в базе данных Azure для PostgreSQL — один сервер
 База данных Azure для PostgreSQL создает журналы запросов и ошибок. Журналы запросов и ошибок можно использовать для идентификации, устранения и исправления ошибок конфигурации, а также для повышения производительности. (Доступ к журналам транзакций не включен). 
 
 ## <a name="configure-logging"></a>Настройка журнала 
@@ -45,14 +45,14 @@ ms.locfileid: "60871535"
 | ResourceGroup | Имя группы ресурсов, принадлежащей серверу |
 | ResourceProvider | Имя поставщика ресурсов. Всегда `MICROSOFT.DBFORPOSTGRESQL` |
 | ResourceType | `Servers` |
-| resourceId | Универсальный код ресурса (URI) |
-| Resource | Имя сервера |
-| Category | `PostgreSQLLogs` |
+| ResourceId | Универсальный код ресурса (URI) |
+| Ресурс | Имя сервера |
+| Категория | `PostgreSQLLogs` |
 | OperationName | `LogEvent` |
 | errorLevel | Пример уровня ведения журнала: LOG, ERROR, NOTICE |
-| Сообщение | Первичное сообщение журнала | 
+| `Message` | Первичное сообщение журнала | 
 | Домен | Версия сервера, например: postgres 10 |
-| Подробности | Второстепенное сообщение журнала (если применимо) |
+| Описание | Второстепенное сообщение журнала (если применимо) |
 | ColumnName | Имя столбца (если применимо) |
 | SchemaName | Имя схемы (если применимо) |
 | DatatypeName | Имя типа данных (если применимо) |

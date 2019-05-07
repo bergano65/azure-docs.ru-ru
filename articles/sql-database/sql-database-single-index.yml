@@ -75,6 +75,7 @@ sections:
           - html: 'Новые функции языка Transact-SQL (предварительная версия), такие как <a href="https://docs.microsoft.com/sql/t-sql/functions/approx-count-distinct-transact-sql?toc=%2Fazure%2Fsql-database%2Ftoc.json&view=sql-server-2017">статистическое выражение APPROX_COUNT_DISTINCT</a> и <a href="https://docs.microsoft.com/sql/relational-databases/import-export/examples-of-bulk-access-to-data-in-azure-blob-storage?toc=%2Fazure%2Fsql-database%2Ftoc.json&view=sql-server-2017">операция массового импорта из хранилища BLOB-объектов</a>.'
           - html: "Новые операции <a href=\"https://docs.microsoft.com/sql/t-sql/statements/create-columnstore-index-transact-sql?toc=%2Fazure%2Fsql-database%2Ftoc.json&view=sql-server-2017#online--on--off\">выполнения сборки</a> и перестройки кластеризованного индекса columnstore (предварительная версия) в SQL Server\_2019 Online."
           - html: '<a href="https://docs.microsoft.com/azure/sql-database/sql-database-machine-learning-services-overview">Краткое руководство. Использование Служб машинного обучения (с использованием R) в Базе данных SQL Azure (предварительная версия)</a>.'
+          - html: '(Предварительная версия) Новый <a href="https://docs.microsoft.com/azure/sql-database/sql-database-serverless">уровня бессерверных вычислений</a> обеспечивает автоматическое масштабирование вычислений и спецификаций в секунду для использования вычислительных ресурсов.'
   - title: 5-минутные краткие руководства
     items:
       - type: paragraph

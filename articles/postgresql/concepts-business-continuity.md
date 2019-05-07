@@ -1,19 +1,19 @@
 ---
-title: Обзор обеспечения непрерывности бизнес-процессов с помощью службы "База данных Azure для PostgreSQL"
+title: 'Общие сведения о непрерывности бизнес-процессов с базой данных Azure для PostgreSQL: один сервер'
 description: Обзор обеспечения непрерывности бизнес-процессов с помощью службы "База данных Azure для PostgreSQL"
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 02/01/2019
-ms.openlocfilehash: b1d566ac571ddd2b2be3aff160f669e277887209
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 5/6/2019
+ms.openlocfilehash: a31112f3b6f7bd79785f89822e2881b152708254
+ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61456280"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65068928"
 ---
-# <a name="overview-of-business-continuity-with-azure-database-for-postgresql"></a>Обзор обеспечения непрерывности бизнес-процессов с помощью службы "База данных Azure для PostgreSQL"
+# <a name="overview-of-business-continuity-with-azure-database-for-postgresql---single-server"></a>Общие сведения о непрерывности бизнес-процессов с базой данных Azure для PostgreSQL: один сервер
 
 Здесь описываются возможности службы "База данных Azure для PostgreSQL" по обеспечению непрерывности бизнес-процессов и аварийного восстановления. Вы узнаете о способах восстановления после аварийных событий, которые могут приводить к потере данных или недоступности базы данных и приложений. Здесь также содержатся сведения о том, как действовать в ситуациях, когда ошибка пользователя или приложения нарушает целостность данных, происходит сбой региона Azure или приложение требует обслуживания.
 

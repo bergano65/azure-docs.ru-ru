@@ -1,17 +1,17 @@
 ---
-title: Как создать дамп и выполнить восстановление в службе "База данных Azure для PostgreSQL"
-description: Здесь объясняется, как извлечь базу данных PostgreSQL в файл дампа и восстановить ее из файла архива, созданного pg_dump в службе "База данных Azure для PostgreSQL".
+title: Как создать дамп и восстановление базы данных Azure для PostgreSQL — один сервер
+description: 'Описывает, как извлечь базу данных PostgreSQL в файл дампа и восстановить из файла, созданного pg_dump в базе данных Azure для PostgreSQL: один сервер.'
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 09/22/2018
-ms.openlocfilehash: d406132c4e359c78567ae47a3acba5b73aa39820
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 5/6/2019
+ms.openlocfilehash: aa9485ec8fcabdc0276e0598bd3e19f04d70dfa1
+ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60420348"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65066995"
 ---
 # <a name="migrate-your-postgresql-database-using-dump-and-restore"></a>Перенос базы данных PostgreSQL с помощью дампа и ее восстановление
 Можно извлечь базу данных PostgreSQL в файл дампа с помощью [pg_dump](https://www.postgresql.org/docs/9.3/static/app-pgdump.html) и с помощью [pg_restore](https://www.postgresql.org/docs/9.3/static/app-pgrestore.html) восстановить базу данных PostgreSQL из файла архива, созданного pg_dump.

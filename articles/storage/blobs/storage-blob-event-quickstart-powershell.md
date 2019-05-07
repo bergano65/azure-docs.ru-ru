@@ -2,19 +2,20 @@
 title: Отправка событий хранилища BLOB-объектов Azure в конечную веб-точку — Powershell | Документация Майкрософт
 description: Используйте службу "Сетка событий Azure" для подписки на события хранилища BLOB-объектов.
 services: storage,event-grid
-author: david-stanford
-ms.author: dastanfo
+author: normesta
+ms.author: normesta
+ms.reviewer: dastanfo
 ms.date: 08/23/2018
 ms.topic: article
 ms.service: storage
 ms.subservice: blobs
 ms.custom: seodec18
-ms.openlocfilehash: 3e1a482cc59d951fbe6b25fcf0bfc4a967222839
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
-ms.translationtype: HT
+ms.openlocfilehash: cf1b0ba5d70ed0934418a147c09791725b5465bb
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55246421"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65143362"
 ---
 # <a name="quickstart-route-storage-events-to-web-endpoint-with-powershell"></a>Краткое руководство. Перенаправление событий хранилища в конечную веб-точку с помощью PowerShell
 
@@ -169,7 +170,7 @@ Set-AzStorageBlobContent -File gridTestFile.txt -Container $containerName -Conte
 Remove-AzResourceGroup -Name $resourceGroup
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Теперь, когда вы знаете, как создавать разделы и подписки на события, ознакомьтесь с дополнительными сведениями о событиях хранилища BLOB-объектов и возможностях службы "Сетка событий":
 

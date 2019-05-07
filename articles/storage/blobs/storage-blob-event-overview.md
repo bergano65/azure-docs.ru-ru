@@ -2,18 +2,19 @@
 title: Реагирование на события хранилища BLOB-объектов Azure | Документация Майкрософт
 description: Используйте службу "Сетка событий Azure" для подписки на события хранилища BLOB-объектов.
 services: storage,event-grid
-author: cbrooksmsft
-ms.author: cbrooks
+author: normesta
+ms.author: normesta
+ms.reviewer: cbrooks
 ms.date: 01/30/2018
 ms.topic: article
 ms.service: storage
 ms.subservice: blobs
-ms.openlocfilehash: 4bc683908646a5c05fee14f721e2c26482518947
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: b03d7d98fe43eacab63f45ccacd7d8dea9598c8e
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61427632"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65142160"
 ---
 # <a name="reacting-to-blob-storage-events"></a>Реагирование на события хранилища BLOB-объектов
 
@@ -33,7 +34,7 @@ ms.locfileid: "61427632"
 ## <a name="available-blob-storage-events"></a>Доступные события хранилища BLOB-объектов
 Сетка событий использует [подписки на события](../../event-grid/concepts.md#event-subscriptions) для маршрутизации сообщений о событиях подписчикам.  Подписки на события хранилища BLOB-объектов могут включать два типа событий:  
 
-> |Имя события|Описание|
+> |Название мероприятия|ОПИСАНИЕ|
 > |----------|-----------|
 > |`Microsoft.Storage.BlobCreated`|Возникает при создании или замене большого двоичного объекта с помощью операций `PutBlob`, `PutBlockList` или `CopyBlob`.|
 > |`Microsoft.Storage.BlobDeleted`|Возникает при удалении большого двоичного объекта с помощью операции `DeleteBlob`.|
@@ -41,18 +42,18 @@ ms.locfileid: "61427632"
 ## <a name="event-schema"></a>Схема событий
 События хранилища BLOB-объектов содержат все сведения, необходимые для реагирования на изменения в данных.  Событие хранилища BLOB-объектов можно определить, так как свойство eventType начинается с Microsoft.Storage. Дополнительные сведения об использовании свойств событий Сетки событий приводятся в статье [Схема событий службы "Сетка событий Azure"](../../event-grid/event-schema.md).  
 
-> |Свойство|type|Описание|
+> |Свойство|type|ОПИСАНИЕ|
 > |-------------------|------------------------|-----------------------------------------------------------------------|
 > |Раздел|string|Полный идентификатор Azure Resource Manager учетной записи хранения, которая создает событие.|
-> |тема|string|Относительный путь ресурса к объекту, который является темой события. Используется тот же расширенный формат Azure Resource Manager, который мы используем для описания учетных записей хранения, служб и контейнеров для Azure RBAC.  Этот формат включает не меняющее регистр имя большого двоичного объекта.|
+> |subject|string|Относительный путь ресурса к объекту, который является темой события. Используется тот же расширенный формат Azure Resource Manager, который мы используем для описания учетных записей хранения, служб и контейнеров для Azure RBAC.  Этот формат включает не меняющее регистр имя большого двоичного объекта.|
 > |eventTime|string|Дата и время создания события (в формате ISO 8601).|
 > |eventType|string|Microsoft.Storage.BlobCreated или Microsoft.Storage.BlobDeleted|
 > |Идентификатор|string|Уникальный идентификатор этого события.|
 > |dataVersion|string|Версия схемы для объекта данных.|
 > |metadataVersion|string|Версия схемы свойств верхнего уровня.|
-> |данные|object|Коллекция данных событий, относящихся к хранилищу BLOB-объектов.|
+> |data|object|Коллекция данных событий, относящихся к хранилищу BLOB-объектов.|
 > |data.contentType|string|Тип содержимого большого двоичного объекта, возвращаемый в заголовке Content-Type из большого двоичного объекта.|
-> |data.contentLength|номер|Размер большого двоичного объекта в виде целого числа, представляющего число байтов, возвращаемое в заголовке Content-Length из большого двоичного объекта.  Отправляется при событии BlobCreated, но не отправляется при событии BlobDeleted.|
+> |data.contentLength|number|Размер большого двоичного объекта в виде целого числа, представляющего число байтов, возвращаемое в заголовке Content-Length из большого двоичного объекта.  Отправляется при событии BlobCreated, но не отправляется при событии BlobDeleted.|
 > |data.url|string|Url-адрес объекта, который является темой этого события.|
 > |data.eTag|string|ETag объекта при возникновении события.  Недоступно для события BlobDeleted.|
 > |data.api|string|Имя операции API, которая активировала это событие. Для событий BlobCreated это значение — PutBlob, PutBlockList или CopyBlob. Для событий BlobDeleted — DeleteBlob. Эти значения совпадают с именами API, которые присутствуют в журналах диагностики службы хранилища Azure. Ознакомьтесь со статьей [Storage Analytics Logged Operations and Status Messages](https://docs.microsoft.com/rest/api/storageservices/storage-analytics-logged-operations-and-status-messages) (Операции с протоколированием и сообщения о состоянии Аналитики Службы хранилища).|

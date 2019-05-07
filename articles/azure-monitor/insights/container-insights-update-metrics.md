@@ -11,14 +11,14 @@ ms.service: azure-monitor
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 03/27/2019
+ms.date: 05/06/2019
 ms.author: magoedte
-ms.openlocfilehash: f0c9b84f31810a4b0cec93738f7ce327bc24d8d0
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: f4e15c4fc7bd7b786c5204153fe64f010e5ffe85
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64685624"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65148854"
 ---
 # <a name="how-to-update-azure-monitor-for-containers-to-enable-metrics"></a>Как обновить Azure Monitor для контейнеров, чтобы включить метрики
 Azure Monitor для контейнеров предоставляет поддержку для сбора метрик из узлов кластеров службы Azure Kubernetes (AKS) и модулей и их записи в хранилище данных метрик Azure Monitor. Это изменение призван обеспечивают улучшенную своевременность при представлении статистические вычисления (Avg, Count, Max, Min, Sum), на диаграммах производительности, поддержку закрепления диаграмм производительности в панели мониторинга портала Azure и поддерживают оповещения на основе метрик.
@@ -55,7 +55,7 @@ Azure Monitor для контейнеров предоставляет подд�
     ```azurecli
     az login
     az account set --subscription "Subscription Name"
-    curl -sL https://git.io/aks-mdm-onboarding-atscale | bash -s subscriptionId   
+    curl -sL https://aka.ms/ci-md-onboard-atscale | bash -s subscriptionId   
     ```
 
     Изменение конфигурации может занять несколько секунд. После завершения настройки конфигурации появится сообщение, похожее на приведенное ниже, с таким результатом:

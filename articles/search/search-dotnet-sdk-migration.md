@@ -10,18 +10,14 @@ ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: brjohnst
 ms.custom: seodec2018
-ms.openlocfilehash: 488a9fe24fb8fca0b7309dea63d0640a6384f95c
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: d41c2b541bf80448d180a1d081c255e5bf754e5e
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65024102"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65147330"
 ---
 # <a name="upgrading-to-the-azure-search-net-sdk-version-3"></a>Обновление пакета SDK службы поиска Azure для .NET до версии 3
-
-> [!Important]
-> Это содержимое является еще находятся в разработке. Версия 9.0 пакета SDK для .NET для поиска Azure доступна в NuGet. Мы работаем над этой статье объясняется, как выполнить обновление до версии 9.0. 
-> 
 
 <!--- DETAILS in the word doc
 cosmosdb
@@ -152,6 +148,6 @@ index.Analyzers = new Analyzer[]
 ## <a name="conclusion"></a>Заключение
 Если вам нужны дополнительные сведения об использовании пакета SDK .NET для службы поиска Azure, то ознакомьтесь с [практическим руководством по .NET](search-howto-dotnet-sdk.md).
 
-Будем рады вашим отзывам о пакете SDK. Если вы столкнулись с проблемами, то всегда можете обратиться за помощью на [форуме по Поиску Azure на сайте MSDN](https://social.msdn.microsoft.com/Forums/azure/home?forum=azuresearch). При обнаружении ошибки можно зарегистрировать проблему в [репозитории GitHub пакета SDK .NET для Azure](https://github.com/Azure/azure-sdk-for-net/issues). Добавьте в заголовок вашей проблемы префикс "[Azure Search]".
+Будем рады вашим отзывам о пакете SDK. Если возникли проблемы, вы можете обратиться за помощью на [Stack Overflow](https://stackoverflow.com/questions/tagged/azure-search). При обнаружении ошибки можно зарегистрировать проблему в [репозитории GitHub пакета SDK .NET для Azure](https://github.com/Azure/azure-sdk-for-net/issues). Добавьте в заголовок вашей проблемы префикс "[Azure Search]".
 
 Благодарим вас за использование поиска Azure!

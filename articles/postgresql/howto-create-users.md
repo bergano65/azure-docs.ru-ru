@@ -1,21 +1,19 @@
 ---
-title: Создание пользователей на сервере службы "База данных Azure для PostgreSQL"
-description: В этой статье описывается создание учетных записей пользователей для взаимодействия с сервером службы "База данных Azure для PostgreSQL".
-author: WenJason
-ms.author: v-jay
-editor: jasonwhowell
+title: Создать пользователей в базе данных Azure для PostgreSQL — один сервер
+description: 'В этой статье описывается, как можно создать новые учетные записи пользователей для взаимодействия с базой данных Azure для PostgreSQL: один сервер.'
+author: rachel-msft
+ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-origin.date: 10/16/2018
-ms.date: 12/03/2018
-ms.openlocfilehash: 33c107c46b314136fa3d43f8e7881e096afa374c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 5/6/2019
+ms.openlocfilehash: ce6188732720bc43c5849fa492237c7ab98487c6
+ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60422276"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65067498"
 ---
-# <a name="create-users-in-azure-database-for-postgresql-server"></a>Создание пользователей на сервере службы "База данных Azure для PostgreSQL" 
+# <a name="create-users-in-azure-database-for-postgresql---single-server"></a>Создать пользователей в базе данных Azure для PostgreSQL — один сервер
 В этой статье описывается создание пользователей на сервере службы "База данных Azure для PostgreSQL".
 
 ## <a name="the-server-admin-account"></a>Учетная запись администратора сервера
@@ -74,7 +72,7 @@ ms.locfileid: "60422276"
 5. Чтобы войти на сервер, укажите эту базу данных и введите новое имя пользователя и пароль. В этом примере показана командная строка psql. После ввода этой команды вам будет предложено ввести пароль для имени пользователя. Укажите собственные имя сервера, имя базы данных и имя пользователя.
 
    ```azurecli-interactive
-   psql --host=mydemoserver.postgres.database.chinacloudapi.cn --port=5432 --username=db_user@mydemoserver --dbname=newdb
+   psql --host=mydemoserver.postgres.database.azure.com --port=5432 --username=db_user@mydemoserver --dbname=newdb
    ```
 
 ## <a name="next-steps"></a>Дальнейшие действия

@@ -6,30 +6,30 @@ author: dlepow
 manager: jeconnoc
 ms.service: container-instances
 ms.topic: article
-ms.date: 02/15/2019
+ms.date: 04/25/2019
 ms.author: danlep
 ms.custom: mvc
-ms.openlocfilehash: bf783c988c0163fe562669a8331c332dbf8d535e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 9dc3e19f9429a6055a799f3f013c732538fa370d
+ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61067338"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65070854"
 ---
 # <a name="troubleshoot-common-issues-in-azure-container-instances"></a>Устранение распространенных неполадок с помощью службы "Экземпляры контейнеров Azure"
 
-В этой статье показано, как устранять распространенные неполадки при развертывании контейнеров и управлении ими в службе "Экземпляры контейнеров Azure".
+В этой статье показано, как устранять распространенные неполадки при развертывании контейнеров и управлении ими в службе "Экземпляры контейнеров Azure". См. также [ответы на вопросы о](container-instances-faq.md).
 
 ## <a name="naming-conventions"></a>Соглашения об именовании.
 
 При определении спецификации контейнера некоторые параметры требуют соблюдения ограничений на именование. Ниже приведена таблица особых требований для свойств группы контейнеров. Дополнительные сведения о соглашениях об именовании Azure см. в разделе [Правила именования и ограничения][azure-name-restrictions] в центре архитектуры Azure.
 
-| Область | Длина | Регистр | Допустимые знаки | Рекомендуемый шаблон | Пример |
+| `Scope` | Длина | Регистр | Допустимые знаки | Рекомендуемый шаблон | Пример |
 | --- | --- | --- | --- | --- | --- |
 | Имя группы контейнеров | От 1 до 64 |Без учета регистра |Буквы, цифры, дефис в любом месте, за исключением первого знака |`<name>-<role>-CG<number>` |`web-batch-CG1` |
 | Имя контейнера | От 1 до 64 |Без учета регистра |Буквы, цифры, дефис в любом месте, за исключением первого знака |`<name>-<role>-CG<number>` |`web-batch-CG1` |
 | Порты контейнера | От 1 до 65 535 |Целое число  |Целое число от 1 до 65 535. |`<port-number>` |`443` |
-| Метка DNS-имени | 5–63 |Без учета регистра |Буквы, цифры, дефис в любом месте, за исключением первого знака |`<name>` |`frontend-site1` |
+| Метка имени DNS | 5–63 |Без учета регистра |Буквы, цифры, дефис в любом месте, за исключением первого знака |`<name>` |`frontend-site1` |
 | Переменная среды | 1–63 |Без учета регистра |Буквы, цифры и подчеркивание (_) в любом месте, за исключением первого знака |`<name>` |`MY_VARIABLE` |
 | Имя тома | 5–63 |Без учета регистра |Буквы в нижнем регистре, цифры и дефисы в любом месте, кроме первого или последнего знака. Не может содержать два дефиса подряд. |`<name>` |`batch-output-volume` |
 
@@ -46,11 +46,7 @@ ms.locfileid: "61067338"
 }
 ```
 
-Эта ошибка часто возникает при развертывании образов Windows, основанных на выпуске Semi-Annual Channel (SAC). Например, версии Windows 1709 и 1803 являются выпусками SAC и вызывают такую ошибку при развертывании.
-
-Служба "Экземпляры контейнеров Azure" сейчас поддерживает только образы Windows на основе выпуска **Windows Server 2016 Long-Term Servicing Channel (LTSC)**. Чтобы избежать проблем, при развертывании контейнеров Windows следует развертывать образы на основе Windows Server 2016 (LTSC). Образы на основе Windows Server 2019 (LTSC) не поддерживаются.
-
-Дополнительные сведения о версиях LTSC и SAC Windows см. в статье [Обзор Semi-Annual Channel для Windows Server][windows-sac-overview].
+Эта ошибка чаще всего возникает, когда развертывание образов Windows, основанных на полугодовой канал выпуска 1709 или 1803, которые не поддерживаются. Для поддерживаемых образов Windows экземпляры контейнеров Azure, см. в разделе [ответы на вопросы о](container-instances-faq.md#what-windows-base-os-images-are-supported).
 
 ## <a name="unable-to-pull-image"></a>Сбой получения образа
 
@@ -102,7 +98,7 @@ az container create -g MyResourceGroup --name myapp --image ubuntu --command-lin
 
 ```azurecli-interactive 
 ## Deploying a Windows container
-az container create -g myResourceGroup --name mywindowsapp --os-type Windows --image mcr.microsoft.com/windows/servercore:ltsc2016
+az container create -g myResourceGroup --name mywindowsapp --os-type Windows --image mcr.microsoft.com/windows/servercore:ltsc2019
  --command-line "ping -t localhost"
 ```
 
@@ -156,7 +152,7 @@ API Экземпляров контейнеров и портала Azure вкл
 * [Размер образа](#image-size)
 * [Расположение образа](#image-location)
 
-Для образов Windows действуют [дополнительные рекомендации](#cached-windows-images).
+Для образов Windows действуют [дополнительные рекомендации](#cached-images).
 
 ### <a name="image-size"></a>Размер образа
 
@@ -176,14 +172,12 @@ mcr.microsoft.com/azuredocs/aci-helloworld    latest    7367f3256b41    15 month
 
 Чтобы получение образа меньше влияло на время запуска контейнера, вы также можете разместить образ контейнера в [реестре контейнеров Azure](/azure/container-registry/) того же региона, в котором будут развернуты экземпляры контейнеров. Таким образом сокращается сетевой путь, который должен пройти образ контейнера, а также значительно сокращается время загрузки.
 
-### <a name="cached-windows-images"></a>Кэшированные образы Windows
+### <a name="cached-images"></a>Кэшированных образов
 
-Экземпляры контейнеров Azure использует механизм кэширования, чтобы помочь сократить время запуска контейнера для образов на основе общих образов Windows и Linux. Подробный список кэшированных образов и тегов, используйте [вывод списка кэшированных образов] [ list-cached-images] API.
+Экземпляры контейнеров Azure использует механизм кэширования, чтобы помочь сократить время запуска контейнера для образов, созданных на Общие [Windows базовые образы](container-instances-faq.md#what-windows-base-os-images-are-supported), в том числе `nanoserver:1809`, `servercore:ltsc2019`, и `servercore:1809`. Часто используемые образы Linux, такие как `ubuntu:1604` и `alpine:3.6` также кэшируются. Актуальный список кэшированных образов и тегов, используйте [вывод списка кэшированных образов] [ list-cached-images] API.
 
-Чтобы ускорить запуск, используйте для контейнера Windows одну из **трех последних версий** следующих **двух образов**:
-
-* [Windows Server Core 2016] [ docker-hub-windows-core] (LTSC)
-* [Nano Server Windows Server 2016][docker-hub-windows-nano]
+> [!NOTE]
+> Образы на основе Windows Server 2019 в экземплярах контейнеров Azure используется в предварительной версии.
 
 ### <a name="windows-containers-slow-network-readiness"></a>Контейнеры Windows замедляют период готовности сети
 

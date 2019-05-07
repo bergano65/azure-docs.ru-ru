@@ -1,20 +1,19 @@
 ---
-title: Оптимизация сбора статистики запросов на сервере службы "База данных Azure для PostgreSQL"
-description: В этой статье описывается оптимизация сбора статистики запросов на сервере службы "База данных Azure для PostgreSQL".
-author: WenJason
-ms.author: v-jay
+title: 'Оптимизация сбора статистики запросов в базе данных Azure для PostgreSQL: один сервер'
+description: 'В этой статье описывается, как можно оптимизировать сбора статистики запросов в базе данных Azure для PostgreSQL: один сервер'
+author: dianaputnam
+ms.author: dianas
 ms.service: postgresql
 ms.topic: conceptual
-origin.date: 10/25/2018
-ms.date: 02/18/2019
-ms.openlocfilehash: 428a22f79008130448bef65f14322d6880b1b367
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 5/6/2019
+ms.openlocfilehash: 7425ee7916fd71625f336a7af35f6481d1ed2474
+ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60422715"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65068962"
 ---
-# <a name="optimize-query-statistics-collection-on-an-azure-database-for-postgresql-server"></a>Оптимизация сбора статистики запросов на сервере службы "База данных Azure для PostgreSQL" 
+# <a name="optimize-query-statistics-collection-on-an-azure-database-for-postgresql---single-server"></a>Оптимизация запросов сбор статистики для базы данных Azure для PostgreSQL: один сервер
 В этой статье описывается оптимизация сбора статистики запросов на сервере службы "База данных Azure для PostgreSQL".
 
 ## <a name="use-pgstatsstatements"></a>Использование pg_stats_statements

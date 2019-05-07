@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: tilee
-ms.openlocfilehash: 62c7c6b2f78ea90999f72597291e8347ddc14029
-ms.sourcegitcommit: e7d4881105ef17e6f10e8e11043a31262cfcf3b7
+ms.openlocfilehash: 3aca64c7b0f1ad04967782cb3349da302db557a0
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64870437"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65145089"
 ---
 # <a name="status-monitor-v2-detailed-instructions"></a>Состояние монитора v2 подробные инструкции
 
@@ -229,3 +229,24 @@ SerializationVersion           1.1.0.1
 Cmd: `Enable-ApplicationInsightsMonitoring`
 
 Просмотрите наши [Справочник по API](status-monitor-v2-api-enable-monitoring.md) подробное описание того, как с помощью этого командлета. 
+
+
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+ Просмотр телеметрии:
+
+- [Изучите метрики](../../azure-monitor/app/metrics-explorer.md), чтобы отслеживать производительность и использование.
+- [Поиск событий и журналов](../../azure-monitor/app/diagnostic-search.md) для диагностики проблем
+- [Аналитика](../../azure-monitor/app/analytics.md) для создания расширенных запросов.
+- [Создайте панели мониторинга](../../azure-monitor/app/app-insights-dashboards.md)
+
+ Добавление данных телеметрии:
+
+- [Создание веб-тестов](monitor-web-app-availability.md) чтобы убедиться, что ваш сайт продолжает работать.
+- [Добавьте телеметрию веб-клиента](../../azure-monitor/app/javascript.md) чтобы просматривать исключения в коде веб-страницы и вставлять вызовы трассировки.
+- [Добавьте пакет SDK Application Insights в код](../../azure-monitor/app/asp-net.md) , можно вставить трассировки и журналов вызовов
+
+Новые возможности в версии 2 монитор состояния:
+
+- Используйте наше руководство по [Устранение](status-monitor-v2-troubleshoot.md) v2 монитор состояния.

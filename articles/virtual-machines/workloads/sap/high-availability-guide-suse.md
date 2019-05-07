@@ -14,14 +14,14 @@ ms.devlang: NA
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 03/15/2019
+ms.date: 04/30/2019
 ms.author: sedusch
-ms.openlocfilehash: 328aa4c80c830014de8ee8b573d13ae56af73efc
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 44f99ed1af65eb1e487295c11077fd558ce4285c
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64925808"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65142955"
 ---
 # <a name="high-availability-for-sap-netweaver-on-azure-vms-on-suse-linux-enterprise-server-for-sap-applications"></a>Руководство по обеспечению высокого уровня доступности виртуальных машин Azure для SAP NetWeaver на SUSE Linux Enterprise Server для приложений SAP
 
@@ -87,6 +87,9 @@ ms.locfileid: "64925808"
 
 NFS-сервер, SAP NetWeaver ASCS, SAP NetWeaver SCS, SAP NetWeaver ERS и база данных SAP HANA используют виртуальное имя узла и виртуальные IP-адреса. Балансировщику нагрузки в Azure нужен виртуальный IP-адрес. Ниже приведен список конфигурации балансировщика нагрузки (A)SCS и ERS.
 
+> [!IMPORTANT]
+> Кластеризации с несколькими ИД безопасности из SAP ASCS/ERS с номером SUSE Linux, как гостевой ОС на виртуальных машинах Azure — **не поддерживается**. С несколькими ИД безопасности кластеризации описывается установка нескольких экземпляров SAP ASCS/ERS при использовании разные идентификаторы безопасности в одном кластере Pacemaker
+
 ### <a name="ascs"></a>(A)SCS
 
 * Конфигурация внешнего интерфейса:
@@ -114,6 +117,7 @@ NFS-сервер, SAP NetWeaver ASCS, SAP NetWeaver SCS, SAP NetWeaver ERS и б
 * Порт пробы:
   * Порт 621<strong>&lt;nr&gt;</strong>.
 * Правила балансировки нагрузки
+  * 32<strong>&lt;nr&gt;</strong> TCP;
   * 33<strong>&lt;nr&gt;</strong> TCP;
   * 5<strong>&lt;nr&gt;</strong>13 TCP;
   * 5<strong>&lt;nr&gt;</strong>14 TCP;
@@ -202,7 +206,7 @@ SAP NetWeaver требует общее хранилище для каталог
          * Чтобы создать проверку работоспособности для ERS, повторите предыдущие шаги (например, 621**02** и **nw1-aers-hp**).
    1. Правила балансировки нагрузки
       1. TCP 32**00** для ASCS
-         1. Выберите подсистему балансировки нагрузки, щелкните "Правила балансировки нагрузки" и нажмите кнопку "Добавить".
+         1. Подсистему балансировки нагрузки, выберите правила балансировки нагрузки и щелкните "Добавить"
          1. Введите имя нового правила балансировщика нагрузки (например, **nw1-lb-3200**).
          1. Выберите внешний IP-адрес, внутренний пул и проверку работоспособности, созданные ранее (например, **nw1-ascs-frontend**).
          1. Оставьте выбранным протокол **TCP** и введите порт **3200**.
@@ -587,7 +591,7 @@ SAP NetWeaver требует общее хранилище для каталог
    sudo crm configure property maintenance-mode="false"
    </code></pre>
 
-  Если вы обновляете более старой версии и переключение на сервер постановки в очередь 2, см. Примечание sap [2641019](https://launchpad.support.sap.com/#/notes/2641019). 
+  Если вы обновляете более старой версии и переключение на сервер постановки в очередь 2, см. в разделе SAP Примечание [2641019](https://launchpad.support.sap.com/#/notes/2641019). 
 
    Убедитесь, что состояние кластера — "ОК" и что запущены все ресурсы. Не важно, на каком узле выполняются ресурсы.
 

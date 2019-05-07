@@ -1,20 +1,19 @@
 ---
-title: Обзор конечных точек служб виртуальной сети базы данных Azure для сервера PostgreSQL
-description: Описание работы конечных точек служб виртуальной сети сервера базы данных Azure для PostgreSQL.
-author: WenJason
-ms.author: v-jay
+title: Виртуальная сеть (VNet) службы Общие сведения о конечной точке в базе данных Azure для PostgreSQL — один сервер
+description: 'Узнайте, как работают конечные точки службы виртуальной сети (VNet) для базы данных Azure для PostgreSQL: один сервер.'
+author: bolzmj
+ms.author: mbolz
 ms.service: postgresql
 ms.topic: conceptual
-origin.date: 08/20/2018
-ms.date: 04/22/2019
-ms.openlocfilehash: c6549ad170a0fc3b4387d5bc5163ca0548b92119
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 5/6/2019
+ms.openlocfilehash: c873abcdf3c64f8357c584c8e24809270946bf74
+ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60560133"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65073479"
 ---
-# <a name="use-virtual-network-service-endpoints-and-rules-for-azure-database-for-postgresql"></a>Использование конечных точек служб и правил виртуальной сети с Базой данных Azure для PostgreSQL
+# <a name="use-virtual-network-service-endpoints-and-rules-for-azure-database-for-postgresql---single-server"></a>Использование конечных точек службы виртуальной сети и правил для базы данных Azure для PostgreSQL — один сервер
 
 *Правила виртуальной сети* — это одна из функций безопасности брандмауэра, обеспечивающая управление приемом сервером Базы данных Azure для PostgreSQL подключений из определенных подсетей в виртуальных сетях. В этой статье объясняется, почему правила виртуальной сети иногда являются лучшим вариантом для защиты подключений к серверу Базы данных Azure для PostgreSQL.
 

@@ -6,15 +6,15 @@ ms.service: automation
 ms.subservice: process-automation
 author: georgewallace
 ms.author: gwallace
-ms.date: 03/31/2019
+ms.date: 04/24/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 6d7b99da3e8e81973c51bbd68a15517828c9736d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: eaff996f5d0ad9c2eac00c9306ef8808b43e25c2
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61306871"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65146044"
 ---
 # <a name="startstop-vms-during-off-hours-solution-in-azure-automation"></a>Решение для запуска и остановки виртуальных машин в нерабочее время в службе автоматизации Azure
 
@@ -46,6 +46,50 @@ ms.locfileid: "61306871"
 Аутентификация модулей runbook в этом решении осуществляется с помощью [учетной записи запуска от имени Azure](automation-create-runas-account.md). Этот метод аутентификации является предпочтительным, так как в нем используется сертификат, а не пароль, который может устареть или часто меняться.
 
 Рекомендуется использовать отдельную учетную запись службы автоматизации для запуска и остановки виртуальных Машин решения. Это, поскольку версии модулей Azure часто обновляются, и их параметров может измениться. Решение запуска и остановки виртуальной Машины не обновляется на том же периодичность, поэтому он не может работать с более поздними версиями командлетов, которые он использует. Рекомендуется проверять обновления модуля в тесте учетной записи службы автоматизации, прежде чем импортировать их в рабочей учетной записи службы автоматизации.
+
+### <a name="permissions-needed-to-deploy"></a>Разрешения, необходимые для развертывания
+
+Существуют определенные разрешения, которые пользователь должен обладать для развертывания виртуальных машин запуска и остановки во время отключить решение часов. Эти разрешения различаются, при использовании предварительно созданной рабочей области учетной записи службы автоматизации и Log Analytics или создать новые во время развертывания.
+
+#### <a name="pre-existing-automation-account-and-log-analytics-account"></a>Учетная запись существующей учетной записи службы автоматизации и Log Analytics
+
+Для развертывания запуск и остановка виртуальных машин в off решение часов учетной записи службы автоматизации и Log Analytics, пользователь, развертывающий решения необходимы следующие разрешения на **группы ресурсов**. Дополнительные сведения о ролях см. в разделе [пользовательские роли для ресурсов Azure](../role-based-access-control/custom-roles.md).
+
+| Разрешение | `Scope`|
+| --- | --- |
+| Microsoft.Automation/automationAccounts/read | Группа ресурсов |
+| Microsoft.Automation/automationAccounts/variables/write | Группа ресурсов |
+| Microsoft.Automation/automationAccounts/schedules/write | Группа ресурсов |
+| Microsoft.Automation/automationAccounts/runbooks/write | Группа ресурсов |
+| Microsoft.Automation/automationAccounts/connections/write | Группа ресурсов |
+| Microsoft.Automation/automationAccounts/certificates/write | Группа ресурсов |
+| Microsoft.Automation/automationAccounts/modules/write | Группа ресурсов |
+| Microsoft.Automation/automationAccounts/modules/read | Группа ресурсов |
+| Microsoft.automation/automationAccounts/jobSchedules/write | Группа ресурсов |
+| Microsoft.Automation/automationAccounts/jobs/write | Группа ресурсов |
+| Microsoft.Automation/automationAccounts/jobs/read | Группа ресурсов |
+| Microsoft.OperationsManagement/solutions/write | Группа ресурсов |
+| Microsoft.OperationalInsights/workspaces/* | Группа ресурсов |
+| Microsoft.Insights/diagnosticSettings/write | Группа ресурсов |
+| Microsoft.Insights/ActionGroups/WriteMicrosoft.Insights/ActionGroups/read | Группа ресурсов |
+| Microsoft.Resources/subscriptions/resourceGroups/read | Группа ресурсов |
+| Microsoft.Resources/deployments/* | Группа ресурсов |
+
+### <a name="new-automation-account-and-a-new-log-analytics-workspace"></a>Учетная запись службы автоматизации и рабочую область Log Analytics
+
+Для запуска и остановки виртуальных машин в нерабочее время развертывания решения для новой учетной записи службы автоматизации и Log Analytics рабочей области пользователя, развертывание решения требуется разрешения, определенные в предыдущем разделе, а также следующие разрешения:
+
+- Соадминистратор подписка - это необходимо для создания классической учетной записи запуска
+- Быть частью **разработчик приложения** роли. Дополнительные сведения о настройке записей см. в разделе [разрешения для настройки учетных записей запуска от имени](manage-runas-account.md#permissions).
+
+| Разрешение |`Scope`|
+| --- | --- |
+| Microsoft.Authorization/roleAssignments/read | Подписка |
+| Microsoft.Authorization/roleAssignments/write. | Подписка |
+| Microsoft.Automation/automationAccounts/connections/read | Группа ресурсов |
+| Microsoft.Automation/automationAccounts/certificates/read | Группа ресурсов |
+| Microsoft.Automation/automationAccounts/write | Группа ресурсов |
+| Microsoft.OperationalInsights/workspaces/write | Группа ресурсов |
 
 ## <a name="deploy-the-solution"></a>Развертывание решения
 
@@ -192,7 +236,7 @@ ms.locfileid: "61306871"
 
 Все родительские модули runbook содержат параметр _WhatIf_. Если параметр _WhatIf_ имеет значение **True**, то он обеспечивает подробное описание реакции runbook на событие при запуске без параметра _WhatIf_ и проверяет правильность выбора целевых виртуальных машин. Модули runbook выполняют определенные в них действия, только если параметр _WhatIf_ имеет значение **False**.
 
-|Runbook | Параметры | Описание|
+|Модуль Runbook | Параметры | ОПИСАНИЕ|
 | --- | --- | ---|
 |AutoStop_CreateAlert_Child | VMObject <br> AlertAction <br> WebHookURI | Вызывается из родительского runbook. Этот runbook создает оповещения для каждого ресурса для сценария AutoStop.|
 |AutoStop_CreateAlert_Parent | VMList<br> WhatIf: Значение true или false  | Создает или обновляет правила генерации оповещений Azure для виртуальных машин в целевой подписке или группах ресурсов. <br> VMList список виртуальных машин с разделителями-запятыми. Например, _vm1, vm2, vm3_.<br> *WhatIf* проверяет логику runbook без выполнения.|
@@ -207,7 +251,7 @@ ms.locfileid: "61306871"
 
 В таблице ниже перечислены переменные, создаваемые в вашей учетной записи службы автоматизации. Следует изменять только переменные с префиксом **External**. Изменение переменных с префиксом **Internal** приведет к нежелательным последствиям.
 
-|Переменная | Описание|
+|Переменная | ОПИСАНИЕ|
 |---------|------------|
 |External_AutoStop_Condition | Условный оператор, необходимый для настройки условия перед активацией оповещения. Допустимые значения: **GreaterThan**, **GreaterThanOrEqual**, **LessThan** и **LessThanOrEqual**.|
 |External_AutoStop_Description | Оповещение для остановки виртуальной машины в случае, если процент использования ЦП превышает пороговое значение.|
@@ -232,7 +276,7 @@ ms.locfileid: "61306871"
 
 Не следует включать все расписания, так как это может привести к перекрытию действий расписаний. Лучше определить, какие оптимизации нужно выполнить, и внести соответствующие изменения. Дополнительные пояснения можно получить, ознакомившись с примерами сценариев в разделе "Обзор".
 
-|Имя расписания | Frequency | Описание|
+|Имя расписания | Frequency | ОПИСАНИЕ|
 |--- | --- | ---|
 |Schedule_AutoStop_CreateAlert_Parent | Каждые 8 часов | Каждые 8 часов запускает runbook AutoStop_CreateAlert_Parent, который, в свою очередь, останавливает виртуальные машины на основе значений переменных службы автоматизации Azure External_Start_ResourceGroupNames, External_Stop_ResourceGroupNames и External_ExcludeVMNames. Кроме того, можно указать разделенный запятыми список виртуальных машин с помощью параметра VMList.|
 |Scheduled_StopVM | Определяется пользователем, ежедневно | Запускает runbook Scheduled_Parent с параметром _Stop_ каждый день в указанное время. Автоматически останавливает все виртуальные машины, удовлетворяющие правилам, определенным с помощью переменных ресурса. Включите связанное расписание **Scheduled-StartVM**.|
@@ -246,10 +290,10 @@ ms.locfileid: "61306871"
 
 ### <a name="job-logs"></a>Журналы заданий
 
-|Свойство | Описание|
+|Свойство | ОПИСАНИЕ|
 |----------|----------|
 |Caller |  Сторона, инициировавшая операцию. Допустимые значения: электронный адрес или system для запланированных заданий.|
-|Category | Классификация типа данных. Для службы автоматизации значением является JobLogs.|
+|Категория | Классификация типа данных. Для службы автоматизации значением является JobLogs.|
 |CorrelationId | GUID, представляющий собой идентификатор корреляции задания runbook.|
 |JobId | GUID, представляющий собой идентификатор задания runbook.|
 |operationName | Указывает тип операции, выполняемой в Azure. Для службы автоматизации значением является Job.|
@@ -267,10 +311,10 @@ ms.locfileid: "61306871"
 
 ### <a name="job-streams"></a>Потоки заданий
 
-|Свойство | Описание|
+|Свойство | ОПИСАНИЕ|
 |----------|----------|
 |Caller |  Сторона, инициировавшая операцию. Допустимые значения: электронный адрес или system для запланированных заданий.|
-|Category | Классификация типа данных. Для службы автоматизации значением является JobStreams.|
+|Категория | Классификация типа данных. Для службы автоматизации значением является JobStreams.|
 |JobId | GUID, представляющий собой идентификатор задания runbook.|
 |operationName | Указывает тип операции, выполняемой в Azure. Для службы автоматизации значением является Job.|
 |ResourceGroup | Указывает имя группы ресурсов задания Runbook.|
@@ -290,10 +334,10 @@ ms.locfileid: "61306871"
 
 Следующая таблица содержит примеры поисков по журналу для получения записей заданий, собранных этим решением.
 
-|Запрос | Описание|
+|Запрос | ОПИСАНИЕ|
 |----------|----------|
-|Поиск успешно выполненных заданий runbook ScheduledStartStop_Parent. | <code>search Category == "JobLogs" <br>&#124;  where ( RunbookName_s == "ScheduledStartStop_Parent" ) <br>&#124;  where ( ResultType == "Completed" )  <br>&#124;  summarize <br>&#124; AggregatedValue = count() by ResultType, bin(TimeGenerated, 1h) <br>&#124;  sort by TimeGenerated desc</code>|
-|Поиск успешно выполненных заданий runbook SequencedStartStop_Parent. | <code>search Category == "JobLogs" <br>&#124;  where ( RunbookName_s == "SequencedStartStop_Parent" ) <br>&#124;  where ( ResultType == "Completed" ) <br>&#124;  summarize <br>&#124; AggregatedValue = count() by ResultType, bin(TimeGenerated, 1h) <br>&#124;  sort by TimeGenerated desc```|
+|Поиск успешно выполненных заданий runbook ScheduledStartStop_Parent. | <code>search Category == "JobLogs" <br>&#124;  where ( RunbookName_s == "ScheduledStartStop_Parent" ) <br>&#124;  where ( ResultType == "Completed" )  <br>&#124;  summarize AggregatedValue = count() by ResultType, bin(TimeGenerated, 1h) <br>&#124;  sort by TimeGenerated desc</code>|
+|Поиск успешно выполненных заданий runbook SequencedStartStop_Parent. | <code>search Category == "JobLogs" <br>&#124;  where ( RunbookName_s == "SequencedStartStop_Parent" ) <br>&#124;  where ( ResultType == "Completed" ) <br>&#124;  summarize AggregatedValue = count() by ResultType, bin(TimeGenerated, 1h) <br>&#124;  sort by TimeGenerated desc</code>|
 
 ## <a name="viewing-the-solution"></a>Просмотр решения
 

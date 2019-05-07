@@ -2,18 +2,17 @@
 title: Использование рабочих процессов Hadoop Oozie в Azure HDInsight на основе Linux
 description: Использование Hadoop Oozie в HDInsight на основе Linux. Узнайте, как определить рабочий процесс и отправить задание для Oozie.
 ms.service: hdinsight
-ms.custom: hdinsightactive
 author: omidm1
 ms.author: omidm
 ms.reviewer: jasonh
 ms.topic: conceptual
-ms.date: 02/28/2019
-ms.openlocfilehash: 97e1836952020723c1043617d74a96471ae07aad
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.date: 05/06/2019
+ms.openlocfilehash: 55db43bf3037fcba59e7ad783c6d8c06f1886bdb
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64724160"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65142833"
 ---
 # <a name="use-apache-oozie-with-apache-hadoop-to-define-and-run-a-workflow-on-linux-based-azure-hdinsight"></a>Использование Apache Oozie с Apache Hadoop для определения и запуска рабочих процессов в Azure HDInsight под управлением Linux
 
@@ -38,13 +37,8 @@ ms.locfileid: "64724160"
 
 * **Базу данных Azure SQL**.  См. в разделе [создать базу данных Azure SQL на портале Azure](../sql-database/sql-database-get-started.md).  В этой статье использует базу данных с именем `oozietest`.
 
-* **Возможные изменения конфигурации хранилища.**  См. в разделе [конфигурации хранилища](#storage-configuration) при использовании типа учетной записи хранения `BlobStorage`.
+* [Схема URI](./hdinsight-hadoop-linux-information.md#URI-and-scheme) для основного хранилища кластеров. Это было бы `wasb://` для службы хранилища Azure, `abfs://` для Gen2 хранилища Озера данных Azure или `adl://` для Gen1 хранилища Озера данных Azure. Если безопасной передачи включена для службы хранилища Azure или Gen2 хранилища Data Lake, URI будет `wasbs://` или `abfss://`соответственно см. также [безопасное перемещение](../storage/common/storage-require-secure-transfer.md).
 
-## <a name="storage-configuration"></a>Конфигурация хранилища
-Никаких действий не требуется, если используется учетная запись хранения имеет вид `Storage (general purpose v1)` или `StorageV2 (general purpose v2)`.  В процессе, в этой статье по крайней мере получения выходных данных в `/mapreducestaging`.  Конфигурации hadoop по умолчанию будет содержать `/mapreducestaging` в `fs.azure.page.blob.dir` переменную конфигурации в `core-site.xml` для службы `HDFS`.  Эта конфигурация приведет выходных данных в каталог, который необходимо страничных BLOB-объектов, который не поддерживается для типа учетной записи хранения `BlobStorage`.  Чтобы использовать `BlobStorage` в этой статье, удалите `/mapreducestaging` из `fs.azure.page.blob.dir` переменной конфигурации.  Конфигурация может быть организован [пользовательский Интерфейс Ambari](hdinsight-hadoop-manage-ambari.md).  В противном случае вы получите сообщение об ошибке: `Page blob is not supported for this account type.`
-
-> [!NOTE]  
-> В учетной записи хранения, используемые в этой статье [безопасное перемещение](../storage/common/storage-require-secure-transfer.md) включена и, следовательно, `wasbs` вместо `wasb` используется в статье.
 
 ## <a name="example-workflow"></a>Пример рабочего процесса
 
@@ -451,7 +445,7 @@ hdfs dfs -put /usr/share/java/sqljdbc_7.0/enu/mssql-jdbc*.jar /tutorials/useoozi
 5. Измените приведенный ниже код для замены `<JOBID>` идентификатором, возвращенным ранее.  Для запуска задания выполните следующую команду:
 
     ```bash
-    oozie job -start JOBID
+    oozie job -start <JOBID>
     ```
 
     Если вы проверите состояние после этой команды, то увидите состояние выполнения и информацию о действиях для этого задания.  Задание займет несколько минут.

@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 03/19/2019
 ms.author: diberry
-ms.openlocfilehash: 10fe5d90e7a7a59a1b543209a37b998376fdda1e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 8f067bc005c4de9ddc87ed598b1717f8fbb29a6a
+ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60196224"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65072381"
 ---
 # <a name="language-and-region-support-for-luis"></a>Поддержка языков и регионов в LUIS
 
@@ -102,7 +102,7 @@ ms.locfileid: "60196224"
 |Язык и региональные параметры|Version|Назначение|
 |--|--|--|
 |Немецкий<br>`de-de`|1.0.0|Размечает слова, разделяя их использование на основе обучения разметчика компьютера, который пытается разделить составные слова на их одного компонента.<br>Если пользователь вводит `Ich fahre einen krankenwagen` utterance он окажется `Ich fahre einen kranken wagen`. Позволяя маркировку `kranken` и `wagen` независимо друг от друга как другой сущности.|
-|Немецкий<br>`de-de`|1.0.1|Размечает слова, разделяя их на пробелы.<br> Если пользователь вводит `Ich fahre einen krankenwagen` как utterance остается один токен. Таким образом `krankenwagen` помечается как единая сущность. |
+|Немецкий<br>`de-de`|1.0.2|Размечает слова, разделяя их на пробелы.<br> Если пользователь вводит `Ich fahre einen krankenwagen` как utterance остается один токен. Таким образом `krankenwagen` помечается как единая сущность. |
 
 ### <a name="migrating-between-tokenizer-versions"></a>Миграция между версиями лексический анализатор
 <!--

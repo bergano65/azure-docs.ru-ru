@@ -1,18 +1,18 @@
 ---
-title: Настройка журналов сервера для PostgreSQL и получение к ним доступа с помощью Azure CLI
-description: В этой статье описывается, как настроить журналы сервера в базе данных Azure для PostgreSQL с помощью командной строки CLI Azure и получить доступ к этим журналам.
+title: 'Настройка и доступ к журналам сервера для PostgreSQL: один сервер с помощью Azure CLI'
+description: 'В этой статье описывается настройка и доступ к журналам сервера в базе данных Azure для PostgreSQL: один сервер с помощью командной строки Azure.'
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.devlang: azurecli
 ms.topic: conceptual
-ms.date: 02/28/2018
-ms.openlocfilehash: 3ca77c1ffa5f5a3f384009299701f4aa674baf59
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 5/6/2019
+ms.openlocfilehash: 4702db31ffeb15481584b9638f5be1aa640ff39e
+ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60421201"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65067214"
 ---
 # <a name="configure-and-access-server-logs-by-using-azure-cli"></a>Настройка журналов сервера и получение к ним доступа с помощью Azure CLI
 Вы можете скачать журналы ошибок сервера PostgreSQL с помощью интерфейса командной строки (Azure CLI). Но доступ к журналам транзакций не поддерживается. 
@@ -22,7 +22,7 @@ ms.locfileid: "60421201"
 - [сервер базы данных Azure для PostgreSQL](quickstart-create-server-database-azure-cli.md).
 - Программа командной строки [Azure CLI 2.0](/cli/azure/install-azure-cli) или Azure Cloud Shell в браузере
 
-## <a name="configure-logging-for-azure-database-for-postgresql"></a>Настройка ведения журнала для базы данных Azure для PostgreSQL
+## <a name="configure-logging"></a>Настройка журнала
 Можно настроить на сервере доступ к журналам запросов и журналам ошибок. Журналы ошибок могут содержать сведения об автоматической очистке, подключениях и контрольных точках.
 1. Включите ведение журнала.
 2. Чтобы включить ведение журнала запросов, обновите **log\_statement**  и  **log\_min\_duration\_statement**.
@@ -30,7 +30,7 @@ ms.locfileid: "60421201"
 
 Дополнительные сведения см. в статье [Настройка параметров конфигурации сервера с помощью Azure CLI](howto-configure-server-parameters-using-cli.md).
 
-## <a name="list-logs-for-azure-database-for-postgresql-server"></a>Получение списка журналов для базы данных Azure для сервера PostgreSQL
+## <a name="list-logs"></a>Получение списка журналов
 Чтобы получить список доступных файлов журналов для сервера, выполните команду [az postgres server-logs list](/cli/azure/postgres/server-logs).
 
 Можно отобразить список файлов журнала для сервера **mydemoserver.postgres.database.azure.com** в группе ресурсов **myresourcegroup**. Затем направьте список файлов журнала в текстовый файл с именем **log\_files\_list.txt**.

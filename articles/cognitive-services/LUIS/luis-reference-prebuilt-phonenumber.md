@@ -9,27 +9,30 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 03/04/2019
+ms.date: 05/07/2019
 ms.author: diberry
-ms.openlocfilehash: 2a3e84de6d956e4b45945c77c11f789d4455bfe2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 43d0b855c25ed10b074d99b247ee56dc2ba7769b
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61473201"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65146174"
 ---
-# <a name="phonenumber-prebuilt-entity-for-a-luis-app"></a>Предварительно созданная сущность phonenumber для приложения LUIS
+# <a name="phone-number-prebuilt-entity-for-a-luis-app"></a>Телефонный номер предварительно созданные сущности для приложения LUIS
 Сущность `phonenumber` извлекает различные номера телефонов, в том числе код страны. Так как эта сущность уже обучена, добавлять в приложение примеры фраз не нужно. Сущность `phonenumber` поддерживается только в языке `en-us`. 
 
-## <a name="types-of-phonenumber"></a>Типы сущности phonenumber
-Управление сущностью phonenumber выполняется из репозитория GitHub [Recognizers-text](https://github.com/Microsoft/Recognizers-Text/blob/master/Patterns/Base-PhoneNumbers.yaml).
+## <a name="types-of-a-phone-number"></a>Типы телефонного номера
+`Phonenumber` управляется из [средства распознавания текста](https://github.com/Microsoft/Recognizers-Text/blob/master/Patterns/Base-PhoneNumbers.yaml) репозитория GitHub
 
-## <a name="resolution-for-prebuilt-phonenumber-entity"></a>Разрешение для предварительно созданной сущности phonenumber
+## <a name="resolution-for-this-prebuilt-entity"></a>Разрешения для этого готовые сущности
+
+### <a name="api-version-2x"></a>API версии 2.x
+
 В следующем примере показано разрешение сущности **builtin.phonenumber**.
 
 ```json
 {
-  "query": "my mobile is 00 44 161 1234567",
+  "query": "my mobile is 1 (800) 642-7676",
   "topScoringIntent": {
     "intent": "None",
     "score": 0.8448457
@@ -42,18 +45,77 @@ ms.locfileid: "61473201"
   ],
   "entities": [
     {
-      "entity": "00 44 161 1234567",
-      "type": "builtin.phonenumber",
-      "startIndex": 13,
-      "endIndex": 29,
-      "resolution": {
-        "value": "00 44 161 1234567"
-      }
+        "entity": "1 (800) 642-7676",
+        "type": "builtin.phonenumber",
+        "startIndex": 13,
+        "endIndex": 28,
+        "resolution": {
+            "score": "1",
+            "value": "1 (800) 642-7676"
+        }
     }
   ]
 }
 ```
 
+### <a name="preview-api-version-3x"></a>Предварительная версия API 3.x
+
+Приведенный ниже код JSON является с `verbose` параметру присвоить `false`:
+
+```json
+{
+    "query": "my mobile is 1 (800) 642-7676",
+    "prediction": {
+        "normalizedQuery": "my mobile is 1 (800) 642-7676",
+        "topIntent": "None",
+        "intents": {
+            "None": {
+                "score": 0.592748761
+            }
+        },
+        "entities": {
+            "phonenumber": [
+                "1 (800) 642-7676"
+            ]
+        }
+    }
+}
+```
+
+Приведенный ниже код JSON является с `verbose` параметру присвоить `true`:
+
+```json
+{
+    "query": "my mobile is 1 (800) 642-7676",
+    "prediction": {
+        "normalizedQuery": "my mobile is 1 (800) 642-7676",
+        "topIntent": "None",
+        "intents": {
+            "None": {
+                "score": 0.592748761
+            }
+        },
+        "entities": {
+            "phonenumber": [
+                "1 (800) 642-7676"
+            ],
+            "$instance": {
+                "phonenumber": [
+                    {
+                        "type": "builtin.phonenumber",
+                        "text": "1 (800) 642-7676",
+                        "startIndex": 13,
+                        "length": 16,
+                        "score": 1,
+                        "modelTypeId": 2,
+                        "modelType": "Prebuilt Entity Extractor"
+                    }
+                ]
+            }
+        }
+    }
+}
+```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
