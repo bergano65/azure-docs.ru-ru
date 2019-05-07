@@ -1,21 +1,21 @@
 ---
-title: Как использовать хранилище очередей из Ruby | Документация Майкрософт
+title: Как использовать хранилище очередей из Ruby — службы хранилища Azure
 description: Вы узнаете, как использовать службы очередей Azure для создания и удаления очередей, вставки, получения и удаления сообщений. Примеры кода написаны на Ruby.
 services: storage
-author: tamram
+author: mhopkins-msft
 ms.service: storage
-ms.tgt_pltfrm: na
 ms.devlang: ruby
 ms.topic: article
 ms.date: 12/08/2016
-ms.author: tamram
+ms.author: mhopkins
+ms.reviewer: cbrooks
 ms.subservice: queues
-ms.openlocfilehash: 7ebb4326a8ec8a3382a5488ce3b966526bef446a
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.openlocfilehash: 30a090aeb2d66c732e70a9acce67d5f3374c32fa
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62112010"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65153153"
 ---
 # <a name="how-to-use-queue-storage-from-ruby"></a>Использование хранилища очередей из Ruby
 [!INCLUDE [storage-selector-queue-include](../../../includes/storage-selector-queue-include.md)]
@@ -63,7 +63,7 @@ Azure.config.storage_access_key = "<your Azure storage access key>"
 4. В колонке "Ключи доступа" вы увидите ключи доступа 1 и 2. Можно использовать любой из них. 
 5. Щелкните значок копирования, чтобы скопировать ключ в буфер обмена. 
 
-## <a name="how-to-create-a-queue"></a>Практическое руководство. Создать очередь
+## <a name="how-to-create-a-queue"></a>Практическое руководство. Создание очереди
 Следующий пример кода создает объект **Azure::QueueService** , который позволяет работать с очередями.
 
 ```ruby

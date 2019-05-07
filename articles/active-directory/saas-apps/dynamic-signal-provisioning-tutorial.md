@@ -1,0 +1,166 @@
+---
+title: Руководство по Настройка Dynamic Signal для автоматической подготовки пользователей с Azure Active Directory | Документация Майкрософт
+description: Узнайте, как настроить Azure Active Directory для автоматической подготовки и отмены подготовки учетных записей пользователей в Dynamic Signal.
+services: active-directory
+documentationcenter: ''
+author: zchia
+writer: zchia
+manager: beatrizd
+ms.assetid: na
+ms.service: active-directory
+ms.component: saas-app-tutorial
+ms.workload: identity
+ms.tgt_pltfrm: na
+ms.devlang: na
+ms.topic: article
+ms.date: 04/26/2019
+ms.author: zchia
+ms.openlocfilehash: fec6a7e3433eb5d657deac8c1b2ceb327f8d32e4
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.translationtype: MT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65159410"
+---
+# <a name="tutorial-configure-dynamic-signal-for-automatic-user-provisioning"></a>Руководство по Настройка Dynamic Signal для автоматической подготовки пользователей
+
+Цель данного учебника — продемонстрировать действия, выполняемые в Dynamic Signal и Azure Active Directory (Azure AD) для настройки Azure AD настроить автоматическую подготовку и отмену подготовки пользователей и групп в Dynamic Signal.
+
+> [!NOTE]
+> В этом руководстве рассматривается соединитель, созданный на базе службы подготовки пользователей Azure AD. Подробные сведения о том, что делает эта служба, как она работает, и часто задаваемые вопросы см. в статье [Автоматическая подготовка пользователей и ее отзыв для приложений SaaS в Azure Active Directory](../manage-apps/user-provisioning.md).
+>
+> Сейчас этот соединитель предоставляется в общедоступной предварительной версии. Дополнительные сведения о общие Microsoft Azure условия использования предварительных версий функций, см. в разделе [дополнительным условиям использования предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+
+## <a name="prerequisites"></a>Технические условия
+
+В сценарии, описанном в этом руководстве, предполагается, что у вас уже имеется:
+
+* клиент Azure AD;
+* [Клиент Dynamic Signal](https://dynamicsignal.com/)
+* Учетная запись пользователя в Dynamic Signal с разрешениями администратора.
+
+## <a name="add-dynamic-signal-from-the-gallery"></a>Добавить Dynamic Signal из коллекции
+
+Прежде чем настроить Dynamic Signal для автоматической подготовки пользователей в Azure AD, необходимо добавить Dynamic Signal из коллекции приложений Azure AD в список управляемых приложений SaaS.
+
+**Чтобы добавить Dynamic Signal из коллекции приложений Azure AD, выполните следующие действия:**
+
+1. В  **[портала Azure](https://portal.azure.com)**, на панели навигации слева выберите **Azure Active Directory**.
+
+    ![Кнопка Azure Active Directory](common/select-azuread.png)
+
+2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
+
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
+
+3. Чтобы добавить новое приложение, выберите **новое приложение** кнопку в верхней части области.
+
+    ![Кнопка "Создать приложение"](common/add-new-app.png)
+
+4. В поле поиска введите **Dynamic Signal**выберите **Dynamic Signal** в панели результатов и нажмите кнопку **добавить** кнопку, чтобы добавить это приложение.
+
+    ![Dynamic Signal в списке результатов](common/search-new-app.png)
+
+## <a name="assigning-users-to-dynamic-signal"></a>Назначение пользователей в Dynamic Signal
+
+Azure Active Directory используется концепция, называемая *назначения* для определения, какие пользователи должны получать доступ к выбранным приложениям. В контексте автоматической подготовки пользователей синхронизируются только те пользователи и группы, которые были назначены приложению в Azure AD.
+
+Перед настройкой и включением автоматической подготовки пользователей, следует решить, какие пользователи или группы в Azure AD требуется доступ к Dynamic Signal. Сделав это, можно назначить этих пользователей и групп в Dynamic Signal следуя приведенным ниже указаниям:
+
+* [Назначение корпоративному приложению пользователя или группы](../manage-apps/assign-user-or-group-access-portal.md)
+
+### <a name="important-tips-for-assigning-users-to-dynamic-signal"></a>Важные рекомендации по назначению пользователей в Dynamic Signal
+
+* Рекомендуется одного пользователя Azure AD, назначенные Dynamic Signal для тестирования конфигурации автоматической подготовки пользователей. Дополнительные пользователи и/или группы можно назначить позднее.
+
+* При назначении пользователя в Dynamic Signal, необходимо выбрать действительную роль конкретного приложения (если доступно) в диалоговом окне назначения. Пользователи с ролью **Доступ по умолчанию** исключаются из подготовки.
+
+## <a name="configuring-automatic-user-provisioning-to-dynamic-signal"></a>Настройка автоматической подготовки пользователей в Dynamic Signal 
+
+В этом разделе поможет выполнить действия, чтобы настроить службу подготовки Azure AD для создания, изменения и отключения пользователей или групп в зависимости от назначений в Azure AD в Dynamic Signal.
+
+> [!TIP]
+> Вы также можете включить на основе SAML единого входа для Dynamic Signal, следуйте инструкциям, указанным на [Dynamic Signal входа в руководстве по настройке единого](dynamicsignal-tutorial.md). Единый вход можно настроить независимо от автоматической подготовки пользователей, хотя эти две возможности дополняют друг друга.
+
+### <a name="to-configure-automatic-user-provisioning-for-dynamic-signal-in-azure-ad"></a>Настройка автоматической подготовки пользователей для Dynamic Signal в Azure AD.
+
+1. Войдите в [портала Azure](https://portal.azure.com) и выберите **корпоративные приложения**выберите **все приложения**, а затем выберите **Dynamic Signal**.
+
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
+
+2. В списке приложений выберите **Dynamic Signal**.
+
+    ![Ссылка на Dynamic Signal в списке приложений](common/all-applications.png)
+
+3. Выберите вкладку **Подготовка**.
+
+    ![Инициализация](common/provisioning.png)
+
+4. Для параметра **Режим подготовки к работе** выберите значение **Automatic** (Автоматически).
+
+    ![Инициализация](common/provisioning-automatic.png)
+
+5. В разделе **учетные данные администратора** введите **URL-адрес клиента** и **секретный токен** Dynamic Signal учетной записи, как описано на шаге 6.
+
+6. В консоли администрирования Dynamic Signal, перейдите к **администратора > Дополнительно > API**.
+
+    ![Подготовка Dynamic Signal](./media/dynamicsignal-provisioning-tutorial/secret-token-1.png)
+
+    Копировать **URL-адрес API SCIM** для **URL-адрес клиента**. Щелкните **создать новый токен** для создания **маркера носителя** и скопируйте значение **секретный токен**.
+
+    ![Подготовка Dynamic Signal](./media/dynamicsignal-provisioning-tutorial/secret-token-2.png)
+
+7. После заполнения полей, указанных в шаге 5, щелкните **проверить подключение** и убедиться, что Azure AD может подключиться к Dynamic Signal. Если подключение отсутствует, убедитесь, что учетная запись Dynamic Signal имеет разрешения администратора и повторите попытку.
+
+    ![URL-адрес клиента + токен](common/provisioning-testconnection-tenanturltoken.png)
+
+8. В поле **Почтовое уведомление** введите адрес электронной почты пользователя или группы, которые должны получать уведомления об ошибках подготовки, а также установите флажок **Send an email notification when a failure occurs** (Отправить уведомление по электронной почте при сбое).
+
+    ![Почтовое уведомление](common/provisioning-notification-email.png)
+
+9. Выберите команду **Сохранить**.
+
+10. В разделе **сопоставления** выберите **синхронизировать пользователей Azure Active Directory с Dynamic Signal**.
+
+    ![Сопоставления пользователей в Dynamic Signal](media/dynamicsignal-provisioning-tutorial/user-mappings.png)
+
+11. Просмотрите пользовательские атрибуты, которые синхронизированы из Azure AD в Dynamic Signal в **сопоставление атрибутов** раздел. Атрибуты, выбранные как **Matching** свойства используются для сопоставления учетных записей пользователей в Dynamic Signal для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
+
+    ![Атрибуты пользователя keeper](media/dynamicsignal-provisioning-tutorial/user-mapping-attributes.png)
+
+12. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../manage-apps/define-conditional-rules-for-provisioning-user-accounts.md).
+
+13. Чтобы включить службу для Dynamic Signal подготовки Azure AD, измените **состояние подготовки** для **на** в **параметры** раздел.
+
+    ![Состояние подготовки на противоположное](common/provisioning-toggle-on.png)
+
+14. Определите пользователей или группы, которые вы хотите для подготовки к Dynamic Signal, выбрав нужные значения в **область** в **параметры** раздел.
+
+    ![Инициализация области](common/provisioning-scope.png)
+
+15. Когда будете готовы выполнить подготовку, нажмите кнопку **Сохранить**.
+
+    ![Идет сохранение конфигурации подготовки](common/provisioning-configuration-save.png)
+
+После этого начнется начальная синхронизация пользователей и (или) групп, определенных в поле **Область** раздела **Параметры**. Начальная синхронизация занимает больше времени, чем последующие операции синхронизации. Если служба запущена, они выполняются примерно каждые 40 минут. Можно использовать **сведения о синхронизации** раздел, чтобы отслеживать ход выполнения и переходить по ссылкам для подготовки отчетов действия, в которых зафиксированы все действия, выполняемые службой Dynamic Signal подготовки Azure AD.
+
+Дополнительные сведения о чтении журналов подготовки Azure AD см. в руководстве по [отчетам об автоматической подготовке учетных записей](../manage-apps/check-status-user-account-provisioning.md).
+
+## <a name="connector-limitations"></a>Ограничения соединителя
+
+* Dynamic Signal поддерживает операции удаления постоянных пользователей из Azure AD. Чтобы удалить пользователя без возможности восстановления в Dynamic Signal, операция имеет в консоли администрирования Dynamic Signal пользовательского интерфейса. 
+* Dynamic Signal в настоящее время не поддерживает группы.
+
+## <a name="additional-resources"></a>Дополнительные ресурсы
+
+* [Управление подготовкой учетных записей пользователей для корпоративных приложений](../manage-apps/configure-automatic-user-provisioning-portal.md)
+* [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+* [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)
+
+<!--Image references-->
+[1]: ./media/atlassian-cloud-provisioning-tutorial/tutorial-general-01.png
+[2]: ./media/atlassian-cloud-provisioning-tutorial/tutorial-general-02.png
+[3]: ./media/atlassian-cloud-provisioning-tutorial/tutorial-general-03.png

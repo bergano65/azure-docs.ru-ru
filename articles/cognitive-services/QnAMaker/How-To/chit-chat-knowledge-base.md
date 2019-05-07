@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: article
-ms.date: 01/14/2019
+ms.date: 05/07/2019
 ms.author: tulasim
 ms.custom: seodec18
-ms.openlocfilehash: a908185f2d8475afb642250d1499cffa539aca4d
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 08d09680ee1797e73666c185f4430c7ef3079477
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64573502"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65153684"
 ---
 # <a name="add-chit-chat-to-a-knowledge-base"></a>Добавление беседы в базу знаний
 
@@ -54,10 +54,12 @@ ms.locfileid: "64573502"
 
 ![Изменение вопросов и ответов беседы](../media/qnamaker-how-to-chit-chat/edit-chit-chat.png)
 
+Чтобы просмотреть метаданные, выберите **параметры представления** панели инструментов, а затем выберите **показывают метаданные**.
+
 ## <a name="add-additional-chit-chat-questions-and-answers"></a>Добавление в беседу дополнительных вопросов и ответов
 Вы можете добавлять в беседу вопросы и ответы, которых нет в стандартном наборе. Убедитесь, что вы не дублируете пару вопрос-ответ, которая уже включена в набор. При добавлении любая новая пара вопрос-ответ также будет добавлена в **Editorial** (редакционный) источник. Чтобы убедиться в том, что компонент ранжировки будет понимать, что это беседа, добавьте ключ метаданных или пару значений "Editorial: chit-chat", как показано на следующем изображении.
    
-![Добавление вопросов и ответов беседы](../media/qnamaker-how-to-chit-chat/add-new-chit-chat.png)
+![! [Добавьте QnAs chit чата] (.. / media/qnamaker-how-to-chit-chat/add-new-chit-chat.png)](../media/qnamaker-how-to-chit-chat/add-new-chit-chat.png#lightbox)
 
 ## <a name="delete-chit-chat-from-an-existing-kb"></a>Удаление беседы из существующей базы знаний
 Выберите базу знаний и перейдите на страницу **Параметры**. Конкретный источник беседы указан как файл с именем выбранного персонажа. Вы можете удалить его как исходный файл.

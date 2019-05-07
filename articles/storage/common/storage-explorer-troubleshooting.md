@@ -7,12 +7,12 @@ ms.service: virtual-machines
 ms.topic: troubleshooting
 ms.date: 06/15/2018
 ms.author: delhan
-ms.openlocfilehash: 385eee6223487e9d7ca5cc3b213d180bb0f1da46
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 6ada4a25f24a6dcbb1ebd54daad15b37127f7a21
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64710866"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65154188"
 ---
 # <a name="azure-storage-explorer-troubleshooting-guide"></a>Руководство по устранению неполадок обозреватель службы хранилища Azure
 
@@ -235,7 +235,7 @@ ms.locfileid: "64710866"
 
 В общем случае обозреватель службы хранилища под управлением Linux требуются следующие пакеты:
 
-* [Среда выполнения .NET core 2.0](https://docs.microsoft.com/dotnet/core/linux-prerequisites?tabs=netcore2x)
+* [.NET core 2.0 среды выполнения](https://docs.microsoft.com/dotnet/core/linux-prerequisites?tabs=netcore2x) Примечание: Обозреватель службы хранилища версии 1.7.0 и более ранних версий требуют .NET Core 2.0. При наличии более новой версии .NET Core установлен будет нужно исправлять обозреватель службы хранилища (см. ниже). Если вы используете обозреватель службы хранилища 1.8.0 или больше, затем можно будет использовать до .NET Core 2.2. Для работы в настоящее время не были проверены версии сверх 2.2.
 * `libgnome-keyring-common` и `libgnome-keyring-dev`
 * `libgconf-2-4`
 

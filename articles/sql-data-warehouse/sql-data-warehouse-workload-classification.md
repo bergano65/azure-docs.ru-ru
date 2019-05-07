@@ -7,24 +7,21 @@ manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.subservice: workload management
-ms.date: 03/13/2019
+ms.date: 05/01/2019
 ms.author: rortloff
 ms.reviewer: jrasnick
-ms.openlocfilehash: 888a64de29178834fc47199a033eb6bc62858e57
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 208308533753370575b844633c45f7e4aeda0864
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61474833"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65154208"
 ---
-# <a name="sql-data-warehouse-workload-classification-preview"></a>Классификации рабочей нагрузки хранилища данных SQL (Предварительная версия)
+# <a name="sql-data-warehouse-workload-classification"></a>Классификации рабочей нагрузки хранилища данных SQL
 
 В этой статье объясняется процесс классификации рабочей нагрузки хранилища данных SQL назначения класс ресурсов и важность входящих запросов.
 
-> [!Note]
-> Классификации рабочих нагрузок можно просмотреть в Хранилище данных SQL 2-го поколения. Просмотр классификации и важности управления рабочими нагрузками предназначен для сборок, выпущенных не раньше 9 апреля 2019 года.  Пользователям не следует использовать сборки, выпущенные до этой даты, для тестирования управления рабочими нагрузками.  Чтобы определить, поддерживает ли ваша сборка управление рабочими нагрузками, выполните запрос select @@version при подключении к экземпляру Хранилища данных SQL.
-
-## <a name="classification"></a>Классификация
+## <a name="classification"></a>классификация;
 
 > [!Video https://www.youtube.com/embed/QcCRBAhoXpM]
 
@@ -63,10 +60,10 @@ SELECT * FROM sys.workload_management_workload_classifiers where classifier_id <
 
 Рассмотрим следующие сценарии.
 
-•An существующее хранилище данных содержит пользователя базы данных, которые назначены DBAUser в роль класса ресурсов largerc. Назначении классов ресурсов было выполнено с помощью sp_addrolemember.
-•Нарушение хранилище данных обновляется управления рабочими нагрузками.
-•Для протестировать новый синтаксис классификации, роли базы данных, DBARole (который DBAUser является членом), имеет классификатора, созданного для них сопоставление их с mediumrc и высоким уровнем важности.
-•When DBAUser входит в систему и выполняет запрос, запрос будет назначаться largerc. Так как пользователь имеет приоритет над членство в роли.
+- Существующее хранилище данных содержит пользователя базы данных, которые назначены DBAUser в роль класса ресурсов largerc. Назначении классов ресурсов было выполнено с помощью sp_addrolemember.
+- Теперь в хранилище данных обновляется с использованием управления рабочими нагрузками.
+- Чтобы проверить новый синтаксис классификации, DBARole (который DBAUser является членом), роль базы данных имеет классификатора, созданного для них сопоставление их с mediumrc и высоким уровнем важности.
+- Когда DBAUser входит в систему и выполняет запрос, запрос будет назначаться largerc. Так как пользователь имеет приоритет над членство в роли.
 
 Для упрощения устранения неполадок неправильной классификации, мы рекомендуем удалить сопоставления ролей класс ресурсов, при создании классификаторов рабочей нагрузки.  Приведенный ниже код возвращает существующий ресурс класса членства в роли.  Запустите [sp_droprolemember](/sql/relational-databases/system-stored-procedures/sp-droprolemember-transact-sql) имя каждого элемента, возвращаемый из соответствующего класса ресурсов.
 
@@ -84,4 +81,4 @@ sp_droprolemember ‘[Resource Class]’, membername
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о классификации рабочей нагрузки хранилища данных SQL и важность, см. в разделе [Создание рабочей нагрузки классификатора](quickstart-create-a-workload-classifier-tsql.md) и [важности хранилище данных SQL](sql-data-warehouse-workload-importance.md). Запросы и назначенную важность см. в разделе [sys.dm_pdw_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql).
+Чтобы начать работу с создания классификатора, см. в разделе [СОЗДАНИЯ КЛАССИФИКАТОРА рабочей НАГРУЗКИ (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-workload-classifier-transact-sql).  Дополнительные сведения о классификации рабочей нагрузки хранилища данных SQL и важность, см. в разделе [Создание рабочей нагрузки классификатора](quickstart-create-a-workload-classifier-tsql.md) и [важности хранилище данных SQL](sql-data-warehouse-workload-importance.md). Запросы и назначенную важность см. в разделе [sys.dm_pdw_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql).

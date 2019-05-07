@@ -9,14 +9,14 @@ editor: ''
 ms.service: media-services
 ms.workload: na
 ms.topic: article
-ms.date: 04/21/2019
+ms.date: 05/01/2019
 ms.author: juliako
-ms.openlocfilehash: 09f9731f78093354f324f263899519bc5d31fa5d
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 8f50188480b963d13460c79175ea6972d3e68f6a
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64682148"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65153067"
 ---
 # <a name="azure-media-services-v3-release-notes"></a>Заметки о выпуске Служб мультимедиа Azure версии 3
 
@@ -34,9 +34,19 @@ ms.locfileid: "64682148"
 
 Дополнительные сведения см. в статье [Руководство по миграции из версии 2 в версию 3 Служб мультимедиа](migrate-from-v2-to-v3.md#known-issues).
 
+## <a name="may-2019"></a>Мая 2019 г.
+
+### <a name="performance-improvements"></a>Повышение производительности.
+
+* Максимальный размер файла поддерживается при обработке был обновлен. См. в разделе, [квоты и ограничения](limits-quotas-constraints.md).
+* [Улучшения скорости кодирования](media-reserved-units-cli-how-to.md#choosing-between-different-reserved-unit-types).
+
 ## <a name="april-2019"></a>Апреля 2019 г.
 
-[FaceDetectorPreset](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#facedetectorpreset) был добавлен в анализатор встроенные стили.
+### <a name="new-presets"></a>Новые предустановки
+
+* [FaceDetectorPreset](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#facedetectorpreset) был добавлен в анализатор встроенные стили.
+* [ContentAwareEncodingExperimental](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#encodernamedpreset) был добавлен встроенный кодировщик предустановок. Дополнительные сведения см. в разделе [содержимого с поддержкой кодирования](cae-experimental.md). 
 
 ## <a name="march-2019"></a>Марта 2019 г.
 
@@ -205,7 +215,7 @@ ms.locfileid: "64682148"
 
 * При отправке задания можно указать исходное видео для приема, используя URL-адреса HTTPS, URL-адреса SAS или пути к файлам, находящимся в хранилище BLOB-объектов Azure. В настоящее время AMS версии 3 не поддерживает кодирование блочной передачи по URL-адресам HTTPS.
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="ask-questions-give-feedback-get-updates"></a>Задавайте вопросы, отзыв, получить обновления
 
 Прочитайте статью [сообщества Служб мультимедиа Azure](media-services-community.md), чтобы узнать, как задавать вопросы, оставлять отзывы и получать новости о Службах мультимедиа.
 

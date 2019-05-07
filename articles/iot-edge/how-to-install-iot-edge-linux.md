@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 03/21/2019
 ms.author: kgremban
 ms.custom: seodec18
-ms.openlocfilehash: 5829606f3ad226507c49f18dcc8ac4831d573b17
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.openlocfilehash: b519ed21b4d2e0e258c48bd1dc12750176281c9e
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62126319"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65152847"
 ---
 # <a name="install-the-azure-iot-edge-runtime-on-linux-x64"></a>Установка среды выполнения Azure IoT Edge в Linux (x64)
 
@@ -23,7 +23,7 @@ ms.locfileid: "62126319"
 
 Дополнительные сведения см. в разделе [понять выполнения Azure IoT Edge и ее архитектуре](iot-edge-runtime.md).
 
-В этой статье приводятся инструкции по установке среды выполнения Azure IoT Edge на компьютере Ubuntu Linux x64 (Intel или AMD) устройство IoT Edge. Ссылаться на [поддержки Azure IoT Edge](support.md#operating-systems) список поддерживаемых операционных системах AMD64.
+В этой статье приводятся инструкции по установке среды выполнения Azure IoT Edge на компьютере Ubuntu Linux x64 (Intel или AMD) устройство IoT Edge. Ссылаться на [систем, поддерживаемых Azure IoT Edge](support.md#operating-systems) список поддерживаемых операционных системах AMD64.
 
 > [!NOTE]
 > К пакетам в репозиториях программного обеспечения Linux применяются условия лицензии, которые можно найти в каждом пакете (/usr/share/doc/*имя-пакета*). Прежде чем использовать пакет, ознакомьтесь с условиями лицензии. Установка и использование пакета свидетельствуют о принятии этих условий. Если вы не согласны с условиями лицензии, не используйте пакет.

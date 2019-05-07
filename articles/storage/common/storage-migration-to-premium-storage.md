@@ -2,18 +2,19 @@
 title: Перенос виртуальных машин в хранилище Azure класса Premium | Документация Майкрософт
 description: Перенесите существующие виртуальные машины в хранилище Azure класса Premium. Хранилище Premium обеспечивает поддержку дисков с высокой производительностью и малой задержкой для интенсивных рабочих нагрузок ввода-вывода на виртуальных машинах Azure.
 services: storage
-author: yuemlu
+author: roygara
 ms.service: storage
 ms.topic: article
 ms.date: 06/27/2017
-ms.author: yuemlu
+ms.author: rogarana
+ms.reviewer: yuemlu
 ms.subservice: common
-ms.openlocfilehash: fdca10c54c798bd47a34eb0f8af091908bcc2711
-ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
+ms.openlocfilehash: 5cfb96bd3115c8f3116a28926e93df89dff54351
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58372324"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65153768"
 ---
 # <a name="migrating-to-azure-premium-storage-unmanaged-disks"></a>Перенос в хранилище Azure класса Premium (использующее неуправляемые диски)
 
@@ -160,7 +161,7 @@ ms.locfileid: "58372324"
 #### <a name="copy-vhd-with-azcopy-or-powershell"></a>Шаг 3. Копирование VHD с помощью AzCopy или PowerShell
 Чтобы скопировать VHD с помощью одного из этих средств, вам понадобится путь контейнера и ключ учетной записи хранения (выберите **Портал Azure** > **Хранилище**, чтобы узнать их). URL-адрес будет иметь следующий вид контейнера «https:\//myaccount.blob.core.windows.net/mycontainer/».
 
-##### <a name="option-1-copy-a-vhd-with-azcopy-asynchronous-copy"></a>Вариант 1. Копирование VHD с помощью AzCopy (асинхронное копирование)
+##### <a name="option-1-copy-a-vhd-with-azcopy-asynchronous-copy"></a>Вариант 1: Копирование VHD с помощью AzCopy (асинхронное копирование)
 Средство AzCopy позволяет легко передать VHD через Интернет. В зависимости от размера виртуальных жестких дисков это может занять определенное время. Не забывайте проверять ограничения для исходящих и входящих данных учетной записи хранения при использовании этого параметра. Дополнительные сведения см. в статье [Целевые показатели производительности и масштабируемости службы хранилища Azure](storage-scalability-targets.md).
 
 1. Загрузите и установите AzCopy для Windows здесь: [последняя версия AzCopy](https://aka.ms/downloadazcopy).
@@ -249,13 +250,13 @@ C:\PS> Start-AzStorageBlobCopy -srcUri $sourceBlobUri -SrcContext $sourceContext
 #### <a name="step-3-upload-the-vhd-to-azure-storage"></a>Шаг 3. Загрузка VHD в службу хранилища Azure
 Теперь, когда VHD расположен в локальном каталоге, с помощью AzCopy или Azure PowerShell VHD-файл можно передать в службу хранилища Azure. Это можно сделать двумя способами.
 
-##### <a name="option-1-using-azure-powershell-add-azurevhd-to-upload-the-vhd-file"></a>Вариант 1. Передача VHD-файла с помощью командлета Azure PowerShell Add-AzureVhd
+##### <a name="option-1-using-azure-powershell-add-azurevhd-to-upload-the-vhd-file"></a>Вариант 1: Передача VHD-файла с помощью командлета Azure PowerShell Add-AzureVhd
 
 ```powershell
 Add-AzureVhd [-Destination] <Uri> [-LocalFilePath] <FileInfo>
 ```
 
-Пример <Uri>: ***"https://storagesample.blob.core.windows.net/mycontainer/blob1.vhd"***. Пример <FileInfo>: ***C:\path\to\upload.vhd***.
+Пример \<Uri > может быть ***"https://storagesample.blob.core.windows.net/mycontainer/blob1.vhd"***. Пример \<FileInfo > может быть ***«C:\path\to\upload.vhd»***.
 
 ##### <a name="option-2-using-azcopy-to-upload-the-vhd-file"></a>Вариант 2. Передача VHD-файла с помощью AzCopy
 Средство AzCopy позволяет легко передать VHD через Интернет. В зависимости от размера виртуальных жестких дисков это может занять определенное время. Не забывайте проверять ограничения для исходящих и входящих данных учетной записи хранения при использовании этого параметра. Дополнительные сведения см. в статье [Целевые показатели производительности и масштабируемости службы хранилища Azure](storage-scalability-targets.md).

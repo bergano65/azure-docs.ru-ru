@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: a3dd7f78362b5f5c99dc4a74fe0a32c4d26be5b7
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.openlocfilehash: a3b6327b9e05b039696cc1743fc2d16c5e945e26
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62125939"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65152631"
 ---
 # <a name="update-the-iot-edge-security-daemon-and-runtime"></a>Обновление управляющей программы безопасности и среды выполнения IoT Edge
 
@@ -50,25 +50,15 @@ apt-get install libiothsm iotedge
 
 ### <a name="windows-devices"></a>Устройства Windows
 
-На устройствах Windows удалите управляющую программу с помощью сценария PowerShell, а затем переустановите ее. Сценарий установки автоматически извлекает последнюю версию управляющей программы безопасности. 
-
-Удалите управляющую программу безопасности в сеансе PowerShell администратора. 
+На устройствах Windows используйте сценарий PowerShell для обновления управляющей программы безопасности. Сценарий автоматически извлекает последнюю версию управляющей программы безопасности. 
 
 ```powershell
-. {Invoke-WebRequest -useb aka.ms/iotedge-win} | Invoke-Expression; `
-Uninstall-SecurityDaemon
+. {Invoke-WebRequest -useb aka.ms/iotedge-win} | Invoke-Expression; Update-IoTEdge -ContainerOs <Windows or Linux>
 ```
 
-Под управлением `Uninstall-SecurityDaemon` команду без параметров безопасности управляющая программа удаляется только с устройства, а также два образа контейнеров среды выполнения. Файл config.yaml хранится на устройстве, как и данные из обработчика контейнеров Moby. Сохранение означает сведения конфигурации, что у вас нет предоставить строку подключения и сведения о службе подготовки устройств для вашего устройства снова во время установки. 
+Выполнив команду Update-IoTEdge удаляет управляющую программу безопасности с устройства, а также два образа контейнеров среды выполнения. Файл config.yaml хранится на устройстве, а также данные из обработчика контейнеров Кита (Если вы используете контейнеры Windows). Сохранение означает сведения конфигурации, что у вас нет предоставить строку подключения и сведения о службе подготовки устройств для вашего устройства повторно во время процесса обновления. 
 
-Переустановите управляющую программу безопасности в зависимости от контейнеров, используемых на устройстве IoT Edge: Windows или Linux. Замените фразу **\<Windows или Linux\>** в соответствующем контейнере операционных системах. Используйте флаг **-ExistingConfig** для указания существующего файла config.yaml на вашем устройстве. 
-
-```powershell
-. {Invoke-WebRequest -useb aka.ms/iotedge-win} | Invoke-Expression; `
-Install-SecurityDaemon -ExistingConfig -ContainerOS <Windows or Linux>
-```
-
-Если вы хотите установить определенную версию управляющей программы безопасности, загрузите соответствующий файл iotedged-windows.zip из [выпусков IoT Edge](https://github.com/Azure/azure-iotedge/releases). Затем используйте параметр `-OfflineInstallationPath`, чтобы указать местоположение файла. Дополнительные сведения см. в статье [Автономная установка](how-to-install-iot-edge-windows.md#offline-installation).
+Если вы хотите установить определенную версию управляющую программу безопасности, загрузите нужный файл Microsoft-Azure-IoTEdge.cab из [IoT Edge освобождает](https://github.com/Azure/azure-iotedge/releases). Затем используйте параметр `-OfflineInstallationPath`, чтобы указать местоположение файла. Дополнительные сведения см. в статье [Автономная установка](how-to-install-iot-edge-windows.md#offline-installation).
 
 ## <a name="update-the-runtime-containers"></a>Обновление контейнеров среды выполнения
 

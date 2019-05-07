@@ -9,12 +9,12 @@ services: iot-edge
 ms.topic: conceptual
 ms.date: 03/20/2019
 ms.author: kgremban
-ms.openlocfilehash: ad7e34110b0c6d047eb7454b7fac9f8c10df8be2
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.openlocfilehash: 6c22680102c57fdfc3d25beb19e5bc9847995b28
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62126381"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65152734"
 ---
 # <a name="install-azure-iot-edge-runtime-on-linux-arm32v7armhf"></a>Установка среды выполнения Azure IoT Edge в Linux (ARM32v7/armhf)
 
@@ -22,7 +22,7 @@ ms.locfileid: "62126381"
 
 Дополнительные сведения о работе среды выполнения IoT Edge и ее компонентах см. в статье [Общие сведения о среде выполнения Azure IoT Edge и ее архитектуре](iot-edge-runtime.md).
 
-В этой статье перечислены действия по установке среды выполнения Azure IoT Edge на устройстве Linux ARM32v7/armhf IoT Edge. Например, эти действия будут работать для устройств Raspberry Pi. Список поддерживаемых операционных систем ARM32, см. в разделе [поддержки Azure IoT Edge](support.md#operating-systems). 
+В этой статье перечислены действия по установке среды выполнения Azure IoT Edge на устройстве Linux ARM32v7/armhf IoT Edge. Например, эти действия будут работать для устройств Raspberry Pi. Список поддерживаемых операционных систем ARM32, см. в разделе [систем, поддерживаемых Azure IoT Edge](support.md#operating-systems). 
 
 >[!NOTE]
 >К пакетам в репозиториях программного обеспечения Linux применяются условия лицензии, которые можно найти в каждом пакете (/usr/share/doc/*имя-пакета*). Прежде чем использовать пакет, ознакомьтесь с условиями лицензии. Установка и использование пакета свидетельствуют о принятии этих условий. Если вы не согласны с условиями лицензии, не используйте этот пакет.

@@ -10,16 +10,28 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 08/07/2018
 ms.author: gracez
-ms.openlocfilehash: 33a03b24de56ab1090cc8e07c9619eda17f33e27
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 9147f02f6ef2e2f3f776e67aa1f103e95ef132aa
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64711906"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65153037"
 ---
 # <a name="release-notes-of-cognitive-services-speech-devices-sdk"></a>Заметки о выпуске пакета SDK для речевых устройств в Cognitive Services
 
 В следующих разделах перечислены изменения в последних выпусках.
+
+## <a name="cognitive-services-speech-devices-sdk-150-2019-may-release"></a>Устройства речи Cognitive Services пакет SDK 1.5.0: Выпуск мая 2019 г.
+
+*   Speech SDK устройств теперь является GA и больше не селективной предварительной версии.
+*   Обновить [Speech SDK](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-sdk-reference) компонента для версии 1.5.0. Дополнительные сведения см. в [заметках о выпуске](https://aka.ms/csspeech/whatsnew).
+*   Новая технология word пробуждения привносит значительные усовершенствования, см. в разделе Критические изменения.
+*   Новый конвейер обработки звука для улучшенное распознавание дальней поля.
+
+**Критические изменения**
+
+*   Из-за новой технологии пробуждения word все слова пробуждения, необходимо создать на нашем портале word улучшенный пробуждения. Чтобы полностью удалить старый ключевые слова из устройства удалите старое приложение.
+    - adb удалить com.microsoft.coginitiveservices.speech.samples.sdsdkstarterapp
 
 ## <a name="cognitive-services-speech-devices-sdk-140-2019-apr-release"></a>Устройства речи Cognitive Services SDK 1.4.0: Выпуск апреля 2019 г. 
 

@@ -2,19 +2,20 @@
 title: Устранение неполадок службы хранилища Azure с помощью диагностики и анализатора сообщений | Документация Майкрософт
 description: Учебник, демонстрирующий комплексное устранение неполадок с помощью аналитики хранилища Azure, AzCopy и анализатора сообщений Майкрософт
 services: storage
-author: tamram
+author: normesta
 ms.service: storage
 ms.devlang: dotnet
 ms.topic: article
 ms.date: 03/15/2017
-ms.author: tamram
+ms.author: normesta
+ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: f88a560d4fa819a055534530ddc0862e4aa330fe
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.openlocfilehash: 2707081adafa74237e3fb7730837f581e0c8b790
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62098615"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65154222"
 ---
 # <a name="end-to-end-troubleshooting-using-azure-storage-metrics-and-logging-azcopy-and-message-analyzer"></a>Комплексный поиск и устранение неполадок с помощью метрик службы хранилища Azure и ведения журнала, AzCopy и анализатора сообщений
 [!INCLUDE [storage-selector-portal-e2e-troubleshooting](../../../includes/storage-selector-portal-e2e-troubleshooting.md)]
@@ -310,8 +311,8 @@ AzCopy можно скачать на странице [Загрузки Azure](
 | Общие проблемы авторизации подписи доступа (SAS) |AzureStorageLog.RequestStatus == "SASAuthorizationError" |Сеть |
 | Сообщения HTTP 409 (конфликт) |HTTP.Response.StatusCode == 409 |Сеть |
 | 409 (все) |*StatusCode == 409 |Все |
-| Низкие значения PercentSuccess или присутствие операций с состоянием транзакции ClientOtherErrors в записях журналов аналитики |AzureStorageLog.RequestStatus == "ClientOtherError" |Сервер |
-| Предупреждение Nagle |((AzureStorageLog.EndToEndLatencyMS - AzureStorageLog.ServerLatencyMS) > (AzureStorageLog.ServerLatencyMS * 1.5)) and (AzureStorageLog.RequestPacketSize <1460) and (AzureStorageLog.EndToEndLatencyMS - AzureStorageLog.ServerLatencyMS >= 200) |Сервер |
+| Низкие значения PercentSuccess или присутствие операций с состоянием транзакции ClientOtherErrors в записях журналов аналитики |AzureStorageLog.RequestStatus == "ClientOtherError" |сервер; |
+| Предупреждение Nagle |((AzureStorageLog.EndToEndLatencyMS - AzureStorageLog.ServerLatencyMS) > (AzureStorageLog.ServerLatencyMS * 1.5)) and (AzureStorageLog.RequestPacketSize <1460) and (AzureStorageLog.EndToEndLatencyMS - AzureStorageLog.ServerLatencyMS >= 200) |сервер; |
 | Диапазон времени в журналах сервера и сети |#Timestamp   >= 2014-10-20T16:36:38 and #Timestamp <= 2014-10-20T16:36:39 |Сервер, сеть |
 | Диапазон времени в журналах сервера |AzureStorageLog.Timestamp >= 2014-10-20T16:36:38 and AzureStorageLog.Timestamp <= 2014-10-20T16:36:39 |сервер; |
 

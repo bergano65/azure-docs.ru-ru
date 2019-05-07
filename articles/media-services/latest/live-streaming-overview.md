@@ -13,12 +13,12 @@ ms.devlang: ne
 ms.topic: article
 ms.date: 04/03/2019
 ms.author: juliako
-ms.openlocfilehash: 0157cdc8062d7c53aaeb3ff01762e9562aa9c394
-ms.sourcegitcommit: e7d4881105ef17e6f10e8e11043a31262cfcf3b7
+ms.openlocfilehash: 3cd22b89852706ed129373fd24ca9a9d9a27d25b
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64866342"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65153376"
 ---
 # <a name="live-streaming-with-azure-media-services-v3"></a>Потоковая трансляция в Службах мультимедиа Azure версии 3
 
@@ -93,7 +93,7 @@ ms.locfileid: "64866342"
 - [Состояния и выставление счетов](live-event-states-billing.md)
 - [Задержка](live-event-latency.md)
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="ask-questions-give-feedback-get-updates"></a>Задавайте вопросы, отзыв, получить обновления
 
 Прочитайте статью [сообщества Служб мультимедиа Azure](media-services-community.md), чтобы узнать, как задавать вопросы, оставлять отзывы и получать новости о Службах мультимедиа.
 

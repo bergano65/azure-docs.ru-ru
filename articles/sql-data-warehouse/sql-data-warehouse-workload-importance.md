@@ -7,24 +7,21 @@ manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.subservice: workload management
-ms.date: 03/13/2019
+ms.date: 05/01/2019
 ms.author: rortloff
 ms.reviewer: jrasnick
-ms.openlocfilehash: 12e7d9bc22eff14bbf302aed50080412d04a40d3
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 9c26bca66b0f82ea58d01d0eb8358f521168a799
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61474708"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65154140"
 ---
-# <a name="sql-data-warehouse-workload-importance-preview"></a>Важность рабочих нагрузок хранилища данных SQL (Предварительная версия)
+# <a name="sql-data-warehouse-workload-importance"></a>Важность рабочих нагрузок хранилища данных SQL
 
 В этой статье объясняется, как влияют на порядок выполнения для запросов хранилища данных SQL для рабочей нагрузки importance.
 
-> [!Note]
-> Классификации рабочих нагрузок можно просмотреть в Хранилище данных SQL 2-го поколения. Просмотр классификации и важности управления рабочими нагрузками предназначен для сборок, выпущенных не раньше 9 апреля 2019 года.  Пользователям не следует использовать сборки, выпущенные до этой даты, для тестирования управления рабочими нагрузками.  Чтобы определить, поддерживает ли ваша сборка управление рабочими нагрузками, выполните запрос select @@version при подключении к экземпляру Хранилища данных SQL.
-
-## <a name="importance"></a>Важность
+## <a name="importance"></a>приоритет
 
 > [!Video https://www.youtube.com/embed/_2rLMljOjw8]
 
@@ -64,4 +61,4 @@ Q1, Q2, вопрос 3 и 4 квартал выполняются запросы
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о классификации рабочей нагрузки хранилища данных SQL, см. в разделе [классификации рабочей нагрузки хранилища данных SQL](sql-data-warehouse-workload-classification.md) и [Создание рабочей нагрузки классификатора](quickstart-create-a-workload-classifier-tsql.md). Запросы и назначенную важность см. в разделе [sys.dm_pdw_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql).
+Чтобы начать работу с создания классификатора, см. в разделе [СОЗДАНИЯ КЛАССИФИКАТОРА рабочей НАГРУЗКИ (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-workload-classifier-transact-sql).  Дополнительные сведения о классификации рабочей нагрузки хранилища данных SQL, см. в разделе [классификации рабочей нагрузки хранилища данных SQL](sql-data-warehouse-workload-classification.md).  См. Краткое руководство по созданию классификатора рабочей нагрузки [Создание рабочей нагрузки классификатора](quickstart-create-a-workload-classifier-tsql.md). Запросы и назначенную важность см. в разделе [sys.dm_pdw_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql).
