@@ -9,12 +9,12 @@ ms.date: 01/03/2019
 ms.author: tamram
 ms.reviewer: wielriac
 ms.subservice: blobs
-ms.openlocfilehash: a0fc9a8356f4a322ae81a668515a6a60c6001011
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
-ms.translationtype: HT
+ms.openlocfilehash: c0d5108ee235be74f6188bfc8b590069a4e790b5
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/06/2019
-ms.locfileid: "65141239"
+ms.locfileid: "65192641"
 ---
 # <a name="overview-of-azure-page-blobs"></a>Общие сведения о страничных BLOB-объектах Azure
 
@@ -43,7 +43,7 @@ ms.locfileid: "65141239"
 ![](./media/storage-blob-pageblob-overview/storage-blob-pageblob-overview-figure1.png)
 
 #### <a name="creating-an-empty-page-blob-of-a-specified-size"></a>Создание пустого страничного BLOB-объекта указанного размера
-Для создания страничного BLOB-объекта сначала создается объект **CloudBlobClient** с базовым URI доступа к хранилищу BLOB-объектов для вашей учетной записи хранения (*pbaccount* на рис. 1) и объектом **StorageCredentialsAccountAndKey**, как показано в приведенном ниже примере. В примере демонстрируется создание ссылки на объект **CloudBlobContainer**, а затем создание контейнера (*testvhds*), если он еще не существует. После этого с помощью объекта **CloudBlobContainer** следует создать ссылку на объект **CloudPageBlob**, указав имя страничного BLOB-объекта (os4.vhd), к которому необходимо получить доступ. Для создания страничного BLOB-объекта необходимо вызвать [CloudPageBlob.Create](/dotnet/api/microsoft.windowsazure.storage.blob.cloudpageblob.create?view=azure-dotnet#Microsoft_WindowsAzure_Storage_Blob_CloudPageBlob_Create_System_Int64_Microsoft_WindowsAzure_Storage_AccessCondition_Microsoft_WindowsAzure_Storage_Blob_BlobRequestOptions_Microsoft_WindowsAzure_Storage_OperationContext_), передав максимальный размер большого двоичного объекта, который требуется создать. Этот размер (*blobSize*) должен быть кратен 512 байтам.
+Для создания страничного BLOB-объекта сначала создается объект **CloudBlobClient** с базовым URI доступа к хранилищу BLOB-объектов для вашей учетной записи хранения (*pbaccount* на рис. 1) и объектом **StorageCredentialsAccountAndKey**, как показано в приведенном ниже примере. В примере демонстрируется создание ссылки на объект **CloudBlobContainer**, а затем создание контейнера (*testvhds*), если он еще не существует. После этого с помощью объекта **CloudBlobContainer** следует создать ссылку на объект **CloudPageBlob**, указав имя страничного BLOB-объекта (os4.vhd), к которому необходимо получить доступ. Для создания страничного BLOB-объекта необходимо вызвать [CloudPageBlob.Create](/dotnet/api/microsoft.azure.storage.blob.cloudpageblob.create?view=azure-dotnet#Microsoft_WindowsAzure_Storage_Blob_CloudPageBlob_Create_System_Int64_Microsoft_WindowsAzure_Storage_AccessCondition_Microsoft_WindowsAzure_Storage_Blob_BlobRequestOptions_Microsoft_WindowsAzure_Storage_OperationContext_), передав максимальный размер большого двоичного объекта, который требуется создать. Этот размер (*blobSize*) должен быть кратен 512 байтам.
 
 ```csharp
 using Microsoft.WindowsAzure.StorageClient;
@@ -66,13 +66,13 @@ pageBlob.Create(16 * OneGigabyteAsBytes);
 ```
 
 #### <a name="resizing-a-page-blob"></a>Изменение размера страничного BLOB-объекта
-Чтобы изменить размер страничного BLOB-объекта после его создания, используйте API-интерфейс [Resize](/dotnet/api/microsoft.windowsazure.storage.blob.cloudpageblob.resize?view=azure-dotnet#Microsoft_WindowsAzure_Storage_Blob_CloudPageBlob_Resize_System_Int64_Microsoft_WindowsAzure_Storage_AccessCondition_Microsoft_WindowsAzure_Storage_Blob_BlobRequestOptions_Microsoft_WindowsAzure_Storage_OperationContext_). Запрошенный размер должен быть кратен 512 байтам.
+Чтобы изменить размер страничного BLOB-объекта после его создания, используйте API-интерфейс [Resize](/dotnet/api/microsoft.azure.storage.blob.cloudpageblob.resize?view=azure-dotnet#Microsoft_WindowsAzure_Storage_Blob_CloudPageBlob_Resize_System_Int64_Microsoft_WindowsAzure_Storage_AccessCondition_Microsoft_WindowsAzure_Storage_Blob_BlobRequestOptions_Microsoft_WindowsAzure_Storage_OperationContext_). Запрошенный размер должен быть кратен 512 байтам.
 ```csharp
 pageBlob.Resize(32 * OneGigabyteAsBytes); 
 ```
 
 #### <a name="writing-pages-to-a-page-blob"></a>Запись страниц в страничный BLOB-объект
-Для записи страниц используйте метод [CloudPageBlob.WritePages](https://docs.microsoft.com/dotnet/api/microsoft.windowsazure.storage.blob.cloudpageblob.beginwritepages?view=azure-dotnet#Microsoft_WindowsAzure_Storage_Blob_CloudPageBlob_BeginWritePages_System_IO_Stream_System_Int64_System_String_Microsoft_WindowsAzure_Storage_AccessCondition_Microsoft_WindowsAzure_Storage_Blob_BlobRequestOptions_Microsoft_WindowsAzure_Storage_OperationContext_System_AsyncCallback_System_Object_).  Это позволит записать последовательный набор страниц размером до 4 МБ. Записываемое смещение должно начинаться на границе 512 байт (startingOffset % 512 == 0), а заканчиваться на границе 512 — 1.  В следующем примере кода показано, как вызвать метод **WritePages** для большого двоичного объекта:
+Для записи страниц используйте метод [CloudPageBlob.WritePages](https://docs.microsoft.com/dotnet/api/microsoft.azure.storage.blob.cloudpageblob.beginwritepages?view=azure-dotnet#Microsoft_WindowsAzure_Storage_Blob_CloudPageBlob_BeginWritePages_System_IO_Stream_System_Int64_System_String_Microsoft_WindowsAzure_Storage_AccessCondition_Microsoft_WindowsAzure_Storage_Blob_BlobRequestOptions_Microsoft_WindowsAzure_Storage_OperationContext_System_AsyncCallback_System_Object_).  Это позволит записать последовательный набор страниц размером до 4 МБ. Записываемое смещение должно начинаться на границе 512 байт (startingOffset % 512 == 0), а заканчиваться на границе 512 — 1.  В следующем примере кода показано, как вызвать метод **WritePages** для большого двоичного объекта:
 
 ```csharp
 pageBlob.WritePages(dataStream, startingOffset); 
@@ -88,7 +88,7 @@ pageBlob.WritePages(dataStream, startingOffset);
 2.  Операция записи, начинающаяся со смещения 4096 длиной 1024 байт 
 
 #### <a name="reading-pages-from-a-page-blob"></a>Чтение страниц из страничного BLOB-объекта
-Для чтения страниц используйте метод [CloudPageBlob.DownloadRangeToByteArray](/dotnet/api/microsoft.windowsazure.storage.blob.icloudblob.downloadrangetobytearray?view=azure-dotnet), чтобы считать диапазон байтов из страничного BLOB-объекта. Это даст возможность загрузить весь большой двоичный объект или диапазон байтов, начиная со смещения в большом двоичном объекте. При чтении смещение не должно начинаться с величины, кратной 512. При чтении байтов со страницы NUL служба возвращает нулевые байты.
+Для чтения страниц используйте метод [CloudPageBlob.DownloadRangeToByteArray](/dotnet/api/microsoft.azure.storage.blob.icloudblob.downloadrangetobytearray?view=azure-dotnet), чтобы считать диапазон байтов из страничного BLOB-объекта. Это даст возможность загрузить весь большой двоичный объект или диапазон байтов, начиная со смещения в большом двоичном объекте. При чтении смещение не должно начинаться с величины, кратной 512. При чтении байтов со страницы NUL служба возвращает нулевые байты.
 ```csharp
 byte[] buffer = new byte[rangeSize];
 pageBlob.DownloadRangeToByteArray(buffer, bufferOffset, pageBlobOffset, rangeSize); 
@@ -97,7 +97,7 @@ pageBlob.DownloadRangeToByteArray(buffer, bufferOffset, pageBlobOffset, rangeSiz
 
 ![](./media/storage-blob-pageblob-overview/storage-blob-pageblob-overview-figure3.png)
 
-Если большой двоичный объект является фрагментарным, возможно, потребуется загружать только значимые области страницы. Это позволит не оплачивать передачу нулевых байтов и сократить задержку при загрузке.  Чтобы определить, какие страницы поддерживаются данными, используйте метод [CloudPageBlob.GetPageRanges](/dotnet/api/microsoft.windowsazure.storage.blob.cloudpageblob.getpageranges?view=azure-dotnet). Вы можете перечислить возвращаемые диапазоны и загрузить данные в каждом диапазоне. 
+Если большой двоичный объект является фрагментарным, возможно, потребуется загружать только значимые области страницы. Это позволит не оплачивать передачу нулевых байтов и сократить задержку при загрузке.  Чтобы определить, какие страницы поддерживаются данными, используйте метод [CloudPageBlob.GetPageRanges](/dotnet/api/microsoft.azure.storage.blob.cloudpageblob.getpageranges?view=azure-dotnet). Вы можете перечислить возвращаемые диапазоны и загрузить данные в каждом диапазоне. 
 ```csharp
 IEnumerable<PageRange> pageRanges = pageBlob.GetPageRanges();
 

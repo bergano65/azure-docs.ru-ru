@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 10/11/2018
 ms.author: iainfou
-ms.openlocfilehash: f2477a26bd9df9bcbde8ac184c3667f7dd32dba9
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
-ms.translationtype: HT
+ms.openlocfilehash: 39e0547421c446c1ee48b93b30487ccb9358de02
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/06/2019
-ms.locfileid: "65074005"
+ms.locfileid: "65192075"
 ---
 # <a name="configure-azure-cni-networking-in-azure-kubernetes-service-aks"></a>Настройка сети Azure CNI в Службе Azure Kubernetes (AKS)
 
@@ -41,7 +41,6 @@ IP-адреса для контейнеров pod и узлов кластера
 > При выборе необходимого количества IP-адресов следует учитывать операции обновления и масштабирования. Если задать диапазон IP-адресов, который поддерживает только фиксированное число узлов, обновить или масштабировать кластер будет невозможно.
 >
 > - При **обновлении** кластера AKS в нем развертывается новый узел. Службы и рабочие нагрузки теперь выполняются на новом узле, а старый узел удаляется из кластера. Для выполнения этого процесса последовательного обновления требуется, чтобы был доступен как минимум один дополнительный блок IP-адресов. Количество узлов будет равно `n + 1`.
->   - Это особенно важно учитывать при использовании пулы узлов Windows Server (в настоящее время в предварительной версии в AKS). Узлы Windows Server в AKS не применяются автоматически обновлений Windows, вместо этого выполните обновление на узле пула. Это обновление позволяет развернуть новые узлы, последние 2019 окно Server базовый узел изображение и секретное исправления. Дополнительные сведения об обновлении пул узлов Windows Server см. в разделе [обновить пуле узел в AKS][nodepool-upgrade].
 >
 > - При **масштабировании** кластера AKS в него развертывается новый узел. Службы и рабочие нагрузки теперь выполняются на новом узле. При выборе диапазона IP-адресов следует учитывать, как может понадобиться увеличить количество узлов и контейнеров pod, которые кластер может поддерживать. Также следует включить один дополнительный узел для операций обновления. Количество узлов будет равно `n + number-of-additional-scaled-nodes-you-anticipate + 1`.
 
@@ -71,8 +70,8 @@ IP-адреса для контейнеров pod и узлов кластера
 
 Вы можете настроить максимальное число элементов pod на узел *только во время развертывания кластера*. При развертывании с помощью Azure CLI или с помощью шаблона Resource Manager, можно задать максимальное групп контейнеров POD в достигать 250 значение узла.
 
-* **Azure CLI.** При развертывании кластера с помощью команды [az aks create][az-aks-create] укажите аргумент `--max-pods`. Максимальное значение — 110.
-* **Шаблон Resource Manager.** При развертывании кластера с помощью шаблона Resource Manager укажите в объекте [ManagedClusterAgentPoolProfile] свойство `maxPods`. Максимальное значение — 110.
+* **Azure CLI.** При развертывании кластера с помощью команды [az aks create][az-aks-create] укажите аргумент `--max-pods`. Максимальное значение — 250.
+* **Шаблон Resource Manager.** При развертывании кластера с помощью шаблона Resource Manager укажите в объекте [ManagedClusterAgentPoolProfile] свойство `maxPods`. Максимальное значение — 250.
 * **Портал Azure**: При развертывании кластера с помощью портала Azure изменить максимальное количество элементов pod на узел невозможно. Кластеры сети Azure CNI ограничены 30 моделями pod на узел при развертывании с помощью портала Azure.
 
 ### <a name="configure-maximum---existing-clusters"></a>Настройка максимального числа. Имеющиеся кластеры
@@ -106,7 +105,7 @@ IP-адреса для контейнеров pod и узлов кластера
 
 Сначала получите идентификатор ресурса существующей подсети, к которой будет присоединен кластер AKS.
 
-```azurecli-interactive
+```console
 $ az network vnet subnet list \
     --resource-group myVnet \
     --vnet-name myVnet \
@@ -117,7 +116,7 @@ $ az network vnet subnet list \
 
 Используйте команду [az aks create][az-aks-create] с аргументом `--network-plugin azure` для создания кластера с функциями сетевого взаимодействия уровня "Расширенный". Измените значение `--vnet-subnet-id`, указав идентификатор подсети, полученный на предыдущем шаге.
 
-```azurecli-interactive
+```azurecli
 az aks create \
     --resource-group myResourceGroup \
     --name myAKSCluster \
@@ -203,4 +202,3 @@ az aks create \
 [aks-http-app-routing]: http-application-routing.md
 [aks-ingress-internal]: ingress-internal-ip.md
 [network-policy]: use-network-policies.md
-[nodepool-upgrade]: use-multiple-node-pools.md#upgrade-a-node-pool

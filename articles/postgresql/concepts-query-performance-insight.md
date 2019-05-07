@@ -1,21 +1,21 @@
 ---
-title: Анализ производительности запросов в службе "База данных Azure для PostgreSQL"
-description: В этой статье описан компонент "Анализ производительности запросов" в службе "База данных Azure для PostgreSQL".
+title: 'Анализ производительности запросов в базе данных Azure для PostgreSQL: один сервер'
+description: 'В этой статье описывается функция анализ производительности запросов в базе данных Azure для PostgreSQL: один сервер.'
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 03/28/2019
-ms.openlocfilehash: 56abdd819e78312e64209078c3966826385df7bc
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 5/6/2019
+ms.openlocfilehash: d45b79e2ca3b3d478102bebdcff3c8892bef2cb5
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60564413"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65067541"
 ---
 # <a name="query-performance-insight"></a>Сведения о производительности запросов 
 
-**Область применения** База данных Azure для PostgreSQL 9.6 и 10
+**Область применения** База данных Azure для PostgreSQL — один сервер 9.6 и 10
 
 Этот компонент помогает быстро определить наиболее медленно выполняющиеся запросы, их изменение со временем и ожидания каких действий влияют на них.
 

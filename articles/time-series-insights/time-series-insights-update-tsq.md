@@ -8,14 +8,14 @@ manager: cshankar
 ms.service: time-series-insights
 services: time-series-insights
 ms.topic: conceptual
-ms.date: 12/04/2018
+ms.date: 05/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: 0b1c43cb82d6dc2b7f0708dee8471f077befe349
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: d28cb35b1e8e4eaa86418da632c6fcabb636e643
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64722156"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65205017"
 ---
 # <a name="data-querying"></a>Запрашивание данных
 
@@ -35,9 +35,9 @@ ms.locfileid: "64722156"
 
 Поддерживаются следующие основные программные интерфейсы.
 
-![tsq][1]
+[![Общие сведения о времени запроса рядов](media/v2-update-tsq/tsq.png)](media/v2-update-tsq/tsq.png#lightbox)
 
-### <a name="environment-apis"></a>Программные интерфейсы среды
+## <a name="environment-apis"></a>Программные интерфейсы среды
 
 Доступны следующие программные интерфейсы среды:
 
@@ -45,7 +45,7 @@ ms.locfileid: "64722156"
 * [API получения доступных событий в среде](https://docs.microsoft.com/rest/api/time-series-insights/preview-env#get-environment-availability-api). Возвращает распределение количества событий по метке времени для событий `$ts`. Этот API позволяет определить наличие событий для метки времени, возвращая количество событий, если таковые существуют.
 * [API получения схемы событий](https://docs.microsoft.com/rest/api/time-series-insights/preview-env#get-event-schema-api). Возвращает метаданные схемы событий для заданной области поиска. Этот API позволяет получить все метаданные и свойства, доступные в схеме для заданной области поиска.
 
-### <a name="time-series-model-query-tsm-q-apis"></a>API запросов модели временных рядов (TSM-Q)
+## <a name="time-series-model-query-tsm-q-apis"></a>API запросов модели временных рядов (TSM-Q)
 
 Доступны следующие программные интерфейсы запросов модели временных рядов:
 
@@ -54,7 +54,7 @@ ms.locfileid: "64722156"
 * [API иерархий](https://docs.microsoft.com/rest/api/time-series-insights/preview-model#hierarchies-api). Позволяет выполнять операции с иерархиями временных рядов и связанными с ними переменными.
 * [API экземпляров](https://docs.microsoft.com/rest/api/time-series-insights/preview-model#instances-api). Позволяет выполнять операции с иерархиями временных рядов и связанными с ними полями экземпляра.
 
-### <a name="time-series-query-tsq-apis"></a>API запросов временных рядов (TSQ)
+## <a name="time-series-query-tsq-apis"></a>API запросов временных рядов (TSQ)
 
 Доступны следующие программные интерфейсы запросов временных рядов:
 
@@ -80,6 +80,3 @@ ms.locfileid: "64722156"
 - Чтение предварительного просмотра Insights рядов во время [моделирование данных](./time-series-insights-update-tsm.md) статьи.
 
 - Обнаружение [советы и рекомендации при выборе идентификатор ряда времени](./time-series-insights-update-how-to-id.md).
-
-<!-- Images -->
-[1]: media/v2-update-tsq/tsq.png

@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/06/2019
 ms.author: mjbrown
-ms.openlocfilehash: ee1568274792621b8ed9f25d211c40440a82208c
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 46df484303237722f4eb66099748f2fcef8240b4
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/06/2019
-ms.locfileid: "65160040"
+ms.locfileid: "65205834"
 ---
 # <a name="create-containers-with-large-partition-key"></a>Создание контейнеров с помощью ключа большой секции
 
@@ -43,6 +43,17 @@ database,
 Для создания ключа большой секции, хотя создать контейнер с помощью портала Azure, установите флажок **Мой ключ секции — более 100 байт** параметр. По умолчанию все новые контейнеры участвуют в с помощью ключей больших секций. Снимите флажок, если вам не требуется ключей больших секций или при наличии приложений, выполняющихся на пакеты SDK версии старше 1.18.
 
 ![Создание ключей больших секций с помощью портала Azure](./media/large-partition-keys/large-partition-key-with-portal.png)
+
+
+## <a name="supported-sdk-versions"></a>Поддерживаемые версии пакета SDK
+
+Поддерживаются следующие минимальные версии пакетов SDK для ключей больших секций:
+
+|Тип пакета SDK  | Минимальная версия   |
+|---------|---------|
+|.Net     |    1.18     |
+|Синхронизация Java     |   2.4.0      |
+|Java Async   |  2.5.0        |
  
 ## <a name="next-steps"></a>Дальнейшие действия
 

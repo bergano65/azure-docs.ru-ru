@@ -1,6 +1,6 @@
 ---
-title: Перевести отдельных лицензированных пользователей на групповое Лицензирование — Azure Active Directory | Документация Майкрософт
-description: Как перейти с отдельных пользовательских лицензий на групповое лицензирование с помощью Azure Active Directory
+title: Добавить по отдельности лицензированных пользователей на групповое Лицензирование — Azure Active Directory | Документация Майкрософт
+description: Как перенести из отдельных пользовательских лицензий на групповое лицензирование, с помощью Azure Active Directory
 services: active-directory
 keywords: Лицензирование Azure AD
 documentationcenter: ''
@@ -16,14 +16,14 @@ ms.author: curtand
 ms.reviewer: sumitp
 ms.custom: seohack1;it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b6fd2eb51c7178421b0656e3b1d0e0ea36176c16
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 333f0ae0153073b57740446ecf47e36a1f9ce590
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60471050"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65192455"
 ---
-# <a name="how-to-add-migrate-users-with-individual-licenses-to-groups-for-licensing"></a>Как добавить перенести пользователей с отдельных лицензий группам для лицензирования
+# <a name="how-to-migrate-users-with-individual-licenses-to-groups-for-licensing"></a>Как перевести пользователей с отдельных лицензий группам для лицензирования
 
 Возможно, у вас есть существующие лицензии, развернутые для пользователей в организациях путем "прямого назначения", то есть с помощью сценариев PowerShell или других средств для назначения отдельных пользовательских лицензий. Прежде чем начать использовать групповое Лицензирование для управления лицензиями в вашей организации, можно использовать этот план миграции для беспроблемного существующих решений с помощью группового лицензирования.
 

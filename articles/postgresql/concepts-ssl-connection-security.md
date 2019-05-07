@@ -1,19 +1,19 @@
 ---
-title: Настройка SSL-соединения в базе данных Azure для PostgreSQL
-description: Инструкции и сведения о настройке базы данных Azure для PostgreSQL и связанных приложений для правильного использования SSL-соединений.
+title: 'Настройка SSL-соединения в базе данных Azure для PostgreSQL: один сервер'
+description: 'Инструкции и сведения о настройке базы данных Azure для PostgreSQL: один сервер и связанных приложений для правильного использования SSL-подключения.'
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 03/12/2019
-ms.openlocfilehash: 5a0fc99052b18dc1fa837147aa914a473d27d832
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 5/6/2019
+ms.openlocfilehash: 56611267872ca79d7d2fe3a08c9b9f49a9b1840b
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60871415"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65067406"
 ---
-# <a name="configure-ssl-connectivity-in-azure-database-for-postgresql"></a>Настройка SSL-соединения в базе данных Azure для PostgreSQL
+# <a name="configure-ssl-connectivity-in-azure-database-for-postgresql---single-server"></a>Настройка SSL-соединения в базе данных Azure для PostgreSQL: один сервер
 База данных Azure для PostgreSQL предпочитает подключать клиентские приложения к службе PostgreSQL с помощью SSL (Secure Sockets Layer). Применение SSL-соединений между сервером базы данных и клиентскими приложениями обеспечивает защиту от атак "злоумышленник в середине" за счет шифрования потока данных между сервером и приложением.
 
 По умолчанию в службе базы данных PostgreSQL настроено обязательное использование SSL-соединения. При необходимости можно отключить обязательное использование SSL при подключении к службе базы данных, если клиентское приложение не поддерживает SSL-соединения. 

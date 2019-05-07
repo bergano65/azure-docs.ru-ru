@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.reviewer: brahmnes
 ms.date: 03/07/2019
 ms.author: mbullwin
-ms.openlocfilehash: 669b4d65798a553188a2b99080b72ffc7cd9e898
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 074b701422f32f4cd18fd2eb05e3453e139e17ae
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60783673"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65205602"
 ---
 # <a name="debug-snapshots-on-exceptions-in-net-apps"></a>Отладочные моментальные снимки для исключений в приложениях .NET
 При возникновении исключения, можно автоматически собирать отладочный моментальный снимок из работающего веб-приложения. Моментальный снимок отображает состояние исходного кода и переменных в момент порождения этого исключения. Отладчик моментальных снимков (предварительная версия) в [Azure Application Insights](../../azure-monitor/app/app-insights-overview.md) отслеживает телеметрию исключений, поступающую из веб-приложения. Он собирает моментальные снимки для наиболее частых исключений, чтобы предоставить вам необходимые сведения для диагностики проблем в рабочей среде. Добавьте [пакет NuGet сборщика моментальных снимков](https://www.nuget.org/packages/Microsoft.ApplicationInsights.SnapshotCollector) в приложение и, при необходимости, настройте параметры сбора в файле [ApplicationInsights.config](../../azure-monitor/app/configuration-with-applicationinsights-config.md). Моментальные снимки для [исключений](../../azure-monitor/app/asp-net-exceptions.md) отображаются на портале Application Insights.
@@ -112,7 +112,7 @@ ms.locfileid: "60783673"
 
 ## <a name="limitations"></a>Ограничения
 
-Срок хранения данных по умолчанию составляет 7 дней. Для каждого экземпляра Application Insights максимальное число 50 снимков допускается в день.
+Срок хранения данных по умолчанию — 15 дней. Для каждого экземпляра Application Insights максимальное число 50 снимков допускается в день.
 
 ### <a name="publish-symbols"></a>Публикация символов
 Отладчику моментальных снимков требуется наличие файлов символов на рабочем сервере для декодирования переменных и обеспечения возможности отладки в Visual Studio.

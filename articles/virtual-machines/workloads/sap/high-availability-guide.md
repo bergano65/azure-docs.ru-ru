@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 01/24/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: b3a4f3b37b0dc4d74b03ffcfa61c97fbb571d57f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: eaaaa5c2fe87b419bf38d6e6522ef745476ac1ad
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61465598"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65204956"
 ---
 # <a name="high-availability-for-sap-netweaver-on-azure-vms"></a>Высокий уровень доступности SAP NetWeaver на виртуальных машинах Azure
 
@@ -563,7 +563,7 @@ _**Рис. 2.** Конфигурация отказоустойчивого к�
 2. Запустите SIOS DataKeeper Cluster Edition на обоих узлах виртуальной машины.
 3. Настройте ПО SIOS DataKeeper Cluster Edition таким образом, чтобы оно зеркально отображало содержимое тома дополнительного подключенного VHD исходной виртуальной машины в том дополнительного подключенного VHD целевой виртуальной машины. SIOS DataKeeper абстрагирует исходные и конечные локальные тома, а затем предоставляет их отказоустойчивому кластеру Windows как один общий диск.
 
-Дополнительные сведения о SIOS DataKeeper см. [здесь](http://us.sios.com/products/datakeeper-cluster/).
+Дополнительные сведения о SIOS DataKeeper см. [здесь](https://us.sios.com/products/datakeeper-cluster/).
 
 ![Рис. 3. Конфигурация отказоустойчивой кластеризации Windows Server в Azure с использованием SIOS DataKeeper][sap-ha-guide-figure-1002]
 
@@ -1043,7 +1043,7 @@ Azure Load Balancer имеет внутренний балансировщик �
 
 Чтобы добавить записи реестра на обоих узлах кластера экземпляра SAP ASCS/SCS, сначала добавьте эти записи реестра Windows на обоих узлах кластера Windows для SAP ASCS/SCS.
 
-| Путь | HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters |
+| `Path` | HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters |
 | --- | --- |
 | Имя переменной |`KeepAliveTime` |
 | Тип переменной |REG_DWORD (десятичное) |
@@ -1054,7 +1054,7 @@ _**Таблица 3.** Изменение первого параметра TCP
 
 Затем добавьте следующие записи реестра Windows на обоих узлах кластера Windows для SAP ASCS/SCS.
 
-| Путь | HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters |
+| `Path` | HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters |
 | --- | --- |
 | Имя переменной |`KeepAliveInterval` |
 | Тип переменной |REG_DWORD (десятичное) |

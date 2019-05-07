@@ -12,12 +12,12 @@ ms.topic: reference
 ms.date: 09/03/2018
 ms.author: cshoe
 ms.custom: cc996988-fb4f-47
-ms.openlocfilehash: 8b9cc112f51840a6bf2cf659863f61ab5962f6e6
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 72e51deb31ad2894ccfc0fc71884c99863184f5b
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60306855"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65203661"
 ---
 # <a name="azure-queue-storage-bindings-for-azure-functions"></a>Привязки хранилища очередей Azure для службы "Функции Azure"
 
@@ -248,7 +248,7 @@ module.exports = async function (context, message) {
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `QueueTrigger`.
 
-|свойство function.json | Свойство атрибута |ОПИСАНИЕ|
+|свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
 |**type** | Недоступно| Нужно задать значение `queueTrigger`. Это свойство задается автоматически при создании триггера на портале Azure.|
 |**direction**| Недоступно | Только в файле *function.json*. Нужно задать значение `in`. Это свойство задается автоматически при создании триггера на портале Azure. |
@@ -273,7 +273,7 @@ module.exports = async function (context, message) {
 
 ## <a name="trigger---message-metadata"></a>Метаданные сообщения триггера
 
-Триггер очереди предоставляет несколько [свойств метаданных](./functions-bindings-expressions-patterns.md#trigger-metadata). Эти свойства можно использовать как часть выражений привязки в других привязках или как параметры в коде. Эти свойства относятся к классу [CloudQueueMessage](https://docs.microsoft.com/dotnet/api/microsoft.windowsazure.storage.queue.cloudqueuemessage).
+Триггер очереди предоставляет несколько [свойств метаданных](./functions-bindings-expressions-patterns.md#trigger-metadata). Эти свойства можно использовать как часть выражений привязки в других привязках или как параметры в коде. Эти свойства относятся к классу [CloudQueueMessage](https://docs.microsoft.com/dotnet/api/microsoft.azure.storage.queue.cloudqueuemessage).
 
 |Свойство|type|ОПИСАНИЕ|
 |--------|----|-----------|
@@ -307,7 +307,7 @@ module.exports = async function (context, message) {
 
 В файле [host.json](functions-host-json.md#queues) содержатся параметры, управляющие поведением очереди триггера. См. в разделе [host.json параметры](#hostjson-settings) подробные сведения о доступных параметрах см.
 
-## <a name="output"></a>Выходные данные
+## <a name="output"></a>Выход
 
 Используйте выходную привязку хранилища очередей Azure, чтобы записать сообщения в очередь.
 
@@ -502,7 +502,7 @@ public static string Run([HttpTrigger] dynamic input,  ILogger log)
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `Queue`.
 
-|свойство function.json | Свойство атрибута |ОПИСАНИЕ|
+|свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
 |**type** | Недоступно | Нужно задать значение `queue`. Это свойство задается автоматически при создании триггера на портале Azure.|
 |**direction** | Недоступно | Нужно задать значение `out`. Это свойство задается автоматически при создании триггера на портале Azure. |
@@ -526,7 +526,7 @@ public static string Run([HttpTrigger] dynamic input,  ILogger log)
 В коде и скрипте C# запишите несколько сообщений очереди с помощью одного из следующих типов: 
 
 * `ICollector<T>` или `IAsyncCollector<T>`
-* [CloudQueue](/dotnet/api/microsoft.windowsazure.storage.queue.cloudqueue).
+* [CloudQueue](/dotnet/api/microsoft.azure.storage.queue.cloudqueue).
 
 В функциях JavaScript используйте `context.bindings.<name>`, чтобы получить доступ к выходной очереди сообщений. Строку или сериализуемый объект JSON можно использовать для полезных данных элемента очереди.
 
@@ -586,4 +586,4 @@ public static string Run([HttpTrigger] dynamic input,  ILogger log)
 
 <!-- LINKS -->
 
-[CloudQueueMessage]: /dotnet/api/microsoft.windowsazure.storage.queue.cloudqueuemessage
+[CloudQueueMessage]: /dotnet/api/microsoft.azure.storage.queue.cloudqueuemessage

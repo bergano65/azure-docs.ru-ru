@@ -1,20 +1,19 @@
 ---
-title: Реплики чтения в Базе данных Azure для PostgreSQL
-description: В этой статье описывается компонент "Реплика чтения" в службе "База данных Azure для PostgreSQL".
-author: WenJason
-ms.author: v-jay
+title: 'Чтение реплики в базе данных Azure для PostgreSQL: один сервер'
+description: 'В этой статье описывается функция чтения реплик в базе данных Azure для PostgreSQL: один сервер.'
+author: rachel-msft
+ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-origin.date: 04/01/2019
-ms.date: 04/22/2019
-ms.openlocfilehash: f340f1e42b6993a1f834ab05570c669d4241222b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 5/6/2019
+ms.openlocfilehash: 1d75d01df74a239ba865d9a4e2b216a410e6069c
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60564363"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65067434"
 ---
-# <a name="read-replicas-in-azure-database-for-postgresql"></a>Реплики чтения в Базе данных Azure для PostgreSQL
+# <a name="read-replicas-in-azure-database-for-postgresql---single-server"></a>Чтение реплики в базе данных Azure для PostgreSQL: один сервер
 
 Компонент "Реплика чтения" позволяет реплицировать данные с сервера службы "База данных Azure для PostgreSQL" на сервер только для чтения. Вы можете реплицировать данные с главного сервера на несколько реплик (до пяти) в том же регионе Azure. Реплики асинхронно обновляются с использованием собственной технологии репликации ядра PostgreSQL.
 
@@ -51,7 +50,7 @@ ms.locfileid: "60564363"
 Вы можете подключиться к реплике, используя имя узла и действительную учетную запись, как к обычному серверу службы "База данных Azure для PostgreSQL". Например, для сервера с именем **myreplica** и именем пользователя с правами администратора **myadmin** подключение будет выполняться с помощью psql:
 
 ```
-psql -h myreplica.postgres.database.chinacloudapi.cn -U myadmin@myreplica -d postgres
+psql -h myreplica.postgres.database.azure.com -U myadmin@myreplica -d postgres
 ```
 
 При появлении запроса введите пароль для учетной записи пользователя.
@@ -90,7 +89,7 @@ AS total_log_delay_in_bytes from pg_stat_replication;
 > [!NOTE]
 > В случае перезапуска главного сервера или реплики чтения период, необходимый для перезапуска и наверстывания, будет отражаться в значении метрики задержки реплики.
 
-## <a name="stop-replication"></a>Остановить репликацию
+## <a name="stop-replication"></a>Остановка репликации
 Вы можете остановить репликацию между главным сервером и репликой. В этом случае реплика перезагрузится, чтобы удалить параметры репликации. После остановки репликации между главным сервером и репликой чтения реплика становится отдельным сервером. На отдельном сервере сохраняются все данные, которые существовали на нем на момент запуска команды "Остановить репликацию". Данные на изолированном сервере не синхронизируются с главным сервером.
 
 > [!IMPORTANT]

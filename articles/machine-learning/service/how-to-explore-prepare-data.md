@@ -11,12 +11,12 @@ author: MayMSFT
 manager: cgronlun
 ms.reviewer: nibaccam
 ms.date: 05/02/19
-ms.openlocfilehash: 683f916596b4c77ec1dbc2acf1f91876c0752c08
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: f9087d1fda7574043879983e31d7b608dbe58798
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65028835"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65204967"
 ---
 # <a name="explore-and-prepare-data-with-the-dataset-class-preview"></a>Изучение и Подготовка данных с помощью класса набора данных (Предварительная версия)
 
@@ -44,7 +44,7 @@ ms.locfileid: "65028835"
 Использовать образец данных, чтобы разобраться в первоначальной архитектуры данных и содержимого. В настоящее время [ `sample()` ](https://docs.microsoft.com//python/api/azureml-core/azureml.core.dataset(class)?view=azure-ml-py#sample-sample-strategy--arguments-) стратегий выборки Top N случайных простой и Stratified поддерживает метод из класса набора данных.
 
 ```Python
-from azureml.core import Dataset
+from azureml.core.dataset import Dataset
 import random
 
 # create an in-memory Dataset from a local file
@@ -109,7 +109,6 @@ sample_dataset.to_pandas_dataframe()
 1|10534446|HZ277630|4/15/2016 10:00|055XX N KEDZIE AVE|890|КРАЖА|...
 2|10535059|HZ278872|4/15/2016 4:30|004XX С KILBOURN ОХРАНИТЬ|810|КРАЖА|...
 
-
 ## <a name="explore-with-summary-statistics"></a>Произвольное тестирование с сводные статистические данные
 
  Обнаруживать аномалии, отсутствующие значения, или число ошибок с [ `get_profile()` ](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset.dataset?view=azure-ml-py#get-profile-arguments-none--generate-if-not-exist-true--workspace-none--compute-target-none-) метод. Эта функция получает профиль и сводную статистику данных, которая позволит определить, операции подготовки необходимых данных для применения.
@@ -152,7 +151,7 @@ IUCR|FieldType.INTEGER|810|1154|10,0|0,0|10,0|0,0|0,0|0,0|810|850|810|890|1136|1
 Во-первых, загрузите последние определения набора данных с помощью [ `get_definition()` ](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset.dataset?view=azure-ml-py#get-definition-version-id-none-) и сократить данные с помощью [ `keep_columns()` ](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep.dataflow?view=azure-dataprep-py#keep-columns-columns--multicolumnselection-----azureml-dataprep-api-dataflow-dataflow), поэтому мы просматривать только столбцы, мы хотим адрес.
 
 ```Python
-from azureml.core import Dataset
+from azureml.core.dataset import Dataset
 import azureml.dataprep as dprep
 
 # get the latest definition of Dataset
@@ -222,7 +221,6 @@ ds_def.head(3)
 1|10516598|False|41.744107|-87.664494
 2|10519196|False|41.780049|-87.000000
 
-
 Обновить определение набора данных, [ `update_definition()` ](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset(class)?view=azure-ml-py#update-definition-definition--definition-update-message-) для сохранения действия выполняется преобразование.
 
 ```Python
@@ -240,12 +238,13 @@ dataset.head(3)
 
 Часто данные мы работаем с при очистке и Подготовка данных является только подмножество общий объем данных, необходимые для рабочей среды. Таким образом некоторые из предположения, которые принимаются как часть наших очистки может оказаться, чтобы иметь значение false. Например в наборе данных, который постоянно обновляется, столбец, который изначально содержал только цифры в определенный диапазон может содержать более широкий диапазон значений при последующем выполнении. Эти ошибки часто приводят неработающих конвейеров или поврежденные данные.
 
-Наборы данных поддерживает создание утверждений на данные, которые вычисляются при выполнении конвейера. Эти утверждения сообщить нам убедитесь, что наши предположения о данных по-прежнему быть точным и, если нет, для обработки ошибки соответствующим образом.
+Поддержка наборов данных, создании утверждений на данные, которые вычисляются при выполнении конвейера. Эти утверждения сообщить нам убедитесь, что наши предположения о данных по-прежнему быть точным и, если нет, для обработки ошибки соответствующим образом.
 
 Например, если требуется ограничить `Latitude` и `Longitude` значения в наборе данных для определенных числовых диапазонов, [ `assert_value()` ](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep.dataflow?view=azure-dataprep-py#assert-value-columns--multicolumnselection--expression--azureml-dataprep-api-expressions-expression--policy--azureml-dataprep-api-engineapi-typedefinitions-assertpolicy----assertpolicy-errorvalue--1---error-code--str----assertionfailed------azureml-dataprep-api-dataflow-dataflow) метод гарантирует, это всегда так.
 
 ```Python
 from azureml.dataprep import value
+from azureml.core.dataset import Dataset
 
 # get the latest definition of the Dataset
 ds_def = dataset.get_definition()
@@ -282,7 +281,7 @@ print(error.originalValue)
 Одним из более сложных средств для наборов данных является возможность извлечения столбцов, используя примеры из нужных результатов. Это позволяет выбрать пример, пакет SDK, поэтому он может создавать код для достижения предполагаемого преобразований.
 
 ```Python
-from azureml.dataset import Dataset
+from azureml.core.dataset import Dataset
 
 # create an in-memory Dataset from a local file
 dataset = Dataset.auto_read_files('./data/crime.csv')
@@ -302,8 +301,8 @@ dataset.head(3)
 ```Python
 ds_def = dataset.get_definition()
 ds_def = ds_def.derive_column_by_example(
-        source_columns = "Date", 
-        new_column_name = "Date_Time_Range", 
+        source_columns = "Date",
+        new_column_name = "Date_Time_Range",
         example_data = [("2016-04-04 23:56:00", "2016-04-04 10PM-12AM"), ("2016-04-15 17:00:00", "2016-04-15 4PM-6PM")]
     )
 ds_def.keep_columns(['ID','Date','Date_Time_Range']).head(3)
@@ -329,7 +328,7 @@ dataset = dataset.update_definition(ds_def, 'Derive Date_Time_Range')
 Например, столбец `inspections.business.city` содержит несколько видов Город имя «Сан-Франциско».
 
 ```Python
-from azureml.Dataset import Dataset
+from azureml.core.dataset import Dataset
 
 # create an in-memory Dataset from a local json file
 dataset = Dataset.auto_read_files('./data/city.json')

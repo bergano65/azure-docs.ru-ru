@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 06/06/2018
 ms.author: erikre
-ms.openlocfilehash: 15725989ef786f94421eddf647f101e3e73633fb
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 0a73462b7fdbaf6386a3051a72da755f31ff8dd2
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60370821"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65192133"
 ---
 # <a name="review-subscription-billing-using-rest-apis"></a>Проверка данных о выставлении счетов по подписке с помощью интерфейсов REST API
 
@@ -39,7 +39,7 @@ Authorization: Bearer
 
 `{subscriptionID}` — это обязательный параметр, который позволяет определить целевую подписку.
 
-`{billingPeriod}` — это обязательный параметр, который позволяет указать текущий [период выставления счетов](https://docs.microsoft.com/rest/api/billing/billingperiods/get#billingperiod).
+`{billingPeriod}` — это обязательный параметр, который позволяет указать текущий [период выставления счетов](https://docs.microsoft.com/rest/api/billing/enterprise/billing-enterprise-api-billing-periods).
 
 Параметры `${startDate}` и `${endDate}` являются обязательными в нашем примере, но не для конечной точки. Они позволяют указать диапазон дат в строковом формате ГГГГ-ММ-ДД (например, `'20180501'` и `'20180615'`).
 

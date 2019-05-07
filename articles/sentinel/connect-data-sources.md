@@ -4,7 +4,7 @@ description: Узнайте, как подключить источники да
 services: sentinel
 documentationcenter: na
 author: rkarlin
-manager: barbkess
+manager: rkarlin
 editor: ''
 ms.assetid: a3b63cfa-b5fe-4aff-b105-b22b424c418a
 ms.service: sentinel
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/07/2019
 ms.author: rkarlin
-ms.openlocfilehash: ba0f584e8026fe3828ec79c4b6c0ff5a0bb89f5a
-ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.openlocfilehash: b54c4ef1b188896a70cf8b2f9352d0b76874fd50
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59492368"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65204292"
 ---
 # <a name="connect-data-sources"></a>Подключение источников данных
 
@@ -40,12 +40,12 @@ Azure Sentinel поддерживает следующие методы подк
 
 - **Службы Майкрософт**.<br> Службы Майкрософт подключены в собственном коде с помощью платформы Azure для готовой интеграции. Следующие решения можно подключить несколькими щелчками мыши.
     - [Office 365](connect-office-365.md)
-    - [Данные для входа и журналы аудита Azure AD](connect-azure-active-directory.md)
+    - [Данные для входа и журналы аудита Azure AD](connect-azure-active-directory.md)
     - [Действия Azure](connect-azure-activity.md)
-    - [защиту идентификации Azure AD](connect-azure-ad-Identity-protection.md)
+    - [Защита идентификации Azure AD](connect-azure-ad-Identity-protection.md)
     - [Центр безопасности Azure](connect-azure-security-center.md)
     - [Azure Information Protection](connect-azure-information-protection.md)
-    - [Azure Advanced Threat Protection](connect-azure-atp.md)
+    - [Расширенная защита от угроз Azure](connect-azure-atp.md)
     - [Cloud App Security](connect-cloud-app-security.md)
     - [События безопасности Windows](connect-windows-security-events.md) 
     - [Брандмауэр Windows](connect-windows-firewall.md)
@@ -59,7 +59,7 @@ Azure Sentinel поддерживает следующие методы подк
         - [Check Point](connect-checkpoint.md)
         - [Cisco ASA](connect-cisco.md)
         - [Fortinet](connect-fortinet.md)
-        - [Пало-Альто](connect-paloalto.md)
+        - [Palo Alto](connect-paloalto.md)
         - [Другие устройства CEF](connect-common-event-format.md)
         - [Другие устройства Syslog](connect-syslog.md)
     - Решения DLP

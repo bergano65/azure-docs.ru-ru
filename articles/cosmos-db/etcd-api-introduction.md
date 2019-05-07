@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 05/06/2019
 ms.author: dech
 ms.reviewer: sngun
-ms.openlocfilehash: 30d18e1e23767ce3a179221714e001574f8e9778
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.openlocfilehash: 6c7fcb1429438ee024cb226b63cfcdcab05ed9f8
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/06/2019
-ms.locfileid: "65075495"
+ms.locfileid: "65205807"
 ---
 # <a name="introduction-to-the-azure-cosmos-db-etcd-api-preview"></a>Введение в Azure Cosmos DB etcd API (Предварительная версия)
 
@@ -23,7 +23,7 @@ Azure Cosmos DB — глобально распределенная многом
 Etcd API в Azure Cosmos DB позволяет использовать Azure Cosmos DB в качестве серверного хранилища для [Azure Kubernetes](../aks/index.yml). etcd API в Azure Cosmos DB доступна в предварительной версии. Azure Cosmos DB реализует протокол коммутации etcd. С помощью etcd API в Azure Cosmos DB, разработчикам будет автоматически очень надежным, [доступных](high-availability.md), [глобально распределенная](distribute-data-globally.md) Kubernetes. Этот API позволяет разработчикам развернуть управление состоянием Kubernetes на собственный это полностью управляемая облачная служба PaaS. 
 
 > [!NOTE]
-> В отличие от других интерфейсах API в Azure Cosmos DB вы не сможете подготовить учетную запись API etcd через портал Azure, интерфейса командной строки или пакетов SDK. Вы можете подготовить учетную запись API etcd, развернув шаблон Resource Manager. Подробные инструкции см. в разделе [том, как подготовить Azure Kubernetes с помощью Azure Cosmos DB](bootstrap-kubernetes-cluster.md) статьи.  
+> В отличие от других интерфейсах API в Azure Cosmos DB вы не сможете подготовить учетную запись API etcd через портал Azure, интерфейса командной строки или пакетов SDK. Вы можете подготовить учетную запись API etcd, развернув шаблон Resource Manager. Подробные инструкции см. в разделе [том, как подготовить Azure Kubernetes с помощью Azure Cosmos DB](bootstrap-kubernetes-cluster.md) статьи. Etcd API Azure Cosmos DB в настоящее время находится в ограниченной предварительной версии. Вы можете [регистрации для предварительного просмотра](https://aka.ms/cosmosetcdapi-signup), заполнив форму регистрации.
 
 ## <a name="wire-level-compatibility"></a>Совместимость на уровне сети
 

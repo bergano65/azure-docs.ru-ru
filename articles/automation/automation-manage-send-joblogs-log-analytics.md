@@ -1,6 +1,6 @@
 ---
 title: Пересылка данных задания службы автоматизации Azure в журналы Azure Monitor
-description: В этой статье показано, как отправлять состояние задания и runbook потоков заданий в журналы Azure Azure Monitor для получения дополнительных сведений и управления.
+description: В этой статье показано, как отправлять состояние задания и runbook потоков заданий в журналы Azure Monitor для получения дополнительных сведений и управления.
 services: automation
 ms.service: automation
 ms.subservice: process-automation
@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 02/05/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 82baef7ce0d91713c8bef202ab0ea0925d290f3a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 8672bc28ea5e8562472408810a38ea0de6778cfd
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60739136"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65200618"
 ---
 # <a name="forward-job-status-and-job-streams-from-automation-to-azure-monitor-logs"></a>Пересылка состояния задания и потоков заданий из службы автоматизации для журналов Azure Monitor
 
@@ -103,7 +103,7 @@ Get-AzDiagnosticSetting -ResourceId $automationAccountId
 | SourceSystem | Как Azure Monitor журналы сбора данных. Всегда имеет значение *Azure* для системы диагностики Azure. |
 | ResultDescription |Описывает состояние результата задания Runbook. Возможные значения:<br>— Job is started;<br>— Job Failed;<br>- Job Completed. |
 | CorrelationId |GUID, представляющий собой идентификатор корреляции задания Runbook. |
-| resourceId |Указывает идентификатор ресурса учетной записи службы автоматизации Azure для модуля Runbook. |
+| ResourceId |Указывает идентификатор ресурса учетной записи службы автоматизации Azure для модуля Runbook. |
 | SubscriptionId | Идентификатор подписки Azure (GUID) для учетной записи службы автоматизации. |
 | ResourceGroup | Имя группы ресурсов для учетной записи службы автоматизации. |
 | ResourceProvider | MICROSOFT.AUTOMATION |
@@ -126,7 +126,7 @@ Get-AzDiagnosticSetting -ResourceId $automationAccountId
 | SourceSystem | Как Azure Monitor журналы сбора данных. Всегда имеет значение *Azure* для системы диагностики Azure. |
 | ResultDescription |Включает в себя выходной поток из Runbook. |
 | CorrelationId |GUID, представляющий собой идентификатор корреляции задания Runbook. |
-| resourceId |Указывает идентификатор ресурса учетной записи службы автоматизации Azure для модуля Runbook. |
+| ResourceId |Указывает идентификатор ресурса учетной записи службы автоматизации Azure для модуля Runbook. |
 | SubscriptionId | Идентификатор подписки Azure (GUID) для учетной записи службы автоматизации. |
 | ResourceGroup | Имя группы ресурсов для учетной записи службы автоматизации. |
 | ResourceProvider | MICROSOFT.AUTOMATION |

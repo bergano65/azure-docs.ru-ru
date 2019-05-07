@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 02/02/2018
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 576627c96b19dd3563ab21a5d478b779e4a3ed64
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 086f5773a8ae4085a8e5bc0637bdebe5f2df4fb0
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60839000"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65203335"
 ---
 # <a name="os-and-runtime-patching-in-azure-app-service"></a>Установка исправлений для ОС и среды выполнения в Службе приложений Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "60839000"
 
 Azure управляет установкой исправлений ОС на двух уровнях: физические серверы и гостевые виртуальные машины, на которых работают ресурсы службы приложений. Физические серверы и гостевые виртуальные машины обновляются раз в месяц, что соответствует графика, называемого [вторником обновлений](https://technet.microsoft.com/security/bulletins.aspx). Эти обновления применяются автоматически. Во время обновлений гарантируется высокий уровень доступности служб Azure согласно Соглашению об уровне обслуживания. 
 
-Подробные сведения о применении обновлений см. в статье [Demystifying the magic behind App Service OS updates](https://blogs.msdn.microsoft.com/appserviceteam/2018/01/18/demystifying-the-magic-behind-app-service-os-updates/) (Базовые сведения об обновлениях ОС с помощью службы приложений).
+Подробные сведения о применении обновлений см. в статье [Demystifying the magic behind App Service OS updates](https://azure.github.io/AppService/2018/01/18/Demystifying-the-magic-behind-App-Service-OS-updates.html) (Базовые сведения об обновлениях ОС с помощью службы приложений).
 
 ## <a name="how-does-azure-deal-with-significant-vulnerabilities"></a>Как Azure устраняет значительные уязвимости?
 

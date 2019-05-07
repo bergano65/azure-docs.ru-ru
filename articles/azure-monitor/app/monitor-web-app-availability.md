@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 01/22/2019
 ms.reviewer: sdash
 ms.author: lagayhar
-ms.openlocfilehash: fe8549027bb7fcf9fcfc2db26816c0b6646c9da6
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 6cd5413d64be2117cc5f64202ecdaaf40f35db4b
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64916385"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65205378"
 ---
 # <a name="monitor-availability-and-responsiveness-of-any-web-site"></a>Наблюдение за доступностью и скоростью реагирования веб-сайта
 Развернув веб-приложение или веб-сайт на любом сервере, вы можете настроить тесты для наблюдения за его доступностью и скоростью реагирования. [Azure Application Insights](../../azure-monitor/app/app-insights-overview.md) отправляет веб-запросы через одинаковые промежутки времени из разных точек по всему миру. Эта надстройка предупреждает вас, если приложение реагирует медленно или не реагирует вообще.
@@ -274,7 +274,7 @@ ms.locfileid: "64916385"
 
 ## <a name="performance-tests"></a>Тесты производительности
 > [!NOTE]  
-> Облачные службы нагрузочного тестирования является устаревшим. Дополнительные сведения об устаревании, доступность службы и альтернативных служб можно найти [здесь](https://docs.microsoft.com/en-us/azure/devops/test/load-test/overview?view=azure-devops).
+> Облачные службы нагрузочного тестирования является устаревшим. Дополнительные сведения об устаревании, доступность службы и альтернативных служб можно найти [здесь](https://docs.microsoft.com/azure/devops/test/load-test/overview?view=azure-devops).
 
 Вы можете выполнить на своем веб-сайте нагрузочный тест. Как и при проверке доступности, вы можете отправлять простые или многошаговые запросы из точек по всему миру. В отличие от теста доступности, отправляется много запросов, что имитирует несколько одновременно работающих пользователей.
 

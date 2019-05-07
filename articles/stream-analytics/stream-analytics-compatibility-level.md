@@ -5,13 +5,13 @@ author: mamccrea
 ms.author: mamccrea
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 04/12/2019
-ms.openlocfilehash: e4bbfdbcf7a295089570d4c8b77b07fd7270b3fd
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 5/2/2019
+ms.openlocfilehash: c1b2875e6899d2301a4c4b564882214dc7bc4981
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60771707"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65205461"
 ---
 # <a name="compatibility-level-for-azure-stream-analytics-jobs"></a>Уровень совместимости заданий Azure Stream Analytics
 
@@ -25,8 +25,8 @@ ms.locfileid: "60771707"
 
 Azure Stream Analytics в настоящее время поддерживает три уровня совместимости:
 
-* 1.0 — уровень по умолчанию
-* 1.1. текущее поведение выпуска
+* 1.0 — прежнее поведение
+* 1.1 — поведение по умолчанию
 * 1.2 (Предварительная версия) — новые поведения с помощью новейших усовершенствований в оценки
 
 Исходному уровню совместимости 1.0 была представлена в общедоступной версии Azure Stream Analytics несколько лет назад.
@@ -49,7 +49,7 @@ Azure Stream Analytics в настоящее время поддерживает
 
 При обновлении уровня совместимости компилятор T-SQL проверяет задание с помощью синтаксиса, отвечающего выбранному уровню совместимости.
 
-## <a name="compatibility-level-12"></a>Уровень совместимости 1.2.
+## <a name="compatibility-level-12-preview"></a>Уровень совместимости 1.2 (Предварительная версия)
 
 На уровне совместимости 1.2 вводятся следующие основные изменения:
 
@@ -107,7 +107,7 @@ Azure Stream Analytics поддерживает Геопространствен
 
 ### <a name="service-bus-xml-format"></a>Формат служебной шины XML
 
-**уровень 1.0:** Azure Stream Analytics использует DataContractSerializer, поэтому в содержимое сообщения включены XML-теги. Пример.
+**уровень 1.0:** Azure Stream Analytics использует DataContractSerializer, поэтому в содержимое сообщения включены XML-теги. Например: 
 
 `@\u0006string\b3http://schemas.microsoft.com/2003/10/Serialization/\u0001{ "SensorId":"1", "Temperature":64\}\u0001`
 

@@ -1,5 +1,5 @@
 ---
-title: Создание конвейера данных с помощью API сборщика данных Azure Monitor | Документация Майкрософт
+title: Создать конвейер данных с помощью API сборщика данных Azure Monitor | Документация Майкрософт
 description: API сборщика данных HTTP в Azure Monitor можете использовать для добавления данных POST JSON в рабочую область Log Analytics из любого клиента, который может вызывать REST API. В статье содержится описание автоматической отправки данных, которые хранятся в файлах.
 services: log-analytics
 documentationcenter: ''
@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 08/09/2018
 ms.author: magoedte
-ms.openlocfilehash: d2736e397827373949da1634a99056420dc13b8a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 961ce4427c509142077c95a6569ad2c444ec0a52
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60200096"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65205960"
 ---
 # <a name="create-a-data-pipeline-with-the-data-collector-api"></a>Создание конвейера данных с помощью API сборщика данных
 

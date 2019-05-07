@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 04/26/2019
 ms.author: iainfou
-ms.openlocfilehash: 2a218a48223c81e009b83cb1f129601a8035e18e
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
-ms.translationtype: HT
+ms.openlocfilehash: 026c0eefc0c4fe31e72ecad91a4a7b558f367487
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/06/2019
-ms.locfileid: "65138532"
+ms.locfileid: "65192127"
 ---
 # <a name="integrate-azure-active-directory-with-azure-kubernetes-service"></a>rbИнтеграция Azure Active Directory со службой Azure Kubernetes
 
@@ -244,6 +244,7 @@ aks-nodepool1-79590246-2   Ready     agent     1h        v1.13.5
 Если после успешного входа появится сообщение об ошибке авторизации, убедитесь,
 1. Пользователь вы входите как не гостя в экземпляре Azure AD (это происходит часто при использовании федеративной учетной записью из другого каталога).
 2. Пользователь не может быть членом более чем 200 групп.
+3. Секрет, определенные в регистрации приложения для сервера не соответствует значение, настроенное с помощью--aad-server-app-secret
 
 ```console
 error: You must be logged in to the server (Unauthorized)

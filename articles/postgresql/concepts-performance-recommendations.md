@@ -1,21 +1,21 @@
 ---
-title: Рекомендации по производительности в базе данных Azure для PostgreSQL
-description: В этой статье описывается функция рекомендации по производительности в базе данных Azure для PostgreSQL.
+title: 'Рекомендации по производительности в базе данных Azure для PostgreSQL: один сервер'
+description: 'В этой статье описывается функция рекомендации по производительности в базе данных Azure для PostgreSQL: один сервер.'
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 03/28/2018
-ms.openlocfilehash: c5324618eeda90b4ef1a512385fb2f14bf391215
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 5/6/2019
+ms.openlocfilehash: 31d8c0fdf1b4df3ee00f3652c933b4b738384bea
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60564464"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65068845"
 ---
-# <a name="performance-recommendations-in-azure-database-for-postgresql"></a>Рекомендации по производительности в базе данных Azure для PostgreSQL
+# <a name="performance-recommendations-in-azure-database-for-postgresql---single-server"></a>Рекомендации по производительности в базе данных Azure для PostgreSQL: один сервер
 
-**Область применения** База данных Azure для PostgreSQL 9.6 и 10
+**Область применения** База данных Azure для PostgreSQL — один сервер 9.6 и 10
 
 Рекомендации по повышению производительности функция анализирует свои базы данных и создание настраиваемых предлагаемых для повышения производительности. Для получения рекомендаций, анализа рассматривает различные характеристики базы данных, включая схему. Включить [Query Store](concepts-query-store.md) на сервере, чтобы полностью использовать функцию рекомендации по повышению производительности. После реализации любой рекомендации по производительности, следует проверить производительность, чтобы оценить влияние этих изменений. 
 

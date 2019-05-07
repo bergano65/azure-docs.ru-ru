@@ -5,7 +5,7 @@ services: asc-for-iot
 ms.service: ASCforiot
 documentationcenter: na
 author: mlottner
-manager: barbkess
+manager: rkarlin
 editor: ''
 ms.assetid: 97fda6c2-1ecb-491f-b48d-41788bd7e0d3
 ms.devlang: na
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/25/2019
 ms.author: mlottner
-ms.openlocfilehash: cd9e77e09e2a2fd5fe1108e98da028d26fc623c7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: f15cd14ddc3a489db3abbbd2665d242470b5a821
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60803099"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65200708"
 ---
 # <a name="azure-security-center-for-iot-frequently-asked-questions"></a>Центр безопасности Azure для Интернета вещей часто задаваемые вопросы  
 
@@ -95,7 +95,7 @@ ASC для Интернета вещей предоставляет можно �
 
 Да. Агент передачи данных считается квоты центра Интернета вещей. 
 
-## <a name="what-next-ive-installed-an-agent-and-dont-see-any-activities-or-logs"></a>Дальнейшие действия Я установлен агент и не будете видеть действия или журналы
+## <a name="what-next-ive-installed-an-agent-and-dont-see-any-activities-or-logs"></a>Что делать дальше? Я установлен агент и не будете видеть действия или журналы
 
 1. Проверьте [тип агента соответствует указанной платформы ОС устройства](how-to-deploy-agent.md)
 

@@ -1,5 +1,5 @@
 ---
-title: Проектирование высокодоступных приложений с использованием геоизбыточного хранилища с доступом на чтение (RA-GRS) | Документация Майкрософт
+title: Проектирование высокодоступных приложений с помощью географически избыточное хранилище с доступом для чтения (RA-GRS) | Документация Майкрософт
 description: Как использовать хранилище RA-GRS Azure для разработки высокодоступного приложения, достаточно гибкого для обработки сбоев.
 services: storage
 author: tamram
@@ -10,12 +10,12 @@ ms.date: 01/17/2019
 ms.author: tamram
 ms.reviewer: artek
 ms.subservice: common
-ms.openlocfilehash: 6dc497ac2afd54965485ff553bb25f47d7cf0491
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: c4d213a7c08162ef0b107572cfb79b6e96e271d6
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/06/2019
-ms.locfileid: "65139341"
+ms.locfileid: "65205502"
 ---
 # <a name="designing-highly-available-applications-using-ra-grs"></a>Проектирование высокодоступных приложений с использованием RA-GRS
 
@@ -148,7 +148,7 @@ ms.locfileid: "65139341"
 
 Существует три основных способа мониторинга частоты повторов в основном регионе, позволяющих определить, когда нужно переключиться на дополнительный регион и запустить приложение в режиме только для чтения.
 
-*   Добавьте обработчик события [**Retrying**](https://msdn.microsoft.com/library/microsoft.windowsazure.storage.operationcontext.retrying.aspx) для объекта [**OperationContext**](https://msdn.microsoft.com/library/microsoft.windowsazure.storage.operationcontext.aspx), передаваемого в запросы к хранилищу. Этот метод показан в этой статье и используется в соответствующем примере. Данные события активируются, когда клиент повторяет запрос, что позволяет отслеживать, как часто клиент сталкивается с ошибками, допускающими повторение, на основной конечной точке.
+*   Добавьте обработчик события [**Retrying**](https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.table.operationcontext.retrying) для объекта [**OperationContext**](https://docs.microsoft.com/java/api/com.microsoft.applicationinsights.extensibility.context.operationcontext), передаваемого в запросы к хранилищу. Этот метод показан в этой статье и используется в соответствующем примере. Данные события активируются, когда клиент повторяет запрос, что позволяет отслеживать, как часто клиент сталкивается с ошибками, допускающими повторение, на основной конечной точке.
 
     ```csharp 
     operationContext.Retrying += (sender, arguments) =>
@@ -159,7 +159,7 @@ ms.locfileid: "65139341"
     };
     ```
 
-*   В методе [**Evaluate**](https://msdn.microsoft.com/library/microsoft.windowsazure.storage.retrypolicies.iextendedretrypolicy.evaluate.aspx) в пользовательской политике повтора можно выполнять пользовательский код всякий раз, когда происходит повторная попытка. Помимо записи повторных попыток это также дает возможность изменить их режим.
+*   В методе [**Evaluate**](https://docs.microsoft.com/dotnet/api/microsoft.azure.cosmos.table.iextendedretrypolicy.evaluate) в пользовательской политике повтора можно выполнять пользовательский код всякий раз, когда происходит повторная попытка. Помимо записи повторных попыток это также дает возможность изменить их режим.
 
     ```csharp 
     public RetryInfo Evaluate(RetryContext retryContext,

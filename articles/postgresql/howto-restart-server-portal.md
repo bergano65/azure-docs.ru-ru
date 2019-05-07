@@ -1,19 +1,19 @@
 ---
-title: Перезапуск сервера Базы данных Azure для PostgreSQL с помощью портала Azure
-description: В этой статье описывается, как вы можете перезапустить базу данных Azure для сервера PostgreSQL с помощью портала Azure.
+title: 'Перезапуск базы данных Azure для PostgreSQL: один сервер, с помощью портала Azure'
+description: В этой статье описывается, как вы можете перезапустить базу данных Azure для PostgreSQL - отдельного сервера с помощью портала Azure.
 author: ajlam
 ms.author: andrela
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 3/18/2019
-ms.openlocfilehash: bf73120e462b740de5d2245f8a647896ac61f2c8
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 5/6/2019
+ms.openlocfilehash: fd92e27f53f52de3e9a7fd65d577c9dfea44991b
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60420501"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65066842"
 ---
-# <a name="restart-azure-database-for-postgresql-server-using-the-azure-portal"></a>Перезапуск базы данных Azure для сервера PostgreSQL с помощью портала Azure
+# <a name="restart-azure-database-for-postgresql---single-server-using-the-azure-portal"></a>Перезапуск базы данных Azure для PostgreSQL - отдельного сервера с помощью портала Azure
 В этой статье объясняется, как перезапустить сервер в Базе данных Azure для PostgreSQL. Возможно, вам потребуется перезапустить сервер в целях обслуживания, что приводит к кратковременному отключению во время выполнения операции.
 
 Если служба занята, перезапустить сервер не удастся. Например, служба может обрабатывать запрошенную ранее операцию, такую как масштабирование виртуальных ядер.

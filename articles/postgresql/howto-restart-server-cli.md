@@ -1,19 +1,19 @@
 ---
-title: Перезапуск базы данных Azure для сервера PostgreSQL с помощью Azure CLI
-description: В этой статье описывается, как вы можете перезапустить базу данных Azure для сервера PostgreSQL с помощью Azure CLI
+title: Перезапуск базы данных Azure для PostgreSQL - отдельного сервера с помощью интерфейса командной строки Azure
+description: В этой статье описывается, как вы можете перезапустить базу данных Azure для PostgreSQL - отдельного сервера с помощью Azure CLI
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 3/28/2019
-ms.openlocfilehash: 51b3011c040db8576c13868f9fac26cb1e431515
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 5/6/2019
+ms.openlocfilehash: 0a7cd815724fcebd6311860576e620eb9273523b
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60420331"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65068979"
 ---
-# <a name="restart-azure-database-for-postgresql-server-using-the-azure-cli"></a>Перезапуск базы данных Azure для сервера PostgreSQL с помощью Azure CLI
+# <a name="restart-azure-database-for-postgresql---single-server-using-the-azure-cli"></a>Перезапуск базы данных Azure для PostgreSQL - отдельного сервера с помощью Azure CLI
 В этой статье объясняется, как перезапустить сервер в Базе данных Azure для PostgreSQL. Возможно, вам потребуется перезапустить сервер в целях обслуживания, что приводит к кратковременному отключению во время выполнения операции.
 
 Если служба занята, перезапустить сервер не удастся. Например, служба может обрабатывать запрошенную ранее операцию, такую как масштабирование виртуальных ядер.

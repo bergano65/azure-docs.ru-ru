@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: troubleshooting
 ms.date: 08/13/2018
 ms.author: saudas
-ms.openlocfilehash: 56d91d7801c576064b941ac6089a52e74b4a3b7b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: d1c1ed7388ff55e4f17559742054cea973f65ba7
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61031411"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65192275"
 ---
 # <a name="aks-troubleshooting"></a>Устранение неполадок с AKS
 
@@ -23,7 +23,7 @@ ms.locfileid: "61031411"
 [Вот официальное руководство по устранению неполадок с кластерами Kubernetes](https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/).
 [Это руководство по устранению неполадок](https://github.com/feiskyer/kubernetes-handbook/blob/master/en/troubleshooting/index.md) модулей pod, узлов, кластеров и т. д., опубликованное инженером Майкрософт.
 
-## <a name="im-getting-a-quota-exceeded-error-during-creation-or-upgrade-what-should-i-do"></a>Я получаю ошибку превышения квоты во время создания или обновления. Что мне делать? 
+## <a name="im-getting-a-quota-exceeded-error-during-creation-or-upgrade-what-should-i-do"></a>Я получаю ошибку превышения квоты во время создания или обновления. Что делать? 
 
 Вам необходимо [запросить ядра](https://docs.microsoft.com/azure/azure-supportability/resource-manager-core-quotas-request).
 
@@ -32,7 +32,7 @@ ms.locfileid: "61031411"
 Если вы развертываете кластер AKS на портале Azure, максимальное число модулей pod на узел по умолчанию составляет 30.
 Если вы развертываете кластер AKS в Azure CLI, максимальное число модулей pod на узел по умолчанию составляет 110. Убедитесь, что используется последняя версия Azure CLI. Этот параметр по умолчанию можно изменить с помощью флага `–-max-pods` в команде `az aks create`.
 
-## <a name="im-getting-an-insufficientsubnetsize-error-while-deploying-an-aks-cluster-with-advanced-networking-what-should-i-do"></a>Я получаю ошибку insufficientSubnetSize при развертывании кластера AKS с использованием расширенного сетевого взаимодействия. Что мне делать?
+## <a name="im-getting-an-insufficientsubnetsize-error-while-deploying-an-aks-cluster-with-advanced-networking-what-should-i-do"></a>Я получаю ошибку insufficientSubnetSize при развертывании кластера AKS с использованием расширенного сетевого взаимодействия. Что делать?
 
 Если используется Azure CNI (расширенная сеть), AKS предварительно выделяет IP-адреса на основе настроенного максимального числа pod для каждого узла. В кластере AKS может быть любое число узлов в диапазоне от 1 до 110. На основе настроенного максимального числа модулей pod для каждого узла, размер подсети должен быть больше "произведения количества узлов и максимального числа модулей pod на узел". Следующее основное выражение описывает:
 
@@ -40,7 +40,7 @@ ms.locfileid: "61031411"
 
 Дополнительные сведения см. в разделе [Планирование назначения IP-адресов для кластера](configure-azure-cni.md#plan-ip-addressing-for-your-cluster).
 
-## <a name="my-pod-is-stuck-in-crashloopbackoff-mode-what-should-i-do"></a>Мой модуль pod завис в режиме CrashLoopBackOff. Что мне делать?
+## <a name="my-pod-is-stuck-in-crashloopbackoff-mode-what-should-i-do"></a>Мой модуль pod завис в режиме CrashLoopBackOff. Что делать?
 
 Модуль pod может зависнуть в этом режиме по различным причинам. Вы можете просмотреть:
 
@@ -53,17 +53,17 @@ ms.locfileid: "61031411"
 
 К сожалению, включение RBAC в существующих кластерах в настоящее время не поддерживается. Необходимо явно создать кластеры. Если вы используете CLI, RBAC включается по умолчанию. Если вы используете портал AKS, в рабочем процессе создания будет доступен переключатель для включения RBAC.
 
-## <a name="i-created-a-cluster-with-rbac-enabled-by-using-either-the-azure-cli-with-defaults-or-the-azure-portal-and-now-i-see-many-warnings-on-the-kubernetes-dashboard-the-dashboard-used-to-work-without-any-warnings-what-should-i-do"></a>Кластер создан с поддержкой RBAC помощью Azure CLI со значениями по умолчанию или на портале Azure, при этом на панели мониторинга Kubernetes появились многочисленные предупреждения. Ранее на панели мониторинга не возникало никаких предупреждений. Что мне делать?
+## <a name="i-created-a-cluster-with-rbac-enabled-by-using-either-the-azure-cli-with-defaults-or-the-azure-portal-and-now-i-see-many-warnings-on-the-kubernetes-dashboard-the-dashboard-used-to-work-without-any-warnings-what-should-i-do"></a>Кластер создан с поддержкой RBAC помощью Azure CLI со значениями по умолчанию или на портале Azure, при этом на панели мониторинга Kubernetes появились многочисленные предупреждения. Ранее на панели мониторинга не возникало никаких предупреждений. Что делать?
 
 Причина отображения предупреждений на панели мониторинга заключается в том, что теперь в кластере включена функция RBAC, в которой доступ к этой панели отключен по умолчанию. В целом этот подход является рекомендуемым, так как раскрытие панели мониторинга по умолчанию для всех пользователей кластера может привести к угрозам безопасности. Если вы по-прежнему хотите включить панель мониторинга, следуйте указаниям в этом [блоге](https://pascalnaber.wordpress.com/2018/06/17/access-dashboard-on-aks-with-rbac-enabled/).
 
-## <a name="i-cant-connect-to-the-dashboard-what-should-i-do"></a>Мне не удается подключиться к панели мониторинга. Что мне делать?
+## <a name="i-cant-connect-to-the-dashboard-what-should-i-do"></a>Мне не удается подключиться к панели мониторинга. Что делать?
 
 Самый простой способ получить доступ к службе за пределами кластера — запустить `kubectl proxy`, который будет запрашивать ваш локальный порт 8001 для подключения к серверу API Kubernetes. После этого сервер API может установить прокси-подключение к вашей службе: `http://localhost:8001/api/v1/namespaces/kube-system/services/kubernetes-dashboard/proxy/#!/node?namespace=default`.
 
 Если вы не видите панель мониторинга Kubernetes, проверьте, запущен ли модуль pod `kube-proxy` в пространстве имен `kube-system`. Если модуль pod находится в нерабочем состоянии, удалите его, и он перезапустится.
 
-## <a name="i-cant-get-logs-by-using-kubectl-logs-or-i-cant-connect-to-the-api-server-im-getting-error-from-server-error-dialing-backend-dial-tcp-what-should-i-do"></a>Мне не удается получить журналы kubectl, или подключение к серверу API завершается сбоем. Я получаю «на сервере возникла ошибка: Ошибка вызова серверной части: набрать tcp...». Что мне делать?
+## <a name="i-cant-get-logs-by-using-kubectl-logs-or-i-cant-connect-to-the-api-server-im-getting-error-from-server-error-dialing-backend-dial-tcp-what-should-i-do"></a>Мне не удается получить журналы kubectl, или подключение к серверу API завершается сбоем. Я получаю «на сервере возникла ошибка: Ошибка вызова серверной части: набрать tcp...». Что делать?
 
 Убедитесь, что группы безопасности сети по умолчанию не изменены, и что порт 22 открыт для соединения с сервером API. Проверьте ли `tunnelfront` pod выполняется в *kube-system* пространства имен с помощью `kubectl get pods --namespace kube-system` команды. Если он не запущен, принудительно удалите его, и он перезапустится.
 
@@ -94,3 +94,27 @@ ms.locfileid: "61031411"
 ## <a name="can-i-move-my-cluster-to-a-different-subscription-or-my-subscription-with-my-cluster-to-a-new-tenant"></a>Можно ли перенести мой кластер в другую подписку или подписку с моей кластера в новый клиент?
 
 Если кластера AKS был перемещен в другую подписку или кластера, которой принадлежит подписка, в новый клиент, кластера будут потеряны функции из-за проигравшей назначений ролей и прав участников службы. **AKS не поддерживает кластеры, перемещение между подписками или клиентов** из-за этого ограничения.
+
+## <a name="im-receiving-errors-trying-to-use-features-that-require-virtual-machine-scale-sets"></a>Я получаю ошибки при попытке использовать функции, требующие масштабируемые наборы виртуальных машин
+
+*Помощь в устранении неполадок направляется из aka.ms/aks-vmss подключения*
+
+Может появиться ошибки, которые указывают, что кластер AKS не на масштабируемый набор виртуальных машин, как в следующем примере:
+
+**AgentPool «agentpool» задал автоматического масштабирования, поскольку включена, но не в наборах масштабирования виртуальных машин**
+
+Использовать функции например автомасштабирования кластера или узла несколько пулов, кластерах AKS должны создаваться, использующих масштабируемые наборы виртуальных машин. Ошибки возвращаются в том случае, если вы попытаетесь использовать функции, зависящие от масштабируемых наборов виртуальных машин тем, и кластер AKS обычный, виртуальной машины масштабируемого набора. Поддержка набора масштабирования виртуальных машин в настоящее время доступна Предварительная версия в AKS.
+
+Выполните *перед началом* шаги в соответствующий документ правильно зарегистрировать для масштабируемого набора виртуальных машин функция предварительного просмотра и создание кластера AKS:
+
+* [Использовать инструмент автомасштабирования кластера](cluster-autoscaler.md)
+* [Создание и использование нескольких пулов узлов](use-multiple-node-pools.md)
+ 
+## <a name="what-naming-restrictions-are-enforced-for-aks-resources-and-parameters"></a>Какие ограничения именования являются обязательными для AKS ресурсы и параметры?
+
+*Помощь в устранении неполадок направляется из aka.ms/aks-— правила именования*
+
+Ограничения именования, реализуются посредством платформы Azure и AKS. Если имя ресурса или параметр нарушает одно из этих ограничений, возвращается ошибка, что с запросом о предоставляют другие входные данные. Применяются следующие общие правила именования:
+
+* AKS *MC_* объединяет имя группы ресурсов, имя группы ресурсов и имя ресурса. Синтаксис автоматически генерируемым `MC_resourceGroupName_resourceName_AzureRegion` должно быть не больше 80 символов. При необходимости Сократите имя группы ресурсов или имя кластера AKS.
+* *DnsPrefix* должно начинаться и заканчиваться на буквенно-цифровые значения. Допустимые символы включают буквенно-цифровые значения и дефисы (-). *DnsPrefix* не может содержать специальные символы, такие как точка (.).

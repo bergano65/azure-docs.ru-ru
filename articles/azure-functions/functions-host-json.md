@@ -207,7 +207,7 @@ ms.locfileid: "60737215"
 |console|Недоступно| Параметр ведения журнала [консоли](#console). |
 |applicationInsights|Недоступно| Параметр [applicationInsights](#applicationinsights). |
 
-## <a name="console"></a>консоль
+## <a name="console"></a>console
 
 Этот параметр является дочерним элементом [ведения журнала](#logging). Если не в режиме отладки, этот параметр контролирует ведение журнала консоли.
 

@@ -1,19 +1,19 @@
 ---
-title: Создание правил брандмауэра в службе "База данных Azure для PostgreSQL" и управление ими
-description: Создание правил брандмауэра базы данных Azure для PostgreSQL и управление ими с помощью портала Azure
+title: 'Создание и управление правилами брандмауэра в базе данных Azure для PostgreSQL: один сервер'
+description: Создание и управление правилами брандмауэра для базы данных Azure для PostgreSQL - отдельного сервера с помощью портала Azure
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 04/09/2019
-ms.openlocfilehash: cb142e01009efbeaabd5d4e56dbedfe6384c5fc6
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 5/6/2019
+ms.openlocfilehash: 7eed2e81c6781ca660cffa909f27962a7c5112cb
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60421041"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65069007"
 ---
-# <a name="create-and-manage-azure-database-for-postgresql-firewall-rules-using-the-azure-portal"></a>Создание правил брандмауэра базы данных Azure для PostgreSQL и управление ими с помощью портала Azure
+# <a name="create-and-manage-firewall-rules-for-azure-database-for-postgresql---single-server-using-the-azure-portal"></a>Создание и управление правилами брандмауэра для базы данных Azure для PostgreSQL - отдельного сервера с помощью портала Azure
 Правила брандмауэра уровня сервера можно использовать для управления доступом к базе данных Azure для сервера PostgreSQL с указанный IP-адрес или диапазон IP-адресов.
 
 Правилами виртуальных сетей (VNet) также может использоваться для обеспечения безопасного доступа к серверу. Дополнительные сведения о [Создание и управление виртуальной сетью на базе службы конечных точек и правил, с помощью портала Azure](howto-manage-vnet-using-portal.md).
