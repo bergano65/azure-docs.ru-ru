@@ -8,14 +8,14 @@ ms.subservice: core
 ms.topic: tutorial
 author: sdgilley
 ms.author: sgilley
-ms.date: 01/28/2019
+ms.date: 04/25/2019
 ms.custom: seodec18
-ms.openlocfilehash: e7617aec2739daa4f84bcecab060ae0f8e28fabe
-ms.sourcegitcommit: 223604d8b6ef20a8c115ff877981ce22ada6155a
+ms.openlocfilehash: 712b5a003d3542908698d7b69c636780f6cf1007
+ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58361597"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "65021717"
 ---
 # <a name="tutorial-train-an-image-classification-model-with-azure-machine-learning-service"></a>Руководство по обучению модели классификации изображений с помощью Службы машинного обучения Azure
 
@@ -45,31 +45,29 @@ ms.locfileid: "58361597"
 * Сервер записных книжек Python 3.6, на котором установлены следующие компоненты:
     * пакет SDK для Машинного обучения Azure для Python;
     * `matplotlib` и `scikit-learn`
-* Пример записной книжки и файл utils.py.
-* Рабочая область машинного обучения. 
-* Файл конфигурации для рабочей области в том же каталоге, что и записная книжка. 
+* Пример записной книжки и файл **utils.py**
+* Рабочая область машинного обучения.
+* Файл конфигурации для рабочей области в том же каталоге, что и записная книжка.
 
 Получите все необходимые компоненты, перейдя к нужному из разделов, щелкнув соответствующую ссылку ниже.
  
-* Использование [Записных книжек Azure](#azure) 
+* Использование [облачного сервера записных книжек в рабочей области](#azure) 
 * Использование [собственного сервера записных книжек](#server)
 
-### <a name="azure"></a>Использование Записных книжек Azure: к вашим услугам бесплатные записные книжки на основе Jupyter в облаке Azure
+### <a name="azure"></a>Использование облачного сервера записных книжек в рабочей области
 
-Начать работу с Записными книжками Azure очень просто. [Пакет SDK Машинного обучения Azure для Python](https://aka.ms/aml-sdk) уже установлен и настроен в [Записных книжках Azure](https://notebooks.azure.com/). Службы Azure автоматически управляют установкой и последующими обновлениями.
-
-Выполнив указанные ниже действия, запустите записную книжку **tutorials/img-classification-part1-training.ipynb** в проекте **Начало работы**.
+С помощью облачного сервера записной книжки можно легко начать работу. [Пакет SDK Машинного обучения Azure для Python](https://aka.ms/aml-sdk) будет установлен и настроен, как только вы создадите этот облачный ресурс.
 
 [!INCLUDE [aml-azure-notebooks](../../../includes/aml-azure-notebooks.md)]
+
+* После запуска веб-страницы записной книжки откройте записную книжку **tutorials/img-classification-part1-training.ipynb**.
 
 
 ### <a name="server"></a>Использование собственного сервера записных книжек Jupyter
 
-Чтобы создать локальный сервер Jupyter Notebook на компьютере, выполните следующие действия. 
-
 [!INCLUDE [aml-your-server](../../../includes/aml-your-server.md)]
 
- Выполнив указанные действия, запустите записную книжку **tutorials/img-classification-part1-training.ipynb**.
+ Выполнив указанные действия, запустите записную книжку **tutorials/img-classification-part1-training.ipynb** из клонированного каталога.
 
 ## <a name="start"></a>Настройка среды разработки
 
@@ -315,18 +313,16 @@ joblib.dump(value=clf, filename='outputs/sklearn_mnist_model.pkl')
 
 Обратите внимание на то, как сценарий получает данные и сохраняет модели.
 
-+ Скрипт обучения считывает аргумент, чтобы найти каталог с данными. Позднее при отправке задания вы укажете хранилище данных для этого аргумента: `parser.add_argument('--data-folder', type=str, dest='data_folder', help='data directory mounting point')`.
++ Скрипт обучения считывает аргумент, чтобы найти каталог с данными. При отправке задания позже вы указываете хранилище данных для этого аргумента: ```parser.add_argument('--data-folder', type=str, dest='data_folder', help='data directory mounting point')```.
 
-+ Скрипт обучения сохраняет модель в каталог с именем **outputs**. <br/>
-`joblib.dump(value=clf, filename='outputs/sklearn_mnist_model.pkl')`.<br/>
-Все записи в этом каталоге автоматически передаются в рабочую область. Вы будете обращаться к модели из этого каталога далее в этом руководстве.
-Файл `utils.py` — это ссылка из скрипта обучения для правильной загрузки набора данных. Скопируйте этот скрипт в папку script, чтобы он был доступен вместе со скриптом обучения на удаленном ресурсе.
++ Скрипт обучения сохраняет модель в каталог с именем **outputs**. Все записи в этом каталоге автоматически передаются в рабочую область. Вы будете обращаться к модели из этого каталога далее в этом руководстве. `joblib.dump(value=clf, filename='outputs/sklearn_mnist_model.pkl')`
 
++ Для правильной загрузки набора данных учебный скрипт требует файл `utils.py`. Следующий код копирует `utils.py` в `script_folder`, чтобы получить доступ к файлу вместе со сценарием обучения на удаленном ресурсе.
 
-```python
-import shutil
-shutil.copy('utils.py', script_folder)
-```
+  ```python
+  import shutil
+  shutil.copy('utils.py', script_folder)
+  ```
 
 
 ### <a name="create-an-estimator"></a>Создание оценщика

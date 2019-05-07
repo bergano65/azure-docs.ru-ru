@@ -1,0 +1,54 @@
+- name: Документация по Распознавателю рукописного текста
+  href: index.yml
+- name: Обзор
+  expanded: true
+  items:
+    - name: Что такое API Распознавателя рукописного текста?
+      href: overview.md
+- name: Быстрое начало работы
+  expanded: true
+  items:
+    - name: REST API
+      items:
+        - name: 'C#'
+          href: quickstarts/csharp.md
+        - name: Java
+          href: quickstarts/java.md
+        - name: JavaScript
+          href: quickstarts/javascript.md
+- name: Основные понятия
+  items:
+    - name: Отправка рукописного текста в API Распознавателя рукописного текста
+      href: concepts/send-ink-data.md
+- name: Примеры
+  items:
+    - name: 'C# и универсальная платформа Windows (UWP)'
+      href: 'https://go.microsoft.com/fwlink/?linkid=2089803'
+    - name: 'C# и Windows Presentation Foundation (WPF)'
+      href: 'https://go.microsoft.com/fwlink/?linkid=2089804'
+    - name: Приложение браузера Javascript
+      href: 'https://go.microsoft.com/fwlink/?linkid=2089908'
+    - name: Мобильное приложение для Java и Android
+      href: 'https://go.microsoft.com/fwlink/?linkid=2089906'
+    - name: Мобильное приложение для Swift и iOS
+      href: 'https://go.microsoft.com/fwlink/?linkid=2089805'
+- name: Справочные материалы
+  items:
+    - name: Справочник по REST API
+      href: 'https://go.microsoft.com/fwlink/?linkid=2089907'
+    - name: PowerShell
+      href: 'https://aka.ms/azure-powershell-cognitiveservices'
+    - name: Инфраструктура CLI Azure
+      href: 'https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest#az_cognitiveservices_list'
+    - name: Поддержка языков
+      href: language-support.md
+    - name: регионы
+      href: 'https://azure.microsoft.com/global-infrastructure/services/'
+- name: Ресурсы
+  items:
+    - name: Цены и ограничения
+      href: 'https://azure.microsoft.com/pricing/details/cognitive-services/'
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/roadmap/?category=ai-machine-learning'
+    - name: Конфиденциальность и файлы cookie
+      href: 'https://privacy.microsoft.com/privacystatement'

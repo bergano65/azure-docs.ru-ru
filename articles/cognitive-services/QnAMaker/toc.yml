@@ -79,37 +79,40 @@
       displayName: 'metadata, pair, sharepoint, authentication, permissions, faq, pdf, excel, xls, rtf, html, txt, tsv, url, end of line, new line, carriage return, markdown, commonmark, format, standard'
 - name: Практические руководства
   items:
+    - name: Редактирование базы знаний
+      items:
+        - name: Редактирование базы знаний
+          href: How-To/edit-knowledge-base.md
+        - name: Создание диалогов с несколькими шагами и последующими запросами
+          href: How-To/multiturn-conversation.md
+          displayName: 'multi-turn dialogs, parent question, child question, filtering, metadata, state, context, prompt, follow-up, followup, flow, conversation, previous question'
+        - name: Добавление беседы
+          href: How-to/chit-chat-knowledge-base.md
+        - name: Добавление защищенного файла Sharepoint
+          href: How-To/add-sharepoint-datasources.md
+          displayName: 'Sharepoint, secure, AAD, azure directory, admin, permission, authorization, file, authentication'
     - name: Управление базой знаний
       items:
         - name: Создание и публикация базы знаний
           href: Quickstarts/create-publish-knowledge-base.md
           displayName: 'create bot, bot, publish to bot, test, edit'
-        - name: Добавление беседы в базу знаний
-          href: How-to/chit-chat-knowledge-base.md
-        - name: Перенос базы знаний
-          href: Tutorials/migrate-knowledge-base.md
-        - name: Редактирование базы знаний
-          href: How-To/edit-knowledge-base.md
-          displayName: 'metadata, pair'
-        - name: Добавление защищенного файла Sharepoint
-          href: How-To/add-sharepoint-datasources.md
-          displayName: 'Sharepoint, secure, AAD, azure directory, admin, permission, authorization, file, authentication'
-        - name: Совместная работа над базой знаний
-          href: How-To/collaborate-knowledge-base.md
+        - name: Получение ответов
+          href: How-To/metadata-generateanswer-usage.md
+          displayName: 'isTest, test, route, request, http, post, body, header, json, metadata, top, strictFilters, GenerateAnswer, API, answer'
+        - name: Создание бота с базой знаний
+          href: Tutorials/integrate-qnamaker-luis.md
         - name: Создание базы знаний на разных языках
           href: How-To/language-knowledge-base.md
+        - name: Перенос базы знаний
+          href: Tutorials/migrate-knowledge-base.md
+          displayName: 'metadata, pair'
+        - name: Совместная работа над базой знаний
+          href: How-To/collaborate-knowledge-base.md
         - name: Тестирование базы знаний
           href: How-To/test-knowledge-base.md
         - name: Использование активного обучения для расширения базы знаний
           href: How-to/improve-knowledge-base.md
           displayName: 'active learning, suggestion, dialog prompt, train api, feedback loop, autolearn, auto-learn, user setting, service setting, services setting, accept, reject, filter by suggestion, filter active learning'
-    - name: Использование базы знаний
-      items:
-        - name: Использование метаданных с помощью API GenerateAnswer
-          href: How-To/metadata-generateanswer-usage.md
-          displayName: 'isTest, test, route, request, http, post, body, header, json, metadata, top, strictFilters'
-        - name: Использование ботов
-          href: Tutorials/integrate-qnamaker-luis.md
     - name: Управление службой
       items:
         - name: Настройка службы QnA Maker
@@ -154,7 +157,7 @@
     - name: Примеры
       items:
         - name: Бот-помощник QnA Maker
-          href: 'https://github.com/Microsoft/BotBuilder-Samples/tree/master/experimental/csharp_dotnetcore/qnamaker-support-bot'
+          href: 'https://aka.ms/qnamakerhelpbotsample'
     - name: Пакеты SDK
       items:
         - name: 'C#'

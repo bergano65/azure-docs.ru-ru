@@ -167,6 +167,8 @@
               href: azure-to-azure-how-to-enable-replication-ade-vms.md
             - name: Включение репликации из Azure в Azure для виртуальных машин с S2D
               href: azure-to-azure-how-to-enable-replication-s2d-vms.md
+            - name: Включение репликации для добавленного диска
+              href: azure-to-azure-enable-replication-added-disk.md
             - name: Исключение дисков
               href: azure-to-azure-exclude-disks.md
             - name: Повторное включение защиты виртуальных машин Azure после отработки отказа

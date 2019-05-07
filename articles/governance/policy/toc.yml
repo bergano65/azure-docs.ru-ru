@@ -118,7 +118,7 @@
           href: samples/enforce-data-lake-store-encryption.md
     - name: Гостевая конфигурация
       items:
-        - name: 'Аудит приложений, установленных в Linux'
+        - name: 'Аудит приложений, не установленных в Linux'
           displayName: 'audit, vm'
           href: samples/guest-configuration-applications-installed-linux.md
     - name: Хранилища ключей

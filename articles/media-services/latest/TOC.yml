@@ -26,8 +26,10 @@
     - name: "Анализ видео\_— .NET"
       displayName: 'job, transform'
       href: analyze-videos-tutorial-with-api.md
-    - name: "Динамическое шифрование AES-128\_— .NET"
+    - name: Динамическое шифрование с помощью AES-128 (.NET)
       href: protect-with-aes128.md
+    - name: Динамическое шифрование с помощью DRM (.NET)
+      href: protect-with-drm.md
 - name: Примеры
   items:
     - name: Примеры кода Azure
@@ -56,10 +58,9 @@
         - name: Автоматическое создание схемы передачи с переменной скоростью
           href: autogen-bitrate-ladder.md
         - name: Кодирование с учетом содержимого
-          displayName: 'content, aware, cae'
           href: cae-experimental.md
         - name: Коды ошибок задания
-          href: 'https://docs.microsoft.com/rest/api/media/jobs/get#joberrorcode'
+          href: job-error-codes.md
     - name: Аналитика мультимедиа
       items:
         - name: Обзор
@@ -68,7 +69,7 @@
         - name: Преобразования и задания
           href: transforms-jobs-concept.md
         - name: Коды ошибок задания
-          href: 'https://docs.microsoft.com/rest/api/media/jobs/get#joberrorcode'
+          href: job-error-codes.md
     - name: 'Упаковка, доставка и защита'
       items:
         - name: Упаковка
@@ -150,7 +151,7 @@
             - name: Коды ошибок источника
               href: origin-error-codes.md
             - name: Коды ошибок задания
-              href: 'https://docs.microsoft.com/rest/api/media/jobs/get#joberrorcode'
+              href: job-error-codes.md
     - name: Руководство по миграции из версии 2 в версию 3
       href: migrate-from-v2-to-v3.md
 - name: Практические руководства
@@ -215,8 +216,6 @@
       items:
         - name: "Получение политики ключа содержимого\_— .NET"
           href: get-content-key-policy-dotnet-howto.md
-        - name: "Динамическое шифрование DRM\_— .NET"
-          href: protect-with-drm.md
         - name: FairPlay для iOS (автономный режим)
           href: offline-fairplay-for-ios.md
         - name: Widevine для Android (автономный режим)
@@ -258,7 +257,7 @@
         - name: Коды ошибок источника
           href: origin-error-codes.md
         - name: Коды ошибок задания
-          href: 'https://docs.microsoft.com/rest/api/media/jobs/get#joberrorcode'
+          href: job-error-codes.md
 - name: Ресурсы
   items:
     - name: Сообщество Служб мультимедиа Azure

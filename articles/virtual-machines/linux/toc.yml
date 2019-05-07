@@ -112,6 +112,8 @@
           href: disk-scalability-targets.md
         - name: Резервное копирование и аварийное восстановление дисков
           href: backup-and-disaster-recovery-for-azure-iaas-disks.md
+        - name: Временные диски ОС
+          href: ephemeral-os-disks.md
     - name: Сеть
       href: network-overview.md
     - name: Автоматическое масштабирование приложений
@@ -253,16 +255,32 @@
           href: reserved-vm-instance-size-flexibility.md
     - name: Использование образов
       items:
-        - name: Коллекции общих образов (предварительная версия)
+        - name: Общедоступные коллекции образов
           items:
             - name: Обзор
               href: shared-image-galleries.md
-            - name: Создание общих образов с помощью CLI
+            - name: Интерфейс командной строки
               href: shared-images.md
             - name: Microsoft Azure
               href: shared-images-portal.md
+            - name: Совместное использование образов в клиентах
+              href: share-images-across-tenants.md
             - name: Устранение неполадок с общими образами
               href: troubleshooting-shared-images.md
+        - name: Конструктор изображений (предварительная версия)
+          items:
+            - name: Обзор
+              href: image-builder-overview.md
+            - name: Использование CLI
+              href: image-builder.md
+            - name: Справочник по шаблонам
+              href: image-builder-json.md
+            - name: Использование с коллекциями
+              href: image-builder-gallery.md
+            - name: Обновление версии образа
+              href: image-builder-gallery-update-image-version.md
+            - name: Устранение неполадок
+              href: 'https://github.com/danielsollondon/azvmimagebuilder/blob/master/troubleshootingaib.md'
         - name: Поиск и использование образов
           href: cli-ps-findimage.md
         - name: Создание пользовательского образа

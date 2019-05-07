@@ -85,13 +85,13 @@
           href: sql-database-design-first-database-csharp.md
     - name: Переход на базу данных SQL
       items:
-        - name: Миграция в отдельную базу данных или базу данных в составе пула с помощью DMS
+        - name: Миграция в отдельную базу данных или базу данных в пуле с помощью DMS
           href: ../dms/tutorial-sql-server-to-azure-sql.md?toc=/azure/sql-database/toc.json
         - name: Миграция в управляемый экземпляр с помощью DMS
           href: ../dms/tutorial-sql-server-to-managed-instance.md?toc=/azure/sql-database/toc.json
     - name: Обеспечение безопасности данных в Базе данных SQL
       items:
-        - name: Защита отдельных баз данных и баз данных в составе пула
+        - name: Защита отдельных баз данных и баз данных в пуле
           href: sql-database-security-tutorial.md
         - name: Обеспечение защиты управляемого экземпляра
           href: sql-database-managed-instance-aad-security-tutorial.md
@@ -118,8 +118,10 @@
           href: sql-database-purchase-models.md
         - name: Модель приобретения на основе виртуальных ядер
           href: sql-database-service-tiers-vcore.md
-        - name: Выбор уровня службы на основе DTU
+        - name: Выбор уровня служб на основе DTU
           href: sql-database-service-tiers-dtu.md
+        - name: Уровень бессерверных вычислений
+          href: sql-database-serverless.md
         - name: Предварительная оплата резервной мощности
           href: sql-database-reserved-capacity.md
         - name: Миграция с уровня служб "Премиум RS"
@@ -133,7 +135,7 @@
           href: sql-database-service-tier-general-purpose.md
         - name: Уровни служб "Критически важный для бизнеса" и "Премиум"
           href: sql-database-service-tier-business-critical.md
-        - name: Уровень службы "Гипермасштабирование"
+        - name: Уровень служб "Гипермасштабирование"
           href: sql-database-service-tier-hyperscale.md
         - name: Часто задаваемые вопросы о гипермасштабировании
           href: sql-database-service-tier-hyperscale-faq.md
@@ -368,7 +370,7 @@
       items:
         - name: Обзор
           href: sql-database-howto-single-database.md
-        - name: Миграция в отдельную базу данных или базу данных в составе пула
+        - name: Миграция в отдельную базу данных или базу данных в пуле
           href: sql-database-single-database-migrate.md
         - name: Управление базой данных SQL после переноса
           href: sql-database-manage-after-migration.md

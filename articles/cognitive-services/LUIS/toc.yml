@@ -99,7 +99,7 @@
       href: luis-concept-best-practices.md
       displayName: 'phrase list, pattern, intent, utterance, version, do, don''t, example utterances, iteration, cycle, correct, right'
     - name: Планирование приложения
-      displayName: 'simple, hierarchical, composite, prebuilt, list, regex, regular expression'
+      displayName: 'simple, composite, prebuilt, list, regex, regular expression'
       href: luis-how-plan-your-app.md
     - name: Создание приложений
       items:
@@ -116,7 +116,7 @@
         - name: Намерения
           href: luis-concept-intent.md
         - name: Сущности
-          displayName: 'prebuilt, custom, regular expression, regex, simple, list, pattern.any, composite, hierarchical, machine-learn, exact, mixed, roles'
+          displayName: 'prebuilt, custom, regular expression, regex, simple, list, pattern.any, composite, machine-learn, exact, mixed, roles'
           href: luis-concept-entity-types.md
         - name: Высказывания
           href: luis-concept-utterance.md
@@ -218,12 +218,15 @@
                   href: luis-tutorial-bot-csharp-appinsights.md
     - name: Повышение точности прогнозирования
       items:
-        - name: Просмотр фраз конечной точки
-          displayName: active learning
-          href: luis-how-to-review-endpoint-utterances.md
+        - name: Использование панелей мониторинга
+          displayName: 'dashboard, analytics, charts, data, unclear predictions, incorrect predictions, imbalance, endpoint hits, status, evaluation, accuracy, active version, problematic intents, nearest rival, usage'
+          href: luis-how-to-use-dashboard.md
         - name: Добавление списков фраз
           displayName: 'synonym, interchange'
           href: luis-how-to-add-features.md
+        - name: Просмотр фрагментов речи конечной точки
+          displayName: active learning
+          href: luis-how-to-review-endpoint-utterances.md
         - name: Добавление шаблонов
           displayName: 'syntax, template, roles'
           href: luis-how-to-model-intent-pattern.md
@@ -235,14 +238,11 @@
           href: luis-interactive-test.md
         - name: Пакетное тестирование
           href: luis-how-to-batch-test.md
-          displayName: import
+          displayName: 'import, export'
     - name: Опубликовать
       href: luis-how-to-publish-app.md
     - name: Управление приложением
       items:
-        - name: Использование панелей мониторинга
-          displayName: 'analytics, usage'
-          href: luis-how-to-use-dashboard.md
         - name: Использование ключей подписки с приложением LUIS
           displayName: 'azure portal, resource, assign key, add key, out of quota, 403, 429, luis portal, key assignment, subscription'
           href: luis-how-to-azure-subscription.md
@@ -256,12 +256,17 @@
           href: luis-how-to-account-settings.md
         - name: Распределение квоты для конечной точки между ключами с помощью диспетчера трафика
           href: luis-traffic-manager.md
-    - name: "Миграция в REST API версии\_2"
-      href: luis-migration-api-v1-to-v2.md
+    - name: Перенос API
+      items:
+        - name: "Миграция в REST API версии\_2"
+          href: luis-migration-api-v1-to-v2.md
+        - name: "Миграция в REST API версии\_3"
+          href: luis-migration-api-v3.md
+          displayName: 'json, response, verbose, dynamic, dynamic list object, brackets, array, role, show-all-intents,prebuilt domain, domain, external entities, "$instance",TimezoneOffset, datetimeReference'
     - name: Использование контейнеров
       items:
         - name: Установка и запуск контейнеров
-          displayName: 'docker, container, package, packaged app, swagger, open api, openapi, train, publish, az, acr, cli, tps, core, curl, try it now, import, pull'
+          displayName: 'docker, container, package, packaged app, swagger, open api, openapi, train, publish, az, acr, cli, tps, core, curl, try it now, import, pull, export to container'
           href: luis-container-howto.md
         - name: Настройка контейнеров
           href: luis-container-configuration.md
@@ -269,7 +274,7 @@
   items:
     - name: Конфиденциальность пользователей
       href: luis-user-privacy.md
-    - name: Регионы разработки и публикации
+    - name: регионы
       href: luis-reference-regions.md
       displayName: 'failover, fail-over, fail over, Europe, EU, Australia, business continuity, bcdr'
     - name: Границы
@@ -284,6 +289,7 @@
           href: luis-reference-prebuilt-currency.md
         - name: Сущность DatetimeV2
           href: luis-reference-prebuilt-datetimev2.md
+          displayName: timex
         - name: Сущность измерения
           href: luis-reference-prebuilt-dimension.md
         - name: Нерекомендуемые сущности
@@ -310,6 +316,7 @@
           href: luis-reference-prebuilt-url.md
     - name: Справочник по предварительно созданным доменам
       href: luis-reference-prebuilt-domains.md
+      displayName: 'Calendar, Communication,Email,HomeAutomation,Note,Places, RestaurantReservation,ToDo,Utilities,Weather,Web'
     - name: Инфраструктура CLI Azure
       href: 'https://aka.ms/az-cli-cognitiveservices'
     - name: Azure RM PowerShell

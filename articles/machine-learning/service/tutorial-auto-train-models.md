@@ -11,12 +11,12 @@ ms.author: nilesha
 ms.reviewer: trbye
 ms.date: 04/11/2019
 ms.custom: seodec18
-ms.openlocfilehash: 4d09fca68af55b577c47316363ed386e98525baf
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: d6e478cba13c7b4cf628535a4a1ecdbec344a733
+ms.sourcegitcommit: eea74d11a6d6ea6d187e90e368e70e46b76cd2aa
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64925759"
+ms.lasthandoff: 05/03/2019
+ms.locfileid: "65035460"
 ---
 # <a name="tutorial-use-automated-machine-learning-to-build-your-regression-model"></a>Руководство по Создание регрессионной модели с помощью автоматического машинного обучения
 
@@ -54,16 +54,16 @@ ms.locfileid: "64925759"
 
 Получите все необходимые компоненты, перейдя к нужному из разделов, щелкнув соответствующую ссылку ниже.
 
-* Использование [Записных книжек Azure](#azure)
+* Использование [облачного сервера записных книжек в рабочей области](#azure) 
 * Использование [собственного сервера записных книжек](#server)
 
-### <a name="azure"></a>Использование Записных книжек Azure: к вашим услугам бесплатные записные книжки на основе Jupyter в облаке Azure
+### <a name="azure"></a>Использование облачного сервера записных книжек в рабочей области
 
-Начать работу с Записными книжками Azure очень просто. [Пакет SDK Машинного обучения Azure для Python](https://aka.ms/aml-sdk) уже установлен и настроен в [Записных книжках Azure](https://notebooks.azure.com/). Службы Azure автоматически управляют установкой и последующими обновлениями.
-
-Выполнив указанные ниже действия, запустите записную книжку **tutorials/regression-part2-automated-ml.ipynb** в проекте **Начало работы**.
+С помощью облачного сервера записной книжки можно легко начать работу. [Пакет SDK Машинного обучения Azure для Python](https://aka.ms/aml-sdk) будет установлен и настроен, как только вы создадите этот облачный ресурс.
 
 [!INCLUDE [aml-azure-notebooks](../../../includes/aml-azure-notebooks.md)]
+
+* После запуска веб-страницы записной книжки запустите записную книжку **tutorials/regression-part2-automated-ml.ipynb**.
 
 ### <a name="server"></a>Использование собственного сервера записных книжек Jupyter
 

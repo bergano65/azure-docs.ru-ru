@@ -18,9 +18,9 @@
   items:
     - name: Подключение к ресурсам Виртуального рабочего стола Windows
       items:
-        - name: "Подключение к Windows\_7 и Windows\_10"
+        - name: "Подключение из Windows\_10 или Windows\_7"
           href: connect-windows-7-and-10.md
-        - name: Подключение к веб-клиенту
+        - name: Подключение из веб-браузера
           href: connect-web.md
     - name: Создание пула узлов с помощью шаблона Azure Resource Manager
       href: create-host-pools-arm-template.md
@@ -34,6 +34,8 @@
       href: diagnostics-role-service.md
     - name: Подготовка и настройка главного образа VHD
       href: set-up-customize-master-image.md
+    - name: Настройка GPU для Виртуального рабочего стола Windows
+      href: configure-vm-gpu.md
     - name: Автоматическое масштабирование узлов сеанса
       href: set-up-scaling-script.md
 - name: Основные понятия

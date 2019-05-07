@@ -2,18 +2,19 @@
 title: Краткое руководство. Использование .NET для создания большого двоичного объекта в хранилище объектов с помощью службы хранилища Azure
 description: В этом кратком руководстве вы узнаете, как использовать клиентскую библиотеку службы хранилища Azure для .NET для создания контейнера и большого двоичного объекта в хранилище BLOB-объектов. Далее вы узнаете, как скачать большой двоичный объект на локальный компьютер и как получить список всех больших двоичных объектов в контейнере.
 services: storage
-author: tamram
+author: mhopkins-msft
 ms.custom: mvc
 ms.service: storage
 ms.topic: quickstart
 ms.date: 11/14/2018
-ms.author: tamram
-ms.openlocfilehash: 2708efc22d373db6ee55dfee6b8adfa35bd450ef
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.author: mhopkins
+ms.reviewer: seguler
+ms.openlocfilehash: 0b7a7ac7b8a71f33871247a1117c16609bbbcd88
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64924341"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65191055"
 ---
 # <a name="quickstart-use-net-to-create-a-blob-in-object-storage"></a>Краткое руководство. Использование .NET для создания большого двоичного объекта в хранилище объектов
 
@@ -152,7 +153,7 @@ Press any key to delete the sample files and example container.
 
 ### <a name="try-parsing-the-connection-string"></a>Разбор строки подключения
 
-Сначала пример проверяет, содержит ли переменная среды строку подключения, которая может быть проанализирована, для создания объекта [CloudStorageAccount](/dotnet/api/microsoft.windowsazure.storage.cloudstorageaccount), указывающего на учетную запись хранения. Чтобы проверить, допустима ли строка подключения, используйте метод [TryParse](/dotnet/api/microsoft.windowsazure.storage.cloudstorageaccount.tryparse). Если результаты выполнения метода **TryParse** успешны, он инициализирует переменную *storageAccount* и возвращает значение **true**.
+Сначала пример проверяет, содержит ли переменная среды строку подключения, которая может быть проанализирована, для создания объекта [CloudStorageAccount](/dotnet/api/microsoft.azure.cosmos.table.cloudstorageaccount), указывающего на учетную запись хранения. Чтобы проверить, допустима ли строка подключения, используйте метод [TryParse](/dotnet/api/microsoft.azure.cosmos.table.cloudstorageaccount.tryparse). Если результаты выполнения метода **TryParse** успешны, он инициализирует переменную *storageAccount* и возвращает значение **true**.
 
 ```csharp
 // Retrieve the connection string for use with the application. The storage connection string is stored
@@ -184,9 +185,9 @@ else
 
 Затем пример создает контейнер и настраивает разрешения, чтобы предоставить доступ ко всем большим двоичным объектам в контейнере. Если большой двоичный объект общедоступен, к нему может получить анонимный доступ любой клиент.
 
-Для создания контейнера необходимо сначала создать экземпляр объекта [CloudBlobClient](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblobclient), указывающий на хранилище BLOB-объектов в учетной записи хранения. Затем создайте экземпляр объекта [CloudBlobContainer](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblobcontainer). А после этого можно создать контейнер.
+Для создания контейнера необходимо сначала создать экземпляр объекта [CloudBlobClient](/dotnet/api/microsoft.azure.storage.blob.cloudblobclient), указывающий на хранилище BLOB-объектов в учетной записи хранения. Затем создайте экземпляр объекта [CloudBlobContainer](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer). А после этого можно создать контейнер.
 
-В этом случае для создания контейнера пример вызывает метод [CreateAsync](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblobcontainer.createasync). Чтобы сделать имя контейнера уникальным, к нему добавляется значение GUID. В рабочей среде для создания контейнера (если он не имеется) и во избежание конфликтов имен предпочтительнее использовать метод [CreateIfNotExistsAsync](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblobcontainer.createifnotexistsasync).
+В этом случае для создания контейнера пример вызывает метод [CreateAsync](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.createasync). Чтобы сделать имя контейнера уникальным, к нему добавляется значение GUID. В рабочей среде для создания контейнера (если он не имеется) и во избежание конфликтов имен предпочтительнее использовать метод [CreateIfNotExistsAsync](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.createifnotexistsasync).
 
 > [!IMPORTANT]
 > Имена контейнеров должны состоять из знаков нижнего регистра. Дополнительные сведения об именовании контейнеров и больших двоичных объектов см. в статье [Naming and Referencing Containers, Blobs, and Metadata](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata) (Именование контейнеров, больших двоичных объектов и метаданных и ссылка на них).
@@ -209,7 +210,7 @@ await cloudBlobContainer.SetPermissionsAsync(permissions);
 
 ### <a name="upload-blobs-to-the-container"></a>Отправка BLOB-объектов в контейнер
 
-Затем пример отправляет локальный файл в блочный BLOB-объект. Пример кода получает ссылку на объект **CloudBlockBlob**, вызвав метод [GetBlockBlobReference](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblobcontainer.getblockblobreference) для созданного ранее контейнера. После этого он передает выбранный файл в большой двоичный объект, вызвав метод [UploadFromFileAsync](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblockblob.uploadfromfileasync). С помощью этого метода создается большой двоичный объект, если он не был создан ранее, или же, если он имеется, происходит его замещение.
+Затем пример отправляет локальный файл в блочный BLOB-объект. Пример кода получает ссылку на объект **CloudBlockBlob**, вызвав метод [GetBlockBlobReference](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.getblockblobreference) для созданного ранее контейнера. После этого он передает выбранный файл в большой двоичный объект, вызвав метод [UploadFromFileAsync](/dotnet/api/microsoft.azure.storage.blob.cloudblockblob.uploadfromfileasync). С помощью этого метода создается большой двоичный объект, если он не был создан ранее, или же, если он имеется, происходит его замещение.
 
 ```csharp
 // Create a file in your local MyDocuments folder to upload to a blob.
@@ -230,7 +231,7 @@ await cloudBlockBlob.UploadFromFileAsync(sourceFile);
 
 ### <a name="list-the-blobs-in-a-container"></a>Перечисление BLOB-объектов в контейнере
 
-Пример перечисляет большие двоичные объекты в контейнере с помощью метода [ListBlobsSegmentedAsync](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblobcontainer.listblobssegmentedasync). В нашем примере в контейнер был добавлен лишь один большой двоичный объект, поэтому операция перечисления возвращает только его.
+Пример перечисляет большие двоичные объекты в контейнере с помощью метода [ListBlobsSegmentedAsync](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.listblobssegmentedasync). В нашем примере в контейнер был добавлен лишь один большой двоичный объект, поэтому операция перечисления возвращает только его.
 
 Если больших двоичных объектов для возвращения в одном вызове слишком много (по умолчанию свыше 5000), метод **ListBlobsSegmentedAsync** возвращает сегмент общего результирующего набора и маркер продолжения. Чтобы извлечь следующий сегмент больших двоичных объектов, укажите маркер продолжения, возвращенный предыдущим вызовом. Продолжайте делать это до тех пор, пока значение маркера не будет равно NULL. Маркер продолжения со значением NULL указывает на то, что все большие двоичные объекты были получены. Пример кода показывает, как использовать маркер продолжения.
 
@@ -253,7 +254,7 @@ do
 
 ### <a name="download-blobs"></a>Скачивание больших двоичных объектов
 
-Кроме того, пример загружает созданный ранее большой двоичный объект в локальную файловую систему с помощью метода [DownloadToFileAsync](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblob.downloadtofileasync). Пример кода добавляет суффикс _DOWNLOADED в имя большого двоичного объекта, чтобы можно было просмотреть оба файла в локальной файловой системе.
+Кроме того, пример загружает созданный ранее большой двоичный объект в локальную файловую систему с помощью метода [DownloadToFileAsync](/dotnet/api/microsoft.azure.storage.blob.cloudblob.downloadtofileasync). Пример кода добавляет суффикс _DOWNLOADED в имя большого двоичного объекта, чтобы можно было просмотреть оба файла в локальной файловой системе.
 
 ```csharp
 // Download the blob to a local file, using the reference created earlier.
@@ -265,7 +266,7 @@ await cloudBlockBlob.DownloadToFileAsync(destinationFile, FileMode.Create);
 
 ### <a name="clean-up-resources"></a>Очистка ресурсов
 
-Пример очищает созданные ресурсы, полностью удаляя контейнер с помощью метода [CloudBlobContainer.DeleteAsync](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblobcontainer.deleteasync). Кроме того, при необходимости можно удалить локальные файлы.
+Пример очищает созданные ресурсы, полностью удаляя контейнер с помощью метода [CloudBlobContainer.DeleteAsync](/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.deleteasync). Кроме того, при необходимости можно удалить локальные файлы.
 
 ```csharp
 Console.WriteLine("Press the 'Enter' key to delete the sample files, example container, and exit the application.");

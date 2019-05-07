@@ -1,0 +1,82 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: Документация по Распознавателю рукописного текста
+metadata:
+  title: "Документация по Распознавателю рукописного текста. Краткие руководства, учебные материалы и справочник по API. Azure Cognitive Services\_| Документация Майкрософт"
+  description: 'Узнайте, как использовать API перевода текстов для перевода текста на несколько языков.'
+  services: cognitive-services
+  author: erhopf
+  manager: nitinme
+  ms.service: cognitive-services
+  ms.tgt_pltfrm: na
+  ms.devlang: na
+  ms.topic: landing-page
+  ms.date: 05/02/2019
+  ms.author: erhopf
+abstract:
+  description: "Цифровой рукописный текст относится к технологиям, которые обеспечивают цифровое представление таких входных данных, как рукописный текст и рисунки. По мере обеспечения внушительных возможностей работы с цифровым вводом искусственный интеллект и машинное обучение позволяют распознавать письменные формы и текст в любом контексте. API Распознавателя рукописного текста\_— это облачная служба, которая позволяет отправлять рукописные штрихи и получать подробные сведения о них."
+sections:
+  - items:
+      - type: list
+        style: cards
+        className: cardsM
+        columns: 3
+        items:
+          - href: /azure/cognitive-services/ink-recognizer/overview
+            html: '<p>Дополнительные сведения о Распознавателе рукописного текста и о том, как интегрировать его в продукты</p>'
+            image:
+              src: ../media/index/i_overview.svg
+            title: Что такое API Распознавателя рукописного текста?
+          - href: concepts/send-ink-data.md
+            html: <p>Дополнительные сведения о рекомендуемых шаблонах вызовов при использовании API</p>
+            image:
+              src: ../media/index/i_overview.svg
+            title: Отправка рукописного текста в API Распознавателя рукописного текста
+  - title: 5-минутные руководства по началу работы
+    items:
+      - type: paragraph
+        text: Начните работу с помощью API Распознавателя рукописного текста.
+      - type: table
+        style: dataMatrix
+        columns:
+          - image:
+              src: media/index/logo-csharp.svg
+            title: 'C#'
+          - image:
+              src: media/index/logo-java.svg
+            title: Java
+          - image:
+              src: media/index/logo-js.svg
+            title: JavaScript
+        rows:
+          - title: Распознавание рукописных штрихов
+            values:
+              - href: quickstarts/csharp.md
+              - href: quickstarts/java.md
+              - href: quickstarts/javascript.md
+  - title: Примеры
+    items:
+      - type: paragraph
+        text: 'Используйте эти примеры программ, чтобы увидеть, как API Распознавателя рукописного текста может интегрироваться в ваши приложения.'
+      - type: paragraph
+        text: '<a href="https://go.microsoft.com/fwlink/?linkid=2089502">C# и универсальная платформа Windows (UWP)</a>'
+      - type: paragraph
+        text: '<a href="https://go.microsoft.com/fwlink/?linkid=2089804">C# и Windows Presentation Foundation (WPF)</a>'
+      - type: paragraph
+        text: '<a href="https://go.microsoft.com/fwlink/?linkid=2089908">Приложение браузера Javascript</a>'
+      - type: paragraph
+        text: '<a href="https://go.microsoft.com/fwlink/?linkid=2089906">Мобильное приложение для Java и Android </a>'
+      - type: paragraph
+        text: '<a href="https://go.microsoft.com/fwlink/?linkid=2089805">Мобильное приложение для Swift и iOS</a>'
+  - title: Справочные материалы
+    items:
+      - type: list
+        style: cards
+        className: cardsD
+        items:
+          - title: REST API
+            html: '<p><a href="https://go.microsoft.com/fwlink/?linkid=2089907">Справочник по REST API</a></p>'
+          - title: PowerShell
+            html: '<p><a href=https://docs.microsoft.com/powershell/module/az.cognitiveservices/#cognitive_services">Azure PowerShell</a></p>'
+          - title: Интерфейс командной строки
+            html: '<p><a href="https://docs.microsoft.com/cli/azure/cognitiveservices">Интерфейс командной строки Azure</a></p>'

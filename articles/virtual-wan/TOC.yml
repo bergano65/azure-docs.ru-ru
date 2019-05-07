@@ -16,6 +16,8 @@
   items:
     - name: Расположения и партнеры
       href: virtual-wan-locations-partners.md
+    - name: Архитектура передачи по глобальной сети
+      href: virtual-wan-global-transit-architecture.md
     - name: Уровень управления Office 365 в Виртуальной глобальной сети
       href: virtual-wan-office365-overview.md
 - name: Практические руководства

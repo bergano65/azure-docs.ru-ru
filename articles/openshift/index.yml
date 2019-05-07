@@ -1,0 +1,41 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: Служба Azure Red Hat OpenShift
+metadata:
+  document_id: null
+  title: 'Документация по службе Azure Red Hat OpenShift. Руководства, справочник по API | Документация Майкрософт'
+  meta.description: Microsoft Azure Red Hat OpenShift allows you to quickly deploy a production ready Red Hat OpenShift cluster in Azure. Learn how to use Azure Red Hat OpenShift with these tutorials and how-to guides.
+  services: container-service
+  author: tylermsft
+  manager: jeconnoc
+  ms.service: container-service
+  ms.tgt_pltfrm: na
+  ms.devlang: na
+  ms.topic: landing-page
+  ms.date: 05-06-2019
+  ms.author: twhitney
+abstract:
+  description: 'Azure Red Hat OpenShift предоставляет однотенантные высокодоступные кластеры Kubernetes в Azure, поддерживаемые в решениях Red Hat и Microsoft.'
+sections:
+  - title: Пошаговые руководства
+    items:
+      - type: paragraph
+        text: 'Узнайте, как создавать и администрировать кластеры Azure Red Hat OpenShift.'
+      - type: list
+        style: ordered
+        items:
+          - html: <a href="/azure/openshift/tutorial-create-cluster">Создание кластера Azure Red Hat OpenShift</a>
+          - html: <a href="/azure/openshift/tutorial-scale-cluster">Масштабирование кластера Azure Red Hat OpenShift</a>
+          - html: <a href="/azure/openshift/tutorial-delete-cluster">Удаление кластера Azure Red Hat OpenShift</a>
+  - title: Справочные материалы
+    items:
+      - type: list
+        style: cards
+        className: cardsD
+        items:
+          - title: Команда
+            html: '<p><a href="https://docs.microsoft.com/cli/azure/openshift?view=azure-cli-latest#az-openshift-create">Интерфейс командной строки Azure</a></p>'
+          - title: REST
+            html: '<p><a href="https://docs.microsoft.com/en-us/rest/api/?view=Azure">REST API</a></p>'
+          - title: Документация по Red Hat
+            html: '<p><a href="https://access.redhat.com/documentation/openshift_dedicated/3/">Документация по Red Hat OpenShift</a></p>'

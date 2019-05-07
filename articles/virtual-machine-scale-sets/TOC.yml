@@ -129,6 +129,8 @@
         - name: Производительность хранилища класса Premium
           href: ../virtual-machines/windows/premium-storage-performance.md
           maintainContext: true
+        - name: Временные диски ОС
+          href: ephemeral-os-disks.md
         - name: Целевые показатели масштабируемости для дисков
           href: ../virtual-machines/windows/disk-scalability-targets.md
           maintainContext: true
@@ -204,7 +206,7 @@
               href: virtual-machine-scale-sets-encrypt-disks-ps.md
             - name: Использование Azure CLI
               href: virtual-machine-scale-sets-encrypt-disks-cli.md
-            - name: Шифрование диска с помощью последовательности расширений
+            - name: Последовательность расширений
               href: ../security/azure-security-disk-encryption-extension-sequencing.md
               maintainContext: true
         - name: Работа с большими масштабируемыми наборами
@@ -221,13 +223,16 @@
               href: virtual-machine-scale-sets-manage-cli.md
             - name: Использование Azure PowerShell
               href: virtual-machine-scale-sets-manage-powershell.md
-        - name: Коллекции общих образов (предварительная версия)
-          href: shared-image-galleries.md
+        - name: Общедоступные коллекции образов
           items:
+            - name: Обзор
+              href: shared-image-galleries.md
             - name: Интерфейс командной строки
               href: shared-images-cli.md
             - name: PowerShell
               href: shared-images-powershell.md
+            - name: Совместное использование образов в клиентах
+              href: share-images-across-tenants.md
             - name: Устранение неполадок с общими образами
               href: troubleshooting-shared-images.md
         - name: Вертикальное масштабирование в масштабируемом наборе

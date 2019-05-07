@@ -1,0 +1,49 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: Документация по службе "Блокчейн Azure"
+metadata:
+  title: Документация по службе" Блокчейн Azure". Руководства и справочник по API
+  description: 'Узнайте, как создавать приложения блокчейна. Руководства, справочники по API и другая документация помогут развернуть службу "Блокчейн Azure", чтобы создавать, разрабатывать и администрировать блокчейн-приложения в Azure.'
+  services: azure-blockchain
+  author: patricka
+  manager: femila
+  ms.service: azure-blockchain
+  ms.tgt_pltfrm: na
+  ms.devlang: na
+  ms.topic: landing-page
+  ms.date: 03/13/2019
+  ms.author: patricka
+abstract:
+  description: 'Узнайте, как создавать приложения блокчейна. Руководства, справочники по API и другая документация помогут развернуть службу "Блокчейн Azure", чтобы создавать, разрабатывать и использовать блокчейн-приложения а в Azure.'
+sections:
+  - title: 5-минутные руководства по началу работы
+    items:
+      - type: paragraph
+        text: 'Узнайте, как создать и подключить участников консорциума в Azure.'
+      - type: list
+        style: icon48
+        items:
+          - image:
+              src: ./media/index/deploy.svg
+            text: Создание участника консорциума
+            href: /azure/blockchain/service/create-member
+          - image:
+              src: ./media/index/multi-connect.svg
+            text: Подключение с помощью MetaMask
+            href: /azure/blockchain/service/connect-metamask
+          - image:
+              src: ./media/index/multi-connect.svg
+            text: Подключение с помощью geth
+            href: /azure/blockchain/service/connect-geth
+          - image:
+              src: ./media/index/multi-connect.svg
+            text: Подключение с помощью Truffle
+            href: /azure/blockchain/service/connect-truffle
+  - title: Пошаговые руководства
+    items:
+      - type: paragraph
+        text: 'Узнайте, как создавать, настраивать и развертывать блокчейн-приложения в Azure.'
+      - type: list
+        style: unordered
+        items:
+          - html: <a href="/azure/blockchain/service/send-transaction">Создание участника службы "Блокчейн Azure" и отправка транзакции</a>

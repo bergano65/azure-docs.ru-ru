@@ -32,6 +32,8 @@
       href: tutorial-mongodb-cosmos-db.md
     - name: Миграция с MongoDB в API Mongo для Azure Cosmos DB через Интернет
       href: tutorial-mongodb-cosmos-db-online.md
+    - name: Миграция Oracle в Базу данных Azure для PostgreSQL через Интернет
+      href: tutorial-oracle-azure-postgresql-online.md
 - name: Практические руководства
   items:
     - name: Миграция с SQL Server в Базу данных SQL Azure с помощью PowerShell

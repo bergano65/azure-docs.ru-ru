@@ -8,20 +8,20 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: quickstart
-ms.date: 2/20/2019
+ms.date: 05/02/2019
 ms.author: fmegen
-ms.openlocfilehash: fe565d63e72b5ec2798dde03ba4f4bd9ff4f48a7
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 771168a13d7192581aae2ff4128e979b6924484a
+ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59009405"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "65020683"
 ---
 # <a name="quickstart-recognize-speech-with-the-speech-sdk-for-java"></a>Краткое руководство. Распознавание речи с помощью пакета SDK службы "Речь" для Java
 
 [!INCLUDE [Selector](../../../includes/cognitive-services-speech-service-quickstart-selector.md)]
 
-В этой статье вы создадите консольное приложение Java с помощью [пакета SDK службы "Речь"](speech-sdk.md). Вы преобразуете речь с микрофона вашего компьютера в текст в реальном времени. Приложение создается с помощью пакета SDK Maven служб "Речь" и Eclipse Java IDE (версии 4.8) на 64-разрядной версии Windows, 64-разрядной версии Ubuntu Linux 16.04 или 18.04, а также на macOS 10.13 или более поздней версии. Оно работает в 64-разрядной среде выполнения Java 8 (JRE).
+В этой статье вы создадите консольное приложение Java с помощью [пакета SDK службы "Речь"](speech-sdk.md). Вы преобразуете речь с микрофона вашего компьютера в текст в реальном времени. Приложение создается с помощью пакета SDK Maven службы "Речь" и Eclipse Java IDE (версии 4.8) на 64-разрядной версии Windows, 64-разрядной версии Linux (Ubuntu 16.04, Ubuntu 18.04, Debian 9), а также на macOS 10.13 или более поздней версии. Оно работает в 64-разрядной среде выполнения Java 8 (JRE).
 
 > [!NOTE]
 > Ознакомьтесь с пакетом SDK службы "Речь" и устройством Roobo в разделе [Сведения о пакете SDK для речевых устройств](speech-devices-sdk.md).
@@ -30,21 +30,29 @@ ms.locfileid: "59009405"
 
 Для работы с этим кратким руководством вам понадобится:
 
-* Операционная система: Windows (64-разрядная версия), Ubuntu Linux 16.04/18.04 (64-разрядная версия), а также macOS 10.13 или более поздней версии
+* Операционная система: 64-разрядная версия Windows, 64-разрядная версия Linux (Ubuntu 16.04, Ubuntu 18.04, Debian 9) или macOS 10.13 или более поздней версии
 * [Eclipse Java IDE](https://www.eclipse.org/downloads/)
 * [Java 8](https://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html) или [JDK 8](https://www.oracle.com/technetwork/java/javase/downloads/index.html)
 * Ключ подписки Azure для службы "Речь". [Его можно получить бесплатно](get-started.md).
 
-Если вы используете Ubuntu 16.04 или 18.04, убедитесь, что эти зависимости установлены до запуска Eclipse.
+Если вы используете Linux, убедитесь, что эти зависимости установлены до запуска Eclipse.
 
-```console
-sudo apt-get update
-sudo apt-get install build-essential libssl1.0.0 libasound2 wget
-```
+* Для Ubuntu.
 
-Если вы используете Windows (64-разрядная версия), убедитесь, что у вас установлен распространяемый компонент Microsoft Visual C++ для вашей платформы.
+  ```sh
+  sudo apt-get update
+  sudo apt-get install libssl1.0.0 libasound2
+  ```
+
+* Для Debian 9:
+
+  ```sh
+  sudo apt-get update
+  sudo apt-get install libssl1.0.2 libasound2
+  ```
+
+Если вы используете Windows (64-разрядная версия), убедитесь, что у вас установлен распространяемый компонент Microsoft Visual C++ для вашей платформы.
 * [Скачать распространяемый компонент Microsoft Visual C++ для Visual Studio 2017](https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads)
-
 
 ## <a name="create-and-configure-project"></a>Создание и настройка проекта
 

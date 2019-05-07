@@ -47,6 +47,8 @@
           href: howto-connect-raspberry-pi-csharp.md
         - name: Подготовка и подключение устройства с Windows IoT Базовая
           href: howto-connect-windowsiotcore.md
+        - name: Подготовка и подключение устройства SensorTile.box
+          href: howto-connect-sensortile.md
         - name: Мониторинг подключения устройств с помощью командной строки
           href: howto-use-iotc-explorer.md
     - name: Управление устройствами

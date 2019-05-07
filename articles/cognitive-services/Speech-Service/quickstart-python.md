@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: quickstart
-ms.date: 2/20/2019
+ms.date: 05/02/2019
 ms.author: chlandsi
-ms.openlocfilehash: 1464d1ca8fcf1ad5a955d69aa76caec9aa568dad
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 34af7544a7678dfd8c8f870369bf0b4b1083b96d
+ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57886123"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "65020713"
 ---
 # <a name="quickstart-recognize-speech-with-the-speech-sdk-for-python"></a>Краткое руководство. Распознавание речи с помощью пакета SDK службы "Речь" для Python
 
@@ -30,15 +30,24 @@ ms.locfileid: "57886123"
 * Пакет SDK службы "Речь" для Python доступен для таких операционных систем:
     * Windows x64 или x86.
     * MAC: macOS X версии 10.12 или более поздней.
-    * Linux: Ubuntu 16.04 или 18.04 в 64-разрядной версии.
-* В Ubuntu выполните следующие команды, чтобы установить необходимые пакеты:
+    * Linux: Ubuntu 16.04, Ubuntu 18.04, Debian 9 на x64.
+* Чтобы установить необходимые пакеты в Linux, выполните следующие команды.
 
-  ```sh
-  sudo apt-get update
-  sudo apt-get install build-essential libssl1.0.0 libasound2 wget
-  ```
+  * Для Ubuntu.
 
-* В Windows также необходим [Распространяемый компонент Visual C++ для Visual Studio 2017](https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads) для вашей платформы.
+    ```sh
+    sudo apt-get update
+    sudo apt-get install build-essential libssl1.0.0 libasound2
+    ```
+
+  * Для Debian 9:
+
+    ```sh
+    sudo apt-get update
+    sudo apt-get install build-essential libssl1.0.2 libasound2
+    ```
+
+* В Windows для вашей платформы необходим [распространяемый компонент Microsoft Visual C++ для Visual Studio 2017](https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads).
 
 ## <a name="install-the-speech-sdk"></a>Установка пакета SDK службы "Речь"
 

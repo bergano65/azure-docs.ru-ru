@@ -1,0 +1,67 @@
+- name: Служба "Блокчейн Azure" (предварительная версия)
+  href: index.yml
+- name: Обзор
+  items:
+    - name: Общие сведения о службе "Блокчейн Azure"
+      href: overview.md
+- name: Быстрое начало работы
+  expanded: true
+  items:
+    - name: "Создание участника\_— портал"
+      href: create-member.md
+    - name: "Создание участника\_— CLI"
+      href: create-member-cli.md
+    - name: Подключение к узлу транзакций
+      items:
+        - name: Использование MetaMask
+          href: connect-metamask.md
+        - name: Использование Geth
+          href: connect-geth.md
+        - name: Использование Truffle
+          href: connect-truffle.md
+- name: Учебники
+  items:
+    - name: Отправка транзакций
+      href: send-transaction.md
+- name: Основные понятия
+  items:
+    - name: Консорциум
+      href: consortium.md
+    - name: Доступ к данным и безопасность
+      href: data-security.md
+    - name: Разработка
+      href: develop.md
+    - name: Ограничения
+      href: limits.md
+    - name: 'Исправление, обновление и управление версиями'
+      href: ledger-versions.md
+- name: Практические руководства
+  items:
+    - name: "Настройка доступа к Azure\_AD"
+      href: configure-aad.md
+    - name: Настройка узлов транзакции
+      href: configure-transaction-nodes.md
+    - name: Управление с помощью Azure CLI
+      href: manage-cli.md
+    - name: Управление консорциумом с помощью PowerShell
+      href: manage-consortium-powershell.md
+- name: Ресурсы
+  items:
+    - name: Блог
+      href: 'https://azure.microsoft.com/blog/topics/blockchain/'
+    - name: Расширение Visual Studio Code службы "Блокчейн Azure"
+      href: 'https://github.com/Microsoft/vscode-azure-blockchain-ethereum/wiki'
+    - name: Примеры кода
+      href: 'https://github.com/Azure-Samples/blockchain'
+    - name: Сообщество
+      href: 'https://techcommunity.microsoft.com/t5/Blockchain/bd-p/AzureBlockchain'
+    - name: Форум
+      href: 'https://social.msdn.microsoft.com/forums/security/home?forum=AzureBlockchainService'
+    - name: Отзыв о продукте
+      href: 'https://feedback.azure.com/forums/921130-azure-blockchain-service'
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/details/blockchain-service'
+    - name: Регионы доступности
+      href: 'https://azure.microsoft.com/global-infrastructure/services/?products=blockchainservice'
+    - name: Переполнение стека
+      href: 'https://stackoverflow.com/questions/tagged/AzureBlockchainService'

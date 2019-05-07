@@ -1,0 +1,63 @@
+### YamlMime:YamlDocument
+documentType: LandingData
+title: Документация по Распознавателю документов
+metadata:
+  title: "Документация по API. Распознаватель документов в Azure Cognitive Services\_| Документация Майкрософт"
+  description: "Сведения об использовании Распознавателя документов для интеллектуального извлечения данных пар \"ключ\_— значение\" из ваших документов формы."
+  services: cognitive-services
+  author: PatrickFarley
+  manager: cgronlun
+  ms.service: cognitive-services
+  ms.subservice: form-recognizer
+  ms.tgt_pltfrm: na
+  ms.devlang: na
+  ms.topic: landing-page
+  ms.date: 04/16/2019
+  ms.author: pafarley
+ms.custom: seodec18
+abstract:
+  description: "Распознаватель документов Azure\_— это служба когнитивных вычислений, использующая технологию машинного обучения для идентификации и извлечения пар \"ключ\_— значение\" и данных таблиц из документов-форм. Затем эта служба выводит структурированные данные, которые включают в себя связи в исходном файле. Неконтролируемое обучение позволяет модели ознакомится с макетом, связями между полями и записями без добавления метки данных вручную или трудоемкого программирования и обслуживания."
+sections:
+  - items:
+      - type: list
+        style: cards
+        className: cardsM
+        columns: 3
+        items:
+          - href: /azure/cognitive-services/form-recognizer/overview
+            html: <p>Сведения о Распознавателе документов.</p>
+            image:
+              src: ../media/index/i_overview.svg
+            title: Что такое Распознаватель документов?
+          - href: /azure/cognitive-services/form-recognizer/form-recognizer-container-howto
+            html: <p>Сведения об использовании контейнера Распознавателя документов для анализа данных формы и таблицы.</p>
+            image:
+              src: ../media/index/i_get-started.svg
+            title: Установка и запуск контейнеров
+  - title: 5-минутные руководства по началу работы
+    items:
+      - type: paragraph
+        text: 'Обучение модели Распознавателя документов и извлечение данных из форм с помощью:'
+      - type: list
+        style: icon48
+        items:
+          - image:
+              src: ./media/logos/logo-curl.svg
+            text: cURL
+            href: quickstarts/curl-train-extract.md
+          - image:
+              src: ./media/logos/logo-python.svg
+            text: Python
+            href: quickstarts/python-train-extract.md
+  - title: Справочные материалы
+    items:
+      - type: list
+        style: cards
+        className: cardsD
+        items:
+          - title: Интерфейсы API
+            html: '<p><a href="https://aka.ms/form-recognizer/api">API Распознавателя документов</a></p>'
+          - title: PowerShell
+            html: '<p><a href="https://docs.microsoft.com/powershell/module/az.cognitiveservices/#cognitive_services">Azure PowerShell</a></p>'
+          - title: Интерфейс командной строки
+            html: '<p><a href="https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest#az-cognitiveservices-list">Интерфейс командной строки Azure</a></p>'

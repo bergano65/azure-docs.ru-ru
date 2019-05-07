@@ -148,6 +148,8 @@
             - name: Использование Apache Ambari REST API
               href: ../hdinsight-hadoop-manage-ambari-rest-api.md
               maintainContext: true
+        - name: Операции ускоренной записи
+          href: ../hbase/apache-hbase-accelerated-writes.md
         - name: Масштабирование кластера HDInsight
           href: ../hdinsight-scaling-best-practices.md
           maintainContext: true

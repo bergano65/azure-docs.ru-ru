@@ -17,6 +17,8 @@
       href: publish-service-catalog-app.md
     - name: Публикация приложения из Marketplace
       href: publish-marketplace-app.md
+    - name: Создание настраиваемого поставщика ресурсов
+      href: create-custom-provider.md
 - name: Примеры
   items:
     - name: Инфраструктура CLI Azure
@@ -25,6 +27,10 @@
       href: powershell-samples.md
     - name: Решения для управляемых приложений
       href: sample-projects.md
+- name: Основные понятия
+  items:
+    - name: Настраиваемые поставщики
+      href: custom-providers-overview.md
 - name: Практические руководства
   items:
     - name: Издатели

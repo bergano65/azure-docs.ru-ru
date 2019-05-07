@@ -9,9 +9,9 @@ metadata:
   ms.author: raagyema
   ms.service: postgresql
   ms.topic: landing-page
-  ms.date: 02/25/2019
+  ms.date: 04/26/2019
 abstract:
-  description: 'База данных Azure для PostgreSQL — это служба реляционной базы данных на основе СУБД PostgreSQL с открытым исходным кодом.  Это полностью управляемая база данных как услуга, которая может обслуживать критически важные рабочие нагрузки, обеспечивая прогнозируемую производительность и безопасность, а также высокий уровень доступности и динамическое масштабирование.  Разрабатывайте приложения на основе Базы данных Azure для PostgreSQL, используя привычные средства с открытым исходным кодом и платформу.  Узнайте, как использовать базу данных Azure для PostgreSQL, ознакомившись с нашими шаблонами быстрого запуска, примерами и руководствами.'
+  description: 'База данных Azure для PostgreSQL — это служба реляционной базы данных на основе СУБД PostgreSQL с открытым исходным кодом.  Это полностью управляемая база данных как услуга, которая может обслуживать критически важные рабочие нагрузки, обеспечивая прогнозируемую производительность и безопасность, а также высокий уровень доступности и динамическое масштабирование. Поддерживаются два варианта развертывания: отдельный сервер и "Гипермасштабирование" (Citus) (предварительная версия). Вариант "Гипермасштабирование" (Citus) предусматривает горизонтальное масштабирование запросов между несколькими компьютерами с использованием сегментирования. Это решение предназначено для приложений, которым требуется более высокая масштабируемость и производительность. Узнайте, как использовать базу данных Azure для PostgreSQL, ознакомившись с нашими шаблонами быстрого запуска, примерами и руководствами.'
 sections:
   - title: 5-минутные руководства по началу работы
     items:
@@ -22,22 +22,33 @@ sections:
         items:
           - image:
               src: 'https://docs.microsoft.com/azure/sql-database/media/index/portal.svg'
-            text: Портал Azure
+            text: "Отдельный сервер\_— портал Azure"
             href: /azure/postgresql/quickstart-create-server-database-portal
           - image:
               src: 'https://docs.microsoft.com/azure/sql-database/media/index/cli.svg'
-            text: Инфраструктура CLI Azure
+            text: "Отдельный сервер\_— Azure CLI"
             href: /azure/postgresql/quickstart-create-server-database-azure-cli
+          - image:
+              src: 'https://docs.microsoft.com/azure/sql-database/media/index/portal.svg'
+            text: "\"Гипермасштабирование\" (Citus)\_— портал Azure"
+            href: /azure/postgresql/quickstart-create-hyperscale-portal
   - title: Пошаговые руководства
     items:
       - type: paragraph
-        text: 'Вы узнаете, как выполнять следующие задачи:'
+        text: 'Отдельный сервер:'
       - type: list
         style: ordered
         items:
           - html: 'Проектирование базы данных: <a href="/azure/postgresql/tutorial-design-database-using-azure-portal">портал Azure</a> | <a href="/azure/postgresql/tutorial-design-database-using-azure-cli">Azure CLI</a>'
           - html: <a href="/azure/app-service/containers/tutorial-python-postgresql-app?toc=%2fazure%2fpostgresql%2ftoc.json">Создание веб-приложения с помощью Python и CLI</a>
           - html: <a href="/azure/postgresql/tutorial-monitor-and-tune">Мониторинг и настройка службы</a>
+      - type: paragraph
+        text: '"Гипермасштабирование" (Citus) (предварительная версия):'
+      - type: list
+        style: ordered
+        items:
+          - html: <a href="/azure/postgresql/tutorial-design-database-hyperscale-multi-tenant">Проектирование мультитенантной базы данных</a>
+          - html: <a href="/azure/postgresql/tutorial-design-database-hyperscale-realtime">Проектирование базы данных в реальном времени</a>
   - title: Развитие навыков с помощью Microsoft Learn
     items:
       - type: list

@@ -11,12 +11,12 @@ author: j-martens
 ms.author: jmartens
 ms.date: 01/09/2019
 ms.custom: seodec18
-ms.openlocfilehash: 217eecfe8f380718361c2f1b56965e4af85d54c9
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.openlocfilehash: 61c5d60f0c2fab3786aa6adfa194c0716e621ea3
+ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59526713"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "65023646"
 ---
 # <a name="what-happened-to-azure-machine-learning-workbench"></a>Что случилось с Azure Machine Learning Workbench?
 
@@ -87,7 +87,7 @@ run = exp.submit(source_directory = script_folder, script = 'train.py', run_conf
 
 Если нужно продолжить использование моделей, уже зарегистрированных в старом реестре моделей, их необходимо перенести в новую рабочую область. Чтобы перенести модели, скачайте их и повторно зарегистрируйте в новой рабочей области. 
 
-Чтобы продолжить использование образов, созданных в старом реестре образов, их необходимо создать повторно в новой рабочей области. Эти образы можно заново [создать и настроить](how-to-deploy-and-where.md#configureimage). 
+Образы, созданные в старом реестре образов, нельзя перенести напрямую в новую рабочую область. В большинстве случаев модели можно развернуть без создания образа. При необходимости можно создать образ для модели в новой рабочей области. Дополнительные сведения см. в разделе [MLOps: Администрирование, развертывание и мониторинг моделей с помощью службы "Машинное обучение Azure"](concept-model-management-and-deployment.md).
 
 ## <a name="what-about-deployed-web-services"></a>Что случится с развернутыми веб-службами?
 

@@ -1,0 +1,70 @@
+- name: Документация по Персонализатору
+  href: index.yml
+- name: Обзор
+  expanded: true
+  items:
+    - name: Что такое служба "Персонализатор"?
+      href: what-is-personalizer.md
+      displayName: 'loop, context, feature, action, rank, reward, developer, use case'
+- name: Быстрое начало работы
+  items:
+    - name: Создание и использование цикла обратной связи
+      href: csharp-quickstart-commandline-feedback-loop.md
+      displayName: 'code, sample, quickstart, c#'
+- name: Основные понятия
+  items:
+    - name: Принцип работы Персонализатора
+      href: how-personalizer-works.md
+      displayName: 'rank, reward, api, explore, exploit, score, design, research, loop, action, context, feature, JSON, event, inactive, model'
+    - name: Где можно использовать Персонализатор
+      href: where-can-you-use-personalizer.md
+      displayName: 'checklist, considerations, effectiveness, recommendation engine'
+    - name: Этика и ответственное использование
+      href: ethics-responsible-use.md
+      displayName: 'best practice, design'
+    - name: Базовые понятия
+      items:
+        - name: 'Функции: Действие и контекст'
+          href: concepts-features.md
+          displayName: 'action, context, feature, namespace, JSON, best practice, set'
+        - name: Обучение с подкреплением
+          href: concepts-reinforcement-learning.md
+          displayName: 'RL, contextual bandits, Vowpal Wabbit'
+    - name: Анализ
+      items:
+        - name: Автономная оценка
+          href: concepts-offline-evaluation.md
+          displayName: 'learning policy, Counterfactual, features'
+- name: Практические руководства
+  items:
+    - name: Настройка Персонализатора
+      href: how-to-settings.md
+      displayName: 'azure, portal, settings, evaluation, offline, policy'
+    - name: Анализ
+      items:
+        - name: Автономная оценка
+          href: how-to-offline-evaluation.md
+- name: Справочные материалы
+  items:
+    - name: Примеры
+      href: 'https://aka.ms/personalizer-samples'
+    - name: справочник по API REST
+      href: 'https://aka.ms/personalizer-rest-api-docs'
+    - name: Пакеты SDK
+      items:
+        - name: Справочник по пакету SDK .NET.
+          href: 'https://aka.ms/personalizer-dotnet-sdk-docs'
+        - name: Пакет NuGet
+          href: 'https://aka.ms/personalizer-nuget-sdk'
+- name: Ресурсы
+  items:
+    - name: Доступ по регионам
+      href: 'https://azure.microsoft.com/global-infrastructure/services/'
+    - name: Стратегия развития Azure
+      href: 'https://aka.ms/personalizer-roadmap'
+    - name: Цены
+      href: 'https://aka.ms/personalizer-pricing'
+    - name: Переполнение стека
+      href: 'https://aka.ms/personalizer-stackoverflow'
+    - name: UserVoice
+      href: 'https://aka.ms/personalizer-uservoice'

@@ -66,6 +66,10 @@
       items:
         - name: Принятие демонстрационных данных
           href: ingest-sample-data.md
+    - name: Развертывание
+      items:
+        - name: Задание DevOps
+          href: devops.md
     - name: Запрос данных
       items:
         - name: Написание запросов

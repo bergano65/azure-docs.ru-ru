@@ -109,8 +109,14 @@
           href: how-to-install-iot-edge-linux-arm.md
         - name: "Windows\_x64"
           href: how-to-install-iot-edge-windows.md
+        - name: "Использование контейнеров Linux в Windows\_X64"
+          href: how-to-install-iot-edge-windows-with-linux.md
+        - name: Виртуальная машина Windows Server
+          href: how-to-install-iot-edge-windows-server-vm.md
         - name: Виртуальная машина Ubuntu
           href: how-to-install-iot-edge-ubuntuvm.md
+        - name: kubernetes
+          href: how-to-install-iot-edge-kubernetes.md
         - name: Обновление версии среды выполнения
           href: how-to-update-iot-edge.md
     - name: Автоматическая подготовка с помощью DPS

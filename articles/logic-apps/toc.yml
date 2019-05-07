@@ -55,7 +55,9 @@
           href: logic-apps-create-variables-store-values.md
         - name: Выполнение операций с данными
           href: logic-apps-perform-data-operations.md
-        - name: Добавление пользовательского кода с помощью решения "Функции Azure"
+        - name: Добавление и выполнение фрагментов кода со встроенным кодом
+          href: logic-apps-add-run-inline-code.md
+        - name: Добавление и выполнение кода с помощью Функций Azure
           href: logic-apps-azure-functions.md
         - name: Вызов приложений логики с помощью решения "Функции Azure"
           href: logic-apps-scenario-function-sb-trigger.md

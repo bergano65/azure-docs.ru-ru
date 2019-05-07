@@ -1,0 +1,43 @@
+- name: Документация по Распознавателю документов
+  href: index.yml
+- name: Обзор
+  items:
+    - name: Что такое Распознаватель документов?
+      href: overview.md
+- name: Быстрое начало работы
+  expaned: true
+  items:
+    - name: Обучение модели и извлечение данных
+      items:
+        - name: Использование REST API
+          items:
+            - name: cURL
+              href: quickstarts/curl-train-extract.md
+            - name: Python
+              href: quickstarts/python-train-extract.md
+- name: Практические руководства
+  items:
+    - name: Использование контейнеров
+      items:
+        - name: Установка и запуск контейнеров
+          displayName: 'docker, container, package, packaged app, swagger, open api, openapi, train, publish, az, acr, cli, tps, core, curl, try it now, import, pull'
+          href: form-recognizer-container-howto.md
+        - name: Настройка контейнеров
+          href: form-recognizer-container-configuration.md
+          displayName: 'docker, container, run, billing, apikey, logging'
+- name: Справочные материалы
+  items:
+    - name: API Распознавателя документов
+      href: 'https://aka.ms/form-recognizer/api'
+- name: Ресурсы
+  items:
+    - name: Цены и ограничения
+      href: 'https://go.microsoft.com/fwlink/?linkid=2087258'
+    - name: UserVoice
+      href: 'https://go.microsoft.com/fwlink/?linkid=2090535'
+    - name: Переполнение стека
+      href: 'https://go.microsoft.com/fwlink/?linkid=2087186'
+    - name: Стратегия развития Azure
+      href: 'https://azure.microsoft.com/updates/?product=cognitive-services'
+    - name: Доступ по регионам
+      href: 'https://go.microsoft.com/fwlink/?linkid=2087185'

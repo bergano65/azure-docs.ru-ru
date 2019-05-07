@@ -63,6 +63,7 @@ sections:
           - html: <a href="/azure/app-service/containers/tutorial-multi-container-app">Создание многоконтейнерного приложения на платформе Azure "Веб-приложение для контейнеров"</a>
           - html: <a href="/azure/container-registry/container-registry-tutorial-quick-task">Создание и развертывание образов контейнера с помощью службы "Задачи Реестра контейнеров Azure"</a>
           - html: <a href="/azure/container-instances/container-instances-tutorial-prepare-app">Создание и развертывание контейнера в службе "Экземпляры контейнеров Azure"</a>
+          - html: <a href="/azure/openshift/tutorial-create-cluster">Создание кластера Azure Red Hat OpenShift</a>
   - title: Развитие навыков с помощью Microsoft Learn
     items:
       - type: list

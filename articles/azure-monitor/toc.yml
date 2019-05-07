@@ -555,6 +555,8 @@
                   href: app/usage-workbooks.md
             - name: Просмотр аналитики для всех ресурсов веб-приложений Azure
               href: insights/azure-web-apps-analytics.md
+            - name: 'Приложения, размещенные в Kubernetes'
+              href: app/kubernetes.md
         - name: Мониторинг контейнеров
           items:
             - name: Azure Monitor для контейнеров
@@ -563,13 +565,19 @@
                   href: insights/container-insights-overview.md
                 - name: Часто задаваемые вопросы
                   href: insights/container-insights-faq.md
-                - name: Подключение
-                  href: insights/container-insights-onboard.md
+                - name: Включение мониторинга
+                  items:
+                    - name: Общие сведения о включении мониторинга
+                      href: insights/container-insights-onboard.md
+                    - name: Включение для нового кластера
+                      href: insights/container-insights-enable-new-cluster.md
+                    - name: Включение для существующего кластера
+                      href: insights/container-insights-enable-existing-clusters.md
                 - name: Анализ
                   href: insights/container-insights-analyze.md
                 - name: Отключите мониторинга
                   href: insights/container-insights-optout.md
-                - name: Просмотр динамических журналов контейнеров
+                - name: Просмотр динамических журналов
                   href: insights/container-insights-live-logs.md
                 - name: Анализ данных с помощью запросов к журналу
                   href: insights/container-insights-log-search.md
@@ -585,8 +593,6 @@
               href: insights/containers.md
             - name: Мониторинг приложений Docker
               href: app/docker.md
-            - name: Application Insights для Kubernetes
-              href: app/kubernetes.md
         - name: Мониторинг групп ресурсов
           href: insights/resource-group-insights.md
         - name: Мониторинг баз данных
