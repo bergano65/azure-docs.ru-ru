@@ -9,12 +9,12 @@ ms.subservice: form-recognizer
 ms.topic: overview
 ms.date: 04/08/2019
 ms.author: pafarley
-ms.openlocfilehash: df3db534550e709e40cc94d5f951056d93a1003e
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: 2a120a59a58eb8d7a017cce0dd85c21038bdcf51
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65025432"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65143218"
 ---
 # <a name="what-is-form-recognizer"></a>Что такое Распознаватель документов?
 
@@ -73,13 +73,7 @@ ms.locfileid: "65025432"
 
 ## <a name="data-privacy-and-security"></a>Конфиденциальность и безопасность данных
 
-Служба предлагается в качестве [предварительной версии](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) службы Azure [согласно условий использования веб-служб](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=31). Вы остаетесь владельцем своих данных, мы используем их только, чтобы предоставлять веб-службы, как описано в вашем договоре:
-
-### <a name="processing-of-customer-data-ownership"></a>Обработка данных пользователя; владение
-
-Данные клиента используются или обрабатываются иным способом только для предоставления клиенту веб-служб и других связанных с этим целей. Корпорация Майкрософт не будет использовать или обрабатывать каким-либо другим способом данные клиентов, извлекать из них информацию для реализации какой-либо рекламы или в других коммерческих целях. В отношениях между сторонами клиент сохраняет все права, титулы и интересы в отношении данных клиента. Корпорация Майкрософт не приобретает никаких прав на данные клиента, отличных от тех прав, которые клиент предоставляет корпорации Майкрософт для предоставления веб-служб для клиента.
-
-Как и в случае со всеми другими Cognitive Services, разработчикам, использующим службу Распознавателя документов, следует учитывать политику корпорации Майкрософт касательно клиентских данных. Дополнительные сведения см. на [странице о Cognitive Services](https://www.microsoft.com/trustcenter/cloudservices/cognitiveservices) Центра управления безопасностью Майкрософт.
+Служба предлагается в качестве [предварительной версии](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) службы Azure [согласно условий использования веб-служб](https://www.microsoftvolumelicensing.com/DocumentSearch.aspx?Mode=3&DocumentTypeId=31). Как и в случае со всеми другими Cognitive Services, разработчикам, использующим службу Распознавателя документов, следует учитывать политику корпорации Майкрософт касательно клиентских данных. Дополнительные сведения см. на [странице о Cognitive Services](https://www.microsoft.com/trustcenter/cloudservices/cognitiveservices) Центра управления безопасностью Майкрософт.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
