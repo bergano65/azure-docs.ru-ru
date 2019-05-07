@@ -6,12 +6,12 @@ ms.author: larryme
 ms.date: 04/02/2019
 ms.topic: article
 ms.service: storage
-ms.openlocfilehash: 4fea787e7fe20d60de91761811e1b69bebf3a010
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: dc78f87d9b47745119da91b8ed1f8f6c8572968c
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61485552"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65190439"
 ---
 # <a name="move-mainframe-storage-to-azure"></a>Переместить хранилище мэйнфреймов в Azure
 
@@ -51,7 +51,7 @@ Azure инфраструктуры как услуга ([IaaS](https://azure.mic
 
 <table>
 <thead>
-    <tr><th>type</th><th>Описание</th><th>Используйте, когда хотите.</th></tr>
+    <tr><th>type</th><th>ОПИСАНИЕ</th><th>Используйте, когда хотите.</th></tr>
 </thead>
 <tbody>
 <tr><td>Файлы Azure
@@ -97,7 +97,7 @@ Azure инфраструктуры как услуга ([IaaS](https://azure.mic
 | type         | Размер           | IOPS                  |
 |--------------|----------------|-----------------------|
 | Диск SSD категории "Ультра"    | 4 ГБ до 64 ТБ  | 1200 в 160,000 операций ввода-ВЫВОДА |
-| Диск SSD категории "Премиум"  | 32 ГБ до 32 ТБ | 12 до 15 000 операций ввода-ВЫВОДА     |
+| SSD (цен. категория "Премиум")  | 32 ГБ до 32 ТБ | 12 до 15 000 операций ввода-ВЫВОДА     |
 | SSD (цен. категория "Стандартный") | 32 ГБ до 32 ТБ | 12 до 2000 операций ввода-ВЫВОДА      |
 
 Хранилище BLOB-объектов предоставляет наибольший объем хранилища в Azure. В дополнение к размер хранилища Azure предоставляет хранилище с управляемых и неуправляемых. С помощью управляемого хранилища Azure берет на себя управление базовые учетные записи хранения. Неуправляемые хранилище пользователь несет ответственность по настройке учетных записей хранения Azure соответствующего размера для удовлетворения требований к хранилищу.
@@ -113,10 +113,10 @@ Azure инфраструктуры как услуга ([IaaS](https://azure.mic
 ### <a name="ibm-resources"></a>Ресурсы IBM
 
 - [Параллельные Sysplex на IBM Z](https://www.ibm.com/it-infrastructure/z/technologies/parallel-sysplex-resources)
-- [IBM CICS и средство увязки: Некоторые особенности](http://www.redbooks.ibm.com/redbooks/pdfs/sg248420.pdf)
+- [IBM CICS и средство увязки: Некоторые особенности](https://www.redbooks.ibm.com/redbooks/pdfs/sg248420.pdf)
 - [Создание обязательных пользователей для установки Db2 pureScale Feature](https://www.ibm.com/support/knowledgecenter/en/SSEPGG_11.1.0/com.ibm.db2.luw.qb.server.doc/doc/t0055374.html?pos=2)
 - [Db2icrt: команда для создания экземпляра](https://www.ibm.com/support/knowledgecenter/en/SSEPGG_11.1.0/com.ibm.db2.luw.admin.cmd.doc/doc/r0002057.html)
-- [Db2 pureScale кластерные решения базы данных](http://www.ibmbigdatahub.com/blog/db2-purescale-clustered-database-solution-part-1)
+- [Db2 pureScale кластерные решения базы данных](https://www.ibmbigdatahub.com/blog/db2-purescale-clustered-database-solution-part-1)
 - [IBM Data Studio](https://www.ibm.com/developerworks/downloads/im/data/index.html/)
 
 ### <a name="azure-government"></a>Azure Government

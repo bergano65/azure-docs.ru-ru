@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 04/09/2019
 ms.author: iainfou
 ms.openlocfilehash: abeb9ef6e467b62cf7332e01e1b77c710b9ba4f4
-ms.sourcegitcommit: 524625dd12e0537173616a991802075e2dc9da12
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "64413036"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65072868"
 ---
 # <a name="quotas-virtual-machine-size-restrictions-and-region-availability-in-azure-kubernetes-service-aks"></a>Квоты, ограничения на размер виртуальной машины и доступность по регионам в службе Azure Kubernetes (AKS)
 

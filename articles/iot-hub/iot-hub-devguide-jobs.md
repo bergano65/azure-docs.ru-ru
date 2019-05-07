@@ -8,12 +8,12 @@ ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.date: 10/09/2018
-ms.openlocfilehash: aacb0ab69dad45f9ca7655daaae0c2acff0403f5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 397fb1d3934aad19b82f957b6994bd3c5ce4054c
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60740445"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65189963"
 ---
 # <a name="schedule-jobs-on-multiple-devices"></a>Планирование заданий на нескольких устройствах
 
@@ -48,7 +48,7 @@ User-Agent: <sdk-name>/<sdk-version>
 
 {
     "jobId": "<jobId>",
-    "type": "scheduleDirectMethod",
+    "type": "scheduleDeviceMethod",
     "cloudToDeviceMethod": {
         "methodName": "<methodName>",
         "payload": <payload>,
@@ -113,7 +113,7 @@ User-Agent: <sdk-name>/<sdk-version>
 
 В таблице ниже содержится список свойств, которые можно использовать при выполнении запросов на задания и их результаты, а также описание этих свойств.
 
-| Свойство | Описание |
+| Свойство | ОПИСАНИЕ |
 | --- | --- |
 | **jobId** |Идентификатор задания, указанный в приложении. |
 | **startTime** |Время начала задания (ISO-8601), указанное в приложении. |

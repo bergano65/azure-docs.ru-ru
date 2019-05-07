@@ -15,12 +15,12 @@ ms.date: 04/03/2019
 ms.author: celested
 ms.custom: H1Hack27Feb2017
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b63118a7c5fae49edebe4ae4976a1362781ae8cf
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: c9db6babff3ae0c91f730e6ec2e6e2a41d55b0bf
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64712862"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65191513"
 ---
 # <a name="customizing-user-provisioning-attribute-mappings-for-saas-applications-in-azure-active-directory"></a>Настройка сопоставлений атрибутов для подготовки пользователей для приложений SaaS в Azure Active Directory
 Microsoft Azure AD обеспечивает поддержку для подготовки пользователей для сторонних приложений SaaS, таких как Salesforce, G Suite и другим пользователям. При включении подготовки пользователей для сторонних приложений SaaS, портал Azure определяет значения его атрибутов через сопоставления атрибутов.
@@ -149,6 +149,8 @@ Microsoft Azure AD обеспечивает поддержку для подго
 * Обновление сопоставлений атрибутов влияет на производительность цикла синхронизации. Чтобы обновить конфигурацию сопоставления атрибутов, необходимо повторно оценить все управляемые объекты. 
 
 * Чтобы сократить количество последовательных изменений сопоставлений атрибутов — как минимум является рекомендуемый вариант.
+
+* Добавление атрибута photo должны быть подготовлены в приложение не поддерживается сегодня как нельзя указать формат синхронизировать фотографии. Вы можете запросить компонент на [User Voice](https://feedback.azure.com/forums/169401-azure-active-directory)
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

@@ -11,17 +11,17 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 4/03/2019
+ms.date: 5/06/2019
 ms.author: celested
 ms.reviewer: asmalser
 ms.custom: aaddev;it-pro;seohack1
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0bb7032c2741cc8c407c8d7d0285e58647f0bfd5
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: fba0a9bc0886b9487b0c61b6091bd122fe6e370d
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64918538"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65191545"
 ---
 # <a name="using-system-for-cross-domain-identity-management-scim-to-automatically-provision-users-and-groups-from-azure-active-directory-to-applications"></a>Использование системы для управления удостоверениями между доменами (SCIM) для автоматической подготовки пользователей и групп из Azure Active Directory в приложения
 
@@ -31,7 +31,7 @@ SCIM является стандартизированный протокол и
 
 Многие приложения, для который Azure AD поддерживает [предварительно интегрированные автоматической подготовки пользователей](../saas-apps/tutorial-list.md) реализации SCIM, которое означает, что для получения пользователя уведомления об изменении.  Помимо этого, клиенты могут подключить приложения, поддерживающие конфигурацию из [спецификации протокола SCIM 2.0](https://tools.ietf.org/html/rfc7644) параметр универсального интеграции «не из коллекции» на портале Azure. 
 
-В профиле SCIM 2.0, который реализует Azure AD как часть его универсальный соединитель SCIM для приложений не из коллекции является основной темой этой статьи. Однако успешное тестирование приложения, поддерживающего SCIM с Azure AD универсального соединителя — шаг для приложения из коллекции Azure AD как поддерживающий подготовки пользователей. Дополнительные сведения о том, как приложения, указанного в коллекции приложений Azure AD см. в разделе [сети приложений Microsoft](https://microsoft.sharepoint.com/teams/apponboarding/Apps/SitePages/Default.aspx).
+В профиле SCIM 2.0, который реализует Azure AD как часть его универсальный соединитель SCIM для приложений не из коллекции является основной темой этой статьи. Однако успешное тестирование приложения, поддерживающего SCIM с Azure AD универсального соединителя — шаг для приложения из коллекции Azure AD как поддерживающий подготовки пользователей. Дополнительные сведения о том, как приложения, указанного в коллекции приложений Azure AD см. в разделе [как: Добавьте свое приложение в коллекции приложений Azure AD](../develop/howto-app-gallery-listing.md).
  
 
 >[!IMPORTANT]

@@ -2,18 +2,17 @@
 title: Обновление кластера службы Azure Kubernetes (AKS)
 description: Сведения об обновлении кластера Службы Azure Kubernetes (AKS)
 services: container-service
-author: rockboyfor
+author: iainfoulds
 ms.service: container-service
 ms.topic: article
-origin.date: 02/12/2019
-ms.date: 03/04/2019
-ms.author: v-yeche
+ms.date: 02/12/2019
+ms.author: iainfou
 ms.openlocfilehash: 59d52db8c3f5f8968eae1a544abe1e5c6bbaacca
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61028446"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65072741"
 ---
 # <a name="upgrade-an-azure-kubernetes-service-aks-cluster"></a>Обновление кластера службы Azure Kubernetes (AKS)
 
@@ -27,7 +26,7 @@ ms.locfileid: "61028446"
 
 С помощью команды [az aks get-upgrades][az-aks-get-upgrades] проверьте выпуски Kubernetes, доступные для кластера. В следующем примере выполняется проверка доступных обновлений для кластера *myAKSCluster* в группе ресурсов *myResourceGroup*.
 
-```azurecli
+```azurecli-interactive
 az aks get-upgrades --resource-group myResourceGroup --name myAKSCluster --output table
 ```
 
@@ -48,7 +47,7 @@ default  myResourceGroup  1.10.12          1.10.12            1.11.5, 1.11.6
 
 С помощью команды [az aks upgrade][az-aks-upgrade] обновите кластер AKS, используя список доступных версий. Чтобы свернуть сбой выполнения приложений, в ходе процесса обновления AKS добавит новый узел в кластер, а затем узлы будут по очереди [блокироваться и останавливаться][kubernetes-drain]. В следующем примере кластер обновляется до версии *1.11.6*.
 
-```azurecli
+```azurecli-interactive
 az aks upgrade --resource-group myResourceGroup --name myAKSCluster --kubernetes-version 1.11.6
 ```
 
@@ -56,7 +55,7 @@ az aks upgrade --resource-group myResourceGroup --name myAKSCluster --kubernetes
 
 Чтобы проверить, что обновление выполнено успешно, введите команду [az aks show][az-aks-show].
 
-```azurecli
+```azurecli-interactive
 az aks show --resource-group myResourceGroup --name myAKSCluster --output table
 ```
 
@@ -65,7 +64,7 @@ az aks show --resource-group myResourceGroup --name myAKSCluster --output table
 ```json
 Name          Location    ResourceGroup    KubernetesVersion    ProvisioningState    Fqdn
 ------------  ----------  ---------------  -------------------  -------------------  ---------------------------------------------------------------
-myAKSCluster  chinaeast2      myResourceGroup  1.11.6               Succeeded            myaksclust-myresourcegroup-19da35-90efab95.hcp.chinaeast2.azmk8s.io
+myAKSCluster  eastus      myResourceGroup  1.11.6               Succeeded            myaksclust-myresourcegroup-19da35-90efab95.hcp.eastus.azmk8s.io
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
@@ -80,7 +79,7 @@ myAKSCluster  chinaeast2      myResourceGroup  1.11.6               Succeeded   
 
 <!-- LINKS - internal -->
 [aks-tutorial-prepare-app]: ./tutorial-kubernetes-prepare-app.md
-[azure-cli-install]: https://docs.azure.cn/zh-cn/cli/install-azure-cli?view=azure-cli-latest
-[az-aks-get-upgrades]: https://docs.microsoft.com/cli/azure/aks?view=azure-cli-latest#az-aks-get-upgrades
-[az-aks-upgrade]: https://docs.microsoft.com/cli/azure/aks?view=azure-cli-latest#az-aks-upgrade
-[az-aks-show]: https://docs.microsoft.com/cli/azure/aks?view=azure-cli-latest#az-aks-show
+[azure-cli-install]: /cli/azure/install-azure-cli
+[az-aks-get-upgrades]: /cli/azure/aks#az-aks-get-upgrades
+[az-aks-upgrade]: /cli/azure/aks#az-aks-upgrade
+[az-aks-show]: /cli/azure/aks#az-aks-show

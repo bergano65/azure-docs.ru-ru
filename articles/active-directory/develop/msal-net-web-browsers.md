@@ -12,17 +12,17 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 04/24/2019
-ms.author: ryanwi
+ms.date: 05/06/2019
+ms.author: jmprieur
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 350cb3fec4d325d6cf5848733c0bae18d5efacca
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
-ms.translationtype: HT
+ms.openlocfilehash: d6e13ec3d822ba8a8cd2484f42ea81e615bae268
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/06/2019
-ms.locfileid: "65076845"
+ms.locfileid: "65190983"
 ---
 # <a name="using-web-browsers-in-msalnet"></a>Использование веб-браузеров в MSAL.NET
 Веб-обозреватели являются обязательными для интерактивной проверки подлинности. По умолчанию поддерживает MSAL.NET [системы веб-браузере](#system-web-browser-on-xamarinios-and-xamarinandroid) на Xamarin.iOS и [Xamarin.Android](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/system-browser). Но [можно также включить Embedded веб-браузере](#enable-embedded-webviews) в зависимости от требований (UX, потребность в единый вход (SSO), безопасность) в [Xamarin.iOS](#choosing-between-embedded-web-browser-or-system-browser-on-xamarinios) и [Xamarin.Android](#choosing-between-embedded-web-browser-or-system-browser-on-xamarinandroid) приложения. И вы даже можете [выберите динамически](#detecting-the-presence-of-custom-tabs-on-xamarinandroid) использовать веб-браузере на основе наличия Chrome или браузер, поддерживающий пользовательские вкладки Chrome в Android.
@@ -40,7 +40,7 @@ ms.locfileid: "65076845"
 
 ## <a name="system-web-browser-on-xamarinios-and-xamarinandroid"></a>Система веб-браузер на Xamarin.iOS и Xamarin.Android
 
-По умолчанию MSAL.NET поддерживает системы веб-браузер на Xamarin.iOS и Xamarin.Android. Чтобы разместить взаимодействие со службой STS, ADAL.NET использует только **embedded** веб-браузер. Для всех платформ, которые предоставляют пользовательский Интерфейс (то есть не .NET Core) предоставляется диалоговое окно библиотеки, встраивание элемента управления браузера. MSAL.NET также использует внедренный веб-представление для настольных систем .NET и WAB для платформы UWP. Тем не менее, при этом используется по умолчанию **системы веб-браузере** Xamarin iOS и Xamarin Android приложений. В iOS, он даже выбирает веб-представление, в зависимости от версии операционной системы (iOS12, iOS11 и более ранних версий).
+По умолчанию MSAL.NET поддерживает системы веб-браузер на Xamarin.iOS и Xamarin.Android. Для всех платформ, которые предоставляют пользовательский Интерфейс (то есть не .NET Core) предоставляется диалоговое окно библиотеки, встраивание элемента управления браузера. MSAL.NET также использует внедренный веб-представление для настольных систем .NET и WAB для платформы UWP. Тем не менее, при этом используется по умолчанию **системы веб-браузере** Xamarin iOS и Xamarin Android приложений. В iOS, он даже выбирает веб-представление, в зависимости от версии операционной системы (iOS12, iOS11 и более ранних версий).
 
 Использование обозревателя системы имеет значительное преимущество, совместное использование состояния единого входа с другими приложениями и веб-приложений без необходимости брокера (корпоративного портала и проверки подлинности). Система браузер использовался, по умолчанию в MSAL.NET для платформы Xamarin Android Xamarin iOS и так как на этих платформах веб-браузера системы занимает весь экран и взаимодействие с пользователем, тем лучше. Веб-представление системы не отличить от диалоговое окно. На iOS Однако пользователь может потребоваться предоставить согласие для браузера для обратного вызова приложения, который может раздражать.
 
@@ -70,49 +70,55 @@ ms.locfileid: "65076845"
 
 Как разработчик, с помощью MSAL.NET у вас есть несколько способов отображения интерактивного диалогового окна из службы маркеров безопасности:
 
-- **Системный браузер.** Системный браузер имеет значение по умолчанию в библиотеке. Если с помощью Android, прочтите [браузеры системы](msal-net-system-browser-android-considerations.md) подробные сведения о том, какие браузеры поддерживаются для проверки подлинности. При использовании браузера системы в Android, мы рекомендуем устройство имеет браузер, поддерживающий пользовательские вкладки Chrome.  В противном случае возможен сбой проверки подлинности. 
-- **Внедренные webview.** Чтобы использовать только внедренные webview в MSAL.NET, существуют перегрузки `UIParent()` конструктора, доступных для iOS и Android.
+- **Системный браузер.** Системный браузер имеет значение по умолчанию в библиотеке. Если с помощью Android, прочтите [браузеры системы](msal-net-system-browser-android-considerations.md) подробные сведения о том, какие браузеры поддерживаются для проверки подлинности. При использовании браузера системы в Android, мы рекомендуем устройство имеет браузер, поддерживающий пользовательские вкладки Chrome.  В противном случае возможен сбой проверки подлинности.
+- **Внедренные webview.** Для использования только внедренные webview в MSAL.NET, `AcquireTokenInteractively` содержит построитель параметров `WithUseEmbeddedWebView()` метод.
 
-    iOS:
+    iOS
 
     ```csharp
-    public UIParent(bool useEmbeddedWebview)
+    AuthenticationResult authResult;
+    authResult = app.AcquireTokenInteractively(scopes)
+                    .WithUseEmbeddedWebView(useEmbeddedWebview)
+                    .ExecuteAsync();
     ```
 
     Android:
 
     ```csharp
-    public UIParent(Activity activity, bool useEmbeddedWebview)
+    authResult = app.AcquireTokenInteractively(scopes)
+                .WithParentActivityOrWindow(activity)
+                .WithUseEmbeddedWebView(useEmbeddedWebview)
+                .ExecuteAsync();
     ```
 
 #### <a name="choosing-between-embedded-web-browser-or-system-browser-on-xamarinios"></a>Выбор между embedded веб-браузер или системный браузер на Xamarin.iOS
 
-В приложении iOS в `AppDelegate.cs` можно использовать системный браузер или embedded webview.
+В приложении iOS в `AppDelegate.cs` вы можете инициализировать `ParentWindow` для `null`. Он не используется в iOS
 
 ```csharp
-// Use only embedded webview
-App.UIParent = new UIParent(true);
-
-// Use only system browser
-App.UIParent = new UIParent();
+App.ParentWindow = null; // no UI parent on iOS
 ```
 
 #### <a name="choosing-between-embedded-web-browser-or-system-browser-on-xamarinandroid"></a>Выбор между embedded веб-браузер или системный браузер на Xamarin.Android
 
-В приложении Android в `MainActivity.cs` можно выбрать способ реализации параметры веб-представления.
+В приложении Android в `MainActivity.cs` родительское действие, можно задать таким образом, чтобы результаты проверки подлинности возвращается к нему:
 
 ```csharp
-// Use only embedded webview
-App.UIParent = new UIParent(Xamarin.Forms.Forms.Context as Activity, true);
+ App.ParentWindow = this;
+```
 
-// or
-// Use only system browser
-App.UIParent = new UIParent(Xamarin.Forms.Forms.Context as Activity);
+Затем в `MainPage.xaml.cs`:
+
+```csharp
+authResult = await App.PCA.AcquireTokenInteractive(App.Scopes)
+                      .WithParentActivityOrWindow(App.ParentWindow)
+                      .WithUseEmbeddedWebView(true)
+                      .ExecuteAsync();
 ```
 
 #### <a name="detecting-the-presence-of-custom-tabs-on-xamarinandroid"></a>Обнаружение присутствия пользовательских вкладок на Xamarin.Android
 
-Если вы хотите использовать веб-браузера системы для включить ЕДИНЫЙ вход для приложений, выполняющихся в браузере, но беспокоитесь об взаимодействие с пользователем для устройств Android, не имеющий браузер с поддержкой настраиваемой вкладки, вы можете решить, вызвав `IsSystemWebViewAvailable()` метод в < c 2 настроек `UIParent` . Этот метод возвращает `true` Если PackageManager обнаруживает пользовательские вкладки и `false` если они не обнаружены на устройстве.
+Если вы хотите использовать веб-браузера системы для включить ЕДИНЫЙ вход для приложений, выполняющихся в браузере, но беспокоитесь об взаимодействие с пользователем для устройств Android, не имеющий браузер с поддержкой настраиваемой вкладки, вы можете решить, вызвав `IsSystemWebViewAvailable()` метод в < c 2 настроек `IPublicClientApplication` . Этот метод возвращает `true` Если PackageManager обнаруживает пользовательские вкладки и `false` если они не обнаружены на устройстве.
 
 На основании значение, возвращаемое данным методом и вашим требованиям, можно принять решение:
 
@@ -122,23 +128,16 @@ App.UIParent = new UIParent(Xamarin.Forms.Forms.Context as Activity);
 В приведенном ниже коде показан параметр внедренного веб-представления:
 
 ```csharp
-bool useSystemBrowser = UIParent.IsSystemWebviewAvailable();
-if (useSystemBrowser)
-{
-    // A browser with custom tabs is present on device, use system browser
-    App.UIParent = new UIParent(Xamarin.Forms.Forms.Context as Activity);
-}
-else
-{
-    // A browser with custom tabs is not present on device, use embedded webview
-    App.UIParent = new UIParent(Xamarin.Forms.Forms.Context as Activity, true);
-}
+bool useSystemBrowser = app.IsSystemWebviewAvailable();
 
-// Alternative:
-App.UIParent = new UIParent(Xamarin.Forms.Forms.Context as Activity, !useSystemBrowser);
-
+authResult = await App.PCA.AcquireTokenInteractive(App.Scopes)
+                      .WithParentActivityOrWindow(App.ParentWindow)
+                      .WithUseEmbeddedWebView(!useSystemBrowser)
+                      .ExecuteAsync();
 ```
 
-## <a name="net-core-does-not-support-interactive-authentication"></a>.NET core не поддерживает интерактивную проверку подлинности
+## <a name="net-core-does-not-support-interactive-authentication-out-of-the-box"></a>.NET core не поддерживает интерактивную проверку подлинности без дополнительной настройки
 
 Для .NET Core получением токенов интерактивно, недоступна. Действительно .NET Core не предоставляет пользовательский Интерфейс еще. Если вы хотите обеспечить интерактивный вход для приложений .NET Core, можно позволить приложения пользователь получает код и URL-адрес для входа в интерактивном режиме (см. в разделе [поток кода устройства](msal-authentication-flows.md#device-code)).
+
+Кроме того, вы можете реализовать [IWithCustomUI](scenario-desktop-acquire-token.md#withcustomwebui) интерфейс, а также предоставляют свои собственные

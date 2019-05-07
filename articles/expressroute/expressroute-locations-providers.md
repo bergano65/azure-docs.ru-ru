@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 04/26/2019
+ms.date: 05/06/2019
 ms.author: pareshmu
-ms.openlocfilehash: 61a6608a4b498cf47ece194e8cee4ea19a0333fd
-ms.sourcegitcommit: e7d4881105ef17e6f10e8e11043a31262cfcf3b7
+ms.openlocfilehash: af8927ddaac4295a49d46f57a48225435dd59b29
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64869083"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65191153"
 ---
 # <a name="expressroute-partners-and-peering-locations"></a>Партнеры и одноранговые расположения ExpressRoute
 
@@ -43,7 +43,7 @@ ExpressRoute поддерживается во всех регионах и ра
 | **Геополитический регион** | **Зона** | **Регионы Azure** | **Расположения ExpressRoute** |
 | --- | --- | --- | --- |
 | **Государственные организации Австралии** | 1 | Центральная Австралия, Центральная Австралия 2 |Канберра, Канберра 2 |
-| **Европа** | 1 |Центральная Франция, Южная Франция, Северная Европа, Западная Европа, западная часть Соединенного Королевства, южная часть Соединенного Королевства |Амстердам, Amsterdam2, Дублин, Лондон, London2, Марселе, ньюпорт (Уэльс), Париж, Цюрих |
+| **Европа** | 1 |Центральная Франция, Южная Франция, Северная Европа, Западная Европа, западная часть Соединенного Королевства, южная часть Соединенного Королевства |Амстердам, Amsterdam2, Дублин, Франкфурт, Лондон, London2, Марселе, ньюпорт (Уэльс), Париж, Цюрих |
 | **Северная Америка** | 1 |Восточная часть США, западная часть США, восточная часть США 2, западная часть США 2, центральная часть США, центрально-южная часть США, центрально-северная часть США, центрально-западная часть США, Центральная Канада, Восточная Канада |Атланта, Чикаго, Даллас, Денвер, Лас-Вегас, Лос-Анджелес, Майами, Нью-Йорк, Сан-Антонио, Сиэтл, кремниевая Долина, кремниевая Valley2, DC2 Вашингтон Округ Колумбия, штат Вашингтон, Монреаль, Квебек, Торонто |
 | **Азия** | 2 |Восточная Азия, Юго-Восточная Азия |Гонконг (САР), Куала-Лумпур, Сингапур, Сингапур 2, Тайбэй |
 | **Австралия** | 2 |Восточная Австралия, Юго-Восточная Австралия |Мельбурн, Перт, Сидней | 
@@ -88,6 +88,7 @@ ExpressRoute поддерживается во всех регионах и ра
 | **Денвер** | CoreSite | CoreSite, Megaport, Zayo |
 | **Дубаи** | Etisalat ОАЭ | Etisalat ОАЭ |
 | **Дублин** | Equinix | Colt, eir, Equinix, Interxion, Megaport |
+| **Франкфурт** | Interxion | Interxion |
 | **Гонконг (САР)** | Equinix | Aryaka Networks, British Telecom, China Telecom Global, Equinix, Megaport, NTT Communications, Orange, PCCW Global Limited, Tata Communications, Verizon |
 | **Йоханнесбург** | Teraco | Internet Solutions - Cloud Connect, Liquid Telecom, Teraco |
 | **Куала-Лумпур** | TIME dotCom | TIME dotCom |
@@ -116,7 +117,7 @@ ExpressRoute поддерживается во всех регионах и ра
 | **Сингапур** | Equinix | Aryaka Networks, AT&T NetBond, British Telecom, Epsilon Global Communications, Equinix, InterCloud, Level 3 Communications, Megaport, NTT Communications, Orange, SingTel, Tata Communications, Telstra Corporation, Verizon, Vodafone |
 | **Сингапур 2** | Global Switch | Colt, Epsilon Global Communications, Megaport, SingTel |
 | **Сидней** | Equinix | AARNet, AT&T NetBond, British Telecom, Devoli, Equinix, Kordia, Megaport, NEXTDC, NTT Communications, Optus, Orange, Telstra Corporation, TPG Telecom, Verizon |
-| **Тайбэй** | Chief Telecom | Chief Telecom |
+| **Тайбэй** | Chief Telecom | Руководитель затратами на телекоммуникации, FarEasTone |
 | **Токио** | Equinix | Aryaka Networks, AT&T NetBond, British Telecom, CenturyLink Cloud Connect, Colt, Equinix, Internet Initiative Japan Inc. - IIJ, NTT Communications, NTT EAST, Orange, Softbank, Verizon |
 | **Торонто** | Cologix | AT&T NetBond, Bell Canada, CenturyLink Cloud Connect, Cologix, Equinix, Megaport, Telus, Zayo |
 | **Вашингтон, округ Колумбия** | Equinix | Aryaka Networks, AT&T NetBond, British Telecom, Cologix, Comcast, Coresite, Equinix, Internet2, InterCloud, Level 3 Communications, Megaport, NTT Communications, Orange, PacketFabric, Sprint, Tata Communications, Telia Carrier, Verizon, Zayo |
@@ -134,7 +135,7 @@ ExpressRoute поддерживается во всех регионах и ра
 | **Даллас** |Equinix, Megaport, Verizon |
 | **Нью-Йорк** |Equinix, CenturyLink Cloud Connect, Verizon |
 | **Phoenix** | AT&T NetBond, CenturyLink Cloud Connect |
-| **Сан-Антонио** | Megaport |
+| **Сан-Антонио** | CenturyLink Cloud Connect, Megaport |
 | **Кремниевая долина** | Equinix, Level 3 Communications, Verizon |
 | **Сиэтл;** | Equinix, Megaport |
 | **Вашингтон, округ Колумбия** |AT&T NetBond, Equinix, Level 3 Communications, Megaport, Verizon |

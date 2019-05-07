@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 07/17/2018
+ms.date: 05/06/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cb9333845a78204ea1c6e56e17b3b6f9e5513c9c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 9c254ef3a71e95b33df2a779c728d47fff3c3759
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60358011"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65190373"
 ---
 # <a name="how-to-successfully-roll-out-self-service-password-reset"></a>Как развернуть самостоятельный сброс пароля
 
@@ -32,6 +32,10 @@ ms.locfileid: "60358011"
    * Предоставили ли вы им URL-адреса для регистрации и сброса?
       * Регистрация: https://aka.ms/ssprsetup
       * Сброс: https://aka.ms/sspr
+
+   > [!WARNING]
+   > Использование флажка «Требовать смены пароля при следующем входе в систему» в средств администрирования Active Directory в локальной Active Directory — пользователи и компьютеры или Центр администрирования Active Directory не поддерживается. При изменении пароля в локальной, не устанавливайте этот параметр. 
+
 1. Обучите пользователей.
    * В следующих разделах этого документа приводится пример взаимодействия, описываются порталы для работы с паролями, обеспечение регистрации и заполнение данных для аутентификации.
    * Группа по продуктам Azure Active Directory создала [план пошагового развертывания](https://aka.ms/SSPRDeploymentPlan), который организации могут использовать с другой документацией на этом сайте, чтобы создать бизнес-модель и составить план развертывания функции самостоятельного сброса пароля.

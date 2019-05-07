@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 01/31/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 53297a16889190383e0455c484339adc049c1cb1
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: e399566a67161219e1d778ba1c6f874f7cede251
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64700380"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65190086"
 ---
 # <a name="troubleshoot-azure-file-sync"></a>Устранение неполадок службы синхронизации файлов Azure
 Используйте службу "Синхронизация файлов Azure", чтобы централизованно хранить файловые ресурсы организации в службе файлов Azure, обеспечивая гибкость, производительность и совместимость локального файлового сервера. Это достигается путем преобразования Windows Server в быстрый кэш общего файлового ресурса Azure. Для локального доступа к данным вы можете использовать любой протокол, доступный в Windows Server, в том числе SMB, NFS и FTPS. Кроме того, вы можете создать любое количество кэшей в любом регионе.
@@ -23,8 +23,6 @@ ms.locfileid: "64700380"
 1. [Форум службы хранилища Azure](https://social.msdn.microsoft.com/forums/azure/home?forum=windowsazuredata).
 2. [UserVoice службы файлов Azure](https://feedback.azure.com/forums/217298-storage/category/180670-files).
 3. Служба поддержки Майкрософт. Чтобы создать запрос на поддержку на портале Azure, на вкладке **Справка** нажмите кнопку **Справка и поддержка**, а затем выберите **Новый запрос на поддержку**.
-
-[!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 ## <a name="im-having-an-issue-with-azure-file-sync-on-my-server-sync-cloud-tiering-etc-should-i-remove-and-recreate-my-server-endpoint"></a>У меня возникла проблема со службой "Синхронизация файлов Azure" на сервере (синхронизация, распределение по уровням облака и т. д). Следует ли удалить конечную точку сервера и создать ее заново?
 [!INCLUDE [storage-sync-files-remove-server-endpoint](../../../includes/storage-sync-files-remove-server-endpoint.md)]
@@ -114,18 +112,17 @@ Reset-StorageSyncServer
 Эта проблема может возникнуть в случае сбоя операции управления на конечной точке сервера. Если страница свойств конечной точки сервера не открывается на портале Azure, попробуйте обновить конечную точку сервера, выполнив команды PowerShell с сервера, чтобы устранить эту проблему. 
 
 ```powershell
-Import-Module "C:\Program Files\Azure\StorageSyncAgent\StorageSync.Management.PowerShell.Cmdlets.dll"
 # Get the server endpoint id based on the server endpoint DisplayName property
 Get-AzStorageSyncServerEndpoint `
-    -SubscriptionId mysubguid `
     -ResourceGroupName myrgname `
     -StorageSyncServiceName storagesvcname `
-    -SyncGroupName mysyncgroup
+    -SyncGroupName mysyncgroup | `
+Tee-Object -Variable serverEndpoint
 
 # Update the free space percent policy for the server endpoint
 Set-AzStorageSyncServerEndpoint `
-    -Id serverendpointid `
-    -CloudTiering true `
+    -InputObject $serverEndpoint
+    -CloudTiering `
     -VolumeFreeSpacePercent 60
 ```
 <a id="server-endpoint-noactivity"></a>**Конечная точка сервера находится в состоянии работоспособности "Нет действия" или "Ожидание", а в колонке "Зарегистрированные серверы" для сервера показано состояние "Отображается как "Не в сети"**  
@@ -169,7 +166,7 @@ Set-AzStorageSyncServerEndpoint `
 
 ![Снимок экрана портала Azure](media/storage-sync-files-troubleshoot/portal-sync-health.png)
 
-# <a name="servertabserver"></a>[Сервер](#tab/server)
+# <a name="servertabserver"></a>[Server](#tab/server)
 Перейдите в журналы телеметрии сервера, которые можно найти в средстве "Просмотр событий": `Applications and Services Logs\Microsoft\FileSync\Agent\Telemetry`. Событие 9102 соответствует завершенному сеансу синхронизации. Для получения последнего состояния синхронизации найдите последнее событие с идентификатором 9102. SyncDirection сообщит вам предназначение этого сеанса: передача или загрузка. Если результат HResult равен 0, сеанс синхронизации завершился успешно. Другой результат HResult означает, что во время синхронизации произошла ошибка. Ознакомьтесь со списком распространенных ошибок ниже. Если значение PerItemErrorCount больше 0, это означает, что некоторые файлы или папки не синхронизировались должным образом. Результат HResult может быть равен 0, а результат PerItemErrorCount при этом — больше 0.
 
 Ниже приведен пример успешной отправки. Для краткости ниже перечислены только некоторые из значений, содержащиеся в каждом событии 9102. 
@@ -204,7 +201,7 @@ TransferredFiles: 0, TransferredBytes: 0, FailedToTransferFiles: 0, FailedToTran
 # <a name="portaltabportal1"></a>[Портал](#tab/portal1)
 В своей группе синхронизации перейдите в соответствующую конечную точку сервера и просмотрите раздел "Действие синхронизации" — вы увидите количество отправленных или загруженных файлов в текущем сеансе синхронизации. Обратите внимание, что это состояние будет отложено примерно на 5 минут, и если ваш сеанс синхронизации можно завершить в течение этого периода, об этом может не быть уведомлений на портале. 
 
-# <a name="servertabserver"></a>[Сервер](#tab/server)
+# <a name="servertabserver"></a>[Server](#tab/server)
 Просмотрите последнее событие 9302 в журнале телеметрии на сервере (в средстве "Просмотр событий" перейдите в папку Applications and Services Logs\Microsoft\FileSync\Agent\Telemetry). Это событие указывает состояние текущего сеанса синхронизации. TotalItemCount обозначает количество файлов, которые нужно синхронизировать, AppliedItemCount — количество файлов, которые были синхронизированы к настоящему времени, а PerItemErrorCount — количество файлов, синхронизация которых завершилась сбоем (сведения о том, как исправить эту проблему, см. ниже).
 
 ```
@@ -226,7 +223,7 @@ PerItemErrorCount: 1006.
 - В поле "Действие синхронизации" нет файлов для синхронизации или их очень мало.
 - В поле "Несинхронизирующиеся файлы" для отправки и загрузки стоит значение 0.
 
-# <a name="servertabserver"></a>[Сервер](#tab/server)
+# <a name="servertabserver"></a>[Server](#tab/server)
 Просмотрите завершенные сеансы синхронизации, которые отмечены событиями 9102 в журнале событий телеметрии для каждого сервера (в средстве "Просмотр событий" перейдите в `Applications and Services Logs\Microsoft\FileSync\Agent\Telemetry`). 
 
 1. Вы можете проверить успешное завершение последних сеансов отправки и загрузки на заданном сервере. Для этого проверьте, чтобы для параметров HResult и PerItemErrorCount для отправки и загрузки стояло значение 0 (поле SyncDirection указывает тип заданного сеанса: отправка или загрузка). Обратите внимание, что если вы не видите недавно завершенного сеанса синхронизации, скорее всего, он выполняется в настоящий момент, чего с большой вероятностью можно ожидать, если вы только что добавили или изменили большой объем данных.
@@ -504,9 +501,7 @@ PerItemErrorCount: 1006.
 2. На сервере выполните приведенные ниже команды PowerShell.
 
     ```powershell
-    Import-Module "C:\Program Files\Azure\StorageSyncAgent\StorageSync.Management.PowerShell.Cmdlets.dll"
-    Login-AzStorageSync -SubscriptionID <guid> -TenantID <guid>
-    Reset-AzStorageSyncServerCertificate -SubscriptionId <guid> -ResourceGroupName <string> -StorageSyncServiceName <string>
+    Reset-AzStorageSyncServerCertificate -ResourceGroupName <string> -StorageSyncServiceName <string>
     ```
 
 <a id="-1906441711"></a><a id="-2134375654"></a><a id="doesnt-have-enough-free-space"></a>**Недостаточно места на томе, где расположена конечная точка сервера.**  
@@ -618,26 +613,13 @@ PerItemErrorCount: 1006.
 # <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
 ```powershell
 # Variables for you to populate based on your configuration
-$agentPath = "C:\Program Files\Azure\StorageSyncAgent"
 $region = "<Az_Region>"
 $resourceGroup = "<RG_Name>"
 $syncService = "<storage-sync-service>"
 $syncGroup = "<sync-group>"
 
-# Import the Azure File Sync management cmdlets
-Import-Module "$agentPath\StorageSync.Management.PowerShell.Cmdlets.dll"
-
-# Log into the Azure account and put the returned account information
-# in a reference variable.
-$acctInfo = Connect-AzAccount
-
-# this variable stores your subscription ID 
-# get the subscription ID by logging onto the Azure portal
-$subID = $acctInfo.Context.Subscription.Id
-
-# this variable holds your Azure Active Directory tenant ID
-# use Login-AzAccount to get the ID from that context
-$tenantID = $acctInfo.Context.Tenant.Id
+# Log into the Azure account
+Connect-AzAccount
 
 # Check to ensure Azure File Sync is available in the selected Azure
 # region.
@@ -653,7 +635,7 @@ if ($regions -notcontains $region) {
         " selected Azure Region or the region is mistyped.")
 }
 
-# Check to ensure resource group exists and create it if doesn't
+# Check to ensure resource group exists
 $resourceGroups = [System.String[]]@()
 Get-AzResourceGroup | ForEach-Object { 
     $resourceGroups += $_.ResourceGroupName 
@@ -663,24 +645,15 @@ if ($resourceGroups -notcontains $resourceGroup) {
     throw [System.Exception]::new("The provided resource group $resourceGroup does not exist.")
 }
 
-# the following command creates an AFS context 
-# it enables subsequent AFS cmdlets to be executed with minimal 
-# repetition of parameters or separate authentication 
-Login-AzStorageSync `
-    –SubscriptionId $subID `
-    -ResourceGroupName $resourceGroup `
-    -TenantId $tenantID `
-    -Location $region
-
 # Check to make sure the provided Storage Sync Service
 # exists.
 $syncServices = [System.String[]]@()
 
 Get-AzStorageSyncService -ResourceGroupName $resourceGroup | ForEach-Object {
-    $syncServices += $_.DisplayName
+    $syncServices += $_.StorageSyncServiceName
 }
 
-if ($storageSyncServices -notcontains $syncService) {
+if ($syncServices -notcontains $syncService) {
     throw [System.Exception]::new("The provided Storage Sync Service $syncService does not exist.")
 }
 
@@ -688,7 +661,7 @@ if ($storageSyncServices -notcontains $syncService) {
 $syncGroups = [System.String[]]@()
 
 Get-AzStorageSyncGroup -ResourceGroupName $resourceGroup -StorageSyncServiceName $syncService | ForEach-Object {
-    $syncGroups += $_.DisplayName
+    $syncGroups += $_.SyncGroupName
 }
 
 if ($syncGroups -notcontains $syncGroup) {
@@ -698,16 +671,16 @@ if ($syncGroups -notcontains $syncGroup) {
 # Get reference to cloud endpoint
 $cloudEndpoint = Get-AzStorageSyncCloudEndpoint `
     -ResourceGroupName $resourceGroup `
-    -StorageSyncServiceName $storageSyncService `
+    -StorageSyncServiceName $syncService `
     -SyncGroupName $syncGroup
 
 # Get reference to storage account
-$storageAccount = Get-AzStorageAccount -ResourceGroupName $resourceGroup | Where-Object { 
+$storageAccount = Get-AzStorageAccount | Where-Object { 
     $_.Id -eq $cloudEndpoint.StorageAccountResourceId
 }
 
 if ($storageAccount -eq $null) {
-    Write-Host "The storage account referenced in the cloud endpoint does not exist."
+    throw [System.Exception]::new("The storage account referenced in the cloud endpoint does not exist.")
 }
 ```
 ---
@@ -722,7 +695,7 @@ if ($storageAccount -eq $null) {
 ```powershell
 if ($storageAccount.NetworkRuleSet.DefaultAction -ne 
     [Microsoft.Azure.Commands.Management.Storage.Models.PSNetWorkRuleDefaultActionEnum]::Allow) {
-    Write-Host ("The storage account referenced contains network " + `
+    throw [System.Exception]::new("The storage account referenced contains network " + `
         "rules which are not currently supported by Azure File Sync.")
 }
 ```
@@ -737,12 +710,12 @@ if ($storageAccount.NetworkRuleSet.DefaultAction -ne
 # <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
 ```powershell
 $fileShare = Get-AzStorageShare -Context $storageAccount.Context | Where-Object {
-    $_.Name -eq $cloudEndpoint.StorageAccountShareName -and
+    $_.Name -eq $cloudEndpoint.AzureFileShareName -and
     $_.IsSnapshot -eq $false
 }
 
 if ($fileShare -eq $null) {
-    Write-Host "The Azure file share referenced by the cloud endpoint does not exist"
+    throw [System.Exception]::new("The Azure file share referenced by the cloud endpoint does not exist")
 }
 ```
 ---
@@ -763,22 +736,10 @@ if ($fileShare -eq $null) {
 
 # <a name="powershelltabazure-powershell"></a>[PowerShell](#tab/azure-powershell)
 ```powershell    
-$foundSyncPrincipal = $false
-Get-AzRoleAssignment -Scope $storageAccount.Id | ForEach-Object { 
-    if ($_.DisplayName -eq "Hybrid File Sync Service") {
-        $foundSyncPrincipal = $true
-        if ($_.RoleDefinitionName -ne "Reader and Data Access") {
-            Write-Host ("The storage account has the Azure File Sync " + `
-                "service principal authorized to do something other than access the data " + `
-                "within the referenced Azure file share.")
-        }
+$role = Get-AzRoleAssignment -Scope $storageAccount.Id | Where-Object { $_.DisplayName -eq "Hybrid File Sync Service" }
 
-        break
-    }
-}
-
-if (!$foundSyncPrincipal) {
-    Write-Host ("The storage account does not have the Azure File Sync " + `
+if ($role -eq $null) {
+    throw [System.Exception]::new("The storage account does not have the Azure File Sync " + `
                 "service principal authorized to access the data within the " + ` 
                 "referenced Azure file share.")
 }

@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 10/11/2018
 ms.author: danlep
 ms.custom: include file
-ms.openlocfilehash: 62eb75ef18d3ac81be65783e57c21c0aefd7a429
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: a2729af6a689daa551fc01f585324d53a8770a9b
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57554772"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65072888"
 ---
 | Ресурс | Ограничение по умолчанию |
 | --- | :--- |
@@ -22,7 +22,7 @@ ms.locfileid: "57554772"
 | Максимальное модулей POD на каждом узле: [базовая организация сети][basic-networking] с помощью Kubenet | 110 |
 | Максимальное модулей POD на каждом узле: [Усовершенствованной организации сети] [ advanced-networking] с сетевой интерфейс для контейнера Azure | Развертывание с помощью Azure CLI: 30<sup>1</sup><br />Шаблон Azure Resource Manager: 30<sup>1</sup><br />Развертывание портала: 30 |
 
-<sup>1</sup>при развертывании кластера Azure Kubernetes Service (AKS) с помощью Azure CLI или шаблона Resource Manager, это значение задается до 110 модулей POD на каждом узле. После вы уже развернули кластер службы контейнеров AZURE, или если вы развертываете кластер с помощью портала Azure нельзя настроить максимальное модулей POD на каждом узле.<br />
+<sup>1</sup>при развертывании кластера Azure Kubernetes Service (AKS) с помощью Azure CLI или шаблона Resource Manager, это значение задается до 250 групп контейнеров POD на каждом узле. После вы уже развернули кластер службы контейнеров AZURE, или если вы развертываете кластер с помощью портала Azure нельзя настроить максимальное модулей POD на каждом узле.<br />
 
 <!-- LINKS - Internal -->
 [basic-networking]: ../articles/aks/concepts-network.md#kubenet-basic-networking

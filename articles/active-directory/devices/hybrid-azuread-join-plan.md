@@ -17,12 +17,12 @@ ms.date: 04/10/2019
 ms.author: joflore
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8827a51a23b2ea274d8096a154e630c9cecbba7c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 0d8f1024ba660bc0e879940f20db70d547eea40e
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60352010"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65190487"
 ---
 # <a name="how-to-plan-your-hybrid-azure-active-directory-join-implementation"></a>Практическое руководство. Планирование реализации гибридного присоединения к Azure Active Directory
 
@@ -41,7 +41,7 @@ ms.locfileid: "60352010"
 Предполагается, что вы ознакомлены с [общими сведениями об управлении устройствами в Azure Active Directory](../device-management-introduction.md).
 
 > [!NOTE]
-> Минимальная требуемая работы домена и леса, для соединения гибридная служба Azure AD для Windows 10 — Windows Server 2008 R2. На более ранние версии пользователь может не получить основной токен обновления во время входа в систему Windows из-за проблем LSA.
+> Минимальная требуемая работы домена и леса, для соединения гибридная служба Azure AD для Windows 10 — Windows Server 2008 R2.
 
 ## <a name="plan-your-implementation"></a>Планирование реализации
 
@@ -72,7 +72,7 @@ ms.locfileid: "60352010"
 - Windows 7
 - Windows Server 2012 R2
 - Windows Server 2012
-- Windows Server 2008 R2
+- Windows Server 2008 R2
 
 В качестве первого шага планирования вам следует просмотреть свою среду и определить, нужно ли вам поддерживать устройства Windows нижнего уровня.
 
@@ -121,6 +121,9 @@ FIPS-совместимых доверенных платформенных мо
 
 - сквозную аутентификацию (PTA);
 - синхронизацию хэша паролей (PHS).
+
+> [!NOTE]
+> Azure AD не поддерживает смарт-карт и сертификатов в управляемых доменах.
 
 Начиная с версии 1.1.819.0 Azure AD Connect предоставляет мастер для настройки гибридного присоединения к Azure AD. Этот мастер позволяет значительно упростить настройку. Дополнительные сведения можно найти в разделе 
 

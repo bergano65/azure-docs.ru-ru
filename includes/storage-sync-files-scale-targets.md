@@ -5,19 +5,19 @@ services: storage
 author: wmgries
 ms.service: storage
 ms.topic: include
-ms.date: 07/18/2018
+ms.date: 05/05/2019
 ms.author: wgries
 ms.custom: include file
-ms.openlocfilehash: 19c570be71583a2933a39780ba948edeb9f68498
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.openlocfilehash: b480f9720cabddbba9e9c35c12ca1f8dda7ab5ab
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62129106"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65190035"
 ---
-| Resource | Цель | Строгое ограничение |
+| Ресурс | Цель | Строгое ограничение |
 |----------|--------------|------------|
-| Служб синхронизации службы хранилища на регион | 15 служб синхронизации хранилища | Yes |
+| Служб синхронизации службы хранилища на регион | 20 служб синхронизации хранилища. | Yes |
 | Число групп синхронизации на службу синхронизации хранилища | 100 групп синхронизации | Yes |
 | Число зарегистрированных серверов на службу синхронизации хранилища | 99 серверов | Yes |
 | Облачные конечные точки на группу синхронизации | 1 облачная конечная точка | Yes |

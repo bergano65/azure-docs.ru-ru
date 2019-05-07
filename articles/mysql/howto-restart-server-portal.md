@@ -7,10 +7,10 @@ ms.service: mysql
 ms.topic: conceptual
 ms.date: 2/7/2019
 ms.openlocfilehash: a20030a1dc6cd8b89064731c283f9b462d30ec8f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 05/06/2019
 ms.locfileid: "61422593"
 ---
 # <a name="restart-azure-database-for-mysql-server-using-azure-portal"></a>Перезапуск Базы данных Azure для MySQL с помощью портала Azure
@@ -48,4 +48,4 @@ ms.locfileid: "61422593"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Краткое руководство. по созданию сервера Базы данных Azure для MySQL с помощью портала Azure](./quickstart-create-mysql-server-database-using-azure-portal.md)
+[Краткое руководство по созданию сервера Базы данных Azure для MySQL с помощью портала Azure](./quickstart-create-mysql-server-database-using-azure-portal.md)

@@ -2,18 +2,17 @@
 title: Создание тома "Статический" для нескольких групп контейнеров в Службе Azure Kubernetes (AKS)
 description: Сведения о том, как вручную создавать том с файлами Azure для использования с несколькими параллельными pod в Службе Azure Kubernetes (AKS)
 services: container-service
-author: rockboyfor
+author: iainfoulds
 ms.service: container-service
 ms.topic: article
-origin.date: 03/01/2019
-ms.date: 04/08/2019
-ms.author: v-yeche
+ms.date: 03/01/2019
+ms.author: iainfou
 ms.openlocfilehash: 65e94a271fc8fc72ac74d51af3cf7b717f8410b0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60467176"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65072086"
 ---
 # <a name="manually-create-and-use-a-volume-with-azure-files-share-in-azure-kubernetes-service-aks"></a>Создание вручную и совместное использование тома с файловым ресурсом Azure в службе Azure Kubernetes (AKS)
 
@@ -31,11 +30,11 @@ ms.locfileid: "60467176"
 
 Перед использованием файлов Azure в качестве тома Kubernetes необходимо создать учетную запись хранения Azure и файловый ресурс. Следующие команды создают группу ресурсов с именем *myAKSShare*, учетную запись хранения и общую папку файлов с именем *aksshare*:
 
-```azurecli
+```azurecli-interactive
 # Change these four parameters as needed for your own environment
 AKS_PERS_STORAGE_ACCOUNT_NAME=mystorageaccount$RANDOM
 AKS_PERS_RESOURCE_GROUP=myAKSShare
-AKS_PERS_LOCATION=chinaeast
+AKS_PERS_LOCATION=eastus
 AKS_PERS_SHARE_NAME=aksshare
 
 # Create a resource group
@@ -48,7 +47,7 @@ az storage account create -n $AKS_PERS_STORAGE_ACCOUNT_NAME -g $AKS_PERS_RESOURC
 export AZURE_STORAGE_CONNECTION_STRING=`az storage account show-connection-string -n $AKS_PERS_STORAGE_ACCOUNT_NAME -g $AKS_PERS_RESOURCE_GROUP -o tsv`
 
 # Create the file share
-az storage share create -n $AKS_PERS_SHARE_NAME
+az storage share create -n $AKS_PERS_SHARE_NAME --connection-string $AZURE_STORAGE_CONNECTION_STRING
 
 # Get storage account key
 STORAGE_KEY=$(az storage account keys list --resource-group $AKS_PERS_RESOURCE_GROUP --account-name $AKS_PERS_STORAGE_ACCOUNT_NAME --query "[0].value" -o tsv)
@@ -81,7 +80,7 @@ metadata:
   name: mypod
 spec:
   containers:
-  - image: dockerhub.azk8s.cn/nginx:1.15.5
+  - image: nginx:1.15.5
     name: mypod
     resources:
       requests:
@@ -113,7 +112,7 @@ kubectl apply -f azure-files-pod.yaml
 Containers:
   mypod:
     Container ID:   docker://86d244cfc7c4822401e88f55fd75217d213aa9c3c6a3df169e76e8e25ed28166
-    image:          dockerhub.azk8s.cn/nginx:1.15.5
+    Image:          nginx:1.15.5
     Image ID:       docker-pullable://nginx@sha256:9ad0746d8f2ea6df3a17ba89eca40b48c47066dfab55a75e08e2b70fc80d929e
     State:          Running
       Started:      Sat, 02 Mar 2019 00:05:47 +0000
@@ -186,12 +185,12 @@ spec:
 [kubernetes-security-context]: https://kubernetes.io/docs/tasks/configure-pod-container/security-context/
 
 <!-- LINKS - internal -->
-[az-group-create]: https://docs.azure.cn/zh-cn/cli/group?view=azure-cli-latest#az-group-create
-[az-storage-create]: https://docs.azure.cn/zh-cn/cli/storage/account?view=azure-cli-latest#az-storage-account-create
-[az-storage-key-list]: https://docs.azure.cn/zh-cn/cli/storage/account/keys?view=azure-cli-latest#az-storage-account-keys-list
-[az-storage-share-create]: https://docs.azure.cn/zh-cn/cli/storage/share?view=azure-cli-latest#az-storage-share-create
+[az-group-create]: /cli/azure/group#az-group-create
+[az-storage-create]: /cli/azure/storage/account#az-storage-account-create
+[az-storage-key-list]: /cli/azure/storage/account/keys#az-storage-account-keys-list
+[az-storage-share-create]: /cli/azure/storage/share#az-storage-share-create
 [aks-quickstart-cli]: kubernetes-walkthrough.md
 [aks-quickstart-portal]: kubernetes-walkthrough-portal.md
-[install-azure-cli]: https://docs.azure.cn/zh-cn/cli/install-azure-cli?view=azure-cli-latest
+[install-azure-cli]: /cli/azure/install-azure-cli
 [operator-best-practices-storage]: operator-best-practices-storage.md
 [concepts-storage]: concepts-storage.md

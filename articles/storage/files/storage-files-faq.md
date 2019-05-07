@@ -8,12 +8,12 @@ ms.date: 01/02/2019
 ms.author: rogarana
 ms.subservice: files
 ms.topic: conceptual
-ms.openlocfilehash: 4186af31e17acea09e6b3c1a0121d2fcbe63f800
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: cdffbfd11a0f1c7d99818fa00f550965774b9b31
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64917610"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65190068"
 ---
 # <a name="frequently-asked-questions-faq-about-azure-files"></a>Часто задаваемые вопросы о службе файлов Azure
 [Служба файлов Azure](storage-files-introduction.md) предоставляет полностью управляемые общие файловые ресурсы в облаке, доступ к которым можно получить с помощью стандартного отраслевого [протокола SMB](https://msdn.microsoft.com/library/windows/desktop/aa365233.aspx). Общие ресурсы службы файлов Azure можно одновременно подключить к облачным или локальным развертываниям Windows, Linux и macOS. Вы также можете кэшировать общие файловые ресурсы Azure на компьютерах под управлением Windows Server с помощью функции "Синхронизация файлов Azure", чтобы получить быстрый доступ из расположения, где используются данные.
@@ -145,7 +145,7 @@ ms.locfileid: "64917610"
 
 * <a id="afs-os-support"></a>
   **Могу ли я использовать службу "Синхронизация файлов Azure" с Windows Server 2008 R2, Linux или своим запоминающим устройством, подключаемым к сети (NAS)?**  
-    Сейчас служба синхронизации файлов Azure поддерживает только Windows Server 2016 и Windows Server 2012 R2. В данный момент мы ничего не планируем, но мы с радостью рассмотрим предложения по поводу поддержки дополнительных платформ, проанализировав потребности клиентов. Сообщите нам о платформах, для которых нужно реализовать поддержку, на портале [UserVoice службы файлов Azure](https://feedback.azure.com/forums/217298-storage/category/180670-files).
+    В настоящее время синхронизации файлов Azure поддерживает только Windows Server 2019, Windows Server 2016 и Windows Server 2012 R2. В данный момент мы ничего не планируем, но мы с радостью рассмотрим предложения по поводу поддержки дополнительных платформ, проанализировав потребности клиентов. Сообщите нам о платформах, для которых нужно реализовать поддержку, на портале [UserVoice службы файлов Azure](https://feedback.azure.com/forums/217298-storage/category/180670-files).
 
 * <a id="afs-tiered-files-out-of-endpoint"></a>
   **Почему многоуровневые файлы существуют вне пространства имен конечной точки сервера?**  
@@ -222,7 +222,7 @@ ms.locfileid: "64917610"
 * <a id="encryption-at-rest"></a>
 **Как обеспечить шифрование неактивных данных файлового ресурса Azure?**  
 
-    В разработке включение по умолчанию шифрования службы хранилища Azure во всех регионах. Чтобы включить шифрование в этих регионах, не нужно выполнять никаких действий. Сведения о других регионах см. в статье [Шифрование службы хранилища Azure для неактивных данных (предварительная версия)](../common/storage-service-encryption.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json).
+    Да. Дополнительные сведения см. в разделе [шифрование службы хранилища Azure](../common/storage-service-encryption.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json).
 
 * <a id="access-via-browser"></a>
 **Как предоставить доступ к определенному файлу через браузер?**  
