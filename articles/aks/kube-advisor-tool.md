@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: troubleshooting
 ms.date: 11/05/2018
 ms.author: seanmck
-ms.openlocfilehash: 29f98e334b0d2527b5159e1a5394109c5041024a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 03c5eb2e32a0a8ec51844511276d9efba5651068
+ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60465380"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65073760"
 ---
 # <a name="checking-for-kubernetes-best-practices-in-your-cluster"></a>Проверка применения рекомендаций Kubernetes в кластере
 
@@ -21,6 +21,8 @@ ms.locfileid: "60465380"
 ## <a name="about-kube-advisor"></a>Сведения о kube-advisor
 
 [Средство kube-advisor][kube-advisor-github] представляет собой контейнер, предназначенный для выполнения в кластере. Он запрашивает с сервера API Kubernetes сведения о ваших развертываниях и возвращает набор предложений по оптимизации.
+
+Kube-помощник может отчетов на запросом ресурсов и ограничения, отсутствующие в PodSpecs для Windows-приложений, а также приложений Linux, а само средство kube помощника должно быть назначено на Linux pod. Вы можете запланировать pod для запуска в пуле узлов с определенной операционной системы с помощью [селектор узла] [ k8s-node-selector] в конфигурации pod.
 
 > [!NOTE]
 > Средство kube-advisor поддерживается корпорацией Майкрософт по мере возможности. Проблемы и предложения следует отправлять в GitHub.
@@ -73,3 +75,4 @@ kubectl delete -f https://raw.githubusercontent.com/Azure/kube-advisor/master/sa
 
 [kube-cpumem]: https://github.com/Azure/azure-quickstart-templates
 [kube-advisor-github]: https://github.com/azure/kube-advisor
+[k8s-node-selector]: concepts-clusters-workloads.md#node-selectors

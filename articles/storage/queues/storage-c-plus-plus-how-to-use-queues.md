@@ -1,21 +1,21 @@
 ---
-title: Использование хранилища очередей (C++) | Документация Майкрософт
-description: Узнайте, как использовать службу хранилища очередей в Azure. Примеры написаны на C++.
+title: Как использовать хранилище очередей (C++)-службы хранилища Azure
+description: Сведения об использовании службы хранилища очередей в Azure. Примеры написаны на C++.
 services: storage
-author: cbrooksmsft
+author: mhopkins-msft
 ms.service: storage
-ms.tgt_pltfrm: na
 ms.devlang: cpp
 ms.topic: article
 ms.date: 05/11/2017
-ms.author: cbrooksmsft
+ms.author: mhopkins
+ms.reviewer: cbrooks
 ms.subservice: queues
-ms.openlocfilehash: 08c865e5383e4095a22aa6c10c8b181f916d1d30
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.openlocfilehash: 440033233bbd60421cc3245a04544cd04caec6f4
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62109004"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65153122"
 ---
 # <a name="how-to-use-queue-storage-from-c"></a>Использование хранилища очередей из C++
 [!INCLUDE [storage-selector-queue-include](../../../includes/storage-selector-queue-include.md)]
@@ -83,7 +83,7 @@ const utility::string_t storage_connection_string(U("UseDevelopmentStorage=true;
 azure::storage::cloud_storage_account storage_account = azure::storage::cloud_storage_account::parse(storage_connection_string);
 ```
 
-## <a name="how-to-create-a-queue"></a>Практическое руководство: Создать очередь
+## <a name="how-to-create-a-queue"></a>Практическое руководство: Создание очереди
 Объект **cloud_queue_client** позволяет получать ссылки на очереди. Следующий код создает объект **cloud_queue_client**.
 
 ```cpp

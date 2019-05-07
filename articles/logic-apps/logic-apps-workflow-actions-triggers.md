@@ -8,13 +8,13 @@ ms.author: estfan
 ms.reviewer: klam, LADocs
 ms.suite: integration
 ms.topic: reference
-ms.date: 06/22/2018
-ms.openlocfilehash: 76783ffd91a8ad17fca912ac9c3a66a5f0f15821
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.date: 05/06/2019
+ms.openlocfilehash: 503bd6cfee1c19d2342ec9f535b3945178ab3ea0
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64691931"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65136601"
 ---
 # <a name="reference-for-trigger-and-action-types-in-workflow-definition-language-for-azure-logic-apps"></a>Справочник по типы триггеров и действий на языке определения рабочего процесса для Azure Logic Apps
 
@@ -804,6 +804,8 @@ Azure Logic Apps предоставляет различные типы дейс
 
   * [**Ответ**](#response-action) для реагирования на запросы
 
+  * [**Выполнение кода JavaScript** ](#run-javascript-code) фрагменты кода для выполнения JavaScript
+
   * [**Функция**](#function-action) для вызова службы "Функции Azure"
 
   * Действия обработки данных, такие как [**Соединить**](#join-action), [**Создать**](#compose-action), [**Таблица**](#table-action), [**Выбрать**](#select-action) и другие, которые создают или преобразовывают данные из различных входов
@@ -821,6 +823,7 @@ Azure Logic Apps предоставляет различные типы дейс
 | Тип действия | ОПИСАНИЕ | 
 |-------------|-------------| 
 | [**Создать**](#compose-action) | Создает один выход из входных данных, который может иметь различные типы. | 
+| [**Выполнение кода JavaScript**](#run-javascript-code) | Выполните фрагменты кода JavaScript, которые помещаются в определенных критериев. Требования к коду и Дополнительные сведения см. в разделе [Add и фрагменты кода выполнения со встроенным кодом](../logic-apps/logic-apps-add-run-inline-code.md). |
 | [**Функция**](#function-action) | Вызывает функцию Azure. | 
 | [**HTTP**](#http-action) | Вызывает конечную точку HTTP. | 
 | [**Соединить**](#join-action) | Создает строку из всех элементов в массиве и разделяет эти элементы определенным символом разделителя. | 
@@ -1047,6 +1050,81 @@ Azure Logic Apps предоставляет различные типы дейс
 Результат, который создает это действие.
 
 `"abcdefg1234"`
+
+<a name="run-javascript-code"></a>
+
+### <a name="execute-javascript-code-action"></a>Выполнение действия кода JavaScript
+
+Это действие запускает фрагмент кода JavaScript и возвращает результаты через `Result` токен, который может ссылаться на последующих действиях.
+
+```json
+"Execute_JavaScript_Code": {
+   "type": "JavaScriptCode",
+   "inputs": {
+      "code": "<JavaScript-code-snippet>",
+      "explicitDependencies": {
+         "actions": [ <previous-actions> ],
+         "includeTrigger": true
+      }
+   },
+   "runAfter": {}
+}
+```
+
+*Обязательный*
+
+| Значение | type | ОПИСАНИЕ |
+|-------|------|-------------|
+| <*Фрагмент кода JavaScript*> | Varies | Код JavaScript, который вы хотите запустить. Требования к коду и Дополнительные сведения см. в разделе [Add и фрагменты кода выполнения со встроенным кодом](../logic-apps/logic-apps-add-run-inline-code.md). <p>В `code` атрибут, фрагмент кода можно использовать только для чтения `workflowContext` объекта в качестве входных данных. Этот объект имеет вложенные свойства, которые предоставляют доступ к результатам с триггера и предыдущих действий в рабочем процессе. Дополнительные сведения о `workflowContext` объекта, см. в разделе [ссылки результаты триггера и действия в коде](../logic-apps/logic-apps-add-run-inline-code.md#workflowcontext). |
+||||
+
+*В некоторых случаях требуется*
+
+`explicitDependencies` Атрибут указывает, что вы хотите явно включать результаты из триггера, предыдущих действий или только в качестве зависимости для фрагмента кода. Дополнительные сведения о добавлении этих зависимостей, см. в разделе [добавьте параметры для встроенного кода](../logic-apps/logic-apps-add-run-inline-code.md#add-parameters). 
+
+Для `includeTrigger` атрибут, можно указать `true` или `false` значения.
+
+| Value | type | ОПИСАНИЕ |
+|-------|------|-------------|
+| <*предыдущих действий*> | Массив строк | Массив имен указанное действие. Используйте имена действий, которые появляются в определении рабочего процесса, где имена действий использовать символы подчеркивания (_), пробелы не допускаются (» «). |
+||||
+
+*Пример 1*
+
+Это действие выполняет код, который возвращает имя приложения логики и возвращает текст «Hello world из < logic-app-name >» в результате. В этом примере код ссылается на имя рабочего процесса, обратившись к `workflowContext.workflow.name` свойства с помощью доступной только для чтения `workflowContext` объекта. Дополнительные сведения об использовании `workflowContext` объекта, см. в разделе [ссылки результаты триггера и действия в коде](../logic-apps/logic-apps-add-run-inline-code.md#workflowcontext).
+
+```json
+"Execute_JavaScript_Code": {
+   "type": "JavaScriptCode",
+   "inputs": {
+      "code": "var text = \"Hello world from \" + workflowContext.workflow.name;\r\n\r\nreturn text;"
+   },
+   "runAfter": {}
+}
+```
+
+*Пример 2*
+
+Это действие выполняет код в приложении логики, триггеров, когда новое письмо приходит в учетной записи Office 365 Outlook. Приложение логики также использует действие отправки электронной почты утверждения, который перенаправляет содержимое из полученного сообщения электронной почты вместе с запросом на утверждение. 
+
+Код извлекает адреса электронной почты из триггера `Body` свойства и возвращает эти адреса электронной почты вместе с `SelectedOption` значение свойства из действий по утверждению. Действие явно включает в себя действие отправки электронной почты утверждения как зависимость в `explicitDependencies`  >  `actions` атрибута.
+
+```json
+"Execute_JavaScript_Code": {
+   "type": "JavaScriptCode",
+   "inputs": {
+      "code": "var re = /(([^<>()\\[\\]\\\\.,;:\\s@\"]+(\\.[^<>()\\[\\]\\\\.,;:\\s@\"]+)*)|(\".+\"))@((\\[[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}])|(([a-zA-Z\\-0-9]+\\.)+[a-zA-Z]{2,}))/g;\r\n\r\nvar email = workflowContext.trigger.outputs.body.Body;\r\n\r\nvar reply = workflowContext.actions.Send_approval_email_.outputs.body.SelectedOption;\r\n\r\nreturn email.match(re) + \" - \" + reply;\r\n;",
+      "explicitDependencies": {
+         "actions": [
+            "Send_approval_email_"
+         ]
+      }
+   },
+   "runAfter": {}
+}
+```
+
+
 
 <a name="function-action"></a>
 

@@ -2,19 +2,20 @@
 title: Примеры для службы хранилища Azure с использованием .NET | Документация Майкрософт
 description: Просмотрите, загрузите и запустите образцы кода и приложений для хранилища Azure. Воспользуйтесь примерами для начала работы с большими двоичными объектами, очередями, таблицами и файлами с помощью клиентских библиотек хранилища .NET.
 services: storage
-author: seguler
+author: mhopkins-msft
 ms.service: storage
 ms.devlang: dotnet
 ms.topic: article
 ms.date: 01/12/2017
-ms.author: seguler
+ms.author: mhopkins
+ms.reviewer: seguler
 ms.subservice: common
-ms.openlocfilehash: c4dcb3f42d97624e66258228ce27e130a05cac70
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.openlocfilehash: 3874bf4e4b51354f14c9aa6357ee1c0d9033e545
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62101398"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65142554"
 ---
 # <a name="azure-storage-samples-using-net"></a>Примеры для службы хранилища Azure с использованием .NET
 
@@ -25,7 +26,7 @@ ms.locfileid: "62101398"
 <table style="font-size:90%"><thead><tr><th style="font-size:110%">Конечная точка</th><th style="font-size:110%">Сценарий</th><th style="font-size:110%">Пример кода</th></tr></thead><tbody> 
 <tr> 
 <td rowspan="16"><b>Большой двоичный объект</b></td>
-<td>Добавить BLOB-объект</td> 
+<td>Добавление больших двоичных объектов</td> 
 <td><a href="https://msdn.microsoft.com/library/microsoft.windowsazure.storage.blob.cloudblobcontainer.getappendblobreference.aspx">Пример метода CloudBlobContainer.GetAppendBlobReference</a></td> 
 </tr> 
 <tr> 

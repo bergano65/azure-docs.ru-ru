@@ -9,12 +9,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 04/29/2019
 ms.author: jingwang
-ms.openlocfilehash: f117e02a063b93b8b1badbd9868f78da95c3c671
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 6af5c8cdad00802052f08be844f77d36420da3c9
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64925139"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65142374"
 ---
 # <a name="supported-file-formats-and-compression-codecs-in-azure-data-factory"></a>Поддерживаемые форматы файлов и кодеки сжатия в фабрике данных Azure
 
@@ -412,7 +412,7 @@ ms.locfileid: "64925139"
 ## <a name="parquet-format"></a>Формат Parquet
 
 >[!NOTE]
->Фабрика данных появился новый формат набора данных Parquet, см. в разделе [формат Parquet](format-delimited-text.md) статье с подробными сведениями. Следующие конфигурации на основе набора данных хранилища данных на основе файла по-прежнему поддерживается в качестве-предназначен для обратной compabitility. Рекомендуется использовать новую модель, в дальнейшем.
+>Фабрика данных появился новый формат набора данных Parquet, см. в разделе [формат Parquet](format-parquet.md) статье с подробными сведениями. Следующие конфигурации на основе набора данных хранилища данных на основе файла по-прежнему поддерживается в качестве-предназначен для обратной compabitility. Рекомендуется использовать новую модель, в дальнейшем.
 
 Если требуется проанализировать файлы Parquet или записать данные в формате Parquet, установите для свойства `format` `type` значение **ParquetFormat**. Вам не нужно указывать какие-либо свойства в подразделе Format раздела typeProperties. Пример:
 
