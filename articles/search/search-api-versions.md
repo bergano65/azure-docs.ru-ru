@@ -9,12 +9,12 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: brjohnst
-ms.openlocfilehash: f361417f25579b0ca605b33bafa4a581f68b1798
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: 21374e20a2ba2c9134ed12e4b1072ff5c320c75e
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65024396"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65149778"
 ---
 # <a name="api-versions-in-azure-search"></a>Версии API в службе поиска Azure
 Служба поиска Azure развертывает обновления компонентов на регулярной основе. Иногда (но не всегда) для сохранения обратной совместимости для этих обновлений требуется новая версия API. Публикация новой версии позволяет вам выбирать, когда и как интегрировать обновления службы поиска в код.
@@ -32,8 +32,8 @@ ms.locfileid: "65024396"
 
 | Интерфейсы | Последняя основная версия | Status |
 | --- | --- | --- |
-| [ПАКЕТ SDK .NET](https://aka.ms/search-sdk) |9.0 |Общедоступная версия, выпущенная мая 2019 г. Содержимое находится по-прежнему в стадии разработки.  |
-| [Предварительная версия пакета SDK для .NET](https://aka.ms/search-sdk-preview) |8.0.0-Preview |Предварительная версия, выпущенная апреля 2019 г. Содержимое находится по-прежнему в стадии разработки.|
+| [ПАКЕТ SDK .NET](https://aka.ms/search-sdk) |9.0 |Общедоступная версия, выпущенная мая 2019 г. |
+| [Предварительная версия пакета SDK для .NET](https://aka.ms/search-sdk-preview) |8.0.0-Preview |Предварительная версия, выпущенная апреля 2019 г. |
 | [API REST службы](https://docs.microsoft.com/rest/api/searchservice/) |2019-05-06 |Общедоступная версия |
 | [API 2019 REST службы-05-06-Preview](search-api-preview.md) |2019-05-06-preview |Предварительный просмотр |
 | [Пакет SDK управления для .NET](https://aka.ms/search-mgmt-sdk) |3.0 |Общедоступная версия |
@@ -57,6 +57,6 @@ ms.locfileid: "65024396"
 
 По этим причинам мы не рекомендуем включать в рабочие коды зависимости от предварительных версий. Если вы пользуетесь более ранней предварительной версией, рекомендуем вам перейти на общедоступную версию (GA).
 
-Пакет SDK для .NET. Инструкции по переносу кода см. в статье [Обновление пакета SDK службы поиска Azure для .NET до версии 3](search-dotnet-sdk-migration.md).
+Пакет SDK для .NET. Инструкции по переносу кода см. в статье [Обновление пакета SDK службы поиска Azure для .NET до версии 3](search-dotnet-sdk-migration-version-9.md).
 
 Общая доступность означает, что служба поиска Azure подчиняется соглашению об уровне обслуживания (SLA). Соглашение об уровне обслуживания для службы поиска Azure см. в [этой статье](https://azure.microsoft.com/support/legal/sla/search/v1_0/).

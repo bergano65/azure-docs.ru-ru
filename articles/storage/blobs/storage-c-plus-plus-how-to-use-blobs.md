@@ -2,18 +2,19 @@
 title: Как использовать хранилище BLOB-объектов из С++ в Azure | Документация Майкрософт
 description: Хранение неструктурированных данных в облаке в хранилище BLOB-объектов Azure.
 services: storage
-author: MichaelHauss
+author: mhopkins-msft
 ms.service: storage
 ms.topic: conceptual
 ms.date: 03/21/2018
-ms.author: michaelhauss
+ms.author: mhopkins
+ms.reviewer: seguler
 ms.subservice: blobs
-ms.openlocfilehash: d86b2c71515900405b0e7714d2c36cd8e4cbc7fc
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.openlocfilehash: 519190b6aeb313f25eddd717bce1a72148c8c518
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62122614"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65148446"
 ---
 # <a name="how-to-use-blob-storage-from-c"></a>Использование хранилища BLOB-объектов из C++
 
@@ -82,7 +83,7 @@ azure::storage::cloud_storage_account storage_account = azure::storage::cloud_st
 azure::storage::cloud_blob_client blob_client = storage_account.create_cloud_blob_client();  
 ```
 
-## <a name="how-to-create-a-container"></a>Практическое руководство: Создать контейнер
+## <a name="how-to-create-a-container"></a>Практическое руководство: Создание контейнера
 [!INCLUDE [storage-container-naming-rules-include](../../../includes/storage-container-naming-rules-include.md)]
 
 В этом примере показано, как создать контейнер:  

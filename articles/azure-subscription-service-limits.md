@@ -10,12 +10,12 @@ ms.service: billing
 ms.topic: article
 ms.date: 04/19/2019
 ms.author: byvinyal
-ms.openlocfilehash: ae6547b7940ee4007c747847e6cec7b0c67a9d3c
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 8d7fa7bbb501675ee38ccc9183e981ce7bb714cf
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64717441"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65150353"
 ---
 # <a name="azure-subscription-and-service-limits-quotas-and-constraints"></a>Подписка Azure, границы, квоты и ограничения службы
 В этом документе указаны некоторые из наиболее распространенных ограничений Microsoft Azure, которые иногда называются квотами. Этот документ на текущий момент охватывает не все службы Azure. Со временем список будет расширен и обновлен, чтобы охватить больше служб.
@@ -123,6 +123,13 @@ ms.locfileid: "64717441"
 При использовании Azure Resource Manager и групп ресурсов Azure, применяются следующие ограничения. Не указаны ограничения, которые не были изменены с помощью Azure Resource Manager. См. в предыдущей таблице эти ограничения.
 
 [!INCLUDE [azure-virtual-machines-limits-azure-resource-manager](../includes/azure-virtual-machines-limits-azure-resource-manager.md)]
+
+#### <a name="shared-image-gallery-limits"></a>Общие ограничения коллекции образов
+
+Существуют ограничения на одну подписку, для развертывания ресурсов с помощью Shared галерей изображений:
+- 10 коллекций общих образов на одну подписку на один регион;
+- 200 определений образов на одну подписку на один регион;
+- 2000 версий образов на одну подписку на один регион.
 
 ### <a name="virtual-machine-scale-sets-limits"></a>Ограничения наборов масштабирования виртуальных машин
 [!INCLUDE [virtual-machine-scale-sets-limits](../includes/azure-virtual-machine-scale-sets-limits.md)]

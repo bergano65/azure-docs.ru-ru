@@ -10,13 +10,13 @@ ms.service: dms
 ms.workload: data-services
 ms.custom: mvc, tutorial
 ms.topic: article
-ms.date: 04/03/2019
-ms.openlocfilehash: 01a64345285149a50c226ebb344982425a813156
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.date: 05/01/2019
+ms.openlocfilehash: 862592ed142da0c2f7bf753716fe6604da9a8fb0
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59995087"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65153322"
 ---
 # <a name="tutorial-migrate-mongodb-to-azure-cosmos-dbs-api-for-mongodb-offline-using-dms"></a>Руководство по Миграция MongoDB в API Azure Cosmos DB для MongoDB в автономном режиме с помощью DMS
 С помощью Azure Database Migration Service можно выполнять автономную (однократную) миграцию баз данных из локального или облачного экземпляра MongoDB в API Azure Cosmos DB для MongoDB.
@@ -84,9 +84,7 @@ ms.locfileid: "59995087"
 
     Дополнительные сведения о ценовых категориях и затратах см. на [странице с описанием цен](https://aka.ms/dms-pricing).
 
-    Если вам нужна помощь в выборе подходящей категории Azure Database Migration Service, прочтите рекомендации в [этой записи блога](https://go.microsoft.com/fwlink/?linkid=861067).  
-
-     ![Настройка параметров экземпляра Database Migration Service](media/tutorial-mongodb-to-cosmosdb/dms-settings2.png)
+    ![Настройка параметров экземпляра Database Migration Service](media/tutorial-mongodb-to-cosmosdb/dms-settings2.png)
 
 7.  Выберите **Создать**, чтобы создать службу.
 
@@ -179,7 +177,7 @@ ms.locfileid: "59995087"
 
 ## <a name="post-migration-optimization"></a>Оптимизация после миграции
 
-Для управвления перенесенными данными, хранящихся в базе данных MongoDB, в API Azure Cosmos DB для MongoDB, можно подключиться к Azure Cosmos DB. После миграции можно также выполнить другие шаги, включая оптимизацию политики индексирования, обновление уровня согласованности по умолчанию и настройку глобального распределения для вашей учетной записи Azure Cosmos DB. См. подробнее об [оптимизации после миграции](../cosmos-db/mongodb-post-migration.md). 
+Для управления данными, перенесенными из базы данных MongoDB в API Azure Cosmos DB для MongoDB, можно подключиться к Azure Cosmos DB. После переноса можно также выполнить другие шаги, включая оптимизацию политики индексирования, обновление уровня согласованности по умолчанию и настройку глобального распределения для своей учетной записи Azure Cosmos DB. Узнайте больше об [оптимизации после переноса](../cosmos-db/mongodb-post-migration.md). 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 

@@ -1,6 +1,6 @@
 ---
 title: Завершение проверки доступа для ролей Azure AD в PIM — Azure Active Directory | Документация Майкрософт
-description: Узнайте, как завершить проверку доступа для ролей Azure AD в Azure AD Privileged Identity Management (PIM) и просмотр результатов
+description: Узнайте, как завершение проверки доступа для ролей Azure AD в Azure AD Privileged Identity Management (PIM) и просмотр результатов
 services: active-directory
 documentationcenter: ''
 author: rolyon
@@ -14,14 +14,14 @@ ms.date: 06/06/2017
 ms.author: rolyon
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ed53c8bb3cb735822fc40aab86ca40bef7b9607a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: decba8f46432891a44a2b231890da4214bd5b1bb
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60288312"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65140994"
 ---
-# <a name="complete-an-access-review-for-azure-ad-roles-in-pim"></a>Завершение проверки доступа для ролей Azure AD в PIM
+# <a name="complete-an-access-review-of-azure-ad-roles-in-pim"></a>Завершение проверки доступа для ролей Azure AD в PIM
 После [запуска проверки доступа](pim-how-to-start-security-review.md) администраторы привилегированных ролей могут проверить привилегированный доступ. Azure Active Directory (Azure AD) Privileged Identity Management (PIM) автоматически отправляет сообщение электронной почты, запрашивает у пользователя выполнить проверку доступа. Если пользователь не получил электронное письмо, ему можно отправить [инструкции по выполнению проверки доступа](pim-how-to-perform-security-review.md).
 
 После окончания периода проверки доступа или после завершения всеми пользователями самостоятельной проверки выполните шаги, описанные в этой статье, для управления проверкой и просмотра результатов.
@@ -44,7 +44,7 @@ ms.locfileid: "60288312"
 ### <a name="apply"></a>Применить
 После того, как проверка доступа завершается из-за достижения даты окончания или из-за остановки вручную, реализовать результат проверки можно с помощью кнопки **Применить** . Если в процессе проверки пользователю было отказано в доступе, то этот шаг приведет к удалению назначенной пользователю роли.  
 
-### <a name="export"></a>экспорт.
+### <a name="export"></a>Экспортировать
 Если вы хотите применить результаты проверки доступа вручную, можно экспортировать проверку. При нажатии кнопки **Экспорт** будет скачан CSV-файл. Открыть этот файл можно в Excel или в других программах, поддерживающих CSV-файлы.
 
 ### <a name="delete"></a>Delete (Удалить)

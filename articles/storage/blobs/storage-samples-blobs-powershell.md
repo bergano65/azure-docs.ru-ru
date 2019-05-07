@@ -2,18 +2,18 @@
 title: Примеры Azure PowerShell для хранилища BLOB-объектов Azure | Документы Майкрософт
 description: Примеры Azure PowerShell для работы с хранилищем BLOB-объектов Azure
 services: storage
-author: tamram
+author: mhopkins-msft
 ms.service: storage
 ms.topic: sample
 ms.date: 11/07/2017
-ms.author: tamram
+ms.author: mhopkins
 ms.subservice: blobs
-ms.openlocfilehash: c155cc6844b4730b6e3627f7e3239f583c7b7957
-ms.sourcegitcommit: 898b2936e3d6d3a8366cfcccc0fccfdb0fc781b4
+ms.openlocfilehash: 4d1ddc551277991ae4e6ace1017a314f80321431
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55250931"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65150818"
 ---
 # <a name="azure-powershell-samples-for-azure-blob-storage"></a>Примеры Azure PowerShell для хранилища BLOB-объектов Azure
 

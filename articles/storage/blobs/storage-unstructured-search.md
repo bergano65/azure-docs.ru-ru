@@ -1,6 +1,6 @@
 ---
 title: Руководство по Поиск неструктурированных данных в хранилище BLOB-объектов Azure
-description: Руководство. Поиск неструктурированных данных в хранилище BLOB-объектов Azure с помощью службы поиска Azure.
+description: Руководство по Поиск неструктурированных данных в хранилище BLOB-объектов Azure с помощью службы поиска Azure.
 author: roygara
 services: storage
 ms.service: storage
@@ -8,14 +8,14 @@ ms.topic: tutorial
 ms.date: 12/13/2018
 ms.author: rogarana
 ms.custom: mvc
-ms.openlocfilehash: acf01788a1ac8ed8ca476941c402801abfbd8adf
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 8c11d2e6d9a902707d3fd98f09d3474a5d2a5f64
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58011304"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65150793"
 ---
-# <a name="tutorial-search-unstructured-data-in-cloud-storage"></a>Руководство. Поиск неструктурированных данных в облачном хранилище
+# <a name="tutorial-search-unstructured-data-in-cloud-storage"></a>Руководство по Поиск неструктурированных данных в облачном хранилище
 
 Из этого руководства вы узнаете, как выполнять поиск неструктурированных данных с помощью службы [Поиск Azure](../../search/search-what-is-azure-search.md), используя данные из хранилища BLOB-объектов Azure. Неструктурированные данные — это данные, не упорядоченные по заранее определенным показателям, или данные, для которых не используется модель данных. Например, TXT-файл.
 

@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 07/26/2018
 ms.author: wolfma
-ms.openlocfilehash: bf0916f197ff5bf1a9531fde98fe8cefc8d7727f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: fc03db268ab05c6718fb323bc30574a36d0ca092
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61460309"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65138157"
 ---
 # <a name="support-and-help-options"></a>Возможности получения поддержки и справки
 
@@ -64,13 +64,14 @@ Stack Overflow — это идеальное место для вопросов
 
 Если вы не нашли решение своей проблемы с помощью функции поиска, отправьте вопрос на сайт Stack Overflow. При формулировании вопроса используйте один из следующих тегов:
 
-|Компонент или область  |Теги  |
+|Компонент или область  |Tags  |
 |---------|---------|
 |Распознавание речи |[[microsoft-cognitive+speech-to-text]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+speech-to-text)|
 |Синтез речи |[[microsoft-cognitive+text-to-speech]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+text-to-speech)|
 |Перевод речи |[[microsoft-cognitive+translation]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+translation)|
 |Намерения говорящего |[[microsoft-cognitive+luis]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+luis)|
 |Общий пакет SDK для службы "Речь" |[[microsoft-cognitive+microsoft-speech-api]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+microsoft-speech-api)|
+| Виртуальные помощники Voice-first (Предварительная версия) | [[microsoft-cognitive + виртуального-помощника + botframework]](https://stackoverflow.com/questions/tagged/microsoft-cognitive+virtual-assistant+botframework) | 
 
 > [!TIP]
 > Указанные ниже публикации на Stack Overflow содержат советы о том, как формулировать вопросы и добавлять исходный код. Следуйте этим рекомендациям, чтобы повысить вероятность того, что участники сообщества быстро отреагируют на ваш вопрос:  

@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.date: 02/28/2019
 ms.author: glenga
 ms.custom: ''
-ms.openlocfilehash: cc99bc4345c388f22e72957590f3917a85e214e0
-ms.sourcegitcommit: 8b41b86841456deea26b0941e8ae3fcdb2d5c1e1
+ms.openlocfilehash: f7fa1d58c21ea0ed457cc5987d7823fad68d554f
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57339817"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65153817"
 ---
 # <a name="create-a-function-app-on-linux-in-an-azure-app-service-plan"></a>Создание приложения-функции на платформе Linux в плане службы приложений Azure
 
@@ -62,9 +62,6 @@ ms.locfileid: "57339817"
     ![Определение параметров нового приложения-функции](./media/create-function-app-linux-app-service-plan/function-app-create-notification.png)
 
 5. Выберите **Перейти к ресурсу** для просмотра нового приложения-функции.
-
-> [!TIP]
-> Если при поиске приложений-функций на портале возникают трудности, попробуйте [добавить приложения-функции в избранное на портале Azure](functions-how-to-use-azure-function-app-settings.md#favorite).
 
 Затем создайте функцию в новом приложении-функции. Даже в том случае, если ваше приложение-функция доступно,полная инициализация может занять несколько минут.
 

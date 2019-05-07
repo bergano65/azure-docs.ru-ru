@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 05/07/2019
 ms.author: diberry
-ms.openlocfilehash: e000c034d10efc652f328fa8d1db8d1902fac693
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: 2adcbad55236917685ddcdbabe4809f36ab5a730
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65026121"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65153052"
 ---
 # <a name="install-and-run-speech-service-containers"></a>Установка и запуск контейнеров службы распознавания речи
 
@@ -107,7 +107,7 @@ grep -q avx2 /proc/cpuinfo && echo AVX2 supported || echo No AVX2 support detect
 
 В следующей таблице перечислены поддерживаемые языковые стандарты для **речи в текст** в 1.1.1 версии контейнера:
 
-|Языковой стандарт|Теги|
+|Языковой стандарт|Tags|
 |--|--|
 |Китайский|`zh-cn`|
 |Английский |`en-us`<br>`en-gb`<br>`en-au`<br>`en-in`|
@@ -136,7 +136,7 @@ grep -q avx2 /proc/cpuinfo && echo AVX2 supported || echo No AVX2 support detect
 
 В следующей таблице перечислены поддерживаемые языковые стандарты для **преобразования текста в речь** в 1.1.0 версии контейнера:
 
-|Языковой стандарт|Теги|Поддерживаемые голоса|
+|Языковой стандарт|Tags|Поддерживаемые голоса|
 |--|--|--|
 |Китайский|`zh-cn`|huihuirus<br>kangkang apollo<br>yaoyao apollo|
 |Английский |`en-au`|catherine<br>hayleyrus|
@@ -178,7 +178,7 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-text-to-spe
 
 Воспользуйтесь командой [docker run](https://docs.docker.com/engine/reference/commandline/run/) для запуска любого из трех контейнеров. В команде используются следующие параметры:
 
-**Во время закрытой предварительной версии**, выставления счетов параметров должен быть допустимым для запуска контейнера, но вы не будете платить за использование.
+**На этапе предварительной версии**, выставления счетов параметров должен быть допустимым для запуска контейнера, но не будет выставлен счет за использование.
 
 | Placeholder | Value |
 |-------------|-------|
@@ -226,7 +226,7 @@ ApiKey={BILLING_KEY}
 
 ### <a name="speech-to-text"></a>Преобразование речи в текст.
 
-Контейнер предоставляет конечную точку запросов websocket API, который можно открыть с помощью [документации по пакету SDK службы распознавания речи](https://docs.microsoft.com/azure/cognitive-services/speech-service/).
+Контейнер предоставляет конечную точку запросов websocket API, который можно открыть с помощью [Speech SDK](index.yml).
 
 По умолчанию Speech SDK использует службы online речи. Чтобы использовать контейнер, необходимо изменить метод инициализации. См. в приведенных ниже примерах.
 

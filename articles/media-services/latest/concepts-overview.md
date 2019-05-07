@@ -12,12 +12,12 @@ ms.topic: article
 ms.date: 04/21/2019
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: feba7d53f196f6675aca965218046df67bbef81d
-ms.sourcegitcommit: e7d4881105ef17e6f10e8e11043a31262cfcf3b7
+ms.openlocfilehash: 8a4ffdc09cb12f7a16173c86bd3d0e3aee78d46d
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64867064"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65152648"
 ---
 # <a name="media-services-concepts"></a>Основные понятия служб мультимедиа
 
@@ -134,7 +134,7 @@ ms.locfileid: "64867064"
 
 - [Общие сведения о Проигрывателе мультимедиа Azure](use-azure-media-player.md)
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="ask-questions-give-feedback-get-updates"></a>Задавайте вопросы, отзыв, получить обновления
 
 Прочитайте статью [сообщества Служб мультимедиа Azure](media-services-community.md), чтобы узнать, как задавать вопросы, оставлять отзывы и получать новости о Службах мультимедиа.
 

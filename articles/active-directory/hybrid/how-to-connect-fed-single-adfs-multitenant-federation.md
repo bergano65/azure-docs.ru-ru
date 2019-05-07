@@ -1,5 +1,5 @@
 ---
-title: Федерация нескольких экземпляров Azure AD с одним экземпляром AD FS | Документация Майкрософт
+title: Федерация нескольких Azure AD с одним экземпляром AD FS - Azure
 description: Из этого документа вы узнаете, как создать федерацию нескольких экземпляров Azure AD с одним экземпляром AD FS.
 keywords: федерация, ADFS, AD FS, несколько клиентов, один клиент AD FS, один экземпляр ADFS, федерация нескольких клиентов, федерация ADFS с несколькими лесами, AAD Сonnect, федерация, федерация между клиентами
 services: active-directory
@@ -17,12 +17,12 @@ ms.date: 07/17/2017
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 620255896e02319675928396c3d6e5e0d9865c0c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 9122e3a7af2230dc0f68e72b28891d488b01a80a
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60244400"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65137830"
 ---
 # <a name="federate-multiple-instances-of-azure-ad-with-single-instance-of-ad-fs"></a>Федерация нескольких экземпляров Azure AD с одним экземпляром AD FS
 

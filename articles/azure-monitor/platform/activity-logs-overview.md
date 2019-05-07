@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 05/30/2018
 ms.author: johnkem
 ms.subservice: logs
-ms.openlocfilehash: be2f5fdebc5ae4f779fe6e3da74ad7ea583226ef
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.openlocfilehash: d9583f232a7afd6ab64421d57bbf14a45299e374
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59995665"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65138203"
 ---
 # <a name="monitor-subscription-activity-with-the-azure-activity-log"></a>Мониторинг действий подписки с помощью журнала действий Azure
 
@@ -63,6 +63,7 @@ ms.locfileid: "59995665"
 * Анализ журнала в Power BI с помощью [ **пакет содержимого Power BI**](https://powerbi.microsoft.com/documentation/powerbi-content-pack-azure-audit-logs/).
 * [Сохранение журнала в **учетную запись хранения** для архивации или проверки вручную](../../azure-monitor/platform/archive-activity-log.md). В **профиле журнала** можно задать время хранения (в днях).
 * Обращение к журналу с помощью командлетов PowerShell, интерфейса командной строки или REST API.
+* Представление [журнал изменений](#view-change-history) для определенных событий
 
 ## <a name="query-the-activity-log-in-the-azure-portal"></a>Запрос журнала действий на портале Azure
 
@@ -183,6 +184,20 @@ az monitor log-profiles create --name <profile name> \
 ```azurecli
 az monitor log-profiles delete --name <profile name>
 ```
+
+## <a name="view-change-history"></a>Просмотр журнала изменений
+
+При просмотре журнала действий, может помочь определить, что изменения произошло во время этого времени событий. Можно просмотреть эти сведения с помощью журнала изменений.
+
+Перейдите к журналу действий с помощью меню в левой части портала. Выберите событие из журнала действий, которые вы хотите найти более подробно ознакомиться. Выберите **журнал (Предварительная версия) изменений** вкладку для просмотра любого изменения связанный с событием.
+
+![Изменить список журнала для события](./media/activity-logs-overview/change-history-event.png)
+
+Если любые изменения, связанные с событием, вы увидите список изменений, которые можно выбрать. Это открывает **журнал (Предварительная версия) изменений** страницы. На этой странице появится изменения ресурса. Как видно из следующего примера, мы не только увидеть, что виртуальная машина изменены размеры, но был предыдущий размер виртуальной Машины перед изменением, и он был изменен на.
+
+![Страница «Журнал» изменение, отображение различий](./media/activity-logs-overview/change-history-event-details.png)
+
+Дополнительные сведения о журнале изменений, см. в разделе [получить изменения ресурсов](../../governance/resource-graph/how-to/get-resource-changes.md).
 
 ## <a name="next-steps"></a>Следующие шаги
 

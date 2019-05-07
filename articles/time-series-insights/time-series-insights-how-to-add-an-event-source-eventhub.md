@@ -9,14 +9,14 @@ manager: cshankar
 ms.reviewer: v-mamcge, jasonh, kfile, anshan
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 11/30/2018
+ms.date: 05/01/2019
 ms.custom: seodec18
-ms.openlocfilehash: f2b307f662c0c9b94edc6bb8eb3ca299f5ad4620
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 41d3e72d978a210c2d68365ade5d8cb42c24aad5
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64702637"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65147602"
 ---
 # <a name="add-an-event-hub-event-source-to-your-time-series-insights-environment"></a>Добавление источника событий концентратора событий в среду "Аналитика временных рядов Azure"
 
@@ -27,9 +27,9 @@ ms.locfileid: "64702637"
 
 ## <a name="prerequisites"></a>Технические условия
 
-- Создайте среду "Аналитика временных рядов". Дополнительные сведения см. в статье [Руководство. Настройка среды "Аналитика временных рядов Azure" (предварительная версия)](./time-series-insights-update-create-environment.md).
-- Создайте концентратор событий. Дополнительные сведения о Центрах событий см. в статье [Краткое руководство. Создание концентратора событий с помощью портала Azure](../event-hubs/event-hubs-create.md).
-- В концентратор событий должны отправляться активные события сообщений. Дополнительные сведения см. в статье [Отправка событий в Центры событий Azure с помощью платформы .NET Framework](../event-hubs/event-hubs-dotnet-framework-getstarted-send.md).
+- Создание среды Time Series Insights, как описано в разделе [создание среды Azure Time Series Insights](./time-series-insights-update-create-environment.md).
+- Создайте концентратор событий. См. в разделе [создать пространство имен концентраторов событий и концентратора событий с помощью портала Azure](../event-hubs/event-hubs-create.md).
+- В концентратор событий должны отправляться активные события сообщений. Узнайте, как [отправки событий в концентраторы событий Azure с помощью .NET Framework](../event-hubs/event-hubs-dotnet-framework-getstarted-send.md).
 - Создайте выделенную группу объектов-получателей в концентраторе событий для среды "Аналитика временных рядов". Каждый источник событий Аналитики временных рядов должен иметь собственную выделенную группу объектов-получателей, не используемую другими объектами-получателями. Если несколько модулей чтения используют события из одной группы потребителей, как правило, во всех модулях могут произойти сбои. У каждого концентратора событий должно быть не более 20 групп объектов-получателей. Дополнительные сведения см. в статье [Руководство по программированию Центров событий](../event-hubs/event-hubs-programming-guide.md).
 
 ### <a name="add-a-consumer-group-to-your-event-hub"></a>Добавление группы объектов-получателей в концентратор событий
@@ -42,7 +42,7 @@ ms.locfileid: "64702637"
 
 1. В разделе **Сущности** щелкните **Группы потребителей**, а затем выберите **группу объектов-получателей**.
 
-   ![Концентратор событий — добавление группы объектов-получателей](media/time-series-insights-how-to-add-an-event-source-eventhub/5-event-hub-consumer-group.png)
+   [![Концентратор событий — Добавление группы потребителей](media/time-series-insights-how-to-add-an-event-source-eventhub/5-event-hub-consumer-group.png)](media/time-series-insights-how-to-add-an-event-source-eventhub/5-event-hub-consumer-group.png#lightbox)
 
 1. На странице **Группы потребителей** введите новое уникальное значение для параметра **Имя**.  Используйте это же имя при создании источника событий в среде "Аналитика временных рядов Azure".
 
@@ -56,7 +56,7 @@ ms.locfileid: "64702637"
 
 1. В разделе **Топология окружения** выберите **Источники событий**, а затем щелкните **Добавить**.
 
-   ![Нажмите кнопку "Добавить" в разделе "Источники событий"](media/time-series-insights-how-to-add-an-event-source-eventhub/1-event-sources.png)
+   [![В разделе источников событий и выберите «Добавить»](media/time-series-insights-how-to-add-an-event-source-eventhub/1-event-sources.png)](media/time-series-insights-how-to-add-an-event-source-eventhub/1-event-sources.png#lightbox)
 
 1. Введите значение для параметра **Имя источника событий**, уникальное для этой среды "Аналитика временных рядов", например **event-stream**.
 
@@ -66,11 +66,11 @@ ms.locfileid: "64702637"
    - Выберите **Использовать концентратор событий из доступных подписок**, если в одной из подписок уже есть концентратор событий. Этот вариант — самый простой подход.
    - Выберите **Ввести параметры концентратора событий вручную**, если концентратор событий находится за пределами подписок или требуется выбрать дополнительные параметры.
 
-   ![Введите значения для первых трех параметров в области нового источника событий](media/time-series-insights-how-to-add-an-event-source-eventhub/2-import-option.png)
+   [![В области нового источника событий введите значения для первых трех аргументов](media/time-series-insights-how-to-add-an-event-source-eventhub/2-import-option.png)](media/time-series-insights-how-to-add-an-event-source-eventhub/2-import-option.png#lightbox)
 
 1. Если выбран параметр **Использовать концентратор событий из доступных подписок**, см. описание каждого из обязательных свойств в следующей таблице:
 
-   ![Сведения о подписке и концентраторе событий](media/time-series-insights-how-to-add-an-event-source-eventhub/3-new-event-source.png)
+   [![Сведения о концентраторе подписок и событий](media/time-series-insights-how-to-add-an-event-source-eventhub/3-new-event-source.png)](media/time-series-insights-how-to-add-an-event-source-eventhub/3-new-event-source.png#lightbox)
 
    | Свойство | ОПИСАНИЕ |
    | --- | --- |
@@ -101,7 +101,7 @@ ms.locfileid: "64702637"
 
 1. Нажмите кнопку **Создать**.
 
-   ![Нажмите кнопку "Создать"](media/time-series-insights-how-to-add-an-event-source-eventhub/4-create-button.png)
+   [![Выбор создания](media/time-series-insights-how-to-add-an-event-source-eventhub/4-create-button.png)](media/time-series-insights-how-to-add-an-event-source-eventhub/4-create-button.png#lightbox)
 
    После создания источника событий Аналитика временных рядов автоматически запустит потоковую передачу данных в среду.
 
