@@ -17,12 +17,12 @@ ms.date: 04/11/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b6d3d98c91b2a373e4ed8b1ae556d402cb29d0dd
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.openlocfilehash: 2c9600c20349627c1da2bdf4f1bbc2f3d7a55549
+ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59520767"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65067777"
 ---
 # <a name="quickstart-acquire-a-token-and-call-microsoft-graph-api-from-a-windows-desktop-app"></a>Краткое руководство. Получение маркера безопасности и вызов API Microsoft Graph из классического приложения Windows
 
@@ -51,13 +51,14 @@ ms.locfileid: "59520767"
 >
 > 1. Войдите на [портал Azure](https://portal.azure.com) с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
 > 1. Если учетная запись предоставляет доступ нескольким клиентам, выберите свою учетную запись в правом верхнем углу и нужный клиент Azure AD для этого сеанса портала.
-> 1. Перейдите на страницу [Регистрация приложений](https://go.microsoft.com/fwlink/?linkid=2083908) Платформы удостоверений Майкрософт для разработчиков.
+> 1. Перейдите на страницу [Регистрация приложений](https://aka.ms/MobileAppReg) Платформы удостоверений Майкрософт для разработчиков.
 > 1. Выберите **Новая регистрация**.
 >      - В разделе **Имя** введите понятное имя приложения, которое будет отображаться пользователям приложения, например `Win-App-calling-MsGraph`.
 >      - В разделе **Поддерживаемые типы учетных записей** выберите **Accounts in any organizational directory and personal Microsoft accounts (for example, Skype, Xbox, Outlook.com)** (Учетные записи в любом каталоге организации и личные учетные записи Майкрософт (например, Skype, Xbox, Outlook.com)).
 >      - Выберите **Зарегистрировать**, чтобы создать приложение.
 > 1. В списке страниц приложения выберите **Проверка подлинности**.
-> 1. В разделе **URI перенаправления** найдите **предлагаемые URI перенаправления для общедоступных клиентов (мобильные устройства, компьютеры)** и выберите **"urn:ietf:wg:oauth:2.0:oob**.
+> 1. Разверните раздел **Desktop + devices** (Настольный компьютер и устройства).  (Если раздел **Desktop + devices** (Настольный компьютер и устройства) не отображается, сначала щелкните верхний баннер, чтобы просмотреть краткие сведения об аутентификации)
+> 1. В разделе **URI перенаправления** выберите **Добавить URI**.  Введите **urn:ietf:wg:oauth:2.0:oob**.
 > 1. Щелкните **Сохранить**.
 
 > [!div class="sxs-lookup" renderon="portal"]
