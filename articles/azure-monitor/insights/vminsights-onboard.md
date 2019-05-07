@@ -11,14 +11,14 @@ ms.service: azure-monitor
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 03/13/2019
+ms.date: 04/30/2019
 ms.author: magoedte
-ms.openlocfilehash: 1a4bfae22477e345176971bd40b0afa91c8867fb
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: bdabef4001b5f43095e4f127d6203c6ec2c48e40
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60401567"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65137894"
 ---
 # <a name="deploy-azure-monitor-for-vms-preview"></a>Развертывание Azure Monitor для виртуальных машин (предварительная версия)
 
@@ -80,7 +80,7 @@ Azure Monitor для виртуальных машин поддерживает 
 |Windows Server 2016 | X | X | X |
 |Windows Server 2012 R2 | X | X | |
 |Windows Server 2012 | X | X | |
-|Windows Server 2008 R2 | X | X| |
+|Windows Server 2008 R2 | X | X| |
 |Red Hat Enterprise Linux (RHEL) 6, 7| X | X| X |
 |Ubuntu 14.04, 16.04, 18.04 | X | X | X |
 |CentOS Linux 6, 7 | X | X | X |
@@ -158,8 +158,8 @@ Dependency Agent можно скачать из следующего распо�
 
 | Файл | ОС | Version (версия) | SHA-256 |
 |:--|:--|:--|:--|
-| [InstallDependencyAgent-Windows.exe](https://aka.ms/dependencyagentwindows) |  Windows | 9.7.4 | A111B92AB6CF28EB68B696C60FE51F980BFDFF78C36A900575E17083972989E0 |
-| [InstallDependencyAgent-Linux64.bin](https://aka.ms/dependencyagentlinux) | Linux | 9.7.4 | AB58F3DB8B1C3DEE7512690E5A65F1DFC41B43831543B5C040FCCE8390F2282C |
+| [InstallDependencyAgent-Windows.exe](https://aka.ms/dependencyagentwindows) |  Windows | 9.8.1 | 622C99924385CBF539988D759BCFDC9146BB157E7D577C997CDD2674E27E08DD |
+| [InstallDependencyAgent-Linux64.bin](https://aka.ms/dependencyagentlinux) | Linux | 9.8.1 | 3037934A5D3FB7911D5840A9744AE9F980F87F620A7F7B407F05E276FE7AE4A8 |
 
 ## <a name="role-based-access-control"></a>Контроль доступа на основе ролей
 Чтобы включить функции Azure Monitor для виртуальных машин и получить к ним доступ, нужно назначить следующие роли доступа:
@@ -622,7 +622,7 @@ Dependency Agent устанавливается на серверах Linux с �
 
 Файлы для Dependency Agent размещаются в следующих каталогах:
 
-| Файлы | Location |
+| Файлы | Расположение |
 |:--|:--|
 | Основные файлы | /opt/microsoft/dependency-agent |
 | Файлы журналов | /var/opt/microsoft/dependency-agent/log |
@@ -712,12 +712,12 @@ Dependency Agent устанавливается на серверах Linux с �
 
 1. Сохраните этот файл в локальную папку, присвоив ему имя *installsolutionsforvminsights.json*.
 
-1. Измените значения параметров *WorkspaceName*, *ResourceGroupName* и *WorkspaceLocation*. Значение *WorkspaceName* — это полный идентификатор ресурса рабочей области Log Analytics, включая имя рабочей области. Значение *WorkspaceLocation* — регион, в котором определена рабочая область.
+1. Соберите значения параметров *WorkspaceName*, *ResourceGroupName* и *WorkspaceLocation*. Значение для *WorkspaceName* — это имя рабочей области Log Analytics. Значение *WorkspaceLocation* — регион, в котором определена рабочая область.
 
 1. Теперь все готово для развертывания этого шаблона с помощью следующей команды PowerShell:
 
     ```powershell
-    New-AzResourceGroupDeployment -Name DeploySolutions -TemplateFile InstallSolutionsForVMInsights.json -ResourceGroupName ResourceGroupName> -WorkspaceName <WorkspaceName> -WorkspaceLocation <WorkspaceLocation - example: eastus>
+    New-AzResourceGroupDeployment -Name DeploySolutions -TemplateFile InstallSolutionsForVMInsights.json -ResourceGroupName <ResourceGroupName> -WorkspaceName <WorkspaceName> -WorkspaceLocation <WorkspaceLocation - example: eastus>
     ```
 
     Изменение конфигурации может занять несколько минут. После настройки появится сообщение, похожее на приведенное ниже, с таким результатом:

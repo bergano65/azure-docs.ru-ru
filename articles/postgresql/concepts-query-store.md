@@ -1,21 +1,21 @@
 ---
-title: Хранилище запросов в базе данных Azure для PostgreSQL
-description: В этой статье описан компонент "Хранилище запросов" в службе "База данных Azure для PostgreSQL".
+title: 'Query Store в базе данных Azure для PostgreSQL: один сервер'
+description: 'В этой статье описывается функция Store запросов в базе данных Azure для PostgreSQL: один сервер.'
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 03/26/2019
-ms.openlocfilehash: c904b6e6cd7a4dc0f9d5a442e20738e43595b369
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 5/6/2019
+ms.openlocfilehash: b622de3e21d26676bb11d81a6facf8fea18cabc1
+ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60564010"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65067185"
 ---
 # <a name="monitor-performance-with-the-query-store"></a>Мониторинг производительности с помощью хранилища запросов
 
-**Область применения** База данных Azure для PostgreSQL 9.6 и 10
+**Область применения** База данных Azure для PostgreSQL — один сервер 9.6 и 10
 
 Компонент "Хранилище запросов" в базе данных Azure для PostgreSQL позволяет отслеживать производительность запросов с течением времени. Хранилище запросов упрощает устранение неполадок, позволяя быстро выявлять самые медленные и ресурсоемкие запросы. Хранилище запросов автоматически ведет журнал запросов и статистики выполнения и сохраняет их для просмотра. Этот компонент разделяет данные по периодам, давая представление о закономерностях использования баз данных. Данные для всех пользователей, баз данных и запросов хранятся в базе данных с именем **azure_sys** в экземпляре базы данных Azure для PostgreSQL.
 

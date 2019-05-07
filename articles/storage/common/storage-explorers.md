@@ -2,18 +2,19 @@
 title: Инструменты для работы со службой хранилища Azure | Документация Майкрософт
 description: Список инструментов, позволяющих просматривать данные в службе хранилища Azure и взаимодействовать с ними.
 services: storage
-author: dineshmurthy
+author: tamram
 ms.service: storage
 ms.topic: article
 ms.date: 09/06/2017
-ms.author: dineshmurthy
+ms.author: tamram
+ms.reviewer: dineshm
 ms.subservice: common
-ms.openlocfilehash: ae6ceee33aa6d96c360782c33232e0c7561cf209
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: d7debbc760e103046ce9bb1a8bdf25a954d9891c
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61483117"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65138558"
 ---
 # <a name="azure-storage-client-tools"></a>Клиентские инструменты службы хранилища Azure
 Пользователям службы хранилища Azure часто требуется просматривать свои данные или взаимодействовать с ними с помощью клиентского инструмента службы хранилища Azure. В приведенных ниже таблицах перечислен ряд инструментов, которые позволяют это сделать. Соответствующее поле содержит "X", если инструмент позволяет перечислить абстракцию данных и (или) предоставить к ней доступ. В таблице также показано, являются ли инструменты бесплатными. "Пробная версия" означает, что доступна бесплатная пробная версия, но полная версия продукта платная. "Да/нет" указывает, что есть как платная, так и бесплатная версии.
@@ -27,7 +28,7 @@ ms.locfileid: "61483117"
     <th rowspan="2">Клиентский инструмент службы хранилища Azure</th>
     <th rowspan="2">Блочный BLOB-объект</th>
     <th rowspan="2">Страничный BLOB-объект</th>
-    <th rowspan="2">Добавить BLOB-объект</th>
+    <th rowspan="2">Добавление больших двоичных объектов</th>
     <th rowspan="2">Таблицы</th>
     <th rowspan="2">Очереди</th>
     <th rowspan="2">Файлы</th>
@@ -93,7 +94,7 @@ ms.locfileid: "61483117"
     <th rowspan="2">Клиентский инструмент службы хранилища Azure</th>
     <th rowspan="2">Блочный BLOB-объект</th>
     <th rowspan="2">Страничный BLOB-объект</th>
-    <th rowspan="2">Добавить BLOB-объект</th>
+    <th rowspan="2">Добавление больших двоичных объектов</th>
     <th rowspan="2">Таблицы</th>
     <th rowspan="2">Очереди</th>
     <th rowspan="2">Файлы</th>

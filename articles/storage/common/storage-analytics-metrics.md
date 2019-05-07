@@ -2,18 +2,19 @@
 title: Метрики аналитики хранилища Azure (Классическая модель)
 description: Узнайте, как использовать метрики в хранилище Azure.
 services: storage
-author: fhryo-msft
+author: normesta
 ms.service: storage
 ms.topic: article
 ms.date: 03/11/2019
-ms.author: fryu
+ms.author: normesta
+ms.reviewer: fryu
 ms.subservice: common
-ms.openlocfilehash: c15242b0c480e2da39897b850ab7b2a2fd05bf11
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: f0dfed10190685c1d51822b8bec2b3c80cea7bb2
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61483525"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65153942"
 ---
 # <a name="azure-storage-analytics-metrics-classic"></a>Метрики аналитики хранилища Azure (Классическая модель)
 
@@ -85,7 +86,7 @@ ms.locfileid: "61483525"
 * **ServiceType**, возможное значение — **BLOB-объектов**, **очереди**, **таблицы**, и **файл**.
 * **MetricsType**, возможные значения: **час** и **минуту**.  
 * **MetricsLevel**, возможными значениями являются:
-* **Нет** — Отключает мониторинг.
+* **Нет**. Отключает мониторинг.
 * **Служба**: Сбор метрик, таких как исходящие и входящие данные, доступность, задержка и процент успешных операций, который агрегируется для больших двоичных объектов, очередей, таблиц и файловых служб.
 * **ServiceAndApi**: Помимо метрик служба собирает тот же набор метрик для каждой операции с хранилищем в API службы хранилища Azure.
 

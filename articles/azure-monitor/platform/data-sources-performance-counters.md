@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/28/2018
 ms.author: magoedte
-ms.openlocfilehash: 93f47529e3be44ff1db4e089bdcdca3eb1b4dea3
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 76f4061af816c59e644db99913193ed6fcf24d18
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61363526"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65205753"
 ---
 # <a name="windows-and-linux-performance-data-sources-in-azure-monitor"></a>Источники данных о производительности Windows и Linux в Azure Monitor
 Счетчики производительности в Windows и Linux позволяют получить представление о производительности компонентов оборудования, операционных систем и приложений.  Azure Monitor может собирать счетчики производительности с высокой частотой для анализа данных практически в режиме реального времени, а также данные о производительности для более долгосрочного анализа и формирования отчетов.
@@ -32,7 +32,7 @@ ms.locfileid: "61363526"
 
 Для каждого счетчика производительности Windows можно выбрать конкретный экземпляр. В случае счетчиков производительности Linux экземпляр выбранного счетчика применяется ко всем дочерним счетчикам родительского счетчика. В следующей таблице представлены распространенные экземпляры для счетчиков производительности Linux и Windows.
 
-| Имя экземпляра | Описание |
+| Имя экземпляра | ОПИСАНИЕ |
 | --- | --- |
 | \_Total |Общее количество всех экземпляров |
 | \* |Все экземпляры |
@@ -80,7 +80,7 @@ ms.locfileid: "61363526"
 
 В следующей таблице описаны параметры, используемые в этом элементе.
 
-| Параметры | Описание |
+| Параметры | ОПИСАНИЕ |
 |:--|:--|
 | object\_name | Имя объекта в коллекции. |
 | instance\_regex |  *Регулярное выражение*, определяющее экземпляры, которые следует собирать. Значение `.*` указывает все экземпляры. Для сбора метрик процессора только для экземпляра \_Total можно указать `_Total`. Для сбора метрик обработки только для экземпляра crond или sshd можно указать `(crond\|sshd)`. |
@@ -96,10 +96,10 @@ ms.locfileid: "61363526"
 | Логический диск | Процент свободного места |
 | Логический диск | Процент используемых индексных дескрипторов |
 | Логический диск | Процент используемого места |
-| Логический диск | Скорость чтения с диска (байт/с) |
+| Логический диск | Скорость чтения с диска (байт/с)  |
 | Логический диск | Операций чтения с диска в секунду  |
 | Логический диск | Обращений к диску в секунду |
-| Логический диск | Скорость записи (байт/с) |
+| Логический диск |  Скорость записи на диск (байт/с) |
 | Логический диск |  Операций записи на диск в секунду |
 | Логический диск | Свободно мегабайт |
 | Логический диск | Скорость обмена с логическим диском (байт/с) |
@@ -126,10 +126,10 @@ ms.locfileid: "61363526"
 | Физический диск | Среднее время обращения к диску (с) |
 | Физический диск | Среднее время записи на диск (с) |
 | Физический диск | Скорость обмена с физическим диском (байт/с) |
-| Процесс | Процент времени работы в привилегированном режиме |
-| Процесс | Процент времени пользователя |
-| Процесс | Используемая память в КБ |
-| Процесс | Виртуальная общая память |
+| Process | Процент времени работы в привилегированном режиме |
+| Process | Процент времени пользователя |
+| Process | Используемая память в КБ |
+| Process | Виртуальная общая память |
 | Процессор | Процент времени DPC |
 | Процессор | Процент времени простоя |
 | Процессор | Процент времени прерывания |
@@ -206,15 +206,15 @@ ms.locfileid: "61363526"
 ## <a name="log-queries-with-performance-records"></a>Запросы по журналам с записями о производительности
 Ниже приведены различные примеры запросов по журналу, которые извлекают записи о производительности.
 
-| Запрос | Описание |
+| Запрос | ОПИСАНИЕ |
 |:--- |:--- |
 | Perf |Все данные о производительности. |
 | Perf &#124; where Computer == "MyComputer" |Все данные о производительности с определенного компьютера |
 | Perf &#124; where CounterName == "Current Disk Queue Length" |Все данные о производительности с определенного счетчика |
-| Perf &#124; where ObjectName == "Processor" and CounterName == "% Processor Time" and InstanceName == "_Total" &#124; summarize AVGCPU = avg(Average) by Computer |Средний объем использования ЦП на всех компьютерах |
-| Perf &#124; where CounterName == "% Processor Time" &#124; summarize AggregatedValue = max(Max) by Computer |Максимальный объем использования ЦП на всех компьютерах |
-| Perf &#124; where ObjectName == "LogicalDisk" and CounterName == "Current Disk Queue Length" and Computer == "MyComputerName" &#124; summarize AggregatedValue = avg(Average) by InstanceName |Средняя длина текущей дисковой очереди по всем экземплярам заданного компьютера |
-| Perf &#124; where CounterName == "DiskTransfers/sec" &#124; summarize AggregatedValue = percentile(Average, 95) by Computer |95-й процентиль для обращений к диску/с на всех компьютерах |
+| Perf &#124; где ObjectName == «Processor» and CounterName == «% Processor Time» и InstanceName == «_Total» &#124; суммировать AVGCPU = avg(CounterValue) by компьютера |Средний объем использования ЦП на всех компьютерах |
+| Perf &#124; where CounterName == «% Processor Time» &#124; summarize AggregatedValue = max(CounterValue) по компьютерам |Максимальный объем использования ЦП на всех компьютерах |
+| Perf &#124; где ObjectName == «LogicalDisk» and CounterName == «Текущая длина очереди диска» и компьютер == «MyComputerName» &#124; summarize AggregatedValue = avg(CounterValue) by имя_экземпляра |Средняя длина текущей дисковой очереди по всем экземплярам заданного компьютера |
+| Perf &#124; where CounterName == «Обращений к диску/с» &#124; summarize AggregatedValue = процентиль (CounterValue, 95), по компьютерам |95-й процентиль для обращений к диску/с на всех компьютерах |
 | Perf &#124; where CounterName == "% Processor Time" and InstanceName == "_Total" &#124; summarize AggregatedValue = avg(CounterValue) by bin(TimeGenerated, 1h), Computer |Средняя почасовая нагрузка на ЦП по всем компьютерам |
 | Perf &#124; where Computer == "MyComputer" and CounterName startswith_cs "%" and InstanceName == "_Total" &#124; summarize AggregatedValue = percentile(CounterValue, 70) by bin(TimeGenerated, 1h), CounterName | Почасовые 70-е процентили по каждому процентному счетчику для конкретного компьютера |
 | Perf &#124; where CounterName == "% Processor Time" and InstanceName == "_Total" and Computer == "MyComputer" &#124; summarize ["min(CounterValue)"] = min(CounterValue), ["avg(CounterValue)"] = avg(CounterValue), ["percentile75(CounterValue)"] = percentile(CounterValue, 75), ["max(CounterValue)"] = max(CounterValue) by bin(TimeGenerated, 1h), Computer |Почасовые средние, минимальные, максимальные значения и 75-е процентили по загрузке ЦП для конкретного компьютера |

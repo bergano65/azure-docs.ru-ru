@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/03/2019
 ms.author: cephalin
-ms.openlocfilehash: 544ef8947f3a593071cabea018c722db96ab1475
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: d62632d6c28ac137095307e95dbbdab7e8573bbc
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59266211"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65137883"
 ---
 # <a name="set-up-staging-environments-in-azure-app-service"></a>Настройка промежуточных сред в службе приложений Azure
 <a name="Overview"></a>
@@ -265,6 +265,8 @@ ms.locfileid: "59266211"
 ```
 <webappname>.azurewebsites.net/?x-ms-routing-name=staging
 ```
+
+По умолчанию новый слотов, получают правила маршрутизации из `0%`, которые отображаются серым цветом. Явно установив это значение в `0%` (показано черным шрифтом), пользователи смогут работать промежуточный слот вручную с помощью `x-ms-routing-name` параметр запроса, но они не будут направляться в слоте автоматически так, как процент маршрутизации имеет значение 0. Это расширенный сценарий, где можно «скрыть» промежуточного слота из общедоступной предоставляя внутренних групп проверить изменения в слоте.
 
 <a name="Delete"></a>
 

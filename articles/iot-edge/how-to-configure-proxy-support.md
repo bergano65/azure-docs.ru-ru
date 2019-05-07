@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: 4fa5402b87eea969a5a4093000dda06d3cb5675d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 883f6022f3d0f609de2d8f33b0285d8c40b7bee9
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61216270"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65142126"
 ---
 # <a name="configure-an-iot-edge-device-to-communicate-through-a-proxy-server"></a>Настройка устройства IoT Edge для обмена данными через прокси-сервер
 
@@ -43,22 +43,28 @@ URL-адрес прокси-сервера имеет такой формат: *
 
 При установке среды выполнения IoT Edge на устройстве Linux настройте в диспетчере пакетов прохождение через прокси-сервер для доступа к пакету установки. Например, [настройте apt-get для использования прокси-сервера HTTP](https://help.ubuntu.com/community/AptGet/Howto/#Setting_up_apt-get_to_use_a_http-proxy). Настроив диспетчер пакетов, следуйте инструкциям в статье [Установка среды выполнения Azure IoT Edge в Linux (ARM32v7/armhf)](how-to-install-iot-edge-linux-arm.md) или [Установка среды выполнения Azure IoT Edge в Linux (x64)](how-to-install-iot-edge-linux.md) как обычно.
 
-Если вы устанавливаете среду выполнения IoT Edge на устройстве Windows, необходимо дважды проходить через прокси-сервера. Первое соединение — чтобы скачать файл скрипта установщика, а второе — во время установки, чтобы скачать необходимые компоненты. Сведения о прокси-сервере можно настроить в параметрах Windows или включить непосредственно в сценарий установки. Следующий сценарий PowerShell является примером установки в Windows с использованием аргумента `-proxy`:
+Если вы устанавливаете среду выполнения IoT Edge на устройстве Windows, необходимо дважды проходить через прокси-сервера. Первое соединение — чтобы скачать файл скрипта установщика, а второе — во время установки, чтобы скачать необходимые компоненты. Можно настроить сведения прокси-сервера в параметрах Windows, или включить сведениями о прокси непосредственно в командах PowerShell. Ниже приведен пример установки windows с помощью `-proxy` аргумент:
 
-```powershell
-. {Invoke-WebRequest -proxy <proxy URL> -useb aka.ms/iotedge-win} | Invoke-Expression; `
-Install-SecurityDaemon -Manual -ContainerOs Windows -proxy <proxy URL>
-```
+1. Команда Invoke-WebRequest требуются данные прокси-сервера для доступа к скрипта установки. Затем команда IoTEdge развернуть потребуются данные прокси-сервера следует загружать файлы установки. 
 
-Если для прокси-сервера применяются сложные учетные данные, которые невозможно добавить в URL-адрес, используйте параметр `-ProxyCredential` в `-InvokeWebRequestParameters`. Например,
+   ```powershell
+   . {Invoke-WebRequest -proxy <proxy URL> -useb aka.ms/iotedge-win} | Invoke-Expression; Deploy-IoTEdge -proxy <proxy URL>
+   ```
+
+2. Команда IoTEdge инициализации не проходят через прокси-сервера, поэтому второй этап требуется только данные прокси-сервера для Invoke-WebRequest.
+
+   ```powershell
+   . {Invoke-WebRequest -proxy <proxy URL> -useb aka.ms/iotedge-win} | Invoke-Expression; Initialize-IoTEdge
+
+If you have complicated credentials for the proxy server that can't be included in the URL, use the `-ProxyCredential` parameter within `-InvokeWebRequestParameters`. For example,
 
 ```powershell
 $proxyCredential = (Get-Credential).GetNetworkCredential()
 . {Invoke-WebRequest -proxy <proxy URL> -ProxyCredential $proxyCredential -useb aka.ms/iotedge-win} | Invoke-Expression; `
-Install-SecurityDaemon -Manual -ContainerOs Windows -InvokeWebRequestParameters @{ '-Proxy' = '<proxy URL>'; '-ProxyCredential' = $proxyCredential }
+Deploy-IoTEdge -InvokeWebRequestParameters @{ '-Proxy' = '<proxy URL>'; '-ProxyCredential' = $proxyCredential }
 ```
 
-Дополнительные сведения о параметрах прокси-сервера см. в статье [Invoke-WebRequest](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest). Дополнительные сведения о параметрах установки см. в статье [Install the Azure IoT Edge runtime on Windows](how-to-install-iot-edge-windows.md) (Установка среды выполнения Azure IoT Edge в Windows).
+Дополнительные сведения о параметрах прокси-сервера см. в статье [Invoke-WebRequest](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest). Дополнительные сведения о параметрах установки Windows см. в разделе [среды выполнения Azure IoT Edge, установить на Windows](how-to-install-iot-edge-windows.md).
 
 После установки среды выполнения IoT Edge используйте следующий раздел, чтобы настроить для нее сведения о прокси-сервере. 
 

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 04/29/2019
 ms.author: jingwang
-ms.openlocfilehash: 543defc622942f4a0643aca275ad4ad2fa9e1ab2
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 231f44612b5e87afdf84f31d86c80be644fb4484
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64926531"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65154327"
 ---
 # <a name="copy-data-to-or-from-azure-sql-database-by-using-azure-data-factory"></a>Копирование данных в базу данных Azure SQL и из нее с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you use:"]
@@ -228,7 +228,7 @@ ms.locfileid: "64926531"
 
 Полный список разделов и свойств, доступных для определения наборов данных, см. в статье о [наборах данных](https://docs.microsoft.com/azure/data-factory/concepts-datasets-linked-services). Этот раздел содержит список свойств, поддерживаемых набором данных базы данных SQL Azure.
 
-Чтобы скопировать данные в базу данных SQL Azure или из нее, задайте для свойства **type** набора данных значение **AzureSqlTable**. Поддерживаются следующие свойства:
+Чтобы скопировать данные из или в базу данных SQL Azure, поддерживаются следующие свойства:
 
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
@@ -247,6 +247,7 @@ ms.locfileid: "64926531"
             "referenceName": "<Azure SQL Database linked service name>",
             "type": "LinkedServiceReference"
         },
+        "schema": [ < physical schema, optional, retrievable during authoring > ],
         "typeProperties": {
             "tableName": "MyTable"
         }
@@ -368,7 +369,7 @@ GO
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | type | Свойство **type** приемника действия копирования должно иметь значение **SqlSink**. | Yes |
-| writeBatchSize | Количество строк для вставки в таблицу SQL **в пакете**.<br/> Допустимое значение: **целое число** (количество строк). | № Значение по умолчанию — 10000. |
+| writeBatchSize | Количество строк для вставки в таблицу SQL **в пакете**.<br/> Допустимое значение: **целое число** (количество строк). По умолчанию фабрика данных динамически определяет размер соответствующего пакета, в зависимости от размера строки. | Нет  |
 | writeBatchTimeout | Время ожидания до выполнения операции пакетной вставки, пока не закончится срок ее действия.<br/> Допустимое значение — **timespan**. Пример: "00:30:00" (30 минут). | Нет  |
 | preCopyScript | Укажите SQL-запрос для действия копирования, выполняемый перед записью данных в базу данных SQL Azure. Он вызывается однократно при каждом запуске копирования. Это свойство используется для очистки предварительно загруженных данных. | Нет  |
 | sqlWriterStoredProcedureName | Имя хранимой процедуры, в которой определяется, как применить исходные данные в целевой таблице. Например, можно определить выполнение операций upsert или преобразований с помощью вашей собственной бизнес-логики. <br/><br/>Эта хранимая процедура будет **вызываться для каждого пакета**. Для операций, которые выполняются только один раз и не имеют ничего общего с исходными данными, используйте свойство `preCopyScript`. Примеры операций: delete и truncate. | Нет  |

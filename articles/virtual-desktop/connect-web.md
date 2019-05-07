@@ -1,20 +1,20 @@
 ---
-title: Подключение с помощью веб-клиента Апробация виртуального рабочего стола Windows - Azure
-description: Как подключиться к веб-клиента Windows виртуального рабочего стола предварительной версии HTML5.
+title: Подключение к Апробация виртуального рабочего стола Windows, в веб-браузере - Azure
+description: Сведения о подключении к предварительной версии Windows виртуального рабочего стола в веб-браузере.
 services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: how-to
-ms.date: 03/21/2019
+ms.date: 04/12/2019
 ms.author: helohr
-ms.openlocfilehash: 231dc2b777ce7fa37f445215863a55e93562e411
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 9696f3c32f8b903257e337191a5ce32645bfd198
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60328873"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65142450"
 ---
-# <a name="connect-with-the-web-client"></a>Подключение к веб-клиенту
+# <a name="connect-from-a-web-browser"></a>Подключение из веб-браузер
 
 Веб-клиента позволяет получить доступ к ресурсам Апробация виртуального рабочего стола Windows в веб-браузере без длительных установку.
 

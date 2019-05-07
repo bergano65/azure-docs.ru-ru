@@ -4,6 +4,8 @@
   items:
     - name: Сведения о Центрах уведомлений
       href: notification-hubs-push-notification-overview.md
+    - name: Интеграция с мобильными приложениями службы приложений
+      href: notification-hubs-app-service.md
 - name: Быстрое начало работы
   items:
     - name: Создание центра уведомлений на портале Azure
