@@ -62,10 +62,10 @@ ms.locfileid: "60786379"
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | type | Свойству type необходимо задать значение **Db2** | Да |
-| сервер |Имя сервера DB2. Вы можете указать номер порта следом за именем сервера, разделив их двоеточием, например `server:port`. |Да |
+| server |Имя сервера DB2. Вы можете указать номер порта следом за именем сервера, разделив их двоеточием, например `server:port`. |Да |
 | database |Имя базы данных DB2. |Да |
 | authenticationType |Тип проверки подлинности, используемый для подключения к базе данных DB2.<br/>Допустимое значение: **Базовый** |Да |
-| имя пользователя |Укажите имя пользователя для подключения к базе данных DB2. |Да |
+| username |Укажите имя пользователя для подключения к базе данных DB2. |Да |
 | password |Введите пароль для учетной записи пользователя, указанной для выбранного имени пользователя. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). |Yes |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Вы можете использовать локальную среду выполнения интеграции или среду выполнения интеграции Azure (если хранилище данных является общедоступным). Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. |Нет |
 
@@ -175,10 +175,10 @@ ms.locfileid: "60786379"
 |:--- |:--- |
 | BigInt |Int64 |
 | Binary |Byte[] |
-| BLOB-объекты |Byte[] |
+| Blob |Byte[] |
 | Char |String |
 | Clob |String |
-| Дата |DateTime |
+| Date |Datetime |
 | DB2DynArray |String |
 | DbClob |String |
 | Decimal |Decimal |
@@ -186,14 +186,14 @@ ms.locfileid: "60786379"
 | Double |Double |
 | Float |Double |
 | Graphic |String |
-| Целое число  |Int32 |
+| Integer |Int32 |
 | LongVarBinary |Byte[] |
 | LongVarChar |String |
 | LongVarGraphic |String |
 | Numeric |Decimal |
 | Real |Single |
 | SmallInt |Int16 |
-| Время |TimeSpan |
+| Time |TimeSpan |
 | Timestamp |DateTime |
 | VarBinary |Byte[] |
 | VarChar |String |
