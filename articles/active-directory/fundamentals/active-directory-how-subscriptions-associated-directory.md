@@ -13,12 +13,12 @@ ms.author: lizross
 ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 06b6fdf7a3d21a6b7dc84c4347824d4eaeac046f
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 7f37c501bb53b3b73c30d02d00d49515f907e4ae
+ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64918411"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65463627"
 ---
 # <a name="associate-or-add-an-azure-subscription-to-your-azure-active-directory-tenant"></a>Связывание или добавление подписки Azure в клиент Azure Active Directory
 
@@ -64,8 +64,8 @@ ms.locfileid: "64918411"
 
     Каталог для подписки изменен, вы получаете сообщение об успешном выполнении.
 
-    ![Сообщение об успешном выполнении об изменении каталога](media/active-directory-how-subscriptions-associated-directory/edit-directory-success.png)    
-4. Используйте **переключатель каталогов** для перехода к новому каталогу. Отображение всех элементов может занять до 10 минут.
+    ![Сообщение об успешном выполнении об изменении каталога](media/active-directory-how-subscriptions-associated-directory/edit-directory-success.png)
+4. Используйте **переключатель каталогов** для перехода к новому каталогу. Он может занять несколько часов для всех операций отображаются правильно. Если вам кажется, занимает слишком много времени, убедитесь, что установлен флажок **фильтр глобальных подписок** перемещенный подписки, чтобы убедиться, не будет отображаться не просто.
 
     ![Каталог переключателя странице, пример](media/active-directory-how-subscriptions-associated-directory/directory-switcher.png)
 

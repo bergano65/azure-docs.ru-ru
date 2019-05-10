@@ -37,13 +37,21 @@
           displayName: 'learning policy, Counterfactual, features'
 - name: Практические руководства
   items:
-    - name: Настройка Персонализатора
+    - name: Создание и настройка Персонализатора
       href: how-to-settings.md
       displayName: 'azure, portal, settings, evaluation, offline, policy'
     - name: Анализ
       items:
         - name: Автономная оценка
           href: how-to-offline-evaluation.md
+    - name: Использование контейнеров
+      items:
+        - name: Установка и запуск контейнеров
+          displayName: 'docker, container, package, packaged app, swagger, open api, openapi, train, publish, az, acr, cli, tps, core, curl, try it now, import, pull, run, apikey'
+          href: personalizer-container-howto.md
+        - name: Настройка контейнеров
+          href: personalizer-container-configuration.md
+          displayName: 'docker, run, apikey'
 - name: Справочные материалы
   items:
     - name: Примеры

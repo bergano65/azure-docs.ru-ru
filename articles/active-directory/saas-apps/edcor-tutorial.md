@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Edcor | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Edcor | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Edcor.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 02/04/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1a527b928edacc202301f53dbf7852f8446b3aa7
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: ff1d9089f3fb2f3ebf3022b54c442e8338ab983b
+ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57834988"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65508343"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-edcor"></a>Руководство. Интеграция Azure Active Directory с Edcor
+# <a name="tutorial-azure-active-directory-integration-with-edcor"></a>Руководство по Интеграция Azure Active Directory с Edcor
 
 В этом руководстве описано, как интегрировать Edcor с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Edcor обеспечивает следующие преимущества:
@@ -124,7 +124,7 @@ ms.locfileid: "57834988"
 
 ### <a name="configure-edcor-single-sign-on"></a>Настройка единого входа в Edcor
 
-Чтобы настроить единый вход на стороне **Edcor**, нужно отправить скачанный **XML-файл метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, [группе поддержки Edcor](http://www.edcor.com/contact-us-2/). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **Edcor**, нужно отправить скачанный **XML-файл метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, [группе поддержки Edcor](https://www.edcor.com/contact-us/). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
@@ -144,7 +144,7 @@ ms.locfileid: "57834988"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -179,7 +179,7 @@ ms.locfileid: "57834988"
 
 ### <a name="create-edcor-test-user"></a>Создание тестового пользователя в Edcor
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Edcor. Обратитесь к  [группе поддержки Edcor](http://www.edcor.com/contact-us-2/) для добавления пользователей на платформу Edcor. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении Edcor. Обратитесь к  [группе поддержки Edcor](https://www.edcor.com/contact-us/) для добавления пользователей на платформу Edcor. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа 
 

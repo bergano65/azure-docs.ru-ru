@@ -16,16 +16,24 @@
   items:
     - name: Android
       items:
-        - name: Отправка push-уведомлений с помощью Firebase Cloud Messaging
-          href: notification-hubs-android-push-notification-google-fcm-get-started.md
-        - name: Отправка push-уведомлений с помощью Google Cloud Messaging
-          href: notification-hubs-android-push-notification-google-gcm-get-started.md
-        - name: Отправка push-уведомлений на конкретные устройства
-          href: notification-hubs-aspnet-backend-android-xplat-segmented-gcm-push-notification.md
-        - name: Отправка push-уведомлений определенным пользователям
-          href: notification-hubs-aspnet-backend-gcm-android-push-to-user-google-notification.md
-        - name: Отправка push-уведомлений в приложения Xamarin Android
-          href: xamarin-notification-hubs-push-notifications-android-gcm.md
+        - name: Firebase Cloud Messaging
+          items:
+            - name: Отправка push-уведомлений во все регистрации
+              href: notification-hubs-android-push-notification-google-fcm-get-started.md
+            - name: Отправка push-уведомлений на конкретные устройства
+              href: push-notifications-android-specific-devices-firebase-cloud-messaging.md
+            - name: Отправка push-уведомлений определенным пользователям
+              href: push-notifications-android-specific-users-firebase-cloud-messaging.md
+            - name: Отправка push-уведомлений в приложения Xamarin Android
+              href: xamarin-notification-hubs-push-notifications-android-gcm.md
+        - name: Google Cloud Messaging (устаревшая служба)
+          items:
+            - name: Отправка push-уведомлений во все регистрации
+              href: notification-hubs-android-push-notification-google-gcm-get-started.md
+            - name: Отправка push-уведомлений на конкретные устройства
+              href: notification-hubs-aspnet-backend-android-xplat-segmented-gcm-push-notification.md
+            - name: Отправка push-уведомлений определенным пользователям
+              href: notification-hubs-aspnet-backend-gcm-android-push-to-user-google-notification.md
     - name: Baidu
       items:
         - name: Отправка push-уведомлений с помощью службы push-уведомлений облака Baidu

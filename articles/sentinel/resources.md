@@ -4,7 +4,7 @@ description: Этот документ содержит список полез�
 services: sentinel
 documentationcenter: na
 author: rkarlin
-manager: barbkess
+manager: rkarlin
 editor: ''
 ms.assetid: 9b4c8e38-c986-4223-aa24-a71b01cb15ae
 ms.service: sentinel
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 3/20/2019
 ms.author: rkarlin
-ms.openlocfilehash: d2dcb1eb9132e68bebbe84d81a4e4f17df79f2d3
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 52b9d64ebd4ab90d97a417f9296c424b9412aae9
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60615551"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65209680"
 ---
 # <a name="useful-resources-for-working-with-azure-sentinel-preview"></a>Полезные ресурсы для работы с предварительной версией Sentinel Azure
 

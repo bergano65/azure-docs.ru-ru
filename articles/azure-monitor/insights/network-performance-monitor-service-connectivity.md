@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 02/20/2018
 ms.author: abshamsft
-ms.openlocfilehash: 01410fb59135e9b1f54e4a3c75b206c7d30abeed
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 85a35207293f5afda40c78d105fc58732f06b626
+ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65145016"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65509802"
 ---
 # <a name="service-connectivity-monitor"></a>Монитор подключений службы
 
@@ -64,7 +64,7 @@ netsh advfirewall firewall add rule name="NPMDICMPV6TimeExceeded" protocol="icmp
 
     * Выберите **Веб**, чтобы отслеживать подключение к службе, которая отвечает на запросы HTTP(S), например outlook.office365.com или bing.com.<br>
     * Выберите **Сеть**, чтобы отслеживать подключение к службе, которая отвечает на запрос TCP, но не отвечает на запросы HTTP(S), например SQL Server, FTP-сервер или SSH-порт. 
-    * Например:  Чтобы создать веб-теста в учетную запись хранилища BLOB-объектов, выберите **Web** и введите в качестве целевого объекта <your storageaccount>. blob.core.windows.net. Аналогичным образом можно создавать тесты для других хранилище таблиц, хранилище очередей и файлов Azure с использованием [эту ссылку.](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-overview#storage-account-endpoints)
+    * Например: Чтобы создать веб-теста в учетную запись хранилища BLOB-объектов, выберите **Web** и введите в качестве целевого объекта *yourstorageaccount*. blob.core.windows.net. Аналогичным образом можно создавать тесты для других хранилище таблиц, хранилище очередей и файлов Azure с использованием [эту ссылку.](https://docs.microsoft.com/azure/storage/common/storage-account-overview#storage-account-endpoints)
 4. Если вы не хотите выполнять такие измерения сети, как задержки сети, потери пакетов, а также обнаружение топологии, снимите флажок **Проведите измерения сети**. Оставьте этот флажок установленным, чтобы получить максимальные преимущества от возможности. 
 5. В поле **Цель** введите URL-адрес, полное доменное имя или IP-адрес, сетевое подключение к которому необходимо отслеживать.
 6. В поле **Номер порта** введите номер порта целевой службы. 
@@ -128,6 +128,16 @@ netsh advfirewall firewall add rule name="NPMDICMPV6TimeExceeded" protocol="icmp
 
 * Если приложение работает медленно, определите причину ухудшения производительности приложения (сеть или проблема в конечной точке поставщика приложения).
 
+## <a name="gcc-office-urls-for-us-government-customers"></a>URL-адреса Office GCC для государственных организаций США
+Для региона Виргиния для государственных организаций США только URL-адреса министерства обороны США — встроенные NPM. Клиенты, использующие GCC URL-адреса необходимо создать настраиваемые тесты и добавьте каждый inidividually URL-адрес.
+
+| Поле | GCC |
+|:---   |:--- |
+| Портал Office 365 и общий | portal.apps.mil |
+| Проверка подлинности Office 365 и удостоверения | * login.microsoftonline.us <br> * api.login.microsoftonline.com <br> * clientconfig.microsoftonline-p.net <br> * login.microsoftonline.com <br> * login.microsoftonline-p.com <br> * login.windows.net <br> * loginex.microsoftonline.com <br> * Имя входа — us.microsoftonline.com <br> * nexus.microsoftonline-p.com <br> * mscrl.microsoft.com <br> * secure.aadcdn.microsoftonline-p.com |
+| Office Online | * adminwebservice.gov.us.microsoftonline.com <br>  * adminwebservice-s1-bn1a.microsoftonline.com <br> * adminwebservice-s1-dm2a.microsoftonline.com <br> * becws.gov.us.microsoftonline.com <br> * provisioningapi.gov.us.microsoftonline.com <br> * officehome.msocdn.us <br> * prod.msocdn.us <br> * portal.office365.us <br> * webshell.suite.office365.us <br> * www .office365.us <br> * activation.sls.microsoft.com <br> * crl.microsoft.com <br> * go.microsoft.com <br> * insertmedia.bing.office.net <br> * ocsa.officeapps.live.com <br> * ocsredir.officeapps.live.com <br> * ocws.officeapps.live.com <br> * office15client.microsoft.com <br>* officecdn.microsoft.com <br> * officecdn.microsoft.com.edgesuite.net <br> * officepreviewredir.microsoft.com <br> * officeredir.microsoft.com <br> * ols.officeapps.live.com  <br> * r.office.microsoft.com <br> * cdn.odc.officeapps.live.com <br> * odc.officeapps.live.com <br> * officeclient.microsoft.com |
+| Exchange Online | * outlook.office365.us <br> * attachments.office365-net.us <br> * autodiscover-s.office365.us <br> * manage.office365.us <br> * scc.office365.us |
+| Microsoft Teams | gov.teams.microsoft.us | 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 [Выполните поиск по журналам](../../azure-monitor/log-query/log-query-overview.md), чтобы просмотреть подробные записи данных о производительности сети.

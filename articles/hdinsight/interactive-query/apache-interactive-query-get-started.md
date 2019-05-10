@@ -7,13 +7,13 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 02/22/2018
-ms.openlocfilehash: c7cee3dfd3b091d75f4dadcaa62513fddf0c0e68
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.date: 05/07/2019
+ms.openlocfilehash: 9636157182e8b40914bde2515c5b295d0480255a
+ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64692145"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65510998"
 ---
 # <a name="use-interactive-query-with-hdinsight"></a>Использование Interactive Query в HDInsight
 Interactive Query (также называется Apache Hive LLAP или [Low Latency Analytical Processing](https://cwiki.apache.org/confluence/display/Hive/LLAP)) — это [тип кластера](../hdinsight-hadoop-provision-linux-clusters.md#cluster-types) Azure HDInsight. Interactive Query поддерживает кэширование в памяти, благодаря чему запросы Apache Hive становятся более быстрыми и интерактивными.
@@ -34,10 +34,6 @@ Interactive Query (также называется Apache Hive LLAP или [Low 
 * Использование Microsoft Power BI
 
     Ознакомьтесь со статьей о [визуализации данных интерактивного запроса Apache Hive с помощью Power BI в Azure HDInsight](./apache-hadoop-connect-hive-power-bi-directquery.md) и о [визуализации больших данных с помощью Power BI в Azure HDInsight](../hadoop/apache-hadoop-connect-hive-power-bi.md).
- 
-* Использование Apache Zeppelin
-
-    См. в разделе [выполнения запросов Apache Hive в Azure HDInsight с помощью Apache Zeppelin](../hdinsight-connect-hive-zeppelin.md).
 
 * Использование Visual Studio
 
@@ -45,7 +41,7 @@ Interactive Query (также называется Apache Hive LLAP или [Low 
 
 * С помощью Visual Studio Code
 
-    Ознакомьтесь со статьей [Использование средств Azure HDInsight для Visual Studio Code](../hdinsight-for-vscode.md).
+    См. в разделе [использование Visual Studio Code для Apache Hive, LLAP и pySpark](../hdinsight-for-vscode.md).
 * Запуск Apache Hive с помощью представления Hive Apache Ambari.
   
     Ознакомьтесь со статьей [Использование представления Hive Apache Ambari с Apache Hadoop в HDInsight](../hadoop/apache-hadoop-use-hive-ambari-view.md).
@@ -61,7 +57,7 @@ Interactive Query (также называется Apache Hive LLAP или [Low 
 
 Чтобы найти строку подключения Java Database Connectivity (JDBC):
 
-1. Войдите в Apache Ambari, используя следующий URL-адрес: https://\<имя_кластера\>.AzureHDInsight.net.
+1. Войдите Apache Ambari, используя следующий URL-адрес: `https://<cluster name>.AzureHDInsight.net`.
 2. В меню слева выберите **Hive**.
 3. Чтобы скопировать URL-адрес, щелкните значок буфера обмена:
    

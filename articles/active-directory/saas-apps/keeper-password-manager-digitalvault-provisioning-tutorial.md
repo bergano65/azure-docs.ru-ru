@@ -13,14 +13,14 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/25/2019
+ms.date: 05/07/2019
 ms.author: zchia
-ms.openlocfilehash: b7b096bd1ecf0a4df37ed4de0cf618216dccc2bc
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 445579eb780b49f536ef1a9e13e5ca43db6f98f6
+ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65159470"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65508567"
 ---
 # <a name="tutorial-configure-keeper-password-manager--digital-vault-for-automatic-user-provisioning"></a>Руководство по Настроить Keeper Password Manager & Digital Vault для автоматической подготовки пользователей
 
@@ -84,7 +84,7 @@ Azure Active Directory используется концепция, называ
 
 ### <a name="to-configure-automatic-user-provisioning-for-keeper-password-manager--digital-vault-in-azure-ad"></a>Настройка автоматической подготовки пользователей для Keeper Password Manager & Digital Vault в Azure AD.
 
-1. Войдите в [портала Azure](https://portal.azure.com) и выберите **корпоративные приложения**выберите **все приложения**, а затем выберите **Keeper Password Manager & Digital Хранилище**.
+1. Войдите на [портале Azure](https://portal.azure.com). Выберите **корпоративные приложения**, а затем выберите **все приложения**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
@@ -104,19 +104,19 @@ Azure Active Directory используется концепция, называ
 
 6. Войдите в ваш [консоли администрирования Keeper](https://keepersecurity.com/console/#login). Щелкните **администратора** и выберите существующий узел, или создайте новую. Перейдите к **Подготовка** и выберите **добавить метод**.
 
-    ![Консоль администрирования keeper](media/keeperpasswordmanagerdigitalvault-provisioning-tutorial/keeper-admin-console.png)
+    ![Консоль администрирования keeper](media/keeper-password-manager-digitalvault-provisioning-tutorial/keeper-admin-console.png)
 
     Выберите **SCIM (системы для управления удостоверениями междоменных**.
 
-    ![Keeper добавить SCIM](media/keeperpasswordmanagerdigitalvault-provisioning-tutorial/keeper-add-scim.png)
+    ![Keeper добавить SCIM](media/keeper-password-manager-digitalvault-provisioning-tutorial/keeper-add-scim.png)
 
     Нажмите кнопку **Создание подготовки маркер**.
 
-    ![Keeper Создание конечной точки](media/keeperpasswordmanagerdigitalvault-provisioning-tutorial/keeper-create-endpoint.png)
+    ![Keeper Создание конечной точки](media/keeper-password-manager-digitalvault-provisioning-tutorial/keeper-create-endpoint.png)
 
     Скопируйте значения параметров **URL-адрес** и **маркера** и вставьте их в **URL-адрес клиента** и **секретный токен** в Azure AD. Нажмите кнопку **Сохранить** для завершения подготовки установки на Keeper.
 
-    ![Keeper создание токена](media/keeperpasswordmanagerdigitalvault-provisioning-tutorial/keeper-create-token.png)
+    ![Keeper создание токена](media/keeper-password-manager-digitalvault-provisioning-tutorial/keeper-create-token.png)
 
 7. После заполнения полей, указанных в шаге 5, щелкните **проверить подключение** и убедиться, что Azure AD может подключиться к Keeper Password Manager & Digital Vault. Если подключение отсутствует, убедитесь, что учетная запись Keeper Password Manager & Digital Vault имеет разрешения администратора и повторите попытку.
 
@@ -130,19 +130,19 @@ Azure Active Directory используется концепция, называ
 
 10. В разделе **сопоставления** выберите **синхронизировать пользователей Azure Active Directory с Keeper Password Manager & Digital Vault**.
 
-    ![Keeper сопоставления пользователей](media/keeperpasswordmanagerdigitalvault-provisioning-tutorial/keeper-user-mappings.png)
+    ![Keeper сопоставления пользователей](media/keeper-password-manager-digitalvault-provisioning-tutorial/keeper-user-mappings.png)
 
 11. Просмотрите пользовательские атрибуты, которые синхронизированы из Azure AD в Keeper Password Manager & Digital Vault в **сопоставление атрибутов** раздел. Атрибуты, выбранные как **Matching** свойства используются для сопоставления учетных записей пользователей в Keeper Password Manager & Digital Vault для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
-    ![Атрибуты пользователя keeper](media/keeperpasswordmanagerdigitalvault-provisioning-tutorial/keeper-user-attributes.png)
+    ![Атрибуты пользователя keeper](media/keeper-password-manager-digitalvault-provisioning-tutorial/keeper-user-attributes.png)
 
 12. В разделе **сопоставления** выберите **синхронизировать группы Azure Active Directory к Keeper Password Manager & Digital Vault**.
 
-    ![Сопоставление групп keeper](media/keeperpasswordmanagerdigitalvault-provisioning-tutorial/keeper-group-mappings.png)
+    ![Сопоставление групп keeper](media/keeper-password-manager-digitalvault-provisioning-tutorial/keeper-group-mappings.png)
 
 13. Просмотрите атрибуты группы, которые синхронизированы из Azure AD в Keeper Password Manager & Digital Vault в **сопоставление атрибутов** раздел. Атрибуты, выбранные как **Matching** свойства используются для сопоставления групп в Keeper Password Manager & Digital Vault для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
-    ![Атрибуты группы keeper](media/keeperpasswordmanagerdigitalvault-provisioning-tutorial/keeper-group-attributes.png)
+    ![Атрибуты группы keeper](media/keeper-password-manager-digitalvault-provisioning-tutorial/keeper-group-attributes.png)
 
 14. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../manage-apps/define-conditional-rules-for-provisioning-user-accounts.md).
 
@@ -176,7 +176,3 @@ Azure Active Directory используется концепция, называ
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)
 
-<!--Image references-->
-[1]: ./media/atlassian-cloud-provisioning-tutorial/tutorial-general-01.png
-[2]: ./media/atlassian-cloud-provisioning-tutorial/tutorial-general-02.png
-[3]: ./media/atlassian-cloud-provisioning-tutorial/tutorial-general-03.png

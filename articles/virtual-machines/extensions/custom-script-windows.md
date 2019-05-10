@@ -8,14 +8,14 @@ ms.service: virtual-machines-windows
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 04/15/2019
+ms.date: 05/02/2019
 ms.author: gwallace
-ms.openlocfilehash: e2b36633996f961d100f0a98abb09135fd4393e4
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: b71ba69bcf4965ea607e097c392573e77aab6865
+ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60869866"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65408277"
 ---
 # <a name="custom-script-extension-for-windows"></a>Расширение Custom Script в ОС Windows
 
@@ -42,7 +42,7 @@ ms.locfileid: "60869866"
 
 Если сценарий находится на локальном сервере, вам по-прежнему потребуется дополнительный брандмауэр и группу безопасности сети порты необходимо открыть.
 
-### <a name="tips-and-tricks"></a>Советы и хитрости
+### <a name="tips-and-tricks"></a>Советы и рекомендации
 
 * Самый высокий уровень сбоев для этого расширения из-за синтаксических ошибок в скрипте теста, сценарий выполняется без ошибок, и также поместить в дополнительные записи в журнал в сценарий, чтобы было проще найти, которой произошел сбой.
 * Создать сценарий, являются идемпотентными. Это гарантирует, что они запущены снова случайно не возникает изменений в системе.
@@ -105,7 +105,7 @@ ms.locfileid: "60869866"
 | ИМЯ | Значение и пример | Тип данных |
 | ---- | ---- | ---- |
 | версия_API | 2015-06-15 | date |
-| publisher | Microsoft.Compute | string |
+| publisher | Microsoft.Compute; | string |
 | тип | CustomScriptExtension | string |
 | typeHandlerVersion | 1.9 | int |
 | fileUris (пример) | https://raw.githubusercontent.com/Microsoft/dotnet-core-sample-templates/master/dotnet-core-music-windows/scripts/configure-music-app.ps1 | массив |
@@ -207,6 +207,16 @@ Set-AzVMExtension -ResourceGroupName <resourceGroupName> `
 * Расширение **имя** параметра совпадает со значением предыдущего развертывания расширения.
 * Обновите конфигурацию в противном случае не будет повторно выполнить команду. Можно добавить в команду динамическое свойство, например метку времени.
 
+Кроме того, можно задать [ForceUpdateTag](/dotnet/api/microsoft.azure.management.compute.models.virtualmachineextension.forceupdatetag) свойства **true**.
+
+### <a name="using-invoke-webrequest"></a>С помощью Invoke-WebRequest
+
+Если вы используете [Invoke-WebRequest](/powershell/module/microsoft.powershell.utility/invoke-webrequest) в скрипте, необходимо указать параметр `-UseBasicParsing` или в противном случае вы получите следующую ошибку при проверке подробные сведения о состоянии:
+
+```error
+The response content cannot be parsed because the Internet Explorer engine is not available, or Internet Explorer's first-launch configuration is not complete. Specify the UseBasicParsing parameter and try again.
+```
+
 ## <a name="classic-vms"></a>классические виртуальные машины;
 
 Чтобы развернуть расширение пользовательских скриптов на классических виртуальных машин, можно использовать портал Azure или классическом командлетов Azure PowerShell.
@@ -263,7 +273,7 @@ C:\Packages\Plugins\Microsoft.Compute.CustomScriptExtension\1.*\Downloads\<n>
 
 При выполнении команды `commandToExecute` расширение устанавливает этот каталог (например, `...\Downloads\2`) в качестве текущего рабочего каталога. Этот процесс позволяет использовать относительные пути для поиска файлов, скачанных с помощью свойства `fileURIs`. Примеры приведены в следующей таблице.
 
-Так как со временем абсолютный путь для скачивания может измениться, в строке `commandToExecute` лучше указывать относительные пути к сценариям или файлам, когда это возможно. Пример.
+Так как со временем абсолютный путь для скачивания может измениться, в строке `commandToExecute` лучше указывать относительные пути к сценариям или файлам, когда это возможно. Например:
 
 ```json
 "commandToExecute": "powershell.exe . . . -File \"./scripts/myscript.ps1\""

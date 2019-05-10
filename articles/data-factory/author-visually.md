@@ -12,12 +12,12 @@ author: sharonlo101
 ms.author: shlo
 ms.reviewer: ''
 manager: craigg
-ms.openlocfilehash: d2e51551643e154714b9d2368e63d7af9ebfa204
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: b32e4abebdfb93312c60a25ca8b483f071e5e73c
+ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60592886"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65507826"
 ---
 # <a name="visual-authoring-in-azure-data-factory"></a>Визуальная разработка в фабрике данных Azure
 С пользовательским интерфейсом фабрики данных Azure пользователи могут визуально разрабатывать и развертывать ресурсы в своей фабрике, не написав не единой строки кода. Вы можете перетаскивать действия на панель холста конвейера, выполнять тестовые запуски, выполнять последовательную отладку, а также развертывать и выполнять мониторинг запуска конвейера. Пользовательский интерфейс можно использовать для визуальной разработки двумя способами:
@@ -60,7 +60,7 @@ ms.locfileid: "60592886"
 
 | Параметр | Описание | Value |
 |:--- |:--- |:--- |
-| **Тип репозитория** | Тип репозитория кода Azure Repos.<br/>**Примечание**. Сейчас GitHub не поддерживается. | Git Azure Repos |
+| **Тип репозитория** | Тип репозитория кода Azure Repos.<br/> | Git Azure Repos |
 | **Azure Active Directory** | Имя вашего клиента Azure AD. | `<your tenant name>` |
 | **Организация Azure Repos** | Название вашей организации Azure Repos. Название организации Azure Repos можно найти по адресу `https://{organization name}.visualstudio.com`. [Войдите в свою организацию Azure Repos](https://www.visualstudio.com/team-services/git/) и получите доступ к профилю Visual Studio, чтобы просмотреть свои репозитории и проекты. | `<your organization name>` |
 | **Имя проекта** | Имя проекта Azure Repos. Имя проекта Azure Repos можно найти по адресу `https://{organization name}.visualstudio.com/{project name}`. | `<your Azure Repos project name>` |
@@ -115,7 +115,7 @@ ms.locfileid: "60592886"
 
 ### <a name="configure-publishing-settings"></a>Настройка параметров публикации
 
-Чтобы настроить ветвь публикации (ветвь, в которой сохраняются шаблоны Resource Manager), добавьте файл `publish_config.json` в корневую папку в ветви совместной работы. Фабрика данных считывает этот файл, ищет поле `publishBranch` и создает новую ветвь (если она отсутствует) с указанным значением. Затем она сохраняет все шаблоны Resource Manager в указанном расположении. Пример.
+Чтобы настроить ветвь публикации (ветвь, в которой сохраняются шаблоны Resource Manager), добавьте файл `publish_config.json` в корневую папку в ветви совместной работы. Фабрика данных считывает этот файл, ищет поле `publishBranch` и создает новую ветвь (если она отсутствует) с указанным значением. Затем она сохраняет все шаблоны Resource Manager в указанном расположении. Например:
 
 ```json
 {

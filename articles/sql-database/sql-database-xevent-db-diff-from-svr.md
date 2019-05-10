@@ -12,12 +12,12 @@ ms.author: genemi
 ms.reviewer: jrasnik
 manager: craigg
 ms.date: 12/19/2018
-ms.openlocfilehash: 2dd3b9f0d1d8d61b2311977774c8b0f7267caa9e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 7f742b094575b78f453fb735b23cc5319a27fa7e
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60331016"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65206650"
 ---
 # <a name="extended-events-in-sql-database"></a>Расширенные события в Базе данных SQL
 [!INCLUDE [sql-database-xevents-selectors-1-include](../../includes/sql-database-xevents-selectors-1-include.md)]
@@ -82,7 +82,7 @@ ms.locfileid: "60331016"
 
 Функцию расширенных событий поддерживают несколько [представлений каталога](https://msdn.microsoft.com/library/ms174365.aspx). Представления каталога сообщают *метаданные или определения* сеансов событий, созданных пользователями в текущей базе данных. Представления не возвращают сведения об экземплярах активных сеансов событий.
 
-| Имя<br/>представления каталога | ОПИСАНИЕ |
+| Имя<br/>представления каталога | Описание |
 |:--- |:--- |
 | **sys.database_event_session_actions** |Возвращает строку для каждого действия с каждым событием в сеансе событий. |
 | **sys.database_event_session_events** |Возвращает строку для каждого события в сеансе событий. |
@@ -96,7 +96,7 @@ ms.locfileid: "60331016"
 
 База данных SQL Azure включает [динамические административные представления (DMV)](https://msdn.microsoft.com/library/bb677293.aspx) , которые поддерживают расширенные события. DMV сообщают об *активных* сеансах событий.
 
-| Имя DMV | ОПИСАНИЕ |
+| Имя DMV | Описание |
 |:--- |:--- |
 | **sys.dm_xe_database_session_event_actions** |Возвращает сведения о действиях в сеансе событий. |
 | **sys.dm_xe_database_session_events** |Возвращает сведения о событиях в сеансе. |
@@ -170,8 +170,8 @@ API [трассировки событий для Windows (ETW)](https://msdn.mi
 
 Маркер SAS, сформированный для вашего контейнера хранилища Azure, должен указывать **rwl** для разрешений. Значение **rwl** обеспечивает следующие разрешения:
 
-- чтение
-- запись
+- прочтены
+- Запись
 - список
 
 ## <a name="performance-considerations"></a>Рекомендации по производительности
@@ -183,7 +183,7 @@ API [трассировки событий для Windows (ETW)](https://msdn.mi
 - уменьшить количество одновременно запущенных сеансов событий;
 - уменьшить объем памяти, заданный в предложении **MAX\_MEMORY**, с помощью операторов **CREATE** и **ALTER**.
 
-### <a name="network-latency"></a>Задержки сети
+### <a name="network-latency"></a>Сетевая задержка
 
 Целевой объект **Файл событий** может столкнуться с медленной работой или отказами сети при сохранении данных в большие двоичные объекты хранилища Azure. Другие события в Базе данных SQL могут откладываться до установки подключения к сети. Такая задержка может замедлить вашу работу.
 
@@ -197,7 +197,7 @@ API [трассировки событий для Windows (ETW)](https://msdn.mi
 - [Использование хранилища BLOB-объектов из .NET](../storage/blobs/storage-dotnet-how-to-use-blobs.md)
 - [CREATE CREDENTIAL (Transact-SQL)](https://msdn.microsoft.com/library/ms189522.aspx)
 - [CREATE EVENT SESSION (Transact-SQL)](https://msdn.microsoft.com/library/bb677289.aspx)
-- [Публикации в блоге Джонтана Кехайаса (Jonathan Kehayias) о расширенных событий в Microsoft SQL Server](http://www.sqlskills.com/blogs/jonathan/category/extended-events/)
+- [Публикации в блоге Джонтана Кехайаса (Jonathan Kehayias) о расширенных событий в Microsoft SQL Server](https://www.sqlskills.com/blogs/jonathan/category/extended-events/)
 
 
 - Веб-страница с *обновлениями службы* Azure с ограничением по параметру базы данных SQL Azure:

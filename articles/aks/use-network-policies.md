@@ -5,47 +5,33 @@ services: container-service
 author: iainfoulds
 ms.service: container-service
 ms.topic: article
-ms.date: 04/08/2019
+ms.date: 05/06/2019
 ms.author: iainfou
-ms.openlocfilehash: 29180d6c1bb5f0991a4f33c3b7c9418f84d8260c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: a0512806ec797f43fc54d8a28a7cbadf86faf1d9
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61027978"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65230017"
 ---
-# <a name="preview---secure-traffic-between-pods-using-network-policies-in-azure-kubernetes-service-aks"></a>Preview — защита трафика между модулей с помощью политик сети в службе Azure Kubernetes (AKS)
+# <a name="secure-traffic-between-pods-using-network-policies-in-azure-kubernetes-service-aks"></a>Защита трафика между контейнерами pod с использованием политик сети в Службе Azure Kubernetes (AKS)
 
 При выполнении современных приложений на базе микрослужб в Kubernetes часто требуется управлять тем, какие компоненты могут взаимодействовать друг с другом. Принцип наименьших прав доступа должны применяться к каким образом трафик сможет проходить между POD, содержащихся в кластер Azure Kubernetes Service (AKS). Допустим, скорее всего, вы хотите заблокировать трафик непосредственно на серверной части приложения. *Политики сети* в Kubernetes позволяет определить правила для входящего и исходящего трафика между POD в кластере.
 
-В этой статье показано, как установить модуль политики сети и Создание политик сети Kubernetes для управления потоком трафика между POD, содержащихся в AKS. Эта функция в настоящее время находится на стадии предварительной версии.
-
-> [!IMPORTANT]
-> Компоненты предварительной версии AKS, самообслуживания и согласиться. Предварительные версии предоставляются для сбора отзывов и ошибки нашего сообщества. Тем не менее они не поддерживаются в службе технической поддержки Azure. Если создать кластер, или добавить эти компоненты в имеющиеся кластеры, этого кластера не поддерживается, пока эта функция больше не находится в предварительной версии и этапах общедоступная (GA).
->
-> При возникновении проблем с помощью функции предварительной версии, [сообщите о них в репозитории AKS GitHub] [ aks-github] именем функции предварительной версии в заголовке ошибки.
+В этой статье показано, как установить модуль политики сети и Создание политик сети Kubernetes для управления потоком трафика между POD, содержащихся в AKS. Политики сети должен использоваться только для узлов под управлением Linux и POD, содержащихся в AKS.
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
 Требуется Azure CLI версии 2.0.61 или более поздней версии установлен и настроен. Чтобы узнать версию, выполните команду  `az --version`. Если вам необходимо выполнить установку или обновление, см. статью  [Установка Azure CLI][install-azure-cli].
 
-Чтобы создать кластер AKS, можно использовать политики сети, необходимо сначала включите флаг компонента по вашей подписке. Чтобы зарегистрировать флаг компонента *EnableNetworkPolicy*, используйте команду [az feature register][az-feature-register], как показано в следующем примере.
-
-```azurecli-interactive
-az feature register --name EnableNetworkPolicy --namespace Microsoft.ContainerService
-```
-
-Через несколько минут отобразится состояние *Registered* (Зарегистрировано). Можно проверить состояние регистрации с помощью [список функций az] [ az-feature-list] команды:
-
-```azurecli-interactive
-az feature list -o table --query "[?contains(name, 'Microsoft.ContainerService/EnableNetworkPolicy')].{Name:name,State:properties.state}"
-```
-
-Когда все будет готово, обновить регистрацию *Microsoft.ContainerService* поставщика ресурсов с помощью [az provider register] [ az-provider-register] команды:
-
-```azurecli-interactive
-az provider register --namespace Microsoft.ContainerService
-```
+> [!TIP]
+> Если вы использовали функцию политики сети на этапе предварительной версии, мы рекомендуем вам [Создание нового кластера](#create-an-aks-cluster-and-enable-network-policy).
+> 
+> Если вы хотите продолжить использование существующих тестовых кластеров, которые используются политики сети на этапе предварительной версии, обновление кластера до новых версий Kubernetes последний выпуск общедоступной версии и затем развернуть приведенный ниже манифест yaml-ФАЙЛ, чтобы устранить сбой сервера метрик и Kubernetes панель мониторинга. Это исправление является только необходимые для кластеров, которые использовать обработчик Кошка черепахового сетевой политики.
+>
+> По соображениям безопасности [просмотрите содержимое этого манифеста YAML] [ calico-aks-cleanup] чтобы понять, что развернуто в кластере AKS.
+>
+> `kubectl delete -f https://raw.githubusercontent.com/Azure/aks-engine/master/docs/topics/calico-3.3.1-cleanup-after-upgrade.yaml`
 
 ## <a name="overview-of-network-policy"></a>Общие сведения о политике сети
 
@@ -78,6 +64,7 @@ Azure предоставляет два способа реализации по
 | Совместимости со спецификацией Kubernetes | Поддерживаются все типы политики |  Поддерживаются все типы политики |
 | Дополнительные функции                      | Нет                       | Расширенная модель политики, состоящие из глобальной политики сети, задать глобальные сети и конечной точки узла. Дополнительные сведения об использовании `calicoctl` CLI для управления эти расширенные функции, см. в разделе [Справочник по пользовательскому calicoctl][calicoctl]. |
 | Поддержка                                  | Поддерживаемые поддержки Azure и группы разработчиков | Поддержка сообщества Кошка черепахового. Дополнительные сведения о дополнительных платной поддержки, см. в разделе [варианты поддержки Кошка черепахового проекта][calico-support]. |
+| Ведение журналов                                  | Правила добавления / удаления в IPTables регистрируются на каждом узле в разделе */var/log/azure-npm.log* | Дополнительные сведения см. в разделе [Кошка черепахового компонент журналы][calico-logs] |
 
 ## <a name="create-an-aks-cluster-and-enable-network-policy"></a>Создание кластера AKS и включение политики сети
 
@@ -140,7 +127,6 @@ az aks create \
     --resource-group $RESOURCE_GROUP_NAME \
     --name $CLUSTER_NAME \
     --node-count 1 \
-    --kubernetes-version 1.12.6 \
     --generate-ssh-keys \
     --network-plugin azure \
     --service-cidr 10.0.0.0/16 \
@@ -478,12 +464,13 @@ kubectl delete namespace development
 [kubectl-delete]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#delete
 [kubernetes-network-policies]: https://kubernetes.io/docs/concepts/services-networking/network-policies/
 [azure-cni]: https://github.com/Azure/azure-container-networking/blob/master/docs/cni.md
-[terms-of-use]: https://azure.microsoft.com/support/legal/preview-supplemental-terms/
 [policy-rules]: https://kubernetes.io/docs/concepts/services-networking/network-policies/#behavior-of-to-and-from-selectors
-[aks-github]: https://github.com/azure/aks/issues]
+[aks-github]: https://github.com/azure/aks/issues
 [tigera]: https://www.tigera.io/
-[calicoctl]: https://docs.projectcalico.org/v3.5/reference/calicoctl/
+[calicoctl]: https://docs.projectcalico.org/v3.6/reference/calicoctl/
 [calico-support]: https://www.projectcalico.org/support
+[calico-logs]: https://docs.projectcalico.org/v3.6/maintenance/component-logs
+[calico-aks-cleanup]: https://github.com/Azure/aks-engine/blob/master/docs/topics/calico-3.3.1-cleanup-after-upgrade.yaml
 
 <!-- LINKS - internal -->
 [install-azure-cli]: /cli/azure/install-azure-cli

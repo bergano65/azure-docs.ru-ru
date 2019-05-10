@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с OpenAthens | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с OpenAthens | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и OpenAthens.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 1/4/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3eca6fc3ab788ee7085c0df5f6c9770858af29ba
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 2cbb1bc64d923add0b1fd38749299714a9093633
+ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57847354"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65408019"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-openathens"></a>Руководство. Интеграция Azure Active Directory с OpenAthens
+# <a name="tutorial-azure-active-directory-integration-with-openathens"></a>Руководство по Интеграция Azure Active Directory с OpenAthens
 
 В этом руководстве описано, как интегрировать OpenAthens с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением OpenAthens обеспечивает следующие преимущества.
@@ -143,11 +143,11 @@ ms.locfileid: "57847354"
 
     a. Из списка **Display name mapping** (Сопоставление отображаемого имени) выберите **Use Attribute** (Использовать атрибут).
 
-    b. В текстовом поле **Display name attribute** (Атрибут отображаемого имени) введите значение `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`.
+    b. В текстовом поле **Display name attribute** (Атрибут отображаемого имени) введите значение `https://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`.
     
     c. Из списка **Unique user mapping** (Сопоставление уникального пользователя) выберите **Use Attribute** (Использовать атрибут).
 
-    d. В текстовом поле **Unique user attribute** (Атрибут уникального пользователя имени) введите значение `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`.
+    d. В текстовом поле **Unique user attribute** (Атрибут уникального пользователя имени) введите значение `https://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`.
 
     д. В разделе **Status** (Состояние) установите все три флажка.
 
@@ -177,7 +177,7 @@ ms.locfileid: "57847354"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

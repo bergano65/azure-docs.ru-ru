@@ -8,18 +8,18 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: content-moderator
 ms.topic: conceptual
-ms.date: 01/20/2018
+ms.date: 04/30/2019
 ms.author: sajagtap
-ms.openlocfilehash: 43a43ddcbfc656a3eb5a274e1bb63a473b7c89a2
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.openlocfilehash: a6c467d3153400815e37a5d461766140abd1fa32
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62098207"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65228130"
 ---
 # <a name="video-moderation-with-human-review"></a>Модерация видео с помощью пользовательских проверок
 
-Используйте машинную [модерацию видео](video-moderation-api.md) и [инструмент пользовательской проверки](Review-Tool-User-Guide/human-in-the-loop.md) Content Moderator для модерации видео и расшифровок для выявления содержимого для взрослых (откровенного содержимого) и непристойного содержимого, чтобы получить наилучшие результаты для своего бизнеса.
+Машинная использование Content Moderator [модерации видео](video-moderation-api.md) и [средства пользовательской проверки](Review-Tool-User-Guide/human-in-the-loop.md) Модерация видео и табель для взрослых (явно) и носящих непристойный характер (непристойные) для получения наилучших результатов для вашего бизнеса.
 
 ## <a name="video-trained-classifier-preview"></a>Классификатор, обученный с помощью видео, (предварительная версия)
 
@@ -28,52 +28,53 @@ ms.locfileid: "62098207"
 ## <a name="shot-detection"></a>Обнаружение сюжетов
 
 При выводе данных классификации дополнительные средства аналитики видео обеспечивают большую гибкость в анализе видео. Вместо вывода только кадров служба модерации видео Майкрософт также предоставляет сведения уровня сюжета. Теперь у вас есть возможность анализировать видео на уровне сюжета и кадра.
- 
+
 ## <a name="key-frame-detection"></a>Обнаружение опорных кадров
 
 Вместо вывода кадров с регулярными интервалами служба модерации видео идентифицирует и выводит только потенциально полные (эффективные) кадры. Это позволяет создавать эффективные кадры для анализа на уровне кадра на наличие содержимого для взрослых и непристойного содержимого.
 
 В следующем извлеченном фрагменте показан неполный ответ с потенциальными сюжетами, опорными кадрами оценками зрелости и неприличности.
 
-    "fragments": [
-    {
-      "start": 0,
-      "duration": 18000
-    },
-    {
-      "start": 18000,
-      "duration": 3600,
-      "interval": 3600,
-      "events": [
-        [
-          {
-            "reviewRecommended": false,
-            "adultScore": 0.00001,
-            "racyScore": 0.03077,
-            "index": 5,
-            "timestamp": 18000,
-            "shotIndex": 0
-          }
-        ]
+```json
+"fragments":[  
+  {  
+    "start":0,
+    "duration":18000
+  },
+  {  
+    "start":18000,
+    "duration":3600,
+    "interval":3600,
+    "events":[  
+      [  
+        {  
+          "reviewRecommended":false,
+          "adultScore":0.00001,
+          "racyScore":0.03077,
+          "index":5,
+          "timestamp":18000,
+          "shotIndex":0
+        }
       ]
-    },
-    {
-      "start": 18386372,
-      "duration": 119149,
-      "interval": 119149,
-      "events": [
-        [
-          {
-            "reviewRecommended": true,
-            "adultScore": 0.00000,
-            "racyScore": 0.91902,
-            "index": 5085,
-            "timestamp": 18386372,
-            "shotIndex": 62
-          }
-        ]
+    ]
+  },
+  {  
+    "start":18386372,
+    "duration":119149,
+    "interval":119149,
+    "events":[  
+      [  
+        {  
+          "reviewRecommended":true,
+          "adultScore":0.00000,
+          "racyScore":0.91902,
+          "index":5085,
+          "timestamp":18386372,
+          "shotIndex":62
+        }
       ]
-
+    ]
+```
 
 ## <a name="visualization-for-human-reviews"></a>Визуализация для пользовательских проверок
 
@@ -101,10 +102,7 @@ ms.locfileid: "62098207"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Приступите к работе с помощью [краткого руководства по модерации видео](video-moderation-api.md). 
-
-Узнайте, как создать [проверки видео](video-reviews-quickstart-dotnet.md) на основе прошедших модерацию выходных данных для рецензентов-пользователей.
-
-Добавьте [проверку расшифровок видео](video-transcript-reviews-quickstart-dotnet.md) в процесс проверки видео.
-
-Ознакомьтесь с подробным руководством по разработке [полного решения для модерации видео](video-transcript-moderation-review-tutorial-dotnet.md). 
+- Приступите к работе с помощью [краткого руководства по модерации видео](video-moderation-api.md).
+- Узнайте, как создать [проверки видео](video-reviews-quickstart-dotnet.md) на основе прошедших модерацию выходных данных для рецензентов-пользователей.
+- Добавьте [проверку расшифровок видео](video-transcript-reviews-quickstart-dotnet.md) в процесс проверки видео.
+- Ознакомьтесь с подробным руководством по разработке [полного решения для модерации видео](video-transcript-moderation-review-tutorial-dotnet.md).

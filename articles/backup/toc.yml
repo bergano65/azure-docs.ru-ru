@@ -195,7 +195,7 @@
           href: backup-azure-arm-userestapi-restoreazurevms.md
         - name: Управление заданиями Azure Backup
           href: backup-azure-arm-userestapi-managejobs.md
-    - name: Резервное копирование баз данных SQL Server на виртуальных машинах Azure
+    - name: Создание резервной копии баз данных SQL Server на виртуальных машинах Azure
       items:
         - name: "Сведения о резервном копировании SQL\_Server на виртуальных машинах Azure"
           href: backup-azure-sql-database.md
@@ -205,6 +205,8 @@
           href: restore-sql-database-azure-vm.md
         - name: Управление резервными копиями баз данных SQL Server
           href: manage-monitor-sql-database-backup.md
+    - name: Резервное копирование баз данных SAP HANA на виртуальных машинах Azure
+      href: backup-azure-sap-hana-database.md
     - name: Windows Server
       items:
         - name: Резервное копирование файлов и папок Windows Server

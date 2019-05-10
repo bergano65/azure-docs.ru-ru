@@ -7,12 +7,12 @@ ms.date: 04/15/2019
 ms.topic: reference
 ms.service: blueprints
 manager: carmonm
-ms.openlocfilehash: 0de3e0add804290cdfe27e2e97d8b1a0f240e0a6
-ms.sourcegitcommit: 37343b814fe3c95f8c10defac7b876759d6752c3
+ms.openlocfilehash: dc72113a8f5ed978d64d35c43e94dc9e19e4cdb1
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/24/2019
-ms.locfileid: "63769306"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65209410"
 ---
 # <a name="functions-for-use-with-azure-blueprints"></a>Функции для использования с Azure чертежей
 
@@ -35,17 +35,17 @@ ms.locfileid: "63769306"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно для заполнения | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | Описание |
 |:--- |:--- |:--- |:--- |
-| Имя артефакта |Yes |string |Имя артефакта в рамках схемы. |
+| Имя артефакта |Да |string |Имя артефакта в рамках схемы. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
-Объект свойств выходных данных. Выходные свойства зависят от типа, на которую ссылается артефакт чертежа. Все типы имеют следующий формат.
+Объект свойств выходных данных. **Выводит** свойства зависят от типа, на которую ссылается артефакт чертежа. Все типы имеют следующий формат.
 
 ```json
 {
-  "output": {collectionOfOutputProperties}
+  "outputs": {collectionOfOutputProperties}
 }
 ```
 
@@ -53,7 +53,7 @@ ms.locfileid: "63769306"
 
 ```json
 {
-    "output": {
+    "outputs": {
         "policyAssignmentId": "{resourceId-of-policy-assignment}",
         "policyAssignmentName": "{name-of-policy-assignment}",
         "policyDefinitionId": "{resourceId-of-policy-definition}",
@@ -63,13 +63,13 @@ ms.locfileid: "63769306"
 
 #### <a name="resource-manager-template-artifact"></a>Артефакта шаблона Resource Manager
 
-**Вывода** свойства возвращаемого объекта определяются в шаблоне Resource Manager и возвращаемых при развертывании.
+**Выводит** свойства возвращаемого объекта определяются в шаблоне Resource Manager и возвращаемых при развертывании.
 
 #### <a name="role-assignment-artifact"></a>Артефакта назначения роли
 
 ```json
 {
-    "output": {
+    "outputs": {
         "roleAssignmentId": "{resourceId-of-role-assignment}",
         "roleDefinitionId": "{resourceId-of-role-definition}",
         "principalId": "{principalId-role-is-being-assigned-to}",
@@ -107,14 +107,14 @@ ms.locfileid: "63769306"
 
 Некоторые примеры извлечения данных из _myTemplateArtifact_ пример являются:
 
-| Expression | type | Value |
+| Выражение | type | Value |
 |:---|:---|:---|
-|`[artifacts("myTemplateArtifact").output.myArray]` | Массив, | \[«Первый», «second»\] |
-|`[artifacts("myTemplateArtifact").output.myArray[0]]` | Строка | «Первый» |
-|`[artifacts("myTemplateArtifact").output.myString]` | Строка | «Мой строковое значение» |
-|`[artifacts("myTemplateArtifact").output.myObject]` | Object | { "myproperty": "my value", "anotherProperty": true } |
-|`[artifacts("myTemplateArtifact").output.myObject.myProperty]` | Строка | «Мой value» |
-|`[artifacts("myTemplateArtifact").output.myObject.anotherProperty]` | Bool | Истина |
+|`[artifacts("myTemplateArtifact").outputs.myArray]` | Массив | \[«Первый», «second»\] |
+|`[artifacts("myTemplateArtifact").outputs.myArray[0]]` | Строка | «Первый» |
+|`[artifacts("myTemplateArtifact").outputs.myString]` | Строка | «Мой строковое значение» |
+|`[artifacts("myTemplateArtifact").outputs.myObject]` | Object | { "myproperty": "my value", "anotherProperty": true } |
+|`[artifacts("myTemplateArtifact").outputs.myObject.myProperty]` | Строка | «Мой value» |
+|`[artifacts("myTemplateArtifact").outputs.myObject.anotherProperty]` | Логический | Истина |
 
 ## <a name="concat"></a>concat
 
@@ -124,10 +124,10 @@ ms.locfileid: "63769306"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно для заполнения | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | Описание |
 |:--- |:--- |:--- |:--- |
-| строка1 |Yes |string |Первое значение для сцепки. |
-| дополнительные аргументы |Нет  |string |Дополнительные значения в последовательном порядке для сцепки |
+| строка1 |Да |string |Первое значение для сцепки. |
+| дополнительные аргументы |Нет |string |Дополнительные значения в последовательном порядке для сцепки |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -149,9 +149,9 @@ Azure Blueprint функция отличается от функции шабл
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно для заполнения | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | Описание |
 |:--- |:--- |:--- |:--- |
-| имя_параметра |Yes |string |Имя параметра, который требуется вернуть. |
+| имя_параметра |Да |string |Имя параметра, который требуется вернуть. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -270,9 +270,9 @@ Azure Blueprint функция отличается от функции шабл
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно для заполнения | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | Описание |
 |:--- |:--- |:--- |:--- |
-| placeholderName |Yes |string |Имя заполнителя артефакта группы ресурсов для возврата. |
+| placeholderName |Да |string |Имя заполнителя артефакта группы ресурсов для возврата. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -324,7 +324,7 @@ Azure Blueprint функция отличается от функции шабл
 }
 ```
 
-## <a name="subscription"></a>Подписка
+## <a name="subscription"></a>подписка
 
 `subscription()`
 

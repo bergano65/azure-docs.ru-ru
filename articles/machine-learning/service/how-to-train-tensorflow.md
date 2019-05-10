@@ -11,12 +11,12 @@ author: mx-iao
 ms.reviewer: sgilley
 ms.date: 05/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: c8865c851f394d73b5446ac159b5a7799c0c9ed2
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: 0d5751ab96dc6b44229e2b18b832a570930058ca
+ms.sourcegitcommit: 4891f404c1816ebd247467a12d7789b9a38cee7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65192350"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65442353"
 ---
 # <a name="train-tensorflow-and-keras-models-with-azure-machine-learning-service"></a>Обучение модели TensorFlow и Keras со службой машинного обучения Azure
 
@@ -24,11 +24,11 @@ ms.locfileid: "65192350"
 
 `TensorFlow` Оценщика также предоставляет уровень абстракции по сравнению с выполнением, это означает, что можно легко настроить параметризованный запусков на различные целевые вычислительные узлы без изменения сценариев обучения.
 
-## <a name="getting-started"></a>Приступая к работе
+## <a name="get-started"></a>Начало работы
 
-Отправка заданий с `TensorFlow` оценщика похоже на использование базового [ `Estimator` ](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.estimator.estimator?view=azure-ml-py). Поэтому мы рекомендуем сначала прочтите [базовый механизм оценки практическом](how-to-train-ml-models.md) основные понятия, охватывающая сначала.
+Так как `TensorFlow` estimator класс похож по основанию [ `Estimator` ](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.estimator.estimator?view=azure-ml-py), мы рекомендуем первого чтения [базовый механизм оценки практическом](how-to-train-ml-models.md) основные понятия, охватывающая.
 
-Если вы хотите начать работу со службой машинного обучения Azure, [работы с кратким руководством](quickstart-run-cloud-notebook.md). Вы получите рабочая среда загружена со всеми наших [примеры записных книжек](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml).
+Чтобы приступить к работе со службой машинного обучения Azure, [работы с кратким руководством](quickstart-run-cloud-notebook.md). После завершения вы получите [рабочей области машинного обучения Azure](concept-azure-machine-learning-architecture.md#workspace) и все наши [примеры записных книжек](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml) в том числе для обучения Dnn с TensorFlow и Keras.
 
 ## <a name="single-node-training"></a>Одноузловое обучение
 

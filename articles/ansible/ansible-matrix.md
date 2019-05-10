@@ -7,13 +7,13 @@ ms.service: ansible
 author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
-ms.date: 04/22/2019
-ms.openlocfilehash: 721179e12ed7f21312fe848a6bef1a8e19bc8083
-ms.sourcegitcommit: e7d4881105ef17e6f10e8e11043a31262cfcf3b7
+ms.date: 04/30/2019
+ms.openlocfilehash: b3396b2f4639cc7298b77810dbaafadd308d6b24
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64866053"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65230982"
 ---
 # <a name="ansible-module-and-version-matrix"></a>Таблица версий и модулей Ansible
 
@@ -28,165 +28,165 @@ Ansible содержит набор модулей для подготовки �
 | Модуль Ansible для Azure                   |  Ansible 2.4 |  Ansible 2.5 |  Ansible 2.6 | Ansible 2.7 | Ansible 2.8 | Роль Ansible | 
 |---------------------------------------------|--------------|--------------|-----------------------------|-------------------------------------|--------------|--------------| 
 | **Среда выполнения приложений**                    |           |                          |                          |                            |           |           |
-| azure_rm_availabilityset                    | Yes          | Да                         | Да          | Да          | Да          | Yes          |
-| azure_rm_availabilityset_facts              | Yes          | Да                         | Да          | Да          | Да          | Yes          |
-| azure_rm_deployment                         | Yes          | Да                         | Да          | Да          | Да          | Yes          |
-| azure_rm_deployment_facts                   | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_functionapp                        | Yes          | Да                         | Да          | Да          | Да          | Yes          |
-| azure_rm_functionapp_facts                  | Yes          | Да                         | Да          | Да          | Да          | Yes          |
-| azure_rm_image                              | -            | Yes                         | Да          | Да          | Да          | Yes          |
-| azure_rm_image_facts                        | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_resource                           | -            | -                           | Yes          | Да          | Да          | Yes          |
-| azure_rm_resource_facts                     | -            | -                           | Yes          | Да          | Да          | Yes          |
-| azure_rm_resourcegroup                      | Yes          | Да                         | Да          | Да          | Да          | Yes          |
-| azure_rm_resourcegroup_facts                | Yes          | Да                         | Да          | Да          | Да          | Yes          |
-| azure_rm_virtualmachine                     | Yes          | Да                         | Да          | Да          | Да          | Yes          |
-| azure_rm_virtualmachine_facts               | -            | -                           | -            | Yes          | Да          | Yes          |
-| azure_rm_virtualmachineextension           | Yes          | Да                         | Да          | Да          | Да          | Yes          |
-| azure_rm_virtualmachineextension_facts      | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_virtualmachineimage_facts          | Yes          | Да                         | Да          | Да          | Да          | Yes          |
-| azure_rm_virtualmachinescaleset            | Yes          | Да                         | Да          | Да          | Да          | Yes          |
-| azure_rm_virtualmachinescaleset_facts      | Yes          | Да                         | Да          | Да          | Да          | Yes          |
-| azure_rm_virtualmachinescalesetextension    | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_virtualmachinescalesetextension_facts | -            | -                        | -            | -            | Yes          | Yes          |
-| azure_rm_virtualmachinescalesetinstance     | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_virtualmachinescalesetinstance_facts | -            | -                         | -            | -            | Yes          | Yes          |
+| azure_rm_availabilityset                    | Да          | Да                         | Да          | Да          | Да          | Да          |
+| azure_rm_availabilityset_facts              | Да          | Да                         | Да          | Да          | Да          | Да          |
+| azure_rm_deployment                         | Да          | Да                         | Да          | Да          | Да          | Да          |
+| azure_rm_deployment_facts                   | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_functionapp                        | Да          | Да                         | Да          | Да          | Да          | Да          |
+| azure_rm_functionapp_facts                  | Да          | Да                         | Да          | Да          | Да          | Да          |
+| azure_rm_image                              | -            | Да                         | Да          | Да          | Да          | Да          |
+| azure_rm_image_facts                        | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_resource                           | -            | -                           | Да          | Да          | Да          | Да          |
+| azure_rm_resource_facts                     | -            | -                           | Да          | Да          | Да          | Да          |
+| azure_rm_resourcegroup                      | Да          | Да                         | Да          | Да          | Да          | Да          |
+| azure_rm_resourcegroup_facts                | Да          | Да                         | Да          | Да          | Да          | Да          |
+| azure_rm_virtualmachine                     | Да          | Да                         | Да          | Да          | Да          | Да          |
+| azure_rm_virtualmachine_facts               | -            | -                           | -            | Да          | Да          | Да          |
+| azure_rm_virtualmachineextension           | Да          | Да                         | Да          | Да          | Да          | Да          |
+| azure_rm_virtualmachineextension_facts      | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_virtualmachineimage_facts          | Да          | Да                         | Да          | Да          | Да          | Да          |
+| azure_rm_virtualmachinescaleset            | Да          | Да                         | Да          | Да          | Да          | Да          |
+| azure_rm_virtualmachinescaleset_facts      | Да          | Да                         | Да          | Да          | Да          | Да          |
+| azure_rm_virtualmachinescalesetextension    | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_virtualmachinescalesetextension_facts | -            | -                        | -            | -            | Да          | Да          |
+| azure_rm_virtualmachinescalesetinstance     | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_virtualmachinescalesetinstance_facts | -            | -                         | -            | -            | Да          | Да          |
 | **Сеть**                              |              |                             |              |              |              |              |
-| azure_rm_appgateway                         | -            | -                           | -            | Yes          | Да          | Yes          |
-| azure_rm_appgwroute                         | -            | -                           | -            | -            | -          | Yes          |
-| azure_rm_appgwroute_facts                   | -            | -                           | -            | -            | -          | Yes          |
-| azure_rm_appgwroutetable                    | -            | -                           | -            | -            | -          | Yes          |
-| azure_rm_appgwroutetable_facts              | -            | -                           | -            | -            | -          | Yes          |
-| azure_rm_applicationsecuritygroup           | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_applicationsecuritygroup_facts     | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_cdnendpoint                        | -            | -                         | -          | -            | Yes          | Yes          |
-| azure_rm_cdnendpoint_facts                  | -            | -                         | -          | -            | Yes          | Yes          |
-| azure_rm_cdnprofile                         | -            | -                         | -          | -            | Yes          | Yes          |
-| azure_rm_cdnprofile_facts                   | -            | -                         | -          | -            | Yes          | Yes          |
-| azure_rm_dnsrecordset                       | Yes          | Да                         | Да          | Да          | Да          | Yes          |
-| azure_rm_dnsrecordset_facts                 | Yes          | Да                         | Да          | Да          | Да          | Yes          |
-| azure_rm_dnszone                            | Yes          | Да                         | Да          | Да          | Да          | Yes          |
-| azure_rm_dnszone_facts                      | Yes          | Да                         | Да          | Да          | Да          | Yes          |
-| azure_rm_loadbalancer                       | Yes          | Да                         | Да          | Да          | Да          | Yes          |
-| azure_rm_loadbalancer_facts                 | Yes          | Да                         | Да          | Да          | Да          | Yes          |
-| azure_rm_networkinterface                   | Yes          | Да                         | Да          | Да          | Да          | Yes          |
-| azure_rm_networkinterface_facts             | Yes          | Да                         | Да          | Да          | Да          | Yes          |
-| azure_rm_publicipaddress                    | Yes          | Да                         | Да          | Да          | Да          | Yes          |
-| azure_rm_publicipaddress_facts              | Yes          | Да                         | Да          | Да          | Да          | Yes          |
-| azure_rm_route                              | -            | -                           | -            | Yes          | Да          | Yes          |
-| azure_rm_routetable                         | -            | -                           | -            | Yes          | Да          | Yes          |
-| azure_rm_routetable_facts                   | -            | -                           | -            | Yes          | Да          | Yes          |
-| azure_rm_securitygroup                      | Yes          | Да                         | Да          | Да          | Да          | Yes          |
-| azure_rm_subnet                             | Yes          | Да                         | Да          | Да          | Да          | Yes          |
-| azure_rm_subnet_facts                       | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_trafficmanagerendpoint             | -            | -                         | -          | Yes          | Да          | Yes          |
-| azure_rm_trafficmanagerendpoint_facts       | -            | -                         | -          | Yes          | Да          | Yes          |
-| azure_rm_trafficmanagerprofile              | -            | -                         | -          | Yes          | Да          | Yes          |
-| azure_rm_trafficmanagerprofile_facts        | -            | -                         | -          | Yes          | Да          | Yes          |
-| azure_rm_virtualnetwork                     | Yes          | Да                         | Да          | Да          | Да          | Yes          |
-| azure_rm_virtualnetwork_facts               | Yes          | Да                         | Да          | Да          | Да          | Yes          |
-| azure_rm_virtualnetworkpeering              | -            | -                         | -          | -            | Yes          | Yes          |
+| azure_rm_appgateway                         | -            | -                           | -            | Да          | Да          | Да          |
+| azure_rm_appgwroute                         | -            | -                           | -            | -            | -          | Да          |
+| azure_rm_appgwroute_facts                   | -            | -                           | -            | -            | -          | Да          |
+| azure_rm_appgwroutetable                    | -            | -                           | -            | -            | -          | Да          |
+| azure_rm_appgwroutetable_facts              | -            | -                           | -            | -            | -          | Да          |
+| azure_rm_applicationsecuritygroup           | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_applicationsecuritygroup_facts     | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_cdnendpoint                        | -            | -                         | -          | -            | Да          | Да          |
+| azure_rm_cdnendpoint_facts                  | -            | -                         | -          | -            | Да          | Да          |
+| azure_rm_cdnprofile                         | -            | -                         | -          | -            | Да          | Да          |
+| azure_rm_cdnprofile_facts                   | -            | -                         | -          | -            | Да          | Да          |
+| azure_rm_dnsrecordset                       | Да          | Да                         | Да          | Да          | Да          | Да          |
+| azure_rm_dnsrecordset_facts                 | Да          | Да                         | Да          | Да          | Да          | Да          |
+| azure_rm_dnszone                            | Да          | Да                         | Да          | Да          | Да          | Да          |
+| azure_rm_dnszone_facts                      | Да          | Да                         | Да          | Да          | Да          | Да          |
+| azure_rm_loadbalancer                       | Да          | Да                         | Да          | Да          | Да          | Да          |
+| azure_rm_loadbalancer_facts                 | Да          | Да                         | Да          | Да          | Да          | Да          |
+| azure_rm_networkinterface                   | Да          | Да                         | Да          | Да          | Да          | Да          |
+| azure_rm_networkinterface_facts             | Да          | Да                         | Да          | Да          | Да          | Да          |
+| azure_rm_publicipaddress                    | Да          | Да                         | Да          | Да          | Да          | Да          |
+| azure_rm_publicipaddress_facts              | Да          | Да                         | Да          | Да          | Да          | Да          |
+| azure_rm_route                              | -            | -                           | -            | Да          | Да          | Да          |
+| azure_rm_routetable                         | -            | -                           | -            | Да          | Да          | Да          |
+| azure_rm_routetable_facts                   | -            | -                           | -            | Да          | Да          | Да          |
+| azure_rm_securitygroup                      | Да          | Да                         | Да          | Да          | Да          | Да          |
+| azure_rm_subnet                             | Да          | Да                         | Да          | Да          | Да          | Да          |
+| azure_rm_subnet_facts                       | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_trafficmanagerendpoint             | -            | -                         | -          | Да          | Да          | Да          |
+| azure_rm_trafficmanagerendpoint_facts       | -            | -                         | -          | Да          | Да          | Да          |
+| azure_rm_trafficmanagerprofile              | -            | -                         | -          | Да          | Да          | Да          |
+| azure_rm_trafficmanagerprofile_facts        | -            | -                         | -          | Да          | Да          | Да          |
+| azure_rm_virtualnetwork                     | Да          | Да                         | Да          | Да          | Да          | Да          |
+| azure_rm_virtualnetwork_facts               | Да          | Да                         | Да          | Да          | Да          | Да          |
+| azure_rm_virtualnetworkpeering              | -            | -                         | -          | -            | Да          | Да          |
 | **Хранилище**                    |           |                          |                          |                            |           |           |
-| azure_rm_manageddisk                        | Yes          | Да                         | Да          | Да          | Да          | Yes          |
-| azure_rm_manageddisk_facts                  | Yes          | Да                         | Да          | Да          | Да          | Yes          |
-| azure_rm_storageaccount                     | Yes          | Да                         | Да          | Да          | Да          | Yes          |
-| azure_rm_storageaccount_facts               | Yes          | Да                         | Да          | Да          | Да          | Yes          |
-| azure_rm_storageblob                        | Yes          | Да                         | Да          | Да          | Да          | Yes          |
+| azure_rm_manageddisk                        | Да          | Да                         | Да          | Да          | Да          | Да          |
+| azure_rm_manageddisk_facts                  | Да          | Да                         | Да          | Да          | Да          | Да          |
+| azure_rm_storageaccount                     | Да          | Да                         | Да          | Да          | Да          | Да          |
+| azure_rm_storageaccount_facts               | Да          | Да                         | Да          | Да          | Да          | Да          |
+| azure_rm_storageblob                        | Да          | Да                         | Да          | Да          | Да          | Да          |
 | **Веб-приложения**                    |           |                          |                          |                             |           |           |
-| azure_rm_appserviceplan                     | -            | -                         | -          | Yes          | Да          | Yes          |
-| azure_rm_appserviceplan_facts               | -            | -                         | -          | Yes          | Да          | Yes          |
-| azure_rm_webapp                             | -            | -                         | -          | Yes          | Да          | Yes          |
-| azure_rm_webapp_facts                       | -            | -                         | -          | Yes          | Да          | Yes          |
-| azure_rm_webappslot                         | -            | -                         | -          | -            | Yes          | Yes          |
+| azure_rm_appserviceplan                     | -            | -                         | -          | Да          | Да          | Да          |
+| azure_rm_appserviceplan_facts               | -            | -                         | -          | Да          | Да          | Да          |
+| azure_rm_webapp                             | -            | -                         | -          | Да          | Да          | Да          |
+| azure_rm_webapp_facts                       | -            | -                         | -          | Да          | Да          | Да          |
+| azure_rm_webappslot                         | -            | -                         | -          | -            | Да          | Да          |
 | **Контейнеры**                    |           |                          |                          |                            |           |           |
-| azure_rm_acs                                | Yes          | Да                         | Да          | Да          | Да          | Yes          |
-| azure_rm_aks                                | -            | -                           | Yes          | Да          | Да          | Yes          |
-| azure_rm_aks_facts                          | -            | -                           | Yes          | Да          | Да          | Yes          |
-| azure_rm_aksversion_facts                   | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_containerinstance                  | -            | Yes                         | Да          | Да          | Да          | Yes          |
-| azure_rm_containerinstance_facts            | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_containerregistry                  | -            | Yes                         | Да          | Да          | Да          | Yes          |
-| azure_rm_containerregistry_facts            | -            | -                           | -            | Yes          | Да          | Yes          |
-| azure_rm_containerregistryreplication       | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_containerregistryreplication_facts | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_containerregistrywebhook           | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_containerregistrywebhook_facts     | -            | -                           | -            | -            | Yes          | Yes          |
+| azure_rm_acs                                | Да          | Да                         | Да          | Да          | Да          | Да          |
+| azure_rm_aks                                | -            | -                           | Да          | Да          | Да          | Да          |
+| azure_rm_aks_facts                          | -            | -                           | Да          | Да          | Да          | Да          |
+| azure_rm_aksversion_facts                   | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_containerinstance                  | -            | Да                         | Да          | Да          | Да          | Да          |
+| azure_rm_containerinstance_facts            | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_containerregistry                  | -            | Да                         | Да          | Да          | Да          | Да          |
+| azure_rm_containerregistry_facts            | -            | -                           | -            | Да          | Да          | Да          |
+| azure_rm_containerregistryreplication       | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_containerregistryreplication_facts | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_containerregistrywebhook           | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_containerregistrywebhook_facts     | -            | -                           | -            | -            | Да          | Да          |
 | **Базы данных**                    |           |                          |                          |                             |           |           |
-| azure_rm_cosmosdbaccount                    | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_cosmosdbaccount_facts              | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_mariadbconfiguration               | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_mariadbconfiguration_facts         | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_mariadbdatabase                    | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_mariadbdatabase_facts              | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_mariadbfirewallrule                | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_mariadbfirewallrule_facts          | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_mariadbserver                      | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_mariadbserver_facts                | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_mysqlconfiguration                 | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_mysqlconfiguration_facts           | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_mysqldatabase                      | -            | Yes                         | Да          | Да          | Да          | Yes          |
-| azure_rm_mysqldatabase_facts                | -            | -                           | -            | Yes          | Да          | Yes          |
-| azure_rm_mysqlfirewallrule                  | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_mysqlfirewallrule_facts            | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_mysqlserver                        | -            | Yes                         | Да          | Да          | Да          | Yes          |
-| azure_rm_mysqlserver_facts                  | -            | -                           | -            | Yes          | Да          | Yes          |
-| azure_rm_postgresqlconfiguration            | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_postgresqlconfiguration_facts      | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_postgresqldatabase                 | -            | Yes                         | Да          | Да          | Да          | Yes          |
-| azure_rm_postgresqldatabase_facts           | -            | -                           | -            | Yes          | Да          | Yes          |
-| azure_rm_postgresqlfirewallrule             | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_postgresqlfirewallrule_facts       | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_postgresqlserver                   | -            | Yes                         | Да          | Да          | Да          | Yes          |
-| azure_rm_postgresqlserver_facts             | -            | -                           | -            | Yes          | Да          | Yes          |
-| azure_rm_rediscache                         | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_rediscache_facts                   | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_rediscachefirewallrule             | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_sqldatabase                        | -            | Yes                         | Да          | Да          | Да          | Yes          |
-| azure_rm_sqldatabase_facts                  | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_sqlelasticpool                     | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_sqlelasticpool_facts               | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_sqlfirewallrule                    | -            | -                           | -            | Yes          | Да          | Yes          |
-| azure_rm_sqlfirewallrule_facts              | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_sqlserver                          | -            | Yes                         | Да          | Да          | Да          | Yes          |
-| azure_rm_sqlserver_facts                    | -            | Yes                         | Да          | Да          | Да          | Yes          |
+| azure_rm_cosmosdbaccount                    | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_cosmosdbaccount_facts              | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_mariadbconfiguration               | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_mariadbconfiguration_facts         | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_mariadbdatabase                    | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_mariadbdatabase_facts              | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_mariadbfirewallrule                | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_mariadbfirewallrule_facts          | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_mariadbserver                      | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_mariadbserver_facts                | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_mysqlconfiguration                 | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_mysqlconfiguration_facts           | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_mysqldatabase                      | -            | Да                         | Да          | Да          | Да          | Да          |
+| azure_rm_mysqldatabase_facts                | -            | -                           | -            | Да          | Да          | Да          |
+| azure_rm_mysqlfirewallrule                  | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_mysqlfirewallrule_facts            | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_mysqlserver                        | -            | Да                         | Да          | Да          | Да          | Да          |
+| azure_rm_mysqlserver_facts                  | -            | -                           | -            | Да          | Да          | Да          |
+| azure_rm_postgresqlconfiguration            | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_postgresqlconfiguration_facts      | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_postgresqldatabase                 | -            | Да                         | Да          | Да          | Да          | Да          |
+| azure_rm_postgresqldatabase_facts           | -            | -                           | -            | Да          | Да          | Да          |
+| azure_rm_postgresqlfirewallrule             | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_postgresqlfirewallrule_facts       | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_postgresqlserver                   | -            | Да                         | Да          | Да          | Да          | Да          |
+| azure_rm_postgresqlserver_facts             | -            | -                           | -            | Да          | Да          | Да          |
+| azure_rm_rediscache                         | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_rediscache_facts                   | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_rediscachefirewallrule             | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_sqldatabase                        | -            | Да                         | Да          | Да          | Да          | Да          |
+| azure_rm_sqldatabase_facts                  | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_sqlelasticpool                     | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_sqlelasticpool_facts               | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_sqlfirewallrule                    | -            | -                           | -            | Да          | Да          | Да          |
+| azure_rm_sqlfirewallrule_facts              | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_sqlserver                          | -            | Да                         | Да          | Да          | Да          | Да          |
+| azure_rm_sqlserver_facts                    | -            | Да                         | Да          | Да          | Да          | Да          |
 | **Аналитика в Application Insights**                    |           |                          |                          |                             |           |           |
-| azure_rm_hdinsightcluster                   | -            | -                           | -            | -            | Yes          | Yes          |
+| azure_rm_hdinsightcluster                   | -            | -                           | -            | -            | Да          | Да          |
 | **Интеграция**                    |           |                          |                          |                             |           |           |
-| azure_rm_servicebus                         | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_servicebus_facts                   | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_servicebusqueue                    | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_servicebussaspolicy                | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_servicebustopic                    | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_servicebustopicsubscription        | -            | -                           | -            | -            | Yes          | Yes          |
+| azure_rm_servicebus                         | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_servicebus_facts                   | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_servicebusqueue                    | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_servicebussaspolicy                | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_servicebustopic                    | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_servicebustopicsubscription        | -            | -                           | -            | -            | Да          | Да          |
 | **Безопасность**                    |           |                          |                          |                             |           |           |
-| azure_rm_keyvault                           | -            | Yes                         | Да          | Да          | Да          | Yes          |
-| azure_rm_keyvault_facts                     | -            | -                           | -              | -          | Yes          | Yes          |
-| azure_rm_keyvaultkey                        | -            | Yes                         | Да          | Да          | Да          | Yes          |
-| azure_rm_keyvaultsecret                     | -            | Yes                         | Да          | Да          | Да          | Yes          |
-| azure_rm_roleassignment                     | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_roleassignment_facts               | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_roledefinition                     | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_roledefinition_facts               | -            | -                           | -            | -            | Yes          | Yes          |
+| azure_rm_keyvault                           | -            | Да                         | Да          | Да          | Да          | Да          |
+| azure_rm_keyvault_facts                     | -            | -                           | -              | -          | Да          | Да          |
+| azure_rm_keyvaultkey                        | -            | Да                         | Да          | Да          | Да          | Да          |
+| azure_rm_keyvaultsecret                     | -            | Да                         | Да          | Да          | Да          | Да          |
+| azure_rm_roleassignment                     | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_roleassignment_facts               | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_roledefinition                     | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_roledefinition_facts               | -            | -                           | -            | -            | Да          | Да          |
 | **DevOps**               |           |                          |                          |                             |           |           |
-| azure_rm_devtestlab                         | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_devtestlab_facts                   | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_devtestlabarmtemplate_facts        | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_devtestlabartifact_facts           | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_devtestlabartifactsource           | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_devtestlabartifactsource_facts     | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_devtestlabcustomimage              | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_devtestlabenvironment              | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_devtestlabpolicy                   | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_devtestlabschedule                 | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_devtestlabvirtualmachine           | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_devtestlabvirtualmachine_facts | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_devtestlabvirtualnetwork           | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_devtestlabvirtualnetwork_facts     | -            | -                           | -            | -            | Yes          | Yes          |
+| azure_rm_devtestlab                         | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_devtestlab_facts                   | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_devtestlabarmtemplate_facts        | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_devtestlabartifact_facts           | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_devtestlabartifactsource           | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_devtestlabartifactsource_facts     | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_devtestlabcustomimage              | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_devtestlabenvironment              | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_devtestlabpolicy                   | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_devtestlabschedule                 | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_devtestlabvirtualmachine           | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_devtestlabvirtualmachine_facts | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_devtestlabvirtualnetwork           | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_devtestlabvirtualnetwork_facts     | -            | -                           | -            | -            | Да          | Да          |
 | **Azure Monitor**          |           |                          |                          |                             |           |           |
-| azure_rm_autoscale                  | -            | -                         | -          | Yes          | Да          | Yes          |
-| azure_rm_autoscale_facts            | -            | -                         | -          | Yes          | Да          | Yes          |
-| azure_rm_loganalyticsworkspace              | -            | -                           | -            | -            | Yes          | Yes          |
-| azure_rm_loganalyticsworkspace_facts        | -            | -                           | -            | -            | Yes          | Yes          |
+| azure_rm_autoscale                  | -            | -                         | -          | Да          | Да          | Да          |
+| azure_rm_autoscale_facts            | -            | -                         | -          | Да          | Да          | Да          |
+| azure_rm_loganalyticsworkspace              | -            | -                           | -            | -            | Да          | Да          |
+| azure_rm_loganalyticsworkspace_facts        | -            | -                           | -            | -            | Да          | Да          |
 
 ## <a name="introduction-to-playbook-role-for-azure"></a>Общие сведения о роли playbook для Azure
 

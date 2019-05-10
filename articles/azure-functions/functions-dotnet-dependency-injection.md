@@ -11,12 +11,12 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.date: 03/22/2019
 ms.author: jehollan
-ms.openlocfilehash: 1ef688dff65dc11f875f76e2f9127bf89af2f2b9
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.openlocfilehash: 2044718d2ec7a7acc58e1e7ba9ba04ec5caf16b3
+ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65074595"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65408453"
 ---
 # <a name="use-dependency-injection-in-net-azure-functions"></a>Использовать внедрение зависимостей в функциях Azure .NET
 
@@ -65,7 +65,7 @@ namespace MyNamespace
 
 Одноэлементные службы времени существования рекомендуется использовать для подключения и клиентов, например `SqlConnection`, `CloudBlobClient`, или `HttpClient`.
 
-Просмотреть или скачать [образец существования другой службой](http://aka.ms/functions/di-sample).
+Просмотреть или скачать [образец существования другой службой](https://aka.ms/functions/di-sample).
 
 ## <a name="logging-services"></a>Службы ведения журнала
 
@@ -78,7 +78,7 @@ namespace MyNamespace
 
 Узел функции будет зарегистрироваться многие службы.  Ниже приведены службы, которые являются безопасными для зависимость от.  Другие службы узла не поддерживаются для регистрации или зависят.  При наличии других служб, требуется ли зависимость от, пожалуйста [создать проблему и обсуждения в GitHub](https://github.com/azure/azure-functions-host).
 
-|Тип службы|Срок действия|ОПИСАНИЕ|
+|Тип службы|Срок действия|Описание|
 |--|--|--|
 |`Microsoft.Extensions.Configuration.IConfiguration`|одноэлементный|Конфигурация среды выполнения|
 |`Microsoft.Azure.WebJobs.Host.Executors.IHostIdProvider`|одноэлементный|Отвечает за предоставление идентификатор экземпляра узла|

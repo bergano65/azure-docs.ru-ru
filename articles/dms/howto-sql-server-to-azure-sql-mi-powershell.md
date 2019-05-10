@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.custom: mvc
 ms.topic: article
 ms.date: 04/29/2019
-ms.openlocfilehash: 96ee3f5e1b3cfe67cb75e50c6247e41f0d901393
-ms.sourcegitcommit: e7d4881105ef17e6f10e8e11043a31262cfcf3b7
+ms.openlocfilehash: d83410efd26f8c2078d3abdb01d061db0b83d33d
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64867916"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65233714"
 ---
 # <a name="migrate-sql-server-on-premises-to-an-azure-sql-database-managed-instance-using-azure-powershell"></a>Миграция локального SQL Server в управляемый экземпляр базы данных SQL Azure с помощью Azure PowerShell
 В этой статье выполняется перенос **Adventureworks2016** базы данных, восстановленной на локальном экземпляре SQL Server 2005 или выше в базе данных SQL управляемого экземпляра с помощью Microsoft Azure PowerShell. Вы можете перенести базы данных из экземпляра SQL Server в локальной базы данных SQL управляемого экземпляра с помощью `Az.DataMigration` модуля в Microsoft Azure PowerShell.
@@ -25,7 +25,7 @@ ms.locfileid: "64867916"
 > [!div class="checklist"]
 >
 > * Создайте группу ресурсов.
-> * Создайте экземпляр Azure Database Migration Service.
+> * Создание экземпляра Azure Database Migration Service.
 > * Создайте проект миграции в экземпляре Azure Database Migration Service.
 > * выполнение миграции.
 
@@ -86,7 +86,7 @@ New-AzResourceGroup -ResourceGroupName myResourceGroup -Location EastUS
 > Приведенный ниже фрагмент кода — для автономной миграции, которая не требует экземпляра Azure Database Migration Service, в зависимости от SKU "премиум". Значение параметра - Sku оперативную миграцию, необходимо включить номер SKU уровня "премиум".
 
 ```powershell
- $vNet = Get-AzVirtualNetwork -ResourceGroupName MyDMSResourceGroup -Name MyVNET
+$vNet = Get-AzVirtualNetwork -ResourceGroupName MyDMSResourceGroup -Name MyVNET
 
 $vSubNet = Get-AzVirtualNetworkSubnetConfig -VirtualNetwork $vNet -Name MySubnet
 

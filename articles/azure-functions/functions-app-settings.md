@@ -10,12 +10,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 09/22/2018
 ms.author: glenga
-ms.openlocfilehash: 573e6ea857ef17a6160f7e03f52f9c64f903530a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: d78fb546e954c4ae12e5836d9a7bef7ed5003090
+ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60347522"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65511078"
 ---
 # <a name="app-settings-reference-for-azure-functions"></a>Справочник по параметрам приложений для Функций Azure
 
@@ -177,7 +177,7 @@ ms.locfileid: "60347522"
 
 По умолчанию прокси-серверы Функций будут использовать команду для отправки вызовов API из них самих непосредственно в функции в одном приложении-функции, а не создавать новый HTTP-запрос. Этот параметр позволяет отключить такую реакцию на событие.
 
-|Ключ|Value|ОПИСАНИЕ|
+|Ключ|Value|Описание|
 |-|-|-|
 |AZURE_FUNCTION_PROXY_DISABLE_LOCAL_CALL|Да|Вызовы с URL-адресом внутреннего сервера, который указывает на функцию в локальном приложении-функции, больше не будут отправляться непосредственно в функцию, а вместо этого будут направляться во внешний интерфейс HTTP для приложения-функции|
 |AZURE_FUNCTION_PROXY_DISABLE_LOCAL_CALL|false|Это значение по умолчанию. Вызовы с URL-адреса внутреннего сервера, указывающего на функцию в локальном приложении-функции, будут перенаправляться непосредственно к этой Функции|
@@ -187,7 +187,7 @@ ms.locfileid: "60347522"
 
 Этот параметр контролирует, декодируется ли сочетание знаков %2F как косая черта в параметрах маршрута, если оно вставлено в URL-адрес внутреннего сервера. 
 
-|Ключ|Value|ОПИСАНИЕ|
+|Ключ|Value|Описание|
 |-|-|-|
 |AZURE_FUNCTION_PROXY_BACKEND_URL_DECODE_SLASHES|Да|Параметры маршрута с закодированными косыми чертами будут его декодировать. `example.com/api%2ftest` станет `example.com/api/test`|
 |AZURE_FUNCTION_PROXY_BACKEND_URL_DECODE_SLASHES|false|Это поведение по умолчанию. Все параметры маршрута будут передаваться без изменений|
@@ -209,7 +209,7 @@ ms.locfileid: "60347522"
     }
 }
 ```
-|Декодирование URL-адреса|Входные данные|Выходные данные|
+|Декодирование URL-адреса|Вход|Выход|
 |-|-|-|
 |Да|myfunction.com/test%2fapi|example.com/test/api
 |false|myfunction.com/test%2fapi|example.com/test%2fapi|
@@ -217,7 +217,7 @@ ms.locfileid: "60347522"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Узнайте, как обновлять параметры приложения](functions-how-to-use-azure-function-app-settings.md#manage-app-service-settings)
+[Узнайте, как обновлять параметры приложения](functions-how-to-use-azure-function-app-settings.md#settings)
 
 [Ознакомьтесь с глобальными параметрами в файле host.json](functions-host-json.md)
 

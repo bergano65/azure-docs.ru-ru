@@ -3,17 +3,17 @@ title: Поддерживаемые стили карт в службе Azure Ma
 description: Стили карт, поддерживаемые в службе Azure Maps
 author: walsehgal
 ms.author: v-musehg
-ms.date: 02/12/2019
+ms.date: 05/06/2019
 ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: 76ab49c7f28260249483bf3bc4387e8cbaca13b2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: db396ad06bf46cbbaf486696b68393a6a4214c2f
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60767241"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65230826"
 ---
 # <a name="azure-maps-supported-map-styles"></a>Стили карт, поддерживаемые в службе Azure Maps
 Служба Azure Maps поддерживает несколько различных встроенных стилей карт, как описано ниже.
@@ -56,6 +56,17 @@ ms.locfileid: "60767241"
 **Применимые API:**
 * Элементы управления картой JS 
 * Элемент управления картой Android
+
+
+## <a name="grayscalelight"></a>grayscale_light
+**Оттенки серого света** — это облегченная версия в стиле дорожной карты.
+
+![Оттенки серого света](./media/supported-map-styles/grayscale_light.png)
+
+**Применимые API:**
+* Элементы управления картой JS
+* Элемент управления картой Android
+
 
 ## <a name="night"></a>ночь
 **Ночь** — это темная версия стиля дорожной карты с цветными дорогами и символами.

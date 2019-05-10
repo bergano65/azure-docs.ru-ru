@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 04/19/2019
+ms.date: 05/7/2019
 ms.author: haroldw
-ms.openlocfilehash: 53bed2131e81ee5ed0f46bde389262ee8349339a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: c8ebd10544331d3b7d887124542fe4ee2753c714
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60542430"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65233144"
 ---
 # <a name="openshift-in-azure"></a>Использование OpenShift в Azure
 
@@ -34,15 +34,15 @@ OpenShift включает Kubernetes для оркестрации контей
 
 Существует несколько версий OpenShift.  Из этих версий только два доступны сегодня клиентам самостоятельно развертывать в Azure: Платформа контейнеров OpenShift и OKD (прежнее название — OpenShift Origin).
 
+## <a name="azure-red-hat-openshift"></a>Azure Red Hat OpenShift
+
+Microsoft Azure Red Hat OpenShift — это полностью управляемое предложение OpenShift в Azure. Эта служба управляется и поддерживается совместно корпорацией Майкрософт и Red Hat. Полная документация может быть [здесь](https://docs.microsoft.com/azure/openshift/). 
+
 ## <a name="openshift-container-platform"></a>Платформа контейнеров OpenShift
 
 OpenShift Container Platform — это [коммерческая версия](https://www.openshift.com) корпоративного класса, которая разрабатывается и поддерживается компанией Red Hat. Чтобы использовать эту версию, клиенты должен приобрести необходимые права доступа к платформе OpenShift Container Platform. Кроме того, они сами устанавливают и администрируют всю инфраструктуру.
 
 Поскольку клиенты «владел» всей платформы, их можно установить в их локальном центре обработки данных или в общедоступном облаке (Azure).
-
-## <a name="azure-red-hat-openshift"></a>Azure Red Hat OpenShift
-
-Azure Red Hat OpenShift — это полностью управляемое предложение OpenShift в Azure. Эта служба управляется и поддерживается совместно корпорацией Майкрософт и Red Hat. Кластер будет развернут в подписку Azure клиента. Планируется, что служба является GA вокруг мая 2019. Специальная документация для управляемой службы, будут доступны после выпуска общедоступной версии службы
 
 ## <a name="okd"></a>OKD
 

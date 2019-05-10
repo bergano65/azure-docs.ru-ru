@@ -1,22 +1,24 @@
 ---
-title: Управление репликами чтения в службе "База данных Azure для PostgreSQL" с помощью портала Azure
-description: Узнайте, как управлять репликами чтения в службе "База данных Azure для PostgreSQL" с помощью портала Azure.
-author: WenJason
-ms.author: v-jay
+title: 'Управление репликами чтения для базы данных Azure для PostgreSQL: один сервер на портале Azure'
+description: 'Сведения об управлении чтения реплики базы данных Azure для PostgreSQL: один сервер на портале Azure.'
+author: rachel-msft
+ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-origin.date: 04/01/2019
-ms.date: 04/22/2019
-ms.openlocfilehash: bf1fb1c1343173949ecb6348284cb537282b277b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 5/6/2019
+ms.openlocfilehash: 87371f91d9ea1f556d0f78beebd73b8a28977b71
+ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60420808"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65510392"
 ---
-# <a name="create-and-manage-read-replicas-from-the-azure-portal"></a>Создание реплик чтения и управление ими с помощью портала Azure
+# <a name="create-and-manage-read-replicas-in-azure-database-for-postgresql---single-server-from-the-azure-portal"></a>Создание и управление ими чтения реплик в базе данных Azure для PostgreSQL: один сервер на портале Azure
 
 В этой статье описано, как создавать реплики чтения и управлять ими в службе "База данных Azure для PostgreSQL" с помощью портала Azure. Дополнительные сведения о репликах чтения см. в [этой статье](concepts-read-replicas.md).
+
+> [!IMPORTANT]
+> Можно создать чтения реплики, в том же регионе, что главный сервер, или в любом другом регионе Azure по своему усмотрению. Репликация между регионами в настоящее время находится в общедоступной предварительной версии.
 
 
 ## <a name="prerequisites"></a>Технические условия
@@ -59,9 +61,15 @@ ms.locfileid: "60420808"
 
    ![Добавление реплики](./media/howto-read-replicas-portal/add-replica.png)
 
-4. Введите имя реплики чтения. Нажмите кнопку **ОК**, чтобы подтвердить создание реплики.
+4. Введите имя реплики чтения. 
 
-   ![Присвоение имени реплике](./media/howto-read-replicas-portal/name-replica.png) 
+    ![Присвоение имени реплике](./media/howto-read-replicas-portal/name-replica.png)
+
+5. Выберите расположение для реплики. Можно создать реплику в любом регионе Azure. Расположение по умолчанию совпадает с главного сервера.
+
+    ![Выберите расположение](./media/howto-read-replicas-portal/location-replica.png)
+
+6. Нажмите кнопку **ОК**, чтобы подтвердить создание реплики.
 
 Реплика создается с той же конфигурацией сервера, что и у главного сервера. После создания реплики вы можете независимо от главного сервера изменять следующие ее параметры: поколение вычислительных ресурсов, число виртуальных ядер, объем хранилища и период хранения резервных копий. Изменить также можно ценовую категорию (за исключением уровня "Базовый").
 
@@ -73,7 +81,7 @@ ms.locfileid: "60420808"
 ![Просмотр новой реплики в окне "Репликация"](./media/howto-read-replicas-portal/list-replica.png)
  
 
-## <a name="stop-replication"></a>Остановка репликации
+## <a name="stop-replication"></a>Остановить репликацию
 Вы можете остановить репликацию между главным сервером и репликой чтения.
 
 > [!IMPORTANT]
