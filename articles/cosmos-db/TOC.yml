@@ -163,6 +163,8 @@
         - name: Активация Функций Azure
           displayName: change feed
           href: change-feed-functions.md
+    - name: Использование Analytics с Apache Spark
+      href: spark-api-introduction.md
     - name: Программирование на стороне сервера
       items:
         - name: 'Хранимые процедуры, триггеры и определяемые пользователем функции'
@@ -462,10 +464,6 @@
           href: etcd-api-introduction.md
         - name: "Использование Azure Kubernetes с Azure Cosmos\_DB"
           href: bootstrap-kubernetes-cluster.md
-    - name: API Spark
-      items:
-        - name: Введение
-          href: spark-api-introduction.md
 - name: Практические руководства
   items:
     - name: Управление учетной записью Azure Cosmos

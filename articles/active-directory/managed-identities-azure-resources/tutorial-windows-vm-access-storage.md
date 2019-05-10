@@ -15,16 +15,21 @@ ms.workload: identity
 ms.date: 01/24/2019
 ms.author: markvi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5fd2e30f7ae96ff38b0ded11c158fcef636e3a26
-ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
+ms.openlocfilehash: 147ee2450a6a67f8ca02149105533401d038a53a
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58448804"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65191083"
 ---
 # <a name="tutorial-use-a-windows-vm-system-assigned-managed-identity-to-access-azure-storage-via-access-key"></a>Руководство по Использование назначаемого системой управляемого удостоверения виртуальной машины Windows для доступа к службе хранилища Azure с помощью ключа доступа
 
 [!INCLUDE [preview-notice](../../../includes/active-directory-msi-preview-notice.md)]
+
+
+> [!IMPORTANT] 
+> Служба хранилища Azure теперь поддерживает аутентификацию Azure AD. Рекомендуется использовать [аутентификацию Azure AD](tutorial-vm-windows-access-storage.md) вместо ключей доступа. 
+
 
 В этом руководстве описывается, как получить ключи доступа для учетной записи хранения с помощью управляемого удостоверения виртуальной машины Windows, назначаемого системой. Вы можете использовать ключи доступа к хранилищу стандартным образом при выполнении операций с хранилищем, например при использовании пакета SDK для службы хранилища Azure. В рамках этого руководства мы отправим и скачаем большие двоичные объекты с помощью PowerShell службы хранилища Azure. Вы научитесь:
 

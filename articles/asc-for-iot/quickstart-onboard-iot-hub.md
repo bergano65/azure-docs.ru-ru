@@ -5,21 +5,21 @@ services: asc-for-iot
 ms.service: ascforiot
 documentationcenter: na
 author: mlottner
-manager: barbkess
+manager: rkarlin
 editor: ''
 ms.assetid: 670e6d2b-e168-4b14-a9bf-51a33c2a9aad
 ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 04/18/2019
+ms.date: 04/29/2019
 ms.author: mlottner
-ms.openlocfilehash: cac2f740c1b2ae109f29ce44cd035fc6a83dd148
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: 3ef3891ac2b0423688f49ae034331935b1b0cd6c
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60010566"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65192492"
 ---
 # <a name="quickstart-enable-service-in-iot-hub"></a>Краткое руководство. Включение службы в Центре Интернета вещей
 
@@ -39,6 +39,7 @@ ms.locfileid: "60010566"
   - По умолчанию ASC для Интернета вещей хранит два типа сведений в рабочей области Log Analytics: **оповещения безопасности** и **рекомендации по безопасности**. 
   - Вы можете добавить хранение дополнительного типа сведений — **необработанных событий**. Обратите внимание, что хранение **необработанных событий** в Log Analytics приведет к дополнительными затратами. 
 - Центра Интернета вещей (уровень "Стандартный" или выше)
+- Соответствие всем [требованиям службы](service-prerequisites.md) 
 
 ## <a name="enable-asc-for-iot-on-your-iot-hub"></a>Включение ASC для Интернета вещей в Центре Интернета вещей 
 
@@ -50,8 +51,7 @@ ms.locfileid: "60010566"
 4. Укажите сведения о рабочей области Log Analytics. 
    - Выберите хранение **необработанных событий** в дополнение к хранению типов сведений по умолчанию, оставив переключатель **необработанных событий** в положении **Вкл**. 
    - Выберите включение **двойника коллекции**, оставив переключатель **двойника коллекции** в положении **Вкл**. 
-5. Последовательно выберите **ОК**. 
-6. Выберите команду **Сохранить**. 
+5. Выберите команду **Сохранить**. 
 
 Поздравляем! Вы включили ASC для Интернета вещей в Центре Интернета вещей. 
 

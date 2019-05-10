@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/12/2018
 ms.author: aljo
-ms.openlocfilehash: 3ddda89b19a04bdcd45f392f297ee5e930833538
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 8fa461d8c3a70d4b0d2d9973a840ffc7d1ff6470
+ms.sourcegitcommit: 399db0671f58c879c1a729230254f12bc4ebff59
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60711614"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65472766"
 ---
 # <a name="upgrading-and-updating-an-azure-service-fabric-cluster"></a>Обновление кластера Azure Service Fabric
 
@@ -99,7 +99,7 @@ Service Fabric использует [сертификаты сервера X.509
 В кластере можно настроить множество разных параметров конфигурации, например, уровень надежности кластера и свойства узла. Дополнительные сведения см. в статье [Настройка параметров кластера Service Fabric](service-fabric-cluster-fabric-settings.md).
 
 ## <a name="patch-the-os-in-the-cluster-nodes"></a>Применение исправлений для операционной системы на узлах кластера
-Приложение для управления исправлениями — это приложение Service Fabric, которое позволяет автоматизировать установку исправлений операционной системы в кластере Service Fabric и избежать простоев. [Приложение для управления исправлениями для Windows](service-fabric-patch-orchestration-application.md) или [для Linux](service-fabric-patch-orchestration-application-linux.md), которое можно развернуть в кластере, позволяет устанавливать исправления контролируемым образом, не нарушая доступность служб. 
+Приложение для управления исправлениями — это приложение Service Fabric, которое позволяет автоматизировать установку исправлений операционной системы в кластере Service Fabric и избегать простоев. [Приложение для управления исправлениями для Windows](service-fabric-patch-orchestration-application.md) можно развернуть в кластере, чтобы установить исправления контролируемым образом без простоев служб.
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

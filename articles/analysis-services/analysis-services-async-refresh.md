@@ -5,15 +5,15 @@ author: minewiskan
 manager: kfile
 ms.service: azure-analysis-services
 ms.topic: conceptual
-ms.date: 01/08/2019
+ms.date: 05/09/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: 5e9558eae43b351aa198b64bb2a7903c756064c2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 63b64df457af5b7d3d2bd5901f73d89ccd3c913a
+ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61025315"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65506972"
 ---
 # <a name="asynchronous-refresh-with-the-rest-api"></a>Асинхронное обновление с помощью REST API
 
@@ -201,42 +201,9 @@ https://westus.asazure.windows.net/servers/myserver/models/AdventureWorks/refres
 1.  Клонируйте или скачайте репозиторий. Откройте решение RestApiSample.
 2.  Найдите строку **client.BaseAddress = …** и укажите [базовый URL-адрес](#base-url).
 
-В образце кода используются интерактивное имя для входа, имя пользователя и пароль или [субъект-служба](#service-principal).
+В примере кода используется [субъекта-службы](#service-principal) проверки подлинности.
 
-#### <a name="interactive-login-or-usernamepassword"></a>Интерактивное имя для входа или пользователя
-
-Чтобы использовать проверку подлинности с такими данными, необходимо создать приложение Azure с необходимыми разрешениями API. 
-
-1.  На портале Azure выберите **Создать ресурс** > **Azure Active Directory** > **Регистрация приложений** > **Регистрация нового приложения**.
-
-    ![Регистрация нового приложения](./media/analysis-services-async-refresh/aas-async-app-reg.png)
-
-
-2.  В разделе **Создать** введите имя и выберите тип приложения **Собственный**. Для параметра **URI перенаправления** введите **urn:ietf:wg:oauth:2.0:oob**, а затем нажмите кнопку **Создать**.
-
-    ![Параметры](./media/analysis-services-async-refresh/aas-async-app-reg-name.png)
-
-3.  Выберите свое приложение, затем скопируйте и сохраните **Код приложения**.
-
-    ![Копирование идентификатора приложения](./media/analysis-services-async-refresh/aas-async-app-id.png)
-
-4.  В разделе **Параметры** выберите **Необходимые разрешения** > **Добавить**.
-
-    ![Добавить доступ через API](./media/analysis-services-async-refresh/aas-async-add.png)
-
-5.  В разделе **Select an API** (Выбор API) введите в поле поиска **Azure Analysis Services**, а затем выберите эту службу.
-
-    ![Выбор API](./media/analysis-services-async-refresh/aas-async-select-api.png)
-
-6.  Установите флажок **Read and Write all Models** (Чтение и запись всех моделей) и нажмите кнопку **Выбрать**. Если установлены оба флажка, нажмите кнопку **Готово**, чтобы добавить разрешения. Распространение параметров может длиться несколько минут.
-
-    ![Выбор разрешения на чтение и запись всех моделей](./media/analysis-services-async-refresh/aas-async-select-read.png)
-
-7.  В примере кода найдите метод **UpdateToken()**. Просмотрите содержимое этого метода.
-8.  Найдите фрагмент **string clientID =** , а затем введите значение параметра **Код приложения**, скопированное на шаге 3.
-9.  Запустите пример.
-
-#### <a name="service-principal"></a>Субъект-служба
+### <a name="service-principal"></a>Субъект-служба
 
 Дополнительные сведения о том, как настроить субъект-службу и назначить необходимые разрешения в Azure AS, см. в статьях [Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала](../active-directory/develop/howto-create-service-principal-portal.md) и [Добавление субъекта-службы к роли администратора сервера](analysis-services-addservprinc-admins.md). Выполнив эти шаги, сделайте дополнительно следующее:
 

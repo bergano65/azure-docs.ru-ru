@@ -13,12 +13,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 03/28/2019
 ms.author: cephalin
-ms.openlocfilehash: dc6d3fd2239624e6fccecfbd565eb815b372ed3d
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: ed6a50ee68d39e6e0d01b405eb02edd6d4c93613
+ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64920428"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65407588"
 ---
 # <a name="configure-a-linux-php-app-for-azure-app-service"></a>Настройка приложения Linux PHP для службы приложений Azure
 
@@ -151,7 +151,7 @@ if (isset($_SERVER['X-Forwarded-Proto']) && $_SERVER['X-Forwarded-Proto'] === 'h
 
 Для настройки PHP_INI_USER PHP_INI_PERDIR и PHP_INI_ALL директивы (см. в разделе [директив php.ini](https://www.php.net/manual/ini.list.php)), добавьте *.htaccess* файл в корневой каталог приложения.
 
-В *.htaccess* добавьте с помощью директивы `php_value <directive-name> <value>` синтаксис. Например: 
+В *.htaccess* добавьте с помощью директивы `php_value <directive-name> <value>` синтаксис. Например:
 
 ```
 php_value upload_max_filesize 1000M
@@ -187,7 +187,7 @@ az webapp config appsettings set --name <app-name> --resource-group <resource-gr
 > В контейнерах Linux, встроенные в службе приложений */home* используется в качестве постоянного общего хранилища. 
 >
 
-Например, чтобы изменить значение [expose_php](http://php.net/manual/ini.core.php#ini.expose-php) выполните следующие команды:
+Например, чтобы изменить значение [expose_php](https://php.net/manual/ini.core.php#ini.expose-php) выполните следующие команды:
 
 ```bash
 cd /home/site
@@ -233,7 +233,7 @@ zend_extension=/home/site/wwwroot/bin/xdebug.so
 При работающем приложении PHP работает по-разному, в службе приложений или содержит ошибки, попробуйте сделайте следующее:
 
 - [Получите доступ к потоку журнала](#access-diagnostic-logs).
-- Тестирование приложения локально в рабочем режиме. Служба приложений запускает приложения Node.js в рабочем режиме, поэтому необходимо убедиться, что проект работает надлежащим образом в рабочем режиме локально. Например: 
+- Тестирование приложения локально в рабочем режиме. Служба приложений запускает приложения Node.js в рабочем режиме, поэтому необходимо убедиться, что проект работает надлежащим образом в рабочем режиме локально. Например:
     - В зависимости от вашей *composer.json*, разные пакеты могут быть установлены для рабочий режим (`require` и `require-dev`).
     - Некоторые веб-платформы может развернуть статические файлы по-разному в рабочем режиме.
     - Некоторые веб-платформы может использовать специальные сценарии, при выполнении в рабочем режиме.
@@ -252,7 +252,7 @@ zend_extension=/home/site/wwwroot/bin/xdebug.so
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Руководство по приложению PHP с MySQL](tutorial-php-mysql-app.md)
+> [Учебник. по приложению PHP с MySQL](tutorial-php-mysql-app.md)
 
 > [!div class="nextstepaction"]
 > [Служба приложений под управлением Linux: вопросы и ответы](app-service-linux-faq.md)

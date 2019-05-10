@@ -8,14 +8,14 @@ manager: cshankar
 ms.service: time-series-insights
 services: time-series-insights
 ms.topic: conceptual
-ms.date: 12/10/2018
+ms.date: 04/30/2019
 ms.custom: seodec18
-ms.openlocfilehash: a73be313daa3b45cabc2adb07bb3d2592c7d307e
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: ce24fb8c62432e50fe04de23d2abbee1ec120c6c
+ms.sourcegitcommit: 399db0671f58c879c1a729230254f12bc4ebff59
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64725455"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65471627"
 ---
 # <a name="provision-and-manage-azure-time-series-insights-preview"></a>Подготовка к работе службы "Аналитика временных рядов Azure" (предварительная версия) и управление ею
 
@@ -33,7 +33,7 @@ ms.locfileid: "64725455"
 Дополнительные сведения о планировании среды см. [здесь](./time-series-insights-update-plan.md).
 
 >[!IMPORTANT]
-> Для предварительного просмотра, убедитесь, что вы используете службу хранилища Azure общего назначения версии 1 (GPv1) учетной записи.  Поддержка GPv2 и более поздних версий будет добавлена в ближайшем будущем.  
+> Для предварительного просмотра, убедитесь, что вы используете службу хранилища Azure общего назначения версии 1 (GPv1) учетной записи.
 
 Каждую среду "Аналитика временных рядов Azure" (предварительная версия) можно также дополнительно связать с источником события. Дополнительные сведения см. в статьях [Добавление источника концентратора событий](./time-series-insights-how-to-add-an-event-source-eventhub.md) и [Добавление источника центра Интернета вещей](./time-series-insights-how-to-add-an-event-source-iothub.md). На этом этапе вы указываете свойство идентификатора метки времени и уникальную группу потребителей. Это гарантирует, что среда имеет доступ к соответствующим событиям.
 
@@ -45,7 +45,7 @@ ms.locfileid: "64725455"
 
 1. В меню **SKU** выберите команду **PAYG**. Введите имя среды и выберите группы подписок и группы ресурсов, которые следует использовать. Затем выберите поддерживаемое расположение для размещения среды.
 
-   ![Создайте экземпляр службы "Аналитика временных рядов Azure".][1]
+   [![Создайте экземпляр Azure Time Series Insights.](media/v2-update-manage/manage_three.PNG)](media/v2-update-manage/manage_three.PNG#lightbox)
 
 1. Введите идентификатор временного ряда.
 
@@ -56,7 +56,7 @@ ms.locfileid: "64725455"
 
 1. Создайте учетную запись хранения Azure, выбрав имя учетной записи и указав способ репликации. При этом будет автоматически создана учетная запись хранения Azure общего назначения версии 1. Она будет создана в том же регионе, в котором ранее была создана среда службы "Аналитика временных рядов Azure" (предварительная версия).
 
-    ![Создание учетной записи хранения для вашего экземпляра][5]
+    [![Создание учетной записи хранения Azure для своего экземпляра](media/v2-update-manage/manage_five.PNG)](media/v2-update-manage/manage_five.PNG#lightbox)
 
 1. При необходимости вы можете добавить источник события.
 
@@ -67,11 +67,11 @@ ms.locfileid: "64725455"
      > [!TIP]
      > Время постановки в очередь сообщения, возможно, является не самим лучшим настраиваемым параметром, который можно использовать с пакетом событий или сценариями загрузки исторических данных. Не забудьте проверить свое решение об использовании в таких случаях свойства метки времени.
 
-     ![Вкладка "Источник события"][2]
+     [![Вкладка "источник событий"](media/v2-update-manage/manage_two.PNG)](media/v2-update-manage/manage_two.PNG#lightbox)
 
 1. Убедитесь, что ваша среда подготовлена с помощью нужных параметров.
 
-    ![Вкладка "Просмотр и создание"][3]
+    [![Просмотр и Создание вкладки](media/v2-update-manage/manage_three.PNG)](media/v2-update-manage/manage_three.PNG#lightbox)
 
 ## <a name="manage-the-environment"></a>Управление средой
 
@@ -88,7 +88,7 @@ ms.locfileid: "64725455"
 
 * Колонка **Эталонные данные** на портале Azure была удалена в службе "Аналитика временных рядов Azure" (предварительная версия), поскольку эталонные данные не входят в среды с оплатой по мере использования.
 
-![Среда "Аналитика временных рядов" (предварительная версия) на портале Azure][4]
+[![Предварительная версия серии Insights среды на портале Azure](media/v2-update-manage/manage_four.PNG)](media/v2-update-manage/manage_four.PNG#lightbox)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
@@ -97,10 +97,3 @@ ms.locfileid: "64725455"
 - Узнайте, как [добавить источник событий центра](./time-series-insights-how-to-add-an-event-source-eventhub.md).
 
 - Настройка [источник центра Интернета вещей](./time-series-insights-how-to-add-an-event-source-iothub.md).
-
-<!-- Images -->
-[1]: media/v2-update-manage/manage_one.PNG
-[2]: media/v2-update-manage/manage_two.PNG
-[3]: media/v2-update-manage/manage_three.PNG
-[4]: media/v2-update-manage/manage_four.PNG
-[5]: media/v2-update-manage/manage_five.PNG

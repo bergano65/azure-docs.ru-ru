@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/28/2019
 ms.author: spelluru
-ms.openlocfilehash: 6985bd0bbae858ad258e723ef4d6d6d687b2c86e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 9ad6f82d7b9bd7c4957df1dd37d0f2ddf7462e9e
+ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60695495"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65410953"
 ---
 # <a name="enable-and-use-remote-desktop-for-linux-virtual-machines-in-a-lab-in-azure-lab-services"></a>Включение и использование удаленного рабочего стола для виртуальных машин Linux в лаборатории в лаборатории служб Azure
 В этой статье показано, как выполнить следующие задачи:
@@ -64,7 +64,7 @@ ms.locfileid: "60695495"
 ## <a name="students-connecting-to-the-student-vm"></a>Учащиеся, подключении к учащегося виртуальной Машины
 Студент может RDP в для своих виртуальных машин Linux после владелец лаборатории (учитель/Профессор) **публикует** шаблона виртуальной Машины с помощью удаленного рабочего СТОЛА и графического пользовательского интерфейса пакеты установлены на компьютере. Для этого выполните следующие действия: 
 
-1. Когда учащийся выполняет вход на портал Labs непосредственно (`http://labs.azure.com`) или с помощью ссылка для регистрации (`http://labs.azure.com/register/<registrationCode>`), для каждой лаборатории учащийся имеет доступ к отображается элемент. 
+1. Когда учащийся выполняет вход на портал Labs непосредственно (`https://labs.azure.com`) или с помощью ссылка для регистрации (`https://labs.azure.com/register/<registrationCode>`), для каждой лаборатории учащийся имеет доступ к отображается элемент. 
 2. На плитке, выберите **запустить** Если виртуальная машина остановлена. 
 3. Нажмите кнопку **Подключиться**. Это действие скачивает RDP-файл на вашем компьютере. Сохраните его и откройте для подключения к компьютеру Linux по протоколу RDP. 
 

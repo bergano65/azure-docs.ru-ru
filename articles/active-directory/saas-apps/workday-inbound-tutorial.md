@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 01/19/2019
 ms.author: chmutali
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d34bd9d7f80f72b3c6c0821ad48e6be1fd260be9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 267b6afd7cd3131dcd138dfb631335f58cec833a
+ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60386081"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65407927"
 ---
 # <a name="tutorial-configure-workday-for-automatic-user-provisioning"></a>Руководство по Настройка Workday для автоматической подготовки пользователей
 
@@ -155,7 +155,7 @@ ms.locfileid: "60386081"
 | № агентов подготовки для развертывания в локальной среде | 3 (для высокого уровня доступности и отработки отказа) |
 | № приложений подготовки пользователей Workday в AD для настройки на портале Azure | 1 |
 
-  ![Сценарий 1](./media/workday-inbound-tutorial/dep_scenario1.png)
+  ![Сценарий 1](./media/workday-inbound-tutorial/dep_scenario1.png)
 
 #### <a name="deployment-scenario-2--single-workday-tenant---multiple-child-ad-domains"></a>Сценарий развертывания № 2: один клиент Workday -> несколько дочерних доменов AD
 
@@ -166,7 +166,7 @@ ms.locfileid: "60386081"
 | № агентов подготовки для развертывания в локальной среде | 3 (для высокого уровня доступности и отработки отказа) |
 | № приложений подготовки пользователей Workday в AD для настройки на портале Azure | одно приложение на дочерний домен |
 
-  ![Сценарий 2](./media/workday-inbound-tutorial/dep_scenario2.png)
+  ![Сценарий 2](./media/workday-inbound-tutorial/dep_scenario2.png)
 
 #### <a name="deployment-scenario-3--single-workday-tenant---disjoint-ad-forests"></a>Сценарий развертывания № 3: один клиент Workday -> несвязанные леса AD
 
@@ -310,9 +310,9 @@ ms.locfileid: "60386081"
    | ---------- | ---------- |
    | Get и Put | Worker Data: Public Worker Reports (Данные о работниках: общедоступные отчеты о работниках) |
    | Get и Put | Person Data: Work Contact Information (Данные о людях: рабочие контактные данные) |
-   | Получить | Worker Data: All Positions (Данные о работниках: все должности) |
-   | Получить | Worker Data: Current Staffing Information (Данные о работниках: сведения о текущем персонале) |
-   | Получить | Worker Data: Business Title on Worker Profile (Данные о работниках: рабочая должность в профиле работника) |
+   | Получение | Worker Data: All Positions (Данные о работниках: все должности) |
+   | Получение | Worker Data: Current Staffing Information (Данные о работниках: сведения о текущем персонале) |
+   | Получение | Worker Data: Business Title on Worker Profile (Данные о работниках: рабочая должность в профиле работника) |
 
 ### <a name="configuring-business-process-security-policy-permissions"></a>Настройка разрешений политики безопасности для бизнес-процессов
 
@@ -368,7 +368,7 @@ ms.locfileid: "60386081"
 
 Развернув .NET 4.7.1+, вы можете скачать **[локальный агент подготовки здесь](https://go.microsoft.com/fwlink/?linkid=847801)** и выполнить указанные ниже действия, чтобы завершить настройку агента.
 
-1. Войдите на сервер Windows, где требуется установить новый агент.
+1. Войдите в Windows Server, где вы хотите установить новый агент.
 2. Запустите установщик агента подготовки, примите условия и нажмите кнопку **Install** (Установить).
 
    ![Экран установки](./media/workday-inbound-tutorial/pa_install_screen_1.png "Экран установки")
@@ -532,8 +532,8 @@ ms.locfileid: "60386081"
 | **PreferredNameData**  |  displayName |     |   Создание и обновление |
 | **Company**         | company   |     |  Создание и обновление |
 | **SupervisoryOrganization**  | department  |     |  Создание и обновление |
-| **ManagerReference**   | manager  |     |  Создание и обновление |
-| **BusinessTitle**   |  title     |     |  Создание и обновление | 
+| **ManagerReference**   | руководитель  |     |  Создание и обновление |
+| **BusinessTitle**   |  название     |     |  Создание и обновление | 
 | **AddressLineData**    |  streetAddress  |     |   Создание и обновление |
 | **Municipality**   |   l   |     | Создание и обновление |
 | **CountryReferenceTwoLetter**      |   co |     |   Создание и обновление |
@@ -867,7 +867,7 @@ ms.locfileid: "60386081"
 #### <a name="how-do-i-de-register-the-domain-associated-with-my-provisioning-agent"></a>Как отменить регистрацию домена, связанного с агентом подготовки?
 
 * На портале Azure получите *идентификатор клиента* Azure AD.
-* Войдите на сервер Windows, где запущен агент подготовки.
+* Войдите на сервер Windows, под управлением агента подготовки.
 * Откройте PowerShell от имени администратора Windows.
 * Перейдите в каталог, содержащий сценарии регистрации, и выполните следующие команды, заменив параметр \[tenant ID\] значением вашего идентификатора клиента.
 
@@ -878,7 +878,7 @@ ms.locfileid: "60386081"
   ```
 
 * В появившемся списке агентов скопируйте значение поля id из ресурса, значение *resourceName* которого соответствует вашему доменному имени AD.
-* Вставьте идентификатор в эту команду и выполните ее в PowerShell.
+* Вставьте значение идентификатора в следующую команду и выполните команду в PowerShell.
 
   ```powershell
   Remove-PublishedResource -ResourceId "[resource ID]" -TenantId "[tenant ID]"
@@ -946,9 +946,9 @@ ms.locfileid: "60386081"
 
 #### <a name="how-do-i-format-display-names-in-ad-based-on-the-users-departmentcountrycity-attributes-and-handle-regional-variances"></a>Как форматировать отображаемые имена в AD на основе атрибутов отдела, страны и города пользователя и обрабатывать региональные различия?
 
-Часто требуется настроить атрибут *displayName* в AD так, чтобы в нем также предоставлялась информация об отделе и стране пользователя. Например, если Иван Воронков работает в отделе маркетинга в США, можно настроить так, чтобы его значение *displayName* отображалось как *Воронков, Иван (Маркетинг-Россия)*.
+Он часто используется для настройки *displayName* атрибут в AD, таким образом, чтобы он также предоставляет сведения об отделе и страны или региона пользователя. Например, если Иван Воронков работает в отделе маркетинга в США, можно настроить так, чтобы его значение *displayName* отображалось как *Воронков, Иван (Маркетинг-Россия)*.
 
-Вот как можно обработать такие требования, чтобы создаваемые *CN* или *displayName* включали такие атрибуты, как компания, подразделение, город или страна.
+Вот как можно обрабатывать такие требования для построения *CN* или *displayName* включать атрибуты, такие как компании, подразделения, города или страны или региона.
 
 * Каждый атрибут Workday извлекается с помощью базового выражения XPath API, которое настраивается в меню **Сопоставление атрибутов -> раздел Advanced (Дополнительно) -> Edit attribute list for Workday (Изменить список атрибутов для Workday)**. Ниже приведено выражение XPath API по умолчанию для атрибутов Workday *PreferredFirstName*, *PreferredLastName*, *Company* и *SupervisoryOrganization*.
 
@@ -976,7 +976,7 @@ ms.locfileid: "60386081"
 
   Согласуйте с командой Workday, допустимы ли приведенные выше выражения API для конфигурации клиента Workday. При необходимости эти выражения можно отредактировать, как описано в разделе [Настройка списка атрибутов пользователя Workday](#customizing-the-list-of-workday-user-attributes).
 
-* Чтобы создать правильное выражение сопоставления атрибутов, определите, какой атрибут Workday "авторитетно" представляет имя, фамилию, страну и отдел пользователя. Предположим, у нас есть атрибуты *PreferredFirstName*, *PreferredLastName*, *CountryReferenceTwoLetter* и *SupervisoryOrganization* соответственно. Их можно использовать, чтобы создать приведенное ниже выражение для атрибута AD *displayName* и получить отображаемое имя, например *Воронков, Иван (Маркетинг-Россия)*.
+* Чтобы построить выражение справа атрибут сопоставления, определите, какой атрибут Workday «принудительно» представляет пользователя имя, имя, страны или региона и последнего отдела. Предположим, у нас есть атрибуты *PreferredFirstName*, *PreferredLastName*, *CountryReferenceTwoLetter* и *SupervisoryOrganization* соответственно. Их можно использовать, чтобы создать приведенное ниже выражение для атрибута AD *displayName* и получить отображаемое имя, например *Воронков, Иван (Маркетинг-Россия)*.
 
     ```
      Append(Join(", ",[PreferredLastName],[PreferredFirstName]), Join(""," (",[SupervisoryOrganization],"-",[CountryReferenceTwoLetter],")"))
@@ -1038,7 +1038,7 @@ SelectUniqueValue(
 
 ### <a name="setting-up-windows-event-viewer-for-agent-troubleshooting"></a>Настройка средства просмотра событий Windows для устранения неполадок агента
 
-* Войдите на компьютер Windows Server, где развернут агент подготовки.
+* Войдите в систему компьютера Windows Server, где развертывается агента подготовки
 * Откройте настольное приложение **просмотра событий Windows Server**.
 * Выберите **Журналы Windows > Приложение**.
 * Используйте параметр **Фильтровать текущий журнал...**, чтобы просмотреть все события, зарегистрированные в источнике **AAD.Connect.ProvisioningAgent**, и исключить события с идентификатором 5, указав фильтр "-5", как показано ниже.
@@ -1087,7 +1087,7 @@ SelectUniqueValue(
 
   Чтобы найти записи журнала агента подготовки, соответствующие этой операции импорта AD, откройте журналы средства просмотра событий Windows и используйте параметр меню **Найти...** для поиска записей журнала, содержащих значение атрибута свойства или идентификатора сопоставления (в данном случае *21023*).
 
-  ![Поиск](media/workday-inbound-tutorial/wd_event_viewer_02.png)
+  ![Найти](media/workday-inbound-tutorial/wd_event_viewer_02.png)
 
   Найдите запись с *идентификатором события 9*, которая предоставит вам фильтр поиска LDAP, используемый агентом для получения учетной записи AD. Вы можете проверить, является ли он подходящим фильтром поиска для получения уникальных записей пользователей.
 
@@ -1236,7 +1236,7 @@ SelectUniqueValue(
 
     ```xml
     <?xml version="1.0" encoding="UTF-8"?>
-    <env:Envelope xmlns:env="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="https://www.w3.org/2001/XMLSchema">
+    <env:Envelope xmlns:env="https://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="https://www.w3.org/2001/XMLSchema">
       <env:Body>
         <wd:Get_Workers_Request xmlns:wd="urn:com.workday/bsvc" wd:version="v21.1">
           <wd:Request_References wd:Skip_Non_Existing_Instances="true">
@@ -1349,7 +1349,7 @@ SelectUniqueValue(
 
 Вы получите ответ, похожий на показанный ниже. Скопируйте атрибут идентификатора из ответа. Это значение представляет собой **ProvisioningJobId** и будет использоваться для получения метаданных базовой схемы.
 
-   [![Идентификатор задания подготовки](./media/workday-inbound-tutorial/wd_export_03.png)](./media/workday-inbound-tutorial/wd_export_03.png#lightbox)
+   [![Идентификатор подготовки задания](./media/workday-inbound-tutorial/wd_export_03.png)](./media/workday-inbound-tutorial/wd_export_03.png#lightbox)
 
 #### <a name="step-4-download-the-provisioning-schema"></a>Шаг 4. Скачивание схемы подготовки
 

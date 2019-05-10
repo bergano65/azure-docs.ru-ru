@@ -17,12 +17,12 @@ ms.date: 03/20/2019
 ms.author: joflore
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 81a9726b73226cd940a55e316ae434aeaad6ff4d
-ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
+ms.openlocfilehash: 5f080e315430cba986642e4a24af776cc82062c0
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58519091"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65190792"
 ---
 # <a name="tutorial-configure-hybrid-azure-active-directory-join-for-managed-domains"></a>Руководство по Настройка гибридного присоединения к Azure Active Directory для управляемых доменов
 
@@ -52,7 +52,10 @@ ms.locfileid: "58519091"
 -  [Как планировать гибридную реализацию присоединения к Azure Active Directory](hybrid-azuread-join-plan.md)
 
 -  [Как управлять гибридным присоединением устройства к Azure AD](hybrid-azuread-join-control.md)
-  
+
+> [!NOTE]
+> Azure AD не поддерживает смарт-карты и сертификаты в управляемых доменах.
+
 
 Для настройки сценария в рамках этой статьи вам понадобится следующее:
 

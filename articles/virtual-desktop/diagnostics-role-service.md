@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: conceptual
 ms.date: 03/21/2019
 ms.author: helohr
-ms.openlocfilehash: 6b79a26d63c02dd06b62ea6ad09941f947704dc0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 747e177b0fbbfb9049959c3194ee39c3234bba50
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60870495"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65234034"
 ---
 # <a name="identify-issues-with-the-diagnostics-feature"></a>Выявление проблем с функцией диагностики
 
@@ -118,7 +118,7 @@ Get-RdsDiagnosticActivities -TenantName <tenantName> -Outcome Failure
 
 Сценарии ошибок разделены на внутри службы и внешним по отношению к виртуальному рабочему столу Windows.
 
-* Внутренняя ошибка: указывает сценариев, в которых нельзя устранить администратором клиента и должны быть разрешены как проблему в службе поддержки. Когда вызов билет содержат идентификатор действия, имя клиента и приблизительных временных рамок проблему произошла.
+* Внутренняя ошибка: Указывает сценарии, которые нельзя устранить администратором клиента и должны быть разрешены как проблему в службе поддержки. При обратной связи через [Tech Community виртуального рабочего стола Windows](https://techcommunity.microsoft.com/t5/Windows-Virtual-Desktop/bd-p/WindowsVirtualDesktop), включают идентификатор действия и приблизительного времени возникновения проблемы.
 * Внешние проблема: относятся сценарии, которые могут быть уменьшены системным администратором. Они являются внешними для виртуального рабочего стола Windows.
 
 Ниже перечислены распространенные ошибки, с которыми могут столкнуться Администраторы.

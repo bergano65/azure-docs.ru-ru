@@ -11,13 +11,13 @@ author: CarlRabeler
 ms.author: carlrab
 ms.reviewer: ''
 manager: craigg
-ms.date: 10/17/2018
-ms.openlocfilehash: 55b18051f2376a59fa79b11cccc9e71cad5debbc
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.date: 05/06/2019
+ms.openlocfilehash: 4f0691dcc8a0c4b0ebbfe26a49b75b86fa50f597
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65067801"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65236015"
 ---
 # <a name="faq-about-azure-sql-hyperscale-databases"></a>Часто задаваемые вопросы о базах данных SQL Azure уровня "Гипермасштабирование"
 
@@ -73,11 +73,7 @@ ms.locfileid: "65067801"
 
 ### <a name="what-regions-currently-support-hyperscale"></a>Какие регионы сейчас поддерживают уровень "Гипермасштабирование"
 
-Уровень обработки базы данных SQL Azure в настоящее время доступен в следующих регионах:
-
-Восточная Австралия, Юго-Восточная Австралия, Южная Бразилия, Центральная Канада, Центральная часть США, Восточная Азия, восточная часть США, восточная часть США 2, Франция Central, Восточная Япония, Западная Япония, Северная Центральная часть США, Северная Европа, Южно-Африканская Республика Север, Юго-центральный регион США, Юго-Восточная Азия, соединенное Королевство Юго-западная часть соединенного Королевства, Западная Европа , Западная часть США, Западная часть США 2
-
-См. в разделе [Обзор Гипермасштабируемого базы данных SQL Azure](sql-database-service-tier-hyperscale-faq.md) для процедуры, если вам нужен доступ в другом регионе.
+На уровне обработки базы данных SQL Azure сейчас доступна в регионах, перечисленных в разделе [Обзор Гипермасштабируемого базы данных SQL Azure](sql-database-service-tier-hyperscale.md#regions).
 
 ### <a name="can-i-create-multiple-hyperscale-databases-per-logical-server"></a>Можно ли создать несколько баз данных уровня "Гипермасштабирование" для каждого логического сервера
 
@@ -174,7 +170,7 @@ ms.locfileid: "65067801"
 
 ### <a name="what-is-the-smallest-database-size-that-sql-database-hyperscale-supports-or-starts-with"></a>Каков минимальный и начальный поддерживаемый размер на уровне "Гипермасштабирование" Базы данных SQL
 
-10 ГБ
+10 GB
 
 ### <a name="in-what-increments-does-my-database-size-grow"></a>На сколько увеличивается размер базы данных за раз
 

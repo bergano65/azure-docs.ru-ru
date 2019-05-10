@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 11/27/2018
 ms.author: rajani-janaki-ram
-ms.openlocfilehash: b5d035308c50525449edf47131c4a6a8c62b750b
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 981b78345a0d9ea589e9c39ddaa2e253f1dd343f
+ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59784766"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65412841"
 ---
 # <a name="delete-a-site-recovery-services-vault"></a>Удаление хранилища Служб восстановления для Site Recovery
 
@@ -22,6 +22,10 @@ ms.locfileid: "59784766"
 
 ## <a name="delete-a-site-recovery-vault"></a>Удаление хранилища Site Recovery 
 Чтобы удалить хранилище, выполните рекомендуемые действия для своего сценария.
+### <a name="azure-vms-to-azure"></a>Виртуальные машины Azure в Azure
+
+1. Удалите все защищенные виртуальные машины, выполнив действия, описанные в разделе [Отключение защиты для VMware](site-recovery-manage-registration-and-protection.md#disable-protection-for-a-azure-vm-azure-to-azure).
+2. Удалите хранилище.
 
 ### <a name="vmware-vms-to-azure"></a>Виртуальные машины VMware в Azure
 

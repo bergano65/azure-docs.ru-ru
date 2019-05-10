@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/30/2018
 ms.author: aagup
-ms.openlocfilehash: a82004fdd6bbb4eda0842670f210f846f9446384
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: e4ada412547360f97e869d3312b65d869fa3df48
+ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60310882"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65413718"
 ---
 # <a name="restoring-backup-in-azure-service-fabric"></a>Восстановление резервной копии в Azure Service Fabric
 
@@ -37,6 +37,20 @@ ms.locfileid: "60310882"
 - Чтобы активировать восстановление, для кластера должна быть включена _служба анализа сбоев (FAS)_.
 - _Служба резервного копирования и восстановления (BRS)_ создает резервную копию.
 - Восстановление можно активировать только в секции.
+- Установите модуль Microsoft.ServiceFabric.Powershell.Http [Preview] для выполнения вызовов конфигурации.
+
+```powershell
+    Install-Module -Name Microsoft.ServiceFabric.Powershell.Http -AllowPrerelease
+```
+
+- Убедитесь, что кластер подключен с помощью `Connect-SFCluster` команду перед выполнением любой запрос конфигурации, с помощью модуля Microsoft.ServiceFabric.Powershell.Http.
+
+```powershell
+
+    Connect-SFCluster -ConnectionEndpoint 'https://mysfcluster.southcentralus.cloudapp.azure.com:19080'   -X509Credential -FindType FindByThumbprint -FindValue '1b7ebe2174649c45474a4819dafae956712c31d3' -StoreLocation 'CurrentUser' -StoreName 'My' -ServerCertThumbprint '1b7ebe2174649c45474a4819dafae956712c31d3'  
+
+```
+
 
 ## <a name="triggered-restore"></a>Активация восстановления
 
@@ -50,6 +64,15 @@ ms.locfileid: "60310882"
 В случае потери всего кластера Service Fabric данные секций надежной службы с отслеживанием состояния и Reliable Actors можно восстановить. Необходимую резервную копию можно выбрать из списка при использовании [GetBackupAPI с указанием сведений о хранилище резервных копий](https://docs.microsoft.com/rest/api/servicefabric/sfclient-api-getbackupsfrombackuplocation). Можно использовать перечисление резервных копий для отдельного приложения, службы или секции.
 
 В следующем примере предполагается, что потерян кластер, упомянутый в разделе [Включение периодического резервного копирования для надежной службы с отслеживанием состояния и Reliable Actors](service-fabric-backuprestoreservice-quickstart-azurecluster.md#enabling-periodic-backup-for-reliable-stateful-service-and-reliable-actors). В этом случае `SampleApp` развертывается с включенной политикой резервного копирования, а для хранения резервных копий используется служба хранилища Azure.
+
+#### <a name="powershell-using-microsoftservicefabricpowershellhttp-module"></a>С помощью Microsoft.ServiceFabric.Powershell.Http модуля PowerShell
+
+```powershell
+Get-SFBackupsFromBackupLocation -Application -ApplicationName 'fabric:/SampleApp' -AzureBlobStore -ConnectionString 'DefaultEndpointsProtocol=https;AccountName=<account-name>;AccountKey=<account-key>;EndpointSuffix=core.windows.net' -ContainerName 'backup-container'
+
+```
+
+#### <a name="rest-call-using-powershell"></a>Вызов REST, с помощью Powershell
 
 Выполните сценарий PowerShell, чтобы вызвать REST API для получения списка резервных копий, созданных для всех секций внутри приложения `SampleApp`. Для вывода списка доступных резервных копий API требуются сведения о хранилище резервных копий.
 
@@ -142,12 +165,30 @@ FailureError            :
 
 При _секционировании по именам_ для определения целевой секции в альтернативном кластере сравниваются значения имен.
 
+#### <a name="powershell-using-microsoftservicefabricpowershellhttp-module"></a>С помощью Microsoft.ServiceFabric.Powershell.Http модуля PowerShell
+
+```powershell
+
+Restore-SFPartition  -PartitionId '1c42c47f-439e-4e09-98b9-88b8f60800c6' -BackupId 'b0035075-b327-41a5-a58f-3ea94b68faa4' -BackupLocation 'SampleApp\MyStatefulService\974bd92a-b395-4631-8a7f-53bd4ae9cf22\2018-04-06 21.10.27.zip' -AzureBlobStore -ConnectionString 'DefaultEndpointsProtocol=https;AccountName=<account-name>;AccountKey=<account-key>;EndpointSuffix=core.windows.net' -ContainerName 'backup-container'
+
+```
+
+#### <a name="rest-call-using-powershell"></a>Вызов REST, с помощью Powershell
+
 Запросить восстановление резервной копии секции кластера можно с помощью следующих [API восстановления](https://docs.microsoft.com/rest/api/servicefabric/sfclient-api-restorepartition):
 
 ```powershell
+
+$StorageInfo = @{
+    ConnectionString = 'DefaultEndpointsProtocol=https;AccountName=<account-name>;AccountKey=<account-key>;EndpointSuffix=core.windows.net'
+    ContainerName = 'backup-container'
+    StorageKind = 'AzureBlobStore'
+}
+
 $RestorePartitionReference = @{
     BackupId = 'b0035075-b327-41a5-a58f-3ea94b68faa4'
     BackupLocation = 'SampleApp\MyStatefulService\974bd92a-b395-4631-8a7f-53bd4ae9cf22\2018-04-06 21.10.27.zip'
+    BackupStorage  = $StorageInfo
 }
 
 $body = (ConvertTo-Json $RestorePartitionReference) 
@@ -184,6 +225,16 @@ FailureError            :
 
 Для API восстановления укажите значения _BackupId_ и _BackupLocation_. Для кластера включено резервное копирование, поэтому _служба восстановления резервных копий_ Service Fabric вычисляет правильное расположение хранилища на основе соответствующей политики резервного копирования.
 
+
+#### <a name="powershell-using-microsoftservicefabricpowershellhttp-module"></a>С помощью Microsoft.ServiceFabric.Powershell.Http модуля PowerShell
+
+```powershell
+Restore-SFPartition  -PartitionId '974bd92a-b395-4631-8a7f-53bd4ae9cf22' -BackupId 'b0035075-b327-41a5-a58f-3ea94b68faa4' -BackupLocation 'SampleApp\MyStatefulService\974bd92a-b395-4631-8a7f-53bd4ae9cf22\2018-04-06 21.10.27.zip'
+
+```
+
+#### <a name="rest-call-using-powershell"></a>Вызов REST, с помощью Powershell
+
 ```powershell
 $RestorePartitionReference = @{
     BackupId = 'b0035075-b327-41a5-a58f-3ea94b68faa4',
@@ -201,6 +252,14 @@ Invoke-WebRequest -Uri $url -Method Post -Body $body -ContentType 'application/j
 ## <a name="track-restore-progress"></a>Отслеживание хода восстановления
 
 Секция надежной службы с отслеживанием состояния или Reliable Actor в один момент времени может принять только один запрос на восстановление. Секция примет другой запрос только после завершения текущего запроса на восстановление. Но можно выполнять несколько запросов на восстановление одновременно в разных секциях.
+
+#### <a name="powershell-using-microsoftservicefabricpowershellhttp-module"></a>С помощью Microsoft.ServiceFabric.Powershell.Http модуля PowerShell
+
+```powershell
+    Get-SFPartitionRestoreProgress -PartitionId '974bd92a-b395-4631-8a7f-53bd4ae9cf22'
+```
+
+#### <a name="rest-call-using-powershell"></a>Вызов REST, с помощью Powershell
 
 ```powershell
 $url = "https://mysfcluster-backup.southcentralus.cloudapp.azure.com:19080/Partitions/974bd92a-b395-4631-8a7f-53bd4ae9cf22/$/GetRestoreProgress?api-version=6.4"

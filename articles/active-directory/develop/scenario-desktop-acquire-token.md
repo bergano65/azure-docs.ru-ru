@@ -15,12 +15,12 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6d4389af86e27ddb04f5a3e5f53c5509eeede005
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.openlocfilehash: e1fe9594471c6e8f723afff2def940bb675e04fb
+ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65075345"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65407005"
 ---
 # <a name="desktop-app-that-calls-web-apis---acquire-a-token"></a>Классическое приложение, вызывающее веб-интерфейсы API — получение маркера
 
@@ -502,7 +502,7 @@ static async Task GetATokenForGraph()
   catch (MsalClientException ex) when (ex.ErrorCode == "unknown_user")
   {
    // the username was probably empty
-   // ex.Message = "Could not identify the user logged into the OS. See http://aka.ms/msal-net-iwa for details."
+   // ex.Message = "Could not identify the user logged into the OS. See https://aka.ms/msal-net-iwa for details."
    throw new ArgumentException("U/P: Wrong username", ex);
   }
   catch (MsalClientException ex) when (ex.ErrorCode == "parsing_wstrust_response_failed")
@@ -529,7 +529,7 @@ static async Task GetATokenForGraph()
 
 Интерактивная проверка подлинности с помощью Azure AD требуется браузер (Дополнительные сведения см. [использования веб-браузеров](https://aka.ms/msal-net-uses-web-browser)). Тем не менее для проверки подлинности пользователей на устройствах или операционных систем, которые не предоставляют веб-браузер, поток кода устройства позволяет пользователю использовать другое устройство (например другого компьютера или мобильного телефона) для входа интерактивном режиме. С помощью потока кода устройства, приложение получает маркеры через двухэтапный процесс, специально предназначенный для этих устройств/OS. Примерами таких приложений являются приложения для Интернета вещей или средства командной строки (CLI). Идея состоит в том:
 
-1. Каждый раз, когда необходима проверка подлинности пользователя, приложение предоставляет код и предлагает пользователю, используйте другое устройство (например смартфонов с подключением к Интернету), чтобы перейти на URL-адрес (например, `http://microsoft.com/devicelogin`), где пользователю будет предложено ввести код. Что сделать, веб-страницу приводит пользователя посредством взаимодействия с обычной проверки подлинности, включая запросы согласия и многофакторной проверки подлинности, при необходимости.
+1. Каждый раз, когда необходима проверка подлинности пользователя, приложение предоставляет код и предлагает пользователю, используйте другое устройство (например смартфонов с подключением к Интернету), чтобы перейти на URL-адрес (например, `https://microsoft.com/devicelogin`), где пользователю будет предложено ввести код. Что сделать, веб-страницу приводит пользователя посредством взаимодействия с обычной проверки подлинности, включая запросы согласия и многофакторной проверки подлинности, при необходимости.
 
 2. После успешной проверки подлинности приложение командной строки получит необходимые маркеры по каналу обратной и будет использовать его для выполнения вызовов API web, которые необходимы.
 

@@ -18,12 +18,12 @@ ms.author: celested
 ms.reviewer: hirsin
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a77118edd08faf6d40897a916ee85e2b6e20d3bb
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 58a8d3b62fab7614375436846888b78113740ce2
+ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60298263"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65406615"
 ---
 # <a name="azure-ad-saml-token-reference"></a>Справочник по токенам SAML в Azure AD
 
@@ -32,11 +32,11 @@ ms.locfileid: "60298263"
 ## <a name="claims-in-saml-tokens"></a>Утверждения в токенах SAML
 
 > [!div class="mx-codeBreakAll"]
-> | Name | Эквивалентное утверждение JWT | ОПИСАНИЕ | Пример |
+> | ИМЯ | Эквивалентное утверждение JWT | Описание | Пример |
 > | --- | --- | --- | ------------|
 > |Аудитория | `aud` |Целевой получатель маркера. Приложение, которое получает токен, должно проверять, верно ли значение, обозначающее аудиторию, и отклонять любые токены, предназначенные для другой аудитории. | `<AudienceRestriction>`<br>`<Audience>`<br>`https://contoso.com`<br>`</Audience>`<br>`</AudienceRestriction>`  |
 > | Время выполнения проверки подлинности | |Фиксирует дату и время выполнения сеанса проверки подлинности. | `<AuthnStatement AuthnInstant="2011-12-29T05:35:22.000Z">` | 
-> |Метод проверки подлинности | `amr` |Указывает способ проверки подлинности субъекта токена. | `<AuthnContextClassRef>`<br>`http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod/password`<br>`</AuthnContextClassRef>` |
+> |Способ проверки подлинности | `amr` |Указывает способ проверки подлинности субъекта токена. | `<AuthnContextClassRef>`<br>`http://schemas.microsoft.com/ws/2008/06/identity/claims/authenticationmethod/password`<br>`</AuthnContextClassRef>` |
 > |Имя | `given_name` |Указывает на имя или заданное имя пользователя, которое задали в объекте пользователя Azure AD. | `<Attribute Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname">`<br>`<AttributeValue>Frank<AttributeValue>`  |
 > |Группы | `groups` |Предоставляет идентификаторы объектов, представляющие членство субъекта в группах. Эти значения уникальны (см. раздел «Object ID»), их можно безопасно использовать для управления доступом, например для принудительной авторизации для доступа к ресурсу. Группы, входящие в утверждение Groups, настраиваются для конкретного приложения с помощью свойства groupMembershipClaims манифеста приложения. Если установлено значение null, исключаются все группы, если значение SecurityGroup — включается только членство в группах безопасности Active Directory, а значение All подразумевает включение как групп безопасности, так и списков рассылки Office 365. <br><br> **Примечания** <br> Если число групп, в которые входит пользователь, превышает лимит (150 для SAML и 200 для JWT), тогда избыточное утверждение будет добавлено к источникам утверждений, указывая на конечную точку Graph, содержащую список групп для пользователя. . | `<Attribute Name="http://schemas.microsoft.com/ws/2008/06/identity/claims/groups">`<br>`<AttributeValue>07dd8a60-bf6d-4e17-8844-230b77145381</AttributeValue>` |
 > | Индикатор превышения групп | `groups:src1` | Для запросов маркеров, которые не ограничены по длине (см. `hasgroups` выше), но все еще слишком большие для маркеров, будет добавлена ссылка на полный список групп, в которые входит пользователь. Для SAML ссылка добавляется в качестве нового утверждения вместо утверждения `groups`. | `<Attribute Name=" http://schemas.microsoft.com/claims/groups.link">`<br>`<AttributeValue>https://graph.windows.net/{tenantID}/users/{userID}/getMemberObjects<AttributeValue>` |
@@ -44,8 +44,8 @@ ms.locfileid: "60298263"
 > |IssuedAt | `iat` |Указывает время выдачи токена. Оно часто используется для определения времени существования токена. | `<Assertion ID="_d5ec7a9b-8d8f-4b44-8c94-9812612142be" IssueInstant="2014-01-06T20:20:23.085Z" Version="2.0" xmlns="urn:oasis:names:tc:SAML:2.0:assertion">` |
 > |Издатель | `iss` |Обозначает службу токенов безопасности (STS), которая создает и возвращает токен. В возвращаемых службой Azure AD токенах указан следующий издатель: sts.windows.net. Идентификатор GUID в значении утверждения Issuer — это идентификатор клиента каталога Azure AD. Идентификатор клиента представляет собой неизменяемый и надежный идентификатор каталога. | `<Issuer>https://sts.windows.net/cbb1a5ac-f33b-45fa-9bf5-f37db0fed422/</Issuer>` |
 > |Фамилия | `family_name` |Указывает фамилию пользователя в соответствии с определением в объекте пользователя Azure AD. | `<Attribute Name=" http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname">`<br>`<AttributeValue>Miller<AttributeValue>` |
-> |Name | `unique_name` |Предоставляет удобное для восприятия значение, которое идентифицирует субъект маркера. Это значение не обязательно должно быть уникальным в пределах клиента. Оно предназначено только для отображения. | `<Attribute Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name">`<br>`<AttributeValue>frankm@contoso.com<AttributeValue>`|
-> |Object ID | `oid` |Содержит уникальный идентификатор объекта в Azure AD. Это значение является неизменяемым и не может быть переназначено или повторно использовано. Используйте идентификатор объекта для идентификации объекта в запросах, адресованных Azure AD. | `<Attribute Name="http://schemas.microsoft.com/identity/claims/objectidentifier">`<br>`<AttributeValue>528b2ac2-aa9c-45e1-88d4-959b53bc7dd0<AttributeValue>` |
+> |ИМЯ | `unique_name` |Предоставляет удобное для восприятия значение, которое идентифицирует субъект маркера. Это значение не обязательно должно быть уникальным в пределах клиента. Оно предназначено только для отображения. | `<Attribute Name="http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name">`<br>`<AttributeValue>frankm@contoso.com<AttributeValue>`|
+> |ИД объекта | `oid` |Содержит уникальный идентификатор объекта в Azure AD. Это значение является неизменяемым и не может быть переназначено или повторно использовано. Используйте идентификатор объекта для идентификации объекта в запросах, адресованных Azure AD. | `<Attribute Name="http://schemas.microsoft.com/identity/claims/objectidentifier">`<br>`<AttributeValue>528b2ac2-aa9c-45e1-88d4-959b53bc7dd0<AttributeValue>` |
 > |Роли | `roles` |Представляет все роли приложения, предоставленные субъекту напрямую или косвенно через членство в группе, и может использоваться для реализации управления доступом на основе ролей. Роли приложения определяются на уровне приложения с использованием свойства `appRoles` манифеста приложения. Свойство `value` каждой роли приложения представляет значение, которое отображается в утверждении Roles. | `<Attribute Name="http://schemas.microsoft.com/ws/2008/06/identity/claims/role">`|
 > |Subject | `sub` |Указывает субъекта, сведения о котором утверждает токен, например данные о пользователе приложения. Это значение является неизменным, его невозможно назначить другому объекту или использовать повторно. Следовательно, это значение можно использовать для безопасного проведения проверок авторизации. Так как субъект всегда присутствует в выдаваемых Azure AD токенах, мы советуем использовать это значение в системе авторизации общего назначения. <br> `SubjectConfirmation` не является утверждением. Он описывает, как проверяется субъект токена. `Bearer` указывает, что субъект подтвержден благодаря владению токеном. | `<Subject>`<br>`<NameID>S40rgb3XjhFTv6EQTETkEzcgVmToHKRkZUIsJlmLdVc</NameID>`<br>`<SubjectConfirmation Method="urn:oasis:names:tc:SAML:2.0:cm:bearer" />`<br>`</Subject>`|
 > |Tenant ID | `tid` |Tenant ID — неизменяемый идентификатор без возможности повторного использования, который идентифицирует клиент каталога, выдавший токен. Это значение можно использовать для доступа к ресурсам каталога конкретного клиента в мультитенантном приложении. Например, это значение можно использовать для идентификации клиента при вызове API Graph. | `<Attribute Name="http://schemas.microsoft.com/identity/claims/tenantid">`<br>`<AttributeValue>cbb1a5ac-f33b-45fa-9bf5-f37db0fed422<AttributeValue>`|
@@ -56,12 +56,12 @@ ms.locfileid: "60298263"
 Ниже приведен пример типичного токена SAML.
 
     <?xml version="1.0" encoding="UTF-8"?>
-    <t:RequestSecurityTokenResponse xmlns:t="http://schemas.xmlsoap.org/ws/2005/02/trust">
+    <t:RequestSecurityTokenResponse xmlns:t="https://schemas.xmlsoap.org/ws/2005/02/trust">
       <t:Lifetime>
         <wsu:Created xmlns:wsu="https://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">2014-12-24T05:15:47.060Z</wsu:Created>
         <wsu:Expires xmlns:wsu="https://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">2014-12-24T06:15:47.060Z</wsu:Expires>
       </t:Lifetime>
-      <wsp:AppliesTo xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy">
+      <wsp:AppliesTo xmlns:wsp="https://schemas.xmlsoap.org/ws/2004/09/policy">
         <EndpointReference xmlns="https://www.w3.org/2005/08/addressing">
           <Address>https://contoso.onmicrosoft.com/MyWebApp</Address>
         </EndpointReference>
@@ -151,7 +151,7 @@ ms.locfileid: "60298263"
         </SecurityTokenReference>
       </t:RequestedUnattachedReference>
       <t:TokenType>http://docs.oasis-open.org/wss/oasis-wss-saml-token-profile-1.1#SAMLV2.0</t:TokenType>
-      <t:RequestType>http://schemas.xmlsoap.org/ws/2005/02/trust/Issue</t:RequestType>
+      <t:RequestType>https://schemas.xmlsoap.org/ws/2005/02/trust/Issue</t:RequestType>
       <t:KeyType>http://schemas.xmlsoap.org/ws/2005/05/identity/NoProofKey</t:KeyType>
     </t:RequestSecurityTokenResponse>
 

@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 08/29/2016
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 67fba7a921868d0e5720216208cff7c298c926f6
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: cbf6a44f1a3210906ec7ab0d04eecb997bc2c470
+ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60838918"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65412816"
 ---
 # <a name="troubleshoot-an-app-in-azure-app-service-using-visual-studio"></a>Устранение неполадок приложения в Cлужбе приложений Azure с помощью Visual Studio
 ## <a name="overview"></a>Обзор
@@ -42,7 +42,7 @@ ms.locfileid: "60838918"
 
 В этом учебнике приводятся примеры кода для веб-приложения C# MVC, однако в приложениях Visual Basic и веб-форм применяются те же процедуры устранения неполадок.
 
-В этом руководстве предполагается, что вы используете Visual Studio 2017 или Visual Studio 2013. 
+В учебнике предполагается, что вы используете Visual Studio 2019. 
 
 Журналы потоковой передачи работают только для приложений, которые предназначены для .NET Framework 4 и выше.
 

@@ -8,19 +8,20 @@ manager: daveba
 ms.reviewer: barbkess
 ms.assetid: ad891f99-179e-4487-834d-35f3bc01c1ec
 ms.service: active-directory
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 01/17/2019
+ms.date: 05/03/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fffaa266a29a500f27759adb7526d1aa6d61ccd0
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 211e11b5bfd6a8bb7b1d61fec120566d60b9c5c0
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58915243"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65191213"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-cherwell"></a>Руководство по Интеграция Azure Active Directory с Cherwell
 
@@ -38,7 +39,7 @@ ms.locfileid: "58915243"
 
 Чтобы настроить интеграцию Azure AD с Cherwell, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * Подписка Cherwell с поддержкой единого входа
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -67,7 +68,7 @@ ms.locfileid: "58915243"
 
 4. В поле поиска введите **Cherwell**, выберите **Cherwell** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
-     ![Cherwell в списке результатов](common/search-new-app.png)
+    ![Cherwell в списке результатов](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
@@ -120,13 +121,13 @@ ms.locfileid: "58915243"
 
     а) URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-cherwell-single-sign-on"></a>Настройка единого входа в Cherwell
 
-Чтобы настроить единый вход на стороне **Cherwell**, нужно отправить скачанный **Сертификат (Base64)** и соответствующие URL-адреса, скопированные на портале Azure, [группе поддержки Cherwell](https://csm.cherwell.com/contact). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **Cherwell**, нужно отправить скачанный **Сертификат (Base64)** и соответствующие URL-адреса, скопированные на портале Azure, [группе поддержки Cherwell](https://cherwellsupport.com/CherwellPortal). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 > [!NOTE]
 > Настройка единого входа должна выполняться службой поддержки Cherwell. Как только единый вход для вашей подписки будет включен, вы получите уведомление.
@@ -147,10 +148,9 @@ ms.locfileid: "58915243"
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а. В поле **Имя** введите **BrittaSimon**.
+    a. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
-    Например BrittaSimon@contoso.com.
+    b. В поле **Имя пользователя** введите `brittasimon\@yourcompanydomain.extension`. Например, BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
@@ -176,7 +176,7 @@ ms.locfileid: "58915243"
 
     ![Область "Добавление назначения"](common/add-assign-user.png)
 
-5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
+5. В диалоговом окне **Пользователи и группы** выберите **Britta Simon** в списке пользователей, а затем в нижней части экрана нажмите кнопку **Выбрать**.
 
 6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
 
@@ -184,7 +184,7 @@ ms.locfileid: "58915243"
 
 ### <a name="create-cherwell-test-user"></a>Создание тестового пользователя Cherwell
 
-Чтобы пользователи Azure AD могли выполнить вход в Cherwell, они должны быть подготовлены в Cherwell. В случае Cherwell учетные записи пользователей должны быть созданы [группой поддержки Cherwell](https://csm.cherwell.com/contact).
+Чтобы пользователи Azure AD могли входить в Cherwell, они должны быть подготовлены в Cherwell. В случае Cherwell учетные записи пользователей должны быть созданы [группой поддержки Cherwell](https://cherwellsupport.com/CherwellPortal).
 
 > [!NOTE]
 > Вы можете использовать любые другие инструменты создания учетных записей пользователя Cherwell или API, предоставляемые Cherwell для подготовки учетных записей пользователя Azure Active Directory.

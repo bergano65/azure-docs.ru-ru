@@ -1,5 +1,5 @@
 ---
-title: Руководство. Одностраничное веб-приложение для службы Поиск сущностей Bing
+title: Руководство по Одностраничное веб-приложение для службы Поиск сущностей Bing
 titlesuffix: Azure Cognitive Services
 description: В этой статье показано, как использовать API Bing для поиска сущностей в одностраничном веб-приложении.
 services: cognitive-services
@@ -10,12 +10,12 @@ ms.subservice: bing-entity-search
 ms.topic: tutorial
 ms.date: 02/01/2019
 ms.author: aahi
-ms.openlocfilehash: fe1e56d2975c219a56d41102c728b7873f9f4f62
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: 1b8cf36c631755458bc0c531773a6b2aba7f1038
+ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57538176"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65406379"
 ---
 # <a name="tutorial-single-page-web-app"></a>Руководство по Одностраничные веб-приложения
 
@@ -535,7 +535,7 @@ searchItemRenderers = {
 
 После этого в HTML-файле измените конечную точку службы "Поиск в Интернете Bing" на следующую:
 
-    http://localhost:9090/https://api.cognitive.microsoft.com/bing/v7.0/search
+    https://localhost:9090/httpss://api.cognitive.microsoft.com/bing/v7.0/search
 
 И наконец, запустите прокси-сервер CORS с помощью следующей команды:
 

@@ -14,19 +14,20 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 02/22/2019
 ms.author: cynthn
-ms.openlocfilehash: f768582e8ef32bc654a2f797c5c7a481a26fb643
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.openlocfilehash: 012f4e479a5b8ea2e3ddea1bfde70ab10ee4e834
+ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56734189"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65467042"
 ---
 # <a name="how-to-use-packer-to-create-windows-virtual-machine-images-in-azure"></a>Использование Packer для создания образов виртуальных машин Windows в Azure
 Каждая виртуальная машина в Azure создается из образа, который определяет дистрибутив Windows и версию операционной системы. Образы могут содержать предварительно установленные приложения и конфигурации. Azure Marketplace предоставляет большое количество образов Майкрософт и сторонних разработчиков для наиболее распространенных операционных систем и приложений. Кроме того, вы можете создать собственные настраиваемые образы, отвечающие конкретным потребностям. В этой статье описывается определение и создание пользовательских образов в Azure с использованием инструмента с открытым кодом [Packer](https://www.packer.io/).
 
 В этой статье проверки на 2/21/2019 г. с помощью [модуль Az PowerShell](https://docs.microsoft.com/powershell/azure/install-az-ps) версии 1.3.0 и [Packer](https://www.packer.io/docs/install/index.html) версии 1.3.4.
 
-[!INCLUDE [updated-for-az-vm.md](../../../includes/updated-for-az-vm.md)]
+> [!NOTE]
+> Теперь Azure есть служба, Azure Image Builder (Предварительная версия), для определения и создания пользовательских образов. Azure Image Builder лежит Packer, поэтому можно даже использовать ваши существующие сценарии средства подготовки Packer оболочек с ним. Чтобы приступить к работе с Azure Image Builder, см. в разделе [создать виртуальную Машину Windows с Azure Image Builder](image-builder.md).
 
 ## <a name="create-azure-resource-group"></a>Создание группы ресурсов Azure
 В процессе сборки исходной виртуальной машины Packer создает временные ресурсы Azure. Чтобы сохранить эту исходную виртуальную машину для использования в качестве образа, необходимо определить группу ресурсов. Выходные данные процесса сборки Packer хранятся в этой группе ресурсов.
@@ -248,6 +249,4 @@ Get-AzPublicIPAddress `
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-В этом примере вы создали образ виртуальной машины с уже установленными службами IIS с помощью Packer. Этот образ виртуальной машины можно использовать наряду с имеющимися рабочими процессами развертывания, такими как развертывание приложений на виртуальных машинах, созданных из образа с помощью Azure DevOps Services, Ansible, Chef или Puppet.
-
-Дополнительный пример шаблонов Packer для других дистрибутивов Windows см. в этом [репозитории GitHub](https://github.com/hashicorp/packer/tree/master/examples/azure).
+Можно также использовать существующие сценарии средства подготовки Packer с [Azure Image Builder](image-builder.md).

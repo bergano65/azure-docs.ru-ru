@@ -5,19 +5,19 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: article
-ms.date: 03/06/2019
+ms.date: 05/06/2019
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 52226d07595120395909dd5f47d5d896f5cdaa75
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 2eaf819870e2b70cc6238af6d1e9fa1dcb5caab8
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61483662"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65236751"
 ---
 # <a name="azure-storage-account-overview"></a>Общие сведения об учетной записи хранения
 
-Учетная запись хранения Azure содержит все объекты данных службы хранилища Azure: большие двоичные объекты, файлы, очереди, таблицы и диски. Данные в учетной записи хранения Azure характеризуются устойчивостью, высокой доступностью, безопасностью, высокой масштабируемостью и доступностью из любой точки мира по протоколу HTTP или HTTPS.
+Учетная запись хранения Azure содержит все объекты данных службы хранилища Azure: большие двоичные объекты, файлы, очереди, таблицы и диски. Учетная запись хранения предоставляет уникальное пространство имен для данных службы хранилища Azure, доступном в любом месте мира по протоколу HTTP или HTTPS. Данные в учетную запись хранилища Azure устойчивых и высокой доступности, безопасности и масштабируемости.
 
 Сведения о создании учетной записи хранения Azure см. в [этой статье](storage-quickstart-create-account.md).
 

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: peterpr
-ms.openlocfilehash: af6d66d2e3eae80477a151323578b930dcd7727a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: e8d4ab46c598580a3a87f4344202f2700926bf5c
+ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60886637"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65510328"
 ---
 # <a name="connect-a-windows-iot-core-device-to-your-azure-iot-central-application"></a>Подключение устройства Windows IoT Core к приложению Azure IoT Central
 
@@ -74,7 +74,7 @@ ms.locfileid: "60886637"
 [Windows Device Portal](https://docs.microsoft.com/windows/iot-core/manage-your-device/deviceportal) включает средства, которые можно использовать для устранения неполадок устройства:
 
 - **Apps manager** страница предназначена для управления приложениями, установленной на устройстве.
-- Если у вас нет монитор, подключенный к устройству, можно использовать **параметры устройства** страницы, чтобы сделать снимки экрана с устройства. Пример.
+- Если у вас нет монитор, подключенный к устройству, можно использовать **параметры устройства** страницы, чтобы сделать снимки экрана с устройства. Например:
 
     ![Снимок экрана приложения](media/howto-connect-windowsiotcore/iot-hub-foreground-client.png)
 
@@ -98,17 +98,17 @@ ms.locfileid: "60886637"
 
 Числовые параметры
 
-| Отображаемое имя | Имя поля | Единицы | Число десятичных знаков | Минимум | Максимум | Исходный |
+| `Display name` | Имя поля | Единицы | Число десятичных знаков | Минимум | Максимум | Initial |
 | ------------ | ---------- | ----- | -------------- | ------- | ------- | ------- |
 | Скорость вращения вентилятора    | fanSpeed   | Об/мин   | 0              | 0       | 1000    | 0       |
 
 ### <a name="properties"></a>properties
 
-| type            | Отображаемое имя | Имя поля | Тип данных |
+| type            | `Display name` | Имя поля | Тип данных |
 | --------------- | ------------ | ---------- | --------- |
 | Свойство устройства | Серийный номер   | dieNumber  | номер    |
-| Text            | Location     | location   | Н/Д       |
+| Text            | Расположение     | location   | Н/Д       |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Теперь, когда вы узнали, как для подключения устройства Raspberry Pi к Azure IoT Central приложения, мы предлагаем — Узнайте, как [настроить шаблон пользовательского устройства](howto-set-up-template.md) для устройства Интернета вещей.
+Теперь, когда вы узнали, как подключить устройство Windows IoT Core в приложение Azure IoT Central, мы предлагаем — Узнайте, как [настроить шаблон пользовательского устройства](howto-set-up-template.md) для устройства Интернета вещей.

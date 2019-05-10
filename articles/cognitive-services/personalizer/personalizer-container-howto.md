@@ -7,14 +7,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: personalizer
 ms.topic: overview
-ms.date: 05/07/2019
+ms.date: 05/09/2019
 ms.author: edjez
-ms.openlocfilehash: 2a62fd288f9118882e5cd9899ab572d4b247fc5a
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: a197531a7c78823271c0a5fa5413b76746f63a9a
+ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65156801"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65507016"
 ---
 # <a name="install-and-run-personalizer-containers"></a>Установка и запуск контейнеров Персонализатора
 
@@ -140,7 +140,7 @@ Billing={BILLING_ENDPOINT_URI} \
 ApiKey={BILLING_KEY}
 ```
 
-Запустите второй контейнер на порте 5001.
+Запустите второй контейнер на порте 5001.
 
 
 ```bash 
@@ -182,7 +182,7 @@ ApiKey={BILLING_KEY}
 
 Контейнеры службы "Персонализатор" отправляют данные для выставления счетов в Azure с помощью ресурса _службы "Персонализатор"_ в учетной записи Azure. 
 
-Контейнеры Cognitive Services не лицензируются для запуска без подключения к Azure для отслеживания использования. Клиенты должны разрешить контейнерам непрерывную передачу данных для выставления счетов в службу контроля потребления. Контейнеры Cognitive Services не отправляют данные клиента в корпорацию Майкрософт. 
+Контейнеры Cognitive Services не лицензируются для запуска без подключения к Azure для отслеживания использования. Клиенты должны разрешить контейнерам непрерывную передачу данных для выставления счетов в службу контроля потребления.  
 
 В команде `docker run` используются следующие аргументы для выставления счетов.
 

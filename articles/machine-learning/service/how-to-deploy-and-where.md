@@ -11,18 +11,18 @@ author: jpe316
 ms.reviewer: larryfr
 ms.date: 05/02/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: 113c894122fe2b0673dfb47f8a9c0cbecf4c6290
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: 45421a249642abf37c89aa33e2e8a1b4a9e5e497
+ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65205067"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65507003"
 ---
 # <a name="deploy-models-with-the-azure-machine-learning-service"></a>Развертывание моделей с помощью Службы машинного обучения Azure
 
 Узнайте, как развернуть модель машинного обучения как веб-службы в облаке Azure или на устройствах IoT Edge. Сведения в этом документе объясняется, как развертывание на целевые объекты вычисления в следующем:
 
-| Целевой объект вычисления | Тип развертывания | ОПИСАНИЕ |
+| Целевой объект вычисления | Тип развертывания | Описание |
 | ----- | ----- | ----- |
 | [Локальный веб-службы](#local) | Тестирование и отладка | Такие ограниченные возможности для тестирования и устранения неполадок.
 | [Служба Azure Kubernetes (AKS)](#aks) | Вывод в режиме реального времени | Подходит для крупномасштабных рабочих развертываний. Она обеспечивает автоматическое масштабирование и малое время отклика. |
@@ -42,7 +42,7 @@ ms.locfileid: "65205067"
 
 ## <a name="prerequisites-for-deployment"></a>Необходимые условия для развертывания
 
-- Модель. Если у вас нет обученной модели, можно использовать модель и файлы зависимостей, предоставляются в [учебником](http://aka.ms/azml-deploy-cloud).
+- Модель. Если у вас нет обученной модели, можно использовать модель и файлы зависимостей, предоставляются в [учебником](https://aka.ms/azml-deploy-cloud).
 
 - [Расширение Azure CLI для службы машинного обучения](reference-azure-machine-learning-cli.md), или [пакета SDK Azure Machine Learning Python](https://aka.ms/aml-sdk).
 
@@ -210,7 +210,7 @@ inference_config = InferenceConfig(source_directory="C:/abc",
 
 | Целевой объект вычисления | Пример конфигурации развертывания |
 | ----- | ----- |
-| Local | `deployment_config = LocalWebservice.deploy_configuration(port=8890)` |
+| Локальные | `deployment_config = LocalWebservice.deploy_configuration(port=8890)` |
 | Экземпляр контейнера Azure | `deployment_config = AciWebservice.deploy_configuration(cpu_cores = 1, memory_gb = 1)` |
 | Служба Azure Kubernetes | `deployment_config = AksWebservice.deploy_configuration(cpu_cores = 1, memory_gb = 1)` |
 
@@ -458,7 +458,7 @@ image_config.base_image = run.properties["AzureML.DerivedImageName"]
 Пошаговое руководство, вывода пакетной службы с помощью вычислений машинного обучения Azure, в статье [как выполнить пакетные прогнозы](how-to-run-batch-predictions.md) статьи.
 
 ## <a id="iotedge"></a> Вывод в IoT Edge
-Для поддержки развертывания на периферии доступна Предварительная версия. Дополнительные сведения см. в разделе [развертывание машинного обучения Azure, как модуль IoT Edge](https://docs.microsoft.com/en-us/azure/iot-edge/tutorial-deploy-machine-learning) статьи.
+Для поддержки развертывания на периферии доступна Предварительная версия. Дополнительные сведения см. в разделе [развертывание машинного обучения Azure, как модуль IoT Edge](https://docs.microsoft.com/azure/iot-edge/tutorial-deploy-machine-learning) статьи.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Устранение неполадок развертывания](how-to-troubleshoot-deployment.md)

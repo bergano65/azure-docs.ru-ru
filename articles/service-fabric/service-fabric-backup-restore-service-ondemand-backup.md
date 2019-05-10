@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/30/2018
 ms.author: aagup
-ms.openlocfilehash: c80a9ac30e79607d2a255debf73f6542df7c6498
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: bed3402de83984cae9134fe44058980ec18861b3
+ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60310899"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65413942"
 ---
 # <a name="on-demand-backup-in-azure-service-fabric"></a>Резервное копирование по запросу в Azure Service Fabric
 
@@ -28,6 +28,22 @@ ms.locfileid: "60310899"
 Azure Service Fabric предоставляет функции для [периодического резервного копирования данных](service-fabric-backuprestoreservice-quickstart-azurecluster.md) и резервного копирования данных по мере необходимости. Резервное копирование по запросу предотвращает _потерю_/_повреждение данных_ из-за плановых изменений в основной службе или ее среде.
 
 Функции резервного копирования по запросу позволяют записать сведения о состоянии служб перед любой выполняющейся вручную операцией, которая относится к этой службе или к ее среде. Например, когда вы вносите изменения в двоичные файлы службы при ее обновлении или переходе на более раннюю версию. В этом случае резервное копирование по запросу защищает данные от повреждения из-за ошибок в коде приложения.
+## <a name="prerequisites"></a>Технические условия
+
+- Установите модуль Microsoft.ServiceFabric.Powershell.Http [Preview] для выполнения вызовов конфигурации.
+
+```powershell
+    Install-Module -Name Microsoft.ServiceFabric.Powershell.Http -AllowPrerelease
+```
+
+- Убедитесь, что кластер подключен с помощью `Connect-SFCluster` команду перед выполнением любой запрос конфигурации, с помощью модуля Microsoft.ServiceFabric.Powershell.Http.
+
+```powershell
+
+    Connect-SFCluster -ConnectionEndpoint 'https://mysfcluster.southcentralus.cloudapp.azure.com:19080'   -X509Credential -FindType FindByThumbprint -FindValue '1b7ebe2174649c45474a4819dafae956712c31d3' -StoreLocation 'CurrentUser' -StoreName 'My' -ServerCertThumbprint '1b7ebe2174649c45474a4819dafae956712c31d3'  
+
+```
+
 
 ## <a name="triggering-on-demand-backup"></a>Запуск резервного копирования по запросу
 
@@ -38,6 +54,16 @@ Azure Service Fabric предоставляет функции для [пери�
 Можно настроить политику периодического резервного копирования таким образом, чтобы использовалась секция службы Reliable Services с отслеживанием состояния или Reliable Actors для дополнительного резервного копирования по запросу в хранилище.
 
 Описанный ниже случай — это продолжение сценария в разделе о [включении периодического резервного копирования для службы Reliable Services с отслеживанием состояния и Reliable Actors](service-fabric-backuprestoreservice-quickstart-azurecluster.md#enabling-periodic-backup-for-reliable-stateful-service-and-reliable-actors). В этом случае вы настраиваете политику резервного копирования для использования секции, и резервное копирование выполняется в Службе хранилища Azure с установленной частотой.
+
+#### <a name="powershell-using-microsoftservicefabricpowershellhttp-module"></a>С помощью Microsoft.ServiceFabric.Powershell.Http модуля PowerShell
+
+```powershell
+
+Backup-SFPartition -PartitionId '974bd92a-b395-4631-8a7f-53bd4ae9cf22' 
+
+```
+
+#### <a name="rest-call-using-powershell"></a>Вызов REST, с помощью Powershell
 
 Используйте API [BackupPartition](https://docs.microsoft.com/rest/api/servicefabric/sfclient-api-backuppartition), чтобы инициировать резервное копирование по запросу для идентификатора секции `974bd92a-b395-4631-8a7f-53bd4ae9cf22`.
 
@@ -52,6 +78,17 @@ Invoke-WebRequest -Uri $url -Method Post -ContentType 'application/json' -Certif
 ### <a name="on-demand-backup-to-specified-storage"></a>Резервное копирование по запросу в указанное хранилище
 
 Вы можете создать запрос на резервное копирование для секции службы Reliable Services с отслеживанием состояния или Reliable Actors. Предоставьте сведения о хранилище как часть запроса на резервное копирование по запросу.
+
+
+#### <a name="powershell-using-microsoftservicefabricpowershellhttp-module"></a>С помощью Microsoft.ServiceFabric.Powershell.Http модуля PowerShell
+
+```powershell
+
+Backup-SFPartition -PartitionId '974bd92a-b395-4631-8a7f-53bd4ae9cf22' -AzureBlobStore -ConnectionString  'DefaultEndpointsProtocol=https;AccountName=<account-name>;AccountKey=<account-key>;EndpointSuffix=core.windows.net' -ContainerName 'backup-container'
+
+```
+
+#### <a name="rest-call-using-powershell"></a>Вызов REST, с помощью Powershell
 
 Используйте API [BackupPartition](https://docs.microsoft.com/rest/api/servicefabric/sfclient-api-backuppartition), чтобы инициировать резервное копирование по запросу для идентификатора секции `974bd92a-b395-4631-8a7f-53bd4ae9cf22`. Включите следующие сведения о Службе хранилища Azure:
 
@@ -79,6 +116,16 @@ Invoke-WebRequest -Uri $url -Method Post -Body $body -ContentType 'application/j
 Секция Reliable Services с отслеживанием состояния или Reliable Actors может единовременно принять только один запрос на резервное копирование по запросу. Следующий запрос будет приниматься только после выполнения текущего.
 
 Можно одновременно выполнять несколько запросов на резервное копирование по запросу в разных секциях.
+
+
+#### <a name="powershell-using-microsoftservicefabricpowershellhttp-module"></a>С помощью Microsoft.ServiceFabric.Powershell.Http модуля PowerShell
+
+```powershell
+
+Get-SFPartitionBackupProgress -PartitionId '974bd92a-b395-4631-8a7f-53bd4ae9cf22'
+
+```
+#### <a name="rest-call-using-powershell"></a>Вызов REST, с помощью Powershell
 
 ```powershell
 $url = "https://mysfcluster-backup.southcentralus.cloudapp.azure.com:19080/Partitions/974bd92a-b395-4631-8a7f-53bd4ae9cf22/$/GetBackupProgress?api-version=6.4"

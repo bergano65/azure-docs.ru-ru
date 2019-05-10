@@ -13,12 +13,12 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 09/24/2018
 ms.author: crdun
-ms.openlocfilehash: 2e0a4b51e9140b9b3c0032980b7c6cd5a4d55638
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.openlocfilehash: b99513cad34bba1b050a24795ecb21d0357d19c1
+ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62128946"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65416077"
 ---
 # <a name="create-a-xamarinforms-app-with-azure"></a>Создание приложения Xamarin.Forms в Azure
 
@@ -34,9 +34,9 @@ ms.locfileid: "62128946"
 
 * Активная учетная запись Azure. Если у вас нет учетной записи, можно зарегистрироваться для получения бесплатной пробной версии Azure и получить до 10 бесплатных мобильных приложений, которые можно использовать и после окончания пробного периода. Дополнительные сведения см. на странице [Создайте бесплатную учетную запись Azure уже сегодня](https://azure.microsoft.com/pricing/free-trial/).
 
-* Средства Visual Studio для Xamarin в Visual Studio 2017 или Visual Studio для Mac. Инструкции можно найти на [странице установки Xamarin][Install Xamarin].
+* Инструменты Visual Studio для Xamarin в Visual Studio 2017 или более поздней версии, или Visual Studio для Mac. Инструкции можно найти на [странице установки Xamarin][Install Xamarin].
 
-* (Необязательно) Чтобы создать приложение iOS, потребуется компьютер Mac с установкой Xcode 9.0 или более поздней версии. Для разработки приложений iOS можно использовать Visual Studio для Mac или Visual Studio 2017 (если в сети есть доступный компьютер Mac).
+* (Необязательно) Чтобы создать приложение iOS, потребуется компьютер Mac с установкой Xcode 9.0 или более поздней версии. Visual Studio для Mac можно использовать для разработки приложений iOS или Visual Studio 2017 или более поздней версии можно использовать (условии, что компьютер Mac доступен в сети).
 
 ## <a name="create-a-new-mobile-apps-back-end"></a>Создание серверной части при помощи функции "Мобильные приложения"
 
@@ -64,7 +64,7 @@ ms.locfileid: "62128946"
 
    После этого будет скачан проект, содержащий клиентское приложение, подключенное к вашему мобильному приложению. Сохраните сжатый файл проекта на локальном компьютере и запомните путь к нему.
 
-3. Извлеките скачанный проект и откройте его в Visual Studio 2017.
+3. Извлеките Скачанный проект и откройте его в Visual Studio.
 
    ![Извлеченный проект в Visual Studio][8]
 

@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 04/29/2019
-ms.openlocfilehash: 2358cb2ea411a0077f34798183da30bd32ae067b
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: bc72cc21ab525ec82d9ce4b24e80ce82d92a5d21
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64925123"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65233496"
 ---
 # <a name="machine-learning-capability-in-azure-data-explorer"></a>Возможность в обозреватель данных Azure в машинном обучении
 
@@ -96,7 +96,7 @@ demo_clustering1
 | 2016-08-23 15:00:58.2222707 | scus   | Просмотр su5       | 9dbd1b161d5b4779a73cf19a7836ebd6 | 10007007   | 8215dcf6-2de0-42bd-9c90-181c70486c9c |
 | 2016-08-23 15:00:59.9382620 | scus   | su3       | 90d3d2fc7ecc430c9621ece335651a01 | 10007006   | 451e3c4c-0808-4566-a64d-84d85cf30978 |
 
-### <a name="use-autocluster-for-single-record-set-clustering"></a>Используйте `autocluster()` для одной записи, задайте кластеризации
+### <a name="use-autocluster-for-single-record-set-clustering"></a>Использовать autocluster() для одной записи, задайте кластеризации
 
 Несмотря на то, что существуют менее чем тысяче исключения, по-прежнему трудно найти общих сегментов, так как существует несколько значений в каждом столбце. Можно использовать [ `autocluster()` ](/azure/kusto/query/autoclusterplugin) подключаемого модуля, чтобы сразу же извлечь небольшой список общих сегментов и найти интересные кластеров в течение двух минут ее, как показано в следующем запросе:
 
@@ -120,7 +120,7 @@ demo_clustering1
 
 Autocluster использует собственный алгоритм для интеллектуального анализа данных несколько измерений и извлечения интересных сегментов. «Интересные» означает, что каждый сегмент имеет значительные покрытия набора записей и набор функций. Сегменты также различаются, то есть каждый из них является значительно отличается от других. Один или несколько из этих сегментов можно применять для процесса RCA. Чтобы свести к минимуму, оценка и проверка сегмента, autocluster извлекает только небольшой сегмент список.
 
-### <a name="use-basket-for-single-record-set-clustering"></a>Используйте `basket()` для одной записи, задайте кластеризации
+### <a name="use-basket-for-single-record-set-clustering"></a>Использовать basket() для одной записи, задайте кластеризации
 
 Можно также использовать [ `basket()` ](/azure/kusto/query/basketplugin) подключаемого модуля, как показано в следующем запросе:
 

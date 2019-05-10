@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 02/25/2018
 ms.author: markvi
-ms.openlocfilehash: 5b3c6c99b05320ee53c3ff49f5c299650c32e939
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 6ee8891eae108256875660cc3f2256b65703a1aa
+ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60440835"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65406793"
 ---
 # <a name="how-to-stop-using-the-virtual-machine-managed-identities-extension-and-start-using-the-azure-instance-metadata-service"></a>Прекращение использования виртуальной машины управляемого удостоверения расширения и начать использовать службу метаданных экземпляров Azure
 
@@ -35,7 +35,7 @@ ms.locfileid: "60440835"
 
 ### <a name="provision-the-extension"></a>Подготовка расширения 
 
-При настройке виртуальной машины или масштабируемого набора требуется управляемое удостоверение виртуальных машин, вы можете необязательно решили, при необходимости можно подготовить управляемого удостоверения для расширения виртуальной Машины ресурсов Azure с помощью `-Type` параметр на [ SET-AzVMExtension](https://docs.microsoft.com/powershell/module/az.compute/set-azvmextension) командлета. Можно передать или `ManagedIdentityExtensionForWindows` или `ManagedIdentityExtensionForLinux`, в зависимости от типа виртуальной машины и назовите его с помощью `-Name` параметра. В параметре `-Settings` указан порт, используемый конечной точкой токена OAuth для получения токена:
+При настройке виртуальной машины или масштабируемого набора требуется управляемое удостоверение виртуальных машин, при необходимости можно подготовить управляемого удостоверения для расширения виртуальной Машины ресурсов Azure с помощью `-Type` параметр на [ SET-AzVMExtension](https://docs.microsoft.com/powershell/module/az.compute/set-azvmextension) командлета. Можно передать или `ManagedIdentityExtensionForWindows` или `ManagedIdentityExtensionForLinux`, в зависимости от типа виртуальной машины и назовите его с помощью `-Name` параметра. В параметре `-Settings` указан порт, используемый конечной точкой токена OAuth для получения токена:
 
 ```powershell
    $settings = @{ "port" = 50342 }
@@ -119,7 +119,7 @@ GET http://localhost:50342/oauth2/token?resource=https%3A%2F%2Fmanagement.azure.
 Metadata: true
 ```
 
-| Элемент | ОПИСАНИЕ |
+| Элемент | Описание |
 | ------- | ----------- |
 | `GET` | HTTP-команда, указывающая, что необходимо извлечь данные из конечной точки. В этом случае используется маркер доступа OAuth. | 
 | `http://localhost:50342/oauth2/token` | Конечная точка управляемых удостоверений для ресурсов Azure, где 50342 — порт по умолчанию, который можно настроить. |
@@ -145,7 +145,7 @@ Content-Type: application/json
 }
 ```
 
-| Элемент | ОПИСАНИЕ |
+| Элемент | Описание |
 | ------- | ----------- |
 | `access_token` | Запрашиваемый маркер доступа. При вызове защищенного REST API маркер внедряется в поле `Authorization` заголовка запроса в качестве маркера носителя, позволяя API выполнить проверку подлинности вызывающего объекта. | 
 | `refresh_token` | Не используется управляемыми удостоверениями для ресурсов Azure. |
@@ -190,7 +190,7 @@ Set-AzVMExtension -Name <extension name>  -Type <extension Type>  -Location <loc
     * CentOS 7.1; 
     * Red Hat 7.2 
     * Ubuntu 15.04. 
-    * Ubuntu 16.04.
+    * Ubuntu 16.04
  * Нет повлиять на производительность для развертывания виртуальных машин с управляемыми удостоверениями как расширение виртуальной машины также должны быть подготовлены. 
  * Наконец расширение виртуальной машины может поддерживать только с 32 назначаемого пользователем управляемого удостоверения на каждую виртуальную машину. 
 

@@ -11,12 +11,12 @@ ms.devlang: java
 ms.topic: conceptual
 ms.date: 09/14/2018
 ms.author: routlaw
-ms.openlocfilehash: cc598afbbdf7f3a1b12089b50ba747c5220ba1fa
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: ce7eb546c342ffd20557a95d5293d83b39ec3afb
+ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64922932"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65507198"
 ---
 # <a name="azure-functions-java-developer-guide"></a>Руководство разработчика Java по Функциям Azure
 
@@ -66,7 +66,7 @@ FunctionsProject
 
  Функции Azure вызываются триггером, таким как HTTP-запрос, таймер или обновление данных. Функция должна обработать такой триггер и связанные с ним входные данные и создать на их основе одно или несколько выходных значений.
 
-Используйте заметки Java, включенные в пакет [com.microsoft.azure.functions.annotation.*](/java/api/com.microsoft.azure.functions.annotation), чтобы привязать входные и выходные данные к своим методам. Дополнительные сведения см. в [справочной документации по Java](/java/api/com.microsoft.azure.functions.annotation).
+Используйте заметки Java, включенные в пакет [com.microsoft.azure.functions.annotation.*](/java/api/com.microsoft.azure.functions.annotation), чтобы привязать входные и выходные данные к своим методам. Дополнительные сведения см. в разделе [Java справочные документы](/java/api/com.microsoft.azure.functions.annotation).
 
 > [!IMPORTANT] 
 > Чтобы локально выполнять триггеры BLOB-объекта, очереди или таблицы хранилища Azure, необходимо настроить учетную запись хранения Azure в файле [local.settings.json](/azure/azure-functions/functions-run-local#local-settings-file).
@@ -112,6 +112,37 @@ public class Function {
 Для локальной разработки приложений-функций Java загрузите и используйте JDK для Java 8 [Azul Zulu Enterprise for Azure](https://assets.azul.com/files/Zulu-for-Azure-FAQ.pdf) из [Azul Systems](https://www.azul.com/downloads/azure-only/zulu/). Функции Azure используют среду выполнения Azul Java 8 JDK, если вы развертываете приложения-функции в облако.
 
 [Поддержка Azure](https://azure.microsoft.com/support/) для устранения проблем с пакетами JDK и приложениями-функциями доступна с [соответствующим планом поддержки](https://azure.microsoft.com/support/plans/).
+
+## <a name="customize-jvm"></a>Настройка виртуальной машины Java
+
+Функции предоставляют возможность настройки виртуальной машины Java (JVM) используется для выполнения функций Java. [Следующие параметры виртуальной машины Java](https://github.com/Azure/azure-functions-java-worker/blob/master/worker.config.json#L7) используется по умолчанию:
+
+* `-XX:+TieredCompilation`
+* `-XX:TieredStopAtLevel=1`
+* `-noverify` 
+* `-Djava.net.preferIPv4Stack=true`
+* `-jar`
+
+Можно указать дополнительные аргументы в параметре приложения `JAVA_OPTS`. Можно добавить параметры приложения для приложения-функции развертывания в Azure в одном из следующих способов:
+
+### <a name="azure-portal"></a>Портал Azure
+
+В [портала Azure](https://portal.azure.com), использовать [вкладка "Параметры приложения"](functions-how-to-use-azure-function-app-settings.md#settings) добавление `JAVA_OPTS` параметр.
+
+### <a name="azure-cli"></a>Инфраструктура CLI Azure
+
+[Az functionapp config appsettings set](/cli/azure/functionapp/config/appsettings) команда может использоваться для задания `JAVA_OPTS`, как показано в следующем примере:
+
+    ```azurecli-interactive
+    az functionapp config appsettings set --name <APP_NAME> \
+    --resource-group <RESOURCE_GROUP> \
+    --settings "JAVA_OPTS=-Djava.awt.headless=true"
+    ```
+В этом примере включается режим автоматического входа. Замените `<APP_NAME>` с именем приложения-функции и `<RESOURCE_GROUP> ` с группой ресурсов.
+
+> [!WARNING]  
+> При работе в [план потребления](functions-scale.md#consumption-plan), необходимо добавить `WEBSITE_USE_PLACEHOLDER` параметр со значением `0`.  
+Этот параметр увеличивает время холодного запуска для функций Java.
 
 ## <a name="third-party-libraries"></a>Сторонние библиотеки 
 
@@ -189,7 +220,7 @@ public class Function {
 - Полезные данные HTTP-запроса передаются как `String` для аргумента `inputReq`.
 - Одна запись извлекается из Хранилища таблиц Azure и передается как `TestInputData` в аргумент `inputData`.
 
-Чтобы получить пакет входных данных, можно выполнить привязку к `String[]`, `POJO[]`, `List<String>` или `List<POJO>`.
+Для получения пакета из входных данных, можно привязать к `String[]`, `POJO[]`, `List<String>`, или `List<POJO>`.
 
 ```java
 @FunctionName("ProcessIotMessages")
@@ -263,7 +294,7 @@ public class Function {
     }
 ```
 
-Приведенная выше функция вызывается в HttpRequest и записывает несколько значений в очередь Azure.
+Эта функция вызывается на объекты HttpRequest и записывает несколько значений в очередь Azure.
 
 ## <a name="httprequestmessage-and-httpresponsemessage"></a>HttpRequestMessage и HttpResponseMessage
 
@@ -363,7 +394,7 @@ az webapp log tail --name webappname --resource-group myResourceGroup
 az webapp log download --resource-group resourcegroupname --name functionappname
 ```
 
-Перед выполнением этой команды необходимо включить ведение журнала файловой системы на портале Azure или в Azure CLI.
+Необходимо включить ведение журнала на портале Azure или Azure CLI, перед выполнением этой команды файловой системы.
 
 ## <a name="environment-variables"></a>Переменные среды
 

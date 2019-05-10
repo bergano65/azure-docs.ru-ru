@@ -10,12 +10,12 @@ ms.custom: mvc
 ms.topic: tutorial
 ms.service: active-directory
 ms.subservice: B2C
-ms.openlocfilehash: 3df54c6805c5117e627afe0a2b4caa0ddd94b182
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 7ca7a670e8d660efb43861312b2670efbaac6638
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64723701"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65190251"
 ---
 # <a name="tutorial-enable-authentication-in-a-native-client-application-using-azure-active-directory-b2c"></a>Руководство по Включение проверки подлинности в собственном клиентском приложении с помощью Azure Active Directory B2C
 
@@ -33,9 +33,9 @@ ms.locfileid: "64723701"
 ## <a name="prerequisites"></a>Предварительные требования
 
 - [Создайте потоки пользователя](tutorial-create-user-flows.md), чтобы обеспечить взаимодействие с пользователями в приложении. 
-- [Установите Visual Studio 2017](https://www.visualstudio.com/downloads/), а также рабочие нагрузки **Разработка классических приложений .NET** и **ASP.NET и разработка веб-приложений**.
+- Установите [Visual Studio 2019](https://www.visualstudio.com/downloads/) с рабочими нагрузками **Разработка классических приложений .NET** и **ASP.NET и веб-разработка**.
 
-## <a name="add-the-native-client-application"></a>Добавление собственного клиентского приложения
+## <a name="add-the-native-client-application"></a>добавление собственного клиентского приложения;
 
 1. Войдите на [портале Azure](https://portal.azure.com).
 2. Убедитесь, что используете каталог, содержащий клиент Azure AD B2C, щелкнув **Фильтр каталога и подписки** в верхнем меню и выбрав каталог, содержащий ваш клиент.

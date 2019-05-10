@@ -13,12 +13,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: 25da9fd787c467bdddb7c8dcd68b9df518d018b7
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 427ba2b386810749810397afed8ef3f62dcf9217
+ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64728034"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65506629"
 ---
 # <a name="azure-media-services-release-notes"></a>Заметки о выпуске служб мультимедиа Azure
 
@@ -32,11 +32,11 @@ ms.locfileid: "64728034"
 ## <a name="a-idissuescurrently-known-issues"></a><a id="issues"/>Известные проблемы
 ### <a name="a-idgeneralissuesmedia-services-general-issues"></a><a id="general_issues"/>Общие проблемы служб мультимедиа
 
-| Проблема | ОПИСАНИЕ |
+| Проблема | Описание |
 | --- | --- |
 | В API-интерфейсе REST отсутствует ряд стандартных заголовков HTTP. |При разработке приложений служб мультимедиа с использованием API-интерфейса REST замечено, что ряд стандартных полей заголовков HTTP (включая CLIENT-REQUEST-ID, REQUEST-ID и RETURN-CLIENT-REQUEST-ID) не поддерживается. Эти заголовки будут добавлены в следующем обновлении. |
 | URL-кодирование содержимого не допускается. |Службы мультимедиа используют значение свойства IAssetFile.Name при создании URL-адресов для потоковой передачи содержимого (например, `http://{AMSAccount}.origin.mediaservices.windows.net/{GUID}/{IAssetFile.Name}/streamingParameters`). По этой причине кодирование с помощью знака процента не допускается. Значение свойства Name не может содержать такие [зарезервированные знаки, используемые для кодировки URL-адресов](https://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters): !*'();:@&=+$,/?%#[]". Кроме того, может использоваться только один знак "." для расширения имени файла. |
-| Метод ListBlobs, входящий в состав пакета SDK хранилища Azure версии 3.x, приводит к сбою. |Службы мультимедиа создают URL-адреса SAS на основе версии [2012-02-12](https://docs.microsoft.com/rest/api/storageservices/Version-2012-02-12) . Если вы хотите использовать пакет SDK хранилища для создания списка больших двоичных объектов в контейнере больших двоичных объектов, используйте метод [CloudBlobContainer.ListBlobs](https://msdn.microsoft.com/library/microsoft.windowsazure.storage.blob.cloudblobcontainer.listblobs.aspx), входящий в пакет SDK хранилища версии 2.x. |
+| Метод ListBlobs, входящий в состав пакета SDK хранилища Azure версии 3.x, приводит к сбою. |Службы мультимедиа создают URL-адреса SAS на основе версии [2012-02-12](https://docs.microsoft.com/rest/api/storageservices/Version-2012-02-12) . Если вы хотите использовать пакет SDK хранилища для создания списка больших двоичных объектов в контейнере больших двоичных объектов, используйте метод [CloudBlobContainer.ListBlobs](https://docs.microsoft.com/dotnet/api/microsoft.azure.storage.blob.cloudblobcontainer.listblobs), входящий в пакет SDK хранилища версии 2.x. |
 | Механизм регулирования служб мультимедиа ограничивает использование ресурсов для приложений, создающих избыточный запрос к службе. Службой может быть возвращен код состояния HTTP 503 (служба недоступна). |Дополнительные сведения см. в описании кода состояния HTTP 503 в статье [Коды ошибок кодирования](media-services-encoding-error-codes.md). |
 | При запросе сущностей за один раз возвращается не больше 1000 сущностей, так как в открытой версии 2 REST количество результатов запросов ограничено 1000. |Используйте Skip и Take (.NET) или top (REST), как описано в [этом](media-services-dotnet-manage-entities.md#enumerating-through-large-collections-of-entities) и [этом](media-services-rest-manage-entities.md#enumerating-through-large-collections-of-entities) примерах. |
 | Некоторые клиенты могут сталкиваться с проблемой тега повтора в манифесте Smooth Streaming. |Дополнительные сведения см. в [этом разделе](media-services-deliver-content-overview.md#known-issues). |
@@ -500,7 +500,7 @@ REST API служб мультимедиа обновлены до версии 
 ## <a id="november_changes_12"></a>Выпуск: ноябрь 2012 г.
 Изменения, указанные в этом разделе — это обновления, включенные в пакет SDK в ноябре 2012 г. (версия 2.0.0.0). В связи с этими изменениями может потребоваться внести изменения в код, созданный для предварительного выпуска пакета SDK за июнь 2012 г, или переработать его.
 
-* Активы
+* Ресурсы
   
     * IAsset.Create(assetName) — *единственная* функция создания ресурсов. IAsset.Create больше не отправляет файлы в составе вызова метода. Для отправки используйте функцию IAssetFile.
     * Метод IAsset.Publish и перечисляемое значение AssetState.Publish удалены из пакета SDK служб. Необходимо переработать код, в котором используется это значение.
@@ -516,7 +516,7 @@ REST API служб мультимедиа обновлены до версии 
         * IAssetFile.UploadAsync(filePath, blobTransferClient, locator, cancellationToken). Этот асинхронный метод является рекомендуемым механизмом отправки. 
     
             Известная ошибка. Если вы используете токен отмены, отправка отменяется. Задачи могут иметь множество состояний отмены. Необходимо правильно перехватывать и обрабатывать исключения.
-* Локаторы
+* Указатели
   
     * Удалены версии для отдельных источников. Метод context.Locators.CreateSasLocator(asset, accessPolicy) для SAS будет помечен как устаревший или удален общедоступным выпуском. Сведения о новом поведении см. в подразделе об указателях раздела с новыми функциями.
 
@@ -526,7 +526,7 @@ REST API служб мультимедиа обновлены до версии 
 * Удаление сущностей
   
     * Объекты IAsset, IAssetFile, ILocator, IAccessPolicy и IContentKey теперь удаляются на уровне объектов, используя синтаксис IObject.Delete(), а не в коллекции, как ранее cloudMediaContext.ObjCollection.Delete(objInstance).
-* Локаторы
+* Указатели
   
     * Теперь указатели следует создавать с помощью метода CreateLocator. В качестве аргумента для определенного типа создаваемого указателя необходимо использовать перечисляемые значения LocatorType.SAS или LocatorType.OnDemandOrigin.
     * В указатели добавлены новые свойства, облегчающие получение доступных идентификаторов URI для содержимого. Изменения, внесенные в указатели, увеличивают гибкость для последующих расширений сторонних разработчиков и облегчают использование для клиентских приложений мультимедиа.

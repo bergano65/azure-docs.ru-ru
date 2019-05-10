@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 04/17/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: ed18fd985173a4d978edccedc8b6e5cf527f16dd
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 2505ab5a9445256bd592dfa7f58a6dea79d25043
+ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60327145"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65506818"
 ---
 # <a name="data-sources-supported-in-azure-analysis-services"></a>Источники данных, поддерживаемые в службах Azure Analysis Services
 
@@ -23,14 +23,14 @@ ms.locfileid: "60327145"
 
 |Источник данных  |В памяти  |DirectQuery  |
 |---------|---------|---------|
-|База данных SQL Azure<sup>[2](#azsqlmanaged)</sup>     |   Yes      |    Yes      |
-|Хранилище данных SQL Azure     |   Yes      |   Yes       |
-|Хранилище BLOB-объектов Azure<sup>[1](#tab1400a)</sup>     |   Yes       |    Нет       |
-|Табличное хранилище Azure<sup>[1](#tab1400a)</sup>    |   Yes       |    Нет       |
-|Azure Cosmos DB<sup>[1](#tab1400a)</sup>     |  Yes        |  Нет         |
-|Azure Data Lake Store (1-го поколения)<sup>[1](#tab1400a)</sup>, <sup>[4](#gen2)</sup>      |   Yes       |    Нет       |
-|Azure HDInsight (HDFS)<sup>[1](#tab1400a)</sup>     |     Yes     |   Нет        |
-|Azure HDInsight Spark<sup>[1](#tab1400a)</sup>, <sup>[3](#databricks)</sup>     |   Yes       |   Нет        |
+|База данных SQL Azure<sup>[2](#azsqlmanaged)</sup>     |   Да      |    Да      |
+|Хранилище данных SQL Azure     |   Да      |   Да       |
+|Хранилище BLOB-объектов Azure<sup>[1](#tab1400a)</sup>     |   Да       |    Нет      |
+|Табличное хранилище Azure<sup>[1](#tab1400a)</sup>    |   Да       |    Нет      |
+|Azure Cosmos DB<sup>[1](#tab1400a)</sup>     |  Да        |  Нет        |
+|Azure Data Lake Store (1-го поколения)<sup>[1](#tab1400a)</sup>, <sup>[4](#gen2)</sup>      |   Да       |    Нет      |
+|Azure HDInsight (HDFS)<sup>[1](#tab1400a)</sup>     |     Да     |   Нет       |
+|Azure HDInsight Spark<sup>[1](#tab1400a)</sup>, <sup>[3](#databricks)</sup>     |   Да       |   Нет       |
 ||||
 
 <a name="tab1400a">1</a> Только табличная модель 1400 и более поздние.   
@@ -52,7 +52,7 @@ ms.locfileid: "60327145"
 |  --- | --- | --- |
 | SQL Server; |SQL Server Native Client 11.0, поставщик Microsoft OLE DB для SQL Server, поставщик данных .NET Framework для SQL Server | Поставщик данных .NET Framework для SQL Server |
 | хранилище данных SQL Server. |SQL Server Native Client 11.0, поставщик Microsoft OLE DB для SQL Server, поставщик данных .NET Framework для SQL Server | Поставщик данных .NET Framework для SQL Server |
-| Oracle |Поставщик Microsoft OLE DB для Oracle, поставщик данных Oracle для .NET |Поставщик данных Oracle для .NET |
+| Oracle | Поставщик OLE DB для Oracle, поставщик данных Oracle для .NET |Поставщик данных Oracle для .NET |
 | Teradata |Поставщик OLE DB для Teradata, поставщик данных Teradata для .NET |Поставщик данных Teradata для .NET |
 | | | |
 
