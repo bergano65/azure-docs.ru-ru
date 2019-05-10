@@ -99,6 +99,10 @@
           href: howto-administer.md
         - name: Подготовка и передача изображения
           href: howto-prepare-images.md
+        - name: Настройка панели мониторинга приложений
+          href: howto-configure-homepage.md
+        - name: Настройка пользовательского интерфейса приложения
+          href: howto-customize-ui.md
         - name: Управление с помощью портала Azure
           href: howto-manage-iot-central-from-portal.md
         - name: Управление с помощью Azure CLI
@@ -106,9 +110,7 @@
         - name: Управление с помощью Azure PowerShell
           href: howto-manage-iot-central-from-powershell.md
         - name: Создание и администрирование приложения на правах поставщика облачных решений
-          href: howto-create-and-manage-applications-as-CSP.md
-        - name: Настройка панели мониторинга приложений
-          href: howto-configure-homepage.md
+          href: howto-create-and-manage-applications-csp.md
     - name: Персонализация
       items:
         - name: Создание личных панелей мониторинга

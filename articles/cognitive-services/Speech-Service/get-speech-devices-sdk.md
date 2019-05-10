@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: erhopf
 ms.custom: seodec18
-ms.openlocfilehash: 4c2cff23f66ec704fe7e7c44136160313c10c9c2
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: b9a0890000cda0b3663ac29bee61fc1c702f6254
+ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65020573"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65410688"
 ---
 # <a name="get-the-cognitive-services-speech-devices-sdk"></a>Получение пакета SDK для речевых устройств в Cognitive Services
 
@@ -24,9 +24,9 @@ ms.locfileid: "65020573"
 
 ## <a name="choose-a-development-kit"></a>Выберите пакет средств разработки
 
-|Устройства|Спецификация|ОПИСАНИЕ|Сценарии|
+|Устройства|Спецификация|Описание|Сценарии|
 |--|--|--|--|
-|[Пакет средств разработки аудио Roobo Smart](http://ddk.roobo.com)</br>[Программа установки](speech-devices-sdk-roobo-v1.md) / [быстрого запуска](speech-devices-sdk-android-quickstart.md)![Roobo Smart аудио Dev Kit](media/speech-devices-sdk/device-roobo-v1.jpg)|Wi-Fi 7 массив mic, ARM SOC, аудио-сигнала, операций ввода-ВЫВОДА. </br>Android|Первый Speech SDK устройств для адаптации массив Mic Microsoft и начала обработки пакета SDK для разработки сценариев высокого качества расшифровка дикторского текста и речи|Расшифровка дикторского текста для диалога, смарт-говорящего голоса агента, переносной|
+|[Пакет средств разработки аудио Roobo Smart](https://ddk.roobo.com)</br>[Программа установки](speech-devices-sdk-roobo-v1.md) / [быстрого запуска](speech-devices-sdk-android-quickstart.md)![Roobo Smart аудио Dev Kit](media/speech-devices-sdk/device-roobo-v1.jpg)|Wi-Fi 7 массив mic, ARM SOC, аудио-сигнала, операций ввода-ВЫВОДА. </br>Android|Первый Speech SDK устройств для адаптации массив Mic Microsoft и начала обработки пакета SDK для разработки сценариев высокого качества расшифровка дикторского текста и речи|Расшифровка дикторского текста для диалога, смарт-говорящего голоса агента, переносной|
 |[Azure Kinect DK](https://azure.microsoft.com/services/kinect-dk/)![Azure Kinect DK](media/speech-devices-sdk/device-azure-kinect-dk.jpg)|7 RGB массив mic и глубина камеры. </br>Windows и Linux|Комплект разработчика, с датчиками искусственного интеллекта (ИИ) для создания моделей речи и сложные компьютера. Он сочетает в себе лучшие в своем классе пространственных микрофона массива и глубина камеры с камеры и датчик ориентации — все это в одно небольшое устройство с несколько режимов, параметры и пакеты SDK в соответствии с изменениями ряда типы вычислений.|Диалог Транскрибирование, Робототехнике, интеллектуальных зданиях|
 |Roobo Smart пакет средств разработки аудио 2![Roobo Smart пакет средств разработки аудио 2](media/speech-devices-sdk/device-roobo-v2.jpg)|7 массив mic, ARM SOC, сети Wi-Fi, Bluetooth, операции ввода-ВЫВОДА. </br>Linux|2-го поколения Speech SDK устройств, обеспечивающая альтернативной ОС и дополнительные функции в экономически эффективные справочную структуру.|Расшифровка дикторского текста для диалога, смарт-говорящего голоса агента, переносной|
 |URbetter T11 Development Board![URbetter DDK](media/speech-devices-sdk/device-urbetter.jpg)|Wi-Fi 7 массив mic, ARM SOC, Ethernet, HDMI, камеры USB. </br>Linux|Уровень отрасли Speech SDK устройств, которая адаптируется массив Microsoft Mic и поддерживает расширенные операции ввода-вывода, например HDMI/Ethernet и Дополнительные периферийные устройства USB|Расшифровка дикторского текста для диалога, для образовательных учреждений, больницы, программ-роботов, OTT», вкладка «голосовой агент, диск до|

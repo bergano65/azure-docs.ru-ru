@@ -9,12 +9,12 @@ ms.date: 04/16/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: 0eeae1451e77d9000c87b1aff7ad73323e74f7ee
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: be876b370cd476bee2af7d90a9f0433fd80de3b4
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65154127"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65233682"
 ---
 # <a name="configure-customer-managed-keys-for-azure-storage-encryption-from-powershell"></a>Настройка управляемых пользователем ключей для шифрования службы хранилища Azure с помощью PowerShell
 
@@ -75,7 +75,7 @@ $key = Add-AzKeyVaultKey -VaultName $keyVault.VaultName -Name <key> -Destination
 
 По умолчанию шифрование службы хранилища Azure использует ключи, управляемые Майкрософт. На этом этапе Настройка вашей учетной записи хранения Azure, чтобы использовать управляемые клиентом ключи и указать ключ для связи с учетной записью хранения.
 
-Вызовите [AzStorageAccount набора](/powershell/module/az.keyvault/set-azstorageaccount) обновить параметры шифрования для учетной записи хранения. Не забудьте заменить значения заполнителей в квадратные скобки, своими собственными значениями и использовать переменные, определенные в предыдущих примерах.
+Вызовите [AzStorageAccount набора](/powershell/module/az.storage/set-azstorageaccount) обновить параметры шифрования для учетной записи хранения. Не забудьте заменить значения заполнителей в квадратные скобки, своими собственными значениями и использовать переменные, определенные в предыдущих примерах.
 
 ```powershell
 Set-AzStorageAccount -ResourceGroupName $storageAccount.ResourceGroupName `
@@ -88,7 +88,7 @@ Set-AzStorageAccount -ResourceGroupName $storageAccount.ResourceGroupName `
 
 ## <a name="update-the-key-version"></a>Обновление версии ключа
 
-При создании новой версии ключа, вам потребуется обновить учетную запись хранения для использования новой версии. Во-первых, вызовите [Get-AzKeyVaultKey](/powershell/module/az.keyvault/get-azkeyvaultkey) для получения последней версии ключа. Затем вызовите [AzStorageAccount набора](/powershell/module/az.keyvault/set-azstorageaccount) для обновления параметров шифрования учетной записи хранения для использования новой версии ключа, как показано в предыдущем разделе.
+При создании новой версии ключа, вам потребуется обновить учетную запись хранения для использования новой версии. Во-первых, вызовите [Get-AzKeyVaultKey](/powershell/module/az.keyvault/get-azkeyvaultkey) для получения последней версии ключа. Затем вызовите [AzStorageAccount набора](/powershell/module/az.storage/set-azstorageaccount) для обновления параметров шифрования учетной записи хранения для использования новой версии ключа, как показано в предыдущем разделе.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

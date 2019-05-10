@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 04/03/2019
 ms.author: danlep
 ms.custom: ''
-ms.openlocfilehash: 10c015a9aee4ed8be54805f7adaae5bb4b5c422f
-ms.sourcegitcommit: e7d4881105ef17e6f10e8e11043a31262cfcf3b7
+ms.openlocfilehash: 12de4ef31084d8ac8586c79ffe3d0a8e891727bf
+ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64870392"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65411378"
 ---
 # <a name="enable-an-ssl-endpoint-in-a-container-group"></a>Включение конечной точки SSL в группе контейнеров
 
@@ -44,7 +44,7 @@ openssl req -new -newkey rsa:2048 -nodes -keyout ssl.key -out ssl.csr
 
 Следуйте инструкциям на экране, чтобы добавить идентификационные данные. Для общего имени введите имя узла, связанный с сертификатом. При появлении запроса ввести пароль, нажмите клавишу ВВОД без ввода, чтобы пропустить добавление пароля.
 
-Выполните следующую команду для создания самозаверяющего сертификата (.crt файл) из запроса сертификата. Например: 
+Выполните следующую команду для создания самозаверяющего сертификата (.crt файл) из запроса сертификата. Например:
 
 ```console
 openssl x509 -req -days 365 -in ssl.csr -signkey ssl.key -out ssl.crt
@@ -66,7 +66,7 @@ code nginx.conf
 
 ```console
 # nginx Configuration File
-# http://wiki.nginx.org/Configuration
+# https://wiki.nginx.org/Configuration
 
 # Run as a less privileged user for security reasons.
 user nginx;
@@ -128,7 +128,7 @@ http {
 
 ### <a name="base64-encode-secrets-and-configuration-file"></a>Секреты кодировку Base64 и файл конфигурации
 
-Кодировку Base64 в файл конфигурации Nginx, SSL-сертификат и ключ SSL. Закодированное содержимое позволяет настроить контейнер Nginx.
+Кодировку Base64 в файл конфигурации Nginx, SSL-сертификат и ключ SSL. В следующем разделе введите закодированное содержимое в файл YAML, используемый для развертывания группы контейнеров.
 
 ```console
 cat nginx.conf | base64 -w 0 > base64-nginx.conf
@@ -148,7 +148,7 @@ cat ssl.key | base64 -w 0 > base64-ssl.key
 code deploy-aci.yaml
 ```
 
-Введите в кодировке base64 содержимое файлов, как показано в разделе `secret`. Во время развертывания, эти файлы будут добавляться к [том secret](container-instances-volume-secret.md) в группе контейнеров. В этом примере секретный том монтируется в контейнер Nginx.
+Введите в кодировке base64 содержимое файлов, как показано в разделе `secret`. Например `cat` файлы с кодировкой base64, чтобы просмотреть его содержимое. Во время развертывания, эти файлы будут добавляться к [том secret](container-instances-volume-secret.md) в группе контейнеров. В этом примере секретный том монтируется в контейнер Nginx.
 
 ```YAML
 api-version: 2018-10-01
@@ -181,9 +181,9 @@ properties:
           memoryInGB: 1.5
   volumes:
   - secret:
-      ssl.crt: <base64-ssl.crt>
-      ssl.key: <base64-ssl.key>
-      nginx.conf: <base64-nginx.conf>
+      ssl.crt: <Enter contents of base64-ssl.crt here>
+      ssl.key: <Enter contents of base64-ssl.key here>
+      nginx.conf: <Enter contents of base64-nginx.conf here>
     name: nginx-config
   ipAddress:
     ports:

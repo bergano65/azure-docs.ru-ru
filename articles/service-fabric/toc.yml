@@ -97,6 +97,8 @@
       href: service-fabric-best-practices-infrastructure-as-code.md
     - name: Мониторинг и диагностика.
       href: service-fabric-best-practices-monitoring.md
+    - name: Проектирование приложений
+      href: service-fabric-best-practices-applications.md
     - name: Контрольный список готовности рабочей среды
       href: service-fabric-production-readiness-checklist.md
 - name: Примеры
@@ -609,6 +611,8 @@
                   href: service-fabric-cluster-azure-deployment-preparation.md
                 - name: Создание на портале Azure
                   href: service-fabric-cluster-creation-via-portal.md
+                - name: Развертывание кластера Azure Service Fabric в зонах доступности
+                  href: service-fabric-cross-availability-zones.md
                 - name: Настройка проверки подлинности Azure Active Directory
                   href: service-fabric-cluster-creation-setup-aad.md
                 - name: Создание настраиваемого шаблона кластера

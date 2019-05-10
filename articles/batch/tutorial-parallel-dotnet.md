@@ -11,14 +11,14 @@ ms.topic: tutorial
 ms.date: 12/21/2018
 ms.author: lahugh
 ms.custom: mvc
-ms.openlocfilehash: a6fe5b0452771cd2e618d1a08cb2f4af52e3cc0d
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: c55839f7ec4e4c28086912c476a193e31561c3f4
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57538695"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65234130"
 ---
-# <a name="tutorial-run-a-parallel-workload-with-azure-batch-using-the-net-api"></a>Руководство. Запуск параллельной рабочей нагрузки с помощью пакетной службы Azure с использованием .NET API
+# <a name="tutorial-run-a-parallel-workload-with-azure-batch-using-the-net-api"></a>Руководство по Запуск параллельной рабочей нагрузки с помощью пакетной службы Azure с использованием .NET API
 
 Используйте пакетную службу Azure, чтобы эффективно выполнять пакетные задания для крупномасштабных параллельных и высокопроизводительных вычислений (HPC). В этом руководстве рассматривается пример C# для запуска параллельной рабочей нагрузки с помощью пакетной службы Azure. Вы изучите общий рабочий процесс приложения пакетной службы и узнаете, как программно взаимодействовать с ресурсами пакетной службы и службы хранилища. Вы узнаете, как выполнять следующие задачи:
 
@@ -140,7 +140,7 @@ Elapsed time: 00:09:14.3418742
 
 ### <a name="authenticate-blob-and-batch-clients"></a>Проверка подлинности клиентов больших двоичных объектов и пакетной службы
 
-Чтобы взаимодействовать со связанной учетной записью хранения, приложение использует клиентскую библиотеку службы хранилища для .NET. Оно создает ссылку на учетную запись с [CloudStorageAccount](/dotnet/api/microsoft.windowsazure.storage.cloudstorageaccount), выполняя проверку подлинности с помощью общего ключа. Затем оно создает [CloudBlobClient](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblobclient).
+Чтобы взаимодействовать со связанной учетной записью хранения, приложение использует клиентскую библиотеку службы хранилища для .NET. Оно создает ссылку на учетную запись с [CloudStorageAccount](/dotnet/api/microsoft.azure.cosmos.table.cloudstorageaccount), выполняя проверку подлинности с помощью общего ключа. Затем оно создает [CloudBlobClient](/dotnet/api/microsoft.azure.storage.blob.cloudblobclient).
 
 ```csharp
 // Construct the Storage account connection string

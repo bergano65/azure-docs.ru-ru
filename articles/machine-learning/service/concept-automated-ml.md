@@ -11,12 +11,12 @@ author: nacharya1
 ms.author: nilesha
 ms.date: 05/02/2019
 ms.custom: seodec18
-ms.openlocfilehash: cba01b5ad5c2cfea32f1faa6cb67c5ce7ee98fcd
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: 136141f5b598fd080edf3254fd01200f2742c763
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65024903"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65235830"
 ---
 # <a name="what-is-automated-machine-learning"></a>Что такое автоматическое машинное обучение?
 
@@ -63,7 +63,7 @@ ms.locfileid: "65024903"
 ### <a name="automatic-preprocessing-standard"></a>Автоматическое предварительной обработки (стандарт)
 В каждом автоматических эксперимента машинного обучения данных будет автоматически масштабировать или нормализовать для алгоритмов, которые выполняются надлежащим образом.  Во время обучения модели, один из следующих методов, масштабирование или нормализацию будет применяться к каждой модели.
 
-|Масштабирование&nbsp;&&nbsp;нормализации| ОПИСАНИЕ |
+|Масштабирование&nbsp;&&nbsp;нормализации| Описание |
 | ------------- | ------------- |
 | [StandardScaleWrapper](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html)  | Стандартизация функции, удаляя среднее значение и масштабирование до единичной дисперсии  |
 | [MinMaxScalar](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html)  | Преобразует функции путем масштабирования каждой функции с минимальным и максимальным этого столбца  |
@@ -90,7 +90,7 @@ ms.locfileid: "65024903"
 ## <a name="automated-ml-across-microsoft"></a>Автоматические машинного Обучения Майкрософт
 
 Автоматические машинного Обучения доступна также в других решениях Microsoft такие как:
-+ В приложениях .NET, с помощью Visual Studio и Visual Studio Code с помощью [ML.NET](https://docs.microsoft.com/dotnet/machine-learning/what-is-mldotnet)
++ В приложениях .NET, с помощью Visual Studio и Visual Studio Code с помощью [ML.NET](https://docs.microsoft.com/dotnet/machine-learning/automl-overview)
 + [В HDInsight](../../hdinsight/spark/apache-spark-run-machine-learning-automl.md), где горизонтальное масштабирование автоматизированными ML обучения заданиями в Spark в кластерах HDInsight в параллельном режиме. 
 + [В Power BI](https://docs.microsoft.com/power-bi/service-machine-learning-automated)
 

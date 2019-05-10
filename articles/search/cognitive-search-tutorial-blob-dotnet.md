@@ -9,12 +9,12 @@ ms.devlang: NA
 ms.topic: tutorial
 ms.date: 05/02/2019
 ms.author: maheff
-ms.openlocfilehash: 4e6f0317df2f0f631d2c8d3f8e5cefba06e154fd
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: 1b3353cae73bb5710dc9343f1d211266d15743a2
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65027540"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65153212"
 ---
 # <a name="c-tutorial-call-cognitive-services-apis-in-an-azure-search-indexing-pipeline"></a>Руководство по C#. Вызов API-интерфейсов Cognitive Services в конвейере индексирования службы "Поиск Azure"
 
@@ -94,9 +94,9 @@ ms.locfileid: "65027540"
 
 [Пакет SDK службы "Поиск Azure" для .NET](https://aka.ms/search-sdk) содержит несколько клиентских библиотек, которые позволяют управлять индексами, источниками данных, индексаторами и наборами навыков, а также отправлять документы, управлять ими и выполнять запросы, не вникая в детали HTTP и JSON. Эти клиентские библиотеки распределяются как пакеты NuGet.
 
-Для этого проекта вам необходимо установить версию 7.x.x-preview пакета NuGet `Microsoft.Azure.Search` и последнюю версию пакета NuGet `Microsoft.Extensions.Configuration.Json`.
+Для этого проекта необходимо установить версию 9 пакета `Microsoft.Azure.Search` NuGet и последнюю версию пакета `Microsoft.Extensions.Configuration.Json` NuGet.
 
-Установите пакет NuGet `Microsoft.Azure.Search` непосредственно из консоли диспетчера пакетов в Visual Studio. Чтобы открыть консоль диспетчера пакетов, последовательно выберите **Инструменты** > **Диспетчер пакетов NuGet** > **Консоль диспетчера пакетов**. Откройте страницу [пакета NuGet Microsoft.Azure.Search](https://www.nuget.org/packages/Microsoft.Azure.Search), выберите версию 7.x.x-preview и скопируйте команду диспетчера пакетов. Выполните эту команду консоли диспетчера пакетов.
+Установите пакет NuGet `Microsoft.Azure.Search` непосредственно из консоли диспетчера пакетов в Visual Studio. Чтобы открыть консоль диспетчера пакетов, последовательно выберите **Инструменты** > **Диспетчер пакетов NuGet** > **Консоль диспетчера пакетов**. Чтобы выполнить команду, перейдите к [странице пакета Microsoft.Azure.Search NuGet](https://www.nuget.org/packages/Microsoft.Azure.Search), выберите версию 9 и скопируйте команду диспетчера пакетов. Выполните эту команду консоли диспетчера пакетов.
 
 Чтобы установить пакет NuGet `Microsoft.Extensions.Configuration.Json` в Visual Studio, последовательно выберите **Инструменты** > **Диспетчер пакетов NuGet** > **Управление пакетами NuGet для решения...**. Щелкните "Обзор" и найдите пакет NuGet `Microsoft.Extensions.Configuration.Json`. Выберите его, выберите проект, убедитесь, что используется последняя стабильная версия, и нажмите кнопку "Установить".
 
@@ -137,13 +137,25 @@ using Microsoft.Extensions.Configuration;
 
 ## <a name="create-a-client"></a>Создание клиента
 
-Создайте экземпляр класса `SearchServiceClient` с использованием сведений, которые вы добавили в файл `appsettings.json`.
+Создайте экземпляр класса `SearchServiceClient`.
 
 ```csharp
 IConfigurationBuilder builder = new ConfigurationBuilder().AddJsonFile("appsettings.json");
 IConfigurationRoot configuration = builder.Build();
-
 SearchServiceClient serviceClient = CreateSearchServiceClient(configuration);
+```
+
+`CreateSearchServiceClient` создает экземпляр `SearchServiceClient`, используя значения, которые хранятся в файле конфигурации приложения (appsettings.json).
+
+```csharp
+private static SearchServiceClient CreateSearchServiceClient(IConfigurationRoot configuration)
+{
+   string searchServiceName = configuration["SearchServiceName"];
+   string adminApiKey = configuration["SearchServiceAdminApiKey"];
+
+   SearchServiceClient serviceClient = new SearchServiceClient(searchServiceName, new SearchCredentials(adminApiKey));
+   return serviceClient;
+}
 ```
 
 > [!NOTE]
@@ -197,9 +209,9 @@ catch (Exception e)
 
 + [Распознавание языка](cognitive-search-skill-language-detection.md) для определения языка содержимого.
 
-+ [Разделение текста](cognitive-search-skill-textsplit.md) для разбиения большого объема содержимого на более мелкие фрагменты данных перед вызовом навыка извлечения ключевых фраз и навыка распознавания именованных сущностей. Навыки извлечения ключевых фраз и распознавания именованных сущностей принимают входные данные объемом не более 50 000 символов. Некоторые примеры файлов следует разделить, чтобы удовлетворить это ограничение.
++ [Разделение текста](cognitive-search-skill-textsplit.md) для разбиения объемного содержимого на более мелкие фрагменты перед вызовом навыка извлечения ключевых фраз и навыка распознавания сущностей. Функции извлечения ключевых фраз и распознавания сущностей принимают входные данные объемом не более 50 000 символов. Некоторые примеры файлов следует разделить, чтобы удовлетворить это ограничение.
 
-+ [Распознавание именованных сущностей](cognitive-search-skill-named-entity-recognition.md) для извлечения названий организаций из содержимого в контейнере больших двоичных объектов.
++ [Распознавание сущностей](cognitive-search-skill-entity-recognition.md) для извлечения названий организаций из содержимого в контейнере больших двоичных объектов.
 
 + [Извлечение ключевых фраз](cognitive-search-skill-keyphrases.md) для получения основных ключевых фраз.
 
@@ -225,7 +237,7 @@ outputMappings.Add(new OutputFieldMappingEntry(
     targetName: "text"));
 
 OcrSkill ocrSkill = new OcrSkill(
-    description: "Extract text (plain and structured) from image).",
+    description: "Extract text (plain and structured) from image",
     context: "/document/normalized_images/*",
     inputs: inputMappings,
     outputs: outputMappings,
@@ -279,7 +291,7 @@ outputMappings.Add(new OutputFieldMappingEntry(
     targetName: "languageCode"));
 
 LanguageDetectionSkill languageDetectionSkill = new LanguageDetectionSkill(
-    description: "Language detection skill",
+    description: "Detect the language used in the document",
     context: "/document",
     inputs: inputMappings,
     outputs: outputMappings);
@@ -312,9 +324,9 @@ SplitSkill splitSkill = new SplitSkill(
     maximumPageLength: 4000);
 ```
 
-### <a name="named-entity-recognition-skill"></a>Навык распознавания именованных сущностей
+### <a name="entity-recognition-skill"></a>Навык распознавания сущностей
 
-Этот экземпляр `NamedEntityRecognitionSkill` настроен для распознавания типа категории `organization`. С помощью навыка **распознавания именованных сущностей** также можно распознавать типы категорий `person` и `location`.
+Этот экземпляр `EntityRecognitionSkill` настроен для распознавания типа категории `organization`. Навык **распознавания сущностей** также может распознать типы категорий `person` и `location`.
 
 Обратите внимание, что в поле context задается значение ```"/document/pages/*"``` со звездочкой. Это означает, что этап обогащения вызывается для каждой страницы в ```"/document/pages"```.
 
@@ -329,21 +341,21 @@ outputMappings.Add(new OutputFieldMappingEntry(
     name: "organizations",
     targetName: "organizations"));
 
-List<NamedEntityCategory> namedEntityCategory = new List<NamedEntityCategory>();
-namedEntityCategory.Add(NamedEntityCategory.Organization);
+List<EntityCategory> entityCategory = new List<EntityCategory>();
+entityCategory.Add(EntityCategory.Organization);
     
-NamedEntityRecognitionSkill namedEntityRecognition = new NamedEntityRecognitionSkill(
+EntityRecognitionSkill entityRecognitionSkill = new EntityRecognitionSkill(
     description: "Recognize organizations",
     context: "/document/pages/*",
     inputs: inputMappings,
     outputs: outputMappings,
-    categories: namedEntityCategory,
-    defaultLanguageCode: NamedEntityRecognitionSkillLanguage.En);
+    categories: entityCategory,
+    defaultLanguageCode: EntityRecognitionSkillLanguage.En);
 ```
 
 ### <a name="key-phrase-extraction-skill"></a>Навык извлечения ключевых фраз
 
-Как и созданный только что экземпляр `NamedEntityRecognitionSkill`, навык **извлечения ключевых фраз** вызывается для каждой страницы документа.
+Как и созданный только что экземпляр `EntityRecognitionSkill`, навык **извлечения ключевых фраз** вызывается для каждой страницы документа.
 
 ```csharp
 List<InputFieldMappingEntry> inputMappings = new List<InputFieldMappingEntry>();
@@ -368,7 +380,7 @@ KeyPhraseExtractionSkill keyPhraseExtractionSkill = new KeyPhraseExtractionSkill
 
 ### <a name="build-and-create-the-skillset"></a>Сборка и создание наборов навыков
 
-Выполните сборку `SkillSet` с использованием созданных вами навыков.
+Выполните сборку `Skillset` с использованием созданных вами навыков.
 
 ```csharp
 List<Skill> skills = new List<Skill>();
@@ -376,12 +388,12 @@ skills.Add(ocrSkill);
 skills.Add(mergeSkill);
 skills.Add(languageDetectionSkill);
 skills.Add(splitSkill);
-skills.Add(namedEntityRecognition);
+skills.Add(entityRecognitionSkill);
 skills.Add(keyPhraseExtractionSkill);
 
-Skillset skillSet = new Skillset(
+Skillset skillset = new Skillset(
     name: "demoskillset",
-    description: "Demo Skillset",
+    description: "Demo skillset",
     skills: skills);
 ```
 
@@ -390,7 +402,7 @@ Skillset skillSet = new Skillset(
 ```csharp
 try
 {
-    serviceClient.Skillsets.CreateOrUpdate(skillSet);
+    serviceClient.Skillsets.CreateOrUpdate(skillset);
 }
 catch (Exception e)
 {
@@ -459,16 +471,24 @@ var index = new Index()
 };
 ```
 
-При тестировании вы можете обнаружить, что пытаетесь создать уже существующий индекс. Поэтому предварительно проверяйте, не создан ли он. 
+При тестировании вы можете обнаружить, что пытаетесь создать уже существующий индекс. Поэтому предварительно проверяйте, не создан ли он.
 
 ```csharp
-bool exists = serviceClient.Indexes.Exists(index.Name);
-if (exists)
+try
 {
-    serviceClient.Indexes.Delete(index.Name);
-}
+    bool exists = serviceClient.Indexes.Exists(index.Name);
 
-serviceClient.Indexes.Create(index);
+    if (exists)
+    {
+        serviceClient.Indexes.Delete(index.Name);
+    }
+
+    serviceClient.Indexes.Create(index);
+}
+catch (Exception e)
+{
+    // Handle exception
+}
 ```
 
 Дополнительные сведения об определении индекса см. в статье [Create Index (Azure Search Service REST API)](https://docs.microsoft.com/rest/api/searchservice/create-index) (Создание индексов (REST API службы поиска Azure)).
@@ -526,14 +546,15 @@ Indexer indexer = new Indexer(
     fieldMappings: fieldMappings,
     outputFieldMappings: outputMappings);
 
-bool exists = serviceClient.Indexers.Exists(indexer.Name);
-if (exists)
-{
-    serviceClient.Indexers.Delete(indexer.Name);
-}
-
 try
 {
+    bool exists = serviceClient.Indexers.Exists(indexer.Name);
+
+    if (exists)
+    {
+        serviceClient.Indexers.Delete(indexer.Name);
+    }
+
     serviceClient.Indexers.Create(indexer);
 }
 catch (Exception e)
@@ -560,21 +581,29 @@ catch (Exception e)
 После того как индексатор будет определен, он будет выполняться автоматически при отправке запроса. В зависимости от того, какие когнитивные навыки вы определили, индексирование может занять больше времени, чем вы ожидаете. Определить, запущен ли еще индексатор, можно с помощью метода `GetStatus`.
 
 ```csharp
-IndexerExecutionInfo demoIndexerExecutionInfo = serviceClient.Indexers.GetStatus(indexer.Name);
-switch (demoIndexerExecutionInfo.Status)
+try
 {
-    case IndexerStatus.Error:
-        Console.WriteLine("Indexer has error status");
-        break;
-    case IndexerStatus.Running:
-        Console.WriteLine("Indexer is running");
-        break;
-    case IndexerStatus.Unknown:
-        Console.WriteLine("Indexer status is unknown");
-        break;
-    default:
-        Console.WriteLine("No indexer status information");
-        break;
+    IndexerExecutionInfo demoIndexerExecutionInfo = serviceClient.Indexers.GetStatus(indexer.Name);
+
+    switch (demoIndexerExecutionInfo.Status)
+    {
+        case IndexerStatus.Error:
+            Console.WriteLine("Indexer has error status");
+            break;
+        case IndexerStatus.Running:
+            Console.WriteLine("Indexer is running");
+            break;
+        case IndexerStatus.Unknown:
+            Console.WriteLine("Indexer status is unknown");
+            break;
+        default:
+            Console.WriteLine("No indexer information");
+            break;
+    }
+}
+catch (Exception e)
+{
+    // Handle exception
 }
 ```
 
@@ -603,6 +632,19 @@ catch (Exception e)
 }
 ```
 
+`CreateSearchIndexClient` создает экземпляр `SearchIndexClient`, используя значения, которые хранятся в файле конфигурации приложения (appsettings.json). Обратите внимание, что используется ключ API запроса службы поиска, а не ключ администратора.
+
+```csharp
+private static SearchIndexClient CreateSearchIndexClient(IConfigurationRoot configuration)
+{
+   string searchServiceName = configuration["SearchServiceName"];
+   string queryApiKey = configuration["SearchServiceQueryApiKey"];
+
+   SearchIndexClient indexClient = new SearchIndexClient(searchServiceName, "demoindex", new SearchCredentials(queryApiKey));
+   return indexClient;
+}
+```
+
 В результате будет возвращена схема индекса с именем и типом, а также атрибуты каждого поля.
 
 Отправьте второй запрос с `"*"`, чтобы вернуть все содержимое одного поля, например `organizations`.
@@ -626,52 +668,11 @@ catch (Exception e)
 
 Повторите запрос для дополнительных полей: content, languageCode, keyPhrases и organizations в этом упражнении. Вы можете возвратить несколько полей с помощью `$select`, используя разделенный запятыми список.
 
-<a name="access-enriched-document"></a>
-
-## <a name="accessing-the-enriched-document"></a>Доступ к обогащенному документу
-
-Когнитивный поиск позволяет увидеть структуру обогащенного документа. Обогащенные документы — это временные структуры, которые создаются во время обогащения и удаляются после завершения процесса.
-
-Чтобы сделать снимок обогащенного документа, созданного во время индексирования, добавьте в индекс поле ```enriched```. Индексатор автоматически помещает в поле строковое представление всех экземпляров обогащения этого документа.
-
-Поле ```enriched``` будет содержать строку, которая является логическим представлением обогащенного документа в JSON, находящегося в памяти.  Значение поля является допустимым документом JSON. Кавычки экранируются, поэтому вам нужно заменить `\"` на `"`, чтобы просмотреть документ в формате JSON.  
-
-Поле ```enriched``` предназначено для целей отладки, чтобы помочь вам понять логическую форму содержимого, используемого для обработки выражений. Это может быть полезным средством для понимания и отладки набора навыков.
-
-Повторите предыдущее упражнение, в том числе поле `enriched`, чтобы сохранить содержимое обогащенного документа:
-
-### <a name="request-body-syntax"></a>Синтаксис текста запроса
-```csharp
-// The SerializePropertyNamesAsCamelCase attribute is defined in the Azure Search .NET SDK.
-// It ensures that Pascal-case property names in the model class are mapped to camel-case
-// field names in the index.
-[SerializePropertyNamesAsCamelCase]
-public class DemoIndex
-{
-    [System.ComponentModel.DataAnnotations.Key]
-    [IsSearchable, IsSortable]
-    public string Id { get; set; }
-
-    [IsSearchable]
-    public string Content { get; set; }
-
-    [IsSearchable]
-    public string LanguageCode { get; set; }
-
-    [IsSearchable]
-    public string[] KeyPhrases { get; set; }
-
-    [IsSearchable]
-    public string[] Organizations { get; set; }
-
-    public string Enriched { get; set; }
-}
-```
 <a name="reset"></a>
 
 ## <a name="reset-and-rerun"></a>Сброс и повторный запуск
 
-На ранних экспериментальных этапах разработки самый практичный подход к итерации проектирования — удалить все объекты из службы "Поиск Azure" и восстановить их. Имена ресурсов являются уникальными. Удаление объекта позволяет воссоздать его с использованием того же имени. 
+На ранних экспериментальных этапах разработки самый практичный подход к итерации проектирования — удалить все объекты из службы "Поиск Azure" и восстановить их. Имена ресурсов являются уникальными. Удаление объекта позволяет воссоздать его с использованием того же имени.
 
 В этом руководстве объясняется, как проверить наличие индексаторов и индексов, а также как удалить их, чтобы вы могли повторно выполнить код.
 
@@ -681,11 +682,11 @@ public class DemoIndex
 
 ## <a name="takeaways"></a>Общие выводы
 
-В этом руководстве показаны основные шаги для построения обогащенного конвейера индексирования посредством создания компонентов: источника данных, набора навыков, индекса и индексатора.
+В этом руководстве описано, как создать расширенный конвейер индексирования путем создания таких компонентов, как источник данных, набор навыков, индекс и индексатор.
 
 Вы получили сведения о [предопределенных навыках](cognitive-search-predefined-skills.md), а также определении набора навыков и механизме построения цепочек навыков путем сопоставления входных и выходных данных. Вы также узнали, что `outputFieldMappings` в определении индексатора требуется для маршрутизации обогащенных значений из конвейера в индекс для поиска в службе "Поиск Azure".
 
-Наконец, вы узнали, как тестировать результаты и выполнять сброс системы для дальнейших итераций. Вы узнали, что отправка запросов к индексу возвращает результат, созданный обогащенным конвейером индексирования. В этом выпуске существует механизм просмотра внутренних конструкций (обогащенные документы, созданные системой). Вы также узнали, как проверить состояние индексатора, и какие объекты нужно удалить перед повторным запуском конвейера.
+Наконец, вы узнали, как тестировать результаты и выполнять сброс системы для дальнейших итераций. Вы узнали, что отправка запросов к индексу возвращает результат, созданный обогащенным конвейером индексирования. Вы также узнали, как проверить состояние индексатора, и какие объекты нужно удалить перед повторным запуском конвейера.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

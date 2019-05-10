@@ -4,6 +4,8 @@
   items:
     - name: Что такое Stream Analytics?
       href: stream-analytics-introduction.md
+    - name: Комплексные шаблоны решений
+      href: stream-analytics-solution-patterns.md
 - name: Быстрое начало работы
   items:
     - name: Создание задания с помощью портала Azure
@@ -12,6 +14,8 @@
       href: stream-analytics-quick-create-powershell.md
     - name: Создание задания — Visual Studio
       href: stream-analytics-quick-create-vs.md
+    - name: "Создание задания\_— Visual Studio Code"
+      href: quick-create-vs-code.md
 - name: Учебники
   items:
     - name: 1. Создание и администрирование задания
@@ -143,7 +147,7 @@
           href: 'https://github.com/Azure/azure-stream-analytics/tree/master/Samples/ASAOneClick'
         - name: Использование API для заданий IoT Edge
           href: stream-analytics-cicd-api.md
-    - name: Инструменты Visual Studio
+    - name: Сравнение Visual Studio и VS Code
       items:
         - name: Средства установки
           href: stream-analytics-tools-for-visual-studio-install.md
@@ -159,6 +163,8 @@
           href: stream-analytics-tools-for-visual-studio-cicd.md
         - name: Создание определяемой пользователем функции .NET для Edge
           href: stream-analytics-edge-csharp-udf-methods.md
+        - name: Знакомство со Stream Analytics в VS Code
+          href: vs-code-how-to.md
     - name: Устранение неполадок
       items:
         - name: Входные данные
@@ -435,6 +441,9 @@
               maintainContext: true
             - name: '"Переворачивающееся" окно'
               href: /stream-analytics-query/tumbling-window-azure-stream-analytics
+              maintainContext: true
+            - name: Агрегирование функций управления окнами
+              href: /stream-analytics-query/windows-azure-stream-analytics
               maintainContext: true
     - name: Типы данных
       items:
