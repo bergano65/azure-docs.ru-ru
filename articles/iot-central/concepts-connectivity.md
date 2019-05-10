@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: timlt
-ms.openlocfilehash: 9e1e85d1ab1c5e7ce0cbd96c64137309c2e2916a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: f11d1c6b727799f2cc67c6f5012dc4d117556d2e
+ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60887508"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65467806"
 ---
 # <a name="device-connectivity-in-azure-iot-central"></a>Подключение устройства в Azure IoT Central
 
@@ -107,7 +107,7 @@ Azure IoT Central использует [службы подготовки уст
 
 На следующей схеме показаны этот поток:
 
-![Параметры подключения](media/concepts-connectivity/device-connection-flow.png)
+![Параметры подключения](media/concepts-connectivity/device-connection-flow1.png)
 
 Следующие шаги описывают этот процесс более подробно. Действия немного отличаются в зависимости от того, используете ли вы SAS или X.509 сертификаты для проверки подлинности устройства:
 

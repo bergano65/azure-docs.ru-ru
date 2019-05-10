@@ -8,12 +8,12 @@ ms.subservice: hyperscale-citus
 ms.custom: mvc
 ms.topic: quickstart
 ms.date: 05/06/2019
-ms.openlocfilehash: 30de4da43569abf4d7bd668fd0fa481ecac23f4d
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.openlocfilehash: 4271d94f07125a870cc4aa859b01db819d583f40
+ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65080032"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65406450"
 ---
 # <a name="quickstart-create-an-azure-database-for-postgresql---hyperscale-citus-preview-in-the-azure-portal"></a>Краткое руководство. Создание Базы данных Azure для PostgreSQL" с решением Hyperscale (Citus) (предварительная версия) на портале Azure
 
@@ -169,7 +169,7 @@ GROUP BY hour
 ORDER BY hour;
 ```
 
-До сих пор запросы касались исключительно данных github\_events, но можно объединить эти сведения с данными github\_users. Так как мы выполнили сегментирование пользователей и событий с помощью одного идентификатора (`user_id`), строки обеих таблиц с совпадающими идентификаторами пользователя будут [размещены вместе](http://docs.citusdata.com/en/stable/sharding/data_modeling.html#colocation) на одних и тех же узлах базы данных и их можно легко объединить.
+До сих пор запросы касались исключительно данных github\_events, но можно объединить эти сведения с данными github\_users. Так как мы выполнили сегментирование пользователей и событий с помощью одного идентификатора (`user_id`), строки обеих таблиц с совпадающими идентификаторами пользователя будут [размещены вместе](https://docs.citusdata.com/en/stable/sharding/data_modeling.html#colocation) на одних и тех же узлах базы данных и их можно легко объединить.
 
 Если объединить данные по `user_id`, решение Hyperscale сможет выполнить объединение в сегментах в параллельном режиме на рабочих узлах. Например, можно найти пользователей, создавших наибольшее количество репозиториев.
 

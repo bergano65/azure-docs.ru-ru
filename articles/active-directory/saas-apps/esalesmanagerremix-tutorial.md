@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 06/12/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 895fb0d83e383618818325263ac80c5919a0ee7b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 5f2a3bb666e40f1aafd921d70d93133ca9139b38
+ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60429245"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65406954"
 ---
 # <a name="integrate-azure-active-directory-with-e-sales-manager-remix"></a>Интеграция Azure Active Directory с E Sales Manager Remix
 
@@ -158,7 +158,7 @@ ms.locfileid: "60429245"
     
     2. Из раскрывающегося списка в разделе **Collaboration item** (Элемент совместной работы) выберите значение **email** (Электронная почта).
 
-    c. В поле **Collaboration item** (Элемент совместной работы) вставьте значение утверждения, которое вы ранее скопировали на портале Azure (**http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress**).
+    c. В поле **Collaboration item** (Элемент совместной работы) вставьте значение утверждения, которое вы ранее скопировали на портале Azure (**https://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress**).
 
     d. В текстовое поле **Issuer (entity ID)** (Издатель или идентификатор сущности) вставьте значение идентификатора, скопированное ранее из раздела **Домены и URL-адреса приложения E Sales Manager Remix** на портале Azure.
 
@@ -262,7 +262,7 @@ ms.locfileid: "60429245"
 
 1. В окне **Добавление назначения** выберите **Назначить**.
     
-### <a name="test-single-sign-on"></a>Проверка единого входа
+### <a name="test-single-sign-on"></a>Тест единого входа
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 

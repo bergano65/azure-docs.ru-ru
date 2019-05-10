@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Cezanne HR Software | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Cezanne HR Software | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Cezanne HR Software.
 services: active-directory
 documentationCenter: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/12/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 949b5b1aaab60e5b1d160963ac3f024dbbfbe552
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: fc4d96b900090cd217b4b49b1af2f09762c0da84
+ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57834973"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65407027"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-cezanne-hr-software"></a>Руководство по Интеграция Azure Active Directory с Cezanne HR Software
 
@@ -156,7 +156,7 @@ ms.locfileid: "57834973"
 
     d. В текстовое поле **Security Token Service Endpoint** (Конечная точка службы токенов безопасности) вставьте значение **URL-адреса для входа в учетную запись**, скопированное на портале Azure.
 
-    д. В текстовом поле "User ID Attribute Name" (Имя атрибута идентификатора пользователя) введите `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`.
+    д. В текстовом поле "User ID Attribute Name" (Имя атрибута идентификатора пользователя) введите `https://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`.
 
     Е. Чтобы передать сертификат, скачанный с портала Azure, щелкните значок **Upload** (Передать).
 
@@ -184,7 +184,7 @@ ms.locfileid: "57834973"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

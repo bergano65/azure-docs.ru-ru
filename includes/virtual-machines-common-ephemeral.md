@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 05/02/2019
 ms.author: azcspmt;jonbeck;cynthn
 ms.custom: include file
-ms.openlocfilehash: d7737f73ee4eb9ae9dc8c4845020b7543a5b3495
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 47407df90a83501b8739a428789e20cddc59e83d
+ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65159170"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65468418"
 ---
 Временные диски ОС создаются в локальном хранилище виртуальной машины (VM) и не сохраняется в удаленном хранилище Azure. Временные диски ОС хорошо подходят для без отслеживания состояния рабочих нагрузок, где приложения устойчивы к большому ошибок для отдельных виртуальных Машин, но более важен время, необходимое для крупномасштабного развертывания или времени, чтобы повторно создать образ отдельными экземплярами виртуальных Машин. Он также подходит для приложений, развернутых с помощью классической модели развертывания, чтобы переместить в модель развертывания Resource Manager. С диском ОС временные вы наблюдать за более низкую задержку чтения и записи на диск операционной системы и быстрее пересоздания образа виртуальной Машины. Кроме того диск операционной системы временные предоставляется бесплатно, плата не расходы на хранилище для диска операционной системы. 
  
@@ -30,12 +30,12 @@ ms.locfileid: "65159170"
 |                             | Постоянный диск операционной системы                          | Временный диск ОС                              |    |
 |-----------------------------|---------------------------------------------|------------------------------------------------|
 | Предельный размер для диска операционной системы      | 2 Тиб                                                                                        | Кэшировать размер для размера виртуальной Машины или 2TiB, какое значение меньше - [доменных служб Active Directory](../articles/virtual-machines/linux/sizes-general.md), [ES](../articles/virtual-machines/linux/sizes-memory.md), [M](../articles/virtual-machines/linux/sizes-memory.md), [FS](../articles/virtual-machines/linux/sizes-compute.md), и [GS](../articles/virtual-machines/linux/sizes-memory.md)              |
-| Поддерживаемые размеры виртуальных Машин          | Все                                                                                          | DSv1, DSv2, DSv3, Esv2, Fs, FsV2, GS, M                                               |
+| Поддерживаемые размеры виртуальных Машин          | Все                                                                                          | DSv1, DSv2, DSv3, Esv3, Fs, FsV2, GS, M                                               |
 | Поддержка типов диска           | Управляемых и неуправляемых дисков операционной системы                                                                | Только управляемого диска ОС                                                               |
 | Поддержка регионов              | все регионы.                                                                                  | все регионы.                              |
 | Сохраняемость данных            | Данных диска ОС, записанных на диск ОС, хранятся в службе хранилища Azure                                  | Данные, записанные на диск операционной системы хранится в локальном хранилище виртуальной Машины и не сохраняется в хранилище Azure. |
 | Состояние остановлена (освобождена)      | Виртуальные машины и экземпляры масштабируемого набора может быть остановлена (освобождена) и перезапустить из состояния остановлена (освобождена) | Виртуальные машины и экземпляры масштабируемого набора не может быть остановлена (освобождена)                                  |
-| Специальной поддержки диска операционной системы | Yes                                                                                          | Нет                                                                                  |
+| Специальной поддержки диска операционной системы | Да                                                                                          | Нет                                                                                 |
 | Изменения размера диска операционной системы              | Поддерживаемые во время создания виртуальной Машины, и после виртуальная машина будет остановлена (освобождена)                                | Поддерживается при создании виртуальной Машины только                                                  |
 | Изменение размера для нового размера виртуальной Машины   | Сохраняются данные диска операционной системы                                                                    | Данные на диске операционной системы, ОС значение перенастроены                                      |
 
@@ -48,13 +48,13 @@ ms.locfileid: "65159170"
 
 ```azurepowershell-interactive
 Register-AzResourceProvider -ProviderNamespace Microsoft.Compute
-Register-AzRmProviderFeature –FeatureName LocalDiffDiskPreview
+Register-AzProviderFeature –FeatureName LocalDiffDiskPreview -ProviderNamespace Microsoft.Compute
 ```
 
 Чтобы проверить, если вы зарегистрированы для предварительного просмотра:
 
 ```azurepowershell-interactive
-Get-AzRmProviderFeature –FeatureName LocalDiffDiskPreview
+Get-AzProviderFeature –FeatureName LocalDiffDiskPreview -ProviderNamespace Microsoft.Compute
 ```
 
 ### <a name="cli"></a>Интерфейс командной строки
@@ -67,7 +67,7 @@ az feature register --namespace Microsoft.Compute --name LocalDiffDiskPreview
 Чтобы проверить, если вы зарегистрированы для предварительного просмотра:
  
 ```azurecli-interactive
-az provider show –namespace ‘Microsoft.Compute’
+az provider show --namespace Microsoft.Compute
 ```
 
 
@@ -196,7 +196,7 @@ id}/resourceGroups/{rgName}/providers/Microsoft.Compute/VirtualMachines/{vmName}
 Ответ. Временные диски не поддерживают:
 - Запись образов виртуальных Машин
 - моментальными снимками дисков. 
-- Дисковое шифрование Azure 
+- Шифрование диска Azure 
 - Служба архивации Azure
 - Azure Site Recovery  
 - Переключения дисков ОС 

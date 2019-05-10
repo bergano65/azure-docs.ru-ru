@@ -7,13 +7,13 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
-ms.date: 11/06/2018
-ms.openlocfilehash: 067bdcfc496fc986ae87620b7d57d7cad3a0f734
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.date: 05/09/2019
+ms.openlocfilehash: 22015d1e838e940cbf5a79323f4046c4a7e1719e
+ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64694179"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65506805"
 ---
 # <a name="use-data-lake-storage-gen1-with-azure-hdinsight-clusters"></a>Использование Data Lake Storage 1-го поколения с кластерами Azure HDInsight
 
@@ -42,12 +42,12 @@ ms.locfileid: "64694179"
 
 | Тип кластера HDInsight | Использование Data Lake Storage 1-го поколения как хранилища по умолчанию | Использование Data Lake Storage 1-го поколения как дополнительного хранилища| Примечания |
 |------------------------|------------------------------------|---------------------------------------|------|
-| HDInsight версии 4.0 | Нет  | Нет  |Поколение 1 ADLS с HDInsight 4.0 не поддерживается |
-| HDInsight версии 3.6 | Yes | Yes | За исключением HBase|
-| HDInsight версии 3.5 | Yes | Yes | За исключением HBase|
-| HDInsight версия 3.4 | Нет  | Yes | |
-| HDInsight версии 3.3 | Нет  | Нет  | |
-| HDInsight версии 3.2 | Нет  | Yes | |
+| HDInsight версии 4.0 | Нет | Нет |Поколение 1 ADLS с HDInsight 4.0 не поддерживается |
+| HDInsight версии 3.6 | Да | Да | За исключением HBase|
+| HDInsight версии 3.5 | Да | Да | За исключением HBase|
+| HDInsight версия 3.4 | Нет | Да | |
+| HDInsight версии 3.3 | Нет | Нет  | |
+| HDInsight версии 3.2 | Нет  | Да | |
 | Storm | | |Data Lake Storage 1-го поколения можно использовать для записи данных из топологии Storm. Data Lake Storage также может использоваться для хранения эталонных данных, которые затем можно будет считать с помощью топологии Storm.|
 
 > [!WARNING]  
@@ -108,13 +108,13 @@ New-AzResourceGroupDeployment `
 
 ## <a name="use-data-lake-storage-gen1-as-additional-storage"></a>Использование Data Lake Storage 1-го поколения как дополнительного хранилища
 
-Data Lake Storage 1-го поколения можно использовать в качестве дополнительного хранилища кластера. В таких случаях хранилищем кластера по умолчанию может быть Azure Storage Blob или учетная запись Data Lake Storage. При выполнении заданий HDInsight с применением данных, хранящихся в Data Lake Storage как дополнительном хранилище, необходимо использовать полный путь к файлам. Например: 
+Data Lake Storage 1-го поколения можно использовать в качестве дополнительного хранилища кластера. В таких случаях хранилищем кластера по умолчанию может быть Azure Storage Blob или учетная запись Data Lake Storage. При выполнении заданий HDInsight с применением данных, хранящихся в Data Lake Storage как дополнительном хранилище, необходимо использовать полный путь к файлам. Например:
 
     adl://mydatalakestore.azuredatalakestore.net/<file_path>
 
 Обратите внимание, что в этом URL-адресе нет **cluster_root_path**. Это объясняется тем, что в данном случае Data Lake Storage не является хранилищем по умолчанию, поэтому требуется просто указать путь к файлам.
 
-Чтобы использовать Data Lake Storage 1-го поколения как дополнительное хранилище, достаточно предоставить субъекту-службе доступ к расположениям, в которых хранятся файлы.  Например: 
+Чтобы использовать Data Lake Storage 1-го поколения как дополнительное хранилище, достаточно предоставить субъекту-службе доступ к расположениям, в которых хранятся файлы.  Например:
 
     adl://mydatalakestore.azuredatalakestore.net/<file_path>
 
@@ -220,8 +220,8 @@ if($addNewCertKeyCredential)
     Write-Host "Creating new KeyCredential for the app"
     $keyValue = [System.Convert]::ToBase64String($cert.GetRawCertData())
     New-AzADAppCredential -ApplicationId $appId -CertValue $keyValue -EndDate $cert.NotAfter -StartDate $cert.NotBefore
-    Write-Host "Waiting for 30 seconds for the permissions to get propagated"
-    Start-Sleep -s 30
+    Write-Host "Waiting for 7 minutes for the permissions to get propagated"
+    Start-Sleep -s 420 #7 minutes
 }
 
 Write-Host "Updating the certificate on HDInsight cluster..."

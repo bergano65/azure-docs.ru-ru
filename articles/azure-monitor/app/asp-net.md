@@ -10,14 +10,14 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
-ms.date: 03/14/2019
+ms.date: 05/08/2019
 ms.author: mbullwin
-ms.openlocfilehash: 719cbe1ec8962b320aa2850053d44cdef7f56a8c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 925ae2dd7b564eece4842cf25cc32b68d9e5c0b6
+ms.sourcegitcommit: 399db0671f58c879c1a729230254f12bc4ebff59
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60691690"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65472035"
 ---
 # <a name="set-up-application-insights-for-your-aspnet-website"></a>Настройка Application Insights для веб-сайта ASP.NET
 
@@ -29,7 +29,7 @@ ms.locfileid: "60691690"
 Чтобы добавить Application Insights для веб-сайта ASP.NET, сделайте следующее:
 
 - Установите [Visual Studio 2017 для Windows](https://www.visualstudio.com/downloads/) со следующими рабочими нагрузками:
-    - ASP.NET и веб-разработка
+    - ASP.NET и веб-разработки (не сделаете дополнительных компонентов)
     - Разработка для Azure
 
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.

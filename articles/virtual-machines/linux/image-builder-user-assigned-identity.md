@@ -7,18 +7,18 @@ ms.date: 05/02/2019
 ms.topic: article
 ms.service: virtual-machines-linux
 manager: jeconnoc
-ms.openlocfilehash: d10ee8c1af85de5eb79cd4a4af6882c7a8f084f1
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: b0a6c016b2be12ac6686b3748b4b16281899323e
+ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65159560"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65511062"
 ---
 # <a name="create-an-image-and-use-a-user-assigned-managed-identity-to-access-files-in-azure-storage"></a>Создание образа и использовать назначаемое пользователем управляемое удостоверение для доступа к файлам в службе хранилища Azure 
 
 Azure поддерживает Image Builder с помощью скриптов или скопировать файлы из нескольких расположений, таких как GitHub и служба хранилища Azure и т.д. Чтобы использовать их, необходимо их доступном для Azure Image Builder, но может защитить большие двоичные объекты службы хранилища Azure с помощью маркеров SAS.
 
-В этой статье показано, как создать настраиваемый образ с помощью построителя образ виртуальной Машины Azure, где будет использоваться службой [назначаемого пользователем управляемого удостоверения](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/overview) для доступа к файлам в службе хранилища Azure для настройки образа, без необходимости вносить файлы общедоступной или Настройка маркеров SAS.
+В этой статье показано, как создать настраиваемый образ с помощью построителя образ виртуальной Машины Azure, где будет использоваться службой [назначаемого пользователем управляемого удостоверения](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) для доступа к файлам в службе хранилища Azure для настройки образа, без необходимости вносить файлы общедоступной или Настройка маркеров SAS.
 
 В приведенном ниже примере вы создадите две группы ресурсов, один будет использоваться для пользовательского образа и другой будет размещаться учетную запись хранения Azure, который содержит файл скрипта. Эта процедура имитирует реальном сценарии, в которых используется артефакты сборки или файлов изображений в разных учетных записях хранения, за пределами Image Builder. Вы создадите назначаемого пользователем удостоверения, то grant, разрешения на запись файла скрипта, но не будет задать любой общий доступ к этому файлу. Затем используем настройщика оболочки для загрузки и запуска этого скрипта из учетной записи хранения.
 
@@ -130,7 +130,7 @@ az role assignment create \
 
 ## <a name="create-user-assigned-managed-identity"></a>Создание назначаемого пользователем управляемого удостоверения
 
-Создайте удостоверение и назначьте разрешения для учетной записи хранения сценария. Дополнительные сведения см. в разделе [назначаемого пользователем управляемого удостоверения](https://docs.microsoft.com/en-us/azure/active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm#user-assigned-managed-identity).
+Создайте удостоверение и назначьте разрешения для учетной записи хранения сценария. Дополнительные сведения см. в разделе [назначаемого пользователем управляемого удостоверения](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/qs-configure-cli-windows-vm#user-assigned-managed-identity).
 
 ```azurecli-interactive
 # Create the user assigned identity 

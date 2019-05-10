@@ -342,6 +342,8 @@
               items:
                 - name: Получение маркера из кэша
                   href: msal-net-acquire-token-silently.md
+                - name: Очистка кэша маркеров
+                  href: msal-net-clear-token-cache.md
                 - name: Создание экземпляра общедоступного клиента с параметрами
                   href: msal-net-instantiate-public-client-config-options.md
                 - name: Создание экземпляра конфиденциального клиента с параметрами

@@ -224,7 +224,8 @@
       items:
         - name: Создание ML-конвейера
           href: how-to-create-your-first-pipeline.md
-        - name: Обучение и развертывание моделей Машинного обучения с помощью Azure Pipelines
+        - name: Использование CI/CD рабочих процессов ML с Azure Pipelines
+          displayName: 'continuous, integration, delivery'
           href: /azure/devops/pipelines/targets/azure-machine-learning?view=azure-devop
           mainContext: true
     - name: Управление квотами ресурсов
@@ -238,9 +239,6 @@
     - name: Пакет SDK для Машинного обучения
       displayName: api core package python data prep
       href: 'https://aka.ms/aml-sdk'
-    - name: Пакет SDK для подготовки данных
-      displayName: api core package python data prep
-      href: 'https://aka.ms/data-prep-sdk'
     - name: Пакет SDK для мониторинга
       displayName: api package python monitor
       href: 'https://aka.ms/aml-monitoring-sdk'

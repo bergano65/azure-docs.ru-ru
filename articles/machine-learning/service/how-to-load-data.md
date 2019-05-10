@@ -12,15 +12,15 @@ manager: cgronlun
 ms.reviewer: jmartens
 ms.date: 02/22/2019
 ms.custom: seodec18
-ms.openlocfilehash: 7dc07ba7f1d62b49232b1cd892070804099fab8c
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: e7c330846cd907f35bb23ae5e453383d7c35222e
+ms.sourcegitcommit: 399db0671f58c879c1a729230254f12bc4ebff59
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65024003"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65471879"
 ---
 # <a name="load-and-read-data-with-the-azure-machine-learning-data-prep-sdk"></a>Загрузить и считывание данных с помощью пакета SDK Azure Machine Learning данных подготовки
-В этой статье вы узнаете, различных методов загрузки данных с помощью пакета SDK Azure Machine Learning данных подготовки. Справочная документация для пакета SDK см. в разделе [Обзор](https://aka.ms/data-prep-sdk). Этот пакет SDK поддерживает несколько функций приема данных, включая:
+В этой статье вы узнаете, различных методов загрузки данных с помощью пакета SDK Azure Machine Learning данных подготовки.  Этот пакет SDK поддерживает несколько функций приема данных, включая:
 
 * загрузка из файлов многих типов с автоматическим обнаружением параметров для синтаксического анализа (кодировка, разделитель, заголовки);
 * преобразование типов на основе зависимостей во время загрузки файла;
@@ -28,12 +28,13 @@ ms.locfileid: "65024003"
 
 > [!Important]
 > Если вы создаете новое решение, попробуйте [наборы данных обучения машины Azure](how-to-explore-prepare-data.md) (Предварительная версия) для просмотра данных и подготовки. Наборы данных — следующая версия пакета SDK, предлагая расширенными функциональными возможностями по управлению наборов данных в решения искусственного Интеллекта подготовки данных.
+> Если вы используете `azureml-dataprep` пакет, чтобы создать поток данных с помощью преобразования вместо использования `azureml-datasets` пакета для создания набора данных, вы не сможете использовать моментальные снимки или наборов данных с версией более поздней версии.
 
 В следующей таблице показаны несколько функций, используемых для загрузки данных из распространенных типов файлов.
 
 | Тип файла | Функция | Ссылка на |
 |-------|-------|-------|
-|Любой|`auto_read_file()`|[reference](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep?view=azure-dataprep-py#auto-read-file-path--filepath--include-path--bool---false-----azureml-dataprep-api-dataflow-dataflow)|
+|Все|`auto_read_file()`|[reference](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep?view=azure-dataprep-py#auto-read-file-path--filepath--include-path--bool---false-----azureml-dataprep-api-dataflow-dataflow)|
 |Text|`read_lines()`|[reference](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep?view=azure-dataprep-py#read-lines-path--filepath--header--azureml-dataprep-api-engineapi-typedefinitions-promoteheadersmode----promoteheadersmode-none--0---encoding--azureml-dataprep-api-engineapi-typedefinitions-fileencoding----fileencoding-utf8--0---skip-rows--int---0--skip-mode--azureml-dataprep-api-engineapi-typedefinitions-skipmode----skipmode-none--0---comment--str---none--include-path--bool---false-----azureml-dataprep-api-dataflow-dataflow)|
 |CSV|`read_csv()`|[reference](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep?view=azure-dataprep-py#read-csv-path--filepath--separator--str--------header--azureml-dataprep-api-engineapi-typedefinitions-promoteheadersmode----promoteheadersmode-constantgrouped--3---encoding--azureml-dataprep-api-engineapi-typedefinitions-fileencoding----fileencoding-utf8--0---quoting--bool---false--inference-arguments--azureml-dataprep-api-builders-inferencearguments---none--skip-rows--int---0--skip-mode--azureml-dataprep-api-engineapi-typedefinitions-skipmode----skipmode-none--0---comment--str---none--include-path--bool---false--archive-options--azureml-dataprep-api--archiveoption-archiveoptions---none-----azureml-dataprep-api-dataflow-dataflow)|
 |Excel|`read_excel()`|[reference](https://docs.microsoft.com/python/api/azureml-dataprep/azureml.dataprep?view=azure-dataprep-py#read-excel-path--filepath--sheet-name--str---none--use-column-headers--bool---false--inference-arguments--azureml-dataprep-api-builders-inferencearguments---none--skip-rows--int---0--include-path--bool---false-----azureml-dataprep-api-dataflow-dataflow)|
@@ -67,7 +68,7 @@ dflow = dprep.read_lines(path='./data/text_lines.txt')
 dflow.head(5)
 ```
 
-||график;|
+||Строка|
 |----|-----|
 |0|Дата\|\| Минимальная температура\|\| Максимальная температура|
 |1|2015-07-1 \|\| -4,1 \|\| 10,0|
@@ -92,8 +93,8 @@ dflow.head(5)
 | |stnam|fipst|leaid|leanm10|ncessch|MAM_MTH00numvalid_1011|
 |-----|-------|---------| -------|------|-----|------|-----|
 |0|stnam|fipst|leaid|leanm10|ncessch|MAM_MTH00numvalid_1011|
-|1|АЛАБАМА|1|101710|Округ Хейл|10171002158| |
-|2|АЛАБАМА|1|101710|Округ Хейл|10171002162| |
+|1|Алабама|1|101710|Округ Хейл|10171002158| |
+|2|Алабама|1|101710|Округ Хейл|10171002162| |
 
 
 Чтобы исключить строки во время загрузки, определите параметр `skip_rows`. Этот параметр пропускает загрузку из CSV-файле всех строк ниже указанной (по индексу строк, начиная с единицы).
@@ -106,8 +107,8 @@ dflow.head(5)
 
 | |stnam|fipst|leaid|leanm10|ncessch|MAM_MTH00numvalid_1011|
 |-----|-------|---------| -------|------|-----|------|
-|0|АЛАБАМА|1|101710|Округ Хейл|10171002158|29|
-|1|АЛАБАМА|1|101710|Округ Хейл|10171002162|40 |
+|0|Алабама|1|101710|Округ Хейл|10171002158|29|
+|1|Алабама|1|101710|Округ Хейл|10171002162|40 |
 
 Выполните следующий код, чтобы отобразить типы данных для столбцов.
 
@@ -161,7 +162,7 @@ dflow.head(5)
 |0|Нет|Нет|Нет|Нет|Нет|Нет|Нет|Нет|Нет| |
 |1|Нет|Нет|Нет|Нет|Нет|Нет|Нет|Нет|Нет| |
 |2|Нет|Нет|Нет|Нет|Нет|Нет|Нет|Нет|Нет| |
-|3|RANK;|Название|Студия|Весь мир|Эта страна / %|Column1|Другие страны / %|Column2|Год ^| |
+|3|Ранг|Название|Студия|Весь мир|Эта страна / %|Column1|Другие страны / %|Column2|Год ^| |
 |4.|1|Аватар|Фокс|2788|760,5|0,273|2027,5|0,727|2009^|5|
 
 Эти выходные данные показывают, что данные на втором листе содержат три пустых строки перед заголовками. Функция `read_excel()` принимает необязательные параметры для пропуска строк и использование заголовков. Запустите следующий код, который пропускает первые три строки и использует четвертую для получения заголовков.
@@ -170,7 +171,7 @@ dflow.head(5)
 dflow = dprep.read_excel(path='./data/excel.xlsx', sheet_name='Sheet2', use_column_headers=True, skip_rows=3)
 ```
 
-||RANK;|Название|Студия|Весь мир|Эта страна / %|Column1|Другие страны / %|Column2|Год ^|
+||Ранг|Название|Студия|Весь мир|Эта страна / %|Column1|Другие страны / %|Column2|Год ^|
 |------|------|------|-----|------|-----|-------|----|-----|-----|
 |0|1|Аватар|Фокс|2788|760,5|0,273|2027,5|0,727|2009^|
 |1|2|Титаник|Par.|2186,8|658,7|0,301|1528,1|0,699|1997^|
@@ -305,7 +306,7 @@ dflow = dprep.read_csv(path = DataLakeDataSource(path='adl://dpreptestfiles.azur
 dflow.to_pandas_dataframe().head()
 ```
 
-||FMID|MarketName|Веб-сайт|street|city|Округ|
+||FMID|MarketName|Веб-сайт|street|city|Графство|
 |----|------|-----|----|----|----|----|
 |0|1012063|Caledonia Farmers Market Association, Дэнвилл|https://sites.google.com/site/caledoniafarmers... ||Дэнвилл|Каледония|
 |1|1011871|Stearns Homestead Farmers' Market|http://Stearnshomestead.com |6975 Ridge Road|Парма|Кайахога|
@@ -315,5 +316,4 @@ dflow.to_pandas_dataframe().head()
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Пакет SDK см. в разделе [Обзор](https://aka.ms/data-prep-sdk) конструктивные шаблоны и примеры использования
 * См. в Azure Machine Learning данных подготовки SDK [руководстве](tutorial-data-prep.md) пример решения в определенной ситуации

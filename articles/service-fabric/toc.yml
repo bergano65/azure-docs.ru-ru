@@ -643,8 +643,6 @@
                   href: service-fabric-cluster-config-upgrade-azure.md
                 - name: Установка исправлений для узлов кластера (Windows)
                   href: service-fabric-patch-orchestration-application.md
-                - name: Установка исправлений для узлов кластера (Linux)
-                  href: service-fabric-patch-orchestration-application-linux.md
                 - name: Включение шифрования дисков (Windows)
                   href: service-fabric-enable-azure-disk-encryption-windows.md
                 - name: Включение шифрования дисков (Linux)

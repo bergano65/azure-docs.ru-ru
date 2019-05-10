@@ -8,14 +8,14 @@ ms.service: sql-database
 ms.subservice: service
 ms.devlang: ''
 ms.topic: conceptual
-ms.date: 04/23/2019
+ms.date: 05/07/2019
 ms.author: carlrab
-ms.openlocfilehash: e6d702c7a3194f07f9d04139acbc9b6101b296ea
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 923e475cd690902c61c2f89578c2c62effe4cd86
+ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64717425"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65406580"
 ---
 # <a name="sql-database-release-notes"></a>Заметки о выпуске базы данных SQL
 
@@ -23,8 +23,9 @@ ms.locfileid: "64717425"
 
 ## <a name="features-in-public-preview"></a>Функции в общедоступной предварительной версии
 
-| Функция | Сведения |
+| Компонент | Сведения |
 | ---| --- |
+| Уровень бессерверных вычислений | Сведения см. в разделе [базы данных SQL без сервера (Предварительная версия)](sql-database-serverless.md).|
 | Задания обработки эластичных баз данных | Сведения см. в разделе [создавать, настраивать и администрировать задания обработки эластичных БД](elastic-jobs-overview.md) |
 | Эластичные транзакции | [Распределенные транзакции по облачным базам данных](sql-database-elastic-transactions-overview.md) |
 | Эластичные запросы | Сведения см. в разделе [Обзор эластичных запросов](sql-database-elastic-query-overview.md) |
@@ -45,6 +46,16 @@ ms.locfileid: "64717425"
 |Аналитика SQL|Сведения см. в разделе [аналитика SQL Azure](../azure-monitor/insights/azure-sql.md)|
 | Поддержку часовых поясов для управляемых экземпляров|Дополнительные сведения см. в разделе [часовой пояс в базе данных управляемого экземпляра SQL Azure](sql-database-managed-instance-timezone.md)|
 |||
+
+## <a name="may-2019"></a>Мая 2019 г.
+
+### <a name="service-improvements"></a>Улучшения службы
+
+| Улучшения службы | Сведения |
+| --- | --- |
+|Уровень служб "Гипермасштабирование"| Дополнительные сведения см. в разделе [Гипермасштабируемого уровня службы для до 100 ТБ](sql-database-service-tier-hyperscale.md).|
+|Уровень бессерверных вычислений| Дополнительные сведения см. в разделе [базы данных SQL без сервера (Предварительная версия)](sql-database-serverless.md).|
+
 
 ## <a name="april-2019"></a>Апреля 2019 г.
 

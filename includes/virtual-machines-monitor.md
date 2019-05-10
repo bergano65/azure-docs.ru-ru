@@ -4,12 +4,12 @@ ms.service: virtual-machines
 ms.topic: include
 ms.date: 01/27/2019
 ms.author: cynthn
-ms.openlocfilehash: 2978da7f2e7ec27ded6b5994570fa50a9032d0d2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: ac400c86af8236ff5d67b8b6fbf99f6f4b1d36c9
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61473984"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65405003"
 ---
 Работу виртуальных машин можно отслеживать с помощью сбора, просмотра и анализа данных диагностики и журнала. Для простого [мониторинга](../articles/azure-monitor/overview.md) виртуальной машины вы можете воспользоваться экраном обзора на портале Azure. При помощи [расширений](../articles/virtual-machines/windows/extensions-features.md) можно настроить на виртуальных машинах диагностику для сбора дополнительных данных метрик. Кроме того, вы можете использовать дополнительные возможности мониторинга, такие как [Application Insights](../articles/azure-monitor/app/app-insights-overview.md) и [Log Analytics](../articles/azure-monitor/log-query/log-query-overview.md).
 
@@ -23,7 +23,7 @@ ms.locfileid: "61473984"
 
     Когда виртуальные машины загружаются, агент системы диагностики записывает выходные данные загрузки и сохраняет их в хранилище Azure. Эти данные можно использовать для устранения неполадок загрузки виртуальной машины. Если вы создаете виртуальную машину с помощью программ командной строки, диагностика загрузки не включается автоматически. Перед включением диагностики загрузки необходимо создать учетную запись хранения для хранения журналов загрузки. Если включить диагностику загрузки на портале Azure, учетная запись хранения создается автоматически.
 
-    Если при создании виртуальной машины вы не включили диагностику загрузки, вы сможете включить ее позже с помощью [Azure CLI](https://docs.microsoft.com/cli/azure/vm/boot-diagnostics), [Azure PowerShell](https://docs.microsoft.com/powershell/module/az.compute/set-azvmbootdiagnostics) или [шаблона Azure Resource Manager](../articles/virtual-machines/windows/extensions-diagnostics-template.md).
+    Если при создании виртуальной машины вы не включили диагностику загрузки, вы сможете включить ее позже с помощью [Azure CLI](https://docs.microsoft.com/cli/azure/vm/boot-diagnostics), [Azure PowerShell](https://docs.microsoft.com/powershell/module/az.compute/set-azvmbootdiagnostic) или [шаблона Azure Resource Manager](../articles/virtual-machines/windows/extensions-diagnostics-template.md).
 
 - **Включить сбор данных диагностики гостевой ОС.** Когда вы создаете виртуальную машину, можно включить диагностику гостевой ОС на экране параметров. Если включить сбор данных диагностики, в виртуальную машину добавляется [расширение IaaSDiagnostics для Linux](../articles/virtual-machines/linux/diagnostic-extension.md) или [расширение IaaSDiagnostics для Windows](../articles/virtual-machines/windows/ps-extensions-diagnostics.md). Это позволяет собирать дополнительные данные диска, ЦП и памяти.
 
@@ -37,7 +37,7 @@ ms.locfileid: "61473984"
 
 [Служба работоспособности служб Azure](../articles/service-health/service-health-overview.md) предоставляет персонализированные инструкции и поддержку при возникновении проблем в работе служб Azure, а также помогает подготовиться к предстоящему плановому обслуживанию. Служба работоспособности служб Azure отправляет пользователям и рабочим группам настраиваемые целевые уведомления.
 
-## <a name="azure-resource-health"></a>Служба работоспособности ресурса Azure
+## <a name="azure-resource-health"></a>Работоспособность ресурсов Azure
 
 Служба [Работоспособность ресурсов Azure](../articles/service-health/resource-health-overview.md) поможет выполнить диагностику и получить необходимую поддержку, если неполадки Azure влияют на ресурсы. Она представляет сведения о текущем состоянии работоспособности ресурсов и о состоянии работоспособности ресурсов за прошедший период, а также помогает устранить проблемы. Служба работоспособности ресурсов обеспечивает поддержку, если вам необходима помощь в решении проблемы со службой Azure.
 

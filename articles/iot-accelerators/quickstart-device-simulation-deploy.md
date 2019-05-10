@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 03/08/2019
 ms.author: troyhop
-ms.openlocfilehash: 0fcd688c9e5164522a482a4375c524a97a48d400
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 68e0c3c89698bafbab65ca786231e0364900213a
+ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58175630"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65467829"
 ---
 # <a name="quickstart-deploy-and-run-an-iot-device-simulation-in-azure"></a>Краткое руководство. Развертывание и запуск имитации устройств Интернета вещей в Azure
 
@@ -36,7 +36,7 @@ ms.locfileid: "58175630"
 
 Щелкните **Попробовать** на странице с описанием имитации устройств.
 
-![Выбор элемента "Попробовать"](./media/quickstart-device-simulation-deploy/devicesimulationPDP.png)
+![Выбор элемента "Попробовать"](./media/quickstart-device-simulation-deploy/devicesimulationpdp1.png)
 
 На странице **Create Device Simulation solution** (Создание решения симулятора устройств) введите уникальное **имя решения**.
 
@@ -58,7 +58,7 @@ ms.locfileid: "58175630"
 
 При первом открытии вы увидите панель мониторинга симулятора устройств и руководство по **началу работы**. Щелкните первый элемент, чтобы открыть пример имитации. Если закрыть руководство по **началу работы**, можно открыть **пример простого симулятора** на панели мониторинга, щелкнув его плитку.
 
-![Панель мониторинга решения](./media/quickstart-device-simulation-deploy/GettingStarted.png)
+![Панель мониторинга решения](./media/quickstart-device-simulation-deploy/gettingstarted1.png)
 
 ## <a name="sample-simulation"></a>Пример симулятора
 
@@ -72,7 +72,7 @@ ms.locfileid: "58175630"
 | Частота получения телеметрии | 10 с                  |
 | Длительность моделирования | Бессрочный запуск            |
 
-![Настройка имитации](./media/quickstart-device-simulation-deploy/SampleSimulation.png)
+![Настройка имитации](./media/quickstart-device-simulation-deploy/samplesimulation1.png)
 
 ## <a name="run-the-simulation"></a>Запуск симулятора
 

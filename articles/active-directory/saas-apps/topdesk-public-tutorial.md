@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 05/02/2019
 ms.author: jeedes
-ms.openlocfilehash: c4052dd3b4c8f49b19193109eb5e8d2306646960
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: d5ecfcd249dd07dc94b3b17ea0a7a7de3559c681
+ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65192550"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65407941"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-topdesk---public"></a>Руководство по Интеграция Azure Active Directory с TOPdesk — Public
 
@@ -193,7 +193,7 @@ ms.locfileid: "65192550"
 
     c. Чтобы отправить файл с логотипом, полученный от службы поддержки TOPdesk, напротив пункта **Logo icon** (Значок логотипа) нажмите кнопку **Browse** (Обзор).
 
-    d. В текстовое поле **Атрибут имени пользователя** введите значение `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`.
+    d. В текстовое поле **Атрибут имени пользователя** введите значение `https://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`.
 
     д. В текстовом поле **Отображаемое имя** введите имя конфигурации.
 

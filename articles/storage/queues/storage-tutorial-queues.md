@@ -9,12 +9,12 @@ ms.service: storage
 ms.subservice: queues
 ms.topic: tutorial
 ms.date: 04/24/2019
-ms.openlocfilehash: 81d7572f800f191791158f2c1f99e1f072980116
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 6b833ef56b890eb4ea0db6b48fe8c2622e211498
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65151068"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65233878"
 ---
 # <a name="tutorial-work-with-azure-storage-queues"></a>Руководство по Работа с очередями хранилища Azure
 
@@ -206,7 +206,7 @@ ms.locfileid: "65151068"
 
 ## <a name="insert-messages-into-the-queue"></a>Вставка сообщения в очередь
 
-Создайте новый метод для отправки сообщения в очередь. Добавьте следующий метод в класс **Program**. Этот метод получает ссылку на очередь, а если она не существует, создает новую очередь с помощью вызова [CreateIfNotExistsAsync](https://docs.microsoft.com/dotnet/api/microsoft.windowsazure.storage.queue.cloudqueue.createifnotexistsasync?view=azure-dotnet). Затем он добавляет в очередь сообщение, вызвав [AddMessageAsync](https://docs.microsoft.com/dotnet/api/microsoft.windowsazure.storage.queue.cloudqueue.addmessageasync?view=azure-dotnet).
+Создайте новый метод для отправки сообщения в очередь. Добавьте следующий метод в класс **Program**. Этот метод получает ссылку на очередь, а если она не существует, создает новую очередь с помощью вызова [CreateIfNotExistsAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.storage.queue.cloudqueue.createifnotexistsasync?view=azure-dotnet). Затем он добавляет в очередь сообщение, вызвав [AddMessageAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.storage.queue.cloudqueue.addmessageasync?view=azure-dotnet).
 
 1. Добавьте следующий метод **SendMessageAsync** в класс **Program**.
 
@@ -229,7 +229,7 @@ ms.locfileid: "65151068"
 
 ## <a name="dequeue-messages"></a>Вывод сообщений из очереди
 
-Создайте новый метод с именем **ReceiveMessageAsync**. Этот метод получает сообщение из очереди, вызывая [GetMessageAsync](https://docs.microsoft.com/dotnet/api/microsoft.windowsazure.storage.queue.cloudqueue.getmessageasync?view=azure-dotnet). Очень важно удалять из очереди успешно полученные сообщения, чтобы они не обрабатывались более одного раза. Получив сообщение, удалите его из очереди с помощью метода [DeleteMessageAsync](https://docs.microsoft.com/dotnet/api/microsoft.windowsazure.storage.queue.cloudqueue.deletemessageasync?view=azure-dotnet).
+Создайте новый метод с именем **ReceiveMessageAsync**. Этот метод получает сообщение из очереди, вызывая [GetMessageAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.storage.queue.cloudqueue.getmessageasync?view=azure-dotnet). Очень важно удалять из очереди успешно полученные сообщения, чтобы они не обрабатывались более одного раза. Получив сообщение, удалите его из очереди с помощью метода [DeleteMessageAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.storage.queue.cloudqueue.deletemessageasync?view=azure-dotnet).
 
 1. Добавьте следующий метод **ReceiveMessageAsync** в класс **Program**.
 

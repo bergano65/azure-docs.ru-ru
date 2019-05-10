@@ -15,12 +15,12 @@ ms.author: curtand
 ms.reviewer: sumitp
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c92969015910cc5bd72e2d9339d5c15c1f7af48b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 3dbfbd76d235cedd297a5ad54b51bc4ebb550bb1
+ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60470283"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65466284"
 ---
 # <a name="identify-and-resolve-license-assignment-problems-for-a-group-in-azure-active-directory"></a>Определение и устранение проблем назначения лицензий для группы в Azure Active Directory
 
@@ -107,9 +107,15 @@ ms.locfileid: "60470283"
 > ```
 > Run Get-Recipient | where {$_.EmailAddresses -match "user@contoso.onmicrosoft.com"} | fL Name, RecipientType,emailaddresses
 > ```
-> Дополнительные сведения об этой проблеме см. в статье [Сообщение об ошибке "< адрес > адрес прокси-сервера уже используется" в Exchange Online](https://support.microsoft.com/help/3042584/-proxy-address-address-is-already-being-used-error-message-in-exchange-online). В статье [Подключение к Exchange Online PowerShell](https://technet.microsoft.com/library/jj984289.aspx) содержатся сведения о подключении к Exchange Online с помощью удаленного сеанса PowerShell. Дополнительные сведения см. в разделе [Как заполнить значение атрибута proxyAddresses в Azure AD](https://support.microsoft.com/help/3190357/how-the-proxyaddresses-attribute-is-populated-in-azure-ad).
+> Дополнительные сведения об этой проблеме см. в статье [Сообщение об ошибке "< адрес > адрес прокси-сервера уже используется" в Exchange Online](https://support.microsoft.com/help/3042584/-proxy-address-address-is-already-being-used-error-message-in-exchange-online). В статье [Подключение к Exchange Online PowerShell](https://technet.microsoft.com/library/jj984289.aspx) содержатся сведения о подключении к Exchange Online с помощью удаленного сеанса PowerShell.
 
 После устранения проблем с прокси-адресами для соответствующих пользователей повторно выполните обработку лицензий для группы, чтобы проверить, что лицензии можно применять.
+
+## <a name="azure-ad-mail-and-proxyaddresses-attribute-change"></a>Изменение атрибута AD Mail и ProxyAddresses Azure
+
+**Проблема.** При обновлении назначение лицензий на пользователя или группы, вы можете увидеть, что атрибут почты Azure AD и ProxyAddresses некоторые пользователи изменяются.
+
+Обновляется назначение лицензии на пользователя причины, вычисления будут активироваться адреса прокси-сервера, который можно изменить атрибуты пользователя. Чтобы определить точную причину изменения и устранить проблему, см. в статье [заполнением атрибуте proxyAddresses в Azure AD](https://support.microsoft.com/help/3190357/how-the-proxyaddresses-attribute-is-populated-in-azure-ad).
 
 ## <a name="what-happens-when-theres-more-than-one-product-license-on-a-group"></a>Что происходит, если в группе более одной лицензии продукта?
 

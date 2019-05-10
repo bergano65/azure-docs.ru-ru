@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 4/9/2019
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: cd7797ae3b79fb874bafc89437943b084020d800
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 9d7b9673101ed3b6ff85a9981ba061bc870762b1
+ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59492320"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405683"
 ---
 # <a name="tutorial-deploy-and-configure-azure-firewall-using-the-azure-portal"></a>Руководство по Развертывание и настройка службы "Брандмауэр Azure" с помощью портала Azure
 
@@ -236,12 +236,12 @@ ms.locfileid: "59492320"
 1. На портале Azure просмотрите параметры сети для виртуальной машины **Srv-Work** и запишите частный IP-адрес.
 2. Подключите удаленный рабочий стол к виртуальной машине **Srv-Jump** и выполните вход. Откройте из нее подключение удаленного рабочего стола к частному IP-адресу **Srv-Work**.
 
-3. Откройте браузер Internet Explorer и перейдите на сайт http://www.google.com.
+3. Откройте браузер Internet Explorer и перейдите на сайт https://www.google.com.
 4. Если отобразятся системы оповещения безопасности Internet Explorer, выберите **ОК** > **Закрыть**.
 
    Откроется домашняя страница Google.
 
-5. Перейдите по адресу http://www.microsoft.com.
+5. Перейдите по адресу https://www.microsoft.com.
 
    Брандмауэр должен вас заблокировать.
 

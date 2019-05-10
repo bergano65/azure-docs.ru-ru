@@ -15,12 +15,12 @@ ms.author: curtand
 ms.reviewer: elkuzmen
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0cfc31705909710e6a60e0d2fd3963e74e9397ee
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: f7aee10780512e284faccadface0dc928ef8270e
+ms.sourcegitcommit: 1d257ad14ab837dd13145a6908bc0ed7af7f50a2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60472268"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65501897"
 ---
 # <a name="what-is-self-service-signup-for-azure-active-directory"></a>Что такое самостоятельная регистрация для Azure Active Directory?
 
@@ -52,7 +52,7 @@ ms.locfileid: "60472268"
 Параметры AllowEmailVerifiedUsers и AllowAdHocSubscriptions применяются на уровне каталога для управляемого или неуправляемого каталога. Ниже приведен пример.
 
 * Вы администрируете каталог с проверенным домен, например contoso.com.
-* Вы используете службу совместной работы B2B из другого каталога, чтобы пригласить пользователя, который еще не существует (userdoesnotexist@contoso.com) в домашнем каталоге constoso.com.
+* Использовать совместной работы B2B из другого каталога, чтобы пригласить пользователя, который еще не существует (userdoesnotexist@contoso.com) в домашнем каталоге contoso.com
 * Для домашнего каталога включен параметр AllowEmailVerifiedUsers.
 
 Если эти условия выполнены, то в домашнем каталоге создается пользователь-участник, а в приглашающем каталоге создается гостевой пользователь B2B.

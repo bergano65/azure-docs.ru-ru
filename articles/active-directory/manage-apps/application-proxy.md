@@ -8,16 +8,16 @@ ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 01/07/2019
+ms.date: 05/09/2019
 ms.author: celested
 ms.reviewer: japere
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ac94574ac297da7b3555be8d92ba3c5b62a990c5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: e490ed9d104fc039a79083a94ddaebdeba766d2a
+ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60292608"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65506654"
 ---
 # <a name="remote-access-to-on-premises-applications-through-azure-active-directorys-application-proxy"></a>Удаленный доступ к локально размещенным приложениям через Azure Active Directory Application Proxy. 
 
@@ -44,6 +44,8 @@ Application Proxy поддерживает:
 
 Application Proxy поддерживает единый вход. Дополнительные сведения о поддерживаемых методах см. в статье [о выборе метода единого входа](what-is-single-sign-on.md#choosing-a-single-sign-on-method).
 
+Прокси приложения рекомендуется для предоставления внешним пользователям удаленного доступа к внутренним ресурсам. Прокси приложения отпадает необходимость в VPN или обратный прокси-сервер. Он не предназначен для внутренних пользователей в корпоративной сети.  Внутренние пользователи, которые без необходимости использовать прокси приложения может вызвать проблемы с производительностью непредвиденным и нежелательным.
+
 ## <a name="how-application-proxy-works"></a>Схема работы Application Proxy
 
 На следующей схеме показано, как AAD и Application Proxy работают в тандеме, организуя систему единого входа для локальных приложений.
@@ -57,7 +59,7 @@ Application Proxy поддерживает единый вход. Дополни
 5. Соединитель отправляет запрос локальному приложению.  
 6. Ответ отправляется пользователю через службу и соединитель Application Proxy.
 
-| Компонент | ОПИСАНИЕ |
+| Компонент | Описание |
 | --------- | ----------- |
 | Конечная точка  | Конечной точкой называется URL-адрес или [пользовательский портал](end-user-experiences.md). Пользователи за пределами вашей сети могут получить доступ к приложениям, используя внешний URL-адрес. Пользователи в вашей сети могут получить доступ к приложениям, используя URL-адрес или пользовательский портал. При переходе к одной из этих конечных точек пользователи проходят аутентификацию в Azure AD и через соединитель направляются к локальному приложению.|
 | Azure AD | Azure AD выполняет проверку подлинности с помощью каталога клиентом, хранящегося в облаке. |

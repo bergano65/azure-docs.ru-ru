@@ -8,14 +8,14 @@ manager: cshankar
 ms.service: time-series-insights
 services: time-series-insights
 ms.topic: conceptual
-ms.date: 12/10/2018
+ms.date: 05/07/2019
 ms.custom: seodec18
-ms.openlocfilehash: df94290c5e62b898b6490c78ef0ae1ee79437240
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 1c8886cada80c02e99782159099aa626da35fc50
+ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64716945"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65466615"
 ---
 # <a name="data-modeling-in-azure-time-series-insights-preview"></a>Моделирование данных в предварительной версии службы "Аналитика временных рядов"
 
@@ -29,12 +29,12 @@ ms.locfileid: "64716945"
 
 1. Перейдите на панель селектора моделей временных рядов и в меню выберите **Типы**. Сверните панель, чтобы сосредоточиться на типах моделей временных рядов.
 
-    ![Portal_one][1]
+    [![Создание одного типа](media/v2-update-how-to-tsm/portal_one.png)](media/v2-update-how-to-tsm/portal_one.png#lightbox)
 
 1. Выберите **Добавить**.
 1. Введите все сведения, которые относятся к типам, а затем нажмите кнопку **Создать**. Это действие создает типы в среде.
 
-    ![Portal_two][2]
+    [![Добавление типа](media/v2-update-how-to-tsm/portal_two.png)](media/v2-update-how-to-tsm/portal_two.png#lightbox)
 
 ### <a name="bulk-upload-one-or-more-types"></a>Массовая отправка одного или нескольких типов
 
@@ -42,19 +42,21 @@ ms.locfileid: "64716945"
 1. Выберите файл, который содержит полезные данные типа.
 1. Щелкните **Отправить**.
 
-    ![Portal_three][3]
+    [![Отправка JSON](media/v2-update-how-to-tsm/portal_three.png)](media/v2-update-how-to-tsm/portal_three.png#lightbox)
 
 ### <a name="edit-a-single-type"></a>Изменение одного типа
 
-Выберите тип, а затем щелкните **Изменить**. Внесите необходимые изменения и выберите **Сохранить**.
+1. Выберите тип, а затем щелкните **Изменить**. 
+1. Внесите необходимые изменения и выберите **Сохранить**.
 
-![Portal_four][4]
+    [![Изменение типа](media/v2-update-how-to-tsm/portal_four.png)](media/v2-update-how-to-tsm/portal_four.png#lightbox)
 
 ### <a name="delete-a-type"></a>Удаление типа
 
-Выберите тип и щелкните **Удалить**. Если с типами не связаны экземпляры, они удаляются.
+1. Выберите тип и щелкните **Удалить**.
+1. Если с типами не связаны экземпляры, они удаляются.
 
-![Portal_five][5]
+    [![Удаление типа](media/v2-update-how-to-tsm/portal_five.png)](media/v2-update-how-to-tsm/portal_five.png#lightbox)
 
 ## <a name="hierarchies"></a>Иерархии
 
@@ -62,19 +64,19 @@ ms.locfileid: "64716945"
 
 1. Перейдите на панель селектора моделей временных рядов и в меню выберите **Иерархии**. Сверните панель, чтобы сосредоточиться на иерархиях моделей временных рядов.
 
-    ![Portal_six][6]
+    [![Выберите иерархии](media/v2-update-how-to-tsm/portal_six.png)](media/v2-update-how-to-tsm/portal_six.png#lightbox)
 
 1. Выберите **Добавить**.
 
-    ![Portal_seven][7]
+    [![Добавление иерархии](media/v2-update-how-to-tsm/portal_seven.png)](media/v2-update-how-to-tsm/portal_seven.png#lightbox)
 
 1. Выберите **Добавить уровень** в области справа.
 
-    ![Portal_eight][8]
+    [![Добавить уровень](media/v2-update-how-to-tsm/portal_eight.png)](media/v2-update-how-to-tsm/portal_eight.png#lightbox)
 
 1. Введите сведения об иерархии и выберите **Создать**.
 
-    ![Portal_nine][9]
+    [![Создать уровень](media/v2-update-how-to-tsm/portal_nine.png)](media/v2-update-how-to-tsm/portal_nine.png#lightbox)
 
 ### <a name="bulk-upload-one-or-more-hierarchies"></a>Массовая отправка одной или нескольких иерархий
 
@@ -82,19 +84,21 @@ ms.locfileid: "64716945"
 1. Выберите файл, который содержит полезные данные иерархии.
 1. Щелкните **Отправить**.
 
-    ![Portal_ten][10]
+    [![Массовая отправка иерархий](media/v2-update-how-to-tsm/portal_ten.png)](media/v2-update-how-to-tsm/portal_ten.png#lightbox)
 
 ### <a name="edit-a-single-hierarchy"></a>Изменение одной иерархии
 
-Выберите иерархию, а затем щелкните **Изменить**. Внесите необходимые изменения и выберите **Сохранить**.
+1. Выберите иерархию, а затем щелкните **Изменить**.
+1. Внесите необходимые изменения и выберите **Сохранить**.
 
-![Portal_eleven][11]
+    [![Изменение одной иерархии](media/v2-update-how-to-tsm/portal_eleven.png)](media/v2-update-how-to-tsm/portal_eleven.png#lightbox)
 
 ### <a name="delete-a-hierarchy"></a>Удаление иерархии
 
-Выберите иерархию, а затем щелкните **Удалить**. Если с иерархиями не связаны экземпляры, они удаляются.
+1. Выберите иерархию, а затем щелкните **Удалить**. 
+1. Если с иерархиями не связаны экземпляры, они удаляются.
 
-![Portal_twelve][12]
+    [![Удаление иерархии](media/v2-update-how-to-tsm/portal_twelve.png)](media/v2-update-how-to-tsm/portal_twelve.png#lightbox)
 
 ## <a name="instances"></a>Экземпляры
 
@@ -102,11 +106,11 @@ ms.locfileid: "64716945"
 
 1. Перейдите на панель селектора моделей временных рядов и в меню выберите **Экземпляры**. Сверните панель, чтобы сосредоточиться на экземплярах моделей временных рядов.
 
-    ![Portal_thirteen][13]
+    [![Создать единственный экземпляр](media/v2-update-how-to-tsm/portal_thirteen.png)](media/v2-update-how-to-tsm/portal_thirteen.png#lightbox)
 
 1. Выберите **Добавить**.
 
-    ![Portal_fourteen][14]
+    [![Добавить экземпляр](media/v2-update-how-to-tsm/portal_fourteen.png)](media/v2-update-how-to-tsm/portal_fourteen.png#lightbox)
 
 1. Введите сведения об экземпляре, выберите связь типа и иерархии, а затем щелкните **Создать**.
 
@@ -115,19 +119,16 @@ ms.locfileid: "64716945"
 1. Выберите **Отправка файла JSON**.
 1. Выберите файл, который содержит полезные данные экземпляра.
 
-    ![Portal_fifteen][15]
+    [![Для массовой передачи одного или нескольких экземпляров](media/v2-update-how-to-tsm/portal_fifteen.png)](media/v2-update-how-to-tsm/portal_fifteen.png#lightbox)
 
 1. Щелкните **Отправить**.
 
 ### <a name="edit-a-single-instance"></a>Изменение одного экземпляра
 
-Выберите экземпляр, а затем щелкните **Изменить**. Внесите необходимые изменения и выберите **Сохранить**.
+1. Выберите экземпляр, а затем щелкните **Изменить**. 
+1. Внесите необходимые изменения и выберите **Сохранить**.
 
-![Portal_sixteen][16]
-
-### <a name="delete-an-instance"></a>Удаление экземпляра
-
-Выберите экземпляр и щелкните **Удалить**. Если с экземплярами не связаны события, они удаляются.
+    [![Изменение одного экземпляра](media/v2-update-how-to-tsm/portal_sixteen.png)](media/v2-update-how-to-tsm/portal_sixteen.png#lightbox)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
@@ -136,21 +137,3 @@ ms.locfileid: "64716945"
 - Дополнительные сведения о возможностях предварительной версии см. в статье [Visualize data in the explorer Preview](./time-series-insights-update-explorer.md) (Визуализация данных в обозревателе предварительной версии службы).
 
 - Дополнительные сведения о поддерживаемых формах JSON см. в [этом разделе](./time-series-insights-send-events.md#json) статьи "Отправка событий в среду Time Series Insights через концентратор событий".
-
-<!-- Images -->
-[1]: media/v2-update-how-to-tsm/portal_one.png
-[2]: media/v2-update-how-to-tsm/portal_two.png
-[3]: media/v2-update-how-to-tsm/portal_three.png
-[4]: media/v2-update-how-to-tsm/portal_four.png
-[5]: media/v2-update-how-to-tsm/portal_five.png
-[6]: media/v2-update-how-to-tsm/portal_six.png
-[7]: media/v2-update-how-to-tsm/portal_seven.png
-[8]: media/v2-update-how-to-tsm/portal_eight.png
-[9]: media/v2-update-how-to-tsm/portal_nine.png
-[10]: media/v2-update-how-to-tsm/portal_ten.png
-[11]: media/v2-update-how-to-tsm/portal_eleven.png
-[12]: media/v2-update-how-to-tsm/portal_twelve.png
-[13]: media/v2-update-how-to-tsm/portal_thirteen.png
-[14]: media/v2-update-how-to-tsm/portal_fourteen.png
-[15]: media/v2-update-how-to-tsm/portal_fifteen.png
-[16]: media/v2-update-how-to-tsm/portal_sixteen.png

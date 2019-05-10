@@ -12,12 +12,12 @@ manager: cgronlun
 ms.reviewer: jmartens
 ms.date: 05/02/2019
 ms.custom: seodec18
-ms.openlocfilehash: d8644c2c0d4ee5b6ee4dcf16e470e4f2fa478237
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: 0275d27a0a27d0279886f6f7fd15b14d312a44ea
+ms.sourcegitcommit: 399db0671f58c879c1a729230254f12bc4ebff59
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65023726"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65472004"
 ---
 # <a name="write-and-configure-data--with-the-azure-machine-learning-data-prep-sdk"></a>Запись и настроить данные с помощью пакета SDK Azure Machine Learning данных подготовки
 
@@ -25,6 +25,7 @@ ms.locfileid: "65023726"
 
 > [!Important]
 > Если вы создаете новое решение, попробуйте [наборы данных обучения машины Azure](how-to-explore-prepare-data.md) (Предварительная версия) для преобразования данных, данные моментального снимка и хранения определений с версией набора данных. Наборы данных — следующая версия пакета SDK, предлагая расширенными функциональными возможностями для управления наборами данных в решения искусственного Интеллекта подготовки данных.
+> Если вы используете `azureml-dataprep` пакет, чтобы создать поток данных с помощью преобразования вместо использования `azureml-datasets` пакета для создания набора данных, вы не сможете использовать моментальные снимки или наборов данных с версией более поздней версии.
 
 Так как нет никаких ограничений по количеству шагов записи в конвейере, можно легко добавить дополнительные шаги записи, чтобы устранить неполадки или передать их для других конвейеров.
 
@@ -38,8 +39,8 @@ ms.locfileid: "65023726"
 
 Пакет SDK данных подготовки Python Azure Machine Learning может записывать данные:
 + локальную файловую систему;
-+ Хранилище больших двоичных объектов Azure
-+ Хранилище Azure Data Lake.
++ Хранилище BLOB-объектов Azure
++ Azure Data Lake Storage
 
 ## <a name="spark-considerations"></a>Рекомендации для Spark
 

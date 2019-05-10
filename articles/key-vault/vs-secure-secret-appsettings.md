@@ -9,12 +9,12 @@ ms.service: key-vault
 ms.topic: conceptual
 ms.date: 01/07/2019
 ms.author: cawa
-ms.openlocfilehash: 6b60e03c8888ad2c9726116f1f3b2e49d9a4e1e8
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 9763a14e84d88be1d6f09fb9f16b6b7c9eeffd2d
+ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64722734"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65506424"
 ---
 # <a name="securely-save-secret-application-settings-for-a-web-application"></a>Безопасное хранение секретных параметров веб-приложения
 
@@ -49,14 +49,16 @@ ms.locfileid: "64722734"
 
     ![Добавление секрета Key Vault](./media/vs-secure-secret-appsettings/add-keyvault-secret.png)
 
-4. Установите [расширение аутентификации служб Azure для Visual Studio](https://go.microsoft.com/fwlink/?linkid=862354). С помощью этого расширения приложение может получить доступ к хранилищу Key Vault, используя удостоверение Visual Studio для входа.
-
-5. Добавьте в проект следующие пакеты NuGet:
+    > [!NOTE] 
+    > До Visual Studio 2017 V15.6 мы использовали рекомендуем установить расширение аутентификации служб Azure для Visual Studio. Но она устарела теперь элементарные интегрирован в Visual Studio. Поэтому если вы используете более старую версию visual Studio 2017, мы рекомендуем выполнить обновление до по крайней мере VS 2017 15.6 или вверх, чтобы могли использовать эту функцию в собственном коде и доступ к хранилищу ключей с использованием идентификатора входа в Visual Studio сама.
+    >
+ 
+4. Добавьте в проект следующие пакеты NuGet:
 
     ```
     Microsoft.Azure.Services.AppAuthentication
     ```
-6. Добавьте следующий код в файл Program.cs:
+5. Добавьте следующий код в файл Program.cs:
 
     ```csharp
     public static IWebHost BuildWebHost(string[] args) =>
@@ -79,11 +81,11 @@ ms.locfileid: "64722734"
 
         private static string GetKeyVaultEndpoint() => Environment.GetEnvironmentVariable("KEYVAULT_ENDPOINT");
     ```
-7. Добавьте URL-адрес Key Vault в файл launchsettings.json. Имя переменной среды *KEYVAULT_ENDPOINT* определяется в коде, который вы добавили на шаге 6.
+6. Добавьте URL-адрес Key Vault в файл launchsettings.json. Имя переменной среды *KEYVAULT_ENDPOINT* определяется в коде, который вы добавили на шаге 6.
 
     ![Добавление URL-адреса Key Vault в качестве переменной среды проекта](./media/vs-secure-secret-appsettings/add-keyvault-url.png)
 
-8. Начните отладку проекта. Она должна выполниться успешно.
+7. Начните отладку проекта. Она должна выполниться успешно.
 
 ## <a name="aspnet-and-net-applications"></a>Приложения ASP.NET и .NET
 

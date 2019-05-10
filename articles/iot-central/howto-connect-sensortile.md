@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: sandeep.pujar
-ms.openlocfilehash: 580a8baa19e8ed4fc3f4449ead9d8aedbc4c039a
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 8c1b4a4ab834b2203a7e0b6e4e9e366c3fc38774
+ms.sourcegitcommit: 399db0671f58c879c1a729230254f12bc4ebff59
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65160910"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65472171"
 ---
 # <a name="connect-sensortilebox-device-to-your-azure-iot-central-application"></a>Подключение устройства SensorTile.box к приложению Azure IoT Central
 
@@ -23,21 +23,21 @@ ms.locfileid: "65160910"
 
 Чтобы выполнить действия, описанные в этой статье, вам понадобятся следующие ресурсы:
 
-* Устройство SensorTile.box, см. в разделе [SensorTile.box](https://www.st.com/content/st_com/en/products/evaluation-tools/SensorTile.box) Дополнительные сведения.
-* Датчик BLE ST установленное приложение на устройстве Android, вы можете [скачать его здесь] (https://play.google.com/store/apps/details?id=com.st.bluems). Дополнительные сведения см. в статье: () [датчик BLE ST]http://www.st.com/stblesensor)
+* Устройство SensorTile.box. Дополнительные сведения см. в разделе [SensorTile.box](https://www.st.com/content/st_com/en/products/evaluation-tools/product-evaluation-tools/mems-motion-sensor-eval-boards/steval-mksbox1v1.html).
+* Датчик BLE ST установленное приложение на устройстве Android, вы можете [скачать отсюда](https://play.google.com/store/apps/details?id=com.st.bluems). Для получения дополнительных сведений посетите: [Датчик BLE ST](https://www.st.com/stblesensor)
 * Приложение Azure IoT Central, созданное с **DevKits** шаблон приложения. Дополнительные сведения см. в [кратком руководстве по созданию приложения](quick-deploy-iot-central.md).
-* Добавить **SensorTile.box** шаблон устройства в приложении IoT Central, посетив **шаблонов устройств** страницу, нажав кнопку **+ создать**и выбрав **SensorTile** шаблона.
+* Добавить **SensorTile.box** шаблон устройства в приложении IoT Central, посетив **шаблонов устройств** страницу, нажав кнопку **+ создать**и выбрав **SensorTile.box** шаблона.
 
 ### <a name="get-your-device-connection-details"></a>Получение сведений о подключении устройства
 
-В приложении Azure IoT Central, добавьте реального устройства из **SensorTile.box** шаблон устройства и запишите сведения о подключении устройства: **Область идентификатор, идентификатор устройства и первичный ключ**:
+В приложении Azure IoT Central, добавьте реального устройства из **SensorTile.box** шаблон устройства и запишите сведения о подключении устройства: **Код области**, **идентификатор устройства**, и **первичный ключ**:
 
 1. Добавление устройства в Device Explorer. Выберите **+ Создать > реальных** Добавление реального устройства.
 
     * Введите в нижнем регистре **идентификатор устройства**, или используйте предложенные **идентификатор устройства**.
     * Введите **имя_устройства**, или используйте предложенное имя
 
-    ![Add Device (Добавление устройства)](media/howto-connect-sensortile/real-device.png)
+    ![Добавить устройство](media/howto-connect-sensortile/real-device.png)
 
 1. Чтобы получить сведения о подключении устройства **идентификатор области**, **идентификатор устройства**, и **первичный ключ**выберите **Connect** на странице "устройства".
 
@@ -47,10 +47,11 @@ ms.locfileid: "65160910"
 
 ## <a name="set-up-the-sensortilebox-with-the-mobile-application"></a>Настройка SensorTile.box с мобильным приложением
 
-В этом разделе вы узнаете, как можно отправлять встроенного приложения на устройство и отправки данных устройства IoT Central через мобильное приложение ST BLE датчика с помощью подключения Bluetooth низким энергопотреблением (BLE).
+В этом разделе вы узнаете, как для принудительной отправки приложения встроенного по на устройство. Затем вы как отправлять данные устройства в центр Интернета вещей через мобильное приложение ST BLE датчика с помощью подключения Bluetooth низким энергопотреблением (BLE).
+
 1. Откройте приложение BLE датчик ST и нажмите клавишу **создать новое приложение** кнопки.
 
-    ![Создание приложения](media/howto-connect-sensortile/create-app.png)
+    ![Создать приложение](media/howto-connect-sensortile/create-app.png)
 
 1. Выберите **показатель связанности** приложения.
 1. Нажмите кнопку upload.
@@ -58,11 +59,12 @@ ms.locfileid: "65160910"
     ![Показатель загрузки](media/howto-connect-sensortile/barometer-upload.png)
 
 1. Нажмите кнопку воспроизведения, связанный с вашей SensorTile.box.
-1. По завершении процесса SensorTile.box будет потоковая передача температуры, давления и влажности через BLE.
+1. По завершении процесса SensorTile.box выполняет потоковую передачу температуры, давления и влажности по BLE.
 
 ## <a name="connect-the-sensortilebox-to-the-cloud"></a>Подключение к облаку SensorTile.box
 
-В этом разделе вы узнаете, как подключаться SensorTile.box мобильными приложениями и мобильных приложений в облако.
+В этом разделе вы научитесь подключаться SensorTile.box мобильными приложениями и мобильных приложений в облако.
+
 1. С помощью меню слева выберите **ведение журнала Cloud** кнопки.
 
     ![Ведение журнала для облака](media/howto-connect-sensortile/cloud-logging.png)
@@ -74,7 +76,7 @@ ms.locfileid: "65160910"
 
 1. Выберите **ключ приложения** "переключатель".
 1. Нажмите кнопку **Connect** и выбрать данные телеметрии, который необходимо передать.
-1. Через несколько секунд данные будут отображаться на панели мониторинга приложения IoT Central.
+1. Через несколько секунд данные отображаются на панели мониторинга приложения IoT Central.
 
 ## <a name="sensortilebox-device-template-details"></a>Сведения о шаблоне SensorTile.box устройства
 
@@ -82,7 +84,7 @@ ms.locfileid: "65160910"
 
 ### <a name="telemetry"></a>Телеметрия
 
-| Имя поля     | Units  | Минимальная | Максимальная | Число десятичных знаков |
+| Имя поля     | Единицы  | Минимум | Максимум | Число десятичных знаков |
 | -------------- | ------ | ------- | ------- | -------------- |
 | Влажность       | %      | 30       | 90     | 1              |
 | temp           | °C     | 0     | 40     | 1              |
@@ -100,7 +102,6 @@ ms.locfileid: "65160910"
 | FFT_Y     |    |    |     |               |
 | FFT_Z     |    |    |     |               |
 
-
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Теперь, когда вы узнали, как соединиться с SensorTile.box приложение Azure IoT Central, мы предлагаем — Узнайте, как [настроить шаблон пользовательского устройства](howto-set-up-template.md) для устройства Интернета вещей.
+Теперь, когда вы узнали, как соединиться с SensorTile.box приложение Azure IoT Central, мы предлагаем — дополнительные [настройке шаблона пользовательское устройство](howto-set-up-template.md) для устройства Интернета вещей.

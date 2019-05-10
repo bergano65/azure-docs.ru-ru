@@ -11,12 +11,12 @@ ms.reviewer: larryfr
 ms.topic: conceptual
 ms.date: 02/24/2019
 ms.custom: seodec18
-ms.openlocfilehash: c8c0291997c1ce301083f7d5c19b5067a85cfd0f
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: 4d588374c0195e7da373766f93f6829ac2160269
+ms.sourcegitcommit: 399db0671f58c879c1a729230254f12bc4ebff59
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65024983"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65471609"
 ---
 # <a name="configure-a-development-environment-for-azure-machine-learning"></a>Настройка среды разработки для Машинного обучения Azure
 
@@ -344,7 +344,7 @@ Azure Databricks — это среда на основе Apache Spark, в обл
 * Пакет SDK для Машинного обучения Azure уже установлен.
 * Создав рабочую область Службы машинного обучения Azure на портале Azure, можно нажать кнопку, чтобы автоматически настроить среду Записных книжек Azure для работы с рабочей областью.
 
-Используйте [портала Azure](https://portal.azure.com) приступить к работе с Azure Notebooks.  Откройте рабочую область и из **Обзор** выберите **приступить к работе в записных книжках Azure**.
+Начните работу с Записными книжками Azure с помощью [портала Azure](https://portal.azure.com).  Откройте рабочую область и из **Обзор** выберите **приступить к работе в записных книжках Azure**.
 
 По умолчанию Записные книжки Azure используют бесплатный уровень служб, который ограничен 4 ГБ памяти и 1 ГБ данных. Однако вы можете снять эти ограничения, подключив экземпляр Виртуальной машины для обработки и анализа данных к проекту Записных книжек Azure. Дополнительные сведения см. в статье [Manage and configure Azure Notebooks projects — Compute tier](/azure/notebooks/configure-manage-azure-notebooks-projects#compute-tier) (Управление и настройка проектов Записных книжек Azure — уровень вычислений).
 
@@ -368,7 +368,7 @@ Azure Databricks — это среда на основе Apache Spark, в обл
 
 * **Выполните действия, описанные в [создать рабочую область службы машинного обучения Azure](setup-create-workspace.md#sdk)**: Файл *config.json* создается в вашей библиотеке Записных книжек Azure. Файл содержит сведения о конфигурации вашей рабочей области. Вы можете скачать или скопировать файл *config.json* в другие среды разработки.
 
-* **Загрузите файл**: В [портала Azure](https://ms.portal.azure.com)выберите **загрузить config.json** из **Обзор** части рабочей области.
+* **Загрузите файл**: На портале Azure выберите [Скачать config.json](https://ms.portal.azure.com) в разделе **Обзор** рабочей области.
 
      ![Портал Azure](./media/how-to-configure-environment/configure.png)
 
@@ -396,5 +396,5 @@ Azure Databricks — это среда на основе Apache Spark, в обл
 
 - [Обучение модели](tutorial-train-models-with-aml.md) в Машинном обучении Azure с помощью набора данных MNIST
 - Просмотрите статью [What is the Azure Machine Learning SDK for Python?](https://aka.ms/aml-sdk) (Что такое пакет SDK для Машинного обучения Azure для Python?)
-- Узнайте о [пакете SDK подготовки данных Машинного обучения Azure для Python ](https://aka.ms/data-prep-sdk)
+- Дополнительные сведения о [пакет подготовки данных для машинного обучения Azure](https://aka.ms/data-prep-sdk)
 - 

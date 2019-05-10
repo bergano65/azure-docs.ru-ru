@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 10/11/2018
 ms.author: iainfou
-ms.openlocfilehash: 39e0547421c446c1ee48b93b30487ccb9358de02
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: 61968265670c53ebc4187c983996caa8c94a4cde
+ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65192075"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65508002"
 ---
 # <a name="configure-azure-cni-networking-in-azure-kubernetes-service-aks"></a>Настройка сети Azure CNI в Службе Azure Kubernetes (AKS)
 
@@ -64,11 +64,20 @@ IP-адреса для контейнеров pod и узлов кластера
 | -- | :--: | :--: | -- |
 | Инфраструктура CLI Azure | 110 | 30 | Да (до 250) |
 | Шаблон Resource Manager | 110 | 30 | Да (до 250) |
-| Портал | 110 | 30 | Нет  |
+| Портал | 110 | 30 | Нет |
 
 ### <a name="configure-maximum---new-clusters"></a>Настройка максимального числа. Новые кластеры
 
-Вы можете настроить максимальное число элементов pod на узел *только во время развертывания кластера*. При развертывании с помощью Azure CLI или с помощью шаблона Resource Manager, можно задать максимальное групп контейнеров POD в достигать 250 значение узла.
+Вы можете настроить максимальное число элементов pod на узел *только во время развертывания кластера*. При развертывании с помощью Azure CLI или с помощью шаблона Resource Manager, можно задать максимальное групп контейнеров POD в значение узла, как требуется в течение следующих `maxPods` рекомендации:
+
+| Сеть | Минимум | Максимум |
+| -- | :--: | :--: |
+| Azure CNI | 30 | 250 |
+| Kubenet | 30 | 110 |
+
+> [!NOTE]
+> Минимальное значение в приведенной выше таблице четко реализовывались алгоритмы давности служба AKS.
+Не удается задать значение maxPods ниже показано, как это можно предотвратить кластера начиная минимальных.
 
 * **Azure CLI.** При развертывании кластера с помощью команды [az aks create][az-aks-create] укажите аргумент `--max-pods`. Максимальное значение — 250.
 * **Шаблон Resource Manager.** При развертывании кластера с помощью шаблона Resource Manager укажите в объекте [ManagedClusterAgentPoolProfile] свойство `maxPods`. Максимальное значение — 250.

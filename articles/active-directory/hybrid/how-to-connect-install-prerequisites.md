@@ -12,16 +12,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 12/28/2018
+ms.date: 05/08/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b4bf8df2374d373ad36eada8a7de08be76396a76
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: 5f7219578932a259f48b0109d433dcba9ff28d1f
+ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65190809"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65508047"
 ---
 # <a name="prerequisites-for-azure-ad-connect"></a>Необходимые условия для Azure AD Connect
 В этой статье описаны необходимые условия и требования к оборудованию для Azure AD Connect.
@@ -51,6 +51,9 @@ ms.locfileid: "65190809"
 * Службу Azure AD Connect нельзя установить на версии Small Business Server или Windows Server Essentials, которые предшествуют версиям 2019 года (поддерживается Windows Server Essentials 2019). Сервер должен использовать Windows Server Standard или более поздней версии.
 * Установка Azure AD Connect на контроллере домена не рекомендуется из-за по обеспечению безопасности и более строгие параметры, может препятствовать правильной установке Azure AD Connect
 * На сервере Azure AD Connect должен быть установлен полный графический интерфейс пользователя. Установка на ядро сервера **не поддерживается**.
+>[!IMPORTANT]
+>Установка Azure AD Connect на small business server, сервера essentials или server core не поддерживается.
+
 * Azure AD Connect необходимо установить на сервер под управлением Windows Server 2008 R2 или более поздней версии. Этот сервер должен быть присоединен домена и может быть контроллером домена или рядовой сервер.
 * При установке Azure AD Connect на сервер Windows Server 2008 R2 обязательно примените последние обновления из Центра обновления Windows. Установка на сервер без обновлений невозможна.
 * Если планируется использовать функцию **синхронизации паролей**, то сервер Azure AD Connect должен работать под управлением Windows Server 2008 R2 с пакетом обновления 1 (SP1) или более поздней версии.
@@ -82,7 +85,7 @@ ms.locfileid: "65190809"
   * Необходимо использовать параметры сортировки SQL без учета регистра. Их можно определить по суффиксу \_CI_ в имени. Параметры сортировки с учетом регистра, имена которых содержат суффикс \_CS_, **не поддерживаются**.
   * На один экземпляр SQL может приходиться только один модуль синхронизации. Совместное использование экземпляра SQL модулями FIM/MIM Sync, DirSync и Azure AD Sync **не поддерживается**.
 
-### <a name="accounts"></a>учетные записи;
+### <a name="accounts"></a>Учет. записи
 * Учетная запись глобального администратора Azure AD для клиента Azure AD, с которым необходима интеграция. Это должна быть **учебная или рабочая учетная запись**. **Учетную запись Майкрософт** использовать нельзя.
 * Учетная запись администратора предприятия для локальной службы Active Directory при использовании экспресс-параметров или обновлении с DirSync.
 * [Учетные записи в Active Directory](reference-connect-accounts-permissions.md) при использовании пути установки с пользовательскими параметрами или учетная запись администратора предприятия для локальной службы Active Directory.
@@ -196,7 +199,7 @@ ms.locfileid: "65190809"
 ## <a name="azure-ad-connect-supporting-components"></a>Вспомогательные компоненты Azure AD Connect
 Ниже приведен перечень компонентов, которые Azure AD Connect установит на сервере, где установлен Azure AD Connect. Этот список предназначен для базовой установки Express. Если на странице "Установить службы синхронизации" вы выбрали другой выпуск SQL Server, то SQL Express LocalDB не устанавливается локально.
 
-* Azure AD Connect Health,
+* Azure AD Connect Health
 * Программы командной строки Microsoft SQL Server 2012
 * Microsoft SQL Server 2012 Express LocalDB
 * Microsoft SQL Server 2012 Native Client

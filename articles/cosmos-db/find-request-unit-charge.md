@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: sample
 ms.date: 04/15/2019
 ms.author: thweiss
-ms.openlocfilehash: 73eaef1c9c8a9359ab931dbbe50496dc41a6f337
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 730f0604d0c292764aaee6e0ffb8ef95d90be5f2
+ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65148961"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65410289"
 ---
 # <a name="find-the-request-unit-charge-in-azure-cosmos-db"></a>Определение расходов в единицах запроса в Azure Cosmos DB
 
@@ -199,7 +199,7 @@ double requestCharge = (double)stats["RequestCharge"];
 ### <a name="use-the-mongodb-java-driver"></a>Использование драйвера Java для MongoDB
 
 
-При использовании [официального драйвера Java для MongoDB](http://mongodb.github.io/mongo-java-driver/) можно выполнять команды, вызывая метод `runCommand` для объекта `MongoDatabase`.
+При использовании [официального драйвера Java для MongoDB](https://mongodb.github.io/mongo-java-driver/) можно выполнять команды, вызывая метод `runCommand` для объекта `MongoDatabase`.
 
 ```java
 Document stats = database.runCommand(new Document("getLastRequestStatistics", 1));

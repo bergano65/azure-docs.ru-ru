@@ -9,14 +9,14 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 03/20/2019
+ms.date: 05/08/2019
 ms.author: juliako
-ms.openlocfilehash: 51aa33e4ff387a1030dac42bce8d12cf72343b35
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 24ee700e326ef61aa6a93aae725e85e7b4780edf
+ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61466737"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65465038"
 ---
 # <a name="streaming-locators"></a>Указатели потоковой передачи
 
@@ -34,7 +34,7 @@ ms.locfileid: "61466737"
 
 ## <a name="associate-filters-with-streaming-locators"></a>Связать фильтры с указатели потоковой передачи
 
-Можно указать список [активов или учетной записи фильтров](filters-concept.md), который будет применяться к вашей [указатель потоковой передачи](https://docs.microsoft.com/rest/api/media/streaminglocators/create#request-body). [Для работы динамического упаковщика](dynamic-packaging-overview.md) применяет этот список фильтров с соответствующими клиент указывает в URL-адрес. Создает это сочетание [dyanamic манифест](filters-dynamic-manifest-overview.md), основанная на фильтры в URL-адрес + фильтры, укажите на указатель потоковой передачи. Мы рекомендуем использовать эту функцию, если вы хотите применить фильтры, но не требуется предоставлять имена фильтров в URL-адрес.
+Можно указать список [активов или учетной записи фильтров](filters-concept.md), который будет применяться к вашей [указатель потоковой передачи](https://docs.microsoft.com/rest/api/media/streaminglocators/create#request-body). [Для работы динамического упаковщика](dynamic-packaging-overview.md) применяет этот список фильтров с соответствующими клиент указывает в URL-адрес. Создает это сочетание [динамический манифест](filters-dynamic-manifest-overview.md), основанная на фильтры в URL-адрес + фильтры, укажите на указатель потоковой передачи. Мы рекомендуем использовать эту функцию, если вы хотите применить фильтры, но не требуется предоставлять имена фильтров в URL-адрес.
 
 ## <a name="filter-order-page-streaming-locator-entities"></a>Фильтр, в порядке, страницу сущностей указатель потоковой передачи
 

@@ -8,12 +8,12 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 11/12/2018
 ms.topic: conceptual
-ms.openlocfilehash: 693da06ce14a4854d5db49f588fa29d791060166
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: fbb5f92258ff31dd7077bb1ade7fa7e5644c8bac
+ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61445711"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65466952"
 ---
 # <a name="add-an-email-action"></a>Добавление действия электронной почты
 
@@ -102,11 +102,11 @@ ms.locfileid: "61445711"
 
 1. Выберите **office365-connector**:
 
-    ![API подключения](./media/iot-accelerators-remote-monitoring-email-actions/apiconnector.png)
+    ![API подключения](./media/iot-accelerators-remote-monitoring-email-actions/apiconnector1.png)
 
 1. Щелкните баннер, чтобы начать процесс авторизации:
 
-    ![Авторизация](./media/iot-accelerators-remote-monitoring-email-actions/connector.png)
+    ![Авторизация](./media/iot-accelerators-remote-monitoring-email-actions/connector1.png)
 
 1. Щелкните **Авторизовать**. Вам будет предложено выполнить вход. Для учетной записи, которую вы используете для входа, должен быть указан электронный адрес, который используется приложением для отправки уведомлений по электронной почте.
 
@@ -116,7 +116,7 @@ ms.locfileid: "61445711"
 
 1. Чтобы изменить электронный адрес, с которого будут посылаться уведомления, нажмите **Правка подключения API**.
 
-    ![Изменение электронного адреса](./media/iot-accelerators-remote-monitoring-email-actions/editemail.png)
+    ![Изменение электронного адреса](./media/iot-accelerators-remote-monitoring-email-actions/editemail1.png)
 
 ### <a name="owner-role-outlook-setup"></a>Настройка Outlook для роли владельца
 
@@ -142,7 +142,7 @@ ms.locfileid: "61445711"
 
 Готовый акселератор решения для удаленного мониторинга содержит базовый шаблон HTML для действий электронной почты. Шаблон электронной почты использует значения из параметров действия электронной почты. Ниже приведен пример.
 
-![Пример электронного сообщения](./media/iot-accelerators-remote-monitoring-email-actions/emailtemplate.png)
+![Пример электронного сообщения](./media/iot-accelerators-remote-monitoring-email-actions/emailtemplate1.png)
 
 Ниже показано, как изменить шаблон электронной почты HTML. Например, можно включить дополнительные сведения или добавить пользовательские изображения.
 
