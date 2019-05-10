@@ -9,16 +9,16 @@ ms.subservice: form-recognizer
 ms.topic: quickstart
 ms.date: 04/15/2019
 ms.author: pafarley
-ms.openlocfilehash: cc6e8cdb7cd1719a8cd14cbfe6e576e07c34b32c
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: 1afe9239dcc3f5a24d2e950ec7b563bf53d1f04c
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65025648"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65143239"
 ---
 # <a name="quickstart-train-a-form-recognizer-model-and-extract-form-data-using-rest-api-with-curl"></a>Краткое руководство. Обучение модели Распознавателя документов и извлечение данных форм с помощью REST API и cURL
 
-В этом кратком руководстве вы будете использовать REST API Распознавателя документов с помощью cURL для обучения и оценки форм, чтобы извлечь пары "ключ — значение" и таблицы.
+В этом кратком руководстве описано, как использовать REST API Распознавателя документов с cURL для обучения и оценки форм, а также извлечения пар "ключ — значение" и таблиц.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -40,7 +40,7 @@ ms.locfileid: "65025648"
 * Замените `<subscription key>` ключом своей подписки.
 
 ```bash
-curl -X POST "https://<Endpoint>/formrecognizer/v1.0-preview/custom/train" -H "Content-Type: application/json" -H "Ocp-Apim-Subscription-Key: <subscription key>" --data-ascii "{ \"source\": \"<SAS URL>\"}"
+curl -X POST "https://<Endpoint>/formrecognizer/v1.0-preview/custom/train" -H "Content-Type: application/json" -H "Ocp-Apim-Subscription-Key: <subscription key>" --data-ascii "{ \"source\": \""<SAS URL>"\"}"
 ```
 
 Вы получите ответ `200 (Success)` со следующими выходными данными JSON.
@@ -90,14 +90,14 @@ curl -X POST "https://<Endpoint>/formrecognizer/v1.0-preview/custom/train" -H "C
 
 Далее вы проанализируете документ и извлечете из него пары "ключ — значение" и таблицы. Вызовите API **Анализ модели**, выполнив приведенную ниже команду cURL. Перед выполнением команды внесите следующие изменения:
 
-* замените `<Endpoint>` конечной точкой, которую вы получили из своего ключа подписки Распознавателя документов (она находится на вкладке "Общие сведения о ресурсе" в форме Распознавателя документов);
+* замените `<Endpoint>` конечной точкой, которую вы получили из своего ключа подписки Распознавателя документов (см. ресурс Распознавателя документов на вкладке **Обзор**);
 * замените `<modelID>` идентификатором модели, который был получен на предыдущем этапе обучения модели;
 * замените `<path to your form>` на путь к файлу вашей формы;
 * Замените `<subscription key>` ключом своей подписки.
 * замените `<file type>` типом файла (поддерживаемые типы: PDF, изображение JPEG, изображение PNG).
 
 ```bash
-cURL cmd: curl -X POST "https://<Endpoint>/formrecognizer/v1.0-preview/custom/models/<modelID>/analyze" -H "Content-Type: multipart/form-data" -F "form=@<path to your form>;type=application/<file type>" -H "Ocp-Apim-Subscription-Key: <subscription key>"
+curl -X POST "https://<Endpoint>/formrecognizer/v1.0-preview/custom/models/<modelID>/analyze" -H "Content-Type: multipart/form-data" -F "form=@\"<path to your form>\";type=application/<file type>" -H "Ocp-Apim-Subscription-Key: <subscription key>"
 ```
 
 ### <a name="examine-the-response"></a>Изучите ответ.

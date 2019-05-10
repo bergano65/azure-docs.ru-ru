@@ -17,12 +17,12 @@ ms.date: 04/11/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1150e68167ad4e932acce744cdd5eba88e49a8c4
-ms.sourcegitcommit: 48a41b4b0bb89a8579fc35aa805cea22e2b9922c
+ms.openlocfilehash: e51437a99217316ead50d4075be52f089225e618
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59579467"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65190870"
 ---
 # <a name="quickstart-add-sign-in-with-microsoft-to-an-aspnet-core-web-app"></a>Краткое руководство. Добавление возможности входа в веб-приложение ASP.NET Core с помощью учетной записи Майкрософт
 
@@ -73,13 +73,13 @@ ms.locfileid: "59579467"
 
 #### <a name="step-2-download-your-aspnet-core-project"></a>Шаг 2. Скачивание проекта ASP.NET Core
 
-- [Скачайте решение Visual Studio 2017](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/archive/aspnetcore2-2.zip).
+- [Скачайте решение Visual Studio 2019](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/archive/aspnetcore2-2.zip)
 
-#### <a name="step-3-configure-your-visual-studio-project"></a>Шаг 3. Настройка проекта Visual Studio
+#### <a name="step-3-configure-your-visual-studio-project"></a>Шаг 3. Настройка проекта Visual Studio
 
 1. Извлеките ZIP-файл в локальную папку, расположенную в корневой папке (например, **C:\Azure-Samples**).
-1. Если вы используете Visual Studio 2017, откройте решение в Visual Studio (необязательно).
-1. Измените файл **appsettings.json**. Найдите `ClientId` и замените `ClientId` на значение **идентификатора зарегистрированного приложения (клиента)**. 
+1. Если вы используете Visual Studio 2019, откройте решение в Visual Studio (необязательно).
+1. Измените файл **appsettings.json**. Найти `ClientId` и измените значение `ClientId` на **идентификатор зарегистрированного приложения (клиента)**. 
 
     ```json
     "ClientId": "Enter_the_Application_Id_here"
@@ -99,7 +99,7 @@ ms.locfileid: "59579467"
 
 ## <a name="more-information"></a>Дополнительные сведения
 
-В этом разделе представлены общие сведения о коде, необходимом для выполнения входа пользователей. Они помогут вам понять принципы работы кода, основные аргументы, а также решить, нужно ли добавлять возможность входа в имеющееся приложение ASP.NET Core.
+В этом разделе представлен код, используемый для выполнения входа пользователей. Это может быть полезно для рассмотрения принципов работы кода и основных аргументов. Также вы поймете, нужно ли добавлять функцию входа в существующее приложение ASP.NET Core.
 
 ### <a name="startup-class"></a>Класс Startup
 
@@ -136,9 +136,9 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-Метод `AddAuthentication` добавляет в службу аутентификацию на основе файлов cookie, используемую в сценариях браузера, а также настраивает запрос OpenID Connect. 
+Метод `AddAuthentication` настраивает службу для добавления аутентификации на основе файлов cookie, которая используется при работе с браузером, и определения запроса для OpenID Connect. 
 
-Строка, содержащая `.AddAzureAd`, добавляет в ваше приложение функцию аутентификации платформы удостоверений Майкрософт. Затем приложение настраивается для входа с использованием конечной точки платформы удостоверений Майкрософт.
+Строка, содержащая `.AddAzureAd`, добавляет в ваше приложение функцию аутентификации платформы удостоверений Майкрософт. Затем выполняется настройка для входа с помощью конечной точки платформы удостоверений Майкрософт.
 
 > |Where  |  |
 > |---------|---------|
@@ -153,13 +153,13 @@ public void ConfigureServices(IServiceCollection services)
 
 ### <a name="protect-a-controller-or-a-controllers-method"></a>Защита контроллера или метода контроллера
 
-Контроллер или его методы можно защитить с помощью атрибута `[Authorize]`. Этот атрибут ограничивает доступ к контроллеру и методам, позволяя выполнять действия только пользователям, прошедшим проверку подлинности. Это означает, что когда к контроллеру получает доступ неаутентифицированный пользователь, выполняется запрос проверки подлинности.
+Контроллер или его методы можно защитить с помощью атрибута `[Authorize]`. Этот атрибут разрешает доступ к контроллеру или методам только аутентифицированным пользователям. Это значит, что для доступа к контроллеру можно создавать запрос на аутентификацию, если пользователь не прошел аутентификацию.
 
 [!INCLUDE [Help and support](../../../includes/active-directory-develop-help-support-include.md)]
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Ознакомьтесь с этим руководством по ASP.NET Core в репозитории GitHub, чтобы узнать, как добавить функцию аутентификацию в новое веб-приложение ASP.NET Core, вызвать Microsoft Graph и другие API Майкрософт, вызвать собственные API, добавить функцию авторизации, а также выполнить вход пользователей в национальные облака или использовать удостоверения социальных сетей:
+Извлеките репозиторий GitHub для работы с этим руководством по ASP.NET Core. Вы узнаете, как добавлять аутентификацию для нового веб-приложения ASP.NET Core, вызывать API Microsoft Graph и другие API Майкрософт, вызывать собственные API, добавлять авторизацию, реализовать вход пользователей в национальных облаках или с использованием удостоверений социальных сетей и многое другое:
 
 > [!div class="nextstepaction"]
 > [Руководство. Веб-приложение ASP.NET Core](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/)

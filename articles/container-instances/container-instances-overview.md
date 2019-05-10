@@ -6,15 +6,15 @@ author: dlepow
 manager: jeconnoc
 ms.service: container-instances
 ms.topic: overview
-ms.date: 11/30/2018
+ms.date: 04/25/2019
 ms.author: danlep
 ms.custom: seodec18, mvc
-ms.openlocfilehash: 91cf0986241a40c48430d8305849c12864d645fb
-ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
+ms.openlocfilehash: 0ec0280ab2a39674a1b41120f0a8791dfb8b1922
+ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58499562"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65073289"
 ---
 # <a name="what-is-azure-container-instances"></a>Об экземплярах контейнеров Azure
 
@@ -56,7 +56,10 @@ ms.locfileid: "58499562"
 * [Развертывания виртуальной сети](container-instances-vnet.md) (предварительная версия)
 * [Ресурсы GPU](container-instances-gpu.md) (предварительная версия)
 
-Экземпляры контейнеров Azure сейчас поддерживают образы Windows Server 2016 на основе версий Long-Term Servicing Channel (LTSC). Выпуски Windows Semi-Annual Channel (SAC), включая 1709 и 1803, не поддерживаются.
+Для развертываний контейнеров Windows используйте образы на основе стандартных [базовых образов Windows](container-instances-faq.md#what-windows-base-os-images-are-supported).
+
+> [!NOTE]
+> Возможность использования образов на основе Windows Server 2019 в службе "Экземпляры контейнеров Azure" предоставляется в режиме предварительной версии.
 
 ## <a name="co-scheduled-groups"></a>Общее расписание для групп
 

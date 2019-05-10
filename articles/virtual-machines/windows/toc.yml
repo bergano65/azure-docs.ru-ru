@@ -112,6 +112,8 @@
           href: disk-scalability-targets.md
         - name: Резервное копирование и аварийное восстановление дисков
           href: backup-and-disaster-recovery-for-azure-iaas-disks.md
+        - name: Временные диски ОС
+          href: ephemeral-os-disks.md
     - name: Сеть
       href: network-overview.md
     - name: Автоматическое масштабирование приложений
@@ -243,18 +245,38 @@
           href: reserved-vm-instance-size-flexibility.md
     - name: Использование образов
       items:
-        - name: Общие образы (предварительная версия)
+        - name: Общие образы
           items:
             - name: Обзор
               href: shared-image-galleries.md
-            - name: Создание общих образов с помощью PowerShell
+            - name: PowerShell
               href: shared-images.md
-            - name: Создание общих образов с помощью CLI
+            - name: Microsoft Azure
+              href: shared-images-portal.md
+            - name: Интерфейс командной строки
               href: ../linux/shared-images.md
             - name: Microsoft Azure
               href: shared-images-portal.md
+            - name: Совместное использование образов в клиентах
+              href: share-images-across-tenants.md
             - name: Устранение неполадок с общими образами
               href: troubleshooting-shared-images.md
+        - name: Конструктор изображений (предварительная версия)
+          items:
+            - name: Обзор
+              href: ../linux/image-builder-overview.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json
+            - name: Использование CLI
+              href: image-builder.md
+            - name: Использование с коллекциями
+              href: image-builder-gallery.md
+            - name: Обновление версии образа
+              href: image-builder-gallery-update-image-version.md
+            - name: Использование скриптов в службе хранилища Azure
+              href: ../linux/image-builder-user-assigned-identity.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json
+            - name: Справочник по шаблонам
+              href: ../linux/image-builder-json.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json
+            - name: Устранение неполадок
+              href: 'https://github.com/danielsollondon/azvmimagebuilder/blob/master/troubleshootingaib.md'
         - name: Поиск и использование образов
           href: cli-ps-findimage.md
         - name: Подготовка виртуальной машины к отправке
@@ -326,8 +348,6 @@
           href: detach-disk.md
         - name: Развертывание дисков с помощью шаблона
           href: using-managed-disks-template-deployments.md
-        - name: "Отправка VHD на диск\_— PowerShell"
-          href: disks-upload-vhd-to-managed-disk-powershell.md
         - name: Изменение размера диска
           href: expand-os-disk.md
         - name: Моментальный снимок диска

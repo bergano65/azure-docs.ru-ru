@@ -3,26 +3,26 @@ title: Краткое руководство. Вызов API анализа те
 titleSuffix: Azure Cognitive Services
 description: Информация и примеры кода, которые помогут вам приступить к работе с API анализа текста.
 services: cognitive-services
-author: ashmaka
+author: raymondl
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: text-analytics
 ms.topic: quickstart
-ms.date: 04/12/2019
+ms.date: 04/29/2019
 ms.author: assafi
-ms.openlocfilehash: 7051f1c1ce43be7dce5d88a06fccee9d876a70f4
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: e7b07472623cc459c31906aeaa6ccfb4388b4b50
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60010183"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65146084"
 ---
 # <a name="quickstart-using-c-to-call-the-text-analytics-cognitive-service"></a>Краткое руководство. Использование C# для вызова API анализа текста Cognitive Services
 <a name="HOLTop"></a>
 
-В этой статье содержатся сведения о распознавании языка, анализе тональности и извлечении ключевых фраз с использованием  [API анализа текста ](//go.microsoft.com/fwlink/?LinkID=759711) и C#. Код был написан для работы в приложении .NET Core с минимальными ссылками на внешние библиотеки, поэтому его также можно выполнять в Linux или MacOS. Исходный код для этого краткого руководства можно найти на портале [GitHub](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/samples/TextAnalytics).
+В этом кратком руководстве содержатся сведения об анализе языка с помощью пакета SDK Анализа текста для C#. Так как REST API [Анализа текста](//go.microsoft.com/fwlink/?LinkID=759711) совместим с большинством языков программирования, пакет SDK обеспечивает простой способ интеграции службы в ваши приложения. Исходный код для этого шаблона можно найти на портале [GitHub](https://github.com/Azure-Samples/cognitive-services-dotnet-sdk-samples/tree/master/samples/TextAnalytics).
 
-Техническую документацию по API-интерфейсам см. в разделе [API definitions](//go.microsoft.com/fwlink/?LinkID=759346) (Определения API).
+Техническую документацию по API-интерфейсам см. в разделе [API definitions](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c7) (Определения API).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -30,203 +30,254 @@ ms.locfileid: "60010183"
 
 Также требуются [конечная точка и ключ доступа](../How-tos/text-analytics-how-to-access-key.md), созданный автоматически во время регистрации.
 
-## <a name="install-the-nuget-sdk-package"></a>Установка пакета SDK для пакетов NuGet
-1. Создайте консольное решение в Visual Studio, используя `.netcoreapp2.0` и приведенные выше компоненты.
-1. Щелкните решение правой кнопкой мыши и выберите пункт **Управление пакетами NuGet для решения**.
-1. Откройте вкладку **Обзор** и найдите **Microsoft.Azure.CognitiveServices.Language.TextAnalytics**.
-
 > [!Tip]
->  Несмотря на то, что [конечные точки HTTP](https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c6) можно вызывать напрямую из C#, пакет SDK Microsoft.Azure.CognitiveServices.Language значительно упрощает процесс вызова службы без сериализации и десериализации JSON.
+>  Несмотря на то, что [конечные точки HTTP](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c9) можно вызывать напрямую из C#, пакет SDK Microsoft.Azure.CognitiveServices.Language значительно упрощает процесс вызова службы без сериализации и десериализации JSON.
 >
 > Несколько полезных ссылок
 > - [Страница пакета SDK для NuGet](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Language.TextAnalytics)
-> - [Код пакета SDK](https://github.com/Azure/azure-sdk-for-net/tree/psSdkJson6/src/SDKs/CognitiveServices/dataPlane/Language/TextAnalytics)
+> - [Код пакета SDK](https://github.com/Azure/azure-sdk-for-net/tree/master/src/SDKs/CognitiveServices/dataPlane/Language/TextAnalytics)
 
-## <a name="call-the-text-analytics-api-using-the-sdk"></a>Вызов API анализа текста с помощью пакета SDK
+## <a name="create-the-visual-studio-solution-and-install-the-sdk"></a>Создание решения Visual Studio и установка пакета SDK
 
-1. Замените файл Program.cs кодом, указанным ниже. Эта программа показывает возможности API анализа текста в трех разделах (извлечение языка, извлечение ключевой фразы и анализ тональности).
-1. Замените значение заголовка `Ocp-Apim-Subscription-Key` с ключом доступа, допустимым для вашей подписки.
-1. В `Endpoint` замените регион. Сведения о конечной точке можно найти в обзорном разделе ресурса Анализа текста на [портале Azure](<https://ms.portal.azure.com>). Добавьте только эту часть адреса конечной точки: https://[регион].api.cognitive.microsoft.com.
-1. Запустите программу.
+1. Создайте проект "Консольное приложение (.NET Core)" в [Visual Studio](https://visualstudio.microsoft.com/vs/).
+1. Щелкните решение правой кнопкой мыши и выберите пункт **Управление пакетами NuGet для решения**.
+1. Откройте вкладку **Обзор** и найдите **Microsoft.Azure.CognitiveServices.Language.TextAnalytics**.
 
-```csharp
-using System;
-using System.Collections.Generic;
-using System.Net.Http;
-using System.Threading;
-using System.Threading.Tasks;
+## <a name="authenticate-your-credentials"></a>Аутентификация учетных данных
 
-using Microsoft.Azure.CognitiveServices.Language.TextAnalytics;
-using Microsoft.Azure.CognitiveServices.Language.TextAnalytics.Models;
-using Microsoft.Rest;
+1. Добавьте следующие операторы `using` в файл основного класса (`Program.cs` по умолчанию).
 
-namespace ConsoleApp1
-{
-    class Program
+    ```csharp
+    using System;
+    using System.Collections.Generic;
+    using System.Net.Http;
+    using System.Threading;
+    using System.Threading.Tasks;
+
+    using Microsoft.Azure.CognitiveServices.Language.TextAnalytics;
+    using Microsoft.Azure.CognitiveServices.Language.TextAnalytics.Models;
+    using Microsoft.Rest;
+    ```
+
+2. Создайте класс `ApiKeyServiceClientCredentials` для хранения учетных данных и добавьте их для каждого запроса.
+
+    ```csharp
+    /// <summary>
+    /// Allows authentication to the API using a basic apiKey mechanism
+    /// </summary>
+    class ApiKeyServiceClientCredentials : ServiceClientCredentials
     {
-        private const string SubscriptionKey = ""; //Insert your Text Anaytics subscription key
+        private readonly string subscriptionKey;
 
-        private class ApiKeyServiceClientCredentials : ServiceClientCredentials
+        /// <summary>
+        /// Creates a new instance of the ApiKeyServiceClientCredentails class
+        /// </summary>
+        /// <param name="subscriptionKey">The subscription key to authenticate and authorize as</param>
+        public ApiKeyServiceClientCredentials(string subscriptionKey)
         {
-            public override Task ProcessHttpRequestAsync(HttpRequestMessage request, CancellationToken cancellationToken)
-            {
-                request.Headers.Add("Ocp-Apim-Subscription-Key", SubscriptionKey);
-                return base.ProcessHttpRequestAsync(request, cancellationToken);
-            }
+            this.subscriptionKey = subscriptionKey;
         }
 
-        static async Task Main(string[] args)
+        /// <summary>
+        /// Add the Basic Authentication Header to each outgoing request
+        /// </summary>
+        /// <param name="request">The outgoing request</param>
+        /// <param name="cancellationToken">A token to cancel the operation</param>
+        public override Task ProcessHttpRequestAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {
-
-            // Create a client.
-            ITextAnalyticsClient client = new TextAnalyticsClient(new ApiKeyServiceClientCredentials())
+            if (request == null)
             {
-                Endpoint = "https://westus.api.cognitive.microsoft.com"
-            }; //Replace 'westus' with the correct region for your Text Analytics subscription
-
-            Console.OutputEncoding = System.Text.Encoding.UTF8;
-
-            // Extracting language
-            Console.WriteLine("===== LANGUAGE EXTRACTION ======");
-
-            var langResults = await client.DetectLanguageAsync(
-                false,
-                new LanguageBatchInput(
-                    new List<LanguageInput>
-                        {
-                          new LanguageInput(id: "1", text: "This is a document written in English."),
-                          new LanguageInput(id: "2", text: "Este es un document escrito en Español."),
-                          new LanguageInput(id: "3", text: "这是一个用中文写的文件")
-                        }));
-
-            // Printing language results.
-            foreach (var document in langResults.Documents)
-            {
-                Console.WriteLine($"Document ID: {document.Id} , Language: {document.DetectedLanguages[0].Name}");
+                throw new ArgumentNullException("request");
             }
 
-            // Getting key-phrases
-            Console.WriteLine("\n\n===== KEY-PHRASE EXTRACTION ======");
-
-            var kpResults = await client.KeyPhrasesAsync(
-                false,
-                new MultiLanguageBatchInput(
-                    new List<MultiLanguageInput>
-                    {
-                        new MultiLanguageInput("ja", "1", "猫は幸せ"),
-                        new MultiLanguageInput("de", "2", "Fahrt nach Stuttgart und dann zum Hotel zu Fu."),
-                        new MultiLanguageInput("en", "3", "My cat is stiff as a rock."),
-                        new MultiLanguageInput("es", "4", "A mi me encanta el fútbol!")
-                    }));
-
-            // Printing keyphrases
-            foreach (var document in kpResults.Documents)
-            {
-                Console.WriteLine($"Document ID: {document.Id} ");
-
-                Console.WriteLine("\t Key phrases:");
-
-                foreach (string keyphrase in document.KeyPhrases)
-                {
-                    Console.WriteLine($"\t\t{keyphrase}");
-                }
-            }
-
-            // Extracting sentiment
-            Console.WriteLine("\n\n===== SENTIMENT ANALYSIS ======");
-
-            var sentimentResults = await client.SentimentAsync(
-                false,
-                new MultiLanguageBatchInput(
-                    new List<MultiLanguageInput>
-                    {
-                        new MultiLanguageInput("en", "1", "I had the best day of my life."),
-                        new MultiLanguageInput("en", "2", "This was a waste of my time. The speaker put me to sleep."),
-                        new MultiLanguageInput("es", "3", "No tengo dinero ni nada que dar..."),
-                        new MultiLanguageInput("it", "4", "L'hotel veneziano era meraviglioso. È un bellissimo pezzo di architettura."),
-                    }));
-
-
-            // Printing sentiment results
-            foreach (var document in sentimentResults.Documents)
-            {
-                Console.WriteLine($"Document ID: {document.Id} , Sentiment Score: {document.Score:0.00}");
-            }
-
-
-            // Identify entities
-            Console.WriteLine("\n\n===== ENTITIES ======");
-
-            var entitiesResult = await client.EntitiesAsync(
-                false,
-                new MultiLanguageBatchInput(
-                    new List<MultiLanguageInput>()
-                    {
-                        new MultiLanguageInput("en", "1", "Microsoft was founded by Bill Gates and Paul Allen on April 4, 1975, to develop and sell BASIC interpreters for the Altair 8800."),
-                        new MultiLanguageInput("es", "2", "La sede principal de Microsoft se encuentra en la ciudad de Redmond, a 21 kilómetros de Seattle.")
-                    }));
-
-            // Printing entities results
-            foreach (var document in entitiesResult.Documents)
-            {
-                Console.WriteLine($"Document ID: {document.Id} ");
-
-                Console.WriteLine("\t Entities:");
-
-                foreach (var entity in document.Entities)
-                {
-                    Console.WriteLine($"\t\tName: {entity.Name},\tType: {entity.Type ?? "N/A"},\tSub-Type: {entity.SubType ?? "N/A"}");
-                    foreach (var match in entity.Matches)
-                    {
-                        Console.WriteLine($"\t\t\tOffset: {match.Offset},\tLength: {match.Length},\tScore: {match.EntityTypeScore:F3}");
-                    }
-                }
-            }
-
-            Console.ReadLine();
+            request.Headers.Add("Ocp-Apim-Subscription-Key", this.subscriptionKey);
+            return base.ProcessHttpRequestAsync(request, cancellationToken);
         }
     }
-}
+    ```
+
+3. Обновите класс `Program` и добавьте один элемент-константу для ключа подписки Анализа текста, а другой — для конечной точки службы. Не забудьте указать правильный регион Azure для своей подписки Анализа текста.
+
+    ```csharp
+    private const string SubscriptionKey = "enter-your-key-here";
+
+    private const string Endpoint = "enter-your-service-endpoint-here"; // For example: "https://westus.api.cognitive.microsoft.com";
+    ```
+> [!Tip]
+> Для безопасного развертывания секретов в рабочих системах рекомендуем использовать [Azure Key Vault](https://docs.microsoft.com/azure/key-vault/quick-create-net).
+>
+
+## <a name="create-a-text-analytics-client"></a>Создание клиента Анализа текста
+
+В функции проекта `Main` вызовите пример необходимого метода и передайте заданные параметры `Endpoint` и `SubscriptionKey`.
+
+```csharp
+    public static void Main(string[] args)
+    {
+        var credentials = new ApiKeyServiceClientCredentials(SubscriptionKey);
+        var client = new TextAnalyticsClient(credentials)
+        {
+            //Replace 'westus' with the correct region for your Text Analytics subscription
+            Endpoint = "https://westus.api.cognitive.microsoft.com"
+        };
+
+        // Change console encoding to display non-ASCII characters
+        Console.OutputEncoding = System.Text.Encoding.UTF8;
+        SentimentAnalysisExample(client).Wait();
+        // DetectLanguageExample(client).Wait();
+        // RecognizeEntitiesExample(client).Wait();
+        // KeyPhraseExtractionExample(client).Wait();
+        Console.ReadLine();
+    }
 ```
 
-## <a name="application-output"></a>Выходные данные приложения
+В следующих разделах описано, как вызвать каждую функцию API.
 
-Приложение отображает следующую информацию:
+## <a name="sentiment-analysis"></a>Анализ мнений
+
+1. Создайте функцию с именем `SentimentAnalysisExample()`, которая принимает созданный ранее клиент.
+2. Создайте объект `TextAnalyticsClient` с `ApiKeyServiceClientCredentials` в качестве параметра, а затем создайте список объектов `MultiLanguageInput`, содержащий документы, которые необходимо проанализировать.
+
+    ```csharp
+    public static async Task SentimentAnalysisExample(string endpoint, string key)
+    {
+        var credentials = new ApiKeyServiceClientCredentials(key);
+        var client = new TextAnalyticsClient(credentials)
+        {
+            Endpoint = endpoint
+        };
+
+        // The documents to be analyzed. Add the language of the document. The ID can be any value.
+        var inputDocuments = new MultiLanguageBatchInput(
+            new List<MultiLanguageInput>
+            {
+                new MultiLanguageInput("en", "1", "I had the best day of my life."),
+                new MultiLanguageInput("en", "2", "This was a waste of my time. The speaker put me to sleep."),
+                new MultiLanguageInput("es", "3", "No tengo dinero ni nada que dar..."),
+                new MultiLanguageInput("it", "4", "L'hotel veneziano era meraviglioso. È un bellissimo pezzo di architettura."),
+            });
+        //...
+    }
+    ```
+
+3. В той же функции вызовите `client.SentimentAsync()` и получите результат. Затем выполните итерацию результатов и выведите идентификатор каждого документа и оценку тональности. Оценка, близкая к 0, указывает на негативную тональность, а оценка, близкая к 1, — на позитивную.
+
+    ```csharp
+    var result = await client.SentimentAsync(false, inputDocuments);
+
+    // Printing sentiment results
+    foreach (var document in result.Documents)
+    {
+        Console.WriteLine($"Document ID: {document.Id} , Sentiment Score: {document.Score:0.00}");
+    }
+    ```
+
+### <a name="output"></a>Выходные данные
+
+```console
+Document ID: 1 , Sentiment Score: 0.87
+Document ID: 2 , Sentiment Score: 0.11
+Document ID: 3 , Sentiment Score: 0.44
+Document ID: 4 , Sentiment Score: 1.00
+```
+
+## <a name="language-detection"></a>Определение языка
+
+1. Создайте функцию с именем `DetectLanguageExample()`, которая принимает созданный ранее клиент.
+2. Создайте объект `TextAnalyticsClient` с `ApiKeyServiceClientCredentials` в качестве параметра, а затем создайте список объектов `LanguageInput`, содержащий ваши документы.
+
+    ```csharp
+    public static async Task DetectLanguageExample(string endpoint, string key)
+    {
+        var credentials = new ApiKeyServiceClientCredentials(key);
+        var client = new TextAnalyticsClient(credentials)
+        {
+            Endpoint = endpoint
+        };
+
+        // The documents to be submitted for language detection. The ID can be any value.
+        var inputDocuments = new LanguageBatchInput(
+                new List<LanguageInput>
+                    {
+                        new LanguageInput(id: "1", text: "This is a document written in English."),
+                        new LanguageInput(id: "2", text: "Este es un document escrito en Español."),
+                        new LanguageInput(id: "3", text: "这是一个用中文写的文件")
+                    });
+        //...
+    }
+    ```
+
+3. В той же функции вызовите `client.DetectLanguageAsync()` и получите результат. Затем выполните итерацию результатов и выведите идентификатор каждого документа и первый возвращенный язык.
+
+    ```csharp
+    var langResults = await client.DetectLanguageAsync(false, inputDocuments);
+
+    // Printing detected languages
+    foreach (var document in langResults.Documents)
+    {
+        Console.WriteLine($"Document ID: {document.Id} , Language: {document.DetectedLanguages[0].Name}");
+    }
+    ```
+
+### <a name="output"></a>Выходные данные
 
 ```console
 ===== LANGUAGE EXTRACTION ======
 Document ID: 1 , Language: English
 Document ID: 2 , Language: Spanish
 Document ID: 3 , Language: Chinese_Simplified
+```
 
+## <a name="entity-recognition"></a>Распознавание сущностей
 
-===== KEY-PHRASE EXTRACTION ======
-Document ID: 1
-         Key phrases:
-                幸せ
-Document ID: 2
-         Key phrases:
-                Stuttgart
-                Hotel
-                Fahrt
-                Fu
-Document ID: 3
-         Key phrases:
-                cat
-                rock
-Document ID: 4
-         Key phrases:
-                fútbol
+1. Создайте функцию с именем `RecognizeEntitiesExample()`, которая принимает созданный ранее клиент.
+2. Создайте объект `TextAnalyticsClient` с `ApiKeyServiceClientCredentials` в качестве параметра, а затем создайте список объектов `MultiLanguageBatchInput`, содержащий ваши документы.
 
+    ```csharp
+    public static async Task RecognizeEntitiesExample(string endpoint, string key)
+    {
+        var credentials = new ApiKeyServiceClientCredentials(key);
+        var client = new TextAnalyticsClient(credentials)
+        {
+            Endpoint = endpoint
+        };
 
-===== SENTIMENT ANALYSIS ======
-Document ID: 1 , Sentiment Score: 0.87
-Document ID: 2 , Sentiment Score: 0.11
-Document ID: 3 , Sentiment Score: 0.44
-Document ID: 4 , Sentiment Score: 1.00
+        // The documents to be submitted for entity recognition. The ID can be any value.
+        var inputDocuments = new MultiLanguageBatchInput(
+            new List<MultiLanguageInput>
+            {
+                new MultiLanguageInput("en", "1", "Microsoft was founded by Bill Gates and Paul Allen on April 4, 1975, to develop and sell BASIC interpreters for the Altair 8800."),
+                new MultiLanguageInput("es", "2", "La sede principal de Microsoft se encuentra en la ciudad de Redmond, a 21 kilómetros de Seattle.")
+            });
+        //...
+    }
+    ```
 
+3. В той же функции вызовите `client.EntitiesAsync()` и получите результат. Затем выполните итерацию результатов и выведите идентификатор каждого документа. Для каждого обнаруженного объекта распечатайте его имя в Википедии, тип и подтипы (если они есть), а также расположение в исходном тексте.
 
-===== ENTITIES ======
+    ```csharp
+    var entitiesResult = await client.EntitiesAsync(false, inputDocuments);
+
+    // Printing recognized entities
+    foreach (var document in entitiesResult.Documents)
+    {
+        Console.WriteLine($"Document ID: {document.Id} ");
+
+        Console.WriteLine("\t Entities:");
+        foreach (var entity in document.Entities)
+        {
+            Console.WriteLine($"\t\tName: {entity.Name},\tType: {entity.Type ?? "N/A"},\tSub-Type: {entity.SubType ?? "N/A"}");
+            foreach (var match in entity.Matches)
+            {
+                Console.WriteLine($"\t\t\tOffset: {match.Offset},\tLength: {match.Length},\tScore: {match.EntityTypeScore:F3}");
+            }
+        }
+    }
+    ```
+
+### <a name="output"></a>Выходные данные
+
+```console
 Document ID: 1
          Entities:
                 Name: Microsoft,        Type: Organization,     Sub-Type: N/A
@@ -255,12 +306,78 @@ Document ID: 2
                         Offset: 88,     Length: 7,      Score: 1.000
 ```
 
+## <a name="key-phrase-extraction"></a>Извлечение ключевой фразы
+
+1. Создайте функцию с именем `KeyPhraseExtractionExample()`, которая принимает созданный ранее клиент.
+2. Создайте объект `TextAnalyticsClient` с `ApiKeyServiceClientCredentials` в качестве параметра, а затем создайте список объектов `MultiLanguageBatchInput`, содержащий ваши документы.
+
+    ```csharp
+    public static async Task KeyPhraseExtractionExample(string endpoint, string key)
+    {
+        var credentials = new ApiKeyServiceClientCredentials(key);
+        var client = new TextAnalyticsClient(credentials)
+        {
+            Endpoint = endpoint
+        };
+
+        var inputDocuments = new MultiLanguageBatchInput(
+                    new List<MultiLanguageInput>
+                    {
+                        new MultiLanguageInput("ja", "1", "猫は幸せ"),
+                        new MultiLanguageInput("de", "2", "Fahrt nach Stuttgart und dann zum Hotel zu Fu."),
+                        new MultiLanguageInput("en", "3", "My cat might need to see a veterinarian."),
+                        new MultiLanguageInput("es", "4", "A mi me encanta el fútbol!")
+                    });
+        //...
+    }
+    ```
+
+3. В той же функции вызовите `client.KeyPhrasesAsync()` и получите результат. Затем выполните итерацию результатов и выведите идентификатор каждого документа и все обнаруженные ключевые фразы.
+
+    ```csharp
+    var kpResults = await client.KeyPhrasesAsync(false, inputDocuments);
+
+    // Printing keyphrases
+    foreach (var document in kpResults.Documents)
+    {
+        Console.WriteLine($"Document ID: {document.Id} ");
+
+        Console.WriteLine("\t Key phrases:");
+
+        foreach (string keyphrase in document.KeyPhrases)
+        {
+            Console.WriteLine($"\t\t{keyphrase}");
+        }
+    }
+    ```
+
+### <a name="output"></a>Выходные данные
+
+```console
+Document ID: 1
+         Key phrases:
+                幸せ
+Document ID: 2
+         Key phrases:
+                Stuttgart
+                Hotel
+                Fahrt
+                Fu
+Document ID: 3
+         Key phrases:
+                cat
+                veterinarian
+Document ID: 4
+         Key phrases:
+                fútbol
+```
+
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
 > [Text Analytics with Power BI](../tutorials/tutorial-power-bi-key-phrases.md) (Анализ текста с использованием Power BI)
 
-## <a name="see-also"></a>См. также
 
- API анализа текста: [общие сведения](../overview.md) и [вопросы и ответы](../text-analytics-resource-faq.md)
+* [Text Analytics overview](../overview.md) (Общие сведения об анализе текста)
+* [Часто задаваемые вопросы](../text-analytics-resource-faq.md)
 

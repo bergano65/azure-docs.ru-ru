@@ -7,22 +7,19 @@ manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: quickstart
 ms.subservice: workload management
-ms.date: 03/13/2019
+ms.date: 05/01/2019
 ms.author: rortloff
 ms.reviewer: jrasnick
-ms.openlocfilehash: 198faf6791a4a2caa2cefee2181a13ed8185310e
-ms.sourcegitcommit: fec96500757e55e7716892ddff9a187f61ae81f7
+ms.openlocfilehash: 2074ea1028f6a5e8a0251c6d0c9519361db6ba8d
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59617343"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65150381"
 ---
-# <a name="quickstart-create-a-workload-classifier-using-t-sql-preview"></a>Краткое руководство. Создание рабочей нагрузки классификатора с помощью T-SQL (предварительная версия)
+# <a name="quickstart-create-a-workload-classifier-using-t-sql"></a>Краткое руководство. Создание рабочей нагрузки классификатора с помощью T-SQL
 
 Благодаря этому краткому руководству вы быстро создадите классификатор рабочей нагрузки с высоким уровнем важности для руководителей своей организации. Этот классификатор рабочей нагрузки позволит запросам руководителей иметь приоритет над другими запросами с меньшей важностью в очереди.
-
-> [!Note]
-> Классификации рабочих нагрузок можно просмотреть в Хранилище данных SQL 2-го поколения. Просмотр классификации и важности управления рабочими нагрузками предназначен для сборок, выпущенных не раньше 9 апреля 2019 года.  Пользователям не следует использовать сборки, выпущенные до этой даты, для тестирования управления рабочими нагрузками.  Чтобы определить, поддерживает ли ваша сборка управление рабочими нагрузками, выполните запрос select @@version при подключении к экземпляру Хранилища данных SQL.
 
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 

@@ -10,15 +10,15 @@ ms.service: dms
 ms.workload: data-services
 ms.custom: mvc, tutorial
 ms.topic: article
-ms.date: 04/03/2019
-ms.openlocfilehash: 173343677d6c44135037978e1c5b60313251ba43
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.date: 05/08/2019
+ms.openlocfilehash: af1e9df2e9afbd3b51736806fcd4bd8101d583df
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60003842"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65153417"
 ---
-# <a name="tutorial-migrate-mongodb-to-azure-cosmos-dbs-api-for-mongodb-online-using-dms-preview"></a>Руководство по Перенос MongoDB в API Azure Cosmos DB для MongoDB по сети с помощью DMS (предварительная версия)
+# <a name="tutorial-migrate-mongodb-to-azure-cosmos-dbs-api-for-mongodb-online-using-dms"></a>Руководство по Перенос MongoDB в API Azure Cosmos DB для MongoDB по сети с помощью DMS
 С помощью Azure Database Migration Service можно переносить базы данных по сети (с минимальным простоем) из локального или облачного экземпляра MongoDB в API Azure Cosmos DB для MongoDB.
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
@@ -96,9 +96,7 @@ ms.locfileid: "60003842"
     > [!NOTE]
     > Миграция по сети поддерживается, только если используется уровень "Премиум". Дополнительные сведения о ценовых категориях и затратах см. на [странице с описанием цен](https://aka.ms/dms-pricing).
 
-    Если вам нужна помощь в выборе подходящей категории Azure Database Migration Service, прочтите рекомендации в [этой записи блога](https://go.microsoft.com/fwlink/?linkid=861067).  
-
-     ![Настройка параметров экземпляра Database Migration Service](media/tutorial-mongodb-to-cosmosdb-online/dms-settings3.png)
+    ![Настройка параметров экземпляра Database Migration Service](media/tutorial-mongodb-to-cosmosdb-online/dms-settings3.png)
 
 7.  Выберите **Создать**, чтобы создать службу.
 

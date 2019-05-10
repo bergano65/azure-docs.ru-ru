@@ -9,20 +9,20 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: tutorial
-ms.date: 03/08/2019
+ms.date: 05/07/2019
 ms.author: diberry
-ms.openlocfilehash: 98c2ad15d836162608affbfbc89908a15e274cee
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.openlocfilehash: a0ab928ef3b8551e3e20ff3c4b16533c80ee4b7d
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59528777"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65149248"
 ---
 # <a name="tutorial-extract-contextually-related-data-from-an-utterance"></a>Руководство по Извлечение из речевого фрагмента данных, связанных с контекстом
 
 Из данного руководства можно узнать, как выполнять поиск связанных частей данных на основе контекста. Например, исходное и конечное расположения для перемещения из одного города в другой. Могут потребоваться фрагменты данных, которые связаны друг с другом.  
 
-Ранее в этом руководстве использовались иерархические сущности. Роли сущностей позволяют отказаться от использования иерархического типа сущности. Роли можно использовать с любым предварительно созданным или настраиваемым типом сущности. Они используются в примерах речевых фрагментов и шаблонов. 
+Роли можно использовать с любым предварительно созданным или настраиваемым типом сущности. Они используются в примерах речевых фрагментов и шаблонов. 
 
 **В этом руководстве рассмотрено, как выполнять следующие задачи.**
 
@@ -93,12 +93,8 @@ ms.locfileid: "59528777"
     ![Добавление ролей в предварительно созданную сущность](media/tutorial-entity-roles/add-roles-to-prebuilt-entity.png)
 1. Выберите **Intents** (Намерения) в области навигации слева, затем выберите намерение **MoveEmployeeToCity**. Обратите внимание на то, что названия городов помечены с использованием предварительно созданной сущности **geogrpahyV2**.
 1. В первом речевом фрагменте списка выберите исходное расположение. Откроется раскрывающееся меню. Выберите **geographyV2** из списка, затем проведите указателем мыши по меню, чтобы выбрать **Origin** (Источник).
-
-    [![Снимок экрана: обозначение города в качестве исходного расположения](media/tutorial-entity-roles/tag-origin-city-with-role.png "Снимок экрана: обозначение города в качестве исходного расположения")](media/tutorial-entity-roles/tag-origin-city-with-role.png#lightbox)
-
 1. Используя метод из предыдущего шага, пометьте все роли расположений во всех речевых фрагментах. 
 
-    [![Снимок экрана отмеченной во фразах сущности расположения](media/tutorial-entity-roles/all-locations-marked-with-roles.png "Screenshot of Locations entity labeled in utterances")](media/tutorial-entity-roles/all-locations-marked-with-roles.png#lightbox)
 
 ## <a name="add-example-utterances-to-the-none-intent"></a>Добавление примеров речевых фрагментов в намерение None 
 
@@ -117,7 +113,7 @@ ms.locfileid: "59528777"
 1. [!INCLUDE [LUIS How to get endpoint first step](../../../includes/cognitive-services-luis-tutorial-how-to-get-endpoint.md)]
 
 
-1. Перейдите в конец URL-адреса в адресной строке и введите `Please move Carl Chamerlin from Tampa to Portland`. Последний параметр строки запроса — `q`. Это **запрос** фразы. Эта фраза не совпадает ни с какими помеченными фразами, поэтому она является хорошим тестом. В результате должно быть возвращено намерение `MoveEmployee` с извлечением иерархической сущности.
+1. Перейдите в конец URL-адреса в адресной строке и введите `Please move Carl Chamerlin from Tampa to Portland`. Последний параметр строки запроса — `q`. Это **запрос** фразы. Эта фраза не совпадает ни с какими помеченными фразами, поэтому она является хорошим тестом и должна возвращать намерение `MoveEmployee` с извлеченной сущностью.
 
     ```json
     {

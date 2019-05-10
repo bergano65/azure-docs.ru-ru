@@ -14,7 +14,7 @@ ms.date: 04/29/2019
 ms.author: jingwang
 ms.openlocfilehash: 524842c81380079906c4f8e0a523dfd13f83509d
 ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/06/2019
 ms.locfileid: "65149726"
@@ -61,7 +61,7 @@ ms.locfileid: "65149726"
 | type | Для свойства `type` следует задать значение **AzureDataLakeStore**. | Yes |
 | dataLakeStoreUri | Сведения об учетной записи Azure Data Lake Store. Эти данные принимают один из следующих форматов: `https://[accountname].azuredatalakestore.net/webhdfs/v1` или `adl://[accountname].azuredatalakestore.net/`. | Yes |
 | subscriptionId | Идентификатор подписки Azure, к которой принадлежит учетная запись Data Lake Store. | Необходимо для приемника |
-| resourceGroupName | Имя группы ресурсов Azure, к которой принадлежит учетная запись Data Lake Store. | Необходимо для приемника |
+| имя_группы_ресурсов | Имя группы ресурсов Azure, к которой принадлежит учетная запись Data Lake Store. | Необходимо для приемника |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Вы можете использовать среду выполнения интеграции Azure или локальную среду выполнения интеграции (если хранилище данных расположено в частной сети). Если это свойство не указано, оно использует интегрированную среду выполнения Azure по умолчанию. |Нет  |
 
 ### <a name="use-service-principal-authentication"></a>Использование аутентификации субъекта-службы

@@ -1,44 +1,41 @@
 ---
-title: Руководство. Управление веб-трафиком с помощью Azure CLI
+title: Управление веб-трафиком с помощью Azure CLI
 description: Узнайте, как создать шлюз приложений с масштабируемым набором виртуальных машин для управления веб-трафиком с помощью Azure CLI.
 services: application-gateway
 author: vhorne
-manager: jpconnock
 ms.service: application-gateway
-ms.topic: tutorial
-ms.workload: infrastructure-services
-ms.date: 7/14/2018
+ms.topic: article
+ms.date: 5/1/2019
 ms.author: victorh
-ms.custom: mvc
-ms.openlocfilehash: 264e1050e74c64c003e08bc6a8ba1c115b83032c
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
-ms.translationtype: HT
+ms.openlocfilehash: d60c756fcf0b527731b8a1f31a8d93f108c91665
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55749076"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65146227"
 ---
-# <a name="tutorial-manage-web-traffic-with-an-application-gateway-using-the-azure-cli"></a>Руководство. Управление веб-трафиком с помощью шлюза приложений и Azure CLI
+# <a name="manage-web-traffic-with-an-application-gateway-using-the-azure-cli"></a>Управление веб-трафиком с помощью шлюза приложений и Azure CLI
 
-Шлюз приложений используется для контроля и защиты веб-трафика, поступающего на обслуживаемые вами серверы. С помощью Azure CLI вы можете создать [шлюз приложений](overview.md), в котором используется [масштабируемый набор виртуальных машин](../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md) для внутренних серверов для управления веб-трафиком. В этом примере масштабируемый набор содержит два экземпляра виртуальных машин, которые добавляются в серверный пул шлюза приложений по умолчанию.
+Шлюз приложений используется для контроля и защиты веб-трафика, поступающего на обслуживаемые вами серверы. С помощью Azure CLI вы можете создать [шлюз приложений](overview.md), использующий [масштабируемый набор виртуальных машин](../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md) для внутренних серверов. В этом примере масштабируемый набор содержит два экземпляра виртуальных машин. Масштабируемый набор добавляется в серверный пул шлюза приложений по умолчанию.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этой статье раскрываются следующие темы:
 
 > [!div class="checklist"]
 > * Настройка сети
 > * Создание шлюза приложений
 > * создание масштабируемого набора виртуальных машин с серверным пулом, используемым по умолчанию.
 
-При необходимости инструкции из этого руководства можно выполнить с помощью [Azure PowerShell](tutorial-manage-web-traffic-powershell.md).
+При необходимости эти инструкции можно выполнить с помощью [Azure PowerShell](tutorial-manage-web-traffic-powershell.md).
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Если вы решили установить и использовать CLI локально, для выполнения инструкций в этом руководстве вам понадобится Azure CLI 2.0.4 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
+Если вы решили установить и использовать CLI локально, для выполнения инструкций из этого руководства вам потребуется Azure CLI 2.0.4 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
-Группа ресурсов — это логический контейнер, в котором происходит развертывание ресурсов Azure и управление ими. Создайте группу ресурсов, используя команду [az group create](/cli/azure/group#az-group-create). 
+Группа ресурсов — это логический контейнер, в котором происходит развертывание ресурсов Azure и управление ими. Создайте группу ресурсов, используя команду [az group create](/cli/azure/group#az-group-create).
 
 В следующем примере создается группа ресурсов с именем *myResourceGroupAG* в расположении *eastus*.
 
@@ -136,7 +133,7 @@ az vmss extension set \
 
 Чтобы получить общедоступный IP-адрес шлюза приложений, используйте команду [az network public-ip show](/cli/azure/network/public-ip). Скопируйте общедоступный IP-адрес и вставьте его в адресную строку браузера.
 
-```azurepowershell-interactive
+```azurecli-interactive
 az network public-ip show \
   --resource-group myResourceGroupAG \
   --name myAGPublicIPAddress \
@@ -156,12 +153,4 @@ az group delete --name myResourceGroupAG --location eastus
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Из этого руководства вы узнали, как выполнить следующие задачи:
-
-> [!div class="checklist"]
-> * Настройка сети
-> * Создание шлюза приложений
-> * создание масштабируемого набора виртуальных машин с серверным пулом, используемым по умолчанию.
-
-> [!div class="nextstepaction"]
-> [Ограничение веб-трафика с помощью брандмауэра веб-приложения](./tutorial-restrict-web-traffic-cli.md)
+[Ограничение веб-трафика с помощью брандмауэра веб-приложения](./tutorial-restrict-web-traffic-cli.md)

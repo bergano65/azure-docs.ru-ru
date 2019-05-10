@@ -16,12 +16,12 @@ ms.date: 04/11/2019
 ms.author: nacanuma
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4f242afb717557a35b81515ab718971bdc398b5a
-ms.sourcegitcommit: abeefca6cd5ca01c3e0b281832212aceff08bf3e
+ms.openlocfilehash: 605206682cb70d430773cdbf9ff746eabf594103
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "64992774"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65190846"
 ---
 # <a name="quickstart-sign-in-users-and-acquire-an-access-token-from-a-javascript-single-page-application-spa"></a>Краткое руководство. Выполнение входа пользователей и получение маркера доступа от одностраничного приложения JavaScript (SPA)
 
@@ -37,7 +37,7 @@ ms.locfileid: "64992774"
 * Чтобы запускать проект на сервере Node.js:
     * Установите [Node.js](https://nodejs.org/en/download/)
     * Установите [Visual Studio Code](https://code.visualstudio.com/download) для внесения правок в файлы проекта.
-* Чтобы запустить проект как решение Visual Studio, установите [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/).
+* Чтобы запустить проект как решение Visual Studio, установите [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/).
 
 > [!div renderon="docs"]
 > ## <a name="register-and-download-your-quickstart-application"></a>Регистрация и скачивание приложения, используемого в этом кратком руководстве
@@ -147,16 +147,16 @@ var msalConfig = {
 MSAL — это библиотека, используемая для выполнения входа пользователей и запросов маркеров, которые нужны для доступа к API, защищенному платформой удостоверений Майкрософт. В файле *index.html*, используемом в кратком руководстве, содержится ссылка на библиотеку:
 
 ```html
-<script src="https://secure.aadcdn.microsoftonline-p.com/lib/1.0.0-preview.4/js/msal.min.js"></script>
+<script src="https://secure.aadcdn.microsoftonline-p.com/lib/1.0.0/js/msal.min.js"></script>
 ```
 > [!TIP]
 > Приведенную выше версию можно заменить последней выпущенной версией в разделе [MSAL.js releases](https://github.com/AzureAD/microsoft-authentication-library-for-js/releases).
 
 
-Кроме того, если установлен Node, последнюю выпущенную версию можно загрузить через npm.
+Кроме того, если вы установили Node, последнюю версию можно скачать с помощью npm:
 
 ```batch
-npm install msal@preview
+npm install msal
 ```
 
 ### <a name="msal-initialization"></a>Инициализация MSAL
@@ -192,11 +192,11 @@ var myMSALObj = new Msal.UserAgentApplication(msalConfig);
 В приведенном ниже фрагменте кода показано, как выполнить вход пользователей:
 
 ```javascript
-var request = {
+var requestObj = {
     scopes: ["user.read"]
 };
 
-myMSALObj.loginPopup(request).then(function (loginResponse) {
+myMSALObj.loginPopup(requestObj).then(function (loginResponse) {
     //Login Success callback code here
 }).catch(function (error) {
     console.log(error);
@@ -219,11 +219,11 @@ myMSALObj.loginPopup(request).then(function (loginResponse) {
 Метод `acquireTokenSilent` обрабатывает получение и обновление маркера без участия пользователя. После первого выполнения метода `loginRedirect` или `loginPopup` обычно используется метод `acquireTokenSilent`, чтобы получить маркеры для доступа к защищенным ресурсам для последующих вызовов. Вызовы для запроса или обновления маркеров выполняются автоматически.
 
 ```javascript
-var request = {
+var requestObj = {
     scopes: ["user.read"]
 };
 
-myMSALObj.acquireTokenSilent(request).then(function (tokenResponse) {
+myMSALObj.acquireTokenSilent(requestObj).then(function (tokenResponse) {
     // Callback code here
     console.log(tokenResponse.accessToken);
 }).catch(function (error) {
@@ -247,11 +247,11 @@ myMSALObj.acquireTokenSilent(request).then(function (tokenResponse) {
 После вызова `acquireTokenPopup` отображается всплывающее окно для входа (или `acquireTokenRedirect` перенаправляет пользователей на конечную точку платформы удостоверений Майкрософт), где пользователям нужно подтвердить свои учетные данные, предоставить согласие на доступ к требуемому ресурсу или пройти двухфакторную проверку подлинности.
 
 ```javascript
-var request = {
+var requestObj = {
     scopes: ["user.read"]
 };
 
-myMSALObj.acquireTokenPopup(request).then(function (tokenResponse) {
+myMSALObj.acquireTokenPopup(requestObj).then(function (tokenResponse) {
     // Callback code here
     console.log(tokenResponse.accessToken);
 }).catch(function (error) {

@@ -5,18 +5,18 @@ author: DCtheGeek
 manager: carmonm
 ms.service: azure-policy
 ms.topic: sample
-ms.date: 03/18/2019
+ms.date: 05/02/2019
 ms.author: dacoulte
-ms.openlocfilehash: b432d8557c4244d58c23e7b068874dd747f6249f
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: c8ee73da16f4f3de2378e38d273051355c5c624c
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59256470"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65142841"
 ---
-# <a name="sample---audit-if-specified-applications-are-not-installed-inside-linux-vms"></a>Пример. Выполнение аудита в случае, если заданные приложения не установлены на виртуальных машинах Linux
+# <a name="sample---audit-if-specified-applications-arent-installed-inside-linux-vms"></a>Пример. Выполнение аудита в случае, если заданные приложения не установлены на виртуальных машинах Linux
 
-Эта инициатива гостевой конфигурации Политики проверяет, установлено ли указанное приложение на виртуальных машинах Linux. Идентификатор данной встроенной инициативы: `/providers/Microsoft.Authorization/policySetDefinitions/c937dcb4-4398-4b39-8d63-4a6be432252e`.
+Эта инициатива гостевой конфигурации Политики создает событие аудита в случае, если указанные приложения не установлены на виртуальных машинах Linux. Идентификатор данной встроенной инициативы: `/providers/Microsoft.Authorization/policySetDefinitions/c937dcb4-4398-4b39-8d63-4a6be432252e`.
 
 > [!IMPORTANT]
 > Все инициативы гостевой конфигурации состоят из определений политики **audit** и **deployIfNotExists** . Назначение только одного из определений политики приводит к неправильной работе гостевой конфигурации.
@@ -32,7 +32,7 @@ ms.locfileid: "59256470"
 
 Инициатива [гостевой конфигурации](../concepts/guest-configuration.md) состоит из следующих политик:
 
-- [audit](#audit-definition) — проверка, что приложение установлено на виртуальные машины Linux.
+- [audit](#audit-definition) — выполнение аудита в случае, если приложения не установлены на виртуальных машинах Linux
   - Идентификатор: `/providers/Microsoft.Authorization/policyDefinitions/fee5cb2b-9d9b-410e-afe3-2902d90d0004`
 - [deployIfNotExists](#deployIfNotExists-definition) — развертывание расширения виртуальной машины для проверки, что приложение установлено на виртуальные машины Linux.
   - Идентификатор: `/providers/Microsoft.Authorization/policyDefinitions/4d1c04de-2172-403f-901b-90608c35c721`
@@ -45,7 +45,9 @@ ms.locfileid: "59256470"
 
 ### <a name="initiative-parameters"></a>Параметры инициативы
 
-|Имя |Тип ||Описание | |---|---||---| |applicationName | Строка | Имена приложений. Например, 'python', 'powershell' или список через запятую ('python, powershell'). Используйте символ \* для сопоставления с подстановочными знаками, например 'power\*'.|
+|ИМЯ |type |ОПИСАНИЕ |
+|---|---|---|
+|applicationName |Строка |Имена приложений. Например, 'python', 'powershell' или список через запятую ('python, powershell'). Используйте знак \* для сопоставления с подстановочными знаками, например "power\*". |
 
 При создании задания через PowerShell или Azure CLI значения параметров могут передаваться как JSON или в строке, или через файл с использованием `-PolicyParameter` (PowerShell) или `--params` (Azure CLI).
 PowerShell также поддерживает `-PolicyParameterObject`, требующий передать командлету хэш-таблицу имен и значений, где **Имя** является именем параметра, а **значение** — отдельным значением или массивом значений, передаваемых во время назначения.

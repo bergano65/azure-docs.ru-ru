@@ -14,12 +14,12 @@ ms.workload: identity
 ms.date: 09/17/2018
 ms.author: nacanuma
 ms.custom: include file
-ms.openlocfilehash: c0dcfc4ad7edf4d9203b807aa799eb047c753bed
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.openlocfilehash: 387adcdf8bdabf90bc1e691a7a8ec9ae0a8e90dc
+ms.sourcegitcommit: abeefca6cd5ca01c3e0b281832212aceff08bf3e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59551558"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "64993330"
 ---
 ## <a name="register-your-application"></a>Регистрация приложения
 
@@ -52,11 +52,15 @@ ms.locfileid: "59551558"
 1. Внесите сведения о регистрации приложения в файл `index.html`, созданный во время настройки проекта. В начале вашего файла `index.html` между тегами `<script></script>` вставьте следующий код:
 
     ```javascript
-    var applicationConfig = {
-        clientID: "Enter_the_Application_Id_here",
-        authority: "https://login.microsoftonline.com/Enter_the_Tenant_Info_Here",
-        graphScopes: ["user.read"],
-        graphEndpoint: "https://graph.microsoft.com/v1.0/me"
+    var msalConfig = {
+        auth: {
+            clientId: "Enter_the_Application_Id_here",
+            authority: "https://login.microsoftonline.com/Enter_the_Tenant_Info_Here"
+        },
+        cache: {
+            cacheLocation: "localStorage",
+            storeAuthStateInCookie: true
+        }
     };
     ```
 
@@ -65,4 +69,4 @@ ms.locfileid: "59551558"
     - `Enter_the_Tenant_Info_Here` может иметь несколько значений.
        - Если приложение поддерживает **учетные записи только в этом каталоге организации**, замените это значение **идентификатором клиента** или **именем клиента** (например, contoso.microsoft.com).
        - Если ваше приложение поддерживает вариант **Учетные записи в любом каталоге организации**, замените это значение на `organizations`.
-       - Если приложение поддерживает **учетные записи в любом каталоге организации и личные учетные записи Майкрософт**, укажите значение `common`.
+       - Если приложение поддерживает **учетные записи в любом каталоге организации и личные учетные записи Майкрософт**, замените это значение на `common`. Чтобы ограничить поддержку только *личными учетными записями Microsoft*, замените это значение на `consumers`.

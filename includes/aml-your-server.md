@@ -9,15 +9,19 @@ manager: cgronlund
 ms.custom: include file
 ms.topic: include
 ms.date: 01/25/2019
-ms.openlocfilehash: 8d8b314965253dc00b39d0b068b1d6fb3e4aa471
-ms.sourcegitcommit: 49c8204824c4f7b067cd35dbd0d44352f7e1f95e
+ms.openlocfilehash: 8d21e41ad487ad17598f2320fab5eebae02309e8
+ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/22/2019
-ms.locfileid: "58395689"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "65021746"
 ---
-1. Выполните инструкции из статьи о [создании рабочей области Службы машинного обучения Azure](../articles/machine-learning/service/setup-create-workspace.md#portal), чтобы создать среду Miniconda, рабочую область и файл конфигурации рабочей области (**aml_config/config.json**).
-
+1. Следуйте инструкциям по [созданию рабочей области Службы машинного обучения Azure](../articles/machine-learning/service/setup-create-workspace.md#portal), чтобы:
+    * создать среду Miniconda;
+    * установить пакет SDK для Машинного обучения Azure для Python.
+    * Создание рабочей области
+    * Запишите файл конфигурации рабочей области (**aml_config/config.json**).
+    
 1. Клонируйте [репозиторий GitHub](https://aka.ms/aml-notebooks).
 
     ```
@@ -25,8 +29,14 @@ ms.locfileid: "58395689"
     ```
 
 1. Добавьте файл конфигурации рабочей области с помощью любого из следующих методов:
-    * В клонированный каталог скопируйте файл **aml_config\config.json**, созданный в ходе выполнения краткого руководства из раздела предварительных требований.
+    * В клонированный каталог скопируйте файл **aml_config\config.json**, созданный на шаге 1.
+
+    * На [портале Azure](https://ms.portal.azure.com) выберите **Скачать config.json** в разделе **Обзор** рабочей области. 
+
+    ![Скачивание config.json](./media/aml-dsvm-server/download-config.png)
+
     * Создайте новую рабочую область с помощью кода в [configuration.ipynb](https://github.com/Azure/MachineLearningNotebooks/blob/master/configuration.ipynb).
+
 1. Запустите сервер записной книжки из клонированного каталога.
     
     ```shell

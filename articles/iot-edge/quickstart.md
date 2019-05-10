@@ -9,14 +9,14 @@ ms.topic: quickstart
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc, seodec18
-ms.openlocfilehash: bc859dc1e33abfee765a8f5b0f2a65bc24b7c2dc
-ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
+ms.openlocfilehash: 7b4fcf34831d17d35e9f4d8b38455ea22293076f
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58226952"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65148080"
 ---
-# <a name="quickstart-deploy-your-first-iot-edge-module-from-the-azure-portal-to-a-windows-device---preview"></a>Краткое руководство. Развертывание модуля IoT Edge на устройстве с Windows на портале Azure (предварительная версия)
+# <a name="quickstart-deploy-your-first-iot-edge-module-from-the-azure-portal-to-a-windows-device"></a>Краткое руководство. Развертывание модуля IoT Edge на устройстве с Windows на портале Azure
 
 В этом кратком руководстве вы примените облачный интерфейс Azure IoT Edge для удаленного развертывания готового кода на устройстве IoT Edge. Чтобы выполнить эту задачу, сначала вы создадите и настроите виртуальную машину Windows для работы в качестве устройства IoT Edge, а затем развернете модуль на ней.
 
@@ -30,9 +30,6 @@ ms.locfileid: "58226952"
 ![Схема рассматриваемой в этом кратком руководстве архитектуры для устройства и облака](./media/quickstart/install-edge-full.png)
 
 Модуль, который вы развернете в рамках этого краткого руководства, представляет собой имитированный датчик, генерирующий данные температуры, влажности и давления. В других руководствах по Azure IoT Edge используются наработки из этой статьи: развернутые модули, которые анализируют смоделированные данные для бизнес-аналитики.
-
-> [!NOTE]
-> Среда выполнения IoT Edge в ОС Windows доступна в режиме [общедоступной предварительной версии](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 Если у вас нет активной подписки Azure, перед началом работы создайте [бесплатную учетную запись](https://azure.microsoft.com/free).
 
@@ -71,6 +68,10 @@ ms.locfileid: "58226952"
   1. На вкладке **RDP** выберите **Скачать RDP-файл**.
 
   Откройте этот файл, используя подключение к удаленному рабочему столу, чтобы подключиться к виртуальной машине Windows, указав имя и пароль администратора, заданные в команде `az vm create`.
+
+
+> [!NOTE]
+> Для простоты в этом кратком руководстве используется виртуальная машина Windows для настольных систем. Сведения об общедоступных версиях ОС Windows для рабочих сценариев см. в статье [Azure IoT Edge supported systems](support.md) (Системы, поддерживаемые в Azure IoT Edge).
 
 ## <a name="create-an-iot-hub"></a>Создание Центра Интернета вещей
 
@@ -130,30 +131,33 @@ ms.locfileid: "58226952"
 
 Действия, описанные в этом разделе, будут происходить на вашем устройстве IoT Edge, поэтому вам необходимо подключиться к этой виртуальной машине через удаленный рабочий стол.
 
-### <a name="prepare-your-device-for-containers"></a>Подготовка устройства для контейнеров
-
-Скрипт установки автоматически устанавливает подсистему Moby на устройстве перед установкой IoT Edge. Подготовьте устройство, включив функцию контейнеров.
-
-1. На панели запуска найдите **Включение и отключение компонентов Windows** и откройте программу панели управления.
-1. Найдите и выберите **Контейнеры**.
-1. Нажмите кнопку **ОК**.
-
-После завершения необходимо перезапустить Windows, чтобы изменения вступили в силу. Вместо перезапуска виртуальной машины на портале Azure это можно сделать во время сеанса удаленного рабочего стола.
-
-### <a name="download-and-install-the-iot-edge-service"></a>Скачивание и установка службы IoT Edge
+### <a name="install-and-configure-the-iot-edge-service"></a>Установка и настройка службы IoT Edge
 
 Загрузите и установите среду выполнения IoT Edge с помощью PowerShell. Настройте свое устройство, используя строку подключения к устройству, которую вы извлекли из Центра Интернета вещей.
 
-1. На устройстве IoT Edge запустите PowerShell от имени администратора.
+1. Если вы этого еще не сделали, выполните действия, описанные в статье [Register a new Azure IoT Edge device from the Azure portal](how-to-register-device-portal.md) (Регистрация нового устройства Azure IoT Edge на портале Azure), чтобы зарегистрировать устройство и получить для него строку подключения. 
 
-2. Загрузите и установите службу IoT Edge на устройстве.
+2. Откройте сеанс PowerShell от имени администратора.
+
+3. Команда **Deploy-IoTEdge** позволяет проверить, установлена ли на компьютере Windows поддерживаемая версия, включает функцию контейнеров, скачивает среду выполнения Moby и затем скачивает среду выполнения IoT Edge.
 
    ```powershell
    . {Invoke-WebRequest -useb aka.ms/iotedge-win} | Invoke-Expression; `
-   Install-SecurityDaemon -Manual -ContainerOs Windows
+   Deploy-IoTEdge -ContainerOs Windows
    ```
 
-3. При появлении запроса на строку **DeviceConnectionString** укажите строку, скопированную в предыдущем разделе. Не заключайте строку подключения в кавычки.
+4. Компьютер может перезагрузиться автоматически. Если при выполнении команды Deploy-IoTEdge появится запрос на перезагрузку, сделайте это. 
+
+5. Откройте сеанс PowerShell от имени администратора снова.
+
+6. Команда **Initialize-IoTEdge** настраивает среду выполнения IoT Edge на вашем компьютере. По умолчанию при выполнении команды применяется подготовка вручную с помощью контейнеров Windows. 
+
+   ```powershell
+   . {Invoke-WebRequest -useb aka.ms/iotedge-win} | Invoke-Expression; `
+   Initialize-IoTEdge -ContainerOs Windows
+   ```
+
+7. При появлении запроса на строку **DeviceConnectionString** укажите строку, скопированную в предыдущем разделе. Не заключайте строку подключения в кавычки.
 
 ### <a name="view-the-iot-edge-runtime-status"></a>Просмотр состояния среды выполнения IoT Edge
 
@@ -168,14 +172,7 @@ ms.locfileid: "58226952"
 2. Если нужно устранить неполадки со службой, извлеките журналы службы.
 
    ```powershell
-   # Displays logs from today, newest at the bottom.
-
-   Get-WinEvent -ea SilentlyContinue `
-    -FilterHashtable @{ProviderName= "iotedged";
-      LogName = "application"; StartTime = [datetime]::Today} |
-    select TimeCreated, Message |
-    sort-object @{Expression="TimeCreated";Descending=$false} |
-    format-table -autosize -wrap
+   . {Invoke-WebRequest -useb aka.ms/iotedge-win} | Invoke-Expression; Get-IoTEdgeLog
    ```
 
 3. Просмотрите данные обо всех модулях, запущенных на устройстве IoT Edge. Так как служба запущена первый раз, отобразится только запущенный модуль **edgeAgent**. Модуль edgeAgent запускается по умолчанию и позволяет установить и запустить любые дополнительные модули, развертываемые на устройстве.
@@ -226,34 +223,21 @@ iotedge logs SimulatedTemperatureSensor -f
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Если вы хотите продолжить ознакомление с руководствами по IoT Edge, используйте устройство, зарегистрированное и настроенное в рамках этого краткого руководства. В противном случае можно удалить с устройства созданные ресурсы Azure и среду выполнения IoT Edge.
-
-### <a name="delete-azure-resources"></a>Удаление ресурсов Azure
+Если вы хотите продолжить ознакомление с руководствами по IoT Edge, используйте устройство, зарегистрированное и настроенное в рамках этого краткого руководства. Если нет, вы можете удалить созданные ресурсы Azure, чтобы избежать расходов.
 
 Если вы создали виртуальную машину и Центр Интернета вещей в новой группе ресурсов, можно удалить эту группу и все связанные с ней ресурсы. Внимательно проверьте содержимое группы ресурсов. В ней не должно быть важных ресурсов. Если вы не хотите удалять всю группу, можно удалить отдельные ресурсы.
 
 Удалите группу **IoTEdgeResources**.
 
-   ```azurecli-interactive
-   az group delete --name IoTEdgeResources
-   ```
-
-### <a name="remove-the-iot-edge-runtime"></a>Удаление среды выполнения IoT Edge
-
-Чтобы удалить файлы установки с устройства, используйте приведенные ниже команды.  
-
-Удалите среду выполнения IoT Edge. Если вы планируете повторно установить IoT Edge, пропустите параметры `-DeleteConfig` и `-DeleteMobyDataRoot`, чтобы выполнить переустановку с использованием настроенной конфигурации.
-
-   ```powershell
-   . {Invoke-WebRequest -useb aka.ms/iotedge-win} | Invoke-Expression; `
-   Uninstall-SecurityDaemon -DeleteConfig -DeleteMobyDataRoot
-   ```
+```azurecli-interactive
+az group delete --name IoTEdgeResources
+```
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 При работе с этим кратким руководством вы создали устройство IoT Edge и с помощью облачного интерфейса Azure IoT Edge развернули код на устройстве. В итоге вы получили устройство для тестирования, генерирующее необработанные данные о своей среде.
 
-Вы можете перейти к любому из оставшихся руководств, чтобы узнать, как Azure IoT Edge может помочь вам превратить данные в бизнес-аналитику на пограничном устройстве.
+Далее вы можете настроить локальную среду разработки, чтобы приступить к созданию модулей IoT Edge, которые выполняют бизнес-логику. 
 
 > [!div class="nextstepaction"]
-> [Фильтрация данных датчика с помощью Функций Azure](tutorial-deploy-function.md)
+> [Tutorial: Develop IoT Edge modules for Windows devices](tutorial-develop-for-windows.md) (Руководство: разработка модулей IoT Edge для устройств с Windows)

@@ -4,27 +4,29 @@ description: Узнайте, как создать шлюз приложений
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
-ms.topic: tutorial
-ms.date: 3/20/2019
+ms.topic: article
+ms.date: 5/1/2019
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: 83719ce0cddf3d77325b26fa40dd3cb2decaf921
-ms.sourcegitcommit: ab6fa92977255c5ecbe8a53cac61c2cd2a11601f
+ms.openlocfilehash: b1bf91a13d3327873efab475067029ee4ce47639
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58294813"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65145907"
 ---
 # <a name="manage-web-traffic-with-an-application-gateway-using-azure-powershell"></a>Управление веб-трафиком с помощью шлюза приложений в Azure PowerShell
 
 Шлюз приложения используется для администрирования и защиты веб-трафика, поступающего на обслуживаемые серверы. С помощью Azure PowerShell вы можете создать [шлюз приложений](overview.md), в котором используется [масштабируемый набор виртуальных машин](../virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md) для внутренних серверов для управления веб-трафиком. В этом примере масштабируемый набор содержит два экземпляра виртуальных машин, которые добавляются в серверный пул шлюза приложений по умолчанию.
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этой статье раскрываются следующие темы:
 
 > [!div class="checklist"]
 > * Настройка сети
 > * Создание шлюза приложений
 > * создание масштабируемого набора виртуальных машин с серверным пулом, используемым по умолчанию.
+
+При необходимости эти инструкции можно выполнить с помощью [Azure CLI](tutorial-manage-web-traffic-cli.md).
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -32,7 +34,7 @@ ms.locfileid: "58294813"
 
 [!INCLUDE [cloud-shell-powershell.md](../../includes/cloud-shell-powershell.md)]
 
-Чтобы установить и использовать PowerShell локально для работы с этим руководством, вам понадобится модуль Azure PowerShell 1.0.0 или последующей версии. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Login-AzAccount`, чтобы создать подключение к Azure.
+Чтобы установить и использовать PowerShell локально для работы с этой статьей, вам понадобится модуль Azure PowerShell 1.0.0 или более поздней версии. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Login-AzAccount`, чтобы создать подключение к Azure.
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
@@ -103,7 +105,7 @@ $frontendport = New-AzApplicationGatewayFrontendPort `
 
 ### <a name="create-the-backend-pool-and-settings"></a>Создание серверного пула и настройка параметров
 
-Создайте серверный пул с именем *appGatewayBackendPool* для шлюза приложений с помощью команды [New-AzApplicationGatewayBackendAddressPool](/powershell/module/az.network/new-azapplicationgatewaybackendaddresspool). Настройте параметры для внутренних пулов адресов, используя команду [New-AzApplicationGatewayBackendHttpSettings](/powershell/module/az.network/new-azapplicationgatewaybackendhttpsettings).
+Создайте серверный пул с именем *appGatewayBackendPool* для шлюза приложений с помощью командлета [New-AzApplicationGatewayBackendAddressPool](/powershell/module/az.network/new-azapplicationgatewaybackendaddresspool). Настройте параметры для внутренних пулов адресов, используя командлет [New-AzApplicationGatewayBackendHttpSettings](/powershell/module/az.network/new-azapplicationgatewaybackendhttpsettings).
 
 ```azurepowershell-interactive
 $defaultPool = New-AzApplicationGatewayBackendAddressPool `
@@ -121,7 +123,7 @@ $poolSettings = New-AzApplicationGatewayBackendHttpSettings `
 
 Прослушиватель требуется для того, чтобы шлюз приложений правильно маршрутизировал трафик на внутренние пулы. В этом примере создается базовый прослушиватель, который прослушивает трафик на корневом URL-адресе. 
 
-Создайте прослушиватель *mydefaultListener* с конфигурацией внешнего интерфейса и интерфейсным портом, созданными ранее, используя команду [New-AzApplicationGatewayHttpListener](/powershell/module/az.network/new-azapplicationgatewayhttplistener). Правило требуется для того, чтобы указать прослушивателю, какой внутренний пул использовать для входящего трафика. Создайте базовое правило *rule1* с помощью командлета [New-AzApplicationGatewayRequestRoutingRule](/powershell/module/az.network/new-azapplicationgatewayrequestroutingrule).
+Создайте прослушиватель *mydefaultListener* с конфигурацией внешнего интерфейса и интерфейсным портом, созданными ранее, используя командлет [New-AzApplicationGatewayHttpListener](/powershell/module/az.network/new-azapplicationgatewayhttplistener). Правило требуется для того, чтобы указать прослушивателю, какой внутренний пул использовать для входящего трафика. Создайте базовое правило *rule1* с помощью командлета [New-AzApplicationGatewayRequestRoutingRule](/powershell/module/az.network/new-azapplicationgatewayrequestroutingrule).
 
 ```azurepowershell-interactive
 $defaultlistener = New-AzApplicationGatewayHttpListener `
@@ -255,12 +257,4 @@ Remove-AzResourceGroup -Name myResourceGroupAG
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Из этого руководства вы узнали, как выполнить следующие задачи:
-
-> [!div class="checklist"]
-> * Настройка сети
-> * Создание шлюза приложений
-> * создание масштабируемого набора виртуальных машин с серверным пулом, используемым по умолчанию.
-
-> [!div class="nextstepaction"]
-> [Ограничение веб-трафика с помощью брандмауэра веб-приложения](./tutorial-restrict-web-traffic-powershell.md)
+[Ограничение веб-трафика с помощью брандмауэра веб-приложения](./tutorial-restrict-web-traffic-powershell.md)

@@ -113,7 +113,7 @@
         - name: Удаление кластера AKS
           href: '/cli/azure/aks#az-aks-delete'
           maintainContext: true
-        - name: Создание виртуальных узлов (предварительная версия)
+        - name: Создание виртуальных узлов
           items:
             - name: Инфраструктура CLI Azure
               href: virtual-nodes-cli.md
@@ -123,9 +123,13 @@
           href: virtual-kubelet.md
         - name: Использование средства автомасштабирования кластера (предварительная версия)
           href: cluster-autoscaler.md
+        - name: Использование несколько пулов узлов (предварительная версия)
+          href: use-multiple-node-pools.md
         - name: Развертывание AKS с помощью Terraform
           href: ../terraform/terraform-create-k8s-cluster-with-tf-and-aks.md
           maintainContext: true
+        - name: Использование панели мониторинга Kubernetes
+          href: kubernetes-dashboard.md
     - name: Конфигурирование томов данных
       items:
         - name: "Диск Azure\_— динамический"
@@ -173,12 +177,16 @@
           href: kubernetes-service-principal.md
         - name: Ограничение доступа к файлу конфигурации кластера
           href: control-kubeconfig-access.md
-        - name: Защита трафика для групп pod с помощью политик сети (предварительная версия)
+        - name: Защита трафика для групп pod с помощью политик сети
           href: use-network-policies.md
         - name: Использование политик безопасности pod (предварительная версия)
           href: use-pod-security-policies.md
+        - name: Определение диапазонов авторизованных IP-адресов сервера API (предварительная версия)
+          href: api-server-authorized-ip-ranges.md
         - name: Обновление учетных данных субъекта-службы кластера
           href: update-credentials.md
+        - name: Ограничение и администрирование исходящего трафика кластера
+          href: limit-egress-traffic.md
         - name: Включение интеграции с Azure Active Directory
           items:
             - name: Использование Azure CLI
@@ -285,10 +293,6 @@
         - name: Проекты Azure DevOps
           href: ../devops-project/azure-devops-project-aks.md
           maintainContext: true
-    - name: Базовые сведения о Kubernetes
-      items:
-        - name: Использование панели мониторинга Kubernetes
-          href: kubernetes-dashboard.md
     - name: Устранение неполадок
       items:
         - name: Распространенные проблемы
