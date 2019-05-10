@@ -4,23 +4,35 @@
   items:
     - name: Сведения о службе "Конфигурация приложений Azure"
       href: overview.md
+    - name: Часто задаваемые вопросы
+      href: faq.md
 - name: Быстрое начало работы
   expanded: true
   items:
-    - name: Создание приложения ASP.NET Core
-      href: quickstart-aspnet-core-app.md
-    - name: Создание приложения .NET Core
-      href: quickstart-dotnet-core-app.md
-    - name: Создание приложения .NET Framework
-      href: quickstart-dotnet-app.md
-    - name: Создание функции Azure
-      href: quickstart-azure-function-csharp.md
-    - name: Создание приложения Java Spring
-      href: quickstart-java-spring-app.md
+    - name: Параметр Configuration
+      items:
+        - name: ASP.NET Core;
+          href: quickstart-aspnet-core-app.md
+        - name: .NET Core
+          href: quickstart-dotnet-core-app.md
+        - name: .NET Framework
+          href: quickstart-dotnet-app.md
+        - name: Использование Функций Azure в .NET Core
+          href: quickstart-azure-function-csharp.md
+        - name: Java Spring
+          href: quickstart-java-spring-app.md
+    - name: управление функциями.
+      items:
+        - name: ASP.NET Core;
+          href: quickstart-feature-flag-aspnet-core.md
 - name: Учебники
   items:
     - name: Включение динамической конфигурации в ASP.NET Core
       href: enable-dynamic-configuration-aspnet-core.md
+    - name: Использование флагов компонентов в приложении .NET Core
+      href: use-feature-flags-dotnet-core.md
+    - name: Управление флагами компонентов
+      href: manage-feature-flags.md
     - name: Интеграция с конвейером CI/CD
       href: integrate-ci-cd-pipeline.md
 - name: Примеры
@@ -33,24 +45,36 @@
       href: concept-key-value.md
     - name: Моментальный снимок на определенный момент времени
       href: concept-point-time-snapshot.md
+    - name: управление функциями.
+      href: concept-feature-management.md
 - name: Практические руководства
   items:
     - name: Интеграция с функцией "Управляемое удостоверение службы Azure"
       href: howto-integrate-azure-managed-service-identity.md
     - name: Импорт и экспорт данных конфигурации
       href: howto-import-export-data.md
+    - name: Рекомендации
+      href: howto-best-practices.md
 - name: Справочные материалы
   items:
-    - name: Поставщик конфигурации .NET Core
-      href: 'https://go.microsoft.com/fwlink/?linkid=2074664'
-    - name: Построитель конфигураций .NET Framework
-      href: 'https://go.microsoft.com/fwlink/?linkid=2074663'
-    - name: Поставщик конфигурации Java Spring
-      href: 'https://github.com/Microsoft/spring-cloud-azure/tree/azure-config/spring-cloud-azure-starters/spring-cloud-starter-azure-config'
-    - name: Пакет Azure SDK для .NET
-      href: 'https://github.com/Azure/azure-sdk-for-net/tree/master/src/SDKs/Azure.ApplicationModel.Configuration/data-plane'
-    - name: REST
-      href: 'https://go.microsoft.com/fwlink/?linkid=2078296'
+    - name: Параметр Configuration
+      items:
+        - name: Поставщик конфигурации .NET Core
+          href: 'https://go.microsoft.com/fwlink/?linkid=2074664'
+        - name: Построитель конфигураций .NET Framework
+          href: 'https://go.microsoft.com/fwlink/?linkid=2074663'
+        - name: Поставщик конфигурации Java Spring
+          href: 'https://github.com/Microsoft/spring-cloud-azure/tree/azure-config/spring-cloud-azure-starters/spring-cloud-starter-azure-config'
+        - name: Пакет Azure SDK для .NET
+          href: 'https://github.com/Azure/azure-sdk-for-net/tree/master/src/SDKs/Azure.ApplicationModel.Configuration/data-plane'
+        - name: REST
+          href: 'https://go.microsoft.com/fwlink/?linkid=2078296'
+    - name: управление функциями.
+      items:
+        - name: Библиотека .NET Core
+          href: 'https://go.microsoft.com/fwlink/?linkid=2091700'
+        - name: Библиотека ASP.NET Core
+          href: 'https://go.microsoft.com/fwlink/?linkid=2091410'
 - name: Ресурсы
   items:
     - name: Видео о начале работы

@@ -13,20 +13,20 @@ ms.workload: infrastructure-services
 ms.tgt_pltfrm: vm-windows
 ms.devlang: na
 ms.topic: article
-ms.date: 10/20/2017
+ms.date: 05/08/2019
 ms.author: cynthn
-ms.openlocfilehash: 65d4326763ef9754159e94c9426f3aee69f80ffd
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 61f24b3c13a53b23538327cd1458a54756b7caa5
+ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61095666"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65466349"
 ---
 # <a name="frequently-asked-question-about-windows-virtual-machines"></a>Часто задаваемые вопросы по виртуальным машинам Windows
-В этой статье содержатся ответы на некоторые распространенные вопросы о виртуальных машинах Windows, созданных в Azure с помощью модели развертывания Resource Manager. Версия этой статьи для Linux — [Часто задаваемые вопросы по виртуальным машинам Linux](../linux/faq.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+В этой статье содержатся ответы на некоторые распространенные вопросы о виртуальных машинах Windows, созданных в Azure с помощью модели развертывания Resource Manager. Для Linux версии в этом разделе, см. в разделе [вопросы и ответы по виртуальным машинам Linux](../linux/faq.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
 
 ## <a name="what-can-i-run-on-an-azure-vm"></a>Что можно запускать на виртуальной машине Azure?
-Все подписчики могут запускать на виртуальной машине Azure серверное программное обеспечение. Сведения о политике поддержки серверного ПО Майкрософт в Azure см. в статье [Поддержка серверного программного обеспечения Майкрософт для виртуальных машин Azure](https://support.microsoft.com/kb/2721672).
+Все подписчики могут запускать на виртуальной машине Azure серверное программное обеспечение. Сведения о политике поддержки для выполнения серверного программного обеспечения Майкрософт в Azure, см. в разделе [поддержка серверного по Майкрософт для виртуальных машин Azure](https://support.microsoft.com/kb/2721672).
 
 Подписчикам MSDN Azure, а также подписчикам MSDN для разработки и тестирования с оплатой по мере использования доступны определенные версии Windows 7, Windows 8.1 и Windows 10, которые можно использовать для разработки или тестирования. Дополнительные сведения, включая указания и ограничения, см. в статье [Образы клиента Windows для подписчиков MSDN](https://azure.microsoft.com/blog/2014/05/29/windows-client-images-on-azure/). 
 
@@ -38,7 +38,7 @@ ms.locfileid: "61095666"
 Учетная запись хранения Azure также предоставляет хранилище для диска операционной системы и любых дисков данных. Каждый из этих дисков представляет собой VHD-файл, хранящийся как страничный BLOB-объект. Информацию о ценах см. в статье [Информация о ценах на хранилища](https://azure.microsoft.com/pricing/details/storage/).
 
 ## <a name="how-can-i-access-my-virtual-machine"></a>Как получить доступ к своей виртуальной машине?
-Установите удаленное подключение с использованием протокола удаленного рабочего стола (RDP) к виртуальной машине Windows. Указания см. в статье [Как подключиться к виртуальной машине Azure под управлением Windows и войти в систему](connect-logon.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). Если сервер не настроен как узел сеансов служб удаленных рабочих столов, то поддерживается не более двух параллельных подключений.  
+Установите удаленное подключение с использованием протокола удаленного рабочего стола (RDP) к виртуальной машине Windows. Инструкции см. в разделе [способы подключения и выполните вход на виртуальную машину Azure под управлением Windows](connect-logon.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). Если сервер не настроен как узел сеансов служб удаленных рабочих столов, то поддерживается не более двух параллельных подключений.  
 
 Если возникли проблемы с удаленным подключением, ознакомьтесь со статьей [Устранение неполадок с подключением к удаленному рабочему столу на виртуальной машине Azure под управлением Windows](troubleshoot-rdp-connection.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). 
 
@@ -85,36 +85,26 @@ ms.locfileid: "61095666"
 
 Длина имени пользователя не должна превышать 20 знаков. Также оно не должно заканчиваться точкой ("."). 
 
-
 Не допускаются следующие имена пользователей:
-<table>
-    <tr>
-        <td style="text-align:center">1</td><td style="text-align:center">123</td><td style="text-align:center">а</td><td style="text-align:center">actuser</td>
-    </tr>
-    <tr>
-        <td style="text-align:center">adm</td><td style="text-align:center">admin</td><td style="text-align:center">admin1</td><td style="text-align:center">admin2</td>
-    </tr>   <tr>
-        <td style="text-align:center">Администратор</td><td style="text-align:center">aspnet</td><td style="text-align:center">backup</td><td style="text-align:center">console</td>
-    </tr>
-    <tr>
-        <td style="text-align:center">david </td><td style="text-align:center">guest</td><td style="text-align:center">john</td><td style="text-align:center">владелец</td>
-    </tr>
-    <tr>
-        <td style="text-align:center">root</td><td style="text-align:center">сервер</td><td style="text-align:center">sql</td><td style="text-align:center">службу поддержки</td>
-    </tr>
-    <tr>
-        <td style="text-align:center">support_388945a0</td><td style="text-align:center">sys</td><td style="text-align:center">тест</td><td style="text-align:center">test1</td>
-    </tr>
-    <tr>
-        <td style="text-align:center">test2</td><td style="text-align:center">test3</td><td style="text-align:center">user</td><td style="text-align:center">user1</td>
-    </tr>
-    <tr>
-        <td style="text-align:center">user2</td><td style="text-align:center">user3</td><td style="text-align:center">user4</td><td style="text-align:center">user5</td>
-    </tr>
-</table>
+
+| | | | |
+|-----------------|-----------|--------------------|----------|
+| `administrator` | `admin`   | `user`             | `user1`  |
+| `test`          | `user2`   | `test1`            | `user3`  |
+| `admin1`        | `1`       | `123`              | `a`      |
+| `actuser`       | `adm`     | `admin2`           | `aspnet` |
+| `backup`        | `console` | `david`            | `guest`  |
+| `john`          | `owner`   | `root`             | `server` |
+| `sql`           | `support` | `support_388945a0` | `sys`    |
+| `test2`         | `test3`   | `user4`            | `user5`  |
+
 
 ## <a name="what-are-the-password-requirements-when-creating-a-vm"></a>Какие требования к паролю при создании виртуальной машины?
-Длина пароля должна быть от 12 до 123 знаков. Также должны выполняться 3 из следующих 4 требований сложности:
+
+Существуют требования к длине, в зависимости от инструмента, который вы используете различных пароль:
+ - Портал — от 12 до 72 символов
+ - PowerShell — от 8 до 123 символов
+ - Интерфейс командной строки — от 12 до 123
 
 * используются строчные знаки;
 * используются прописные знаки;

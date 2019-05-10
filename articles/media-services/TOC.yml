@@ -6,7 +6,7 @@
 - name: Индексатор видео Служб мультимедиа Azure
   href: video-indexer/
 - name: Проигрыватель мультимедиа Azure
-  href: 'http://amp.azure.net/libs/amp/latest/docs/index.html'
+  href: 'https://amp.azure.net/libs/amp/latest/docs/index.html'
 - name: Ресурсы
   items:
     - name: Стратегия развития Azure

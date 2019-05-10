@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/20/2018
+ms.date: 05/06/2019
 ms.author: terrylan
-ms.openlocfilehash: f59d349da023f9a1b21477a05750d4f8e9aef500
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: b4744201f506730303e190783acc60bfaa383720
+ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65187764"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65409812"
 ---
 # <a name="azure-database-security-best-practices"></a>Рекомендации по обеспечению безопасности базы данных Azure
 В этой статье приводятся рекомендации по безопасности базы данных.

@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 12/27/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 845ca13bdd8e3677f559bac373efa078f3b951be
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 0d0295162acdf358bd798e86bd7d3479f5e78d72
+ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64920379"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65407903"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-topdesk---secure"></a>Руководство по Интеграция Azure Active Directory с TOPdesk — Secure
 
@@ -184,7 +184,7 @@ ms.locfileid: "64920379"
 
     d. Чтобы отправить файл с логотипом, полученный от службы поддержки TOPdesk, напротив пункта **Logo icon** (Значок логотипа) нажмите кнопку **Browse** (Обзор).
 
-    д. В текстовое поле **Атрибут имени пользователя** введите значение `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`.
+    д. В текстовое поле **Атрибут имени пользователя** введите значение `https://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`.
 
     Е. В текстовом поле **Отображаемое имя** введите имя конфигурации.
 

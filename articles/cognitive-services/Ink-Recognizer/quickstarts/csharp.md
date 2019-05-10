@@ -9,12 +9,12 @@ ms.subservice: ink-recognizer
 ms.topic: article
 ms.date: 05/02/2019
 ms.author: aahi
-ms.openlocfilehash: f03593292289cbc093832667505da2738c2b1633
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: 9bb9c23cc1f807cae1d0d22f1652e8f4408f1f91
+ms.sourcegitcommit: 17411cbf03c3fa3602e624e641099196769d718b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65026290"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65518669"
 ---
 # <a name="quickstart-recognize-digital-ink-with-the-ink-recognizer-rest-api-and-c"></a>Краткое руководство. Распознавать рукописный ввод с помощью REST API распознавания рукописного ввода иC#
 
@@ -36,9 +36,9 @@ ms.locfileid: "65026290"
         1. Щелкните правой кнопкой мыши **Solution Manager**
         2. Щелкните **Manage NuGet Packages...**
         3. Поиск `Newtonsoft.Json` и установить пакет
-- Если вы используете Linux и Mac OS, это приложение можно запускать с помощью [Mono](http://www.mono-project.com/).
+- Если вы используете Linux и Mac OS, это приложение можно запускать с помощью [Mono](https://www.mono-project.com/).
 
-- Данные stroke рукописного ввода для примера в этом кратком руководстве можно найти на [GitHub](https://go.microsoft.com/fwlink/?linkid=2089502).
+- Данные stroke рукописного ввода для примера в этом кратком руководстве можно найти на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/dotnet/InkRecognition/quickstart/example-ink-strokes.json).
 
 [!INCLUDE [cognitive-services-ink-recognizer-signup-requirements](../../../../includes/cognitive-services-ink-recognizer-signup-requirements.md)]
 
@@ -158,7 +158,7 @@ public static JObject LoadJson(string fileLocation){
 
 ## <a name="run-the-application-and-view-the-response"></a>Запустите приложение и просмотреть ответ
 
-Запустите приложение. Успешный ответ возвращается в формате JSON. Можно также найти ответ JSON на [GitHub](https://go.microsoft.com/fwlink/?linkid=2089502).
+Запустите приложение. Успешный ответ возвращается в формате JSON. Можно также найти ответ JSON на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/blob/master/dotnet/InkRecognition/quickstart/example-response.json).
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
@@ -167,9 +167,9 @@ public static JObject LoadJson(string fileLocation){
 > [Справочник по REST API](https://go.microsoft.com/fwlink/?linkid=2089907)
 
 
-Чтобы увидеть, как работает API распознавания рукописного ввода в приложении цифрового рукописного ввода, рассмотрим следующие примеры приложений на сайте GitHub:
-* [C#и Platform(UWP) универсальной Windows](https://go.microsoft.com/fwlink/?linkid=2089803)  
-* [C#и Windows Presentation Foundation(WPF)](https://go.microsoft.com/fwlink/?linkid=2089804)
-* [Веб-приложения JavaScript](https://go.microsoft.com/fwlink/?linkid=2089908)       
-* [Мобильное приложение Java и Android](https://go.microsoft.com/fwlink/?linkid=2089906)
-* [Мобильное приложение SWIFT и iOS](https://go.microsoft.com/fwlink/?linkid=2089805)
+Чтобы увидеть, как API Распознавателя рукописного текста работает в приложении для рукописного ввода, взгляните на следующие примеры приложений на GitHub.
+* [C# и универсальная платформа Windows (UWP)](https://go.microsoft.com/fwlink/?linkid=2089803)  
+* [C# и Windows Presentation Foundation (WPF)](https://go.microsoft.com/fwlink/?linkid=2089804)
+* [Приложение браузера Javascript](https://go.microsoft.com/fwlink/?linkid=2089908)       
+* [Мобильное приложение для Java и Android](https://go.microsoft.com/fwlink/?linkid=2089906)
+* [Мобильное приложение для Swift и iOS](https://go.microsoft.com/fwlink/?linkid=2089805)

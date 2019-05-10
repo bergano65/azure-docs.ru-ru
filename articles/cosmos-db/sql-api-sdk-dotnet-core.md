@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.date: 03/22/2018
 ms.author: sngun
-ms.openlocfilehash: bae180e2ceae6fe0768a5f7951c18dc5147870fa
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 4ec9d5e605a2319a04dac4cb52dbe49c77354479
+ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60626831"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65510636"
 ---
 # <a name="azure-cosmos-db-net-core-sdk-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB: заметки о выпуске и материалы по пакету SDK для .NET Core для API-интерфейса SQL
 > [!div class="op_single_selector"]
@@ -50,6 +50,20 @@ ms.locfileid: "60626831"
 * Поддержка потоков.
 * Обновлен класс сервера CosmosResponseMessage. Теперь он возвращает код состояния и выдает исключение только в случае отсутствия ответа.
 
+### <a name="a-name240240"></a><a name="2.4.0"/>2.4.0
+
+* Версия пакета SDK для System.Net.Http соответствует их количеству в пакете NuGet
+* Увеличен размер знаков после запятой для запросов LINQ.
+* Добавлены новые классы CompositePath, CompositePathSortOrder, SpatialSpec, SpatialType и PartitionKeyDefinitionVersion
+* Добавлена TimeToLivePropertyPath к коллекции DocumentCollection
+* Добавлена CompositeIndexes и SpatialIndexes для IndexPolicy
+* Добавлены версии для PartitionKeyDefinition
+* Добавлены None для PartitionKey
+
+### <a name="a-name230230"></a><a name="2.3.0"/>2.3.0
+
+ * Добавлена IdleTcpConnectionTimeout, OpenTcpConnectionTimeout, MaxRequestsPerTcpConnection и MaxTcpConnectionsPerEndpoint для ConnectionPolicy.
+ 
 ### <a name="a-name223223"></a><a name="2.2.3"/>2.2.3
 
 * Усовершенствования диагностики
@@ -237,6 +251,8 @@ ms.locfileid: "60626831"
 
 | Version | Дата выпуска | Дата вывода |
 | --- | --- | --- |
+| [2.4.0](#2.4.0) |05-мая 2019 г. |--- |
+| [2.3.0](#2.3.0) |04 апреля 2019 г. |--- |
 | [2.2.3](#2.2.3) |11 марта 2019 г. |--- |
 | [2.2.2](#2.2.2) |06 февраля 2019 г. |--- |
 | [2.2.1](#2.2.1) |24 декабря 2018 г. |--- |

@@ -2,18 +2,18 @@
 title: Azure Monitor — ноль инструментирования для наблюдения за приложениями для Kubernetes размещенных приложений | Документация Майкрософт
 description: Ноль инструментирования приложений, мониторинг Kubernetes размещенных приложений — это позволяет собирать данные телеметрии Application Insights, относящиеся к входящих и исходящих запросов и из модулями, запущенными в кластере Kubernetes, решения для мониторинга Использование службы из подобных технологий вызывается Istio.
 services: application-insights
-author: rishabjolly
+author: tokaplan
 manager: carmonm
 ms.service: application-insights
 ms.topic: conceptual
 ms.date: 04/25/2019
-ms.author: rijolly
-ms.openlocfilehash: 73f95ab75b49fb8ec5b61f6e30080f8f6d474c16
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
-ms.translationtype: MT
+ms.author: alkaplan
+ms.openlocfilehash: 42b81ec0fa01841791a5b2651d1c1189db5e27ff
+ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65149875"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65408208"
 ---
 # <a name="zero-instrumentation-application-monitoring-for-kubernetes-hosted-apps"></a>Мониторинг приложений ноль инструментирования для Kubernetes приложениями, размещенными в
 
@@ -84,7 +84,7 @@ kubectl label namespace <my-app-namespace> istio-injection=enabled
    kubectl apply -f .
    ```
 
-### <a name="verify-deployment"></a>Проверка развертывания
+### <a name="verify-deployment"></a>Проверить развертывание
 
 - Убедитесь, что адаптер Application Insights будет развернута.
 

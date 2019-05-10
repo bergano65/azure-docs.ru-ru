@@ -1,23 +1,23 @@
 ---
-title: Пакет SDK Go для Azure HDInsight
-description: Справочник по пакету SDK Go для HDInsight
+title: Azure HDInsight пакета SDK для Go
+description: Справочник по Azure HDInsight пакета SDK для Go
 author: tylerfox
 ms.service: hdinsight
 ms.topic: conceptual
-ms.date: 09/21/2018
+ms.date: 05/8/2019
 ms.author: tyfox
 ms.custom: seodec18
-ms.openlocfilehash: 2e5b7816fda89e25dcb0de26f526e5187e0640b9
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 113948d77d87a34822f81f020b03f6628b9c5e84
+ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64700604"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65466223"
 ---
-# <a name="hdinsight-go-management-sdk-preview"></a>Предварительная версия пакета SDK Go для HDInsight
+# <a name="hdinsight-sdk-for-go-preview"></a>HDInsight SDK для Go (Предварительная версия)
 
 ## <a name="overview"></a>Обзор
-Пакет SDK Go для HDInsight предоставляет классы и функции для управления кластерами HDInsight. Пакет также поддерживает операции создания, удаления, обновления, получения списков, масштабирования, выполнения скриптов, мониторинга, получения свойства кластеров HDInsight и т. д.
+Пакет SDK HDInsight для Go предоставляет классы и функции, которые дают возможность управления кластерами HDInsight. Пакет также поддерживает операции создания, удаления, обновления, получения списков, масштабирования, выполнения скриптов, мониторинга, получения свойства кластеров HDInsight и т. д.
 
 > [!NOTE]  
 >Справочные материалы GoDoc для этого пакета SDK также можно найти [здесь](https://godoc.org/github.com/Azure/azure-sdk-for-go/services/preview/hdinsight/mgmt/2018-06-01-preview/hdinsight).
@@ -375,7 +375,7 @@ extClient.GetMonitoringStatus(context.Background(), "<Resource Group Name", "Clu
 extClient.DisableMonitoring(context.Background(), "<Resource Group Name", "Cluster Name")
 ```
 
-## <a name="script-actions"></a>Действия сценария
+## <a name="script-actions"></a>Действия скрипта
 
 В кластерах HDInsight поддерживается функция конфигурации с использованием действий сценариев, которая вызывает пользовательские сценарии настройки кластера.
 

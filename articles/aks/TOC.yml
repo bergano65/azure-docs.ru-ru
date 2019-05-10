@@ -140,6 +140,8 @@
           href: azure-files-dynamic-pv.md
         - name: "Файлы Azure\_— статические"
           href: azure-files-volume.md
+        - name: "Сервер NFS\_— статический"
+          href: azure-nfs-volume.md
     - name: Настройка сети
       items:
         - name: Создание виртуальной сети или использование существующей

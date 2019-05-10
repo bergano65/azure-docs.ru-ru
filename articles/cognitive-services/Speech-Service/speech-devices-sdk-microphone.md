@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: erhopf
-ms.openlocfilehash: c8bc11b8f81fe034ceaa93c7bd8a49771d9407f9
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: 63dd64e900cf68e708032569ca75ac2e8b221491
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65025783"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65237009"
 ---
 # <a name="speech-devices-sdk-microphone-array-recommendations"></a>Рекомендации массива речи "микрофон" пакет SDK для устройств
 
@@ -29,9 +29,11 @@ ms.locfileid: "65025783"
 
 |          | Циклическая массива    |       |  Линейный массива              |                |
 |----------|-------------------|-------------------|----------------|----------------|
-|          |![7 циклическая массив mic](media/speech-devices-sdk/7-mic-c.png)|![4 циклическая массив mic](media/speech-devices-sdk/4-mic-c.png)|![4 линейной массив mic](media/speech-devices-sdk/4-mic-l.png)|![2 линейной массив mic](media/speech-devices-sdk/2-mic-l.png)|
+|          |<img src="media/speech-devices-sdk/7-mic-c.png" alt="7 mic circular array" width="150"/>|<img src="media/speech-devices-sdk/4-mic-c.png" alt="4 mic circular array" width="150"/>|<img src="media/speech-devices-sdk/4-mic-l.png" alt="4 mic linear array" width="150"/>|<img src="media/speech-devices-sdk/2-mic-l.png" alt="2 mic linear array" width="150"/>|
 | \# Микрофона  | 7                 | 4.                 | 4.              | 2              |
 | Геометрия | 6 1 внешний центр, Radius = 42,5 мм, равномерно| 3 1 внешний центр, Radius = 42,5 мм, равномерно | Длина = 120 мм, интервал = 40 мм | Интервал между = 40 мм |
+
+Каналы "микрофон" сортируется в соответствии с нумерации, используемые для каждого выше массива, увеличение от 0.  Аудиокомпонент Microsoft потребует поток Дополнительные справочные воспроизведения аудио выполнить отмену echo.
 
 ## <a name="component-selection"></a>Выбор компонентов
 
@@ -110,4 +112,4 @@ ms.locfileid: "65025783"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> Дополнительные сведения о [Speech SDK устройств](speech-devices-sdk.md)
+> [Дополнительные сведения о пакете SDK устройств речи](speech-devices-sdk.md)

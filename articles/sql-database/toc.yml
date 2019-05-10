@@ -462,6 +462,8 @@
           href: sql-database-managed-instance-create-vnet-subnet.md
         - name: Настройка существующей виртуальной сети и подсети для управляемого экземпляра
           href: sql-database-managed-instance-configure-vnet-subnet.md
+        - name: Удаление подсети после удаления управляемого экземпляра
+          href: sql-database-managed-instance-delete-virtual-cluster.md
         - name: Настройка пользовательской службы DNS
           href: sql-database-managed-instance-custom-dns.md
         - name: Синхронизация конфигурации сети

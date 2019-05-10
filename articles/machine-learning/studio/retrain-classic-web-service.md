@@ -6,16 +6,16 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: studio
 ms.topic: conceptual
-author: peterlu
+author: peterclu
 ms.author: amlstudiodocs
 ms.custom: seodec18, previous-ms.author=yahajiza, previous-author=YasinMSFT
 ms.date: 02/14/2019
-ms.openlocfilehash: fa4448c2a44a3c56548120bd04abf53df9a85ba0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: b636883ee1f08fa0fb6d080b6980cd07553dde1b
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60502435"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65234040"
 ---
 # <a name="retrain-and-deploy-a-classic-studio-web-service"></a>Повторное обучение и развертывание классической веб-службы Студии
 
@@ -53,7 +53,7 @@ ms.locfileid: "60502435"
 
 ### <a name="retrieve-patch-url"></a>Извлечение URL-адреса PATCH
 
-### <a name="option-1-programmatically"></a>Вариант 1. Программным образом
+### <a name="option-1-programmatically"></a>Вариант 1: Программным образом
 
 Чтобы получить правильный URL-адрес PATCH программным образом, выполните перечисленные ниже действия.
 

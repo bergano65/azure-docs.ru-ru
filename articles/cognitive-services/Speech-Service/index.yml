@@ -18,7 +18,19 @@ metadata:
   ms.author: erhopf
   ms.custom: seodec18
 abstract:
-  description: "Узнайте, как использовать службу \"Речь\" и пакет SDK для службы \"Речь\", чтобы добавить речевые функции в свои приложения. Пакет SDK для службы распознавания речи можно использовать для добавления в свои приложения функций <i>преобразования речи в текст</i> (распознавание речи), <i>определения намерений</i>, <i>перевода</i> и <i>преобразования текста в речь</i>. В состав службы \"Речь\" также входят интерфейсы REST\_API, которые работают с любым языком программирования, поддерживающим HTTP-запросы."
+  description: |
+    Узнайте, как использовать службу "Речь" с REST API и пакетом SDK службы "Речь" или без него, чтобы добавлять речевые функции в свои приложения. Пакет SDK службы "Речь"можно использовать для добавления в приложения следующих возможностей (и многого другого)&colon; 
+    <div class="row" style="font-size:16px"><div class="column"><ul>
+    <li><b><a href="speech-to-text.md">Преобразование речи в текст</a></b> (speech-recognition/SR)</li>
+    <li><b><a href="speech-devices-sdk-create-kws.md">Настраиваемое слово для активации</a></b> (keyword-spotter/KWS)</li>
+    <li><b><a href="how-to-recognize-intents-from-speech-csharp.md">Намерения</a></b></li>
+    <li><b><a href="speech-translation.md">Перевод</a></b></li>
+    <li><b><a href="speech-container-howto.md">Локальный контейнер</a></b></li></ul></div><div class="column"><ul>
+    <li><b><a href="text-to-speech.md">Преобразование текста в речь</a></b> (TTS)</li>
+    <li><b><a href="conversation-transcription-service.md">Транскрибирование диалогов</a></b> (CTS)</li>
+    <li><b><a href="how-to-phrase-lists.md">Персонализация списка фраз</a>/<a href="how-to-custom-speech.md">Адаптация Пользовательского распознавания речи</a></b></li>
+    <li><b><a href="voice-first-virtual-assistants.md">Виртуальный помощник по обработке голоса</a></b></li>
+    <li><b><a href="call-center-transcription.md">Транскрибирование звонков в центр обработки вызовов</a></b></li></ul></div></div>
 sections:
   - items:
       - type: list
@@ -44,7 +56,7 @@ sections:
   - title: 5-минутные руководства по началу работы
     items:
       - type: paragraph
-        text: 'Узнайте, как скачать, установить и использовать пакет SDK, щелкнув ссылку в виде стрелки <img src="media/index/link.jpg" height="15" width="15"></img>.'
+        text: 'Узнайте, как скачать, установить и использовать пакет SDK, щелкнув ссылку в виде стрелки <img src="media/index/link.jpg" height="15" width="15"></img>.<br/><br/>Все ссылки со стрелками <img src="media/index/link.jpg" height="15" width="15"></img> по умолчанию указывают на краткое руководство по преобразованию речи в текст. Вы также можете выбрать другие краткие руководства (<a href="scenario-availability.md">если они доступны</a>), например руководство по преобразованию текста в речь или руководство по виртуальному помощнику по обработке голоса.'
       - type: table
         style: dataMatrix
         columns:

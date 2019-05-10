@@ -59,13 +59,13 @@ sections:
       - type: paragraph
         text: 'Используйте эти примеры программ, чтобы увидеть, как API Распознавателя рукописного текста может интегрироваться в ваши приложения.'
       - type: paragraph
-        text: '<a href="https://go.microsoft.com/fwlink/?linkid=2089502">C# и универсальная платформа Windows (UWP)</a>'
+        text: '<a href="https://go.microsoft.com/fwlink/?linkid=2089503">C# и универсальная платформа Windows (UWP)</a>'
       - type: paragraph
         text: '<a href="https://go.microsoft.com/fwlink/?linkid=2089804">C# и Windows Presentation Foundation (WPF)</a>'
       - type: paragraph
         text: '<a href="https://go.microsoft.com/fwlink/?linkid=2089908">Приложение браузера Javascript</a>'
       - type: paragraph
-        text: '<a href="https://go.microsoft.com/fwlink/?linkid=2089906">Мобильное приложение для Java и Android </a>'
+        text: '<a href="https://go.microsoft.com/fwlink/?linkid=2089906">Мобильное приложение для Java и Android</a>'
       - type: paragraph
         text: '<a href="https://go.microsoft.com/fwlink/?linkid=2089805">Мобильное приложение для Swift и iOS</a>'
   - title: Справочные материалы
