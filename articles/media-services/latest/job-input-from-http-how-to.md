@@ -11,16 +11,19 @@ ms.workload: ''
 ms.topic: article
 ms.date: 02/13/2019
 ms.author: juliako
-ms.openlocfilehash: 5e301a671551ee65e8dc56ca6f86e273fe2f6241
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: f6eee912bb3bba112bd13969f1a8d9cb5748e387
+ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60322606"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65413827"
 ---
 # <a name="create-a-job-input-from-an-https-url"></a>Создание входных данных задания из URL-адреса HTTPS
 
 При отправке заданий из Служб мультимедиа версии 3 необходимо указать расположение входного видео. Это можно сделать, указав URL-адрес HTTPS как входные данные задания (как показано в этом примере). Обратите внимание, что в настоящее время AMS версии 3 не поддерживает кодирование блочной передачи по URL-адресам HTTPS. Полный пример см. в этом [репозитории GitHub](https://github.com/Azure-Samples/media-services-v3-dotnet-quickstarts/blob/master/AMSV3Quickstarts/EncodeAndStreamFiles/Program.cs).
+
+> [!TIP]
+> Перед началом разработки, просмотрите [разработка с использованием API-интерфейсы служб мультимедиа v3](media-services-apis-overview.md) (включает в себя сведения о доступе к API-интерфейсы, соглашения об именовании и т. д.)
 
 ## <a name="net-sample"></a>Пример кода .NET
 

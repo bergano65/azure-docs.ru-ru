@@ -10,28 +10,34 @@ ms.subservice: personalizer
 ms.topic: overview
 ms.date: 05/07/2019
 ms.author: edjez
-ms.openlocfilehash: 0cd08e1191c68c57975d3e68648134925155e7f2
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: bce260d2a6b897d3e45b231df4eecd7ecb31ba31
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65025600"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65143246"
 ---
 # <a name="personalizer-settings"></a>Параметры Персонализатора
 
 Конфигурация сервиса включает в себя то, как сервис рассматривает результаты, как часто он исследует, как часто переобучается модель и сколько данных хранится.
 
+## <a name="create-personalizer-resource"></a>Создание ресурса Персонализатора
+
 Создайте ресурс Персонализатора для каждого цикла обратной связи. 
+
+1. Войдите на [портал Azure](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesPersonalizer). Предыдущая ссылка ведет на страницу **Создание** Персонализатора. 
+1. Введите имя службы, выберите подписку, расположение, ценовую категорию и группу ресурсов.
+1. Выберите подтверждение и щелкните **Создать**.
 
 ## <a name="configure-service-settings-in-the-azure-portal"></a>Настройка параметров службы на портале Azure
 
-1. Войдите на [портале Azure](https://portal.azure.com).
+1. Войдите на [портале Azure](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesPersonalizer).
 1. Найдите нужный ресурс Персонализатора. 
 1. В разделе **Управление ресурсами** выберите **Параметры**.
 
-    ![Войдите на портал Azure. Найдите нужный ресурс Персонализатора. В разделе "Управление ресурсами" выберите "Параметры".](media/settings/how-to-configure.png)
+    Прежде чем покидать портал Azure, скопируйте один из ключей ресурсов на странице **Ключи**. Он потребуется для использования [пакета SDK Персонализатора](https://aka.ms/personalizer-dotnet-sdk-docs).
 
-### <a name="reward-settings-for-the-feedback-loop"></a>Параметры результата для цикла обратной связи
+### <a name="configure-reward-settings-for-the-feedback-loop-based-on-use-case"></a>Настройка параметров вознаграждения для цикла обратной связи с учетом варианта использования
 
 Настройте параметры сервиса для использования цикла обратной связи результатов. Изменения следующих настроек приведут к сбросу текущей модели Персонализатора и ее переобучению с помощью данных за последние 2 дня.
 
@@ -81,4 +87,4 @@ ms.locfileid: "65025600"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-[Обучение с подкреплением](concepts-reinforcement-learning.md) 
+[Использование контейнера Персонализатора](https://go.microsoft.com/fwlink/?linkid=2083923&clcid=0x409)

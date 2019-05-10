@@ -11,15 +11,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 10/01/2018
+ms.date: 04/26/2019
 ms.author: celested
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1cbd40f2ab91f854f46dc3e62bccbc8a3264f97f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: bdf19d2001f84fab6978bfc34ef14a361b89edea
+ms.sourcegitcommit: 4891f404c1816ebd247467a12d7789b9a38cee7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60291285"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65441422"
 ---
 # <a name="assign-users-and-groups-to-an-application-in-azure-active-directory"></a>Назначение пользователей и групп для приложения в Azure Active Directory
 В этой статье показано, как назначать пользователей или группы для приложения в Azure Active Directory (Azure AD). Сначала пользователи должны быть назначены для приложения, а затем администратор может предоставить им доступ к следующим действиям.
@@ -31,6 +31,8 @@ ms.locfileid: "60291285"
 -   Выбор приложения на [панели доступа к приложениям](https://myapps.microsoft.com/) или в мобильном приложении.
 
 -   Выбор приложения в [средстве запуска приложений Office 365](https://support.office.com/article/Meet-the-Office-365-app-launcher-79f12104-6fed-442f-96a0-eb089a3f476a).
+
+Доступность назначения на основе группы определяется в лицензионном соглашении. Назначение на основе группы поддерживается только определенным группам безопасности и вложенных группах не поддерживаются.
 
 ## <a name="prerequisites"></a>Технические условия
 Прежде чем назначить пользователей и группы для приложения, необходимо настроить требование назначения пользователей. Для этого выполните следующие шаги.
@@ -44,7 +46,7 @@ ms.locfileid: "60291285"
 7. Установите переключатель **Требуется ли назн. польз.?** в положение "Да".
 8. Нажмите кнопку **Сохранить** в верхней части экрана.
 
-## <a name="assign-users"></a>Назначение пользователей
+## <a name="assign-users"></a>Назначить пользователей
 
 Чтобы напрямую назначить одного или нескольких пользователей для приложения, выполните указанные ниже действия.
 

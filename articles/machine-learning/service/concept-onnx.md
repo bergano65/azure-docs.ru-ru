@@ -11,12 +11,12 @@ ms.author: prasantp
 author: prasanthpul
 ms.date: 04/24/2019
 ms.custom: seodec18
-ms.openlocfilehash: 6bda1af8095e7026c79b7d8ffe45b39f6cbb3508
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: a8bc46011b00a0c63eddd2799ac1309b5754472e
+ms.sourcegitcommit: 4891f404c1816ebd247467a12d7789b9a38cee7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65028700"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65442416"
 ---
 # <a name="onnx-and-azure-machine-learning-create-and-accelerate-ml-models"></a>ONNX и Машинное обучение Azure: Создание и ускорения моделей машинного Обучения
 
@@ -30,7 +30,7 @@ ms.locfileid: "65028700"
 
 Среда выполнения ONNX используется в большом масштабе служб Майкрософт, таких как Bing, Office и Cognitive Services. Выигрыш в производительности зависят от ряда факторов, но уже видели эти службы Microsoft __среднее двукратный прирост производительности на ЦП__. Среда выполнения ONNX также используется как часть Windows ML на сотни миллионов устройств. Можно использовать среду выполнения с помощью служб машинного обучения Azure. С помощью среды выполнения ONNX, преимущества можно получить обширные производственного уровня оптимизации, тестирования и текущих улучшения.
 
-[![ONNX блок-схема обучения, преобразователи типов и развертывания](media/concept-onnx/onnx.png) ](./media/concept-onnx/onnx.png#lightbox)
+[![ONNX блок-схема обучения, преобразователи типов и развертывания](media/concept-onnx/onnx.png)](./media/concept-onnx/onnx.png#lightbox)
 
 ## <a name="get-onnx-models"></a>Получение моделей ONNX
 
@@ -83,7 +83,7 @@ results = session.run([], {"input1": indata1, "input2": indata2})
 
 [!INCLUDE [aml-clone-in-azure-notebook](../../../includes/aml-clone-for-examples.md)]
 
-## <a name="more-info"></a>Подробнее
+## <a name="more-info"></a>Дополнительная информация
 
 Узнайте больше об ONNX или поддержите проект:
 + [Веб-сайт проекта ONNX](https://onnx.ai)

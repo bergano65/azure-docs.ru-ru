@@ -1,21 +1,21 @@
 ---
-title: Подключение к Базе данных Azure для PostgreSQL с помощью PHP
-description: В этом кратком руководстве представлен пример кода PHP, который можно использовать для подключения к базе данных Azure для PostgreSQL и запроса данных из нее.
+title: Подключение к службе "База данных Azure для PostgreSQL — отдельный сервер" с помощью PHP
+description: В этом кратком руководстве представлен пример кода PHP, который можно использовать для подключения к службе "База данных Azure для PostgreSQL — отдельный сервер" и запроса данных из нее.
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.custom: mvc
 ms.devlang: php
 ms.topic: quickstart
-ms.date: 02/28/2018
-ms.openlocfilehash: f07dfabf854cf56e1c3cae87bbd0736839be8039
-ms.sourcegitcommit: 4eeeb520acf8b2419bcc73d8fcc81a075b81663a
+ms.date: 2/28/2018
+ms.openlocfilehash: c6320eabd4d5808e8cfe1d39ec4a72bbbce42f77
+ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53608738"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65067354"
 ---
-# <a name="azure-database-for-postgresql-use-php-to-connect-and-query-data"></a>База данных Azure для PostgreSQL: использование PHP для подключения и создания запросов данных
+# <a name="azure-database-for-postgresql---single-server-use-php-to-connect-and-query-data"></a>База данных Azure для PostgreSQL — отдельный сервер: использование PHP для подключения и создания запросов данных
 В этом кратком руководстве объясняется, как подключиться к базе данных Azure для PostgreSQL с помощью приложения [PHP](https://secure.php.net/manual/intro-whatis.php). Здесь также показано, как использовать инструкции SQL для запроса, вставки, обновления и удаления данных в базе данных. В этой статье предполагается, что у вас уже есть опыт разработки на PHP и вы только начали работу с базой данных Azure для PostgreSQL.
 
 ## <a name="prerequisites"></a>Предварительные требования

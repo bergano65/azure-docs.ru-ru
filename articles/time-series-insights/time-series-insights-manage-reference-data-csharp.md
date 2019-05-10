@@ -10,35 +10,40 @@ ms.reviewer: jasonh, kfile, anshan
 ms.devlang: csharp
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 03/23/2018
+ms.date: 05/02/2019
 ms.custom: seodec18
-ms.openlocfilehash: a9d0743e30c4ae32c052a9f27c9fa22b1036aead
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: a8bd4e02b03a20e348feb2d6c9424f5eb6cf5f9e
+ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64681725"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65510047"
 ---
-# <a name="manage-reference-data-for-an-azure-time-series-insights-environment-by-using-c"></a>Управление эталонными данными для среды Azure Time Series Insights с помощью C#
+# <a name="manage-ga-reference-data-for-an-azure-time-series-insights-environment-by-using-c"></a>Управление эталонными данными общедоступной версии для среды Azure Time Series Insights с помощьюC#
 
 В этой статье описан пример проекта C#, который вы можете компилировать, чтобы управлять эталонными данными для среды службы "Аналитика временных рядов Azure".
 
 ## <a name="prerequisites"></a>Технические условия
+
 Перед компиляцией и запуском примера кода выполните следующие шаги.
+
 1. [Создайте набор эталонных данных](time-series-insights-add-reference-data-set.md).
 
-2. Настройте маркер доступа для приложения. Маркер доступа получен через API Azure Active Directory. Этот маркер должен передаваться в заголовке `Authorization` каждого запроса API запроса. 
- 
+1. Настройте маркер доступа для приложения. Маркер доступа получен через API Azure Active Directory. Этот маркер должен передаваться в заголовке `Authorization` каждого запроса API запроса.
+
    Сведения о том, как настроить неинтерактивные приложения, см. в статье [Проверка подлинности и авторизация для API Azure Time Series Insights](time-series-insights-authentication-and-authorization.md).
 
-3. Измените пример кода, заменив константы, указанные в **#DUMMY#** в начале кода. 
+1. Измените пример кода, заменив константы, указанные в **#DUMMY#** в начале кода.
 
-Этот пример кода также доступен по адресу [https://github.com/Azure-Samples/Azure-Time-Series-Insights](https://github.com/Azure-Samples/Azure-Time-Series-Insights).
+> [!NOTE]
+> Просмотреть код примера общедоступной версии в [ https://github.com/Azure-Samples/Azure-Time-Series-Insights ](https://github.com/Azure-Samples/Azure-Time-Series-Insights/tree/master/csharp-ga-preview-sample).
 
-## <a name="project-references"></a>Ссылки на проект
-Добавьте пакеты NuGet `Microsoft.IdentityModel.Clients.ActiveDirectory` и `Newtonsoft.Json` для этого примера. 
+## <a name="project-dependencies"></a>Зависимости проекта
 
-## <a name="c-sample-code"></a>Пример кода C# 
+Добавьте пакеты NuGet `Microsoft.IdentityModel.Clients.ActiveDirectory` и `Newtonsoft.Json` для этого примера.
+
+## <a name="c-sample-code"></a>Пример кода C#
+
 ```csharp
 // Copyright (c) Microsoft Corporation.  All rights reserved.
 
@@ -134,7 +139,7 @@ namespace TimeSeriesInsightsReferenceDataSampleApp
     ""deleteproperties"": [{
         ""key"": {
             ""DeviceId"": ""Fan1""
-        },
+    },
         ""properties"": [""BladeCount""]
     }]
 }";

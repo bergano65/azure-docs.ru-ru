@@ -9,14 +9,12 @@ manager: cgronlund
 ms.custom: include file
 ms.topic: include
 ms.date: 01/25/2019
-ms.openlocfilehash: d90034e3de77f67ec3a74123c9655fda95b113fe
-ms.sourcegitcommit: a7331d0cc53805a7d3170c4368862cad0d4f3144
+ms.openlocfilehash: ba2c8b01861c0ecbc9adeebfcb184cff1b81e816
+ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/30/2019
-ms.locfileid: "55302221"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "65025106"
 ---
-1. Чтобы создать рабочую область и запустить Записные книжки Azure, выполните действия, описанные в [этом руководстве](../articles/machine-learning/service/quickstart-get-started.md). При необходимости можете пропустить раздел об **использовании записной книжки**.
-1. Если вы выполнили инструкции из [этого руководства](../articles/machine-learning/service/quickstart-get-started.md), снова войдите в службу [Записные книжки Azure](https://notebooks.azure.com/) и откройте проект **Начало работы**.  
-1. Всегда запускайте проект, если для него отображается состояние "Остановлено".
-    ![Запуск проекта](./media/aml-azure-notebooks/start-project.png)
+* Выполните инструкции из [краткого руководства по использованию облачного сервера записных книжек для начала работы с Машинным обучением Azure](../articles/machine-learning/service/quickstart-run-cloud-notebook.md), чтобы создать рабочую область и запустить страницу записной книжки. 
+

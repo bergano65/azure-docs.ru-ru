@@ -9,14 +9,14 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 02/17/2019
+ms.date: 05/07/2019
 ms.author: juliako
-ms.openlocfilehash: 4f8851248c395a1f03c46490c8eb5e71221dd133
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 7b2691f543cf38a56eefb1e8521169aeccbf3221
+ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60733306"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65409282"
 ---
 # <a name="clouds-and-regions-in-which-azure-media-services-v3-exists"></a>Облака и регионы, в которых существуют Службы мультимедиа Azure версии 3
 
@@ -26,19 +26,16 @@ ms.locfileid: "60733306"
 
 | Компонент|Глобальные регионы Azure | Azure Government|Azure для Германии|Azure China 21Vianet|
 | --- | --- | --- | --- | --- |
-| [Azure EventGrid](reacting-to-media-services-events.md) | Доступно | Недоступно | Недоступно | Недоступно |
-| [VideoAnalyzerPreset](analyzing-video-audio-files-concept.md) |  Доступно | Недоступно | Недоступно | Недоступно |
-| [AudioAnalyzerPreset](analyzing-video-audio-files-concept.md) |  Доступно | Недоступно | Недоступно | Недоступно |
-| [StandardEncoderPreset](encoding-concept.md) | Доступно | Доступно | Доступно | Доступно |
-| [LiveEvents](live-streaming-overview.md) | Доступно | Доступно | Доступно | Доступно |
-| [StreamingEndpoints](streaming-endpoint-concept.md) | Доступно | Доступно | Доступно | Доступно |
+| [Azure EventGrid](reacting-to-media-services-events.md) | Доступна | Недоступен | Недоступен | Недоступен |
+| [VideoAnalyzerPreset](analyzing-video-audio-files-concept.md) |  Доступна | Недоступен | Недоступен | Недоступен |
+| [AudioAnalyzerPreset](analyzing-video-audio-files-concept.md) |  Доступна | Недоступен | Недоступен | Недоступен |
+| [StandardEncoderPreset](encoding-concept.md) | Доступна | Доступна | Доступна | Доступна |
+| [LiveEvents](live-streaming-overview.md) | Доступна | Доступна | Доступна | Доступна |
+| [StreamingEndpoints](streaming-endpoint-concept.md) | Доступна | Доступна | Доступна | Доступна |
 
 ## <a name="regionsgeographieslocations"></a>Регионы, географические регионы или расположения
 
-* [Регионы Azure](https://azure.microsoft.com/global-infrastructure/regions/)
-* [Продукты по регионам](https://azure.microsoft.com/global-infrastructure/services/)
-* [Географические регионы Azure](https://azure.microsoft.com/global-infrastructure/geographies/)
-* [Расположения Azure](https://azure.microsoft.com/global-infrastructure/locations/)
+[Регионы, в которых развертывается служба служб мультимедиа Azure](https://azure.microsoft.com/global-infrastructure/services/?products=media-services)
 
 ### <a name="region-code-name"></a>Кодовое имя региона 
 
@@ -98,6 +95,12 @@ az account list-locations
 | Azure Resource Manager | `https://management.chinacloudapi.cn/` |
 | Authentication | `https://login.chinacloudapi.cn/` |
 | Аудитория токена |  `https://management.core.chinacloudapi.cn/` |
+
+## <a name="see-also"></a>См. также
+
+* [Регионы Azure](https://azure.microsoft.com/global-infrastructure/regions/)
+* [Географические регионы Azure](https://azure.microsoft.com/global-infrastructure/geographies/)
+* [Расположения Azure](https://azure.microsoft.com/global-infrastructure/locations/)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

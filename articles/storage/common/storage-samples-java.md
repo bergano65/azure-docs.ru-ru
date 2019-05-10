@@ -6,16 +6,15 @@ author: mhopkins-msft
 ms.service: storage
 ms.devlang: java
 ms.topic: article
-ms.date: 01/12/2017
+ms.date: 05/03/2019
 ms.author: mhopkins
-ms.reviewer: seguler
 ms.subservice: common
-ms.openlocfilehash: ae734215a7a8efe10f33cfbc338d09071d603232
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 3d241f1905244d3a8039372262f84ba0fd25220d
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/06/2019
-ms.locfileid: "65150004"
+ms.locfileid: "65209774"
 ---
 # <a name="azure-storage-samples-using-java"></a>Примеры для службы хранилища Azure с использованием Java
 
@@ -23,172 +22,172 @@ ms.locfileid: "65150004"
 
 В таблице ниже приведен обзор репозитория примеров и сценарии, описанные в каждом примере. Щелкните ссылки для просмотра соответствующего примера кода на сайте GitHub.
 
-<table style="font-size:90%"><thead><tr><th style="font-size:110%">Конечная точка</th><th style="font-size:110%">Сценарий</th><th style="font-size:110%">Пример кода</th></tr></thead><tbody> 
-<tr> 
+<table style="font-size:90%"><thead><tr><th style="font-size:110%">Конечная точка</th><th style="font-size:110%">Сценарий</th><th style="font-size:110%">Пример кода</th></tr></thead><tbody>
+<tr>
 <td rowspan="16"><b>Большой двоичный объект</b></td>
-<td>Добавление больших двоичных объектов</td> 
-<td><a href="https://github.com/Azure-Samples/storage-blob-java-getting-started/blob/master/src/BlobBasics.java">Getting Started with Azure Blob Service in Java</a> (Приступая к работе со службой BLOB-объектов Azure на языке Java)</td> 
-</tr> 
-<tr> 
+<td>Добавить BLOB-объект</td>
+<td><a href="https://github.com/Azure-Samples/storage-blob-java-getting-started/blob/master/src/BlobBasics.java">Getting Started with Azure Blob Service in Java</a> (Приступая к работе со службой BLOB-объектов Azure на языке Java)</td>
+</tr>
+<tr>
 <td>Блочный BLOB-объект</td>
 <td><a href="https://github.com/Azure-Samples/storage-blob-java-getting-started/blob/master/src/BlobBasics.java">Getting Started with Azure Blob Service in Java</a> (Приступая к работе со службой BLOB-объектов Azure на языке Java)</td>
-</tr> 
-<tr> 
+</tr>
+<tr>
 <td>Шифрование на стороне клиента</td>
 <td><a href="https://github.com/Azure-Samples/storage-java-client-side-encryption">Приступая к работе с шифрованием на стороне клиента Azure в Java</a></td>
-</tr> 
-<tr> 
+</tr>
+<tr>
 <td>Копирование BLOB-объекта</td>
 <td><a href="https://github.com/Azure-Samples/storage-blob-java-getting-started/blob/master/src/BlobBasics.java">Getting Started with Azure Blob Service in Java</a> (Приступая к работе со службой BLOB-объектов Azure на языке Java)</td>
-</tr> 
-<tr> 
+</tr>
+<tr>
 <td>Create Container (Создание контейнера)</td>
 <td><a href="https://github.com/Azure-Samples/storage-blob-java-getting-started/blob/master/src/BlobBasics.java">Getting Started with Azure Blob Service in Java</a> (Приступая к работе со службой BLOB-объектов Azure на языке Java)</td>
-</tr> 
-<tr> 
+</tr>
+<tr>
 <td>Delete BLOB (Удаление BLOB-объекта)</td>
 <td><a href="https://github.com/Azure-Samples/storage-blob-java-getting-started/blob/master/src/BlobBasics.java">Getting Started with Azure Blob Service in Java</a> (Приступая к работе со службой BLOB-объектов Azure на языке Java)</td>
-</tr> 
-<tr> 
+</tr>
+<tr>
 <td>Delete Container (Удаление контейнера)</td>
 <td><a href="https://github.com/Azure-Samples/storage-blob-java-getting-started/blob/master/src/BlobBasics.java">Getting Started with Azure Blob Service in Java</a> (Приступая к работе со службой BLOB-объектов Azure на языке Java)</td>
-</tr> 
-<tr> 
+</tr>
+<tr>
 <td>Метаданные, свойства и статистика больших двоичных объектов</td>
 <td><a href="https://github.com/Azure-Samples/storage-blob-java-getting-started/blob/master/src/BlobAdvanced.java">Getting Started with Azure Blob Service in Java</a> (Приступая к работе со службой BLOB-объектов Azure на языке Java)</td>
-</tr> 
-<tr> 
+</tr>
+<tr>
 <td>ACL, метаданные и свойства контейнера</td>
 <td><a href="https://github.com/Azure-Samples/storage-blob-java-getting-started/blob/master/src/BlobAdvanced.java">Getting Started with Azure Blob Service in Java</a> (Приступая к работе со службой BLOB-объектов Azure на языке Java)</td>
-</tr> 
-<tr> 
+</tr>
+<tr>
 <td>Get Page Ranges (Получение диапазона страницы)</td>
-<td><a href="https://github.com/Azure/azure-storage-java/blob/master/microsoft-azure-storage-test/src/com/microsoft/azure/storage/blob/CloudPageBlobTests.java">Пример тестов страничного BLOB-объекта</a></td>
-</tr> 
-<tr> 
+<td><a href="https://github.com/Azure-Samples/storage-blob-java-getting-started/blob/master/src/BlobBasics.java#L399">Getting Started with Azure Blob Service in Java</a> (Приступая к работе со службой BLOB-объектов Azure на языке Java)</td>
+</tr>
+<tr>
 <td>Аренда большого двоичного объекта и контейнера</td>
 <td><a href="https://github.com/Azure-Samples/storage-blob-java-getting-started/blob/master/src/BlobBasics.java">Getting Started with Azure Blob Service in Java</a> (Приступая к работе со службой BLOB-объектов Azure на языке Java)</td>
-</tr> 
-<tr> 
+</tr>
+<tr>
 <td>Список больших двоичных объектов и контейнеров</td>
 <td><a href="https://github.com/Azure-Samples/storage-blob-java-getting-started/blob/master/src/BlobBasics.java">Getting Started with Azure Blob Service in Java</a> (Приступая к работе со службой BLOB-объектов Azure на языке Java)</td>
-</tr> 
-<tr> 
+</tr>
+<tr>
 <td>Страничный BLOB-объект</td>
 <td><a href="https://github.com/Azure-Samples/storage-blob-java-getting-started/blob/master/src/BlobBasics.java">Getting Started with Azure Blob Service in Java</a> (Приступая к работе со службой BLOB-объектов Azure на языке Java)</td>
 </tr>
-<tr> 
+<tr>
 <td>SAS</td>
 <td><a href="https://github.com/Azure/azure-storage-java/blob/89540f018f1160ce55619c6fe7b5f5ff57d0ce10/src/test/java/com/microsoft/azure/storage/Samples.java#L513">Пример тестов SAS</a></td>
 </tr>   
-<tr> 
+<tr>
 <td>Свойства службы</td>
 <td><a href="https://github.com/Azure-Samples/storage-blob-java-getting-started/blob/master/src/BlobAdvanced.java">Getting Started with Azure Blob Service in Java</a> (Приступая к работе со службой BLOB-объектов Azure на языке Java)</td>
-</tr>           
-<tr> 
+</tr>
+<tr>
 <td>Создание моментального снимка большого двоичного объекта</td>
 <td><a href="https://github.com/Azure-Samples/storage-blob-java-getting-started/blob/master/src/BlobBasics.java">Getting Started with Azure Blob Service in Java</a> (Приступая к работе со службой BLOB-объектов Azure на языке Java)</td>
-</tr> 
-<tr> 
+</tr>
+<tr>
 <td rowspan="9"><b>File</b></td>
-<td>Создание общих папок, каталогов и файлов</td> 
-<td><a href="https://github.com/Azure-Samples/storage-file-java-getting-started/blob/master/src/FileBasics.java">Getting Started with Azure File Service in Java</a> (Приступая к работе с файловой службой Azure на языке Java)</td> 
+<td>Создание общих папок, каталогов и файлов</td>
+<td><a href="https://github.com/Azure-Samples/storage-file-java-getting-started/blob/master/src/FileBasics.java">Getting Started with Azure File Service in Java</a> (Приступая к работе с файловой службой Azure на языке Java)</td>
 </tr>
-<tr> 
-<td>Удаление общих папок, каталогов и файлов</td> 
-<td><a href="https://github.com/Azure-Samples/storage-file-java-getting-started/blob/master/src/FileBasics.java">Getting Started with Azure File Service in Java</a> (Приступая к работе с файловой службой Azure на языке Java)</td> 
-</tr> 
-<tr> 
-<td>Метаданные и свойства каталога</td> 
-<td><a href="https://github.com/Azure-Samples/storage-file-java-getting-started/blob/master/src/FileAdvanced.java">Getting Started with Azure File Service in Java</a> (Приступая к работе с файловой службой Azure на языке Java)</td> 
-</tr> 
-<tr> 
-<td>Скачивание файлов</td> 
-<td><a href="https://github.com/Azure-Samples/storage-file-java-getting-started/blob/master/src/FileBasics.java">Getting Started with Azure File Service in Java</a> (Приступая к работе с файловой службой Azure на языке Java)</td> 
-</tr> 
-<tr> 
-<td>Метрики, метаданные и свойства файла</td> 
-<td><a href="https://github.com/Azure-Samples/storage-file-java-getting-started/blob/master/src/FileAdvanced.java">Getting Started with Azure File Service in Java</a> (Приступая к работе с файловой службой Azure на языке Java)</td> 
-</tr> 
-<tr> 
-<td>Свойства службы файлов</td> 
-<td><a href="https://github.com/Azure-Samples/storage-file-java-getting-started/blob/master/src/FileAdvanced.java">Getting Started with Azure File Service in Java</a> (Приступая к работе с файловой службой Azure на языке Java)</td> 
-</tr> 
-<tr> 
-<td>Список каталогов и файлов</td> 
-<td><a href="https://github.com/Azure-Samples/storage-file-java-getting-started/blob/master/src/FileBasics.java">Getting Started with Azure File Service in Java</a> (Приступая к работе с файловой службой Azure на языке Java)</td> 
+<tr>
+<td>Удаление общих папок, каталогов и файлов</td>
+<td><a href="https://github.com/Azure-Samples/storage-file-java-getting-started/blob/master/src/FileBasics.java">Getting Started with Azure File Service in Java</a> (Приступая к работе с файловой службой Azure на языке Java)</td>
 </tr>
-<tr> 
-<td>Список общих папок</td> 
-<td><a href="https://github.com/Azure-Samples/storage-file-java-getting-started/blob/master/src/FileBasics.java">Getting Started with Azure File Service in Java</a> (Приступая к работе с файловой службой Azure на языке Java)</td> 
+<tr>
+<td>Метаданные и свойства каталога</td>
+<td><a href="https://github.com/Azure-Samples/storage-file-java-getting-started/blob/master/src/FileAdvanced.java">Getting Started with Azure File Service in Java</a> (Приступая к работе с файловой службой Azure на языке Java)</td>
 </tr>
-<tr> 
-<td>Статистика, метаданные и свойства общей папки</td> 
-<td><a href="https://github.com/Azure-Samples/storage-file-java-getting-started/blob/master/src/FileAdvanced.java">Getting Started with Azure File Service in Java</a> (Приступая к работе с файловой службой Azure на языке Java)</td> 
+<tr>
+<td>Скачивание файлов</td>
+<td><a href="https://github.com/Azure-Samples/storage-file-java-getting-started/blob/master/src/FileBasics.java">Getting Started with Azure File Service in Java</a> (Приступая к работе с файловой службой Azure на языке Java)</td>
 </tr>
-<tr> 
+<tr>
+<td>Метрики, метаданные и свойства файла</td>
+<td><a href="https://github.com/Azure-Samples/storage-file-java-getting-started/blob/master/src/FileAdvanced.java">Getting Started with Azure File Service in Java</a> (Приступая к работе с файловой службой Azure на языке Java)</td>
+</tr>
+<tr>
+<td>Свойства службы файлов</td>
+<td><a href="https://github.com/Azure-Samples/storage-file-java-getting-started/blob/master/src/FileAdvanced.java">Getting Started with Azure File Service in Java</a> (Приступая к работе с файловой службой Azure на языке Java)</td>
+</tr>
+<tr>
+<td>Список каталогов и файлов</td>
+<td><a href="https://github.com/Azure-Samples/storage-file-java-getting-started/blob/master/src/FileBasics.java">Getting Started with Azure File Service in Java</a> (Приступая к работе с файловой службой Azure на языке Java)</td>
+</tr>
+<tr>
+<td>Список общих папок</td>
+<td><a href="https://github.com/Azure-Samples/storage-file-java-getting-started/blob/master/src/FileBasics.java">Getting Started with Azure File Service in Java</a> (Приступая к работе с файловой службой Azure на языке Java)</td>
+</tr>
+<tr>
+<td>Статистика, метаданные и свойства общей папки</td>
+<td><a href="https://github.com/Azure-Samples/storage-file-java-getting-started/blob/master/src/FileAdvanced.java">Getting Started with Azure File Service in Java</a> (Приступая к работе с файловой службой Azure на языке Java)</td>
+</tr>
+<tr>
 <td rowspan="8"><b>Очередь</b></td>
-<td>Добавление сообщения</td> 
-<td><a href="https://github.com/Azure/azure-storage-java/blob/master/microsoft-azure-storage-samples/src/com/microsoft/azure/storage/queue/gettingstarted/QueueBasics.java">Примеры для клиентской библиотеки хранилища Azure для Java</a></td> 
-</tr> 
-<tr> 
-<td>Шифрование на стороне клиента</td> 
-<td><a href="https://github.com/Azure/azure-storage-java/blob/master/microsoft-azure-storage-samples/src/com/microsoft/azure/storage/encryption/queue/gettingstarted/QueueGettingStarted.java">Примеры для клиентской библиотеки хранилища Azure для Java</a></td> 
-</tr> 
-<tr> 
-<td>Создание очередей</td> 
-<td><a href="https://github.com/Azure-Samples/storage-queue-java-getting-started/blob/master/src/QueueBasics.java">Getting Started with Azure Queue Service in Java</a> (Приступая к работе со службой очередей Azure на языке Java)</td> 
-</tr> 
-<tr> 
-<td>Удаление сообщения и очереди</td> 
-<td><a href="https://github.com/Azure-Samples/storage-queue-java-getting-started/blob/master/src/QueueBasics.java">Getting Started with Azure Queue Service in Java</a> (Приступая к работе со службой очередей Azure на языке Java)</td> 
-</tr> 
-<tr> 
-<td>Просмотр сообщения</td> 
-<td><a href="https://github.com/Azure-Samples/storage-queue-java-getting-started/blob/master/src/QueueBasics.java">Getting Started with Azure Queue Service in Java</a> (Приступая к работе со службой очередей Azure на языке Java)</td> 
-</tr> 
-<tr> 
-<td>ACL, метаданные и статистика очереди</td> 
-<td><a href="https://github.com/Azure-Samples/storage-queue-java-getting-started/blob/master/src/QueueAdvanced.java">Getting Started with Azure Queue Service in Java</a> (Приступая к работе со службой очередей Azure на языке Java)</td> 
-</tr> 
-<tr> 
-<td>Свойства службы очередей</td> 
-<td><a href="https://github.com/Azure-Samples/storage-queue-java-getting-started/blob/master/src/QueueAdvanced.java">Getting Started with Azure Queue Service in Java</a> (Приступая к работе со службой очередей Azure на языке Java)</td> 
-</tr> 
-<tr> 
-<td>Сообщение об обновлении</td> 
-<td><a href="https://github.com/Azure-Samples/storage-queue-java-getting-started/blob/master/src/QueueBasics.java">Getting Started with Azure Queue Service in Java</a> (Приступая к работе со службой очередей Azure на языке Java)</td> 
-</tr> 
-<tr> 
+<td>Добавление сообщения</td>
+<td><a href="https://github.com/Azure-Samples/storage-queue-java-getting-started/blob/master/src/QueueBasics.java#L63">Getting Started with Azure Queue Service in Java</a> (Приступая к работе со службой очередей Azure на языке Java)</td>
+</tr>
+<tr>
+<td>Шифрование на стороне клиента</td>
+<td><a href="https://github.com/Azure-Samples/storage-java-client-side-encryption/blob/master/src/gettingstarted/KeyVaultGettingStarted.java">Приступая к работе с шифрованием на стороне клиента Azure в Java</a></td>
+</tr>
+<tr>
+<td>Создание очередей</td>
+<td><a href="https://github.com/Azure-Samples/storage-queue-java-getting-started/blob/master/src/QueueBasics.java">Getting Started with Azure Queue Service in Java</a> (Приступая к работе со службой очередей Azure на языке Java)</td>
+</tr>
+<tr>
+<td>Удаление сообщения и очереди</td>
+<td><a href="https://github.com/Azure-Samples/storage-queue-java-getting-started/blob/master/src/QueueBasics.java">Getting Started with Azure Queue Service in Java</a> (Приступая к работе со службой очередей Azure на языке Java)</td>
+</tr>
+<tr>
+<td>Просмотр сообщения</td>
+<td><a href="https://github.com/Azure-Samples/storage-queue-java-getting-started/blob/master/src/QueueBasics.java">Getting Started with Azure Queue Service in Java</a> (Приступая к работе со службой очередей Azure на языке Java)</td>
+</tr>
+<tr>
+<td>ACL, метаданные и статистика очереди</td>
+<td><a href="https://github.com/Azure-Samples/storage-queue-java-getting-started/blob/master/src/QueueAdvanced.java">Getting Started with Azure Queue Service in Java</a> (Приступая к работе со службой очередей Azure на языке Java)</td>
+</tr>
+<tr>
+<td>Свойства службы очередей</td>
+<td><a href="https://github.com/Azure-Samples/storage-queue-java-getting-started/blob/master/src/QueueAdvanced.java">Getting Started with Azure Queue Service in Java</a> (Приступая к работе со службой очередей Azure на языке Java)</td>
+</tr>
+<tr>
+<td>Сообщение об обновлении</td>
+<td><a href="https://github.com/Azure-Samples/storage-queue-java-getting-started/blob/master/src/QueueBasics.java">Getting Started with Azure Queue Service in Java</a> (Приступая к работе со службой очередей Azure на языке Java)</td>
+</tr>
+<tr>
 <td rowspan="7"><b>Таблица</b></td>
-<td>Создание таблицы</td> 
-<td><a href="https://github.com/Azure-Samples/storage-table-java-getting-started/blob/master/src/main/java/com/microsoft/azure/cosmosdb/tablesample/TableBasics.java">Getting Started with Azure Table Service in Java</a> (Приступая к работе со службой таблиц Azure на языке Java)</td> 
-</tr> 
-<tr> 
-<td>Удаление сущности или таблицы</td> 
-<td><a href="https://github.com/Azure-Samples/storage-table-java-getting-started/blob/master/src/main/java/com/microsoft/azure/cosmosdb/tablesample/TableBasics.java">Getting Started with Azure Table Service in Java</a> (Приступая к работе со службой таблиц Azure на языке Java)</td> 
-</tr> 
-<tr> 
-<td>Вставка, слияние или замена сущностей</td> 
-<td><a href="https://github.com/Azure-Samples/storage-table-java-getting-started/blob/master/src/main/java/com/microsoft/azure/cosmosdb/tablesample/TableBasics.java">Getting Started with Azure Table Service in Java</a> (Приступая к работе со службой таблиц Azure на языке Java)</td> 
-</tr> 
-<tr> 
-<td>Query Entities (Сущности запроса)</td> 
-<td><a href="https://github.com/Azure-Samples/storage-table-java-getting-started/blob/master/src/main/java/com/microsoft/azure/cosmosdb/tablesample/TableBasics.java">Getting Started with Azure Table Service in Java</a> (Приступая к работе со службой таблиц Azure на языке Java)</td> 
-</tr> 
-<tr> 
-<td>Запросы к таблицам</td> 
-<td><a href="https://github.com/Azure-Samples/storage-table-java-getting-started/blob/master/src/main/java/com/microsoft/azure/cosmosdb/tablesample/TableBasics.java">Getting Started with Azure Table Service in Java</a> (Приступая к работе со службой таблиц Azure на языке Java)</td> 
-</tr> 
-<tr> 
-<td>Свойства и ACL таблицы</td> 
-<td><a href="https://github.com/Azure-Samples/storage-table-java-getting-started/blob/master/src/main/java/com/microsoft/azure/cosmosdb/tablesample/TableAdvanced.java">Getting Started with Azure Table Service in Java</a> (Приступая к работе со службой таблиц Azure на языке Java)</td> 
-</tr> 
-<tr> 
-<td>Update Entity (Обновление сущности)</td> 
-<td><a href="https://github.com/Azure-Samples/storage-table-java-getting-started/blob/master/src/main/java/com/microsoft/azure/cosmosdb/tablesample/TableBasics.java">Getting Started with Azure Table Service in Java</a> (Приступая к работе со службой таблиц Azure на языке Java)</td> 
-</tr> 
-</tbody> 
+<td>Создать таблицу</td>
+<td><a href="https://github.com/Azure-Samples/storage-table-java-getting-started/blob/master/src/main/java/com/microsoft/azure/cosmosdb/tablesample/TableBasics.java">Getting Started with Azure Table Service in Java</a> (Приступая к работе со службой таблиц Azure на языке Java)</td>
+</tr>
+<tr>
+<td>Удаление сущности или таблицы</td>
+<td><a href="https://github.com/Azure-Samples/storage-table-java-getting-started/blob/master/src/main/java/com/microsoft/azure/cosmosdb/tablesample/TableBasics.java">Getting Started with Azure Table Service in Java</a> (Приступая к работе со службой таблиц Azure на языке Java)</td>
+</tr>
+<tr>
+<td>Вставка, слияние или замена сущностей</td>
+<td><a href="https://github.com/Azure-Samples/storage-table-java-getting-started/blob/master/src/main/java/com/microsoft/azure/cosmosdb/tablesample/TableBasics.java">Getting Started with Azure Table Service in Java</a> (Приступая к работе со службой таблиц Azure на языке Java)</td>
+</tr>
+<tr>
+<td>Query Entities (Сущности запроса)</td>
+<td><a href="https://github.com/Azure-Samples/storage-table-java-getting-started/blob/master/src/main/java/com/microsoft/azure/cosmosdb/tablesample/TableBasics.java">Getting Started with Azure Table Service in Java</a> (Приступая к работе со службой таблиц Azure на языке Java)</td>
+</tr>
+<tr>
+<td>Запросы к таблицам</td>
+<td><a href="https://github.com/Azure-Samples/storage-table-java-getting-started/blob/master/src/main/java/com/microsoft/azure/cosmosdb/tablesample/TableBasics.java">Getting Started with Azure Table Service in Java</a> (Приступая к работе со службой таблиц Azure на языке Java)</td>
+</tr>
+<tr>
+<td>Свойства и ACL таблицы</td>
+<td><a href="https://github.com/Azure-Samples/storage-table-java-getting-started/blob/master/src/main/java/com/microsoft/azure/cosmosdb/tablesample/TableAdvanced.java">Getting Started with Azure Table Service in Java</a> (Приступая к работе со службой таблиц Azure на языке Java)</td>
+</tr>
+<tr>
+<td>Update Entity (Обновление сущности)</td>
+<td><a href="https://github.com/Azure-Samples/storage-table-java-getting-started/blob/master/src/main/java/com/microsoft/azure/cosmosdb/tablesample/TableBasics.java">Getting Started with Azure Table Service in Java</a> (Приступая к работе со службой таблиц Azure на языке Java)</td>
+</tr>
+</tbody>
 </table>
 <br/>
 

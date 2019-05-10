@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: billing
 ms.date: 6/13/2018
 ms.author: erikre
-ms.openlocfilehash: 0d2b0f2d3fad318ac0152d92fe92614d8dadda1e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: cb7a13d9abcf7c677d51f03df002ea06b543014e
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60615880"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65232482"
 ---
 # <a name="automation-scenarios-for-billing-and-cost-management"></a>Сценарии автоматизации для выставления счетов и управления затратами
 
@@ -46,7 +46,7 @@ API-интерфейсы выставления счетов и управлен
 
 |         API        | Сверка счетов    | Взаимозачет    | Оптимизация затрат    | Отслеживание расходов.    | Затраты за полмесяца    | Оповещения    |
 |:---------------------------:|:-------------------------:|:----------------:|:--------------------:|:----------------:|:------------------:|:---------:|
-| Расходы                     |                           |                  |           X          |                  |                    |     X     |
+| Бюджеты                     |                           |                  |           X          |                  |                    |     X     |
 | сведения о расходах на Marketplace;                |             X             |         X        |           X          |         X        |          X         |     X     |
 | Прейскурант                 |             X             |         X        |           X          |         X        |          X         |           |
 | рекомендации по резервированию; |                           |                  |           X          |                  |                    |           |
@@ -85,9 +85,9 @@ API-интерфейсы выставления счетов и управлен
 -   [API неоплачиваемого потребления](/previous-versions/azure/reference/mt219003(v=azure.100)). Этот API позволяет получить необработанные сведения о потреблении перед применением алгоритмов Azure для оценки и выставления счетов.
 
 ### <a name="billing"></a>Выставление счетов
--   [API расчетных периодов](https://docs.microsoft.com/rest/api/billing/billingperiods). Используйте этот API, чтобы определить период выставления счетов, который нужно проанализировать, а также идентификаторы счетов за этот период. Идентификаторы счетов можно использовать с API счетов.
+-   [API расчетных периодов](https://docs.microsoft.com/rest/api/billing/enterprise/billing-enterprise-api-billing-periods). Используйте этот API, чтобы определить период выставления счетов, который нужно проанализировать, а также идентификаторы счетов за этот период. Идентификаторы счетов можно использовать с API счетов.
 
--   [API счетов](https://docs.microsoft.com/rest/api/billing/invoices). Используйте этот API, чтобы получить URL-адрес, по которому можно скачать отчет в формате PDF за указанный расчетный период.
+-   [API счетов](https://docs.microsoft.com/rest/api/billing/2018-11-01-preview/invoices). Используйте этот API, чтобы получить URL-адрес, по которому можно скачать отчет в формате PDF за указанный расчетный период.
 
 ### <a name="enterprise-consumption"></a>Потребление организации
 Следующие API предназначены только для клиентов Enterprise:
@@ -126,7 +126,7 @@ API-интерфейсы выставления счетов и управлен
 ### <a name="whats-the-difference-between-the-invoice-api-and-the-usage-details-api"></a>Каковы отличия между API счетов и API сведений о потреблении?
 Эти API обеспечивают различное представление тех же данных.
 
-- [API счетов](https://docs.microsoft.com/rest/api/billing/invoices) предназначен только для клиентов Web Direct. Он предоставляет ежемесячный сводный счет на основе совокупных затрат для каждого типа показателя. 
+- [API счетов](https://docs.microsoft.com/rest/api/billing/2018-11-01-preview/invoices) предназначен только для клиентов Web Direct. Он предоставляет ежемесячный сводный счет на основе совокупных затрат для каждого типа показателя. 
 
 - [API сведений об использовании](https://docs.microsoft.com/rest/api/consumption/usagedetails) предоставляет подробное представление записей об использовании или затратах за каждый день. Его могут использовать как клиенты Enterprise, так и клиенты Web Direct.
 

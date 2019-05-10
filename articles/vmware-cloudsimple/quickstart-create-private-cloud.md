@@ -8,12 +8,12 @@ ms.topic: article
 ms.service: vmware
 ms.reviewer: cynthn
 manager: dikamath
-ms.openlocfilehash: efeadd2e1600e5ee572c4a69dde0ff4c53a13cd7
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: e1fc7809ad94d589483b87c638d027a39098164e
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "64577665"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65209536"
 ---
 # <a name="quickstart---configure-a-private-cloud-environment"></a>Краткое руководство. Настройка среды с частным облаком
 
@@ -64,7 +64,7 @@ ms.locfileid: "64577665"
 
 VPN-подключения между сайтами — это самый простой способ подключения к частным облаком с вашего компьютера. Используйте VPN-подключение между сайтами, если вы подключаетесь к частному облаку, удаленно.  Для быстрого доступа к частным облаком выполните следующие действия.  Доступ к области CloudSimple из вашей локальной сети можно сделать с помощью [сеть-сеть VPN](https://docs.azure.cloudsimple.com/vpn-gateway/) или [Azure ExpressRoute](https://docs.azure.cloudsimple.com/on-premises-connection/).
 
-### <a name="create-gateway"></a>Создание шлюза
+### <a name="create-gateway"></a>Создать шлюз
 
 1. Запустите CloudSimple портала и выберите **сети**.
 2. Выберите **VPN-шлюз**.
@@ -104,7 +104,7 @@ VPN-клиента необходим для подключения к CloudSimp
 4. Выберите **Пользователи**.
 5. Щелкните **загрузки моей конфигурации VPN**
 
-    ![Загрузка конфигурации VPN](media/download-p2s-vpn-configuration.png)
+    ![Скачать конфигурацию VPN](media/download-p2s-vpn-configuration.png)
 
 6. Импорт конфигурации на VPN-клиента
 
@@ -135,7 +135,7 @@ VPN-клиента необходим для подключения к CloudSimp
 
 ## <a name="connect-your-environment-to-an-azure-virtual-network"></a>Подключить среду виртуальной сети Azure
 
-CloudSimple предоставляет канал ExpressRoute для частного облака. Виртуальной сети в Azure можно подключиться к каналу ExpressRoute. Дополнительные сведения о настройке подключения выполните действия, описанные в [Azure виртуальной сети с помощью ExpressRoute](https://docs.azure.cloudsimple.com/azure-er-connection)
+CloudSimple предоставляет канал ExpressRoute для частного облака. Виртуальной сети в Azure можно подключиться к каналу ExpressRoute. Дополнительные сведения о настройке подключения выполните действия, описанные в [Azure виртуальной сети с помощью ExpressRoute](https://docs.azure.cloudsimple.com/cloudsimple-azure-network-connection/)
 
 ## <a name="sign-in-to-vcenter"></a>Войдите на сервер vCenter
 

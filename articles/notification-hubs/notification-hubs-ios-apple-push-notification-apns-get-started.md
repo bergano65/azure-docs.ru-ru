@@ -16,14 +16,14 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 01/04/2019
 ms.author: jowargo
-ms.openlocfilehash: 520d01327b5809d453bb777165899770ea4c130b
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 2793f64528baa2b9a84c671fc73bbe399e2387ea
+ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57885039"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65411614"
 ---
-# <a name="tutorial-push-notifications-to-ios-apps-using-azure-notification-hubs"></a>Руководство. Отправка push-уведомлений в приложения iOS с помощью Центров уведомлений Azure
+# <a name="tutorial-push-notifications-to-ios-apps-using-azure-notification-hubs"></a>Руководство по Отправка push-уведомлений в приложения iOS с помощью Центров уведомлений Azure
 
 [!INCLUDE [notification-hubs-selector-get-started](../../includes/notification-hubs-selector-get-started.md)]
 
@@ -40,7 +40,7 @@ ms.locfileid: "57885039"
 > * Отправка тестовых push-уведомлений
 > * проверка получения уведомлений приложением.
 
-Полный код для этого учебника можно найти на портале [GitHub](https://github.com/Azure/azure-notificationhubs-samples/tree/master/iOS/GetStartedNH/GetStarted). 
+Полный код для этого учебника можно найти на портале [GitHub](https://github.com/Azure/azure-notificationhubs-ios/tree/master/Samples). 
 
 ## <a name="prerequisites"></a>Предварительные требования
 

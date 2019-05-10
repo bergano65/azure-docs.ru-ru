@@ -10,12 +10,12 @@ author: xiaoharper
 ms.author: zhanxia
 ms.date: 05/02/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: d5ff1809886198f7f1e4f4b9c36f877ce61d512e
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: 10364d014431a500e7c38a02d47f432cd464feb6
+ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65029435"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65411476"
 ---
 # <a name="multiclass-decision-forest-module"></a>Модуль мультиклассовый лес принятия решений
 
@@ -36,7 +36,7 @@ ms.locfileid: "65029435"
 + Они выполняют встроенный Выбор признаков и классификацию.
 + Они являются устойчивыми при наличии шумовых признаков.
 
-Классификатор леса решений в машинном обучении Azure состоит из совокупности деревьев принятия решений. Как правило модели совокупности обеспечивают большее покрытие и точность, чем одно дерево принятия решений. Дополнительные сведения см. в разделе [деревья принятия решений](http://go.microsoft.com/fwlink/?LinkId=403677).
+Классификатор леса решений в машинном обучении Azure состоит из совокупности деревьев принятия решений. Как правило модели совокупности обеспечивают большее покрытие и точность, чем одно дерево принятия решений. Дополнительные сведения см. в разделе [деревья принятия решений](https://go.microsoft.com/fwlink/?LinkId=403677).
 
 ## <a name="how-to-configure-multiclass-decision-forest"></a>Как настроить Мультиклассовый лес принятия решений
 

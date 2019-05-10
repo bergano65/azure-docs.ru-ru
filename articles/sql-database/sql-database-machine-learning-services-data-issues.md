@@ -13,12 +13,12 @@ ms.author: garye
 ms.reviewer: davidph
 manager: cgronlun
 ms.date: 04/11/2019
-ms.openlocfilehash: 069a2a5b3b26bf517b57034f05ab7080ab392319
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 01d3af14963e92393d34a952bddc8097b7b08f18
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60702526"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65232614"
 ---
 # <a name="work-with-r-and-sql-data-in-azure-sql-database-machine-learning-services-preview"></a>Работа с данными SQL и R в SQL базы данных служб машинного обучения Azure (Предварительная версия)
 
@@ -300,4 +300,4 @@ STDOUT message(s) from external script: $ Amount       : num  3400 16925 20350 1
 - Выполняйте явные приведения, при необходимости, при подготовке входных данных, чтобы избежать непредвиденных проблем.
 - Избегайте столбцов передачи данных (например, идентификаторы GUID или идентификаторами rowguids), привести к ошибкам и не используются для моделирования.
 
-Дополнительные сведения о поддерживаемых и неподдерживаемых типов данных R, см. в разделе [R библиотеки и типы данных](/sql/advanced-analytics/r/r-libraries-and-data-types.md).
+Дополнительные сведения о поддерживаемых и неподдерживаемых типов данных R, см. в разделе [R библиотеки и типы данных](/sql/advanced-analytics/r/r-libraries-and-data-types).

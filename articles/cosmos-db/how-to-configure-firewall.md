@@ -1,17 +1,17 @@
 ---
 title: Настройка брандмауэра IP-адресов для учетной записи Azure Cosmos DB
 description: Узнайте, как настроить политики управления доступом на основе IP-адресов для включения поддержки брандмауэра в учетных записях базы данных Azure Cosmos DB.
-author: kanshiG
+author: markjbrown
 ms.service: cosmos-db
-ms.topic: conceptual
-ms.date: 11/06/2018
-ms.author: govindk
-ms.openlocfilehash: 26f2131fd62ddc83c2a6d93c4cff557402a88463
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: MT
+ms.topic: sample
+ms.date: 05/06/2019
+ms.author: mjbrown
+ms.openlocfilehash: cdf2da745cc418190f6546fffc03e2ac2c330e0e
+ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61060871"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65068719"
 ---
 # <a name="configure-ip-firewall-in-azure-cosmos-db"></a>Настройка брандмауэра IP-адресов в Azure Cosmos DB
 
@@ -32,7 +32,7 @@ ms.locfileid: "61060871"
 > [!NOTE]
 > После включения политики контроля доступа на основе IP-адресов для учетной записи Azure Cosmos DB отклоняются все запросы к этой учетной записи Azure Cosmos DB с компьютеров, IP-адреса которых не входят в список диапазонов разрешенных IP-адресов. В соответствии с этой политикой также блокируется возможность просмотра ресурсов Azure Cosmos DB на портале.
 
-### <a name="allow-requests-from-the-azure-portal"></a>Разрешение запросов на портале Azure 
+### <a name="allow-requests-from-the-azure-portal"></a>Разрешение запросов на портале Azure
 
 Чтобы программным способом обеспечить доступ к порталу Azure при включении политики управления доступом на основе IP-адресов, необходимо добавить его IP-адрес к свойству **ipRangeFilter**. IP-адрес портала:
 
@@ -40,7 +40,7 @@ ms.locfileid: "61060871"
 |------|----------|
 |Германия|51.4.229.218|
 |Китай|139.217.8.252|
-|Государственные организации США|52.244.48.71|
+|Штат в США (для обслуживания государственных организаций США)|52.244.48.71|
 |Все другие регионы|104.42.195.92,40.76.54.131,52.176.6.30,52.169.50.45,52.187.184.26|
 
 Вы можете включить доступ к порталу Azure, установив флажок **Разрешить доступ с портала Azure**, как показано на следующем снимке экрана: 
@@ -138,6 +138,37 @@ az cosmosdb update \
       --ip-range-filter "183.240.196.255,104.42.195.92,40.76.54.131,52.176.6.30,52.169.50.45,52.187.184.26"
 ```
 
+## <a id="configure-ip-firewall-ps"></a>Настройка политики контроля доступа на основе IP-адресов с помощью PowerShell
+
+Следующий сценарий демонстрирует, как создать учетную запись Azure Cosmos DB с использованием контроля доступа на основе IP-адресов:
+
+```azurepowershell-interactive
+
+$resourceGroupName = "myResourceGroup"
+$accountName = "myaccountname"
+
+$locations = @(
+    @{ "locationName"="West US"; "failoverPriority"=0 },
+    @{ "locationName"="East US"; "failoverPriority"=1 }
+)
+
+# Add local machine's IP address to firewall, InterfaceAlias is your Network Adapter's name
+$ipRangeFilter = Get-NetIPConfiguration | Where-Object InterfaceAlias -eq "Ethernet 2" | Select-Object IPv4Address
+
+$consistencyPolicy = @{ "defaultConsistencyLevel"="Session" }
+
+$CosmosDBProperties = @{
+    "databaseAccountOfferType"="Standard";
+    "locations"=$locations;
+    "consistencyPolicy"=$consistencyPolicy;
+    "ipRangeFilter"=$ipRangeFilter
+}
+
+Set-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts" `
+    -ApiVersion "2015-04-08" -ResourceGroupName $resourceGroupName `
+    -Name $accountName -PropertyObject $CosmosDBProperties
+```
+
 ## <a id="troubleshoot-ip-firewall"></a>Устранение неполадок с политикой контроля доступа на основе IP-адресов
 
 Для устранения неполадок с политикой контроля доступа на основе IP-адресов у вас есть следующие возможности и средства: 
@@ -155,11 +186,10 @@ az cosmosdb update \
 Запросы из подсети виртуальной сети, в которой включена конечная точка службы для Azure Cosmos DB, передают в учетную запись Azure Cosmos DB идентификаторы виртуальной сети и подсети. Такие запросы не имеют общедоступного IP-адреса источника, поэтому они отклоняются фильтрами IP-адресов. Чтобы разрешить доступ из определенных подсетей в виртуальных сетях, добавьте список управления доступом, как описано в руководстве по [настройке доступа на основе подсети и виртуальной сети для учетной записи Azure Cosmos DB](how-to-configure-vnet-service-endpoint.md). Применение правил брандмауэра может занять до 15 минут после изменения.
 
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 Сведения о том, как настроить конечную точку службы для виртуальной сети для учетной записи Azure Cosmos DB, см. в следующих статьях:
 
 * [Контроль доступа к учетной записи Azure Cosmos DB с использованием виртуальной сети и подсети](vnet-service-endpoint.md)
 * [Настройка доступа на основе подсети и виртуальной сети для учетной записи Azure Cosmos DB](how-to-configure-vnet-service-endpoint.md)
-
 

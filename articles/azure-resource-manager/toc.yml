@@ -40,6 +40,9 @@
     - name: Использование методик безопасного развертывания
       displayName: adm
       href: deployment-manager-tutorial.md
+    - name: Использование проверки работоспособности в диспетчере развертывания
+      displayName: adm
+      href: deployment-manager-tutorial-health-check.md
     - name: Устранение неполадок развертывания шаблона
       href: resource-manager-tutorial-troubleshoot.md
 - name: Примеры
@@ -62,6 +65,9 @@
     - name: Диспетчер развертывания
       displayName: adm
       href: deployment-manager-overview.md
+    - name: Проверка работоспособности диспетчера развертывания
+      displayName: adm
+      href: deployment-manager-health-check.md
     - name: Режимы развертывания
       href: deployment-modes.md
     - name: Удаление ресурсов

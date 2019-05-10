@@ -1,5 +1,5 @@
 ---
-title: Руководство. Вызов интерфейсов REST API Cognitive Services в конвейере индексирования Поиска Azure
+title: Руководство по Вызов интерфейсов REST API Cognitive Services в конвейере индексирования Поиска Azure
 description: Ознакомьтесь с примером извлечения данных, обработки естественного языка и изображений с применением искусственного интеллекта в индексировании службы "Поиск Azure" для извлечения и преобразования данных больших двоичных объектов JSON с применением Postman и REST API.
 manager: pablocas
 author: luiscabrer
@@ -7,19 +7,19 @@ services: search
 ms.service: search
 ms.devlang: NA
 ms.topic: tutorial
-ms.date: 04/08/2019
+ms.date: 05/02/2019
 ms.author: luisca
 ms.custom: seodec2018
-ms.openlocfilehash: b6e3335ba78d29896c8a253ac710e6ec0da1829a
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.openlocfilehash: 55d4f4bdf204453ccfe353e0d79abedb118bd9d8
+ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59528379"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "65021609"
 ---
-# <a name="rest-tutorial-call-cognitive-services-apis-in-an-azure-search-indexing-pipeline-preview"></a>Руководство по использованию REST. Вызов API-интерфейсов Cognitive Services в конвейере индексирования Поиска Azure (предварительная версия)
+# <a name="rest-tutorial-call-cognitive-services-apis-in-an-azure-search-indexing-pipeline"></a>Руководство по использованию REST. Вызов API-интерфейсов Cognitive Services в конвейере индексирования службы "Поиск Azure"
 
-В этом руководстве вы узнаете о механизме программирования обогащения данных в службе "Поиск Azure" с использованием *когнитивных методик*. Навыки подкрепляются возможностями обработки естественного языка (NLP) и анализа изображений в Cognitive Services. Настроив сочетание и конфигурацию набора навыков, можно извлечь текст и текстовые представления изображения или файл отсканированного документа. Кроме того, вы можете определить язык, сущности, ключевые фразы и многое другое. Конечным результатом является дополнительное содержимое в индексе службы "Поиск Azure", созданное конвейером индексирования с возможностями ИИ. 
+В этом руководстве вы узнаете о механизме программирования обогащения данных в службе "Поиск Azure" с использованием *когнитивных методик*. Навыки подкрепляются возможностями обработки естественного языка (NLP) и анализа изображений в Cognitive Services. Настроив сочетание и конфигурацию набора навыков, можно извлечь текст и текстовые представления изображения или файл отсканированного документа. Кроме того, вы можете определить язык, сущности, ключевые фразы и многое другое. Конечным результатом является расширенное содержимое в индексе Поиска Azure, созданное конвейером индексирования с возможностями ИИ. 
 
 В этом руководстве вы сделаете вызовы REST API, чтобы выполнить следующие задачи:
 
@@ -35,9 +35,9 @@ ms.locfileid: "59528379"
 В рамках этого учебника используется бесплатная служба, но количество бесплатных транзакций ограничено 20 документами в день. Если вы хотите выполнять описанные здесь операции несколько раз в день, используйте меньший набор файлов.
 
 > [!NOTE]
-> По мере расширения области действия путем увеличения частоты обработки, добавления большего количества документов или добавления новых алгоритмов ИИ вам необходимо будет подключить оплачиваемый ресурс Cognitive Services. Плата взимается при вызове API в Cognitive Services и извлечении изображений при открытии документов в службе "Поиск Azure". За извлечение текста из документов плата не взимается.
+> По мере расширения области путем увеличения частоты обработки и добавления большего количества документов или дополнительных алгоритмов ИИ, вам нужно будет [присоединить оплачиваемый ресурс Cognitive Services](cognitive-search-attach-cognitive-services.md). Плата взимается при вызове API в Cognitive Services и извлечении изображений при открытии документов в службе "Поиск Azure". За извлечение текста из документов плата не взимается.
 >
-> За операции с применением встроенных навыков взимается [плата по мере использования по тарифам для имеющихся служб Cognitive Services](https://azure.microsoft.com/pricing/details/cognitive-services/). За извлечение изображений взимается плата по тарифам для предварительной версии, как описано на странице [цен на службу "Поиск Azure"](https://go.microsoft.com/fwlink/?linkid=2042400). Дополнительные сведения см. [здесь](cognitive-search-attach-cognitive-services.md).
+> Плата за выполнение встроенных навыков взимается в рамках существующей [модели оплаты Cognitive Services по мере использования](https://azure.microsoft.com/pricing/details/cognitive-services/). Плата за извлечение изображений указана на [странице с ценами на Поиск Azure](https://go.microsoft.com/fwlink/?linkid=2042400).
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
@@ -106,7 +106,7 @@ ms.locfileid: "59528379"
 
 ### <a name="sample-request"></a>Пример запроса
 ```http
-POST https://[service name].search.windows.net/datasources?api-version=2017-11-11-Preview
+POST https://[service name].search.windows.net/datasources?api-version=2019-05-06
 Content-Type: application/json
 api-key: [admin key]
 ```
@@ -129,7 +129,7 @@ api-key: [admin key]
 
   ![Плитка источников данных на портале](./media/cognitive-search-tutorial-blob/data-source-tile.png "Плитка источников данных на портале")
 
-Если вы получили ошибку 403 или 404, проверьте структуру запроса: `api-version=2017-11-11-Preview` должен находиться в конечной точке, `api-key` должен находиться в заголовке после `Content-Type`, и его значение должно быть действительным для службы поиска. Вы можете повторно использовать заголовок для остальных шагов этого руководства.
+Если вы получили ошибку 403 или 404, проверьте структуру запроса: `api-version=2019-05-06` должен находиться в конечной точке, `api-key` должен находиться в заголовке после `Content-Type`, и его значение должно быть действительным для службы поиска. Вы можете повторно использовать заголовок для остальных шагов этого руководства.
 
 ## <a name="create-a-skillset"></a>Создание набора навыков
 
@@ -149,7 +149,7 @@ api-key: [admin key]
 Этот запрос создает набор навыков. Укажите имя набора навыков ```demoskillset```, который будет использоваться до конца этого руководства.
 
 ```http
-PUT https://[servicename].search.windows.net/skillsets/demoskillset?api-version=2017-11-11-Preview
+PUT https://[servicename].search.windows.net/skillsets/demoskillset?api-version=2019-05-06
 api-key: [admin key]
 Content-Type: application/json
 ```
@@ -265,7 +265,7 @@ Content-Type: application/json
 Этот запрос создает индекс. Используйте имя индекса ```demoindex```, которое будет использоваться до конца этого руководства.
 
 ```http
-PUT https://[servicename].search.windows.net/indexes/demoindex?api-version=2017-11-11-Preview
+PUT https://[servicename].search.windows.net/indexes/demoindex?api-version=2019-05-06
 api-key: [api-key]
 Content-Type: application/json
 ```
@@ -338,7 +338,7 @@ Content-Type: application/json
 Также укажите имя вашего индексатора. Укажите имя ```demoindexer```, которое будет использоваться до конца этого руководства.
 
 ```http
-PUT https://[servicename].search.windows.net/indexers/demoindexer?api-version=2017-11-11-Preview
+PUT https://[servicename].search.windows.net/indexers/demoindexer?api-version=2019-05-06
 api-key: [api-key]
 Content-Type: application/json
 ```
@@ -410,7 +410,7 @@ Content-Type: application/json
 После того как индексатор будет определен, он будет выполняться автоматически при отправке запроса. В зависимости от того, какие когнитивные навыки вы определили, индексирование может занять больше времени, чем вы ожидаете. Чтобы узнать, работает ли индексатор, отправьте следующий запрос для получения сведений о состоянии.
 
 ```http
-GET https://[servicename].search.windows.net/indexers/demoindexer/status?api-version=2017-11-11-Preview
+GET https://[servicename].search.windows.net/indexers/demoindexer/status?api-version=2019-05-06
 api-key: [api-key]
 Content-Type: application/json
 ```
@@ -426,7 +426,7 @@ Content-Type: application/json
 Для проверки запросите индекс для всех полей.
 
 ```http
-GET https://[servicename].search.windows.net/indexes/demoindex?api-version=2017-11-11-Preview
+GET https://[servicename].search.windows.net/indexes/demoindex?api-version=2019-05-06
 api-key: [api-key]
 Content-Type: application/json
 ```
@@ -436,7 +436,7 @@ Content-Type: application/json
 Отправьте второй запрос с `"*"`, чтобы вернуть все содержимое одного поля, например `organizations`.
 
 ```http
-GET https://[servicename].search.windows.net/indexes/demoindex/docs?search=*&$select=organizations&api-version=2017-11-11-Preview
+GET https://[servicename].search.windows.net/indexes/demoindex/docs?search=*&$select=organizations&api-version=2019-05-06
 api-key: [api-key]
 Content-Type: application/json
 ```
@@ -528,7 +528,7 @@ Content-Type: application/json
 Для удаления индексов, индексаторов и наборов навыков можно использовать портал.
 
 ```http
-DELETE https://[servicename].search.windows.net/skillsets/demoskillset?api-version=2017-11-11-Preview
+DELETE https://[servicename].search.windows.net/skillsets/demoskillset?api-version=2019-05-06
 api-key: [api-key]
 Content-Type: application/json
 ```

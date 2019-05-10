@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 03/15/2019
 ms.reviewer: sdash
 ms.author: mbullwin
-ms.openlocfilehash: 89aa5006882680205816e7e5d1e7e55b9c4b2ab0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 618453ec9857254fe14608df8091bb79bd3815b7
+ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60693417"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65509965"
 ---
 # <a name="application-map-triage-distributed-applications"></a>Схема приложений: рассмотрение распределенных приложений
 
@@ -68,7 +68,7 @@ ms.locfileid: "60693417"
 
 ### <a name="go-to-details"></a>Перейти к сведениям
 
-Выберите **Перейти к сведениям**, чтобы просмотреть сведения о сквозных транзакциях в интерфейсе с представлениями, которые включают данные с уровня стека вызовов.
+Выберите **перейдите сведения** исследовать возможности начала до конца транзакции, которые может предложить представления вплоть до уровня стека вызова.
 
 ![Снимок экрана с кнопкой "Перейти к сведениям"](media/app-map/go-to-details.png)
 

@@ -6,14 +6,14 @@ author: iainfoulds
 manager: jeconnoc
 ms.service: container-service
 ms.topic: article
-ms.date: 05/06/2019
+ms.date: 04/25/2019
 ms.author: iainfou
-ms.openlocfilehash: f365fcd61944fbae131ab79a1c3660aaf02fa8d7
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.openlocfilehash: 17bc1d2b7a08314f19f1bf8f87d0c774afc37500
+ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65073933"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65508178"
 ---
 # <a name="frequently-asked-questions-about-azure-kubernetes-service-aks"></a>Вопросы и ответы о Службе Azure Kubernetes (AKS)
 
@@ -25,9 +25,7 @@ ms.locfileid: "65073933"
 
 ## <a name="does-aks-support-node-autoscaling"></a>Поддерживает ли AKS автомасштабирование узла?
 
-Да, автоматическое масштабирование доступно через [Kubernetes autoscaler][auto-scaler] для Kubernetes 1.10. Дополнительные сведения о том, как вручную настроить и использовать инструмент автомасштабирования кластера см. в разделе [автомасштабирования кластеров в AKS][aks-cluster-autoscale].
-
-Также можно использовать автомасштабирования встроенные кластера (в настоящее время в предварительной версии в AKS) для управления масштабированием узлов. Дополнительные сведения см. в разделе [автоматически масштабировать кластер в соответствии с требованиями приложения в AKS][aks-cluster-autoscaler].
+Да, автоматическое масштабирование доступно через [Kubernetes autoscaler][auto-scaler] для Kubernetes 1.10. Дополнительные сведения о том, как настроить и использовать автомасштабирование кластера, см. в статье [Автомасштабирование кластера с помощью службы Azure Kubernetes (AKS) — предварительная версия][aks-cluster-autoscale].
 
 ## <a name="does-aks-support-kubernetes-role-based-access-control-rbac"></a>Поддерживает ли AKS для Kubernetes управление доступом на основе ролей (RBAC)?
 
@@ -43,17 +41,13 @@ ms.locfileid: "65073933"
 
 ## <a name="are-security-updates-applied-to-aks-agent-nodes"></a>Применяются ли обновления для системы безопасности к узлам агентов AKS?
 
-Azure автоматически применяет исправления системы безопасности к узлам Linux в кластере по ночам. Тем не менее вы несете ответственность за то, что эти Linux, узлы перезагружаются как требуется. У вас есть несколько вариантов выполнения перезагрузки узла.
+Да, Azure автоматически применяет исправления системы безопасности для узлов в кластере в соответствии с графиком резервного копирования ночью. Тем не менее, вы несете ответственность за обеспечение перезагрузки узлов при необходимости. У вас есть несколько вариантов выполнения перезагрузки узла.
 
 - Вручную на портале Azure или Azure CLI.
 - Обновив кластер AKS. Кластер автоматически обновляет [узлы cordon и drain][cordon-drain], после чего создает их резервную копию с помощью последнего образа Ubuntu и новой версии исправлений или дополнительной версии Kubernetes. Дополнительные сведения см. в статье [Обновление кластера службы Azure Kubernetes (AKS)][aks-upgrade].
 - С помощью [Kured](https://github.com/weaveworks/kured) (управляющая программа перезагрузки с открытым исходным кодом для Kubernetes). Kured работает в виде [DaemonSet](https://kubernetes.io/docs/concepts/workloads/controllers/daemonset/) и проверяет каждый узел на наличие файла, указывающего на необходимость перезагрузки. Перезагрузки операционной системы управляются в кластере с использованием [процесса cordon и drain][cordon-drain] для обновления кластера.
 
 Дополнительные сведения об использовании kured см. в статье о [применении обновлений безопасности и ядра на узлах в AKS][node-updates-kured].
-
-### <a name="windows-server-nodes"></a>Узлы Windows Server
-
-Для узлов Windows Server (в настоящее время в предварительной версии в AKS) обновление Windows автоматически запустить и применить последние обновления. По регулярному расписанию вокруг цикла выпуска обновления Windows, а также процесс проверки следует выполнить обновление на пулы узлов Windows Server в кластере AKS. В этом процессе создаются узлы под управлением последней версии образа Windows Server и исправления, а затем удаляет старые узлы. Дополнительные сведения об этом процессе см. в разделе [обновить пуле узел в AKS][nodepool-upgrade].
 
 ## <a name="why-are-two-resource-groups-created-with-aks"></a>Почему с AKS создаются две группы ресурсов?
 
@@ -108,13 +102,24 @@ AKS поддерживает следующие [контроллеры допу
 
 ## <a name="can-i-run-windows-server-containers-on-aks"></a>Можно ли запускать контейнеры Windows Server в AKS?
 
-Да, контейнеры Windows Server доступны в предварительной версии. Чтобы запустить контейнеры Windows Server в AKS, создайте пул узлов под управлением Windows Server как гостевой ОС. Контейнеры Windows Server можно использовать только Windows Server 2019. Чтобы начать работу, [создание кластера AKS с помощью пул узлов Windows Server][aks-windows-cli].
-
-Поддержка пула узлов сервера окна включает некоторые ограничения, которые являются частью вышестоящего сервера Windows в проекте Kubernetes. Дополнительные сведения об этих ограничениях см. в разделе [контейнеры Windows Server в AKS ограничения][aks-windows-limitations].
+Для запуска контейнеров Windows Server необходимо запустить узлы под управлением Windows Server. Сейчас узлы на основе Windows Server в AKS недоступны. Тем не менее вы можете использовать Virtual Kubelet для создания расписания контейнеров Windows в Экземплярах контейнеров Azure, чтобы управлять ими как частью кластера AKS. См. дополнительные сведения об [использовании Virtual Kubelet с AKS][virtual-kubelet].
 
 ## <a name="does-aks-offer-a-service-level-agreement"></a>AKS предлагает соглашение об уровне обслуживания?
 
 В соглашении об уровне обслуживания (SLA) поставщик соглашается возместить клиенту стоимость использования службы, если уровень обслуживания не достигнут. Так как сама служба AKS является бесплатной, нет суммы для возмещения и, следовательно, никакого официального SLA. Тем не менее мы стремимся поддерживать доступность AKS не менее 99,5 % для сервера API Kubernetes.
+
+## <a name="why-can-i-not-set-maxpods-below-30"></a>Почему мне не удается задать `maxPods` ниже 30?
+
+Служба AKS поддерживает параметр `maxPods` значение во время создания кластера с помощью шаблонов Azure CLI и Azure Resource Manager. Однако есть *минимальное значение* (проверяется во время создания) как Kubenet и Azure CNI, показано ниже:
+
+| Сеть | Минимум | Максимум |
+| -- | :--: | :--: |
+| Azure CNI | 30 | 250 |
+| Kubenet | 30 | 110 |
+
+Как и AKS — это управляемая служба, мы предоставляем надстроек и модулей POD, мы развертывать и управлять как частью кластера. В прошлом, пользователи могут определять `maxPods` меньшее значение, чем значение, необходимое для управляемых модулей и запуска (пример: 30), AKS теперь вычисляет минимальное количество модулей с помощью: ((maxPods или (maxPods * vm_count)) > минимум модулей управляемые надстройки.
+
+Пользователи не могут переопределять минимальное `maxPods` проверки.
 
 <!-- LINKS - internal -->
 
@@ -128,10 +133,6 @@ AKS поддерживает следующие [контроллеры допу
 [aks-preview-cli]: /cli/azure/ext/aks-preview/aks
 [az-aks-create]: /cli/azure/aks#az-aks-create
 [aks-rm-template]: /rest/api/aks/managedclusters/createorupdate#managedcluster
-[aks-cluster-autoscaler]: cluster-autoscaler.md
-[nodepool-upgrade]: use-multiple-node-pools.md#upgrade-a-node-pool
-[aks-windows-cli]: windows-container-cli.md
-[aks-windows-limitations]: windows-node-limitations.md
 
 <!-- LINKS - external -->
 

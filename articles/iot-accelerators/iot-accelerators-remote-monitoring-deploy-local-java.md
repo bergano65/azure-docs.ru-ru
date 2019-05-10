@@ -8,12 +8,12 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 01/24/2019
 ms.topic: conceptual
-ms.openlocfilehash: 209a91453875531e81ddbcead8c1ed2fb309a0a0
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 996111fbe23000182dab774ba3bbad0cc6435824
+ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65147451"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65412733"
 ---
 # <a name="deploy-the-remote-monitoring-solution-accelerator-locally---intellij"></a>Локальное развертывание акселератора решения для удаленного мониторинга IntelliJ
 
@@ -100,9 +100,9 @@ ms.locfileid: "65147451"
     * WebService (services\iothub-manager);
     * WebService (services\storage-adapter).
 
-В качестве примера на изображении ниже показано добавление конфигурации для службы.
+Например, на следующем рисунке показано добавление конфигурации для службы:
 
-[![Добавление конфигурации](./media/deploy-locally-intelliJ/run-configurations.png)](./media/deploy-locally-intelliJ/run-configurations.png#lightbox)
+[![Добавление конфигурации](./media/deploy-locally-intellij/run-configurations.png)](./media/deploy-locally-intellij/run-configurations.png#lightbox)
 
 
 #### <a name="create-compound-configuration"></a>Создание комплексной конфигурации
@@ -111,14 +111,11 @@ ms.locfileid: "65147451"
 1. Укажите **имя** и **добавьте задачи SBT**.
 1. Щелкните **Apply > OK** (Применить > ОК), чтобы сохранить изменения.
 
-В качестве примера на изображении ниже показано добавление всех задач SBT в одну конфигурацию.
+Например на следующем рисунке показано добавление всех задач sbt для настройки единого:
 
+[![Добавление всех служб](./media/deploy-locally-intellij/all-services.png)](./media/deploy-locally-intellij/all-services.png#lightbox)
 
-[![Добавление всех служб](./media/deploy-locally-intelliJ/all-services.png)](./media/deploy-locally-intelliJ/all-services.png#lightbox)
-
-
-
-1. Щелкните **Run** (Запуск), чтобы создать и запустить веб-службы на локальном компьютере.
+Щелкните **Run** (Запуск), чтобы создать и запустить веб-службы на локальном компьютере.
 
 Для каждой веб-службы откроется командная строка и окно веб-браузера. В командной строке вы увидите выходные данные из запущенной службы, а окно браузера позволяет отслеживать состояние. Не закрывайте окна командной строки или веб-страницы, так как работа веб-службы прекратится.
 

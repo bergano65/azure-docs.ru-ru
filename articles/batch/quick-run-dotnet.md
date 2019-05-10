@@ -10,14 +10,14 @@ ms.topic: quickstart
 ms.date: 11/29/2018
 ms.author: lahugh
 ms.custom: mvc
-ms.openlocfilehash: c13a01b392b9bbc93fff2e997cb6d168a441ad07
-ms.sourcegitcommit: cd0a1514bb5300d69c626ef9984049e9d62c7237
+ms.openlocfilehash: 6c332861bcaf228e4c1e0a619cf4f84e3be0ba15
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52679925"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65204138"
 ---
-# <a name="quickstart-run-your-first-azure-batch-job-with-the-net-api"></a>Краткое руководство по выполнению первого пакетного задания Azure с помощью API для .NET
+# <a name="quickstart-run-your-first-azure-batch-job-with-the-net-api"></a>Краткое руководство. Выполнение пакетного задания Azure с помощью API для .NET
 
 В этом кратком руководстве описаны действия по запуску задания пакетной службы Azure из приложения C#, созданного в API пакетной службы Azure для.NET. Приложение отправляет несколько файлов входных данных в службу хранилища Azure, а затем создает *пул* вычислительных узлов пакетной службы (виртуальных машин). Затем оно создает образец *задания*, которое запускает *задачи* для обработки каждого входного файла в пуле путем использования основных команд. Выполняя действия из этого краткого руководства, вы изучите основные понятия пакетной службы и сможете использовать ее с более реалистичными рабочими нагрузками в большем масштабе.
 
@@ -113,7 +113,7 @@ stderr:
 
 ### <a name="preliminaries"></a>Предварительные требования
 
-Чтобы взаимодействовать с учетной записью хранения, приложение использует клиентскую библиотеку службы хранилища Azure для .NET. Оно создает ссылку на учетную запись, используя [CloudStorageAccount](/dotnet/api/microsoft.windowsazure.storage.cloudstorageaccount), а затем из этой учетной записи — клиент [CloudBlobClient](/dotnet/api/microsoft.windowsazure.storage.blob.cloudblobclient).
+Чтобы взаимодействовать с учетной записью хранения, приложение использует клиентскую библиотеку службы хранилища Azure для .NET. Оно создает ссылку на учетную запись, используя [CloudStorageAccount](/dotnet/api/microsoft.azure.cosmos.table.cloudstorageaccount), а затем из этой учетной записи — клиент [CloudBlobClient](/dotnet/api/microsoft.azure.storage.blob.cloudblobclient).
 
 ```csharp
 CloudBlobClient blobClient = storageAccount.CreateCloudBlobClient();

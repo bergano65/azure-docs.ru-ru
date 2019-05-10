@@ -7,9 +7,6 @@
       href: storage-queues-introduction.md
 - name: Быстрое начало работы
   items:
-    - name: Создание учетной записи хранения
-      displayName: 'resource manager, resource manager template, template, ARM'
-      href: ../common/storage-quickstart-create-account.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json
     - name: Управление очередями без написания кода
       items:
         - name: Портал Azure
@@ -94,8 +91,11 @@
               href: ../common/storage-analytics-logging.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json
 - name: Практическое руководство
   items:
-    - name: Управление учетными записями хранения
+    - name: Создание учетных записей хранения и управление ими
       items:
+        - name: Создание учетной записи хранения
+          displayName: 'resource manager, resource manager template, template, ARM'
+          href: ../common/storage-quickstart-create-account.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json
         - name: Управление учетной записью хранения
           href: ../common/storage-account-manage.md?toc=%2fazure%2fstorage%2fqueues%2ftoc.json
         - name: Обновление учетной записи хранения
@@ -195,7 +195,7 @@
         - name: 'BLOB-объекты, очереди, таблицы и файлы'
           href: 'https://docs.microsoft.com/dotnet/api/overview/azure/storage/client'
         - name: Перемещение данных
-          href: 'https://docs.microsoft.com/dotnet/api/microsoft.windowsazure.storage.datamovement'
+          href: 'https://docs.microsoft.com/dotnet/api/microsoft.azure.storage.datamovement'
         - name: Диспетчер ресурсов
           href: 'https://docs.microsoft.com/dotnet/api/overview/azure/storage/management'
     - name: Java

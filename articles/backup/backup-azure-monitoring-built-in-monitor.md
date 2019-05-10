@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 03/05/2019
 ms.author: pullabhk
 ms.assetid: 86ebeb03-f5fa-4794-8a5f-aa5cbbf68a81
-ms.openlocfilehash: 8d3e3257f16fe4e0f846c2268bfefc2771387de6
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: ab7d2c0af4bc71733a7995b7e781f0facbfbb29f
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60809053"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65236436"
 ---
 # <a name="monitoring-azure-backup-workloads"></a>Мониторинг рабочих нагрузок Azure Backup
 
@@ -49,7 +49,7 @@ ms.locfileid: "60809053"
 Приведенные ниже определяются службой как извещающие сценариев.
 
   - Сбои резервного копирования и восстановления
-  - Архивация успешно завершена с предупреждениями
+  - Архивация успешно завершена с предупреждениями для агента Azure Backup (MAB)
   - Отключите защиту хранящихся данных и остановка защиты с удалением данных
 
 ### <a name="exceptions-when-an-alert-is-not-raised"></a>Исключения, если не создано предупреждение
@@ -92,7 +92,7 @@ ms.locfileid: "60809053"
 Если частота было присвоено почасовой дайджест и оповещение было возникает и устраняется в течение часа, не будет частью предстоящих почасовой дайджест.
 
 > [!NOTE]
-> 
+>
 > * Если разрушительные операции, такие как **остановить защиту с удалением данных** — выполняется, создается предупреждение и владельцев подписки, Администраторы и соадминистраторы отправляется сообщение электронной почты, даже если уведомления не настроены для службы восстановления хранилище.
 > * Чтобы настроить уведомления для успешно выполненных заданий используйте [Log Analytics](backup-azure-monitoring-use-azuremonitor.md#using-log-analytics-workspace).
 

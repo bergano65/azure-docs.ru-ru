@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/01/2018
 ms.author: aschhab
-ms.openlocfilehash: 5edeebd9698384785082e5a441c24e136ed22481
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: abba0e15314387aed09e39f05d9127f346f9c799
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61317081"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65228394"
 ---
 # <a name="managed-identities-for-azure-resources-with-service-bus"></a>Управляемые удостоверения для ресурсов Azure со служебной шиной 
 
@@ -29,7 +29,7 @@ ms.locfileid: "61317081"
 
 ## <a name="service-bus-roles-and-permissions"></a>Роли и разрешения служебной шины
 
-Управляемое удостоверение можно добавить только к ролям пространства имен служебной шины "Владелец" или "Участник". Благодаря этому ко всем сущностям в пространстве имен предоставляется полный доступ. Однако операции управления, изменяющие топологию пространства имен, изначально поддерживаются только через Azure Resource Manager. Они не поддерживаются через собственный интерфейс управления REST для служебной шины. Эта поддержка также означает, что в управляемом удостоверении нельзя использовать объект [NamespaceManager](/dotnet/api/microsoft.servicebus.namespacemanager) клиента .NET Framework.
+Управляемое удостоверение можно добавить только к ролям пространства имен служебной шины "Владелец" или "Участник". Благодаря этому ко всем сущностям в пространстве имен предоставляется полный доступ. Однако операции управления, изменяющие топологию пространства имен, изначально поддерживаются только через Azure Resource Manager. Они не поддерживаются через собственный интерфейс управления REST для служебной шины. Эта поддержка также означает, что нельзя использовать клиент .NET Framework [NamespaceManager](/dotnet/api/microsoft.servicebus.namespacemanager) или клиентом .NET Standard [ManagementClient](/dotnet/api/microsoft.azure.servicebus.management.managementclient) объектов в пределах управляемого удостоверения.
 
 ## <a name="use-service-bus-with-managed-identities-for-azure-resources"></a>Использование служебной шины с управляемыми удостоверениями для ресурсов Azure
 

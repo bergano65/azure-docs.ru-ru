@@ -9,12 +9,12 @@ ms.subservice: anomaly-detection
 ms.topic: article
 ms.date: 05/07/2019
 ms.author: aahi
-ms.openlocfilehash: 5dcec0d5f313b1c746c0674d0f9bf4d30ed19e5c
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: cc82e091ae4c033bda7f1d91c9aed36bb081de88
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65026316"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65233614"
 ---
 # <a name="install-and-run-anomaly-detector-containers"></a>Установка и запуск средства обнаружения аномалий контейнеров
 
@@ -37,9 +37,9 @@ ms.locfileid: "65026316"
 |--|--|
 |Модуль Docker| На [главном компьютере](#the-host-computer) должен быть установлен модуль Docker. Docker предоставляет пакеты, которые настраивают среду Docker в ОС [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> **В ОС Windows** для Docker нужно также настроить поддержку контейнеров Linux.<br><br>|
 |Опыт работы с Docker | Требуется базовое представление о понятиях Docker, включая реестры, репозитории, контейнеры и образы контейнеров, а также знание основных команд `docker`.| 
-|Ресурсов обнаружения аномалий |Чтобы использовать эти контейнеры, необходимо иметь:<br><br>_Обнаружения аномалий_ ресурсов Azure, чтобы получить связанный ключ выставления счетов и выставления счетов URI конечной точки. Оба значения доступны на страницах Обзор средства обнаружения аномалий и ключей на портале Azure и необходимые для запуска контейнера.<br><br>**{BILLING_KEY}**: ключ ресурса<br><br>**{BILLING_ENDPOINT_URI}**: пример URI конечной точки: `https://westus2.api.cognitive.microsoft.com`|
+|Ресурсов обнаружения аномалий |Для использования контейнеров необходимо следующее:<br><br>_Обнаружения аномалий_ ресурсов Azure, чтобы получить связанный ключ выставления счетов и выставления счетов URI конечной точки. Оба значения доступны на страницах Обзор средства обнаружения аномалий и ключей на портале Azure и необходимые для запуска контейнера.<br><br>**{BILLING_KEY}**: ключ ресурса<br><br>**{BILLING_ENDPOINT_URI}**: пример URI конечной точки: `https://westus2.api.cognitive.microsoft.com`|
 
-## <a name="request-access-to-the-container-registry"></a>Запрос на доступ в реестр контейнеров
+## <a name="request-access-to-the-container-registry"></a>Запрос доступа к реестру контейнеров
 
 Сначала выполните и отправить [форму запроса контейнера обнаружения аномалий](https://aka.ms/adcontainer) чтобы запросить доступ к контейнеру.
 
@@ -49,18 +49,15 @@ ms.locfileid: "65026316"
 
 ## <a name="the-host-computer"></a>Главный компьютер
 
-**Главным** является компьютер, на котором выполняется контейнер Docker. Это может быть компьютер в локальной среде или служба размещения Docker в Azure, включая следующие решения:
+[!INCLUDE [Host Computer requirements](../../../includes/cognitive-services-containers-host-computer.md)]
 
-* [Служба Azure Kubernetes (AKS)](https://docs.microsoft.com/azure-stack/user/azure-stack-solution-template-kubernetes-deploy)
-* [Экземпляры контейнеров Azure](https://docs.microsoft.com/container-instances/index.yml);
-* кластер [Kubernetes](https://kubernetes.io/), развернутый в [Azure Stack](https://docs.microsoft.com/azure-stack/index.yml). Дополнительные сведения см. в статье [Развертывание Kubernetes в Azure Stack](https://docs.microsoft.com/azure-stack/user/azure-stack-solution-template-kubernetes-deploy.md).
 <!--* [Azure IoT Edge](https://docs.microsoft.com/azure/iot-edge/). For instructions of deploying Anomaly Detector module in IoT Edge, see [How to deploy Anomaly Detector module in IoT Edge](how-to-deploy-anomaly-detector-module-in-iot-edge.md).-->
 
 ### <a name="container-requirements-and-recommendations"></a>Требования к контейнеру и рекомендации
 
 Ниже перечислены минимальные и рекомендуемые ядер ЦП и памяти, выделяемой для контейнера обнаружения аномалий.
 
-| Приблизительное число (запросов в секунду) | Минимальная | Рекомендуется |
+| Приблизительное число (запросов в секунду) | Минимум | Рекомендуется |
 |-----------|---------|-------------|
 | ПРИБЛИЗИТЕЛЬНОЕ ЧИСЛО 10 | 4 ядра, 1 ГБ памяти | 8 ядер 2 ГБ памяти |
 | ПРИБЛИЗИТЕЛЬНОЕ ЧИСЛО 20 | 8 ядро, 2 ГБ памяти | 16 ядер 4 ГБ памяти |
@@ -100,7 +97,7 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-anomaly-det
 
 Воспользуйтесь командой [docker run](https://docs.docker.com/engine/reference/commandline/run/) для запуска любого из трех контейнеров. В команде используются следующие параметры:
 
-| Placeholder | Value |
+| Местозаполнитель | Value |
 |-------------|-------|
 |{BILLING_KEY} | Этот ключ используется для запуска контейнера, а также доступны на странице ключей обнаружения аномалий на портале Azure.  |
 |{BILLING_ENDPOINT_URI} | Выставления счетов значение URI конечная точка доступна на странице обзора обнаружения аномалий на портале Azure.|
@@ -127,11 +124,11 @@ ApiKey={BILLING_KEY}
 
 ### <a name="running-multiple-containers-on-the-same-host"></a>Запуск нескольких контейнеров на одном узле
 
-Если планируется выполнить несколько контейнеров с помощью открытых портов, следует проводить каждый контейнер с другим портом. Например выполните первый контейнер на порт 5000 и второй контейнер на порту 5001.
+Если вы планируете запускать несколько контейнеров при открытых портах, обязательно назначьте каждому контейнеру отдельный порт. Например, запускайте первый контейнер на порте 5000, а второй — на порте 5001.
 
-Замените `<container-registry>` и `<container-name>` со значениями из контейнеров, можно использовать. Они больше не нужно быть тот же контейнер. Может иметь контейнер обнаружения аномалий и LUIS контейнеров, работающих на узле друг с другом или у вас есть несколько контейнеров обнаружения аномалий. 
+Замените `<container-registry>` и `<container-name>` значениями используемых контейнеров. При этом можно использовать разные контейнеры. Может иметь контейнер обнаружения аномалий и LUIS контейнеров, работающих на узле друг с другом или у вас есть несколько контейнеров обнаружения аномалий. 
 
-Запустите первый контейнер с портом 5000. 
+Выполните первый контейнер на порте 5000. 
 
 ```bash 
 docker run --rm -it -p 5000:5000 --memory 4g --cpus 1 \
@@ -141,7 +138,7 @@ Billing={BILLING_ENDPOINT_URI} \
 ApiKey={BILLING_KEY}
 ```
 
-Второй контейнер запуска на порту 5001.
+Запустите второй контейнер на порте 5001.
 
 
 ```bash 
@@ -152,7 +149,7 @@ Billing={BILLING_ENDPOINT_URI} \
 ApiKey={BILLING_KEY}
 ```
 
-Каждый последующий контейнер должен находиться на другой порт. 
+Каждому последующему контейнеру должен быть назначен отдельный порт. 
 
 ## <a name="query-the-containers-prediction-endpoint"></a>Запрос конечной точки прогнозирования контейнера
 

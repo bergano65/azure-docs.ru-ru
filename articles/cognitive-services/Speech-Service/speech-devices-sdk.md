@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: erhopf
 ms.custom: seodec18
-ms.openlocfilehash: ca3f537ed52da547f64aa1fb98eb82c4ea73d81d
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: 5f3b0094834b1ca547ba5ddf9726068c9ea36079
+ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65021422"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65409099"
 ---
 # <a name="about-the-speech-devices-sdk"></a>Сведения о пакете SDK для устройств в службе "Речь"
 
@@ -32,7 +32,7 @@ ms.locfileid: "65021422"
 
 Speech SDK устройства можно также использовать для создания окружения устройств, которые имеют собственные [настроены wake word](speech-devices-sdk-create-kws.md) , подсказки, которая инициирует взаимодействие с пользователем является уникальным для вашего бренда.
 
-Speech SDK устройств обеспечивает широкий спектр сценариев с голосовым управлением, такие как [виртуальные помощники Voice-First Custom](https://aka.ms/sdsdk-assistant), диск сквозной упорядочение систем, [расшифровка дикторского текста для диалога](conversation-transcription-service.md)и смарт- докладчики. На реплики пользователей можно отвечать текстом, общаться с ними с помощью [настраиваемых голосов](how-to-customize-voice-font.md) или голосов по умолчанию, предоставлять результаты поиска, [переводить](speech-translation.md) на другие языки и т. д. Мы будем рады видеть вашу сборку!
+Speech SDK устройств обеспечивает широкий спектр сценариев с голосовым управлением, такие как [виртуальные помощники Voice-First Custom](https://aka.ms/bots/speech/va), диск сквозной упорядочение систем, [расшифровка дикторского текста для диалога](conversation-transcription-service.md)и смарт- докладчики. На реплики пользователей можно отвечать текстом, общаться с ними с помощью [настраиваемых голосов](how-to-customize-voice-font.md) или голосов по умолчанию, предоставлять результаты поиска, [переводить](speech-translation.md) на другие языки и т. д. Мы будем рады видеть вашу сборку!
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

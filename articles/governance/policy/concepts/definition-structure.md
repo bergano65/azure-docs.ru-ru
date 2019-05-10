@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: 87f86f861ffc036077b25a2514fbd2d0c57da735
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 0783251eaeef188c49c5b3aa61b5ecaec48127b7
+ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64716768"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65506693"
 ---
 # <a name="azure-policy-definition-structure"></a>Структура определения службы "Политика Azure"
 
@@ -24,7 +24,7 @@ ms.locfileid: "64716768"
 
 Для создания определения политики используется JSON. Определение политики содержит следующие элементы:
 
-- mode;
+- режим
 - parameters
 - display name
 - description
@@ -46,7 +46,7 @@ ms.locfileid: "64716768"
                     "strongType": "location",
                     "displayName": "Allowed locations"
                 },
-                "defaultValue": "westus2"
+                "defaultValue": [ "westus2" ]
             }
         },
         "displayName": "Allowed locations",
@@ -70,7 +70,7 @@ ms.locfileid: "64716768"
 
 [!INCLUDE [az-powershell-update](../../../../includes/updated-for-az.md)]
 
-## <a name="mode"></a>Mode
+## <a name="mode"></a>Режим
 
 **Режим** определяет типы ресурсов, которые будут оцениваться для политики. Ниже приведены поддерживаемые режимы.
 
@@ -114,7 +114,7 @@ ms.locfileid: "64716768"
             "displayName": "Allowed locations",
             "strongType": "location"
         },
-        "defaultValue": "westus2",
+        "defaultValue": [ "westus2" ],
         "allowedValues": [
             "eastus2",
             "westus2",
@@ -229,6 +229,10 @@ ms.locfileid: "64716768"
 - `"notIn": ["value1","value2"]`
 - `"containsKey": "keyName"`
 - `"notContainsKey": "keyName"`
+- `"less": "value"`
+- `"lessOrEquals": "value"`
+- `"greater": "value"`
+- `"greaterOrEquals": "value"`
 - `"exists": "bool"`
 
 При использовании условий **like** и **notLike** можно указать в значении подстановочный знак `*`.
@@ -416,15 +420,25 @@ ms.locfileid: "64716768"
 
 ### <a name="policy-functions"></a>Функции политики
 
-В рамках правила политики можно использовать все [функции шаблона Resource Manager](../../../azure-resource-manager/resource-group-template-functions.md), кроме следующих:
+Все [функции шаблона Resource Manager](../../../azure-resource-manager/resource-group-template-functions.md) доступны для использования в правиле политики, за исключением следующие функции и определяемые пользователем функции:
 
 - copyIndex()
 - deployment()
 - list*
+- newGuid()
+- pickZones()
 - providers()
 - reference()
 - resourceId()
 - variables()
+
+Можно использовать в правиле политики, но отличаются от использования в шаблоне Azure Resource Manager доступны следующие функции:
+
+- addDays (dateTime, numberOfDaysToAdd)
+  - **dateTime**: [Required] строка — строка в формате даты и времени для универсальных ISO 8601 "гггг-мм-ddTHH:mm:ss.fffffffZ"
+  - **numberOfDaysToAdd**: [Required] целое число — количество дней, прибавляемых
+- utcNow() — в отличие от диспетчера ресурсов шаблона, это может использоваться за пределами defaultValue.
+  - Возвращает строку, которая является текущей даты и времени в формате даты и времени для универсальных ISO 8601 "гггг-мм-ddTHH:mm:ss.fffffffZ"
 
 Кроме того, для правил политики доступна функция `field`. `field` предназначена главным образом для использования с **AuditIfNotExists** и **DeployIfNotExists**, чтобы ссылаться на поля в ресурсе, который оценивается. Это можно увидеть на [примере DeployIfNotExists](effects.md#deployifnotexists-example).
 
@@ -484,7 +498,7 @@ ms.locfileid: "64716768"
 
 ### <a name="understanding-the--alias"></a>Общие сведения о псевдониме [*]
 
-Некоторые доступные псевдонимы имеют версию с отображаемым именем "Обычный", а другие — с подключенным к ней **[\*]**. Например: 
+Некоторые доступные псевдонимы имеют версию с отображаемым именем "Обычный", а другие — с подключенным к ней **[\*]**. Например:
 
 - `Microsoft.Storage/storageAccounts/networkAcls.ipRules`
 - `Microsoft.Storage/storageAccounts/networkAcls.ipRules[*]`

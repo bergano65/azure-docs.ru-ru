@@ -3,8 +3,8 @@ title: Решение для анализа сетей Azure в Azure Monitor | 
 description: Решение для анализа сетей Azure можно использовать в Azure Monitor для просмотра журналов групп безопасности сети Azure и шлюза приложений Azure.
 services: log-analytics
 documentationcenter: ''
-author: richrundmsft
-manager: ewinner
+author: bwren
+manager: carmonm
 editor: ''
 ms.assetid: 66a3b8a1-6c55-4533-9538-cad60c18f28b
 ms.service: log-analytics
@@ -12,13 +12,13 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 06/21/2018
-ms.author: richrund
-ms.openlocfilehash: 0a5d886558e72ef24b03a49750ed75cf7130bf08
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.author: bwren
+ms.openlocfilehash: 244df90a9db2a2b0d5f6ca6e1874bce94fc7f5bf
+ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60495988"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65506419"
 ---
 # <a name="azure-networking-monitoring-solutions-in-azure-monitor"></a>Решения в Azure Monitor для мониторинга сетей Azure
 
@@ -32,7 +32,7 @@ Azure Monitor предлагает следующие решения для мо
     * метрику шлюза приложений Azure.
 * Решения для отслеживания и аудита сетевой активности в облачной сети.
     * [Анализ трафика](https://docs.microsoft.com/azure/networking/network-monitoring-overview#traffic-analytics). 
-    * Анализ групп безопасности сети Azure
+    * Анализ группы безопасности сети Azure
 
 ## <a name="network-performance-monitor-npm"></a>Монитор производительности сети
 

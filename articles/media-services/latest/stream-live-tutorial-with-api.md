@@ -14,12 +14,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 04/21/2019
 ms.author: juliako
-ms.openlocfilehash: 74be798106ef5d028f3ad497a6e726439e86ad51
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: e4f32e14e8c1035055bd8a37bb453764984fbe4d
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64714733"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65149135"
 ---
 # <a name="tutorial-stream-live-with-media-services-v3-using-net"></a>Руководство по Потоковая трансляция в реальном времени с помощью Служб мультимедиа Azure версии 3 и .NET
 
@@ -183,7 +183,7 @@ az group delete --name amsResourceGroup
 > [!IMPORTANT]
 > За запущенное событие потоковой трансляции взимается плата. Учтите также, что при сбое или остановке проекта или программы по любой причине событие потоковой трансляции может остаться в работающем состоянии, за что будет взиматься плата.
 
-## <a name="provide-feedback"></a>Отзывы
+## <a name="ask-questions-give-feedback-get-updates"></a>Получение справки, отправка отзывов, получение обновлений
 
 Прочитайте статью [сообщества Служб мультимедиа Azure](media-services-community.md), чтобы узнать, как задавать вопросы, оставлять отзывы и получать новости о Службах мультимедиа.
 

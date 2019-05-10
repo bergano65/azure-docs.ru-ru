@@ -12,18 +12,18 @@ ms.devlang: dotNet
 ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 01/23/2019
+ms.date: 04/24/2019
 ms.author: pepogors
-ms.openlocfilehash: a0174a5442de7a10e45e9dc2a2f43f5f401d1a69
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 051d6b1129724ce4e8a67bde4e56ebe61cd832f3
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60803172"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65231373"
 ---
 # <a name="azure-service-fabric-application-and-cluster-best-practices"></a>Рекомендации по приложению и кластеру Azure Service Fabric
 
-Для успешного управления приложениями и кластерами Azure Service Fabric мы рекомендуем применять определенные операции, обеспечивающие надежность рабочей среды. Выполните операции, определенные в этом документе, и выберите один из наших [примеров шаблонов кластера Azure Service Fabric](https://github.com/Azure-Samples/service-fabric-cluster-templates), чтобы приступить к проектированию рабочего решения или изменить имеющийся шаблон для внедрения этих рекомендаций.
+Управление приложениями Azure Service Fabric и кластеров успешно, существуют операции, которые мы настоятельно рекомендуем выполнить для оптимизации для обеспечения надежности рабочей среды; можно выполнять операции, определенные в этом документе и выберите один из наших [кластера Service Fabric Azure примеры шаблонов](https://github.com/Azure-Samples/service-fabric-cluster-templates) приступить к проектированию решения производства или изменить существующий шаблон для включения этих рекомендаций.
 
 ## <a name="security"></a>Безопасность 
 
@@ -42,9 +42,13 @@ ms.locfileid: "60803172"
 
 * [Рекомендации по реализации инфраструктуры как кода](service-fabric-best-practices-infrastructure-as-code.md)
 
-## <a name="monitoring-and-diagnostics"></a>Мониторинг и диагностика
+## <a name="monitoring-and-diagnostics"></a>Мониторинг и диагностика.
 
 * [Рекомендации по мониторингу и диагностике кластеров](service-fabric-best-practices-monitoring.md)
+
+## <a name="application-design"></a>Проектирование приложений
+
+* [Рекомендации по разработке приложения](service-fabric-best-practices-applications.md)
 
 ## <a name="checklist"></a>Контрольный список
 

@@ -1,21 +1,21 @@
 ---
-title: Подключение к Базе данных Azure для PostgreSQL с использованием C#
-description: В этом кратком руководстве представлен пример кода C# (.NET), который можно использовать для подключения к базе данных Azure для PostgreSQL и запроса данных из нее.
+title: Подключение к службе "База данных Azure для PostgreSQL — отдельный сервер" с помощью C#
+description: В этом кратком руководстве представлен пример кода C# (.NET), который можно использовать для подключения к службе "База данных Azure для PostgreSQL — отдельный сервер" и запроса данных из нее.
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.custom: mvc, devcenter
 ms.devlang: csharp
 ms.topic: quickstart
-ms.date: 03/12/2019
-ms.openlocfilehash: 79f2749c9a1f5a6a34628087dc2fd22f6eab6d17
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.date: 5/6/2019
+ms.openlocfilehash: 546626b1bf655ce6755e0a34ae8d8a85bcf6990f
+ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57881356"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65067349"
 ---
-# <a name="azure-database-for-postgresql-use-net-c-to-connect-and-query-data"></a>База данных Azure для PostgreSQL: использование .NET (C#) для подключения и создания запросов данных
+# <a name="azure-database-for-postgresql---single-server-use-net-c-to-connect-and-query-data"></a>База данных Azure для PostgreSQL — отдельный сервер: использование .NET (C#) для подключения и создания запросов данных
 В этом кратком руководстве объясняется, как подключиться к базе данных Azure для PostgreSQL с помощью приложения C#. Здесь также показано, как использовать инструкции SQL для запроса, вставки, обновления и удаления данных в базе данных. В этой статье предполагается, что у вас уже есть опыт разработки на C# и вы только начали работу с базой данных Azure для PostgreSQL.
 
 ## <a name="prerequisites"></a>Предварительные требования

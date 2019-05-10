@@ -1,20 +1,20 @@
 ---
-title: Отправка диска Microsoft Azure Data Box обратно| Документация Майкрософт
+title: Руководство по отправке Диска Azure Data Box обратно | Документация Майкрософт
 description: В этом руководстве описано, как отправить диск Azure Data Box в Майкрософт
 services: databox
 author: alkohli
 ms.service: databox
 ms.subservice: disk
 ms.topic: tutorial
-ms.date: 04/08/2019
+ms.date: 05/06/2019
 ms.author: alkohli
 Customer intent: As an IT admin, I need to be able to order Data Box Disk to upload on-premises data from my server onto Azure.
-ms.openlocfilehash: 7c62ec722e5bb909c13b21a7b98d86dd72d9e665
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 023542dbc22234fc57e4ce8b662a9760be4efe04
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59425956"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65150765"
 ---
 # <a name="tutorial-return-azure-data-box-disk-and-verify-data-upload-to-azure"></a>Руководство по Возврат Диска Azure Data Box и проверка передачи данных в Azure
 
@@ -54,7 +54,12 @@ ms.locfileid: "59425956"
     - Прикрепите этикетку к устройству.
 
 2. Запечатайте коробку для транспортировки и убедитесь, что этикетка обратной доставки отображается.
-3. Вызовите курьера для отправки посылки службой доставки UPS.
+3. Вызовите курьера для отправки посылки службой доставки UPS. Чтобы запланировать отправку с курьером:
+
+    - Позвоните в местное отделение UPS (бесплатный номер конкретной страны).
+    - При вызове укажите обратный номер для отслеживания доставки, как показано на напечатанной этикетке.
+    - Если номер для отслеживания не указан, UPS потребует дополнительную плату во время приема посылки.
+    - Вместо планирования отправки с курьером вы также можете оставить Диск Data Box в ближайшем отделении этой курьерской службы.
 
 
 ### <a name="pick-up-in-europe"></a>Возврат в Европе

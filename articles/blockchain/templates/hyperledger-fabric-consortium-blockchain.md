@@ -5,17 +5,17 @@ services: azure-blockchain
 keywords: ''
 author: PatAltimore
 ms.author: patricka
-ms.date: 01/23/2019
+ms.date: 05/09/2019
 ms.topic: article
 ms.service: azure-blockchain
 ms.reviewer: caleteet
 manager: femila
-ms.openlocfilehash: ce1afbd5499e798888e77f52d7b652e7e1f548fc
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 80de4e1479fac7296889e45289a5f20e586e3f57
+ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60690658"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65510753"
 ---
 # <a name="hyperledger-fabric-consortium-network"></a>Сеть консорциума Hyperledger Fabric
 
@@ -113,7 +113,7 @@ ms.locfileid: "60690658"
 | Имя параметра | Описание | Допустимые значения |
 |---|---|---|
 **Тип масштабирования** |Тип развертывания одной виртуальной машины с несколькими контейнерами или нескольких виртуальных машин в модели горизонтального масштабирования.|Single VM (Одна виртуальная машина) или Multi VM (Несколько виртуальных машин) |
-**Тип диска виртуальной машины** |Тип хранилища, поддерживающий каждый из развернутых узлов. <br/> Дополнительные сведения о типах доступных дисков см. в статье о [типах дисков, доступных в Azure](../../virtual-machines/windows/disks-types.md).|SSD (цен. категория "Стандартный") <br/> Диск SSD категории "Премиум" |
+**Тип диска виртуальной машины** |Тип хранилища, поддерживающий каждый из развернутых узлов. <br/> Дополнительные сведения о типах доступных дисков см. в статье о [типах дисков, доступных в Azure](../../virtual-machines/windows/disks-types.md).|SSD (цен. категория "Стандартный") <br/> SSD (цен. категория "Премиум") |
 
 ### <a name="multiple-vm-deployment-additional-settings"></a>Развертывание нескольких виртуальных машин (дополнительные параметры)
 
@@ -135,7 +135,7 @@ ms.locfileid: "60690658"
 
 Нажмите кнопку **ОК**.
 
-### <a name="deploy"></a>Развертывание
+### <a name="deploy"></a>Развернуть
 
 В разделе **Сводка** просмотрите введенные данные и выполните базовую проверку перед развертыванием.
 

@@ -7,15 +7,15 @@ manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.subservice: manage
-ms.date: 03/01/2019
+ms.date: 04/30/2019
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: ebe45bf8f562b5be9ae2afda9d5940296396f155
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 914513bc19cc81da29efef12d50a6485233d169f
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60679313"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65236577"
 ---
 # <a name="backup-and-restore-in-azure-sql-data-warehouse"></a>Резервное копирование и восстановление в хранилище данных SQL Azure
 
@@ -83,7 +83,7 @@ order by run_id desc
 
 При использовании геоизбыточного хранилища плата за хранилище взимается отдельно. Геоизбыточное хранилище оплачивается по стандартному тарифу для географически избыточного хранилища с доступом на чтение (RA-GRS).
 
-Ознакомиться с ценами на хранилище данных SQL можно на [этой странице](https://azure.microsoft.com/pricing/details/sql-data-warehouse/) и на [странице расценок на исходящий трафик](https://azure.microsoft.com/pricing/details/bandwidth/) при восстановлении между регионами.
+Дополнительные сведения о ценах на хранилище данных SQL см. в разделе [цен хранилища данных SQL]. При восстановлении в регионах плата не взимается за исходящие данные.
 
 ## <a name="restoring-from-restore-points"></a>Восстановление из точек восстановления
 

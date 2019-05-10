@@ -1,21 +1,21 @@
 ---
-title: Краткое руководство по созданию базы данных Azure для PostgreSQL с помощью Azure CLI
-description: Краткое руководство по созданию базы данных Azure и управлению ею для сервера PostgreSQL с помощью Azure CLI (интерфейса командной строки).
+title: Краткое руководство. Создание базы данных в службе "База данных Azure для PostgreSQL — отдельный сервер" с помощью Azure CLI
+description: Краткое руководство по созданию базы данных в службе "База данных Azure для PostgreSQL — отдельный сервер" и управлению ею с помощью Azure CLI.
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.devlang: azurecli
 ms.topic: quickstart
-ms.date: 3/12/2019
+ms.date: 05/06/2019
 ms.custom: mvc
-ms.openlocfilehash: 07e3f1f2dd672fcfd0b7a3a4d102c429ac123c08
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 5b16d87a69ecdac578da2a90be22013744c32bd7
+ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57902024"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65069056"
 ---
-# <a name="quickstart-create-an-azure-database-for-postgresql-using-the-azure-cli"></a>Краткое руководство. Создание базы данных Azure для PostgreSQL с помощью Azure CLI
+# <a name="quickstart-create-an-azure-database-for-postgresql---single-server-using-the-azure-cli"></a>Краткое руководство. Создание базы данных в службе "База данных Azure для PostgreSQL — отдельный сервер" с помощью Azure CLI
 
 > [!TIP]
 > Рассмотрите возможность использования более простой команды Azure CLI [az postgres up](/cli/azure/ext/db-up/postgres#ext-db-up-az-postgres-up) (сейчас в предварительной версии). Ознакомьтесь с [кратким руководством](./quickstart-create-server-up-azure-cli.md).
@@ -28,12 +28,12 @@ ms.locfileid: "57902024"
 
 Если вы решили установить и использовать интерфейс командной строки локально, для работы с этой статьей вам понадобится Azure CLI 2.0 или более поздней версии. Чтобы узнать, какая установлена версия, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli). 
 
-Если интерфейс командной строки выполняется локально, необходимо войти учетную запись, выполнив команду [az login](/cli/azure/authenticate-azure-cli?view=interactive-log-in). Запишите свойство **id** из выходных данных команды для соответствующего имени подписки.
+Если интерфейс командной строки выполняется локально, необходимо войти в учетную запись, выполнив команду [az login](/cli/azure/authenticate-azure-cli?view=interactive-log-in). Запишите свойство **ID** из выходных данных команды для соответствующего имени подписки.
 ```azurecli-interactive
 az login
 ```
 
-Если вы используете несколько подписок, выберите соответствующую, в которой за ресурс будет взиматься плата. Выберите конкретный идентификатор подписки вашей учетной записи, выполнив команду [az account set](/cli/azure/account). Подставьте свойство **id** из выходных данных **az login** для вашей подписки в заполнитель для идентификатора подписки.
+Если вы используете несколько подписок, выберите соответствующую, в которой за ресурс будет взиматься плата. Выберите конкретный идентификатор подписки вашей учетной записи, выполнив команду [az account set](/cli/azure/account). Подставьте свойство **ID** из выходных данных **az login** для вашей подписки в заполнитель для идентификатора подписки.
 ```azurecli-interactive
 az account set --subscription <subscription id>
 ```

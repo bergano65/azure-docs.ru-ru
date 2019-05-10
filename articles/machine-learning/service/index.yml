@@ -11,7 +11,7 @@ metadata:
   manager: jhubbard
   author: j-martens
   ms.author: jmartens
-  ms.date: 02/19/2019
+  ms.date: 05/06/2019
   ms.custom: seodec18
   ms.tgt_pltfrm: na
   ms.devlang: na
@@ -57,6 +57,7 @@ sections:
           - html: '<a href="https://aka.ms/aml-sdk">Основной пакет SDK для Python</a>: ключевые функции, автоматическое машинное обучение, конвейеры и многое другое.'
           - html: 'Пакет SDK для Python <a href="https://aka.ms/aml-monitoring-sdk">для мониторинга</a>: сбор данных о развернутых веб-службах.'
           - html: <a href="../algorithm-module-reference/module-reference.md">Справочник по алгоритмам и модулям</a> для графического интерфейса
+          - html: '<a href="https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml?view=azure-cli-latest">Azure ML CLI</a>: расширение интерфейса командной строки машинного обучения'
   - title: Другие технологии службы "Машинное обучение Azure"
     items:
       - type: list

@@ -5,14 +5,14 @@ services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: tutorial
-ms.date: 03/21/2019
+ms.date: 04/12/2019
 ms.author: helohr
-ms.openlocfilehash: 1bbe89484d72a21c4432d452d4ddae83ea2d2553
-ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
+ms.openlocfilehash: 93725fc9d77552d779378d0c14294a5bbb11c926
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58400028"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65146146"
 ---
 # <a name="tutorial-create-service-principals-and-role-assignments-with-powershell"></a>Руководство по Создание субъектов-служб и назначений ролей с помощью PowerShell
 
@@ -111,5 +111,5 @@ Add-RdsAccount -DeploymentUrl "https://rdbroker.wvd.microsoft.com" -Credential $
 
 Из этого руководства вы узнали, как создать субъект-службу и использовать его для входа в Виртуальный рабочий стол Windows. Чтобы узнать больше о том, как можно выполнять вход в Виртуальный рабочий стол Windows, перейдите к руководствам по подключению к Виртуальному рабочему столу Windows.
 
-- [Connect to the Remote Desktop client on Windows 7 and Windows 10](connect-windows-7-and-10.md) (Подключение к клиенту удаленного рабочего стола в Windows 7 и Windows 10)
-- [Connect to the Windows Virtual Desktop Preview web client](connect-web.md) (Подключение к веб-клиенту предварительной версии Виртуального рабочего стола Windows)
+- [Подключение из Windows 10 или Windows 7](connect-windows-7-and-10.md)
+- [Подключение из веб-браузера](connect-web.md)

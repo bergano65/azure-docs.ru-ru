@@ -64,26 +64,34 @@
   items:
     - name: Лаборатории для аудитории
       items:
-        - name: Управление учетными записями лабораторий
-          href: classroom-labs/how-to-manage-lab-accounts.md
-        - name: Управление лабораториями для аудитории
-          href: classroom-labs/how-to-manage-classroom-labs.md
-        - name: Настройка и публикация шаблонов
-          href: classroom-labs/how-to-create-manage-template.md
-        - name: Настройка параметров использования и управление им
-          href: classroom-labs/how-to-configure-student-usage.md
-        - name: Доступ к лабораториям для аудитории
-          href: classroom-labs/how-to-use-classroom-lab.md
-        - name: Создание расписаний и управление ими
-          href: classroom-labs/how-to-create-schedules.md
-        - name: Создание среды с несколькими виртуальными машинами в шаблоне виртуальной машины
-          href: classroom-labs/how-to-enable-multi-vm-environment.md
-        - name: Подключение лабораторий к пиринговой виртуальной сети
-          href: classroom-labs/how-to-connect-peer-virtual-network.md
-        - name: Подключение и использование коллекции общих образов
-          href: classroom-labs/how-to-use-shared-image-gallery.md
-        - name: Включение соединения с удаленным рабочим столом для Linux
-          href: classroom-labs/how-to-enable-remote-desktop-linux.md
+        - name: Создание и настройка учетных записей лаборатории
+          items:
+            - name: Создание и администрирование учетных записей лаборатории
+              href: classroom-labs/how-to-manage-lab-accounts.md
+            - name: Настройка учетных записей лаборатории
+              href: classroom-labs/how-to-configure-lab-accounts.md
+            - name: Подключение лабораторий к пиринговой виртуальной сети
+              href: classroom-labs/how-to-connect-peer-virtual-network.md
+            - name: Подключение и отключение коллекции общих образов
+              href: classroom-labs/how-to-attach-detach-shared-image-gallery.md
+        - name: 'Создание, настройка и использование лабораторий для аудитории'
+          items:
+            - name: Создание и администрирование лабораторий для аудитории
+              href: classroom-labs/how-to-manage-classroom-labs.md
+            - name: Настройка и публикация шаблонов
+              href: classroom-labs/how-to-create-manage-template.md
+            - name: Настройка параметров использования и управление им
+              href: classroom-labs/how-to-configure-student-usage.md
+            - name: Доступ к лабораториям для аудитории
+              href: classroom-labs/how-to-use-classroom-lab.md
+            - name: Создание расписаний и управление ими
+              href: classroom-labs/how-to-create-schedules.md
+            - name: Создание среды с несколькими виртуальными машинами в шаблоне виртуальной машины
+              href: classroom-labs/how-to-enable-multi-vm-environment.md
+            - name: Использование коллекции общих образов
+              href: classroom-labs/how-to-use-shared-image-gallery.md
+            - name: Включение соединения с удаленным рабочим столом для Linux
+              href: classroom-labs/how-to-enable-remote-desktop-linux.md
     - name: DevTest Labs
       items:
         - name: Определение группы ресурсов для виртуальных машин лаборатории
@@ -166,12 +174,16 @@
               href: connect-environment-lab-virtual-network.md
             - name: Интеграция сред с конвейером CI/CD в Azure DevOps
               href: integrate-environments-devops-pipeline.md
+            - name: Использование служб платформы как услуги (PaaS)
+              href: use-paas-services.md
         - name: Безопасный доступ к лабораториям
           items:
             - name: Добавление владельцев и пользователей лаборатории
               href: devtest-lab-add-devtest-user.md
             - name: Настройка разрешений с помощью пользовательских ролей
               href: devtest-lab-grant-user-permissions-to-specific-lab-policies.md
+            - name: Автоматизация добавления пользователей лаборатории
+              href: automate-add-lab-user.md
         - name: Настройка лаборатории
           items:
             - name: Определение политик и расписаний

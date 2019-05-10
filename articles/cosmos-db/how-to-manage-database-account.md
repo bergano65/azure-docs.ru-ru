@@ -1,23 +1,23 @@
 ---
 title: Сведения об управлении учетными записями базы данных в Azure Cosmos DB
 description: Сведения об управлении учетными записями базы данных в Azure Cosmos DB
-author: rimman
+author: markjbrown
 ms.service: cosmos-db
 ms.topic: sample
-ms.date: 04/08/2019
-ms.author: rimman
-ms.openlocfilehash: b2b5e58ca480aa3abaa0766319977b8d1160ebeb
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.date: 05/06/2019
+ms.author: mjbrown
+ms.openlocfilehash: 57116327168a76f971a22b61144850199cb0cbae
+ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59283007"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65068814"
 ---
 # <a name="manage-an-azure-cosmos-account"></a>Управление учетной записью Azure Cosmos
 
-В этой статье описывается, как управлять учетной записью Azure Cosmos. Вы узнаете, как настроить множественные адресации, добавить и удалить регион, настроить несколько регионов записи и установить приоритеты при отработке отказа. 
+В этой статье описывается, как управлять различными задачами в учетной записи Azure Cosmos с помощью портала Azure, Azure PowerShell, Azure CLI и шаблонов Azure Resource Manager.
 
-## <a name="create-a-database-account"></a>Создание учетной записи базы данных
+## <a name="create-an-account"></a>Создание учетной записи
 
 ### <a id="create-database-account-via-portal"></a>Портал Azure
 
@@ -25,87 +25,67 @@ ms.locfileid: "59283007"
 
 ### <a id="create-database-account-via-cli"></a>Интерфейс командной строки Azure
 
-```bash
+```azurecli-interactive
 # Create an account
-az cosmosdb create --name <Azure Cosmos account name> --resource-group <Resource Group Name>
+$resourceGroupName = 'myResourceGroup'
+$accountName = 'myaccountname' # must be lower case.
+
+az cosmosdb create \
+   --name $accountName \
+   --resource-group $resourceGroupName \
+   --kind GlobalDocumentDB \
+   --default-consistency-level Session \
+   --locations WestUS=0 EastUS=1 \
+   --enable-multiple-write-locations true
 ```
 
-## <a name="configure-clients-for-multi-homing"></a>Настройка клиентов для поддержки нескольких веб-сайтов
+### <a id="create-database-account-via-ps"></a>Azure PowerShell
+```azurepowershell-interactive
+# Create an Azure Cosmos Account for Core (SQL) API
+$resourceGroupName = "myResourceGroup"
+$location = "West US"
+$accountName = "mycosmosaccount" # must be lower case.
 
-### <a id="configure-clients-multi-homing-dotnet"></a>Пакет SDK для .NET версии 2
+$locations = @(
+    @{ "locationName"="West US"; "failoverPriority"=0 },
+    @{ "locationName"="East US"; "failoverPriority"=1 }
+)
 
-```csharp
-ConnectionPolicy policy = new ConnectionPolicy
-    {
-        ConnectionMode = ConnectionMode.Direct,
-        ConnectionProtocol = Protocol.Tcp,
-        UseMultipleWriteLocations = true
-    };
-policy.SetCurrentLocation("West US 2");
+$consistencyPolicy = @{
+    "defaultConsistencyLevel"="BoundedStaleness";
+    "maxIntervalInSeconds"=300;
+    "maxStalenessPrefix"=100000
+}
 
-// Pass the connection policy with the preferred locations on it to the client.
-DocumentClient client = new DocumentClient(new Uri(this.accountEndpoint), this.accountKey, policy);
+$CosmosDBProperties = @{
+    "databaseAccountOfferType"="Standard";
+    "locations"=$locations;
+    "consistencyPolicy"=$consistencyPolicy;
+    "enableMultipleWriteLocations"="true"
+}
+
+New-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts" `
+    -ApiVersion "2015-04-08" -ResourceGroupName $resourceGroupName -Location $location `
+    -Name $accountName -PropertyObject $CosmosDBProperties
 ```
 
-### <a id="configure-clients-multi-homing-dotnet-v3"></a>Пакет SDK для .NET версии 3 (предварительная версия)
+### <a id="create-database-account-via-arm-template"></a>Шаблон Azure Resource Manager
 
-```csharp
-CosmosConfiguration config = new CosmosConfiguration("endpoint", "key");
-config.UseCurrentRegion("West US");
-CosmosClient client = new CosmosClient(config);
-```
-
-### <a id="configure-clients-multi-homing-java-async"></a>Пакет SDK для Java (асинхронная модель)
-
-```java
-ConnectionPolicy policy = new ConnectionPolicy();
-policy.setUsingMultipleWriteLocations(true);
-policy.setPreferredLocations(Collections.singletonList(region));
-
-AsyncDocumentClient client =
-    new AsyncDocumentClient.Builder()
-        .withMasterKeyOrResourceToken(this.accountKey)
-        .withServiceEndpoint(this.accountEndpoint)
-        .withConsistencyLevel(ConsistencyLevel.Eventual)
-        .withConnectionPolicy(policy).build();
-```
-
-### <a id="configure-clients-multi-homing-javascript"></a>Пакет SDK для Node.js, JavaScript и TypeScript
-
-```javascript
-const connectionPolicy: ConnectionPolicy = new ConnectionPolicy();
-connectionPolicy.UseMultipleWriteLocations = true;
-connectionPolicy.PreferredLocations = [region];
-
-const client = new CosmosClient({
-  endpoint: config.endpoint,
-  auth: { masterKey: config.key },
-  connectionPolicy,
-  consistencyLevel: ConsistencyLevel.Eventual
-});
-```
-
-### <a id="configure-clients-multi-homing-python"></a>Пакет SDK для Python
-
-```python
-connection_policy = documents.ConnectionPolicy()
-connection_policy.UseMultipleWriteLocations = True
-connection_policy.PreferredLocations = [region]
-
-client = cosmos_client.CosmosClient(self.account_endpoint, {'masterKey': self.account_key}, connection_policy, documents.ConsistencyLevel.Session)
-```
+Этот шаблон Azure Resource Manager позволяет создать учетную запись Azure Cosmos DB для любого поддерживаемого API, настроенную для двух регионов и позволяющую выбрать уровень согласованности, автоматический переход на другой ресурс и несколько источников. Чтобы развернуть этот шаблон, нажмите кнопку Deploy to Azure (Развернуть в Azure) на странице файла сведений в разделе о [создании учетной записи Azure Cosmos DB](https://github.com/Azure/azure-quickstart-templates/tree/master/101-cosmosdb-create-multi-region-account).
 
 ## <a name="addremove-regions-from-your-database-account"></a>Добавление и удаление регионов из учетной записи базы данных
 
 ### <a id="add-remove-regions-via-portal"></a>Портал Azure
 
+1. Войдите на [портал Azure](https://portal.azure.com). 
+
 1. Перейдите к учетной записи Azure Cosmos и откройте меню **Глобальная репликация данных**.
 
-2. Чтобы добавить регионы, выберите шестиугольники на карте с меткой **+**, которая соответствует нужным регионам. Кроме того, вы можете добавить регион, щелкнув параметр **+ Добавить регион** и выбрав регион из раскрывающегося меню.
+1. Чтобы добавить регионы, выберите шестиугольники на карте с меткой **+**, которая соответствует нужным регионам. Кроме того, вы можете добавить регион, щелкнув параметр **+ Добавить регион** и выбрав регион из раскрывающегося меню.
 
-3. Чтобы удалить регионы, очистите один или несколько регионов на карте, выбрав синие шестиугольники с флажками. Или выберите "мусорной" значок (🗑) рядом с регионом с правой стороны.
+1. Чтобы удалить регионы, очистите один или несколько регионов на карте, выбрав синие шестиугольники с флажками. Или выберите "мусорной" значок (🗑) рядом с регионом с правой стороны.
 
-4. Нажмите кнопку **ОК**, чтобы сохранить изменения.
+1. Нажмите кнопку **ОК**, чтобы сохранить изменения.
 
    ![Меню добавления и удаления регионов](./media/how-to-manage-database-account/add-region.png)
 
@@ -115,34 +95,112 @@ client = cosmos_client.CosmosClient(self.account_endpoint, {'masterKey': self.ac
 
 ### <a id="add-remove-regions-via-cli"></a>Интерфейс командной строки Azure
 
-```bash
+```azurecli-interactive
+$resourceGroupName = 'myResourceGroup'
+$accountName = 'myaccountname'
+
 # Create an account with 1 region
-az cosmosdb create --name <Azure Cosmos account name> --resource-group <Resource Group name> --locations eastus=0
+az cosmosdb create --name $accountName --resource-group $resourceGroupName --locations westus=0
 
 # Add a region
-az cosmosdb update --name <Azure Cosmos account name> --resource-group <Resource Group name> --locations eastus=0 westus=1
+az cosmosdb update --name $accountName --resource-group $resourceGroupName --locations westus=0 eastus=1
 
 # Remove a region
-az cosmosdb update --name <Azure Cosmos account name> --resource-group <Resource Group name> --locations westus=0
+az cosmosdb update --name $accountName --resource-group $resourceGroupName --locations westus=0
 ```
 
-## <a name="configure-multiple-write-regions"></a>Настройка нескольких регионов записи
+### <a id="add-remove-regions-via-ps"></a>Azure PowerShell
+
+```azurepowershell-interactive
+# Create an account with 1 region
+$resourceGroupName = "myResourceGroup"
+$location = "West US"
+$accountName = "mycosmosaccount" # must be lower case.
+
+$locations = @( @{ "locationName"="West US"; "failoverPriority"=0 } )
+$consistencyPolicy = @{ "defaultConsistencyLevel"="Session" }
+$CosmosDBProperties = @{
+    "databaseAccountOfferType"="Standard";
+    "locations"=$locations;
+    "consistencyPolicy"=$consistencyPolicy
+}
+New-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts" `
+    -ApiVersion "2015-04-08" -ResourceGroupName $resourceGroupName -Location $location `
+    -Name $accountName -PropertyObject $CosmosDBProperties
+
+# Add a region
+$account = Get-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts" `
+    -ApiVersion "2015-04-08" -ResourceGroupName $resourceGroupName -Name $accountName
+
+$locations = @( 
+    @{ "locationName"="West US"; "failoverPriority"=0 },
+    @{ "locationName"="East Us"; "failoverPriority"=1 } 
+)
+
+$account.Properties.locations = $locations
+$CosmosDBProperties = $account.Properties
+
+Set-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts" `
+    -ApiVersion "2015-04-08" -ResourceGroupName $resourceGroupName `
+    -Name $accountName -PropertyObject $CosmosDBProperties
+
+# Azure Resource Manager does not wait on the resource update
+Write-Host "Confirm region added before continuing..."
+
+# Remove a region
+$account = Get-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts" `
+    -ApiVersion "2015-04-08" -ResourceGroupName $resourceGroupName -Name $accountName
+
+$locations = @( @{ "locationName"="West US"; "failoverPriority"=0 } )
+
+$account.Properties.locations = $locations
+$CosmosDBProperties = $account.Properties
+
+Set-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts" `
+    -ApiVersion "2015-04-08" -ResourceGroupName $resourceGroupName `
+    -Name $accountName -PropertyObject $CosmosDBProperties
+```
+
+## <a id="configure-multiple-write-regions"></a>Настройка нескольких регионов записи
 
 ### <a id="configure-multiple-write-regions-portal"></a>Портал Azure
 
-При создании учетной записи базы данных убедитесь, что параметр **Multi-Region Writes** (Записи в нескольких регионах) включен.
+Откройте вкладку **Глобальная репликация данных** и выберите **Включить**, чтобы включить операции записи в нескольких регионах. После включения операций записи в нескольких регионах все регионы чтения, которые в текущий момент есть в вашей учетной записи, станут регионами как для чтения, так и для записи. 
 
-![Снимок экрана создания учетной записи Azure Cosmos](./media/how-to-manage-database-account/account-create.png)
+> [!NOTE]
+> После включения операций записи в нескольких регионах их нельзя отключить. 
+
+![Снимок экрана: настройка нескольких источников в учетной записи Azure Cosmos](./media/how-to-manage-database-account/single-to-multi-master.png)
+
+Пишите нам на псевдоним askcosmosdb@microsoft.com, если у вас возникнут дополнительные вопросы об этой функции. 
 
 ### <a id="configure-multiple-write-regions-cli"></a>Интерфейс командной строки Azure
 
-```bash
-az cosmosdb create --name <Azure Cosmos account name> --resource-group <Resource Group name> --enable-multiple-write-locations true
+```azurecli-interactive
+$resourceGroupName = 'myResourceGroup'
+$accountName = 'myaccountname'
+az cosmosdb update --name $accountName --resource-group $resourceGroupName --enable-multiple-write-locations true
+```
+
+### <a id="configure-multiple-write-regions-ps"></a>Azure PowerShell
+
+```azurepowershell-interactive
+# Update an Azure Cosmos Account from single to multi-master
+
+$account = Get-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts" `
+    -ApiVersion "2015-04-08" -ResourceGroupName $resourceGroupName -Name $accountName
+
+$account.Properties.enableMultipleWriteLocations = "true"
+$CosmosDBProperties = $account.Properties
+
+Set-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts" `
+    -ApiVersion "2015-04-08" -ResourceGroupName $resourceGroupName `
+    -Name $accountName -PropertyObject $CosmosDBProperties
 ```
 
 ### <a id="configure-multiple-write-regions-arm"></a>шаблон Resource Manager
 
-Следующий код JSON представляет собой пример шаблона [Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview). Его можно использовать для развертывания учетной записи Azure Cosmos с [уровнем согласованности с ограниченным устареванием](consistency-levels.md). Максимальный интервал устаревания — 5 секунд. Максимальное допустимое количество устаревших запросов — 100. Дополнительные сведения о формате и синтаксисе шаблона Resource Manager см. в статье [Описание структуры и синтаксиса шаблонов Azure Resource Manager](../azure-resource-manager/resource-group-authoring-templates.md).
+Учетную запись можно преобразовать из записи с одним источником в учетную запись с несколькими источниками путем развертывания шаблона Resource Manager, используемого для создания учетной записи, и применения параметра `enableMultipleWriteLocations: true`. Следующий шаблон Azure Resource Manager представляет собой минимальный шаблон, который позволяет развернуть учетную запись Azure Cosmos DB для API SQL с одним регионом и включенными несколькими источниками.
 
 ```json
 {
@@ -153,13 +211,8 @@ az cosmosdb create --name <Azure Cosmos account name> --resource-group <Resource
             "type": "String"
         },
         "location": {
-            "type": "String"
-        },
-        "locationName": {
-            "type": "String"
-        },
-        "defaultExperience": {
-            "type": "String"
+            "type": "String",
+            "defaultValue": "[resourceGroup().location]"
         }
     },
     "resources": [
@@ -169,35 +222,129 @@ az cosmosdb create --name <Azure Cosmos account name> --resource-group <Resource
             "name": "[parameters('name')]",
             "apiVersion": "2015-04-08",
             "location": "[parameters('location')]",
-            "tags": {
-                "defaultExperience": "[parameters('defaultExperience')]"
-            },
+            "tags": {},
             "properties": {
                 "databaseAccountOfferType": "Standard",
-                "consistencyPolicy": {
-                    "defaultConsistencyLevel": "BoundedStaleness",
-                    "maxIntervalInSeconds": 5,
-                    "maxStalenessPrefix": 100
-                },
+                "consistencyPolicy": { "defaultConsistencyLevel": "Session" },
                 "locations": [
                     {
-                        "id": "[concat(parameters('name'), '-', parameters('location'))]",
-                        "failoverPriority": 0,
-                        "locationName": "[parameters('locationName')]"
+                        "locationName": "[parameters('location')]",
+                        "failoverPriority": 0
                     }
                 ],
-                "isVirtualNetworkFilterEnabled": false,
-                "enableMultipleWriteLocations": true,
-                "virtualNetworkRules": [],
-                "dependsOn": []
+                "enableMultipleWriteLocations": true
             }
         }
     ]
 }
 ```
 
+## <a id="automatic-failover"></a>Включение автоматического перехода на другой ресурс для учетной записи Azure Cosmos DB
 
-## <a id="manual-failover"></a>Включение перехода на другой ресурс вручную для учетной записи Azure Cosmos
+Если какой-либо регион становится недоступным, возможность автоматического перехода на другой ресурс позволяет Azure Cosmos DB выполнять отработку отказа в регион с наибольшим приоритетом отработки отказа без каких-либо действий со стороны пользователя. При включенном автоматическом переходе на другой ресурс приоритет региона можно изменить. В учетной записи должно быть два или более регионов, чтобы включить автоматический переход на другой ресурс.
+
+### <a id="enable-automatic-failover-via-portal"></a>Портал Azure
+
+1. В учетной записи Azure Cosmos DB откройте панель **Глобальная репликация данных**.
+
+2. В верхней части панели выберите **Автоматический переход на другой ресурс**.
+
+   ![Меню глобальной репликации данных](./media/how-to-manage-database-account/replicate-data-globally.png)
+
+3. На панели **Автоматический переход на другой ресурс** убедитесь, что для параметра **Включить автоматическую отработку отказа** установлено значение **ВКЛ**. 
+
+4. Щелкните **Сохранить**.
+
+   ![Меню автоматического перехода на другой ресурс на портале](./media/how-to-manage-database-account/automatic-failover.png)
+
+### <a id="enable-automatic-failover-via-cli"></a>Интерфейс командной строки Azure
+
+```azurecli-interactive
+# Enable automatic failover on an existing account
+$resourceGroupName = 'myResourceGroup'
+$accountName = 'myaccountname'
+
+az cosmosdb update --name $accountName --resource-group $resourceGroupName --enable-automatic-failover true
+```
+
+### <a id="enable-automatic-failover-via-ps"></a>Azure PowerShell
+
+```azurepowershell-interactive
+$resourceGroupName = "myResourceGroup"
+$accountName = "mycosmosaccount"
+
+$account = Get-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts" `
+    -ApiVersion "2015-04-08" -ResourceGroupName $resourceGroupName `
+    -Name $accountName
+
+$account.Properties.enableAutomaticFailover="true";
+$CosmosDBProperties = $account.Properties;
+
+Set-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts" `
+    -ApiVersion "2015-04-08" -ResourceGroupName $resourceGroupName `
+    -Name $accountName -PropertyObject $CosmosDBProperties
+```
+
+## <a name="set-failover-priorities-for-your-azure-cosmos-account"></a>Настройка приоритетов при отработке отказа для учетной записи Azure Cosmos
+
+После настройки автоматического перехода на другой ресурс в учетной записи Cosmos можно изменить приоритет при отработке отказа для других регионов.
+
+> [!IMPORTANT]
+> Вы не можете изменить регион записи (приоритет отработки отказа равен нулю) после настройки учетной записи для автоматического перехода на другой ресурс. Чтобы изменить регион записи, необходимо отключить автоматический переход на другой ресурс и выполнить переход на другой ресурс вручную.
+
+### <a id="set-failover-priorities-via-portal"></a>Портал Azure
+
+1. В учетной записи Azure Cosmos откройте панель **Глобальная репликация данных**.
+
+2. В верхней части панели выберите **Автоматический переход на другой ресурс**.
+
+   ![Меню глобальной репликации данных](./media/how-to-manage-database-account/replicate-data-globally.png)
+
+3. На панели **Автоматический переход на другой ресурс** убедитесь, что для параметра **Включить автоматическую отработку отказа** установлено значение **ВКЛ**.
+
+4. Чтобы изменить приоритет при отработке отказа, щелкните и перетащите регионы чтения, щелкнув три точки в левой части строки, которые появляются при наведении указателя мыши на строку.
+
+5. Щелкните **Сохранить**.
+
+   ![Меню автоматического перехода на другой ресурс на портале](./media/how-to-manage-database-account/automatic-failover.png)
+
+### <a id="set-failover-priorities-via-cli"></a>Интерфейс командной строки Azure
+
+```azurecli-interactive
+# Assume region order is initially eastus=0 westus=1 southeastasia=2 on account creation
+$resourceGroupName = 'myResourceGroup'
+$accountName = 'myaccountname'
+
+az cosmosdb failover-priority-change --name $accountName --resource-group $resourceGroupName --failover-policies eastus=0 southeastasia=1 westus=2
+```
+
+### <a id="set-failover-priorities-via-ps"></a>Azure PowerShell
+
+```azurepowershell-interactive
+# Assume account currently has regions with priority: West US = 0, East US = 1, Southeast Asia = 2
+$resourceGroupName = "myResourceGroup"
+$accountName = "myaccountname"
+
+$failoverPolicies = @(
+    @{ "locationName"="West US"; "failoverPriority"=0 },
+    @{ "locationName"="Southeast Asia"; "failoverPriority"=1 },
+    @{ "locationName"="East US"; "failoverPriority"=2 }
+)
+
+Invoke-AzResourceAction -Action failoverPriorityChange `
+    -ResourceType "Microsoft.DocumentDb/databaseAccounts" -ApiVersion "2015-04-08" `
+    -ResourceGroupName $resourceGroupName -Name $accountName -Parameters $failoverPolicies
+```
+
+## <a id="manual-failover"></a>Выполнение перехода на другой ресурс вручную для учетной записи Azure Cosmos
+
+> [!IMPORTANT]
+> Для успеха этой операции учетная запись Azure Cosmos должна быть настроена на переход на другой ресурс вручную.
+
+Процесс выполнения перехода на другой ресурс вручную включает изменение региона записи учетной записи (приоритет отработки отказа = 0) на другой регион, настроенный для учетной записи.
+
+> [!NOTE]
+> Выполнить отработку отказа для учетной записи с несколькими источниками вручную невозможно. Для приложений, использующих пакет SDK для Azure Cosmos DB, пакет SDK будет определять, когда регион становится недоступным, а затем выполнять автоматическое перенаправление в следующий ближайший регион при использовании API множественной адресации в пакете SDK.
 
 ### <a id="enable-manual-failover-via-portal"></a>Портал Azure
 
@@ -215,79 +362,43 @@ az cosmosdb create --name <Azure Cosmos account name> --resource-group <Resource
 
 ### <a id="enable-manual-failover-via-cli"></a>Интерфейс командной строки Azure
 
-```bash
-# Given your account currently has regions with priority: eastus=0 westus=1
+```azurecli-interactive
+# Assume account currently has regions with priority: eastus=0 westus=1
 # Change the priority order to trigger a failover of the write region
-az cosmosdb update --name <Azure Cosmos account name> --resource-group <Resource Group name> --locations westus=0 eastus=1
+$resourceGroupName = 'myResourceGroup'
+$accountName = 'myaccountname'
+
+az cosmosdb update --name $accountName --resource-group $resourceGroupName --locations westus=0 eastus=1
 ```
 
-## <a id="automatic-failover"></a>Включение автоматического перехода на другой ресурс для учетной записи Azure Cosmos DB
+### <a id="enable-manual-failover-via-ps"></a>Azure PowerShell
 
-### <a id="enable-automatic-failover-via-portal"></a>Портал Azure
+```azurepowershell-interactive
+# Assume account currently has regions with priority: West US = 0, East US = 1
+# Change the priority order to trigger a failover of the write region
+$resourceGroupName = "myResourceGroup"
+$accountName = "myaccountname"
 
-1. В учетной записи Azure Cosmos DB откройте панель **Глобальная репликация данных**. 
+$account = Get-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts" `
+    -ApiVersion "2015-04-08" -ResourceGroupName $resourceGroupName `
+    -Name $accountName
 
-2. В верхней части панели выберите **Автоматический переход на другой ресурс**.
+$locations = @(
+    @{ "locationName"="East US"; "failoverPriority"=0 },
+    @{ "locationName"="West US"; "failoverPriority"=1 }
+)
 
-   ![Меню глобальной репликации данных](./media/how-to-manage-database-account/replicate-data-globally.png)
+$account.Properties.locations=$locations;
+$CosmosDBProperties = $account.Properties;
 
-3. На панели **Автоматический переход на другой ресурс** убедитесь, что для параметра **Включить автоматическую отработку отказа** установлено значение **ВКЛ**. 
-
-4. Щелкните **Сохранить**.
-
-   ![Меню автоматического перехода на другой ресурс на портале](./media/how-to-manage-database-account/automatic-failover.png)
-
-В этом меню также можно задать приоритеты отработки отказа.
-
-### <a id="enable-automatic-failover-via-cli"></a>Интерфейс командной строки Azure
-
-```bash
-# Enable automatic failover on account creation
-az cosmosdb create --name <Azure Cosmos account name> --resource-group <Resource Group name> --enable-automatic-failover true
-
-# Enable automatic failover on an existing account
-az cosmosdb update --name <Azure Cosmos account name> --resource-group <Resource Group name> --enable-automatic-failover true
-
-# Disable automatic failover on an existing account
-az cosmosdb update --name <Azure Cosmos account name> --resource-group <Resource Group name> --enable-automatic-failover false
-```
-
-## <a name="set-failover-priorities-for-your-azure-cosmos-account"></a>Настройка приоритетов при отработке отказа для учетной записи Azure Cosmos
-
-### <a id="set-failover-priorities-via-portal"></a>Портал Azure
-
-1. В учетной записи Azure Cosmos откройте панель **Глобальная репликация данных**. 
-
-2. В верхней части панели выберите **Автоматический переход на другой ресурс**.
-
-   ![Меню глобальной репликации данных](./media/how-to-manage-database-account/replicate-data-globally.png)
-
-3. На панели **Автоматический переход на другой ресурс** убедитесь, что для параметра **Включить автоматическую отработку отказа** установлено значение **ВКЛ**. 
-
-4. Чтобы изменить приоритет при отработке отказа, щелкните и перетащите регионы чтения, щелкнув три точки в левой части строки, которые появляются при наведении указателя мыши на строку. 
-
-5. Щелкните **Сохранить**.
-
-   ![Меню автоматического перехода на другой ресурс на портале](./media/how-to-manage-database-account/automatic-failover.png)
-
-Вы не можете изменить регион записи в этом меню. Чтобы изменить регион записи вручную, вам нужно выполнить переход на другой ресурс вручную.
-
-### <a id="set-failover-priorities-via-cli"></a>Интерфейс командной строки Azure
-
-```bash
-# Assume region order is initially eastus=0 westus=1 automatic failover on account creation
-az cosmosdb failover-priority-change --name <Azure Cosmos account name> --resource-group <Resource Group name> --failover-policies westus=0 eastus=1
+Set-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts" `
+    -ApiVersion "2015-04-08" -ResourceGroupName $resourceGroupName `
+    -Name $accountName -PropertyObject $CosmosDBProperties
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Ознакомьтесь со следующими статьями:
+Дополнительные сведения и примеры по управлению учетной записью Azure Cosmos, а также базами данных и контейнерами см. в следующих статьях:
 
-* [Управление уровнями согласованности в Azure Cosmos DB](how-to-manage-consistency.md)
-* [Управление конфликтами между регионами](how-to-manage-conflicts.md)
-* [Глобальное распределение (взгляд изнутри)](global-dist-under-the-hood.md)
-* [Настройка нескольких источников в приложениях в Azure Cosmos DB](how-to-multi-master.md)
-* [Настройка клиентов для поддержки нескольких веб-сайтов](how-to-manage-database-account.md#configure-clients-for-multi-homing)
-* [Добавление и удаление регионов из учетной записи Azure Cosmos DB](how-to-manage-database-account.md#addremove-regions-from-your-database-account)
-* [Создание пользовательской политики разрешения конфликтов](how-to-manage-conflicts.md#create-a-custom-conflict-resolution-policy)
-
+* [Manage Azure Cosmos DB SQL API resources using PowerShell](manage-with-powershell.md) (Управление ресурсами API SQL Azure Cosmos DB с помощью PowerShell)
+* [Manage Azure Cosmos resources using Azure CLI](manage-with-cli.md) (Управление ресурсами Azure Cosmos с помощью Azure CLI)

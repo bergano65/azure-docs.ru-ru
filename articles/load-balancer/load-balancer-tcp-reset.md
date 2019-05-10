@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 01/29/2019
+ms.date: 05/03/2019
 ms.author: kumud
-ms.openlocfilehash: 52524e6291faae8ccc27c0d53e9e38ab63a4c8d5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 4a09492fcb8a7985fa27b6daae89aa5dec0fa6e0
+ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60736856"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65413861"
 ---
 # <a name="load-balancer-with-tcp-reset-on-idle-public-preview"></a>Load Balancer со сбросом TCP-подключений при простое (общедоступная предварительная версия)
 
@@ -74,6 +74,7 @@ ms.locfileid: "60736856"
 ## <a name="limitations"></a>Ограничения
 
 - С помощью портала нельзя настраивать или просматривать состояние функции сброса TCP-подключений.  Вместо этого используйте шаблоны, REST API, Azure CLI 2.0 или PowerShell.
+- TCP RST отправлено только во время соединения TCP в состоянии УСТАНОВЛЕНО.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

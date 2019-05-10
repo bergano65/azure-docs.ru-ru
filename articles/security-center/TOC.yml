@@ -58,6 +58,8 @@
       items:
         - name: Сбор данных
           href: security-center-enable-data-collection.md
+        - name: Расширенная защита данных для IaaS
+          href: security-center-iaas-advanced-data.md
         - name: Встроенные политики безопасности
           href: security-center-policy-definitions.md
         - name: Уведомления по почте
@@ -168,6 +170,8 @@
       href: 'https://docs.microsoft.com/rest/api/securitycenter/'
     - name: Обновления службы
       href: 'https://azure.microsoft.com/updates/?product=security-center'
+    - name: "Прекращение поддержки компонентов и API (июль 2019\_г.)"
+      href: security-center-features-retirement-july2019.md
 - name: Ресурсы
   items:
     - name: Развитие навыков с помощью Microsoft Learn

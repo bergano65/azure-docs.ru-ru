@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 manager: peterpr
-ms.openlocfilehash: a723ca6d69d45613636c7659e6566cec19b31d65
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: e4746620f083996bf64e77617ec472c3d3894d91
+ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60364180"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65464294"
 ---
 # <a name="manage-devices-in-your-azure-iot-central-application"></a>Управление устройствами в приложении Azure IoT Central
 
@@ -66,7 +66,7 @@ ms.locfileid: "60364180"
 
 1. Выберите **Импортировать**.
 
-    ![Действие импорта](./media/howto-manage-devices/BulkImport1.png)
+    ![Действие импорта](./media/howto-manage-devices/bulkimport1a.png)
 
 1. Выберите CSV-файл, содержащий список идентификаторов устройств, которые нужно импортировать.
 
@@ -74,7 +74,7 @@ ms.locfileid: "60364180"
 
 1. После завершения импорта в сетке устройств отображается сообщение об успешном выполнении.
 
-    ![Успешное завершение импорта](./media/howto-manage-devices/BulkImport3.png)
+    ![Успешное завершение импорта](./media/howto-manage-devices/bulkimport3a.png)
 
 Если операция импорта устройства завершается ошибкой, в сетке устройств отображается сообщение об ошибке. Создается файл журнала, содержащий все ошибки. Вы можете скачать этот файл.
 
@@ -86,13 +86,13 @@ ms.locfileid: "60364180"
 
 1. На панели слева выберите **Несвязанные устройства**.
 
-    ![Несвязанные устройства](./media/howto-manage-devices/UnassociatedDevices1.png)
+    ![Несвязанные устройства](./media/howto-manage-devices/unassociateddevices1a.png)
 
 1. Выберите устройства, которые требуется связать с шаблоном.
 
 1. Выберите **связать**:
 
-    ![Связывание устройств](./media/howto-manage-devices/UnassociatedDevices2.png)
+    ![Связывание устройств](./media/howto-manage-devices/unassociateddevices2a.png)
 
 1. Выберите шаблон из списка доступных шаблонов и выберите **связать**.
 
@@ -113,7 +113,7 @@ ms.locfileid: "60364180"
 
 1. Выберите устройства, которые вы хотите экспортировать, а затем выберите **Экспорт** действие.
 
-    ![экспорт.](./media/howto-manage-devices/Export1.png)
+    ![Экспортировать](./media/howto-manage-devices/export1a.png)
 
 1. Начнется процесс экспорта. Вы можете отслеживать состояние выполнения в верхней части сетки.
 
@@ -121,7 +121,7 @@ ms.locfileid: "60364180"
 
 1. Выберите **сообщение об успешном выполнении** для загрузки файла в локальную папку на диске.
 
-    ![Успешное завершение экспорта](./media/howto-manage-devices/Export2.png)
+    ![Успешное завершение экспорта](./media/howto-manage-devices/export2a.png)
 
 1. Экспортированный CSV-файл содержит столбцы со сведениями о коде устройства, его имени, ключах устройства и отпечатках сертификатов X509:
 

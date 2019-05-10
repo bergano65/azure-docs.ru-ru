@@ -7,12 +7,12 @@ ms.reviewer: michazag
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 4/29/2019
-ms.openlocfilehash: 8cb1489a0663556f9dd9e6026a036df2468d656d
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 854e29b67b6e24c583a98b5851bf17551cfcbf61
+ms.sourcegitcommit: 4891f404c1816ebd247467a12d7789b9a38cee7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64928337"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65441348"
 ---
 # <a name="azure-data-explorer-connector-for-apache-spark-preview"></a>Соединитель обозреватель данных Azure для Apache Spark (Предварительная версия)
 
@@ -109,7 +109,7 @@ mvn clean install
 
 Большинство метод проверки подлинности простых и распространенных. Этот метод рекомендуется для использования соединителя Spark обозреватель данных Azure.
 
-|properties  |ОПИСАНИЕ  |
+|properties  |Описание  |
 |---------|---------|
 |**KUSTO_AAD_CLIENT_ID**     |   Идентификатор приложения (клиента) с Azure AD.      |
 |**KUSTO_AAD_AUTHORITY_ID**     |  Центр проверки подлинности с Azure AD. Идентификатор Azure AD каталог (клиент).        |
@@ -200,7 +200,7 @@ mvn clean install
     display(df)
     ```
 
-1. При чтении больших объемов данных, необходимо указать хранилище временных больших двоичных объектов. Укажите ключ SAS контейнера хранилища, или имя учетной записи хранения, ключ учетной записи и имя контейнера. 
+1. При чтении больших объемов данных, необходимо указать хранилище временных больших двоичных объектов. Укажите ключ SAS контейнера хранилища, или имя учетной записи хранения, ключ учетной записи и имя контейнера. Это действие необходимо только необходимые для текущей предварительной версии соединителя Spark.
 
     ```scala
     // Use either container/account-key/account name, or container SaS

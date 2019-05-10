@@ -6,14 +6,14 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 03/18/2019
+ms.date: 05/07/2019
 ms.author: raynew
-ms.openlocfilehash: ea9f6a65ae804d4d2e5004ff4e2c61a2a85b976d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: e311a328c1c3d78fa8e5ba7065dcc6484006eaaf
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60748991"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65235877"
 ---
 # <a name="support-matrix-for-disaster-recovery-of-on-premises-hyper-v-vms-to-azure"></a>Таблица поддержки аварийного восстановления локальных виртуальных машин Hyper-V в Azure
 
@@ -33,8 +33,8 @@ Hyper-V без Virtual Machine Manager | Вы можете выполнять а
 
 **Server** | **Требования** | **Сведения**
 --- | --- | ---
-Hyper-V (без Virtual Machine Manager) | Windows Server 2016 (включая установку основных серверных компонентов), Windows Server 2012 R2 с последними обновлениями | Если вы уже настроили Windows Server 2012 R2 или SCVMM 2012 R2 с помощью Azure Site Recovery и планируете обновить операционную систему, следуйте указаниям в [документации.](upgrade-2012R2-to-2016.md) 
-Hyper-V (с Virtual Machine Manager) | Virtual Machine Manager 2016, Virtual Machine Manager 2012 R2 | Если используется Virtual Machine Manager, все узлы Windows Server 2016 должны находиться под управлением Virtual Machine Manager 2016.<br/><br/>
+Hyper-V (без Virtual Machine Manager) |  2019 сервера Windows, Windows Server 2016 (включая server core installation) Windows Server 2012 R2 с последними обновлениями. | Если вы уже настроили Windows Server 2012 R2 или SCVMM 2012 R2 с помощью Azure Site Recovery и планируете обновить операционную систему, следуйте указаниям в [документации.](upgrade-2012R2-to-2016.md) 
+Hyper-V (с Virtual Machine Manager) | Virtual Machine Manager 2019 г., 2016 Virtual Machine Manager 2012 R2 Virtual Machine Manager | Если используется Virtual Machine Manager, узлы Windows Server 2019 должны управляться в Virtual Machine Manager 2019. Аналогичным образом узлы Windows Server 2016 должны управляться в Virtual Machine Manager 2016.<br/><br/>
 
 
 ## <a name="replicated-vms"></a>Реплицированные виртуальные машины

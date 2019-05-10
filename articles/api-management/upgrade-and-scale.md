@@ -11,12 +11,12 @@ ms.workload: integration
 ms.topic: article
 ms.date: 08/18/2018
 ms.author: apimpm
-ms.openlocfilehash: ac8babf3a00c73b942ae64ac4cca00c7be7cfcfa
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: ed3c5790dcb51d12a38b85aa95e9c9178b6f44cd
+ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60859550"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65408858"
 ---
 # <a name="upgrade-and-scale-an-azure-api-management-instance"></a>Обновление и масштабирование экземпляра управления API Azure  
 
@@ -54,7 +54,7 @@ ms.locfileid: "60859550"
 Вы всегда можете повысить или понизить уровень в любых комбинациях. Но при этом обратите внимание, что понижение уровня приводит к отключению некоторых возможностей. Например, при понижении уровня с "Премиум" до "Стандартный" или "Базовый" станут недоступны виртуальные сети или развертывание в нескольких регионах.
 
 >[!NOTE]
->Процесс обновления или масштабирования может занять от 15 до 45 минут. Вы получите уведомление, когда он завершится.
+>Процесс обновления или масштабирования может занять от 15 до 45 минут. Вы получили уведомление, когда он выполняется.
 
 ## <a name="use-the-azure-portal-to-upgrade-and-scale"></a>Использование портала Azure для обновления и масштабирования
 

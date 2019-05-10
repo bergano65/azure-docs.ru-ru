@@ -10,12 +10,12 @@ author: xiaoharper
 ms.author: zhanxia
 ms.date: 05/02/2019
 ROBOTS: NOINDEX
-ms.openlocfilehash: 67016582149824c8deb83b54102190a57bd19383
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: d372adf75d46fdedb7a6f2b17e47822475d1f155
+ms.sourcegitcommit: 4891f404c1816ebd247467a12d7789b9a38cee7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65028805"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65442359"
 ---
 # <a name="decision-forest-regression-module"></a>Модуль Регрессия леса принятия решений
 
@@ -39,7 +39,7 @@ ms.locfileid: "65028805"
 
 Эта модель регрессии состоит из совокупности деревьев принятия решений. Каждое дерево регрессии леса принятия решений выходные данные Гауссовским распределением, что прогноз. Агрегирование выполняется через набор деревьев, чтобы найти Гауссовским распределением ближе всего к суммарное распределение для всех деревьев в модели.
 
-Дополнительные сведения о теоретических framework для этого алгоритма и его реализации см. в статье: [Леса принятия решений: Единая платформа для классификации, регрессии, оценки плотности Manifold обучения и частично контролируемого обучения ](https://www.microsoft.com/en-us/research/publication/decision-forests-a-unified-framework-for-classification-regression-density-estimation-manifold-learning-and-semi-supervised-learning/?from=http%3A%2F%2Fresearch.microsoft.com%2Fapps%2Fpubs%2Fdefault.aspx%3Fid%3D158806#)
+Дополнительные сведения о теоретических framework для этого алгоритма и его реализации см. в статье: [Леса принятия решений: Единая платформа для классификации, регрессии, оценки плотности Manifold обучения и частично контролируемого обучения](https://www.microsoft.com/en-us/research/publication/decision-forests-a-unified-framework-for-classification-regression-density-estimation-manifold-learning-and-semi-supervised-learning/?from=http%3A%2F%2Fresearch.microsoft.com%2Fapps%2Fpubs%2Fdefault.aspx%3Fid%3D158806#)
 
 ## <a name="how-to-configure-decision-forest-regression-model"></a>Настройка регрессионной модели леса принятия решений
 
@@ -53,7 +53,7 @@ ms.locfileid: "65028805"
 
     - **Реплицировать**: В репликации каждое дерево обучается на точно те же входные данные. Определение, какие разбиения используется предикат для каждого узла дерева остается случайных и деревья будут различными.
 
-         Дополнительные сведения о процессе обучения с **реплицировать** см [леса принятия решений для компьютерного зрения и анализа медицинских изображений. Criminisi и Shotton Дж. Springer 2013. ](http://research.microsoft.com/projects/decisionforests/).
+         Дополнительные сведения о процессе обучения с **реплицировать** см [леса принятия решений для компьютерного зрения и анализа медицинских изображений. Criminisi и Shotton Дж. Springer 2013. ](https://research.microsoft.com/projects/decisionforests/).
 
 3. Укажите способ модели для обучения, задав **Создание режима учителя** параметр.
 

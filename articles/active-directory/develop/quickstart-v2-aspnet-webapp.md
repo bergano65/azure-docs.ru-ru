@@ -16,12 +16,12 @@ ms.date: 04/11/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 786ace2ef88fc4b94372041cbdd5bc16586b5193
-ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
+ms.openlocfilehash: d63ff648f89a231f0077363c88709a17d157ae8c
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59682565"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65190903"
 ---
 # <a name="quickstart-add-sign-in-with-microsoft-to-an-aspnet-web-app"></a>Краткое руководство. Добавление возможности входа в веб-приложение ASP.NET с помощью учетной записи Майкрософт
 
@@ -68,13 +68,14 @@ ms.locfileid: "59682565"
 
 #### <a name="step-2-download-your-project"></a>Шаг 2. Скачивание проекта
 
-[Скачайте решение Visual Studio 2017](https://github.com/AzureADQuickStarts/AppModelv2-WebApp-OpenIDConnect-DotNet/archive/master.zip).
+[Скачайте решение Visual Studio 2019](https://github.com/AzureADQuickStarts/AppModelv2-WebApp-OpenIDConnect-DotNet/archive/master.zip)
 
-#### <a name="step-3-configure-your-visual-studio-project"></a>Шаг 3. Настройка проекта Visual Studio
+#### <a name="step-3-configure-your-visual-studio-project"></a>Шаг 3. Настройка проекта Visual Studio
 
 1. Извлеките ZIP-файл в локальную папку, расположенную как можно ближе к корневой папке (например, **C:\Azure-Samples**).
 1. Откройте решение в Visual Studio (AppModelv2-WebApp-OpenIDConnect-DotNet.sln).
-1. В зависимости от версии Visual Studio вам может потребоваться щелкнуть правой кнопкой мыши проект `AppModelv2-WebApp-OpenIDConnect-DotNet` и выбрать **Восстановить пакеты NuGet**.
+1. В зависимости от версии Visual Studio может потребоваться щелкнуть правой кнопкой мыши проект `AppModelv2-WebApp-OpenIDConnect-DotNet` и выбрать **Восстановить пакеты NuGet**
+1. Откройте консоль диспетчера пакетов (Представление -> Другие окна -> Консоль диспетчера пакетов) и выполните `Update-Package Microsoft.CodeDom.Providers.DotNetCompilerPlatform -r`.
 1. В файле **Web.config** замените параметры `ClientId` и `Tenant` на:
 
     ```xml
@@ -95,7 +96,7 @@ ms.locfileid: "59682565"
 
 ## <a name="more-information"></a>Дополнительные сведения
 
-В этом разделе представлены общие сведения о коде, необходимом для выполнения входа пользователей. Это может быть полезно для понимания принципов работы кода, основных аргументов, а также того, нужно ли добавлять возможность входа в имеющееся приложение ASP.NET.
+В этом разделе представлены общие сведения о коде, необходимом для выполнения входа пользователей. Это может быть полезно для рассмотрения принципов работы кода и основных аргументов. Также вы поймете, нужно ли добавлять функцию входа в существующее приложение ASP.NET.
 
 ### <a name="owin-middleware-nuget-packages"></a>Пакеты NuGet для ПО промежуточного слоя OWIN
 
@@ -109,7 +110,7 @@ Install-Package Microsoft.Owin.Host.SystemWeb
 
 ### <a name="owin-startup-class"></a>Класс Startup OWIN
 
-ПО промежуточного слоя OWIN использует *класс Startup*, выполняемый при инициализации ведущего процесса (в этом кратком руководстве это файл *startup.cs*, расположенный в корневой папке). В следующем коде показан параметр, используемый в этом кратком руководстве:
+По промежуточного слоя OWIN использует *класс startup*, выполняемый при инициализации процесса размещения. В этом кратком руководстве используется файл *startup.cs*. расположенный в корневой папке. В следующем коде показан параметр, используемый в этом кратком руководстве:
 
 ```csharp
 public void Configuration(IAppBuilder app)

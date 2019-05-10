@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 11/01/2018
 ms.author: genli
 ms.custom: seodec18
-ms.openlocfilehash: 9d38e3caf3d835eaf73df90282157eed76c5ea25
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 9d7fd41657394e006957392f37ec1a258b33c8c6
+ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61270053"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65413865"
 ---
 # <a name="deployment-faqs-for-web-apps-in-azure"></a>Часто задаваемые вопросы о развертывании в веб-приложениях Azure
 
@@ -47,7 +47,7 @@ ms.locfileid: "61270053"
 ## <a name="how-do-i-deploy-an-aspnet-application-from-visual-studio-to-app-service"></a>Как развернуть приложения ASP.NET в службу приложений из Visual Studio?
 <a id="deployasp"></a>
 
-Сведения о развертывании веб-приложения ASP.NET в веб-приложение службы приложений с помощью Visual Studio 2017 см. в руководстве [Создание веб-приложения ASP.NET в Azure](app-service-web-get-started-dotnet.md).
+Руководства [Создание веб-приложения ASP.NET в Azure за пять минут](app-service-web-get-started-dotnet.md) показано, как развернуть веб-приложение ASP.NET в веб-приложение в службе приложений с помощью Visual Studio.
 
 ## <a name="what-are-the-different-types-of-deployment-credentials"></a>Каковы различные типы учетных данных развертывания?
 

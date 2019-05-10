@@ -5,15 +5,15 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: tutorial
-ms.date: 3/18/2019
+ms.date: 5/3/2019
 ms.author: victorh
 customer intent: As an administrator, I want to control network access from an on-premises network to an Azure virtual network.
-ms.openlocfilehash: 7beb3d986b016688c4ee0a512b9406dbf3dfbb40
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 608674d6e049c71d22c7bf91f37fcb16ffccc581
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59051705"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65144917"
 ---
 # <a name="tutorial-deploy-and-configure-azure-firewall-in-a-hybrid-network-using-azure-powershell"></a>Руководство по Развертывание и настройка Брандмауэра Azure в гибридной сети с помощью Azure PowerShell
 
@@ -61,9 +61,9 @@ ms.locfileid: "59051705"
 См. раздел [Создание маршрутов](#create-the-routes) в этом руководстве, чтобы узнать, как создаются эти маршруты.
 
 >[!NOTE]
->Брандмауэр Azure должен быть напрямую подключен к Интернету. По умолчанию подсеть AzureFirewallSubnet должна разрешать только определяемый пользователем маршрут 0.0.0.0/0, при этом для **NextHopType** нужно задать значение **Internet**.
+>Брандмауэр Azure должен быть напрямую подключен к Интернету. Если сеть AzureFirewallSubnet использует стандартный маршрут к локальной сети через BGP, установите пользовательский маршрут 0.0.0.0/0 и задайте для параметра **NextHopType** значение **Интернет**, чтобы обеспечить прямое подключение к Интернету. По умолчанию служба "Брандмауэр Azure" не поддерживает принудительное туннелирование к локальной сети.
 >
->Если включить принудительное туннелирование в локальную сеть через ExpressRoute или Шлюз приложений, возможно, потребуется явно настроить определяемый пользователем маршрут 0.0.0.0/0, задав для NextHopType значение **Internet**, а затем связать маршрут с подсетью AzureFirewallSubnet. Если в вашей организации нужно использовать принудительное туннелирование для трафика Брандмауэра Azure, обратитесь в службу поддержки, чтобы мы могли внести вашу подписку в список разрешений и обеспечить подключение брандмауэра к Интернету.
+>Тем не менее, если в конфигурации требуется принудительное туннелирование, корпорация Майкрософт рассмотрит это в индивидуальном порядке. Обратитесь в службу поддержки, чтобы мы смогли проанализировать ваш случай. Если вы соответствуете условиям, мы добавим вашу подписку в список разрешений и обеспечим подключение брандмауэра к Интернету.
 
 >[!NOTE]
 >Трафик между виртуальными сетями с прямым пирингом передается напрямую, даже если маршрут UDR указывает на Брандмауэр Azure как шлюз по умолчанию. Чтобы маршрутизировать трафик между подсетями к брандмауэру в этом сценарии, в UDR для обеих подсетей нужно явно указать префикс целевой подсети.
@@ -138,7 +138,7 @@ $VNetHub = New-AzVirtualNetwork -Name $VNetnameHub -ResourceGroupName $RG1 `
 -Location $Location1 -AddressPrefix $VNetHubPrefix -Subnet $FWsub,$GWsub
 ```
 
-Запросите общедоступный IP-адрес для шлюза VPN, который будет создан для виртуальной сети. Учтите, что параметр *AllocationMethod* является **динамическим**. Указать необходимый IP-адрес нельзя. Он выделяется для шлюза VPN динамически. 
+Запросите общедоступный IP-адрес для шлюза VPN, который будет создан для виртуальной сети. Учтите, что параметр *AllocationMethod* является **динамическим**. Указать необходимый вам IP-адрес нельзя. Он выделяется для шлюза VPN динамически.
 
   ```azurepowershell
   $gwpip1 = New-AzPublicIpAddress -Name $GWHubpipName -ResourceGroupName $RG1 `
@@ -177,7 +177,7 @@ $VNetOnprem = New-AzVirtualNetwork -Name $VNetnameOnprem -ResourceGroupName $RG1
 -Location $Location1 -AddressPrefix $VNetOnpremPrefix -Subnet $Onpremsub,$GWOnpremsub
 ```
 
-Запросите общедоступный IP-адрес для шлюза, который будет создан для виртуальной сети. Учтите, что параметр *AllocationMethod* является **динамическим**. Указать необходимый IP-адрес нельзя. Он выделяется для шлюза динамически. 
+Запросите общедоступный IP-адрес для шлюза, который будет создан для виртуальной сети. Учтите, что параметр *AllocationMethod* является **динамическим**. Указать необходимый вам IP-адрес нельзя. Он выделяется для шлюза динамически.
 
   ```azurepowershell
   $gwOnprempip = New-AzPublicIpAddress -Name $GWOnprempipName -ResourceGroupName $RG1 `

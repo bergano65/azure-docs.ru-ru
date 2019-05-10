@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 04/01/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: fef2d42282291bb0ea6afeea03e60234d3d47a4d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 93fae0babdee5eac87d50679fdd5b2b938c4df2e
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60648794"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65236895"
 ---
 # <a name="sap-workload-on-azure-planning-and-deployment-checklist"></a>Контрольный список для планирования и развертывания рабочей нагрузки SAP в Azure 
 
@@ -140,9 +140,10 @@ ms.locfileid: "60648794"
       2. Чтобы избежать истечения времени ожидания между графическими пользовательскими интерфейсами локального развертывания SAP и прикладным уровнем SAP, развернутым в Azure, проверьте, заданы ли следующие параметры в файле default.pfl или профиля экземпляра:
          1.   rdisp/keepalive_timeout = 3600
          2.   rdisp/keepalive = 20
-      3. При использовании конфигурации отказоустойчивого кластера Windows убедитесь, что правильно настроено время реагирования на неотвечающие узлы для Azure. В статье корпорации Майкрософт [Tuning Failover Cluster Network Thresholds](https://blogs.msdn.microsoft.com/clustering/2012/11/21/tuning-failover-cluster-network-thresholds/) (Настройка порогов сети отказоустойчивого кластера) приведен список параметров и их влияние на важные характеристики отработки отказа. Из приведенного списка нужно задать два параметра, присвоив им указанные значения:
-         1.   SameSubNetDelay = 2
+      3. При использовании конфигурации отказоустойчивого кластера Windows убедитесь, что правильно настроено время реагирования на неотвечающие узлы для Azure. В статье корпорации Майкрософт [Tuning Failover Cluster Network Thresholds](https://techcommunity.microsoft.com/t5/Failover-Clustering/Tuning-Failover-Cluster-Network-Thresholds/ba-p/371834) (Настройка порогов сети отказоустойчивого кластера) приведен список параметров и их влияние на важные характеристики отработки отказа. Предположим, что узлы кластера находятся в той же подсети, необходимо изменить следующие параметры:
+         1.   SameSubNetDelay = 2000
          2.   SameSubNetThreshold = 15
+         3.   RoutingHistorylength = 30
 4. Протестируйте процедуры обеспечения высокой доступности и аварийного восстановления.
    1. Имитируйте ситуации отработки отказа, завершив работу виртуальных машин (гостевая ОС Windows) или переведя операционные системы в режим критической ошибки (гостевая ОС Linux), чтобы узнать, корректно ли работает конфигурация отработки отказа. 
    2. Измерьте время, необходимое для выполнения отработки отказа. Если она занимает слишком много времени, рассмотрите следующие рекомендации.

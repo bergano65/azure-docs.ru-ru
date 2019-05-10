@@ -9,12 +9,12 @@ ms.subservice: form-recognizer
 ms.topic: overview
 ms.date: 05/07/2019
 ms.author: pafarley
-ms.openlocfilehash: 5d4374b329049e2e55966a28567c5232be77abda
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: c7d5d9421ec89f1d75723d3538ee9a73e56dc6a3
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65025424"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65143023"
 ---
 # <a name="install-and-run-form-recognizer-containers"></a>Установка и запуск контейнеров Распознавателя документов
 Распознаватель документов применяет технологии машинного обучения, чтобы идентифицировать и извлечь пары "ключ — значение" и таблицы из форм. Он связывает с ними значения и записи в таблицах, а затем выводит структурированные данные, которые включают в себя связи в исходном файле. Вы можете вызывать пользовательскую модель Распознавателя документов с помощью простого REST API, чтобы упростить и легко интегрировать ее в свой рабочий процесс автоматизации или другое приложение. Необходимо всего пять документов (или пустых форм), поэтому вы можете получать результаты быстро, точно и с учетом специфики вашего содержимого, не прибегая к сложному ручному вмешательству или продолжительной обработке и анализу данных. Это не требует добавления меток данных или заметок к данным.
@@ -34,7 +34,7 @@ ms.locfileid: "65025424"
 |Модуль Docker| На [главном компьютере](#the-host-computer) должен быть установлен модуль Docker. Docker предоставляет пакеты, которые настраивают среду Docker в ОС [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> **В ОС Windows** для Docker нужно также настроить поддержку контейнеров Linux.<br><br>|
 |Опыт работы с Docker | Требуется базовое представление о понятиях Docker, включая реестры, репозитории, контейнеры и образы контейнеров, а также знание основных команд `docker`.|
 |Инфраструктура CLI Azure| Вам нужно установить [интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) на узле.|
-|Ресурс API Компьютерного зрения| Для обработки отсканированных документов и изображений требуется **Компьютерное зрение**. Вы можете получить доступ к функции **Распознавания текста** как к ресурсу Azure (REST API или пакету SDK) или контейнеру `cognitive-services-recognize-text`. Взымается обычная плата. <br><br>Вы должны передать ключ и конечную точку выставления счетов для определенного ресурса Компьютерного зрения (облако Azure или контейнер Cognitive Services). Используйте этот ключ и конечную точку выставления счетов в качестве {COMPUTER_VISION_API_KEY} и {COMPUTER_VISION_BILLING_ENDPOINT_URI}.<br><br> Если вы используете **контейнер `cognitive-services-recognize-text`**, убедитесь, что:<br><br>* Ваш ключ Компьютерного зрения для контейнера Распознавателя документов — это ключ, указанный в команде `docker run` Компьютерного зрения для контейнера `cognitive-services-recognize-text`.<br>* Ваша конечная точка выставления счетов — это конечная точка контейнера, например `https://localhost:5000`. При совместном использовании контейнеров Компьютерного зрения и Распознавателя документов на одному узле их невозможно одновременно запустить с помощью порта по умолчанию `5000`.  |  
+|Ресурс API Компьютерного зрения| Для обработки отсканированных документов и изображений требуется **Компьютерное зрение**. Вы можете получить доступ к **Распознаванию текста** как к ресурсу Azure (REST API или пакету SDK) или [контейнеру](../Computer-vision/computer-vision-how-to-install-containers.md##get-the-container-image-with-docker-pull) `cognitive-services-recognize-text`. Взымается обычная плата. <br><br>Вы должны передать ключ и конечную точку выставления счетов для определенного ресурса Компьютерного зрения (облако Azure или контейнер Cognitive Services). Используйте этот ключ и конечную точку выставления счетов в качестве {COMPUTER_VISION_API_KEY} и {COMPUTER_VISION_BILLING_ENDPOINT_URI}.<br><br> Если вы используете **контейнер `cognitive-services-recognize-text`**, убедитесь, что:<br><br>* Ваш ключ Компьютерного зрения для контейнера Распознавателя документов — это ключ, указанный в команде `docker run` Компьютерного зрения для контейнера `cognitive-services-recognize-text`.<br>* Ваша конечная точка выставления счетов — это конечная точка контейнера, например `https://localhost:5000`. При совместном использовании контейнеров Компьютерного зрения и Распознавателя документов на одному узле их невозможно одновременно запустить с помощью порта по умолчанию `5000`.  |  
 |Ресурс Распознавателя документов |Для использования контейнеров необходимо следующее:<br><br>Ресурс Azure _Распознаватель документов_, чтобы получить связанный ключ выставления счетов и URI конечной точки выставления счетов. Оба значения доступны на страницах "Обзор" и "Ключи" **Распознавателя документов** на портале Azure и необходимы для запуска контейнера.<br><br>**{BILLING_KEY}**: ключ ресурса<br><br>**{BILLING_ENDPOINT_URI}**: пример URI конечной точки: `https://westus.api.cognitive.microsoft.com/forms/v1.0`| 
 
 ## <a name="request-access-to-the-container-registry"></a>Запрос доступа к реестру контейнеров
@@ -65,13 +65,19 @@ ms.locfileid: "65025424"
 > [!Note]
 > Минимальные и рекомендуемые значения основаны на ограничениях Docker,а *не* на ресурсах узла.
 
-## <a name="get-the-container-image-with-docker-pull"></a>Получение образа контейнера с помощью `docker pull`
+## <a name="get-the-container-image-with-docker-pull-command"></a>Получение образа контейнера с помощью команды docker pull
 
 Доступны образы контейнеров для Распознавателя документов.
 
 | Контейнер | Репозиторий |
 |-----------|------------|
 | cognitive-services-form-recognizer | `containerpreview.azurecr.io/microsoft/cognitive-services-form-recognizer:latest` |
+
+Если вы планируете использовать [контейнер](../Computer-vision/computer-vision-how-to-install-containers.md##get-the-container-image-with-docker-pull) `cognitive-services-recognize-text` вместо Распознавателя документов, убедитесь, что используется команда `docker pull` с правильным именем контейнера: 
+
+```
+docker pull containerpreview.azurecr.io/microsoft/cognitive-services-recognize-text:latest
+```
 
 [!INCLUDE [Tip for using docker list](../../../includes/cognitive-services-containers-docker-list-tip.md)]
 

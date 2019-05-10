@@ -7,15 +7,15 @@ tags: azure-portal
 services: search
 ms.service: search
 ms.topic: tutorial
-ms.date: 04/08/2019
+ms.date: 05/02/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: a1cf72d9e3f5c2c6e919304d4d886a607c54f359
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: b30fa61cd46acd4fa9da9d97c100e3b3a0aaf067
+ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59282667"
+ms.lasthandoff: 05/02/2019
+ms.locfileid: "65024742"
 ---
 # <a name="quickstart-use-built-in-portal-tools-for-azure-search-import-indexing-and-queries"></a>Краткое руководство. Использование встроенных инструментов на портале для импорта, индексирования и отправки запросов в Поиске Azure
 > [!div class="op_single_selector"]
@@ -79,7 +79,7 @@ ms.locfileid: "59282667"
    ![Пропуск шага когнитивных навыков](media/search-get-started-portal/skip-cog-skill-step.png)
 
 > [!TIP]
-> Можно использовать предварительную версию новой функции когнитивного поиска для службы "Поиск Azure" из [быстрого руководства по когнитивному поиску](cognitive-search-quickstart-blob.md) или из [этого руководства](cognitive-search-tutorial-blob.md).
+> Можно пошагово выполнить пример индексирования ИИ из [краткого руководства](cognitive-search-quickstart-blob.md) или [руководства](cognitive-search-tutorial-blob.md).
 
 ### <a name="step-3---configure-index"></a>Шаг 3. Настройка индекса
 
@@ -154,7 +154,7 @@ ms.locfileid: "59282667"
 
    ![Команда обозревателя поиска](media/search-get-started-portal/search-explorer-cmd2.png)
 
-2. Щелкните **Изменить индекс** на панели команд, чтобы переключиться на пример *realestate-us-sample*. Щелкните **Задать версию API** на панели команд, чтобы просмотреть доступные интерфейсы REST API. Для приведенных ниже запросов используйте общедоступную версию (2017-11-11).
+2. Щелкните **Изменить индекс** на панели команд, чтобы переключиться на пример *realestate-us-sample*. Щелкните **Задать версию API** на панели команд, чтобы просмотреть доступные интерфейсы REST API. Для приведенных ниже запросов используйте общедоступную версию (2019-05-06).
 
    ![Команды индекса и API](media/search-get-started-portal/search-explorer-changeindex-se2.png)
 

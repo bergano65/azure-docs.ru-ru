@@ -131,6 +131,8 @@
           href: platform/alerts-common-schema.md
         - name: Правила действий
           href: platform/alerts-action-rules.md
+        - name: Анализ изменений
+          href: app/change-analysis.md
     - name: Визуализируйте данные
       href: visualizations.md
     - name: Интеграция с партнерскими решениями

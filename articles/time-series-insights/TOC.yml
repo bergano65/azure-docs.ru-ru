@@ -52,7 +52,7 @@
           href: time-series-insights-update-tsm.md
         - name: Запрашивание данных
           href: time-series-insights-update-tsq.md
-        - name: Визуализация данных в обозревателе (обновление)
+        - name: Визуализация данных в обозревателе (предварительная версия)
           href: time-series-insights-update-explorer.md
     - name: Разработка
       items:

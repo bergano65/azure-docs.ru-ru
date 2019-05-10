@@ -10,11 +10,11 @@ services: iot-dps
 manager: philmea
 ms.custom: mvc
 ms.openlocfilehash: 2a27ec63ea4ae25823c604612bd3bcf3a057da61
-ms.sourcegitcommit: 41015688dc94593fd9662a7f0ba0e72f044915d6
+ms.sourcegitcommit: 4891f404c1816ebd247467a12d7789b9a38cee7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59500589"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "61250010"
 ---
 # <a name="quickstart-provision-an-x509-simulated-device-using-the-azure-iot-c-sdk"></a>Краткое руководство. Подготовка имитированного устройства X.509 с помощью пакета SDK для устройства C Интернета вещей Azure
 
@@ -127,7 +127,7 @@ ms.locfileid: "59500589"
     - **PEM-файл или CER-файл первичного сертификата.** Щелкните **Выберите файл**, чтобы выбрать созданный ранее файл сертификата — X509testcert.pem.
     - **Идентификатор устройства Центра Интернета вещей.** Введите **test-docs-cert-device**, чтобы присвоить устройству идентификатор.
 
-      [![AДобавление индивидуальной регистрации для аттестации X.509 на портале(./media/quick-create-simulated-device-x509/device-enrollment.png)](./media/quick-create-simulated-device-x509/device-enrollment.png#lightbox)
+      [![Добавление индивидуальной регистрации для аттестации X.509 на портале](./media/quick-create-simulated-device-x509/device-enrollment.png)](./media/quick-create-simulated-device-x509/device-enrollment.png#lightbox)
 
       После успешной регистрации устройство X.509 отобразится как **riot-device-cert** в столбце *Идентификатор регистрации* на вкладке *Индивидуальные регистрации*. 
 
@@ -198,4 +198,4 @@ ms.locfileid: "59500589"
 В этом кратком руководстве вы создали имитированное устройство X.509 на компьютере Windows и подготовили его для Центра Интернета вещей с помощью службы подготовки устройств Центра Интернета вещей Azure на портале. Чтобы узнать, как выполнить программную регистрацию устройства X.509, изучите соответствующее краткое руководство. 
 
 > [!div class="nextstepaction"]
-> [Краткое руководство Azure по регистрации устройств X.509 в Службе подготовки устройств к добавлению в Центр Интернета вещей](quick-enroll-device-x509-java.md)
+> [Краткое руководство Azure. Регистрация устройств X.509 в службе подготовки устройств Центра Интернета вещей](quick-enroll-device-x509-java.md)

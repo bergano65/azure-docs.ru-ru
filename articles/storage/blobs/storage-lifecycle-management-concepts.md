@@ -9,12 +9,12 @@ ms.date: 4/29/2019
 ms.author: mhopkins
 ms.reviewer: yzheng
 ms.subservice: common
-ms.openlocfilehash: 130eb9cc8bec4681f5c0d165735c6c3b2357576c
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
-ms.translationtype: MT
+ms.openlocfilehash: 560f7eb8a8809cdd6ef410a610be9806f9709754
+ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65148316"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65409977"
 ---
 # <a name="manage-the-azure-blob-storage-lifecycle"></a>Управление жизненным циклом хранилища BLOB-объектов Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "65148316"
 
 Компонент управления жизненным циклом предоставляется бесплатно. Клиенты оплачивают только обычную стоимость вызовов API [Отображение BLOB-объектов](https://docs.microsoft.com/rest/api/storageservices/list-blobs) и [Установка уровня BLOB-объектов](https://docs.microsoft.com/rest/api/storageservices/set-blob-tier). Операция удаления предоставляется бесплатно. Дополнительные сведения см. на странице [цен на блочные BLOB-объекты](https://azure.microsoft.com/pricing/details/storage/blobs/).
 
-## <a name="regional-availability"></a>Доступ по регионам 
+## <a name="regional-availability"></a>Доступность в регионах 
 Компонент управления жизненным циклом доступна во всех общедоступных регионах Azure. 
 
 
@@ -87,7 +87,7 @@ $policy = Set-AzStorageAccountManagementPolicy -ResourceGroupName $rgname -Stora
 
 ```json
 {
-  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {},
   "variables": {
@@ -158,8 +158,8 @@ $policy = Set-AzStorageAccountManagementPolicy -ResourceGroupName $rgname -Stora
 |----------------|----------------|-------|----------|
 | name           | Строка |Имя правила может содержать до 256 буквенно-цифровые символы. В именах правил учитывается регистр.  Имя должно быть уникальным в пределах политики. | Истина |
 | enabled | Boolean | Необязательное логическое значение, разрешающее правило для временного отключена. Значение по умолчанию имеет значение true, если оно не задано. | False | 
-| Тип           | Значение перечисления | Текущий тип допустимым является `Lifecycle`. | Истина |
-| Определение     | Объект, который определяет правило жизненного цикла | Каждое определение состоит из набора фильтров и набора действий. | Истина |
+| тип           | Значение перечисления | Текущий тип допустимым является `Lifecycle`. | Истина |
+| определение     | Объект, который определяет правило жизненного цикла | Каждое определение состоит из набора фильтров и набора действий. | Истина |
 
 ## <a name="rules"></a>Правила
 
@@ -208,10 +208,10 @@ $policy = Set-AzStorageAccountManagementPolicy -ResourceGroupName $rgname -Stora
 
 Допустимые фильтры используется следующее:
 
-| Имя фильтра | Тип фильтра | Примечания | Обязательный |
+| Имя фильтра | Тип фильтра | Примечания | Обязательно |
 |-------------|-------------|-------|-------------|
-| blobTypes   | Массив предустановленных значений перечисления. | В текущем выпуске поддерживается `blockBlob`. | Yes |
-| prefixMatch | Массив строк, по которым выполняется сопоставление префиксов. Каждое правило можно определить до 10 префиксы. Строка префикса должно начинаться с имени контейнера. Например, если вы хотите применить правило ко всем большим двоичным объектам в разделе "https://myaccount.blob.core.windows.net/container1/foo/...", укажите для prefixMatch значение `container1/foo`. | Если вы не определили prefixMatch, правило применяется для всех больших двоичных объектов в учетной записи хранения.  | Нет  |
+| blobTypes   | Массив предустановленных значений перечисления. | В текущем выпуске поддерживается `blockBlob`. | Да |
+| prefixMatch | Массив строк, по которым выполняется сопоставление префиксов. Каждое правило можно определить до 10 префиксы. Строка префикса должно начинаться с имени контейнера. Например, если вы хотите применить правило ко всем большим двоичным объектам в разделе "https://myaccount.blob.core.windows.net/container1/foo/...", укажите для prefixMatch значение `container1/foo`. | Если вы не определили prefixMatch, правило применяется для всех больших двоичных объектов в учетной записи хранения.  | Нет |
 
 ### <a name="rule-actions"></a>Действия правила
 
@@ -230,7 +230,7 @@ $policy = Set-AzStorageAccountManagementPolicy -ResourceGroupName $rgname -Stora
 
 Срок действия зависит от выполнения условий. Возраст для базового BLOB-объекта определяется по времени последнего изменения, а для моментального снимка BLOB-объекта — по времени создания.
 
-| Запуск условие действия | Значение условия | ОПИСАНИЕ |
+| Запуск условие действия | Значение условия | Описание |
 |----------------------------|-----------------|-------------|
 | daysAfterModificationGreaterThan | Целочисленное значение, указывающее возраст в днях | Допустимое условие для действий с базовым BLOB-объектом |
 | daysAfterCreationGreaterThan     | Целочисленное значение, указывающее возраст в днях | Допустимое условие для действий с моментальным снимком BLOB-объекта | 

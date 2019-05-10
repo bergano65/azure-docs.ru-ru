@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/01/2016
 ms.author: jonor;sivae
-ms.openlocfilehash: 668862714b416bd89d3b5f82caf8b0305fccae54
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 0a7927868a9a4bebc80ec995baefbae4c45d747f
+ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60363178"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65410472"
 ---
 # <a name="example-3-build-a-perimeter-network-to-protect-networks-with-a-firewall-udr-and-nsgs"></a>Пример 3 Создание сети периметра для защиты сетей с брандмауэром, определяемым пользователем Маршрутом и группами безопасности сети
 
@@ -645,7 +645,7 @@ Add-AzureEndpoint -Name "HTTP" -Protocol tcp -PublicPort 80 -LocalPort 80 `
 1. Включит IP-пересылку на виртуальном сетевом устройстве.
 1. Настройка группы безопасности сети:
    1. Создать группу безопасности сети
-   1. Добавление правила
+   1. Добавить правило
    1. Привязать группу безопасности сети к соответствующим подсетям.
 
 Выполните эту команду PowerShell скрипт локально на Интернета подключен ПК или сервер.
@@ -989,7 +989,7 @@ Add-AzureEndpoint -Name "HTTP" -Protocol tcp -PublicPort 80 -LocalPort 80 `
 Сохраните этот файл XML расположение. Изменение `$NetworkConfigFile` переменной в полный сценарий выше для связи с файлом конфигурации сети, сохраненный.
 
 ```xml
-    <NetworkConfiguration xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/ServiceHosting/2011/07/NetworkConfiguration">
+    <NetworkConfiguration xmlns:xsd="https://www.w3.org/2001/XMLSchema" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/ServiceHosting/2011/07/NetworkConfiguration">
       <VirtualNetworkConfiguration>
         <Dns>
           <DnsServers>

@@ -10,15 +10,14 @@ ms.subservice: personalizer
 ms.topic: overview
 ms.date: 05/07/2019
 ms.author: edjez
-ms.openlocfilehash: 30f009f76c25d80281d748e1e484175380ca9743
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: b65073c0646db0cd0c27a71005bb4f74b091ae09
+ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65025544"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65506889"
 ---
 # <a name="what-is-reinforcement-learning"></a>Что такое обучение с подкреплением?
-
 
 Обучение с подкреплением — это подход к машинному обучению, при котором поведение изучается путем получения обратной связи во время его использования.
  
@@ -64,7 +63,7 @@ _Память принятия решений_ (модель, обученная
 
 * [Принятие контекстных решений с низким техническим долгом](https://arxiv.org/abs/1606.03966)
 * [Подход сокращения к справедливой классификации](https://arxiv.org/abs/1803.02453)
-* [Эффективные контекстные бандиты в нестабильных мирах](https://arxiv.org/abs/1708.01799ds)
+* [Эффективные контекстные бандиты в нестабильных мирах](https://arxiv.org/abs/1708.01799)
 * [Прогнозирование остаточной потери. Обучение с подкреплением без дополнительных отзывов](https://openreview.net/pdf?id=HJNMYceCW)
 * [Инструкции по сопоставлению и визуальные наблюдения для действий в обучении с подкреплением](https://arxiv.org/abs/1704.08795)
 * [Научись искать лучше, чем твой учитель](https://arxiv.org/abs/1502.02206)

@@ -1,21 +1,24 @@
 ---
-title: Управление репликами чтения для базы данных Azure для PostgreSQL с помощью Azure CLI
-description: Узнайте, как управлять базой данных Azure для PostgreSQL, чтения реплик с помощью Azure CLI.
+title: 'Управление репликами чтения для базы данных Azure для PostgreSQL: один сервер с помощью Azure CLI'
+description: 'Сведения об управлении чтения реплик в базе данных Azure для PostgreSQL: один сервер с помощью Azure CLI.'
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 04/05/2019
-ms.openlocfilehash: b5e0336a290090ed6bd7f5af508e691677780a80
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 5/6/2019
+ms.openlocfilehash: 9730faf3191ef2e2bd0b6c3caddefa0492b33fc5
+ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60420246"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65510237"
 ---
 # <a name="create-and-manage-read-replicas-from-the-azure-cli"></a>Создание и управление ими чтения реплик с помощью Azure CLI
 
 В этой статье вы узнаете, как создавать и управлять ими чтения реплик в базе данных Azure для PostgreSQL с помощью Azure CLI. Дополнительные сведения о репликах чтения см. в [этой статье](concepts-read-replicas.md).
+
+> [!NOTE]
+> Интерфейс командной строки Azure пока не поддерживает создание реплик в другом регионе с главного сервера. Чтобы создать реплику между регионами, используйте [портала Azure](howto-read-replicas-portal.md).
 
 ## <a name="prerequisites"></a>Технические условия
 - [Сервер службы "База данных Azure для PostgreSQL"](quickstart-create-server-up-azure-cli.md) в качестве главного.
@@ -46,7 +49,7 @@ ms.locfileid: "60420246"
 
 [Az postgres server реплике создайте](/cli/azure/postgres/server/replica?view=azure-cli-latest#az-postgres-server-replica-create) команды необходимо задать следующие параметры:
 
-| Параметр | Пример значения | ОПИСАНИЕ  |
+| Параметр | Пример значения | Описание  |
 | --- | --- | --- |
 | resource-group | myresourcegroup |  Группа ресурсов, в которой будут создаваться на сервер-реплику.  |
 | name | mydemoserver реплики | Имя нового сервера реплики, который создается. |

@@ -14,12 +14,12 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 05/15/2017
 ms.author: jeconnoc
-ms.openlocfilehash: a2eff2ca2e72ad263e3e23d0827e7603bca3fdcb
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 68801f888df55924791188a3f4ff5b718798c9f3
+ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60520920"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65510569"
 ---
 # <a name="get-started-with-azure-cloud-services-and-aspnet"></a>Начало работы с облачными службами Azure и ASP.NET
 
@@ -36,7 +36,7 @@ ms.locfileid: "60520920"
 Приложение использует [рабочий шаблон на основе очередей](https://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern) для разгрузки процессора от задач создания эскизов в фоновом режиме.
 
 ## <a name="alternative-architecture-app-service-and-webjobs"></a>Альтернативная архитектура: Служба приложений и веб-задания
-Это руководство описывает, как запускать фоновые и интерфейсные компоненты в облачной службе Azure. Альтернативой является запуск интерфейсной части в [Службе приложений Azure](/azure/app-service/) и использование функции [Веб-задания](https://go.microsoft.com/fwlink/?LinkId=390226) для серверной части. Руководство по веб-заданиям см. в статье [Создание веб-задания .NET в службе приложений Azure](https://github.com/Azure/azure-webjobs-sdk/wiki). Сведения о том, как выбрать службы, см. в статье о [сравнении Службы приложений, облачных служб и виртуальных машин Azure](../app-service/overview-compare.md).
+Это руководство описывает, как запускать фоновые и интерфейсные компоненты в облачной службе Azure. Альтернативой является запуск интерфейсной части в [Службе приложений Azure](/azure/app-service/) и использование функции [Веб-задания](https://go.microsoft.com/fwlink/?LinkId=390226) для серверной части. Руководство по веб-заданиям см. в статье [Создание веб-задания .NET в службе приложений Azure](https://github.com/Azure/azure-webjobs-sdk/wiki). Сведения о том, как выбрать службы, см. в статье о [сравнении Службы приложений, облачных служб и виртуальных машин Azure](/azure/architecture/guide/technology-choices/compute-decision-tree).
 
 ## <a name="what-youll-learn"></a>Что вы узнаете
 * Как подготовить компьютер к разработке для Azure путем установки пакета Azure SDK.
@@ -54,7 +54,7 @@ ms.locfileid: "60520920"
 Инструкции руководства применимы со следующими продуктами:
 
 * Visual Studio 2013
-* Visual Studio 2015
+* Visual Studio 2015
 * Visual Studio 2017
 
 Если у вас нет ни одного из этих продуктов, Visual Studio может быть установлен автоматически при установке пакета SDK для Azure.
@@ -328,7 +328,7 @@ ms.locfileid: "60520920"
 2. В диалоговом окне **Создание проекта** в области слева разверните раздел **Visual C#**, выберите шаблоны **Облако** и шаблон **Облачная служба Azure**.
 3. Присвойте проекту имя ContosoAdsCloudService и нажмите кнопку **ОК**.
 
-    ![Новый проект](./media/cloud-services-dotnet-get-started/newproject.png)
+    ![Создать проект](./media/cloud-services-dotnet-get-started/newproject.png)
 4. В диалоговом окне **Новая облачная служба Azure** добавьте веб-роль и рабочую роль. Присвойте веб-роли имя ContosoAdsWeb, а рабочей роли — ContosoAdsWorker. (Используйте значок карандаша на правой панели для изменения имен ролей по умолчанию.)
 
     ![Проект новой облачной службы](./media/cloud-services-dotnet-get-started/newcsproj.png)
@@ -390,8 +390,8 @@ ms.locfileid: "60520920"
 7. Следуйте этой же процедуре для добавления строки подключения хранилища в свойства роли ContosoAdsWorker.
 8. Там же в окне свойств **ContosoAdsWorker [роль]** добавьте другую строку подключения:
 
-   * Имя: ContosoAdsDbConnectionString.
-   * Тип: String
+   * имя: ContosoAdsDbConnectionString.
+   * Тип: Строка
    * Значение: вставьте ту же строку подключения, которая была использована для проекта веб-роли. (Этот пример предназначен для Visual Studio 2013. Не забудьте изменить источник данных при копировании этого примера для Visual Studio 2015 или более поздней версии.)
 
        ```

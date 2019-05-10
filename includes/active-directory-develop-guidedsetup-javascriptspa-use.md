@@ -14,112 +14,156 @@ ms.workload: identity
 ms.date: 09/17/2018
 ms.author: nacanuma
 ms.custom: include file
-ms.openlocfilehash: 68598d4bb7fb9fd928a7b664e6ce0c02220ca4bb
-ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.openlocfilehash: 8785f89a335f0ae7d983f267176da1656aee57a0
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59503085"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65199422"
 ---
 ## <a name="use-the-microsoft-authentication-library-msal-to-sign-in-the-user"></a>Использование библиотеки аутентификации Майкрософт (MSAL) для входа пользователя
 
 1. Добавьте в файл `index.html` следующий код внутри тегов `<script></script>`:
 
-```javascript
-//Pass null for default authority (https://login.microsoftonline.com/common)
-var myMSALObj = new Msal.UserAgentApplication(applicationConfig.clientID, null, acquireTokenRedirectCallBack,
-    {storeAuthStateInCookie: true, cacheLocation: "localStorage"});
-
-function signIn() {
-    myMSALObj.loginPopup(applicationConfig.graphScopes).then(function (idToken) {
-        //Login Success
-        showWelcomeMessage();
-        acquireTokenPopupAndCallMSGraph();
-    }, function (error) {
-        console.log(error);
-    });
-}
-
-function acquireTokenPopupAndCallMSGraph() {
-    //Call acquireTokenSilent (iframe) to obtain a token for Microsoft Graph
-    myMSALObj.acquireTokenSilent(applicationConfig.graphScopes).then(function (accessToken) {
-        callMSGraph(applicationConfig.graphEndpoint, accessToken, graphAPICallback);
-    }, function (error) {
-        console.log(error);
-        // Call acquireTokenPopup (popup window) in case of acquireTokenSilent failure due to consent or interaction required ONLY
-        if (error.indexOf("consent_required") !== -1 || error.indexOf("interaction_required") !== -1 || error.indexOf("login_required") !== -1) {
-            myMSALObj.acquireTokenPopup(applicationConfig.graphScopes).then(function (accessToken) {
-                callMSGraph(applicationConfig.graphEndpoint, accessToken, graphAPICallback);
-            }, function (error) {
-                console.log(error);
-            });
+    ```javascript
+    var msalConfig = {
+        auth: {
+            clientId: "Enter_the_Application_Id_here"
+            authority: "https://login.microsoftonline.com/Enter_the_Tenant_Info_Here"
+        },
+        cache: {
+            cacheLocation: "localStorage",
+            storeAuthStateInCookie: true
         }
-    });
-}
-
-function graphAPICallback(data) {
-    //Display user data on DOM
-    var divWelcome = document.getElementById('WelcomeMessage');
-    divWelcome.innerHTML += " to Microsoft Graph API!!";
-    document.getElementById("json").innerHTML = JSON.stringify(data, null, 2);
-}
-
-function showWelcomeMessage() {
-    var divWelcome = document.getElementById('WelcomeMessage');
-    divWelcome.innerHTML += 'Welcome ' + myMSALObj.getUser().name;
-    var loginbutton = document.getElementById('SignIn');
-    loginbutton.innerHTML = 'Sign Out';
-    loginbutton.setAttribute('onclick', 'signOut();');
-}
-
-// This function can be removed if you do not need to support IE
-function acquireTokenRedirectAndCallMSGraph() {
-    //Call acquireTokenSilent (iframe) to obtain a token for Microsoft Graph
-    myMSALObj.acquireTokenSilent(applicationConfig.graphScopes).then(function (accessToken) {
-      callMSGraph(applicationConfig.graphEndpoint, accessToken, graphAPICallback);
-    }, function (error) {
-        console.log(error);
-        //Call acquireTokenRedirect in case of acquireToken Failure
-        if (error.indexOf("consent_required") !== -1 || error.indexOf("interaction_required") !== -1 || error.indexOf("login_required") !== -1) {
-            myMSALObj.acquireTokenRedirect(applicationConfig.graphScopes);
-        }
-    });
-}
-
-function acquireTokenRedirectCallBack(errorDesc, token, error, tokenType) {
-    if (tokenType === "access_token") {
-        callMSGraph(applicationConfig.graphEndpoint, token, graphAPICallback);
-    } else {
-        console.log("token type is:"+tokenType);
-    }
-}
-
-
-// Browser check variables
-var ua = window.navigator.userAgent;
-var msie = ua.indexOf('MSIE ');
-var msie11 = ua.indexOf('Trident/');
-var msedge = ua.indexOf('Edge/');
-var isIE = msie > 0 || msie11 > 0;
-var isEdge = msedge > 0;
-
-//If you support IE, our recommendation is that you sign-in using Redirect APIs
-//If you as a developer are testing using Microsoft Edge InPrivate mode, please add "isEdge" to the if check
-if (!isIE) {
-    if (myMSALObj.getUser()) {// avoid duplicate code execution on page load in case of iframe and popup window.
-        showWelcomeMessage();
-        acquireTokenPopupAndCallMSGraph();
-    }
-} else {
-    document.getElementById("SignIn").onclick = function () {
-        myMSALObj.loginRedirect(applicationConfig.graphScopes);
     };
-    if (myMSALObj.getUser() && !myMSALObj.isCallback(window.location.hash)) {// avoid duplicate code execution on page load in case of iframe and popup window.
-        showWelcomeMessage();
-        acquireTokenRedirectAndCallMSGraph();
+
+    var graphConfig = {
+        graphMeEndpoint: "https://graph.microsoft.com/v1.0/me"
+    };
+
+    // this can be used for login or token request, however in more complex situations
+    // this can have diverging options
+    var requestObj = {
+        scopes: ["user.read"]
+    };
+
+    var myMSALObj = new Msal.UserAgentApplication(msalConfig);
+    // Register Callbacks for redirect flow
+    myMSALObj.handleRedirectCallback(authRedirectCallBack);
+
+
+    function signIn() {
+
+        myMSALObj.loginPopup(requestObj).then(function (loginResponse) {
+            //Login Success
+            showWelcomeMessage();
+            acquireTokenPopupAndCallMSGraph();
+        }).catch(function (error) {
+            console.log(error);
+        });
     }
-}
-```
+
+    function acquireTokenPopupAndCallMSGraph() {
+        //Always start with acquireTokenSilent to obtain a token in the signed in user from cache
+        myMSALObj.acquireTokenSilent(requestObj).then(function (tokenResponse) {
+            callMSGraph(graphConfig.graphMeEndpoint, tokenResponse.accessToken, graphAPICallback);
+        }).catch(function (error) {
+            console.log(error);
+            // Upon acquireTokenSilent failure (due to consent or interaction or login required ONLY)
+            // Call acquireTokenPopup(popup window)
+            if (requiresInteraction(error.errorCode)) {
+                myMSALObj.acquireTokenPopup(requestObj).then(function (tokenResponse) {
+                    callMSGraph(graphConfig.graphMeEndpoint, tokenResponse.accessToken, graphAPICallback);
+                }).catch(function (error) {
+                    console.log(error);
+                });
+            }
+        });
+    }
+
+
+    function graphAPICallback(data) {
+        document.getElementById("json").innerHTML = JSON.stringify(data, null, 2);
+    }
+
+
+    function showWelcomeMessage() {
+        var divWelcome = document.getElementById('WelcomeMessage');
+        divWelcome.innerHTML = 'Welcome ' + myMSALObj.getAccount().userName + "to Microsoft Graph API";
+        var loginbutton = document.getElementById('SignIn');
+        loginbutton.innerHTML = 'Sign Out';
+        loginbutton.setAttribute('onclick', 'signOut();');
+    }
+
+
+    //This function can be removed if you do not need to support IE
+    function acquireTokenRedirectAndCallMSGraph() {
+         //Always start with acquireTokenSilent to obtain a token in the signed in user from cache
+         myMSALObj.acquireTokenSilent(requestObj).then(function (tokenResponse) {
+             callMSGraph(graphConfig.graphMeEndpoint, tokenResponse.accessToken, graphAPICallback);
+         }).catch(function (error) {
+             console.log(error);
+             // Upon acquireTokenSilent failure (due to consent or interaction or login required ONLY)
+             // Call acquireTokenRedirect
+             if (requiresInteraction(error.errorCode)) {
+                 myMSALObj.acquireTokenRedirect(requestObj);
+             }
+         });
+     }
+
+
+    function authRedirectCallBack(error, response) {
+        if (error) {
+            console.log(error);
+        }
+        else {
+            if (response.tokenType === "access_token") {
+                callMSGraph(graphConfig.graphEndpoint, response.accessToken, graphAPICallback);
+            } else {
+                console.log("token type is:" + response.tokenType);
+            }
+        }
+    }
+
+    function requiresInteraction(errorCode) {
+        if (!errorCode || !errorCode.length) {
+            return false;
+        }
+        return errorCode === "consent_required" ||
+            errorCode === "interaction_required" ||
+            errorCode === "login_required";
+    }
+
+    // Browser check variables
+    var ua = window.navigator.userAgent;
+    var msie = ua.indexOf('MSIE ');
+    var msie11 = ua.indexOf('Trident/');
+    var msedge = ua.indexOf('Edge/');
+    var isIE = msie > 0 || msie11 > 0;
+    var isEdge = msedge > 0;
+    //If you support IE, our recommendation is that you sign-in using Redirect APIs
+    //If you as a developer are testing using Edge InPrivate mode, please add "isEdge" to the if check
+    // can change this to default an experience outside browser use
+    var loginType = isIE ? "REDIRECT" : "POPUP";
+
+    if (loginType === 'POPUP') {
+        if (myMSALObj.getAccount()) {// avoid duplicate code execution on page load in case of iframe and popup window.
+            showWelcomeMessage();
+            acquireTokenPopupAndCallMSGraph();
+        }
+    }
+    else if (loginType === 'REDIRECT') {
+        document.getElementById("SignIn").onclick = function () {
+            myMSALObj.loginRedirect(requestObj);
+        };
+        if (myMSALObj.getAccount() && !myMSALObj.isCallback(window.location.hash)) {// avoid duplicate code execution on page load in case of iframe and popup window.
+            showWelcomeMessage();
+            acquireTokenRedirectAndCallMSGraph();
+        }
+    } else {
+        console.error('Please set a valid login type');
+    }
+    ```
 
 <!--start-collapse-->
 ### <a name="more-information"></a>Дополнительные сведения
@@ -136,19 +180,19 @@ if (!isIE) {
 - Ваше приложение запрашивает доступ к ресурсу, на обращение к которому пользователь должен дать согласие
 - Требуется двухфакторная проверка подлинности
 
-Вызов *acquireTokenPopup(scope)* приводит к отображению всплывающего окна (или *acquireTokenPopup(scope)* приводит к перенаправлению пользователей на конечную точку платформы удостоверений Майкрософт), где для взаимодействия пользователю нужно подтвердить свои учетные данные, дав согласие на доступ к требуемому ресурсу, или выполнить двухфакторную аутентификацию.
+Вызов *acquireTokenPopup* приводит к отображению всплывающего окна (или вызов *acquireTokenPopup* приводит к перенаправлению пользователей на конечную точку платформы удостоверений Майкрософт), где для взаимодействия пользователю нужно подтвердить свои учетные данные, дав согласие на доступ к требуемому ресурсу, или выполнить двухфакторную аутентификацию.
 
 #### <a name="getting-a-user-token-silently"></a>Автоматическое получение маркера пользователя
 
 Метод `acquireTokenSilent` обрабатывает получение и обновление маркера без участия пользователя. После первого выполнения метода `loginPopup` (или `loginRedirect`) обычно используется метод `acquireTokenSilent`, чтобы получить маркеры для доступа к защищенным ресурсам для последующих вызовов (например, автоматическое выполнение запросов или обновлений маркеров).
-`acquireTokenSilent` В некоторых случаях может завершиться ошибкой, например если истек срок действия пароля пользователя. Приложение может обработать это исключение двумя способами:
+В некоторых случаях `acquireTokenSilent` может завершиться ошибкой, например если истек срок действия пароля пользователя. Приложение может обработать это исключение двумя способами:
 
 1. Немедленно вызвать `acquireTokenPopup`, в результате чего пользователю будет предложено выполнить вход. Этот шаблон обычно используется в интерактивных приложениях, где пользователю недоступно не прошедшее проверку подлинности содержимое. Пример, созданный в ходе пошаговой настройки, использует этот шаблон.
 
 2. Приложения также могут визуально уведомить пользователя, что требуется интерактивный вход, чтобы пользователь мог выбрать подходящее время для входа или приложение могло повторить метод `acquireTokenSilent` ​​позднее. Обычно это применимо для тех случаев, когда пользователь может использовать другие функции приложения, на которые это не влияет, например, когда в приложении есть не прошедшее проверку подлинности содержимое. В этом случае пользователь может решить, когда ему требуется вход для доступа к защищенному ресурсу, или обновить устаревшие данные.
 
 > [!NOTE]
-> В приведенном выше коде для Internet Explorer используются методы `loginRedirect` и `acquireTokenRedirect` из-за [известной проблемы](https://github.com/AzureAD/microsoft-authentication-library-for-js/wiki/Known-issues-on-IE-and-Edge-Browser) с обработкой всплывающих окон в этом браузере.
+> В этом кратком руководстве для Internet Explorer используются методы `loginRedirect` и `acquireTokenRedirect` из-за [известной проблемы](https://github.com/AzureAD/microsoft-authentication-library-for-js/wiki/Known-issues-on-IE-and-Edge-Browser#issues) с обработкой всплывающих окон в Internet Explorer.
 <!--end-collapse-->
 
 ## <a name="call-the-microsoft-graph-api-using-the-token-you-just-obtained"></a>Вызов API Microsoft Graph с помощью полученного маркера

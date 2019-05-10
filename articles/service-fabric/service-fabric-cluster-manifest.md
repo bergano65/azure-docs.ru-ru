@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/12/2018
 ms.author: dekapur
-ms.openlocfilehash: f94a65e469fdb3cee4f02bc5a8f6f5a4a1ea5a16
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: ae7fbef864634e47866de13384871a98b8ce4675
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60386726"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65209709"
 ---
 # <a name="configuration-settings-for-a-standalone-windows-cluster"></a>Параметры конфигурации для изолированного кластера Windows
 В этой статье описаны параметры конфигурации изолированного кластера Azure Service Fabric, которые можно задать в файле *ClusterConfig.json*. Этот файл используется для указания сведений об узлах кластера, конфигурациях безопасности, а также топологии сети в плане доменов сбоя и обновления.  После изменения или добавления параметров конфигурации вы можете [создать изолированный кластер](service-fabric-cluster-creation-for-windows-server.md) или [обновить конфигурацию изолированного кластера](service-fabric-cluster-config-upgrade-windows-server.md).
@@ -122,7 +122,7 @@ ms.locfileid: "60386726"
 }
 ```
 
-Переменная metadata представляет собой описание защищенного кластера и может быть задана в соответствии с вашей конфигурацией. Переменные ClusterCredentialType и ServerCredentialType определяют тип безопасности, реализуемой кластером и узлами. Можно задать значение *X509* для защиты на основе сертификатов или *Windows* для защиты на основе Azure Active Directory. Остальная часть раздела security зависит от выбранного типа безопасности. Сведения о том, как заполнить остальную часть раздела security, см. в статьях [Защита автономного кластера под управлением Windows с помощью сертификатов X.509](service-fabric-windows-cluster-x509-security.md) или [Защита изолированного кластера под управлением Windows с помощью системы безопасности Windows](service-fabric-windows-cluster-windows-security.md).
+Переменная metadata представляет собой описание защищенного кластера и может быть задана в соответствии с вашей конфигурацией. Переменные ClusterCredentialType и ServerCredentialType определяют тип безопасности, реализуемой кластером и узлами. Их можно задать либо *X509* для защиты на основе сертификатов или *Windows* безопасности на основе Active Directory. Остальная часть раздела security зависит от выбранного типа безопасности. Сведения о том, как заполнить остальную часть раздела security, см. в статьях [Защита автономного кластера под управлением Windows с помощью сертификатов X.509](service-fabric-windows-cluster-x509-security.md) или [Защита изолированного кластера под управлением Windows с помощью системы безопасности Windows](service-fabric-windows-cluster-windows-security.md).
 
 ### <a name="node-types"></a>Типы узлов
 В разделе nodeTypes описывается тип узлов в кластере. Для кластера нужно указать по крайней мере один тип узла, как показано в следующем фрагменте кода: 

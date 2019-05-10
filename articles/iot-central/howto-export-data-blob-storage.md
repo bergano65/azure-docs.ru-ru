@@ -8,12 +8,12 @@ ms.date: 03/20/2019
 ms.topic: conceptual
 ms.service: iot-central
 manager: peterpr
-ms.openlocfilehash: f81ca34931e2ee4bce35fa06195fb64c47ef9a7b
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 9ae57b8ab26780ea975ad74f3348a0deaf8c9cc8
+ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64682034"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65464642"
 ---
 # <a name="export-your-data-to-azure-blob-storage"></a>Экспорт данных в хранилище BLOB-объектов Azure
 
@@ -57,14 +57,14 @@ ms.locfileid: "64682034"
     > [!Note]
     > Если вы не видите этого пункта в меню слева, вы не являетесь администратором в приложении. Обратитесь к администратору, чтобы настроить экспорт данных.
 
-    ![Создание нового концентратора событий для непрерывного экспорта данных](media/howto-export-data/export_menu.PNG)
+    ![Создание нового концентратора событий для непрерывного экспорта данных](media/howto-export-data/export_menu1.png)
 
 3. Выберите **+ создать** кнопки в правом верхнем углу. Выберите **хранилище BLOB-объектов** качестве пункта назначения для экспорта. 
 
     > [!NOTE] 
     > Максимальное число экспортов на каждое приложение равно пяти. 
 
-    ![Создание непрерывного экспорта данных](media/howto-export-data/export_new.PNG)
+    ![Создание непрерывного экспорта данных](media/howto-export-data/export_new1.png)
 
 4. В раскрывающемся списке выберите ваш **пространство имен учетной записи хранения**. Вы также можете выбрать последний вариант в списке — **Enter a connection string** (Ввести строку подключения). 
 
@@ -87,7 +87,7 @@ ms.locfileid: "64682034"
 
 6. Чтобы включить непрерывный экспорт данных, убедитесь, что для параметра **Экспорт данных** установлено значение **Включено**. Щелкните **Сохранить**.
 
-  ![Настройка экспорта непрерывных данных](media/howto-export-data/export-list-blob.png)
+   ![Настройка экспорта непрерывных данных](media/howto-export-data/export-list-blob.png)
 
 7. Через несколько минут ваши данные будут отображаться в выбранном назначении.
 

@@ -1,6 +1,6 @@
 ---
 title: Упаковка и источник ошибки Azure служб мультимедиа | Документация Майкрософт
-description: В этом разделе описаны ошибки, которые могут поступать из служба упаковки служб мультимедиа Azure.
+description: В этом разделе описаны ошибки, которые могут поступать из службы Azure Media Services конечной точки потоковой передачи (Orgin).
 author: Juliako
 manager: femila
 editor: ''
@@ -11,18 +11,18 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/28/2019
+ms.date: 05/07/2019
 ms.author: juliako
-ms.openlocfilehash: e30c51ff3526bb5ed193b65b3f36a64c552024ff
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: ebcda6026f79bc88df91471d8be88316ba57bfc6
+ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65204144"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65411374"
 ---
-# <a name="media-services-packaging-errors"></a>Ошибки при упаковке служб мультимедиа 
+# <a name="streaming-endpoint-origin-errors"></a>Потоковая передача ошибки конечной точки (источник) 
 
-В этом разделе описаны ошибки, которые могут поступать из служб мультимедиа Azure [служба упаковки](streaming-endpoint-concept.md).
+В этом разделе описаны ошибки, которые могут поступать из служб мультимедиа Azure [службы конечной точки потоковой передачи](streaming-endpoint-concept.md).
 
 ## <a name="400-bad-request"></a>400 — недопустимый запрос
 
@@ -48,7 +48,7 @@ ms.locfileid: "65204144"
 |MPE_ENC_ENCRYPTION_REQUIRED |0x8088021E |Шифрование является необходимым для содержимого, политики доставки является обязательной для формата выходных данных. |
 |MPE_ENC_ENCRYPTION_NOT_SET_IN_DELIVERY_POLICY |0x8088024D |Шифрование не задано в настройках политики доставки. |
 
-## <a name="404-not-found"></a>404 — не найдено
+## <a name="404-not-found"></a>404 Не найдено
 
 Предпринята попытка реагировать на ресурс, который больше не существует. Например ресурс может быть удалено.
 
@@ -194,7 +194,7 @@ ms.locfileid: "65204144"
 |---|---|---|
 |MPE_STORAGE_SERVER_BUSY|0x808900E8|Ошибка операции хранилища, получил ошибка занятости сервера HTTP 503.|
 
-## <a name="ask-questions-give-feedback-get-updates"></a>Задавайте вопросы, отзыв, получить обновления
+## <a name="ask-questions-give-feedback-get-updates"></a>Получение справки, отправка отзывов, получение обновлений
 
 Прочитайте статью [сообщества Служб мультимедиа Azure](media-services-community.md), чтобы узнать, как задавать вопросы, оставлять отзывы и получать новости о Службах мультимедиа.
 

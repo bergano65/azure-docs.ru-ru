@@ -12,16 +12,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 05/24/2018
+ms.date: 04/23/2019
 ms.author: celested
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b83b08c442a7f10d6b29122fe7959bedf8f3cff0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 8413c75a683ff135b3442da6c6a94787ed0866ca
+ms.sourcegitcommit: 4891f404c1816ebd247467a12d7789b9a38cee7e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60441246"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65441447"
 ---
 # <a name="troubleshoot-kerberos-constrained-delegation-configurations-for-application-proxy"></a>Устранение неполадок конфигураций ограниченного делегирования Kerberos для прокси-сервера приложения
 
@@ -177,7 +177,7 @@ ms.locfileid: "60441246"
 
 ## <a name="other-scenarios"></a>Другие сценарии
 
-- Прокси приложения Azure запрашивает билет Kerberos перед отправкой запроса к приложению. Некоторые приложения сторонних разработчиков, например Tableau Server, не полностью поддерживают этот метод проверки подлинности. Они ожидают более традиционные согласования. Первый запрос выполняется анонимно, позволяя приложению отправить ответ с поддерживаемыми типами проверки подлинности через 401.
+- Прокси приложения Azure запрашивает билет Kerberos перед отправкой запроса к приложению. Некоторые сторонние приложения не нравится этот метод проверки подлинности. Они ожидают более традиционные согласования. Первый запрос выполняется анонимно, позволяя приложению отправить ответ с поддерживаемыми типами проверки подлинности через 401.
 
 - Проверка подлинности с несколькими прыжками — обычно используется в сценариях с многоуровневым приложением, где проверка подлинности требуется как для серверной, так и для интерфейсной части (например, SQL Server Reporting Services). Сведения о настройке сценария с несколькими прыжками см. в статье [Kerberos Constrained Delegation May Require Protocol Transition in Multi-hop Scenarios](https://support.microsoft.com/help/2005838/kerberos-constrained-delegation-may-require-protocol-transition-in-mul) (Ограниченное делегирование Kerberos: изменение протокола в сценариях с несколькими прыжками).
 

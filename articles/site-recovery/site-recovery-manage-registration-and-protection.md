@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 11/27/2018
 ms.author: rajani-janaki-ram
-ms.openlocfilehash: c22acb1ae82e5c1e781598e8545c7f1625cc1c09
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 1b4cd5bb020e73dc9045eb164ce49931f818f72d
+ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61277167"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65415485"
 ---
 # <a name="remove-servers-and-disable-protection"></a>Удаление серверов и отключение защиты
 
@@ -150,6 +150,12 @@ ms.locfileid: "61277167"
 
 > [!NOTE]
 > При использовании обоих параметров служба Mobility Service не будет удалена с защищенных серверов. Ее необходимо удалить вручную. Если вы планируете повторно защитить сервер, используя тот же сервер конфигурации, то удаление службы Mobility Service можно пропустить.
+
+## <a name="disable-protection-for-a-azure-vm-azure-to-azure"></a>Отключите защиту для виртуальной Машины Azure (Azure — Azure)
+
+-  Выберите **Защищенные элементы** > **Реплицированные элементы**, щелкните виртуальную машину правой кнопкой мыши и выберите **Отключить репликацию**.
+> [!NOTE]
+> службу Mobility service не будет удалено из защищенных серверах, необходимо удалить вручную. Если вы планируете повторно защитить сервер, можно пропустить, удалив службу мобильности.
 
 ## <a name="disable-protection-for-a-hyper-v-virtual-machine-hyper-v-to-azure"></a>Отключение защиты виртуальной машины Hyper-V (из Hyper-V в Azure)
 

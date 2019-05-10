@@ -2,10 +2,8 @@
   href: index.yml
 - name: Обзор
   items:
-    - name: Общие сведения о службе "Поиск Azure"
+    - name: Что такое поиск Azure?
       href: search-what-is-azure-search.md
-    - name: Общие сведения о функции "Когнитивный поиск"
-      href: cognitive-search-concept-intro.md
 - name: Быстрое начало работы
   expanded: true
   items:
@@ -15,7 +13,7 @@
       items:
         - name: Загрузка индекса и отправка запросов к нему
           href: search-get-started-portal.md
-        - name: Расширение возможностей с помощью ИИ (когнитивный поиск)
+        - name: Расширение возможностей с помощью ИИ (Когнитивный поиск)
           href: cognitive-search-quickstart-blob.md
     - name: 'C#'
       items:
@@ -35,8 +33,12 @@
       href: search-indexer-tutorial.md
     - name: Индексация больших двоичных объектов JSON Azure
       href: search-semi-structured-data.md
-    - name: Индексирование с помощью средств ИИ (Cognitive Services)
-      href: cognitive-search-tutorial-blob.md
+    - name: Расширение возможностей с помощью ИИ (Когнитивный поиск)
+      items:
+        - name: REST
+          href: cognitive-search-tutorial-blob.md
+        - name: 'C#'
+          href: cognitive-search-tutorial-blob-dotnet.md
 - name: Примеры
   items:
     - name: Примеры кода Azure
@@ -51,13 +53,17 @@
       href: 'https://www.pluralsight.com/courses/microsoft-azure-textual-content-search-enabling'
 - name: Основные понятия
   items:
-    - name: Полнотекстовый поиск
+    - name: полнотекстовый поиск.
       href: search-lucene-query-architecture.md
-    - name: Конструктивные шаблоны для мультитенантности
-      href: search-modeling-multitenant-saas-applications.md
+    - name: Когнитивный поиск
+      href: cognitive-search-concept-intro.md
+    - name: Хранилище знаний
+      href: knowledge-store-concept-intro.md
+    - name: Проекции
+      href: knowledge-store-projection-overview.md
 - name: Практические руководства
   items:
-    - name: Планирование загрузки
+    - name: Планирование
       items:
         - name: Выберите уровень.
           href: search-sku-tier.md
@@ -67,6 +73,8 @@
           href: search-capacity-planning.md
         - name: 'Развертывание: стратегии и рекомендации'
           href: search-performance-optimization.md
+        - name: Мультитенантная архитектура
+          href: search-modeling-multitenant-saas-applications.md
     - name: Безопасность
       items:
         - name: Обзор безопасности
@@ -79,6 +87,8 @@
           href: search-security-trimming-for-azure-search.md
         - name: Фильтр по удостоверениям AAD
           href: search-security-trimming-for-azure-search-with-aad.md
+        - name: Управление ключами шифрования (предварительная версия)
+          href: search-security-manage-encryption-keys.md
     - name: Разработка
       items:
         - name: Версии API
@@ -91,6 +101,8 @@
           href: search-get-started-java.md
         - name: Обновление пакета SDK
           items:
+            - name: Пакет SDK для .NET версии 9.0
+              href: search-dotnet-sdk-migration-version-9.md
             - name: Пакет SDK для .NET 5.0
               href: search-dotnet-sdk-migration-version-5.md
             - name: Пакет SDK для .NET версии 3.0
@@ -169,26 +181,36 @@
           href: search-indexer-field-mappings.md
         - name: Устранение распространенных неполадок
           href: search-indexer-troubleshooting.md
-    - name: Индексирование ИИ (когнитивный поиск)
+    - name: Расширение возможностей с помощью ИИ
       items:
         - name: Вложение ресурса Cognitive Services
           href: cognitive-search-attach-cognitive-services.md
-        - name: Определение набора навыков
-          href: cognitive-search-defining-skillset.md
-        - name: Ссылка на заметку
-          href: cognitive-search-concept-annotations-syntax.md
-        - name: Сопоставление с полями индекса
-          href: cognitive-search-output-field-mapping.md
-        - name: Извлечение информации из изображений и ее обработка
-          href: cognitive-search-concept-image-scenarios.md
-        - name: Интеграция пользовательских навыков
-          href: cognitive-search-custom-skill-interface.md
-        - name: "Пример\_— пользовательские навыки"
-          href: cognitive-search-create-custom-skill-example.md
+        - name: Наборы навыков
+          items:
+            - name: Определение набора навыков
+              href: cognitive-search-defining-skillset.md
+            - name: Ссылка на заметку
+              href: cognitive-search-concept-annotations-syntax.md
+            - name: Сопоставление с полями индекса
+              href: cognitive-search-output-field-mapping.md
+            - name: Извлечение информации из изображений и ее обработка
+              href: cognitive-search-concept-image-scenarios.md
+        - name: Пользовательские навыки
+          items:
+            - name: Интеграция пользовательских навыков
+              href: cognitive-search-custom-skill-interface.md
+            - name: "Пример\_— Функции Azure"
+              href: cognitive-search-create-custom-skill-example.md
+            - name: "Пример\_— контейнеры"
+              href: 'https://go.microsoft.com/fwlink/?linkid=2089500'
         - name: Советы по устранению неполадок
           href: cognitive-search-concept-troubleshooting.md
         - name: Ссылки на документацию
           href: cognitive-search-resources-documentation.md
+    - name: Хранилище знаний (предварительная версия)
+      items:
+        - name: Как приступить к работе
+          href: knowledge-store-howto.md
     - name: Запрос данных
       items:
         - name: Создание простого запроса
@@ -203,6 +225,8 @@
           href: search-query-simple-examples.md
         - name: Примеры (полный синтаксис Lucene)
           href: search-query-lucene-examples.md
+        - name: moreLikeThis (предварительная версия)
+          href: search-more-like-this.md
     - name: Фильтрация и сортировка данных
       items:
         - name: Общие сведения о фильтрах
@@ -272,13 +296,15 @@
           href: cognitive-search-skill-sentiment.md
         - name: Анализ изображений
           href: cognitive-search-skill-image-analysis.md
-        - name: OCR
+        - name: Распознавание текста
           href: cognitive-search-skill-ocr.md
         - name: Формирователь
           href: cognitive-search-skill-shaper.md
+        - name: Условная логика
+          href: cognitive-search-skill-conditional.md
         - name: Устаревшие навыки
           href: cognitive-search-skill-deprecated.md
-    - name: Пользовательские навыки (предварительная версия)
+    - name: Пользовательские навыки
       items:
         - name: Пользовательские веб-API
           href: cognitive-search-custom-skill-web-api.md

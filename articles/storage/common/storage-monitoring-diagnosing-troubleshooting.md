@@ -2,18 +2,19 @@
 title: Мониторинг, диагностика и устранение неполадок в работе службы хранилища Azure | Документация Майкрософт
 description: Воспользуйтесь такими функциями, как аналитика хранилища, вход на стороне клиента, и другими сторонними инструментами для выявления, диагностики и устранения проблем, связанных со службой хранилища Azure.
 services: storage
-author: fhryo-msft
+author: normesta
 ms.service: storage
 ms.topic: article
 ms.date: 05/11/2017
-ms.author: fhryo-msft
+ms.author: normesta
+ms.reviewer: fryu
 ms.subservice: common
-ms.openlocfilehash: 6edb1abae91a675a3fe47b417a112f0951886aaf
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.openlocfilehash: b929d9d1acc217c291c5aa645ee2d8952f401cd1
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62103865"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65192169"
 ---
 # <a name="monitor-diagnose-and-troubleshoot-microsoft-azure-storage"></a>Мониторинг, диагностика и устранение неисправностей службы хранилища Microsoft Azure
 [!INCLUDE [storage-selector-portal-monitoring-diagnosing-troubleshooting](../../../includes/storage-selector-portal-monitoring-diagnosing-troubleshooting.md)]
@@ -425,7 +426,7 @@ queueServicePoint.UseNagleAlgorithm = false;
 Метрика **PercentThrottlingError** часто увеличивается одновременно с увеличением числа запросов к хранилищу или при первоначальном нагрузочном тестировании приложения. Это также может проявляться в получении сообщений о состоянии HTTP 503 "Сервер занят" или 500 "Время ожидания операции истекло" в клиенте при операциях с хранилищем.
 
 #### <a name="transient-increase-in-PercentThrottlingError"></a>Временное увеличение метрики PercentThrottlingError
-Если в значении метрики **PercentThrottlingError** наблюдаются пиковые скачки, совпадающие с периодами высокой активности приложения, следует реализовать стратегию повторения с экспоненциальной, а не линейной задержкой в клиенте. Это позволит снизить мгновенную нагрузку на секцию и сгладить пиковые скачки трафика. Дополнительные сведения о том, как реализовать политики повтора с помощью клиентской библиотеки хранилища, см. в статье [Microsoft.WindowsAzure.Storage.RetryPolicies Namespace](https://msdn.microsoft.com/library/azure/microsoft.windowsazure.storage.retrypolicies.aspx) (Пространство имен Microsoft.WindowsAzure.Storage.RetryPolicies).
+Если в значении метрики **PercentThrottlingError** наблюдаются пиковые скачки, совпадающие с периодами высокой активности приложения, следует реализовать стратегию повторения с экспоненциальной, а не линейной задержкой в клиенте. Это позволит снизить мгновенную нагрузку на секцию и сгладить пиковые скачки трафика. Дополнительные сведения о том, как реализовать политики повтора с помощью клиентской библиотеки хранилища, см. в статье [Microsoft.WindowsAzure.Storage.RetryPolicies Namespace](https://docs.microsoft.com/dotnet/api/microsoft.azure.storage.blob.cloudblobclient.retrypolicy) (Пространство имен Microsoft.WindowsAzure.Storage.RetryPolicies).
 
 > [!NOTE]
 > В значении метрики **PercentThrottlingError** также могут наблюдаться пиковые скачки, не совпадающие с периодами высокой активности приложения. Наиболее вероятная причина в этом случае — перемещение секций службой хранилища для балансировки нагрузки.
@@ -466,7 +467,7 @@ queueServicePoint.UseNagleAlgorithm = false;
 ### <a name="the-client-is-receiving-403-messages"></a>Клиент получает сообщения «HTTP 403 (запрещено)»
 Если в клиентском приложении происходят ошибки HTTP 403 (Запрещено), наиболее вероятная причина заключается в использовании клиентом подписанного URL-адреса (SAS) с истекшим сроком действия при отправке запроса к хранилищу (хотя возможны и другие причины: рассинхронизация по времени, недействительные ключи и пустые заголовки). Если причина в просроченном ключе SAS, в журнале хранилища на стороне сервера не будет никаких записей об этом. В приведенной ниже таблице показан пример этой неполадки в журнале на стороне клиента, созданном клиентской библиотекой хранилища.
 
-| Источник | Уровень детализации | Уровень детализации | Идентификатор запроса клиента | Operation Text |
+| `Source` | Уровень детализации | Уровень детализации | Идентификатор запроса клиента | Operation Text |
 | --- | --- | --- | --- | --- |
 | Microsoft.WindowsAzure.Storage |Информация |3 |85d077ab -… |Начинается выполнение операции с расположением «Основное» в режиме расположения PrimaryOnly. |
 | Microsoft.WindowsAzure.Storage |Информация |3 |85d077ab -… |Отправка синхронного запроса к <https://domemaildist.blob.core.windows.netazureimblobcontainer/blobCreatedViaSAS.txt?sv=2014-02-14&sr=c&si=mypolicy&sig=OFnd4Rd7z01fIvh%2BmcR6zbudIH2F5Ikm%2FyhNYZEmJNQ%3D&api-version=2014-02-14> |
