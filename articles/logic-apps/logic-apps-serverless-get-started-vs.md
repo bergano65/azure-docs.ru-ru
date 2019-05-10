@@ -10,12 +10,12 @@ ms.reviewer: klam, LADocs
 ms.custom: vs-azure
 ms.topic: article
 ms.date: 04/25/2019
-ms.openlocfilehash: 265ed220b023a9d81fc5af48920152d95d9cac08
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: fb071ac056355a056e5333284808417a258515de
+ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65136690"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65467450"
 ---
 # <a name="build-your-first-serverless-app-with-azure-logic-apps-and-azure-functions---visual-studio"></a>Создание первого бессерверного приложения на основе Azure Logic Apps и Функций Azure (Visual Studio)
 
@@ -34,6 +34,7 @@ ms.locfileid: "65136690"
 
     > [!IMPORTANT]
     > При установке Visual Studio 2019 или 2017 обязательно выберите рабочую нагрузку **разработки Azure**.
+    > Если используется Visual Studio 2019, Cloud Explorer может открыть конструктор приложений логики на портале Azure. Открытие встроенного конструктора приложений логики пока не поддерживается.
 
   * [Пакет Microsoft Azure SDK для .NET (2.9.1 или более поздней версии)](https://azure.microsoft.com/downloads/). 
   Дополнительные сведения о [пакете Azure SDK для .NET](https://docs.microsoft.com/dotnet/azure/dotnet-tools?view=azure-dotnet).

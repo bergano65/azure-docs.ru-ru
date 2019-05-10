@@ -13,17 +13,20 @@ ms.devlang: azurecli
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 05/03/2018
+ms.date: 05/07/2019
 ms.author: cynthn
-ms.openlocfilehash: 3a7ac2e7a86a135f20f46b03be2c38af330a5367
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: c0ec2616d8bdcf3cfd6d649f12e9bfceea33690a
+ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60543108"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65467744"
 ---
 # <a name="how-to-use-packer-to-create-linux-virtual-machine-images-in-azure"></a>Создание образов виртуальных машин Linux в Azure с помощью Packer
 Каждая виртуальная машина в Azure создается из образа, определяющего дистрибутив Linux и версию операционной системы. Образы могут содержать предварительно установленные приложения и конфигурации. Azure Marketplace предоставляет большое количество образов Майкрософт и сторонних разработчиков для наиболее распространенных операционных систем и приложений. Кроме того, вы можете создать собственные настраиваемые образы, отвечающие конкретным потребностям. В этой статье описывается определение и создание пользовательских образов в Azure с использованием средства с открытым кодом [Packer](https://www.packer.io/).
+
+> [!NOTE]
+> Теперь Azure есть служба, Azure Image Builder (Предварительная версия), для определения и создания пользовательских образов. Azure Image Builder лежит Packer, поэтому можно даже использовать ваши существующие сценарии средства подготовки Packer оболочек с ним. Чтобы приступить к работе с Azure Image Builder, см. в разделе [создать виртуальную Машину Linux с помощью Azure Image Builder](image-builder.md).
 
 
 ## <a name="create-azure-resource-group"></a>Создание группы ресурсов Azure
@@ -232,6 +235,4 @@ az vm open-port \
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-В этом примере с помощью Packer вы создали образ виртуальной машины с уже установленным NGINX. Этот образ виртуальной машины можно использовать наряду с имеющимися рабочими процессами развертывания, как например развертывание приложений на виртуальных машинах, созданных из образа с помощью Ansible, Chef или Puppet.
-
-Дополнительный пример шаблонов Packer для других дистрибутивов Linux см. в этом [репозитории GitHub](https://github.com/hashicorp/packer/tree/master/examples/azure).
+Можно также использовать существующие сценарии средства подготовки Packer с [Azure Image Builder](image-builder.md).

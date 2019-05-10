@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/04/2019
 ms.author: jeedes
-ms.openlocfilehash: 8451fd692409933803f5f8023f1e1161c3a97daf
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 26a9aa4c32cff17dd157d65dce062309e73eb41f
+ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59278537"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65407898"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-workday"></a>Руководство по интеграции Azure Active Directory с Workday
 
@@ -116,7 +116,7 @@ ms.locfileid: "59278537"
 
     > [!NOTE]
     > Эти значения приведены в качестве примера. Замените их фактическими значениями URL-адреса входа и URL-адреса ответа. URL-адрес ответа должен содержать поддомен (например, www, wd2, wd3, wd3-impl, wd5, wd5-impl).
-    > Например, значение "`http://www.myworkday.com`" допустимо, а значение "`http://myworkday.com`" — нет. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов Workday](https://www.workday.com/en-us/partners-services/services/support.html). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Например, значение "`http://www.myworkday.com`" допустимо, а значение "`https://myworkday.com`" — нет. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов Workday](https://www.workday.com/en-us/partners-services/services/support.html). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 6. Приложение Workday ожидает проверочные утверждения SAML в определенном формате, поэтому следует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию, когда **nameidentifier** сопоставляется с **user.userprincipalname**. Приложение Workday ожидает, что **nameidentifier** будет сопоставляться с **user.mail**, **UPN** и т. д., поэтому необходимо изменить сопоставление атрибутов, щелкнув значок **Изменить**.
 

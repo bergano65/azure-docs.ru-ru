@@ -1,6 +1,6 @@
 ---
 title: Эталонная архитектура акселераторов решений Интернета вещей в Azure | Документация Майкрософт
-description: Сведения об эталонной архитектуре акселераторов решений Интернета вещей Azure. Существующие акселераторы решений используют эту эталонную архитектуру. Эталонную архитектуру также можно использовать при создании собственных настраиваемых решений Интернета вещей.
+description: Ознакомьтесь с эталонной архитектуры Акселераторы решений Интернета вещей Azure. Существующие акселераторы решений используют эту эталонную архитектуру. Эталонную архитектуру также можно использовать при создании собственных настраиваемых решений Интернета вещей.
 author: dominicbetts
 ms.author: dobett
 ms.date: 12/04/2018
@@ -9,12 +9,12 @@ ms.custom: mvc
 ms.service: iot-accelerators
 services: iot-accelerators
 manager: philmea
-ms.openlocfilehash: ba5eb50dcf800c186124db348ac584ff6f55cebb
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 1e3ec677f2c3ce2a7f942c47269fe1f70885ac02
+ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61450319"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65466472"
 ---
 # <a name="introduction-to-the-azure-iot-reference-architecture"></a>Общие сведения об эталонной архитектуре Интернета вещей Azure
 
@@ -38,7 +38,7 @@ ms.locfileid: "61450319"
 
 Эталонная архитектура идентифицирует подсистемы ядра, показанные на следующей диаграмме.
 
-![Подсистемы ядра](media/iot-accelerators-architecture-overview/CoreSubsystems.png)
+![Подсистемы ядра](media/iot-accelerators-architecture-overview/coresubsystems1.png)
 
 В следующих разделах описывается, как компоненты акселератора решения для удаленного мониторинга сопоставляются основным подсистемам.
 
