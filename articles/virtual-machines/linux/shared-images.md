@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 05/06/2019
 ms.author: akjosh; cynthn
 ms.custom: ''
-ms.openlocfilehash: 40ac8badfac3c004d3451c598d7cd2a17982a585
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: f69b1aff28165b9bf37c49fe62d1fb5aada91285
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65138910"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65236401"
 ---
 # <a name="create-a-shared-image-gallery-with-the-azure-cli"></a>Создание коллекции общих образов с помощью Azure CLI
 
@@ -33,7 +33,7 @@ ms.locfileid: "65138910"
 
 Функция коллекции общих образов имеет несколько типов ресурсов. Мы будем использовать или создавать в этой статье следующие ресурсы:
 
-| Ресурс | ОПИСАНИЕ|
+| Ресурс | Описание|
 |----------|------------|
 | **Управляемый образ** | Это базовый образ, который можно использовать отдельно или для создания **версии образа** в коллекции образов. Управляемые образы создаются на основе обобщенных виртуальных машин. Управляемый образ — это специальный тип виртуального жесткого диска, который может применяться для создания нескольких виртуальных машин. Теперь его можно использовать для создания версий общих образов. |
 | **Коллекция образов** | Как и Azure Marketplace, **коллекция образов** — это репозиторий для управления и совместного использования образов, но в отличие от Azure Marketplace доступ к коллекции образов контролируете вы. |
@@ -61,7 +61,9 @@ az vm create\
 [!INCLUDE [virtual-machines-common-shared-images-update-delete-cli](../../../includes/virtual-machines-common-shared-images-update-delete-cli.md)]
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Вы также можете создать ресурс коллекции общих образов с помощью шаблонов. Существует несколько шаблонов быстрого запуска Azure: 
+[Azure Image Builder (Предварительная версия)](image-builder-overview.md) можно автоматизировать создание версии образа, его можно использовать даже для обновления и [Создание новой версии образа с существующей версии образа](image-builder-gallery-update-image-version.md). 
+
+Можно также создать коллекции образов общих ресурсов с помощью шаблонов. Существует несколько шаблонов быстрого запуска Azure: 
 
 - [Создание коллекции общих образов](https://azure.microsoft.com/resources/templates/101-sig-create/)
 - [Создание определения образа в коллекции общих образов](https://azure.microsoft.com/resources/templates/101-sig-image-definition-create/)

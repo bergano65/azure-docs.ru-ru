@@ -2,19 +2,19 @@
 title: Управление секретами приложения "Сетка Azure Service Fabric" | Документация Майкрософт
 description: Управляйте секретами приложений, чтобы безопасно создать и развернуть приложение "Сетка Service Fabric".
 services: service-fabric-mesh
-keywords: секретные коды
+keywords: секреты
 author: aljo-microsoft
 ms.author: aljo
-ms.date: 11/28/2018
+ms.date: 4/2/2019
 ms.topic: conceptual
 ms.service: service-fabric-mesh
 manager: chackdan
-ms.openlocfilehash: 36d0b49f1b9fb1ca5d13283146d134137a5cb028
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 251611e814f890e3cebf0fda2d33ab548a8ff213
+ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60419073"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65506450"
 ---
 # <a name="manage-service-fabric-mesh-application-secrets"></a>Управление секретами приложения "Сетка Service Fabric"
 Сетка Service Fabric поддерживает секреты в качестве ресурсов Azure. Секрет сетки Service Fabric может быть любой конфиденциальной текстовой информацией, например строками подключения к хранилищу, паролями или другими значениями, которые должны храниться и передаваться безопасно. В этой статье показано, как использовать службу Secure Store Service Fabric для развертывания и поддержки секретов.
@@ -31,37 +31,42 @@ ms.locfileid: "60419073"
 5. использование команд Azure CLI "az" для управления жизненным циклом службы Secure Store.
 
 ## <a name="declare-a-mesh-secrets-resource"></a>Объявление ресурса секретов сетки
-Ресурс Mesh секреты объявляется в модели ресурсов Azure JSON или yaml-файл, используя тип inlinedValue и определения contentType SecretsStoreRef. Ресурс секретов сетки поддерживает секреты, поставляемые службой Secure Store. 
+Ресурс Mesh секреты объявляется в модели ресурсов Azure JSON или yaml-файл с помощью определения типа inlinedValue. Ресурс секретов сетки поддерживает секреты, поставляемые службой Secure Store. 
 >
 Ниже представлен пример объявления ресурсов сетки "Секреты" в файле JSON.
 
 ```json
 {
-  "$schema": "https://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json",
+  "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json",
   "contentVersion": "1.0.0.0",
   "parameters": {
     "location": {
       "type": "string",
-      "defaultValue": "eastus",
+      "defaultValue": "WestUS",
       "metadata": {
-        "description": "Location of the resources."
+        "description": "Location of the resources (e.g. westus, eastus, westeurope)."
       }
-    },
+    }
+  },
+  "sfbpHttpsCertificate": {
+      "type": "string",
+      "metadata": {
+        "description": "Plain Text Secret Value that your container ingest"
+      }
   },
   "resources": [
     {
       "apiVersion": "2018-07-01-preview",
-      "name": "MySecret.txt",
+      "name": "sfbpHttpsCertificate.pfx",
       "type": "Microsoft.ServiceFabricMesh/secrets",
-      "location": "[parameters('location')]",
+      "location": "[parameters('location')]", 
       "dependsOn": [],
       "properties": {
         "kind": "inlinedValue",
-        "description": "My Mesh Application Secret",
-        "contentType": "SecretsStoreRef",
-        "value": "mysecret",
+        "description": "SFBP Application Secret",
+        "contentType": "text/plain",
       }
-    },
+    }
   ]
 }
 ```
@@ -103,49 +108,49 @@ ms.locfileid: "60419073"
 
 ```json
 {
-  "$schema": "https://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json",
+  "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json",
   "contentVersion": "1.0.0.0",
   "parameters": {
     "location": {
       "type": "string",
-      "defaultValue": "eastus",
+      "defaultValue": "WestUS",
       "metadata": {
-        "description": "Location of the resources."
-      }
-    },
-    "my-secret-value-v1": {
-      "type": "string",
-      "metadata": {
-        "description": "My Mesh Application Secret Value."
+        "description": "Location of the resources (e.g. westus, eastus, westeurope)."
       }
     }
+  },
+  "sfbpHttpsCertificate": {
+      "type": "string",
+      "metadata": {
+        "description": "Plain Text Secret Value that your container ingest"
+      }
   },
   "resources": [
     {
       "apiVersion": "2018-07-01-preview",
-      "name": "MySecret.txt",
+      "name": "sfbpHttpsCertificate.pfx",
       "type": "Microsoft.ServiceFabricMesh/secrets",
-      "location": "[parameters('location')]",
+      "location": "[parameters('location')]", 
+      "dependsOn": [],
       "properties": {
         "kind": "inlinedValue",
-        "description": "My Mesh Application Secret",
-        "contentType": "SecretsStoreRef",
-        "value": "mysecret",
+        "description": "SFBP Application Secret",
+        "contentType": "text/plain",
       }
     },
     {
       "apiVersion": "2018-07-01-preview",
-      "name": "mysecret:1.0",
+      "name": "sfbpHttpsCertificate.pfx/2019.02.28",
       "type": "Microsoft.ServiceFabricMesh/secrets/values",
       "location": "[parameters('location')]",
       "dependsOn": [
-        'Microsoft.ServiceFabricMesh/secrets/MySecret.txt'
+        "Microsoft.ServiceFabricMesh/secrets/sfbpHttpsCertificate.pfx"
       ],
       "properties": {
-        "value": "[parameters('my-secret-value-v1)]"
+        "value": "[parameters('sfbpHttpsCertificate')]"
       }
     }
-  ]
+  ],
 }
 ```
 Ниже представлен пример объявления ресурсов сетки "Секреты/Значения" в файле YAML.
@@ -201,7 +206,7 @@ az mesh deployment create –-<template-file> or --<template-uri>
 ```
 Передайте или **template-file**, или **template-uri** (но не оба).
 
-Например: 
+Например:
 - az mesh deployment create — c:\MyMeshTemplates\SecretTemplate1.txt
 - az mesh deployment create — https://www.fabrikam.com/MyMeshTemplates/SecretTemplate1.txt
 

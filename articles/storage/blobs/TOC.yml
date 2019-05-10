@@ -13,9 +13,6 @@
           href: storage-blobs-introduction.md
     - name: Быстрое начало работы
       items:
-        - name: Создание учетной записи хранения
-          displayName: 'resource manager, resource manager template, template, ARM'
-          href: ../common/storage-quickstart-create-account.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
         - name: Управление большими двоичными объектами без кода
           items:
             - name: Портал Azure
@@ -280,8 +277,11 @@
           href: storage-blob-pageblob-overview.md
     - name: Практическое руководство
       items:
-        - name: Управление учетными записями хранения
+        - name: Создание учетных записей хранения и управление ими
           items:
+            - name: Создание учетной записи хранения общего назначения
+              displayName: 'resource manager, resource manager template, template, ARM'
+              href: ../common/storage-quickstart-create-account.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: Создание учетной записи хранения блочных BLOB-объектов
               href: storage-blob-create-account-block-blob.md
             - name: Управление учетной записью хранения
@@ -413,7 +413,7 @@
             - name: 'BLOB-объекты, очереди, таблицы и файлы'
               href: 'https://docs.microsoft.com/dotnet/api/overview/azure/storage/client'
             - name: Перемещение данных
-              href: 'https://docs.microsoft.com/dotnet/api/microsoft.windowsazure.storage.datamovement'
+              href: 'https://docs.microsoft.com/dotnet/api/microsoft.azure.storage.datamovement'
             - name: Диспетчер ресурсов
               href: 'https://docs.microsoft.com/dotnet/api/overview/azure/storage/management'
         - name: Java
@@ -488,7 +488,7 @@
                 - name: 'BLOB-объекты, очереди, таблицы и файлы'
                   href: 'https://docs.microsoft.com/dotnet/api/overview/azure/storage/client'
                 - name: Перемещение данных
-                  href: 'https://docs.microsoft.com/dotnet/api/microsoft.windowsazure.storage.datamovement'
+                  href: 'https://docs.microsoft.com/dotnet/api/microsoft.azure.storage.datamovement'
                 - name: Диспетчер ресурсов
                   href: 'https://docs.microsoft.com/dotnet/api/overview/azure/storage/management'
             - name: Java
@@ -563,6 +563,8 @@
               href: ../common/storage-security-guide.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: управление доступом;
               href: data-lake-storage-access-control.md
+        - name: Обработка событий
+          href: storage-blob-event-overview.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
     - name: Практическое руководство
       items:
         - name: Прием данных

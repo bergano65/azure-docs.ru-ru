@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4d9055ef11bc5c117efc6d4de87d4ca8ec73a661
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: d99169fc38f3976b35a0ebbdd6605450fbd3e2e9
+ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60359030"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65412878"
 ---
 # <a name="password-policies-and-restrictions-in-azure-active-directory"></a>Политики и ограничения для паролей в Azure Active Directory
 
@@ -110,24 +110,51 @@ ms.locfileid: "60359030"
 1. Подключитесь к Windows PowerShell с помощью учетных данных администратора или администратора пользователей.
 1. Выполните следующие команды:
 
-   * Чтобы увидеть, если Бессрочный пароль отдельного пользователя, выполните следующий командлет, используя имя участника-пользователя (например, *aprilr\@contoso.onmicrosoft.com*) или идентификатор пользователя для проверки: `Get-AzureADUser -ObjectId <user ID> | Select-Object @{N="PasswordNeverExpires";E={$_.PasswordPolicies -contains "DisablePasswordExpiration"}}`
-   * Чтобы просмотреть параметр **Пароль не имеет окончания срока действия** для всех пользователей, выполните следующий командлет: `Get-AzureADUser -All $true | Select-Object UserPrincipalName, @{N="PasswordNeverExpires";E={$_.PasswordPolicies -contains "DisablePasswordExpiration"}}`.
+   * Чтобы увидеть, если Бессрочный пароль отдельного пользователя, выполните следующий командлет, используя имя участника-пользователя (например, *aprilr\@contoso.onmicrosoft.com*) или идентификатор пользователя для проверки:
+
+   ```powershell
+   Get-AzureADUser -ObjectId <user ID> | Select-Object @{N="PasswordNeverExpires";E={$_.PasswordPolicies -contains "DisablePasswordExpiration"}}
+   ```
+
+   * Чтобы увидеть **срок действия пароля не ограничен** настройки для всех пользователей, выполните следующий командлет:
+
+   ```powershell
+   Get-AzureADUser -All $true | Select-Object UserPrincipalName, @{N="PasswordNeverExpires";E={$_.PasswordPolicies -contains "DisablePasswordExpiration"}}
+   ```
 
 ### <a name="set-a-password-to-expire"></a>Задание срока действия пароля
 
 1. Подключитесь к Windows PowerShell с помощью учетных данных администратора или администратора пользователей.
 1. Выполните следующие команды:
 
-   * Чтобы установить пароль отдельного пользователя со сроком действия, выполните следующий командлет, используя имя участника-пользователя или идентификатор пользователя: `Set-AzureADUser -ObjectId <user ID> -PasswordPolicies None`.
-   * Чтобы задать срок действия паролей всех пользователей в организации, используйте следующий командлет: `Get-AzureADUser -All $true | Set-AzureADUser -PasswordPolicies None`
+   * Чтобы установить пароль одного пользователя со сроком действия, выполните следующий командлет, используя имя участника-пользователя или идентификатор пользователя:
+
+   ```powershell
+   Set-AzureADUser -ObjectId <user ID> -PasswordPolicies None
+   ```
+
+   * Чтобы задать пароли всех пользователей в организации, таким образом, чтобы их срока действия, используйте следующий командлет:
+
+   ```powershell
+   Get-AzureADUser -All $true | Set-AzureADUser -PasswordPolicies None
+   ```
 
 ### <a name="set-a-password-to-never-expire"></a>Установка бессрочного пароля
 
 1. Подключитесь к Windows PowerShell с помощью учетных данных администратора или администратора пользователей.
 1. Выполните следующие команды:
 
-   * Чтобы установить бессрочный пароль отдельного пользователя, выполните следующий командлет, используя имя участника-пользователя или идентификатор пользователя: `Set-AzureADUser -ObjectId <user ID> -PasswordPolicies DisablePasswordExpiration`.
-   * Чтобы установить бессрочные пароли для всех пользователей в организации, выполните следующий командлет: `Get-AzureADUser -All $true | Set-AzureADUser -PasswordPolicies DisablePasswordExpiration`
+   * Чтобы установить пароль отдельного пользователя как бессрочный, выполните следующий командлет, используя имя участника-пользователя или идентификатор пользователя:
+
+   ```powershell
+   Set-AzureADUser -ObjectId <user ID> -PasswordPolicies DisablePasswordExpiration
+   ```
+
+   * Чтобы задать пароли всех пользователей в организации никогда не истекает, выполните следующий командлет:
+
+   ```powershell
+   Get-AzureADUser -All $true | Set-AzureADUser -PasswordPolicies DisablePasswordExpiration
+   ```
 
    > [!WARNING]
    > Пароль, для которого задано `-PasswordPolicies DisablePasswordExpiration`, по-прежнему имеет срок использования, определяемый атрибутом `pwdLastSet`. Если задать для пользователей бессрочные пароли, то по прошествии 90 дней их срок действия истечет. В зависимости от атрибута `pwdLastSet`, если задать срок действия, указав `-PasswordPolicies None`, то всем пользователям, у паролей которых значение `pwdLastSet` превышает 90 дней, будет необходимо сменить пароль при следующем входе. Это изменение может повлиять на большое количество пользователей. 

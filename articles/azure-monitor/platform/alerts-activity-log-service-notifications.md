@@ -7,12 +7,12 @@ ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 06/09/2018
 ms.author: shtabriz
-ms.openlocfilehash: 6b617ff99b9183c6b5008292dd3e5d11f2e69da9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 3b3c967cd43745a4ae87fefc578282f5427a5f79
+ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60776904"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65405697"
 ---
 # <a name="create-activity-log-alerts-on-service-notifications"></a>Создание оповещений журнала действий для уведомлений службы
 ## <a name="overview"></a>Обзор
@@ -36,6 +36,10 @@ ms.locfileid: "60776904"
 Дополнительные сведения о группах действий см. в разделе [Создание групп действий и управление ими на портале Azure](../../azure-monitor/platform/action-groups.md).
 
 Дополнительные сведения о том, как настроить уведомления о работоспособности службы с помощью шаблонов Resource Manager Azure, см. в статье [Создание оповещения журнала действий с помощью шаблона Resource Manager](alerts-activity-log.md).
+
+### <a name="watch-a-video-on-setting-up-your-first-azure-service-health-alert"></a>Видео о настройке свое первое оповещение о работоспособности службы Azure
+
+>[!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE2OaXt]
 
 ## <a name="alert-and-new-action-group-using-azure-portal"></a>Создание оповещения и новой группы действий с помощью портала Azure
 1. На [портале](https://portal.azure.com)выберите **Работоспособность службы**.
@@ -195,6 +199,8 @@ ms.locfileid: "60776904"
 * Отключить и включить его, если нужно временно остановить или возобновить получение уведомлений для этого оповещения.
 
 ## <a name="next-steps"></a>Дальнейшие действия
+- Дополнительные сведения о [советы и рекомендации по настройке оповещения о работоспособности служб Azure](https://www.microsoft.com/en-us/videoplayer/embed/RE2OtUa).
+- Узнайте, как [установки мобильных Push-уведомлений для службы работоспособности служб Azure](https://www.microsoft.com/en-us/videoplayer/embed/RE2OtUw).
 - Узнайте, [как настроить уведомления веб-перехватчика для существующих систем управления проблемами](../../service-health/service-health-alert-webhook-guide.md).
 - Дополнительные сведения об уведомлениях о работоспособности службы см. в [этой статье](../../azure-monitor/platform/service-notifications.md).
 - Дополнительные сведения об ограничении частоты отправки уведомлений см. в статье [Ограничение частоты отправки для SMS, сообщений электронной почты и вызовов Webhook](../../azure-monitor/platform/alerts-rate-limiting.md).

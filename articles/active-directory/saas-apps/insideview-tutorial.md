@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/20/2019
 ms.author: jeedes
-ms.openlocfilehash: 91e1780462021430913a1354b4add7c5f047ec15
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 76db7381985853a81843df812dffcd8ab2bd8f9a
+ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59263185"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65407466"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-insideview"></a>Руководство по Интеграция Azure Active Directory с InsideView
 
@@ -142,13 +142,13 @@ ms.locfileid: "59263185"
 
     c. Откройте сертификат в кодировке Base-64, скачанный на портале Azure, скопируйте его содержимое в буфер обмена, а затем вставьте его в текстовое поле **STS Certificate** (Сертификат STS).
 
-    d. В **Crm User Id Mapping** (Сопоставление идентификаторов пользователей Crm) введите `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`.
+    d. В **Crm User Id Mapping** (Сопоставление идентификаторов пользователей Crm) введите `https://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`.
 
-    д. В **Crm Email Mapping** (Сопоставление адресов электронной почты CRM) введите `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`.
+    д. В **Crm Email Mapping** (Сопоставление адресов электронной почты CRM) введите `https://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`.
 
-    Е. В **Crm First Name Mapping** (Сопоставление имен CRM) введите `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname`.
+    Е. В **Crm First Name Mapping** (Сопоставление имен CRM) введите `https://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname`.
 
-    ж. В **Crm lastName Mapping** (Сопоставление фамилий CRM) введите `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname`.  
+    ж. В **Crm lastName Mapping** (Сопоставление фамилий CRM) введите `https://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname`.  
 
     h. Выберите команду **Сохранить**.
 

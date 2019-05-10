@@ -13,14 +13,14 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/26/2019
+ms.date: 05/07/2019
 ms.author: zchia
-ms.openlocfilehash: 0f1b5f424a71aeccd4b1e57129c0f5b22ff158af
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: e8414b9737e0ee7f847827a432dd9887931a2532
+ms.sourcegitcommit: 399db0671f58c879c1a729230254f12bc4ebff59
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65159395"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65470389"
 ---
 # <a name="tutorial-configure-comeet-recruiting-software-for-automatic-user-provisioning"></a>Руководство по Настройка программного обеспечения кадровой службы Comeet для автоматической подготовки пользователей
 
@@ -84,7 +84,7 @@ Azure Active Directory используется концепция, называ
 
 ### <a name="to-configure-automatic-user-provisioning-for-comeet-recruiting-software-in-azure-ad"></a>Настройка автоматической подготовки пользователей для программного обеспечения кадровой службы Comeet в Azure AD.
 
-1. Войдите в [портала Azure](https://portal.azure.com) и выберите **корпоративные приложения**выберите **все приложения**, а затем выберите **кадровой службы программного обеспечения Comeet**.
+1. Войдите на [портале Azure](https://portal.azure.com). Выберите **корпоративные приложения**, а затем выберите **все приложения**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
@@ -104,12 +104,11 @@ Azure Active Directory используется концепция, называ
 
 6. В [консоли администрирования программного обеспечения кадровой службы Comeet](https://app.comeet.co/), перейдите к **Comeet > Параметры > Проверка подлинности > Microsoft Azure**и скопируйте **секретный токен для вашей компании**значение **секретный токен** в Azure AD.
 
-    ![Comeet кадровой службы подготовки программного обеспечения](./media/comeetrecruitingsoftware-provisioning-tutorial/secret-token-1.png)
-    
+    ![Comeet кадровой службы подготовки программного обеспечения](./media/comeet-recruiting-software-provisioning-tutorial/secret-token-1.png)
 
 7. После заполнения полей, указанных в шаге 5, щелкните **проверить подключение** и убедиться, что Azure AD может подключиться к программному обеспечению кадровой службы Comeet. Если подключение отсутствует, убедитесь, что учетная запись программного обеспечения кадровой службы Comeet имеет разрешения администратора и повторите попытку.
 
-    ![по маркеру](common/provisioning-testconnection-token.png)
+    ![Токен](common/provisioning-testconnection-token.png)
 
 8. В поле **Почтовое уведомление** введите адрес электронной почты пользователя или группы, которые должны получать уведомления об ошибках подготовки, а также установите флажок **Send an email notification when a failure occurs** (Отправить уведомление по электронной почте при сбое).
 
@@ -119,11 +118,11 @@ Azure Active Directory используется концепция, называ
 
 10. В разделе **сопоставления** выберите **синхронизировать пользователей Azure Active Directory с Comeet**.
 
-    ![Comeet кадровой службы подготовки программного обеспечения](./media/comeetrecruitingsoftware-provisioning-tutorial/user-mappings.png)
+    ![Comeet кадровой службы сопоставления пользователей программного обеспечения](media/comeet-recruiting-software-provisioning-tutorial/user-mappings.png)
 
 11. Просмотрите пользовательские атрибуты, которые синхронизированы из Azure AD Comeet кадровой службы программным обеспечением в **сопоставление атрибутов** раздел. Атрибуты, выбранные как **Matching** свойства используются для сопоставления учетных записей пользователя в программном обеспечении кадровой службы Comeet для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
-    ![Comeet кадровой службы подготовки программного обеспечения](./media/comeetrecruitingsoftware-provisioning-tutorial/user-mapping-attributes.png)
+    ![Comeet вербовки атрибуты группы программного обеспечения](media/comeet-recruiting-software-provisioning-tutorial/user-mapping-attributes.png)
 
 12. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../manage-apps/define-conditional-rules-for-provisioning-user-accounts.md).
 
@@ -156,7 +155,3 @@ Azure Active Directory используется концепция, называ
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)
 
-<!--Image references-->
-[1]: ./media/atlassian-cloud-provisioning-tutorial/tutorial-general-01.png
-[2]: ./media/atlassian-cloud-provisioning-tutorial/tutorial-general-02.png
-[3]: ./media/atlassian-cloud-provisioning-tutorial/tutorial-general-03.png

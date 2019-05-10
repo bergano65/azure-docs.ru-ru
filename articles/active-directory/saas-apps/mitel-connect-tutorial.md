@@ -12,14 +12,14 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 04/02/2019
+ms.date: 05/03/2019
 ms.author: jeedes
-ms.openlocfilehash: 4b022d3a51a6a1ef16c7d02aa76c5313e1a94e7e
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 0afa1937b5122d7cdf890176b616c433a63b25a2
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59283955"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65192218"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-mitel-connect"></a>Руководство по Интеграция Azure Active Directory с приложением Mitel Connect
 
@@ -104,12 +104,18 @@ ms.locfileid: "59283955"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Mitel Connect](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://auth.mitel.io/authorize?client_id=<CLIENT ID>`.
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес:
+
+    | |
+    |--|
+    | `https://portal.shoretelsky.com`|
+    | `https://teamwork.shoretel.com`|
+    | |
 
     b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://authentication.api.mitel.io/2017-09-01/saml2/<account-uui>`.
 
     > [!NOTE]
-    > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Mitel Connect](https://www.mitel.com/support/mitel-technical-support). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Значение идентификатора приведено для примера и не является реальным. Вместо него нужно указать фактический идентификатор. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Mitel Connect](https://www.mitel.com/support/mitel-technical-support). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
 
@@ -147,7 +153,7 @@ ms.locfileid: "59283955"
 
     a. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите brittasimon@yourcompanydomain.extension. Например BrittaSimon@contoso.com.
+    b. В поле **Имя пользователя** введите brittasimon@yourcompanydomain.extension. Например, BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
@@ -183,7 +189,7 @@ ms.locfileid: "59283955"
 
 В этом разделе описано, как создать пользователя Britta Simon в Mitel Connect. Обратитесь в [службу поддержки Mitel Connect](https://www.mitel.com/support/mitel-technical-support), чтобы добавить пользователей на платформу Mitel Connect. Перед использованием единого входа необходимо создать и активировать пользователей.
 
-### <a name="test-single-sign-on"></a>Проверка единого входа 
+### <a name="test-single-sign-on"></a>Проверка единого входа
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
@@ -196,4 +202,3 @@ ms.locfileid: "59283955"
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
-

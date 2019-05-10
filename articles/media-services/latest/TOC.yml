@@ -24,18 +24,13 @@
     - name: "Потоковая передача в реальном времени\_— .NET"
       href: stream-live-tutorial-with-api.md
     - name: "Анализ видео\_— .NET"
-      displayName: 'job, transform'
+      displayName: 'job, transform, VideoAnalyzerPreset, AudioAnalyzerPreset'
       href: analyze-videos-tutorial-with-api.md
     - name: Динамическое шифрование с помощью AES-128 (.NET)
       href: protect-with-aes128.md
     - name: Динамическое шифрование с помощью DRM (.NET)
+      displayName: 'PlayReady, Widevine'
       href: protect-with-drm.md
-- name: Примеры
-  items:
-    - name: Примеры кода Azure
-      href: 'https://azure.microsoft.com/resources/samples/?sort=0&service=media-services&term=v3'
-    - name: Инфраструктура CLI Azure
-      href: cli-samples.md
 - name: Основные понятия
   href: concepts-overview.md
   items:
@@ -52,6 +47,7 @@
           displayName: 'encoding, presets, jobs, adaptive, bitrate'
         - name: Преобразования и задания
           href: transforms-jobs-concept.md
+          displayName: 'preset, schema'
         - name: Форматы Media Encoder Standard
           displayName: 'containers, codecs'
           href: media-encoder-standard-formats.md
@@ -75,7 +71,7 @@
         - name: Упаковка
           items:
             - name: Динамическая упаковка
-              displayName: packager
+              displayName: 'origin, packager'
               href: dynamic-packaging-overview.md
             - name: Динамические манифесты
               href: filters-dynamic-manifest-overview.md
@@ -84,7 +80,7 @@
         - name: Защита содержимого
           items:
             - name: Протоколы потоковой передачи и типы шифрования
-              displayName: Dynamic encryption
+              displayName: 'dynamic, encryption'
               href: content-protection-overview.md
             - name: Система с несколькими DRM и управлением доступом
               href: design-multi-drm-system-with-access-control.md
@@ -97,7 +93,7 @@
                 - name: Требования лицензий FairPlay
                   href: fairplay-license-overview.md
         - name: Конечные точки и источник потоковой передачи
-          displayName: 'origins, cdn'
+          displayName: 'origin, packager, cdn'
           href: streaming-endpoint-concept.md
         - name: Указатели потоковой передачи
           displayName: URLs
@@ -106,8 +102,8 @@
           href: streaming-policy-concept.md
         - name: Политики ключа содержимого
           href: content-key-policy-concept.md
-        - name: Коды ошибок источника
-          href: origin-error-codes.md
+        - name: Коды ошибок конечной точки потоковой передачи
+          href: streaming-endpoint-error-codes.md
     - name: Потоковая передача в реальном времени
       items:
         - name: Обзор
@@ -141,6 +137,7 @@
           href: use-azure-media-player.md
     - name: "Разработка с использованием API-интерфейсов версии\_3"
       href: media-services-apis-overview.md
+      displayName: 'access, naming, long-running'
       items:
         - name: 'Разбиение на страницы, фильтрация и упорядочение сущностей'
           href: entities-overview.md
@@ -148,8 +145,8 @@
           href: rbac-overview.md
         - name: Коды ошибок
           items:
-            - name: Коды ошибок источника
-              href: origin-error-codes.md
+            - name: Коды ошибок конечной точки потоковой передачи
+              href: streaming-endpoint-error-codes.md
             - name: Коды ошибок задания
               href: job-error-codes.md
     - name: Руководство по миграции из версии 2 в версию 3
@@ -160,10 +157,14 @@
       items:
         - name: "Создание учетной записи\_— CLI"
           href: create-account-cli-how-to.md
+        - name: "Сброс данных учетной записи\_— CLI"
+          href: cli-reset-account-credentials.md
         - name: "Доступ к API\_— CLI"
           href: access-api-cli-how-to.md
         - name: 'Масштабирование зарезервированных единиц мультимедиа: CLI'
           href: media-reserved-units-cli-how-to.md
+        - name: "Создание ресурса\_— CLI"
+          href: cli-create-asset.md
         - name: Разработка с использованием REST
           items:
             - name: Подключение с помощью Postman
@@ -190,6 +191,14 @@
         - name: Локальный файл — REST
           displayName: upload
           href: upload-files-rest-how-to.md
+        - name: "Из локального файла\_— CLI"
+          href: cli-upload-file-asset.md
+    - name: Создание преобразований и заданий
+      items:
+        - name: "Создание преобразований\_— CLI"
+          href: cli-create-transform.md
+        - name: "Создание заданий\_— CLI"
+          href: cli-create-jobs.md
     - name: Кодирование контента
       items:
         - name: "URL-адрес HTTPS в качестве входных данных для задания\_— .NET"
@@ -230,10 +239,15 @@
           href: filters-dynamic-manifest-rest-howto.md
         - name: С помощью интерфейса командной строки
           href: filters-dynamic-manifest-cli-howto.md
+    - name: Доставка содержимого
+      items:
+        - name: "Публикация ресурса\_— CLI"
+          href: cli-publish-asset.md
 - name: Справочные материалы
   items:
     - name: Спецификация OpenAPI (Swagger)
       href: 'https://aka.ms/ams-v3-rest-sdk'
+      displayName: schema
     - name: REST
       href: 'https://aka.ms/ams-v3-rest-ref'
     - name: Инфраструктура CLI Azure
@@ -254,8 +268,8 @@
       href: /azure/templates/microsoft.media/allversions
     - name: Коды ошибок
       items:
-        - name: Коды ошибок источника
-          href: origin-error-codes.md
+        - name: Коды ошибок конечной точки потоковой передачи
+          href: streaming-endpoint-error-codes.md
         - name: Коды ошибок задания
           href: job-error-codes.md
 - name: Ресурсы
@@ -285,7 +299,7 @@
           href: 'https://aka.ms/ams-v3-nodejs-sdk'
         - name: Ruby
           href: 'https://aka.ms/ams-v3-ruby-sdk'
-    - name: AMSE
+    - name: Обозреватель Служб мультимедиа Azure
       href: 'https://github.com/Azure/Azure-Media-Services-Explorer'
     - name: Заметки о выпуске
       href: release-notes.md

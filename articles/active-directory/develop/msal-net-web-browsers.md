@@ -17,12 +17,12 @@ ms.author: jmprieur
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d6e13ec3d822ba8a8cd2484f42ea81e615bae268
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: d4b4c4cd4dbab10a9d4796a8393cc7f479b90cc4
+ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65190983"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65406765"
 ---
 # <a name="using-web-browsers-in-msalnet"></a>Использование веб-браузеров в MSAL.NET
 Веб-обозреватели являются обязательными для интерактивной проверки подлинности. По умолчанию поддерживает MSAL.NET [системы веб-браузере](#system-web-browser-on-xamarinios-and-xamarinandroid) на Xamarin.iOS и [Xamarin.Android](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/system-browser). Но [можно также включить Embedded веб-браузере](#enable-embedded-webviews) в зависимости от требований (UX, потребность в единый вход (SSO), безопасность) в [Xamarin.iOS](#choosing-between-embedded-web-browser-or-system-browser-on-xamarinios) и [Xamarin.Android](#choosing-between-embedded-web-browser-or-system-browser-on-xamarinandroid) приложения. И вы даже можете [выберите динамически](#detecting-the-presence-of-custom-tabs-on-xamarinandroid) использовать веб-браузере на основе наличия Chrome или браузер, поддерживающий пользовательские вкладки Chrome в Android.
@@ -93,7 +93,7 @@ ms.locfileid: "65190983"
 
 #### <a name="choosing-between-embedded-web-browser-or-system-browser-on-xamarinios"></a>Выбор между embedded веб-браузер или системный браузер на Xamarin.iOS
 
-В приложении iOS в `AppDelegate.cs` вы можете инициализировать `ParentWindow` для `null`. Он не используется в iOS
+В приложении iOS в `AppDelegate.cs` можно инициализировать `ParentWindow` для `null`. Он не используется в iOS
 
 ```csharp
 App.ParentWindow = null; // no UI parent on iOS
@@ -122,7 +122,7 @@ authResult = await App.PCA.AcquireTokenInteractive(App.Scopes)
 
 На основании значение, возвращаемое данным методом и вашим требованиям, можно принять решение:
 
-- Может возвращать настраиваемое сообщение об ошибке для пользователя. Например:  «Пожалуйста, установите Chrome, чтобы продолжить работу с проверкой подлинности» - OR-
+- Может возвращать настраиваемое сообщение об ошибке для пользователя. Например: «Пожалуйста, установите Chrome, чтобы продолжить работу с проверкой подлинности» - OR-
 - Можно переключиться на параметр embedded webview и запустить пользовательский Интерфейс как внедренные веб-представление.
 
 В приведенном ниже коде показан параметр внедренного веб-представления:

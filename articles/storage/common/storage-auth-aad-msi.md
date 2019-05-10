@@ -9,12 +9,12 @@ ms.date: 04/21/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: daa3bd49fcb9970a4a4a026f764cc195423e83d1
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 4245c44ceaf907512187d7db4a9d6f087a855f70
+ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65154364"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65507891"
 ---
 # <a name="authenticate-access-to-blobs-and-queues-with-azure-active-directory-and-managed-identities-for-azure-resources"></a>Проверки подлинности доступа к BLOB-объектов и очередей с Azure Active Directory и управляемых удостоверений для ресурсов Azure
 
@@ -48,7 +48,7 @@ ms.locfileid: "65154364"
 
 Клиентская библиотека проверки подлинности приложения автоматически управляет проверкой подлинности. Библиотека использует учетные данные разработчика для проверки подлинности во время локальной разработки. Использовать учетные данные разработчика во время локального развертывания более безопасно, так как вам не нужно создавать учетные данные Azure AD или совместно использовать учетные данные с другими разработчиками. Если решение позже развертывается в Azure, библиотека автоматически переключается на с использованием учетных данных приложения.
 
-Чтобы использовать библиотеку проверки подлинности приложения в приложение хранилища Azure, установите последнюю версию пакета предварительной версии из [Nuget]((https://www.nuget.org/packages/Microsoft.Azure.Services.AppAuthentication)), а также последнюю версию [клиентской библиотеки хранилища Azure для .NET](https://www.nuget.org/packages/WindowsAzure.Storage/). Добавьте следующий **с помощью** инструкций в код:
+Чтобы использовать библиотеку проверки подлинности приложения в приложение хранилища Azure, установите последнюю версию пакета предварительной версии из [Nuget](https://www.nuget.org/packages/Microsoft.Azure.Services.AppAuthentication), а также последнюю версию [клиентской библиотеки хранилища Azure для .NET](https://www.nuget.org/packages/WindowsAzure.Storage/). Добавьте следующий **с помощью** инструкций в код:
 
 ```csharp
 using Microsoft.Azure.Services.AppAuthentication;

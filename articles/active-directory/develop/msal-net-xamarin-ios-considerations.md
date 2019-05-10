@@ -17,12 +17,12 @@ ms.author: ryanwi
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7621b18f32a90b81dc075c534367981cf44f16e0
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.openlocfilehash: bb07fa00b9e1d917cb64df18fff6466dd5c0193d
+ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65076335"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65406991"
 ---
 # <a name="xamarin-ios-specific-considerations-with-msalnet"></a>Рекомендации по конкретной iOS Xamarin с помощью MSAL.NET
 В Xamarin iOS учитывать несколько моментов, которые следует принять во внимание при использовании MSAL.NET
@@ -108,7 +108,7 @@ PublicClientApplication.iOSKeychainSecurityGroup = "com.microsoft.msalrocks";
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "https://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
   <key>keychain-access-groups</key>
@@ -123,6 +123,6 @@ PublicClientApplication.iOSKeychainSecurityGroup = "com.microsoft.msalrocks";
 
 Дополнительные сведения приведены в [iOS специальные рекомендации](https://github.com/azure-samples/active-directory-xamarin-native-v2#ios-specific-considerations) абзац файл readme.md в следующем примере:
 
-Образец | платформа | ОПИСАНИЕ 
+Образец | платформа | Описание 
 ------ | -------- | -----------
 [https://github.com/Azure-Samples/active-directory-xamarin-native-v2](https://github.com/azure-samples/active-directory-xamarin-native-v2) | Xamarin iOS, Android, UWP; | Простое приложение Xamarin Forms, с отображением использование MSAL для проверки подлинности MSA и Azure AD через конечную точку версии 2.0 AAD и получить доступ к Microsoft Graph с помощью полученного маркера. <br>![Топология](media/msal-net-xamarin-ios-considerations/topology.png)

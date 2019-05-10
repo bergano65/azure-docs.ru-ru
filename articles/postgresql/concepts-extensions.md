@@ -6,12 +6,12 @@ ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 5/6/2019
-ms.openlocfilehash: 1e3a27f953246ce29de419949362c23b8932b0d5
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.openlocfilehash: 962e2b10136cf1cbab7cc5d3d06059922c363b15
+ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65073488"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65410272"
 ---
 # <a name="postgresql-extensions-in-azure-database-for-postgresql---single-server"></a>Расширения PostgreSQL в базе данных Azure для PostgreSQL: один сервер
 PostgreSQL предоставляет возможность расширить функциональность базы данных с помощью расширений. Расширения позволяют объединить несколько связанных объектов SQL в одном пакете, который затем можно загрузить или удалить из базы данных с помощью одной команды. После загрузки в базу данных расширения могут работать как встроенные функции. Дополнительные сведения о расширениях PostgreSQL см. на странице  [Упаковка связанных объектов в расширение](https://www.postgresql.org/docs/9.6/static/extend-extensions.html).
@@ -73,7 +73,6 @@ PostgreSQL предоставляет возможность расширить 
 > | **Расширение** | **Описание** |
 > |---|---|
 > | [plpgsql](https://www.postgresql.org/docs/9.6/static/plpgsql.html) | Загружаемый процедурный язык PL/pgSQL. |
-> | [plv8](https://plv8.github.io/) | Расширение языка Javascript для PostgreSQL, которое можно использовать для хранимых процедур, триггеров и т. д. |
 
 ### <a name="miscellaneous-extensions"></a>Прочие расширения
 

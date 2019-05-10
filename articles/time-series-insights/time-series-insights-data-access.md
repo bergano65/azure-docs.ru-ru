@@ -9,14 +9,14 @@ manager: cshankar
 ms.reviewer: v-mamcge, jasonh, kfile, anshan
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 11/26/2018
+ms.date: 05/01/2019
 ms.custom: seodec18
-ms.openlocfilehash: dd4c5e1652eb4dbff66591aa4bbe74e51be3e6c0
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: adb30cc3af50b71cdc03e41d847bd4d824cffea6
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64716718"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65236395"
 ---
 # <a name="grant-data-access-to-an-environment"></a>Предоставление доступа к данным в среде
 
@@ -34,11 +34,11 @@ ms.locfileid: "64716718"
 
 1. Выберите **Политики доступа к данным**, а затем нажмите кнопку **+ Добавить**.
 
-    ![Data-access-one][1]
+    [![Данные доступа одному](media/data-access/data-access-one.png)](media/data-access/data-access-one.png#lightbox)
 
 1. Выберите **Выбор пользователя**. Выполните поиск по имени пользователя или адресу электронной почты, чтобы найти пользователя, которого следует добавить. Нажмите **Выбрать**, чтобы подтвердить выбор.
 
-    ![Data-access-two][2]
+    [![Данные access-two](media/data-access/data-access-two.png)](media/data-access/data-access-two.png#lightbox)
 
 1. Выберите **Выбор ролей**. Выберите соответствующую роль доступа для пользователя.
 
@@ -48,15 +48,15 @@ ms.locfileid: "64716718"
 
    Нажмите кнопку **ОК**, чтобы подтвердить выбор роли.
 
-    ![Data-access-three][3]
+    [![Данные доступа три](media/data-access/data-access-three.png)](media/data-access/data-access-three.png#lightbox)
 
 1. На странице **Выбор роли пользователя** нажмите кнопку **ОК**.
 
-    ![Data-access-four][4]
+    [![Данные доступа четырех](media/data-access/data-access-four.png)](media/data-access/data-access-four.png#lightbox)
 
 1. Убедитесь, что на странице **Политики доступа к данным** перечислены пользователи и соответствующие роли.
 
-    ![Data-access-five][5]
+    [![Данные доступа пять](media/data-access/data-access-five.png)](media/data-access/data-access-five.png#lightbox)
 
 ## <a name="provide-guest-access-from-another-aad-tenant"></a>Предоставить гостевым доступом из другого клиента AAD
 
@@ -66,19 +66,19 @@ ms.locfileid: "64716718"
 
 1. Выберите **Политики доступа к данным**, а затем нажмите кнопку **+ Пригласить**.
 
-    ![Data-access-six][6]
+    [![Данные доступа шесть](media/data-access/data-access-six.png)](media/data-access/data-access-six.png#lightbox)
 
 1. Введите адрес электронной почты пользователя, которого вы хотите пригласить. Этот адрес электронной почты должен быть связан с Azure AD. Вы также можете добавить к приглашению личное сообщение.
 
-    ![Data-access-seven][7]
+    [![Данные доступа семь](media/data-access/data-access-seven.png)](media/data-access/data-access-seven.png#lightbox)
 
 1. Найдите всплывающее окно с подтверждением, которое отображается на экране.
 
-    ![Data-access-eight][8]
+    [![Данные доступа 8](media/data-access/data-access-eight.png)](media/data-access/data-access-eight.png#lightbox)
 
 1. Выберите **Выбор пользователя**. Найдите адрес электронной почты приглашенного гостевого пользователя, чтобы найти пользователя, которого необходимо добавить. Нажмите **Выбрать**, чтобы подтвердить выбор.
 
-    ![Data-access-nine][9]
+    [![Данные доступа девять](media/data-access/data-access-nine.png)](media/data-access/data-access-nine.png#lightbox)
 
 1. Выберите **Выбор ролей**. Выберите соответствующую роль гостевого пользователя.
 
@@ -88,29 +88,29 @@ ms.locfileid: "64716718"
 
    Нажмите кнопку **ОК**, чтобы подтвердить выбор роли.
 
-    ![Data-access-ten][10]
+    [![Данные access 10](media/data-access/data-access-ten.png)](media/data-access/data-access-ten.png#lightbox)
 
 1. На странице **Выбор роли пользователя** нажмите кнопку **ОК**.
 
 1. Убедитесь, что на странице **Политики доступа к данным** перечислены гостевые пользователи и соответствующие роли.
 
-    ![Data-access-eleven][11]
+    [![Данные access-eleven](media/data-access/data-access-eleven.png)](media/data-access/data-access-eleven.png#lightbox)
 
 1. Теперь гостевой пользователь должен выполнить определенные действия, чтобы получить доступ к среде, находящейся в клиенте Azure, в которую вы его пригласили. Сначала этот пользователь принимает отправленное ему приглашение. Это приглашение отправляется по адресу электронной почты, использованной в приглашении на шаге 5. Он выбирает **Начало работы**, чтобы принять приглашение.
 
-    ![Data-access-twelve][12]
+    [![Данные access 12](media/data-access/data-access-twelve.png)](media/data-access/data-access-twelve.png#lightbox)
 
 1. Затем гостевой пользователь принимает разрешения, связанные с организацией администратора.
 
-    ![Data-access-thirteen][13]
+    [![Данные, доступ тринадцать](media/data-access/data-access-thirteen.png)](media/data-access/data-access-thirteen.png#lightbox)
 
 1. Когда гостевой пользователь войдет в учетную запись электронной почты, куда вы отправили приглашение, и примет это приглашение, он перейдет на сайт insights.azure.com. После этого ему понадобится щелкнуть аватар рядом с его адресом электронной почты в правом верхнем углу экрана.
 
-    ![Data-access-fourteen][14]
+    [![Данные доступа к четырнадцати](media/data-access/data-access-fourteen.png)](media/data-access/data-access-fourteen.png#lightbox)
 
 1. Затем гостевой пользователь выбирает клиент Azure из раскрывающегося меню каталога. Это тот клиент, в который вы пригласили пользователя.
 
-    ![Data-access-fifteen][15]
+    [![Данные access 15](media/data-access/data-access-fifteen.png)](media/data-access/data-access-fifteen.png#lightbox)
 
 После выбора клиента для гостевого пользователя станет доступной среда службы "Аналитика временных рядов", к которой вы предоставили ему доступ. Теперь они имеют все возможности, связанные с ролью, от которого вы с в **шаг 5**.
 
@@ -121,20 +121,3 @@ ms.locfileid: "64716718"
 * Отправьте [события в источник событий](./time-series-insights-send-events.md).
 
 * Просмотрите [свою среду в обозревателе службы "Аналитика временных рядов" (предварительная версия)](./time-series-insights-update-explorer.md).
-
-<!-- Images -->
-[1]: media/data-access/data-access-one.png
-[2]: media/data-access/data-access-two.png
-[3]: media/data-access/data-access-three.png
-[4]: media/data-access/data-access-four.png
-[5]: media/data-access/data-access-five.png
-[6]: media/data-access/data-access-six.png
-[7]: media/data-access/data-access-seven.png
-[8]: media/data-access/data-access-eight.png
-[9]: media/data-access/data-access-nine.png
-[10]: media/data-access/data-access-ten.png
-[11]: media/data-access/data-access-eleven.png
-[12]: media/data-access/data-access-twelve.png
-[13]: media/data-access/data-access-thirteen.png
-[14]: media/data-access/data-access-fourteen.png
-[15]: media/data-access/data-access-fifteen.png

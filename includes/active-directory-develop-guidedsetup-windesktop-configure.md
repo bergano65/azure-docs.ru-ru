@@ -14,12 +14,12 @@ ms.workload: identity
 ms.date: 04/10/2019
 ms.author: jmprieur
 ms.custom: include file
-ms.openlocfilehash: 5eaee4f932c4e42f6fed3d839314346b3a93f360
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: c4dc3d422e18d9ee41bf16ac3e6f22c3d7e466d7
+ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59799540"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65199423"
 ---
 ## <a name="register-your-application"></a>Регистрация приложения
 
@@ -43,7 +43,9 @@ ms.locfileid: "59799540"
    - В разделе **Поддерживаемые типы учетных записей** выберите **Accounts in any organizational directory and personal Microsoft accounts (for example, Skype, Xbox, Outlook.com)** (Учетные записи в любом каталоге организации и личные учетные записи Майкрософт (например, Skype, Xbox, Outlook.com)).
    - Выберите **Зарегистрировать**, чтобы создать приложение.
 1. В списке страниц приложения выберите **Проверка подлинности**.
-1. В разделе **URI перенаправления** найдите **предлагаемые URI перенаправления для общедоступных клиентов (мобильные устройства, компьютеры)** и выберите **"urn:ietf:wg:oauth:2.0:oob**.
+   1. В разделе **URI перенаправления** в списке URI перенаправления сделайте следующее:
+   1. В столбце **Тип** выберите **Общедоступный клиент (мобильный и классический)**.
+   1. Введите `urn:ietf:wg:oauth:2.0:oob` в столбец **URI перенаправления**.
 1. Щелкните **Сохранить**.
 1. Перейдите в Visual Studio, откройте файл *App.xaml.cs*, а затем замените `Enter_the_Application_Id_here` только что зарегистрированным ы скопированным идентификатором приложения.
 

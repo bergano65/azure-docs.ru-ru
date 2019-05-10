@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 01/07/2019
 ms.custom: seodec18
-ms.openlocfilehash: 9c97f23c2dfc2b1c0ff794aa20ffb58cd8b8741a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: c49b9d5fdc0c17f16f1c80471a00dd53625dc6e8
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60819306"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65236947"
 ---
 # <a name="set-up-compute-targets-for-model-training"></a>Настройка целевых объектов вычислений для обучения моделей
 
@@ -430,6 +430,7 @@ myvm = ComputeTarget(workspace=ws, name='my-vm-name')
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Учебник. по обучению модели классификации изображений с помощью Службы машинного обучения Azure](tutorial-train-models-with-aml.md). В нем используется управляемый целевой объект вычислений для обучения модели.
+* Узнайте, как [эффективно настроить гиперпараметры](how-to-tune-hyperparameters.md) создавать более эффективные модели.
 * После обучения модели узнайте о [способах и расположениях развертывания моделей](how-to-deploy-and-where.md).
 * Обзор справочника по пакету SDK [класса RunConfiguration](https://docs.microsoft.com/python/api/azureml-core/azureml.core.runconfig.runconfiguration?view=azure-ml-py).
 * [Securely run experiments and inferencing inside an Azure Virtual Network](how-to-enable-virtual-network.md) (Безопасное выполнение экспериментов и формирование выводов внутри виртуальной сети Azure)

@@ -13,14 +13,14 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/26/2019
+ms.date: 05/07/2019
 ms.author: zchia
-ms.openlocfilehash: fec6a7e3433eb5d657deac8c1b2ceb327f8d32e4
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: f79bc083105f997b08f7cfa6f8e08a8f4f455455
+ms.sourcegitcommit: 399db0671f58c879c1a729230254f12bc4ebff59
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65159410"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65470556"
 ---
 # <a name="tutorial-configure-dynamic-signal-for-automatic-user-provisioning"></a>Руководство по Настройка Dynamic Signal для автоматической подготовки пользователей
 
@@ -84,7 +84,7 @@ Azure Active Directory используется концепция, называ
 
 ### <a name="to-configure-automatic-user-provisioning-for-dynamic-signal-in-azure-ad"></a>Настройка автоматической подготовки пользователей для Dynamic Signal в Azure AD.
 
-1. Войдите в [портала Azure](https://portal.azure.com) и выберите **корпоративные приложения**выберите **все приложения**, а затем выберите **Dynamic Signal**.
+1. Войдите на [портале Azure](https://portal.azure.com). Выберите **корпоративные приложения**, а затем выберите **все приложения**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
@@ -104,11 +104,11 @@ Azure Active Directory используется концепция, называ
 
 6. В консоли администрирования Dynamic Signal, перейдите к **администратора > Дополнительно > API**.
 
-    ![Подготовка Dynamic Signal](./media/dynamicsignal-provisioning-tutorial/secret-token-1.png)
+    ![Подготовка Dynamic Signal](./media/dynamic-signal-provisioning-tutorial/secret-token-1.png)
 
     Копировать **URL-адрес API SCIM** для **URL-адрес клиента**. Щелкните **создать новый токен** для создания **маркера носителя** и скопируйте значение **секретный токен**.
 
-    ![Подготовка Dynamic Signal](./media/dynamicsignal-provisioning-tutorial/secret-token-2.png)
+    ![Подготовка Dynamic Signal](./media/dynamic-signal-provisioning-tutorial/secret-token-2.png)
 
 7. После заполнения полей, указанных в шаге 5, щелкните **проверить подключение** и убедиться, что Azure AD может подключиться к Dynamic Signal. Если подключение отсутствует, убедитесь, что учетная запись Dynamic Signal имеет разрешения администратора и повторите попытку.
 
@@ -122,11 +122,11 @@ Azure Active Directory используется концепция, называ
 
 10. В разделе **сопоставления** выберите **синхронизировать пользователей Azure Active Directory с Dynamic Signal**.
 
-    ![Сопоставления пользователей в Dynamic Signal](media/dynamicsignal-provisioning-tutorial/user-mappings.png)
+    ![Сопоставления пользователей в Dynamic Signal](media/dynamic-signal-provisioning-tutorial/user-mappings.png)
 
 11. Просмотрите пользовательские атрибуты, которые синхронизированы из Azure AD в Dynamic Signal в **сопоставление атрибутов** раздел. Атрибуты, выбранные как **Matching** свойства используются для сопоставления учетных записей пользователей в Dynamic Signal для операций обновления. Нажмите кнопку **Сохранить**, чтобы зафиксировать все изменения.
 
-    ![Атрибуты пользователя keeper](media/dynamicsignal-provisioning-tutorial/user-mapping-attributes.png)
+    ![Атрибуты пользователя Dynamic Signal](media/dynamic-signal-provisioning-tutorial/user-mapping-attributes.png)
 
 12. Чтобы настроить фильтры области, ознакомьтесь со следующими инструкциями, предоставленными в [руководстве по фильтрам области](../manage-apps/define-conditional-rules-for-provisioning-user-accounts.md).
 
@@ -160,7 +160,3 @@ Azure Active Directory используется концепция, называ
 
 * [Сведения о просмотре журналов и получении отчетов о действиях по подготовке](../manage-apps/check-status-user-account-provisioning.md)
 
-<!--Image references-->
-[1]: ./media/atlassian-cloud-provisioning-tutorial/tutorial-general-01.png
-[2]: ./media/atlassian-cloud-provisioning-tutorial/tutorial-general-02.png
-[3]: ./media/atlassian-cloud-provisioning-tutorial/tutorial-general-03.png

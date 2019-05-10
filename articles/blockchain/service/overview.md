@@ -10,12 +10,12 @@ ms.topic: article
 ms.service: azure-blockchain
 ms.reviewer: janders
 manager: femila
-ms.openlocfilehash: 4416c30f57b469ee125400c696e8b34311a94926
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: a200649493354f1264afb0df4cf74acb4a274017
+ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65028190"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65406403"
 ---
 # <a name="what-is-azure-blockchain-service"></a>Что такое служба Azure Блокчейн?
 
@@ -65,7 +65,7 @@ ms.locfileid: "65028190"
 
 ## <a name="develop-using-familiar-development-tools"></a>Разрабатывайте приложения с помощью хорошо знакомых средств разработки
 
-Исходя из книги Ethereum кворума с открытым, можно разрабатывать приложения для службы Azure Blockchain так же как и для существующих приложений Ethereum. Работа с ведущих партнеров по отрасли, расширение Azure Blockchain разработки пакета средств Visual Studio Code позволяет разработчикам использовать привычные средства, например Suite Truffle Создание смарт-контрактов. Использование расширения пакета средств разработки Azure Blockchain, разработчикам можно создать или подключиться к и существующие консорциума, чтобы для построения и развертывания вашего smart контракты все в едином интерфейсе IDE. С помощью расширения Azure Blockchain Visual Studio Code, можно создать или подключиться к существующей consortium, чтобы для построения и развертывания ваших смарт-контрактов, все в едином интерфейсе IDE. Дополнительные сведения см. в разделе [пакета средств разработки Azure Blockchain в VS Code marketplace](http://aka.ms/vscodebcextension) и [руководство пользователя пакета средств разработки Azure Blockchain](http://aka.ms/vscodebcextensionwiki ).
+Исходя из книги Ethereum кворума с открытым, можно разрабатывать приложения для службы Azure Blockchain так же как и для существующих приложений Ethereum. Работа с ведущих партнеров по отрасли, расширение Azure Blockchain разработки пакета средств Visual Studio Code позволяет разработчикам использовать привычные средства, например Suite Truffle Создание смарт-контрактов. Использование расширения пакета средств разработки Azure Blockchain, разработчикам можно создать или подключиться к и существующие консорциума, чтобы для построения и развертывания вашего smart контракты все в едином интерфейсе IDE. С помощью расширения Azure Blockchain Visual Studio Code, можно создать или подключиться к существующей consortium, чтобы для построения и развертывания ваших смарт-контрактов, все в едином интерфейсе IDE. Дополнительные сведения см. в разделе [пакета средств разработки Azure Blockchain в VS Code marketplace](https://aka.ms/vscodebcextension) и [руководство пользователя пакета средств разработки Azure Blockchain](https://aka.ms/vscodebcextensionwiki ).
 
 ## <a name="support-and-feedback"></a>Поддержка и обратная связь
 

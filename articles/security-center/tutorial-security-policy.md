@@ -3,7 +3,7 @@ title: Использование политик безопасности | До
 description: В этой статье описывается, как работать с политиками безопасности в Центре безопасности Azure.
 services: security-center
 documentationcenter: na
-author: rkarlin
+author: monhaber
 manager: barbkess
 editor: ''
 ms.assetid: 2d248817-ae97-4c10-8f5d-5c207a8019ea
@@ -13,14 +13,14 @@ ms.topic: conceptual
 ms.custom: mvc
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 3/28/2019
+ms.date: 5/05/2019
 ms.author: monhaber
-ms.openlocfilehash: 1931026869e930caef2ff2f92fb85dade15a9c8c
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.openlocfilehash: 0465f12e3da6acc2ec8f7259ee9f040ccd3ce88e
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62111516"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65236303"
 ---
 # <a name="working-with-security-policies"></a>Использование политик безопасности
 
@@ -110,6 +110,9 @@ ms.locfileid: "62111516"
    ![Управление политиками](./media/tutorial-security-policy/policy-management.png)
 
 2. Щелкните группу подписки или управления, для которого требуется отключить рекомендации.
+
+   > [!Note]
+   > Помните, что группа управления своими политиками для подписки. Таким образом Если политика подписки и подписки не принадлежит к группе управления, по-прежнему использует ту же политику, затем вы продолжит получать рекомендации по настройке политик. Политика будет применяться на уровне управления и рекомендации по-прежнему будет создаваться.
 
 1. Щелкните назначенной политики.
 

@@ -7,15 +7,15 @@ services: search
 ms.service: search
 ms.devlang: NA
 ms.topic: conceptual
-ms.date: 05/02/2019
+ms.date: 05/08/2019
 ms.author: luisca
 ms.custom: seodec2018
-ms.openlocfilehash: bad64f439d45581f8f4b55ea1ac849db1e27cb76
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: b979609374afbd11bde0e15ce540e8930315482f
+ms.sourcegitcommit: 399db0671f58c879c1a729230254f12bc4ebff59
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65024584"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65472484"
 ---
 # <a name="attach-a-cognitive-services-resource-with-a-skillset-in-azure-search"></a>Подключение ресурса Cognitive Services с набором навыков в службе "Поиск Azure" 
 
@@ -28,7 +28,7 @@ ms.locfileid: "65024584"
 > [!NOTE]
 > По мере расширения области действия путем увеличения частоты обработки, добавления большего количества документов или добавления новых алгоритмов ИИ вам необходимо будет подключить оплачиваемый ресурс Cognitive Services. Плата взимается при вызове API в Cognitive Services и извлечении изображений при открытии документов в службе "Поиск Azure". За извлечение текста из документов плата не взимается.
 >
-> Выполнение встроенных навыков оплачивается по существующий [Cognitive Services оплаты как то перейти цена](https://azure.microsoft.com/pricing/details/cognitive-services/). Цены на извлечение образа описан на [странице с ценами на службу поиска Azure](https://go.microsoft.com/fwlink/?linkid=2042400).
+> Плата за выполнение встроенных навыков взимается в рамках существующей [модели оплаты Cognitive Services по мере использования](https://azure.microsoft.com/pricing/details/cognitive-services/). Плата за извлечение изображений указана на [странице с ценами на Поиск Azure](https://go.microsoft.com/fwlink/?linkid=2042400).
 
 ## <a name="use-free-resources"></a>Использование бесплатных ресурсов
 
@@ -60,7 +60,7 @@ ms.locfileid: "65024584"
 
    ![Создание ресурса Cognitive Services](./media/cognitive-search-attach-cognitive-services/cog-services-create.png "Создание ресурса Cognitive Services")
 
-1. В расположении выберите тот же регион, как поиск Azure, чтобы избежать ненужных расходов исходящей пропускной способности между регионами.
+1. В расположении выберите тот же регион, как службы поиска Azure. Это необходимо для повышения производительности, но также аннулирует расходов исходящей пропускной способности между регионами.
 
 1. В уровень ценообразования, выберите **S0** для получения коллекции все в одном компонентам Cognitive Services, включая концепции и функций языка, которые поддерживают стандартные навыки, используемые службой поиска Azure. 
 

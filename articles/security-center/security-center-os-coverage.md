@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 4/17/2019
+ms.date: 5/02/2019
 ms.author: monhaber
-ms.openlocfilehash: b5eafd15344156965d0a191688f602ffe1b5a498
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 4e334af353e1d9556641914056ab0a3071ca361e
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60703580"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65233598"
 ---
 # <a name="platforms-and-features-supported-by-azure-security-center"></a>Поддерживаемые платформы и возможности в центре безопасности Azure
 
@@ -70,7 +70,7 @@ ms.locfileid: "60703580"
 > [!div class="mx-tableFixed"]
 > 
 
-|Сервер| Windows||Linux||
+|сервер;| Windows||Linux||
 |----|----|----|----|----|
 |Среда|Таблицы Azure|Не относящийся к Azure|Таблицы Azure|Не относящийся к Azure|
 |Оповещения об обнаружении угроз VMBA|✔|✔|✔ (в поддерживаемых версиях)|✔|
@@ -80,7 +80,7 @@ ms.locfileid: "60703580"
 |Конфигурации системы безопасности|✔|✔|✔|✔|
 |Защита конечных точек|✔|✔|X|X|
 |JIT-доступ к виртуальной машине|✔|X|✔|X|
-|Адаптивные элементы управления приложениями|✔|X|X|X|
+|Адаптивные элементы управления приложениями|✔|✔|✔|✔|
 |FIM;|✔|✔|✔|✔|
 |Шифрование дисков|✔|X|✔|X|
 |Стороннее развертывание|✔|X|✔|X|

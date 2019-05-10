@@ -10,18 +10,18 @@ ms.reviewer: v-mamcge, jasonh, kfile
 ms.devlang: csharp
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 12/03/2018
+ms.date: 05/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: 55b19a6cf71730858fcf42880f71a2c9c07a3b31
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 2842a365cdf25a6b19f655f6397d62ecb9a723b0
+ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64683977"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65406875"
 ---
 # <a name="send-events-to-a-time-series-insights-environment-by-using-an-event-hub"></a>Отправка событий в среду службы "Аналитика временных рядов" с помощью концентратора событий
 
-Эта статья содержит сведения о том, как создать и настроить концентратор событий в Центрах событий Azure и запустить пример приложения для передачи событий. Если у вас уже есть концентратор событий, содержащий события в формате JSON, пропустите это руководство и просмотрите свою среду в службе [Аналитика временных рядов Azure](./time-series-insights-update-create-environment.md).
+В этой статье объясняется, как создать и настроить концентратор событий в концентраторы событий Azure. Также описывается запуск примера приложения для передачи событий в Azure Time Series Insights из концентраторов событий. Если имеется существующий концентратор событий с событиями в формате JSON, пропустите это руководство и просмотрите свою среду в [Azure Time Series Insights](./time-series-insights-update-create-environment.md).
 
 ## <a name="configure-an-event-hub"></a>Настройка концентратора событий
 
@@ -30,14 +30,14 @@ ms.locfileid: "64683977"
 1. Выберите свой концентратор событий.
 1. Создавая концентратор событий, вы на самом деле создаете его пространство имен. Если вы еще не создали концентратор событий в пространстве имен, создайте его в меню в разделе **Сущности**.  
 
-    ![Список концентратор событий][1]
+    [![Список концентраторов событий](media/send-events/updated.png)](media/send-events/updated.png#lightbox)
 
 1. После создания концентратора событий выберите его в списке.
 1. В меню в разделе **Сущности** выберите **Центры событий**.
 1. Выберите имя концентратора событий, чтобы настроить его.
 1. В разделе **Сущности** щелкните **Группы потребителей**, а затем выберите **группу объектов-получателей**.
 
-    ![Создание группы потребителей][2]
+    [![Создание группы потребителей](media/send-events/consumer-group.png)](media/send-events/consumer-group.png#lightbox)
 
 1. Создайте группу потребителей, которая используется исключительно источником событий Time Series Insights.
 
@@ -46,17 +46,17 @@ ms.locfileid: "64683977"
 
 1. В меню в разделе **Параметры** выберите **Политики общего доступа**, а затем — **Добавить**.
 
-    ![Выбор элемента "Политики общего доступа" и нажатие кнопки "Добавить"][3]
+    [![Выберите политики общего доступа, а затем выберите «Добавить»](media/send-events/shared-access-policy.png)](media/send-events/shared-access-policy.png#lightbox)
 
 1. На панели **Добавить новую политику общего доступа** создайте политику общего доступа с именем **MySendPolicy**. Далее вы будете использовать эту политику общего доступа для отправки событий в примерах C#.
 
-    ![Ввод MySendPolicy в поле имени политики][4]
+    [![В поле Имя политики введите MySendPolicy](media/send-events/shared-access-policy-2.png)](media/send-events/shared-access-policy-2.png#lightbox)
 
 1. В разделе **Утверждение** установите флажок **Отправить**.
 
 ## <a name="add-a-time-series-insights-instance"></a>Добавление экземпляра службы "Аналитика временных рядов"
 
-При обновлении службы "Аналитика временных рядов" используются экземпляры для добавления контекстных данных ко входящим данным телеметрии. Данные объединяются во время выполнения запроса на основе **идентификатора временного ряда**. **Идентификатор временного ряда** для примера проекта ветряных мельниц, который мы будем использовать далее в этой статье, указан как **id**. Дополнительные сведения об экземплярах службы "Аналитика временных рядов" и **идентификаторе временного ряда** см. в [этой статье](./time-series-insights-update-tsm.md).
+При обновлении службы "Аналитика временных рядов" используются экземпляры для добавления контекстных данных ко входящим данным телеметрии. Данные объединяются во время выполнения запроса на основе **идентификатора временного ряда**. **Идентификатор ряда времени** для windmills пример — проект, который мы используем далее в этой статье `id`. Дополнительные сведения об экземплярах службы "Аналитика временных рядов" и **идентификаторе временного ряда** см. в [этой статье](./time-series-insights-update-tsm.md).
 
 ### <a name="create-a-time-series-insights-event-source"></a>Создание источника событий службы "Аналитика временных рядов"
 
@@ -72,78 +72,44 @@ ms.locfileid: "64683977"
 
 1. Выберите **Политики общего доступа** > **RootManageSharedAccessKey**. Скопируйте значение параметра **Строка подключения — первичный ключ**.
 
-    ![Копирование значения строки подключения первичного ключа][5]
+    [![Скопируйте значение для строки подключения первичного ключа](media/send-events/sample-code-connection-string.png)](media/send-events/sample-code-connection-string.png#lightbox)
 
 1. Перейдите на сайт https://tsiclientsample.azurewebsites.net/windFarmGen.html. После перехода по этому URL-адресу будут запущены имитированные устройства ветряных мельниц.
 1. В поле **Event Hub Connection String** (Строка подключения концентратора событий) на веб-странице вставьте строку подключения, скопированную в разделе о [принудительной отправке событий](#push-events).
   
-    ![Вставка строки подключения первичного ключа в поле Event Hub Connection String (Строка подключения концентратора событий)][6]
+    [![Вставьте строку подключения первичного ключа в поле Строка подключения концентратора событий](media/send-events/updated_two.png)](media/send-events/updated_two.png#lightbox)
 
 1. Выберите **Click to start** (Запустить). Симулятор создаст JSON-файл экземпляра, который вы можете использовать напрямую.
 
-1. Перейдите к концентратору событий на портале Azure. На странице **обзора** отобразятся новые события, полученные концентратором событий:
+1. Перейдите к концентратору событий на портале Azure. На **Обзор** страницы, вы должны увидеть новые события, полученных от концентратора событий.
 
-    ![Страница обзора концентратора событий, отображающая метрики для концентратора событий][7]
+    [![На странице Обзор концентратора событий, показывающий метрики для концентратора событий](media/send-events/telemetry.png)](media/send-events/telemetry.png#lightbox)
 
-<a id="json"></a>
+## <a name="json"></a>Поддерживаемые формы JSON
 
-## <a name="supported-json-shapes"></a>Поддерживаемые формы JSON
+### <a name="example-one"></a>Первый пример
 
-### <a name="sample-1"></a>Пример 1
+* **Входные данные** Простой объект JSON.
 
-#### <a name="input"></a>Вход
-
-Простой объект JSON:
-
-```json
-{
-    "id":"device1",
-    "timestamp":"2016-01-08T01:08:00Z"
-}
-```
-
-#### <a name="output-one-event"></a>Выходные данные: одно событие
-
-|id| timestamp|
-|--------|---------------|
-|device1|2016-01-08T01:08:00Z|
-
-### <a name="sample-2"></a>Пример 2
-
-#### <a name="input"></a>Вход
-
-Массив JSON с двумя объектами JSON. Каждый объект JSON преобразуется в событие.
-
-```json
-[
+    ```JSON
     {
         "id":"device1",
         "timestamp":"2016-01-08T01:08:00Z"
-    },
-    {
-        "id":"device2",
-        "timestamp":"2016-01-17T01:17:00Z"
     }
-]
-```
+    ```
 
-#### <a name="output-two-events"></a>Выходные данные: два события
+* **Выходные данные**: Одно событие.
 
-|id| timestamp|
-|--------|---------------|
-|device1|2016-01-08T01:08:00Z|
-|device2|2016-01-08T01:17:00Z|
+    |идентификатор| timestamp|
+    |--------|---------------|
+    |device1|2016-01-08T01:08:00Z|
 
-### <a name="sample-3"></a>Пример 3
+### <a name="example-two"></a>Второй пример
 
-#### <a name="input"></a>Вход
+* **Входные данные** Массив JSON с двумя объектами JSON. Каждый объект JSON преобразуется в событие.
 
-Объект JSON с вложенным массивом JSON, содержащий два объекта JSON:
-
-```json
-{
-    "location":"WestUs",
-    "events":[
+    ```JSON
+    [
         {
             "id":"device1",
             "timestamp":"2016-01-08T01:08:00Z"
@@ -153,70 +119,83 @@ ms.locfileid: "64683977"
             "timestamp":"2016-01-17T01:17:00Z"
         }
     ]
-}
-```
+    ```
 
-#### <a name="output-two-events"></a>Выходные данные: два события
+* **Выходные данные**: Два события.
 
-Свойство **location** копируется для каждого события.
+    |идентификатор| timestamp|
+    |--------|---------------|
+    |device1|2016-01-08T01:08:00Z|
+    |device2|2016-01-08T01:17:00Z|
 
-|location|events.id|events.timestamp|
-|--------|---------------|----------------------|
-|WestUs|device1|2016-01-08T01:08:00Z|
-|WestUs|device2|2016-01-08T01:17:00Z|
+### <a name="example-three"></a>Третий пример
 
-### <a name="sample-4"></a>Пример 4
+* **Входные данные** Объект JSON со вложенным массивом JSON, содержащий два объекта JSON.
 
-#### <a name="input"></a>Вход
-
-Объект JSON со вложенным массивом JSON, содержащий два объекта JSON. Эти входные данные указывают на то, что глобальные свойства могут быть представлены сложным объектом JSON.
-
-```json
-{
-    "location":"WestUs",
-    "manufacturer":{
-        "name":"manufacturer1",
-        "location":"EastUs"
-    },
-    "events":[
-        {
-            "id":"device1",
-            "timestamp":"2016-01-08T01:08:00Z",
-            "data":{
-                "type":"pressure",
-                "units":"psi",
-                "value":108.09
+    ```JSON
+    {
+        "location":"WestUs",
+        "events":[
+            {
+                "id":"device1",
+                "timestamp":"2016-01-08T01:08:00Z"
+            },
+            {
+                "id":"device2",
+                "timestamp":"2016-01-17T01:17:00Z"
             }
+        ]
+    }
+    ```
+
+* **Выходные данные**: Два события. Свойство **location** копируется для каждого события.
+
+    |location|events.id|events.timestamp|
+    |--------|---------------|----------------------|
+    |WestUs|device1|2016-01-08T01:08:00Z|
+    |WestUs|device2|2016-01-08T01:17:00Z|
+
+### <a name="example-four"></a>Пример 4
+
+* **Входные данные** Объект JSON со вложенным массивом JSON, содержащий два объекта JSON. Эти входные данные указывают на то, что глобальные свойства могут быть представлены сложным объектом JSON.
+
+    ```JSON
+    {
+        "location":"WestUs",
+        "manufacturer":{
+            "name":"manufacturer1",
+            "location":"EastUs"
         },
-        {
-            "id":"device2",
-            "timestamp":"2016-01-17T01:17:00Z",
-            "data":{
-                "type":"vibration",
-                "units":"abs G",
-                "value":217.09
+        "events":[
+            {
+                "id":"device1",
+                "timestamp":"2016-01-08T01:08:00Z",
+                "data":{
+                    "type":"pressure",
+                    "units":"psi",
+                    "value":108.09
+                }
+            },
+            {
+                "id":"device2",
+                "timestamp":"2016-01-17T01:17:00Z",
+                "data":{
+                    "type":"vibration",
+                    "units":"abs G",
+                    "value":217.09
+                }
             }
-        }
-    ]
-}
-```
+        ]
+    }
+    ```
 
-#### <a name="output-two-events"></a>Выходные данные: два события
+* **Выходные данные**: Два события.
 
-|location|manufacturer.name|manufacturer.location|events.id|events.timestamp|events.data.type|events.data.units|events.data.value|
-|---|---|---|---|---|---|---|---|
-|WestUs|manufacturer1|EastUs|device1|2016-01-08T01:08:00Z|pressure|psi|108.09|
-|WestUs|manufacturer1|EastUs|device2|2016-01-08T01:17:00Z|vibration|abs G|217.09|
+    |location|manufacturer.name|manufacturer.location|events.id|events.timestamp|events.data.type|events.data.units|events.data.value|
+    |---|---|---|---|---|---|---|---|
+    |WestUs|manufacturer1|EastUs|device1|2016-01-08T01:08:00Z|pressure|psi|108.09|
+    |WestUs|manufacturer1|EastUs|device2|2016-01-08T01:17:00Z|vibration|abs G|217.09|
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Просмотрите свою среду](https://insights.timeseries.azure.com) в обозревателе Time Series Insights.
-
-<!-- Images -->
-[1]: media/send-events/updated.png
-[2]: media/send-events/consumer-group.png
-[3]: media/send-events/shared-access-policy.png
-[4]: media/send-events/shared-access-policy-2.png
-[5]: media/send-events/sample-code-connection-string.png
-[6]: media/send-events/updated_two.png
-[7]: media/send-events/telemetry.png

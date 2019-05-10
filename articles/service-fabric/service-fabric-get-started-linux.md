@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 2/23/2018
 ms.author: subramar
-ms.openlocfilehash: 49d06c05af085624a0d495a65e139d3857a13fc4
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: a063461d9da66d57a7bdc3311ae80dec7f2c98f1
+ms.sourcegitcommit: 399db0671f58c879c1a729230254f12bc4ebff59
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64712622"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65470232"
 ---
 # <a name="prepare-your-development-environment-on-linux"></a>Подготовка среды разработки в Linux
 > [!div class="op_single_selector"]
@@ -334,7 +334,6 @@ sudo apt-get install servicefabric servicefabricsdkcommon
 * [Подготовка среды разработки Linux в Windows](service-fabric-local-linux-cluster-windows.md)
 * [Управление приложением Azure Service Fabric с помощью интерфейса командной строки Azure Service Fabric](service-fabric-application-lifecycle-sfctl.md)
 * [Различия между Service Fabric для Linux и для Windows](service-fabric-linux-windows-differences.md)
-* [Автоматизация установки исправлений ОС в кластере Linux](service-fabric-patch-orchestration-application-linux.md)
 * [Azure Service Fabric command line](service-fabric-cli.md) (Интерфейс командной строки Azure Service Fabric)
 
 <!-- Links -->

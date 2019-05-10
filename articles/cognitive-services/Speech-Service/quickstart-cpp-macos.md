@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 04/03/2019
 ms.author: wolfma
-ms.openlocfilehash: b602a26c83be1ffd4bd55a8eff9ff8d83aac5919
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: 86ad938cd3d248ad907b3143342b0acf9ff15631
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65020809"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65236865"
 ---
 # <a name="quickstart-recognize-speech-in-c-on-macos-by-using-the-speech-sdk"></a>Краткое руководство. Распознавание речи в приложении C++ для macOS с помощью пакета SDK для службы "Речь"
 
@@ -82,7 +82,7 @@ ms.locfileid: "65020809"
 * Запустите сборку приложения с помощью следующей команды.
 
   ```sh
-  g++ helloworld.cpp -o helloworld --std=c++11 -F${SPEECHSDK_ROOT} -framework MicrosoftCognitiveServicesSpeech
+  g++ helloworld.cpp -o helloworld --std=c++14 -F${SPEECHSDK_ROOT} -framework MicrosoftCognitiveServicesSpeech
   ```
 
 ## <a name="run-the-app"></a>Запуск приложения

@@ -9,15 +9,15 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 04/21/2019
+ms.date: 05/08/2019
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: 216eae383c704125cd32d9ed4cb1309299af7336
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 937a032bffbad4e8a7d737360aa140e59760f8e2
+ms.sourcegitcommit: 399db0671f58c879c1a729230254f12bc4ebff59
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65153400"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65472439"
 ---
 # <a name="encoding-with-media-services"></a>Кодирование с помощью Служб мультимедиа
 
@@ -87,11 +87,15 @@ ms.locfileid: "65153400"
 - [Настройка предустановок с интерфейсом командной строки](custom-preset-cli-howto.md)
 - [Настройка предустановок с помощью REST](custom-preset-rest-howto.md)
 
+## <a name="preset-schema"></a>Схемы предустановленного набора
+
+В версии 3 службы мультимедиа стили являются строго типизированных сущностей в API. Определение «schema» для этих объектов можно найти [спецификации Openapi (или Swagger)](https://github.com/Azure/azure-rest-api-specs/tree/master/specification/mediaservices/resource-manager/Microsoft.Media/stable/2018-07-01). Вы также можете просмотреть существующие определения (например **StandardEncoderPreset**) в [REST API](https://docs.microsoft.com/rest/api/media/transforms/createorupdate#standardencoderpreset), [пакета SDK для .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.management.media.models.standardencoderpreset?view=azure-dotnet) (или других справочная документация служб мультимедиа v3 SDK).
+
 ## <a name="scaling-encoding-in-v3"></a>Масштабирование кодирования в версии 3
 
 Масштабирование обработки мультимедиа см. в разделе [масштабирование с помощью CLI](media-reserved-units-cli-how-to.md).
 
-## <a name="ask-questions-give-feedback-get-updates"></a>Задавайте вопросы, отзыв, получить обновления
+## <a name="ask-questions-give-feedback-get-updates"></a>Получение справки, отправка отзывов, получение обновлений
 
 Прочитайте статью [сообщества Служб мультимедиа Azure](media-services-community.md), чтобы узнать, как задавать вопросы, оставлять отзывы и получать новости о Службах мультимедиа.
 

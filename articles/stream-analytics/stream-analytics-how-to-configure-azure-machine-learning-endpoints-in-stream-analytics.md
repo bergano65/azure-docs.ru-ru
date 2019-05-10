@@ -8,17 +8,17 @@ ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 12/07/2018
-ms.openlocfilehash: 4a360968285b91b00c8ca1999f81c11951e74482
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: dfb34f8c0fca792618860e0a8d5a1bf1736f3611
+ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61479853"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65416052"
 ---
-# <a name="machine-learning-integration-in-stream-analytics"></a>Интеграция машинного обучения в Stream Analytics
+# <a name="machine-learning-integration-in-stream-analytics-preview"></a>Интеграция машинного обучения в Stream Analytics (Предварительная версия)
 Stream Analytics поддерживает пользовательские функции, которые обращаются к конечным точкам службы машинного обучения Azure. Поддержка этой возможности в REST API описана в статье [Библиотека REST API Stream Analytics](https://msdn.microsoft.com/library/azure/dn835031.aspx). В этой статье приведены дополнительные сведения, необходимые для успешной реализации этой возможности в Stream Analytics. Также было размещено руководство, которое доступно [здесь](stream-analytics-machine-learning-integration-tutorial.md).
 
-## <a name="overview-azure-machine-learning-terminology"></a>Обзор: Обзор терминологии машинного обучения Azure
+## <a name="overview-azure-machine-learning-terminology"></a>Рассматриваемые действия: Обзор терминологии машинного обучения Azure
 Машинное обучение Microsoft Azure — это инструмент для совместной работы с поддержкой функции перетаскивания объектов. Он предназначен для создания, тестирования и развертывания решений для прогнозной аналитики данных. Этот инструмент — *Студия машинного обучения Azure*. Студия используется для взаимодействия с ресурсами машинного обучения, а также для компилирования и тестирования прототипа с последующими итерациями. Эти ресурсы и их определения приведены ниже.
 
 * **Рабочая область**. *Рабочая область* — это контейнер, содержащий все ресурсы машинного обучения для управления и контроля.

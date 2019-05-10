@@ -81,24 +81,28 @@
           href: data-box-edge-technical-specifications-compliance.md
     - name: Практическое руководство
       items:
-        - name: Управление вычислительными ресурсами
-          href: data-box-edge-manage-compute.md
         - name: 'Разработка модуля C#'
           href: data-box-edge-create-iot-edge-module.md
-        - name: Управление общими папками
-          href: data-box-edge-manage-shares.md
-        - name: Управление пользователями
-          href: data-box-edge-manage-users.md
-        - name: Управление расписаниями пропускной способности
-          href: data-box-edge-manage-bandwidth-schedules.md
-        - name: 'Управление питанием, доступом и режимом подключения'
-          href: data-box-edge-manage-access-power-connectivity-mode.md
-        - name: Управление с помощью PowerShell
-          href: data-box-edge-connect-powershell-interface.md
+        - name: управление
+          items:
+            - name: Пограничные вычисления
+              href: data-box-edge-manage-compute.md
+            - name: Общие папки
+              href: data-box-edge-manage-shares.md
+            - name: Пользователи
+              href: data-box-edge-manage-users.md
+            - name: Расписания пропускной способности
+              href: data-box-edge-manage-bandwidth-schedules.md
+            - name: 'Питание, доступ, подключение'
+              href: data-box-edge-manage-access-power-connectivity-mode.md
+            - name: Через PowerShell
+              href: data-box-edge-connect-powershell-interface.md
         - name: Устранение неполадок
           href: data-box-edge-troubleshoot.md
         - name: Мониторинг
           href: data-box-edge-monitor.md
+        - name: Возврат устройства
+          href: data-box-edge-return-device.md
     - name: Заметки о выпуске
       items:
         - name: Общедоступная версия

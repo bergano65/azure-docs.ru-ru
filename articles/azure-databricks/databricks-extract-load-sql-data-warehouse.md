@@ -7,16 +7,15 @@ ms.reviewer: jasonh
 ms.service: azure-databricks
 ms.custom: mvc
 ms.topic: tutorial
-ms.workload: Active
-ms.date: 02/15/2019
-ms.openlocfilehash: e306245da2c76560ad447358fa1a57e491c370ee
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.date: 05/07/2019
+ms.openlocfilehash: e2110378d16ff5826b8ded4620276b784ef1d68e
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57855696"
+ms.lasthandoff: 05/06/2019
+ms.locfileid: "65203349"
 ---
-# <a name="tutorial-extract-transform-and-load-data-by-using-azure-databricks"></a>Руководство. Извлечение, преобразование и загрузка данных с помощью Azure Databricks
+# <a name="tutorial-extract-transform-and-load-data-by-using-azure-databricks"></a>Руководство по Извлечение, преобразование и загрузка данных с помощью Azure Databricks
 
 В этом руководстве рассматривается выполнение операций извлечения, преобразования и загрузки данных с помощью Azure Databricks. Мы извлечем данные из Azure Data Lake Storage 2-го поколения в Azure Databricks, выполним преобразование данных в Azure Databricks, а затем загрузим преобразованные данные в Хранилище данных SQL Azure.
 
@@ -54,7 +53,7 @@ ms.locfileid: "57855696"
 
 * Создайте учетную запись хранилища BLOB-объектов Azure, содержащую контейнер. Также получите ключ для доступа к учетной записи хранения. См. [Краткое руководство. Передача, скачивание и составление списка больших двоичных объектов с помощью портала Azure](../storage/blobs/storage-quickstart-blobs-portal.md).
 
-* Создайте учетную запись хранения Azure Data Lake Storage 2-го поколения. Ознакомьтесь со статьей о [создании учетной записи Azure Data Lake Storage 2-го поколения](../storage/blobs/data-lake-storage-quickstart-create-account.md).
+* Создайте учетную запись хранения Azure Data Lake Storage 2-го поколения. См. [Краткое руководство. Создание поддерживаемой учетной записи хранения Azure Data Lake Storage 2-го поколения](../storage/blobs/data-lake-storage-quickstart-create-account.md).
 
 *  Создание субъекта-службы. Дополнительные сведения см. в статье [Azure Создание приложения Azure Active Directory и субъект-службы с доступом к ресурсам с помощью портала](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal).
 
@@ -355,6 +354,11 @@ ms.locfileid: "57855696"
        .mode("overwrite")
        .save()
    ```
+
+   > [!NOTE]
+   > В этом примере используется флаг `forward_spark_azure_storage_credentials`, который вызывает Хранилище данных SQL для доступа к данным из хранилища BLOB-объектов с помощью ключа доступа. Это единственный поддерживаемый способ проверки подлинности.
+   >
+   > Если для хранилища BLOB-объектов Azure нельзя выбирать виртуальные сети, Хранилище данных SQL запросит [Управляемое удостоверение службы, а не ключи доступа](../sql-database/sql-database-vnet-service-endpoint-rule-overview.md#impact-of-using-vnet-service-endpoints-with-azure-storage). В таком случае вы получите ошибку с сообщением о том, что у вызывающей стороны нет прав на выполнение этой операции.
 
 6. Подключитесь к базе данных SQL и убедитесь, что вы видите базу данных **SampleTable**.
 
