@@ -105,7 +105,7 @@ sections:
         className: cardsD
         items:
           - title: Интерфейсы API REST версии 2
-            html: '<p><a href="https://aka.ms/luis-endpoint-apis"> API конечной точки</a></p><p><a href="https://aka.ms/luis-authoring-apis"> Разработка API</a></p>'
+            html: '<p><a href="https://go.microsoft.com/fwlink/?linkid=2092356"> API конечной точки</a></p><p><a href="https://go.microsoft.com/fwlink/?linkid=2092087"> Разработка API</a></p>'
           - title: Пакеты SDK
             html: '<p><a href="https://aka.ms/luis-endpoint-sdk"> Пакет SDK для .NET (конечная точка)</a></p><p><a href="https://aka.ms/luis-authoring-sdk"> Пакет SDK для .NET (создание)</a></p>'
           - title: PowerShell

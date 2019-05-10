@@ -318,15 +318,15 @@
       href: luis-reference-prebuilt-domains.md
       displayName: 'Calendar, Communication,Email,HomeAutomation,Note,Places, RestaurantReservation,ToDo,Utilities,Weather,Web'
     - name: Инфраструктура CLI Azure
-      href: 'https://aka.ms/az-cli-cognitiveservices'
+      href: 'https://go.microsoft.com/fwlink/?linkid=2092156'
     - name: Azure RM PowerShell
-      href: 'https://aka.ms/azure-powershell-cognitiveservices'
+      href: 'https://go.microsoft.com/fwlink/?linkid=2092157'
     - name: Интерфейсы API REST
       items:
         - name: "Разработка REST API версии\_2"
-          href: 'https://aka.ms/luis-authoring-apis'
+          href: 'https://go.microsoft.com/fwlink/?linkid=2092087'
         - name: "Конечная точка REST API версии\_2"
-          href: 'https://aka.ms/luis-endpoint-apis'
+          href: 'https://go.microsoft.com/fwlink/?linkid=2092356'
         - name: Коды HTTP
           displayName: '400, 401, 403, 409, 410, 414, 429'
           href: luis-reference-response-codes.md
@@ -399,12 +399,12 @@
 - name: Ресурсы
   items:
     - name: Доступ по регионам
-      href: 'https://azure.microsoft.com/global-infrastructure/services/'
+      href: 'https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services'
     - name: Поддержка языков и региональных параметров
       href: luis-language-support.md
       displayName: 'phrase list recommendations, multi-language, translator, locale, language, English, Chinese, Dutch, French, Germain, Italian, Japanese, Korean, Portuguese, Spanish, Turkish, Keigo, informal Japanese, subculture, dictation, speech, Bing Spell Check, foreign words, Hybrid languages, Tokenization, space, special character, compound words, tokens'
     - name: Стратегия развития Azure
-      href: 'https://aka.ms/luis-roadmap'
+      href: 'https://go.microsoft.com/fwlink/?linkid=2092089'
     - name: Глоссарий
       href: luis-glossary.md
     - name: Устранение неполадок
@@ -415,7 +415,7 @@
     - name: Переполнение стека
       href: 'https://stackoverflow.com/questions/tagged/LUIS'
     - name: UserVoice
-      href: 'https://aka.ms/luis-uservoice-forum'
+      href: 'https://go.microsoft.com/fwlink/?linkid=2092090'
     - name: поиска
       href: 'https://docs.microsoft.com/search/index?search=LUIS'
     - name: Блог

@@ -40,6 +40,16 @@
           href: time-series-insights-explorer.md
         - name: Концепция срока хранения данных
           href: time-series-insights-concepts-retention.md
+        - name: Разработка
+          items:
+            - name: Проверка подлинности и авторизация
+              href: time-series-insights-authentication-and-authorization.md
+            - name: 'Запрос данных с помощью C#'
+              href: time-series-insights-query-data-csharp.md
+            - name: 'Управление эталонными данными с помощью C#'
+              href: time-series-insights-manage-reference-data-csharp.md
+            - name: Совместное использование пользовательского представления
+              href: time-series-insights-parameterized-urls.md
     - name: Аналитика временных рядов Azure (предварительная версия)
       items:
         - name: Планирование среды
@@ -54,16 +64,12 @@
           href: time-series-insights-update-tsq.md
         - name: Визуализация данных в обозревателе (предварительная версия)
           href: time-series-insights-update-explorer.md
-    - name: Разработка
-      items:
-        - name: Проверка подлинности и авторизация
-          href: time-series-insights-authentication-and-authorization.md
-        - name: 'Запрос данных с помощью C#'
-          href: time-series-insights-query-data-csharp.md
-        - name: 'Управление эталонными данными с помощью C#'
-          href: time-series-insights-manage-reference-data-csharp.md
-        - name: Совместное использование пользовательского представления
-          href: time-series-insights-parameterized-urls.md
+        - name: Разработка
+          items:
+            - name: Проверка подлинности и авторизация
+              href: time-series-insights-authentication-and-authorization.md
+            - name: 'Запрос данных с помощью C#'
+              href: time-series-insights-update-query-data-csharp.md
 - name: Практические руководства
   items:
     - name: Предоставление доступа к данным

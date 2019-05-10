@@ -124,6 +124,8 @@
         - name: Непрерывная интеграция с Azure DevOps Services
           href: ../vs-azure-tools-resource-groups-ci-in-vsts.md
           maintainContext: true
+    - name: Экспорт шаблона
+      href: export-template-portal.md
     - name: управление
       items:
         - name: Управление группами ресурсов

@@ -9,7 +9,7 @@
     - name: Сведения о средах службы приложений
       href: environment/intro.md
     - name: Сравнение вариантов размещения
-      href: overview-compare.md
+      href: /azure/architecture/guide/technology-choices/compute-decision-tree
 - name: Быстрое начало работы
   expanded: true
   items:

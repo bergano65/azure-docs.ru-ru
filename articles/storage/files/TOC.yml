@@ -168,7 +168,7 @@
         - name: 'BLOB-объекты, очереди, таблицы и файлы'
           href: 'https://docs.microsoft.com/dotnet/api/overview/azure/storage/client'
         - name: Перемещение данных
-          href: 'https://docs.microsoft.com/dotnet/api/microsoft.windowsazure.storage.datamovement'
+          href: 'https://docs.microsoft.com/dotnet/api/microsoft.azure.storage.datamovement'
         - name: Диспетчер ресурсов
           href: 'https://docs.microsoft.com/dotnet/api/overview/azure/storage/management'
     - name: Java
