@@ -7,12 +7,12 @@ ms.service: service-health
 ms.topic: landing-page
 ms.date: 03/4/2019
 ms.author: stbaron
-ms.openlocfilehash: cf7084b569e2c90337e475beb9f49563214941d2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: aa00d4b08725eaf4b667fc7b53b225198db95a02
+ms.sourcegitcommit: 4891f404c1816ebd247467a12d7789b9a38cee7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60506934"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65441660"
 ---
 # <a name="azure-service-health-documentation"></a>Документация по службе работоспособности служб Azure
 
@@ -25,6 +25,11 @@ Azure предлагает набор функций, информирующих
 **[Работоспособность ресурсов Azure](resource-health-overview.md)** предоставляет сведения о состоянии работоспособности отдельных облачных ресурсов, таких как экземпляр конкретной виртуальной машины. С помощью Azure Monitor можно также настроить оповещения для уведомления об изменениях доступности облачных ресурсов. Работоспособность ресурсов Azure вместе с оповещениями Azure Monitor поможет вам получить актуальные и оперативные сведения о доступности ресурсов, чтобы вы могли быстро оценивать, вызвана ли проблема сбоем на вашей стороне или она связана с событием платформы Azure.
 
 Вместе эти интерфейсы обеспечивают полное представление о работоспособности Azure с нужной вам степенью детализации.
+
+### <a name="watch-an-overview-of-the-azure-status-page-azure-service-health-and-azure-resource-health"></a>Узнайте о странице состояния Azure, Работоспособности служб Azure и Работоспособности ресурсов Azure
+
+>[!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE2OgX6]
+
 
 <ul class="panelContent cardsFTitle">
     <li>
