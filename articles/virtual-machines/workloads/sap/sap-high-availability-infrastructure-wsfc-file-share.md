@@ -17,12 +17,12 @@ ms.workload: infrastructure-services
 ms.date: 05/05/2017
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 58cd76e93b9d0888211e8339ae17170685e71e74
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: e1c6b1d55a4fbc673980908a981a9a96c869bee9
+ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60637760"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65409612"
 ---
 # <a name="prepare-azure-infrastructure-for-sap-high-availability-by-using-a-windows-failover-cluster-and-file-share-for-sap-ascsscs-instances"></a>Подготовка высокодоступной инфраструктуры Azure для SAP с помощью отказоустойчивого кластера Windows и файлового ресурса для экземпляров SAP ASCS/SCS
 
@@ -36,6 +36,7 @@ ms.locfileid: "60637760"
 [arm-sofs-s2d-managed-disks]:https://github.com/robotechredmond/301-storage-spaces-direct-md
 [arm-sofs-s2d-non-managed-disks]:https://github.com/Azure/azure-quickstart-templates/tree/master/301-storage-spaces-direct
 [deploy-cloud-witness]:https://docs.microsoft.com/windows-server/failover-clustering/deploy-cloud-witness
+[tuning-failover-cluster-network-thresholds]:https://techcommunity.microsoft.com/t5/Failover-Clustering/Tuning-Failover-Cluster-Network-Thresholds/ba-p/371834
 
 [sap-installation-guides]:http://service.sap.com/instguides
 
@@ -209,7 +210,7 @@ ms.locfileid: "60637760"
 
 В этой статье документе описываются шаги по подготовке инфраструктуры Azure, необходимые для установки и настройки высокодоступных систем SAP в отказоустойчивом кластере Windows (WSFC) с использованием масштабируемого файлового ресурса для кластеризации экземпляров SAP ASCS/SCS.
 
-## <a name="prerequisite"></a>Необходимое условие
+## <a name="prerequisite"></a>Предварительное требование
 
 Прежде чем начать установку, ознакомьтесь со следующей статьей:
 
@@ -341,6 +342,16 @@ _**Рис. 1**: Экран пользовательского интерфейс
 _**Рис. 2**: Экран пользовательского интерфейса для шаблона диспетчера ресурсов Azure масштабируемого файлового сервера без управляемых дисков_
 
 В поле **Тип учетной записи хранения** выберите **Хранилище класса "Премиум"**. Все прочие параметры совпадают с параметрами управляемых дисков.
+
+## <a name="adjust-cluster-timeout-settings"></a>Настройка параметров времени ожидания кластера
+
+После успешной установки кластера Windows масштабируемого файлового сервера, адаптировать пороговые значения времени ожидания для обнаружения отработки отказа к условиям в Azure. Параметры, которые необходимо изменить, описаны в записи блога [Tuning Failover Cluster Network Thresholds][tuning-failover-cluster-network-thresholds] (Настройка пороговых значений сети отказоустойчивого кластера). Предположим, что кластеризованные виртуальные машины находятся в той же подсети, измените эти значения со следующими параметрами:
+
+- SameSubNetDelay = 2000
+- SameSubNetThreshold = 15
+- RoutingHistoryLength = 30
+
+Эти параметры были протестированы у клиентов, они обеспечивают удачный компромисс. Они являются достаточно устойчивыми, но они также обеспечивают быстрое достаточно отработки отказа в реальных условиях или сбоя виртуальной Машины.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

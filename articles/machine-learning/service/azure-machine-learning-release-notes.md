@@ -10,12 +10,12 @@ ms.author: larryfr
 author: Blackmist
 ms.date: 05/06/2019
 ms.custom: seodec18
-ms.openlocfilehash: a355d18de875ad980e0c2b6c564d3379c2b90ee7
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 186ecf055cdf7b10690fdb4cbc574778a841b85a
+ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65154291"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65464812"
 ---
 # <a name="azure-machine-learning-service-release-notes"></a>Заметки о выпуске службы "Машинное обучение Azure"
 
@@ -42,6 +42,15 @@ ms.locfileid: "65154291"
 + Добавлена возможность загрузить файл config.json на странице обзора рабочей области службы машинного обучения Azure.
 + Поддерживает создание рабочей области службы машинного обучения из рабочей области Azure Databricks 
 
+## <a name="2019-04-26"></a>2019-04-26
+
+### <a name="azure-machine-learning-sdk-for-python-v1033"></a>Машинного обучения Azure SDK для Python v1.0.33
++ **Новые функции**
+  + _Workspace.create_ метод теперь принимает конфигурации кластера по умолчанию для кластеров ЦП и GPU.
+  + Если происходит сбой создания рабочей области, удаляются зависимые ресурсы.
+  + Номер SKU реестра контейнеров Azure по умолчанию переключается на basic.
+  + Реестр контейнеров Azure создается неактивно, когда они нужны для создания выполнения или изображения.
+  + Поддержка для сред учебные запуски.
 
 ### <a name="notebook-virtual-machine"></a>Записная книжка виртуальной машины 
 

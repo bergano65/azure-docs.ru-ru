@@ -101,6 +101,8 @@
           href: search-get-started-java.md
         - name: Обновление пакета SDK
           items:
+            - name: Пакет SDK для .NET версии 9.0
+              href: search-dotnet-sdk-migration-version-9.md
             - name: Пакет SDK для .NET 5.0
               href: search-dotnet-sdk-migration-version-5.md
             - name: Пакет SDK для .NET версии 3.0

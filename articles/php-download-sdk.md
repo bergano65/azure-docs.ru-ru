@@ -1,5 +1,5 @@
 ---
-title: загрузить Azure SDK для PHP?
+title: Загрузка пакета Azure SDK для PHP
 description: Узнайте, как скачать и установить пакет SDK для Azure для PHP.
 documentationcenter: php
 services: app-service\web
@@ -14,14 +14,14 @@ ms.devlang: PHP
 ms.topic: article
 ms.date: 06/01/2016
 ms.author: allclark;yaqiyang
-ms.openlocfilehash: 4f2c242e27d8a0ed6687eb4a3510bbce6e07694f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: f6b21f288b94e06414fe66ff775ebb264368c0b8
+ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61457640"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65411601"
 ---
-# <a name="download-the-azure-sdk-for-php"></a>загрузить Azure SDK для PHP?
+# <a name="download-the-azure-sdk-for-php"></a>Загрузка пакета Azure SDK для PHP
 
 ## <a name="overview"></a>Обзор
 
@@ -81,7 +81,7 @@ CLI Azure — это набор команд для развертывания �
 
 Дополнительную информацию можно найти в [Центре разработчика PHP](https://azure.microsoft.com/develop/php/).
 
-[install-php]: http://www.php.net/manual/en/install.php
+[install-php]: https://www.php.net/manual/en/install.php
 [composer-github]: https://github.com/composer/composer
 [composer-phar]: https://getcomposer.org/composer.phar
 [nodejs-org]: https://nodejs.org/
