@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 03/11/2019
 ms.author: diberry
-ms.openlocfilehash: d7d63ad642ab2d3b336e15dcca606077762ceb9d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: d5a1d7ee3b8b16631f7b919f3aece0848d662e62
+ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60195832"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65523517"
 ---
 # <a name="manage-account-and-authoring-key"></a>Управление учетной записью и ключом разработки
 
@@ -24,7 +24,7 @@ ms.locfileid: "60195832"
 
 ## <a name="authoring-key"></a>Ключ разработки
 
-Этот единый, конкретного региона создания ключа на **параметры** странице, позволяет создавать все приложения из [LUIS](luis-reference-regions.md) портала, а также [разработка API-интерфейсов](https://aka.ms/luis-authoring-api). Для удобства ключу разработки разрешается запрашивать конечные точки на протяжении месяца [ограниченное](luis-boundaries.md) количество раз.
+Этот единый, конкретного региона создания ключа на **параметры** странице, позволяет создавать все приложения из [LUIS](luis-reference-regions.md) портала, а также [разработка API-интерфейсов](https://go.microsoft.com/fwlink/?linkid=2092087). Для удобства ключу разработки разрешается запрашивать конечные точки на протяжении месяца [ограниченное](luis-boundaries.md) количество раз.
 
 [![Страница параметров LUIS](./media/luis-how-to-account-settings/account-settings.png)](./media/luis-how-to-account-settings/account-settings.png#lightbox)
 

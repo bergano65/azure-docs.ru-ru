@@ -11,21 +11,21 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 03/04/2019
 ms.author: diberry
-ms.openlocfilehash: 18ec59200d3cf820794ac353e38106ad26aca697
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: f6742bf64ce26e6cce93dfcdfd06756f3c340d9e
+ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60598033"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65522969"
 ---
 # <a name="common-api-response-codes-and-their-meaning"></a>Стандартные коды ответа API и их значение
 
-API-интерфейсы [разработки](https://aka.ms/luis-authoring-apis) и [конечных точек](https://aka.ms/luis-endpoint-apis) возвращают коды ответов HTTP. В то время как ответные сообщения содержат сведения, относящиеся к запросу, код состояния ответа HTTP имеет общий характер. 
+API-интерфейсы [разработки](https://go.microsoft.com/fwlink/?linkid=2092087) и [конечных точек](https://go.microsoft.com/fwlink/?linkid=2092356) возвращают коды ответов HTTP. В то время как ответные сообщения содержат сведения, относящиеся к запросу, код состояния ответа HTTP имеет общий характер. 
 
 ## <a name="common-status-codes"></a>Распространенные коды состояний
-В следующей таблице перечислены некоторые наиболее распространенные коды состояний ответов HTTP для API-интерфейсов [разработки](https://aka.ms/luis-authoring-apis) и [конечных точек](https://aka.ms/luis-endpoint-apis).
+В следующей таблице перечислены некоторые наиболее распространенные коды состояний ответов HTTP для API-интерфейсов [разработки](https://go.microsoft.com/fwlink/?linkid=2092087) и [конечных точек](https://go.microsoft.com/fwlink/?linkid=2092356).
 
-|Код|API|Пояснение|
+|Код|API|Объяснение|
 |:--|--|--|
 |400|Разработки, конечных точек|Параметры запроса указаны неправильно. Это означает, что требуемые параметры отсутствуют, имеют неправильный формат или слишком большой размер|
 |400|Разработки, конечных точек|Текст запроса указан неправильно. Это означает, что JSON отсутствует, имеет неправильный формат или слишком большой размер|

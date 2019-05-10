@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 05/07/2019
 ms.author: diberry
-ms.openlocfilehash: 132ba922fa73c73d0e001e84659b5a24996d406b
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: fc05f285b286bd0f036c583c154a40cf64e144d4
+ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65235792"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65522032"
 ---
 # <a name="language-understanding-frequently-asked-questions-faq"></a>Часто задаваемые вопросы о службе "Распознавание речи"
 
@@ -46,7 +46,7 @@ ms.locfileid: "65235792"
 Ознакомьтесь с руководством [Исправление орфографических ошибок с помощью API Bing для проверки орфографии](luis-tutorial-bing-spellcheck.md). Служба LUIS применяет ограничения, накладываемые API Bing для проверки орфографии версии 7.
 
 ### <a name="how-do-i-edit-my-luis-app-programmatically"></a>Как изменить приложение LUIS программным способом?
-Чтобы изменить приложение LUIS программным способом, используйте [API разработки](https://aka.ms/luis-authoring-apis). Примеры вызова API разработки см. в статьях [Руководство по добавлению фраз в приложение с использованием Node.js](./luis-quickstart-node-add-utterance.md) и [Создание приложения LUIS программным способом с помощью Node.js](./luis-tutorial-node-import-utterances-csv.md). Для применения API разработки необходимо использовать [ключ разработки](luis-concept-keys.md#authoring-key), а не ключ конечной точки. Программный способ разработки позволяет осуществлять до 1 000 000 звонков в месяц и пять транзакций в секунду. Дополнительные сведения об используемых с LUIS ключах см. в статье [Keys in LUIS](./luis-concept-keys.md) (Ключи в LUIS).
+Чтобы изменить приложение LUIS программным способом, используйте [API разработки](https://go.microsoft.com/fwlink/?linkid=2092087). Примеры вызова API разработки см. в статьях [Руководство по добавлению фраз в приложение с использованием Node.js](./luis-quickstart-node-add-utterance.md) и [Создание приложения LUIS программным способом с помощью Node.js](./luis-tutorial-node-import-utterances-csv.md). Для применения API разработки необходимо использовать [ключ разработки](luis-concept-keys.md#authoring-key), а не ключ конечной точки. Программный способ разработки позволяет осуществлять до 1 000 000 звонков в месяц и пять транзакций в секунду. Дополнительные сведения об используемых с LUIS ключах см. в статье [Keys in LUIS](./luis-concept-keys.md) (Ключи в LUIS).
 
 ### <a name="where-is-the-pattern-feature-that-provided-regular-expression-matching"></a>Где находится компонент "Шаблон", который сопоставляется с предоставленным регулярным выражением?
 Сейчас не рекомендуется использовать предыдущий компонент **Шаблон**, замененный компонентом **[Шаблоны](luis-concept-patterns.md)**.

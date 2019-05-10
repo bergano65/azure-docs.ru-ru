@@ -11,15 +11,15 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 04/02/2019
 ms.author: diberry
-ms.openlocfilehash: 9eb73db6f641d3a5f5bb82901bd12ea291eada58
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: a4e176552fcbab9d54da696439c7e46750be3944
+ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60196037"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65522365"
 ---
 # <a name="api-v1-to-v2-migration-guide-for-luis-apps"></a>Руководство по переходу с API версии 1 на API версии 2 для приложений на основе LUIS
-API-интерфейсы [конечных точек](https://aka.ms/v1-endpoint-api-docs) и [разработки](https://aka.ms/v1-authoring-api-docs) версии 1 объявлены устаревшими. Используйте это руководство, чтобы перейти на API [конечных точек](https://aka.ms/luis-endpoint-apis) и [разработки](https://aka.ms/luis-authoring-apis) версии 2. 
+API-интерфейсы [конечных точек](https://aka.ms/v1-endpoint-api-docs) и [разработки](https://aka.ms/v1-authoring-api-docs) версии 1 объявлены устаревшими. Используйте это руководство, чтобы перейти на API [конечных точек](https://go.microsoft.com/fwlink/?linkid=2092356) и [разработки](https://go.microsoft.com/fwlink/?linkid=2092087) версии 2. 
 
 ## <a name="new-azure-regions"></a>Новые регионы Azure
 В LUIS были добавлены новые [регионы](https://aka.ms/LUIS-regions) для API LUIS. LUIS предоставляет другой портал для группы областей. Приложение должно быть разработано в том же регионе, в который вы собираетесь отправлять запросы. Приложения не переносятся между регионами автоматически. Чтобы приложение стало доступно в новом регионе, необходимо экспортировать приложение из одного региона и импортировать его в другом регионе.
@@ -28,7 +28,7 @@ API-интерфейсы [конечных точек](https://aka.ms/v1-endpoin
 Маршрут API разработки был изменен с **prog** на**api**.
 
 
-| версия | маршрут |
+| version | маршрут |
 |--|--|
 |1|/luis/v1.0/**prog**/apps|
 |2|/luis/**api**/v2.0/apps|
@@ -37,7 +37,7 @@ API-интерфейсы [конечных точек](https://aka.ms/v1-endpoin
 ## <a name="endpoint-route-changes"></a>Изменения в маршруте конечных точек
 Конечная точка API имеет новые параметры строки запроса, а также другой ответ. Если флаг verbose установлен, то наряду с максимальной оценкой topScoringIntent возвращаются все намерения независимо от оценок (в массиве intents).
 
-| версия | Маршрут GET |
+| version | Маршрут GET |
 |--|--|
 |1|/luis/v1/application?ID={идентификатор_приложения}&q={запрос}|
 |2|/luis/v2.0/apps/{идентификатор_приложения}?q={запрос}[&timezoneOffset][&verbose][&spellCheck][&staging][&bing-spell-check-subscription-key][&log]|
@@ -107,7 +107,7 @@ API-интерфейсы [конечных точек](https://aka.ms/v1-endpoin
 ## <a name="key-management-no-longer-in-api"></a>Управление ключами больше не осуществляется не в API
 API ключей конечных точек подписок устарели, возвращая 410 GONE.
 
-| версия | маршрут |
+| version | маршрут |
 |--|--|
 |1|/luis/v1.0/prog/subscriptions|
 |1|/luis/v1.0/prog/subscriptions/{ключ_подписки}|
@@ -117,7 +117,7 @@ API ключей конечных точек подписок устарели, 
 ## <a name="new-versioning-route"></a>Новый маршрут для управления версиями
 Модель версии 2 теперь содержится в параметре [version](luis-how-to-manage-versions.md). Длина имени версии в маршруте — 10 символов. Версия по умолчанию — "0.1".
 
-| версия | маршрут |
+| version | маршрут |
 |--|--|
 |1|/luis/v1.0/**prog**/apps/{идентификатор_приложения}/entities|
 |2|/luis/**api**/v2.0/apps/{идентификатор_приложения}/**versions**/{идентификатор_версии}/entities|
@@ -136,7 +136,7 @@ API ключей конечных точек подписок устарели, 
 ## <a name="sample-renamed-to-suggest"></a>"Пример" переименован в "предложение"
 LUIS предлагает высказывания из существующих [высказываний конечных точек](luis-how-to-review-endpoint-utterances.md), которые могут улучшить модель. В предыдущей версии предложения назывались **примерами**. В новой версии "примеры" называются **предложениями**. На веб-сайте LUIS это называется **[Просмотрами высказываний конечных точек](luis-how-to-review-endpoint-utterances.md)**.
 
-| версия | маршрут |
+| version | маршрут |
 |--|--|
 |1|/luis/v1.0/**prog**/apps/{идентификатор_приложения}/entities/{идентификатор_сущности}/**sample**|
 |1|/luis/v1.0/**prog**/apps/{идентификатор_приложения}/intents/{идентификатор_намерения}/**sample**|
@@ -169,6 +169,6 @@ LUIS предлагает высказывания из существующих
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Используйте документацию по API версии 2, чтобы обновить существующие вызовы REST для API [конечных точек](https://aka.ms/luis-endpoint-apis) и [разработки](https://aka.ms/luis-authoring-apis) LUIS. 
+Используйте документацию по API версии 2, чтобы обновить существующие вызовы REST для API [конечных точек](https://go.microsoft.com/fwlink/?linkid=2092356) и [разработки](https://go.microsoft.com/fwlink/?linkid=2092087) LUIS. 
 
 [LUIS]: https://docs.microsoft.com/azure/cognitive-services/luis/luis-reference-regions

@@ -10,12 +10,12 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 01/23/2019
 ms.author: diberry
-ms.openlocfilehash: ced83b83c2d64ba5c4816f378c66dae9f4210391
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 3fc14b821064719f39eb877aa2253f8084496a66
+ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60193634"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65523500"
 ---
 # <a name="language-understanding-glossary-of-common-vocabulary-and-concepts"></a>Основные понятия и определения глоссария Интеллектуальной службы распознавания речи (LUIS)
 В глоссарии Интеллектуальной службы распознавания речи (LUIS) объясняются термины, с которыми вы можете столкнуться при работе со службой API LUIS.
@@ -26,7 +26,7 @@ ms.locfileid: "60193634"
 
 ## <a name="authoring"></a>Разработка
 
-Разработка — это возможность создания, развертывания [приложения LUIS](#luis-app) и управления им с помощью веб-сайта [LUIS](luis-reference-regions.md) или [API-интерфейсов разработки](https://aka.ms/luis-authoring-api).
+Разработка — это возможность создания, развертывания [приложения LUIS](#luis-app) и управления им с помощью веб-сайта [LUIS](luis-reference-regions.md) или [API-интерфейсов разработки](https://go.microsoft.com/fwlink/?linkid=2092087).
 
 ## <a name="authoring-key"></a>Ключ разработки
 
@@ -74,7 +74,7 @@ ms.locfileid: "60193634"
 
 ## <a name="endpoint"></a>Конечная точка
 
-На URL-адрес [конечной точки LUIS](https://aka.ms/luis-endpoint-apis) отправляются запросы LUIS после разработки и публикации [приложения LUIS](#luis-app). В URL-адресе конечной точки содержится регион опубликованного приложения, а также идентификатор приложения. Конечную точку можно найти на странице **[Keys and endpoints](luis-how-to-azure-subscription.md)** (Ключи и конечные точки) вашего приложения. Кроме того, URL-адрес конечной точки можно получить из API [получения сведений о приложении](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c37).
+На URL-адрес [конечной точки LUIS](https://go.microsoft.com/fwlink/?linkid=2092356) отправляются запросы LUIS после разработки и публикации [приложения LUIS](#luis-app). В URL-адресе конечной точки содержится регион опубликованного приложения, а также идентификатор приложения. Конечную точку можно найти на странице **[Keys and endpoints](luis-how-to-azure-subscription.md)** (Ключи и конечные точки) вашего приложения. Кроме того, URL-адрес конечной точки можно получить из API [получения сведений о приложении](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/5890b47c39e2bb052c5b9c37).
 
 Пример конечной точки выглядит следующим образом:
 
@@ -82,11 +82,11 @@ ms.locfileid: "60193634"
 
 |Параметр QueryString|description|
 |--|--|
-|region| [регион публикации](luis-reference-regions.md#publishing-regions) |
+|Область| [регион публикации](luis-reference-regions.md#publishing-regions) |
 |appID | идентификатор приложения LUIS |
 |subscriptionID | ключ конечной точки (подписки) LUIS, созданный на портале Azure |
 |q | фраза |
-|timezoneOffset| minutes|
+|timezoneOffset| мин.|
 
 ## <a name="entity"></a>Сущность
 

@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 01/09/2019
 ms.author: diberry
-ms.openlocfilehash: c9f1cf80cd3a781e878daca2048f7c5dc9095a7c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 02c079e9cda88c969e5382b2c70c551cf9a88e14
+ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60710630"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65522494"
 ---
 # <a name="testing-example-utterances-in-luis"></a>Тестирование примеров фраз в LUIS
 
@@ -46,7 +46,7 @@ ms.locfileid: "60710630"
 Если вы тестируете конечную точку и не хотите вести журнал для высказывания, следует использовать конфигурацию строки запроса `logging=false`.
 
 ## <a name="where-to-find-utterances"></a>Где найти высказывания
-LUIS хранит все зарегистрированные высказывания в журнале запросов, который доступен для скачивания на странице списка **Приложения** веб-сайта [LUIS](luis-reference-regions.md), а также [API-интерфейсы разработки](https://aka.ms/luis-authoring-apis) LUIS. 
+LUIS хранит все зарегистрированные высказывания в журнале запросов, который доступен для скачивания на странице списка **Приложения** веб-сайта [LUIS](luis-reference-regions.md), а также [API-интерфейсы разработки](https://go.microsoft.com/fwlink/?linkid=2092087) LUIS. 
 
 Высказывания, неизвестные для LUIS, приведены на странице **[Просмотр фрагментов речи конечной точки](luis-how-to-review-endpoint-utterances.md)** на веб-сайте [LUIS](luis-reference-regions.md). 
 
