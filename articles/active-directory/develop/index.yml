@@ -6,7 +6,7 @@ metadata:
   description: 'Узнайте, как можно использовать платформу удостоверений Майкрософт для создания приложений, которые обеспечивают безопасный вход пользователей с любыми удостоверениями Майкрософт, получают маркеры для вызова Microsoft Graph, других интерфейсов API Майкрософт или интерфейсов API, которые создали разработчики.'
   services: active-directory
   author: CelesteDG
-  manager: mtillman
+  manager: CelesteDG
   ms.service: active-directory
   ms.subservice: develop
   ms.tgt_pltfrm: na
