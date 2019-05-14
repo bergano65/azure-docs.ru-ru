@@ -10,15 +10,18 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 12/13/2018
 ms.author: wolfma
-ms.openlocfilehash: 2f190ccbead9e6349543d04e2419f458888fba2c
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: d297addbeffcc530ba676e4132f9f0ebdceac3c9
+ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59008753"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65466992"
 ---
 # <a name="quickstart-recognize-speech-with-the-speech-sdk-for-net-framework-windows"></a>Краткое руководство. Распознавание речи с помощью пакета SDK службы "Речь" для .NET Framework (Windows)
 
+Также доступны краткие руководства по [преобразованию текста в речь](quickstart-text-to-speech-dotnet-windows.md) и [переводу речи](quickstart-translate-speech-dotnetframework-windows.md).
+
+При необходимости переключитесь на другой язык программирования и (или) среду:<br/>
 [!INCLUDE [Selector](../../../includes/cognitive-services-speech-service-quickstart-selector.md)]
 
 Сведения в этом руководстве помогут создать консольное приложение для преобразования речи в текст с помощью .NET Framework для Windows и пакета SDK службы "Речь". После завершения вы сможете преобразовывать речь в текст в режиме реального времени с использованием микрофона компьютера.

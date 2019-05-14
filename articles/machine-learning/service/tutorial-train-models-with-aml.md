@@ -1,23 +1,23 @@
 ---
 title: Руководство по классификации изображений. Обучение моделей
 titleSuffix: Azure Machine Learning service
-description: В этом руководстве показано, как использовать службу "Машинное обучение Azure" для обучения модели классификации изображений с помощью scikit-learn в Jupyter Notebook для Python. Это руководство представляет собой первую часть серии, состоящей из двух частей.
+description: Узнайте, как использовать Службу машинного обучения Azure для обучения модели классификации изображений с помощью scikit-learn в записной книжке Jupyter на Python. Это руководство представляет собой первую часть серии, состоящей из двух частей.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: tutorial
 author: sdgilley
 ms.author: sgilley
-ms.date: 04/25/2019
+ms.date: 05/08/2019
 ms.custom: seodec18
-ms.openlocfilehash: 712b5a003d3542908698d7b69c636780f6cf1007
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: 097fb3422ce3868d9ef499ad6c92c8b7fa12e852
+ms.sourcegitcommit: 4891f404c1816ebd247467a12d7789b9a38cee7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65021717"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65442061"
 ---
-# <a name="tutorial-train-an-image-classification-model-with-azure-machine-learning-service"></a>Руководство по обучению модели классификации изображений с помощью Службы машинного обучения Azure
+# <a name="tutorial-train-image-classification-models-with-mnist-data-and-scikit-learn-using-azure-machine-learning"></a>Руководство по Обучение моделей классификации изображений с помощью данных MNIST и scikit-learn в Службе машинного обучения Azure
 
 В этом руководстве необходимо обучить модель машинного обучения на удаленных вычислительных ресурсах. Вы будете использовать рабочий процесс обучения и развертывания для службы "Машинное обучение Azure" (предварительная версия) в Jupyter Notebook для Python.  Затем можно использовать записную книжку как шаблон для обучения собственной модели машинного обучения со своими данными. Это руководство представляет собой **первую часть серии, состоящей из двух частей**.  
 

@@ -10,15 +10,18 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 12/13/2018
 ms.author: wolfma
-ms.openlocfilehash: 938efe79d4f9f0b9003fcf83196df80d71d16e75
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: f3dd4d20c6455e97b566ed435b14437d614e25b4
+ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59009433"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65466432"
 ---
 # <a name="quickstart-recognize-speech-with-the-speech-sdk-for-net-core"></a>Краткое руководство. Распознавание речи с помощью пакета SDK службы "Речь" для .NET Core
 
+Также доступны краткие руководства по [переводу речи](quickstart-translate-speech-dotnetcore-windows.md).
+
+При необходимости переключитесь на другой язык программирования и (или) среду:<br/>
 [!INCLUDE [Selector](../../../includes/cognitive-services-speech-service-quickstart-selector.md)]
 
 Из этой статьи вы узнаете, как с помощью [пакета SDK службы "Речь"](speech-sdk.md) в Cognitive Services создать консольное приложение C# для .NET Core в Windows или macOS. Вы преобразуете речь с микрофона вашего компьютера в текст в реальном времени. Приложение основано на [пакете SDK NuGet для службы "Речь"](https://aka.ms/csspeech/nuget) и Microsoft Visual Studio 2017 (любого выпуска).

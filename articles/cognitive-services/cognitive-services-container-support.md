@@ -8,14 +8,14 @@ manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.topic: article
-ms.date: 05/07/2019
+ms.date: 05/13/2019
 ms.author: diberry
-ms.openlocfilehash: 241bda5c684197a43cc5564e950e924fed668b89
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 87599817ba7b50b941612c13c07842644f979fb7
+ms.sourcegitcommit: 3675daec6c6efa3f2d2bf65279e36ca06ecefb41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65147564"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65619712"
 ---
 # <a name="container-support-in-azure-cognitive-services"></a>Поддержка контейнеров в Azure Cognitive Services
 
@@ -50,14 +50,14 @@ ms.locfileid: "65147564"
 
 Контейнеры Azure Cognitive Services предоставляют описанный ниже набор контейнеров Docker, каждый из которых содержит подмножество функций нескольких служб в Azure Cognitive Services.
 
-| Service | Поддерживаемые ценовую категорию | Контейнер | ОПИСАНИЕ |
+| Service | Поддерживаемые ценовую категорию | Контейнер | Описание |
 |---------|----------|----------|-------------|
 |[Средства обнаружения аномалий](https://go.microsoft.com/fwlink/?linkid=2083925&clcid=0x409) |F0, S0|**Средства обнаружения аномалий** |API обнаружения аномалий позволяет отслеживать и выявлять аномалии в данных временных рядов с помощью машинного обучения.<br>[Запрос доступа](https://aka.ms/adcontainer)|
 |[Компьютерное зрение](Computer-vision/computer-vision-how-to-install-containers.md) |F0 S1|**Распознавание текста** |Извлекает печатный текст из изображений различных объектов с разными поверхностями и фонами, например чеков, плакатов и визитных карточек.<br/><br/>**Важно!** Контейнер распознавания текста в настоящее время работает только на английском языке.<br>[Запрос доступа](Computer-vision/computer-vision-how-to-install-containers.md#request-access-to-the-private-container-registry)|
 |[Распознавание лиц](Face/face-how-to-install-containers.md) |F0, S0|**Распознавание лиц** |Обнаруживает человеческие лица на изображениях и определяет методом машинного прогнозирования их характеристики, например черты лица (нос, глаза и т. д.), пол, возраст и многое другое. Кроме обнаружения лиц, служба может сравнивать два лица на одном или на разных изображениях, используя оценку достоверности, а также искать по базе данных похожие или идентичные лица. Схожие лица можно упорядочивать в группы по близким характеристикам.<br>[Запрос доступа](Face/face-how-to-install-containers.md#request-access-to-the-private-container-registry) |
 |[Распознаватель формы](https://go.microsoft.com/fwlink/?linkid=2083826&clcid=0x409) |F0, S0|**Распознаватель формы** |Основные сведения о форме применяется технологии машинного обучения для идентификации и извлечения пар "ключ значение" и таблиц из форм.<br>[Запрос доступа](https://aka.ms/FormRecognizerContainerRequestAccess)|
 |[LUIS](LUIS/luis-container-howto.md) |F0, S0|**LUIS** ([образ](https://go.microsoft.com/fwlink/?linkid=2043204&clcid=0x409))|Загружает обученную или опубликованную модель Распознавания речи, также известную как приложение LUIS, в контейнер Docker и предоставляет доступ к прогнозам запроса из конечных точек API контейнера. Можно собирать журналы запросов из контейнера и отправлять их обратно на [портал LUIS](https://www.luis.ai) для повышения точности прогнозов приложения.|
-|[Personalizer](https://go.microsoft.com/fwlink/?linkid=2083923&clcid=0x409) |F0, S0|**Personalizer** ([изображение](https://go.microsoft.com/fwlink/?linkid=2083928&clcid=0x409))|Azure Personalizer — это облачная служба API можно выбрать для получения наилучших результатов для отображения для пользователей, обучение от их поведения в режиме реального времени.|
+|[Personalizer](https://go.microsoft.com/fwlink/?linkid=2083923&clcid=0x409) |F0, S0|**Personalizer** ([изображение](https://go.microsoft.com/fwlink/?linkid=2083928&clcid=0x409))|Персонализатор Azure — это облачная служба API, которая позволяет выбирать оптимальную работу для своих пользователей, изучая их поведение в режиме реального времени.|
 |[API службы "Речь"](https://go.microsoft.com/fwlink/?linkid=2083926&clcid=0x409) |F0, S0|**Преобразование речи в текст** |Расшифровывает непрерывную речь в режиме реального времени в текстовый формат.<br>[Запрос доступа](https://aka.ms/speechcontainerspreview/)|
 |[API службы "Речь"](https://go.microsoft.com/fwlink/?linkid=2083926&clcid=0x409) |F0, S0|**Преобразование текста в речь** |Преобразует текст в естественно звучащую речь.<br>[Запрос доступа](https://aka.ms/speechcontainerspreview/)|
 |[Анализ текста](text-analytics/how-tos/text-analytics-how-to-install-containers.md) |F0, S|**Извлечение ключевых фраз** ([изображение](https://go.microsoft.com/fwlink/?linkid=2018757&clcid=0x409)) |Извлекает ключевые фразы для определения основных идей текста. Например, для входного текста "Еда была вкусной и персонал был замечательным" API вернет основные тезисы в записи: "еда" и "замечательный персонал". |
@@ -66,8 +66,8 @@ ms.locfileid: "65147564"
 
 Кроме того, некоторые контейнеры поддерживаются в Cognitive Services [ **предложения все в одном** ](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesAllInOne) ключи ресурсов. Можно создать один единый ресурс Cognitive Services в одном и использовать один и тот же ключ выставления счетов для поддерживаемых служб для следующих служб:
 
-* API компьютерного зрения
-* API распознавания лиц
+* Компьютерное зрение
+* Распознавание лиц
 * LUIS
 * Текстовая аналитика
 
@@ -76,7 +76,12 @@ ms.locfileid: "65147564"
 Контейнеры Azure Cognitive Services общедоступны через подписку Azure, а образы для контейнеров Docker можно извлечь из Реестра контейнеров Microsoft или Docker Hub. Используйте команду [docker pull](https://docs.docker.com/engine/reference/commandline/pull/), чтобы скачать образ контейнера из соответствующего репозитория.
 
 > [!IMPORTANT]
-> Сейчас для доступа к контейнерам [Распознавание лиц](Face/face-how-to-install-containers.md) и [Распознавание текста](Computer-vision/computer-vision-how-to-install-containers.md) требуется пройти регистрацию. Для этого нужно заполнить и отправить анкету с вопросами о вас, вашей компании и планируемых к реализации сценариях использования контейнеров. Получив доступ и учетные данные, вы сможете извлечь образы контейнеров "Распознавание лиц" и (или) "Распознавание текста" из закрытого реестра контейнеров в Реестре контейнеров Azure.
+> В настоящее время необходимо выполнить процесс регистрации для доступа к со следующими контейнерами, в которых вы заполнения и отправки анкеты с вопросами о вас, вашей компании и вариант использования, для которого вы хотите реализовать контейнеры. Получив доступ и учетные данные, вы сможете извлечь образы контейнеров "Распознавание лиц" и (или) "Распознавание текста" из закрытого реестра контейнеров в Реестре контейнеров Azure.
+> * [Dectector аномалий](Anomaly-Detector/anomaly-detector-container-howto.md#request-access-to-the-container-registry)
+> * [Распознавание лиц](Face/face-how-to-install-containers.md)
+> * [Распознаватель формы](form-recognizer/form-recognizer-container-howto.md#request-access-to-the-container-registry)
+> * [Распознавание текста](Computer-vision/computer-vision-how-to-install-containers.md)
+> * [Преобразование речи в текст и преобразования текста в речь](Speech-Service/speech-container-howto.md#request-access-to-the-container-registry)
 
 ## <a name="prerequisites"></a>Технические условия
 

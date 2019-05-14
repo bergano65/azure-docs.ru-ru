@@ -22,25 +22,12 @@
       href: policy/overview.md
     - name: Схемы
       href: blueprints/overview.md
-- name: Варианты реализации решения
-  expanded: true
+- name: Cloud Adoption Framework
   items:
-    - name: Внедрение облачных решений в организации
-      items:
-        - name: Общее представление о системе управления облачными ресурсами
-          href: /azure/architecture/cloud-adoption/getting-started/what-is-governance?toc=/azure/governance/toc.json
-        - name: Система управления доступом к ресурсам в Azure
-          href: /azure/architecture/cloud-adoption/getting-started/azure-resource-access?toc=/azure/governance/toc.json
-        - name: Разработка системы управления для одной команды
-          href: /azure/architecture/cloud-adoption/governance/governance-single-team?toc=/azure/governance/toc.json
-        - name: Разработка системы управления для нескольких команд
-          href: /azure/architecture/cloud-adoption/governance/governance-multiple-teams?toc=/azure/governance/toc.json
-    - name: Шаблон Azure Enterprise
-      items:
-        - name: Рекомендуемая система управления подписками
-          href: /azure/architecture/cloud-adoption/appendix/azure-scaffold?toc=/azure/governance/toc.json
-        - name: Реализация шаблона Azure Enterprise
-          href: /azure/architecture/cloud-adoption/appendix/azure-scaffold-examples?toc=/azure/governance/toc.json
+    - name: Обзор
+      href: /azure/architecture/cloud-adoption/index?toc=/azure/governance/toc.json
+    - name: Обзор системы управления
+      href: /azure/architecture/cloud-adoption/governance/index?toc=/azure/governance/toc.json
 - name: Ресурсы
   items:
     - name: Стратегия развития Azure

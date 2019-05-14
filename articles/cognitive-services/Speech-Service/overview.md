@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: overview
 ms.date: 05/02/2019
 ms.author: erhopf
-ms.openlocfilehash: 8e5131e0c44f6f46d47fc0bcdcfb8c0503500357
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: e29e36807aff6c32f295c79c90d80c7d2b5b4bcc
+ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65200736"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65510731"
 ---
 # <a name="what-are-the-speech-services"></a>Общие сведения о службе "Речь"
 
@@ -63,7 +63,7 @@ ms.locfileid: "65200736"
 После того, как у вас будет возможность использовать службы речи, просмотрите наше руководство, которое научит вас распознавать намерения из речи с помощью пакета SDK для распознавания речи и LUIS.
 
 * [Руководство Распознавание намерений в речи с помощью пакета SDK для распознавания речи и LUIS, C#](how-to-recognize-intents-from-speech-csharp.md)
-* [Руководство Создание приложения Flask для перевода текста, анализа тональности и синтеза преобразованной из текста речи с использованием REST](https://docs.microsoft.com/en-us/azure/cognitive-services/translator/tutorial-build-flask-app-translation-synthesis?toc=%2fazure%2fcognitive-services%2fspeech-service%2ftoc.json&bc=%2fazure%2fcognitive-services%2fspeech-service%2fbreadcrumb%2ftoc.json&toc=%2Fen-us%2Fazure%2Fcognitive-services%2Fspeech-service%2Ftoc.json&bc=%2Fen-us%2Fazure%2Fbread%2Ftoc.json)
+* [Руководство Создание приложения Flask для перевода текста, анализа тональности и синтеза преобразованной из текста речи с использованием REST](https://docs.microsoft.com/azure/cognitive-services/translator/tutorial-build-flask-app-translation-synthesis?toc=%2fazure%2fcognitive-services%2fspeech-service%2ftoc.json&bc=%2fazure%2fcognitive-services%2fspeech-service%2fbreadcrumb%2ftoc.json&toc=%2Fen-us%2Fazure%2Fcognitive-services%2Fspeech-service%2Ftoc.json&bc=%2Fen-us%2Fazure%2Fbread%2Ftoc.json)
 
 ## <a name="get-sample-code"></a>Получение примера кода
 

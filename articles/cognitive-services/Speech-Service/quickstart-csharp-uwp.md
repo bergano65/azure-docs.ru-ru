@@ -11,15 +11,18 @@ ms.topic: quickstart
 ms.date: 12/06/2018
 ms.author: wolfma
 ms.custom: seodec18
-ms.openlocfilehash: 26d6e5e53968a88eaccff863b4affee6057f5952
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 674bb3f22f7b8c7c7ea3b52c2f27d862a9961fcb
+ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57903306"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65466253"
 ---
 # <a name="quickstart-recognize-speech-in-a-uwp-app-by-using-the-speech-sdk"></a>Краткое руководство. Распознавание речи в приложении для универсальной платформы Windows с помощью пакета SDK службы "Речь"
 
+Также доступны краткие руководства по [переводу речи](quickstart-translate-speech-uwp.md) и [виртуальному помощнику для обработки голоса](quickstart-virtual-assistant-csharp-uwp.md).
+
+При необходимости переключитесь на другой язык программирования и (или) среду:<br/>
 [!INCLUDE [Selector](../../../includes/cognitive-services-speech-service-quickstart-selector.md)]
 
 Из этой статьи вы узнаете, как разработать приложение C# для универсальной платформы Windows (Windows 1709 или более поздней версии) с помощью [пакета SDK службы "Речь"](speech-sdk.md) в Cognitive Services. Программа будет преобразовывать речь с микрофона вашего устройства в текст в реальном времени. Приложение создается с использованием [пакета SDK NuGet для службы "Речь"](https://aka.ms/csspeech/nuget) и Microsoft Visual Studio 2017 (любого выпуска).

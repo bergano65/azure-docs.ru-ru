@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: travisw
 ms.custom: ''
-ms.openlocfilehash: 1344de526564ab623a51eb903951b6a2e866048d
-ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
+ms.openlocfilehash: 1c5712fa8bbdb158992127f8f48d810a0a9b6f79
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2019
-ms.locfileid: "65523477"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65603478"
 ---
 # <a name="about-custom-voice-first-virtual-assistants-preview"></a>Сведения о предварительной версии пользовательские виртуальные помощники voice-first
 
@@ -24,7 +24,9 @@ ms.locfileid: "65523477"
 
    ![Концептуальная схема потока службы согласования речи прямую линию](media/voice-first-virtual-assistants/overview.png "потока. канал «речь»")
 
-Прямой линии речи и его возможностях для пользовательских голосовых first виртуального помощников являются идеальным дополнением к [виртуальным Assistant решением](https://docs.microsoft.com/azure/bot-service/bot-builder-virtual-assistant-introduction) и [корпоративных шаблонов](https://docs.microsoft.com/azure/bot-service/bot-builder-virtual-assistant-introduction). Хотя прямой линии речи может работать с любой совместимый программ-роботов, эти ресурсы предоставляют многократно используемые базовые показатели для эффективное взаимодействие с клиентом грамматики голосового управления, а также общие вспомогательные навыки и моделей для Быстрое начало работы.
+
+Прямой линии речи и его возможностях для пользовательских голосовых first виртуального помощников являются идеальным дополнением к [виртуальным Assistant решением и корпоративных шаблонов](https://docs.microsoft.com/azure/bot-service/bot-builder-enterprise-template-overview). Хотя прямой линии речи может работать с любой совместимый программ-роботов, эти ресурсы предоставляют многократно используемые базовые показатели для эффективное взаимодействие с клиентом грамматики голосового управления, а также общие вспомогательные навыки и моделей для Быстрое начало работы.
+
 
 ## <a name="core-features"></a>Основные функции
 

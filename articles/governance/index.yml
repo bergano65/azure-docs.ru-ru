@@ -8,7 +8,7 @@ metadata:
   manager: carmonm
   ms.service: governance
   ms.topic: landing-page
-  ms.date: 09/18/2018
+  ms.date: 05/07/2019
   ms.author: dacoulte
 abstract:
   description: "Система управления Azure\_— это набор концепций и служб, предназначенных для управления ресурсами Azure в нужном масштабе. Эти службы позволяют возможность логически упорядочивать и структурировать подписки, создавать и развертывать повторно используемые или собственные пакеты ресурсов Azure для определения, аудита и оптимизации ресурсов. Эта страница содержит подробные сведения о компонентах и службах, а также о том, как включить и использовать их в вашей среде уже сегодня."
@@ -53,16 +53,16 @@ sections:
               alt: Схемы
               src: ./media/blueprints-illustration.svg
             title: Схемы
-  - title: Варианты реализации решения
+  - title: Cloud Adoption Framework
   - items:
       - type: list
         style: cards
         className: cardsZ
         columns: 3
         items:
-          - href: /azure/architecture/cloud-adoption/getting-started/what-is-governance?toc=/azure/governance/toc.json
-            html: "<p>В прошлом технологии любого уровня\_— от инфраструктуры до программного обеспечения\_— находились в собственности и рамках ответственности организаций. Теперь облако позволяет изменить способ использования технологий: ресурсы подготавливаются и потребляются по мере необходимости.</p>"
-            title: Внедрение облачных решений в организации
-          - href: /azure/architecture/cloud-adoption/appendix/azure-scaffold?toc=/azure/governance/toc.json
-            html: '<p>Теперь администраторы могут гарантировать, что рабочие нагрузки соответствуют минимальным требованиям управления организации, не мешая бизнес-группам и разработчикам быстро достигать своих целей.<br /><br /></p>'
-            title: Шаблон для предприятий
+          - href: /azure/architecture/cloud-adoption/index?toc=/azure/governance/toc.json
+            html: '<p>Cloud Adoption Framework предоставляет техническое руководство по Microsoft Azure. Так как клиенты могут все еще выбирать поставщика облака, эта платформа обеспечивает общее руководство по облачным технологиям, чтобы по возможности упростить принятие решений более высокого уровня.</p>'
+            title: Обзор
+          - href: /azure/architecture/cloud-adoption/governance/index?toc=/azure/governance/toc.json
+            html: <p>В организациях управление облачными решениями нужно реализовать наряду с существующими политиками управления локальными ИТ-средами.<br /><br /></p>
+            title: Обзор системы управления

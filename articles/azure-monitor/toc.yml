@@ -314,8 +314,9 @@
                 - name: Монитор состояния
                   href: app/monitor-performance-live-website-now.md
                 - name: "Монитор состояния версии\_2"
-                  href: app/status-monitor-v2-overview.md
                   items:
+                    - name: Обзор
+                      href: app/status-monitor-v2-overview.md
                     - name: Приступая к работе
                       href: app/status-monitor-v2-get-started.md
                     - name: Подробные инструкции
@@ -557,7 +558,7 @@
                   href: app/usage-workbooks.md
             - name: Просмотр аналитики для всех ресурсов веб-приложений Azure
               href: insights/azure-web-apps-analytics.md
-            - name: 'Приложения, размещенные в Kubernetes'
+            - name: Мониторинг приложений Kubernetes
               href: app/kubernetes.md
         - name: Мониторинг контейнеров
           items:
@@ -631,8 +632,18 @@
                   href: insights/vminsights-known-issues.md
                 - name: Часто задаваемые вопросы
                   href: insights/vminsights-faq.md
-                - name: Подключение
-                  href: insights/vminsights-onboard.md
+                - name: Включение мониторинга
+                  items:
+                    - name: Общие сведения о включении мониторинга
+                      href: insights/vminsights-enable-overview.md
+                    - name: Включение для отдельной виртуальной машины Azure
+                      href: insights/vminsights-enable-single-vm.md
+                    - name: Включение при помощи Политики Azure
+                      href: insights/vminsights-enable-at-scale-policy.md
+                    - name: Включить при помощи Azure PowerShell
+                      href: insights/vminsights-enable-at-scale-powershell.md
+                    - name: Включение в гибридной среде
+                      href: insights/vminsights-enable-hybrid-cloud.md
                 - name: Мониторинг работоспособности
                   href: insights/vminsights-health.md
                 - name: Сопоставление зависимостей

@@ -8,25 +8,25 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: personalizer
 ms.topic: overview
-ms.date: 05/07/2019
+ms.date: 05/08/2019
 ms.author: edjez
-ms.openlocfilehash: f0aca3e387d675064cf798b4efdeb66cfe906520
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 85252680fcc4d2592d242762d01040c3859b14a2
+ms.sourcegitcommit: 4891f404c1816ebd247467a12d7789b9a38cee7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65153550"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65442073"
 ---
 # <a name="quickstart-personalize-content-using-c"></a>Краткое руководство. Персонализация содержимого с помощью C# 
 
 Отобразите персонализированное содержимое с помощью службы "Персонализатор" благодаря этому краткому руководству для C#.
 
-В этом примере показано, как использовать клиентскую библиотеку Персонализации для C# для выполнения следующих действий: 
+В этом примере показано, как использовать клиентскую библиотеку Персонализатора для C#, чтобы выполнять следующие действия: 
 
  * составление списка действий для персонализации;
  * создание отчета о вознаграждении, которое будет выделено для действий с наивысшим рейтингом на основе выбора пользователя для указанного события.
 
-Начало работы с Персонализацией включает в себя следующие шаги:
+Начало работы с Персонализатором включает в себя следующие шаги:
 
 1. использование пакета SDK; 
 1. написание кода для ранжирования действий, которые требуется отобразить пользователям;
@@ -34,9 +34,15 @@ ms.locfileid: "65153550"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Вам потребуется [Персонализатор](how-to-settings.md), чтобы получить ключ подписки и URL-адрес службы выдачи маркеров. 
+* Вам потребуется [служба "Персонализатор"](how-to-settings.md), чтобы получить ключ подписки и URL-адрес службы конечной точки. 
 * [Visual Studio 2015 или 2017](https://visualstudio.microsoft.com/downloads/).
-* Пакет SDK NuGet для Microsoft.Azure.CognitiveServices.Personalization. Инструкции по установке приведены ниже.
+* Пакет SDK NuGet для Microsoft.Azure.CognitiveServices.Personalizer. Инструкции по установке приведены ниже.
+
+## <a name="change-the-model-update-frequency"></a>Изменение частоты обновления модели
+
+В ресурсе "Персонализатор" на портале Azure установите для параметра **Частота обновления модели** значение 10 секунд. С этим значением служба будет обучаться быстро, и вы увидите, как главное действие меняется с каждой итерацией.
+
+![Изменение частоты обновления модели](./media/settings/configure-model-update-frequency-settings.png)
 
 ## <a name="creating-a-new-console-app-and-referencing-the-personalizer-sdk"></a>Создание нового консольного приложения и использование пакета SDK Персонализатора 
 
@@ -45,9 +51,9 @@ Get the latest code as a Visual Studio solution from [GitHub] (add link).
 -->
 
 1. Создайте консольное приложение Visual C# в Visual Studio.
-1. Установите пакет NuGet клиентской библиотеки Персонализации. В меню выберите **Средства**, **Диспетчер пакетов NuGet**, а затем **Manage NuGet Packages for Solution** (Управление пакетами NuGet для решения).
-1. Выберите вкладку **Обзор** и в поле **Поиск** введите `Microsoft.Azure.CognitiveServices.Personalization`.
-1. Когда отобразится **Microsoft.Azure.CognitiveServices.Personalization**, выберите его.
+1. Установите пакет NuGet клиентской библиотеки Персонализатора. В меню выберите **Средства**, **Диспетчер пакетов NuGet**, а затем **Manage NuGet Packages for Solution** (Управление пакетами NuGet для решения).
+1. Выберите вкладку **Обзор** и в поле **Поиск** введите `Microsoft.Azure.CognitiveServices.Personalizer`.
+1. Когда отобразится результат **Microsoft.Azure.CognitiveServices.Personalizer**, выберите его.
 1. Установите флажок рядом с названием своего проекта и выберите **Установить**
 
 ## <a name="add-the-code-and-put-in-your-personalizer-and-azure-keys"></a>Добавление кода и размещение ключей Персонализатора и Azure

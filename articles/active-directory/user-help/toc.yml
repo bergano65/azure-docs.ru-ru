@@ -28,9 +28,10 @@
       href: user-help-auth-app-overview.md
     - name: Скачивание и установка приложения
       href: user-help-auth-app-download-install.md
-    - name: Общие сведения о добавлении учетных записей
-      href: user-help-auth-app-add-account-overview.md
+    - name: Добавление учетных записей
       items:
+        - name: Обзор
+          href: user-help-auth-app-add-account-overview.md
         - name: Добавление рабочей или учебной учетной записи
           href: user-help-auth-app-add-work-school-account.md
         - name: Добавление личной учетной записи Майкрософт
@@ -63,9 +64,10 @@
       href: user-help-security-info-overview.md
     - name: Добавление сведений для защиты при входе в систему
       href: security-info-setup-signin.md
-    - name: Обзор методов добавления или обновления сведений для защиты
-      href: security-info-add-update-methods-overview.md
+    - name: Методы добавления или обновления сведений для защиты
       items:
+        - name: Обзор
+          href: security-info-add-update-methods-overview.md
         - name: Настройка приложения Authenticator
           href: security-info-setup-auth-app.md
         - name: Настройка обмена текстовыми сообщениями

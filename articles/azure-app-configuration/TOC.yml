@@ -66,7 +66,7 @@
         - name: Поставщик конфигурации Java Spring
           href: 'https://github.com/Microsoft/spring-cloud-azure/tree/azure-config/spring-cloud-azure-starters/spring-cloud-starter-azure-config'
         - name: Пакет Azure SDK для .NET
-          href: 'https://github.com/Azure/azure-sdk-for-net/tree/master/src/SDKs/Azure.ApplicationModel.Configuration/data-plane'
+          href: 'https://go.microsoft.com/fwlink/?linkid=2092056'
         - name: REST
           href: 'https://go.microsoft.com/fwlink/?linkid=2078296'
     - name: управление функциями.
@@ -74,7 +74,9 @@
         - name: Библиотека .NET Core
           href: 'https://go.microsoft.com/fwlink/?linkid=2091700'
         - name: Библиотека ASP.NET Core
-          href: 'https://go.microsoft.com/fwlink/?linkid=2091410'
+          href: 'https://go.microsoft.com/fwlink/?linkid=2091700'
+        - name: Библиотека фильтров для .NET Core
+          href: 'https://go.microsoft.com/fwlink/?linkid=2091601'
 - name: Ресурсы
   items:
     - name: Видео о начале работы

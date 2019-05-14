@@ -8,17 +8,27 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 05/02/2019
+ms.date: 05/13/2019
 ms.author: wolfma
 ms.custom: seodec18
-ms.openlocfilehash: fa722d749ec27a72a8be3bf8fcfd8097a1404458
-ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
+ms.openlocfilehash: f22b0fcac6099482addfcf56a20e0e828866326e
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65465598"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65606352"
 ---
 # <a name="release-notes"></a>Заметки о выпуске
+
+## <a name="speech-sdk-151"></a>Speech SDK 1.5.1
+
+Это выпуск для исправления ошибок и влияет только на машинные и управляемые пакета SDK. Она не влияет на JavaScript версию пакета SDK.
+
+**Исправления ошибок**
+
+* Исправьте FromSubscription при использовании с расшифровка дикторского текста для диалога.
+* Исправлена ошибка в ключевое слово, распознавание голоса первый виртуальный помощник.
+
 
 ## <a name="speech-sdk-150-2019-may-release"></a>Speech SDK 1.5.0: Выпуск мая 2019 г.
 

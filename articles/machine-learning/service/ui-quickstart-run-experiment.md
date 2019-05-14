@@ -9,16 +9,16 @@ ms.topic: quickstart
 author: sdgilley
 ms.author: sgilley
 ms.date: 05/02/2019
-ms.openlocfilehash: 985ad59a1ffa5bd68f97824f7f50af604174b543
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: d14ef4a59e65ba432b5d04d9f531e4ba639deb8a
+ms.sourcegitcommit: 4891f404c1816ebd247467a12d7789b9a38cee7e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65030062"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65440939"
 ---
-# <a name="quickstart-prepare-and-visualize-data-without-writing-code"></a>Краткое руководство. Подготовка и визуализация данных без написания кода
+# <a name="quickstart-prepare-and-visualize-data-without-writing-code-in-azure-machine-learning"></a>Краткое руководство. Подготовка и визуализация данных без написания кода в решении "Машинное обучение Azure"
 
-Выполняйте подготовку и визуализацию данных с помощью пользовательского интерфейса перетаскивания. Данные, которые вы будете использовать, охватывают информацию о разных автомобилях, включая сведения о производителе, модели, технических характеристиках и цене.  
+Подготавливайте и визуализируйте данные в визуальном интерфейсе с поддержкой перетаскивания (предварительная версия) для Машинного обучения Azure. Данные, которые вы будете использовать, охватывают информацию о разных автомобилях, включая сведения о производителе, модели, технических характеристиках и цене.  
 
 В этом кратком руководстве вы изучите и подготовите данные, выполнив следующие задачи:
 

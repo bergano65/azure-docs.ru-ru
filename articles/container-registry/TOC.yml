@@ -23,8 +23,10 @@
       items:
         - name: 1. Создание образов в Azure
           href: container-registry-tutorial-quick-task.md
-        - name: 2. Автоматизация создания образов
+        - name: 2а. Автоматическая сборка при фиксации кода
           href: container-registry-tutorial-build-task.md
+        - name: 2б. Многошаговые задачи при фиксации кода
+          href: container-registry-tutorial-multistep-task.md
         - name: 3. Создание обновлений базовых образов
           href: container-registry-tutorial-base-image-update.md
     - name: Георепликация реестра
@@ -84,7 +86,7 @@
               href: container-registry-auth-aci.md
             - name: Проверка подлинности из Службы Azure Kubernetes (AKS)
               href: container-registry-auth-aks.md
-        - name: Доверие к содержимому (предварительная версия)
+        - name: Доверие к содержимому
           href: container-registry-content-trust.md
     - name: Сборка и применение исправлений
       items:

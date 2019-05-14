@@ -10,12 +10,12 @@ author: j-martens
 ms.author: jmartens
 ms.date: 05/02/2019
 ms.custom: seodec18
-ms.openlocfilehash: 201ee251b195845e33ed3829be8540664811f2ab
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: c9ebacd8caf992874969106df58531538ea399ed
+ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65025279"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65510430"
 ---
 # <a name="what-is-azure-machine-learning-service"></a>Что такое служба машинного обучения Azure
 
@@ -38,7 +38,7 @@ ms.locfileid: "65025279"
 
 ## <a name="what-can-i-do-with-azure-machine-learning-service"></a>Что можно делать с помощью службы машинного обучения Azure?
 
-Используя <a href="https://aka.ms/aml-sdk" target="_blank">пакет SDK Python для машинного обучения Azure</a> с пакетами Python с открытым исходным кодом или [графическим интерфейсом (предварительная версия)](ui-quickstart-run-experiment.md), вы сами сможете создавать и обучать высокоточные модели машинного и глубокого обучения в рабочей области Службы машинного обучения Azure.
+Используйте <a href="https://aka.ms/aml-sdk" target="_blank">пакет SDK Python для Машинного обучения Azure</a> с пакетами Python с открытым исходным кодом или [графический интерфейс (предварительная версия)](ui-quickstart-run-experiment.md), чтобы создавать и обучать высокоточные модели машинного и глубокого обучения в рабочей области Службы машинного обучения Azure.
 
 Пакеты Python с открытым исходным кодом предлагают такие различные компоненты машинного обучения, как <a href="https://scikit-learn.org/stable/" target="_blank">Scikit-learn</a>, <a href="https://www.tensorflow.org" target="_blank">Tensorflow</a>, <a href="https://pytorch.org" target="_blank">PyTorch</a> и <a href="https://mxnet.io" target="_blank">MXNet</a>.
 
@@ -106,8 +106,6 @@ ms.locfileid: "65025279"
 - Исчерпывающие руководства: 
   + [Руководство по обучению модели классификации изображений с помощью Службы машинного обучения Azure](tutorial-train-models-with-aml.md) 
   + [Руководство. Подготовка данных для моделирования регрессии](tutorial-data-prep.md)
-
-- Подготовьте данные с помощью [этого пакета SDK для службы "Машинное обучение Azure"](https://aka.ms/data-prep-sdk).
 
 - См. сведения о [конвейерах машинного обучения](/azure/machine-learning/service/concept-ml-pipelines), которые можно использовать для создания и оптимизации сценариев машинного обучения, а также управления ими.
 

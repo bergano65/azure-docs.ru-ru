@@ -10,14 +10,16 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 03/13/2019
 ms.author: erhopf
-ms.openlocfilehash: b0b0c256db3cc93e515b38bf7daad72b082d2d3d
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: fa516c5050bfd53add761bea56c74a58057263c7
+ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57850264"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65465689"
 ---
 # <a name="quickstart-translate-speech-with-the-speech-sdk-for-net-core"></a>Краткое руководство. Перевод речи с помощью пакета SDK службы "Речь" для .NET Core
+
+Также доступны краткие руководства по [преобразованию речи в текст](quickstart-csharp-dotnet-windows.md) и [преобразованию текста в речь](quickstart-text-to-speech-dotnet-windows.md).
 
 При работе с этим кратким руководством вы создадите простое приложение .NET Core, которое записывает речь пользователя с микрофона компьютера, переводит речь и транскрибирует переведенный текст в командную строку в реальном времени. Приложение предназначено для работы в 64-разрядной версии Windows с использованием [пакета NuGet SDK службы "Речь"](https://aka.ms/csspeech/nuget) и Microsoft Visual Studio 2017.
 

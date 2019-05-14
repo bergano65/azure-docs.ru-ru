@@ -16,6 +16,8 @@
       href: apache-spark-jupyter-spark-sql-use-portal.md
     - name: Создание кластера Apache Spark (PowerShell)
       href: apache-spark-jupyter-spark-sql-use-powershell.md
+    - name: Создание кластера Apache Spark (Azure CLI)
+      href: apache-spark-create-cluster-cli.md
     - name: Создание кластера Apache Spark с использованием шаблона Resource Manager
       displayName: 'resource manager template, arm template, resource manager group'
       href: apache-spark-jupyter-spark-sql.md
@@ -250,7 +252,7 @@
             - name: Использование cURL и Azure REST API
               href: ../hdinsight-hadoop-create-linux-clusters-curl-rest.md
               maintainContext: true
-            - name: Использование классического Azure CLI
+            - name: Использование Azure CLI
               href: ../hdinsight-hadoop-create-linux-clusters-azure-cli.md
               maintainContext: true
             - name: Создание кластеров по запросу

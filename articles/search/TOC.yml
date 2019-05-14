@@ -131,7 +131,7 @@
           items:
             - name: Создание средства подбора
               href: index-add-suggesters.md
-            - name: 'Примеры (предложения, автозаполнение)'
+            - name: Добавление предложения или автозаполнение
               href: search-autocomplete-tutorial.md
         - name: синонимы;
           items:

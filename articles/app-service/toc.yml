@@ -76,6 +76,8 @@
           href: overview-authentication-authorization.md
         - name: Установка исправлений для ОС и среды выполнения
           href: overview-patch-os-runtime.md
+        - name: Атрибуты безопасности
+          href: app-service-security-attributes.md
     - name: Входящие и исходящие IP-адреса
       href: overview-inbound-outbound-ips.md
     - name: Гибридные подключения

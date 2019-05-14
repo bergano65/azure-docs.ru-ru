@@ -9,14 +9,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 02/28/2019
+ms.date: 05/07/2019
 ms.author: diberry
-ms.openlocfilehash: 9099cdbb91e41998065d953b9d48b3b501df7c10
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: e77cd2290981de62ba7fce7f04174cd0c5ec2af3
+ms.sourcegitcommit: 179918af242d52664d3274370c6fdaec6c783eb6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60712769"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65072182"
 ---
 # <a name="dimension-prebuilt-entity-for-a-luis-app"></a>Предварительно созданная сущность dimension для приложения LUIS
 Предварительно созданная сущность dimension обнаруживает различные типы измерений, независимо от языка и региональных параметров LUIS. Так как эта сущность уже обучена, добавлять в назначения приложения примеры фраз, содержащие сущности dimension, не нужно. Сущность dimension поддерживается во [многих языках и региональных параметрах](luis-reference-prebuilt-entities.md). 
@@ -27,6 +27,9 @@ ms.locfileid: "60712769"
 
 
 ## <a name="resolution-for-dimension-entity"></a>Разрешение для сущности dimension
+
+### <a name="api-version-2x"></a>API версии 2.x
+
 В следующем примере показано разрешение сущности **builtin.dimension**.
 
 ```json
@@ -54,6 +57,70 @@ ms.locfileid: "60712769"
       }
     }
   ]
+}
+```
+
+### <a name="preview-api-version-3x"></a>Предварительная версия API 3.x
+
+Приведенный ниже код JSON является с `verbose` параметру присвоить `false`:
+
+```json
+{
+    "query": "it takes more than 10 1/2 miles of cable and wire to hook it all up , and 23 computers.",
+    "prediction": {
+        "normalizedQuery": "it takes more than 10 1/2 miles of cable and wire to hook it all up , and 23 computers.",
+        "topIntent": "None",
+        "intents": {
+            "None": {
+                "score": 0.400049
+            }
+        },
+        "entities": {
+            "dimension": [
+                {
+                    "number": 10.5,
+                    "unit": "Mile"
+                }
+            ]
+        }
+    }
+}
+```
+
+Приведенный ниже код JSON является с `verbose` параметру присвоить `true`:
+
+```json
+{
+    "query": "it takes more than 10 1/2 miles of cable and wire to hook it all up , and 23 computers.",
+    "prediction": {
+        "normalizedQuery": "it takes more than 10 1/2 miles of cable and wire to hook it all up , and 23 computers.",
+        "topIntent": "None",
+        "intents": {
+            "None": {
+                "score": 0.400049
+            }
+        },
+        "entities": {
+            "dimension": [
+                {
+                    "number": 10.5,
+                    "unit": "Mile"
+                }
+            ],
+            "$instance": {
+                "dimension": [
+                    {
+                        "type": "builtin.dimension",
+                        "text": "10 1/2 miles",
+                        "startIndex": 19,
+                        "length": 12,
+                        "modelTypeId": 2,
+                        "modelType": "Prebuilt Entity Extractor"
+                    }
+                ]
+            }
+        }
+    }
 }
 ```
 

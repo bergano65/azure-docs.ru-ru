@@ -226,7 +226,7 @@
           href: how-to-create-your-first-pipeline.md
         - name: Использование CI/CD рабочих процессов ML с Azure Pipelines
           displayName: 'continuous, integration, delivery'
-          href: /azure/devops/pipelines/targets/azure-machine-learning?view=azure-devop
+          href: /azure/devops/pipelines/targets/azure-machine-learning
           mainContext: true
     - name: Управление квотами ресурсов
       displayName: limits

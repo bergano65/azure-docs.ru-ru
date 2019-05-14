@@ -9,12 +9,12 @@ ms.subservice: form-recognizer
 ms.topic: overview
 ms.date: 05/07/2019
 ms.author: pafarley
-ms.openlocfilehash: c7d5d9421ec89f1d75723d3538ee9a73e56dc6a3
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: a7159fccc9c4ef232cfca08b173e712e268343ea
+ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65143023"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65507807"
 ---
 # <a name="install-and-run-form-recognizer-containers"></a>Установка и запуск контейнеров Распознавателя документов
 Распознаватель документов применяет технологии машинного обучения, чтобы идентифицировать и извлечь пары "ключ — значение" и таблицы из форм. Он связывает с ними значения и записи в таблицах, а затем выводит структурированные данные, которые включают в себя связи в исходном файле. Вы можете вызывать пользовательскую модель Распознавателя документов с помощью простого REST API, чтобы упростить и легко интегрировать ее в свой рабочий процесс автоматизации или другое приложение. Необходимо всего пять документов (или пустых форм), поэтому вы можете получать результаты быстро, точно и с учетом специфики вашего содержимого, не прибегая к сложному ручному вмешательству или продолжительной обработке и анализу данных. Это не требует добавления меток данных или заметок к данным.
@@ -261,7 +261,7 @@ formrecognizer_config = formrecognizersdk.FormRecognizerConfig(subscription=form
 
 ### <a name="form-recognizer"></a>Распознаватель документов
 
-Контейнер предоставляет конечную точку REST API, которую можно найти [здесь](https://docs.microsoft.com/azure/cognitive-services/formrecognizer-service/rest-apis#formrecognier-api). Примеры можно найти [здесь](https://azure.microsoft.com/resources/samples/cognitive-formrecognizer).
+Контейнер предоставляет API-интерфейсы конечной точки REST, которые можно найти [здесь](https://westus2.dev.cognitive.microsoft.com/docs/services/form-recognizer-api/operations/AnalyzeWithCustomModel).
 
 
 [!INCLUDE [Validate container is running - Container's API documentation](../../../includes/cognitive-services-containers-api-documentation.md)]

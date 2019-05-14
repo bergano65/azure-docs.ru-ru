@@ -175,6 +175,8 @@
           href: stream-analytics-troubleshoot-query.md
         - name: Журналы действий и диагностики
           href: stream-analytics-job-diagnostic-logs.md
+        - name: Ошибки данных
+          href: data-errors.md
     - name: Интеграция с машинным обучением
       items:
         - name: Анализ тональности с помощью моделей машинного обучения

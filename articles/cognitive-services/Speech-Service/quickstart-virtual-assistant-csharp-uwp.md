@@ -11,14 +11,16 @@ ms.topic: quickstart
 ms.date: 05/02/2019
 ms.author: travisw
 ms.custom: ''
-ms.openlocfilehash: ee7649dccf1ca50933e29cec9d40e4f5e16bd721
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.openlocfilehash: e2b25875a0dff12bba32b033bca0c35394d407aa
+ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65074109"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65465646"
 ---
 # <a name="quickstart-create-a-voice-first-virtual-assistant-with-the-speech-sdk-uwp"></a>Краткое руководство. Создание виртуального помощника по обработке голоса с помощью пакета SDK для распознавания речи, UWP.
+
+Также доступны краткие руководства по [преобразованию речи в текст](quickstart-csharp-uwp.md) и [переводу речи](quickstart-translate-speech-uwp.md).
 
 Из этой статьи вы узнаете, как разработать приложение C# для универсальной платформы Windows с помощью [пакета SDK службы "Речь"](speech-sdk.md). Программа подключится к ранее созданному и настроенному боту, чтобы включить из клиентского приложения интерфейс виртуального помощника по обработке голоса. Приложение создается с использованием [пакета SDK NuGet для службы "Речь"](https://aka.ms/csspeech/nuget) и Microsoft Visual Studio 2017 (любого выпуска).
 
@@ -80,16 +82,16 @@ ms.locfileid: "65074109"
             <MediaElement x:Name="mediaElement"/>
         </Grid>
     </Page>
-        ```
+    ```
 
-1. Open the code-behind source file `MainPage.xaml.cs`. You'll find it grouped under `MainPage.xaml`. Replace the contents with the code below. Here's what this sample covers: 
+1. Откройте исходный файл кода программной части `MainPage.xaml.cs`. Он сгруппирован в разделе `MainPage.xaml`. Замените его содержимое кодом, приведенным ниже. В этом примере показано следующее: 
 
-    * Using statements for the Speech and Speech.Dialog namespaces
-    * A simple implementation to ensure microphone access, wired to a button handler
-    * Basic UI helpers to present messages and errors in the application
-    * A landing point for the initialization code path that will be populated later
-    * A helper to play back text-to-speech (without streaming support)
-    * An empty button handler to start listening that will be populated later
+    * использование операторов для пространств имен Speech и Speech.Dialog;
+    * простая реализация доступа к микрофону с привязкой к обработчику кнопки;
+    * базовые вспомогательные функции пользовательского интерфейса для представления сообщений и ошибок в приложении;
+    * целевая точка для пути кода инициализации, который будет добавлен позже;
+    * вспомогательное приложение для воспроизведения текста, преобразованного в речь (без поддержки потоковой передачи данных);
+    * пустой обработчик кнопки воспроизведения, который будет заполнен позже.
 
     ```csharp
     using Microsoft.CognitiveServices.Speech;
@@ -239,7 +241,7 @@ ms.locfileid: "65074109"
             }
         }
     }
-     ```
+    ```
 
 1. Затем с помощью сведений о подписке вы создадите `SpeechBotConnector`. Добавьте следующее в тело метода `InitializeBotConnector`, заменив строки `YourChannelSecret`, `YourSpeechSubscriptionKey` и `YourServiceRegion` собственными значениями для бота, подпиской на распознавание речи и [регионом](regions.md).
 

@@ -11,12 +11,12 @@ author: j-martens
 ms.author: jmartens
 ms.date: 01/09/2019
 ms.custom: seodec18
-ms.openlocfilehash: 61c5d60f0c2fab3786aa6adfa194c0716e621ea3
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: 8081be7f411b38d2418d893654a5691bd1ad7cc1
+ms.sourcegitcommit: 399db0671f58c879c1a729230254f12bc4ebff59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65023646"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65470633"
 ---
 # <a name="what-happened-to-azure-machine-learning-workbench"></a>Что случилось с Azure Machine Learning Workbench?
 
@@ -68,7 +68,7 @@ ms.locfileid: "65023646"
 
 Уже существующие файлы подготовки данных нельзя перенести в последнюю версию, так как приложение Machine Learning Workbench больше не поддерживается. Но по-прежнему вы можете подготовить набор данных любого размера для моделирования.   
 
-Для наборов данных любых размеров можно использовать [пакет SDK для подготовки данных Службы машинного обучения Azure](https://aka.ms/data-prep-sdk), позволяющий быстро создать код Python для подготовки данных перед моделированием. 
+Для наборов данных любых размеров можно использовать [пакет подготовки данных для Машинного обучения Azure](https://aka.ms/data-prep-sdk), позволяющий быстро создать код Python для подготовки данных перед моделированием. 
 
 См. дополнительные сведения о том, как [использовать пакет SDK для подготовки данных Службы машинного обучения Azure](tutorial-data-prep.md).
 

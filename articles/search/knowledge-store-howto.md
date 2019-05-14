@@ -6,20 +6,20 @@ author: HeidiSteen
 services: search
 ms.service: search
 ms.topic: quickstart
-ms.date: 05/02/2019
+ms.date: 05/08/2019
 ms.author: heidist
-ms.openlocfilehash: 2a904cfb049af413887798c8aab449561bc2b73f
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: d9006e3fcfc9691b9f3eec4b86c545fd3fea9f8a
+ms.sourcegitcommit: 399db0671f58c879c1a729230254f12bc4ebff59
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65030052"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65471743"
 ---
 # <a name="how-to-get-started-with-knowledge-store"></a>Как приступить к работе с хранилищем знаний
 
 [Хранилище знаний](knowledge-store-concept-intro.md) — это новая функция (предварительная версия) в службе "Поиск Azure", которая позволяет хранить обогащенные с помощью ИИ данные, созданные в конвейере индексирования, для интеллектуального анализа знаний в других приложениях. Кроме того, с помощью сохраненных обогащений можно составить представление о конвейере индексирования в службе "Поиск Azure" и усовершенствовать его.
 
-Хранилище знаний определяется набором навыков. В обычных сценариях полнотекстового поиска в службе "Поиск Azure" с помощью набора навыков предоставляются обогащенные с использованием ИИ данные, которые делают содержимое более доступным для поиска. В сценариях с использованием хранилища знаний набор навыков отвечает за создание и заполнение нескольких структур данных для интеллектуального анализа знаний.
+Хранилище знаний определяется набором навыков. В обычных сценариях полнотекстового поиска в службе "Поиск Azure" с помощью набора навыков предоставляются обогащенные с использованием ИИ данные, которые делают содержимое более доступным для поиска. В сценариях интеллектуального анализа знаний набор навыков создает, заполняет и сохраняет различные структуры данных для анализа или моделирования в других приложениях и процессах.
 
 В этом упражнении мы начнем с демонстрационных данных, служб и средств. Они помогут изучить базовый рабочий процесс для создания и использования вашего первого хранилища знаний с акцентом на определение набора навыков.
 
@@ -29,13 +29,13 @@ ms.locfileid: "65030052"
 
 + [Создайте службу "Поиск Azure"](search-create-service-portal.md) или [найдите имеющуюся службу](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) в рамках текущей подписки. Вы можете использовать бесплатную службу для выполнения инструкций, описанных в этом учебнике. 
 
-+ [Создайте учетную запись хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account) для хранения примера данных. Хранилище знаний будет размещено в службе хранилища Azure.
++ [Создайте учетную запись хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account) для хранения примера данных. Хранилище знаний будет размещено в службе хранилища Azure. 
 
-+ [Создайте ресурс Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) на уровне S0 с оплатой по мере использования, чтобы получить широкий доступ ко всему набору навыков, используемых при обогащении данных с помощью ИИ.
++ [Создайте ресурс Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) на уровне S0 с оплатой по мере использования, чтобы получить широкий доступ ко всему набору навыков, используемых при обогащении данных с помощью ИИ. Этот ресурс и служба "Поиск Azure" должны находиться в одном регионе.
 
 + Используйте [классическое приложение Postman](https://www.getpostman.com/) для отправки запросов в Поиск Azure.
 
-+ Используйте [коллекцию Postman](https://github.com/Azure-Samples/azure-search-postman-samples/tree/master/caselaw) с подготовленными запросами для создания источника данных, индекса, набора навыков и индексатора. Некоторые определения объектов имеют слишком большую длину, поэтому мы не включили их в эту статью. Коллекция Postman позволяет просмотреть все определения индексов и набора навыков.
++ Используйте [коллекцию Postman](https://github.com/Azure-Samples/azure-search-postman-samples/tree/master/Caselaw) с подготовленными запросами для создания источника данных, индекса, набора навыков и индексатора. Некоторые определения объектов имеют слишком большую длину, поэтому мы не включили их в эту статью. Коллекция Postman позволяет просмотреть все определения индексов и набора навыков.
 
 + Используйте [демонстрационные данные Caselaw](https://github.com/Azure-Samples/azure-search-sample-data/tree/master/caselaw) со страницы для массового скачивания общедоступных данных на сайте [Caselaw Access Project](https://case.law/bulk/download/). В этом упражнении используются первые 10 документов первого пакета для скачивания (Arkansas). Для этого упражнения мы выложили в GitHub 10 демонстрационных документов.
 
@@ -55,7 +55,7 @@ ms.locfileid: "65030052"
 
 1. [Войдите на портал Azure](https://portal.azure.com), перейдите к учетной записи хранения Azure, выберите **Большие двоичные объекты**, а затем щелкните **Контейнер**.
 
-1. [Создайте контейнер больших двоичных объектов](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-portal) для хранения примера данных. Можно задать любое из допустимых значений уровня общего доступа.
+1. [Создайте контейнер больших двоичных объектов](https://docs.microsoft.com/azure/storage/blobs/storage-quickstart-blobs-portal) для хранения примера данных. Присвойте контейнеру имя caselaw-test. Можно задать любое из допустимых значений уровня общего доступа.
 
 1. Откройте контейнер после создания и на панели команд выберите **Загрузить**.
 
@@ -66,19 +66,19 @@ ms.locfileid: "65030052"
 
 ## <a name="set-up-postman"></a>Настройка Postman
 
-Запустите Postman и настройте HTTP-запрос. Если вы не работали с этим инструментом, изучите статью [Работа с REST API службы "Поиск Azure" с помощью Postman или Fiddler](search-fiddler.md).
+Запустите Postman и импортируйте коллекцию Postman Caselaw. Или же настройте серию HTTP-запросов. Если вы не работали с этим инструментом, изучите статью [Работа с REST API службы "Поиск Azure" с помощью Postman или Fiddler](search-fiddler.md).
 
-+ Для каждого вызова в этом пошаговом руководстве используется метод запроса **POST**.
++ Для каждого вызова в этом пошаговом руководстве используется метод запроса **PUT** или **POST**.
 + Заголовки запросов (2) содержат следующие данные: "Content-type" со значением "application/json" и "api-key" с вашим значением "admin key" (ключ администратора — это заполнитель для первичного ключа поиска). 
 + Текст запроса — это фактическое содержимое вызова. 
 
   ![Частично структурированный поиск](media/search-semi-structured-data/postmanoverview.png)
 
-Мы используем Postman для выполнения четырех вызовов API к службе поиска для создания источника данных, индекса, набора навыков и индексатора. Источник данных содержит указатель на вашу учетную запись хранения и данные JSON. Служба поиска создает подключение при импорте данных.
+Мы используем Postman для выполнения четырех вызовов API к службе поиска для создания источника данных, индекса, набора навыков и индексатора именно в таком порядке. Источник данных содержит указатель на вашу учетную запись хранения Azure и данные JSON. Служба поиска создает подключение при импорте данных.
 
 [Создание набора навыков](#create-skillset) — основной этап этого пошагового руководства. Набор навыков указывает действия обогащения и способ хранения данных в хранилище знаний.
 
-В конечной точке URL-адреса нужно указать версию API. А каждый вызов должен возвращать результат **201 Created** (создан ресурс). Предварительная версия API для создания набора навыков с поддержкой хранилища знаний — `2019-05-06-Preview`.
+В конечной точке URL-адреса нужно указать версию API. А каждый вызов должен возвращать результат **201 Created** (создан ресурс). Предварительная версия API для создания набора навыков с поддержкой хранилища знаний — `2019-05-06-Preview` (с учетом регистра).
 
 Выполните следующие вызовы API из клиента REST.
 
@@ -101,10 +101,10 @@ ms.locfileid: "65030052"
         "type": "azureblob",
         "subtype": null,
         "credentials": {
-            "connectionString": "DefaultEndpointsProtocol=https;AccountName=<your storage account>;AccountKey=<your storage key>;EndpointSuffix=core.windows.net"
+            "connectionString": "DefaultEndpointsProtocol=https;AccountName=<YOUR-STORAGE-ACCOUNT>;AccountKey=<YOUR-STORAGE-KEY>;EndpointSuffix=core.windows.net"
         },
         "container": {
-            "name": "<your blob container name>",
+            "name": "<YOUR-BLOB-CONTAINER-NAME>",
             "query": null
         },
         "dataChangeDetectionPolicy": null,
@@ -318,24 +318,23 @@ URL-адрес этого вызова — `https://[service name].search.windo
    }
    ```
 
-3. Сначала задайте `cognitiveServices`, ключ `knowledgeStore` и строку подключения. В примере эти строки будут находиться после определения набора навыков, ближе к концу текста запроса.
+3. Сначала задайте `cognitiveServices`, ключ `knowledgeStore` и строку подключения. В примере эти строки будут находиться после определения набора навыков, ближе к концу текста запроса. Используйте ресурс Cognitive Services, подготовленный к работе на уровне S0 и расположенный в том же регионе, что и служба "Поиск Azure".
 
     ```json
     "cognitiveServices": {
         "@odata.type": "#Microsoft.Azure.Search.CognitiveServicesByKey",
-        "description": "<your cognitive services resource name>",
-        "key": "<your cognitive services key>"
+        "description": "YOUR-SAME-REGION-S0-COGNITIVE-SERVICES-RESOURCE",
+        "key": "YOUR-COGNITIVE-SERVICES-KEY"
     },
     "knowledgeStore": {
-        "storageConnectionString": "DefaultEndpointsProtocol=https;AccountName=<your storage account name>;AccountKey=<your storage account key>;EndpointSuffix=core.windows.net",
+        "storageConnectionString": "YOUR-STORAGE-ACCOUNT-CONNECTION-STRING",
     ```
 
 3. Просмотрите коллекцию навыков, в частности навыки Shaper в строках 85 и 170 соответственно. Навык Shaper важен, так как он позволяет собрать структуры данных для интеллектуального анализа знаний. При выполнении набора навыков эти структуры доступны только в памяти. Но на следующем этапе вы узнаете, как эти выходные данные можно сохранить в хранилище знаний для дальнейшего изучения.
 
-   Приведенный ниже фрагмент кода взят из строки 207. 
+   Приведенный ниже фрагмент кода взят из строки 217. 
 
     ```json
-    {
     "name": "Opinions",
     "source": null,
     "sourceContext": "/document/casebody/data/opinions/*",
@@ -361,44 +360,46 @@ URL-адрес этого вызова — `https://[service name].search.windo
                     "name": "EntityType",
                     "source": "/document/casebody/data/opinions/*/text/pages/*/entities/*/category"
                 }
-             ]
-          }
-     ]
-   }
+            ]
+        }
+    ]
    . . .
    ```
 
-3. Просмотрите элемент `projections` в `knowledgeStore` начиная со строки 253. Проекции указывают состав хранилища знаний. Проекции указываются в парах "таблица-объект", но сейчас только поочередно. Как видно из первой проекции, значение `tables` указано, а `objects` — нет. Во второй проекции ситуация противоположная.
+3. Просмотрите элемент `projections` в `knowledgeStore` начиная со строки 262. Проекции указывают состав хранилища знаний. Проекции указываются в парах "таблица-объект", но сейчас только поочередно. Как видно из первой проекции, значение `tables` указано, а `objects` — нет. Во второй проекции ситуация противоположная.
 
    В службе хранилища Azure в хранилище таблиц для каждой создаваемой вами таблицы будет создана соответствующая таблица. А для каждого объекта в хранилище BLOB-объектов создается контейнер.
 
-   Объекты обычно содержат полное выражение обогащения. Таблицы обычно содержат частичные обогащения в сочетаниях, сформированных для определенных целей. В этом примере показана таблица Cases, но не представлены другие таблицы, например Entities, Judges и Opinions.
+   BLOB-объекты обычно содержат полное выражение обогащения. Таблицы обычно содержат частичные обогащения в сочетаниях, сформированных для определенных целей. В этом примере показана таблица Cases и таблица Opinions, но не представлены другие таблицы, такие как Entities, Attorneys, Judges и Parties.
 
     ```json
     "projections": [
-    {
-        "tables": [
-            {
-              "tableName": "Opinions",
-              "generatedKeyName": "OpinionId",
-              "source": "/document/Case/OpinionsSnippets/*"
-            },
-          . . . 
-        ],
-        "objects": []
-    },
-    {
-        "tables": [],
-        "objects": [
-            {
-                "storageContainer": "enrichedcases",
-                "key": "/document/CaseFull/Id",
-                "source": "/document/CaseFull"
-            }
-          ]
+        {
+            "tables": [
+                {
+                    "tableName": "Cases",
+                    "generatedKeyName": "CaseId",
+                    "source": "/document/Case"
+                },
+                {
+                    "tableName": "Opinions",
+                    "generatedKeyName": "OpinionId",
+                    "source": "/document/Case/OpinionsSnippets/*"
+                }
+            ],
+            "objects": []
+        },
+        {
+            "tables": [],
+            "objects": [
+                {
+                    "storageContainer": "enrichedcases",
+                    
+                    "source": "/document/CaseFull"
+                }
+            ]
         }
-      ]
-    }
+    ]
     ```
 
 5. Отправьте запрос. Должен поступить ответ **201** примерно с такими данными (здесь показана первая часть ответа):

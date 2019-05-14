@@ -118,8 +118,8 @@
       href: functions-networking-options.md
     - name: IP-адреса;
       href: ip-addresses.md
-    - name: Функции в локальной среде
-      href: functions-runtime-overview.md
+    - name: Функции в Kubernetes
+      href: functions-kubernetes-keda.md
 - name: Практические руководства
   items:
     - name: Разработка
@@ -142,6 +142,8 @@
           href: create-function-app-linux-app-service-plan.md
         - name: Отладка локальных функций PowerShell
           href: functions-debug-powershell-local.md
+        - name: Внедрение зависимостей
+          href: functions-dotnet-dependency-injection.md
         - name: Управление подключениями
           href: manage-connections.md
         - name: Обработка ошибок
@@ -173,6 +175,7 @@
       items:
         - name: Управление приложением-функцией
           href: functions-how-to-use-azure-function-app-settings.md
+          displayName: 'app setting, application setting'
         - name: Установка версии среды выполнения
           href: set-runtime-version.md
         - name: Регистрация расширения вручную

@@ -10,14 +10,16 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 03/13/2019
 ms.author: erhopf
-ms.openlocfilehash: 9187863234dd62757efecf6f0817ff00da48064a
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: bf07e6a2daac7889e11df2cb5d689daef44266f9
+ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64685546"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65465653"
 ---
 # <a name="quickstart-translate-speech-with-the-speech-sdk-for-c"></a>Краткое руководство. Перевод речи с помощью пакета SDK службы "Речь" для C++
+
+Также доступны краткие руководства по [распознаванию речи](quickstart-cpp-windows.md) и [преобразованию текста в речь](quickstart-text-to-speech-cpp-windows.md).
 
 При работе с этим кратким руководством вы создадите простое приложение C++, которое записывает речь пользователя с микрофона компьютера, переводит речь и транскрибирует переведенный текст в командную строку в реальном времени. Приложение предназначено для работы в 64-разрядной версии Windows с использованием [пакета NuGet SDK службы "Речь"](https://aka.ms/csspeech/nuget) и Microsoft Visual Studio 2017.
 

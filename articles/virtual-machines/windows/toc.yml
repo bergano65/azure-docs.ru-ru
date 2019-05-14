@@ -59,6 +59,8 @@
     - name: Типы и размеры виртуальных машин
       href: sizes.md
       items:
+        - name: Виртуальные машины 2-го поколения
+          href: generation-2.md
         - name: Универсальные
           href: sizes-general.md
           displayName: Dsv3 Dv3 DSv2 Dv2 Av2
