@@ -4,7 +4,7 @@
   items:
     - name: Что такое Resource Manager?
       href: resource-group-overview.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   expanded: true
   items:
     - name: Создание шаблонов — портал
@@ -25,7 +25,7 @@
       href: resource-manager-tutorial-create-templates-with-dependent-resources.md
     - name: Условия использования
       href: resource-manager-tutorial-use-conditions.md
-    - name: Интегрирование Key Vault
+    - name: Интеграция Key Vault
       displayName: secrets
       href: resource-manager-tutorial-use-key-vault.md
     - name: Создание связанных шаблонов
@@ -47,7 +47,7 @@
       href: resource-manager-tutorial-troubleshoot.md
 - name: Примеры
   items:
-    - name: Шаблоны диспетчера ресурсов
+    - name: Шаблоны Resource Manager
       href: template-samples.md
     - name: Примеры кода
       href: 'https://azure.microsoft.com/resources/samples/?sort=0&service=azure-resource-manager'
@@ -126,7 +126,7 @@
           maintainContext: true
     - name: Экспорт шаблона
       href: export-template-portal.md
-    - name: управление
+    - name: Управление
       items:
         - name: Управление группами ресурсов
           items:
@@ -165,7 +165,7 @@
           href: grant-access-to-create-subscription.md
         - name: Аутентификация в клиентах
           href: authenticate-multi-tenant.md
-    - name: Аудит развертываний
+    - name: Аудит изменений
       items:
         - name: Просмотр журналов действий
           href: resource-group-audit.md
@@ -243,7 +243,7 @@
       href: /rest/api/deploymentmanager/
     - name: Azure PowerShell
       href: /powershell/module/az.resources
-    - name: Инфраструктура CLI Azure
+    - name: Инфраструктура Azure CLI
       href: /cli/azure/resource
     - name: .NET
       href: /dotnet/api/microsoft.azure.management.resourcemanager
@@ -259,7 +259,7 @@
       href: 'https://azure.microsoft.com/pricing/calculator/'
     - name: Обновления службы
       href: 'https://azure.microsoft.com/updates/?product=azure-resource-manager'
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-resource-manager'
     - name: Управление персональными данными
       href: resource-manager-personal-data.md

@@ -6,7 +6,7 @@
     - name: Что такое служба "Персонализатор"?
       href: what-is-personalizer.md
       displayName: 'loop, context, feature, action, rank, reward, developer, use case'
-- name: Быстрое начало работы
+- name: Краткие руководства
   items:
     - name: Создание и использование цикла обратной связи
       href: csharp-quickstart-commandline-feedback-loop.md
@@ -27,9 +27,14 @@
         - name: 'Функции: Действие и контекст'
           href: concepts-features.md
           displayName: 'action, context, feature, namespace, JSON, best practice, set'
+        - name: Вознаграждения
+          href: concept-rewards.md
+          displayName: 'reward, wait time, default reward'
         - name: Обучение с подкреплением
           href: concepts-reinforcement-learning.md
           displayName: 'RL, contextual bandits, Vowpal Wabbit'
+        - name: Исследование
+          href: concepts-exploration.md
     - name: Анализ
       items:
         - name: Автономная оценка
@@ -56,11 +61,11 @@
   items:
     - name: Примеры
       href: 'https://go.microsoft.com/fwlink/?linkid=2092083'
-    - name: справочник по API REST
+    - name: Справочник по REST API
       href: 'https://go.microsoft.com/fwlink/?linkid=2092082'
     - name: Пакеты SDK
       items:
-        - name: Справочник по пакету SDK .NET.
+        - name: Справочник по пакету SDK .NET
           href: 'https://go.microsoft.com/fwlink/?linkid=2092353'
         - name: Пакет NuGet
           href: 'https://go.microsoft.com/fwlink/?linkid=2092272'
@@ -72,7 +77,7 @@
       href: 'https://go.microsoft.com/fwlink/?linkid=2092153'
     - name: Цены
       href: 'https://go.microsoft.com/fwlink/?linkid=2092154'
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/personalizer'
     - name: UserVoice
       href: 'https://cognitive.uservoice.com/forums/921562-personalizer'

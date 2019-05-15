@@ -2,10 +2,10 @@
   href: index.yml
 - name: Обзор
   items:
-    - name: Общие сведения о политике Azure
+    - name: Общие сведения о Политике Azure
       displayName: 'rbac, assign, initiative, parameters, count'
       href: overview.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   expanded: true
   items:
     - name: Назначение политики с помощью портала
@@ -59,7 +59,7 @@
               href: samples/apply-tag-default-value.md
             - name: Инициатива политики тегов для выставления счетов
               href: samples/billing-tags-policy-initiative.md
-            - name: принудительно применять тег и его значение;
+            - name: Принудительное применение тега и его значения
               displayName: 'deny, concat, builtin'
               href: samples/enforce-tag-value.md
             - name: Принудительное применение тега и его значения для группы ресурсов
@@ -67,7 +67,7 @@
               href: samples/enforce-tag-on-resource-groups.md
         - name: Расположения
           items:
-            - name: Allowed locations;
+            - name: Допустимые расположения
               displayName: 'deny, builtin, location'
               href: samples/allowed-locations.md
         - name: Типы ресурсов
@@ -75,7 +75,7 @@
             - name: Допустимые типы ресурсов
               displayName: 'deny, builtin, resourceTypes'
               href: samples/allowed-resource-types.md
-            - name: Not allowed resource types;
+            - name: Недопустимые типы ресурсов
               displayName: 'deny, builtin, resourceTypes'
               href: samples/not-allowed-resource-types.md
     - name: Службы вычислений
@@ -97,9 +97,9 @@
             - name: Запрет использования определенных расширений виртуальной машины
               displayName: deny
               href: samples/not-allowed-vm-extension.md
-        - name: наборы для масштабирования виртуальных машин
+        - name: Масштабируемые наборы виртуальных машин
           items:
-            - name: Проверка использования виртуальных дисков виртуальной машиной
+            - name: Проверка использования управляемых дисков виртуальной машиной
               displayName: audit
               href: samples/create-vm-managed-disk.md
             - name: 'Создание виртуальной машины, использующей управляемый диск'
@@ -111,7 +111,7 @@
             - name: Разрешение использования только некоторых образов платформы виртуальной машины
               displayName: deny
               href: samples/allow-certain-vm-image.md
-    - name: Озеро данных
+    - name: Data Lake
       items:
         - name: Требование шифрования данных для Data Lake Store
           displayName: deny
@@ -135,7 +135,7 @@
       items:
         - name: Сетевые интерфейсы
           items:
-            - name: Конкретная группа безопасности сети на каждой сетевой карте
+            - name: NSG X на каждой сетевой карте
               displayName: deny
               href: samples/nsg-on-nic.md
             - name: Использование утвержденной подсети для сетевых интерфейсов виртуальной машины
@@ -144,7 +144,7 @@
             - name: Использование утвержденной виртуальной сети для сетевых интерфейсов виртуальной машины
               displayName: 'deny, concat'
               href: samples/use-approved-vnet-vm-nics.md
-        - name: виртуальные сети;
+        - name: Виртуальные сети
           items:
             - name: Разрешенные SKU для шлюзов приложений
               displayName: deny
@@ -161,7 +161,7 @@
             - name: Запрет определяемой пользователем таблицы маршрутов
               displayName: 'deny, all'
               href: samples/no-user-defined-route-table.md
-            - name: NSG x для каждой подсети
+            - name: NSG X для каждой подсети
               displayName: 'deny, all'
               href: samples/nsg-on-subnet.md
             - name: Использование утвержденной подсети для сетевых интерфейсов виртуальной машины
@@ -172,10 +172,10 @@
               href: samples/use-approved-vnet-vm-nics.md
         - name: Группы безопасности сети
           items:
-            - name: Конкретная группа безопасности сети на каждой сетевой карте
+            - name: NSG X на каждой сетевой карте
               displayName: deny
               href: samples/nsg-on-nic.md
-            - name: NSG x для каждой подсети
+            - name: NSG X для каждой подсети
               displayName: 'deny, all'
               href: samples/nsg-on-subnet.md
         - name: ExpressRoute
@@ -215,7 +215,7 @@
             - name: Аудит параметров аудита уровня SQL Server
               displayName: auditIfNotExists
               href: samples/audit-sql-server-audit-setting.md
-            - name: Require SQL Server version 12.0;
+            - name: "Требование наличия SQL Server версии\_12.0"
               displayName: 'deny, builtin'
               href: samples/require-sql-12.md
         - name: Базы данных SQL
@@ -237,7 +237,7 @@
         - name: Допустимые номера SKU для учетной записи хранения и виртуальных машин
           displayName: 'initiative, vmSKUs, storageSKUs'
           href: samples/allowed-skus-storage.md
-        - name: Allowed storage account SKUs;
+        - name: Разрешенные номера SKU учетных записей хранения
           displayName: 'deny, builtin, storageSKUs'
           href: samples/allowed-storage-account-skus.md
         - name: Запрет на распределение по холодным уровням доступа для учетных записей хранения
@@ -249,7 +249,7 @@
         - name: Обеспечение шифрования файлов хранилища
           displayName: 'deny, all'
           href: samples/ensure-storage-file-encryption.md
-        - name: Require storage account encryption.
+        - name: Требование шифрования учетной записи хранения
           displayName: 'deny, builtin'
           href: samples/require-storage-account-encryption.md
 - name: Основные понятия
@@ -280,15 +280,18 @@
     - name: Исправление несоответствующих ресурсов
       displayName: 'managed identity, task, definition, roleDefinitionIds'
       href: ./how-to/remediate-resources.md
+    - name: Включение Azure Monitor для виртуальных машин (предварительная версия)
+      displayName: 'insights, log analytics, builtin'
+      href: ../../azure-monitor/insights/vminsights-enable-at-scale-policy.md?toc=/azure/governance/policy/toc.json
 - name: Справочные материалы
   items:
-    - name: Инфраструктура CLI Azure
+    - name: Инфраструктура Azure CLI
       href: /cli/azure/policy
     - name: Azure PowerShell
       items:
         - name: Политика
           href: '/powershell/module/az.resources/#policies'
-        - name: Policy Insights
+        - name: Анализ политик
           href: '/powershell/module/az.policyinsights#policy_insights'
         - name: Гостевая конфигурация
           href: 'https://www.powershellgallery.com/packages/Az.GuestConfiguration'
@@ -296,13 +299,13 @@
       items:
         - name: Назначения
           href: /dotnet/api/microsoft.azure.management.resourcemanager.models.policyassignment
-        - name: Определения политик
+        - name: Определения службы "Политика Azure"
           href: /dotnet/api/microsoft.azure.management.resourcemanager.models.policydefinition
     - name: REST
       items:
         - name: События
           href: /rest/api/policy-insights/policyevents
-        - name: States
+        - name: Состояния
           href: /rest/api/policy-insights/policystates
         - name: Назначения
           href: /rest/api/resources/policyassignments

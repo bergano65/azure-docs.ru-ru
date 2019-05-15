@@ -4,7 +4,7 @@
   items:
     - name: Добро пожаловать в базу данных Azure Cosmos DB
       href: introduction.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   expanded: true
   items:
     - name: .NET
@@ -72,7 +72,7 @@
       href: sql-api-python-samples.md
     - name: PowerShell
       href: powershell-samples.md
-    - name: Инфраструктура CLI Azure
+    - name: Инфраструктура Azure CLI
       href: cli-samples.md
     - name: Azure Resource Manager
       href: resource-manager-samples.md
@@ -93,7 +93,7 @@
           href: consistency-levels-across-apis.md
         - name: 'Компромиссы согласованности, доступности и производительности'
           href: consistency-levels-tradeoffs.md
-        - name: высокую доступность;
+        - name: Высокий уровень доступности
           href: high-availability.md
         - name: Глобальное масштабирование подготовленной пропускной способности
           displayName: 'request units, RUs, RU'
@@ -186,7 +186,7 @@
           href: optimize-cost-queries.md
         - name: Оптимизация затрат на использование хранилища
           href: optimize-cost-storage.md
-        - name: Оптимизация затрат на выполнения операций чтения и записи
+        - name: Оптимизация затрат на выполнение операций чтения и записи
           href: optimize-cost-reads-writes.md
         - name: Оптимизация затрат на развертывание в нескольких регионах
           href: optimize-cost-regions.md
@@ -225,7 +225,7 @@
           href: cassandra-introduction.md
         - name: Поддержка коммуникационного протокола
           href: cassandra-support.md
-        - name: Быстрое начало работы
+        - name: Краткие руководства
           items:
             - name: .NET
               href: create-cassandra-dotnet.md
@@ -281,7 +281,7 @@
           href: mongodb-introduction.md
         - name: Поддержка коммуникационного протокола
           href: mongodb-feature-support.md
-        - name: Быстрое начало работы
+        - name: Краткие руководства
           items:
             - name: .NET
               href: create-mongodb-dotnet.md
@@ -309,11 +309,11 @@
                       href: tutorial-develop-mongodb-nodejs-part2.md
                     - name: "Часть\_3.\_Добавление пользовательского интерфейса с помощью Angular"
                       href: tutorial-develop-mongodb-nodejs-part3.md
-                    - name: "Часть\_4.\_Создание учетной записи"
+                    - name: "Часть\_4. Создание учетной записи"
                       href: tutorial-develop-mongodb-nodejs-part4.md
                     - name: "Часть\_5. Подключение к базе данных Cosmos\_DB"
                       href: tutorial-develop-mongodb-nodejs-part5.md
-                    - name: "Часть\_6.\_Выполнение операций CRUD"
+                    - name: "Часть\_6. Выполнение операций CRUD"
                       href: tutorial-develop-mongodb-nodejs-part6.md
                 - name: Приложение Node.js и React
                   href: tutorial-develop-mongodb-react.md
@@ -342,7 +342,7 @@
             - name: Глобальное распределение операций чтения
               displayName: read preference
               href: mongodb-readpreference.md
-            - name: Срок жизни — MongoDB
+            - name: 'Срок жизни: MongoDB'
               href: mongodb-time-to-live.md
             - name: Управление индексированием данных
               href: mongodb-indexing.md
@@ -361,7 +361,7 @@
           href: graph-introduction.md
         - name: Поддержка коммуникационного протокола
           href: gremlin-support.md
-        - name: Быстрое начало работы
+        - name: Краткие руководства
           items:
             - name: Консоль Gremlin
               href: create-graph-gremlin-console.md
@@ -392,11 +392,11 @@
               maintainContext: true
             - name: Управление с помощью шаблонов Resource Manager
               href: manage-gremlin-with-resource-manager.md
-    - name: API таблицы
+    - name: API таблиц
       items:
         - name: Введение
           href: table-introduction.md
-        - name: Быстрое начало работы
+        - name: Краткие руководства
           items:
             - name: .NET
               href: create-table-dotnet.md
@@ -438,7 +438,7 @@
               maintainContext: true
         - name: Практические руководства
           items:
-            - name: Создание приложений с помощью API таблицы
+            - name: Создание приложений с помощью API таблиц
               href: table-support.md
             - name: Руководство по проектированию хранилищ таблиц
               href: table-storage-design-guide.md
@@ -512,6 +512,8 @@
           href: data-explorer.md
         - name: Управление политиками индексирования
           href: how-to-manage-indexing-policy.md
+        - name: Определение уникальных ключей
+          href: how-to-define-unique-keys.md
         - name: Примеры вложенных запросов SQL
           displayName: 'subquery, exists'
           href: how-to-sql-subquery.md
@@ -555,7 +557,7 @@
           href: manage-sql-with-resource-manager.md
     - name: Ведение журналов
       items:
-        - name: Ведения журнала диагностики
+        - name: Ведение журнала диагностики
           href: logging.md
         - name: Вход в приложения с помощью Logic Apps
           href: /azure/logic-apps/logic-apps-scenario-error-and-exception-handling
@@ -578,7 +580,7 @@
       href: tutorial-setup-ci-cd.md
     - name: Типы данных
       items:
-        - name: Datetime
+        - name: Дата и время
           href: working-with-dates.md
         - name: Геопространственные данные
           href: geospatial.md
@@ -628,7 +630,7 @@
           maintainContext: true
         - name: Logic Apps и Служебная шина Azure
           href: change-feed-hl7-fhir-logic-apps.md
-        - name: Центры событий Azure и Служба хранилища Azure
+        - name: Центры событий Azure и служба хранилища Azure
           href: 'https://github.com/hdinsight/hdinsight-storm-examples/blob/master/IotExample/README.md'
         - name: Использование начального приложения Spring Boot
           href: /java/azure/spring-framework/configure-spring-boot-starter-java-app-with-cosmos-db
@@ -688,7 +690,7 @@
       href: /learn/browse/?products=azure-cosmos-db
     - name: Краткий справочник запросов
       href: query-cheat-sheet.md
-    - name: SQL Playground
+    - name: Тестовая площадка SQL
       href: 'https://aka.ms/cosmos-db-playground'
     - name: Часто задаваемые вопросы
       href: faq.md

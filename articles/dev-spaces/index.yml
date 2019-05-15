@@ -1,8 +1,8 @@
 ### YamlMime:YamlDocument
 documentType: LandingData
-title: Рабочие среды Azure для разработчиков
+title: Azure Dev Spaces
 metadata:
-  title: Рабочие среды Azure для разработчиков
+  title: Azure Dev Spaces
   meta.description: Rapid Kubernetes development with containers and microservices on Azure.
   services: azure-dev-spaces
   author: zr-msft
@@ -16,7 +16,7 @@ sections:
       - type: paragraph
         text: 'С минимальной настройкой компьютера разработчика можно итеративно запускать и проводить отладку контейнера непосредственно из службы Azure Kubernetes (AKS).  Кроме того, вы можете работать совместно с другими участниками команды в общем кластере Kubernetes и выполнять сквозное тестирование вместе с другими компонентами без репликации или имитации зависимостей. Используя Azure Dev Spaces, вы можете разрабатывать приложения для Windows, Mac или Linux с помощью таких привычных средств, как Visual Studio и Visual Studio Code, или средства командной строки.'
       - type: markdown
-        text: "> [!IMPORTANT]\n> Azure Dev Spaces поддерживается только в кластерах AKS в следующих регионах: **Восточная часть США**, **Восточная часть США\_2**, **Северная Европа**, **Центральная часть США**, **Западная часть США\_2**, **Западная Европа**, **Юго-Восточная Азия**, **Центральная Канада** и **Восточная Канада**. Azure Dev Spaces поддерживает [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) и [Visual Studio Code](https://code.visualstudio.com/download) с [расширением Azure Dev Spaces](https://marketplace.visualstudio.com/items?itemName=azuredevspaces.azds) в Linux, MacOS и Windows\_8 или более поздней версии для создания и запуска приложений в AKS. Это решение также поддерживает [Visual Studio\_2017](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs) с рабочей нагрузкой \"Веб-разработка\" и [Средства Visual Studio для Kubernetes](https://aka.ms/get-vsk8stools) в Windows\_8 или более поздней версии."
+        text: "> [!IMPORTANT]\n> Azure Dev Spaces поддерживается только в кластерах AKS в следующих регионах: **восточная часть США**, **восточная часть США\_2**, **центральная часть США**, **западная часть США\_2**, **Северная Европа**, **Западная Европа**, **южная часть Соединенного Королевства**, **Юго-Восточная Азия**, **Восточная Австралия**, **Центральная Канада** и **Восточная Канада**. Azure Dev Spaces поддерживает [Azure CLI](/cli/azure/install-azure-cli?view=azure-cli-latest) и [Visual Studio Code](https://code.visualstudio.com/download) с [расширением Azure Dev Spaces](https://marketplace.visualstudio.com/items?itemName=azuredevspaces.azds) в Linux, MacOS и Windows\_8 или более поздней версии для создания и запуска приложений в AKS. Это решение также поддерживает [Visual Studio\_2017](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs) с рабочей нагрузкой \"Веб-разработка\" и [Средства Visual Studio для Kubernetes](https://aka.ms/get-vsk8stools) в Windows\_8 или более поздней версии."
   - title: Начало работы в Azure Dev Spaces
     items:
       - type: paragraph
@@ -50,6 +50,6 @@ sections:
           - text: Минимизирует настройку локальной машины для каждого члена команды и работает непосредственно в AKS (управляемом кластере Kubernetes в Azure).
           - text: "Быстро выполняет итерацию и отладку кода непосредственно в Kubernetes с помощью Visual Studio\_2017 или Visual Studio Code."
           - text: 'Создает конфигурационные файлы Docker и Kubernetes, которые можно использовать от разработки до производства.'
-          - text: Поделится управляемым кластером Kubernetes с командой для совместной работы. Изолированное написание кода и комплексное тестирование вместе с другими компонентами без репликации или имитации зависимостей.
+          - text: Позволяет предоставить общий доступ к управляемому кластеру Kubernetes для совместной работы в команде. Изолированное написание кода и комплексное тестирование вместе с другими компонентами без репликации или имитации зависимостей.
       - type: markdown
         text: '![](media/azure-dev-spaces/collaborate-graphic.gif)'

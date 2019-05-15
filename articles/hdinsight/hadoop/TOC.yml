@@ -13,7 +13,7 @@
     - name: HDInsight 4.0
       href: ../hdinsight-version-release.md
       maintainContext: true
-- name: Быстрое начало работы
+- name: Краткие руководства
   items:
     - name: "Создание кластера Apache Hadoop\_— портал"
       href: apache-hadoop-linux-create-cluster-get-started-portal.md
@@ -22,7 +22,7 @@
       href: apache-hadoop-linux-tutorial-get-started.md
 - name: Учебники
   items:
-    - name: Выполнение операций ETL
+    - name: 'Выполнение операций извлечения, преобразования и загрузки'
       href: ../hdinsight-analyze-flight-delay-data-linux.md
       maintainContext: true
     - name: Создание кластеров по запросу
@@ -44,7 +44,7 @@
       maintainContext: true
 - name: Основные понятия
   items:
-    - name: Планирование загрузки кластера
+    - name: Планирование ресурсов кластера
       href: ../hdinsight-capacity-planning.md
       maintainContext: true
     - name: Доступность и надежность
@@ -183,7 +183,7 @@
         - name: Настройка кластеров с помощью действия скрипта
           href: ../hdinsight-hadoop-customize-cluster-linux.md
           maintainContext: true
-        - name: Разработка действий сценария
+        - name: Разработка действий скрипта
           href: ../hdinsight-hadoop-script-actions-linux.md
           maintainContext: true
         - name: Установка и использование Presto
@@ -245,7 +245,7 @@
         - name: Рекомендации по безопасности и DevOps
           href: apache-hadoop-on-premises-migration-best-practices-security-devops.md
           maintainContext: true
-    - name: управление
+    - name: Управление
       items:
         - name: Создание кластеров HDInsight
           href: ../hdinsight-hadoop-provision-linux-clusters.md
@@ -254,7 +254,7 @@
             - name: Использование портала Azure
               href: ../hdinsight-hadoop-create-linux-clusters-portal.md
               maintainContext: true
-            - name: Использование шаблонов диспетчера ресурсов Azure
+            - name: Использование шаблонов Azure Resource Manager
               displayName: 'resource manager template, arm template, resource manager group'
               href: ../hdinsight-hadoop-create-linux-clusters-arm-templates.md
               maintainContext: true
@@ -270,7 +270,7 @@
             - name: Использование cURL и Azure REST API
               href: ../hdinsight-hadoop-create-linux-clusters-curl-rest.md
               maintainContext: true
-            - name: Использование классического Azure CLI
+            - name: Использование Azure CLI
               href: ../hdinsight-hadoop-create-linux-clusters-azure-cli.md
               maintainContext: true
         - name: Управление кластерами HDInsight
@@ -288,7 +288,7 @@
             - name: Использование Azure PowerShell
               href: ../hdinsight-administer-use-powershell.md
               maintainContext: true
-            - name: Использование классического Azure CLI
+            - name: Использование классического интерфейса Azure CLI
               href: ../hdinsight-administer-use-command-line.md
               maintainContext: true
         - name: Управление кластерами с помощью пользовательского веб-интерфейса Apache Ambari
@@ -345,7 +345,7 @@
         - name: Порты и универсальные коды ресурса (URI) кластеров и служб
           href: ../hdinsight-hadoop-port-settings-for-services.md
           maintainContext: true
-        - name: Перенос в среду средств разработки Resource Manager
+        - name: Переход на средства разработки Resource Manager
           href: ../hdinsight-hadoop-development-using-azure-resource-manager.md
           maintainContext: true
         - name: Установка новой версии кластера HDInsight
@@ -422,7 +422,8 @@
       items:
         - name: Архитектура виртуальной сети HDInsight
           href: ../hdinsight-virtual-network-architecture.md
-          maintainContext: true
+        - name: Ограничение исходящего трафика в HDInsight
+          href: ../hdinsight-restrict-outbound-traffic.md
         - name: HDInsight в виртуальной сети Azure
           href: ../hdinsight-extend-hadoop-virtual-network.md
           maintainContext: true

@@ -10,9 +10,11 @@
     - name: HDInsight 4.0
       href: ../hdinsight-version-release.md
       maintainContext: true
-- name: Быстрое начало работы
+- name: Краткие руководства
   items:
-    - name: Запросы Apache HBase — оболочка HBase
+    - name: "Запросы к Apache HBase\_— Apache Phoenix"
+      href: apache-hbase-phoenix-squirrel-linux.md
+    - name: "Запросы к Apache HBase\_— оболочка HBase"
       href: ./query-hbase-with-hbase-shell.md
 - name: Начало работы
   items:
@@ -21,7 +23,7 @@
     - name: Установка приложений HDInsight
       href: ../hdinsight-apps-install-applications.md
       maintainContext: true
-    - name: Планирование загрузки кластера
+    - name: Планирование ресурсов кластера
       href: ../hdinsight-capacity-planning.md
       maintainContext: true
 - name: Практическое руководство
@@ -52,8 +54,6 @@
         - name: Apache Phoenix в HDInsight
           href: ../hdinsight-phoenix-in-hdinsight.md
           maintainContext: true
-        - name: Использование Apache Phoenix и SQLLine
-          href: apache-hbase-phoenix-squirrel-linux.md
         - name: Использование пакета REST SDK для Apache Phoenix Query Server
           href: apache-hbase-using-phoenix-query-server-rest-sdk.md
     - name: Анализ больших данных
@@ -69,7 +69,7 @@
         - name: Настройка кластеров с помощью действия скрипта
           href: ../hdinsight-hadoop-customize-cluster-linux.md
           maintainContext: true
-        - name: Разработка действий сценария
+        - name: Разработка действий скрипта
           href: ../hdinsight-hadoop-script-actions-linux.md
           maintainContext: true
         - name: Сборка приложений HDInsight
@@ -90,7 +90,7 @@
         - name: Использование туннелирования SSH
           href: ../hdinsight-linux-ambari-ssh-tunnel.md
           maintainContext: true
-    - name: управление
+    - name: Управление
       items:
         - name: Создание кластеров HDInsight
           href: ../hdinsight-hadoop-provision-linux-clusters.md
@@ -99,7 +99,7 @@
             - name: Использование портала Azure
               href: ../hdinsight-hadoop-create-linux-clusters-portal.md
               maintainContext: true
-            - name: Использование шаблонов диспетчера ресурсов Azure
+            - name: Использование шаблонов Azure Resource Manager
               displayName: 'resource manager template, arm template, resource manager group'
               href: ../hdinsight-hadoop-create-linux-clusters-arm-templates.md
               maintainContext: true
@@ -115,7 +115,7 @@
             - name: Использование cURL и Azure REST API
               href: ../hdinsight-hadoop-create-linux-clusters-curl-rest.md
               maintainContext: true
-            - name: Использование классического Azure CLI
+            - name: Использование Azure CLI
               href: ../hdinsight-hadoop-create-linux-clusters-azure-cli.md
               maintainContext: true
             - name: Создание кластеров по запросу
@@ -139,7 +139,7 @@
             - name: Использование Azure PowerShell
               href: ../hdinsight-administer-use-powershell.md
               maintainContext: true
-            - name: Использование классического Azure CLI
+            - name: Использование классического интерфейса Azure CLI
               href: ../hdinsight-administer-use-command-line.md
               maintainContext: true
         - name: Управление кластерами с помощью пользовательского веб-интерфейса Apache Ambari
