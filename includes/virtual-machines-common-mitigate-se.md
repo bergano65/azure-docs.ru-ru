@@ -5,17 +5,17 @@ services: virtual-machines
 author: cynthn
 ms.service: virtual-machines
 ms.topic: include
-ms.date: 08/14/2018
+ms.date: 05/14/2019
 ms.author: cynthn;kareni
 ms.custom: include file
-ms.openlocfilehash: cbd86571cbdcd600ef3acdea3833568a34657931
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: be8c3d3be4410d15ba132a24a417e7a7b0418352
+ms.sourcegitcommit: 3675daec6c6efa3f2d2bf65279e36ca06ecefb41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60337959"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65620259"
 ---
-**Последнее обновление документа**: 14 августа 2018 г. 10:00 по тихоокеанскому времени.
+**Последнее обновление документа**: 14 мая 2019 г. 10:00 по тихоокеанскому времени.
 
 В результате обнаружения [нового класса уязвимостей ЦП](https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/ADV180002), известного как атаки спекулятивного выполнения команд с предсказанием ветвлений, у пользователей возникли вопросы, требующие разъяснения.  
 
@@ -28,22 +28,28 @@ ms.locfileid: "60337959"
 > [!NOTE] 
 > С тех пор как этот документ был впервые опубликован, было обнаружено несколько вариантов этого класса уязвимостей. Корпорация Майкрософт продолжает активно вкладывать средства в защиту своих клиентов и предоставлять поддержку. Эта страница будет обновляться по мере выпуска дальнейших исправлений. 
 > 
-> 14 августа 2018 года в отрасли была обнаружена новая уязвимость спекулятивного выполнения команд с предсказанием ветвлений, известная как [сбой терминала L1](https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/ADV180018) (L1TF), которой было присвоено несколько кодов CVE ([CVE-2018-3615, CVE-2018-3620 и CVE-2018-3646](https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00161.html)). Эта уязвимость затрагивает процессоры Intel® Core® и Intel® Xeon®. Корпорация Майкрософт развернула кампанию по устранению рисков в своих облачных службах, что усилило изоляцию клиентов. Ниже приведены дополнительные рекомендации для защиты от L1TF и предыдущих уязвимостей (примеры которых указаны в статье [Windows Server guidance to protect against speculative execution side-channel vulnerabilities](https://support.microsoft.com/help/4072698/windows-server-guidance-to-protect-against-the-speculative-execution) (Руководство по Windows Server для защиты от уязвимостей по сторонним каналам рискованного исполнения)).
->  
+> На 14 мая 2019 г. [Intel раскрытых](https://www.intel.com/content/www/us/en/security-center/advisory/intel-sa-00233.html) новый набор упреждающего исполнения на стороне канала уязвимость, известный как выборка данных микроархитектуры (MDS см. руководство по безопасности Microsoft [ADV190013](https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/ADV190013)), который было назначено несколько CVE: 
+> - CVE-2018-11091 - микроархитектуры данные выборки памяти Uncacheable (MDSUM)
+> - CVE-2018-12126 - Store микроархитектуры буфера данных выборки (MSBDS) 
+> - CVE-2018-12127 - порт нагрузки микроархитектуры данных выборки (MLPDS)
+> - CVE-2018-12130 - микроархитектуры заполнения буфера данных выборки (MFBDS)
+>
+> Эта уязвимость затрагивает процессоры Intel® Core® и Intel® Xeon®.  Microsoft Azure выпустила обновления операционной системы и развертывание новых микрокода, как он станет доступен с Intel, на протяжении всего наш парк по защите пользователей от этих новых уязвимостей.   Azure тесно сотрудничает с Intel, для тестирования и проверки новых микрокода до ее официального выпуска на платформе. 
+>
+> **Клиентов, работающих под управлением ненадежного кода в своей виртуальной Машине** необходимо принять меры для защиты от этих уязвимостей путем чтения ниже дополнительные рекомендации по всех уязвимостей упреждающего исполнения на стороне канала (ADV рекомендации, Microsoft [180002](https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/ADV180002), [180018](https://portal.msrc.microsoft.com/en-us/security-guidance/advisory/adv180018), и [190013](https://portal.msrc.microsoft.com/en-US/security-guidance/advisory/ADV190013)).
+>
+> Другим клиентам следует оценить эти уязвимости из защиты в глубину перспективы и рассматривать последствия своих выбранной конфигурации безопасности и производительности.
 
 
 
+## <a name="keeping-your-operating-systems-up-to-date"></a>Обновление операционной системы
 
-
-
-## <a name="keeping-your-operating-systems-up-to-date"></a>Поддержка актуальности операционной системы
-
-Хотя обновление ОС не является обязательным требованием для изоляции приложений, запускаемых в Azure, от других клиентов Azure, настоятельно рекомендуется поддерживать актуальное состояние системы. Последние накопительные пакеты обновлений безопасности для Windows оснащены средствами устранения рисков, связанных с несколькими уязвимостями спекулятивного выполнения команд с предсказанием ветвлений. Аналогичным образом дистрибутивы Linux выпустили несколько обновлений для устранения этих уязвимостей. Ниже приведены рекомендуемые действия для обновления операционной системы.
+Хотя обновление ОС не является обязательным требованием для изоляции приложений, запускаемых в Azure, от других клиентов Azure, настоятельно рекомендуется поддерживать актуальное состояние системы. Последние накопительные пакеты обновлений безопасности для Windows оснащены средствами устранения рисков, связанных с несколькими уязвимостями спекулятивного выполнения команд с предсказанием ветвлений. Аналогичным образом дистрибутивы Linux выпустили несколько обновлений для устранения этих уязвимостей. Ниже приведены рекомендуем выполнить обновление операционной системы.
 
 | Предложение | Рекомендуемое действие  |
 |----------|---------------------|
 | Облачные службы Azure  | Включите [автоматическое обновление](https://docs.microsoft.com/azure/cloud-services/cloud-services-how-to-configure-portal) или убедитесь, что используется последняя версия гостевой ОС. |
-| Виртуальные машины Linux в Azure | Устанавливайте обновления, предоставляемые поставщиками операционной системы. Дополнительные сведения см. в пункте [Linux](#linux) далее в этом документе. |
+| Виртуальные машины Linux Azure | Устанавливайте обновления, предоставляемые поставщиками операционной системы. Дополнительные сведения см. в пункте [Linux](#linux) далее в этом документе. |
 | Виртуальные машины Windows в Azure  | Установка последнего накопительного пакета обновлений безопасности.
 | Прочие службы Azure PaaS | Для клиентов, использующих эти службы, дополнительные действия не требуются. Azure автоматически выполняет обновление версий операционной системы. |
 
@@ -64,56 +70,115 @@ ms.locfileid: "60337959"
 
 ## <a name="enabling-additional-security"></a>Включение дополнительной защиты 
 
-Вы можете включить дополнительные компоненты безопасности в своей виртуальной машине или облачной службе.
+Вы можете включить дополнительные функции безопасности в вашей виртуальной Машины или облачной службы, если вы используете ненадежного кода. В параллельном режиме убедитесь, что операционной системе актуальна, чтобы включить функции безопасности в вашей виртуальной Машины или облачной службы
 
 ### <a name="windows"></a> Windows 
 
 Чтобы включить эти дополнительные компоненты безопасности, нужно использовать последнюю версию целевой операционной системы. Несмотря на то что по умолчанию задействованы многочисленные предупреждения о спекулятивном выполнении команд с предсказанием ветвлений, дополнительные функции, описанные здесь, должны быть активированы вручную и могут отрицательно сказаться на производительности. 
 
-**Шаг 1**. [Обратитесь в службу поддержки Azure](https://aka.ms/MicrocodeEnablementRequest-SupportTechnical) предоставляют обновления микропрограммы (подал) в виртуальные машины. 
 
-**Шаг 2**. Включите поддержку ядра виртуальный адрес затенение (KVAS) и внедрение целевой ветви (BTI) операционной системы. Следуйте инструкциям обновления безопасности [KB4072698](https://support.microsoft.com/help/4072698/windows-server-guidance-to-protect-against-the-speculative-execution) для включения защиты с помощью разделов реестра `Session Manager`. Потребуется перезагрузка. 
+**Шаг 1. Отключить технологию Hyper-Threading на виртуальной Машине** - клиентам, работающим в технологией Hyper-Threading виртуальной Машины, необходимо отключить технологию Hyper-Threading или переместить размер виртуальной Машины не гиперпоточными ненадежного кода. Установите флажок, если ваша виртуальная машина технологией Hyper-Threading включена, см. в статье ниже скрипт, с помощью командной строки Windows из виртуальной Машины.
 
-**Шаг 3**. Для развертываний, использующих [вложенной виртуализации](https://docs.microsoft.com/azure/virtual-machines/windows/nested-virtualization) (D3 и только E3): Эти инструкции распространяются на виртуальную машину при использовании в качестве узла Hyper-V. 
+Тип `wmic` ввести интерактивный интерфейс. Введите ниже, чтобы просмотреть сведения об объеме физических и логических процессоров на виртуальной Машине.
 
-1. Следуйте инструкциям обновления безопасности [KB4072698](https://support.microsoft.com/help/4072698/windows-server-guidance-to-protect-against-the-speculative-execution) для включения защиты с помощью разделов реестра `MinVmVersionForCpuBasedMitigations`.  
- 
-1. Задайте тип планировщика низкоуровневой оболочки как **Core**, следуя инструкциям в разделе [Managing Hyper-V hypervisor scheduler types](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-scheduler-types) (Управление типами планировщиков низкоуровневых оболочек Hyper-V). 
+```console
+CPU Get NumberOfCores,NumberOfLogicalProcessors /Format:List
+```
 
-**Шаг 4**. Следуйте инструкциям в [KB4072698](https://support.microsoft.com/help/4072698/windows-server-guidance-to-protect-against-the-speculative-execution) для проверки защиту можно включить с помощью [SpeculationControl](https://aka.ms/SpeculationControlPS) модуля PowerShell. 
+Если число логических процессоров больше физических процессоров (ядер), технологию Hyper-Threading включена.  Если вы используете технологией Hyper-Threading виртуальной Машины, [обратитесь в службу поддержки Azure](https://aka.ms/MicrocodeEnablementRequest-SupportTechnical) для получения технологией Hyper-Threading отключена.  После отключения технологии Hyper-Threading **поддержки требуется полной перезагрузки виртуальной Машины**. 
+
+
+**Шаг 2**. В параллельном режиме в шаге 1, следуйте инструкциям в [KB4072698](https://support.microsoft.com/help/4072698/windows-server-guidance-to-protect-against-the-speculative-execution) для проверки защиту можно включить с помощью [SpeculationControl](https://aka.ms/SpeculationControlPS) модуля PowerShell.
 
 > [!NOTE]
 > Если этот модуль ранее уже был загружен, необходимо установить его последнюю версию.
 >
 
-Во всех виртуальных машинах должно отображаться следующее.
+
+Выходные данные сценария PowerShell должен иметь ниже значений для проверки включить защиту от этих уязвимостей:
 
 ```
-branch target injection mitigation is enabled: True
-
-kernel VA shadow is enabled: True  
-
-L1TFWindowsSupportEnabled: True
+Windows OS support for branch target injection mitigation is enabled: True
+Windows OS support for kernel VA shadow is enabled: True
+Windows OS support for speculative store bypass disable is enabled system-wide: False
+Windows OS support for L1 terminal fault mitigation is enabled: True
+Windows OS support for MDS mitigation is enabled: True
 ```
+
+Если выходные данные показывают, `MDS mitigation is enabled: False`, пожалуйста [обратитесь в службу поддержки Azure](https://aka.ms/MicrocodeEnablementRequest-SupportTechnical) для доступных способов их решения.
+
+
+
+**Шаг 3**. Чтобы включить ядра виртуальный адрес затенение (KVAS) и поддержка внедрения целевой ветви (BTI) операционной системы, следуйте инструкциям в [KB4072698](https://support.microsoft.com/help/4072698/windows-server-guidance-to-protect-against-the-speculative-execution) для включения защиты с помощью `Session Manager` разделов реестра. Потребуется перезагрузка.
+
+
+**Шаг 4**. Для развертываний, использующих [вложенной виртуализации](https://docs.microsoft.com/azure/virtual-machines/windows/nested-virtualization) (D3 и только E3): Эти инструкции распространяются на виртуальную машину при использовании в качестве узла Hyper-V.
+
+1.  Следуйте инструкциям в [KB4072698](https://support.microsoft.com/help/4072698/windows-server-guidance-to-protect-against-the-speculative-execution) для включения защиты с помощью `MinVmVersionForCpuBasedMitigations` разделов реестра.
+2.  Задайте тип планировщика низкоуровневой оболочки `Core` , следуя инструкциям [здесь](https://docs.microsoft.com/windows-server/virtualization/hyper-v/manage/manage-hyper-v-scheduler-types).
 
 
 ### <a name="linux"></a>Linux
 
 <a name="linux"></a>Для включения внутреннего набора дополнительных компонентов безопасности требуется, чтобы целевая операционная система была обновлена до последней версии. Некоторые методы устранения рисков будут включены по умолчанию. В приведенном ниже разделе описаны компоненты, которые по умолчанию отключены и/или зависят от аппаратной поддержки (микрокод). Включение этих компонентов может отрицательно сказаться на производительности. Дополнительные сведения см. в справочной документации поставщика операционной системы.
- 
-**Шаг 1**. [Обратитесь в службу поддержки Azure](https://aka.ms/MicrocodeEnablementRequest-SupportTechnical) предоставляют обновления микропрограммы (подал) в виртуальные машины.
- 
-**Шаг 2**. Включите поддержку внедрения целевой ветви (BTI) операционной системы для устранения CVE-2017-5715 (Spectre варианта 2), следуя документации поставщика операционной системы. 
- 
-**Шаг 3**. Включите ядра страницы таблицы изоляции (KPTI) во избежание CVE-2017-5754 (Meltdown Variant 3), следуя документации поставщика операционной системы. 
- 
-Дополнительные сведения можно получить от поставщика операционной системы:  
- 
-- [RedHat и CentOS](https://access.redhat.com/security/vulnerabilities/speculativeexecution) 
-- [SUSE](https://www.suse.com/support/kb/doc/?id=7022512) 
-- [Ubuntu](https://wiki.ubuntu.com/SecurityTeam/KnowledgeBase/SpectreAndMeltdown) 
 
+
+**Шаг 1. Отключить технологию Hyper-Threading на виртуальной Машине** - клиентам, работающим в технологией Hyper-Threading виртуальной Машины, необходимо отключить технологию Hyper-Threading или перемещение в виртуальную Машину не гиперпоточными ненадежного кода.  Чтобы проверить, если вы используете технологией Hyper-Threading виртуальной Машины, выполните `lspcu` команду на виртуальной машине Linux. 
+
+Если `Thread(s) per core = 2`, а затем технологией Hyper-Threading включена. 
+
+Если `Thread(s) per core = 1`, а затем технологией Hyper-Threading отключена. 
+
+ 
+Пример выходных данных для виртуальной Машины с поддержкой технологии Hyper-Threading. 
+
+```console
+CPU Architecture:      x86_64
+CPU op-mode(s):        32-bit, 64-bit
+Byte Order:            Little Endian
+CPU(s):                8
+On-line CPU(s) list:   0,2,4,6
+Off-line CPU(s) list:  1,3,5,7
+Thread(s) per core:    2
+Core(s) per socket:    4
+Socket(s):             1
+NUMA node(s):          1
+
+```
+
+Если вы используете технологией Hyper-Threading виртуальной Машины, [обратитесь в службу поддержки Azure](https://aka.ms/MicrocodeEnablementRequest-SupportTechnical) для получения технологией Hyper-Threading отключена.  Примечание. После отключения технологии Hyper-Threading **поддержки требуется полной перезагрузки виртуальной Машины**.
+
+
+**Шаг 2**. Для снижения риска активизации любой из ниже уязвимостях упреждающего исполнения по сторонним каналам, к документации поставщика операционной системы:   
+ 
+- [RedHat и CentOS](https://access.redhat.com/security/vulnerabilities) 
+- [SUSE](https://www.suse.com/support/kb/?doctype%5B%5D=DT_SUSESDB_PSDB_1_1&startIndex=1&maxIndex=0) 
+- [Ubuntu](https://wiki.ubuntu.com/SecurityTeam/KnowledgeBase/) 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения см. в разделе [Securing Azure customers from CPU vulnerability](https://azure.microsoft.com/blog/securing-azure-customers-from-cpu-vulnerability/) (Защита клиентов Azure от уязвимости ЦП).
+Эта статья содержит рекомендации, которые ниже атаки упреждающего исполнения на стороне канала, которые влияют на многих современных процессоров:
+
+[Spectre Meltdown](https://portal.msrc.microsoft.com/security-guidance/advisory/ADV180002):
+- CVE-2017-5715 - внедрение ветви (BTI)  
+- CVE-2017-5754 - изоляции таблицы страниц ядра (KPTI)
+- CVE-2018-3639 — обход наблюдающей Store (KPTI) 
+ 
+[L1 Службы терминалов сбоя (L1TF)](https://portal.msrc.microsoft.com/security-guidance/advisory/ADV180018):
+- CVE-2018-3615 - расширения Guard программного обеспечения Intel (Intel SGX)
+- CVE-2018-3620 - операционной системы (ОС) и режим управления системой (SMM)
+- CVE-2018-3646 — влияет на Virtual Machine Manager (VMM)
+
+[Выборка данных микроархитектуры](https://portal.msrc.microsoft.com/security-guidance/advisory/ADV190013): 
+- CVE-2018-11091 - микроархитектуры данные выборки памяти Uncacheable (MDSUM)
+- CVE-2018-12126 - Store микроархитектуры буфера данных выборки (MSBDS)
+- CVE-2018-12127 - порт нагрузки микроархитектуры данных выборки (MLPDS)
+- CVE-2018-12130 - микроархитектуры заполнения буфера данных выборки (MFBDS)
+
+
+
+
+
+
+
+
