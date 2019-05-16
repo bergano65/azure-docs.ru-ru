@@ -182,7 +182,6 @@
             - name: Подключение с помощью Postman
               href: media-rest-apis-with-postman.md
         - name: Разработка с использованием пакетов SDK
-          href: developers-guide.md
           items:
             - name: Подключение с помощью Java
               href: configure-connect-java-howto.md
@@ -222,10 +221,13 @@
         - name: Кодирование с помощью пользовательского преобразования
           items:
             - name: Использование .NET
+              displayName: 'encode, encoding, custom, transform'
               href: customize-encoder-presets-how-to.md
             - name: С помощью интерфейса командной строки
+              displayName: 'encode, encoding, custom, transform'
               href: custom-preset-cli-howto.md
             - name: С помощью REST
+              displayName: 'encode, encoding, custom, transform'
               href: custom-preset-rest-howto.md
     - name: Использование Сетки событий
       items:

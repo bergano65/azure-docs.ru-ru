@@ -5,15 +5,15 @@ metadata:
   title: "Документация по API Bing для поиска сущностей. Учебные материалы, краткие руководства и справочники по API\_| Документация Майкрософт"
   description: 'Как использовать API Bing для поиска сущностей, чтобы получить сведения о людях, местах или других определенных субъектах. В руководствах объясняется, как создавать приложения, использующие эту службу.'
   services: cognitive-services
-  author: mikedodaro
-  manager: rosh
+  author: aahill
+  manager: nitinme
   ms.service: cognitive-services
   ms.subservice: bing-entity-search
   ms.tgt_pltfrm: na
   ms.devlang: na
   ms.topic: landing-page
   ms.date: 02/01/2019
-  ms.author: v-gedod
+  ms.author: aahi
 abstract:
   description: 'При использовании API Bing для поиска сущностей приложения могут получать сведения об обнаруженных сущностях в поисковых запросах. Сущностями могут быть люди, места, названия новостных статей и пр.'
 sections:
@@ -38,7 +38,7 @@ sections:
             image:
               src: ../media/index/i_guidelines.svg
             title: Отправка поисковых запросов
-  - title: 5-минутные руководства по началу работы
+  - title: Пятиминутные руководства по началу работы
     items:
       - type: paragraph
         text: 'Начните работу с API Bing для поиска сущностей, составив запрос и просмотрев ответ в формате JSON.'

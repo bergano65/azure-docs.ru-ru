@@ -5,15 +5,15 @@ metadata:
   title: "Документация по API\_Bing для поиска видео. Учебные материалы, краткие руководства и справочники по API\_| Документация Майкрософт"
   description: "Узнайте, как с помощью API\_Bing для поиска видео находить видео в Интернете."
   services: cognitive-services
-  author: mikedodaro
-  manager: rosh
+  author: aahill
+  manager: nitinme
   ms.service: cognitive-services
   ms.subservice: bing-video-search
   ms.tgt_pltfrm: na
   ms.devlang: na
   ms.topic: landing-page
   ms.date: 01/31/2019
-  ms.author: v-gedod
+  ms.author: aahi
 abstract:
   description: "API\_Bing для поиска видео позволяет вам интегрировать в свое приложение возможности Bing по поиску видео. Отправляя поисковые запросы к API, вы можете получать и отображать релевантные и высококачественные видео, как при использовании bing.com/videos."
 sections:
@@ -38,7 +38,7 @@ sections:
             image:
               src: ../media/index/i_guidelines.svg
             title: Поиск видео в Интернете
-  - title: 5-минутные руководства по началу работы
+  - title: Пятиминутные руководства по началу работы
     items:
       - type: paragraph
         text: 'Поиск видео в Интернете с помощью:'

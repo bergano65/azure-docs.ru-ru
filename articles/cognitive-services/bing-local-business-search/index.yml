@@ -6,8 +6,8 @@ metadata:
   title: Документация по API Bing Local Business Search
   description: 'API Bing Local Business Search — это служба RESTful, с помощью которой приложения могут находить сведения о местных предприятиях на основе поисковых запросов.'
   services: cognitive-services
-  author: mikedodaro
-  manager: rosh
+  author: aahill
+  manager: nitinme
   ms.subservice: bing-local-business
   ms.tgt_pltfrm: na
   ms.devlang: na
@@ -17,7 +17,7 @@ metadata:
 abstract:
   description: 'С помощью API Bing Local Business Search для приложений можно находить контактную информацию о местных компаниях, а также сведения об их расположении, на основе поисковых запросов.'
 sections:
-  - title: Быстрое начало работы
+  - title: Краткие руководства
     items:
       - type: paragraph
         text: 'Начните работу с API Bing Local Business Search, отправив поисковый запрос и просмотрев ответ в формате JSON:'

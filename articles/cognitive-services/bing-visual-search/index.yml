@@ -7,7 +7,7 @@ metadata:
   description: 'Узнайте, как с помощью API визуального поиска Bing получить аналитические сведения об изображении.'
   services: cognitive-services
   author: swhite-msft
-  manager: rosh
+  manager: nitinme
   ms.service: cognitive-services
   ms.subservice: bing-visual-search
   ms.tgt_pltfrm: na
@@ -39,7 +39,7 @@ sections:
             image:
               src: ../media/index/i_guidelines.svg
             title: Поиск новостей
-  - title: 5-минутные руководства по началу работы
+  - title: Пятиминутные руководства по началу работы
     items:
       - type: paragraph
         text: 'Получение аналитических сведений об изображении с помощью API визуального поиска Bing:'

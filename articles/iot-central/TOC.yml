@@ -8,7 +8,7 @@
       href: overview-iot-options.md
     - name: Обзор пользовательского интерфейса
       href: overview-iot-central-tour.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   expanded: true
   items:
     - name: Создание приложения
@@ -89,6 +89,8 @@
               href: howto-export-data-event-hubs-service-bus.md
             - name: Экспорт в хранилище BLOB-объектов
               href: howto-export-data-blob-storage.md
+        - name: Создание настраиваемых правил
+          href: howto-create-custom-rules.md
         - name: Визуализация данных в Power BI
           href: howto-connect-powerbi.md
         - name: Подключение других облаков Интернета вещей

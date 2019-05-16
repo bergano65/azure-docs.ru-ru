@@ -1,12 +1,11 @@
 - name: Документация по Azure Blueprint
   href: index.yml
 - name: Обзор
-  expanded: true
   items:
     - name: Обзор Azure Blueprint
       displayName: 'templates, policy, definition, assignment, rbac'
       href: overview.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   expanded: true
   items:
     - name: Создание схемы с помощью портала
@@ -16,7 +15,6 @@
       displayName: 'publish, assign, track, unassign, delete'
       href: create-blueprint-rest-api.md
 - name: Учебники
-  expanded: true
   items:
     - name: Создание на основе примера схемы
       displayName: 'template, resource group, rbac, role assignment'
@@ -25,7 +23,6 @@
       displayName: 'read only, do not delete, lock assignment'
       href: ./tutorials/protect-new-resources.md
 - name: Примеры
-  expanded: true
   items:
     - name: Индекс
       displayName: 'list, examples'
@@ -53,7 +50,6 @@
           displayName: 'standards, iso, 27001'
           href: ./samples/iso27001-ase-sql-workload/deploy.md
 - name: Основные понятия
-  expanded: true
   items:
     - name: Жизненный цикл схемы
       displayName: 'publish, edit, delete, assignments'
@@ -71,7 +67,6 @@
       displayName: 'mode, state, read only, edit, denyAssignments'
       href: ./concepts/resource-locking.md
 - name: Практические руководства
-  expanded: true
   items:
     - name: Управление назначениями с помощью PowerShell
       displayName: 'create, update, remove'
@@ -85,7 +80,6 @@
   displayName: 'errors, violation'
   href: ./troubleshoot/general.md
 - name: Ссылки
-  expanded: true
   items:
     - name: Azure PowerShell
       href: '/powershell/module/az.blueprint/#blueprint'

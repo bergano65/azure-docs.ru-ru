@@ -6,7 +6,7 @@
       href: overview.md
     - name: Изменения в терминологии
       href: azure-monitor-rebrand.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   expanded: true
   items:
     - name: ПРИЛОЖЕНИЯ
@@ -557,6 +557,7 @@
             - name: Просмотр аналитики для всех ресурсов веб-приложений Azure
               href: insights/azure-web-apps-analytics.md
             - name: Мониторинг приложений Kubernetes
+              displayname: 'aks, microservice, istio, service mesh, application monitoring'
               href: app/kubernetes.md
         - name: Мониторинг контейнеров
           items:

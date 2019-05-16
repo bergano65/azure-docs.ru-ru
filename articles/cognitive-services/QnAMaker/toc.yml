@@ -4,7 +4,7 @@
   items:
     - name: Общие сведения о QnA Maker
       href: Overview/overview.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   items:
     - name: Создание базы знаний
       href: How-To/create-knowledge-base.md
@@ -143,8 +143,8 @@
           href: Quickstarts/go.md
 - name: Справочные материалы
   items:
-    - name: справочник по API REST
-      href: 'https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75ff'
+    - name: Справочник по REST API
+      href: 'https://go.microsoft.com/fwlink/?linkid=2092179'
     - name: Часто задаваемые вопросы
       href: faqs.md
     - name: Ограничения
@@ -190,7 +190,7 @@
       href: 'https://aka.ms/qnamaker-pricing'
     - name: Поддержка языков
       href: Overview/language-support.md
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/QnAMaker'
     - name: UserVoice
       href: 'https://aka.ms/qnamaker-uservoice'

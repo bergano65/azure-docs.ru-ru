@@ -47,7 +47,7 @@ sections:
             image:
               src: ../media/index/i_tasks.svg
             title: Общие сведения об источниках данных
-  - title: 5-минутные руководства по началу работы
+  - title: Пятиминутные руководства по началу работы
     items:
       - type: paragraph
         text: 'Создайте базу знаний для содержимого вопросов и ответов:'
@@ -90,4 +90,4 @@ sections:
         className: cardsD
         items:
           - title: API
-            html: '<p><a href="https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75ff">API службы QnA Maker</a></p>'
+            html: '<p><a href="https://go.microsoft.com/fwlink/?linkid=2092179">API службы QnA Maker</a></p>'

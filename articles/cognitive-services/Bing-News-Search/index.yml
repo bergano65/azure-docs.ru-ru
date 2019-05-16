@@ -6,15 +6,15 @@ metadata:
   title: "Документация по API Bing для поиска новостей. Учебные материалы, краткие руководства и справочники по API\_| Документация Майкрософт"
   description: 'Узнайте, как с помощью API Bing для поиска новостей искать новости в Интернете.'
   services: cognitive-services
-  author: mikedodaro
-  manager: rosh
+  author: aahill
+  manager: nitinme
   ms.service: cognitive-services
   ms.subservice: bing-video-search
   ms.tgt_pltfrm: na
   ms.devlang: na
   ms.topic: landing-page
   ms.date: 01/16/2019
-  ms.author: v-gedod
+  ms.author: aahi
 abstract:
   description: 'API Bing для поиска новостей позволяет интегрировать возможности поиска новостей Bing в свои приложения. Отправляя запросы на поиск с помощью API, вы сможете получить релевантные новостные статьи из нескольких категорий и источников, как и при использовании bing.com/news.'
 sections:
@@ -39,7 +39,7 @@ sections:
             image:
               src: ../media/index/i_guidelines.svg
             title: Поиск новостей
-  - title: 5-минутные руководства по началу работы
+  - title: Пятиминутные руководства по началу работы
     items:
       - type: paragraph
         text: 'Поиск новостей в Интернете с помощью:'

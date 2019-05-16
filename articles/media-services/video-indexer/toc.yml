@@ -4,7 +4,7 @@
   items:
     - name: Что такое Индексатор видео?
       href: video-indexer-overview.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   expanded: true
   items:
     - name: Начало работы
@@ -46,8 +46,6 @@
       href: video-indexer-view-edit.md
     - name: Использование редактора для создания проектов
       href: use-editor-create-project.md
-    - name: Создание аналитических сведений из существующих видео
-      href: video-indexer-create-new.md
     - name: Внедрение мини-приложений в приложение
       href: video-indexer-embed-widgets.md
     - name: Настройка моделей содержимого
