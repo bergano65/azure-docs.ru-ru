@@ -7,14 +7,14 @@ ms.author: twhitney
 ms.service: container-service
 manager: jeconnoc
 ms.topic: overview
-ms.date: 05/06/2019
+ms.date: 05/08/2019
 ms.custom: mvc
-ms.openlocfilehash: 6121c0f654a61a147e84f0697f3ddb06b7c5db92
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.openlocfilehash: bfa3e63a433a6948f05ece7ec3c3a6180933510b
+ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65079952"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65466165"
 ---
 # <a name="azure-red-hat-openshift"></a>Azure Red Hat OpenShift
 
@@ -38,9 +38,9 @@ Azure Red Hat OpenShift расширяет платформу [Kubernetes](https
 
 ## <a name="virtual-networks-and-ingress"></a>Виртуальные сети и входные данные
 
-Вы можете развернуть кластер Azure Red Hat OpenShift в существующей виртуальной сети. В этой конфигурации каждому контейнеру pod в кластере назначается IP-адрес в виртуальной сети. Они могут напрямую взаимодействовать с другими контейнерами pod в кластере, а также другими узлами в виртуальной сети. Кроме того, группа контейнеров pod может подключаться к другим службам одноранговой виртуальной сети, а также к локальным сетям через подключения [ExpressRoute](https://docs.microsoft.com/azure/expressroute/) и VPN типа "сеть — сеть" (S2S).
+Вы можете подключить кластер Azure Red Hat OpenShift к существующей виртуальной сети с помощью пирингового соединения. В такой конфигурации контейнеры pod могут подключаться к другим службам в пиринговой виртуальной сети, а также к локальным сетям через каналы [ExpressRoute](https://docs.microsoft.com/azure/expressroute/) и VPN-подключения типа "сеть — сеть".
 
-Дополнительные сведения см. в руководстве по [созданию кластера Microsoft Red Hat OpenShift в Azure](tutorial-create-cluster.md).
+Дополнительные сведения см. в разделе [Подключение виртуальной сети кластера к существующей виртуальной сети](tutorial-create-cluster.md#optional-connect-the-clusters-virtual-network-to-an-existing-virtual-network).
 
 ## <a name="kubernetes-certification"></a>Сертификация Kubernetes
 

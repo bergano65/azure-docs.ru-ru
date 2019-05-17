@@ -1,73 +1,68 @@
 ---
-title: Управление виртуальной машиной Linux в Azure с помощью Ansible
-description: Узнайте, как управлять виртуальной машиной Linux в Azure с помощью Ansible
-ms.service: virtual-machines-linux
+title: Краткое руководство по управлению виртуальными машинами Linux в Azure с помощью Ansible | Документация Майкрософт
+description: Из этого краткого руководства вы узнаете, как с помощью Ansible управлять виртуальной машиной Linux в Azure.
 keywords: ansible, azure, devops, bash, cloudshell, сборник тренировочных заданий, bash
+ms.topic: quickstart
+ms.service: ansible
 author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
-ms.topic: quickstart
-ms.date: 09/27/2018
-ms.openlocfilehash: 8f97cf8a4231e9a2144f27c0540de96574e13795
-ms.sourcegitcommit: d89b679d20ad45d224fd7d010496c52345f10c96
+ms.date: 04/30/2019
+ms.openlocfilehash: a7862e95966d7b0e0ab31f242dff0244735fe7a1
+ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57789883"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65409234"
 ---
-# <a name="use-ansible-to-manage-a-linux-virtual-machine-in-azure"></a>Управление виртуальной машиной Linux в Azure с помощью Ansible
-Ansible позволяет автоматизировать развертывание и настройку ресурсов в среде. Ansible можно использовать для управления виртуальными машинами Azure так же, как любым другим ресурсом. В этой статье описано, как запустить и остановить виртуальные машины Linux с помощью сборника схем Ansible. 
+# <a name="quickstart-manage-linux-virtual-machines-in-azure-using-ansible"></a>Краткое руководство. Управление виртуальными машинами Linux в Azure с помощью Ansible
+
+Ansible позволяет автоматизировать развертывание и настройку ресурсов в среде. В этой статье описано, как запустить и остановить виртуальную машину Linux с помощью сборника схем Ansible. 
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- **Подписка Azure**. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
+[!INCLUDE [open-source-devops-prereqs-azure-sub.md](../../../includes/open-source-devops-prereqs-azure-subscription.md)]
+[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](../../../includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]
 
-- [!INCLUDE [ansible-prereqs-for-cloudshell-use-or-vm-creation1.md](../../../includes/ansible-prereqs-for-cloudshell-use-or-vm-creation1.md)] [!INCLUDE [ansible-prereqs-for-cloudshell-use-or-vm-creation2.md](../../../includes/ansible-prereqs-for-cloudshell-use-or-vm-creation2.md)]
+## <a name="stop-a-virtual-machine"></a>Остановка виртуальной машины
 
-## <a name="use-ansible-to-deallocate-stop-an-azure-virtual-machine"></a>Завершение общения (остановка) виртуальной машины Azure с помощью Ansible
-В этом разделе описано, как завершить общение виртуальной машины Azure с помощью Ansible.
+В этом разделе вы отмените выделение (остановите) виртуальной машины Azure с помощью Ansible.
 
-1.  Войдите на [портале Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
+1. Войдите на [портале Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
 
-1.  Откройте [Cloud Shell](/azure/cloud-shell/overview).
+1. Откройте [Cloud Shell](/azure/cloud-shell/overview).
 
-1.  Создайте файл (для хранения сборника схем) под названием `azure-vm-stop.yml` и откройте его в редакторе VI следующим образом:
+1. Создайте файл `azure-vm-stop.yml` и откройте его в редакторе.
 
     ```azurecli-interactive
-    vi azure-vm-stop.yml
+    code azure-vm-stop.yml
     ```
 
-1.  Нажмите ключ **I**, чтобы войти в режим вставки.
-
-1.  Вставьте следующий пример кода в редактор.
+1. Вставьте следующий пример кода в редактор.
 
     ```yaml
     - name: Stop Azure VM
       hosts: localhost
       connection: local
       tasks:
-      - name: Deallocate the virtual machine
-        azure_rm_virtualmachine:
-          resource_group: myResourceGroup
-          name: myVM
-          allocated: no
+        - name: Stop virtual machine
+          azure_rm_virtualmachine:
+            resource_group: {{ resource_group_name }}
+            name: {{ vm_name }}
+            allocated: no
     ```
 
-1.  Выйдите из режима вставки, нажав клавишу **Esc**.
+1. Замените заполнители `{{ resource_group_name }}` и `{{ vm_name }}` собственными значениями.
 
-1.  Сохраните файл и закройте редактор VI. Для этого введите приведенную ниже команду.
+1. Сохраните файл и закройте редактор.
 
-    ```bash
-    :wq
-    ```
-
-1.  Запустите пример сборника схем Ansible.
+1. Запустите сборник схем с помощью команды `ansible-playbook`.
 
     ```bash
     ansible-playbook azure-vm-stop.yml
     ```
 
-1.  Ниже приведен пример выходных данных, в котором показано, что общение виртуальной машины успешно завершено:
+1. После запуска сборника схем отобразятся результаты, аналогичные приведенным ниже.
 
     ```bash
     PLAY [Stop Azure VM] ********************************************************
@@ -82,49 +77,44 @@ Ansible позволяет автоматизировать развертыва
     localhost                  : ok=2    changed=1    unreachable=0    failed=0
     ```
 
-## <a name="use-ansible-to-start-a-deallocated-stopped-azure-virtual-machine"></a>Запуск виртуальной машины Azure, для которой было остановлено общение, с помощью Ansible
-В этом разделе описано, как с помощью Ansible запустить виртуальную машину Azure, для которой было остановлено общение.
+## <a name="start-a-virtual-machine"></a>запуск виртуальной машины
 
-1.  Войдите на [портале Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
+В этом разделе вы запустите остановленную виртуальную машину Azure (т. е. выделение которой было отменено) с помощью Ansible.
 
-1.  Откройте [Cloud Shell](/azure/cloud-shell/overview).
+1. Войдите на [портале Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
 
-1.  Создайте файл (для хранения сборника схем) под названием `azure-vm-start.yml` и откройте его в редакторе VI следующим образом:
+1. Откройте [Cloud Shell](/azure/cloud-shell/overview).
+
+1. Создайте файл `azure-vm-start.yml` и откройте его в редакторе.
 
     ```azurecli-interactive
-    vi azure-vm-start.yml
+    code azure-vm-start.yml
     ```
 
-1.  Нажмите ключ **I**, чтобы войти в режим вставки.
-
-1.  Вставьте следующий пример кода в редактор.
+1. Вставьте следующий пример кода в редактор.
 
     ```yaml
     - name: Start Azure VM
       hosts: localhost
       connection: local
       tasks:
-      - name: Start the virtual machine
-        azure_rm_virtualmachine:
-          resource_group: myResourceGroup
-          name: myVM
+        - name: Start virtual machine
+          azure_rm_virtualmachine:
+            resource_group: {{ resource_group_name }}
+            name: {{ vm_name }}
     ```
 
-1.  Выйдите из режима вставки, нажав клавишу **Esc**.
+1. Замените заполнители `{{ resource_group_name }}` и `{{ vm_name }}` собственными значениями.
 
-1.  Сохраните файл и закройте редактор VI. Для этого введите приведенную ниже команду.
+1. Сохраните файл и закройте редактор.
 
-    ```bash
-    :wq
-    ```
-
-1.  Запустите пример сборника схем Ansible.
+1. Запустите сборник схем с помощью команды `ansible-playbook`.
 
     ```bash
     ansible-playbook azure-vm-start.yml
     ```
 
-1.  Ниже приведен пример выходных данных, в котором показано, что запуск виртуальной машины успешно выполнен:
+1. После запуска сборника схем отобразятся результаты, аналогичные приведенным ниже.
 
     ```bash
     PLAY [Start Azure VM] ********************************************************
@@ -140,5 +130,6 @@ Ansible позволяет автоматизировать развертыва
     ```
 
 ## <a name="next-steps"></a>Дополнительная информация
+
 > [!div class="nextstepaction"] 
-> [Управление динамическими списками Azure с помощью Ansible](~/articles/ansible/ansible-manage-azure-dynamic-inventories.md)
+> [Руководство по управлению динамическими списками Azure с помощью Ansible](~/articles/ansible/ansible-manage-azure-dynamic-inventories.md)

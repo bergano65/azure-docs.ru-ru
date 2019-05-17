@@ -15,14 +15,17 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 01/04/2019
 ms.author: jowargo
-ms.openlocfilehash: 1c777f705d9b2d3df713642349fe4dbd413e48e1
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: af08d3ca6eaa95663b0bb669f6dc82a13df5ab39
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57872868"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65233107"
 ---
-# <a name="tutorial-push-notifications-to-specific-android-devices-using-azure-notification-hubs-and-google-cloud-messaging"></a>Руководство. Отправка push-уведомлений на конкретные устройства Android с помощью Центров уведомлений Azure и Google Cloud Messaging
+# <a name="tutorial-push-notifications-to-specific-android-devices-using-azure-notification-hubs-and-google-cloud-messaging-deprecated"></a>Руководство по отправке push-уведомлений на конкретные устройства Android с помощью Центров уведомлений Azure и Google Cloud Messaging (не рекомендуется к использованию)
+
+> [!WARNING]
+> С 10 апреля 2018 года компания Google не рекомендует использовать Google Cloud Messaging (GCM). Интерфейсы API сервера и клиента GCM являются нерекомендуемыми и будут удалены после 29 мая 2019 года. Дополнительные сведения см. в статье [GCM and FCM Frequently Asked Questions](https://developers.google.com/cloud-messaging/faq) (Часто задаваемые вопросы о GCM и FCM).
 
 [!INCLUDE [notification-hubs-selector-breaking-news](../../includes/notification-hubs-selector-breaking-news.md)]
 

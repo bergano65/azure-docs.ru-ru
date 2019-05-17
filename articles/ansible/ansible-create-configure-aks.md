@@ -1,111 +1,121 @@
 ---
-title: Создание и настройка кластеров службы Azure Kubernetes в Azure с помощью Ansible
+title: Учебник по настройке сети кластеров Службы Azure Kubernetes (AKS) с помощью Ansible | Документация Майкрософт
 description: Узнайте, как использовать Ansible для создания кластеров службы Azure Kubernetes и управления ими в Azure.
-ms.service: azure
-keywords: ansible, azure, devops, bash, cloudshell, сборник схем, aks, контейнер, Kubernetes
+keywords: ansible, azure, devops, bash, cloudshell, сборник схем, aks, контейнер, aks, kubernetes
+ms.topic: tutorial
+ms.service: ansible
 author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
-ms.topic: tutorial
-ms.date: 08/23/2018
-ms.openlocfilehash: 2270a9225d26329f3d78d78895223aaa6ccc855f
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.date: 04/30/2019
+ms.openlocfilehash: 1467afce60038e086daace72947c1ab21569865a
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58176401"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65231328"
 ---
-# <a name="create-and-configure-azure-kubernetes-service-clusters-in-azure-using-ansible"></a>Создание и настройка кластеров службы Azure Kubernetes в Azure с помощью Ansible
-Ansible позволяет автоматизировать развертывание и настройку ресурсов в среде. Ansible можно использовать для управления службой Azure Kubernetes (AKS). В этой статье приводятся сведения об использовании Ansible для создания и настройки кластера службы Azure Kubernetes.
+# <a name="tutorial-configure-azure-kubernetes-service-aks-clusters-in-azure-using-ansible"></a>Руководство по настройке кластеров Службы Azure Kubernetes в Azure с помощью Ansible
+
+[!INCLUDE [ansible-28-note.md](../../includes/ansible-28-note.md)]
+
+[!INCLUDE [open-source-devops-intro-aks.md](../../includes/open-source-devops-intro-aks.md)]
+
+Службу Azure Kubernetes можно настроить для использования [Azure Active Directory (AD)](/azure/active-directory/) для аутентификации пользователей. После настройки можно будет использовать маркер аутентификации Azure AD для входа в кластер AKS. Управление доступом на основе ролей может основываться на удостоверении пользователя или членстве в группах каталога.
+
+[!INCLUDE [ansible-tutorial-goals.md](../../includes/ansible-tutorial-goals.md)]
+
+> [!div class="checklist"]
+>
+> * Создание кластера AKS
+> * Настройка кластера AKS.
 
 ## <a name="prerequisites"></a>Предварительные требования
-- **Подписка Azure.** Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начинать работу.
-- **Субъект-служба Azure**. При [создании субъекта-службы](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest) обратите внимание на следующие значения: **appId**, **displayName**, **password** и **tenant**.
 
-- [!INCLUDE [ansible-prereqs-for-cloudshell-use-or-vm-creation1.md](../../includes/ansible-prereqs-for-cloudshell-use-or-vm-creation1.md)] [!INCLUDE [ansible-prereqs-for-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-for-cloudshell-use-or-vm-creation2.md)]
-
-> [!Note]
-> Для выполнения примеров сборников схем в этом руководстве требуется Ansible 2.6.
+[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../../includes/open-source-devops-prereqs-azure-subscription.md)]
+[!INCLUDE [open-source-devops-prereqs-create-service-principal.md](../../includes/open-source-devops-prereqs-create-service-principal.md)]
+[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]
 
 ## <a name="create-a-managed-aks-cluster"></a>Создание управляемого кластера AKS
-В этом разделе представлен пример кода сборника схем Ansible для создания группы ресурсов и кластера AKS, который находится в группе ресурсов.
 
-> [!Tip]
-> Для заполнителя `your_ssh_key` укажите свой открытый ключ RSA в однострочном формате, начиная с ssh-rsa.
+Пример сборника схем создает группу ресурсов и кластер AKS, который находится в этой группе ресурсов.
 
-  ```yaml
-  - name: Create Azure Kubernetes Service
-    hosts: localhost
-    connection: local
-    vars:
-      resource_group: myResourceGroup
-      location: eastus
-      aks_name: myAKSCluster
-      username: azureuser
-      ssh_key: "your_ssh_key"
-      client_id: "your_client_id"
-      client_secret: "your_client_secret"
-    tasks:
-    - name: Create resource group
-      azure_rm_resourcegroup:
-        name: "{{ resource_group }}"
-        location: "{{ location }}"
-    - name: Create a managed Azure Container Services (AKS) cluster
-      azure_rm_aks:
-        name: "{{ aks_name }}"
-        location: "{{ location }}"
-        resource_group: "{{ resource_group }}"
-        dns_prefix: "{{ aks_name }}"
-        linux_profile:
-          admin_username: "{{ username }}"
-          ssh_key: "{{ ssh_key }}"
-        service_principal:
-          client_id: "{{ client_id }}"
-          client_secret: "{{ client_secret }}"
-        agent_pool_profiles:
-          - name: default
-            count: 2
-            vm_size: Standard_D2_v2
-        tags:
-          Environment: Production
-  ```
+Сохраните следующий сборник схем как `azure_create_aks.yml`:
 
-Следующие маркеры поясняют предыдущий код сборника схем Ansible:
-- В первом разделе в **tasks** определяется группа ресурсов с именем **myResourceGroup** в расположении **eastus**.
-- Во втором разделе в **tasks** определяется кластер AKS с именем **myAKSCluster** в группе ресурсов **myResourceGroup**.
+```yml
+- name: Create Azure Kubernetes Service
+  hosts: localhost
+  connection: local
+  vars:
+    resource_group: myResourceGroup
+    location: eastus
+    aks_name: myAKSCluster
+    username: azureuser
+    ssh_key: "your_ssh_key"
+    client_id: "your_client_id"
+    client_secret: "your_client_secret"
+  tasks:
+  - name: Create resource group
+    azure_rm_resourcegroup:
+      name: "{{ resource_group }}"
+      location: "{{ location }}"
+  - name: Create a managed Azure Container Services (AKS) cluster
+    azure_rm_aks:
+      name: "{{ aks_name }}"
+      location: "{{ location }}"
+      resource_group: "{{ resource_group }}"
+      dns_prefix: "{{ aks_name }}"
+      linux_profile:
+        admin_username: "{{ username }}"
+        ssh_key: "{{ ssh_key }}"
+      service_principal:
+        client_id: "{{ client_id }}"
+        client_secret: "{{ client_secret }}"
+      agent_pool_profiles:
+        - name: default
+          count: 2
+          vm_size: Standard_D2_v2
+      tags:
+        Environment: Production
+```
 
-Чтобы создать кластер AKS с помощью Ansible, сохраните предыдущий пример сборника схем как `azure_create_aks.yml` и запустите сборник схем, выполнив следующую команду:
+Перед выполнением сборника схем ознакомьтесь со следующими указаниями.
 
-  ```bash
-  ansible-playbook azure_create_aks.yml
-  ```
+- В первом разделе в `tasks` определяется группа ресурсов `myResourceGroup` в расположении `eastus`.
+- Во втором разделе в `tasks` определяется кластер AKS `myAKSCluster` в группе ресурсов `myResourceGroup`.
+- Для заполнителя `your_ssh_key` укажите свой открытый ключ RSA в однострочном формате, начиная с ssh-rsa.
 
-Результат выполнения команды **ansible-playbook* будет аналогичен приведенному ниже — в нем отображается успешное создание кластера AKS:
+Запустите сборник схем с помощью команды `ansible-playbook`.
 
-  ```Output
-  PLAY [Create AKS] ****************************************************************************************
+```bash
+ansible-playbook azure_create_aks.yml
+```
 
-  TASK [Gathering Facts] ********************************************************************************************
-  ok: [localhost]
+После выполнения сборника схем отобразятся результаты, как показано ниже.
 
-  TASK [Create resource group] **************************************************************************************
-  changed: [localhost]
+```Output
+PLAY [Create AKS] 
 
-  TASK [Create an Azure Container Services (AKS) cluster] ***************************************************
-  changed: [localhost]
+TASK [Gathering Facts] 
+ok: [localhost]
 
-  PLAY RECAP *********************************************************************************************************
-  localhost                  : ok=3    changed=2    unreachable=0    failed=0
-  ```
+TASK [Create resource group] 
+changed: [localhost]
+
+TASK [Create an Azure Container Services (AKS) cluster] 
+changed: [localhost]
+
+PLAY RECAP 
+localhost                  : ok=3    changed=2    unreachable=0    failed=0
+```
 
 ## <a name="scale-aks-nodes"></a>Масштабирование узлов AKS
 
-Сборник схем из предыдущего раздела определяет два узла. Если вам требуется больше или меньше рабочих нагрузок контейнеров в кластере, вы можете легко изменить количество узлов. В этом разделе тот же сборник схем увеличивает количество узлов с двух до трех. Изменение количества узлов выполняется путем изменения значения **count** в блоке **agent_pool_profiles**.
+Сборник схем из предыдущего раздела определяет два узла. Измените число узлов, изменив значение `count` в блоке `agent_pool_profiles`.
 
-> [!Tip]
-> Для заполнителя `your_ssh_key` укажите свой открытый ключ RSA в однострочном формате, начиная с ssh-rsa.
+Сохраните следующий сборник схем как `azure_configure_aks.yml`:
 
-```yaml
+```yml
 - name: Scale AKS cluster
   hosts: localhost
   connection: local
@@ -136,64 +146,74 @@ Ansible позволяет автоматизировать развертыва
             vm_size: Standard_D2_v2
 ```
 
-Для масштабирования кластера службы Azure Kubernetes с помощью Ansible сохраните предыдущий сборник схем как *azure_configure_aks.yml* и запустите сборник схем:
+Перед выполнением сборника схем ознакомьтесь со следующими указаниями.
 
-  ```bash
-  ansible-playbook azure_configure_aks.yml
-  ```
+- Для заполнителя `your_ssh_key` укажите свой открытый ключ RSA в однострочном формате, начиная с ssh-rsa.
 
-В следующих выходных данных демонстрируется успешное создание кластера AKS:
+Запустите сборник схем с помощью команды `ansible-playbook`.
 
-  ```Output
-  PLAY [Scale AKS cluster] ***************************************************************
+```bash
+ansible-playbook azure_configure_aks.yml
+```
 
-  TASK [Gathering Facts] ******************************************************************
-  ok: [localhost]
+После выполнения сборника схем отобразятся результаты, как показано ниже.
 
-  TASK [Scaling an existed AKS cluster] **************************************************
-  changed: [localhost]
+```Output
+PLAY [Scale AKS cluster] 
 
-  PLAY RECAP ******************************************************************************
-  localhost                  : ok=2    changed=1    unreachable=0    failed=0
-  ```
-## <a name="delete-a-managed-aks-cluster"></a>Удаление управляемого кластера AKS
-
-В следующем разделе примера сборника схем Ansible описано, как удалить кластер AKS:
-
-  ```yaml
-  - name: Delete a managed Azure Container Services (AKS) cluster
-    hosts: localhost
-    connection: local
-    vars:
-      resource_group: myResourceGroup
-      aks_name: myAKSCluster
-    tasks:
-    - name:
-      azure_rm_aks:
-        name: "{{ aks_name }}"
-        resource_group: "{{ resource_group }}"
-        state: absent
-   ```
-
-Чтобы удалить кластер Службы Azure Kubernetes с помощью Ansible, сохраните предыдущий сборник схем как файл *azure_configure_aks.yml* и запустите его:
-
-  ```bash
-  ansible-playbook azure_delete_aks.yml
-  ```
-
-В следующих выходных данных показано успешное удаление кластера AKS:
-  ```Output
-PLAY [Delete a managed Azure Container Services (AKS) cluster] ****************************
-
-TASK [Gathering Facts] ********************************************************************
+TASK [Gathering Facts] 
 ok: [localhost]
 
-TASK [azure_rm_aks] *********************************************************************
+TASK [Scaling an existed AKS cluster] 
+changed: [localhost]
 
-PLAY RECAP *********************************************************************
+PLAY RECAP 
 localhost                  : ok=2    changed=1    unreachable=0    failed=0
+```
+
+## <a name="delete-a-managed-aks-cluster"></a>Удаление управляемого кластера AKS
+
+Пример сборника схем удаляет кластер AKS.
+
+Сохраните следующий сборник схем как `azure_delete_aks.yml`:
+
+
+```yml
+- name: Delete a managed Azure Container Services (AKS) cluster
+  hosts: localhost
+  connection: local
+  vars:
+    resource_group: myResourceGroup
+    aks_name: myAKSCluster
+  tasks:
+  - name:
+    azure_rm_aks:
+      name: "{{ aks_name }}"
+      resource_group: "{{ resource_group }}"
+      state: absent
   ```
 
+Запустите сборник схем с помощью команды `ansible-playbook`.
+
+```bash
+ansible-playbook azure_delete_aks.yml
+```
+
+После выполнения сборника схем отобразятся результаты, как показано ниже.
+
+```Output
+PLAY [Delete a managed Azure Container Services (AKS) cluster] 
+
+TASK [Gathering Facts] 
+ok: [localhost]
+
+TASK [azure_rm_aks] 
+
+PLAY RECAP 
+localhost                  : ok=2    changed=1    unreachable=0    failed=0
+```
+
 ## <a name="next-steps"></a>Дополнительная информация
+
 > [!div class="nextstepaction"]
-> [Руководство. Масштабирование приложения в службе Azure Kubernetes (AKS)](https://docs.microsoft.com/azure/aks/tutorial-kubernetes-scale)
+> [Руководство. Масштабирование приложения в службе Azure Kubernetes (AKS)](/azure/aks/tutorial-kubernetes-scale)

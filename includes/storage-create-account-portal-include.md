@@ -5,15 +5,15 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: include
-ms.date: 09/18/2018
+ms.date: 05/06/2019
 ms.author: tamram
 ms.custom: include file
-ms.openlocfilehash: 3b770c3e51b17fa5d70abb03360e17e1073974d8
-ms.sourcegitcommit: 1b186301dacfe6ad4aa028cfcd2975f35566d756
+ms.openlocfilehash: 842201ee20ef2e13c5179ccb5992a1ed98d36a3e
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/06/2018
-ms.locfileid: "51222169"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65237872"
 ---
 Чтобы создать учетную запись хранения общего назначения версии 2 на портале Azure, сделайте следующее:
 
@@ -33,7 +33,7 @@ ms.locfileid: "51222169"
    |Модель развертывания     |Диспетчер ресурсов         |
    |Производительность     |Стандартная         |
    |Тип учетной записи     |StorageV2 (учетная запись общего назначения версии 2)         |
-   |Репликация     |Локально избыточное хранилище (LRS)         |
+   |Репликация     |Геоизбыточное хранилище с доступом для чтения (LRS)         |
    |Уровень доступа     |Горячий         |
 
 1. Выберите **Просмотр и создание**, чтобы просмотреть настройки учетной записи хранения и создать учетную запись.

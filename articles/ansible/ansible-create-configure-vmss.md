@@ -1,280 +1,319 @@
 ---
-title: Создание масштабируемых наборов виртуальных машин в Azure с помощью Ansible
-description: Сведения об использовании Ansible для создания и настройки масштабируемого набора виртуальных машин в Azure
-ms.service: azure
+title: Учебник по настройке масштабируемых наборов виртуальных машин в Azure с помощью Ansible | Документация Майкрософт
+description: Узнайте, как с помощью Ansible для создавать и настраивать масштабируемые наборы виртуальных машин в Azure.
 keywords: ansible, azure, devops, bash, playbook, virtual machine, virtual machine scale set, vmss
+ms.topic: tutorial
+ms.service: ansible
 author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
-ms.topic: tutorial
-ms.date: 08/24/2018
-ms.openlocfilehash: 1176987ab318a97a7db6a12e619e7b7db06ad2da
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.date: 04/30/2019
+ms.openlocfilehash: 41ef6103a899970142df1a6beee0ad428419f3df
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58097895"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65230745"
 ---
-# <a name="create-virtual-machine-scale-sets-in-azure-using-ansible"></a>Создание масштабируемых наборов виртуальных машин в Azure с помощью Ansible
-Ansible позволяет автоматизировать развертывание и настройку ресурсов в среде. Ansible можно использовать для управления масштабируемым набором виртуальных машин (VMSS) в Azure так же, как любым другим ресурсом Azure. В этой статье показано, как создать и развернуть масштабируемый набор виртуальных машин с помощью Ansible. 
+# <a name="tutorial-configure-virtual-machine-scale-sets-in-azure-using-ansible"></a>Руководство по настройке масштабируемых наборов виртуальных машин в Azure с помощью Ansible
+
+[!INCLUDE [ansible-27-note.md](../../includes/ansible-27-note.md)]
+
+[!INCLUDE [open-source-devops-intro-vmss.md](../../includes/open-source-devops-intro-vmss.md)]
+
+[!INCLUDE [ansible-tutorial-goals.md](../../includes/ansible-tutorial-goals.md)]
+
+> [!div class="checklist"]
+>
+> * Настройка ресурсов для виртуальной машины.
+> * Настройка масштабируемого набора.
+> * Масштабирование масштабируемого набора путем увеличения числа экземпляров виртуальных машин. 
 
 ## <a name="prerequisites"></a>Предварительные требования
-- **Подписка Azure.** Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начинать работу.
-- [!INCLUDE [ansible-prereqs-for-cloudshell-use-or-vm-creation1.md](../../includes/ansible-prereqs-for-cloudshell-use-or-vm-creation1.md)] [!INCLUDE [ansible-prereqs-for-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-for-cloudshell-use-or-vm-creation2.md)]
 
-> [!Note]
-> Для выполнения примеров сборников схем в этом руководстве требуется Ansible 2.6. 
+[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../../includes/open-source-devops-prereqs-azure-subscription.md)]
+[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]
 
-## <a name="create-a-vmss"></a>Создание VMSS
-В этом разделе представлен пример сборника схем Ansible, который определяет следующие ресурсы:
-- **Группа ресурсов**, в которую будут развернуты все ваши ресурсы.
-- **Виртуальная сеть** в адресном пространстве 10.0.0.0/16.
-- **Подсеть** в виртуальной сети.
-- **Общедоступный IP-адрес**, который позволяет получить доступ к ресурсам через Интернет.
-- **Группа безопасности сети**, которая контролирует передачу исходящего и входящего трафика масштабируемого набора виртуальных машин.
-- **Подсистема балансировки нагрузки**, которая распределяет трафик в наборе определенных виртуальных машин с помощью правил подсистемы балансировки нагрузки.
-- **Масштабируемый набор виртуальных машин**, который использует все созданные ресурсы.
+## <a name="configure-a-scale-set"></a>Настройка масштабируемого набора.
 
-Введите свой пароль для значения *admin_password*.
+Код из сборника схем в этом разделе определяет следующие ресурсы:
 
-  ```yml
-  - hosts: localhost
-    vars:
-      resource_group: myResourceGroup
-      vmss_name: myVMSS
-      vmss_lb_name: myVMSSlb
-      location: eastus
-      admin_username: azureuser
-      admin_password: "your_password"
-    tasks:
-      - name: Create a resource group
-        azure_rm_resourcegroup:
-          name: "{{ resource_group }}"
-          location: "{{ location }}"
-      - name: Create virtual network
-        azure_rm_virtualnetwork:
-          resource_group: "{{ resource_group }}"
-          name: "{{ vmss_name }}"
-          address_prefixes: "10.0.0.0/16"
-      - name: Add subnet
-        azure_rm_subnet:
-          resource_group: "{{ resource_group }}"
-          name: "{{ vmss_name }}"
-          address_prefix: "10.0.1.0/24"
-          virtual_network: "{{ vmss_name }}"
-      - name: Create public IP address
-        azure_rm_publicipaddress:
-          resource_group: "{{ resource_group }}"
-          allocation_method: Static
-          name: "{{ vmss_name }}"
-      - name: Create Network Security Group that allows SSH
-        azure_rm_securitygroup:
-          resource_group: "{{ resource_group }}"
-          name: "{{ vmss_name }}"
-          rules:
-            - name: SSH
-              protocol: Tcp
-              destination_port_range: 22
-              access: Allow
-              priority: 1001
-              direction: Inbound
+* **Группа ресурсов**, в которую будут развернуты все ваши ресурсы.
+* **Виртуальная сеть** в адресном пространстве 10.0.0.0/16.
+* **Подсеть** в виртуальной сети.
+* **Общедоступный IP-адрес**, который позволяет получить доступ к ресурсам через Интернет.
+* **Группа безопасности сети**, которая контролирует поток исходящего и входящего трафика масштабируемого набора.
+* **Подсистема балансировки нагрузки**, которая распределяет трафик в наборе определенных виртуальных машин с помощью правил подсистемы балансировки нагрузки.
+* **Масштабируемый набор виртуальных машин**, который использует все созданные ресурсы.
 
-      - name: Create a load balancer
-        azure_rm_loadbalancer:
-          name: "{{ vmss_lb_name }}"
-          location: "{{ location }}"
-          resource_group: "{{ resource_group }}"
-          public_ip: "{{ vmss_name }}"
-          probe_protocol: Tcp
-          probe_port: 8080
-          probe_interval: 10
-          probe_fail_count: 3
-          protocol: Tcp
-          load_distribution: Default
-          frontend_port: 80
-          backend_port: 8080
-          idle_timeout: 4
-          natpool_frontend_port_start: 50000
-          natpool_frontend_port_end: 50040
-          natpool_backend_port: 22
-          natpool_protocol: Tcp
+Существуют два способа получить пример сборника схем.
 
-      - name: Create VMSS
-        azure_rm_virtualmachine_scaleset:
-          resource_group: "{{ resource_group }}"
-          name: "{{ vmss_name }}"
-          vm_size: Standard_DS1_v2
-          admin_username: "{{ admin_username }}"
-          admin_password: "{{ admin_password }}"
-          ssh_password_enabled: true
-          capacity: 2
-          virtual_network_name: "{{ vmss_name }}"
-          subnet_name: "{{ vmss_name }}"
-          upgrade_policy: Manual
-          tier: Standard
-          managed_disk_type: Standard_LRS
-          os_disk_caching: ReadWrite
-          image:
-            offer: UbuntuServer
-            publisher: Canonical
-            sku: 16.04-LTS
-            version: latest
-          load_balancer: "{{ vmss_lb_name }}"
-          data_disks:
-            - lun: 0
-              disk_size_gb: 20
-              managed_disk_type: Standard_LRS
-              caching: ReadOnly
-            - lun: 1
-              disk_size_gb: 30
-              managed_disk_type: Standard_LRS
-              caching: ReadOnly
-  ```
+* [Скачайте сборник схем](https://github.com/Azure-Samples/ansible-playbooks/blob/master/vmss/vmss-create.yml) и сохраните его в `vmss-create.yml`.
+* Создайте файл с именем `vmss-create.yml` и скопируйте в него следующее содержимое.
 
-Чтобы создать среду масштабируемого набора виртуальных машин с помощью Ansible, сохраните сборник схем как `vmss-create.yml` или [загрузите пример сборника схем Ansible](https://github.com/Azure-Samples/ansible-playbooks/blob/master/vmss/vmss-create.yml).
+```yml
+- hosts: localhost
+  vars:
+    resource_group: myResourceGroup
+    vmss_name: myScaleSet
+    vmss_lb_name: myScaleSetLb
+    location: eastus
+    admin_username: azureuser
+    admin_password: "{{ admin_password }}"
+  tasks:
+    - name: Create a resource group
+      azure_rm_resourcegroup:
+        name: "{{ resource_group }}"
+        location: "{{ location }}"
+    - name: Create virtual network
+      azure_rm_virtualnetwork:
+        resource_group: "{{ resource_group }}"
+        name: "{{ vmss_name }}"
+        address_prefixes: "10.0.0.0/16"
+    - name: Add subnet
+      azure_rm_subnet:
+        resource_group: "{{ resource_group }}"
+        name: "{{ vmss_name }}"
+        address_prefix: "10.0.1.0/24"
+        virtual_network: "{{ vmss_name }}"
+    - name: Create public IP address
+      azure_rm_publicipaddress:
+        resource_group: "{{ resource_group }}"
+        allocation_method: Static
+        name: "{{ vmss_name }}"
+    - name: Create Network Security Group that allows SSH
+      azure_rm_securitygroup:
+        resource_group: "{{ resource_group }}"
+        name: "{{ vmss_name }}"
+        rules:
+          - name: SSH
+            protocol: Tcp
+            destination_port_range: 22
+            access: Allow
+            priority: 1001
+            direction: Inbound
 
-Чтобы запустить сборник схем Ansible, используйте команду **ansible-playbook** следующим образом:
+    - name: Create a load balancer
+      azure_rm_loadbalancer:
+        name: "{{ vmss_lb_name }}"
+        location: "{{ location }}"
+        resource_group: "{{ resource_group }}"
+        public_ip: "{{ vmss_name }}"
+        probe_protocol: Tcp
+        probe_port: 8080
+        probe_interval: 10
+        probe_fail_count: 3
+        protocol: Tcp
+        load_distribution: Default
+        frontend_port: 80
+        backend_port: 8080
+        idle_timeout: 4
+        natpool_frontend_port_start: 50000
+        natpool_frontend_port_end: 50040
+        natpool_backend_port: 22
+        natpool_protocol: Tcp
 
-  ```bash
-  ansible-playbook vmss-create.yml
-  ```
+    - name: Create Scale Set
+      azure_rm_virtualmachinescaleset:
+        resource_group: "{{ resource_group }}"
+        name: "{{ vmss_name }}"
+        vm_size: Standard_DS1_v2
+        admin_username: "{{ admin_username }}"
+        admin_password: "{{ admin_password }}"
+        ssh_password_enabled: true
+        capacity: 2
+        virtual_network_name: "{{ vmss_name }}"
+        subnet_name: "{{ vmss_name }}"
+        upgrade_policy: Manual
+        tier: Standard
+        managed_disk_type: Standard_LRS
+        os_disk_caching: ReadWrite
+        image:
+          offer: UbuntuServer
+          publisher: Canonical
+          sku: 16.04-LTS
+          version: latest
+        load_balancer: "{{ vmss_lb_name }}"
+        data_disks:
+          - lun: 0
+            disk_size_gb: 20
+            managed_disk_type: Standard_LRS
+            caching: ReadOnly
+          - lun: 1
+            disk_size_gb: 30
+            managed_disk_type: Standard_LRS
+            caching: ReadOnly
+```
 
-После запуска сборника схем выходные данные, аналогичные следующему примеру, показывают, что масштабируемый набор виртуальных машин был успешно создан:
+Перед выполнением сборника схем ознакомьтесь со следующими указаниями.
 
-  ```Output
-  PLAY [localhost] ***********************************************************
+* В разделе `vars` замените заполнитель `{{ admin_password }}` собственным паролем.
 
-  TASK [Gathering Facts] *****************************************************
-  ok: [localhost]
+Запустите сборник схем с помощью команды `ansible-playbook`.
 
-  TASK [Create a resource group] ****************************************************************************
-  changed: [localhost]
+```bash
+ansible-playbook vmss-create.yml
+```
 
-  TASK [Create virtual network] ****************************************************************************
-  changed: [localhost]
+После запуска сборника схем отобразятся результаты, аналогичные приведенным ниже.
 
-  TASK [Add subnet] **********************************************************
-  changed: [localhost]
+```Output
+PLAY [localhost] 
 
-  TASK [Create public IP address] ****************************************************************************
-  changed: [localhost]
+TASK [Gathering Facts] 
+ok: [localhost]
 
-  TASK [Create Network Security Group that allows SSH] ****************************************************************************
-  changed: [localhost]
+TASK [Create a resource group] 
+changed: [localhost]
 
-  TASK [Create a load balancer] ****************************************************************************
-  changed: [localhost]
+TASK [Create virtual network] 
+changed: [localhost]
 
-  TASK [Create VMSS] *********************************************************
-  changed: [localhost]
+TASK [Add subnet] 
+changed: [localhost]
 
-  PLAY RECAP *****************************************************************
-  localhost                  : ok=8    changed=7    unreachable=0    failed=0
+TASK [Create public IP address] 
+changed: [localhost]
 
-  ```
+TASK [Create Network Security Group that allows SSH] 
+changed: [localhost]
 
-## <a name="scale-out-a-vmss"></a>Развертывание VMSS
-Созданный масштабируемый набор виртуальных машин имеет два экземпляра. Если вы перейдете к масштабируемому набору виртуальных машин на портале Azure, вы увидите следующие сведения: **Standard_DS1_v2 (2 instances)** (Standard_DS1_v2 (2 экземпляра)). Вы также можете использовать [Azure Cloud Shell](https://shell.azure.com/), выполнив следующую команду в Cloud Shell:
+TASK [Create a load balancer] 
+changed: [localhost]
 
-  ```azurecli-interactive
-  az vmss show -n myVMSS -g myResourceGroup --query '{"capacity":sku.capacity}' 
-  ```
+TASK [Create Scale Set] 
+changed: [localhost]
 
-Отобразятся похожие результаты:
+PLAY RECAP 
+localhost                  : ok=8    changed=7    unreachable=0    failed=0
 
-  ```bash
-  {
-    "capacity": 2,
-  }
-  ```
+```
 
-Теперь давайте увеличим количество экземпляров с двух до трех. Следующий код сборника схем Ansible извлекает информацию о масштабируемом наборе виртуальных машин и изменяет его емкость с двух до трех. 
+## <a name="view-the-number-of-vm-instances"></a>Просмотр числа экземпляров виртуальных машин
 
-  ```yml
-  - hosts: localhost
-    vars:
-      resource_group: myResourceGroup
-      vmss_name: myVMSS
-    tasks: 
-      - name: Get scaleset info
-        azure_rm_virtualmachine_scaleset_facts:
-          resource_group: "{{ resource_group }}"
-          name: "{{ vmss_name }}"
-          format: curated
-        register: output_scaleset
+Сейчас [настроенный масштабируемый набор](#configure-a-scale-set) содержит два экземпляра. Чтобы убедиться в этом, можно сделать следующее.
 
-      - name: Dump scaleset info
-        debug:
-          var: output_scaleset
+1. Войдите на [портале Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
 
-      - name: Modify scaleset (change the capacity to 3)
-        set_fact:
-          body: "{{ output_scaleset.ansible_facts.azure_vmss[0] | combine({'capacity': 3}, recursive=True) }}"
+1. Перейдите к масштабируемому набору, который вы настроили.
 
-      - name: Update something in that VMSS
-        azure_rm_virtualmachine_scaleset: "{{ body }}"
-  ```
+1. Вы увидите имя масштабируемого набора с числом экземпляров в скобках: `Standard_DS1_v2 (2 instances)`.
 
-Чтобы развернуть созданный масштабируемый набор виртуальных машин, сохраните предыдущий сборник схем как `vmss-scale-out.yml` или [загрузите пример сборника схем Ansible](https://github.com/Azure-Samples/ansible-playbooks/blob/master/vmss/vmss-scale-out.yml). 
+1. Вы можете также проверить число экземпляров с помощью [Azure Cloud Shell](https://shell.azure.com/), выполнив следующую команду.
 
-Запустить сборник схем можно с помощью следующей команды:
+    ```azurecli-interactive
+    az vmss show -n myScaleSet -g myResourceGroup --query '{"capacity":sku.capacity}' 
+    ```
 
-  ```bash
-  ansible-playbook vmss-scale-out.yml
-  ```
+    После выполнения команды в Cloud Shell видно, что теперь в масштабируемом наборе три экземпляра. 
 
-Выходные данные запуска сборника схем Ansible показывают, что масштабируемый набор виртуальных машин был успешно развернут:
+    ```bash
+    {
+      "capacity": 3,
+    }
+    ```
 
-  ```Output
-  PLAY [localhost] **********************************************************
+## <a name="scale-out-a-scale-set"></a>Расширение масштабируемого набора
 
-  TASK [Gathering Facts] ****************************************************
-  ok: [localhost]
+Код из сборника схем в этом разделе извлекает информацию о масштабируемом наборе и изменяет его емкость с двух виртуальных машин до трех.
 
-  TASK [Get scaleset info] ***************************************************************************
-  ok: [localhost]
+Существуют два способа получить пример сборника схем.
 
-  TASK [Dump scaleset info] ***************************************************************************
-  ok: [localhost] => {
-      "output_scaleset": {
-          "ansible_facts": {
-              "azure_vmss": [
-                  {
-                      ......
-                  }
-              ]
-          },
-          "changed": false,
-          "failed": false
-      }
-  }
+* [Скачайте сборник схем](https://github.com/Azure-Samples/ansible-playbooks/blob/master/vmss/vmss-scale-out.yml) и сохраните его в `vmss-scale-out.yml`.
+* Создайте файл с именем `vmss-scale-out.yml` и скопируйте в него следующее содержимое.
 
-  TASK [Modify scaleset (set upgradePolicy to Automatic and capacity to 3)] ***************************************************************************
-  ok: [localhost]
+```yml
+- hosts: localhost
+  vars:
+    resource_group: myResourceGroup
+    vmss_name: myScaleSet
+  tasks: 
+    - name: Get scaleset info
+      azure_rm_virtualmachine_scaleset_facts:
+        resource_group: "{{ resource_group }}"
+        name: "{{ vmss_name }}"
+        format: curated
+      register: output_scaleset
 
-  TASK [Update something in that VMSS] ***************************************************************************
-  changed: [localhost]
+    - name: Dump scaleset info
+      debug:
+        var: output_scaleset
 
-  PLAY RECAP ****************************************************************
-  localhost                  : ok=5    changed=1    unreachable=0    failed=0
-  ```
+    - name: Modify scaleset (change the capacity to 3)
+      set_fact:
+        body: "{{ output_scaleset.ansible_facts.azure_vmss[0] | combine({'capacity': 3}, recursive=True) }}"
 
-При переходе к настроенному масштабируемому набору виртуальных машин на портале Azure вы увидите следующие сведения: **Standard_DS1_v2 (3 instances)** (Standard_DS1_v2 ( 3 экземпляра)). Вы также можете проверить изменение с помощью [Azure Cloud Shell](https://shell.azure.com/), выполнив следующую команду:
+    - name: Update something in that scale set
+      azure_rm_virtualmachinescaleset: "{{ body }}"
+```
 
-  ```azurecli-interactive
-  az vmss show -n myVMSS -g myResourceGroup --query '{"capacity":sku.capacity}' 
-  ```
+Запустите сборник схем с помощью команды `ansible-playbook`.
 
-В результатах выполнения команды в Cloud Shell показано, что теперь существует три экземпляра. 
+```bash
+ansible-playbook vmss-scale-out.yml
+```
 
-  ```bash
-  {
-    "capacity": 3,
-  }
-  ```
+После запуска сборника схем отобразятся результаты, аналогичные приведенным ниже.
+
+```Output
+PLAY [localhost] 
+
+TASK [Gathering Facts] 
+ok: [localhost]
+
+TASK [Get scaleset info] 
+ok: [localhost]
+
+TASK [Dump scaleset info] 
+ok: [localhost] => {
+    "output_scaleset": {
+        "ansible_facts": {
+            "azure_vmss": [
+                {
+                    ......
+                }
+            ]
+        },
+        "changed": false,
+        "failed": false
+    }
+}
+
+TASK [Modify scaleset (set upgradePolicy to Automatic and capacity to 3)] 
+ok: [localhost]
+
+TASK [Update something in that scale set] 
+changed: [localhost]
+
+PLAY RECAP 
+localhost                  : ok=5    changed=1    unreachable=0    failed=0
+```
+
+## <a name="verify-the-results"></a>Проверка результатов
+
+Проверьте результаты работы на портале Azure.
+
+1. Войдите на [портале Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
+
+1. Перейдите к масштабируемому набору, который вы настроили.
+
+1. Вы увидите имя масштабируемого набора с числом экземпляров в скобках: `Standard_DS1_v2 (3 instances)`. 
+
+1. Вы также можете проверить изменение с помощью [Azure Cloud Shell](https://shell.azure.com/), выполнив следующую команду:
+
+    ```azurecli-interactive
+    az vmss show -n myScaleSet -g myResourceGroup --query '{"capacity":sku.capacity}' 
+    ```
+
+    После выполнения команды в Cloud Shell видно, что теперь в масштабируемом наборе три экземпляра. 
+
+    ```bash
+    {
+      "capacity": 3,
+    }
+    ```
 
 ## <a name="next-steps"></a>Дополнительная информация
+
 > [!div class="nextstepaction"] 
-> [Развертывание приложений в масштабируемых наборах виртуальных машин в Azure c помощью Ansible](https://docs.microsoft.com/azure/ansible/ansible-deploy-app-vmss)
-> 
-> [Automatically scale a virtual machine scale set in Azure using Ansible](https://docs.microsoft.com/azure/ansible/ansible-auto-scale-vmss) (Автоматическое масштабирование масштабируемых наборов виртуальных машин с помощью Ansible)
+> [Руководство по развертыванию приложений в масштабируемых наборах виртуальных машин в Azure c помощью Ansible](./ansible-deploy-app-vmss.md)

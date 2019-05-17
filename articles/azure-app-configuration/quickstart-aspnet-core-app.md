@@ -14,12 +14,12 @@ ms.tgt_pltfrm: ASP.NET Core
 ms.workload: tbd
 ms.date: 02/24/2019
 ms.author: yegu
-ms.openlocfilehash: 29cea7e72d6bd7f64f6cf2a68b7620090ea4eef3
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: e53f0bd1af3940b4d2f653b5ef43170212c09a43
+ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59995939"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65408687"
 ---
 # <a name="quickstart-create-an-aspnet-core-app-with-azure-app-configuration"></a>Краткое руководство. Создание приложения ASP.NET Core с помощью службы "Конфигурация приложений Azure"
 
@@ -28,6 +28,8 @@ ms.locfileid: "59995939"
 ASP.NET Core создает один объект конфигурации на основе пары "ключ — значение" с использованием параметров из одного или нескольких источников данных, указанных приложением. Эти источники данных называются *поставщиками конфигурации*. Так как в качестве такого поставщика реализован клиент .NET Core службы "Конфигурация приложений", служба выглядит как другой источник данных.
 
 Шаги из этого краткого руководства можно выполнять в любом редакторе кода. [Visual Studio Code](https://code.visualstudio.com/) является отличным вариантом, который доступен на платформах Windows, macOS и Linux.
+
+![Краткое руководство. Запуск приложения, размещенного локально](./media/quickstarts/aspnet-core-app-launch-local.png)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -39,7 +41,7 @@ ASP.NET Core создает один объект конфигурации на 
 
 [!INCLUDE [azure-app-configuration-create](../../includes/azure-app-configuration-create.md)]
 
-6. Выберите **Обозреватель ключей и значений** > **+ Создать**, чтобы добавить следующие пары "ключ-значение":
+6. Выберите **Configuration Explorer** (Обозреватель конфигураций)  > **+ Создать**, чтобы добавить следующие пары "ключ-значение".
 
     | Ключ | Значение |
     |---|---|
@@ -64,7 +66,7 @@ ASP.NET Core создает один объект конфигурации на 
 
 Добавьте в проект [инструмент "Диспетчер секретов"](https://docs.microsoft.com/aspnet/core/security/app-secrets). Инструмент "Диспетчер секретов" хранит конфиденциальные данные для разработки вне вашего дерева проектов. Этот подход помогает предотвратить случайный обмен секретами приложений в исходном коде.
 
-- Откройте файл с расширением *CSPROJ*. Добавьте элемент `UserSecretsId`, как показано здесь, и замените его своим значением, которое обычно является идентификатором GUID. Сохраните файл.
+- Откройте *CSPROJ*-файл. Добавьте элемент `UserSecretsId`, как показано здесь, и замените его своим значением, которое обычно является идентификатором GUID. Сохраните файл.
 
     ```xml
     <Project Sdk="Microsoft.NET.Sdk.Web">
@@ -86,7 +88,7 @@ ASP.NET Core создает один объект конфигурации на 
 
 1. Добавьте ссылку на пакет NuGet `Microsoft.Extensions.Configuration.AzureAppConfiguration`, выполнив следующую команду:
 
-        dotnet add package Microsoft.Extensions.Configuration.AzureAppConfiguration --version 1.0.0-preview-007830001
+        dotnet add package Microsoft.Extensions.Configuration.AzureAppConfiguration --version 1.0.0-preview-008520001
 
 2. Выполните следующую команду, чтобы восстановить пакеты проекта:
 
@@ -100,11 +102,11 @@ ASP.NET Core создает один объект конфигурации на 
 
         dotnet user-secrets set ConnectionStrings:AppConfig <your_connection_string>
 
-    Диспетчер секретов используется только для локальной проверки веб-приложения. При развертывании приложения (например, в [Службе приложений Azure](https://azure.microsoft.com/services/app-service/web)) используйте параметр приложения (например, **Строки подключения** в Службе приложений). Используйте этот параметр вместо хранения строки подключения с помощью диспетчера секретов.
+    Диспетчер секретов используется только для локальной проверки веб-приложения. При развертывании приложения, например в [Службе приложений Azure](https://azure.microsoft.com/services/app-service/web), вы будете использовать параметр приложения **Строки подключения** в Службе приложений, а не хранить строку подключения с помощью диспетчера секретов.
 
     Доступ к этому секрету осуществляется с помощью API конфигурации. Двоеточие (:) используется в имени конфигурации с API конфигурации на всех поддерживаемых платформах. Дополнительные сведения см. в статье [Конфигурация в .NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/configuration/index?tabs=basicconfiguration&view=aspnetcore-2.0).
 
-4. Откройте файл *Program.cs* и добавьте ссылку на поставщик конфигурации .NET Core для службы "Конфигурация приложений".
+4. Откройте файл *Program.cs* и добавьте ссылку на поставщик конфигурации приложений .NET Core.
 
     ```csharp
     using Microsoft.Extensions.Configuration.AzureAppConfiguration;
@@ -118,15 +120,12 @@ ASP.NET Core создает один объект конфигурации на 
             .ConfigureAppConfiguration((hostingContext, config) =>
             {
                 var settings = config.Build();
-                config.AddAzureAppConfiguration(options => {
-                    options.Connect(settings["ConnectionStrings:AppConfig"])
-                           .SetOfflineCache(new OfflineFileCache());
-                });
+                config.AddAzureAppConfiguration(settings["ConnectionStrings:AppConfig"]);
             })
             .UseStartup<Startup>();
     ```
 
-6. Откройте файл Index.cshtml в каталоге "Представления" > "Домашняя страница" и замените его содержимое следующим кодом.
+6. Откройте файл *Index.cshtml* в каталоге "Представления > Главная" и замените его содержимое следующим кодом.
 
     ```html
     @using Microsoft.Extensions.Configuration
@@ -152,7 +151,7 @@ ASP.NET Core создает один объект конфигурации на 
     </html>
     ```
 
-7. Откройте файл _Layout.cshtml в каталоге "Представления" > "Общие" и замените его содержимое следующим кодом.
+7. Откройте файл *_Layout.cshtml* в каталоге "Представления > Общие" и замените его содержимое следующим кодом.
 
     ```html
     <!DOCTYPE html>
@@ -190,8 +189,6 @@ ASP.NET Core создает один объект конфигурации на 
         dotnet run
 
 3. Откройте окно браузера и перейдите по адресу `http://localhost:5000`, который является URL-адресом по умолчанию для веб-приложения, размещенного локально.
-
-    ![Краткое руководство. Запуск приложения, размещенного локально](./media/quickstarts/aspnet-core-app-launch-local.png)
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

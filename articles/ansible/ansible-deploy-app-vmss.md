@@ -1,37 +1,47 @@
 ---
-title: Развертывание приложений в масштабируемых наборах виртуальных машин в Azure c помощью Ansible
-description: Узнайте, как настроить масштабируемый набор виртуальных машин и развернуть в нем приложение в Azure
-ms.service: azure
+title: Учебник по развертыванию приложений в масштабируемых наборах виртуальных машин в Azure с помощью Ansible | Документация Майкрософт
+description: Узнайте, как с помощью Ansible настроить масштабируемые наборы виртуальных машин Azure и развернуть приложение в масштабируемом наборе.
 keywords: ansible, azure, devops, bash, playbook, virtual machine, virtual machine scale set, vmss
+ms.topic: tutorial
+ms.service: ansible
 author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
-ms.topic: tutorial
-ms.date: 09/11/2018
-ms.openlocfilehash: 2214dd9505dff86ac26f01967a360140dee0069f
-ms.sourcegitcommit: d89b679d20ad45d224fd7d010496c52345f10c96
+ms.date: 04/30/2019
+ms.openlocfilehash: a44fd06ace9b21122f5f4253ac7d9601b54e6b62
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57791738"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65231061"
 ---
-# <a name="deploy-applications-to-virtual-machine-scale-sets-in-azure-using-ansible"></a>Развертывание приложений в масштабируемых наборах виртуальных машин в Azure c помощью Ansible
-Ansible позволяет автоматизировать развертывание и настройку ресурсов в среде. Вы можете использовать Ansible для развертывания приложений в Azure. В этой статье показано, как развернуть приложение Java в масштабируемом наборе виртуальных машин (VMSS) Azure.
+# <a name="tutorial-deploy-apps-to-virtual-machine-scale-sets-in-azure-using-ansible"></a>Руководство по развертыванию приложений в масштабируемых наборах виртуальных машин в Azure c помощью Ansible
+
+[!INCLUDE [ansible-27-note.md](../../includes/ansible-27-note.md)]
+
+[!INCLUDE [open-source-devops-intro-vmss.md](../../includes/open-source-devops-intro-vmss.md)]
+
+[!INCLUDE [ansible-tutorial-goals.md](../../includes/ansible-tutorial-goals.md)]
+
+> [!div class="checklist"]
+>
+> * Получение сведений об узле для группы виртуальных машин Azure
+> * Клонирование и сборка примера приложения
+> * Установка JRE (среды выполнения Java) в масштабируемом наборе
+> * Развертывание приложения Java в масштабируемом наборе
 
 ## <a name="prerequisites"></a>Предварительные требования
-- **Подписка Azure.** Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начинать работу.
-- [!INCLUDE [ansible-prereqs-for-cloudshell-use-or-vm-creation1.md](../../includes/ansible-prereqs-for-cloudshell-use-or-vm-creation1.md)] [!INCLUDE [ansible-prereqs-for-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-for-cloudshell-use-or-vm-creation2.md)]
-- **Масштабируемый набор виртуальных машин**. Если у вас еще нет масштабируемого набора виртуальных машин, вы можете [создать его с помощью Ansible](ansible-create-configure-vmss.md).
+
+[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../../includes/open-source-devops-prereqs-azure-subscription.md)]
+[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)] 
+[!INCLUDE [ansible-prereqs-vm-scale-set.md](../../includes/ansible-prereqs-vm-scale-set.md)]
 - **git** - [git](https://git-scm.com) используется для скачивания примеров Java, которые есть в этом руководстве.
 - **Пакет SDK для Java SE (JDK)**. [JDK](https://aka.ms/azure-jdks) используется для сборки примера проекта Java.
-- **Средства сборки Apache Maven**[Средства сборки Apache Maven](https://maven.apache.org/download.cgi) используются для создания примера проекта Java.
-
-> [!Note]
-> Для выполнения примеров сборников схем в этом руководстве требуется Ansible 2.6.
+- **Apache Maven** - [Apache Maven](https://maven.apache.org/download.cgi) используется для сборки примера проекта Java.
 
 ## <a name="get-host-information"></a>Получение сведений об узле
 
-В этом разделе показано, как использовать Ansible для получения сведений об узле для группы виртуальных машин Azure. Ниже приведен пример сборника схем Ansible. Код получает общедоступные IP-адреса и подсистему балансировки нагрузки в указанной группе ресурсов и создает группу узлов с именем **saclesethosts** в списке.
+Код из сборника схем в этом разделе извлекает сведения об узле для группы виртуальных машин. Этот код получает общедоступные IP-адреса и подсистему балансировки нагрузки в указанной группе ресурсов и создает группу узлов `scalesethosts` в списке ресурсов.
 
 Сохраните следующий пример сборника схем как `get-hosts-tasks.yml`:
 
@@ -61,7 +71,9 @@ Ansible позволяет автоматизировать развертыва
 
 ## <a name="prepare-an-application-for-deployment"></a>Подготовка приложения для развертывания
 
-В этом разделе вы используете git для клонирования примера проекта Java из GitHub и выполните сборку проекта. Сохраните следующий сборник схем как `app.yml`:
+Код из сборника схем в этом разделе использует `git` для клонирования примера проекта Java из GitHub и выполняет сборку этого проекта. 
+
+Сохраните следующий сборник схем как `app.yml`:
 
   ```yml
   - hosts: localhost
@@ -85,79 +97,97 @@ Ansible позволяет автоматизировать развертыва
   ansible-playbook app.yml
   ```
 
-Вывод команды ansible-playbook примерно такой, как показано ниже (создан пример приложения, клонированный с GitHub):
+После запуска сборника схем отобразятся результаты, аналогичные приведенным ниже.
 
   ```Output
-  PLAY [localhost] **********************************************************
+  PLAY [localhost] 
 
-  TASK [Gathering Facts] ****************************************************
+  TASK [Gathering Facts] 
   ok: [localhost]
 
-  TASK [Git Clone sample app] ***************************************************************************
+  TASK [Git Clone sample app] 
   changed: [localhost]
 
-  TASK [Build sample app] ***************************************************
+  TASK [Build sample app] 
   changed: [localhost]
 
-  PLAY RECAP ***************************************************************************
+  PLAY RECAP 
   localhost                  : ok=3    changed=2    unreachable=0    failed=0
 
   ```
 
-## <a name="deploy-the-application-to-vmss"></a>Развертывание приложения в VMSS
+## <a name="deploy-the-application-to-a-scale-set"></a>Развертывание приложения в масштабируемом наборе
 
-В следующем разделе сборника схем Ansible устанавливается JRE (Java Runtime Environment) в группе узлов с именем **saclesethosts** и развертывается приложение Java в группе узлов с именем **saclesethosts**:
+Код из сборника схем в этом разделе используется для следующего.
 
-(Измените `admin_password` на свой пароль).
+* Установите JRE в группе узлов `saclesethosts`.
+* Разверните приложение Java в группе узлов `saclesethosts`.
 
-  ```yml
-  - hosts: localhost
-    vars:
-      resource_group: myResourceGroup
-      scaleset_name: myVMSS
-      loadbalancer_name: myVMSSlb
-      admin_username: azureuser
-      admin_password: "your_password"
-    tasks:
-    - include: get-hosts-tasks.yml
+Существуют два способа получить пример сборника схем.
 
-  - name: Install JRE on VMSS
-    hosts: scalesethosts
-    become: yes
-    vars:
-      workspace: ~/src/helloworld
-      admin_username: azureuser
+* [Скачайте сборник схем](https://github.com/Azure-Samples/ansible-playbooks/blob/master/vmss/vmss-setup-deploy.yml) и сохраните его в `vmss-setup-deploy.yml`.
+* Создайте файл с именем `vmss-setup-deploy.yml` и скопируйте в него приведенное ниже содержимое.
 
-    tasks:
-    - name: Install JRE
-      apt:
-        name: default-jre
-        update_cache: yes
+```yml
+- hosts: localhost
+  vars:
+    resource_group: myResourceGroup
+    scaleset_name: myScaleSet
+    loadbalancer_name: myScaleSetLb
+    admin_username: azureuser
+    admin_password: "{{ admin_password }}"
+  tasks:
+  - include: get-hosts-tasks.yml
 
-    - name: Copy app to Azure VM
-      copy:
-        src: "{{ workspace }}/complete/target/gs-spring-boot-0.1.0.jar"
-        dest: "/home/{{ admin_username }}/helloworld.jar"
-        force: yes
-        mode: 0755
+- name: Install JRE on a scale set
+  hosts: scalesethosts
+  become: yes
+  vars:
+    workspace: ~/src/helloworld
+    admin_username: azureuser
 
-    - name: Start the application
-      shell: java -jar "/home/{{ admin_username }}/helloworld.jar" >/dev/null 2>&1 &
-      async: 5000
-      poll: 0
-  ```
+  tasks:
+  - name: Install JRE
+    apt:
+      name: default-jre
+      update_cache: yes
 
-Вы можете сохранить предыдущий пример сборника схем Ansible как `vmss-setup-deploy.yml` или [загрузить весь пример сборника схем](https://github.com/Azure-Samples/ansible-playbooks/blob/master/vmss).
+  - name: Copy app to Azure VM
+    copy:
+      src: "{{ workspace }}/complete/target/gs-spring-boot-0.1.0.jar"
+      dest: "/home/{{ admin_username }}/helloworld.jar"
+      force: yes
+      mode: 0755
 
-Чтобы использовать тип SSH-подключения с паролями, необходимо установить программу sshpass.
-  - Для Ubuntu версии 16.04 выполните команду `apt-get install sshpass`.
-  - Для CentOS версии 7.4 выполните команду `yum install sshpass`.
+  - name: Start the application
+    shell: java -jar "/home/{{ admin_username }}/helloworld.jar" >/dev/null 2>&1 &
+    async: 5000
+    poll: 0
+```
 
-Могут появиться следующие сообщения об ошибке. **Использование пароля SSH вместо ключа невозможно, так как проверка ключа узла включена и sshpass не поддерживает ее. Добавьте отпечаток узла в файл known_hosts для управления этим узлом.** Если вы видите эту ошибку, можно отключить проверку ключа узла, добавив следующую строку в файл `/etc/ansible/ansible.cfg` или `~/.ansible.cfg`:
-  ```bash
-  [defaults]
-  host_key_checking = False
-  ```
+Перед выполнением сборника схем ознакомьтесь со следующими указаниями.
+
+* В разделе `vars` замените заполнитель `{{ admin_password }}` собственным паролем.
+* Чтобы использовать тип соединения SSH с паролями, установите программу sshpass.
+
+    Ubuntu:
+
+    ```bash
+    apt-get install sshpass
+    ```
+
+    CentOS:
+
+    ```bash
+    yum install sshpass
+    ```
+
+* В некоторых средах может произойти ошибка использования пароля SSH вместо ключа. Если вы видите эту ошибку, можно отключить проверку ключа узла, добавив следующую строку в файл `/etc/ansible/ansible.cfg` или `~/.ansible.cfg`.
+
+    ```bash
+    [defaults]
+    host_key_checking = False
+    ```
 
 Выполните следующую команду, чтобы запустить сборник схем:
 
@@ -165,47 +195,50 @@ Ansible позволяет автоматизировать развертыва
   ansible-playbook vmss-setup-deploy.yml
   ```
 
-Результат выполнения команды ansible-playbook указывает, что пример приложения Java установлен в группу узлов масштабируемого набора виртуальных машин:
+Результат выполнения команды ansible-playbook указывает, что пример приложения Java установлен в группу узлов масштабируемого набора.
 
   ```Output
-  PLAY [localhost] **********************************************************
+  PLAY [localhost]
 
-  TASK [Gathering Facts] ****************************************************
+  TASK [Gathering Facts]
   ok: [localhost]
 
-  TASK [Get facts for all Public IPs within a resource groups] **********************************************
+  TASK [Get facts for all Public IPs within a resource groups]
   ok: [localhost]
 
-  TASK [Get loadbalancer info] ****************************************************************************
+  TASK [Get loadbalancer info]
   ok: [localhost]
 
-  TASK [Add all hosts] *****************************************************************************
+  TASK [Add all hosts]
   changed: [localhost] ...
 
-  PLAY [Install JRE on VMSS] *****************************************************************************
+  PLAY [Install JRE on scale set]
 
-  TASK [Gathering Facts] *****************************************************************************
+  TASK [Gathering Facts]
   ok: [40.114.30.145_50000]
   ok: [40.114.30.145_50003]
 
-  TASK [Copy app to Azure VM] *****************************************************************************
+  TASK [Copy app to Azure VM]
   changed: [40.114.30.145_50003]
   changed: [40.114.30.145_50000]
 
-  TASK [Start the application] ********************************************************************
+  TASK [Start the application]
   changed: [40.114.30.145_50000]
   changed: [40.114.30.145_50003]
 
-  PLAY RECAP ************************************************************************************************
+  PLAY RECAP
   40.114.30.145_50000        : ok=4    changed=3    unreachable=0    failed=0
   40.114.30.145_50003        : ok=4    changed=3    unreachable=0    failed=0
   localhost                  : ok=4    changed=1    unreachable=0    failed=0
   ```
 
-Поздравляем! Теперь приложение работает в Azure. Теперь можно перейти по URL-адресу подсистемы балансировки нагрузки для масштабируемого набора виртуальных машин:
+## <a name="verify-the-results"></a>Проверка результатов
 
-![Приложение Java, работающее в масштабируемом наборе виртуальных машин на портале Azure.](media/ansible-deploy-app-vmss/ansible-deploy-app-vmss.png)
+Проверьте результаты своей работы, перейдя по URL-адресу подсистемы балансировки нагрузки для масштабируемого набора.
+
+![Приложение Java работает в масштабируемом наборе в Azure.](media/ansible-vmss-deploy/ansible-deploy-app-vmss.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
+
 > [!div class="nextstepaction"]
-> [Автоматическое масштабирование масштабируемых наборов виртуальных машин с помощью Ansible](https://docs.microsoft.com/azure/ansible/ansible-auto-scale-vmss)
+> [Руководство по автомасштабированию масштабируемых наборов виртуальных машин в Azure с помощью Ansible](./ansible-auto-scale-vmss.md)

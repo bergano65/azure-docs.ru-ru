@@ -15,14 +15,17 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 01/04/2019
 ms.author: jowargo
-ms.openlocfilehash: fc248292e2323d44a353473be87c2b0f1be8ea12
-ms.sourcegitcommit: eecd816953c55df1671ffcf716cf975ba1b12e6b
+ms.openlocfilehash: d125e0c0818efbc6ec8f317122859411a37a0d20
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/28/2019
-ms.locfileid: "55091673"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65232746"
 ---
-# <a name="tutorial-push-notification-to-specific-android-application-users-by-using-azure-notification-hubs"></a>Руководство. Отправка push-уведомлений определенным пользователям приложений Android с помощью Центров уведомлений Azure
+# <a name="tutorial-push-notification-to-specific-android-application-users-by-using-azure-notification-hubs-and-google-cloud-messaging-deprecated"></a>Руководство по отправке push-уведомлений конкретным пользователям приложений Android с помощью Центров уведомлений Azure и Google Cloud Messaging (не рекомендуется к использованию)
+
+> [!WARNING]
+> С 10 апреля 2018 года компания Google не рекомендует использовать Google Cloud Messaging (GCM). Интерфейсы API сервера и клиента GCM являются нерекомендуемыми и будут удалены после 29 мая 2019 года. Дополнительные сведения см. в статье [GCM and FCM Frequently Asked Questions](https://developers.google.com/cloud-messaging/faq) (Часто задаваемые вопросы о GCM и FCM).
 
 [!INCLUDE [notification-hubs-selector-aspnet-backend-notify-users](../../includes/notification-hubs-selector-aspnet-backend-notify-users.md)]
 
@@ -141,7 +144,7 @@ ms.locfileid: "55091673"
     ```xml
     <string name="usernameHint">Username</string>
     <string name="passwordHint">Password</string>
-    <string name="loginButton">1. Log in</string>
+    <string name="loginButton">1. Sign in</string>
     <string name="send_button">2. Send Notification</string>
     <string name="notification_message_hint">Notification message</string>
     <string name="notification_message_tag_hint">Recipient username</string>
@@ -257,7 +260,7 @@ ms.locfileid: "55091673"
     }
     ```
 
-    Этот компонент реализует вызовы REST, необходимые для связи с серверной частью приложения с целью регистрации в службе push-уведомлений. В данном случае также происходит локальное сохранение идентификаторов *registrationId* , созданных концентратором уведомлений в соответствии с описанием в разделе [Регистрация из серверной части приложения](notification-hubs-push-notification-registration-management.md#registration-management-from-a-backend). В данном случае используется токен авторизации, сохраненный в локальном хранилище при нажатии кнопки **Log in** (Войти).
+    Этот компонент реализует вызовы REST, необходимые для связи с серверной частью приложения с целью регистрации в службе push-уведомлений. В данном случае также происходит локальное сохранение идентификаторов *registrationId* , созданных концентратором уведомлений в соответствии с описанием в разделе [Регистрация из серверной части приложения](notification-hubs-push-notification-registration-management.md#registration-management-from-a-backend). В этом случае используется маркер авторизации, сохраненный в локальном хранилище при нажатии кнопки **входа**.
 4. В своем классе удалите или преобразуйте в комментарий частное поле для `NotificationHub`, добавьте поле для класса `RegisterClient` и строку для конечной точки серверной части ASP.NET. Обязательно замените `<Enter Your Backend Endpoint>` фактической конечной точкой серверной части, полученной ранее. Например, `http://mybackend.azurewebsites.net`.
 
     ```java
@@ -319,7 +322,7 @@ ms.locfileid: "55091673"
     Button sendPush = (Button) findViewById(R.id.sendbutton);
     sendPush.setEnabled(false);
     ```
-9. Затем добавьте следующие методы для обработки события нажатия кнопки **Log in** (Войти) и отправки push-уведомлений.
+9. Затем добавьте следующие методы для обработки события нажатия кнопки **входа** и отправки push-уведомлений.
 
     ```java
     public void login(View view) throws UnsupportedEncodingException {
@@ -401,7 +404,7 @@ ms.locfileid: "55091673"
     }
     ```
 
-    Обработчик `login` кнопки **Войти** создает маркер обычной проверки подлинности на основании введенного имени пользователя и пароля (это относится к любому маркеру, используемому в этой схеме проверки подлинности), затем с помощью `RegisterClient` вызывается серверная часть для регистрации.
+    Обработчик `login` кнопки **входа** создает маркер обычной проверки подлинности на основании введенного имени пользователя и пароля (это относится к любому маркеру, применяемому в этой схеме проверки подлинности), затем использует `RegisterClient` для вызова серверной части для регистрации.
 
     Метод `sendPush` вызывает серверную часть, чтобы инициировать безопасное уведомление пользователя по тегу пользователя. Служба уведомлений платформы, на которую нацеливается `sendPush`, зависит от переданной строки `pns`.
 
@@ -467,7 +470,7 @@ ms.locfileid: "55091673"
 
 1. Запустите приложение на устройстве или в эмуляторе с помощью Android Studio.
 2. В приложении Android введите имя пользователя и пароль. Они должны быть одинаковыми строковыми значениями без пробелов или специальных знаков.
-3. В приложении Android нажмите кнопку **Log in**(Войти). Дождитесь появления всплывающего уведомления **Logged in and registered**(Вход и регистрация выполнены). Это активирует кнопку **Отправить уведомление**.
+3. В приложении Android нажмите кнопку **входа**. Дождитесь появления всплывающего уведомления **Logged in and registered**(Вход и регистрация выполнены). Это активирует кнопку **Отправить уведомление**.
 
     ![][A2]
 4. С помощью переключателей включите все платформы, на которых вы запускали приложение и регистрировали пользователя.

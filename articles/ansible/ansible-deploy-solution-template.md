@@ -1,21 +1,22 @@
 ---
-title: Развертывание шаблона решения Ansible для Azure в CentOS
-description: Сведения о развертывании шаблона решения Ansible на виртуальной машине CentOS, размещенной в Azure, а также об использовании средств, которые настроены для работы с Azure.
-ms.service: azure
+title: Краткое руководство по развертыванию шаблона решения Ansible для Azure в CentOS | Документация Майкрософт
+description: В этом кратком руководстве в узнаете, как развернуть шаблон решения Ansible на виртуальной машине CentOS, размещенной в Azure, а также изучите инструменты, которые настроены для работы с Azure.
 keywords: ansible, azure, devops, solution template, virtual machine, managed identities for azure resources, centos, red hat
+ms.topic: quickstart
+ms.service: ansible
 author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
-ms.topic: tutorial
-ms.date: 01/28/2019
-ms.openlocfilehash: 78fe5211f135b4a4c7d0fd21c66340025ad2d05d
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.date: 04/30/2019
+ms.openlocfilehash: 58f28d5cf7d31a3fbddc8e1ca18be4dbcf617f61
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58104222"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65230999"
 ---
-# <a name="deploy-the-ansible-solution-template-for-azure-to-centos"></a>Развертывание шаблона решения Ansible для Azure в CentOS
+# <a name="quickstart-deploy-the-ansible-solution-template-for-azure-to-centos"></a>Краткое руководство. Развертывание шаблона решения Ansible для Azure в CentOS
+
 Шаблон решения Ansible для Azure позволяет настроить экземпляр Ansible на виртуальной машине CentOS вместе с Ansible и набором средств для работы с Azure. Вот эти средства:
 
 - **Модули Ansible для Azure** — [набор модулей](./ansible-matrix.md), которые позволяют создавать инфраструктуру и управлять ею в Azure. По умолчанию развертывается последняя версия модулей. Тем не менее во время развертывания шаблона решения можно указать номер версии, который подходит для вашей среды.
@@ -23,9 +24,10 @@ ms.locfileid: "58104222"
 - **Управляемые удостоверения для ресурсов Azure** — [они](/azure/active-directory/managed-identities-azure-resources/overview) решают проблему безопасности хранения облачных учетных данных приложения.
 
 ## <a name="prerequisites"></a>Предварительные требования
-- **Подписка Azure.** Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начинать работу.
 
-## <a name="deploy-the-ansible-solution-template-from-the-azure-marketplace"></a>Развертывание шаблона решения Ansible из Microsoft Azure Marketplace
+[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../../includes/open-source-devops-prereqs-azure-subscription.md)]
+
+## <a name="deploy-the-ansible-solution-template"></a>Развертывание шаблона решения Ansible
 
 1. Перейдите к [шаблону решения Ansible в Azure Marketplace](https://azuremarketplace.microsoft.com/en-%20%20us/marketplace/apps/azure-oss.ansible?tab=Overview).
 
@@ -46,7 +48,7 @@ ms.locfileid: "58104222"
    - **Группа ресурсов** — выберите имеющуюся группу ресурсов из раскрывающегося списка или выберите параметр **Создать** и введите имя группы ресурсов. В целях демонстрации используется новая группа ресурсов с именем `ansiblerg`.
    - **Расположение** — из раскрывающегося списка выберите расположение, которое подходит для вашего сценария.
 
-     ![Вкладка основных параметров Ansible на портале Azure](./media/ansible-deploy-solution-template/portal-ansible-setup-tab-1.png)
+     ![Вкладка основных параметров Ansible на портале Azure](./media/ansible-quick-deploy-solution-template/portal-ansible-setup-tab-1.png)
 
 1. Нажмите кнопку **ОК**.
 
@@ -60,19 +62,19 @@ ms.locfileid: "58104222"
    - **Метка доменного имени** — введите общедоступное доменное имя виртуальной машины. Имя должно быть уникальным и соответствовать требованиям к именованию. Дополнительные сведения об указании имени для виртуальной машины см. в статье [Соглашения об именовании для ресурсов Azure](/azure/architecture/best-practices/naming-conventions).
    - **Ansible version** (Версия Ansible) — укажите номер версии либо значение `latest` для развертывания последней версии. Щелкните значок сведений рядом с параметром **Ansible version** (Версия Ansible), чтобы просмотреть подробные сведения о доступных версий.
 
-     ![Вкладка дополнительных параметров Ansible на портале Azure](./media/ansible-deploy-solution-template/portal-ansible-setup-tab-2.png)
+     ![Вкладка дополнительных параметров Ansible на портале Azure](./media/ansible-quick-deploy-solution-template/portal-ansible-setup-tab-2.png)
 
 1. Нажмите кнопку **ОК**.
 
 1. На вкладке **Ansible Integration Settings** (Параметры интеграции Ansible) задайте тип проверки подлинности. Дополнительные сведения о защите ресурсов Azure см. в статье [Что такое управляемые удостоверения для ресурсов Azure?](/azure/active-directory/managed-identities-azure-resources/overview).
 
-    ![Вкладка параметров интеграции Ansible на портале Azure](./media/ansible-deploy-solution-template/portal-ansible-setup-tab-3.png)
+    ![Вкладка параметров интеграции Ansible на портале Azure](./media/ansible-quick-deploy-solution-template/portal-ansible-setup-tab-3.png)
 
 1. Нажмите кнопку **ОК**.
 
 1. На странице **Сводка** отображается процесс проверки и список указанных критериев для развертывания Ansible. Ссылка в нижней части вкладки позволяет **загрузить шаблон и параметры** для использования с поддерживаемыми языками и платформами Azure. 
 
-     ![Вкладка сводки для Ansible на портале Azure](./media/ansible-deploy-solution-template/portal-ansible-setup-tab-4.png)
+     ![Вкладка сводки для Ansible на портале Azure](./media/ansible-quick-deploy-solution-template/portal-ansible-setup-tab-4.png)
 
 1. Нажмите кнопку **ОК**.
 
@@ -80,10 +82,11 @@ ms.locfileid: "58104222"
 
 1. Выберите значок **Уведомления** в верхней части страницы портала, чтобы отследить ход выполнения развертывания Ansible. Когда развертывание будет завершено, выберите **Перейти к группе ресурсов**. 
 
-     ![Вкладка сводки для Ansible на портале Azure](./media/ansible-deploy-solution-template/portal-ansible-setup-complete.png)
+     ![Вкладка сводки для Ansible на портале Azure](./media/ansible-quick-deploy-solution-template/portal-ansible-setup-complete.png)
 
 1. На странице группы ресурсов получите IP-адрес узла Ansible и войдите для управления ресурсами Azure с помощью Ansible.
 
 ## <a name="next-steps"></a>Дополнительная информация
+
 > [!div class="nextstepaction"] 
-> [Создание виртуальной машины Linux в Azure с помощью Ansible](/azure/virtual-machines/linux/ansible-create-vm)
+> [Краткое руководство. Настройка виртуальной машины Linux в Azure с помощью Ansible](/azure/virtual-machines/linux/ansible-create-vm)

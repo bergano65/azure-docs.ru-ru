@@ -1,10 +1,10 @@
 ---
-title: Настройка приложения для доступа к веб-API (предварительная версия) | Azure
+title: Настройка приложения для доступа к интерфейсам веб-API с помощью платформы удостоверений Майкрософт
 description: Сведения о настройке приложения, зарегистрированного с помощью платформы удостоверений Майкрософт для включения универсального кода ресурса (URI) перенаправления, учетных данных или разрешений для доступа к веб-API.
 services: active-directory
 documentationcenter: ''
-author: CelesteDG
-manager: mtillman
+author: rwike77
+manager: CelesteDG
 editor: ''
 ms.service: active-directory
 ms.subservice: develop
@@ -12,19 +12,19 @@ ms.devlang: na
 ms.topic: quickstart
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 10/25/2018
-ms.author: celested
+ms.date: 05/08/2019
+ms.author: ryanwi
 ms.custom: aaddev
-ms.reviewer: lenalepa, sureshja
+ms.reviewer: aragra, lenalepa, sureshja
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 93e88cedfd098f450e8faeea894f7fdfc796cf17
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: 7b2f5331b22f6292b00c367c6abb8cd4f439a70c
+ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59999592"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65413981"
 ---
-# <a name="quickstart-configure-a-client-application-to-access-web-apis-preview"></a>Краткое руководство. Настройка клиентского приложения для доступа к веб-API (предварительная версия)
+# <a name="quickstart-configure-a-client-application-to-access-web-apis"></a>Краткое руководство. Настройка клиентского приложения для доступа к веб-API
 
 Чтобы клиентское конфиденциальное или веб-приложение могло участвовать в потоке предоставления кода авторизации, требующего проверки подлинности (и получения маркера доступа), ему необходимо установить безопасные учетные данные. По умолчанию на портале Azure используется метод аутентификации "идентификатор клиента + секретный ключ".
 
@@ -49,7 +49,6 @@ ms.locfileid: "59999592"
 * Ознакомьтесь с общими сведениями о поддерживаемых [разрешениях и согласии](v2-permissions-and-consent.md). Для создания приложений, которые будут использовать другие пользователи или приложения, это важно понимать.
 * Установите клиент, содержащий зарегистрированные приложения.
   * Если у вас нет зарегистрированных приложений, [ознакомьтесь со сведениями о регистрации приложений с помощью платформы удостоверений Майкрософт](quickstart-register-app.md).
-* Выберите вариант предварительной версии для регистрации приложений на портале Azure. Действия, описанные в этом кратком руководстве, соответствуют новому пользовательскому интерфейсу и работают только при включении режима предварительной версии.
 
 ## <a name="sign-in-to-the-azure-portal-and-select-the-app"></a>Войдите на портал Azure и выберите приложение.
 
@@ -57,11 +56,11 @@ ms.locfileid: "59999592"
 
 1. Войдите на [портал Azure](https://portal.azure.com) с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
 1. Если учетная запись предоставляет доступ нескольким клиентам, выберите свою учетную запись в правом верхнем углу и нужный клиент Azure AD для этого сеанса портала.
-1. В области навигации слева выберите службу **Azure Active Directory**, а затем выберите **App registrations (Preview)** (Регистрация приложений (предварительная версия)).
+1. В области навигации слева выберите службу **Azure Active Directory**, а затем выберите **Регистрация приложений**.
 1. Найдите и выберите приложение, которое нужно настроить. После выбора приложения появится страница **Обзор** приложения или главная страница регистрации.
 1. Выполните действия по настройке приложения для доступа к веб-API: 
     * [Добавьте URI перенаправления в приложение](#add-redirect-uris-to-your-application).
-    * [Добавьте учетные данные в веб-приложение](#add-credentials-to-your-web-application).
+    * [Добавление учетных данных в веб-приложение](#add-credentials-to-your-web-application)
     * [Добавьте разрешения для доступа к веб-API](#add-permissions-to-access-web-apis).
 
 ## <a name="add-redirect-uris-to-your-application"></a>Добавление URI перенаправления в приложение

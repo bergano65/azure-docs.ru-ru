@@ -1,34 +1,52 @@
 ---
-title: Масштабирование веб-приложений Службы приложений Azure с помощью Ansible
-description: Узнайте, как с помощью Ansible создать веб-приложение со средой выполнения контейнера Java 8 и Tomcat в службе приложений на платформе Linux.
-ms.service: azure
+title: Учебник по масштабированию приложений в Службе приложений Azure с помощью Ansible | Документация Майкрософт
+description: Узнайте, как увеличить масштаб приложения в Службе приложений Azure.
 keywords: ansible, azure, devops, bash, playbook, Azure App Service, Web App, scale, Java
+ms.topic: tutorial
+ms.service: ansible
 author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
-ms.topic: tutorial
-ms.date: 12/08/2018
-ms.openlocfilehash: 2bafb73afa35c7670ac45f7027545277c70075ef
-ms.sourcegitcommit: d89b679d20ad45d224fd7d010496c52345f10c96
+ms.date: 04/30/2019
+ms.openlocfilehash: d63708cd87afa426f2712da6d0fcb11c84590798
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57792282"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65230948"
 ---
-# <a name="scale-azure-app-service-web-apps-by-using-ansible"></a>Масштабирование веб-приложений Службы приложений Azure с помощью Ansible
-[Веб-приложения Службы приложений Azure](https://docs.microsoft.com/azure/app-service/overview) (или просто "Веб-приложения") размещают веб-приложения, REST API и серверные части мобильных приложений. Вы можете выполнять разработку на привычном языке: &mdash;.NET, .NET Core, Java, Ruby, Node.js, PHP или Python.
+# <a name="tutorial-scale-apps-in-azure-app-service-using-ansible"></a>Руководство по масштабированию приложений в Службе приложений Azure с помощью Ansible
 
-Ansible позволяет автоматизировать развертывание и настройку ресурсов в среде. В этой статье показано, как масштабировать приложение в Службе приложений Azure с помощью Ansible.
+[!INCLUDE [ansible-27-note.md](../../includes/ansible-27-note.md)]
+
+[!INCLUDE [open-source-devops-intro-app-service.md](../../includes/open-source-devops-intro-app-service.md)]
+
+[!INCLUDE [ansible-tutorial-goals.md](../../includes/ansible-tutorial-goals.md)]
+
+> [!div class="checklist"]
+>
+> * получение сведений о существующем плане Службы приложений;
+> * Увеличение масштаба плана службы приложений до уровня S2 с тремя рабочими ролями
 
 ## <a name="prerequisites"></a>Предварительные требования
-- **Подписка Azure.** Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начинать работу.
-- [!INCLUDE [ansible-prereqs-for-cloudshell-use-or-vm-creation1.md](../../includes/ansible-prereqs-for-cloudshell-use-or-vm-creation1.md)] [!INCLUDE [ansible-prereqs-for-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-for-cloudshell-use-or-vm-creation2.md)]
-- **Веб-приложения Службы приложений Azure**. Если у вас нет такого веб-приложения Azure, вы можете [создать его с помощью Ansible](ansible-create-configure-azure-web-apps.md).
 
-## <a name="scale-up-an-app-in-app-service"></a>Масштабирование приложения в Службе приложений
-Чтобы масштабировать приложение, измените ценовую категорию плана Службы приложений, к которому относится ваше приложение. В этом разделе представлен пример сборника схем Ansible, который определяет следующие операции:
-- получение сведений о существующем плане Службы приложений;
-- обновление плана Службы приложений до уровня S2 с тремя рабочими ролями;
+[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../../includes/open-source-devops-prereqs-azure-subscription.md)]
+[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)]
+- **Приложение в Службе приложений Azure**. Если у вас нет приложения в Службе приложений Azure, [настройте приложение в Службе приложений Azure с помощью Ansible](ansible-create-configure-azure-web-apps.md).
+
+## <a name="scale-up-an-app"></a>Увеличение масштаба приложения
+
+Существуют два рабочих процесса масштабирования: *увеличение масштаба* и *расширение*.
+
+**Увеличение масштаба**. Увеличить масштаб означает задействовать дополнительные ресурсы. К ним относятся ЦП, память, дисковое пространство, виртуальные машины и многое другое. Чтобы увеличить масштаб приложения, следует изменить ценовую категорию плана службы приложений, к которому относится это приложение. 
+**Расширение**. Расширить означает увеличить количество экземпляров виртуальных машин, на которых работает приложение. В зависимости от ценовой категории плана службы приложений, вы можете расширить приложение максимум на 20 экземпляров. [Автомасштабирование](/azure/azure-monitor/platform/autoscale-get-started) позволяет масштабировать число экземпляров автоматически на основе предварительно определенных правил и расписаний.
+
+Код из сборника схем в этом разделе определяет следующие операции:
+
+* получение сведений о существующем плане Службы приложений;
+* обновление плана Службы приложений до уровня S2 с тремя рабочими ролями;
+
+Сохраните следующий сборник схем как `webapp_scaleup.yml`:
 
 ```yml
 - hosts: localhost
@@ -66,26 +84,26 @@ Ansible позволяет автоматизировать развертыва
       var: facts.appserviceplans[0].sku
 ```
 
-сохранение этого сборника схем как файл *webapp_scaleup.yml*.
+Запустите сборник схем с помощью команды `ansible-playbook`.
 
-Чтобы запустить сборник схем, используйте команду **ansible-playbook** следующим образом:
 ```bash
 ansible-playbook webapp_scaleup.yml
 ```
 
-После запуска сборника схем в выходным данных (как в следующем примере) показано, что план Службы приложений обновлен до уровня S2 с тремя рабочими ролями.
-```Output
-PLAY [localhost] **************************************************************
+После запуска сборника схем отобразятся результаты, аналогичные приведенным ниже.
 
-TASK [Gathering Facts] ********************************************************
+```Output
+PLAY [localhost] 
+
+TASK [Gathering Facts] 
 ok: [localhost]
 
-TASK [Get facts of existing App service plan] **********************************************************
+TASK [Get facts of existing App service plan] 
  [WARNING]: Azure API profile latest does not define an entry for WebSiteManagementClient
 
 ok: [localhost]
 
-TASK [debug] ******************************************************************
+TASK [debug] 
 ok: [localhost] => {
     "facts.appserviceplans[0].sku": {
         "capacity": 1,
@@ -96,13 +114,13 @@ ok: [localhost] => {
     }
 }
 
-TASK [Scale up the App service plan] *******************************************
+TASK [Scale up the App service plan] 
 changed: [localhost]
 
-TASK [Get facts] ***************************************************************
+TASK [Get facts] 
 ok: [localhost]
 
-TASK [debug] *******************************************************************
+TASK [debug] 
 ok: [localhost] => {
     "facts.appserviceplans[0].sku": {
         "capacity": 3,
@@ -113,10 +131,11 @@ ok: [localhost] => {
     }
 }
 
-PLAY RECAP **********************************************************************
+PLAY RECAP 
 localhost                  : ok=6    changed=1    unreachable=0    failed=0 
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация
+
 > [!div class="nextstepaction"] 
-> [Документация по Ansible в Azure](https://docs.microsoft.com/azure/ansible/)
+> [Документация по Ansible в Azure](/azure/ansible/)

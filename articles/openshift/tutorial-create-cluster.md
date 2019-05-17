@@ -7,13 +7,13 @@ ms.author: twhitney
 manager: jeconnoc
 ms.topic: tutorial
 ms.service: openshift
-ms.date: 05/06/2019
-ms.openlocfilehash: 5bc71a2d0f29fed163fb5c93ebd27df7f66a1325
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.date: 05/08/2019
+ms.openlocfilehash: baada8a5238725456ca4a2ec7e8257c229066115
+ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65079479"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65466179"
 ---
 # <a name="tutorial-create-an-azure-red-hat-openshift-cluster"></a>Руководство по Создание кластера Azure Red Hat OpenShift
 
@@ -35,7 +35,7 @@ ms.locfileid: "65079479"
 Перед началом работы с этим руководством выполните следующие действия:
 
 Убедитесь в том, что вы [настроили среду разработки](howto-setup-environment.md), в том числе:
-- установили последнюю версию CLI;
+- установили последнюю версию интерфейса командной строки (версию 2.0.64 или более позднюю версию);
 - создали клиент;
 - создали объект приложения Azure;
 - создали пользователя Active Directory для входа в приложения, работающие в кластере.
@@ -101,7 +101,7 @@ az group create --name $CLUSTER_NAME --location $LOCATION
 
 ### <a name="optional-connect-the-clusters-virtual-network-to-an-existing-virtual-network"></a>Необязательно: подключение виртуальной сети кластера к существующей виртуальной сети
 
-Если вам не нужно подключать виртуальную сеть создаваемого кластера к существующей виртуальной сети, пропустите этот шаг.
+Если вам не нужно подключать виртуальную сеть создаваемого кластера к существующей виртуальной сети с помощью пиринга, пропустите этот шаг.
 
 Для начала получите идентификатор существующей виртуальной сети. Этот идентификатор имеет такой формат: `/subscriptions/{subscription id}/resourceGroups/{resource group of VNET}/providers/Microsoft.Network/virtualNetworks/{VNET name}`.
 
@@ -132,7 +132,7 @@ az openshift create --resource-group $CLUSTER_NAME --name $CLUSTER_NAME -l $LOCA
 
 ## <a name="step-3-sign-in-to-the-openshift-console"></a>Шаг 3. Войдите в консоль OpenShift
 
-Теперь вы готовы войти в консоль OpenShift для нового кластера. [Веб-консоль OpenShift](https://docs.openshift.com/dedicated/architecture/infrastructure_components/web_console.html) позволяет визуализировать, просматривать содержимое проектов OpenShift и управлять им.
+Теперь вы готовы войти в консоль OpenShift для нового кластера. [Веб-консоль OpenShift](https://docs.openshift.com/aro/architecture/infrastructure_components/web_console.html) позволяет визуализировать, просматривать содержимое проектов OpenShift и управлять им.
 
 Войдите с учетными данными [нового пользователя AAD](howto-aad-app-configuration.md#create-a-new-active-directory-user), которого вы создали для тестирования. Для этого вам потребуется новый экземпляр браузера, в кэше которого нет удостоверения, с которым вы обычно входите на портал Azure.
 
@@ -147,13 +147,13 @@ az openshift create --resource-group $CLUSTER_NAME --name $CLUSTER_NAME -l $LOCA
 
 Итак, вы вошли в консоль кластера.
 
-[Снимок экрана с консолью кластера OpenShift](./media/aro-console.png)
+![Снимок экрана с консолью кластера OpenShift](./media/aro-console.png)
 
- Дополнительные сведения [об использовании консоли OpenShift](https://docs.openshift.com/dedicated/getting_started/developers_console.html) для создания и сборки образов вы можете получить в [документации по Red Hat OpenShift](https://docs.openshift.com/dedicated/welcome/index.html).
+ Узнайте больше [об использовании консоли OpenShift](https://docs.openshift.com/aro/getting_started/developers_console.html) для создания и сборки образов, ознакомившись с [документацией по Red Hat OpenShift](https://docs.openshift.com/aro/welcome/index.html).
 
 ## <a name="step-4-install-the-openshift-cli"></a>Шаг 4. Установка интерфейса командной строки OpenShift
 
-[Интерфейс командной строки OpenShift](https://docs.openshift.com/dedicated/cli_reference/get_started_cli.html) (или *OC Tools*) предоставляет команды для управления приложениями и служебные программы низкого уровня для взаимодействия с разными компонентами кластера OpenShift.
+[Интерфейс командной строки OpenShift](https://docs.openshift.com/aro/cli_reference/get_started_cli.html) (или *OC Tools*) предоставляет команды для управления приложениями и служебные программы низкого уровня для взаимодействия с разными компонентами кластера OpenShift.
 
 В консоли OpenShift щелкните вопросительный знак в правом верхнем углу, рядом с именем текущего пользователя, и выберите **Command Line Tools** (Средства командной строки).  Перейдите по ссылке **Latest Release** (Последний выпуск), чтобы скачать и установить поддерживаемые версии интерфейса командной строки OC для Linux, MacOS или Windows.
 

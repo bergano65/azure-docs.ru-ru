@@ -8,12 +8,12 @@ ms.service: marketplace
 ms.topic: conceptual
 ms.date: 09/13/2018
 ms.author: pabutler
-ms.openlocfilehash: 7665050dfc9a561f42fec00c40d0a40dfa5cc183
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.openlocfilehash: 92c55c7f15b3f350ad802157bf401f3e75983789
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64941576"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65606436"
 ---
 # <a name="azure-resource-manager-test-drive"></a>Тестовый выпуск Azure Resource Manager
 
@@ -82,14 +82,14 @@ ms.locfileid: "64941576"
 
 ### <a name="accepted-parameter-metadata-types"></a>Допустимые типы метаданных параметров
 
-| Тип метаданных   | Тип параметра  | ОПИСАНИЕ     | Образец значения    |
+| Тип метаданных   | Тип параметра  | Описание     | Образец значения    |
 |---|---|---|---|
 | **baseuri**     | string          | Базовый универсальный код ресурса (URI) пакета развертывания| https:\//\<\..\>.blob.core.windows.net/\<\..\> |
 | **username**    | string          | Новое случайное имя пользователя.| admin68876      |
 | **password**    | защищенная строка    | Новый случайный пароль | Lp!ACS\^2kh     |
 | **session id**   | string          | Уникальный идентификатор сеанса тестового выпуска (GUID)    | b8c8693e-5673-449c-badd-257a405a6dee |
 
-#### <a name="username"></a>Имя пользователя
+#### <a name="username"></a>username
 
 Тестовый выпуск инициализирует этот параметр с помощью **базового URI** пакета развертывания, поэтому с помощью этого параметра можно создать URI любого файла, включенного в пакет.
 
@@ -116,7 +116,7 @@ ms.locfileid: "64941576"
 }
 ```
 
-#### <a name="username"></a>Имя пользователя
+#### <a name="username"></a>username
 
 Тестовый выпуск инициализирует этот параметр с помощью нового случайного имени пользователя:
 
@@ -209,7 +209,7 @@ ms.locfileid: "64941576"
 
 Дополнительные сведения о правилах и ограничениях именования ресурсов можно найти в [этой статье](https://docs.microsoft.com/azure/guidance/guidance-naming-conventions).
 
-### <a name="deployment-location"></a>Расположение развертывания
+### <a name="deployment-location"></a>Местоположение развертывания
 
 Тестовый выпуск можно сделать доступным в разных регионах Azure. Идея в том, чтобы позволить пользователю выбрать ближайший регион для максимального удобства работы.
 
@@ -257,7 +257,7 @@ ms.locfileid: "64941576"
 
 Необходимо гарантировать, что подписка может развернуть все ресурсы, которые нужно развернуть в каждом из выбранных вами регионов. Также необходимо убедиться, что образы виртуальных машин доступны во всех регионах, которые планируется включить. В противном случае шаблон развертывания не будет работать в некоторых регионах.
 
-### <a name="outputs"></a>outputs
+### <a name="outputs"></a>Выходные данные
 
 Обычно с помощью шаблонов Resource Manager можно выполнить развертывание без выходных данных. Причина в том, что вам известны все значения, используемые для заполнения параметров шаблона, и всегда можно вручную проверить свойства любого ресурса.
 
@@ -382,7 +382,7 @@ ms.locfileid: "64941576"
 
 ![Список клиентов Azure Active Directory](./media/azure-resource-manager-test-drive/subdetails4.png)
 
-![Определение организации, домена и страны для клиента Azure AD](./media/azure-resource-manager-test-drive/subdetails5.png)
+![Определить организацию, домена и страны или региона для клиента Azure AD](./media/azure-resource-manager-test-drive/subdetails5.png)
 
 ![Подтверждение выбора](./media/azure-resource-manager-test-drive/subdetails6.png)
 

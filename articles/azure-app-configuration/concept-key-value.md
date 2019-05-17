@@ -4,22 +4,22 @@ description: Общие сведения о хранении данных кон
 services: azure-app-configuration
 documentationcenter: ''
 author: yegu-ms
-manager: balans
+manager: maiye
 editor: ''
 ms.service: azure-app-configuration
 ms.devlang: na
 ms.topic: overview
 ms.workload: tbd
-ms.date: 02/24/2019
+ms.date: 04/19/2019
 ms.author: yegu
-ms.openlocfilehash: 24216d1bf82789d2d0fc312d9af4c06fa3c8cf4e
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: 4c741bb86242abfb03d01c902dbaa84d83491dd9
+ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60011288"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65408740"
 ---
-# <a name="key-value-store"></a>Хранилище ключ-значение
+# <a name="keys-and-values"></a>Ключи и значения
 
 Служба "Конфигурация приложений Azure" хранит данные конфигурации в виде пар "ключ — значение". Пара "ключ — значение" — простой и гибкий механизм для представления разных параметров приложения, с которым хорошо знакомы разработчики.
 
@@ -45,29 +45,27 @@ ms.locfileid: "60011288"
 
 Следующие примеры демонстрируют варианты структуры имен для иерархии ключей.
 
-* В зависимости от среды
-
-        AppName:Test:DB:Endpoint
-        AppName:Staging:DB:Endpoint
-        AppName:Production:DB:Endpoint
-
 * В зависимости от служб компонентов
 
-        AppName:Service1:Test:DB:Endpoint
-        AppName:Service1:Staging:DB:Endpoint
-        AppName:Service1:Production:DB:Endpoint
-        AppName:Service2:Test:DB:Endpoint
-        AppName:Service2:Staging:DB:Endpoint
-        AppName:Service2:Production:DB:Endpoint
+        AppName:Service1:ApiEndpoint
+        AppName:Service2:ApiEndpoint
 
 * В зависимости от региона развертывания
 
-        AppName:Production:Region1:DB:Endpoint
-        AppName:Production:Region2:DB:Endpoint
+        AppName:Region1:DbEndpoint
+        AppName:Region2:DbEndpoint
+
+### <a name="label-keys"></a>Пометка ключей
+
+В Конфигурации приложений пары "ключ — значение" можно дополнять атрибутом label (метка). Метки позволяют различать пары "ключ — значение" в пределах одного ключа. Например, ключ *app1* с метками *A* и *B* создает в хранилище конфигураций приложения два разных ключа. По умолчанию для пары "ключ — значение" присваивается пустая метка или значение `null`.
+
+Метка обеспечивает удобное создание вариантов ключа. Метки обычно используется для указания нескольких сред для одного ключа.
+
+    Key = AppName:DbEndpoint & Label = Test
+    Key = AppName:DbEndpoint & Label = Staging
+    Key = AppName:DbEndpoint & Label = Production
 
 ### <a name="version-key-values"></a>Управление версиями для пар "ключ — значение"
-
-В Конфигурации приложений пары "ключ — значение" можно дополнять атрибутом label (метка). Метки позволяют различать пары "ключ — значение" в пределах одного ключа. Например, ключ *app1* с метками *v1* и *v2* создает в хранилище Конфигурации приложений две разные пары "ключ — значение". По умолчанию для пары "ключ — значение" присваивается пустая метка или значение `null`.
 
 Конфигурация приложений не выполняет автоматическое управление версиями при изменении пар "ключ — значение". Используйте метки для создания нескольких версий любой пары "ключ — значение". Например, в метки можно заносить номера версий приложения или идентификаторы фиксации Git, чтобы отслеживать пары "ключ — значение" для определенной сборки программного обеспечения.
 
@@ -106,5 +104,5 @@ ms.locfileid: "60011288"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-> [!div class="nextstepaction"]
-> [Моментальный снимок на определенный момент времени](./concept-point-time-snapshot.md)  
+* [Моментальный снимок на определенный момент времени](./concept-point-time-snapshot.md)  
+* [Управление функциями](./concept-feature-management.md)  

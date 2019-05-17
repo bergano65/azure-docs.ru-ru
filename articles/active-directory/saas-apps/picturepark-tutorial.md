@@ -1,122 +1,114 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Picturepark | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Picturepark | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении Picturepark.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: daveba
+manager: mtillman
+ms.reviewer: barbkess
 ms.assetid: 31c21cd4-9c00-4cad-9538-a13996dc872f
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 07/06/2017
+ms.topic: tutorial
+ms.date: 04/18/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7b458632ddb6e23ab1ddf642752aa0cbfc11f1ce
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: MT
+ms.openlocfilehash: 617c75024b45dab7ff2466b99bfb71c18cdd778a
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57839074"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65230029"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-picturepark"></a>Руководство. Интеграция Azure Active Directory с Picturepark
+# <a name="tutorial-azure-active-directory-integration-with-picturepark"></a>Руководство по Интеграция Azure Active Directory с Picturepark
 
 В этом руководстве описано, как интегрировать Picturepark с Azure Active Directory (Azure AD).
-
 Интеграция Azure AD с приложением Picturepark обеспечивает следующие преимущества:
 
-- С помощью Azure AD вы можете контролировать доступ к Picturepark.
-- Вы можете включить автоматический вход пользователей в Picturepark (единый вход) с использованием учетной записи Azure AD.
-- Вы можете управлять учетными записями централизованно — через портал Azure.
+* С помощью Azure AD вы можете контролировать доступ к Picturepark.
+* Вы можете включить автоматический вход пользователей в Picturepark (единый вход) с помощью учетных записей Azure AD.
+* Вы можете управлять учетными записями централизованно на портале Azure.
 
-Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Picturepark, вам потребуется:
 
-- подписка Azure AD;
-- подписка Picturepark с поддержкой единого входа.
-
-> [!NOTE]
-> Мы не рекомендуем использовать рабочую среду для проверки действий в этом учебнике.
-
-При проверке действий в этом учебнике соблюдайте следующие рекомендации:
-
-- Не используйте рабочую среду без необходимости.
-- Если у вас нет пробной среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
+* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Picturepark с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
-В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
-1. Добавление Picturepark из коллекции.
-1. настройка и проверка единого входа в Azure AD.
+В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
+
+* Picturepark поддерживает единый вход, инициируемый **поставщиком услуг**.
 
 ## <a name="adding-picturepark-from-the-gallery"></a>Добавление Picturepark из коллекции
+
 Чтобы настроить интеграцию Picturepark с Azure AD, необходимо добавить Picturepark из коллекции в список управляемых приложений SaaS.
 
 **Чтобы добавить Picturepark из коллекции, выполните следующие действия.**
 
-1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
+1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Active Directory][1]
+    ![Кнопка Azure Active Directory](common/select-azuread.png)
 
-1. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
+2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
-    ![ПРИЛОЖЕНИЯ][2]
-    
-1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-    ![ПРИЛОЖЕНИЯ][3]
+3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-1. В поле поиска введите **Picturepark**.
+    ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-    ![Создание тестового пользователя Azure AD](./media/picturepark-tutorial/tutorial_picturepark_search.png)
+4. В поле поиска введите **Picturepark**, выберите **Picturepark** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
-1. На панели результатов выберите **Picturepark** и нажмите кнопку **Добавить**, чтобы добавить это приложение.
+     ![Picturepark в списке результатов](common/search-new-app.png)
 
-    ![Создание тестового пользователя Azure AD](./media/picturepark-tutorial/tutorial_picturepark_addfromgallery.png)
+## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
-##  <a name="configuring-and-testing-azure-ad-single-sign-on"></a>настройка и проверка единого входа в Azure AD.
-В этом разделе описана настройка и проверка единого входа Azure AD в Picturepark с использованием тестового пользователя Britta Simon.
-
-Чтобы единый вход работал, Azure AD необходима информация о том, какой пользователь в Picturepark соответствует пользователю в Azure AD. Иными словами, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Picturepark.
-
-Чтобы установить эту связь, назначьте **имя пользователя** в Azure AD в качестве значения **имени пользователя** в Picturepark.
+В этом разделе описана настройка и проверка единого входа Azure AD в Picturepark с использованием тестового пользователя **Britta Simon**.
+Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Picturepark.
 
 Чтобы настроить и проверить единый вход Azure AD в Picturepark, вам потребуется выполнить действия в следующих стандартных блоках.
 
-1. **[Configuring Azure AD Single Sign-On](#configuring-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-1. **[Создание тестового пользователя Azure AD](#creating-an-azure-ad-test-user)** требуется для проверки работы единого входа в Azure AD от имени пользователя Britta Simon.
-1. **[Создание тестового пользователя Picturepark](#creating-a-picturepark-test-user)** требуется для того, чтобы в Picturepark существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assigning-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD;
-1. **[Проверка единого входа](#testing-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
+2. **[Настройка единого входа в Picturepark](#configure-picturepark-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
+5. **[Создание тестового пользователя Picturepark](#create-picturepark-test-user)** требуется для того, чтобы в Picturepark существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
+6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
 
-### <a name="configuring-azure-ad-single-sign-on"></a>Настройка единого входа в Azure AD
+### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
-В этом разделе описано, как включить единый вход Azure AD на портале Azure и настроить его в приложении Picturepark.
+В этом разделе описано включение единого входа Azure AD на портале Azure.
 
-**Чтобы настроить единый вход Azure AD в Picturepark, выполните следующее.**
+Чтобы настроить единый вход Azure AD в Picturepark, выполните следующее.
 
-1. На портале Azure на странице интеграции с приложением **Picturepark** щелкните **Единый вход**.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Picturepark** щелкните **Единый вход**.
 
-    ![Настройка единого входа][4]
+    ![Ссылка "Настройка единого входа"](common/select-sso.png)
 
-1. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
- 
-    ![Настройка единого входа](./media/picturepark-tutorial/tutorial_picturepark_samlbase.png)
+2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed**, чтобы включить единый вход.
 
-1. В разделе **Домены и URL-адреса приложения Picturepark** выполните следующие действия.
+    ![Режим выбора единого входа](common/select-saml-option.png)
 
-    ![Настройка единого входа](./media/picturepark-tutorial/tutorial_picturepark_url.png)
+3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.picturepark.com`
+    ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
-    2. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: 
-    
+4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
+
+    ![Сведения о домене и URL-адресах единого входа для Picturepark](common/sp-identifier.png)
+
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.picturepark.com`.
+
+    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате:
+
     |  |
     |--|
     | `https://<companyname>.current-picturepark.com`|
@@ -124,93 +116,117 @@ ms.locfileid: "57839074"
     | `https://<companyname>.next-picturepark.com`|
     | |
 
-    > [!NOTE] 
-    > Эти значения приведены для примера. Замените эти значения фактическим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов Picturepark](https://picturepark.com/about/contact/). 
- 
-1. В разделе **Сертификат подписи SAML** скопируйте значение **Отпечаток**.
+    > [!NOTE]
+    > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов Picturepark](https://picturepark.com/about/contact/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-    ![Настройка единого входа](./media/picturepark-tutorial/tutorial_picturepark_certificate.png) 
+5. В разделе **Сертификат подписи SAML** щелкните кнопку **Правка**, чтобы открыть диалоговое окно **Сертификат подписи SAML**.
 
-1. Нажмите кнопку **Сохранить** .
+    ![Изменить сертификат подписи SAML](common/edit-certificate.png)
 
-    ![Настройка единого входа](./media/picturepark-tutorial/tutorial_general_400.png)
+6. В разделе **Сертификат подписи SAML** скопируйте значение **Отпечаток** и сохраните его на компьютере.
 
-1. В разделе **Конфигурация Picturepark** щелкните **Настроить Picturepark**, чтобы открыть окно **Настройка единого входа**. Скопируйте **URL-адрес службы единого входа SAML** из раздела **Краткий справочник**.
+    ![Копирование значения "Отпечаток"](common/copy-thumbprint.png)
 
-    ![Настройка единого входа](./media/picturepark-tutorial/tutorial_picturepark_configure.png) 
+7. Требуемые URL-адреса можно скопировать из раздела **Настройка Picturepark**. В поле **URL-адрес входа** введите значение в следующем формате: `https://login.microsoftonline.com/_my_directory_id_/wsfed`
 
-1. В другом окне веб-браузера войдите на сайт Picturepark своей компании в качестве администратора.
+    > [!Note]
+    > _my_directory_id_ — это идентификатор клиента подписки Azure AD.
 
-1. Щелкните **Administrative tools** (Администрирование) на панели инструментов в верхней части страницы и выберите **Management Console** (Консоль управления).
+    ![Копирование URL-адресов настройки](./media/picturepark-tutorial/configurls.png)
+
+    a. Идентификатор Azure AD
+
+    b. URL-адрес выхода.
+
+### <a name="configure-picturepark-single-sign-on"></a>Настройка единого входа в Picturepark
+
+1. В другом окне веб-браузера войдите на свой корпоративный сайт Picturepark в качестве администратора.
+
+2. Щелкните **Administrative tools** (Администрирование) на панели инструментов в верхней части страницы и выберите **Management Console** (Консоль управления).
    
     ![Консоль управления](./media/picturepark-tutorial/ic795062.png "Консоль управления")
 
-1. Щелкните **Authentication** (Аутентификация), а затем выберите **Identity providers** (Поставщики удостоверений).
+3. Щелкните **Authentication** (Аутентификация), а затем выберите **Identity providers** (Поставщики удостоверений).
    
     ![Аутентификация](./media/picturepark-tutorial/ic795063.png "Аутентификация")
 
-1. В разделе **Конфигурация поставщика удостоверений** сделайте следующее:
+4. В разделе **Конфигурация поставщика удостоверений** сделайте следующее:
    
     ![Конфигурация поставщика удостоверений](./media/picturepark-tutorial/ic795064.png "Конфигурация поставщика удостоверений")
    
     a. Щелкните **Добавить**.
   
-    2. Введите имя конфигурации.
+    b. Введите имя конфигурации.
    
     c. Выберите **По умолчанию**.
    
-    d. В текстовое поле **Issuer URI** (URI издателя) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
+    d. В текстовое поле **Issuer URI** (URI издателя) вставьте значение **URL-адрес входа**, скопированное на портале Azure.
    
     д. В текстовое поле **Trusted Issuer Thumb Print** (Отпечаток доверенного издателя) вставьте значение **Отпечаток**, скопированное в разделе **Сертификат подписи SAML**. 
 
-1. Щелкните **JoinDefaultUsersGroup**.
+5. Щелкните **JoinDefaultUsersGroup**.
 
-1. Чтобы задать атрибут **Emailaddress** в текстовом поле **Claim** (Утверждение), введите `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress` и нажмите кнопку **Save** (Сохранить).
+6. Чтобы задать атрибут **Emailaddress** в текстовом поле **Claim** (Утверждение), введите `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress` и нажмите кнопку **Save** (Сохранить).
 
       ![Конфигурация](./media/picturepark-tutorial/ic795065.png "Конфигурация")
 
-> [!TIP]
-> Краткую версию этих инструкций теперь можно также прочитать на [портале Azure](https://portal.azure.com) во время настройки приложения.  После добавления этого приложения из раздела **Active Directory > Корпоративные приложения** просто выберите вкладку **Единый вход** и откройте встроенную документацию через раздел **Настройка** в нижней части страницы. Дополнительные сведения о встроенной документации см. в статье [Руководство. Настройка единого входа на основе SAML для приложения в Azure Active Directory]( https://go.microsoft.com/fwlink/?linkid=845985).
-> 
+### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
-### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-![Создание пользователя Azure AD][100]
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
-**Чтобы создать тестового пользователя в Azure AD, выполните следующие действия:**
+    ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
 
-1. На **портале Azure** в области навигации слева щелкните значок **Azure Active Directory**.
+2. В верхней части экрана выберите **Новый пользователь**.
 
-    ![Создание тестового пользователя Azure AD](./media/picturepark-tutorial/create_aaduser_01.png) 
+    ![Кнопка "Новый пользователь"](common/new-user.png)
 
-1. Чтобы отобразить список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
-    
-    ![Создание тестового пользователя Azure AD](./media/picturepark-tutorial/create_aaduser_02.png) 
+3. В разделе свойств пользователя сделайте следующее:
 
-1. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна щелкните **Добавить**.
- 
-    ![Создание тестового пользователя Azure AD](./media/picturepark-tutorial/create_aaduser_03.png) 
+    ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-1. На странице диалогового окна **Пользователь** выполните следующие действия.
- 
-    ![Создание тестового пользователя Azure AD](./media/picturepark-tutorial/create_aaduser_04.png) 
+    а. В поле **Имя** введите **BrittaSimon**.
+  
+    b. В поле **Имя пользователя** введите `brittasimon@yourcompanydomain.extension`. Например BrittaSimon@contoso.com.
 
-    a. В текстовом поле **Имя** введите **BrittaSimon**.
-
-    2. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
-
-    c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
     d. Нажмите кнопку **Создать**.
- 
-### <a name="creating-a-picturepark-test-user"></a>Создание тестового пользователя Picturepark
 
-Чтобы пользователи Azure AD могли выполнять вход в Picturepark, они должны быть подготовлены для Picturepark. В случае с Picturepark подготовка выполняется вручную.
+### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
+
+В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставив этому пользователю доступ к Picturepark.
+
+1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **Picturepark**.
+
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
+
+2. Из списка приложений выберите **Picturepark**.
+
+    ![Ссылка на Picturepark в списке "Приложения"](common/all-applications.png)
+
+3. В меню слева выберите **Пользователи и группы**.
+
+    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
+
+4. Нажмите кнопку **Добавить пользователя**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+
+    ![Область "Добавление назначения"](common/add-assign-user.png)
+
+5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
+
+6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
+
+7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
+
+### <a name="create-picturepark-test-user"></a>Создание тестового пользователя Picturepark
+
+Чтобы пользователи Azure AD могли выполнять вход в Picturepark, они должны быть подготовлены в Picturepark. В случае с Picturepark подготовка выполняется вручную.
 
 **Чтобы подготовить учетную запись пользователя, сделайте следующее:**
 
-1. Выполните вход в клиент **Picturepark** .
+1. Выполните вход в клиент **Picturepark**.
 
 1. Щелкните **Administrative tools** (Администрирование) на панели инструментов в верхней части страницы и выберите **Users** (Пользователи).
    
@@ -224,9 +240,9 @@ ms.locfileid: "57839074"
    
     ![Создание пользователя](./media/picturepark-tutorial/ic795069.png "Создание пользователя")
    
-    a. В **адрес электронной почты** введите **адрес электронной почты** пользователя **BrittaSimon\@contoso.com**.  
+    a. В текстовое поле **Email Address** (Адрес электронной почты) введите **адрес электронной почты** пользователя, `BrittaSimon@contoso.com`.  
    
-    2. В текстовые поля **Password** (Пароль) и **Confirm Password** (Подтверждение пароля) введите **пароль** пользователя BrittaSimon. 
+    b. В текстовые поля **Password** (Пароль) и **Confirm Password** (Подтверждение пароля) введите **пароль** пользователя BrittaSimon. 
    
     c. В текстовое поле **First Name** (Имя) введите **имя пользователя**, **Britta**. 
    
@@ -234,7 +250,7 @@ ms.locfileid: "57839074"
    
     д. В текстовое поле **Company** (Компания) введите **название компании** пользователя. 
    
-    Е. В текстовом поле **Country** (Страна) выберите **страну** пользователя.
+    Е. В текстовом поле **Country** (Страна) выберите **страну или регион** пользователя.
   
     ж. В текстовое поле **ZIP** (Почтовый индекс) введите **почтовый индекс** города.
    
@@ -246,62 +262,19 @@ ms.locfileid: "57839074"
 
 >[!NOTE]
 >Вы можете использовать любые другие инструменты создания учетных записей пользователя Picturepark или API, предоставляемые Picturepark для подготовки учетных записей пользователя Azure Active Directory.
-> 
+>
 
-### <a name="assigning-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
-
-В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставив этому пользователю доступ к Picturepark.
-
-![Назначение пользователя][200] 
-
-**Чтобы назначить пользователя Britta Simon в Picturepark, выполните следующие действия.**
-
-1. На портале Azure откройте представление приложений, перейдите к представлению каталога, а затем выберите **Корпоративные приложения** и щелкните **Все приложения**.
-
-    ![Назначение пользователя][201] 
-
-1. Из списка приложений выберите **Picturepark**.
-
-    ![Настройка единого входа](./media/picturepark-tutorial/tutorial_picturepark_app.png) 
-
-1. В меню слева выберите **Пользователи и группы**.
-
-    ![Назначение пользователя][202] 
-
-1. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
-
-    ![Назначение пользователя][203]
-
-1. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
-
-1. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
-
-1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
-    
-### <a name="testing-single-sign-on"></a>Проверка единого входа
+### <a name="test-single-sign-on"></a>Проверка единого входа 
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув элемент "Picturepark" на панели доступа, вы автоматически войдете в приложение Picturepark. См. дополнительные сведения о [панели доступа](../user-help/active-directory-saas-access-panel-introduction.md)
+Щелкнув элемент "Picturepark" на Панели доступа, вы автоматически войдете в приложение Picturepark, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Список учебников по интеграции приложений SaaS с Azure Active Directory](tutorial-list.md)
-* [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-
-<!--Image references-->
-
-[1]: ./media/picturepark-tutorial/tutorial_general_01.png
-[2]: ./media/picturepark-tutorial/tutorial_general_02.png
-[3]: ./media/picturepark-tutorial/tutorial_general_03.png
-[4]: ./media/picturepark-tutorial/tutorial_general_04.png
-
-[100]: ./media/picturepark-tutorial/tutorial_general_100.png
-
-[200]: ./media/picturepark-tutorial/tutorial_general_200.png
-[201]: ./media/picturepark-tutorial/tutorial_general_201.png
-[202]: ./media/picturepark-tutorial/tutorial_general_202.png
-[203]: ./media/picturepark-tutorial/tutorial_general_203.png
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

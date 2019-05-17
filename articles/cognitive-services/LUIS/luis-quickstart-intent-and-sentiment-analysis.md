@@ -9,16 +9,16 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: tutorial
-ms.date: 12/21/2018
+ms.date: 05/07/2018
 ms.author: diberry
-ms.openlocfilehash: 0e61f6a914c33842f4f42b2e1e4206b370a11dd4
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 3315af0898cb3b18af0334a433a94242b056a8bd
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58099041"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65236207"
 ---
-# <a name="tutorial--get-sentiment-of-utterance"></a>Руководство.  Получение данных о тональности речевого фрагмента
+# <a name="tutorial--get-sentiment-of-utterance"></a>Руководство по  Получение данных о тональности речевого фрагмента
 
 В этом руководстве создается приложение, демонстрирующее, как определить позитивные, негативные и нейтральные тональности из речевых фрагментов. Тональность определяется на основе всего высказывания.
 
@@ -89,6 +89,8 @@ ms.locfileid: "58099041"
     |Денис Диллард пропустил собрание для обсуждения показателей за июнь.|
     |Марк Мэтьюз подготовил прекрасное коммерческое предложение для встречи в Гарварде.|
     |Волтер Вильямс проделал отличную работу на презентации в Стэнфорде.|
+
+    Выберите **View options** (Параметры просмотра) и выберите **Show entity values** (Показать значения сущностей), чтобы увидеть имена.
 
     [![Снимок экрана с приложением LUIS и примерами фраз в намерении EmployeeFeedback](./media/luis-quickstart-intent-and-sentiment-analysis/hr-utterance-examples.png)](./media/luis-quickstart-intent-and-sentiment-analysis/hr-utterance-examples.png#lightbox)
 

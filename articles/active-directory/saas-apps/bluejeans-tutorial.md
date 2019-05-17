@@ -13,15 +13,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 12/31/2018
+ms.date: 04/16/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0d1c10d9df85b04cf7b8ea7e0020bc8e802a0d5d
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 39e9f52948d035c72a6a019558915d8c92ceebeb
+ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59698934"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65463523"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-bluejeans"></a>Руководство по Интеграция Azure Active Directory с BlueJeans
 
@@ -102,18 +102,17 @@ ms.locfileid: "59698934"
 
 3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+    ![Правка базовой конфигурации SAML](media/bluejeans-tutorial/edit-urls-bluejeans.png)
 
-4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
+4. В диалоговом окне **Базовая конфигурация SAML** введите следующие значения.
 
-    ![Сведения о домене и URL-адресах единого входа для приложения BlueJeans](common/sp-identifier.png)
+    ![Сведения о домене и URL-адресах единого входа для приложения BlueJeans](media/bluejeans-tutorial/tutorial_bluejeans-basic-configuration.png)
 
-    a. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname>.BlueJeans.com`.
-
-    b. В текстовом поле **Идентификатор** введите URL-адрес: `http://samlsp.bluejeans.com`
-
-    > [!NOTE]
-    > Значение URL-адреса входа приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Чтобы получить это значение, обратитесь в [группу поддержки BlueJeans](https://support.bluejeans.com/contact). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+   - В поле **Идентификатор** введите следующее: `https://samlsp.bluejeans.com`
+    
+   - В текстовом поле **URL-адрес входа** введите URL-адрес целевой страницы, предоставленный BlueJeans (для получения этого значения вы можете обратиться к [группе поддержки Bluejeans](https://support.bluejeans.com/contact)): `https://<companyname>.bluejeans.com`
+    
+   - Выберите команду **Сохранить**.
 
 5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Загрузить**, чтобы загрузить требуемый **сертификат (Base64)** из предложенных вариантов, и сохраните его на компьютере.
 
@@ -161,9 +160,9 @@ ms.locfileid: "59698934"
 
     ![Сохранение изменений](./media/bluejeans-tutorial/ic785874.png "Сохранение изменений")
 
-    a. В текстовое поле **User Id** (Идентификатор пользователя) введите `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`.
+    a. В текстовое поле **User Id** (Идентификатор пользователя) введите `https://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`.
 
-    b. В текстовое поле **Email** (Электронная почта) введите `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`.
+    b. В текстовое поле **Email** (Электронная почта) введите `https://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`.
 
     c. Нажмите кнопку **Сохранить изменения**.
 

@@ -13,19 +13,22 @@ ms.devlang: na
 ms.date: 04/02/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: a0730073a8d17e063ee3f1364d5914200259c10f
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: a4f14a1e68042704ca8e8c49f1bd76b722c90d4d
+ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58880055"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65466302"
 ---
-# <a name="tutorial-use-azure-deployment-manager-with-resource-manager-templates-private-preview"></a>Руководство по Использование диспетчера развертывания Azure с шаблонами Resource Manager (закрытая предварительная версия)
+# <a name="tutorial-use-azure-deployment-manager-with-resource-manager-templates-public-preview"></a>Руководство по использованию диспетчера развертывания Azure с шаблонами Resource Manager (общедоступная предварительная версия)
 
 Узнайте, как использовать [диспетчер развертывания Azure](./deployment-manager-overview.md) для развертывания приложений в нескольких регионах. Чтобы использовать диспетчер развертывания, необходимо создать два шаблона:
 
 * **Шаблон топологии**: описывает ресурсы Azure для создания приложений и путь их развертывания.
 * **Шаблон развертывания**: описывает действия, выполняемые при развертывании приложений.
+
+> [!IMPORTANT]
+> Если ваша подписка помечена для раннего выпуска, что позволяет тестировать новые функции Azure, вы можете использовать диспетчер развертывания Azure только для развертывания в регионах, поддерживающих ранний выпуск. 
 
 В рамках этого руководства рассматриваются следующие задачи:
 
@@ -432,4 +435,4 @@ Azure PowerShell можно использовать для развертыва
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом руководстве вы узнали, как использовать диспетчер развертывания Azure. Дополнительные сведения см. в [документации по Azure Resource Manager](/azure/azure-resource-manager/).
+В этом руководстве вы узнали, как использовать диспетчер развертывания Azure. Интеграция мониторинга работоспособности в диспетчер развертывания Azure описана в разделе [Tutorial: Use health check in Azure Deployment Manager](./deployment-manager-tutorial-health-check.md) (Учебник по использованию проверки работоспособности в диспетчере развертывания Azure).

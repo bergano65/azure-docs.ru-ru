@@ -9,27 +9,27 @@ editor: ''
 ms.assetid: ''
 ms.service: azure-app-configuration
 ms.workload: tbd
-ms.devlang: na
+ms.devlang: csharp
 ms.topic: tutorial
 ms.date: 02/24/2019
 ms.author: yegu
 ms.custom: mvc
-ms.openlocfilehash: cf872766a18c5691f6c094d71a0c29f6bcf736da
-ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
+ms.openlocfilehash: cae29fe045d1bdc17f414ff016642635b74320df
+ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2019
-ms.locfileid: "58579042"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65408829"
 ---
 # <a name="tutorial-use-dynamic-configuration-in-an-aspnet-core-app"></a>Руководство по Использование динамической конфигурации в приложении ASP.NET Core
 
-ASP.NET Core имеет подключаемую систему конфигурации, которая может считывать данные конфигурации из различных источников. ASP.NET Core может мгновенно обрабатывать изменения без необходимости перезапускать приложение. ASP.NET Core поддерживает привязку параметров конфигурации к строго типизированным классам .NET. ASP.NET Core внедряет их в код, используя различные шаблоны `IOptions<T>`. Один из таких шаблонов (`IOptionsSnapshot<T>`) автоматически перезагружает конфигурацию приложения в случае изменения базовых данных. 
+ASP.NET Core имеет подключаемую систему конфигурации, которая может считывать данные конфигурации из различных источников. ASP.NET Core может мгновенно обрабатывать изменения без необходимости перезапускать приложение. ASP.NET Core поддерживает привязку параметров конфигурации к строго типизированным классам .NET. ASP.NET Core внедряет их в код, используя различные шаблоны `IOptions<T>`. Один из таких шаблонов (`IOptionsSnapshot<T>`) автоматически перезагружает конфигурацию приложения в случае изменения базовых данных.
 
 Вы можете внедрить шаблон `IOptionsSnapshot<T>` в контроллеры вашего приложения, чтобы получить доступ к самой последней конфигурации в Azure App Configuration. Вы также можете настроить в клиентской библиотеке ASP.NET Core в службе конфигурации приложений непрерывное отслеживание и извлечение любых изменений в хранилище конфигураций приложений. Вы определяете периодический интервал для опроса.
 
 Из этого руководства вы узнаете, как реализовать динамические обновления конфигурации в коде. При этом в качестве основы используется код веб-приложения, представленный в кратких руководствах. Прежде чем продолжить, ознакомьтесь со статьей [Краткое руководство. Создание приложения ASP.NET Core с помощью службы "Конфигурация приложений Azure"](./quickstart-aspnet-core-app.md).
 
-Шаги из этого краткого руководства можно выполнять в любом редакторе кода. [Visual Studio Code](https://code.visualstudio.com/) является отличным вариантом, который доступен на платформах Windows, macOS и Linux.
+Вы можете выполнять шаги в этом учебнике с помощью любого редактора кода. [Visual Studio Code](https://code.visualstudio.com/) является отличным вариантом, который доступен на платформах Windows, macOS и Linux.
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 
@@ -39,13 +39,13 @@ ASP.NET Core имеет подключаемую систему конфигур
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим кратким руководством установите [пакет SDK для .NET Core](https://dotnet.microsoft.com/download).
+Для работы с этим учебником установите [пакет SDK для .NET Core](https://dotnet.microsoft.com/download).
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
 ## <a name="reload-data-from-app-configuration"></a>Перезагрузка данных из App Configuration
 
-1. Откройте файл Program.cs и обновите метод `CreateWebHostBuilder`, добавив метод `config.AddAzureAppConfiguration()`.
+1. Откройте файл *Program.cs* и обновите метод `CreateWebHostBuilder`, добавив метод `config.AddAzureAppConfiguration()`.
 
     ```csharp
     public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
@@ -64,7 +64,7 @@ ASP.NET Core имеет подключаемую систему конфигур
 
     Второй параметр в методе `.Watch` — это интервал опроса, с которым клиентская библиотека ASP.NET опрашивает хранилище конфигураций приложений. Клиентская библиотека проверяет конкретный параметр конфигурации, чтобы увидеть, произошло ли какое-либо изменение.
 
-2. Добавьте файл Settings.cs, который определяет и реализует новый класс `Settings`.
+2. Добавьте файл *Settings.cs*, который определяет и реализует новый класс `Settings`.
 
     ```csharp
     namespace TestAppConfig
@@ -79,7 +79,7 @@ ASP.NET Core имеет подключаемую систему конфигур
     }
     ```
 
-3. Откройте файл Startup.cs и обновите метод `ConfigureServices`, чтобы привязать данные конфигурации к классу `Settings`.
+3. Откройте файл *Startup.cs* и обновите метод `ConfigureServices`, чтобы привязать данные конфигурации к классу `Settings`.
 
     ```csharp
     public void ConfigureServices(IServiceCollection services)
@@ -98,7 +98,13 @@ ASP.NET Core имеет подключаемую систему конфигур
 
 ## <a name="use-the-latest-configuration-data"></a>Использование последних данных конфигурации
 
-1. Откройте файл HomeController.cs в каталоге контроллеров. Обновите класс `HomeController` для получения класса `Settings` путем внедрения зависимости и воспользуйтесь его значениями.
+1. Откройте файл *HomeController.cs* в каталоге "Контроллеры" и добавьте в него ссылку на пакет `Microsoft.Extensions.Options`.
+
+    ```csharp
+    using Microsoft.Extensions.Options;
+    ```
+
+2. Обновите класс `HomeController` для получения класса `Settings` путем внедрения зависимости и воспользуйтесь его значениями.
 
     ```csharp
     public class HomeController : Controller
@@ -121,7 +127,7 @@ ASP.NET Core имеет подключаемую систему конфигур
     }
     ```
 
-2. Откройте Index.cshtml в каталоге "Представления > Главная" и замените его содержимое следующим скриптом.
+3. Откройте файл *Index.cshtml* в каталоге "Представления > Главная" и замените его содержимое следующим сценарием.
 
     ```html
     <!DOCTYPE html>
@@ -160,11 +166,11 @@ ASP.NET Core имеет подключаемую систему конфигур
 
 4. Войдите на [портале Azure](https://aka.ms/azconfig/portal). Щелкните **Все ресурсы** и выберите экземпляр хранилища конфигураций приложений, который вы создали по инструкциям из краткого руководства.
 
-5. Выберите **Обозреватель ключей и значений** и обновите значения следующих ключей:
+5. Выберите **Configuration Explorer** (Обозреватель конфигураций) и измените значения следующих ключей.
 
     | Ключ | Значение |
     |---|---|
-    | TestAppSettings:BackgroundColor | blue |
+    | TestAppSettings:BackgroundColor | green |
     | TestAppSettings:FontColor | lightGray |
     | TestAppSettings:Message | Данные из Azure App Configuration — теперь с обновлениями в реальном времени! |
 

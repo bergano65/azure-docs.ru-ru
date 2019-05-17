@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: tutorial
 ms.date: 03/21/2019
 ms.author: helohr
-ms.openlocfilehash: da653842b09c15a5fd42bae0ed45e7b31452b972
-ms.sourcegitcommit: c63fe69fd624752d04661f56d52ad9d8693e9d56
+ms.openlocfilehash: f0cdd28be8c6e7390aa26fdc2dfbf32ec5542c2d
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/28/2019
-ms.locfileid: "58578757"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65233907"
 ---
 # <a name="tutorial-manage-app-groups-for-windows-virtual-desktop-preview"></a>Руководство по управлению группами приложений для предварительной версии Виртуального рабочего стола Windows
 
@@ -73,7 +73,7 @@ ms.locfileid: "58578757"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Когда создадите группы приложений, создайте субъекты-службы и назначьте роли пользователям. Дополнительные сведения см. в руководстве по созданию субъектов-служб и назначению ролей с помощью PowerShell.
+В этом учебнике вы узнали, как создать группы приложений, заполнить группу приложений с помощью RemoteApps и назначить для нее пользователей. Чтобы узнать больше о том, как можно выполнять вход в Виртуальный рабочий стол Windows, перейдите к руководствам по подключению к Виртуальному рабочему столу Windows.
 
-> [!div class="nextstepaction"]
-> [Создание субъектов-служб и назначений ролей с помощью PowerShell](create-service-principal-role-powershell.md)
+- [Connect to the Remote Desktop client on Windows 7 and Windows 10](connect-windows-7-and-10.md) (Подключение к клиенту удаленного рабочего стола в Windows 7 и Windows 10)
+- [Connect to the Windows Virtual Desktop Preview web client](connect-web.md) (Подключение к веб-клиенту предварительной версии Виртуального рабочего стола Windows)

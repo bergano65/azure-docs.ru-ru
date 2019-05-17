@@ -13,15 +13,15 @@ ms.devlang: multiple
 ms.topic: overview
 ms.tgt_pltfrm: multiple
 ms.workload: media
-ms.date: 04/18/2019
+ms.date: 05/07/2019
 ms.author: juliako
 ms.custom: mvc
-ms.openlocfilehash: 91297a02966000899ab79dfb86446890e9c4439a
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 4fb42014e2c5389cf2a849ddf5114ab1f59c9e28
+ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65148715"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65414029"
 ---
 # <a name="azure-media-services-v3-overview"></a>Что такое Службы мультимедиа Azure версии 3?
 
@@ -48,7 +48,8 @@ ms.locfileid: "65148715"
 
 Узнайте, как кодировать и упаковывать содержимое, а также выполнять потоковую передачу видео по запросу, широковещательную трансляцию и анализ видео с помощью Служб мультимедиа версии 3. В руководствах, справочниках по API и другой документации показано, как безопасно выполнять потоковую передачу видео- и аудиоматериалов по требованию и осуществлять прямую трансляцию с масштабированием для миллионов пользователей.
 
-Перед началом разработки ознакомьтесь с [основными понятиями](concepts-overview.md).<br/>
+> [!TIP]
+> Перед началом разработки ознакомьтесь со следующими материалами:<br/>* [Основные понятия](concepts-overview.md) (включает в себя важные понятия: упаковка, кодирование, защита и т. д.).<br/>* [Разработка с использованием интерфейсов API служб мультимедиа версии 3](media-services-apis-overview.md) (включает в себя сведения о доступе к интерфейсам API, соглашения об именовании и т. д.).
 
 ### <a name="quickstarts"></a>Быстрое начало работы  
 
@@ -86,9 +87,5 @@ ms.locfileid: "65148715"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Как начать работу с версией 3? 
-
-> [!div class="nextstepaction"]
-> [Learn about fundamental concepts](concepts-overview.md) (Основные понятия служб мультимедиа)<br/>
-> [Начало разработки с использованием API Служб мультимедиа версии 3 с помощью пакетов SDK и служб](developers-guide.md) 
+[Learn about fundamental concepts](concepts-overview.md) (Основные понятия служб мультимедиа)
 

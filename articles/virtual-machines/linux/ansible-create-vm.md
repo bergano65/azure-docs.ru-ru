@@ -1,30 +1,31 @@
 ---
-title: Создание виртуальной машины Linux в Azure с помощью Ansible
-description: Узнайте, как создать виртуальную машину Linux в Azure с помощью Ansible
-ms.service: virtual-machines-linux
+title: Краткое руководство по настройке виртуальных машин Linux в Azure с помощью Ansible | Документация Майкрософт
+description: Из этого краткого руководства вы узнаете, как с помощью Ansible создать виртуальную машину Linux в Azure.
 keywords: ansible, azure, devops, virtual machine
+ms.topic: tutorial
+ms.service: ansible
 author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
-ms.topic: quickstart
-ms.date: 08/22/2018
-ms.openlocfilehash: 38cc6cd8f375fe7c60a706541bc74313e8ea2c4f
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.date: 04/30/2019
+ms.openlocfilehash: ce99b537dd5958c2bec43759c58a9c182dd05142
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58090259"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65237036"
 ---
-# <a name="use-ansible-to-create-a-linux-virtual-machine-in-azure"></a>Создание виртуальной машины Linux в Azure с помощью Ansible
-Используя декларативный язык, Ansible позволяет автоматизировать создание, конфигурацию и развертывание ресурсов Azure с помощью *сборников схем*. В каждом разделе этой статьи описано, как может выглядеть сборник схем Ansible для создания и конфигурации различных аспектов виртуальной машины Linux. [Полный сборник схем Ansible](#complete-sample-ansible-playbook) указан в конце этой статьи.
+# <a name="quickstart-configure-linux-virtual-machines-in-azure-using-ansible"></a>Краткое руководство. Настройка виртуальных машин Linux в Azure с помощью Ansible
+
+Используя декларативный язык, Ansible позволяет автоматизировать создание, конфигурацию и развертывание ресурсов Azure с помощью *сборников схем*. Эта статья содержит пример сборника схем Ansible для настройки виртуальных машин Linux. [Полный сборник схем Ansible](#complete-sample-ansible-playbook) указан в конце этой статьи.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- **Подписка Azure**. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio).
-
-- [!INCLUDE [ansible-prereqs-for-cloudshell-use-or-vm-creation1.md](../../../includes/ansible-prereqs-for-cloudshell-use-or-vm-creation1.md)]
+[!INCLUDE [open-source-devops-prereqs-azure-sub.md](../../../includes/open-source-devops-prereqs-azure-subscription.md)]
+[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation1.md](../../../includes/ansible-prereqs-cloudshell-use-or-vm-creation1.md)]
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
+
 Для Ansible требуется группа ресурсов, в которой будут развертываться все ресурсы. В следующем разделе примера сборника схем Ansible описывается создание группы ресурсов `myResourceGroup` в расположении `eastus`:
 
 ```yaml
@@ -35,6 +36,7 @@ ms.locfileid: "58090259"
 ```
 
 ## <a name="create-a-virtual-network"></a>Создать виртуальную сеть
+
 При создании виртуальной машины Azure вам потребуется [виртуальная сеть](/azure/virtual-network/virtual-networks-overview). Вы можете создать ее или использовать уже готовую. Кроме того, необходимо решить, как будет предоставляться доступ к виртуальным машинам по виртуальной сети. В следующем разделе примера сборника схем Ansible описывается создание виртуальной сети `myVnet` в адресном пространстве `10.0.0.0/16`:
 
 ```yaml
@@ -59,7 +61,12 @@ ms.locfileid: "58090259"
 ```
 
 ## <a name="create-a-public-ip-address"></a>Создание общедоступного IP-адреса
-[Общедоступные IP-адреса](/azure/virtual-network/virtual-network-ip-addresses-overview-arm) позволяют устанавливать входящее подключение от интернет-ресурсов к ресурсам Azure. Также они позволяют устанавливать исходящее подключение от ресурсов Azure к Интернету и общедоступным службам Azure с использованием IP-адреса, назначенного ресурсу. Адрес остается назначенным ресурсу, пока вы не отмените его назначение. Если общедоступный IP-адрес не назначен ресурсу, ресурс по-прежнему может устанавливать внешнее подключение к Интернету, но при этом Azure динамически назначает доступный IP-адрес, который не предназначен для этого ресурса. 
+
+
+
+
+
+[Общедоступные IP-адреса](/azure/virtual-network/virtual-network-ip-addresses-overview-arm) позволяют устанавливать входящее подключение от интернет-ресурсов к ресурсам Azure. Также они позволяют устанавливать исходящее подключение от ресурсов Azure к общедоступным службам Azure. В обоих случаях используемому ресурсу назначается IP-адрес. Этот адрес остается выделенным ресурсу, пока вы не отмените его назначение. Если ресурсу не назначен общедоступный IP-адрес, он все равно сможет устанавливать исходящие подключения к Интернету. Azure устанавливает подключение и динамически назначает доступный IP-адрес. Динамически назначенный адрес не является выделенным адресом ресурса.
 
 В следующем разделе примера сборника схем Ansible описывается создание общедоступного IP-адреса `myPublicIP`:
 
@@ -72,9 +79,10 @@ ms.locfileid: "58090259"
 ```
 
 ## <a name="create-a-network-security-group"></a>Создание группы безопасности сети
-[Группа безопасности сети](/azure/virtual-network/security-overview) позволяет отфильтровать входящий и исходящий сетевой трафик ресурсов Azure в виртуальной сети Azure. В этой группе содержатся правила безопасности, которые разрешают или запрещают исходящий и входящий сетевой трафик нескольких типов ресурсов Azure. 
 
-В следующем разделе примера сборника схем Ansible описывается создание группы безопасности сети `myNetworkSecurityGroup` и определение правила, разрешающего передачу трафика SSH через TCP-порт 22:
+[Группы безопасности сети](/azure/virtual-network/security-overview) позволяют фильтровать трафик, передаваемый между ресурсами Azure в виртуальной сети. Определены правила безопасности, которые управляют входящим и исходящим трафиком ресурсов Azure. Дополнительные сведения о ресурсах Azure и группах безопасности сети см. в разделе [Интеграция виртуальной сети для служб Azure](/azure/virtual-network/virtual-network-for-azure-services).
+
+Следующий сборник схем создает группу безопасности сети `myNetworkSecurityGroup`. Она содержит правило, которое разрешает передачу трафика SSH через TCP-порт 22.
 
 ```yaml
 - name: Create Network Security Group that allows SSH
@@ -90,11 +98,11 @@ ms.locfileid: "58090259"
         direction: Inbound
 ```
 
-
 ## <a name="create-a-virtual-network-interface-card"></a>Создание виртуального сетевого интерфейса
+
 Виртуальный сетевой интерфейс позволяет виртуальной машине подключаться к определенной виртуальной сети, общедоступному IP-адресу и группе безопасности сети. 
 
-В следующем разделе примера сборника схем Ansible описывается создание виртуального сетевого интерфейса `myNIC`, подключенного к созданным ресурсам виртуальной сети:
+В следующем разделе примера сборника схем Ansible описывается создание виртуального сетевого интерфейса `myNIC`, подключенного к созданным ресурсам виртуальной сети.
 
 ```yaml
 - name: Create virtual network inteface card
@@ -108,6 +116,7 @@ ms.locfileid: "58090259"
 ```
 
 ## <a name="create-a-virtual-machine"></a>Создание виртуальной машины
+
 Последний шаг — создание виртуальной машины, которая использует все ресурсы, созданные при работе с предыдущими разделами этой статьи. 
 
 Пример сборника схем Ansible, представленный в этом разделе, позволяет создать виртуальную машину `myVM` и подключить карточку виртуального сетевого интерфейса `myNIC`. Замените заполнитель &lt;your-key-data> собственными полными данными общедоступного ключа.
@@ -278,5 +287,6 @@ ms.locfileid: "58090259"
     ```
 
 ## <a name="next-steps"></a>Дополнительная информация
+
 > [!div class="nextstepaction"] 
-> [Управление виртуальной машиной Linux в Azure с помощью Ansible](./ansible-manage-linux-vm.md)
+> [Краткое руководство. Управление виртуальной машиной Linux в Azure с помощью Ansible](./ansible-manage-linux-vm.md)

@@ -1,47 +1,63 @@
 ---
-title: Автоматическое масштабирование масштабируемого набора виртуальных машин в Azure с помощью Ansible
-description: Сведения об использовании Ansible для масштабирования масштабируемого набора виртуальных машин с помощью функции автомасштабирования в Azure
-ms.service: azure
+title: Учебник по автомасштабированию масштабируемых наборов виртуальных машин в Azure с помощью Ansible | Документация Майкрософт
+description: Узнайте, как использовать Ansible для масштабирования масштабируемого набора виртуальных машин с помощью функции автомасштабирования в Azure.
 keywords: ansible, azure, devops, bash, playbook, scale, autoscale, virtual machine, virtual machine scale set, vmss
+ms.topic: tutorial
+ms.service: ansible
 author: tomarchermsft
 manager: jeconnoc
 ms.author: tarcher
-ms.topic: tutorial
-ms.date: 12/10/2018
-ms.openlocfilehash: 578ad3207f62e74805be056ca11d3bd9b46513da
-ms.sourcegitcommit: d89b679d20ad45d224fd7d010496c52345f10c96
+ms.date: 04/30/2019
+ms.openlocfilehash: 4f2cd66b7460fc6fe48cb55f45bf4bc309ae054c
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57792435"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65231278"
 ---
-# <a name="automatically-scale-a-virtual-machine-scale-set-in-azure-using-ansible"></a>Автоматическое масштабирование масштабируемого набора виртуальных машин в Azure с помощью Ansible
-Ansible позволяет автоматизировать развертывание и настройку ресурсов в среде. Ansible можно использовать для управления масштабируемым набором виртуальных машин (VMSS) в Azure так же, как любым другим ресурсом Azure. 
+# <a name="tutorial-autoscale-virtual-machine-scale-sets-in-azure-using-ansible"></a>Руководство по автомасштабированию масштабируемых наборов виртуальных машин в Azure с помощью Ansible
 
-При создании масштабируемого набора вы определяете количество экземпляров виртуальных машин для запуска. По мере изменения потребностей приложения можно автоматически увеличивать или уменьшать это количество. Возможность автоматического масштабирования позволяет удовлетворить пользовательский спрос или среагировать на изменения производительности приложения на протяжении его жизненного цикла. В этой статье вы создадите параметр автомасштабирования и свяжете его с имеющимся масштабируемым набором виртуальных машин. Параметр автомасштабирования позволяет настроить правило для свертывания и развертывания (как вам удобно).
+[!INCLUDE [ansible-27-note.md](../../includes/ansible-27-note.md)]
+
+[!INCLUDE [open-source-devops-intro-vmss.md](../../includes/open-source-devops-intro-vmss.md)]
+
+Функция автоматической настройки количества экземпляров виртуальных машин называется [автомасштабированием](/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-autoscale-overview). Преимуществом автомасштабирования является то, что на снижает расходы на управление, связанные с мониторингом и оптимизацией производительности приложения. Автомасштабирование можно настроить для работы в режиме по запросу или по определенному расписанию. С помощью Ansible можно указать правила автомасштабирования, определяющие допустимую производительность для комфортной работы клиента.
+
+[!INCLUDE [ansible-tutorial-goals.md](../../includes/ansible-tutorial-goals.md)]
+
+> [!div class="checklist"]
+>
+> * Определение профиля автомасштабирования
+> * Автомасштабирование на основе повторяющегося расписания
+> * Автомасштабирование в зависимости от производительности приложения
+> * Получение сведений о параметрах автомасштабирования 
+> * Отключение параметра автомасштабирования
 
 ## <a name="prerequisites"></a>Предварительные требования
-- **Подписка Azure.** Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio), прежде чем начинать работу.
-- [!INCLUDE [ansible-prereqs-for-cloudshell-use-or-vm-creation1.md](../../includes/ansible-prereqs-for-cloudshell-use-or-vm-creation1.md)] [!INCLUDE [ansible-prereqs-for-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-for-cloudshell-use-or-vm-creation2.md)]
-- Имеющийся масштабируемый набор виртуальных машин Azure. Если у вас нет такого набора, [создайте его в Azure с помощью Ansible](https://docs.microsoft.com/azure/ansible/ansible-create-configure-vmss).
 
-> [!Note]
-> Для выполнения примеров сборников схем в этом руководстве требуется Ansible 2.7. 
+[!INCLUDE [open-source-devops-prereqs-azure-subscription.md](../../includes/open-source-devops-prereqs-azure-subscription.md)]
+[!INCLUDE [ansible-prereqs-cloudshell-use-or-vm-creation2.md](../../includes/ansible-prereqs-cloudshell-use-or-vm-creation2.md)] 
+[!INCLUDE [ansible-prereqs-vm-scale-set.md](../../includes/ansible-prereqs-vm-scale-set.md)]
 
-## <a name="auto-scale-based-on-a-schedule"></a>Автомасштабирование по расписанию   
+## <a name="autoscale-based-on-a-schedule"></a>Автомасштабирование на основе расписания
+
 Чтобы включить автомасштабирование в масштабируемом наборе, сначала необходимо определить профиль автомасштабирования. Этот профиль определяет используемую по умолчанию, минимальную и максимальную емкости масштабируемого набора. Эти ограничения позволяют контролировать затраты за счет того, что экземпляры виртуальных машин не создаются непрерывно, и сбалансировать приемлемую производительность с минимальным числом экземпляров, которые остаются в масштабируемом событии. 
 
-Масштабируемые наборы виртуальных машин можно свертывать и развертывать по расписанию или определенной дате. В этом разделе представлен пример сборника схем Ansible, с помощью которого создается параметр автомасштабирования, увеличивающий в масштабируемых наборах количество экземпляров виртуальных машин — до трех в 10:00 каждый понедельник по тихоокеанскому времени. 
+Ansible позволяет изменять масштаб масштабируемых наборов в определенную дату или согласно повторяющемуся расписанию.
+
+Код из сборника схем в этом разделе код увеличивает количество экземпляров виртуальных машин до трех в 10:00 каждый понедельник.
+
+Сохраните следующий сборник схем как `vmss-auto-scale.yml`:
 
 ```yml
 ---
 - hosts: localhost
   vars:
     resource_group: myResourceGroup
-    vmss_name: myVMSS
+    vmss_name: myScaleSet
     name: autoscalesetting
   tasks: 
-    - name: Create auto scaling
+    - name: Create autoscaling
       azure_rm_autoscale:
          resource_group: "{{ resource_group }}"
          name: "{{ name }}"
@@ -65,23 +81,31 @@ Ansible позволяет автоматизировать развертыва
               - '10'
 ```
 
-Сохраните этот сборник схем как файл *vmss-auto-scale.yml*. Чтобы запустить сборник схем Ansible, используйте команду **ansible-playbook** следующим образом:
+Запустите сборник схем с помощью команды `ansible-playbook`.
 
 ```bash
 ansible-playbook vmss-auto-scale.yml
 ```
 
-## <a name="auto-scale-based-on-performance-data"></a>Автомасштабирование на основе данных производительности
-При увеличении потребностей приложения в масштабируемом наборе увеличивается нагрузка на экземпляры виртуальной машины. Если такая увеличенная нагрузка представляет собой не просто краткий спрос, а является согласованной, можно настроить правила автомасштабирования, чтобы увеличить число экземпляров виртуальной машины в масштабируемом наборе. После создания этих экземпляров виртуальных машин и развертывания приложений масштабируемые наборы запускают распределение трафика между ними через подсистему балансировки нагрузки. Вы можете контролировать, какие метрики отслеживать, например ЦП или диск, продолжительность соответствия нагрузки приложения заданному пороговому значению, а также количество экземпляров виртуальной машины для добавления в масштабируемый набор.
+## <a name="autoscale-based-on-performance-data"></a>Автомасштабирование на основе данных о производительности
 
-Масштабируемые наборы виртуальных машин можно свертывать и развертывать на основе пороговых значений метрик производительности по расписанию или определенной дате. В этом разделе представлен пример сборника схем Ansible, с помощью которого выполняется проверка рабочей нагрузки за последние 10 минут в 18:00 каждый понедельник по тихоокеанскому времени. Кроме того, с его помощью выполняется развертывание в масштабируемых наборах до четырех экземпляров виртуальных машин или их свертывание до одного экземпляра в соответствии с процентными метриками ЦП. 
+При увеличении потребностей приложения в масштабируемом наборе увеличивается нагрузка на экземпляры виртуальной машины. Если такая увеличенная нагрузка представляет собой не просто краткий спрос, а является согласованной, можно настроить правила автомасштабирования, чтобы увеличить число экземпляров виртуальной машины в масштабируемом наборе. После создания этих экземпляров виртуальных машин и развертывания приложений масштабируемые наборы запускают распределение трафика между ними через подсистему балансировки нагрузки. Ansible позволяет выбирать отслеживаемые метрики, например метрики загрузки ЦП, использования диска и времени загрузки приложений. Масштабируемые наборы можно свертывать и развертывать на основе пороговых значений метрик производительности по расписанию или в определенную дату. 
+
+Код из сборника схем в этом разделе проверяет загрузку ЦП за предыдущие 10 минут в 18:00 каждый понедельник. 
+
+Исходя из процентных значений метрик ЦП, сборник схем выполняет одно из следующих действий:
+
+- увеличивает количество экземпляров виртуальных машин до четырех;
+- уменьшает количество экземпляров виртуальных машин до одной.
+
+Сохраните следующий сборник схем как `vmss-auto-scale-metrics.yml`:
 
 ```yml
 ---
 - hosts: localhost
   vars:
     resource_group: myResourceGroup
-    vmss_name: myVMSS
+    vmss_name: myScaleSet
     name: autoscalesetting
   tasks:
   - name: Get facts of the resource group
@@ -89,11 +113,11 @@ ansible-playbook vmss-auto-scale.yml
       name: "{{ resource_group }}"
     register: rg
 
-  - name: Get VMSS resource uri
+  - name: Get scale set resource uri
     set_fact:
       vmss_id: "{{ rg.ansible_facts.azure_resourcegroups[0].id }}/providers/Microsoft.Compute/virtualMachineScaleSets/{{ vmss_name }}"
     
-  - name: Create auto scaling
+  - name: Create autoscaling
     azure_rm_autoscale:
       resource_group: "{{ resource_group }}"
       name: "{{ name }}"
@@ -151,14 +175,17 @@ ansible-playbook vmss-auto-scale.yml
             value: '1'
 ```
 
-Сохраните этот сборник схем как *vmss-auto-scale-metrics.yml*. Чтобы запустить сборник схем Ansible, используйте команду **ansible-playbook** следующим образом:
+Запустите сборник схем с помощью команды `ansible-playbook`.
 
 ```bash
 ansible-playbook vmss-auto-scale-metrics.yml
 ```
 
-## <a name="get-information-for-existing-autoscale-settings"></a>Получение сведений об имеющихся параметрах автомасштабирования
-Вы можете получить сведения о любом параметре автомасштабирования с помощью модуля *azure_rm_autoscale_facts* в сборнике схем следующим образом:
+## <a name="get-autoscale-settings-information"></a>Получение сведений о параметрах автомасштабирования 
+
+Код сборника схем в этом разделе использует модуль `azure_rm_autoscale_facts` для извлечения сведений о параметрах автомасштабирования.
+
+Сохраните следующий сборник схем как `vmss-auto-scale-get-settings.yml`:
 
 ```yml
 - hosts: localhost
@@ -166,7 +193,7 @@ ansible-playbook vmss-auto-scale-metrics.yml
     resource_group: myResourceGroup
     name: autoscalesetting
   tasks: 
-    - name: Retrieve auto scale settings information
+    - name: Retrieve autoscale settings information
       azure_rm_autoscale_facts:
         resource_group: "{{ resource_group }}"
         name: "{{ name }}"
@@ -176,8 +203,19 @@ ansible-playbook vmss-auto-scale-metrics.yml
         var: autoscale_query.autoscales[0]
 ```
 
-## <a name="disable-the-autoscale-settings"></a>Отключение параметров автомасштабирования
-Вы можете отключить параметр автомасштабирования, изменив `enabled: true` на `enabled: false` или удалив параметры автомасштабирования с помощью сборника схем следующим образом:
+Запустите сборник схем с помощью команды `ansible-playbook`.
+
+```bash
+ansible-playbook vmss-auto-scale-get-settings.yml
+```
+
+## <a name="disable-autoscale-settings"></a>Отключение параметров автомасштабирования
+
+Отключить параметры автомасштабирования можно двумя способами. Один из них — изменить значение ключа `enabled` с `true` на `false`. Второй способ — удалить параметр.
+
+Код из сборника схем в этом разделе удаляет параметр автомасштабирования. 
+
+Сохраните следующий сборник схем как `vmss-auto-scale-delete-setting.yml`:
 
 ```yml
 - hosts: localhost
@@ -185,13 +223,20 @@ ansible-playbook vmss-auto-scale-metrics.yml
     resource_group: myResourceGroup
     name: autoscalesetting
   tasks: 
-    - name: Delete auto scaling
+    - name: Delete autoscaling
       azure_rm_autoscale:
          resource_group: "{{ resource_group }}"
          name: "{{ name }}"
          state: absent
 ```
 
+Запустите сборник схем с помощью команды `ansible-playbook`.
+
+```bash
+vmss-auto-scale-delete-setting.yml
+```
+
 ## <a name="next-steps"></a>Дополнительная информация
+
 > [!div class="nextstepaction"] 
-> [Пример сборника схем Ansible для масштабируемых наборов виртуальных машин](https://github.com/Azure-Samples/ansible-playbooks/tree/master/vmss)
+> [Руководство. Обновление пользовательского образа масштабируемых наборов виртуальных машин Azure с помощью Ansible](./ansible-vmss-update-image.md)

@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: tutorial
 ms.date: 04/12/2019
 ms.author: helohr
-ms.openlocfilehash: 93725fc9d77552d779378d0c14294a5bbb11c926
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: d3357cec426585ba8550301dfa703f583a930ad0
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65146146"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65236930"
 ---
 # <a name="tutorial-create-service-principals-and-role-assignments-with-powershell"></a>Руководство по Создание субъектов-служб и назначений ролей с помощью PowerShell
 
@@ -38,7 +38,7 @@ ms.locfileid: "65146146"
     Install-Module AzureAD
     ```
 
-2. Запустите указанные ниже командлеты, заменив значения в кавычках значениями для своего сеанса.
+2. Запустите указанные ниже командлеты, заменив значения в кавычках значениями для своего сеанса. Если вы только что создали клиент Виртуального рабочего стола Windows из учебника [Создание клиента в Виртуальном рабочем столе Windows](./tenant-setup-azure-active-directory.md), то используйте имя группы клиента "Default Tenant Group".
 
     ```powershell
     $myTenantGroupName = "<my-tenant-group-name>"
@@ -109,7 +109,7 @@ Add-RdsAccount -DeploymentUrl "https://rdbroker.wvd.microsoft.com" -Credential $
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Из этого руководства вы узнали, как создать субъект-службу и использовать его для входа в Виртуальный рабочий стол Windows. Чтобы узнать больше о том, как можно выполнять вход в Виртуальный рабочий стол Windows, перейдите к руководствам по подключению к Виртуальному рабочему столу Windows.
+После создания субъекта-службы и назначения ему роли в клиенте Виртуального рабочего стола Windows его можно использовать для создания пула узлов. Дополнительные сведения см. в руководстве по созданию пула узлов в Виртуальном рабочем столе Windows.
 
-- [Подключение из Windows 10 или Windows 7](connect-windows-7-and-10.md)
-- [Подключение из веб-браузера](connect-web.md)
+ > [!div class="nextstepaction"]
+ > [Руководство по созданию пула узлов в Виртуальном рабочем столе Windows](./create-host-pools-azure-marketplace.md)
