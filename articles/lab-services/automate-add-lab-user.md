@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/02/2019
 ms.author: spelluru
-ms.openlocfilehash: 0eed874d405fcf99241a702292f8ceadae6c5a07
-ms.sourcegitcommit: 1d257ad14ab837dd13145a6908bc0ed7af7f50a2
+ms.openlocfilehash: 2ad81ae97414abbf3266cc5728febf9abe836151
+ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65502026"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65522962"
 ---
 # <a name="automate-adding-a-lab-user-to-a-lab-in-azure-devtest-labs"></a>Автоматизировать добавление пользователь лаборатории в лабораторию в Azure DevTest Labs
 Azure DevTest Labs позволяет быстро создавать среды разработки и тестирования, самообслуживания с помощью портала Azure. Тем не менее если у вас есть несколько команд и несколько экземпляров DevTest Labs, автоматизируя процесс создания можно сэкономить время. [Шаблоны Azure Resource Manager](https://github.com/Azure/azure-devtestlab/tree/master/ARMTemplates) позволяют создавать лабораторные занятия, виртуальных машин лаборатории, пользовательских образов, формул, и добавьте пользователей в автоматическом режиме. В этой статье особое внимание уделяется Добавление пользователей к экземпляру DevTest Labs.
@@ -28,7 +28,7 @@ Azure DevTest Labs позволяет быстро создавать среды
 - Командлеты Azure PowerShell 
 - Azure CLI.
 
-## <a name="use-azure-resource-manager-templates"></a>Использование шаблонов диспетчера ресурсов Azure
+## <a name="use-azure-resource-manager-templates"></a>Использование шаблонов Azure Resource Manager
 Следующий пример шаблона Resource Manager указывает пользователя для добавления **пользователь DevTest Labs** роли лаборатории. 
 
 ```json
@@ -85,7 +85,7 @@ Azure DevTest Labs позволяет быстро создавать среды
 
 ```
 
-Если назначить роль в том же шаблоне, используемая для создания лаборатории, не забудьте добавить зависимость между ресурса назначения роли и лаборатории. Дополнительные сведения см. в разделе [Определение зависимостей в шаблонах Azure Resource Manager](/azure-resource-manager/resource-group-define-dependencies.md) статьи.
+Если назначить роль в том же шаблоне, используемая для создания лаборатории, не забудьте добавить зависимость между ресурса назначения роли и лаборатории. Дополнительные сведения см. в разделе [Определение зависимостей в шаблонах Azure Resource Manager](../azure-resource-manager/resource-group-define-dependencies.md) статьи.
 
 ### <a name="role-assignment-resource-information"></a>Сведения о ресурсах назначения роли
 Ресурса назначения роли необходимо указать тип и имя.

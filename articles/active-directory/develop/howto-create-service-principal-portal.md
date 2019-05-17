@@ -3,25 +3,25 @@ title: Создание удостоверения для приложения A
 description: Описывается создание нового приложения Azure Active Directory и субъекта-службы, которые можно использовать в сочетании с контролем доступа на основе ролей в Azure Resource Manager для управления доступом к ресурсам.
 services: active-directory
 documentationcenter: na
-author: CelesteDG
-manager: mtillman
+author: rwike77
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: develop
 ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 04/08/2019
-ms.author: celested
+ms.date: 05/14/2019
+ms.author: ryanwi
 ms.reviewer: tomfitz
 ms.custom: seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9affec9ccc1b87f36d6f30aff4795d85532be8c1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: d0208d25e4583672ad2110d959f8e255affbf3e0
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60300993"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65764898"
 ---
 # <a name="how-to-use-the-portal-to-create-an-azure-ad-application-and-service-principal-that-can-access-resources"></a>Практическое руководство: Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала
 
@@ -58,7 +58,7 @@ ms.locfileid: "60300993"
 
 1. Перейдите на уровень области действия, которому вы хотите назначить приложение. Например, чтобы назначить роль в области действия подписки, выберите **Все службы** и **Подписки**.
 
-   ![Выберите подписку.](./media/howto-create-service-principal-portal/select-subscription.png)
+   ![Выбрать подписку](./media/howto-create-service-principal-portal/select-subscription.png)
 
 1. Выберите определенную подписку, для которой хотите назначить приложение.
 
@@ -106,18 +106,18 @@ ms.locfileid: "60300993"
 
    ![Идентификатор клиента](./media/howto-create-service-principal-portal/copy-app-id.png)
 
-1. Выберите элемент **Параметры**.
+1. Выберите **сертификаты и секреты**.
 
-   ![Выбор элемента "Параметры"](./media/howto-create-service-principal-portal/select-settings.png)
+   ![Выбор элемента "Параметры"](./media/howto-create-service-principal-portal/select-certs-secrets.png)
 
-1. Выберите **Ключи**.
-1. Введите описание и срок действия ключа. Затем нажмите кнопку **Сохранить**.
+1. Выберите **секреты клиента "->" новый секрет клиента**.
+1. Введите описание секрет и длительность. Закончив, выберите команду **добавить**.
 
-   ![Сохранение ключа](./media/howto-create-service-principal-portal/save-key.png)
+   ![Сохраните секрет](./media/howto-create-service-principal-portal/save-secret.png)
 
-   После этого отобразится значение ключа. Это значение невозможно будет получить позже, поэтому скопируйте его сразу. Значение ключа необходимо предоставить вместе с идентификатором приложения для входа от имени приложения. Сохраните значение ключа, чтобы приложение могло получить к нему доступ.
+   После сохранения секрет клиента, отображается значение секрета клиента. Это значение невозможно будет получить позже, поэтому скопируйте его сразу. Значение ключа необходимо предоставить вместе с идентификатором приложения для входа от имени приложения. Сохраните значение ключа, чтобы приложение могло получить к нему доступ.
 
-   ![Сохраненный ключ](./media/howto-create-service-principal-portal/copy-key.png)
+   ![Скопировать секрет](./media/howto-create-service-principal-portal/copy-secret.png)
 
 ## <a name="required-permissions"></a>Необходимые разрешения
 
@@ -146,7 +146,7 @@ ms.locfileid: "60300993"
 
 Чтобы проверить права доступа к подписке, выполните следующие действия.
 
-1. В верхнем правом углу выберите свою учетную запись, а затем щелкните **Мои разрешения**.
+1. Выберите свою учетную запись в правом верхнем углу и выберите **... "->" Мои разрешения**.
 
    ![Выбор разрешений пользователя](./media/howto-create-service-principal-portal/select-my-permissions.png)
 
@@ -154,7 +154,7 @@ ms.locfileid: "60300993"
 
    ![Поиск пользователя](./media/howto-create-service-principal-portal/view-details.png)
 
-1. Просмотрите назначенные вам роли и определите, есть ли у вас разрешение назначать роли приложению Active Directory. Если разрешения нет, обратитесь к администратору подписки с просьбой назначить вам роль администратора доступа пользователей. На следующем рисунке представлен пользователь, которому назначена роль владельца. Это значит, что у такого пользователя есть необходимые разрешения.
+1. Выберите **назначения ролей** просмотрите назначенные вам роли и определять, при наличии соответствующих разрешений для назначения роли приложения AD. Если разрешения нет, обратитесь к администратору подписки с просьбой назначить вам роль администратора доступа пользователей. На следующем рисунке представлен пользователь, которому назначена роль владельца. Это значит, что у такого пользователя есть необходимые разрешения.
 
    ![Просмотр разрешений](./media/howto-create-service-principal-portal/view-user-role.png)
 

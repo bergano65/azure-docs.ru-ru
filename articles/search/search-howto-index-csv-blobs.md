@@ -10,14 +10,19 @@ ms.service: search
 ms.devlang: rest-api
 ms.topic: conceptual
 ms.custom: seodec2018
-ms.openlocfilehash: 193ed7099293fb1ee4c056abcc5c2f34d78627b7
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: e7d959e77d27fb04b18f402e4056d4dea1607039
+ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65024708"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65522897"
 ---
 # <a name="indexing-csv-blobs-with-azure-search-blob-indexer"></a>Индексирование BLOB-объектов в формате CSV с помощью индексатора BLOB-объектов службы поиска Azure
+
+> [!Note]
+> Режим анализа delimitedText находится в предварительной версии и не предназначена для использования в рабочей среде. [2019 г. версия REST API-05-06-Preview](search-api-preview.md) предоставляет эту функцию. В настоящее время не поддерживается пакет SDK для .NET.
+>
+
 По умолчанию [индексатор BLOB-объектов службы поиска Azure](search-howto-indexing-azure-blob-storage.md) анализирует текстовые BLOB-объекты (с разделителями) как один блок текста. Однако в больших двоичных объектах, содержащих CSV-данные, часто возникает необходимость обрабатывать каждую строку объекта как отдельный документ. Например, учитывая следующий разделительный текст, вы можете проанализировать его в двух документах, каждый из которых содержит поля "id", "datePublished" и "tags": 
 
     id, datePublished, tags
@@ -26,13 +31,11 @@ ms.locfileid: "65024708"
 
 В этой статье вы узнаете, как выполнить синтаксический анализ больших двоичных объектов CSV с параметром indexerby BLOB-объектов службы поиска Azure `delimitedText` режим анализа. 
 
-`delimitedText` Режим анализа в настоящее время находится в общедоступной предварительной версии и не рекомендуется для производственных рабочих нагрузок.
-
 > [!NOTE]
 > Следуйте рекомендациям по конфигурации индексатора в [один ко многим индексирования](search-howto-index-one-to-many-blobs.md) для вывода нескольких поиск документов из одного BLOB-объектов Azure.
 
 ## <a name="setting-up-csv-indexing"></a>Настройка индексирования CSV
-Чтобы индексировать BLOB-объекты в формате CSV, создайте или обновите определение индексатора с помощью режима анализа `delimitedText` .  
+Чтобы индексировать большие двоичные объекты в CSV-ФАЙЛ, создать или обновить определение индексатора с `delimitedText` режим анализа на [Создание индексатора](https://docs.microsoft.com/rest/api/searchservice/create-indexer) запроса:
 
     {
       "name" : "my-csv-indexer",
@@ -40,14 +43,12 @@ ms.locfileid: "65024708"
       "parameters" : { "configuration" : { "parsingMode" : "delimitedText", "firstLineContainsHeaders" : true } }
     }
 
-Дополнительные сведения об API создания индексатора см. в разделе [Создание индексатора](https://docs.microsoft.com/rest/api/searchservice/create-indexer).
-
 `firstLineContainsHeaders` указывает, что первая (непустая) строка каждого BLOB-объекта содержит заголовки.
 Если большие двоичные объекты не содержат строку заголовка, заголовки следует указать в конфигурации индексатора. 
 
     "parameters" : { "configuration" : { "parsingMode" : "delimitedText", "delimitedTextHeaders" : "id,datePublished,tags" } } 
 
-Можно настроить символ разделителя с помощью параметра конфигурации `delimitedTextDelimiter`. Например: 
+Можно настроить символ разделителя с помощью параметра конфигурации `delimitedTextDelimiter`. Например:
 
     "parameters" : { "configuration" : { "parsingMode" : "delimitedText", "delimitedTextDelimiter" : "|" } }
 

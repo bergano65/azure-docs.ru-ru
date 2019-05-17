@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 01/23/2019
 ms.author: aschhab
-ms.openlocfilehash: 1ea645ee53f91a62bd49fb1da0d44e2962708b88
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: fdfd7794961b0254526b124525c6e978d13b0114
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60402774"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65800261"
 ---
 # <a name="message-expiration-time-to-live"></a>Срок действия сообщения (срок жизни)
 
@@ -35,6 +35,11 @@ ms.locfileid: "60402774"
 ## <a name="entity-level-expiration"></a>Срок действия уровня сущности
 
 Для всех сообщений, отправленных в очередь или раздел, применяется срок действия по умолчанию, который задается на уровне сущности с помощью свойства [defaultMessageTimeToLive](/azure/templates/microsoft.servicebus/namespaces/queues). Его можно также указать на портале во время создания и затем изменить. Срок действия по умолчанию используется для всех сообщений, отправленных в сущность, для которой значение [TimeToLive](/dotnet/api/microsoft.azure.servicebus.message.timetolive#Microsoft_Azure_ServiceBus_Message_TimeToLive) не задано явным образом. Срок действия по умолчанию задает максимальное значение для **TimeToLive**. Для сообщений, значение **TimeToLive** которых превышает срок действия по умолчанию, автоматически применяется значение **defaultMessageTimeToLive**, прежде чем они попадают в очередь.
+
+> [!NOTE]
+> Значение по умолчанию [TimeToLive](/dotnet/api/microsoft.azure.servicebus.message.timetolive#Microsoft_Azure_ServiceBus_Message_TimeToLive) значение для передаваемого сообщения равно [TimeSpan.Max](https://docs.microsoft.com/dotnet/api/system.timespan.maxvalue) Если не указано иное.
+>
+> Для обмена сообщениями сущностей (очередей и разделов), время окончания срока действия по умолчанию является также [TimeSpan.Max](https://docs.microsoft.com/dotnet/api/system.timespan.maxvalue) для уровней "стандартный" и "премиум" служебной шины.  Для уровня "базовый" по умолчанию срок хранения равен 14 дням.
 
 Просроченные сообщения при необходимости можно переместить в [очередь недоставленных сообщений](service-bus-dead-letter-queues.md), задав свойство [EnableDeadLetteringOnMessageExpiration](/dotnet/api/microsoft.servicebus.messaging.queuedescription.enabledeadletteringonmessageexpiration#Microsoft_ServiceBus_Messaging_QueueDescription_EnableDeadLetteringOnMessageExpiration) или установив соответствующий флажок на портале. Если этот параметр оставить отключенным, то просроченные сообщения будут удаляться. Просроченные сообщения, перемещенные в очередь недоставленных сообщений, можно отличить от других недоставленных сообщений, оценивая свойство [DeadletterReason](service-bus-dead-letter-queues.md#moving-messages-to-the-dlq), которое брокер сохраняет в разделе свойств пользователя. В данном случае оно имеет значение [TTLExpiredException](service-bus-dead-letter-queues.md#moving-messages-to-the-dlq).
 

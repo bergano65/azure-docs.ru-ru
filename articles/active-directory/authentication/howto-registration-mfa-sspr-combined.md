@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 03/18/2019
+ms.date: 05/1/2019
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
-ms.reviewer: sahenry
+ms.reviewer: sahenry, calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3baf2690ae07b87bb4d5dba30fcd20f62a1a4506
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: abe9cba604100a42a4cd29ccd5af47e8898ea409
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60358095"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65812930"
 ---
 # <a name="enable-combined-security-information-registration-preview"></a>Включение в сочетании безопасности сведения о регистрации (Предварительная версия)
 
@@ -51,6 +51,37 @@ ms.locfileid: "60358095"
 * [https://mysignins.microsoft.com](https://mysignins.microsoft.com)
 * [https://account.activedirectory.windowsazure.com](https://account.activedirectory.windowsazure.com)
 
+## <a name="conditional-access-policies-for-combined-registration"></a>Политики условного доступа для объединенных регистрации
+
+Обеспечение безопасности, когда и каким образом регистрация пользователей для многофакторной идентификации Azure и самостоятельного сброса паролей теперь возможна с помощью действия пользователя в политике условного доступа. Эта функция предварительной версии доступна для организаций, которые включили [сочетании предварительной версии регистрации](../authentication/concept-registration-mfa-sspr-combined.md). Эта функция может быть включена в организациях, откуда угодно регистрации пользователей для многофакторной идентификации Azure и SSPR из центрального расположения, такие как надежного сетевого расположения во время адаптации отдела Кадров. Дополнительные сведения о создании надежных расположений в условном доступе см. в статье [Какова условия расположения в условном доступе Azure Active Directory?](../conditional-access/location-condition.md#named-locations)
+
+### <a name="create-a-policy-to-require-registration-from-a-trusted-location"></a>Создать политику, чтобы требовать регистрацию из надежных источников
+
+Следующая политика применяется для всех выбранных пользователей, которые пытаются зарегистрировать, используя процесс объединенный регистрации и блокирует доступ, если они подключаются из расположения, помечен как доверенной сети.
+
+![Создание политики условного доступа для управления регистрацией сведения о безопасности](media/howto-registration-mfa-sspr-combined/conditional-access-register-security-info.png)
+
+1. В **портала Azure**, перейдите к **Azure Active Directory** > **условного доступа**
+1. Выберите **Новая политика**.
+1. В поле Имя введите имя для этой политики. Например **сочетании регистрации сведений о безопасности в доверенных сетях**
+1. В разделе **назначения**, нажмите кнопку **пользователей и групп**и выберите пользователей и групп требуется настроить эту политику, чтобы применить к
+
+   > [!WARNING]
+   > Пользователи должны иметь доступ для [сочетании предварительной версии регистрации](../authentication/howto-registration-mfa-sspr-combined.md).
+
+1. В разделе **облачные приложения или действия**выберите **действия пользователя**, проверьте **зарегистрировать сведения о безопасности (Предварительная версия)**
+1. В разделе **условия** > **расположений**
+   1. Настройка **Да**
+   1. Включить **любого места**
+   1. Исключить **все надежные расположения**
+   1. Нажмите кнопку **сделать** в колонке "расположения"
+   1. Нажмите кнопку **сделать** в колонке "условия"
+1. В разделе **элементы управления доступом** > **Grant**
+   1. Нажмите кнопку **заблокировать доступ**
+   1. Нажмите кнопку **выберите**
+1. Задайте **включить политику** для **на**
+1. Нажмите кнопку **создать**
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
 [Доступные методы для многофакторной проверки подлинности и SSPR](concept-authentication-methods.md)
@@ -60,3 +91,5 @@ ms.locfileid: "60358095"
 [Настройка многофакторной идентификации Azure](howto-mfa-getstarted.md)
 
 [Устранение неполадок в сочетании регистрации сведений о безопасности](howto-registration-mfa-sspr-combined-troubleshoot.md)
+
+[Что такое условие расположения в условном доступе Azure Active Directory?](../conditional-access/location-condition.md)

@@ -6,15 +6,16 @@ services: media-services
 author: Juliako
 manager: femila
 ms.service: media-services
+ms.subservice: video-indexer
 ms.topic: article
-ms.date: 02/10/2019
+ms.date: 05/15/2019
 ms.author: juliako
-ms.openlocfilehash: e85beea4250b5ac5f4defd0b918786079d3dbe3e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: f20d718d0b1d3bbdf117e502a380897c79a7905f
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60553697"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65799500"
 ---
 # <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 
@@ -22,7 +23,7 @@ ms.locfileid: "60553697"
 
 ## <a name="general-questions"></a>Общие вопросы
 
-### <a name="what-is-video-indexer"></a>Что такое "Индексатор видео"?
+### <a name="what-is-video-indexer"></a>Что такое Индексатор видео?
 
 Индексатор видео — это служба искусственного интеллекта, которая входит в состав Служб мультимедиа Microsoft Azure. Индексатор видео выполняет оркестрацию нескольких моделей машинного обучения, позволяя легко извлекать аналитические сведения из видео. Чтобы предоставить расширенные и точные сведения, Индексатор видео применяет несколько каналов видео: аудио, речь и визуальные элементы. Полученные от Индексатора видео сведения можно использовать разными способами, например для улучшения доступности содержимого, а также создания возможностей монетизации и новых решений для работы. Индексатор видео предоставляет веб-интерфейс для тестирования, настройки и персонализации моделей, содержащихся в учетной записи. Разработчики могут использовать API REST для интеграции Индексатора видео в рабочие системы. 
 

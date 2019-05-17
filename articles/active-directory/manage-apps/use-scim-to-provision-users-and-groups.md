@@ -16,12 +16,12 @@ ms.author: celested
 ms.reviewer: asmalser
 ms.custom: aaddev;it-pro;seohack1
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fba0a9bc0886b9487b0c61b6091bd122fe6e370d
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: 04dde608f5885cdafe18b49a388de8dbb596cbfe
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65191545"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65539354"
 ---
 # <a name="using-system-for-cross-domain-identity-management-scim-to-automatically-provision-users-and-groups-from-azure-active-directory-to-applications"></a>Использование системы для управления удостоверениями между доменами (SCIM) для автоматической подготовки пользователей и групп из Azure Active Directory в приложения
 
@@ -452,7 +452,7 @@ Azure AD можно настроить автоматическую подгот
 * Обновление запроса PATCH группы должен передать *HTTP 204 No Content* в ответе. Возвращение текста со списком всех элементов не рекомендуется.
 * Нет необходимости для поддержки возвращение всех элементов группы.
 
-#### <a name="create-group"></a>Создание группы
+#### <a name="create-group"></a>Создать группу
 
 ##### <a name="request"></a>Запрос
 *POST/Groups HTTP/1.1*
@@ -460,7 +460,6 @@ Azure AD можно настроить автоматическую подгот
 {
     "schemas": ["urn:ietf:params:scim:schemas:core:2.0:Group", "http://schemas.microsoft.com/2006/11/ResourceManagement/ADSCIM/2.0/Group"],
     "externalId": "8aa1a0c0-c4c3-4bc0-b4a5-2ef676900159",
-    "id": "c4d56c3c-bf3b-4e96-9b64-837018d6060e",
     "displayName": "displayName",
     "members": [],
     "meta": {
@@ -624,7 +623,7 @@ Azure AD можно настроить автоматическую подгот
 * Компьютер под управлением Windows, поддерживающий платформу ASP.NET 4.5, на котором будет размещена конечная точка SCIM. Этот компьютер должен быть доступен из облака.
 * [Подписка Azure с пробной или лицензированной версией Azure AD Premium.](https://azure.microsoft.com/services/active-directory/)
 
-### <a name="getting-started"></a>Приступая к работе
+### <a name="getting-started"></a>Начало работы
 Начнем с самого простого способа реализации конечной точки SCIM. Этот пример кода принимает запросы на подготовку от Azure AD и сохраняет пользователей в файл формата CSV (значения, разделенные запятыми).
 
 #### <a name="to-create-a-sample-scim-endpoint"></a>Создание конечной точки SCIM
@@ -782,7 +781,7 @@ Azure AD можно настроить автоматическую подгот
 * GlobalSign;
 * Go Daddy;
 * VeriSign;
-* WoSign.
+* WoSign
 
 Сертификат проверки подлинности сервера можно привязать к порту на узле Windows с помощью служебной программы сетевой оболочки. 
 
@@ -1234,9 +1233,9 @@ Azure Active Directory может предоставлять веб-службе
 | Facsimile-TelephoneNumber |phoneNumbers[type eq "fax"].value |
 | givenName |name.givenName |
 | jobTitle |title |
-| mail |emails[type eq "work"].value |
+| почта |emails[type eq "work"].value |
 | mailNickname |externalId |
-| manager |manager |
+| руководитель |manager |
 | mobile |phoneNumbers[type eq "mobile"].value |
 | objectId |ИД |
 | postalCode |addresses[type eq "work"].postalCode |
@@ -1252,9 +1251,9 @@ Azure Active Directory может предоставлять веб-службе
 | Группа Azure Active Directory | urn:ietf:params:scim:schemas:core:2.0:Group |
 | --- | --- |
 | displayName |externalId |
-| mail |emails[type eq "work"].value |
+| почта |emails[type eq "work"].value |
 | mailNickname |displayName |
-| members |members |
+| члены |члены |
 | objectId |ИД |
 | proxyAddresses |emails[type eq "other"].Value |
 

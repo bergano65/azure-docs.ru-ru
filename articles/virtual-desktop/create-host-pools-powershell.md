@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: how-to
 ms.date: 05/06/2019
 ms.author: helohr
-ms.openlocfilehash: 165980da2b78e7514ea1938bdbeb6fda82dd123d
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: 8e6783bb56f55949824e4ce94c85145f53dd9f4b
+ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65236663"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65523953"
 ---
 # <a name="create-a-host-pool-with-powershell"></a>Создание пула узлов с помощью PowerShell
 
@@ -26,12 +26,6 @@ ms.locfileid: "65236663"
 
 ```powershell
 Add-RdsAccount -DeploymentUrl https://rdbroker.wvd.microsoft.com
-```
-
-После этого запустите следующий командлет, чтобы задать контекст для вашей группы клиента. При отсутствии имени группы клиента вашего клиента, скорее всего, в группе «по умолчанию клиента», поэтому вы можете пропустить этот командлет.
-
-```powershell
-Set-RdsContext -TenantGroupName <tenantgroupname>
 ```
 
 Затем выполните этот командлет, чтобы создать новый пул узлов в вашем клиенте виртуального рабочего стола Windows:

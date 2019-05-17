@@ -7,13 +7,13 @@ ms.author: twhitney
 manager: jeconnoc
 ms.service: container-service
 ms.topic: article
-ms.date: 05/06/2019
-ms.openlocfilehash: 22cc195b7808ad4a9111aafcf883a68c51f3709f
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.date: 05/15/2019
+ms.openlocfilehash: 5182a5e325bd7883af1a7d102d3e02b277a5089e
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65076110"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65788700"
 ---
 # <a name="azure-red-hat-openshift-resources"></a>Ресурсы Azure Red Hat OpenShift
 
@@ -21,19 +21,9 @@ ms.locfileid: "65076110"
 
 ## <a name="azure-regions"></a>Регионы Azure
 
-Кластеры Azure Red Hat OpenShift можно развернуть в следующих регионах Azure по всему миру.
+См. в разделе [доступность продуктов по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=openshift&regions=all) текущий список регионов, где вы можете развернуть Azure Red Hat OpenShift кластеров.
 
-|Регион|Код интерфейса командной строки|
-|-|-|
-|🇦🇺 Восточная Австралия|`australiaeast`|
-|Центральная Канада 🇨🇦|`canadacentral`|
-|Восточная Канада 🇨🇦|`canadaeast`|
-|🇺🇸 восточная часть США|`eastus`|
-|🇺🇸 Западная часть США|`westus`|
-|🇪🇺 Западная Европа|`westeurope`|
-|🇪🇺 Северная Европа|`northeurope`|
-
-## <a name="virtual-machine-sizes"></a>Размер виртуальных машин
+## <a name="virtual-machine-sizes"></a>Размеры виртуальных машин
 
 Ниже приведены поддерживаемые размеры виртуальных машин, можно указать для вычислительных узлов в кластере Azure Red Hat OpenShift.
 

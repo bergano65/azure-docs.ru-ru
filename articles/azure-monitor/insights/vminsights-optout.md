@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/05/2018
 ms.author: magoedte
-ms.openlocfilehash: c6a8322998b391b9021292a3a7213ded56b67feb
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 0f35ea3e35277ee7f1afd8278a31f45ed20c6995
+ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61386450"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65522123"
 ---
 # <a name="how-to-disable-monitoring-of-your-virtual-machines-with-azure-monitor-for-vms-preview"></a>Как отключить мониторинг виртуальных машин с помощью Azure Monitor для виртуальных машин (предварительная версия)
 
@@ -56,7 +56,7 @@ ms.locfileid: "61386450"
 5. В списке решений выберите **InfrastructureInsights(имя рабочей области)**, а затем страницу **Обзор** для решения и щелкните **Удалить**.  При появлении запроса на подтверждение щелкните **Yes**(Да).  
 6. В списке решений выберите **ServiceMap(имя рабочей области)**, а затем страницу **Обзор** для решения и щелкните **Удалить**.  При появлении запроса на подтверждение щелкните **Yes**(Да).  
 
-Если перед подключением Azure Monitor для виртуальных машин вы не [собирали данные счетчиков производительности, включенных](vminsights-onboard.md?toc=/azure/azure-monitor/toc.json#performance-counters-enabled) для виртуальных машин на платформе Windows или Linux в рабочей области, то вам необходимо отключить эти правила, выполнив описанные [здесь](../../azure-monitor/platform/data-sources-performance-counters.md?toc=/azure/azure-monitor/toc.json#configuring-performance-counters) действия для Windows и Linux.
+Если перед подключением Azure Monitor для виртуальных машин вы не [собирали данные счетчиков производительности, включенных](vminsights-enable-overview.md#performance-counters-enabled) для виртуальных машин на платформе Windows или Linux в рабочей области, то вам необходимо отключить эти правила, выполнив описанные [здесь](../platform/data-sources-performance-counters.md#configuring-performance-counters) действия для Windows и Linux.
 
 ## <a name="disable-monitoring-for-an-azure-vm-and-retain-workspace"></a>Отключение мониторинга для виртуальной машины Azure и сохранение рабочей области  
 

@@ -14,20 +14,20 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/28/2018
 ms.author: b-juche
-ms.openlocfilehash: bb43a75b6a221c15c8724302797d04c22e04c8d2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 25cae58663f6fa7ef27995c10509eb33e49dd4c7
+ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61086123"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65522813"
 ---
 # <a name="create-a-netapp-account"></a>Создание учетной записи NetApp
 Создание учетной записи NetApp предоставляет возможность настройки пула емкости и впоследствии создания тома. Чтобы создать новую учетную запись NetApp, нужно использовать колонку Azure NetApp Files.
 
 ## <a name="before-you-begin"></a>Перед началом работы
-Необходимо зарегистрировать подписку для использования поставщика ресурсов NetApp и общедоступной предварительной версии компонента.
+Необходимо, вы получили сообщение электронной почты от команды Azure NetApp файлы, подтверждающее, что вам был предоставлен доступ к службе. См. в разделе [ожидания помещается запрос доступа к службе](azure-netapp-files-register.md#waitlist).
 
-[Register for Azure NetApp Files](azure-netapp-files-register.md) (Регистрация в службе Azure NetApp Files).
+Необходимо также зарегистрировать подписку для поставщика ресурсов NetApp. См. в разделе [зарегистрировать поставщик ресурсов NetApp](azure-netapp-files-register.md#resource-provider).
 
 ## <a name="steps"></a>Действия 
 
@@ -56,6 +56,11 @@ ms.locfileid: "61086123"
 
 5. Нажмите кнопку **Создать**.     
    Созданная учетная запись NetApp теперь отображается в колонке Azure NetApp Files. 
+
+> [!NOTE] 
+> Если вы не имеют доступа к службе файлов Azure NetApp, вы получите следующую ошибку при попытке создать первую учетную запись NetApp:  
+>
+> `{"code":"DeploymentFailed","message":"At least one resource deployment operation failed. Please list deployment operations for details. Please see https://aka.ms/arm-debug for usage details.","details":[{"code":"NotFound","message":"{\r\n \"error\": {\r\n \"code\": \"InvalidResourceType\",\r\n \"message\": \"The resource type could not be found in the namespace 'Microsoft.NetApp' for api version '2017-08-15'.\"\r\n }\r\n}"}]}`
 
 ## <a name="next-steps"></a>Дальнейшие действия  
 

@@ -1,5 +1,5 @@
 ---
-title: Сведения об HBase в Azure HDInsight
+title: Что такое Apache HBase в Azure HDInsight?
 description: Введение в Apache HBase в HDInsight — базу данных NoSQL на основе Hadoop. Изучите варианты использования и сравните HBase с другими кластерами Hadoop.
 author: hrasheed-msft
 ms.reviewer: jasonh
@@ -8,14 +8,15 @@ ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 02/22/2018
 ms.author: hrasheed
-ms.openlocfilehash: d109a1a233aaaf1f3922561106caa15781e31e01
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.openlocfilehash: a492adbf1c01271ceea736bde9de999190fc2da4
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62114440"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65789207"
 ---
-# <a name="what-is-apache-hbase-in-hdinsight-a-nosql-database-that-provides-bigtable-like-capabilities-for-apache-hadoop"></a>Что такое Apache HBase в HDInsight: база данных NoSQL, которая предоставляет возможности, схожие с BigTable, для Apache Hadoop
+# <a name="what-is-apache-hbase-in-azure-hdinsight"></a>Что такое Apache HBase в Azure HDInsight
+
 [Apache HBase](https://hbase.apache.org/) — это база данных NoSQL с открытым кодом, созданная на основе [Apache Hadoop](https://hadoop.apache.org/) по типу [Google BigTable](https://cloud.google.com/bigtable/). HBase обеспечивает прямой доступ и строгую согласованность для больших объемов неструктурированных и слабоструктурированных данных, упорядоченных в семейства столбцов.
 
 С точки зрения пользователя HBase напоминает базу данных. Данные хранятся в строках и столбцах таблицы, данные в строке группируются по семейству столбцов. База данных HBase не имеет схемы в том смысле, что ни столбцы, ни типы хранимых в них данных не нужно определять до использования. Открытый код линейно масштабируется, чтобы обрабатывать петабайты данных на тысячах узлов. Он может полагаться на избыточность данных, пакетную обработку и другие особенности, которые предусмотрены распределенными приложениями в экосистеме Hadoop.

@@ -19,12 +19,12 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: 400b1613a87d4de65879a512642e16884c7d03b4
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: eb6667a1429382ed566826de64ad7ffbe83183cf
+ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65021872"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65521887"
 ---
 # <a name="add-suggesters-to-an-index-for-typeahead-in-azure-search"></a>Добавление средств подбора в индекс для typeahead в службе поиска Azure
 
@@ -95,13 +95,13 @@ private static void CreateHotelsIndex(SearchServiceClient serviceClient)
 }
 ```
 
-## <a name="property-reference"></a>Справочные данные по свойствам
+## <a name="property-reference"></a>Справочник по свойствам
 
 Ключевые моменты, которые уведомление об использовании средств подбора — это имя (средства подбора указываются по именам в запросе), searchMode (в настоящее время только один «analyzingInfixMatching») и список полей, для которых включен typeahead. 
 
 Для него задаются перечисленные ниже свойства.
 
-|Свойство      |ОПИСАНИЕ      |
+|Свойство      |Описание      |
 |--------------|-----------------|
 |`name`        |Имя средства подбора. Используйте имя средства подбора, при вызове [API REST предложений](https://docs.microsoft.com/rest/api/searchservice/suggestions) или [REST API автозаполнения](https://docs.microsoft.com/rest/api/searchservice/autocomplete).|
 |`searchMode`  |Стратегия, используемая для поиска фраз кандидата. В настоящее время поддерживается только режим `analyzingInfixMatching`, в рамках которого выполняется гибкий поиск совпадений в начале и середине фраз.|
@@ -119,7 +119,7 @@ private static void CreateHotelsIndex(SearchServiceClient serviceClient)
 
 Средство подбора ссылается на запрос, а также операции. Например, на вызов GET REST укажите либо `suggest` или `autocomplete` набора documents. REST, после создания средств подбора можно использовать [API предложений](https://docs.microsoft.com/rest/api/searchservice/suggestions) или [API автозаполнения](https://docs.microsoft.com/rest/api/searchservice/autocomplete) в логике запроса.
 
-Для .NET, используйте [SuggestWithHttpMessagesAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.idocumentsoperations.suggestwithhttpmessagesasync?view=azure-dotnet-preview) или [AutocompleteWithHttpMessagesAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.idocumentsoperations.autocompletewithhttpmessagesasync?view=azure-dotnet-preview&viewFallbackFrom=azure-dotnet).
+Для .NET, используйте [SuggestWithHttpMessagesAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.idocumentsoperations.suggestwithhttpmessagesasync?view=azure-dotnet) или [AutocompleteWithHttpMessagesAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.idocumentsoperations.autocompletewithhttpmessagesasync?view=azure-dotnet&viewFallbackFrom=azure-dotnet).
 
 Пример, демонстрирующий обоих запросов, см. в разделе [пример добавления автозаполнения и предложения в службе поиска Azure](search-autocomplete-tutorial.md).
 

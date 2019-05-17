@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 03/29/2019
 ms.author: magoedte
-ms.openlocfilehash: 16491ccc8a9cdc24b82c4c4e27705fa30da61088
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 750393e6dba17ab8ba024f9f1fbb2f9127dd81ab
+ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60800233"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65521706"
 ---
 # <a name="azure-monitor-dependency-virtual-machine-extension-for-linux"></a>Расширение виртуальной машины Azure монитор зависимостей для Linux
 
@@ -30,7 +30,7 @@ ms.locfileid: "60800233"
 
 ### <a name="operating-system"></a>Операционная система
 
-Расширение агента зависимостей виртуальной Машины Azure для Linux может выполняться для поддерживаемых операционных систем, перечисленных в [поддерживаемые операционные системы](../../azure-monitor/insights/vminsights-onboard.md#supported-operating-systems) раздел Azure Monitor для развертывания виртуальных машин Azure.
+Расширение агента зависимостей виртуальной Машины Azure для Linux может выполняться для поддерживаемых операционных систем, перечисленных в [поддерживаемые операционные системы](../../azure-monitor/insights/vminsights-enable-overview.md#supported-operating-systems) раздел Azure Monitor для развертывания виртуальных машин Azure.
 
 ## <a name="extension-schema"></a>Схема расширения
 
@@ -79,7 +79,7 @@ ms.locfileid: "60800233"
 | версия_API | 2015-01-01 |
 | publisher | Microsoft.Azure.Monitoring.DependencyAgent |
 | тип | DependencyAgentLinux |
-| typeHandlerVersion | 9.5 |
+| typeHandlerVersion | 9,5 |
 
 ## <a name="template-deployment"></a>Развертывание шаблона
 

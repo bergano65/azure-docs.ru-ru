@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 04/29/2019
 ms.author: roiyz
-ms.openlocfilehash: 2287a0c39a82509e21ff35d8c3786cf1c85b1b24
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 270b3ae49a815c9e12fce9377c8298192237f28a
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65142879"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65790372"
 ---
 # <a name="azure-monitor-virtual-machine-extension-for-windows"></a>Расширение виртуальной машины Azure Monitor для Windows
 
@@ -36,6 +36,19 @@ ms.locfileid: "65142879"
 
 - Windows Server 2019
 - Windows Server 2008 R2, 2012, 2012 R2, 2016 г., версии 1709 и 1803
+
+### <a name="agent-and-vm-extension-version"></a>Версия агента и расширения виртуальной машины
+Следующая таблица предоставляет сопоставление версии расширения виртуальной Машины Azure Monitor и пакетов агента Log Analytics для каждого выпуска. 
+
+| Версия расширения Azure Monitor виртуальной Машины Linux | Версия пакета агента Log Analytics | Дата выпуска | Заметки о выпуске |
+|--------------------------------|--------------------------|--------------------------|--------------------------|
+| 8.0.11049.0 | 1.0.11049.1 | Февраля 2017 г. | |
+| 8.0.11072.0 | 1.0.11072.1 | Сентября 2017 г. | |
+| 8.0.11081.0 | 1.0.11081.5 | Ноября 2017 г. | | 
+| 8.0.11103.0 | Недоступно |  Апрель 2018 г. | |
+| 8.0.11136.0 | Недоступно | Сентября 2018 г. |  <ul><li> Добавлена поддержка обнаружения изменение идентификатора ресурса на перемещение виртуальной Машины </li><li> Добавлена поддержка reporting ресурсов, установите идентификатор при использовании не являющийся расширением </li></ul>| 
+| 10.19.10006.0 | Недоступно | Декабря 2018 г. | <ul><li> Исправления незначительных стабилизации </li></ul> | 
+| 10.19.13515.0 | 1.0.13515.1 | Марта 2019 г. | <ul><li>Исправления незначительных стабилизации </li></ul> |
 
 ### <a name="azure-security-center"></a>Центр безопасности Azure
 
@@ -77,7 +90,7 @@ ms.locfileid: "65142879"
 | ---- | ---- |
 | версия_API | 2015-06-15 |
 | publisher | Microsoft.EnterpriseCloud.Monitoring |
-| Тип | MicrosoftMonitoringAgent |
+| тип | MicrosoftMonitoringAgent |
 | typeHandlerVersion | 1.0 |
 | workspaceID (пример)* | 6f680a37-00c6-41c7-a93f-1437e3462574 |
 | workspaceKey (пример) | z4bU3p1/GrnWpQkky4gdabWXAhbWSTz70hm4m2Xt92XI+rSRgE8qVvRhsGo9TXffbrTahyrwv35W0pOqQAU7uQ== |

@@ -6,14 +6,14 @@ manager: philmea
 ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
-ms.date: 07/03/2017
+ms.date: 05/11/2019
 ms.author: robinsh
-ms.openlocfilehash: 274b77644326cbf73696aae77b48afcbc63aa4c2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 5dd93af7deec2b0c8c90f6a8586de905207ad0a6
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61322800"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65796357"
 ---
 # <a name="import-and-export-iot-hub-device-identities-in-bulk"></a>Импорт и экспорт удостоверений устройств центра Интернета вещей в пакетном режиме
 
@@ -84,6 +84,10 @@ while(true)
   await Task.Delay(TimeSpan.FromSeconds(5));
 }
 ```
+
+## <a name="device-importexport-job-limits"></a>Ограничения задания импорта и экспорта устройств
+
+Импортировать только одно активное устройство или задание экспорта может одновременно для всех уровней центра Интернета вещей. Центр Интернета вещей также имеет ограничения для скорость операций заданий. Дополнительные сведения см. в разделе [ссылка - Справочник: квоты и регулирование](iot-hub-devguide-quotas-throttling.md).
 
 ## <a name="export-devices"></a>Экспорт устройств
 
@@ -390,7 +394,7 @@ while(true)
 
 ## <a name="get-the-container-sas-uri"></a>Получение URI SAS контейнера
 
-В следующем примере кода показано, как создать [URI SAS](../storage/blobs/storage-dotnet-shared-access-signature-part-2.md) с разрешениями на чтение, запись и удаление контейнера больших двоичных объектов.
+В следующем примере кода показано, как создать [URI SAS](../storage/common/storage-dotnet-shared-access-signature-part-1.md) с разрешениями на чтение, запись и удаление контейнера больших двоичных объектов.
 
 ```csharp
 static string GetContainerSasUri(CloudBlobContainer container)
@@ -420,7 +424,7 @@ static string GetContainerSasUri(CloudBlobContainer container)
 В этой статье вы узнали, как выполнять массовые операции с реестром удостоверений в Центре Интернета вещей. Дополнительные сведения об управлении Центром Интернета вещей в Azure см. по следующим ссылкам:
 
 * [Общие сведения о метриках Центра Интернета вещей](iot-hub-metrics.md)
-* [Мониторинг операций](iot-hub-operations-monitoring.md)
+* [Журналы центра Интернета вещей](iot-hub-monitor-resource-health.md)
 
 Для дальнейшего изучения возможностей Центра Интернета вещей см. следующие статьи:
 

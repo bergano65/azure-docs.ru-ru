@@ -5,14 +5,14 @@ services: vpn-gateway
 author: yushwang
 ms.service: vpn-gateway
 ms.topic: conceptual
-ms.date: 03/11/2019
+ms.date: 05/14/2019
 ms.author: yushwang
-ms.openlocfilehash: d0060d81ae44bd54ab193eb77e3117b7afbfbf73
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 23dc017b6ffcca8761966a10bd5cb45b32c7a602
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60456498"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65786699"
 ---
 # <a name="vpn-gateway-faq"></a>VPN-шлюз: вопросы и ответы
 
@@ -190,7 +190,7 @@ VPN Azure использует проверку подлинности с пом
 
 ### <a name="does-azure-generate-the-same-ipsecike-pre-shared-key-for-all-my-vpn-connections-for-the-same-virtual-network"></a>Создает ли Azure один общий ключ IPsec/IKE для всех VPN-подключений для той же виртуальной сети?
 
-Нет. По умолчанию Azure создает разные общие ключи для разных VPN-подключений. Однако можно использовать командлет API REST или PowerShell для задания ключа VPN-шлюза, чтобы установить собственное значение ключа. Ключ ДОЛЖЕН быть строкой, которая содержит от 1 до 128 буквенных и цифровых символов.
+Нет. По умолчанию Azure создает разные общие ключи для разных VPN-подключений. Однако можно использовать командлет API REST или PowerShell для задания ключа VPN-шлюза, чтобы установить собственное значение ключа. Ключ должен быть печатаемые символы ASCII.
 
 ### <a name="do-i-get-more-bandwidth-with-more-site-to-site-vpns-than-for-a-single-virtual-network"></a>Смогу ли я увеличить пропускную способность, если вместо одной виртуальной сети буду использовать VPN "точка — сеть"?
 

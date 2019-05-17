@@ -1,5 +1,5 @@
 ---
-title: Шифрование при хранении с помощью управляемых клиентом ключей в хранилище ключей Azure — службы поиска Azure
+title: Шифрование при хранении с помощью управляемых клиентом ключей в хранилище ключей Azure (Предварительная версия) — службы поиска Azure
 description: Шифрование на стороне сервера дополнительный компонент индексов и карт синонимов в службе поиска Azure с помощью ключей, создавать и управлять ими в Azure Key Vault.
 author: NatiNimni
 manager: jlembicz
@@ -9,14 +9,19 @@ ms.service: search
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.custom: ''
-ms.openlocfilehash: 987b56a9571fd50f605dbe6fb4112ef857021530
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: 9d2cd2a2f4b3143d58d0ef03d67de094ea03303e
+ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65029180"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65523091"
 ---
 # <a name="azure-search-encryption-using-customer-managed-keys-in-azure-key-vault"></a>Шифрование поиска Azure с помощью управляемых клиентом ключей в хранилище ключей Azure
+
+> [!Note]
+> Шифрование с помощью управляемых пользователем ключей находится в предварительной версии и не предназначена для использования в рабочей среде. [2019 г. версия REST API-05-06-Preview](search-api-preview.md) предоставляет эту функцию. Можно также использовать пакет SDK для .NET версии 8.0-preview.
+>
+> Эта функция недоступна для бесплатных служб Необходимо использовать в службе поиска оплачиваемых, созданной в течение или после 2019-01-01. Отсутствует поддержка портала в данный момент.
 
 По умолчанию службы поиска Azure шифрует содержимое пользователя хранении с помощью [управляемых службой ключей](https://docs.microsoft.com/azure/security/azure-security-encryption-atrest#data-encryption-models). Предоставляет уровень шифрования, используя ключи, создавать и управлять ими в Azure Key Vault можно дополнить шифрования по умолчанию. В этой статье рассматриваются шаги.
 
@@ -26,20 +31,17 @@ ms.locfileid: "65029180"
 
 Можно использовать различные ключи из разных хранилищ ключей. Это означает, что отдельной службы поиска можно разместить несколько зашифрованных indexes\synonym карт, каждая зашифрован, возможно, используя другой ключ управляемых пользователем, наряду с indexes\synonym карт, которые не зашифрованы с помощью управляемых клиентом ключей. 
 
->[!Note]
-> **Доступности функций**: Шифрование с помощью управляемых пользователем ключей является компонентом предварительной версии, которая недоступна для бесплатных служб. Для оплаты служб, он доступен только для поиска служб, созданных в течение или после 2019-01-01, с помощью последней предварительной версией api (api-version = 2019-05-06-Preview). В настоящее время не поддерживается портала для этой функции.
-
 ## <a name="prerequisites"></a>Технические условия
 
 В этом примере используются следующие службы. 
 
-[Создайте службу "Поиск Azure"](search-create-service-portal.md) или [найдите имеющуюся службу](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) в рамках текущей подписки. Вы можете использовать бесплатную службу для выполнения инструкций, описанных в этом учебнике.
++ [Создайте службу "Поиск Azure"](search-create-service-portal.md) или [найдите имеющуюся службу](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) в рамках текущей подписки. Вы можете использовать бесплатную службу для выполнения инструкций, описанных в этом учебнике.
 
-[Создайте ресурс Azure Key Vault](https://docs.microsoft.com/azure/key-vault/quick-create-portal#create-a-vault) или найдите имеющееся хранилище в вашей подписке.
++ [Создайте ресурс Azure Key Vault](https://docs.microsoft.com/azure/key-vault/quick-create-portal#create-a-vault) или найдите имеющееся хранилище в вашей подписке.
 
-[Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview) или [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli) используется для выполнения задач конфигурации.
++ [Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview) или [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli) используется для выполнения задач конфигурации.
 
-[Postman](search-fiddler.md), [Azure PowerShell](search-create-index-rest-api.md) и [SDK для поиска Azure](https://aka.ms/search-sdk-preview) может использоваться для вызова REST API предварительной версии. Нет, портал или поддержка пакета SDK для .NET для шифрования, управляемых пользователем, в настоящее время.
++ [Postman](search-fiddler.md), [Azure PowerShell](search-create-index-rest-api.md) и [SDK для поиска Azure](https://aka.ms/search-sdk-preview) может использоваться для вызова REST API предварительной версии. Нет, портал или поддержка пакета SDK для .NET для шифрования, управляемых пользователем, в настоящее время.
 
 ## <a name="1---enable-key-recovery"></a>1 — включить восстановления ключей
 

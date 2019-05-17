@@ -12,12 +12,12 @@ ms.workload: search
 ms.date: 05/02/2019
 ms.author: HeidiSteen
 ms.custom: seodec2018
-ms.openlocfilehash: 91c58507d8758a65772110afba71354deecd3b12
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: 5374ff896613dd8f8563a2054be8a92103e63fbb
+ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65024283"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65523904"
 ---
 # <a name="azure-search-service-rest-api-version-2019-05-06-preview"></a>Служба поиска Azure REST api-version 2019-05-06-Preview
 В этой статье описывается версия `api-version=2019-05-06-Preview` REST API службы "Поиск Azure", предлагающая экспериментальные функции, которые пока недоступны вообще.
@@ -37,6 +37,8 @@ ms.locfileid: "65024283"
 Возможности, объявленные в более ранних предварительных версиях, все еще находятся в общедоступной предварительной версии. При вызове API с более ранней предварительной версией API вы можете продолжать использовать эту версию или переключиться на `2019-05-06-Preview` без изменений ожидаемого поведения.
 
 + [Параметр запроса moreLikeThis](search-more-like-this.md) для поиска документов, связанных с указанным документом. Эта компонент был доступен в более ранних предварительных версиях. 
+* [Индексирование больших двоичных объектов CSV](search-howto-index-csv-blobs.md) создает один документ на строку, в отличие от одному документу для каждого текстовому большому двоичному объекту.
+* [Поддержка MongoDB API Cosmos DB индексаторы](search-howto-index-cosmosdb.md) находится в предварительной версии.
 
 
 ## <a name="how-to-call-a-preview-api"></a>Вызов API предварительной версии

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/24/2018
 ms.author: anavin
-ms.openlocfilehash: 68ca35590aaadba431d5f1dc06e0405162ebc69f
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 23cd77d4a2d0c8203670039dd44c878bf7217fd3
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65154489"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65799106"
 ---
 # <a name="public-ip-address-prefix"></a>Префикс общедоступного IP-адреса
 
@@ -55,7 +55,7 @@ ms.locfileid: "65154489"
 ## <a name="constraints"></a>Ограничения
 
 - Невозможно указать IP-адреса для префикса. Azure выделяет IP-адреса для префикса в зависимости от указанного вами размера.
-- Размер префикса по умолчанию — / 28 или 16 общедоступным IP-адресам.
+- Вы можете создать префикс не более 16 IP-адресов или/28. Дополнительные сведения см. в разделе об [ограничениях Azure](../azure-subscription-service-limits.md?toc=%2fazure%2fvirtual-network%2ftoc.json#azure-resource-manager-virtual-networking-limits).
 - После создания префикса изменить диапазон невозможно.
 - Диапазон может содержать только IPv4-адреса. Он не содержит IPv6-адреса.
 - Только статические общедоступные IP-адреса, созданные с помощью номера SKU "Стандартный", можно назначить из диапазона префикса. Дополнительные сведения о номерах SKU общедоступных IP-адресов см. в разделе [Общедоступные IP-адреса](virtual-network-ip-addresses-overview-arm.md#public-ip-addresses).

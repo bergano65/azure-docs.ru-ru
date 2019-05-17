@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 09/20/2018
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: d323a93773a8459d097c1fe3502d2ccd88ae9695
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 9ad4a1a9fff8e011638eb7c532bf7619c87c1996
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64687909"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65785190"
 ---
 # <a name="set-up-sign-in-with-an-azure-active-directory-account-using-custom-policies-in-azure-active-directory-b2c"></a>Настройка входа в Azure Active Directory B2C с помощью учетной записи Azure Active Directory с использованием пользовательских политик 
 
@@ -55,7 +55,7 @@ ms.locfileid: "64687909"
 
 1. Убедитесь, что используете каталог, содержащий клиент Azure AD B2C, щелкнув **Фильтр каталога и подписки** в верхнем меню и выбрав каталог, содержащий ваш клиент.
 2. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Azure AD B2C**.
-3. На странице "Обзор" выберите **Identity Experience Framework — предварительная версия**.
+3. На странице "Обзор" выберите **Identity Experience Framework**.
 4. Выберите **Ключи политики**, а затем щелкните **Добавить**.
 5. Для пункта **Параметры** выберите `Manual`.
 6. Введите **имя** ключа политики. Например, `ContosoAppSecret`.  Префикс `B2C_1A_` будет автоматически добавлен к имени ключа.
@@ -129,7 +129,7 @@ ms.locfileid: "64687909"
 2. Обновите значение **DisplayName**. Это значение будет отображаться на кнопке входа на экране входа в систему.
 3. Обновите значение **Description**.
 4. Azure AD использует протокол OpenID Connect, поэтому для параметра **Protocol** должно быть задано значение `OpenIdConnect`.
-5. Задайте для параметра **METADATA** значение `https://login.windows.net/your-AD-tenant-name.onmicrosoft.com/.well-known/openid-configuration`, где `your-AD-tenant-name` — это имя клиента Azure AD. Например `https://login.windows.net/fabrikam.onmicrosoft.com/.well-known/openid-configuration`.
+5. Задайте для параметра **METADATA** значение `https://login.windows.net/your-AD-tenant-name.onmicrosoft.com/.well-known/openid-configuration`, где `your-AD-tenant-name` — это имя клиента Azure AD. Например: `https://login.windows.net/fabrikam.onmicrosoft.com/.well-known/openid-configuration` 
 6. Откройте браузер и перейдите по URL-адресу **метаданных**, который вы только что обновили. Найдите для объект **issuer**, скопируйте и вставьте его в качестве значения **ProviderName** в XML-файле.
 8. Задайте для параметров **client_id** и **IdTokenAudience** значение идентификатора приложения из регистрации приложения.
 9. В разделе **CryptograhicKeys** измените значение **StorageReferenceId**, указав ключ политики, который был определен. Например, `ContosoAppSecret`.

@@ -12,12 +12,12 @@ ms.date: 12/14/2017
 ms.author: glenga
 ms.reviewer: sunayv
 ms.custom: ''
-ms.openlocfilehash: afb97c1c14422f15a3fc2c00b2101c4a36675556
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 26f6502f63b39d3f1ecf8dfeb09c8df4daa63b68
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61026005"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65786119"
 ---
 # <a name="call-a-function-from-powerapps"></a>Вызов функции из PowerApps
 Платформа [PowerApps](https://powerapps.microsoft.com) позволяет бизнес-экспертами создавать приложения без традиционного кода. Профессиональные разработчики могут расширить возможности PowerApps с помощью функций Azure, избавляя при этом разработчиков приложений PowerApps от технических деталей.
@@ -39,8 +39,7 @@ ms.locfileid: "61026005"
 > * Добавление элементов управления для вызова функции и отображения данных.
 > * запустили приложения для определения экономичности аварийного ремонта ветроэлектрической установки.
 
-> [!IMPORTANT]
-> Сейчас функция OpenAPI предоставляется в предварительной версии и доступна только для версии 1.x среды выполнения Функций Azure.
+[!INCLUDE [functions-openapi-note](../../includes/functions-openapi-note.md)]
 
 ## <a name="prerequisites"></a>Технические условия
 

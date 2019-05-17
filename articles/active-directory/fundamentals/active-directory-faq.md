@@ -13,12 +13,12 @@ ms.date: 11/12/2018
 ms.author: lizross
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f29ab7b908184533885929040ca8eccf56cda92d
-ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
+ms.openlocfilehash: 06112361434a8217df6714a70d0059c175e98ac8
+ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65464416"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65521719"
 ---
 # <a name="frequently-asked-questions-about-azure-active-directory"></a>Часто задаваемые вопросы об Azure Active Directory
 Azure Active Directory — это комплексная служба идентификации (IDaaS), охватывающая все аспекты идентификации, управления доступом и безопасности.
@@ -210,4 +210,4 @@ Azure Active Directory — это комплексная служба иден�
 - - -
 **Вопрос.  Можно ли установить безопасное подключение LDAP к Azure AD?**
 
-**Ответ.**  № Azure AD не поддерживает протокол Lightweight Directory Access Protocol (LDAP). Тем не менее существует возможность использования доменных служб Azure AD (Azure AD DS) с помощью групп безопасности правильно настроенные сети через сеть Azure для достижения подключения LDAP. Дополнительные сведения см. в разделе https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-admin-guide-configure-secure-ldap.
+**Ответ.**  № Azure AD не поддерживает протокол Lightweight Directory Access Protocol (LDAP) или защищенного протокола LDAP напрямую. Тем не менее существует возможность включить экземпляр доменных служб Azure AD (Azure AD DS) в клиенте Azure AD с помощью групп безопасности сети правильно настроенные через сеть Azure для достижения подключения LDAP. Дополнительные сведения см. в разделе https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-admin-guide-configure-secure-ldap.

@@ -14,12 +14,12 @@ ms.workload: iaas-sql-server
 ms.date: 02/12/2019
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 1c5c5f4c8125f801edc89d47851871d8eb06a2f9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 5efbe874bbf3c1c4081eb7a2c76c1be5a3358ec8
+ms.sourcegitcommit: 17411cbf03c3fa3602e624e641099196769d718b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60591291"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65518976"
 ---
 # <a name="use-azure-sql-vm-cli-to-configure-always-on-availability-group-for-sql-server-on-an-azure-vm"></a>Настройка группы доступности AlwaysOn для SQL Server на виртуальной Машине Azure с помощью CLI виртуальной Машины SQL Azure
 В этой статье описывается использование [виртуальной Машины SQL Azure CLI](/cli/azure/sql/vm?view=azure-cli-latest/) для развертывания Windows отказоустойчивого кластера (WSFC) и добавить в кластер виртуальных машин SQL Server, а также создание внутренней подсистемы балансировки нагрузки и прослушивателя для группы доступности Always On.  Фактическое развертывание группы доступности Always On по-прежнему выполняется вручную через SQL Server Management Studio (SSMS). 
@@ -42,7 +42,7 @@ ms.locfileid: "60591291"
 Кластер требуется учетная запись хранилища в качестве облако-свидетель. Можно использовать любой существующей учетной записи хранения, или можно создать новую учетную запись хранения. Если вы хотите использовать существующую учетную запись хранения, перейдите к следующему разделу. 
 
 В следующем фрагменте кода создается учетная запись хранения: 
-```azurecli
+```azurecli-interactive
 # Create the storage account
 # example: az storage account create -n 'cloudwitness' -g SQLVM-RG -l 'West US' `
 #  --sku Standard_LRS --kind StorageV2 --access-tier Hot --https-only true
@@ -58,7 +58,7 @@ az storage account create -n <name> -g <resource group name> -l <region ex:eastu
 Azure CLI виртуальной Машины SQL [группы виртуальных машин sql az](https://docs.microsoft.com/cli/azure/sql/vm/group?view=azure-cli-latest) команды, группы, который управляет метаданными службы отказоустойчивого кластера Windows (WSFC), на котором размещается группа доступности. Метаданные кластера включают домена AD, учетные записи кластера, учетные записи хранения для использования в качестве облака-свидетеля и версии SQL Server. Используйте [создать группы виртуальных машин sql az](https://docs.microsoft.com/cli/azure/sql/vm/group?view=azure-cli-latest#az-sql-vm-group-create) для определения метаданных для WSFC, таким образом, чтобы при добавлении первую ВМ SQL Server, создается кластер, как определено. 
 
 В следующем фрагменте кода определяет метаданные для кластера:
-```azurecli
+```azurecli-interactive
 # Define the cluster metadata
 # example: az sql vm group create -n Cluster -l 'West US' -g SQLVM-RG `
 #  --image-offer SQL2017-WS2016 --image-sku Enterprise --domain-fqdn domain.com `
@@ -79,7 +79,7 @@ az sql vm group create -n <cluster name> -l <region ex:eastus> -g <resource grou
 
 Следующий фрагмент кода создает кластер и добавляет первую ВМ SQL Server в него: 
 
-```azurecli
+```azurecli-interactive
 # Add SQL Server VMs to cluster
 # example: az sql vm add-to-group -n SQLVM1 -g SQLVM-RG --sqlvm-group Cluster `
 #  -b Str0ngAzur3P@ssword! -p Str0ngAzur3P@ssword! -s Str0ngAzur3P@ssword!
@@ -105,7 +105,7 @@ az sql vm add-to-group -n <VM2 Name> -g <Resource Group Name> --sqlvm-group <clu
 
 В следующем фрагменте кода создается внутренней подсистемы балансировки нагрузки:
 
-```azurecli
+```azurecli-interactive
 # Create the Internal Load Balancer
 # example: az network lb create --name sqlILB -g SQLVM-RG --sku Standard `
 # --vnet-name SQLVMvNet --subnet default
@@ -125,7 +125,7 @@ az network lb create --name sqlILB -g <resource group name> --sku Standard `
    1. Перейдите к группе ресурсов в [портала Azure](https://portal.azure.com). 
    1. Выберите ресурс виртуальной сети. 
    1. Выберите **свойства** в **параметры** области. 
-   1. Определить идентификатор ресурса для виртуальной сети и добавление `/subnets/<subnetname>`в конец его, чтобы создать идентификатор ресурса подсети. Например: 
+   1. Определить идентификатор ресурса для виртуальной сети и добавление `/subnets/<subnetname>`в конец его, чтобы создать идентификатор ресурса подсети. Например:
         - — Идентификатор ресурса виртуальной сети: `/subscriptions/a1a1-1a11a/resourceGroups/SQLVM-RG/providers/Microsoft.Network/virtualNetworks/SQLVMvNet`
         - Меня зовут подсети `default`.
         - Таким образом является идентификатор ресурса подсети: `/subscriptions/a1a1-1a11a/resourceGroups/SQLVM-RG/providers/Microsoft.Network/virtualNetworks/SQLVMvNet/subnets/default`
@@ -133,7 +133,7 @@ az network lb create --name sqlILB -g <resource group name> --sku Standard `
 
 В следующем фрагменте кода создается прослушиватель группы доступности:
 
-```azurecli
+```azurecli-interactive
 # Create the AG listener
 # example: az sql vm group ag-listener create -n AGListener -g SQLVM-RG `
 #  --ag-name SQLAG --group-name Cluster --ip-address 10.0.0.27 `
@@ -157,7 +157,7 @@ az sql vm group ag-listener create -n <listener name> -g <resource group name> `
 Чтобы добавить новую реплику к группе доступности, сделайте следующее:
 
 1. Добавление виртуальной Машины SQL Server в кластер:
-   ```azurecli
+   ```azurecli-interactive
    # Add SQL Server VM to the Cluster
    # example: az sql vm add-to-group -n SQLVM3 -g SQLVM-RG --sqlvm-group Cluster `
    # -b Str0ngAzur3P@ssword! -p Str0ngAzur3P@ssword! -s Str0ngAzur3P@ssword!
@@ -167,7 +167,7 @@ az sql vm group ag-listener create -n <listener name> -g <resource group name> `
    ```
 1. Позволяет добавить экземпляр SQL Server в качестве реплики группы доступности SQL Server Management Studio (SSMS).
 1. Добавьте метаданные виртуальной Машины SQL Server к прослушивателю:
-   ```azurecli
+   ```azurecli-interactive
    # Update the listener metadata with the new VM
    # example: az sql vm group ag-listener update -n AGListener `
    # -g sqlvm-rg --group-name Cluster --sqlvms sqlvm1 sqlvm2 sqlvm3
@@ -182,7 +182,7 @@ az sql vm group ag-listener create -n <listener name> -g <resource group name> `
 
 1. Удалите эту реплику из группы доступности, с помощью SQL Server Management Studio (SSMS). 
 1. Удаление метаданных виртуальной Машины SQL Server из прослушивателя:
-   ```azurecli
+   ```azurecli-interactive
    # Update the listener metadata by removing the VM from the SQLVMs list
    # example: az sql vm group ag-listener update -n AGListener `
    # -g sqlvm-rg --group-name Cluster --sqlvms sqlvm1 sqlvm2
@@ -191,7 +191,7 @@ az sql vm group ag-listener create -n <listener name> -g <resource group name> `
    -g <RG name> --group-name <cluster name> --sqlvms <SQL VMs that remain>
    ```
 1. Удаление виртуальной Машины SQL Server из кластера:
-   ```azurecli
+   ```azurecli-interactive
    # Remove SQL VM from cluster
    # example: az sql vm remove-from-group --name SQLVM3 --resource-group SQLVM-RG
 
@@ -203,7 +203,7 @@ az sql vm group ag-listener create -n <listener name> -g <resource group name> `
 
 Следующий фрагмент кода позволяет удалить прослушиватель группы доступности SQL из поставщика ресурсов SQL и из группы доступности: 
 
-```azurecli
+```azurecli-interactive
 # Remove the AG listener
 # example: az sql vm group ag-listener delete --group-name Cluster --name AGListener --resource-group SQLVM-RG
 

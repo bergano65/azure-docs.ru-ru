@@ -10,12 +10,12 @@ ms.service: search
 ms.devlang: rest-api
 ms.topic: conceptual
 ms.custom: seodec2018
-ms.openlocfilehash: 5b04cabe734b97436421595dbb0ab7584efd4911
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: 4f3fb624f5e6137c9edb0be97adc16d8c808ebd9
+ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65024945"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65523075"
 ---
 # <a name="how-to-index-json-blobs-using-azure-search-blob-indexer"></a>Как индексировать большие двоичные объекты JSON, с помощью индексатора больших двоичных объектов поиска Azure
 В этой статье показано, как настроить большой двоичный объект службы поиска Azure [индексатора](search-indexer-overview.md) извлечения структурированного содержимого из документов JSON в хранилище BLOB-объектов Azure и сделать его доступным для поиска в службе поиска Azure. Этот рабочий процесс создает индекс поиска Azure и загружает в него существующий текст, извлекаемый из больших двоичных объектов JSON. 
@@ -128,7 +128,7 @@ REST API можно использовать для индексирования
 
 Обычно являются большие двоичные объекты JSON в хранилище BLOB-объектов Azure к одному документу JSON или JSON «array». Индексатор больших двоичных объектов в службе поиска Azure может анализировать любую конструкцию в зависимости от значения параметра **parsingMode** в запросе.
 
-| Документ JSON | parsingMode | ОПИСАНИЕ | Доступность |
+| Документ JSON | parsingMode | Описание | Доступность |
 |--------------|-------------|--------------|--------------|
 | Один на большой двоичный объект | `json` | Анализирует большие двоичные объекты JSON как отдельный блок текста. Каждый большой двоичный объект JSON становится отдельным документом в службе поиска Azure. | Общедоступен в [REST](https://docs.microsoft.com/rest/api/searchservice/indexer-operations) API и [.NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.indexer) SDK. |
 | Несколько на большой двоичный объект | `jsonArray` | Анализирует массив JSON в большом двоичном объекте, где каждый элемент массива становится отдельным документом в службе поиска Azure.  | Общедоступен в [REST](https://docs.microsoft.com/rest/api/searchservice/indexer-operations) API и [.NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.indexer) SDK. |
@@ -279,7 +279,7 @@ REST API можно использовать для индексирования
 
 ## <a name="use-net-sdk"></a>Использование пакета SDK для .NET
 
-Пакет SDK для .NET имеет полное равенство с REST API. Мы рекомендуем прочитать предыдущий раздел о REST API, чтобы ознакомиться с концепциями, рабочим процессом и требованиями. Используйте следующую справочную документацию по .NET API для реализации индексатора JSON в управляемом коде.
+Пакет SDK для .NET имеет полного соответствия с REST API. Мы рекомендуем прочитать предыдущий раздел о REST API, чтобы ознакомиться с концепциями, рабочим процессом и требованиями. Используйте следующую справочную документацию по .NET API для реализации индексатора JSON в управляемом коде.
 
 + [microsoft.azure.search.models.datasource](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.datasource?view=azure-dotnet)
 + [microsoft.azure.search.models.datasourcetype](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.datasourcetype?view=azure-dotnet) 
@@ -292,7 +292,7 @@ REST API можно использовать для индексирования
 
 Большие двоичные объекты JSON может принимать несколько форм. **ParsingMode** параметр в индексаторе JSON определяет, как содержимое больших двоичных объектов JSON анализируется и структуру в индекс службы поиска Azure:
 
-| parsingMode | ОПИСАНИЕ |
+| parsingMode | Описание |
 |-------------|-------------|
 | `json`  | Индекс каждого большого двоичного объекта в качестве одного документа. Это уровень по умолчанию. |
 | `jsonArray` | Выберите этот режим, если большие двоичные объекты состоят из массивов JSON и требуется каждый элемент массива в виде отдельного документа в службе поиска Azure. |
@@ -439,4 +439,4 @@ REST API можно использовать для индексирования
 + [Индексаторы в службе поиска Azure](search-indexer-overview.md)
 + [Индексирование BLOB-объектов JSON с помощью индексатора BLOB-объектов службы поиска Azure](search-howto-index-json-blobs.md)
 + [Индексирование BLOB-объектов в формате CSV с помощью индексатора BLOB-объектов службы поиска Azure](search-howto-index-csv-blobs.md)
-+ [Руководство Поиск частично структурированных данных в хранилище BLOB-объектов Azure](search-semi-structured-data.md)
++ [Учебник. Поиск частично структурированных данных в хранилище BLOB-объектов Azure](search-semi-structured-data.md)

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/04/2019
 ms.author: apimpm
-ms.openlocfilehash: 796bea3c64ef7fc03367707461d13e0ea2514b8b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 4db99f23019b34e7361e3ead4096939b9499320d
+ms.sourcegitcommit: 17411cbf03c3fa3602e624e641099196769d718b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60657752"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65518092"
 ---
 # <a name="how-to-delegate-user-registration-and-product-subscription"></a>Делегирование пользователю регистрации и подписки на продукт
 
@@ -130,7 +130,7 @@ ms.locfileid: "60657752"
      > 
    * Сравните вычисленный выше хэш со значением параметра запроса **sig**. Если два хэша совпадают друг с другом, перейдите к следующему шагу. Если нет, отклоните запрос.
 3. Обработка подписки на продукт на основе типа операции, запрашиваемой в **операции** — например, выставление счета, дополнительные вопросы и т. д.
-4. В случае успешной подписки пользователя на продукт на вашей стороне подпишите пользователя на продукт службы управления API путем [вызова интерфейса REST API для подписки на продукт].
+4. В случае успешной подписки пользователя на продукт на вашей стороне, подпишите пользователя на продукт службы управления API с [вызов REST API для подписок].
 
 ## <a name="delegate-example-code"> </a> Пример кода
 
@@ -186,7 +186,7 @@ var signature = digest.toString('base64');
 [Delegating product subscription]: #delegate-product-subscription
 [запросите маркер единого входа (SSO)]: https://docs.microsoft.com/rest/api/apimanagement/User/GenerateSsoUrl
 [Создание пользователя]: https://docs.microsoft.com/rest/api/apimanagement/user/createorupdate
-[вызова интерфейса REST API для подписки на продукт]: https://docs.microsoft.com/rest/api/apimanagement/productsubscriptions
+[вызов REST API для подписок]: https://docs.microsoft.com/rest/api/apimanagement/subscription/createorupdate
 [Next steps]: #next-steps
 [на приведенном ниже примере кода]: #delegate-example-code
 

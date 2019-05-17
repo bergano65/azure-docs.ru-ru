@@ -6,15 +6,16 @@ services: media-services
 author: Juliako
 manager: femila
 ms.service: media-services
+ms.subservice: video-indexer
 ms.topic: article
-ms.date: 02/25/2019
+ms.date: 05/15/2019
 ms.author: juliako
-ms.openlocfilehash: 07b3c806dc5df5f93bee3206cbca53485675e7dd
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 93376059dac2a8336e581269d8289d893779b291
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60560375"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65799097"
 ---
 # <a name="find-exact-moments-within-videos"></a>Поиск конкретных кадров в видео
 
@@ -49,7 +50,7 @@ ms.locfileid: "60560375"
 
 Найдя нужное для работы видео, вы можете продолжить его обработку, как описано в одном из следующих разделов. 
 
-- [Create new video insights based on existing video](video-indexer-create-new.md) (Создание новых аналитических сведений на основе существующего видео)
+- [Используйте детальную аналитику по видео](use-editor-create-project.md)
 - [Использование API Индексатора видео](video-indexer-use-apis.md)
 - [Embed visual widgets in your application](video-indexer-embed-widgets.md) (Внедрение визуальных мини-приложений в собственное приложение)
 

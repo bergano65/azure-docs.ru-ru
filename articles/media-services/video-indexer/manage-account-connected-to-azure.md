@@ -6,15 +6,16 @@ services: media-services
 author: Juliako
 manager: femila
 ms.service: media-services
+ms.subservice: video-indexer
 ms.topic: article
-ms.date: 02/10/2019
+ms.date: 05/15/2019
 ms.author: juliako
-ms.openlocfilehash: 1515a026ae297a960f220a97449d2258c0b75e58
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 37aef7c0ae06aefc69b8a72a80c8ade3951e8b0d
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60553611"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65799515"
 ---
 # <a name="manage-a-video-indexer-account-connected-to-azure"></a>Управление учетной записью Индексатора видео, подключенной к Azure
 
@@ -61,7 +62,7 @@ ms.locfileid: "60553611"
 
 Если для вашей учетной записи необходима корректировка, вы увидите соответствующие ошибки и предупреждения о конфигурации учетной записи на странице **Параметры**. Сообщения содержат ссылки на точные места на портале Azure, где необходимо внести изменения. В этом разделе содержатся дополнительные сведения о сообщениях про ошибки и предупреждающих сообщениях.
 
-* Служба "Сетка событий Azure"
+* Сетка событий
 
     Вам необходимо зарегистрировать поставщик ресурсов Сетки событий с помощью портала Azure. На [портале Azure](https://portal.azure.com/) последовательно выберите **Подписки** > [подписка] > **ResourceProviders** > **Microsoft.EventGrid**. Если не отображается состояние **Зарегистрировано**, щелкните **Зарегистрировать**. Регистрация займет несколько минут. 
 

@@ -10,21 +10,23 @@ ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: brjohnst
 ms.custom: seodec2018
-ms.openlocfilehash: d18069335bb20f78a5bcda85eb6fcb2a5abe75f7
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: 5723f1ab7258a9e0d672b5c0fd9fd0b9c4dc8721
+ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65024668"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65522921"
 ---
-# <a name="morelikethis-in-azure-search-preview"></a>moreLikeThis в службе "Поиск Azure" (предварительная версия)
+# <a name="morelikethis-in-azure-search"></a>moreLikeThis в службе поиска Azure
+
+> [!Note]
+> moreLikeThis находится в предварительной версии и не предназначена для использования в рабочей среде. [2019 г. версия REST API-05-06-Preview](search-api-preview.md) предоставляет эту функцию. В настоящее время не поддерживается пакет SDK для .NET.
 
 `moreLikeThis=[key]` — Это параметр запроса в [API поиска документов](https://docs.microsoft.com/rest/api/searchservice/search-documents) , поиск документов, аналогичную документ, указанный с помощью ключа. При обработке поискового запроса с параметром `moreLikeThis` создается запрос с условиями поиска, извлеченными из заданного документа, которые лучше всего описывают этот документ. Затем созданный запрос используется для создания поискового запроса. По умолчанию считаются содержимое всех полей, поддерживающих поиск, за вычетом ограниченных полей, которые определены с помощью `searchFields` параметра. Параметр `moreLikeThis` нельзя использовать с параметром поиска `search=[string]`.
 
 По умолчанию считаются все поля верхнего уровня для поиска. Если вы хотите вместо этого указать конкретные поля, можно использовать `searchFields` параметра. 
 
-> [!NOTE]
-> `moreLikeThis` Предварительная версия не поддерживает для поиска дополнительных полей в [сложного типа](search-howto-complex-data-types.md).
+MoreLikeThis нельзя использовать для поиска вложенных полей в [сложного типа](search-howto-complex-data-types.md).
 
 ## <a name="examples"></a>Примеры 
 
@@ -42,9 +44,6 @@ POST /indexes/hotels/docs/search?api-version=2019-05-06-Preview
     }
 ```
 
-## <a name="feature-availability"></a>Доступность функций
-
-`moreLikeThis` Параметр доступен только в предварительной версии API-интерфейсы REST (`api-version=2019-05-06-Preview`).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

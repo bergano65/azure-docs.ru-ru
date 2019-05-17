@@ -15,12 +15,12 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 95a5e1ed89b6330a0b6a49cb20d8bf0ef3587d48
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.openlocfilehash: bd7f393f889facf147cf25625d5c3b20f886ddf5
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65074745"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65784940"
 ---
 # <a name="web-app-that-calls-web-apis---code-configuration"></a>Веб-приложения, что вызовы веб-интерфейсы API — код конфигурации
 
@@ -34,7 +34,7 @@ ms.locfileid: "65074745"
 
 Ниже приведены библиотеки, которые поддерживают поток кода авторизации для веб-приложений.
 
-| Библиотека MSAL | ОПИСАНИЕ |
+| Библиотека MSAL | Описание |
 |--------------|-------------|
 | ![MSAL.NET](media/sample-v2-code/logo_NET.png) <br/> MSAL.NET  | Поддерживаемыми платформами являются платформы .NET Framework и .NET Core (не UWP, Xamarin.iOS и Xamarin.Android, как эти платформы используются для построения общедоступных клиентских приложений) |
 | ![Python](media/sample-v2-code/logo_python.png) <br/> MSAL.Python | Разработка решений в ход выполнения — в общедоступной предварительной версии |
@@ -187,9 +187,9 @@ private async Task OnAuthorizationCodeReceived(AuthorizationCodeReceivedNotifica
 В веб-приложений (или веб-API, что это случится), реализацию кэша маркеров отличается от реализации кэша маркера настольных приложений (которые часто являются [файла](scenario-desktop-acquire-token.md#file-based-token-cache). Его можно использовать сеанс ASP.NET/ASP.NET Core, кэш Redis, или базу данных или даже хранилище BLOB-объектов Azure. В коде фрагмент кода выше это — объект `EnablePersistence(HttpContext, clientApp.UserTokenCache, clientApp.AppTokenCache);` вызов метода, который привязывает службы кэша. Сведения о том, что произойдет, здесь выходит за рамки данного руководства сценария, но ниже приводятся ссылки.
 
 > [!IMPORTANT]
-> — Это очень важно осознавать, что для веб-приложений и веб-API, должен быть один кэш маркеров на пользователя (в учетной записи). Необходимо выполнить сериализацию кэша маркера для каждой учетной записи.
+> — Это очень важно осознавать, что для веб-приложений и веб-API, должен быть один кэш маркеров на пользователя (в учетной записи). Сериализацию кэша маркеров также следует выполнять отдельно для каждой учетной записи.
 
-Примеры того, как использовать кэш маркеров для веб-приложений и веб-API доступны в [руководство по приложениям ASP.NET Core Web](https://github.com/Azure-Samples/ms-identity-aspnetcore-webapp-tutorial) на этапе [кэш маркеров 2-2](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/2-WebApp-graph-user/2-2-TokenCache). Для реализации взглянем на следующую папку [TokenCacheProviders](https://github.com/AzureAD/microsoft-authentication-extensions-for-dotnet/tree/master/src/Microsoft.Identity.Client.Extensions.Web/TokenCacheProviders) в [microsoft-проверка подлинности расширения for-dotnet](https://github.com/AzureAD/microsoft-authentication-extensions-for-dotnet) библиотеки (в [ Microsoft.Identity.Client.Extensions.Web](https://github.com/AzureAD/microsoft-authentication-extensions-for-dotnet/tree/master/src/Microsoft.Identity.Client.Extensions.Web) папки.
+Примеры того, как использовать кэш маркеров для веб-приложений и веб-API доступны в [руководство по приложениям ASP.NET Core Web](https://github.com/Azure-Samples/ms-identity-aspnetcore-webapp-tutorial) на этапе [кэш маркеров 2-2](https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2/tree/master/2-WebApp-graph-user/2-2-TokenCache). Пример реализации можно изучить в папке [TokenCacheProviders](https://github.com/AzureAD/microsoft-authentication-extensions-for-dotnet/tree/master/src/Microsoft.Identity.Client.Extensions.Web/TokenCacheProviders) в библиотеке [microsoft-authentication-extensions-for-dotnet](https://github.com/AzureAD/microsoft-authentication-extensions-for-dotnet) (доступна из папки [ Microsoft.Identity.Client.Extensions.Web](https://github.com/AzureAD/microsoft-authentication-extensions-for-dotnet/tree/master/src/Microsoft.Identity.Client.Extensions.Web)).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

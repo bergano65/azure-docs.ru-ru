@@ -14,12 +14,12 @@ ms.devlang: python
 ms.topic: article
 ms.date: 04/10/2019
 ms.author: aschhab
-ms.openlocfilehash: 622b1f6f6a852251c07c5576ed10cd76adbf5231
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: HT
+ms.openlocfilehash: f2605ee5688a86de0a8e7d036aa63edd604c6538
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59795021"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65787196"
 ---
 # <a name="how-to-use-service-bus-queues-with-python"></a>Как использовать очереди служебной шины с Python
 
@@ -38,7 +38,7 @@ ms.locfileid: "59795021"
         > Вы создадите **очереди** в пространстве имен служебной шины с помощью Python в этом руководстве. 
 1. Установить Python или [пакет служебной шины Azure Python][Python Azure Service Bus package], см. в разделе [руководство по установке Python](../python-how-to-install.md). Полную документацию пакета SDK Python для служебной шины см. в разделе [здесь](/python/api/overview/azure/servicebus?view=azure-python).
 
-## <a name="create-a-queue"></a>Создание очереди
+## <a name="create-a-queue"></a>Создать очередь
 **ServiceBusClient** объект позволяет работать с очередями. Добавьте следующий код в начало любого файла Python, из которого планируется получать доступ к служебной шине программным способом.
 
 ```python
@@ -60,11 +60,7 @@ sb_client.create_queue("taskqueue")
 Метод `create_queue` также поддерживает дополнительные параметры, позволяющие переопределить настройки очереди по умолчанию, такие как срок жизни сообщения или максимальный размер очереди. В следующем примере показано, как установить максимальный размер очереди 5 ГБ и срок жизни в 1 минуту:
 
 ```python
-queue_options = Queue()
-queue_options.max_size_in_megabytes = '5120'
-queue_options.default_message_time_to_live = 'PT1M'
-
-sb_client.create_queue("taskqueue", queue_options)
+sb_client.create_queue("taskqueue", max_size_in_megabytes=5120, default_message_time_to_live=datetime.timedelta(minutes=1))
 ```
 
 Дополнительные сведения см. в разделе [документации Python шины службы Azure](/python/api/overview/azure/servicebus?view=azure-python).
@@ -82,7 +78,7 @@ queue_client = QueueClient.from_connection_string("<CONNECTION STRING>", "<QUEUE
 
 # Send a test message to the queue
 msg = Message(b'Test Message')
-queue_client.send(Message("Message"))
+queue_client.send(msg)
 ```
 
 Очереди служебной шины поддерживают максимальный размер сообщения 256 КБ для [уровня "Стандартный"](service-bus-premium-messaging.md) и 1 МБ для [уровня Premium](service-bus-premium-messaging.md). Максимальный размер заголовка, который содержит стандартные и настраиваемые свойства приложения, — 64 КБ. Ограничения на количество сообщений в очереди нет, но есть максимальный общий размер сообщений, содержащихся в очереди. Этот размер очереди, определяемый в момент ее создания, не должен превышать 5 ГБ. Дополнительные сведения о квотах см. в статье [Квоты на служебную шину][Service Bus quotas].

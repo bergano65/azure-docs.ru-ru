@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.workload: big-data
 ms.date: 04/30/2019
 ms.custom: seodec18
-ms.openlocfilehash: e70eb7ae73e88b37e649d519d0d0428554dd4ab3
-ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
+ms.openlocfilehash: 3ddde600c2ac15c56b59051fbcd6bb0e8fbae1f6
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65467510"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65787528"
 ---
 # <a name="share-a-custom-view-using-a-parameterized-url"></a>Предоставление общего доступа к пользовательскому представлению с помощью параметризованного URL-адреса
 
@@ -86,11 +86,11 @@ ms.locfileid: "65467510"
 | `multiChartStack=false` | `true` включено по умолчанию таким образом передать `false` стека. |
 | `multiChartStack=false&multiChartSameScale=true` | Чтобы использовать одну и ту же шкалу оси Y для разных условий, должно быть включено наложение.  Он имеет `false` по умолчанию, поэтому для передачи 'true' активирует эту функцию. |
 | `timeBucketUnit=<Unit>&timeBucketSize=<integer>` | Единицы — дни, часы, минуты, секунды, миллисекунды.  Единицы всегда следует писать прописными буквами. </br> Определите число единиц, передав требуемое целое число для timeBucketSize.  Обратите внимание, что можно сократить представление до 7 дней.  |
-| `timezoneOffset=-<integer>` | Значение целого числа всегда указывается в миллисекундах. </br> Следует отметить, что эта функциональность немного отличается от того, что включено в обозревателе TSI, где мы можем выбрать локальное (время браузера) или время в формате UTC. |
+| `timezoneOffset=-<integer>` | Значение целого числа всегда указывается в миллисекундах. </br> Обратите внимание, что эта функциональность немного отличается от того, что включено в обозревателе Time Series Insights, где мы можем выбрать локальное (время браузера) или в формате UTC. |
 
 ### <a name="examples"></a>Примеры
 
-Чтобы добавить определения временных рядов в среде TSI в качестве параметра URL-адрес, добавьте следующую команду:
+Чтобы добавить определения временных рядов в среде Time Series Insights, как параметр URL-адрес, добавьте следующую команду:
 
 ```plaintext
 &timeSeriesDefinitions=[{"name":"F1PressureId","splitBy":"Id","measureName":"Pressure","predicate":"'Factory1'"},{"name":"F2TempStation","splitBy":"Station","measureName":"Temperature","predicate":"'Factory2'"},
@@ -112,7 +112,7 @@ https://insights.timeseries.azure.com/samples?environmentId=10000000-0000-0000-0
 > [!TIP]
 > Просмотреть Explorer live [с помощью URL-адрес](https://insights.timeseries.azure.com/samples?environmentId=10000000-0000-0000-0000-100000000108&relativeMillis=3600000&timeSeriesDefinitions=[{"name":"F1PressureId","splitBy":"Id","measureName":"Pressure","predicate":"'Factory1'"},{"name":"F2TempStation","splitBy":"Station","measureName":"Temperature","predicate":"'Factory2'"},{"name":"F3VibrationPL","splitBy":"ProductionLine","measureName":"Vibration","predicate":"'Factory3'"}]).
 
-URL-адрес выше описаны и создает представление обозревателя TSI:
+URL-адрес выше описывает и создает представление обозревателе Time Series Insights:
 
 [![Условия в обозревателе время Series Insights](media/parameterized-url/url1.png)](media/parameterized-url/url1.png#lightbox)
 

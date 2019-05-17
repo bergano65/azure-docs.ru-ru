@@ -10,12 +10,12 @@ ms.service: billing
 ms.topic: article
 ms.date: 04/19/2019
 ms.author: byvinyal
-ms.openlocfilehash: cb0203e3413ab525d6885f23c5936c64e1bef189
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: c8f1eaba726efe72e2b6845beaf1465d047c90d2
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65233709"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65787659"
 ---
 # <a name="azure-subscription-and-service-limits-quotas-and-constraints"></a>Подписка Azure, границы, квоты и ограничения службы
 В этом документе указаны некоторые из наиболее распространенных ограничений Microsoft Azure, которые иногда называются квотами. Этот документ на текущий момент охватывает не все службы Azure. Со временем список будет расширен и обновлен, чтобы охватить больше служб.
@@ -55,6 +55,7 @@ ms.locfileid: "65233709"
 * [Azure DNS](#azure-dns-limits)
 * [Брандмауэр Azure](#azure-firewall-limits)
 * [Служба Azure Kubernetes (AKS)](#azure-kubernetes-service-limits)
+* [Служба "Машинное обучение Azure"](#azure-machine-learning-service-limits)
 * [служба "Карты Azure"](#azure-maps-limits);
 * [Azure Monitor](#monitor-limits)
 * [Политика Azure](#azure-policy-limits)
@@ -77,15 +78,22 @@ ms.locfileid: "65233709"
 * [Центр Интернета вещей](#iot-hub-limits)
 * [Служба подготовки устройств для Центра Интернета вещей](#iot-hub-device-provisioning-service-limits)
 * [хранилище ключей;](#key-vault-limits)
-* [Балансировщик нагрузки](#load-balancer)
 * [Служба Log Analytics](#log-analytics-limits)
 * [Службы мультимедиа](#media-services-limits)
 * [Мобильные службы](#mobile-services-limits)
 * [Многофакторная идентификация](#multi-factor-authentication-limits)
 * [Сеть](#networking-limits)
-* [Наблюдатель за сетями](#network-watcher-limits)
+  * [Шлюз приложений](#application-gateway-limits)
+  * [Azure DNS](#azure-dns-limits)
+  * [Служба Azure двери](#azure-front-door-service-limits)
+  * [Брандмауэр Azure](#azure-firewall-limits)
+  * [ExpressRoute](#expressroute-limits)
+  * [Балансировщик нагрузки](#load-balancer)
+  * [Общедоступный IP-адрес](#publicip-address)
+  * [Наблюдатель за сетями](#network-watcher-limits)
+  * [Диспетчер трафика](#traffic-manager-limits)
+  * [Виртуальная сеть](#networking-limits)
 * [Центры уведомлений](#notification-hubs-limits)
-* [Общедоступный IP-адрес](#publicip-address)
 * [Группа ресурсов](#resource-group-limits)
 * [Контроль доступа на основе ролей](#role-based-access-control-limits)
 * [Планировщик](#scheduler-limits)
@@ -97,7 +105,6 @@ ms.locfileid: "65233709"
 * [StorSimple System](#storsimple-system-limits)
 * [Анализ потока](#stream-analytics-limits)
 * [Подписка](#subscription-limits)
-* [Диспетчер трафика](#traffic-manager-limits)
 * [Виртуальные машины](#virtual-machines-limits)
 * [Масштабируемые наборы виртуальных машин](#virtual-machine-scale-sets-limits)
 
@@ -144,6 +151,11 @@ ms.locfileid: "65233709"
 
 ### <a name="azure-kubernetes-service-limits"></a>Ограничения службы Kubernetes Azure
 [!INCLUDE [container-service-limits](../includes/container-service-limits.md)]
+
+### <a name="azure-machine-learning-service-limits"></a>Ограничения службы машинного обучения Azure
+Последние значения квот вычислений машинного обучения Azure можно найти в [страницу квот для машинного обучения Azure](../articles/machine-learning/service/how-to-manage-quotas.md)
+
+[!INCLUDE [how-to-manage-quotas](../articles/machine-learning/service/how-to-manage-quotas.md)]
 
 ### <a name="networking-limits"></a>Ограничения сети
 [!INCLUDE [azure-virtual-network-limits](../includes/azure-virtual-network-limits.md)]

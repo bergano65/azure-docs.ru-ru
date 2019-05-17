@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: troubleshoot
 ms.date: 04/08/2019
 ms.author: v-chjenk
-ms.openlocfilehash: c5a67e22c301a2afc73a46a6def9a514426c497f
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 99295fd4581cd81751f7d64b694c853efe51a106
+ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64928052"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65522944"
 ---
 # <a name="remote-desktop-client-connections"></a>Подключения клиента удаленного рабочего стола
 
@@ -108,22 +108,21 @@ Remove-Item C:\Users\pavithir\AppData\Roaming\RdClientRadc\* -Recurse
 1. Подтвердите имя пользователя и время, когда возникала проблема.
 2. Откройте **PowerShell** и установить подключение к виртуальному рабочему столу Windows клиента, где была обнаружена проблема.
 3. Убедитесь в правильный клиент с помощью соединения **Get RdsTenant.**
-4. При необходимости задайте клиента контекст группы с **RdsContext набора — TenantGroupt\<TenantGroup\>**.
-5. С помощью **Get-RdsHostPool** и **Get RdsSessionHost** командлетов, убедитесь, что устранение неполадок, проводится в пуле верный узел.
-6. Выполните следующую команду, чтобы получить список всех неудачных действий тип подключения для указанного временного окна:
+4. С помощью **Get-RdsHostPool** и **Get RdsSessionHost** командлетов, убедитесь, что устранение неполадок, проводится в пуле верный узел.
+5. Выполните следующую команду, чтобы получить список всех неудачных действий тип подключения для указанного временного окна:
 
     ```cmd
      Get-RdsDiagnosticActivities -TenantName <TenantName> -username <UPN> -StartTime
      "11/21/2018 1:07:03 PM" -EndTime "11/21/2018 1:27:03 PM" -Outcome Failure -ActivityType Connection
     ```
 
-7. С помощью **ActivityId** из предыдущих выходных данных командлета, выполните приведенную ниже команду:
+6. С помощью **ActivityId** из предыдущих выходных данных командлета, выполните приведенную ниже команду:
 
     ```
     (Get-RdsDiagnosticActivities -TenantName $tenant -ActivityId <ActivityId> -Detailed).Errors
     ```
 
-8. Команда выдает результат, аналогичный приведенному ниже. Используйте **ErrorCodeSymbolic** и **ErrorMessage** для устранения основной причины.
+7. Команда выдает результат, аналогичный приведенному ниже. Используйте **ErrorCodeSymbolic** и **ErrorMessage** для устранения основной причины.
 
     ```
     ErrorSource       : <Source>

@@ -8,18 +8,20 @@ ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: owend
 ms.reviewer: minewiskan
-ms.openlocfilehash: a440494b183d18c1d888b5d39836eb4317190d02
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: c034ed7164e67183b9a848d5210dcaf377476c6a
+ms.sourcegitcommit: 17411cbf03c3fa3602e624e641099196769d718b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64708320"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65518162"
 ---
 # <a name="automation-with-service-principals"></a>Автоматизация с помощью субъектов-служб
 
 Субъект-служба — это ресурс приложения Azure Active Directory, созданный в клиенте для выполнения автоматических операций с ресурсом и уровнем обслуживания. Он представляет собой уникальный тип *идентификатора пользователя* с идентификатором приложения и паролем или сертификатом. У субъекта-службы есть разрешения на выполнение только тех задач, которые определены ролями и назначенными ему привилегиями. 
 
 В Analysis Services субъекты-службы применяются для автоматизации типичных задач с использованием службы автоматизации Azure, автоматического режима PowerShell, настраиваемых клиентских приложений и веб-приложений. Например, подготовка серверов, развертывание моделей, обновление данных, увеличение и уменьшение масштаба, остановка и возобновление могут быть автоматизированы с помощью субъектов-служб. Разрешения присваиваются субъектам-службам через членство в ролях, так же как и в обычных учетных записях Azure AD UPN.
+
+Службы Analysis Services также поддерживают операции, выполняемые управляемыми удостоверениями с помощью субъектов-служб. Дополнительные сведения см. в разделе [управляемые удостоверения для ресурсов Azure](../active-directory/managed-identities-azure-resources/overview.md) и [служб Azure, поддерживающие аутентификацию Azure AD](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md#azure-analysis-services).
 
 ## <a name="create-service-principals"></a>Создание субъектов-служб
  

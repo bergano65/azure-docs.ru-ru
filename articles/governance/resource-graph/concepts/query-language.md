@@ -3,17 +3,17 @@ title: Основные сведения о языке запросов
 description: Описывает доступные операторы Kusto и функции, можно использовать с график ресурсов Azure.
 author: DCtheGeek
 ms.author: dacoulte
-ms.date: 12/11/2018
+ms.date: 04/22/2019
 ms.topic: conceptual
 ms.service: resource-graph
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: 08e4f09665a3501073f55b7f5b82bf51cf508ea9
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: dcb21a6aedf16b034fad4f0822e22758dda03c33
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59276683"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65800504"
 ---
 # <a name="understanding-the-azure-resource-graph-query-language"></a>Общие сведения о языке запросов графика ресурсов Azure
 
@@ -52,6 +52,38 @@ ms.locfileid: "59276683"
 - [isnotempty()](/azure/kusto/query/isnotemptyfunction)
 - [tostring()](/azure/kusto/query/tostringfunction)
 - [zip()](/azure/kusto/query/zipfunction)
+
+## <a name="escape-characters"></a>Escape-символы
+
+Некоторые имена свойств, например те, которые включают `.` или `$`, должны изолированы или escape-последовательность в запрос или свойства имя интерпретируется неправильно и не дает ожидаемых результатов.
+
+- `.` -Wrap имя свойства таким образом: `['propertyname.withaperiod']`
+  
+  Пример запроса, который создает оболочку для свойства _odata.type_:
+
+  ```kusto
+  where type=~'Microsoft.Insights/alertRules' | project name, properties.condition.['odata.type']
+  ```
+
+- `$` -Escape-символ в имени свойства. Escape-символ, используемый зависит от выполнения график ресурсов из оболочки.
+
+  - **Bash** - `\`
+
+    Пример запроса, который не соответствует свойство  _\$тип_ в bash:
+
+    ```kusto
+    where type=~'Microsoft.Insights/alertRules' | project name, properties.condition.\$type
+    ```
+
+  - **cmd** -не `$` символ.
+
+  - **PowerShell** - ``` ` ```
+
+    Пример запроса, который не соответствует свойство  _\$тип_ в PowerShell:
+
+    ```kusto
+    where type=~'Microsoft.Insights/alertRules' | project name, properties.condition.`$type
+    ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

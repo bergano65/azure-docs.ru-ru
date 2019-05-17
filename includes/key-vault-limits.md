@@ -4,14 +4,14 @@ ms.service: billing
 ms.topic: include
 ms.date: 11/09/2018
 ms.author: jroth
-ms.openlocfilehash: 0e55c372c6f5dc3484bd64cf4f328479d2d0b245
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 0b9d87fd7929607da8407ae5bbfb2f6dd6d69dab
+ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60461328"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65212035"
 ---
-## <a name="key-transactions-maximum-transactions-allowed-in-10-seconds-per-vault-per-regionsup1sup"></a>Основные транзакции (максимальное количество транзакций, разрешенных в течение 10 секунд, на хранилище для одного региона<sup>1</sup>):
+#### <a name="key-transactions-maximum-transactions-allowed-in-10-seconds-per-vault-per-regionsup1sup"></a>Основные транзакции (максимальное количество транзакций, разрешенных в течение 10 секунд, на хранилище для одного региона<sup>1</sup>):
 
 |Тип ключа|Ключ HSM<br>Создание ключа|Ключ HSM<br>Все остальные транзакции|Ключ ПО<br>Создание ключа|Ключ ПО<br>Все остальные транзакции|
 |:---|---:|---:|---:|---:|
@@ -34,7 +34,7 @@ ms.locfileid: "60461328"
 > - 125 транзакций GET RSA 4096-разрядный ключ HSM
 > - 124 GET RSA 4096-разрядный HSM-ключ и 8 транзакции GET HSM-ключ RSA 2048 бит
 
-## <a name="secrets-managed-storage-account-keys-and-vault-transactions"></a>Секреты, ключи учетной записи управляемого хранилища и транзакций хранилища:
+#### <a name="secrets-managed-storage-account-keys-and-vault-transactions"></a>Секреты, ключи учетной записи управляемого хранилища и транзакций хранилища:
 | Тип транзакций | Максимальное количество транзакций, разрешенных в течение 10 секунд, на хранилище для одного региона<sup>1</sup> |
 | --- | --- |
 | Все транзакции |2 000 |

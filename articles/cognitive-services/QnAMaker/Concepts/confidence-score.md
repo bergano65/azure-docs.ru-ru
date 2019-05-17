@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 04/05/2019
 ms.author: tulasim
 ms.custom: seodec18
-ms.openlocfilehash: 0612770c823e30578e7f4675878fc4ce2aee2bd9
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 4fb5d1e20c4c857dedcec2dc4695f82fccd9269d
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64702995"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65792744"
 ---
 # <a name="confidence-score-of-a-qna-maker-knowledge-base"></a>Оценка достоверности в базе знаний QnA Maker
 Когда пользовательский запрос сопоставляется с базой знаний, API службы QnA Maker возвращает соответствующие ответы вместе с оценкой достоверности. Эта оценка означает степень достоверности того, что ответ соответствует этому запросу пользователя. 
@@ -58,7 +58,7 @@ ms.locfileid: "64702995"
 > В новых версиях QnA Maker улучшена логика оценки, что может повлиять на пороговые значения. Каждый раз при обновлении службы проверяйте и, при необходимости, изменяйте пороговые значения. Узнать текущую версию службы QnA вы можете [здесь](https://www.qnamaker.ai/UserSettings). Сведения о том, как получить последние обновления см. [здесь](../How-To/troubleshooting-runtime.md).
 
 ## <a name="improve-confidence-scores"></a>Улучшение оценок достоверности
-Чтобы улучшить оценку достоверности конкретного ответа на запрос пользователя, можно добавить запрос пользователя в базу знаний в качестве альтернативного вопроса для этого ответа. Вы можете также использовать [исправление слов](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75fd) без учета регистра, чтобы добавить синонимы к ключевым словам в базе знаний.
+Чтобы улучшить оценку достоверности конкретного ответа на запрос пользователя, можно добавить запрос пользователя в базу знаний в качестве альтернативного вопроса для этого ответа. Вы можете также использовать [исправление слов](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/alterations/replace) без учета регистра, чтобы добавить синонимы к ключевым словам в базе знаний.
 
 
 ## <a name="similar-confidence-scores"></a>Аналогичные оценки достоверности

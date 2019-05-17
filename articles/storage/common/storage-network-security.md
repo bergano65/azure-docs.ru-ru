@@ -9,12 +9,12 @@ ms.date: 03/21/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: 0fa252fa2cdab7bb3790153f2d118fea13739852
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 56a25c95d9bc01078b3eff3729a8a693ee3cf510
+ms.sourcegitcommit: 17411cbf03c3fa3602e624e641099196769d718b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65153514"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65520257"
 ---
 # <a name="configure-azure-storage-firewalls-and-virtual-networks"></a>Настройка брандмауэров службы хранилища Azure и виртуальных сетей
 
@@ -350,14 +350,14 @@ ms.locfileid: "65153514"
 
 |Service|Имя поставщика ресурсов|Назначение|
 |:------|:---------------------|:------|
-|Служба архивации Azure|Microsoft.Backup|Резервное копирование и восстановление неуправляемых дисков в виртуальных машинах IAAS. (Не требуется для управляемых дисков.) [Узнайте больше](/azure/backup/backup-introduction-to-azure-backup).|
+|Служба архивации Azure|Microsoft.RecoveryServices|Резервное копирование и восстановление неуправляемых дисков в виртуальных машинах IAAS. (Не требуется для управляемых дисков.) [Узнайте больше](/azure/backup/backup-introduction-to-azure-backup).|
 |Azure Data Box|Microsoft.DataBox|Включает Импорт данных в Azure с помощью Data Box. [Узнайте больше](/azure/databox/data-box-overview).|
 |Azure DevTest Labs|Microsoft.DevTestLab|Создание пользовательских образов и установка артефактов. [Узнайте больше](/azure/devtest-lab/devtest-lab-overview).|
 |Сетка событий Azure|Microsoft.EventGrid|Включение публикации событий в хранилище BLOB-объектов и предоставление службе "Сетка событий" разрешения на публикацию в хранилище очередей. См. дополнительные сведения о [событиях хранилища BLOB-объектов](/azure/event-grid/event-sources) и [публикации в хранилище очередей](/azure/event-grid/event-handlers).|
 |Центры событий Azure|Microsoft.EventHub|Архивация данных с помощью функции "Сбор" в Центрах событий. [Подробнее](/azure/event-hubs/event-hubs-capture-overview)|
 |Azure HDInsight|Microsoft.HDInsight|Подготовьте исходные данные в файловой системы по умолчанию для нового кластера HDInsight. [Узнайте больше](https://azure.microsoft.com/blog/enhance-hdinsight-security-with-service-endpoints/).|
 |Azure Monitor|Microsoft.Insights|Позволяет записывать данные мониторинга в защищенную учетную запись. [Дополнительные сведения](/azure/monitoring-and-diagnostics/monitoring-roles-permissions-security).|
-|Сеть Azure|Microsoft.Networking|Хранение и анализ журналов сетевого трафика. [Узнайте больше](/azure/network-watcher/network-watcher-packet-capture-overview).|
+|Сеть Azure|Microsoft.Network.|Хранение и анализ журналов сетевого трафика. [Узнайте больше](/azure/network-watcher/network-watcher-packet-capture-overview).|
 |Azure Site Recovery|Microsoft.SiteRecovery |Настройка аварийного восстановления путем включения репликации для виртуальных машин Azure IaaS. Эта процедура необходима при использовании учетных записей хранения кэша, источника или целевой учетной записи хранения со включенным брандмауэром.  [Узнайте больше](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-tutorial-enable-replication).|
 |Хранилище данных SQL Azure|Microsoft.Sql|Позволяет импортировать и экспортировать сценариев из некоторых экземпляров баз данных SQL с помощью PolyBase. [Узнайте больше](/azure/sql-database/sql-database-vnet-service-endpoint-rule-overview).|
 

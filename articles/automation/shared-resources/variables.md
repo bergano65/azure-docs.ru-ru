@@ -6,15 +6,15 @@ ms.service: automation
 ms.subservice: shared-capabilities
 author: georgewallace
 ms.author: gwallace
-ms.date: 04/01/2019
+ms.date: 05/14/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: fc26c0357dcb071c4c75e8684fe47144a04177e4
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 0ac34f1d1e7fc2a967c7608f31f3b943f9380d01
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60880270"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65786193"
 ---
 # <a name="variable-assets-in-azure-automation"></a>Средства переменных в службе автоматизации Azure
 
@@ -41,8 +41,8 @@ ms.locfileid: "60880270"
 
 Ниже перечислены типы переменных, которые доступны в службе автоматизации.
 
-* String
-* Целое число 
+* Строка
+* Integer
 * DateTime
 * Boolean
 * NULL
@@ -58,11 +58,11 @@ ms.locfileid: "60880270"
 |[Remove-AzureRmAutomationVariable](/powershell/module/AzureRM.Automation/Remove-AzureRmAutomationVariable)|Удаляет существующую переменную.|
 |[Set-AzureRmAutomationVariable](/powershell/module/AzureRM.Automation/Set-AzureRmAutomationVariable)|Получает значение существующей переменной.|
 
-## <a name="activities"></a>Действия
+## <a name="activities"></a>Операции
 
 Действия в следующей таблице используются для доступа к учетным данным в модуле Runbook и конфигурациях DSC.
 
-| Действия | Описание |
+| Операции | Описание |
 |:---|:---|
 |Get-AutomationVariable|Получает значение существующей переменной.|
 |Set-AutomationVariable|Получает значение существующей переменной.|
@@ -135,45 +135,6 @@ for ($i = 1; $i -le $NumberOfIterations; $i++) {
     Write-Output "$i`: $SampleMessage"
 }
 Set-AzureRmAutomationVariable -ResourceGroupName "ResourceGroup01" –AutomationAccountName "MyAutomationAccount" –Name NumberOfRunnings –Value ($NumberOfRunnings += 1)
-```
-
-#### <a name="setting-and-retrieving-a-complex-object-in-a-variable"></a>Задание и получение сложного объекта в переменной
-
-В следующем примере кода показано, как добавить в переменную сложное значение в текстовом модуле Runbook. В этом примере виртуальная машина Azure вызывается с помощью команды **Get-AzureVM** и сохраняется в существующую переменную автоматизации.  Как указано в разделе [Типы переменных](#variable-types), значение сохраняется в виде PSCustomObject.
-
-```powershell
-$vm = Get-AzureVM -ServiceName "MyVM" -Name "MyVM"
-Set-AutomationVariable -Name "MyComplexVariable" -Value $vm
-```
-
-В следующем коде значение возвращается из переменной и используется для запуска виртуальной машины.
-
-```powershell
-$vmObject = Get-AutomationVariable -Name "MyComplexVariable"
-if ($vmObject.PowerState -eq 'Stopped') {
-    Start-AzureVM -ServiceName $vmObject.ServiceName -Name $vmObject.Name
-}
-```
-
-#### <a name="setting-and-retrieving-a-collection-in-a-variable"></a>Задание и получение коллекции в переменной
-
-В следующем примере кода показано, как использовать переменную с набором сложных значений в текстовом модуле Runbook. В этом примере имена нескольких виртуальных машин Azure возвращаются с помощью команды **Get-AzureVM** и затем сохраняются в существующую переменную автоматизации. Как указано в разделе [Типы переменных](#variable-types), значение сохраняется в виде коллекции PSCustomObject.
-
-```powershell
-$vms = Get-AzureVM | Where -FilterScript {$_.Name -match "my"}
-Set-AutomationVariable -Name 'MyComplexVariable' -Value $vms
-```
-
-В следующем коде коллекция значений возвращается из переменной и используется для запуска виртуальной машины.
-
-```powershell
-$vmValues = Get-AutomationVariable -Name "MyComplexVariable"
-ForEach ($vmValue in $vmValues)
-{
-    if ($vmValue.PowerState -eq 'Stopped') {
-        Start-AzureVM -ServiceName $vmValue.ServiceName -Name $vmValue.Name
-    }
-}
 ```
 
 #### <a name="setting-and-retrieving-a-variable-in-python2"></a>Задание и получение переменной в Python2

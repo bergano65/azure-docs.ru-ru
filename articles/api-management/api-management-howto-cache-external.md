@@ -12,14 +12,14 @@ ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 11/27/2018
+ms.date: 05/15/2019
 ms.author: apimpm
-ms.openlocfilehash: 8e3f34210627fbb455a1eca0b415cdd6de9b3681
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: e2362d06fa0ef795122a2d47a7a621b66fdd9470
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60527794"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65780361"
 ---
 # <a name="use-an-external-azure-cache-for-redis-in-azure-api-management"></a>Использование внешнего кэша Redis для Azure в Управлении API Azure
 
@@ -40,11 +40,6 @@ ms.locfileid: "60527794"
 
 > [!div class="checklist"]
 > * Добавление внешнего кэша в службу управления API
-
-## <a name="availability"></a>Доступность
-
-> [!NOTE]
-> Сейчас эта функция доступна только на уровне **Потребление** службы управления API Azure.
 
 ## <a name="prerequisites"></a>Технические условия
 
@@ -94,6 +89,7 @@ ms.locfileid: "60527794"
 Как только внешний кэш в службе управления API Azure настроен, его можно использовать через политики кэширования. Подробные инструкции см. в разделе [Добавление кэширования для повышения производительности в службе управления API Azure](api-management-howto-cache.md).
 
 ## <a name="next-steps"> </a>Дальнейшие действия
+
 * Дополнительные сведения о политиках кэширования см. в разделе [Политики кэширования][Caching policies] [справочника по политикам управления API][API Management policy reference].
 * Сведения о кэшировании элементов по ключу с помощью выражений политики см. в статье [Пользовательское кэширование в службе управления API Azure](api-management-sample-cache-by-key.md).
 

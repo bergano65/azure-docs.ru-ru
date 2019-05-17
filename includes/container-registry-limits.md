@@ -5,17 +5,17 @@ services: container-registry
 author: dlepow
 ms.service: container-registry
 ms.topic: include
-ms.date: 04/29/2019
+ms.date: 05/14/2019
 ms.author: danlep
 ms.custom: include file
-ms.openlocfilehash: d20e266d1331fc15e65b2d119468483ff53a4c06
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.openlocfilehash: ee8ff3529524a63ca2e54a64327570197f363538
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64951563"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65787610"
 ---
-| Resource | базовая; | Стандартная | Премиум |
+| Ресурс | базовая; | Стандартная | "Премиум" |
 |---|---|---|---|
 | Хранилище<sup>1</sup> | 10 ГБ | 100 ГБ| 500 ГБ |
 | Максимальный уровень размер изображения | 200 ГБ | 200 ГБ | 200 ГБ |
@@ -23,9 +23,9 @@ ms.locfileid: "64951563"
 | Операции записи за минуту<sup>2, 4</sup> | 100 | 500 | 2 000 |
 | Пропускная способность скачивания в Мбит/с<sup>2</sup> | 30 | 60 | 100 |
 | Пропускная способность передачи в Мбит/с<sup>2</sup> | 10 | 20 | 50 |
-| Объекты Webhook | 2 | 10 | 100 |
+| Веб-перехватчики | 2 | 10 | 100 |
 | Георепликация | Н/Д | Н/Д | [Поддерживается][geo-replication] |
-| Доверие к содержимому (предварительная версия) | Н/Д | Н/Д | [Поддерживается][content-trust] |
+| Доверие к содержимому | Н/Д | Н/Д | [Поддерживается][content-trust] |
 
 <sup>1</sup>указанное хранилище обусловлены объем *включены* хранилища для каждого уровня. Дополнительная ежедневная плата взымается за ГиБ для хранилища изображений выше этих ограничений. Сведения о курсах, см. в разделе [цен на реестр контейнеров Azure][pricing].
 

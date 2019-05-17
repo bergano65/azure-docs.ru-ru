@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.topic: article
 ms.date: 11/17/2018
 ms.author: yijenj
-ms.openlocfilehash: cfe9b469cfac848c9e57f1fc10193208722be109
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.openlocfilehash: dcab4d24ca948980f28483fd09f29588e0329b63
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64935706"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65800978"
 ---
 # <a name="azure-partner-customer-usage-attribution"></a>Определение потребления услуг Azure клиентами партнеров
 
@@ -247,7 +247,7 @@ foreach ($deployment in $deployments){
 
 ## <a name="report"></a>Отчет
 
-Отчет для однозначного соответствия примитивов использования клиента можно найти на панели мониторинга анализа центра партнеров. ([https://partner.microsoft.com/en-us/dashboard/mpn/analytics/CPP/MicrosoftAzure](https://partner.microsoft.com/dashboard/mpn/analytics/CPP/MicrosoftAzure)).
+Отчет для однозначного соответствия примитивов использования клиента можно найти на панели мониторинга анализа центра партнеров. ([https://partner.microsoft.com/en-us/dashboard/mpn/analytics/CPP/MicrosoftAzure](https://partner.microsoft.com/dashboard/mpn/analytics/CPP/MicrosoftAzure)). Чтобы просмотреть отчет, необходимо использовать учетные данные центра партнеров для входа. Если возникли затруднения с отчетом или вход, создайте запрос в службу поддержки за инструкцией, в разделе поддержки Get.
 
 Выберите шаблон, отслеживаются в раскрывающемся списке Тип ассоциации партнера для просмотра отчета.
 
@@ -266,6 +266,10 @@ foreach ($deployment in $deployments){
 Когда вы развертываете программное обеспечение \<PARTNER>, корпорация Майкрософт сопоставляет установку программного обеспечения \<PARTNER> с развернутыми ресурсами Azure. Корпорация Майкрософт может отслеживать ресурсы Azure, используемые для работы этого программного обеспечения. Корпорация Майкрософт собирает эти сведения, чтобы максимально повысить качество использования своих продуктов и делового сотрудничества. Эти данные собираются и используются с соблюдением политик конфиденциальности корпорации Майкрософт, которые можно найти по адресу https://www.microsoft.com/trustcenter.
 
 ## <a name="get-support"></a>Получение поддержки
+
+Если возникнут проблемы с отчетом или входа в центр партнеров, создайте запрос в службу поддержки в центре партнеров службу поддержки здесь: [https://partner.microsoft.com/en-US/support](https://partner.microsoft.com/support)
+
+![](./media/marketplace-publishers-guide/partner-center-log-in-support.png)
 
 Если вам нужна помощь для адаптации Marketplace и/или однозначного соответствия примитивов использования клиента, выполните следующие действия.
 

@@ -6,15 +6,16 @@ services: media-services
 author: Juliako
 manager: femila
 ms.service: media-services
+ms.subservice: video-indexer
 ms.topic: article
-ms.date: 04/01/2019
+ms.date: 05/15/2019
 ms.author: juliako
-ms.openlocfilehash: dfa41dc695cf6ab357a9cd4cdbd32454b6dd107d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: d312a93f83ef38fa1ae855a1e313280fc608948d
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60560099"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65799403"
 ---
 # <a name="scenes-shots-and-keyframes"></a>Сцены, снимки и опорные кадры
 
@@ -29,7 +30,7 @@ ms.locfileid: "60560099"
 > [!NOTE]
 > Применяется к видео, содержащие по крайней мере 3 сцены.
 
-## <a name="shot-detection"></a>Обнаружение сюжетов
+## <a name="shot-detection"></a>Обнаружение снимка
 
 Индексатор видео определяет при изменении однократного выполнения в основании визуальные подсказки, отслеживая внезапные и постепенное переходы в цветовой схеме смежных кадров видео. Снимок метаданные включают начала и время окончания, а также список опорные кадры, включенные в этот снимок. Снимки являются последовательных кадров, взятое из же камеры, в то же время.
 

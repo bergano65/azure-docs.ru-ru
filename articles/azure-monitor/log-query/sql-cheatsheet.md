@@ -13,16 +13,16 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 08/21/2018
 ms.author: bwren
-ms.openlocfilehash: a0233774deaffe25a8e59f79511a0031b1535ba4
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: b756b9484273c098dbeb6685430f70626b3af787
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61425032"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65789232"
 ---
 # <a name="sql-to-azure-monitor-log-query-cheat-sheet"></a>Краткий справочник по запросам журнала SQL для Azure Monitor 
 
-С помощью следующей таблицы пользователи, знакомые с SQL, смогут изучить язык запросов Kusto для составления запросов журнала в Azure Monitor. Взглянем на команду T-SQL для решения распространенных сценариев и их эквиваленты в запросе журнала Azure Monitor.
+С помощью следующей таблицы пользователи, знакомые с SQL, смогут изучить язык запросов Kusto для составления запросов журнала в Azure Monitor. Взглянем на команды T-SQL для решения распространенных сценариев и их эквиваленты в запросе журнала Azure Monitor.
 
 ## <a name="sql-to-azure-monitor"></a>SQL в Azure Monitor
 
@@ -50,4 +50,4 @@ ms.locfileid: "61425032"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Пройдите урок по [написанию запросов к журналу в Azure Monitor](get-started-queries.md).
+- Перейдите в процессе изучения [написания запросов к журналу в Azure Monitor](get-started-queries.md).
