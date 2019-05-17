@@ -7,15 +7,15 @@ tags: Lucene query analyzer syntax
 services: search
 ms.service: search
 ms.topic: conceptual
-ms.date: 05/02/2019
+ms.date: 05/13/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 108dd80aa90772eb01fe3c7f0176ddd37e27acaa
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: 467c323a0b669e70e12f801fd8fdd6df119e793d
+ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65024456"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65595914"
 ---
 # <a name="query-examples-using-full-lucene-search-syntax-advanced-queries-in-azure-search"></a>Примеры запросов, используя синтаксис поиска «full» Lucene (сложные запросы в службе поиска Azure)
 
@@ -81,11 +81,11 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-
 
 Во всех примерах в этой статье задается параметр поиска **queryType=full**, указывающий, что полный синтаксис обрабатывается средством синтаксического анализа запросов Lucene. 
 
-## <a name="example-1-field-scoped-query"></a>Пример 1 Запрос по полям
+## <a name="example-1-query-scoped-to-a-list-of-fields"></a>Пример 1 Запрос ограничивается список полей
 
-В первом примере не зависящие от Lucene, но мы привести с ним введения первого запроса фундаментальные понятия: вложения. В этом примере задается область выполнения запроса и для ответа определяется всего несколько конкретных полей. Знать, как структурировать читаемый ответ JSON, важно, если используется инструмент Postman или обозреватель поиска. 
+В первом примере не зависящие от Lucene, но мы привести с ним введения первого запроса фундаментальные понятия: поле области. В этом примере задает область, весь запрос и ответ на несколько определенных полей. Знать, как структурировать читаемый ответ JSON, важно, если используется инструмент Postman или обозреватель поиска. 
 
-Для краткости запрос нацелен только на поле *business_title* и указывает возвращаемые должности. Синтаксис **searchFields** ограничивает выполнение запроса только полем business_title и **выбирает**, какие поля должны быть включены в ответ.
+Для краткости запрос нацелен только на поле *business_title* и указывает возвращаемые должности. **SearchFields** ограничивает выполнение запроса к полю business_title, и **выберите** указывает, какие поля должны быть включены в ответе.
 
 ### <a name="partial-query-string"></a>Строка частичный запрос
 
@@ -99,6 +99,11 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-
 search=*&searchFields=business_title, posting_type&$select=business_title, posting_type
 ```
 
+Пробелы после запятых являются необязательными.
+
+> [!Tip]
+> При использовании REST API из кода приложения, не забудьте параметры кодирования URL-адрес, например `$select` и `searchFields`.
+
 ### <a name="full-url"></a>Полный URL-адрес
 
 ```http
@@ -109,41 +114,44 @@ https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-
 
   ![Пример ответа Postman](media/search-query-lucene-examples/postman-sample-results.png)
 
-Вы могли заметить оценку поиска в ответе. Универсальная оценка 1 отображается, если приоритет не указан, потому что выполнен поиск не всего текста или не указано условие. Для нулевого поиска без критериев строки возвращаются в произвольном порядке. Когда вы добавите условие поиска, вы увидите, как оценки поиска превратятся в понятные значения.
+Вы могли заметить оценку поиска в ответе. Универсальная оценка 1 отображается, если приоритет не указан, потому что выполнен поиск не всего текста или не указано условие. Для нулевого поиска без критериев строки возвращаются в произвольном порядке. При включении критерии поиска, вы увидите поиска оценок развиться значимые значения.
 
-## <a name="example-2-intra-field-filtering"></a>Пример 2 Фильтрация внутри поля
+## <a name="example-2-fielded-search"></a>Пример 2 Относящегося к полю поиска
 
-Полный синтаксис Lucene поддерживает выражения в поле. В этом примере выполняется поиск должностей, старший термин в них, но не "junior".
+Полный синтаксис Lucene поддерживает области отдельных выражений к определенному полю. В этом примере выполняется поиск должностей, старший термин в них, но не "junior".
 
 ### <a name="partial-query-string"></a>Строка частичный запрос
 
 ```http
-searchFields=business_title&$select=business_title&search=business_title:senior+NOT+junior
+$select=business_title&search=business_title:(senior NOT junior)
 ```
 
 Ниже приведен тот же запрос с несколькими полями.
 
 ```http
-searchFields=business_title, posting_type&$select=business_title, posting_type&search=business_title:senior+NOT+junior AND posting_type:external
+$select=business_title, posting_type&search=business_title:(senior NOT junior) AND posting_type:external
 ```
 
 ### <a name="full-url"></a>Полный URL-адрес
 
 ```GET
-https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-05-06&queryType=full&$count=true&searchFields=business_title&$select=business_title&search=business_title:senior+NOT+junior
+https://azs-playground.search.windows.net/indexes/nycjobs/docs?api-version=2019-05-06&queryType=full&$count=true&$select=business_title&search=business_title:(senior NOT junior)
 ```
 
   ![Пример ответа Postman](media/search-query-lucene-examples/intrafieldfilter.png)
 
-Задав конструкцию **fieldname:searchterm**, можно определить операции запроса, относящегося к полю, где поле представляет собой одно слово, а условие поиска — одно слово или фразу, иногда с логическими операторами. Некоторые примеры:
+Вы можете определить операцию относящегося к полю поиска с **fieldName:searchExpression** синтаксис, где выражение поиска может быть одним словом или фразой или более сложное выражение в круглые скобки, иногда с логическими операторами. Некоторые примеры:
 
-* business_title:(senior NOT junior)
-* state:("New York" AND "New Jersey")
-* business_title:(senior NOT junior) AND posting_type:external
+- `business_title:(senior NOT junior)`
+- `state:("New York" OR "New Jersey")`
+- `business_title:(senior NOT junior) AND posting_type:external`
 
-Добавьте несколько строк в кавычках, если необходимо, чтобы обе строки считались одной сущностью, как в приведенном случае поиска двух разных городов в поле расположения. Кроме того, оператор должен быть указан в верхнем регистре, как в случае с NOT и AND.
+Обязательно добавьте несколько строк в кавычки, если вы хотите, чтобы обе строки считались одной сущности, как в этом случае поиск для двух различных местах в `state` поля. Кроме того, оператор должен быть указан в верхнем регистре, как в случае с NOT и AND.
 
-Поле, указанное в **fieldname:searchterm**, должно поддерживать возможность поиска. Дополнительные сведения об использовании атрибутов индекса в определениях полей см. в статье [Create Index (Azure Search Service REST API)](https://docs.microsoft.com/rest/api/searchservice/create-index) (Создание индексов (REST API службы поиска Azure)).
+Поля, указанного в **fieldName:searchExpression** должно быть полем для поиска. Дополнительные сведения об использовании атрибутов индекса в определениях полей см. в статье [Create Index (Azure Search Service REST API)](https://docs.microsoft.com/rest/api/searchservice/create-index) (Создание индексов (REST API службы поиска Azure)).
+
+> [!NOTE]
+> В приведенном выше примере, нам удалось не нужно использовать `searchFields` параметра, так как каждая часть запроса имеет имя поля указано явным образом. Тем не менее, можно по-прежнему использовать `searchFields` параметр, если вы хотите выполнить запрос, где некоторые компоненты относятся к определенному полю, а остальные удалось применить к нескольким полям. Например, запрос `search=business_title:(senior NOT junior) AND external&searchFields=posting_type` будет соответствовать `senior NOT junior` только к `business_title` поле, пока оно будет совпадать с «external» `posting_type` поля. Имя поля, указанное в **fieldName:searchExpression** всегда имеет приоритет над `searchFields` параметр, являющийся почему в этом примере, нам не нужно включать `business_title` в `searchFields` параметра.
 
 ## <a name="example-3-fuzzy-search"></a>Пример 3 Поиск нечетких соответствий
 

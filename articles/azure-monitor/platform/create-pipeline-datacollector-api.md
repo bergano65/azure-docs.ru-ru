@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 08/09/2018
 ms.author: magoedte
-ms.openlocfilehash: 961ce4427c509142077c95a6569ad2c444ec0a52
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: 53457a044f5c69af7bf68561f24732e8f02219d8
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65205960"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65603233"
 ---
 # <a name="create-a-data-pipeline-with-the-data-collector-api"></a>Создание конвейера данных с помощью API сборщика данных
 
@@ -27,7 +27,7 @@ ms.locfileid: "65205960"
 [!INCLUDE [azure-monitor-log-analytics-rebrand](../../../includes/azure-monitor-log-analytics-rebrand.md)]
 
 ## <a name="example-problem"></a>Пример проблемы
-В оставшейся части этой статьи будут рассмотрены данные просмотра страниц в Application Insights. В текущем гипотетическом сценарии необходимо сопоставить географическую информацию, собранную по умолчанию пакетами SDK Application Insights, с пользовательскими данными, которые содержат информацию о населении каждой страны в мире. Это требуется для того, чтобы определить, куда необходимо потратить большую часть маркетингового бюджета. 
+В оставшейся части этой статьи будут рассмотрены данные просмотра страниц в Application Insights. В нашем гипотетической ситуации необходимо сопоставлять географические сведения, собранные по умолчанию с помощью пакета SDK Application Insights для пользовательских данных, содержащий заполнения каждой страны или региона в мире, с целью идентификации, где мы тратит наиболее маркетинговый бюджет. 
 
 Для этой цели используются такие публичные источники данных, как [World Population Prospects 2017](https://esa.un.org/unpd/wpp/) (Мировые демографические перспективы 2017). Данные будут выглядеть следующим образом.
 

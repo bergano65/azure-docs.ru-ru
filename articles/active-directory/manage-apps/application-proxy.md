@@ -12,12 +12,12 @@ ms.date: 05/09/2019
 ms.author: mimart
 ms.reviewer: japere
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: eb3a3d85c9cac85b6658167806cea59b6d5163de
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: c2ecc458183006872d5a4c6712cdf00a97993dbc
+ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65782852"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65825540"
 ---
 # <a name="remote-access-to-on-premises-applications-through-azure-active-directorys-application-proxy"></a>Удаленный доступ к локально размещенным приложениям через Azure Active Directory Application Proxy. 
 
@@ -44,7 +44,7 @@ Application Proxy поддерживает:
 
 Application Proxy поддерживает единый вход. Дополнительные сведения о поддерживаемых методах см. в статье [о выборе метода единого входа](what-is-single-sign-on.md#choosing-a-single-sign-on-method).
 
-Прокси приложения рекомендуется для предоставления внешним пользователям удаленного доступа к внутренним ресурсам. Прокси приложения отпадает необходимость в VPN или обратный прокси-сервер. Он не предназначен для внутренних пользователей в корпоративной сети.  Внутренние пользователи, которые без необходимости использовать прокси приложения может вызвать проблемы с производительностью непредвиденным и нежелательным.
+Прокси приложения рекомендуется для предоставления удаленным пользователям доступа к внутренним ресурсам. Прокси приложения отпадает необходимость в VPN или обратный прокси-сервер. Он не предназначен для внутренних пользователей в корпоративной сети.  Эти пользователи, которые без необходимости использовать прокси приложения может вызвать проблемы с производительностью непредвиденным и нежелательным.
 
 ## <a name="how-application-proxy-works"></a>Схема работы Application Proxy
 

@@ -1,34 +1,34 @@
 ---
-title: Настройка моста SSL с помощью сертификаты Key Vault с помощью Azure PowerShell
-description: Узнайте, как интегрировать шлюз приложений Azure с хранилищем ключей для сертификатов сервера, подключенных к прослушиватели протокол HTTPS.
+title: Настройка моста SSL сертификаты Key Vault с помощью Azure PowerShell
+description: Узнайте, как интегрировать шлюз приложений Azure с хранилищем ключей для сертификатов сервера, вложенные в прослушиватели, поддерживающей протокол HTTPS.
 services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: article
 ms.date: 4/22/2019
 ms.author: victorh
-ms.openlocfilehash: 06930171552843a5620d9a2bfb379a60e91a3915
-ms.sourcegitcommit: ed66a704d8e2990df8aa160921b9b69d65c1d887
+ms.openlocfilehash: e011caa8c7a0c7383d16c81f4bff29d3c1c99f99
+ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64946745"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65827617"
 ---
-# <a name="configure-ssl-termination-with-key-vault-certificates-using-azure-powershell"></a>Настройка моста SSL с помощью сертификаты Key Vault с помощью Azure PowerShell
+# <a name="configure-ssl-termination-with-key-vault-certificates-by-using-azure-powershell"></a>Настройка моста SSL сертификаты Key Vault с помощью Azure PowerShell
 
-[Azure Key Vault](../key-vault/key-vault-whatis.md) — это управляемая платформа секретное хранилище позволяет защитить секретные данные, ключи и сертификаты SSL. Шлюз приложений поддерживает интеграцию с хранилищем ключей (в общедоступной предварительной версии) для сертификатов сервера, подключенных к прослушиватели протокол HTTPS. Эта поддержка ограничена v2 SKU шлюза приложений.
+[Azure Key Vault](../key-vault/key-vault-whatis.md) , это сохранить секрет управляемую платформу, можно использовать для защиты секретов, ключи и сертификаты SSL. Шлюз приложений Azure поддерживает интеграцию с хранилищем ключей (в общедоступной предварительной версии) для сертификатов сервера, вложенные в прослушиватели, поддерживающей протокол HTTPS. Эта поддержка ограничена v2 SKU шлюза приложений.
 
 Дополнительные сведения см. в разделе [завершение запросов SSL с сертификатами в Key Vault](key-vault-certs.md).
 
-В этой статье показан сценарий Azure PowerShell для интеграции хранилища ключей с помощью шлюза приложений для завершения SSL-сертификатов.
+В этой статье показано, как использовать сценарий Azure PowerShell для интеграции хранилища ключей с помощью шлюза приложений для завершения SSL-сертификатов.
+
+Этой статьей требуется модуль Azure PowerShell версии 1.0.0 или более поздней версии. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Для выполнения команд в этой статье, необходимо также создать подключение к Azure, выполнив `Connect-AzAccount`.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-В этой статье требуется модуль Azure PowerShell версии 1.0.0 или более поздней версии. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Для выполнения команд в этой статье, необходимо также выполнить `Connect-AzAccount` для создания соединения с Azure.
-
 ## <a name="prerequisites"></a>Технические условия
 
-Необходимо установить перед началом модуль ManagedServiceIdentity.
+Перед началом работы необходимо установить модуль ManagedServiceIdentity:
 
 ```azurepowershell
 Install-Module -Name Az.ManagedServiceIdentity
@@ -47,7 +47,7 @@ $kv = "TestKeyVaultAppGw"
 $appgwName = "AppGwKVIntegration"
 ```
 
-### <a name="create-a-resource-group-and-a-user-managed-identity"></a>Создайте группу ресурсов и пользовательского управляемого удостоверения
+### <a name="create-a-resource-group-and-a-user-managed-identity"></a>Создайте группу ресурсов и пользователем управляемого удостоверения
 
 ```azurepowershell
 $resourceGroup = New-AzResourceGroup -Name $rgname -Location $location
@@ -55,7 +55,7 @@ $identity = New-AzUserAssignedIdentity -Name "appgwKeyVaultIdentity" `
   -Location $location -ResourceGroupName $rgname
 ```
 
-### <a name="create-key-vault-policy-and-certificate-to-be-used-by-application-gateway"></a>Создание Key Vault, политики и сертификат для использования шлюзом приложений
+### <a name="create-a-key-vault-policy-and-certificate-to-be-used-by-the-application-gateway"></a>Создание хранилища ключей, политики и сертификат, используемый шлюзом приложений
 
 ```azurepowershell
 $keyVault = New-AzKeyVault -Name $kv -ResourceGroupName $rgname -Location $location -EnableSoftDelete 
@@ -69,7 +69,7 @@ $certificate = Get-AzKeyVaultCertificate -VaultName $kv -Name "cert1"
 $secretId = $certificate.SecretId.Replace($certificate.Version, "")
 ```
 
-### <a name="create-a-vnet"></a>Создание виртуальной сети
+### <a name="create-a-virtual-network"></a>Создать виртуальную сеть
 
 ```azurepowershell
 $sub1 = New-AzVirtualNetworkSubnetConfig -Name "appgwSubnet" -AddressPrefix "10.0.0.0/24"
@@ -78,14 +78,14 @@ $vnet = New-AzvirtualNetwork -Name "Vnet1" -ResourceGroupName $rgname -Location 
   -AddressPrefix "10.0.0.0/16" -Subnet @($sub1, $sub2)
 ```
 
-### <a name="create-static-public-vip"></a>Создайте статический общедоступный виртуальный IP-адрес
+### <a name="create-a-static-public-virtual-ip-vip-address"></a>Создайте статический общедоступный виртуальный IP-адрес (VIP) адрес
 
 ```azurepowershell
 $publicip = New-AzPublicIpAddress -ResourceGroupName $rgname -name "AppGwIP" `
   -location $location -AllocationMethod Static -Sku Standard
 ```
 
-### <a name="create-pool-and-frontend-ports"></a>Создание пула и интерфейсную порты
+### <a name="create-pool-and-front-end-ports"></a>Создание пула и интерфейсные порты
 
 ```azurepowershell
 $gwSubnet = Get-AzVirtualNetworkSubnetConfig -Name "appgwSubnet" -VirtualNetwork $vnet
@@ -98,7 +98,7 @@ $fp01 = New-AzApplicationGatewayFrontendPort -Name "port1" -Port 443
 $fp02 = New-AzApplicationGatewayFrontendPort -Name "port2" -Port 80
 ```
 
-### <a name="point-ssl-certificate-to-key-vault"></a>Точка SSL-сертификат для хранилища ключей
+### <a name="point-the-ssl-certificate-to-your-key-vault"></a>Укажите SSL-сертификат в хранилище ключей
 
 ```azurepowershell
 $sslCert01 = New-AzApplicationGatewaySslCertificate -Name "SSLCert1" -KeyVaultSecretId $secretId
@@ -121,7 +121,7 @@ $autoscaleConfig = New-AzApplicationGatewayAutoscaleConfiguration -MinCapacity 3
 $sku = New-AzApplicationGatewaySku -Name Standard_v2 -Tier Standard_v2
 ```
 
-### <a name="assign-user-managed-identity-to-the-application-gateway"></a>Назначение удостоверения пользователей на шлюзе приложений
+### <a name="assign-the-user-managed-identity-to-the-application-gateway"></a>Назначить удостоверение управляемый пользователем для шлюза приложений
 
 ```azurepowershell
 $appgwIdentity = New-AzApplicationGatewayIdentity -UserAssignedIdentityId $identity.Id
@@ -140,4 +140,4 @@ $appgw = New-AzApplicationGateway -Name $appgwName -Identity $appgwIdentity -Res
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Дополнительные сведения о моста SSL](ssl-overview.md).
+[Дополнительные сведения о завершения SSL-запросов](ssl-overview.md)

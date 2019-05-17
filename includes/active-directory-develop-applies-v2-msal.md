@@ -14,14 +14,14 @@ ms.workload: identity
 ms.date: 04/12/2019
 ms.author: celested
 ms.custom: include file
-ms.openlocfilehash: f1f6e9f40670314874820667a11c09686952fea2
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.openlocfilehash: d4eec27286d704926cef6c7a85b24d357c05838c
+ms.sourcegitcommit: 9e8dfa1169a55c3c8af93a6c5f4e0dace4de48b2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64937350"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65556796"
 ---
 |   |
 |---|
-| **Область применения**<br><ul><li>Конечная точка платформы удостоверений Майкрософт<li>Библиотека аутентификации Майкрософт (MSAL) для .NET (предварительная версия)</ul><br>Для общедоступной библиотеки используйте конечную точку Azure AD версии 1.0 и библиотеку аутентификации Azure AD (ADAL). Дополнительные сведения см. в разделе [О версии 1.0](https://docs.microsoft.com/azure/active-directory/develop/v1-overview). |
+| **Область применения**<br><ul><li>Конечная точка платформы удостоверений Майкрософт<li>Библиотека проверки подлинности Майкрософт (MSAL) </ul><br>Для общедоступной библиотеки используйте конечную точку Azure AD версии 1.0 и библиотеку аутентификации Azure AD (ADAL). Дополнительные сведения см. в разделе [О версии 1.0](https://docs.microsoft.com/azure/active-directory/develop/v1-overview). |
 |   |

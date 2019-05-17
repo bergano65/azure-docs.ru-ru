@@ -8,12 +8,12 @@ ms.devlang: nodejs
 ms.topic: conceptual
 ms.date: 08/25/2017
 ms.author: elioda
-ms.openlocfilehash: f93abac563d47f6505f42d29e882698ef31174bf
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 20b804f3d15543d0cf415d00dc81a6f55a348260
+ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61444825"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65597416"
 ---
 # <a name="get-started-with-device-twins-node"></a>Начало работы с двойниками устройств (Node)
 
@@ -31,7 +31,7 @@ ms.locfileid: "61444825"
 
 Для работы с этим учебником требуется:
 
-* Node.js 4.0.x или более поздней версии.
+* Node.js версии 10.0.x или более поздней версии.
 
 * Активная учетная запись Azure. Если ее нет, можно создать [бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/) всего за несколько минут.
 

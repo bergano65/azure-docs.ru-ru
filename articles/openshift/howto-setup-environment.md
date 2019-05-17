@@ -5,23 +5,23 @@ services: openshift
 keywords: red hat openshift Настройка
 author: TylerMSFT
 ms.author: twhitney
-ms.date: 05/06/2019
+ms.date: 05/10/2019
 ms.topic: conceptual
 ms.service: openshift
 manager: jeconnoc
-ms.openlocfilehash: 3c265d6695af7ba1bc5833db59966a626cb29cb9
-ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
+ms.openlocfilehash: 6e859f57f9b5f24ea2f0172f5aa35a60d9769f19
+ms.sourcegitcommit: f013c433b18de2788bf09b98926c7136b15d36f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65416076"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65551703"
 ---
 # <a name="set-up-your-azure-red-hat-openshift-dev-environment"></a>Настройте среду разработки Azure Red Hat OpenShift
 
 Для создания и запуска приложений Microsoft Azure Red Hat OpenShift, вам потребуется:
 
 * Приобрести Azure зарезервированные экземпляры виртуальных машин.
-* Установите версию 2.0.64 (или более поздней версии) из командной строки Azure (или используйте Azure Cloud Shell).
+* Установите версию 2.0.65 (или более поздней версии) из командной строки Azure (или используйте Azure Cloud Shell).
 * Зарегистрируйтесь для `openshiftmanagedcluster` функция и поставщики связанный ресурс.
 * Создание клиента Azure Active Directory (Azure AD).
 * Создайте объект приложения Azure AD.
@@ -39,13 +39,13 @@ ms.locfileid: "65416076"
 
 ## <a name="install-the-azure-cli"></a>Установка Azure CLI
 
-Azure Red Hat OpenShift требуется версия 2.0.64 или более поздней версии интерфейса командной строки Azure. Если вы уже установили Azure CLI, можно проверить версию, выполните:
+Azure Red Hat OpenShift требуется версия 2.0.65 или более поздней версии интерфейса командной строки Azure. Если вы уже установили Azure CLI, можно проверить версию, выполните:
 
 ```bash
 az --version
 ```
 
-Первая строка выходных данных будет иметь версию интерфейса командной строки, например `azure-cli (2.0.64)`.
+Первая строка выходных данных будет иметь версию интерфейса командной строки, например `azure-cli (2.0.65)`.
 
 Ниже приведены инструкции для [Установка Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) Если требуется новая установка или обновление.
 
@@ -55,7 +55,8 @@ az --version
 
 `Microsoft.ContainerService openshiftmanagedcluster` Функции `Microsoft.Solutions`, и `Microsoft.Network` поставщики должны быть зарегистрированы в подписку вручную, перед развертыванием первого кластера Azure Red Hat OpenShift.
 
-Чтобы вручную зарегистрировать эти поставщики и функции, используйте приведенные ниже инструкции, из оболочки Bash, если вы уже установили интерфейс командной строки или из сеанса Azure Cloud Shell (оболочка) на портале Azure:.
+Чтобы вручную зарегистрировать эти поставщики и функции, используйте приведенные ниже инструкции, из оболочки Bash, если вы уже установили интерфейс командной строки или из сеанса Azure Cloud Shell (оболочка) на портале Azure:
+
 1. Если у вас несколько подписок Azure, укажите идентификатор соответствующую подписку:
 
     ```bash
@@ -98,11 +99,11 @@ az --version
 
 Если у вас нет Azure AD для использования в качестве клиента для кластера Azure Red Hat OpenShift, или вы хотите создать клиент для тестирования, следуйте инструкциям в [создание клиента Azure AD для кластера Azure Red Hat OpenShift](howto-create-tenant.md) перед Продолжение с помощью этого руководства.
 
-## <a name="create-an-azure-ad-application-object-and-user"></a>Создание объекта приложения Azure AD и пользователя
+## <a name="create-an-azure-ad-user-security-group-and-application-object"></a>Создание пользователя, группы безопасности и приложения Azure AD объект
 
-Azure Red Hat OpenShift, требуются разрешения для выполнения задач в кластере, например при настройке хранилища. Эти разрешения, представлены через [субъекта-службы](https://docs.microsoft.com/azure/active-directory/develop/app-objects-and-service-principals#service-principal-object) и создаются при регистрации приложения Azure AD, представляющий рабочей нагрузки, которые вы планируете размещать в Azure Red Hat OpenShift. Кроме того, потребуется создать нового пользователя Active Directory для тестирования приложений, выполняющихся в кластере Azure Red Hat OpenShift.
+Azure Red Hat OpenShift, требуются разрешения для выполнения задач в кластере, например при настройке хранилища. Эти разрешения, представлены через [субъекта-службы](https://docs.microsoft.com/azure/active-directory/develop/app-objects-and-service-principals#service-principal-object). Кроме того, потребуется создать нового пользователя Active Directory для тестирования приложений, выполняющихся в кластере Azure Red Hat OpenShift.
 
-Следуйте инструкциям в [создать объект приложения Azure AD и пользователя](howto-aad-app-configuration.md) о создании субъекта-службы, создания секрета и проверки подлинности обратного вызова URL-адрес клиента для приложения и создания нового пользователя Active Directory для тестирования.
+Следуйте инструкциям в [создать объект приложения Azure AD и пользователя](howto-aad-app-configuration.md) Чтобы создать субъект-службу, создать секрет и проверки подлинности обратного вызова URL-адрес клиента для приложения и создать новую группу безопасности Azure AD и пользователя для доступа к кластер.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

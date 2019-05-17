@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 04/29/2019
 ms.author: cynthn
 ms.custom: include file
-ms.openlocfilehash: 9b9b6d08fd14a850838590ce003e889e8e652c7c
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 66ec923f12c59d606056d48c09f1ba346e9a4d32
+ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65148071"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65827078"
 ---
 ## <a name="sign-in-to-azure"></a>Вход в Azure 
 
@@ -51,7 +51,7 @@ ms.locfileid: "65148071"
 1. Для **издателя**, тип *myPublisher*. 
 1. Для **предлагают**, тип *myOffer*.
 1. Для **SKU**, тип *mySKU*.
-1. Убедитесь, что **Да** нам для **включить** , а затем выберите **проверки + создать**.
+1. Когда закончите, нажмите **проверки + создать**.
 1. После определения образа проходит проверку, выберите **создать**.
 1. После завершения развертывания выберите **перейти к ресурсу**.
 

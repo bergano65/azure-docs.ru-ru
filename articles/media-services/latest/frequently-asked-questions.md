@@ -11,12 +11,12 @@ ms.workload: ''
 ms.topic: article
 ms.date: 04/24/2019
 ms.author: juliako
-ms.openlocfilehash: d99e3661fd51b481a20404cfeb55157ac803c220
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 98e8c0ccd150776341e644f7565696e8fbd63e99
+ms.sourcegitcommit: 9e8dfa1169a55c3c8af93a6c5f4e0dace4de48b2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64706150"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65556265"
 ---
 # <a name="azure-media-services-v3-frequently-asked-questions"></a>Часто задаваемые вопросы о Службах мультимедиа Azure версии 3
 
@@ -46,7 +46,7 @@ ms.locfileid: "64706150"
 
 Дополнительные сведения см. в разделе [компонентов пропуски по отношению к версии 2 API-интерфейсы](migrate-from-v2-to-v3.md#feature-gaps-with-respect-to-v2-apis).
 
-## <a name="live-streaming"></a>Потоковая передача в реальном времени 
+## <a name="live-streaming"></a>Потоковая трансляция 
 
 ###  <a name="how-to-insert-breaksvideos-and-image-slates-during-live-stream"></a>Как вставлять паузы, видео или баннеры во время передачи динамического потока?
 
@@ -81,7 +81,7 @@ ms.locfileid: "64706150"
 
 ### <a name="can-i-use-the-azure-portal-to-manage-v3-resources"></a>Могу ли я использовать портал Azure для управления ресурсами версии 3?
 
-В настоящее время вы не можете использовать портал Azure для управления ресурсами версии 3. Используйте [REST API](https://aka.ms/ams-v3-rest-ref), [CLI](https://aka.ms/ams-v3-cli-ref) или один из поддерживаемых [пакетов SDK](developers-guide.md).
+В настоящее время вы не можете использовать портал Azure для управления ресурсами версии 3. Используйте [REST API](https://aka.ms/ams-v3-rest-ref), [CLI](https://aka.ms/ams-v3-cli-ref) или один из поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).
 
 ### <a name="is-there-an-assetfile-concept-in-v3"></a>Существует элемент AssetFile в версии 3?
 

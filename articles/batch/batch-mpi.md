@@ -14,12 +14,12 @@ ms.tgt_pltfrm: ''
 ms.date: 03/13/2019
 ms.author: lahugh
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 7fe75dabe098cf98f0c3c04d592a32d6a44cebf8
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 7a4184fa361ba863cdaf916ef4853eda8b6e8188
+ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60775326"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65595943"
 ---
 # <a name="use-multi-instance-tasks-to-run-message-passing-interface-mpi-applications-in-batch"></a>Использование задач с несколькими экземплярами для запуска приложений с интерфейсом передачи сообщений в пакетной службе
 
@@ -281,7 +281,7 @@ await subtasks.ForEachAsync(async (subtask) =>
 
 ### <a name="execution"></a>Выполнение
 1. Скачайте файл [azure-batch-samples][github_samples_zip] из GitHub.
-2. Откройте **решение** MultiInstanceTasks в Visual Studio 2017. Файл решения `MultiInstanceTasks.sln` находится в следующем расположении:
+2. Откройте MultiInstanceTasks **решение** в Visual Studio 2019. Файл решения `MultiInstanceTasks.sln` находится в следующем расположении:
 
     `azure-batch-samples\CSharp\ArticleProjects\MultiInstanceTasks\`
 3. Введите данные своей учетной записи пакетной службы и учетной записи хранения в `AccountSettings.settings` в проекте **Microsoft.Azure.Batch.Samples.Common**.

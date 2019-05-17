@@ -6,15 +6,15 @@ manager: cgronlun
 services: search
 ms.service: search
 ms.topic: conceptual
-ms.date: 10/13/2017
+ms.date: 5/13/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: ec87bdadc0e7f77cdeebb16403758026fd956c30
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.openlocfilehash: 8dffc5b87aefe23953d3a74f1d96b5ee03e0315d
+ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64939857"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65597387"
 ---
 # <a name="how-to-build-a-facet-filter-in-azure-search"></a>Как создать фильтр аспекта в службе "Поиск Azure" 
 
@@ -37,50 +37,48 @@ ms.locfileid: "64939857"
 
 Аспекты могут быть вычислены для отдельных полей значений, а также для коллекций. Поля, которые лучше всего работают в фасетной навигации, имеют низкую кратность: небольшое количество различающихся значений, которые повторяются во всех документах в данных поиска (например, список цветов, стран или торговых марок). 
 
-Фасетизация включается для каждого поля при создании индекса, задавая для атрибутов `filterable` и `facetable` значение TRUE. Аспектировать можно только фильтруемые поля.
+Поддержка фасетов включается для каждого поля, при создании индекса, задав `facetable` атрибут `true`. Обычно также следует задать `filterable` атрибут `true` для таких полей, чтобы приложение поиска можно фильтровать по этим полям, в зависимости от аспектов, которые конечный пользователь выберет. 
 
-Для всех [типов полей](https://docs.microsoft.com/rest/api/searchservice/supported-data-types), которые можно использовать в фасетной навигации, по умолчанию устанавливается значение facetable:
+При создании индекса с помощью REST API, любое [тип поля](https://docs.microsoft.com/rest/api/searchservice/supported-data-types) , которые могут использоваться возможно в фасетной навигации помечается как `facetable` по умолчанию:
 
-+ Edm.String
-+ Edm.DateTimeOffset
-+ Edm.Boolean
-+ Edm.Collections
-+ Типы числовых полей: Edm.Int32, Edm.Int64, Edm.Double
++ `Edm.String`
++ `Edm.DateTimeOffset`
++ `Edm.Boolean`
++ Типы числовых полей: `Edm.Int32`, `Edm.Int64`, `Edm.Double`
++ Коллекции из перечисленных выше типов (например, `Collection(Edm.String)` или `Collection(Edm.Double)`)
 
-В фасетной навигации нельзя использовать Edm.GeographyPoint. Аспекты формируются на основе понятного для человека текста и чисел. Таким образом аспекты не поддерживаются для географических координат. Вам понадобится поле города или региона для поиска по местоположению с использованием фасетизации.
+Нельзя использовать `Edm.GeographyPoint` или `Collection(Edm.GeographyPoint)` полей в фасетной навигации. Аспекты лучше всего работают на поля с небольшим количеством элементов. Из-за разрешения географических координат очень редко, что любые два набора координаты будет равно в заданном наборе данных. Таким образом аспекты не поддерживаются для географических координат. Вам понадобится поле города или региона для поиска по местоположению с использованием фасетизации.
 
 ## <a name="set-attributes"></a>Определение атрибутов
 
-Атрибуты индекса, которые управляют использованием поля, добавляются к отдельным определениям полей в индексе. В следующем примере поля с низкой кратностью, полезные для фасетизации, состоят из: категории (гостиницы, мотели, общежития), услуг и рейтингов. 
-
-В .NET API атрибуты фильтрации должны быть явно заданы. В API REST фасетизация и фильтрация включены по умолчанию, а это означает, что вам нужно только явно указать атрибуты, когда вы хотите их отключить. Хотя это не является техническим требованием, в следующем примере REST атрибуты указаны в целях обучения. 
+Атрибуты индекса, которые управляют использованием поля, добавляются к отдельным определениям полей в индексе. В следующем примере поля с низкой кратностью, полезные для фасетизации, состоят из: `category` (гостиницы, мотели, общежития), `tags`, и `rating`. Эти поля имеют `filterable` и `facetable` заданные явным образом в следующем примере атрибуты для иллюстративных целей. 
 
 > [!Tip]
-> Для оптимизации производительности и хранения отключите фасетизацию для полей, которые никогда не должны использоваться в качестве аспектов. В частности, для полей строк одноэлементных значений, таких как идентификатор или название продукта, следует задать значение false для параметра Facetable во избежание их случайного (и неэффективного) использования при фасетной навигации.
+> Для оптимизации производительности и хранения отключите фасетизацию для полей, которые никогда не должны использоваться в качестве аспектов. В частности, для уникальных значений, таких как идентификатор или название продукта, полей строк должно быть присвоено `"facetable": false` во избежание их случайного (и неэффективного) использования при фасетной навигации.
 
 
-```http
+```json
 {
-    "name": "hotels",  
-    "fields": [
-        {"name": "hotelId", "type": "Edm.String", "key": true, "searchable": false, "sortable": false, "facetable": false},
-        {"name": "baseRate", "type": "Edm.Double"},
-        {"name": "description", "type": "Edm.String", "filterable": false, "sortable": false, "facetable": false},
-        {"name": "description_fr", "type": "Edm.String", "filterable": false, "sortable": false, "facetable": false, "analyzer": "fr.lucene"},
-        {"name": "hotelName", "type": "Edm.String", "facetable": false},
-        {"name": "category", "type": "Edm.String", "filterable": true, "facetable": true},
-        {"name": "tags", "type": "Collection(Edm.String)", "filterable": true, "facetable": true},
-        {"name": "parkingIncluded", "type": "Edm.Boolean",  "filterable": true, "facetable": true, "sortable": false},
-        {"name": "smokingAllowed", "type": "Edm.Boolean", "filterable": true, "facetable": true, "sortable": false},
-        {"name": "lastRenovationDate", "type": "Edm.DateTimeOffset"},
-        {"name": "rating", "type": "Edm.Int32", "filterable": true, "facetable": true},
-        {"name": "location", "type": "Edm.GeographyPoint"}
-    ]
+  "name": "hotels",  
+  "fields": [
+    { "name": "hotelId", "type": "Edm.String", "key": true, "searchable": false, "sortable": false, "facetable": false },
+    { "name": "baseRate", "type": "Edm.Double" },
+    { "name": "description", "type": "Edm.String", "filterable": false, "sortable": false, "facetable": false },
+    { "name": "description_fr", "type": "Edm.String", "filterable": false, "sortable": false, "facetable": false, "analyzer": "fr.lucene" },
+    { "name": "hotelName", "type": "Edm.String", "facetable": false },
+    { "name": "category", "type": "Edm.String", "filterable": true, "facetable": true },
+    { "name": "tags", "type": "Collection(Edm.String)", "filterable": true, "facetable": true },
+    { "name": "parkingIncluded", "type": "Edm.Boolean",  "filterable": true, "facetable": true, "sortable": false },
+    { "name": "smokingAllowed", "type": "Edm.Boolean", "filterable": true, "facetable": true, "sortable": false },
+    { "name": "lastRenovationDate", "type": "Edm.DateTimeOffset" },
+    { "name": "rating", "type": "Edm.Int32", "filterable": true, "facetable": true },
+    { "name": "location", "type": "Edm.GeographyPoint" }
+  ]
 }
 ```
 
 > [!Note]
-> Это определение индекса можно скопировать в статье [Создание индекса службы поиска Azure с помощью REST API](https://docs.microsoft.com/azure/search/search-create-index-rest-api). Оно идентично, за исключением поверхностных различий в определениях полей. Фильтруемые и аспектируемые атрибуты явно добавляются в поля категория, теги, parkingIncluded, smokingAllowed, а также рейтинг. На практике вы получаете возможность фильтровать и аспектировать по типам полей Edm.String, Edm.Boolean и Edm.Int32. 
+> Это определение индекса можно скопировать в статье [Создание индекса службы поиска Azure с помощью REST API](https://docs.microsoft.com/azure/search/search-create-index-rest-api). Оно идентично, за исключением поверхностных различий в определениях полей. `filterable` И `facetable` атрибуты явно добавляются в `category`, `tags`, `parkingIncluded`, `smokingAllowed`, и `rating` поля. На практике `filterable` и `facetable` бы включить в эти поля по умолчанию при использовании REST API. При использовании пакета SDK для .NET, необходимо явно включить эти атрибуты.
 
 ## <a name="build-and-load-an-index"></a>Построение и загрузка индекса
 
@@ -91,25 +89,26 @@ ms.locfileid: "64939857"
 В коде приложения создайте запрос, который определяет все части допустимого запроса, включая выражения поиска, фасеты, фильтры, профили оценки — все, что используется для формулировки запроса. В следующем примере создается запрос, применяемый для фасетной навигации с использованием фасетов размещения, рейтинга и других удобств.
 
 ```csharp
-SearchParameters sp = new SearchParameters()
+var sp = new SearchParameters()
 {
-  ...
-  // Add facets
-  Facets = new List<String>() { "category", "rating", "parkingIncluded", "smokingAllowed" },
+    ...
+    // Add facets
+    Facets = new[] { "category", "rating", "parkingIncluded", "smokingAllowed" }.ToList()
 };
 ```
 
 ### <a name="return-filtered-results-on-click-events"></a>Возврат отфильтрованных результатов при событии щелчка
 
-которое обрабатывает событие щелчка в значении фасета. Щелчок категории "мотель" реализуется с помощью выражения `$filter`, которое выбирает размещения этого типа с учетом фасета категории. Если пользователь щелкнет "мотели", чтобы отобразить только мотели, отправляемый приложением запрос будет включать фрагмент $filter=category eq "motels".
+Когда конечный пользователь выбирает значение аспекта, обработчик для события щелчка следует использовать выражение фильтра для реализации намерения пользователя. Учитывая `category` аспекта, щелкнув категории «мотель» реализуется с помощью `$filter` выражение, которое выбирает размещения этого типа. Когда пользователь щелкает «motel», чтобы указать, что только мотели, далее приложение отправляет запрос включает `$filter=category eq 'motel'`.
 
 Следующий фрагмент кода добавляет категорию в фильтр, если пользователь выбирает значение из фасета категории.
 
 ```csharp
-if (categoryFacet != "")
-  filter = "category eq '" + categoryFacet + "'";
+if (!String.IsNullOrEmpty(categoryFacet))
+    filter = $"category eq '{categoryFacet}'";
 ```
-С помощью REST API запрос формулируется как `$filter=category eq 'c1'`. Чтобы сделать категорию многозначным полем, используйте следующий синтаксис: `$filter=category/any(c: c eq 'c1')`.
+
+Если пользователь щелкает значение аспекта для поля коллекции как `tags`, например значение «пул», в приложении следует использовать следующий синтаксис фильтра: `$filter=tags/any(t: t eq 'pool')`
 
 ## <a name="tips-and-workarounds"></a>Советы и обходные решения
 

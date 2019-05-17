@@ -2,28 +2,28 @@
 title: Ресурсы для переноса приложений в Azure Active Directory | Документы Майкрософт
 description: Ресурсы, помогающие перенести процессы, связанные с доступом к приложениям и проверкой подлинности, в Azure Active Directory (Azure AD).
 services: active-directory
-author: CelesteDG
-manager: mtillman
+author: msmimart
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: conceptual
 ms.workload: identity
 ms.date: 09/19/2018
-ms.author: celested
+ms.author: mimart
 ms.reviewer: baselden
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 92ce62d745bfb0299dc8f3eb401f5a66e38580f2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 12370d54500dbc1fcd6f812206fdfea3e5298112
+ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60440668"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65826078"
 ---
 # <a name="resources-for-migrating-applications-to-azure-active-directory"></a>Ресурсы для переноса приложений в Azure Active Directory
 
 Ресурсы, помогающие перенести процессы, связанные с доступом к приложениям и проверкой подлинности, в Azure Active Directory (Azure AD). Пройдите этот короткий опрос (https://aka.ms/AppsMigrationFeedback), чтобы предоставить отзыв об использовании средств переноса приложений в Azure AD (включая препятствия для переноса, необходимые инструменты или руководства, а также причины сохранения локального поставщика удостоверений). 
 
-| Ресурс  | ОПИСАНИЕ  |
+| Ресурс  | Описание  |
 |:-----------|:-------------|
 |[Перенос приложения в Azure AD](https://aka.ms/migrateapps/whitepaper) | В этом техническом документе представлены преимущества миграции и описывается планирование миграции в четыре четко определенных этапа: обнаружение, классификация, миграция и текущее управление. Приводятся указания по продумыванию процесса и разбиению проекта на простые для реализации части. На протяжении всего документа имеются ссылки на полезные ресурсы. |
 |[Руководство по решению. Перенос приложений из служб федерации Active Directory (AD FS) в Azure AD](https://aka.ms/migrateapps/adfssolutionguide) | В этом руководстве по решению последовательно разбираются четыре этапа планирования и выполнения проекта по переносу приложений, которые в общей форме описываются в техническом документе по миграции. В нем вы узнаете, как использовать эти этапы для достижения конкретной цели — переноса приложения из служб федерации Active Directory (AD FS) в Azure AD.|

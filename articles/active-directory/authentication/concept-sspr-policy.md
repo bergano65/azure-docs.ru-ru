@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 01/31/2018
+ms.date: 05/16/2018
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 728d961961250aad1d06067e0264c6b90aca4915
-ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
+ms.openlocfilehash: f32952dff8f09db5b790818a5f98c527a04c2ef5
+ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65593831"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65823394"
 ---
 # <a name="password-policies-and-restrictions-in-azure-active-directory"></a>Политики и ограничения для паролей в Azure Active Directory
 
@@ -81,8 +81,8 @@ ms.locfileid: "65593831"
 
 | Свойство | Требования |
 | --- | --- |
-| Допустимые символы |<ul><li>A–Z</li><li>a–z</li><li>0–9</li> <li>@ # $ % ^ & * - _ ! + = [ ] { } &#124; \ : ‘ , . ? / \` ~ " ( ) ;</li></ul> пустое пространство |
-| Недопустимые символы |<ul><li>Знаки Юникода.</li><li>Пробелы.</li><li> Не может содержать знак точки «.» непосредственно перед знаком "\@ \" символ».</li></ul> |
+| Допустимые символы |<ul><li>A–Z</li><li>a–z</li><li>0–9</li> <li>@ # $ % ^ & * - _ ! + = [ ] { } &#124; \ : ‘ , . ? / \` ~ " ( ) ;</li> <li>пустое пространство</li></ul> |
+| Недопустимые символы |<ul><li>Знаки Юникода.</li><li> Не может содержать знак точки «.» непосредственно перед знаком "\@ \" символ».</li></ul> |
 | Ограничения для пароля |<ul><li>Не менее 8 символов и не более 256 символов.</li><li>Необходимо выполнить 3 из 4 следующих условий:<ul><li>строчные буквы;</li><li>прописные буквы;</li><li>числа (0–9);</li><li>символы (см. ограничения для пароля выше).</li></ul></li></ul> |
 | Длительность срока действия пароля |<ul><li>Значение по умолчанию: **90** дней.</li><li>Значение можно изменить с помощью командлета `Set-MsolPasswordPolicy` из модуля Azure Active Directory для Windows PowerShell.</li></ul> |
 | Уведомление об окончании срока действия пароля |<ul><li>Значение по умолчанию: **14** дней (до истечения срока действия пароля).</li><li>Это значение можно настроить с помощью командлета `Set-MsolPasswordPolicy`.</li></ul> |
@@ -99,7 +99,6 @@ ms.locfileid: "65593831"
 
 > [!NOTE]
 > Неограниченный срок действия можно настроить только для паролей учетных записей пользователей, которые не синхронизируются в процессе синхронизации каталогов. Дополнительные сведения о синхронизации каталогов см. в статье [Интеграция локальных каталогов с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect).
->
 
 ## <a name="set-or-check-the-password-policies-by-using-powershell"></a>Задание или проверка политик пароля с помощью PowerShell
 
@@ -157,7 +156,7 @@ ms.locfileid: "65593831"
    ```
 
    > [!WARNING]
-   > Пароль, для которого задано `-PasswordPolicies DisablePasswordExpiration`, по-прежнему имеет срок использования, определяемый атрибутом `pwdLastSet`. Если задать для пользователей бессрочные пароли, то по прошествии 90 дней их срок действия истечет. В зависимости от атрибута `pwdLastSet`, если задать срок действия, указав `-PasswordPolicies None`, то всем пользователям, у паролей которых значение `pwdLastSet` превышает 90 дней, будет необходимо сменить пароль при следующем входе. Это изменение может повлиять на большое количество пользователей. 
+   > Пароль, для которого задано `-PasswordPolicies DisablePasswordExpiration`, по-прежнему имеет срок использования, определяемый атрибутом `pwdLastSet`. Если задать для пользователей бессрочные пароли, то по прошествии 90 дней их срок действия истечет. В зависимости от атрибута `pwdLastSet`, если задать срок действия, указав `-PasswordPolicies None`, то всем пользователям, у паролей которых значение `pwdLastSet` превышает 90 дней, будет необходимо сменить пароль при следующем входе. Это изменение может повлиять на большое количество пользователей.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

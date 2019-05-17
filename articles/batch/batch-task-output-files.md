@@ -13,12 +13,12 @@ ms.workload: big-compute
 ms.date: 03/05/2019
 ms.author: lahugh
 ms.custom: seodec18
-ms.openlocfilehash: 1d2d53213af34377d23c9ea140bab15822fc1b2e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 982fe5cea633d9fd1bbbe7dc862b69d89f5f1c1c
+ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60554717"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65595280"
 ---
 # <a name="persist-task-data-to-azure-storage-with-the-batch-service-api"></a>Сохранение данных для задач в службе хранилища Azure с помощью API пакетной службы
 
@@ -180,7 +180,7 @@ string containerName = job.OutputStorageContainerName();
 
 Пример проекта [PersistOutputs][github_persistoutputs] — это один из [примеров кода пакетной службы Azure][github_samples] на портале GitHub. Это решение Visual Studio демонстрирует использование клиентской библиотеки пакетной службы для сохранения выходных данных задачи в долговременном хранилище. Чтобы запустить пример приложения, выполните следующее.
 
-1. Откройте проект в **Visual Studio 2017**.
+1. Откройте проект в **Visual Studio 2019**.
 2. Добавьте свои **данные** учетной записи пакетной службы и учетной записи хранения в **AccountSettings.settings** в проекте Microsoft.Azure.Batch.Samples.Common.
 3. **сборку** решения (но не запускайте его). Восстановите необходимые пакеты NuGet в случае появления соответствующего запроса.
 4. С помощью портала Azure передайте [пакет приложения](batch-application-packages.md) для **PersistOutputsTask**. Добавьте в ZIP-файл пакета `PersistOutputsTask.exe` и его зависимые сборки , задайте для приложения идентификатор PersistOutputsTask, а для версии пакета приложения — значение "1.0".

@@ -16,12 +16,12 @@ ms.workload: iaas-sql-server
 ms.date: 07/12/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 71878d5d033f0005d2c8c36d9f59799e125a19dd
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 2943a1501e1d81ff4884c21b5aa3861e16523bbb
+ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58762707"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65827696"
 ---
 # <a name="automate-management-tasks-on-azure-virtual-machines-with-the-sql-server-agent-extension-resource-manager"></a>Автоматизация задач управления на виртуальных машинах Azure с помощью расширения агента SQL Server (модель с использованием Resource Manager)
 > [!div class="op_single_selector"]
@@ -37,7 +37,7 @@ ms.locfileid: "58762707"
 ## <a name="supported-services"></a>Поддерживаемые службы
 Расширение агента IaaS для SQL Server поддерживает следующие задачи администрирования:
 
-| Функция администрирования | ОПИСАНИЕ |
+| Функция администрирования | Описание |
 | --- | --- |
 | **Автоматическая архивация SQL** |Автоматизирует планирование архивации всех баз данных для любого экземпляра по умолчанию или [правильно установленному](virtual-machines-windows-sql-server-iaas-faq.md#administration) именованный экземпляр SQL Server на виртуальной Машине. Дополнительные сведения см. в статье [Автоматическая архивация SQL Server на виртуальных машинах Azure (Resource Manager)](virtual-machines-windows-sql-automated-backup.md). |
 | **Автоматическая установка исправлений SQL** |Настраивает период обслуживания, во время которого можно установить на виртуальную машину важные обновления ОС Windows. Таким образом можно избежать установки обновлений в пиковые периоды рабочей нагрузки. Дополнительные сведения см. в статье [Автоматическая установка исправлений SQL Server на виртуальных машинах Azure (Resource Manager)](virtual-machines-windows-sql-automated-patching.md). |
@@ -50,12 +50,15 @@ ms.locfileid: "58762707"
 
 **Операционная система**
 
+* Windows Server 2008 R2
 * Windows Server 2012
 * Windows Server 2012 R2
 * Windows Server 2016
 
 **Версии SQL Server**
 
+* SQL Server 2008 
+* SQL Server 2008 R2
 * SQL Server 2012
 * SQL Server 2014
 * SQL Server 2016
@@ -96,7 +99,7 @@ Set-AzVMSqlServerExtension -ResourceGroupName "resourcegroupname" -VMName "vmnam
    1. Установка SQL Server с именованным экземпляром, в виртуальной Машине SQL Server. 
    1. Установите расширение IaaS из на портале Azure.  
 
-## <a name="status"></a>Статус
+## <a name="status"></a>Status
 Одним из способов проверки того, что расширение установлено, является просмотр состояния агента на портале Azure. В окне виртуальной машины выберите **Все параметры**, а затем щелкните **Расширения**. В списке будет указано расширение **SqlIaasExtension**.
 
 ![Расширение агента IaaS для SQL Server на портале Azure](./media/virtual-machines-windows-sql-server-agent-extension/azure-rm-sql-server-iaas-agent-portal.png)

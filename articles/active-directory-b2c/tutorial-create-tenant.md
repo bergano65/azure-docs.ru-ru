@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 01/11/2019
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: 12ce37579a6f93ba600c39416c7566ac673e9560
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 6bcb8e8d5b8b6ef1ebac8141dd13964ecf62af6f
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64723331"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65601686"
 ---
 # <a name="tutorial-create-an-azure-active-directory-b2c-tenant"></a>Руководство по Создание клиента Azure Active Directory B2C
 
@@ -24,14 +24,14 @@ ms.locfileid: "64723331"
 В этой статье раскрываются следующие темы:
 
 > [!div class="checklist"]
-> * Создание клиента Azure AD B2C
+> * Создание клиента Azure AD B2C
 > * Привязка клиента к подписке
 
 Сведения о регистрации приложения приводятся в следующем руководстве.
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="create-an-azure-ad-b2c-tenant"></a>Создание клиента Azure AD B2C
+## <a name="create-an-azure-ad-b2c-tenant"></a>Создание клиента Azure AD B2C
 
 1. Войдите на [портале Azure](https://portal.azure.com/).
 2. Убедитесь, что вы используете каталог, содержащий вашу подписку, щелкнув **Фильтр каталога и подписки** в верхнем меню и выбрав каталог, содержащий ее. Этот каталог отличается от того, в котором будет содержаться ваш клиент Azure AD B2C.
@@ -40,7 +40,7 @@ ms.locfileid: "64723331"
 
 3. Выберите **Создать ресурс** в левом верхнем углу окна портала Azure.
 4. Найдите и выберите **Active Directory B2C**, а затем нажмите кнопку **Создать**.
-5. Выберите **Создать B2C-клиент Azure AD**, введите название организации и исходное доменное имя, которое будет использоваться в имени клиента, а затем выберите страну (позже ее нельзя будет изменить) и нажмите кнопку **Создать**.
+5. Выберите **создать клиент Azure AD B2C**, введите название организации и исходное доменное имя, которое используется в имени клиента, выберите страну или регион (его нельзя будет изменить позже) и нажмите кнопку **создать** .
 
     ![Создание клиента](./media/tutorial-create-tenant/create-tenant.png)
 
@@ -57,7 +57,7 @@ ms.locfileid: "64723331"
 Из этой статьи вы узнали, как выполнять следующие задачи:
 
 > [!div class="checklist"]
-> * Создание клиента Azure AD B2C
+> * Создание клиента Azure AD B2C
 > * Привязка клиента к подписке
 
 > [!div class="nextstepaction"]

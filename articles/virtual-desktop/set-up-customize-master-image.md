@@ -7,16 +7,16 @@ ms.service: virtual-desktop
 ms.topic: how-to
 ms.date: 04/03/2019
 ms.author: helohr
-ms.openlocfilehash: 58471dc539f72c49b041638e928dda751f4bf5a2
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
-ms.translationtype: HT
+ms.openlocfilehash: 9df4be5534a1cbe6aa4ffb9c60bb180fd4587d32
+ms.sourcegitcommit: f013c433b18de2788bf09b98926c7136b15d36f1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65410593"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65551027"
 ---
 # <a name="prepare-and-customize-a-master-vhd-image"></a>Подготовка и настройка главного образа VHD
 
-В этой статье о том, как подготовить образ master виртуального жесткого диска (VHD) для передачи в Azure, в том числе о способах создания виртуальных машин (ВМ), установите и настройте программное обеспечение на них. Эти инструкции предназначены для конфигурации предварительного просмотра конкретных виртуального рабочего стола Windows, которая может использоваться с существующим процессам вашей организации.
+В этой статье рассказывается, как подготовить образ master виртуального жесткого диска (VHD) для передачи в Azure, в том числе о способах создания виртуальных машин (ВМ) и установки программного обеспечения на них. Эти инструкции предназначены для конфигурации предварительного просмотра конкретных виртуального рабочего стола Windows, которая может использоваться с существующим процессам вашей организации.
 
 ## <a name="create-a-vm"></a>Создание виртуальной машины
 
@@ -24,11 +24,11 @@ ms.locfileid: "65410593"
 
 Первый вариант — для подготовки виртуальной машины (VM) в Azure, следуя инструкциям в [Создание виртуальной Машины из управляемого образа](https://docs.microsoft.com/azure/virtual-machines/windows/create-vm-generalized-managed)и перейдите к разделу [подготовки программного обеспечения и установки](set-up-customize-master-image.md#software-preparation-and-installation).
 
-Второй вариант — создать образ локально, скачивание образа, подготовки виртуальной Машины Hyper-V и настройка его в соответствии с потребностями, которые будут рассмотрены в следующем разделе.
+Второй вариант — создать образ локально, скачивание образа, подготовки виртуальной Машины Hyper-V и настройка его в соответствии с потребностями, которые рассмотрены в следующем разделе.
 
 ### <a name="local-image-creation"></a>Создание локального образа
 
-После загрузки образа в локальной папке, откройте **диспетчера Hyper-V** создать виртуальную Машину с виртуальным жестким ДИСКОМ, был просто скопирован. Ниже приведен простой версии, но можно найти более подробные инструкции в [Создание виртуальной машины в Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/get-started/create-a-virtual-machine-in-hyper-v).
+После загрузки образа в локальной папке, откройте **диспетчера Hyper-V** создать виртуальную Машину с виртуальным жестким ДИСКОМ, который вы скопировали. Ниже приведены инструкции простая версия, но можно найти более подробные инструкции в [Создание виртуальной машины в Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/get-started/create-a-virtual-machine-in-hyper-v).
 
 Чтобы создать виртуальную Машину с помощью скопированного виртуального жесткого диска:
 
@@ -62,101 +62,11 @@ Convert-VHD –Path c:\\test\\MY-VM.vhdx –DestinationPath c:\\test\\MY-NEW-VM.
 
 ## <a name="software-preparation-and-installation"></a>Подготовка программного обеспечения и установки
 
-В этом разделе описывается Подготовка и установка Office 365 профессиональный плюс, OneDrive, FSLogix, Защитник Windows и другие распространенные приложения. Если пользователям требуется доступ к определенным бизнес-приложений, мы рекомендуем вам установить их после завершения инструкции в этом разделе.
+В этом разделе описывается, как подготовить и установить FSLogix, Защитник Windows и другие распространенные приложения. 
 
-В этом разделе предполагается, что расширенные права доступа на виртуальной Машине, ли он подготавливается в Azure или Hyper-V Manager.
+Если вы устанавливаете Office 365 ProPlus и OneDrive на виртуальной Машине, см. в разделе [установить Office в главный образ виртуального жесткого диска](install-office-on-wvd-master-image.md). Перейдите по ссылке на следующих шагах этой статьи, чтобы вернуться к этой статье и завершить процесс основной виртуальный жесткий ДИСК.
 
-### <a name="install-office-in-shared-computer-activation-mode"></a>Установка Office в общий режим активации компьютера
-
-Используйте [средства развертывания Office](https://www.microsoft.com/download/details.aspx?id=49117) для установки Office. Windows 10 Корпоративная нескольких сеансов поддерживает только Office 365 профессиональный плюс, не Perpetual Office 2019 г.
-
-Средство развертывания Office требуется файл конфигурации XML. Чтобы настроить в следующем примере, см. в разделе [параметры конфигурации для средства развертывания Office](https://docs.microsoft.com/deployoffice/configuration-options-for-the-office-2016-deployment-tool).
-
-Этот пример конфигурации XML, мы предоставили сделает следующее:
-
-- Установите Office из канала участников программы предварительной оценки и доставки обновлений из канала сотрудники компании при их исполнения.
-- Архитектура использования x64.
-- Отключите автоматическое обновление.
-- Установка Visio и Project.
-- Удалите все существующие установки Office и переноса их параметров.
-- Включение общих компьютерах, лицензирование для операции в среде сервера терминалов.
-
-Вот, это пример XML-ФАЙЛ конфигурации, которые не:
-
-- Установка Скайп для бизнеса
-- Установка OneDrive в режиме пользователя. Дополнительные сведения см. в разделе [установить OneDrive в режиме на уровне компьютера](#install-onedrive-in-per-machine-mode).
-
->[!NOTE]
->Лицензирование общего компьютера можно настроить через объекты групповой политики (GPO) или параметры реестра. Объект групповой Политики расположен в **Конфигурация компьютера\\политики\\административные шаблоны\\Microsoft Office 2016 (компьютер)\\параметры лицензирования**
-
-Средство развертывания Office содержит setup.exe. Чтобы установить Office, выполните следующую команду в командной строке:
-
-```batch
-Setup.exe /configure configuration.xml
-```
-
-#### <a name="sample-configurationxml"></a>Пример configuration.xml
-
-В следующем примере XML установит выпуск программы предварительной оценки, также известное как участников программы предварительной оценки Fast или Main участников программы предварительной оценки.
-
-```xml
-<Configuration>
-    <Add OfficeClientEdition="64" SourcePath="https://officecdn.microsoft.com/pr/5440fd1f-7ecb-4221-8110-145efaa6372f">
-        <Product ID="O365ProPlusRetail">
-            <Language ID="en-US" />
-            <Language ID="MatchOS" Fallback = "en-US"/>
-            <Language ID="MatchPreviousMSI" />
-            <ExcludeApp ID="Groove" />
-            <ExcludeApp ID="Lync" />
-            <ExcludeApp ID="OneDrive" />
-            <ExcludeApp ID="Teams" />
-        </Product>
-        <Product ID="VisioProRetail">
-            <Language ID="en-US" />
-            <Language ID="MatchOS" Fallback = "en-US"/>
-            <Language ID="MatchPreviousMSI" />
-            <ExcludeApp ID="Teams" /> 
-        </Product>
-        <Product ID="ProjectProRetail">
-            <Language ID="en-US" />
-            <Language ID="MatchOS" Fallback = "en-US"/>
-            <Language ID="MatchPreviousMSI" />
-            <ExcludeApp ID="Teams" />
-        </Product>
-    </Add>
-    <RemoveMSI All="True" />
-    <Updates Enabled="FALSE" UpdatePath="https://officecdn.microsoft.com/pr/5440fd1f-7ecb-4221-8110-145efaa6372f" />
-    <Display Level="None" AcceptEULA="TRUE" />
-    <Logging Level="Verbose" Path="%temp%\WVDOfficeInstall" />
-    <Property Value="TRUE" Name="FORCEAPPSHUTDOWN"/>
-    <Property Value="1" Name="SharedComputerLicensing"/>
-    <Property Value="TRUE" Name="PinIconsToTaskbar"/>
-</Configuration>
-```
-
->[!NOTE]
->Группа разработчиков Office рекомендуется использовать 64-разрядной установки для **OfficeClientEdition** параметра.
-
-После установки Office, вы можете обновить Office по умолчанию. Выполните следующие команды по отдельности или в пакетном файле обновлять поведение.
-
-```batch
-rem Mount the default user registry hive
-reg load HKU\TempDefault C:\Users\Default\NTUSER.DAT
-rem Must be executed with default registry hive mounted.
-reg add HKU\TempDefault\SOFTWARE\Policies\Microsoft\office\16.0\common /v InsiderSlabBehavior /t REG_DWORD /d 2 /f
-rem Set Outlook's Cached Exchange Mode behavior
-rem Must be executed with default registry hive mounted.
-reg add "HKU\TempDefault\software\policies\microsoft\office\16.0\outlook\cached mode" /v enable /t REG_DWORD /d 1 /f
-reg add "HKU\TempDefault\software\policies\microsoft\office\16.0\outlook\cached mode" /v syncwindowsetting /t REG_DWORD /d 1 /f
-reg add "HKU\TempDefault\software\policies\microsoft\office\16.0\outlook\cached mode" /v CalendarSyncWindowSetting /t REG_DWORD /d 1 /f
-reg add "HKU\TempDefault\software\policies\microsoft\office\16.0\outlook\cached mode" /v CalendarSyncWindowSettingMonths  /t REG_DWORD /d 1 /f
-rem Unmount the default user registry hive
-reg unload HKU\TempDefault
-
-rem Set the Office Update UI behavior.
-reg add HKLM\SOFTWARE\Policies\Microsoft\office\16.0\common\officeupdate /v hideupdatenotifications /t REG_DWORD /d 1 /f
-reg add HKLM\SOFTWARE\Policies\Microsoft\office\16.0\common\officeupdate /v hideenabledisableupdates /t REG_DWORD /d 1 /f
-```
+Если пользователям требуется доступ к определенным бизнес-приложений, мы рекомендуем вам установить их после завершения инструкции в этом разделе.
 
 ### <a name="disable-automatic-updates"></a>Отключить автоматическое обновление
 
@@ -179,63 +89,13 @@ reg add HKLM\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU /v NoAutoUpdat
 reg add "HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer" /v SpecialRoamingOverrideAllowed /t REG_DWORD /d 1 /f
 ```
 
-### <a name="install-onedrive-in-per-machine-mode"></a>Установка OneDrive в режиме на уровне компьютера
-
-OneDrive — обычно устанавливается для каждого пользователя. В этой среде, он должен быть установлен на компьютере.
-
-Вот как можно установить OneDrive в режиме на уровне компьютера:
-
-1. Во-первых создайте расположение для размещения установщик OneDrive. Папку на локальном диске или [\\\\unc] подходит расположение (file://unc).
-
-2. Скачайте OneDriveSetup.exe в промежуточное расположение с помощью этой ссылки: <https://aka.ms/OneDriveWVD-Installer>
-
-3. Если вы установили office с OneDrive, опустив  **\<ExcludeApp ID = «OneDrive» /\>**, удалите все существующие установки пользователя OneDrive из командной строки с повышенными правами, выполнив следующую команда:
-    
-    ```batch
-    "[staged location]\OneDriveSetup.exe" /uninstall
-    ```
-
-4. Выполните следующую команду из командной строки с повышенными, чтобы задать **AllUsersInstall** значение реестра:
-
-    ```batch
-    REG ADD "HKLM\Software\Microsoft\OneDrive" /v "AllUsersInstall" /t REG_DWORD /d 1 /reg:64
-    ```
-
-5. Выполните следующую команду, чтобы установить OneDrive в режиме на уровне компьютера:
-
-    ```batch
-    Run "[staged location]\OneDriveSetup.exe" /allusers
-    ```
-
-6. Выполните следующую команду для настройки OneDrive для запуска при входе в систему для всех пользователей:
-
-    ```batch
-    REG ADD "HKLM\Software\Microsoft\Windows\CurrentVersion\Run" /v OneDrive /t REG_SZ /d "C:\Program Files (x86)\Microsoft OneDrive\OneDrive.exe /background" /f
-    ```
-
-7. Включить **Автоматическая настройка учетной записи пользователя** , выполнив следующую команду.
-
-    ```batch
-    REG ADD "HKLM\SOFTWARE\Policies\Microsoft\OneDrive" /v "SilentAccountConfig" /t REG_DWORD /d 1 /f
-    ```
-
-8. Перенаправление и переместите Windows известные папки в OneDrive, выполнив следующую команду.
-
-    ```batch
-    REG ADD "HKLM\SOFTWARE\Policies\Microsoft\OneDrive" /v "KFMSilentOptIn" /t REG_SZ /d "<your-AzureAdTenantId>" /f
-    ```
-
-### <a name="teams-and-skype"></a>Команды и Скайп
-
-Виртуальный рабочий стол Windows не поддерживает официально Скайп для бизнеса и команд.
-
 ### <a name="set-up-user-profile-container-fslogix"></a>Настроить контейнер профиля пользователя (FSLogix)
 
 Чтобы включить контейнер FSLogix как часть изображения, следуйте инструкциям в [Настройка общей папки профиля пользователя в пуле узлов](create-host-pools-user-profile.md#configure-the-fslogix-profile-container). Можно проверить функциональные возможности FSLogix контейнера с [в этом кратком руководстве](https://docs.fslogix.com/display/20170529/Profile+Containers+-+Quick+Start).
 
 ### <a name="configure-windows-defender"></a>Настроить Защитник Windows
 
-Если Защитник Windows настроен на виртуальной машине, убедитесь, что он настроен для проверки не все содержимое файлов VHD и VHDX при вложении одной и той же.
+Если Защитник Windows настроен на виртуальной машине, убедитесь, что он настроен для проверки не все содержимое файлов VHD и VHDX при вложении.
 
 Эта конфигурация только удаляет сканирование VHD и vhdx-файлов во время вложение, но не влияет на сканирование в реальном времени.
 
@@ -308,7 +168,7 @@ reg add HKCU\Software\Microsoft\Windows\CurrentVersion\StorageSense\Parameters\S
 В этом разделе рассматриваются приложения и конфигурации операционной системы. В этом разделе все конфигурации осуществляется с помощью записи реестра, которые могут быть выполнены с командной строки и средства regedit.
 
 >[!NOTE]
->Вы можете реализовать рекомендации в конфигурации с Общие политики объекты групповой политики или реестра imports. Администратор может выбрать любой из вариантов, в соответствии с требованиями их организации.
+>Вы можете реализовать рекомендации в конфигурации с помощью объектов групповой политики (GPO), или imports реестра. Администратор может выбрать любой из вариантов, в соответствии с требованиями их организации.
 
 Для отзыва центра сбор данных телеметрии на нескольких сеансов Windows 10 Корпоративная выполните следующую команду:
 

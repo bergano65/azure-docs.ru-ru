@@ -15,12 +15,12 @@ ms.tgt_pltfrm: multiple
 ms.workload: media
 ms.date: 05/01/2019
 ms.author: juliako
-ms.openlocfilehash: e64b18cef44a5fa6d63137f57fcada27adcd0299
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: da8d1000ebe2695dbc95d475027722962a3305d9
+ms.sourcegitcommit: 9e8dfa1169a55c3c8af93a6c5f4e0dace4de48b2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65205483"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65555875"
 ---
 # <a name="migration-guidance-for-moving-from-media-services-v2-to-v3"></a>Руководство по миграции из версии 2 в версию 3 Служб мультимедиа
 
@@ -29,14 +29,14 @@ ms.locfileid: "65205483"
 Если у вас есть видеослужба, разработанная на основе [устаревших API Служб мультимедиа версии 2](../previous/media-services-overview.md), ознакомьтесь со следующими рекомендациями и советами перед переносом в API версии 3. В версии 3 API существует множество преимуществ и новых функций, которые улучшают возможности разработки и Служб мультимедиа. Однако, как указано в разделе с [известными проблемами](#known-issues) этой статьи, из-за изменений между версиями API существуют определенные ограничения. Эта страница будет сохранена, так как команда Служб мультимедиа продолжает улучшать API версии 3 и устранять "пробелы" между версиями. 
 
 > [!NOTE]
-> В настоящее время вы не можете использовать портал Azure для управления ресурсами версии 3. Используйте [REST API](https://aka.ms/ams-v3-rest-ref), [CLI](https://aka.ms/ams-v3-cli-ref) или один из поддерживаемых [пакетов SDK](developers-guide.md).
+> В настоящее время вы не можете использовать портал Azure для управления ресурсами версии 3. Используйте [REST API](https://aka.ms/ams-v3-rest-ref), [CLI](https://aka.ms/ams-v3-cli-ref) или один из поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).
 
 ## <a name="benefits-of-media-services-v3"></a>Преимущества Служб мультимедиа версии 3
   
 ### <a name="api-is-more-approachable"></a>Более доступный API
 
 *  Версия 3 создана на основе унифицированной области API, что позволяет использовать функции управления и операции, встроенные в Azure Resource Manager. Шаблоны Azure Resource Manager можно использовать для создания и развертывания преобразований, конечных точек потоковой передачи, событий потоковой трансляции и т. д.
-* Документ [спецификации Open API (также называемый Swagger)](https://aka.ms/ams-v3-rest-sdk).
+* [Спецификация OpenAPI (прежнее название — Swagger)](https://aka.ms/ams-v3-rest-sdk) документа.
     Представляет схему для всех компонентов службы, включая кодирование на основе файла.
 * Пакеты SDK для [.NET](https://aka.ms/ams-v3-dotnet-ref), .NET Core, [Node.js](https://aka.ms/ams-v3-nodejs-ref), [Python](https://aka.ms/ams-v3-python-ref), [Java](https://aka.ms/ams-v3-java-ref), [Go](https://aka.ms/ams-v3-go-ref) и Ruby.
 * Интеграция [Azure CLI](https://aka.ms/ams-v3-cli-ref) для простых скриптов поддержки.
@@ -115,7 +115,7 @@ API версии 3 содержит следующие недочеты функ
 > [!NOTE]
 > Эта страница будет сохранена, так как команда Служб мультимедиа продолжает улучшать API версии 3 и устранять "пробелы" между версиями.
 
-## <a name="ask-questions-give-feedback-get-updates"></a>Задавайте вопросы, отзыв, получить обновления
+## <a name="ask-questions-give-feedback-get-updates"></a>Получение справки, отправка отзывов, получение обновлений
 
 Прочитайте статью [сообщества Служб мультимедиа Azure](media-services-community.md), чтобы узнать, как задавать вопросы, оставлять отзывы и получать новости о Службах мультимедиа.
 

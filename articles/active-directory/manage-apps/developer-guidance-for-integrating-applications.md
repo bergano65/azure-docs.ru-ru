@@ -3,22 +3,22 @@ title: Регистрация приложения для использован
 description: Эта статья, предназначенная для ИТ-специалистов, содержит рекомендации по интеграции приложений Azure с Active Directory.
 services: active-directory
 documentationcenter: ''
-author: CelesteDG
-manager: mtillman
+author: msmimart
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.topic: article
 ms.date: 10/30/2018
-ms.author: celested
+ms.author: mimart
 ms.custom: seohack1
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 341d7667f039a7272a7ad3fec80a445aa95b619d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: fd51bfd377aed2a7edd8c64d2f3dc99c3388e45a
+ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60440238"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65824673"
 ---
 # <a name="develop-line-of-business-apps-for-azure-active-directory"></a>Разработка бизнес-приложений для Azure Active Directory
 Это руководство содержит сведения о разработке бизнес-приложений для Azure Active Directory (AD). Оно предназначено специально для глобальных администраторов Active Directory и Office 365.
@@ -41,8 +41,8 @@ ms.locfileid: "60440238"
   * использование Azure Active Directory в качестве сервера авторизации oAuth (защита API, предоставляемого приложением).
 * объявление требуемых разрешений для правильной работы приложения, включая:
 
-     - 1. Разрешения приложения (только глобальные администраторы). Например:  членство в роли в другом приложении Azure AD или членство в роли, связанное с ресурсом, группой ресурсов или подпиской Azure.
-     - 2. Делегированные разрешения (любой пользователь). Например:  Azure AD, вход и чтение профиля.
+     - 1. Разрешения приложения (только глобальные администраторы). Например: членство в роли в другом приложении Azure AD или членство в роли, связанное с ресурсом, группой ресурсов или подпиской Azure.
+     - 2. Делегированные разрешения (любой пользователь). Например: Azure AD, вход и чтение профиля.
 
 > [!NOTE]
 > По умолчанию любой член может зарегистрировать приложение. Чтобы узнать, как ограничить разрешения по регистрации приложений для определенных членов, см. раздел [Кто имеет право добавлять приложения в мой экземпляр Azure AD?](../develop/active-directory-how-applications-are-added.md#who-has-permission-to-add-applications-to-my-azure-ad-instance)

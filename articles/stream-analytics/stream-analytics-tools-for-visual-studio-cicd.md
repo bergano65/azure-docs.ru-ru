@@ -1,26 +1,26 @@
 ---
-title: Непрерывная интеграция и разработка с помощью инструментов Stream Analytics
-description: Из этой статьи вы узнаете, как использовать инструменты Visual Studio для Azure Stream Analytics для настройки процессов непрерывной интеграции и развертывания.
+title: Непрерывная интеграция и разработка с помощью пакета Azure Stream Analytics Непрерывной интеграции и NuGet
+description: В этой статье описывается использование Azure Stream Analytics Непрерывной интеграции и NuGet-пакет для настройки непрерывной интеграции и процесса развертывания.
 services: stream-analytics
 author: su-jie
 ms.author: sujie
 ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 09/27/2017
-ms.openlocfilehash: 641254be37ac0019ee6a256fc99f96fc3bfb75a2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 05/15/2019
+ms.openlocfilehash: f34139dafffe3d4890f17988114dffdd8b480d2d
+ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60761511"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65827315"
 ---
-# <a name="continuously-integrate-and-develop-with-stream-analytics-tools"></a>Непрерывная интеграция и разработка с помощью инструментов Stream Analytics
-Из этой статьи вы узнаете, как использовать инструменты Azure Stream Analytics для Visual Studio для настройки процессов непрерывной интеграции и развертывания.
+# <a name="continuously-integrate-and-develop-with-azure-stream-analytics-cicd-nuget-package"></a>Непрерывная интеграция и разработка с помощью пакета Azure Stream Analytics Непрерывной интеграции и NuGet
+В этой статье описывается использование Azure Stream Analytics Непрерывной интеграции и пакета NuGet для настройки непрерывной интеграции и процесса развертывания.
 
 Чтобы получить поддержку MSBuild, используйте [инструменты Stream Analytics для Visual Studio](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-tools-for-visual-studio) версии 2.3.0000.0 или выше.
 
-Доступен пакет NuGet: [Microsoft.Azure.Stream Analytics.CICD](https://www.nuget.org/packages/Microsoft.Azure.StreamAnalytics.CICD/). Он предоставляет MSBuild, локальное выполнение и средства развертывания, которые поддерживают процесс непрерывной интеграции и развертывания проектов Stream Analytics Visual Studio. 
+Доступен пакет NuGet: [Microsoft.Azure.Stream Analytics.CICD](https://www.nuget.org/packages/Microsoft.Azure.StreamAnalytics.CICD/). Он предоставляет MSBuild, локальное выполнение и средства развертывания, которые поддерживают процесс непрерывной интеграции и развертывания из [Stream Analytics Visual Studio проекты](stream-analytics-vs-tools.md). 
 > [!NOTE]
 > Пакет NuGet может использоваться только с версией 2.3.0000.0 или более поздней версией средств Stream Analytics для Visual Studio. При наличии проектов, созданных в предыдущих версиях средств Visual Studio, откройте его с помощью версии 2.3.0000.0 или более поздней версии и сохраните. После этого будут включены новые возможности. 
 
@@ -46,7 +46,7 @@ ms.locfileid: "60761511"
 Параметры по умолчанию в файле parameters.json на основе параметров в проекте Visual Studio. При необходимости развертывания в другой среде замените соответствующие параметры.
 
 > [!NOTE]
-> Для всех учетных данных значения по умолчанию имеют значение NULL. Их *необходимо* установить перед развертыванием в облаке.
+> Для всех учетных данных значения по умолчанию имеют значение NULL. Их **необходимо** установить перед развертыванием в облаке.
 
 ```json
 "Input_EntryStream_sharedAccessPolicyKey": {
@@ -90,3 +90,9 @@ arm -JobTemplate <templateFilePath> -JobParameterFile <jobParameterFilePath> [-O
 ```
 
 
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+* [Краткое руководство Создание задания Azure Stream Analytics cloud в Visual Studio](stream-analytics-quick-create-vs.md)
+* [Локальное тестирование запросов Stream Analytics с помощью Visual Studio](stream-analytics-vs-tools-local-run.md)
+* [Просмотр заданий Azure Stream Analytics с помощью Visual Studio](stream-analytics-vs-tools.md)
