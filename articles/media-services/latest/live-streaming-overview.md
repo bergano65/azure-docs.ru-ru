@@ -11,14 +11,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: ne
 ms.topic: article
-ms.date: 04/03/2019
+ms.date: 05/11/2019
 ms.author: juliako
-ms.openlocfilehash: 3cd22b89852706ed129373fd24ca9a9d9a27d25b
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: fa09185e68c8d3a70562fe50c583ff872bf91e48
+ms.sourcegitcommit: 9e8dfa1169a55c3c8af93a6c5f4e0dace4de48b2
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65153376"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65556222"
 ---
 # <a name="live-streaming-with-azure-media-services-v3"></a>Потоковая трансляция в Службах мультимедиа Azure версии 3
 
@@ -33,7 +33,7 @@ ms.locfileid: "65153376"
 В этой статье приводится обзор и руководство по потоковой трансляции с помощью служб мультимедиа, а также ссылки на другие соответствующие статьи.
 
 > [!NOTE]
-> В настоящее время вы не можете использовать портал Azure для управления ресурсами версии 3. Используйте [REST API](https://aka.ms/ams-v3-rest-ref), [CLI](https://aka.ms/ams-v3-cli-ref) или один из поддерживаемых [пакетов SDK](developers-guide.md).
+> В настоящее время вы не можете использовать портал Azure для управления ресурсами версии 3. Используйте [REST API](https://aka.ms/ams-v3-rest-ref), [CLI](https://aka.ms/ams-v3-cli-ref) или один из поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).
 
 ## <a name="dynamic-packaging"></a>Динамическая упаковка
 
@@ -67,9 +67,9 @@ ms.locfileid: "65153376"
 
 Чтобы понять рабочие процессы live streaming в версии 3 службы мультимедиа, нужно сначала Ознакомьтесь и понимать следующие концепции: 
 
-- [Конечные точки потоковой передачи](streaming-endpoint-concept.md)
-- [События и выходные данные потоковой трансляции](live-events-outputs-concept.md)
-- [Указатели потоковой передачи](streaming-locators-concept.md)
+- [Конечные точки API потоковой передачи](streaming-endpoint-concept.md)
+- [Live событий и API в реальном времени выходных данных](live-events-outputs-concept.md)
+- [Указатели API потоковой передачи](streaming-locators-concept.md)
 
 ### <a name="general-steps"></a>Общие шаги
 
@@ -93,7 +93,7 @@ ms.locfileid: "65153376"
 - [Состояния и выставление счетов](live-event-states-billing.md)
 - [Задержка](live-event-latency.md)
 
-## <a name="ask-questions-give-feedback-get-updates"></a>Задавайте вопросы, отзыв, получить обновления
+## <a name="ask-questions-give-feedback-get-updates"></a>Получение справки, отправка отзывов, получение обновлений
 
 Прочитайте статью [сообщества Служб мультимедиа Azure](media-services-community.md), чтобы узнать, как задавать вопросы, оставлять отзывы и получать новости о Службах мультимедиа.
 

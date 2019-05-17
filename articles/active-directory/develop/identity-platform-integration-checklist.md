@@ -3,8 +3,8 @@ title: Интеграция с платформой Microsoft identity | Azure
 description: Дополнительные сведения о рекомендациях и общих упущения при интеграции с платформой Microsoft identity (версии 2.0).
 services: active-directory
 documentationcenter: ''
-author: CelesteDG
-manager: mtillman
+author: rwike77
+manager: CelesteDG
 editor: ''
 ms.service: active-directory
 ms.subservice: develop
@@ -13,15 +13,15 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 05/07/2019
-ms.author: celested
+ms.author: ryanwi
 ms.reviewer: lenalepa, sureshja, jesakowi
 ms.custom: aaddev
-ms.openlocfilehash: 1f5a6d7501fd387548b111fcb0888515c8f8db25
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.openlocfilehash: e9070127780659142ab8f956a8016622ecfea144
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65076410"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65540151"
 ---
 # <a name="microsoft-identity-platform-integration-checklist"></a>Контрольный список для интеграции платформы удостоверений Microsoft
 
@@ -33,7 +33,7 @@ ms.locfileid: "65076410"
 
 Используйте следующий контрольный список, чтобы убедиться, что приложение эффективно интегрирован с [платформы удостоверений Microsoft](https://docs.microsoft.com/legal/mdsa).
 
-### <a name="basics"></a>Основы
+### <a name="basics"></a>Основные сведения
 
 |   |   |
 |---|---|

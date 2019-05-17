@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 04/29/2019
 ms.author: banders
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 74afb98387172f6c58398673862274c7b1880d86
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 6280068303e66ca9a930f94d9a754afe1f88f4f2
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64922959"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65604265"
 ---
 # <a name="change-your-azure-account-profile-information"></a>Изменение сведений в профиле учетной записи Azure
 
@@ -51,9 +51,9 @@ ms.locfileid: "64922959"
 
 Сведения об обновлении данных о счетах см. в статье [Изменение кредитной карты, используемой для оплаты подписки Azure](billing-how-to-change-credit-card.md).
 
-### <a name="you-cant-update-your-country"></a>Не удается обновить вашей страны
+### <a name="you-cant-update-your-countryregion"></a>Не удается обновить страну или регион
 
-Из-за технических ограничений не удается изменить страну существующей учетной записи. Однако вы можете создать учетную запись в нужной стране, а затем обратиться в службу поддержки Azure с просьбой о переносе служб в эту учетную запись.
+Из-за технических ограничений мы нельзя изменить страну существующей учетной записи. Тем не менее можно создать учетную запись в требуемой страны или региона и затем обратитесь в службу поддержки Azure для переноса служб в этой учетной записи.
 
 ## <a name="service-and-marketing-emails"></a>Службы и маркетинговых сообщений электронной почты
 

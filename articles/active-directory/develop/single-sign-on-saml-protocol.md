@@ -3,8 +3,8 @@ title: Протокол единого входа SAML в Azure | Докумен
 description: В этой статье описывается протокол единого входа SAML в Azure Active Directory
 services: active-directory
 documentationcenter: .net
-author: CelesteDG
-manager: mtillman
+author: rwike77
+manager: CelesteDG
 editor: ''
 ms.assetid: ad8437f5-b887-41ff-bd77-779ddafc33fb
 ms.service: active-directory
@@ -14,16 +14,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 07/19/2017
-ms.author: celested
+ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: hirsin
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 033740d1ae75bb6f6fe8509d9ad123d55d9c6770
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 593f07b27fec16c3df90a073479effb130bc5721
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64705004"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65545285"
 ---
 # <a name="single-sign-on-saml-protocol"></a>Протокол единого входа SAML
 
@@ -47,7 +47,7 @@ xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol">
 </samlp:AuthnRequest>
 ```
 
-| Параметр |  | ОПИСАНИЕ |
+| Параметр |  | Описание |
 | --- | --- | --- |
 | ИД | Обязательно для заполнения | Azure AD использует этот атрибут для заполнения атрибута `InResponseTo` возвращенного ответа. Идентификатор не должен начинаться с цифры, поэтому общая стратегия предусматривает добавление такой строки, как id, в начало строкового представления GUID. Например, `id6c1c178c166d486687be4aaf5e482730` — допустимый идентификатор. |
 | Version | Обязательно для заполнения | Этот параметр должен иметь значение **2.0**. |
@@ -166,7 +166,7 @@ Azure AD устанавливает `Issuer` элемент `https://login.micro
 <Issuer xmlns="urn:oasis:names:tc:SAML:2.0:assertion"> https://login.microsoftonline.com/82869000-6ad1-48f0-8171-272ed18796e9/</Issuer>
 ```
 
-### <a name="status"></a>Статус
+### <a name="status"></a>Status
 
 Элемент `Status` передает сведения об успешной или неудачной попытке входа. Он включает элемент `StatusCode`, содержащий код или набор блоков вложенного кода, который представляет состояние запроса. Он также включает элемент `StatusMessage` , содержащий настраиваемые сообщения об ошибках, создаваемые во время входа.
 

@@ -7,13 +7,13 @@ ms.author: mamccrea
 ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
-ms.date: 02/05/2019
-ms.openlocfilehash: 08430f3eee858cdb6c9a7fbdfe11bd4c00ef148d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 05/07/2019
+ms.openlocfilehash: f3838bf6b9f7daa24c0cdb5b0c5a08d41d164530
+ms.sourcegitcommit: 179918af242d52664d3274370c6fdaec6c783eb6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61485681"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65561140"
 ---
 # <a name="azure-stream-analytics-preview-features"></a>Предварительная версия функций Azure Stream Analytics
 
@@ -22,6 +22,10 @@ ms.locfileid: "61485681"
 ## <a name="public-previews"></a>Общедоступные предварительные версии
 
 В общедоступную предварительную версию входят следующие функции. Вы можете воспользоваться этими функциями уже сегодня, однако не используйте их в рабочей среде.
+
+### <a name="visual-studio-code-for-azure-stream-analytics-released-may-2019"></a>Visual Studio Code для Azure Stream Analytics (выпущенной мая 2019 г.)
+
+Задания Azure Stream Analytics можно создать в Visual Studio Code. См. в разделе наших [VS Code Приступая к работе с](https://docs.microsoft.com/azure/stream-analytics/quick-create-vs-code).
 
 ### <a name="anomaly-detection"></a>Обнаружение аномалий
 
@@ -47,20 +51,21 @@ Azure Stream Analytics поддерживает пользовательские
 
 С помощью стандартных функций .NET, определяемых пользователем, можно выполнить код .NET Standard как часть конвейера потоковой передачи. Можно создать простые классы C# или импортировать полный проект и библиотеки. В Visual Studio поддерживается полная разработка и отладка интерфейса. Дополнительные сведения см. в статье [Разработка пользовательских функций .NET Standard для заданий Edge в Azure Stream Analytics (предварительная версия)](stream-analytics-edge-csharp-udf-methods.md).
 
-## <a name="private-previews"></a>Закрытые предварительные версии
+## <a name="other-previews"></a>Другие предварительные версии
 
-В закрытую предварительную версию входят следующие функции.
+Следующие функции также доступны в предварительной версии.
 
-### <a name="c-custom-deserializer-for-azure-stream-analytics-on-iot-edge"></a>Пользовательский десериализатор C# для Azure Stream Analytics в IoT Edge
+### <a name="c-custom-deserializer-for-azure-stream-analytics-on-iot-edge-and-cloud-announced-may-2019"></a>C#пользовательские десериализатор для Azure Stream Analytics в IoT Edge и облаком (Announced мая 2019 г.)
 
-Теперь разработчики могут реализовывать пользовательские десериализаторы в C# для десериализации событий, полученных в Azure Stream Analytics. Примеры форматов, которые можно десериализировать, включают в себя Parquet, Protobuf, XML и любой двоичный формат.
+Разработчики могут реализовывать пользовательские deserializers в C# выполнить десериализацию событий, полученных службой Azure Stream Analytics. Примеры форматов, которые можно десериализировать, включают в себя Parquet, Protobuf, XML и любой двоичный формат. Зарегистрироваться в этой предварительной версии [здесь](https://aka.ms/asapreview1).
 
-### <a name="visual-studio-code-for-azure-stream-analytics"></a>Visual Studio Code для Azure Stream Analytics
+### <a name="parquet-output-announced-may-2019"></a>Выходных данных parquet (объявлено мая 2019 г.)
+Parquet — это Включение эффективной обработки больших данных формате столбцов. Выводя данные в формате Parquet в озере данных, можно воспользоваться преимуществами Azure Stream Analytics для power крупномасштабных потоковой передачи ETL и выполнить пакетную обработку, обучать алгоритмы машинного обучения или выполнение интерактивных запросов в исторических данных. Зарегистрироваться в этой предварительной версии [здесь](https://aka.ms/asapreview1).
 
-Задания Azure Stream Analytics можно создать в Visual Studio Code. Для доступа к закрытым предварительным версиям функций средства, обратитесь к *ASAToolsfeedback\@microsoft.com*.
+### <a name="one-click-integration-with-event-hubs-announced-may-2019"></a>Одним щелчком интеграции с концентраторами событий (Announced мая 2019 г.) 
+Благодаря этой интеграции теперь можно визуализировать входящие данные и начать писать на портале концентратора событий запрос Stream Analytics с одним щелчком мыши. Когда запрос готов, можно его пробуем в несколько щелчков мышью и начать в реальном времени. Это также значительно сократить время и ресурсы для разработки решений аналитики в реальном времени. Зарегистрироваться в этой предварительной версии [здесь](https://aka.ms/asapreview1).
 
-## <a name="next-steps"></a>Дальнейшие действия
+### <a name="support-for-azure-stack-announced-may-2019"></a>Поддержка Azure Stack (объявлено мая 2019 г.)
+Эта функция включена в среде выполнения Azure IoT Edge, использует пользовательские функции Azure Stack, такие как встроенная поддержка локальных входных данных и выводит, выполняющийся в Azure Stack (например, концентраторов событий, центр Интернета вещей, хранилище BLOB-объектов). Этой новой интеграции позволяет создавать гибридные архитектуры, которые можно анализировать данные близко к место его создания, уменьшая задержки и максимизации insights.
+Зарегистрироваться в этой предварительной версии [здесь](https://aka.ms/asapreview1).
 
-* [Eight new features in Azure Stream Analytics](https://azure.microsoft.com/blog/eight-new-features-in-azure-stream-analytics/) (Восемь новых возможностей в службе Azure Stream Analytics)
-
-* [4 new features now available in Azure Stream Analytics](https://azure.microsoft.com/blog/4-new-features-now-available-in-azure-stream-analytics/) (4 новые функции, которые теперь доступны в Azure Stream Analytics)

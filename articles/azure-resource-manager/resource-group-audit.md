@@ -1,25 +1,19 @@
 ---
 title: Просмотр журналов действий Azure для наблюдения за ресурсами | Документация Майкрософт
-description: Просмотр действий пользователя и ошибок с помощью журналов действий. Отображаются портал Azure, PowerShell, интерфейс командной строки Azure и REST.
-services: azure-resource-manager
-documentationcenter: ''
+description: Просмотр действий пользователя и ошибок с помощью журналов действий. Показывает портала Azure PowerShell, Azure CLI и REST.
 author: tfitzmac
-ms.assetid: fcdb3125-13ce-4c3b-9087-f514c5e41e73
 ms.service: azure-resource-manager
-ms.workload: multiple
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
-ms.date: 01/23/2019
+ms.date: 05/13/2019
 ms.author: tomfitz
-ms.openlocfilehash: 8348099d778a9ec65e907bb3d21ae995041b9fb6
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 7ff45be4eea5c6e8ab83093847164ede0e94579a
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59786105"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65606578"
 ---
-# <a name="view-activity-logs-to-audit-actions-on-resources"></a>Просмотр журналов действий для аудита действий с ресурсами
+# <a name="view-activity-logs-to-monitor-actions-on-resources"></a>Просмотр журналов действий для отслеживания действий с ресурсами
 
 С помощью журналов действий можно определить:
 
@@ -29,13 +23,13 @@ ms.locfileid: "59786105"
 * состояние операции;
 * значения других свойств, которые могут помочь в изучении операции.
 
-Журнал изменений содержит все операции записи (PUT, POST, DELETE), выполненные с ресурсами. Он не содержит операции чтения (GET). Список действий ресурсов см. в статье [Операции поставщиков ресурсов Azure Resource Manager](../role-based-access-control/resource-provider-operations.md). Журналы аудита можно использовать для поиска ошибки при устранении неполадок, а также для наблюдения за тем, как пользователь в вашей организации изменяет ресурс.
+Журнал действий содержит все операции записи (PUT, POST, DELETE) для ресурсов. Он не содержит операции чтения (GET). Список действий ресурсов см. в статье [Операции поставщиков ресурсов Azure Resource Manager](../role-based-access-control/resource-provider-operations.md). Журналы действий можно использовать для поиска ошибки при устранении неполадок, а также для наблюдения за тем, как пользователь в вашей организации изменяет ресурс.
 
 Журналы действий хранятся в течение 90 дней. Вы можете запросить любой диапазон дат, при условии, что дата начала не старше 90 дней в прошлом.
 
 Сведения из журналов действий можно получить с помощью портала, PowerShell, интерфейса командной строки Azure, API REST Insights или с помощью [библиотеки .NET для Insights](https://www.nuget.org/packages/Microsoft.Azure.Insights/).
 
-## <a name="the-azure-portal"></a>Портал Azure
+## <a name="azure-portal"></a>Портал Azure
 
 1. Чтобы просмотреть журналы действий на портале, выберите **Монитор**.
 
@@ -45,13 +39,21 @@ ms.locfileid: "59786105"
 
     ![Выбор журнала действий](./media/resource-group-audit/select-activity-log.png)
 
-1. Отобразится сводка последних операций. Набор фильтров по умолчанию применяется к операциям.
+1. Отобразится сводка последних операций. Набор фильтров по умолчанию применяется к операциям. Обратите внимание, что информация сводки включает в том, кто запустил действие и когда это произошло.
 
     ![Просмотр сводки последних операций](./media/resource-group-audit/audit-summary.png)
 
-1. Чтобы быстро запустить предварительно определенный набор фильтров, выберите **Краткая аналитика** и один из параметров.
+1. Чтобы быстро выполнить предварительно определенный набор фильтров, выберите **быстрый анализ данных**.
 
-    ![Выбор запроса](./media/resource-group-audit/quick-insights.png)
+    ![Выберите быстрый анализ данных](./media/resource-group-audit/select-quick-insights.png)
+
+1. Выберите один из способов. Например, выберите **неудачных развертываний:** еще ошибки от развертываний.
+
+    ![Выберите неудачных развертываний](./media/resource-group-audit/select-failed-deployments.png)
+
+1. Обратите внимание, что фильтры были изменены для выделения ошибок при развертывании за последние 24 часа. Отображаются только те операции, которые соответствуют данным фильтрам.
+
+    ![Фильтры представлений](./media/resource-group-audit/view-filters.png)
 
 1. Чтобы сосредоточиться на конкретных операциях, измените фильтры или примените новые. Например, на следующем рисунке показано новое значение для параметра **Временной диапазон**, а для параметра **Тип ресурса** заданы учетные записи хранения. 
 
@@ -69,101 +71,119 @@ ms.locfileid: "59786105"
 
     ![Отображение фильтра на панели мониторинга](./media/resource-group-audit/show-dashboard.png)
 
+1. На портале можно просмотреть изменения к ресурсу. Перейдите по умолчанию в монитор и выберите операцию, которая участвует в изменении ресурса.
+
+    ![Выбор операции](./media/resource-group-audit/select-operation.png)
+
+1. Выберите **журнал (Предварительная версия) изменений** и выбрать одну из доступных операций.
+
+    ![Выберите журнал изменений](./media/resource-group-audit/select-change-history.png)
+
+1. Отображаются изменения в ресурсе.
+
+    ![Показать изменения](./media/resource-group-audit/show-changes.png)
+
+Дополнительные сведения о журнале изменений, см. в разделе [получить изменения ресурсов](../governance/resource-graph/how-to/get-resource-changes.md).
+
 ## <a name="powershell"></a>PowerShell
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-* Чтобы получить записи журнала, выполните команду **Get-AzLog**. Укажите дополнительные параметры, чтобы отфильтровать список записей. Если не указать время начала и окончания, возвращаются записи за последние семь дней.
+Чтобы получить записи журнала, выполните команду **Get-AzLog**. Укажите дополнительные параметры, чтобы отфильтровать список записей. Если не указать время начала и окончания, возвращаются записи за последние семь дней.
 
-  ```azurepowershell-interactive
-  Get-AzLog -ResourceGroup ExampleGroup
-  ```
+```azurepowershell-interactive
+Get-AzLog -ResourceGroup ExampleGroup
+```
 
-    В следующем примере показано, как использовать журнал действий для анализа действий, выполненных в течение указанного времени. Даты начала и окончания указывайте в формате даты.
+В следующем примере показано, как использовать журнал действий для анализа действий, выполненных в течение указанного времени. Даты начала и окончания указывайте в формате даты.
 
-  ```azurepowershell-interactive
-  Get-AzLog -ResourceGroup ExampleGroup -StartTime 2019-01-09T06:00 -EndTime 2019-01-15T06:00
-  ```
+```azurepowershell-interactive
+Get-AzLog -ResourceGroup ExampleGroup -StartTime 2019-05-05T06:00 -EndTime 2019-05-09T06:00
+```
 
-    Диапазон дат, например последние 14 дней, также можно указать с помощью функций даты.
+Диапазон дат, например последние 14 дней, также можно указать с помощью функций даты.
 
-  ```azurepowershell-interactive
-  Get-AzLog -ResourceGroup ExampleGroup -StartTime (Get-Date).AddDays(-14)
-  ```
+```azurepowershell-interactive
+Get-AzLog -ResourceGroup ExampleGroup -StartTime (Get-Date).AddDays(-14)
+```
 
-* Можно найти действия, выполненные конкретным пользователем, даже для группы ресурсов, которой больше не существует.
+Можно просмотреть действия, выполненные конкретным пользователем.
 
-  ```azurepowershell-interactive
-  Get-AzLog -ResourceGroup deletedgroup -StartTime (Get-Date).AddDays(-14) -Caller someone@contoso.com
-  ```
+```azurepowershell-interactive
+Get-AzLog -ResourceGroup ExampleGroup -StartTime (Get-Date).AddDays(-14) -Caller someone@contoso.com
+```
 
-* Можно применить фильтр для невыполненных операций.
+Можно применить фильтр для невыполненных операций.
 
-  ```azurepowershell-interactive
-  Get-AzLog -ResourceGroup ExampleGroup -Status Failed
-  ```
+```azurepowershell-interactive
+Get-AzLog -ResourceGroup ExampleGroup -Status Failed
+```
 
-* Можно получить сведения об одной ошибке, просмотрев сообщение о состоянии для ее записи.
+Можно получить сведения об одной ошибке, просмотрев сообщение о состоянии для ее записи.
 
-  ```azurepowershell-interactive
-  ((Get-AzLog -ResourceGroup ExampleGroup -Status Failed).Properties[0].Content.statusMessage | ConvertFrom-Json).error
-  ```
+```azurepowershell-interactive
+(Get-AzLog -ResourceGroup ExampleGroup -Status Failed).Properties.Content.statusMessage | ConvertFrom-Json
+```
 
-* Вы можете выбрать определенные значения, чтобы ограничить возвращаемые данные.
+Вы можете выбрать определенные значения, чтобы ограничить возвращаемые данные.
 
-  ```azurepowershell-interactive
-  Get-AzLog -ResourceGroupName ExampleGroup | Format-table EventTimeStamp, Caller, @{n='Operation'; e={$_.OperationName.value}}, @{n='Status'; e={$_.Status.value}}, @{n='SubStatus'; e={$_.SubStatus.LocalizedValue}}
-  ```
+```azurepowershell-interactive
+Get-AzLog -ResourceGroupName ExampleGroup | Format-table EventTimeStamp, Caller, @{n='Operation'; e={$_.OperationName.value}}, @{n='Status'; e={$_.Status.value}}, @{n='SubStatus'; e={$_.SubStatus.LocalizedValue}}
+```
 
-* В зависимости от указанного времени начала приведенные выше команды могут вернуть длинный список операций для группы ресурсов. Чтобы найти в результатах нужную информацию, отфильтруйте их, используя условия поиска. Например, вы можете отфильтровать их по типу операции.
+В зависимости от указанного времени начала приведенные выше команды могут вернуть длинный список операций для группы ресурсов. Чтобы найти в результатах нужную информацию, отфильтруйте их, используя условия поиска. Например, вы можете отфильтровать их по типу операции.
 
-  ```azurepowershell-interactive
-  Get-AzLog -ResourceGroup ExampleGroup | Where-Object {$_.OperationName.value -eq "Microsoft.Resources/deployments/write"}
-  ```
+```azurepowershell-interactive
+Get-AzLog -ResourceGroup ExampleGroup | Where-Object {$_.OperationName.value -eq "Microsoft.Resources/deployments/write"}
+```
+
+График ресурсов можно использовать, чтобы просмотреть журнал изменений для ресурса. Дополнительные сведения см. в разделе [получить изменения ресурсов](../governance/resource-graph/how-to/get-resource-changes.md).
 
 ## <a name="azure-cli"></a>Инфраструктура CLI Azure
 
-* Чтобы получить записи журнала, выполните команду [az monitor activity-log list](/cli/azure/monitor/activity-log#az-monitor-activity-log-list) со смещением, чтобы указать на диапазон времени.
+Чтобы получить записи журнала, выполните команду [az monitor activity-log list](/cli/azure/monitor/activity-log#az-monitor-activity-log-list) со смещением, чтобы указать на диапазон времени.
 
-  ```azurecli-interactive
-  az monitor activity-log list --resource-group ExampleGroup --offset 7d
-  ```
+```azurecli-interactive
+az monitor activity-log list --resource-group ExampleGroup --offset 7d
+```
 
-  В следующем примере показано, как использовать журнал действий для анализа действий, выполненных в течение указанного времени. Даты начала и окончания указывайте в формате даты.
+В следующем примере показано, как использовать журнал действий для анализа действий, выполненных в течение указанного времени. Даты начала и окончания указывайте в формате даты.
 
-  ```azurecli-interactive
-  az monitor activity-log list -g ExampleGroup --start-time 2019-01-01 --end-time 2019-01-15
-  ```
+```azurecli-interactive
+az monitor activity-log list -g ExampleGroup --start-time 2019-05-01 --end-time 2019-05-15
+```
 
-* Можно найти действия, выполненные конкретным пользователем, даже для группы ресурсов, которой больше не существует.
+Можно найти действия, выполненные конкретным пользователем, даже для группы ресурсов, которой больше не существует.
 
-  ```azurecli-interactive
-  az monitor activity-log list -g ExampleGroup --caller someone@contoso.com --offset 5d
-  ```
+```azurecli-interactive
+az monitor activity-log list -g ExampleGroup --caller someone@contoso.com --offset 5d
+```
 
-* Можно применить фильтр для невыполненных операций.
+Можно применить фильтр для невыполненных операций.
 
-  ```azurecli-interactive
-  az monitor activity-log list -g demoRG --status Failed --offset 1d
-  ```
+```azurecli-interactive
+az monitor activity-log list -g ExampleGroup --status Failed --offset 1d
+```
 
-* Можно получить сведения об одной ошибке, просмотрев сообщение о состоянии для ее записи.
+Можно получить сведения об одной ошибке, просмотрев сообщение о состоянии для ее записи.
 
-  ```azurecli-interactive
-  az monitor activity-log list -g ExampleGroup --status Failed --offset 1d --query [].properties.statusMessage
-  ```
+```azurecli-interactive
+az monitor activity-log list -g ExampleGroup --status Failed --offset 1d --query [].properties.statusMessage
+```
 
-* Вы можете выбрать определенные значения, чтобы ограничить возвращаемые данные.
+Вы можете выбрать определенные значения, чтобы ограничить возвращаемые данные.
 
-  ```azurecli-interactive
-  az monitor activity-log list -g ExampleGroup --offset 1d --query '[].{Operation: operationName.value, Status: status.value, SubStatus: subStatus.localizedValue}'
-  ```
+```azurecli-interactive
+az monitor activity-log list -g ExampleGroup --offset 1d --query '[].{Operation: operationName.value, Status: status.value, SubStatus: subStatus.localizedValue}'
+```
 
-* В зависимости от указанного времени начала приведенные выше команды могут вернуть длинный список операций для группы ресурсов. Чтобы найти в результатах нужную информацию, отфильтруйте их, используя условия поиска. Например, вы можете отфильтровать их по типу операции.
+В зависимости от указанного времени начала приведенные выше команды могут вернуть длинный список операций для группы ресурсов. Чтобы найти в результатах нужную информацию, отфильтруйте их, используя условия поиска. Например, вы можете отфильтровать их по типу операции.
 
-  ```azurecli-interactive
-  az monitor activity-log list -g ExampleGroup --offset 1d --query "[?operationName.value=='Microsoft.Storage/storageAccounts/write']"
-  ```
+```azurecli-interactive
+az monitor activity-log list -g ExampleGroup --offset 1d --query "[?operationName.value=='Microsoft.Storage/storageAccounts/write']"
+```
+
+График ресурсов можно использовать, чтобы просмотреть журнал изменений для ресурса. Дополнительные сведения см. в разделе [получить изменения ресурсов](../governance/resource-graph/how-to/get-resource-changes.md).
 
 ## <a name="rest-api"></a>REST API
 

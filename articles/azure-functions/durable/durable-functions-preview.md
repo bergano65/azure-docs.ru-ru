@@ -10,12 +10,12 @@ ms.devlang: multiple
 ms.topic: article
 ms.date: 04/23/2019
 ms.author: azfuncdf
-ms.openlocfilehash: 6b3b49049ea1ed36a08fad9619183017b0f07d99
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: 8ceb84ab9e9c41ff6a9cbde62571fb12ae67d790
+ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65077745"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65596081"
 ---
 # <a name="durable-functions-20-preview-azure-functions"></a>Устойчивый Предварительный просмотр функций 2.0 (функции Azure)
 
@@ -36,7 +36,7 @@ ms.locfileid: "65077745"
 
 ### <a name="hostjson-schema"></a>Схемы Host.JSON
 
-В следующем фрагменте показано host.json новую схему. Основное изменение, которые следует учитывать нам новый `"storageProvider"` разделе и `"azureStorage"` разделе под ним. Это изменение было сделано для поддержки [альтернативный поставщиков хранилища](durable-functions-preview.md#alternate-storage-providers).
+В следующем фрагменте показано host.json новую схему. Основное изменение, которые следует учитывать, является новый `"storageProvider"` разделе и `"azureStorage"` разделе под ним. Это изменение было сделано для поддержки [альтернативный поставщиков хранилища](durable-functions-preview.md#alternate-storage-providers).
 
 ```json
 {
@@ -93,11 +93,12 @@ ms.locfileid: "65077745"
 
 Функции сущности определяют операции для операций чтения и обновления небольшие части состояния, известный как *сущности долговременного*. Как функции оркестратора, функции сущности — это функции с типом специальные триггера *сущности триггер*. В отличие от функции оркестратора сущности функции не имеют все ограничения конкретный код. Функции сущности также управлять состоянием явным образом вместо того чтобы неявно представляющий состояние с помощью потока управления.
 
-Ниже приведен пример простого объекта функции, которая определяет *счетчика* сущности. Функция задает три операции `add`, `remove`, и `reset`, каждая из для обновления целочисленное значение, `currentValue`.
+Ниже приведен пример простого объекта функции, которая определяет *счетчика* сущности. Функция задает три операции `add`, `subtract`, и `reset`, каждая из для обновления целочисленное значение, `currentValue`.
 
 ```csharp
+[FunctionName("Counter")]
 public static async Task Counter(
-    [EntityTrigger(EntityName = "Counter")] IDurableEntityContext ctx)
+    [EntityTrigger] IDurableEntityContext ctx)
 {
     int currentValue = ctx.GetState<int>();
     int operand = ctx.GetInput<int>();
@@ -200,21 +201,25 @@ public static async Task Counter(
 Например рассмотрим оркестрации, которые необходимо протестировать доступность два игрока и затем назначить их обоих в игре. Эта задача может быть реализована с помощью критическую секцию следующим образом:
 
 ```csharp
-
-EntityId player1 = /* ... */;
-EntityId player2 = /* ... */;
-
-using (await ctx.LockAsync(player1, player2))
+[FunctionName("Orchestrator")]
+public static async Task RunOrchestrator(
+    [OrchestrationTrigger] IDurableOrchestrationContext ctx)
 {
-    bool available1 = await ctx.CallEntityAsync<bool>(player1, "is-available");
-    bool available2 = await ctx.CallEntityAsync<bool>(player2, "is-available");
+    EntityId player1 = /* ... */;
+    EntityId player2 = /* ... */;
 
-    if (available1 && available2)
+    using (await ctx.LockAsync(player1, player2))
     {
-        Guid gameId = ctx.NewGuid();
+        bool available1 = await ctx.CallEntityAsync<bool>(player1, "is-available");
+        bool available2 = await ctx.CallEntityAsync<bool>(player2, "is-available");
 
-        await ctx.CallEntityAsync(player1, "assign-game", gameId);
-        await ctx.CallEntityAsync(player2, "assign-game", gameId);
+        if (available1 && available2)
+        {
+            Guid gameId = ctx.NewGuid();
+
+            await ctx.CallEntityAsync(player1, "assign-game", gameId);
+            await ctx.CallEntityAsync(player2, "assign-game", gameId);
+        }
     }
 }
 ```

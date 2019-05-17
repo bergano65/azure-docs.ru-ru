@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 05/7/2019
 ms.author: haroldw
-ms.openlocfilehash: c8ebd10544331d3b7d887124542fe4ee2753c714
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: d9e3aa3dae81166ef91f57ea6a95087a952001ed
+ms.sourcegitcommit: f013c433b18de2788bf09b98926c7136b15d36f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65233144"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65550987"
 ---
 # <a name="openshift-in-azure"></a>Использование OpenShift в Azure
 
@@ -36,7 +36,7 @@ OpenShift включает Kubernetes для оркестрации контей
 
 ## <a name="azure-red-hat-openshift"></a>Azure Red Hat OpenShift
 
-Microsoft Azure Red Hat OpenShift — это полностью управляемое предложение OpenShift в Azure. Эта служба управляется и поддерживается совместно корпорацией Майкрософт и Red Hat. Полная документация может быть [здесь](https://docs.microsoft.com/azure/openshift/). 
+Microsoft Azure Red Hat OpenShift — это полностью управляемое предложение OpenShift в Azure. Эта служба управляется и поддерживается совместно корпорацией Майкрософт и Red Hat. Дополнительные сведения см. в разделе [Azure Red Hat OpenShift службы](https://docs.microsoft.com/azure/openshift/) документации.
 
 ## <a name="openshift-container-platform"></a>Платформа контейнеров OpenShift
 

@@ -8,13 +8,13 @@ author: kevinlam1
 ms.author: klam
 ms.reviewer: estfan, LADocs
 ms.topic: article
-ms.date: 03/18/2019
-ms.openlocfilehash: 0fbe56ceeeba71bcbb5ef358cd66de15e36508fc
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 05/13/2019
+ms.openlocfilehash: 45eeb20e5c572ddd98244b2e751322fcce1d4b76
+ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60511937"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65597199"
 ---
 # <a name="test-logic-apps-with-mock-data-by-setting-up-static-results"></a>Тестирование приложений логики с помощью фиктивных данных, настроив статический результатов
 
@@ -46,7 +46,7 @@ ms.locfileid: "60511937"
 
       Например ниже приведены обязательные свойства для действия HTTP.
 
-      | Свойство | ОПИСАНИЕ |
+      | Свойство | Описание |
       |----------|-------------|
       | **Состояние** | Состояние действия для возврата |
       | **Код состояния** | Код состояния, который возвращает |
@@ -137,11 +137,9 @@ ms.locfileid: "60511937"
 
    ![Отключить статический результатов](./media/test-logic-apps-mock-data-static-results/disable-static-results-button.png)
 
-## <a name="get-support"></a>Получение поддержки
+## <a name="reference"></a>Справочные материалы
 
-* Если у вас возникли вопросы, то посетите [форум Azure Logic Apps](https://social.msdn.microsoft.com/Forums/en-US/home?forum=azurelogicapps).
-
-* Отправить идею по поводу возможности или проголосовать за нее вы можете на [сайте отзывов пользователей Logic Apps](https://aka.ms/logicapps-wish).
+Дополнительные сведения об этом параметре в определениях базового рабочего процесса см. в разделе [статический результаты - Справочник по схеме для языка определения рабочих процессов](../logic-apps/logic-apps-workflow-definition-language.md#static-results) и [runtimeConfiguration.staticResult - среды выполнения параметры конфигурации](../logic-apps/logic-apps-workflow-actions-triggers.md#runtime-configuration-settings)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

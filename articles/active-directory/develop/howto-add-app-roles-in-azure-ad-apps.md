@@ -4,7 +4,7 @@ description: Сведения о добавлении ролей приложе�
 services: active-directory
 documentationcenter: ''
 author: kkrishna
-manager: mtillman
+manager: CelesteDG
 editor: ''
 ms.service: active-directory
 ms.subservice: develop
@@ -17,12 +17,12 @@ ms.author: kkrishna
 ms.reviewer: ''
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: df0d0b02efe7e99253b64ba02a5d9e77bb968993
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: fd78e98c37bea0fed1787e1e07a026fa35597f47
+ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65138360"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65593916"
 ---
 # <a name="how-to-add-app-roles-in-your-application-and-receive-them-in-the-token"></a>Практическое руководство: Добавление ролей приложения в приложение, зарегистрированное в Azure Active Directory, и их получение в токене
 
@@ -62,7 +62,7 @@ ms.locfileid: "65138360"
 В следующем примере показана роль `appRoles`, которую можно назначить для `users`.
 
 > [!NOTE]
->  `id` должен быть уникальным идентификатором GUID.
+>`id` должен быть уникальным идентификатором GUID.
 
 ```Json
 "appId": "8763f1c4-f988-489c-a51e-158e9ef97d6a",
@@ -80,6 +80,9 @@ ms.locfileid: "65138360"
   ],
 "availableToOtherTenants": false,
 ```
+
+> [!NOTE]
+>`displayName` Не может содержать пробелы.
 
 Вы можете определить роли приложения, чтобы выбрать `users`, `applications` или обе эти роли. Если они доступны для `applications`, роли приложения отображаются как разрешения приложения в колонке **Необходимые разрешения**. В следующем примере показана роль приложения, предназначенная для `Application`.
 
@@ -99,6 +102,8 @@ ms.locfileid: "65138360"
   ],
 "availableToOtherTenants": false,
 ```
+
+Число ролей, определенных влияет на ограничения, которые содержит манифест приложения. Они подробно обсуждаются подробно на [манифеста ограничения](https://docs.microsoft.com/azure/active-directory/develop/reference-app-manifest#manifest-limits) страницы.
 
 ### <a name="assign-users-and-groups-to-roles"></a>Назначение ролей для пользователей и групп
 

@@ -3,8 +3,8 @@ title: Разрешения в Azure Active Directory | Документация
 description: Сведения о разрешениях в Azure Active Directory и их использовании.
 services: active-directory
 documentationcenter: ''
-author: CelesteDG
-manager: mtillman
+author: rwike77
+manager: CelesteDG
 editor: ''
 ms.assetid: 6c0dc122-2cd8-4d70-be5a-3943459d308e
 ms.service: active-directory
@@ -14,16 +14,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.author: celested
+ms.author: ryanwi
 ms.reviewer: jesakowi, justhu
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9ee58c2a3bed7544ff68e7d6ec756c35bee1d05b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 6fb4342e024d826c65ed33184aaf33012d09190a
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60250781"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65545193"
 ---
 # <a name="permissions-and-consent-in-the-azure-active-directory-v10-endpoint"></a>Разрешения и согласие в конечной точке Azure Active Directory версии 1.0
 
@@ -61,7 +61,7 @@ Azure AD определяет два типа разрешений:
 > (Get-AzureADServicePrincipal -filter "DisplayName eq 'Microsoft Graph'").AppRoles
 > ```
 
-| Имя свойства | ОПИСАНИЕ | Пример |
+| Имя свойства | Описание | Пример |
 | --- | --- | --- |
 | `ID` | Значение GUID, которое уникальным образом идентифицирует это разрешение. | 570282fd-fa5c-430d-a7fd-fc8dc98a9dca |
 | `IsEnabled` | Указывает, доступно ли это разрешение для использования. | Да |
@@ -106,7 +106,7 @@ Azure AD определяет два типа разрешений:
   - `Permission` соответствует действию, которое пользователь может применить к этим данным.
   - `Modifier` используется для описания специализаций другого разрешения.
     
-    Например: 
+    Например:
   - Mail.Read позволяет пользователям читать письма электронной почты.
   - Mail.ReadWrite позволяет пользователям читать и писать письма.
   - Mail.ReadWrite.All предоставляет администратору или пользователю доступ ко всем письмам в организации.

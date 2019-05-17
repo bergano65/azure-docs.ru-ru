@@ -3,8 +3,8 @@ title: Как понять разницу между делегированны�
 description: Статья содержит сведения о делегированных разрешениях и разрешениях приложений, а также о том, как они используются в клиентах и предоставляются в ресурсах для приложений, разрабатываемых с помощью Azure AD.
 services: active-directory
 documentationcenter: ''
-author: CelesteDG
-manager: mtillman
+author: rwike77
+manager: CelesteDG
 ms.assetid: ''
 ms.service: active-directory
 ms.subservice: app-mgmt
@@ -13,14 +13,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/11/2018
-ms.author: celested
+ms.author: ryanwi
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 90f24d787c09de99f076d1edffabb3dbbbe19a57
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 87eca33e43777504d395f72eaa87aedc464ea355
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60299844"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65540338"
 ---
 # <a name="how-to-recognize-differences-between-delegated-and-application-permissions"></a>Как понять разницу между делегированными разрешениями и разрешениями приложения
 

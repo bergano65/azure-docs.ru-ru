@@ -10,12 +10,12 @@ ms.assetid: 04b05dea-c066-44a0-9751-0774eb84c689
 ms.service: sql-data-warehouse
 ms.topic: article
 ms.date: 04/03/2019
-ms.openlocfilehash: a5d93a77652f540fde44b33963b13df04b45ecee
-ms.sourcegitcommit: 60606c5e9a20b2906f6b6e3a3ddbcb6c826962d6
+ms.openlocfilehash: 999c75d07ef7e24d4d75587b6b42a4ab1b2192cf
+ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2019
-ms.locfileid: "64987946"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65596110"
 ---
 # <a name="upgrade-your-data-warehouse-to-gen2"></a>Обновление до хранилища данных 2-го поколения
 
@@ -38,10 +38,10 @@ ms.locfileid: "64987946"
 | Центральная Канада |Доступна |1 июня 2019 г. |
 | Восточная Канада |\* |\* |
 | Центральный регион США |Доступна |1 июня 2019 г. |
-| Восток Китая |\* |\* |
-| Восточный Китай 2 |\* |\* |
-| Север Китая |\* |\* |
-| Северный Китай 2 |\* |\* |
+| Восточный Китай |\* |\* |
+| Восточный Китай 2 |\* |Только Gen2 |
+| Северный Китай |\* |\* |
+| Северный Китай 2 |Доступна |Только Gen2 |
 | Восточная Азия |Доступна |1 июня 2019 г. |
 | Восточная часть США |Доступна |1 июня 2019 г. |
 | Восток США 2 |Доступна |1 июня 2019 г. |

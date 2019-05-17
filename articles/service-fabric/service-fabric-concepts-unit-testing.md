@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 09/04/2018
 ms.author: atsenthi
-ms.openlocfilehash: ca473b9947a9b0df610a9c3dac66914b06cc9217
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: ad7cf3a1dfcef8795ceb378a59a1cf0b2010293e
+ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60881459"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65595501"
 ---
 # <a name="unit-testing-stateful-services-in-service-fabric"></a>Модульное тестирование служб с отслеживанием состояния в Service Fabric
 
@@ -36,7 +36,7 @@ ms.locfileid: "60881459"
 
 ## <a name="common-practices"></a>Общие рекомендации
 
-В следующем разделе приведены рекомендации по наиболее распространенным методам модульного тестирования службы с отслеживанием состояния. Также рекомендуется, чтобы уровень макетирования максимально соответствовал оркестрации и управлению состоянием в Service Fabric. Такую возможность предоставляют библиотеки макетирования. [ServiceFabric.Mocks](https://www.nuget.org/packages/ServiceFabric.Mocks/) 3.3.0 или более поздней версии — это одна из таких библиотек, которая предоставляет рекомендуемую стандартную функциональность и следует описанным ниже методам.
+В следующем разделе приведены рекомендации по наиболее распространенным методам модульного тестирования службы с отслеживанием состояния. Также рекомендуется, чтобы уровень макетирования максимально соответствовал оркестрации и управлению состоянием в Service Fabric. [ServiceFabric.Mocks](https://www.nuget.org/packages/ServiceFabric.Mocks/) 3.3.0 или более поздней версии — это одна из таких библиотек, которая предоставляет рекомендуемую стандартную функциональность и следует описанным ниже методам.
 
 ### <a name="arrangement"></a>Упорядочение
 

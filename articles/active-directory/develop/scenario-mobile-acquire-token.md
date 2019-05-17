@@ -1,6 +1,6 @@
 ---
-title: Мобильное приложение, что вызовы веб-API — получение токена для приложения | Платформы удостоверений Microsoft
-description: Узнайте, как создать мобильное приложение, которое вызывает веб-API (получение токена для приложения)
+title: Мобильное приложение, что вызовы веб-API — получение маркера для приложения | Платформы удостоверений Microsoft
+description: Узнайте, как создать мобильное приложение, которое вызывает веб-API (получение маркера для приложения)
 services: active-directory
 documentationcenter: dev-center-name
 author: danieldobalian
@@ -15,43 +15,43 @@ ms.date: 05/07/2019
 ms.author: dadobali
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6933bfbbff574495655ef9065a786fa313b02bd6
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.openlocfilehash: 88c9215ed221e24099eeb219a4db599a1955920a
+ms.sourcegitcommit: f013c433b18de2788bf09b98926c7136b15d36f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65075180"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65550342"
 ---
-# <a name="mobile-app-that-calls-web-apis---acquire-a-token"></a>Мобильное приложение, которое вызывает веб-интерфейсы API — получение маркера
+# <a name="mobile-app-that-calls-web-apis---get-a-token"></a>Мобильное приложение, которое вызывает веб-интерфейсы API — получение маркера
 
-Перед началом вызова защищенного веб-API, приложение потребуется маркер доступа. В этом разделе рассматривается процесс получения маркера с использованием библиотеки аутентификации Майкрософт (MSAL).
+Перед началом вызова защищенного веб-API, приложение потребуется маркер доступа. В этой статье рассматривается процесс получения маркера с помощью библиотеки аутентификации Майкрософт (MSAL).
 
 ## <a name="scopes-to-request"></a>Чтобы запросить области
 
-При запросе маркеров, области всегда является обязательным. Область определяет, какие данные, приложение может обращаться к.  
+Когда вы запрашиваете маркер, необходимо определить область. Область определяет, какие данные, приложение может обращаться к.  
 
-Самым простым подходом является сочетание нужный веб-интерфейса API `App ID URI` с областью `.default`. Это говорит Microsoft identity, что вашему приложению требуется настроить на портале все области.
+Самый простой подход является объединение нужный веб-интерфейса API `App ID URI` с областью `.default`. Это сообщает платформе Microsoft identity, вашему приложению требуется набор все области на портале.
 
-Android
+#### <a name="android"></a>Android
 ```Java
 String[] SCOPES = {"https://graph.microsoft.com/.default"};
 ```
 
-iOS
+#### <a name="ios"></a>iOS
 ```swift
 let scopes: [String] = ["https://graph.microsoft.com/.default"]
 ```
 
-Xamarin
+#### <a name="xamarin"></a>Xamarin
 ```CSharp 
 var scopes = new [] {"https://graph.microsoft.com/.default"};
 ```
 
-## <a name="acquiring-tokens"></a>Приобретения токенов
+## <a name="get-tokens"></a>Получение маркеров
 
 ### <a name="via-msal"></a>с помощью MSAL
 
-MSAL позволяет приложениям получать маркеры, в автоматическом режиме и интерактивном режиме. Просто вызывать эти методы и MSAL обратно возвращает маркер доступа для области, запрашиваемые. Правильный шаблон — это выполнить автоматический запрос и переход к интерактивный запрос.
+MSAL позволяет приложениям получать маркеры, в автоматическом режиме и интерактивном режиме. Просто вызывать эти методы и MSAL возвращает маркер доступа для запрошенной области. Правильный шаблон — выполнить автоматический запрос и переключиться на интерактивный запрос.
 
 #### <a name="android"></a>Android
 
@@ -61,32 +61,32 @@ PublicClientApplication sampleApp = new PublicClientApplication(
                     this.getApplicationContext(),
                     R.raw.auth_config);
 
-// Check if there are any accounts we can sign in silently
-// Result is in our silent callback (success or error)
+// Check if there are any accounts we can sign in silently.
+// Result is in the silent callback (success or error).
 sampleApp.getAccounts(new PublicClientApplication.AccountsLoadedCallback() {
     @Override
     public void onAccountsLoaded(final List<IAccount> accounts) {
 
         if (accounts.isEmpty() && accounts.size() == 1) {
-            // TODO: Create a silent callback to catch successful or failed request
+            // TODO: Create a silent callback to catch successful or failed request.
             sampleApp.acquireTokenSilentAsync(SCOPES, accounts.get(0), getAuthSilentCallback());
         } else {
-            /* No accounts or >1 account */
+            /* No accounts or > 1 account. */
         }
     }
 });    
 
 [...]
 
-// No accounts found, interactively request a token 
-// TODO: Create an interactive callback to catch successful or failed request
+// No accounts found. Interactively request a token.
+// TODO: Create an interactive callback to catch successful or failed request.
 sampleApp.acquireToken(getActivity(), SCOPES, getAuthInteractiveCallback());        
 ```
 
 #### <a name="ios"></a>iOS
 
 ```swift
-// Initialize our app 
+// Initialize the app.
 guard let authorityURL = URL(string: kAuthority) else {
     self.loggingText.text = "Unable to create authority URL"
     return
@@ -95,14 +95,14 @@ let authority = try MSALAADAuthority(url: authorityURL)
 let msalConfiguration = MSALPublicClientApplicationConfig(clientId: kClientID, redirectUri: nil, authority: authority)
 self.applicationContext = try MSALPublicClientApplication(configuration: msalConfiguration)
 
-// Get tokens
+// Get tokens.
 let parameters = MSALSilentTokenParameters(scopes: kScopes, account: account)
 applicationContext.acquireTokenSilent(with: parameters) { (result, error) in
     if let error = error {
         let nsError = error as NSError
 
-        // interactionRequired means we need to ask the user to sign-in. This usually happens
-        // when the user's Refresh Token is expired or if the user has changed their password
+        // interactionRequired means you need to ask the user to sign in. This usually happens
+        // when the user's refresh token is expired or when the user has changed the password,
         // among other possible reasons.
         if (nsError.domain == MSALErrorDomain) {
             if (nsError.code == MSALError.interactionRequired.rawValue) {    
@@ -136,7 +136,7 @@ applicationContext.acquireTokenSilent(with: parameters) { (result, error) in
         return
     }
 
-    // Token is ready via silent acquisition 
+    // Token is ready via silent acquisition.
     self.accessToken = result.accessToken
 }
 ```
@@ -160,13 +160,13 @@ catch(MsalUiRequiredException e)
 }
 ```
 
-### <a name="via-protocol"></a>с помощью протокола
+### <a name="via-the-protocol"></a>С помощью протокола
 
-Мы не рекомендуем переход непосредственно для соответствующего протокола. Ваше приложение не сможет единый вход (SSO) большинства и не будет поддерживать все управление устройствами и сценариев условного доступа.
+Мы не рекомендуем напрямую с помощью протокола. В противном случае приложение не будет поддерживать некоторые единого входа (SSO), управления устройствами и сценариев условного доступа.
 
-При получении маркеров для мобильных приложений с помощью протокола, вам потребуется для выполнения запросов в 2: получение кода авторизации и его обмена на маркер. 
+При использовании протокола для получения маркеров для мобильных приложений, необходимо внести два запроса: получение кода авторизации и его обмена на маркер.
 
-#### <a name="getting-authorization-code"></a>Получение кода авторизации
+#### <a name="get-authorization-code"></a>Получить код авторизации
 
 ```Text
 https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize?
@@ -178,7 +178,7 @@ client_id=<CLIENT_ID>
 &state=12345
 ```
 
-#### <a name="getting-access-and-refresh-token"></a>Получение маркера доступа и обновления
+#### <a name="get-access-and-refresh-token"></a>Получение токена доступа и обновления
 
 ```Text
 POST /{tenant}/oauth2/v2.0/token HTTP/1.1

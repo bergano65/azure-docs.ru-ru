@@ -10,12 +10,12 @@ ms.subservice: implement
 ms.date: 05/01/2019
 ms.author: twounder
 ms.reviewer: igorstan
-ms.openlocfilehash: 1144115ad349879d097062e44226dd2ffcf9b48e
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 5bab83c2cb3874ad662ad54a9646cc3fc406046e
+ms.sourcegitcommit: 179918af242d52664d3274370c6fdaec6c783eb6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65154169"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65561359"
 ---
 # <a name="t-sql-statements-supported-in-azure-sql-data-warehouse"></a>Инструкции T-SQL, поддерживаемые в хранилище данных SQL Azure
 Ссылки на документацию по инструкциям T-SQL, поддерживаемым в хранилище данных SQL Azure.
@@ -52,6 +52,7 @@ ms.locfileid: "65154169"
 * [DROP VIEW](https://msdn.microsoft.com/library/ms173492.aspx)
 * [DROP КЛАССИФИКАТОРА РАБОЧЕЙ НАГРУЗКИ](/sql/t-sql/statements/drop-workload-classifier-transact-sql)
 * [RENAME](https://msdn.microsoft.com/library/mt631611.aspx)
+* [НАБОР RESULT_SET_CACHING](/sql/t-sql/statements/set-statements-transact-sql) (Предварительная версия)
 * [TRUNCATE TABLE](https://msdn.microsoft.com/library/ms177570.aspx)
 * [UPDATE STATISTICS](https://msdn.microsoft.com/library/ms187348.aspx)
 
@@ -88,7 +89,7 @@ ms.locfileid: "65154169"
 * [Вложенные запросы](https://msdn.microsoft.com/library/mt631613.aspx)
 
 ## <a name="security-statements"></a>Инструкции по безопасности
-* Разрешения. [GRANT](https://msdn.microsoft.com/library/ms187965.aspx), [DENY](https://msdn.microsoft.com/library/ms188338.aspx), [REVOKE](https://msdn.microsoft.com/library/ms187728.aspx)
+* Разрешения: [GRANT](https://msdn.microsoft.com/library/ms187965.aspx), [DENY](https://msdn.microsoft.com/library/ms188338.aspx), [REVOKE](https://msdn.microsoft.com/library/ms187728.aspx)
 * [ALTER AUTHORIZATION](https://msdn.microsoft.com/library/ms187359.aspx)
 * [ALTER CERTIFICATE](https://msdn.microsoft.com/library/ms189511.aspx)
 * [ALTER DATABASE ENCRYPTION KEY](https://msdn.microsoft.com/library/bb630389.aspx)

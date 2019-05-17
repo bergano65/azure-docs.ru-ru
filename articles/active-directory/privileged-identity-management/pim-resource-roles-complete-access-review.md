@@ -15,12 +15,12 @@ ms.date: 04/02/2018
 ms.author: rolyon
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8a310770f26a1c40682791582a05a9bb4c47a42d
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: aee8ac3c2638ede559f8a1f9c51f2d6e62604998
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65141025"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65602298"
 ---
 # <a name="complete-an-access-review-of-azure-resource-roles-in-pim"></a>Завершение проверки доступа для ролей ресурсов Azure в PIM
 После [запуска проверки доступа](pim-resource-roles-start-access-review.md) администраторы привилегированных ролей могут проверить привилегированный доступ. Azure Active Directory (Azure AD) Privileged Identity Management (PIM) автоматически отправляет сообщение электронной почты с запросом на проверку доступа. Если пользователь не получил электронное письмо, ему можно отправить [инструкции по выполнению проверки доступа](pim-resource-roles-perform-access-review.md).
@@ -33,18 +33,18 @@ ms.locfileid: "65141025"
 2. Выберите ресурс.
 
 3. Выберите раздел **Проверки доступа** на панели мониторинга.
-![Проверки доступа](media/azure-pim-resource-rbac/rbac-access-review-home-list.png)
+![Проверки доступа](media/pim-resource-roles-complete-access-review/rbac-access-review-home-list.png)
 
 4. Выберите необходимую проверку доступа.
 
 В колонке со сведениями о проверке доступа отобразятся параметры для управления проверкой. Вот они:
 
-![Параметры для управления проверкой](media/azure-pim-resource-rbac/rbac-access-review-menu.png)
+![Параметры для управления проверкой](media/pim-resource-roles-complete-access-review/rbac-access-review-menu.png)
 
 ### <a name="stop"></a>Остановить
 Все проверки доступа имеют дату окончания, но можно воспользоваться кнопкой **Остановить** , чтобы завершить их выполнение раньше. Все пользователи, по которым еще не закончилась проверка к этому времени, не смогут ее пройти после остановки. Нельзя перезапустить проверку после ее остановки.
 
-### <a name="reset"></a>Reset
+### <a name="reset"></a>Сброс
 Вы можете сбросить проверку доступа, чтобы удалить все соответствующие решения. После сброса проверки доступа все пользователи будут отмечены как непросмотренные. 
 
 ### <a name="apply"></a>Применить
@@ -55,11 +55,11 @@ ms.locfileid: "65141025"
 
 ## <a name="results"></a>Результаты
 На вкладке **Результаты** просмотрите и скачайте список результатов проверки. 
-![Вкладка результатов](media/azure-pim-resource-rbac/rbac-access-review-results.png)
+![Вкладка результатов](media/pim-resource-roles-complete-access-review/rbac-access-review-results.png)
 
 ## <a name="reviewers"></a>Рецензенты
 Просмотрите и добавьте рецензентов в существующие проверки доступа. Напомните рецензентам выполнить проверки.
-![Добавить рецензентов](media/azure-pim-resource-rbac/rbac-access-review-reviewers.png)
+![Добавить рецензентов](media/pim-resource-roles-complete-access-review/rbac-access-review-reviewers.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

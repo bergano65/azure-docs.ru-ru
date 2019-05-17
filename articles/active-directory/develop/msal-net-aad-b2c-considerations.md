@@ -4,7 +4,7 @@ description: Дополнительные сведения о специальн
 services: active-directory
 documentationcenter: dev-center-name
 author: rwike77
-manager: celested
+manager: CelesteDG
 editor: ''
 ms.service: active-directory
 ms.subservice: develop
@@ -17,12 +17,12 @@ ms.author: ryanwi
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5c608518a9eb80d807297f010778ae452c0f61f5
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.openlocfilehash: 6c26a5007c2dcaa5d41be46f685f0f259866ca2c
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65075780"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65544061"
 ---
 # <a name="use-msalnet-to-sign-in-users-with-social-identities"></a>Использовать MSAL.NET выполнять вход пользователей с удостоверениями социальных сетей
 
@@ -78,7 +78,7 @@ AuthenticationResult ar = await application .AcquireToken(scopes, parentWindow)
 на:
 
 - `policy` выполняется одна из предыдущих строк (например `PolicySignUpSignIn`).
-- `GetAccountByPolicy(IEnumerable<IAccount>, string)` — Это метод, который находит учетную запись для данной политики. Например: 
+- `GetAccountByPolicy(IEnumerable<IAccount>, string)` — Это метод, который находит учетную запись для данной политики. Например:
 
   ```csharp
   private IAccount GetAccountByPolicy(IEnumerable<IAccount> accounts, string policy)
@@ -183,6 +183,6 @@ AcquireTokenByUsernamePassword(
 
 Дополнительные сведения о получении маркеров в интерактивном режиме с помощью MSAL.NET для приложений Azure AD B2C, приведены в следующем примере.
 
-| Образец | платформа | ОПИСАНИЕ|
+| Образец | платформа | Описание|
 |------ | -------- | -----------|
 |[active-directory-b2c-xamarin-native](https://github.com/Azure-Samples/active-directory-b2c-xamarin-native) | Xamarin iOS, Xamarin Android, универсальной платформы Windows | Простое приложение Xamarin Forms, с отображением как с помощью MSAL.NET аутентификации пользователей с помощью Azure AD B2C и получить доступ к веб-API с помощью полученных маркеров.|

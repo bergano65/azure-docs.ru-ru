@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 04/16/2019
 ms.custom: seodec18
-ms.openlocfilehash: 3de444d509684f0b4227abe91ec3c967f2bf8f03
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 6fd9ce1947b8207aced44204fc2989622a1998f2
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64926284"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65761922"
 ---
 # <a name="azure-disk-encryption-for-iaas-vms-faq"></a>Часто задаваемые вопросы о шифровании дисков Azure для виртуальных машин IaaS
 
@@ -59,15 +59,10 @@ Server дистрибутивы Linux не поддерживается в Azure
 | CentOS | 7.4 | Диск операционной системы и данных |
 | CentOS | 7.3 | Диск операционной системы и данных |
 | CentOS | 7.2n | Диск операционной системы и данных |
-| CentOS | 6,8 | Диск операционной системы и данных |
-| CentOS | 7.1. | Диск данных |
-| CentOS | 7.0 | Диск данных |
-| CentOS | 6.7 | Диск данных |
-| CentOS | 6.6 | Диск данных |
-| CentOS | 6,5 | Диск данных |
-| openSUSE | 42.3 | Диск данных |
-| SLES | 12-SP4 | Диск данных |
-| SLES | 12-SP3 | Диск данных |
+| CentOS | 6,8 | Диск с данными |
+| openSUSE | 42.3 | Диск с данными |
+| SLES | 12-SP4 | Диск с данными |
+| SLES | 12-SP3 | Диск с данными |
 
 > [!NOTE]
 > Новая реализация ADE поддерживается для RHEL ОС и диска данных для образов RHEL7 оплаты по мере использования. Для образов RHEL, предоставляемых по подписке, ADE пока не поддерживается. Ознакомьтесь также с [шифрования дисков Azure для Linux](azure-security-disk-encryption-linux.md) для получения дополнительной информации. __
@@ -158,7 +153,7 @@ Server дистрибутивы Linux не поддерживается в Azure
 Нет. Данные не удаляются из дисков, которые уже зашифрованы с помощью службы шифрования дисков Azure. Так же как и в случае с диском ОС, параметр EncryptFormatAll не шифрует повторно уже зашифрованные диски данных. Дополнительные сведения см. в разделе [Использование параметра EncryptFormatAll с Azure CLI](azure-security-disk-encryption-linux.md#bkmk_EFACriteria).        
 
 ## <a name="is-xfs-filesystem-supported"></a>Файловая система XFS поддерживается?
-XFS тома поддерживаются для шифрования дисков данных только с EncryptFormalAll. Это будет переформатировать тома, стирание данных существует ранее. Дополнительные сведения см. в разделе [Использование параметра EncryptFormatAll с Azure CLI](azure-security-disk-encryption-linux.md#bkmk_EFACriteria).
+XFS тома поддерживаются для шифрования дисков данных только с EncryptFormatAll. Это будет переформатировать тома, стирание данных существует ранее. Дополнительные сведения см. в разделе [Использование параметра EncryptFormatAll с Azure CLI](azure-security-disk-encryption-linux.md#bkmk_EFACriteria).
 
 ## <a name="can-i-backup-and-restore-an-encrypted-vm"></a>Можно ли резервное копирование и восстановление зашифрованной виртуальной Машины? 
 

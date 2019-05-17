@@ -3,8 +3,8 @@ title: Приложения с подстановочным знаком в пр
 description: Узнайте, как использовать приложения с подстановочным знаком в прокси приложения Azure Active Directory.
 services: active-directory
 documentationcenter: ''
-author: CelesteDG
-manager: mtillman
+author: msmimart
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
@@ -12,16 +12,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 09/06/2018
-ms.author: celested
+ms.author: mimart
 ms.reviewer: harshja
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5fb57052cc550a659dcd8a514fbb71ad0f7d8df5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: fc82f69c8dee4cc8c45e9fcf7fbf6fa184ad72b6
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60442493"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65783050"
 ---
 # <a name="wildcard-applications-in-the-azure-active-directory-application-proxy"></a>Приложения с подстановочным знаком в прокси приложения Azure Active Directory 
 
@@ -55,7 +55,7 @@ ms.locfileid: "60442493"
 
 ## <a name="prerequisites"></a>Технические условия
 
-### <a name="custom-domains"></a>Личные домены
+### <a name="custom-domains"></a>Пользовательские домены
 
 Хотя [личные домены](application-proxy-configure-custom-domain.md) не являются обязательными для других приложений, они являются необходимым условием для создания приложений с подстановочным знаком. Для создания личных доменов необходимо:
 
@@ -169,7 +169,7 @@ ms.locfileid: "60442493"
 
 ![AppId](./media/application-proxy-wildcard/05.png)
 
-| Цвет | ОПИСАНИЕ |
+| Цвет | Описание |
 | ---   | ---         |
 | Синий  | Приложения явным образом опубликованы и доступны на портале Azure. |
 | Серый  | Приложения доступны через родительское приложение. |

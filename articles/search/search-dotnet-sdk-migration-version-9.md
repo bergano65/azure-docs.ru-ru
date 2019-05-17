@@ -7,17 +7,17 @@ services: search
 ms.service: search
 ms.devlang: dotnet
 ms.topic: conceptual
-ms.date: 05/06/2019
+ms.date: 05/10/2019
 ms.author: brjohnst
 ms.custom: seodec2018
-ms.openlocfilehash: f540bc304920073bcd823adcf6c9dd47cb2cf93b
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: a59deed4ac0cec669ddc5e0335f7274586c702e8
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65159755"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65541761"
 ---
-# <a name="upgrading-to-the-azure-search-net-sdk-version-9"></a>Обновление до SDK .NET для поиска Azure версии 9
+# <a name="upgrade-to-the-azure-search-net-sdk-version-9"></a>Обновление до SDK .NET для поиска Azure версии 9
 
 Если вы используете версию предварительной версии 7.0 или более раннюю [пакет SDK Azure Search .NET](https://aka.ms/search-sdk), эта статья поможет вам обновить приложение для использования версии 9.
 
@@ -70,7 +70,7 @@ ms.locfileid: "65159755"
 > [!NOTE]
 > Список изменений ниже не является исчерпывающим. Некоторые изменения, скорее всего не приведет к ошибкам построения, но технически являются критическими, так как они нарушают совместимость двоичных данных с использованием сборок, которые зависят от более ранних версий сборок пакета SDK для .NET для поиска Azure. Такие изменения не перечислены ниже. Повторите сборку приложения, при обновлении до версии 9, чтобы избежать проблем совместимости.
 
-### <a name="making-properties-immutable"></a>Что делает Неизменяемые свойства
+### <a name="immutable-properties"></a>Неизменяемые свойства
 
 Открытые свойства из нескольких классов модели теперь являются неизменяемыми. Если необходимо создать пользовательские экземпляры этих классов для тестирования, можно использовать новый параметризованные конструкторы:
 
@@ -103,7 +103,7 @@ ms.locfileid: "65159755"
 
 Конструктор без параметров `Field` стала `internal`. Теперь каждый `Field` требуется явный тип имени и данных во время конструирования.
 
-### <a name="simplification-of-batch-and-results-types"></a>Упрощение типов пакетной службы и результаты
+### <a name="simplified-batch-and-results-types"></a>Упрощенное типы пакетной службы и результаты
 
 В версии предварительной версии 7.0 и более ранних версий различные классы, которые инкапсулируют групп документов были структурированные в иерархии классов параллельных:
 
@@ -118,7 +118,7 @@ ms.locfileid: "65159755"
 
 Начиная с версии 8.0-preview, базовых классов и производных классах неуниверсальных удалены. Для динамических типов сценариев, можно использовать `IndexBatch<Document>`, `DocumentSearchResult<Document>`, и т. д.
  
-### <a name="removal-of-extensibleenum"></a>Удаление ExtensibleEnum
+### <a name="removed-extensibleenum"></a>Удален ExtensibleEnum
 
 `ExtensibleEnum` Базовый класс был удален. Все классы, производные от него теперь являются структурами, такие как `AnalyzerName`, `DataType`, и `DataSourceType` для примера. Их `Create` методы также будут удалены. Можно просто удалить вызовы `Create` так, как эти типы неявно преобразуются из строк. Если, приводит к ошибкам компилятора, можно явным образом вызвать оператор преобразования с помощью приведения для однозначного определения типов. Например можно изменить код следующим образом:
 
@@ -150,9 +150,9 @@ var index = new Index()
 
 Свойства, которые удерживаются необязательных значений из этих типов теперь явно типизированы как допускающие значение NULL, они продолжают быть необязательным.
 
-### <a name="removal-of-facetresults-and-hithighlights"></a>Удаление FacetResults и HitHighlights
+### <a name="removed-facetresults-and-hithighlights"></a>Удален FacetResults и HitHighlights
 
-`FacetResults` И `HitHighlights` классы были удалены. Теперь имеют тип аспекта результаты `IDictionary<string, IList<FacetResult>>` и выделяет попадание в качестве `IDictionary<string, IList<string>>`. Быстро для устранения ошибок сборки, представленное в это изменение, чтобы добавить `using` псевдонимы в верхней части каждого файла, который использует эти типы. Например: 
+`FacetResults` И `HitHighlights` классы были удалены. Теперь имеют тип аспекта результаты `IDictionary<string, IList<FacetResult>>` и выделяет попадание в качестве `IDictionary<string, IList<string>>`. Быстро для устранения ошибок сборки, представленное в это изменение, чтобы добавить `using` псевдонимы в верхней части каждого файла, который использует эти типы. Например:
 
 ```csharp
 using FacetResults = System.Collections.Generic.IDictionary<string, System.Collections.Generic.IList<Models.FacetResult>>;

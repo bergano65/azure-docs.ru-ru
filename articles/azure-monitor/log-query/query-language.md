@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 01/11/2019
 ms.author: bwren
-ms.openlocfilehash: ecbea91cef69c80975dd105c35f526b357033a6b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 6fae245e4d72f7f6f7809d85da17023deb1518e5
+ms.sourcegitcommit: 179918af242d52664d3274370c6fdaec6c783eb6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61425968"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65560853"
 ---
 # <a name="azure-monitor-log-queries"></a>Запросы к журналу в Azure Monitor
 Журналы Azure Monitor построены на базе Azure Data Explorer, поэтому для работы с журналом Azure Monitor используется такой же язык запросов Kusto. См. дополнительные сведения обо всех возможностях языка в [документации по языку запросов Kusto](/azure/kusto/query) — основном источнике информации по созданию запросов к журналам в Azure Monitor. Эта страница содержит ссылки на другие ресурсы с информацией о создании запросов и описание отличий в разных вариантах реализации языка запросов для Azure Monitor.
@@ -48,7 +48,7 @@ ms.locfileid: "61425968"
 
 
 
-## <a name="lessons"></a>Уроки
+## <a name="lessons"></a>Занятия
 
 - В статье о [работе со строками в запросах к журналам Azure Monitor](string-operations.md) описано использование строковых данных.
 - В статье о [работе со значениями даты и времени в запросах к журналам Azure Monitor](datetime-operations.md) описано использование данных в формате даты и времени. 
@@ -61,7 +61,7 @@ ms.locfileid: "61425968"
 ## <a name="cheatsheets"></a>Памятки
 
 -  Статья об [SQL-запросах к журналам Azure Monitor](sql-cheatsheet.md) предназначена для пользователей, которые уже знакомы с SQL.
--  Статья о [Splunk-запросах к журналу Azure Monitor](sql-cheatsheet.md) предназначена для пользователей, которые уже знакомы со Splunk.
+-  Статья о [Splunk-запросах к журналу Azure Monitor](splunk-cheatsheet.md) предназначена для пользователей, которые уже знакомы со Splunk.
  
 ## <a name="next-steps"></a>Дальнейшие действия
 

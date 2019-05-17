@@ -3,8 +3,8 @@ title: Типы приложений для платформы удостове�
 description: Типы приложений и сценарии, поддерживаемые на конечной точке Microsoft identity платформы (версии 2.0).
 services: active-directory
 documentationcenter: ''
-author: CelesteDG
-manager: mtillman
+author: rwike77
+manager: CelesteDG
 editor: ''
 ms.assetid: 494a06b8-0f9b-44e1-a7a2-d728cf2077ae
 ms.service: active-directory
@@ -14,16 +14,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 04/06/2019
-ms.author: celested
+ms.author: ryanwi
 ms.reviewer: saeeda, jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 562b45f30bf057feba38a716e040ab2efc15da90
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 3ec10359c6f684b1d7fb008946b7ceca2ed626ba
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60297160"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65545360"
 ---
 # <a name="application-types-for-microsoft-identity-platform"></a>Типы приложений для платформы удостоверений Microsoft
 
@@ -59,7 +59,7 @@ https://login.microsoftonline.com/common/oauth2/v2.0/token
 
 Чтобы увидеть этот сценарий в действии, изучите один из примеров кода одностраничного приложения в [платформы удостоверений Microsoft Приступая к работе](v2-overview.md#getting-started) раздел.
 
-## <a name="web-apps"></a>веб-приложений:
+## <a name="web-apps"></a>Веб-приложения
 
 Для веб-приложений (.NET, PHP, Java, Ruby, Python, Node), доступных пользователю через браузер, для входа пользователей можно использовать [OpenID Connect](active-directory-v2-protocols.md). В OpenID Connect веб-приложение получает маркер идентификации. Это маркер безопасности, который проверяет удостоверение пользователя и предоставляет сведения о пользователе в форме утверждений.
 

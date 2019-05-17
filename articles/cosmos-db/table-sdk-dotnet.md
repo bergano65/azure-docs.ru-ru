@@ -8,12 +8,12 @@ ms.subservice: cosmosdb-table
 ms.devlang: dotnet
 ms.topic: reference
 ms.date: 08/17/2018
-ms.openlocfilehash: 506f623fe928cf122a16630844996c981cc20e9e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: db7cc556525ab57f14984232bf1797764865fca3
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60330352"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65606259"
 ---
 # <a name="azure-cosmos-db-table-net-api-download-and-release-notes"></a>API таблиц .NET для базы данных Azure Cosmos DB: скачивание и заметки о выпуске
 
@@ -33,6 +33,8 @@ ms.locfileid: "60330352"
 |**Текущая поддерживаемая платформа**|[Microsoft .NET Framework 4.5.1](https://www.microsoft.com/en-us/download/details.aspx?id=40779)|
 
 > [!IMPORTANT]
+> Пакет SDK для .NET Framework [Microsoft.Azure.CosmosDB.Table](https://www.nuget.org/packages/Microsoft.Azure.CosmosDB.Table) находится в состоянии обслуживания режим и скоро будет прекращена. Выполните обновление до новой библиотеки .NET Standard [Microsoft.Azure.Cosmos.Table](https://www.nuget.org/packages/Microsoft.Azure.Cosmos.Table) продолжать получать последние функции, поддерживаемые API таблиц.
+
 > Если вы создали учетную запись API таблиц на этапе работы с предварительной версией, для работы с общедоступными пакетами SDK для API таблиц создайте [новую учетную запись](create-table-dotnet.md#create-a-database-account).
 >
 
@@ -75,22 +77,22 @@ ms.locfileid: "60330352"
 
 Корпорация Майкрософт отправляет уведомление минимум за **12 месяцев** до вывода пакета SDK из эксплуатации, чтобы обеспечить более плавный переход на новую или поддерживаемую версию.
 
-Предварительная версия пакета [WindowsAzure.Storage PremiumTable](https://www.nuget.org/packages/WindowsAzure.Storage-PremiumTable/0.1.0-preview) отмечена как нерекомендуемая и заменена на пакет [Microsoft.Azure.CosmosDB.Table](https://www.nuget.org/packages/Microsoft.Azure.CosmosDB.Table). Поддержка пакета SDK WindowsAzure.Storage PremiumTable будет прекращена 15 ноября 2018 г. С этого времени запросы к устаревшему пакету SDK будут запрещены. На данный момент библиотека `Microsoft.Azure.CosmosDB.Table` доступна только для .NET Standard и недоступна для .NET Core.
+`Microsoft.Azure.CosmosDB.Table` Библиотека доступна для .NET Framework и находится в режиме обслуживания и скоро будет прекращена. Новые функции и функциональные возможности и оптимизации добавляются только библиотеку .NET Standard [Microsoft.Azure.Cosmos.Table](https://www.nuget.org/packages/Microsoft.Azure.Cosmos.Table), как такие рекомендуется обновиться до [Microsoft.Azure.Cosmos.Table](https://www.nuget.org/packages/Microsoft.Azure.Cosmos.Table).
 
-Новые функции, возможности и оптимизации добавляются только в текущую версию пакета SDK, поэтому рекомендуется как можно раньше обновлять пакет SDK до последней версии. 
+[WindowsAzure.Storage-PremiumTable](https://www.nuget.org/packages/WindowsAzure.Storage-PremiumTable/0.1.0-preview) Предварительная версия пакета является устаревшим. Поддержка пакета SDK WindowsAzure.Storage PremiumTable будет прекращена 15 ноября 2018 г. С этого времени запросы к устаревшему пакету SDK будут запрещены. 
 
 Любые запросы к базе данных Azure Cosmos DB с помощью выведенного из эксплуатации пакета SDK отклоняются службой.
 <br/>
 
 | Version | Дата выпуска | Дата вывода |
 | --- | --- | --- |
-| [2.1.0](#2.1.0) |22 января 2019 г.|--- |
-| [2.0.0](#2.0.0) |26 сентября 2018 г.|--- |
-| [1.1.3](#1.1.3) |17 июля 2018 г.|--- |
-| [1.1.1](#1.1.1) |26 марта 2018 г.|--- |
-| [1.1.0](#1.1.0) |21 февраля 2018 г.|--- |
-| [1.0.0](#1.0.0) |15 ноября 2017 г.|--- |
-| 0.9.0 (предварительная версия) |11 ноября 2017 г. |--- |
+| [2.1.0](#2.1.0) |22 января 2019 г.|01 апреля 2020 г. |
+| [2.0.0](#2.0.0) |26 сентября 2018 г.|01 марта 2020 г. |
+| [1.1.3](#1.1.3) |17 июля 2018 г.|01 декабря 2019 г. |
+| [1.1.1](#1.1.1) |26 марта 2018 г.|01 декабря 2019 г. |
+| [1.1.0](#1.1.0) |21 февраля 2018 г.|01 декабря 2019 г. |
+| [1.0.0](#1.0.0) |15 ноября 2017 г.|15 ноября 2019 г. |
+| 0.9.0 (предварительная версия) |11 ноября 2017 г. |11 ноября 2019 г. |
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 

@@ -2,23 +2,23 @@
 title: Настройка утверждений, добавляемых в токены для определенных служб в клиенте Azure AD (общедоступная предварительная версия)
 description: На этой странице описываются сопоставления утверждений Azure Active Directory.
 services: active-directory
-author: CelesteDG
-manager: mtillman
+author: rwike77
+manager: CelesteDG
 ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 03/28/2019
-ms.author: celested
+ms.author: ryanwi
 ms.reviewer: paulgarn, hirsin, jeedes, luleon
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2076aec1585ff8b60ee2b593621b75abfaeaa1ac
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 8b770ee476fc5c1c334f53904539cc34cf962c62
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60300484"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65546203"
 ---
 # <a name="how-to-customize-claims-emitted-in-tokens-for-a-specific-app-in-a-tenant-preview"></a>Практическое руководство: Настройка утверждений, добавляемых в токены для определенных служб в клиенте (предварительная версия)
 
@@ -44,7 +44,7 @@ ms.locfileid: "60300484"
 
 Существуют определенные наборы утверждений, которые определяют, как и когда они используются в токенах.
 
-| Набор утверждений | ОПИСАНИЕ |
+| Набор утверждений | Описание |
 |---|---|
 | Набор основных утверждений | Имеется в каждом токене, независимо от политики. Эти утверждения также считаются ограниченными, изменить их не удастся. |
 | Набор базовых утверждений | Включает в себя утверждения, которые по умолчанию добавляются в токены (в дополнение к основному набору утверждений). Вы можете опустить или изменить базовые утверждения с помощью политик сопоставления утверждений. |
@@ -105,7 +105,7 @@ ms.locfileid: "60300484"
 | grant_type |
 | graph |
 | group_sids |
-| groups |
+| групп |
 | hasgroups |
 | hash_alg |
 | home_oid |
@@ -156,10 +156,10 @@ ms.locfileid: "60300484"
 | refresh_token |
 | refreshtoken |
 | request_nonce |
-| resource |
-| role |
-| roles |
-| scope |
+| Ресурс |
+| роль |
+| роли |
+| область |
 | scp |
 | sid |
 | signature |
@@ -177,7 +177,7 @@ ms.locfileid: "60300484"
 | unique_name |
 | upn |
 | user_setting_sync_url |
-| Имя пользователя |
+| username |
 | uti |
 | ver |
 | verified_primary_email |
@@ -284,13 +284,13 @@ ms.locfileid: "60300484"
 
 #### <a name="table-3-valid-id-values-per-source"></a>Таблица 3. Допустимый идентификатор значения для источника
 
-| Источник | ИД | ОПИСАНИЕ |
+| `Source` | ИД | Описание |
 |-----|-----|-----|
 | Пользователь | surname | Фамилия |
 | Пользователь | givenname | Заданное имя |
-| Пользователь | displayname | Отображаемое имя |
+| Пользователь | displayname | Название |
 | Пользователь | objectid | ObjectID |
-| Пользователь | mail | Электронная почта |
+| Пользователь | почта | Электронная почта |
 | Пользователь | userprincipalname | Имя участника-пользователя |
 | Пользователь | department|Department|
 | Пользователь | onpremisessamaccountname | Имя локальной учетной записи SAM |
@@ -321,13 +321,13 @@ ms.locfileid: "60300484"
 | Пользователь | othermail | Остальные сообщения |
 | Пользователь | country | Страна |
 | Пользователь | city | City |
-| Пользователь | state | Состояние |
+| Пользователь | состояние | Состояние |
 | Пользователь | jobtitle | Должность |
 | Пользователь | employeeid | Код сотрудника |
 | Пользователь | facsimiletelephonenumber | Номер телефона, факса |
-| application, resource, audience | displayname | Отображаемое имя |
+| application, resource, audience | displayname | Название |
 | application, resource, audience | objected | ObjectID |
-| application, resource, audience | tags | Тег субъекта-службы |
+| application, resource, audience | теги | Тег субъекта-службы |
 | Компания | tenantcountry | Страна клиента |
 
 **TransformationID:** элемент TransformationID нужно указывать, только если для элемента "Источник" задано значение "transformation".
@@ -358,10 +358,10 @@ ms.locfileid: "60300484"
 
 #### <a name="table-4-transformation-methods-and-expected-inputs-and-outputs"></a>Таблица 4. Методы преобразования, ожидаемые входные и выходные данные
 
-|TransformationMethod|Ожидаемые входные данные|Ожидаемые выходные данные|ОПИСАНИЕ|
+|TransformationMethod|Ожидаемые входные данные|Ожидаемые выходные данные|Описание|
 |-----|-----|-----|-----|
 |Объединение|строка 1, строка 2, разделитель|outputClaim|Объединение входных строк с помощью разделителя между ними. Например, результатом строка 1:"foo@bar.com", строка 2:"sandbox", разделитель:"." будет outputClaim:"foo@bar.com.sandbox"|
-|ExtractMailPrefix|mail|outputClaim|Извлекает локальную часть адреса электронной почты. Например, результатом mail:"foo@bar.com" будет outputClaim:"foo". Если символ \@ отсутствует, то исходная входная строка возвращается в состоянии "как есть".|
+|ExtractMailPrefix|почта|outputClaim|Извлекает локальную часть адреса электронной почты. Например, результатом mail:"foo@bar.com" будет outputClaim:"foo". Если символ \@ отсутствует, то исходная входная строка возвращается в состоянии "как есть".|
 
 **InputClaims:** элемент InputClaims используется для передачи данных из записи схемы утверждения в преобразование. Он имеет два атрибута: **ClaimTypeReferenceId** и **TransformationClaimType**.
 
@@ -384,9 +384,9 @@ ms.locfileid: "60300484"
 
 #### <a name="table-5-attributes-allowed-as-a-data-source-for-saml-nameid"></a>Таблица 5. Атрибуты, разрешенные в качестве источника данных для идентификатора имени SAML NameID
 
-|Источник|ИД|ОПИСАНИЕ|
+|`Source`|ИД|Описание|
 |-----|-----|-----|
-| Пользователь | mail|Электронная почта|
+| Пользователь | почта|Электронная почта|
 | Пользователь | userprincipalname|Имя участника-пользователя|
 | Пользователь | onpremisessamaccountname|Имя локальной учетной записи SAM|
 | Пользователь | employeeid|Код сотрудника|

@@ -8,16 +8,16 @@ ms.workload: data-services
 ms.tgt_pltfrm: ''
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 3/11/2019
+ms.date: 5/14/2019
 author: swinarko
 ms.author: sawinark
 manager: craigg
-ms.openlocfilehash: 58bdc0e698fc28929c2080b1737770275b1164ad
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
-ms.translationtype: HT
+ms.openlocfilehash: a67436f09d6e28db8d19679e446ac4cf98383709
+ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57848734"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65593803"
 ---
 # <a name="enable-azure-active-directory-authentication-for-azure-ssis-integration-runtime"></a>Включение аутентификации Azure Active Directory для среды выполнения интеграции Azure-SSIS
 
@@ -60,7 +60,7 @@ ms.locfileid: "57848734"
     6de75f3c-8b2f-4bf4-b9f8-78cc60a18050 SSISIrGroup
     ```
 
-3.  Добавьте в группу управляемое удостоверение службы "Фабрика данных Azure". Можно выполнить статьи [identiy управляемый для фабрики данных](https://docs.microsoft.com/azure/data-factory/data-factory-service-identity) получить идентификатор субъекта-УДОСТОВЕРЕНИЯ службы (например 765ad4ab-XXXX-XXXX-XXXX-51ed985819dc, но не использует идентификатор приложения УДОСТОВЕРЕНИЯ службы для этой цели).
+3.  Добавьте в группу управляемое удостоверение службы "Фабрика данных Azure". Статьи можно выполнить [identiy управляемый для фабрики данных](https://docs.microsoft.com/azure/data-factory/data-factory-service-identity) для получения участника управляемого удостоверения идентификатор объекта (например 765ad4ab-XXXX-XXXX-XXXX-51ed985819dc, но не использует управляемые идентификатор приложения удостоверения для этой цели).
 
     ```powershell
     Add-AzureAdGroupMember -ObjectId $Group.ObjectId -RefObjectId 765ad4ab-XXXX-XXXX-XXXX-51ed985819dc
@@ -170,12 +170,12 @@ ms.locfileid: "57848734"
 
 4.  Щелкните правой кнопкой мыши базу данных **master** и выберите **Создать запрос**.
 
-5.  Получение управляемого удостоверения для ADF. Статьи можно выполнить [identiy управляемый для фабрики данных](https://docs.microsoft.com/azure/data-factory/data-factory-service-identity) для получения основной идентификатор приложения УДОСТОВЕРЕНИЯ службы (но не используйте идентификатор УДОСТОВЕРЕНИЯ службы для этой цели).
+5.  Получение управляемого удостоверения для ADF. Можно выполнить статьи [identiy управляемый для фабрики данных](https://docs.microsoft.com/azure/data-factory/data-factory-service-identity) для get управляемого удостоверения приложения идентификатор участника (но не используйте управляемые идентификатор объекта удостоверения для этой цели).
 
 6.  В окне запроса выполните следующий сценарий T-SQL, чтобы преобразовать управляемое удостоверение для ADF в двоичный код:
 
     ```sql
-    DECLARE @applicationId uniqueidentifier = '{your SERVICE IDENTITY APPLICATION ID}'
+    DECLARE @applicationId uniqueidentifier = '{your Managed Identity Application ID}'
     select CAST(@applicationId AS varbinary)
     ```
     
@@ -184,7 +184,7 @@ ms.locfileid: "57848734"
 7.  Удалите данные в окне запроса и выполните следующий сценарий T-SQL, чтобы добавить управляемое удостоверение для ADF в качестве пользователя:
 
     ```sql
-    CREATE LOGIN [{a name for the managed identity}] FROM EXTERNAL PROVIDER with SID = {your SERVICE IDENTITY APPLICATION ID as binary}, TYPE = E
+    CREATE LOGIN [{a name for the managed identity}] FROM EXTERNAL PROVIDER with SID = {your Managed Identity Application ID as binary}, TYPE = E
     ALTER SERVER ROLE [dbcreator] ADD MEMBER [{the managed identity name}]
     ALTER SERVER ROLE [securityadmin] ADD MEMBER [{the managed identity name}]
     ```

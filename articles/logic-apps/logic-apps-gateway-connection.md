@@ -9,12 +9,12 @@ ms.author: estfan
 ms.reviewer: arthii, LADocs
 ms.topic: article
 ms.date: 10/01/2018
-ms.openlocfilehash: 2b9e1c153c3fa9b17145eb6c3c8f3ed02e3bf40f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 0580fe09c2cb6569724a9b4365233a3142645a47
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60304186"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65546272"
 ---
 # <a name="connect-to-on-premises-data-sources-from-azure-logic-apps"></a>Подключение к локальным источникам данных из Azure Logic Apps
 
@@ -36,7 +36,7 @@ ms.locfileid: "60304186"
 
 * Установка шлюза еще не связана с ресурсом шлюза в Azure. Установку шлюза можно связать только с одним ресурсом шлюза, что происходит при создании ресурса шлюза и выборе установки шлюза. Эта привязка делает установку шлюза недоступной для других ресурсов.
 
-* При входе на портал Azure и создании ресурса шлюза необходимо использовать ту же учетную запись входа в систему, которая была использовалась для [установки локального шлюза данных](../logic-apps/logic-apps-gateway-install.md#requirements), и ту же [подписку Azure](https://docs.microsoft.com/azure/architecture/cloud-adoption-guide/adoption-intro/subscription-explainer), которая использовалась для установки этого шлюза. Если у вас еще нет подписки Azure, <a href="https://azure.microsoft.com/free/" target="_blank">получите бесплатную учетную запись Azure</a>.
+* При входе на портал Azure и создании ресурса шлюза необходимо использовать ту же учетную запись входа в систему, которая была использовалась для [установки локального шлюза данных](../logic-apps/logic-apps-gateway-install.md#requirements), и ту же [подписку Azure](https://docs.microsoft.com/azure/architecture/cloud-adoption/governance/resource-consistency/azure-resource-access), которая использовалась для установки этого шлюза. Если у вас еще нет подписки Azure, <a href="https://azure.microsoft.com/free/" target="_blank">получите бесплатную учетную запись Azure</a>.
 
 * Для создания и обслуживания ресурса шлюза на портале Azure [учетной записи службы Windows](../logic-apps/logic-apps-gateway-install.md#windows-service-account) требуются по крайней мере разрешения **участника**. Локальный шлюз данных работает как служба Windows и настроен для использования `NT SERVICE\PBIEgwService` в качестве учетных данных входа службы Windows. 
 

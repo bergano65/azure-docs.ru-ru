@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 05/08/2019
 ms.author: mbullwin
-ms.openlocfilehash: 925ae2dd7b564eece4842cf25cc32b68d9e5c0b6
-ms.sourcegitcommit: 399db0671f58c879c1a729230254f12bc4ebff59
+ms.openlocfilehash: c69e925913d4dcb3a8bec34cbf25dac184ea65c5
+ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65472035"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65595547"
 ---
 # <a name="set-up-application-insights-for-your-aspnet-website"></a>Настройка Application Insights для веб-сайта ASP.NET
 
@@ -28,7 +28,7 @@ ms.locfileid: "65472035"
 ## <a name="prerequisites"></a>Технические условия
 Чтобы добавить Application Insights для веб-сайта ASP.NET, сделайте следующее:
 
-- Установите [Visual Studio 2017 для Windows](https://www.visualstudio.com/downloads/) со следующими рабочими нагрузками:
+- Установка [2019 г. Visual Studio для Windows](https://www.visualstudio.com/downloads/) с указанными ниже рабочими нагрузками:
     - ASP.NET и веб-разработки (не сделаете дополнительных компонентов)
     - Разработка для Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "65472035"
 ## <a name="ide"></a> Шаг 1. Добавление пакета SDK для Application Insights
 
 > [!IMPORTANT]
-> Снимки экрана в этом примере основаны на Visual Studio 2017 версии 15.9.9. Процесс добавления Application Insights зависит от всех версий Visual Studio 2017, а также по типу шаблона ASP.NET. Более старые версии могут иметь альтернативный текст, например «Настроить Application Insights».
+> Снимки экрана в этом примере являются, исходя из Visual Studio 2017 версии 15.9.9 и более поздних версий. Процесс добавления Application Insights зависит от всех версий Visual Studio, а также по типу шаблона ASP.NET. Более старые версии могут иметь альтернативный текст, например «Настроить Application Insights».
 
 Щелкните правой кнопкой мыши имя вашего веб-приложения в обозревателе решений и выберите **добавить** > **Телеметрия Application Insights**
 

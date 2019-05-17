@@ -13,14 +13,14 @@ ms.subservice: data-science-vm
 ms.workload: data-services
 ms.devlang: na
 ms.topic: article
-ms.date: 12/04/2018
+ms.date: 02/22/2019
 ms.author: gokuma
-ms.openlocfilehash: 1f9ee5cf28de8fdb824bebf222e5e8d80e22c34f
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 03bf0833bdc1bda24b9d435dafe329e9a3c8e4b2
+ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64712435"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65596502"
 ---
 # <a name="provision-a-windows-data-science-virtual-machine-on-azure"></a>Подготовка Виртуальной машины Windows для обработки и анализа данных в Azure
 
@@ -69,7 +69,7 @@ ms.locfileid: "64712435"
 * Образ [Linux CentOS](linux-dsvm-intro.md).
 * Выпуск [Windows Server 2012](https://azuremarketplace.microsoft.com/marketplace/apps/microsoft-ads.standard-data-science-vm) Виртуальной машины для обработки и анализа данных. Некоторые средства доступны только в выпуске Windows Server 2016. За исключением этого, сведения в настоящей статье также применимы к выпуску Windows Server 2012.
 
-## <a name="prerequisite"></a>Предварительные требования
+## <a name="prerequisite"></a>Предварительное требование
 
 Чтобы создать Виртуальную машину Майкрософт для обработки и анализа данных, вам потребуется подписка Azure. См. страницу [бесплатной пробной версии Azure](https://azure.com/free).
 
@@ -105,6 +105,8 @@ ms.locfileid: "64712435"
 ## <a name="how-to-access-the-dsvm"></a>Доступ к виртуальной машине DSVM
 
 После создания и подготовки виртуальной машины вы можете подключиться к ней по протоколу удаленного рабочего стола, используя учетную запись администратора, настроенную в разделе **Основные сведения**. Теперь все готово к использованию установленных и настроенных на виртуальной машине средств. Ко многим средствам можно получить доступ через значки на рабочем столе и элементы в меню "Пуск".
+
+Также можно присоединить виртуальную Машину обработки и анализа данных для записных книжек Azure запускать записные книжки Jupyter на виртуальной Машине и обойти ограничения на уровне бесплатная служба. Дополнительные сведения см. в разделе [управление и Настройка проектов записные книжки - уровня вычислений](/azure/notebooks/configure-manage-azure-notebooks-projects.md#compute-tier).
 
 ## <a name="tools-installed-on-the-microsoft-data-science-virtual-machine"></a>Средства, установленные на виртуальной машине Майкрософт для обработки и анализа данных
 
@@ -142,7 +144,7 @@ Anaconda Python 3.6 устанавливается в каталог **C:\Anacon
 
 Ссылки на эти примеры вы увидите на домашней странице записной книжки после входа в Jupyter Notebook с использованием пароля, созданного на предыдущем шаге.
 
-### <a name="visual-studio-community-2017"></a>Visual Studio Community 2017
+### <a name="visual-studio-community-2017"></a>Visual Studio Community 2017
 
 На виртуальной машине DSVM установлена платформа Visual Studio Community. Это бесплатная версия популярной среды IDE корпорации Майкрософт, которую можно использовать для ознакомления и работы в небольших группах. Изучите [условия лицензирования](https://www.visualstudio.com/support/legal/mt171547).
 

@@ -12,12 +12,12 @@ ms.author: bonova
 ms.reviewer: carlrab, jovanpop, sachinp
 manager: craigg
 ms.date: 02/27/2019
-ms.openlocfilehash: e2068283414ef2fabb44e9876f6727cc0fe3530b
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: 9726c589472c9ff6d456c922f88d12071e5ebcaf
+ms.sourcegitcommit: 179918af242d52664d3274370c6fdaec6c783eb6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65233520"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65560576"
 ---
 # <a name="overview-azure-sql-database-managed-instance-resource-limits"></a>Общие сведения об ограничениях ресурсов Управляемого экземпляра Базы данных SQL Azure
 
@@ -56,8 +56,8 @@ ms.locfileid: "65233520"
 | Максимальное количество баз данных на экземпляр | 100 | 100 |
 | Максимальное количество файлов базы данных на экземпляр | До 280 | 32 767 файлов для одной базы данных |
 | Операции ввода-вывода в секунду для данных или журнала (приблизительно) | 500–7,500 МБ/с на каждый файл<br/>\*[Зависит от размера файла](https://docs.microsoft.com/azure/virtual-machines/windows/premium-storage-performance#premium-storage-disk-sizes)| 11-110 тысяч (1375/виртуальное) |
-| Журнал пропускной способности | 22 МБ/с на экземпляр | 3 МБ/с на виртуальное ядро<br/>Max 48 МБ в секунду на один экземпляр|
-| Пропускная способность данных (приблизительно) | 100–250 МБ/с на каждый файл<br/>\*[Зависит от размера файла](https://docs.microsoft.com/azure/virtual-machines/windows/premium-storage-performance#premium-storage-disk-sizes) | 24–48 МБ/с на виртуальное ядро |
+| Журнал пропускной способности | 22 МБ/с на экземпляр | 4 МБ в секунду на виртуальное ядро<br/>Max 48 МБ в секунду на один экземпляр|
+| Пропускная способность данных (приблизительно) | 100–250 МБ/с на каждый файл<br/>\*[Зависит от размера файла](https://docs.microsoft.com/azure/virtual-machines/windows/premium-storage-performance#premium-storage-disk-sizes) | |
 | Задержка ввода-вывода (приблизительно) | 5–10 мс | 1–2 мс |
 | Максимальный размер tempdb | 192–1,920 ГБ (24 ГБ на виртуальное ядро) | Без ограничений — ограничены максимальным размером хранилища экземпляра |
 

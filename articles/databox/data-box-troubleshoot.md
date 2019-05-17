@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: article
-ms.date: 04/26/2019
+ms.date: 05/13/2019
 ms.author: alkohli
-ms.openlocfilehash: 329ea6ac52e972c42e0e2aab247a7ad8e04c76e7
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 1126002a93419371be3216c55114385c9c600419
+ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64927362"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65593999"
 ---
 # <a name="troubleshoot-issues-related-to-azure-data-box"></a>Устранение неполадок, связанных с Azure Data Box
 
@@ -36,7 +36,7 @@ ms.locfileid: "64927362"
     - Имена могут иметь только буквы, цифры и дефисы.
     - Имена не может начинаться или заканчиваться дефисы.
     - Имена не могут иметь дефиса подряд.
-    - Примеры допустимых имен: `my-folder-1`, `my-really-extra-long-folder-111`</li><li>
+    - Примеры допустимых имен: `my-folder-1`, `my-really-extra-long-folder-111`.
     - Примеры недопустимых имен: `my-folder_1`, `my`, `--myfolder`, `myfolder--`, `myfolder!`
 
     Дополнительные сведения см. в разделе Azure соглашения об именовании для [имена контейнеров](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata#container-names) и [имена общих ресурсов](https://docs.microsoft.com/rest/api/storageservices/naming-and-referencing-shares--directories--files--and-metadata#share-names).

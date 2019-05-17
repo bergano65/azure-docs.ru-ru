@@ -14,14 +14,14 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/01/2016
 ms.author: jonor;sivae
-ms.openlocfilehash: e0271c9212b093bd803518ebeaa4b7d9682cc773
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: c1c64945aaa0bc4cd83cc769dab1c2a755896c01
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60868371"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65603422"
 ---
-# <a name="example-2-build-a-perimeter-network-to-protect-applications-with-a-firewall-and-nsgs"></a>Пример 2: Создание сети периметра для защиты приложений с брандмауэром и группами безопасности сети
+# <a name="example-2-build-a-perimeter-network-to-protect-applications-with-a-firewall-and-nsgs"></a>Пример 2 Создание сети периметра для защиты приложений с брандмауэром и группами безопасности сети
 [Вернуться к облачным службам Майкрософт и странице безопасности сети][HOME]
 
 В этом примере показано, как создать сеть периметра (также известный как *DMZ*, *демилитаризованная зона*, и *Промежуточная подсеть*) с брандмауэром, четыре компьютера-сервера Windows, и группы безопасности сети (Nsg). Он содержит сведения о каждом из используемые команды для более глубокого понимания каждого этапа. В разделе «Сценарии трафика» предоставляет пошаговое объяснение способа прохождение трафика через уровни защиты в сети периметра. Наконец в разделе «Ссылки» предоставляет полный код и инструкции по созданию этой среды для тестирования и экспериментов с различными сценариями.
@@ -89,7 +89,7 @@ ms.locfileid: "60868371"
 
 Описанные здесь правила группы безопасности сети похожи на правила в [пример 1 - построение простой сети Периметра с группами безопасности сети][Example1]. Просмотрите описание группы безопасности сети в этой статье подробно рассматривались каждое правило NSG и его атрибуты.
 
-## <a name="firewall-rules"></a>Правила брандмауэра
+## <a name="firewall-rules"></a>Правила файрволла
 Необходимо установить клиент управления на компьютере для управления брандмауэром и создания необходимых конфигураций. См. в разделе документации из брандмауэра (или другого виртуального сетевого устройства) поставщика о том, как управлять мобильными устройствами. В оставшейся части этого раздела описывается конфигурация самого брандмауэра с помощью клиента управления поставщика (не портала Azure или PowerShell).
 
 См. в разделе [администратора Barracuda NG](https://techlib.barracuda.com/NG61/NGAdmin) инструкции по загрузке клиента и подключению к брандмауэру Barracuda, используемый в этом примере.
@@ -550,7 +550,7 @@ ms.locfileid: "60868371"
 Сохраните этот файл XML с обновлены сведения о местоположении, а затем добавить ссылку на этот файл в переменную $NetworkConfigFile в приведенном выше сценарии.
 
 ```xml
-    <NetworkConfiguration xmlns:xsd="https://www.w3.org/2001/XMLSchema" xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/ServiceHosting/2011/07/NetworkConfiguration">
+    <NetworkConfiguration xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/ServiceHosting/2011/07/NetworkConfiguration">
       <VirtualNetworkConfiguration>
         <Dns>
           <DnsServers>

@@ -15,12 +15,12 @@ ms.author: curtand
 ms.reviewer: elkuzmen
 ms.custom: it-pro;seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3f9a33b6bce8cef5bf790efeb43259dfb8013487
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: b32ef37c6d61c88a18acd5ddc80cc6154369ca29
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60472487"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65780525"
 ---
 # <a name="take-over-an-unmanaged-directory-as-administrator-in-azure-active-directory"></a>Смена неуправляемого каталога от имени администратора в Azure Active Directory
 
@@ -37,7 +37,7 @@ ms.locfileid: "60472487"
 
 Некоторые продукты, включающие SharePoint и OneDrive, например Office 365, не поддерживают внешнюю смену. Если вы используете именно этот сценарий, или если вы являетесь администратором и хотите сменить неуправляемый или "теневой" клиент, созданный пользователями, которые использовали самостоятельную регистрацию, то можете это сделать с помощью внутренней смены администратором.
 
-1. Создайте пользовательский контекст в неуправляемом клиенте, выполнив регистрацию, например, через Power BI. Для удобства в примере предполагается, что использован именно этот путь.
+1. Создайте пользовательский контекст в неуправляемом клиенте через зарегистрироваться в Power BI. Для удобства в примере предполагается, что использован именно этот путь.
 
 2. Откройте [сайт Power BI](https://powerbi.com) и выберите **Начать бесплатно**. Введите учетную запись пользователя, которая использует доменное имя организации, например `admin@fourthcoffee.xyz`. После ввода кода проверки на ваш адрес электронной почты должен прийти код подтверждения.
 
@@ -99,7 +99,7 @@ ms.locfileid: "60472487"
 - PowerApps (бесплатная версия);
 - PowerFlow (бесплатная версия);
 - RMS для частных лиц;
-- Microsoft Stream;
+- Microsoft Stream
 - Dynamics 365 (бесплатная пробная версия).
 
 Внешняя смена администратором не поддерживается для служб, которые имеют планы обслуживания, включающие SharePoint, OneDrive или Skype для бизнеса. Например, это может быть бесплатная подписка или SKU "Базовый" для Office. При необходимости можно воспользоваться параметром [**ForceTakeover**](#azure-ad-powershell-cmdlets-for-the-forcetakeover-option) для удаления доменного имени из неуправляемого клиента и его проверки в нужном клиенте. При использовании параметра ForceTakeover пользователи не перемещаются, и их доступ к подписке сохраняется. Перемещается только доменное имя. 
@@ -153,7 +153,7 @@ ms.locfileid: "60472487"
     Get-MsolDomainVerificationDns –DomainName contoso.com –Mode DnsTxtRecord
    ```
 
-4. Скопируйте значение (запрос защиты), которое возвращает эта команда. Например: 
+4. Скопируйте значение (запрос защиты), которое возвращает эта команда. Например:
    ```powershell
     MS=32DD01B82C05D27151EA9AE93C5890787F0E65D9
    ```
@@ -164,7 +164,7 @@ ms.locfileid: "60472487"
     Confirm-MsolEmailVerifiedDomain -DomainName *your_domain_name*
    ```
   
-   Например: 
+   Например:
   
    ```powershell
     Confirm-MsolEmailVerifiedDomain -DomainName contoso.com
