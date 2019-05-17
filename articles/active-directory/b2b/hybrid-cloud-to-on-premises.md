@@ -8,15 +8,15 @@ ms.topic: conceptual
 ms.date: 10/10/2018
 ms.author: mimart
 author: msmimart
-manager: daveba
-ms.reviewer: sasubram
+manager: celestedg
+ms.reviewer: mal
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b0e9536f009d478796bc9367a66630c02019dcd2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 2447aac825874779a543d25b0a70c339dcbf1473
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60412718"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65768444"
 ---
 # <a name="grant-b2b-users-in-azure-ad-access-to-your-on-premises-applications"></a>Предоставление пользователям B2B в Azure AD доступа к локальным приложениям
 
@@ -61,7 +61,7 @@ ms.locfileid: "60412718"
 
 ### <a name="lifecycle-management-policies"></a>Политики управления жизненным циклом
 
-Вы можете управлять локальными объектами пользователей B2B с помощью политик управления жизненным циклом. Например: 
+Вы можете управлять локальными объектами пользователей B2B с помощью политик управления жизненным циклом. Например:
 
 - Вы можете настроить для гостевого пользователя политику многофакторной проверки подлинности (MFA), чтобы она обязательно использовалась при аутентификации через прокси приложений. Дополнительные сведения см. в статье [Условный доступ пользователей в службе совместной работы B2B](conditional-access.md).
 - К локальным пользователям применяются любые правила спонсорства, проверки доступа, проверки учетных записей и пр., которые определены для облачного пользователя B2B. Например, если политика управления жизненным циклом удаляет облачного пользователя, соответствующий ему локальный пользователь также удаляется службой синхронизации MIM или AAD Connect. Дополнительные сведения см. в статье [Управление гостевым доступом с помощью проверок доступа Azure AD](../governance/manage-guest-access-with-access-reviews.md).

@@ -4,7 +4,7 @@ description: Дополнительные сведения о специальн
 services: active-directory
 documentationcenter: dev-center-name
 author: rwike77
-manager: celested
+manager: CelesteDG
 editor: ''
 ms.service: active-directory
 ms.subservice: develop
@@ -17,12 +17,12 @@ ms.author: ryanwi
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: eb8076df5482c91942349e0a052794f3fe945a5f
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.openlocfilehash: 83fb999b0cf66cfd8d96e82d23ed43626352a8aa
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65076515"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65544141"
 ---
 # <a name="universal-windows-platform-specific-considerations-with-msalnet"></a>Универсальной платформой Windows вопросы, связанные с MSAL.NET
 В Xamarin iOS существует несколько факторов, которые следует принять во внимание при использовании MSAL.NET.
@@ -44,7 +44,7 @@ IWA не включена по умолчанию, так как для прил
 ## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения приведены в следующих примерах:
 
-Образец | платформа | ОПИСАНИЕ 
+Образец | платформа | Описание 
 |------ | -------- | -----------|
 |[active-directory-dotnet-native-uwp-v2](https://github.com/azure-samples/active-directory-dotnet-native-uwp-v2) | UWP | Клиентское приложение универсальной платформы Windows с помощью msal.net, доступ к Microsoft Graph для пользователей, проверка подлинности с помощью конечной точки версии 2.0 Azure AD. <br>![Топология](media/msal-net-uwp-considerations/topology-native-uwp.png)|
 |[https://github.com/Azure-Samples/active-directory-xamarin-native-v2](https://github.com/Azure-Samples/active-directory-xamarin-native-v2) | Xamarin iOS, Android, UWP; | Простое приложение Xamarin Forms, с отображением использование MSAL для проверки подлинности MSA и Azure AD через конечную точку версии 2.0 AAD и получить доступ к Microsoft Graph с помощью полученного маркера. <br>![Топология](media/msal-net-uwp-considerations/topology-xamarin-native.png)|

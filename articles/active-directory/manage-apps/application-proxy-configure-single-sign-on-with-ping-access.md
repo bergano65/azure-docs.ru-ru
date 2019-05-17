@@ -3,8 +3,8 @@ title: Аутентификация на основе заголовков с и
 description: Публикация приложений с использованием PingAccess и прокси приложения для реализации аутентификации на основе заголовка.
 services: active-directory
 documentationcenter: ''
-author: CelesteDG
-manager: mtillman
+author: msmimart
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
@@ -12,22 +12,22 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 10/11/2017
-ms.author: celested
+ms.author: mimart
 ms.reviewer: harshja
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8eef15098eed8959655ae2904bf41a8c3dffc9f4
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: ecba35a54c530e97a3f96bd8cfb5fa217d300f83
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60293978"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65783574"
 ---
 # <a name="header-based-authentication-for-single-sign-on-with-application-proxy-and-pingaccess"></a>Аутентификация на основе заголовка для единого входа с использованием прокси приложения и PingAccess
 
 Прокси приложения Active Directory и Azure PingAccess можно использовать для предоставления пользователям Azure Active Directory доступа к разным приложениям. PingAccess позволяет включить в [существующие предложения прокси приложения](application-proxy.md) возможность доступа с единым входом к приложениям, в которых используется аутентификация на основе заголовков.
 
-## <a name="what-is-pingaccess-for-azure-ad"></a>Что такое PingAccess для Azure AD?
+## <a name="what-is-pingaccess-for-azure-ad"></a>Что такое PingAccess для Azure AD?
 
 PingAccess для Azure Active Directory — предложение PingAccess, позволяющее предоставить пользователям доступ и единый вход для приложений, использующих заголовки для аутентификации. Прокси приложения обрабатывает такие приложения, как и любые другие, используя Azure AD для аутентификации доступа и передавая трафик через службу соединителя. PingAccess находится перед приложением, преобразуя маркер доступа из Azure AD в заголовок. Таким образом приложение может выполнять аутентификацию в поддерживаемом формате.
 
@@ -80,7 +80,7 @@ PingAccess для Azure Active Directory — предложение PingAccess, 
      > Для этого типа единого входа во внутреннем URL-адресе должен использоваться протокол HTTPS и не может использоваться протокол HTTP.
 
    - **Метод предварительной аутентификации**. Azure Active Directory
-   - **Перевод веб-страниц в заголовках**. Нет 
+   - **Перевод веб-страниц в заголовках**. Нет
 
    >[!NOTE]
    >Если это ваше первое приложение, для начала используйте порт 3000, а затем измените этот параметр, если измените конфигурацию доступа PingAccess. Если это не первое ваше приложение, то данное значение должно соответствовать прослушивателю, настроенному в PingAccess. Узнайте больше о [прослушивателях в PingAccess](https://documentation.pingidentity.com/pingaccess/pa31/index.shtml#Listeners.html).

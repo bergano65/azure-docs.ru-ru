@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 05/07/2018
 ms.author: hrasheed
-ms.openlocfilehash: 8172da3f573f78365cbe76f435a4817e64bc136c
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 3286ca3b9c85236ff322eb19324bc5ac7a904e22
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64700356"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65605456"
 ---
 # <a name="use-the-azure-data-lake-tools-for-visual-studio-with-the-hortonworks-sandbox"></a>Использование средств Azure Data Lake для Visual Studio с песочницей Hortonworks
 
@@ -25,7 +25,7 @@ Azure Data Lake включает в себя средства для работ�
 
 * Песочница Hortonworks, работающая в виртуальной машине в среде разработки. Приведенные в этом документе сведения протестированы с использованием песочницы, работающей в Oracle VirtualBox. Сведения о настройке песочницы см. в статье [Начало работы с песочницей Hadoop, эмулятором на виртуальной машине](hadoop/apache-hadoop-emulator-get-started.md) .
 
-* Visual Studio 2013, Visual Studio 2015 или Visual Studio 2017 (любой выпуск).
+* приведенному.
 
 * [Пакет Azure SDK для .NET](https://azure.microsoft.com/downloads/) версии 2.7.1 или более поздней.
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Amazon Web Services (AWS) для подключения нескольких учетных записей | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Amazon Web Services (AWS) для подключения нескольких учетных записей | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и несколькими учетными записями Amazon Web Services (AWS).
 services: active-directory
 documentationCenter: na
@@ -17,13 +17,13 @@ ms.date: 01/07/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 322615203d188581dd04aadeff2a08307b733d06
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57450572"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "65738104"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-multiple-amazon-web-services-aws-accounts"></a>Руководство. Интеграция Azure Active Directory с несколькими учетными записями Amazon Web Services (AWS)
+# <a name="tutorial-azure-active-directory-integration-with-multiple-amazon-web-services-aws-accounts"></a>Руководство по Интеграция Azure Active Directory с несколькими учетными записями Amazon Web Services (AWS)
 
 В этом руководстве описано, как интегрировать приложение Azure Active Directory (Azure AD) с несколькими учетными записями Amazon Web Services (AWS).
 
@@ -131,15 +131,15 @@ ms.locfileid: "57450572"
 
 4. В разделе **Базовая конфигурация SAML** не нужно выполнять никаких действий, так как приложение уже предварительно интегрировано с Azure.
 
-    ![изображение](common/preintegrated.png)
+    ![image](common/preintegrated.png)
 
 5. Приложение Amazon Web Services (AWS) ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно в разделе **User Attributes & Claims** (Атрибуты пользователя и утверждения) на странице интеграции приложения. На странице **Set up Single Sign-On with SAML** (Настройка единого входа с помощью SAML) нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **User Attributes & Claims** (Атрибуты пользователя и утверждения).
 
-    ![изображение](common/edit-attribute.png)
+    ![image](common/edit-attribute.png)
 
 6. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** настройте атрибут токена SAML, как показано на рисунке выше, и выполните следующие действия.
 
-    | ИМЯ  | Исходный атрибут  | Пространство имен |
+    | ИМЯ  | Атрибут источника  | Пространство имен |
     | --------------- | --------------- | --------------- |
     | RoleSessionName | user.userprincipalname | https://aws.amazon.com/SAML/Attributes |
     | Роль            | user.assignedroles |  https://aws.amazon.com/SAML/Attributes |
@@ -147,9 +147,9 @@ ms.locfileid: "57450572"
 
     a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![изображение](common/new-save-attribute.png)
+    ![image](common/new-save-attribute.png)
 
-    ![изображение](common/new-attribute-details.png)
+    ![image](common/new-attribute-details.png)
 
     2. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
@@ -347,7 +347,7 @@ ms.locfileid: "57450572"
     > [!Note]
     > Обратите внимание, что вам необходимо обновить сеанс на портале Azure, чтобы увидеть новые роли.
 
-### <a name="test-single-sign-on"></a>Проверка единого входа
+### <a name="test-single-sign-on"></a>Тест единого входа
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 

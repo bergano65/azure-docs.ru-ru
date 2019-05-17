@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 02/21/2019
 ms.author: banders
 ms.custom: seodec18
-ms.openlocfilehash: 82b568d5a6abae1f061166afc1c80ef639df036c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 245e5ca6e2d7d1f48951d63ba6539180a35f1358
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60371552"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65604139"
 ---
 # <a name="view-the-tax-documents-for-your-microsoft-customer-agreement"></a>Просмотр документов, налог для соглашение с клиентом Microsoft
 
@@ -36,7 +36,7 @@ ms.locfileid: "60371552"
 3. Выберите **Счета**.
 4. В сетке счета найдите строку счета-фактуры, соответствующий налоговый документ, который вы хотите загрузить.
 5. Нажмите кнопку с многоточием (`...`) в конце строки.
-6. Выберите **налоговый документ**. В зависимости от страны профиль выставления счетов может появиться несколько документов налог на накладную.
+6. Выберите **налоговый документ**. В зависимости от страны или региона профиль выставления счетов может появиться несколько документов налог на накладную.
 
 ## <a name="check-access-to-a-microsoft-customer-agreement"></a>Проверьте доступ к соглашению клиента Microsoft
 [!INCLUDE [billing-check-mca](../../includes/billing-check-mca.md)]

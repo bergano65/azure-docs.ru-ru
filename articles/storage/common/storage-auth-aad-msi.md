@@ -9,12 +9,12 @@ ms.date: 04/21/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: 4245c44ceaf907512187d7db4a9d6f087a855f70
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.openlocfilehash: f7525c3e125010bb4db9655bc214861e22dc8875
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65507891"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65787964"
 ---
 # <a name="authenticate-access-to-blobs-and-queues-with-azure-active-directory-and-managed-identities-for-azure-resources"></a>Проверки подлинности доступа к BLOB-объектов и очередей с Azure Active Directory и управляемых удостоверений для ресурсов Azure
 
@@ -48,12 +48,12 @@ ms.locfileid: "65507891"
 
 Клиентская библиотека проверки подлинности приложения автоматически управляет проверкой подлинности. Библиотека использует учетные данные разработчика для проверки подлинности во время локальной разработки. Использовать учетные данные разработчика во время локального развертывания более безопасно, так как вам не нужно создавать учетные данные Azure AD или совместно использовать учетные данные с другими разработчиками. Если решение позже развертывается в Azure, библиотека автоматически переключается на с использованием учетных данных приложения.
 
-Чтобы использовать библиотеку проверки подлинности приложения в приложение хранилища Azure, установите последнюю версию пакета предварительной версии из [Nuget](https://www.nuget.org/packages/Microsoft.Azure.Services.AppAuthentication), а также последнюю версию [клиентской библиотеки хранилища Azure для .NET](https://www.nuget.org/packages/WindowsAzure.Storage/). Добавьте следующий **с помощью** инструкций в код:
+Чтобы использовать библиотеку проверки подлинности приложения в приложение хранилища Azure, установите последнюю версию пакета предварительной версии из [Nuget](https://www.nuget.org/packages/Microsoft.Azure.Services.AppAuthentication), а также последнюю версию [распространенных клиентской библиотеки хранилища Azure для .NET](https://www.nuget.org/packages/Microsoft.Azure.Storage.Common/) и [клиентская библиотека хранилища BLOB-объектов Azure для .NET](https://www.nuget.org/packages/Microsoft.Azure.Storage.Blob/). Добавьте следующий **с помощью** инструкций в код:
 
 ```csharp
 using Microsoft.Azure.Services.AppAuthentication;
-using Microsoft.WindowsAzure.Storage.Blob;
-using Microsoft.WindowsAzure.Storage.Auth;
+using Microsoft.Azure.Storage.Auth;
+using Microsoft.Azure.Storage.Blob;
 ```
 
 Библиотека проверки подлинности приложение предоставляет **AzureServiceTokenProvider** класса. Экземпляр этого класса может быть передан обратный вызов, который получает маркер, а затем обновляет маркер, до истечения срока его действия.

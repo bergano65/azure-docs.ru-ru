@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/22/2018
 ms.author: ajaycode
-ms.openlocfilehash: 42fb5d69a1f32d669ad5191e342b3f2f880b8c98
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: b112771e8c0f08e6b9a02c2fc5b7e1887b3f2588
+ms.sourcegitcommit: 3675daec6c6efa3f2d2bf65279e36ca06ecefb41
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60564841"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65620419"
 ---
 # <a name="network-monitoring-solutions"></a>Решения для мониторинга сетей 
 
@@ -53,7 +53,9 @@ Azure предлагает целый ряд решений для монито�
 
 * [Настроить решение монитора производительности сети в журналах Azure Monitor](../azure-monitor/insights/network-performance-monitor.md) 
 * [Варианты использования](https://blogs.technet.microsoft.com/msoms/2016/08/30/monitor-on-premises-cloud-iaas-and-hybrid-networks-using-oms-network-performance-monitor/)
-*  Обновления продукта: [Февраль 2017 г.](https://blogs.technet.microsoft.com/msoms/2017/02/27/oms-network-performance-monitor-is-now-generally-available/), [августа 2017 г.](https://blogs.technet.microsoft.com/msoms/2017/08/14/improvements-to-oms-network-performance-monitor/)
+* Обновления продукта:
+  * [Февраль 2017 г.](https://blogs.technet.microsoft.com/msoms/2017/02/27/oms-network-performance-monitor-is-now-generally-available/)
+  * [Август 2017 г.](https://blogs.technet.microsoft.com/msoms/2017/08/14/improvements-to-oms-network-performance-monitor/)
 
 ## <a name="expressroute-monitor"></a>Мониторинг ExpressRoute
 
@@ -89,7 +91,7 @@ NPM для ExpressRoute предоставляет комплексные воз
 * [Service Endpoint Monitor](../azure-monitor/insights/network-performance-monitor-service-connectivity.md#configuration) (Мониторинг конечных точек службы)
 * [Запись блога](https://aka.ms/svcendptmonitor)
 
-## <a name="traffic-analytics"></a>Аналитика трафика
+## <a name="traffic-analytics"></a>Анализ трафика
 "Аналитика трафика" — это облачное решение, которое позволяет следить за действиями пользователя и приложения в ваших облачных сетях. Журналы потоков NSG анализируются для предоставления следующих подробных сведений:
 
 * потоки трафика, проходящие через сети между Azure и Интернетом, регионы общедоступного облака, виртуальные сети и подсети;
@@ -120,6 +122,6 @@ NPM для ExpressRoute предоставляет комплексные воз
 Связанные ссылки
 * [Запись блога](https://blogs.technet.microsoft.com/msoms/2017/04/19/introducing-oms-dns-analytics/), [документация](https://docs.microsoft.com/azure/log-analytics/log-analytics-dns)
 
-## <a name="miscellaneous"></a>Прочие положения
+## <a name="miscellaneous"></a>Разное
 
 * [Новые цены](https://docs.microsoft.com/azure/log-analytics/log-analytics-network-performance-monitor-pricing-faq)

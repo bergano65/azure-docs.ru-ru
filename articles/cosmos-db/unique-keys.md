@@ -1,19 +1,18 @@
 ---
 title: Использование уникальных ключей в Azure Cosmos DB
 description: Узнайте, как использовать уникальные ключи в базе данных Azure Cosmos.
-author: rockboyfor
-ms.author: v-yeche
+author: rimman
+ms.author: rimman
 ms.service: cosmos-db
 ms.topic: conceptual
-origin.date: 04/08/2019
-ms.date: 04/15/2019
+ms.date: 04/08/2019
 ms.reviewer: sngun
-ms.openlocfilehash: 3c5e8a2c85898175772dc353258e77fc8e0a74f2
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.openlocfilehash: c3524f27cc14050647c457fdb5e87b2b83dbdfc0
+ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62115729"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65595881"
 ---
 # <a name="unique-key-constraints-in-azure-cosmos-db"></a>Ограничения для уникальных ключей в Azure Cosmos DB
 
@@ -27,14 +26,14 @@ ms.locfileid: "62115729"
 
 Например, контейнер может содержать элементы со следующими значениями, в которых каждый элемент соблюдает ограничение уникального ключа.
 
-| CompanyID | Имя | Фамилия |   Адрес электронной почты    |
-|-----------|------------|-----------|--------------------|
-|  Contoso  |    Гэби    |  Дюперре  |  gaby@contoso.com  |
-|  Contoso  |    Гэби    |  Дюперре  | gaby@fabrikam.com  |
-| Fabrikam  |    Гэби    |  Дюперре  | gaby@fabrikam.com  |
-| Fabrikam  |    Иван    |  Дюперре  | gaby@fabrikam.com  |
-|  Fabrkam  |            |  Дюперре  | gaby@fabraikam.com |
-|  Fabrkam  |            |           | gaby@fabraikam.com |
+|CompanyID|Имя|Фамилия|Адрес электронной почты|
+|---|---|---|---|
+|Contoso|Гэби|Дюперре|gaby@contoso.com |
+|Contoso|Гэби|Дюперре|gaby@fabrikam.com|
+|Fabrikam|Гэби|Дюперре|gaby@fabrikam.com|
+|Fabrikam|Иван|Дюперре|gaby@fabrikam.com|
+|Fabrkam|   |Дюперре|gaby@fabraikam.com|
+|Fabrkam|   |   |gaby@fabraikam.com|
 
 При попытке вставить новый элемент с сочетанием значений, которое указано в предыдущей таблице, вы получите ошибку. Такая ошибка означает, что ограничение уникального ключа не соблюдается. Получение `Resource with specified ID or name already exists` или `Resource with specified ID, name, or unique index already exists` как ответное сообщение. 
 
@@ -56,6 +55,5 @@ ms.locfileid: "62115729"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Подробнее о [логических секциях](partition-data.md).
-
-<!-- Update_Description: update meta propreties, wording update -->
+* Подробнее о [логических разделах](partition-data.md).
+* Изучите [как определить уникальные ключи](how-to-define-unique-keys.md) при создании контейнера

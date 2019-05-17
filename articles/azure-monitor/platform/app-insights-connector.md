@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 02/13/2019
 ms.author: magoedte
-ms.openlocfilehash: aa1bb62e762925dcb5a0ee37b71602094e768137
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: c7c0d2e3fb818f74a65502674188c523d23729e8
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60346861"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65606742"
 ---
 # <a name="application-insights-connector-management-solution-deprecated"></a>Решение по управлению Соединителем Application Insights (устарело)
 
@@ -49,12 +49,12 @@ ms.locfileid: "60346861"
 
 В отличие от большинства других решений Log Analytics, данные для соединителя Application Insights не собираются агентами. Все данные, используемые решением, поступают непосредственно из Azure.
 
-| Подключенный источник | Поддерживаются | ОПИСАНИЕ |
+| Подключенный источник | Поддерживаются | Описание |
 | --- | --- | --- |
-| [Агенты Windows](../../azure-monitor/platform/agent-windows.md) | Нет  | Решение не собирает сведения из агентов Windows. |
-| [Агенты Linux](../../azure-monitor/learn/quick-collect-linux-computer.md) | Нет  | Решение не собирает сведения из агентов Linux. |
-| [Группы управления SCOM](../../azure-monitor/platform/om-agents.md) | Нет  | Решение не собирает сведения из агентов в подключенной группе управления SCOM. |
-| [Учетная запись хранения Azure](collect-azure-metrics-logs.md) | Нет  | Решение не собирает сведения из службы хранилища Azure. |
+| [Агенты Windows](../../azure-monitor/platform/agent-windows.md) | Нет | Решение не собирает сведения из агентов Windows. |
+| [Агенты Linux](../../azure-monitor/learn/quick-collect-linux-computer.md) | Нет | Решение не собирает сведения из агентов Linux. |
+| [Группы управления SCOM](../../azure-monitor/platform/om-agents.md) | Нет | Решение не собирает сведения из агентов в подключенной группе управления SCOM. |
+| [Учетная запись хранения Azure](collect-azure-metrics-logs.md) | Нет | Решение не собирает сведения из службы хранилища Azure. |
 
 ## <a name="prerequisites"></a>Технические условия
 
@@ -181,7 +181,7 @@ ApplicationInsights | summarize AggregatedValue = sum(SampledCount) by Telemetry
 
 ### <a name="generic-fields"></a>Универсальные поля
 
-| Свойство | ОПИСАНИЕ |
+| Свойство | Description |
 | --- | --- |
 | type | ApplicationInsights |
 | ClientIP |   |
@@ -192,9 +192,9 @@ ApplicationInsights | summarize AggregatedValue = sum(SampledCount) by Telemetry
 | DeviceType | Устройство клиента |
 | ScreenResolution |   |
 | Continent | Континент, на котором создан запрос |
-| Страна | Страна, в которой создан запрос |
-| Province | Провинция, область или район, в котором создан запрос |
-| City | Город, в котором создан запрос |
+| Страна | Страны или региона, где создан запрос |
+| Регион | Провинция, область или район, в котором создан запрос |
+| Город | Город, в котором создан запрос |
 | isSynthetic | Указывает, был ли запрос создан пользователем или автоматически. Значение true означает, что запрос создан пользователем, а значение false — автоматически |
 | SamplingRate | Процентная доля данных телеметрии, созданных с помощью пакета SDK, отправленного на портал. Диапазон 0,0–100,0. |
 | SampledCount | 100/(частота выборки). Например, 4 = &gt; 25 %. |
@@ -207,7 +207,7 @@ ApplicationInsights | summarize AggregatedValue = sum(SampledCount) by Telemetry
 
 ### <a name="availability-specific-fields"></a>Поля со сведениями о доступности
 
-| Свойство | ОПИСАНИЕ |
+| Свойство | Описание |
 | --- | --- |
 | TelemetryType | Доступность |
 | AvailabilityTestName | Имя веб-теста |
@@ -249,7 +249,7 @@ ApplicationInsights | summarize AggregatedValue = sum(SampledCount) by Telemetry
 
 ### <a name="request-specific-fields"></a>Поля со сведениями о запросах
 
-| Свойство | ОПИСАНИЕ |
+| Свойство | Description |
 | --- | --- |
 | type | ApplicationInsights |
 | TelemetryType | Запрос |

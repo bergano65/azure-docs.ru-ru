@@ -6,22 +6,18 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: article
-ms.date: 03/26/2019
+ms.date: 05/15/2019
 ms.author: alkohli
-ms.openlocfilehash: 58c4f42859f735a81a3e3edc801daff5d26194a0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: a90475cfd1d166b8fae1c2b872cbbb9d48b50392
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60757976"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65785810"
 ---
 # <a name="manage-compute-on-your-azure-data-box-edge"></a>Управление вычислениями в Azure Data Box Edge
 
 В этой статье описывается управление вычислениями в Azure Data Box Edge. Вы можете управлять вычислениями на портале Azure или с помощью локального пользовательского веб-интерфейса. Используйте портал Azure для управления модулями, триггерами и конфигурацией вычислений, а также локальный пользовательский веб-интерфейс для управления параметрами вычислений.
-
-> [!IMPORTANT]
-> В данный момент решение Data Box Edge находится в состоянии предварительной версии. Изучите [Дополнительные условия использования Предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/), прежде чем заказывать и развертывать это решение.
-
 
 В этой статье раскрываются следующие темы:
 

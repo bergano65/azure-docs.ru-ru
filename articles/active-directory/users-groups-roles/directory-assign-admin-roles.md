@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c0811ce1509b7886bf0061cba955ca5e18990cd1
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 3593324523340300279232e0e63392c9c127991d
+ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64920502"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65823565"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Разрешения роли администратора в Azure Active Directory
 
@@ -163,10 +163,15 @@ ms.locfileid: "64920502"
   * Администраторы в других службах за пределами Azure AD, таких как Exchange Online, Центр безопасности и соответствия требованиям Office и системы управления персоналом.
   * Пользователи без прав администратора, например руководители, юристы и сотрудники отдела кадров, у которых может быть доступ к конфиденциальным или частным сведениям.
 
+
+  > [!NOTE]
+  > Делегирование административных разрешений по подсетям пользователей и применения политик к подсетям пользователей в средстве [административные единицы (Предварительная версия)](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-administrative-units).
+
+
   > [!NOTE]
   > Эта роль раньше назывался «администратор паролей» [портала Azure](https://portal.azure.com/). Мы изменяем его имя на «Администратор службы поддержки» в соответствии с его именем в Azure AD PowerShell, API Azure AD Graph и Microsoft Graph API. На короткое время мы изменим имя на «Администратор службы технической поддержки (пароль)» на портале Azure, чтобы изменения «Администратор службы поддержки».
-  >
-  
+
+
 * **[Администратор Power BI](#power-bi-service-administrator)**: пользователи с этой ролью имеют глобальные разрешения в Microsoft Power BI (если служба используется), а также возможность управлять запросами в службу поддержки и отслеживать работоспособность службы. Дополнительные сведения см. в статье [Основные сведения о роли администратора Power BI](https://docs.microsoft.com/power-bi/service-admin-role).
   > [!NOTE]
   > В API Microsoft Graph, API Azure AD Graph и Azure AD PowerShell эта роль определяется как "Администратор службы Power BI". На [портале Azure](https://portal.azure.com) она называется "Администратор Power BI".

@@ -16,12 +16,12 @@ ms.date: 05/07/2019
 ms.author: ryanwi
 ms.reviewer: lenalepa, sureshja, jesakowi
 ms.custom: aaddev
-ms.openlocfilehash: e9070127780659142ab8f956a8016622ecfea144
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.openlocfilehash: 0d44e5d9f0d1ed893a16c318e3cfa0ee1bfc123b
+ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65540151"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65823351"
 ---
 # <a name="microsoft-identity-platform-integration-checklist"></a>Контрольный список для интеграции платформы удостоверений Microsoft
 
@@ -31,13 +31,13 @@ ms.locfileid: "65540151"
 
 ## <a name="testing-your-integration"></a>Тестирование интеграции
 
-Используйте следующий контрольный список, чтобы убедиться, что приложение эффективно интегрирован с [платформы удостоверений Microsoft](https://docs.microsoft.com/legal/mdsa).
+Используйте следующий контрольный список, чтобы убедиться, что приложение эффективно интегрирован с [платформы удостоверений Microsoft](https://docs.microsoft.com/azure/active-directory/develop/).
 
 ### <a name="basics"></a>Основные сведения
 
 |   |   |
 |---|---|
-| ![флажок](./media/active-directory-integration-checklist/checkbox-two.svg) | Чтение и понимание [политики платформы Microsoft](https://docs.microsoft.com/legal/mdsa). Убедитесь, что приложение соответствует условия, описано, как они предназначены для защиты пользователей и платформы. |
+| ![флажок](./media/active-directory-integration-checklist/checkbox-two.svg) | Чтение и понимание [политики платформы Microsoft](https://go.microsoft.com/fwlink/?linkid=2090497&clcid=0x409). Убедитесь, что приложение соответствует условия, описано, как они предназначены для защиты пользователей и платформы. |
 
 ### <a name="ownership"></a>Владение
 

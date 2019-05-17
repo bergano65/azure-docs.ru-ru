@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/28/2018
 ms.author: bwren
-ms.openlocfilehash: 402cd4723791c0bc33db22c8857d1b785862f596
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 5843ee11a615a2780e9fea2d89f7b18fb45706d8
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60614512"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65604357"
 ---
 # <a name="collect-iis-logs-in-azure-monitor"></a>Сбор журналов IIS в Azure Monitor
 Службы IIS (Internet Information Services) хранят данные об активности пользователей в файлах журналов, собираемых службой Azure Monitor и сохраняемых как [данные журнала](data-platform.md).
@@ -51,7 +51,7 @@ ms.locfileid: "60614512"
 | csUriStem |Целевой объект запроса, такой как веб-страница. |
 | csUriQuery |Запрос, который пытался выполнить клиент (если есть). |
 | ManagementGroupName |Имя группы управления для агентов Operations Manager.  Для других агентов это AOI-\<идентификатор_рабочей_области\>. |
-| RemoteIPCountry |Страна IP-адреса клиента. |
+| RemoteIPCountry |Страна или регион IP-адреса клиента. |
 | RemoteIPLatitude |Широта IP-адреса клиента. |
 | RemoteIPLongitude |Долгота IP-адреса клиента. |
 | scStatus |Код состояния HTTP. |
@@ -67,7 +67,7 @@ ms.locfileid: "60614512"
 ## <a name="log-queries-with-iis-logs"></a>Запросы для получения записей журналов IIS
 В следующей таблице представлены различные примеры запросов к журналу, извлекающих записи из журналов IIS.
 
-| Запрос | ОПИСАНИЕ |
+| Запрос | Описание |
 |:--- |:--- |
 | W3CIISLog |Все записи в журнале IIS. |
 | W3CIISLog &#124; where scStatus==500 |Все записи журнала IIS с состоянием возврата 500. |

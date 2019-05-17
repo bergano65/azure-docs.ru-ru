@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 11/07/2018
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: 91db42a003bdbb7614faba2122c30826b62ee20f
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: df4acf72a1a6ea134e1192512fda1d8cf1e92f0a
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64698662"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65767993"
 ---
 # <a name="add-adfs-as-a-saml-identity-provider-using-custom-policies-in-azure-active-directory-b2c"></a>Добавление ADFS в качестве поставщика удостоверений SAML с помощью пользовательских политик в Azure Active Directory B2C
 
@@ -35,7 +35,7 @@ ms.locfileid: "64698662"
 1. Войдите на [портале Azure](https://portal.azure.com/).
 2. Убедитесь, что вы используете каталог, содержащий клиент Azure AD B2C. Выберите **фильтр каталога и подписки** в верхнем меню и выберите каталог, содержащий вашего клиента.
 3. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Azure AD B2C**.
-4. На странице "Обзор" выберите **Identity Experience Framework — предварительная версия**.
+4. На странице "Обзор" выберите **Identity Experience Framework**.
 5. Выберите **Ключи политики**, а затем щелкните **Добавить**.
 6. Для пункта **Параметры** выберите `Upload`.
 7. Введите **имя** ключа политики. Например, `SamlCert`. Префикс `B2C_1A_` будет автоматически добавлен к имени ключа.
@@ -170,7 +170,7 @@ https://login.microsoftonline.com/te/your-tenant/your-policy/samlp/metadata?idpt
     | Атрибут LDAP | Тип исходящего утверждения |
     | -------------- | ------------------- |
     | User-Principal-Name | userPrincipalName |
-    | Surname | family_name |
+    | Фамилия | family_name |
     | Given-Name | given_name |
     | E-Mail-Address | email |
     | Display-Name | name |

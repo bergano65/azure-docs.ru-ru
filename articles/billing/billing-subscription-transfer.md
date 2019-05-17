@@ -2,41 +2,36 @@
 title: Передача прав владения подпиской Azure другой учетной записи | Документация Майкрософт
 description: Описывается, как передать подписку Azure другому пользователю, а также приводятся часто задаваемые вопросы об этой процедуре.
 keywords: передача подписки azure,azure передача подписки,перемещение подписки azure в другую учетную запись,изменение владельца подписки azure,перенос подписки azure в другую учетную запись
-services: ''
-documentationcenter: ''
-author: genlin
-manager: adpick
-editor: ''
+author: bandersmsft
+manager: amberb
 tags: billing,top-support-issue
-ms.assetid: c8ecdc1e-c9c5-468c-a024-94ae41e64702
 ms.service: billing
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 04/16/2019
+ms.date: 05/16/2019
 ms.author: banders
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 2ffebdd5b88603113dd7624e97dcf7353ab5d1ba
-ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
+ms.openlocfilehash: b3f070cafa026679eb9322ac7ba2eafe4c7e233d
+ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65605566"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65826761"
 ---
 # <a name="transfer-ownership-of-an-azure-subscription-to-another-account"></a>Передача прав владения подпиской Azure другой учетной записи
 
 Передайте подписку другому пользователю в центре учетных записей, чтобы изменить администратора учетной записи и передать права владения на выставление счетов для подписки. Сведения о том, как изменить подписку и воспользоваться другим предложением, см. в статье [Переключение подписки Azure на другое предложение](billing-how-to-switch-azure-offer.md).
 
 > [!IMPORTANT]
-> 
+>
 > Если вы переносите подписку в новый клиент Azure AD, все назначения ролей в механизме [управления доступом на основе ролей (RBAC)](../role-based-access-control/overview.md) удаляются из исходного клиента без возможности восстановления и не переносятся в целевой клиент. Вам также потребуется вручную создавать управляемые удостоверения для ресурсов Azure. Дополнительные сведения см. в разделе [часто задаваемые вопросы и известные проблемы с управляемые удостоверения](../active-directory/managed-identities-azure-resources/known-issues.md).
 
 ## <a name="transfer-ownership-of-an-azure-subscription"></a>Передача прав владения подпиской Azure
 
 > [!VIDEO https://channel9.msdn.com/Series/Microsoft-Azure-Tutorials/Transfer-an-Azure-subscription/player]
->
->
+
 
 1. Войдите в [Центр управления учетной записью Azure](https://account.windowsazure.com/Subscriptions) в качестве администратора учетной записи. Чтобы узнать, кто является администратором учетной записи для подписки, ознакомьтесь с инструкциями в разделе [Часто задаваемые вопросы](#faq).
 
@@ -51,7 +46,7 @@ ms.locfileid: "65605566"
 1. Укажите получателя.
 
    > [!IMPORTANT]
-   > 
+   >
    > Если вы переносите подписку в новый клиент Azure AD, все назначения ролей в механизме [управления доступом на основе ролей (RBAC)](../role-based-access-control/overview.md) удаляются из исходного клиента без возможности восстановления и не переносятся в целевой клиент. Вам также потребуется вручную создавать управляемые удостоверения для ресурсов Azure. Дополнительные сведения см. в разделе [часто задаваемые вопросы и известные проблемы с управляемые удостоверения](../active-directory/managed-identities-azure-resources/known-issues.md).
 
    ![Диалоговое окно "Передача подписки"](./media/billing-subscription-transfer/image2.PNG)
@@ -68,22 +63,22 @@ ms.locfileid: "65605566"
 
 <a id="EA"></a>
 
-## <a name="transfer-subscription-ownership-for-enterprise-agreement-ea-customers"></a>Передача прав собственности на подписку для клиентов с соглашением Enterprise (EA)
+## <a name="transfer-subscription-ownership-for-ea-customers"></a>Передача прав владения подпиской для клиентов EA
 
 Администратор предприятия может передать права собственности на подписку в регистрации. Чтобы приступить к работе, см. статью о [передаче прав собственности на учетную запись](https://ea.azure.com/helpdocs/changeAccountOwnerForASubscription) на портале EA.
 
-## <a name="next-steps-after-accepting-ownership-of-a-subscription"></a>Дальнейшие действия после принятия владения подпиской
+## <a name="next-steps-after-accepting-ownership"></a>Дальнейшие действия после принятия владения
 
 1. Теперь вы являетесь администратором учетной записи. Просмотрите и обновите роли администратора служб, соадминистраторов и другие роли RBAC. Дополнительные сведения см. в статьях [Добавление или изменение администраторов подписки Azure](billing-add-change-azure-subscription-administrator.md) и [Управление доступом с помощью RBAC и портала Azure](../role-based-access-control/role-assignments-portal.md).
 1. Обновите учетные данные, связанные со службами этой подписки, включая следующие:
    1. Сертификаты управления, которые предоставляют пользователю доступ к ресурсам подписки с правами администратора. Дополнительные сведения см. в статье [Создание и передача сертификата управления для Azure](../cloud-services/cloud-services-certs-create.md).
    1. Ключи доступа для служб, таких как служба хранилища. Дополнительные сведения см. в статье [Об учетных записях хранения Azure](../storage/common/storage-create-storage-account.md).
-   1. Учетные данные удаленного доступа для служб, таких как Виртуальные машины Azure. 
+   1. Учетные данные удаленного доступа для служб, таких как Виртуальные машины Azure.
 1. Если вы работаете с партнером, мы рекомендуем изменить идентификатор партнера для этой подписки. Вы можете обновить идентификатор партнера на [портале Azure](https://portal.azure.com).
 
 <a id="supported"></a>
 
-## <a name="whats-supported"></a>Поддерживаемые функции
+## <a name="supported-offers"></a>Поддерживаемые предложения
 
 Самостоятельная передача подписки доступна для типов предложений или подписок, перечисленных в следующей таблице. Сейчас невозможно перенести подписки на бесплатную пробную версию или [Azure с открытой лицензией (AIO)](https://azure.microsoft.com/offers/ms-azr-0111p/). Сведения об обходном решении см. в статье [Перемещение ресурсов в новую группу ресурсов или подписку](../azure-resource-manager/resource-group-move-resources.md). Чтобы перенести другие подписки (например, [спонсорское предложение](https://azure.microsoft.com/offers/ms-azr-0036p/) или планы поддержки), [обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
 
@@ -119,7 +114,12 @@ ms.locfileid: "65605566"
 
 ### <a id="no-button"></a>Почему не отображается кнопка "Перенос подписки"?
 
-К сожалению самостоятельный перенос подписки недоступен для вашего предложения или страны или региона. Для переноса подписки [обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
+К сожалению самостоятельный перенос подписки недоступен для вашего предложения. Просмотр списка поддерживаемых предложений в [поддерживается предложения](#supported-offers) этой статьи.
+
+### <a name="can-i-transfer-ownership-to-an-account-in-another-country"></a>Как передавать право собственности на учетную запись в другой стране?
+
+К сожалению Azure не разрешает передачу перекрестного страны. Для передачи прав владения подпиской кросс-страны, [обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
+
 
 ### <a name="does-a-subscription-transfer-result-in-any-service-downtime"></a>Возникают ли простои в работе службы при передаче подписки?
 
@@ -175,3 +175,7 @@ ms.locfileid: "65605566"
 ## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
 
 Если у вас есть вопросы или нужна помощь, [создать запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+- Просмотрите и обновите роли администратора служб, соадминистраторов и другие роли RBAC. Дополнительные сведения см. в статьях [Добавление или изменение администраторов подписки Azure](billing-add-change-azure-subscription-administrator.md) и [Управление доступом с помощью RBAC и портала Azure](../role-based-access-control/role-assignments-portal.md).

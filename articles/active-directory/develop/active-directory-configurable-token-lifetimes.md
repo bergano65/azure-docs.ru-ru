@@ -12,17 +12,17 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/13/2019
+ms.date: 05/15/2019
 ms.author: ryanwi
 ms.custom: aaddev, annaba
 ms.reviewer: hirsin
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0657057ceb3aca674e49a705c52c3b86dda73d98
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.openlocfilehash: cc81f0a5c75d9aeee39f0633521d692c8d30c474
+ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65545389"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65823474"
 ---
 # <a name="configurable-token-lifetimes-in-azure-active-directory-preview"></a>Настройка времени существования маркеров в Azure Active Directory (предварительная версия)
 
@@ -65,11 +65,11 @@ ms.locfileid: "65545389"
 Маркеры идентификации передаются веб-сайтам и собственным клиентам. Они содержат сведения о профиле пользователя. Маркер идентификации привязан одновременно и к пользователю, и клиентскому приложению. Маркеры идентификации считаются действительными до истечения срока действия. Как правило, в веб-приложениях длительность пользовательского сеанса согласовывается со временем жизни маркера идентификации, выданного этому пользователю. Изменяя время жизни маркера идентификации, вы можете управлять частотой завершения пользовательского сеанса в веб-приложении, а также частотой, с которой пользователю нужно выполнять проверку подлинности в Azure AD (в автоматическом или интерактивном режиме).
 
 ### <a name="single-sign-on-session-tokens"></a>Маркеры сеанса единого входа
-Когда пользователь выполняет аутентификацию в Azure AD, для пользовательского браузера и Azure AD создается сеанс единого входа. Этот сеанс представлен маркером сеанса единого входа — в виде файла cookie. Обратите внимание, что маркер сеанса единого входа не привязан к определенному ресурсу или клиентскому приложению. Маркеры сеанса единого входа могут быть отозваны, а при каждом использовании проверяется их действительность.
+Когда пользователь выполняет аутентификацию в Azure AD, для пользовательского браузера и Azure AD создается сеанс единого входа. Этот сеанс представлен маркером сеанса единого входа — в виде файла cookie. Маркер сеанса единого входа не привязан к определенному ресурсу или клиентскому приложению. Маркеры сеанса единого входа могут быть отозваны, а при каждом использовании проверяется их действительность.
 
 В Azure AD используется два вида маркеров сеанса единого входа: постоянные и временные. Постоянные маркеры сеанса хранятся в постоянных файлах cookie, а временные — хранятся в виде файлов cookie сеанса. (Файлы cookie сеанса удаляются при закрытии браузера.) Как правило, сохраняется временный маркер сеанса. Но когда пользователь при аутентификации устанавливает флажок **Оставаться в системе**, сохраняется постоянный маркер сеанса.
 
-Срок действия временных маркеров сеанса составляет 24 часа, а постоянных маркеров — 180 дней. Каждый раз, когда используется действующий маркер сеанса единого входа, срок его действия продлевается еще на 24 часа или 180 дней в зависимости от типа маркера. Если маркер сеанса единого входа не используется в течение срока его действия, он считается истекшим и не будет приниматься.
+Срок действия временных маркеров сеанса составляет 24 часа, а постоянных маркеров — 180 дней. Каждый раз, когда маркер сеанса единого входа используется в течение срока его действия, действия продлевается еще на 24 часа или 180 дней, в зависимости от типа маркера. Если маркер сеанса единого входа не используется в течение срока его действия, он считается истекшим и не будет приниматься.
 
 С помощью политик можно задать период времени после выдачи первого маркера сеанса, по прошествии которого такой маркер не будет приниматься. (Для этого воспользуйтесь свойством максимального возраста маркера сеанса.) Настройка времени жизни действия маркера сеанса позволяет управлять частотой, с которой пользователь должен повторно вводить учетные данные при использовании веб-приложения.
 
@@ -109,7 +109,7 @@ ms.locfileid: "65545389"
 
 Срок действия маркера оценивается при его использовании. Используется политика с самым высоким приоритетом, установленная для оцениваемого приложения.
 
-Все интервалы времени указаны в формате объекта C# [TimeSpan](https://msdn.microsoft.com/library/system.timespan): Д.ЧЧ:ММ:СС.  Поэтому 80 дней и 30 минут указываются как `80.00:30:00`.  Начальное значение Д можно опустить, если оно равно нулю, поэтому 90 минут будет указываться как `00:90:00`.  
+Все интервалы времени указаны в формате объекта C# [TimeSpan](/dotnet/api/system.timespan): Д.ЧЧ:ММ:СС.  Поэтому 80 дней и 30 минут указываются как `80.00:30:00`.  Начальное значение Д можно опустить, если оно равно нулю, поэтому 90 минут будет указываться как `00:90:00`.  
 
 > [!NOTE]
 > Ниже приведен пример сценария.
@@ -220,11 +220,11 @@ ms.locfileid: "65545389"
     ```
 
 ### <a name="example-manage-an-organizations-default-policy"></a>Пример: как управлять политикой организации по умолчанию;
-В этом примере мы создадим для всей организации политику, которая позволяет пользователям реже вводить учетные данные. Для этого создайте политику времени жизни для однофакторных маркеров обновления и примените ее к организации. Эта политика будет распространяться на все приложения в организации и на все субъекты-службы, для которых не установлены отдельные политики.
+В этом примере создайте политику, которая позволяет входа пользователей реже во всей организации. Для этого создайте политику времени жизни для однофакторных маркеров обновления и примените ее к организации. Эта политика будет распространяться на все приложения в организации и на все субъекты-службы, для которых не установлены отдельные политики.
 
 1. Создайте политику времени жизни маркеров.
 
-    1.  Если для параметра срока действия однофакторного маркера обновления установить значение until-revoked, маркер будет действовать неограниченно долго — пока не будет отозван. Создайте следующее определение политики:
+    1. Если для параметра срока действия однофакторного маркера обновления установить значение until-revoked, маркер будет действовать неограниченно долго — пока не будет отозван. Создайте следующее определение политики:
 
         ```powershell
         @('{
@@ -236,16 +236,16 @@ ms.locfileid: "65545389"
         }')
         ```
 
-    2.  Чтобы создать политику, выполните следующую команду:
+    2. Чтобы создать политику, выполните следующую команду:
 
         ```powershell
-        New-AzureADPolicy -Definition @('{"TokenLifetimePolicy":{"Version":1, "MaxAgeSingleFactor":"until-revoked"}}') -DisplayName "OrganizationDefaultPolicyScenario" -IsOrganizationDefault $true -Type "TokenLifetimePolicy"
+        $policy = New-AzureADPolicy -Definition @('{"TokenLifetimePolicy":{"Version":1, "MaxAgeSingleFactor":"until-revoked"}}') -DisplayName "OrganizationDefaultPolicyScenario" -IsOrganizationDefault $true -Type "TokenLifetimePolicy"
         ```
 
-    3.  Чтобы просмотреть созданную политику и получить ее **идентификатор объекта**, выполните следующую команду:
+    3. Чтобы просмотреть созданную политику и получить ее **идентификатор объекта**, выполните следующую команду:
 
         ```powershell
-        Get-AzureADPolicy
+        Get-AzureADPolicy -Id $policy.Id
         ```
 
 2. Обновите политику.
@@ -253,7 +253,7 @@ ms.locfileid: "65545389"
     Если вы решили, что созданная в этом примере политика для службы недостаточно строгая, и хотите, чтобы срок действия однофакторных маркеров обновления истекал через 2 дня, выполните следующую команду:
 
     ```powershell
-    Set-AzureADPolicy -Id <ObjectId FROM GET COMMAND> -DisplayName "OrganizationDefaultPolicyUpdatedScenario" -Definition @('{"TokenLifetimePolicy":{"Version":1,"MaxAgeSingleFactor":"2.00:00:00"}}')
+    Set-AzureADPolicy -Id $policy.Id -DisplayName $policy.DisplayName -Definition @('{"TokenLifetimePolicy":{"Version":1,"MaxAgeSingleFactor":"2.00:00:00"}}')
     ```
 
 ### <a name="example-create-a-policy-for-web-sign-in"></a>Пример: как создать политику для входа в веб-службы;
@@ -264,88 +264,98 @@ ms.locfileid: "65545389"
 
     Эта политика для входа в веб-службы определит время жизни для маркеров доступа и идентификатора, а также максимальный возраст однофакторного маркера сеанса (2 часа).
 
-    1.  Чтобы создать политику, выполните следующую команду:
+    1. Чтобы создать политику, выполните следующую команду:
 
         ```powershell
-        New-AzureADPolicy -Definition @('{"TokenLifetimePolicy":{"Version":1,"AccessTokenLifetime":"02:00:00","MaxAgeSessionSingleFactor":"02:00:00"}}') -DisplayName "WebPolicyScenario" -IsOrganizationDefault $false -Type "TokenLifetimePolicy"
+        $policy = New-AzureADPolicy -Definition @('{"TokenLifetimePolicy":{"Version":1,"AccessTokenLifetime":"02:00:00","MaxAgeSessionSingleFactor":"02:00:00"}}') -DisplayName "WebPolicyScenario" -IsOrganizationDefault $false -Type "TokenLifetimePolicy"
         ```
 
-    2.  Чтобы просмотреть созданную политику и получить ее **идентификатор объекта**, выполните следующую команду:
+    2. Чтобы просмотреть созданную политику и получить ее **идентификатор объекта**, выполните следующую команду:
 
         ```powershell
-        Get-AzureADPolicy
+        Get-AzureADPolicy -Id $policy.Id
         ```
 
-2.  Назначьте политику для субъекта-службы. Вам потребуется также получить **идентификатор объекта** субъекта-службы. 
+2. Назначьте политику для субъекта-службы. Вам потребуется также получить **идентификатор объекта** субъекта-службы.
 
-    1.  Чтобы просмотреть все субъекты-службы в организации, запросите [Microsoft Graph](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/serviceprincipal#properties) или [Azure AD Graph](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/entity-and-complex-type-reference#serviceprincipal-entity). Также это можно проверить в [обозревателе Azure AD Graph](https://graphexplorer.azurewebsites.net/)и [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) с помощью учетной записи Azure AD.
-
-    2.  Получив **идентификатор объекта** субъекта-службы, выполните следующую команду:
-
+    1. Используйте [Get-AzureADServicePrincipal](/powershell/module/azuread/get-azureadserviceprincipal) командлету субъектов-служб вашей организации или субъекта-службы в единый см. в разделе.
         ```powershell
-        Add-AzureADServicePrincipalPolicy -Id <ObjectId of the ServicePrincipal> -RefObjectId <ObjectId of the Policy>
+        # Get ID of the service principal
+        $sp = Get-AzureADServicePrincipal -Filter "DisplayName eq '<service principal display name>'"
         ```
 
+    2. Если у вас есть субъект-службу, выполните следующую команду:
+        ```powershell
+        # Assign policy to a service principal
+        Add-AzureADServicePrincipalPolicy -Id $sp.ObjectId -RefObjectId $policy.Id
+        ```
 
 ### <a name="example-create-a-policy-for-a-native-app-that-calls-a-web-api"></a>Пример: как создать политику для собственного приложения, которое вызывает веб-API;
 В этом примере мы создадим политику, в соответствии с которой пользователи должны будут реже выполнять проверку подлинности. Она также увеличивает длительность периода, в течение которого пользователи могут оставаться неактивными, прежде чем им понадобится выполнить повторную проверку подлинности. Политика применяется к веб-API каждый раз, когда собственные приложения обращаются к этому интерфейсу как к ресурсу.
 
 1. Создайте политику времени жизни маркеров.
 
-    1.  Чтобы создать строгую политику для веб-API, выполните следующую команду:
+    1. Чтобы создать строгую политику для веб-API, выполните следующую команду:
 
         ```powershell
-        New-AzureADPolicy -Definition @('{"TokenLifetimePolicy":{"Version":1,"MaxInactiveTime":"30.00:00:00","MaxAgeMultiFactor":"until-revoked","MaxAgeSingleFactor":"180.00:00:00"}}') -DisplayName "WebApiDefaultPolicyScenario" -IsOrganizationDefault $false -Type "TokenLifetimePolicy"
+        $policy = New-AzureADPolicy -Definition @('{"TokenLifetimePolicy":{"Version":1,"MaxInactiveTime":"30.00:00:00","MaxAgeMultiFactor":"until-revoked","MaxAgeSingleFactor":"180.00:00:00"}}') -DisplayName "WebApiDefaultPolicyScenario" -IsOrganizationDefault $false -Type "TokenLifetimePolicy"
         ```
 
-    2.  Чтобы просмотреть созданную политику и получить ее **идентификатор объекта**, выполните следующую команду:
+    2. Чтобы просмотреть созданную политику, выполните следующую команду:
 
         ```powershell
-        Get-AzureADPolicy
+        Get-AzureADPolicy -Id $policy.Id
         ```
 
-2. Назначьте политику для веб-API. Вам потребуется также получить **идентификатор объекта** приложения. Получить **идентификатор объекта** для приложения проще всего на [портале Azure](https://portal.azure.com/).
+2. Назначьте политику для веб-API. Вам потребуется также получить **идентификатор объекта** приложения. Используйте [Get-AzureADApplication](/powershell/module/azuread/get-azureadapplication) командлет, чтобы найти приложения **ObjectId**, или использовать [портала Azure](https://portal.azure.com/).
 
-   Получив **идентификатор объекта** приложения, выполните следующую команду:
+    Получить **ObjectId** приложения и назначение политики:
 
-        ```powershell
-        Add-AzureADApplicationPolicy -Id <ObjectId of the Application> -RefObjectId <ObjectId of the Policy>
-        ```
+    ```powershell
+    # Get the application
+    $app = Get-AzureADApplication -Filter "DisplayName eq 'Fourth Coffee Web API'"
 
+    # Assign the policy to your web API.
+    Add-AzureADApplicationPolicy -Id $app.ObjectId -RefObjectId $policy.Id
+    ```
 
 ### <a name="example-manage-an-advanced-policy"></a>Пример: как управлять расширенной политикой.
-В этом примере мы создадим несколько политик для демонстрации работы системы приоритетов. Вы также узнаете о методах управления несколькими политиками, применяемыми к нескольким объектам.
+В этом примере создается несколько политик, чтобы узнать, как работает система приоритет. Вы также узнаете, как управлять несколько политик, которые применяются к нескольким объектам.
 
 1. Создайте политику времени жизни маркеров.
 
-    1.  Чтобы создать для организации политику по умолчанию, которая определяет для однофакторного маркера обновления время жизни в 30 дней, выполните следующую команду:
+    1. Чтобы создать для организации политику по умолчанию, которая определяет для однофакторного маркера обновления время жизни в 30 дней, выполните следующую команду:
 
         ```powershell
-        New-AzureADPolicy -Definition @('{"TokenLifetimePolicy":{"Version":1,"MaxAgeSingleFactor":"30.00:00:00"}}') -DisplayName "ComplexPolicyScenario" -IsOrganizationDefault $true -Type "TokenLifetimePolicy"
+        $policy = New-AzureADPolicy -Definition @('{"TokenLifetimePolicy":{"Version":1,"MaxAgeSingleFactor":"30.00:00:00"}}') -DisplayName "ComplexPolicyScenario" -IsOrganizationDefault $true -Type "TokenLifetimePolicy"
         ```
 
-    2.  Чтобы просмотреть созданную политику и получить ее **идентификатор объекта**, выполните следующую команду:
+    2. Чтобы просмотреть созданную политику, выполните следующую команду:
 
         ```powershell
-        Get-AzureADPolicy
+        Get-AzureADPolicy -Id $policy.Id
         ```
 
 2. Назначьте политику для субъекта-службы.
 
     Теперь у нас есть политика, которая применяется ко всей организации. Предположим, мы хотим сохранить эту политику со сроком действия 30 дней для определенного субъекта-службы, но изменить максимальное ограничение стандартной политики для организации, указав значение until-revoked (пока не будет отозван).
 
-    1.  Чтобы просмотреть все субъекты-службы в организации, запросите [Microsoft Graph](https://developer.microsoft.com/graph/docs/api-reference/beta/resources/serviceprincipal#properties) или [Azure AD Graph](https://msdn.microsoft.com/Library/Azure/Ad/Graph/api/entity-and-complex-type-reference#serviceprincipal-entity). Также это можно проверить в [обозревателе Azure AD Graph](https://graphexplorer.azurewebsites.net/)и [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) с помощью учетной записи Azure AD.
+    1. Чтобы просмотреть субъектов-служб вашей организации, используйте [Get-AzureADServicePrincipal](/powershell/module/azuread/get-azureadserviceprincipal) командлета.
 
-    2.  Получив **идентификатор объекта** субъекта-службы, выполните следующую команду:
+    2. Если у вас есть субъект-службу, выполните следующую команду:
 
-            ```powershell
-            Add-AzureADServicePrincipalPolicy -Id <ObjectId of the ServicePrincipal> -RefObjectId <ObjectId of the Policy>
-            ```
-        
+        ```powershell
+        # Get ID of the service principal
+        $sp = Get-AzureADServicePrincipal -Filter "DisplayName eq '<service principal display name>'"
+
+        # Assign policy to a service principal
+        Add-AzureADServicePrincipalPolicy -Id $sp.ObjectId -RefObjectId $policy.Id
+        ```
+
 3. Задайте значение false для флага `IsOrganizationDefault`:
 
     ```powershell
-    Set-AzureADPolicy -Id <ObjectId of Policy> -DisplayName "ComplexPolicyScenario" -IsOrganizationDefault $false
+    Set-AzureADPolicy -Id $policy.Id -DisplayName "ComplexPolicyScenario" -IsOrganizationDefault $false
     ```
 
 4. Создайте новую политику организации по умолчанию:
@@ -389,7 +399,7 @@ Get-AzureADPolicy
 
 | Параметры | Описание | Пример |
 | --- | --- | --- |
-| <code>&#8209;Id</code> (необязательный параметр) |**Идентификатор объекта (ИД)** для нужной политики. |`-Id <ObjectId of Policy>` |
+| <code>&#8209;Id</code> (необязательный параметр) |**Идентификатор объекта (ID)** политики, вы. |`-Id <ObjectId of Policy>` |
 
 </br></br>
 
@@ -402,7 +412,7 @@ Get-AzureADPolicyAppliedObject -Id <ObjectId of Policy>
 
 | Параметры | Описание | Пример |
 | --- | --- | --- |
-| <code>&#8209;Id</code> |**Идентификатор объекта (ИД)** для нужной политики. |`-Id <ObjectId of Policy>` |
+| <code>&#8209;Id</code> |**Идентификатор объекта (ID)** политики, вы. |`-Id <ObjectId of Policy>` |
 
 </br></br>
 
@@ -415,7 +425,7 @@ Set-AzureADPolicy -Id <ObjectId of Policy> -DisplayName <string>
 
 | Параметры | Описание | Пример |
 | --- | --- | --- |
-| <code>&#8209;Id</code> |**Идентификатор объекта (ИД)** для нужной политики. |`-Id <ObjectId of Policy>` |
+| <code>&#8209;Id</code> |**Идентификатор объекта (ID)** политики, вы. |`-Id <ObjectId of Policy>` |
 | <code>&#8209;DisplayName</code> |Строка c именем политики. |`-DisplayName "MyTokenPolicy"` |
 | <code>&#8209;Definition</code> (необязательный параметр) |Переведенный в строку массив JSON, который содержит все правила политики. |`-Definition @('{"TokenLifetimePolicy":{"Version":1,"MaxInactiveTime":"20:00:00"}}')` |
 | <code>&#8209;IsOrganizationDefault</code> (необязательный параметр) |Если присвоено значение true, политика устанавливается как политика по умолчанию для организации. Если присвоено значение false — параметр игнорируется. |`-IsOrganizationDefault $true` |
@@ -433,7 +443,7 @@ Set-AzureADPolicy -Id <ObjectId of Policy> -DisplayName <string>
 
 | Параметры | Описание | Пример |
 | --- | --- | --- |
-| <code>&#8209;Id</code> |**Идентификатор объекта (ИД)** для нужной политики. | `-Id <ObjectId of Policy>` |
+| <code>&#8209;Id</code> |**Идентификатор объекта (ID)** политики, вы. | `-Id <ObjectId of Policy>` |
 
 </br></br>
 
@@ -449,7 +459,7 @@ Add-AzureADApplicationPolicy -Id <ObjectId of Application> -RefObjectId <ObjectI
 
 | Параметры | Описание | Пример |
 | --- | --- | --- |
-| <code>&#8209;Id</code> |**Идентификатор объекта (ИД)** для приложения. | `-Id <ObjectId of Application>` |
+| <code>&#8209;Id</code> |**Идентификатор объекта (ID)** приложения. | `-Id <ObjectId of Application>` |
 | <code>&#8209;RefObjectId</code> |**Идентификатор объекта** для политики. | `-RefObjectId <ObjectId of Policy>` |
 
 </br></br>
@@ -463,7 +473,7 @@ Get-AzureADApplicationPolicy -Id <ObjectId of Application>
 
 | Параметры | Описание | Пример |
 | --- | --- | --- |
-| <code>&#8209;Id</code> |**Идентификатор объекта (ИД)** для приложения. | `-Id <ObjectId of Application>` |
+| <code>&#8209;Id</code> |**Идентификатор объекта (ID)** приложения. | `-Id <ObjectId of Application>` |
 
 </br></br>
 
@@ -476,7 +486,7 @@ Remove-AzureADApplicationPolicy -Id <ObjectId of Application> -PolicyId <ObjectI
 
 | Параметры | Описание | Пример |
 | --- | --- | --- |
-| <code>&#8209;Id</code> |**Идентификатор объекта (ИД)** для приложения. | `-Id <ObjectId of Application>` |
+| <code>&#8209;Id</code> |**Идентификатор объекта (ID)** приложения. | `-Id <ObjectId of Application>` |
 | <code>&#8209;PolicyId</code> |**Идентификатор объекта** для политики. | `-PolicyId <ObjectId of Policy>` |
 
 </br></br>
@@ -493,7 +503,7 @@ Add-AzureADServicePrincipalPolicy -Id <ObjectId of ServicePrincipal> -RefObjectI
 
 | Параметры | Описание | Пример |
 | --- | --- | --- |
-| <code>&#8209;Id</code> |**Идентификатор объекта (ИД)** для приложения. | `-Id <ObjectId of Application>` |
+| <code>&#8209;Id</code> |**Идентификатор объекта (ID)** приложения. | `-Id <ObjectId of Application>` |
 | <code>&#8209;RefObjectId</code> |**Идентификатор объекта** для политики. | `-RefObjectId <ObjectId of Policy>` |
 
 </br></br>
@@ -507,7 +517,7 @@ Get-AzureADServicePrincipalPolicy -Id <ObjectId of ServicePrincipal>
 
 | Параметры | Описание | Пример |
 | --- | --- | --- |
-| <code>&#8209;Id</code> |**Идентификатор объекта (ИД)** для приложения. | `-Id <ObjectId of Application>` |
+| <code>&#8209;Id</code> |**Идентификатор объекта (ID)** приложения. | `-Id <ObjectId of Application>` |
 
 </br></br>
 
@@ -520,5 +530,5 @@ Remove-AzureADServicePrincipalPolicy -Id <ObjectId of ServicePrincipal>  -Policy
 
 | Параметры | Описание | Пример |
 | --- | --- | --- |
-| <code>&#8209;Id</code> |**Идентификатор объекта (ИД)** для приложения. | `-Id <ObjectId of Application>` |
+| <code>&#8209;Id</code> |**Идентификатор объекта (ID)** приложения. | `-Id <ObjectId of Application>` |
 | <code>&#8209;PolicyId</code> |**Идентификатор объекта** для политики. | `-PolicyId <ObjectId of Policy>` |

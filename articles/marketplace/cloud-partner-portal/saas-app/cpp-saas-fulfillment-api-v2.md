@@ -1,23 +1,22 @@
 ---
 title: SaaS реализации API версии 2 | Azure Marketplace
-description: Объясняется, как создать предложение SaaS в Azure Marketplace с помощью связанных исполнение V2 API-интерфейсы.
+description: Объясняется, как создать предложение SaaS на AppSource и с помощью связанных исполнение V2 API-интерфейсы Azure Marketplace.
 services: Azure, Marketplace, Cloud Partner Portal,
 author: v-miclar
 ms.service: marketplace
 ms.topic: conceptual
 ms.date: 03/28/2019
 ms.author: pabutler
-ms.openlocfilehash: 433059dc1b1567c5cbcb1091f2d616001d1dbf44
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 551f3be2ca23bc18224d28faeea6a6df80eba1db
+ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65762269"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65823538"
 ---
 # <a name="saas-fulfillment-apis-version-2"></a>SaaS реализации API-интерфейсов версии 2 
 
-В этой статье подробно API, который включает независимые поставщики программного обеспечения (ISV) интегрировать свои приложения SaaS с Azure Marketplace. Этот API позволяет приложениям независимых поставщиков программного обеспечения для участия в всех коммерческих включена каналов: direct, осуществляемое партнерами (торгового посредника) и поле под руководством.  Этот API является обязательным для списка могут быть частью транзакции SaaS предложения в Azure Marketplace.
-
+В этой статье описывается API, который обеспечивает независимых поставщиков программного обеспечения (ISV), чтобы продавать свои приложения SaaS в Azure Marketplace и AppSource. Этот API-это требование для получения списка SaaS поддерживают на Azure Marketplace и AppSource.
 
 ## <a name="managing-the-saas-subscription-lifecycle"></a>Управление жизненным циклом подписки SaaS
 

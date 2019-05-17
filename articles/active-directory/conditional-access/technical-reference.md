@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: spunukol
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0e87a4c7ebafd8ddcfa54c87b189316b0ce98b0f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: MT
+ms.openlocfilehash: 3b10a91499dbe7e627025be8487efa15890861b9
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60301314"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65764727"
 ---
 # <a name="azure-active-directory-conditional-access-settings-reference"></a>Справочник по параметрам условного доступа в Azure Active Directory
 
@@ -33,7 +33,7 @@ ms.locfileid: "60301314"
 
 ## <a name="cloud-apps-assignments"></a>Назначения облачных приложений
 
-С помощью политик условного доступа можно управлять доступом пользователей к [облачным приложениям](conditions.md#cloud-apps). При настройке политики условного доступа необходимо выбрать как минимум одно облачное приложение, к которому она применяется. 
+С помощью политик условного доступа можно управлять доступом пользователей к [облачным приложениям](conditions.md#cloud-apps-and-actions). При настройке политики условного доступа необходимо выбрать как минимум одно облачное приложение, к которому она применяется. 
 
 ![Выбор облачных приложений для политики](./media/technical-reference/09.png)
 
@@ -41,7 +41,7 @@ ms.locfileid: "60301314"
 
 Политики условного доступа можно назначить для следующих облачных приложений от корпорации Майкрософт:
 
-- Службы Azure Analysis Services
+- Azure Analysis Services
 - Azure DevOps
 - База данных SQL Azure и хранилище данных — [Подробнее](https://docs.microsoft.com/azure/sql-database/sql-database-conditional-access)
 - Dynamics CRM Online
@@ -62,8 +62,8 @@ ms.locfileid: "60301314"
 - Microsoft PowerApps
 - Microsoft Search в Bing
 - Microsoft StaffHub
-- Microsoft Stream;
-- Microsoft Teams
+- Microsoft Stream
+- Microsoft Teams
 - Office 365 Exchange Online
 - Office 365 SharePoint Online
 - Office 365 Yammer
@@ -126,7 +126,7 @@ ms.locfileid: "60301314"
 | Windows Server 2016    | Internet Explorer, Microsoft Edge, Chrome             |
 | Windows Server 2016    | Chrome                                        |
 | Windows Server 2012 R2 | Internet Explorer, Chrome                     |
-| Windows Server 2008 R2 | Internet Explorer, Chrome                     |
+| Windows Server 2008 R2 | Internet Explorer, Chrome                     |
 | macOS                  | Chrome, Safari                                |
 
 #### <a name="why-do-i-see-a-certificate-prompt-in-the-browser"></a>Почему в браузере запрос сертификата
@@ -141,8 +141,8 @@ ms.locfileid: "60301314"
 
 |    |    |
 | --- | --- |
-| Путь | HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome\ExtensionInstallForcelist |
-| Name | 1 |
+| `Path` | HKEY_LOCAL_MACHINE\Software\Policies\Google\Chrome\ExtensionInstallForcelist |
+| ИМЯ | 1 |
 | type | REG_SZ (String) |
 | Данные | ppnbnpeolgkicgegkbkbjmhlideopiji; https://clients2.google.com/service/update2/crx |
 
@@ -150,8 +150,8 @@ ms.locfileid: "60301314"
 
 |    |    |
 | --- | --- |
-| Путь | HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\AutoSelectCertificateForUrls |
-| Name | 1 |
+| `Path` | HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome\AutoSelectCertificateForUrls |
+| ИМЯ | 1 |
 | type | REG_SZ (String) |
 | Данные | {"pattern":"https://device.login.microsoftonline.com","filter":{"ISSUER":{"CN":"MS-Organization-Access"}}} |
 
@@ -171,7 +171,7 @@ ms.locfileid: "60301314"
 | Приложение Dynamics CRM | Dynamics CRM | Windows 10, Windows 8.1, iOS и Android |
 | Приложения Почта, Календарь и Люди, Outlook 2016, Outlook 2013 (с современной аутентификацией)| Office 365 Exchange Online | Windows 10 |
 | MFA и политика расположения для приложений Политики на основе устройств не поддерживаются.| Все службы приложения "Мои приложения"| Android и iOS |
-| Microsoft Teams Services — контролируют все службы, которые поддерживают Microsoft Teams, и все их клиентские приложения: для Windows Desktop, iOS, Android, WP, а также веб-клиент. | Microsoft Teams | Windows 10, Windows 8.1, Windows 7, iOS, Android и macOS |
+| Microsoft Teams Services — контролируют все службы, которые поддерживают Microsoft Teams, и все их клиентские приложения: для Windows Desktop, iOS, Android, WP, а также веб-клиент. | Microsoft Teams | Windows 10, Windows 8.1, Windows 7, iOS, Android и macOS |
 | Приложения Office 2016, Office 2013 (с современной проверкой подлинности), клиент синхронизации OneDrive (см. [заметки](https://support.office.com/en-US/article/Azure-Active-Directory-conditional-access-with-the-OneDrive-sync-client-on-Windows-028d73d7-4b86-4ee0-8fb7-9a209434b04e)) | Office 365 SharePoint Online | Windows 8.1, Windows 7 |
 | Приложения Office 2016, универсальные приложения Office, Office 2013 (с современной проверкой подлинности), клиент синхронизации OneDrive (см. [заметки](https://support.office.com/en-US/article/Azure-Active-Directory-conditional-access-with-the-OneDrive-sync-client-on-Windows-028d73d7-4b86-4ee0-8fb7-9a209434b04e)); поддержка групп Office и SharePoint ожидается в будущем | Office 365 SharePoint Online | Windows 10 |
 | Office 2016 (только Word, Excel, PowerPoint, OneNote). Поддержку OneDrive для бизнеса планируется реализовать в будущем.| Office 365 SharePoint Online| macOS|
@@ -202,7 +202,8 @@ ms.locfileid: "60301314"
 
 Этот параметр применяется к следующим клиентским приложениям.
 
-- Microsoft Azure Information Protection.
+- Microsoft Azure Information Protection
+- Microsoft Bookings
 - Microsoft Edge
 - Microsoft Excel
 - Microsoft Flow
@@ -220,8 +221,8 @@ ms.locfileid: "60301314"
 - Microsoft SharePoint
 - Microsoft Skype для бизнеса;
 - Microsoft StaffHub
-- Microsoft Stream;
-- Microsoft Teams
+- Microsoft Stream
+- Microsoft Teams
 - Microsoft To-Do
 - Microsoft Visio;
 - Microsoft Word

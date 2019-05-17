@@ -1,10 +1,10 @@
 ---
 title: Как настроить приложение прокси приложения | Документы Майкрософт
-description: Научитесь создавать и настраивать приложения прокси приложения за несколько простых шагов
+description: Узнайте, как создавать и настраивать приложения прокси приложения в несколько простых шагов
 services: active-directory
 documentationcenter: ''
-author: CelesteDG
-manager: mtillman
+author: msmimart
+manager: CelesteDG
 ms.assetid: ''
 ms.service: active-directory
 ms.subservice: app-mgmt
@@ -13,19 +13,19 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/18/2018
-ms.author: celested
+ms.author: mimart
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 95f22f064043467bf52c23cab547a7e6c8ba2205
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: fc9287aac567c8989564094564b92b82662e603f
+ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60443204"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65825930"
 ---
 # <a name="how-to-configure-an-application-proxy-application"></a>Как настроить приложение прокси приложения
 
-Из этой статьи вы узнаете, как настроить приложение прокси приложения в Azure AD так, чтобы локальные приложения были доступны в облаке.
+Эта статья поможет вам понять, как настроить приложение прокси приложения в Azure AD для предоставления ваши локальные приложения в облако.
 
 ## <a name="recommended-documents"></a>Рекомендуемые документы 
 
@@ -49,7 +49,7 @@ ms.locfileid: "60443204"
 
 -   URL-адрес должен включать имя домена, а не IP-адрес.
 
-Сообщение об ошибке при создании приложения должно отображаться в правом верхнем углу. Для просмотра сообщений об ошибках также можно выбрать значок уведомления.
+Сообщение об ошибке должны отображаться в правом верхнем углу, при создании приложения. Для просмотра сообщений об ошибках также можно выбрать значок уведомления.
 
    ![Уведомление](./media/application-proxy-config-how-to/error-message.png)
 
@@ -71,7 +71,7 @@ ms.locfileid: "60443204"
 
 -   Отсутствует закрытый ключ сертификата.
 
-При попытке отправить сертификат в правом верхнем углу отображается сообщение об ошибке. Для просмотра сообщений об ошибках также можно выбрать значок уведомления.
+Сообщение об ошибке отобразите в правом верхнем углу, как при попытке отправить сертификат. Для просмотра сообщений об ошибках также можно выбрать значок уведомления.
 
    ![Уведомление](./media/application-proxy-config-how-to/error-message2.png)
 

@@ -9,14 +9,14 @@ services: cognitive-services
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 05/07/2019
+ms.date: 05/15/2019
 ms.author: diberry
-ms.openlocfilehash: fc05f285b286bd0f036c583c154a40cf64e144d4
-ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
+ms.openlocfilehash: b4c1de8edf04e15b540adeac01bcbf0cb1d1b8af
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2019
-ms.locfileid: "65522032"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65766935"
 ---
 # <a name="language-understanding-frequently-asked-questions-faq"></a>Часто задаваемые вопросы о службе "Распознавание речи"
 
@@ -295,6 +295,8 @@ Get-AzCognitiveServicesAccountUsage -ResourceGroupName <your-resource-group> -Na
 * [Предварительную версию V3 API руководство по миграции](luis-migration-api-v3.md)
 * [Улучшенные панели мониторинга](luis-how-to-use-dashboard.md)
 * [Улучшенная предварительно созданных доменов](luis-reference-prebuilt-domains.md) 
+* [Динамический список сущностей](luis-migration-api-v3.md#dynamic-lists-passed-in-at-prediction-time)
+* [Внешние сущности](luis-migration-api-v3.md#external-entities-passed-in-at-prediction-time)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: 0783251eaeef188c49c5b3aa61b5ecaec48127b7
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.openlocfilehash: b9fe723ca13cbee0e31b14e60a6bd740d2a282df
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65506693"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65779293"
 ---
 # <a name="azure-policy-definition-structure"></a>Структура определения службы "Политика Azure"
 
@@ -238,7 +238,7 @@ ms.locfileid: "65506693"
 При использовании условий **like** и **notLike** можно указать в значении подстановочный знак `*`.
 Значение не должно содержать более одного подстановочного знака `*`.
 
-При использовании условий **match** и **notMatch** укажите `#` для сопоставления цифры, `?` для представления буквы, `.` для сопоставления всех знаков и любой другой знак для сопоставления соответствующего фактического знака.
+При использовании **соответствует** и **notMatch** укажите условия, `#` в соответствии с цифры, `?` для буквы, `.` в соответствии с любым символом и любой другой символ в соответствии с фактического символа.
 В условиях **match** и **notMatch** учитывается регистр. Другие варианты без учета регистра доступны для условий **matchInsensitively** и **notMatchInsensitively**. Примеры см. в статье [Разрешение на использование нескольких шаблонов имен](../samples/allow-multiple-name-patterns.md).
 
 ### <a name="fields"></a>Поля

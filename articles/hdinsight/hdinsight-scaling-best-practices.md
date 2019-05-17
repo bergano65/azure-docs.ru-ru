@@ -1,26 +1,26 @@
 ---
 title: Масштабирование размеров кластера в Azure HDInsight
-description: Масштабируйте кластер HDInsight для адаптации к рабочей нагрузке.
+description: Масштабирование кластера Azure HDInsight гибко, в соответствии с вашей рабочей нагрузки.
 author: ashishthaps
+ms.author: ashish
 ms.reviewer: jasonh
 ms.service: hdinsight
-ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 02/26/2019
-ms.author: ashish
-ms.openlocfilehash: a172024e4662e647b39fe999f1be3cfcef04b5ce
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.date: 05/13/2019
+ms.openlocfilehash: 59b9c2bf6e17dadc0d084d3e3f257f8ad91073ca
+ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64698250"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65595849"
 ---
 # <a name="scale-hdinsight-clusters"></a>Масштабирование кластеров HDInsight
 
 HDInsight обеспечивает гибкость, предоставляя возможность увеличивать и уменьшать масштаб определенного количества рабочих узлов в кластерах. Это позволяет сжимать кластер в нерабочие часы или в выходные дни, а также разворачивать его при пиковых бизнес-требованиях.
 
-Например, при пакетной обработке раз в день или месяц можно увеличить масштаб кластера HDInsight за несколько минут до запуска запланированного события, чтобы обеспечить достаточный объем памяти и вычислительной мощности ЦП.  Позже после обработки, когда кластер HDInsight не требует интенсивного использования, можно уменьшить его масштаб для меньшего количества рабочих узлов.
+Например при наличии пакетной обработке, происходит один раз в день или раз в месяц, в кластер HDInsight можно масштабировать в сторону за несколько минут до запуска запланированного события, поэтому будет обеспечить достаточный объем памяти и вычислительной мощности ЦП.  Позже после обработки, когда кластер HDInsight не требует интенсивного использования, можно уменьшить его масштаб для меньшего количества рабочих узлов.
 
+Масштабирование кластера вручную с помощью одного из методов, описанных ниже, также можно использовать [автомасштабирования](hdinsight-autoscale-clusters.md) параметры, чтобы система могла автоматически увеличивать или уменьшать в ответ на ЦП, памяти и других метрик.
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
@@ -28,15 +28,15 @@ HDInsight обеспечивает гибкость, предоставляя в
 
 Корпорация Майкрософт предоставляет следующие служебные программы для масштабирования кластеров:
 
-|Служебная программа | ОПИСАНИЕ|
+|Служебная программа | Описание|
 |---|---|
 |[PowerShell Az](https://docs.microsoft.com/powershell/azure)|[SET-AzHDInsightClusterSize](https://docs.microsoft.com/powershell/module/az.hdinsight/set-azhdinsightclustersize) - ClusterName \<имя кластера > - TargetInstanceCount \<NewSize >|
 |[PowerShell AzureRM](https://docs.microsoft.com/powershell/azure/azurerm) |[SET-AzureRmHDInsightClusterSize](https://docs.microsoft.com/powershell/module/azurerm.hdinsight/set-azurermhdinsightclustersize) - ClusterName \<имя кластера > - TargetInstanceCount \<NewSize >|
-|[Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest)|[Изменение размера AZ hdinsight](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-resize) --группы ресурсов \<группы ресурсов >--имя \<имя кластера >--счетчик целевых экземпляров \<NewSize >|
-|[Классический Azure CLI](hdinsight-administer-use-command-line.md)|Изменение размера кластера Azure hdinsight \<Имя_кластера > \<счетчик целевых экземпляров >|
+|[Интерфейс командной строки Azure](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest)| [Изменение размера AZ hdinsight](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-resize) --группы ресурсов \<группы ресурсов >--имя \<имя кластера >--счетчик целевых экземпляров \<NewSize >|
+|[Классический Azure CLI](hdinsight-administer-use-command-line.md)|Изменение размера кластера Azure hdinsight \<Имя_кластера > \<счетчик целевых экземпляров > |
 |[портал Azure](https://portal.azure.com)|Откройте панель кластера HDInsight, выберите **размер кластера** в меню слева, а затем на панели размер кластера, введите количество рабочих узлов и выберите Save.|  
 
-![Изменение масштаба кластера](./media/hdinsight-scaling-best-practices/scale-cluster-blade.png)
+![Изменить масштаб кластера](./media/hdinsight-scaling-best-practices/scale-cluster-blade.png)
 
 С помощью любого из этих методов можно увеличивать или уменьшать масштаб кластера HDInsight за считанные минуты.
 
@@ -74,7 +74,7 @@ HDInsight обеспечивает гибкость, предоставляя в
 yarn application -kill <application_id>
 ```
 
-Например: 
+Например:
 
 ```bash
 yarn application -kill "application_1499348398273_0003"
@@ -326,6 +326,6 @@ hadoop fs -rm -r -skipTrash hdfs://mycluster/tmp/hive/
     
 ## <a name="next-steps"></a>Дальнейшие действия
 
+* [Автоматическое масштабирование кластеров Azure HDInsight](hdinsight-autoscale-clusters.md)
 * [Введение в Azure HDInsight](hadoop/apache-hadoop-introduction.md)
 * [Масштабирование кластеров](hdinsight-administer-use-portal-linux.md#scale-clusters)
-* [Управление кластерами HDInsight с помощью веб-интерфейса Apache Ambari](hdinsight-hadoop-manage-ambari.md)

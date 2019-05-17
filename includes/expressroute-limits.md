@@ -8,14 +8,14 @@ ms.topic: include
 ms.date: 06/12/2018
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: d067f1af3d5479aef28ddf2290cebe3fe45726b0
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: c025c431d826d3a2951a9eb5c09308695e172887
+ms.sourcegitcommit: f013c433b18de2788bf09b98926c7136b15d36f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64733792"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65551233"
 ---
-| Resource | По умолчанию и максимальные ограничения |
+| Ресурс | По умолчанию и максимальные ограничения |
 | --- | --- |
 | Каналы ExpressRoute для каждой подписки |10 |
 | Каналы ExpressRoute на регион на подписку, с помощью Azure Resource Manager |10 |
@@ -25,7 +25,7 @@ ms.locfileid: "64733792"
 | Максимальное количество маршрутов для пиринга Microsoft Azure со стандартом ExpressRoute |200 |
 | Максимальное количество маршрутов для пиринга Microsoft Azure с надстройкой ExpressRoute Premium |200 |
 | Максимальное число каналов ExpressRoute, связанных с одной и той же виртуальной сети в одном расположении пиринга |4. |
-| Максимальное число каналов ExpressRoute, связанных с одной и той же виртуальной сетью в разных расположениях пиринга |> 4, зависит от размера подсеть шлюза|
+| Максимальное число каналов ExpressRoute, связанных с одной и той же виртуальной сетью в разных расположениях пиринга |4. |
 | Количество связей виртуальных сетей на канал ExpressRoute |См. в следующей таблице. |
 
 #### <a name="number-of-virtual-networks-per-expressroute-circuit"></a>Количество виртуальных сетей на канал ExpressRoute
@@ -39,4 +39,7 @@ ms.locfileid: "64733792"
 | 2 Гбит/с |10 |60 |
 | 5 Гбит/с |10 |75 |
 | 10 Гбит/с |10 |100 |
+| 40 Гбит/с * |10 |100 |
+| 100 Гбит/с * |10 |100 |
 
+* Только Direct ExpressRoute

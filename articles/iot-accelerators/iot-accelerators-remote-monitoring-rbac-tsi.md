@@ -8,12 +8,12 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 08/06/2018
 ms.topic: conceptual
-ms.openlocfilehash: 778637b7488b7c5c21b600673890da79a76b4997
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 9d5d572c3e32e3645e65ba8d6fc28b567b3c1e9a
+ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61443239"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65827212"
 ---
 # <a name="configure-access-controls-for-the-time-series-insights-telemetry-explorer"></a>Настройка управления доступом для обозревателя телеметрии Аналитики временных рядов
 
@@ -21,7 +21,38 @@ ms.locfileid: "61443239"
 
 Политики доступа к данным предоставляют разрешения для отправки запросов данных, обработки ссылочных данных в среде, а также предоставляют другим пользователям среды доступ к сохраненным запросам и перспективам.
 
-[!INCLUDE [iot-tsi-data-access](../../includes/iot-tsi-data-access.md)]
+## <a name="grant-data-access"></a>Предоставление доступа к данным
+
+Выполните следующие действия, чтобы предоставить доступ к данным для субъекта-пользователя.
+
+1. Войдите на [портале Azure](https://portal.azure.com).
+
+2. Найдите среду "Аналитика временных рядов". Введите **Временные ряды** в поле **поиска**. Выберите **Среда временных рядов** в результатах поиска. 
+
+3. Выберите среду Time Series Insights в списке.
+
+4. Выберите **Политики доступа к данным**, а затем нажмите кнопку **+Добавить**.
+    ![Управление исходной средой "Аналитика временных рядов"](media/iot-accelerators-remote-monitoring-rbac-tsi/getstarted-grant-data-access1.png)
+
+5. Щелкните **Выбор пользователя**.  Выполните поиск по имени пользователя или адресу электронной почты, чтобы найти пользователя, которого следует добавить. Нажмите **Выбрать**, чтобы подтвердить выбор. 
+
+    ![Управление источником Time Series Insights — "Добавить"](media/iot-accelerators-remote-monitoring-rbac-tsi/getstarted-grant-data-access2.png)
+
+6. Щелкните **Выбор ролей**. Выберите соответствующую роль доступа для пользователя.
+   - Выберите **Участник**, если вы хотите разрешить пользователю изменять ссылочные данные и предоставить другим пользователям среды доступ к сохраненным запросам и перспективам. 
+   - В противном случае выберите **Читатель**, чтобы разрешить пользователю обращаться к данным в среде и сохранять в ней личные (не общие) запросы.
+
+     Нажмите кнопку **ОК**, чтобы подтвердить выбор роли.
+
+     ![Управление источником Time Series Insights — "Выбор пользователя"](media/iot-accelerators-remote-monitoring-rbac-tsi/getstarted-grant-data-access3.png)
+
+7. На странице **Выбор роли пользователя** нажмите кнопку **ОК**.
+
+    ![Управление источником Time Series Insights — "Выбор ролей"](media/iot-accelerators-remote-monitoring-rbac-tsi/getstarted-grant-data-access4.png)
+
+8. На странице **Политики доступа к данным** перечислены пользователи и соответствующие роли.
+
+    ![Управление источником Time Series Insights — результаты](media/iot-accelerators-remote-monitoring-rbac-tsi/getstarted-grant-data-access5.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

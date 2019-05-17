@@ -2,22 +2,22 @@
 title: Параметры файла cookie прокси приложения (Azure Active Directory) | Документация Майкрософт
 description: Azure Active Directory (Azure AD) имеет файлы cookie доступа и сеанса для доступа к локальным приложениям через прокси-сервер приложения. В этой статье вы узнаете, как использовать и настраивать параметры файлов cookie.
 services: active-directory
-author: CelesteDG
-manager: mtillman
+author: msmimart
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 01/16/2019
-ms.author: celested
+ms.author: mimart
 ms.reviewer: japere
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 06fd83ee815e9e207c1fa5a1c6767280122c4d0c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: d2e7f1bb54ce316a10eca0d020519779b0536c9e
+ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60440536"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65825746"
 ---
 # <a name="cookie-settings-for-accessing-on-premises-applications-in-azure-active-directory"></a>Параметры файлов cookie для доступа к локальным приложениям в Azure Active Directory
 
@@ -27,7 +27,7 @@ Azure Active Directory (Azure AD) имеет файлы cookie доступа и
 
 [Прокси приложения](application-proxy.md) использует следующие параметры файлов cookie доступа и сеанса.
 
-| Параметр файла cookie | значение по умолчанию | ОПИСАНИЕ | Рекомендации |
+| Параметр файла cookie | значение по умолчанию | Описание | Рекомендации |
 | -------------- | ------- | ----------- | --------------- |
 | Использовать файл cookie, предназначенный только для HTTP | **Нет** | **Да**. Позволяет прокси приложения включить флаг HTTPOnly в заголовки ответа HTTP. Этот флаг обеспечивает дополнительные преимущества для безопасности, например, это препятствует клиентскому сценарию (CSS) копировать или изменять файлы cookie.<br></br><br></br>Перед реализацией поддержки параметра "Только HTTP" прокси приложения зашифровал и передал файлы cookie через защищенный канал SSL, чтобы защититься от изменения. | Выберите **Да**, чтобы получить дополнительные преимущества безопасности.<br></br><br></br>Выберите **Нет** для клиентов или агентов пользователей, которым требуется доступ к файлам cookie сеанса. Например, в клиенте для RDP или MTSC, который подключается к серверу шлюза удаленных рабочих столов через прокси приложения, выберите **Нет**.|
 | Использование безопасного файла cookie | **Нет** | **Да**. Позволяет прокси приложения включить флаг безопасности в заголовки ответа HTTP. Защищенный файл cookie повышает безопасность передачи по защищенному каналу TLS, такому как HTTPS. Это предотвращает несанкционированное отслеживание файлов cookie сторонними лицами из-за передачи файла cookie в виде обычного текста. | Выберите **Да**, чтобы получить дополнительные преимущества безопасности.|

@@ -12,15 +12,15 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.subservice: compliance
-ms.date: 04/03/2019
+ms.date: 05/15/2019
 ms.author: rolyon
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a1f03cd518a15d08971968e04fa69954951c77e0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 8659ecab649216650403f3a992cc6e356e5de5d0
+ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60357128"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65823579"
 ---
 # <a name="azure-active-directory-terms-of-use-feature"></a>Функция "Условия использования Azure Active Directory"
 Функция "Условия использования Azure AD" — это простой способ, которым организации могут предоставлять сведения своим пользователям. Благодаря этой презентации пользователи видят соответствующие заявления об отказе согласно юридическим требованиям и для соответствия стандартам. В этой статье описывается, как приступить к работе с условиями использования.
@@ -383,6 +383,9 @@ ms.locfileid: "60357128"
 
 **Вопрос. Что произойдет, если я также использую условия Intune?**<br />
 Ответ. Если вы настроили условия использования Azure AD и [условия Intune](/intune/terms-and-conditions-create), пользователь должен будет принять все эти условия. Дополнительные сведения см. в записи блога о [выборе правильного решения условий использования для организации](https://go.microsoft.com/fwlink/?linkid=2010506&clcid=0x409).
+
+**Вопрос. Какие конечные точки с условиями использования службы используют для проверки подлинности?**<br />
+Ответ. Условия использования использует следующие конечные точки для проверки подлинности: https://tokenprovider.termsofuse.identitygovernance.azure.com и https://account.activedirectory.windowsazure.com. Если вашей организации есть список разрешений URL-адресов для регистрации, необходимо добавить эти конечные точки в белом списке, а также конечные точки Azure AD для входа.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

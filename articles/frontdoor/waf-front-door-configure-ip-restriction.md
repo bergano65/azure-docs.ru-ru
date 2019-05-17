@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/25/2019
 ms.author: kumud;tyao
-ms.openlocfilehash: 514c034c23eed3a87111331724f3a33104651a43
-ms.sourcegitcommit: e729629331ae10097a081a03029398525f4147a4
+ms.openlocfilehash: b129579916330a34a2a78d98f2c7653f129d3319
+ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/25/2019
-ms.locfileid: "64514909"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65523709"
 ---
 # <a name="configure-an-ip-restriction-rule-with-web-application-firewall-for-azure-front-door-preview"></a>Настройка правила ограничения IP-адрес с помощью брандмауэра веб-приложения для Azure двери (Предварительная версия)
  В этой статье показано, как настроить правила ограничения IP-адресов в брандмауэр Azure веб-приложения (WAF) для входной двери с помощью шаблона Azure CLI, Azure PowerShell или Azure Resource Manager.
@@ -137,24 +137,24 @@ Install-Module -Name Az.FrontDoor
 Создайте профиль Front Door, следуя инструкциям, описанным в статье [Краткое руководство. Создание профиля передовой линии](quickstart-create-front-door.md)
 
 ### <a name="define-ip-match-condition"></a>Определить условие соответствия IP-адрес
-Используйте [New AzFrontDoorMatchConditionObject](/powershell/module/az.frontdoor/new-azfrontdoormatchconditionobject) команду, чтобы определить условие соответствия IP-адрес. В следующем примере замените *ip адрес диапазона-1*, *ip адрес диапазона-2* с собственного диапазона.
+Используйте [New AzFrontDoorWafMatchConditionObject](/powershell/module/az.frontdoor/new-azfrontdoorwafmatchconditionobject) команду, чтобы определить условие соответствия IP-адрес. В следующем примере замените *ip адрес диапазона-1*, *ip адрес диапазона-2* с собственного диапазона.
 
 ```powershell
-  $IPMatchCondition = New-AzFrontDoorMatchConditionObject `
+  $IPMatchCondition = New-AzFrontDoorWafMatchConditionObject `
     -MatchVariable  RemoteAddr `
     -OperatorProperty IPMatch `
     -MatchValue ["ip-address-range-1", "ip-address-range-2"]
 ```
 Создать сопоставления IP-адрес всех условное правило
 ```powershell
-  $IPMatchALlCondition = New-AzFrontDoorMatchConditionObject `
+  $IPMatchALlCondition = New-AzFrontDoorWafMatchConditionObject `
     -MatchVariable  RemoteAddr `
     -OperatorProperty Any
     
 ```
 
 ### <a name="create-a-custom-ip-allow-rule"></a>Создание пользовательского правила разрешенных IP-адресов
-   Используйте [New AzFrontDoorCustomRuleObject](/powershell/module/Az.FrontDoor/New-AzFrontDoorCustomRuleObject) команду, чтобы определить действие и установить приоритет. В следующем примере будут разрешены запросы от клиентских IP-адресов, соответствующих списку. 
+   Используйте [New AzFrontDoorCustomRuleObject](/powershell/module/Az.FrontDoor/New-azfrontdoorwafcustomruleobject) команду, чтобы определить действие и установить приоритет. В следующем примере будут разрешены запросы от клиентских IP-адресов, соответствующих списку. 
 
 ```powershell
   $IPAllowRule = New-AzFrontDoorCustomRuleObject `
@@ -175,10 +175,10 @@ Install-Module -Name Az.FrontDoor
    ```
 
 ### <a name="configure-waf-policy"></a>Настройка политики WAF
-С помощью команды `Get-AzResourceGroup` найдите имя группы ресурсов, содержащей профиль Front Door. Настройте политику WAF с правило блока IP-адрес с помощью [New AzFrontDoorFireWallPolicy](/powershell/module/Az.FrontDoor/New-AzFrontDoorFireWallPolicy).
+С помощью команды `Get-AzResourceGroup` найдите имя группы ресурсов, содержащей профиль Front Door. Настройте политику WAF с правило блока IP-адрес с помощью [New AzFrontDoorWafPolicy](/powershell/module/az.frontdoor/new-azfrontdoorwafpolicy).
 
 ```powershell
-  $IPAllowPolicyExamplePS = New-AzFrontDoorFireWallPolicy `
+  $IPAllowPolicyExamplePS = New-AzFrontDoorWafPolicy `
     -Name "IPRestrictionExamplePS" `
     -resourceGroupName <resource-group-name> `
     -Customrule $IPAllowRule $IPBlockAll `

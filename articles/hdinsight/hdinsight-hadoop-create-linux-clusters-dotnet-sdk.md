@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 08/16/2018
 ms.author: mamccrea
-ms.openlocfilehash: 04760ab570ffc213950c28c22c499d8e9252d574
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 42c3f0ce70467c6a90bcc4e2e6b8a21d7570edc4
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64690196"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65606186"
 ---
 # <a name="create-linux-based-clusters-in-hdinsight-using-the-net-sdk"></a>Создание кластеров под управлением Linux в HDInsight с помощью пакета SDK для .NET
 
@@ -33,11 +33,11 @@ ms.locfileid: "64690196"
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
 * **Учетная запись хранения Azure.** Ознакомьтесь со статьей [Создание учетной записи хранения](../storage/common/storage-quickstart-create-account.md).
-* **Visual Studio 2013, Visual Studio 2015 или Visual Studio 2017**.
+* **Visual Studio**.
 
 ## <a name="create-clusters"></a>Создание кластеров
 
-1. Откройте Visual Studio 2017.
+1. Откройте Visual Studio.
 2. Создайте консольное приложение Visual C#.
 3. В меню **Средства** щелкните **Диспетчер пакетов NuGet**, а затем щелкните **Консоль диспетчера пакетов**.
 4. Чтобы установить пакеты, выполните в консоли следующую команду:

@@ -3,8 +3,8 @@ title: Настройка утверждений, выпущенных в ток
 description: Узнайте, как настраивать утверждения, выпущенные в токене SAML для корпоративных приложений в Azure AD.
 services: active-directory
 documentationcenter: ''
-author: CelesteDG
-manager: mtillman
+author: rwike77
+manager: CelesteDG
 editor: ''
 ms.assetid: f1daad62-ac8a-44cd-ac76-e97455e47803
 ms.service: active-directory
@@ -14,16 +14,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 04/03/2019
-ms.author: celested
+ms.author: ryanwi
 ms.reviewer: luleon, paulgarn, jeedes
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b137b8cd4e3a2b7a308170904e9b3d09b11137f9
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: 4c1f8640918d433956935e9428e23aac59e36334
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65231344"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65764666"
 ---
 # <a name="how-to-customize-claims-issued-in-the-saml-token-for-enterprise-applications"></a>Практическое руководство: Настройка утверждений, выпущенных в токене SAML для корпоративных приложений
 
@@ -121,7 +121,7 @@ ms.locfileid: "65231344"
 | **Extract() - до соответствия** | Возвращает подстроку, пока не будет соответствовать указанному значению.<br/>Например если значение элемента input «BSimon_US», соответствующее значение — «_US», а затем выходные данные утверждения — «BSimon». |
 | **Extract() - между совпадающими** | Возвращает подстроку, пока не будет соответствовать указанному значению.<br/>Например если значение элемента input «Finance_BSimon_US», первое совпадающее значение — «Finance_», второе значение сопоставления — «_US», а затем выходные данные утверждения — «BSimon». |
 | **ExtractAlpha() - префикс** | Возвращает префикс алфавитном часть строки.<br/>Например если значение элемента input «BSimon_123», он возвращает «BSimon». |
-| **ExtractAlpha() - суффикс** | Возвращает суффикс алфавитном часть строки.<br/>Например если значение элемента input «123_Simon», он возвращает «BSimon». |
+| **ExtractAlpha() - суффикс** | Возвращает суффикс алфавитном часть строки.<br/>Например если значение элемента input «123_Simon», он возвращает «Молчунов». |
 | **ExtractNumeric() - префикс** | Возвращает префикс числовой части строки.<br/>Например если значение элемента input «123_BSimon», он возвращает «123». |
 | **ExtractNumeric() - суффикс** | Возвращает числовой суффикс часть строки.<br/>Например если значение элемента input «BSimon_123», он возвращает «123». |
 | **IfEmpty()** | Выводит атрибут или константа, если входные данные — null или пустым.<br/>Например, если требуется направить вывод атрибут, хранящиеся в extensionattribute, если для данного пользователя столбец employeeid является пустым. Для этого следует настроить следующие значения:<br/>Параметр 1(input): параметром user.employeeid<br/>Параметр 2 (вывод): атрибут user.extensionattribute1<br/>Параметр 3 (выходные данные, если нет совпадений): параметром user.employeeid |
