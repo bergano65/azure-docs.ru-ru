@@ -167,16 +167,16 @@ ms.locfileid: "60343772"
 | BLOB | Byte[] |
 | BOOLEAN | Byte |
 | CLOB | Byte[] |
-| DATE | Datetime |
+| DATE | DateTime |
 | DECIMAL | Decimal |
 | DOUBLE | Single |
 | INT | Int32 |
 | NVARCHAR | String |
 | REAL | Single |
-| SECONDDATE | Datetime |
+| SECONDDATE | DateTime |
 | SMALLINT | Int16 |
 | TIME | TimeSpan |
-| TIMESTAMP | Datetime |
+| TIMESTAMP | DateTime |
 | TINYINT | Byte |
 | VARCHAR | String |
 
