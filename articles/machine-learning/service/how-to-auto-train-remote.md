@@ -1,7 +1,7 @@
 ---
 title: Удаленные целевые объекты вычислений автоматического машинного обучения
 titleSuffix: Azure Machine Learning service
-description: Узнайте, как создавать модели с использованием автоматического машинного обучения на удаленном целевом объекте вычислений (Виртуальная машина для обработки и анализа данных (DSVM)) с помощью службы "Машинное обучение Azure".
+description: Сведения о создании моделей с помощью автоматических машинного обучения на целевом удаленных вычислений машинного обучения Azure с помощью службы машинного обучения Azure
 services: machine-learning
 author: nacharya1
 ms.author: nilesha
@@ -12,26 +12,26 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 12/04/2018
 ms.custom: seodec18
-ms.openlocfilehash: 6f2d71abeacee531b21a8276f621367dd39a39d9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 6a18bdf3a2a1ccd60ff20d21ebd99f4f6e15e38f
+ms.sourcegitcommit: f013c433b18de2788bf09b98926c7136b15d36f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60820401"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65551338"
 ---
 # <a name="train-models-with-automated-machine-learning-in-the-cloud"></a>Обучение моделей с помощью автоматического машинного обучения в облаке
 
 В службе "Машинное обучение Azure" можно обучить модель для различных типов доступных для управления вычислительных ресурсов. Целевым объектом вычислений может быть локальный компьютер или компьютер в облаке.
 
-Кроме того, вы можете легко увеличить масштаб эксперимента машинного обучения, добавив дополнительные целевые объекты вычислений. Варианты целевых объектов вычислений: Виртуальная машина для обработки и анализа данных Ubuntu или Вычислительная среда Машинного обучения Azure. Виртуальная машина для анализа и обработки данных — это образ виртуальной машины в облаке Microsoft Azure, специально созданный и настроенный для обработки и анализа данных. В нее интегрировано множество популярных средств обработки и анализа данных, а также других инструментов, заранее настроенных и установленных.  
+Кроме того, можно легко увеличить масштаб или развертывание эксперимента машинного обучения, добавив дополнительные целевые объекты вычислений, таких как Azure Machine Learning вычислений (AmlCompute). AmlCompute — это инфраструктура управляемого вычислений, которая позволяет легко создавать вычислений одним или несколькими узлами.
 
-В этой статье рассказывается, как создать модель, используя автоматизированное машинное обучение на Виртуальной машине для обработки и анализа данных.
+В этой статье вы узнаете, как создавать модели с помощью автоматических машинного Обучения с AmlCompute.
 
 ## <a name="how-does-remote-differ-from-local"></a>Чем удаленный компьютер отличается от локального?
 
-В руководстве по [обучению модели классификации с помощью автоматического машинного обучения](tutorial-auto-train-models.md) объясняется, как использовать локальный компьютер для обучения модели с помощью автоматического машинного обучения.  Рабочий процесс, используемый при локальном обучении, применяется и для удаленных целевых объектов. Тем не менее при использовании удаленного объекта вычислений итерации экспериментов автоматического машинного обучения выполняются асинхронно. Эта функция позволяет отменить конкретную итерацию, просмотреть состояние выполнения или продолжить работать с другими ячейками в записной книжке Jupyter. При удаленном обучении нужно сначала создать удаленный целевой объект вычислений, такой как Azure DSVM.  Затем необходимо настроить удаленный ресурс и отправить на него код.
+В руководстве по [обучению модели классификации с помощью автоматического машинного обучения](tutorial-auto-train-models.md) объясняется, как использовать локальный компьютер для обучения модели с помощью автоматического машинного обучения.  Рабочий процесс, используемый при локальном обучении, применяется и для удаленных целевых объектов. Тем не менее при использовании удаленного объекта вычислений итерации экспериментов автоматического машинного обучения выполняются асинхронно. Эта функция позволяет отменить конкретную итерацию, просмотреть состояние выполнения или продолжить работать с другими ячейками в записной книжке Jupyter. Чтобы обучить удаленно, сначала нужно создать целевой объект удаленных вычислений, такой как AmlCompute. Затем необходимо настроить удаленный ресурс и отправить на него код.
 
-В этой статье показаны дополнительные действия, необходимые для запуска экспериментов автоматического машинного обучения на удаленной машине DSVM.  Объект рабочей области, `ws`, из учебника используется во всем представленном ниже коде.
+В этой статье показано, дополнительные шаги, необходимые для запуска автоматических эксперимента машинного Обучения на удаленной целевой AmlCompute. Объект рабочей области, `ws`, из учебника используется во всем представленном ниже коде.
 
 ```python
 ws = Workspace.from_config()
@@ -39,67 +39,32 @@ ws = Workspace.from_config()
 
 ## <a name="create-resource"></a>Создать ресурс
 
-Создайте машину DSVM в рабочей области (`ws`), если она еще не существует. Если DSVM уже была создана, этот код пропускает процесс создания и загружает данные существующих ресурсов в объект `dsvm_compute`.  
+Создайте целевую AmlCompute в рабочей области (`ws`), если он еще не существует.  
 
-**Оценка времени**. Создание виртуальной машины занимает около 5 минут.
-
-```python
-from azureml.core.compute import DsvmCompute
-
-dsvm_name = 'mydsvm' #Name your DSVM
-try:
-    dsvm_compute = DsvmCompute(ws, dsvm_name)
-    print('found existing dsvm.')
-except:
-    print('creating new dsvm.')
-    # Below is using a VM of SKU Standard_D2_v2 which is 2 core machine. You can check Azure virtual machines documentation for additional SKUs of VMs.
-    dsvm_config = DsvmCompute.provisioning_configuration(vm_size = "Standard_D2_v2")
-    dsvm_compute = DsvmCompute.create(ws, name = dsvm_name, provisioning_configuration = dsvm_config)
-    dsvm_compute.wait_for_completion(show_output = True)
-```
-
-Теперь можно использовать объект `dsvm_compute` в качестве целевого объекта удаленных вычислений.
-
-На имя DSVM налагаются следующие ограничения:
-+ Должно быть короче 64 символов.  
-+ Не может содержать ни один из следующих символов: `\` ~ ! @ # $ % ^ & * ( ) = + _ [ ] { } \\\\ | ; : \' \\" , < > / ?.`
-
->[!Warning]
->Если создание заканчивается неудачей с сообщением о возможности приобретения Azure Marketplace:
->    1. Перейдите на [портал Azure](https://portal.azure.com).
->    1. Начните создание DSVM. 
->    1. Выберите "Требуется создать программным способом", чтобы разрешить программное создание.
->    1. Выйдите без фактического создания виртуальной машины.
->    1. Повторно выполните код создания.
-
-Этот код не создает имя пользователя или пароль для подготовленной DSVM. Если вы хотите напрямую подключиться к виртуальной машине, перейдите на [портал Azure](https://portal.azure.com) для создания учетных данных.  
-
-### <a name="attach-existing-linux-dsvm"></a>Подключение имеющейся DSVM Linux
-
-Вы также можете подключить имеющуюся DSVM в качестве целевого объекта вычислений. В этом примере используется имеющаяся DSVM и не создается новый ресурс.
-
-> [!NOTE]
->
-> В следующем коде используется [RemoteCompute](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.remote.remotecompute?view=azure-ml-py) целевого класса, чтобы присоединить существующую виртуальную Машину в качестве целевого объекта вычислений.
-> [DsvmCompute](https://docs.microsoft.com/python/api/azureml-core/azureml.core.compute.dsvmcompute?view=azure-ml-py) класс будет прекращена в будущих выпусках пользу этот конструктивный шаблон.
-
-Выполните следующий код для создания целевого объекта вычислений из имеющейся DSVM Linux.
+**Оценка времени**. Создание целевого AmlCompute занимает примерно 5 минут.
 
 ```python
-from azureml.core.compute import ComputeTarget, RemoteCompute 
+from azureml.core.compute import AmlCompute
+from azureml.core.compute import ComputeTarget
 
-attach_config = RemoteCompute.attach_configuration(username='<username>',
-                                                   address='<ip_address_or_fqdn>',
-                                                   ssh_port=22,
-                                                   private_key_file='./.ssh/id_rsa')
-compute_target = ComputeTarget.attach(workspace=ws,
-                                      name='attached-vm',
-                                      attach_configuration=attach_config)
+amlcompute_cluster_name = "automlcl" #Name your cluster
+provisioning_config = AmlCompute.provisioning_configuration(vm_size = "STANDARD_D2_V2", 
+                                                            # for GPU, use "STANDARD_NC6"
+                                                            #vm_priority = 'lowpriority', # optional
+                                                            max_nodes = 6)
 
-compute_target.wait_for_completion(show_output=True)
+compute_target = ComputeTarget.create(ws, amlcompute_cluster_name, provisioning_config)
+    
+# Can poll for a minimum number of nodes and for a specific timeout.
+# If no min_node_count is provided, it will use the scale settings for the cluster.
+compute_target.wait_for_completion(show_output = True, min_node_count = None, timeout_in_minutes = 20)
 ```
 
 Теперь можно использовать объект `compute_target` в качестве целевого объекта удаленных вычислений.
+
+Включить ограничения имен кластера:
++ Должно быть короче 64 символов.  
++ Не может содержать ни один из следующих символов: `\` ~ ! @ # $ % ^ & * ( ) = + _ [ ] { } \\\\ | ; : \' \\" , < > / ?.`
 
 ## <a name="access-data-using-getdata-file"></a>Доступ к данным с помощью файла get_data
 
@@ -161,7 +126,7 @@ automl_settings = {
 automl_config = AutoMLConfig(task='classification',
                              debug_log='automl_errors.log',
                              path=project_folder,
-                             compute_target = dsvm_compute,
+                             compute_target = compute_target,
                              data_script=project_folder + "/get_data.py",
                              **automl_settings,
                             )
@@ -175,7 +140,7 @@ automl_config = AutoMLConfig(task='classification',
 automl_config = AutoMLConfig(task='classification',
                              debug_log='automl_errors.log',
                              path=project_folder,
-                             compute_target = dsvm_compute,
+                             compute_target = compute_target,
                              data_script=project_folder + "/get_data.py",
                              **automl_settings,
                              model_explainability=True,
@@ -250,10 +215,10 @@ RunDetails(remote_run).show()
 
 Извлечение данных описания модели позволяет просмотреть подробные данные о моделях для повышения прозрачности компонентов, выполняемых на внутреннем сервере. В этом примере вы выполняете описания модели только для самой подходящей модели. При выполнении для всех моделей в конвейере это займет значительное время. Описание модели включает следующее:
 
-* shap_values: информация объяснения, созданная shap lib.
+* shap_values: Объяснение информации, создаваемой lib фигуры.
 * expected_values: ожидаемое значение модели, применяемое к набору данных X_train.
-* overall_summary: значения важности функций на уровне модели, отсортированные в порядке убывания.
-* overall_imp: имена компонентов, отсортированные так же, как и в overall_summary.
+* overall_summary: Модель функций уровня важности значения сортируются в нисходящем порядке.
+* overall_imp: Имена компонентов, отсортированных в порядке, описанном overall_summary.
 * per_class_summary: значения важности функций на уровне класса, отсортированные в порядке убывания. Доступно только в случае классификации.
 * per_class_imp: имена компонентов, отсортированных в порядке, описанном в per_class_summary. Доступно только в случае классификации.
 
@@ -291,7 +256,7 @@ print(per_class_imp)
 
 ## <a name="example"></a>Пример
 
-В записной книжке [how-to-use-azureml/automated-machine-learning/remote-execution/auto-ml-remote-execution.ipynb](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/remote-execution/auto-ml-remote-execution.ipynb) демонстрируются основные понятия этой статьи. 
+[How-to-use-azureml/automated-machine-learning/remote-amlcompute/auto-ml-remote-amlcompute.ipynb](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/remote-amlcompute/auto-ml-remote-amlcompute.ipynb) записная книжка показывает основные понятия в этой статье. 
 
 [!INCLUDE [aml-clone-in-azure-notebook](../../../includes/aml-clone-for-examples.md)]
 

@@ -14,12 +14,12 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.date: 05/15/2017
 ms.author: jeconnoc
-ms.openlocfilehash: 68801f888df55924791188a3f4ff5b718798c9f3
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.openlocfilehash: 3082ca34f2bcb71dd7aa02b4539899997374cfc0
+ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65510569"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65595161"
 ---
 # <a name="get-started-with-azure-cloud-services-and-aspnet"></a>Начало работы с облачными службами Azure и ASP.NET
 
@@ -51,11 +51,12 @@ ms.locfileid: "65510569"
 
 Вы можете запускать приложение локально без подписки Azure, но она понадобится для развертывания приложения в облаке. Если у вас нет учетной записи, можно [активировать преимущества для подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A55E3C668) или [подписаться на бесплатную пробную версию](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A55E3C668).
 
-Инструкции руководства применимы со следующими продуктами:
+Инструкции руководства применимы с любым из следующих продуктов:
 
 * Visual Studio 2013
 * Visual Studio 2015
 * Visual Studio 2017
+* Visual Studio 2019
 
 Если у вас нет ни одного из этих продуктов, Visual Studio может быть установлен автоматически при установке пакета SDK для Azure.
 

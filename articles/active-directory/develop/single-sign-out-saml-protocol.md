@@ -3,8 +3,8 @@ title: Протокол единого выхода SAML в Azure | Докуме
 description: В этой статье описывается протокол единого выхода SAML в Azure Active Directory
 services: active-directory
 documentationcenter: .net
-author: CelesteDG
-manager: mtillman
+author: rwike77
+manager: CelesteDG
 editor: ''
 ms.assetid: 0e4aa75d-d1ad-4bde-a94c-d8a41fb0abe6
 ms.service: active-directory
@@ -14,16 +14,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 07/19/2017
-ms.author: celested
+ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: hirsin
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0d4f9c69d6ddcbef96a88a0df10c3b0974cd5b74
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 06fd36935c1f43cc14697748666eccd9e6d31168
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60297784"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65545964"
 ---
 # <a name="single-sign-out-saml-protocol"></a>Протокол единого выхода SAML
 
@@ -76,5 +76,5 @@ Azure AD устанавливает для него значение `https://lo
 
 Чтобы оценить значение элемента `Issuer` , используйте значение **URI идентификатора приложения** , указанное при регистрации приложения.
 
-### <a name="status"></a>Статус
+### <a name="status"></a>Status
 Azure AD использует элемент `StatusCode`, содержащийся в элементе `Status`, чтобы указать, успешно ли выполнен выход. После неудачной попытки выхода элемент `StatusCode` может также содержать пользовательские сообщения об ошибках.

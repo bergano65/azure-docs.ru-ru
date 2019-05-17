@@ -7,14 +7,14 @@ ms.author: heidist
 services: search
 ms.service: search
 ms.topic: conceptual
-ms.date: 05/02/2019
+ms.date: 05/13/2019
 ms.custom: seodec2018
-ms.openlocfilehash: 7ed675e4c6988cf4c1340613323440de55a36843
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: 95f5dde12ad9e34a0a04c988a816538ac30e01e6
+ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65024469"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65595979"
 ---
 # <a name="how-to-compose-a-query-in-azure-search"></a>Как создать запрос в службе "Поиск Azure"
 
@@ -26,7 +26,7 @@ ms.locfileid: "65024469"
 
 В таблице ниже представлены интерфейсы API и методы на основе инструментов для отправки запросов.
 
-| Методика | ОПИСАНИЕ |
+| Методика | Описание |
 |-------------|-------------|
 | [Обозреватель Поиска (портал)](search-explorer.md) | Предоставляет панель поиска и параметры для выбора индекса и значения api-version. Будут возвращены результаты в виде документов JSON. <br/>[Подробнее.](search-get-started-portal.md#query-index) | 
 | [Postman или Fiddler](search-fiddler.md) | Веб-инструменты тестирования идеально подходят для формирования вызовов REST. REST API поддерживает все возможные операции в службе "Поиск Azure". В этой статье описывается, как настроить заголовки и текст HTTP-запроса для отправки запросов к службе "Поиск Azure".  |
@@ -122,7 +122,7 @@ queryType=full&search=mountain beach garden ranch^3&searchFields=description&$co
 | Поиск с фильтрацией | [Выражение фильтра OData](query-odata-filter-orderby-syntax.md) и любое средство синтаксического анализа | Запросы фильтрации оценивают логическое выражение по всем полям индекса с меткой *filterable*. В отличие от поиска, запрос фильтрации проверяет точное содержимое поля, в том числе учитывает регистр для строковых полей. Еще одно важное различие — запросы фильтрации выражаются в синтаксисе OData. <br/>[Пример поиска с фильтрацией](search-query-simple-examples.md#example-3-filter-queries) |
 | Геопространственный поиск | [Тип Edm.GeographyPoint](https://docs.microsoft.com/rest/api/searchservice/supported-data-types) для поля, выражение фильтра и любое средство синтаксического анализа | Координаты, хранящиеся в поле с типом Edm.GeographyPoint, используются для "поиска соседних объектов" и для элементов управления со встроенными картами. <br/>[Пример поиска геообъектов](search-query-simple-examples.md#example-5-geo-search)|
 | Поиск по диапазону | Выражение фильтра и средство простого синтаксического анализа | В Поиске Azure запросы по диапазонам создаются на основе параметра фильтра. <br/>[Пример фильтра по диапазону](search-query-simple-examples.md#example-4-range-filters) | 
-| [Фильтрация внутри поля](query-lucene-syntax.md#bkmk_fields) | Параметр поиска и средство полного синтаксического анализа | Создайте сложное выражение запроса, предназначенное для одного поля. <br/>[Пример фильтрации внутри поля](search-query-lucene-examples.md#example-2-intra-field-filtering) |
+| [Относящегося к полю поиска](query-lucene-syntax.md#bkmk_fields) | Параметр поиска и средство полного синтаксического анализа | Создайте сложное выражение запроса, предназначенное для одного поля. <br/>[Пример относящегося к полю поиска](search-query-lucene-examples.md#example-2-fielded-search) |
 | [поиск нечетких соответствий](query-lucene-syntax.md#bkmk_fuzzy); | Параметр поиска и средство полного синтаксического анализа | Находит совпадения с терминами, которые имеют сходную конструкцию или орфографию. <br/>[Пример поиска нечетких соответствий](search-query-lucene-examples.md#example-3-fuzzy-search) |
 | [поиск с учетом расположения](query-lucene-syntax.md#bkmk_proximity); | Параметр поиска и средство полного синтаксического анализа | Находит термины, которые расположены в документе рядом друг с другом. <br/>[Пример поиска с учетом расположения](search-query-lucene-examples.md#example-4-proximity-search) |
 | [повышение приоритета терминов](query-lucene-syntax.md#bkmk_termboost); | Параметр поиска и средство полного синтаксического анализа | Присваивает более высокий приоритет документам, которые содержат определенный термин. <br/>[Пример повышения приоритета термина](search-query-lucene-examples.md#example-5-term-boosting) |

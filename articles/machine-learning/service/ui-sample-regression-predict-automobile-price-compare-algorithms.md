@@ -1,7 +1,7 @@
 ---
 title: 'Регрессия: Предсказать цену и сравнение алгоритмов'
 titleSuffix: Azure Machine Learning service
-description: Пример эксперимента визуальный интерфейс показано, как сравнить производительность двух моделей регрессии, предсказать цену автомобиля. Этот процесс включает в себя обучение, тестирование и оценка модели на основе набора данных Automobile price data (Raw).
+description: В этой статье показано, как для создания эксперимента сложного машинного обучения, не написав ни строчки кода, с помощью визуального интерфейса. Узнайте, как обучать и сравнить несколько моделей регрессии для прогнозирования цены автомобиля на основе технических возможностей
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -9,17 +9,23 @@ ms.topic: article
 author: xiaoharper
 ms.author: zhanxia
 ms.reviewer: sgilley
-ms.date: 05/02/2019
-ms.openlocfilehash: 2a4a9e74fa7f56b67f0f4a64f6619db1c5c69a2c
-ms.sourcegitcommit: 4891f404c1816ebd247467a12d7789b9a38cee7e
+ms.date: 05/10/2019
+ms.openlocfilehash: c8c813a2304797e71499a916e29c18f8bec2b389
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65442123"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65787792"
 ---
 # <a name="sample-2---regression-predict-price-and-compare-algorithms"></a>Пример 2 - регрессии. Предсказать цену и сравнение алгоритмов
 
-Пример эксперимента визуальный интерфейс показано, как сравнить производительность двух моделей регрессии, предсказать цену автомобиля. Этот процесс включает в себя обучение, тестирование и оценка модели с помощью **данные на автомобили (необработанные)** набора данных.
+Узнайте, как для создания эксперимента сложного машинного обучения, не написав ни строчки кода, с помощью визуального интерфейса. В этом примере обучает и сравниваются несколько моделей регрессии для прогнозирования цену автомобиля, в зависимости от технических возможностей. Мы предоставим обоснование для выборов, сделанных в этом эксперименте, поэтому можно осуществить машинного обучения проблем.
+
+Если вы кто только знакомится с помощью машинного обучения, можно взглянуть на [базовой версии](ui-sample-regression-predict-automobile-price-basic.md) этого эксперимента, чтобы просмотреть основные Регрессия поэкспериментировать.
+
+Ниже приведен завершенной диаграммы для этого эксперимента.
+
+[![Граф эксперимента](media/ui-sample-regression-predict-automobile-price-compare-algorithms/graph.png)](media/ui-sample-classification-predict-credit-risk-cost-sensitive/graph.png#lightbox)
 
 ## <a name="prerequisites"></a>Технические условия
 
@@ -29,10 +35,6 @@ ms.locfileid: "65442123"
 
     ![Откройте эксперимент](media/ui-sample-regression-predict-automobile-price-compare-algorithms/open-sample2.png)
 
-## <a name="related-sample"></a>Подходящий пример
-
-[Пример 1 - регрессии. Прогнозирование цен на автомобили (Basic)](ui-sample-regression-predict-automobile-price-basic.md) предоставляет более простой эксперимент, это решает ту же проблему, как этот эксперимент, но который использует только одну модель регрессии. Ссылаться на него, если вы ищете простой пример регрессии.
-
 ## <a name="experiment-summary"></a>Сводка эксперимента
 
 Для создания эксперимента мы используем следующие действия:
@@ -41,11 +43,6 @@ ms.locfileid: "65442123"
 1. Предварительно обработать данные.
 1. Обучение модели.
 1. Тестирование, оценка и сравнение моделей.
-
-Ниже приведен полный граф эксперимента.
-
-[![Граф эксперимента](media/ui-sample-regression-predict-automobile-price-compare-algorithms/graph.png)](media/ui-sample-regression-predict-automobile-price-compare-algorithms/graph.png#lightbox)
-
 
 ## <a name="get-the-data"></a>Получение данных
 

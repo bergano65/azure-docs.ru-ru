@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/24/2019
 ms.author: bwren
-ms.openlocfilehash: ba9a0ab775e062f21a058b537e289fe3ea2b40bb
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: d508ce217e3a97b3399435cb63295eb28965359a
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61093970"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65605604"
 ---
 # <a name="log-data-ingestion-time-in-azure-monitor"></a>Время приема данных журнала в Azure Monitor
 Azure Monitor — это высокомасштабируемая служба, которая обслуживает тысячи клиентов, ежемесячно отправляющих стремительными темпами терабайты данных. Часто возникают вопросы о времени, в течение которого собранные данные журнала становятся доступными. В этой статье объясняются факторы, влияющие на эту задержку.
@@ -104,7 +104,7 @@ Heartbeat
 | render timechart  
 ```
  
-Используйте следующий запрос, чтобы увидеть время приема компьютера в определенной стране, в которой они расположены, на основе IP-адреса. 
+Используйте следующий запрос для отображения времени приема компьютера по странам и регионам, что они расположены в основанной на их IP-адреса: 
 
 ``` Kusto
 Heartbeat 

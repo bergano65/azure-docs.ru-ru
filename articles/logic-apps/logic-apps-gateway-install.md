@@ -9,12 +9,12 @@ ms.author: estfan
 ms.reviewer: arthii, LADocs
 ms.topic: article
 ms.date: 10/01/2018
-ms.openlocfilehash: 67a918b227ad3b33a2f63b17f86b94f36fbc9fa3
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 10a6e5c33f6a3c23d98e6eb3380de0d6dc6ac216
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60405183"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65544492"
 ---
 # <a name="install-on-premises-data-gateway-for-azure-logic-apps"></a>Установка локального шлюза данных для Azure Logic Apps
 
@@ -32,7 +32,7 @@ ms.locfileid: "60405183"
 *   IBM Informix
 *   IBM MQ
 *   MySQL
-*   База данных Oracle
+*   Oracle Database
 *   PostgreSQL
 *   сервер приложений SAP; 
 *   сервер сообщений SAP;
@@ -51,7 +51,7 @@ ms.locfileid: "60405183"
 
 ## <a name="prerequisites"></a>Технические условия
 
-* [Рабочая или учебная учетная запись](../active-directory/fundamentals/sign-up-organization.md), у которой есть [подписка Azure](https://docs.microsoft.com/azure/architecture/cloud-adoption-guide/adoption-intro/subscription-explainer). 
+* [Рабочая или учебная учетная запись](../active-directory/fundamentals/sign-up-organization.md), у которой есть [подписка Azure](https://docs.microsoft.com/azure/architecture/cloud-adoption/governance/resource-consistency/azure-resource-access). 
 
   Во время установки шлюза необходимо войти в эту учетную запись. Это позволит связать установку шлюза с подпиской Azure. 
   Позже эта учетная запись будет использоваться на портале Azure для создания ресурса Azure в процессе установки шлюза. 
@@ -238,7 +238,7 @@ TcpTestSucceeded       : True
 
 Шлюзом используются следующие полные доменные имена.
 
-| Имена доменов | Исходящие порты | ОПИСАНИЕ | 
+| Доменные имена | Исходящие порты | Описание | 
 | ------------ | -------------- | ----------- | 
 | *.analysis.windows.net | 443 | HTTPS | 
 | *.core.windows.net | 443 | HTTPS | 
@@ -418,7 +418,7 @@ TcpTestSucceeded       : True
 
 Различные журналы можно найти в других расположениях, приведенных ниже.
 
-| Тип журнала | Location | 
+| Тип журнала | Расположение | 
 |----------|----------| 
 | **Журналы установщика** | %localappdata%\Temp\On-premises_data_gateway_<*ггггммдд*>.<*номер*>.log | 
 | **Журналы конфигурации** | C:\Users\<*имя пользователя*>\AppData\Local\Microsoft\On-premises data gateway\GatewayConfigurator<*ггггммдд*>.<*номер*>.log | 
@@ -485,7 +485,7 @@ TcpTestSucceeded       : True
 
    2. Чтобы найти запрос, выполните поиск типа активности. Пример. 
 
-      | тип действия; | ОПИСАНИЕ | 
+      | Тип действия | Описание | 
       |---------------|-------------| 
       | MGEQ | Запросы, выполняемые через ADO.NET. | 
       | MGEO | Запросы, выполняемые через OLEDB. | 

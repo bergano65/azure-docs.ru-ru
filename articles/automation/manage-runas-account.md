@@ -6,15 +6,15 @@ ms.service: automation
 ms.subservice: shared-capabilities
 author: georgewallace
 ms.author: gwallace
-ms.date: 03/26/2019
+ms.date: 05/03/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: af67109fb7f55f365cd71714a3eefab2336b636a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 2a104c9e41ef1843c377b0406b499ffae504db97
+ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61301174"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65595662"
 ---
 # <a name="manage-azure-automation-run-as-accounts"></a>Управление учетными записями запуска от имени службы автоматизации Azure
 
@@ -37,6 +37,9 @@ ms.locfileid: "61301174"
   
   > [!NOTE]
   > Подписки поставщика облачных решений Azure (Azure CSP) поддерживают только модель Azure Resource Manager; в этой программе отсутствуют все службы, созданные с помощью других моделей. При использовании подписки CSP учетная запись запуска от имени Azure не создается. Учетная запись запуска от имени Azure по-прежнему создается. Дополнительные сведения о подписках CSP см. в разделе [Доступные службы в подписках CSP](https://docs.microsoft.com/azure/cloud-solution-provider/overview/azure-csp-available-services#comments).
+
+  > [!NOTE]
+  > Субъект-службу для запуска от имени учетной записи нет разрешения на чтение Azure Active Directory по умолчанию. Если вы хотите добавить разрешения на чтение или управлять Azure Active directory, нужно будет предоставлять ему такое разрешение участника в группе службы **разрешения API**. Дополнительные сведения см. в разделе [добавить разрешения для доступа к веб-API](../active-directory/develop/quickstart-configure-app-access-web-apis.md#add-permissions-to-access-web-apis).
 
 ## <a name="permissions"></a>Разрешения для настройки учетных записей запуска от имени
 

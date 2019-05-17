@@ -5,14 +5,14 @@ services: dns
 author: vhorne
 ms.service: dns
 ms.topic: article
-ms.date: 3/21/2019
+ms.date: 5/13/2019
 ms.author: victorh
-ms.openlocfilehash: 87ca7cae8e9170c8c437d0961cb1acb2e0dd0eb1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 847ad271dac4afc8c8baa2faa8702b3a3ab6cefa
+ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60790544"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65596703"
 ---
 # <a name="azure-dns-alias-records-overview"></a>Обзор записей псевдонимов Azure DNS
 
@@ -25,7 +25,7 @@ ms.locfileid: "60790544"
 - CNAME
 
 > [!NOTE]
-> Если вы планируете использовать запись псевдонима для записей типов A или AAAA, чтобы указать на [профиль диспетчера трафика Azure](../traffic-manager/quickstart-create-traffic-manager-profile.md), необходимо убедиться в том, что профиль диспетчера трафика имеет только [внешние конечные точки](../traffic-manager/traffic-manager-endpoint-types.md#external-endpoints). Укажите IPv4- или IPv6-адрес для внешних конечных точек в диспетчере трафика. Рекомендуется использовать статические IP-адреса.
+> Если вы планируете использовать запись псевдонима для записей типов A или AAAA, чтобы указать на [профиль диспетчера трафика Azure](../traffic-manager/quickstart-create-traffic-manager-profile.md), необходимо убедиться в том, что профиль диспетчера трафика имеет только [внешние конечные точки](../traffic-manager/traffic-manager-endpoint-types.md#external-endpoints). Укажите IPv4- или IPv6-адрес для внешних конечных точек в диспетчере трафика. Полное доменные имена (FQDN) нельзя использовать в конечных точках. Рекомендуется использовать статические IP-адреса.
 
 ## <a name="capabilities"></a>Возможности
 

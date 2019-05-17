@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 10/16/2018
 ms.author: apurvajo;cephalin
 ms.custom: seodec18
-ms.openlocfilehash: b561091eedb43e1c77f3c97951beeb92bfcf4751
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: 15441f70052950748f07b96ff234557462f268cd
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65202926"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65786325"
 ---
 # <a name="buy-and-configure-an-ssl-certificate-for-azure-app-service"></a>Приобретение и настройка сертификата SSL для службы приложений Azure
 
@@ -73,7 +73,7 @@ ms.locfileid: "65202926"
 | ИМЯ | Уникальное имя, содержащее буквы, цифры и дефисы. |
 | Группа ресурсов | Рекомендуется выбирать группу ресурсов, идентичную сертификату службы приложений. |
 | Расположение | Предназначено для выбора расположения, идентичного тому, где находится приложение службы приложений. |
-| Ценовой уровень | Дополнительные сведения см. в статье [Цены на Key Vault ](https://azure.microsoft.com/pricing/details/key-vault/). |
+| Ценовая категория | Дополнительные сведения см. в статье [Цены на Key Vault ](https://azure.microsoft.com/pricing/details/key-vault/). |
 | Политики доступа| Определяет приложения и разрешает доступ к ресурсам хранилища. Ее можно настроить позднее, воспользовавшись сведениями из статьи [Предоставление разрешения на доступ к хранилищу ключей нескольким приложениям](../key-vault/key-vault-group-permissions-for-apps.md). |
 | Доступ к виртуальной сети | Ограничьте доступ к хранилищу для определенных виртуальных сетей Azure. Воспользовавшись сведениями из статьи [Настройка брандмауэров и виртуальных сетей Azure Key Vault](../key-vault/key-vault-network-security.md), его можно настроить потом. |
 
@@ -111,9 +111,9 @@ ms.locfileid: "65202926"
 
 Чтобы настроить привязки в диалоговом окне **Привязки SSL**, воспользуйтесь сведениями из следующей таблицы и щелкните **Добавить привязку**.
 
-| Параметр | ОПИСАНИЕ |
+| Параметр | Описание |
 |-|-|
-| имя узла; | Имя домена, которое будет добавлено для привязки SSL. |
+| Имя узла | Имя домена, которое будет добавлено для привязки SSL. |
 | Отпечаток закрытого сертификата | Привязка сертификата. |
 | Тип SSL | <ul><li>**SNI SSL** позволяет добавить несколько привязок SSL на основе SNI. Этот параметр позволяет использовать несколько SSL-сертификатов для защиты нескольких доменов с одним IP-адресом. Большинство современных браузеров (включая Internet Explorer, Chrome, Firefox и Opera) поддерживает SNI (более подробную информацию о поддержки браузеров можно найти в статье [Server Name Indication](https://wikipedia.org/wiki/Server_Name_Indication) (Указание имени сервера)).</li><li>**SSL на основе IP-адреса** позволяет добавить только одну привязку SSL на основе IP-адреса. Этот параметр позволяет использовать только один SSL-сертификат для защиты выделенного общедоступного IP-адреса. После настройки привязки воспользуйтесь сведениями из раздела [Переназначение записи A для SSL на основе IP-адреса](app-service-web-tutorial-custom-ssl.md#remap-a-record-for-ip-ssl). </li></ul> |
 
@@ -136,7 +136,7 @@ ms.locfileid: "65202926"
 > [!NOTE]
 > Если вы не нажмете кнопку **синхронизации**, служба приложений автоматически синхронизирует сертификат в течение 48 часов.
 
-## <a name="renew-certificate"></a>Обновление сертификата
+## <a name="renew-certificate"></a>Продлить сертификат
 
 Чтобы включить автоматическое обновление сертификата в любое время, на странице [Сертификаты службы приложений](https://portal.azure.com/#blade/HubsExtension/Resources/resourceType/Microsoft.CertificateRegistration%2FcertificateOrders) выберите сертификат, а затем в области навигации слева щелкните **Параметры автовозобновления**.
 
@@ -166,4 +166,4 @@ ms.locfileid: "65202926"
 * [Принудительное использование HTTPS](app-service-web-tutorial-custom-ssl.md#enforce-https)
 * [Принудительное применение TLS 1.1/1.2](app-service-web-tutorial-custom-ssl.md#enforce-tls-versions)
 * [Использование SSL-сертификата в коде приложения службы приложений Azure](app-service-web-ssl-cert-load.md)
-* [FAQ: SSL certificates for Web Apps and App Service Certificates](https://blogs.msdn.microsoft.com/appserviceteam/2017/07/24/faq-app-service-certificates/) (SSL-сертификаты для веб-приложений и сертификаты Службы приложений: вопросы и ответы)
+* [FAQ: SSL certificates for Web Apps and App Service Certificates](https://docs.microsoft.com/en-us/azure/app-service/faq-configuration-and-management/) (SSL-сертификаты для веб-приложений и сертификаты Службы приложений: вопросы и ответы)

@@ -13,36 +13,41 @@ ms.topic: conceptual
 ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 2/13/2019
-ms.openlocfilehash: 23e072369aa8ac6ca6ada5ec185df1a8d7e03c5b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: f929369030b6f0a634eb2c84e33eee24af8cb6a2
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61477184"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65787517"
 ---
 # <a name="sql-server-on-azure-virtual-machine-release-notes"></a>Заметки о выпуске SQL Server на виртуальных машинах Azure
 
 Azure позволяет развертывать виртуальные машины со встроенным образом SQL Server. В этой статье перечислены новые функции и улучшения в последних выпусках [SQL Server на виртуальных машинах Azure](https://azure.microsoft.com/services/virtual-machines/sql-server/). В ней также указаны заметные обновления содержимого, которые не связаны напрямую с выпуском, но опубликованы в тот же интервал времени. Улучшения других служб Azure см. в статье [Обновления Azure](https://azure.microsoft.com/updates)
 
-## <a name="march-2019"></a>Марта 2019 г.
+## <a name="april-2019"></a>Апреля 2019 г.
 
 ### <a name="service-improvements"></a>Улучшения службы
 
 | Улучшения службы | Сведения |
 | --- | --- |
-| **Поддержка пользовательского образа** | Теперь вы можете установить [расширения SQL IaaS](virtual-machines-windows-sql-server-agent-extension.md#installation) для пользовательских образов операционной системы и SQL, который предоставляет ограниченные функциональные возможности [гибкие лицензирования](virtual-machines-windows-sql-ahb.md). При регистрации пользовательского образа с помощью поставщика ресурсов SQL, указать тип лицензии в качестве «AHUB» как в противном случае Регистрация завершится ошибкой.  | 
-| **Возможности поддержки именованного экземпляра** | Могут теперь использовать [расширения SQL IaaS](virtual-machines-windows-sql-server-agent-extension.md#installation) с именованным экземпляром, если экземпляр по умолчанию должным образом удален. | 
-| **Расширение портала** | Чтобы повысить удобство использования кардинально изменена интерфейс портала Azure для развертывания виртуальной Машины SQL Server. Дополнительные сведения см. краткое описание [быстрого запуска](quickstart-sql-vm-create-portal.md) более детальная проверка [руководства](virtual-machines-windows-portal-sql-server-provision.md) руководство по развертыванию виртуальной Машины SQL Server. |
+| **Расширения поддержки SQL Server 2008/2008 R2** | [Расширения поддержки](virtual-machines-windows-sql-server-2008-eos-extend-support.md) для SQL Server 2008 и SQL Server 2008 R2 путем переноса *как-является* к виртуальной Машине Azure. | 
 | &nbsp; | &nbsp; |
 
 ### <a name="documentation-improvements"></a>Улучшения документации
 
 Нет
 
+## <a name="march-2019"></a>Марта 2019 г.
+
+| Улучшения службы | Сведения |
+| --- | --- |
+| **Поддержка пользовательского образа** | Теперь вы можете установить [расширения SQL IaaS](virtual-machines-windows-sql-server-agent-extension.md#installation) для пользовательских образов операционной системы и SQL, который предоставляет ограниченные функциональные возможности [гибкие лицензирования](virtual-machines-windows-sql-ahb.md). При регистрации пользовательского образа с помощью поставщика ресурсов SQL, указать тип лицензии в качестве «AHUB» как в противном случае Регистрация завершится ошибкой.  | 
+| **Возможности поддержки именованного экземпляра** | Могут теперь использовать [расширения SQL IaaS](virtual-machines-windows-sql-server-agent-extension.md#installation) с именованным экземпляром, если экземпляр по умолчанию должным образом удален. | 
+| **Расширение портала** | Чтобы повысить удобство использования кардинально изменена интерфейс портала Azure для развертывания виртуальной Машины SQL Server. Дополнительные сведения см. краткое описание [быстрого запуска](quickstart-sql-vm-create-portal.md) более детальная проверка [руководства](virtual-machines-windows-portal-sql-server-provision.md) руководство по развертыванию виртуальной Машины SQL Server.|
+| &nbsp; | &nbsp; |
+
 
 ## <a name="february-2019"></a>Февраль 2019 г.
-
-### <a name="service-improvements"></a>Улучшения службы
 
 | Улучшения службы | Сведения |
 | --- | --- |
