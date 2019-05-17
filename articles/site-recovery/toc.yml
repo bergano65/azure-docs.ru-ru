@@ -6,18 +6,18 @@
       href: site-recovery-overview.md
     - name: Новые возможности в Site Recovery
       href: site-recovery-whats-new.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   expanded: true
   items:
     - name: Репликация виртуальной машины Azure в другой регион
       href: azure-to-azure-quickstart.md
-- name: Учебники
+- name: Руководства
   items:
     - name: Аварийное восстановление виртуальной машины Azure в Azure
       items:
         - name: Включение репликации
           href: azure-to-azure-tutorial-enable-replication.md
-        - name: Выполнение отработки аварийного восстановления
+        - name: Отработка аварийного восстановления
           href: azure-to-azure-tutorial-dr-drill.md
         - name: Выполнение отработки отказа и повторное включение защиты
           href: azure-to-azure-tutorial-failover-failback.md
@@ -39,9 +39,9 @@
           href: vmware-azure-tutorial-prepare-on-premises.md
         - name: Настройка репликации
           href: vmware-azure-tutorial.md
-        - name: Выполнение отработки аварийного восстановления
+        - name: Отработка аварийного восстановления
           href: tutorial-dr-drill-azure.md
-        - name: Выполнение отработки отказа и восстановления размещения
+        - name: Отработка отказа и восстановления размещения
           href: vmware-azure-tutorial-failover-failback.md
     - name: Аварийное восстановление виртуальной машины Hyper-V в Azure
       items:
@@ -53,9 +53,9 @@
           href: hyper-v-azure-tutorial.md
         - name: Настройка репликации для виртуальных машин Hyper-V в облаках VMM
           href: hyper-v-vmm-azure-tutorial.md
-        - name: Выполнение отработки аварийного восстановления
+        - name: Отработка аварийного восстановления
           href: tutorial-dr-drill-azure.md
-        - name: Выполнение отработки отказа и восстановления размещения
+        - name: Отработка отказа и восстановления размещения
           href: hyper-v-azure-failover-failback-tutorial.md
     - name: Миграция в Azure
       items:
@@ -63,9 +63,9 @@
           href: tutorial-prepare-azure.md
         - name: Миграция локальных компьютеров в Azure
           href: migrate-tutorial-on-premises-azure.md
-        - name: "Перенос локальных серверов Windows Server\_2008 в Azure"
+        - name: "Миграция локальных серверов Windows Server\_2008 в Azure"
           href: migrate-tutorial-windows-server-2008.md
-        - name: Перенос экземпляров AWS в Azure
+        - name: Миграция экземпляров AWS в Azure
           href: migrate-tutorial-aws-azure.md
 - name: Основные понятия
   items:
@@ -73,17 +73,17 @@
       href: site-recovery-faq.md
     - name: Сведения об аварийном восстановлении для виртуальных машин Azure
       items:
-        - name: "Архитектура: репликация из Azure\_в Azure"
+        - name: "Архитектура \"Azure\_— Azure\""
           href: azure-to-azure-architecture.md
         - name: Часто задаваемые вопросы
           href: azure-to-azure-common-questions.md
-        - name: Матрица Azure — Azure
+        - name: Матрица "Azure — Azure"
           href: azure-to-azure-support-matrix.md
         - name: Использование Site Recovery с Azure Backup
           href: site-recovery-backup-interoperability.md
         - name: Ускорение работы в сети для аварийного восстановления виртуальных машин Azure
           href: azure-vm-disaster-recovery-with-accelerated-networking.md
-        - name: ExpressRoute и аварийное восстановление виртуальных машин Azure
+        - name: Использование ExpressRoute с аварийным восстановлением виртуальных машин Azure
           href: azure-vm-disaster-recovery-with-expressroute.md
     - name: Сведения о перемещении виртуальных машин Azure
       href: azure-to-azure-move-overview.md
@@ -95,11 +95,11 @@
           href: vmware-azure-common-questions.md
         - name: "Матрица поддержки \"VMware или физический сервер\_— Azure\""
           href: vmware-physical-azure-support-matrix.md
-        - name: О компонентах Site Recovery (настройка/обработка/главный целевой сервер)
+        - name: 'О компонентах Site Recovery (настройка, обработка, главный целевой сервер)'
           href: vmware-physical-azure-config-process-server-overview.md
         - name: Требования к поддержке для серверов конфигурации и обработки
           href: vmware-azure-configuration-server-requirements.md
-        - name: "Архитектура: репликация из VMware\_в Azure"
+        - name: "Архитектура \"VMware\_— Azure\""
           href: vmware-azure-architecture.md
         - name: Параметры расположения для восстановления размещения из Azure в VMware
           href: concepts-types-of-failback.md
@@ -111,23 +111,23 @@
           href: hyper-v-azure-common-questions.md
         - name: Матрица поддержки
           href: hyper-v-azure-support-matrix.md
-        - name: "Архитектура: репликация из Hyper-V\_в Azure"
+        - name: "Архитектура \"Hyper-V\_— Azure\""
           href: hyper-v-azure-architecture.md
     - name: Сведения об аварийном восстановлении физического сервера в Azure
       items:
         - name: "Матрица поддержки \"VMware или физический сервер\_— Azure\""
           href: vmware-physical-azure-support-matrix.md
-        - name: Архитектура репликация физических серверов в Azure
+        - name: "Архитектура \"Физические серверы\_— Azure\""
           href: physical-azure-architecture.md
     - name: Сведения об управлении сетями для аварийного восстановления в Azure
       items:
         - name: Диспетчер трафика Azure и Site Recovery
           href: concepts-traffic-manager-with-site-recovery.md
-        - name: ExpressRoute и Site Recovery
+        - name: Использование ExpressRoute и Site Recovery
           href: concepts-expressroute-with-site-recovery.md
-        - name: Группы безопасности сети и Site Recovery
+        - name: Использование групп безопасности сети с Site Recovery
           href: concepts-network-security-group-with-site-recovery.md
-        - name: Использование общедоступных IP-адресов и Site Recovery
+        - name: Использование общедоступных IP-адресов с Site Recovery
           href: concepts-public-ip-address-with-site-recovery.md
     - name: Сведения о планах отработки отказа и восстановления
       href: recovery-plan-overview.md
@@ -137,13 +137,13 @@
       href: site-recovery-role-based-linked-access-control.md
     - name: Сведения об аварийном восстановлении на дополнительный локальный сайт
       items:
-        - name: Таблица поддержки для VMware или физического сервера
+        - name: Матрица поддержки для VMware или физического сервера
           href: vmware-physical-secondary-support-matrix.md
-        - name: Архитектура репликации виртуальных машин VMware или физических серверов на дополнительный сайт
+        - name: "Архитектура \"Виртуальная машина VMware или физический сервер\_— дополнительный сайт\""
           href: vmware-physical-secondary-architecture.md
-        - name: Таблица поддержки для Hyper-V
+        - name: Матрица поддержки для Hyper-V
           href: hyper-v-vmm-secondary-support-matrix.md
-        - name: Архитектура репликации виртуальных машин Hyper-V на дополнительный сайт
+        - name: "Архитектура \"Виртуальная машина Hyper-V\_— дополнительный сайт\""
           href: hyper-v-vmm-architecture.md
 - name: Практические руководства
   items:
@@ -175,9 +175,9 @@
               href: azure-to-azure-how-to-reprotect.md
             - name: Настройка аварийного восстановления виртуальных машин Azure после миграции в Azure
               href: azure-to-azure-replicate-after-migration.md
-        - name: управление
+        - name: Управление
           items:
-            - name: Обновление Mobility Service для виртуальных машин Azure
+            - name: Обновление Службы мобильности для виртуальных машин Azure
               href: azure-to-azure-autoupdate.md
             - name: Обновления в Azure Site Recovery
               href: service-updates-how-to.md
@@ -187,13 +187,15 @@
               href: delete-vault.md
     - name: Аварийное восстановление VMware в Azure
       items:
+        - name: Настройка аварийного восстановления в нужном масштабе
+          href: vmware-physical-large-deployment.md
         - name: Настройка сети
           items:
             - name: Управление сетевыми интерфейсами для репликации из локальной среды в Azure
               href: site-recovery-manage-network-interfaces-on-premises-to-azure.md
             - name: Настройка назначения IP-адресов для отработки отказа
               href: concepts-on-premises-to-azure-networking.md
-        - name: Планирование емкости
+        - name: Планирование ресурсов
           items:
             - name: Планирование ресурсов
               href: site-recovery-plan-capacity-vmware.md
@@ -203,7 +205,7 @@
                   href: site-recovery-deployment-planner.md
                 - name: Журнал версий Планировщика развертывания
                   href: site-recovery-deployment-planner-history.md
-                - name: Запуск средства "Планировщик развертывания"
+                - name: Запуск Планировщика развертывания
                   href: site-recovery-vmware-deployment-planner-run.md
                 - name: Анализ созданного отчета
                   href: site-recovery-vmware-deployment-planner-analyze-report.md
@@ -221,13 +223,13 @@
               href: vmware-azure-set-up-target.md
             - name: Настройка параметров репликации
               href: vmware-azure-set-up-replication.md
-            - name: Развертывание службы Mobility Service
+            - name: Развертывание Службы мобильности
               items:
-                - name: Обзор и установка службы мобильности
+                - name: Обзор и установка Службы мобильности
                   href: vmware-physical-mobility-service-overview.md
-                - name: Подготовка к принудительной установке службы Mobility Service
+                - name: Подготовка к принудительной установке Службы мобильности
                   href: vmware-azure-install-mobility-service.md
-                - name: Развертывание службы Mobility Service с помощью System Center Configuration Manager
+                - name: Развертывание Службы мобильности с помощью System Center Configuration Manager
                   href: vmware-azure-mobility-install-configuration-mgr.md
             - name: Включение репликации для виртуальных машин VMware
               href: vmware-azure-enable-replication.md
@@ -235,13 +237,13 @@
               href: vmware-azure-exclude-disk.md
             - name: Пошаговое руководство. Настройка репликации в мультитенантной среде с поставщиком служб шифрования для виртуальных машин VMware
               href: vmware-azure-multi-tenant-csp-disaster-recovery.md
-        - name: Выполнение отработки отказа и восстановления размещения
+        - name: Отработка отказа и восстановления размещения
           items:
             - name: Настройка планов восстановления
               href: site-recovery-create-recovery-plans.md
-            - name: Выполнение отработки аварийного восстановления в Azure
+            - name: Отработка аварийного восстановления в Azure
               href: site-recovery-test-failover-to-azure.md
-            - name: Выполнение отработки отказа в Azure
+            - name: Отработка отказа в Azure
               href: site-recovery-failover.md
             - name: "Повторное включение защиты: Azure\_— локальная среда VMware"
               href: vmware-azure-reprotect.md
@@ -251,7 +253,7 @@
               href: vmware-azure-set-up-process-server-azure.md
             - name: Настройка главного целевого сервера Linux для восстановления размещения
               href: vmware-azure-install-linux-master-target.md
-        - name: управление
+        - name: Управление
           items:
             - name: Управление агентом мобильности для VMware
               href: vmware-physical-manage-mobility-service.md
@@ -269,6 +271,8 @@
               href: delete-vault.md
     - name: Аварийное восстановление физического сервера в Azure
       items:
+        - name: Настройка аварийного восстановления в нужном масштабе
+          href: vmware-physical-large-deployment.md
         - name: Настройка сети
           items:
             - name: Управление сетевыми интерфейсами для репликации из локальной среды в Azure
@@ -281,19 +285,19 @@
               href: physical-azure-set-up-source.md
             - name: Настройка целевой среды
               href: vmware-azure-set-up-target.md
-            - name: Развертывание службы Mobility Service
+            - name: Развертывание Службы мобильности
               items:
                 - name: Сведения об установке службы Mobility Service
                   href: vmware-physical-mobility-service-overview.md
-                - name: Подготовка к принудительной установке службы Mobility Service
+                - name: Подготовка к принудительной установке Службы мобильности
                   href: vmware-azure-install-mobility-service.md
-                - name: Развертывание службы Mobility Service с помощью System Center Configuration Manager
+                - name: Развертывание Службы мобильности с помощью System Center Configuration Manager
                   href: vmware-azure-mobility-install-configuration-mgr.md
                 - name: Пошаговое руководство. Настройка аварийного восстановления
                   href: physical-azure-disaster-recovery.md
-        - name: Выполнение отработки отказа и восстановления размещения
+        - name: Отработка отказа и восстановления размещения
           href: physical-to-azure-failover-failback.md
-        - name: управление
+        - name: Управление
           items:
             - name: Управление агентом мобильности для физического сервера
               href: vmware-physical-manage-mobility-service.md
@@ -319,7 +323,7 @@
               href: site-recovery-manage-network-interfaces-on-premises-to-azure.md
             - name: Настройка назначения IP-адресов для отработки отказа
               href: concepts-on-premises-to-azure-networking.md
-        - name: Планирование емкости
+        - name: Планирование ресурсов
           items:
             - name: Средство "Планировщик развертывания" для репликации Hyper-V в Azure
               items:
@@ -327,7 +331,7 @@
                   href: hyper-v-deployment-planner-overview.md
                 - name: Журнал версий Планировщика развертывания
                   href: site-recovery-deployment-planner-history.md
-                - name: Запуск средства "Планировщик развертывания"
+                - name: Запуск Планировщика развертывания
                   href: hyper-v-deployment-planner-run.md
                 - name: Анализ созданного отчета
                   href: hyper-v-deployment-planner-analyze-report.md
@@ -339,19 +343,19 @@
               href: hyper-v-vmm-network-mapping.md
             - name: Исключение дисков из репликации Hyper-V — Azure
               href: hyper-v-exclude-disk.md
-        - name: Выполнение отработки отказа и восстановления размещения
+        - name: Отработка отказа и восстановления размещения
           items:
             - name: Настройка планов восстановления
               href: site-recovery-create-recovery-plans.md
             - name: Добавление сценариев VMM в планы восстановления
               href: hyper-v-vmm-recovery-script.md
-            - name: Выполнение отработки аварийного восстановления в Azure
+            - name: Отработка аварийного восстановления в Azure
               href: site-recovery-test-failover-to-azure.md
-            - name: Выполнение отработки отказа в Azure
+            - name: Отработка отказа в Azure
               href: site-recovery-failover.md
             - name: Восстановление размещения из Azure в Hyper-V
               href: hyper-v-azure-failback.md
-        - name: управление
+        - name: Управление
           items:
             - name: 'Обновление серверов с Windows, настроенных с помощью Site Recovery'
               href: upgrade-2012R2-to-2016.md
@@ -367,7 +371,7 @@
           href: site-recovery-workload.md
         - name: Active Directory и DNS
           href: site-recovery-active-directory.md
-        - name: SQL Server;
+        - name: SQL Server
           href: site-recovery-sql.md
         - name: SharePoint
           href: site-recovery-sharepoint.md
@@ -417,7 +421,7 @@
       href: hyper-v-azure-powershell-resource-manager.md
     - name: Настройка аварийного восстановления виртуальных машин Hyper-V (с использованием VMM) в Azure с помощью PowerShell
       href: hyper-v-vmm-powershell-resource-manager.md
-    - name: Добавление модулей runbook Службы автоматизации Azure в планы восстановления для оркестрации отработки отказа
+    - name: Добавление модулей runbook службы автоматизации Azure в планы восстановления для оркестрации отработки отказа
       href: site-recovery-runbook-automation.md
 - name: Мониторинг и устранение неполадок
   items:
@@ -451,7 +455,7 @@
           href: vmware-azure-troubleshoot-upgrade-failures.md
         - name: Устранять неполадок обнаружения vCenter
           href: vmware-azure-troubleshoot-vcenter-discovery-failures.md
-    - name: Hyper-V.
+    - name: Hyper-V
       items:
         - name: Устранение неполадок с репликацией Hyper-V
           href: hyper-v-azure-troubleshoot.md
@@ -465,7 +469,7 @@
       href: /powershell/module/azure/?view=azuresmps-3.7.0
     - name: REST
       href: 'https://msdn.microsoft.com/library/mt750497'
-- name: Сопутствующие материалы
+- name: Связанные материалы
   items:
     - name: Служба автоматизации Azure
       href: /azure/automation/

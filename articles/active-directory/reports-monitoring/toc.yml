@@ -6,7 +6,7 @@
       href: overview-reports.md
     - name: Обзор функции мониторинга в Azure AD
       href: overview-monitoring.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   expanded: true
   items:
     - name: Скачивание отчета об операциях входа в систему
@@ -31,6 +31,8 @@
       href: concept-audit-logs.md
     - name: Журналы входа
       href: concept-sign-ins.md
+    - name: Отчет об использовании и аналитике
+      href: concept-usage-insights-report.md
     - name: 'Вход, представляющий риск'
       href: concept-risky-sign-ins.md
     - name: События риска

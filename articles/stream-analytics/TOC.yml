@@ -6,7 +6,7 @@
       href: stream-analytics-introduction.md
     - name: Комплексные шаблоны решений
       href: stream-analytics-solution-patterns.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   items:
     - name: Создание задания с помощью портала Azure
       href: stream-analytics-quick-create-portal.md
@@ -34,6 +34,8 @@
       href: 'https://azure.microsoft.com/resources/samples/?service=stream-analytics'
 - name: Основные понятия
   items:
+    - name: Выбор технологии анализа потоковой передачи
+      href: streaming-technologies.md
     - name: Типы входных данных для задания
       items:
         - name: Общие сведения о входных данных

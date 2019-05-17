@@ -3,9 +3,9 @@
 - name: Обзор
   expanded: true
   items:
-    - name: Общие сведения о службе файлов Azure
+    - name: Общие сведения о Файлах Azure
       href: storage-files-introduction.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   items:
     - name: Создание и использование общих папок (Windows)
       href: storage-files-quick-create-use-windows.md
@@ -17,13 +17,13 @@
       href: storage-how-to-use-files-cli.md
     - name: Создание общих папок с использованием Обозревателя службы хранилища
       href: storage-how-to-use-files-storage-explorer.md
-- name: Учебники
+- name: Руководства
   items:
     - name: Расширение файловых серверов Windows с использованием службы "Синхронизация файлов Azure"
       href: storage-sync-files-extend-servers.md
 - name: Основные понятия
   items:
-    - name: Общие сведения о работе с файлами Azure
+    - name: Общие сведения о работе с Файлами Azure
       href: storage-files-planning.md
     - name: Общие сведения о Синхронизации файлов Azure
       href: storage-sync-files-planning.md
@@ -75,7 +75,7 @@
           href: ../common/storage-analytics-metrics.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
     - name: Аварийное восстановление и отработка отказа
       href: ../common/storage-disaster-recovery-guidance.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
-    - name: Часто задаваемые вопросы
+    - name: Вопросы и ответы
       href: storage-files-faq.md
 - name: Практические руководства
   items:
@@ -87,7 +87,7 @@
           href: storage-how-to-create-premium-fileshare.md
     - name: Развертывание
       items:
-        - name: Развертывание файлов Azure
+        - name: Развертывание Файлов Azure
           href: storage-files-deployment-guide.md
         - name: Развертывание Синхронизации файлов Azure
           href: storage-sync-files-deployment-guide.md
@@ -95,17 +95,17 @@
           href: storage-sync-files-firewall-and-proxy.md
     - name: Подключение
       items:
-        - name: Использование службы файлов Azure в Windows
+        - name: Использование Файлов Azure в Windows
           href: storage-how-to-use-files-windows.md
-        - name: Использование файлов Azure в Linux
+        - name: Использование Файлов Azure в Linux
           href: storage-how-to-use-files-linux.md
-        - name: Использование службы файлов Azure в macOS
+        - name: Использование Файлов Azure в macOS
           href: storage-how-to-use-files-mac.md
-    - name: управление
+    - name: Управление
       items:
-        - name: Регистрация сервера в службе синхронизации файлов Azure
+        - name: Регистрация сервера в службе "Синхронизация файлов Azure"
           href: storage-sync-files-server-registration.md
-        - name: Добавление конечной точки сервера синхронизации файлов Azure
+        - name: Добавление конечной точки сервера Синхронизации файлов Azure
           href: storage-sync-files-server-endpoint.md
         - name: Управление хранилищем в независимых облаках Azure
           href: ../common/storage-powershell-independent-clouds.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
@@ -113,11 +113,11 @@
           href: ../common/storage-initiate-account-failover.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
     - name: Мониторинг
       items:
-        - name: Мониторинг Синхронизации файлов Azure
+        - name: Мониторинг службы "Синхронизация файлов Azure"
           href: storage-sync-files-monitoring.md
     - name: Миграция
       items:
-        - name: Миграция в Синхронизацию файлов Azure
+        - name: Миграция в службу "Синхронизация файлов Azure"
           href: storage-sync-offline-data-transfer.md
         - name: Перемещение данных в службу хранилища Azure и из нее
           href: ../common/storage-moving-data.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
@@ -127,7 +127,7 @@
           href: ../common/storage-use-azcopy-linux.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
     - name: Разработка
       items:
-        - name: Настройте строки подключения
+        - name: Настройка строк подключения
           href: ../common/storage-configure-connection-string.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
         - name: .NET
           href: storage-dotnet-how-to-use-files.md
@@ -149,31 +149,31 @@
           href: ../common/storage-security-tls.md
     - name: Устранение неполадок
       items:
-        - name: Устранение неполадок в работе службы файлов Azure в Windows
+        - name: Устранение неполадок в работе службы "Файлы Azure" в Windows
           href: storage-troubleshoot-windows-file-connection-problems.md
-        - name: Устранение неполадок в работе службы файлов Azure в Linux
+        - name: Устранение неполадок в работе службы "Файлы Azure" в Linux
           href: storage-troubleshoot-linux-file-connection-problems.md
         - name: Устранение неполадок с производительностью Файлов Azure
           href: storage-troubleshooting-files-performance.md
-        - name: Устранение неполадок службы синхронизации файлов Azure
+        - name: Устранение неполадок службы "Синхронизация файлов Azure"
           href: storage-sync-files-troubleshoot.md
 - name: Справочные материалы
   items:
     - name: PowerShell
       href: /powershell/module/azure.storage
-    - name: Инфраструктура CLI Azure
+    - name: Azure CLI
       href: /cli/azure/storage
     - name: .NET
       items:
-        - name: 'BLOB-объекты, очереди, таблицы и файлы'
+        - name: 'Большие двоичные объекты, очереди, таблицы и файлы'
           href: 'https://docs.microsoft.com/dotnet/api/overview/azure/storage/client'
         - name: Перемещение данных
-          href: 'https://docs.microsoft.com/dotnet/api/microsoft.azure.storage.datamovement'
-        - name: Диспетчер ресурсов
+          href: /dotnet/api/microsoft.azure.storage.datamovement
+        - name: Resource Manager
           href: 'https://docs.microsoft.com/dotnet/api/overview/azure/storage/management'
     - name: Java
       items:
-        - name: 'BLOB-объекты, очереди, таблицы и файлы'
+        - name: 'Большие двоичные объекты, очереди, таблицы и файлы'
           href: 'https://docs.microsoft.com/java/api/overview/azure/storage/client'
     - name: Node.js
       href: 'https://docs.microsoft.com/javascript/api/overview/azure/storage'
@@ -191,7 +191,7 @@
       href: 'https://azure.github.io/azure-storage-android'
     - name: REST
       items:
-        - name: 'BLOB-объекты, очереди, таблицы и файлы'
+        - name: 'Большие двоичные объекты, очереди, таблицы и файлы'
           href: /rest/api/storageservices
         - name: Поставщик ресурсов
           href: /rest/api/storagerp
@@ -208,9 +208,9 @@
       href: 'https://azure.microsoft.com/roadmap/?category=storage'
     - name: Заметки о выпуске службы "Синхронизация файлов Azure"
       href: storage-files-release-notes.md
-    - name: Клиентские инструменты службы хранилища Azure
+    - name: Клиентские средства службы хранилища Azure
       href: ../common/storage-explorers.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/windows-azure-storage'
     - name: Форум
       href: 'https://social.msdn.microsoft.com/forums/azure/home?forum=windowsazuredata'
@@ -218,36 +218,38 @@
       href: 'https://azure.microsoft.com/pricing/details/storage/blobs/'
     - name: Калькулятор цен
       href: 'https://azure.microsoft.com/pricing/calculator/'
-    - name: Видеоролики
+    - name: Видео
       href: 'https://azure.microsoft.com/documentation/videos/index/?services=storage'
-    - name: обозреватель хранилищ Azure
+    - name: Обозреватель службы хранилища Azure
       items:
-        - name: Обозреватель хранилищ
+        - name: Обозреватель службы хранилища
           href: ../../vs-azure-tools-storage-manage-with-storage-explorer.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
-        - name: Заметки о выпуске обозревателя хранилищ
+        - name: Заметки о выпуске Обозревателя службы хранилища
           href: ../../vs-azure-tools-storage-explorer-relnotes.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
-        - name: Устранение неполадок с обозревателем хранилищ
+        - name: Устранение неполадок с Обозревателем службы хранилища
           href: ../common/storage-explorer-troubleshooting.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
-        - name: 'Обозреватель службы хранилища: специальные возможности'
+        - name: Специальные возможности Обозревателя службы хранилища
           href: ../../vs-azure-tools-storage-explorer-accessibility.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
     - name: Пакеты NuGet
       items:
-        - name: Клиентская библиотека хранилища Azure для .NET
-          href: 'https://www.nuget.org/packages/WindowsAzure.Storage/'
-        - name: Библиотека перемещения данных для службы хранилища Azure
+        - name: Общая клиентская библиотека службы хранилища Azure
+          href: 'https://www.nuget.org/packages/Microsoft.Azure.Storage.Common/'
+        - name: Клиентская библиотека хранилища файлов Azure
+          href: 'https://www.nuget.org/packages/Microsoft.Azure.Storage.File/'
+        - name: Библиотека перемещения данных службы хранилища Azure
           href: 'https://www.nuget.org/packages/Microsoft.Azure.Storage.DataMovement/'
         - name: Диспетчер конфигураций Azure
-          href: 'https://www.nuget.org/packages/Microsoft.WindowsAzure.ConfigurationManager/'
+          href: 'https://www.nuget.org/packages/Microsoft.Azure.ConfigurationManager/'
     - name: Исходный код
       items:
         - name: .NET
           items:
-            - name: 'Большой двоичный объект, очередь, таблица и файл'
+            - name: 'Большие двоичные объекты, очереди и файлы'
               href: 'https://github.com/Azure/azure-storage-net'
             - name: Перемещение данных
-              href: 'https://github.com/Azure/azure-storage-net-data-movement'
-            - name: Поставщик ресурсов
-              href: 'https://github.com/Azure/azure-sdk-for-net'
+              href: /dotnet/api/microsoft.azure.storage.datamovement
+            - name: Поставщик ресурсов хранилища
+              href: 'https://docs.microsoft.com/dotnet/api/overview/azure/storage/management'
         - name: Java
           href: 'https://github.com/Azure/azure-storage-java'
         - name: C++

@@ -3,29 +3,32 @@
   items: null
 - name: Обзор
   items:
-    - name: Что такое RBAC?
+    - name: Общие сведения о RBAC
       href: overview.md
-    - name: О различных ролях
+    - name: О разных ролях
       href: rbac-and-directory-admin-roles.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   items:
     - name: Просмотр разрешений на доступ пользователя
       href: check-access.md
-- name: Учебники
+- name: Руководства
   items:
     - name: "Предоставление доступа пользователю\_— портал"
       href: quickstart-assign-role-user-portal.md
     - name: "Предоставление доступа пользователю\_— PowerShell"
       href: tutorial-role-assignments-user-powershell.md
+    - name: "Предоставление доступа пользователю \_— шаблон Resource Manager"
+      displayName: 'ARM, resource manager template'
+      href: tutorial-role-assignments-user-template.md
     - name: "Предоставление доступа группе\_— PowerShell"
       href: tutorial-role-assignments-group-powershell.md
-    - name: Создание настраиваемой роли с помощью PowerShell
+    - name: "Создание настраиваемой роли\_— PowerShell"
       href: tutorial-custom-role-powershell.md
-    - name: Создание настраиваемой роли с помощью CLI
+    - name: "Создание настраиваемой роли\_— CLI"
       href: tutorial-custom-role-cli.md
 - name: Основные понятия
   items:
-    - name: Определения ролей
+    - name: Об определении ролей
       href: role-definitions.md
     - name: PIM для ресурсов Azure
       href: pim-azure-resource.md
@@ -39,7 +42,7 @@
           href: role-assignments-portal.md
         - name: PowerShell
           href: role-assignments-powershell.md
-        - name: Инфраструктура CLI Azure
+        - name: Azure CLI
           href: role-assignments-cli.md
         - name: REST API
           href: role-assignments-rest.md
@@ -59,7 +62,7 @@
           href: custom-roles.md
         - name: PowerShell
           href: custom-roles-powershell.md
-        - name: Инфраструктура CLI Azure
+        - name: Azure CLI
           href: custom-roles-cli.md
         - name: REST API
           href: custom-roles-rest.md
@@ -83,11 +86,12 @@
       href: '../azure-subscription-service-limits.md#role-based-access-control-limits'
     - name: Azure PowerShell
       href: /powershell/module/az.resources
-    - name: Инфраструктура CLI Azure
+    - name: Azure CLI
       href: /cli/azure/role?view=azure-cli-latest
     - name: REST API
       href: /rest/api/authorization/
-    - name: Шаблоны диспетчера ресурсов
+    - name: Шаблоны Resource Manager
+      displayName: ARM
       items:
         - name: Назначения ролей
           href: /azure/templates/microsoft.authorization/roleassignments

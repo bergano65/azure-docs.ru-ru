@@ -5,7 +5,7 @@
   items:
     - name: Общие сведения об API Детектора аномалий
       href: overview.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   expanded: true
   items:
     - name: Обнаружение аномалий в данных
@@ -16,6 +16,12 @@
           href: quickstarts/detect-data-anomalies-java.md
         - name: Использование Python
           href: quickstarts/detect-data-anomalies-python.md
+- name: Руководства
+  items:
+    - name: "Визуализация аномалий в пакетном режиме с помощью Power\_BI"
+      href: tutorials/batch-anomaly-detection-powerbi.md
+    - name: Обнаружение аномалий при потоковой передаче данных с помощью Azure Databricks
+      href: tutorials/anomaly-detection-streaming-databricks.md
 - name: Практические руководства
   items:
     - name: Определение аномалий в данных
@@ -34,7 +40,7 @@
       href: concepts/anomaly-detection-best-practices.md
 - name: Справочные материалы
   items:
-    - name: справочник по API REST
+    - name: Справочник по REST API
       href: 'https://aka.ms/anomaly-detector-rest-api-ref'
     - name: Пакеты SDK
       items:
@@ -54,5 +60,5 @@
       href: 'https://aka.ms/anomaly-detector-region'
     - name: Эталонная архитектура решения
       href: 'https://azure.microsoft.com/solutions/architecture/anomaly-detector-process/'
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-anomaly-detection'

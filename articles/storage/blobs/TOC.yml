@@ -11,19 +11,19 @@
       items:
         - name: Общие сведения о хранилище BLOB-объектов
           href: storage-blobs-introduction.md
-    - name: Быстрое начало работы
+    - name: Краткие руководства
       items:
         - name: Управление большими двоичными объектами без кода
           items:
             - name: Портал Azure
               href: storage-quickstart-blobs-portal.md
-            - name: Обозреватель хранилищ
+            - name: Обозреватель службы хранилища
               href: storage-quickstart-blobs-storage-explorer.md
             - name: PowerShell
               href: storage-quickstart-blobs-powershell.md
-            - name: Интерфейс командной строки
+            - name: CLI
               href: storage-quickstart-blobs-cli.md
-        - name: Разработка с использованием большими двоичных объектов
+        - name: Разработка с использованием больших двоичных объектов
           items:
             - name: .NET
               href: storage-quickstart-blobs-dotnet.md
@@ -41,13 +41,13 @@
               href: storage-quickstart-blobs-php.md
             - name: Ruby
               href: storage-quickstart-blobs-ruby.md
-    - name: Учебники
+    - name: Руководства
       items:
         - name: Передача и обработка изображения
           items:
             - name: 1. Передача и получение данных изображений в облаке
               href: storage-upload-process-images.md
-            - name: 2. Активация функций Azure для обработки больших двоичных объектов
+            - name: 2. Активация Функций Azure для обработки больших двоичных объектов
               href: ../../event-grid/resize-images-on-storage-blob-upload-event.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: 3. Защита данных приложения
               href: storage-secure-access-application.md
@@ -89,22 +89,22 @@
           href: ../common/storage-samples-java.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
         - name: Azure PowerShell
           href: storage-samples-blobs-powershell.md
-        - name: Инфраструктура CLI Azure
+        - name: Azure CLI
           href: storage-samples-blobs-cli.md
     - name: Основные понятия
       items:
-        - name: учетные записи хранения;
+        - name: Учетные записи хранения
           href: ../common/storage-account-overview.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
         - name: Безопасность
           items:
-            - name: Обзор безопасности
+            - name: Обзор системы безопасности
               href: ../common/storage-security-guide.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: Шифрование службы хранилища
               href: ../common/storage-service-encryption.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: Авторизация
               href: ../common/storage-auth.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
               items:
-                - name: "Проверка подлинности с помощью Azure\_AD"
+                - name: "Аутентификация с помощью Azure\_AD"
                   href: ../common/storage-auth-aad.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
                 - name: Авторизация с помощью общего ключа
                   href: /rest/api/storageservices/authorize-with-shared-key
@@ -179,11 +179,11 @@
                       href: ../common/storage-import-export-tool-repairing-an-import-job-v1.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
                     - name: Исправление задания экспорта
                       href: ../common/storage-import-export-tool-repairing-an-export-job-v1.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-                - name: Часто задаваемые вопросы
+                - name: Вопросы и ответы
                   href: ../common/storage-import-export-service-faq.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
                 - name: REST API
                   href: 'https://docs.microsoft.com/rest/api/storageimportexport/jobs'
-                - name: Обратиться в службу поддержки
+                - name: Запрос в службу поддержки
                   href: ../common/storage-import-export-contact-microsoft-support.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
                 - name: Архив
                   items:
@@ -296,7 +296,7 @@
                   items:
                     - name: Microsoft Azure
                       href: ../common/storage-access-blobs-queues-portal.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-                    - name: PowerShell или Azure CLI
+                    - name: Использование PowerShell или Azure CLI
                       href: ../common/storage-auth-aad-script.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
                 - name: Управление правами доступа с помощью RBAC
                   items:
@@ -304,9 +304,9 @@
                       href: ../common/storage-auth-aad-rbac-portal.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
                     - name: PowerShell
                       href: ../common/storage-auth-aad-rbac-powershell.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-                    - name: Инфраструктура CLI Azure
+                    - name: Azure CLI
                       href: ../common/storage-auth-aad-rbac-cli.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-                - name: "Проверка подлинности с помощью Azure\_AD"
+                - name: "Аутентификация с помощью Azure\_AD"
                   items:
                     - name: Аутентификация на основе управляемого удостоверения
                       href: ../common/storage-auth-aad-msi.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
@@ -314,7 +314,7 @@
                       href: ../common/storage-auth-aad-app.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
                 - name: Авторизация с помощью общего ключа
                   items:
-                    - name: Настройте строки подключения
+                    - name: Настройка строк подключения
                       href: ../common/storage-configure-connection-string.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
                     - name: Использование REST API службы хранилища Azure
                       href: ../common/storage-rest-api-auth.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
@@ -324,7 +324,7 @@
                   href: ../common/storage-encryption-keys-portal.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
                 - name: PowerShell
                   href: ../common/storage-encryption-keys-powershell.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-                - name: Инфраструктура CLI Azure
+                - name: Azure CLI
                   href: ../common/storage-encryption-keys-cli.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: Настройка шифрования на стороне клиента
               items:
@@ -370,13 +370,13 @@
               href: ../common/storage-use-azcopy.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: AzCopy в Linux (версия 8)
               href: ../common/storage-use-azcopy-linux.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-            - name: Использование фабрики данных Azure
+            - name: Использование Фабрики данных Azure
               href: ../../data-factory/connector-azure-blob-storage.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: Подключение хранилища BLOB-объектов как файловой системы в Linux
               href: storage-how-to-mount-container-linux.md
             - name: 'Миграция хранилища: часто задаваемые вопросы'
               href: ../common/storage-migration-faq.md
-        - name: Разработка с использованием большими двоичных объектов
+        - name: Разработка с использованием больших двоичных объектов
           items:
             - name: C++
               href: storage-c-plus-plus-how-to-use-blobs.md
@@ -398,7 +398,7 @@
           items:
             - name: PowerShell
               href: /powershell/module/azure.storage
-            - name: Инфраструктура CLI Azure
+            - name: Azure CLI
               href: ../common/storage-azure-cli.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: Классический Azure CLI
               href: ../common/storage-azure-cli-nodejs.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
@@ -406,15 +406,15 @@
       items:
         - name: PowerShell
           href: /powershell/module/azure.storage
-        - name: Инфраструктура CLI Azure
+        - name: Azure CLI
           href: /cli/azure/storage
         - name: .NET
           items:
-            - name: 'BLOB-объекты, очереди, таблицы и файлы'
+            - name: 'Большие двоичные объекты, очереди, таблицы и файлы'
               href: 'https://docs.microsoft.com/dotnet/api/overview/azure/storage/client'
             - name: Перемещение данных
-              href: 'https://docs.microsoft.com/dotnet/api/microsoft.azure.storage.datamovement'
-            - name: Диспетчер ресурсов
+              href: /dotnet/api/microsoft.azure.storage.datamovement
+            - name: Resource Manager
               href: 'https://docs.microsoft.com/dotnet/api/overview/azure/storage/management'
         - name: Java
           items:
@@ -438,7 +438,7 @@
           href: 'https://azure.github.io/azure-storage-android'
         - name: REST
           items:
-            - name: 'BLOB-объекты, очереди, таблицы и файлы'
+            - name: 'Большие двоичные объекты, очереди, таблицы и файлы'
               href: /rest/api/storageservices
             - name: Поставщик ресурсов
               href: /rest/api/storagerp
@@ -451,7 +451,7 @@
       items:
         - name: Стратегия развития Azure
           href: 'https://azure.microsoft.com/roadmap/?product=storage'
-        - name: Клиентские инструменты службы хранилища Azure
+        - name: Клиентские средства службы хранилища Azure
           href: ../common/storage-explorers.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
         - name: Форум
           href: 'https://social.msdn.microsoft.com/forums/azure/home?forum=windowsazuredata'
@@ -459,37 +459,39 @@
           href: 'https://azure.microsoft.com/pricing/details/storage/blobs/'
         - name: Калькулятор цен
           href: 'https://azure.microsoft.com/pricing/calculator/'
-        - name: Переполнение стека
+        - name: Stack Overflow
           href: 'https://stackoverflow.com/questions/tagged/windows-azure-storage'
-        - name: Видеоролики
+        - name: Видео
           href: 'https://azure.microsoft.com/documentation/videos/index/?services=storage'
-        - name: обозреватель хранилищ Azure
+        - name: Обозреватель службы хранилища Azure
           items:
-            - name: Обозреватель хранилищ
+            - name: Обозреватель службы хранилища
               href: ../../vs-azure-tools-storage-manage-with-storage-explorer.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-            - name: Заметки о выпуске обозревателя хранилищ
+            - name: Заметки о выпуске Обозревателя службы хранилища
               href: ../../vs-azure-tools-storage-explorer-relnotes.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-            - name: Устранение неполадок с обозревателем хранилищ
+            - name: Устранение неполадок с Обозревателем службы хранилища
               href: ../common/storage-explorer-troubleshooting.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-            - name: 'Обозреватель службы хранилища: специальные возможности'
+            - name: Специальные возможности Обозревателя службы хранилища
               href: ../../vs-azure-tools-storage-explorer-accessibility.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
         - name: Пакеты NuGet
           items:
-            - name: Клиентская библиотека хранилища Azure для .NET
-              href: 'https://www.nuget.org/packages/WindowsAzure.Storage/'
-            - name: Библиотека перемещения данных для службы хранилища Azure
+            - name: Общая клиентская библиотека службы хранилища Azure
+              href: 'https://www.nuget.org/packages/Microsoft.Azure.Storage.Common/'
+            - name: Клиентская библиотека хранилища Azure BLOB-объектов
+              href: 'https://www.nuget.org/packages/Microsoft.Azure.Storage.Blob/'
+            - name: Библиотека перемещения данных службы хранилища Azure
               href: 'https://www.nuget.org/packages/Microsoft.Azure.Storage.DataMovement/'
             - name: Диспетчер конфигураций Azure
-              href: 'https://www.nuget.org/packages/Microsoft.WindowsAzure.ConfigurationManager/'
+              href: 'https://www.nuget.org/packages/Microsoft.Azure.ConfigurationManager/'
         - name: Исходный код
           items:
             - name: .NET
               items:
-                - name: 'BLOB-объекты, очереди, таблицы и файлы'
-                  href: 'https://docs.microsoft.com/dotnet/api/overview/azure/storage/client'
+                - name: 'Большие двоичные объекты, очереди и файлы'
+                  href: 'https://github.com/Azure/azure-storage-net'
                 - name: Перемещение данных
-                  href: 'https://docs.microsoft.com/dotnet/api/microsoft.azure.storage.datamovement'
-                - name: Диспетчер ресурсов
+                  href: /dotnet/api/microsoft.azure.storage.datamovement
+                - name: Поставщик ресурсов хранилища
                   href: 'https://docs.microsoft.com/dotnet/api/overview/azure/storage/management'
             - name: Java
               items:
@@ -513,7 +515,7 @@
               href: 'https://azure.github.io/azure-storage-android'
             - name: REST
               items:
-                - name: 'BLOB-объекты, очереди, таблицы и файлы'
+                - name: 'Большие двоичные объекты, очереди, таблицы и файлы'
                   href: /rest/api/storageservices
                 - name: Поставщик ресурсов
                   href: /rest/api/storagerp
@@ -521,9 +523,9 @@
                   href: /rest/api/storageimportexport
         - name: Предложения для соответствия требованиям
           href: ../common/storage-compliance-offerings.md
-- name: Data Lake Storage Gen2
+- name: Azure Data Lake Storage 2-го поколения
   items:
-    - name: Документация по переходу к Data Lake Storage Gen1
+    - name: Документация по переходу на Data Lake Storage 1-го поколения
       href: /azure/data-lake-store/
     - name: Обзор
       items:
@@ -531,7 +533,7 @@
           href: ../blobs/data-lake-storage-introduction.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
         - name: Обработка больших данных
           href: ../blobs/data-lake-storage-data-scenarios.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-    - name: Быстрое начало работы
+    - name: Краткие руководства
       items:
         - name: Создание учетной записи хранения
           href: ../blobs/data-lake-storage-quickstart-create-account.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
@@ -539,19 +541,19 @@
           href: ../blobs/data-lake-storage-explorer.md
         - name: Анализ данных с помощью Databricks
           href: ../blobs/data-lake-storage-quickstart-create-databricks-account.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-    - name: Учебники
+    - name: Руководства
       items:
         - name: 'Извлечение, преобразование и загрузка данных с помощью Azure Databricks'
           href: ../../azure-databricks/databricks-extract-load-sql-data-warehouse.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-        - name: Доступ к данным Data Lake Storage с помощью DataBricks и Spark
+        - name: Доступ к данным Data Lake Storage с помощью Databricks и Spark
           href: ../blobs/data-lake-storage-use-databricks-spark.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
         - name: 'Извлечение, преобразование и загрузка данных с помощью Apache Hive в Azure HDInsight'
           href: ../blobs/data-lake-storage-tutorial-extract-transform-load-hive.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
     - name: Основные понятия
       items:
-        - name: Драйвер файловой системы BLOB-объектов Azure для Hadoop
+        - name: Драйвер Azure Blob File System для Hadoop
           href: ../blobs/data-lake-storage-abfs-driver.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-        - name: Формат URI для файловой системы BLOB-объектов Azure
+        - name: Формат URI для Azure Blob File System
           href: ../blobs/data-lake-storage-introduction-abfs-uri.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
         - name: Иерархические пространства имен
           href: ../blobs/data-lake-storage-namespace.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
@@ -561,7 +563,7 @@
           items:
             - name: Общие сведения о защите службы хранилища
               href: ../common/storage-security-guide.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-            - name: управление доступом;
+            - name: Управление доступом
               href: data-lake-storage-access-control.md
         - name: Обработка событий
           href: storage-blob-event-overview.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
@@ -571,7 +573,7 @@
           items:
             - name: С использованием Distcp
               href: ../blobs/data-lake-storage-use-distcp.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-            - name: Использование фабрики данных Azure
+            - name: Использование Фабрики данных Azure
               href: ../../data-factory/load-azure-data-lake-storage-gen2.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
         - name: Защита данных
           items:
@@ -583,7 +585,7 @@
                   href: ../common/storage-encryption-keys-portal.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
                 - name: PowerShell
                   href: ../common/storage-encryption-keys-powershell.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-                - name: Инфраструктура CLI Azure
+                - name: Azure CLI
                   href: ../common/storage-encryption-keys-cli.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: Управление правами доступа с помощью RBAC
               items:
@@ -591,7 +593,7 @@
                   href: ../common/storage-auth-aad-rbac-portal.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
                 - name: PowerShell
                   href: ../common/storage-auth-aad-rbac-powershell.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
-                - name: Инфраструктура CLI Azure
+                - name: Azure CLI
                   href: ../common/storage-auth-aad-rbac-cli.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json
             - name: Настройка разрешений на уровне файлов и каталогов
               href: ../blobs/data-lake-storage-how-to-set-permissions-storage-explorer.md
@@ -633,7 +635,7 @@
           href: data-lake-storage-known-issues.md
         - name: Стратегия развития Azure
           href: 'https://azure.microsoft.com/roadmap/?category=storage'
-        - name: Клиентские инструменты службы хранилища Azure
+        - name: Клиентские средства службы хранилища Azure
           href: ../common/storage-explorers.md?toc=%2fazure%2fstorage%2fdata-lake-storage%2ftoc.json
         - name: Форум
           href: 'https://social.msdn.microsoft.com/forums/azure/home?forum=windowsazuredata'
@@ -643,7 +645,7 @@
           href: 'https://azure.microsoft.com/pricing/calculator/'
         - name: Обновления службы
           href: 'https://azure.microsoft.com/updates/?product=storage'
-        - name: Переполнение стека
+        - name: Stack Overflow
           href: 'https://stackoverflow.com/questions/tagged/windows-azure-storage'
-        - name: Видеоролики
+        - name: Видео
           href: 'https://azure.microsoft.com/documentation/videos/index/?services=storage'

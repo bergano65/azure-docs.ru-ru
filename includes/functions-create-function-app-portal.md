@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 05/05/2019
 ms.author: glenga
 ms.custom: include file
-ms.openlocfilehash: 1cecafb013b5d22557961e98935fc9a2fee2a79b
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 2bfca370e8e89d98f700c8c5adfd29129e810d9b
+ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65199431"
+ms.lasthandoff: 05/08/2019
+ms.locfileid: "65416349"
 ---
 1. Нажмите кнопку **Создать ресурс** в верхнем левом углу портала Azure, а затем выберите **Вычисления** > **Приложение-функция**.
 
@@ -41,4 +41,4 @@ ms.locfileid: "65199431"
 
     ![Определение параметров нового приложения-функции](./media/functions-create-function-app-portal/function-app-create-notification.png)
 
-5. Выберите **Перейти к ресурсу** для просмотра нового приложения-функции.
+5. Выберите **Перейти к ресурсу** для просмотра нового приложения-функции. Можно также установить флажок **Закрепить на панели мониторинга**. Это упростит возвращение к этому ресурсу приложения-функции из панели мониторинга.

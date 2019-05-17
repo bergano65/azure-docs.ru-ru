@@ -6,7 +6,7 @@
       href: azure-netapp-files-introduction.md
     - name: Общие сведения об иерархии хранилища
       href: azure-netapp-files-understand-storage-hierarchy.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   expanded: true
   items:
     - name: Настройка Azure NetApp Files и создание тома NFS
@@ -25,6 +25,8 @@
       href: azure-netapp-files-cost-model.md
     - name: Рекомендации по планированию сети Azure NetApp Files
       href: azure-netapp-files-network-topologies.md
+    - name: Вопросы и ответы об Azure NetApp Files
+      href: azure-netapp-files-faqs.md
 - name: Практические руководства
   items:
     - name: Регистрация в службе Azure NetApp Files

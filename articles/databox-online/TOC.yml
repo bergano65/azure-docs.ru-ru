@@ -5,9 +5,9 @@
   items:
     - name: Обзор
       items:
-        - name: Что такое шлюз Data Box?
+        - name: Общие сведения о Шлюзе Data Box
           href: data-box-gateway-overview.md
-    - name: Учебники
+    - name: Руководства
       items:
         - name: 1. Подготовка
           href: data-box-gateway-deploy-prep.md
@@ -25,23 +25,23 @@
           href: data-box-gateway-system-requirements.md
         - name: Изучение ограничений
           href: data-box-gateway-limits.md
-        - name: Обзор безопасности
+        - name: Обзор системы безопасности
           href: data-box-gateway-security.md
         - name: Варианты использования
           href: data-box-gateway-use-cases.md
     - name: Практическое руководство
       items:
-        - name: управление
+        - name: Управление
           items:
             - name: Общие папки
               href: data-box-gateway-manage-shares.md
             - name: Пользователи
               href: data-box-gateway-manage-users.md
-            - name: Расписания пропускной способности
+            - name: Графики пропускной способности
               href: data-box-gateway-manage-bandwidth-schedules.md
             - name: 'Управление доступом, питанием и режимом подключения'
               href: data-box-gateway-manage-access-power-connectivity-mode.md
-            - name: Через PowerShell
+            - name: Использование PowerShell
               href: data-box-gateway-connect-powershell-interface.md
         - name: Мониторинг
           href: data-box-gateway-monitor.md
@@ -55,9 +55,9 @@
   items:
     - name: Обзор
       items:
-        - name: Что такое Azure Data Box Edge?
+        - name: Общие сведения об Azure Data Box Edge
           href: data-box-edge-overview.md
-    - name: Учебники
+    - name: Руководства
       items:
         - name: 1. Подготовка
           href: data-box-edge-deploy-prep.md
@@ -67,15 +67,17 @@
           href: data-box-edge-deploy-connect-setup-activate.md
         - name: 4. Добавление общего ресурса и подключение к нему
           href: data-box-edge-deploy-add-shares.md
-        - name: "5.\_Настройка вычислений"
+        - name: 5a. Настройка вычислений (простая)
           href: data-box-edge-deploy-configure-compute.md
+        - name: 5a. Настройка вычислений (сложная)
+          href: data-box-edge-deploy-configure-compute-advanced.md
     - name: Основные понятия
       items:
         - name: Обзор требований
           href: data-box-edge-system-requirements.md
         - name: Изучение ограничений
           href: data-box-edge-limits.md
-        - name: Обзор безопасности
+        - name: Обзор системы безопасности
           href: data-box-edge-security.md
         - name: Просмотр спецификаций
           href: data-box-edge-technical-specifications-compliance.md
@@ -83,7 +85,7 @@
       items:
         - name: 'Разработка модуля C#'
           href: data-box-edge-create-iot-edge-module.md
-        - name: управление
+        - name: Управление
           items:
             - name: Пограничные вычисления
               href: data-box-edge-manage-compute.md
@@ -91,11 +93,11 @@
               href: data-box-edge-manage-shares.md
             - name: Пользователи
               href: data-box-edge-manage-users.md
-            - name: Расписания пропускной способности
+            - name: Графики пропускной способности
               href: data-box-edge-manage-bandwidth-schedules.md
             - name: 'Питание, доступ, подключение'
               href: data-box-edge-manage-access-power-connectivity-mode.md
-            - name: Через PowerShell
+            - name: Использование PowerShell
               href: data-box-edge-connect-powershell-interface.md
         - name: Устранение неполадок
           href: data-box-edge-troubleshoot.md

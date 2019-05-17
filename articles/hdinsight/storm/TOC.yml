@@ -1,25 +1,23 @@
 - name: Документация по Azure HDInsight
   href: /azure/hdinsight
-- name: Apache Storm в HDInsight
+- name: Обзор
   items:
-    - name: Обзор
+    - name: Общие сведения об Apache Storm в HDInsight
       href: apache-storm-overview.md
-    - name: Компоненты Apache Hadoop в HDInsight
-      href: ../hdinsight-component-versioning.md
-      maintainContext: true
-    - name: HDInsight 4.0
-      href: ../hdinsight-version-release.md
-      maintainContext: true
 - name: Начало работы
   items:
     - name: Создание кластера Apache Storm
       href: apache-storm-tutorial-get-started-linux.md
     - name: Установка приложений HDInsight
       href: ../hdinsight-apps-install-applications.md
-      maintainContext: true
     - name: Планирование загрузки
       href: ../hdinsight-capacity-planning.md
-      maintainContext: true
+- name: Основные понятия
+  items:
+    - name: Компоненты Apache Hadoop в HDInsight
+      href: ../hdinsight-component-versioning.md
+    - name: HDInsight 4.0
+      href: ../hdinsight-version-release.md
 - name: Практическое руководство
   items:
     - name: Разработка топологий Apache Storm
@@ -40,7 +38,6 @@
       items:
         - name: Apache Kafka и Apache Storm (Java)
           href: ../hdinsight-apache-storm-with-kafka.md
-          maintainContext: true
         - name: 'Концентратор событий, служба хранилища и Data Lake Storage (Java)'
           href: 'https://azure.microsoft.com/resources/samples/hdinsight-java-storm-eventhub/'
         - name: 'Концентратор событий и Apache Storm (C# и Java)'
@@ -53,47 +50,36 @@
       items:
         - name: Настройка кластеров с использованием Bootstrap
           href: ../hdinsight-hadoop-customize-cluster-bootstrap.md
-          maintainContext: true
         - name: Настройка кластеров с помощью действия скрипта
           href: ../hdinsight-hadoop-customize-cluster-linux.md
-          maintainContext: true
-        - name: Разработка действий сценария
+        - name: Разработка действий скрипта
           href: ../hdinsight-hadoop-script-actions-linux.md
-          maintainContext: true
         - name: Сборка приложений HDInsight
           items:
             - name: Установка пользовательских приложений
               href: ../hdinsight-apps-install-custom-applications.md
-              maintainContext: true
             - name: Установка приложений с помощью REST
               href: 'https://msdn.microsoft.com/library/mt706515.aspx'
             - name: Публикация приложений HDInsight в Azure Marketplace
               href: ../hdinsight-apps-publish-applications.md
-              maintainContext: true
     - name: Безопасность
       items:
         - name: Использование SSH с HDInsight
           href: ../hdinsight-hadoop-linux-use-ssh-unix.md
-          maintainContext: true
         - name: Использование туннелирования SSH
           href: ../hdinsight-linux-ambari-ssh-tunnel.md
-          maintainContext: true
         - name: Ограничение доступа к данным
           href: ../hdinsight-storage-sharedaccesssignature-permissions.md
-          maintainContext: true
-    - name: управление
+    - name: Управление
       items:
         - name: Создание кластеров HDInsight
           href: ../hdinsight-hadoop-provision-linux-clusters.md
-          maintainContext: true
           items:
             - name: Использование портала Azure
               href: ../hdinsight-hadoop-create-linux-clusters-portal.md
-              maintainContext: true
-            - name: Использование шаблонов диспетчера ресурсов Azure
+            - name: Использование шаблонов Azure Resource Manager
               displayName: 'resource manager template, arm template, resource manager group'
               href: ../hdinsight-hadoop-create-linux-clusters-arm-templates.md
-              maintainContext: true
             - name: Использование пакета SDK для .NET
               href: 'https://docs.microsoft.com/dotnet/api/overview/azure/hdinsight?view=azure-dotnet#create-a-cluster'
             - name: Использование пакета SDK для Python
@@ -102,19 +88,14 @@
               href: 'https://docs.microsoft.com/java/api/overview/azure/hdinsight?view=azure-java-stable#create-a-cluster'
             - name: Использование Azure PowerShell
               href: ../hdinsight-hadoop-create-linux-clusters-azure-powershell.md
-              maintainContext: true
             - name: Использование cURL и Azure REST API
               href: ../hdinsight-hadoop-create-linux-clusters-curl-rest.md
-              maintainContext: true
             - name: Использование Azure CLI
               href: ../hdinsight-hadoop-create-linux-clusters-azure-cli.md
-              maintainContext: true
             - name: Создание кластеров по запросу
               href: ../hdinsight-hadoop-create-linux-clusters-adf.md
-              maintainContext: true
         - name: Управление кластерами HDInsight
           href: ../hdinsight-administer-use-portal-linux.md
-          maintainContext: true
           items:
             - name: Использование пакета SDK для .NET
               href: 'https://docs.microsoft.com/dotnet/api/overview/azure/hdinsight?view=azure-dotnet#management'
@@ -126,119 +107,67 @@
               href: 'https://docs.microsoft.com/azure/hdinsight/hdinsight-go-sdk-overview'
             - name: Использование Azure PowerShell
               href: ../hdinsight-administer-use-powershell.md
-              maintainContext: true
-            - name: Использование классического Azure CLI
+            - name: Использование классического интерфейса Azure CLI
               href: ../hdinsight-administer-use-command-line.md
-              maintainContext: true
         - name: Управление кластерами с помощью пользовательского веб-интерфейса Apache Ambari
           href: ../hdinsight-hadoop-manage-ambari.md
-          maintainContext: true
           items:
             - name: Оптимизация кластеров с помощью пользовательского веб-интерфейса Apache Ambari
               href: ../hdinsight-changing-configs-via-ambari.md
-              maintainContext: true
             - name: Использование Apache Ambari REST API
               href: ../hdinsight-hadoop-manage-ambari-rest-api.md
-              maintainContext: true
         - name: Управление журналами для кластера HDInsight
           href: ../hdinsight-log-management.md
-          maintainContext: true
         - name: Добавление учетных записей хранения
           href: ../hdinsight-hadoop-add-storage.md
-          maintainContext: true
         - name: Отправка данных для заданий Apache Hadoop
           href: ../hdinsight-upload-data.md
-          maintainContext: true
         - name: Использование нескольких кластеров HDInsight с Data Lake Storage
           href: ../hdinsight-multiple-clusters-data-lake-store.md
-          maintainContext: true
         - name: Импорт и экспорт данных с помощью Apache Sqoop
           href: ../hdinsight-use-sqoop.md
-          maintainContext: true
           items:
             - name: Подключение по SSH
               href: ../hdinsight-use-sqoop-mac-linux.md
-              maintainContext: true
             - name: Запуск с помощью cURL
               href: ../hdinsight-hadoop-use-sqoop-curl.md
-              maintainContext: true
             - name: Запуск с помощью пакета SDK для .NET
               href: ../hdinsight-hadoop-use-sqoop-dotnet-sdk.md
-              maintainContext: true
             - name: Запуск с помощью Azure PowerShell
               href: ../hdinsight-hadoop-use-sqoop-powershell.md
-              maintainContext: true
         - name: Использование Apache Oozie для рабочих процессов
           href: ../hdinsight-use-oozie-linux-mac.md
-          maintainContext: true
         - name: Порты и универсальные коды ресурса (URI) кластеров и служб
           href: ../hdinsight-hadoop-port-settings-for-services.md
-          maintainContext: true
         - name: Перенос в среду средств разработки Resource Manager
           href: ../hdinsight-hadoop-development-using-azure-resource-manager.md
-          maintainContext: true
         - name: Доступность и надежность
           href: ../hdinsight-high-availability-linux.md
-          maintainContext: true
         - name: Установка новой версии кластера HDInsight
           href: ../hdinsight-upgrade-cluster.md
-          maintainContext: true
         - name: Обновление ОС путем частичной замены для кластера HDInsight
           href: ../hdinsight-os-patching.md
-          maintainContext: true
     - name: Устранение неполадок
       href: ../hdinsight-troubleshoot-guide.md
-      maintainContext: true
       items:
         - name: Устранение задержки работы или сбоя кластера HDInsight
           href: ../hdinsight-troubleshoot-failed-cluster.md
-          maintainContext: true
         - name: Устранение неполадок с Apache Hadoop HDFS
           href: ../hdinsight-troubleshoot-hdfs.md
-          maintainContext: true
         - name: Устранение неполадок с Apache Storm
           href: apache-troubleshoot-storm.md
         - name: Устранение неполадок с Apache Hadoop YARN
           href: ../hdinsight-troubleshoot-yarn.md
-          maintainContext: true
         - name: Ресурсы
           items:
             - name: Сведения об использовании HDInsight в Linux
               href: ../hdinsight-hadoop-linux-information.md
-              maintainContext: true
             - name: 'Apache Hadoop: память и производительность'
               href: ../hdinsight-hadoop-stack-trace-error-messages.md
-              maintainContext: true
             - name: Доступ к журналам приложений YARN в Hadoop под управлением Linux
               href: ../hdinsight-hadoop-access-yarn-app-logs-linux.md
-              maintainContext: true
             - name: Включение дампов кучи для служб Apache Hadoop
               href: ../hdinsight-hadoop-collect-debug-heap-dump-linux.md
-              maintainContext: true
-- name: Готовность к работе в масштабах предприятия
-  items:
-    - name: Защита данных
-      href: ../hdinsight-hadoop-create-linux-clusters-with-secure-transfer-storage.md
-      maintainContext: true
-    - name: Доступ к сети
-      items:
-        - name: HDInsight в виртуальной сети Azure
-          href: ../hdinsight-extend-hadoop-virtual-network.md
-          maintainContext: true
-        - name: Подключение HDInsight к локальной сети
-          href: ../connect-on-premises-network.md
-          maintainContext: true
-    - name: Мониторинг с использованием журналов Azure Monitor
-      items:
-        - name: Использование журналов Azure Monitor
-          href: ../hdinsight-hadoop-oms-log-analytics-tutorial.md
-          maintainContext: true
-        - name: Использование запросов с журналами Azure Monitor
-          href: ../hdinsight-hadoop-oms-log-analytics-use-queries.md
-          maintainContext: true
-        - name: Мониторинг производительности кластера
-          href: ../hdinsight-key-scenarios-to-monitor.md
-          maintainContext: true
 - name: Справочные материалы
   items:
     - name: Примеры кода
@@ -262,16 +191,6 @@
     - name: Шаблон Resource Manager
       displayName: 'resource manager template, arm template, resource manager group'
       href: /azure/templates/microsoft.hdinsight/allversions
-- name: Сопутствующие материалы
-  items:
-    - name: Кластеры Windows
-      items:
-        - name: Перенос кластеров Windows в кластеры Linux
-          href: ../hdinsight-migrate-from-windows-to-linux.md
-          maintainContext: true
-        - name: Перенос решений .NET в кластеры Linux
-          href: ../hdinsight-hadoop-migrate-dotnet-to-linux.md
-          maintainContext: true
 - name: Ресурсы
   items:
     - name: Стратегия развития Azure
@@ -286,6 +205,31 @@
       href: 'https://azure.microsoft.com/pricing/calculator/'
     - name: Средства Windows для HDInsight
       href: ../hdinsight-hadoop-windows-tools.md
-      maintainContext: true
     - name: Изменения в доступе к конфигурации кластера
       href: ../hdinsight-migrate-granular-access-cluster-configurations.md
+- name: Готовность к работе в масштабах предприятия
+  items:
+    - name: Защита данных
+      href: ../hdinsight-hadoop-create-linux-clusters-with-secure-transfer-storage.md
+    - name: Доступ к сети
+      items:
+        - name: HDInsight в виртуальной сети Azure
+          href: ../hdinsight-extend-hadoop-virtual-network.md
+        - name: Подключение HDInsight к локальной сети
+          href: ../connect-on-premises-network.md
+    - name: Мониторинг с использованием журналов Azure Monitor
+      items:
+        - name: Использование журналов Azure Monitor
+          href: ../hdinsight-hadoop-oms-log-analytics-tutorial.md
+        - name: Использование запросов с журналами Azure Monitor
+          href: ../hdinsight-hadoop-oms-log-analytics-use-queries.md
+        - name: Мониторинг производительности кластера
+          href: ../hdinsight-key-scenarios-to-monitor.md
+- name: Сопутствующие материалы
+  items:
+    - name: Кластеры Windows
+      items:
+        - name: Перенос кластеров Windows в кластеры Linux
+          href: ../hdinsight-migrate-from-windows-to-linux.md
+        - name: Перенос решений .NET в кластеры Linux
+          href: ../hdinsight-hadoop-migrate-dotnet-to-linux.md

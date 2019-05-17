@@ -1,14 +1,14 @@
-- name: Документация по базе данных SQL
+- name: Документация по Базе данных SQL
   href: index.yml
 - name: Службы Базы данных SQL
   items:
-    - name: Что такое база данных SQL
+    - name: Что такое База данных SQL
       href: sql-database-technical-overview.md
     - name: Выбор версии Azure SQL
       href: sql-database-paas-vs-sql-server-iaas.md
     - name: Заметки о выпуске
       href: sql-database-release-notes.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   expanded: true
   items:
     - name: Краткое руководство по работе с отдельной базой данных
@@ -53,7 +53,7 @@
           href: sql-database-connect-query-dotnet-visual-studio.md
         - name: .NET Core
           href: sql-database-connect-query-dotnet-core.md
-        - name: Использование .NET и Active Directory MFA
+        - name: Использование .NET и многофакторной проверки подлинности в Active Directory
           href: active-directory-interactive-connect-azure-sql-db.md
         - name: Go
           href: sql-database-connect-query-go.md
@@ -75,7 +75,7 @@
           href: sql-database-quickstart-r-create-script.md
         - name: Обучение и оценка модели
           href: sql-database-quickstart-r-train-score-model.md
-- name: Учебники
+- name: Руководства
   items:
     - name: Создание базы данных в Базе данных SQL
       items:
@@ -83,7 +83,7 @@
           href: sql-database-design-first-database.md
         - name: Создание базы данных с помощью .NET
           href: sql-database-design-first-database-csharp.md
-    - name: Переход на базу данных SQL
+    - name: Миграция в Базу данных SQL
       items:
         - name: Миграция в отдельную базу данных или базу данных в пуле с помощью DMS
           href: ../dms/tutorial-sql-server-to-azure-sql.md?toc=/azure/sql-database/toc.json
@@ -97,13 +97,13 @@
           href: sql-database-managed-instance-aad-security-tutorial.md
     - name: Реализация географически распределенной базы данных
       href: sql-database-implement-geo-distributed-database.md
-    - name: "Настройка синхронизации данных SQL\_Azure"
+    - name: "Настройка Синхронизации данных SQL\_Azure"
       href: sql-database-get-started-sql-data-sync.md
 - name: Примеры
   items:
     - name: Примеры кода
       href: 'https://azure.microsoft.com/resources/samples/?service=sql-database'
-    - name: Инфраструктура CLI Azure
+    - name: Azure CLI
       href: sql-database-cli-samples.md
     - name: Azure PowerShell
       href: sql-database-powershell-samples.md
@@ -145,7 +145,7 @@
           href: sql-database-single-index.yml
         - name: Возможности отдельной базы данных
           href: sql-database-single-database.md
-        - name: Справочник по API для управления
+        - name: Справочник по API управления
           href: sql-database-single-databases-manage.md
         - name: Отличия T-SQL
           href: sql-database-transact-sql-information.md
@@ -165,9 +165,9 @@
               href: sql-database-dtu-resource-limits-single-databases.md
             - name: Масштабирование ресурсов
               href: sql-database-single-database-scale.md
-    - name: Пулы эластичных БД
+    - name: Эластичные пулы
       items:
-        - name: Пулы эластичных БД
+        - name: Эластичные пулы
           href: sql-database-elastic-pool.md
         - name: Ресурсы эластичного пула
           items:
@@ -185,7 +185,7 @@
           href: sql-database-managed-instance-index.yml
         - name: Возможности управляемого экземпляра
           href: sql-database-managed-instance.md
-        - name: Справочник по API для управления
+        - name: Справочник по API управления
           href: sql-database-managed-instance-create-manage.md
         - name: Ограничения ресурсов
           href: sql-database-managed-instance-resource-limits.md
@@ -203,7 +203,7 @@
           href: sql-database-paas.yml
         - name: Непрерывность бизнес-процессов
           href: sql-database-business-continuity.md
-        - name: высокую доступность;
+        - name: Высокий уровень доступности
           href: sql-database-high-availability.md
         - name: Автоматическое резервное копирование
           href: sql-database-automated-backups.md
@@ -233,7 +233,7 @@
               href: sql-database-disaster-recovery-drills.md
     - name: Безопасность
       items:
-        - name: Обзор безопасности
+        - name: Обзор системы безопасности
           href: sql-database-security-overview.md
           displayName: 'compliance, fedramp, soc, fact, fisc, hitrust, pci, iso'
         - name: Расширенная защита данных
@@ -244,7 +244,7 @@
               href: sql-database-data-discovery-and-classification.md
             - name: Оценка уязвимостей
               href: sql-vulnerability-assessment.md
-            - name: Advanced Threat Protection
+            - name: Расширенная защита от угроз
               href: sql-database-threat-detection-overview.md
         - name: Правила брандмауэра для IP-адресов на уровне сервера
           items:
@@ -254,9 +254,9 @@
               href: sql-database-vnet-service-endpoint-rule-overview.md
             - name: Конечные точки виртуальной сети — PowerShell
               href: sql-database-vnet-service-endpoint-rule-powershell.md
-        - name: управление доступом;
+        - name: Управление доступом
           items:
-            - name: управление доступом;
+            - name: Управление доступом
               href: sql-database-control-access.md
             - name: Имена входа и пользователи
               href: sql-database-manage-logins.md
@@ -324,7 +324,7 @@
           href: sql-database-monitor-tune-overview.md
         - name: Мониторинг производительности
           items:
-            - name: анализ производительности запросов
+            - name: Анализ производительности запросов
               href: sql-database-query-performance.md
             - name: Мониторинг с помощью Аналитики SQL Azure
               href: 'https://docs.microsoft.com/azure/log-analytics/log-analytics-azure-sql'
@@ -368,7 +368,7 @@
   items:
     - name: Обзор
       href: sql-database-howto.md
-    - name: Отдельная база данных
+    - name: Отдельные базы данных и пулы эластичных баз данных
       items:
         - name: Обзор
           href: sql-database-howto-single-database.md
@@ -382,7 +382,7 @@
           href: sql-database-threat-detection.md
         - name: Настройка политик хранения резервных копий с помощью хранилища BLOB-объектов Azure
           href: sql-database-long-term-backup-retention-configure.md
-        - name: Настройка заданий обработки эластичных баз данных
+        - name: Настройка Заданий обработки эластичных баз данных
           href: elastic-jobs-overview.md
         - name: Настройка динамической маскировки данных
           href: sql-database-dynamic-data-masking-get-started-portal.md
@@ -400,7 +400,7 @@
           href: sql-database-advisor-portal.md
         - name: Создание оповещений
           href: sql-database-insights-alerts-portal.md
-        - name: Устранение неполадок подключения
+        - name: Устранение неполадок с подключением
           href: sql-database-troubleshoot-common-connection-issues.md
         - name: Управление файловым пространством
           href: sql-database-file-space-management.md
@@ -448,7 +448,7 @@
               href: elastic-jobs-tsql.md
             - name: Перенос данных (из старых заданий обработки эластичных БД)
               href: elastic-jobs-migrate.md
-    - name: Управляемый экземпляр
+    - name: Управляемые экземпляры
       items:
         - name: Обзор
           href: sql-database-howto-managed-instance.md
@@ -490,15 +490,15 @@
           href: sql-database-export.md
         - name: Синхронизация данных
           items:
-            - name: Агент синхронизации данных
+            - name: Data Sync Agent
               href: sql-database-data-sync-agent.md
             - name: Репликация изменений схемы
               href: sql-database-update-sync-schema.md
             - name: Мониторинг с помощью OMS
               href: sql-database-sync-monitor-oms.md
-            - name: Рекомендации по синхронизации данных
+            - name: Рекомендации по Синхронизации данных
               href: sql-database-best-practices-data-sync.md
-            - name: Устранение ошибок синхронизации данных
+            - name: Устранение ошибок Синхронизации данных
               href: sql-database-troubleshoot-data-sync.md
         - name: Загрузка данных с помощью BCP
           href: sql-database-load-from-csv-with-bcp.md
@@ -670,7 +670,7 @@
   items:
     - name: Azure PowerShell
       href: /powershell/module/az.sql
-    - name: Инфраструктура CLI Azure
+    - name: Azure CLI
       href: /cli/azure/sql
     - name: .NET
       href: /dotnet/api/microsoft.azure.management.sql.models
@@ -693,17 +693,17 @@
       href: /azure/templates/microsoft.sql/allversions
     - name: Инструменты SQL Server
       href: /sql/tools/overview-sql-tools
-    - name: SQL Server Management Studio (SSMS);
+    - name: SQL Server Management Studio (SSMS)
       href: /sql/ssms/download-sql-server-management-studio-ssms
     - name: SQL Server Data Tools (SSDT)
       href: /sql/ssdt/download-sql-server-data-tools-ssdt
     - name: BCP
       href: /sql/tools/bcp-utility
-    - name: SQLCMD
+    - name: sqlcmd
       href: /sql/tools/sqlcmd-utility
     - name: SqlPackage
       href: 'https://docs.microsoft.com/sql/tools/sqlpackage?toc=/azure/sql-database/toc.json'
-    - name: Пакет библиотеки управления базами данных SQL
+    - name: Пакет библиотеки управления Базой данных SQL
       href: 'https://www.nuget.org/packages/Microsoft.Azure.Management.Sql'
     - name: Драйверы SQL Server
       href: /sql/connect/sql-server-drivers
@@ -720,19 +720,23 @@
       href: sql-database-glossary-terms.md
     - name: Развитие навыков с помощью Microsoft Learn
       href: /learn/browse/?products=azure-sql-database
+    - name: Блог по SQL Server
+      href: 'https://cloudblogs.microsoft.com/sqlserver/?product=azure-sql-database'
+    - name: Блог Microsoft Azure
+      href: 'https://azure.microsoft.com/blog/'
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/'
     - name: Открытые наборы данных
       href: sql-database-public-data-sets.md
-    - name: Устранение неполадок подключения
+    - name: Устранение неполадок с подключением
       href: 'https://support.microsoft.com/help/10085/troubleshooting-connectivity-issues-with-microsoft-azure-sql-database'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/sql-database/'
     - name: Форум MSDN
       href: 'https://social.msdn.microsoft.com/Forums/home?forum=ssdsgetstarted'
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/sql-azure'
-    - name: Видеоролики
+    - name: Видео
       href: 'https://azure.microsoft.com/documentation/videos/index/?services=sql-database'
     - name: Обновления службы
       href: 'https://azure.microsoft.com/updates/?service=sql-database'

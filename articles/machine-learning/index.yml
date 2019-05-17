@@ -4,10 +4,10 @@ abstract:
 documentType: LandingData
 metadata:
   author: j-martens
-  description: 'Узнайте, как создавать для приложений, веб-сайтов и ботов интеллектуальные алгоритмы, позволяющие видеть, слышать, говорить и понимать потребности клиентов с помощью обычных средств связи. Руководства, краткие инструкции, справочники по API и примеры использования.'
+  description: 'Узнайте, как создавать для приложений, веб-сайтов и ботов интеллектуальные алгоритмы, которые могут видеть, слышать, говорить и понимать потребности клиентов с помощью обычных средств связи. Руководства, краткие инструкции, справочники по API и примеры использования.'
   ms.author: jmartens
   ms.subservice: core
-  ms.date: 12/04/2018
+  ms.date: 5/14/2019
   ms.devlang: na
   ms.service: machine-learning
   ms.tgt_pltfrm: na
@@ -27,34 +27,42 @@ sections:
         style: cards
         type: list
   - items:
-      - text: Установка и начало работы со службой "Машинное обучение Azure"
+      - text: 'Начало работы со Службой машинного обучения Azure:'
         type: paragraph
       - text: <b>Краткие руководства</b>
         type: paragraph
       - items:
           - html: <a href="service/quickstart-run-cloud-notebook">Запуск эксперимента в облаке</a> (установка не требуется).
           - html: <a href="service/quickstart-run-local-notebook">Запуск эксперимента с использованием сервера записных книжек</a> (локальная установка пакета SDK).
+          - html: <a href="service/ui-quickstart-run-experiment">Запуск эксперимента в визуальном интерфейсе</a> (без необходимости писать код)
         style: unordered
         type: list
-      - text: <b>Руководство по классификации изображений с использованием данных MNIST</b>
+      - text: <b>Руководство. Классификация изображений данных MNIST с помощью пакета SDK</b>
         type: paragraph
       - items:
           - html: Часть 1. <a href="service/tutorial-train-models-with-aml">Обучение собственной модели</a>
           - html: Часть 2. <a href="service/tutorial-deploy-models-with-aml">Развертывание этой модели</a>
         style: unordered
         type: list
-      - text: <b>Руководство по моделированию регрессии с данными о поездках в такси Нью-Йорка</b>
+      - text: <b>Руководство. Прогнозирование стоимости поездки на такси с помощью пакета SDK</b>
         type: paragraph
       - items:
-          - html: Часть 1. <a href="service/tutorial-data-prep">Подготовка данных для построения модели</a>
+          - html: Часть 1. <a href="service/tutorial-data-prep">Подготовка данных для создания модели</a>
           - html: Часть 2. <a href="service/tutorial-auto-train-models">Автоматическое обучение моделей в службе "Машинное обучение"</a>
+        style: unordered
+        type: list
+      - text: <b>Руководство. Прогнозирование стоимости автомобиля с помощью визуального интерфейса</b>
+        type: paragraph
+      - items:
+          - html: Часть 1. <a href="service/ui-tutorial-automobile-price-train-score">Прогнозирование стоимости автомобиля</a>
+          - html: Часть 2. <a href="service/ui-tutorial-automobile-price-deploy">Развертывание модели регрессии</a>
         style: unordered
         type: list
       - text: <b>Работа с собственными моделями</b>
         type: paragraph
       - items:
           - html: <a href="service/how-to-consume-web-service">Использование модели для запроса и получения данных</a>
-          - html: <a href="service/how-to-run-batch-predictions">Пакетное прогнозирование с помощью конвейеров машинного обучения</a>
+          - html: <a href="service/how-to-run-batch-predictions">Пакетное прогнозирование с помощью конвейеров Машинного обучения</a>
         style: unordered
         type: list
     title: Краткие руководства
@@ -63,7 +71,7 @@ sections:
         columns: 2
         items:
           - href: /azure/cognitive-services/
-            html: '<p>API, предоставляющие интеллектуальные алгоритмы для приложений, веб-сайтов и программ-роботов.</p>'
+            html: '<p>API, которые предоставляют интеллектуальные алгоритмы для приложений, веб-сайтов и ботов.</p>'
             image:
               src: /azure/machine-learning/media/index/cognitive-services.png
             title: Cognitive Services
@@ -78,21 +86,21 @@ sections:
               src: /azure/machine-learning/media/index/logo_sql.png
             title: Службы машинного обучения SQL Server
           - href: /machine-learning-server/
-            html: '<p>Гибкая корпоративная платформа машинного обучения, поддерживающая развертывания R и Python в Windows и Linux, а также в кластерах HDInsight Spark и Hadoop.</p>'
+            html: '<p>Гибкая корпоративная платформа машинного обучения, которая поддерживает развертывания R и Python в Windows и Linux, а также в кластерах HDInsight Spark и Hadoop.</p>'
             image:
               src: /azure/machine-learning/media/index/ml-server.png
-            title: Сервер машинного обучения Майкрософт.
+            title: Microsoft Machine Learning Server
           - href: /azure/machine-learning/team-data-science-process
-            html: '<p>Командный процесс обработки и анализа данных, который позволяет специалистам эффективно доставлять решения прогнозной аналитики и интеллектуальные приложения.</p>'
+            html: '<p>Командный процесс обработки и анализа данных, который позволяет специалистам эффективно предоставлять решения прогнозной аналитики и интеллектуальные приложения.</p>'
             image:
               src: /azure/machine-learning/media/index/tdsp.png
             title: Процесс обработки и анализа данных группы
           - href: /azure/machine-learning/data-science-virtual-machine/
-            html: '<p>Эксперименты, выполняемые без установки и настройки программного обеспечения, с использованием Виртуальных машин для обработки и анализа данных и глубокого обучения. Популярные средства аналитики данных, машинного обучения и ИИ являются предварительно установленными.</p>'
+            html: '<p>Эксперименты, выполняемые без установки и настройки программного обеспечения с использованием Виртуальных машин для обработки и анализа данных (DSVM) и виртуальных машин для глубокого обучения (DLVM). Популярные средства аналитики данных, машинного обучения и ИИ являются предварительно установленными.</p>'
             image:
               src: /azure/machine-learning/media/index/virtualmachine.svg
             title: Виртуальная машина для обработки и анализа данных
         style: cards
         type: list
     title: Другие технологии машинного обучения Майкрософт
-title: Документация по машинному обучению Azure
+title: Документация по Машинному обучению Azure

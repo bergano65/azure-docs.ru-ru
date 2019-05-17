@@ -7,12 +7,12 @@
           items:
             - name: Что такое Data Box?
               href: data-box-overview.md
-        - name: Быстрое начало работы
+        - name: Краткие руководства
           expanded: true
           items:
             - name: Настройка (портал Azure)
               href: data-box-quickstart-portal.md
-        - name: Учебники
+        - name: Руководства
           items:
             - name: 1. Заказ
               href: data-box-deploy-ordered.md
@@ -36,6 +36,8 @@
           items:
             - name: Руководство по безопасности
               href: data-box-safety.md
+            - name: Отслеживание и ведения журнала
+              href: data-box-logs.md
             - name: Обзор требований
               items:
                 - name: Для Data Box
@@ -46,19 +48,19 @@
               href: data-box-limits.md
             - name: Проверка состояния защиты
               href: data-box-security.md
-            - name: Часто задаваемые вопросы
+            - name: Вопросы и ответы
               href: data-box-faq.md
         - name: Практическое руководство
           items:
-            - name: Управление через портал Azure
+            - name: Управление с помощью портала Azure
               href: data-box-portal-admin.md
             - name: Управление с помощью локального пользовательского веб-интерфейса
               href: data-box-local-web-ui-admin.md
             - name: Перемещение данных на уровень больших двоичных объектов
               href: data-box-how-to-set-data-tier.md
-            - name: подключение кабелей к устройству.
+            - name: Подключение кабелей к устройству
               href: data-box-cable-options.md
-            - name: Обратиться в службу поддержки
+            - name: Запрос в службу поддержки
               href: data-box-disk-contact-microsoft-support.md
             - name: Миграция
               items:
@@ -80,12 +82,12 @@
           items:
             - name: Что такое Data Box Disk?
               href: data-box-disk-overview.md
-        - name: Быстрое начало работы
+        - name: Краткие руководства
           expanded: true
           items:
             - name: Настройка (портал Azure)
               href: data-box-disk-quickstart-portal.md
-        - name: Учебники
+        - name: Руководства
           items:
             - name: 1. Заказ
               href: data-box-disk-deploy-ordered.md
@@ -103,15 +105,15 @@
               href: data-box-disk-limits.md
             - name: Проверка состояния защиты
               href: data-box-disk-security.md
-            - name: Часто задаваемые вопросы
+            - name: Вопросы и ответы
               href: data-box-disk-faq.md
         - name: Практическое руководство
           items:
-            - name: Управление через портал Azure
+            - name: Управление с помощью портала Azure
               href: data-box-portal-ui-admin.md
             - name: Устранение неполадок с дисками
               href: data-box-disk-troubleshoot.md
-            - name: Обратиться в службу поддержки
+            - name: Запрос в службу поддержки
               href: data-box-disk-contact-microsoft-support.md
     - name: Data Box Heavy
       items:

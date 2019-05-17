@@ -4,7 +4,7 @@
   items:
     - name: Сведения об AKS
       href: intro-kubernetes.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   expanded: true
   items:
     - name: Создание кластера AKS
@@ -31,7 +31,7 @@
         - name: С помощью Node.js (VS Code и CLI)
           href: ../dev-spaces/quickstart-nodejs.md
           maintainContext: true
-- name: Учебники
+- name: Руководства
   items:
     - name: 1. Подготовка приложения для AKS
       href: tutorial-kubernetes-prepare-app.md
@@ -45,7 +45,7 @@
       href: tutorial-kubernetes-scale.md
     - name: 6. Обновление приложения
       href: tutorial-kubernetes-app-update.md
-    - name: "7.\_Обновление кластера."
+    - name: "7.\_Обновление кластера"
       href: tutorial-kubernetes-upgrade-cluster.md
 - name: Основные понятия
   items:
@@ -115,7 +115,7 @@
           maintainContext: true
         - name: Создание виртуальных узлов
           items:
-            - name: Инфраструктура CLI Azure
+            - name: Azure CLI
               href: virtual-nodes-cli.md
             - name: Портал Azure
               href: virtual-nodes-portal.md
@@ -187,7 +187,7 @@
           href: api-server-authorized-ip-ranges.md
         - name: Обновление учетных данных субъекта-службы кластера
           href: update-credentials.md
-        - name: Ограничение и администрирование исходящего трафика кластера
+        - name: Ограничение и администрирование исходящего трафика кластера (предварительная версия)
           href: limit-egress-traffic.md
         - name: Включение интеграции с Azure Active Directory
           items:
@@ -305,7 +305,7 @@
           href: ssh.md
 - name: Справочные материалы
   items:
-    - name: Инфраструктура CLI Azure
+    - name: Azure CLI
       href: /cli/azure/aks
     - name: REST
       href: /rest/api/aks
@@ -325,7 +325,7 @@
   items:
     - name: Развитие навыков с помощью Microsoft Learn
       href: /learn/browse/?products=azure-container-instances&azure-container-registry
-    - name: Регионы доступности
+    - name: Доступность по регионам
       href: 'https://azure.microsoft.com/regions/services/'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/container-service/'
@@ -335,9 +335,9 @@
       href: 'https://azure.microsoft.com/roadmap/'
     - name: Отзыв о продукте
       href: 'https://feedback.azure.com/forums/914020-azure-kubernetes-service-aks'
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-container-service'
-    - name: Видеоролики
+    - name: Видео
       href: 'https://azure.microsoft.com/resources/videos/index/?services=container-service&sort=newest'
-    - name: Часто задаваемые вопросы
+    - name: Вопросы и ответы
       href: faq.md
