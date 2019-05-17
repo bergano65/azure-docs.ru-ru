@@ -6,20 +6,20 @@ manager: cgronlun
 services: search
 ms.service: search
 ms.topic: conceptual
-ms.date: 03/27/2019
+ms.date: 05/13/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 43c072cb72935a80da0e48e6b8343f38ee08876b
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: c032dbc528ed5034280d0ecb4c95700b51869991
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65023959"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65793622"
 ---
 # <a name="how-to-implement-faceted-navigation-in-azure-search"></a>Как реализовать фасетную навигацию в службе поиска Azure
 Фасетная навигация представляет собой механизм фильтрации, обеспечивающий самоуправляемую детализированную навигацию в приложениях поиска. Термин "фасетная навигация" может быть неизвестен вам, но вы, вероятно, использовали этот механизм ранее. Как показано в следующем примере, фасетная навигации — это не что иное, как категории, с помощью которых фильтруются результаты.
 
- ![Демоверсия портала поиска работы, использующего Поиск Azure][1]
+ ![Демоверсии портала поиска Azure](media/search-faceted-navigation/azure-search-faceting-example.png "демоверсии портала поиска Azure")
 
 Фасетная навигация — это альтернативная точка входа в поиск. Ее можно использовать вместо того, чтобы вручную вводить сложные выражения поиска. С помощью фасетов вы можете найти нужные данные. Вероятность нулевого результата практически исключена. Как разработчик фасеты наиболее полезные условия поиска для навигации в индексе поиска. В интерактивных приложениях для розничного торговли в фасетной навигации часто используются такие категории, как торговые марки, отделы (например, "Детская обувь"), размер, цена, популярность и оценки. 
 
@@ -341,7 +341,7 @@ if (businessTitleFacet != "")
 **Способ 2. Использование списка значений**  
  Для числовых данных можно использовать список значений.  Рассмотрим следующий диапазон значений поля фасета `listPrice`:
 
-  ![Пример списка значений][5]
+  ![Пример списка значений](media/search-faceted-navigation/Facet-5-Prices.PNG "пример списка значений")
 
 Чтобы указать диапазон значений фасета, как показано на предыдущем снимке экрана, используйте список значений:
 
@@ -352,7 +352,7 @@ if (businessTitleFacet != "")
 ### <a name="build-a-filter-for-a-range"></a>Создание фильтра для диапазона
 Чтобы фильтровать документы на основе выбранного диапазона значений, вы можете включить операторы фильтров `"ge"` и `"lt"` в двухкомпонентное выражение, которое определяет конечные точки диапазона значений. Например, если выбрать диапазон 10–25 для поля `listPrice`, будет применен фильтр `$filter=listPrice ge 10 and listPrice lt 25`. В примере кода для задания конечных точек в выражении фильтра используются параметры **priceFrom** и **priceTo**. 
 
-  ![Запрос для диапазона значений][6]
+  ![Запрос для диапазона значений](media/search-faceted-navigation/Facet-6-buildfilter.PNG "запрос для диапазона значений")
 
 <a name="geofacets"></a> 
 
@@ -385,11 +385,11 @@ if (businessTitleFacet != "")
    
    Вместе с результатами поиска будет также возвращена структура фасетной навигации. На странице результатов поиска структура фасетной навигации включает количественные показатели для каждого результата фасета. Фасеты не выбраны, поэтому возвращаются все соответствующие результаты.
    
-   ![Результаты поиска до выбора фасетов][11]
+   ![Результаты поиска до выбора фасетов](media/search-faceted-navigation/faceted-search-before-facets.png "результаты поиска до выбора фасетов")
 
 4. Щелкните фасеты Business Title (Должность в компании), Location (Расположение) или Minimum Salary (Минимальная заработная плата). При первоначальном поиске фасеты имеют значение NULL, но по мере того, как они принимают значения, из результатов поиска удаляются несоответствующие элементы.
    
-   ![Результаты поиска после выбора фасетов][12]
+   ![Результаты поиска после выбора фасетов](media/search-faceted-navigation/faceted-search-after-facets.png "результаты поиска после выбора фасетов")
 
 5. Вы можете по-разному очистить запрос, использующий фасеты, например щелкнуть `[X]` возле выбранного фасета, чтобы его очистить.
    
@@ -400,42 +400,6 @@ if (businessTitleFacet != "")
 
 Чтобы больше узнать о принципах разработки решений фасетной навигации, щелкните следующие ссылки.
 
-* [Разработка решения для поиска с использованием фасетов](http://www.uie.com/articles/faceted_search/)
 * [Шаблоны проектирования. Фасетная навигация](https://alistapart.com/article/design-patterns-faceted-navigation)
-
-
-<!--Anchors-->
-[How to build it]: #howtobuildit
-[Build the presentation layer]: #presentationlayer
-[Build the index]: #buildindex
-[Check for data quality]: #checkdata
-[Build the query]: #buildquery
-[Tips on how to control faceted navigation]: #tips
-[Faceted navigation based on range values]: #rangefacets
-[Faceted navigation based on GeoPoints]: #geofacets
-[Try it out]: #tryitout
-
-<!--Image references-->
-[1]: ./media/search-faceted-navigation/azure-search-faceting-example.PNG
-[2]: ./media/search-faceted-navigation/Facet-2-CSHTML.PNG
-[3]: ./media/search-faceted-navigation/Facet-3-schema.PNG
-[4]: ./media/search-faceted-navigation/Facet-4-SearchMethod.PNG
-[5]: ./media/search-faceted-navigation/Facet-5-Prices.PNG
-[6]: ./media/search-faceted-navigation/Facet-6-buildfilter.PNG
-[7]: ./media/search-faceted-navigation/Facet-7-appstart.png
-[8]: ./media/search-faceted-navigation/Facet-8-appbike.png
-[9]: ./media/search-faceted-navigation/Facet-9-appbikefaceted.png
-[10]: ./media/search-faceted-navigation/Facet-10-appTitle.png
-[11]: ./media/search-faceted-navigation/faceted-search-before-facets.png
-[12]: ./media/search-faceted-navigation/faceted-search-after-facets.png
-
-<!--Link references-->
-[Designing for Faceted Search]: http://www.uie.com/articles/faceted_search/
-[Design Patterns: Faceted Navigation]: https://alistapart.com/article/design-patterns-faceted-navigation
-[Create your first application]: search-create-first-solution.md
-[OData expression syntax (Azure Search)]: https://docs.microsoft.com/rest/api/searchservice/odata-expression-syntax-for-azure-search
-[Azure Search Adventure Works Demo]: https://azuresearchadventureworksdemo.codeplex.com/
-[https://www.odata.org/documentation/odata-version-2-0/overview/]: https://www.odata.org/documentation/odata-version-2-0/overview/ 
-[Faceting on Azure Search forum post]: ../faceting-on-azure-search.md?forum=azuresearch
-[Search Documents (Azure Search API)]: https://docs.microsoft.com/rest/api/searchservice/Search-Documents
+* [Внешний интерфейс проблемы при реализации Аспектным поиском — часть 1 ](https://articles.uie.com/faceted_search2/)
 

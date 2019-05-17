@@ -17,12 +17,12 @@ ms.topic: conceptual
 ms.date: 04/16/2019
 ms.author: banders
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: d9af3b1b9c267bc09b370717913722a6c53ad5a1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 2ffebdd5b88603113dd7624e97dcf7353ab5d1ba
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60371161"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65605566"
 ---
 # <a name="transfer-ownership-of-an-azure-subscription-to-another-account"></a>Передача прав владения подпиской Azure другой учетной записи
 
@@ -64,7 +64,7 @@ ms.locfileid: "60371161"
    ![Первая страница процесса передачи подписки](./media/billing-subscription-transfer/image4.png)
 
    ![Вторая страница процесса передачи подписки](./media/billing-subscription-transfer/image5.png)
-1. Готово! Теперь подписка передана.
+1. Выполнено! Теперь подписка передана.
 
 <a id="EA"></a>
 
@@ -119,7 +119,7 @@ ms.locfileid: "60371161"
 
 ### <a id="no-button"></a>Почему не отображается кнопка "Перенос подписки"?
 
-К сожалению, самостоятельный перенос подписки недоступен для вашего предложения или страны. Для переноса подписки [обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
+К сожалению самостоятельный перенос подписки недоступен для вашего предложения или страны или региона. Для переноса подписки [обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
 
 ### <a name="does-a-subscription-transfer-result-in-any-service-downtime"></a>Возникают ли простои в работе службы при передаче подписки?
 
@@ -156,9 +156,9 @@ ms.locfileid: "60371161"
 
 Предложение должно оставаться неизменным. Сведения о том, как изменить предложение, см. в статье [Переключение подписки Azure на другое предложение](billing-how-to-switch-azure-offer.md).
 
-### <a name="can-i-transfer-a-subscription-to-a-user-account-in-another-country"></a>Можно ли передать подписку пользователю с учетной записью в другой стране?
+### <a name="can-i-transfer-a-subscription-to-a-user-account-in-another-countryregion"></a>Можно ли передать подписку для учетной записи пользователя в другую страну/регион
 
-Нет. Передача подписки пользователю с учетной записью в другой стране не поддерживается. Учетная запись пользователя-получателя должна находиться в той же стране.
+Нет, передача подписки для учетной записи пользователя в другую страну/регион не поддерживается. Учетная запись пользователя-получателя должен быть в одной и той же стране или регионе.
 
 ### <a name="can-the-recipient-use-a-different-payment-method"></a>Может ли получатель использовать другой метод оплаты?
 

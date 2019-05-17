@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 04/19/2019
 ms.author: pabouwer
-ms.openlocfilehash: fc95ce4aad4e8597b02b9c862be33bfcf6185541
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.openlocfilehash: 12565d2b8004a5119add25473e5b088c9162035f
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65073804"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65780494"
 ---
 # <a name="install-and-use-istio-in-azure-kubernetes-service-aks"></a>Установка и использование Istio в Службе Azure Kubernetes (AKS)
 
@@ -40,7 +40,7 @@ ms.locfileid: "65073804"
 
 Действия, описанные в этой статье предполагается, что вы создали кластер службы контейнеров AZURE (Kubernetes `1.11` и более поздних версий, с помощью RBAC включен) и установить `kubectl` соединение с кластером. Дополнительные сведения см. в [кратком руководстве по AKS][aks-quickstart].
 
-Вам потребуется [Helm] [ helm] выполните эти инструкции и установить Istio. Рекомендуется использовать версию `2.12.2` или более поздней версии правильно установлен и настроен в кластере. Если вам нужна помощь при установке Helm, затем см. в разделе [инструкции по установке AKS Helm][helm-install]. Также все модули Istio необходимо запланировать выполнение на узлах Linux.
+Вам потребуется [Helm] [ helm] выполните эти инструкции и установить Istio. Рекомендуется использовать версию `2.12.2` или более поздней версии правильно установлен и настроен в кластере. Если вам нужна помощь при установке Helm, затем см. в разделе [инструкции по установке AKS Helm][helm-install].
 
 В этой статье инструкции по установке Istio разделены на несколько этапов. Результат установки будет идентичным результату согласно [официальной инструкции][istio-install-helm].
 
@@ -337,9 +337,6 @@ helm install install/kubernetes/helm/istio --name istio --namespace istio-system
 
 `istio` Чарта Helm развертывает большое число объектов. Вы можете увидеть список из выходных данных вашей `helm install` команды выше. Развертывание компонентов Istio может занять 4 – 5 минут, в зависимости от вашей кластерной среды.
 
-> [!NOTE]
-> Все модули Istio необходимо запланировать выполнение на узлах Linux. При наличии пулы узлов Windows Server в дополнение к Linux пулы узлов в кластере, убедитесь, что все модули Istio запланированы для запуска на узлах Linux.
-
 На этом этапе вы развернули Istio в кластере AKS. Чтобы убедиться, что у нас есть успешное развертывание Istio, давайте перейдем к следующему разделу, чтобы [проверка установки Istio](#validate-the-istio-installation).
 
 ## <a name="validate-the-istio-installation"></a>Проверка установки Istio
@@ -536,6 +533,9 @@ kubectl get crds -o name | Select-String -Pattern 'istio.io' |% { kubectl delete
 
 Вы также можете реализовать дополнительные сценарии, используя [пример приложения Istio Bookinfo][istio-bookinfo-example].
 
+Чтобы узнать, как наблюдать за приложением AKS с помощью Application Insights и Istio, см. в следующей документации Azure Monitor:
+- [Мониторинг приложений ноль инструментирования для Kubernetes размещенных приложений][app-insights]
+
 <!-- LINKS - external -->
 [istio]: https://istio.io
 [helm]: https://helm.sh
@@ -561,6 +561,8 @@ kubectl get crds -o name | Select-String -Pattern 'istio.io' |% { kubectl delete
 [prometheus]: https://prometheus.io/
 [jaeger]: https://www.jaegertracing.io/
 [kiali]: https://www.kiali.io/
+
+[app-insights]: https://docs.microsoft.com/azure/azure-monitor/app/kubernetes
 
 <!-- LINKS - internal -->
 [aks-quickstart]: ./kubernetes-walkthrough.md

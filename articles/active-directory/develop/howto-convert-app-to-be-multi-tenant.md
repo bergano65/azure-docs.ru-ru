@@ -3,8 +3,8 @@ title: Как создать приложение, в которое может 
 description: В этой статье описывается создание мультитенантное приложение, поддерживающее вход пользователя из любого клиента Azure Active Directory.
 services: active-directory
 documentationcenter: ''
-author: CelesteDG
-manager: mtillman
+author: rwike77
+manager: CelesteDG
 editor: ''
 ms.assetid: 35af95cb-ced3-46ad-b01d-5d2f6fd064a3
 ms.service: active-directory
@@ -14,16 +14,16 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 04/12/2019
-ms.author: celested
+ms.author: ryanwi
 ms.reviewer: jmprieur, lenalepa, sureshja
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c2054a873d73bce7048ef9e48adabf3fb5279df9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 68973d3a88791bcfffc8183f5e3a16975fe15742
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60410509"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65540455"
 ---
 # <a name="how-to-sign-in-any-azure-active-directory-user-using-the-multi-tenant-application-pattern"></a>Практическое руководство: Вход любого пользователя Azure Active Directory с помощью шаблона мультитенантного приложения
 
@@ -138,7 +138,7 @@ ms.locfileid: "60410509"
 
 #### <a name="multiple-tiers-in-a-single-tenant"></a>Несколько уровней в одном клиенте
 
-Это может быть проблемой, если ваше логические приложение состоит из двух или более регистраций приложения, например, отдельно для клиента и ресурса. Как сначала поместить ресурс в клиент пользователя? На этот случай в Azure AD предусмотрена возможность получения согласия для клиента и ресурса за один шаг. Пользователь видит общее число разрешений, запрошенных клиентом и ресурсом на странице получения согласия. Чтобы активировать такое поведение, регистрация приложения ресурса должна включать в себя идентификатор приложения клиента как `knownClientApplications` в [манифесте соответствующего приложения][AAD-App-Manifest]. Например: 
+Это может быть проблемой, если ваше логические приложение состоит из двух или более регистраций приложения, например, отдельно для клиента и ресурса. Как сначала поместить ресурс в клиент пользователя? На этот случай в Azure AD предусмотрена возможность получения согласия для клиента и ресурса за один шаг. Пользователь видит общее число разрешений, запрошенных клиентом и ресурсом на странице получения согласия. Чтобы активировать такое поведение, регистрация приложения ресурса должна включать в себя идентификатор приложения клиента как `knownClientApplications` в [манифесте соответствующего приложения][AAD-App-Manifest]. Например:
 
     knownClientApplications": ["94da0930-763f-45c7-8d26-04d5938baab2"]
 

@@ -2,20 +2,20 @@
 title: Часто задаваемые вопросы о хранилище данных SQL Azure | Документация Майкрософт
 description: В этой статье собраны вопросы о хранилище данных SQL Azure, часто задаваемые пользователями и разработчиками.
 services: sql-data-warehouse
-author: acomet
+author: happynicolle
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.subservice: design
 ms.date: 04/17/2018
-ms.author: acomet
+ms.author: nicw
 ms.reviewer: igorstan
-ms.openlocfilehash: 596ed857b39cf106ed2e37ad81c5fe9e939cca61
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: c16d95ea15fc358cb81b17b42570cb35f2e8c52d
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60747614"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65795561"
 ---
 # <a name="sql-data-warehouse-frequently-asked-questions"></a>Часто задаваемые вопросы о хранилище данных SQL
 
@@ -31,7 +31,7 @@ ms.locfileid: "60747614"
 
 В. Можно ли подключить PowerBI?
 
-О. Да. Служба PowerBI поддерживает прямые запросы, выполняемые из хранилища данных SQL, но она не предназначена для большого количества пользователей или данных в режиме реального времени. В рабочей среде PowerBI рекомендуется использовать службу PowerBI поверх служб Azure Analysis Services или Analysis Service IaaS. 
+О. Да! Служба PowerBI поддерживает прямые запросы, выполняемые из хранилища данных SQL, но она не предназначена для большого количества пользователей или данных в режиме реального времени. В рабочей среде PowerBI рекомендуется использовать службу PowerBI поверх служб Azure Analysis Services или Analysis Service IaaS. 
 
 В. Какие ограничения емкости имеет хранилище данных SQL?
 

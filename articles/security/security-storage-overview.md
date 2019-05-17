@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/28/2019
 ms.author: terrylan
-ms.openlocfilehash: 262ccc311b2b7ec634183eb4f914902048ba2c3b
-ms.sourcegitcommit: 8a681ba0aaba07965a2adba84a8407282b5762b2
+ms.openlocfilehash: 74c24e05d974c4b3bb15a242185b645231f74580
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64872036"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65792785"
 ---
 # <a name="azure-storage-security-overview"></a>Общие сведения о безопасности службы хранилища Azure
 
@@ -51,7 +51,7 @@ SAS — это URI, который в своих параметрах запро
 Дополнительные сведения
 
 * [Основные сведения о модели SAS.](../storage/common/storage-dotnet-shared-access-signature-part-1.md)
-* [Подписанные URL-адреса. Часть 2: создание и использование подписанного URL-адреса в службе BLOB-объектов](../storage/blobs/storage-dotnet-shared-access-signature-part-2.md)
+* [Подписанные URL-адреса. Часть 2: создание и использование подписанного URL-адреса в службе BLOB-объектов](../storage/common/storage-dotnet-shared-access-signature-part-1.md)
 
 ## <a name="encryption-in-transit"></a>Шифрование при передаче
 
@@ -79,7 +79,7 @@ SAS — это URI, который в своих параметрах запро
 * [Шифрование службы хранилища Azure](https://azure.microsoft.com/services/storage/) доступно для [хранилища BLOB-объектов Azure](https://azure.microsoft.com/services/storage/blobs/). Сведения о других типах хранилищ Azure приведены в описании таких хранилищ, как [Файлы Azure](https://azure.microsoft.com/services/storage/files/), [Хранилище таблиц](https://azure.microsoft.com/services/storage/tables/) и [Хранилище очередей](https://azure.microsoft.com/services/storage/queues/).
 * [Шифрование службы хранилища Azure для неактивных данных (предварительная версия)](../storage/common/storage-service-encryption.md)
 
-## <a name="azure-disk-encryption"></a>Дисковое шифрование Azure
+## <a name="azure-disk-encryption"></a>Шифрование диска Azure
 
 Шифрование дисков Azure для виртуальных машин помогает соблюсти требования организации к безопасности и соответствию. Эта служба шифрует диски виртуальной машины (в том числе загрузочные диски и диски данных), используя ключи и политики, которыми можно управлять в [Azure Key Vault](https://azure.microsoft.com/services/key-vault/).
 

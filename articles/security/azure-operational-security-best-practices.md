@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/06/2019
 ms.author: terrylan
-ms.openlocfilehash: 4a4677b5db730001df75d201d8e6d3149cb928e6
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.openlocfilehash: 0418d325f3b3719549181a48fc0432a677f695d5
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65409847"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65795906"
 ---
 # <a name="azure-operational-security-best-practices"></a>Рекомендации по обеспечению операционной безопасности Azure
 В этой статье предоставляет набор рекомендаций для защиты данных, приложений и других ресурсов в Azure.
@@ -153,7 +153,7 @@ ms.locfileid: "65409847"
 **Сведения**. [Azure Pipelines](https://docs.microsoft.com/azure/devops/pipelines/index?azure-devops) — это решение для автоматизации многоэтапного развертывания и управления процессом выпуска. Создайте управляемые конвейеры непрерывного развертывания, чтобы ускорить, упростить выпуски, а также делать их чаще. С помощью Azure Pipelines можно значительно автоматизировать процесс выпуска. Кроме того, можно создать предопределенные рабочие процессы утверждения. Выполняйте развертывание в локальной среде и в облаке, расширения и настройку при необходимости.
 
 **Рекомендация**. Проверьте производительность своего приложения, прежде чем запустить его или развернуть обновления в рабочей среде.  
-**Сведения**. Запустите облачную [нагрузочные тесты](https://docs.microsoft.com/azure/devops/test/load-test/overview.md?view=azure-devops#alternatives) для:
+**Сведения**. Запустите облачную [нагрузочные тесты](/azure/devops/test/load-test/overview#alternatives) для:
 
 - поиска проблем с производительностью приложения;
 - улучшения качества развертывания;

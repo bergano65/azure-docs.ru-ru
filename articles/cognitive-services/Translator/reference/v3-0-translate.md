@@ -10,18 +10,18 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 02/01/2019
 ms.author: v-jansko
-ms.openlocfilehash: 593cd83dab6e0cd93cdd1aedac278f4d94a27cc5
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: e7ab2eba54aafda6bb00696939bf9bc32bb627ca
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64722429"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65797004"
 ---
-# <a name="translator-text-api-30-translate"></a>API перевода текстов 3.0: Translate
+# <a name="translator-text-api-30-translate"></a>API перевода текстов 3.0: Перенести
 
 Этот интерфейс позволяет переводить текст.
 
-## <a name="request-url"></a>Request URL (URL-адрес запроса)
+## <a name="request-url"></a>URL-адрес запроса
 
 Отправьте запрос `POST` на следующий адрес.
 
@@ -35,7 +35,7 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
 
 <table width="100%">
   <th width="20%">Параметр запроса</th>
-  <th>ОПИСАНИЕ</th>
+  <th>Описание</th>
   <tr>
     <td>api-version</td>
     <td><em>Обязательный параметр.</em><br/>Версия API, запрошенная клиентом. Необходимое значение: <code>3.0</code>.</td>
@@ -45,7 +45,7 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
     <td><em>Необязательный параметр.</em><br/>Определяет язык оригинального текста. Чтобы просмотреть, какие языки доступны для перевода, выполните поиск <a href="./v3-0-languages.md">поддерживаемых языков</a>, используя область <code>translation</code>. Если параметр <code>from</code> не указан, исходный язык определяется автоматически.</td>
   </tr>
   <tr>
-    <td>значение</td>
+    <td>до</td>
     <td><em>Обязательный параметр.</em><br/>Определяет язык выходного текста. Целевой язык должен быть одним из <a href="./v3-0-languages.md">поддерживаемых языков</a>, включенных в область <code>translation</code>. Например, используйте параметр <code>to=de</code>, чтобы перевести на немецкий.<br/>Вы можете одновременно переводить на различные языки, использовав этот параметр в строке запроса несколько раз. Например, используйте параметр <code>to=de&to=it</code>, чтобы перевести на немецкий и итальянский.</td>
   </tr>
   <tr>
@@ -95,7 +95,7 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
 
 <table width="100%">
   <th width="20%">Заголовки</th>
-  <th>ОПИСАНИЕ</th>
+  <th>Описание</th>
   <tr>
     <td>Заголовки проверки подлинности</td>
     <td><em>Обязательный заголовок запроса</em>.<br/>См. <a href="https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication">описание доступных способов аутентификации</a>.</td>
@@ -173,7 +173,7 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
 
 <table width="100%">
   <th width="20%">Заголовки</th>
-  <th>ОПИСАНИЕ</th>
+  <th>Описание</th>
     <tr>
     <td>X-RequestId</td>
     <td>Сформированное службой значение для идентификации запроса. Оно используется для устранения неполадок.</td>
@@ -190,7 +190,7 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
 
 <table width="100%">
   <th width="20%">Код состояния</th>
-  <th>ОПИСАНИЕ</th>
+  <th>Описание</th>
   <tr>
     <td>200</td>
     <td>Успешно.</td>
@@ -201,7 +201,7 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
   </tr>
   <tr>
     <td>401</td>
-    <td>Не удалось выполнить аутентификацию запроса. Убедитесь, что указаны допустимые учетные данные.</td>
+    <td>Не удалось выполнить проверку подлинности запроса. Убедитесь, что указаны допустимые учетные данные.</td>
   </tr>
   <tr>
     <td>403</td>
@@ -213,7 +213,7 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
   </tr>
   <tr>
     <td>429</td>
-    <td>Вызывающая сторона отправляет слишком много запросов.</td>
+    <td>Сервер отклонил запрос, так как клиент превысило ограничения запросов.</td>
   </tr>
   <tr>
     <td>500</td>
@@ -401,7 +401,7 @@ curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-versio
   </tr>
 </table> 
 
-Например: 
+Например:
 
 # <a name="curltabcurl"></a>[curl](#tab/curl)
 

@@ -10,18 +10,18 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 02/01/2019
 ms.author: v-jansko
-ms.openlocfilehash: 1713a05590f389a6de70d72e8d62237c7521d808
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 6e0342d876db424454526637322d67d55c0432a8
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60605122"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65797300"
 ---
-# <a name="translator-text-api-30-languages"></a>API перевода текстов 3.0: Languages
+# <a name="translator-text-api-30-languages"></a>API перевода текстов 3.0: Языки
 
 Возвращает набор языков, поддерживаемых в настоящее время другими операциями API перевода текстов. 
 
-## <a name="request-url"></a>Request URL (URL-адрес запроса)
+## <a name="request-url"></a>URL-адрес запроса
 
 Отправьте запрос `GET` на следующий адрес.
 ```HTTP
@@ -34,13 +34,13 @@ https://api.cognitive.microsofttranslator.com/languages?api-version=3.0
 
 <table width="100%">
   <th width="20%">Параметр запроса</th>
-  <th>ОПИСАНИЕ</th>
+  <th>Описание</th>
   <tr>
     <td>api-version</td>
     <td><em>Обязательный параметр.</em><br/>Версия API, запрошенная клиентом. Необходимое значение: `3.0`.</td>
   </tr>
   <tr>
-    <td>scope</td>
+    <td>область</td>
     <td>*Необязательный параметр.*<br/>Список имен, разделенных запятыми, определяющий возвращаемую группу языков. Допустимые имена групп: `translation`, `transliteration` и `dictionary`. Если область не задана, то возвращаются все группы, которые эквивалентны передаче `scope=translation,transliteration,dictionary`. Чтобы решить, какой набор поддерживаемых языков подходит для сценария, см. описание [объекта ответа](#response-body).</td>
   </tr>
 </table> 
@@ -49,7 +49,7 @@ https://api.cognitive.microsofttranslator.com/languages?api-version=3.0
 
 <table width="100%">
   <th width="20%">Заголовки</th>
-  <th>ОПИСАНИЕ</th>
+  <th>Описание</th>
   <tr>
     <td>Accept-Language</td>
     <td>*Дополнительный заголовок запроса*.<br/>Язык, используемый для строк пользовательского интерфейса. Некоторые поля в ответе — это имена языков или регионов. Используйте этот параметр, чтобы определить язык, на котором возвращаются эти имена. Чтобы задать язык, нужно предоставить правильный тег языка в формате BCP-47. Например, значение `fr` получает имена на французском языке, а значение `zh-Hant` — на традиционном китайском.<br/>Имена предоставляются на английском языке, если целевой язык не задан, или если локализация недоступна.
@@ -230,7 +230,7 @@ https://api.cognitive.microsofttranslator.com/languages?api-version=3.0
 
 <table width="100%">
   <th width="20%">Заголовки</th>
-  <th>ОПИСАНИЕ</th>
+  <th>Описание</th>
   <tr>
     <td>ETag</td>
     <td>Текущее значение тега сущности для запрошенных групп поддерживаемых языков. Для более эффективных запросов, клиент может отправить значение `ETag` в поле заголовка `If-None-Match`.
@@ -248,7 +248,7 @@ https://api.cognitive.microsofttranslator.com/languages?api-version=3.0
 
 <table width="100%">
   <th width="20%">Код состояния</th>
-  <th>ОПИСАНИЕ</th>
+  <th>Описание</th>
   <tr>
     <td>200</td>
     <td>Успешно.</td>
@@ -263,7 +263,7 @@ https://api.cognitive.microsofttranslator.com/languages?api-version=3.0
   </tr>
   <tr>
     <td>429</td>
-    <td>Вызывающая сторона отправляет слишком много запросов.</td>
+    <td>Сервер отклонил запрос, так как клиент превысило ограничения запросов.</td>
   </tr>
   <tr>
     <td>500</td>

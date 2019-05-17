@@ -3,8 +3,8 @@ title: Приложения веб-API в Azure Active Directory
 description: Здесь описаны приложения веб-API и основные понятия, касающиеся потока протокола, регистрации и срока действия маркера для приложений такого типа.
 services: active-directory
 documentationcenter: ''
-author: CelesteDG
-manager: mtillman
+author: rwike77
+manager: CelesteDG
 editor: ''
 ms.service: active-directory
 ms.subservice: develop
@@ -13,18 +13,18 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.author: celested
+ms.author: ryanwi
 ms.reviewer: saeeda, jmprieur, andret
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f344a4f928030c07f59c2f7aba201d153da123f1
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 484e6b4c5f0e064254c957b07b8ba15ef98f2634
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64918715"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65545215"
 ---
-# <a name="web-api"></a>Веб-интерфейс API
+# <a name="web-api"></a>Веб-API
 
 Приложения веб-API — это веб-приложения, которым требуется получить ресурсы из веб-интерфейса API. В этом сценарии веб-приложение может использовать удостоверения двух типов для аутентификации и вызова веб-интерфейса API:
 

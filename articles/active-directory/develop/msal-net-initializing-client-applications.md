@@ -4,7 +4,7 @@ description: Дополнительные сведения об инициали
 services: active-directory
 documentationcenter: dev-center-name
 author: rwike77
-manager: celested
+manager: CelesteDG
 editor: ''
 ms.service: active-directory
 ms.subservice: develop
@@ -17,12 +17,12 @@ ms.author: ryanwi
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c6197d472bdfaf03c9f99baa7691354e735cc91e
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.openlocfilehash: 2f22ff41e380a16af2aa45df9a61eefbf293ff83
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65075810"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65544321"
 ---
 # <a name="initialize-client-applications-using-msalnet"></a>Инициализировать клиентских приложений с помощью MSAL.NET
 В этой статье описывается инициализация общедоступного клиента и Конфиденциально клиентских приложений, использующих библиотеку проверки подлинности Майкрософт для .NET (MSAL.NET).  Дополнительные сведения о типах клиентского приложения и параметры настройки приложения, [Обзор](msal-client-applications.md).
@@ -100,7 +100,7 @@ IConfidentialClientApplication app = ConfidentialClientApplicationBuilder.Create
 
 Модификаторы, которые можно задать на открытый клиент или конфиденциальный клиент построитель приложений являются:
 
-|Параметр | ОПИСАНИЕ|
+|Параметр | Описание|
 |--------- | --------- |
 |`.WithAuthority()` 7 переопределения | Задает полномочия по умолчанию, приложение центра Azure AD, с возможностью выбора в облаке Azure, аудитории, клиента (идентификатор или домен имя клиента), или напрямую предоставляя URI центра.|
 |`.WithAdfsAuthority(string)` | Задает приложение по умолчанию в качестве центра сертификации служб федерации Active Directory.|
@@ -119,7 +119,7 @@ IConfidentialClientApplication app = ConfidentialClientApplicationBuilder.Create
 
 Модификаторы, которые можно задать на построитель приложение общедоступным клиентом на Xamarin.iOS:
 
-|Параметр | ОПИСАНИЕ|
+|Параметр | Описание|
 |--------- | --------- |
 |`.WithIosKeychainSecurityGroup()` | **Xamarin.iOS только**: Задает группу безопасности iOS цепочке ключей (для сохраняемости кэша).|
 
@@ -127,7 +127,7 @@ IConfidentialClientApplication app = ConfidentialClientApplicationBuilder.Create
 
 Ниже приведены модификаторов, которые можно установить на построитель конфиденциального клиента приложения.
 
-|Параметр | ОПИСАНИЕ|
+|Параметр | Описание|
 |--------- | --------- |
 |`.WithCertificate(X509Certificate2 certificate)` | Задает сертификат идентификации приложения в Azure AD.|
 |`.WithClientSecret(string clientSecret)` | Задает секрет клиента (пароль приложения), определение приложения в Azure AD.|

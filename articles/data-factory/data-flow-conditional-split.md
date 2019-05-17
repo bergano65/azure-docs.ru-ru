@@ -3,23 +3,32 @@ title: Преобразование сопоставления потоков д
 description: Преобразование потоков данных "Условное разбиение" Фабрики данных Azure
 author: kromerm
 ms.author: makromer
-ms.reviewer: douglasl
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 02/03/2019
-ms.openlocfilehash: a4ea79e05165dfae4f79aa6473a07151ba7c00fc
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: f9fd346d4c4eaed0797d564fe52dd44e9f0e240a
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60627648"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65795646"
 ---
-# <a name="azure-data-factory-mapping-data-flow-conditional-split-transformation"></a>Преобразование сопоставления потоков данных "Условное разбиение" Фабрики данных Azure
+# <a name="mapping-data-flow-conditional-split-transformation"></a>Сопоставление потока данных условного разбиения преобразования
 
 [!INCLUDE [notes](../../includes/data-factory-data-flow-preview.md)]
 
+![Условное разбиение элементов](media/data-flow/conditionalsplit2.png "условного разбиения элементов")
+
 Преобразование "Условное разбиение" может направлять строки данных в разные потоки, в зависимости от содержимого данных. Реализация преобразования "Условное разбиение" аналогична применению структур решения CASE в языке программирования. Преобразование вычисляет выражения, и на основе результатов направляет строку данных в указанный поток. Это преобразование также обеспечивает выход по умолчанию, таким образом, если строка не совпадает с выражением, она направляется на выход по умолчанию.
 
-![Условное разбиение](media/data-flow/cd1.png "Условное разбиение")
+![Условное разбиение](media/data-flow/conditionalsplit1.png "условного разбиения параметры")
+
+## <a name="multiple-paths"></a>Несколько путей
 
 Чтобы добавить дополнительные условия, выберите "Добавить поток" на нижней панели конфигурации и щелкните текстовое поле для построения выражения.
+
+![Условное разбиение с несколькими](media/data-flow/conditionalsplit3.png "условного разбиения с несколькими")
+
+## <a name="next-steps"></a>Дальнейшие действия
+
+Используется с Условное разбиение распространенные преобразования потока данных: [Присоединяйтесь к преобразования](data-flow-join.md), [преобразования Loopup](data-flow-lookup.md), [выберите преобразование](data-flow-select.md)

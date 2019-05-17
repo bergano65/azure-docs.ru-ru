@@ -4,7 +4,7 @@ description: Дополнительные сведения о специальн
 services: active-directory
 documentationcenter: dev-center-name
 author: rwike77
-manager: celested
+manager: CelesteDG
 editor: ''
 ms.service: active-directory
 ms.subservice: develop
@@ -17,12 +17,12 @@ ms.author: jmprieur
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d4b4c4cd4dbab10a9d4796a8393cc7f479b90cc4
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.openlocfilehash: 4f7f91e6ab1fb12132068b839e66fafd3ab1bc73
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65406765"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65543962"
 ---
 # <a name="using-web-browsers-in-msalnet"></a>Использование веб-браузеров в MSAL.NET
 Веб-обозреватели являются обязательными для интерактивной проверки подлинности. По умолчанию поддерживает MSAL.NET [системы веб-браузере](#system-web-browser-on-xamarinios-and-xamarinandroid) на Xamarin.iOS и [Xamarin.Android](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/system-browser). Но [можно также включить Embedded веб-браузере](#enable-embedded-webviews) в зависимости от требований (UX, потребность в единый вход (SSO), безопасность) в [Xamarin.iOS](#choosing-between-embedded-web-browser-or-system-browser-on-xamarinios) и [Xamarin.Android](#choosing-between-embedded-web-browser-or-system-browser-on-xamarinandroid) приложения. И вы даже можете [выберите динамически](#detecting-the-presence-of-custom-tabs-on-xamarinandroid) использовать веб-браузере на основе наличия Chrome или браузер, поддерживающий пользовательские вкладки Chrome в Android.

@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 03/15/2019
 ms.author: pullabhk
 ms.assetid: 57854626-91f9-4677-b6a2-5d12b6a866e1
-ms.openlocfilehash: 3a424335a1e7d7775f6be0980e7009669e354ea7
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 6d17d5c2c0eaebc694abe820318f6ac0c70b0be8
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64717904"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65544605"
 ---
 # <a name="back-up-and-restore-sql-databases-in-azure--vms-with-powershell"></a>Резервное копирование и восстановление баз данных SQL на виртуальных машинах Azure с помощью PowerShell
 
@@ -110,7 +110,7 @@ ms.locfileid: "64717904"
 3. Укажите тип избыточности для хранилища хранилище.
 
     * [локально избыточное](../storage/common/storage-redundancy-lrs.md) или [геоизбыточное](../storage/common/storage-redundancy-grs.md).
-    * В следующем примере задается **- BackupStorageRedundancy** для параметра[набора AzRecoveryServicesBackupProperties](https://docs.microsoft.com/powershell/module/az.recoveryservices/set-azrecoveryservicesbackupproperties?view=azps-1.4.0) cmd для **testvault** присвоено  **GeoRedundant**.
+    * В следующем примере задается **- BackupStorageRedundancy** для параметра[набора AzRecoveryServicesBackupProperty](https://docs.microsoft.com/powershell/module/az.recoveryservices/set-azrecoveryservicesbackupproperty) cmd для **testvault** присвоено  **GeoRedundant**.
 
     ```powershell
     $vault1 = Get-AzRecoveryServicesVault -Name "testvault"
@@ -489,7 +489,7 @@ $SQLContainer = Get-AzRecoveryServicesBackupContainer -ContainerType AzureVMAppC
 Register-AzRecoveryServicesBackupContainer -Container $SQLContainer -BackupManagementType AzureWorkload -WorkloadType MSSQL -VaultId $targetVault.ID
 ````
 
-### <a name="stop-protection"></a>остановка защиты;
+### <a name="stop-protection"></a>Остановить защиту
 
 #### <a name="retain-data"></a>Сохранить данные
 
@@ -530,7 +530,7 @@ $SQLContainer = Get-AzRecoveryServicesBackupContainer -ContainerType AzureVMAppC
 
 Важно отметить, что служба архивации Azure отслеживает только задания активации пользователя в резервной копии SQL. Архивацию по расписанию (включая резервные копии журналов), не отображаются в портала или powershell. Тем не менее, если какой-либо запланированные задания завершаться сбоем, [оповещения резервного копирования](backup-azure-monitoring-built-in-monitor.md#backup-alerts-in-recovery-services-vault) создается и отображается на портале. [Используйте Azure Monitor](backup-azure-monitoring-use-azuremonitor.md) для отслеживания всех запланированных заданий и другие важные сведения.
 
-Пользователи могут отслеживать операции активации компьютер-компьютер или пользователя с JobID, который возвращается в [вывода](#on-demand-backup) асинхронных заданий, таких как резервное копирование. Используйте [Get AzRecoveryServicesBackupJobDetails](https://docs.microsoft.com/powershell/module/az.recoveryservices/Get-AzRecoveryServicesBackupJobDetails?view=azps-1.5.0) командлет PS, чтобы отслеживать задания и сведения о нем.
+Пользователи могут отслеживать операции активации компьютер-компьютер или пользователя с JobID, который возвращается в [вывода](#on-demand-backup) асинхронных заданий, таких как резервное копирование. Используйте [Get AzRecoveryServicesBackupJobDetail](https://docs.microsoft.com/powershell/module/az.recoveryservices/Get-AzRecoveryServicesBackupJobDetail) командлет PS, чтобы отслеживать задания и сведения о нем.
 
 ````powershell
  Get-AzRecoveryServicesBackupJobDetails -JobId 2516bb1a-d3ef-4841-97a3-9ba455fb0637 -VaultId $targetVault.ID

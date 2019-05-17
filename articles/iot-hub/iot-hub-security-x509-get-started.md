@@ -8,12 +8,12 @@ ms.service: iot-hub
 services: iot-hub
 ms.topic: conceptual
 ms.date: 10/10/2017
-ms.openlocfilehash: 5795cde35d53a64620c4fdb6c3af99a7f56b12d9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 0bfb66f54ec09e86b46a41499211e93a0083e8d1
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61440815"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65779925"
 ---
 # <a name="set-up-x509-security-in-your-azure-iot-hub"></a>Настройка сертификата безопасности X.509 в Центре Интернета вещей Azure
 
@@ -36,6 +36,9 @@ ms.locfileid: "61440815"
 * Приобретите сертификат X.509 в *корневом центре сертификации (ЦС)*. Рекомендуется использовать этот способ для рабочей среды.
 
 * Создайте собственные сертификаты X.509 с помощью стороннего инструмента, например [OpenSSL](https://www.openssl.org/). Это способ хорошо подходит для разработки и тестирования. Сведения о создании тестовых сертификатов ЦС с помощью PowerShell или Bash см. в статье [Managing test CA certificates for samples and tutorials](https://github.com/Azure/azure-iot-sdk-c/blob/master/tools/CACertificates/CACertificateOverview.md). В остальной части этого руководства используются тестовые сертификаты ЦС, созданные по инструкциям в статье [Managing test CA certificates for samples and tutorials](https://github.com/Azure/azure-iot-sdk-c/blob/master/tools/CACertificates/CACertificateOverview.md).
+
+* Создать [промежуточный сертификат ЦС X.509](iot-hub-x509ca-overview.md#sign-devices-into-the-certificate-chain-of-trust) подписи с использованием существующего сертификата корневого ЦС и отправьте его в центр Интернета вещей. Если промежуточный сертификат отправлен и проверить, как описано ниже, его можно использовать вместо сертификата корневого ЦС, приведенные ниже. Средства, такие как OpenSSL ([openssl req](https://www.openssl.org/docs/manmaster/man1/openssl-req.html) и [ЦС openssl](https://www.openssl.org/docs/manmaster/man1/openssl-ca.html)) можно использовать для создания и подписания промежуточный сертификат ЦС.
+
 
 ## <a name="register-x509-ca-certificates-to-your-iot-hub"></a>Регистрация сертификата ЦС X.509 в Центре Интернета вещей
 

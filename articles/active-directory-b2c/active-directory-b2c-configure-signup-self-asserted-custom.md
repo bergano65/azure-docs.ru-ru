@@ -10,18 +10,18 @@ ms.topic: conceptual
 ms.date: 02/07/2019
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: 6eaace7589488a9466e78597e0091c84dabb5155
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: a64c58d23543279a3a32d2d7b612b43dee8741eb
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64685288"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65768013"
 ---
 #  <a name="add-claims-and-customize-user-input-using-custom-policies-in-azure-active-directory-b2c"></a>Добавление утверждений и настройка пользовательского ввода с помощью настраиваемых политик в Azure Active Directory B2C
 
 [!INCLUDE [active-directory-b2c-advanced-audience-warning](../../includes/active-directory-b2c-advanced-audience-warning.md)]
 
-В этой статье описано, как использовать новую запись, предоставляемую пользователем (утверждение), при регистрации пользователя в Azure Active Directory (Azure AD) B2C.  Мы настроим запись как раскрывающийся список и определим, является ли она обязательной.
+В этой статье описано, как использовать новую запись, предоставляемую пользователем (утверждение), при регистрации пользователя в Azure Active Directory (Azure AD) B2C.  Вы настроите запись как раскрывающийся список и определить, является ли это обязательно.
 
 ## <a name="prerequisites"></a>Технические условия
 
@@ -29,12 +29,12 @@ ms.locfileid: "64685288"
 
 ## <a name="add-claims"></a>Добавление утверждений
 
-При регистрации или входе пользователя собираются соответствующие исходные данные. Дополнительные утверждения можно собрать позже при редактировании профиля. Каждый раз, когда Azure AD B2C собирает сведения непосредственно от пользователя в интерактивном режиме, платформа Identity Experience Framework использует своего поставщика с самостоятельным подтверждением.
+При регистрации или входе пользователя собираются соответствующие исходные данные. Дополнительные утверждения можно собрать позже при редактировании профиля. Каждый раз, когда Azure AD B2C собирает сведения непосредственно от пользователя интерактивном режиме, инфраструктура процедур идентификации использует его самоподтвержденным поставщиком.
 
 
 ### <a name="define-the-claim"></a>Определение утверждения
 
-Давайте попросим пользователя указать свой город. Добавьте следующий элемент в элемент **ClaimsSchema** в файле политики TrustFrameworkBase:
+Давайте попросим пользователя свой Город. Добавьте следующий элемент в элемент **ClaimsSchema** в файле политики TrustFrameworkBase:
 
 ```xml
 <ClaimType Id="city">

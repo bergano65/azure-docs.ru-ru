@@ -3,8 +3,8 @@ title: Почему обновления к платформе Microsoft identit
 description: Понимать различия между конечной точкой платформы (версии 2.0) удостоверений Майкрософт и конечная точка Azure Active Directory (Azure AD) версии 1.0 и узнайте о преимуществах обновления до версии 2.0.
 services: active-directory
 documentationcenter: ''
-author: CelesteDG
-manager: mtillman
+author: rwike77
+manager: CelesteDG
 editor: ''
 ms.service: active-directory
 ms.subservice: develop
@@ -13,16 +13,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/07/2019
-ms.author: celested
+ms.author: ryanwi
 ms.reviewer: saeeda, hirsin, jmprieur, sureshja, jesakowi, lenalepa, kkrishna, dadobali, negoe
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dba74735b4c703123f9ff89b63a57d53faa84fde
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 7389431212fd34960279aad5321ef2eeb70b7790
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65138787"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65540439"
 ---
 # <a name="why-update-to-microsoft-identity-platform-v20"></a>Почему обновления к платформе Microsoft identity (версии 2.0)?
 

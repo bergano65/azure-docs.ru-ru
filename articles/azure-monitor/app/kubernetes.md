@@ -1,6 +1,6 @@
 ---
-title: Azure Monitor — ноль инструментирования для наблюдения за приложениями для Kubernetes размещенных приложений | Документация Майкрософт
-description: Ноль инструментирования приложений, мониторинг Kubernetes размещенных приложений — это позволяет собирать данные телеметрии Application Insights, относящиеся к входящих и исходящих запросов и из модулями, запущенными в кластере Kubernetes, решения для мониторинга Использование службы из подобных технологий вызывается Istio.
+title: Использование Application Insights для мониторинга службы Azure Kubernetes (AKS) или других Kubernetes размещенных приложений — Azure Monitor | Документация Майкрософт
+description: Azure Monitor использует технологии сетки службы, Istio, в кластере Kubernetes для мониторинга приложения для любого приложения, размещенные Kubernetes. Это позволяет собирать данные телеметрии Application Insights, относящиеся к входящих и исходящих запросов и из модулей, запущенном в кластере.
 services: application-insights
 author: tokaplan
 manager: carmonm
@@ -8,14 +8,14 @@ ms.service: application-insights
 ms.topic: conceptual
 ms.date: 04/25/2019
 ms.author: alkaplan
-ms.openlocfilehash: 42b81ec0fa01841791a5b2651d1c1189db5e27ff
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
-ms.translationtype: HT
+ms.openlocfilehash: c94d589875195207ec6f71c35ad077cac281fda5
+ms.sourcegitcommit: 9e8dfa1169a55c3c8af93a6c5f4e0dace4de48b2
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65408208"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65555836"
 ---
-# <a name="zero-instrumentation-application-monitoring-for-kubernetes-hosted-apps"></a>Мониторинг приложений ноль инструментирования для Kubernetes приложениями, размещенными в
+# <a name="zero-instrumentation-application-monitoring-for-kubernetes-hosted-applications"></a>Мониторинг приложений ноль инструментирования для Kubernetes размещенных приложений
 
 > [!IMPORTANT]
 > Эта функция сейчас доступна в общедоступной предварительной версии.

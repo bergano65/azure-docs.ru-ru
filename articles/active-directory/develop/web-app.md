@@ -3,8 +3,8 @@ title: Веб-приложения в Azure Active Directory
 description: Узнайте о веб-приложениях и потоке использования протокола, регистрации и сроке действия маркера для приложений такого типа.
 services: active-directory
 documentationcenter: ''
-author: CelesteDG
-manager: mtillman
+author: rwike77
+manager: CelesteDG
 editor: ''
 ms.service: active-directory
 ms.subservice: develop
@@ -13,18 +13,18 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/24/2018
-ms.author: celested
+ms.author: ryanwi
 ms.reviewer: saeeda, jmprieur, andret
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ea3e1b951a683d7ee1def09024e531e94dd905b4
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: d15d76f4c16fa89b41ebfc10c9617c4709203d38
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64918529"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65544721"
 ---
-# <a name="web-apps"></a>веб-приложений:
+# <a name="web-apps"></a>Веб-приложения
 
 Веб-приложения выполняют аутентификацию пользователя в веб-браузере для веб-приложения. В этом сценарии веб-приложение направляет браузер пользователя для выполнения входа в Azure AD. Azure AD возвращает ответ входа через браузер пользователя, который содержит утверждения о пользователе в маркере безопасности. Этот сценарий поддерживает вход с использованием протоколов OpenID Connect, SAML 2.0 и WS-Federation.
 

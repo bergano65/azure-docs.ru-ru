@@ -4,14 +4,14 @@ description: Список типов ресурсов Azure, подлежащи�
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: reference
-ms.date: 03/22/2019
+ms.date: 5/16/2019
 ms.author: tomfitz
-ms.openlocfilehash: d44b1bf778c7ec9551e2fd30f67083f8dded22d1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: d662607eaaabb8ccfad89f625165c542af81b0fa
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60729296"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65794513"
 ---
 # <a name="move-operation-support-for-resources"></a>Поддержка операции перемещения для ресурсов
 В этой статье указано, поддерживается ли для тех или иных типов ресурсов Azure операция перемещения. Несмотря на то что тип ресурса поддерживает операцию перемещения, некоторые условия могут препятствовать перемещению ресурса. Дополнительные сведения об условиях, влияющих на операции перемещения, см. в статье [Перемещение ресурсов в новую группу ресурсов или подписку](resource-group-move-resources.md).
@@ -28,6 +28,11 @@ ms.locfileid: "60729296"
 | ------------- | ----------- | ---------- |
 | tenants | Нет | Нет |
 
+## <a name="microsoftalertsmanagement"></a>Microsoft.AlertsManagement
+| Тип ресурса | Группа ресурсов | Подписка |
+| ------------- | ----------- | ---------- |
+| actionrules | Да | Да |
+
 ## <a name="microsoftanalysisservices"></a>Microsoft.AnalysisServices
 | Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
@@ -37,6 +42,11 @@ ms.locfileid: "60729296"
 | Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | служба | Да | Да |
+
+## <a name="microsoftappconfiguration"></a>Microsoft.AppConfiguration
+| Тип ресурса | Группа ресурсов | Подписка |
+| ------------- | ----------- | ---------- |
+| configurationstores | Да | Да |
 
 ## <a name="microsoftappservice"></a>Microsoft.AppService
 | Тип ресурса | Группа ресурсов | Подписка |
@@ -93,12 +103,12 @@ ms.locfileid: "60729296"
 ## <a name="microsoftbiztalkservices"></a>Microsoft.BizTalkServices
 | Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| Biztalk | Да | Да |
+| biztalk | Да | Да |
 
 ## <a name="microsoftblockchain"></a>Microsoft.Blockchain
 | Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| blockchainmembers | Нет | Нет |
+| blockchainmembers | Да | Да |
 
 ## <a name="microsoftblueprint"></a>Microsoft.Blueprint
 | Тип ресурса | Группа ресурсов | Подписка |
@@ -149,7 +159,7 @@ ms.locfileid: "60729296"
 | ------------- | ----------- | ---------- |
 | учетные записи | Да | Да |
 
-## <a name="microsoftcompute"></a>Microsoft.Compute
+## <a name="microsoftcompute"></a>Microsoft.Compute;
 | Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | availabilitysets | Да | Да |
@@ -157,6 +167,8 @@ ms.locfileid: "60729296"
 | galleries | Нет | Нет |
 | galleries/images | Нет | Нет |
 | galleries/images/versions | Нет | Нет |
+| hostgroups | Нет | Нет |
+| hostgroups/hosts | Нет | Нет |
 | образы | Да | Да |
 | proximityplacementgroups | Нет | Нет |
 | restorepointcollections | Нет | Нет |
@@ -182,7 +194,7 @@ ms.locfileid: "60729296"
 | ------------- | ----------- | ---------- |
 | registries | Да | Да |
 | registries/buildtasks | Да | Да |
-| registries/replications | Нет | Нет |
+| registries/replications | Да | Да |
 | registries/tasks | Да | Да |
 | registries/webhooks | Да | Да |
 
@@ -196,7 +208,7 @@ ms.locfileid: "60729296"
 ## <a name="microsoftcontentmoderator"></a>Microsoft.ContentModerator
 | Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| приложений | Да | Да |
+| приложения | Да | Да |
 
 ## <a name="microsoftcortanaanalytics"></a>Microsoft.CortanaAnalytics
 | Тип ресурса | Группа ресурсов | Подписка |
@@ -232,6 +244,7 @@ ms.locfileid: "60729296"
 | Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | catalogs | Да | Да |
+| datacatalogs | Нет | Нет |
 
 ## <a name="microsoftdataconnect"></a>Microsoft.DataConnect
 | Тип ресурса | Группа ресурсов | Подписка |
@@ -287,16 +300,17 @@ ms.locfileid: "60729296"
 | ------------- | ----------- | ---------- |
 | servergroups | Нет | Нет |
 | серверы | Да | Да |
+| serversv2 | Да | Да |
 
 ## <a name="microsoftdeploymentmanager"></a>Microsoft.DeploymentManager
 | Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| artifactsources | Нет | Нет |
-| rollouts | Нет | Нет |
-| servicetopologies | Нет | Нет |
-| servicetopologies/services | Нет | Нет |
-| servicetopologies/services/serviceunits | Нет | Нет |
-| steps | Нет | Нет |
+| artifactsources | Да | Да |
+| rollouts | Да | Да |
+| servicetopologies | Да | Да |
+| servicetopologies/services | Да | Да |
+| servicetopologies/services/serviceunits | Да | Да |
+| steps | Да | Да |
 
 ## <a name="microsoftdevices"></a>Microsoft.Devices
 | Тип ресурса | Группа ресурсов | Подписка |
@@ -316,9 +330,10 @@ ms.locfileid: "60729296"
 | ------------- | ----------- | ---------- |
 | labcenters | Нет | Нет |
 | labs | Да | Нет |
+| лабораторные занятия и сред | Да | Да |
 | labs/servicerunners | Да | Да |
 | labs/virtualmachines | Да | Нет |
-| schedules | Нет | Нет |
+| schedules | Да | Да |
 
 ## <a name="microsoftdns"></a>microsoft.dns
 | Тип ресурса | Группа ресурсов | Подписка |
@@ -342,6 +357,11 @@ ms.locfileid: "60729296"
 | Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | domains | Да | Да |
+
+## <a name="microsoftenterpriseknowledgegraph"></a>Microsoft.EnterpriseKnowledgeGraph
+| Тип ресурса | Группа ресурсов | Подписка |
+| ------------- | ----------- | ---------- |
+| services; | Да | Да |
 
 ## <a name="microsofteventgrid"></a>Microsoft.EventGrid
 | Тип ресурса | Группа ресурсов | Подписка |
@@ -369,6 +389,16 @@ ms.locfileid: "60729296"
 | Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | clusters | Да | Да |
+
+## <a name="microsofthealthcareapis"></a>Microsoft.HealthcareApis
+| Тип ресурса | Группа ресурсов | Подписка |
+| ------------- | ----------- | ---------- |
+| services; | Да | Да |
+
+## <a name="microsofthybridcompute"></a>Microsoft.HybridCompute
+| Тип ресурса | Группа ресурсов | Подписка |
+| ------------- | ----------- | ---------- |
+| Компьютеры | Нет | Нет |
 
 ## <a name="microsofthybriddata"></a>Microsoft.HybridData
 | Тип ресурса | Группа ресурсов | Подписка |
@@ -422,7 +452,7 @@ ms.locfileid: "60729296"
 ## <a name="microsoftlabservices"></a>Microsoft.LabServices
 | Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| labaccounts | Нет | Нет |
+| labaccounts | Да | Да |
 
 ## <a name="microsoftlocationbasedservices"></a>Microsoft.LocationBasedServices
 | Тип ресурса | Группа ресурсов | Подписка |
@@ -432,7 +462,7 @@ ms.locfileid: "60729296"
 ## <a name="microsoftlocationservices"></a>Microsoft.LocationServices
 | Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| учетные записи | Да | Да |
+| учетные записи | Нет | Нет |
 
 ## <a name="microsoftlogic"></a>Microsoft.Logic
 | Тип ресурса | Группа ресурсов | Подписка |
@@ -458,12 +488,12 @@ ms.locfileid: "60729296"
 ## <a name="microsoftmachinelearningexperimentation"></a>Microsoft.MachineLearningExperimentation
 | Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| учетные записи | Да | Да |
-| accounts/workspaces | Да | Да |
-| accounts/workspaces/projects | Да | Да |
-| teamaccounts | Да | Да |
-| teamaccounts/workspaces | Да | Да |
-| teamaccounts/workspaces/projects | Да | Да |
+| учетные записи | Нет | Нет |
+| accounts/workspaces | Нет | Нет |
+| accounts/workspaces/projects | Нет | Нет |
+| teamaccounts | Нет | Нет |
+| teamaccounts/workspaces | Нет | Нет |
+| teamaccounts/workspaces/projects | Нет | Нет |
 
 ## <a name="microsoftmachinelearningmodelmanagement"></a>Microsoft.MachineLearningModelManagement
 | Тип ресурса | Группа ресурсов | Подписка |
@@ -483,7 +513,7 @@ ms.locfileid: "60729296"
 ## <a name="microsoftmanagedidentity"></a>Microsoft.ManagedIdentity
 | Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| userassignedidentities | Да | Да |
+| userassignedidentities | Нет | Нет |
 
 ## <a name="microsoftmaps"></a>Microsoft.Maps
 | Тип ресурса | Группа ресурсов | Подписка |
@@ -522,6 +552,7 @@ ms.locfileid: "60729296"
 | Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | applicationgateways | Нет | Нет |
+| applicationgatewaywebapplicationfirewallpolicies | Нет | Нет |
 | applicationsecuritygroups | Да | Да |
 | azurefirewalls | Да | Да |
 | bastionhosts | Нет | Нет |
@@ -535,7 +566,6 @@ ms.locfileid: "60729296"
 | expressrouteports | Нет | Нет |
 | frontdoor | Да | Да |
 | frontdoorwebapplicationfirewallpolicies | Да | Да |
-| interfaceendpoints | Нет | Нет |
 | loadbalancers | Да | Да |
 | localnetworkgateways | Да | Да |
 | natgateways | Да | Да |
@@ -548,12 +578,15 @@ ms.locfileid: "60729296"
 | networkwatchers/lenses | Да | Да |
 | networkwatchers/pingmeshes | Да | Да |
 | p2svpngateways | Нет | Нет |
+| privatednszones | Да | Да |
+| privatednszones/virtualnetworklinks | Да | Да |
+| privateendpoints | Нет | Нет |
 | privatelinkservices | Нет | Нет |
 | publicipaddresses | Да | Да |
 | publicipprefixes | Да | Да |
 | routefilters | Нет | Нет |
 | routetables | Да | Да |
-| securegateways | Нет | Нет |
+| securegateways | Да | Да |
 | serviceendpointpolicies | Да | Да |
 | trafficmanagerprofiles | Да | Да |
 | virtualhubs | Нет | Нет |
@@ -562,7 +595,7 @@ ms.locfileid: "60729296"
 | virtualnetworktaps | Нет | Нет |
 | virtualwans | Нет | Нет |
 | vpngateways | Нет | Нет |
-| vpnsites | Да | Да |
+| vpnsites | Нет | Нет |
 | webapplicationfirewallpolicies | Да | Да |
 
 ## <a name="microsoftnotificationhubs"></a>Microsoft.NotificationHubs
@@ -582,6 +615,11 @@ ms.locfileid: "60729296"
 | managementconfigurations | Да | Да |
 | solutions | Да | Да |
 | просмотры | Да | Да |
+
+## <a name="microsoftpeering"></a>Microsoft.Peering
+| Тип ресурса | Группа ресурсов | Подписка |
+| ------------- | ----------- | ---------- |
+| пиринги | Нет | Нет |
 
 ## <a name="microsoftportal"></a>Microsoft.Portal
 | Тип ресурса | Группа ресурсов | Подписка |
@@ -621,7 +659,7 @@ ms.locfileid: "60729296"
 ## <a name="microsoftsaas"></a>Microsoft.SaaS
 | Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| приложений | Да | Нет |
+| приложения | Да | Нет |
 
 ## <a name="microsoftscheduler"></a>Microsoft.Scheduler
 | Тип ресурса | Группа ресурсов | Подписка |
@@ -633,6 +671,11 @@ ms.locfileid: "60729296"
 | Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | searchservices | Да | Да |
+
+## <a name="microsoftsecurity"></a>Microsoft.Security
+| Тип ресурса | Группа ресурсов | Подписка |
+| ------------- | ----------- | ---------- |
+| iotsecuritysolutions | Да | Да |
 
 ## <a name="microsoftservermanagement"></a>Microsoft.ServerManagement
 | Тип ресурса | Группа ресурсов | Подписка |
@@ -648,7 +691,7 @@ ms.locfileid: "60729296"
 ## <a name="microsoftservicefabric"></a>Microsoft.ServiceFabric
 | Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| приложений | Нет | Нет |
+| приложения | Нет | Нет |
 | clusters | Да | Да |
 | containergroups | Нет | Нет |
 | containergroupsets | Нет | Нет |
@@ -660,7 +703,7 @@ ms.locfileid: "60729296"
 ## <a name="microsoftservicefabricmesh"></a>Microsoft.ServiceFabricMesh
 | Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| приложений | Да | Да |
+| приложения | Да | Да |
 | containergroups | Нет | Нет |
 | gateways | Да | Да |
 | Сети | Да | Да |
@@ -683,19 +726,18 @@ ms.locfileid: "60729296"
 | appliancedefinitions | Нет | Нет |
 | appliances | Нет | Нет |
 | applicationdefinitions | Нет | Нет |
-| приложений | Нет | Нет |
+| приложения | Нет | Нет |
 | jitrequests | Нет | Нет |
 
 ## <a name="microsoftsql"></a>Microsoft.Sql
 | Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
+| instancepools | Да | Да |
 | managedinstances | Да | Да |
 | managedinstances/databases | Да | Да |
 | серверы | Да | Да |
 | servers/databases | Да | Да |
 | servers/elasticpools | Да | Да |
-| servers/jobaccounts | Нет | Нет |
-| servers/jobagents | Нет | Нет |
 | virtualclusters | Да | Да |
 
 ## <a name="microsoftsqlvirtualmachine"></a>Microsoft.SqlVirtualMachine
@@ -713,6 +755,11 @@ ms.locfileid: "60729296"
 | Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | storageaccounts | Да | Да |
+
+## <a name="microsoftstoragecache"></a>Microsoft.StorageCache
+| Тип ресурса | Группа ресурсов | Подписка |
+| ------------- | ----------- | ---------- |
+| Кэши | Нет | Нет |
 
 ## <a name="microsoftstoragesync"></a>Microsoft.StorageSync
 | Тип ресурса | Группа ресурсов | Подписка |
@@ -761,6 +808,11 @@ ms.locfileid: "60729296"
 | environments/eventsources | Да | Да |
 | environments/referencedatasets | Да | Да |
 
+## <a name="microsofttoken"></a>Microsoft.Token
+| Тип ресурса | Группа ресурсов | Подписка |
+| ------------- | ----------- | ---------- |
+| хранит | Нет | Нет |
+
 ## <a name="microsoftvirtualmachineimages"></a>Microsoft.VirtualMachineImages
 | Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
@@ -772,6 +824,13 @@ ms.locfileid: "60729296"
 | учетная запись | Да | Да |
 | account/extension | Да | Да |
 | account/project | Да | Да |
+
+## <a name="microsoftvmwarecloudsimple"></a>Microsoft.VMwareCloudSimple
+| Тип ресурса | Группа ресурсов | Подписка |
+| ------------- | ----------- | ---------- |
+| dedicatedcloudnodes | Да | Да |
+| dedicatedcloudservices | Да | Да |
+| virtualmachines | Да | Да |
 
 ## <a name="microsoftweb"></a>Microsoft.Web
 | Тип ресурса | Группа ресурсов | Подписка |
@@ -790,6 +849,13 @@ ms.locfileid: "60729296"
 | Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | deviceservices | Да | Да |
+
+## <a name="microsoftwindowsvirtualdesktop"></a>Microsoft.WindowsVirtualDesktop
+| Тип ресурса | Группа ресурсов | Подписка |
+| ------------- | ----------- | ---------- |
+| applicationgroups | Нет | Нет |
+| hostpools | Нет | Нет |
+| workspaces | Нет | Нет |
 
 ## <a name="third-party-services"></a>Сторонние службы
 

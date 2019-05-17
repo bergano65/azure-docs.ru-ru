@@ -2,22 +2,22 @@
 title: Удаленный доступ к локальному приложению — Azure Active Directory Application Proxy | Документация Майкрософт
 description: Azure Active Directory Application Proxy обеспечивает безопасный удаленный доступ к веб-приложениям, размещенным в локальной среде. Выполнив единый вход в AAD, пользователи получают доступ к облачным и локальным приложениям через внешний URL-адрес или внутренний портал приложений. Среди прочего, Application Proxy поддерживает удаленный доступ и единый вход для приложений "Удаленный рабочий стол", SharePoint, Teams, Tableau, Qlik и бизнес-приложений (LOB).
 services: active-directory
-author: CelesteDG
-manager: mtillman
+author: msmimart
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 05/09/2019
-ms.author: celested
+ms.author: mimart
 ms.reviewer: japere
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e490ed9d104fc039a79083a94ddaebdeba766d2a
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.openlocfilehash: eb3a3d85c9cac85b6658167806cea59b6d5163de
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65506654"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65782852"
 ---
 # <a name="remote-access-to-on-premises-applications-through-azure-active-directorys-application-proxy"></a>Удаленный доступ к локально размещенным приложениям через Azure Active Directory Application Proxy. 
 

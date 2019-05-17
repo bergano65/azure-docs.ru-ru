@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: luisca
 ms.custom: seodec2018
-ms.openlocfilehash: 5267f81c9886e2d1d8d62c134156aedb3b2b8763
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: 058b6c979346d9dcce36940432d0e222e919dba9
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65023727"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65540831"
 ---
 #   <a name="shaper-cognitive-skill"></a>Когнитивный навык формирователя
 
@@ -29,7 +29,7 @@ ms.locfileid: "65023727"
 | Версии 2019-05-06-preview REST API (пакет SDK для .NET не поддерживается) | Сложные объекты несколько уровней, в одном **Shaper** определение навыков. |
 | 2019-05-06 ** (общедоступная), 2017-11-11-Preview| Сложные объекты, на один уровень глубже. Многоуровневые фигуры требуется несколько шагов shaper цепочки.|
 
-Предварительный просмотр **Shaper** навык, приведенных в [сценарий 3](#nested-complex-types), добавляет новый необязательный *sourcecontext объекта Elementgroupprototype* свойство к входным данным. *Источника* и *sourcecontext объекта Elementgroupprototype* свойства являются взаимоисключающими. Если входное значение в контексте навык, просто используйте *источника*. Если входные данные в *различных* контекста, чем контекст навыков использования *sourcecontext объекта Elementgroupprototype*. *Sourcecontext объекта Elementgroupprototype* необходимо определить Вход вложенной с конкретного элемента, к которому выполняется обращение как источник. 
+Предоставленный `api-version=2019-05-06-Preview`, **Shaper** показано навыков в [сценарий 3](#nested-complex-types) добавляет новый необязательный *sourcecontext объекта Elementgroupprototype* свойство к входным данным. *Источника* и *sourcecontext объекта Elementgroupprototype* свойства являются взаимоисключающими. Если входное значение в контексте навык, просто используйте *источника*. Если входные данные в *различных* контекста, чем контекст навыков использования *sourcecontext объекта Elementgroupprototype*. *Sourcecontext объекта Elementgroupprototype* необходимо определить Вход вложенной с конкретного элемента, к которому выполняется обращение как источник. 
 
 В ответе, для всех версий API, имя выходных данных — это всегда «выходные данные». На внутреннем уровне конвейер можно сопоставить другое имя, например «analyzedText», как показано в примерах ниже, но **Shaper** навык, сам возвращает «выход» в ответе. Это может оказаться важным при обнаружении несоответствия имен во время отладки обогащенных документов или при создании пользовательского навыка с самостоятельным структурированием отклика.
 
@@ -196,7 +196,7 @@ Microsoft.Skills.Util.ShaperSkill
 ## <a name="scenario-3-input-consolidation-from-nested-contexts"></a>Сценарий 3: входной консолидации из вложенных контекстов
 
 > [!NOTE]
-> Вложенных структур, поддерживается в api-version = 2019-05-06-Preview можно использовать в [хранилища знаний](knowledge-store-concept-intro.md) или в индексе поиска Azure.
+> Вложенные структуры, поддерживаемые в [2019 г. версия REST API-05-06-Preview](search-api-preview.md) может использоваться в [хранилища знаний](knowledge-store-concept-intro.md) или в индексе поиска Azure.
 
 Представьте себе, title, главы и содержимое книги и запустил сущности фраз распознавания и ключ на содержимое, а теперь требуется Агрегатная обработка результатов с различными умениями в одну форму с название главы, сущности и ключевые фразы.
 
@@ -265,4 +265,4 @@ Microsoft.Skills.Util.ShaperSkill
 + [Определение набора навыков](cognitive-search-defining-skillset.md)
 + [Как использовать сложные типы](search-howto-complex-data-types.md)
 + [Общие сведения о хранилище базы знаний](knowledge-store-concept-intro.md)
-+ [Как приступить к работе с Store базы знаний](knowledge-store-howto.md)
++ [Как приступить к работе с хранилищем базы знаний](knowledge-store-howto.md)

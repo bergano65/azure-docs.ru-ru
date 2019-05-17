@@ -3,8 +3,8 @@ title: Публикация удаленного рабочего стола с 
 description: Основные сведения о соединителях прокси приложения Azure AD.
 services: active-directory
 documentationcenter: ''
-author: CelesteDG
-manager: mtillman
+author: msmimart
+manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
@@ -12,16 +12,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 06/27/2018
-ms.author: celested
+ms.author: mimart
 ms.custom: it-pro
 ms.reviewer: harshja
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 295422e0f456c4dfd4166911ef8150e8a896ba1a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 2ecd55cbb3a8eefc150db731901458561d90f033
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60440719"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65783407"
 ---
 # <a name="publish-remote-desktop-with-azure-ad-application-proxy"></a>Публикация удаленного рабочего стола с помощью прокси приложения Azure AD
 
@@ -68,7 +68,7 @@ ms.locfileid: "60440719"
    - Внутренний URL-адрес: `https://\<rdhost\>.com/`, где `\<rdhost\>` — общий корень, совместно используемый веб-сайтом удаленных рабочих столов и шлюзом удаленных рабочих столов.
    - Внешний URL-адрес: это поле заполняется автоматически на основе имени приложения, но его можно изменить. Ваши пользователи будут переходить по этому URL-адресу при обращении к RDS.
    - Метод предварительной проверки подлинности: Azure Active Directory
-   - Перевод веб-страниц в заголовках: Нет 
+   - Перевод веб-страниц в заголовках: Нет
 2. Назначьте пользователей опубликованному приложению удаленных рабочих столов. Убедитесь также, что все они имеют доступ к RDS.
 3. Для параметра единого входа для приложения оставьте значение **Единый вход Azure AD отключен**. Пользователи будут один раз проходить аутентификацию в Azure AD и еще один раз — на веб-сайте удаленных рабочих столов, но смогут использовать единый вход на шлюз удаленных рабочих столов.
 4. Выберите **Azure Active Directory** > **Регистрация приложений** > *Приложения* > **Параметры**.

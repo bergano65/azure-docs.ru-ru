@@ -10,12 +10,12 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 04/17/2019
 ms.author: magoedte
-ms.openlocfilehash: 70712b68cc26a461f702850dbf6064b65b4ff130
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: afa332b40884a79b5114b3b8093cd27108c39984
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60494679"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65780011"
 ---
 # <a name="azure-monitor-for-containers-frequently-asked-questions"></a>Azure Monitor для контейнеров: вопросы и ответы
 
@@ -76,6 +76,12 @@ LogEntry : ({“Hello": "This example has multiple lines:","Docker/Moby": "will 
 ## <a name="why-cant-i-upgrade-cluster-after-onboarding"></a>Почему не удается обновить кластер после подключения?
 
 При удалении рабочей области Log Analytics после включения Azure Monitor для контейнеров для кластера AKS, кластеру передает его, при попытке обновить кластер заканчивается сбоем. Чтобы обойти эту проблему, необходимо отключить мониторинг, а затем повторно включите ее ссылается на другой допустимый рабочей области в вашей подписке. При обновлении кластера, следует обработать и успешно завершить.  
+
+## <a name="which-ports-and-domains-do-i-need-to-openwhitelist-for-the-agent"></a>Какие порты и доменов нужно открыть или добавить в список разрешений для агента?
+- *.ods.opinsights.azure.com   443
+- *.oms.opinsights.azure.com   443
+- *.blob.core.windows.net      443
+- dc.services.visualstudio.com 443
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

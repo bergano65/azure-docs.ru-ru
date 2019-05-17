@@ -1,6 +1,6 @@
 ---
-title: Политики хранения отчетов Azure Active Directory | Документация Майкрософт
-description: Политики хранения данных отчета в Azure Active Directory
+title: Как долго в Azure AD хранит данные отчетов? | Документация Майкрософт
+description: Узнайте, как долго Azure хранятся различные виды данных отчетов.
 services: active-directory
 documentationcenter: ''
 author: MarkusVi
@@ -17,14 +17,14 @@ ms.date: 11/13/2018
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f1423fddc13a6912e90b6a239921cf2a4d2662ec
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 41fa12c9d79d14a6602d995ed93b5d1a23be8a4d
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60437062"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65781041"
 ---
-# <a name="azure-active-directory-report-retention-policies"></a>Политики хранения отчетов Azure Active Directory
+# <a name="how-long-does-azure-ad-store-reporting-data"></a>Как долго в Azure AD хранит данные отчетов?
 
 Из этой статьи вы узнаете о политиках хранения данных, которые используются для разных отчетов о действиях в Azure Active Directory. 
 
@@ -78,7 +78,7 @@ ms.locfileid: "60437062"
 
 | Отчет         | Azure AD уровня "Бесплатный" | Azure AD Basic | Azure AD Premium P1 | Azure AD Premium P2 |
 | :--            | :--           | :--            | :--                 | :--                 |
-| пользователи под угрозой;  | 7 дней        | 7 дней         | 30 дней             | 90 дней             |
-| Вход, представляющий риск | 7 дней        | 7 дней         |  30 дней            | 90 дней             |
+| пользователи под угрозой;  | 7 дней        | 7 дней         | 30 дней             | 90 дней             |
+| Вход, представляющий риск | 7 дней        | 7 дней         |  30 дней            | 90 дней             |
 
 ---

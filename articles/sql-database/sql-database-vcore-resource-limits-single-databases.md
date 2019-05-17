@@ -7,19 +7,19 @@ ms.subservice: single-database
 ms.custom: ''
 ms.devlang: ''
 ms.topic: conceptual
-author: CarlRabeler
-ms.author: carlrab
+author: stevestein
+ms.author: sstein
 ms.reviewer: ''
 manager: craigg
 ms.date: 04/22/2019
-ms.openlocfilehash: 7dcbf2733ff23b0454208dbc789599cd372278ec
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.openlocfilehash: 15aedaa7eedad4940945e9b1e7eff0e1780da796
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65507837"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65790387"
 ---
-# <a name="azure-sql-database-vcore-based-purchasing-model-limits-for-a-single-database"></a>Ограничения ресурсов для отдельной базы данных в Базе данных SQL Azure при использовании модели приобретения на основе виртуальных ядер
+# <a name="resource-limits-for-single-databases-using-the-vcore-based-purchasing-model"></a>Ограничения ресурсов для отдельных баз данных, используя модель приобретения на основе виртуальных ядер
 
 Эта статья содержит подробные сведения об ограничениях ресурсов для отдельных баз данных в Базе данных SQL Azure при использовании модели приобретения на основе виртуальных ядер.
 
@@ -129,7 +129,7 @@ ms.locfileid: "65507837"
 
 ### <a name="serverless-compute-tier"></a>Уровень бессерверных вычислений
 
-[Уровня бессерверных вычислений](sql-database-serverless.md) в общедоступной предварительной версии и предназначено только для отдельных баз данных, используя виртуальное приобретения моделирования.
+[Уровня бессерверных вычислений](sql-database-serverless.md) в предварительной версии и предназначено только для отдельных баз данных, используя виртуальное приобретения моделирования.
 
 #### <a name="generation-5-compute-platform"></a>Вычислительная платформа 5-го поколения
 

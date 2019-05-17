@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 01/02/2019
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 094c8d45f7f6099b169e25c89dbfc4a7d6522dfc
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.openlocfilehash: 1c82dbd0af8509910b13d17ff5a2e8512cef6fdd
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65510936"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65794185"
 ---
 # <a name="introduction-to-azure-storage"></a>Общие сведения о службе хранилища Azure
 
@@ -158,7 +158,7 @@ SSE автоматически шифрует данные на всех уро�
 
 ### <a name="azure-storage-data-movement-api-and-library-references"></a>Ссылки на API и библиотеки перемещения данных службы хранилища Azure
 * [Интерфейсы API REST службы импорта и экспорта хранилища](https://docs.microsoft.com/rest/api/storageimportexport/)
-* [Клиентская библиотека перемещения хранилища данных для .NET](https://docs.microsoft.com/dotnet/api/microsoft.azure.storage.datamovement)
+* [Клиентская библиотека перемещения хранилища данных для .NET](/dotnet/api/microsoft.azure.storage.datamovement)
 
 ### <a name="tools-and-utilities"></a>Средства и служебные программы
 * [Командлеты Azure PowerShell для службы хранилища](https://docs.microsoft.com/powershell/module/az.storage)

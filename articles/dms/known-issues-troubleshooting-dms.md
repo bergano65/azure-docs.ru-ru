@@ -10,13 +10,13 @@ ms.service: dms
 ms.workload: data-services
 ms.custom: mvc
 ms.topic: article
-ms.date: 05/09/2019
-ms.openlocfilehash: 7b470c20397aac456d34d5e3b877c7d4126d8279
-ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
+ms.date: 05/14/2019
+ms.openlocfilehash: dc8ba315d08f3a130ff0adf91afc90f545baf4e4
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65465107"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65604438"
 ---
 # <a name="troubleshoot-common-azure-database-migration-service-issues-and-errors"></a>Устранение распространенных ошибок и проблем Azure Database Migration Service
 
@@ -24,7 +24,7 @@ ms.locfileid: "65465107"
 
 ## <a name="migration-activity-in-queued-state"></a>Действие миграции в состоянии очереди
 
-При создании новых действий над проектом Azure Database Migration Service, действия остаются в очереди, не ограничено.
+При создании новых действий в проекте Azure Database Migration Service, действия остаются в состоянии очереди.
 
 | Причина:         | Способы устранения: |
 | ------------- | ------------- |
@@ -44,13 +44,13 @@ ms.locfileid: "65465107"
 
 При миграции из MySQL в базу данных Azure для MySQL с помощью Azure Database Migration Service, действие миграции завершается сбоем со следующей ошибкой:
 
-* **Ошибка**: Ошибка: Ошибка миграции баз данных — задача «TaskID» было приостановлено из-за сбоев последовательных восстановления [n].
+* **Ошибка**: Ошибка миграции баз данных — задача «TaskID» было приостановлено из-за сбоев последовательных восстановления [n].
 
 | Причина:         | Способы устранения: |
 | ------------- | ------------- |
-| Эта ошибка может возникать, когда пользователь, выполняющий миграцию отсутствует роль ReplicationAdmin и/или привилегии REPLICATION CLIENT, системе репликации и SUPER (версиях до MySQL 5.6.6).<br> <br><br><br> <br> <br> <br> <br> <br> <br> | Убедитесь, что [предварительных требований привилегии](https://docs.microsoft.com/azure/dms/tutorial-mysql-azure-mysql-online#prerequisites) для пользователя учетной записи настраиваются точно в экземпляре Azure MySQL. Например чтобы создать пользователя с именем «migrateuser» необходимый набор прав, применимы следующие действия:<br>1. CREATE USER migrateuser@'% "ОПРЕДЕЛЕНЫ, «secret»; <br>2. предоставьте все права доступа на db_name.* для migrateuser'@'% идентифицируется «secret»; Повторите этот шаг, чтобы предоставить доступ на несколько баз данных <br>3. Предоставление репликации slave *.* Чтобы migrateuser'@'% идентифицируется «secret»;<br>4. Предоставление репликации клиента на *.* Чтобы migrateuser'@'% идентифицируется «secret»;<br>5. Очистка права доступа; |
+| Эта ошибка может возникать, когда пользователь, выполняющий миграцию отсутствует роль ReplicationAdmin и/или привилегии REPLICATION CLIENT, системе репликации и SUPER (версиях до MySQL 5.6.6).<br> <br><br><br> <br> <br> <br> <br> <br> <br> | Убедитесь, что [предварительных требований привилегии](https://docs.microsoft.com/azure/dms/tutorial-mysql-azure-mysql-online#prerequisites) для пользователя учетной записи настраиваются точно в базе данных Azure для экземпляра MySQL. Например чтобы создать пользователя с именем «migrateuser» необходимый набор прав, применимы следующие действия:<br>1. CREATE USER migrateuser@'% "ОПРЕДЕЛЕНЫ, «secret»; <br>2. Предоставьте все права доступа на db_name.* для migrateuser'@'% идентифицируется «secret»; Повторите этот шаг, чтобы предоставить доступ на несколько баз данных <br>3. Предоставление slave репликации *.* Чтобы migrateuser'@'% идентифицируется «secret»;<br>4. Предоставление репликации клиента на *.* Чтобы migrateuser'@'% идентифицируется «secret»;<br>5. Очистить права доступа; |
 
-## <a name="error-when-attempting-to-stop-the-azure-database-migration-service-instance"></a>Ошибка при попытке остановки экземпляра Azure Database Migration Service
+## <a name="error-when-attempting-to-stop-azure-database-migration-service"></a>Ошибка при попытке остановки службы Azure Database Migration Service
 
 При остановке экземпляра Azure Database Migration Service, вы получите следующую ошибку:
 
@@ -60,7 +60,7 @@ ms.locfileid: "65465107"
 | ------------- | ------------- |
 | Эта ошибка отображается, когда экземпляр службы, которую вы пытаетесь остановить включает в себя действия, которые по-прежнему работают или представить в проектах миграции. <br><br><br><br><br><br> | Убедитесь, что нет действий, выполняемых в экземпляре Azure Database Migration Service требуется остановить. Прежде чем пытаться остановить службу, может также удалить действий или проектов. Удаление проектов для очистки экземпляра службы миграции, удалив все выполняемые задачи сделайте следующее:<br>1. Install-Module-Name AzureRM.DataMigration <br>2. Login-AzureRmAccount <br>3. SELECT-AzureRmSubscription - SubscriptionName "<subName>" <br> 4. Remove-AzureRmDataMigrationProject-имя <projectName> - ResourceGroupName <rgName> - ServiceName <serviceName> - DeleteRunningTask |
 
-## <a name="error-restoring-database-while-migrating-from-sql-server-to-an-azure-sql-database-managed-instance"></a>Ошибка при восстановлении базы данных, при миграции из SQL Server к базе данных SQL управляемого экземпляра
+## <a name="error-restoring-database-while-migrating-sql-to-azure-sql-db-managed-instance"></a>Ошибка при восстановлении базы данных, пока миграция из SQL в базе данных SQL Azure управляемого экземпляра
 
 При выполнении оперативная миграция из SQL Server в управляемый экземпляр базы данных SQL Azure, прямая миграция завершается сбоем со следующей ошибкой:
 
@@ -88,11 +88,11 @@ ms.locfileid: "65465107"
 | ------------- | ------------- |
 | При использовании [ExpressRoute](https://azure.microsoft.com/services/expressroute/), Azure Database Migration Service [требует](https://docs.microsoft.com/azure/dms/tutorial-sql-server-azure-sql-online) подготовки три конечные точки службы в подсети виртуальной сети, связанные со службой:<br> --Конечная точка служебной шины<br> --Конечная точка хранилища<br> --Целевой конечной точки базы данных (например, конечная точка SQL, конечная точка Cosmos DB)<br><br><br><br> | [Включить](https://docs.microsoft.com/azure/dms/tutorial-sql-server-azure-sql-online) конечные точки службы, необходимые для подключения ExpressRoute между источником и Azure Database Migration Service. <br><br><br><br><br><br><br><br> |
 
-## <a name="timeout-error-when-migrating-a-mysql-database-to-azure-database-for-mysql"></a>Ошибка времени ожидания при переносе базы данных MySQL в базу данных Azure для MySQL
+## <a name="timeout-error-when-migrating-a-mysql-database-to-azure-mysql"></a>Ошибка времени ожидания при переносе базы данных MySQL в Azure MySQL
 
 При переносе базы данных MySQL в базу данных Azure для экземпляра MySQL с помощью Azure Database Migration Service, происходит сбой со следующей ошибкой времени ожидания:
 
-    * **Ошибка**: Ошибка: Ошибка миграции баз данных - не удалось загрузить файл - не удалось запустить процесс загрузки для файла "n" RetCode: SQL_ERROR SqlState: HY000 NativeError: Сообщения о 1205: [MySQL] [ODBC Driver] [mysqld] блокировки время ожидания превышено; Попробуйте перезапустить транзакции
+* **Ошибка**: Ошибка миграции баз данных - не удалось загрузить файл - не удалось запустить процесс загрузки для файла "n" RetCode: SQL_ERROR SqlState: HY000 NativeError: Сообщения о 1205: [MySQL] [ODBC Driver] [mysqld] блокировки время ожидания превышено; Попробуйте перезапустить транзакции
 
 | Причина:         | Способы устранения:    |
 | ------------- | ------------- |
@@ -100,13 +100,13 @@ ms.locfileid: "65465107"
 
 ## <a name="additional-known-issues"></a>Другие известные проблемы
 
-* [Известные проблемы и ограничения при сетевых миграциях в Базу данных SQL Azure](https://docs.microsoft.com/azure/dms/known-issues-azure-sql-online)
+* [Известные проблемы и переноса ограничения, связанные с online перенос в базу данных SQL Azure](https://docs.microsoft.com/azure/dms/known-issues-azure-sql-online)
 * [Известные проблемы и переноса ограничения, связанные с интерактивной миграции к базе данных Azure для MySQL](https://docs.microsoft.com/azure/dms/known-issues-azure-mysql-online)
 * [Известные проблемы и переноса ограничения, связанные с интерактивной миграции к базе данных Azure для PostgreSQL](https://docs.microsoft.com/azure/dms/known-issues-azure-postgresql-online)
 
-## <a name="additional-resources"></a>Дополнительные ресурсы
+## <a name="next-steps"></a>Дальнейшие действия
 
-* [PowerShell службы миграции базы данных Azure](https://docs.microsoft.com/powershell/module/azurerm.datamigration/?view=azurermps-6.13.0#data_migration)
-* [Как настроить параметры сервера в базе данных Azure для MySQL с помощью портала Azure](https://docs.microsoft.com/azure/mysql/howto-server-parameters)
-* [Предварительные требования для с помощью Azure Database Migration Service](https://docs.microsoft.com/azure/dms/pre-reqs)
-* [Часто задаваемые вопросы о службе Azure Database Migration Service](https://docs.microsoft.com/azure/dms/faq)
+* См. в статье [PowerShell службы миграции базы данных Azure](https://docs.microsoft.com/powershell/module/azurerm.datamigration/?view=azurermps-6.13.0#data_migration).
+* См. в статье [как настроить параметры сервера в базе данных Azure для MySQL с помощью портала Azure](https://docs.microsoft.com/azure/mysql/howto-server-parameters).
+* См. в статье [предварительные требования для с помощью Azure Database Migration Service](https://docs.microsoft.com/azure/dms/pre-reqs).
+* См. в разделе [часто задаваемые вопросы о службе Azure Database Migration Service](https://docs.microsoft.com/azure/dms/faq).

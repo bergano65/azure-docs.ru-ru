@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 03/14/2019
 ms.author: robb
 ms.subservice: ''
-ms.openlocfilehash: cf06645ddcb825ca866d88a1f7724fd3b3e7987b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: fae8e80c6fa94c3581de3038399ef031506b2f55
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60338484"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65774245"
 ---
 # <a name="azure-monitor-partner-integrations"></a>Интеграция Azure Monitor с продуктами партнеров
 
@@ -96,7 +96,7 @@ Dynatrace OneAgent интегрируется с виртуальными маш
 
 [Ознакомьтесь с документацией][dynatrace-doc]
 
-## <a name="elastic"></a>Elastic
+## <a name="elastic"></a>Эластичная
 
 ![Логотип эластичных БД](./media/partners/elastic.png)
 
@@ -242,7 +242,7 @@ Sumo Logic — это безопасное облачное решение сл�
 
 
 <!--Partner Documentation-->
-[alertlogic-doc]: https://docs.alertlogic.com/userGuides/log-manager-collection-sources.htm "Документация по AlertLogic."
+[alertlogic-doc]: https://legacy.docs.alertlogic.com/userGuides/log-manager-collection-sources.htm "Документация по AlertLogic."
 [appdynamics-doc]: https://www.appdynamics.com/net/azure/ "Документация по AppDynamics."
 [arcsight-doc]: https://community.softwaregrp.com/t5/Discussions/Announcing-General-Availability-of-ArcSight-Smart-Connectors-7/m-p/1671852 "Документация по ArcSight"
 [atlassian-doc]: https://azure.microsoft.com/blog/automated-notifications-from-azure-monitor-for-atlassian-jira/

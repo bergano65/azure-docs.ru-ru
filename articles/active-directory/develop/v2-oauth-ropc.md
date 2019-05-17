@@ -3,8 +3,8 @@ title: Использование платформы удостоверений 
 description: Поддержка внебраузерных потоков аутентификации с помощью предоставления пароля владельца ресурса.
 services: active-directory
 documentationcenter: ''
-author: CelesteDG
-manager: mtillman
+author: rwike77
+manager: CelesteDG
 editor: ''
 ms.service: active-directory
 ms.subservice: develop
@@ -13,16 +13,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 04/20/2019
-ms.author: celested
+ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9cfa28cae87c8a9a97e1c64b96f75ae4c6eab08d
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.openlocfilehash: 04d2be76072866da2b21718f60fd0c9a5923b15b
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62112295"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65545111"
 ---
 # <a name="microsoft-identity-platform-and-the-oauth-20-resource-owner-password-credential"></a>Платформа Microsoft identity и пароль владельца ресурса OAuth 2.0
 
@@ -89,7 +89,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 
 | Параметр | Формат | Описание |
 | --------- | ------ | ----------- |
-| `token_type` | String | Всегда имеет значение `Bearer`. |
+| `token_type` | Строка | Всегда имеет значение `Bearer`. |
 | `scope` | Строки, разделенные пробелами | Если возвращен маркер доступа, этот параметр содержит список областей, для которых действует этот маркер. |
 | `expires_in`| int | Количество секунд, в течение которых действует предоставленный маркер доступа. |
 | `access_token`| Непрозрачная строка | Выдается для запрошенных [областей](v2-permissions-and-consent.md). |

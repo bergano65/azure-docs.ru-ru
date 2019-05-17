@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: luisca
 ms.custom: seodec2018
-ms.openlocfilehash: 9eedf0be6089764c8111ae81d558f7e65af0a66d
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: 010880304c5011bd5a767650aa0ae6b6103bdde2
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65021786"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65540859"
 ---
 # <a name="how-to-create-a-skillset-in-an-enrichment-pipeline"></a>Создание набора навыков в конвейере обогащения
 
@@ -173,7 +173,7 @@ Content-Type: application/json
 
 * Навык имеет один выходной параметр с именем ```"organizations"```. Выходные данные существуют только во время обработки. Для связывания этого выходного параметра со входным параметром нижестоящего навыка можно ссылаться на выходной параметр как на ```"/document/organizations"```.
 
-* Для определенного документа значение ```"/document/organizations"``` представляет массив организаций, извлеченный из текста. Например: 
+* Для определенного документа значение ```"/document/organizations"``` представляет массив организаций, извлеченный из текста. Например:
 
   ```json
   ["Microsoft", "LinkedIn"]
@@ -249,7 +249,7 @@ Content-Type: application/json
 
 ## <a name="add-a-knowledge-store"></a>Добавление хранилища знаний
 
-[Store знаний](knowledge-store-concept-intro.md) — это функция предварительной версии в службе поиска Azure для сохранения Обогащенные документа. Хранилищем базы знаний, которое вы создаете, поддерживаемый учетной записи хранения Azure — это репозиторий, где попавшего Обогащенные данные. 
+[Хранилище базы знаний](knowledge-store-concept-intro.md) — это функция предварительной версии в службе поиска Azure для сохранения Обогащенные документа. Хранилищем базы знаний, которое вы создаете, поддерживаемый учетной записи хранения Azure — это репозиторий, где попавшего Обогащенные данные. 
 
 Определение хранилища знаний добавляется набор навыков. Пошаговое руководство по всему процессу, см. в разделе [как приступить к работе с хранилищем базы знаний](knowledge-store-howto.md).
 

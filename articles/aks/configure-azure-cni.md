@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 10/11/2018
 ms.author: iainfou
-ms.openlocfilehash: 61968265670c53ebc4187c983996caa8c94a4cde
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.openlocfilehash: 9006590583f0ef52bbce716529534f8bce6f47c5
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65508002"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65780369"
 ---
 # <a name="configure-azure-cni-networking-in-azure-kubernetes-service-aks"></a>Настройка сети Azure CNI в Службе Azure Kubernetes (AKS)
 
@@ -58,7 +58,7 @@ IP-адреса для контейнеров pod и узлов кластера
 
 ## <a name="maximum-pods-per-node"></a>Максимальное число контейнеров pod на узле
 
-Максимальное число контейнеров pod на каждом узле в кластере AKS имеет значение 110. Максимальное количество контейнеров pod *по умолчанию* для каждого узла зависит от сети *kubenet*, *Azure CNI* и метода развертывания кластера.
+Максимальное число модулей POD на каждом узле в кластере AKS — 250. Максимальное количество контейнеров pod *по умолчанию* для каждого узла зависит от сети *kubenet*, *Azure CNI* и метода развертывания кластера.
 
 | Метод развертывания | По умолчанию Kubenet | По умолчанию Azure CNI | Настройка при развертывании |
 | -- | :--: | :--: | -- |

@@ -6,7 +6,7 @@ metadata:
   title: Документация по Базе данных SQL Azure. Руководства и справочники по API | Документация Майкрософт
   meta.description: Learn how to use Azure SQL databases.
   services: sql-database
-  author: CarlRabeler
+  author: stevestein
   manager: craigg
   ms.service: sql-database
   ms.subservice: service
@@ -14,7 +14,7 @@ metadata:
   ms.devlang: null
   ms.topic: overview
   ms.date: 03/04/2019
-  ms.author: carlrab
+  ms.author: sstein
 abstract:
   description: "База данных SQL Azure\_— это реляционная база данных общего назначения, предоставляемая по модели \"как услуга\" (DBaaS), на основе последней стабильной версии ядра СУБД Microsoft SQL Server. База данных SQL\_— это высокопроизводительная, надежная и безопасная облачная база данных, с помощью которой можно создавать приложения и веб-сайты на основе данных, используя любой язык программирования, без необходимости управлять инфраструктурой. Узнайте, как использовать базу данных SQL, с помощью наших шаблонов быстрого запуска, примеров и руководств."
   aside:
@@ -78,7 +78,7 @@ sections:
             image:
               src: media/index/i_intelligence.svg
             title: Мониторинг и настройка
-  - title: 5-минутные руководства по началу работы
+  - title: Пятиминутные руководства по началу работы
     items:
       - type: paragraph
         text: 'База данных SQL Azure позволяет легко выполнять основные задачи управления с помощью портала Azure, Azure CLI и Azure PowerShell. Узнайте, как выполнять основные задачи управления с использованием примеров из следующих кратких руководств:'
@@ -155,7 +155,7 @@ sections:
   - title: Примеры
     items:
       - type: paragraph
-        text: Поиск скриптов для выполнения типовых задач.
+        text: Найдите скрипты для выполнения типовых задач.
       - type: list
         style: unordered
         className: spaced noBullet

@@ -6,13 +6,13 @@ ms.author: twhitney
 ms.service: container-service
 manager: jeconnoc
 ms.topic: conceptual
-ms.date: 05/06/2019
-ms.openlocfilehash: 3c7f0b263cc775b7f9fec62e4d5388250e5124fb
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.date: 05/13/2019
+ms.openlocfilehash: 04d710f4d60b776f8059d87ea4d009bed6f7f8ba
+ms.sourcegitcommit: f013c433b18de2788bf09b98926c7136b15d36f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65079125"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65551714"
 ---
 # <a name="create-an-azure-ad-tenant-for-azure-red-hat-openshift"></a>Создание клиента Azure AD для Azure Red Hat OpenShift
 
@@ -34,7 +34,7 @@ ms.locfileid: "65079125"
 
     ![Снимок экрана портала, на которой отображается имя клиента в правом верхнем углу][tenantcallout]  
 
-8. Запишите *идентификатор_клиента* , позже можно указать место для создания кластера Azure Red Hat OpenShift. На портале вы увидите колонку обзора Azure Active Directory для нового клиента. Выберите **свойства** и скопируйте значение для вашей **идентификатор каталога**. Мы будем называть это значение как `tenant id` в [создать кластер Azure Red Hat OpenShift](tutorial-create-cluster.md) руководства.
+8. Запишите *идентификатор_клиента* , позже можно указать место для создания кластера Azure Red Hat OpenShift. На портале вы увидите колонку обзора Azure Active Directory для нового клиента. Выберите **свойства** и скопируйте значение для вашей **идентификатор каталога**. Мы будем называть это значение как `TENANT` в [создать кластер Azure Red Hat OpenShift](tutorial-create-cluster.md) руководства.
 
 [tenantcallout]: ./media/howto-create-tenant/tenant-callout.png
 

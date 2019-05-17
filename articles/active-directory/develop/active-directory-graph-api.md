@@ -3,8 +3,8 @@ title: API Graph Azure Active Directory | Документация Майкро�
 description: Общие сведения и краткое руководство по API Graph Azure AD, который обеспечивает программный доступ к Azure AD с помощью конечных точек REST API.
 services: active-directory
 documentationcenter: ''
-author: lleonard-msft
-manager: mtillman
+author: rwike77
+manager: CelesteDG
 ms.assetid: 5471ad74-20b3-44df-a2b5-43cde2c0a045
 ms.service: active-directory
 ms.subservice: develop
@@ -13,16 +13,16 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 03/01/2019
-ms.author: alleonar
+ms.author: ryanwi
 ms.reviewer: dkershaw, sureshja
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 47233d593e9539e5755daf331ce9dbff73207942
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 77730ea7302b4abd6c17ebfe5620c0dc55fa407c
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60300433"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65544585"
 ---
 # <a name="azure-active-directory-graph-api"></a>API Graph Azure Active Directory
 

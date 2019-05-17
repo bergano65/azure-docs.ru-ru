@@ -13,12 +13,12 @@ ms.topic: article
 ms.date: 04/12/2019
 ms.author: jafreebe;cephalin
 ms.custom: seodec18
-ms.openlocfilehash: efeab014c7d92a6c19d516a121fbc4436925be75
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 82e8936a888cbc99088ab18423e55dd57a3c2e77
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60850994"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65604145"
 ---
 # <a name="configure-a-windows-java-app-for-azure-app-service"></a>Настройка Windows приложения Java для службы приложений Azure
 
@@ -27,7 +27,7 @@ ms.locfileid: "60850994"
 Это руководство содержит основные понятия и инструкции для разработчиков Java, использование в службе приложений. Если вы раньше не использовали службы приложений Azure, мы рекомендуем ознакомиться с [быстрого запуска Java](app-service-web-get-started-java.md) первого. На общие вопросы об использовании службы приложений, не требующих разработки Java в [приложения службы Windows, часто задаваемые вопросы о](faq-configuration-and-management.md).
 
 > [!NOTE]
-> Не можете найти нужную информацию? См. в разделе [ОС Windows часто задаваемые вопросы о](faq-configuration-and-management.md) или [руководство по настройке Java Linux](containers/app-service-linux-java.md) сведения о развертывании и обеспечении безопасности приложения Java.
+> Не можете найти нужную информацию? См. в разделе [ОС Windows часто задаваемые вопросы о](faq-configuration-and-management.md) или [руководство по настройке Java Linux](containers/configure-language-java.md) сведения о развертывании и обеспечении безопасности приложения Java.
 
 ## <a name="configuring-tomcat"></a>Настройка Tomcat
 

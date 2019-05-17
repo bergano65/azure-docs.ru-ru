@@ -8,16 +8,16 @@ ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 11/09/2018
+ms.date: 05/03/2019
 ms.author: celested
 ms.reviewer: arvindh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4e00ecde5550b5ef4f1698fa879a039dee8aad12
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 3880a62d58b15ef07e524d69c38ba723ea56178f
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60441735"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65781074"
 ---
 # <a name="end-user-experiences-for-applications-in-azure-active-directory"></a>Возможности для взаимодействия пользователя с приложениями в Azure Active Directory
 Azure Active Directory (Azure AD) предоставляет несколько настраиваемых способов развертывания приложений для пользователей в организации:
@@ -53,7 +53,9 @@ Azure Active Directory (Azure AD) предоставляет несколько 
 ## <a name="direct-sign-on-links"></a>Ссылки для прямого входа
 Azure AD также поддерживает ссылки для прямого единого входа в отдельные приложения, которые поддерживают единый вход на основе пароля, связанный единый вход или любой вид федеративного единого входа.
 
-Эти ссылки представляют собой специально созданные URL-адреса, позволяющие пользователю войти в конкретное приложение с помощью Azure AD, не запуская его с панели доступа Azure AD или Office 365. Эти **пользователя получить доступ к URL-адреса** можно найти в разделе свойств этого доступных корпоративных приложений в Azure Active Directory на портале Azure.
+Эти ссылки представляют собой специально созданные URL-адреса, позволяющие пользователю войти в конкретное приложение с помощью Azure AD, не запуская его с панели доступа Azure AD или Office 365. Эти **пользователя получить доступ к URL-адреса** можно найти в разделе свойств этого доступных корпоративных приложений. На портале Azure выберите **Azure Active Directory** > **корпоративные приложения**. Выберите приложение, а затем выберите **свойства**.
+
+![Пример URL-адрес пользовательского доступа в свойствах Twitter](media/end-user-experiences/direct-sign-on-link.png)
 
 Такие ссылки можно скопировать и вставить везде, где нужно указать ссылку для входа в выбранное приложение. Это может быть сообщение электронной почты или веб-портал, настроенный для доступа пользователей к приложениям. Вот пример URL-адреса для прямого единого входа Azure AD для Twitter:
 

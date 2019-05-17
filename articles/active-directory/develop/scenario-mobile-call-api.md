@@ -15,36 +15,37 @@ ms.date: 05/07/2019
 ms.author: dadobali
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2fd65b9f97c373c55a3486e06e83fca7cf824cad
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.openlocfilehash: 46d8b138a566727f9172b627b8df3353e7216fa5
+ms.sourcegitcommit: f013c433b18de2788bf09b98926c7136b15d36f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65075120"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65550320"
 ---
 # <a name="mobile-app-that-calls-web-apis---call-a-web-api"></a>Мобильное приложение, которое вызывает веб-API - вызов веб-API
 
-После ваше приложение пользователь, выполнивший вход и получения маркеров, MSAL предоставляет несколько видов информации о пользователе, среды и маркеры, выпущенные. Приложение может использовать эти значения для вызова веб-API или отображения приветственное сообщение для пользователя.
+Приложение пользователь, выполнивший вход, полученных маркеров MSAL предоставляет несколько видов информации о пользователе, среду и маркеры, выпущенные. Приложение может использовать эти значения для вызова веб-API или отображать приветственное сообщение для пользователя.
 
-Во-первых, мы изучим MSAL результат, а затем как использовать маркер доступа из `AuthenticationResult` или `result` для вызова защищенного веб-API.
+Во-первых мы рассмотрим результат MSAL. Затем мы рассмотрим способы использования маркера доступа из `AuthenticationResult` или `result` для вызова защищенного веб-API.
 
 ## <a name="msal-result"></a>Результат MSAL
+MSAL предоставляет следующие значения: 
 
 - `AccessToken`: Используется для вызова защищенного веб-API в запросе HTTP носителя.
-- `IdToken`: Содержит полезные утверждения о пользователю, выполнившему вход, как их имя, домашнем клиенте и уникальный идентификатор для хранилища.
-- `ExpiresOn`: время истечения срока действия маркера. MSAL обрабатывает автоматическое обновление для приложения.
-- `TenantId`: Идентификатор клиента пользователя, используемой для входа. Для гостевых пользователей (Azure AD B2B) это будет клиента пользователя, выполнившего вход при помощи, не их домашнем клиенте.  
-- `Scopes`: области, которые были предоставлены с токеном. Это может быть подмножеством вы запросили.
+- `IdToken`: Содержит полезную информацию о выполнившего вход пользователя в виде имени пользователя, домашний клиент и уникальный идентификатор хранилища.
+- `ExpiresOn`: Время окончания срока действия маркера. MSAL обрабатывает автоматическое обновление для приложения.
+- `TenantId`: Идентификатор клиента, который пользователь вошел в систему. Для гостевых пользователей (Azure Active Directory B2B) это значение будет идентифицировать клиента, который пользователю войти, не домашний клиент пользователя.  
+- `Scopes`: Области, которые были предоставлены с токеном. Предоставленный области может быть подмножеством области, которые вы запросили.
 
-Кроме того, MSAL также предоставляет абстракцию для `Account`. Учетной записи представляет текущего пользователя на вход в учетную запись.
+MSAL также предоставляет абстракцию для `Account`. `Account` Представляет текущего пользователя, вошедшего в систему учетной записи.
 
 - `HomeAccountIdentifier`: Идентификатор домашний клиент пользователя.
-- `UserName`: Предпочтительное имя пользователя пользователя. Это может быть пустым для пользователей Azure AD B2C.
-- `AccountIdentifier`: Идентификатор пользователя, выполнившего вход. Это будет таким же, как `HomeAccountIdentifier` в большинстве случаев, если пользователь является гостем в другом клиенте.
+- `UserName`: Имя пользователя основной пользователь. Это может быть пустым для пользователей Azure Active Directory B2C.
+- `AccountIdentifier`: Идентификатор пользователя, выполнившего вход. Это значение будет таким же, как `HomeAccountIdentifier` значение в большинстве случаев, если пользователь является гостем в другом клиенте.
 
-## <a name="calling-an-api"></a>Вызов API
+## <a name="call-an-api"></a>Вызов API
 
-Когда готовы маркер доступа, это просто вызывать веб-API. Приложение принимает это маркер, составлять запросы HTTP и выполнить его.
+После получения маркера доступа, достаточно вызвать веб-API. Приложение будет использовать токен для создания HTTP-запроса, а затем выполните запрос.
 
 ### <a name="android"></a>Android
 
@@ -55,25 +56,25 @@ ms.locfileid: "65075120"
         try {
             parameters.put("key", "value");
         } catch (Exception e) {
-            // Error when constructing
+            // Error when constructing.
         }
         JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, MSGRAPH_URL,
                 parameters,new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
-                // Successfully called graph, process data and send to UI 
+                // Successfully called Graph. Process data and send to UI.
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                // Error
+                // Error.
             }
         }) {
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String, String> headers = new HashMap<>();
                 
-                // Put Access Token in HTTP request 
+                // Put access token in HTTP request.
                 headers.put("Authorization", "Bearer " + authResult.getAccessToken());
                 return headers;
             }
@@ -92,7 +93,7 @@ ms.locfileid: "65075120"
         let url = URL(string: kGraphURI)
         var request = URLRequest(url: url!)
 
-        // Put Access token in HTTP Request
+        // Put access token in HTTP request.
         request.setValue("Bearer \(self.accessToken)", forHTTPHeaderField: "Authorization")
 
         URLSession.shared.dataTask(with: request) { data, response, error in
@@ -105,7 +106,7 @@ ms.locfileid: "65075120"
                 return
             }
 
-            // Successfully got data from Graph
+            // Successfully got data from Graph.
             self.updateLogging(text: "Result from Graph: \(result))")
         }.resume()
 ```
@@ -115,10 +116,10 @@ ms.locfileid: "65075120"
 ```CSharp
 httpClient = new HttpClient();
 
-// Put Access token in HTTP request 
+// Put access token in HTTP request.
 httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", result.AccessToken);
 
-// Call Graph
+// Call Graph.
 HttpResponseMessage response = await _httpClient.GetAsync(apiUri);
 ...
 }
@@ -126,10 +127,10 @@ HttpResponseMessage response = await _httpClient.GetAsync(apiUri);
 
 ## <a name="making-several-api-requests"></a>Выполнение нескольких запросов API
 
-Если вам нужно вызывать тот же API несколько раз или несколько API-интерфейсов, существуют дополнительные рекомендации, при создании своего приложения:
+Если вам нужно вызывать тот же API несколько раз, или, необходимые для вызова нескольких API, выполните следующие факторы при сборке приложения.
 
-- ***Добавочное согласие***: Платформы удостоверений позволяет приложениям для получения согласия пользователя, как требуется, а не все первоначальные разрешения. Каждый раз, когда приложение будет готово для вызова API, следует запросить только области, которые планируется использовать.
-- ***Условный доступ***: В некоторых сценариях вы можете получить дополнительные требования для условного доступа, при создании нескольких запросов к API. Для обработки этого сценария, убедитесь, что перехват ошибок от автоматической запросов и будьте готовы сделать интерактивный запрос. Это может произойти, если первый запрос характеризуется не были применены политики условного доступа и приложения пытается автоматически получить доступ к новый API, который требует условного доступа. Дополнительные сведения см. в разделе [рекомендации для условного доступа](conditional-access-dev-guide.md).
+- **Добавочное согласие**: Платформы удостоверений Microsoft позволяет приложениям запрашивать его согласие пользователя как требуются разрешения, а не все в начале. Каждый раз, когда приложение будет готово для вызова API, следует запросить только области, из которых необходимо возвратить.
+- **Условный доступ**: В некоторых случаях можно получить дополнительные условного доступа при внесении нескольких запросов API. Это может произойти, если первый запрос характеризуется не были применены политики условного доступа и приложения пытается автоматически получить доступ к новый API, который требует условного доступа. Для обработки этого сценария, убедитесь, что перехват ошибок от автоматической запросов и будьте готовы сделать интерактивный запрос.  Дополнительные сведения см. в разделе [рекомендации для условного доступа](conditional-access-dev-guide.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

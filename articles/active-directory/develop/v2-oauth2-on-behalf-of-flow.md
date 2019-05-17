@@ -3,8 +3,8 @@ title: Платформа Microsoft identity и OAuth 2.0 On-Behalf-Of flow | Az
 description: В этой статье описывается, как использовать HTTP-сообщения для проверки подлинности между службами с помощью потока On-Behalf-Of в OAuth 2.0.
 services: active-directory
 documentationcenter: ''
-author: CelesteDG
-manager: mtillman
+author: rwike77
+manager: CelesteDG
 editor: ''
 ms.assetid: 09f6f318-e88b-4024-9ee1-e7f09fb19a82
 ms.service: active-directory
@@ -14,16 +14,16 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 04/05/2019
-ms.author: celested
+ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d0c7c29bf3094c3d5fc99b9906ee4469a6643317
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: ce0c1c4dcf7e4ff0c82157af83aa15544cf092e2
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60296894"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65544751"
 ---
 # <a name="microsoft-identity-platform-and-oauth-20-on-behalf-of-flow"></a>Платформа Microsoft identity и flow OAuth 2.0 On-Behalf-Of
 
@@ -67,7 +67,7 @@ https://login.microsoftonline.com/<tenant>/oauth2/v2.0/token
 
 При использовании общего секрета запрос маркера взаимного доступа между службами содержит следующие параметры:
 
-| Параметр |  | ОПИСАНИЕ |
+| Параметр |  | Описание |
 | --- | --- | --- |
 | `grant_type` | Обязательно для заполнения | Тип запроса маркера. Для запроса с использованием JWT нужно указать значение `urn:ietf:params:oauth:grant-type:jwt-bearer`. |
 | `client_id` | Обязательно для заполнения | Идентификатор приложения (клиента), [портала Azure. Регистрация приложений](https://go.microsoft.com/fwlink/?linkid=2083908) страницы назначенный вашему приложению. |
@@ -99,7 +99,7 @@ grant_type=urn:ietf:params:oauth:grant-type:jwt-bearer
 
 Запрос маркера взаимного доступа между службами с помощью сертификата содержит следующие параметры:
 
-| Параметр |  | ОПИСАНИЕ |
+| Параметр |  | Описание |
 | --- | --- | --- |
 | `grant_type` | Обязательно для заполнения | Тип запроса токена. Для запроса с использованием JWT нужно указать значение `urn:ietf:params:oauth:grant-type:jwt-bearer`. |
 | `client_id` | Обязательно для заполнения |  Идентификатор приложения (клиента), [портала Azure. Регистрация приложений](https://go.microsoft.com/fwlink/?linkid=2083908) страницы назначенный вашему приложению. |
@@ -135,7 +135,7 @@ grant_type=urn%3Aietf%3Aparams%3Aoauth%3Agrant-type%3Ajwt-bearer
 
 Если доступ предоставлен, ответ будет содержать JSON-файл OAuth 2.0 со следующими параметрами.
 
-| Параметр | ОПИСАНИЕ |
+| Параметр | Описание |
 | --- | --- |
 | `token_type` | Указывает значение типа маркера. Единственный тип поддерживает платформу удостоверений Microsoft `Bearer`. Дополнительные сведения о маркерах носителей см. в спецификации [OAuth 2.0 Authorization Framework: Bearer Token Usage (RFC 6750)](https://www.rfc-editor.org/rfc/rfc6750.txt) (OAuth2.0 Authorization Framework: использование маркера носителя (RFC 6750)). |
 | `scope` | Область доступа, предоставляемая токеном. |

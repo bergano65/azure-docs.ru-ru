@@ -12,12 +12,12 @@ ms.author: josack
 ms.reviewer: sstein
 manager: craigg
 ms.date: 02/13/2019
-ms.openlocfilehash: a83bc6518409add8a0732e5a0b17ab46c36564af
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 4424e53689714625ebc791df250956463452c3cb
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60703377"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65791500"
 ---
 # <a name="new-dba-in-the-cloud--managing-your-single-and-pooled-databases-in-azure-sql-database"></a>Новый администратор базы данных в облаке. Управление отдельными базами данных и базами данных в пуле в Базе данных SQL Azure
 
@@ -127,7 +127,7 @@ ms.locfileid: "60703377"
 
 ### <a name="what-port-do-i-connect-to-sql-database-on"></a>Через какой порт устанавливается подключение к службе "База данных SQL"
 
-База данных SQL обменивается данными через порт 1433. Чтобы подключиться из корпоративной сети, в параметрах брандмауэра организации необходимо добавить правило для исходящего трафика. Советуем не предоставлять доступ к порту 1433 за пределами границ Azure. Вы можете запустить SSMS в Azure с помощью [удаленного приложения Azure RemoteApp](https://www.microsoft.com/cloud-platform/azure-remoteapp-client-apps). В этом случае исходящие подключения к порту 1433 открывать не требуется. IP-адрес статический, поэтому базу данных можно открыть только для RemoteApp. Удаленное приложение поддерживает многофакторную проверку подлинности.
+База данных SQL обменивается данными через порт 1433. Чтобы подключиться из корпоративной сети, в параметрах брандмауэра организации необходимо добавить правило для исходящего трафика. Советуем не предоставлять доступ к порту 1433 за пределами границ Azure.
 
 ### <a name="how-can-i-monitor-and-regulate-activity-on-my-server-and-database-in-sql-database"></a>Как отслеживать и контролировать действия на сервере и в базе данных в службе "База данных SQL"
 

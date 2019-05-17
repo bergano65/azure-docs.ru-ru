@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: sngun
 ms.custom: seodec18
-ms.openlocfilehash: 8e8b3e647d6ef91d69a7b81ca6fdf36fc9d0f9c8
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 8e4ae9b7c96677ce494bea31a49b8db83d6bcb3c
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60890549"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65793801"
 ---
 # <a name="frequently-asked-questions-about-different-apis-in-azure-cosmos-db"></a>Часто задаваемые вопросы о различных API в службе Azure Cosmos DB
 
@@ -128,7 +128,7 @@ Azure Cosmos DB — это хороший выбор для новых веб-�
 
 Да, Azure Cosmos DB поддерживает аналитику временных рядов. Ниже приведен пример для [шаблона временных рядов](https://github.com/Azure/azure-cosmosdb-dotnet/tree/master/samples/Patterns). В этом примере показано, как использовать канал изменений, чтобы создавать агрегированные представления данных временных рядов. Вы также можете использовать Spark Streaming или другой обработчик данных потоковой передачи.
 
-## <a name="sql-api"></a>API SQL
+## <a name="sql-api"></a>API-интерфейс SQL
 
 ### <a name="how-do-i-start-developing-against-the-sql-api"></a>Как начать разработку с использованием API SQL?
 
@@ -222,7 +222,7 @@ API Azure Cosmos DB для MongoDB — это слой совместимост�
 
 Дополнительные сведения см. в разделе [Подключение к базе данных Cosmos с помощью API Azure Cosmos DB для MongoDB](connect-mongodb-account.md).
 
-Существуют ли дополнительные коды ошибок, которые возникают при использовании API Azure Cosmos DB для MongoDB?
+### <a name="are-there-additional-error-codes-that-i-need-to-deal-with-while-using-azure-cosmos-dbs-api-for-mongodb"></a>Существуют ли дополнительные коды ошибок, которые возникают при использовании API Azure Cosmos DB для MongoDB?
 
 Кроме распространенных кодов ошибок MongoDB, в API Azure Cosmos DB для MongoDB есть собственные коды ошибок.
 
@@ -355,7 +355,7 @@ Azure Cosmos DB предоставляет неограниченный объ�
 
 ### <a name="can-i-use-the-table-api-sdk-locally-with-the-emulator"></a>Можно ли использовать пакет SDK API таблиц локально с эмулятором?
 
-Пока нет.
+На данный момент нет.
 
 ### <a name="can-my-existing-application-work-with-the-table-api"></a>Совместимо ли мое имеющееся приложение с API таблиц?
 

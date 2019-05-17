@@ -11,18 +11,18 @@ ms.workload: big-data
 ms.topic: conceptual
 ms.date: 05/01/2019
 ms.custom: seodec18
-ms.openlocfilehash: adb30cc3af50b71cdc03e41d847bd4d824cffea6
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: 6853637ba23e17f3a7ca5420bdd84425c81a67be
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65236395"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65791026"
 ---
 # <a name="grant-data-access-to-an-environment"></a>Предоставление доступа к данным в среде
 
 В этой статье рассматриваются два типа политик доступа службы "Аналитика временных рядов Azure" (предварительная версия).
 
-## <a name="sign-in-to-tsi"></a>Войдите в TSI
+## <a name="sign-in-to-time-series-insights"></a>Войдите в Time Series Insights
 
 1. Войдите на [портале Azure](https://portal.azure.com/).
 1. Найдите среду "Аналитика временных рядов". Введите `Time Series` в поле **Поиск**. Выберите **Среда временных рядов** в результатах поиска.

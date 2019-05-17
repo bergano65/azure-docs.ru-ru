@@ -8,12 +8,12 @@ manager: jeconnoc
 ms.service: container-service
 ms.topic: article
 ms.date: 05/08/2019
-ms.openlocfilehash: 881734caf855ccfc4f001693fe261b8448b49bc4
-ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
+ms.openlocfilehash: 06051eff73a83ff97a733d1863580885c5d0e174
+ms.sourcegitcommit: f013c433b18de2788bf09b98926c7136b15d36f1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65466199"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65551738"
 ---
 # <a name="azure-red-hat-openshift-faq"></a>Azure Red Hat OpenShift часто задаваемые вопросы
 
@@ -66,3 +66,7 @@ ms.locfileid: "65466199"
 ## <a name="are-master-and-infrastructure-nodes-abstracted-away-as-they-are-with-azure-kubernetes-service-aks"></a>Узлы master и инфраструктуры позволяют абстрагироваться неизменными со службой Azure Kubernetes (AKS)?
 
 № Все ресурсы, включая главного кластера, запустите в подписке клиента. Эти типы ресурсов, помещаются в группу ресурсов только для чтения.
+
+## <a name="is-open-service-broker-for-azure-osba-supported"></a>— Открытый компонент Service Broker для Azure (OSBA) поддерживается?
+
+Да. OSBA можно использовать с Azure Red Hat OpenShift. См. в разделе [открытый компонент Service Broker для Azure](https://github.com/Azure/open-service-broker-azure#openshift-project-template) Дополнительные сведения.
