@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 11/01/2017
 ms.author: sngun
-ms.openlocfilehash: 9c6ea982d9a605696dad0c943aa6dd2ae155d6bd
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 26eb43060a0a2b564a7274bb1579151e66b2bfee
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60888675"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65604214"
 ---
 # <a name="use-geospatial-and-geojson-location-data-with-azure-cosmos-db-sql-api-account"></a>Использование геопространственных данных и данных о расположении GeoJSON в учетной записи API SQL Azure Cosmos DB
 
@@ -142,7 +142,7 @@ await client.CreateDocumentAsync(
     });
 ```
 
-Если у вас нет информации о широте и долготе, но есть физический адрес или название местоположения, например название города или страны, то фактические координаты можно определить с помощью службы геокодирования, такой как служба REST Карт Bing. Дополнительные сведения о геокодировании в Картах Bing можно найти [здесь](https://msdn.microsoft.com/library/ff701713.aspx).
+Если у вас нет данные широты и долготы, но имеют физический адрес или название местоположения, например города или страны или региона, можно выполнять поиск фактические координаты с помощью службы геокодирования, таких как службы Bing Maps REST. Дополнительные сведения о геокодировании в Картах Bing можно найти [здесь](https://msdn.microsoft.com/library/ff701713.aspx).
 
 ## <a name="querying-spatial-types"></a>Типы запросов к пространственным данным
 Теперь, когда мы рассмотрели способы внедрения геопространственных данных, обратимся к тому, как запрашивать эти данные в Azure Cosmos DB с помощью SQL и LINQ.

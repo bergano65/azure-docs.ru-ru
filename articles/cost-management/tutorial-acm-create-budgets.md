@@ -5,17 +5,17 @@ services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 04/09/2019
+ms.date: 05/14/2019
 ms.topic: conceptual
 ms.service: cost-management
 manager: dougeby
 ms.custom: seodec18
-ms.openlocfilehash: 704aefd68f35ca20f72a2a0c46bf11912c139e65
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: eab45948b5f931377396d93d93e8955ba0f3e767
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61024970"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65792840"
 ---
 # <a name="tutorial-create-and-manage-azure-budgets"></a>Руководство. Создание бюджетов Azure и управление ими
 
@@ -26,6 +26,9 @@ ms.locfileid: "61024970"
 В конце периода (ежемесячно, ежеквартально или ежегодно) бюджеты автоматически сбрасываются до той же суммы, когда вы выбираете следующую дату истечения срока. Так как сбрасывание происходит при той же сумме бюджета, вам нужно создать отдельные бюджеты в том случае если сумма бюджета в валюте отличается от последующих периодов.
 
 Примеры в этом руководстве помогут вам при создании и редактировании бюджета для подписки по соглашению Enterprise (EA) для Azure.
+
+Контрольные значения [Создание бюджета, чтобы выполнять мониторинг расходов в Azure Cost Management](https://www.youtube.com/watch?v=ExIVG_Gr45A) видео, чтобы узнать, как можно создавать бюджеты в Azure, чтобы выполнять мониторинг расходов.
+
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 

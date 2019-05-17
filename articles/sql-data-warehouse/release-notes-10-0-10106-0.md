@@ -5,27 +5,48 @@ services: sql-data-warehouse
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.subservice: manage
-ms.date: 04/10/2019
+ms.date: 05/13/2019
 author: anumjs
 ms.author: anjangsh
 ms.reviewer: jrasnick
 manager: craigg
-ms.openlocfilehash: 4c5279d1ddf3153493ebc01dc010114ff7e6b5e7
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 519cec0951305db60e0994134f8c680f6c560752
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64917228"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65792417"
 ---
 # <a name="azure-sql-data-warehouse-release-notes"></a>Заметки о выпуске для Хранилища данных SQL Azure
 
 В этой статье перечислены новые функции и улучшения в последних выпусках [Хранилища данных SQL Azure](sql-data-warehouse-overview-what-is.md). В ней также указаны важные обновления содержимого, которые непосредственно не связанные с выпуском, но опубликованы в тот же интервал времени. Усовершенствования к другим службам Azure, см. в разделе [обновления службы](https://azure.microsoft.com/updates).
 
+## <a name="check-your-azure-sql-data-warehouse-version"></a>Проверка версии хранилища данных SQL Azure
+
+Подключитесь к хранилищу данных с помощью SQL Server Management Studio (SSMS) и запустите следующий синтаксис для возврата текущей версии хранилища данных SQL.
+
+```sql
+SELECT @@VERSION AS 'SQL Data Warehouse';
+```
+
+Выходные данные примера: ![Версия Хранилища данных SQL](./media/release-notes/sql_data_warehouse_version.png)
+
+Использование даты, определенных для подтверждения, который выпуска была применена к хранилищу данных SQL Azure.
+
+## <a name="may-2019"></a>Мая 2019 г.
+
+| Улучшения службы | Сведения |
+| --- | --- |
+|**Платформа динамических данных, маскируя (Предварительная версия)**|Динамическое маскирование данных (DDM) предотвращает несанкционированный доступ к конфиденциальным данным в хранилище данных, затемняя их в режиме реального времени в результатах запроса, на основе правил маскирования вами. Дополнительные сведения см. в разделе [маскирование динамических данных базы данных SQL](/azure/sql-database/sql-database-dynamic-data-masking-get-started).|
+|**Важность рабочей нагрузки теперь общедоступны**|Классификации управления рабочей нагрузки и важность обеспечения возможности влияют на порядок выполнения запросов. Дополнительные сведения о важности рабочей нагрузки, см. в разделе [классификации](sql-data-warehouse-workload-classification.md) и [важности](sql-data-warehouse-workload-importance.md) обзорные статьи в документации. Ознакомьтесь с [СОЗДАНИЯ КЛАССИФИКАТОРА рабочей НАГРУЗКИ](/sql/t-sql/statements/create-workload-classifier-transact-sql?view=azure-sqldw-latest) также doc.<br/><br/>Важность рабочих нагрузок в действии см. в разделе ниже видео:<br/> -[Основные понятия управления рабочей нагрузки](https://www.youtube.com/embed/QcCRBAhoXpM)<br/> -[Сценарии управления рабочей нагрузкой](https://www.youtube.com/embed/_2rLMljOjw8)|
+|**Дополнительная поддержка T-SQL**|Контактную зону языка T-SQL для хранилища данных SQL была расширена для поддержки: </br> - [AT TIME ZONE](/sql/t-sql/queries/at-time-zone-transact-sql?view=azure-sqldw-latest)</br> - [TRIM](/sql/t-sql/functions/trim-transact-sql?view=azure-sqldw-latest)|
+|**Функции JSON**|Бизнес-аналитикам теперь можно использовать знакомый язык T-SQL для запроса и работы с документами, которые имеют формат данных JSON с использованием следующие новые функции JSON в хранилище данных.</br> - [ISJSON](/sql/t-sql/functions/isjson-transact-sql?view=azure-sqldw-latest)</br> - [JSON_VALUE](/sql/t-sql/functions/json-value-transact-sql?view=azure-sqldw-latest)</br> -  [JSON_QUERY](/sql/t-sql/functions/json-query-transact-sql?view=azure-sqldw-latest)</br> -  [JSON_MODIFY](/sql/t-sql/functions/json-modify-transact-sql?view=azure-sqldw-latest)</br> - [OPENJSON](/sql/t-sql/functions/openjson-transact-sql?view=azure-sqldw-latest)|
+|**Результирующий набор, кэширование (Предварительная версия)**|Результирующий набор кэширование позволяет время ответа на запрос мгновенных при уменьшает время для получения сведений для бизнес-аналитики и отчетности пользователей. Дополнительные сведения можно найти в разделе </br> - [ALTER DATABASE (Transact-SQL)](/sql/t-sql/statements/alter-database-transact-sql?view=azure-sqldw-latest)</br> - [Параметры ALTER DATABASE SET (Transact-SQL)](/sql/t-sql/statements/alter-database-transact-sql-set-options?view=azure-sqldw-latest)</br> - [РЕЗУЛЬТИРУЮЩИЙ НАБОР для НАБОРА КЭШИРОВАНИЯ (Transact-SQL)](/sql/t-sql/statements/set-result-set-caching-transact-sql?view=azure-sqldw-latest)</br> - [Инструкция SET (Transact-SQL)](/sql/t-sql/statements/set-statements-transact-sql)</br> - [sys.databases (Transact-SQL)](/sql/relational-databases/system-catalog-views/sys-databases-transact-sql?view=azure-sqldw-latest)|
+
 ## <a name="march-2019"></a>Марта 2019 г.
 
 | Улучшения службы | Сведения |
 | --- | --- |
-|**Важность рабочей нагрузки, доступной в предварительной версии 2-го поколения**|Важность рабочих нагрузок позволяет инженерам данных использовать важности для классификации запросов. Запросы с высокой важностью обеспечивается более быстрый доступ к ресурсам, что помогает в соответствии с соглашениями об уровне обслуживания.  Важность рабочих нагрузок позволяет работать значение особо важным для бизнеса в соответствии с соглашениями об уровне обслуживания в общей среде с меньшим объемом ресурсов.<br/><br/>Предварительный просмотр рабочей нагрузки управления классификации и важность — для сборок с датой выпуска от 9 апреля 2019 г. или более поздней версии. Пользователям не следует использовать сборки, выпущенные до этой даты, для тестирования управления рабочими нагрузками. Чтобы определить, является ли сборка поддерживает управление рабочими нагрузками, запустите `select @@version` при подключении к экземпляру хранилища данных SQL.</br></br>Дополнительные сведения о важности рабочей нагрузки, см. в разделе [классификации](sql-data-warehouse-workload-classification.md) и [важности](sql-data-warehouse-workload-importance.md) обзорные статьи в документации. Ознакомьтесь с [СОЗДАНИЯ КЛАССИФИКАТОРА рабочей НАГРУЗКИ](/sql/t-sql/statements/create-workload-classifier-transact-sql?view=azure-sqldw-latest) также doc.<br/><br/>Важность рабочих нагрузок в действии см. в разделе ниже видео:<br/>[Основные понятия управления рабочей нагрузки](  https://www.youtube.com/embed/QcCRBAhoXpM)<br/>[Сценарии управления рабочей нагрузкой](https://www.youtube.com/embed/_2rLMljOjw8)|
 |**Обнаружение и классификация данных**|Теперь предоставляется общедоступная предварительная версия функции обнаружения и классификации данных для Хранилища данных SQL Azure. Крайне важно для защиты конфиденциальных данных и конфиденциальность ваших клиентов. По мере роста вашего бизнеса и пользовательские ресурсы данных, тем сложнее становится обнаружения, классификации и защиты данных. Функция обнаружения и классификации данных, что мы представляем в собственном коде, с хранилищем данных SQL Azure обеспечивает защиту данных более управляемыми. Основные преимущества таких возможностей:<br/>&bull; &nbsp; Собрания стандартов конфиденциальности данных и нормативных требований.<br/>&bull; &nbsp; Ограничение доступа и усиление их защиты данных хранилищ содержит конфиденциальные данные.<br/>&bull; &nbsp; Мониторинг и оповещения об аномальном доступе к конфиденциальным данным.<br/>&bull; &nbsp; Визуализация конфиденциальных данных на центральной панели мониторинга на портале Azure. </br></br>Обнаружение и классификация данных доступна для хранилища данных SQL Azure во всех регионах Azure, он является частью повышенной безопасности данных, включая оценка уязвимостей и обнаружение угроз. Дополнительные сведения о обнаружение и классификация данных, см. в разделе [блога](https://azure.microsoft.com/blog/announcing-public-preview-of-data-discovery-classification-for-microsoft-azure-sql-data-warehouse/) и нашим [документации](/azure/sql-database/sql-database-data-discovery-and-classification).|
 |**GROUP BY ROLLUP**|Теперь оператор ROLLUP является поддерживаемый параметр GROUP BY в хранилище данных.   GROUP BY ROLLUP создает группу для каждого сочетания выражений столбцов. GROUP BY также «сведение» результатов в промежуточные и общие итоги. Функции GROUP BY обрабатывает справа налево, уменьшая количество выражений столбцов, по которым он создает группы и агрегаты.  Порядок столбцов влияет на выходные данные ROLLUP и может повлиять на количество строк в результирующем наборе.<br/><br/>Дополнительные сведения о GROUP BY ROLLUP, см. в разделе [GROUP BY (Transact-SQL)](/sql/t-sql/queries/select-group-by-transact-sql?view=azure-sqldw-latest)
 |**Повышенная точность использовано DWU и метрик портала ЦП**|Хранилище данных SQL значительно повышает точность метрик на портале Azure.  Этот выпуск содержит исправления для определений метрик ЦП и использовано DWU для правильного отражения рабочей нагрузки на всех вычислительных узлах. Прежде чем это исправление произошла undereported значения метрик. Ожидать увеличение использовано DWU и метрики ЦП на портале Azure. |

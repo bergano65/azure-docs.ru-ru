@@ -6,12 +6,12 @@ ms.author: makromer
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 03/12/2019
-ms.openlocfilehash: d842898ca700490ae99b46140be6609622a144df
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: f0ac5bb36079983b10e4d86cc776bd4e5ee6817d
+ms.sourcegitcommit: 17411cbf03c3fa3602e624e641099196769d718b
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60627123"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65520146"
 ---
 # <a name="azure-data-factory-alter-row-transformation"></a>Преобразование строки Alter фабрики данных Azure
 
@@ -24,7 +24,7 @@ ms.locfileid: "60627123"
 > [!NOTE]
 > Преобразования строк ALTER будет работать только на приемники базы данных в потоке данных. Действия, которые назначены строк (insert, update, delete, upsert) не будет выполняться во время сеансов отладки. Необходимо добавить задачу выполнения потока данных конвейера и использовать конвейер debug или триггеры для применения политик строки alter на таблицах базы данных.
 
-## <a name="view-policies"></a>Просмотр политик
+## <a name="view-policies"></a>Просмотреть политики
 
 Переключиться в режим потока отладки данных, а затем просмотрите результаты политик строки alter в области предварительного просмотра данных. Выполнение в режиме потока отладки данных строку alter не даст DDL и DML действия, выполняемые на целевом сервере. Чтобы получить эти действия, которые происходят, выполнение потока данных внутри потока данных, выполните действия в конвейере.
 

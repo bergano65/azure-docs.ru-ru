@@ -9,18 +9,18 @@ ms.date: 03/21/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: 48ebbabca8d38db3a7c1344981f79991de29df80
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 3d5bfa2426d58fa5a09d2203272536eec7fa9c55
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65154393"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65789962"
 ---
 # <a name="azure-storage-security-guide"></a>Руководство по безопасности службы хранилища Azure
 
 Служба хранилища Azure предоставляет полный набор возможностей обеспечения безопасности, которые в совокупности позволяют разработчикам создавать защищенные приложения.
 
-- Все данные, записываемые в службу хранилища Azure, автоматически шифруются с помощью [шифрования службы хранилища (SSE)](storage-service-encryption.md). Дополнительные сведения см. в статье [Announcing Default Encryption for Azure Blobs, Files, Table and Queue Storage](https://azure.microsoft.com/blog/announcing-default-encryption-for-azure-blobs-files-table-and-queue-storage/) (Представление стандартных методов шифрования для хранилища BLOB-объектов, файлов, таблиц и очередей Azure).
+- Все данные (включая метаданные), записи в хранилище Azure автоматически шифруются с помощью [шифрование службы хранилища (SSE)](storage-service-encryption.md). Дополнительные сведения см. в статье [Announcing Default Encryption for Azure Blobs, Files, Table and Queue Storage](https://azure.microsoft.com/blog/announcing-default-encryption-for-azure-blobs-files-table-and-queue-storage/) (Представление стандартных методов шифрования для хранилища BLOB-объектов, файлов, таблиц и очередей Azure).
 - Служба хранилища Azure поддерживает Azure Active Directory (Azure AD) и управление доступом на основе ролей (RBAC) для операций управления ресурсами и для операций с данными, как описано ниже:   
     - Роли RBAC можно назначать субъектам безопасности в пределах учетной записи хранения и использовать Azure AD для авторизации операций управления ресурсами, таких как управление ключами.
     - Интеграция Azure AD поддерживается для операций с данными больших двоичных объектов и очередей. Роли RBAC можно назначать субъекту безопасности или управляемому удостоверению для ресурсов Azure в пределах подписки, группы ресурсов, учетной записи хранения, отдельного контейнера или очереди. Дополнительные сведения см. в статье об [аутентификации доступа к службе хранилища Azure с помощью Azure Active Directory](storage-auth-aad.md).   
@@ -238,10 +238,9 @@ http://mystorage.blob.core.windows.net/mycontainer/myblob.txt (URL to the blob)
     В этой статье приводятся примеры использования подписанного URL-адреса уровня службы с BLOB-объектами, сообщениями в очереди, диапазонами в таблице и файлами.
   * [Создание подписанного URL-адреса уровня службы](https://msdn.microsoft.com/library/dn140255.aspx)
   * [Создание подписанного URL-адреса уровня учетной записи](https://msdn.microsoft.com/library/mt584140.aspx)
-* Учебники по использованию клиентской библиотеки .NET для создания подписанных URL-адресов и хранимых политик доступа.
 
+* Это учебник по использованию клиентской библиотеки .NET для создания подписей общего доступа и хранимых политик доступа.
   * [Использование подписанных URL-адресов (SAS)](../storage-dotnet-shared-access-signature-part-1.md)
-  * [Подписанные URL-адреса. Часть 2: создание и использование подписанного URL-адреса в службе BLOB-объектов](../blobs/storage-dotnet-shared-access-signature-part-2.md)
 
     Эта статья содержит описание модели SAS, примеры подписанных URL-адресов и рекомендации по их использованию. Также рассматривается процедура отзыва предоставленных разрешений.
 

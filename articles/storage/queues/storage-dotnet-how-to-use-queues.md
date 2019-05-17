@@ -10,12 +10,12 @@ ms.date: 06/13/2018
 ms.author: mhopkins
 ms.reviewer: cbrooks
 ms.subservice: queues
-ms.openlocfilehash: 8ae34f830f0d1373d97063e93a561cd38c7093ab
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 81bf178a97944d4110cf99a442163229a283bd25
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65152225"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65797755"
 ---
 # <a name="get-started-with-azure-queue-storage-using-net"></a>Приступая к работе с хранилищем очередей Azure с помощью .NET
 [!INCLUDE [storage-selector-queue-include](../../../includes/storage-selector-queue-include.md)]
@@ -28,7 +28,7 @@ ms.locfileid: "65152225"
 ### <a name="about-this-tutorial"></a>О данном учебнике
 В этом руководстве показано, как написать код .NET для некоторых распространенных сценариев использования хранилища очередей Azure. Эти сценарии включают создание и удаление очередей, а также добавление, чтение и удаление сообщений.
 
-**Предполагаемое время выполнения:** 45 минут
+**Предполагаемое время выполнения:** 45 минут
 
 **Предварительные требования:**
 
@@ -48,8 +48,8 @@ ms.locfileid: "65152225"
 
 ```csharp
 using Microsoft.Azure; // Namespace for CloudConfigurationManager
-using Microsoft.WindowsAzure.Storage; // Namespace for CloudStorageAccount
-using Microsoft.WindowsAzure.Storage.Queue; // Namespace for Queue storage types
+using Microsoft.Azure.Storage; // Namespace for CloudStorageAccount
+using Microsoft.Azure.Storage.Queue; // Namespace for Queue storage types
 ```
 
 ### <a name="copy-your-credentials-from-the-azure-portal"></a>Копирование учетных данных с портала Azure
@@ -75,7 +75,7 @@ CloudQueueClient queueClient = storageAccount.CreateCloudQueueClient();
     
 Теперь вы можете написать код, который считывает и записывает данные в хранилище очередей.
 
-## <a name="create-a-queue"></a>Создание очереди
+## <a name="create-a-queue"></a>Создать очередь
 В этом примере показано, как создать очередь, если она не существует:
 
 ```csharp

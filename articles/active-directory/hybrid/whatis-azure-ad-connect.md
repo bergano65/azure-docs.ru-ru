@@ -11,12 +11,12 @@ ms.date: 02/26/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a29a00c34d4c60e6ba2b4fd6b0b413873301af5c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 48b81d508711f35a75efe1c93fe0a5556c5bb960
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60459556"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65784464"
 ---
 # <a name="what-is-azure-ad-connect"></a>Что такое Azure AD Connect?
 
@@ -62,6 +62,11 @@ Azure AD Connect Health для AD FS поддерживает AD FS 2.0 в Windo
 |Простота развертывания и управления.|[Быстрая установка агента](how-to-connect-health-agent-install.md#installing-the-azure-ad-connect-health-agent-for-ad-fs).</br>Автообновление агента до последней версии.</br>Получение доступа к данным на портале за считаные минуты.|
 Расширенные [метрики использования](how-to-connect-health-adfs.md#usage-analytics-for-ad-fs).|Основные приложения.</br>Расположение в сети и TCP-подключение.</br>Количество запросов маркера на каждый сервер.|
 |Удобство работы для пользователей|Панель мониторинга на портале Azure.</br>[Оповещения по электронной почте](how-to-connect-health-adfs.md#alerts-for-ad-fs).|
+
+
+## <a name="license-requirements-for-using-azure-ad-connect"></a>Требования к лицензиям для использования Azure AD Connect
+
+[!INCLUDE [active-directory-free-license.md](../../../includes/active-directory-free-license.md)]
 
 
 

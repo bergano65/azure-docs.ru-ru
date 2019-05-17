@@ -2,20 +2,20 @@
 title: Заметки о выпуске базы данных Azure SQL | Документация Майкрософт
 description: Дополнительные сведения о новых функциях и улучшениях в службу базы данных SQL Azure и в документации по базе данных SQL Azure
 services: sql-database
-author: CarlRabeler
+author: stevestein
 manager: craigg
 ms.service: sql-database
 ms.subservice: service
 ms.devlang: ''
 ms.topic: conceptual
-ms.date: 05/07/2019
-ms.author: carlrab
-ms.openlocfilehash: 923e475cd690902c61c2f89578c2c62effe4cd86
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.date: 05/15/2019
+ms.author: sstein
+ms.openlocfilehash: d527c4fed9c43e62d815078c049d4d8e6f8a46b7
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65406580"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65787713"
 ---
 # <a name="sql-database-release-notes"></a>Заметки о выпуске базы данных SQL
 
@@ -25,27 +25,26 @@ ms.locfileid: "65406580"
 
 | Компонент | Сведения |
 | ---| --- |
+| Восстановление ускоренной базы данных с помощью отдельных баз данных и пулов эластичных баз данных | Сведения см. в разделе [Ускорение восстановления базы данных](sql-database-accelerated-database-recovery.md).|
+|Приблизительный подсчет различных объектов|Сведения см. в разделе [приблизительное Count Distinct](https://docs.microsoft.com/sql/relational-databases/performance/intelligent-query-processing#approximate-query-processing).|
+|Пакетный режим Rowstore (при уровне совместимости 150)|Сведения см. в разделе [пакетный режим Rowstore](https://docs.microsoft.com/sql/relational-databases/performance/intelligent-query-processing#batch-mode-on-rowstore).|
+| Обнаружение и классификация данных  |Сведения см. в разделе [базы данных SQL Azure и хранилище данных SQL обнаружение и классификация данных](sql-database-data-discovery-and-classification.md).|
+| Задания обработки эластичных баз данных | Сведения см. в разделе [создания, настройки и управления масштабируемыми](elastic-jobs-overview.md). |
+| Эластичные запросы | Сведения см. в разделе [Обзор эластичных запросов](sql-database-elastic-query-overview.md). |
+| Эластичные транзакции | [Распределенные транзакции по облачным базам данных](sql-database-elastic-transactions-overview.md). |
+| Параметры сортировки экземпляра с помощью управляемых экземпляров |Сведения см. в разделе [использование PowerShell с помощью шаблона Azure Resource Manager для создания управляемого экземпляра базы данных SQL Azure](./scripts/sql-managed-instance-create-powershell-azure-resource-manager-template.md).|
+|Обратной связи (режим строк) (на уровне совместимости 150)|Сведения см. в разделе [обратную связь с выделением памяти (в режиме строки)](https://docs.microsoft.com/sql/relational-databases/performance/intelligent-query-processing#row-mode-memory-grant-feedback).|
+| Редактор запросов на портале Azure |Сведения см. в разделе [использование редактора запросов SQL на портале Azure для подключения и запроса данных](sql-database-connect-query-portal.md).|
+| Службы R, / машинное обучение с помощью отдельных баз данных и пулов эластичных баз данных |Сведения см. в разделе [служб машинного обучения в базе данных SQL Azure](https://docs.microsoft.com/sql/advanced-analytics/what-s-new-in-sql-server-machine-learning-services?view=sql-server-2017#machine-learning-services-in-azure-sql-database).|
+| Повторное создание баз данных с управляемых экземпляров |Сведения см. в разделе [повторного создания удалении баз данных в управляемый экземпляр SQL Azure](https://medium.com/azure-sqldb-managed-instance/re-create-dropped-databases-in-azure-sql-managed-instance-dc369ed60266).|
+| Репликация с помощью управляемых экземпляров |Сведения см. в разделе [Настройка репликации в базе данных управляемого экземпляра базы данных SQL Azure](replication-with-sql-database-managed-instance.md).|
 | Уровень бессерверных вычислений | Сведения см. в разделе [базы данных SQL без сервера (Предварительная версия)](sql-database-serverless.md).|
-| Задания обработки эластичных баз данных | Сведения см. в разделе [создавать, настраивать и администрировать задания обработки эластичных БД](elastic-jobs-overview.md) |
-| Эластичные транзакции | [Распределенные транзакции по облачным базам данных](sql-database-elastic-transactions-overview.md) |
-| Эластичные запросы | Сведения см. в разделе [Обзор эластичных запросов](sql-database-elastic-query-overview.md) |
-| Репликация с помощью управляемых экземпляров |Сведения см. в разделе [Настройка репликации в базе данных управляемого экземпляра базы данных SQL Azure](replication-with-sql-database-managed-instance.md)|
-| Параметры сортировки экземпляра с помощью управляемых экземпляров |Сведения см. в разделе [использование PowerShell с помощью шаблона Azure Resource Manager для создания управляемого экземпляра базы данных SQL Azure](./scripts/sql-managed-instance-create-powershell-azure-resource-manager-template.md)|
-| Службы R, / машинное обучение с помощью отдельных баз данных и пулов эластичных баз данных |Сведения см. в разделе [служб машинного обучения в базе данных SQL Azure](https://docs.microsoft.com/sql/advanced-analytics/what-s-new-in-sql-server-machine-learning-services?view=sql-server-2017#machine-learning-services-in-azure-sql-database)|
-| Восстановление ускоренной базы данных с помощью отдельных баз данных и пулов эластичных баз данных | Сведения см. в разделе [Ускорение восстановления базы данных](sql-database-accelerated-database-recovery.md)|
-| Обнаружение и классификация данных  |Сведения см. в разделе [базы данных SQL Azure и хранилище данных SQL обнаружение и классификация данных](sql-database-data-discovery-and-classification.md)|
-| Прозрачное шифрование данных (TDE) с перевести собственных ключей (BYOK) с помощью управляемых экземпляров |Сведения см. в разделе [Azure прозрачного шифрования данных SQL с помощью управляемых клиентом ключей в хранилище ключей Azure: Поддержка создания собственных ключей использования](transparent-data-encryption-byok-azure-sql.md)|
-| Повторное создание баз данных с управляемых экземпляров |Сведения см. в разделе [повторного создания удалении баз данных в управляемый экземпляр SQL Azure](https://medium.com/azure-sqldb-managed-instance/re-create-dropped-databases-in-azure-sql-managed-instance-dc369ed60266)|
-| Обнаружение угроз с помощью управляемых экземпляров |Сведения см. в разделе [Настройка обнаружения угроз для базы данных SQL управляемого экземпляра](sql-database-managed-instance-threat-detection.md)|
-| Гипермасштабируемый уровни служб для отдельных баз данных |Сведения см. в разделе [Гипермасштабируемого уровня службы для до 100 ТБ](sql-database-service-tier-hyperscale.md)|
-| Редактор запросов на портале Azure |Сведения см. в разделе [использование редактора запросов SQL на портале Azure для подключения и запроса данных](sql-database-connect-query-portal.md)|
-|Приблизительный подсчет различных объектов|Сведения см. в разделе [приблизительное Count Distinct](https://docs.microsoft.com/sql/relational-databases/performance/intelligent-query-processing#approximate-query-processing)|
-|Пакетный режим Rowstore (при уровне совместимости 150)|Сведения см. в разделе [пакетный режим Rowstore](https://docs.microsoft.com/sql/relational-databases/performance/intelligent-query-processing#batch-mode-on-rowstore)|
-|Обратной связи (режим строк) (на уровне совместимости 150)|Сведения см. в разделе [обратную связь с выделением памяти (в режиме строки)](https://docs.microsoft.com/sql/relational-databases/performance/intelligent-query-processing#row-mode-memory-grant-feedback)|
-|Таблица компиляции переменной отложенного (при уровне совместимости 150)|Сведения см. в разделе [переменной отложенной компиляции таблицы](https://docs.microsoft.com/sql/relational-databases/performance/intelligent-query-processing#table-variable-deferred-compilation)|
-|Аналитика SQL|Сведения см. в разделе [аналитика SQL Azure](../azure-monitor/insights/azure-sql.md)|
-| Поддержку часовых поясов для управляемых экземпляров|Дополнительные сведения см. в разделе [часовой пояс в базе данных управляемого экземпляра SQL Azure](sql-database-managed-instance-timezone.md)|
-|||
+|Аналитика SQL|Сведения см. в разделе [аналитика SQL Azure](../azure-monitor/insights/azure-sql.md).|
+|Таблица компиляции переменной отложенного (при уровне совместимости 150)|Сведения см. в разделе [переменной отложенной компиляции таблицы](https://docs.microsoft.com/sql/relational-databases/performance/intelligent-query-processing#table-variable-deferred-compilation).|
+| Обнаружение угроз с помощью управляемых экземпляров |Сведения см. в разделе [Настройка обнаружения угроз для базы данных SQL управляемого экземпляра](sql-database-managed-instance-threat-detection.md).|
+| Поддержку часовых поясов для управляемых экземпляров|Дополнительные сведения см. в разделе [часовой пояс в базе данных управляемого экземпляра SQL Azure](sql-database-managed-instance-timezone.md).|
+| Прозрачное шифрование данных (TDE) с перевести собственных ключей (BYOK) с помощью управляемых экземпляров |Сведения см. в разделе [Azure прозрачного шифрования данных SQL с помощью управляемых клиентом ключей в хранилище ключей Azure: Поддержка создания собственных ключей использования](transparent-data-encryption-byok-azure-sql.md).|
+| &nbsp; |
 
 ## <a name="may-2019"></a>Мая 2019 г.
 
@@ -53,9 +52,18 @@ ms.locfileid: "65406580"
 
 | Улучшения службы | Сведения |
 | --- | --- |
-|Уровень служб "Гипермасштабирование"| Дополнительные сведения см. в разделе [Гипермасштабируемого уровня службы для до 100 ТБ](sql-database-service-tier-hyperscale.md).|
-|Уровень бессерверных вычислений| Дополнительные сведения см. в разделе [базы данных SQL без сервера (Предварительная версия)](sql-database-serverless.md).|
+|Выпущена общедоступная версия уровня служб Гипермасштабируемого| Дополнительные сведения см. в разделе [Гипермасштабируемого уровня службы для до 100 ТБ](sql-database-service-tier-hyperscale.md) и [получить высокопроизводительных масштабирования для рабочих нагрузок базы данных Azure с крупномасштабным](https://azure.microsoft.com/blog/get-high-performance-scaling-for-your-azure-database-workloads-with-hyperscale/).|
+|Уровень бессерверных вычислений, выпущена в общедоступной предварительной версии | Дополнительные сведения см. в разделе [базы данных SQL без сервера (Предварительная версия)](sql-database-serverless.md).|
+| Скорость журнала транзакций и операций ввода-ВЫВОДА целевого увеличена для баз данных, использующих модель приобретения на основе виртуальных ядер| Дополнительные сведения см. в разделе [ограничения ресурсов для отдельных баз данных, используя модель приобретения на основе виртуальных ядер](https://docs.microsoft.com/azure/sql-database/sql-database-vcore-resource-limits-single-databases) и [ограничения ресурсов для отдельных баз данных, используя модель приобретения на основе DTU](https://docs.microsoft.com/azure/sql-database/sql-database-dtu-resource-limits-single-databases).
+| &nbsp; |
 
+### <a name="documentation-improvements"></a>Улучшения документации
+
+| Улучшения документации | Сведения |
+| --- | --- |
+| Документация уровня Гипермасштабируемые службы, обновлено для выпуска общедоступной версии| Дополнительные сведения см. в разделе [Гипермасштабируемого уровня службы для до 100 ТБ](sql-database-service-tier-hyperscale.md).|
+|Документация уровня бессерверных вычислений, выпущен вместе с общедоступной предварительной версии| Дополнительные сведения см. в разделе [базы данных SQL без сервера (Предварительная версия)](sql-database-serverless.md).|
+| &nbsp; |
 
 ## <a name="april-2019"></a>Апреля 2019 г.
 
@@ -63,15 +71,18 @@ ms.locfileid: "65406580"
 
 | Улучшения службы | Сведения |
 | --- | --- |
-| Общедоступные конечные точки для управляемого экземпляра | Дополнительные сведения см. в разделе [с помощью базы данных SQL управляемого экземпляра безопасно с общедоступной конечной точки](sql-database-managed-instance-public-endpoint-securely.md)
-| Поддержку часовых поясов для управляемого экземпляра | Дополнительные сведения см. в разделе [часовой пояс в базе данных управляемого экземпляра SQL Azure (Предварительная версия)](sql-database-managed-instance-timezone.md)
+| Общедоступные конечные точки для управляемого экземпляра в общедоступной предварительной версии| Дополнительные сведения см. в разделе [с помощью базы данных SQL управляемого экземпляра безопасно с общедоступной конечной точки](sql-database-managed-instance-public-endpoint-securely.md).|
+| Поддержку часовых поясов для управляемого экземпляра в общедоступной предварительной версии| Дополнительные сведения см. в разделе [часовой пояс в базе данных управляемого экземпляра SQL Azure](sql-database-managed-instance-timezone.md).|
+| Обеспечение безопасности баз данных SQL Azure с управляемыми удостоверениями в второй общедоступной предварительной версии выпуска| См. в разделе [Защита баз данных SQL Azure с помощью управляемых удостоверений стал проще](https://azure.microsoft.com/blog/securing-azure-sql-databases-with-managed-identities-just-got-easier/).|
+| &nbsp; |
 
 ### <a name="documentation-improvements"></a>Улучшения документации
 
 | Улучшения документации | Сведения |
 | --- | --- |
-| Общедоступные конечные точки для управляемого экземпляра | Дополнительные сведения см. в разделе [с помощью базы данных SQL управляемого экземпляра безопасно с общедоступной конечной точки](sql-database-managed-instance-public-endpoint-securely.md)
-| Поддержку часовых поясов для управляемого экземпляра | Дополнительные сведения см. в разделе [часовой пояс в базе данных управляемого экземпляра SQL Azure (Предварительная версия)](sql-database-managed-instance-timezone.md)
+| Общедоступные конечные точки для управляемого экземпляра в общедоступной предварительной версии| Дополнительные сведения см. в разделе [с помощью базы данных SQL управляемого экземпляра безопасно с общедоступной конечной точки](sql-database-managed-instance-public-endpoint-securely.md).|
+| Поддержку часовых поясов для управляемого экземпляра в общедоступной предварительной версии| Дополнительные сведения см. в разделе [часовой пояс в базе данных управляемого экземпляра SQL Azure](sql-database-managed-instance-timezone.md). |
+| Управление ресурсами в базе данных SQL Azure | Дополнительные сведения см. в разделе [управление ресурсами в базе данных SQL Azure](https://azure.microsoft.com/blog/resource-governance-in-azure-sql-database/). || &nbsp; |
 
 ## <a name="march-2019"></a>Марта 2019 г.
 
@@ -79,14 +90,13 @@ ms.locfileid: "65406580"
 
 | Улучшения службы | Сведения |
 | --- | --- |
-| Общая доступность: поддержка горизонтального масштабирования для чтения для службы "База данных SQL Azure" | Дополнительные сведения см. в разделе [масштабирование для чтения](sql-database-read-scale-out.md)|
+| Добавлена поддержка горизонтального масштабирования чтения для базы данных SQL Azure выпущена общедоступная версия | Дополнительные сведения см. в разделе [масштабирование для чтения](sql-database-read-scale-out.md).|
 | &nbsp; |
 
 ### <a name="documentation-improvements"></a>Улучшения документации
 
 | Улучшения документации | Сведения |
 | --- | --- |
-| Поддержку часовых поясов для управляемых экземпляров|Дополнительные сведения см. в разделе [часовой пояс в базе данных управляемого экземпляра SQL Azure](sql-database-managed-instance-timezone.md)|
 | Добавлен журнал ограничения для отдельных баз данных|Дополнительные сведения см. в разделе [единый ограничения ресурсов базы данных виртуальное](sql-database-vcore-resource-limits-single-databases.md).|
 | Добавлен журнал ограничения для эластичных пулов и баз данных в составе пула|Дополнительные сведения см. в разделе [эластичных пулов ограничения ресурсов виртуальное](sql-database-vcore-resource-limits-elastic-pools.md).|
 | Добавлена управления скорость журнала транзакций| Добавить новое содержимое для [управления скорость журнала транзакций](sql-database-resource-limits-database-server.md#transaction-log-rate-governance).|
@@ -102,7 +112,7 @@ ms.locfileid: "65406580"
 |Создание возобновляемого индекса в сети теперь общедоступна| Дополнительные сведения см. в разделе [Create Index](https://docs.microsoft.com/sql/t-sql/statements/create-index-transact-sql).|
 |Поддержка управляемого экземпляра улучшенные таблицы маршрутов| Дополнительные сведения см. в разделе [требований к сети](sql-database-managed-instance-connectivity-architecture.md#network-requirements).|
 |Переименование базы данных поддерживается в управляемом экземпляре | Дополнительные сведения см. в разделе [ALTER DATABASE](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-mi-current) и [sp_rename](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-rename-transact-sql) синтаксис.|
-|База данных SQL как источник ссылочных данных для Stream Analytics. | Дополнительные сведения см. в разделе [Stream Analytics](https://azure.microsoft.com/services/stream-analytics/).|
+|База данных SQL как источник ссылочных данных для Stream Analytics. | Дополнительные сведения см. в разделе [Stream Analytics](https://azure.microsoft.com/services/stream-analytics/) и [Azure Stream Analytics теперь поддерживает базы данных SQL Azure как входные справочные данные](https://azure.microsoft.com/blog/azure-stream-analytics-now-supports-azure-sql-database-as-reference-data-input/).|
 |Data Migration Assistance добавляет поддержку для управляемого экземпляра. |Дополнительные сведения см. в разделе [новые возможности в DMA](https://docs.microsoft.com/sql/dma/dma-whatsnew).|
 |SQL Server Migration Assistant добавляет поддержку для оценки готовности целевой для управляемого экземпляра. | Дополнительные сведения см. в разделе [SQL Server Migration Assistant](https://docs.microsoft.com/sql/ssma/sql-server-migration-assistant).
 |Служба миграции данных поддерживает перенос из Amazon служб удаленных рабочих СТОЛОВ в управляемый экземпляр | Дополнительные сведения см. в статье [Руководство. Перенос служб удаленных рабочих СТОЛОВ SQL Server в базу данных SQL Azure или базы данных SQL управляемого экземпляра через Интернет с помощью DMS](../dms/tutorial-rds-sql-server-azure-sql-and-managed-instance-online.md).|
@@ -116,7 +126,6 @@ ms.locfileid: "65406580"
 |Размеры обновленной базы данных tempdb для модели приобретения на основе DTU | Дополнительные сведения см. в разделе [базы данных Tempdb в базе данных SQL](https://docs.microsoft.com/sql/relational-databases/databases/tempdb-database#tempdb-database-in-sql-database).|
 |Обновленные импорта и экспорта с помощью bacpac-файл для поддержки управляемого экземпляра| Дополнительные сведения см. в разделе [Импорт из bacpac-файла](sql-database-import.md) и [Экспорт в bacpac-файла](sql-database-export.md). |
 | &nbsp; |
-
 
 ## <a name="january-2019"></a>Январь 2019 г.
 
@@ -133,12 +142,12 @@ ms.locfileid: "65406580"
 
 | Улучшения документации | Сведения |
 | --- | --- |
-| Управляемые экземпляры и репликации транзакций | Добавлена статья об использовании [репликация транзакций с управляемых экземпляров](replication-with-sql-database-managed-instance.md) |
+| Управляемые экземпляры и репликации транзакций | Добавлена статья об использовании [репликация транзакций с управляемых экземпляров](replication-with-sql-database-managed-instance.md). |
 | Добавлена Azure AD с руководством управляемого экземпляра | Это [Azure AD с управляемым экземпляром](sql-database-managed-instance-aad-security-tutorial.md) руководства вы узнаете необходимо настроить и проверить управляемый экземпляр безопасности с помощью имен входа Azure AD. |
-| Обновленное содержимое для задания службы автоматизации с помощью скриптов Transact-SQL | Обновлен и уточнен содержимое с помощью [задания службы автоматизации с помощью скриптов Transact-SQL](sql-database-job-automation-overview.md) для отдельных баз данных, эластичных пулов и управляемых экземпляров |
-| Содержимое безопасности для управляемых экземпляров обновлены | Обновлен и уточнен содержимое для [модель безопасности для управляемых экземпляров](sql-database-security-overview.md)и различия с помощью модели безопасности для отдельных баз данных и эластичных пулов |
-| Обновить все краткие руководства и учебники | Все краткие руководства и учебники в [документации](https://docs.microsoft.com/azure/sql-database) были обновлены и обновляются в соответствии с изменениями на портале Azure |
-| Общие сведения о добавленных краткие руководства | Обзор руководства для добавления [отдельных баз данных](sql-database-quickstart-guide.md) и [управляемые экземпляры](sql-database-managed-instance-quickstart-guide.md) |
+| Обновленное содержимое для задания службы автоматизации с помощью скриптов Transact-SQL | Обновлен и уточнен содержимое с помощью [задания службы автоматизации с помощью скриптов Transact-SQL](sql-database-job-automation-overview.md) для отдельных баз данных, эластичных пулов и управляемых экземпляров. |
+| Содержимое безопасности для управляемых экземпляров обновлены | Обновлен и уточнен содержимое для [модель безопасности для управляемых экземпляров](sql-database-security-overview.md)и различия с помощью модели безопасности для отдельных баз данных и эластичных пулов. |
+| Обновить все краткие руководства и учебники | Все краткие руководства и учебники в [документации](https://docs.microsoft.com/azure/sql-database) были обновлены и обновляются в соответствии с изменениями на портале Azure. |
+| Общие сведения о добавленных краткие руководства | Обзор руководства для добавления [отдельных баз данных](sql-database-quickstart-guide.md) и [управляемые экземпляры](sql-database-managed-instance-quickstart-guide.md). |
 | Добавлена база данных SQL. словарь терминов | Это [глоссарий терминов](sql-database-glossary-terms.md) статья содержит список терминах баз данных SQL, а также ссылки на основной странице концептуальной, поясняет термин в контексте. |
 | &nbsp; |
 

@@ -5,16 +5,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: article
-ms.date: 04/30/2019
+ms.date: 05/15/2019
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: 6eb7de7810ce23aed4031cca9f038da7149a6f9c
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 1e95adbd1a564fb34d3f0506ac1cc25bc5a63c62
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65153089"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65790053"
 ---
 # <a name="azure-storage-encryption-for-data-at-rest"></a>Шифрование хранилища Azure для неактивных данных
 
@@ -51,6 +51,9 @@ ms.locfileid: "65153089"
 - [Настройка управляемых пользователем ключей для шифрования службы хранилища Azure на портале Azure](storage-encryption-keys-portal.md)
 - [Настройка управляемых пользователем ключей для шифрования службы хранилища Azure с помощью PowerShell](storage-encryption-keys-powershell.md)
 - [Использовать управляемые клиентом ключи с помощью шифрования службы хранилища Azure с помощью Azure CLI](storage-encryption-keys-cli.md)
+
+> [!IMPORTANT]
+> Управляемые клиентом ключи используют управляемые удостоверения для ресурсов Azure, в состав Azure Active Directory (Azure AD). При переносе подписки из одного каталога Azure AD к другой, управляемого удостоверения не обновляются и управляемыми клиентом ключами может перестать работать. Дополнительные сведения см. в разделе **передача подписки между каталогами Azure AD** в [часто задаваемые вопросы и известные проблемы с управляемые удостоверения для ресурсов Azure](../../active-directory/managed-identities-azure-resources/known-issues.md#transferring-a-subscription-between-azure-ad-directories).  
 
 > [!NOTE]  
 > Управляемые клиентом ключи не поддерживаются для [управляемые диски Azure](../../virtual-machines/windows/managed-disks-overview.md).

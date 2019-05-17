@@ -12,12 +12,12 @@ ms.date: 12/14/2017
 ms.author: glenga
 ms.reviewer: sunayv
 ms.custom: ''
-ms.openlocfilehash: 31e18285bf6211e73d994e037a91adc396972715
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.openlocfilehash: d3e777b5611dec382dc4eaaac5ec1594abcdab31
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62106976"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65787674"
 ---
 # <a name="call-a-function-from-microsoft-flow"></a>Вызов функции из Microsoft Flow
 
@@ -36,6 +36,8 @@ ms.locfileid: "62106976"
 > * создавать поток для отправки электронной почты, если ремонт экономически оправдан;
 > * запускать потоки.
 
+[!INCLUDE [functions-openapi-note](../../includes/functions-openapi-note.md)]
+
 ## <a name="prerequisites"></a>Технические условия
 
 + Активная [учетная запись Microsoft Flow](https://flow.microsoft.com/documentation/sign-up-sign-in/) с такими же учетными данными, что и в учетной записи Azure. 
@@ -48,7 +50,7 @@ ms.locfileid: "62106976"
 | Столбец списка     | Тип данных           | Примечания                                    |
 |-----------------|---------------------|------------------------------------------|
 | **Заголовок**           | Одна строка текста | Имя турбины                      |
-| **Дата_последнего_обслуживания** | Дата                |                                          |
+| **Дата_последнего_обслуживания** | Date                |                                          |
 | **Максимальная_мощность**       | число              | Мощность турбины в кВт/ч            |
 | **Требуется_обслуживание** | Да или нет              |                                          |
 | **Ожидаемые_затраты** | число              | Предполагаемое время для восстановления, в часах |

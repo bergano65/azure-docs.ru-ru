@@ -8,15 +8,15 @@ services: search
 ms.service: search
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 05/02/2019
+ms.date: 05/16/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: bf78cd9b70aa4a82ef96fdd529d3ee5b1641038c
-ms.sourcegitcommit: eea74d11a6d6ea6d187e90e368e70e46b76cd2aa
+ms.openlocfilehash: 3fa463cb7178fa5cc2108383047a7ca94ffb48a3
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2019
-ms.locfileid: "65035356"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65797379"
 ---
 # <a name="monitor-resource-consumption-and-query-activity-in-azure-search"></a>Мониторинг использования ресурсов и обработки запросов в Поиске Azure
 
@@ -77,13 +77,15 @@ ms.locfileid: "65035356"
 
 1. Если у вас еще нет учетной записи хранения, [создайте ее](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account). Ее можно поместить в ту же группу ресурсов, что и Поиск Azure, чтобы упростить очистку, если вы захотите удалить все ресурсы, используемые в этом упражнении.
 
+   Учетной записи хранения должен существовать в той же области, что службы поиска Azure.
+
 2. Откройте страницу "Обзор" для службы поиска. Прокрутите вниз область навигации слева до раздела **Мониторинг** и щелкните **Включить мониторинг**.
 
    ![Включение мониторинга](./media/search-monitor-usage/enable-monitoring.png "Включение мониторинга")
 
 3. Выберите данные для экспорта: журналы, метрики или оба варианта. Можно скопировать его в учетную запись хранения, отправить его в концентратор событий или экспортировать его в Azure Monitor журналы.
 
-   Для архивации данных в хранилище BLOB-объектов должна существовать только учетная записи хранения. Контейнеры и большие двоичные объекты будут создаваться при экспорте данных журнала.
+   Для архивации данных в хранилище BLOB-объектов должна существовать только учетная записи хранения. Контейнеры и большие двоичные объекты будут создаваться по требованию при экспорте данных журнала.
 
    ![Настройка архивного хранилища BLOB-объектов](./media/search-monitor-usage/configure-blob-storage-archive.png "Настройка архивного хранилища BLOB-объектов")
 

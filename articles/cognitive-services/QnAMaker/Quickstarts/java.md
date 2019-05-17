@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 02/13/2019
 ms.author: diberry
 ms.custom: seodec18
-ms.openlocfilehash: 0e91aefb800eba42b715cb70d42ce09ad134fabb
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 4b3c51898e26be5c502dbe4575daadf8694ff3d1
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60912469"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65791486"
 ---
 # <a name="how-to-use-the-qna-maker-rest-api-with-java"></a>Использование REST API службы QnA Maker с Java 
 <a name="HOLTop"></a>
@@ -50,7 +50,7 @@ ms.locfileid: "60912469"
 
 ## <a name="create-knowledge-base"></a>Создание базы знаний
 
-В приведенном ниже коде с помощью метода [Create](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75ff) (Создание) создается новая база знаний.
+В приведенном ниже коде с помощью метода [Create](https://go.microsoft.com/fwlink/?linkid=2092179) (Создание) создается новая база знаний.
 
 1. Создайте новый проект Java в любой удобной интегрированной среде разработки.
 2. Добавьте указанный ниже код.
@@ -103,7 +103,7 @@ public class CreateKB {
 
 // We'll serialize these classes into JSON for our request to the server.
 // For the JSON request schema, see:
-// https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75ff
+// https://go.microsoft.com/fwlink/?linkid=2092179
     public static class KB {
         String name;
         Question[] qnaList;
@@ -214,7 +214,7 @@ public class CreateKB {
 
         Question q = new Question();
         q.id = 0;
-        q.answer = "You can use our REST APIs to manage your Knowledge Base. See here for details: https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da7600";
+        q.answer = "You can use our REST APIs to manage your Knowledge Base. See here for details: https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/update";
         q.source = "Custom Editorial";
         q.questions = new String[]{"How do I programmatically update my Knowledge Base?"};
 
@@ -301,7 +301,7 @@ public class CreateKB {
 
 ## <a name="update-knowledge-base"></a>Обновление базы знаний
 
-Приведенный ниже код позволяет обновить существующую базу знаний с помощью метода [Update](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da7600) (Обновление).
+Приведенный ниже код позволяет обновить существующую базу знаний с помощью метода [Update](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/update) (Обновление).
 
 1. Создайте новый проект Java в любой удобной интегрированной среде разработки.
 2. Добавьте указанный ниже код.
@@ -376,7 +376,7 @@ public class UpdateKB {
 
 // We'll serialize these classes into JSON for our request to the server.
 // For the JSON request schema, see:
-// https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da7600
+// https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/update
     public static class Request {
         Add add;
         Delete delete;
@@ -524,7 +524,7 @@ public class UpdateKB {
 
         Question q = new Question();
         q.id = 0;
-        q.answer = "You can use our REST APIs to manage your Knowledge Base. See here for details: https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da7600";
+        q.answer = "You can use our REST APIs to manage your Knowledge Base. See here for details: https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/update";
         q.source = "Custom Editorial";
         q.questions = new String[]{"How do I programmatically update my Knowledge Base?"};
 
@@ -604,7 +604,7 @@ Press any key to continue.
 
 ## <a name="get-request-status"></a>Получение состояния запроса
 
-Чтобы проверить состояние запроса для создания или обновления базы знаний, можно вызвать метод [Operation](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/operations_getoperationdetails) (Операция). Чтобы увидеть, как используется этот метод, см. пример кода для методов [Create](#Create) (Создание) или [Update](#Update) (Обновление).
+Чтобы проверить состояние запроса для создания или обновления базы знаний, можно вызвать метод [Operation](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/operations/getdetails) (Операция). Чтобы увидеть, как используется этот метод, см. пример кода для методов [Create](#Create) (Создание) или [Update](#Update) (Обновление).
 
 [Вверх](#HOLTop)
 
@@ -612,7 +612,7 @@ Press any key to continue.
 
 ## <a name="publish-knowledge-base"></a>Публикация базы знаний
 
-Приведенный ниже код позволяет опубликовать существующую базу знаний с помощью метода [Publish](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75fe) (Публикация).
+Приведенный ниже код позволяет опубликовать существующую базу знаний с помощью метода [Publish](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/publish) (Публикация).
 
 1. Создайте новый проект Java в любой удобной интегрированной среде разработки.
 2. Добавьте указанный ниже код.
@@ -741,7 +741,7 @@ public class PublishKB {
 
 ## <a name="replace-knowledge-base"></a>Замена базы знаний
 
-Приведенный ниже код позволяет заменить содержимое указанной базы знаний с помощью метода [Replace](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/knowledgebases_publish) (Замена).
+Приведенный ниже код позволяет заменить содержимое указанной базы знаний с помощью метода [Replace](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/replace) (Замена).
 
 1. Создайте новый проект Java в любой удобной интегрированной среде разработки.
 2. Добавьте указанный ниже код.
@@ -797,7 +797,7 @@ public class ReplaceKB {
 
 // We'll serialize these classes into JSON for our request to the server.
 // For the JSON request schema, see:
-// https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/knowledgebases_publish
+// https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/replace
     public static class Request {
         Question[] qnaList;
     }
@@ -869,7 +869,7 @@ public class ReplaceKB {
 
         Question q = new Question();
         q.id = 0;
-        q.answer = "You can use our REST APIs to manage your Knowledge Base. See here for details: https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da7600";
+        q.answer = "You can use our REST APIs to manage your Knowledge Base. See here for details: https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/update";
         q.source = "Custom Editorial";
         q.questions = new String[]{"How do I programmatically update my Knowledge Base?"};
 
@@ -911,7 +911,7 @@ public class ReplaceKB {
 
 ## <a name="download-the-contents-of-a-knowledge-base"></a>Скачивание содержимого базы знаний
 
-Приведенный ниже код позволяет скачать содержимое указанной базы знаний с помощью метода [Download knowledge base](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/knowledgebases_download) (Скачивание базы знаний).
+Приведенный ниже код позволяет скачать содержимое указанной базы знаний с помощью метода [Download knowledge base](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/download) (Скачивание базы знаний).
 
 1. Создайте новый проект Java в любой удобной интегрированной среде разработки.
 2. Добавьте указанный ниже код.
@@ -1023,7 +1023,7 @@ public class GetQnA {
   "qnaDocuments": [
     {
       "id": 1,
-      "answer": "You can use our REST APIs to manage your Knowledge Base. See here for details: https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da7600",
+      "answer": "You can use our REST APIs to manage your Knowledge Base. See here for details: https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/update",
       "source": "Custom Editorial",
       "questions": [
         "How do I programmatically update my Knowledge Base?"
@@ -1198,7 +1198,7 @@ public class GetAnswers {
 
 ## <a name="get-information-about-a-knowledge-base"></a>Получение сведений о базе знаний
 
-Приведенный ниже код позволяет получить сведения об указанной базе знаний с помощью метода [Get knowledge base details](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/knowledgebases_getknowledgebasedetails) (Получение сведений о базе знаний).
+Приведенный ниже код позволяет получить сведения об указанной базе знаний с помощью метода [Get knowledge base details](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/getdetails) (Получение сведений о базе знаний).
 
 1. Создайте новый проект Java в любой удобной интегрированной среде разработки.
 2. Добавьте указанный ниже код.
@@ -1325,7 +1325,7 @@ public class GetKB {
 
 ## <a name="get-all-knowledge-bases-for-a-user"></a>Получение всех баз знаний для пользователя
 
-Приведенный ниже код позволяет получить сведения обо всех базах знаний для конкретного пользователя с помощью метода [Get knowledge bases for user](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/knowledgebases_getknowledgebasesforuser) (Получение баз знаний для пользователя).
+Приведенный ниже код позволяет получить сведения обо всех базах знаний для конкретного пользователя с помощью метода [Get knowledge bases for user](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/listall) (Получение баз знаний для пользователя).
 
 1. Создайте новый проект Java в любой удобной интегрированной среде разработки.
 2. Добавьте указанный ниже код.
@@ -1465,7 +1465,7 @@ Press any key to continue.
 
 ## <a name="delete-a-knowledge-base"></a>Удаление базы знаний
 
-Приведенный ниже код позволяет удалить базу знаний с помощью метода [Delete knowledge base](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/knowledgebases_delete) (Удаление базы знаний).
+Приведенный ниже код позволяет удалить базу знаний с помощью метода [Delete knowledge base](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/delete) (Удаление базы знаний).
 
 1. Создайте новый проект Java в любой удобной интегрированной среде разработки.
 2. Добавьте указанный ниже код.
@@ -1586,7 +1586,7 @@ public class DeleteKB {
 
 ## <a name="get-endpoint-keys"></a>Получение ключей конечной точки
 
-Приведенный ниже код позволяет получить ключи текущей конечной точки с помощью метода [Get endpoint keys](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/endpointkeys_getendpointkeys) (Получение ключей конечной точки).
+Приведенный ниже код позволяет получить ключи текущей конечной точки с помощью метода [Get endpoint keys](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/endpointkeys/getkeys) (Получение ключей конечной точки).
 
 1. Создайте новый проект Java в любой удобной интегрированной среде разработки.
 2. Добавьте указанный ниже код.
@@ -1699,7 +1699,7 @@ public class GetEndpointKeys {
 
 ## <a name="refresh-endpoint-keys"></a>Обновление ключей конечной точки
 
-Приведенный ниже код позволяет повторно создать ключи текущей конечной точки с помощью метода [Refresh endpoint keys](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/endpointkeys_refreshendpointkeys) (Обновление ключей конечной точки).
+Приведенный ниже код позволяет повторно создать ключи текущей конечной точки с помощью метода [Refresh endpoint keys](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/endpointkeys/refreshkeys) (Обновление ключей конечной точки).
 
 1. Создайте новый проект Java в любой удобной интегрированной среде разработки.
 2. Добавьте указанный ниже код.
@@ -1863,7 +1863,7 @@ public class RefreshKeys {
 
 ## <a name="get-word-alterations"></a>Получение вариантов слов
 
-Приведенный ниже код позволяет получить текущие изменения машинных слов с помощью метода [Download alterations](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75fc) (Скачивание изменений).
+Приведенный ниже код позволяет получить текущие изменения машинных слов с помощью метода [Download alterations](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/alterations/get) (Скачивание изменений).
 
 1. Создайте новый проект Java в любой удобной интегрированной среде разработки.
 2. Добавьте указанный ниже код.
@@ -1982,7 +1982,7 @@ public class GetAlterations {
 
 ## <a name="replace-word-alterations"></a>Замена вариантов слов
 
-Приведенный ниже код позволяет заменить текущие изменения машинных слов с помощью метода [Replace alterations](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75fd) (Замена изменений).
+Приведенный ниже код позволяет заменить текущие изменения машинных слов с помощью метода [Replace alterations](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/alterations/replace) (Замена изменений).
 
 1. Создайте новый проект Java в любой удобной интегрированной среде разработки.
 2. Добавьте указанный ниже код.
@@ -2035,7 +2035,7 @@ public class PutAlterations {
 
 // We'll serialize these classes into JSON for our request to the server.
 // For the JSON request schema, see:
-// https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75fd
+// https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/alterations/replace
     public static class Request {
         Alteration[] wordAlterations;
     }
@@ -2131,7 +2131,7 @@ public class PutAlterations {
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [QnA Maker (V4) REST API Reference](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75ff) (Справочник по API REST QnA Maker (V4))
+> [QnA Maker (V4) REST API Reference](https://go.microsoft.com/fwlink/?linkid=2092179) (Справочник по API REST QnA Maker (V4))
 
 ## <a name="see-also"></a>См. также 
 

@@ -1,25 +1,18 @@
 ---
 title: Ограничения и регулирование запросов Azure Resource Manager
 description: В данной статье описывается использование регулирования запросов Azure Resource Manager при достижении ограничений подписки.
-services: azure-resource-manager
-documentationcenter: na
-author: rockboyfor
-ms.assetid: e1047233-b8e4-4232-8919-3268d93a3824
+author: tfitzmac
 ms.service: azure-resource-manager
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: na
-ms.workload: na
-origin.date: 03/05/2019
-ms.date: 03/18/2019
-ms.author: v-yeche
+ms.date: 05/14/2019
+ms.author: tomfitz
 ms.custom: seodec18
-ms.openlocfilehash: 91a776ba13ffaeeb4f8184371ae45a80d829ae46
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: fc731b1abec9c101356a0fa57eef498b58612ab9
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60389735"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65791364"
 ---
 # <a name="throttling-resource-manager-requests"></a>Регулирование запросов Resource Manager
 
@@ -33,12 +26,12 @@ ms.locfileid: "60389735"
 
 По достижении ограничения отображается код состояния HTTP **429 — слишком много запросов**.
 
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+График Azure ресурсов ограничивает число запросов к своим операциям. Действия, описанные в этой статье, чтобы определить, сколько осталось запросов и ответного действия при достижении предела применимы и к график ресурсов. Тем не менее график ресурсов задает скорость свои собственные ограничения и сброса. Дополнительные сведения см. в разделе [регулирования в график ресурсов Azure](../governance/resource-graph/overview.md#throttling).
 
 ## <a name="remaining-requests"></a>Количество оставшихся запросов
 Количество оставшихся запросов можно определить, проверяя заголовки ответов. Запросы на чтение возвращать значение из заголовка на количество оставшихся запросов на чтение. Написать запросы включают в себя значение для количества оставшихся запросов на запись. В приведенной ниже таблице описаны заголовки ответов, в которых можно проверить эти значения.
 
-| Заголовок ответа | ОПИСАНИЕ |
+| Заголовок ответа | Описание |
 | --- | --- |
 | x-ms-ratelimit-remaining-subscription-reads |Оставшееся число запросов на чтение для подписки. Это значение возвращается при операциях чтения. |
 | x-ms-ratelimit-remaining-subscription-writes |Оставшееся число запросов на запись для подписки. Это значение возвращается при операциях записи. |
@@ -61,7 +54,7 @@ response.Headers.GetValues("x-ms-ratelimit-remaining-subscription-reads").GetVal
 В **PowerShell** извлечь значение заголовка можно с помощью операции Invoke-WebRequest.
 
 ```powershell
-$r = Invoke-WebRequest -Uri https://management.chinacloudapi.cn/subscriptions/{guid}/resourcegroups?api-version=2016-09-01 -Method GET -Headers $authHeaders
+$r = Invoke-WebRequest -Uri https://management.azure.com/subscriptions/{guid}/resourcegroups?api-version=2016-09-01 -Method GET -Headers $authHeaders
 $r.Headers["x-ms-ratelimit-remaining-subscription-reads"]
 ```
 
@@ -89,7 +82,7 @@ x-ms-ratelimit-remaining-subscription-reads: 11999
 Чтобы получить ограничение на запись, используйте операцию записи: 
 
 ```powershell
-New-AzResourceGroup -Name myresourcegroup -Location chinanorth -Debug
+New-AzResourceGroup -Name myresourcegroup -Location westus -Debug
 ```
 
 Будет возвращено множество значений, включая следующие:
@@ -128,7 +121,7 @@ msrest.http_logger :     'x-ms-ratelimit-remaining-subscription-reads': '11998'
 Чтобы получить ограничение на запись, используйте операцию записи: 
 
 ```azurecli
-az group create -n myresourcegroup --location chinanorth --verbose --debug
+az group create -n myresourcegroup --location westus --verbose --debug
 ```
 
 Будет возвращено множество значений, включая следующие:
@@ -152,5 +145,3 @@ msrest.http_logger :     'x-ms-ratelimit-remaining-subscription-writes': '1199'
 * Полный пример для PowerShell см. в разделе [Проверьте ограничения Resource Manager для подписки](https://github.com/Microsoft/csa-misc-utils/tree/master/psh-GetArmLimitsViaAPI).
 * Дополнительные сведения об ограничениях и квотах см. в статье [Подписка Azure, границы, квоты и ограничения службы](../azure-subscription-service-limits.md).
 * Сведения об обработке асинхронных запросов REST см. в статье [Track asynchronous Azure operations](resource-manager-async-operations.md) (Отслеживание асинхронных операций Azure).
-
-<!--Update_Description: update meta properties, update cmdlet -->

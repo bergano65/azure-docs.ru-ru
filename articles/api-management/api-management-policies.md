@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/19/2017
 ms.author: apimpm
-ms.openlocfilehash: 711f6395959b3718ca0a094a03c07c4381892104
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: ad57f86e221a98461fcd1dc11b92f5665d6128d0
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64699000"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65786448"
 ---
 # <a name="api-management-policies"></a>Политики управления API
 В этом разделе рассматриваются приведенные ниже политики управления API. Дополнительные сведения о добавлении и настройке политик см. в статье о [политиках в управлении API](api-management-howto-policies.md).  
@@ -83,5 +83,4 @@ ms.locfileid: "64699000"
 
 + [Политики в управлении API](api-management-howto-policies.md)
 + [Преобразование API-интерфейсов](transform-api.md).
-+ Полный перечень операторов политик и их параметров см. в [справочнике по политикам](api-management-policy-reference.md).
 + [Примеры политик](policy-samples.md).   

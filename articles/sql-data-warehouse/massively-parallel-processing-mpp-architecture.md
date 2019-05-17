@@ -2,20 +2,20 @@
 title: Хранилище данных SQL Azure. Архитектура MPP | Документация Майкрософт
 description: Узнайте, как в хранилище данных SQL Azure с помощью массового параллелизма (MPP) и возможностей хранилища Azure можно достичь высокой эффективности и масштабируемости.
 services: sql-data-warehouse
-author: ronortloff
+author: happynicolle
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.subservice: design
 ms.date: 04/17/2018
-ms.author: rortloff
+ms.author: nicw
 ms.reviewer: igorstan
-ms.openlocfilehash: 0c2ad7e5a707c20db2773324e8047eedaad1a48b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: c3cdd464dffc810e76cf101ac70c2a14bbc4f9ff
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61077125"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65790718"
 ---
 # <a name="azure-sql-data-warehouse---massively-parallel-processing-mpp-architecture"></a>Хранилище данных SQL Azure. Архитектура обработки с массовым параллелизмом (MPP)
 Узнайте, как в хранилище данных SQL Azure с помощью массового параллелизма (MPP) и возможностей хранилища Azure можно достичь высокой эффективности и масштабируемости. 
@@ -36,7 +36,7 @@ ms.locfileid: "61077125"
 * приостановка вычислений без изменения данных (вы платите только за хранилище);
 * возобновление вычислений во время рабочих часов.
 
-### <a name="azure-storage"></a>Служба хранилища Azure
+### <a name="azure-storage"></a>Хранилище Azure
 В хранилище данных SQL используется служба хранилища Azure для безопасного хранения данных пользователя.  Так как ваши данные хранятся в службе хранилища Azure и управляются ею, в хранилище данных SQL предусмотрена отдельная плата за использование хранилища. Для оптимизации производительности системы сами данные сегментированы в **дистрибутивы**. При определении таблицы вы можете выбрать шаблон сегментирования, который будет использоваться для распределения данных. Хранилище данных SQL поддерживает следующие шаблоны сегментирования:
 
 * Хэш

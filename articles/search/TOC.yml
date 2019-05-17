@@ -4,7 +4,7 @@
   items:
     - name: Что такое поиск Azure?
       href: search-what-is-azure-search.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   expanded: true
   items:
     - name: создание службы;
@@ -27,6 +27,8 @@
       href: search-fiddler.md
     - name: PowerShell
       href: search-create-index-rest-api.md
+    - name: Python
+      href: search-get-started-python.md
 - name: Учебники
   items:
     - name: Индексирование службы "База данных SQL"
@@ -259,7 +261,7 @@
           href: search-traffic-analytics.md
 - name: Справочные материалы
   items:
-    - name: Инфраструктура CLI Azure
+    - name: Инфраструктура Azure CLI
       href: 'https://docs.microsoft.com/cli/azure/search?view=azure-cli-latest'
     - name: Azure PowerShell
       href: /powershell/module/az.search
@@ -322,8 +324,6 @@
           href: 'https://aka.ms/jfkfiles'
         - name: Демонстрация заданий NYC
           href: 'https://aka.ms/azjobsdemo'
-        - name: Search Analyzer Demo
-          href: 'https://alice.unearth.ai/'
         - name: Варианты использования поиска
           href: 'https://searchsamples.azurewebsites.net/'
     - name: Часто задаваемые вопросы

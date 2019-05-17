@@ -8,14 +8,14 @@ manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.topic: article
-ms.date: 05/13/2019
+ms.date: 05/15/2019
 ms.author: diberry
-ms.openlocfilehash: 87599817ba7b50b941612c13c07842644f979fb7
-ms.sourcegitcommit: 3675daec6c6efa3f2d2bf65279e36ca06ecefb41
+ms.openlocfilehash: ea74dbd6cffa34e4462433cdfc51e7d5abac9a41
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65619712"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65796670"
 ---
 # <a name="container-support-in-azure-cognitive-services"></a>Поддержка контейнеров в Azure Cognitive Services
 
@@ -100,6 +100,13 @@ Docker нужно настроить таким образом, чтобы ко�
 ## <a name="developer-samples"></a>Примеры для разработчиков
 
 Примеры для разработчиков доступны в нашем [репозитории GitHub](https://github.com/Azure-Samples/cognitive-services-containers-samples).
+
+## <a name="view-webinar"></a>Просмотреть веб-семинар 
+
+Присоединяйтесь к [веб-семинар](https://info.microsoft.com/AP-AZUREPLAT-WBNR-FY19-03Mar-20-Seamlesslyintegrateapplicationsdataandprocesses-MCW0012283_02OnDemandRegistration-ForminBody.html) Дополнительные сведения о:
+
+* Развертывание Cognitive Services на любом компьютере, с помощью Docker
+* Способ развертывания Cognitive Services в AKS
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

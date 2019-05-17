@@ -9,12 +9,12 @@ ms.date: 04/23/2019
 ms.author: normesta
 ms.reviewer: seguler
 ms.subservice: common
-ms.openlocfilehash: d05cbd30565ced73352736508fc4bcc376985554
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: b5a13dfd760f0c94343b151c9b4c1148c949e854
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65149037"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65790008"
 ---
 # <a name="transfer-data-with-azcopy-v10"></a>Передача данных с помощью AzCopy версии 10
 
@@ -53,7 +53,7 @@ AzCopy не требует установки. Откройте предпочи
 
 При проверке подлинности с помощью службы хранилища Azure, AzCopy поддерживает следующие параметры:
 - **Azure Active Directory** (поддерживается для **службы BLOB-объектов и Gen2 хранилища Озера данных**). Используйте ```.\azcopy login``` выполнить вход с использованием Azure Active Directory.  Пользователь должен иметь [назначена роль «Участник данных хранилища BLOB-объектов»](https://docs.microsoft.com/azure/storage/common/storage-auth-aad-rbac) для записи в хранилище BLOB-объектов с помощью проверки подлинности Azure Active Directory. Для проверки подлинности с помощью управляемых удостоверений для ресурсов Azure, использовать `azcopy login --identity`.
-- **Общие маркеры подписи доступа [поддерживаются для службы BLOB-объектов и файлов]**. Добавьте URL-адреса (SAS) токен общего доступа к пути больших двоичных объектов в командной строке, для его использования. Позволяет создавать маркеры SAS с помощью портала Azure, [обозреватель хранилищ](https://blogs.msdn.microsoft.com/jpsanders/2017/10/12/easily-create-a-sas-to-download-a-file-from-azure-storage-using-azure-storage-explorer/), [PowerShell](https://docs.microsoft.com/powershell/module/az.storage/new-azstorageblobsastoken), или другие средства по своему усмотрению. Дополнительные сведения см. в статье [Подписанные URL-адреса. Часть 2: создание и использование подписанного URL-адреса в службе BLOB-объектов](https://docs.microsoft.com/azure/storage/blobs/storage-dotnet-shared-access-signature-part-2).
+- **Общие маркеры подписи доступа [поддерживаются для службы BLOB-объектов и файлов]**. Добавьте URL-адреса (SAS) токен общего доступа к пути больших двоичных объектов в командной строке, для его использования. Позволяет создавать маркеры SAS с помощью портала Azure, [обозреватель хранилищ](https://blogs.msdn.microsoft.com/jpsanders/2017/10/12/easily-create-a-sas-to-download-a-file-from-azure-storage-using-azure-storage-explorer/), [PowerShell](https://docs.microsoft.com/powershell/module/az.storage/new-azstorageblobsastoken), или другие средства по своему усмотрению. Дополнительные сведения см. в статье [Подписанные URL-адреса. Часть 2: создание и использование подписанного URL-адреса в службе BLOB-объектов](https://docs.microsoft.com/azure/storage/blobs/common/storage-dotnet-shared-access-signature-part-1).
 
 ## <a name="getting-started"></a>Приступая к работе
 
@@ -221,7 +221,7 @@ export AWS_SECRET_ACCESS_KEY=<AWS secret access key>
 
 Дополнительные сведения о копировании данных из AWS S3 с помощью AzCopy, см. на странице [здесь](https://github.com/Azure/azure-storage-azcopy/wiki/Copy-from-AWS-S3).
 
-## <a name="advanced-configuration"></a>Расширенная конфигурация
+## <a name="advanced-configuration"></a>Расширенная настройка
 
 ### <a name="configure-proxy-settings"></a>Настройка параметров прокси
 

@@ -10,18 +10,18 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 02/01/2019
 ms.author: v-jansko
-ms.openlocfilehash: fa618c5c623a631e7a88f8235a0b7b16fcb2bc88
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: ea8fe989dd0ef7026957153fb5c9836742d008dd
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60605245"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65797495"
 ---
-# <a name="translator-text-api-30-detect"></a>API перевода текстов 3.0: Detect
+# <a name="translator-text-api-30-detect"></a>API перевода текстов 3.0: Обнаружить
 
 Определяет язык для фрагмента текста.
 
-## <a name="request-url"></a>Request URL (URL-адрес запроса)
+## <a name="request-url"></a>URL-адрес запроса
 
 Отправьте запрос `POST` на следующий адрес.
 
@@ -35,7 +35,7 @@ https://api.cognitive.microsofttranslator.com/detect?api-version=3.0
 
 <table width="100%">
   <th width="20%">Параметр запроса</th>
-  <th>ОПИСАНИЕ</th>
+  <th>Описание</th>
   <tr>
     <td>api-version</td>
     <td>*Обязательный параметр.*<br/>Версия API, запрошенная клиентом. Должно быть такое значение: `3.0`.</td>
@@ -46,7 +46,7 @@ https://api.cognitive.microsofttranslator.com/detect?api-version=3.0
 
 <table width="100%">
   <th width="20%">Заголовки</th>
-  <th>ОПИСАНИЕ</th>
+  <th>Описание</th>
   <tr>
     <td>Заголовки проверки подлинности</td>
     <td><em>Обязательный заголовок запроса</em>.<br/>См. <a href="https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication">описание доступных способов аутентификации</a>.</td>
@@ -126,7 +126,7 @@ https://api.cognitive.microsofttranslator.com/detect?api-version=3.0
 
 <table width="100%">
   <th width="20%">Заголовки</th>
-  <th>ОПИСАНИЕ</th>
+  <th>Описание</th>
   <tr>
     <td>X-RequestId</td>
     <td>Сформированное службой значение для идентификации запроса. Оно используется для устранения неполадок.</td>
@@ -139,7 +139,7 @@ https://api.cognitive.microsofttranslator.com/detect?api-version=3.0
 
 <table width="100%">
   <th width="20%">Код состояния</th>
-  <th>ОПИСАНИЕ</th>
+  <th>Описание</th>
   <tr>
     <td>200</td>
     <td>Успешно.</td>
@@ -150,7 +150,7 @@ https://api.cognitive.microsofttranslator.com/detect?api-version=3.0
   </tr>
   <tr>
     <td>401</td>
-    <td>Не удалось выполнить аутентификацию запроса. Убедитесь, что указаны допустимые учетные данные.</td>
+    <td>Не удалось выполнить проверку подлинности запроса. Убедитесь, что указаны допустимые учетные данные.</td>
   </tr>
   <tr>
     <td>403</td>
@@ -158,7 +158,7 @@ https://api.cognitive.microsofttranslator.com/detect?api-version=3.0
   </tr>
   <tr>
     <td>429</td>
-    <td>Вызывающая сторона отправляет слишком много запросов.</td>
+    <td>Сервер отклонил запрос, так как клиент превысило ограничения запросов.</td>
   </tr>
   <tr>
     <td>500</td>

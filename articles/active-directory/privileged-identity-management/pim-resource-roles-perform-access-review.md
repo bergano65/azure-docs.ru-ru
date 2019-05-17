@@ -16,12 +16,12 @@ ms.date: 03/30/2018
 ms.author: rolyon
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4e49f0077444f86eabeed22cc7cecf5e0ac7f8b5
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: ede412292caf682c3078002d23e1956bd68d1378
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65141190"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65602199"
 ---
 # <a name="review-access-to-azure-resource-roles-in-pim"></a>Проверка доступа для ролей ресурсов Azure в PIM
 Azure Active Directory (Azure AD) Privileged Identity Management (PIM) упрощает управление привилегированным доступом к ресурсам в Azure. 
@@ -45,12 +45,12 @@ Azure Active Directory (Azure AD) Privileged Identity Management (PIM) упро�
 1. Перейдите в приложение Azure AD PIM.
 2. Выберите колонку **Проверка доступа**.
 
-   ![Снимок экрана приложения PIM с выбранной колонкой "Обзор"](media/azure-pim-resource-rbac/rbac-access-review-complete.png)
+   ![Снимок экрана приложения PIM с выбранной колонкой "Обзор"](media/pim-resource-roles-perform-access-review/rbac-access-review-complete.png)
 
 3. Выберите проверку, которую необходимо завершить. 
 4. Выберите **Утвердить** или **Запретить**. Возможно, в текстовом поле **Указание причины** потребуется ввести причину своего решения.
 
-   ![Снимок экрана страницы просмотра подробностей](media/azure-pim-resource-rbac/rbac-access-review-choice.png)
+   ![Снимок экрана страницы просмотра подробностей](media/pim-resource-roles-perform-access-review/rbac-access-review-choice.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

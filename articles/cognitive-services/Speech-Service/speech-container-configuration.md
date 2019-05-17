@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 05/07/2019
+ms.date: 05/15/2019
 ms.author: diberry
-ms.openlocfilehash: 424396c7b92fb58993c74e672c4c3ea9c8f814c7
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: e2ed29bb61f553f68b9f9802884169361d5d983f
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65026225"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65797929"
 ---
 # <a name="configure-speech-service-containers"></a>Настройка контейнеров службы распознавания речи
 
@@ -50,7 +50,7 @@ ms.locfileid: "65026225"
 
 * Портал Azure: **В речи** Обзор, с меткой `Endpoint`
 
-|Обязательно для заполнения| ИМЯ | Тип данных | ОПИСАНИЕ |
+|Обязательно для заполнения| ИМЯ | Тип данных | Описание |
 |--|------|-----------|-------------|
 |Да| `Billing` | Строка | URI конечной точки выставления счетов<br><br>Пример:<br>`Billing=https://westus.api.cognitive.microsoft.com/sts/v1.0` |
 
@@ -61,6 +61,10 @@ ms.locfileid: "65026225"
 ## <a name="fluentd-settings"></a>Параметры Fluentd
 
 [!INCLUDE [Container shared configuration fluentd settings](../../../includes/cognitive-services-containers-configuration-shared-settings-fluentd.md)]
+
+## <a name="http-proxy-credentials-settings"></a>Параметры учетных данных прокси-сервера HTTP
+
+[!INCLUDE [Container shared configuration fluentd settings](../../../includes/cognitive-services-containers-configuration-shared-settings-http-proxy.md)]
 
 ## <a name="logging-settings"></a>Параметры ведения журнала
  
@@ -74,7 +78,7 @@ ms.locfileid: "65026225"
 
 Точный синтаксис расположения подключения к узлу зависит от операционной системы узла. Кроме того,расположение подключения на [главном компьютере](speech-container-howto.md#the-host-computer) может оказаться недоступным из-за конфликта между разрешениями для учетной записи службы Docker и расположения подключения к узлу. 
 
-|Необязательно| ИМЯ | Тип данных | ОПИСАНИЕ |
+|Необязательно| ИМЯ | Тип данных | Описание |
 |-------|------|-----------|-------------|
 |Не разрешено| `Input` | Строка | Контейнеры речи не следует использовать.|
 |Необязательно| `Output` | Строка | Цель выходного подключения. По умолчанию используется значение `/output`. Это расположение файлов журналов. Сюда входят журналы контейнера. <br><br>Пример:<br>`--mount type=bind,src=c:\output,target=/output`|
@@ -88,7 +92,7 @@ ms.locfileid: "65026225"
 
 Замените строку {_имя_аргумента_} собственными значениями.
 
-| Placeholder | Value | Формат или пример |
+| Местозаполнитель | Value | Формат или пример |
 |-------------|-------|---|
 |{BILLING_KEY} | Ключ конечной точки ресурса речи. |xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx|
 |{BILLING_ENDPOINT_URI} | Количество выставленных счетов за конечную точку, включая регион.|`https://westus.api.cognitive.microsoft.com/sts/v1.0`|

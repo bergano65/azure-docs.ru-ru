@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 03/29/2018
 ms.author: alkohli;
 ms.subservice: common
-ms.openlocfilehash: b01c8a3fe9b0c0856dceb5c05f449504ce8c75d6
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 42c8c9c89a69224b222aabe8e929d800d22162ce
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61483295"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65604225"
 ---
 # <a name="open-a-support-ticket-for-an-importexport-job"></a>Создание запроса в службу поддержки для задания импорта и экспорта
 
@@ -58,7 +58,7 @@ ms.locfileid: "61483295"
 4. В колонке **Новый запрос в службу поддержки** щелкните шаг 3 **Контактные данные**. В колонке **Контактные данные** сделайте следующее:
 
    1. В поле **Параметры контакта** укажите предпочтительный способ контакта (телефон или электронную почту) и язык. Время ответа выбирается автоматически в зависимости от плана подписки.
-   2. В поле "Контактные данные" укажите ваше имя, электронную почту, дополнительное контактное лицо, страну. Установите флажок **Save contact changes for future support requests** (Сохранить изменения контактных данных для будущих обращений в службу поддержки).
+   2. В контактные данные укажите имя, адрес электронной почты, дополнительное контактное лицо, страны или региона. Установите флажок **Save contact changes for future support requests** (Сохранить изменения контактных данных для будущих обращений в службу поддержки).
    3. Нажмите кнопку **Создать**.
    
        ![Контактные данные](./media/storage-import-export-contact-microsoft-support/import-export-support7.png)   

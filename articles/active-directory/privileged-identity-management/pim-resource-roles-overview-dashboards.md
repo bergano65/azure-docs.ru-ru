@@ -16,12 +16,12 @@ ms.date: 03/30/2018
 ms.author: rolyon
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 37057e531ea8387fbed84c9b03bbfb9c14d160ea
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: e5404d1b85821458aedef64b72ae635ea49aa1ff
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60287580"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65602451"
 ---
 # <a name="use-a-resource-dashboard-to-perform-an-access-review-in-pim"></a>С помощью мониторинга ресурсов можно выполнить проверку доступа в PIM
 
@@ -31,9 +31,9 @@ ms.locfileid: "60287580"
 - Две диаграммы, на которых показано распределение назначений ролей по типу назначения.
 - Область данных, относящихся к новым назначениям ролей.
 
-![Снимок экрана панели мониторинга представления администратора с графиками и диаграммами](media/azure-pim-resource-rbac/rbac-overview-top.png)
+![Снимок экрана панели мониторинга представления администратора с графиками и диаграммами](media/pim-resource-roles-overview-dashboards/rbac-overview-top.png)
 
-![Снимок экрана панели мониторинга представления администратора со списками данных](media/azure-pim-resource-rbac/role-settings.png)
+![Снимок экрана панели мониторинга представления администратора со списками данных](media/pim-resource-roles-overview-dashboards/role-settings.png)
 
 Графическое представление активаций ролей ресурсов за последние семь дней. Эти данные привязаны к выбранному ресурсу и отображают активацию для наиболее распространенных ролей (владелец, участник, администратор доступа пользователей) и всех объединенных ролей.
 

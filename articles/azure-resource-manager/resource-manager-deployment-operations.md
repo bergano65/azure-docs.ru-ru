@@ -1,221 +1,232 @@
 ---
-title: Операции развертывания с помощью Azure Resource Manager | Документация Майкрософт
+title: Журнал развертывания с помощью Azure Resource Manager | Документация Майкрософт
 description: Сведения о просмотре операций развертывания Azure Resource Manager с помощью портала, PowerShell, Azure CLI и REST API.
-services: azure-resource-manager,virtual-machines
-documentationcenter: ''
 tags: top-support-issue
 author: tfitzmac
-ms.assetid: ''
 ms.service: azure-resource-manager
-ms.devlang: na
 ms.topic: conceptual
-ms.tgt_pltfrm: vm-multiple
-ms.workload: infrastructure
-ms.date: 09/28/2018
+ms.date: 05/13/2019
 ms.author: tomfitz
-ms.openlocfilehash: 9ff6388c72c631dad870a4f52f86749bfd744d85
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.openlocfilehash: 58d22e3fcae5c30e5d7dcc39b317afeef4a693ee
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58085632"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65606000"
 ---
-# <a name="view-deployment-operations-with-azure-resource-manager"></a>Просмотр операций развертывания с помощью Azure Resource Manager
+# <a name="view-deployment-history-with-azure-resource-manager"></a>Просмотр журнала развертывания с помощью Azure Resource Manager
 
-Вы можете просматривать операции развертывания на портале Azure. Чаще всего необходимость просмотреть операции возникает, если во время развертывания произошла ошибка. Таким образом, эта статья посвящена просмотру операций, которые завершились с ошибкой. Портал Azure предоставляет интерфейс, который позволяет легко находить ошибки и определять возможные действия по их устранению.
+Azure Resource Manager позволяет просматривать историю развертывания и проверки определенных операций в выполнении развертываний в прошлом. См. в ресурсах, которые были развернуты и получить сведения об ошибках.
 
-Вы можете устранять неполадки развернутой службы, просматривая журналы аудита или операции развертывания. В этой статье описаны оба метода. Сведения об устранении некоторых ошибок развертывания см. в статье об [устранении распространенных ошибок при развертывании ресурсов в Azure с помощью Azure Resource Manager](resource-manager-common-deployment-errors.md).
+Сведения об устранении некоторых ошибок развертывания см. в статье об [устранении распространенных ошибок при развертывании ресурсов в Azure с помощью Azure Resource Manager](resource-manager-common-deployment-errors.md).
+
+## <a name="portal"></a>Портал
+
+Чтобы получить сведения о развертывании из журнала развертывания.
+
+1. Выберите группу ресурсов, которую вы хотите проанализировать.
+
+1. Щелкните ссылку под **развертываний**.
+
+   ![Выбор журнала развертывания](./media/resource-manager-deployment-operations/select-deployment-history.png)
+
+1. Выберите одно из развертываний из журнала развертывания.
+
+   ![Выберите развертывание](./media/resource-manager-deployment-operations/select-details.png)
+
+1. Отображается сводка по развертыванию, включая список развернутых ресурсов.
+
+    ![Сводка по развертыванию](./media/resource-manager-deployment-operations/view-deployment-summary.png)
+
+1. Чтобы просмотреть шаблон, используемый для развертывания, выберите **шаблона**. Вы можете скачать шаблон для повторного использования.
+
+    ![Отобразить шаблон](./media/resource-manager-deployment-operations/show-template-from-history.png)
+
+1. Если произошел сбой развертывания, вы увидите сообщение об ошибке. Выберите сообщение об ошибке для получения дополнительных сведений.
+
+    ![Просмотр неудачного развертывания](./media/resource-manager-deployment-operations/show-error.png)
+
+1. Подробное сообщение об ошибке отображается.
+
+    ![Просмотреть сведения об ошибке](./media/resource-manager-deployment-operations/show-details.png)
+
+1. Идентификатор корреляции используется для отслеживания связанных событий и может быть полезным при работе с технической поддержкой для устранения проблемы развертывания.
+
+    ![Получить идентификатор корреляции](./media/resource-manager-deployment-operations/get-correlation-id.png)
+
+1. Дополнительные сведения о шагах, в котором произошел сбой, выберите **сведения об операции**.
+
+    ![Выберите операции развертывания](./media/resource-manager-deployment-operations/select-deployment-operations.png)
+
+1. Отобразятся сведения для этого этапа развертывания.
+
+    ![Показать сведения об операции](./media/resource-manager-deployment-operations/show-operation-details.png)
+
+## <a name="powershell"></a>PowerShell
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="portal"></a>Microsoft Azure
+Общее состояние развернутой службы можно получить с помощью команды **Get-AzResourceGroupDeployment**.
 
-Для просмотра операций развертывания выполните следующие действия:
+```azurepowershell-interactive
+Get-AzResourceGroupDeployment -ResourceGroupName ExampleGroup
+```
 
-1. Для группы ресурсов, участвующих в развертывании, обратите внимание на состояние последнего развертывания. Можно выбрать этот статус, чтобы получить дополнительные сведения.
-   
-    ![состояние развертывания](./media/resource-manager-deployment-operations/deployment-status.png)
-2. Вы увидите историю последних развертываний. Выберите развертывание, которое завершилось неудачно.
-   
-    ![состояние развертывания](./media/resource-manager-deployment-operations/select-deployment.png)
-3. Щелкните ссылку, чтобы просмотреть сведения о причине сбоя развертывания. На рисунке ниже видно, что сбой произошел, потому что DNS-запись не является уникальной.  
-   
-    ![просмотр неудачного развертывания](./media/resource-manager-deployment-operations/view-error.png)
-   
-    Описания в этом сообщении об ошибке должно быть достаточно, чтобы приступить к устранению неполадки. Однако если вы хотите узнать, какие задачи выполнены, вы можете просмотреть операции, как описано ниже.
-4. Вы можете просмотреть все операции развертывания. Чтобы просмотреть сведения о конкретной операции, выберите ее.
-   
-    ![просмотр операций](./media/resource-manager-deployment-operations/view-operations.png)
-   
-    На рисунке выше видно, что созданы учетная запись хранения, виртуальная сеть и группа доступности. Операция создания общедоступного IP-адреса завершилась сбоем, а попытки создать другие ресурсы не были предприняты.
-5. Чтобы просмотреть события развертывания, щелкните **События**.
-   
-    ![просмотр событий](./media/resource-manager-deployment-operations/view-events.png)
-6. В открывшемся окне отобразятся все события развертывания. Чтобы просмотреть дополнительные сведения о конкретном событии, выберите его. Обратите внимание на идентификаторы корреляции. Это значение может быть полезным при работе с технической поддержкой для устранения проблемы развертывания.
-   
-    ![просмотр событий](./media/resource-manager-deployment-operations/see-all-events.png)
+Вы можете отфильтровать результаты, чтобы отобразить только те развертывания, которые завершились сбоем.
 
-## <a name="powershell"></a>PowerShell
-1. Общее состояние развернутой службы можно получить с помощью команды **Get-AzResourceGroupDeployment**. 
+```azurepowershell-interactive
+Get-AzResourceGroupDeployment -ResourceGroupName ExampleGroup | Where-Object ProvisioningState -eq Failed
+```
 
-   ```powershell
-   Get-AzResourceGroupDeployment -ResourceGroupName ExampleGroup
-   ```
+Идентификатор корреляции используется для отслеживания связанных событий и может быть полезным при работе с технической поддержкой для устранения проблемы развертывания. Чтобы получить идентификатор корреляции, используйте:
 
-   Вы можете отфильтровать результаты, чтобы отобразить только те развертывания, которые завершились сбоем.
+```azurepowershell-interactive
+(Get-AzResourceGroupDeployment -ResourceGroupName ExampleGroup -DeploymentName azuredeploy).CorrelationId
+```
 
-   ```powershell
-   Get-AzResourceGroupDeployment -ResourceGroupName ExampleGroup | Where-Object ProvisioningState -eq Failed
-   ```
-   
-2. Чтобы получить идентификатор корреляции, используйте:
+Каждое развертывание включает в себя несколько операций. Каждая операция представляет шаг в процессе развертывания. Чтобы определить, что пошло не так при развертывании, обычно требуется просмотреть сведения об операциях развертывания. Состояние операций можно просмотреть с помощью команды **Get-AzResourceGroupDeploymentOperation**.
 
-   ```powershell
-   (Get-AzResourceGroupDeployment -ResourceGroupName ExampleGroup -DeploymentName azuredeploy).CorrelationId
-   ```
+```azurepowershell-interactive
+Get-AzResourceGroupDeploymentOperation -ResourceGroupName ExampleGroup -DeploymentName azuredeploy
+```
 
-3. Каждое развертывание включает в себя несколько операций. Каждая операция представляет шаг в процессе развертывания. Чтобы определить, что пошло не так при развертывании, обычно требуется просмотреть сведения об операциях развертывания. Состояние операций можно просмотреть с помощью команды **Get-AzResourceGroupDeploymentOperation**.
+Эта команда возвращает несколько операций, каждая из которых представлена в следующем формате:
 
-   ```powershell 
-   Get-AzResourceGroupDeploymentOperation -ResourceGroupName ExampleGroup -DeploymentName vmDeployment
-   ```
+```powershell
+Id             : /subscriptions/{guid}/resourceGroups/ExampleGroup/providers/Microsoft.Resources/deployments/Microsoft.Template/operations/A3EB2DA598E0A780
+OperationId    : A3EB2DA598E0A780
+Properties     : @{provisioningOperation=Create; provisioningState=Succeeded; timestamp=2019-05-13T21:42:40.7151512Z;
+                duration=PT23.0227078S; trackingId=11d376e8-5d6d-4da8-847e-6f23c6443fbf;
+                serviceRequestId=0196828d-8559-4bf6-b6b8-8b9057cb0e23; statusCode=OK; targetResource=}
+PropertiesText : {duration:PT23.0227078S, provisioningOperation:Create, provisioningState:Succeeded,
+                serviceRequestId:0196828d-8559-4bf6-b6b8-8b9057cb0e23...}
+```
 
-    Эта команда возвращает несколько операций, каждая из которых представлена в следующем формате:
+Чтобы получить дополнительные сведения о завершившихся сбоем операциях, получите свойства для операций с состоянием **Failed** .
 
-   ```powershell
-   Id             : /subscriptions/{guid}/resourceGroups/ExampleGroup/providers/Microsoft.Resources/deployments/Microsoft.Template/operations/A3EB2DA598E0A780
-   OperationId    : A3EB2DA598E0A780
-   Properties     : @{provisioningOperation=Create; provisioningState=Succeeded; timestamp=2016-06-14T21:55:15.0156208Z;
-                   duration=PT23.0227078S; trackingId=11d376e8-5d6d-4da8-847e-6f23c6443fbf;
-                   serviceRequestId=0196828d-8559-4bf6-b6b8-8b9057cb0e23; statusCode=OK; targetResource=}
-   PropertiesText : {duration:PT23.0227078S, provisioningOperation:Create, provisioningState:Succeeded,
-                   serviceRequestId:0196828d-8559-4bf6-b6b8-8b9057cb0e23...}
-   ```
+```azurepowershell-interactive
+(Get-AzResourceGroupDeploymentOperation -DeploymentName azuredeploy -ResourceGroupName ExampleGroup).Properties | Where-Object ProvisioningState -eq Failed
+```
 
-4. Чтобы получить дополнительные сведения о завершившихся сбоем операциях, получите свойства для операций с состоянием **Failed** .
+В результате будут возвращены все завершившиеся сбоем операции. Каждая из них будет представлена в следующем формате:
 
-   ```powershell
-   (Get-AzResourceGroupDeploymentOperation -DeploymentName Microsoft.Template -ResourceGroupName ExampleGroup).Properties | Where-Object ProvisioningState -eq Failed
-   ```
-   
-    В результате будут возвращены все завершившиеся сбоем операции. Каждая из них будет представлена в следующем формате:
+```powershell
+provisioningOperation : Create
+provisioningState     : Failed
+timestamp             : 2019-05-13T21:42:40.7151512Z
+duration              : PT3.1449887S
+trackingId            : f4ed72f8-4203-43dc-958a-15d041e8c233
+serviceRequestId      : a426f689-5d5a-448d-a2f0-9784d14c900a
+statusCode            : BadRequest
+statusMessage         : @{error=}
+targetResource        : @{id=/subscriptions/{guid}/resourceGroups/ExampleGroup/providers/
+                       Microsoft.Network/publicIPAddresses/myPublicIP;
+                       resourceType=Microsoft.Network/publicIPAddresses; resourceName=myPublicIP}
+```
 
-   ```powershell
-   provisioningOperation : Create
-   provisioningState     : Failed
-   timestamp             : 2016-06-14T21:54:55.1468068Z
-   duration              : PT3.1449887S
-   trackingId            : f4ed72f8-4203-43dc-958a-15d041e8c233
-   serviceRequestId      : a426f689-5d5a-448d-a2f0-9784d14c900a
-   statusCode            : BadRequest
-   statusMessage         : @{error=}
-   targetResource        : @{id=/subscriptions/{guid}/resourceGroups/ExampleGroup/providers/
-                          Microsoft.Network/publicIPAddresses/myPublicIP;
-                          resourceType=Microsoft.Network/publicIPAddresses; resourceName=myPublicIP}
-   ```
+Обратите внимание на значения serviceRequestId и trackingId операции. serviceRequestId может быть полезным при работе с технической поддержкой для устранения проблемы развертывания. TrackingId используется на следующем шаге сосредоточиться на конкретной операции.
 
-    Обратите внимание на значения serviceRequestId и trackingId операции. serviceRequestId может быть полезным при работе с технической поддержкой для устранения проблемы развертывания. trackingId понадобится вам на следующем шаге, чтобы рассмотреть конкретную операцию.
-5. Чтобы получить сообщение о состоянии конкретной завершившейся сбоем операции, используйте следующую команду:
+Чтобы получить сообщение о состоянии конкретной завершившейся сбоем операции, используйте следующую команду:
 
-   ```powershell
-   ((Get-AzResourceGroupDeploymentOperation -DeploymentName Microsoft.Template -ResourceGroupName ExampleGroup).Properties | Where-Object trackingId -eq f4ed72f8-4203-43dc-958a-15d041e8c233).StatusMessage.error
-   ```
+```azurepowershell-interactive
+((Get-AzResourceGroupDeploymentOperation -DeploymentName azuredeploy -ResourceGroupName ExampleGroup).Properties | Where-Object trackingId -eq f4ed72f8-4203-43dc-958a-15d041e8c233).StatusMessage.error
+```
 
-    Возвращаемые данные:
+Возвращаемые данные:
 
-   ```powershell
-   code           message                                                                        details
-   ----           -------                                                                        -------
-   DnsRecordInUse DNS record dns.westus.cloudapp.azure.com is already used by another public IP. {}
-   ```
-6. Каждая операция развертывания в Azure включает в себя содержимое запроса и ответа. Содержимое запроса — это данные, отправляемые в Azure во время развертывания (например, создание виртуальной машины, диск операционной системы и другие ресурсы). Содержимое ответа — это данные, отправляемые Azure из запроса на развертывание. Во время развертывания можно воспользоваться параметром **DeploymentDebugLogLevel**, чтобы указать необходимость сохранения запроса или ответа в журнале. 
+```powershell
+code           message                                                                        details
+----           -------                                                                        -------
+DnsRecordInUse DNS record dns.westus.cloudapp.azure.com is already used by another public IP. {}
+```
 
-   Получить эту информацию из журнала и сохранить ее локально можно с помощью следующих команд PowerShell:
+Каждая операция развертывания в Azure включает в себя содержимое запроса и ответа. Во время развертывания, можно использовать **DeploymentDebugLogLevel** параметр, чтобы указать, что вошли запроса или ответа.
 
-   ```powershell
-   (Get-AzResourceGroupDeploymentOperation -DeploymentName "TestDeployment" -ResourceGroupName "Test-RG").Properties.request | ConvertTo-Json |  Out-File -FilePath <PathToFile>
+Получить эту информацию из журнала и сохранить ее локально можно с помощью следующих команд PowerShell:
 
-   (Get-AzResourceGroupDeploymentOperation -DeploymentName "TestDeployment" -ResourceGroupName "Test-RG").Properties.response | ConvertTo-Json |  Out-File -FilePath <PathToFile>
-   ```
+```powershell
+(Get-AzResourceGroupDeploymentOperation -DeploymentName "TestDeployment" -ResourceGroupName "Test-RG").Properties.request | ConvertTo-Json |  Out-File -FilePath <PathToFile>
+
+(Get-AzResourceGroupDeploymentOperation -DeploymentName "TestDeployment" -ResourceGroupName "Test-RG").Properties.response | ConvertTo-Json |  Out-File -FilePath <PathToFile>
+```
 
 ## <a name="azure-cli"></a>Инфраструктура CLI Azure
 
-1. Общее состояние развернутой службы можно получить с помощью команды **azure group deployment show** .
+Чтобы получить общее состояние развертывания, используйте **azure группы развертывания show** команды.
 
-   ```azurecli
-   az group deployment show -g ExampleGroup -n ExampleDeployment
-   ```
+```azurecli-interactive
+az group deployment show -g ExampleGroup -n ExampleDeployment
+```
   
-2. Одно из возвращаемых значений — **correlationId**. Это значение используется для отслеживания связанных событий и может быть полезно при взаимодействии со службой технической поддержки для устранения проблемы развертывания.
+Идентификатор корреляции используется для отслеживания связанных событий и может быть полезным при работе с технической поддержкой для устранения проблемы развертывания.
 
-   ```azurecli
-   az group deployment show -g ExampleGroup -n ExampleDeployment --query properties.correlationId
-   ```
+```azurecli-interactive
+az group deployment show -g ExampleGroup -n ExampleDeployment --query properties.correlationId
+```
 
-3. Чтобы просмотреть операции развертывания, используйте следующую команду:
+Чтобы просмотреть операции развертывания, используйте следующую команду:
 
-   ```azurecli
-   az group deployment operation list -g ExampleGroup -n ExampleDeployment
-   ```
+```azurecli-interactive
+az group deployment operation list -g ExampleGroup -n ExampleDeployment
+```
 
 ## <a name="rest"></a>REST
 
-1. Получите сведения о развертывании с помощью операции [получения сведений о развертывании шаблона](https://docs.microsoft.com/rest/api/resources/deployments).
+Чтобы получить сведения о развертывании, используйте [получение сведений о шаблоне-развертывании](https://docs.microsoft.com/rest/api/resources/deployments) операции.
 
-   ```http
-   GET https://management.azure.com/subscriptions/{subscription-id}/resourcegroups/{resource-group-name}/providers/microsoft.resources/deployments/{deployment-name}?api-version={api-version}
-   ```
+```
+GET https://management.azure.com/subscriptions/{subscription-id}/resourcegroups/{resource-group-name}/providers/microsoft.resources/deployments/{deployment-name}?api-version={api-version}
+```
 
-    В ответе обратите особое внимание на элементы **provisioningState**, **correlationId** и **error**. **correlationId** используется для отслеживания связанных событий и может быть полезен при взаимодействии со службой технической поддержки для устранения проблемы развертывания.
+В ответе обратите особое внимание на элементы **provisioningState**, **correlationId** и **error**. **correlationId** используется для отслеживания связанных событий и может быть полезен при взаимодействии со службой технической поддержки для устранения проблемы развертывания.
 
-   ```json
-   { 
-    ...
-    "properties": {
-      "provisioningState":"Failed",
-      "correlationId":"d5062e45-6e9f-4fd3-a0a0-6b2c56b15757",
-      ...
-      "error":{
-        "code":"DeploymentFailed","message":"At least one resource deployment operation failed. Please list deployment operations for details. Please see https://aka.ms/arm-debug for usage details.",
-        "details":[{"code":"Conflict","message":"{\r\n  \"error\": {\r\n    \"message\": \"Conflict\",\r\n    \"code\": \"Conflict\"\r\n  }\r\n}"}]
-      }  
-    }
-   }
-   ```
+```json
+{ 
+ ...
+ "properties": {
+   "provisioningState":"Failed",
+   "correlationId":"d5062e45-6e9f-4fd3-a0a0-6b2c56b15757",
+   ...
+   "error":{
+     "code":"DeploymentFailed","message":"At least one resource deployment operation failed. Please list deployment operations for details. Please see https://aka.ms/arm-debug for usage details.",
+     "details":[{"code":"Conflict","message":"{\r\n  \"error\": {\r\n    \"message\": \"Conflict\",\r\n    \"code\": \"Conflict\"\r\n  }\r\n}"}]
+   }  
+ }
+}
+```
 
-2. См. дополнительные сведения о [перечислении всех операций развертывания шаблона](https://docs.microsoft.com/rest/api/resources/deployments). 
+Чтобы получить сведения о развертываниях, используйте [вывод списка всех операций развертывания шаблона](https://docs.microsoft.com/rest/api/resources/deployments). 
 
-   ```http
-   GET https://management.azure.com/subscriptions/{subscription-id}/resourcegroups/{resource-group-name}/providers/microsoft.resources/deployments/{deployment-name}/operations?$skiptoken={skiptoken}&api-version={api-version}
-   ```
+```
+GET https://management.azure.com/subscriptions/{subscription-id}/resourcegroups/{resource-group-name}/providers/microsoft.resources/deployments/{deployment-name}/operations?$skiptoken={skiptoken}&api-version={api-version}
+```
    
-    Ответ будет содержать сведения о запросе и (или) ответе, в зависимости от того, что было указано в свойстве **debugSetting** во время развертывания.
+Ответ будет содержать сведения о запросе и (или) ответе, в зависимости от того, что было указано в свойстве **debugSetting** во время развертывания.
 
-   ```json
-   {
-    ...
-    "properties": 
-    {
-      ...
-      "request":{
-        "content":{
-          "location":"West US",
-          "properties":{
-            "accountType": "Standard_LRS"
-          }
-        }
-      },
-      "response":{
-        "content":{
-          "error":{
-            "message":"Conflict","code":"Conflict"
-          }
-        }
-      }
-    }
+```json
+{
+ ...
+ "properties": 
+ {
+   ...
+   "request":{
+     "content":{
+       "location":"West US",
+       "properties":{
+         "accountType": "Standard_LRS"
+       }
+     }
+   },
+   "response":{
+     "content":{
+       "error":{
+         "message":"Conflict","code":"Conflict"
+       }
+     }
    }
-   ```
-
+ }
+}
+```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * Сведения об устранении некоторых ошибок развертывания см. в статье об [устранении распространенных ошибок при развертывании ресурсов в Azure с помощью Azure Resource Manager](resource-manager-common-deployment-errors.md).

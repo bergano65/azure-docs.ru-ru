@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 04/08/2019
 ms.author: tulasim
 ms.custom: seodec18
-ms.openlocfilehash: eac5e43c69cc09c5945316827a35f729c158d47a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 8ff3c497372a761bd8a02ae81bc897c8ee297bd0
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61431248"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65794872"
 ---
 # <a name="migrate-a-knowledge-base-using-export-import"></a>Миграция базы знаний с помощью экспорта и импорта
 
@@ -56,7 +56,7 @@ ms.locfileid: "61431248"
     На этом этапе все содержимое базы знаний, вопросы, ответы и метаданные, а также имена исходных файлов и URL-адреса будут импортированы в новую базу знаний. 
 
 ## <a name="chat-logs-and-alterations"></a>Журналы чатов и варианты
-Преобразования (синонимы) без учета регистра не импортируются автоматически. Используйте [интерфейсы API версии 2](https://aka.ms/qnamaker-v2-apis), чтобы экспортировать варианты слов из старой базы знаний. Затем используйте [интерфейсы API версии 4](https://aka.ms/qnamaker-v4-apis), чтобы переместить эти варианты в новую базу знаний.
+Преобразования (синонимы) без учета регистра не импортируются автоматически. Используйте [API-интерфейсы V4](https://go.microsoft.com/fwlink/?linkid=2092179) для перемещения изменений в новую базу знаний.
 
 Возможность переноса журналов чатов не предусмотрена, так как новая база знаний использует для хранения журналов чатов Application Insights. 
 

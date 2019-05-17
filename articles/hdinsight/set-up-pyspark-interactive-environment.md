@@ -8,12 +8,12 @@ ms.author: jejiang
 ms.reviewer: jasonh
 ms.topic: conceptual
 ms.date: 1/17/2019
-ms.openlocfilehash: 882a071731837b0f7d03ac374a7c831a20a3927e
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: d7d6bf45a8cdf22fbff0d3fda8175e8007a612d9
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64714490"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65789278"
 ---
 # <a name="set-up-the-pyspark-interactive-environment-for-visual-studio-code"></a>Настройка интерактивной среды PySpark для Visual Studio Code
 
@@ -25,7 +25,7 @@ ms.locfileid: "64714490"
    
    + Установите Python отсюда: [https://www.python.org/downloads/](https://www.python.org/downloads/).
    + Установите pip отсюда: [https://pip.pypa.io/en/stable/installing](https://pip.pypa.io/en/stable/installing/). (Если он не установился при установке Python)
-   + Проверьте правильность установки Python и pip с помощью следующих команд. (необязательный параметр)
+   + Проверьте правильность установки Python и pip с помощью следующих команд. (Дополнительно)
  
         ![Версия pip для Python](./media/set-up-pyspark-interactive-environment/check-python-pip-version.png)
 
@@ -70,4 +70,4 @@ ms.locfileid: "64714490"
 * [Использование внешних пакетов с записными книжками Jupyter](spark/apache-spark-jupyter-notebook-use-external-packages.md)
 * [Установка записной книжки Jupyter на компьютере и ее подключение к кластеру Apache Spark в Azure HDInsight (предварительная версия)](spark/apache-spark-jupyter-notebook-install-locally.md)
 * [Визуализация данных Apache Hive с Microsoft Power BI с использованием ODBC в Azure HDInsight](hadoop/apache-hadoop-connect-hive-power-bi.md)
-* [С помощью Apache Zeppelin для выполнения запросов Apache Hive в Azure HDInsight](hdinsight-connect-hive-zeppelin.md)
+* [С помощью Apache Zeppelin для выполнения запросов Apache Hive в Azure HDInsight](./interactive-query/hdinsight-connect-hive-zeppelin.md)

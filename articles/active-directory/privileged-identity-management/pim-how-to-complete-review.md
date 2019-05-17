@@ -14,12 +14,12 @@ ms.date: 06/06/2017
 ms.author: rolyon
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: decba8f46432891a44a2b231890da4214bd5b1bb
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 0a7fa3bfe159620130bc0962b470cea8e7422646
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65140994"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65602158"
 ---
 # <a name="complete-an-access-review-of-azure-ad-roles-in-pim"></a>Завершение проверки доступа для ролей Azure AD в PIM
 После [запуска проверки доступа](pim-how-to-start-security-review.md) администраторы привилегированных ролей могут проверить привилегированный доступ. Azure Active Directory (Azure AD) Privileged Identity Management (PIM) автоматически отправляет сообщение электронной почты, запрашивает у пользователя выполнить проверку доступа. Если пользователь не получил электронное письмо, ему можно отправить [инструкции по выполнению проверки доступа](pim-how-to-perform-security-review.md).
@@ -33,7 +33,7 @@ ms.locfileid: "65140994"
 
 В колонке со сведениями о проверке доступа отображается ряд вариантов действий для этой проверки.
 
-![Кнопки проверки доступа PIM — снимок экрана](./media/pim-how-to-complete-review/PIM_review_buttons.png)
+![Кнопки проверки доступа PIM — снимок экрана](./media/pim-how-to-complete-review/review-buttons.png)
 
 ### <a name="remind"></a>Напомнить
 Если проверка доступа настроена таким образом, что пользователи проверяют сами себя, то кнопка **Напомнить** отправляет уведомление. 

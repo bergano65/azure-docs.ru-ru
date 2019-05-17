@@ -9,12 +9,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 11/27/2018
 ms.author: asgang
-ms.openlocfilehash: 68efc039c5de5d7f61b7ce34e74c6c2cf4bad027
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 0848738b71a605d8baf049847daa3ae2428a7abe
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61471601"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65793675"
 ---
 # <a name="set-up-disaster-recovery-for-a-multi-tier-sap-netweaver-app-deployment"></a>Настройка аварийного восстановления для многоуровневого развертывания приложения SAP NetWeaver
 
@@ -103,7 +103,7 @@ Azure Site Recovery можно использовать, чтобы выполн
 **Пул серверов приложений SAP** |  Репликация с помощью Site Recovery 
 **Кластер центральных служб SAP** |  Репликация с помощью Site Recovery 
 **Виртуальные машины Active Directory** |  Репликация Active Directory 
-**Серверы баз данных SQL** |  Постоянная репликация SQL
+**Серверы Базы данных SQL** |  Постоянная репликация SQL
 
 ## <a name="replicate-virtual-machines"></a>Репликация виртуальных машин
 
@@ -166,5 +166,5 @@ Azure Site Recovery можно использовать, чтобы выполн
 Дополнительные сведения см. в статье [Отработка отказа в Site Recovery](site-recovery-failover.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* Дополнительные сведения о создании решения аварийного восстановления для развертываний SAP NetWeaver с помощью Site Recovery см. в скачиваемом техническом документе [SAP NetWeaver: Building a Disaster Recovery Solution with Azure Site Recovery](https://aka.ms/asr-sap) (SAP NetWeaver. Создание решения аварийного восстановления с помощью Azure Site Recovery). В этом техническом документе рассматриваются рекомендации для разных архитектур SAP, приводятся поддерживаемые приложения и типы виртуальных машин для SAP в Azure, а также описываются планы тестирования для решения аварийного восстановления.
+* Дополнительные сведения о создании решения аварийного восстановления для развертываний SAP NetWeaver с помощью Site Recovery см. в скачиваемом техническом документе [SAP NetWeaver: Building a Disaster Recovery Solution with Azure Site Recovery](https://aka.ms/asr_sap) (SAP NetWeaver. Создание решения аварийного восстановления с помощью Azure Site Recovery). В этом техническом документе рассматриваются рекомендации для разных архитектур SAP, приводятся поддерживаемые приложения и типы виртуальных машин для SAP в Azure, а также описываются планы тестирования для решения аварийного восстановления.
 * Узнайте больше о [репликации других рабочих нагрузок](site-recovery-workload.md) с помощью Site Recovery.

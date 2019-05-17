@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: magottei
 ms.custom: seodec2018
-ms.openlocfilehash: 81987115ba0406e704f2198061c6ee3cae8a72df
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: 256a38320c9b3ca826ee9c12ac0a437957f988e2
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65024688"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65539279"
 ---
 # <a name="troubleshooting-common-indexer-issues-in-azure-search"></a>Устранение распространенных неполадок с индексатором в Поиске Azure
 
@@ -42,7 +42,7 @@ ms.locfileid: "65024688"
 
 `nslookup <service name>.search.windows.net`
 
-Исключения неприменимы для [Когнитивного поиска](cognitive-search-concept-intro.md). В этом случае остается только одно решение — отключить брандмауэр.
+Исключения не работают для [когнитивный поиск](cognitive-search-concept-intro.md). В этом случае остается только одно решение — отключить брандмауэр.
 
 ### <a name="cosmos-db"></a>База данных Cosmos
 
@@ -71,7 +71,7 @@ api-key: [admin key]
 
 Индексатор больших двоичных объектов [находит и извлекает текст из больших двоичных объектов в контейнере](search-howto-indexing-azure-blob-storage.md#how-azure-search-indexes-blobs). При извлечении текста могут встречаться следующие проблемы.
 
-* Документ содержит только отсканированные изображения. Большие двоичные объекты в формате PDF, в которых есть только нетекстовое содержимое, например отсканированные изображения (JPG), не дают никаких результатов в стандартном конвейере индексирования BLOB-объектов. Если у вас есть изображения с текстовыми элементами, попробуйте применить [Когнитивный поиск](cognitive-search-concept-image-scenarios.md) для поиска и извлечения такого текста.
+* Документ содержит только отсканированные изображения. Большие двоичные объекты в формате PDF, в которых есть только нетекстовое содержимое, например отсканированные изображения (JPG), не дают никаких результатов в стандартном конвейере индексирования BLOB-объектов. Если у вас есть образ содержимого с помощью текстовых элементов, можно использовать [когнитивный поиск](cognitive-search-concept-image-scenarios.md) для поиска и извлечения текста.
 * Индексатор больших двоичных объектов индексирует только метаданные. Чтобы извлечь содержимое, индексатор больших двоичных объектов должен быть настроен на [извлечение содержимого и метаданных](search-howto-indexing-azure-blob-storage.md#controlling-which-parts-of-the-blob-are-indexed):
 
 ```
@@ -94,5 +94,5 @@ api-key: [admin key]
 * Документ еще не был проиндексирован. Проверьте на портале, был ли индексатор успешно выполнен.
 * Нужный документ обновился уже после выполнения индексатора. Если индексатор выполняется по [расписанию](https://docs.microsoft.com/rest/api/searchservice/create-indexer#indexer-schedule), он через некоторое время будет выполнен снова и учтет нужный документ.
 * Нужный документ исключается условиями [запроса](https://docs.microsoft.com/rest/api/searchservice/create-data-source#request-body-syntax), который указан для этого источника данных. Индексаторы не могут индексировать документы, не являющихся частью источника данных.
-* [Сопоставление полей](https://docs.microsoft.com/rest/api/searchservice/create-indexer#fieldmappings) или [Когнитивный поиск](https://docs.microsoft.com/azure/search/cognitive-search-concept-intro) изменили документ так, что его содержимое отличается от ожидаемого.
+* [Сопоставление полей](https://docs.microsoft.com/rest/api/searchservice/create-indexer#fieldmappings) или [когнитивный поиск](https://docs.microsoft.com/azure/search/cognitive-search-concept-intro) изменились документа и она выглядит иначе, чем ожидалось.
 * Используйте [API поиска документа](https://docs.microsoft.com/rest/api/searchservice/lookup-document), чтобы найти нужный документ.

@@ -8,12 +8,12 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 02/25/2018
 ms.author: glenga
-ms.openlocfilehash: 4e9bd4e9ea467446c2814cdb8956a40b1503b027
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: e15d6ad445c3fdde0632c3ad468eee7da836a394
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61020491"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65785965"
 ---
 # <a name="manage-connections-in-azure-functions"></a>Управление подключениями в функциях Azure
 
@@ -21,7 +21,7 @@ ms.locfileid: "61020491"
 
 ## <a name="connection-limit"></a>Ограничение числа подключений
 
-Количество доступных подключений ограничено, отчасти потому, что приложение-функция работает [среде-песочнице](https://github.com/projectkudu/kudu/wiki/Azure-Web-App-sandbox). Одно из ограничений, которые "песочницы" налагает на ваш код является [ограничение на количество подключений (в настоящее время на 600 активных подключений и общее число подключений, 1200)](https://github.com/projectkudu/kudu/wiki/Azure-Web-App-sandbox#numerical-sandbox-limits) каждого экземпляра. По достижении этого ограничения среда выполнения функций создает журнал со следующим сообщением: `Host thresholds exceeded: Connections`.
+Количество доступных подключений ограничено, отчасти потому, что приложение-функция работает [среде-песочнице](https://github.com/projectkudu/kudu/wiki/Azure-Web-App-sandbox). Одно из ограничений, которые "песочницы" налагает на ваш код является ограничение на количество подключений (в настоящее время на 600 активных подключений и общее число подключений, 1200) каждого экземпляра. По достижении этого ограничения среда выполнения функций создает журнал со следующим сообщением: `Host thresholds exceeded: Connections`.
 
 Это ограничение не на один экземпляр.  Когда [контроллер масштабирования добавляет экземпляров приложения-функции](functions-scale.md#how-the-consumption-and-premium-plans-work) возможность обрабатывать больше запросов, каждый экземпляр имеет ограничение независимое подключение. Это означает, что не ограничено глобальных подключений, и может иметь гораздо более чем 600 активных подключений для всех активных экземпляров.
 

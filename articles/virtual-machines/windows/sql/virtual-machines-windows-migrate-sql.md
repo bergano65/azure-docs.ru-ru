@@ -16,18 +16,22 @@ ms.topic: article
 ms.date: 08/18/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 95acda60935e82b226a1a0e860b5fa8effb8e47e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 8e5a7bfc243fc8c797ffc66b2130756567ddc0fb
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60325704"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65795778"
 ---
 # <a name="migrate-a-sql-server-database-to-sql-server-in-an-azure-vm"></a>Миграция базы данных SQL Server в экземпляр SQL Server на виртуальной машине Azure
 
 Существует несколько методов переноса пользовательской базы данных из локального экземпляра SQL Server в SQL Server на виртуальной машине Azure. В этой статье будут кратко рассмотрены разные методы и рекомендованы лучшие из них для различных сценариев.
 
+
 [!INCLUDE [learn-about-deployment-models](../../../../includes/learn-about-deployment-models-both-include.md)]
+
+  > [!NOTE]
+  > SQL Server 2008 и SQL Server 2008 R2 приближаетесь [их жизненный цикл поддержки](https://www.microsoft.com/sql-server/sql-server-2008) для локальных экземпляров. Для расширения поддержки, можно перенести экземпляр SQL Server на виртуальных машинах Azure, или приобрести расширенные обновления для системы безопасности для обеспечения его на локальный. Дополнительные сведения см. в разделе [расширять поддержку для SQL Server 2008 и 2008 R2 с помощью Azure](virtual-machines-windows-sql-server-2008-eos-extend-support.md)
 
 ## <a name="what-are-the-primary-migration-methods"></a>Описание основных методов миграции
 Ниже перечислены основные методы миграции.
@@ -96,7 +100,7 @@ ms.locfileid: "60325704"
 ## <a name="ship-hard-drive"></a>Отправка жестких дисков
 Для передачи больших объемов данных в хранилище больших двоичных объектов Azure в ситуациях, когда отправка этих данных по сети чрезвычайно дорога или невыполнима, можно использовать [службу импорта и экспорта Windows](../../../storage/common/storage-import-export-service.md) . При использовании этой службы можно отправить один или несколько жестких дисков с данными в центр обработки данных Azure, где данные будут перемещены в вашу учетную запись хранения.
 
-## <a name="next-steps"></a>Следующие шаги
+## <a name="next-steps"></a>Дальнейшие действия
 Подробные сведения о работе SQL Server на виртуальных машинах Azure см. в разделе [Общие сведения об SQL Server на виртуальных машинах Azure](virtual-machines-windows-sql-server-iaas-overview.md).
 
 > [!TIP]

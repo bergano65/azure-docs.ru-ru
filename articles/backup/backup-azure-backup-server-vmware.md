@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 12/11/2018
 ms.author: raynew
-ms.openlocfilehash: 6fb95d43bff79ca91988549114daa91e5d41f358
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: f034f31f2c8c49bbdfb88e2ba0a009ff5b795fa2
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60650153"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65789601"
 ---
 # <a name="back-up-vmware-vms-with-azure-backup-server"></a>Резервное копирование виртуальных машин VMware с помощью Azure Backup Server
 
@@ -39,7 +39,7 @@ ms.locfileid: "60650153"
 
 ### <a name="before-you-start"></a>Перед началом работы
 
-- Если вы не хотите использовать протокол HTTPS, [отключите параметр по умолчанию](backup-azure-backup-server-vmware.md).
+- Если вы не хотите использовать протокол HTTPS вы можете [отключить проверку сертификатов HTTPS для всех серверов VMware](backup-azure-backup-server-vmware.md#disable-https-certificate-validation).
 - Обычно к серверу vCenter или ESXi можно подключиться из браузера на компьютере Azure Backup Server через веб-клиент vSphere. Соединение не защищено, когда делаете это в первый раз, и отобразится следующее.
 - Важно понимать, как Azure Backup Server обрабатывает резервные копии.
     - Первым шагом будет создание Azure Backup Server резервной копии данных в локальном хранилище дисков. Azure Backup Server использует пул хранилища, набор дисков и томов, на которых Azure Backup Server хранит точки восстановления диска для защищенных данных. Пул хранения может быть хранилищем, подключенным напрямую (DAS), оптоволоконным каналом сети SAN или устройством или сетью хранения данных iSCSI. Важно убедиться, что хранилище имеет достаточный объем для создания локальной резервной копии данных виртуальной машины VMware.
@@ -101,7 +101,7 @@ ms.locfileid: "60650153"
 
 
 
-### <a name="disable-default-https"></a>Отключение HTTPS по умолчанию
+### <a name="disable-https-certificate-validation"></a>Отключить проверку сертификатов HTTPS
 
 Если в вашей организации есть границы безопасности, или вы не хотите использовать протокол HTTPS между серверами VMware и компьютером Azure Backup Server, отключите HTTPS следующим образом.
 1. Скопируйте приведенный ниже текст и вставьте его в TXT-файл.

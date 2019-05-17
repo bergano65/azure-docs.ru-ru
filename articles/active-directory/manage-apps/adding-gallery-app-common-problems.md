@@ -3,8 +3,8 @@ title: Проблема при добавлении приложения из к
 description: Узнайте, какие проблемы чаще всего возникают при добавлении приложений из коллекции Azure AD, и как их можно устранить.
 services: active-directory
 documentationcenter: ''
-author: CelesteDG
-manager: mtillman
+author: msmimart
+manager: CelesteDG
 ms.assetid: ''
 ms.service: active-directory
 ms.subservice: app-mgmt
@@ -13,14 +13,14 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.date: 09/11/2018
-ms.author: celested
+ms.author: mimart
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a898b5b235099109fcfeaaa4d647493e54caf57e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: b2b42880f99f3e87d75854166047896860f9eb14
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60438801"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65784430"
 ---
 # <a name="problem-adding-an-azure-ad-gallery-application"></a>Проблема при добавлении приложения из коллекции Azure AD
 
@@ -40,7 +40,7 @@ ms.locfileid: "60438801"
 
 ## <a name="i-dont-know-how-to-set-up-my-application-once-ive-added-it"></a>Приложение добавлено, но я не знаю, как его настроить
 
-Если вам нужна помощь в изучении приложений, рекомендуем начать со статьи [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list).
+Если вам нужна помощь с обучением, о приложениях, [списке руководств по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list) статье хорошо подходит для запуска.
 
 Кроме того, статья [Управление приложениями с помощью Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-apps-index) поможет вам узнать о том, что такое единый вход Azure AD и как он работает.
 
@@ -48,7 +48,7 @@ ms.locfileid: "60438801"
 
 Чтобы просмотреть сведения об уведомлении на портале, выполните следующие действия:
 
-1.  Выберите значок **Уведомления** (колокольчик) в правом верхнем углу портала Azure.
+1.  Выберите **уведомления** значок (колокольчик) в правом верхнем углу портала Azure
 
 2.  Выберите уведомление, для которого указано состояние **Ошибка** (восклицательный знак (!) красного цвета).
 
@@ -93,7 +93,7 @@ ms.locfileid: "60438801"
 
   -   Пример: **2017-03-23T19:50:43.7583681Z**.
 
-- **Внутренний идентификатор транзакции** — внутренний идентификатор, по которому мы сможем найти ошибку в своих системах.
+- **ИД внутренней транзакции** — внутренний идентификатор, который можно использовать для поиска ошибки в наших системах
 
   -   Пример: **71a2f329-ca29-402f-aa72-bc00a7aca603**.
 
