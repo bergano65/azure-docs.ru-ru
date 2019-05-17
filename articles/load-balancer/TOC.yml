@@ -18,7 +18,7 @@
       href: quickstart-load-balancer-standard-public-cli.md
     - name: Создание Load Balancer уровня "Стандартный" с помощью Azure PowerShell
       href: quickstart-create-standard-load-balancer-powershell.md
-- name: Учебники
+- name: Руководства
   items:
     - name: Балансировка интернет-трафика на виртуальных машинах
       href: tutorial-load-balancer-standard-manage-portal.md
@@ -126,30 +126,30 @@
       items:
         - name: Исходящие подключения (классическая модель)
           href: load-balancer-outbound-connections-classic.md
-    - name: Настройка нескольких виртуальных IP-адресов для облачной службы
-      href: load-balancer-multivip.md
-      items:
-        - name: Настройка внутренней службы Azure Load Balancer для облачных служб
-          href: load-balancer-get-started-ilb-classic-cloud.md
+        - name: Настройка нескольких виртуальных IP-адресов для облачной службы
+          href: load-balancer-multivip.md
           items:
-            - name: Настройка внутренней службы Azure Load Balancer для облачных служб (PowerShell)
-              href: load-balancer-get-started-ilb-classic-ps.md
-            - name: Настройка внутренней службы Azure Load Balancer для облачных служб (CLI)
-              href: load-balancer-get-started-ilb-classic-cli.md
-        - name: 'Настройка общедоступной службы Azure Load Balancer (классическая модель: PowerShell)'
-          href: load-balancer-get-started-internet-classic-ps.md
-          items:
-            - name: 'Настройка общедоступной службы Azure Load Balancer (классическая модель: облачные службы)'
-              href: load-balancer-get-started-internet-classic-cloud.md
-            - name: 'Настройка общедоступной службы Azure Load Balancer (классическая модель: CLI)'
-              href: load-balancer-get-started-internet-classic-cli.md
+            - name: Настройка внутренней службы Azure Load Balancer для облачных служб
+              href: load-balancer-get-started-ilb-classic-cloud.md
+              items:
+                - name: Настройка внутренней службы Azure Load Balancer для облачных служб (PowerShell)
+                  href: load-balancer-get-started-ilb-classic-ps.md
+                - name: Настройка внутренней службы Azure Load Balancer для облачных служб (CLI)
+                  href: load-balancer-get-started-ilb-classic-cli.md
+            - name: 'Настройка общедоступной службы Azure Load Balancer (классическая модель: PowerShell)'
+              href: load-balancer-get-started-internet-classic-ps.md
+              items:
+                - name: 'Настройка общедоступной службы Azure Load Balancer (классическая модель: облачные службы)'
+                  href: load-balancer-get-started-internet-classic-cloud.md
+                - name: 'Настройка общедоступной службы Azure Load Balancer (классическая модель: CLI)'
+                  href: load-balancer-get-started-internet-classic-cli.md
 - name: Справочные материалы
   items:
     - name: Примеры кода
       href: 'https://azure.microsoft.com/resources/samples/?service=load-balancer'
     - name: Azure PowerShell
       href: /powershell/module/az.network
-    - name: Инфраструктура CLI Azure
+    - name: Azure CLI
       href: /cli/azure/network/lb
     - name: .NET
       href: /dotnet/api/microsoft.azure.management.network.models
@@ -163,7 +163,7 @@
       href: 'http://azure-sdk-for-python.readthedocs.io/en/latest/ref/azure.mgmt.network.operations.html#azure.mgmt.network.operations.LoadBalancersOperations'
     - name: REST
       href: 'https://msdn.microsoft.com/library/azure/mt163651.aspx'
-- name: Сопутствующие материалы
+- name: Связанные материалы
   items:
     - name: Шлюз приложений
       href: /azure/application-gateway/

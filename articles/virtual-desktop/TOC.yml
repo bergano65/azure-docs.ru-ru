@@ -4,7 +4,7 @@
   items:
     - name: Виртуальный рабочий стол Windows
       href: overview.md
-- name: Учебники
+- name: Руководства
   items:
     - name: 1. Создание клиента в Виртуальном рабочем столе Windows
       href: tenant-setup-azure-active-directory.md
@@ -32,8 +32,6 @@
       href: create-host-pools-user-profile.md
     - name: Настройка метода балансировки нагрузки Виртуального рабочего стола Windows
       href: configure-host-pool-load-balancing.md
-    - name: Выявление проблем с функцией диагностики
-      href: diagnostics-role-service.md
     - name: Подготовка и настройка главного образа VHD
       href: set-up-customize-master-image.md
     - name: Установка Office в главный образ VHD
@@ -54,6 +52,8 @@
   items:
     - name: 'Общие сведения об устранении неисправностей, отзывы и поддержка'
       href: troubleshoot-set-up-overview.md
+    - name: Выявление проблем с функцией диагностики
+      href: diagnostics-role-service.md
     - name: Создание пула узлов и клиента
       href: troubleshoot-set-up-issues.md
     - name: Конфигурация виртуальной машины узла сеанса
