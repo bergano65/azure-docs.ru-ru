@@ -1,261 +1,242 @@
 ---
-title: Руководство по Интеграция Azure Active Directory с EverBridge | Документация Майкрософт
-description: Узнайте, как настроить единый вход Azure Active Directory в EverBridge.
+title: Руководство по интеграции Azure Active Directory с Everbridge | Документация Майкрософт
+description: Узнайте, как настроить единый вход между Azure Active Directory и Everbridge.
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: femila
-ms.reviewer: joflore
+manager: mtillman
+ms.reviewer: barbkess
 ms.assetid: 58d7cd22-98c0-4606-9ce5-8bdb22ee8b3e
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 11/29/2018
+ms.topic: tutorial
+ms.date: 04/18/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: d1bb62c9a11971f72a6c96c4652b136c19812cb3
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: f8dd11e7fb0b9fda0e0f1c7d3f794f6bfd766cdf
+ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60279502"
+ms.lasthandoff: 05/07/2019
+ms.locfileid: "65231467"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-everbridge"></a>Руководство по Интеграция Azure Active Directory с Everbridge
+# <a name="tutorial-azure-active-directory-integration-with-everbridge"></a>Руководство по интеграции Azure Active Directory с Everbridge
 
-В этом руководстве описано, как интегрировать EverBridge с Azure Active Directory (Azure AD).
+В этом руководстве описано, как интегрировать Everbridge с Azure Active Directory (Azure AD).
+Интеграция Everbridge с Azure AD дает следующие возможности:
 
-Интеграция EverBridge с Azure AD обеспечивает следующие преимущества.
+* Управление доступом к Everbridge в Azure AD.
+* Включение автоматического входа пользователей в Everbridge с помощью учетной записи Azure Active Directory. Это управление доступом называется единым входом (SSO).
+* Централизованное управление учетными записями с помощью портала Azure.
+Дополнительные сведения об интеграции приложения SaaS с Azure AD см. в статье [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-- Вы можете управлять доступом к EverBridge в Azure AD.
-- Вы можете включить автоматический вход пользователей в EverBridge (единый вход) с учетной записью Azure AD.
-- Вы можете управлять учетными записями централизованно на портале Azure.
+## <a name="prerequisites"></a>Предварительные требования
 
-Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
+Чтобы настроить интеграцию Azure AD с Everbridge, вам потребуется:
 
-## <a name="prerequisites"></a>Технические условия
-
-Чтобы настроить интеграцию Azure AD с EverBridge, вам потребуется:
-
-- подписка Azure AD;
-- подписка EverBridge с поддержкой единого входа.
-
-> [!NOTE]
-> Мы не рекомендуем использовать рабочую среду для проверки действий в этом учебнике.
-
-При проверке действий в этом учебнике соблюдайте следующие рекомендации:
-
-- Не используйте рабочую среду без необходимости.
-- Если у вас нет пробной среды Azure AD, вы можете [получить пробную версию на один месяц](https://azure.microsoft.com/pricing/free-trial/).
+* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Everbridge, использующая единый вход.
 
 ## <a name="scenario-description"></a>Описание сценария
 
-В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
+В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
-1. Добавление EverBridge из коллекции
-2. настройка и проверка единого входа в Azure AD.
+* Everbridge поддерживает единый вход, инициируемый поставщиком удостоверений.
 
-## <a name="adding-everbridge-from-the-gallery"></a>Добавление EverBridge из коллекции
+## <a name="add-everbridge-from-the-azure-marketplace"></a>Добавление Everbridge из Azure Marketplace
 
-Чтобы настроить интеграцию EverBridge с Azure AD, необходимо добавить EverBridge из коллекции в список управляемых приложений SaaS.
+Чтобы настроить интеграцию Everbridge с Azure AD, добавьте Everbridge из Azure Marketplace в список управляемых приложений SaaS.
 
-**Чтобы добавить EverBridge из коллекции, выполните следующие действия.**
+Чтобы добавить Everbridge из Azure Marketplace, сделайте следующее:
 
-1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
+1. На [портале Azure](https://portal.azure.com) в области навигации слева выберите **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"][1]
+    ![Кнопка "Azure Active Directory"](common/select-azuread.png)
 
-2. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
+2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
-    ![Колонка "Корпоративные приложения"][2]
-    
-3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-    ![Кнопка "Создать приложение"][3]
+3. Чтобы добавить новое приложение, в верхней части диалогового окна выберите **Новое приложение**.
 
-4. В поле поиска введите **EverBridge**, выберите **EverBridge** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
+    ![Кнопка "Новое приложение"](common/add-new-app.png)
 
-    ![EverBridge в списке результатов](./media/everbridge-tutorial/tutorial_everbridge_addfromgallery.png)
+4. В поле поиска введите **Everbridge**. Выберите **Everbridge** на панели результатов, а затем выберите **Добавить**.
+
+     ![Everbridge в списке результатов](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
-В этом разделе описана настройка и проверка единого входа Azure AD в приложение EverBridge с использованием тестового пользователя Britta Simon.
+В этом разделе описана настройка и проверка единого входа Azure AD в приложение Everbridge с использованием тестового пользователя Britta Simon.
+Для обеспечения работы единого входа установите связь между пользователем Azure Active Directory и соответствующим пользователем в Everbridge.
 
-Для работы единого входа в Azure AD необходимо знать, какой пользователь в EverBridge соответствует пользователю в Azure AD. Иными словами, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в EverBridge.
+Чтобы настроить и проверить единый вход Azure AD в Everbridge, выполните действия в следующих стандартных блоках:
 
-Чтобы настроить и проверить единый вход Azure AD в EverBridge, необходимо выполнить действия в следующих стандартных блоках.
+- [Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on) необходима, чтобы пользователи могли использовать эту функцию.
+- [Настройка единого входа в Everbridge в качестве портала менеджера](#configure-everbridge-as-everbridge-manager-portal-single-sign-on) необходима, чтобы настроить параметры единого входа на стороне приложения.
+- [Настройка единого входа в Everbridge в качестве портала участника](#configure-everbridge-as-everbridge-member-portal-single-sign-on) необходима, чтобы настроить параметры единого входа на стороне приложения.
+- [Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user) требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
+- [Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user) необходимо, чтобы разрешить Britta Simon использовать единый вход Azure AD.
+- [Создание тестового пользователя Everbridge](#create-an-everbridge-test-user) требуется, чтобы в Everbridge существовал пользователь Britta Simon, связанный с представлением этого же пользователя в Azure AD.
+- [Проверка единого входа](#test-single-sign-on) позволяет убедиться в корректной работе конфигурации.
 
-1. **[Configuring Azure AD Single Sign-On](#configuring-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-2. **[Создание тестового пользователя Azure AD](#creating-an-azure-ad-test-user)** требуется для проверки работы единого входа в Azure AD от имени пользователя Britta Simon.
-3. **[Создание тестового пользователя EverBridge](#creating-an-everbridge-test-user)** требуется для создания в EverBridge пользователя Britta Simon, связанного с представлением этого же пользователя в Azure AD.
-4. **[Назначение тестового пользователя Azure AD](#assigning-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD;
-5. **[Проверка единого входа](#testing-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
-### <a name="configuring-azure-ad-single-sign-on"></a>Настройка единого входа в Azure AD
+В этом разделе описано включение единого входа Azure AD на портале Azure.
 
-В этом разделе описано, как включить единый вход Azure AD на портале Azure и настроить его в приложении EverBridge.
+Чтобы настроить единый вход Azure Active Directory в Everbridge, сделайте следующее:
 
-**Чтобы настроить единый вход Azure AD в EverBridge, выполните следующие действия.**
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Everbridge** выберите **Единый вход**.
 
-1. На портале Azure на странице интеграции с приложением **EverBridge** щелкните **Единый вход**.
+    ![Ссылка "Настройка единого входа"](common/select-sso.png)
 
-    ![Ссылка "Настройка единого входа"][4]
+2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML**, чтобы включить единый вход.
 
-2. В диалоговом окне **Выбрать метод единого входа** щелкните **Выбрать** для режима **SAML**, чтобы включить единый вход.
-
-    ![Настройка единого входа](common/tutorial_general_301.png)
+    ![Режим выбора единого входа](common/select-saml-option.png)
 
 3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Настройка единого входа](common/editconfigure.png)
+    ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
     >[!NOTE]
-    >Необходимо выполнить настройки приложения в качестве портала диспетчера или портала участника на обоих концах, т. е. на портале Azure и портале Everbridge.
+    >Настройте приложение в качестве портала менеджера *или* в качестве портала участника на портале Azure и портале Everbridge.
 
-4. Чтобы настроить приложение **EverBridge** в качестве **портала диспетчера EverBridge** в разделе **Базовая конфигурация SAML** сделайте следующее:
+4. Чтобы настроить приложение **Everbridge** в качестве **портала менеджера Everbridge** в разделе **Базовая конфигурация SAML**, сделайте следующее:
 
-    ![Сведения о домене и URL-адресах единого входа приложения EverBridge](./media/everbridge-tutorial/tutorial_everbridge_url.png)
+    ![Сведения о домене и URL-адресах единого входа приложения Everbridge](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://sso.everbridge.net/<API_Name>`
+    a. В поле **Идентификатор** введите URL-адрес в следующем формате: `https://sso.everbridge.net/<API_Name>`
 
-    2. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://manager.everbridge.net/saml/SSO/<API_Name>/alias/defaultAlias`.
+    b. В поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://manager.everbridge.net/saml/SSO/<API_Name>/alias/defaultAlias`
 
     > [!NOTE]
-    > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки EverBridge](mailto:support@everbridge.com).
+    > Эти значения приведены в качестве примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь к [группе поддержки Everbridge](mailto:support@everbridge.com). Вы также можете посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-5. Чтобы настроить приложение **EverBridge** в качестве **портала участника EverBridge** в разделе **Базовая конфигурация SAML** сделайте следующее:
+5. Чтобы настроить приложение **Everbridge** в качестве **портала участника Everbridge**, в разделе **Базовая конфигурация SAML** сделайте следующее:
 
-   * Если вы хотите настроить приложение в режиме, инициируемом **IDP**, сделайте следующее:
+  * Если вы хотите настроить приложение в режиме, инициируемом поставщиком удостоверений, выполните следующие действия:
 
-       ![Сведения о домене и URL-адресах единого входа приложения EverBridge](./media/everbridge-tutorial/tutorial_everbridge_url1.png)
+     ![Сведения о домене и URL-адресах для единого входа в приложении Everbridge для режима, инициируемого поставщиком удостоверений](common/idp-intiated.png)
 
-       * В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://sso.everbridge.net/<API_Name>/<Organization_ID>`
+    a. В поле **Идентификатор** введите URL-адрес в следующем формате: `https://sso.everbridge.net/<API_Name>/<Organization_ID>`
 
-       * В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://member.everbridge.net/saml/SSO/<API_Name>/<Organization_ID>/alias/defaultAlias`.
+    b. В поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://member.everbridge.net/saml/SSO/<API_Name>/<Organization_ID>/alias/defaultAlias`
 
-   * Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
+   * Если вы хотите настроить приложение в режиме, инициируемом поставщиком услуг, выберите **Задать дополнительные URL-адреса** и выполните следующие действия:
 
-       ![Сведения о домене и URL-адресах единого входа приложения EverBridge](./media/everbridge-tutorial/tutorial_everbridge_url2.png)
+     ![Сведения о домене и URL-адресах для единого входа в приложении Everbridge для режима, инициируемого поставщиком услуг](common/both-signonurl.png)
 
-       * В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://member.everbridge.net/saml/login/<API_Name>/<Organization_ID>/alias/defaultAlias?disco=true`
+     a. В поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://member.everbridge.net/saml/login/<API_Name>/<Organization_ID>/alias/defaultAlias?disco=true`
 
      > [!NOTE]
-     > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адресов ответа и входа. Чтобы получить эти значения, обратитесь в [службу поддержки EverBridge](mailto:support@everbridge.com).
+     > Эти значения приведены в качестве примера. Измените их на фактические значения идентификатора и URL-адресов ответа и входа. Чтобы получить эти значения, обратитесь к [группе поддержки Everbridge](mailto:support@everbridge.com). Вы также можете посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-6. На странице **сертификата подписи SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать **XML метаданных федерации**, а затем сохраните метаданные на компьютере.
+6. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** нажмите кнопку **Скачать**, чтобы скачать **XML метаданных федерации**. Сохраните его на компьютере.
 
-    ![Ссылка для скачивания сертификата](./media/everbridge-tutorial/tutorial_everbridge_certificate.png) 
+    ![Ссылка для скачивания сертификата](common/metadataxml.png)
 
-7. Требуемый URL-адрес можно скопировать из раздела **Настройка EverBridge**.
+7. Требуемые URL-адреса можно скопировать из раздела **Настройка Everbridge**.
 
-    a. URL-адрес входа.
+    ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    b. Идентификатор Azure AD
+    - URL-адрес входа.
+    - Идентификатор Azure AD
+    - URL-адрес выхода.
 
-    c. URL-адрес выхода.
+### <a name="configure-everbridge-as-everbridge-manager-portal-single-sign-on"></a>Настройка единого входа в Everbridge в качестве портала менеджера
 
-    ![Конфигурация EverBridge](common/configuresection.png)
-
-8. Чтобы настроить единый вход для **EverBridge** в качестве приложения **портала диспетчера EverBridge**, сделайте следующее: 
+Чтобы настроить единый вход в **Everbridge** в качестве **портала менеджера**, выполните следующие действия:
  
-9. В другом окне веб-браузера войдите в приложение EverBridge с правами администратора.
+1. В другом окне веб-браузера войдите в приложение Everbridge с правами администратора.
 
-9. В меню в верхней части страницы откройте вкладку **Settings** (Параметры) и выберите пункт **Single Sign-On** (Единый вход) в разделе **Security** (Безопасность).
+1. В верхнем меню выберите вкладку **Settings** (Параметры). В разделе **Security** (Безопасность) выберите **Single Sign-On** (Единый вход).
    
      ![Настройка единого входа](./media/everbridge-tutorial/tutorial_everbridge_002.png)
    
-     a. В текстовом поле **Name** (Имя) введите имя поставщика идентификаторов (например, название своей компании).
+     a. В поле **Name** (Имя) введите имя поставщика идентификаторов. Например, название вашей компании.
    
-     2. В текстовом поле **API Name** (Имя API) введите имя API.
+     b. В поле **API Name** (Имя API) введите имя API.
    
-     c. Чтобы отправить файл метаданных, скачанный на портале Azure, нажмите кнопку **Выбрать файл**.
+     c. Затем нажмите кнопку **Choose File** (Выбор файла), чтобы передать файл метаданных, скачанный с портала Azure.
    
-     d. В поле "Расположение удостоверения SAML" выберите значение **Identity is in the NameIdentifier element of the Subject statement** (Удостоверение находится в элементе NameIdentifier оператора Subject).
+     d. В поле **SAML Identity Location** (Расположение удостоверения SAML) выберите значение **Identity is in the NameIdentifier element of the Subject statement** (Удостоверение находится в элементе NameIdentifier оператора Subject).
    
-     д. В текстовое поле **Identity Provider Login URL** (URL-адрес для входа поставщика удостоверений) вставьте **URL-адрес входа**, скопированный на портале Azure.
+     д. В поле **Identity Provider Login URL** (URL-адрес для входа поставщика удостоверений) вставьте значение **URL-адреса входа**, скопированное на портале Azure.
    
-     Е. В поле "Service Provider Initiated Request Binding" (Связывание запросов, инициированных поставщиком услуг) выберите **HTTP Redirect** (Перенаправление HTTP).
+     Е. В поле **Service Provider Initiated Request Binding** (Связывание запросов, инициируемых поставщиком услуг) выберите значение **HTTP Redirect** (Перенаправление HTTP).
 
-     ж. Нажмите кнопку **Сохранить**
+     ж. Щелкните **Сохранить**.
 
-10. Чтобы настроить единый вход в приложении **EverBridge** в качестве **портала участника EverBridge**, нужно отправить скачанный файл **XML метаданных федерации** в [службу поддержки EverBridge](mailto:support@everbridge.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+### <a name="configure-everbridge-as-everbridge-member-portal-single-sign-on"></a>Настройка единого входа в Everbridge в качестве портала участника
 
-### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
+Чтобы настроить единый вход в **Everbridge** в качестве **портала участника Everbridge**, отправьте скачанный **XML метаданных федерации** [группе поддержки Everbridge](mailto:support@everbridge.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+Чтобы создать на портале Azure тестового пользователя Britta Simon, сделайте следующее:
 
-    ![Создание пользователя Azure AD][100]
+1. На портале Azure на панели слева выберите **Azure Active Directory** > **Пользователи** > **Все пользователи**.
+
+    ![Ссылки "Пользователи" и "Все пользователи"](common/users.png)
 
 2. В верхней части экрана выберите **Новый пользователь**.
 
-    ![Создание тестового пользователя Azure AD](common/create_aaduser_01.png) 
+    ![Кнопка "Новый пользователь"](common/new-user.png)
 
-3. В разделе свойств пользователя сделайте следующее.
+3. В диалоговом окне **Пользователь** выполните следующие действия:
 
-    ![Создание тестового пользователя Azure AD](common/create_aaduser_02.png)
+    ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
     a. В поле **Имя** введите **BrittaSimon**.
   
-    2. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
-    Например BrittaSimon@contoso.com.
+    b. В поле **Имя пользователя** введите `brittasimon@yourcompanydomain.extension`. Например, BrittaSimon@contoso.com.
 
-    c. Выберите **Свойства**, установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    c. Установите флажок **Показать пароль**. Запишите значение, которое отображается в поле **Пароль**.
 
     d. Нажмите кнопку **Создать**.
-  
-### <a name="creating-an-everbridge-test-user"></a>Создание тестового пользователя EverBridge
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Everbridge. Чтобы добавить пользователей на платформу EverBridge, обратитесь в [службу поддержки Everbridge](mailto:support@everbridge.com).
+### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
-### <a name="assigning-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
+Разрешите пользователю Britta Simon применять единый вход Azure, предоставив доступ к Everbridge.
 
-В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure путем предоставления доступа к EverBridge.
+1. На портале Azure выберите **Корпоративные приложения** > **Все приложения** >**Everbridge**.
 
-1. На портале Azure перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-    ![Назначение пользователя][201]
+2. В списке приложений выберите **Everbridge**.
 
-2. В списке приложений выберите **EverBridge**.
-
-    ![Настройка единого входа](./media/everbridge-tutorial/tutorial_everbridge_app.png) 
+    ![Ссылка на Everbridge в списке "Приложения"](common/all-applications.png)
 
 3. В меню слева выберите **Пользователи и группы**.
 
-    ![Назначение пользователя][202]
+    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
 
-4. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+4. Выберите **Добавить пользователя**. В диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
-    ![Назначение пользователя][203]
+    ![Диалоговое окно "Добавление назначения"](common/add-assign-user.png)
 
-5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
+5. В диалоговом окне **Пользователи и группы** из списка "Пользователи" выберите **Britta Simon**. В нижней части экрана нажмите кнопку **Выбрать**.
 
-6. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
+6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка. В нижней части экрана нажмите кнопку **Выбрать**.
 
-### <a name="testing-single-sign-on"></a>Проверка единого входа
+7. В диалоговом окне **Добавление назначения** выберите **Назначить**.
 
-В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
+### <a name="create-an-everbridge-test-user"></a>Создание тестового пользователя в Everbridge
 
-Щелкнув плитку EverBridge на панели доступа, вы автоматически войдете в приложение EverBridge.
-Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../user-help/active-directory-saas-access-panel-introduction.md).
+В этом разделе вы создадите тестового пользователя Britta Simon в Everbridge. Чтобы добавить пользователей на платформу Everbridge, обратитесь к [группе поддержки Everbridge](mailto:support@everbridge.com). Перед использованием единого входа необходимо создать и активировать пользователей в приложении Everbridge. 
+
+### <a name="test-single-sign-on"></a>Проверка единого входа 
+
+Проверьте конфигурацию единого входа Azure AD с помощью панели доступа.
+
+Выбрав плитку Everbridge на Панели доступа, вы автоматически войдете в учетную запись Everbridge, для которой настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Список учебников по интеграции приложений SaaS с Azure Active Directory](tutorial-list.md)
-* [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
-<!--Image references-->
-
-[1]: common/tutorial_general_01.png
-[2]: common/tutorial_general_02.png
-[3]: common/tutorial_general_03.png
-[4]: common/tutorial_general_04.png
-
-[100]: common/tutorial_general_100.png
-
-[201]: common/tutorial_general_201.png
-[202]: common/tutorial_general_202.png
-[203]: common/tutorial_general_203.png

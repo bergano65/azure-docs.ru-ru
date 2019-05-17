@@ -6,15 +6,15 @@ author: mhopkins-msft
 ms.custom: mvc
 ms.service: storage
 ms.topic: quickstart
-ms.date: 11/14/2018
+ms.date: 05/09/2019
 ms.author: mhopkins
 ms.reviewer: seguler
-ms.openlocfilehash: 0b7a7ac7b8a71f33871247a1117c16609bbbcd88
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: 2728ac93abd18f929dc6e82cfb471ce33fe8866f
+ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65191055"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65508027"
 ---
 # <a name="quickstart-use-net-to-create-a-blob-in-object-storage"></a>Краткое руководство. Использование .NET для создания большого двоичного объекта в хранилище объектов
 
@@ -24,7 +24,7 @@ ms.locfileid: "65191055"
 
 [!INCLUDE [storage-quickstart-prereq-include](../../../includes/storage-quickstart-prereq-include.md)]
 
-Затем загрузите и установите .NET Core 2.0 для своей ОС. На компьютере Windows можно установить Visual Studio и, если вы предпочитаете платформу .NET Framework, использовать ее. Кроме того, вы можете установить редактор для использования с ОС.
+Скачайте и установите .NET Core 2.1 для своей ОС. На компьютере Windows можно установить Visual Studio и, если вы предпочитаете платформу .NET Framework, использовать ее. Кроме того, вы можете установить редактор для использования с ОС.
 
 # <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
@@ -288,8 +288,8 @@ File.Delete(destinationFile);
 
 ### <a name="binaries-and-source-code"></a>Двоичные файлы и исходный код
 
-- Скачайте пакет NuGet для последней версии [клиентской библиотеки .NET](https://www.nuget.org/packages/WindowsAzure.Storage/) для службы хранилища Azure.
-- См. [исходный код клиентской библиотеки .NET](https://github.com/Azure/azure-storage-net) на сайте GitHub.
+- Скачайте пакет NuGet для последней версии [клиентской библиотеки .NET](https://www.nuget.org/packages/Microsoft.Azure.Storage.Blob/) для хранилище BLOB-объектов Azure.
+- Просмотрите [исходный код пакета SDK хранилища BLOB-объектов Microsoft Azure для .NET](https://github.com/Azure/azure-storage-net/tree/master/Blob) на сайте GitHub.
 
 ### <a name="client-library-reference-and-samples"></a>Справочник по клиентской библиотеке и примеры
 
@@ -300,10 +300,10 @@ File.Delete(destinationFile);
 
 В этом кратком руководстве вы узнали, как передавать, загружать и перечислять файлы в большие двоичные объекты с помощью .NET.
 
-Сведения о создании веб-приложения, которое передает образ в хранилище BLOB-объектов, см. в статье [Передача данных изображений в облако с помощью службы хранилища Azure](storage-upload-process-images.md).
+Сведения о создании веб-приложения, которое передает образ в хранилище BLOB-объектов, см. в этой статье:
 
 > [!div class="nextstepaction"]
-> [Практическое руководство по операциям в хранилище BLOB-объектов](storage-dotnet-how-to-use-blobs.md)
+> [Передача и обработка образа](storage-upload-process-images.md)
 
 - Дополнительные сведения о .NET Core см. в статье [Get started with .NET in 10 minutes](https://www.microsoft.com/net/learn/get-started/) (Быстрое начало работы с .NET).
 - Пример приложения, которое можно развернуть из Visual Studio для Windows, см. в записи блога [.NET Photo Gallery Web Application Sample with Azure Blob Storage](https://azure.microsoft.com/resources/samples/storage-blobs-dotnet-webapp/) (Пример веб-приложения .NET "Фотоальбом" с хранилищем BLOB-объектов Azure).

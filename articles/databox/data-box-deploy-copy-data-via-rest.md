@@ -1,19 +1,19 @@
 ---
-title: Копирование данных в хранилище BLOB-объектов Azure Data Box с помощью REST API | Документация Майкрософт
+title: Руководство по копированию данных в хранилище BLOB-объектов Azure Data Box с помощью REST API | Документация Майкрософт
 description: Узнайте, как копировать данные в хранилище BLOB-объектов Azure Data Box с помощью REST API
 services: databox
 author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: tutorial
-ms.date: 04/19/2019
+ms.date: 05/09/2019
 ms.author: alkohli
-ms.openlocfilehash: 2a4c4c7431752ade60161af84b4cc15f010af656
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: b3d53b7d5fceb303259823198731b5198cfce82c
+ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59995750"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65508256"
 ---
 # <a name="tutorial-copy-data-to-azure-data-box-blob-storage-via-rest-apis"></a>Руководство по Копирование данных в хранилище BLOB-объектов Azure Data Box с помощью REST API  
 
@@ -187,7 +187,7 @@ ms.locfileid: "59995750"
         --dest-key <key> \
         --recursive
 
-#### <a name="windows"></a> Windows
+#### <a name="windows"></a>Windows
 
     AzCopy /Source:C:\myfolder /Dest:https://data-box-storage-account-name.blob.device-serial-no.microsoftdatabox.com/container-name/files/ /DestKey:<key> /S
 
@@ -212,7 +212,7 @@ ms.locfileid: "59995750"
     --recursive \
     --exclude-older
 
-#### <a name="windows"></a> Windows
+#### <a name="windows"></a>Windows
 
     AzCopy /Source:C:\myfolder /Dest:https://data-box-storage-account-name.blob.device-serial-no.microsoftdatabox.com/container-name/files/ /DestKey:<key> /S /XO
 

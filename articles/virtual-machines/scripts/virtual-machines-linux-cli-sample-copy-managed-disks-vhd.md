@@ -13,19 +13,19 @@ ms.devlang: azurecli
 ms.topic: sample
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 09/17/2018
+ms.date: 05/09/2019
 ms.author: ramankum
 ms.custom: mvc,seodec18
-ms.openlocfilehash: 6252049c2258c391aa4483dd51ec0d9ee766bed0
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
+ms.openlocfilehash: c5055860df007d0f009bd08c2b211ffeeaad711f
+ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55727140"
+ms.lasthandoff: 05/09/2019
+ms.locfileid: "65510872"
 ---
 # <a name="exportcopy-a-managed-disk-to-a-storage-account-using-the-azure-cli"></a>Экспорт или копирование управляемых дисков в учетную запись хранения
 
-Этот скрипт позволяет экспортировать базовый VHD управляемого диска в учетную запись хранения в том же или другом регионе. Сначала для управляемого диска создается URI SAS. Затем с его помощью VHD копируется в учетную запись хранения. Этот скрипт также позволяет копировать управляемые диски в различных регионах. 
+Этот скрипт позволяет экспортировать базовый VHD управляемого диска в учетную запись хранения в том же или другом регионе. Сначала для управляемого диска создается URI SAS. Затем с его помощью VHD копируется в учетную запись хранения. Этот сценарий также позволяет копировать управляемый диск в другой регион для продвижения. Если вы хотите опубликовать VHD-файл управляемого диска в Azure Marketplace, можно использовать этот скрипт для копирования VHD-файла в учетную запись хранения и создания универсального кода ресурса SAS для скопированного VHD для его публикации в Marketplace.   
 
 
 [!INCLUDE [sample-cli-install](../../../includes/sample-cli-install.md)]
