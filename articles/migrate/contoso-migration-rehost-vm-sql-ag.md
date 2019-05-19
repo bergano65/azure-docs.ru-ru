@@ -704,8 +704,7 @@ DMS подключается к локальной виртуальной маш
 ## <a name="bcdr"></a>Непрерывность бизнес-процессов и аварийное восстановление
 
  Чтобы обеспечить непрерывность бизнес-процессов и аварийное восстановление (BCDR), Contoso выполняет следующие действия:
-- Безопасное хранение данных. Contoso выполняет резервное копирование данных на виртуальных машинах WEBVM, SQLAOG1 и SQLAOG2, используя службу Azure Backup. [Подробнее].
-  (https://docs.microsoft.com/azure/backup/backup-introduction-to-azure-backup?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
+- Безопасное хранение данных. Contoso выполняет резервное копирование данных на виртуальных машинах WEBVM, SQLAOG1 и SQLAOG2, используя службу Azure Backup. [Подробнее](https://docs.microsoft.com/azure/backup/backup-introduction-to-azure-backup?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
   - Сотрудники Contoso также научаться использовать службу хранилища Azure для резервного копирования SQL Server непосредственно в хранилище BLOB-объектов. [Узнайте больше](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-use-storage-sql-server-backup-restore).
   - Поддержание работы приложений. Специалисты компании Contoso реплицируют виртуальные машины приложения в дополнительный регион Azure с помощью Site Recovery. [Узнайте больше](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-quickstart).
 
