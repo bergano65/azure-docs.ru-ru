@@ -16,7 +16,7 @@
     - name: Создание кластера Apache Spark с использованием шаблона Resource Manager
       displayName: 'resource manager template, arm template, resource manager group'
       href: apache-spark-jupyter-spark-sql.md
-- name: Учебники
+- name: Руководства
   items:
     - name: Выполнение запросов в кластере Apache Spark
       href: apache-spark-load-data-run-query.md
@@ -231,7 +231,7 @@
               href: 'https://docs.microsoft.com/azure/hdinsight/hdinsight-go-sdk-overview'
             - name: Использование Azure PowerShell
               href: ../hdinsight-administer-use-powershell.md
-            - name: Использование классического интерфейса Azure CLI
+            - name: Использование Azure CLI
               href: ../hdinsight-administer-use-command-line.md
         - name: Управление кластерами с помощью пользовательского веб-интерфейса Apache Ambari
           href: ../hdinsight-hadoop-manage-ambari.md

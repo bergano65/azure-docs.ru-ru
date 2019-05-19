@@ -114,7 +114,7 @@
               href: 'https://docs.microsoft.com/azure/hdinsight/hdinsight-go-sdk-overview'
             - name: Использование Azure PowerShell
               href: ../hdinsight-administer-use-powershell.md
-            - name: Использование классического интерфейса Azure CLI
+            - name: Использование Azure CLI
               href: ../hdinsight-administer-use-command-line.md
         - name: Управление кластерами с помощью пользовательского веб-интерфейса Apache Ambari
           href: ../hdinsight-hadoop-manage-ambari.md
@@ -256,7 +256,7 @@
           href: ../hdinsight-key-scenarios-to-monitor.md
         - name: Рекомендации по оптимизации производительности Apache Phoenix
           href: apache-hbase-phoenix-performance.md
-- name: Сопутствующие материалы
+- name: Связанные материалы
   items:
     - name: Кластеры Windows
       items:

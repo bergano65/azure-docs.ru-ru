@@ -14,7 +14,7 @@
     - name: Создание кластера Apache Kafka (шаблон Resource Manager)
       displayName: 'resource manager template, arm template, resource manager group'
       href: apache-kafka-quickstart-resource-manager-template.md
-- name: Учебники
+- name: Руководства
   items:
     - name: Использование структурированной потоковой передачи Apache Spark
       href: ../hdinsight-apache-kafka-spark-structured-streaming.md
@@ -90,7 +90,7 @@
           href: apache-kafka-byok.md
         - name: Шифрование и аутентификация SSL
           href: apache-kafka-ssl-encryption-authentication.md
-        - name: Управление доступом на основе ролей Apache Kafka с использованием Apache Ranger
+        - name: Управление доступом на основе ролей Apache Kafka с помощью Apache Ranger
           href: ../domain-joined/apache-domain-joined-run-kafka.md
     - name: Управление
       items:
@@ -129,7 +129,7 @@
           href: 'https://docs.microsoft.com/azure/hdinsight/hdinsight-go-sdk-overview'
         - name: Использование Azure PowerShell
           href: ../hdinsight-administer-use-powershell.md
-        - name: Использование классического интерфейса Azure CLI
+        - name: Использование Azure CLI
           href: ../hdinsight-administer-use-command-line.md
         - name: Управление кластерами с помощью пользовательского веб-интерфейса Apache Ambari
           href: ../hdinsight-hadoop-manage-ambari.md
