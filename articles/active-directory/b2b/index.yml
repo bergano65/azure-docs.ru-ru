@@ -27,7 +27,7 @@ abstract:
     href: 'https://www.youtube.com/watch?v=AhwrweCBdsc'
     width: 246
 sections:
-  - title: 5-минутные руководства по началу работы
+  - title: Пятиминутные руководства по началу работы
     items:
       - type: paragraph
         text: 'Узнайте, как приглашать гостевых пользователей и приступить к работе с функцией совместной работы B2B.'

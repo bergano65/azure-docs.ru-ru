@@ -3,9 +3,9 @@
 - name: Обзор
   expanded: true
   items:
-    - name: Знакомство с API пользовательского поиска Bing
+    - name: Знакомство с API Пользовательского поиска Bing
       href: overview.md
-    - name: Сравнение API-интерфейсов поиска Bing
+    - name: Сравнение API-интерфейсов Поиска Bing
       href: ../Bing-Web-Search/bing-api-comparison.md
       maintainContext: true
 - name: Краткие руководства
@@ -31,7 +31,7 @@
               href: sdk-csharp-quick-start.md
             - name: Использование Python
               href: sdk-python-quickstart.md
-- name: Учебники
+- name: Руководства
   items:
     - name: Создание веб-страницы пользовательского поиска
       href: ./tutorials/custom-search-web-page.md
@@ -61,32 +61,32 @@
       href: page-webpages.md
 - name: Справочные материалы
   items:
-    - name: Справочник по API пользовательского автозаполнения Bing
+    - name: Справочник по API Пользовательского автозаполнения Bing
       href: 'https://docs.microsoft.com/rest/api/cognitiveservices/bing-custom-autosuggest-api-v7-reference'
-    - name: Справочник по API поиска пользовательских изображений Bing
+    - name: Справочник по API Пользовательского поиска изображений Bing
       href: 'https://docs.microsoft.com/rest/api/cognitiveservices/bing-custom-images-api-v7-reference'
-    - name: Справочник по API пользовательского поиска Bing
+    - name: Справочник по API Пользовательского поиска Bing
       href: 'https://docs.microsoft.com/rest/api/cognitiveservices/bing-custom-search-api-v7-reference'
-    - name: Справочник по API Bing для пользовательского поиска видео
+    - name: Справочник по API Пользовательского поиска видео Bing
       href: 'https://docs.microsoft.com/rest/api/cognitiveservices/bing-custom-videos-api-v7-reference'
-    - name: Требования к использованию и отображению API-интерфейсов поиска Bing
+    - name: Требования к использованию и отображению API-интерфейсов Поиска Bing
       href: ../Bing-Web-Search/use-display-requirements.md
       maintainContext: true
     - name: Пакеты SDK
       items:
         - name: .NET
           href: 'https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/bingcustomsearch?view=azure-dotnet'
-        - name: "Java\_— пользовательский поиск"
+        - name: "Java\_— Пользовательский поиск"
           href: 'https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/customsearch?view=azure-java-stable'
-        - name: "Java\_— пользовательский поиск изображений"
+        - name: "Java\_— Пользовательский поиск изображений"
           href: 'https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/customimagesearch?view=azure-java-stable'
         - name: Python
           href: 'https://docs.microsoft.com/python/api/overview/azure/cognitiveservices/customsearch?view=azure-python'
         - name: Node.js
           href: 'https://docs.microsoft.com/javascript/api/azure-cognitiveservices-customsearch/?view=azure-node-latest'
-        - name: "Go\_— пользовательский поиск"
+        - name: "Go\_— Пользовательский поиск"
           href: 'https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v1.0/customsearch'
-        - name: "Go\_— пользовательский поиск изображений"
+        - name: "Go\_— Пользовательский поиск изображений"
           href: 'https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v1.0/customimagesearch'
 - name: Ресурсы
   items:

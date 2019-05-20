@@ -36,7 +36,7 @@ ms.locfileid: "60866045"
 
 [!INCLUDE [azure-policy-samples-storage](../../../../includes/azure-policy-samples-storage.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - См. дополнительные сведения о [структуре определения Политики Azure](../concepts/definition-structure.md).
 - Изучите [сведения о действии политик](../concepts/effects.md).

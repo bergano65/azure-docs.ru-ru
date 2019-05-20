@@ -1,9 +1,9 @@
 ### YamlMime:YamlDocument
 documentType: LandingData
-title: Документация по API Bing для поиска сущностей
+title: Документация по API Поиска сущностей Bing
 metadata:
-  title: "Документация по API Bing для поиска сущностей. Учебные материалы, краткие руководства и справочники по API\_| Документация Майкрософт"
-  description: 'Как использовать API Bing для поиска сущностей, чтобы получить сведения о людях, местах или других определенных субъектах. В руководствах объясняется, как создавать приложения, использующие эту службу.'
+  title: "Документация по API Поиска сущностей Bing. Учебные материалы, краткие руководства и справочники по API\_| Документация Майкрософт"
+  description: 'Как использовать API Поиска сущностей Bing, чтобы получить сведения о людях, местах или других определенных субъектах. В руководствах объясняется, как создавать приложения, использующие эту службу.'
   services: cognitive-services
   author: aahill
   manager: nitinme
@@ -15,7 +15,7 @@ metadata:
   ms.date: 02/01/2019
   ms.author: aahi
 abstract:
-  description: 'При использовании API Bing для поиска сущностей приложения могут получать сведения об обнаруженных сущностях в поисковых запросах. Сущностями могут быть люди, места, названия новостных статей и пр.'
+  description: 'При использовании API Поиска сущностей Bing приложения могут получать сведения об обнаруженных сущностях в поисковых запросах. Сущностями могут быть люди, места, названия новостных статей и пр.'
 sections:
   - items:
       - type: list
@@ -24,12 +24,12 @@ sections:
         columns: 3
         items:
           - href: /azure/cognitive-services/bing-entities-search/overview
-            html: "<p>Дополнительные сведения об API\_Bing для поиска сущностей</p>"
+            html: <p>Дополнительные сведения об API Поиска сущностей Bing</p>
             image:
               src: ../media/index/i_overview.svg
             title: Поиск сущностей
           - href: /azure/cognitive-services/bing-entities-search/concepts/search-for-entities
-            html: '<p>Узнайте, как с помощью API Bing для поиска сущностей искать сущности.</p>'
+            html: '<p>Узнайте, как с помощью API Поиска сущностей Bing искать сущности.</p>'
             image:
               src: ../media/index/i_guidelines.svg
             title: Отправка поисковых запросов
@@ -41,14 +41,14 @@ sections:
   - title: Пятиминутные руководства по началу работы
     items:
       - type: paragraph
-        text: 'Начните работу с API Bing для поиска сущностей, составив запрос и просмотрев ответ в формате JSON.'
+        text: 'Начните работу с API Поиска сущностей Bing, составив запрос и просмотрев ответ в формате JSON.'
       - type: list
         style: icon48
         items:
           - image:
               src: media/index/logo_csharp.svg
             href: quickstarts/entity-sdk-csharp-quickstart
-            text: 'C&#35;'
+            text: 'C#'
           - image:
               src: media/index/logo_java.svg
             href: quickstarts/entity-sdk-java-quickstart
@@ -72,13 +72,13 @@ sections:
   - title: Пошаговые руководства
     items:
       - type: paragraph
-        text: Инструкции по разработке приложений с использованием API Bing для поиска сущностей.
+        text: Инструкции по разработке приложений с использованием API Поиска сущностей Bing.
       - type: paragraph
         text: <a href="tutorial-bing-entities-search-single-page-app">Одностраничное веб-приложение</a>
   - title: Примеры
     items:
       - type: paragraph
-        text: 'Ознакомьтесь с примерами для API Bing для поиска сущностей:'
+        text: 'Ознакомьтесь с примерами для API Поиска сущностей Bing:'
       - type: list
         style: unordered
         items:
@@ -89,11 +89,11 @@ sections:
         style: cards
         className: cardsD
         items:
-          - title: Интерфейсы API
-            html: '<p><a href="https://docs.microsoft.com/rest/api/cognitiveservices/bing-entities-api-v7-reference">API Bing для поиска сущностей версии 7</a></p>'
+          - title: API
+            html: '<p><a href="https://docs.microsoft.com/rest/api/cognitiveservices/bing-entities-api-v7-reference">API Поиска сущностей Bing версии 7</a></p>'
           - title: Пакеты SDK
-            html: '<p><a href="https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/bingentitysearchapi?view=azure-dotnet">.NET</a></p> <p><a href="https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/entitysearch?view=azure-java-stable">Java</a></p> <p><a href="https://docs.microsoft.com/python/api/overview/azure/cognitiveservices/entitysearch?view=azure-python">Python</a></p> <p><a href="https://docs.microsoft.com/javascript/api/azure-cognitiveservices-entitysearch?view=azure-node-latest">Node.js</a></p> <p><a href="https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v1.0/entitysearch">GO</a></p>'
+            html: '<p><a href="https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/bingentitysearchapi?view=azure-dotnet">.NET</a></p> <p><a href="https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/entitysearch?view=azure-java-stable">Java</a></p> <p><a href="https://docs.microsoft.com/python/api/overview/azure/cognitiveservices/entitysearch?view=azure-python">Python</a></p> <p><a href="https://docs.microsoft.com/javascript/api/azure-cognitiveservices-entitysearch?view=azure-node-latest">Node.js</a></p> <p><a href="https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v1.0/entitysearch">Go</a></p>'
           - title: PowerShell
             html: '<p><a href="https://docs.microsoft.com/powershell/module/az.cognitiveservices/#cognitive_services">Azure PowerShell</a></p>'
-          - title: Интерфейс командной строки
-            html: '<p><a href="https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest">Интерфейс командной строки Azure</a></p>'
+          - title: CLI
+            html: '<p><a href="https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest">Azure CLI</a></p>'

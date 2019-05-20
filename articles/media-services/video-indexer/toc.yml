@@ -9,7 +9,7 @@
   items:
     - name: Начало работы
       href: video-indexer-get-started.md
-- name: Учебники
+- name: Руководства
   items:
     - name: Использование API Индексатора видео
       href: video-indexer-use-apis.md
@@ -26,7 +26,7 @@
           href: customize-brands-model-overview.md
         - name: Язык
           href: customize-language-model-overview.md
-        - name: Person
+        - name: Модель Person
           href: customize-person-model-overview.md
 - name: Практические руководства
   items:
@@ -50,7 +50,7 @@
       href: video-indexer-embed-widgets.md
     - name: Настройка моделей содержимого
       items:
-        - name: Person
+        - name: Модель Person
           items:
             - name: Использование веб-сайта Индексатора видео
               href: customize-person-model-with-website.md
@@ -70,7 +70,7 @@
               href: customize-language-model-with-api.md
 - name: Справочные материалы
   items:
-    - name: API индексатора видео
+    - name: API Индексатора видео
       href: 'https://api-portal.videoindexer.ai/'
 - name: Ресурсы
   items:

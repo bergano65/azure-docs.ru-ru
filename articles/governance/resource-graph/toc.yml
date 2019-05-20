@@ -27,7 +27,7 @@
     - name: Основные сведения о языке запросов
       displayName: 'query language, data explorer, tabular, operators, functions'
       href: ./concepts/query-language.md
-    - name: Изучение ресурсов Azure с помощью графика ресурсов
+    - name: Изучение ресурсов Azure с помощью Resource Graph
       displayName: 'vms, public ip'
       href: ./concepts/explore-resources.md
     - name: Работа с большими наборами данных
@@ -40,25 +40,25 @@
       href: ./how-to/get-resource-changes.md
 - name: Справочные материалы
   items:
-    - name: Инфраструктура Azure CLI
+    - name: Azure CLI
       href: /cli/azure/ext/resource-graph/graph
     - name: Azure PowerShell
       href: /powershell/module/az.resourcegraph/
-    - name: Пакет Azure SDK для .NET
+    - name: Azure SDK для .NET
       href: /dotnet/api/Microsoft.Azure.Management.ResourceGraph
-    - name: Пакет Azure SDK для .NET (NuGet)
+    - name: Azure SDK для .NET (NuGet)
       href: 'https://www.nuget.org/packages/Microsoft.Azure.Management.ResourceGraph/'
-    - name: Пакет Azure SDK для Go
+    - name: Azure SDK для Go
       href: 'https://godoc.org/github.com/Azure/azure-sdk-for-go/services/resourcegraph/mgmt/2019-04-01/resourcegraph'
-    - name: Пакет Azure SDK для Java
+    - name: Azure SDK для Java
       href: /java/api/overview/azure/resourcegraph/management?view=azure-java-stable
-    - name: Пакет Azure SDK для Java (Maven)
+    - name: Azure SDK для Java (Maven)
       href: 'https://search.maven.org/artifact/com.microsoft.azure.resourcegraph.v2019_04_01/azure-mgmt-resourcegraph/1.0.0-beta/jar'
-    - name: Пакет SDK Azure для Node
+    - name: SDK Azure для Node
       href: /javascript/api/@azure/arm-resourcegraph
-    - name: Пакет SDK Azure для Python
+    - name: SDK Azure для Python
       href: /python/api/azure-mgmt-resourcegraph/azure.mgmt.resourcegraph
-    - name: Пакет Azure SDK для Ruby (Gem)
+    - name: SDK Azure для Ruby (Gem)
       href: 'https://rubygems.org/gems/azure_mgmt_resourcegraph'
     - name: REST
       href: /rest/api/azureresourcegraph/resources/resources

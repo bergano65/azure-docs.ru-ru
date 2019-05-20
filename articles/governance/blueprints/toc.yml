@@ -1,8 +1,8 @@
-- name: Документация по Azure Blueprint
+- name: Документация по Azure Blueprints
   href: index.yml
 - name: Обзор
   items:
-    - name: Обзор Azure Blueprint
+    - name: Обзор Azure Blueprints
       displayName: 'templates, policy, definition, assignment, rbac'
       href: overview.md
 - name: Краткие руководства
@@ -14,7 +14,7 @@
     - name: Создание схемы с помощью REST API
       displayName: 'publish, assign, track, unassign, delete'
       href: create-blueprint-rest-api.md
-- name: Учебники
+- name: Руководства
   items:
     - name: Создание на основе примера схемы
       displayName: 'template, resource group, rbac, role assignment'
@@ -83,7 +83,7 @@
   items:
     - name: Azure PowerShell
       href: '/powershell/module/az.blueprint/#blueprint'
-    - name: Пакет Azure SDK для .NET
+    - name: Azure SDK для .NET
       href: /dotnet/api/overview/azure/blueprints/management
     - name: REST
       href: /rest/api/blueprints/

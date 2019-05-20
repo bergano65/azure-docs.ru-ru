@@ -1,10 +1,10 @@
 ### YamlMime:YamlDocument
 documentType: LandingData
-title: Документация по API визуального поиска Bing
+title: Документация по API Визуального поиска Bing
 metadata:
   document_id: 230494A6-34F9-416D-A6C0-57E69E1C2590
-  title: "Документация по API визуального поиска Bing. Учебные материалы, краткие руководства и справочники по API\_| Документация Майкрософт"
-  description: 'Узнайте, как с помощью API визуального поиска Bing получить аналитические сведения об изображении.'
+  title: "Документация по API Визуального поиска Bing. Учебные материалы, краткие руководства и справочники по API\_| Документация Майкрософт"
+  description: 'Узнайте, как с помощью API Визуального поиска Bing получить аналитические сведения об изображении.'
   services: cognitive-services
   author: swhite-msft
   manager: nitinme
@@ -16,7 +16,7 @@ metadata:
   ms.date: 01/16/2019
   ms.author: scottwhi
 abstract:
-  description: 'API визуального поиска Bing предоставляет примерно такие же сведения об изображении, что и в Bing.com/images. Путем передачи изображения или создания для него URL-адреса этот API позволяет определить различные сведения об изображении, включая визуально похожие изображения, ресурсы покупок, веб-страницы с этим изображением и многое другое.'
+  description: 'API Визуального поиска Bing предоставляет примерно такие же сведения об изображении, что и в Bing.com/images. Путем передачи изображения или создания для него URL-адреса этот API позволяет определить различные сведения об изображении, включая визуально похожие изображения, ресурсы покупок, веб-страницы с этим изображением и многое другое.'
 sections:
   - items:
       - type: list
@@ -25,31 +25,31 @@ sections:
         columns: 3
         items:
           - href: /azure/cognitive-services/bing-visual-search/overview
-            html: <p>Сведения об API визуального поиска Bing</p>
+            html: <p>Сведения об API Визуального поиска Bing</p>
             image:
               src: ../media/index/i_overview.svg
-            title: Знакомство с API визуального поиска Bing
+            title: Знакомство с API Визуального поиска Bing
           - href: /azure/cognitive-services/bing-visual-search/concepts/sending-queries
-            html: '<p>Узнайте, как отправлять запросы на поиск в API визуального поиска Bing.</p>'
+            html: '<p>Узнайте, как отправлять запросы на поиск в API Визуального поиска Bing.</p>'
             image:
               src: ../media/index/i_guidelines.svg
             title: Отправка поисковых запросов
           - href: /azure/cognitive-services/bing-visual-search/tutorial-visual-search-insights-token
-            html: <p>Отправка изображения в API визуального поиска Bing с помощью маркера аналитических сведений из API Bing для поиска изображений</p>
+            html: <p>Отправка изображения в API Поиска изображений Bing с помощью маркера аналитических сведений из API Визуального поиска Bing</p>
             image:
               src: ../media/index/i_guidelines.svg
             title: Поиск новостей
   - title: Пятиминутные руководства по началу работы
     items:
       - type: paragraph
-        text: 'Получение аналитических сведений об изображении с помощью API визуального поиска Bing:'
+        text: 'Получение аналитических сведений об изображении с помощью API Визуального поиска Bing:'
       - type: list
         style: icon48
         items:
           - image:
               src: media/index/logo_csharp.svg
             href: visual-search-sdk-c-sharp
-            text: 'C&#35;'
+            text: 'C#'
           - image:
               src: media/index/logo_java.svg
             href: quickstarts/java
@@ -72,7 +72,7 @@ sections:
   - title: Пошаговые руководства
     items:
       - type: paragraph
-        text: Инструкции по разработке приложений с использованием API визуального поиска Bing.
+        text: 'Инструкции по разработке приложений с использованием API Визуального поиска Bing:'
       - type: list
         style: unordered
         items:
@@ -89,5 +89,5 @@ sections:
             html: '<p><a href="https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/bingvisualsearch?view=azure-dotnet">.NET</a></p> <p><a href="https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/visualsearch?view=azure-java-stable">Java</a></p> <p><a href="https://docs.microsoft.com/python/api/overview/azure/cognitiveservices/visualsearch?view=azure-python">Python</a></p>'
           - title: PowerShell
             html: '<p><a href="https://docs.microsoft.com/powershell/module/az.cognitiveservices/#cognitive_services">Azure PowerShell</a></p>'
-          - title: Интерфейс командной строки
-            html: '<p><a href="https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest">Интерфейс командной строки Azure</a></p>'
+          - title: CLI
+            html: '<p><a href="https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest">Azure CLI</a></p>'

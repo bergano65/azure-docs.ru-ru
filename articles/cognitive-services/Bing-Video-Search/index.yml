@@ -1,9 +1,9 @@
 ### YamlMime:YamlDocument
 documentType: LandingData
-title: "Документация по API\_Bing для поиска видео"
+title: Документация по API Поиска видео Bing
 metadata:
-  title: "Документация по API\_Bing для поиска видео. Учебные материалы, краткие руководства и справочники по API\_| Документация Майкрософт"
-  description: "Узнайте, как с помощью API\_Bing для поиска видео находить видео в Интернете."
+  title: "Документация по API Поиска видео Bing. Учебные материалы, краткие руководства и справочники по API\_| Документация Майкрософт"
+  description: 'Узнайте, как с помощью API Поиска видео Bing находить видео в Интернете.'
   services: cognitive-services
   author: aahill
   manager: nitinme
@@ -15,7 +15,7 @@ metadata:
   ms.date: 01/31/2019
   ms.author: aahi
 abstract:
-  description: "API\_Bing для поиска видео позволяет вам интегрировать в свое приложение возможности Bing по поиску видео. Отправляя поисковые запросы к API, вы можете получать и отображать релевантные и высококачественные видео, как при использовании bing.com/videos."
+  description: 'API Поиска видео Bing позволяет вам интегрировать в свое приложение возможности Bing по поиску видео. Отправляя поисковые запросы к API, вы можете получать и отображать релевантные и высококачественные видео, как при использовании bing.com/videos.'
 sections:
   - items:
       - type: list
@@ -24,10 +24,10 @@ sections:
         columns: 3
         items:
           - href: /azure/cognitive-services/bing-video-search/overview
-            html: "<p>Дополнительные сведения об API\_Bing для поиска видео.</p>"
+            html: <p>Дополнительные сведения об API Поиска видео Bing</p>
             image:
               src: ../media/index/i_overview.svg
-            title: "Что такое API\_Bing для поиска видео?"
+            title: Что такое API Поиска видео Bing?
           - href: /azure/cognitive-services/bing-video-search/concepts/sending-requests
             html: '<p>Узнайте, как отправлять в Bing запросы на поиск видео.</p>'
             image:
@@ -48,7 +48,7 @@ sections:
           - image:
               src: media/index/logo_csharp.svg
             href: quickstarts/sdk-csharp-quickstart
-            text: 'C&#35;'
+            text: 'C#'
           - image:
               src: media/index/logo_java.svg
             href: quickstarts/sdk-java-quickstart
@@ -72,13 +72,13 @@ sections:
   - title: Пошаговые руководства
     items:
       - type: paragraph
-        text: Разрабатывайте приложения с использованием API Bing для поиска видео.
+        text: Разрабатывайте приложения с использованием API Поиска видео Bing.
       - type: paragraph
         text: <a href="tutorial-bing-video-search-single-page-app">Одностраничное веб-приложение</a>
   - title: Примеры
     items:
       - type: paragraph
-        text: 'Ознакомьтесь с примерами для API Bing для поиска видео:'
+        text: 'Ознакомьтесь с примерами для API Поиска видео Bing:'
       - type: list
         style: unordered
         items:
@@ -89,11 +89,11 @@ sections:
         style: cards
         className: cardsD
         items:
-          - title: Интерфейсы API
-            html: '<p><a href="https://docs.microsoft.com/rest/api/cognitiveservices/bing-video-api-v7-reference">API Bing для поиска видео версии 7</a></p> <p><a href="https://docs.microsoft.com/rest/api/cognitiveservices/bing-video-api-v5-reference/">API Bing для поиска видео версии 5</a></p>'
+          - title: API
+            html: '<p><a href="https://docs.microsoft.com/rest/api/cognitiveservices/bing-video-api-v7-reference">API Поиска видео Bing версии 7</a></p> <p><a href="https://docs.microsoft.com/rest/api/cognitiveservices/bing-video-api-v5-reference/">API Поиска видео Bing версии 5</a></p>'
           - title: Пакеты SDK
             html: '<p><a href="https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/bingvideo?view=azure-dotnet">.NET</a></p> <p><a href="https://docs.microsoft.com/javascript/api/azure-cognitiveservices-videosearch?view=azure-node-latest">Node.js</a></p> <p><a href="https://docs.microsoft.com/python/api/overview/azure/cognitiveservices/videosearch?view=azure-python">Python</a></p> <p><a href="https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v1.0/videosearch">GO</a></p> <p><a href="https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/videosearch?view=azure-java-stable">Java</a></p>'
           - title: PowerShell
             html: '<p><a href=https://docs.microsoft.com/powershell/module/az.cognitiveservices/#cognitive_services">Azure PowerShell</a></p>'
-          - title: Интерфейс командной строки
-            html: '<p><a href="https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest">Интерфейс командной строки Azure</a></p>'
+          - title: CLI
+            html: '<p><a href="https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest">Azure CLI</a></p>'

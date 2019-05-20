@@ -3,7 +3,7 @@ documentType: LandingData
 title: Документация по службе хранилища Azure
 metadata:
   title: Документация по службе хранилища Azure. Руководства и справочник по API | Документация Майкрософт
-  description: 'Служба хранилища Azure является облачной службой под управлением корпорации Майкрософт, которая предоставляет хранилище с высоким уровнем доступности, безопасности, надежности, масштабируемости и избыточности. Служба хранилища Azure включает в себя большие двоичные объекты Azure, Azure Data Lake Storage Gen2, файлы Azure, очереди Azure и таблицы Azure.'
+  description: 'Служба хранилища Azure является облачной службой под управлением корпорации Майкрософт, которая предоставляет хранилище с высоким уровнем доступности, безопасности, надежности, масштабируемости и избыточности. Служба хранилища Azure включает в себя хранилище BLOB-объектов Azure, Azure Data Lake Storage 2-го поколения, Файлы Azure, Хранилище очередей Azure и таблиц Azure.'
   services: storage
   author: tamram
   manager: twooley
@@ -14,7 +14,7 @@ metadata:
   ms.date: 06/27/2018
   ms.author: tamram
 abstract:
-  description: 'Служба хранилища Azure является службой под управлением корпорации Майкрософт, которая предоставляет облачное хранилище с высоким уровнем доступности, безопасности, надежности, масштабируемости и избыточности. Служба хранилища Azure включает в себя большие двоичные объекты Azure (объекты), Azure Data Lake Storage Gen2, файлы Azure, очереди Azure и таблицы Azure. Ознакомьтесь с нашими руководствами, чтобы узнать, как использовать службу хранилища Azure в приложениях.'
+  description: 'Служба хранилища Azure является службой под управлением корпорации Майкрософт, которая предоставляет облачное хранилище с высоким уровнем доступности, безопасности, надежности, масштабируемости и избыточности. Служба хранилища Azure включает в себя хранилище BLOB-объектов Azure (объектов), Azure Data Lake Storage 2-го поколения, Файлы Azure, Хранилище очередей Azure и таблиц Azure. Ознакомьтесь с нашими руководствами, чтобы узнать, как использовать службу хранилища Azure в приложениях.'
 sections:
   - title: Пятиминутные руководства по началу работы
     items:
@@ -25,13 +25,13 @@ sections:
         columns:
           - image:
               src: media/index/portal.svg
-              text: Microsoft Azure
+              text: Портал
           - image:
               src: media/index/logo_powershell.svg
               text: PowerShell
           - image:
               src: media/index/cli.svg
-              text: Инфраструктура CLI Azure
+              text: Azure CLI
           - image:
               src: media/index/logo_net.svg
           - image:
@@ -41,7 +41,7 @@ sections:
           - image:
               src: media/index/logo_nodejs.svg
         rows:
-          - title: Создать учетную запись хранения
+          - title: Создание учетной записи хранения
             values:
               - href: /azure/storage/common/storage-quickstart-create-account?tabs=portal
               - href: /azure/storage/common/storage-quickstart-create-account?tabs=azure-powershell
@@ -59,7 +59,7 @@ sections:
               - href: /azure/storage/blobs/storage-quickstart-blobs-java
               - href: /azure/storage/blobs/storage-quickstart-blobs-python
               - href: /azure/storage/blobs/storage-quickstart-blobs-nodejs
-          - title: Data Lake Storage Gen2
+          - title: Data Lake Storage 2-го поколения
             values:
               - href: /azure/storage/blobs/data-lake-storage-quickstart-create-account
               - href: /azure/storage/blobs/data-lake-storage-quickstart-create-account
@@ -74,10 +74,10 @@ sections:
         style: cards
         className: cardsD
         items:
-          - title: BLOB-объекты
-            html: <p>Передача и обработка данных изображений в облаке</p><ul><li><a href="/azure/storage/blobs/storage-upload-process-images">Отправка и получение данных изображений в облаке</a></li><li><a href="/azure/event-grid/resize-images-on-storage-blob-upload-event?toc=%2fazure%2fstorage%2fblobs%2ftoc.json">Активация функций Azure для обработки больших двоичных объектов</a></li><li><a href="/azure/storage/blobs/storage-secure-access-application">Защита данных приложения</a></li><li><a href="/azure/storage/blobs/storage-monitor-troubleshoot-storage-application">Мониторинг и устранение неполадок хранилища</a></li></ul><p>Обеспечение высокого уровня доступности при проектировании приложения</p><ul><li><a href="/azure/storage/blobs/storage-create-geo-redundant-storage">Обеспечение высокого уровня доступности для данных приложения</a></li><li><a href="/azure/storage/blobs/storage-simulate-failure-ragrs-account-app">Имитация сбоя при обращении к избыточному хранилищу с доступом на чтение</a></li></ul><p><a href="/azure/storage/blobs/storage-unstructured-search">Поиск неструктурированных данных в службе хранилища Azure</a></p>
-          - title: Data Lake Storage Gen2
-            html: '<p><a href="/azure/storage/blobs/data-lake-storage-handle-data-using-databricks">Извлечение, преобразование и загрузка данных с помощью Azure Databricks</a></p><p><a href="/azure/storage/blobs/data-lake-storage-use-databricks-spark">Доступ к данным Azure Data Lake Storage Gen2 с помощью DataBricks и Spark</a></p><p><a href="/azure/storage/blobs/data-lake-storage-tutorial-extract-transform-load-hive">Извлечение, преобразование и загрузка данных с помощью Apache Hive в Azure HDInsight</a></p>'
+          - title: Большие двоичные объекты
+            html: <p>Передача и обработка данных изображений в облаке</p><ul><li><a href="/azure/storage/blobs/storage-upload-process-images">Отправка и получение данных изображений в облаке</a></li><li><a href="/azure/event-grid/resize-images-on-storage-blob-upload-event?toc=%2fazure%2fstorage%2fblobs%2ftoc.json">Активация Функций Azure для обработки больших двоичных объектов</a></li><li><a href="/azure/storage/blobs/storage-secure-access-application">Защита данных приложения</a></li><li><a href="/azure/storage/blobs/storage-monitor-troubleshoot-storage-application">Мониторинг и устранение неполадок хранилища</a></li></ul><p>Обеспечение высокого уровня доступности при проектировании приложения</p><ul><li><a href="/azure/storage/blobs/storage-create-geo-redundant-storage">Обеспечение высокого уровня доступности данных приложения</a></li><li><a href="/azure/storage/blobs/storage-simulate-failure-ragrs-account-app">Имитация сбоя при обращении к избыточному хранилищу с доступом на чтение</a></li></ul><p><a href="/azure/storage/blobs/storage-unstructured-search">Поиск неструктурированных данных в службе хранилища Azure</a></p>
+          - title: Data Lake Storage 2-го поколения
+            html: '<p><a href="/azure/storage/blobs/data-lake-storage-handle-data-using-databricks">Извлечение, преобразование и загрузка данных с помощью Azure Databricks</a></p><p><a href="/azure/storage/blobs/data-lake-storage-use-databricks-spark">Доступ к данным Azure Data Lake Storage 2-го поколения с помощью DataBricks и Spark</a></p><p><a href="/azure/storage/blobs/data-lake-storage-tutorial-extract-transform-load-hive">Извлечение, преобразование и загрузка данных с помощью Apache Hive в Azure HDInsight</a></p>'
   - title: Примеры
     items:
       - type: paragraph
@@ -86,10 +86,10 @@ sections:
         style: unordered
         className: spaced noBullet
         items:
-          - html: '.NET &#58; <a href="https://azure.microsoft.com/resources/samples/?service=storage&term=blob&sort=0&platform=dotnet">Большие двоичные объекты</a> | <a     href="https://azure.microsoft.com/resources/samples/?service=storage&term=file&sort=0&platform=dotnet">Файлы</a> | <a href="https://azure.microsoft.com/resources/samples/?service=storage&term=queue&sort=0&platform=dotnet">Очереди</a>'
-          - html: 'Java &#58; <a href="https://azure.microsoft.com/resources/samples/?service=storage&term=blob&sort=0&platform=java">Большие двоичные объекты</a> | <a href="https://azure.microsoft.com/resources/samples/?service=storage&term=file&sort=0&platform=java">Файлы</a> | <a href="https://azure.microsoft.com/resources/samples/?service=storage&term=queue&sort=0&platform=java">Очереди</a>'
+          - html: '.NET: <a href="https://azure.microsoft.com/resources/samples/?service=storage&term=blob&sort=0&platform=dotnet">большие двоичные объекты</a> | <a     href="https://azure.microsoft.com/resources/samples/?service=storage&term=file&sort=0&platform=dotnet">файлы</a> | <a href="https://azure.microsoft.com/resources/samples/?service=storage&term=queue&sort=0&platform=dotnet">очереди</a>'
+          - html: 'Java: <a href="https://azure.microsoft.com/resources/samples/?service=storage&term=blob&sort=0&platform=java">большие двоичные объекты</a> | <a href="https://azure.microsoft.com/resources/samples/?service=storage&term=file&sort=0&platform=java">файлы</a> | <a href="https://azure.microsoft.com/resources/samples/?service=storage&term=queue&sort=0&platform=java">очереди</a>'
           - html: <a href="/azure/storage/blobs/storage-samples-blobs-powershell">Azure PowerShell</a>
-          - html: <a href="/azure/storage/blobs/storage-samples-blobs-cli">Интерфейс командной строки Azure</a>
+          - html: <a href="/azure/storage/blobs/storage-samples-blobs-cli">Azure CLI</a>
   - title: Развитие навыков с помощью Microsoft Learn
     items:
       - type: list
@@ -113,7 +113,7 @@ sections:
               href: /learn/modules/create-azure-storage-account/
       - type: paragraph
         text: <a href="/learn/browse/?products=azure-storage">Другие интерактивные руководства</a>
-  - title: Бесплатные видеоуроки PluralSight
+  - title: Бесплатные видеоуроки Pluralsight
     items:
       - type: list
         style: cards
@@ -136,8 +136,8 @@ sections:
         className: cardsD
         items:
           - title: Командная строка
-            html: <p><a href="/powershell/storage">PowerShell</a></p><p><a href="/cli/azure/storage">Интерфейс командной строки Azure</a></p>
-          - title: Languages
+            html: <p><a href="/powershell/storage">PowerShell</a></p><p><a href="/cli/azure/storage">Azure CLI</a></p>
+          - title: Языки
             html: '<p><a href="/dotnet/api/overview/azure/storage/client">.NET</a></p><p><a href="/java/api/overview/azure/storage/client?view=azure-java-stable">Java</a></p><p><a href="/javascript/api/overview/azure/storage?view=azure-node-latest">Node.js</a></p><p><a href="/python/api/overview/azure/storage">Python</a></p><p><a href="https://azure.github.io/azure-storage-php/">PHP</a></p><p><a href="https://azure.github.io/azure-storage-ruby">Ruby</a></p><p><a href="https://azure.github.io/azure-storage-cpp">C++</a></p><p><a href="https://github.com/Azure/azure-storage-ios">iOS</a></p><p><a href="https://azure.github.io/azure-storage-android">Android</a></p>'
           - title: REST
-            html: '<p><a href="/rest/api/storageservices">API служб BLOB-объектов, очередей, таблиц и файлов</a></p><p><a href="/rest/api/storagerp">API поставщика ресурсов хранилища</a></p><p><a href="/rest/api/storageimportexport">API службы импорта и экспорта</a></p>'
+            html: '<p><a href="/rest/api/storageservices">API служб хранения BLOB-объектов, очередей, таблиц и файлов</a></p><p><a href="/rest/api/storagerp">API поставщика ресурсов хранилища</a></p><p><a href="/rest/api/storageimportexport">API службы импорта и экспорта</a></p>'

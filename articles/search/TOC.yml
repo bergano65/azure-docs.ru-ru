@@ -1,15 +1,15 @@
-- name: Документация по поиску Azure
+- name: Документация по Поиску Azure
   href: index.yml
 - name: Обзор
   items:
-    - name: Что такое поиск Azure?
+    - name: Что такое Поиск Azure?
       href: search-what-is-azure-search.md
 - name: Краткие руководства
   expanded: true
   items:
-    - name: создание службы;
+    - name: Создание службы
       href: search-create-service-portal.md
-    - name: Microsoft Azure
+    - name: Портал
       items:
         - name: Загрузка индекса и отправка запросов к нему
           href: search-get-started-portal.md
@@ -17,23 +17,23 @@
           href: cognitive-search-quickstart-blob.md
     - name: 'C#'
       items:
-        - name: 1. Создание индекса
+        - name: "1.\_Создание индекса"
           href: search-create-index-dotnet.md
-        - name: 2. Загрузка данных
+        - name: "2.\_Загрузка данных"
           href: search-import-data-dotnet.md
-        - name: 3. Поиск в индексе
+        - name: "3.\_Поиск в индексе"
           href: search-query-dotnet.md
-    - name: postman
+    - name: Postman
       href: search-fiddler.md
     - name: PowerShell
       href: search-create-index-rest-api.md
     - name: Python
       href: search-get-started-python.md
-- name: Учебники
+- name: Руководства
   items:
-    - name: Индексирование службы "База данных SQL"
+    - name: Индексирование Базы данных SQL Azure
       href: search-indexer-tutorial.md
-    - name: Индексация больших двоичных объектов JSON Azure
+    - name: Индексация больших двоичных объектов JSON в Azure
       href: search-semi-structured-data.md
     - name: Расширение возможностей с помощью ИИ (когнитивный поиск)
       items:
@@ -55,7 +55,7 @@
       href: 'https://www.pluralsight.com/courses/microsoft-azure-textual-content-search-enabling'
 - name: Основные понятия
   items:
-    - name: полнотекстовый поиск.
+    - name: Полнотекстовый поиск
       href: search-lucene-query-architecture.md
     - name: Когнитивный поиск
       href: cognitive-search-concept-intro.md
@@ -67,7 +67,7 @@
   items:
     - name: Планирование
       items:
-        - name: Выберите уровень.
+        - name: Выбор уровня
           href: search-sku-tier.md
         - name: Ограничения служб
           href: search-limits-quotas-capacity.md
@@ -79,7 +79,7 @@
           href: search-modeling-multitenant-saas-applications.md
     - name: Безопасность
       items:
-        - name: Обзор безопасности
+        - name: Обзор системы безопасности
           href: search-security-overview.md
         - name: Управление ключами службы
           href: search-security-api-keys.md
@@ -105,7 +105,7 @@
           items:
             - name: Пакет SDK для .NET версии 9.0
               href: search-dotnet-sdk-migration-version-9.md
-            - name: Пакет SDK для .NET 5.0
+            - name: Пакет SDK для .NET версии 5.0
               href: search-dotnet-sdk-migration-version-5.md
             - name: Пакет SDK для .NET версии 3.0
               href: search-dotnet-sdk-migration.md
@@ -135,7 +135,7 @@
               href: index-add-suggesters.md
             - name: Добавление предложения или автозаполнение
               href: search-autocomplete-tutorial.md
-        - name: синонимы;
+        - name: Синонимы
           items:
             - name: Добавление синонимов
               href: search-synonyms.md
@@ -261,7 +261,7 @@
           href: search-traffic-analytics.md
 - name: Справочные материалы
   items:
-    - name: Инфраструктура Azure CLI
+    - name: Azure CLI
       href: 'https://docs.microsoft.com/cli/azure/search?view=azure-cli-latest'
     - name: Azure PowerShell
       href: /powershell/module/az.search
@@ -282,7 +282,7 @@
     - name: Справочник по когнитивным навыкам
       href: cognitive-search-predefined-skills.md
       items:
-        - name: Извлечение ключевой фразы
+        - name: Извлечение ключевых фраз
           href: cognitive-search-skill-keyphrases.md
         - name: Распознавание языка
           href: cognitive-search-skill-language-detection.md
@@ -326,9 +326,9 @@
           href: 'https://aka.ms/azjobsdemo'
         - name: Варианты использования поиска
           href: 'https://searchsamples.azurewebsites.net/'
-    - name: Часто задаваемые вопросы
+    - name: Вопросы и ответы
       href: search-faq-frequently-asked-questions.md
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/search/'
-    - name: Видеоролики
+    - name: Видео
       href: 'https://azure.microsoft.com/resources/videos/index/?services=search'
