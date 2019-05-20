@@ -7,13 +7,13 @@
   items:
     - name: Обзор
       href: v2-overview.md
-    - name: Быстрое начало работы
+    - name: Краткие руководства
       items:
         - name: Настройка среды разработки
           href: quickstart-create-new-tenant.md
         - name: Настройка приложения
           items:
-            - name: регистрация приложения;
+            - name: Регистрация приложения
               href: quickstart-register-app.md
             - name: Настройка приложения для доступа к веб-API
               href: quickstart-configure-app-access-web-apis.md
@@ -27,7 +27,7 @@
           items:
             - name: JavaScript
               href: quickstart-v2-javascript.md
-        - name: 'веб-приложений:'
+        - name: Веб-приложения
           items:
             - name: ASP.NET
               href: quickstart-v2-aspnet-webapp.md
@@ -47,23 +47,23 @@
               href: quickstart-v2-android.md
             - name: iOS
               href: quickstart-v2-ios.md
-            - name: Универсальные приложения Windows
+            - name: Универсальная платформа Windows
               href: quickstart-v2-uwp.md
             - name: Платформа .NET для классических приложений Windows
               href: quickstart-v2-windows-desktop.md
-        - name: Управляющая программа
+        - name: Управляющие программы
           items:
             - name: "Консоль .NET\_Core (управляющая программа)"
               href: quickstart-v2-netcore-daemon.md
             - name: Веб-приложение управляющей программы ASP.NET
               href: 'https://github.com/Azure-Samples/active-directory-dotnet-daemon-v2'
-    - name: Учебники
+    - name: Руководства
       items:
         - name: Одностраничные приложения
           items:
             - name: JavaScript
               href: tutorial-v2-javascript-spa.md
-        - name: 'веб-приложений:'
+        - name: Веб-приложения
           items:
             - name: ASP.NET
               href: tutorial-v2-asp-webapp.md
@@ -73,7 +73,7 @@
               href: tutorial-v2-android.md
             - name: iOS
               href: tutorial-v2-ios.md
-            - name: Универсальные приложения Windows
+            - name: Универсальная платформа Windows
               href: tutorial-v2-windows-uwp.md
             - name: Платформа .NET для классических приложений Windows
               href: tutorial-v2-windows-desktop.md
@@ -101,7 +101,7 @@
                   href: scenario-spa-acquire-token.md
                 - name: Вызов веб-API
                   href: scenario-spa-call-api.md
-                - name: Перенос в производственную среду
+                - name: Перенос в рабочую среду
                   href: scenario-spa-production.md
             - name: 'Веб-приложение, которое поддерживает вход пользователей'
               items:
@@ -113,7 +113,7 @@
                   href: scenario-web-app-sign-user-app-configuration.md
                 - name: Функции входа и выхода
                   href: scenario-web-app-sign-user-sign-in.md
-                - name: Перенос в производственную среду
+                - name: Перенос в рабочую среду
                   href: scenario-web-app-sign-user-production.md
             - name: 'Веб-приложение, которое вызывает веб-API'
               items:
@@ -129,7 +129,7 @@
                   href: scenario-web-app-call-api-acquire-token.md
                 - name: Вызов веб-API
                   href: scenario-web-app-call-api-call-api.md
-                - name: Перенос в производственную среду
+                - name: Перенос в рабочую среду
                   href: scenario-web-app-call-api-production.md
             - name: Защищенный веб-API
               items:
@@ -139,7 +139,7 @@
                   href: scenario-protected-web-api-app-registration.md
                 - name: Конфигурация кода
                   href: scenario-protected-web-api-app-configuration.md
-                - name: Перенос в производственную среду
+                - name: Перенос в рабочую среду
                   href: scenario-protected-web-api-production.md
             - name: 'Веб-API, которые вызывают веб-API'
               items:
@@ -153,7 +153,7 @@
                   href: scenario-web-api-call-api-acquire-token.md
                 - name: Вызов веб-API
                   href: scenario-web-api-call-api-call-api.md
-                - name: Перенос в производственную среду
+                - name: Перенос в рабочую среду
                   href: scenario-web-api-call-api-production.md
             - name: 'Классическое приложение, которое вызывает веб-API'
               items:
@@ -167,7 +167,7 @@
                   href: scenario-desktop-acquire-token.md
                 - name: Вызов веб-API
                   href: scenario-desktop-call-api.md
-                - name: Перенос в производственную среду
+                - name: Перенос в рабочую среду
                   href: scenario-desktop-production.md
             - name: Управляющая программа
               items:
@@ -181,7 +181,7 @@
                   href: scenario-daemon-acquire-token.md
                 - name: Вызов веб-API
                   href: scenario-daemon-call-api.md
-                - name: Перенос в производственную среду
+                - name: Перенос в рабочую среду
                   href: scenario-daemon-production.md
             - name: 'Мобильное приложение, которое вызывает веб-API'
               items:
@@ -193,7 +193,7 @@
                   href: scenario-mobile-acquire-token.md
                 - name: Вызов веб-API
                   href: scenario-mobile-call-api.md
-                - name: Перенос в производственную среду
+                - name: Перенос в рабочую среду
                   href: scenario-mobile-production.md
             - name: Контрольный список для интеграции
               href: identity-platform-integration-checklist.md
@@ -239,21 +239,31 @@
               href: msal-net-provide-httpclient.md
             - name: "Интеграция с Azure\_AD\_B2C"
               href: msal-b2c-overview.md
-            - name: Рекомендации по использованию платформы (.NET)
+            - name: Рекомендации и известные проблемы
               items:
-                - name: Веб-браузеры
-                  href: msal-net-web-browsers.md
-                - name: Xamarin Android
-                  href: msal-net-xamarin-android-considerations.md
-                - name: Системный браузер в Android
-                  href: msal-net-system-browser-android-considerations.md
-                - name: Xamarin iOS
-                  href: msal-net-xamarin-ios-considerations.md
-                - name: Универсальные приложения Windows
-                  href: msal-net-uwp-considerations.md
-                - name: "Применение политики AAD\_B2C"
-                  href: msal-net-aad-b2c-considerations.md
-        - name: Authentication
+                - name: MSAL.NET
+                  items:
+                    - name: Веб-браузеры
+                      href: msal-net-web-browsers.md
+                    - name: Xamarin Android
+                      href: msal-net-xamarin-android-considerations.md
+                    - name: Системный браузер в Android
+                      href: msal-net-system-browser-android-considerations.md
+                    - name: Xamarin iOS
+                      href: msal-net-xamarin-ios-considerations.md
+                    - name: Универсальная платформа Windows
+                      href: msal-net-uwp-considerations.md
+                    - name: "Применение политики AAD\_B2C"
+                      href: msal-net-aad-b2c-considerations.md
+                - name: MSAL.js
+                  items:
+                    - name: Рекомендации по использованию Internet Explorer
+                      href: msal-js-use-ie-browser.md
+                    - name: Известные проблемы c Internet Explorer и Microsoft Edge
+                      href: msal-js-known-issues-ie-edge-browsers.md
+                    - name: Известные проблемы c Safari
+                      href: msal-js-known-issues-safari-browser.md
+        - name: Аутентификация
           items:
             - name: Основные сведения об аутентификации
               href: authentication-scenarios.md
@@ -265,11 +275,11 @@
               href: v2-oauth2-implicit-grant-flow.md
             - name: "Предоставление кода аутентификации OAuth\_2.0"
               href: v2-oauth2-auth-code-flow.md
-            - name: "Поток On-Behalf-Of в Oauth\_2.0"
+            - name: "Поток On-Behalf-Of в OAuth\_2.0"
               href: v2-oauth2-on-behalf-of-flow.md
-            - name: Предоставление учетных данных клиента OAuth 2.0
+            - name: "Предоставление учетных данных клиента OAuth\_2.0"
               href: v2-oauth2-client-creds-grant-flow.md
-            - name: Поток кода для авторизации устройства в OAuth 2.0
+            - name: "Поток кода для авторизации устройства в OAuth\_2.0"
               href: v2-oauth2-device-code.md
             - name: "Предоставление учетных данных владельца ресурса OAuth\_2.0"
               href: v2-oauth-ropc.md
@@ -300,11 +310,11 @@
           items:
             - name: Обзор
               href: authentication-national-cloud.md
-            - name: Authentication
+            - name: Аутентификация
               href: msal-national-cloud.md
     - name: Практические руководства
       items:
-        - name: Authentication
+        - name: Аутентификация
           items:
             - name: Настройка утверждений ролей
               href: active-directory-enterprise-app-role-management.md
@@ -364,7 +374,7 @@
               href: vs-active-directory-webapi-what-happened.md
             - name: Ошибка при обнаружении аутентификации
               href: vs-active-directory-error.md
-    - name: Ссылки
+    - name: Справочники
       items:
         - name: Библиотеки проверки подлинности
           displayName: MSAL
@@ -382,13 +392,13 @@
   items:
     - name: Обзор
       href: v1-overview.md
-    - name: Быстрое начало работы
+    - name: Краткие руководства
       items:
         - name: Настройка среды разработки
           href: quickstart-create-new-tenant.md
         - name: Настройка приложения
           items:
-            - name: регистрация приложения;
+            - name: Регистрация приложения
               href: quickstart-register-app.md
             - name: Настройка приложения для доступа к веб-API
               href: quickstart-configure-app-access-web-apis.md
@@ -404,7 +414,7 @@
               href: quickstart-v1-angularjs-spa.md
             - name: JavaScript
               href: 'https://github.com/Azure-Samples/active-directory-javascript-singlepageapp-dotnet-webapi'
-        - name: 'веб-приложений:'
+        - name: Веб-приложения
           items:
             - name: ASP.NET
               href: quickstart-v1-aspnet-webapp.md
@@ -446,13 +456,13 @@
               href: single-page-application.md
             - name: Веб-приложение
               href: web-app.md
-            - name: Веб-интерфейс API
+            - name: Веб-API
               href: web-api.md
             - name: Классические и мобильные приложения
               href: native-app.md
             - name: Управляющая программа или серверное приложение
               href: service-to-service.md
-        - name: Authentication
+        - name: Аутентификация
           items:
             - name: Основные сведения об аутентификации
               href: authentication-scenarios.md
@@ -464,11 +474,11 @@
                   href: v1-oauth2-implicit-grant-flow.md
                 - name: "Предоставление кода аутентификации OAuth\_2.0"
                   href: v1-protocols-oauth-code.md
-                - name: "Поток On-Behalf-Of в Oauth\_2.0"
+                - name: "Поток On-Behalf-Of в OAuth\_2.0"
                   href: v1-oauth2-on-behalf-of-flow.md
-                - name: Предоставление учетных данных клиента OAuth 2.0
+                - name: "Предоставление учетных данных клиента OAuth\_2.0"
                   href: v1-oauth2-client-creds-grant-flow.md
-            - name: Протокол SAML 2.0
+            - name: "Протокол SAML\_2.0"
               items:
                 - name: Единый вход
                   href: single-sign-on-saml-protocol.md
@@ -476,7 +486,7 @@
                   href: single-sign-out-saml-protocol.md
                 - name: Как в Azure AD используется протокол SAML
                   href: active-directory-saml-protocol-reference.md
-            - name: Сертификат
+            - name: WS-Federation
               items:
                 - name: Метаданные федерации
                   href: azure-ad-federation-metadata.md
@@ -515,7 +525,7 @@
           href: authentication-national-cloud.md
     - name: Практические руководства
       items:
-        - name: Authentication
+        - name: Аутентификация
           items:
             - name: Настройка единого входа
               displayName: SSO
@@ -572,7 +582,7 @@
               href: vs-active-directory-webapi-what-happened.md
             - name: Ошибка при обнаружении аутентификации
               href: vs-active-directory-error.md
-        - name: Выведение приложения на рынок
+        - name: Вывод приложения на рынок
           items:
             - name: Публикация в AppSource
               href: howto-get-appsource-certified.md
@@ -585,13 +595,13 @@
           items:
             - name: Перенос из службы контроля доступа Azure
               href: active-directory-acs-migration.md
-            - name: Повторная активация отключенных пространств имен Службы контроля доступа
+            - name: Повторная активация отключенных пространств имен службы контроля доступа
               href: howto-reactivate-disabled-acs-namespaces.md
         - name: Использование API Graph Azure AD
           href: active-directory-graph-api-quickstart.md
         - name: AD FS для разработчиков
           href: 'https://docs.microsoft.com/windows-server/identity/ad-fs/overview/ad-fs-scenarios-for-developers'
-    - name: Ссылки
+    - name: Справочники
       items:
         - name: Библиотеки проверки подлинности
           displayName: ADAL

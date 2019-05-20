@@ -16,7 +16,7 @@
       href: stream-analytics-quick-create-vs.md
     - name: "Создание задания\_— Visual Studio Code"
       href: quick-create-vs-code.md
-- name: Учебники
+- name: Руководства
   items:
     - name: 1. Создание и администрирование задания
       href: stream-analytics-manage-job.md
@@ -42,7 +42,7 @@
           href: stream-analytics-add-inputs.md
         - name: Потоковая передача входных данных
           href: stream-analytics-define-inputs.md
-        - name: Входные ссылочные данные
+        - name: Входные эталонные данные
           href: stream-analytics-use-reference-data.md
     - name: Типы выходных данных для задания
       items:
@@ -74,7 +74,7 @@
       href: stream-analytics-output-error-policy.md
 - name: Инструкции
   items:
-    - name: управление
+    - name: Управление
       items:
         - name: Обновление учетных данных
           href: stream-analytics-login-credentials-inputs-outputs.md
@@ -82,7 +82,7 @@
           href: event-ordering.md
         - name: Настройка оповещений
           href: stream-analytics-set-up-alerts.md
-        - name: Запустите задание
+        - name: Запуск задания
           href: start-job.md
         - name: Проверка задания
           href: stream-analytics-test-query.md
@@ -129,7 +129,7 @@
           href: stream-analytics-monitor-jobs.md
         - name: Мониторинг заданий в Visual Studio
           href: stream-analytics-monitor-jobs-use-vs.md
-    - name: Масштаб
+    - name: Масштабирование
       items:
         - name: Масштабирование с помощью единиц потоковой передачи
           href: stream-analytics-streaming-unit-consumption.md
@@ -149,7 +149,7 @@
           href: 'https://github.com/Azure/azure-stream-analytics/tree/master/Samples/ASAOneClick'
         - name: Использование API для заданий IoT Edge
           href: stream-analytics-cicd-api.md
-    - name: Сравнение Visual Studio и VS Code
+    - name: Visual Studio
       items:
         - name: Средства установки
           href: stream-analytics-tools-for-visual-studio-install.md
@@ -165,8 +165,14 @@
           href: stream-analytics-tools-for-visual-studio-cicd.md
         - name: Создание определяемой пользователем функции .NET для Edge
           href: stream-analytics-edge-csharp-udf-methods.md
-        - name: Знакомство со Stream Analytics в VS Code
-          href: vs-code-how-to.md
+    - name: Visual Studio Code
+      items:
+        - name: Тестирование с демонстрационными данными
+          href: vscode-local-run.md
+        - name: Настройка конвейера CI/CD
+          href: setup-cicd-vs-code.md
+        - name: Обзор заданий
+          href: vscode-explore-jobs.md
     - name: Устранение неполадок
       items:
         - name: Входные данные
@@ -325,25 +331,25 @@
             - name: Обзор геопространственных функций
               href: /stream-analytics-query/geospatial-functions
               maintainContext: true
-            - name: CreateLineString;
+            - name: CreateLineString
               href: /stream-analytics-query/createlinestring
               maintainContext: true
-            - name: CreatePoint;
+            - name: CreatePoint
               href: /stream-analytics-query/createpoint
               maintainContext: true
-            - name: CreatePolygon;
+            - name: CreatePolygon
               href: /stream-analytics-query/createpolygon
               maintainContext: true
-            - name: ST_DISTANCE;
+            - name: ST_DISTANCE
               href: /stream-analytics-query/st-distance
               maintainContext: true
-            - name: ST_OVERLAPS;
+            - name: ST_OVERLAPS
               href: /stream-analytics-query/st-overlaps
               maintainContext: true
-            - name: ST_INTERSECTS.
+            - name: ST_INTERSECTS
               href: /stream-analytics-query/st-intersects
               maintainContext: true
-            - name: ST_WITHIN;
+            - name: ST_WITHIN
               href: /stream-analytics-query/st-within
               maintainContext: true
         - name: Функции входных метаданных
@@ -351,7 +357,7 @@
             - name: Обзор функций входных метаданных
               href: /stream-analytics-query/input-metadata-functions
               maintainContext: true
-            - name: GetMetadataPropertyValue.
+            - name: GetMetadataPropertyValue
               href: /stream-analytics-query/getmetadatapropertyvalue
               maintainContext: true
         - name: Математические функции
@@ -489,7 +495,7 @@
         - name: JOIN
           href: /stream-analytics-query/join-azure-stream-analytics
           maintainContext: true
-        - name: Эталонные данные JOIN
+        - name: JOIN для эталонных данных
           href: /stream-analytics-query/reference-data-join-azure-stream-analytics
           maintainContext: true
         - name: SELECT
@@ -549,7 +555,7 @@
       href: 'https://azure.microsoft.com/pricing/calculator/'
     - name: Обновления службы
       href: 'https://azure.microsoft.com/updates/?product=stream-analytics'
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-stream-analytics'
     - name: Видеоролики
       href: 'https://azure.microsoft.com/resources/videos/index/?services=stream-analytics&sort=newest'

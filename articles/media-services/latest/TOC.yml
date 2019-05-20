@@ -1,10 +1,10 @@
-- name: Документация по службам мультимедиа
+- name: Документация по Службам мультимедиа
   href: ./index.yml
 - name: Обзор
   items:
-    - name: Сведения о службах мультимедиа
+    - name: Сведения о Службах мультимедиа
       href: media-services-overview.md
-- name: Учебники
+- name: Руководства
   expanded: true
   items:
     - name: Кодирование размещенных удаленно файлов и потоковая передача видео
@@ -130,7 +130,7 @@
           href: live-event-types-comparison.md
         - name: Состояния и выставление счетов
           href: live-event-states-billing.md
-        - name: Latency
+        - name: Задержка
           href: live-event-latency.md
     - name: Мониторинг
       items:
@@ -210,7 +210,7 @@
           href: cli-create-transform.md
         - name: "Создание заданий\_— CLI"
           href: cli-create-jobs.md
-    - name: Кодирование контента
+    - name: Кодирование содержимого
       items:
         - name: "URL-адрес HTTPS в качестве входных данных для задания\_— .NET"
           displayName: 'encode, encoding'
@@ -247,7 +247,7 @@
           href: offline-plaready-streaming-for-windows-10.md
     - name: Создание фильтров
       items:
-        - name: Использование .NET
+        - name: С помощью .NET
           href: filters-dynamic-manifest-dotnet-howto.md
           displayName: filters
         - name: С помощью REST
@@ -267,7 +267,7 @@
       displayName: schema
     - name: REST
       href: 'https://aka.ms/ams-v3-rest-ref'
-    - name: Инфраструктура CLI Azure
+    - name: Azure CLI
       href: 'https://aka.ms/ams-v3-cli-ref'
     - name: Пакеты SDK
       items:
@@ -298,13 +298,13 @@
       href: 'https://azure.microsoft.com/roadmap/?category=web-mobile'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/media-services/'
-    - name: Видеоролики
+    - name: Видео
       href: 'https://azure.microsoft.com/resources/videos/index/?services=media-services'
     - name: Спецификация OpenAPI (Swagger)
       href: 'https://aka.ms/ams-v3-rest-sdk'
     - name: Пакеты SDK и инструменты
       items:
-        - name: Инфраструктура CLI Azure
+        - name: Azure CLI
           href: 'https://aka.ms/ams-v3-cli'
         - name: .NET
           href: 'https://aka.ms/ams-v3-dotnet-sdk'
@@ -324,7 +324,7 @@
       href: release-notes.md
     - name: Квоты и ограничения
       href: limits-quotas-constraints.md
-    - name: Часто задаваемые вопросы
+    - name: Вопросы и ответы
       href: frequently-asked-questions.md
     - name: Облака и регионы Azure
       href: azure-clouds-regions.md

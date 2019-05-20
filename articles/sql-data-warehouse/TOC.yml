@@ -179,7 +179,7 @@
           href: resource-classes-for-workload-management.md
         - name: Классификация рабочих нагрузок
           href: sql-data-warehouse-workload-classification.md
-        - name: Уровень важности рабочих нагрузок
+        - name: Уровень важности рабочей нагрузки
           href: sql-data-warehouse-workload-importance.md
         - name: Ограничения памяти и параллелизма
           href: memory-and-concurrency-limits.md

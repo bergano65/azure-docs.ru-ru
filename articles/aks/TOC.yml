@@ -60,11 +60,12 @@
       href: concepts-network.md
     - name: Хранилище
       href: concepts-storage.md
-    - name: Масштаб
+    - name: Масштабирование
       href: concepts-scale.md
     - name: Рекомендации
-      href: best-practices.md
       items:
+        - name: Обзор
+          href: best-practices.md
         - name: Для операторов кластера
           items:
             - name: Мультитенантность и изоляция кластера
@@ -77,7 +78,7 @@
               href: operator-best-practices-identity.md
             - name: Безопасность кластера
               href: operator-best-practices-cluster-security.md
-            - name: Управление образом контейнера
+            - name: Управление образами контейнеров
               href: operator-best-practices-container-image-management.md
             - name: Сеть
               href: operator-best-practices-network.md
@@ -115,9 +116,9 @@
           maintainContext: true
         - name: Создание виртуальных узлов
           items:
-            - name: Azure CLI
+            - name: Использование Azure CLI
               href: virtual-nodes-cli.md
-            - name: Портал Azure
+            - name: Использование портала Azure
               href: virtual-nodes-portal.md
         - name: Использование Virtual Kubelet
           href: virtual-kubelet.md
@@ -130,7 +131,7 @@
           maintainContext: true
         - name: Использование панели мониторинга Kubernetes
           href: kubernetes-dashboard.md
-    - name: Конфигурирование томов данных
+    - name: Настройка томов данных
       items:
         - name: "Диск Azure\_— динамический"
           href: azure-disks-dynamic-pv.md
@@ -152,9 +153,9 @@
               href: configure-azure-cni.md
         - name: Создание внутреннего балансировщика нагрузки
           href: internal-lb.md
-        - name: Использование статических IP-адресов
+        - name: Использование статического IP-адреса
           href: static-ip.md
-        - name: Входящие
+        - name: Входящий трафик
           items:
             - name: Создание базового контроллера
               href: ingress-basic.md
@@ -165,8 +166,9 @@
             - name: Использование TLS в собственных сертификатах
               href: ingress-own-tls.md
             - name: Использование протокола TLS с сертификатом Let's Encrypt
-              href: ingress-tls.md
               items:
+                - name: Использование динамического общедоступного IP-адреса
+                  href: ingress-tls.md
                 - name: Использование статического общедоступного IP-адреса
                   href: ingress-static-ip.md
         - name: Исходящий трафик
@@ -212,6 +214,20 @@
         - name: Просмотр журналов контейнера в реальном времени (предварительная версия)
           href: ../azure-monitor/insights/container-insights-live-logs.md
           maintainContext: true
+    - name: Использование контейнеров Windows Server (предварительная версия)
+      items:
+        - name: Создание кластера AKS
+          href: windows-container-cli.md
+        - name: Удаленное подключение
+          href: rdp.md
+        - name: Известные ограничения
+          href: windows-node-limitations.md
+        - name: Использование панели мониторинга Kubernetes
+          href: kubernetes-dashboard.md
+        - name: Создание файлов Dockerfile для контейнеров Windows Server
+          href: 'https://docs.microsoft.com/virtualization/windowscontainers/manage-docker/manage-windows-dockerfile?context=/azure/aks/context/aks-context'
+        - name: Оптимизация файлов Dockerfile для контейнеров Windows Server
+          href: 'https://docs.microsoft.com/virtualization/windowscontainers/manage-docker/optimize-windows-dockerfile?context=/azure/aks/context/aks-context'
     - name: Разработка и запуск приложений
       items:
         - name: Разработка с помощью Dev Spaces

@@ -4,7 +4,7 @@
   items:
     - name: "Сведения о службе \"Защита идентификации Azure\_AD\""
       href: overview.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   items:
     - name: Блокировка доступа при обнаружении риска безопасности сеанса
       href: quickstart-sign-in-risk-policy.md
@@ -42,10 +42,12 @@
       items:
         - name: Обзор
           href: overview-v2.md
-        - name: Обзор безопасности
+        - name: Обзор системы безопасности
           href: security-overview.md
         - name: 'Изучение действий пользователей и операций входа, которые могут представлять риск'
           href: howto-investigate-risky-users-signins.md
+        - name: Отзыв о событиях риска
+          href: howto-provide-risk-event-feedback.md
         - name: Настройка политик риска
           href: howto-configure-risk-policies.md
         - name: Повышение точности обнаружения
@@ -62,7 +64,7 @@
       href: glossary.md
 - name: Ресурсы
   items:
-    - name: Форум отзывов и предложений по Azure
+    - name: Форум для отзывов и предложений по Azure
       href: 'https://feedback.azure.com/forums/169401-azure-active-directory'
     - name: Форум MSDN
       href: 'https://social.msdn.microsoft.com/Forums/azure/home?forum=WindowsAzureAD'
@@ -70,7 +72,7 @@
       href: 'https://azure.microsoft.com/pricing/details/active-directory/'
     - name: Обновления службы
       href: ../fundamentals/whats-new.md
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-active-directory'
-    - name: Видеоролики
+    - name: Видео
       href: 'https://azure.microsoft.com/documentation/videos/index/?services=active-directory'

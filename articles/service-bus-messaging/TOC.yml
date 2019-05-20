@@ -7,7 +7,7 @@
     - name: Сравнение служб обмена сообщениями
       href: ../event-grid/compare-messaging-services.md
       maintainContext: true
-- name: Быстрое начало работы
+- name: Краткие руководства
   items:
     - name: Очереди служебной шины
       items:
@@ -26,7 +26,11 @@
             - name: Java
               href: service-bus-java-how-to-use-queues.md
             - name: Node.js
-              href: service-bus-nodejs-how-to-use-queues.md
+              items:
+                - name: azure/service-bus package
+                  href: service-bus-nodejs-how-to-use-queues-new-package.md
+                - name: azure-sb package
+                  href: service-bus-nodejs-how-to-use-queues.md
             - name: PHP
               href: service-bus-php-how-to-use-queues.md
             - name: Python
@@ -44,14 +48,18 @@
             - name: Java
               href: service-bus-java-how-to-use-topics-subscriptions.md
             - name: Node.js
-              href: service-bus-nodejs-how-to-use-topics-subscriptions.md
+              items:
+                - name: azure/service-bus package
+                  href: service-bus-nodejs-how-to-use-topics-subscriptions-new-package.md
+                - name: azure-sb package
+                  href: service-bus-nodejs-how-to-use-topics-subscriptions.md
             - name: PHP
               href: service-bus-php-how-to-use-topics-subscriptions.md
             - name: Python
               href: service-bus-python-how-to-use-topics-subscriptions.md
             - name: Ruby
               href: service-bus-ruby-how-to-use-topics-subscriptions.md
-- name: Учебники
+- name: Руководства
   items:
     - name: Обновление инвентаризации с помощью PowerShell
       href: service-bus-tutorial-topics-subscriptions-powershell.md
@@ -162,7 +170,7 @@
           href: service-bus-dotnet-multi-tier-app-using-service-bus-queues.md
         - name: Перенос приложения Java Enterprise Edition в Azure
           href: migrate-java-apps-wild-fly.md
-    - name: управление
+    - name: Управление
       items:
         - name: Подготовка сущностей с помощью Azure PowerShell
           href: service-bus-manage-with-ps.md
@@ -174,7 +182,7 @@
           href: service-bus-diagnostic-logs.md
         - name: Приостановка и повторная активация сущностей обмена сообщениями
           href: entity-suspend.md
-        - name: Использование шаблонов диспетчера ресурсов Azure
+        - name: Использование шаблонов Azure Resource Manager
           href: service-bus-resource-manager-overview.md
           items:
             - name: Создание пространства имен
@@ -225,7 +233,7 @@
       href: service-bus-messaging-sql-rule-action.md
 - name: Ресурсы
   items:
-    - name: Часто задаваемые вопросы
+    - name: Вопросы и ответы
       href: service-bus-faq.md
     - name: Развитие навыков с помощью Microsoft Learn
       href: /learn/browse/?products=azure-service-bus
@@ -245,7 +253,7 @@
       href: 'https://github.com/paolosalvatori/ServiceBusExplorer'
     - name: Обновления службы
       href: 'https://azure.microsoft.com/updates/?product=service-bus'
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azureservicebus'
-    - name: Видеоролики
+    - name: Видео
       href: 'https://azure.microsoft.com/documentation/videos/index/?services=service-bus'

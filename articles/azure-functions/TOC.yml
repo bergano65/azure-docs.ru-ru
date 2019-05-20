@@ -8,10 +8,10 @@
       href: durable/durable-functions-overview.md
     - name: Сравнение с бессерверными службами
       href: functions-compare-logic-apps-ms-flow-webjobs.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   expanded: true
   items:
-    - name: Создание функций (Visual Studio)
+    - name: 'Создание функций: Visual Studio'
       href: functions-create-your-first-function-visual-studio.md
     - name: 'Создание функции: Visual Studio Code'
       href: functions-create-first-function-vs-code.md
@@ -19,7 +19,7 @@
       href: functions-create-first-java-maven.md
     - name: 'Создание функции: Python'
       href: functions-create-first-function-python.md
-    - name: "Создание функции\_— PowerShell"
+    - name: 'Создание функции: PowerShell'
       href: functions-create-first-function-powershell.md
     - name: 'Создание функции: Azure CLI'
       href: functions-create-first-azure-function-azure-cli.md
@@ -27,7 +27,7 @@
       href: functions-create-first-azure-function.md
     - name: 'Создание функции: Linux'
       href: functions-create-first-azure-function-azure-cli-linux.md
-    - name: триггеры;
+    - name: Триггеры
       items:
         - name: Azure Cosmos DB
           href: functions-create-cosmos-db-triggered-function.md
@@ -45,7 +45,7 @@
           href: functions-add-output-binding-storage-queue-python.md
         - name: "Хранилище\_— портал"
           href: functions-integrate-storage-queue-output-binding.md
-- name: Учебники
+- name: Руководства
   items:
     - name: Использование функций Azure с Logic Apps
       href: functions-twitter-email.md
@@ -53,6 +53,8 @@
       href: functions-create-serverless-api.md
     - name: Создание определения OpenAPI
       href: functions-openapi-definition.md
+    - name: Подключение к виртуальной сети
+      href: functions-create-vnet.md
     - name: Изменение размера изображения с помощью службы "Сетка событий"
       href: ../event-grid/resize-images-on-storage-blob-upload-event.md?toc=%2fazure%2fazure-functions%2ftoc.json
     - name: Создание бессерверного веб-приложения
@@ -65,7 +67,7 @@
   items:
     - name: Примеры кода
       href: 'https://azure.microsoft.com/resources/samples/?service=functions'
-    - name: Инфраструктура CLI Azure
+    - name: Azure CLI
       href: functions-cli-samples.md
 - name: Основные понятия
   items:
@@ -90,7 +92,7 @@
           href: functions-bindings-return-value.md
         - name: Обработка ошибок привязки
           href: functions-bindings-errors.md
-    - name: Languages
+    - name: Языки
       items:
         - name: Поддерживаемые языки
           href: supported-languages.md
@@ -116,7 +118,7 @@
       href: functions-proxies.md
     - name: Сетевые параметры
       href: functions-networking-options.md
-    - name: IP-адреса;
+    - name: IP-адреса
       href: ip-addresses.md
     - name: Функции в Kubernetes
       href: functions-kubernetes-keda.md
@@ -124,7 +126,7 @@
   items:
     - name: Разработка
       items:
-        - name: Руководство разработчика по центру Azure IoT (IoT — Интернет вещей)
+        - name: Руководство для разработчиков
           href: functions-reference.md
         - name: Функции тестирования
           href: functions-test-a-function.md
@@ -200,20 +202,20 @@
               href: ../app-service/configure-authentication-provider-microsoft.md?toc=%2fazure%2fazure-functions%2ftoc.json
             - name: Проверка подлинности с помощью Twitter
               href: ../app-service/configure-authentication-provider-twitter.md?toc=%2fazure%2fazure-functions%2ftoc.json
-        - name: Расширенная аутентификация
+        - name: Расширенная проверка подлинности
           href: ../app-service/app-service-authentication-how-to.md?toc=%2fazure%2fazure-functions%2ftoc.json
         - name: Запрет IP-адресов
           href: ../app-service/app-service-ip-restrictions.md?toc=%2fazure%2fazure-functions%2ftoc.json
-        - name: Администрирование управляемого удостоверения
+        - name: Использование управляемого удостоверения
           href: ../app-service/overview-managed-identity.md?toc=%2fazure%2fazure-functions%2ftoc.json
-        - name: Добавление ссылки на секреты из Key Vault
+        - name: Добавление ссылок на секреты из Key Vault
           href: ../app-service/app-service-key-vault-references.md?toc=%2fazure%2fazure-functions%2ftoc.json
     - name: Интеграция
       items:
         - name: Подключение к базе данных SQL
           href: functions-scenario-database-table-cleanup.md
         - name: Подключение к виртуальной сети
-          href: functions-create-vnet.md
+          href: functions-create-vnet-old.md
         - name: "Создание определения OpenAPI\_2.0"
           href: functions-api-definition-getting-started.md
         - name: Экспорт в PowerApps и Microsoft Flow
@@ -222,7 +224,7 @@
           href: functions-powerapps-scenario.md
         - name: Вызов функции из Microsoft Flow
           href: functions-flow-scenario.md
-        - name: Администрирование управляемого удостоверения
+        - name: Использование управляемого удостоверения
           href: ../app-service/overview-managed-identity.md?toc=%2fazure%2fazure-functions%2ftoc.json
     - name: Устранение неполадок
       items:
@@ -248,13 +250,13 @@
               href: functions-bindings-cosmosdb.md
             - name: Функции 2.x
               href: functions-bindings-cosmosdb-v2.md
-        - name: Сетка событий Azure
+        - name: Сетка событий
           href: functions-bindings-event-grid.md
-        - name: Центры событий;
+        - name: Центры событий
           href: functions-bindings-event-hubs.md
         - name: Центр Интернета вещей
           href: functions-bindings-event-iot.md
-        - name: HTTP и вызовы webhook
+        - name: HTTP и веб-перехватчики
           href: functions-bindings-http-webhook.md
         - name: Microsoft Graph
           href: functions-bindings-microsoft-graph.md
@@ -297,19 +299,21 @@
       href: 'https://azure.microsoft.com/pricing/details/functions/'
     - name: Калькулятор цен
       href: 'https://azure.microsoft.com/pricing/calculator/'
+    - name: Сведения о квотах
+      href: 'functions-scale.md#service-limits'
     - name: Доступ по регионам
       href: 'https://azure.microsoft.com/regions/services/'
-    - name: Видеоролики
+    - name: Видео
       href: 'https://www.youtube.com/c/AzureFunctions'
     - name: Форум MSDN
       href: 'https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureFunctions'
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-functions'
     - name: Twitter
       href: 'https://twitter.com/azurefunctions'
     - name: Отзыв о продукте
       href: 'https://feedback.azure.com/forums/355860-azure-functions'
-    - name: Репозиторий GitHub для функций Azure
+    - name: Репозиторий GitHub для Функций Azure
       href: 'https://github.com/Azure/Azure-Functions/'
     - name: Обновления службы
       href: 'https://azure.microsoft.com/updates/?product=functions&updatetype=&platform='

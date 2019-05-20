@@ -1,8 +1,8 @@
-- name: Документация по подсистеме балансировки нагрузки
+- name: Документация по Load Balancer
   href: index.yml
 - name: Обзор
   items:
-    - name: Что такое балансировщик нагрузки?
+    - name: Что такое Load Balancer
       href: load-balancer-overview.md
 - name: Быстрый запуск
   items:
@@ -12,11 +12,11 @@
       href: quickstart-create-basic-load-balancer-cli.md
     - name: Создание Load Balancer уровня "Базовый" с помощью Azure PowerShell
       href: quickstart-create-basic-load-balancer-powershell.md
-    - name: Создание Load Balancer уровня "Стандартный" с помощью портала
+    - name: Создание Load Balancer ценовой категории "Стандартный" с помощью портала
       href: quickstart-load-balancer-standard-public-portal.md
-    - name: Создание Load Balancer уровня "Стандартный" с помощью Azure CLI
+    - name: Создание Load Balancer ценовой категории "Стандартный" с помощью Azure CLI
       href: quickstart-load-balancer-standard-public-cli.md
-    - name: Создание Load Balancer уровня "Стандартный" с помощью Azure PowerShell
+    - name: Создание Load Balancer ценовой категории "Стандартный" с помощью Azure PowerShell
       href: quickstart-create-standard-load-balancer-powershell.md
 - name: Руководства
   items:
@@ -32,15 +32,15 @@
       href: tutorial-load-balancer-port-forwarding-portal.md
 - name: Примеры
   items:
-    - name: Инфраструктура CLI Azure
+    - name: Azure CLI
       href: cli-samples.md
     - name: Azure PowerShell
       href: powershell-samples.md
 - name: Основные понятия
   items:
-    - name: Что такое Load Balancer уровня "Стандартный"
+    - name: Что такое Load Balancer ценовой категории "Стандартный"
       href: load-balancer-standard-overview.md
-    - name: Пробы работоспособности.
+    - name: Пробы работоспособности
       href: load-balancer-custom-probe-overview.md
     - name: Порты с высоким уровнем доступности
       href: load-balancer-ha-ports-overview.md
@@ -50,35 +50,35 @@
       href: load-balancer-multivip-overview.md
     - name: Исходящие подключения
       href: load-balancer-outbound-connections.md
-    - name: Правила для исходящих подключений
+    - name: Правила для исходящего трафика
       href: load-balancer-outbound-rules-overview.md
     - name: Сброс подключений TCP во время ожидания в режиме простоя
       href: load-balancer-tcp-reset.md
-    - name: Azure Load Balancer уровня "Стандартный" и зоны доступности
+    - name: Azure Load Balancer ценовой категории "Стандартный" и зоны доступности
       href: load-balancer-standard-availability-zones.md
-    - name: Метрики и диагностика Load Balancer уровня "Стандартный"
+    - name: Метрики и диагностика Load Balancer ценовой категории "Стандартный"
       href: load-balancer-standard-diagnostics.md
 - name: Практическое руководство
   items:
-    - name: Создание избыточной в пределах зоны общедоступной службы Azure Load Balancer уровня "Стандартный"
+    - name: Создание избыточной в пределах зоны общедоступной службы Azure Load Balancer ценовой категории "Стандартный"
       href: load-balancer-get-started-internet-az-portal.md
       items:
-        - name: Создание избыточной в пределах зоны общедоступной службы Azure Load Balancer уровня "Стандартный" (PowerShell)
+        - name: Создание избыточной в пределах зоны общедоступной службы Azure Load Balancer ценовой категории "Стандартный" (PowerShell)
           href: load-balancer-get-started-internet-az-powershell.md
-        - name: Создание избыточной в пределах зоны общедоступной службы Azure Load Balancer уровня "Стандартный" (CLI)
+        - name: Создание избыточной в пределах зоны общедоступной службы Azure Load Balancer ценовой категории "Стандартный" (CLI)
           href: load-balancer-get-started-internet-az-cli.md
-    - name: Создание зональной общедоступной службы Azure Load Balancer уровня "Стандартный"
+    - name: Создание зональной общедоступной службы Azure Load Balancer ценовой категории "Стандартный"
       href: load-balancer-get-started-internet-availability-zones-zonal-portal.md
       items:
-        - name: Создание зональной общедоступной службы Azure Load Balancer уровня "Стандартный" (PowerShell)
+        - name: Создание зональной общедоступной службы Azure Load Balancer ценовой категории "Стандартный" (PowerShell)
           href: load-balancer-get-started-internet-availability-zones-zonal-powershell.md
-        - name: Создание зональной общедоступной службы Azure Load Balancer уровня "Стандартный" (CLI)
+        - name: Создание зональной общедоступной службы Azure Load Balancer ценовой категории "Стандартный" (CLI)
           href: load-balancer-get-started-internet-availability-zones-zonal-cli.md
     - name: Балансировка нагрузки виртуальных машин в пределах зон доступности (CLI)
       href: load-balancer-standard-public-zone-redundant-cli.md
     - name: Балансировка нагрузки виртуальных машин в пределах зоны (CLI)
       href: load-balancer-standard-public-zonal-cli.md
-    - name: Настройка правил для исходящих подключений
+    - name: Настройка правил для исходящего трафика
       href: configure-load-balancer-outbound-cli.md
     - name: Создание Azure Load Balancer с помощью REST API
       href: create-load-balancer-rest-api.md
@@ -99,7 +99,7 @@
           href: load-balancer-get-started-ilb-arm-cli.md
         - name: Настройка внутренней службы Azure Load Balancer (шаблон)
           href: load-balancer-get-started-ilb-arm-template.md
-    - name: Настройка времени ожидания простоя TCP для балансировщика нагрузки
+    - name: Настройка времени ожидания простоя TCP для Load Balancer
       href: load-balancer-tcp-idle-timeout.md
     - name: Настройка режима распространения для Load Balancer
       href: load-balancer-distribution-mode.md

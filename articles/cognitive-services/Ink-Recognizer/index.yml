@@ -32,7 +32,7 @@ sections:
             image:
               src: ../media/index/i_overview.svg
             title: Отправка рукописного текста в API Распознавателя рукописного текста
-  - title: 5-минутные руководства по началу работы
+  - title: Пятиминутные краткие руководства
     items:
       - type: paragraph
         text: Начните работу с помощью API Распознавателя рукописного текста.
@@ -59,7 +59,7 @@ sections:
       - type: paragraph
         text: 'Используйте эти примеры программ, чтобы увидеть, как API Распознавателя рукописного текста может интегрироваться в ваши приложения.'
       - type: paragraph
-        text: '<a href="https://go.microsoft.com/fwlink/?linkid=2089503">C# и универсальная платформа Windows (UWP)</a>'
+        text: '<a href="https://go.microsoft.com/fwlink/?linkid=2089803">C# и универсальная платформа Windows (UWP)</a>'
       - type: paragraph
         text: '<a href="https://go.microsoft.com/fwlink/?linkid=2089804">C# и Windows Presentation Foundation (WPF)</a>'
       - type: paragraph

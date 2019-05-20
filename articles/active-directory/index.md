@@ -8,15 +8,15 @@ author: barbkess
 manager: daveba
 ms.service: active-directory
 ms.topic: landing-page
-ms.date: 04/18/2019
+ms.date: 05/17/2019
 ms.author: barbkess
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f067d2d83c97d22dee26050d31e08e47252310ee
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 3047ec790440b94f90416f205c51e283b446e37c
+ms.sourcegitcommit: 16cb78a0766f9b3efbaf12426519ddab2774b815
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64682987"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65849828"
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -156,7 +156,7 @@ ms.locfileid: "64682987"
                                                         <h3><a href="manage-apps/index.yml">Управление приложениями</a></h3>
                                                         <p>
                                                             <a href="manage-apps/what-is-single-sign-on.md">Что собой представляет единый вход</a><br>
-                                                            <a href="manage-apps/configure-single-sign-on-portal.md">Настройка единого входа</a><br>
+                                                            <a href="manage-apps/user-provisioning.md">Автоматическая подготовка пользователей</a><br>
                                                             <a href="manage-apps/application-proxy.md">Application Proxy для локальных приложений</a><br>
                                                             <a href="manage-apps/index.yml"><i>Дополнительные сведения &gt;</i></a>
                                                         </p>
@@ -169,19 +169,19 @@ ms.locfileid: "64682987"
                                                             <a href="authentication/index.yml"><i>Дополнительные сведения &gt;</i></a>
                                                             </p>
                                                         <br><br>
-                                                        <h3><a href="b2b/index.yml">Категория "бизнес-бизнес" (B2B)</a></h3>
+                                                        <h3><a href="b2b/index.yml">Категория "бизнес — бизнес" (B2B)</a></h3>
                                                         <p>
-                                                            <a href="b2b/what-is-b2b.md">Что собой представляет Azure AD B2B</a><br>
+                                                            <a href="b2b/what-is-b2b.md">Что собой представляет Azure AD B2B</a><br>
                                                             <a href="b2b/add-users-administrator.md">Добавление гостевых пользователей на портале</a><br>
                                                             <a href="b2b/o365-external-user.md">Общий доступ в Office 365 и B2B</a><br>
                                                             <a href="b2b/index.yml"><i>Дополнительные сведения &gt;</i></a>
                                                             </p>
                                                         <br><br>
-                                                        <h3><a href="/azure/active-directory-b2c/index">Категория "бизнес-потребитель" (B2C)</a></h3>
+                                                        <h3><a href="/azure/active-directory-b2c/index">Категория "бизнес — потребитель" (B2C)</a></h3>
                                                         <p>
                                                             <a href="/azure/active-directory-b2c/active-directory-b2c-overview">Что собой представляет Azure AD B2C</a><br>
                                                             <a href="/azure/active-directory-b2c/tutorial-create-tenant">Создание клиента Azure AD B2C</a><br>
-                                                            <a href="/azure/active-directory-b2c/active-directory-b2c-get-started-custom">Пользовательские политики в Azure AD B2C</a><br>
+                                                            <a href="/azure/active-directory-b2c/active-directory-b2c-get-started-custom">Пользовательские политики в Azure AD B2C</a><br>
                                                             <a href="/azure/active-directory-b2c/index"><i>Дополнительные сведения &gt;</i></a>
                                                         </p>
                                                         <br><br>
@@ -253,7 +253,7 @@ ms.locfileid: "64682987"
                                                             <a href="hybrid/index.yml"><i>Дополнительные сведения &gt;</i></a>
                                                         </p>
                                                         <br><br>
-                                                        <h3><a href="governance/index.yml">Identity Governance</a></h3>
+                                                        <h3><a href="governance/index.yml">Система управления удостоверениями</a></h3>
                                                         <p>
                                                             <a href="governance/entitlement-management-overview.md">Общие сведения об управлении правами</a><br>
                                                             <a href="governance/access-reviews-overview.md">Общие сведения о проверках доступа</a><br>

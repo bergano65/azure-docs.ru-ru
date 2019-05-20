@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 08/06/2018
 ms.author: bwren
-ms.openlocfilehash: 2df4cf994e118fef9048504daf40fabc1625c375
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: b5860243b6b605288aaf8d6dffe2260bc031a592
+ms.sourcegitcommit: 179918af242d52664d3274370c6fdaec6c783eb6
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61425917"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65560829"
 ---
 # <a name="search-queries-in-azure-monitor-logs"></a>Запросы поиска в журналах Azure Monitor
 
@@ -64,7 +64,7 @@ search in (Event) Source:"error"
 ```
 
 > [!TIP]
-> При использовании `==` вместо `:` результаты будут включать записи, в которых столбец *Source* имеет точное значение "error". При использовании ":" записи из столбца *Source* с такими значениями, как "error code 404" или "Error", не будут включены.
+> При использовании `==` вместо `:` результаты будут включать записи, в которых столбец *Source* имеет точное значение "error". С помощью ":" будет содержать записи где *источника* имеет значения, такие как «код ошибки 404» или «Ошибка».
 
 ## <a name="case-sensitivity"></a>Учет регистра
 По умолчанию в поисковом термине не учитывается регистр, поэтому поиск "dns" может дать такие результаты, как "DNS", "dns" или "Dns". Чтобы при поиске учитывался регистр, используйте параметр `kind`:

@@ -8,7 +8,7 @@
       href: classroom-labs/classroom-labs-overview.md
     - name: О DevTest Labs
       href: devtest-lab-overview.md
-- name: Учебники
+- name: Руководства
   items:
     - name: Лаборатории для аудитории
       items:
@@ -30,11 +30,11 @@
   items:
     - name: DevTest Labs
       items:
-        - name: Шаблоны диспетчера ресурсов
+        - name: Шаблоны Resource Manager
           href: 'https://github.com/Azure/azure-devtestlab/tree/master/samples/DevTestLabs/QuickStartTemplates'
         - name: Azure PowerShell
           href: samples-powershell.md
-        - name: Инфраструктура CLI Azure
+        - name: Azure CLI
           href: samples-cli.md
 - name: Основные понятия
   items:
@@ -176,6 +176,8 @@
               href: integrate-environments-devops-pipeline.md
             - name: Использование служб платформы как услуги (PaaS)
               href: use-paas-services.md
+            - name: Развертывание вложенных шаблонов
+              href: deploy-nested-template-environments.md
         - name: Безопасный доступ к лабораториям
           items:
             - name: Добавление владельцев и пользователей лаборатории
@@ -188,6 +190,8 @@
           items:
             - name: Определение политик и расписаний
               href: devtest-lab-set-lab-policy.md
+            - name: Отправка уведомлений об автоматическом завершении работы
+              href: devtest-lab-auto-shutdown.md
             - name: Настройка управления затратами
               href: devtest-lab-configure-cost-management.md
             - name: Настройка образов Azure Marketplace
@@ -224,7 +228,7 @@
               href: devtest-lab-manage-formulas.md
         - name: Управление артефактами
           items:
-            - name: Добавление артефактов к виртуальной машине.
+            - name: Добавление артефактов к виртуальной машине
               href: add-artifact-vm.md
             - name: Создание настраиваемых артефактов
               href: devtest-lab-artifact-author.md
@@ -244,7 +248,7 @@
               href: devtest-lab-attach-detach-data-disk.md
         - name: Масштабирование лаборатории
           href: devtest-lab-scale-lab.md
-        - name: Интеграция с помощью непрерывной интеграции и доставки
+        - name: Интеграция с помощью CI/CD
           items:
             - name: Интеграция лабораторий в конвейер CI/CD в Azure DevOps
               href: devtest-lab-integrate-ci-cd-vsts.md
@@ -264,7 +268,7 @@
           href: 'https://docs.microsoft.com/rest/api/labservices/'
     - name: DevTest Labs
       items:
-        - name: Интерфейс командной строки
+        - name: CLI
           href: /cli/azure/lab
         - name: PowerShell
           href: /powershell/module/az.devtestlabs
@@ -280,7 +284,7 @@
           href: 'https://azure.microsoft.com/updates/?product=lab-services'
         - name: Цены
           href: 'https://azure.microsoft.com/pricing/details/lab-services/'
-        - name: Переполнение стека
+        - name: Stack Overflow
           href: 'https://stackoverflow.com/questions/tagged/azure-lab-services'
     - name: DevTest Labs
       items:
@@ -290,9 +294,9 @@
           href: 'https://azure.microsoft.com/pricing/details/devtest-lab/'
         - name: Форум MSDN
           href: 'https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureDevTestLabs'
-        - name: Переполнение стека
+        - name: Stack Overflow
           href: 'https://stackoverflow.com/questions/tagged/azure-devtest-labs'
-        - name: Видеоролики
+        - name: Видео
           href: 'https://azure.microsoft.com/resources/videos/index/?services=devtest-lab'
         - name: Часто задаваемые вопросы
           href: devtest-lab-faq.md
