@@ -3,9 +3,12 @@
 - name: Обзор
   expanded: true
   items:
-    - name: Что такое Машинное обучение Azure
+    - name: Что такое служба машинного обучения Azure
       displayName: AML services overview
       href: overview-what-is-azure-ml.md
+    - name: Как работает служба
+      displayName: architecture concepts definitions
+      href: concept-azure-machine-learning-architecture.md
 - name: Настройка
   items:
     - name: Создание рабочей области
@@ -77,9 +80,6 @@
           href: ui-sample-classification-predict-churn.md
 - name: Основные понятия
   items:
-    - name: Как работает служба
-      displayName: architecture concepts definitions
-      href: concept-azure-machine-learning-architecture.md
     - name: Рабочая область
       displayName: concept definitions architecture
       href: concept-workspace.md

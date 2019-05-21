@@ -12,7 +12,7 @@
         - name: С помощью REST
           displayName: 'encoding, job, transform'
           href: stream-files-tutorial-with-rest.md
-        - name: С помощью интерфейса командной строки
+        - name: С помощью CLI
           href: stream-files-cli-quickstart.md
         - name: Использование .NET
           href: stream-files-dotnet-quickstart.md
@@ -47,8 +47,9 @@
       href: concepts-overview.md
     - name: Передача в облако и хранение
       items:
-        - name: Хранилище
+        - name: Служба хранилища
           href: storage-account-concept.md
+          displayName: Storage side encryption
         - name: API ресурсов
           href: assets-concept.md
     - name: Кодирование
@@ -62,7 +63,7 @@
         - name: Форматы кодировщика ценовой категории "Стандартный"
           displayName: 'containers, codecs'
           href: media-encoder-standard-formats.md
-        - name: Автоматическое создание схемы передачи с переменной скоростью
+        - name: Автоматическое создание схемы передачи с адаптивной скоростью
           href: autogen-bitrate-ladder.md
         - name: Кодирование с учетом содержимого
           href: cae-experimental.md
@@ -163,12 +164,13 @@
               href: job-error-codes.md
     - name: Руководство по миграции из версии 2 в версию 3
       href: migrate-from-v2-to-v3.md
-- name: Практические руководства
+- name: Инструкции
   items:
     - name: Начало работы
       items:
         - name: "Создание учетной записи\_— CLI"
           href: create-account-cli-how-to.md
+          displayName: storage
         - name: "Сброс данных учетной записи\_— CLI"
           href: cli-reset-account-credentials.md
         - name: "Доступ к API\_— CLI"
@@ -223,7 +225,7 @@
             - name: Использование .NET
               displayName: 'encode, encoding, custom, transform'
               href: customize-encoder-presets-how-to.md
-            - name: С помощью интерфейса командной строки
+            - name: С помощью CLI
               displayName: 'encode, encoding, custom, transform'
               href: custom-preset-cli-howto.md
             - name: С помощью REST
@@ -253,7 +255,7 @@
         - name: С помощью REST
           href: filters-dynamic-manifest-rest-howto.md
           displayName: filters
-        - name: С помощью интерфейса командной строки
+        - name: С помощью CLI
           href: filters-dynamic-manifest-cli-howto.md
           displayName: filters
     - name: Доставка содержимого

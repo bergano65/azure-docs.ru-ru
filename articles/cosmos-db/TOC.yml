@@ -1,8 +1,8 @@
-- name: Документация по базе данных Azure Cosmos
+- name: Документация по Azure Cosmos DB
   href: index.yml
 - name: Обзор
   items:
-    - name: Добро пожаловать в базу данных Azure Cosmos DB
+    - name: Вас приветствует Azure Cosmos DB
       href: introduction.md
 - name: Краткие руководства
   expanded: true
@@ -72,7 +72,7 @@
       href: sql-api-python-samples.md
     - name: PowerShell
       href: powershell-samples.md
-    - name: Инфраструктура Azure CLI
+    - name: Azure CLI
       href: cli-samples.md
     - name: Azure Resource Manager
       href: resource-manager-samples.md
@@ -98,7 +98,7 @@
         - name: Глобальное масштабирование подготовленной пропускной способности
           displayName: 'request units, RUs, RU'
           href: scaling-throughput.md
-        - name: Типы конфликтов и политики их устранения
+        - name: Типы конфликтов и политики их разрешения
           displayName: 'last write wins, custom'
           href: conflict-resolution-policies.md
         - name: Глобальное распределение (взгляд изнутри)
@@ -115,7 +115,7 @@
           href: synthetic-partition-keys.md
     - name: Подготовленная пропускная способность
       items:
-        - name: Единиц запросов
+        - name: Единицы запросов
           displayName: 'RUs, RU'
           href: request-units.md
         - name: Обеспечение необходимой пропускной способности для контейнеров и баз данных
@@ -152,7 +152,7 @@
           href: unique-keys.md
         - name: Управление транзакциями и оптимистической блокировкой
           href: database-transactions-optimistic-concurrency.md
-    - name: Веб-канал изменений
+    - name: Канал изменений
       items:
         - name: Обзор
           href: change-feed.md
@@ -192,7 +192,7 @@
           href: optimize-cost-regions.md
         - name: Оптимизация затрат на разработку и тестирование
           href: optimize-dev-test.md
-        - name: Оптимизация затрат за счет зарезервированной мощности
+        - name: Оптимизация затрат за счет резервной мощности
           href: cosmos-db-reserved-capacity.md
     - name: Безопасность
       items:
@@ -207,15 +207,17 @@
           href: firewall-support.md
         - name: Доступ из виртуальных сетей
           href: vnet-service-endpoint.md
-        - name: Контроль доступа на основе ролей
+        - name: Управление доступом на основе ролей
           displayName: rbac
           href: role-based-access-control.md
     - name: Готовность к работе в масштабах предприятия
       items:
         - name: Оперативное резервное копирование и восстановление по запросу
           href: online-backup-and-restore.md
-        - name: Соответствие нормативным требованиям
+        - name: Соответствие требованиям
           href: compliance.md
+    - name: Ограничения
+      href: concepts-limits.md
 - name: 'Cassandra, MongoDB и другие API'
   expanded: true
   items:
@@ -246,7 +248,7 @@
             - name: 4. Перенос данных
               displayName: import
               href: cassandra-import-data.md
-        - name: Практические руководства
+        - name: Инструкции
           items:
             - name: Хранение данных и управление ими с помощью Spring Data
               href: /java/azure/spring-framework/configure-spring-data-apache-cassandra-with-cosmos-db
@@ -263,13 +265,13 @@
                   href: cassandra-spark-ddl-ops.md
                 - name: Добавление данных
                   href: cassandra-spark-create-ops.md
-                - name: Считывание данных
+                - name: Чтение данных
                   href: cassandra-spark-read-ops.md
                 - name: Операция upsert с данными
                   href: cassandra-spark-upsert-ops.md
                 - name: Удаление данных
                   href: cassandra-spark-delete-ops.md
-                - name: Операции статистического вычисления
+                - name: Операции агрегатных вычислений
                   href: cassandra-spark-aggregation-ops.md
                 - name: Копирование данных таблицы
                   href: cassandra-spark-table-copy-ops.md
@@ -325,7 +327,7 @@
               href: tutorial-query-mongodb.md
             - name: "4.\_Глобальное распределение данных"
               href: tutorial-global-distribution-mongodb.md
-        - name: Практические руководства
+        - name: Инструкции
           items:
             - name: Руководство по подготовке к миграции
               href: mongodb-pre-migration.md
@@ -377,9 +379,9 @@
               href: create-graph-php.md
         - name: Учебники
           items:
-            - name: "1.\_Запрос данных"
+            - name: "1.\_Запрашивание данных"
               href: tutorial-query-graph.md
-        - name: Практические руководства
+        - name: Инструкции
           items:
             - name: Импорт данных графа
               href: bulk-executor-graph-dotnet.md
@@ -436,7 +438,7 @@
             - name: 'F#'
               href: /dotnet/articles/fsharp/using-fsharp-on-azure/table-storage
               maintainContext: true
-        - name: Практические руководства
+        - name: Инструкции
           items:
             - name: Создание приложений с помощью API таблиц
               href: table-support.md
@@ -456,7 +458,7 @@
               href: table-sdk-nodejs.md
             - name: Python
               href: table-sdk-python.md
-            - name: API REST хранилищ таблиц
+            - name: REST API хранилищ таблиц
               href: /rest/api/storageservices/Table-Service-Concepts
     - name: API etcd
       items:
@@ -464,7 +466,7 @@
           href: etcd-api-introduction.md
         - name: "Использование Azure Kubernetes с Azure Cosmos\_DB"
           href: bootstrap-kubernetes-cluster.md
-- name: Практические руководства
+- name: Инструкции
   items:
     - name: Управление учетной записью Azure Cosmos
       href: how-to-manage-database-account.md
@@ -477,7 +479,7 @@
           href: how-to-manage-consistency.md
         - name: Реализация пользовательской синхронизации
           href: how-to-custom-synchronization.md
-        - name: Настройка политик устранения конфликтов
+        - name: Настройка политик разрешения конфликтов
           href: how-to-manage-conflicts.md
     - name: Подготовленная пропускная способность
       items:
@@ -562,7 +564,7 @@
         - name: Вход в приложения с помощью Logic Apps
           href: /azure/logic-apps/logic-apps-scenario-error-and-exception-handling
           maintainContext: true
-    - name: Мониторинг
+    - name: Монитор
       items:
         - name: Мониторинг с помощью метрик
           href: use-metrics.md
@@ -692,7 +694,7 @@
       href: query-cheat-sheet.md
     - name: Тестовая площадка SQL
       href: 'https://aka.ms/cosmos-db-playground'
-    - name: Часто задаваемые вопросы
+    - name: Вопросы и ответы
       href: faq.md
     - name: Технические документы
       href: whitepapers.md

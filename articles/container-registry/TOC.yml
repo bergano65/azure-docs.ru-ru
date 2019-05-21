@@ -4,7 +4,7 @@
   items:
     - name: Сведения о реестре контейнеров
       href: container-registry-intro.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   expanded: true
   items:
     - name: "Создание реестра контейнеров\_— CLI"
@@ -17,7 +17,7 @@
       href: container-registry-quickstart-task-cli.md
     - name: "Отправка событий в Сетку событий\_— CLI"
       href: container-registry-event-grid-quickstart.md
-- name: Учебники
+- name: Руководства
   items:
     - name: Создание образов контейнеров
       items:
@@ -51,7 +51,7 @@
       href: container-registry-roles.md
     - name: Рекомендации по использованию реестра
       href: container-registry-best-practices.md
-- name: Практические руководства
+- name: Инструкции
   items:
     - name: Операции с реестром
       items:
@@ -75,9 +75,10 @@
       items:
         - name: Ограничение доступа с помощью виртуальной сети (предварительная версия)
           href: container-registry-vnet.md
-        - name: Общие сведения об аутентификации
-          href: container-registry-authentication.md
+        - name: Аутентификация
           items:
+            - name: Общие сведения об аутентификации
+              href: container-registry-authentication.md
             - name: Проверка подлинности субъекта-службы
               href: container-registry-auth-service-principal.md
             - name: Проверка подлинности управляемого удостоверения
@@ -104,7 +105,7 @@
           href: ../service-fabric/service-fabric-tutorial-create-container-images.md
 - name: Справочные материалы
   items:
-    - name: Инфраструктура CLI Azure
+    - name: Azure CLI
       href: /cli/azure/acr
     - name: REST
       href: /rest/api/containerregistry
@@ -131,7 +132,7 @@
   items:
     - name: Развитие навыков с помощью Microsoft Learn
       href: /learn/browse/?products=azure-container-registry
-    - name: Регионы доступности
+    - name: Доступность по регионам
       href: 'https://azure.microsoft.com/regions/services/'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/container-registry/'
@@ -139,7 +140,9 @@
       href: 'https://aka.ms/acr/roadmap'
     - name: Отзыв о продукте
       href: 'https://feedback.azure.com/forums/903958-azure-container-registry'
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-container-registry'
-    - name: Видеоролики
+    - name: Видео
       href: 'https://azure.microsoft.com/resources/videos/index/?services=container-registry&sort=newest'
+    - name: Вопросы и ответы
+      href: container-registry-faq.md
