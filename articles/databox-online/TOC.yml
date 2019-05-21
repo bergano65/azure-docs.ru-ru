@@ -89,6 +89,8 @@
           items:
             - name: Пограничные вычисления
               href: data-box-edge-manage-compute.md
+            - name: Сеть пограничных вычислений
+              href: data-box-edge-extend-compute-access-modules.md
             - name: Общие папки
               href: data-box-edge-manage-shares.md
             - name: Пользователи

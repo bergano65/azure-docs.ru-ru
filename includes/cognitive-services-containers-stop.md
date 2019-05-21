@@ -1,15 +1,14 @@
 ---
-author: WenJason
-ms.author: v-jay
+author: diberry
+ms.author: diberry
 ms.service: cognitive-services
 ms.topic: include
-origin.date: 01/02/2019
-ms.date: 01/28/2019
-ms.openlocfilehash: a8a49bdf2e77cc657a7d12cebffe6f1984f82eed
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: MT
+ms.date: 01/02/2019
+ms.openlocfilehash: c0c3675b68c8ecc83a56b99c44db71b2ac2d28d7
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60815647"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65884995"
 ---
-Чтобы завершить работу контейнера, в среде командной строки, где выполняется контейнер, нажмите клавиши **CTRL+C**.
+Чтобы завершить работу контейнера, в среде командной строки, где выполняется контейнер, нажмите клавиши CTRL+C.

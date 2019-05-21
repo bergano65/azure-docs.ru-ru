@@ -6,13 +6,13 @@
   items:
     - name: Общие сведения о службе "Речь"
       href: overview.md
-    - name: Преобразование речи в текст.
+    - name: Преобразование речи в текст
       href: speech-to-text.md
       displayName: 'recognize speech, speech recognition, speech-to-text, stt'
     - name: Преобразование текста в речь
       href: text-to-speech.md
       displayName: 'synthesize speech, speech synthesis, text-to-speech, tts'
-    - name: Перевод речи.
+    - name: Перевод речи
       href: speech-translation.md
       displayName: 'translate speech, speech translation, translator, s2s, speech to speech'
     - name: Виртуальные помощники по обработке голоса (предварительная версия)
@@ -20,9 +20,9 @@
       displayName: 'virtual assistants, speech-enabled bots, conversational agents'
 - name: Краткие руководства
   items:
-    - name: Пакет SDK для распознавания речи
+    - name: Пакет SDK для службы "Речь"
       items:
-        - name: Преобразование речи в текст.
+        - name: Преобразование речи в текст
           items:
             - name: 'C# (.NET Framework для Windows)'
               href: quickstart-csharp-dotnet-windows.md
@@ -97,7 +97,7 @@
             - name: 'Java (Windows, macOS, Linux)'
               href: quickstart-virtual-assistant-java-jre.md
               displayName: 'virtual assistant, speech-enabled bot, conversational agent'
-    - name: Интерфейсы API REST
+    - name: "Интерфейсы REST\_API"
       items:
         - name: Список поддерживаемых голосов по регионам
           items:
@@ -113,7 +113,7 @@
               href: quickstart-nodejs-text-to-speech.md
             - name: Python
               href: quickstart-python-text-to-speech.md
-    - name: Пакет SDK для речевых устройств
+    - name: 'Пакет SDK для устройств, подключаемых к службе "Речь"'
       href: speech-devices-sdk-android-quickstart.md
       displayName: 'roobo, speech devices sdk'
 - name: Руководства
@@ -128,7 +128,7 @@
   items:
     - name: Транскрибирование бесед
       href: conversation-transcription-service.md
-    - name: Транскрибирование звонков в колл-центр
+    - name: Транскрибирование вызовов в центр обработки
       href: call-center-transcription.md
 - name: Инструкции
   items:
@@ -151,14 +151,14 @@
     - name: Улучшение распознавания с помощью списков фраз
       href: how-to-phrase-lists.md
       displayname: 'phrase lists, phrase, list, recognition accuracy'
-    - name: Транскрипция диалогов (пакет SDK)
+    - name: Транскрибирование диалогов (пакет SDK)
       href: how-to-use-conversation-transcription-service.md
       displayName: 'conversation, transcription, speech recognition'
     - name: Настройка
       items:
-        - name: Преобразование речи в текст.
+        - name: Преобразование речи в текст
           items:
-            - name: Начало работы с Пользовательской службой распознавания речи
+            - name: Начало работы с пользовательской службой распознавания речи
               href: how-to-custom-speech.md
             - name: Подготовка данных
               href: how-to-custom-speech-test-data.md
@@ -189,11 +189,11 @@
           displayName: 'roobo, speech devices sdk, wake word, keyword spotting, kws'
     - name: Миграция
       items:
-        - name: Из API распознавания речи Bing
+        - name: Из Распознавания речи Bing
           href: how-to-migrate-from-bing-speech.md
-        - name: Из Пользовательской службы распознавания речи
+        - name: Из пользовательской службы распознавания речи
           href: how-to-migrate-from-custom-speech-service.md
-        - name: Из API перевода речи
+        - name: Из API "Перевод речи"
           href: how-to-migrate-from-translator-speech-api.md
     - name: Использование локальных контейнеров
       items:
@@ -205,9 +205,9 @@
           displayName: 'docker, container, billing, apikey, pull, logging'
 - name: Примеры
   items:
-    - name: Пакет SDK для распознавания речи
+    - name: Пакет SDK для службы "Речь"
       href: 'https://github.com/Azure-Samples/cognitive-services-speech-sdk'
-    - name: Пакет SDK для речевых устройств
+    - name: 'Пакет SDK для устройств, подключаемых к службе "Речь"'
       href: 'https://github.com/Azure-Samples/Cognitive-Services-Speech-Devices-SDK'
     - name: Преобразование текста в речь (REST)
       href: 'https://github.com/Azure-Samples/Cognitive-Speech-TTS'
@@ -215,7 +215,7 @@
       href: 'https://github.com/Azure-Samples/cognitive-services-speech-sdk/tree/master/samples/batch'
 - name: Справочные материалы
   items:
-    - name: Пакет SDK для распознавания речи
+    - name: Пакет SDK для службы "Речь"
       items:
         - name: Обзор
           href: speech-sdk.md
@@ -236,9 +236,9 @@
           href: 'https://aka.ms/csspeech/objectivecref'
         - name: Python
           href: 'https://aka.ms/csspeech/pythonref'
-    - name: Пакет SDK для речевых устройств
+    - name: 'Пакет SDK для устройств, подключаемых к службе "Речь"'
       items:
-        - name: Получение пакета SDK для речевых устройств
+        - name: 'Получение пакета SDK для устройств, подключаемых к службе "Речь"'
           href: get-speech-devices-sdk.md
         - name: Заметки о выпуске
           href: devices-sdk-release-notes.md
@@ -246,9 +246,9 @@
           href: speech-devices-sdk-roobo-v1.md
         - name: Спецификация микрофона
           href: speech-devices-sdk-microphone.md
-    - name: Интерфейсы API REST
+    - name: "Интерфейсы REST\_API"
       items:
-        - name: Преобразование речи в текст.
+        - name: Преобразование речи в текст
           href: rest-speech-to-text.md
           displayName: 'speech-to-text, speech recognition'
         - name: Преобразование текста в речь
@@ -260,7 +260,7 @@
         - name: Транскрибирование бесед
           href: 'https://signature.centralus.cts.speech.microsoft.com/UI/index.html'
           displayName: 'Conversation transcription, signature generation'
-        - name: Объекты Webhook
+        - name: Веб-перехватчики
           href: webhooks.md
           displayName: Webhooks
     - name: Документация по Swagger
@@ -269,35 +269,35 @@
       href: speech-synthesis-markup.md
     - name: PowerShell
       href: 'https://aka.ms/azure-powershell-cognitiveservices'
-    - name: Инфраструктура CLI Azure
+    - name: "Azure\_CLI"
       href: 'https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest#az_cognitiveservices_list'
     - name: Поддержка языков
       href: language-support.md
-    - name: регионы
+    - name: Регионы
       href: regions.md
 - name: Ресурсы
   items:
     - name: Вопросы и ответы
       items:
-        - name: Преобразование речи в текст.
+        - name: Преобразование речи в текст
           href: faq-stt.md
           displayName: 'recognize speech, speech recognition, speech-to-text, stt'
         - name: Преобразование текста в речь
           href: faq-text-to-speech.md
           displayName: 'synthesize speech, speech synthesis, text-to-speech, tts'
-        - name: Перевод речи.
+        - name: Перевод речи
           href: 'https://www.microsoft.com/translator/faq.aspx'
           displayName: 'translate speech, speech translation, translator, s2s, speech to speech'
         - name: Виртуальные помощники по обработке голоса (предварительная версия)
           href: faq-voice-first-virtual-assistants.md
-    - name: Лицензии на пакет SDK для распознавания речи
+    - name: Лицензии на пакет SDK для службы "Речь"
       displayName: 'C#, C++, Java, .NET, .NET Core, UWP, Android, Linux, Windows, NuGet, Maven, download, install, sample'
       items:
         - name: Лицензия
           href: 'https://aka.ms/csspeech/license201809'
         - name: Уведомления сторонних производителей
           href: 'https://aka.ms/csspeech/toctpn'
-    - name: Пакет SDK для речевых устройств
+    - name: 'Пакет SDK для устройств, подключаемых к службе "Речь"'
       displayName: 'roobo, speech devices sdk'
       items:
         - name: Сведения
@@ -306,9 +306,9 @@
           href: 'https://aka.ms/sdsdk-license'
         - name: Уведомления сторонних производителей
           href: 'https://aka.ms/sdsdk-toctpn'
-    - name: Устранение неполадок с пакетом SDK службы "Речь"
+    - name: Устранение неполадок с пакетом SDK для службы "Речь"
       href: troubleshooting.md
-    - name: Устранение неполадок пакета SDK для речевых устройств
+    - name: 'Устранение неполадок пакета SDK для устройств, подключаемых к службе "Речь"'
       href: speech-devices-sdk-troubleshooting.md
     - name: Поддержка
       href: support.md
