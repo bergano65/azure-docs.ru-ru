@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: wolfma
 ms.custom: seodec18
-ms.openlocfilehash: 1232cdd156dd473850fde6e7c4f3ce0554155764
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: 9bb721221f8f90a39b1c84bcdd66429bbd628494
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65020417"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65912662"
 ---
 # <a name="ship-an-application"></a>Доставка приложения
 
@@ -28,7 +28,7 @@ ms.locfileid: "65020417"
 
 Пакет SDK для службы "Речь" в Cognitive Services протестирован для Windows 10 и Windows Server 2016.
 
-Для пакета SDK для службы "Речь" в Cognitive Services в системе должен быть установлен [Распространяемый компонент Visual C++ для Visual Studio 2017](https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads). Установщики для последней версии `Microsoft Visual C++ Redistributable for Visual Studio 2017` можно скачать здесь:
+Требуется Cognitive Speech SDK служб [Microsoft Visual C++ распространяемый пакет для Visual Studio 2019](https://support.microsoft.com/help/2977003/the-latest-supported-visual-c-downloads) в системе. Установщики для последней версии `Microsoft Visual C++ Redistributable for Visual Studio 2019` можно скачать здесь:
 
 - [Win32](https://aka.ms/vs/15/release/vc_redist.x86.exe)
 - [x64](https://aka.ms/vs/15/release/vc_redist.x64.exe)

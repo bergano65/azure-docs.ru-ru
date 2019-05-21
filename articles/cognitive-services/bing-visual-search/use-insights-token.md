@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-visual-search
 ms.topic: conceptual
-ms.date: 4/05/2019
+ms.date: 4/26/2019
 ms.author: scottwhi
-ms.openlocfilehash: e42e56e6361b1fde7ab13655d3c57a90d7235938
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 1860b788b9f33a6a2ec806be68a67aa2df10cbd4
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60831934"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65914271"
 ---
 # <a name="use-an-insights-token-to-get-insights-for-an-image"></a>Использовать маркер insights получение аналитики для изображения
 
@@ -64,7 +64,7 @@ Content-Disposition: form-data; name="knowledgeRequest"
 
 ### <a name="c-prerequisites"></a>C#Предварительные требования
 
-- Любая версия [Visual Studio 2017](https://www.visualstudio.com/downloads/) для получения этого кода, работающего в Windows.
+- Любая версия [Visual Studio 2019](https://www.visualstudio.com/downloads/) для получения этого кода, работающего в Windows.
 - Подписка Azure. В этом кратком руководстве можно использовать [бесплатной пробной версии](https://azure.microsoft.com/try/cognitive-services/?api=bing-web-search-api) подписки или ключа платную подписку.
 
 ## <a name="run-the-application"></a>Выполнение приложения

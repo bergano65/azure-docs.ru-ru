@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 02/28/2019
+ms.date: 05/07/2019
 ms.author: diberry
-ms.openlocfilehash: c901a384d7629a187a2a4fbd4295a1a68615abdb
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: b8239688000f0ce32ca2c2be054b1443bbb698b5
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60712803"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65069133"
 ---
 # <a name="age-prebuilt-entity-for-a-luis-app"></a>Предварительно созданная сущность age для приложения LUIS
 Предварительно созданная сущность age фиксирует значение возраста как в цифровом выражении, так и в виде количества дней, недель, месяцев или лет. Так как эта сущность уже обучена, добавлять в назначения приложения примеры фраз, содержащие сущности age, не нужно. Сущность age поддерживается во [многих языках и региональных параметрах](luis-reference-prebuilt-entities.md). 
@@ -25,6 +25,9 @@ ms.locfileid: "60712803"
 Управление сущностью age выполняется из репозитория GitHub [Recognizers-text](https://github.com/Microsoft/Recognizers-Text/blob/master/Patterns/English/English-NumbersWithUnit.yaml#L3)
 
 ## <a name="resolution-for-prebuilt-age-entity"></a>Разрешение для предварительно созданной сущности age
+
+### <a name="api-version-2x"></a>API версии 2.x
+
 В следующем примере показано разрешение сущности **builtin.age**.
 
 ```json
@@ -34,12 +37,6 @@ ms.locfileid: "60712803"
     "intent": "None",
     "score": 0.8236133
   },
-  "intents": [
-    {
-      "intent": "None",
-      "score": 0.8236133
-    }
-  ],
   "entities": [
     {
       "entity": "90 day old",
@@ -52,6 +49,70 @@ ms.locfileid: "60712803"
       }
     }
   ]
+}
+```
+
+### <a name="preview-api-version-3x"></a>Предварительная версия API 3.x
+
+Приведенный ниже код JSON является с `verbose` параметру присвоить `false`:
+
+```json
+{
+    "query": "A 90 day old utilities bill is quite late.",
+    "prediction": {
+        "normalizedQuery": "a 90 day old utilities bill is quite late.",
+        "topIntent": "None",
+        "intents": {
+            "None": {
+                "score": 0.558252
+            }
+        },
+        "entities": {
+            "age": [
+                {
+                    "number": 90,
+                    "unit": "Day"
+                }
+            ]
+        }
+    }
+}
+```
+
+Приведенный ниже код JSON является с `verbose` параметру присвоить `true`:
+
+```json
+{
+    "query": "A 90 day old utilities bill is quite late.",
+    "prediction": {
+        "normalizedQuery": "a 90 day old utilities bill is quite late.",
+        "topIntent": "None",
+        "intents": {
+            "None": {
+                "score": 0.558252
+            }
+        },
+        "entities": {
+            "age": [
+                {
+                    "number": 90,
+                    "unit": "Day"
+                }
+            ],
+            "$instance": {
+                "age": [
+                    {
+                        "type": "builtin.age",
+                        "text": "90 day old",
+                        "startIndex": 2,
+                        "length": 10,
+                        "modelTypeId": 2,
+                        "modelType": "Prebuilt Entity Extractor"
+                    }
+                ]
+            }
+        }
+    }
 }
 ```
 

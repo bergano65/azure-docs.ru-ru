@@ -1,39 +1,36 @@
 ---
 author: diberry
-ms.author: v-junlch
+ms.author: diberry
 ms.service: cognitive-services
 ms.topic: include
-origin.date: 01/24/2019
-ms.date: 02/21/2019
-ms.openlocfilehash: 11a336bbcf75c6c4de61f1bb681ab6ee7aa05650
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 01/24/2019
+ms.openlocfilehash: 4cdcec850f32d7e94f33eb28e5bf7839e511f347
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60815628"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65891233"
 ---
-Прежде всего необходимо заполнить и отправить [форму запроса к контейнерам Cognitive Services Vision](https://aka.ms/VisionContainersPreview), чтобы запросить доступ к контейнеру. В форме нужно указать сведения о себе, компании и пользовательском сценарии, для которого будет использоваться контейнер. Когда вы отправите форму, команда Azure Cognitive Services просмотрит ее, чтобы проверить, соблюдаются ли критерии доступа к частному реестру контейнеров.
+Заполнение и отправление [форму запроса контейнеры компьютерного зрения Cognitive Services](https://aka.ms/VisionContainersPreview) чтобы запросить доступ к контейнеру. В форме нужно указать сведения о себе, компании и пользовательском сценарии, для которого будет использоваться контейнер. После отправки формы, команда Azure Cognitive Services рассматриваются его, чтобы убедиться в том, что выполнены условия доступа для закрытого реестра контейнеров.
 
 > [!IMPORTANT]
-> В форме необходимо указать электронный адрес, связанный с учетной записью Майкрософт или учетной записью Azure Active Directory (Azure AD).
+> Необходимо использовать адрес электронной почты, связанным с учетной записью Майкрософт (MSA) или учетной записи Azure Active Directory (Azure AD) в форме.
 
-Если ваш запрос будет утвержден, вы получите по электронной почте инструкции по получению учетных данных и доступа к частному реестру контейнеров.
+Если ваш запрос будет одобрен, вы получите электронное письмо с инструкциями, описывающие, как получить учетные данные и доступ к реестру закрытый контейнер.
 
 ## <a name="log-in-to-the-private-container-registry"></a>Вход в частный реестр контейнеров
 
-Выполнить проверку подлинности с частным реестром контейнеров для контейнеров Cognitive Services можно несколькими способами, но мы рекомендуем использовать командную строку [Docker CLI](https://docs.docker.com/engine/reference/commandline/cli/).
+Существует несколько способов проверки подлинности с помощью закрытого реестра контейнеров для контейнеров Cognitive Services. Мы рекомендуем использовать метод командной строки с помощью [Docker CLI](https://docs.docker.com/engine/reference/commandline/cli/).
 
-Используйте команду [docker login](https://docs.docker.com/engine/reference/commandline/login/), как показано в приведенном ниже примере, чтобы войти в `containerpreview.azurecr.io` — частный реестр контейнеров Cognitive Services. Замените *\<username\>* на имя пользователя, а *\<password\>* — на пароль, предоставленные в учетных данных, полученных от команды Azure Cognitive Services.
+Используйте [docker login](https://docs.docker.com/engine/reference/commandline/login/) команды, как показано в следующем примере, чтобы войти в `containerpreview.azurecr.io`, который является частный реестр контейнеров для контейнеров Cognitive Services. Замените *\<username\>* на имя пользователя, а *\<password\>* — на пароль, предоставленные в учетных данных, полученных от команды Azure Cognitive Services.
 
 ```
 docker login containerpreview.azurecr.io -u <username> -p <password>
 ```
 
-Если вы сохранили свои учетные данные в текстовом файле, содержимое этого текстового файла можно сцепить с помощью команды `cat` в команду `docker login`, как показано в приведенном ниже примере. Замените *\<passwordFile\>* на путь и имя текстового файла, который содержит пароль, а *\<username\>* — на имя пользователя, предоставленное в учетных данных.
+Если вы защитили свои учетные данные в текстовый файл, содержимое этого файла текста можно сцепить `docker login` команды. Используйте `cat` команды, как показано в следующем примере. Замените *\<passwordFile\>* путь и имя текстового файла, который содержит пароль. Замените *\<username\>* с именем пользователя, учетные данные.
 
 ```
 cat <passwordFile> | docker login containerpreview.azurecr.io -u <username> --password-stdin
 ```
 
-
-<!-- ms.date: 02/21/2019 -->

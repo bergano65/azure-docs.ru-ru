@@ -8,14 +8,14 @@ manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.topic: article
-ms.date: 05/07/2019
+ms.date: 05/14/2019
 ms.author: diberry
-ms.openlocfilehash: 24158d5949c0a31e5444c609cbfced970bdeca07
-ms.sourcegitcommit: 399db0671f58c879c1a729230254f12bc4ebff59
+ms.openlocfilehash: f12b55e9b00e933e13f84832b8cc36267a1da05f
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65471976"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65954861"
 ---
 # <a name="use-follow-up-prompts-to-create-multiple-turns-of-a-conversation"></a>Дальнейшие действия используйте предлагает создать несколько включает диалога
 
@@ -52,7 +52,7 @@ ms.locfileid: "65471976"
 
 ![! [При импорте в PDF-документе, QnA Maker определяет последующие запросы из структуры для создания грамматики голосового управления потока. ](../media/conversational-context/surface-manual-pdf-follow-up-prompt.png)](../media/conversational-context/surface-manual-pdf-follow-up-prompt.png#lightbox)
 
-## <a name="filter-questions-and-answers-by-context"></a>Фильтр вопросы и ответы по контексту
+## <a name="show-questions-and-answers-with-context"></a>Показать вопросов и ответов с контекстом
 
 1. Уменьшите пары вопросов и ответов, отображается только для пользователей с контекстные диалогов. Выберите **просмотреть параметры**, а затем выберите **Show контекста (Предварительная версия)**. Список будет пустым, пока вы не добавите первой пары вопросов и ответов, предлагая по обработке результатов. 
 
@@ -64,22 +64,36 @@ ms.locfileid: "65471976"
 1. Введите новый текст вопроса, `Give feedback.` ответ из `What kind of feedback do you have?`.
 
 1. В **ответов** столбец для этого вопроса, выберите **последующие строки Добавить**. 
-1. **Строке дальнейших действий** всплывающее диалоговое окно позволяет искать возникает вопрос существующий или введите новый вопрос. В этой процедуре, введите текст `Feedback on an QnA Maker service`, для **отображения текста**. 
-1. Проверьте **только для контекста**. **Только для контекста** параметр указывает, что этот пользователь текст будет понятен _только_ Если в ответ на предыдущий вопрос. В этом сценарии текст приглашения не имеет смысла любой как автономный вопрос, он имеет смысл только в контексте на предыдущий вопрос.
-1. В **ссылку, чтобы ответить на** текст ответа, введите `How would you rate QnA Maker?`.
-1. Выберите **создать** выберите **Сохранить**. 
+1. **Строке дальнейших действий (Предварительная версия)** всплывающее окно позволяет искать возникает вопрос существующий или введите новый вопрос. Создайте новую строку путем ввода следующих значений: 
+
+    |Текстовое поле|Value|
+    |--|--|
+    |**Отображаемый текст**|`Feedback on an QnA Maker service`|
+    |**Ссылку, чтобы ответить**|`How would you rate QnA Maker??`|
+    |||
 
     ![Создание нового приглашения QnA](../media/conversational-context/create-child-prompt-from-parent.png)
 
-    Это создается новая пара вопросов и ответов и связывается выбранного вопроса качестве обработки результатов запроса. **Контекст** столбец оба вопроса, указывает на последующие приглашения зависимость. 
+1. Проверьте **только для контекста**. **Только для контекста** параметр указывает, что этот пользователь текст будет понятен _только_ Если в ответ на предыдущий вопрос. В этом сценарии текст приглашения не имеет смысла любой как автономный вопрос, он имеет смысл только в контексте на предыдущий вопрос.
+1. Выберите **создать** выберите **Сохранить**. 
+
+    Это создается новая пара вопросов и ответов и связывается выбранного вопроса качестве обработки результатов запроса. **Контекст** столбец оба вопроса указывает исполнению отношение "prompt". 
 
     ![! [Столбце контекст, оба вопроса показывает отношение обработки результатов запроса.] (.. / media/conversational-context/child-prompt-created.png)](../media/conversational-context/child-prompt-created.png#lightbox)
 
-1. Выберите **последующие строки Добавить** для `Give feedback` вопрос, чтобы добавить другой строке по обработке результатов. 
-1. Создайте новый вопрос, введя `Feedback on an existing feature`, с ответом `Which feature would you like to give feedback on?`.  
+1. Выберите **последующие строки Добавить** для `Give feedback` вопрос, чтобы добавить другой строке по обработке результатов. Откроется **строке дальнейших действий (Предварительная версия)** всплывающее окно.
 
-1.  Проверьте **только для контекста**. **Только для контекста** параметр указывает, что этот пользователь текст будет понятен _только_ Если в ответ на предыдущий вопрос. В этом сценарии текст приглашения не имеет смысла любой как автономный вопрос, он имеет смысл только в контексте на предыдущий вопрос.
-1.  Щелкните **Сохранить**. 
+1. Создайте новую строку путем ввода следующих значений:
+
+    |Текстовое поле|Value|
+    |--|--|
+    |**Отображаемый текст**|`Feedback on an existing feature`|
+    |**Ссылку, чтобы ответить**|`Which feature would you like to give feedback on?`|
+    |||
+
+1. Проверьте **только для контекста**. **Только для контекста** параметр указывает, что этот пользователь текст будет понятен _только_ Если в ответ на предыдущий вопрос. В этом сценарии текст приглашения не имеет смысла любой как автономный вопрос, он имеет смысл только в контексте на предыдущий вопрос.
+
+1. Щелкните **Сохранить**. 
 
     Это создается новый вопрос и связывается вопрос как prompt вопросом к `Give feedback` вопрос.
     
@@ -93,26 +107,34 @@ ms.locfileid: "65471976"
 
 1. Если вы хотите связать существующей пары QnA качестве обработки результатов запроса, выберите строку для пары вопросов и ответов.
 1. Выберите **последующие строки Добавить** в этой строке.
-1. В всплывающем диалоговом окне введите текст вопроса в поле поиска. Возвращаются все совпадения. Выберите вопрос, как дальнейших действий и проверьте **только для контекста**, а затем выберите **Сохранить**. 
+1. В **строке дальнейших действий (Предварительная версия)** всплывающее окно, в поле поиска введите текст ответа. Возвращаются все совпадения. Выбрать ответ как дальнейших действий и проверьте **только для контекста**, а затем выберите **Сохранить**. 
 
-    Когда подразделения добавите последующие строки, не забудьте выбрать **сохранить и обучение**.
+    ![Найдите ссылку на строке дальнейших действий к диалоговому окну ответов для ответ, используя текст ответа.](../media/conversational-context/search-follow-up-prompt-for-existing-answer.png)
+
+    После добавления обработки результатов запроса, не забудьте выбрать **сохранить и обучение**.
   
-## <a name="add-metadata-to-follow-up-prompts"></a>Добавить метаданные на последующие приглашения 
+<!--
 
-В базе знаний, при компоновке пары вопросов и ответов для дальнейших действий запрашивает, сначала применяются фильтры метаданных, а затем возвращаются обработки результатов по.
+## To find best prompt answer, add metadata to follow-up prompts 
 
-1. Для исполнению двух пар QnA добавьте метаданные для каждого из них:
+If you have several follow-up prompts for a given QnA pair, but you know as the knowledge base manager, that not all prompts should be returned, use metadata to categorize the prompts in the knowledge base, then send the metadata from the client application as part of the GenerateAnswer request.
 
-    |Вопрос|Добавление метаданных|
+In the knowledge base, when a question-and-answer pair is linked to follow-up prompts, the metadata filters are applied first, then the follow-ups are returned.
+
+1. For the two follow-up QnA pairs, add metadata to each one:
+
+    |Question|Add metadata|
     |--|--|
-    |`Feedback on an QnA Maker service`|«Функция»: «все»|
+    |`Feedback on an QnA Maker service`|"Feature":"all"|
     |`Feedback on an existing feature`|"Feature":"one"|
     
-    ![Добавьте метаданные для исполнению строки, чтобы его можно отфильтровать в диалоге ответа от службы](../media/conversational-context/add-metadata-feature-to-follow-up-prompt.png) 
+    ![Add metadata to follow-up prompt so it can be filtered in conversation response from service](../media/conversational-context/add-metadata-feature-to-follow-up-prompt.png) 
 
-1. Сохраните и выполните обучение. 
+1. Save and train. 
 
-    При отправке вопрос `Give feedback` с фильтром метаданных `Feature` со значением `all`, будут возвращены только пары QnA, в этих метаданных. Обе пары QnA не возвращаются, так как они не соответствуют фильтру. 
+    When you send the question `Give feedback` with the metadata filter `Feature` with a value of `all`, only the QnA pair with that metadata will be returned. Both QnA pairs are not returned because they both do not match the filter. 
+
+-->
 
 ## <a name="test-the-qna-set-to-get-all-the-follow-up-prompts"></a>Запрашивает тест, для которого настраиваются QnA, чтобы получать все дальнейшие действия
 
@@ -145,7 +167,7 @@ ms.locfileid: "65471976"
             "questions": [
                 "Accounts and signing in"
             ],
-            "answer": "**Accounts and signing in**\n\nWhen you set up your Surface, an account is set up for you. You can create additional accounts later for family and friends, so each person using your Surface can set it up just the way he or she likes. For more info, see All about accounts on Surface.com. \n\nThere are several ways to sign in to your Surface Pro 4: ",
+            "answer": "**Accounts and signing in**\n\nWhen you set up your Surface, an account is set up for you. You can create additional accounts later for family and friends, so each person using your Surface can set it up just the way they like. For more info, see All about accounts on Surface.com. \n\nThere are several ways to sign in to your Surface Pro 4: ",
             "score": 86.96,
             "id": 37,
             "source": "surface-pro-4-user-guide-EN .pdf",
@@ -269,15 +291,11 @@ QnA Maker _GenerateAnswer_ ответ JSON включает дальнейшие
 
 ## <a name="displaying-prompts-and-sending-context-in-the-client-application"></a>Отображение запросов и отправка контекста в клиентском приложении 
 
-Клиентское приложение отображает все вопросы с параметром для пользователя отображаются как предлагаемые действия или кнопки.
-Затем клиентское приложение сохраняет текущий пары QnA запрос пользователя как контекст будет передан с помощью следующего запроса пользователя. 
+Если вы добавили запросы в базе знаний и тестирования потока в области тестирования, запросы не запустится автоматически отображаются в клиентских приложениях. Можно отобразить запросы как предлагаемые действия или кнопки как часть ответ на запрос пользователя в клиенте приложений, включая это [пример Bot Framework](https://aka.ms/qnamakermultiturnsample) в коде. Клиентское приложение должно хранения идентификатор текущего QnA и запроса к пользователю и передать их в [объект контекста для GenerateAnswer API](#json-request-to-return-non-initial-answer-and-follow-up-prompts) для следующего запроса пользователя.
 
-Используйте этот [пример Bot Framework](https://aka.ms/qnamakermultiturnsample) для просмотра нескольких включить диалоговое окно рабочий end-to-end в программы-робота, QnA Maker.
+## <a name="display-order-supported-in-api"></a>Порядок отображения поддерживается в API
 
-
-## <a name="prompt-order-supported-in-api"></a>Порядок запроса поддерживается в API
-
-Порядок запроса, возвращается в ответе JSON, поддерживается для редактирования только API-интерфейсом. 
+Порядок отображения, возвращается в ответе JSON, поддерживается для редактирования только API-интерфейсом. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

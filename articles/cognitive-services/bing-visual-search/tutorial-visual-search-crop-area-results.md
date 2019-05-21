@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-visual-search
 ms.topic: article
-ms.date: 04/03/2019
+ms.date: 04/26/2019
 ms.author: rosh
-ms.openlocfilehash: 7c3fc67dbeac71530d9c5ddedc609296023fe901
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: a65994ffb2fc707c59e507cad71699211b6a64a5
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65796533"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65896271"
 ---
 # <a name="tutorial-crop-an-image-with-the-bing-visual-search-sdk-for-c"></a>Руководство по Обрезка изображения при помощи SDK визуального поиска Bing — C#
 
@@ -33,7 +33,7 @@ ms.locfileid: "65796533"
 
 ## <a name="prerequisites"></a>Технические условия
 
-* Любой выпуск [Visual Studio 2017](https://www.visualstudio.com/downloads/).
+* Любой выпуск [Visual Studio 2019](https://www.visualstudio.com/downloads/).
 * Если вы используете Linux или MacOS, это приложение можно запустить с помощью [Mono](https://www.mono-project.com/).
 * Установленный пакет [NuGet для пользовательского поиска](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Search.CustomSearch/1.2.0).
     - В обозревателе решений в Visual Studio, щелкните правой кнопкой мыши проект и выберите **управление пакетами NuGet** в меню. Установите пакет `Microsoft.Azure.CognitiveServices.Search.CustomSearch`. При установке пакета NuGet для пользовательского поиска также будут установлены следующие сборки:
