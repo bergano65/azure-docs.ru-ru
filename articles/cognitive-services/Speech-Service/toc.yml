@@ -18,7 +18,7 @@
     - name: Виртуальные помощники по обработке голоса (предварительная версия)
       href: voice-first-virtual-assistants.md
       displayName: 'virtual assistants, speech-enabled bots, conversational agents'
-- name: Быстрое начало работы
+- name: Краткие руководства
   items:
     - name: Пакет SDK для распознавания речи
       items:
@@ -116,7 +116,7 @@
     - name: Пакет SDK для речевых устройств
       href: speech-devices-sdk-android-quickstart.md
       displayName: 'roobo, speech devices sdk'
-- name: Учебники
+- name: Руководства
   items:
     - name: 'Распознавание намерений в речи с помощью LUIS (C#)'
       href: how-to-recognize-intents-from-speech-csharp.md
@@ -130,7 +130,7 @@
       href: conversation-transcription-service.md
     - name: Транскрибирование звонков в колл-центр
       href: call-center-transcription.md
-- name: Практические руководства
+- name: Инструкции
   items:
     - name: Регистрация для использования службы "Речь"
       href: get-started.md
@@ -277,7 +277,7 @@
       href: regions.md
 - name: Ресурсы
   items:
-    - name: Часто задаваемые вопросы
+    - name: Вопросы и ответы
       items:
         - name: Преобразование речи в текст.
           href: faq-stt.md
@@ -303,9 +303,9 @@
         - name: Сведения
           href: speech-devices-sdk.md
         - name: Лицензия
-          href: speech-devices-sdk-license.md
+          href: 'https://aka.ms/sdsdk-license'
         - name: Уведомления сторонних производителей
-          href: devices-sdk-third-party-notices.md
+          href: 'https://aka.ms/sdsdk-toctpn'
     - name: Устранение неполадок с пакетом SDK службы "Речь"
       href: troubleshooting.md
     - name: Устранение неполадок пакета SDK для речевых устройств
