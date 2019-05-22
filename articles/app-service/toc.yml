@@ -1,16 +1,16 @@
-- name: Документация по службе приложений
+- name: Документация по Службе приложений
   href: index.yml
 - name: Обзор
   items:
     - name: Сведения о веб-приложениях
       href: overview.md
-    - name: Сведения о службе приложений в Linux
+    - name: Сведения о Службе приложений в Linux
       href: containers/app-service-linux-intro.md
-    - name: Сведения о средах службы приложений
+    - name: Сведения о Средах службы приложений
       href: environment/intro.md
     - name: Сравнение вариантов размещения
       href: /azure/architecture/guide/technology-choices/compute-decision-tree
-- name: Быстрое начало работы
+- name: Краткие руководства
   expanded: true
   items:
     - name: Создание приложения .NET Core
@@ -51,19 +51,19 @@
       href: app-service-web-tutorial-custom-ssl.md
     - name: Добавление CDN
       href: ../cdn/cdn-add-to-web-app.md?toc=%2fazure%2fcdn%2ftoc.json
-    - name: Проверка подлинности пользователей
+    - name: Аутентификация пользователей
       href: app-service-web-tutorial-auth-aad.md
 - name: Примеры
   items:
-    - name: Инфраструктура CLI Azure
+    - name: Azure CLI
       href: samples-cli.md
     - name: Azure PowerShell
       href: samples-powershell.md
-    - name: Шаблоны диспетчера ресурсов
+    - name: Шаблоны Resource Manager
       href: samples-resource-manager-templates.md
 - name: Основные понятия
   items:
-    - name: Принцип работы службы приложений
+    - name: Принцип работы Службы приложений
       href: app-service-how-works-readme.md
     - name: Планы службы приложений
       href: overview-hosting-plans.md
@@ -88,19 +88,19 @@
       href: overview-local-cache.md
     - name: Диагностика
       href: overview-diagnostics.md
-- name: Практические руководства
+- name: Руководства
   items:
     - name: Настройка приложения
       items:
-        - name: Использование параметров приложения
-          href: web-sites-configure.md
+        - name: Настройка общих параметров
+          href: configure-common.md
         - name: Настройка PHP
           href: web-sites-php-configure.md
-        - name: Руководство для разработчиков Java
+        - name: Настройка Java
           href: configure-language-java.md
         - name: Подключение к локальным ресурсам
           href: web-sites-integrate-with-vnet.md
-    - name: Развернуть в Azure
+    - name: Развертывание в Azure
       items:
         - name: Развертывание приложения
           items:
@@ -116,13 +116,13 @@
               href: deploy-local-git.md
             - name: Развертывание с помощью шаблона
               href: deploy-complex-application-predictably.md
-        - name: Сброс учетных данных развертывания
+        - name: Настройка учетных данных развертывания
           href: deploy-configure-credentials.md
         - name: Создание промежуточных сред
           href: deploy-staging-slots.md
         - name: Руководство по шаблонам Resource Manager
           href: deploy-resource-manager-template.md
-    - name: Сопоставление пользовательского домена
+    - name: Сопоставление личного домена
       items:
         - name: Приобретение домена
           href: manage-custom-dns-buy-domain.md
@@ -134,23 +134,23 @@
       items:
         - name: Приобретение SSL-сертификата
           href: web-sites-purchase-ssl-web-site.md
-        - name: Проверка подлинности пользователей
+        - name: Аутентификация пользователей
           items:
-            - name: "Проверка подлинности с помощью Azure\_AD"
+            - name: "Аутентификация с помощью Azure\_AD"
               href: configure-authentication-provider-aad.md
-            - name: Проверка подлинности с помощью Facebook
+            - name: Аутентификация с помощью Facebook
               href: configure-authentication-provider-facebook.md
-            - name: Проверка подлинности с помощью Google
+            - name: Аутентификация с помощью Google
               href: configure-authentication-provider-google.md
-            - name: Проверка подлинности с помощью учетной записи Майкрософт
+            - name: Аутентификация с помощью учетной записи Майкрософт
               href: configure-authentication-provider-microsoft.md
-            - name: Проверка подлинности с помощью Twitter
+            - name: Аутентификация с помощью Twitter
               href: configure-authentication-provider-twitter.md
-        - name: Расширенная аутентификация
+        - name: Расширенная проверка подлинности
           href: app-service-authentication-how-to.md
         - name: Запрет IP-адресов
           href: app-service-ip-restrictions.md
-        - name: Администрирование управляемого удостоверения
+        - name: Использование управляемого удостоверения
           href: overview-managed-identity.md
         - name: Добавление ссылки на секреты из Key Vault
           href: app-service-key-vault-references.md
@@ -200,7 +200,7 @@
           href: webjobs-sdk-how-to.md
 - name: Справочные материалы
   items:
-    - name: Инфраструктура CLI Azure
+    - name: Azure CLI
       href: /cli/azure/appservice
     - name: Azure PowerShell
       href: /powershell
@@ -244,7 +244,7 @@
           href: troubleshoot-performance-degradation.md
         - name: Устранение неполадок с доменом и сертификатом
           href: troubleshoot-domain-ssl-certificates.md
-        - name: Часто задаваемые вопросы
+        - name: Вопросы и ответы
           items:
             - name: 'Часто задаваемые вопросы о доступности, производительности и приложениях'
               href: faq-availability-performance-application-issues.md

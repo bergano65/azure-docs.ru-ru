@@ -18,19 +18,7 @@ metadata:
   ms.author: erhopf
   ms.custom: seodec18
 abstract:
-  description: |
-    Узнайте, как использовать службу "Речь" с REST API и пакетом SDK службы "Речь" или без него, чтобы добавлять речевые функции в свои приложения. Пакет SDK службы "Речь"можно использовать для добавления в приложения следующих возможностей (и многого другого)&colon; 
-    <div class="row" style="font-size:16px"><div class="column"><ul>
-    <li><b><a href="speech-to-text.md">Преобразование речи в текст</a></b> (speech-recognition/SR)</li>
-    <li><b><a href="speech-devices-sdk-create-kws.md">Настраиваемое слово для активации</a></b> (keyword-spotter/KWS)</li>
-    <li><b><a href="how-to-recognize-intents-from-speech-csharp.md">Намерения</a></b></li>
-    <li><b><a href="speech-translation.md">Перевод</a></b></li>
-    <li><b><a href="speech-container-howto.md">Локальный контейнер</a></b></li></ul></div><div class="column"><ul>
-    <li><b><a href="text-to-speech.md">Преобразование текста в речь</a></b> (TTS)</li>
-    <li><b><a href="conversation-transcription-service.md">Транскрибирование диалогов</a></b> (CTS)</li>
-    <li><b><a href="how-to-phrase-lists.md">Персонализация списка фраз</a>/<a href="how-to-custom-speech.md">Адаптация Пользовательского распознавания речи</a></b></li>
-    <li><b><a href="voice-first-virtual-assistants.md">Виртуальный помощник по обработке голоса</a></b></li>
-    <li><b><a href="call-center-transcription.md">Транскрибирование звонков в центр обработки вызовов</a></b></li></ul></div></div>
+  description: "Рекомендуется использовать с нашим пакетом SDK службы \"Речь\" или REST\_API."
 sections:
   - items:
       - type: list
@@ -52,11 +40,27 @@ sections:
             html: <p>Изучите справочник по оборудованию с поддержкой речевых функций.</p>
             image:
               src: ../media/index/i_guidelines.svg
-            title: Пакет SDK для речевых устройств
-  - title: 5-минутные руководства по началу работы
+            title: 'Пакет SDK для устройств, подключаемых к службе "Речь"'
+  - title: Введение
     items:
       - type: paragraph
-        text: 'Узнайте, как скачать, установить и использовать пакет SDK, щелкнув ссылку в виде стрелки <img src="media/index/link.jpg" height="15" width="15"></img>.<br/><br/>Все ссылки со стрелками <img src="media/index/link.jpg" height="15" width="15"></img> по умолчанию указывают на краткое руководство по преобразованию речи в текст. Вы также можете выбрать другие краткие руководства (<a href="scenario-availability.md">если они доступны</a>), например руководство по преобразованию текста в речь или руководство по виртуальному помощнику по обработке голоса.'
+        text: |
+          Пакет SDK для службы "Речь"можно использовать для добавления в приложения следующих возможностей (и многого другого)&colon; 
+          <div class="row"><div class="column"><ul>
+          <li><b><a href="speech-to-text.md">Преобразование речи в текст</a></b> (speech-recognition/SR)</li>
+          <li><b><a href="speech-devices-sdk-create-kws.md">Настраиваемое слово для активации</a></b> (keyword-spotter/KWS)</li>
+          <li><b><a href="how-to-recognize-intents-from-speech-csharp.md">Намерения</a></b></li>
+          <li><b><a href="speech-translation.md">Перевод</a></b></li>
+          <li><b><a href="speech-container-howto.md">Локальный контейнер</a></b></li></ul></div><div class="column"><ul>
+          <li><b><a href="text-to-speech.md">Преобразование текста в речь</a></b> (TTS)</li>
+          <li><b><a href="conversation-transcription-service.md">Транскрибирование диалогов</a></b> (CTS)</li>
+          <li><b><a href="how-to-phrase-lists.md">Персонализация списка фраз</a>/<a href="how-to-custom-speech.md">Адаптация пользовательской службы распознавания речи</a></b></li>
+          <li><b><a href="voice-first-virtual-assistants.md">Виртуальный помощник по обработке голоса</a></b></li>
+          <li><b><a href="call-center-transcription.md">Транскрибирование звонков в центр обработки вызовов</a></b></li></ul></div></div>
+  - title: Пятиминутные руководства по началу работы
+    items:
+      - type: paragraph
+        text: 'Узнайте, как скачать, установить и использовать пакет SDK, щелкнув ссылку в виде стрелки <img src="media/index/link.jpg" height="15" width="15"></img>.<br/>Все ссылки со стрелками <img src="media/index/link.jpg" height="15" width="15"></img> по умолчанию указывают на краткое руководство по преобразованию речи в текст. Вы также можете выбрать другие краткие руководства (<a href="scenario-availability.md">если они доступны</a>), например руководство по преобразованию текста в речь или руководство по виртуальному помощнику по обработке голоса.'
       - type: table
         style: dataMatrix
         columns:
@@ -203,7 +207,7 @@ sections:
               - href: null
               - href: null
               - href: null
-          - title: '"Обзор"'
+          - title: Браузер
             values:
               - href: null
               - href: null
@@ -246,8 +250,8 @@ sections:
       - type: list
         style: unordered
         items:
-          - html: '<a href="https://github.com/Azure-Samples/cognitive-services-speech-sdk">Примеры пакета SDK службы "Речь"</a><br/>'
-          - html: '<a href="https://github.com/Azure-Samples/Cognitive-Services-Speech-Devices-SDK">Примеры для пакета SDK для устройств</a><br/>'
+          - html: '<a href="https://github.com/Azure-Samples/cognitive-services-speech-sdk">Примеры пакета SDK для службы "Речь"</a><br/>'
+          - html: '<a href="https://github.com/Azure-Samples/Cognitive-Services-Speech-Devices-SDK">Примеры пакета SDK для устройств</a><br/>'
   - title: Справочные материалы
     items:
       - type: list
@@ -262,12 +266,10 @@ sections:
               <p><a href="https://aka.ms/csspeech/pythonref">API Python</a></p>
               <p><a href="https://aka.ms/csspeech/objectivecref">API Objective-C</a></p>
               <p><a href="https://aka.ms/csspeech/javascriptref">API JavaScript</a></p>
-          - title: REST API
-            html: |
-              <p><a href="https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis">REST API</a></p>
+          - title: "REST\_API"
+            html: "<p><a href=\"https://docs.microsoft.com/azure/cognitive-services/speech-service/rest-apis\">REST\_API</a></p>\n"
           - title: PowerShell
             html: |
               <p><a href=https://docs.microsoft.com/powershell/module/az.cognitiveservices/#cognitive_services">Azure PowerShell</a></p>
-          - title: Интерфейс командной строки
-            html: |
-              <p><a href="https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest">Интерфейс командной строки Azure</a></p>
+          - title: CLI
+            html: "<p><a href=\"https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest\">Azure\_CLI</a></p>\n"

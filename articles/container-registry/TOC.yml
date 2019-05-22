@@ -2,7 +2,7 @@
   href: ./index.yml
 - name: Обзор
   items:
-    - name: Сведения о реестре контейнеров
+    - name: Сведения о Реестре контейнеров
       href: container-registry-intro.md
 - name: Краткие руководства
   expanded: true
@@ -21,21 +21,21 @@
   items:
     - name: Создание образов контейнеров
       items:
-        - name: 1. Создание образов в Azure
+        - name: "1.\_Создание образов в Azure"
           href: container-registry-tutorial-quick-task.md
-        - name: 2а. Автоматическая сборка при фиксации кода
+        - name: "2а.\_Автоматическая сборка при фиксации кода"
           href: container-registry-tutorial-build-task.md
-        - name: 2б. Многошаговые задачи при фиксации кода
+        - name: "2б.\_Многошаговые задачи при фиксации кода"
           href: container-registry-tutorial-multistep-task.md
-        - name: 3. Создание обновлений базовых образов
+        - name: "3.\_Создание обновлений базовых образов"
           href: container-registry-tutorial-base-image-update.md
     - name: Георепликация реестра
       items:
-        - name: 1. Подготовка реестра контейнеров
+        - name: "1.\_Подготовка реестра контейнеров"
           href: container-registry-tutorial-prepare-registry.md
-        - name: 2. Развертывание веб-приложения
+        - name: "2.\_Развертывание веб-приложения"
           href: container-registry-tutorial-deploy-app.md
-        - name: 3. Обновление веб-приложения
+        - name: "3.\_Обновление веб-приложения"
           href: container-registry-tutorial-deploy-update.md
 - name: Основные понятия
   items:
@@ -105,7 +105,7 @@
           href: ../service-fabric/service-fabric-tutorial-create-container-images.md
 - name: Справочные материалы
   items:
-    - name: Azure CLI
+    - name: "Azure\_CLI"
       href: /cli/azure/acr
     - name: REST
       href: /rest/api/containerregistry
@@ -125,7 +125,7 @@
       href: container-registry-tasks-reference-yaml.md
     - name: Схема веб-перехватчика
       href: container-registry-webhook-reference.md
-    - name: Схема "Сетка событий"
+    - name: Схема службы "Сетка событий"
       href: ../event-grid/event-schema-container-registry.md
       maintainContext: true
 - name: Ресурсы

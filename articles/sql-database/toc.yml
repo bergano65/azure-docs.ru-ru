@@ -99,6 +99,16 @@
       href: sql-database-implement-geo-distributed-database.md
     - name: "Настройка Синхронизации данных SQL\_Azure"
       href: sql-database-get-started-sql-data-sync.md
+    - name: Службы машинного обучения
+      items:
+        - name: Создание и развертывание прогнозной модели на языке R
+          items:
+            - name: "1.\_Подготовка данных"
+              href: sql-database-tutorial-predictive-model-prepare-data.md
+            - name: "2.\_Создание модели"
+              href: sql-database-tutorial-predictive-model-build-compare.md
+            - name: "3.\_Развертывание модели"
+              href: sql-database-tutorial-predictive-model-deploy.md
 - name: Примеры
   items:
     - name: Примеры кода

@@ -4,7 +4,7 @@
   items:
     - name: Что такое служба автоматизации?
       href: automation-intro.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   expanded: true
   items:
     - name: Создание учетной записи службы автоматизации
@@ -14,7 +14,7 @@
     - name: Создание конфигурации DSC
       href: automation-quickstart-dsc-configuration.md
       displayName: 'DSC, state configuration, config, node configuration, node'
-- name: Учебники
+- name: Руководства
   items:
     - name: Отслеживание обновленных файлов с помощью задач наблюдателя
       href: automation-watchers-tutorial.md
@@ -30,7 +30,7 @@
     - name: Устранение неполадок с изменениями на виртуальной машине
       href: automation-tutorial-troubleshoot-changes.md
       displayName: inventory
-- name: Практические руководства
+- name: Инструкции
   items:
     - name: Запуск и остановка виртуальных машин в нерабочее время
       href: automation-solution-vm-management.md
@@ -42,7 +42,9 @@
           href: automation-onboard-solutions-from-vm.md
         - name: Подключение из учетной записи службы автоматизации
           href: automation-onboard-solutions-from-automation-account.md
-    - name: управление обновлениями;
+        - name: Сопоставления регионов
+          href: how-to/region-mappings.md
+    - name: Управление обновлениями
       items:
         - name: Общие сведения о службе "Управление обновлениями"
           href: automation-update-management.md
@@ -80,14 +82,14 @@
         - name: Управление доступом на основе ролей
           href: automation-role-based-access-control.md
           displayName: RBAC
-    - name: Модули Runbook
+    - name: Модули runbook
       items:
         - name: Управление модулями runbook
           href: manage-runbooks.md
         - name: Типы Runbook
           href: automation-runbook-types.md
           displayName: 'graphical, python, powershell, powershell workflow'
-        - name: Создание модулей Runbook
+        - name: Создание модулей runbook
           items:
             - name: Графические модули runbook
               href: automation-first-runbook-graphical.md
@@ -125,7 +127,7 @@
           href: automation-powershell-workflow.md
         - name: Дочерние модули runbook
           href: automation-child-runbooks.md
-        - name: Выходные данные Runbook
+        - name: Выходные данные runbook
           href: automation-runbook-output-and-messages.md
           displayName: 'message streams, progress records, preference'
         - name: Интеграция системы управления версиями
@@ -134,7 +136,7 @@
         - name: Интеграция системы управления версиями (устаревшая версия)
           href: source-control-integration-legacy.md
           displayname: github
-    - name: гибридный компонент Runbook Worker
+    - name: Гибридная рабочая роль Runbook
       items:
         - name: Обзор гибридной рабочей роли Runbook
           href: automation-hybrid-runbook-worker.md
@@ -146,16 +148,16 @@
         - name: Запуск модулей Runbook в гибридной рабочей роли Runbook
           href: automation-hrw-run-runbooks.md
           displayName: signed runbooks
-    - name: Настройка состояния
+    - name: State Configuration
       displayName: DSC
       items:
-        - name: Общие сведения о настройке состояния
+        - name: Общие сведения о State Configuration
           href: automation-dsc-overview.md
           displayName: DSC
-        - name: Приступая к работе
+        - name: Начало работы
           href: automation-dsc-getting-started.md
           displayName: DSC
-        - name: Настройка требуемого состояния серверов и управление смещением
+        - name: Настройка требуемого состояния серверов и управление смещением с помощью State Configuration
           href: tutorial-configure-servers-desired-state.md
           displayName: 'DSC, compliance'
         - name: Подключение виртуальных машин для управления
@@ -169,7 +171,7 @@
         - name: Непрерывное развертывание с помощью Chocolatey
           href: automation-dsc-cd-chocolatey.md
           displayName: 'dsc, state configuration'
-        - name: Пересылка данных отчетов о настройке состояния в журналы Azure Monitor
+        - name: Пересылка данных отчетов State Configuration в журналы Azure Monitor
           href: automation-dsc-diagnostics.md
           displayName: DSC
     - name: Управление общими ресурсами
@@ -223,19 +225,19 @@
     - name: Переход
       href: troubleshoot/onboarding.md
       displayName: troubleshoot
-    - name: Модули Runbook
+    - name: Модули runbook
       href: troubleshoot/runbooks.md
       displayName: troubleshoot
-    - name: Настройка состояния (DSC)
+    - name: State Configuration (DSC)
       href: troubleshoot/desired-state-configuration.md
       displayName: 'Desired State Configuration, troubleshoot'
-    - name: гибридный компонент Runbook Worker
+    - name: Гибридная рабочая роль Runbook
       href: troubleshoot/hybrid-runbook-worker.md
       displayName: 'troubleshoot, HRW, hybrid worker'
     - name: Отслеживание изменений и инвентаризация
       href: troubleshoot/change-tracking.md
       displayName: troubleshoot
-    - name: управление обновлениями;
+    - name: Управление обновлениями
       href: troubleshoot/update-management.md
       displayName: troubleshoot
     - name: Запуск и остановка виртуальных машин
@@ -282,7 +284,7 @@
       href: 'https://azure.microsoft.com/updates/?product=automation'
     - name: Обновления службы
       href: 'https://azure.microsoft.com/updates/?product=automation'
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-automation'
-    - name: Видеоролики
+    - name: Видео
       href: 'https://azure.microsoft.com/documentation/videos/index/?services=automation'

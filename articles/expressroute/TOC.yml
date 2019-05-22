@@ -4,7 +4,7 @@
   items:
     - name: Что такое ExpressRoute?
       href: expressroute-introduction.md
-- name: Учебники
+- name: Руководства
   items:
     - name: Создание и изменение канала
       href: expressroute-howto-circuit-portal-resource-manager.md
@@ -21,13 +21,12 @@
     - name: Каналы и пиринг
       href: expressroute-circuit-peerings.md
     - name: Расположения и партнеры
-      href: expressroute-locations.md
       items:
         - name: Поставщики по расположению
           href: expressroute-locations-providers.md
         - name: Расположения по поставщикам
           href: expressroute-locations.md
-    - name: О шлюзах виртуальных сетей
+    - name: Шлюз виртуальной сети ExpressRoute и FastPath
       href: expressroute-about-virtual-network-gateways.md
     - name: Предварительные требования
       href: expressroute-prerequisites.md
@@ -57,7 +56,7 @@
           href: ../networking/connectivty-interoperability-data-plane.md?toc=%2fazure%2fexpressroute%2ftoc.json
     - name: Возможность подключения нескольких сетей
       href: cross-network-connectivity.md
-- name: Практические руководства
+- name: Инструкции
   items:
     - name: Создание и изменение канала
       items:
@@ -65,7 +64,7 @@
           href: expressroute-howto-circuit-portal-resource-manager.md
         - name: Azure PowerShell
           href: expressroute-howto-circuit-arm.md
-        - name: Инфраструктура CLI Azure
+        - name: "Azure\_CLI"
           href: howto-circuit-cli.md
     - name: Создание и изменение конфигурации пиринга
       items:
@@ -73,7 +72,7 @@
           href: expressroute-howto-routing-portal-resource-manager.md
         - name: Azure PowerShell
           href: expressroute-howto-routing-arm.md
-        - name: Инфраструктура CLI Azure
+        - name: "Azure\_CLI"
           href: howto-routing-cli.md
     - name: Связывание виртуальной сети с каналом ExpressRoute
       items:
@@ -81,11 +80,11 @@
           href: expressroute-howto-linkvnet-portal-resource-manager.md
         - name: Azure PowerShell
           href: expressroute-howto-linkvnet-arm.md
-        - name: Инфраструктура CLI Azure
+        - name: "Azure\_CLI"
           href: howto-linkvnet-cli.md
     - name: Шифрование трафика по каналам
       items:
-        - name: Настройка VPN типа "сеть-сеть" через пиринг Майкрософт
+        - name: "Настройка VPN типа \"сеть\_— сеть\" через пиринг Майкрософт"
           href: site-to-site-vpn-over-microsoft-peering.md
         - name: Настройка транспортного режима IPsec для узлов Windows
           href: expressroute-howto-ipsec-transport-private-windows.md
@@ -93,7 +92,7 @@
       items:
         - name: Azure PowerShell
           href: expressroute-howto-set-global-reach.md
-        - name: Инфраструктура CLI Azure
+        - name: "Azure\_CLI"
           href: expressroute-howto-set-global-reach-cli.md
     - name: Настройка шлюза виртуальной сети для ExpressRoute
       items:
@@ -101,13 +100,13 @@
           href: expressroute-howto-add-gateway-portal-resource-manager.md
         - name: Azure PowerShell
           href: expressroute-howto-add-gateway-resource-manager.md
-    - name: Настройка параллельных подключений ExpressRoute и "сеть-сеть"
+    - name: "Настройка параллельных подключений ExpressRoute и \"сеть\_— сеть\""
       href: expressroute-howto-coexist-resource-manager.md
     - name: Настройка ExpressRoute Direct
       items:
         - name: Azure PowerShell
           href: expressroute-howto-erdirect.md
-        - name: Инфраструктура CLI Azure
+        - name: "Azure\_CLI"
           href: expressroute-howto-expressroute-direct-cli.md
     - name: Настройка фильтров маршрутов для пиринга Майкрософт
       items:
@@ -115,7 +114,7 @@
           href: how-to-routefilter-portal.md
         - name: Azure PowerShell
           href: how-to-routefilter-powershell.md
-        - name: Инфраструктура CLI Azure
+        - name: "Azure\_CLI"
           href: how-to-routefilter-cli.md
     - name: Включение и отключение пиринга
       href: expressroute-howto-reset-peering.md
@@ -147,7 +146,7 @@
           href: expressroute-howto-routing-classic.md
         - name: Связывание виртуальной сети с каналом ExpressRoute
           href: expressroute-howto-linkvnet-classic.md
-        - name: Настройка параллельных подключений ExpressRoute и подключений "сеть-сеть"
+        - name: "Настройка параллельных подключений ExpressRoute и подключений \"сеть\_— сеть\""
           href: expressroute-howto-coexist-classic.md
         - name: Добавление шлюза в виртуальную сеть
           href: expressroute-howto-add-gateway-classic.md
@@ -177,7 +176,7 @@
   items:
     - name: Azure PowerShell
       href: '/powershell/module/az.network#expressroute'
-    - name: Инфраструктура CLI Azure
+    - name: "Azure\_CLI"
       href: /cli/azure/network/express-route
     - name: REST
       href: 'https://msdn.microsoft.com/library/azure/mt586720'

@@ -1,21 +1,47 @@
-- name: Документация по OpenShift
-  href: index.md
-- name: Быстрое начало работы
+- name: Azure Red Hat OpenShift
+  href: index.yml
+- name: Обзор
+  items:
+    - name: Сведения об Azure Red Hat OpenShift
+      href: intro-openshift.md
+- name: Руководства
+  items:
+    - name: Создание кластера Azure Red Hat OpenShift и управление им
+      items:
+        - name: "1.\_Создание кластера Azure Red Hat OpenShift"
+          href: tutorial-create-cluster.md
+        - name: "2.\_Масштабирование кластера Azure Red Hat OpenShift"
+          href: tutorial-scale-cluster.md
+        - name: "3.\_Удаление кластера Azure Red Hat OpenShift"
+          href: tutorial-delete-cluster.md
+- name: Инструкции
   expanded: true
   items:
-    - name: 'OpenShift:  шаблон сообщества'
-      href: 'https://azure.microsoft.com/resources/templates/openshift-origin-rhel/'
-- name: Учебники
+    - name: Настройка среды разработки Azure Red Hat OpenShift
+      href: howto-setup-environment.md
+      expanded: true
+      items:
+        - name: "Создание клиента Azure\_AD"
+          href: howto-create-tenant.md
+        - name: "Создание объекта приложения и пользователя Azure\_AD"
+          href: howto-aad-app-configuration.md
+- name: Справочные материалы
   items:
-    - name: Развертывание на виртуальных машинах Azure
-      href: /azure/virtual-machines/linux/openshift-get-started
+    - name: Интерфейс командной строки Azure Red Hat OpenShift
+      href: /cli/azure/openshift
+    - name: "Интерфейсы REST\_API Azure Red Hat OpenShift"
+      href: /rest/api/openshift
 - name: Ресурсы
   items:
+    - name: Часто задаваемые вопросы
+      href: openshift-faq.md
+    - name: Устранение неполадок
+      href: troubleshoot.md
+    - name: Поддерживаемые ресурсы
+      href: supported-resources.md
+    - name: Доступ по регионам
+      href: 'https://azure.microsoft.com/regions/services/'
+    - name: Документация по Red Hat OpenShift
+      href: 'https://docs.openshift.com/aro/welcome/index.html'
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/'
-    - name: Шаблон контейнера OpenShift
-      href: 'https://github.com/Microsoft/openshift-container-platform'
-    - name: Источник OpenShift
-      href: 'https://docs.openshift.org/latest/getting_started/index.html'
-    - name: Сайт OpenShift
-      href: 'https://docs.openshift.org/latest/welcome/index.html'

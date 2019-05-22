@@ -11,7 +11,7 @@
       href: quickstart-linux.md
     - name: Развертывание кода на устройстве с Windows
       href: quickstart.md
-- name: Учебники
+- name: Руководства
   items:
     - name: 1. Настройка среды разработки
       items:
@@ -47,7 +47,7 @@
           href: tutorial-deploy-stream-analytics.md
         - name: Оценка данных с помощью Службы машинного обучения Azure
           href: tutorial-deploy-machine-learning.md
-        - name: Классификация изображений с помощью Пользовательской службы визуального распознавания
+        - name: Классификация изображений с помощью Пользовательского визуального распознавания
           href: tutorial-deploy-custom-vision.md
         - name: Локальное хранение данных с помощью SQL
           href: tutorial-store-data-sql-server.md
@@ -55,11 +55,11 @@
   items:
     - name: Среда выполнения IoT Edge
       href: iot-edge-runtime.md
-    - name: Модули Edge Интернета вещей
+    - name: Модули IoT Edge
       items:
-        - name: Общие сведения о модулях IoT Edge Azure
+        - name: Общие сведения о модулях Azure IoT Edge
           href: iot-edge-modules.md
-        - name: Свойства агента и концентратора Edge
+        - name: Свойства агента и концентратора IoT Edge
           href: module-edgeagent-edgehub.md
     - name: Разработка
       items:
@@ -91,23 +91,23 @@
       href: production-checklist.md
     - name: Глоссарий IoT Edge
       href: iot-edge-glossary.md
-- name: Практические руководства
+- name: Инструкции
   items:
-    - name: Регистрация устройства Edge
+    - name: Регистрация устройства IoT Edge
       items:
         - name: Портал Azure
           href: how-to-register-device-portal.md
-        - name: Инфраструктура CLI Azure
+        - name: "Azure\_CLI"
           href: how-to-register-device-cli.md
-        - name: Visual Studio Code.
+        - name: Visual Studio Code
           href: how-to-register-device-vscode.md
     - name: Установка и администрирование IoT Edge
       items:
-        - name: Linux X64
+        - name: "Linux\_X64"
           href: how-to-install-iot-edge-linux.md
-        - name: Linux ARM32
+        - name: "Linux\_ARM32"
           href: how-to-install-iot-edge-linux-arm.md
-        - name: "Windows\_x64"
+        - name: "Windows\_X64"
           href: how-to-install-iot-edge-windows.md
         - name: "Использование контейнеров Linux в Windows\_X64"
           href: how-to-install-iot-edge-windows-with-linux.md
@@ -115,7 +115,7 @@
           href: how-to-install-iot-edge-windows-server-vm.md
         - name: Виртуальная машина Ubuntu
           href: how-to-install-iot-edge-ubuntuvm.md
-        - name: kubernetes
+        - name: Kubernetes
           href: how-to-install-iot-edge-kubernetes.md
         - name: Обновление версии среды выполнения
           href: how-to-update-iot-edge.md
@@ -129,23 +129,23 @@
       items:
         - name: "Visual Studio\_2017"
           href: how-to-visual-studio-develop-module.md
-        - name: Visual Studio Code.
+        - name: Visual Studio Code
           href: how-to-vs-code-develop-module.md
     - name: Развертывание модулей
       items:
         - name: Портал Azure
           href: how-to-deploy-modules-portal.md
-        - name: Инфраструктура CLI Azure
+        - name: "Azure\_CLI"
           href: how-to-deploy-modules-cli.md
-        - name: Visual Studio Code.
+        - name: Visual Studio Code
           href: how-to-deploy-modules-vscode.md
     - name: Развертывание и мониторинг в нужном масштабе
       items:
         - name: Портал Azure
           href: how-to-deploy-monitor.md
-        - name: Инфраструктура CLI Azure
+        - name: "Azure\_CLI"
           href: how-to-deploy-monitor-cli.md
-    - name: Использование устройств Edge в качестве шлюзов
+    - name: Использование устройств IoT Edge в качестве шлюзов
       items:
         - name: Настройка прозрачного шлюза
           href: how-to-create-transparent-gateway.md
@@ -155,10 +155,12 @@
           href: deploy-modbus-gateway.md
     - name: Настройка поддержки прокси-сервера
       href: how-to-configure-proxy-support.md
-    - name: Хранение данных в граничной системе
+    - name: Хранение данных в пограничной системе
       items:
         - name: Хранилище BLOB-объектов Azure в IoT Edge
           href: how-to-store-data-blob.md
+        - name: Развертывание модулей хранилища BLOB-объектов
+          href: how-to-deploy-blob.md
     - name: Управление с помощью инструментов DevOps
       items:
         - name: Azure DevOps Projects
@@ -183,17 +185,17 @@
           href: /azure/iot-hub
         - name: Служба подготовки устройств к добавлению в Центр Интернета вещей
           href: /azure/iot-dps
-        - name: Карты
+        - name: Maps
           href: /azure/azure-maps
-        - name: Пакеты SDK службы
+        - name: Пакеты SDK для служб
           href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks'
-        - name: Аналитика временных рядов Azure
+        - name: Аналитика временных рядов
           href: /azure/time-series-insights
-    - name: Microsoft Edge
+    - name: Azure IoT Edge
       items:
         - name: IoT Edge
           href: /azure/iot-edge
-        - name: Пакеты SDK для устройств IoT
+        - name: Пакеты SDK для устройств Интернета вещей
           href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks'
 - name: Ресурсы
   items:
@@ -209,7 +211,7 @@
       href: 'https://azure.microsoft.com/resources/samples/azure-iot-samples-ios/'
     - name: 'Каталог устройств, сертифицированных по программе Microsoft Azure Certified for IoT'
       href: 'https://catalog.azureiotsolutions.com/'
-    - name: Центр разработчика IoT Azure
+    - name: Центр разработчиков Azure IoT
       href: 'https://azure.microsoft.com/develop/iot/'
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/?category=iot'
@@ -229,7 +231,7 @@
       href: 'https://azure.microsoft.com/pricing/calculator/'
     - name: Обновления службы
       href: 'https://azure.microsoft.com/updates/?product=iot-hub'
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-iot-hub'
     - name: Технические примеры использования
       href: 'https://microsoft.github.io/techcasestudies/#technology=IoT&sortBy=featured'

@@ -4,7 +4,7 @@
   items:
     - name: Сведения о службе "Пространственные привязки"
       href: overview.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   items:
     - name: Создание приложения Unity
       href: unity-overview.yml
@@ -22,13 +22,15 @@
       href: quickstarts/get-started-android.md
     - name: Создание приложения HoloLens
       href: quickstarts/get-started-hololens.md
-- name: Учебники
+- name: Руководства
   items:
     - name: Совместное использование в Unity
       href: tutorials/tutorial-share-anchors-across-devices.md
     - name: "Совместное использование в Unity с помощью Azure Cosmos\_DB"
       href: tutorials/tutorial-use-cosmos-db-to-store-anchors.md
-    - name: Запуск приложения Android
+    - name: Запуск нового приложения Unity HoloLens
+      href: tutorials/tutorial-new-unity-hololens-app.md
+    - name: Запуск нового приложения Android
       href: tutorials/tutorial-new-android-app.md
 - name: Инструкции
   items:
@@ -59,7 +61,7 @@
       href: concepts/guidelines-effective-anchor-experiences.md
     - name: Ведение журнала и диагностика
       href: concepts/logging-diagnostics.md
-- name: Ссылки
+- name: Справочники
   items:
     - name: Пакет SDK для Unity
       href: 'https://docs.microsoft.com/dotnet/api/Microsoft.Azure.SpatialAnchors/'
@@ -73,11 +75,11 @@
       href: 'https://docs.microsoft.com/cpp/api/spatial-anchors/winrt/'
 - name: Ресурсы
   items:
-    - name: Часто задаваемые вопросы
+    - name: Вопросы и ответы
       href: spatial-anchor-faq.md
     - name: Отзыв о продукте
       href: 'https://feedback.azure.com/forums/919252-azure-spatial-anchors'
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-spatial-anchors'
     - name: Поддержка
       href: spatial-anchor-support.md

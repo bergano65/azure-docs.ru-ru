@@ -116,8 +116,9 @@
             - name: Установка политики хранения и выполнение сценариев очистки
               href: image-factory-set-retention-policy-cleanup.md
         - name: Использование DevTest Labs на предприятии
-          href: devtest-lab-guidance-prescriptive-adoption.md
           items:
+            - name: DevTest Labs в масштабе предприятия
+              href: devtest-lab-guidance-prescriptive-adoption.md
             - name: Эталонная архитектура
               href: devtest-lab-reference-architecture.md
             - name: Увеличение масштаба развертывания DevTest Labs

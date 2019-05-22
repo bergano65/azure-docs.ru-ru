@@ -4,7 +4,7 @@
   items:
     - name: 'Пользователи, группы, лицензирование и роли'
       href: directory-overview-user-model.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   items:
     - name: "Добавление пользователей в Azure\_AD"
       href: /azure/active-directory/fundamentals/add-users-azure-active-directory?context=azure/active-directory/users-groups-roles/context/ugr-context
@@ -14,7 +14,7 @@
       href: groups-quickstart-expiration.md
     - name: Настройка политики именования групп
       href: groups-quickstart-naming-policy.md
-- name: Учебники
+- name: Руководства
   items:
     - name: Создание динамически заполняемой группы
       href: groups-dynamic-tutorial.md
@@ -29,7 +29,7 @@
       href: /azure/role-based-access-control/rbac-and-directory-admin-roles?context=azure/active-directory/users-groups-roles/context/ugr-context
     - name: Принципы лицензирования на основе групп
       href: /azure/active-directory/fundamentals/active-directory-licensing-whatis-azure-portal?context=azure/active-directory/users-groups-roles/context/ugr-context
-- name: Практические руководства
+- name: Инструкции
   expanded: true
   items:
     - name: Управление пользователями
@@ -42,13 +42,15 @@
           href: users-sharing-accounts.md
         - name: Назначение пользователям ролей администратора
           href: /azure/active-directory/fundamentals/active-directory-users-assign-role-azure-portal?context=azure/active-directory/users-groups-roles/context/ugr-context
-        - name: восстановить удаленного пользователя;
+        - name: Восстановление удаленного пользователя
           href: /azure/active-directory/fundamentals/active-directory-users-restore?context=azure/active-directory/users-groups-roles/context/ugr-context
-        - name: "Добавление пользователей\_B2B"
+        - name: Закрытие учетной записи в неуправляемом каталоге
+          href: users-close-account.md
+        - name: Добавление пользователей B2B
           href: /azure/active-directory/b2b/what-is-b2b?context=azure/active-directory/users-groups-roles/context/ugr-context
-        - name: "Назначение роли пользователю\_B2B"
+        - name: Назначение роли пользователю B2B
           href: /azure/active-directory/b2b/add-guest-to-role?context=azure/active-directory/users-groups-roles/context/ugr-context
-        - name: "Динамические группы и\_B2B"
+        - name: Динамические группы и B2B
           href: /azure/active-directory/b2b/use-dynamic-groups?context=azure/active-directory/users-groups-roles/context/ugr-context
     - name: Управление каталогом
       items:
@@ -126,7 +128,7 @@
           href: directory-manage-roles-portal.md
         - name: Назначение ролей с помощью PowerShell
           href: roles-assign-powershell.md
-        - name: Делегирование делегирование ролей администратора приложений
+        - name: Делегирование ролей администратора приложений
           href: roles-delegate-app-roles.md
         - name: Минимальные привилегии ролей для выполнения заданий
           href: roles-delegate-by-task.md
@@ -166,9 +168,9 @@
   items:
     - name: API Graph
       href: 'https://developer.microsoft.com/graph/docs/api-reference/v1.0/resources/azure_ad_overview'
-    - name: "Azure\_AD\_CLI"
+    - name: "Интерфейс командной строки Azure\_AD"
       href: 'https://docs.microsoft.com/cli/azure/ad'
     - name: "Azure\_AD PowerShell для Graph"
       href: 'https://docs.microsoft.com/powershell/azure/active-directory/install-adv2?view=azureadps-2.0'
-    - name: Ограничения службы Azure AD
+    - name: "Ограничения службы Azure\_AD"
       href: directory-service-limits-restrictions.md
