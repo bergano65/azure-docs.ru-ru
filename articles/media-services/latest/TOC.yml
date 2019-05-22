@@ -57,7 +57,7 @@
         - name: Обзор
           href: encoding-concept.md
           displayName: 'encoding, presets, jobs, adaptive, bitrate'
-        - name: API преобразований и заданий
+        - name: Преобразования и задания
           href: transforms-jobs-concept.md
           displayName: 'preset, schema'
         - name: Форматы кодировщика ценовой категории "Стандартный"
@@ -74,7 +74,7 @@
         - name: Обзор
           href: analyzing-video-audio-files-concept.md
           displayName: 'analyzing, presets, jobs'
-        - name: API преобразований и заданий
+        - name: Преобразования и задания
           href: transforms-jobs-concept.md
         - name: Коды ошибок задания
           href: job-error-codes.md
@@ -85,15 +85,15 @@
           href: dynamic-packaging-overview.md
         - name: Динамические манифесты
           href: filters-dynamic-manifest-overview.md
-        - name: API фильтров
+        - name: Фильтры
           href: filters-concept.md
-        - name: API конечных точек потоковой передачи
+        - name: Конечные точки потоковой передачи
           displayName: 'origin, packager, cdn'
           href: streaming-endpoint-concept.md
-        - name: API указателей потоковой передачи
+        - name: Указатели потоковой передачи
           displayName: URLs
           href: streaming-locators-concept.md
-        - name: API политик потоковой передачи
+        - name: Политики потоковой передачи
           href: streaming-policy-concept.md
         - name: Коды ошибок конечной точки потоковой передачи
           href: streaming-endpoint-error-codes.md
@@ -112,15 +112,15 @@
               href: widevine-license-template-overview.md
             - name: Требования лицензий FairPlay
               href: fairplay-license-overview.md
-        - name: API политик потоковой передачи
+        - name: Политики потоковой передачи
           href: streaming-policy-concept.md
-        - name: API политик ключа содержимого
+        - name: Политики ключа содержимого
           href: content-key-policy-concept.md
     - name: Потоковая передача в реальном времени
       items:
         - name: Обзор
           href: live-streaming-overview.md
-        - name: API событий и выходных данных потоковой трансляции
+        - name: События и выходные данные прямой трансляции
           href: live-events-outputs-concept.md
         - name: Рекомендуемые динамические кодировщики
           href: recommended-on-premises-live-encoders.md

@@ -54,7 +54,7 @@
 - name: Основные понятия
   items:
     - name: Структура файла шаблона
-      displayName: 'parameters,variables,resources,outputs'
+      displayName: 'parameters,variables,resources,outputs,condition'
       href: resource-group-authoring-templates.md
     - name: Рекомендации по работе с шаблоном
       href: template-best-practices.md
@@ -76,7 +76,7 @@
       href: resource-manager-deployment-model.md
     - name: Общие атрибуты безопасности Azure
       href: azure-resource-manager-security-attributes.md
-- name: Практическое руководство
+- name: Руководства
   items:
     - name: Создание шаблонов
       items:
@@ -110,7 +110,7 @@
         - name: "Развертывание\_— PowerShell"
           displayName: 'deployment,rollback on error,redeploy'
           href: resource-group-template-deploy.md
-        - name: "Развертывание\_– REST API"
+        - name: "Развертывание\_— REST API"
           displayName: 'deployment,rollback on error,redeploy'
           href: resource-group-template-deploy-rest.md
         - name: Обеспечение защиты шаблонов с помощью маркера SAS
@@ -243,7 +243,7 @@
       href: /rest/api/deploymentmanager/
     - name: Azure PowerShell
       href: /powershell/module/az.resources
-    - name: Инфраструктура Azure CLI
+    - name: Azure CLI
       href: /cli/azure/resource
     - name: .NET
       href: /dotnet/api/microsoft.azure.management.resourcemanager

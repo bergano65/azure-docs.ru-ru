@@ -7,9 +7,9 @@
       href: overview.md
     - name: Примеры пользовательских сценариев
       href: text-analytics-user-scenarios.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   items:
-    - name: REST API
+    - name: "REST\_API"
       items:
         - name: Go
           href: quickstarts/go.md
@@ -29,7 +29,9 @@
           href: quickstarts/csharp.md
         - name: Python
           href: quickstarts/python-sdk.md
-- name: Учебники
+        - name: Ruby
+          href: quickstarts/ruby-sdk.md
+- name: Руководства
   items:
     - name: "Интеграция Power\_BI для анализа отзывов пользователей"
       href: Tutorials/tutorial-power-bi-key-phrases.md
@@ -41,7 +43,7 @@
     - name: 'Использование Flask для перевода текста, анализа тональности и синтезирования речи'
       maintainContext: true
       href: 'https://docs.microsoft.com/azure/cognitive-services/translator/tutorial-build-flask-app-translation-synthesis'
-- name: Практические руководства
+- name: Инструкции
   items:
     - name: Регистрация
       href: How-tos/text-analytics-how-to-signup.md
@@ -93,7 +95,7 @@
       href: 'https://docs.microsoft.com/Yammer/integrate-yammer-with-other-apps/sentiment-analysis-flow-azure'
     - name: Внешние материалы и материалы сообщества
       href: text-analytics-resource-external-community.md
-    - name: Часто задаваемые вопросы
+    - name: Вопросы и ответы
       href: text-analytics-resource-faq.md
     - name: Поддержка языков и региональных параметров
       href: language-support.md
@@ -101,7 +103,7 @@
       href: 'https://azure.microsoft.com/pricing/details/cognitive-services/text-analytics/'
     - name: Доступ по регионам
       href: 'https://azure.microsoft.com/global-infrastructure/services/'
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/text-analytics-api'
     - name: Ключ подписки
       href: 'https://azure.microsoft.com/try/cognitive-services/?api=text-analytics'
