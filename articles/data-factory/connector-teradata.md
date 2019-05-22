@@ -55,9 +55,9 @@ ms.locfileid: "61347757"
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | type | Свойству type необходимо задать значение **Teradata** | Да |
-| сервер | Имя сервера Teradata. | Да |
+| server | Имя сервера Teradata. | Да |
 | authenticationType | Тип проверки подлинности, используемый для подключения к базе данных Teradata.<br/>Допустимые значения: **Basic** и **Windows**. | Да |
-| имя пользователя | Укажите имя пользователя для подключения к базе данных Teradata. | Да |
+| username | Укажите имя пользователя для подключения к базе данных Teradata. | Да |
 | password | Введите пароль для учетной записи пользователя, указанной для выбранного имени пользователя. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Yes |
 | connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Требуется локальная среда IR, как упоминалось в разделе [Предварительные требования](#prerequisites). |Да |
 
@@ -164,16 +164,16 @@ ms.locfileid: "61347757"
 | Типы данных Teradata | Тип промежуточных данных фабрики данных |
 |:--- |:--- |
 | BigInt |Int64 |
-| BLOB-объекты |Byte[] |
+| Blob |Byte[] |
 | Byte |Byte[] |
 | ByteInt |Int16 |
 | Char |String |
 | Clob |String |
-| Дата |DateTime |
+| Date |DateTime |
 | Decimal |Decimal |
 | Double |Double |
 | Graphic |String |
-| Целое число  |Int32 |
+| Integer |Int32 |
 | Interval Day |TimeSpan |
 | Interval Day To Hour |TimeSpan |
 | Interval Day To Minute |TimeSpan |
@@ -187,14 +187,14 @@ ms.locfileid: "61347757"
 | Interval Second |TimeSpan |
 | Interval Year |String |
 | Interval Year To Month |String |
-| число |Double |
+| Number |Double |
 | Period(Date) |String |
 | Period(Time) |String |
 | Period(Time With Time Zone) |String |
 | Period(Timestamp) |String |
 | Period(Timestamp With Time Zone) |String |
 | SmallInt |Int16 |
-| Время |TimeSpan |
+| Time |TimeSpan |
 | Time With Time Zone |String |
 | Timestamp |DateTime |
 | Timestamp With Time Zone |DateTimeOffset |
