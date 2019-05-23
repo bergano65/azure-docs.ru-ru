@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с 8x8 Virtual Office | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с 8x8 Virtual Office | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и 8x8 Virtual Office.
 services: active-directory
 documentationCenter: na
@@ -16,11 +16,11 @@ ms.date: 12/27/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9385ec6a86c24e619ffafdae67bc66f66e099f3b
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57842742"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65896967"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-8x8-virtual-office"></a>Руководство по Интеграция Azure Active Directory с 8x8 Virtual Office
 
@@ -182,7 +182,7 @@ ms.locfileid: "57842742"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

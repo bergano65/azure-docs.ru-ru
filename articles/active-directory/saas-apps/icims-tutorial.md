@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с ICIMS | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с ICIMS | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в ICIMS.
 services: active-directory
 documentationCenter: na
@@ -16,11 +16,11 @@ ms.date: 02/20/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b0966fe01c90d5bf0bdaefba893b678f877805c5
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57835169"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65898225"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-icims"></a>Руководство по Интеграция Azure Active Directory с ICIMS
 
@@ -148,7 +148,7 @@ ms.locfileid: "57835169"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
