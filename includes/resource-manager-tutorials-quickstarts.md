@@ -15,17 +15,17 @@ ms.date: 01/15/2019
 ms.author: jgao
 ms.custom: include file
 ms.openlocfilehash: 8c5347b412475b86222acabb76b88baaceb7645a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60589338"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66129004"
 ---
 ## <a name="quickstarts-and-tutorials"></a>Краткие руководства
 
 В следующих кратких руководствах вы узнаете, как создавать шаблоны диспетчера ресурсов.
 
-- Быстрое начало работы
+- Краткие руководства
 
     |Название|ОПИСАНИЕ|
     |------|-----|
@@ -33,7 +33,7 @@ ms.locfileid: "60589338"
     |[Использование Visual Studio Code](../articles/azure-resource-manager/resource-manager-quickstart-create-templates-use-visual-studio-code.md)|Используйте Visual Studio Code, чтобы создавать и редактировать шаблоны, а также узнайте, как развернуть шаблоны с помощью Azure Cloud Shell.|
     |[Использование Visual Studio](../articles/azure-resource-manager/vs-azure-tools-resource-groups-deployment-projects-create-deploy.md)|Используйте Visual Studio, чтобы создавать, редактировать и развертывать шаблоны.|
 
-- Учебники
+- Руководства
 
     |Название|ОПИСАНИЕ|
     |------|-----|
@@ -47,6 +47,6 @@ ms.locfileid: "60589338"
     |[Развертывание расширений SQL](../articles/azure-resource-manager/resource-manager-tutorial-deploy-sql-extensions-bacpac.md)|Выполняйте задачи, требуемые после развертывания, с помощью расширений. В этом руководстве описано развертывание расширения для пользовательского скрипта установки веб-сервера на виртуальной машине. |
     |[Защита артефактов](../articles/azure-resource-manager/resource-manager-tutorial-secure-artifacts.md)|Защитите артефакты, необходимые для завершения развертывания. Из этого руководства вы узнаете, как защитить артефакт, используемый в руководстве по расширениям для развертывания SQL. |
     |[Руководство. Использование диспетчера развертывания Azure с шаблонами Resource Manager (закрытая предварительная версия)](../articles/azure-resource-manager/deployment-manager-tutorial.md)|Использование диспетчера развертывания Azure. |
-    |[Руководство Tutorial: Troubleshoot Resource Manager template deployments](../articles/azure-resource-manager/resource-manager-tutorial-troubleshoot.md) (Руководство. Устранение неполадок развертывания шаблонов Resource Manager)|Устранение неполадок развертывания шаблона.|
+    |[Руководство. Tutorial: Troubleshoot Resource Manager template deployments](../articles/azure-resource-manager/resource-manager-tutorial-troubleshoot.md) (Руководство. Устранение неполадок развертывания шаблонов Resource Manager)|Устранение неполадок развертывания шаблона.|
 
 Эти руководства можно использовать по отдельности или в рамках комплексного изучения основных принципов разработки шаблона Resource Manager.

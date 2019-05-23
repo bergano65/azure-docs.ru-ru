@@ -9,11 +9,11 @@ ms.date: 01/17/2019
 ms.author: jowargo
 ms.custom: include file
 ms.openlocfilehash: a5d29e77f6ba10ed3069cb3f5a3c8089f49c237d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60423409"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66140601"
 ---
 1. Войдите на [портале Azure](https://portal.azure.com).
 2. Выберите **Все службы** в меню слева и щелкните **Центры уведомлений** в разделе **Мобильный**. Выберите звездочку (`*`) рядом с именем службы, чтобы добавить ее в раздел **Избранное** в меню слева. После добавления **Центров уведомлений** в **Избранное** выберите их в меню слева. 

@@ -1,16 +1,15 @@
 ---
-author: rockboyfor
+author: rothja
 ms.service: virtual-machines-sql
 ms.topic: include
-origin.date: 10/26/2018
-ms.date: 11/26/2018
-ms.author: v-yeche
+ms.date: 10/26/2018
+ms.author: jroth
 ms.openlocfilehash: fe5daa38c43723c85fb464e191ee4a3e85700e0b
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62129775"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66165647"
 ---
 1. После создания и запуска виртуальной машины Azure щелкните значок "Виртуальные машины" на портале Azure для просмотра виртуальных машин.
 
@@ -29,5 +28,3 @@ ms.locfileid: "62129775"
    ![Проверка подлинности при подключении к удаленному рабочему столу](./media/virtual-machines-sql-server-remote-desktop-connect/remote-desktop-connect.png)
 
 1. Нажмите кнопку **ОК** для подключения.
-
-<!--Update_Description: wording update, update link-->

@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 03/14/2019
 ms.author: rezas
 ms.custom: include file
-ms.openlocfilehash: d1cfe3d998c08aef2b845315a16d881dea1cd1f6
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: ede897054a6cbef254c06bd1d810b933ec09016a
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58124360"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66158618"
 ---
 В этом разделе описывается создание центра Интернета вещей с помощью [портала Azure](https://portal.azure.com).
 
@@ -23,7 +23,7 @@ ms.locfileid: "58124360"
 
 3. Нажмите кнопку **Центр Интернета вещей** в списке справа. Появится первый экран для создания Центра Интернета вещей.
 
-   ![Снимок экрана создания концентратора на портале Azure](./media/iot-hub-include-create-hub-device-streams/iot-hub-creation-1.png)
+   ![Снимок экрана создания концентратора на портале Azure](./media/iot-hub-include-create-hub-device-streams/iot-hub-creation-01.png)
 
    Заполните следующие поля.
 
@@ -39,7 +39,7 @@ ms.locfileid: "58124360"
 
 4. Щелкните **Далее: Size and scale** (Далее: размер и масштаб), чтобы продолжить создание Центра Интернета вещей.
 
-   ![Снимок экрана, где показаны параметры размера и масштаба для нового Центра Интернета вещей на портале Azure](./media/iot-hub-include-create-hub-device-streams/iot-hub-creation-2-free.png)
+   ![Снимок экрана, где показаны параметры размера и масштаба для нового Центра Интернета вещей на портале Azure](./media/iot-hub-include-create-hub-device-streams/iot-hub-creation-02.png)
 
    На этом экране можно оставить значения по умолчанию и просто выбрать **Review + create** (Просмотреть и создать) внизу.
 
@@ -51,6 +51,6 @@ ms.locfileid: "58124360"
 
 5. Нажмите кнопку **Review + create** (Просмотреть и создать), чтобы просмотреть выбранные параметры. Отобразится примерно следующий экран.
 
-   ![Снимок экрана, где показана информация для создания центра Интернета вещей](./media/iot-hub-include-create-hub-device-streams/iot-hub-creation-3-free.png)
+   ![Снимок экрана, где показана информация для создания центра Интернета вещей](./media/iot-hub-include-create-hub-device-streams/iot-hub-creation-03.png)
 
 6. Нажмите кнопку **Создать**, чтобы создать центр Интернета вещей. Создание центра занимает несколько минут.

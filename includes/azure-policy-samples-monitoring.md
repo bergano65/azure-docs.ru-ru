@@ -9,11 +9,11 @@ ms.date: 09/18/2018
 ms.author: dacoulte
 ms.custom: include file
 ms.openlocfilehash: 6cc3fa9a8e55b90aa3dd19e61a000fb65f260281
-ms.sourcegitcommit: eb9dd01614b8e95ebc06139c72fa563b25dc6d13
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/12/2018
-ms.locfileid: "53318328"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66155440"
 ---
 ## <a name="monitoring"></a>Мониторинг
 

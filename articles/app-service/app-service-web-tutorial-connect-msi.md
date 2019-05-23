@@ -15,11 +15,11 @@ ms.date: 11/30/2018
 ms.author: cephalin
 ms.custom: mvc
 ms.openlocfilehash: dd84f9b3b68d7a34903241caed7f1f93e685fb57
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58482529"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66138971"
 ---
 # <a name="tutorial-secure-azure-sql-database-connection-from-app-service-using-a-managed-identity"></a>Руководство. Безопасное подключение к Базе данных SQL Azure из службы приложений с использованием управляемого удостоверения
 
@@ -180,7 +180,7 @@ az ad group member list -g $groupid
 
 ### <a name="grant-permissions-to-azure-active-directory-group"></a>Предоставление разрешений группе Azure Active Directory
 
-В Cloud Shell войдите в базу данных SQL с помощью команды SQLCMD. Замените _\<server\_name>_ именем сервера Базы данных SQL Azure, _\<db\_name>_ именем базы данных, которое использует приложение, а _\<AADuser\_name>_ и _\<AADpassword>_ — учетными данными пользователя Azure AD.
+В Cloud Shell войдите в базу данных SQL с помощью команды SQLCMD. Замените _\<server\_name&gt;_ именем сервера Базы данных SQL, _\<db\_name&gt;_ именем базы данных, которое использует приложение, а _\<AADuser\_name&gt;_ и _\<AADpassword&gt;_ — учетными данными пользователя Azure AD.
 
 ```azurecli-interactive
 sqlcmd -S <server_name>.database.windows.net -d <db_name> -U <AADuser_name> -P "<AADpassword>" -G -l 30

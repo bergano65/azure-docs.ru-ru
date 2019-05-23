@@ -2,21 +2,19 @@
 title: включение файла
 description: включение файла
 services: cosmos-db
-author: rockboyfor
+author: SnehaGunda
 ms.service: cosmos-db
 ms.topic: include
-origin.date: 04/13/2018
-ms.date: 03/18/2019
-ms.author: v-yeche
+ms.date: 04/13/2018
+ms.author: sngun
 ms.custom: include file
 ms.openlocfilehash: 9800848b24523a0eb5992e64ce1580cc53b0e3a0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60891510"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66151459"
 ---
-<!--Verify sucessfully-->
 Теперь вы можете использовать обозреватель данных на портале Azure для создания базы данных графов. 
 
 1. Щелкните **Обозреватель данных** > **Новый граф**.
@@ -35,7 +33,3 @@ ms.locfileid: "60891510"
     Пропускная способность|400 ЕЗ|Укажите для пропускной способности 400 единиц запросов в секунду. Чтобы сократить задержку, позже вы можете увеличить масштаб пропускной способности.
 
 3. После заполнения формы нажмите кнопку **ОК**.
-
-<!--Verify sucessfully-->
-<!--Update_Description: new articles on  -->
-<!--ms.date: 03/18/2019-->

@@ -9,11 +9,11 @@ ms.date: 03/27/2019
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: b2549abd3a4f87de99efa9a916e39b99c6fc8747
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60457900"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66150867"
 ---
 1. Перейдите на страницу виртуальной глобальной сети. Сделать это можно, открыв меню **Все службы** и выполнив поиск виртуальной глобальной сети.
 1. Щелкните **+Добавить**, чтобы открыть страницу **Создание глобальной сети**.

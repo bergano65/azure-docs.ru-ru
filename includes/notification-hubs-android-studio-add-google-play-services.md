@@ -9,11 +9,11 @@ ms.date: 02/05/2019
 ms.author: spelluru
 ms.custom: include file
 ms.openlocfilehash: fb27386881e89cd9056d0efccb7d3c301867bd83
-ms.sourcegitcommit: d1c5b4d9a5ccfa2c9a9f4ae5f078ef8c1c04a3b4
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55965993"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66156841"
 ---
 1. В **Android Studio** в меню выберите **Средства**, а затем — **Диспетчер пакетов SDK**. 
 2. Выберите целевую версию пакета SDK для Android, которая используется в вашем проекте, и выберите **Show Package Details** (Показать свойства пакета). 

@@ -11,11 +11,11 @@ ms.custom: include file
 ms.date: 12/21/2018
 ms.author: diberry
 ms.openlocfilehash: 355fe134939b26c51d6e03368f782845628a6b96
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56738902"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66123764"
 ---
 Клиентскому приложению необходимо определить, имеет ли смысл высказывание и подходит ли оно для приложения. Намерение **None** (Отсутствует) добавляется к каждому приложению как часть процесса создания для определения возможности ответа клиентского приложения намерению.
 

@@ -14,11 +14,11 @@ ms.topic: quickstart
 ms.date: 02/20/2019
 ms.author: jingwang
 ms.openlocfilehash: d5255e8cd8c662295a714931a3e292b20ab10079
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58481371"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66156934"
 ---
 # <a name="quickstart-create-an-azure-data-factory-and-pipeline-by-using-the-rest-api"></a>Краткое руководство. Создание фабрики данных Azure и конвейера с помощью REST API
 
@@ -73,7 +73,7 @@ ms.locfileid: "58481371"
     $apiVersion = "2018-06-01"
     ```
 
-## <a name="authenticate-with-azure-ad"></a>Проверка подлинности с помощью Azure AD
+## <a name="authenticate-with-azure-ad"></a>Аутентификация с помощью Azure AD
 
 Выполните следующую команды для проверки подлинности с помощью Azure Active Directory (AAD):
 

@@ -10,11 +10,11 @@ ms.date: 11/08/2018
 ms.topic: tutorial
 ms.custom: mvc
 ms.openlocfilehash: a812155474b244682613b38b9b9379fa6cdcdcd8
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58166758"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66117505"
 ---
 # <a name="tutorial-detect-anomalies-at-the-edge-with-the-remote-monitoring-solution-accelerator"></a>Руководство по Обнаружение аномалий на пограничных устройствах с помощью акселератора решения для удаленного мониторинга
 
@@ -164,7 +164,7 @@ ms.locfileid: "58166758"
     | Подписка | Ваша подписка Azure. |
     | Группа ресурсов | IoTEdgeDevices |
     | Расположение | Восточная часть США |
-    | Среда размещения | Microsoft Edge |
+    | Среда размещения | Edge |
     | Единицы потоковой передачи | 1 |
 
 1. На портале откройте задание Stream Analytics **EdgeDeviceJob**, щелкните "Входные данные" и добавьте потоковые входные данные **центра IoT Edge** под названием **telemetry**.
@@ -334,7 +334,7 @@ ms.locfileid: "58166758"
 Из этого руководства вы узнали, как добавить и настроить устройство IoT Edge в акселераторе решения для удаленного мониторинга. Дополнительные сведения о работе с пакетами IoT Edge в решении для удаленного мониторинга см. в следующем руководстве:
 
 > [!div class="nextstepaction"]
-> [Import an IoT Edge package into your Remote Monitoring solution accelerator](iot-accelerators-remote-monitoring-import-edge-package.md) (Импорт пакета IoT Edge в акселератор решений для удаленного мониторинга)
+> [Import an IoT Edge package into your Remote Monitoring solution accelerator](iot-accelerators-remote-monitoring-import-edge-package.md) (Импорт пакета IoT Edge в акселератор решения для удаленного мониторинга)
 
 Дополнительные сведения об установке среды выполнения IoT Edge см. в статье [Установка среды выполнения Azure IoT Edge в Linux (x64)](../iot-edge/how-to-install-iot-edge-linux.md).
 

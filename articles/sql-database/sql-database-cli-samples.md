@@ -13,11 +13,11 @@ ms.reviewer: ''
 manager: craigg
 ms.date: 02/03/2019
 ms.openlocfilehash: 7a1132b5857cf6c54d0566ca29bb76ce1ef88513
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59359443"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66150240"
 ---
 # <a name="azure-cli-samples-for-azure-sql-database"></a>Примеры Azure CLI для базы данных SQL Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "59359443"
 |---|---|
 |**Создание отдельной базы данных и эластичного пула**||
 | [Создание отдельной базы данных и настройка правила брандмауэра](scripts/sql-database-create-and-configure-database-cli.md?toc=%2fcli%2fazure%2ftoc.json) | Этот сценарий Azure CLI создает отдельную базу данных SQL Azure и настраивает правило брандмауэра на уровне сервера. |
-| [Создание эластичных пулов и перемещение баз данных в составе пулов](scripts/sql-database-move-database-between-pools-cli.md?toc=%2fcli%2fazure%2ftoc.json) | Этот сценарий Azure CLI создает эластичные пулы SQL и перемещает базы данных SQL Azure в составе пулов, а также изменяет объемы вычислительных ресурсов.|
+| [Создание эластичных пулов и перемещение баз данных в пуле](scripts/sql-database-move-database-between-pools-cli.md?toc=%2fcli%2fazure%2ftoc.json) | Этот сценарий Azure CLI создает эластичные пулы SQL и перемещает базы данных SQL Azure в составе пулов, а также изменяет объемы вычислительных ресурсов.|
 |**Масштабирование отдельной базы данных и эластичного пула**||
 | [Масштабирование отдельной базы данных](scripts/sql-database-monitor-and-scale-database-cli.md?toc=%2fcli%2fazure%2ftoc.json) | Этот пример сценария интерфейса командной строки масштабирует отдельную базу данных SQL Azure до другого объема вычислительных ресурсов после запроса на получение сведений о размере базы данных. |
 | [Масштабирование эластичного пула](scripts/sql-database-scale-pool-cli.md?toc=%2fcli%2fazure%2ftoc.json) | Этот пример сценария интерфейса командной строки масштабирует эластичный пул SQL, изменяя объем его вычислительных ресурсов.  |

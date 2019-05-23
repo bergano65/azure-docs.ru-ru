@@ -16,11 +16,11 @@ ms.date: 11/15/2018
 ms.author: cephalin
 ms.custom: seodec18
 ms.openlocfilehash: eddccc9897380e3ff47de49771a617bf6cacc407
-ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59680508"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66138400"
 ---
 # <a name="tutorial-build-a-php-and-mysql-app-in-azure"></a>Руководство по Создание приложения PHP в Azure с подключением к базе данных MySQL
 
@@ -332,7 +332,7 @@ git commit -m "database.php updates"
 
 Ваше приложение готово к развертыванию.
 
-## <a name="deploy-to-azure"></a>Развернуть в Azure
+## <a name="deploy-to-azure"></a>Развертывание в Azure
 
 На этом шаге вы развернете приложение PHP, подключенное к базе данных MySQL, в службе приложений Azure.
 

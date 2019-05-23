@@ -10,11 +10,11 @@ ms.date: 03/25/2019
 ms.author: robinsh
 ms.custom: mvc
 ms.openlocfilehash: 51e9bc85c2ee843aa096674a25a1f634bd08b838
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58660948"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66162643"
 ---
 # <a name="tutorial-use-azure-powershell-to-configure-iot-hub-message-routing"></a>Руководство по Маршрутизация сообщений Центра Интернета вещей с помощью Azure PowerShell
 
@@ -277,7 +277,7 @@ Add-AzIotHubRoute `
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Теперь, когда вы настроили ресурсы и маршрутизацию сообщений, переходите к следующему руководству, чтобы узнать, как отправлять сообщения в Центр Интернета вещей, маршрутизируя их в разные места назначения. 
+Теперь, когда вы настроили ресурсы и маршрутизацию сообщений, переходите к следующему руководству, чтобы узнать, как отправлять сообщения в центр Интернета вещей, маршрутизируя их в разные места назначения. 
 
 > [!div class="nextstepaction"]
 > [Часть 2. Просмотр результатов маршрутизации сообщений](tutorial-routing-view-message-routing-results.md)

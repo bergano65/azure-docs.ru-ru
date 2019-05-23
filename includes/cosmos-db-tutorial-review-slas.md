@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 03/22/2019
 ms.author: sngun
 ms.openlocfilehash: b940d7308648a3a55ed031d7d57542f3b31e9f27
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65546668"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66151270"
 ---
 На портале Azure можно отслеживать пропускную способность, объем хранилища, доступность, задержку и согласованность учетной записи Cosmos DB. На диаграммах метрик, связанных с [соглашением об уровне обслуживания для Azure Cosmos DB](https://azure.microsoft.com/support/legal/sla/cosmos-db/), отображается значение, указанное в соглашении об уровне обслуживания, в сравнении с фактической производительностью. Этот набор метрик обеспечивает прозрачный мониторинг выполнения соглашения об уровне обслуживания.
 

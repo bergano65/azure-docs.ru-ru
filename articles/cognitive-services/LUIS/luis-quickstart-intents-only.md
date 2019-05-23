@@ -3,22 +3,22 @@ title: Прогнозирование намерений
 titleSuffix: Azure Cognitive Services
 description: В этом руководстве создается пользовательское приложение, которое прогнозирует намерение пользователя. Это приложение является простейшим типом приложения LUIS, так как оно не извлекает различные элементы данных из текста высказывания, такие как адреса электронной почты или даты.
 services: cognitive-services
-author: diberry
-manager: nitinme
+author: lingliw
+manager: digimobile
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: tutorial
-ms.date: 02/19/2019
-ms.author: diberry
+ms.date: 04/19/19
+ms.author: v-lingwu
 ms.openlocfilehash: 067829a1d9425ede1320242e364eca7c30bb7053
-ms.sourcegitcommit: a8948ddcbaaa22bccbb6f187b20720eba7a17edc
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56593919"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66123953"
 ---
-# <a name="tutorial-build-luis-app-to-determine-user-intentions"></a>Руководство. Создание приложения LUIS для определения намерений пользователя
+# <a name="tutorial-build-luis-app-to-determine-user-intentions"></a>Руководство по Создание приложения LUIS для определения намерений пользователя
 
 В этом руководстве вы создадите пользовательское приложение "Управление персоналом", которое прогнозирует пользовательские намерения на основе высказываний (текста). 
 
@@ -239,3 +239,7 @@ ms.locfileid: "56593919"
 
 > [!div class="nextstepaction"]
 > [Добавление предварительно созданных намерений и сущностей к этому приложению](luis-tutorial-prebuilt-intents-entities.md)
+
+
+
+

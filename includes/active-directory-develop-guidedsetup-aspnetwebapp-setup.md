@@ -15,11 +15,11 @@ ms.date: 09/17/2018
 ms.author: jmprieur
 ms.custom: include file
 ms.openlocfilehash: dcfc341b89a3cfebcb5538f88481fd2fbb2936a7
-ms.sourcegitcommit: f24b62e352e0512dfa2897362021b42e0cb9549d
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59505823"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66121801"
 ---
 ## <a name="set-up-your-project"></a>Настройка проекта
 
@@ -29,14 +29,14 @@ ms.locfileid: "59505823"
 
 ### <a name="create-your-aspnet-project"></a>Создание проекта ASP.NET
 
-1. В Visual Studio выберите `File` > `New` > `Project`
+1. В Visual Studio выберите `File` > `New` > `Project`.
 2. В разделе *Visual C#\Web* выберите `ASP.NET Web Application (.NET Framework)`.
 3. Присвойте имя приложению и нажмите кнопку *ОК*.
 4. Выберите `Empty` и установите флажок, чтобы добавить ссылки `MVC`.
 
 ## <a name="add-authentication-components"></a>Добавление компонентов проверки подлинности
 
-1. В Visual Studio выберите `Tools` > `Nuget Package Manager` > `Package Manager Console`
+1. В Visual Studio выберите `Tools` > `Nuget Package Manager` > `Package Manager Console`.
 2. Добавьте *пакеты NuGet для промежуточного слоя OWIN*, введя следующие команды в окне консоли диспетчера пакетов:
 
     ```powershell
@@ -56,8 +56,8 @@ ms.locfileid: "59505823"
 
 > [!TIP]
 > Если проект не содержит файл `Startup.cs` в корневой папке, сделайте следующее:
-> 1. Щелкните правой кнопкой мыши корневой каталог проекта: > `Add` > `New Item...` > `OWIN Startup class`<br/>
-> 2. Присвойте ему имя `Startup.cs`
+> 1. Щелкните правой кнопкой мыши корневой каталог проекта: > `Add` > `New Item...` > `OWIN Startup class`.<br/>
+> 2. Назовите класс `Startup.cs`.
 >
 >> Выберите класс запуска OWIN, а не стандартный класс C#. Если вы выбрали нужный класс, вы должны увидеть `[assembly: OwinStartup(typeof({NameSpace}.Startup))]` над пространством имен.
 

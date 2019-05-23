@@ -11,11 +11,11 @@ ms.custom: include file
 ms.date: 08/16/2018
 ms.author: diberry
 ms.openlocfilehash: 67c95ffcdbdbcfbb9a86e15c91d984953d7bbffc
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56741493"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66124061"
 ---
 Чтобы понять, какие данные возвращает конечная точка прогнозирования LUIS, просмотрите результат прогнозирования в веб-браузере. Чтобы отправить запрос к общедоступному приложению, потребуется свой ключ и идентификатор приложения. Идентификатор общедоступного приложения Интернета вещей (`df67dcdb-c37d-46af-88e1-8b97951ca1c2`) предоставляется в URL-адресе на шаге 1.
 

@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 11/25/2018
 ms.author: ryanwi
 ms.openlocfilehash: 6612c0b25789b8c19a99b8f23892c42930e26169
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60621498"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66159913"
 ---
 > [!IMPORTANT]
 > Для работы с Service Fabric доступны две служебные программы CLI. [Azure CLI](/cli/azure/get-started-with-azure-cli?view=azure-cli-latest) используется для управления ресурсами Azure, включая кластер Service Fabric, размещенный в Azure. [Service Fabric CLI](/azure/service-fabric/service-fabric-cli) используется для непосредственного подключения к кластеру Service Fabric (независимо от того, где он размещается), а также для управления кластером, приложениями и службами. 

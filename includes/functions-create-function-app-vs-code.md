@@ -5,17 +5,17 @@ ms.topic: include
 ms.date: 11/27/2018
 ms.author: glenga
 ms.openlocfilehash: 79dbee33928fbc7560d0ea27be3af25cc510e996
-ms.sourcegitcommit: c8088371d1786d016f785c437a7b4f9c64e57af0
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/30/2018
-ms.locfileid: "52641897"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66132276"
 ---
 ## <a name="create-an-azure-functions-project"></a>Создание проекта Функций Azure
 
 С помощью шаблона проекта Функции Azure в Visual Studio Code можно создать проект и затем опубликовать его в виде приложения-функции в Azure. Приложение-функция позволяет группировать функции в логические единицы для развертывания и совместного использования ресурсов, а также управления ими.
 
-1. В Visual Studio Code выберите логотип Azure, чтобы отобразить область **Azure: Functions** (Azure: Функции), после чего щелкните значок Create New Project (Создать проект).
+1. В Visual Studio Code выберите логотип Azure, чтобы отобразить область **Функций Azure**, а затем нажмите значок "Создать новый проект".
 
     ![Создание проекта приложения-функции](./media/functions-create-function-app-vs-code/create-function-app-project.png)
 

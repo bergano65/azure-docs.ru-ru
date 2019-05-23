@@ -9,11 +9,11 @@ ms.date: 04/13/2018
 ms.author: sngun
 ms.custom: include file
 ms.openlocfilehash: 4fec9be34e390498b85ecfcb3f3b61055a08fdd2
-ms.sourcegitcommit: 8a59b051b283a72765e7d9ac9dd0586f37018d30
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58305124"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66120712"
 ---
 1. В новом окне браузера войдите на [портал Azure](https://portal.azure.com/).
 2. В области навигации слева выберите **Создать ресурс**. Выберите **Базы данных** и **Azure Cosmos DB**.

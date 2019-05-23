@@ -8,11 +8,11 @@ ms.topic: quickstart
 ms.date: 3/11/2019
 ms.author: victorh
 ms.openlocfilehash: 7a2c300e30050e7e46a2b2c724258539df85e410
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58093428"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66111334"
 ---
 # <a name="quickstart-create-an-azure-dns-zone-and-record-using-azure-cli"></a>Краткое руководство. Создание зоны и записи Azure DNS с помощью Azure CLI
 
@@ -92,7 +92,7 @@ az network dns record-set list -g MyResourceGroup -z contoso.xyz
 
    ![nslookup](media/dns-getstarted-portal/nslookup.PNG)
 
-Имя узла**www\.contoso.xyz** разрешается в **10.10.10.10**, как и было настроено. Такой результат подтверждает, что разрешение имен работает правильно.
+Имя узла **www\.contoso.xyz** разрешается как **10.10.10.10**, как и было настроено. Такой результат подтверждает, что разрешение имен работает правильно.
 
 ## <a name="delete-all-resources"></a>Удаление всех ресурсов
 
