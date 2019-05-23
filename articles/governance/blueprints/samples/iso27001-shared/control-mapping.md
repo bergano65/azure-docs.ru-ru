@@ -7,12 +7,12 @@ ms.date: 03/14/2019
 ms.topic: sample
 ms.service: blueprints
 manager: carmonm
-ms.openlocfilehash: 9290609136d1314762d9f716531464ad2496fb63
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: c40efca9abd418c8b48f931d327b1f81805b38fb
+ms.sourcegitcommit: 17411cbf03c3fa3602e624e641099196769d718b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60005304"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65520407"
 ---
 # <a name="control-mapping-of-the-iso-27001-shared-services-blueprint-sample"></a>Сопоставление элементов управления образца схемы "ISO 27001: общие службы"
 
@@ -24,7 +24,7 @@ ms.locfileid: "60005304"
 
 Наличие только одного владельца подписки Azure не позволит организовать административную избыточность. И наоборот, слишком большое число владельцев подписки Azure может увеличить вероятность бреши в системе безопасности через скомпрометированную учетную запись владельца. Эта схема помогает сохранить требуемое число владельцев подписки Azure, назначая два определения [Политики Azure](../../../policy/overview.md) для аудита числа владельцев для подписок Azure. Управление разрешениями владельца подписки помогает реализовать соответствующее разделение обязанностей.
 
-- [Предварительный просмотр]: Audit minimum number of owners for subscription
+- [Предварительный просмотр]: Audit minimum number of owners for a subscription
 - [Предварительный просмотр]: Audit maximum number of owners for a subscription
 
 ## <a name="a821-classification-of-information"></a>A.8.2.1. Сведения о классификации данных
