@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 01/28/2019
 ms.author: rajanaki
 ms.custom: MVC
-ms.openlocfilehash: 7619b8831d75ce639c6f6c773c7c7d491abc93e7
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 0d446be664d695af946d46abc48389d4f7be92cd
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58122035"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65791039"
 ---
 # <a name="move-azure-vms-to-another-region"></a>Перенос виртуальных машин Azure в другой регион
 
@@ -56,7 +56,7 @@ ms.locfileid: "58122035"
     - При использовании виртуальных машин Windows установите на виртуальной машине все последние обновления Windows, чтобы гарантировать присутствие всех доверенных корневых сертификатов. При работе в отключенной среде следуйте стандартным процедурам обновления Windows и сертификатам в вашей организации.
     - На виртуальных машинах Linux выполните инструкции, предоставленные распространителем Linux, чтобы установить все свежие доверенные корневые сертификаты и список отзыва сертификатов.
 1. Убедитесь, что для управления подключением к сети для виртуальных машин, которые вы хотите перенести, не используется прокси-сервер аутентификации.
-1. Если виртуальная машина, которую вы пытаетесь переместить, не имеет доступа к Интернету и (или) использует прокси-сервер брандмауэра для управления исходящим доступом, проверьте [соответствующие требования](azure-to-azure-tutorial-enable-replication.md#configure-outbound-network-connectivity).
+1. Если виртуальная машина, которую вы пытаетесь переместить, не имеет доступа к Интернету и (или) использует прокси-сервер брандмауэра для управления исходящим доступом, проверьте [соответствующие требования](azure-to-azure-tutorial-enable-replication.md#set-up-outbound-network-connectivity-for-vms).
 1. Определите структуру сети в исходном регионе и все ресурсы, которые вы сейчас используете. Сюда могут входить, среди прочего, подсистемы балансировки нагрузки, группы безопасности сети и общедоступные IP-адреса.
 
 ## <a name="prepare-the-target-region"></a>Подготовка целевого региона
@@ -74,7 +74,7 @@ ms.locfileid: "58122035"
 
    - [Группы безопасности сети](https://docs.microsoft.com/azure/virtual-network/manage-network-security-group)
    - [Подсистемы балансировки нагрузки](https://docs.microsoft.com/azure/load-balancer/#step-by-step-tutorials)
-   - [Общедоступный IP-адрес](https://docs.microsoft.com/azure/load-balancer/#step-by-step-tutorials)
+   - [Общедоступный IP-адрес](../virtual-network/virtual-network-public-ip-address.md)
     
      Сведения о других сетевых компонентах см. в [документации по сетям](https://docs.microsoft.com/azure/#pivot=products&panel=network).
 

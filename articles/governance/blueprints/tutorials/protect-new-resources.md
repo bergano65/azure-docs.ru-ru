@@ -7,14 +7,14 @@ ms.date: 03/28/2019
 ms.topic: tutorial
 ms.service: blueprints
 manager: carmonm
-ms.openlocfilehash: d315fb5fe3ce7844946e6a9405a9a5f6a0be8b9d
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: b885a90728df8cb15c75141b7bce81aec3968359
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59791615"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65779569"
 ---
-# <a name="protect-new-resources-with-azure-blueprints-resource-locks"></a>Защита новых ресурсов с помощью блокировок ресурсов Azure Blueprints
+# <a name="tutorial-protect-new-resources-with-azure-blueprints-resource-locks"></a>Руководство по Защита новых ресурсов с помощью блокировок ресурсов Azure Blueprints
 
 [Блокировки ресурсов](../concepts/resource-locking.md) Azure Blueprints позволяют защитить новые развернутые ресурсы от незаконного изменения даже под управлением учетной записи с ролью _Владелец_. Такую защиту можно добавить к ресурсам, созданным с помощью артефакта шаблона Resource Manager в определении схемы.
 

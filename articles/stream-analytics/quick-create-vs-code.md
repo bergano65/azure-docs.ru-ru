@@ -7,12 +7,12 @@ ms.author: mamccrea
 ms.date: 05/06/2019
 ms.topic: quickstart
 ms.custom: mvc
-ms.openlocfilehash: 511dab7090f6114c7769d504166f3e2c137d43ca
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.openlocfilehash: 894f43a7da0abd129123d5c4ddf2bb95347c42c5
+ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65071846"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65825351"
 ---
 # <a name="quickstart-create-an-azure-stream-analytics-cloud-job-in-visual-studio-code-preview"></a>Краткое руководство. Создание облачного задания Azure Stream Analytics в Visual Studio Code (предварительная версия)
 
@@ -89,7 +89,7 @@ ms.locfileid: "65071846"
 
 2. В области **создания учетной записи хранения** введите имя для учетной записи хранения, расположение и группу ресурсов. Выберите такое же расположение и группу ресурсов, как и для созданного Центра Интернета вещей. Щелкните **Просмотр и создание**, чтобы создать учетную запись.
 
-   ![Создать учетную запись хранения](./media/quick-create-vs-code/create-storage-account.png)
+   ![Создание учетной записи хранения](./media/quick-create-vs-code/create-storage-account.png)
 
 3. После создания учетной записи хранения щелкните плитку **BLOB-объекты** в области **Обзор**.
 
@@ -229,7 +229,7 @@ ms.locfileid: "65071846"
 
 2. Щелкните имя задания правой кнопкой мыши. В контекстном меню выберите **Запустить**.
 
-![Запуск задания Stream Analytics в VS Code](./media/quick-create-vs-code/start-asa-job-vs-code.png)
+   ![Запуск задания Stream Analytics в VS Code](./media/quick-create-vs-code/start-asa-job-vs-code.png)
 
 3. Выберите **Сейчас** во всплывающем окне, чтобы запустить задание.
 

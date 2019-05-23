@@ -8,14 +8,14 @@ ms.topic: quickstart
 ms.service: blueprints
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: 28fef394ee400949f9911983bdbca41d6bfcb458
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: acee2aabe94f5d015562bd697d08f657895d3b02
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59790126"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65789472"
 ---
-# <a name="define-and-assign-a-blueprint-in-the-portal"></a>Определение и назначение схемы на портале
+# <a name="quickstart-define-and-assign-a-blueprint-in-the-portal"></a>Краткое руководство. Определение и назначение схемы на портале
 
 Когда вы узнаете, как создавать и назначать схемы, вы сможете определить типичные шаблоны для разработки многоразовых и быстро развертываемых конфигураций на основе шаблонов Resource Manager, политик, правил безопасности и т. п. Из этого руководства вы узнаете, как с помощью службы Azure Blueprints выполнять некоторые общие задачи, связанных с созданием, публикацией и назначением схемы в вашей организации. Сюда входят следующие задачи:
 

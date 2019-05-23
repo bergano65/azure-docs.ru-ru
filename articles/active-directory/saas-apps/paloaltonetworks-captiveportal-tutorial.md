@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Palo Alto Networks (Captive Portal) | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Palo Alto Networks (Captive Portal) | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Palo Alto Networks (Captive Portal).
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.date: 12/25/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 0a62aa573d49ccdd237e692b63a6fda0dd83d52a
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57888303"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "65870002"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-palo-alto-networks-captive-portal"></a>Руководство. Интеграция Azure Active Directory с Palo Alto Networks (Captive Portal)
+# <a name="tutorial-azure-active-directory-integration-with-palo-alto-networks-captive-portal"></a>Руководство по Интеграция Azure Active Directory с Palo Alto Networks (Captive Portal)
 
 В этом руководстве описано, как интегрировать Palo Alto Networks (Captive Portal) с Azure Active Directory (Azure AD).
 

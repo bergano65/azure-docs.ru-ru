@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Flatter Files | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Flatter Files | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Flatter Files.
 services: active-directory
 documentationCenter: na
@@ -15,13 +15,13 @@ ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
 ms.openlocfilehash: 48c5804df53c084715cac872aa431cf8694c6d35
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57885124"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "65740282"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-flatter-files"></a>Руководство. Интеграция Azure Active Directory с Flatter Files
+# <a name="tutorial-azure-active-directory-integration-with-flatter-files"></a>Руководство по Интеграция Azure Active Directory с Flatter Files
 
 В этом руководстве описано, как интегрировать приложение Flatter Files с Azure Active Directory (Azure AD).
 Интеграция Azure AD с Flatter Files обеспечивает следующие преимущества.
@@ -167,7 +167,7 @@ ms.locfileid: "57885124"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

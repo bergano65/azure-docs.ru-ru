@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Communifire | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Communifire | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Communifire.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.date: 02/13/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: cb82c3112634163328e08b330083f5b4942798ab
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57880977"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "65863190"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-communifire"></a>Руководство. Интеграция Azure Active Directory с Communifire
+# <a name="tutorial-azure-active-directory-integration-with-communifire"></a>Руководство по Интеграция Azure Active Directory с Communifire
 
 В этом руководстве описано, как интегрировать Communifire с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Communifire обеспечивает следующие преимущества.

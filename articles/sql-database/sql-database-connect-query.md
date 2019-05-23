@@ -7,23 +7,23 @@ ms.subservice: service
 ms.custom: ''
 ms.devlang: ''
 ms.topic: quickstart
-author: CarlRabeler
-ms.author: carlrab
+author: stevestein
+ms.author: sstein
 ms.reviewer: ''
 manager: craigg
 ms.date: 12/18/2018
-ms.openlocfilehash: 1bf9c0b1393abfcad6646624301c4f131c8790a6
-ms.sourcegitcommit: 6cab3c44aaccbcc86ed5a2011761fa52aa5ee5fa
+ms.openlocfilehash: a8513344c35c14ebf06f3693da618ed20047d07b
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/20/2019
-ms.locfileid: "56447979"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65792054"
 ---
 # <a name="quickstarts-azure-sql-database-connect-and-query"></a>Краткие руководства: Подключение и создание запросов к Базе данных SQL Azure
 
 В этом документе представлены ссылки на примеры для Azure, в которых показано, как подключаться и создавать запросы к базе данных SQL Azure. В нем также приводятся рекомендации по использованию протокола TLS.
 
-## <a name="quickstarts"></a>Быстрое начало работы
+## <a name="quickstarts"></a>Краткие руководства
 
 | |  |
 |---|---|
@@ -33,7 +33,7 @@ ms.locfileid: "56447979"
 |[Visual Studio Code](sql-database-connect-query-vscode.md)|В этом кратком руководстве показано, как, используя Visual Studio Code, подключиться к базе данных SQL Azure, а затем с помощью инструкций Transact-SQL выполнить запрос, вставку, обновление и удаление данных в базе данных.|
 |[.NET с Visual Studio](sql-database-connect-query-dotnet-visual-studio.md)|В этом кратком руководстве показано, как использовать платформу .NET Framework для создания программы C# с помощью Visual Studio, которая подключается к Базе данных SQL Azure, а затем с помощью инструкций Transact-SQL выполнить запрос данных.|
 |[.NET Core](sql-database-connect-query-dotnet-core.md)|В этом кратком руководстве показано, как использовать .NET Core в Windows, Linux и Mac OS для создания программы C#, которая подключается к Базе данных SQL Azure, а затем с помощью инструкций Transact-SQL выполнить запрос данных.|
-|[GO](sql-database-connect-query-go.md)|В этом кратком руководстве показано, как использовать Go для подключения к Базе данных SQL Azure. Также демонстрируется применение инструкций Transact-SQL для запроса и изменения данных.|
+|[Go](sql-database-connect-query-go.md)|В этом кратком руководстве показано, как использовать Go для подключения к Базе данных SQL Azure. Также демонстрируется применение инструкций Transact-SQL для запроса и изменения данных.|
 |[Java](sql-database-connect-query-java.md)|В этом кратком руководстве показано, как использовать Java для подключения к Базе данных SQL Azure, а затем с помощью инструкций Transact-SQL выполнить запрос данных.|
 |[Node.js](sql-database-connect-query-nodejs.md)|В этом кратком руководстве показано, как использовать Node.js для создания программы, которая подключается к Базе данных SQL Azure, а затем с помощью инструкций Transact-SQL выполнить запрос данных.|
 |[PHP](sql-database-connect-query-php.md)|В этом кратком руководстве показано, как использовать PHP для создания программы, которая подключается к Базе данных SQL Azure, а затем с помощью инструкций Transact-SQL выполнить запрос данных.|

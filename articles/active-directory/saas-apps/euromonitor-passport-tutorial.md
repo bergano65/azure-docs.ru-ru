@@ -16,13 +16,13 @@ ms.date: 02/11/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 1cdf8f78a54c89ac89441a87ca0ba34d61a3d2a2
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57888320"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "65740113"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-euromonitor-passport"></a>Руководство. Интеграция Azure Active Directory с Euromonitor Passport
+# <a name="tutorial-azure-active-directory-integration-with-euromonitor-passport"></a>Руководство по Интеграция Azure Active Directory с Euromonitor Passport
 
 Из этого руководства вы узнаете, как интегрировать Euromonitor Passport с Azure Active Directory (Azure AD).
 Интеграция Euromonitor Passport с Azure AD обеспечивает следующие преимущества:
@@ -113,7 +113,7 @@ ms.locfileid: "57888320"
 
 6. Для приложения Euromonitor Passport требуется передавать оператор утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно в разделе **Атрибуты пользователя** на странице интеграции приложения. На странице **Настройка единого входа с помощью SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
 
-    ![изображение](./media/euromonitor-passport-tutorial/attribute1.png)
+    ![image](./media/euromonitor-passport-tutorial/attribute1.png)
 
 7. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** измените утверждения, щелкнув значок **Изменить**, или добавьте утверждение, нажав кнопку **Добавить новое утверждение**, чтобы настроить атрибут токена SAML, как показано на рисунке выше, и выполните следующие действия.
 
@@ -127,9 +127,9 @@ ms.locfileid: "57888320"
 
     a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![изображение](common/new-save-attribute.png)
+    ![image](common/new-save-attribute.png)
 
-    ![изображение](common/new-attribute-details.png)
+    ![image](common/new-attribute-details.png)
 
     b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 

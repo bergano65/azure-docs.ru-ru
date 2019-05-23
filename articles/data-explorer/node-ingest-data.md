@@ -7,12 +7,12 @@ ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: quickstart
 ms.date: 10/25/2018
-ms.openlocfilehash: d530ed3710a3406e5cd8115d615e91d5056a5f8c
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 42a4d2e34eab3679f98d5a62099ab57e5924fcc3
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59047659"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65800423"
 ---
 # <a name="quickstart-ingest-data-using-the-azure-data-explorer-node-library"></a>Краткое руководство. Прием данных с помощью библиотеки Node в Azure Data Explorer
 
@@ -33,7 +33,7 @@ ms.locfileid: "59047659"
 Установите *azure-kusto-ingest* и *azure-kusto-data*.
 
 ```bash
-npm i --save azure-kusto-ingest azure-kusto-data
+npm i azure-kusto-ingest azure-kusto-data
 ```
 
 ## <a name="add-import-statements-and-constants"></a>Добавление операторов и констант импорта

@@ -3,19 +3,19 @@ title: Краткое руководство. Получение аналити�
 titleSuffix: Azure Cognitive Services
 description: Отправьте изображение с помощью пакета SDK Визуального поиска Bing и получите аналитические сведения о нем.
 services: cognitive-services
-author: mikedodaro
+author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-visual-search
 ms.topic: quickstart
 ms.date: 05/18/2018
 ms.author: v-gedod
-ms.openlocfilehash: c46c33b81a1162bdb30edc7a39a04fea8c0abb7d
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: 1bcd885d744cd2c97b0941b5a3bb498d68b5f644
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55866939"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65796308"
 ---
 # <a name="quickstart-get-image-insights-using-the-bing-visual-search-sdk-for-nodejs"></a>Краткое руководство. Получение аналитических сведений об изображении с помощью пакета SDK для Визуального поиска Bing для Node.js
 

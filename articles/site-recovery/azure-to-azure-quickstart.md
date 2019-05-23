@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 03/12/2019
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: f7adcb7d4516e9013bf87306fff77b566885e018
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 23aeeb8cd14ec2d0654525af42b48f59a6f7564f
+ms.sourcegitcommit: 17411cbf03c3fa3602e624e641099196769d718b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57855288"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65520327"
 ---
 # <a name="set-up-disaster-recovery-to-a-secondary-azure-region-for-an-azure-vm"></a>Настройка аварийного восстановления виртуальной машины Azure в дополнительный регион Azure        
 
@@ -45,7 +45,7 @@ ms.locfileid: "57855288"
 
 После завершения задания репликации можно проверить состояние репликации, изменить параметры настройки репликации и протестировать развертывание.
 
-1. В меню виртуальной машины щелкните **Аварийное восстановление**.
+1. В разделе **Операции** щелкните **Аварийное восстановление**.
 2. Можно проверить работоспособность репликации, созданные точки восстановления, а также исходный и целевой регионы на карте.
 
    ![Состояние репликации](media/azure-to-azure-quickstart/replication-status.png)

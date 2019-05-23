@@ -8,12 +8,12 @@ ms.devlang: java
 ms.topic: tutorial
 ms.date: 08/22/2017
 ms.author: ramkris
-ms.openlocfilehash: a915792ad5cd1352c666f8224345c54e278ab899
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.openlocfilehash: e276980235494f7f808510889bda91761cb76544
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59526883"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65794606"
 ---
 # <a name="build-a-java-web-application-using-azure-cosmos-db-and-the-sql-api"></a>Создание веб-приложения Java с использованием Azure Cosmos DB и API SQL
 
@@ -50,7 +50,7 @@ ms.locfileid: "59526883"
 * [Интегрированная среда разработки Eclipse для разработчиков Java EE.](https://www.eclipse.org/downloads/packages/release/luna/sr1/eclipse-ide-java-ee-developers)
 * [Открытый веб-сайт Azure со средой выполнения Java (например, Tomcat или Jetty).](../app-service/app-service-web-get-started-java.md)
 
-При первой установке этих средств воспользуйтесь пошаговыми инструкциями, представленными в разделе "Quick Start" (Быстрый запуск) статьи [Tutorial: Installing TomCat7 and Using it with Eclipse](https://www.coreservlets.com/Apache-Tomcat-Tutorial/tomcat-7-with-eclipse.html) (Руководство по установке TomCat7 и его использованию с Eclipse) на сайте coreservlets.com.
+При первой установке этих средств воспользуйтесь пошаговыми инструкциями, представленными в разделе "Quick Start" (Быстрый запуск) статьи [Tutorial: Installing TomCat7 and Using it with Eclipse](http://www.coreservlets.com/Apache-Tomcat-Tutorial/tomcat-7-with-eclipse.html) (Руководство по установке TomCat7 и его использованию с Eclipse) на сайте coreservlets.com.
 
 ## <a id="CreateDB"></a>Шаг 1. создание учетной записи Azure Cosmos DB;
 Давайте сначала создадим учетную запись Azure Cosmos DB. Если у вас уже есть учетная запись или вы используете эмулятор Azure Cosmos DB для работы с этим руководством, можно перейти к разделу [Шаг 2. Создание приложения Java JSP](#CreateJSP).

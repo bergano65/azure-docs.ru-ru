@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 04/01/2019
 ms.author: jeedes
-ms.openlocfilehash: 35fc4e855ef53bd7e667fc8de7146916b4d05acb
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.openlocfilehash: 72505cfc0a86c00882de37c35dff61a12a9c3fbe
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65407076"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65899601"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-docusign"></a>Руководство. Интеграция Azure Active Directory с DocuSign
 
@@ -178,7 +178,7 @@ ms.locfileid: "65407076"
 
     ![Настройка единого входа][62]
 
-    i. Выберите поле, которое нужно сопоставить с утверждением Azure AD. В этом примере утверждение **emailaddress** сопоставляется со значением **https://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress**. Это имя утверждения по умолчанию из Azure AD, которое используется для утверждения на электронную почту, а затем щелкните **Save** (Сохранить).
+    i. Выберите поле, которое нужно сопоставить с утверждением Azure AD. В этом примере утверждение **emailaddress** сопоставляется со значением **http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress**. Это имя утверждения по умолчанию из Azure AD, которое используется для утверждения на электронную почту, а затем щелкните **Save** (Сохранить).
 
     ![Настройка единого входа][57]
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Birst Agile Business Analytics | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Birst Agile Business Analytics | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Birst Agile Business Analytics.
 services: active-directory
 documentationCenter: na
@@ -16,11 +16,11 @@ ms.date: 02/07/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 632ae913214794a114bc12019d92b6902172fca7
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57887906"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "65858507"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-birst-agile-business-analytics"></a>Руководство по Интеграция Azure Active Directory с Birst Agile Business Analytics
 
@@ -155,7 +155,7 @@ ms.locfileid: "57887906"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

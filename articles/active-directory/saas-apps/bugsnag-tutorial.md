@@ -15,13 +15,13 @@ ms.topic: tutorial
 ms.date: 02/13/2019
 ms.author: jeedes
 ms.openlocfilehash: 01877e4d982433608dd10fb44f2506b8bf71aff6
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57858842"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "65858932"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-bugsnag"></a>Руководство. Интеграция Azure Active Directory с Bugsnag
+# <a name="tutorial-azure-active-directory-integration-with-bugsnag"></a>Руководство по Интеграция Azure Active Directory с Bugsnag
 
 В этом руководстве описано, как интегрировать Bugsnag с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Bugsnag обеспечивает следующие преимущества.

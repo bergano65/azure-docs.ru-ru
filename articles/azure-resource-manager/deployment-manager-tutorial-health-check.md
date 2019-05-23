@@ -13,12 +13,12 @@ ms.devlang: na
 ms.date: 05/06/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 4f3f43ba063ed25389860183576c4dbd94e2bfcd
-ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
+ms.openlocfilehash: 8ffc64359faab539ab74e354caad4081f31fcd43
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65466327"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65790130"
 ---
 # <a name="tutorial-use-health-check-in-azure-deployment-manager-public-preview"></a>Руководство по использованию проверки работоспособности в диспетчере развертывания Azure (общедоступная предварительная версия)
 
@@ -59,7 +59,7 @@ ms.locfileid: "65466327"
 Следующие два файла используются для развертывания функции Azure. Не нужно скачивать эти файлы для работы с этим руководством.
 
 * Шаблон Resource Manager, который находится по адресу [https://armtutorials.blob.core.windows.net/admtutorial/deploy_hc_azure_function.json](https://armtutorials.blob.core.windows.net/admtutorial/deploy_hc_azure_function.json). Вы развернете этот шаблон, чтобы создать функцию Azure.  
-* ZIP-файл исходного кода функции Azure, который находится по адресу [https://armtutorials.blob.core.windows.net/admtutorial/ADMHCFunction0417.zip](https://armtutorials.blob.core.windows.net/admtutorial/RestHealthTest.zip). Этот ZIP-файл вызывается шаблоном Resource Manager.
+* ZIP-файл исходного кода функции Azure, который находится по адресу [http://armtutorials.blob.core.windows.net/admtutorial/ADMHCFunction0417.zip](http://armtutorials.blob.core.windows.net/admtutorial/RestHealthTest.zip). Этот ZIP-файл вызывается шаблоном Resource Manager.
 
 Чтобы развернуть функцию Azure, выберите **Попробовать**, чтобы открыть Azure Cloud Shell, а затем вставьте следующий скрипт в окно оболочки.  Чтобы вставить код, щелкните окно оболочки правой кнопкой мыши, а затем выберите **Вставить**. 
 

@@ -7,21 +7,21 @@ ms.subservice: elastic-pools
 ms.custom: ''
 ms.devlang: azurecli
 ms.topic: sample
-author: CarlRabeler
-ms.author: carlrab
+author: stevestein
+ms.author: sstein
 ms.reviewer: ''
 manager: craigg
 ms.date: 02/08/2019
-ms.openlocfilehash: fd219e9aaf684600f76ed81eb45ed9a5bf78f62c
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 7e4c24c538bd72df6c3324ca7f8837ce481e6ea2
+ms.sourcegitcommit: 3ced637c8f1f24256dd6ac8e180fff62a444b03c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59360002"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65833941"
 ---
 # <a name="use-cli-to-scale-an-elastic-pool-in-azure-sql-database"></a>Масштабирование эластичного пула в Базе данных SQL Azure с помощью интерфейса командной строки
 
-Этот пример скрипта Azure CLI создает эластичные пулы и перемещает базы данных в составе пула, а также изменяет объемы вычислительных ресурсов эластичных пулов.
+Этот пример скрипта Azure CLI создает эластичные пулы и перемещает базы данных в пуле, а также изменяет вычислительную мощность эластичных пулов.
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 
