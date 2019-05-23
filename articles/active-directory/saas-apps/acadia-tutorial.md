@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Acadia | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Acadia | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Acadia.
 services: active-directory
 documentationCenter: na
@@ -16,11 +16,11 @@ ms.date: 1/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 30c6958fef66e492ae1875538503e4094d8eeccb
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57842589"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "65859491"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-acadia"></a>Руководство по Интеграция Azure Active Directory с Acadia
 
@@ -155,7 +155,7 @@ ms.locfileid: "57842589"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

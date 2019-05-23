@@ -5,13 +5,13 @@ ms.service: cosmos-db
 ms.topic: tutorial
 author: deborahc
 ms.author: dech
-ms.date: 03/14/2019
-ms.openlocfilehash: c83cc8dce5978798d86d2fc2e314161765a2fb2d
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.date: 05/20/2019
+ms.openlocfilehash: 9e7342ebcbcf536b26e6cf7fb89e3cf58666d24f
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65205787"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65953954"
 ---
 # <a name="use-the-azure-cosmos-emulator-for-local-development-and-testing"></a>Использование эмулятора Azure Cosmos для разработки и тестирования в локальной среде
 
@@ -109,7 +109,7 @@ Account key: C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZ
 
 ## <a name="developing-with-the-emulator"></a>Разработка с помощью эмулятора
 
-### <a name="sql-api"></a>API-интерфейс SQL
+### <a name="sql-api"></a>API SQL
 
 Когда эмулятор Azure Cosmos будет запущен на локальном компьютере, вы сможете работать с ним с помощью любых поддерживаемых [пакетов SDK для Azure Cosmos DB](sql-api-sdk-dotnet.md) или [REST API Azure Cosmos DB](/rest/api/cosmos-db/). Эмулятор Azure Cosmos также содержит встроенный обозреватель данных, который позволяет создавать коллекции для API SQL или API Cosmos DB для MongoDB, а также просматривать и редактировать элементы без необходимости писать код.
 
@@ -120,7 +120,7 @@ DocumentClient client = new DocumentClient(
 
 ```
 
-### <a name="azure-cosmos-dbs-api-for-mongodb"></a>API Azure Cosmos DB для MongoDB
+### <a name="azure-cosmos-dbs-api-for-mongodb"></a>API Azure Cosmos DB для MongoDB
 
 Если вы используете [API Azure Cosmos DB для MongoDB](mongodb-introduction.md), укажите следующую строку подключения:
 
@@ -128,7 +128,7 @@ DocumentClient client = new DocumentClient(
 mongodb://localhost:C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==@localhost:10255/admin?ssl=true
 ```
 
-### <a name="table-api"></a>API таблицы
+### <a name="table-api"></a>API таблиц
 
 Когда эмулятор Azure Cosmos будет запущен на локальном компьютере, вы сможете взаимодействовать с ним с помощью [пакета SDK для API таблиц Azure Cosmos DB](table-storage-how-to-use-dotnet.md). Запустите эмулятор из командной строки с правами администратора, указав параметр /EnableTableEndpoint. Затем выполните следующий код для подключения к учетной записи API таблиц:
 

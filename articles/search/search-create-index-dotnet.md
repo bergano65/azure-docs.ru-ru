@@ -9,19 +9,20 @@ services: search
 ms.service: search
 ms.devlang: dotnet
 ms.topic: quickstart
-ms.date: 04/08/2019
-ms.openlocfilehash: 83842893e0ffc6bb954832cd65b6312b59bbcaa3
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.date: 05/16/2019
+ms.openlocfilehash: 8d186ae83e1016de9c4548d4b1c39303025a5270
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59269050"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65795812"
 ---
 # <a name="quickstart-1---create-an-azure-search-index-in-c"></a>Краткое руководство. Часть 1. Создание индекса службы "Поиск Azure" с помощью C#
 > [!div class="op_single_selector"]
 > * [C#](search-create-index-dotnet.md)
 > * [Портал](search-get-started-portal.md)
 > * [PowerShell](search-howto-dotnet-sdk.md)
+> * [Python](search-get-started-python.md)
 > * [Postman](search-fiddler.md)
 >*
 
@@ -36,11 +37,11 @@ ms.locfileid: "59269050"
 
 В этом кратком руководстве используются приведенные ниже службы, инструменты и данные. 
 
-[Создайте службу "Поиск Azure"](search-create-service-portal.md) или [найдите имеющуюся службу](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) в рамках текущей подписки. Вы можете использовать бесплатную службу для выполнения инструкций, описанных в этом кратком руководстве.
++ [Создайте службу "Поиск Azure"](search-create-service-portal.md) или [найдите имеющуюся службу](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) в рамках текущей подписки. Вы можете использовать бесплатную службу для выполнения инструкций, описанных в этом кратком руководстве.
 
-[Visual Studio 2017](https://visualstudio.microsoft.com/downloads/) (любой выпуск). Пример кода и инструкции были протестированы с помощью бесплатного выпуска Community Edition.
++ [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/) (любой выпуск). Пример кода и инструкции были протестированы с помощью бесплатного выпуска Community Edition.
 
-[DotNetHowTo](https://github.com/Azure-Samples/search-dotnet-getting-started/tree/master/DotNetHowTo) предоставляет пример решения, консольное приложение .NET Core на C#, которое находится в репозитории GitHub с примерами Azure. Скачайте и извлеките решение. По умолчанию решения доступны только для чтения. Щелкните решение правой кнопкой мыши и снимите атрибут только для чтения таким образом, чтобы файлы можно было изменить. Данные включены в решение.
++ [DotNetHowTo](https://github.com/Azure-Samples/search-dotnet-getting-started/tree/master/DotNetHowTo) предоставляет пример решения, консольное приложение .NET Core на C#, которое находится в репозитории GitHub с примерами Azure. Скачайте и извлеките решение. По умолчанию решения доступны только для чтения. Щелкните решение правой кнопкой мыши и снимите атрибут только для чтения таким образом, чтобы файлы можно было изменить. Данные включены в решение.
 
 ## <a name="get-a-key-and-url"></a>Получение ключа и URL-адреса
 

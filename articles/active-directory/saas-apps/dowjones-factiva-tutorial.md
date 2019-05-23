@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Dow Jones Factiva | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Dow Jones Factiva | Документация Майкрософт
 description: Сведения о настройке единого входа между Azure Active Directory и Dow Jones Factiva.
 services: active-directory
 documentationCenter: na
@@ -16,11 +16,11 @@ ms.date: 01/31/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b0fbc4dd9ea596f32c0cd38ba04ccba5619207fe
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57884461"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65813262"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-dow-jones-factiva"></a>Руководство по Интеграция Azure Active Directory с Dow Jones Factiva
 
@@ -141,7 +141,7 @@ ms.locfileid: "57884461"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

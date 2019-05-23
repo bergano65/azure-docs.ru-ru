@@ -16,13 +16,13 @@ ms.date: 12/18/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 21e71e38cd8e2a6d627676cddd400f625452e449
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57886364"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65900684"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-box"></a>Руководство. Интеграция Azure Active Directory с Box
+# <a name="tutorial-azure-active-directory-integration-with-box"></a>Руководство по Интеграция Azure Active Directory с Box
 
 В этом руководстве описано, как интегрировать Box с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Box обеспечивает перечисленные ниже преимущества.
@@ -143,7 +143,7 @@ ms.locfileid: "57886364"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

@@ -3,20 +3,20 @@ title: Краткое руководство. Поиск новостей с п�
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве описано, как искать новости с помощью пакета SDK Поиска новостей Bing для Java и обрабатывать ответы.
 services: cognitive-services
-author: mikedodaro
+author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-news-search
 ms.topic: quickstart
 ms.date: 01/10/2019
-ms.author: v-gedod
+ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: 648e1701154c725a0645bd520045238030a71ea9
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: b128f43637649f4faf104a81940f2937c2354bc6
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58108701"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65799726"
 ---
 # <a name="quickstart-search-for-news-with-the-bing-news-search-sdk-for-java"></a>Краткое руководство. Поиск новостей с помощью пакета SDK API Bing для поиска новостей для Java
 

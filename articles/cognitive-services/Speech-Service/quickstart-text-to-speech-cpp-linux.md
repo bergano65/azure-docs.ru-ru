@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 05/02/2019
 ms.author: yinhew
-ms.openlocfilehash: b5db21d40f1e270fb6771ba47af28a9e90228ea4
-ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
+ms.openlocfilehash: b5b768e52a40652840e9e3d3069df8a9c895f77b
+ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65465592"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66001619"
 ---
 # <a name="quickstart-synthesize-speech-in-c-on-linux-by-using-the-speech-sdk"></a>Краткое руководство. Синтезирование речи в приложении C++ для Linux с помощью пакета SDK для служб "Речь"
 
@@ -31,7 +31,7 @@ ms.locfileid: "65465592"
 
 [!INCLUDE [License Notice](../../../includes/cognitive-services-speech-service-license-notice.md)]
 
-Текущая версия пакета SDK для распознавания речи для Cognitive Services — `1.5.0`.
+Текущая версия пакета SDK для распознавания речи для Cognitive Services — `1.5.1`.
 
 Пакет SDK для службы "Речь" может использоваться для создания как 64-разрядных, так и 32-разрядных приложений. Необходимые библиотеки и файлы заголовков можно скачать в виде TAR-файла по ссылке: https://aka.ms/csspeech/linuxbinary.
 

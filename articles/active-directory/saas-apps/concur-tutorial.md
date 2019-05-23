@@ -16,13 +16,13 @@ ms.date: 12/11/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: f66b00d60a93db20ac2092db385e9794e150ce89
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57840517"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65900376"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-concur"></a>Руководство. Интеграция Azure Active Directory с Concur
+# <a name="tutorial-azure-active-directory-integration-with-concur"></a>Руководство по Интеграция Azure Active Directory с Concur
 
 Цель данного руководства — показать, как интегрировать Concur с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Concur обеспечивает следующие преимущества:
@@ -152,7 +152,7 @@ ms.locfileid: "57840517"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

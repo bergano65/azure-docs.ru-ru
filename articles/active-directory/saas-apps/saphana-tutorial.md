@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с SAP HANA | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с SAP HANA | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в SAP HANA.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.date: 12/27/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: f8def13360bba2f82d5adf315503dc7d655f490d
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57899833"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "65867936"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-sap-hana"></a>Руководство. Интеграция Azure Active Directory с SAP HANA
+# <a name="tutorial-azure-active-directory-integration-with-sap-hana"></a>Руководство по Интеграция Azure Active Directory с SAP HANA
 
 В этом руководстве описано, как интегрировать SAP HANA с Azure Active Directory (Azure AD).
 Интеграция SAP HANA с Azure AD обеспечивает следующие преимущества:
@@ -125,15 +125,15 @@ ms.locfileid: "57899833"
 
 5. Приложение SAP HANA ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно в разделе **Атрибуты пользователя** на странице интеграции приложения. На странице **Настройка единого входа с помощью SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
 
-    ![изображение](common/edit-attribute.png)
+    ![image](common/edit-attribute.png)
 
 6. В разделе **Атрибуты пользователя** в диалоговом окне **User Attributes & Claims** (Атрибуты пользователя и утверждения) выполните следующие действия.
  
     a. Щелкните **значок редактирования**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![изображение](./media/saphana-tutorial/tutorial_usermail.png)
+    ![image](./media/saphana-tutorial/tutorial_usermail.png)
 
-    ![изображение](./media/saphana-tutorial/tutorial_usermailedit.png)
+    ![image](./media/saphana-tutorial/tutorial_usermailedit.png)
 
     b. Из списка **Преобразование** выберите **ExtractMailPrefix()**.
 

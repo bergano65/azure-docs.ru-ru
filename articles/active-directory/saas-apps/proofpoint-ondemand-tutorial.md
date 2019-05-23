@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Proofpoint on Demand | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Proofpoint on Demand | Документация Майкрософт
 description: Сведения о настройке единого входа Azure Active Directory в Proofpoint on Demand.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.date: 12/31/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 28fa9c955543720f3bfab88b30b26674aee5b1d9
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57903884"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "65868630"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-proofpoint-on-demand"></a>Руководство. Интеграция Azure Active Directory с Proofpoint on Demand
+# <a name="tutorial-azure-active-directory-integration-with-proofpoint-on-demand"></a>Руководство по Интеграция Azure Active Directory с Proofpoint on Demand
 
 В этом руководстве описано, как интегрировать Proofpoint on Demand с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Proofpoint on Demand обеспечивает следующие преимущества:

@@ -16,13 +16,13 @@ ms.date: 01/24/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e5330d398a75105b78cb2caa0373b78fa2e32a99
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57878063"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "65863158"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-compliance-elf"></a>Руководство. Интеграция Azure Active Directory с Compliance ELF
+# <a name="tutorial-azure-active-directory-integration-with-compliance-elf"></a>Руководство по Интеграция Azure Active Directory с Compliance ELF
 
 Из этого руководства вы узнаете, как интегрировать Compliance ELF с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Compliance ELF обеспечивает следующие преимущества:
@@ -109,7 +109,7 @@ ms.locfileid: "57878063"
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
-    ![изображение](common/both-preintegrated-signon.png)
+    ![image](common/both-preintegrated-signon.png)
 
     В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://<subdomain>.complianceelf.com`.
 

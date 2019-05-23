@@ -16,13 +16,13 @@ ms.date: 01/30/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ce35c2ed61e2c55383de8b7ee491526796438418
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57837656"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "65862999"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-digicert"></a>Руководство. Интеграция Azure Active Directory с DigiCert
+# <a name="tutorial-azure-active-directory-integration-with-digicert"></a>Руководство по Интеграция Azure Active Directory с DigiCert
 
 В этом учебнике описано, как интегрировать DigiCert с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением DigiCert обеспечивает следующие преимущества.
@@ -109,7 +109,7 @@ ms.locfileid: "57837656"
 
 5. Для приложения DigiCert требуется утверждение SAML в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно в разделе **Атрибуты пользователя** на странице интеграции приложения. На странице **Настройка единого входа с помощью SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
 
-    ![изображение](common/edit-attribute.png)
+    ![image](common/edit-attribute.png)
 
 6. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** измените утверждения, щелкнув значок **Изменить**, или добавьте утверждение, нажав кнопку **Добавить новое утверждение**, чтобы настроить атрибут токена SAML, как показано на рисунке выше, и выполните следующие действия. 
 
@@ -124,9 +124,9 @@ ms.locfileid: "57837656"
 
     a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![изображение](common/new-save-attribute.png)
+    ![image](common/new-save-attribute.png)
 
-    ![изображение](common/new-attribute-details.png)
+    ![image](common/new-attribute-details.png)
 
     b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 

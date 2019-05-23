@@ -15,12 +15,12 @@ ms.topic: quickstart
 ms.date: 03/28/2019
 ms.author: astay;cephalin;kraigb
 ms.custom: seodec18
-ms.openlocfilehash: 402c85e7902c8c2f612ad6c777d8f6773a4d0ca3
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.openlocfilehash: 412efac3742acf7ad1cdc3d08f9d90c4d39bad3e
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59549557"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65956113"
 ---
 # <a name="configure-a-linux-ruby-app-for-azure-app-service"></a>Настройка приложения Ruby в Linux для Службы приложений Azure
 
@@ -65,7 +65,7 @@ az webapp config set --resource-group <resource-group-name> --name <app-name> --
 
 ## <a name="access-environment-variables"></a>Доступ к переменным среды
 
-В Службе приложений можно [задать параметры приложения](../web-sites-configure.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#app-settings) вне кода приложения. Затем вы сможете обращаться к ним, используя стандартный шаблон [ENV['<path-name>']](https://ruby-doc.org/core-2.3.3/ENV.html). Например, для доступа к параметру приложения с именем `WEBSITE_SITE_NAME` используйте следующий код:
+В Службе приложений можно [задать параметры приложения](../configure-common.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#configure-app-settings) вне кода приложения. Затем вы сможете обращаться к ним, используя стандартный шаблон [ENV['<path-name>']](https://ruby-doc.org/core-2.3.3/ENV.html). Например, для доступа к параметру приложения с именем `WEBSITE_SITE_NAME` используйте следующий код:
 
 ```ruby
 ENV['WEBSITE_SITE_NAME']
@@ -82,7 +82,7 @@ ENV['WEBSITE_SITE_NAME']
 
 ### <a name="use---without-flag"></a>Использование флага --without
 
-Чтобы выполнить `bundle install` с флагом [--without](https://bundler.io/man/bundle-install.1.html), сохраните в [параметр приложения](../web-sites-configure.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json) `BUNDLE_WITHOUT` список групп с разделителями запятыми. Например, приведенная ниже команда позволяет присвоить ему значение `development,test`.
+Чтобы выполнить `bundle install` с флагом [--without](https://bundler.io/man/bundle-install.1.html), сохраните в [параметр приложения](../configure-common.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#configure-app-settings) `BUNDLE_WITHOUT` список групп с разделителями запятыми. Например, приведенная ниже команда позволяет присвоить ему значение `development,test`.
 
 ```azurecli-interactive
 az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings BUNDLE_WITHOUT="development,test"
@@ -92,7 +92,7 @@ az webapp config appsettings set --name <app-name> --resource-group <resource-gr
 
 ### <a name="precompile-assets"></a>Предварительная компиляция ресурсов
 
-По умолчанию предварительная компиляция ресурсов не входит в список действий после развертывания. Чтобы включить предварительную компиляцию активов, присвойте [параметру приложения](../web-sites-configure.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json) `ASSETS_PRECOMPILE` значение `true`. Теперь команда `bundle exec rake --trace assets:precompile` будет выполняться последней в списке действий после развертывания. Например: 
+По умолчанию предварительная компиляция ресурсов не входит в список действий после развертывания. Чтобы включить предварительную компиляцию активов, присвойте [параметру приложения](../configure-common.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#configure-app-settings) `ASSETS_PRECOMPILE` значение `true`. Теперь команда `bundle exec rake --trace assets:precompile` будет выполняться последней в списке действий после развертывания. Например: 
 
 ```azurecli-interactive
 az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings ASSETS_PRECOMPILE=true
@@ -121,7 +121,7 @@ az webapp config appsettings set --name <app-name> --resource-group <resource-gr
 Сервер Rails в контейнере Ruby по умолчанию работает в режиме производственной среды и [ожидает, что все ресурсы заранее скомпилированы и предоставляются веб-сервером](https://guides.rubyonrails.org/asset_pipeline.html#in-production). Чтобы предоставлять статические ресурсы из сервера Rails, следует обеспечить следующее:
 
 - **Предварительная компиляция ресурсов** - [предварительно скомпилируйте статические ресурсы локально](https://guides.rubyonrails.org/asset_pipeline.html#local-precompilation) и вручную разверните их. Также вы можете поручить этот процесс механизму развертывания (подробнее см. статью [о предварительной компиляции ресурсов](#precompile-assets)).
-- **Настройка предоставления статических файлов** — чтобы предоставлять статические ресурсы из контейнера Ruby, `RAILS_SERVE_STATIC_FILES` [присвойте параметру приложения `RAILS_SERVE_STATIC_FILES`](../web-sites-configure.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json) значение `true`. Например: 
+- **Настройка предоставления статических файлов** — чтобы предоставлять статические ресурсы из контейнера Ruby, `RAILS_SERVE_STATIC_FILES` [присвойте параметру приложения `RAILS_SERVE_STATIC_FILES`](../configure-common.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#configure-app-settings) значение `true`. Например: 
 
     ```azurecli-interactive
     az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings RAILS_SERVE_STATIC_FILES=true
@@ -129,13 +129,13 @@ az webapp config appsettings set --name <app-name> --resource-group <resource-gr
 
 ### <a name="run-in-non-production-mode"></a>Выполнение в режиме непроизводственной среды
 
-По умолчанию сервер Rails выполняется в режиме производственной среды. Чтобы переключить его, например, в режим разработки, задайте [параметру приложения](../web-sites-configure.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json) `RAILS_ENV` значение `development`.
+По умолчанию сервер Rails выполняется в режиме производственной среды. Чтобы переключить его, например, в режим разработки, задайте [параметру приложения](../configure-common.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#configure-app-settings) `RAILS_ENV` значение `development`.
 
 ```azurecli-interactive
 az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings RAILS_ENV="development"
 ```
 
-Но этот параметр сам по себе только запускает сервер Rails в режиме разработки. То есть он будет обрабатывать запросы только от localhost и не будет доступен вне контейнера. Чтобы принимать запросы от удаленных клиентов, задайте [параметру приложения](../web-sites-configure.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json) `APP_COMMAND_LINE` значение `rails server -b 0.0.0.0`. Этот параметр приложения позволяет выполнить в контейнере Ruby пользовательскую команду. Например: 
+Но этот параметр сам по себе только запускает сервер Rails в режиме разработки. То есть он будет обрабатывать запросы только от localhost и не будет доступен вне контейнера. Чтобы принимать запросы от удаленных клиентов, задайте [параметру приложения](../configure-common.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#configure-app-settings) `APP_COMMAND_LINE` значение `rails server -b 0.0.0.0`. Этот параметр приложения позволяет выполнить в контейнере Ruby пользовательскую команду. Например: 
 
 ```azurecli-interactive
 az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings APP_COMMAND_LINE="rails server -b 0.0.0.0"
@@ -143,7 +143,7 @@ az webapp config appsettings set --name <app-name> --resource-group <resource-gr
 
 ### <a name="set-secretkeybase-manually"></a>Настройка secret_key_base вручную
 
-Чтобы использовать собственное значение `secret_key_base` вместо автоматически созданного службой приложений, присвойте желаемое значение [параметру приложения](../web-sites-configure.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json) `SECRET_KEY_BASE`. Например: 
+Чтобы использовать собственное значение `secret_key_base` вместо автоматически созданного службой приложений, присвойте желаемое значение [параметру приложения](../configure-common.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#configure-app-settings) `SECRET_KEY_BASE`. Например: 
 
 ```azurecli-interactive
 az webapp config appsettings set --name <app-name> --resource-group <resource-group-name> --settings SECRET_KEY_BASE="<key-base-value>"
@@ -160,7 +160,7 @@ az webapp config appsettings set --name <app-name> --resource-group <resource-gr
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [Руководство Приложение Ruby с PostgreSQL](tutorial-ruby-postgres-app.md)
+> [Руководство. Приложение Ruby с PostgreSQL](tutorial-ruby-postgres-app.md)
 
 > [!div class="nextstepaction"]
 > [Служба приложений под управлением Linux: вопросы и ответы](app-service-linux-faq.md)

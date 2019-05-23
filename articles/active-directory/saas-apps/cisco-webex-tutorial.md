@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Cisco Webex Meetings | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Cisco Webex Meetings | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Cisco Webex Meetings.
 services: active-directory
 documentationCenter: na
@@ -16,11 +16,11 @@ ms.date: 03/01/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 308f745489fba2e2b539a2f2615b65228565dcf9
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57850015"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65900086"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-cisco-webex-meetings"></a>Руководство по Интеграция Azure Active Directory с Cisco Webex Meetings
 
@@ -124,7 +124,7 @@ ms.locfileid: "57850015"
 
 5. Для приложения Cisco Webex Meetings требуются проверочные утверждения SAML в определенном формате, поэтому следует добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок  **Изменить** , чтобы добавить атрибуты.
 
-    ![изображение](common/edit-attribute.png)
+    ![image](common/edit-attribute.png)
 
 6. Удалите атрибуты по умолчанию из раздела **Утверждения пользователя**. Для приложения Cisco Webex Meetings требуется передать еще несколько атрибутов в ответе SAML. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** выполните следующие действия, чтобы добавить атрибут токена SAML, как показано в приведенной ниже таблице.
     
@@ -137,9 +137,9 @@ ms.locfileid: "57850015"
 
     a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![изображение](./media/cisco-webex-tutorial/tutorial-cisco-webex-addnewclaim.png)
+    ![image](./media/cisco-webex-tutorial/tutorial-cisco-webex-addnewclaim.png)
 
-    ![изображение](common/new-attribute-details.png)
+    ![image](common/new-attribute-details.png)
 
     b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 04/05/2019
 ms.author: jeedes
-ms.openlocfilehash: 77e58ea830de1e8ab7e3643ee5694a5e3f609c53
-ms.sourcegitcommit: b8a8d29fdf199158d96736fbbb0c3773502a092d
+ms.openlocfilehash: dda1447a049071a0871079f2cabd046ed7c479d6
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59564923"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65770148"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-fmsystems"></a>Руководство по Интеграция Azure Active Directory с FM:Systems
 
@@ -107,7 +107,7 @@ ms.locfileid: "59564923"
     В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<companyname>.fmshosted.com/fminteract/ConsumerService2.aspx`.
     
     > [!NOTE]
-    > Это значение приведено для справки. Вместо него нужно указать фактический URL-адрес ответа. Чтобы получить это значение, обратитесь к [группе поддержки клиентов FM:Systems](https://fmsystems.com/ask-us/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Это значение приведено для справки. Вместо него нужно указать фактический URL-адрес ответа. Чтобы получить это значение, обратитесь к [группе поддержки клиентов FM:Systems](https://fmsystems.com/support-services/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
 
@@ -125,7 +125,7 @@ ms.locfileid: "59564923"
 
 ### <a name="configure-fmsystems-single-sign-on"></a>Настройка единого входа в FM:Systems
 
-Чтобы настроить единый вход на стороне **FM:Systems**, нужно отправить скачанный **XML-файл метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, [группе поддержки FM:Systems](https://fmsystems.com/ask-us/). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **FM:Systems**, нужно отправить скачанный **XML-файл метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, [группе поддержки FM:Systems](https://fmsystems.com/support-services/). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 

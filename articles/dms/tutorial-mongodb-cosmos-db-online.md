@@ -10,19 +10,21 @@ ms.service: dms
 ms.workload: data-services
 ms.custom: mvc, tutorial
 ms.topic: article
-ms.date: 05/08/2019
-ms.openlocfilehash: 57b92400f81a3fac8d22c6522cde7eb3406a2e70
-ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
+ms.date: 05/16/2019
+ms.openlocfilehash: d50794557de00a50790cd4cc661cb9859b231214
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65415511"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65794204"
 ---
 # <a name="tutorial-migrate-mongodb-to-azure-cosmos-dbs-api-for-mongodb-online-using-dms"></a>Руководство по Перенос MongoDB в API Azure Cosmos DB для MongoDB по сети с помощью DMS
+
 С помощью Azure Database Migration Service можно переносить базы данных по сети (с минимальным простоем) из локального или облачного экземпляра MongoDB в API Azure Cosmos DB для MongoDB.
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 > [!div class="checklist"]
+>
 > * создание экземпляра Azure Database Migration Service;
 > * создание проекта миграции с помощью Azure Database Migration Service;
 > * выполнение миграции.
@@ -42,54 +44,59 @@ ms.locfileid: "65415511"
 В этой статье описан перенос баз данных по сети из MongoDB в API Azure Cosmos DB для MongoDB. Чтобы узнать, как выполнить миграцию в автономном режиме, см. [руководство по миграции MongoDB в API Azure Cosmos DB для MongoDB в автономном режиме с помощью DMS](tutorial-mongodb-cosmos-db.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
+
 Для работы с этим руководством вам потребуется следующее:
-- [Завершите шаги, которые необходимо выполнить перед миграцией](../cosmos-db/mongodb-pre-migration.md), включая оценку пропускной способности, а также выбор ключа секции и политики индексирования.
-- [Создайте приложение API Azure Cosmos DB для учетной записи MongoDB](https://ms.portal.azure.com/#create/Microsoft.DocumentDB).
-- Создайте виртуальную сеть Azure для Azure Database Migration Service с помощью модели развертывания Azure Resource Manager, которая обеспечивает подключение "сеть — сеть" к локальным исходным серверам с помощью [ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-introduction) или [VPN](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways).
+
+* [Завершите шаги, которые необходимо выполнить перед миграцией](../cosmos-db/mongodb-pre-migration.md), включая оценку пропускной способности, а также выбор ключа секции и политики индексирования.
+* [Создайте приложение API Azure Cosmos DB для учетной записи MongoDB](https://ms.portal.azure.com/#create/Microsoft.DocumentDB).
+* Создайте виртуальную сеть Azure для Azure Database Migration Service с помощью модели развертывания Azure Resource Manager, которая обеспечивает подключение типа "сеть — сеть" к локальным исходным серверам с помощью [ExpressRoute](https://docs.microsoft.com/azure/expressroute/expressroute-introduction) или [VPN](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways).
 
     > [!NOTE]
-    > Если вы используете ExpressRoute с пиринговой связью с сетью корпорации Майкрософт, во время настройки виртуальной сети добавьте в подсеть, в которой будет подготовлена служба, следующие [конечные точки службы](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoints-overview):
-    > - целевую конечную точку базы данных (например, конечная точка SQL, конечная точка Cosmos DB и т. д.);
-    > - конечную точку службы хранилища;
-    > - конечную точку служебной шины.
+    > Если вы используете ExpressRoute с пиринговой связью с сетью корпорации Майкрософт, во время настройки виртуальной сети добавьте в подсеть, в которой будет подготовлена служба, следующие [конечные точки](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoints-overview):
+    >
+    > * целевую конечную точку базы данных (например, конечная точка SQL, конечная точка Cosmos DB и т. д.);
+    > * конечную точку службы хранилища;
+    > * конечную точку служебной шины.
     >
     > Эта настройка необходима, потому что у Azure Database Migration Service нет подключения к Интернету.
 
-- Убедитесь, что правила группы безопасности сети для виртуальной сети не блокируют следующие входящие порты для Azure Database Migration Service: 443, 53, 9354, 445 и 12000. Дополнительные сведения о фильтрации трафика, предназначенного для виртуальной сети Azure, с помощью NSG см. в статье [Фильтрация сетевого трафика с помощью групп безопасности сети](https://docs.microsoft.com/azure/virtual-network/virtual-networks-nsg).
-- Измените правила брандмауэра исходного сервера, чтобы предоставить Azure Database Migration Service доступ к исходному серверу MongoDB. По умолчанию используется TCP-порт 27017.
-- Если перед исходными базами данных развернуто устройство брандмауэра, вам может понадобиться добавить правила брандмауэра, чтобы позволить службе Azure Database Migration Service обращаться к исходным базам данных для выполнения миграции.
+* Убедитесь, что правила группы безопасности сети для виртуальной сети не блокируют следующие входящие порты для Azure Database Migration Service: 443, 53, 9354, 445 и 12000. Дополнительные сведения о фильтрации трафика, предназначенного для виртуальной сети Azure, с помощью NSG см. в статье [Фильтрация сетевого трафика с помощью групп безопасности сети](https://docs.microsoft.com/azure/virtual-network/virtual-networks-nsg).
+* Измените правила брандмауэра исходного сервера, чтобы предоставить Azure Database Migration Service доступ к исходному серверу MongoDB. По умолчанию используется TCP-порт 27017.
+* Если перед исходными базами данных развернуто устройство брандмауэра, вам может понадобиться добавить правила брандмауэра, чтобы позволить службе Azure Database Migration Service обращаться к исходным базам данных для выполнения миграции.
 
 ## <a name="register-the-microsoftdatamigration-resource-provider"></a>Регистрация поставщика ресурсов Microsoft.DataMigration
+
 1. Войдите на портал Azure, щелкните **Все службы** и выберите **Подписки**.
 
    ![Отображение подписок на портале](media/tutorial-mongodb-to-cosmosdb-online/portal-select-subscription1.png)
-       
+
 2. Выберите подписку, в которой нужно создать экземпляр Azure Database Migration Service, а затем щелкните **Поставщики ресурсов**.
  
     ![Отображение поставщиков ресурсов](media/tutorial-mongodb-to-cosmosdb-online/portal-select-resource-provider.png)
-    
-3.  В поле поиска введите migration, а затем справа от **Microsoft.DataMigration** щелкните **Зарегистрировать**.
+
+3. В поле поиска введите migration, а затем справа от **Microsoft.DataMigration** щелкните **Зарегистрировать**.
  
     ![Регистрация поставщика ресурсов](media/tutorial-mongodb-to-cosmosdb-online/portal-register-resource-provider.png)    
 
 ## <a name="create-an-instance"></a>Создание экземпляра
-1.  На портале Azure выберите **+Создать ресурс**, введите в поле поиска "Azure Database Migration Service", а затем в раскрывающемся списке выберите **Azure Database Migration Service**.
+
+1. На портале Azure выберите **+Создать ресурс**, введите в поле поиска "Azure Database Migration Service", а затем в раскрывающемся списке выберите **Azure Database Migration Service**.
 
     ![Azure Marketplace](media/tutorial-mongodb-to-cosmosdb-online/portal-marketplace.png)
 
-2.  На экране **Azure Database Migration Service** выберите **Создать**.
+2. На экране **Azure Database Migration Service** выберите **Создать**.
  
     ![Создание экземпляра Azure Database Migration Service](media/tutorial-mongodb-to-cosmosdb-online/dms-create1.png)
   
-3.  На экране **Создание службы миграции** укажите имя службы, подписку и новую или существующую группу ресурсов.
+3. На экране **Создание службы миграции** укажите имя службы, подписку и новую или существующую группу ресурсов.
 
 4. Выберите расположение, в котором нужно создать экземпляр Azure Database Migration Service. 
 
 5. Выберите существующую виртуальную сеть или создайте новую.
 
-    Виртуальная сеть предоставляет Azure Database Migration Service доступ к исходному экземпляру MongoDB и целевой учетной записи Azure Cosmos DB.
+   Виртуальная сеть предоставляет Azure Database Migration Service доступ к исходному экземпляру MongoDB и целевой учетной записи Azure Cosmos DB.
 
-    Дополнительные сведения о создании виртуальной сети на портале Azure см. в статье [Создание виртуальной сети с помощью портала Azure](https://aka.ms/DMSVnet).
+   Дополнительные сведения о создании виртуальной сети на портале Azure см. в статье [Создание виртуальной сети с помощью портала Azure](https://aka.ms/DMSVnet).
 
 6. Выберите номер SKU ценовой категории "Премиум".
 
@@ -98,9 +105,10 @@ ms.locfileid: "65415511"
 
     ![Настройка параметров экземпляра Database Migration Service](media/tutorial-mongodb-to-cosmosdb-online/dms-settings3.png)
 
-7.  Выберите **Создать**, чтобы создать службу.
+7. Выберите **Создать**, чтобы создать службу.
 
 ## <a name="create-a-migration-project"></a>Создание проекта миграции
+
 После создания службы найдите ее на портале Azure, откройте и создайте проект миграции.
 
 1. На портале Azure щелкните **Все службы**, выполните поиск по запросу "Azure Database Migration Service" и выберите **Azure Database Migration Services** (Службы Azure Database Migration Service).
@@ -119,9 +127,10 @@ ms.locfileid: "65415511"
 
     ![Создание проекта Database Migration Service](media/tutorial-mongodb-to-cosmosdb-online/dms-create-project1.png)
 
-5.  Выберите **Сохранить** и **Создать и выполнить действие**, чтобы создать проект и выполнить действие миграции.
+5. Выберите **Сохранить** и **Создать и выполнить действие**, чтобы создать проект и выполнить действие миграции.
 
 ## <a name="specify-source-details"></a>Указание сведений об источнике
+
 1. На экране **Сведения об источнике** задайте сведения о подключении для исходного сервера MongoDB.
 
     Доступно три режима для подключения к источнику:
@@ -134,6 +143,7 @@ ms.locfileid: "65415511"
      ```
      https://blobnameurl/container?SASKEY
      ```
+
      Кроме того, учитывайте следующие сведения, соответствующие данным о типе дампа в хранилище Azure.
 
      * Для дампов BSON данные в контейнере больших двоичных объектов должны быть в формате bsondump так, чтобы файлы данных помещались в папках с именами содержащих баз данных в формате "коллекция.bson". Файлы метаданных (если таковые имеются) должны быть названы в формате *коллекция*.metadata.json.
@@ -150,6 +160,7 @@ ms.locfileid: "65415511"
    > Адрес исходного сервера должен быть адресом основного сервера, если источником является набор реплик, и маршрутизатором, если источником является сегментированный кластер MongoDB. Если используется сегментированный кластер MongoDB, служба Azure Database Migration Service также должна иметь возможность подключения к отдельным сегментам в кластере. Для этого, возможно, потребуется открыть брандмауэр на нескольких компьютерах.          
 
 ## <a name="specify-target-details"></a>Указание сведений о цели
+
 1. На экране **Migration target details** (Сведения о целевом объекте переноса) укажите сведения о подключении для целевой учетной записи Azure Cosmos DB. Это предварительно подготовленная учетная запись API Azure Cosmos DB для MongoDB, в которую нужно перенести данные MongoDB.
 
     ![Указание сведений о цели](media/tutorial-mongodb-to-cosmosdb-online/dms-specify-target1.png)
@@ -157,27 +168,28 @@ ms.locfileid: "65415511"
 2. Щелкните **Сохранить**.
 
 ## <a name="map-to-target-databases"></a>Сопоставление с целевыми базами данных
+
 1. На экране **Map to target databases** (Сопоставить с целевыми базами данных) сопоставьте исходную и целевую базы данных для миграции.
 
-    Если в целевой базе данных содержится такое же имя базы данных, что и в исходной базе данных, Azure Database Migration Service выберет целевую базу данных по умолчанию.
+   Если в целевой базе данных содержится такое же имя базы данных, что и в исходной базе данных, Azure Database Migration Service выберет целевую базу данных по умолчанию.
 
-    Если строка **Создать** отображается рядом с именем базы данных, это значит, что Azure Database Migration Service не удалось найти целевую базу данных, и служба автоматически создаст ее.
+   Если строка **Создать** отображается рядом с именем базы данных, это значит, что Azure Database Migration Service не удалось найти целевую базу данных, и служба автоматически создаст ее.
 
-    На этом этапе переноса укажите пропускную способность в ЕЗ, если для базы данных необходимо использовать общую пропускную способность. В Cosmos DB пропускную способность можно подготовить на уровне базы данных или индивидуально для каждой коллекции. Пропускная способность измеряется в [единицах запроса](https://docs.microsoft.com/azure/cosmos-db/request-units) (ЕЗ). Дополнительные сведения о ценах Azure Cosmos DB см. [здесь](https://azure.microsoft.com/pricing/details/cosmos-db/).
+   На этом этапе переноса укажите пропускную способность в ЕЗ, если для базы данных необходимо использовать общую пропускную способность. В Cosmos DB пропускную способность можно подготовить на уровне базы данных или индивидуально для каждой коллекции. Пропускная способность измеряется в [единицах запроса](https://docs.microsoft.com/azure/cosmos-db/request-units) (ЕЗ). Дополнительные сведения о ценах Azure Cosmos DB см. [здесь](https://azure.microsoft.com/pricing/details/cosmos-db/).
 
-    ![Сопоставление с целевыми базами данных](media/tutorial-mongodb-to-cosmosdb-online/dms-map-target-databases1.png)
+   ![Сопоставление с целевыми базами данных](media/tutorial-mongodb-to-cosmosdb-online/dms-map-target-databases1.png)
 
 2. Щелкните **Сохранить**.
 
 3. На экране **Параметр коллекции** разверните список коллекций и просмотрите коллекции, которые будут перенесены.
 
-    Обратите внимание, что Azure Database Migration Service автоматически выбирает все коллекции, которые существуют в экземпляре источника MongoDB и не существуют в целевой учетной записи Azure Cosmos DB. Чтобы повторно перенести коллекции, уже содержащие данные, необходимо явным образом выбрать их на этом экране.
+   Обратите внимание, что Azure Database Migration Service автоматически выбирает все коллекции, которые существуют в экземпляре источника MongoDB и не существуют в целевой учетной записи Azure Cosmos DB. Чтобы повторно перенести коллекции, уже содержащие данные, необходимо явным образом выбрать их на этом экране.
 
-    Вы можете указать количество ЕЗ, которое необходимо использовать коллекциям. Обычно достаточно использовать значение в диапазоне от 500 (не менее 1000 для сегментированных коллекций) до 4000. Azure Database Migration Service предлагает интеллектуальные значения по умолчанию на основании размера коллекции.
+   Вы можете указать количество ЕЗ, которое необходимо использовать коллекциям. Обычно достаточно использовать значение в диапазоне от 500 (не менее 1000 для сегментированных коллекций) до 4000. Azure Database Migration Service предлагает интеллектуальные значения по умолчанию на основании размера коллекции.
 
-    Вы можете также указать ключ сегмента, чтобы воспользоваться преимуществами [секционирования в Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/partitioning-overview) для обеспечения наилучшей масштабируемости. Обязательно просмотрите [рекомендации по выбору ключа сегмента и секции](https://docs.microsoft.com/azure/cosmos-db/partitioning-overview#choose-partitionkey). Если у вас нет ключа секции, в качестве ключа сегмента вы всегда можете использовать **_id**, чтобы улучшить пропускную способность.
+   Вы можете также указать ключ сегмента, чтобы воспользоваться преимуществами [секционирования в Azure Cosmos DB](https://docs.microsoft.com/azure/cosmos-db/partitioning-overview) для обеспечения наилучшей масштабируемости. Обязательно просмотрите [рекомендации по выбору ключа сегмента и секции](https://docs.microsoft.com/azure/cosmos-db/partitioning-overview#choose-partitionkey). Если у вас нет ключа секции, в качестве ключа сегмента вы всегда можете использовать **_id**, чтобы улучшить пропускную способность.
 
-    ![Выбор таблиц коллекций](media/tutorial-mongodb-to-cosmosdb-online/dms-collection-setting1.png)
+   ![Выбор таблиц коллекций](media/tutorial-mongodb-to-cosmosdb-online/dms-collection-setting1.png)
 
 4. Щелкните **Сохранить**.
 
@@ -186,14 +198,16 @@ ms.locfileid: "65415511"
     ![Сводка по миграции](media/tutorial-mongodb-to-cosmosdb-online/dms-migration-summary1.png)
 
 ## <a name="run-the-migration"></a>Выполнение миграции
-- Выберите **Запустить миграцию**.
+
+* Выберите **Запустить миграцию**.
 
    Появится окно действия миграции, в котором будет указано **состояние** действия.
 
    ![Состояние действия](media/tutorial-mongodb-to-cosmosdb-online/dms-activity-status1.png)
 
 ## <a name="monitor-the-migration"></a>Мониторинг миграции
-- На экране действия миграции нажимайте **Обновить**, чтобы периодически обновлять содержимое экрана, пока в поле **Состояние** не будет указано значение **Идет повторное воспроизведение**.
+
+* На экране действия миграции нажимайте **Обновить**, чтобы периодически обновлять содержимое экрана, пока в поле **Состояние** не будет указано значение **Идет повторное воспроизведение**.
 
    > [!NOTE]
    > Вы можете выбрать действие, чтобы получить сведения о метриках миграции на уровне базы данных и на уровне коллекции.
@@ -221,7 +235,8 @@ ms.locfileid: "65415511"
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
- * [Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/)
+* [Azure Cosmos DB](https://azure.microsoft.com/services/cosmos-db/)
 
 ## <a name="next-steps"></a>Дополнительная информация
-- Просмотрите другие сценарии в [руководстве по миграции базы данных Майкрософт](https://datamigration.microsoft.com/).
+
+* Просмотрите другие сценарии в [руководстве по миграции базы данных Майкрософт](https://datamigration.microsoft.com/).

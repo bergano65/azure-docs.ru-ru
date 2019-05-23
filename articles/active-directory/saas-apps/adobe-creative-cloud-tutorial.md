@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Adobe Creative Cloud | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Adobe Creative Cloud | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Adobe Creative Cloud.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.date: 02/15/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 35bd52904ab081e41cb43a346288234c18a7f43b
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57904054"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65899091"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-adobe-creative-cloud"></a>Руководство. Интеграция Azure Active Directory с Adobe Creative Cloud
+# <a name="tutorial-azure-active-directory-integration-with-adobe-creative-cloud"></a>Руководство по Интеграция Azure Active Directory с Adobe Creative Cloud
 
 В этом учебнике описано, как интегрировать приложение Adobe Creative Cloud с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Adobe Creative Cloud обеспечивает следующие преимущества:
@@ -114,7 +114,7 @@ ms.locfileid: "57904054"
 
 5. Adobe Creative Cloud ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно в разделе **Атрибуты пользователя** на странице интеграции приложения. На странице **Настройка единого входа с помощью SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
 
-    ![изображение](common/edit-attribute.png)
+    ![image](common/edit-attribute.png)
 
 6. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** настройте атрибут токена SAML, как показано на рисунке выше, и выполните следующие действия.
 
@@ -126,9 +126,9 @@ ms.locfileid: "57904054"
 
     a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![изображение](common/new-save-attribute.png)
+    ![image](common/new-save-attribute.png)
 
-    ![изображение](common/new-attribute-details.png)
+    ![image](common/new-attribute-details.png)
 
     b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
@@ -205,7 +205,7 @@ ms.locfileid: "57904054"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

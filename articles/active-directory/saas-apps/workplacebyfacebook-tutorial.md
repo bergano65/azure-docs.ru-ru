@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Workplace by Facebook | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Workplace by Facebook | Документация Майкрософт
 description: Сведения о настройке единого входа между Azure Active Directory и Workplace by Facebook.
 services: active-directory
 documentationCenter: na
@@ -16,11 +16,11 @@ ms.date: 02/12/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 27173c8beeecf2be43e80f59df8907952734c06b
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57900885"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65905221"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-workplace-by-facebook"></a>Руководство по Интеграция Azure Active Directory с Workplace by Facebook
 

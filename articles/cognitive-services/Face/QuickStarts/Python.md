@@ -10,12 +10,12 @@ ms.subservice: face-api
 ms.topic: quickstart
 ms.date: 03/27/2019
 ms.author: pafarley
-ms.openlocfilehash: b8ca320b802ea81604aab08ee3aeb39df5781afd
-ms.sourcegitcommit: 956749f17569a55bcafba95aef9abcbb345eb929
+ms.openlocfilehash: 3df6c34420369effe11ae5a7ec58eba595ffa471
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58630022"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65957006"
 ---
 # <a name="quickstart-detect-faces-in-an-image-using-the-face-rest-api-and-python"></a>Краткое руководство. Обнаружение лиц на изображении с помощью REST API распознавания лиц и Python
 
@@ -51,6 +51,7 @@ ms.locfileid: "58630022"
 
 ```python
 import requests
+import json
 
 subscription_key = None
 assert subscription_key

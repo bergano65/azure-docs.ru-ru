@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Figma | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Figma | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Figma.
 services: active-directory
 documentationCenter: na
@@ -16,11 +16,11 @@ ms.topic: tutorial
 ms.date: 03/13/2019
 ms.author: jeedes
 ms.openlocfilehash: d58da4781a7c5c93d897e0efd7cf3d5aee612d78
-ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58225691"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "65861905"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-figma"></a>Руководство по Интеграция Azure Active Directory с Figma
 
@@ -124,7 +124,7 @@ ms.locfileid: "58225691"
 
 6. Приложение Figma ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок **Изменить**,чтобы открыть диалоговое окно  **Атрибуты пользователя** .
 
-    ![изображение](common/edit-attribute.png)
+    ![image](common/edit-attribute.png)
 
 7. В дополнение к описанному выше приложение Figma ожидает несколько дополнительных атрибутов в ответе SAML. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** выполните следующие действия, чтобы добавить атрибут токена SAML, как показано в приведенной ниже таблице.
 
@@ -140,9 +140,9 @@ ms.locfileid: "58225691"
 
     a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![изображение](common/new-save-attribute.png)
+    ![image](common/new-save-attribute.png)
 
-    ![изображение](common/new-attribute-details.png)
+    ![image](common/new-attribute-details.png)
 
     b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 

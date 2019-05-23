@@ -3,20 +3,20 @@ title: Руководство. Создание одностраничного �
 titlesuffix: Azure Cognitive Services
 description: Из этого руководства вы узнаете, как создать одностраничное веб-приложение, которое может отправлять поисковые запросы к API Bing для поиска новостей и отображать результаты на веб-странице.
 services: cognitive-services
-author: mikedodaro
+author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-news-search
 ms.topic: tutorial
 ms.date: 01/10/2019
-ms.author: v-gedod
+ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: 29539ba39e724208093910f8fb6fa2d3bc309bda
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: 78a985180fb2b665aed75b39acfc4d39ccd04132
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55885044"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65798563"
 ---
 # <a name="tutorial-create-a-single-page-web-app"></a>Руководство. Создание одностраничного веб-приложения
 

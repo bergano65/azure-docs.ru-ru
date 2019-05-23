@@ -16,13 +16,13 @@ ms.date: 01/04/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: eba63f8295fb5bebffdc8480f763c852521e331b
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57880914"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "65859209"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-adp"></a>Руководство. Интеграция Azure Active Directory с ADP
+# <a name="tutorial-azure-active-directory-integration-with-adp"></a>Руководство по Интеграция Azure Active Directory с ADP
 
 В этом руководстве описано, как интегрировать ADP с Azure Active Directory (Azure AD).
 Интеграция ADP с Azure AD обеспечивает следующие преимущества:
@@ -123,7 +123,7 @@ ms.locfileid: "57880914"
 
     Сопоставление пользователя выполняется из Azure Active Directory в ADP по значению **employeeid**, однако его можно сопоставить и с другим значением в соответствии с параметрами приложения. Обратитесь к [группе поддержки ADP](https://www.adp.com/contact-us/overview.aspx), чтобы указать правильный идентификатор пользователя и сопоставить это значение с утверждением **PersonImmutableID**.
 
-    ![изображение](common/edit-attribute.png)
+    ![image](common/edit-attribute.png)
 
 7. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** измените утверждения, щелкнув значок **Изменить**, или добавьте утверждение, нажав кнопку **Добавить новое утверждение**, чтобы настроить атрибут токена SAML, как показано на рисунке выше, и выполните следующие действия.
     
@@ -133,9 +133,9 @@ ms.locfileid: "57880914"
 
     a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![изображение](common/new-save-attribute.png)
+    ![image](common/new-save-attribute.png)
 
-    ![изображение](common/new-attribute-details.png)
+    ![image](common/new-attribute-details.png)
 
     b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 

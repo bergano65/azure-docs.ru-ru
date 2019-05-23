@@ -16,13 +16,13 @@ ms.date: 01/22/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 81351fc13ddf36d8aeb4fa5cecab10daf152406f
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57875929"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "65870931"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-cloud-management-portal-for-microsoft-azure"></a>Руководство. Интеграция Azure Active Directory с порталом управления облачными службами для Microsoft Azure
+# <a name="tutorial-azure-active-directory-integration-with-cloud-management-portal-for-microsoft-azure"></a>Руководство по Интеграция Azure Active Directory с порталом управления облачными службами для Microsoft Azure
 
 В этом учебнике описано, как интегрировать портал управления облачными службами для Microsoft Azure с Azure Active Directory (Azure AD).
 Интеграция портала управления облачными службами для Microsoft Azure с Azure AD обеспечивает следующие преимущества.
@@ -166,7 +166,7 @@ ms.locfileid: "57875929"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

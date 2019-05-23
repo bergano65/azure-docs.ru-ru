@@ -11,16 +11,14 @@ ms.subservice: language-understanding
 ms.topic: quickstart
 ms.date: 01/17/2019
 ms.author: diberry
-ms.openlocfilehash: 38a95593d01fdac091504a6decf30b3dd55f9327
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: 161056aa2cfe43375d5e555197b57f85685ca219
+ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55865154"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65594101"
 ---
 # <a name="quickstart-get-intent-using-nodejs"></a>Краткое руководство. Получение намерения с помощью Node.js
-
-Из этой статьи вы узнаете, как передать фразы в конечную точку LUIS и получить намерение и сущности.
 
 [!INCLUDE [Quickstart introduction for endpoint](../../../includes/cognitive-services-luis-qs-endpoint-intro-para.md)]
 

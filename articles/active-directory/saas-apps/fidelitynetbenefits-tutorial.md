@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Fidelity NetBenefits | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Fidelity NetBenefits | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении Fidelity NetBenefits.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.date: 02/12/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b2b35deab4c4fb20c58e135c0de01a0aa05b1c33
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57904615"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "65862667"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-fidelity-netbenefits"></a>Руководство. Интеграция Azure Active Directory с Fidelity NetBenefits
+# <a name="tutorial-azure-active-directory-integration-with-fidelity-netbenefits"></a>Руководство по Интеграция Azure Active Directory с Fidelity NetBenefits
 
 В этом руководстве описано, как интегрировать Fidelity NetBenefits с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Fidelity NetBenefits обеспечивает следующие преимущества.
@@ -117,7 +117,7 @@ ms.locfileid: "57904615"
 
 5. Приложение NetBenefits ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию, когда **nameidentifier** сопоставляется с **user.userprincipalname**. Приложение Fidelity NetBenefits ожидает сопоставления **nameidentifier**с **employeeid** или любым другим утверждением, применимым к организации в качестве **nameidentifier**, поэтому необходимо изменить сопоставление атрибутов, щелкнув значок **Изменить** и изменив сопоставление атрибутов.
 
-    ![изображение](common/edit-attribute.png)
+    ![image](common/edit-attribute.png)
 
     >[!Note]
     >Fidelity NetBenefits поддерживает статическую и динамическую федерацию. Статическая федерация означает, что не будет использоваться JIT-подготовка пользователей на основе SAML, а динамическая федерация означает, что такая JIT-подготовка пользователей поддерживается. Для использования JIT-подготовки клиентам нужно добавить несколько дополнительных утверждений в Azure AD, таких как дата рождения пользователя и т. д. Эти сведения предоставляются назначенным **менеджером по обслуживанию клиентов Fidelity** и должны включать динамическую федерацию для вашего экземпляра.
@@ -158,7 +158,7 @@ ms.locfileid: "57904615"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

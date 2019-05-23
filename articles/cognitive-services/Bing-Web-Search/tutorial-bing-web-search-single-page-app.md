@@ -8,16 +8,16 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-web-search
 ms.topic: tutorial
-ms.date: 09/12/2018
+ms.date: 05/15/2019
 ms.author: aahi
-ms.openlocfilehash: 6c28b02d68239bac658954caf447b6ff738c1b65
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: 668c380f38f410083ffe7d2cd6690be447f614dc
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55881254"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65798336"
 ---
-# <a name="tutorial-create-a-single-page-app-using-the-bing-web-search-api"></a>Руководство. Создание одностраничного веб-приложения с помощью API Bing для поиска в Интернете
+# <a name="tutorial-create-a-single-page-app-using-the-bing-web-search-api"></a>Руководство по Создание одностраничного веб-приложения с помощью API Bing для поиска в Интернете
 
 Это одностраничное приложение показывает, как можно извлекать, анализировать и отображать актуальные результаты поиска из API Bing для поиска в Интернете. fВ этом руководстве используется стандартный HTML и CSS и оно ориентировано на код JavaScript. HTML, CSS и JS-файлы доступны на [GitHub](https://github.com/Azure-Samples/cognitive-services-REST-api-samples/tree/master/Tutorials/Bing-Web-Search) вместе с кратким руководством.
 

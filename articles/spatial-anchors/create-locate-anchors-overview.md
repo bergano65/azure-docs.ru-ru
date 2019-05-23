@@ -4,16 +4,16 @@ description: В этой статье подробно рассказывает�
 author: ramonarguelles
 manager: vicenterivera
 services: azure-spatial-anchors
-ms.author: ramonarguelles
+ms.author: rgarcia
 ms.date: 02/24/2019
 ms.topic: overview
 ms.service: azure-spatial-anchors
-ms.openlocfilehash: 780c3da24d20418919670f09aa064003e3d96b90
-ms.sourcegitcommit: 956749f17569a55bcafba95aef9abcbb345eb929
+ms.openlocfilehash: bbb2eb6cca09c496328d35e075b7d2e548898b4c
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58629664"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65964738"
 ---
 # <a name="how-to-create-and-locate-anchors-using-azure-spatial-anchors"></a>Создание и поиск привязок с помощью Пространственных привязок Azure
 

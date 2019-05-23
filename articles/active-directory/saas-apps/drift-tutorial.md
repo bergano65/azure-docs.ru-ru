@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Drift | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Drift | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Drift.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.date: 02/05/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 876780189768411eba40a99192755bee6732728b
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57874819"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "65862986"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-drift"></a>Руководство. Интеграция Azure Active Directory с Drift
+# <a name="tutorial-azure-active-directory-integration-with-drift"></a>Руководство по Интеграция Azure Active Directory с Drift
 
 В этом руководстве описано, как интегрировать Drift с Azure Active Directory (AAD).
 Интеграция Azure AD с приложением Drift обеспечивает следующие преимущества:
@@ -117,7 +117,7 @@ ms.locfileid: "57874819"
 
 6. Приложение Drift ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно в разделе **Атрибуты пользователя** на странице интеграции приложения. На странице **Настройка единого входа с помощью SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
 
-    ![изображение](common/edit-attribute.png)
+    ![image](common/edit-attribute.png)
 
 7. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** измените утверждения, щелкнув значок **Изменить**, или добавьте утверждение, нажав кнопку **Добавить новое утверждение**, чтобы настроить атрибут токена SAML, как показано на рисунке выше, и выполните следующие действия. 
 
@@ -127,9 +127,9 @@ ms.locfileid: "57874819"
 
     a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![изображение](common/new-save-attribute.png)
+    ![image](common/new-save-attribute.png)
 
-    ![изображение](common/new-attribute-details.png)
+    ![image](common/new-attribute-details.png)
 
     b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
@@ -189,7 +189,7 @@ ms.locfileid: "57874819"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

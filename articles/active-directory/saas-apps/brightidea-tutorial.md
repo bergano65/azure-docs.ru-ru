@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Brightidea | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Brightidea | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Brightidea.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.date: 01/23/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: bc45c63d3168a15b4701dcaff7bb531f759d47ad
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57888712"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65900031"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-brightidea"></a>Руководство. Интеграция Azure Active Directory с Brightidea
+# <a name="tutorial-azure-active-directory-integration-with-brightidea"></a>Руководство по Интеграция Azure Active Directory с Brightidea
 
 Из этого руководства вы узнаете, как интегрировать Brightidea с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Brightidea обеспечивает следующие преимущества:
@@ -116,14 +116,14 @@ ms.locfileid: "57888712"
 
     c. После успешной передачи файла метаданных поля **Идентификатор** и **URL-адрес ответа** в текстовом поле раздела Brightidea автоматически заполняются значениями:
 
-    ![изображение](common/idp-intiated.png)
+    ![image](common/idp-intiated.png)
 
     > [!Note]
     > Если поля **Идентификатор** и **URL-адрес ответа** автоматически не заполняются, введите эти значения вручную в соответствии с поставленной задачей.
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
-    ![изображение](common/metadata-upload-additional-signon.png)
+    ![image](common/metadata-upload-additional-signon.png)
 
     В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://<SUBDOMAIN>.brightidea.com`.
 

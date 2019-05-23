@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с приложением SAP Cloud Platform Identity Authentication | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с приложением SAP Cloud Platform Identity Authentication | Документация Майкрософт
 description: Сведения о настройке единого входа в Azure Active Directory и SAP Cloud Platform Identity Authentication.
 services: active-directory
 documentationCenter: na
@@ -16,11 +16,11 @@ ms.date: 01/16/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e242e85525b446fcbe8a2ec05da539fb45acf487
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57850315"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "65867981"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sap-cloud-platform-identity-authentication"></a>Руководство по Интеграция Azure Active Directory с приложением SAP Cloud Platform Identity Authentication
 
@@ -142,15 +142,15 @@ ms.locfileid: "57850315"
 
 6. Приложение SAP Cloud Platform Identity Authentication поддерживает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно в разделе **Атрибуты пользователя** на странице интеграции приложения. На странице **Настройка единого входа с помощью SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
 
-    ![изображение](common/edit-attribute.png)
+    ![image](common/edit-attribute.png)
 
 7. Если ваше приложение SAP ожидает определенный атрибут, например **firstName**, добавьте атрибут **firstName** в раздел **Утверждения пользователя** диалогового окна **Атрибуты пользователя**, настройте атрибут токена SAML, как показано на рисунке выше, и выполните следующие действия.
 
     a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![изображение](common/new-save-attribute.png)
+    ![image](common/new-save-attribute.png)
 
-    ![изображение](common/new-attribute-details.png)
+    ![image](common/new-attribute-details.png)
 
     b. В текстовом поле **Имя** введите firstName.
 
@@ -213,7 +213,7 @@ ms.locfileid: "57850315"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

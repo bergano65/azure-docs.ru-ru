@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с AppDynamics | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с AppDynamics | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении AppDynamics.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.date: 12/26/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d6b8edf2627ade23fc6d1125afbabc34a1d9d21b
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57860386"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65900222"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-appdynamics"></a>Руководство. Интеграция Azure Active Directory с AppDynamics
+# <a name="tutorial-azure-active-directory-integration-with-appdynamics"></a>Руководство по Интеграция Azure Active Directory с AppDynamics
 
 В этом руководстве описано, как интегрировать приложение AppDynamics с Azure Active Directory (Azure AD).
 Интеграция AppDynamics с Azure AD обеспечивает следующие преимущества:
@@ -172,7 +172,7 @@ ms.locfileid: "57860386"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

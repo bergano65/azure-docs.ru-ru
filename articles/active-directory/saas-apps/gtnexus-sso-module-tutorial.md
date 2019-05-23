@@ -16,11 +16,11 @@ ms.date: 01/08/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: fd5f32fd43d75ee91460a5d94ec4bcd57edb0769
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57876516"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65898342"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-gtnexus-sso-system"></a>Руководство по Интеграция Azure Active Directory с GTNexus SSO System
 
@@ -113,7 +113,7 @@ ms.locfileid: "57876516"
 
     c. После успешной передачи файла метаданных значения **Идентификатор** и **URL-адрес ответа** заполняются автоматически в разделе текстового поля "GTNexus SSO System".
 
-    ![изображение](common/idp-intiated.png)
+    ![image](common/idp-intiated.png)
 
     > [!Note]
     > Если поля **Идентификатор** и **URL-адрес ответа** автоматически не заполняются значениями, введите эти значения вручную в соответствии со своими требованиями.
@@ -144,7 +144,7 @@ ms.locfileid: "57876516"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

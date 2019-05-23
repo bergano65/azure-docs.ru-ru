@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/25/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 819f7d12f0554145295a0ec4f1eff7cb404d552d
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.openlocfilehash: c7d2920e84e0e1e61627afe1fe029e047e13ed02
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65406974"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65897881"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-lcvista"></a>Руководство по Интеграция Azure Active Directory с LCVista
 
@@ -140,13 +140,13 @@ ms.locfileid: "65406974"
 
     c. Откройте файл метаданных (XML), скачанный на портале Azure, в Блокноте, скопируйте значение **X509Certificate** и вставьте его в раздел **x509 Certificate** (Сертификат x509).
 
-    d. В текстовом поле **First name attribute** (Атрибут имени) вставьте значение `https://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname`.
+    d. В текстовом поле **First name attribute** (Атрибут имени) вставьте значение `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname`.
 
-    д. В текстовом поле **Last name attribute** (Атрибут фамилии) вставьте значение `https://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname`.
+    д. В текстовом поле **Last name attribute** (Атрибут фамилии) вставьте значение `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname`.
 
-    Е. В текстовом поле **Email attribute** (Атрибут электронной почты) вставьте значение `https://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`.
+    Е. В текстовом поле **Email attribute** (Атрибут электронной почты) вставьте значение `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`.
 
-    ж. В текстовом поле **Username** (Атрибут имени пользователя) вставьте значение `https://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`.
+    ж. В текстовом поле **Username** (Атрибут имени пользователя) вставьте значение `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`.
 
     д. Нажмите кнопку **Сохранить** , чтобы сохранить параметры.
 

@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 04/03/2019
 ms.author: wolfma
-ms.openlocfilehash: 86ad938cd3d248ad907b3143342b0acf9ff15631
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: 498246292b3cf591433a709139621b039ac3af33
+ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65236865"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66002170"
 ---
 # <a name="quickstart-recognize-speech-in-c-on-macos-by-using-the-speech-sdk"></a>Краткое руководство. Распознавание речи в приложении C++ для macOS с помощью пакета SDK для службы "Речь"
 
@@ -31,7 +31,7 @@ ms.locfileid: "65236865"
 
 [!INCLUDE [License Notice](../../../includes/cognitive-services-speech-service-license-notice.md)]
 
-Текущая версия пакета SDK для распознавания речи для Cognitive Services — `1.5.0`.
+Текущая версия пакета SDK для распознавания речи для Cognitive Services — `1.5.1`.
 
 Пакет SDK службы "Речь" для macOS можно скачать в архивированном пакете платформы по адресу https://aka.ms/csspeech/macosbinary.
 

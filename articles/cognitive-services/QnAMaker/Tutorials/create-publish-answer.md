@@ -11,12 +11,12 @@ ms.subservice: qna-maker
 ms.topic: tutorial
 ms.date: 01/24/2019
 ms.author: diberry
-ms.openlocfilehash: 355c11d4f8ae0089527a9f0d21af7c4d6070f73a
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: a14bc14e6115c1bc25582c3de71382ae17d7debd
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64922370"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65792286"
 ---
 # <a name="tutorial-using-c-create-knowledge-base-then-answer-question"></a>Руководство. Создание базы знаний и получение ответа на вопрос с использованием C#
 
@@ -32,11 +32,11 @@ ms.locfileid: "64922370"
 
 В этом кратком руководстве вызываются API службы QnA Maker:
 
-* [Создание базы знаний](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75ff).
-* [Получение сведений об операции](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/operations_getoperationdetails).
-* [Получение сведений о базе знаний](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/knowledgebases_getknowledgebasedetails). 
-* [Получение конечных точек базы знаний](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/endpointkeys_getendpointkeys).
-* [Опубликовать](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75fe) 
+* [Создание базы знаний](https://go.microsoft.com/fwlink/?linkid=2092179).
+* [Получение сведений об операции](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/operations/getdetails).
+* [Получение сведений о базе знаний](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/getdetails). 
+* [Получение конечных точек базы знаний](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/endpointkeys/getkeys).
+* [Опубликовать](https://docs.microsoft.com/rest/api/cognitiveservices/qnamaker/knowledgebase/publish) 
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -248,4 +248,4 @@ _Первичная конечная точка_ передается как з�
 ## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
-> [QnA Maker (V4) REST API Reference](https://westus.dev.cognitive.microsoft.com/docs/services/5a93fcf85b4ccd136866eb37/operations/5ac266295b4ccd1554da75ff) (Справочник по API REST QnA Maker (V4))
+> [QnA Maker (V4) REST API Reference](https://go.microsoft.com/fwlink/?linkid=2092179) (Справочник по API REST QnA Maker (V4))

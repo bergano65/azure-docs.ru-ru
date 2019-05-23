@@ -4,7 +4,7 @@ description: Библиотека аутентификации Майкросо�
 services: active-directory
 documentationcenter: dev-center-name
 author: negoe
-manager: celested
+manager: CelesteDG
 editor: ''
 ms.service: active-directory
 ms.subservice: develop
@@ -17,12 +17,12 @@ ms.author: negoe
 ms.reviewer: nacanuma
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 87bd8834f840c2246bf3adc1d1f9cd9b8f635915
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: 6af78a593fb8fadb836d2dc4c02115d95a7f2712
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65191026"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65546034"
 ---
 # <a name="integrate-microsoft-authentication-library-msal-with-azure-active-directory-b2c"></a>Интеграция библиотеки аутентификации Майкрософт (MSAL) с Azure Active Directory B2C
 
@@ -50,7 +50,7 @@ Azure Active Directory (Azure AD) B2C также поддерживает на
 Скачайте ZIP-файл или клонируйте пример с GitHub.
 >git clone https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-singlepageapp.git
 
-### <a name="steps-3-authentication"></a>Шаг 3. Authentication
+### <a name="steps-3-authentication"></a>Шаг 3. Аутентификация
 
 1. Откройте файл index.html в примере.
 

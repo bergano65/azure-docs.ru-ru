@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 10/05/2018
 ms.author: sharadag
-ms.openlocfilehash: b99132cceb8981a93a8f1c10ccc488d5806f7254
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: fc4db12f722d1330f0642e155c02a1936373e256
+ms.sourcegitcommit: 17411cbf03c3fa3602e624e641099196769d718b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59050983"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65520488"
 ---
 # <a name="tutorial-configure-https-on-a-front-door-custom-domain"></a>Руководство по Настройка протокола HTTPS на личном домене Front Door
 
@@ -82,7 +82,6 @@ ms.locfileid: "59050983"
 
 > [!WARNING]
 > </br> — Сейчас Azure Front Door Service поддерживает только учетные записи Key Vault, размещенный в той же подписке, что и конфигурация Front Door. Если выбрать Key Vault в другой подписке, произойдет сбой.
-> </br> — В настоящее время Azure Front Door Service поддерживает только сертификаты Key Vault, хранящиеся в разделе "Секреты". Импорт сертификата завершится ошибкой, если он хранится в разделе "Сертификаты", а не в разделе "Секреты".
 > </br> — Сейчас Azure Front Door Service поддерживает только сертификаты, переданные в PFX-файле **без** пароля.
 
 #### <a name="register-azure-front-door-service"></a>Регистрация в Azure Front Door Service

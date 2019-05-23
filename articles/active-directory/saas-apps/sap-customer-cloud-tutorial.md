@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с SAP Cloud for Customer | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с SAP Cloud for Customer | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в SAP Cloud for Customer.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.date: 12/19/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 8ba76692ec35ddfd0b6c8c49306d6056709d684e
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57840687"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65902873"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-sap-cloud-for-customer"></a>Руководство. Интеграция Azure Active Directory с SAP Cloud for Customer
+# <a name="tutorial-azure-active-directory-integration-with-sap-cloud-for-customer"></a>Руководство по Интеграция Azure Active Directory с SAP Cloud for Customer
 
 В этом руководстве описано, как интегрировать SAP Cloud for Customer с Azure Active Directory (Azure AD).
 Интеграция SAP Cloud for Customer с Azure AD обеспечивает следующие преимущества:
@@ -114,15 +114,15 @@ ms.locfileid: "57840687"
 
 5. Приложение SAP Cloud for Customer ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно в разделе **Атрибуты пользователя** на странице интеграции приложения. На странице **Настройка единого входа с помощью SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
 
-    ![изображение](common/edit-attribute.png)
+    ![image](common/edit-attribute.png)
 
 6. В разделе **Атрибуты пользователя** в диалоговом окне **User Attributes & Claims** (Атрибуты пользователя и утверждения) выполните следующие действия.
 
     a. Щелкните **значок редактирования**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![изображение](./media/sap-customer-cloud-tutorial/tutorial_usermail.png)
+    ![image](./media/sap-customer-cloud-tutorial/tutorial_usermail.png)
 
-    ![изображение](./media/sap-customer-cloud-tutorial/tutorial_usermailedit.png)
+    ![image](./media/sap-customer-cloud-tutorial/tutorial_usermailedit.png)
 
     b. Выберите **Преобразование** в качестве **источника**.
 
@@ -208,7 +208,7 @@ ms.locfileid: "57840687"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

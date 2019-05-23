@@ -9,12 +9,12 @@ ms.date: 09/26/2018
 ms.topic: tutorial
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
-ms.openlocfilehash: dc84844738e501a30f73104a76ff80bf00adff24
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: c01870aa7ae4a0ae5cf1cc8302200675ac0e8022
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59425828"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65861695"
 ---
 # <a name="get-started-on-azure-dev-spaces-with-nodejs"></a>Начало работы с Node.js в Azure Dev Spaces
 
@@ -64,7 +64,7 @@ az group create --name MyResourceGroup --location <region>
 Чтобы создать кластер Kubernetes, выполните следующую команду:
 
 ```cmd
-az aks create -g MyResourceGroup -n MyAKS --location <region> --generate-ssh-keys
+az aks create -g MyResourceGroup -n MyAKS --location <region> --disable-rbac --generate-ssh-keys
 ```
 
 Создание кластера занимает несколько минут.

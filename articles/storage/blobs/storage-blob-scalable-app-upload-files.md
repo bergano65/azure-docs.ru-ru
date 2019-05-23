@@ -10,12 +10,12 @@ ms.date: 02/20/2018
 ms.author: rogarana
 ms.custom: mvc
 ms.subservice: blobs
-ms.openlocfilehash: 0673d97f755d7e01d42d0be7c611720ff1e4ad01
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: 63de2045498b312580640859c1911046f9785d8e
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65187777"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65794352"
 ---
 # <a name="upload-large-amounts-of-random-data-in-parallel-to-azure-storage"></a>Передача больших объемов случайных данных в параллельном режиме в службу хранилища Azure
 
@@ -67,14 +67,14 @@ dotnet run
 
 Приложение создаст пять контейнеров со случайными именами и начнет отправлять файлы из промежуточного каталога в учетную запись хранения. Минимальное количество потоков, которое задает приложение, равно 100. Для параметра ограничения [DefaultConnectionLimit](https://msdn.microsoft.com/library/system.net.servicepointmanager.defaultconnectionlimit(v=vs.110).aspx) также установлено значение 100. Это требуется, чтобы разрешить выполнение большого количества одновременных подключений при запуске приложения.
 
-Помимо параметров ограничения для количества подключений и потоков настраиваются также параметры [BlobRequestOptions](/dotnet/api/microsoft.azure.storage.blob.blobrequestoptions?view=azure-dotnet) метода [UploadFromStreamAsync](/dotnet/api/microsoft.azure.storage.blob.cloudblockblob.uploadfromstreamasync?view=azure-dotnet) для использования параллелизма и отключения проверки хэша MD5. Файлы передаются в блоки размером 100 МБ. Такая конфигурация обеспечивает лучшую производительность, но может быть дорогостоящей при использовании медленной сети. Это объясняется тем, что в случае сбоя будет выполнена повторная передача всего блока.
+Помимо параметров ограничения для количества подключений и потоков настраиваются также параметры [BlobRequestOptions](/dotnet/api/microsoft.azure.storage.blob.blobrequestoptions) метода [UploadFromStreamAsync](/dotnet/api/microsoft.azure.storage.blob.cloudblockblob.uploadfromstreamasync) для использования параллелизма и отключения проверки хэша MD5. Файлы передаются в блоки размером 100 МБ. Такая конфигурация обеспечивает лучшую производительность, но может быть дорогостоящей при использовании медленной сети. Это объясняется тем, что в случае сбоя будет выполнена повторная передача всего блока.
 
 |Свойство|Значение|ОПИСАНИЕ|
 |---|---|---|
-|[ParallelOperationThreadCount](/dotnet/api/microsoft.azure.storage.blob.blobrequestoptions.paralleloperationthreadcount?view=azure-dotnet)| 8| Этот параметр разделяет передаваемый большой двоичный объект на блоки. Для обеспечения максимальной производительности это значение должно в 8 раз превышать количество ядер. |
-|[DisableContentMD5Validation](/dotnet/api/microsoft.azure.storage.blob.blobrequestoptions.disablecontentmd5validation?view=azure-dotnet)| Да| Это свойство отключает проверку хэша MD5 отправляемого содержимого. При этом передача ускоряется. Но без проверки MD5 не будет подтверждения о достоверности или целостности передаваемых файлов.   |
-|[StoreBlobContentMD5](/dotnet/api/microsoft.azure.storage.blob.blobrequestoptions.storeblobcontentmd5?view=azure-dotnet#Microsoft_WindowsAzure_Storage_Blob_BlobRequestOptions_StoreBlobContentMD5)| false| Это свойство определяет, будет ли вычисляться и сохраняться в файле хэш MD5.   |
-| [RetryPolicy](/dotnet/api/microsoft.azure.storage.blob.blobrequestoptions.retrypolicy?view=azure-dotnet#Microsoft_WindowsAzure_Storage_Blob_BlobRequestOptions_RetryPolicy)| Интервал задержки — 2 секунды. Максимальное количество повторений — 10. |Определяет политику повтора запросов. При сбоях подключения выполняются повторные попытки подключения. В этом примере для политики [ExponentialRetry](/dotnet/api/microsoft.azure.batch.common.exponentialretry?view=azure-dotnet) настроен интервал задержки 2 секунды с максимальным количеством повторений — 10. Этот параметр важен, когда есть вероятность превышения приложением ограничений [целевых показателей масштабируемости хранилища BLOB-объектов](../common/storage-scalability-targets.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#azure-blob-storage-scale-targets).  |
+|[ParallelOperationThreadCount](/dotnet/api/microsoft.azure.storage.blob.blobrequestoptions.paralleloperationthreadcount)| 8| Этот параметр разделяет передаваемый большой двоичный объект на блоки. Для обеспечения максимальной производительности это значение должно в 8 раз превышать количество ядер. |
+|[DisableContentMD5Validation](/dotnet/api/microsoft.azure.storage.blob.blobrequestoptions.disablecontentmd5validation)| Да| Это свойство отключает проверку хэша MD5 отправляемого содержимого. При этом передача ускоряется. Но без проверки MD5 не будет подтверждения о достоверности или целостности передаваемых файлов.   |
+|[StoreBlobContentMD5](/dotnet/api/microsoft.azure.storage.blob.blobrequestoptions.storeblobcontentmd5)| false| Это свойство определяет, будет ли вычисляться и сохраняться в файле хэш MD5.   |
+| [RetryPolicy](/dotnet/api/microsoft.azure.storage.blob.blobrequestoptions.retrypolicy)| Интервал задержки — 2 секунды. Максимальное количество повторений — 10. |Определяет политику повтора запросов. При сбоях подключения выполняются повторные попытки подключения. В этом примере для политики [ExponentialRetry](/dotnet/api/microsoft.azure.batch.common.exponentialretry) настроен интервал задержки 2 секунды с максимальным количеством повторений — 10. Этот параметр важен, когда есть вероятность превышения приложением ограничений [целевых показателей масштабируемости хранилища BLOB-объектов](../common/storage-scalability-targets.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#azure-blob-storage-scale-targets).  |
 
 Задание `UploadFilesAsync`, показано в следующем примере:
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Eli Onboarding | Документы Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Eli Onboarding | Документы Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Eli Onboarding.
 services: active-directory
 documentationCenter: na
@@ -16,11 +16,11 @@ ms.date: 02/06/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: f9f79a573eedba781c38facb63a2ab86b3897545
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57876601"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65898832"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-eli-onboarding"></a>Руководство по Интеграция Azure Active Directory с Eli Onboarding
 
@@ -148,7 +148,7 @@ ms.locfileid: "57876601"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

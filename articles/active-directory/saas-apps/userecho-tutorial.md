@@ -16,11 +16,11 @@ ms.topic: tutorial
 ms.date: 03/29/2019
 ms.author: jeedes
 ms.openlocfilehash: 15cfa025bde3367c57255ce50f95c69293b63f92
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59283381"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65905620"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-userecho"></a>Руководство по Интеграция Azure Active Directory с UserEcho
 

@@ -16,11 +16,11 @@ ms.date: 12/19/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 037e01120a695b1bacf2b1d4bc47e9ca9ed3fbd2
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57881254"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65900365"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-arcgis-online"></a>Руководство. Интеграция Azure Active Directory с ArcGIS Online
 
@@ -118,7 +118,7 @@ ms.locfileid: "57881254"
 
 6. Для автоматизации настройки в **ArcGIS Online** необходимо установить **Расширение браузера "Безопасный вход в мои приложения"**, щелкнув **Установить расширение**.
 
-    ![изображение](./media/arcgis-tutorial/install_extension.png)
+    ![image](./media/arcgis-tutorial/install_extension.png)
 
 7. После добавления расширения в браузере щелкните **Установка ArcGIS Online**, чтобы перейти к приложению ArcGIS Online. После этого укажите учетные данные администратора для входа в ArcGIS Online. Расширение браузера автоматически настроит приложение и автоматизирует шаги в разделе **Настройка единого входа ArcGIS Online**.
 

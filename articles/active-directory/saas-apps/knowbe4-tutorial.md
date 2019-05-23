@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с KnowBe4 Security Awareness Training | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с KnowBe4 Security Awareness Training | Документация Майкрософт
 description: Узнайте, как настраивать единый вход между Azure Active Directory и KnowBe4 Security Awareness Training.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.date: 01/02/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 829e0c08191e3eeba9dc410dda74502dc9ada327
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57887346"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65897866"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-knowbe4-security-awareness-training"></a>Руководство. Интеграция Azure Active Directory с KnowBe4 Security Awareness Training
+# <a name="tutorial-azure-active-directory-integration-with-knowbe4-security-awareness-training"></a>Руководство по Интеграция Azure Active Directory с KnowBe4 Security Awareness Training
 
 В этом руководстве вы узнаете, как интегрировать KnowBe4 Security Awareness Training с Azure Active Directory (Azure AD).
 Интеграция KnowBe4 Security Awareness Training с Azure AD предоставляет следующие преимущества:
@@ -153,7 +153,7 @@ ms.locfileid: "57887346"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

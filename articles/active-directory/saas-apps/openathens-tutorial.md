@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 1/4/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2cbb1bc64d923add0b1fd38749299714a9093633
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.openlocfilehash: 3eca6fc3ab788ee7085c0df5f6c9770858af29ba
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65408019"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65891689"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-openathens"></a>Руководство по Интеграция Azure Active Directory с OpenAthens
 
@@ -143,11 +143,11 @@ ms.locfileid: "65408019"
 
     a. Из списка **Display name mapping** (Сопоставление отображаемого имени) выберите **Use Attribute** (Использовать атрибут).
 
-    b. В текстовом поле **Display name attribute** (Атрибут отображаемого имени) введите значение `https://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`.
+    b. В текстовом поле **Display name attribute** (Атрибут отображаемого имени) введите значение `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`.
     
     c. Из списка **Unique user mapping** (Сопоставление уникального пользователя) выберите **Use Attribute** (Использовать атрибут).
 
-    d. В текстовом поле **Unique user attribute** (Атрибут уникального пользователя имени) введите значение `https://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`.
+    d. В текстовом поле **Unique user attribute** (Атрибут уникального пользователя имени) введите значение `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`.
 
     д. В разделе **Status** (Состояние) установите все три флажка.
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Degreed | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Degreed | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Degreed.
 services: active-directory
 documentationCenter: na
@@ -16,11 +16,11 @@ ms.date: 01/25/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6741cf58208e972c85d41f2fa657e7dd82cc4f2b
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57877689"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65900208"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-degreed"></a>Руководство по Интеграция Azure Active Directory с Degreed
 
@@ -150,7 +150,7 @@ ms.locfileid: "57877689"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

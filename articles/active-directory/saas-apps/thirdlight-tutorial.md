@@ -16,11 +16,11 @@ ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: jeedes
 ms.openlocfilehash: caee6bad1b944b6d1396ea2e26f163629b3c444f
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59269883"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65888822"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-thirdlight"></a>Руководство по Интеграция Azure Active Directory с ThirdLight
 
