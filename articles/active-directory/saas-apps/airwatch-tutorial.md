@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/07/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7ec8b575157dcf2fe8430f554798af62b966c78d
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.openlocfilehash: e20a298c34a7b2723963396f8ccaafaa9472e19a
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65406697"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65899209"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-airwatch"></a>Руководство. Интеграция Azure Active Directory с AirWatch
 
@@ -207,15 +207,15 @@ ms.locfileid: "65406697"
 
     a. В текстовом поле **Object Identifier** (Идентификатор объекта) введите `http://schemas.microsoft.com/identity/claims/objectidentifier`.
 
-    b. В текстовом поле **Username** (Имя пользователя) введите `https://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`.
+    b. В текстовом поле **Username** (Имя пользователя) введите `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`.
 
-    c. В текстовом поле **Display Name** (Отображаемое имя) введите `https://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname`.
+    c. В текстовом поле **Display Name** (Отображаемое имя) введите `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname`.
 
-    d. В текстовом поле **First Name** (Имя) введите `https://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname`.
+    d. В текстовом поле **First Name** (Имя) введите `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/givenname`.
 
-    д. В текстовое поле **Last Name** (Фамилия) введите `https://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname`.
+    д. В текстовое поле **Last Name** (Фамилия) введите `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname`.
 
-    Е. В текстовое поле **Email** (Электронная почта) введите `https://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`.
+    Е. В текстовое поле **Email** (Электронная почта) введите `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`.
 
     ж. Выберите команду **Сохранить**.
 

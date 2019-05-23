@@ -16,13 +16,13 @@ ms.date: 02/15/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 271161dd29bc1b31989775f3223bc30840346aed
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57892784"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65898311"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-hornbill"></a>Руководство. Интеграция Azure Active Directory с Hornbill
+# <a name="tutorial-azure-active-directory-integration-with-hornbill"></a>Руководство по Интеграция Azure Active Directory с Hornbill
 
 Цель этого руководства — показать, как интегрировать Azure Active Directory (Azure AD) с приложением Hornbill.
 Интеграция Azure AD с приложением Hornbill обеспечивает следующие преимущества.

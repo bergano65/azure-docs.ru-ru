@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Blackboard Learn | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Blackboard Learn | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в Blackboard Learn.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.date: 01/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 60aacc3d4d5743187ec826fb9f544488171b1285
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57838550"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65900719"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-blackboard-learn"></a>Руководство. Интеграция Azure Active Directory с Blackboard Learn
+# <a name="tutorial-azure-active-directory-integration-with-blackboard-learn"></a>Руководство по Интеграция Azure Active Directory с Blackboard Learn
 
 В этом руководстве описано, как интегрировать Azure Active Directory (Azure AD) с приложением Blackboard Learn.
 Интеграция Blackboard Learn с Azure AD обеспечивает следующие преимущества.
@@ -115,7 +115,7 @@ ms.locfileid: "57838550"
 
 5. Приложение Blackboard Learn ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно в разделе **Атрибуты пользователя** на странице интеграции приложения. На странице **Настройка единого входа с помощью SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
 
-    ![изображение](common/edit-attribute.png)
+    ![image](common/edit-attribute.png)
 
 6. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** настройте атрибуты токена SAML, как показано на рисунке, и выполните следующие действия. Мы сопоставили Userprincipalname как уникальный атрибут пользователя, но вы можете сопоставить его с соответствующим значением, которое однозначно идентифицирует пользователя в организации и сопоставляется с полем имени пользователя Blackboard Learn.
 
@@ -125,9 +125,9 @@ ms.locfileid: "57838550"
 
     a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![изображение](common/new-save-attribute.png)
+    ![image](common/new-save-attribute.png)
 
-    ![изображение](common/new-attribute-details.png)
+    ![image](common/new-attribute-details.png)
 
     b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
@@ -177,7 +177,7 @@ ms.locfileid: "57838550"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

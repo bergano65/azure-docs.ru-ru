@@ -17,11 +17,11 @@ ms.date: 04/10/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 27a61205426cbf43fd3b3b549909ffa13ff07dc7
-ms.sourcegitcommit: 41015688dc94593fd9662a7f0ba0e72f044915d6
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59500368"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65903832"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-salesforce"></a>Руководство по Интеграция Azure Active Directory с Salesforce
 
@@ -66,7 +66,7 @@ ms.locfileid: "59500368"
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-3. Чтобы добавить новое приложение, нажмите кнопку **Новое приложение** в верхней части диалогового окна.
+3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Новое приложение**.
 
     ![Кнопка "Создать приложение"](common/add-new-app.png)
 
@@ -112,13 +112,13 @@ ms.locfileid: "59500368"
 
     a. В текстовом поле **URL-адрес для входа** введите значение в следующем формате:
 
-    Корпоративная учетная запись: `https://<subdomain>.my.salesforce.com`
+    Учетная запись предприятия: `https://<subdomain>.my.salesforce.com`
 
     Учетная запись разработчика: `https://<subdomain>-dev-ed.my.salesforce.com`
 
     b. В текстовое поле **Идентификатор** введите значение в следующем формате:
 
-    Корпоративная учетная запись: `https://<subdomain>.my.salesforce.com`
+    Учетная запись предприятия: `https://<subdomain>.my.salesforce.com`
 
     Учетная запись разработчика: `https://<subdomain>-dev-ed.my.salesforce.com`
 
@@ -257,4 +257,4 @@ ms.locfileid: "59500368"
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
-- [Настройка подготовки пользователей](salesforce-provisioning-tutorial.md)
+- [Руководство по настройке Google Apps для автоматической подготовки пользователей](salesforce-provisioning-tutorial.md)

@@ -12,12 +12,12 @@ ms.author: jovanpop
 ms.reviewer: sstein, carlrab
 manager: craigg
 ms.date: 05/07/2019
-ms.openlocfilehash: 09ab4cd44515d90df0e36e2775f50ac33955fe75
-ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
+ms.openlocfilehash: f54cea75e6f7866f1be41d3b0f82393af2235a0a
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65466263"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65949874"
 ---
 # <a name="quickstart-create-an-azure-sql-database-managed-instance"></a>Краткое руководство. Создание управляемого экземпляра Базы данных SQL Azure
 
@@ -28,7 +28,9 @@ ms.locfileid: "65466263"
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
-Войдите на [портале Azure](https://portal.azure.com/). 
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/).
+
+Войдите на [портале Azure](https://portal.azure.com/).
 
 ## <a name="create-a-managed-instance"></a>Создание управляемого экземпляра
 

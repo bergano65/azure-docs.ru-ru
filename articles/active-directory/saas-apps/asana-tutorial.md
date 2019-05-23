@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Asana | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Asana | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Asana.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.date: 12/31/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 73f6126d6bf172a35a284e92b65b1c3ef449949e
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57904139"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65900185"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-asana"></a>Руководство. Интеграция Azure Active Directory с Asana
+# <a name="tutorial-azure-active-directory-integration-with-asana"></a>Руководство по Интеграция Azure Active Directory с Asana
 
 В этом руководстве описано, как интегрировать Asana с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Asana обеспечивает следующие преимущества.
@@ -159,7 +159,7 @@ ms.locfileid: "57904139"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

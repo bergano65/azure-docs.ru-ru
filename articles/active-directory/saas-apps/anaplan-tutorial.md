@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Anaplan | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Anaplan | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Anaplan.
 services: active-directory
 documentationCenter: na
@@ -16,11 +16,11 @@ ms.date: 01/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 88741c81fe5efe219b052810c374fed3f4834d2a
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57891473"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65901062"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-anaplan"></a>Руководство по Интеграция Azure Active Directory с Anaplan
 

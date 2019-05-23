@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Gigya | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Gigya | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Gigya.
 services: active-directory
 documentationCenter: na
@@ -15,13 +15,13 @@ ms.topic: tutorial
 ms.date: 02/18/2019
 ms.author: jeedes
 ms.openlocfilehash: c3a2a92eb01943ab87c12d3ffefc4999cd9ff518
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57901701"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65898735"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-gigya"></a>Руководство. Интеграция Azure Active Directory с Gigya
+# <a name="tutorial-azure-active-directory-integration-with-gigya"></a>Руководство по Интеграция Azure Active Directory с Gigya
 
 В этом руководстве описано, как интегрировать Gigya с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Gigya обеспечивает следующие преимущества.

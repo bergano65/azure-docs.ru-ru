@@ -16,11 +16,11 @@ ms.date: 02/11/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b648b8458c7f91cae6edb079fbd2ac78553dd969
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59523789"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65903530"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sap-netweaver"></a>Руководство по Интеграция Azure Active Directory с SAP NetWeaver
 
@@ -186,15 +186,15 @@ ms.locfileid: "59523789"
 
 12. Приложение SAP NetWeaver ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно в разделе **Атрибуты пользователя** на странице интеграции приложения. На странице **Настройка единого входа с помощью SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
 
-    ![изображение](common/edit-attribute.png)
+    ![image](common/edit-attribute.png)
 
 13. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** настройте атрибут токена SAML, как показано на рисунке выше, и выполните следующие действия.
 
     a. Щелкните **значок редактирования**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![изображение](./media/sapnetweaver-tutorial/nameidattribute.png)
+    ![image](./media/sapnetweaver-tutorial/nameidattribute.png)
 
-    ![изображение](./media/sapnetweaver-tutorial/nameidattribute1.png)
+    ![image](./media/sapnetweaver-tutorial/nameidattribute1.png)
 
     b. Из списка **Преобразование** выберите **ExtractMailPrefix()**.
 

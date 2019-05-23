@@ -16,11 +16,11 @@ ms.topic: tutorial
 ms.date: 03/13/2019
 ms.author: jeedes
 ms.openlocfilehash: 6547a640f6e56865d44b6848cf37078161faa538
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59261550"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65904844"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-officespace-software"></a>Руководство по Интеграция Azure Active Directory с OfficeSpace Software
 

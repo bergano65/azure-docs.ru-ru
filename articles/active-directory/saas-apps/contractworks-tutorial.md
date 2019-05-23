@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с ContractWorks | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с ContractWorks | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и ContractWorks.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.date: 01/25/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a8d6ee5d4d9db8f6c91d43f72135ba42d6735287
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57893005"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "65863116"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-contractworks"></a>Руководство. Интеграция Azure Active Directory с ContractWorks
+# <a name="tutorial-azure-active-directory-integration-with-contractworks"></a>Руководство по Интеграция Azure Active Directory с ContractWorks
 
 В этом руководстве описано, как интегрировать ContractWorks с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением ContractWorks обеспечивает следующие преимущества:
@@ -109,13 +109,13 @@ ms.locfileid: "57893005"
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
-    ![изображение](common/both-preintegrated-signon.png)
+    ![image](common/both-preintegrated-signon.png)
 
     В текстовом поле **URL-адрес входа** введите URL-адрес: `https://login.securedocs.com/saml/hint`.
 
 6. Приложение ContractWorks ожидает утверждения SAML в определенном формате. Настройте следующие утверждения для этого приложения. Управлять значениями этих атрибутов можно в разделе **Атрибуты пользователя** на странице интеграции приложения. На странице **Настройка единого входа с помощью SAML** нажмите кнопку **Изменить**, чтобы открыть диалоговое окно **Атрибуты пользователя**.
 
-    ![изображение](common/edit-attribute.png)
+    ![image](common/edit-attribute.png)
 
 7. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** измените утверждения, щелкнув значок **Изменить**, или добавьте утверждение, нажав кнопку **Добавить новое утверждение**, чтобы настроить атрибут токена SAML, как показано на рисунке выше, и выполните следующие действия. 
 
@@ -126,9 +126,9 @@ ms.locfileid: "57893005"
 
     a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![изображение](common/new-save-attribute.png)
+    ![image](common/new-save-attribute.png)
 
-    ![изображение](common/new-attribute-details.png)
+    ![image](common/new-attribute-details.png)
 
     b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 

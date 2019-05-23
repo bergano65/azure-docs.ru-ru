@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: eeb1289ba615fea6e6c43b256da6978534d9edc7
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 32ad8c12834ee538e231b38f9098c741fdc17954
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59799392"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65997249"
 ---
 # <a name="what-is-conditional-access-in-azure-active-directory"></a>Что представляет собой условный доступ в Azure Active Directory?
 
@@ -64,7 +64,7 @@ ms.locfileid: "59799392"
 
 - **[Пользователи](conditions.md#users-and-groups)**. Пользователи, выполняющие попытку доступа (**кто**).
 
-- **[Облачные приложения](conditions.md#cloud-apps)**. Целевые объекты для попытки доступа (**что**).
+- **[Облачные приложения](conditions.md#cloud-apps-and-actions)**. Целевые объекты для попытки доступа (**что**).
 
 Эти два условия являются обязательными в политике условного доступа. Помимо этих двух обязательных условий можно также добавить дополнительные условия, которые описывают, как выполняется попытка доступа. К распространенным примерам можно отнести использование мобильных устройств или расположений, которые находятся за пределами корпоративной сети. Дополнительные сведения см. в разделе [Условия в условном доступе Azure Active Directory](conditions.md).
 
@@ -86,9 +86,9 @@ ms.locfileid: "59799392"
 
 После того как пользователь выполнил вход в службу федеративной проверки подлинности, Azure AD обрабатывает другие требования политики, например требование соответствия устройства или утверждения приложения.
 
-## <a name="license-requirements-for-using-conditional-access"></a>Требования лицензий для использования условного доступа
+## <a name="license-requirements"></a>Требования лицензий
 
-Для использования условного доступа требуется лицензия Azure AD Premium. Чтобы найти подходящую лицензию, ознакомьтесь с разделом [Сравнение общедоступных функций выпусков Free, Basic и Premium](https://azure.microsoft.com/pricing/details/active-directory/).
+[!INCLUDE [Active Directory P1 license](../../../includes/active-directory-p1-license.md)]
 
 ## <a name="next-steps"></a>Дополнительная информация
 

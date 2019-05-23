@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: quickstart
 ms.date: 04/03/2019
 ms.author: chlandsi
-ms.openlocfilehash: f25c3801553b0ac0c725170cda95f5c1eacc3637
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: 67f2531b24796de1e00505fdc757f3c2244c5054
+ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65020740"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66002353"
 ---
 # <a name="quickstart-recognize-speech-in-objective-c-on-macos-using-the-speech-sdk"></a>Краткое руководство. Распознавание речи в macOS с помощью Objective-C и пакета SDK службы "Речь"
 
@@ -34,7 +34,7 @@ ms.locfileid: "65020740"
 
 [!INCLUDE [License Notice](../../../includes/cognitive-services-speech-service-license-notice.md)]
 
-Текущая версия пакета SDK для распознавания речи для Cognitive Services — `1.5.0`.
+Текущая версия пакета SDK для распознавания речи для Cognitive Services — `1.5.1`.
 
 Пакет SDK службы "Речь" в Cognitive Services для Mac сейчас доступен в виде пакета платформы.
 Его можно использовать в проектах Xcode в виде диспетчера зависимостей [CocoaPods](https://cocoapods.org/) или скачать по адресу https://aka.ms/csspeech/macosbinary и выполнить привязку вручную. В этом руководстве используется диспетчер зависимостей CocoaPods.
@@ -71,7 +71,7 @@ ms.locfileid: "65020740"
     ```
     target 'helloworld' do
         platform :osx, '10.13'
-        pod 'MicrosoftCognitiveServicesSpeech-macOS', '~> 1.5.0'
+        pod 'MicrosoftCognitiveServicesSpeech-macOS', '~> 1.5.1'
     end
     ```
 1. В терминале перейдите к каталогу `helloworld` и выполните команду `pod install`. При этом будет создана рабочая область Xcode `helloworld.xcworkspace`, содержащая пример приложения и пакет SDK для службы "Речь" в виде зависимости. Эта рабочая область понадобится позже.
@@ -79,7 +79,8 @@ ms.locfileid: "65020740"
 ## <a name="add-the-sample-code"></a>Добавление примеров кода
 
 1. Откройте рабочую область `helloworld.xcworkspace` в Xcode.
-1. Замените содержимое автоматически сгенерированного файла `AppDelegate.m` на [!code-objectivec[Quickstart Code](~/samples-cognitive-services-speech-sdk/quickstart/objectivec-macos/helloworld/helloworld/AppDelegate.m#code)].
+1. Замените содержимое автоматически сгенерированного файла `AppDelegate.m` на:  
+   [!code-objectivec[Quickstart Code](~/samples-cognitive-services-speech-sdk/quickstart/objectivec-macos/helloworld/helloworld/AppDelegate.m#code)]
 1. Замените строку `YourSubscriptionKey` своим ключом подписки.
 1. Замените строку `YourServiceRegion` значением [региона](regions.md), связанного с подпиской (например, `westus` для бесплатной пробной подписки).
 

@@ -15,13 +15,13 @@ ms.topic: tutorial
 ms.date: 02/15/2019
 ms.author: jeedes
 ms.openlocfilehash: 3dcbbfcdff0f30b8300e4fe767e27efb65723c5b
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57857833"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65898515"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-freshgrade"></a>Руководство. Интеграция Azure Active Directory с FreshGrade
+# <a name="tutorial-azure-active-directory-integration-with-freshgrade"></a>Руководство по Интеграция Azure Active Directory с FreshGrade
 
 В этом учебнике описано, как интегрировать FreshGrade с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением FreshGrade обеспечивает следующие преимущества:
@@ -147,7 +147,7 @@ ms.locfileid: "57857833"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

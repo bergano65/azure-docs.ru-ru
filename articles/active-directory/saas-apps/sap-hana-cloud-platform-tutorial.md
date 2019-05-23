@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с SAP Cloud Platform | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с SAP Cloud Platform | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в SAP Cloud Platform.
 services: active-directory
 documentationCenter: na
@@ -16,13 +16,13 @@ ms.date: 12/17/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b345656b30a9bb182c097a4c9e18d71a293bf420
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57852575"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "65868109"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-sap-cloud-platform"></a>Руководство. Интеграция Azure Active Directory с SAP Cloud Platform
+# <a name="tutorial-azure-active-directory-integration-with-sap-cloud-platform"></a>Руководство по Интеграция Azure Active Directory с SAP Cloud Platform
 
 В этом руководстве описано, как интегрировать SAP Cloud Platform с Azure Active Directory (Azure AD).
 Интеграция Azure AD с SAP Cloud Platform обеспечивает следующие преимущества:
@@ -253,7 +253,7 @@ ms.locfileid: "57852575"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

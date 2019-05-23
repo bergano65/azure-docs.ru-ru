@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry, michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 38bc2f138a8e56fc56b48ccdaf0636a93138f95d
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.openlocfilehash: e2f53243e49cc961f50ef09cf43a7ed174a82a9c
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58314660"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65997269"
 ---
 # <a name="what-methods-are-available-for-authentication"></a>Какие методы доступны для проверки подлинности?
 
@@ -50,6 +50,10 @@ ms.locfileid: "58314660"
 ## <a name="multi-factor-authentication"></a>Многофакторная идентификация
 
 Многофакторная идентификация (MFA) Azure — решение Майкрософт для двухэтапной проверки. С помощью утвержденных администратором методов проверки подлинности Azure MFA помогает защитить доступ к данным и приложениям, при этом не усложняя простой процесс входа в систему.
+
+## <a name="license-requirements"></a>Требования лицензий
+
+[!INCLUDE [Active Directory P1 license](../../../includes/active-directory-p1-license.md)]
 
 ## <a name="next-steps"></a>Дополнительная информация
 
