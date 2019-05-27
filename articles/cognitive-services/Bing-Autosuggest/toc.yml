@@ -1,10 +1,10 @@
-- name: Документация по API автозаполнения Bing
+- name: Документация по API Автозаполнения Bing
   href: index.yml
 - name: Обзор
   items:
-    - name: Что такое API автозаполнения Bing?
+    - name: Что такое API Автозаполнения Bing?
       href: get-suggested-search-terms.md
-    - name: Сравнение API-интерфейсов поиска Bing
+    - name: Сравнение API-интерфейсов Поиска Bing
       href: ../Bing-Web-Search/bing-api-comparison.md
       maintainContext: true
 - name: Краткие руководства по REST API
@@ -22,11 +22,11 @@
       href: quickstarts/python.md
     - name: Ruby
       href: quickstarts/ruby.md
-- name: Учебники
+- name: Руководства
   items:
-    - name: Одностраничные веб-приложения
+    - name: Одностраничное веб-приложение
       href: tutorials/autosuggest.md
-- name: Практические руководства
+- name: Инструкции
   items:
     - name: Обновление с версии 5 до версии 7
       href: bing-autosuggest-upgrade-guide-v5-to-v7.md
@@ -38,9 +38,9 @@
       href: concepts/sending-requests.md
 - name: Справочные материалы
   items:
-    - name: API автозаполнения Bing версии 7
+    - name: API Автозаполнения Bing версии 7
       href: 'https://docs.microsoft.com/rest/api/cognitiveservices/bing-autosuggest-api-v7-reference'
-    - name: API автозаполнения Bing версии 5
+    - name: API Автозаполнения Bing версии 5
       href: 'https://docs.microsoft.com/rest/api/cognitiveservices/bing-autosuggest-api-v5-reference'
     - name: Пакеты SDK
       items:
@@ -59,9 +59,9 @@
       href: 'https://azure.microsoft.com/pricing/details/cognitive-services/autosuggest-api/'
     - name: UserVoice
       href: 'https://cognitive.uservoice.com/forums/598198-bing-autosuggest'
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/search?q=bing+autosuggest'
-    - name: Доступ по регионам
+    - name: Доступность по регионам
       href: 'https://azure.microsoft.com/global-infrastructure/services/'
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/'
@@ -73,5 +73,7 @@
       href: 'https://azure.microsoft.com/services/cognitive-services/autosuggest/'
     - name: Поддержка языков и региональных параметров
       href: language-support.md
-    - name: Аналитика для API автозаполнения Bing
+    - name: Аналитика для API Автозаполнения Bing
       href: bing-autosuggest-stats.md
+    - name: Соответствие требованиям
+      href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'

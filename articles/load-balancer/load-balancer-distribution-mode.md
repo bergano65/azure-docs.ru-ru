@@ -4,21 +4,22 @@ titlesuffix: Azure Load Balancer
 description: Сведения о том, как настроить режим распределения Azure Load Balancer для поддержки соответствия исходному IP-адресу.
 services: load-balancer
 documentationcenter: na
-author: KumudD
+author: WenJason
 ms.service: load-balancer
 ms.devlang: na
 ms.topic: article
 ms.custom: seodec18
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 09/25/2017
-ms.author: kumud
+origin.date: 09/25/2017
+ms.date: 03/04/2019
+ms.author: v-jay
 ms.openlocfilehash: afa840bd0b48cc9df1e9711caa035b85e8ec3855
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57883667"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66122421"
 ---
 # <a name="configure-the-distribution-mode-for-azure-load-balancer"></a>Настройка режима распределения для Azure Load Balancer
 
@@ -61,14 +62,14 @@ Set-AzLoadBalancer -LoadBalancer $lb
 Чтобы изменить параметры времени ожидания для виртуальных машин можно использовать Azure PowerShell. Добавьте конечную точку Azure в виртуальную машину и установите режим распределения балансировщика нагрузки.
 
 ```powershell
-Get-AzureVM -ServiceName mySvc -Name MyVM1 | Add-AzureEndpoint -Name HttpIn -Protocol TCP -PublicPort 80 -LocalPort 8080 –LoadBalancerDistribution sourceIP | Update-AzureVM
+Get-AzureVM -ServiceName mySvc -Name MyVM1 | Add-AzureEndpoint -Name HttpIn -Protocol TCP -PublicPort 80 -LocalPort 8080 -LoadBalancerDistribution sourceIP | Update-AzureVM
 ```
 
 Установите для элемента `LoadBalancerDistribution` значение необходимого объема балансировки нагрузки. Укажите значение sourceIP для балансировки нагрузки по двум кортежам (исходный IP-адрес, конечный IP-адрес). Укажите sourceIPProtocol для балансировки нагрузки по трем кортежам (исходный IP-адрес, конечный IP-адрес, тип протокола). Укажите none для поведения по умолчанию (балансировка нагрузки по пяти кортежам).
 
 Получите конфигурацию режима распределения балансировщика нагрузки для конечной точки с помощью этих параметров:
 
-    PS C:\> Get-AzureVM –ServiceName MyService –Name MyVM | Get-AzureEndpoint
+    PS C:\> Get-AzureVM -ServiceName MyService -Name MyVM | Get-AzureEndpoint
 
     VERBOSE: 6:43:50 PM - Completed Operation: Get Deployment
     LBSetName : MyLoadBalancedSet
@@ -94,8 +95,8 @@ Get-AzureVM -ServiceName mySvc -Name MyVM1 | Add-AzureEndpoint -Name HttpIn -Pro
 
 Если набор балансировки нагрузки для конечных точек содержит конечные точки, для него следует настроить режим распределения:
 
-```azurepowershell
-Set-AzureLoadBalancedEndpoint -ServiceName MyService -LBSetName LBSet1 -Protocol TCP -LocalPort 80 -ProbeProtocolTCP -ProbePort 8080 –LoadBalancerDistribution sourceIP
+```powershell
+Set-AzureLoadBalancedEndpoint -ServiceName MyService -LBSetName LBSet1 -Protocol TCP -LocalPort 80 -ProbeProtocolTCP -ProbePort 8080 -LoadBalancerDistribution sourceIP
 ```
 
 ### <a name="configure-distribution-mode-for-cloud-services-endpoints"></a>Настройка режима распределения для конечных точек облачной службы
@@ -132,10 +133,10 @@ Set-AzureLoadBalancedEndpoint -ServiceName MyService -LBSetName LBSet1 -Protocol
 
 #### <a name="request"></a>Запрос
 
-    POST https://management.core.windows.net/<subscription-id>/services/hostedservices/<cloudservice-name>/deployments/<deployment-name>?comp=UpdateLbSet   x-ms-version: 2014-09-01
+    POST https://management.core.chinacloudapi.cn/<subscription-id>/services/hostedservices/<cloudservice-name>/deployments/<deployment-name>?comp=UpdateLbSet   x-ms-version: 2014-09-01
     Content-Type: application/xml
 
-    <LoadBalancedEndpointList xmlns="http://schemas.microsoft.com/windowsazure" xmlns:i="https://www.w3.org/2001/XMLSchema-instance">
+    <LoadBalancedEndpointList xmlns="http://schemas.microsoft.com/windowsazure" xmlns:i="http://www.w3.org/2001/XMLSchema-instance">
       <InputEndpoint>
         <LoadBalancedEndpointSetName> endpoint-set-name </LoadBalancedEndpointSetName>
         <LocalPort> local-port-number </LocalPort>
@@ -155,7 +156,7 @@ Set-AzureLoadBalancedEndpoint -ServiceName MyService -LBSetName LBSet1 -Protocol
 
 Как описано выше, установите для элемента `LoadBalancerDistribution` значение sourceIP для соответствия по двум кортежам; sourceIPProtocol для соответствия по трем кортежам; none для отсутствия соответствия (соответствие по пяти кортежам).
 
-#### <a name="response"></a>Ответ
+#### <a name="response"></a>Отклик
 
     HTTP/1.1 202 Accepted
     Cache-Control: no-cache
@@ -170,3 +171,5 @@ Set-AzureLoadBalancedEndpoint -ServiceName MyService -LBSetName LBSet1 -Protocol
 * [Обзор внутренней подсистемы балансировки нагрузки](load-balancer-internal-overview.md)
 * [Создание балансировщика нагрузки для Интернета в Resource Manager с помощью PowerShell](load-balancer-get-started-internet-arm-ps.md)
 * [Настройка параметров времени ожидания простоя TCP для подсистемы балансировки нагрузки](load-balancer-tcp-idle-timeout.md)
+
+<!-- Update_Description: update meta properties, wording update, update link -->

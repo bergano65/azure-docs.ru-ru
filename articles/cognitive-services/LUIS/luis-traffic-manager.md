@@ -12,11 +12,11 @@ ms.topic: article
 ms.date: 02/08/2019
 ms.author: diberry
 ms.openlocfilehash: 31d8f54cb05bdbba7fe05249527db3dd50385087
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59523415"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66123549"
 ---
 # <a name="use-microsoft-azure-traffic-manager-to-manage-endpoint-quota-across-keys"></a>Использование диспетчера трафика Microsoft Azure для распределения квоты конечной точки на несколько ключей
 Служба "Распознавание речи" (LUIS) позволяет увеличить квоту запросы конечной точки за пределы квоты для одного ключа. Для этого создайте дополнительные ключи для LUIS и добавьте их в приложение LUIS на странице **Публикация** в разделе **Ресурсы и ключи**. 
@@ -104,7 +104,7 @@ New-AzResourceGroup -Name luis-traffic-manager -Location "West US"
     |-Type|ExternalEndpoints|Дополнительные сведения см. в статье [Конечная точка диспетчера трафика][traffic-manager-endpoints]. |
     |-Target|eastus.api.cognitive.microsoft.com|Домен LUIS конечной точки.|
     |-EndpointLocation|"eastus"|Регион конечной точки.|
-    |-EndpointStatus|Включено|Включить конечную точку при ее создании.|
+    |-EndpointStatus|Enabled|Включить конечную точку при ее создании.|
 
     Успешный ответ выглядит следующим образом:
 
@@ -173,7 +173,7 @@ New-AzResourceGroup -Name luis-traffic-manager -Location "West US"
     |-Type|ExternalEndpoints|Дополнительные сведения см. в статье [Конечная точка диспетчера трафика][traffic-manager-endpoints]. |
     |-Target|westus.api.cognitive.microsoft.com|Домен LUIS конечной точки.|
     |-EndpointLocation|"westus"|Регион конечной точки.|
-    |-EndpointStatus|Включено|Включить конечную точку при ее создании.|
+    |-EndpointStatus|Enabled|Включить конечную точку при ее создании.|
 
     Успешный ответ выглядит следующим образом:
 
@@ -239,7 +239,7 @@ New-AzResourceGroup -Name luis-traffic-manager -Location "West US"
     |-TrafficManagerProfile|$parentprofile|Профиль, которому будет назначена эта конечная точка|
     |-Type|NestedEndpoints|Дополнительные сведения см. в разделе [AzTrafficManagerEndpointConfig добавить](https://docs.microsoft.com/powershell/module/az.trafficmanager/Add-azTrafficManagerEndpointConfig). |
     |-TargetResourceId|$eastprofile.Id|Идентификатор дочернего профиля|
-    |-EndpointStatus|Включено|Состояние конечной точки после добавления в родительский профиль|
+    |-EndpointStatus|Enabled|Состояние конечной точки после добавления в родительский профиль|
     |-EndpointLocation|"eastus"|[Имя региона Azure](https://azure.microsoft.com/global-infrastructure/regions/) ресурса.|
     |-MinChildEndpoints|1|Минимальное число дочерних конечных точек|
 
@@ -276,7 +276,7 @@ New-AzResourceGroup -Name luis-traffic-manager -Location "West US"
     |-TrafficManagerProfile|$parentprofile|Профиль, которому будет назначена эта конечная точка|
     |-Type|NestedEndpoints|Дополнительные сведения см. в разделе [AzTrafficManagerEndpointConfig добавить](https://docs.microsoft.com/powershell/module/az.trafficmanager/Add-azTrafficManagerEndpointConfig). |
     |-TargetResourceId|$westprofile.Id|Идентификатор дочернего профиля|
-    |-EndpointStatus|Включено|Состояние конечной точки после добавления в родительский профиль|
+    |-EndpointStatus|Enabled|Состояние конечной точки после добавления в родительский профиль|
     |-EndpointLocation|"westus"|[Имя региона Azure](https://azure.microsoft.com/global-infrastructure/regions/) ресурса.|
     |-MinChildEndpoints|1|Минимальное число дочерних конечных точек|
 

@@ -8,7 +8,7 @@
           href: /azure/architecture/vdc/networking-virtual-datacenter
         - name: Асимметричная маршрутизация с использованием нескольких сетевых путей
           href: ../expressroute/expressroute-asymmetric-routing.md?toc=%2fazure%2fnetworking%2ftoc.json
-        - name: Проектирование безопасной сети
+        - name: Проектирование защищенной сети
           href: ../best-practices-network-security.md?toc=%2fazure%2fnetworking%2ftoc.json
         - name: Звездообразная топология
           href: 'https://docs.microsoft.com/azure/architecture/reference-architectures/hybrid-networking/hub-spoke'
@@ -22,7 +22,7 @@
           href: disaster-recovery-dns-traffic-manager.md
     - name: Планирование и проектирование
       items:
-        - name: виртуальные сети;
+        - name: Виртуальные сети
           href: ../virtual-network/virtual-network-vnet-plan-design-arm.md?toc=%2fazure%2fnetworking%2ftoc.json
         - name: Возможность распределенного подключения через VPN
           href: ../vpn-gateway/vpn-gateway-about-vpngateways.md?toc=%2fazure%2fnetworking%2ftoc.json
@@ -34,13 +34,15 @@
               href: connectivty-interoperability-preface.md?toc=%2fazure%2fnetworking%2ftoc.json
             - name: Параметры конфигурации для настройки теста
               href: connectivty-interoperability-configuration.md?toc=%2fazure%2fnetworking%2ftoc.json
-            - name: Анализ на уровне управления
+            - name: Анализ в плоскости управления
               href: connectivty-interoperability-control-plane.md?toc=%2fazure%2fnetworking%2ftoc.json
-            - name: Анализ на уровне данных
+            - name: Анализ в плоскости данных
               href: connectivty-interoperability-data-plane.md?toc=%2fazure%2fnetworking%2ftoc.json
     - name: Основные понятия
       items:
-        - name: виртуальные сети;
+        - name: Глобальная сеть Майкрософт
+          href: azure-network.md
+        - name: Виртуальные сети
           href: ../virtual-network/virtual-networks-overview.md?toc=%2fazure%2fnetworking%2ftoc.json
         - name: Балансировка сетевой нагрузки
           href: ../load-balancer/load-balancer-overview.md?toc=%2fazure%2fnetworking%2ftoc.json
@@ -54,11 +56,11 @@
           href: ../vpn-gateway/vpn-gateway-about-vpngateways.md?toc=%2fazure%2fnetworking%2ftoc.json
         - name: Выделенное подключение к локальной среде
           href: ../expressroute/expressroute-introduction.md?toc=%2fazure%2fnetworking%2ftoc.json
-- name: Начало работы
+- name: Краткое руководство
   items:
     - name: Создание первой собственной виртуальной сети
       href: ../virtual-network/quick-create-portal.md?toc=%2fazure%2fnetworking%2ftoc.json
-- name: Практическое руководство
+- name: Руководства
   items:
     - name: Подключение к Интернету
       items:
@@ -88,7 +90,7 @@
           href: ../vpn-gateway/vpn-gateway-howto-point-to-site-resource-manager-portal.md?toc=%2fazure%2fnetworking%2ftoc.json
         - name: Создание выделенного частного подключения (ExpressRoute)
           href: ../expressroute/expressroute-howto-circuit-portal-resource-manager.md?toc=%2fazure%2fnetworking%2ftoc.json
-    - name: управления
+    - name: Управление
       items:
         - name: Общие сведения о мониторинге сетей
           href: network-monitoring-overview.md
@@ -96,13 +98,13 @@
           href: check-usage-against-limits.md
         - name: Просмотр топологии сети
           href: ../network-watcher/network-watcher-topology-powershell.md?toc=%2fazure%2fnetworking%2ftoc.json
-    - name: Примеры сценариев
+    - name: Примеры скриптов
       items:
-        - name: Инфраструктура CLI Azure
+        - name: Azure CLI
           href: cli-samples.md
         - name: Azure PowerShell
           href: powershell-samples.md
-    - name: Учебники
+    - name: Руководства
       items:
         - name: Балансировка нагрузки виртуальных машин
           href: ../virtual-machines/linux/tutorial-load-balancer.md?toc=%2fazure%2fnetworking%2ftoc.json
@@ -110,11 +112,11 @@
           href: ../vpn-gateway/vpn-gateway-howto-point-to-site-resource-manager-portal.md?toc=%2fazure%2fnetworking%2ftoc.json
 - name: Справочные материалы
   items:
-    - name: Инфраструктура CLI Azure
+    - name: Azure CLI
       href: 'https://docs.microsoft.com/cli/azure/network'
     - name: Azure PowerShell
       href: 'https://docs.microsoft.com/powershell/module/az.network/'
-    - name: .Net
+    - name: .NET
       href: 'https://docs.microsoft.com/dotnet/api/microsoft.azure.management.network?view=azuremgmtnetwork-9.1.0-preview'
     - name: Node.js
       href: 'https://azure.microsoft.com/develop/nodejs/#azure-sdk'
@@ -134,9 +136,9 @@
       href: 'https://azure.microsoft.com/pricing'
     - name: Калькулятор цен
       href: 'https://azure.microsoft.com/pricing/calculator/'
-    - name: Доступ по регионам
+    - name: Доступность по регионам
       href: 'https://azure.microsoft.com/regions/services/'
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-virtual-network'
-    - name: Видеоролики
+    - name: Видео
       href: 'https://azure.microsoft.com/resources/videos/index/?services=virtual-network'

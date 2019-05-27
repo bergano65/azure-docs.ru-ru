@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 11/09/2018
 ms.author: jingwang
 ms.openlocfilehash: 1ab404b838af65dcb75395dfeee1ca0553e497a1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60309203"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66122527"
 ---
 ## <a name="specifying-structure-definition-for-rectangular-datasets"></a>Указание определения структуры для прямоугольных наборов данных
 Раздел structure в JSON наборов данных, содержащий коллекцию столбцов для таблицы, является **необязательным** для прямоугольных таблиц (со строками и столбцами). Раздел structure следует использовать либо для указания сведений о типе при преобразовании типов, либо при выполнении сопоставления столбцов. В следующих разделах эти функции описаны более подробно. 
@@ -58,7 +58,7 @@ ms.locfileid: "60309203"
 * Guid
 * Datetime
 * Datetimeoffset
-* Временной диапазон 
+* Timespan 
 
 Чтобы упростить разбор пользовательской строки Datetime, для типов Datetime и Datetimeoffset можно при необходимости указать также строки culture и format. См. пример преобразования типа ниже.
 

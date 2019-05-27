@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 11/09/2018
 ms.author: nitinme
 ms.openlocfilehash: fccc036a5e0422508f7ebc3370a4b5faa5176dc2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60527917"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66124776"
 ---
 Bing поддерживает выделение совпадений, при котором помечаются термины запросов (или другие термины, которые Bing считает подходящими) в отображаемых строках некоторых ответов. Например, поля веб-страниц `name`, `displayUrl` и `snippet` могут помечать термины запроса.
 
@@ -23,7 +23,7 @@ Bing предоставляет возможность использовать 
   
 Если для `textDecorations` задано значение **true**, Bing может содержать следующие маркеры в отображаемых строках ответов. Если нет эквивалента в HTML, ячейка таблицы HTML будет пустой.
 
-|Unicode|HTML|ОПИСАНИЕ
+|Unicode|HTML|Описание
 |-|-|-
 |U+E000|\<b>|Помечает начало термина запроса (выделение совпадений)
 |U+E001|\</b>|Помечает окончание термина запроса

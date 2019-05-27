@@ -7,12 +7,12 @@ ms.date: 03/06/2019
 ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
-ms.openlocfilehash: 38cf6decb8e61768faa9680058f6366e1550ba40
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 479f77791a0b035f2d1de6085dfb12f5196288ee
+ms.sourcegitcommit: 59fd8dc19fab17e846db5b9e262a25e1530e96f3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60498769"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65979333"
 ---
 # <a name="author-policies-for-array-properties-on-azure-resources"></a>Автор политики для свойства массива для ресурсов Azure
 
@@ -185,7 +185,7 @@ ms.locfileid: "60498769"
 
 Следующие результаты являются результатом сочетания условие правила политики в примере и массива из существующих значений выше:
 
-|Условие |Результат |Пояснение |
+|Условие |Результат |Объяснение |
 |-|-|-|
 |`{<field>,"notEquals":"127.0.0.1"}` |Nothing |Один элемент массива результатом является значение false (127.0.0.1! = 127.0.0.1) и один — как true (127.0.0.1! = 192.168.1.1), поэтому **notEquals** условие _false_ и эффект не срабатывает. |
 |`{<field>,"notEquals":"10.0.4.1"}` |Действия политики |Оба элемента массива, интерпретируются как true (10.0.4.1! = 127.0.0.1 и 10.0.4.1! = 192.168.1.1), поэтому **notEquals** условие _true_ и активируется эффект. |
@@ -207,9 +207,9 @@ ms.locfileid: "60498769"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- См. другие [примеры шаблонов для службы "Политика Azure"](../samples/index.md).
-- См. дополнительные сведения о [структуре определения политики](../concepts/definition-structure.md).
-- См. дополнительные сведения о [действиях политик](../concepts/effects.md).
-- См. сведения о [программном создании политик](programmatically-create.md).
-- См. сведения о том, как [исправлять несоответствующие ресурсы](remediate-resources.md).
-- См. дополнительные сведения о группе управления в разделе [Упорядочение ресурсов с помощью групп управления Azure](../../management-groups/overview.md)
+- Просмотрите примеры доступны на [примеры политик Azure](../samples/index.md).
+- Изучите статью о [структуре определения Политики Azure](../concepts/definition-structure.md).
+- Изучите [сведения о действии политик](../concepts/effects.md).
+- Понять, как [программное создание политик](programmatically-create.md).
+- Узнайте, как [исправлять несоответствующие ресурсы](remediate-resources.md).
+- Просмотрите, какие группы управления — с [упорядочение ресурсов с помощью групп управления Azure](../../management-groups/overview.md).

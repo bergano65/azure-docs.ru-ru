@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 04/18/2019
 ms.author: mayg
-ms.openlocfilehash: 195c70cd887d75eebb23cb7632b5fa250f89661c
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
-ms.translationtype: MT
+ms.openlocfilehash: a1fbc8a42492b4a9c2254ccea2ddc2909219ad23
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65137756"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65969344"
 ---
 # <a name="about-the-azure-site-recovery-deployment-planner-for-vmware-to-azure"></a>О Планировщике развертывания Azure Site Recovery для восстановления виртуальных машин VMware в Azure
 В этой статье приведены рекомендации по использованию планировщика развертывания Azure Site Recovery в сценариях рабочих развертываний виртуальных машин VMware в Azure.
@@ -65,7 +65,7 @@ ms.locfileid: "65137756"
 
 | | **VMware в VMware** |**Hyper-V в Azure**|**Из Azure в Azure**|**Из Hyper-V на дополнительный сайт**|**Из VMware на дополнительный сайт**
 --|--|--|--|--|--
-Поддерживаемые сценарии использования. |Yes|Да|Нет |Да*|Нет 
+Поддерживаемые сценарии использования. |Да|Да|Нет|Да*|Нет
 Поддерживаемая версия | vCenter, 6.7, 6.5, 6.0 или 5.5| Windows Server 2016, Windows Server 2012 R2 | Нет данных |Windows Server 2016, Windows Server 2012 R2|Нет данных
 Поддерживаемая конфигурация|vCenter, ESXi| Кластер Hyper-V, узел Hyper-V|Нет данных|Кластер Hyper-V, узел Hyper-V|Нет данных|
 Число серверов, которые можно профилировать для каждого запущенного экземпляра планировщика развертывания Site Recovery. |Один (одновременно можно профилировать виртуальные машины на одном сервере vCenter Server или ESXi)|Несколько (одновременно можно профилировать виртуальные машины на нескольких узлах или кластерах узлов)| Нет данных |Несколько (одновременно можно профилировать виртуальные машины на нескольких узлах или кластерах узлов)| Нет данных
@@ -75,7 +75,7 @@ ms.locfileid: "65137756"
 ## <a name="prerequisites"></a>Технические условия
 Программа выполняет два основных действия: осуществляет профилирование и создает отчет. С ее помощью также можно оценить пропускную способность. В таблице ниже приведены требования к серверу, на котором инициируется профилирование и измерение пропускной способности.
 
-| Требование к серверу | ОПИСАНИЕ|
+| Требование к серверу | Описание|
 |---|---|
 |Профилирование и измерение пропускной способности| <ul><li>Операционная система: Windows Server 2016 или Windows Server 2012 R2.<br>(в идеале соответствует [рекомендациям по размеру сервера конфигурации](https://aka.ms/asr-v2a-on-prem-components)).</li><li>Конфигурация виртуальной машины: 8 виртуальных ЦП, 16 ГБ ОЗУ, жесткий диск емкостью 300 ГБ.</li><li>[.NET Framework 4.5](https://aka.ms/dotnet-framework-45)</li><li>[VMware vSphere PowerCLI 6.0 R3](https://aka.ms/download_powercli).</li><li>[Распространяемый компонент Visual C++ для Visual Studio 2012](https://aka.ms/vcplusplus-redistributable).</li><li>Интернет-доступ к Azure с этого сервера.</li><li>Учетная запись хранения Azure.</li><li>Права администратора на доступ к серверу.</li><li>Минимальное свободное место на диске: 100 ГБ (предполагается, что профилирование 1,000 виртуальных машин в среднем с 3 дисками на каждую выполняется 30 дней).</li><li>Параметрам уровня статистики vCenter VMware можно присвоить значение 1 или выше.</li><li>Разрешение порта vCenter (по умолчанию 443). Планировщик развертывания Site Recovery использует этот порт для подключения к серверу vCenter или к хосту ESXi.</ul></ul>|
 | Создание отчетов. | Компьютер, поддерживающий Windows или Windows Server с Excel 2013 или более поздней версии.<li>[.NET Framework 4.5](https://aka.ms/dotnet-framework-45)</li><li>[Распространяемый компонент Visual C++ для Visual Studio 2012](https://aka.ms/vcplusplus-redistributable).</li><li>[VMware vSphere PowerCLI 6.0 R3](https://aka.ms/download_powercli) необходим только при передаче параметра пользователя в команде генерации отчета для получения последней информации о конфигурации для виртуальных машин. Планировщик развертывания подключается к серверу vCenter. Разрешите порту vCenter (по умолчанию 443) подключиться к серверу vCenter.</li>|
@@ -121,7 +121,7 @@ ms.locfileid: "65137756"
 
 ## <a name="version-history"></a>Журнал версий
 Последняя версия средства планировщика развертывания Site Recovery — 2.4.
-Описание исправлений, добавляемых при каждом обновлении, см. на странице [журнала версий планировщика развертывания Site Recovery](https://social.technet.microsoft.com/wiki/contents/articles/51049.asr-deployment-planner-version-history.aspx).
+Описание исправлений, добавляемых при каждом обновлении, см. на странице [журнала версий планировщика развертывания Site Recovery](https://docs.microsoft.com/en-us/azure/site-recovery/site-recovery-deployment-planner-history).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 [Запуск планировщика развертывания Azure Site Recovery для сценариев развертывания виртуальных машин VMware в Azure](site-recovery-vmware-deployment-planner-run.md)
