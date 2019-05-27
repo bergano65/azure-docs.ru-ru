@@ -13,13 +13,13 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
 ms.date: 04/04/2017
-ms.author: mmccrory
-ms.openlocfilehash: 4b355a779a2e9f78f4cbf8ed5425200ce1df2f1d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.author: memccror
+ms.openlocfilehash: 976bb43fd3e6d6fdb19c733affd4afa2e49e482c
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60337279"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65967680"
 ---
 # <a name="what-to-do-in-the-event-of-an-azure-service-disruption-that-impacts-azure-cloud-services"></a>Что делать, если прерывание работы службы Azure влияет на облачные службы Azure
 Корпорация Майкрософт прилагает все усилия для того, чтобы наши службы всегда были доступны. Иногда по независящим от нас обстоятельствам происходят незапланированные нарушения работы служб.
@@ -36,7 +36,7 @@ ms.locfileid: "60337279"
 >
 
 
-## <a name="option-1-use-a-backup-deployment-through-azure-traffic-manager"></a>Вариант 1. Использование резервного развертывания через диспетчер трафика Azure
+## <a name="option-1-use-a-backup-deployment-through-azure-traffic-manager"></a>Вариант 1: Использование резервного развертывания через диспетчер трафика Azure
 Самое надежное решение аварийного восстановления заключается в поддержке нескольких развертываний приложения в разных регионах и в направлении трафика между ними с помощью [диспетчера трафика Azure](../traffic-manager/traffic-manager-overview.md). Диспетчер трафика Azure предоставляет несколько [методов маршрутизации](../traffic-manager/traffic-manager-routing-methods.md), поэтому вы можете управлять развертываниями, используя основную или резервную модель или разделяя трафик между ними.
 
 ![Балансировка облачных служб Azure по регионам с помощью диспетчера трафика Azure](./media/cloud-services-disaster-recovery-guidance/using-azure-traffic-manager.png)

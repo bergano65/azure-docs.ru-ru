@@ -1,16 +1,16 @@
-- name: Документация по API Bing для поиска сущностей
+- name: Документация по API Поиска сущностей Bing
   href: index.yml
 - name: Обзор
   items:
     - name: Что такое Поиск сущностей Bing?
       href: overview.md
-    - name: Сравнение API-интерфейсов поиска Bing
+    - name: Сравнение API-интерфейсов Поиска Bing
       href: ../Bing-Web-Search/bing-api-comparison.md
       maintainContext: true
 - name: Краткие руководства по REST API
   expanded: true
   items:
-    - name: REST API
+    - name: "REST\_API"
       items:
         - name: 'Использование C#'
           href: quickstarts/csharp.md
@@ -34,7 +34,7 @@
           href: quickstarts/entity-sdk-python-quickstart.md
         - name: Использование Java
           href: quickstarts/entity-sdk-java-quickstart.md
-- name: Учебники
+- name: Руководства
   items:
     - name: Создание одностраничного веб-приложения
       href: tutorial-bing-entities-search-single-page-app.md
@@ -42,7 +42,7 @@
   items:
     - name: Примеры кода
       href: 'https://azure.microsoft.com/resources/samples/?sort=0&service=cognitive-services&term=Bing+Entity+Search'
-- name: Практические руководства
+- name: Инструкции
   items:
     - name: Изменение размера и обрезка эскизов
       href: resize-and-crop-thumbnails.md
@@ -54,10 +54,10 @@
       href: concepts/sending-requests.md
 - name: Справочные материалы
   items:
-    - name: Требования к использованию и отображению API-интерфейсов поиска Bing
+    - name: Требования к использованию и отображению API-интерфейсов Поиска Bing
       href: ../Bing-Web-Search/use-display-requirements.md
       maintainContext: true
-    - name: API Bing для поиска сущностей версии 7
+    - name: API Поиска сущностей Bing версии 7
       href: 'https://docs.microsoft.com/rest/api/cognitiveservices/bing-entities-api-v7-reference'
     - name: Пакеты SDK
       items:
@@ -77,9 +77,9 @@
       href: 'https://azure.microsoft.com/pricing/details/cognitive-services/bing-entity-search-api/'
     - name: UserVoice
       href: 'https://cognitive.uservoice.com/forums/601036-bing-entity-search-api'
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/search?q=bing+entity+search'
-    - name: Доступ по регионам
+    - name: Доступность по регионам
       href: 'https://azure.microsoft.com/global-infrastructure/services/'
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/'
@@ -89,7 +89,9 @@
       href: 'https://azure.microsoft.com/try/cognitive-services/?api=bing-entities-search-api'
     - name: Тестирование
       href: 'https://dev.cognitive.microsoft.com/docs/services/7a3fb374be374859a823b79fd938cc65/'
-    - name: Конечная точка API Bing для поиска сущностей
+    - name: Конечная точка API Поиска сущностей Bing
       href: entity-search-endpoint.md
-    - name: Аналитика для API Bing для поиска сущностей
+    - name: Аналитика для API Поиска сущностей Bing
       href: bing-entity-stats.md
+    - name: Соответствие требованиям
+      href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'

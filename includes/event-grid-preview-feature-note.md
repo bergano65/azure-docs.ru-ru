@@ -9,11 +9,11 @@ ms.date: 11/06/2018
 ms.author: tomfitz
 ms.custom: include file
 ms.openlocfilehash: 85a1579e32b4c216f234f77c76316bedeaea77b0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60561775"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66119544"
 ---
 Эта функция предоставляется в предварительной версии. Для этого нужно установить расширение предварительной версии или модуль.
 
@@ -49,8 +49,8 @@ ms.locfileid: "60561775"
 
 Если параметр `-AllowPrerelease` недоступен, выполните следующие действия:
 
-1. Запустите `Install-Module PowerShellGet -Force`
-1. Запустите `Update-Module PowerShellGet`
+1. Выполнить `Install-Module PowerShellGet -Force`
+1. Выполнить `Update-Module PowerShellGet`
 1. Закройте консоль PowerShell.
 1. Перезапустите PowerShell от имени администратора.
 1. Установите модуль `Install-Module -Name AzureRM.EventGrid -AllowPrerelease -Force -Repository PSGallery`.

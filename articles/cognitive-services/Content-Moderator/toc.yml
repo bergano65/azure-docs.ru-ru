@@ -5,9 +5,9 @@
     - name: Что такое Content Moderator?
       href: overview.md
       expanded: true
-- name: Быстрое начало работы
+- name: Краткие руководства
   items:
-    - name: Опробование Content Moderator в Интернете
+    - name: Пробная версия Content Moderator в Интернете
       href: quick-start.md
     - name: С помощью клиентского пакета SDK
       items:
@@ -21,7 +21,7 @@
           items:
             - name: Анализ текстового содержимого
               href: text-moderation-quickstart-python.md
-- name: Учебники
+- name: Руководства
   items:
     - name: Модерация изображений для электронной коммерции
       href: ecommerce-retail-catalog-moderation.md
@@ -41,11 +41,11 @@
       href: Review-Tool-User-Guide/human-in-the-loop.md
     - name: 'Обзоры, рабочие процессы и задания'
       href: review-api.md
-- name: Практические руководства
+- name: Инструкции
   items:
-    - name: Модерация контента
+    - name: Модерация содержимого
       items:
-        - name: REST API
+        - name: "REST\_API"
           items:
             - name: Изображения (консоль API)
               href: try-image-api.md
@@ -55,7 +55,7 @@
               href: try-text-api.md
             - name: Пользовательские термины (консоль API)
               href: try-terms-list-api.md
-        - name: ПАКЕТ SDK .NET
+        - name: Пакет SDK для .NET
           items:
             - name: Проверка содержимого видео
               href: video-moderation-api.md
@@ -67,9 +67,9 @@
       items:
         - name: Средство проверки (браузер)
           href: Review-Tool-User-Guide/Review-Moderated-Images.md
-        - name: REST API
+        - name: "REST\_API"
           href: try-review-api-review.md
-        - name: ПАКЕТ SDK .NET
+        - name: Пакет SDK для .NET
           href: moderation-reviews-quickstart-dotnet.md
         - name: Проверки видео (.NET)
           href: video-reviews-quickstart-dotnet.md
@@ -79,13 +79,13 @@
       items:
         - name: Средство проверки (браузер)
           href: Review-Tool-User-Guide/Workflows.md
-        - name: REST API
+        - name: "REST\_API"
           href: try-review-api-workflow.md
     - name: Определение и использование заданий
       items:
-        - name: REST API
+        - name: "REST\_API"
           href: try-review-api-job.md
-        - name: ПАКЕТ SDK .NET
+        - name: Пакет SDK для .NET
           href: moderation-jobs-quickstart-dotnet.md
     - name: Настройка средства проверки
       href: Review-Tool-User-Guide/Configure.md
@@ -123,7 +123,7 @@
           href: 'https://azure.microsoft.com/resources/samples/?service=cognitive-services&term=content+moderator'
     - name: Серии вебинаров по Azure
       href: 'https://info.microsoft.com/cognitive-services-content-moderator-ondemand.html'
-    - name: Часто задаваемые вопросы
+    - name: Вопросы и ответы
       href: FAQs.md
     - name: Цены и ограничения
       href: 'https://azure.microsoft.com/pricing/details/cognitive-services/content-moderator'
@@ -133,9 +133,11 @@
       href: 'https://cognitive.uservoice.com/knowledgebase/topics/132073-content-moderator'
     - name: Поддержка языков
       href: language-support.md
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/microsoft-cognitive'
-    - name: Доступ по регионам
+    - name: Доступность по регионам
       href: 'https://azure.microsoft.com/global-infrastructure/services/'
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services'
+    - name: Соответствие требованиям
+      href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'

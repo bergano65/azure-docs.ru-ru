@@ -9,12 +9,12 @@ ms.date: 4/11/2019
 ms.topic: conceptual
 manager: carmonm
 ms.custom: mvc
-ms.openlocfilehash: 41f0607908cde94ca08a4c4dfce0a47032eefbb3
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: a1bb5534d2f98a4e5143038ab1d5fbbcc76184fe
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60739258"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66133185"
 ---
 # <a name="onboard-update-management-change-tracking-and-inventory-solutions"></a>Подключение решений для управления обновлениями, отслеживания изменений и инвентаризации
 
@@ -32,27 +32,10 @@ ms.locfileid: "60739258"
 
 ![Подключение решения для инвентаризации](media/automation-onboard-solutions-from-automation-account/onboardsolutions.png)
 
-При включении решений только определенные регионы поддерживают связывание рабочей области Log Analytics и учетной записи службы автоматизации.
-
-Поддерживаемое сопоставление показано в следующей таблице.
-
-|**Регион рабочей области Log Analytics**|**Регион учетной записи службы автоматизации**|
-|---|---|
-|AustraliaSoutheast|AustraliaSoutheast|
-|CanadaCentral|CanadaCentral|
-|CentralIndia|CentralIndia|
-|EastUS<sup>1</sup>|EastUS2|
-|JapanEast|JapanEast|
-|SoutheastAsia|SoutheastAsia|
-|WestCentralUS<sup>2</sup>|WestCentralUS<sup>2</sup>|
-|WestEurope|WestEurope|
-|UKSouth|UKSouth|
-|USGovVirginia|USGovVirginia|
-|EastUS2EUAP<sup>1</sup>|CentralUSEUAP|
-
-<sup>1</sup> EastUS2EUAP и EastUS сопоставлений рабочих областей Log Analytics для учетных записей службы автоматизации не точное сопоставление одного региона в другой, но имеет правильное сопоставление.
-
-<sup>2</sup> из-за ограничений емкости регион является недоступным при создании новых ресурсов. Сюда входят учетные записи службы автоматизации и Log Analytics рабочие области. Тем не менее созданной ранее связанные ресурсы в регионе должны продолжать работать.
+> [!NOTE]
+> При включении решений только определенные регионы поддерживают связывание рабочей области Log Analytics и учетной записи службы автоматизации.
+>
+> Список пар поддерживаемых сопоставлений, см. в разделе [сопоставление региона для рабочей учетной записи службы автоматизации и Log Analytics](how-to/region-mappings.md).
 
 Решение для отслеживания изменений и инвентаризации позволяет [отслеживать изменения](automation-vm-change-tracking.md) и [выполнять инвентаризацию](automation-vm-inventory.md) на виртуальных машинах. На этом этапе нужно включить решение на виртуальной машине.
 
@@ -161,6 +144,8 @@ ms.locfileid: "60739258"
 * Расписание запуска и остановки виртуальной машины.
 * Рабочие роли Runbook запуска и остановки виртуальной машины.
 * Переменные
+
+В качестве альтернативы можно также удалить связь рабочей области из учетной записи службы автоматизации из рабочей области Log Analytics. В рабочей области, выберите **учетной записи службы автоматизации** под **связанные ресурсы**. На странице учетной записи службы автоматизации выберите **отменить привязку учетной записи**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -5,10 +5,10 @@
   items:
     - name: Что такое API Распознавателя рукописного текста?
       href: overview.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   expanded: true
   items:
-    - name: REST API
+    - name: "REST\_API"
       items:
         - name: 'C#'
           href: quickstarts/csharp.md
@@ -38,11 +38,11 @@
       href: 'https://go.microsoft.com/fwlink/?linkid=2089907'
     - name: PowerShell
       href: 'https://aka.ms/azure-powershell-cognitiveservices'
-    - name: Инфраструктура CLI Azure
+    - name: Azure CLI
       href: 'https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest#az_cognitiveservices_list'
     - name: Поддержка языков
       href: language-support.md
-    - name: регионы
+    - name: Регионы
       href: 'https://azure.microsoft.com/global-infrastructure/services/'
 - name: Ресурсы
   items:
@@ -52,3 +52,5 @@
       href: 'https://azure.microsoft.com/roadmap/?category=ai-machine-learning'
     - name: Конфиденциальность и файлы cookie
       href: 'https://privacy.microsoft.com/privacystatement'
+    - name: Соответствие требованиям
+      href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'

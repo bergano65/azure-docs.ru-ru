@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 09/05/2018
 ms.author: mbullwin
-ms.openlocfilehash: 0587782cbfa31f7b397b950a752040cc678cf7d7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 0de4da5792553b8e61ce8116988dc0d0b2c55488
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60576668"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66130999"
 ---
 # <a name="instrument-web-apps-at-runtime-with-application-insights-status-monitor"></a>Инструментирование веб-приложений во время выполнения с помощью монитора состояний Application Insights
 
@@ -42,16 +42,16 @@ ms.locfileid: "60576668"
 
 Ниже представлено общее сравнение предлагаемых вариантов.
 
-|  | Во время сборки | Во время выполнения |
+|  | Во время сборки | Время выполнения |
 | --- | --- | --- |
-| Запросы и исключения |Yes |Yes |
-| [Более подробные исключения](../../azure-monitor/app/asp-net-exceptions.md) | |Yes |
+| Запросы и исключения |Да |Да |
+| [Более подробные исключения](../../azure-monitor/app/asp-net-exceptions.md) | |Да |
 | [Диагностика зависимостей](../../azure-monitor/app/asp-net-dependencies.md) |На платформе .NET 4.6 или более поздней, неполные сведения |Да, полные сведения: коды результатов, текст команд SQL, HTTP-команда|
-| [Счетчики производительности системы](../../azure-monitor/app/performance-counters.md) |Yes |Yes |
-| [API для пользовательской телеметрии][api] |Yes |Нет  |
-| [Интеграция журнала трассировки](../../azure-monitor/app/asp-net-trace-logs.md) |Yes |Нет  |
-| [Просмотр страницы и пользовательские данные](../../azure-monitor/app/javascript.md) |Yes |Нет  |
-| Требуется повторная сборка кода |Yes | Нет  |
+| [Счетчики производительности системы](../../azure-monitor/app/performance-counters.md) |Да |Да |
+| [API для пользовательской телеметрии][api] |Да |Нет |
+| [Интеграция журнала трассировки](../../azure-monitor/app/asp-net-trace-logs.md) |Да |Нет |
+| [Просмотр страницы и пользовательские данные](../../azure-monitor/app/javascript.md) |Да |Нет |
+| Требуется повторная сборка кода |Да | Нет |
 
 
 
@@ -149,7 +149,9 @@ Start-ApplicationInsightsMonitoring -Name appName -InstrumentationKey 00000000-0
 * Чтобы выводить подробные журналы, измените файл конфигурации `C:\Program Files\Microsoft Application Insights\Status Monitor\Microsoft.Diagnostics.Agent.StatusMonitor.exe.config` и добавьте `<add key="TraceLevel" value="All" />` для `appsettings`.
 Затем перезапустите монитор состояний.
 
-### <a name="insufficient-permissions"></a>Недостаточные разрешения
+* Так как монитор состояния приложения .NET можно также включить [трассировки .net, добавив соответствующие данные диагностики в файл конфигурации](https://docs.microsoft.com/dotnet/framework/configure-apps/file-schema/trace-debug/system-diagnostics-element). Например, в некоторых случаях бывает удобно видеть, что происходит на сетевом уровне, [Настройка трассировки сети](https://docs.microsoft.com/dotnet/framework/network-programming/how-to-configure-network-tracing)
+
+### <a name="insufficient-permissions"></a>Недостаточно разрешений
   
 * Если на сервере отображается сообщение "Недостаточно разрешений", выполните следующее:
   * В диспетчере IIS выберите свой пул приложений, откройте **Дополнительные параметры** и в разделе **Модель процесса** скопируйте значение параметра "Идентификация".
@@ -179,12 +181,12 @@ Start-ApplicationInsightsMonitoring -Name appName -InstrumentationKey 00000000-0
 Операционные системы, которые поддерживаются для монитора состояний Application Insights на сервере:
 
 * Windows Server 2008
-* Windows Server 2008 R2
+* Windows Server 2008 R2
 * Windows Server 2012
 * Windows Server 2012 R2.
 * Windows Server 2016
 
-На них должны быть установлены последний пакет обновления и платформа .NET Framework 4.5.
+последний пакет обновления и .NET Framework 4.5 (монитор состояния построен на этой версии платформы)
 
 На клиентских компьютерах: Windows 7, 8, 8.1 или 10 с платформой .NET Framework 4.5.
 
@@ -276,7 +278,9 @@ Start-ApplicationInsightsMonitoring -Name appName -InstrumentationKey 00000000-0
 
 ### <a name="what-version-of-application-insights-sdk-does-status-monitor-install"></a>Какую версию пакета SDK Application Insights устанавливает монитор состояний?
 
-Сейчас монитор состояний устанавливает только пакет SDK Application Insights версии 2.3 или 2.4.
+Сейчас монитор состояний устанавливает только пакет SDK Application Insights версии 2.3 или 2.4. 
+
+Application Insights SDK версии 2.4 является [последней версии для поддержки .NET 4.0](https://github.com/microsoft/ApplicationInsights-dotnet/releases/tag/v2.5.0-beta1) которых должен был [EOL января 2016 г.](https://devblogs.microsoft.com/dotnet/support-ending-for-the-net-framework-4-4-5-and-4-5-1/). Таким образом на данный момент монитор состояний можно использовать для инструментирования приложения .NET 4.0. 
 
 ### <a name="do-i-need-to-run-status-monitor-whenever-i-update-the-app"></a>Нужно ли запускать монитор состояния при каждом обновлении приложения?
 

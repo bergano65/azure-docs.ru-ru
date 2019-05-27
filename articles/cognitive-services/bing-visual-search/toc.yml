@@ -1,15 +1,15 @@
-- name: Документация по API для визуального поиска
+- name: Документация по API Визуального поиска
   href: index.yml
 - name: Обзор
   items:
-    - name: Что такое API для визуального поиска?
+    - name: Что такое API Визуального поиска?
       href: overview.md
-    - name: Сравнение API-интерфейсов поиска Bing
+    - name: Сравнение API-интерфейсов Поиска Bing
       href: ../Bing-Web-Search/bing-api-comparison.md
       maintainContext: true
-- name: Быстрое начало работы
+- name: Краткие руководства
   items:
-    - name: REST API
+    - name: "REST\_API"
       expanded: true
       items:
         - name: 'Использование C#'
@@ -33,7 +33,7 @@
           href: visual-search-sdk-node.md
         - name: Использование Python
           href: visual-search-sdk-python.md
-- name: Учебники
+- name: Руководства
   items:
     - name: Отправка изображения
       href: tutorial-visual-search-image-upload.md
@@ -51,9 +51,9 @@
       href: default-insights-tag.md
     - name: Использование аналитики Bing
       href: bing-insights-usage.md
-    - name: Аналитика для API визуального поиска
+    - name: Аналитика для API Визуального поиска
       href: bing-visual-search-stats.md
-- name: Практические руководства
+- name: Инструкции
   items:
     - name: Получение сведений с помощью маркеров
       href: use-insights-token.md
@@ -82,11 +82,13 @@
   items:
     - name: Поддержка языков и региональных параметров
       href: language-support.md
-    - name: Получение бесплатной учетной записи
+    - name: Получение бесплатного ключа доступа
       href: 'https://azure.microsoft.com/try/cognitive-services/?api=bing-visual-search-api'
     - name: Тестирование
       href: 'https://aka.ms/bingvisualsearchtryforfree'
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/bing-search'
-    - name: Мнение пользователей
+    - name: UserVoice
       href: 'https://cognitive.uservoice.com/forums/555907-bing-search'
+    - name: Соответствие требованиям
+      href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'

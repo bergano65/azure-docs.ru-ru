@@ -60,6 +60,8 @@
       href: 'https://aka.ms/adregion'
     - name: Эталонная архитектура решения
       href: 'https://azure.microsoft.com/solutions/architecture/anomaly-detector-process/'
+    - name: Соответствие требованиям
+      href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
 - name: Поддержка
   items:
     - name: Получение поддержки

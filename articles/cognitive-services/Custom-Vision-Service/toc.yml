@@ -1,10 +1,10 @@
-- name: Документация по Пользовательской службе визуального распознавания
+- name: Документация по службе "Пользовательское визуальное распознавание"
   href: index.yml
 - name: Обзор
   items:
     - name: Что собой представляет Пользовательское визуальное распознавание
       href: home.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   items:
     - name: С помощью пакета SDK для .NET
       items:
@@ -12,7 +12,7 @@
           href: csharp-tutorial.md
         - name: Обнаружение объектов
           href: csharp-tutorial-od.md
-    - name: Использование пакета SDK для Python
+    - name: С помощью пакета SDK для Python
       items:
         - name: Классификация изображений
           href: python-tutorial.md
@@ -24,7 +24,7 @@
           href: java-tutorial.md
         - name: Обнаружение объектов
           href: java-tutorial-od.md
-    - name: С помощью пакета SDK для Node.js
+    - name: Использование пакета SDK для Node.js
       items:
         - name: Классификация изображений
           href: node-tutorial.md
@@ -36,11 +36,11 @@
           href: go-tutorial.md
         - name: Обнаружение объектов
           href: go-tutorial-object-detection.md
-- name: Учебники
+- name: Руководства
   items:
-    - name: Логотип средства обнаружения для мобильных устройств
+    - name: Средство обнаружения логотипов для мобильных устройств
       href: logo-detector-mobile.md
-- name: Практические руководства
+- name: Инструкции
   items:
     - name: Построение классификатора
       href: getting-started-build-a-classifier.md
@@ -48,7 +48,7 @@
       href: test-your-model.md
     - name: Усовершенствование классификатора
       href: getting-started-improving-your-classifier.md
-    - name: Использование API-интерфейса прогнозирования
+    - name: Использование API прогнозирования
       href: use-prediction-api.md
     - name: Экспорт моделей
       items:
@@ -66,9 +66,9 @@
       href: ./update-application-to-3.0-sdk.md
 - name: Справочные материалы
   items:
-    - name: Пользовательский API визуального обучения
+    - name: API обучения Пользовательского визуального распознавания
       href: 'https://go.microsoft.com/fwlink/?linkid=865446'
-    - name: Пользовательский API визуального прогнозирования
+    - name: API прогнозирования Пользовательского визуального распознавания
       href: 'https://go.microsoft.com/fwlink/?linkid=865445'
     - name: Глоссарий
       href: glossary-of-terms.md
@@ -92,11 +92,13 @@
       href: limits-and-quotas.md
     - name: UserVoice
       href: 'https://cognitive.uservoice.com/forums/598141-custom-vision-service'
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/microsoft-cognitive'
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/updates/?product=cognitive-services'
-    - name: Доступ по регионам
+    - name: Доступность по регионам
       href: 'https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services'
+    - name: Соответствие требованиям
+      href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
     - name: Заметки о выпуске
       href: release-notes.md

@@ -2,18 +2,18 @@
 title: включение файла
 description: включение файла
 services: batch
-author: dlepow
+author: laurenhughes
 ms.service: batch
 ms.topic: include
 ms.date: 04/06/2018
-ms.author: danlep
+ms.author: lahugh
 ms.custom: include file
-ms.openlocfilehash: 7cee3f534e4ab4973a87a9c373a5b83aa2ba9ce2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 7ba4c90811bd8051ed9c307d9f9fa33e08e69dc7
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60549951"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66127523"
 ---
 Задача, выполняемая пакетной службой Azure, может генерировать выходные данные при запуске. Выходные данные задачи часто требуется хранить, чтобы их могли получать другие задачи в задании и (или) клиентское приложение, которое выполняет это задание. Задачи записывают выходные данные в файловую систему вычислительного узла пакетной службы. При этом все данные на узле удаляются при пересоздании образа или исключении узла из пула. Задачи могут также иметь срок хранения файла, по истечении которого созданные задачей файлы удаляются. Поэтому важно хранить выходные данные задачи, которые понадобятся вам позднее для использования с хранилищем данных, например [службой хранилища Azure](https://docs.microsoft.com/azure/storage/).
 
