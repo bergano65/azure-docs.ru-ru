@@ -14,11 +14,11 @@ ms.workload: NA
 ms.date: 03/22/2019
 ms.author: aljo
 ms.openlocfilehash: f580bf02b222f01a3d5aad1254f208791ea22b38
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59046986"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66161785"
 ---
 # <a name="enable-disk-encryption-for-service-fabric-linux-cluster-nodes"></a>Включение шифрования дисков в узлах кластера Service Fabric на платформе Linux 
 > [!div class="op_single_selector"]
@@ -58,7 +58,7 @@ Set-AzKeyVaultAccessPolicy -VaultName $keyVaultName -EnabledForDiskEncryption
 * Установите последнюю версию [Azure CLI](/cli/azure/install-azure-cli) , который содержит новые команды шифрования.
 * Установите последнюю версию [пакета Azure SDK из выпуска Azure PowerShell](https://github.com/Azure/azure-powershell/releases). Ниже приведены масштабируемого набора виртуальных машин командлеты шифрования дисков AZURE, чтобы включить ([задать](/powershell/module/az.compute/set-azvmssdiskencryptionextension)) шифрования, получения ([получить](/powershell/module/az.compute/get-azvmssvmdiskencryption)) состояние шифрования и remove ([отключить](/powershell/module/az.compute/disable-azvmssdiskencryption)) шифрования на шкале установите экземпляр. 
 
-| Команда | Version (версия) |  Источник  |
+| Команда | Version |  `Source`  |
 | ------------- |-------------| ------------|
 | Get-AzVmssDiskEncryptionStatus   | 1.0.0 или более поздней версии | Az.Compute |
 | Get-AzVmssVMDiskEncryptionStatus   | 1.0.0 или более поздней версии | Az.Compute |

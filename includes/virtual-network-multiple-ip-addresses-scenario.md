@@ -1,16 +1,15 @@
 ---
-author: rockboyfor
+author: genlin
 ms.service: virtual-network
 ms.topic: include
-origin.date: 11/09/2018
-ms.date: 01/21/2019
-ms.author: v-yeche
+ms.date: 11/09/2018
+ms.author: genli
 ms.openlocfilehash: 3df4108907a4e1e65a444faf1049163966b7accf
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60742260"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66170751"
 ---
 ## <a name="scenario"></a>Сценарий
 Создается виртуальная машина с одним сетевым адаптером. Она подключается к виртуальной сети. Виртуальной машине нужно присвоить три разных *частных* и два *общедоступных* IP-адреса. IP-адреса назначаются следующим IP-конфигурациям.
@@ -18,7 +17,7 @@ ms.locfileid: "60742260"
 * **IPConfig-1.** Назначает *статический* частный IP-адрес и *статический* общедоступный IP-адрес.
 * **IPConfig-2.** Назначает *статический* частный IP-адрес и *статический* общедоступный IP-адрес.
 * **IPConfig-3:** Назначает *статический* частный IP-адрес и без общедоступного IP-адреса.
-
+  
     ![Несколько IP-адресов](./media/virtual-network-multiple-ip-addresses-scenario/multiple-ipconfigs.png)
 
 Когда создается сетевой адаптер, с ним связываются IP-конфигурации. Когда создается виртуальная машина, к ней подключается сетевой адаптер. Типы IP-адресов в этом сценарии указаны только для примера. Вы можете использовать любые типы IP-адресов и назначений, какие вам потребуются.

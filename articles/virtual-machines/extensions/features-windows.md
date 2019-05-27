@@ -17,11 +17,11 @@ ms.date: 03/30/2018
 ms.author: roiyz
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: ce13f053c2adee6a9a347a4162b60cc6d6b40eda
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58849767"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66160272"
 ---
 # <a name="virtual-machine-extensions-and-features-for-windows"></a>Обзор расширений и компонентов виртуальной машины под управлением Windows
 
@@ -260,7 +260,7 @@ Set-AzVMAccessExtension -ResourceGroupName "myResourceGroup" -VMName "myVM" -Nam
 Когда обновление становится доступно, оно устанавливается на виртуальных машинах только при внесении изменений в расширения или другие элементы модели виртуальной машины, как например:
 
 - Диски данных
-- расширения.
+- Расширения
 - контейнер диагностики загрузки;
 - секреты гостевой ОС;
 - Размер виртуальной машины
@@ -418,7 +418,7 @@ Remove-AzVMExtension -ResourceGroupName "myResourceGroup" -VMName "myVM" -Name "
 4. Выберите **Удалить**.
 
 ## <a name="common-vm-extensions-reference"></a>Справочники по распространенным расширениям виртуальной машины
-| Имя расширения | ОПИСАНИЕ | Дополнительные сведения |
+| Имя расширения | Описание | Дополнительные сведения |
 | --- | --- | --- |
 | Расширение Custom Script в ОС Windows |Выполняет сценарии на виртуальных машинах Azure. |[Расширение Custom Script в ОС Windows](custom-script-windows.md) |
 | Расширение DSC в ОС Windows |Расширение PowerShell DSC (настройка требуемого состояния) |[Общие сведения об обработчике расширения Desired State Configuration в Azure](dsc-overview.md) |

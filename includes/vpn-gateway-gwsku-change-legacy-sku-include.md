@@ -9,11 +9,11 @@ ms.date: 03/15/2019
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: 4c232e1ce183c6935d625b5bc9987a4981865ae4
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57908694"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66159270"
 ---
 При использовании модели развертывания с помощью Resource Manager, можно изменить номера SKU шлюзов. При изменении предыдущего номера SKU шлюза на новый удаляется существующий VPN-шлюз и создается новый.
 

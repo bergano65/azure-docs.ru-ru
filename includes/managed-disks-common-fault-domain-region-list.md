@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 11/25/2018
 ms.author: cynthn
 ms.openlocfilehash: 0ee40c3ad692deccbc185fa7f8e51dd25eeaf95d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60613790"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66164492"
 ---
 ### <a name="number-of-fault-domains-per-region"></a>Количество доменов сбоя по регионам
 
@@ -39,7 +39,7 @@ ms.locfileid: "60613790"
 | Центральная Индия       | 2                       |
 | Западная Индия          | 2                       |
 | Центральная Корея       | 2                       |
-| Южная Корея         | 2                       |
+| Корея, юг         | 2                       |
 |                     |                         |
 | Восточная часть Австралии      | 2                       |
 | Юго-Восточная часть Австралии | 2                       |
@@ -49,5 +49,5 @@ ms.locfileid: "60613790"
 | Правительство штата Вирджиния     | 2                       |
 | Техас (для обслуживания государственных организаций США)        | 2                       |
 | Аризона (для обслуживания государственных организаций США)      | 2                       |
-| Центральная часть US DoD      | 2                       |
-| Восточная часть US DoD         | 2                       |
+| Центральная часть США, МО      | 2                       |
+| Восток США, МО         | 2                       |

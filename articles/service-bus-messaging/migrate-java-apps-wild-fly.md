@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/08/2019
 ms.author: asirveda
-ms.openlocfilehash: 2392d0ef9d6257b93b76f13a5354eeba57d78ddd
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 60f4e410c7c4e3854235029acade550c9279c981
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65800281"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66158712"
 ---
 # <a name="migrate-java-enterprise-edition-ee-apps-to-azure"></a>Перенос Java enterprise edition (EE) приложений в Azure
 В этой статье описывается процесс переноса существующих рабочих нагрузок Java EE Azure:
@@ -67,7 +67,7 @@ ms.locfileid: "65800281"
 После миграции вы будете запускать приложения, с помощью служебной шины Azure.
 
 ## <a name="prerequisites"></a>Технические условия
-Чтобы развернуть веб-приложения Java в Azure, требуется подписка Azure. Если у вас нет подписки Azure, вы можете активировать [преимущества для подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) или зарегистрироваться для получения [бесплатной учетной записи Azure](https://azure.microsoft.com/en-us/free/).
+Чтобы развернуть веб-приложения Java в Azure, требуется подписка Azure. Если у вас нет подписки Azure, вы можете активировать [преимущества для подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/) или зарегистрироваться для получения [бесплатной учетной записи Azure](https://azure.microsoft.com/free/).
 
 Кроме того вам понадобятся следующие компоненты:
 
@@ -1070,7 +1070,7 @@ open https://websocket-hello-app.azurewebsites.net
 
 - [Руководство по Enterprise Java для службы приложений на платформе Linux](../app-service/containers/app-service-java-enterprise.md)
 - [Подключаемый модуль maven для службы приложений Azure](/java/api/overview/azure/maven/azure-webapp-maven-plugin/readme?view=azure-java-stable)
-- [Развертывание адаптера RA универсального JMS в JBoss/WildFly](https://access.redhat.com/documentation/red_hat_jboss_enterprise_application_platform/7.1/html/configuring_messaging/resource_adapters#deploy_configure_generic_jms_resource_adapter)
+- [Развертывание адаптера RA универсального JMS в JBoss/WildFly](https://access.redhat.com/documentation/en-us/red_hat_jboss_enterprise_application_platform/7.1/html/configuring_messaging/resource_adapters#deploy_configure_generic_jms_resource_adapter)
 - [Конфигурация обмена сообщениями WildFly/JBoss](https://docs.jboss.org/author/display/WFLY/Messaging+configuration)
 - [Руководство по JBoss/WildFly CLI](https://docs.jboss.org/author/display/WFLY/Command+Line+Interface)
 - [Открыв SSH-подключение с компьютера разработки](../app-service/containers/app-service-linux-ssh-support.md#open-ssh-session-from-remote-shell)

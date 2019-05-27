@@ -10,11 +10,11 @@ ms.reviewer: klam, LADocs
 ms.topic: article
 ms.date: 09/22/2017
 ms.openlocfilehash: 555083235aff08476e82f0daa81203b66591f3cc
-ms.sourcegitcommit: b3d74ce0a4acea922eadd96abfb7710ae79356e0
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56245955"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66167284"
 ---
 # <a name="secure-calls-to-custom-apis-from-azure-logic-apps"></a>Защита вызовов к пользовательским API из Azure Logic Apps
 
@@ -188,16 +188,16 @@ ms.locfileid: "56245955"
 
 `{"tenant": "{tenant-ID}", "audience": "{client-ID-from-Part-2-web-app-or-API app}", "clientId": "{client-ID-from-Part-1-logic-app}", "secret": "{key-from-Part-1-logic-app}", "type": "ActiveDirectoryOAuth" }`
 
-| Элемент | Обязательно | ОПИСАНИЕ | 
+| Элемент | Обязательно для заполнения | Описание | 
 | ------- | -------- | ----------- | 
-| tenant | Yes | GUID для арендатора Azure AD. | 
-| audience | Yes | GUID целевого ресурса, к которому требуется доступ, являющийся идентификатором клиента из удостоверения приложения для веб-приложения или приложения API. | 
-| clientid | Yes | GUID клиента, запрашивающего доступ, являющийся идентификатором клиента из удостоверения приложения логики. | 
-| secret | Yes | Ключ или пароль из удостоверения приложения для клиента, который запрашивает маркер доступа. | 
-| Тип | Yes | Тип проверки подлинности. Для аутентификации ActiveDirectoryOAuth это значение равно `ActiveDirectoryOAuth`. | 
+| клиент | Да | GUID для арендатора Azure AD. | 
+| audience | Да | GUID целевого ресурса, к которому требуется доступ, являющийся идентификатором клиента из удостоверения приложения для веб-приложения или приложения API. | 
+| clientid | Да | GUID клиента, запрашивающего доступ, являющийся идентификатором клиента из удостоверения приложения логики. | 
+| секрет | Да | Ключ или пароль из удостоверения приложения для клиента, который запрашивает маркер доступа. | 
+| тип | Да | Тип проверки подлинности. Для аутентификации ActiveDirectoryOAuth это значение равно `ActiveDirectoryOAuth`. | 
 |||| 
 
-Например: 
+Например:
 
 ``` json
 {
@@ -234,11 +234,11 @@ ms.locfileid: "56245955"
 
 `{"type": "clientcertificate", "password": "password", "pfx": "long-pfx-key"}`
 
-| Элемент | Обязательно | ОПИСАНИЕ | 
+| Элемент | Обязательно для заполнения | Описание | 
 | ------- | -------- | ----------- | 
-| Тип | Yes | Тип проверки подлинности. Для SSL-сертификатов клиента используйте значение `ClientCertificate`. | 
-| password | Yes | Пароль для доступа к сертификату клиента (PFX-файл). | 
-| pfx | Yes | Содержимое сертификата клиента в кодировке Base64 (PFX-файл). | 
+| тип | Да | Тип проверки подлинности. Для SSL-сертификатов клиента используйте значение `ClientCertificate`. | 
+| password | Да | Пароль для доступа к сертификату клиента (PFX-файл). | 
+| pfx | Да | Содержимое сертификата клиента в кодировке Base64 (PFX-файл). | 
 |||| 
 
 <a name="basic"></a>
@@ -251,11 +251,11 @@ ms.locfileid: "56245955"
 
 `{"type": "basic", "username": "username", "password": "password"}`.
 
-| Элемент | Обязательно | ОПИСАНИЕ | 
+| Элемент | Обязательно для заполнения | Описание | 
 | ------- | -------- | ----------- | 
-| Тип | Yes | Тип аутентификации, который будет использоваться. Для обычной проверки подлинности используйте значение `Basic`. | 
-| Имя пользователя | Yes | Имя пользователя, которое будет использоваться для аутентификации. | 
-| password | Yes | Пароль, который будет использоваться для аутентификации. | 
+| тип | Да | Тип аутентификации, который будет использоваться. Для обычной проверки подлинности используйте значение `Basic`. | 
+| username | Да | Имя пользователя, которое будет использоваться для аутентификации. | 
+| password | Да | Пароль, который будет использоваться для аутентификации. | 
 |||| 
 
 <a name="azure-ad-code"></a>
@@ -273,6 +273,6 @@ and not use the Azure portal, learn how to
 To create an application identity for your logic app and use that identity to call your API, 
 you must follow the previous steps. -->
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Deploy and call custom APIs from logic app workflows](../logic-apps/logic-apps-custom-api-host-deploy-call.md) (Развертывание и вызов пользовательских API из рабочих процессов приложения логики)

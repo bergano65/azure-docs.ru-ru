@@ -9,11 +9,11 @@ ms.topic: conceptual
 ms.date: 01/17/2019
 ms.author: spelluru
 ms.openlocfilehash: fc8877ed23b408ea041de67018a71cc203c5e8c0
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58182410"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66162040"
 ---
 # <a name="post-to-custom-topic-for-azure-event-grid"></a>Публикация в пользовательском разделе для службы "Сетка событий Azure"
 
@@ -39,7 +39,7 @@ az eventgrid topic show --name <topic-name> -g <topic-resource-group> --query "e
 (Get-AzEventGridTopic -ResourceGroupName <topic-resource-group> -Name <topic-name>).Endpoint
 ```
 
-## <a name="header"></a>Заголовок
+## <a name="header"></a>Верхний колонтитул
 
 Добавьте в запрос значение заголовка `aeg-sas-key`, содержащее ключ для аутентификации.
 
@@ -94,16 +94,16 @@ az eventgrid topic key list --name <topic-name> -g <topic-resource-group> --quer
 }]
 ```
 
-## <a name="response"></a>Ответ
+## <a name="response"></a>Отклик
 
 После отправки данных в конечную точку раздела вы получите ответ. Ответ — это стандартный код ответа HTTP. Ниже приведены некоторые распространенные ответы:
 
-|Результат  |Ответ  |
+|Результат  |Отклик  |
 |---------|---------|
 |Успешно  | 200 ОК  |
 |Неправильный формат данных события | 400 — недопустимый запрос |
 |Недопустимый ключ доступа | 401 — недостаточно прав |
-|Неправильная конечная точка | 404 — не найдено |
+|Неправильная конечная точка | 404 Не найдено |
 |Массив или событие превышает допустимый размер | 413 (слишком большой объем полезных данных) |
 
 Текст сообщений об ошибках имеет следующий формат:

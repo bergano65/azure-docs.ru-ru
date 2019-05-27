@@ -1,10 +1,15 @@
 ---
+author: cynthn
+ms.service: virtual-machines
+ms.topic: include
+ms.date: 10/26/2018
+ms.author: cynthn
 ms.openlocfilehash: 9a5a2d92f70c411c46ebb4efb35e17e9b0c477ca
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60542353"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66161599"
 ---
 1. Установите dapl, rdmacm, ibverbs и mlx4.
 
@@ -12,10 +17,11 @@ ms.locfileid: "60542353"
    sudo apt-get update
 
    sudo apt-get install libdapl2 libmlx4-1
+
    ```
 
 2. В /etc/waagent.conf включите RDMA, раскомментировав следующие строки конфигурации. Для изменения этого файла требуется доступ с правами root.
-
+  
    ```
    OS.EnableRDMA=y
 
@@ -29,20 +35,19 @@ ms.locfileid: "60542353"
 
    <User or group name> soft    memlock <memory required for your application in KB>
    ```
-
+  
 4. Установите библиотеку Intel MPI [Купите и скачайте](https://software.intel.com/intel-mpi-library/) библиотеку с сайта Intel или скачайте [бесплатную пробную версию](https://registrationcenter.intel.com/en/forms/?productid=1740).
 
    ```bash
    wget http://registrationcenter-download.intel.com/akdlm/irc_nas/tec/9278/l_mpi_p_5.1.3.223.tgz
    ```
-
+ 
    Поддерживаются только среды выполнения Intel MPI 5.x.
-
+ 
    Шаги установки см. в [руководстве по установке библиотеки Intel MPI](http://registrationcenter-download.intel.com/akdlm/irc_nas/1718/INSTALL.html?lang=en&fileExt=.html).
 
 5. Включите ptrace для некорневых процессов без отладчика (требуется для последних версий Intel MPI).
-
+ 
    ```bash
    echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope
    ```
-   <!--ms.date: 07/30/2018-->

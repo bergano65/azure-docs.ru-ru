@@ -1,5 +1,5 @@
 ---
-title: Создайте и зарегистрируйте наборы данных рабочей области
+title: Создание наборов данных для доступа к данным с наборами данных машинного обучения Azure
 titleSuffix: Azure Machine Learning service
 description: Узнайте, как создавать наборы данных из различных источников и зарегистрировать наборов данных в рабочей области
 services: machine-learning
@@ -10,34 +10,59 @@ ms.author: sihhu
 author: MayMSFT
 manager: cgronlun
 ms.reviewer: nibaccam
-ms.date: 05/02/19
-ms.openlocfilehash: d3502219f03d4ad076a693ab990f2fadb0b5d558
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.date: 05/21/2019
+ms.openlocfilehash: 949468dfe26b076b5c5cf5cab8bbdc2038c7bd2a
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65800830"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66165885"
 ---
-# <a name="create-and-register-azure-machine-learning-datasets-preview"></a>Создание и регистрация наборы данных обучения машины Azure (Предварительная версия)
+# <a name="create-and-access-datasets-preview-in-azure-machine-learning"></a>Создание и доступ к наборам данных (Предварительная версия) в машинном обучении Azure
 
-В этой статье вы узнаете, рабочие процессы машинного обучения Azure, чтобы создать и зарегистрировать наборов данных и способ доступа к ним для повторного использования в локальных и удаленных экспериментов.
+В этой статье вы узнаете, как создавать наборы данных машинного обучения Azure (Предварительная версия) и способах доступа к данным из локальных и удаленных экспериментов.
 
-Наборы данных (Предварительная версия) обучения Azure машины облегчают доступ и работы с данными. Наборы данных управлять данными в различных сценариях, таких как Обучение модели и создания конвейера. С помощью [пакета SDK для Azure Machine Learning](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py), можно работать с данными в популярных форматах, доступ к базовым хранилищем, просмотра и подготовить данные, управление жизненным циклом определения разных наборов данных и сравнения между наборами данных, используемых в обучение и в рабочей среде.
+С помощью управляемого наборов данных вы можете: 
+* **Легкого доступа к данным во время обучения модели** без повторного подключения к мест хранения
+
+* **Обеспечить согласованность данных и обеспечения повторяемости** используют тот же указатель через экспериментов: записных книжек, автоматических машинного обучения, конвейеры, графический интерфейс
+
+* **Совместное использование данных и сотрудничать** с другими пользователями
+
+* **Просмотр данных** & управлять жизненным циклом моментальные снимки данных и версии
+
+* **Сравнение данных** в обучении в рабочей среде
+
 
 ## <a name="prerequisites"></a>Технические условия
 
-Чтобы создать и зарегистрировать наборы данных вам потребуется:
+Для создания и работы с наборами данных, вам потребуется:
 
 * Подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Службы машинного обучения Azure](https://aka.ms/AMLFree).
 
-* Рабочая область службы машинного обучения Azure. См. в разделе [создать рабочую область службы машинного обучения Azure](https://docs.microsoft.com/azure/machine-learning/service/setup-create-workspace).
+* [Рабочей области службы машинного обучения Azure в рабочей области службы машинного обучения Azure](https://docs.microsoft.com/azure/machine-learning/service/setup-create-workspace)
 
-* Машинного обучения Azure SDK для Python. Для установки или обновления до последней версии пакета SDK, см. в разделе [установить или обновить пакет SDK](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py).
+* [Azure Machine Learning и пакет SDK для Python, установленной](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py), который включает пакет наборы данных машинного обучения Azure.
 
 > [!Note]
 > Некоторые классы наборов данных (Предварительная версия) имеют зависимости от [azureml dataprep](https://docs.microsoft.com/python/api/azureml-dataprep/?view=azure-ml-py) пакета (GA). Для пользователей Linux эти классы поддерживаются только для следующих дистрибутивов:  Red Hat Enterprise Linux, Ubuntu, Fedora и CentOS.
 
-## <a name="create-datasets-from-local-files"></a>Создание наборов данных из локальных файлов
+## <a name="data-formats"></a>Форматы данных
+
+Можно создать набор данных Azure Machine Learning из следующие данные:
++ [С разделителями](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset.dataset?view=azure-ml-py#from-delimited-files-path--separator------header--promoteheadersbehavior-allfileshavesameheaders--3---encoding--fileencoding-utf8--0---quoting-false--infer-column-types-true--skip-rows-0--skip-mode--skiplinesbehavior-norows--0---comment-none--include-path-false--archive-options-none-)
++ [binary](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset.dataset?view=azure-ml-py#from-binary-files-path-)
++ [json](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset.dataset?view=azure-ml-py#from-json-files-path--encoding--fileencoding-utf8--0---flatten-nested-arrays-false--include-path-false-)
++ [Excel](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset.dataset?view=azure-ml-py#from-excel-files-path--sheet-name-none--use-column-headers-false--skip-rows-0--include-path-false--infer-column-types-true-)
++ [Parquet](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset.dataset?view=azure-ml-py#from-parquet-files-path--include-path-false-)
++ [база данных SQL Azure;](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset.dataset?view=azure-ml-py#from-sql-query-data-source--query-)
++ [Azure Data Lake Унив. 1](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset.dataset?view=azure-ml-py#from-sql-query-data-source--query-)
+
+## <a name="create-datasets"></a>Создание наборов данных 
+
+Вы можете взаимодействовать с наборов данных с помощью пакета наборы данных машинного обучения Azure в [пакета SDK Azure Machine Learning Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py) и специально [ `Dataset` класс](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset(class)?view=azure-ml-py).
+
+### <a name="create-from-local-files"></a>Создание из локальных файлов
 
 Загружать файлы с локального компьютера, указав путь к файлу или папке с [ `auto_read_files()` ](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset(class)?view=azure-ml-py#auto-read-files-path--include-path-false-) метода из `Dataset` класса.  Этот метод выполняет следующие действия не требуется указывать тип файла и анализ аргументов:
 
@@ -52,13 +77,14 @@ from azureml.core.dataset import Dataset
 dataset = Dataset.auto_read_files('./data/crime.csv')
 ```
 
-Кроме того можно используйте файл специальные функции для явного управления синтаксический анализ файла. В настоящее время пакет SDK наборы данных поддерживает [с разделителями](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset.dataset?view=azure-ml-py#from-delimited-files-path--separator------header--promoteheadersbehavior-allfileshavesameheaders--3---encoding--fileencoding-utf8--0---quoting-false--infer-column-types-true--skip-rows-0--skip-mode--skiplinesbehavior-norows--0---comment-none--include-path-false--archive-options-none-), [Excel](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset.dataset?view=azure-ml-py#from-excel-files-path--sheet-name-none--use-column-headers-false--skip-rows-0--include-path-false--infer-column-types-true-), [Parquet](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset.dataset?view=azure-ml-py#from-parquet-files-path--include-path-false-), [двоичных](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset.dataset?view=azure-ml-py#from-binary-files-path-), и [json](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset.dataset?view=azure-ml-py#from-json-files-path--encoding--fileencoding-utf8--0---flatten-nested-arrays-false--include-path-false-) форматы файлов.
+Кроме того можно используйте файл специальные функции для явного управления синтаксический анализ файла. 
 
-## <a name="create-datasets-from-azure-datastores"></a>Создание наборов данных из хранилища данных Azure
 
-Чтобы создать наборы данных из хранилища данных Azure, обязательно сделайте следующее:
+### <a name="create-from-azure-datastores"></a>Создание из хранилища данных Azure
 
-* Убедитесь, что у вас есть доступ к зарегистрированным хранилище данных Azure владельца или участника.
+Создание наборов данных из хранилища данных Azure:
+
+* Убедитесь в наличии `contributor` или `owner` доступ к зарегистрированным хранилище данных Azure.
 
 * Импорт [ `Workspace` ](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace.workspace?view=azure-ml-py) и [ `Datastore` ](https://docs.microsoft.com/python/api/azureml-core/azureml.core.datastore(class)?view=azure-ml-py#definition) и `Dataset` пакеты из пакета SDK.
 
@@ -90,17 +116,11 @@ dataset = Dataset.from_delimited_files(datapath)
 dataset.head(5)
 ```
 
-||ИД|Серийный номер|Date|Заблокировать|IUCR|Основной тип|Описание|Описание расположения|Фикс.|Дом|...|Административный район|Жилой микрорайон|Код ФБР|Координата X|Координата Y|Год|Обновлено|Широта|Долгота|Расположение|
-|--|--|---|---|---|---|----|------|-------|------|-----|---|----|----|-----|-----|------|----|-----|----|----|-----
-|0|10498554|HZ239907|4/4/2016 23:56|007XX E 111TH ST|1153|МОШЕННИЧЕСКИЕ ПРАКТИКЕ|КРАЖИ ФИНАНСОВЫХ ДАННЫХ НА 300 ДОЛЛ. США|OTHER|FALSE|FALSE|...|9|50|11|1183356|1831503|2016|5/11/2016 15:48|41.69283384|-87.60431945|(41.692833841, -87.60431945)|
-1|10516598|HZ258664|4/15/2016 17:00|082XX С MARSHFIELD ОХРАНИТЬ|890|КРАЖА| ПОСТРОЕНИЕ|ПРОЖИВАНИЯ|FALSE|FALSE|...|21|71|6|1166776|1850053|2016|5/12/2016 15:48|41.74410697|-87.66449429|(41.744106973, -87.664494285)
-2|10519196|HZ261252|4/15/2016 10:00|САКРАМЕНТО С 104XX ОХРАНИТЬ|1154|МОШЕННИЧЕСКИЕ ПРАКТИКЕ|КРАЖИ ФИНАНСОВЫХ ДАННЫХ 300 ДОЛЛ. США И В РАЗДЕЛЕ|ПРОЖИВАНИЯ|FALSE|FALSE|...|19|74|11|||2016|5/12/2016 15:50
-3|10519591|HZ261534|4/15/2016 9:00|113XX С НАПУГАННЫМ ОХРАНИТЬ|1120|МОШЕННИЧЕСКИЕ ПРАКТИКЕ|ПОДДЕЛКИ|ПРОЖИВАНИЯ|FALSE|FALSE|...|9|49|10|||2016|5/13/2016 15:51
-4.|10534446|HZ277630|4/15/2016 10:00|055XX N KEDZIE AVE|890|КРАЖА|ПОСТРОЕНИЕ|SCHOOL, ОБЩЕДОСТУПНЫЙ, СОЗДАНИЕ|FALSE|FALSE|...|40|13|6|||2016|5/25/2016 15:59|
+## <a name="register-datasets"></a>Регистрация наборов данных
 
-## <a name="register-your-datasets-with-workspace"></a>Зарегистрировать в наборы данных в рабочей области
+Чтобы завершить процесс создания, зарегистрируйте наборов данных с помощью рабочей области:
 
-Используйте [ `register()` ](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset.dataset?view=azure-ml-py#register-workspace--name--description-none--tags-none--visible-true--exist-ok-false--update-if-exist-false-) метод для регистрации наборов данных в рабочую область для совместного использования и повторного использования в вашей организации, а также между различными экспериментов.
+Используйте [ `register()` ](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset.dataset?view=azure-ml-py#register-workspace--name--description-none--tags-none--visible-true--exist-ok-false--update-if-exist-false-) метод, чтобы зарегистрировать наборов данных в рабочую область, чтобы они могли совместно с другими пользователями и повторно использовать в различных экспериментов.
 
 ```Python
 dataset = dataset.register(workspace = workspace,
@@ -111,38 +131,19 @@ dataset = dataset.register(workspace = workspace,
 ```
 
 >[!NOTE]
-> Значение параметра по умолчанию для `register()` является `exist_ok = False`. Если попытаться зарегистрировать набора данных с тем же именем без изменения этого параметра, выдается ошибка.
+> Если `exist_ok = False` (по умолчанию), и вы пытаетесь зарегистрировать набора данных с тем же именем, что и другой, возникает ошибка. Значение `True` перезаписать существующие.
 
-`register()` Метод возвращает набор данных уже зарегистрированную с помощью настройки параметра `exist_ok = True`.
-
-```Python
-dataset = dataset.register(workspace = workspace,
-                           name = 'dataset_crime',
-                           description = 'Training data',
-                           exist_ok = True
-                           )
-```
-
-Используйте `list()` для просмотра всех зарегистрированных наборов данных в рабочей области.
-
-```Python
-Dataset.list(workspace_name)
-```
-
-Приведенный выше код приведет к следующему:
-
-```Python
-[Dataset(Name: dataset_crime,
-         Workspace: workspace_name)]
-```
-
-## <a name="access-datasets-in-workspace"></a>Доступ к наборам данных в рабочей области
+## <a name="access-data-in-datasets"></a>Доступ к данным в наборах данных
 
 Зарегистрированные наборы данных являются доступными и готовых к использованию локально, удаленно и на вычислительные кластеры, как вычисление машинного обучения Azure. Чтобы повторно использовать зарегистрированный набор данных для экспериментов и вычислительные среды, используйте следующий код для получения рабочей области и зарегистрированный набор данных по имени.
 
 ```Python
 workspace = Workspace.from_config()
 
+# See list of datasets registered in workspace.
+Dataset.list(workspace)
+
+# Get dataset by name
 dataset = workspace.datasets['dataset_crime']
 ```
 

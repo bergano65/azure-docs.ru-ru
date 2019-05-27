@@ -5,15 +5,15 @@ services: media-services
 author: Juliako
 ms.service: media-services
 ms.topic: include
-ms.date: 02/21/2019
+ms.date: 05/01/2019
 ms.author: juliako
 ms.custom: include file
-ms.openlocfilehash: 79af6512e9ce3d3f897be216ee3626c5d4fbcf1d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: feec6a695ad867d26d32904d020648b029f9da35
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60733898"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66155749"
 ---
 ## <a name="create-a-media-services-account"></a>Создание учетной записи служб мультимедиа
 
@@ -22,6 +22,8 @@ ms.locfileid: "60733898"
 ### <a name="create-a-resource-group"></a>Создание группы ресурсов
 
 Чтобы создать группу ресурсов, выполните указанную ниже команду. Группа ресурсов Azure — это логический контейнер, в котором происходит развертывание ресурсов, таких как учетные записи Служб мультимедиа Azure и связанные с ними учетные записи хранения, а также управление ими.
+
+Можно заменить `amsResourceGroup` значением.
 
 ```azurecli
 az group create --name amsResourceGroup --location westus2
@@ -35,7 +37,7 @@ az group create --name amsResourceGroup --location westus2
 
 В этом примере мы создадим учетную запись общего назначения версии 2 c LRS категории "Стандартный". Если вы хотите поэкспериментировать с учетными записями хранения, используйте `--sku Standard_LRS`. Тем не менее при выборе номера SKU для рабочей среды следует рассмотреть `--sku Standard_RAGRS`, который предоставляет географическую репликацию для обеспечения непрерывности бизнес-процессов. Дополнительные сведения см. в статье об [учетных записях хранения](https://docs.microsoft.com/cli/azure/storage/account?view=azure-cli-latest).
  
-Следующая команда создает учетную запись хранения, которая будет связана с учетной записью Служб мультимедиа. В приведенном ниже скрипте `storageaccountforams` можно заменить своим значением. Имя учетной записи должно содержать не более 24 символов.
+Следующая команда создает учетную запись хранения, которая будет связана с учетной записью Служб мультимедиа. В приведенном ниже скрипте `storageaccountforams` можно заменить своим значением. `amsResourceGroup` должно соответствовать значению, которое вы присвоили для группы ресурсов на предыдущем шаге. Имя учетной записи хранения должен иметь длину меньше 24.
 
 ```azurecli
 az storage account create --name storageaccountforams \  

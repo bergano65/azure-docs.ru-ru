@@ -9,11 +9,11 @@ ms.date: 12/21/2018
 ms.author: cynthn;davberg
 ms.custom: include file
 ms.openlocfilehash: ca0c45b5d74140e0398595070df71da669caab53
-ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65468419"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66160084"
 ---
 Концепция единицы вычислений Azure (ACU) позволяет сравнивать производительность ЦП разных номеров SKU Azure. Это поможет вам легко определить, какие SKU с наибольшей вероятностью удовлетворят ваши требования к производительности.  На данный момент в качестве стандарта единицы ACU выбрана малая ВМ (Standard_A1), равная 100, и все прочие SKU представляют то, насколько быстрее данный SKU может выполнять стандартную нагрузку. 
 
