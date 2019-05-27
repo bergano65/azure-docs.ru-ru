@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 11/25/2018
 ms.author: crdun
 ms.openlocfilehash: e81d11c01ef1cd8cb1ca6b63e48554cc46d146ee
-ms.sourcegitcommit: c61c98a7a79d7bb9d301c654d0f01ac6f9bb9ce5
-ms.translationtype: HT
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 11/27/2018
-ms.locfileid: "52440406"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66140711"
 ---
 * В Xcode нажмите **Run** и запустите приложение на реальном устройстве iOS (push-уведомления не будут работать на симуляторах). Нажмите кнопку **ОК**, чтобы подтвердить принятие push-уведомлений. Этот запрос отображается при первом запуске приложения.
 * В приложении добавьте новый элемент и щелкните **+**.

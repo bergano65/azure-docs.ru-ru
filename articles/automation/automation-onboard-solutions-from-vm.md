@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.service: automation
 ms.custom: mvc
 manager: carmonm
-ms.openlocfilehash: bf81b862f978d4baab0907dc9002564062ec5228
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 38b5b233d21c0c5d79d7bcb6a145e6232b238b0e
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60738931"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66133123"
 ---
 # <a name="onboard-update-management-change-tracking-and-inventory-solutions-from-an-azure-virtual-machine"></a>Подключение решений "Управление обновлениями", "Отслеживание изменений" и "Инвентаризация" на виртуальной машине Azure
 
@@ -104,6 +104,8 @@ ms.locfileid: "60738931"
 * Расписание запуска и остановки виртуальной машины.
 * Рабочие роли Runbook запуска и остановки виртуальной машины.
 * Переменные
+
+В качестве альтернативы можно также удалить связь рабочей области из учетной записи службы автоматизации из рабочей области Log Analytics. В рабочей области, выберите **учетной записи службы автоматизации** под **связанные ресурсы**. На странице учетной записи службы автоматизации выберите **отменить привязку учетной записи**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

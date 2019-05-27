@@ -77,7 +77,7 @@
     - name: Поддерживаемые источники данных
       href: Concepts/data-sources-supported.md
       displayName: 'metadata, pair, sharepoint, authentication, permissions, faq, pdf, excel, xls, rtf, html, txt, tsv, url, end of line, new line, carriage return, markdown, commonmark, format, standard'
-- name: Практические руководства
+- name: Инструкции
   items:
     - name: Редактирование базы знаний
       items:
@@ -145,7 +145,7 @@
   items:
     - name: Справочник по REST API
       href: 'https://go.microsoft.com/fwlink/?linkid=2092179'
-    - name: Часто задаваемые вопросы
+    - name: Вопросы и ответы
       href: faqs.md
     - name: Ограничения
       href: limits.md
@@ -184,6 +184,8 @@
   items:
     - name: Доступ по регионам
       href: 'https://azure.microsoft.com/global-infrastructure/services/'
+    - name: Соответствие требованиям
+      href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/'
     - name: Цены и ограничения
@@ -194,7 +196,7 @@
       href: 'https://stackoverflow.com/questions/tagged/QnAMaker'
     - name: UserVoice
       href: 'https://aka.ms/qnamaker-uservoice'
-    - name: поиска
+    - name: Поиск
       href: 'https://docs.microsoft.com/search/index?search=QnAMaker'
     - name: Блог
       href: 'https://blog.botframework.com/category/QnAMaker/'

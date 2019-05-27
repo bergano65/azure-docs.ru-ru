@@ -9,16 +9,16 @@ editor: ''
 ms.service: api-management
 ms.workload: integration
 ms.topic: article
-ms.date: 12/14/2017
+ms.date: 05/29/2019
 ms.author: apimpm
-ms.openlocfilehash: a771b437258046f937b97a9e37ffedbe0a17c1c1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: a8bfa7c5baa316b4019480bfc146b6cc61eff979
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60693608"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66141306"
 ---
-# <a name="configure-a-custom-domain-name"></a>Настройка пользовательского доменного имени 
+# <a name="configure-a-custom-domain-name"></a>Настройка пользовательского имени домена 
 
 При создании экземпляра службы управления API (APIM) Azure назначает его поддомену домена azure-api.net (например, `apim-service-name.azure-api.net`). Но доступ к конечным точкам APIM можно предоставлять через собственное доменное имя, например **contoso.com**. В этом руководстве показано, как сопоставить существующее пользовательское DNS-имя с конечными точками, предоставленными экземпляром службы управления API Azure.
 
@@ -36,8 +36,6 @@ ms.locfileid: "60693608"
 + Экземпляр APIM. Дополнительные сведения см. в статье [Создание экземпляра службы управления API Azure](get-started-create-service-instance.md).
 + Пользовательское доменное имя, которое принадлежит вам. Используемое имя должно быть приобретено отдельно и размещено на DNS-сервере. Этот раздел не содержит инструкции по размещению пользовательского доменного имени.
 + Необходимо иметь действующий сертификат с открытым и закрытым ключами (PFX-файл). Субъект или альтернативное имя субъекта (SAN) должны соответствовать доменному имени (это позволяет APIM безопасно предоставлять URL-адреса по протоколу SSL).
-
-[!INCLUDE [premium-dev-standard-basic.md](../../includes/api-management-availability-premium-dev-standard-basic.md)]
 
 ## <a name="use-the-azure-portal-to-set-a-custom-domain-name"></a>Настройка пользовательского доменного имени с помощью портала Azure
 

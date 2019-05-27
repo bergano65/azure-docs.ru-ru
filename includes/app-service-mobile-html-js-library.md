@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 08/23/2018
 ms.author: crdun
 ms.openlocfilehash: ff7ba04271c150018f2c55b62e40542a686608cf
-ms.sourcegitcommit: e51e940e1a0d4f6c3439ebe6674a7d0e92cdc152
-ms.translationtype: HT
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/08/2019
-ms.locfileid: "55905248"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66140879"
 ---
 ## <a name="create-client"></a>Создание подключения клиента
 Создайте подключение клиента, создав объект `WindowsAzure.MobileServiceClient` .  Замените `appUrl` URL-адресом в своем мобильном приложении.
@@ -168,7 +168,7 @@ table
     }, failure);
 ```
 
-### <a name="deleting"></a>Практическое руководство. Удаление данных
+### <a name="deleting"></a>Практическое руководство. Удалить данные
 Для удаления записи вызовите метод `.del()`.  В ссылке на объект укажите идентификатор:
 
 ```javascript

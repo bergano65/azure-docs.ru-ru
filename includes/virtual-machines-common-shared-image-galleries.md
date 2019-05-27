@@ -9,11 +9,11 @@ ms.date: 05/06/2019
 ms.author: akjosh; cynthn
 ms.custom: include file
 ms.openlocfilehash: 4063e79a9415ac35b09cc77d0110c04e191b49c7
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
-ms.translationtype: MT
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65546765"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66145876"
 ---
 Коллекция общих образов — это служба, которая позволяет создавать структуру и организацию на основе управляемых пользовательских образов виртуальных машин. Укажите общий галерей изображений:
 
@@ -160,7 +160,7 @@ ms.locfileid: "65546765"
 - [Java](https://docs.microsoft.com/java/azure/?view=azure-java-stable)
 - [Node.js](https://docs.microsoft.com/javascript/api/azure-arm-compute/?view=azure-node-latest)
 - [Python](https://docs.microsoft.com/python/api/overview/azure/virtualmachines?view=azure-python)
-- [GO](https://docs.microsoft.com/go/azure/)
+- [Go](https://docs.microsoft.com/go/azure/)
 
 ## <a name="templates"></a>Шаблоны
 

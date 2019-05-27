@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 09/04/2018
 ms.author: glenga
 ms.openlocfilehash: 49ac1a7585ddf2a6500c7e9382880109c3f7f431
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61025996"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66131731"
 ---
 ## <a name="export-an-api-definition"></a>Импорт определения API
 Вы создали определение OpenAPI функции при работе со статьей [Создание определения OpenAPI функции](../articles/azure-functions/functions-openapi-definition.md). Следующий шаг в этом процессе — экспорт определения API. Это позволит PowerApps и Microsoft Flow использовать его в пользовательском API.
@@ -19,7 +19,7 @@ ms.locfileid: "61025996"
 
 1. На [портале Azure](https://portal.azure.com) щелкните имя приложения-функции (например, **function-demo-energy**) > **Функции платформы** > **Определение API**.
 
-    ![определения API](media/functions-export-api-definition/api-definition.png)
+    ![Определение API](media/functions-export-api-definition/api-definition.png)
 
 1. Нажмите кнопку **Export to PowerApps + Flow** (Экспорт в PowerApps + Flow).
 
@@ -27,7 +27,7 @@ ms.locfileid: "61025996"
 
 1. В области справа используйте параметры, указанные в таблице ниже.
 
-    |Параметр|ОПИСАНИЕ|
+    |Параметр|Описание|
     |--------|------------|
     |**Режим экспорта**|Выберите **Express**, чтобы автоматически создать пользовательский API. При выборе значения **Вручную** экспортируется определение API, но затем вы должны вручную импортировать его в PowerApps и Microsoft Flow. См. дополнительные инструкции по [экспорту в PowerApps и Microsoft Flow](../articles/azure-functions/app-service-export-api-to-powerapps-and-flow.md).|
     |**Environment**|Выберите среду, в которую нужно сохранить пользовательский API. См. дополнительные сведения о [среде PowerApps](https://powerapps.microsoft.com/tutorials/environments-overview/) и [среде Microsoft Flow](https://us.flow.microsoft.com/documentation/environments-overview-admin/).|

@@ -9,11 +9,11 @@ ms.date: 10/16/2018
 ms.author: spelluru
 ms.custom: include file
 ms.openlocfilehash: b84b0a8e09bf739ce62dee167ff751b491765c66
-ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59684673"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66154551"
 ---
 ### <a name="create-a-storage-account-for-event-processor-host"></a>Создание учетной записи хранения для узла обработчика событий
 Узел обработчика событий представляет собой интеллектуальный агент, который упрощает прием событий от Центров событий путем управления постоянными контрольными точками и параллельным приемом. Для создания контрольных точек узлу обработчика событий требуется учетная запись хранения. В следующем примере показано, как создать учетную запись хранения и как получить ключи для доступа:
@@ -22,7 +22,7 @@ ms.locfileid: "59684673"
 
 2. Выберите **Хранилище**, а затем **Учетная запись хранения — BLOB-объект, файл, таблица, очередь**.
    
-    ![Выбор учетной записи хранения](./media/event-hubs-create-storage/create-storage1.png)
+    ![Выберите учетную запись хранения](./media/event-hubs-create-storage/create-storage1.png)
 
 3. На странице **Создание учетной записи хранения** выполните следующие действия: 
 

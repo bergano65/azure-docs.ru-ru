@@ -14,11 +14,11 @@ ms.topic: article
 ms.date: 03/01/2019
 ms.author: apimpm
 ms.openlocfilehash: 532c1051522410c496fb3809c06c7e3a74340adb
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60006052"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66141440"
 ---
 # <a name="how-to-use-azure-api-management-with-virtual-networks"></a>Как использовать управление API Azure с виртуальными сетями
 Виртуальные сети Azure позволяют размещать любые ресурсы Azure в сети, недоступной из Интернета, доступом к которой управляете вы сами. Эти сети можно подключать к локальным сетям с помощью различных технологий VPN. Начать изучение виртуальных сетей Azure лучше всего со статьи [Что такое виртуальная сеть Azure?](../virtual-network/virtual-networks-overview.md).
@@ -109,9 +109,9 @@ ms.locfileid: "60006052"
 
 <a name="required-ports"> </a> Когда экземпляр службы управления API размещается в виртуальной сети, используются порты в следующей таблице.
 
-| Исходные и конечные порты | Direction          | Транспортный протокол |   [Теги служб](../virtual-network/security-overview.md#service-tags) <br> Ресурс и назначение   | Назначение (*)                                                 | Тип виртуальной сети |
+| Исходные и конечные порты | Направление          | Транспортный протокол |   [Теги служб](../virtual-network/security-overview.md#service-tags) <br> Ресурс и назначение   | Назначение (*)                                                 | Тип виртуальной сети |
 |------------------------------|--------------------|--------------------|---------------------------------------|-------------------------------------------------------------|----------------------|
-| * / 80, 443                  | Входящий трафик            | TCP                | INTERNET — VIRTUAL_NETWORK            | Подключения клиентов к службе управления API                      | Внешний             |
+| * / 80, 443                  | Входящий трафик            | TCP                | INTERNET — VIRTUAL_NETWORK            | Подключения клиентов к службе управления API                      | Внешние             |
 | * / 3443                     | Входящий трафик            | TCP                | ApiManagement / VIRTUAL_NETWORK       | Конечная точка управления для портала Azure и PowerShell         | Внешний и внутренний  |
 | * / 80, 443                  | Исходящие           | TCP                | VIRTUAL_NETWORK / Storage             | **Зависимость от службы хранилища Azure**                             | Внешний и внутренний  |
 | * / 80, 443                  | Исходящие           | TCP                | VIRTUAL_NETWORK / AzureActiveDirectory | Приложения Azure Active Directory (где применяется)                   | Внешний и внутренний  |

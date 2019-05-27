@@ -11,11 +11,11 @@ ms.workload: infrastructure-services
 ms.date: 3/26/2018
 ms.author: victorh
 ms.openlocfilehash: 10bc4e4c440e5495afd820f588270b7990108b68
-ms.sourcegitcommit: aa3be9ed0b92a0ac5a29c83095a7b20dd0693463
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58259267"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66135314"
 ---
 # <a name="create-an-application-gateway-with-path-based-routing-rules-using-the-azure-portal"></a>Создание шлюза приложений с правилами маршрутизации на основе URL-пути при помощи портала Azure | Документация Майкрософт
 
@@ -61,7 +61,7 @@ ms.locfileid: "58259267"
    - *myAGSubnet* — имя подсети;
    - *10.0.0.0/24* — диапазон адресов подсети.
 
-     ![Создание виртуальной сети](./media/application-gateway-create-url-route-portal/application-gateway-vnet.png)
+     ![Создать виртуальную сеть](./media/application-gateway-create-url-route-portal/application-gateway-vnet.png)
 
 6. Нажмите кнопку **ОК**, чтобы создать виртуальную сеть и подсеть.
 7. Щелкните **Выбрать общедоступный IP-адрес**, выберите **Создать**, а затем введите имя общедоступного IP-адреса. В этом примере общедоступный IP-адрес — *myAGPublicIPAddress*. Оставьте значения по умолчанию для остальных параметров и нажмите кнопку **ОК**.
@@ -117,7 +117,7 @@ ms.locfileid: "58259267"
       -Settings $publicSettings
     ```
 
-3. Создайте еще две виртуальные машины и установите службы IIS, используя только что выполненные указания. Введите имена *myVM2* и *myVM3* для имен и значений vmname в Set-AzVMExtension.
+3. Создайте еще две виртуальные машины и установите службы IIS, используя только что выполненные указания. Введите *myVM2* и *myVM3* в качестве имен и значений VMName в Set-AzVMExtension.
 
 ## <a name="create-backend-pools-with-the-virtual-machines"></a>Создание серверных пулов с виртуальными машинами
 

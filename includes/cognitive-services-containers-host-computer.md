@@ -4,16 +4,16 @@ ms.author: diberry
 ms.service: cognitive-services
 ms.topic: include
 ms.date: 03/22/2019
-ms.openlocfilehash: 2de88c7f490dd2d949274f165013b1a9aa72249b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: MT
+ms.openlocfilehash: eda4395b46abdfdccb76c0960984b3f6d7614a48
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60598761"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66124356"
 ---
-**Узла** является x64-разрядный компьютер, который запускает контейнер docker. Это может быть компьютер в локальной среде или служба размещения Docker в Azure, включая следующие решения:
+Узел — это 64-разрядный компьютер, на котором выполняется контейнер Docker. Это может быть компьютер в локальной среде или служба размещения Docker в Azure, включая следующие решения:
 
-* [Служба Azure Kubernetes (AKS)](../articles/aks/index.yml)
-* [Экземпляры контейнеров Azure](../articles/container-instances/index.yml);
-* кластер [Kubernetes](https://kubernetes.io/), развернутый в [Azure Stack](/azure-stack/operator). Дополнительные сведения см. в статье [Развертывание Kubernetes в Azure Stack](/azure-stack/user/azure-stack-solution-template-kubernetes-deploy).
+* [Служба Azure Kubernetes](../articles/aks/index.yml).
+* [Экземпляры контейнеров Azure](../articles/container-instances/index.yml).
+* Кластер [Kubernetes](https://kubernetes.io/), развернутый в [Azure Stack](/azure-stack/operator). Дополнительные сведения см. в статье [Развертывание Kubernetes в Azure Stack](/azure-stack/user/azure-stack-solution-template-kubernetes-deploy).
 

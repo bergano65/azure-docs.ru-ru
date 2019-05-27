@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 08/23/2018
 ms.author: crdun
 ms.openlocfilehash: f4ba467b6d80c9ccafba0a91c1f04152b92cf869
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
-ms.translationtype: MT
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58114043"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66140671"
 ---
 1. На компьютере Mac откройте [портал Azure]. Последовательно выберите **Все службы** > **Службы приложений** и серверную часть, которую вы только что создали. В параметрах мобильного приложения выберите предпочитаемый язык:
 

@@ -5,7 +5,7 @@
   items:
     - name: Что такое служба "Распознавание речи"?
       href: what-is-luis.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   items:
     - name: 'Создание приложения, использующего предварительно созданный домен'
       href: luis-get-started-create-app.md
@@ -23,7 +23,7 @@
           href: sdk-csharp-quickstart-query-prediction-endpoint.md
     - name: Использование REST API
       items:
-        - name: Получение намерения
+        - name: Получение сведений о намерении
           items:
             - name: 'C#'
               href: luis-get-started-cs-get-intent.md
@@ -47,7 +47,7 @@
               href: luis-get-started-node-add-utterance.md
             - name: Python
               href: luis-get-started-python-add-utterance.md
-- name: Учебники
+- name: Руководства
   items:
     - name: Создание приложения
       items:
@@ -128,7 +128,7 @@
       items:
         - name: Оценка прогнозирования
           href: luis-concept-prediction-score.md
-        - name: Просмотр фраз конечной точки
+        - name: Просмотр речевых фрагментов конечной точки
           href: luis-concept-review-endpoint-utterances.md
         - name: Списки фраз
           href: luis-concept-feature.md
@@ -164,7 +164,7 @@
           href: luis-concept-security.md
         - name: Ключи конечной точки и создания
           href: luis-concept-keys.md
-- name: Практические руководства
+- name: Инструкции
   items:
     - name: Запуск нового приложения
       href: luis-how-to-start-new-app.md
@@ -194,11 +194,11 @@
               href: luis-tutorial-list-entity.md
     - name: Интеграция
       items:
-        - name: "С API проверки орфографии Bing версии\_7"
+        - name: "С API Проверки орфографии Bing версии\_7"
           href: luis-tutorial-bing-spellcheck.md
-        - name: С помощью службы распознавания речи
+        - name: Со службой "Речь"
           href: luis-tutorial-speech-to-intent.md
-        - name: Использование ботов
+        - name: С ботом
           items:
             - name: Бот веб-приложения
               items:
@@ -218,19 +218,19 @@
                   href: luis-tutorial-bot-csharp-appinsights.md
     - name: Повышение точности прогнозирования
       items:
-        - name: Использование панелей мониторинга
+        - name: Использование панели мониторинга
           displayName: 'dashboard, analytics, charts, data, unclear predictions, incorrect predictions, imbalance, endpoint hits, status, evaluation, accuracy, active version, problematic intents, nearest rival, usage'
           href: luis-how-to-use-dashboard.md
         - name: Добавление списков фраз
           displayName: 'synonym, interchange'
           href: luis-how-to-add-features.md
-        - name: Просмотр фрагментов речи конечной точки
+        - name: Просмотр речевых фрагментов конечной точки
           displayName: active learning
           href: luis-how-to-review-endpoint-utterances.md
         - name: Добавление шаблонов
           displayName: 'syntax, template, roles'
           href: luis-how-to-model-intent-pattern.md
-    - name: Train
+    - name: Обучение
       href: luis-how-to-train.md
     - name: Тест
       items:
@@ -239,7 +239,7 @@
         - name: Пакетное тестирование
           href: luis-how-to-batch-test.md
           displayName: 'import, export'
-    - name: Опубликовать
+    - name: Публикация
       href: luis-how-to-publish-app.md
     - name: Управление приложением
       items:
@@ -256,7 +256,7 @@
           href: luis-how-to-account-settings.md
         - name: Распределение квоты для конечной точки между ключами с помощью диспетчера трафика
           href: luis-traffic-manager.md
-    - name: Перенос API
+    - name: Миграция API
       items:
         - name: "Миграция в REST API версии\_2"
           href: luis-migration-api-v1-to-v2.md
@@ -274,7 +274,7 @@
   items:
     - name: Конфиденциальность пользователей
       href: luis-user-privacy.md
-    - name: регионы
+    - name: Регионы
       href: luis-reference-regions.md
       displayName: 'failover, fail-over, fail over, Europe, EU, Australia, business continuity, bcdr'
     - name: Границы
@@ -283,14 +283,14 @@
       items:
         - name: Сущности по языкам и региональным параметрам
           href: luis-reference-prebuilt-entities.md
-        - name: Сущность возраста
+        - name: Сущность Age
           href: luis-reference-prebuilt-age.md
-        - name: Сущность валюты
+        - name: Сущность Age
           href: luis-reference-prebuilt-currency.md
         - name: Сущность DatetimeV2
           href: luis-reference-prebuilt-datetimev2.md
           displayName: timex
-        - name: Сущность измерения
+        - name: Сущность Dimension
           href: luis-reference-prebuilt-dimension.md
         - name: Нерекомендуемые сущности
           href: luis-reference-prebuilt-deprecated.md
@@ -302,7 +302,7 @@
           href: luis-reference-prebuilt-keyphrase.md
         - name: Сущность number
           href: luis-reference-prebuilt-number.md
-        - name: Сущность порядкового номера
+        - name: Сущность Ordinal
           href: luis-reference-prebuilt-ordinal.md
         - name: Сущность percentage
           href: luis-reference-prebuilt-percentage.md
@@ -310,18 +310,18 @@
           href: luis-reference-prebuilt-person.md
         - name: Сущность phonenumber
           href: luis-reference-prebuilt-phonenumber.md
-        - name: Сущность температуры
+        - name: Сущность Temperature
           href: luis-reference-prebuilt-temperature.md
-        - name: Сущность URL-адреса
+        - name: Сущность URL
           href: luis-reference-prebuilt-url.md
     - name: Справочник по предварительно созданным доменам
       href: luis-reference-prebuilt-domains.md
       displayName: 'Calendar, Communication,Email,HomeAutomation,Note,Places, RestaurantReservation,ToDo,Utilities,Weather,Web'
-    - name: Инфраструктура CLI Azure
+    - name: Azure CLI
       href: 'https://go.microsoft.com/fwlink/?linkid=2092156'
     - name: Azure RM PowerShell
       href: 'https://go.microsoft.com/fwlink/?linkid=2092157'
-    - name: Интерфейсы API REST
+    - name: "Интерфейсы REST\_API"
       items:
         - name: "Разработка REST API версии\_2"
           href: 'https://go.microsoft.com/fwlink/?linkid=2092087'
@@ -380,17 +380,17 @@
   items:
     - name: Служба Azure Bot
       href: 'https://dev.botframework.com/'
-    - name: 'Пакет SDK для построителя ботов 3.x для C#'
+    - name: 'Пакет SDK для Bot Builder 3.x для C#'
       href: 'https://github.com/Microsoft/BotBuilder'
-    - name: 'Пакет SDK для построителя ботов 4.x для C#'
+    - name: 'Пакет SDK для Bot Builder 4.x для C#'
       href: 'https://github.com/Microsoft/botbuilder-dotnet'
     - name: QnA Maker
       href: 'https://qnamaker.ai/'
-    - name: API распознавания речи Bing
+    - name: API Распознавания речи Bing
       href: 'https://azure.microsoft.com/services/cognitive-services/speech/'
-    - name: API проверки орфографии Bing
+    - name: API Проверки орфографии Bing
       href: 'https://azure.microsoft.com/services/cognitive-services/spell-check/'
-    - name: Текстовая аналитика
+    - name: Анализ текста
       href: 'https://azure.microsoft.com/services/cognitive-services/text-analytics/'
     - name: Распознаватели текста
       href: 'https://github.com/Microsoft/Recognizers-Text'
@@ -398,7 +398,7 @@
       href: 'https://github.com/Microsoft/Cognitive-Samples-IntelligentKiosk'
 - name: Ресурсы
   items:
-    - name: Доступ по регионам
+    - name: Доступность по регионам
       href: 'https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services'
     - name: Поддержка языков и региональных параметров
       href: luis-language-support.md
@@ -412,11 +412,13 @@
       displayName: 'FAQ, import'
     - name: Цены и ограничения
       href: 'https://azure.microsoft.com/pricing/details/cognitive-services/language-understanding-intelligent-services/'
-    - name: Переполнение стека
+    - name: Соответствие требованиям
+      href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/LUIS'
     - name: UserVoice
       href: 'https://go.microsoft.com/fwlink/?linkid=2092090'
-    - name: поиска
+    - name: Поиск
       href: 'https://docs.microsoft.com/search/index?search=LUIS'
     - name: Блог
       href: 'https://blog.botframework.com/category/luis/'

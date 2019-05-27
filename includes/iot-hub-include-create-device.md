@@ -9,11 +9,11 @@ ms.date: 11/06/2018
 ms.author: robinsh
 ms.custom: include file
 ms.openlocfilehash: d70544866b9e321d98acd3978da145276e036025
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60354943"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66146557"
 ---
 <!-- put the ## header in the file that includes this file -->
 
@@ -25,7 +25,7 @@ ms.locfileid: "60354943"
 
 1. Укажите имя для нового устройства, такие как **myDeviceId**и выберите **Сохранить**. После этого для вашего Центра Интернета вещей будет создано удостоверение устройства.
 
-   ![Добавление нового устройства](./media/iot-hub-include-create-device/create-a-device.png)
+   ![Добавить устройство](./media/iot-hub-include-create-device/create-a-device.png)
 
    [!INCLUDE [iot-hub-pii-note-naming-device](iot-hub-pii-note-naming-device.md)]
 

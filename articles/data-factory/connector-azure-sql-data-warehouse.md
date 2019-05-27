@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-ms.date: 04/29/2019
+ms.date: 05/22/2019
 ms.author: jingwang
-ms.openlocfilehash: cf5713fecd354f1e1d2c0ce7d28439b5b8b785ec
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
-ms.translationtype: MT
+ms.openlocfilehash: 6d2ed8ba13fac03a60d9a0730776bc8348876b62
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65153422"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66153571"
 ---
 # <a name="copy-data-to-or-from-azure-sql-data-warehouse-by-using-azure-data-factory"></a>Копирование данных в хранилище данных Azure SQL и из него с помощью фабрики данных Azure 
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you're using:"]
@@ -149,7 +149,7 @@ ms.locfileid: "65153422"
 4. **Предоставьте субъекту-службе необходимые разрешения** точно так же, как вы предоставляете разрешения пользователям SQL или другим пользователям. Выполните следующий код, или см. Дополнительные параметры [здесь](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-addrolemember-transact-sql?view=sql-server-2017).
 
     ```sql
-    EXEC sp_addrolemember [role name], [your application name];
+    EXEC sp_addrolemember db_owner, [your application name];
     ```
 
 5. **Настройте в ADF связанную службу хранилища данных SQL Azure** в фабрике данных Azure.
@@ -199,7 +199,7 @@ ms.locfileid: "65153422"
 3. **Предоставьте управляемое удостоверение для фабрики данных необходимые разрешения** обычным образом для пользователей SQL и другим пользователям. Выполните следующий код, или см. Дополнительные параметры [здесь](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-addrolemember-transact-sql?view=sql-server-2017).
 
     ```sql
-    EXEC sp_addrolemember [role name], [your Data Factory name];
+    EXEC sp_addrolemember db_owner, [your Data Factory name];
     ```
 
 5. **Настройте в ADF связанную службу хранилища данных SQL Azure** в фабрике данных Azure.
@@ -375,7 +375,7 @@ GO
 | rejectValue | Указывает количество или процент строк, которые могут быть отклонены, прежде чем запрос завершится с ошибкой.<br/><br/>Дополнительные сведения о параметрах отклонения PolyBase см. в подразделе "Аргументы" раздела [CREATE EXTERNAL TABLE (Transact-SQL)](https://msdn.microsoft.com/library/dn935021.aspx). <br/><br/>Допустимые значения: 0 (по умолчанию), 1, 2 и. т. д. |Нет  |
 | rejectType | Указывает, является ли параметр **rejectValue** литеральным или процентным.<br/><br/>Допустимые значения: **Значение** (по умолчанию) и **Процент**. | Нет  |
 | rejectSampleValue | Определяет количество строк, которое PolyBase следует получить до повторного вычисления процента отклоненных строк.<br/><br/>Допустимые значения: 1, 2, … | Да, если **rejectType** имеет значение **percentage**. |
-| useTypeDefault | Указывает способ обработки отсутствующих значений в текстовых файлах с разделителями, когда PolyBase получает данные из текстового файла.<br/><br/>Дополнительные сведения об этом свойстве см. в подразделе "Аргументы" раздела [CREATE EXTERNAL FILE FORMAT (Transact-SQL)](https://msdn.microsoft.com/library/dn935026.aspx).<br/><br/>Допустимые значения: **true** и **false** (по умолчанию). | Нет  |
+| useTypeDefault | Указывает способ обработки отсутствующих значений в текстовых файлах с разделителями, когда PolyBase получает данные из текстового файла.<br/><br/>Дополнительные сведения об этом свойстве см. в подразделе "Аргументы" раздела [CREATE EXTERNAL FILE FORMAT (Transact-SQL)](https://msdn.microsoft.com/library/dn935026.aspx).<br/><br/>Допустимые значения: **true** и **false** (по умолчанию).<br><br>**См. в разделе [советы по устранению неполадок](#polybase-troubleshooting) связанные с этот параметр.** | Нет |
 | writeBatchSize | Количество строк для вставки в таблицу SQL **в пакете**. Применимо, только если не используется PolyBase.<br/><br/>Допустимое значение: **целое число** (количество строк). По умолчанию фабрика данных динамически определяет размер соответствующего пакета, в зависимости от размера строки. | Нет  |
 | writeBatchTimeout | Время ожидания до выполнения операции пакетной вставки, пока не закончится срок ее действия. Применимо, только если не используется PolyBase.<br/><br/>Допустимое значение — **timespan**. Пример: "00:30:00" (30 минут). | Нет  |
 | preCopyScript | Укажите SQL-запрос для действия копирования, выполняемый перед записью данных в хранилище данных SQL Azure при каждом выполнении. Это свойство используется для очистки предварительно загруженных данных. | Нет  |
@@ -405,6 +405,9 @@ GO
 * Если исходные данные находятся в **BLOB-объектов Azure, Gen1 хранилища Озера данных Azure или Gen2 хранилища Озера данных Azure**и **имеет формат, совместимый PolyBase**, действие копирования можно использовать для непосредственного вызова PolyBase для Azure Хранилище данных SQL извлекать данные из источника. Дополнительные сведения см. в разделе **[Прямое копирование с помощью PolyBase](#direct-copy-by-using-polybase)**.
 * Если хранилище и формат исходных данных изначально не поддерживаются PolyBase, то можно использовать функцию **[промежуточного копирования с помощью PolyBase](#staged-copy-by-using-polybase)**. Промежуточное копирование также обеспечивает лучшую пропускную способность. Оно автоматически преобразует данные в формат, совместимый с PolyBase. И он хранит данные в хранилище BLOB-объектов Azure. После этого данные загружаются в хранилище данных SQL.
 
+>[!TIP]
+>Дополнительные сведения о [советы и рекомендации по использованию PolyBase](#best-practices-for-using-polybase).
+
 ### <a name="direct-copy-by-using-polybase"></a>Прямое копирование с помощью PolyBase
 
 PolyBase хранилища данных SQL напрямую поддерживает BLOB-объектов Azure, Gen1 хранилища Озера данных Azure и Gen2 хранилища Озера данных Azure. Если исходные данные соответствуют критериям, описанным в этом разделе, с помощью PolyBase для копирования непосредственно из исходного хранилища данных в хранилище данных SQL Azure. В противном случае см. сведения в разделе [Промежуточное копирование с помощью PolyBase](#staged-copy-by-using-polybase).
@@ -418,9 +421,12 @@ PolyBase хранилища данных SQL напрямую поддержив
 
     | Тип хранилища поддерживаемого в качестве источника данных | Поддерживаемый тип проверки подлинности источника |
     |:--- |:--- |
-    | [Хранилище BLOB-объектов Azure](connector-azure-blob-storage.md) | Проверка подлинности на основе ключа учетной записи |
+    | [Хранилище BLOB-объектов Azure](connector-azure-blob-storage.md) | Проверка подлинности ключа учетной записи, управляемое удостоверение проверки подлинности |
     | [Хранилище Azure Data Lake Gen1](connector-azure-data-lake-store.md) | Проверка подлинности субъекта-службы |
-    | [Хранилище Azure Data Lake Storage 2-го поколения](connector-azure-data-lake-storage.md) | Проверка подлинности на основе ключа учетной записи |
+    | [Хранилище Azure Data Lake Storage 2-го поколения](connector-azure-data-lake-storage.md) | Проверка подлинности ключа учетной записи, управляемое удостоверение проверки подлинности |
+
+    >[!IMPORTANT]
+    >Если с конечной точкой службы виртуальной сети настроено хранилище Azure, необходимо использовать управляемое удостоверение проверки подлинности. Ссылаться на [влияние использования конечных точек службы виртуальной сети со службой хранилища Azure](https://docs.microsoft.com/en-us/azure/sql-database/sql-database-vnet-service-endpoint-rule-overview.md#impact-of-using-vnet-service-endpoints-with-azure-storage)
 
 2. **Формат исходных данных** имеет **Parquet**, **ORC**, или **с разделителями текста**, со следующими конфигурациями:
 
@@ -515,9 +521,28 @@ PolyBase хранилища данных SQL напрямую поддержив
 
 ### <a name="row-size-and-data-type-limits"></a>Ограничение размера строки и типа данных
 
-Загрузки PolyBase ограничены записями размером менее 1 МБ. PolyBase не позволяет загружать данные типа VARCHR(MAX), NVARCHAR(MAX) или VARBINARY(MAX). Дополнительные сведения см. в статье [Ограничения емкости хранилища данных SQL](../sql-data-warehouse/sql-data-warehouse-service-capacity-limits.md#loads).
+Загрузки PolyBase ограничены записями размером менее 1 МБ. Он не может использоваться для загрузки в переменные VARCHR(MAX), NVARCHAR(MAX) или VARBINARY(MAX). Дополнительные сведения см. в статье [Ограничения емкости хранилища данных SQL](../sql-data-warehouse/sql-data-warehouse-service-capacity-limits.md#loads).
 
 Если исходные данные имеют записи размером более 1 МБ, можно попробовать вертикально разбить исходные таблицы на несколько небольших. Убедитесь, что максимальный размер каждой записи не превышает предел. Затем эти небольшие таблицы можно загрузить с помощью PolyBase и объединить в хранилище данных SQL Azure.
+
+Кроме того, для данных с помощью таких столбцов шириной, отличные от PolyBase можно использовать для загрузки данных с помощью ADF, отключив «разрешить PolyBase» параметр.
+
+### <a name="polybase-troubleshooting"></a>Устранение неполадок c PolyBase
+
+**Загрузка в десятичный столбец**
+
+Если источник данных имеет в текстовом формате и содержит пустое значение для загрузки в хранилище данных SQL десятичного столбца, можно столкнуться с следующую ошибку:
+
+```
+ErrorCode=FailedDbOperation, ......HadoopSqlException: Error converting data type VARCHAR to DECIMAL.....Detailed Message=Empty string can't be converted to DECIMAL.....
+```
+
+Решение заключается в снимите флажок "**тип использования по умолчанию**" параметра (false) в приемнике действия копирования "->" PolyBase параметрами. "[USE_TYPE_DEFAULT](https://docs.microsoft.com/sql/t-sql/statements/create-external-file-format-transact-sql?view=azure-sqldw-latest#arguments
+)" — это Конфигурация собственного PolyBase, который указывает способ обработки отсутствующих значений в текстовых файлов с разделителями, когда PolyBase извлекает данные из текстового файла. 
+
+**Прочее**
+
+Дополнительные проблемы knonw PolyBase, см. в разделе [нагрузки устранения неполадок PolyBase хранилища данных Azure SQL](../sql-data-warehouse/sql-data-warehouse-troubleshoot.md#polybase).
 
 ### <a name="sql-data-warehouse-resource-class"></a>Класс ресурсов хранилища данных SQL
 
@@ -558,15 +583,18 @@ All columns of the table must be specified in the INSERT BULK statement.
 
 При копировании данных в хранилище данных SQL Azure или из него используются следующие сопоставления между типами данных хранилища данных SQL Azure и временными типами данных фабрики данных Azure. Дополнительные сведения о том, как действие копирования сопоставляет исходную схему и типы данных для приемника, см. в статье [Сопоставление схем в действии копирования](copy-activity-schema-and-type-mapping.md).
 
+>[!TIP]
+>Ссылаться на [табличных типов данных в хранилище данных SQL Azure](../sql-data-warehouse/sql-data-warehouse-tables-data-types.md) статьи на хранилище данных SQL поддерживается в типы данных и обходные пути для не те, которые поддерживаются.
+
 | Тип данных хранилища данных SQL Azure | Тип промежуточных данных фабрики данных |
 |:--- |:--- |
 | bigint | Int64 |
 | binary | Byte[] |
 | bit | Boolean |
 | char | String, Char[] |
-| date | Datetime |
-| Datetime | Datetime |
-| datetime2 | Datetime |
+| date | DateTime |
+| DateTime | DateTime |
+| datetime2 | DateTime |
 | Datetimeoffset | DateTimeOffset |
 | Decimal | Decimal |
 | FILESTREAM attribute (varbinary(max)) | Byte[] |
@@ -575,23 +603,18 @@ All columns of the table must be specified in the INSERT BULK statement.
 | int | Int32 |
 | money | Decimal |
 | nchar | String, Char[] |
-| ntext | String, Char[] |
 | numeric | Decimal |
 | nvarchar | String, Char[] |
 | real | Single |
 | rowversion | Byte[] |
-| smalldatetime | Datetime |
+| smalldatetime | DateTime |
 | smallint | Int16 |
 | smallmoney | Decimal |
-| sql_variant | Object |
-| text | String, Char[] |
 | time | TimeSpan |
-|  timestamp | Byte[] |
 | tinyint | Byte |
 | uniqueidentifier | Guid |
 | varbinary | Byte[] |
 | varchar | String, Char[] |
-| Xml | Xml |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 В таблице [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md##supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных Azure.

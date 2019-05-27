@@ -4,7 +4,7 @@
   items:
     - name: Что такое Распознаватель документов?
       href: overview.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   expaned: true
   items:
     - name: Обучение модели и извлечение данных
@@ -15,7 +15,7 @@
               href: quickstarts/curl-train-extract.md
             - name: Python
               href: quickstarts/python-train-extract.md
-- name: Практические руководства
+- name: Инструкции
   items:
     - name: Использование контейнеров
       items:
@@ -35,9 +35,11 @@
       href: 'https://go.microsoft.com/fwlink/?linkid=2087258'
     - name: UserVoice
       href: 'https://go.microsoft.com/fwlink/?linkid=2090535'
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://go.microsoft.com/fwlink/?linkid=2087186'
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/updates/?product=cognitive-services'
-    - name: Доступ по регионам
+    - name: Доступность по регионам
       href: 'https://go.microsoft.com/fwlink/?linkid=2087185'
+    - name: Соответствие требованиям
+      href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'

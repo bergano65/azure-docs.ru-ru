@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 03/13/2019
 ms.author: glenga
 ms.custom: 80e4ff38-5174-43
-ms.openlocfilehash: 7c6e7d8bb407b0ffeb320ebfe9e2639feb303800
-ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
-ms.translationtype: MT
+ms.openlocfilehash: fe483f00c5711c2b2b62add32e951d26f732de2f
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65603416"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66131456"
 ---
 # <a name="work-with-azure-functions-core-tools"></a>Запуск основных инструментов службы "Функции Azure"
 
@@ -52,51 +52,51 @@ ms.locfileid: "65603416"
 
 ### <a name="v2"></a>Версия 2.x
 
-В версии 2.x инструментов используется среда выполнения Функций Azure версии 2.x, которая основана на .NET Core. Эта версия поддерживается на всех платформах, которые поддерживает .NET Core 2.x, включая [Windows](#windows-npm), [macOS](#brew) и [Linux](#linux). Сначала вам необходимо установить пакет SDK для .NET Core 2.x.
+В версии 2.x инструментов используется среда выполнения Функций Azure версии 2.x, которая основана на .NET Core. Эта версия поддерживается на всех платформах, которые поддерживает .NET Core 2.x, включая [Windows](#windows-npm), [macOS](#brew) и [Linux](#linux). 
+
+> [!IMPORTANT]
+> Можно обойти требование для установки .NET Core 2.x SDK с помощью [пакеты расширения].
 
 #### <a name="windows-npm"></a>Windows
 
 На следующих шагах пакет npm используется для установки основных инструментов на компьютерах с Windows. Кроме того, можно использовать [Chocolatey](https://chocolatey.org/). Дополнительные сведения см. в [файле сведений об основных инструментах](https://github.com/Azure/azure-functions-core-tools/blob/master/README.md#windows).
 
-1. Установите [пакет SDK для .NET Core 2.x для Windows](https://www.microsoft.com/net/download/windows).
+1. Установите [Node.js], который содержит пакет npm. Для версии 2.x этих инструментов поддерживается только версия Node.js 8.5 и более поздние.
 
-2. Установите [Node.js], который содержит пакет npm. Для версии 2.x этих инструментов поддерживается только версия Node.js 8.5 и более поздние.
-
-3. Установите пакет основных инструментов:
+1. Установите пакет основных инструментов:
 
     ```bash
     npm install -g azure-functions-core-tools
     ```
+1. Если вы не планируете использовать [пакеты расширения], установить [.NET Core 2.x пакета SDK для Windows](https://www.microsoft.com/net/download/windows).
 
 #### <a name="brew"></a>MacOS с Homebrew
 
 На следующих шагах Homebrew используется для установки основных инструментов на компьютерах macOS.
 
-1. Установите [пакет SDK для .NET Core 2.x для macOS](https://www.microsoft.com/net/download/macos).
+1. Установите [Homebrew](https://brew.sh/), если вы этого не сделали ранее.
 
-2. Установите [Homebrew](https://brew.sh/), если вы этого не сделали ранее.
-
-3. Установите пакет основных инструментов:
+1. Установите пакет основных инструментов:
 
     ```bash
     brew tap azure/functions
     brew install azure-functions-core-tools
     ```
+1. Если вы не планируете использовать [пакеты расширения], установить [.NET Core 2.x пакета SDK для macOS](https://www.microsoft.com/net/download/macos).
+
 
 #### <a name="linux"></a> Linux (Ubuntu/Debian) с APT
 
 На следующих шагах [APT](https://wiki.debian.org/Apt) используется для установки основных инструментов на дистрибутив Linux Ubuntu/Debian. Чтобы выполнить установку на другие дистрибутивы Linux, ознакомьтесь с [файлом сведений об основных инструментах](https://github.com/Azure/azure-functions-core-tools/blob/master/README.md#linux).
 
-1. Установите [пакет SDK для .NET Core 2.x для Linux](https://www.microsoft.com/net/download/linux).
-
-2. Зарегистрируйте ключ продукта Майкрософт как доверенный:
+1. Зарегистрируйте ключ продукта Майкрософт как доверенный:
 
     ```bash
     curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
     sudo mv microsoft.gpg /etc/apt/trusted.gpg.d/microsoft.gpg
     ```
 
-3. Убедитесь, что на сервере используется одна из соответствующих версий Ubuntu, указанных в таблице ниже. Чтобы добавить источник apt, выполните команду:
+1. Убедитесь, что на сервере используется одна из соответствующих версий Ubuntu, указанных в таблице ниже. Чтобы добавить источник apt, выполните команду:
 
     ```bash
     sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-ubuntu-$(lsb_release -cs)-prod $(lsb_release -cs) main" > /etc/apt/sources.list.d/dotnetdev.list'
@@ -110,11 +110,12 @@ ms.locfileid: "65603416"
     | Ubuntu 17.04    | `zesty`     |
     | Ubuntu 16.04/Linux Mint 18    | `xenial`  |
 
-4. Установите пакет основных инструментов:
+1. Установите пакет основных инструментов:
 
     ```bash
     sudo apt-get install azure-functions-core-tools
     ```
+1. Если вы не планируете использовать [пакеты расширения], установить [.NET Core 2.x пакет SDK для Linux](https://www.microsoft.com/net/download/linux).
 
 ## <a name="create-a-local-functions-project"></a>Создание локального проекта службы "Функции"
 
@@ -186,6 +187,7 @@ Initialized empty Git repository in C:/myfunctions/myMyFunctionProj/.git/
   "Host": {
     "LocalHttpPort": 7071,
     "CORS": "*"
+    "CORSCredentials": true
   },
   "ConnectionStrings": {
     "SQLConnectionString": "<sqlclient-connection-string>"
@@ -200,6 +202,7 @@ Initialized empty Git repository in C:/myfunctions/myMyFunctionProj/.git/
 | **`Host`** | Параметры в этом разделе служат для настройки хост-процесса Функций при выполнении в локальной среде. |
 | **`LocalHttpPort`** | Задает порт по умолчанию, используемый при выполнении локального узла Функций (`func host start` и `func run`). Параметр командной строки `--port` имеет приоритет над этим значением. |
 | **`CORS`** | Определяет источники, для которых разрешен [общий доступ к ресурсам независимо от источника (CORS)](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing). Источники указываются в виде разделенного запятыми списка без пробелов. Допускается подстановочное значение (\*), разрешающее запросы из любого источника. |
+| **`CORSCredentials`** |  Задайте для него значение true, чтобы разрешить `withCredentials` запросов |
 | **`ConnectionStrings`** | Не применяйте эту коллекцию для строк подключения, используемых функциями привязки. Эта коллекция используется только с платформ, которые обычно получают строк соединения из `ConnectionStrings` файл раздел конфигурации, такие как [Entity Framework](https://msdn.microsoft.com/library/aa937723(v=vs.113).aspx). Строки подключения, содержащиеся в этом объекте, добавляются в среду с типом поставщика [System.Data.SqlClient](https://msdn.microsoft.com/library/system.data.sqlclient(v=vs.110).aspx). Элементы этой коллекции не публикуются в Azure с другими параметрами приложения. Необходимо явным образом добавить эти значения для `Connection strings` коллекцию параметрах приложения-функции. Если вы создаете [ `SqlConnection` ](https://msdn.microsoft.com/library/system.data.sqlclient.sqlconnection(v=vs.110).aspx) в коде функции следует хранить значение строки подключения в **параметры приложения** на портале с другими подключениями. |
 
 Эти значения параметров приложения-функции также могут считываться в коде как переменные среды. Дополнительные сведения см. в разделе о переменных среды в этих справочниках для определенного языка:
@@ -500,3 +503,4 @@ func deploy
 [Node.js]: https://docs.npmjs.com/getting-started/installing-node#osx-or-windows
 [«FUNCTIONS_WORKER_RUNTIME»]: functions-app-settings.md#functions_worker_runtime
 [«AzureWebJobsStorage»]: functions-app-settings.md#azurewebjobsstorage
+[пакеты расширения]: functions-bindings-register.md#local-development-with-azure-functions-core-tools-and-extension-bundles

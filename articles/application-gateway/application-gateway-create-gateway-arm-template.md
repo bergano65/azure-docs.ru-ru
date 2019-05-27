@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: conceptual
 ms.date: 4/15/2019
 ms.author: victorh
-ms.openlocfilehash: 113e30ab65f2cd0ff420df1c79807147a62f79f1
-ms.sourcegitcommit: 5f348bf7d6cf8e074576c73055e17d7036982ddb
+ms.openlocfilehash: 29b607f10c15ba35a515b55b059b7b55ff594fe6
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59608468"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66135763"
 ---
 # <a name="create-an-application-gateway-by-using-the-azure-resource-manager-template"></a>Создание шлюза приложений с помощью шаблона диспетчера ресурсов Azure
 
@@ -47,7 +47,7 @@ ms.locfileid: "59608468"
 1. Откройте только что сохраненный файл и просмотрите содержимое раздела **parameters** в строке
 1. В параметрах шаблона ARM есть заполнитель для значений, которые могут подставляться во время развертывания.
 
-   | Параметр | ОПИСАНИЕ |
+   | Параметр | Описание |
    | --- | --- |
    | **subnetPrefix** |Блок CIDR для подсети шлюза приложений. |
    | **applicationGatewaySize** | Размер шлюза приложений.  WAF позволяет только средний и крупный. |
@@ -179,7 +179,7 @@ ms.locfileid: "59608468"
 
 1. Нажмите кнопку **Развернуть в Azure**.
 
-    ![Развернуть в Azure](./media/application-gateway-create-gateway-arm-template/deploytoazure.png)
+    ![Развертывание в Azure](./media/application-gateway-create-gateway-arm-template/deploytoazure.png)
     
 1. На портале укажите параметры шаблона развертывания и нажмите кнопку **OК**.
 

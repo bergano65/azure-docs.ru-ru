@@ -24,7 +24,7 @@
       displayName: 'best practice, design'
     - name: Базовые понятия
       items:
-        - name: 'Функции: Действие и контекст'
+        - name: 'Признаки: действие и контекст'
           href: concepts-features.md
           displayName: 'action, context, feature, namespace, JSON, best practice, set'
         - name: Вознаграждения
@@ -40,7 +40,7 @@
         - name: Автономная оценка
           href: concepts-offline-evaluation.md
           displayName: 'learning policy, Counterfactual, features'
-- name: Практические руководства
+- name: Инструкции
   items:
     - name: Создание и настройка Персонализатора
       href: how-to-settings.md
@@ -63,8 +63,10 @@
           href: 'https://go.microsoft.com/fwlink/?linkid=2092272'
 - name: Ресурсы
   items:
-    - name: Доступ по регионам
+    - name: Доступность по регионам
       href: 'https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services'
+    - name: Соответствие требованиям
+      href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
     - name: Стратегия развития Azure
       href: 'https://go.microsoft.com/fwlink/?linkid=2092153'
     - name: Цены

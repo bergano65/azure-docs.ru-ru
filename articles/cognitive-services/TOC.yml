@@ -9,11 +9,11 @@
       href: language-support.md
     - name: Поддержка контейнеров
       href: cognitive-services-container-support.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   items:
     - name: Создание учетной записи
       href: cognitive-services-apis-create-account.md
-    - name: Authentication
+    - name: Аутентификация
       href: authentication.md
 - name: Ресурсы
   items:
@@ -23,7 +23,9 @@
       href: 'https://azure.microsoft.com/pricing/details/cognitive-services/'
     - name: Калькулятор цен
       href: 'https://azure.microsoft.com/pricing/calculator/'
-    - name: Видеоролики
+    - name: Соответствие требованиям
+      href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
+    - name: Видео
       href: 'https://azure.microsoft.com/resources/videos/index/?services=cognitive-services'
     - name: Обновления службы
       href: 'https://azure.microsoft.com/updates/?product=cognitive-services'

@@ -7,14 +7,14 @@ ms.service: analysis-services
 ms.topic: conceptual
 ms.date: 04/26/2019
 ms.author: chlound
-ms.openlocfilehash: 6e1ac5dfd1972e406a1bd8dcd26e6aef2c4ea6d1
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 6ffce339fe7b1a434c8f007b417ee81a42529dfc
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64919867"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66142449"
 ---
-# <a name="refresh-with-logic-apps"></a>Обновить с помощью Logic Apps
+# <a name="refresh-with-logic-apps"></a>Обновление с помощью Logic Apps
 
 С помощью Logic Apps и вызовы REST, выполнением операций обновления данных для табличных моделей Azure Analysis, включая синхронизацию реплик только для чтения для развертывания запросов.
 
@@ -66,14 +66,14 @@ ms.locfileid: "64919867"
 |Свойство  |Value  |
 |---------|---------|
 |**Метод**     |POST         |
-|**URI**     | https://*ваш регион сервера*/servers/*консультанты имя_сервера*/models/*имя базы данных*/ <br /> <br /> Например: https://westus.asazure.windows.net/servers/myserver/models/AdventureWorks/|
+|**URI**     | https://*ваш регион сервера*/servers/*консультанты имя_сервера*/models/*имя базы данных*/ <br /> <br /> Например: https:\//westus.asazure.windows.net/servers/myserver/models/AdventureWorks/|
 |**Заголовки**     |   Content-Type, application/json <br /> <br />  ![Заголовки](./media/analysis-services-async-refresh-logic-app/6.png)    |
 |**Текст**     |   Дополнительные сведения о формировании текста запроса, см. в разделе [асинхронное обновление с помощью API REST - POST для/refreshes](analysis-services-async-refresh.md#post-refreshes). |
 |**Проверка подлинности**     |Active Directory OAuth         |
 |**Клиент**     |Заполните свой идентификатор клиента Azure Active Directory         |
 |**Аудитория**     |https://*.asazure.windows.net         |
 |**Идентификатор клиента**     |Введите ваш ClientID имя субъекта-службы         |
-|**Тип учетных данных**     |Секрет         |
+|**Тип учетных данных**     |`Secret`         |
 |**Секрет**     |Введите свой секрет имя субъекта-службы         |
 
 Пример:

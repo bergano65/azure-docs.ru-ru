@@ -13,11 +13,11 @@ ms.workload: infrastructure-services
 ms.date: 01/25/2018
 ms.author: victorh
 ms.openlocfilehash: cde06aaf149785f464cd354c95c8f39575bad73b
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55698257"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66136134"
 ---
 # <a name="create-an-application-gateway-using-the-azure-cli"></a>Создание шлюза приложений с помощью Azure CLI
 
@@ -181,7 +181,7 @@ az network public-ip show \
 az group delete --name myResourceGroupAG
 ```
  
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 В этом кратком руководстве вы создали группу ресурсов, сетевые ресурсы и внутренние серверы. Затем с помощью этих ресурсов вы создали шлюз приложения. Чтобы узнать больше о шлюзах приложений и связанных с ними ресурсах, перейдите к статьям с инструкциями.
 

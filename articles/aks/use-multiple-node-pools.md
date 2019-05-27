@@ -5,14 +5,14 @@ services: container-service
 author: iainfoulds
 ms.service: container-service
 ms.topic: article
-ms.date: 03/29/2019
+ms.date: 05/17/2019
 ms.author: iainfou
-ms.openlocfilehash: 1c24bbb9433e4164d4b2f6ce1ac7bd726cc36356
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
-ms.translationtype: MT
+ms.openlocfilehash: 4086b73313d563afaecad9b6a9289905d7085004
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65506908"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66142639"
 ---
 # <a name="preview---create-and-manage-multiple-node-pools-for-a-cluster-in-azure-kubernetes-service-aks"></a>Предварительный просмотр - Создание и управление несколькими пулами узла для кластера в службе Azure Kubernetes (AKS)
 
@@ -332,7 +332,7 @@ Events:
 
 В этой статье вы создали кластер AKS, который включает в себя узлы, на основе графического Процессора. Чтобы уменьшить излишних затрат, может потребоваться удалить *gpunodepool*, или весь кластер AKS.
 
-Чтобы удалить пул на основе графического Процессора узла, используйте [удаления пула узел az aks] [ az-aks-nodepool-delete] команды, как показано в следующем примере:
+Чтобы удалить пул на основе графического Процессора узла, используйте [удалить az aks nodepool] [ az-aks-nodepool-delete] команды, как показано в следующем примере:
 
 ```azurecli-interactive
 az aks nodepool delete -g myResourceGroup --cluster-name myAKSCluster --name gpunodepool
@@ -348,8 +348,10 @@ az group delete --name myResourceGroup --yes --no-wait
 
 В этой статье вы узнали, как создавать и управлять ими несколько пулов узлов в кластере AKS. Дополнительные сведения о способах управления POD, содержащихся в пулах узлов см. в разделе [советы и рекомендации для возможности расширенной планировщика в AKS][operator-best-practices-advanced-scheduler].
 
+Чтобы создать и использовать пулы узлов контейнера Windows Server, см. в разделе [создадим контейнер Windows Server в AKS][aks-windows].
+
 <!-- EXTERNAL LINKS -->
-[aks-github]: https://github.com/azure/aks/issues]
+[aks-github]: https://github.com/azure/aks/issues
 [kubernetes-drain]: https://kubernetes.io/docs/tasks/administer-cluster/safely-drain-node/
 [kubectl-get]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#get
 [kubectl-taint]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#taint
@@ -376,3 +378,4 @@ az group delete --name myResourceGroup --yes --no-wait
 [install-azure-cli]: /cli/azure/install-azure-cli
 [supported-versions]: supported-kubernetes-versions.md
 [operator-best-practices-advanced-scheduler]: operator-best-practices-advanced-scheduler.md
+[aks-windows]: windows-container-cli.md

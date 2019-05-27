@@ -170,7 +170,7 @@
               href: how-to-custom-speech-train-model.md
             - name: Развертывание пользовательской модели
               href: how-to-custom-speech-deploy-model.md
-            - name: 'Руководство: Создание транскрипций с подписями человека'
+            - name: Руководство по созданию транскрипций с подписями человека
               href: how-to-custom-speech-human-labeled-transcriptions.md
         - name: Преобразование текста в речь
           items:
@@ -195,14 +195,14 @@
           href: how-to-migrate-from-custom-speech-service.md
         - name: Из API "Перевод речи"
           href: how-to-migrate-from-translator-speech-api.md
-    - name: Использование локальных контейнеров
+    - name: Использование контейнеров
       items:
-        - name: Установка и запуск локальных контейнеров
-          displayName: 'docker, container, package, packaged app, swagger, open api, openapi, train, publish, az, acr, cli, tps, core, curl, try it now, import, pull'
+        - name: Установка и запуск контейнеров
+          displayName: 'docker, container, package, packaged app, swagger, open api, openapi, train, publish, az, acr, cli, tps, core, curl, try it now, import, pull, on-premises'
           href: speech-container-howto.md
         - name: Настройка контейнеров
           href: speech-container-configuration.md
-          displayName: 'docker, container, billing, apikey, pull, logging'
+          displayName: 'docker, container, billing, apikey, pull, logging, on-premises'
 - name: Примеры
   items:
     - name: Пакет SDK для службы "Речь"
@@ -314,6 +314,8 @@
       href: support.md
     - name: Цены и ограничения
       href: 'https://azure.microsoft.com/pricing/details/cognitive-services/speech-services/'
+    - name: Соответствие требованиям
+      href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/?category=ai-machine-learning'
     - name: Конфиденциальность и файлы cookie

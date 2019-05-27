@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 08/23/2018
 ms.author: crdun
 ms.openlocfilehash: 505eac0996129a17b6b68e8ab4ea2d4fc80fd473
-ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50132960"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66140988"
 ---
 1. Войдите на [портал Azure]. Щелкните **Просмотреть все** > **Мобильные приложения** и выберите только что созданную серверную часть приложения. В параметрах мобильного приложения щелкните **Быстрый старт** > **Android**. В разделе **Настройка клиентского приложения** щелкните **Загрузить**. Загрузится полный проект Android для приложения, предварительно настроенный для подключения к серверу. 
 2. Откройте проект при помощи **Android Studio**, выберите **Import project (Eclipse ADT, Gradle, etc.)** (Импорт проекта (Eclipse ADT, Gradle и т. д.)). Обязательно используйте эту функцию импорта, чтобы избежать ошибок JDK.

@@ -4,12 +4,12 @@ ms.author: crdun
 ms.service: app-service-mobile
 ms.topic: include
 ms.date: 08/23/2018
-ms.openlocfilehash: 3ced8c9fdadf547ec234c6d1bd5f3ddb8af7bc05
-ms.sourcegitcommit: 58c5cd866ade5aac4354ea1fe8705cee2b50ba9f
-ms.translationtype: HT
+ms.openlocfilehash: baf0f07002a21a8e4e60bc17186107b471243202
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 08/24/2018
-ms.locfileid: "42816213"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66140269"
 ---
 1. Создайте класс в проекте с именем `ToDoBroadcastReceiver`.
 2. Добавьте следующие инструкции using в класс **ToDoBroadcastReceiver** :
@@ -109,7 +109,7 @@ ms.locfileid: "42816213"
     }
     ```
 
-    В этом методе возвращенный идентификатор регистрации GCM используется для регистрации push-уведомлений в службе Azure. Теги могут добавляться к регистрации только после ее создания. Дополнительные сведения см. в разделе [Практическое руководство. Включение принудительной отправки push-уведомлений с использованием тегов](../articles/app-service-mobile/app-service-mobile-dotnet-backend-how-to-use-server-sdk.md#tags).
+    В этом методе возвращенный идентификатор регистрации GCM используется для регистрации push-уведомлений в службе Azure. Теги могут добавляться к регистрации только после ее создания. Дополнительные сведения см. в статье [Правила Добавление тегов для определенного устройства, чтобы включить push-уведомлений с использованием тегов](../articles/app-service-mobile/app-service-mobile-dotnet-backend-how-to-use-server-sdk.md#tags).
 
 7. Переопределите метод **OnMessage** в **PushHandlerService** с использованием следующего кода:
 

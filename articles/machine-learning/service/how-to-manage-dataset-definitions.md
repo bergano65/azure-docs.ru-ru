@@ -1,5 +1,5 @@
 ---
-title: Определение набора данных и управление версиями
+title: Определение набора данных и управление версиями с помощью наборов данных машинного обучения Azure
 titleSuffix: Azure Machine Learning service
 description: Узнайте, как обновлять определения наборов данных и управление жизненным циклом определений
 services: machine-learning
@@ -10,12 +10,12 @@ ms.author: sihhu
 author: MayMSFT
 ms.reviewer: larryfr
 ms.date: 05/02/2019
-ms.openlocfilehash: 7c861c8cdc9985caa42bd2beb5236a4f4e93e4c7
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
-ms.translationtype: MT
+ms.openlocfilehash: e58ce156deaaad259ea7b74521bcf9b79afbd183
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65028685"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66146205"
 ---
 # <a name="update-and-manage-the-lifecycle-of-dataset-definitions"></a>Обновления и управления жизненным циклом определения наборов данных
 
@@ -172,11 +172,11 @@ ds_def_old.head(5)
       <th></th>
       <th>ИД</th>
       <th>Серийный номер</th>
-      <th>Дата</th>
-      <th>Блок</th>
+      <th>Date</th>
+      <th>Заблокировать</th>
       <th>IUCR</th>
       <th>Основной тип</th>
-      <th>ОПИСАНИЕ</th>
+      <th>Описание</th>
       <th>Описание расположения</th>
       <th>Фикс.</th>
       <th>Дом</th>

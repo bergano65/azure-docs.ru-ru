@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: conceptual
 ms.date: 03/26/2019
 ms.author: garye
-ms.openlocfilehash: b5adb5b8bddd0f379ac581f3268f0121791cf0bc
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.openlocfilehash: 831f1d22c4da215bed3ed55b659332aa3b57472b
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65546371"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66145939"
 ---
 # <a name="quickstart-create-a-cognitive-services-account-in-the-azure-portal"></a>Краткое руководство. Создание учетной записи Cognitive Services на портале Azure
 
@@ -92,6 +92,8 @@ ms.locfileid: "65546371"
 В пределах ресурса Cognitive Services можно использовать URL-адрес конечной точки и ключи в разделе **Обзор**, чтобы выполнять вызовы API в своих приложениях.
 
 ![Снимок экрана ресурсов](media/cognitive-services-apis-create-account/resourceScreen.png)
+
+Запомните или запишите расположение и ключи. Их можно получить, выбрав **ключи** под **управления ресурсами**.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

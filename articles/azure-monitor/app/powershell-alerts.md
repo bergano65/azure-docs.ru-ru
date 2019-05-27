@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 10/31/2016
 ms.author: mbullwin
 ms.openlocfilehash: 5dfbc6fa18b5d1b5b3058db14eb1232be27a0c40
-ms.sourcegitcommit: 0dd053b447e171bc99f3bad89a75ca12cd748e9c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58481797"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66130981"
 ---
 # <a name="use-powershell-to-set-alerts-in-application-insights"></a>Настройка оповещений в Application Insights с помощью PowerShell
 
@@ -98,7 +98,7 @@ GUID — это идентификатор подписки (не ключ ин�
 Это же правило можно использовать для метрики, передаваемой с помощью [параметра измерения](../../azure-monitor/app/api-custom-events-metrics.md#properties) другого вызова отслеживания, например TrackEvent или trackPageView.
 
 ## <a name="metric-names"></a>Имена метрик
-| Имя метрики | Имя экрана | ОПИСАНИЕ |
+| Название метрики | Имя экрана | Описание |
 | --- | --- | --- |
 | `basicExceptionBrowser.count` |Исключения браузера |Число необработанных исключений в браузере. |
 | `basicExceptionServer.count` |Исключения сервера |Число необработанных исключений приложения |
@@ -116,10 +116,10 @@ GUID — это идентификатор подписки (не ключ ин�
 | `performanceCounter.request_execution_time.value` |Время выполнения запроса ASP.NET |Время выполнения самого последнего запроса. |
 | `performanceCounter.requests_in_application_queue.value` |Число запросов ASP.NET в очереди выполнения |Длина очереди запросов приложений. |
 | `performanceCounter.requests_per_sec.value` |Частота запросов ASP.NET |Частота всех запросов из ASP.NET к приложению в секунду. |
-| `remoteDependencyFailed.durationMetric.count` |Ошибки зависимости |Количество неудачных вызовов внешних ресурсов серверным приложением. |
+| `remoteDependencyFailed.durationMetric.count` |Сбои зависимостей |Количество неудачных вызовов внешних ресурсов серверным приложением. |
 | `request.duration` |Время ответа от сервера |Время с момента получения HTTP-запроса до завершения отправки ответа. |
 | `request.rate` |Частота запросов |Частота всех запросов к приложению в секунду. |
-| `requestFailed.count` |Failed requests (Неудачные запросы) |Число HTTP-запросов, приведших к отображению кода ответа >= 400. |
+| `requestFailed.count` |Неудачные запросы |Число HTTP-запросов, приведших к отображению кода ответа >= 400. |
 | `view.count` |Просмотры страниц |Количество клиентских запросов пользователя для веб-страницы. Искусственный трафик отфильтровывается. |
 | {имя пользовательской метрики} |{имя метрики} |Значение метрики, переданное [TrackMetric](../../azure-monitor/app/api-custom-events-metrics.md#trackmetric) или в [параметре измерения вызова отслеживания](../../azure-monitor/app/api-custom-events-metrics.md#properties). |
 
@@ -127,16 +127,16 @@ GUID — это идентификатор подписки (не ключ ин�
 
 | Группа метрик | Модуль сборщика |
 | --- | --- |
-| basicExceptionBrowser,<br/>clientPerformance,<br/>view |[Browser JavaScript](../../azure-monitor/app/javascript.md) |
+| basicExceptionBrowser,<br/>clientPerformance,<br/>просмотреть |[Browser JavaScript](../../azure-monitor/app/javascript.md) |
 | performanceCounter |[Производительность](../../azure-monitor/app/configuration-with-applicationinsights-config.md) |
 | remoteDependencyFailed |[Dependency](../../azure-monitor/app/configuration-with-applicationinsights-config.md) |
 | request,<br/>requestFailed |[Server request](../../azure-monitor/app/configuration-with-applicationinsights-config.md) |
 
-## <a name="webhooks"></a>Объекты Webhook
+## <a name="webhooks"></a>Веб-перехватчики
 Вы можете [автоматизировать реагирование на оповещения](../../azure-monitor/platform/alerts-webhooks.md). При возникновении оповещения Azure будет вызывать выбранный вами веб-адрес.
 
 ## <a name="see-also"></a>См. также
 * [Сценарий настройки Application Insights](powershell-script-create-resource.md)
 * [Создание ресурсов Application Insights и веб-тестов на основе шаблонов](powershell.md)
-* [Автоматизация связывания системы диагностики Microsoft Azure с Application Insights](powershell-azure-diagnostics.md)
+* [Автоматизация связывания Диагностики Microsoft Azure с Application Insights](powershell-azure-diagnostics.md)
 * [Автоматизация реагирования на оповещения](../../azure-monitor/platform/alerts-webhooks.md)

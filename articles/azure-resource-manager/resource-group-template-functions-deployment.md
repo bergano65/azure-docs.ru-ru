@@ -13,11 +13,11 @@ ms.workload: na
 ms.date: 01/03/2019
 ms.author: tomfitz
 ms.openlocfilehash: c5bd40741ec0fe047f98b4b4431819d90e188385
-ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56268122"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66128664"
 ---
 # <a name="deployment-functions-for-azure-resource-manager-templates"></a>Функции развертывания для шаблонов Azure Resource Manager 
 
@@ -165,9 +165,9 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | Описание |
 |:--- |:--- |:--- |:--- |
-| имя_параметра |Yes |строка |Имя параметра, который требуется вернуть. |
+| имя_параметра |Да |string |Имя параметра, который требуется вернуть. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -252,13 +252,13 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| ИМЯ | type | Значение |
+| ИМЯ | type | Value |
 | ---- | ---- | ----- |
-| stringOutput | Строка | вариант 1 |
+| stringOutput | String | вариант 1 |
 | intOutput | Int | 1 |
-| objectOutput | Объект. | {"one": "a", "two": "b"} |
+| objectOutput | Object | {"one": "a", "two": "b"} |
 | arrayOutput | Массив, | [1, 2, 3] |
-| crossOutput | Строка | вариант 1 |
+| crossOutput | String | вариант 1 |
 
 Развернуть этот пример шаблона с помощью Azure CLI можно так:
 
@@ -281,9 +281,9 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | Описание |
 |:--- |:--- |:--- |:--- |
-| variableName |Yes |Строка |Имя переменной, которую необходимо вернуть. |
+| variableName |Да |String |Имя переменной, которую необходимо вернуть. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -355,12 +355,12 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| ИМЯ | type | Значение |
+| ИМЯ | type | Value |
 | ---- | ---- | ----- |
-| exampleOutput1 | Строка | myVariable |
+| exampleOutput1 | String | myVariable |
 | exampleOutput2 | Массив, | [1, 2, 3, 4] |
-| exampleOutput3 | Строка | myVariable |
-| exampleOutput4 |  Объект. | {"property1": "value1", "property2": "value2"} |
+| exampleOutput3 | String | myVariable |
+| exampleOutput4 |  Object | {"property1": "value1", "property2": "value2"} |
 
 Развернуть этот пример шаблона с помощью Azure CLI можно так:
 
@@ -374,7 +374,7 @@ az group deployment create -g functionexamplegroup --template-uri https://raw.gi
 New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/variables.json
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Описание разделов в шаблоне Azure Resource Manager см. в статье [Создание шаблонов Azure Resource Manager](resource-group-authoring-templates.md).
 * Инструкции по объединению нескольких шаблонов см. в статье [Функции развертывания для шаблонов Azure Resource Manager](resource-group-linked-templates.md).
 * Указания по выполнению заданного количества циклов итерации при создании типа ресурса см. в статье [Создание нескольких экземпляров ресурсов в Azure Resource Manager](resource-group-create-multiple.md).

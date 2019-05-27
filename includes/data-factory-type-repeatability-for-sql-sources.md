@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 11/09/2018
 ms.author: jingwang
 ms.openlocfilehash: 24bb7a1fcb1569922fb34034fb3c0d003cdd7061
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60335395"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66147240"
 ---
 ## <a name="repeatability-during-copy"></a>Повторяемость во время копирования
 При копировании данных в SQL Azure или SQL Server из других хранилищ данных необходимо помнить о повторяемости, чтобы избежать незапланированных последствий. 
