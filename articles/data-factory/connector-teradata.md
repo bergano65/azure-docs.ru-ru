@@ -173,7 +173,7 @@ ms.locfileid: "61347757"
 | Decimal |Decimal |
 | Double |Double |
 | Graphic |String |
-| Integer |Int32 |
+| Целое число  |Int32 |
 | Interval Day |TimeSpan |
 | Interval Day To Hour |TimeSpan |
 | Interval Day To Minute |TimeSpan |

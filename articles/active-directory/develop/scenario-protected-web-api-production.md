@@ -15,12 +15,12 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2a748bb0fb44b3fae50426b56f2076f1a9730657
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.openlocfilehash: 8e78cb712501b86f98d3459cac6280d0484f41a1
+ms.sourcegitcommit: 3ced637c8f1f24256dd6ac8e180fff62a444b03c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65075585"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65833111"
 ---
 # <a name="protected-web-api---move-to-production"></a>Защищенный веб-API - перемещения в рабочую среду
 
@@ -38,7 +38,7 @@ ms.locfileid: "65075585"
 Дополнительные сведения с примерами и:
 
 > [!div class="nextstepaction"]
-> [Учебник по ASP.NET Core Web API](https://github.com/Azure-Samples/active-directory-dotnet-native-aspnetcore-v2)
+> [Веб-ASP.NET Core, учебник по API](https://github.com/Azure-Samples/active-directory-dotnet-native-aspnetcore-v2)
 
 > [!div class="nextstepaction"]
 > [Пример веб-API ASP.NET](https://github.com/azureadquickstarts/appmodelv2-nativeclient-dotnet)
