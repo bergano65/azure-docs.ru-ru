@@ -12,16 +12,16 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 12/13/2018
 ms.author: mbullwin
-ms.openlocfilehash: d38a575af54f044d64efc67b5483a67ffcd2fcd6
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: cff4aaaab97fdcecab9cdf1d0dff2786f86b604b
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60256922"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65966714"
 ---
 # <a name="system-performance-counters-in-application-insights"></a>Системные счетчики производительности в Application Insights
 
-В Windows предусмотрены самые разные [счетчики производительности](https://docs.microsoft.com/windows/desktop/PerfCtrs/about-performance-counters), которые отображают показатели использования ЦП, памяти, диска и сети. Вы также можете определить собственные счетчики производительности. До тех пор, пока приложение работает под управлением службы IIS на локальном узле или виртуальной машине, к которой у вас есть доступ с правами администратора.
+В Windows предусмотрены самые разные [счетчики производительности](https://docs.microsoft.com/windows/desktop/PerfCtrs/about-performance-counters), которые отображают показатели использования ЦП, памяти, диска и сети. Вы также можете определить собственные счетчики производительности. Сбор данных счетчиков производительности, поддерживается до тех пор, пока приложение запущено под управлением служб IIS на локальном узле или виртуальной машины, к которому имеется административный доступ. Хотя приложений, выполняющихся как веб-приложений Azure не имеют прямого доступа к счетчикам производительности, часть доступных счетчиков собираются службой Application Insights.
 
 ## <a name="view-counters"></a>Просмотр счетчиков
 
@@ -29,7 +29,7 @@ ms.locfileid: "60256922"
 
 ![Счетчики производительности, отображаемые в Application Insights](./media/performance-counters/performance-counters.png)
 
-Текущие счетчики по умолчанию, которые собраны для веб-приложений .NET:
+Текущий счетчики по умолчанию, настроенные для сбора данных по веб-приложений ASP.NET/ASP.NET Core являются:
 
          - % Process\\Processor Time
          - % Process\\Processor Time Normalized
@@ -49,18 +49,17 @@ ms.locfileid: "60256922"
 Если нужный счетчик производительности не включен в список метрик, можно добавить его.
 
 1. Чтобы получить список счетчиков, доступных на сервере, выполните на локальном сервере такую команду PowerShell:
-   
+
     `Get-Counter -ListSet *`
-   
+
     (См. [`Get-Counter`](https://technet.microsoft.com/library/hh849685.aspx).)
 2. Откройте файл ApplicationInsights.config.
-   
+
    * Если вы добавили Application Insights в приложение во время разработки, отредактируйте файл ApplicationInsights.config в проекте и повторно разверните его на серверах.
-   * Если монитор состояний использовался как инструментарий для веб-приложения во время выполнения, файл ApplicationInsights.config вы найдете в корневом каталоге приложения в IIS. Обновите его в этом расположении на каждом экземпляре сервера.
 3. Измените директиву сборщика данных производительности:
-   
+
 ```XML
-   
+
     <Add Type="Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector.PerformanceCollectorModule, Microsoft.AI.PerfCounterCollector">
       <Counters>
         <Add PerformanceCounter="\Objects\Processes"/>
@@ -70,7 +69,10 @@ ms.locfileid: "60256922"
 
 ```
 
-Вы можете собирать показания как стандартных счетчиков, так и созданных вами самостоятельно. Пример стандартного счетчика `\Objects\Processes` доступен во всех системах Windows. Пример пользовательского счетчика, который можно реализовать в веб-службе: `\Sales(photo)\# Items Sold`. 
+> [!NOTE]
+> Приложения ASP.NET Core, не имеют `ApplicationInsights.config`, и поэтому приведенный выше метод не является действительным для приложений ASP.NET Core.
+
+Вы можете собирать показания как стандартных счетчиков, так и созданных вами самостоятельно. Пример стандартного счетчика `\Objects\Processes` доступен во всех системах Windows. Пример пользовательского счетчика, который можно реализовать в веб-службе: `\Sales(photo)\# Items Sold`.
 
 Используется формат `\Category(instance)\Counter"`, а для категорий без экземпляров — просто `\Category\Counter`.
 
@@ -78,7 +80,7 @@ ms.locfileid: "60256922"
 
 При указании экземпляра он будет собираться в качестве измерения CounterInstanceName обнаруженной метрики.
 
-### <a name="collecting-performance-counters-in-code"></a>Сбор данных счетчиков производительности в коде
+### <a name="collecting-performance-counters-in-code-for-aspnet-web-applications-or-netnet-core-console-applications"></a>Собирать данные счетчиков производительности в коде веб-приложений ASP.NET или.NET/.NET Core консольных приложений
 Чтобы собрать данные счетчиков производительности системы и передать их в Application Insights, можно использовать следующий фрагмент кода:
 
 
@@ -86,9 +88,10 @@ ms.locfileid: "60256922"
 
     var perfCollectorModule = new PerformanceCollectorModule();
     perfCollectorModule.Counters.Add(new PerformanceCounterCollectionRequest(
-      @"\.NET CLR Memory([replace-with-application-process-name])\# GC Handles", "GC Handles")));
+      @"\Process([replace-with-application-process-name])\Page Faults/sec", "PageFaultsPerfSec")));
     perfCollectorModule.Initialize(TelemetryConfiguration.Active);
 ```
+
 То же самое можно сделать с пользовательскими метриками, созданными вами:
 
 ``` C#
@@ -96,6 +99,27 @@ ms.locfileid: "60256922"
     perfCollectorModule.Counters.Add(new PerformanceCounterCollectionRequest(
       @"\Sales(photo)\# Items Sold", "Photo sales"));
     perfCollectorModule.Initialize(TelemetryConfiguration.Active);
+```
+
+### <a name="collecting-performance-counters-in-code-for-aspnet-core-web-applications"></a>Собирать данные счетчиков производительности в коде для веб-приложений ASP.NET Core
+
+Изменить `ConfigureServices` метод в вашей `Startup.cs` класса, как показано ниже.
+
+```csharp
+using Microsoft.ApplicationInsights.Extensibility.PerfCounterCollector;
+
+    public void ConfigureServices(IServiceCollection services)
+    {
+        services.AddApplicationInsightsTelemetry();
+
+        // The following configures PerformanceCollectorModule.
+  services.ConfigureTelemetryModule<PerformanceCollectorModule>((module, o) =>
+            {
+                // the application process name could be "dotnet" for ASP.NET Core self-hosted applications.
+                module.Counters.Add(new PerformanceCounterCollectionRequest(
+    @"\Process([replace-with-application-process-name])\Page Faults/sec", "DotnetPageFaultsPerfSec"));
+            });
+    }
 ```
 
 ## <a name="performance-counters-in-analytics"></a>Счетчики производительности в службе аналитики
@@ -116,19 +140,30 @@ ms.locfileid: "60256922"
 ![Производительность, сегментированная по экземпляру роли в аналитике Application Insights](./media/performance-counters/analytics-metrics-role-instance.png)
 
 ## <a name="aspnet-and-application-insights-counts"></a>ASP.NET и счетчики Application Insights
+
 *Чем отличаются метрики "Частота исключений" и "Исключения"?*
 
 * *Частота исключений* — это системный счетчик производительности. Среда CLR подсчитывает все обработанные и необработанные исключения и делит их общее количество в интервале выборки на продолжительность интервала. Пакет SDK Application Insights получает этот результат и отправляет его на портал.
 
 * *Исключения* — это количество отчетов TrackException, полученных порталом в интервале выборки диаграммы. Включает только обработанные исключения, в коде которых прописаны вызовы TrackException, и не включает [необработанные исключения](../../azure-monitor/app/asp-net-exceptions.md). 
 
+## <a name="performance-counters-for-applications-running-in-azure-web-apps"></a>Счетчики производительности для приложений, работающих в веб-приложений Azure
+
+Приложения ASP.NET и ASP.NET Core, развернутые для веб-приложений Azure запускать в среде специальные "песочницы". Эта среда не поддерживает прямой доступ к счетчикам производительности системы. Тем не менее, ограниченный набор счетчиков доступны как переменные среды, как описано [здесь](https://github.com/projectkudu/kudu/wiki/Perf-Counters-exposed-as-environment-variables). Пакет SDK Application Insights для ASP.NET и ASP.NET Core собирает счетчики производительности из веб-приложения Azure из этих специальных переменных среды. Только подмножество счетчики доступны в этой среде, и можно найти полный список [здесь.](https://github.com/microsoft/ApplicationInsights-dotnet-server/blob/develop/Src/PerformanceCollector/Perf.Shared/Implementation/WebAppPerformanceCollector/CounterFactory.cs)
+
 ## <a name="performance-counters-in-aspnet-core-applications"></a>Счетчики производительности в приложениях ASP.NET Core
-Счетчики производительности поддерживаются, только если приложение предназначено для полной версии платформы .NET Framework. Отсутствие возможности для сбора данных счетчиков производительности для приложений .NET Core.
+
+* [Пакет SDK для ASP.NET Core](https://nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore) версии 2.4.1 и выше собирает счетчики производительности, если приложение выполняется в веб-приложения Azure (Windows)
+
+* Пакет SDK версии 2.7.0-beta3 и выше собирает счетчики производительности, если приложение работает в Windows и предназначенных для `NETSTANDARD2.0` или более поздней версии.
+* Для приложений, предназначенных для .NET Framework счетчики производительности поддерживаются во всех версиях пакета SDK.
+* В этой статье будет обновляться при добавлении поддержки счетчика производительности в отличных от Windows.
 
 ## <a name="alerts"></a>Оповещения
 Как и для других метрик, вы можете [установить оповещение](../../azure-monitor/app/alerts.md), которое предупредит о выходе показаний счетчика производительности за установленные пределы. Откройте колонку "Оповещения" и щелкните "Добавить оповещение".
 
 ## <a name="next"></a>Дальнейшие действия
+
 * [Отслеживание зависимостей](../../azure-monitor/app/asp-net-dependencies.md)
 * [Отслеживание исключений](../../azure-monitor/app/asp-net-exceptions.md)
 

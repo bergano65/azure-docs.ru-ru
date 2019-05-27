@@ -9,11 +9,11 @@ ms.date: 04/08/2019
 ms.author: alkohli
 ms.custom: include file
 ms.openlocfilehash: d28244d75da540948093c775ffc525a80e362526
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61479065"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66115420"
 ---
 Для отправки пакета в центр обработки данных Azure можно использовать службу FedEx, UPS или DHL. Если вы хотите использовать поставщика почтовых услуг, отличного от FedEx или DHL, обратитесь в службу Operations поле данных Azure в `adbops@microsoft.com`
 

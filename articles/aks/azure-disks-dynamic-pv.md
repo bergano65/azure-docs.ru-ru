@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 03/01/2019
 ms.author: iainfou
-ms.openlocfilehash: 735be71faecb9882b13f6f536d43715139d0f4db
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: 334e56db97213206d9ab7ed5ef4d1d96ab9325d6
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65071987"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65956475"
 ---
 # <a name="dynamically-create-and-use-a-persistent-volume-with-azure-disks-in-azure-kubernetes-service-aks"></a>Динамическое создание и использование постоянного тома с дисками Azure в службе Azure Kubernetes (AKS)
 
@@ -39,6 +39,8 @@ ms.locfileid: "65071987"
     * Хранилище класса Standard использует жесткие диски и обеспечивает экономичное хранение при достаточной производительности. Эти диски идеально подходят для экономных рабочих нагрузок разработки и тестирования.
 * Класс хранения *managed-premium* подготавливает диск Azure ценовой категории "Премиум".
     * Диски уровня "Премиум" используют высокопроизводительные твердотельные накопители с низкой задержкой. Они идеально подходят для виртуальных машин, выполняющих производственную рабочую нагрузку. Если узлы AKS в кластере используют хранилище класса Premium, выберите класс *managed-premium*.
+    
+Эти классы хранения по умолчанию не позволяют обновить размер тома после ее создания. Чтобы включить эту возможность, добавьте *allowVolumeExpansion: true* строки на один из классов хранения по умолчанию, или в создании собственного пользовательского хранилища класса. Можно изменить существующего класса хранения с помощью `kubectl edit sc` команды. Дополнительные сведения о классы хранения и создания youor собственные, см. в разделе [параметры хранилища для приложений в AKS][storage-class-concepts].
 
 Используйте команду [kubectl get sc][kubectl-get], чтобы просмотреть предварительно созданные классы хранения. В следующем примере демонстрируются предварительно созданные классы хранения, доступные для кластера AKS.
 
@@ -86,7 +88,7 @@ persistentvolumeclaim/azure-managed-disk created
 
 ## <a name="use-the-persistent-volume"></a>Использование постоянного тома
 
-После создания утверждения постоянного тома и успешной подготовки диска можно создать группу pod с доступом к диску. Приведенный ниже манифест создает базовый модуль pod NGINX, который использует утверждение постоянного тома *azure-managed-disk* для подключения диска Azure по пути `/mnt/azure`.
+После создания утверждения постоянного тома и успешной подготовки диска можно создать группу pod с доступом к диску. Приведенный ниже манифест создает базовый модуль pod NGINX, который использует утверждение постоянного тома *azure-managed-disk* для подключения диска Azure по пути `/mnt/azure`. Укажите контейнеры (сейчас в предварительной версии в AKS), Windows Server *mountPath* используя соглашение путь Windows, таких как *«D:»*.
 
 Создайте файл `azure-pvc-disk.yaml` и скопируйте в него следующий манифест.
 
@@ -279,3 +281,4 @@ Volumes:
 [install-azure-cli]: /cli/azure/install-azure-cli
 [operator-best-practices-storage]: operator-best-practices-storage.md
 [concepts-storage]: concepts-storage.md
+[storage-class-concepts]: concepts-storage.md#storage-classes

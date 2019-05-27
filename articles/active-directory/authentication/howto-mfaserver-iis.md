@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6404356edca606d78656011b9dec654e9f29edd3
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 5a019aaec270fe1beb3914e7ab388fce9a701bcc
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60415041"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65988608"
 ---
 # <a name="configure-azure-multi-factor-authentication-server-for-iis-web-apps"></a>Настройка сервера Многофакторной идентификации Azure для веб-приложений IIS
 
@@ -76,4 +76,4 @@ ms.locfileid: "60415041"
 1. В разделе проверки подлинности IIS перейдите на вкладку **Надежные IP-адреса**.
 2. Щелкните **Добавить**.
 3. Когда появится диалоговое окно "Добавление надежных IP-адресов", с помощью переключателя выберите **один IP-адрес**, **диапазон IP-адресов** или **подсеть**.
-4. Укажите IP-адрес, диапазон IP-адресов или подсеть, которые следует внести в список разрешений. Указывая подсеть, выберите соответствующую маску сети, затем нажмите кнопку **ОК**. После этого список разрешений будет добавлен.
+4. Введите IP-адрес, диапазон IP-адреса или подсети, в которой должно быть разрешено. Указывая подсеть, выберите соответствующую маску сети, затем нажмите кнопку **ОК**.

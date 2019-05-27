@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 manager: philmea
-ms.openlocfilehash: f0eb2f7358e8fb1564275e1de510f302d2eef90b
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 03d39ed01907a2ad61e089946673b96b8a2cc83e
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59500946"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65916958"
 ---
 # <a name="how-to-use-custom-allocation-policies"></a>Как использовать пользовательские политики выделения
 
@@ -46,7 +46,7 @@ ms.locfileid: "59500946"
 ## <a name="prerequisites"></a>Технические условия
 
 * Выполните процедуру, описанную в кратком руководстве по [настройке Службы подготовки устройств к добавлению в Центр Интернета вещей на портале Azure](./quick-setup-auto-provision.md).
-* Visual Studio 2015 или [Visual Studio 2017](https://www.visualstudio.com/vs/) со включенной рабочей нагрузкой [Разработка классических приложений на C++](https://www.visualstudio.com/vs/support/selecting-workloads-visual-studio-2017/).
+* [Visual Studio](https://visualstudio.microsoft.com/vs/) 2015 или более поздней версии с ["Разработка классических приложений на C++"](https://www.visualstudio.com/vs/support/selecting-workloads-visual-studio-2017/) рабочей нагрузки включен.
 * Установите последнюю версию [Git](https://git-scm.com/download/).
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
@@ -508,12 +508,12 @@ ms.locfileid: "59500946"
 
 | Сценарий | Результат регистрации из службы подготовки | Результаты пакета SDK для подготовки |
 | -------- | --------------------------------------------- | ------------------------ |
-| Веб-перехватчик возвращает ответ "200 ОК" со свойством iotHubHostName, которому присвоено допустимое имя узла Центра Интернета вещей | Состояние результата: назначено;  | Пакет SDK возвращает PROV_DEVICE_RESULT_OK, а также сведения о центре |
-| Веб-перехватчик возвращает ответ "200 ОК" со свойством iotHubHostName, но его значение является пустой строкой или NULL | Состояние результата: Сбой<br><br> Код ошибки: CustomAllocationIotHubNotSpecified (400208) | Пакет SDK возвращает PROV_DEVICE_RESULT_HUB_NOT_SPECIFIED |
-| Веб-перехватчик возвращает ответ "401 — недостаточно прав" | Состояние результата: Сбой<br><br>Код ошибки: CustomAllocationUnauthorizedAccess (400209) | Пакет SDK возвращает PROV_DEVICE_RESULT_UNAUTHORIZED |
+| Веб-перехватчик возвращает ответ "200 ОК" со свойством iotHubHostName, которому присвоено допустимое имя узла Центра Интернета вещей | Состояние результата: Назначенный  | Пакет SDK возвращает PROV_DEVICE_RESULT_OK, а также сведения о центре |
+| Веб-перехватчик возвращает ответ "200 ОК" со свойством iotHubHostName, но его значение является пустой строкой или NULL | Состояние результата: Неудача<br><br> Код ошибки: CustomAllocationIotHubNotSpecified (400208) | Пакет SDK возвращает PROV_DEVICE_RESULT_HUB_NOT_SPECIFIED |
+| Веб-перехватчик возвращает ответ "401 — недостаточно прав" | Состояние результата: Неудача<br><br>Код ошибки: CustomAllocationUnauthorizedAccess (400209) | Пакет SDK возвращает PROV_DEVICE_RESULT_UNAUTHORIZED |
 | Была создана индивидуальная регистрация для отключения устройства | Состояние результата: Отключено | Пакет SDK возвращает PROV_DEVICE_RESULT_DISABLED |
 | Веб-перехватчик возвращает код ошибки больше или равный 429 | Попытка повторной оркестрации DPS будет выполнена несколько раз. Текущее состояние политики повтора:<br><br>&nbsp;&nbsp;— счетчик попыток: 10<br>&nbsp;&nbsp;— исходный интервал: 1 с<br>&nbsp;&nbsp;— шаг приращения: 9 с | Пакет SDK пропустит ошибку и отправит еще одно сообщение для получения состояния в указанное время. |
-| Веб-перехватчик возвращает любой другой код состояния | Состояние результата: Сбой<br><br>Код ошибки: CustomAllocationFailed (400207) | Пакет SDK возвращает PROV_DEVICE_RESULT_DEV_AUTH_ERROR |
+| Веб-перехватчик возвращает любой другой код состояния | Состояние результата: Неудача<br><br>Код ошибки: CustomAllocationFailed (400207) | Пакет SDK возвращает PROV_DEVICE_RESULT_DEV_AUTH_ERROR |
 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов

@@ -5,22 +5,23 @@ services: storage
 author: mhopkins-msft
 ms.service: storage
 ms.topic: conceptual
-ms.date: 09/14/2017
+ms.date: 05/15/2019
 ms.author: mhopkins
 ms.reviewer: cbrooks
 ms.subservice: queues
-ms.openlocfilehash: fdb05adaf6a4b039ef288ac8b4464f62930e3f9c
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 6e8640b136c52f500de010f842ab73678acdce4f
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65797778"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65991358"
 ---
 # <a name="perform-azure-queue-storage-operations-with-azure-powershell"></a>Выполнение операций хранилища очередей Azure с помощью Azure PowerShell
 
 Хранилище очередей Azure — это служба хранения большого количества сообщений, к которым можно получить доступ по протоколам HTTP или HTTPS практически из любой точки мира. Дополнительные сведения см. в статье [Общие сведения об очередях](storage-queues-introduction.md). В этом практическом руководстве рассматриваются распространенные операции с хранилищем очередей. Вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
+>
 > * Создать очередь
 > * Извлечение очереди
 > * Добавление сообщения
@@ -53,7 +54,7 @@ $location = "eastus"
 
 ## <a name="create-resource-group"></a>Создать группу ресурсов
 
-Создайте группу ресурсов с помощью команды [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup). 
+Создайте группу ресурсов с помощью команды [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup).
 
 Группа ресурсов Azure является логическим контейнером, в котором происходит развертывание ресурсов Azure и управление ими. Сохраните имя группы ресурсов в переменной для будущего использования. В этом примере создается группа ресурсов с именем *howtoqueuesrg* в регионе *eastus*.
 
@@ -114,7 +115,7 @@ $queueMessage = New-Object -TypeName "Microsoft.Azure.Storage.Queue.CloudQueueMe
 # Add a new message to the queue
 $queue.CloudQueue.AddMessageAsync($QueueMessage)
 
-# Add two more messages to the queue 
+# Add two more messages to the queue
 $queueMessage = New-Object -TypeName "Microsoft.Azure.Storage.Queue.CloudQueueMessage,$($queue.CloudQueue.GetType().Assembly.FullName)" `
   -ArgumentList "This is message 2"
 $queue.CloudQueue.AddMessageAsync($QueueMessage)
@@ -123,15 +124,15 @@ $queueMessage = New-Object -TypeName "Microsoft.Azure.Storage.Queue.CloudQueueMe
 $queue.CloudQueue.AddMessageAsync($QueueMessage)
 ```
 
-Если вы используете [Обозреватель службы хранилища Azure](https://storageexplorer.com), можно подключиться к учетной записи хранения Azure и вывести на экран содержащиеся в ней очереди, а также детализировать одну из них, чтобы просмотреть сообщения в ней. 
+Если вы используете [Обозреватель службы хранилища Azure](https://storageexplorer.com), можно подключиться к учетной записи хранения Azure и вывести на экран содержащиеся в ней очереди, а также детализировать одну из них, чтобы просмотреть сообщения в ней.
 
 ## <a name="read-a-message-from-the-queue-then-delete-it"></a>Считывание сообщения из очереди и его удаление
 
 Сообщения считываются в порядке их поступления. Это не гарантируется. При считывании сообщения из очереди оно становится невидимым для других процессов, просматривающих очередь. Это позволяет удостовериться, что если коду не удастся обработать сообщение из-за сбоя оборудования или программного обеспечения, другой экземпляр кода сможет получить то же сообщение и повторить попытку.  
 
-Это **время ожидания невидимости** определяет, как долго сообщение остается невидимым, прежде чем снова станет доступным для обработки. По умолчанию это 30 секунд. 
+Это **время ожидания невидимости** определяет, как долго сообщение остается невидимым, прежде чем снова станет доступным для обработки. По умолчанию это 30 секунд.
 
-Ваш код считывает сообщение из очереди в два этапа. При вызове [Microsoft.Azure.Storage.Queue.CloudQueue.GetMessage](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.getmessage) метод, вы получаете следующее сообщение в очереди. Сообщение, возвращаемое методом **GetMessage** , становится невидимым для другого кода, считывающего сообщения из этой очереди. Чтобы завершить удаление сообщения из очереди, вызовите [Microsoft.Azure.Storage.Queue.CloudQueue.DeleteMessage](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.deletemessage) метод. 
+Ваш код считывает сообщение из очереди в два этапа. При вызове [Microsoft.Azure.Storage.Queue.CloudQueue.GetMessage](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.getmessage) метод, вы получаете следующее сообщение в очереди. Сообщение, возвращаемое методом **GetMessage** , становится невидимым для другого кода, считывающего сообщения из этой очереди. Чтобы завершить удаление сообщения из очереди, вызовите [Microsoft.Azure.Storage.Queue.CloudQueue.DeleteMessage](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.deletemessage) метод.
 
 В следующем примере можно прочитать три сообщения в очереди, после чего следует время ожидания 10 секунд (время ожидания невидимости). Затем можно снова прочитать три сообщения и удалить их после прочтения, вызвав **DeleteMessage**. При попытке чтения очереди после удаления сообщений $queueMessage будет возвращаться как значение NULL.
 
@@ -148,7 +149,7 @@ $queueMessage.Result
 $queueMessage = $queue.CloudQueue.GetMessageAsync($invisibleTimeout,$null,$null)
 $queueMessage.Result
 
-# After 10 seconds, these messages reappear on the queue. 
+# After 10 seconds, these messages reappear on the queue.
 # Read them again, but delete each one after reading it.
 # Delete the message.
 $queueMessage = $queue.CloudQueue.GetMessageAsync($invisibleTimeout,$null,$null)
@@ -167,7 +168,7 @@ $queue.CloudQueue.DeleteMessageAsync($queueMessage.Result.Id,$queueMessage.Resul
 Для удаления очереди и всех сообщений, содержащихся в ней, вызовите командлет Remove-AzStorageQueue. В следующем примере показан способ удаления указанной очереди с использованием командлета Remove-AzStorageQueue.
 
 ```powershell
-# Delete the queue 
+# Delete the queue
 Remove-AzStorageQueue –Name $queueName –Context $ctx
 ```
 
@@ -184,11 +185,12 @@ Remove-AzResourceGroup -Name $resourceGroup
 Из этого практического руководства вы узнали о базовом управлении хранилищем очередей с помощью PowerShell, включая выполнение следующих задач:
 
 > [!div class="checklist"]
+>
 > * Создать очередь
 > * Извлечение очереди
 > * Добавление сообщения
 > * Чтение следующего сообщения
-> * Удаление сообщения 
+> * Удаление сообщения
 > * Удаление очереди
 
 ### <a name="microsoft-azure-powershell-storage-cmdlets"></a>Командлеты Microsoft Azure PowerShell для службы хранилища

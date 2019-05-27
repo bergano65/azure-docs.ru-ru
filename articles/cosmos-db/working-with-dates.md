@@ -5,13 +5,13 @@ ms.service: cosmos-db
 author: SnehaGunda
 ms.author: sngun
 ms.topic: conceptual
-ms.date: 05/25/2017
-ms.openlocfilehash: 77205c497b901a62bd6880512f4e780d5a6d25f2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 05/21/2019
+ms.openlocfilehash: 99a807cf3918a8768231f88f846432df18fea9e8
+ms.sourcegitcommit: 59fd8dc19fab17e846db5b9e262a25e1530e96f3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60766222"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65977235"
 ---
 # <a name="working-with-dates-in-azure-cosmos-db"></a>Работа с датами в Azure Cosmos DB
 Azure Cosmos DB обеспечивает гибкость схемы данных и обширные возможности индексирования благодаря использованию собственной модели данных на основе [JSON](https://www.json.org). Все ресурсы Azure Cosmos DB, включая базы данных, контейнеры, документы и хранимые процедуры, моделируются и хранятся в виде документов JSON. Чтобы гарантировать свойство переносимости, JSON (и Azure Cosmos DB) поддерживает только небольшой набор основных типов: строка, число, логическое значение, массив, объект и NULL. Но JSON благодаря своей гибкости позволяет разработчикам и платформам моделировать и более сложные типы, составляя их из поддерживаемых примитивов в виде объектов или массивов. 

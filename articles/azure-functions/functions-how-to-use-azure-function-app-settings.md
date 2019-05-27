@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 03/28/2018
 ms.author: glenga
 ms.custom: cc996988-fb4f-47
-ms.openlocfilehash: 188c17b4e8ef84f3907b63fd62bf110ee94b4d7f
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.openlocfilehash: 92ca09040836dfc55a9d709b12a0ee01192d6bac
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65511234"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65957393"
 ---
 # <a name="how-to-manage-a-function-app-in-the-azure-portal"></a>Управление приложением-функцией на портале Azure 
 
@@ -61,7 +61,7 @@ ms.locfileid: "65511234"
 + [Проверка подлинности](#auth)
 + [Определение интерфейса API](#swagger)
 
-Дополнительные сведения о работе с параметрами службы приложений см. в статье [Настройка параметров в службе приложений Azure](../app-service/web-sites-configure.md).
+Дополнительные сведения о работе с параметрами службы приложений см. в статье [Настройка параметров в службе приложений Azure](../app-service/configure-common.md).
 
 ### <a name="editor"></a>Редактор службы приложений
 
@@ -124,7 +124,7 @@ ms.locfileid: "65511234"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-+ [Настройка параметров службы приложений Azure](../app-service/web-sites-configure.md)
++ [Настройка параметров службы приложений Azure](../app-service/configure-common.md)
 + [Непрерывное развертывание для функций Azure](functions-continuous-deployment.md)
 
 

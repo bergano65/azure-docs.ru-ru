@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/13/2019
 ms.author: anavin
-ms.openlocfilehash: 82ee9d04785fc0f6ac534428bf411ca0fe3204ad
-ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
+ms.openlocfilehash: 26d8ee34c735cab8f1033a9aad897ec0b1bed524
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65601509"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65952684"
 ---
 # <a name="create-change-or-delete-a-public-ip-address-prefix"></a>Создание, изменение и удаление префикса общедоступного IP-адреса
 
@@ -50,7 +50,7 @@ ms.locfileid: "65601509"
    |Подписка|Да|Ресурс в пределах одной и той же [подписки](../azure-glossary-cloud-terminology.md?toc=%2fazure%2fvirtual-network%2ftoc.json#subscription), с которым будет связан общедоступный IP-адрес.|
    |Группа ресурсов|Да|Ресурс в пределах одной или разных [групп ресурсов](../azure-glossary-cloud-terminology.md?toc=%2fazure%2fvirtual-network%2ftoc.json#resource-group), с которым будет связан общедоступный IP-адрес.|
    |ИМЯ|Да|Имя должно быть уникальным в пределах выбранной группы ресурсов.|
-   |Регион|Да|Должен существовать в том же [регионе](https://azure.microsoft.com/regions), что и общедоступные IP-адреса, которым вы будете назначать адреса из диапазона. Префикс в настоящее время доступен в предварительной версии в следующих регионах: центральная часть США, Западная часть США, Западная часть США 2, Центральная часть США, Северная Европа, Западная Европа и Юго-Восточная Азия.|
+   |Регион|Да|Должен существовать в том же [регионе](https://azure.microsoft.com/regions), что и общедоступные IP-адреса, которым вы будете назначать адреса из диапазона.|
    |Размер префикса|Да| Нужный размер префикса. По умолчанию это /28 или 16 IP-адресов.
 
 **Команды**
@@ -73,6 +73,13 @@ ms.locfileid: "65601509"
    |ИМЯ|Да|Имя общедоступного IP-адреса должно быть уникальным в пределах выбранной группы ресурсов.|
    |Время ожидания простоя (в минутах)|Нет|Время (в минутах), в течение которого подключение TCP или HTTP остается открытым без привязки к клиентам при отправке запросов для проверки активности. |
    |Метка DNS-имени|Нет|Должна быть уникальной в пределах региона Azure, в котором создается имя (для всех подписок и клиентов). Azure автоматически регистрирует имя и IP-адрес в своей DNS (вы можете подключаться к ресурсу, используя это имя). Azure добавляет подсеть по умолчанию, например *location.cloudapp.azure.com* (где location — это выбранное вами расположение), к имени, которое вы предоставили, для создания полного имени DNS. Дополнительные сведения см. в разделе [Использование Azure DNS с общедоступным IP-адресом Azure](../dns/dns-custom-domain.md?toc=%2fazure%2fvirtual-network%2ftoc.json#public-ip-address).|
+
+Можно также использовать интерфейс командной строки и PS команды ниже с параметром public-ip-prefix (CLI) и параметров - PublicIpPrefix (PS), чтобы создайте общедоступный IP-адреса. 
+
+|Tool|Команда|
+|---|---|
+|Интерфейс командной строки|[az network public-ip create](/cli/azure/network/public-ip?view=azure-cli-latest#az-network-public-ip-create)|
+|PowerShell|[New-AzPublicIpAddress](/powershell/module/az.network/new-azpublicipaddress?view=azps-2.0.0)|
 
 ## <a name="view-or-delete-a-prefix"></a>Просмотр или удаление префикса
 

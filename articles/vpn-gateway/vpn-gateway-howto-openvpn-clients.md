@@ -5,22 +5,18 @@ services: vpn-gateway
 author: cherylmc
 ms.service: vpn-gateway
 ms.topic: conceptual
-ms.date: 1/15/2019
+ms.date: 5/21/2019
 ms.author: cherylmc
-ms.openlocfilehash: d1e57e623e3e95f3d71e895c49c928f00aa0ad46
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: fdfabf328ddfa6b5e4b578be5a1b329cb3219a18
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59274678"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65989107"
 ---
-# <a name="configure-openvpn-clients-for-azure-vpn-gateway-preview"></a>Настройка клиентов OpenVPN для VPN-шлюза Azure (предварительная версия)
+# <a name="configure-openvpn-clients-for-azure-vpn-gateway"></a>Настройка клиентов OpenVPN для VPN-шлюза Azure
 
 Эта статья поможет вам настроить **OpenVPN® протокола** клиентов.
-
-> [!IMPORTANT]
-> Общедоступная предварительная версия предоставляется без соглашения об уровне обслуживания и не должна использоваться для производственных рабочих нагрузок. Некоторые функции могут не поддерживаться, иметь ограничения и быть доступными не во всех расположениях Azure. См. [дополнительные условия использования для предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
->
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
@@ -138,6 +134,6 @@ ms.locfileid: "59274678"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Если требуется VPN-клиенты могли получить доступ к ресурсам в другой виртуальной сети (производство), затем следуйте инструкциям на [VNet-to-VNet](vpn-gateway-howto-vnet-vnet-resource-manager-portal.md) статью, чтобы установить подключение к сети. Обязательно включите протокол BGP на шлюзах и соединениях, иначе трафик не будет считываться.
+Если требуется VPN-клиенты могли получить доступ к ресурсам в другой виртуальной сети, следуйте инструкциям [VNet-to-VNet](vpn-gateway-howto-vnet-vnet-resource-manager-portal.md) статью, чтобы установить подключение к сети. Обязательно включите протокол BGP на шлюзах и соединениях, иначе трафик не будет считываться.
 
 **«OpenVPN» является товарным знаком OpenVPN Inc.**

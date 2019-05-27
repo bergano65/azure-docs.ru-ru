@@ -15,12 +15,12 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e1fe9594471c6e8f723afff2def940bb675e04fb
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.openlocfilehash: 9d18c92cccac6bfb0bd359767ecdb51951268735
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65407005"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65962540"
 ---
 # <a name="desktop-app-that-calls-web-apis---acquire-a-token"></a>Классическое приложение, вызывающее веб-интерфейсы API — получение маркера
 
@@ -163,7 +163,7 @@ var result = await app.AcquireTokenInteractive(scopesForCustomerApi)
 
 #### <a name="other-optional-parameters"></a>Другие необязательные параметры
 
-Дополнительные сведения о все другие необязательные параметры для `AcquireTokenInteractive` из справочная документация по [AcquireTokenInteractiveParameterBuilder](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.apiconfig.acquiretokeninteractiveparameterbuilder?view=azure-dotnet-preview#methods)
+Дополнительные сведения о все другие необязательные параметры для `AcquireTokenInteractive` из справочная документация по [AcquireTokenInteractiveParameterBuilder](/dotnet/api/microsoft.identity.client.acquiretokeninteractiveparameterbuilder?view=azure-dotnet-preview#methods)
 
 ## <a name="integrated-windows-authentication"></a>Встроенная проверка подлинности Windows
 
@@ -283,7 +283,7 @@ static async Task GetATokenForGraph()
 }
 ```
 
-Список возможных модификаторов для AcquireTokenByIntegratedWindowsAuthentication, см. в разделе [AcquireTokenByIntegratedWindowsAuthParameterBuilder](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.apiconfig.acquiretokenbyintegratedwindowsauthparameterbuilder?view=azure-dotnet-preview#methods)
+Список возможных модификаторов для AcquireTokenByIntegratedWindowsAuthentication, см. в разделе [AcquireTokenByIntegratedWindowsAuthParameterBuilder](/dotnet/api/microsoft.identity.client.acquiretokenbyintegratedwindowsauthparameterbuilder?view=azure-dotnet-preview#methods)
 
 ## <a name="username--password"></a>Имя пользователя и пароль
 
@@ -519,7 +519,7 @@ static async Task GetATokenForGraph()
 }
 ```
 
-Дополнительные сведения о всех модификаторы, которые могут применяться к `AcquireTokenByUsernamePassword`, см. в разделе [AcquireTokenByUsernamePasswordParameterBuilder](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.apiconfig.acquiretokenbyusernamepasswordparameterbuilder?view=azure-dotnet-preview#methods)
+Дополнительные сведения о всех модификаторы, которые могут применяться к `AcquireTokenByUsernamePassword`, см. в разделе [AcquireTokenByUsernamePasswordParameterBuilder](/dotnet/api/microsoft.identity.client.acquiretokenbyusernamepasswordparameterbuilder?view=azure-dotnet-preview#methods)
 
 ## <a name="command-line-tool-without-web-browser"></a>Средство командной строки (без веб-браузер)
 
@@ -634,7 +634,7 @@ static async Task<AuthenticationResult> GetATokenForGraph()
 
 ## <a name="file-based-token-cache"></a>Файл создан на основе кэша маркеров
 
-В MSAL.NET по умолчанию предоставляется в памяти кэше токенов.
+В MSAL.NET по умолчанию предоставляется кэш маркеров в памяти.
 
 ### <a name="serialization-is-customizable-in-windows-desktop-apps-and-web-appsweb-apis"></a>Сериализацию можно настраивать в приложениях для настольных систем Windows и web apps/веб-API
 
@@ -643,16 +643,16 @@ static async Task<AuthenticationResult> GetATokenForGraph()
 Классы и интерфейсы, участвующих в кэш маркеров сериализации являются следующие типы:
 
 - ``ITokenCache``, который определяет события для подписки на запросы сериализации кэш маркеров, а также методы для сериализации или десериализацию кэша в различных форматах (ADAL v3.0, MSAL 2.x и MSAL 3.x = ADAL версии 5.0)
-- ``TokenCacheCallback`` обратный вызов передается на события, чтобы можно было обрабатывать сериализацию. они будут называться с аргументами типа ``TokenCacheNotificationArgs``.
+- Обратный вызов ``TokenCacheCallback`` передается событиям, что позволяет обрабатывать операции сериализации. они будут называться с аргументами типа ``TokenCacheNotificationArgs``.
 - ``TokenCacheNotificationArgs`` предоставляет только ``ClientId`` приложения и ссылку на пользователя, для которого доступен маркер
 
   ![image](https://user-images.githubusercontent.com/13203188/56027172-d58d1480-5d15-11e9-8ada-c0292f1800b3.png)
 
 > [!IMPORTANT]
-> MSAL.NET создает кэши маркеров и обеспечивает `IToken` кэшировать при вызове приложения `GetUserTokenCache` и `GetAppTokenCache` методы. Вы не должны реализовать интерфейс. Вы отвечаете за при реализации сериализации настраиваемый кэш маркеров, является:
+> MSAL.NET создает кэши маркеров и предоставляет кэш `IToken` для работы методов `GetUserTokenCache` и `GetAppTokenCache` приложения. Вы не должны реализовать интерфейс. При реализации пользовательской сериализации для кэша маркеров в вашу зону ответственности входит следующее:
 >
-> - Реагировать на них `BeforeAccess` и `AfterAccess` «события». `BeforeAccess` Делегат отвечает для десериализации в кэш, тогда как `AfterAccess` один отвечает за сериализацию в кэш.
-> - Часть этих событий, хранить или BLOB-объектов, которые передаются через аргумент события в хранилище, необходимо загрузить.
+> - Реагирование на события `BeforeAccess` и `AfterAccess`. `BeforeAccess` Делегат отвечает для десериализации в кэш, тогда как `AfterAccess` один отвечает за сериализацию в кэш.
+> - Часть этих событий сохраняют или загружают большие двоичные объекты, которые передаются через аргумент события в нужное хранилище.
 
 Стратегии, другим в зависимости от того, если вы создаете кэш маркеров сериализация для общедоступного клиентского приложения (Desktop) или конфиденциального клиентского приложения (web приложение или веб-API, управляющую программу).
 
@@ -660,9 +660,9 @@ static async Task<AuthenticationResult> GetATokenForGraph()
 
 Настройка сериализации кэша маркера для совместного использования состояния единого входа между ADAL.NET 3.x, ADAL.NET 5.x и MSAL.NET частично описан из следующего примера: [active-directory-dotnet-v1-to-v2](https://github.com/Azure-Samples/active-directory-dotnet-v1-to-v2)
 
-### <a name="simple-token-cache-serialization-msal-only"></a>Сериализация простого кэш маркеров (MSAL)
+### <a name="simple-token-cache-serialization-msal-only"></a>Простая сериализация кэша маркеров (только для MSAL)
 
-Ниже приведен пример упрощенная реализация пользовательской сериализации из кэша маркеров для настольных приложений. Здесь кэша маркера пользователя в файле в той же папке, что и приложение.
+Ниже приведен пример основной реализации пользовательской сериализации кэша маркеров для классических приложений. Здесь кэша маркера пользователя в файле в той же папке, что и приложение.
 
 После построения приложения, включить сериализацию, вызвав ``TokenCacheHelper.EnableSerialization()`` передачи приложения `UserTokenCache`
 
@@ -722,7 +722,7 @@ static class TokenCacheHelper
  }
 ```
 
-Предварительный просмотр кэш маркеров качества продукта файловых сериализатор для общедоступных клиентских приложений (для классических приложений под управлением Windows, Mac и linux) доступен из [Microsoft.Identity.Client.Extensions.Msal](https://github.com/AzureAD/microsoft-authentication-extensions-for-dotnet/tree/master/src/Microsoft.Identity.Client.Extensions.Msal) Библиотека с открытым исходным кодом. Его можно включить в приложение из следующий пакет nuget: [Microsoft.Identity.Client.Extensions.Msal](https://www.nuget.org/packages/Microsoft.Identity.Client.Extensions.Msal/).
+Предварительный просмотр кэш маркеров качества продукта файловых сериализатор для общедоступных клиентских приложений (для классических приложений под управлением Windows, Mac и linux) доступен из [Microsoft.Identity.Client.Extensions.Msal](https://github.com/AzureAD/microsoft-authentication-extensions-for-dotnet/tree/master/src/Microsoft.Identity.Client.Extensions.Msal) Библиотека с открытым исходным кодом. Это решение можно включить в приложение из следующего пакета NuGet: [Microsoft.Identity.Client.Extensions.Msal](https://www.nuget.org/packages/Microsoft.Identity.Client.Extensions.Msal/).
 
 > Заявление об отказе. Библиотека Microsoft.Identity.Client.Extensions.Msal является расширением через MSAL.NET. Классы в этих библиотеках может сделать свой путь MSAL.NET в будущем, как есть или с критическими изменениями.
 

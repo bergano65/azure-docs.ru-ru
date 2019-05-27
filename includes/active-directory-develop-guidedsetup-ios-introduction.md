@@ -5,21 +5,21 @@ services: active-directory
 documentationcenter: dev-center-name
 author: danieldobalian
 manager: CelesteDG
-editor: ''
 ms.service: active-directory
 ms.devlang: na
 ms.topic: include
 ms.tgt_pltfrm: ios
 ms.workload: identity
 ms.date: 03/20/2019
-ms.author: dadobali
+ms.author: jmprieur
+ms.reviwer: brandwe
 ms.custom: include file
-ms.openlocfilehash: 971ae8cd44f1b345d3a71b8fa4f256c8f25ef961
-ms.sourcegitcommit: 807c318f5c034f8256f91c241e9d6f8f4d7de90a
+ms.openlocfilehash: 08849cb44b5a3db3d66dc444d5e84fb3df66ad9a
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64951344"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65967640"
 ---
 # <a name="call-the-microsoft-graph-api-from-an-ios-application"></a>Вызов API Microsoft Graph из приложения iOS
 
@@ -50,6 +50,6 @@ MSAL управляет кэшированием и обновлением ма�
 
 В этом руководстве используется следующая библиотека:
 
-|Библиотека|ОПИСАНИЕ|
+|Библиотека|Описание|
 |---|---|
 |[MSAL.framework](https://github.com/AzureAD/microsoft-authentication-library-for-objc)|Предварительная версия библиотеки проверки подлинности Microsoft для iOS|

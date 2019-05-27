@@ -5,15 +5,15 @@ services: expressroute
 author: cherylmc
 ms.service: expressroute
 ms.topic: conceptual
-ms.date: 12/07/2018
+ms.date: 05/21/2019
 ms.author: anzaman,cherylmc
 ms.custom: seodec18
-ms.openlocfilehash: 5ddcfe14873d13384b043f7a977dc4f069dbe8dd
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 9a6f16df4b827538c1f8bdb9b7382ed06d543b62
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60883085"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65991521"
 ---
 # <a name="connect-a-virtual-network-to-an-expressroute-circuit-using-cli"></a>Подключение виртуальной сети к каналу ExpressRoute с помощью CLI
 
@@ -139,6 +139,32 @@ az network vpn-connection create --name ERConnection --resource-group ExpressRou
 **Освобождение разрешения на подключение**
 
 Разрешение можно освободить, удалив подключение, связывающее канал ExpressRoute и виртуальную сеть.
+
+## <a name="modify-a-virtual-network-connection"></a>Изменение подключения к виртуальной сети
+Вы можете изменить определенные свойства подключения к виртуальной сети. 
+
+**Изменение веса подключения**
+
+Виртуальная сеть может подключаться к нескольким каналам ExpressRoute. Одинаковый префикс может быть получен из нескольких каналов ExpressRoute. Чтобы выбрать подключение для отправки трафика, предназначенного для этого префикса, можно изменить значение *RoutingWeight* подключения. Трафик будет отправляться через подключение с самым высоким значением *RoutingWeight*.
+
+```azurecli
+az network vpn-connection update --name ERConnection --resource-group ExpressRouteResourceGroup --routing-weight 100
+```
+
+Диапазон значений *RoutingWeight*: 0 до 32 000. Значение по умолчанию — 0.
+
+## <a name="configure-expressroute-fastpath"></a>Настройка ExpressRoute FastPath 
+Вы можете включить [ExpressRoute FastPath](expressroute-about-virtual-network-gateways.md) Если ваша цепь ExpressRoute находится на [ExpressRoute Direct](expressroute-erdirect-about.md) и шлюз виртуальной newtork максимальной производительностью или ErGw3AZ. FastPath улучшает данных о производительности пути данных, например пакетов в секунду и соединений в секунду между локальной сетью и виртуальной сети. 
+
+> [!NOTE] 
+> Если вы уже есть подключение к виртуальной сети, но еще не включили FastPath необходимо удалить подключение виртуальной сети и создать новую. 
+> 
+>  
+
+```azurecli
+az network vpn-connection create --name ERConnection --resource-group ExpressRouteResourceGroup --express-route-gateway-bypass true --vnet-gateway1 VNet1GW --express-route-circuit2 MyCircuit
+```
+
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

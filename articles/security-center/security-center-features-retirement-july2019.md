@@ -8,12 +8,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 4/16/2019
 ms.author: yoafr
-ms.openlocfilehash: 5ac6603be087e887e3304f6a7e14aa063863e1dd
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 069345f9c2d0fff0b580365153d8be13bb4ba204
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65796464"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65952142"
 ---
 # <a name="retirement-of-security-center-features-july-2019"></a>Прекращении работы функции центра безопасности (июля 2019 г.)
 
@@ -162,7 +162,7 @@ ms.locfileid: "65796464"
 
 Центр безопасности Azure отслеживает конфигурации безопасности, применяя набор [более 150 рекомендуемых правил](https://gallery.technet.microsoft.com/Azure-Security-Center-a789e335). для усиления защиты операционной системы. Эти правила относятся к брандмауэры, аудит, политики паролей и многое другое. Если конфигурация компьютера уязвима к атакам, центр безопасности формирует рекомендации по безопасности. [Экран конфигурации безопасности редактирования](https://docs.microsoft.com/azure/security-center/security-center-customize-os-security-config) позволяет пользователям настроить конфигурацию безопасности операционной системы по умолчанию в центре безопасности.
 
-Мы все снятия с учета, эта функция предварительного просмотра.
+Мы все снятия с учета, эта функция предварительного просмотра. Если после даты прекращения использования, вы хотите сбросить настройки безопасности обратно к значениям по умолчанию, это можно сделать с помощью API или Powershell, используя [следуйте инструкциям](https://aka.ms/ascresetsecurityconfigurations)
 
 ![Изменение настроек системы безопасности][17]
 

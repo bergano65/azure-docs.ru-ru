@@ -8,12 +8,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 08/14/2018
 ms.author: iainfou
-ms.openlocfilehash: a6a2fb246e407d6ea240ff40f4d2fa2b1b780931
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: f7a0269ff22987648d134cb7f4fba8e28e29fd8b
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61023744"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65956293"
 ---
 # <a name="use-virtual-kubelet-with-azure-kubernetes-service-aks"></a>Использование Virtual Kubelet со службой Azure Kubernetes (AKS)
 
@@ -26,7 +26,7 @@ ms.locfileid: "61023744"
 >
 > Virtual Kubelet представляет собой экспериментальный открытый проект и должен использоваться таким образом. Чтобы внести свой вклад в проект, сообщить о проблемах и получить дополнительную информацию о Virtual Kubelet, зайдите на [страницу проекта Virtual Kubelet на GitHub][vk-github].
 
-## <a name="prerequisite"></a>Необходимое условие
+## <a name="before-you-begin"></a>Перед началом работы
 
 Для выполнения этих инструкций у вас должен быть кластер AKS. Если вам необходим кластер AKS, обратитесь к [руководству по началу работы со службой Azure Kubernetes][aks-quick-start].
 
@@ -34,7 +34,29 @@ ms.locfileid: "61023744"
 
 Для установки Virtual Kubelet также необходим набор инструментов [Helm](https://docs.helm.sh/using_helm/#installing-helm).
 
-### <a name="for-rbac-enabled-clusters"></a>Для кластеров с поддержкой RBAC
+### <a name="register-container-instances-feature-provider"></a>Зарегистрировать поставщик функций экземпляры контейнеров
+
+Если вы не использовали ранее службы экземпляра контейнера Azure (ACI), необходимо зарегистрируйте поставщик служб с вашей подпиской. Можно проверить состояние регистрации поставщика ACI, с помощью команды [az provider list] [az provider list], как показано в следующем примере:
+
+```azurecli-interactive
+az provider list --query "[?contains(namespace,'Microsoft.ContainerInstance')]" -o table
+```
+
+Поставщик *Microsoft.ContainerInstance* должен иметь состояние *Registered*, как показано в следующем примере выходных данных.
+
+```
+Namespace                    RegistrationState
+---------------------------  -------------------
+Microsoft.ContainerInstance  Registered
+```
+
+Если поставщик отображается в том, что *NotRegistered*, зарегистрируйте поставщик с помощью [az зарегистрировать поставщик] [az provider register], как показано в следующем примере:
+
+```azurecli-interactive
+az provider register --namespace Microsoft.ContainerInstance
+```
+
+### <a name="for-rbac-enabled-clusters"></a>Кластеры с поддержкой RBAC
 
 Если используется кластер AKS с поддержкой RBAC, необходимо создать учетную запись службы и привязку роли для использования с Tiller. Дополнительные сведения см. в статье об [управлении доступом на основе ролей в Helm][helm-rbac]. Чтобы создать учетную запись службы и привязку роли, создайте файл с именем *rbac-virtual-kubelet.yaml* и вставьте следующее определение.
 

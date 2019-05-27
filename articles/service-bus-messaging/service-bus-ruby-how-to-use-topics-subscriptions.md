@@ -14,12 +14,12 @@ ms.devlang: ruby
 ms.topic: article
 ms.date: 04/15/2019
 ms.author: aschhab
-ms.openlocfilehash: c2862c3521c05ba81f7a567f7951d22a9ab95c44
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: fa3e50374c47f863923252a47b4b54fc1e18f87d
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61472341"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65991867"
 ---
 # <a name="how-to-use-service-bus-topics-and-subscriptions-with-ruby"></a>Как использовать разделы и подписки служебной шины с Ruby
  
@@ -167,6 +167,9 @@ azure_service_bus_service.delete_topic("test-topic")
 ```ruby
 azure_service_bus_service.delete_subscription("test-topic", "high-messages")
 ```
+
+> [!NOTE]
+> Вы можете управлять ресурсами служебной шины с помощью [Service Bus Explorer](https://github.com/paolosalvatori/ServiceBusExplorer/). Обозреватель шины обслуживания позволяет пользователям подключаться к пространству имен служебной шины и управлять сущностями обмена сообщениями с легкостью. Средство предоставляет дополнительные возможности, например функции импорта и экспорта или возможность тестировать разделом, очередей, подписок, служб ретрансляции, концентраторы уведомлений и концентраторов событий. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Вы узнали основные сведения о разделах служебной шины. Для получения дополнительных сведений используйте следующие ссылки.

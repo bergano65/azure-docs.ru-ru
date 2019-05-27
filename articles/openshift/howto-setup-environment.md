@@ -9,14 +9,14 @@ ms.date: 05/10/2019
 ms.topic: conceptual
 ms.service: openshift
 manager: jeconnoc
-ms.openlocfilehash: 6e859f57f9b5f24ea2f0172f5aa35a60d9769f19
-ms.sourcegitcommit: f013c433b18de2788bf09b98926c7136b15d36f1
+ms.openlocfilehash: 6ba7e67620ebfd7ff98c1ba81c7cecb133288be7
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65551703"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65962127"
 ---
-# <a name="set-up-your-azure-red-hat-openshift-dev-environment"></a>Настройте среду разработки Azure Red Hat OpenShift
+# <a name="set-up-your-azure-red-hat-openshift-dev-environment"></a>Настройка среды разработки Azure Red Hat OpenShift
 
 Для создания и запуска приложений Microsoft Azure Red Hat OpenShift, вам потребуется:
 
@@ -29,13 +29,15 @@ ms.locfileid: "65551703"
 
 Приведенные ниже инструкции поможет выполнить все эти необходимые компоненты.
 
-## <a name="purchase-azure-virtual-machine-reserved-instances"></a>Приобрести Azure зарезервированные экземпляры виртуальных машин
+## <a name="purchase-azure-red-hat-openshift-application-nodes-reserved-instances"></a>Приобрести зарезервированные экземпляры Azure Red Hat OpenShift приложения узлов
 
-Перед тем как использовать Azure Red Hat OpenShift, вам потребуется приобрести Azure зарезервированные экземпляры виртуальных машин.
+Перед тем как использовать Azure Red Hat OpenShift, вам потребуется приобрести не менее 4 узлов приложения защищены Azure Red Hat OpenShift, после чего вы сможете Подготовка кластеров.
 
-Если вы являетесь клиентом Azure, здесь как [покупки виртуальной машины Azure зарезервированные экземпляры](https://aka.ms/openshift/buy). Резервирование позволяет сократить ваши расходы по предварительной оплаты полностью управляемых служб Azure. Ссылаться на [ *Каковы резервирования Azure* ](https://docs.microsoft.com/azure/billing/billing-save-compute-costs-reservations) получить дополнительные сведения о резервировании и как они помочь сэкономить денежные средства.
+Если вы являетесь клиентом Azure, [приобрести Azure Red Hat OpenShift зарезервированные экземпляры](https://aka.ms/openshift/buy) через портал Azure. После приобретения, подписки будут активированы в течение 24 часов.
 
 Если вы не являетесь клиентом Azure [связаться с отделом продаж](https://aka.ms/openshift/contact-sales) и заполните форму продаж в нижней части страницы, чтобы начать процесс.
+
+Ссылаться на [странице с ценами Azure Red Hat OpenShift](https://aka.ms/openshift/pricing) Дополнительные сведения.
 
 ## <a name="install-the-azure-cli"></a>Установка Azure CLI
 

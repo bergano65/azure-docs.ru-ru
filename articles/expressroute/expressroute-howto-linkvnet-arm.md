@@ -5,15 +5,15 @@ services: expressroute
 author: ganesr
 ms.service: expressroute
 ms.topic: article
-ms.date: 10/30/2018
+ms.date: 05/20/2018
 ms.author: ganesr
 ms.custom: seodec18
-ms.openlocfilehash: b0ae3d5b2c60badfb9b59820b1e0b85383e524ca
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 620eff5468d7d3b4bf8ddeea62fa67b39609fce6
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60366358"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65950375"
 ---
 # <a name="connect-a-virtual-network-to-an-expressroute-circuit"></a>Подключение виртуальной сети к каналу ExpressRoute
 > [!div class="op_single_selector"]
@@ -175,6 +175,20 @@ Set-AzVirtualNetworkGatewayConnection -VirtualNetworkGatewayConnection $connecti
 ```
 
 Диапазон значений *RoutingWeight*: 0 до 32 000. Значение по умолчанию — 0.
+
+## <a name="configure-expressroute-fastpath"></a>Настройка ExpressRoute FastPath 
+Вы можете включить [ExpressRoute FastPath](expressroute-about-virtual-network-gateways.md) Если ваша цепь ExpressRoute находится на [ExpressRoute Direct](expressroute-erdirect-about.md) и шлюз виртуальной newtork максимальной производительностью или ErGw3AZ. FastPath улучшает данных о производительности пути данных, например пакетов в секунду и соединений в секунду между локальной сетью и виртуальной сети. 
+
+> [!NOTE] 
+> Если вы уже есть подключение к виртуальной сети, но еще не включили FastPath необходимо удалить подключение виртуальной сети и создать новую. 
+> 
+>  
+
+```azurepowershell-interactive 
+$circuit = Get-AzExpressRouteCircuit -Name "MyCircuit" -ResourceGroupName "MyRG" 
+$gw = Get-AzVirtualNetworkGateway -Name "MyGateway" -ResourceGroupName "MyRG" 
+$connection = New-AzVirtualNetworkGatewayConnection -Name "MyConnection" -ResourceGroupName "MyRG" -ExpressRouteGatewayBypass -VirtualNetworkGateway1 $gw -PeerId $circuit.Id -ConnectionType ExpressRoute -Location "MyLocation" 
+``` 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения об ExpressRoute см. в статье [Вопросы и ответы по ExpressRoute](expressroute-faqs.md).

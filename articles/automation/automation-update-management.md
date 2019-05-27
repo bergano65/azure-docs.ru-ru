@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 04/29/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 43ca5bbfd789c1c41826c9a13a0030b80c72d4bc
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.openlocfilehash: b92083b78971ab00f87e073ba7f4944a6f828daf
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65510654"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65991643"
 ---
 # <a name="update-management-solution-in-azure"></a>Решение для управления обновлениями в Azure
 
@@ -356,7 +356,7 @@ $ServiceManager.AddService2($ServiceId,7,"")
 
 При определении исключений рекомендуется использовать адреса из списка. Если вам нужны IP-адреса, вы можете скачать [список диапазонов IP-адресов центров обработки данных Microsoft Azure](https://www.microsoft.com/download/details.aspx?id=41653). Файл обновляется еженедельно, и в нем отражаются развернутые в настоящее время диапазоны и все предстоящие изменения диапазонов IP-адресов.
 
-## <a name="search-logs"></a>Поиск в журналах
+## <a name="search-logs"></a>Поиск по журналам
 
 Кроме подробных сведений, которые предоставляются на портале Azure, можно выполнить поиск по журналам. На страницах решений выберите **Log Analytics**. Откроется область **Поиск по журналам**.
 
@@ -379,7 +379,7 @@ Update
 | summarize hint.strategy=partitioned arg_max(TimeGenerated, UpdateState, Classification, Approved) by Computer, SourceComputerId, UpdateID
 | where UpdateState=~"Needed" and Approved!=false
 | summarize by UpdateID, Classification
-| summarize allUpdatesCount=count(), criticalUpdatesCount=countif(Classification has "Critical"), securityUpdatesCount=countif(Classification has "Security"), otherUpdatesCount=countif(Classification !has "Critical" and Classification !has "Security"
+| summarize allUpdatesCount=count(), criticalUpdatesCount=countif(Classification has "Critical"), securityUpdatesCount=countif(Classification has "Security"), otherUpdatesCount=countif(Classification !has "Critical" and Classification !has "Security")
 ```
 
 ##### <a name="missing-updates-list"></a>Список отсутствующих обновлений

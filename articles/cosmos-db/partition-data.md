@@ -5,13 +5,13 @@ ms.author: rimman
 author: rimman
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 03/31/2019
-ms.openlocfilehash: cf454d6504f0433d7ac7ca883982ae317b14f814
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 05/20/2019
+ms.openlocfilehash: 30290652044499ff8e537adc90689f562e1489d2
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60928863"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65953770"
 ---
 # <a name="partitioning-and-horizontal-scaling-in-azure-cosmos-db"></a>Секционирование и горизонтальное масштабирование в Azure Cosmos DB
 

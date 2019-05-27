@@ -7,12 +7,12 @@ ms.topic: article
 ms.author: mbaldwin
 ms.date: 03/12/2019
 ms.custom: seodec18
-ms.openlocfilehash: 4715ec92c4ee45733cc0eb2839c533f9ee8968fe
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 35d494702673d59290a0073c55135138f533b8bf
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64694115"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65956695"
 ---
 # <a name="azure-disk-encryption-troubleshooting-guide"></a>Руководство по устранению неполадок шифрования дисков Azure
 
@@ -64,7 +64,7 @@ uname -a
 
 Последовательность шифрования диска операционной системы Linux временно отключает диск операционной системы. Затем выполняется блочное шифрование всего диска операционной системы перед его повторным подключением в зашифрованном состоянии. В отличие от шифрования дисков Azure в Windows во время шифрования диска в Linux нельзя параллельно использовать виртуальную машину. Характеристики производительности виртуальной машины могут существенно повлиять на время, необходимое для завершения шифрования. К таким характеристикам относится размер диска и класс учетной записи хранения ("Стандартный" или "Премиум" (SSD)).
 
-Чтобы проверить состояние шифрования, опрос **ProgressMessage** поля, возвращаемые [Get AzVmDiskEncryptionStatus](/powershell/module/az.compute/get-azvmdiskencryptionstatus) команды. Во время шифрования диска ОС виртуальная машина входит в состояние обслуживания, а также отключается SSH, чтобы предотвратить нарушение текущего процесса. В процессе шифрования часто появляется сообщение **EncryptionInProgress**. Через несколько часов появляется сообщение **VMRestartPending**, в котором вам будет предложено перезагрузить виртуальную машину. Например: 
+Чтобы проверить состояние шифрования, опрос **ProgressMessage** поля, возвращаемые [Get AzVmDiskEncryptionStatus](/powershell/module/az.compute/get-azvmdiskencryptionstatus) команды. Во время шифрования диска ОС виртуальная машина входит в состояние обслуживания, а также отключается SSH, чтобы предотвратить нарушение текущего процесса. В процессе шифрования часто появляется сообщение **EncryptionInProgress**. Через несколько часов появляется сообщение **VMRestartPending**, в котором вам будет предложено перезагрузить виртуальную машину. Например:
 
 
 ```azurepowershell
@@ -130,7 +130,7 @@ ProgressMessage            : OS disk successfully encrypted, please reboot the V
 
 1. Используйте DiskPart, чтобы проверить тома, а затем продолжайте.  
 
-Например: 
+Например:
 
 ```
 DISKPART> list vol
@@ -150,7 +150,9 @@ If the expected encryption state does not match what is being reported in the po
 
 Портал могут отображаться диск с зашифрованные, даже после ее незашифрованные на виртуальной Машине.  Это может произойти при использовании команд низкого уровня напрямую расшифровать диск от виртуальной Машины, вместо того чтобы использовать команды управления выше уровня шифрования дисков Azure.  Высокий уровень команды не только расшифровать диск от виртуальной Машины, но за пределами виртуальной Машины они также обновить параметры шифрования на уровне важные платформы и параметры расширения, связанные с виртуальной Машиной.  Если они не сохраняются в выравнивание платформы не сможете сообщить о состоянии шифрования или подготовить виртуальную Машину должным образом.   
 
-Чтобы правильно отключить шифрование дисков Azure, запустите из известного рабочего состояния с включенным шифрованием и затем использовать [Disable-AzVMDiskEncryption](/powershell/module/az.compute/disable-azvmdiskencryption) и [Remove-AzVMDiskEncryptionExtension](/powershell/module/az.compute/remove-azvmdiskencryptionextension) Powershell команды, или [отключить шифрование виртуальных машин az](/cli/azure/vm/encryption) команду интерфейса командной строки. 
+Чтобы отключить шифрование дисков Azure с помощью PowerShell, используйте [Disable-AzVMDiskEncryption](/powershell/module/az.compute/disable-azvmdiskencryption) следуют [Remove-AzVMDiskEncryptionExtension](/powershell/module/az.compute/remove-azvmdiskencryptionextension). Запуск AzVMDiskEncryptionExtension удалить до отключения шифрования завершится ошибкой.
+
+Чтобы отключить шифрование дисков Azure с помощью CLI, используйте [отключить шифрование виртуальных машин az](/cli/azure/vm/encryption). 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

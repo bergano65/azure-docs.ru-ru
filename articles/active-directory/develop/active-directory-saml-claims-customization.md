@@ -18,12 +18,12 @@ ms.author: ryanwi
 ms.reviewer: luleon, paulgarn, jeedes
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4c1f8640918d433956935e9428e23aac59e36334
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 622525705979cd6a7a088c606ac167d28f8f6482
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65764666"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65951000"
 ---
 # <a name="how-to-customize-claims-issued-in-the-saml-token-for-enterprise-applications"></a>Практическое руководство: Настройка утверждений, выпущенных в токене SAML для корпоративных приложений
 
@@ -47,7 +47,7 @@ ms.locfileid: "65764666"
 Изменение идентификатора имени (значение идентификатора имени):
 
 1. Откройте **имя значение идентификатора** страницы.
-1. Выберите атрибут или преобразования, которые необходимо применить к атрибуту. При необходимости можно указать формат, в который он утверждение NameID иметь.
+1. Выберите атрибут или преобразования, которые необходимо применить к атрибуту. При необходимости можно указать формат, в который требуется утверждение NameID.
 
    ![Изменить значение идентификатора имени (идентификатора имени)](./media/active-directory-saml-claims-customization/saml-sso-manage-user-claims.png)
 
@@ -75,7 +75,7 @@ ms.locfileid: "65764666"
 
 | ИМЯ | Описание |
 |------|-------------|
-| Адрес эл. почты | Адрес электронной почты пользователя |
+| Email | Адрес электронной почты пользователя |
 | userprincipalName | Имя участника-пользователя (UPN) пользователя |
 | onpremisessamaccount | Имя учетной записи SAM, синхронизированное из локального Azure AD |
 | objectid | Идентификатор объекта пользователя в Azure AD |

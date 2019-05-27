@@ -4,18 +4,18 @@ description: Заметки о выпуске для хранилища данн
 services: sql-data-warehouse
 ms.service: sql-data-warehouse
 ms.topic: conceptual
-ms.subservice: manage
+ms.subservice: ''
 ms.date: 05/13/2019
 author: anumjs
 ms.author: anjangsh
 ms.reviewer: jrasnick
 manager: craigg
-ms.openlocfilehash: 519cec0951305db60e0994134f8c680f6c560752
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 215f7c9c65658ddbb10498bb59f3d326bf3a10f1
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65792417"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65988287"
 ---
 # <a name="azure-sql-data-warehouse-release-notes"></a>Заметки о выпуске для Хранилища данных SQL Azure
 
@@ -23,15 +23,11 @@ ms.locfileid: "65792417"
 
 ## <a name="check-your-azure-sql-data-warehouse-version"></a>Проверка версии хранилища данных SQL Azure
 
-Подключитесь к хранилищу данных с помощью SQL Server Management Studio (SSMS) и запустите следующий синтаксис для возврата текущей версии хранилища данных SQL.
-
-```sql
-SELECT @@VERSION AS 'SQL Data Warehouse';
-```
+Как новые функции распространяются среди всех регионах, проверьте версии, развернутой для своего экземпляра и последние заметки о выпуске хранилища данных SQL Azure для доступности функций. Чтобы проверить установленную версию хранилища данных SQL Azure, подключитесь к хранилищу данных с помощью SQL Server Management Studio (SSMS) и выполните `SELECT @@VERSION AS 'SQL Data Warehouse';` для возврата текущей версии хранилища данных SQL Azure.
 
 Выходные данные примера: ![Версия Хранилища данных SQL](./media/release-notes/sql_data_warehouse_version.png)
 
-Использование даты, определенных для подтверждения, который выпуска была применена к хранилищу данных SQL Azure.
+Использование даты, определенных для подтверждения, который выпуска применен в хранилище данных SQL Azure.
 
 ## <a name="may-2019"></a>Мая 2019 г.
 
@@ -39,7 +35,7 @@ SELECT @@VERSION AS 'SQL Data Warehouse';
 | --- | --- |
 |**Платформа динамических данных, маскируя (Предварительная версия)**|Динамическое маскирование данных (DDM) предотвращает несанкционированный доступ к конфиденциальным данным в хранилище данных, затемняя их в режиме реального времени в результатах запроса, на основе правил маскирования вами. Дополнительные сведения см. в разделе [маскирование динамических данных базы данных SQL](/azure/sql-database/sql-database-dynamic-data-masking-get-started).|
 |**Важность рабочей нагрузки теперь общедоступны**|Классификации управления рабочей нагрузки и важность обеспечения возможности влияют на порядок выполнения запросов. Дополнительные сведения о важности рабочей нагрузки, см. в разделе [классификации](sql-data-warehouse-workload-classification.md) и [важности](sql-data-warehouse-workload-importance.md) обзорные статьи в документации. Ознакомьтесь с [СОЗДАНИЯ КЛАССИФИКАТОРА рабочей НАГРУЗКИ](/sql/t-sql/statements/create-workload-classifier-transact-sql?view=azure-sqldw-latest) также doc.<br/><br/>Важность рабочих нагрузок в действии см. в разделе ниже видео:<br/> -[Основные понятия управления рабочей нагрузки](https://www.youtube.com/embed/QcCRBAhoXpM)<br/> -[Сценарии управления рабочей нагрузкой](https://www.youtube.com/embed/_2rLMljOjw8)|
-|**Дополнительная поддержка T-SQL**|Контактную зону языка T-SQL для хранилища данных SQL была расширена для поддержки: </br> - [AT TIME ZONE](/sql/t-sql/queries/at-time-zone-transact-sql?view=azure-sqldw-latest)</br> - [TRIM](/sql/t-sql/functions/trim-transact-sql?view=azure-sqldw-latest)|
+|**Дополнительная поддержка T-SQL**|Контактную зону языка T-SQL для хранилища данных SQL была расширена для поддержки: </br> - [TRIM](/sql/t-sql/functions/trim-transact-sql?view=azure-sqldw-latest)|
 |**Функции JSON**|Бизнес-аналитикам теперь можно использовать знакомый язык T-SQL для запроса и работы с документами, которые имеют формат данных JSON с использованием следующие новые функции JSON в хранилище данных.</br> - [ISJSON](/sql/t-sql/functions/isjson-transact-sql?view=azure-sqldw-latest)</br> - [JSON_VALUE](/sql/t-sql/functions/json-value-transact-sql?view=azure-sqldw-latest)</br> -  [JSON_QUERY](/sql/t-sql/functions/json-query-transact-sql?view=azure-sqldw-latest)</br> -  [JSON_MODIFY](/sql/t-sql/functions/json-modify-transact-sql?view=azure-sqldw-latest)</br> - [OPENJSON](/sql/t-sql/functions/openjson-transact-sql?view=azure-sqldw-latest)|
 |**Результирующий набор, кэширование (Предварительная версия)**|Результирующий набор кэширование позволяет время ответа на запрос мгновенных при уменьшает время для получения сведений для бизнес-аналитики и отчетности пользователей. Дополнительные сведения можно найти в разделе </br> - [ALTER DATABASE (Transact-SQL)](/sql/t-sql/statements/alter-database-transact-sql?view=azure-sqldw-latest)</br> - [Параметры ALTER DATABASE SET (Transact-SQL)](/sql/t-sql/statements/alter-database-transact-sql-set-options?view=azure-sqldw-latest)</br> - [РЕЗУЛЬТИРУЮЩИЙ НАБОР для НАБОРА КЭШИРОВАНИЯ (Transact-SQL)](/sql/t-sql/statements/set-result-set-caching-transact-sql?view=azure-sqldw-latest)</br> - [Инструкция SET (Transact-SQL)](/sql/t-sql/statements/set-statements-transact-sql)</br> - [sys.databases (Transact-SQL)](/sql/relational-databases/system-catalog-views/sys-databases-transact-sql?view=azure-sqldw-latest)|
 

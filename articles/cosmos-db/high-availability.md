@@ -4,15 +4,15 @@ description: В этой статье описывается, как Azure Cosmo
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 3/24/2019
+ms.date: 05/21/2019
 ms.author: mjbrown
 ms.reviewer: sngun
-ms.openlocfilehash: 1e866560ceab342f08a98ba3db05980a2b0947d2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 74e2d7901d127c9dd7edd8509e5bba082c4ad220
+ms.sourcegitcommit: 59fd8dc19fab17e846db5b9e262a25e1530e96f3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60888515"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65978971"
 ---
 # <a name="high-availability-with-azure-cosmos-db"></a>Высокий уровень доступности при использовании Azure Cosmos DB
 
@@ -34,8 +34,8 @@ Azure Cosmos DB прозрачно реплицирует данные во вс
 
 |Operation type (Тип операции)  | Один регион |Несколько регионов (один регион записи)|Несколько регионов (несколько регионов записи) |
 |---------|---------|---------|-------|
-|Операции записи    | 99,99    |99,99   |99,999|
-|Операции чтения     | 99,99    |99,999  |99,999|
+|Запись    | 99,99    |99,99   |99,999|
+|Чтение     | 99,99    |99,999  |99,999|
 
 > [!NOTE]
 > На практике доступности фактическую запись для ограниченная с запаздыванием, сеанса, согласованность префиксов и согласованность модели значительно больше, чем опубликованных соглашения об уровне обслуживания. Фактическая доступность чтения для всех уровней согласованности значительно выше, чем в опубликованных Соглашениях об уровне обслуживания.

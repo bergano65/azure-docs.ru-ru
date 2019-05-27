@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/07/2019
 ms.author: rkarlin
-ms.openlocfilehash: 6b0285903537dafb004b5aca033b50560247c605
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: dd45be69ec29fdcd00710b7366348846f325b151
+ms.sourcegitcommit: d73c46af1465c7fd879b5a97ddc45c38ec3f5c0d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65204454"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65921983"
 ---
 # <a name="connect-your-barracuda-appliance"></a>Подключение устройства Barracuda 
 
@@ -27,14 +27,14 @@ ms.locfileid: "65204454"
 > Сейчас Azure Sentinel предоставляется в общедоступной предварительной версии.
 > Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-Соединитель barracuda брандмауэра веб-приложения (WAF) позволяет легко подключение к вашей Azure Sentinel, для просмотра панелей мониторинга, создать настраиваемые оповещения и улучшит исследование журналам Barracuda. Это дает больше возможностей регулировать сети вашей организации и улучшает возможности безопасности операции. Azure Sentinel использует преимущества интеграции платформенной функциональности между **Barracuda** и Microsoft Azure OMS, чтобы обеспечить прозрачную интеграцию. 
+Соединитель barracuda брандмауэра веб-приложения (WAF) позволяет легко подключение к вашей Azure Sentinel, для просмотра панелей мониторинга, создать настраиваемые оповещения и улучшит исследование журналам Barracuda. Это дает больше возможностей регулировать сети вашей организации и улучшает возможности безопасности операции. Azure Sentinel использует преимущества интеграции платформенной функциональности между **Barracuda** и Microsoft Monitoring Agent для обеспечения плавной интеграции. 
 
 
 > [!NOTE]
 > Данные будут храниться в географическое расположение рабочей области, на котором выполняется Azure Sentinel.
 
 ## <a name="configure-and-connect-barracuda-waf"></a>Настройка и подключение Barracuda WAF
-Barracuda Web Application Firewall можно интегрировать и экспортировать журналы непосредственно в Azure Sentinel через сервер Azure OMS.
+Barracuda Web Application Firewall можно интегрировать и экспортировать журналы непосредственно к Sentinel Azure с помощью Microsoft Monitoring Agent.
 1. Перейдите к [Barracuda WAF конфигурации потока](https://campus.barracuda.com/product/webapplicationfirewall/doc/73696965/configure-the-barracuda-web-application-firewall-to-integrate-with-the-oms-server-and-export-logs/)и следуйте инструкциям, чтобы установить подключение, используя следующие параметры:
     - **Идентификатор рабочей области**: скопируйте значение идентификатора рабочей области на странице соединителя Azure Sentinel Barracuda.
     - **Первичный ключ**: скопируйте значение первичного ключа на странице соединителя Azure Sentinel Barracuda.

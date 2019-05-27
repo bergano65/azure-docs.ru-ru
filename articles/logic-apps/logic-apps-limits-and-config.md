@@ -9,12 +9,12 @@ ms.author: estfan
 ms.reviewer: klam, LADocs
 ms.topic: article
 ms.date: 05/10/2019
-ms.openlocfilehash: a320f584ff82f2b8a2b3d784e1995aa043004587
-ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
+ms.openlocfilehash: 53f9f67397e1484559ee8243a52ad8339df930bc
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65597488"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65990202"
 ---
 # <a name="limits-and-configuration-information-for-azure-logic-apps"></a>Ограничения и сведения о конфигурации для Azure Logic Apps
 
@@ -166,7 +166,7 @@ ms.locfileid: "65597488"
 
 | ИМЯ | Ограничение |
 | ---- | ----- |
-| Количество приложений логики с назначенной системой управляемых удостоверений на подписку Azure | 10 |
+| Количество приложений логики с назначенной системой управляемых удостоверений на подписку Azure | 100 |
 |||
 
 <a name="integration-account-limits"></a>
@@ -241,7 +241,7 @@ ms.locfileid: "65597488"
 
 Для поддержки вызовов [соединителей, управляемых Майкрософт](../connectors/apis-list.md), настройте брандмауэр так, чтобы он включал *все* [исходящие](#outbound) IP-адреса, используемые этими соединителями, в зависимости от регионов, где существуют приложения логики. Эти адреса отображаются под заголовком **Исходящие** в этом разделе и сортируются по регионам.
 
-В [Azure для государственных организаций](../azure-government/documentation-government-overview.md) и [21Vianet в Azure для Китая](/azure/china/china-welcome) зарезервированные IP-адреса для соединителей сейчас недоступны.
+В [Azure для государственных организаций](../azure-government/documentation-government-overview.md) и [21Vianet в Azure для Китая](https://docs.microsoft.com/azure/china/) зарезервированные IP-адреса для соединителей сейчас недоступны.
 
 > [!IMPORTANT]
 >

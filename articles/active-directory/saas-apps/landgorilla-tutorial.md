@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 03/13/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b2e1288885476aeeba01f966b615c23c5fe51081
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: d12519a2bd0a5e3951d0ca9ae51a54bd728a782b
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60261005"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65987897"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-land-gorilla-client"></a>Руководство по Интеграция Azure Active Directory с Land Gorilla Client
 
@@ -71,11 +71,11 @@ ms.locfileid: "60261005"
 
 1. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
 
-    ![ПРИЛОЖЕНИЯ][2]
+    ![Приложения][2]
     
 1. Нажмите кнопку **Добавить** в верхней части диалогового окна.
 
-    ![ПРИЛОЖЕНИЯ][3]
+    ![Приложения][3]
 
 1. В поле поиска введите **Land Gorilla Client**.
 
@@ -87,7 +87,7 @@ ms.locfileid: "60261005"
 
 
 ##  <a name="configuring-and-testing-azure-ad-single-sign-on"></a>настройка и проверка единого входа в Azure AD.
-В этом разделе описана настройка и проверка единого входа Azure AD в приложение Land Gorilla Client с использованием тестового пользователя Britta Simon.
+В этом разделе описана настройка и проверка Azure AD единого входа с Land Gorilla Client, в зависимости от тестового пользователя б «. Simon».
 
 Для работы единого входа в Azure AD необходимо знать, какой пользователь в Land Gorilla Client соответствует пользователю в Azure AD. Иными словами, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Land Gorilla Client.
 
@@ -97,8 +97,8 @@ ms.locfileid: "60261005"
 
 1. **[Configuring Azure AD Single Sign-On](#configuring-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 1. **[Создание тестового пользователя Azure AD](#creating-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD с ограниченной группой.
-1. **[Создание тестового пользователя Land Gorilla](#creating-a-land-gorilla-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-1. **[Назначение тестового пользователя Azure AD](#assigning-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD;
+1. **[Создание тестового пользователя Land Gorilla](#creating-a-land-gorilla-test-user)**  — для тестирования Azure AD единого входа с Simon б.
+1. **[Назначение тестового пользователя Azure AD](#assigning-the-azure-ad-test-user)**  — для включения Simon б. Использование Azure AD единого входа.
 1. **[Проверка единого входа](#testing-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configuring-azure-ad-single-sign-on"></a>Настройка единого входа в Azure AD
@@ -150,7 +150,7 @@ ms.locfileid: "60261005"
 
 
 ### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
-Цель этого раздела — создать на портале управления Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать тестового пользователя на портале управления Azure, именем Simon б.
 
 ![Создание пользователя Azure AD][100]
 
@@ -172,9 +172,9 @@ ms.locfileid: "60261005"
  
     ![Создание тестового пользователя Azure AD](./media/landgorilla-tutorial/create_aaduser_04.png) 
 
-    a. В текстовом поле **Имя** введите **BrittaSimon**.
+    a. В **имя** введите **Simon б**.
 
-    2. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    2. В **имя пользователя** введите **адрес электронной почты** для Simon б.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -186,11 +186,11 @@ ms.locfileid: "60261005"
     
 ### <a name="assigning-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
-В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure путем предоставления доступа к Land Gorilla Client.
+В этом разделе описано как разрешить б Simon использовать единый вход Azure, предоставив этому пользователю доступ к Land Gorilla Client.
 
 ![Назначение пользователя][200] 
 
-**Чтобы назначить пользователя Britta Simon в Land Gorilla Client, выполните следующие действия:**
+**Чтобы назначить б Simon в Land Gorilla Client, выполните следующие действия.**
 
 1. На портале управления Azure откройте представление приложений, перейдите к представлению каталога, а затем выберите **Корпоративные приложения** и щелкните **Все приложения**.
 
@@ -208,7 +208,7 @@ ms.locfileid: "60261005"
 
     ![Назначение пользователя][203]
 
-1. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
+1. На **пользователей и групп** диалоговом окне выберите **Simon б** в списке пользователей.
 
 1. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
 

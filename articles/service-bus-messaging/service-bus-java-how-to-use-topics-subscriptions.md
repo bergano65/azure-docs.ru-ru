@@ -14,12 +14,12 @@ ms.devlang: Java
 ms.topic: article
 ms.date: 04/15/2019
 ms.author: aschhab
-ms.openlocfilehash: 46891a60e6fd36ec0bc19d4b52de87d18e2b6793
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.openlocfilehash: 578fd0caa8986c48b3fd50a7890bb66b14bee2f4
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65510296"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65991730"
 ---
 # <a name="how-to-use-service-bus-topics-and-subscriptions-with-java"></a>Как использовать разделы и подписки служебной шины с Java
 
@@ -30,7 +30,7 @@ ms.locfileid: "65510296"
 ## <a name="prerequisites"></a>Технические условия
 
 1. Подписка Azure. Для работы с этим учебником требуется учетная запись Azure. Вы можете активировать ваши [преимущества для подписчиков Visual Studio или MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A85619ABF) или зарегистрируйте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A85619ABF).
-2. Выполните шаги [краткое руководство: Чтобы создать раздел служебной шины и подписок для раздела с помощью портала Azure](service-bus-quickstart-topics-subscriptions-portal.md) выполнить следующие задачи:
+2. Выполните шаги [краткое руководство: Создание раздела служебной шины и подписок на него с помощью портала Azure](service-bus-quickstart-topics-subscriptions-portal.md). Так вы сделаете следующее:
     1. Чтобы создать служебную шину **пространства имен**.
     2. Получить **строку подключения**.
     3. Создание **разделе** в пространстве имен.
@@ -454,6 +454,8 @@ Message sending: Id = 9
                         Content: [ firstName = Werner, name = Heisenberg ]
 ```
 
+> [!NOTE]
+> Вы можете управлять ресурсами служебной шины с помощью [Service Bus Explorer](https://github.com/paolosalvatori/ServiceBusExplorer/). Обозреватель шины обслуживания позволяет пользователям подключаться к пространству имен служебной шины и управлять сущностями обмена сообщениями с легкостью. Средство предоставляет дополнительные возможности, например функции импорта и экспорта или возможность тестировать разделом, очередей, подписок, служб ретрансляции, концентраторы уведомлений и концентраторов событий. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения см. в статье об [очередях, разделах и подписках Служебной шины][Service Bus queues, topics, and subscriptions].

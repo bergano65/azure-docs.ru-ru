@@ -10,18 +10,18 @@ ms.subservice: workload management
 ms.date: 05/01/2019
 ms.author: rortloff
 ms.reviewer: jrasnick
-ms.openlocfilehash: 208308533753370575b844633c45f7e4aeda0864
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: c4630e11ef4001c546aecfe74dbced346b6d30e4
+ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65154208"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66000122"
 ---
 # <a name="sql-data-warehouse-workload-classification"></a>Классификации рабочей нагрузки хранилища данных SQL
 
 В этой статье объясняется процесс классификации рабочей нагрузки хранилища данных SQL назначения класс ресурсов и важность входящих запросов.
 
-## <a name="classification"></a>классификация;
+## <a name="classification"></a>Классификация
 
 > [!Video https://www.youtube.com/embed/QcCRBAhoXpM]
 
@@ -81,4 +81,7 @@ sp_droprolemember ‘[Resource Class]’, membername
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Чтобы начать работу с создания классификатора, см. в разделе [СОЗДАНИЯ КЛАССИФИКАТОРА рабочей НАГРУЗКИ (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-workload-classifier-transact-sql).  Дополнительные сведения о классификации рабочей нагрузки хранилища данных SQL и важность, см. в разделе [Создание рабочей нагрузки классификатора](quickstart-create-a-workload-classifier-tsql.md) и [важности хранилище данных SQL](sql-data-warehouse-workload-importance.md). Запросы и назначенную важность см. в разделе [sys.dm_pdw_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql).
+- Дополнительные сведения о создании классификатора, см. в разделе [СОЗДАНИЯ КЛАССИФИКАТОРА рабочей НАГРУЗКИ (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-workload-classifier-transact-sql).  
+- См. Краткое руководство по созданию классификатора рабочей нагрузки [Создание рабочей нагрузки классификатора](quickstart-create-a-workload-classifier-tsql.md).
+- См. в разделе статьи с инструкциями по [Настройка рабочей нагрузки Importance](sql-data-warehouse-how-to-configure-workload-importance.md) и [управление и наблюдение за управления рабочими нагрузками](sql-data-warehouse-how-to-manage-and-monitor-workload-importance.md).
+- Запросы и назначенную важность см. в разделе [sys.dm_pdw_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql).

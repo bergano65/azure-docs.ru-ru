@@ -11,22 +11,28 @@ ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
 ms.subservice: compliance
-ms.date: 02/20/2019
+ms.date: 05/21/2019
 ms.author: rolyon
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3fe2013ff84dd0451fed7d108539606520cb9403
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 6b38422b22885ad96c6681abe58b897155809521
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60384551"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66113190"
 ---
 # <a name="review-access-for-yourself-to-groups-or-applications-in-azure-ad-access-reviews"></a>Проверка доступа для себя в группы или приложения в Azure AD проверок доступа
 
 Azure Active Directory (Azure AD) упрощает предприятий управление доступом для группы или приложения в Azure AD и просматривает остальным сетевым службам Майкрософт с помощью функции доступа Azure AD.
 
 В этой статье описывается, как проверить доступ к группе или приложению.
+
+## <a name="prerequisites"></a>Технические условия
+
+- Azure AD Premium P2
+
+Дополнительные сведения см. в разделе [какие пользователи должны иметь лицензии?](access-reviews-overview.md#which-users-must-have-licenses).
 
 ## <a name="open-the-access-review"></a>Открытие проверки доступа
 

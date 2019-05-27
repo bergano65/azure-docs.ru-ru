@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: d158e1869cb85752b9b24e76d5227a2f7167bfcf
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 2871a4a0efaa40d20148ede7f0402a0dd874126c
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60794150"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65957311"
 ---
 # <a name="manage-your-azure-maps-account"></a>Управление учетной записью Azure Maps
 
@@ -21,7 +21,7 @@ ms.locfileid: "60794150"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-## <a name="create-a-new-account"></a>Создание новой учетной записи
+## <a name="create-a-new-account"></a>Создать учетную запись
 
 1. Войдите на [портале Azure](https://portal.azure.com).
 
@@ -43,10 +43,14 @@ ms.locfileid: "60794150"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Сведения об управлении ценовой категорией учетной записи Azure Maps см. здесь:
-    > [!div class="nextstepaction"] 
-    > [Как управлять ценовой категорией для учетной записи Azure Maps](./how-to-manage-pricing-tier.md)
+Настройка проверки подлинности с помощью службы карт Azure:
+> [!div class="nextstepaction"]
+> [Управление проверкой подлинности](how-to-manage-authentication.md)
 
-* Узнайте, как просматривать метрики использования API для учетной записи Azure Maps:
-    > [!div class="nextstepaction"] 
-    > [Просмотр метрик использования](./how-to-view-api-usage.md)
+Сведения об управлении ценовой категорией учетной записи Azure Maps см. здесь:
+> [!div class="nextstepaction"] 
+> [Как управлять ценовой категорией для учетной записи Azure Maps](how-to-manage-pricing-tier.md)
+
+Узнайте, как просматривать метрики использования API для учетной записи Azure Maps:
+> [!div class="nextstepaction"] 
+> [Просмотр метрик использования](how-to-view-api-usage.md)

@@ -6,12 +6,12 @@ ms.service: azure-resource-manager
 ms.date: 04/04/2019
 ms.author: rithorn
 ms.topic: conceptual
-ms.openlocfilehash: e47ce094cd690cba4ef398bc5d5d443f7ed647e9
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: b3798ec7578530e04ec9e00086fffaec9a58a7cd
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59272484"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65950256"
 ---
 # <a name="manage-your-resources-with-management-groups"></a>Управление ресурсами с помощью групп управления
 
@@ -128,7 +128,7 @@ az account management-group delete --name 'Contoso'
 
 1. Чтобы просмотреть сведения о группе управления, перейдите по ссылке **(подробности)** рядом с заголовком группы управления. Если ссылка недоступна, у вас нет разрешения на просмотр этой группы управления.
 
-   ![Главная](./media/main.png)
+   ![Основной](./media/main.png)
 
 ### <a name="view-in-powershell"></a>Просмотр в PowerShell
 
@@ -281,7 +281,7 @@ az account management-group subscription remove --name 'Contoso' --subscription 
 
 ## <a name="move-management-groups-in-the-hierarchy"></a>Перемещение групп управления в иерархии  
 
-При перемещении родительской группы управления, иерархии, в этой группе перемещается вместе с ней.
+При перемещении родительской группы управления, иерархии, в этой группе перемещается вместе с ней. Для доступа к вам необходимо выполнить перемещение групп управления, см. в разделе [доступ к группе управления](index.md#management-group-access).
 
 ### <a name="move-management-groups-in-the-portal"></a>Перемещение групп управления на портале
 

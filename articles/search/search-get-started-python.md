@@ -10,12 +10,12 @@ ms.service: search
 ms.devlang: rest-api
 ms.topic: conceptual
 ms.custom: seodec2018
-ms.openlocfilehash: 1ab6bb069f60f4d2dbb4cfaecda54c3c2ef20adc
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: a79a5fe1632eeabee670274ebbb19c4c34bd84d2
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65806436"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66117340"
 ---
 # <a name="quickstart-create-an-azure-search-index-using-jupyter-python-notebooks"></a>Краткое руководство. Создание индекса службы поиска Azure с помощью записных книжек Jupyter Python
 > [!div class="op_single_selector"]
@@ -26,17 +26,17 @@ ms.locfileid: "65806436"
 > * [Портал](search-create-index-portal.md)
 > 
 
-Создание записной книжки Jupyter, который создает, загружает и отправляет запрос поиска Azure [индекс](search-what-is-an-index.md) с помощью Python и [интерфейсы API REST службы поиска Azure](https://docs.microsoft.com/rest/api/searchservice/). В этой статье объясняется, как создавать собственные записной книжки шаг за шагом. При необходимости можно запустить готовое записной книжки. Чтобы загрузить копию, перейдите к [репозитория Azure-Search-python-samples](https://github.com/Azure-Samples/azure-search-python-samples).
+Создание записной книжки Jupyter, который создает, загружает и отправляет запрос в индекс поиска Azure с помощью Python и [API REST службы поиска Azure](https://docs.microsoft.com/rest/api/searchservice/). В этой статье объясняется, как создать записную книжку шаг за шагом, начиная с нуля. Кроме того можно запустить готовой записной книжки. Чтобы загрузить копию, перейдите к [репозитория Azure-Search-python-samples](https://github.com/Azure-Samples/azure-search-python-samples).
 
-Если у вас нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) перед началом, а затем [зарегистрируйтесь в службе "Поиск Azure"](search-create-service-portal.md).
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Технические условия
 
 В этом кратком руководстве используются перечисленные ниже службы и инструменты. 
 
-+ [Создайте службу "Поиск Azure"](search-create-service-portal.md) или [найдите имеющуюся службу](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) в рамках текущей подписки. Вы можете использовать бесплатную службу для выполнения инструкций, описанных в этом кратком руководстве. 
-
 + [Anaconda 3.x](https://www.anaconda.com/distribution/#download-section), предоставляя Python 3.x и записные книжки Jupyter.
+
++ [Создайте службу "Поиск Azure"](search-create-service-portal.md) или [найдите имеющуюся службу](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) в рамках текущей подписки. Вы можете использовать бесплатную службу для выполнения инструкций, описанных в этом кратком руководстве. 
 
 ## <a name="get-a-key-and-url"></a>Получение ключа и URL-адреса
 
@@ -67,9 +67,9 @@ ms.locfileid: "65806436"
 1. Во второй ячейке входные элементы запроса, которые будут константы при каждом запросе. Замените имя службы поиска (YOUR-SEARCH-SERVICE-NAME) и ключ API администратора (YOUR-ADMIN-API-KEY) значениями, действительными. 
 
    ```python
-    endpoint = 'https://<YOUR-SEARCH-SERVICE-NAME>.search.windows.net/'
-    api_version = '?api-version=2019-05-06'
-    headers = {'Content-Type': 'application/json',
+   endpoint = 'https://<YOUR-SEARCH-SERVICE-NAME>.search.windows.net/'
+   api_version = '?api-version=2019-05-06'
+   headers = {'Content-Type': 'application/json',
            'api-key': '<YOUR-ADMIN-API-KEY>' }
    ```
 
@@ -91,14 +91,13 @@ ms.locfileid: "65806436"
 > [!Tip]
 > На это бесплатная служба вы будете ограничены трех индексов, индексаторов и источников данных. В этом кратком руководстве создается по одному экземпляру каждого. Убедитесь, что у вас достаточно места для создания новых объектов, прежде чем продолжить.
 
-## <a name="1---create-an-index"></a>1. Создание индекса
+## <a name="1---create-an-index"></a>1. Создание индекса
 
 Если вы используете портал, индекс должен существовать в службе перед загрузкой данных. Этот шаг использует [REST API создания индекса](https://docs.microsoft.com/rest/api/searchservice/create-index) для принудительной отправки схему индекса для службы
 
 Коллекция полей определяет структуру *документа*. Обязательные элементы индекса включают имя и коллекцию полей. Каждое поле имеет имя, тип и атрибуты, которые определяют, как он используется (например, является ли это полнотекстового поиска для поиска, фильтрацию или отображалось в результатах поиска). В индексе, одно из полей типа `Edm.String` необходимо назначить в качестве *ключ* для идентификации документа.
 
 Этот индекс имеет имя «hotels-py» и определения полей, указанные ниже. Он является частью более крупной [индекса отелей](https://github.com/Azure-Samples/azure-search-sample-data/blob/master/hotels/Hotels_IndexDefinition.JSON) используется в других пошаговых руководств. Мы усекаются в этом кратком руководстве для краткости.
-
 
 1. В следующей ячейке вставьте следующий пример в ячейку, чтобы указать схему. 
 
@@ -152,7 +151,7 @@ ms.locfileid: "65806436"
 
 Чтобы отправить документы, используйте запрос HTTP POST к конечной точке URL-адрес вашего индекса. REST API — [Добавление, обновление и удаление документов](https://docs.microsoft.com/rest/api/searchservice/addupdate-or-delete-documents). Документы создаются из [HotelsData](https://github.com/Azure-Samples/azure-search-sample-data/blob/master/hotels/HotelsData_toAzureSearch.JSON) на сайте GitHub.
 
-1. В новую ячейку предоставляют три документа, которые соответствуют схеме индекса. Укажите действие отправки для каждого документа.
+1. В новую ячейку предоставляют четыре документа, которые соответствуют схеме индекса. Укажите действие отправки для каждого документа.
 
     ```python
     documents = {
@@ -212,7 +211,25 @@ ms.locfileid: "65806436"
             "StateProvince": "GA",
             "PostalCode": "30326",
             "Country": "USA"
-        }
+        },
+        {
+        "@search.action": "upload",
+        "HotelId": "4",
+        "HotelName": "Sublime Cliff Hotel",
+        "Description": "Sublime Cliff Hotel is located in the heart of the historic center of Sublime in an extremely vibrant and lively area within short walking distance to the sites and landmarks of the city and is surrounded by the extraordinary beauty of churches, buildings, shops and monuments. Sublime Cliff is part of a lovingly restored 1800 palace.",
+        "Description_fr": "Le sublime Cliff Hotel est situé au coeur du centre historique de sublime dans un quartier extrêmement animé et vivant, à courte distance de marche des sites et monuments de la ville et est entouré par l'extraordinaire beauté des églises, des bâtiments, des commerces et Monuments. Sublime Cliff fait partie d'un Palace 1800 restauré avec amour.",
+        "Category": "Boutique",
+        "Tags": [ "concierge", "view", "24-hour front desk service" ],
+        "ParkingIncluded": "true",
+        "LastRenovationDate": "1960-02-06T00:00:00Z",
+        "Rating": 4.60,
+        "Address": {
+            "StreetAddress": "7400 San Pedro Ave",
+            "City": "San Antonio",
+            "StateProvince": "TX",
+            "PostalCode": "78216",
+            "Country": "USA"
+       }
       }
      ]
     }
@@ -242,11 +259,15 @@ ms.locfileid: "65806436"
            {'errorMessage': None,
             'key': '3',
             'status': True,
+            'statusCode': 201}]},
+           {'errorMessage': None,
+            'key': '4',
+            'status': True,
             'statusCode': 201}]}
      ```
 
 
-## <a name="3---search-an-index"></a>3. Поиск в индексе
+## <a name="3---search-an-index"></a>3. Поиск в индексе
 
 Этот шаг показывает, как запросить индекс с помощью [REST API службы поиска документов](https://docs.microsoft.com/rest/api/searchservice/search-documents).
 
@@ -266,7 +287,7 @@ ms.locfileid: "65806436"
    pprint(query)
    ```
 
-   Результаты должны выглядеть аналогично приведенному ниже.
+   Результаты должны выглядеть аналогично приведенному ниже. Результаты будут unranked (search.score = 1.0), так как мы не предоставляем никаких критериев для сопоставления.
 
    ```
    {'@odata.context': "https://mydemo.search.windows.net/indexes('hotels-py')/$metadata#docs(*)",
@@ -279,14 +300,17 @@ ms.locfileid: "65806436"
                'HotelName': 'Twin Dome Motel'},
               {'@search.score': 1.0,
                'HotelId': '3',
-               'HotelName': 'Triple Landscape Hotel'}]}
+               'HotelName': 'Triple Landscape Hotel'},
+              {'@search.score': 1.0,
+               'HotelId': '4',
+               'HotelName': 'Sublime Cliff Hotel'}]}
    ```
 
-3. Еще несколько примеров запросов к знакомству с синтаксисом. Вы можете применить фильтр, занять два первых результата, упорядочить по определенному полю, или 
+3. Еще несколько примеров запросов к знакомству с синтаксисом. Можно применить фильтр, принимать два первых результата или упорядочить по определенному полю.
 
    + `searchstring = '&search=*&$filter=Rating gt 4&$select=HotelId,HotelName,Description'`
 
-   + `searchstring = '&search=hotel&$top=2&$select=HotelId,HotelName,Description'`
+   + `searchstring = '&search=boutique&$top=2&$select=HotelId,HotelName,Description'`
 
    + `searchstring = '&search=pool&$orderby=Address/City&$select=HotelId, HotelName, Address/City, Address/StateProvince'`
 
@@ -311,7 +335,7 @@ pprint(index_list)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-Дополнительные сведения о сценариях и синтаксис запроса.
+Упрощения в этом кратком руководстве используется сокращенная версия индекса отелей. Можно создать полную версию Пробный запрос более интересным. Чтобы получить полную версию и все документы, 50, выполните **импорта данных** мастера, выбрав *гостиницы sample* из источников данных встроенного образца.
 
 > [!div class="nextstepaction"]
-> [Создание базового запроса](search-query-overview.md)
+> [Краткое руководство Создание индекса на портале Azure](search-get-started-portal.md)

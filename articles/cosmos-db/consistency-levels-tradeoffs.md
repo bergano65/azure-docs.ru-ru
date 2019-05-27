@@ -4,15 +4,15 @@ description: Достижение компромисса между доступ
 author: rimman
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 04/08/2019
+ms.date: 05/21/2019
 ms.author: rimman
 ms.reviewer: sngun
-ms.openlocfilehash: a76e277bf56861bcaefb5bf7f8b3b3bc03ad1164
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 09777a9980e4576a5d00123516e33696e845dcac
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60894034"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65990220"
 ---
 # <a name="consistency-availability-and-performance-tradeoffs"></a>Компромиссы согласованности, доступности и производительности 
 
@@ -55,9 +55,9 @@ ms.locfileid: "60894034"
 |1|Подход с одним или несколькими источниками|Любой уровень согласованности|< 240 минут|< 1 неделя|
 |>1|Single Master|Сеанс, постоянный префикс, случайный|< 15 минут|< 15 минут|
 |>1|Single Master|Ограниченное устаревание|*K* & *T*|< 15 минут|
+|>1|Single Master|Надежный|0|< 15 минут|
 |>1|Подход с несколькими источниками|Сеанс, постоянный префикс, случайный|< 15 минут|0|
 |>1|Подход с несколькими источниками|Ограниченное устаревание|*K* & *T*|0|
-|>1|Подход с одним или несколькими источниками|Strong|0|< 15 минут|
 
 *K* = число *«K»* версиях элемент (т. е. обновления).
 

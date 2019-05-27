@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 04/18/2019
 ms.author: aelnably
 ms.custom: ''
-ms.openlocfilehash: 86f1c36bd5f972a6ebd573019a22b0c0d07dc480
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 27b5dc9ccee8647d4fbb617063865df18b80bc5d
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64928097"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65990276"
 ---
 # <a name="continuous-delivery-using-azure-devops"></a>Непрерывная доставка с помощью DevOps в Azure
 
@@ -26,7 +26,7 @@ ms.locfileid: "64928097"
 
 ## <a name="yaml-based-pipeline"></a>Конвейер на основе YAML
 
-### <a name="build-your-app"></a>Создайте свое приложение
+### <a name="build-your-app"></a>Создание приложения
 
 Создание приложения в конвейерах Azure зависит от языка программирования приложения.
 Каждый язык имеет определенной сборки действия, чтобы создать артефакт развертывания, который может использоваться для развертывания приложения-функции в Azure.
@@ -55,12 +55,12 @@ steps:
 - task: ArchiveFiles@2
   displayName: "Archive files"
   inputs:
-    rootFolderOrFile: "$(System.DefaultWorkingDirectory)/publish_output/s"
+    rootFolderOrFile: "$(System.DefaultWorkingDirectory)/publish_output"
     includeRootFolder: false
     archiveFile: "$(System.DefaultWorkingDirectory)/build$(Build.BuildId).zip"
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(System.DefaultWorkingDirectory)/$(Build.BuildId).zip'
+    PathtoPublish: '$(System.DefaultWorkingDirectory)/build$(Build.BuildId).zip'
     name: 'drop'
 ```
 
@@ -85,12 +85,12 @@ steps:
 - task: ArchiveFiles@2
   displayName: "Archive files"
   inputs:
-    rootFolderOrFile: "$(System.DefaultWorkingDirectory)/publish_output/s"
+    rootFolderOrFile: "$(System.DefaultWorkingDirectory)"
     includeRootFolder: false
     archiveFile: "$(System.DefaultWorkingDirectory)/build$(Build.BuildId).zip"
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(System.DefaultWorkingDirectory)/$(Build.BuildId).zip'
+    PathtoPublish: '$(System.DefaultWorkingDirectory)/build$(Build.BuildId).zip'
     name: 'drop'
 ```
 
@@ -121,12 +121,12 @@ steps:
 - task: ArchiveFiles@2
   displayName: "Archive files"
   inputs:
-    rootFolderOrFile: "$(System.DefaultWorkingDirectory)/publish_output/s"
+    rootFolderOrFile: "$(System.DefaultWorkingDirectory)"
     includeRootFolder: false
     archiveFile: "$(System.DefaultWorkingDirectory)/build$(Build.BuildId).zip"
 - task: PublishBuildArtifacts@1
   inputs:
-    PathtoPublish: '$(System.DefaultWorkingDirectory)/$(Build.BuildId).zip'
+    PathtoPublish: '$(System.DefaultWorkingDirectory)/build$(Build.BuildId).zip'
     name: 'drop'
 ```
 
@@ -164,7 +164,7 @@ steps:
 
 Шаблоны в Azure DevOps, являются предварительно определенной группы задач, которые построение или развертывание приложения.
 
-### <a name="build-your-app"></a>Создайте свое приложение
+### <a name="build-your-app"></a>Создание приложения
 
 Создание приложения в конвейерах Azure зависит от языка программирования приложения. Каждый язык имеет определенной сборки действия, чтобы создать артефакт развертывания, который может использоваться для обновления приложения-функции в Azure.
 Чтобы использовать встроенные шаблоны сборки, при создании новой сборки конвейера, выберите **использовать классический редактор** для создания конвейера с помощью конструктора шаблонов

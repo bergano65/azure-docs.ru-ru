@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 01/22/2019
 ms.reviewer: sdash
 ms.author: lagayhar
-ms.openlocfilehash: 6cd5413d64be2117cc5f64202ecdaaf40f35db4b
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: 76bbcd6fa400111514ec3496005a28ec28ae6ab7
+ms.sourcegitcommit: 59fd8dc19fab17e846db5b9e262a25e1530e96f3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65205378"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65977899"
 ---
 # <a name="monitor-availability-and-responsiveness-of-any-web-site"></a>Наблюдение за доступностью и скоростью реагирования веб-сайта
 Развернув веб-приложение или веб-сайт на любом сервере, вы можете настроить тесты для наблюдения за его доступностью и скоростью реагирования. [Azure Application Insights](../../azure-monitor/app/app-insights-overview.md) отправляет веб-запросы через одинаковые промежутки времени из разных точек по всему миру. Эта надстройка предупреждает вас, если приложение реагирует медленно или не реагирует вообще.
@@ -71,7 +71,7 @@ ms.locfileid: "65205378"
 
 * **Пороговое значение для расположения оповещения.** Мы рекомендуем как минимум 3 из 5 расположений. Оптимальное отношение между пороговым значением предупреждения расположения и числом тестовых местоположений: **пороговое значение для предупреждения расположения** = **количество расположений тестирования** —2 с как минимум пятью расположениями тестирования.
 
-## <a name="multi-step-web-tests"></a>Многошаговые веб-тесты
+## <a name="multi-step-web-tests"></a>Веб-тесты из нескольких шагов
 Вы можете отслеживать сценарий, который содержит последовательность URL-адресов. Например, в случае наблюдения за интернет-магазином вы можете проверить, что добавление товаров в корзину работает исправно.
 
 > [!NOTE]
@@ -175,8 +175,8 @@ ms.locfileid: "65205378"
 
 При обслуживании службы может потребоваться отключить тесты доступности или правила оповещения, связанные с ними.
 
-![Удаление веб-теста](./media/monitor-web-app-availability/6disable.png)
-![Изменение теста](./media/monitor-web-app-availability/8edittest.png)
+![Отключить веб-теста](./media/monitor-web-app-availability/6disable.png)  
+![Изменить тест](./media/monitor-web-app-availability/8edittest.png)
 
 ## <a name="failures"></a>При возникновении сбоев
 Щелкните красную точку.

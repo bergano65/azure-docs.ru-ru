@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 10/16/2018
 ms.author: jeffpatt
 ms.subservice: files
-ms.openlocfilehash: 09898ac7dd4a6f3ee9cf0ea26ded607a8673b9f6
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 06b3a5110bfdea2a2067979c806701011dc16f3d
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61438250"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65987708"
 ---
 # <a name="troubleshoot-azure-files-problems-in-linux"></a>Устранение неполадок службы файлов Azure в Linux
 
@@ -144,13 +144,15 @@ ms.locfileid: "61438250"
 
 Запись **cache=none** означает, что кэширование отключено. Повторно подключите общедоступный ресурс, введя команду mount по умолчанию или явно добавив в нее параметр **cache=strict**, чтобы включить режим кэширования по умолчанию или "строгий" режим кэширования соответственно.
 
-В некоторых сценариях параметр подключения **serverino** может привести к тому, что команда **ls** формирует статистику для каждой записи каталога. Это приводит к снижению производительности при выводе содержимого больших каталогов. Параметры подключения можно просмотреть в записи **/etc/fstab**.
+В некоторых сценариях параметр подключения **serverino** может привести к тому, что команда **ls** формирует статистику для каждой записи каталога. Такое поведение приводит к снижению производительности при выводе содержимого больших каталогов. Параметры подключения можно просмотреть в записи **/etc/fstab**.
 
 `//azureuser.file.core.windows.net/cifs /cifs cifs vers=2.1,serverino,username=xxx,password=xxx,dir_mode=0777,file_mode=0777`
 
 Можно также проверить, правильные ли параметры используются, выполнив команду **sudo mount | grep cifs** и проверив ее выходные данные. Пример выходных данных этой команды приведен ниже.
 
-`//azureuser.file.core.windows.net/cifs on /cifs type cifs (rw,relatime,vers=2.1,sec=ntlmssp,cache=strict,username=xxx,domain=X,uid=0,noforceuid,gid=0,noforcegid,addr=192.168.10.1,file_mode=0777, dir_mode=0777,persistenthandles,nounix,serverino,mapposix,rsize=1048576,wsize=1048576,actimeo=1)`
+```
+//azureuser.file.core.windows.net/cifs on /cifs type cifs (rw,relatime,vers=2.1,sec=ntlmssp,cache=strict,username=xxx,domain=X,uid=0,noforceuid,gid=0,noforcegid,addr=192.168.10.1,file_mode=0777, dir_mode=0777,persistenthandles,nounix,serverino,mapposix,rsize=1048576,wsize=1048576,actimeo=1)
+```
 
 Если параметр **cache=strict** или **serverino** отсутствует, отключите и повторно подключите службу файлов Azure, выполнив команду mount из [этой статьи](../storage-how-to-use-files-linux.md). Затем еще раз проверьте наличие правильных параметров в записи **/etc/fstab**.
 
@@ -246,6 +248,8 @@ sudo mount -t cifs //<storage-account-name>.file.core.windows.net/<share-name> <
 
 Теперь вы сможете создавать символьные ссылки, как описано на [вики-сайте](https://wiki.samba.org/index.php/UNIX_Extensions#Storing_symlinks_on_Windows_servers).
 
-## <a name="need-help-contact-support"></a>Нужна помощь? Обратитесь в службу поддержки.
+[!INCLUDE [storage-files-condition-headers](../../../includes/storage-files-condition-headers.md)]
+
+## <a name="need-help-contact-support"></a>Требуется помощь? Обратитесь в службу поддержки.
 
 Если вам все еще нужна помощь, [обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), которая поможет быстро устранить проблему.

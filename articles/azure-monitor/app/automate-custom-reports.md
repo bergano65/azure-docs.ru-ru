@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 06/25/2018
 ms.reviewer: sdash
 ms.author: mbullwin
-ms.openlocfilehash: 37de2de18656f0f8ba85495b3fd72315e0bd885b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: f57d80adc7c77f2d874d13a68214cd638a2ac2a0
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60903988"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65957289"
 ---
 # <a name="automate-custom-reports-with-azure-application-insights-data"></a>Автоматизация настраиваемых отчетов с использованием данных Azure Application Insights
 
@@ -93,6 +93,9 @@ availabilityResults
    ![Снимок экрана "Создание функции"](./media/automate-custom-reports/function-app-03.png)
 
 5. Выберите **_Шаблон дайджеста планирования Application Insights_**.
+
+     > [!NOTE]
+     > По умолчанию приложения-функции создаются на основе среды выполнения версии 2.x. Вы должны [целевая версия среды выполнения функций Azure](https://docs.microsoft.com/azure/azure-functions/set-runtime-version) 1.x для использования Application Insights запланированные хэш-кода шаблона.
 
    ![Снимок экрана "Шаблон нового приложения-функции анализа"](./media/automate-custom-reports/function-app-04.png)
 

@@ -8,11 +8,11 @@ ms.author: mbaldwin
 ms.date: 03/15/2019
 ms.custom: seodec18
 ms.openlocfilehash: 1e535ed92305d124499fd0ce9933b7edd19df32e
-ms.sourcegitcommit: 8a59b051b283a72765e7d9ac9dd0586f37018d30
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58286165"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66118080"
 ---
 # <a name="enable-azure-disk-encryption-for-linux-iaas-vms-previous-release"></a>Включение шифрования дисков Azure для виртуальных машин IaaS под управлением Linux (предыдущий выпуск)
 
@@ -138,7 +138,7 @@ ms.locfileid: "58286165"
 
 В следующей таблице перечислены параметры шаблона Resource Manager для существующих или работающих виртуальных машин, которые используют идентификатор клиента Azure AD.
 
-| Параметр | ОПИСАНИЕ |
+| Параметр | Описание |
 | --- | --- |
 | AADClientID | Идентификатор клиента приложения Azure AD, которое имеет разрешения на запись секретов в хранилище ключей. |
 | AADClientSecret | Секрет клиента приложения Azure AD, которое имеет разрешения на запись секретов в ваше хранилище ключей. |

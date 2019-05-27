@@ -1,15 +1,15 @@
-- name: Документация по API Bing для поиска в Интернете
+- name: Документация по API Поиска в Интернете Bing
   href: index.yml
 - name: Обзор
   items:
-    - name: Что такое API Bing для поиска в Интернете?
+    - name: Что такое Поиск в Интернете Bing
       href: overview.md
       expanded: true
-    - name: Сравнение API-интерфейсов поиска Bing
+    - name: Сравнение API-интерфейсов Поиска Bing
       href: ../Bing-Web-Search/bing-api-comparison.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   items:
-    - name: Интерфейсы API REST
+    - name: "Интерфейсы REST\_API"
       items:
         - name: 'C#'
           href: quickstarts/csharp.md
@@ -35,7 +35,7 @@
           href: web-search-sdk-node-quickstart.md
         - name: Python
           href: web-sdk-python-quickstart.md
-- name: Учебники
+- name: Руководства
   items:
     - name: Создание одностраничного веб-приложения
       href: tutorial-bing-web-search-single-page-app.md
@@ -45,7 +45,7 @@
       href: 'https://github.com/Azure-Samples/cognitive-services-REST-api-samples'
     - name: Примеры пакета SDK
       href: sdk-samples.md
-- name: Практические руководства
+- name: Инструкции
   items:
     - name: Фильтрация ответов
       href: filter-answers.md
@@ -69,11 +69,11 @@
       href: throttling-requests.md
 - name: Справочные материалы
   items:
-    - name: API Bing для поиска в Интернете версии 7
+    - name: API Поиска в Интернете Bing версии 7
       href: 'https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference'
-    - name: API Bing для поиска в Интернете версии 5
+    - name: API Поиска в Интернете Bing версии 5
       href: 'https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v5-reference'
-    - name: Инфраструктура CLI Azure
+    - name: Azure CLI
       href: 'https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest#az_cognitiveservices_list'
     - name: Azure PowerShell
       href: 'https://aka.ms/azure-powershell-cognitiveservices'
@@ -95,21 +95,23 @@
   items:
     - name: Получение ключа API
       href: 'https://azure.microsoft.com/try/cognitive-services/?api=bing-web-search-api'
-    - name: Конечные точки API Bing для поиска в Интернете
+    - name: Конечная точка API Поиска в Интернете Bing
       href: web-search-endpoints.md
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/cognitive-services/search-api/web/'
-    - name: Доступ по регионам
+    - name: Доступность по регионам
       href: 'https://azure.microsoft.com/global-infrastructure/services/'
     - name: Поддержка языков и региональных параметров
       href: language-support.md
-    - name: Аналитика для API Bing для поиска в Интернете
+    - name: Аналитика для API Поиска в Интернете Bing
       href: bing-web-stats.md
+    - name: Соответствие требованиям
+      href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
     - name: Поддержка
       items:
         - name: Форум User Voice
           href: 'https://cognitive.uservoice.com/forums/555907-bing-web-search-api'
-        - name: Переполнение стека
+        - name: Stack Overflow
           href: 'https://stackoverflow.com/search?q=bing+web+search'
         - name: База знаний
           href: 'https://cognitive.uservoice.com/knowledgebase/topics/127875-bing-search-web-image-video-news-autosuggest'
