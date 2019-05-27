@@ -65,14 +65,14 @@ ms.locfileid: "60486589"
 
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения | значение по умолчанию |
 | --- | --- | --- | --- |
-| Тип |Задайте значение FtpServer. |Yes |&nbsp; |
+| type |Задайте значение FtpServer. |Yes |&nbsp; |
 | host |Укажите имя или IP-адрес FTP-сервера. |Yes |&nbsp; |
 | authenticationType |Укажите тип проверки подлинности. |Yes |Обычная, анонимная |
-| Имя пользователя |Укажите пользователя, имеющего доступ к FTP-серверу. |Нет  |&nbsp; |
+| username |Укажите пользователя, имеющего доступ к FTP-серверу. |Нет  |&nbsp; |
 | password |Укажите пароль для пользователя (username). |Нет  |&nbsp; |
 | encryptedCredential |Укажите зашифрованные учетные данные для доступа к FTP-серверу. |Нет  |&nbsp; |
 | gatewayName |Укажите имя шлюза управления данными для подключения к локальному FTP-серверу. |Нет  |&nbsp; |
-| порт |Укажите порт, прослушиваемый FTP-сервером. |Нет  |21 |
+| port |Укажите порт, прослушиваемый FTP-сервером. |Нет  |21 |
 | enableSsl |Укажите, какой канал следует использовать (FTP через SSL или TLS). |Нет  |Да |
 | enableServerCertificateValidation |Укажите, следует ли включать проверку SSL-сертификата на сервере при использовании канала FTP через SSL или TLS. |Нет  |Да |
 
@@ -159,7 +159,7 @@ ms.locfileid: "60486589"
 | fileName |Укажите имя файла в папке **folderPath** , если таблица должна ссылаться на определенный файл в папке. Если этому свойству не присвоить значение, таблица будет указывать на все файлы в папке.<br/><br/>Если свойство **fileName** не указано для выходного набора данных, то имя созданного файла будет иметь следующий формат: <br/><br/>`Data.<Guid>.txt` (пример: Data.0a405f8a-93ff-4c6f-b3be-f69616f1df7a.txt). |Нет  |
 | fileFilter |Укажите фильтр для выбора подмножества файлов из **folderPath**. Фильтр дает возможность выбирать только некоторые файлы, а не все.<br/><br/>Допустимые значения: `*` (несколько знаков) и `?` (один знак).<br/><br/>Пример 1: `"fileFilter": "*.log"`<br/>Пример 2: `"fileFilter": 2014-1-?.txt"`<br/><br/> Свойство **fileFilter** применяется ко входному набору данных FileShare. Распределенная файловая система Hadoop (HDFS) не поддерживает это свойство. |Нет  |
 | partitionedBy |Используется для того, чтобы указать динамические **путь к папке** и **имя файла** для временного ряда данных. Например, можно указать **путь к папке**, который будет параметризироваться для данных за каждый час. |Нет  |
-| свойства | Поддерживаются следующие форматы файлов: **TextFormat**, **JsonFormat**, **AvroFormat**, **OrcFormat**, **ParquetFormat**. Свойству **type** в разделе format необходимо присвоить одно из этих значений. Дополнительные сведения см. в разделах о [текстовом формате](data-factory-supported-file-and-compression-formats.md#text-format), [формате Json](data-factory-supported-file-and-compression-formats.md#json-format), [формате Avro](data-factory-supported-file-and-compression-formats.md#avro-format), [формате Orc](data-factory-supported-file-and-compression-formats.md#orc-format) и [формате Parquet](data-factory-supported-file-and-compression-formats.md#parquet-format). <br><br> Если требуется скопировать файлы между файловыми хранилищами как есть (двоичное копирование), пропустите раздел формата в определениях входного и выходного наборов данных. |Нет  |
+| format | Поддерживаются следующие форматы файлов: **TextFormat**, **JsonFormat**, **AvroFormat**, **OrcFormat**, **ParquetFormat**. Свойству **type** в разделе format необходимо присвоить одно из этих значений. Дополнительные сведения см. в разделах о [текстовом формате](data-factory-supported-file-and-compression-formats.md#text-format), [формате Json](data-factory-supported-file-and-compression-formats.md#json-format), [формате Avro](data-factory-supported-file-and-compression-formats.md#avro-format), [формате Orc](data-factory-supported-file-and-compression-formats.md#orc-format) и [формате Parquet](data-factory-supported-file-and-compression-formats.md#parquet-format). <br><br> Если требуется скопировать файлы между файловыми хранилищами как есть (двоичное копирование), пропустите раздел формата в определениях входного и выходного наборов данных. |Нет  |
 | compression | Укажите тип и уровень сжатия данных. Поддерживаемые типы: **GZip**, **Deflate**, **BZip2** и **ZipDeflate**. Поддерживаемые уровни: **Optimal** и **Fastest**. Узнайте больше о [форматах файлов и сжатия данных в фабрике данных Azure](data-factory-supported-file-and-compression-formats.md#compression-support). |Нет  |
 | useBinaryTransfer |Укажите, следует ли использовать режим передачи в двоичном формате. Значение true, если следует использовать двоичный формат (это значение по умолчанию), и false, если следует использовать ASCII. Это свойство можно использовать, только когда тип связанной службы — FtpServer. |Нет  |
 
