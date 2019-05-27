@@ -9,12 +9,12 @@ ms.date: 09/18/2018
 ms.service: application-insights
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 22e58f31e2f891eb09c3d42a01763c68cdcd11a8
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: ae9db483e15197e6cdaaaa5981410630184cc6ca
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60577710"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65957242"
 ---
 # <a name="collect-distributed-traces-from-python-preview"></a>Сбор распределенных трассировок из Python (предварительная версия)
 
@@ -28,11 +28,11 @@ Application Insights теперь поддерживает распределе�
 
 Если у вас еще нет подписки Azure, создайте [бесплатную](https://azure.microsoft.com/free/) учетную запись Azure, прежде чем начинать работу.
 
-## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
+## <a name="sign-in-to-the-azure-portal"></a>Войдите на портал Azure
 
 Войдите на [портале Azure](https://portal.azure.com/).
 
-## <a name="create-application-insights-resource"></a>Создание ресурса Application Insights
+## <a name="create-application-insights-resource"></a>Создать ресурс Application Insights
 
 Сначала необходимо создать ресурс Application Insights, который создаст ключ инструментирования (ikey). Затем с помощью этого ключа ikey локальный сервер настраивается для отправки распределенных трассировок из инструментированного приложения OpenCensus в Application Insights.   
 
@@ -42,7 +42,7 @@ Application Insights теперь поддерживает распределе�
 
    Откроется окно настроек, в котором нужно заполнить все поля в соответствии с приведенной ниже таблицей.
 
-    | Параметры        | Value           | ОПИСАНИЕ  |
+    | Параметры        | Value           | Описание  |
    | ------------- |:-------------|:-----|
    | **Имя**      | Глобально уникальное значение | Имя, идентифицирующее отслеживаемое приложение |
    | **Тип приложения** | Общие сведения | Тип отслеживаемого приложения |
@@ -78,10 +78,12 @@ Application Insights теперь поддерживает распределе�
 
 ## <a name="opencensus-python-package"></a>Пакет OpenCensus Python
 
-1. Установите пакет Open Census для Python с помощью pip или pipenv из командной строки:
+1. Установите пакет Open переписи для Python и экспорта с помощью pip или pipenv из командной строки:
 
-    ```python
+    ```console
     python -m pip install opencensus
+    python -m pip install opencensus-ext-ocagent
+
     # pip env install opencensus
     ```
 
@@ -92,20 +94,20 @@ Application Insights теперь поддерживает распределе�
 
     ```python
     from opencensus.trace.tracer import Tracer
-    
+
     def main():
         while True:
             valuePrompt()
-    
+
     def valuePrompt():
         tracer = Tracer()
         with tracer.span(name="test") as span:
             line = input("Enter a value: ")
             print(line)
-    
+
     if __name__ == "__main__":
         main()
-    
+
     ```
 
 3. При выполнении кода вам несколько раз будет предложено ввести значение. С каждой записью значение будет выводиться в оболочке, а модуль OpenCensus Python будет создавать соответствующий фрагмент **SpanData**. Проект OpenCensus определяет [_трассировку в виде дерева диапазонов_](https://opencensus.io/core-concepts/tracing/).
@@ -127,32 +129,33 @@ Application Insights теперь поддерживает распределе�
     ```python
     from opencensus.trace.tracer import Tracer
     from opencensus.trace import config_integration
-    from opencensus.trace.exporters.ocagent import trace_exporter
+    from opencensus.ext.ocagent.trace_exporter import TraceExporter
     from opencensus.trace import tracer as tracer_module
-    
+
     import os
-    
-    def main():        
+
+    def main():
         while True:
             valuePrompt()
-    
+
     def valuePrompt():
-        export_LocalForwarder = trace_exporter.TraceExporter(
+        export_LocalForwarder = TraceExporter(
         service_name=os.getenv('SERVICE_NAME', 'python-service'),
         endpoint=os.getenv('OCAGENT_TRACE_EXPORTER_ENDPOINT'))
-        
+
         tracer = Tracer(exporter=export_LocalForwarder)
         with tracer.span(name="test") as span:
             line = input("Enter a value: ")
             print(line)
-    
+
     if __name__ == "__main__":
         main()
+
     ```
 
 5. Если сохранить и попробовать запустить приведенный выше модуль, для `grpc` может появиться сообщение об ошибке `ModuleNotFoundError`. В этом случае выполните следующую команду, чтобы установить [пакет grpcio](https://pypi.org/project/grpcio/):
 
-    ```
+    ```console
     python -m pip install grpcio
     ```
 
@@ -180,7 +183,7 @@ Application Insights теперь поддерживает распределе�
 
     Так как мы выполняли трассировку только одного вызова метода, наша схема приложений не так интересна. Но схему приложений можно масштабировать для визуализации гораздо большего количества распределенных приложений:
 
-   ![Схема сопоставления приложений](media/opencensus-python/application-map.png)
+   ![Схема приложений](media/opencensus-python/application-map.png)
 
 4. Выберите **Анализ работы**, чтобы выполнить подробный анализ работы и определить первопричину низкой производительности.
 

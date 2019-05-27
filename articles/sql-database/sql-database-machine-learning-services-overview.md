@@ -11,12 +11,12 @@ ms.author: davidph
 ms.reviewer: carlrab
 manager: cgronlun
 ms.date: 03/01/2019
-ms.openlocfilehash: b33561ad80207a5d649ac1fd497c9d6c7add78c6
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: fe472b8a19b45d7f7b00a8f858c9179d6ee51999
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64723987"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65951577"
 ---
 # <a name="azure-sql-database-machine-learning-services-with-r-preview"></a>SQL базы данных службы машинного обучения Azure с помощью R (Предварительная версия)
 
@@ -49,9 +49,7 @@ ms.locfileid: "64723987"
 | [RevoScaleR](https://docs.microsoft.com/sql/advanced-analytics/r/ref-r-revoscaler) | RevoScaleR — это первичная библиотека для масштабируемых R. Функции этой библиотеки являются наиболее широко используемыми. Преобразования и управление данными, формирование сводных статистических данных, визуализация, различные формы моделирования и анализа можете найти в этих библиотеках. Кроме того, функции в этих библиотеках автоматически распределяют рабочую нагрузку между доступными ядрами для параллельной обработки с возможностью работы с фрагментами данных, которыми координирует и управляет механизм вычислений. |
 | [MicrosoftML (R)](https://docs.microsoft.com/sql/advanced-analytics/r/ref-r-microsoftml) | MicrosoftML добавляет алгоритмы машинного обучения для создания пользовательских моделей для анализа текста, изображений и тональности. |
 
-<!-- Add this back when the new package-related article is written
-In addition to the pre-installed packages, you can [install additional packages](sql-database-quickstart-r-create-script.md#add-a-package).
--->
+Помимо предустановленных пакетов, вы можете [установить дополнительные пакеты](sql-database-machine-learning-services-add-r-packages.md).
 
 <a name="signup"></a>
 

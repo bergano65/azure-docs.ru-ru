@@ -5,15 +5,15 @@ services: expressroute
 author: cherylmc
 ms.service: expressroute
 ms.topic: conceptual
-ms.date: 2/25/2019
+ms.date: 05/20/2019
 ms.author: cherylmc
 ms.custom: seodec18
-ms.openlocfilehash: c4998712d77771a5600c06183a76254548289372
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: ebfe3db43de87e67ad05ed8cb9f5812b5ded04e0
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60365100"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65965905"
 ---
 # <a name="configure-expressroute-direct-by-using-the-azure-cli"></a>Настройка ExpressRoute Direct с помощью Azure CLI
 
@@ -280,8 +280,9 @@ ms.locfileid: "60365100"
 
 Вы можете добавить дополнительную пропускную способность в ExpressRoute Direct только для тех сценариев, которые описаны в этой статье. Поддерживаются варианты пропускной способности 40 Гбит/с и 100 Гбит/с.
 
-Вы можете создать каналы категорий "Стандартный" или "Премиум". Каналы категории "Стандартный" включены в стоимость службы. Стоимость каналов категории "Премиум" определяется по выбранной пропускной способности. Вы можете создать каналы только с измерением и оплатой трафика. Неограниченное количество каналов для ExpressRoute Direct не поддерживается.
+**SkuTier** может быть локальной "," стандартный "или" уровня "премиум".
 
+**SkuFamily** должно быть MeteredData только как неограниченное на ExpressRoute Direct не поддерживается.
 Создайте канал в ресурсе ExpressRoute Direct:
 
   ```azurecli

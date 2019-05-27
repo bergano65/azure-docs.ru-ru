@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 03/15/2019
 ms.reviewer: sdash
 ms.author: mbullwin
-ms.openlocfilehash: ba4643118c5d90b91c3e51d569e9a628c84159fc
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 70d1f54aed5e83801b1d1e249d7a412dd6d9a49a
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65780017"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65964037"
 ---
 # <a name="application-map-triage-distributed-applications"></a>Схема приложений: рассмотрение распределенных приложений
 
@@ -94,7 +94,9 @@ ms.locfileid: "65780017"
 
 Схема сопоставления приложений использует **имени облачной роли** свойство для идентификации компонентов на карте. Пакет SDK Application Insights автоматически добавляет свойство имени роли облака данные телеметрии, генерируемые компонентами. Например пакет SDK добавит имя веб-сайта или имя службы роли к свойству имени облачной роли. Но бывают случаи, когда необходимо переопределить значение по умолчанию. Чтобы переопределить имя облачной роли и изменить то, что отображается на схеме сопоставления приложений:
 
-### <a name="net"></a>.NET
+### <a name="netnet-core"></a>.NET/.NET core
+
+**Запись пользовательских TelemetryInitializer, как показано ниже.**
 
 ```csharp
 using Microsoft.ApplicationInsights.Channel;
@@ -117,9 +119,9 @@ namespace CustomInitializer.Telemetry
 }
 ```
 
-**Загрузка инициализатора**
+**Инициализатор нагрузки для активной конфигурацией TelemetryConfiguration**
 
-В ApplicationInsights.config.:
+In ApplicationInsights.config :
 
 ```xml
     <ApplicationInsights>
@@ -131,7 +133,10 @@ namespace CustomInitializer.Telemetry
     </ApplicationInsights>
 ```
 
-Альтернативный метод — создать экземпляр инициализатора в коде, например в Global.aspx.cs.
+> [!NOTE]
+> Добавление инициализатор `ApplicationInsights.config` не является действительным для приложений ASP.NET Core.
+
+Чтобы создать экземпляр инициализатора в коде, например в Global.aspx.cs является альтернативного метода веб-приложений ASP.NET:
 
 ```csharp
  using Microsoft.ApplicationInsights.Extensibility;
@@ -141,6 +146,17 @@ namespace CustomInitializer.Telemetry
     {
         // ...
         TelemetryConfiguration.Active.TelemetryInitializers.Add(new MyTelemetryInitializer());
+    }
+```
+
+Для [ASP.NET Core](asp-net-core.md#adding-telemetryinitializers) приложений, добавив новый `TelemetryInitializer` можно сделать, добавив его в контейнер внедрения зависимостей, как показано ниже. Это можно сделать в `ConfigureServices` метод вашей `Startup.cs` класса.
+
+```csharp
+ using Microsoft.ApplicationInsights.Extensibility;
+ using CustomInitializer.Telemetry;
+ public void ConfigureServices(IServiceCollection services)
+    {
+        services.AddSingleton<ITelemetryInitializer, MyCustomTelemetryInitializer>();
     }
 ```
 

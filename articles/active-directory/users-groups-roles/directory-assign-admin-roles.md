@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3593324523340300279232e0e63392c9c127991d
-ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
+ms.openlocfilehash: 1107a6df92bf577cd60b9ad31627219da8e1a388
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65823565"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65956544"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Разрешения роли администратора в Azure Active Directory
 
@@ -335,28 +335,28 @@ ms.locfileid: "65823565"
 | microsoft.office365.serviceHealth/allEntities/allTasks | Чтение и настройка работоспособности служб Office 365. |
 | microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |
 
-### <a name="b2c-user-flow-administrator"></a>Администратор потока пользователей B2C
+### <a name="b2c-user-flow-administrator"></a>администратор потока пользователей B2C;
 Создание и управление всеми аспектами потоки пользователей.
 
 | **Действия** | **Описание** |
 | --- | --- |
 | microsoft.aad.b2c/userFlows/allTasks | Считать и настроить маршруты пользователей в Azure Active Directory B2C. |
 
-### <a name="b2c-user-flow-attribute-administrator"></a>Администратор атрибут потока для пользователей B2C
+### <a name="b2c-user-flow-attribute-administrator"></a>администратор атрибутов потока пользователей B2C;
 Создание и управление доступными для всех потоков пользователя атрибут схемы.
 
 | **Действия** | **Описание** |
 | --- | --- |
 | Microsoft.aad.B2C/userAttributes/allTasks | Чтение и настройка атрибутов пользователя в Azure Active Directory B2C. |
 
-### <a name="b2c-ief-keyset-administrator"></a>B2C инфраструктура процедур Идентификации ключей администратора
+### <a name="b2c-ief-keyset-administrator"></a>администратор набора ключей IEF B2C;
 Управление секретами для федерации и шифрования в инфраструктуре процедур идентификации.
 
 | **Действия** | **Описание** |
 | --- | --- |
 | Microsoft.aad.B2C/trustFramework/keySets/allTasks | Считать и настроить наборы ключей в Azure Active Directory B2C. |
 
-### <a name="b2c-ief-policy-administrator"></a>Администратор политики B2C инфраструктура процедур Идентификации
+### <a name="b2c-ief-policy-administrator"></a>администратор политики IEF B2C.
 Создание и управление ими политиках инфраструктуры доверия в инфраструктуре процедур идентификации.
 
 | **Действия** | **Описание** |

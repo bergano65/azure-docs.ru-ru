@@ -12,12 +12,12 @@ ms.author: bonova
 ms.reviewer: carlrab
 manager: craigg
 ms.date: 09/25/2018
-ms.openlocfilehash: 49491c5283ba16c5379c1115fae597bd7fd6ea19
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: fbb2458e73330a09124c00cebe3eb7bcaba5408d
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60614068"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65951499"
 ---
 # <a name="getting-started-with-temporal-tables-in-azure-sql-database"></a>Приступая к работе с временными таблицами в базе данных SQL Azure
 
@@ -109,7 +109,7 @@ WITH (DROP_EXISTING = ON);
 ## <a name="step-2-run-your-workload-regularly"></a>Шаг 2. Регулярный запуск рабочей нагрузки
 Главным преимуществом временных таблиц является то, что для отслеживания изменений вам не нужно каким-либо образом изменять или настраивать веб-сайт. После создания временных таблиц в них прозрачно сохраняются предыдущие версии строк каждый раз, когда вы вносите изменения в данные. 
 
-Чтобы использовать автоматическое отслеживание изменений в этой конкретной ситуации, мы просто будем изменять столбец **PagesVisited** каждый раз, когда пользователь будет завершать сеанс посещения веб-сайта.
+Чтобы использовать автоматическое отслеживание изменений для этой конкретной ситуации, давайте просто обновить столбец **PagesVisited** каждый раз пользователь завершает свой сеанс веб-сайта:
 
 ```
 UPDATE WebsiteUserInfo  SET [PagesVisited] = 5 
