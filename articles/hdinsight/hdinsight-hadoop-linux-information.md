@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 03/20/2019
-ms.openlocfilehash: 2a7af59495966c76a47ea84311ab073eb594f82e
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: c52574485a62b081224a36ca5deb0fdae114f9bc
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64707574"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65859659"
 ---
 # <a name="information-about-using-hdinsight-on-linux"></a>Сведения об использовании HDInsight в Linux
 
@@ -37,7 +37,7 @@ ms.locfileid: "64707574"
 
 Присоединенный к домену кластер HDInsight поддерживает несколько пользователей, а также более детализированные параметры разрешений и ролей. Дополнительные сведения см. в статье [Manage Domain-joined HDInsight clusters](./domain-joined/apache-domain-joined-manage.md) (Управление присоединенными к домену кластерами HDInsight).
 
-## <a name="domain-names"></a>Имена доменов
+## <a name="domain-names"></a>Доменные имена
 
 Полное доменное имя (FQDN) для использования при подключении к кластеру из Интернета — `CLUSTERNAME.azurehdinsight.net` или `CLUSTERNAME-ssh.azurehdinsight.net` (только для SSH).
 
@@ -87,7 +87,7 @@ ms.locfileid: "64707574"
 
 Дополнительные сведения см. в документе о [портах, используемых службами Apache Hadoop в HDInsight](hdinsight-hadoop-port-settings-for-services.md).
 
-## <a name="file-locations"></a>Местоположения файлов
+## <a name="file-locations"></a>Расположения файлов
 
 Связанные с Hadoop файлы можно найти на узлах кластера в папке `/usr/hdp`. Этот каталог содержит следующие подкаталоги:
 
@@ -251,7 +251,7 @@ curl -u admin -G "https://CLUSTERNAME.azurehdinsight.net/api/v1/clusters/CLUSTER
 Подробные сведения о масштабировании кластера HDInsight см. в следующих статьях.
 
 * [Управление кластерами Apache Hadoop в HDInsight с помощью портала Azure](hdinsight-administer-use-portal-linux.md#scale-clusters)
-* [Управление кластерами Apache Hadoop в HDInsight с помощью Azure PowerShell](hdinsight-administer-use-command-line.md#scale-clusters)
+* [Управление кластерами Apache Hadoop в HDInsight с помощью Azure CLI](hdinsight-administer-use-command-line.md#scale-clusters)
 
 ## <a name="how-do-i-install-hue-or-other-hadoop-component"></a>Как установить Hue (или другой компонент Hadoop)?
 

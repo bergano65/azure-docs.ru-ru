@@ -1,7 +1,7 @@
 ---
 title: Развертывание моделей в ППВМ
 titleSuffix: Azure Machine Learning service
-description: Узнайте, как развернуть веб-службу с моделью, работающей в ППВМ, с использованием Службы машинного обучения Azure, чтобы обеспечить получение выводов со сверхнизкой задержкой.
+description: Узнайте, как развернуть веб-службы с помощью модели, работающей на FPGA со службой машинного обучения Azure для вывода сверхнизкой задержкой.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -11,16 +11,16 @@ ms.author: tedway
 author: tedway
 ms.date: 05/02/2019
 ms.custom: seodec18
-ms.openlocfilehash: 249a21bf9eeb3913826971fd1aae136197d264c4
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 8d667d45e1831e0fcc939d302a16f63d4a282963
+ms.sourcegitcommit: 16cb78a0766f9b3efbaf12426519ddab2774b815
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65149609"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65852045"
 ---
 # <a name="deploy-a-model-as-a-web-service-on-an-fpga-with-azure-machine-learning-service"></a>Развертывание модели как веб-службы в ППВМ с помощью Службы машинного обучения Azure
 
-Вы можете развернуть модель как веб-службу на [поле программируемых Вентильные (FPGAs)](concept-accelerate-with-fpgas.md) с моделями Accelerated Azure Machine Learning оборудования. При использовании FPGA обеспечивается сверхнизкая задержка даже в случае пакетов одного размера.
+Вы можете развернуть модель как веб-службу на [поле программируемых Вентильные (FPGAs)](concept-accelerate-with-fpgas.md) с моделями Accelerated Azure Machine Learning оборудования. Использование FPGAs обеспечивает вывод сверхнизкой задержкой, даже с размером одного пакета. Определение или модель оценки, — это этап, где используется развернутой модели для прогнозирования, чаще всего для производственных данных.
 
 Модели, доступные сегодня:
   - ResNet 50
@@ -160,9 +160,9 @@ print(output_tensors)
 ```
 
 > [!IMPORTANT]
-> Сохраните ввода и вывода tensors, так как они понадобятся для преобразования и выводов запросов модели.
+> Сохраните входные данные и вывода tensors, так как они понадобятся для преобразования и вывод запросов модели.
 
-Доступные модели и соответствующих классификатор по умолчанию вывода ниже, являются tensors, который является то, что используется во время выводов при использовании классификатор по умолчанию.
+Доступные модели и соответствующих классификатор по умолчанию вывода ниже, являются tensors, который является то, что используется для вывода при использовании классификатор по умолчанию.
 
 + Resnet50 QuantizedResnet50 ``
 output_tensors = "classifier_1/resnet_v1_50/predictions/Softmax:0"

@@ -2,21 +2,21 @@
 title: Инструкция CREATE TABLE AS SELECT (CTAS) в хранилище данных SQL Azure | Документация Майкрософт
 description: Описание и примеры использования инструкции CREATE TABLE AS SELECT (CTAS) в хранилище данных SQL Azure для разработки решений.
 services: sql-data-warehouse
-author: mlee3gsd
+author: XiaoyuL-Preview
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
-ms.subservice: implement
+ms.subservice: development
 ms.date: 03/26/2019
-ms.author: mlee3gsd
-ms.reviewer: jrasnick
+ms.author: xiaoyul
+ms.reviewer: igorstan
 ms.custom: seoapril2019
-ms.openlocfilehash: c8e9f3ccdfaee64f75443f6a4eb89a3df7c48b0e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 91de474cc0610099b4264cc6d0dfbd26e8df0618
+ms.sourcegitcommit: 16cb78a0766f9b3efbaf12426519ddab2774b815
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60403795"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65851447"
 ---
 # <a name="create-table-as-select-ctas-in-azure-sql-data-warehouse"></a>CREATE TABLE AS SELECT (CTAS) в хранилище данных Azure SQL
 
@@ -26,7 +26,7 @@ ms.locfileid: "60403795"
 
 [CREATE TABLE AS SELECT](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse) инструкция (CTAS) является одним из наиболее важных доступных функций T-SQL. CTAS — это распараллеленная операция, которая создает новую таблицу на основе выходных данных инструкции SELECT. CTAS — это самый простой и быстрый способ создания и вставки данных в таблицу с помощью одной команды.
 
-## <a name="selectinto-vs-ctas"></a>ВЫБЕРИТЕ... В vs. CTAS;
+## <a name="selectinto-vs-ctas"></a>ВЫБЕРИТЕ... В vs. CTAS
 
 CTAS — это расширенными возможностями настройки версия [ВЫБЕРИТЕ... В](/sql/t-sql/queries/select-into-clause-transact-sql) инструкции.
 
@@ -345,7 +345,7 @@ AS
 SELECT ISNULL(CAST(@d*@f AS DECIMAL(7,2)),0) as result
 ```
 
-Обратите внимание на следующее.
+Обратите внимание на следующее условия:
 
 * Можно использовать ПРИВЕДЕНИЕ или преобразование.
 * Используйте ISNULL, COALESCE, чтобы принудительно допустимость значений NULL. См. примечание ниже.

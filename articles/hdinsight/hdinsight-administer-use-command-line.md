@@ -1,110 +1,98 @@
 ---
-title: Управление кластерами Apache Hadoop с помощью классического CLI Azure в Azure HDInsight
-description: Узнайте, как использовать классический интерфейс командной строки Azure для управления кластерами Apache Hadoop в Azure HDInsight.
+title: Управление кластерами Azure HDInsight, с помощью интерфейса командной строки Azure
+description: Узнайте, как использовать Azure CLI для управления кластерами Azure HDInsight. Типы кластеров включают Apache Hadoop, Spark, HBase, Storm, Kafka, Interactive Query и службами машинного Обучения.
 ms.reviewer: jasonh
 author: tylerfox
 ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
-ms.date: 11/06/2018
+ms.date: 05/13/2019
 ms.author: tyfox
-ms.openlocfilehash: 94ef5a60ecc5d943d78b16a386660049cc52d82e
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 7c12831c43762ddc776e8d5701f002be97992cbc
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64694461"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65859966"
 ---
-# <a name="manage-apache-hadoop-clusters-in-hdinsight-using-the-azure-classic-cli"></a>Управление кластерами Apache Hadoop в HDInsight с помощью классического интерфейса командной строки (CLI) Azure
+# <a name="manage-azure-hdinsight-clusters-using-azure-cli"></a>Управление кластерами Azure HDInsight, с помощью интерфейса командной строки Azure
+
 [!INCLUDE [selector](../../includes/hdinsight-portal-management-selector.md)]
 
-Узнайте, как использовать [классический интерфейс командной строки Azure](../cli-install-nodejs.md) для управления кластерами [Apache Hadoop](https://hadoop.apache.org/) в Azure HDInsight. Классический интерфейс командной строки (CLI) Azure реализован в Node.js. Его можно использовать на любой платформе, которая поддерживает Node.js, включая Windows, Mac и Linux.
+Сведения об использовании [Azure CLI](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest) для управления кластерами Azure HDInsight. Azure CLI — это кроссплатформенный интерфейс командной строки от Майкрософт для управления ресурсами Azure.
 
-[!INCLUDE [classic-cli-warning](../../includes/requires-classic-cli.md)]
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Технические условия
-Перед началом работы с этой статьей необходимо иметь следующее:
 
-* **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/documentation/videos/get-azure-free-trial-for-testing-hadoop-in-hdinsight/).
-* **Классический интерфейс командной строки Azure** — сведения об установке и настройке классического CLI Azure см. в статье [Установка и настройка классического CLI Azure](../cli-install-nodejs.md).
-* **Подключитесь к Azure**, выполнив следующую команду.
+* Azure CLI. Если вы еще не установили Azure CLI, см. в разделе [установите Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli) для действия.
 
-    ```cli
-    azure login
-    ```
-  
-    Дополнительные сведения о проверке подлинности с помощью рабочей или учебной учетной записи см. в статье [Подключение к подписке Azure с использованием классического интерфейса командной строки Azure](/cli/azure/authenticate-azure-cli).
-* **Переключитесь в режим диспетчера ресурсов Azure**с помощью следующей команды.
-  
-    ```cli
-    azure config mode arm
-    ```
+* Кластер Apache Hadoop в HDInsight. См. в разделе [начало работы с HDInsight на платформе Linux](hadoop/apache-hadoop-linux-tutorial-get-started.md).
 
-Чтобы получить справку, используйте параметр **-h** .  Например: 
+## <a name="connect-to-azure"></a>Подключение к Azure
 
-```cli
-azure hdinsight cluster create -h
+Войдите в свою подписку Azure. Если вы планируете использовать Azure Cloud Shell, а затем просто выберите **попробовать** в правом верхнем углу блока кода. В противном случае введите следующую команду:
+
+```azurecli-interactive
+az login
+
+# If you have multiple subscriptions, set the one to use
+# az account set --subscription "SUBSCRIPTIONID"
 ```
 
-## <a name="create-clusters-with-the-cli"></a>Создание кластеров с помощью интерфейса командной строки
-Дополнительные сведения см. в статье [Создание кластеров HDInsight с помощью классического интерфейса командной строки Azure](hdinsight-hadoop-create-linux-clusters-azure-cli.md).
+## <a name="list-clusters"></a>Получение списка кластеров
 
-## <a name="list-and-show-cluster-details"></a>Отображение сведений о кластере
-Используйте следующие команды для отображения сведений о кластере:
+Используйте [список hdinsight az](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-list) на получение списка кластеров. Измените приведенные ниже команды, заменив `RESOURCE_GROUP_NAME` с именем группы ресурсов, затем введите команды:
 
-```cli
-azure hdinsight cluster list
-azure hdinsight cluster show <Cluster Name>
+```azurecli-interactive
+# List all clusters in the current subscription
+az hdinsight list
+
+# List only cluster name and its resource group
+az hdinsight list --query "[].{Cluster:name, ResourceGroup:resourceGroup}" --output table
+
+# List all cluster for your resource group
+az hdinsight list --resource-group RESOURCE_GROUP_NAME
+
+# List all cluster names for your resource group
+az hdinsight list --resource-group RESOURCE_GROUP_NAME --query "[].{clusterName:name}" --output table
 ```
 
-![Представление командной строки списка кластеров][image-cli-clusterlisting]
+## <a name="show-cluster"></a>Отображение кластеров
+
+Используйте [az hdinsight show](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-show) для отображения сведений для указанного кластера. Измените указанную ниже команду, заменив `RESOURCE_GROUP_NAME`, и `CLUSTER_NAME` актуальной информацией, введите команду:
+
+```azurecli-interactive
+az hdinsight show --resource-group RESOURCE_GROUP_NAME --name CLUSTER_NAME
+```
 
 ## <a name="delete-clusters"></a>Удаление кластеров
-Используйте следующую команду для удаления кластера:
 
-```cli
-azure hdinsight cluster delete <Cluster Name>
+Используйте [удалении az hdinsight](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-delete) для удаления указанного кластера. Измените указанную ниже команду, заменив `RESOURCE_GROUP_NAME`, и `CLUSTER_NAME` актуальной информацией, введите команду:
+
+```azurecli-interactive
+az hdinsight delete --resource-group RESOURCE_GROUP_NAME --name CLUSTER_NAME
 ```
 
-Можно также удалить кластер, удалив группу ресурсов, которая содержит этот кластер. Обратите внимание, это приведет к удалению всех ресурсов в группе, включая учетную запись хранения по умолчанию.
+Можно также удалить кластер, удалив группу ресурсов, которая содержит этот кластер. Обратите внимание, что это приведет к удалению всех ресурсов в группе, включая учетную запись хранения по умолчанию.
 
-```cli
-azure group delete <Resource Group Name>
+```azurecli-interactive
+az group delete --name RESOURCE_GROUP_NAME
 ```
 
 ## <a name="scale-clusters"></a>Масштабирование кластеров
-Используйте следующую команду для изменения размера кластера Apache Hadoop:
 
-```cli
-azure hdinsight cluster resize [options] <clusterName> <Target Instance Count>
-```
+Используйте [az hdinsight изменение размера](https://docs.microsoft.com/cli/azure/hdinsight?view=azure-cli-latest#az-hdinsight-resize) изменить размер указанного кластера HDInsight до заданного размера. Измените указанную ниже команду, заменив `RESOURCE_GROUP_NAME`, и `CLUSTER_NAME` соответствующей информацией. Замените `TARGET_INSTANCE_COUNT` с требуемое число рабочих узлов для кластера. Дополнительные сведения о масштабировании кластеров см. в разделе [кластеры HDInsight масштабирования](./hdinsight-scaling-best-practices.md). Введите команду:
 
-
-## <a name="enabledisable-http-access-for-a-cluster"></a>Включение или отключение доступа по протоколу HTTP для кластера
-
-```cli
-azure hdinsight cluster enable-http-access [options] <Cluster Name> <userName> <password>
-azure hdinsight cluster disable-http-access [options] <Cluster Name>
+```azurecli-interactive
+az hdinsight delete --resource-group RESOURCE_GROUP_NAME --name CLUSTER_NAME --target-instance-count TARGET_INSTANCE_COUNT
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
+
 В этой статье вы узнали, как выполнять различные административные задачи в кластере HDInsight. Для получения дополнительных сведений ознакомьтесь со следующими статьями:
 
 * [Управление кластерами Apache Hadoop в HDInsight с помощью портала Azure](hdinsight-administer-use-portal-linux.md)
-* [Управление кластерами Hadoop в HDInsight с помощью Azure PowerShell][hdinsight-admin-powershell]
-* [Руководство по Hadoop. Начало работы с Hadoop в HDInsight на платформе Linux][hdinsight-get-started]
-* [Использование классического интерфейса командной строки Azure][azure-command-line-tools]
-
-[azure-command-line-tools]: ../cli-install-nodejs.md
-[azure-create-storageaccount]:../storage/common/storage-create-storage-account.md
-[azure-purchase-options]: https://azure.microsoft.com/pricing/purchase-options/
-[azure-member-offers]: https://azure.microsoft.com/pricing/member-offers/
-[azure-free-trial]: https://azure.microsoft.com/pricing/free-trial/
-
-[hdinsight-admin-powershell]: hdinsight-administer-use-powershell.md
-[hdinsight-get-started]:hadoop/apache-hadoop-linux-tutorial-get-started.md
-
-[image-cli-account-download-import]: ./media/hdinsight-administer-use-command-line/HDI.CLIAccountDownloadImport.png
-[image-cli-clustercreation]: ./media/hdinsight-administer-use-command-line/HDI.CLIClusterCreation.png
-[image-cli-clustercreation-config]: ./media/hdinsight-administer-use-command-line/HDI.CLIClusterCreationConfig.png
-[image-cli-clusterlisting]: ./media/hdinsight-administer-use-command-line/command-line-list-of-clusters.png "Отображение кластеров"
+* [Администрирование HDInsight с помощью Azure PowerShell](hdinsight-administer-use-powershell.md)
+* [Приступая к работе с Azure HDInsight](hadoop/apache-hadoop-linux-tutorial-get-started.md)
+* [Приступая к работе с Azure CLI](https://docs.microsoft.com/cli/azure/get-started-with-azure-cli?view=azure-cli-latest)

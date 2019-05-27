@@ -2,21 +2,20 @@
 title: Временные таблицы в хранилище данных SQL | Документация Майкрософт
 description: Важные рекомендации по использованию временных таблиц и основные концепции временных таблиц уровня сеанса.
 services: sql-data-warehouse
-author: WenJason
-manager: digimobile
+author: XiaoyuL-Preview
+manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
-ms.subservice: implement
-origin.date: 04/17/2018
-ms.date: 04/22/2019
-ms.author: v-jay
+ms.subservice: development
+ms.date: 04/01/2019
+ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.openlocfilehash: 23a62e28700ad5fd733040c43ea0eec225fd286f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 56c15a9505b3f0e4344c9164268082da1ff7cc22
+ms.sourcegitcommit: 16cb78a0766f9b3efbaf12426519ddab2774b815
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61474901"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65851567"
 ---
 # <a name="temporary-tables-in-sql-data-warehouse"></a>Временные таблицы в хранилище данных SQL
 В этой статье содержатся важные рекомендации по использованию временных таблиц и приводятся основные концепции временных таблиц уровня сеанса. На основе сведений, содержащихся в этой статье, вы сможете разбить код на модули, чтобы улучшить его повторное использование и повысить удобство управления.
@@ -25,7 +24,7 @@ ms.locfileid: "61474901"
 Временные таблицы удобны при обработке данных — особенно во время преобразования, где промежуточные результаты являются временными. В хранилище данных SQL временные таблицы существуют на уровне сеанса.  Их можно просмотреть только в сеансе, в котором они были созданы. После выхода из сеанса они автоматически удаляются.  Временные таблицы позволяют оптимизировать производительность, так как их результаты записываются в локальное, а не удаленное хранилище.
 
 ## <a name="create-a-temporary-table"></a>Создание временной таблицы
-Для создания временной таблицы к имени таблицы добавляется префикс `#`.  Пример.
+Для создания временной таблицы к имени таблицы добавляется префикс `#`.  Например:
 
 ```sql
 CREATE TABLE #stats_ddl

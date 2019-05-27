@@ -13,32 +13,32 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 02/18/2019
 ms.author: glenga
-ms.openlocfilehash: a9e902a13071abefff71dc4db089380979c8d459
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: 6f743f7ea7fda368fc5895646145f553f3fb50fb
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65198618"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65864830"
 ---
 # <a name="get-started-with-the-azure-webjobs-sdk-for-event-driven-background-processing"></a>Использование пакета SDK для Веб-заданий Azure для фоновой обработки на основе событий
 
-В этой статье показано, как с помощью Visual Studio 2017 создайте проект пакета SDK для веб-заданий Azure, запустить его локально и затем развернуть его в [службе приложений Azure](overview.md). Проекта, созданного — это консольное приложение .NET Core, использующий версии 3.x, пакета SDK веб-заданий. Если вы заинтересованы в версии 2.x, которая использует .NET Framework, см. в разделе [разработка и развертывание веб-заданий с помощью Visual Studio: службе приложений Azure](webjobs-dotnet-deploy-vs.md).
+В этой статье показано, как использовать 2019 г. Visual Studio создайте проект пакета SDK для веб-заданий Azure, запустить его локально и затем развернуть его в [службе приложений Azure](overview.md). Проекта, созданного — это консольное приложение .NET Core, использующий версии 3.x, пакета SDK веб-заданий. Если вы заинтересованы в версии 2.x, которая использует .NET Framework, см. в разделе [разработка и развертывание веб-заданий с помощью Visual Studio: службе приложений Azure](webjobs-dotnet-deploy-vs.md).
 
 Дополнительные сведения о работе с пакетом SDK веб-заданий, см. в разделе [как использовать пакет SDK веб-заданий Azure для управляемых событиями фоновой обработки](webjobs-sdk-how-to.md).
 
 ## <a name="prerequisites"></a>Технические условия
 
-* [Установите Visual Studio 2017](/visualstudio/install/) с рабочей нагрузкой **разработки в Azure**. Если у вас уже установлена среда Visual Studio, но нет компонентов для разработки приложений, добавьте их, выбрав **Tools > Get Tools and Features** (Инструменты > Добавить инструменты и компоненты).
+* [Установка Visual Studio 2019](/visualstudio/install/) с **разработки Azure** рабочей нагрузки. Если у вас уже установлена среда Visual Studio, но нет компонентов для разработки приложений, добавьте их, выбрав **Tools > Get Tools and Features** (Инструменты > Добавить инструменты и компоненты).
 
 * Необходимо иметь [учетной записи Azure](https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio) для публикации веб-заданий SDK проекта в Azure.
 
 ## <a name="create-a-project"></a>Создание проекта
 
-1. В Visual Studio выберите **Файл > Создать > Проект**.
+1. В Visual Studio выберите **создайте новый проект**.
 
-2. Выберите **.NET Core > консольное приложение (.NET Core)**.
+2. Выберите **консольное приложение (.NET Core)**.
 
-3. Назовите проект *WebJobsSDKSample*, а затем нажмите кнопку **OK**.
+3. Назовите проект *WebJobsSDKSample*, а затем выберите **создать**.
 
    ![Диалоговое окно "Новый проект"](./media/webjobs-sdk-get-started/new-project.png)
 
