@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/14/2019
 ms.author: juliako
-ms.openlocfilehash: 910c593c9277efeaf72dadc52740b1c918381e19
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: b8c1513838fb848388946e18698a0410aa7a0332
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61466074"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65949629"
 ---
 # <a name="how-to-build-a-smooth-streaming-windows-store-application"></a>Создание приложения для магазина Windows с бесперебойной потоковой передачей  
 
@@ -71,7 +71,7 @@ ms.locfileid: "61466074"
     | Группа шаблонов |Installed/Templates/Visual C#/Windows Store |
     | Шаблон |Пустое приложение (XAML) |
     | ИМЯ |SSPlayer |
-    | Location |C:\SSTutorials |
+    | Расположение |C:\SSTutorials |
     | Имя решения |SSPlayer |
     | Создать каталог для решения |(выбрано) |
 
@@ -507,7 +507,7 @@ ms.locfileid: "61466074"
    ```
 
    > [!NOTE]
-   > CoreDispatcher используется для внесения изменений в поток пользовательского интерфейса из других потоков. В случае возникновения узких мест в потоке-отправителе разработчик может использовать отправитель, предоставленный элементом пользовательского интерфейса, который планируется обновить.  Пример.
+   > CoreDispatcher используется для внесения изменений в поток пользовательского интерфейса из других потоков. В случае узкое место в потоке разработчик может выбрать использовать отправитель, предоставленный элементом пользовательского интерфейса, следует обновить.  Например:
 
    ```csharp
          await sliderProgress.Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => { TimeSpan 
@@ -847,7 +847,7 @@ ms.locfileid: "61466074"
          </ListBox>
          </StackPanel>
    ```
-3. Нажмите клавиши **CTRL+S** , чтобы сохранить изменения
+3. Нажмите клавишу **CTRL + S** сохранить изменения
 
 ### <a name="to-modify-the-code-behind-file"></a>Чтобы изменить файл кода программной части
 
