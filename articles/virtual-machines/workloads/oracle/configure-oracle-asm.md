@@ -16,11 +16,11 @@ ms.workload: infrastructure
 ms.date: 08/02/2018
 ms.author: rogirdh
 ms.openlocfilehash: 0af6e87d3e0b4b3b40b63db07384d4a33a9d43e1
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57998946"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66154197"
 ---
 # <a name="set-up-oracle-asm-on-an-azure-linux-virtual-machine"></a>Настройка Oracle ASM в виртуальной машине Linux в Azure  
 
@@ -583,8 +583,8 @@ az group delete --name myResourceGroup
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Руководство Реализация Oracle Data Guard на виртуальной машине Azure под управлением Linux](configure-oracle-dataguard.md)
+[Учебник. Реализация Oracle Data Guard на виртуальной машине Azure под управлением Linux](configure-oracle-dataguard.md)
 
-[Руководство Реализация Oracle Golden Gate на виртуальной машине Azure под управлением Linux](Configure-oracle-golden-gate.md)
+[Учебник. Реализация Oracle Golden Gate на виртуальной машине Azure под управлением Linux](Configure-oracle-golden-gate.md)
 
 Ознакомьтесь со статьей [Разработка базы данных Oracle и ее внедрение в Azure](oracle-design.md)

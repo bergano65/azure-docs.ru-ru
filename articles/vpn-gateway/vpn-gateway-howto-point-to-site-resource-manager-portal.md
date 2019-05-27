@@ -6,14 +6,14 @@ author: cherylmc
 tags: azure-resource-manager
 ms.service: vpn-gateway
 ms.topic: conceptual
-ms.date: 10/24/2018
+ms.date: 5/21/2019
 ms.author: cherylmc
-ms.openlocfilehash: fa406ac2f1e0b89a1161660a49f2a4cb6f6d6c32
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.openlocfilehash: 6b66a9cf28faccf5ba22bc016297f1d53febe533
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62105923"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66157313"
 ---
 # <a name="configure-a-point-to-site-connection-to-a-vnet-using-native-azure-certificate-authentication-azure-portal"></a>Настройка подключения "точка — сеть" к виртуальной сети с использованием собственной аутентификации Azure на основе сертификата и Портал Azure
 
@@ -39,7 +39,7 @@ ms.locfileid: "62105923"
 * **Адресное пространство.** 192.168.0.0/16<br>В этом примере мы используем только одно адресное пространство, но для виртуальной сети можно настроить несколько.
 * **Имя подсети**: Интерфейсный
 * **Диапазон адресов подсети**: 192.168.1.0/24
-* **Подписка**: Если у вас есть несколько подписок, убедитесь, что используется правильная.
+* **Подписка**. Если у вас есть несколько подписок, убедитесь, что используется правильная.
 * **Группа ресурсов**. TestRG.
 * **Расположение**. Восточная часть США
 * **Подсеть шлюза:** 192.168.200.0/24<br>
@@ -51,7 +51,7 @@ ms.locfileid: "62105923"
 * **Тип подключения**. "точка — сеть";
 * **Пул адресов клиента**: 172.16.201.0/24.<br>VPN-клиенты, подключающиеся к виртуальной сети с помощью этого подключения типа "точка — сеть", получают IP-адреса из пула адресов клиента.
 
-## <a name="createvnet"></a>1. Создание виртуальной сети
+## <a name="createvnet"></a>1. Создать виртуальную сеть
 
 Прежде чем начать, убедитесь в том, что у вас есть подписка Azure. Если у вас нет подписки Azure, вы можете [активировать преимущества для подписчиков MSDN](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details) или [зарегистрировать бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial).
 [!INCLUDE [Basic Point-to-Site VNet](../../includes/vpn-gateway-basic-p2s-vnet-rm-portal-include.md)]
@@ -108,7 +108,7 @@ ms.locfileid: "62105923"
 
 ## <a name="tunneltype"></a>7. Настройка типа туннеля
 
-Вы можете выбрать тип туннеля. Доступны два варианта: SSTP и IKEv2. Для подключения клиент strongSwan в Android и Linux и собственный VPN-клиент IKEv2 в iOS и OSX используют только туннель IKEv2. Клиенты Windows сначала пытаются подключиться через IKEv2, и если им это не удается, возвращаются к SSTP. Вы можете включить один из них или оба. Установите флажки, требуемые для решения.
+Вы можете выбрать тип туннеля. Параметры туннеля, OpenVPN, SSTP и IKEv2. Для подключения клиент strongSwan в Android и Linux и собственный VPN-клиент IKEv2 в iOS и OSX используют только туннель IKEv2. Клиенты Windows сначала пытаются подключиться через IKEv2, и если им это не удается, возвращаются к SSTP. Клиент OpenVPN можно использовать для подключения к OpenVPN Тип туннеля.
 
 ![Тип туннеля](./media/vpn-gateway-howto-point-to-site-resource-manager-portal/tunneltype.png)
 

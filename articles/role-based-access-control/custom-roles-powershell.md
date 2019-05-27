@@ -15,11 +15,11 @@ ms.date: 02/20/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.openlocfilehash: ad1185cab2b2bd2d0fea10f21b7859fd9ab1339f
-ms.sourcegitcommit: 7f7c2fe58c6cd3ba4fd2280e79dfa4f235c55ac8
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "56807615"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66158450"
 ---
 # <a name="create-custom-roles-for-azure-resources-using-azure-powershell"></a>Создание пользовательских ролей для ресурсов Azure с помощью Azure PowerShell
 
@@ -231,7 +231,7 @@ New-AzRoleDefinition -Role $role
 New-AzRoleDefinition -InputFile "C:\CustomRoles\customrole1.json"
 ```
 
-## <a name="update-a-custom-role"></a>Обновление пользовательской роли
+## <a name="update-a-custom-role"></a>Обновление настраиваемой роли
 
 Аналогично созданию пользовательской роли можно изменить имеющуюся пользовательскую роль с помощью либо объекта `PSRoleDefinition`, либо шаблона JSON.
 
@@ -360,6 +360,6 @@ Are you sure you want to remove role definition with name 'Virtual Machine Opera
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Руководство Создание пользовательской роли для ресурсов Azure с помощью Azure PowerShell](tutorial-custom-role-powershell.md)
+- [Учебник. Создание пользовательской роли для ресурсов Azure с помощью Azure PowerShell](tutorial-custom-role-powershell.md)
 - [Пользовательские роли для ресурсов Azure](custom-roles.md)
 - [Операции поставщиков ресурсов Azure Resource Manager](resource-provider-operations.md)

@@ -7,28 +7,30 @@ services: search
 ms.service: search
 ms.devlang: NA
 ms.topic: conceptual
-ms.date: 05/08/2019
+ms.date: 05/20/2019
 ms.author: luisca
 ms.custom: seodec2018
-ms.openlocfilehash: 69b03bd24abcdf502bf80cfce4221f4958058932
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
-ms.translationtype: MT
+ms.openlocfilehash: f9a1e82cb60bf0ec32165294e7f4af3e93d042b0
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65541714"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66158540"
 ---
 # <a name="attach-a-cognitive-services-resource-with-a-skillset-in-azure-search"></a>Подключение ресурса Cognitive Services с набором навыков в службе "Поиск Azure" 
 
-Диск алгоритмов искусственного Интеллекта [cognitive индексирования конвейеры](cognitive-search-concept-intro.md) использовались для обработки неструктурированных данных в службе поиска Azure. Эти алгоритмы основаны на [ресурсы Azure Cognitive Services](https://azure.microsoft.com/services/cognitive-services/), в том числе [компьютерного](https://azure.microsoft.com/services/cognitive-services/computer-vision/) для анализа изображений и оптическое распознавание символов (OCR) и [анализа текста](https://azure.microsoft.com/services/cognitive-services/text-analytics/) для распознавания сущностей, извлечение ключевых фраз и другие усовершенствования.
+Диск алгоритмов искусственного Интеллекта [cognitive индексирования конвейеры](cognitive-search-concept-intro.md) для обогащения документа в службе поиска Azure. Эти алгоритмы основаны на ресурсы Azure Cognitive Services, включая [компьютерного](https://azure.microsoft.com/services/cognitive-services/computer-vision/) для анализа изображений и оптическое распознавание символов (OCR) и [текстовая аналитика](https://azure.microsoft.com/services/cognitive-services/text-analytics/) для распознавания сущностей Извлечение ключевых фраз и другие усовершенствования. Как используется службой поиска Azure для целей обогащение документа, алгоритмы помещаются внутри *навыков*, помещенных в *набор навыков*и указанные *индексатора* во время индексирование.
 
-Для увеличения рабочих нагрузок вы можете бесплатно расширить ограниченное число документов или присоединить оплачиваемый ресурс Cognitive Services. В этой статье вы узнаете, как должен быть сопоставлен ресурса Cognitive Services cognitive знаний и навыков для обогащения данных во время [индексирование поиска Azure](search-what-is-an-index.md).
-
-Даже если ваш конвейер состоит из навыков, которые не связаны с API-интерфейсов Cognitive Services, следует по-прежнему связывать ресурса Cognitive Services. Это переопределяет бесплатный ресурс, который ограничивает возможность небольшое количество усовершенствования в день. Вы не будете оплачивать навыков, которые не привязаны к API-интерфейсов Cognitive Services. Включать эти навыки [пользовательские методики](cognitive-search-create-custom-skill-example.md), [слияния текст](cognitive-search-skill-textmerger.md), [текст разделителя](cognitive-search-skill-textsplit.md), и [shaper](cognitive-search-skill-shaper.md).
+Для увеличения рабочих нагрузок вы можете бесплатно расширить ограниченное число документов или присоединить оплачиваемый ресурс Cognitive Services. В этой статье вы узнаете, как подключить оплачиваемых ресурса Cognitive Services с помощью cognitive знаний и навыков для обогащения документов во время [индексирование поиска Azure](search-what-is-an-index.md).
 
 > [!NOTE]
-> При развертывании области путем увеличения частоты обработки, добавление большего количества документов или дополнительные алгоритмы ии, вам потребуется присоединить оплачиваемых ресурса Cognitive Services. Взимается Стандартная плата для вызова интерфейсов API в Cognitive Services, а также для извлечения образов как часть этапа открытие документов в службе поиска Azure. Вы не будете оплачивать извлечение текста из документов.
+> Выставление счетов включают вызовы API-интерфейсов Cognitive Services и image извлечения как часть этапа открытие документов в службе поиска Azure. Не взимается плата для извлечение текста из документов или навыков, которые не вызывая службы Cognitive Services.
 >
-> Выполнение встроенных навыков оплачивается по [Cognitive Services оплаты как то перейти цена](https://azure.microsoft.com/pricing/details/cognitive-services/). Сведения о ценах извлечения образа см. в разделе [странице с ценами на службу поиска Azure](https://go.microsoft.com/fwlink/?linkid=2042400).
+> Выполнение оплаты навыков происходит на [Cognitive Services оплаты как то перейти цена](https://azure.microsoft.com/pricing/details/cognitive-services/). Цены для извлечения изображения, см. в разделе [странице с ценами на службу поиска Azure](https://go.microsoft.com/fwlink/?linkid=2042400).
+
+## <a name="same-region-requirement"></a>Требование на том же регионе
+
+Мы требуют наличия службы поиска Azure и Azure Cognitive Services в одном регионе. В противном случае вы получите это сообщение во время выполнения: `"Provided key is not a valid CognitiveServices type key for the region of your search service."` Нет способа для перемещения службы в разных регионах. Если вы получаете эту ошибку, следует создать новую службу в одном регионе и повторно опубликовать индексов соответствующим образом.
 
 ## <a name="use-free-resources"></a>Использование бесплатных ресурсов
 
@@ -50,7 +52,7 @@ ms.locfileid: "65541714"
 
 ## <a name="use-billable-resources"></a>Использование ресурсов, которые подлежат оплате
 
-Для рабочих нагрузок, которые создают более чем 20 усовершенствования в день необходимо присоединить оплачиваемых ресурса Cognitive Services.
+Для рабочих нагрузок, которые создают более чем 20 усовершенствования в день убедитесь, что присоединение оплачиваемых ресурса Cognitive Services. Мы рекомендуем всегда присоединить оплачиваемых ресурса Cognitive Services, даже если вы никогда не требуется вызывать API-интерфейсы Cognitive Services. Подключение ресурса переопределяет ежедневного ограничения.
 
 Плата взимается только за навыки, которые вызывают API-интерфейсов Cognitive Services. Не взимается плата за [пользовательские методики](cognitive-search-create-custom-skill-example.md), или навыки, такие как [слияния текст](cognitive-search-skill-textmerger.md), [текст разделителя](cognitive-search-skill-textsplit.md), и [shaper](cognitive-search-skill-shaper.md), которой не на основе API.
 
@@ -60,7 +62,7 @@ ms.locfileid: "65541714"
 
    ![Создание ресурса Cognitive Services](./media/cognitive-search-attach-cognitive-services/cog-services-create.png "Создание ресурса Cognitive Services")
 
-1. В **расположение** выберите регион, где находится ваша служба поиска Azure. Необходимо использовать этот регион для повышения производительности. Также с помощью этой области аннулирует расходов исходящей пропускной способности между регионами.
+1. В **расположение** выберите регион, где находится ваша служба поиска Azure. Убедитесь в том, что использовать этот регион для повышения производительности. Также с помощью этой области аннулирует расходов исходящей пропускной способности между регионами.
 
 1. В **Ценовая** выберите **S0** для получения коллекции все в одном компонентам Cognitive Services, включая концепции и функций языка, которые поддерживают стандартные навыки, используемые службой поиска Azure.
 

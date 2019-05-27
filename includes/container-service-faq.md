@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 11/09/2018
 ms.author: danlep
 ms.openlocfilehash: f903828285b0d4fdc8fbd932fa7c85056e937481
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60510552"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66148845"
 ---
 # <a name="deprecated-container-service-frequently-asked-questions"></a>Часто задаваемые вопросы о службе контейнеров (не рекомендуется)
 
@@ -80,8 +80,8 @@ DNSnamePrefix.AzureRegion.cloudapp.azure.net
 ### <a name="how-do-i-tell-which-orchestrator-version-is-running-in-my-cluster"></a>Как узнать, какая версия оркестратора используется в кластере?
 
 * DC/OS: см. [документацию по Mesosphere](https://docs.mesosphere.com/1.7/usage/cli/command-reference/);
-* Docker Swarm: Запустите `docker version`
-* Kubernetes: Запустите `kubectl version`
+* Docker Swarm: Выполнить `docker version`
+* Kubernetes: Выполнить `kubectl version`
 
 ### <a name="how-do-i-upgrade-the-orchestrator-after-deployment"></a>Как обновить оркестратор после развертывания?
 
@@ -99,7 +99,7 @@ DNSnamePrefix.AzureRegion.cloudapp.azure.net
 
 4. На странице **Сводка** в разделе **Выходные данные** доступно несколько ссылок на кластеры. **SSHMaster0** предоставляет строку SSH-подключения к первому главному узлу в кластере службы контейнеров. 
 
-Как уже отмечалось, для поиска полного доменного имени главного узла можно также использовать средства Azure. Установите SSH-подключение к главному узлу, используя его полное доменное имя и имя пользователя, указанное при создании кластера. Например: 
+Как уже отмечалось, для поиска полного доменного имени главного узла можно также использовать средства Azure. Установите SSH-подключение к главному узлу, используя его полное доменное имя и имя пользователя, указанное при создании кластера. Например:
 
 ```bash
 ssh userName@masterFQDN –A –p 22 

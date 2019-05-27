@@ -5,19 +5,19 @@ ms.topic: include
 ms.date: 11/09/2018
 ms.author: jingwang
 ms.openlocfilehash: b8585b62b0728d1ba6e010e42b44840903c46833
-ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58500871"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66146910"
 ---
 ### <a name="azure-storage-linked-service"></a>Связанная служба хранилища Azure
 **Связанная служба хранилища Azure** позволяет связать учетную запись хранения Azure с фабрикой данных Azure с помощью **ключа учетной записи**, который предоставляет фабрике данных глобальный доступ к службе хранилища Azure. В таблице ниже приведено описание элементов JSON, которые относятся к связанной службе хранилища Azure.
 
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип |Свойству type необходимо задать значение **AzureStorage** |Yes |
-| connectionString |В свойстве connectionString указываются сведения, необходимые для подключения к службе хранилища Azure. |Yes |
+| type |Свойству type необходимо задать значение **AzureStorage** |Да |
+| connectionString |В свойстве connectionString указываются сведения, необходимые для подключения к службе хранилища Azure. |Да |
 
 В следующем разделе для действия просмотре или копировании ключа учетной записи для службы хранилища Azure: [Ключи доступа](../articles/storage/common/storage-account-manage.md#access-keys).
 
@@ -49,8 +49,8 @@ ms.locfileid: "58500871"
 
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип |Свойству type необходимо задать значение **AzureStorageSas** |Yes |
-| sasUri |Укажите URI подписанного URL-адреса к ресурсам хранилища Azure, например BLOB-объектам, контейнерам или таблицам.  |Yes |
+| type |Свойству type необходимо задать значение **AzureStorageSas** |Да |
+| sasUri |Укажите URI подписанного URL-адреса к ресурсам хранилища Azure, например BLOB-объектам, контейнерам или таблицам.  |Да |
 
 **Пример.**
 

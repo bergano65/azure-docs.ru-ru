@@ -47,10 +47,10 @@
       href: concepts-overview.md
     - name: Передача в облако и хранение
       items:
-        - name: Служба хранилища
+        - name: Хранилище
           href: storage-account-concept.md
           displayName: Storage side encryption
-        - name: API ресурсов
+        - name: Активы
           href: assets-concept.md
     - name: Кодирование
       items:

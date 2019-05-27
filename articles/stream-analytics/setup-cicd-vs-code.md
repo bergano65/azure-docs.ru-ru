@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 05/15/2019
-ms.openlocfilehash: 7fe46712d610d881c21653461d12e4f8efecb468
-ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
+ms.openlocfilehash: fa5a57afa379c6bbe027be80f400fc176800d289
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65827880"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66158505"
 ---
 # <a name="continuously-integrate-and-develop-with-stream-analytics-cicd-npm-package"></a>Непрерывная интеграция и разработка с помощью Stream Analytics Непрерывной интеграции и пакета npm
 В этой статье описывается использование пакета npm для Azure Stream Analytics Непрерывной интеграции и настройке непрерывной интеграции и процесса развертывания.
@@ -22,10 +22,14 @@ ms.locfileid: "65827880"
 
 Вы можете включить непрерывную интеграцию и развертывание для заданий Azure Stream Analytics, с помощью **asa-streamanalytics-cicd** пакета npm. Пакет npm предоставляет средства для формирования шаблонов Azure Resource Manager из [проектов Stream Analytics Visual Studio Code](quick-create-vs-code.md). Его можно использовать в Windows, macOS и Linux без установки Visual Studio Code.
 
-При наличии [пакет](https://www.npmjs.com/package/azure-streamanalytics-cicd), используйте следующую команду для вывода шаблонов Azure Resource Manager. Если **outputPath** не указан, шаблоны будут помещены в **развернуть** папку к проекту **bin** папки.
+При наличии [пакет](https://www.npmjs.com/package/azure-streamanalytics-cicd), используйте следующую команду для вывода шаблонов Azure Resource Manager. **ScriptPath** аргумент — это абсолютный путь к **asaql** файл в проекте. Убедитесь, что asaproj.json и JobConfig.json файлы находятся в той же папке с файлом сценария. Если **outputPath** не указан, шаблоны будут помещены в **развернуть** папку к проекту **bin** папки.
 
 ```powershell
-asa-cicd build -scriptPath <scriptFullPath> -outputPath <outputPath>
+azure-streamanalytics-cicd build -scriptPath <scriptFullPath> -outputPath <outputPath>
+```
+Пример (в macOS)
+```powershell
+azure-streamanalytics-cicd build -scriptPath "/Users/roger/projects/samplejob/script.asaql" 
 ```
 
 При успешном выполнении сборки проекта Stream Analytics Visual Studio Code, он создает следующие два файла шаблона Azure Resource Manager в разделе **bin / [Debug/Retail] / Deploy** папку: 
@@ -38,7 +42,7 @@ asa-cicd build -scriptPath <scriptFullPath> -outputPath <outputPath>
 
        [ProjectName].JobTemplate.parameters.json   
 
-Параметры по умолчанию в файле parameters.json на основе параметров в проекте Visual Studio. При необходимости развертывания в другой среде замените соответствующие параметры.
+Параметры по умолчанию в файле parameters.json, на основе параметров в проекте Visual Studio Code. При необходимости развертывания в другой среде замените соответствующие параметры.
 
 > [!NOTE]
 > Для всех учетных данных значения по умолчанию имеют значение NULL. Их **необходимо** установить перед развертыванием в облаке.

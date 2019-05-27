@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 12/03/2018
 ms.author: asnegi
 ms.custom: mvc, devcenter
-ms.openlocfilehash: b5e4ad30a65b25140cfb2c80dd15d8cd28fb827b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 9f760e7e693334475fb61ba9e5d44df019e78604
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60419226"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66147481"
 ---
 # <a name="mount-highly-available-service-fabric-reliable-disk-based-volume-in-a-service-fabric-mesh-application"></a>Подключение тома надежного диска высокой доступности Service Fabric в приложении "Сетка Azure Service Fabric" 
 Распространенный способ сохранения состояния в приложениях-контейнерах — использовать удаленное хранилище, такое как хранилище файлов Azure, или базу данных, такую как Azure Cosmos DB. Это влечет за собой значительную сетевую задержку при доступе к удаленному хранилищу для чтения и записи.
@@ -73,7 +73,7 @@ az group deployment show --name counter.sfreliablevolume.linux --resource-group 
 
 Когда приложение будет успешно развернуто, получите IP-адрес ресурса шлюза для него. Используйте имя шлюза, которое вы записали в разделе, приведенном выше.
 ```azurecli-interactive
-az mesh gateway show --resource-group myResourceGroup --gateway-name counterGateway
+az mesh gateway show --resource-group myResourceGroup --name counterGateway
 ```
 
 В выходных данных должно содержаться свойство `ipAddress`, которое является общедоступным IP-адресом для конечной точки службы. Откройте его в веб-браузере. Отобразится веб-страница со значением счетчика, которое обновляется каждую секунду.

@@ -1,5 +1,5 @@
 ---
-title: Изучение и Подготовка данных (класс набора данных)
+title: Изучение и преобразование данных (класс набора данных)
 titleSuffix: Azure Machine Learning service
 description: Просмотр данных с помощью сводные статистические данные и Подготовка данных с помощью очистки данных, преобразования и проектирование признаков
 services: machine-learning
@@ -10,17 +10,17 @@ ms.author: sihhu
 author: MayMSFT
 manager: cgronlun
 ms.reviewer: nibaccam
-ms.date: 05/02/19
-ms.openlocfilehash: 70712605cc97670b625d32052bb79b4a666e4281
-ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
+ms.date: 05/23/2019
+ms.openlocfilehash: e692b0dc1089804b1d68b79c1a6f438f30554602
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65603157"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66146295"
 ---
 # <a name="explore-and-prepare-data-with-the-dataset-class-preview"></a>Изучение и Подготовка данных с помощью класса набора данных (Предварительная версия)
 
-Узнайте, как изучение и Подготовка данных с помощью [пакета SDK для Azure Machine Learning](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py). [Набора данных](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset.dataset?view=azure-ml-py) класс (Предварительная версия) позволяет изучить и подготовить данные, предоставляя функции, такие как: выборки, сводные статистические данные и интеллектуальный преобразований. Действия преобразования сохраняются в [определения наборов данных](how-to-manage-dataset-definitions.md) возможность высокой степенью масштабируемости образом обрабатывать несколько больших файлов, разных схемах.
+Узнайте, как изучение и Подготовка данных с помощью пакета наборы данных машинного обучения Azure в [пакета SDK для Azure Machine Learning](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py). [Набора данных](https://docs.microsoft.com/python/api/azureml-core/azureml.core.dataset.dataset?view=azure-ml-py) класс (Предварительная версия) позволяет изучить и подготовить данные, предоставляя функции, такие как: выборки, сводные статистические данные и интеллектуальный преобразований. Действия преобразования сохраняются в [определения наборов данных](how-to-manage-dataset-definitions.md) возможность высокой степенью масштабируемости образом обрабатывать несколько больших файлов, разных схемах.
 
 > [!Important]
 > Некоторые классы наборов данных (Предварительная версия) имеют зависимости от [azureml dataprep](https://docs.microsoft.com/python/api/azureml-dataprep/?view=azure-ml-py) пакета (GA). Хотя функции преобразования можно сделать непосредственно с GA'ed [функции подготовки данных](how-to-transform-data.md), мы рекомендуем оболочки пакета набора данных, описанные в этой статье, при создании нового решения. Azure наборы данных обучения машины (Предварительная версия) позволяют не только преобразовывать данные, но также [данных моментального снимка](how-to-create-dataset-snapshots.md) и сохранить [определения наборов данных с версиями](how-to-manage-dataset-definitions.md). Наборы данных — следующая версия пакета SDK для подготовки данных, предлагая расширенными функциональными возможностями для управления наборами данных в решения искусственного Интеллекта.
@@ -33,7 +33,7 @@ ms.locfileid: "65603157"
 
 * Рабочая область службы машинного обучения Azure. См. в разделе [создать рабочую область службы машинного обучения Azure](https://docs.microsoft.com/azure/machine-learning/service/setup-create-workspace).
 
-* Azure Machine Learning SDK для Python (версию 1.0.21 или более поздней версии). Для установки или обновления до последней версии пакета SDK, см. в разделе [установить или обновить пакет SDK](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py).
+* Azure Machine Learning SDK для Python (версию 1.0.21 или более поздней версии), который включает пакет наборы данных машинного обучения Azure. Для установки или обновления до последней версии пакета SDK, см. в разделе [установить или обновить пакет SDK](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py).
 
 * Подготовка данных Azure Machine Learning SDK. Для установки или обновления до последней версии, см. в разделе [установить или обновить пакет SDK для подготовки данных](https://docs.microsoft.com/python/api/overview/azure/dataprep/intro?view=azure-dataprep-py#install).
 

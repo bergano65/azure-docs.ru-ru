@@ -9,11 +9,11 @@ ms.date: 02/07/2019
 ms.topic: conceptual
 manager: philmea
 ms.openlocfilehash: 9e5d842cece316bc9c53e1e8583f40a0f222b91d
-ms.sourcegitcommit: 7f7c2fe58c6cd3ba4fd2280e79dfa4f235c55ac8
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/25/2019
-ms.locfileid: "56809400"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66151963"
 ---
 # <a name="manage-iot-central-from-azure-cli"></a>Управление из командной строки Azure IoT Central
 
@@ -31,7 +31,7 @@ ms.locfileid: "56809400"
 
 ## <a name="create-an-application"></a>Создание приложения
 
-Используйте [создать приложение iotcentral az](/cli/azure/iotcentral/app#az-iotcentral-app-create) команду, чтобы создать приложение центра Интернета вещей в подписке Azure. Например: 
+Используйте [создать приложение iotcentral az](/cli/azure/iotcentral/app#az-iotcentral-app-create) команду, чтобы создать приложение центра Интернета вещей в подписке Azure. Например:
 
 ```azurecli-interactive
 # Create a resource group for the IoT Central application
@@ -50,7 +50,7 @@ az iotcentral app create \
 
 Эти команды, сначала создайте группу ресурсов в восточной части США для приложения. В следующей таблице описаны параметры, используемые в **создать приложение iotcentral az** команды:
 
-| Параметр         | ОПИСАНИЕ |
+| Параметр         | Описание |
 | ----------------- | ----------- |
 | resource-group    | Группа ресурсов, в которой содержится приложение. В подписке уже должна существовать эта группа ресурсов. |
 | location          | По умолчанию эта команда использует расположение, из группы ресурсов. Сейчас можно создавать приложение IoT Central в регионах **восточной части США**, **западной части США**, **Северной Европы** или **Западной Европы**. |
@@ -58,11 +58,11 @@ az iotcentral app create \
 | поддомен         | Поддомен в URL-адресе приложения. В примере URL-адрес приложения — https://mysubdomain.azureiotcentral.com. |
 | sku               | В настоящее время единственное значение — **S1** (уровень "Стандартный"). Ознакомьтесь с разделом [Цены на Azure IoT Central](https://azure.microsoft.com/pricing/details/iot-central/). |
 | шаблон          | Шаблон приложения для использования. Дополнительные сведения приведены в таблице ниже. |
-| отображаемое имя      | Имя приложения, отображаемое на пользовательском интерфейсе. |
+| display-name      | Имя приложения, отображаемое на пользовательском интерфейсе. |
 
 **Шаблоны приложения**
 
-| Имя шаблона            | ОПИСАНИЕ |
+| Имя шаблона            | Описание |
 | ------------------------ | ----------- |
 | iotc-default@1.0.0       | Создает пустое приложение, в которое необходимо добавить собственные шаблоны устройств и сами устройства. |
 | iotc-demo@1.0.0          | Создает приложение, содержащее шаблон устройства, созданный для охлаждаемого торгового автомата. Используйте этот шаблон, чтобы приступить к работе в Azure IoT Central. |
@@ -84,7 +84,7 @@ az iotcentral app update --name myiotcentralapp \
 
 ## <a name="remove-an-application"></a>Удаление приложения
 
-Используйте [az iotcentral app delete](/cli/azure/iotcentral/app#az-iotcentral-app-delete) команду, чтобы удалить приложение IoT Central. Например: 
+Используйте [az iotcentral app delete](/cli/azure/iotcentral/app#az-iotcentral-app-delete) команду, чтобы удалить приложение IoT Central. Например:
 
 ```azurecli-interactive
 az iotcentral app delete --name myiotcentralapp \

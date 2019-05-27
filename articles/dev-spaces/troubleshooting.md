@@ -9,12 +9,12 @@ ms.date: 09/11/2018
 ms.topic: conceptual
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: 'Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s '
-ms.openlocfilehash: d5b08a22aa3896fb7158ef3535b115e3e0189142
-ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
-ms.translationtype: MT
+ms.openlocfilehash: 39ef23d04dc1cf1b48297ecf8f0accfef4935cd2
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65596984"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66158943"
 ---
 # <a name="troubleshooting-guide"></a>Руководство по устранению неполадок
 
@@ -374,7 +374,7 @@ azds controller create --name <cluster name> -g <resource group name> -tn <clust
 Доступ к контроллеру пробелы разработки Azure пользователь должен иметь доступ на чтение администратор *kubeconfig* в кластере AKS. Например, это разрешение доступно в [встроенные Azure роль администратора кластера Kubernetes службы](../aks/control-kubeconfig-access.md#available-cluster-roles-permissions). Пользователь, доступ к контроллеру пробелы разработки Azure должен также иметь *участник* или *владельца* роли RBAC для контроллера.
 
 ### <a name="try"></a>Попытка
-Дополнительные сведения об изменении разрешений пользователя для кластера AKS доступны [здесь](../aks/control-kubeconfig-access.md#assign-role-permissions-to-a-user).
+Дополнительные сведения об изменении разрешений пользователя для кластера AKS доступны [здесь](../aks/control-kubeconfig-access.md#assign-role-permissions-to-a-user-or-group).
 
 Обновление пользователя роли RBAC для контроллера:
 

@@ -16,11 +16,11 @@ ms.date: 05/03/2018
 ms.author: mathoma
 ms.reviewer: jroth
 ms.openlocfilehash: 99439c2b6bd4fdd271dda7a49850c5b6f44330b3
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55984721"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66165594"
 ---
 # <a name="automated-backup-for-sql-server-2014-virtual-machines-resource-manager"></a>Автоматическая архивация для виртуальных машин SQL Server 2014 (Resource Manager)
 
@@ -32,7 +32,7 @@ ms.locfileid: "55984721"
 
 [!INCLUDE [learn-about-deployment-models](../../../../includes/learn-about-deployment-models-rm-include.md)]
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 Для использования автоматической архивации необходимо выполнить следующие предварительные требования.
 
 **Операционная система**
@@ -61,7 +61,7 @@ ms.locfileid: "55984721"
 
 В приведенной ниже таблице описаны параметры настройки автоматической архивации. Фактическая процедура настройки может варьироваться в зависимости от того, используете вы портал Azure или команды Azure Windows PowerShell.
 
-| Параметр | Диапазон (по умолчанию) | ОПИСАНИЕ |
+| Параметр | Диапазон (по умолчанию) | Описание |
 | --- | --- | --- |
 | **Автоматическая архивация** | Включено/отключено (отключено) | Включает или отключает автоматическую архивацию для виртуальной машины Azure под управлением SQL Server 2014 Standard или Enterprise. |
 | **Срок хранения** | 1–30 дней (30 дней) | Число дней хранения резервной копии. |
@@ -279,7 +279,7 @@ Set-AzVMSqlServerExtension -AutoBackupSettings $autobackupconfig `
 1. [Настройте почту агента SQL Server для использования компонента Database Mail](https://docs.microsoft.com/sql/relational-databases/database-mail/configure-sql-server-agent-mail-to-use-database-mail).
 1. Убедитесь, что SMTP-порт открыт в локальном брандмауэре виртуальных машин и группе безопасности сети виртуальной машины.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Автоматическая архивация настраивает управляемое резервное копирование на виртуальных машинах Azure. Поэтому очень важно [изучить документацию по управляемому резервному копированию в SQL Server 2014](https://msdn.microsoft.com/library/dn449497(v=sql.120).aspx).
 

@@ -3,8 +3,8 @@ title: Устаревшие SKU VPN-шлюзов виртуальной сети
 description: 'Как работать со старыми номерами SKU шлюзов виртуальной сети: Basic, Standard и HighPerformance.'
 services: vpn-gateway
 documentationcenter: na
-author: cherylmc
-manager: jpconnock
+author: WenJason
+manager: digimobile
 editor: ''
 tags: azure-resource-manager,azure-service-management
 ms.assetid: ''
@@ -13,14 +13,15 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 03/20/2018
-ms.author: cherylmc
+origin.date: 03/20/2018
+ms.date: 03/04/2019
+ms.author: v-jay
 ms.openlocfilehash: 5a9e3f63a484069bf8cd39f8a545d7c37f05c63c
-ms.sourcegitcommit: 79038221c1d2172c0677e25a1e479e04f470c567
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/19/2019
-ms.locfileid: "56417318"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66159207"
 ---
 # <a name="working-with-virtual-network-gateway-skus-legacy-skus"></a>Работа со SKU шлюза виртуальной сети (старые версии SKU)
 
@@ -62,8 +63,10 @@ Resize-AzVirtualNetworkGateway -VirtualNetworkGateway $gw -GatewaySku HighPerfor
 
 [!INCLUDE [Change to the new SKUs](../../includes/vpn-gateway-gwsku-change-legacy-sku-include.md)]
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения о новых версиях SKU шлюзов см. в разделе [SKU шлюзов](vpn-gateway-about-vpngateways.md#gwsku).
 
 Дополнительные сведения о параметрах конфигурации VPN-шлюза см. в [этой статье](vpn-gateway-about-vpn-gateway-settings.md).
+
+<!--Update_Description: wording update-->

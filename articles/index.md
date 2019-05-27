@@ -6,12 +6,12 @@ description: Узнайте, как создавать мощные прилож
 ms.topic: hub-page
 featureFlags:
 - clicktale
-ms.openlocfilehash: b36302e349327354e31ef4ea5adb9842d04ed4f1
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: c1c33cab46082d1d3b748b45b40a7928801b2e55
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65149333"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66151259"
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -96,7 +96,7 @@ ms.locfileid: "65149333"
                                                 <ul class="noBullet">
                                                     <li><a class="barLink" href="/azure/virtual-machines/linux/">Виртуальные машины Linux</a></li>
                                                     <li><a class="barLink" href="/azure/virtual-machines/windows/">Виртуальные машины Windows</a></li>
-                                                    <li><a class="barLink" href="/azure/governance/blueprints/">Azure Blueprint</a></li>
+                                                    <li><a class="barLink" href="/azure/governance/blueprints/">Azure Blueprints</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -179,7 +179,7 @@ Go</a>
                                                     <li><a class="barLink" href="/azure/azure-functions/">Бессерверные функции</a></li>
                                                     <li><a class="barLink" href="/azure/containers/">Контейнеры</a></li>
                                                     <li><a class="barLink" href="/azure/aks/">Микрослужбы с Kubernetes</a></li>
-                                                    <li><a class="barLink" href="/azure/service-fabric/">Микрослужбы в Service Fabric</a></li>
+                                                    <li><a class="barLink" href="/azure/service-fabric/">Микрослужбы c Service Fabric</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -212,7 +212,7 @@ Go</a>
                                                 <ul class="noBullet">
                                                     <li><a class="barLink" href="/azure/machine-learning/">Машинное обучение</a></li>
                                                     <li><a class="barLink" href="/azure/cognitive-services/">Cognitive Services</a></li>
-                                                    <li><a class="barLink" href="/azure/notebooks/">Azure Notebooks</a>;</li>
+                                                    <li><a class="barLink" href="/azure/notebooks/">Записные книжки Azure</a></li>
                                                 </ul>
                                             </div>
                                         </div>
@@ -448,7 +448,7 @@ Azure DevOps Projects </a>
                                         <li>
                                             <a href="/azure/sql-database/">
                                                 <img src="media/index/SQLDatabase.svg" alt="" />
-                                                <p>Базы данных SQL Azure</p>
+                                                <p>База данных SQL Azure</p>
                                             </a>
                                         </li>
                                         <li>
@@ -472,13 +472,13 @@ Azure DevOps Projects </a>
                                         <li>
                                             <a href="/azure/data-explorer">
                                                 <img src="media/index/azure_data_explorer.svg" alt="" />
-                                                <p>Обозреватель данных Azure</p>
+                                                <p>Azure Data Explorer</p>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="/azure/azure-cache-for-redis/">
                                                 <img src="media/index/RedisCache.svg" alt="" />
-                                                <p>Кэш Azure для Redis</p>
+                                                <p>Кэш Redis для Azure</p>
                                             </a>
                                         </li>
                                         <li>
@@ -571,7 +571,7 @@ Azure DevOps Projects </a>
                                         <li>
                                             <a href="/azure/dev-spaces/">
                                                 <img src="media/index/AzureDevSpaceController_50x.svg" alt=""/>
-                                                <p>Рабочие среды Azure для разработчиков</p>
+                                                <p>Azure Dev Spaces</p>
                                         </li>
                                     </ul>
                                     <h3>Интеграция</h3>
@@ -601,7 +601,7 @@ Azure DevOps Projects </a>
                                             </a>
                                         </li>
                                     </ul>
-                                    <h3>Служба мультимедиа</h3>
+                                    <h3>Службы мультимедиа</h3>
                                     <ul>
                                         <li>
                                             <a href="/azure/media-services/">
@@ -630,7 +630,7 @@ Azure DevOps Projects </a>
                                         <li>
                                             <a href="/azure/media-services/media-services-content-protection-overview">
                                                 <img src="media/index/media-protection.svg" alt="" />
-                                                <p>Система защиты содержимого</p>
+                                                <p>Защита содержимого</p>
                                             </a>
                                         </li>
                                         <li>
@@ -649,6 +649,12 @@ Azure DevOps Projects </a>
                                     <h3>Azure Stack</h3>
                                     <ul>
                                         <li>
+                                            <a href="/azure-stack">
+                                                <img src="media/index/azure-stack.svg" alt="" />
+                                                <p>Azure Stack</p>
+                                            </a>
+                                        </li>
+                                        <li>
                                             <a href="/azure/azure-stack/">
                                                 <img src="media/index/azure-stack.svg" alt="" />
                                                 <p>Оператор Azure Stack</p>
@@ -658,6 +664,11 @@ Azure DevOps Projects </a>
                                             <a href="/azure/azure-stack/user">
                                                 <img src="media/index/azure-stack.svg" alt="" />
                                                 <p>Пользователь Azure Stack</p>
+                                            </a>
+                                        </li>                                        <li>
+                                            <a href="/azure-stack/asdk/">
+                                                <img src="media/index/azure-stack.svg" alt="" />
+                                                <p>Пакет средств разработки Azure Stack (ASDK)</p>
                                             </a>
                                         </li>
                                     </ul>
@@ -788,7 +799,7 @@ Azure DevOps Projects </a>
                                         <li>
                                             <a href="/azure/machine-learning/service">
                                                 <img src="media/index/MachineLearning.svg" alt="" />
-                                                <p>Службы машинного обучения</p>
+                                                <p>Служба машинного обучения</p>
                                             </a>
                                         </li>
                                         <li>
@@ -806,7 +817,7 @@ Azure DevOps Projects </a>
                                         <li>
                                             <a href="/azure/notebooks">
                                                 <img src="media/index/notebooks.svg" alt="" />
-                                                <p>Azure Notebook</p>
+                                                <p>Записные книжки Azure</p>
                                             </a>
                                         </li>                                        <li>
                                             <a href="/azure/search/">
@@ -817,7 +828,7 @@ Azure DevOps Projects </a>
                                         <li>
                                             <a href="/azure/cognitive-services/computer-vision/">
                                                 <img src="media/index/API_Computer_Vision.svg" alt="" />
-                                                <p>API компьютерного зрения</p>
+                                                <p>API Компьютерного зрения</p>
                                             </a>
                                         </li>
                                         <li>
@@ -829,19 +840,19 @@ Azure DevOps Projects </a>
                                         <li>
                                             <a href="/azure/cognitive-services/Custom-Vision-Service/home">
                                                 <img src="media/index/API_Custom_Vision.svg" alt="" />
-                                                <p>Пользовательская служба визуального распознавания</p>
+                                                <p>Служба "Пользовательское визуальное распознавание"</p>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="/azure/cognitive-services/emotion/home">
                                                 <img src="media/index/API_Emotion.svg" alt="" />
-                                                <p>API распознавания эмоций</p>
+                                                <p>API Распознавания эмоций</p>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="/azure/cognitive-services/face/">
                                                 <img src="media/index/API_Face.svg" alt="" />
-                                                <p>API распознавания лиц</p>
+                                                <p>API Распознавания лиц</p>
                                             </a>
                                         </li>
                                         <li>
@@ -853,7 +864,7 @@ Azure DevOps Projects </a>
                                         <li>
                                             <a href="/azure/cognitive-services/speech-service/overview">
                                                 <img src="media/index/API_Speech_Service.svg" alt="" />
-                                                <p>Служба распознавания речи</p>
+                                                <p>Служба "Речь"</p>
                                             </a>
                                         </li>
                                         <li>
@@ -871,19 +882,19 @@ Azure DevOps Projects </a>
                                         <li>
                                             <a href="/azure/cognitive-services/speaker-recognition/home">
                                                 <img src="media/index/API_Speaker_Recognition.svg" alt="" />
-                                                <p>API распознавания говорящего</p>
+                                                <p>API Распознавания говорящего</p>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="/azure/cognitive-services/translator-speech/">
                                                 <img src="media/index/API_TranslatorSpeech.svg" alt="" />
-                                                <p>API перевода речи</p>
+                                                <p>API Перевода речи</p>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="/azure/cognitive-services/bing-spell-check/">
                                                 <img src="media/index/API_Bing_Spell_Check.svg" alt="" />
-                                                <p>API проверки орфографии Bing</p>
+                                                <p>API Проверки орфографии Bing</p>
                                             </a>
                                         </li>
                                         <li>
@@ -895,43 +906,43 @@ Azure DevOps Projects </a>
                                         <li>
                                             <a href="/azure/cognitive-services/linguisticanalysisapi/home">
                                                 <img src="media/index/API_LinguisticAnalysis.svg" alt="" />
-                                                <p>API лингвистического анализа</p>
+                                                <p>API Лингвистического анализа</p>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="/azure/cognitive-services/text-analytics/">
                                                 <img src="media/index/API_TextAnalytics.svg" alt="" />
-                                                <p>API анализа текста</p>
+                                                <p>API Анализа текста</p>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="/azure/cognitive-services/translator/">
                                                 <img src="media/index/API_TranslatorText.svg" alt="" />
-                                                <p>API перевода текстов</p>
+                                                <p>API Перевода текстов</p>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="/azure/cognitive-services/web-language-model/home">
                                                 <img src="media/index/API_WebLanguageModel.svg" alt="" />
-                                                <p>API веб-модели языка</p>
+                                                <p>API Языковой модели на основе веб-содержимого</p>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="/azure/cognitive-services/custom-decision-service/custom-decision-service-overview">
                                                 <img src="media/index/API_Custom_Decision_Service.svg" alt="" />
-                                                <p>Пользовательская служба принятия решений</p>
+                                                <p>Служба Custom Decision</p>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="/azure/cognitive-services/qnamaker/home">
                                                 <img src="media/index/API_QnAMaker.svg" alt="" />
-                                                <p>API службы QnA Maker</p>
+                                                <p>API QnA Maker</p>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="/azure/cognitive-services/recommendations/overview">
                                                 <img src="media/index/API_Recommendations.svg" alt="" />
-                                                <p>API рекомендаций</p>
+                                                <p>API Рекомендаций</p>
                                             </a>
                                         </li>
                                         <li>
@@ -943,19 +954,19 @@ Azure DevOps Projects </a>
                                         <li>
                                             <a href="/azure/cognitive-services/academic-knowledge/home">
                                                 <img src="media/index/API_Know_Academic.svg" alt="" />
-                                                <p>Academic Knowledge API</p>
+                                                <p>API Academic Knowledge</p>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="/azure/cognitive-services/entitylinking/home">
                                                 <img src="media/index/API_Entity_LinkingIntelligence.svg" alt="" />
-                                                <p>API аналитической службы связывания сущностей</p>
+                                                <p>API Аналитической службы связывания сущностей</p>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="/azure/cognitive-services/labs/url-preview/overview">
                                                 <img src="media/index/API_URL_Preview.svg" alt="" />
-                                                <p>Предварительная версия URL-адреса</p>
+                                                <p>URL Preview</p>
                                             </a>
                                         </li>
                                         <li>
@@ -973,61 +984,61 @@ Azure DevOps Projects </a>
                                         <li>
                                             <a href="/azure/cognitive-services/labs/conversation-learner/overview">
                                                 <img src="media/index/API_Conversation_Learner.svg" alt="" />
-                                                <p>Средство для обучения ведению диалога</p>
+                                                <p>Conversation Learner</p>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="/azure/cognitive-services/bing-news-search/">
                                                 <img src="media/index/API_Bing_News_Search.svg" alt="" />
-                                                <p>API Bing для поиска новостей</p>
+                                                <p>API Поиска новостей Bing</p>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="/azure/cognitive-services/Bing-Video-Search/">
                                                 <img src="media/index/API_Bing_Video_Search.svg" alt="" />
-                                                <p>API Bing для поиска видео</p>
+                                                <p>API Поиска видео Bing</p>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="/azure/cognitive-services/bing-web-search/">
                                                 <img src="media/index/API_Bing_Web_Search.svg" alt="" />
-                                                <p>API Bing для поиска в Интернете</p>
+                                                <p>API Поиска в Интернете Bing</p>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="/azure/cognitive-services/bing-visual-search/">
                                                 <img src="media/index/API_Bing_Visual_Search.svg" alt="" />
-                                                <p>API Bing Visual Search</p>
+                                                <p>API Визуального поиска Bing</p>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="/azure/cognitive-services/Bing-Autosuggest/">
                                                 <img src="media/index/API_Bing_AutoSuggest.svg" alt="" />
-                                                <p>API автозаполнения Bing</p>
+                                                <p>API Автозаполнения Bing</p>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="/azure/cognitive-services/bing-custom-search/">
                                                 <img src="media/index/API_Bing_Custom_Search.svg" alt="" />
-                                                <p>API пользовательского поиска Bing</p>
+                                                <p>API Пользовательского поиска Bing</p>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="/azure/cognitive-services/bing-entities-search/">
                                                 <img src="media/index/API_Bing_Entity_Search.svg" alt="" />
-                                                <p>API Bing для поиска сущностей</p>
+                                                <p>API Поиска сущностей Bing</p>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="/azure/cognitive-services/bing-image-search/">
                                                 <img src="media/index/API_Bing_Image_Search.svg" alt="" />
-                                                <p>API Bing для поиска изображений</p>
+                                                <p>API Поиска изображений Bing</p>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="/azure/open-datasets">
                                                 <img src="media/index/open-data.svg" alt="" />
-                                                <p>Open Datasets</p>
+                                                <p>Открытые наборы данных</p>
                                             </a>
                                         </li>
                                     </ul>
@@ -1077,12 +1088,12 @@ Azure DevOps Projects </a>
                             </li>
                             <li>
                                 <div class="group">
-                                    <h3>Хранилище</h3>
+                                    <h3>Служба хранилища</h3>
                                     <ul>
                                         <li>
                                             <a href="/azure/storage/">
                                                 <img src="media/index/Storage.svg" alt="" />
-                                                <p>Хранилище</p>
+                                                <p>Служба хранилища</p>
                                             </a>
                                         </li>
                                         <li>
@@ -1094,13 +1105,13 @@ Azure DevOps Projects </a>
                                         <li>
                                             <a href="/azure/storage/blobs/data-lake-storage-introduction">
                                                 <img src="media/index/Azure-Data-Lake-Store-COLOR.svg" alt="" />
-                                                <p>Data Lake Storage Gen2</p>
+                                                <p>Data Lake Storage 2-го поколения</p>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="/azure/data-lake-store/">
                                                 <img src="media/index/Azure-Data-Lake-Store-COLOR.svg" alt="" />
-                                                <p>Data Lake Storage Gen1</p>
+                                                <p>Data Lake Storage 1-го поколения</p>
                                             </a>
                                         </li>
                                         <li>
@@ -1148,7 +1159,7 @@ Azure DevOps Projects </a>
                                         <li>
                                             <a href="/azure/vs-azure-tools-storage-manage-with-storage-explorer?tabs=windows">
                                                 <img src="media/index/storage.svg" alt="" />
-                                                <p>Обозреватель хранилищ</p>
+                                                <p>Обозреватель службы хранилища</p>
                                             </a>
                                         </li>
                                         <li>
@@ -1193,7 +1204,7 @@ Azure DevOps Projects </a>
                                         <li>
                                             <a href="/azure/data-explorer/">
                                                 <img src="media/index/azure_data_explorer.svg" alt="" />
-                                                <p>Обозреватель данных Azure</p>
+                                                <p>Azure Data Explorer</p>
                                             </a>
                                         </li>
                                         <li>
@@ -1211,7 +1222,7 @@ Azure DevOps Projects </a>
                                         <li>
                                             <a href="/azure/event-hubs/">
                                                 <img src="media/index/eventhubs.svg" alt="" />
-                                                <p>Центры событий;</p>
+                                                <p>Центры событий</p>
                                             </a>
                                         </li>
                                         <li>
@@ -1259,18 +1270,18 @@ Azure DevOps Projects </a>
                                         <li>
                                             <a href="/azure/storage/blobs/data-lake-storage-introduction">
                                                 <img src="media/index/Azure-Data-Lake-Store-COLOR.svg" alt="" />
-                                                <p>Data Lake Storage Gen2</p>
+                                                <p>Data Lake Storage 2-го поколения</p>
                                             </a>
                                             <li>
                                             <a href="/azure/data-lake-store/">
                                                 <img src="media/index/Azure-Data-Lake-Store-COLOR.svg" alt="" />
-                                                <p>Data Lake Storage Gen1</p>
+                                                <p>Data Lake Storage 1-го поколения</p>
                                             </a>
                                         </li>
                                         <li>
                                         <a href="/azure/open-datasets">
                                             <img src="media/index/open-data.svg" alt="" />
-                                            <p>Open Datasets</p>
+                                            <p>Открытые наборы данных</p>
                                         </a>
                                         </li>
                                     </ul>
@@ -1336,7 +1347,7 @@ Azure DevOps Projects </a>
                                         <li>
                                             <a href="https://code.visualstudio.com/docs">
                                                 <img src="https://docs.microsoft.com/media/logos/logo_vs-code.svg" alt="" />
-                                                <p>Visual Studio Code.</p>
+                                                <p>Visual Studio Code</p>
                                             </a>
                                         </li>
                                         <li>
@@ -1369,7 +1380,7 @@ Azure DevOps Projects </a>
                                         <li>
                                             <a href="/azure/iot-fundamentals">
                                                 <img src="media/index/IoTHub.svg" alt="" />
-                                                <p>Интернет вещей Azure</p>
+                                                <p>Azure IoT</p>
                                             </a>
                                         </li>
                                         <li>
@@ -1411,13 +1422,13 @@ Azure DevOps Projects </a>
                                         <li>
                                             <a href="/azure/time-series-insights/">
                                                 <img src="media/index/time-series-insights.svg" alt="" />
-                                                <p>Аналитика временных рядов Azure</p>
+                                                <p>Аналитика временных рядов</p>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="/azure/azure-maps/">
                                                 <img src="media/index/azure-maps-icon-portal.svg" alt="" />
-                                                <p>Карты Azure</p>
+                                                <p>Azure Maps</p>
                                             </a>
                                         </li>
                                         <li>
@@ -1441,7 +1452,7 @@ Azure DevOps Projects </a>
                                         <li>
                                             <a href="/azure/machine-learning/service">
                                                 <img src="media/index/MachineLearning.svg" alt="" />
-                                                <p>Службы машинного обучения</p>
+                                                <p>Служба машинного обучения</p>
                                             </a>
                                         </li>
                                         <li>
@@ -1489,7 +1500,7 @@ Azure DevOps Projects </a>
                                     </ul>
                                 </div>
                                 <div class="group">
-                                    <h3>Web</h3>
+                                    <h3>Поиск в Интернете</h3>
                                     <ul>
                                         <li>
                                             <a href="/azure/app-service-web/">
@@ -1563,7 +1574,7 @@ Azure DevOps Projects </a>
                                         <li>
                                             <a href="/azure/azure-maps/">
                                                 <img src="media/index/azure-maps-icon-portal.svg" alt="" />
-                                                <p>Карты Azure</p>
+                                                <p>Azure Maps</p>
                                             </a>
                                         </li>
                                         <li>
@@ -1608,7 +1619,7 @@ Azure DevOps Projects </a>
                                         <li>
                                             <a href="/azure/security/azure-threat-detection">
                                                 <img src="media/index/SecurityCenter.svg" alt="" />
-                                                <p>Azure Advanced Threat Protection</p>
+                                                <p>Расширенная защита от угроз Azure</p>
                                             </a>
                                         </li>
                                         <li>
@@ -1626,7 +1637,7 @@ Azure DevOps Projects </a>
                                         <li>
                                             <a href="/azure/active-directory-domain-services">
                                                 <img src="media/index/ActiveDirectory.svg" alt="" />
-                                                <p>Доменные службы Azure Active Directory</p>
+                                                <p>Azure Active Directory для доменных служб</p>
                                             </a>
                                         </li>
                                         <li>
@@ -1644,7 +1655,7 @@ Azure DevOps Projects </a>
                                         <li>
                                             <a href="/azure/role-based-access-control/">
                                                 <img src="media/index/PersonWithFriend.svg" alt="" />
-                                                <p>Контроль доступа на основе ролей</p>
+                                                <p>Управление доступом на основе ролей</p>
                                             </a>
                                         </li>
                                         <li>
@@ -1683,7 +1694,7 @@ Azure DevOps Projects </a>
                                         <li>
                                             <a href="/azure/active-directory-domain-services">
                                                 <img src="media/index/ActiveDirectory.svg" alt="" />
-                                                <p>Доменные службы Azure Active Directory</p>
+                                                <p>Azure Active Directory для доменных служб</p>
                                             </a>
                                         </li>
                                         <li>
@@ -1806,7 +1817,7 @@ Azure DevOps Projects </a>
                                         <li>
                                             <a href="/azure/governance/blueprints/">
                                                 <img src="media/index/blueprints.svg" alt="" />
-                                                <p>Azure Blueprint</p>
+                                                <p>Azure Blueprints</p>
                                             </a>
                                         </li>
                                         <li>
@@ -2225,7 +2236,7 @@ Azure DevOps Projects </a>
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Виртуальная сеть</h3>
-                                                    <p>Выполняйте подготовку частных сетей с подключением к локальным центрам обработки данных.</p>
+                                                    <p>Выполнение подготовки частных сетей с подключением к локальным центрам обработки данных</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -2244,7 +2255,7 @@ Azure DevOps Projects </a>
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Диспетчер трафика</h3>
-                                                    <p>Выполняйте маршрутизацию входящего трафика для обеспечения высокой производительности и доступности.</p>
+                                                    <p>Маршрутизация входящего трафика для обеспечения высокой производительности и доступности</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -2263,7 +2274,7 @@ Azure DevOps Projects </a>
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Load Balancer</h3>
-                                                    <p>Обеспечивайте высокий уровень доступности и производительности ваших приложений в сети.</p>
+                                                    <p>Обеспечение высокого уровня доступности и производительности ваших приложений в сети</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -2282,7 +2293,7 @@ Azure DevOps Projects </a>
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>VPN-шлюз</h3>
-                                                    <p>Установите надежное подключение между организациями.</p>
+                                                    <p>Установка надежного подключения между организациями</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -2320,7 +2331,7 @@ Azure DevOps Projects </a>
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Защита от атак DDoS Azure</h3>
-                                                    <p>Защита приложения от распределенных атак типа "отказ в обслуживании" (DDoS).</p>
+                                                    <p>Защита приложения от распределенных атак типа "отказ в обслуживании" (DDoS)</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -2420,7 +2431,7 @@ Azure DevOps Projects </a>
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Служба хранилища</h3>
-                                                    <p>Надежное облачное хранилище с высоким уровнем доступности и широким масштабированием.</p>
+                                                    <p>Надежное облачное хранилище с высоким уровнем доступности и широким масштабированием</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -2457,7 +2468,7 @@ Azure DevOps Projects </a>
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Data Lake Storage Gen2</h3>
+                                                    <h3>Data Lake Storage 2-го поколения</h3>
                                                     <p>Надежное хранилище Data Lake Storage с высокой степенью масштабируемости, созданное на основе хранилища BLOB-объектов</p>
                                                 </div>
                                             </div>
@@ -2476,8 +2487,8 @@ Azure DevOps Projects </a>
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Data Lake Storage Gen1</h3>
-                                                    <p>Гипермасштабируемый репозиторий для рабочих нагрузок аналитической обработки больших данных.</p>
+                                                    <h3>Data Lake Storage 1-го поколения</h3>
+                                                    <p>Гипермасштабируемый репозиторий для рабочих нагрузок аналитической обработки больших данных</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -2628,7 +2639,7 @@ Azure DevOps Projects </a>
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Обозреватель хранилищ</h3>
+                                                    <h3>Обозреватель службы хранилища</h3>
                                                     <p>Легко управляйте хранилищем в любой точке мира с помощью Windows, macOS или Linux</p>
                                                 </div>
                                             </div>
@@ -2904,7 +2915,7 @@ Azure DevOps Projects </a>
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Карты Azure</h3>
+                                                    <h3>Azure Maps</h3>
                                                     <p>Простые и надежные API местоположения, обеспечивающие геопространственный контекст для данных</p>
                                                 </div>
                                             </div>
@@ -2924,7 +2935,7 @@ Azure DevOps Projects </a>
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Xamarin</h3>
-                                                    <p>Создавайте удивительные мобильные приложения на облачной платформе быстрее.</p>
+                                                    <p>Создание удивительных мобильных приложений на облачной платформе быстрее</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -3062,7 +3073,7 @@ Azure DevOps Projects </a>
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Веб-приложение для контейнеров</h3>
-                                                    <p>Простое развертывание и запуск контейнерных веб-приложений, соответствующих масштабу вашей организации.</p>
+                                                    <p>Простое развертывание и запуск контейнерных веб-приложений, соответствующих масштабу вашей организации</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -3080,7 +3091,7 @@ Azure DevOps Projects </a>
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Рабочие среды Azure для разработчиков</h3>
+                                                    <h3>Azure Dev Spaces</h3>
                                                     <p>Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб</p>
                                                 </div>
                                             </div>
@@ -3123,7 +3134,7 @@ Azure DevOps Projects </a>
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Базы данных SQL Azure</h3>
+                                                    <h3>База данных SQL Azure</h3>
                                                     <p>Управляемая реляционная База данных SQL как услуга</p>
                                                 </div>
                                             </div>
@@ -3199,7 +3210,7 @@ Azure DevOps Projects </a>
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Обозреватель данных Azure</h3>
+                                                    <h3>Azure Data Explorer</h3>
                                                     <p>Быстрая и высокомасштабируемая служба для изучения данных журналов и телеметрии</p>
                                                 </div>
                                             </div>
@@ -3218,7 +3229,7 @@ Azure DevOps Projects </a>
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Кэш Azure для Redis</h3>
+                                                    <h3>Кэш Redis для Azure</h3>
                                                     <p>Расширение возможностей приложений за счет доступа к данным с высокой пропускной способностью и малой задержкой</p>
                                                 </div>
                                             </div>
@@ -3451,7 +3462,7 @@ Azure DevOps Projects </a>
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Обозреватель данных Azure</h3>
+                                                    <h3>Azure Data Explorer</h3>
                                                     <p>Быстрая и высокомасштабируемая служба для изучения данных журналов и телеметрии</p>
                                                 </div>
                                             </div>
@@ -3508,7 +3519,7 @@ Azure DevOps Projects </a>
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Центры событий;</h3>
+                                                    <h3>Центры событий</h3>
                                                     <p>Получение телеметрии от миллионов устройств</p>
                                                 </div>
                                             </div>
@@ -3660,7 +3671,7 @@ Azure DevOps Projects </a>
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Data Lake Storage Gen2</h3>
+                                                    <h3>Data Lake Storage 2-го поколения</h3>
                                                     <p>Надежное хранилище Data Lake Storage с высокой степенью масштабируемости, созданное на основе хранилища BLOB-объектов</p>
                                                 </div>
                                             </div>
@@ -3679,8 +3690,8 @@ Azure DevOps Projects </a>
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Data Lake Storage Gen1</h3>
-                                                    <p>Гипермасштабируемый репозиторий для рабочих нагрузок аналитической обработки больших данных.</p>
+                                                    <h3>Data Lake Storage 1-го поколения</h3>
+                                                    <p>Гипермасштабируемый репозиторий для рабочих нагрузок аналитической обработки больших данных</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -3698,8 +3709,8 @@ Azure DevOps Projects </a>
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Open Datasets</h3>
-                                                    <p>Специально подобранные общедоступные наборы данных для улучшения моделей машинного обучения.</p>
+                                                    <h3>Открытые наборы данных</h3>
+                                                    <p>Специально подобранные общедоступные наборы данных для улучшения моделей машинного обучения</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -3764,7 +3775,7 @@ Azure DevOps Projects </a>
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Служба Azure Bot</h3>
-                                                    <p>Интеллектуальная бессерверная служба программ-роботов с масштабированием по требованию</p>
+                                                    <p>Интеллектуальная бессерверная служба ботов с масштабированием по требованию</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -3801,7 +3812,7 @@ Azure DevOps Projects </a>
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Службы машинного обучения</h3>
+                                                    <h3>Служба машинного обучения</h3>
                                                     <p>Сборка, развертывание и использование моделей машинного обучения и ИИ</p>
                                                 </div>
                                             </div>
@@ -3840,7 +3851,7 @@ Azure DevOps Projects </a>
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Cognitive Services</h3>
-                                                    <p>Предоставьте своим приложениям, веб-сайтам и ботам интеллектуальные средства, позволяющие понимать речь, видеть, слышать и говорить</p>
+                                                    <p>Предоставление своим приложениям, веб-сайтам и ботам интеллектуальных средств, позволяющих понимать речь, видеть, слышать и говорить</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -3858,7 +3869,7 @@ Azure DevOps Projects </a>
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Azure Notebook</h3>
+                                                    <h3>Записные книжки Azure</h3>
                                                     <p>Размещение и запуск записных книжек Jupyter в предварительно настроенной облачной среде</p>
                                                 </div>
                                             </div>
@@ -3896,8 +3907,8 @@ Azure DevOps Projects </a>
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Open Datasets</h3>
-                                                    <p>Специально подобранные общедоступные наборы данных для улучшения моделей машинного обучения.</p>
+                                                    <h3>Открытые наборы данных</h3>
+                                                    <p>Специально подобранные общедоступные наборы данных для улучшения моделей машинного обучения</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -4247,7 +4258,7 @@ Azure DevOps Projects </a>
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Аналитика временных рядов Azure</h3>
+                                                    <h3>Аналитика временных рядов</h3>
                                                     <p>Мгновенный просмотр и анализ данных временных рядов</p>
                                                 </div>
                                             </div>
@@ -4266,7 +4277,7 @@ Azure DevOps Projects </a>
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Карты Azure</h3>
+                                                    <h3>Azure Maps</h3>
                                                     <p>Простые и надежные API местоположения, обеспечивающие геопространственный контекст для данных</p>
                                                 </div>
                                             </div>
@@ -4342,7 +4353,7 @@ Azure DevOps Projects </a>
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Службы машинного обучения</h3>
+                                                    <h3>Служба машинного обучения</h3>
                                                     <p>Сборка, развертывание и использование моделей машинного обучения и ИИ</p>
                                                 </div>
                                             </div>
@@ -4519,7 +4530,7 @@ Azure DevOps Projects </a>
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Пространственные привязки Azure</h3>
-                                                    <p>Создавайте многопользовательские решения смешанной реальности, учитывающие расположение в пространстве</p>
+                                                    <p>Создание многопользовательских решений смешанной реальности, учитывающих расположение в пространстве</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -4662,7 +4673,7 @@ Azure DevOps Projects </a>
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Azure Information Protection</h3>
-                                                    <p>Создавайте и развертывайте политики организации для контроля над конфиденциальной информацией</p>
+                                                    <p>Создание и развертывание политики организации для контроля над конфиденциальной информацией</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -4819,7 +4830,7 @@ Azure DevOps Projects </a>
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Защита от атак DDoS Azure</h3>
-                                                    <p>Защита приложения от распределенных атак типа "отказ в обслуживании" (DDoS).</p>
+                                                    <p>Защита приложения от распределенных атак типа "отказ в обслуживании" (DDoS)</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -4837,7 +4848,7 @@ Azure DevOps Projects </a>
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Azure Advanced Threat Protection</h3>
+                                                    <h3>Расширенная защита от угроз Azure</h3>
                                                     <p>Защитите свою компанию от угроз в облаке и в локальной среде</p>
                                                 </div>
                                             </div>
@@ -4857,7 +4868,7 @@ Azure DevOps Projects </a>
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Azure Information Protection</h3>
-                                                    <p>Создавайте и развертывайте политики организации для контроля над конфиденциальной информацией</p>
+                                                    <p>Создание и развертывание политики организации для контроля над конфиденциальной информацией</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -4933,7 +4944,7 @@ Azure DevOps Projects </a>
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>VPN-шлюз</h3>
-                                                    <p>Установите надежное подключение между организациями.</p>
+                                                    <p>Установка надежного подключения между организациями</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -4951,7 +4962,7 @@ Azure DevOps Projects </a>
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Контроль доступа на основе ролей</h3>
+                                                    <h3>Управление доступом на основе ролей</h3>
                                                     <p>Управление доступом к ресурсам Azure</p>
                                                 </div>
                                             </div>
@@ -4971,7 +4982,7 @@ Azure DevOps Projects </a>
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Azure Sentinel</h3>
-                                                    <p>Сведения об использовании решений Майкрософт для управления информационной безопасностью и событиями безопасности, обеспечивающих интеллектуальную аналитику безопасности всего предприятия в масштабах облака.</p>
+                                                    <p>Сведения об использовании решений Майкрософт для управления информационной безопасностью и событиями безопасности, обеспечивающих интеллектуальную аналитику безопасности всего предприятия в масштабах облака</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -5033,7 +5044,7 @@ Azure DevOps Projects </a>
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Application Insights</h3>
-                                                    <p>Выявление, сортировка и диагностика неполадок в веб-приложениях и службах</p>
+                                                    <p>Выявление, рассмотрение и диагностика неполадок в веб-приложениях и службах</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -5109,7 +5120,7 @@ Azure DevOps Projects </a>
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>HockeyApp</h3>
-                                                    <p>Развертывание мобильных приложений, получение обратной связи и отчетов о сбоях, отслеживание использования ресурсов</p>
+                                                    <p>Развертывание мобильных приложений, получение отзывов и отчетов о сбоях, отслеживание использования ресурсов</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -5189,7 +5200,7 @@ Azure DevOps Projects </a>
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Visual Studio Code.</h3>
+                                                    <h3>Visual Studio Code</h3>
                                                     <p>Visual Studio Code — это простой, но мощный редактор для работы с исходным кодом, который работает на настольном компьютере и доступен для Windows, macOS и Linux.</p>
                                                 </div>
                                             </div>
@@ -5309,7 +5320,7 @@ Azure DevOps Projects </a>
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Azure Backup</h3>
-                                                    <p>Простое и надежное резервное копирование серверов в облако.</p>
+                                                    <p>Простое и надежное резервное копирование серверов в облако</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -5347,7 +5358,7 @@ Azure DevOps Projects </a>
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Application Insights</h3>
-                                                    <p>Выявление, сортировка и диагностика неполадок в веб-приложениях и службах</p>
+                                                    <p>Выявление, рассмотрение и диагностика неполадок в веб-приложениях и службах</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -5423,7 +5434,7 @@ Azure DevOps Projects </a>
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Диспетчер трафика</h3>
-                                                    <p>Выполняйте маршрутизацию входящего трафика для обеспечения высокой производительности и доступности.</p>
+                                                    <p>Маршрутизация входящего трафика для обеспечения высокой производительности и доступности</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -5631,7 +5642,7 @@ Azure DevOps Projects </a>
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Azure Blueprint</h3>
+                                                    <h3>Azure Blueprints</h3>
                                                     <p>Развертывание и обновление воспроизводимых облачных сред с помощью составных артефактов</p>
                                                 </div>
                                             </div>
@@ -5826,7 +5837,7 @@ Azure DevOps Projects </a>
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Система защиты содержимого</h3>
+                                                    <h3>Защита содержимого</h3>
                                                     <p>Безопасная доставка содержимого с помощью AES, PlayReady, Widevine и Fairplay</p>
                                                 </div>
                                             </div>
@@ -5846,7 +5857,7 @@ Azure DevOps Projects </a>
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Аналитика мультимедиа</h3>
-                                                    <p>Получение ценных сведений из видеофайлов с помощью речевых и визуальных служб</p>
+                                                    <p>Получение полезных сведений из видеофайлов с помощью речевых и визуальных служб</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -5959,6 +5970,25 @@ Azure DevOps Projects </a>
                         <a href="#stack">Azure Stack</a>
                         <ul id="stack" class="cardsA">
                             <li>
+                                <a href="/azure-stack">
+                                    <div class="cardSize">
+                                        <div class="cardPadding">
+                                            <div class="card">
+                                                <div class="cardImageOuter">
+                                                    <div class="cardImage">
+                                                        <img src="media/index/azure-stack.svg" alt="" />
+                                                    </div>
+                                                </div>
+                                                <div class="cardText">
+                                                    <h3>Azure Stack</h3>
+                                                    <p>Используйте службы и функциональные возможности Azure в локальной среде, чтобы с их помощью создавать и развертывать гибридные облачные и пограничные приложения на границе облака.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
                                 <a href="/azure/azure-stack/">
                                     <div class="cardSize">
                                         <div class="cardPadding">
@@ -5970,7 +6000,7 @@ Azure DevOps Projects </a>
                                                 </div>
                                                 <div class="cardText">
                                                     <h3>Оператор Azure Stack</h3>
-                                                    <p>Доставка служб Azure из вашего центра обработки данных с помощью новой гибридной облачной платформы</p>
+                                                    <p>Узнайте, как управлять инфраструктурой интегрированных систем Azure Stack и предлагать службы.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -5989,6 +6019,23 @@ Azure DevOps Projects </a>
                                             <div class="cardText">
                                                 <h3>Пользователь Azure Stack</h3>
                                                 <p>Использование служб и создание приложений для Azure Stack</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/azure-stack/asdk/">
+                                    <div class="cardPadding">
+                                        <div class="card">
+                                            <div class="cardImageOuter">
+                                                <div class="cardImage">
+                                                    <img src="media/index/azure-stack.svg" alt="" />
+                                                </div>
+                                            </div>
+                                            <div class="cardText">
+                                                <h3>Пакет средств разработки Azure Stack (ASDK)</h3>
+                                                <p>Нерабочая среда для оценки и тестирования</p>
                                             </div>
                                         </div>
                                     </div>
@@ -6029,8 +6076,8 @@ Azure DevOps Projects </a>
                                                     </div>
                                                 </div>
                                                 <div class="cardText">
-                                                    <h3>Microsoft Azure для Германии</h3>
-                                                    <p>Создавайте и размещайте приложения в соответствии с законодательством Германии, а также ключевыми международными стандартами под контролем доверенного лица по вопросам данных</p>
+                                                    <h3>Microsoft Azure — Германия</h3>
+                                                    <p>Создавайте и размещайте приложения в соответствии с законодательством Германии, а также ключевыми международными стандартами под контролем доверенного лица по вопросам данных.</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -6197,7 +6244,7 @@ Azure для разработчиков Go </h3>
                                             </div>
                                             <div class="cardText">
                                                 <h3>
-Azure REST API </h3>
+REST API Azure </h3>
                                                 <p>
                                                     <a href="/rest/api">Справочник по API</a>
                                                 </p>
@@ -6222,7 +6269,7 @@ Azure REST API </h3>
                                             </div>
                                             <div class="cardText">
                                                 <h3>
-Инфраструктура CLI Azure </h3>
+Azure CLI </h3>
                                                 <p>
                                                     <a href="/cli/azure">Начало работы</a>
                                                 </p>
@@ -6375,7 +6422,7 @@ Docker </h3>
                                                     <a href="https://go.microsoft.com/fwlink/?LinkId=780681">Загрузка для Visual Studio Code</a>
                                                 </p>
                                                 <p>
-                                                    <a href="https://go.microsoft.com/fwlink/?LinkId=780682">Скачать для Azure DevOps</a>
+                                                    <a href="https://go.microsoft.com/fwlink/?LinkId=780682">Загрузка для Azure DevOps</a>
                                                 </p>
                                             </div>
                                         </div>
@@ -6484,7 +6531,7 @@ Azure Resource Manager </h3>
                                                     <a href="https://go.microsoft.com/fwlink/?LinkId=708342">Загрузка для Mac</a>
                                                 </p>
                                                 <p>
-                                                    <a href="https://go.microsoft.com/fwlink/?LinkId=708343">Загрузки для Windows</a>
+                                                    <a href="https://go.microsoft.com/fwlink/?LinkId=708343">Загрузка для Windows</a>
                                                 </p>
                                             </div>
                                         </div>
@@ -6504,7 +6551,7 @@ Azure Resource Manager </h3>
                                                 <h3>
 Пакет SDK и инструменты для Service Fabric </h3>
                                                 <p>
-                                                    <a href="https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started">Загрузки для Windows</a>
+                                                    <a href="https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started">Загрузка для Windows</a>
                                                 </p>
                                                 <p>
                                                     <a href="https://docs.microsoft.com/azure/service-fabric/service-fabric-get-started-linux">Загрузка для Linux</a>
@@ -6558,18 +6605,18 @@ Azure Resource Manager </h3>
                                             </div>
                                             <div class="cardText">
                                                 <h3>
-Рабочие среды Azure для разработчиков </h3>
+Azure Dev Spaces </h3>
                                                 <p>
                                                     <a href="https://docs.microsoft.com/azure/dev-spaces/azure-dev-spaces">Начало работы</a>
                                                 </p>
                                                 <p>
-                                                    <a href="https://docs.microsoft.com/azure/dev-spaces/quickstart-netcore">Скачать для .NET Core и VS Code</a>
+                                                    <a href="https://docs.microsoft.com/azure/dev-spaces/quickstart-netcore">Загрузка для .NET Core и VS Code</a>
                                                 </p>
                                                 <p>
-                                                    <a href="https://docs.microsoft.com/azure/dev-spaces/quickstart-netcore-visualstudio">Скачать для .NET Core и Visual Studio</a>
+                                                    <a href="https://docs.microsoft.com/azure/dev-spaces/quickstart-netcore-visualstudio">Загрузка для .NET Core и Visual Studio</a>
                                                 </p>
                                                 <p>
-                                                    <a href="https://docs.microsoft.com/azure/dev-spaces/quickstart-nodejs">Скачать для Node.js</a>
+                                                    <a href="https://docs.microsoft.com/azure/dev-spaces/quickstart-nodejs">Загрузка для Node.js</a>
                                                 </p>
                                             </div>
                                         </div>

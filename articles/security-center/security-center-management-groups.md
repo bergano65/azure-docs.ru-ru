@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 12/19/2018
 ms.author: rkarlin
 ms.openlocfilehash: 7e26dc37c5c4f85e3db634bd961bf9308e418a03
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59045770"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66147962"
 ---
 # <a name="gain-tenant-wide-visibility-for-azure-security-center"></a>Получение видимости в пределах клиента в центре безопасности Azure
 В этой статье приведены сведения по началу работы, а также описаны действия, которые помогут максимально увеличить преимущества от использования центра безопасности Azure. Выполнив эти действия, вы получите сведения о всех подписках Azure, связанных с клиентом Azure Active Directory, а также сможете эффективно управлять системой безопасности организации, одновременно настроив соответствующие политики в нескольких подписках.

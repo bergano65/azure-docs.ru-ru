@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
 ms.openlocfilehash: 1cf5bbdad555c50c418851904f36a578522843b2
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
-ms.translationtype: HT
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50164302"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66159625"
 ---
 #### <a name="to-create-public-endpoints-on-the-cloud-appliance"></a>Создание общедоступных конечных точек на облачном устройстве
 
@@ -31,7 +31,7 @@ ms.locfileid: "50164302"
 
         В колонке "Добавление правила безопасности для входящего трафика" сделайте следующее:
 
-        1. В поле **Имя** введите имя конечной точки WinRMHttps.
+        1. Для **имя**, введите следующее имя для конечной точки: WinRMHttps.
         
         2. В поле **Приоритет** выберите число меньше 1000 (которое является приоритетом для правила по умолчанию). Чем выше значение, тем ниже приоритет.
 

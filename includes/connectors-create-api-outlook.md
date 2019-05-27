@@ -5,13 +5,13 @@ ms.topic: include
 ms.date: 11/03/2016
 ms.author: estfan
 ms.openlocfilehash: 187906a912c999142d764de6ad5da3daccf63ba7
-ms.sourcegitcommit: 9d7391e11d69af521a112ca886488caff5808ad6
-ms.translationtype: HT
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50133188"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66146790"
 ---
-1. В поле поиска введите outlook.com в качестве фильтра. В нашем примере выберите триггер: **Когда приходит новое электронное письмо**
+1. В поле поиска введите outlook.com в качестве фильтра. Например выберите этот триггер: **When a new email arrives** (При получении нового сообщения электронной почты)
 
    ![Поиск триггеров или действий Outlook.com](./media/connectors-create-api-outlook/select-outlook.png)
 

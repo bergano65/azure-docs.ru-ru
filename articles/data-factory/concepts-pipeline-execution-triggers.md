@@ -13,11 +13,11 @@ ms.topic: conceptual
 ms.date: 07/05/2018
 ms.author: shlo
 ms.openlocfilehash: 21e66f962d1cc0bbbe8d780a702216d40abe2836
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57453479"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66155216"
 ---
 # <a name="pipeline-execution-and-triggers-in-azure-data-factory"></a>Выполнение конвейера и триггеры в фабрике данных Azure
 > [!div class="op_single_selector" title1="Select the version of the Data Factory service that you're using:"]
@@ -231,7 +231,7 @@ client.Pipelines.CreateRunWithHttpMessagesAsync(resourceGroup, dataFactoryName, 
 ### <a name="schema-overview"></a>Общее представление схемы
 Таблица ниже содержит обзор основных элементов схемы, связанных с периодичностью выполнения и расписанием триггера:
 
-| Свойство JSON | ОПИСАНИЕ |
+| Свойство JSON | Описание |
 |:--- |:--- |
 | **startTime** | Значение даты и времени. Для базовых расписаний значение свойства **startTime** применяется к первому выполнению. В сложных расписаниях триггер не запускается раньше, чем определяется значением **startTime**. |
 | **endTime** | Дата и время завершения триггера. После указанной даты и времени триггер перестает выполняться. Значение свойства не может быть в прошлом. <!-- This property is optional. --> |
@@ -279,11 +279,11 @@ client.Pipelines.CreateRunWithHttpMessagesAsync(resourceGroup, dataFactoryName, 
 
 | Свойство JSON | type | Обязательно для заполнения | Значение по умолчанию | Допустимые значения | Пример |
 |:--- |:--- |:--- |:--- |:--- |:--- |
-| **startTime** | строка | Yes | Нет | Дата и время по спецификации ISO 8601 | `"startTime" : "2013-01-09T09:30:00-08:00"` |
-| **recurrence** | object | Yes | Нет | Объект recurrence | `"recurrence" : { "frequency" : "monthly", "interval" : 1 }` |
-| **interval** | number | Нет  | 1 | От 1 до 1000 | `"interval":10` |
-| **endTime** | строка | Yes | Нет | Значение даты и времени, представляющее время в будущем. | `"endTime" : "2013-02-09T09:30:00-08:00"` |
-| **schedule** | object | Нет  | Нет | Объект schedule | `"schedule" : { "minute" : [30], "hour" : [8,17] }` |
+| **startTime** | string | Да | Нет | Дата и время по спецификации ISO 8601 | `"startTime" : "2013-01-09T09:30:00-08:00"` |
+| **recurrence** | object | Да | Нет | Объект recurrence | `"recurrence" : { "frequency" : "monthly", "interval" : 1 }` |
+| **interval** | номер | Нет | 1 | От 1 до 1000 | `"interval":10` |
+| **endTime** | string | Да | Нет | Значение даты и времени, представляющее время в будущем. | `"endTime" : "2013-02-09T09:30:00-08:00"` |
+| **schedule** | object | Нет | Нет | Объект schedule | `"schedule" : { "minute" : [30], "hour" : [8,17] }` |
 
 ### <a name="starttime-property"></a>Свойство startTime
 В следующей таблице показано, как свойство **startTime** управляет запуском триггера:
@@ -310,7 +310,7 @@ client.Pipelines.CreateRunWithHttpMessagesAsync(resourceGroup, dataFactoryName, 
 
 В следующей таблице элементы свойства **schedule** описаны подробно.
 
-| Элемент JSON | ОПИСАНИЕ | Допустимые значения |
+| Элемент JSON | Описание | Допустимые значения |
 |:--- |:--- |:--- |
 | **minutes** | Минуты часа, в которые будет выполняться триггер. |Целое число<br />Массив целых чисел|
 | **hours** | Часы дня, в которые будет выполняться триггер. |Целое число<br />Массив целых чисел|
@@ -334,7 +334,7 @@ client.Pipelines.CreateRunWithHttpMessagesAsync(resourceGroup, dataFactoryName, 
 
 В примерах предполагается, что **interval** имеет значение равное 1, а значение **frequency** является правильным согласно определению расписания. Например, у вас не может быть значения **frequency** "день" и изменения **monthDays** в объекте **schedule**. Такие ограничения описаны в таблице в предыдущем разделе.
 
-| Пример | ОПИСАНИЕ |
+| Пример | Описание |
 |:--- |:--- |
 | `{"hours":[5]}` | Выполняется каждый день в 05:00. |
 | `{"minutes":[15], "hours":[5]}` | Выполняется каждый день в 05:15. |

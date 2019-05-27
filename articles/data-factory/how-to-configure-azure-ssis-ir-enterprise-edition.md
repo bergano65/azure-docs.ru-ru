@@ -13,11 +13,11 @@ ms.author: sawinark
 ms.reviewer: douglasl
 manager: craigg
 ms.openlocfilehash: d2b06d044f68972ef72dd9b53401980e84ef779f
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57440936"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66152432"
 ---
 # <a name="provision-enterprise-edition-for-the-azure-ssis-integration-runtime"></a>Подготовка выпуска Enterprise Edition для среды выполнения интеграции Azure Integration Services
 
@@ -42,7 +42,7 @@ ms.locfileid: "57440936"
 | Преобразования нечетких группирований и нечетких уточняющих запросов  | Преобразования нечетких группирований и нечетких уточняющих запросов предварительно установлены в среде выполнения интеграции Azure SSIS Enterprise Edition. При хранении эталонных данных эти компоненты поддерживают и сервер SQL Server, и базу данных SQL Azure. |
 | Преобразования извлечения терминов и поиска по терминам | Преобразования извлечения терминов и поиска по терминам предварительно установлены в среде выполнения интеграции Azure SSIS Enterprise Edition. При хранении эталонных данных эти компоненты поддерживают и сервер SQL Server, и базу данных SQL Azure. |
 
-## <a name="instructions"></a>Указания
+## <a name="instructions"></a>Инструкции
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 

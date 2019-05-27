@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
 ms.openlocfilehash: 658fd9178495f14274c85eab2129c9dcd3be7693
-ms.sourcegitcommit: 48592dd2827c6f6f05455c56e8f600882adb80dc
-ms.translationtype: HT
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/26/2018
-ms.locfileid: "50165180"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66143297"
 ---
 | **Идентификатор ограничения** | **Ограничение** | **Комментарии** |
 | --- | --- | --- |

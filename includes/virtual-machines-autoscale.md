@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: cynthn
 ms.openlocfilehash: 3c008e77116a9b42a2ea137069529c5e241adddd
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61456906"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66160077"
 ---
 Вы можете легко [автоматически масштабировать](../articles/azure-monitor/platform/autoscale-best-practices.md) свои [виртуальные машины](../articles/virtual-machines/windows/overview.md) при использовании [масштабируемых наборов виртуальных машин](../articles/virtual-machine-scale-sets/virtual-machine-scale-sets-overview.md) и [функции автоматического масштабирования Azure Monitor](../articles/azure-monitor/platform/autoscale-overview.md). Для автоматического масштабирования виртуальные машины должны входить в масштабируемый набор. Эта статья поможет вам лучше понять, как выполнять горизонтальное и вертикальное масштабирование виртуальных машин автоматически и вручную.
 
@@ -31,7 +31,7 @@ ms.locfileid: "61456906"
 
 Вы можете включить автомасштабирование, когда создаете масштабируемый набор с помощью [Azure PowerShell](../articles/azure-monitor/platform/powershell-quickstart-samples.md#create-and-manage-autoscale-settings) или [Azure CLI](https://docs.microsoft.com/cli/azure/monitor/autoscale-settings). Его можно включить и после создания масштабируемого набора. Вы можете создать масштабируемый набор, установить расширение и настроить автомасштабирование, воспользовавшись [шаблоном Azure Resource Manager](../articles/virtual-machine-scale-sets/virtual-machine-scale-sets-windows-autoscale.md). На портале Azure можно включить автомасштабирование в Azure Monitor или в параметрах масштабируемого набора.
 
-![Включение автомасштабирования](./media/virtual-machines-autoscale/virtual-machines-autoscale-enable.png)
+![Включить автомасштабирование](./media/virtual-machines-autoscale/virtual-machines-autoscale-enable.png)
  
 ### <a name="metrics"></a>Метрики
 
@@ -59,7 +59,7 @@ ms.locfileid: "61456906"
 
 Если вы используете Azure PowerShell, необходимо получить объект масштабируемого набора с помощью [Get-AzVmss](https://docs.microsoft.com/powershell/module/az.compute/get-azvmss). Затем установите свойство **sku.capacity** для нужного числа виртуальных машин и обновите масштабируемый набор, добавив [Update-AzVmss](https://docs.microsoft.com/powershell/module/az.compute/update-azvmss). С помощью Azure CLI замените значение производительности параметром **--new-capacity** для команды [az vmss scale](/cli/azure/vmss?view=azure-cli-latest#az-vmss-scale).
 
-### <a name="vertical"></a>Vertical
+### <a name="vertical"></a>Вертикально
 
 Можно вручную изменить размер виртуальных машин на портале Azure в окне размера для масштабируемого набора. Вы можете использовать Azure PowerShell с Get-AzVmss, задав свойство номера SKU для ссылки на образ, а затем использовав [Update-AzVmss](https://docs.microsoft.com/powershell/module/az.compute/update-azvmss) и [Update-AzVmssInstance](https://docs.microsoft.com/powershell/module/az.compute/update-azvmssinstance).
 

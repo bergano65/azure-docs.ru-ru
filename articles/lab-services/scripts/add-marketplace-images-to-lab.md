@@ -13,11 +13,11 @@ ms.topic: article
 ms.date: 04/11/2018
 ms.author: spelluru
 ms.openlocfilehash: e099a29a198d43bf8d00487ab45e2648479aedbe
-ms.sourcegitcommit: cdf0e37450044f65c33e07aeb6d115819a2bb822
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/01/2019
-ms.locfileid: "57194783"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66160597"
 ---
 # <a name="use-powershell-to-add-a-marketplace-image-to-a-lab-in-azure-devtest-labs"></a>Добавление образа marketplace в лабораторию в Azure DevTest Labs с помощью PowerShell
 
@@ -43,7 +43,7 @@ ms.locfileid: "57194783"
 | Find-AzResource | Выполняет поиск ресурсов на основе указанных параметров. |
 | [Get-AzResource](/powershell/module/az.resources/get-azresource) | Получает ресурсы. |
 | [Set-AzResource](/powershell/module/az.resources/set-azresource) | Изменяет ресурс. |
-| [Новый AzResource](/powershell/module/az.resources/new-azresource) | Создает ресурса. |
+| [New-AzResource](/powershell/module/az.resources/new-azresource) | Создает ресурса. |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

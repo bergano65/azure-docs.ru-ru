@@ -1,40 +1,43 @@
 ---
+author: robinsh
+ms.author: robinsh
+ms.service: iot-hub
+ms.topic: include
+ms.date: 10/26/2018
 ms.openlocfilehash: b6ea8c7b3a6374572c8bd31e3c62b788efbafcbc
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "65827512"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66156331"
 ---
 ## <a name="obtain-an-azure-resource-manager-token"></a>Получение маркера Azure Resource Manager
 Все задачи, выполняемые с ресурсами с помощью диспетчера ресурсов Azure, должны пройти проверку подлинности Azure Active Directory. В примере ниже демонстрируется проверка подлинности с использованием пароля (другие способы см. в [справочнике по Azure REST API][lnk-authenticate-arm]).
 
 1. Добавьте в метод **Main** в файле Program.cs приведенный ниже код, позволяющий получить из системы Azure AD маркер с помощью идентификатора приложения и пароля.
-
+   
     ```
     var authContext = new AuthenticationContext(string.Format  
       ("https://login.microsoftonline.com/{0}", tenantId));
     var credential = new ClientCredential(applicationId, password);
     AuthenticationResult token = authContext.AcquireTokenAsync
       ("https://management.core.windows.net/", credential).Result;
-
+   
     if (token == null)
     {
       Console.WriteLine("Failed to obtain the token");
       return;
     }
     ```
-
 2. Создайте объект **ResourceManagementClient**, который использует полученный маркер, добавив следующий код в конец метода **Main**:
-
+   
     ```
     var creds = new TokenCredentials(token.AccessToken);
     var client = new ResourceManagementClient(creds);
     client.SubscriptionId = subscriptionId;
     ```
-
 3. Создайте группу ресурсов, которую будете использовать, или получите ссылку на нее:
-
+   
     ```
     var rgResponse = client.ResourceGroups.CreateOrUpdate(rgName,
         new ResourceGroup("East US"));
@@ -45,4 +48,4 @@ ms.locfileid: "65827512"
     }
     ```
 
-[lnk-authenticate-arm]: https://msdn.microsoft.com/zh-cn/library/azure/dn790557.aspx
+[lnk-authenticate-arm]: https://msdn.microsoft.com/library/azure/dn790557.aspx

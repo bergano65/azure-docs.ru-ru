@@ -2,19 +2,18 @@
 title: включение файла
 description: включение файла
 services: vpn-gateway
-author: WenJason
+author: cherylmc
 ms.service: vpn-gateway
 ms.topic: include
-origin.date: 03/21/2018
-ms.date: 12/24/2018
-ms.author: v-jay
+ms.date: 03/21/2018
+ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: b3907882df09bfae1d6453fbffbd3e7562554f7c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "64859042"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66159382"
 ---
 * **PolicyBased:** В классической модели развертывания VPN типа PolicyBased, назывались шлюзов статической маршрутизации. Сети VPN на основе политик шифруют и направляют пакеты через туннели IPsec на основе политик IPsec, настроенных с помощью комбинаций префиксов адресов, между локальной сетью и виртуальной сетью Azure. Политика (или селектор трафика) обычно определяется как список доступа в конфигурации VPN-устройства. Значение для типа VPN на основе политик — *PolicyBased*. При использовании VPN на основе политик необходимо учитывать следующие ограничения:
   

@@ -9,11 +9,11 @@ ms.date: 02/13/2019
 ms.author: cherylmc
 ms.custom: include file
 ms.openlocfilehash: ece75ff84c9f45e7284d7a5976f55f8a4ac4680f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60366387"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66158744"
 ---
 В этой статье используются командлеты PowerShell. Для запуска командлетов можно использовать бесплатную интерактивную оболочку Azure Cloud Shell. Она включает предварительно установленные общие инструменты Azure и настроена для использования с вашей учетной записью. Нажмите кнопку **Копировать**, чтобы скопировать код. Вставьте его в Cloud Shell и нажмите клавишу ВВОД, чтобы запустить код. Cloud Shell можно запустить разными способами:
 

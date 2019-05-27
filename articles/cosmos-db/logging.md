@@ -8,11 +8,11 @@ ms.date: 03/15/2019
 ms.author: sngun
 ms.custom: seodec18
 ms.openlocfilehash: 8839d7ea93bcb205b1900e63d3ab98394e72cd75
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: MT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58904871"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66148633"
 ---
 # <a name="diagnostic-logging-in-azure-cosmos-db"></a>Журнал ведения диагностики в Azure Cosmos DB 
 
@@ -438,7 +438,7 @@ $blobs | Get-AzStorageBlobContent `
 
 В следующей таблице описано содержимое каждой записи журнала.
 
-| Поле или свойство службы хранилища Azure | Azure Monitor регистрирует свойство | ОПИСАНИЕ |
+| Поле или свойство службы хранилища Azure | Azure Monitor регистрирует свойство | Описание |
 | --- | --- | --- |
 | **time** | **TimeGenerated** | Дата и время (UTC) выполнения операции. |
 | **resourceId** | **Ресурс** | Учетная запись Azure Cosmos DB, для которой включены журналы.|

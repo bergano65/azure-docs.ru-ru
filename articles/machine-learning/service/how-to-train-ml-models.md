@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.reviewer: sgilley
 ms.date: 04/19/2019
 ms.custom: seodec18
-ms.openlocfilehash: 7b479556543c6a9dff88643fdc587dec3f832f39
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 98f7dc2e295c0c994db9a0189814b0ef2a19b758
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60818493"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66153600"
 ---
 # <a name="train-models-with-azure-machine-learning-using-estimator"></a>Обучение моделей с помощью оценщика Машинного обучения Azure
 
@@ -26,7 +26,7 @@ ms.locfileid: "60818493"
 
 ## <a name="train-with-an-estimator"></a>Обучение с оценщиком
 
-После создания [рабочей области](concept-azure-machine-learning-architecture.md#workspace) и настройки вашей [среды разработки](how-to-configure-environment.md) для обучения модели в Машинном обучении Azure необходимо выполнить следующие действия:  
+После создания [рабочей области](concept-workspace.md) и настройки вашей [среды разработки](how-to-configure-environment.md) для обучения модели в Машинном обучении Azure необходимо выполнить следующие действия:  
 1. Создайте [удаленный целевой объект вычислений](how-to-set-up-training-targets.md) (обратите внимание, что в качестве целевого объекта вычислений также можно использовать локальный компьютер).
 2. Отправьте [данные для обучения](how-to-access-data.md) в хранилище данных (необязательно).
 3. создать [сценарий обучения](tutorial-train-models-with-aml.md#create-a-training-script);
@@ -119,6 +119,10 @@ estimator = Estimator(source_directory='./my-keras-proj',
 run = experiment.submit(estimator)
 print(run.get_portal_url())
 ```
+
+## <a name="github-tracking-and-integration"></a>Отслеживание GitHub и интеграции
+
+При запуске обучения, выполните, где исходный каталог является локальный репозиторий Git, сведения о хранилище хранятся в журнале выполнения. Например текущих Идентификаторов фиксаций репозитория, регистрируется как часть журнала.
 
 ## <a name="examples"></a>Примеры
 Записная книжка с основным сведениями о шаблоне оценщика:

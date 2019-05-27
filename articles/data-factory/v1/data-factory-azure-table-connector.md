@@ -14,11 +14,11 @@ ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: aed341c50332b424a1149c129629cd451a4e5133
-ms.sourcegitcommit: f24fdd1ab23927c73595c960d8a26a74e1d12f5d
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58500089"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66146927"
 ---
 # <a name="move-data-to-and-from-azure-table-using-azure-data-factory"></a>Перемещение данных в таблицу SQL Azure и из нее с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -484,7 +484,7 @@ DivisionID указывается в качестве ключа секции.
 | Edm.Guid |Guid |128-битный идентификатор GUID. |
 | Edm.Int32 |Int32 |32-битное целое число. |
 | Edm.Int64 |Int64 |64-битное целое число. |
-| Edm.String |String |Значение в кодировке UTF-16. Размер строкового значения не должен превышать 64 КБ. |
+| Edm.String |Строка |Значение в кодировке UTF-16. Размер строкового значения не должен превышать 64 КБ. |
 
 ### <a name="type-conversion-sample"></a>Пример преобразования типов
 В следующем примере данные копируются из BLOB-объекта Azure в таблицу Azure с преобразованием типов.

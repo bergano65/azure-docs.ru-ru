@@ -12,11 +12,11 @@ ms.topic: conceptual
 ms.date: 10/31/2018
 ms.author: abnarain
 ms.openlocfilehash: f038510c20e70c9d6b9dc8e396d9a15beb7270ca
-ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58444614"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66155149"
 ---
 # <a name="create-a-shared-self-hosted-integration-runtime-in-azure-data-factory-with-powershell"></a>Создание общей локальной среды выполнения интеграции в Фабрике данных Azure с помощью PowerShell
 
@@ -139,7 +139,7 @@ $factory = Set-AzDataFactoryV2 -ResourceGroupName $ResourceGroupName `
     -Location $DataFactoryLocation `
     -Name $LinkedDataFactoryName
 ```
-### <a name="grant-permission"></a>Предоставление разрешения
+### <a name="grant-permission"></a>Предоставить разрешение
 
 Предоставьте разрешение фабрике данных, которой требуется доступ к созданной и зарегистрированной локальной среде выполнения интеграции.
 

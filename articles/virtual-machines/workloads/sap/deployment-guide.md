@@ -17,11 +17,11 @@ ms.workload: infrastructure-services
 ms.date: 09/26/2018
 ms.author: sedusch
 ms.openlocfilehash: c93bca14d9385eaf9f79f69d76e9e704796da7a9
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58850892"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66154174"
 ---
 # <a name="azure-virtual-machines-deployment-for-sap-netweaver"></a>Развертывание виртуальных машин Azure для SAP NetWeaver
 
@@ -693,7 +693,7 @@ ms.locfileid: "58850892"
 
 Если диск уже передан и определен в Azure (см. [руководство по планированию и внедрению SAP NetWeaver на виртуальных машинах][planning-guide]), выполните действия, описанные в нескольких следующих разделах.
 
-#### <a name="create-a-virtual-machine"></a>Создание виртуальной машины
+#### <a name="create-a-virtual-machine"></a>Создать виртуальную машину
 
 Чтобы создать развертывание с помощью частного диска ОС на портале Azure, воспользуйтесь шаблоном SAP, опубликованным в [репозитории azure-quickstart-templates на сайте GitHub][azure-quickstart-templates-github]. Кроме того, виртуальную машину можно создать вручную с помощью PowerShell.
 
@@ -1082,15 +1082,15 @@ azure --version
 
 1. Проверьте выходные данные расширения расширенного мониторинга Azure.
 
-   a.  Запустите `more /var/lib/AzureEnhancedMonitor/PerfCounters`
+   a.  Выполнить `more /var/lib/AzureEnhancedMonitor/PerfCounters`
 
    **Ожидаемый результат**: возвращается список счетчиков производительности. Файл не должен быть пустым.
 
-   2. Запустите `cat /var/lib/AzureEnhancedMonitor/PerfCounters | grep Error`
+   2. Выполнить `cat /var/lib/AzureEnhancedMonitor/PerfCounters | grep Error`
 
    **Ожидаемый результат**: Возвращается одна строка, где для параметра error задано значение **none**, **3;config;Error;;0;0;none;0;1456416792;tst-servercs;**.
 
-   c. Запустите `more /var/lib/AzureEnhancedMonitor/LatestErrorRecord`
+   c. Выполнить `more /var/lib/AzureEnhancedMonitor/LatestErrorRecord`
 
    **Ожидаемый результат**: возвращается пустая строка или строка отсутствует.
 
@@ -1098,29 +1098,29 @@ azure --version
 
 1. Проверьте, установлен и запущен ли каталог waagent.
 
-   a.  Запустите `sudo ls -al /var/lib/waagent/`
+   a.  Выполнить `sudo ls -al /var/lib/waagent/`
 
      **Ожидаемый результат**: должно отобразиться содержимое каталога waagent.
 
-   2.  Запустите `ps -ax | grep waagent`
+   2.  Выполнить `ps -ax | grep waagent`
 
    **Ожидаемый результат**: должна отобразиться одна запись, аналогичная следующей: `python /usr/sbin/waagent -daemon`.
 
 1. Проверьте, установлено и запущено ли расширение расширенного мониторинга Azure.
 
-   a.  Запустите `sudo sh -c 'ls -al /var/lib/waagent/Microsoft.OSTCExtensions.AzureEnhancedMonitorForLinux-*/'`
+   a.  Выполнить `sudo sh -c 'ls -al /var/lib/waagent/Microsoft.OSTCExtensions.AzureEnhancedMonitorForLinux-*/'`
 
    **Ожидаемый результат**: должно отобразиться содержимое каталога расширения расширенного мониторинга Azure.
 
-   2. Запустите `ps -ax | grep AzureEnhanced`
+   2. Выполнить `ps -ax | grep AzureEnhanced`
 
    **Ожидаемый результат**: должна отобразиться одна запись, аналогичная следующей: `python /var/lib/waagent/Microsoft.OSTCExtensions.AzureEnhancedMonitorForLinux-2.0.0.2/handler.py daemon`.
 
 1. Установите агент SAP Host Agent, как описано в примечании к SAP [1031096], и проверьте выходные данные `saposcol`.
 
-   a.  Запустите `/usr/sap/hostctrl/exe/saposcol -d`
+   a.  Выполнить `/usr/sap/hostctrl/exe/saposcol -d`
 
-   2.  Запустите `dump ccm`
+   2.  Выполнить `dump ccm`
 
    c.  Проверьте, задано ли для метрики **Virtualization_Configuration\Enhanced Monitoring Access** значение **true**.
 

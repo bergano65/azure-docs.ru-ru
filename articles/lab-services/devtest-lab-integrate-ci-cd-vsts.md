@@ -15,11 +15,11 @@ ms.topic: article
 ms.date: 04/17/2018
 ms.author: spelluru
 ms.openlocfilehash: 7806599c1a2f1396ff4b07d6f0538057654029d7
-ms.sourcegitcommit: 90c6b63552f6b7f8efac7f5c375e77526841a678
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56738527"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66157132"
 ---
 # <a name="integrate-azure-devtest-labs-into-your-azure-devops-continuous-integration-and-delivery-pipeline"></a>Интеграция Azure DevTest Labs в конвейер непрерывной интеграции и доставки Azure DevOps
 Для легкой интеграции конвейера "сборка — выпуск" CI/CD с Azure DevTest Labs можно использовать расширение *Задачи Azure DevTest Labs*, установленное в Azure DevOps. Расширение устанавливает три задачи: 
@@ -161,7 +161,7 @@ ms.locfileid: "56738527"
 1. Разверните приложение на новой виртуальной машине DevTest Labs. Обычно для развертывания приложения используются задачи *копирование файлов Azure* и *использование PowerShell на целевых компьютерах*.
    Информация о виртуальной машине, необходимая для параметров этих задач, хранится в трех переменных конфигурации с именами **labVmRgName**, **labVMIpAddress** и **labVMFqdn** в конвейере выпуска. Если вы только хотите поэкспериментировать с созданием виртуальной машины DevTest Labs и пользовательского образа без развертывания приложения на ней, то этот шаг можно пропустить.
 
-### <a name="create-an-image"></a>Создание образа
+### <a name="create-an-image"></a>Создать образ
 
 Следующий этап заключается в создании образа недавно развернутой виртуальной машины в экземпляре Azure DevTest Labs. Впоследствии образ можно использовать для создания копий виртуальной машины по запросу, когда потребуется выполнить задачу разработки или выполнить некоторые тесты. 
 

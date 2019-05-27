@@ -15,11 +15,11 @@ ms.date: 04/17/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.openlocfilehash: 002ebcbe8ba14b9f15ddea6deb21f0f2bc201ab0
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59999048"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66160313"
 ---
 # <a name="manage-access-to-azure-resources-using-rbac-and-azure-powershell"></a>Управление доступом к ресурсам Azure с помощью RBAC и Azure PowerShell
 
@@ -215,7 +215,7 @@ Get-AzRoleAssignment -SignInName isabella@example.com -ExpandPrincipalGroups | F
 Get-AzRoleAssignment -IncludeClassicAdministrators
 ```
 
-## <a name="grant-access"></a>Предоставление доступа
+## <a name="grant-access"></a>Разрешить доступ
 
 При использовании RBAC, чтобы предоставить доступ, нужно создать назначение ролей.
 
@@ -355,7 +355,7 @@ ObjectType         : ServicePrincipal
 CanDelegate        : False
 ```
 
-## <a name="remove-access"></a>Запрет доступа
+## <a name="remove-access"></a>Remove access
 
 Для удаления доступа в RBAC нужно удалить назначение ролей с помощью командлета [Remove-AzRoleAssignment](/powershell/module/az.resources/remove-azroleassignment).
 
@@ -369,6 +369,6 @@ PS C:\> Remove-AzRoleAssignment -SignInName alain@example.com -RoleDefinitionNam
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Руководство Предоставление доступа группе к ресурсам Azure с помощью RBAC и Azure PowerShell](tutorial-role-assignments-group-powershell.md)
-- [Руководство Создание пользовательской роли для ресурсов Azure с помощью Azure PowerShell](tutorial-custom-role-powershell.md)
+- [Учебник. Предоставление доступа группе к ресурсам Azure с помощью RBAC и Azure PowerShell](tutorial-role-assignments-group-powershell.md)
+- [Учебник. Создание пользовательской роли для ресурсов Azure с помощью Azure PowerShell](tutorial-custom-role-powershell.md)
 - [Управление ресурсами с помощью Azure PowerShell](../azure-resource-manager/manage-resources-powershell.md)
