@@ -8,16 +8,16 @@ ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 09/12/2018
+ms.date: 05/21/2019
 ms.author: mimart
 ms.reviewer: japere
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 25b8669e5ca2abe2d763d9bc14f27ed9c4460886
-ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
+ms.openlocfilehash: 6cc0b3a9a02c023678691921100443436cdf0011
+ms.sourcegitcommit: db3fe303b251c92e94072b160e546cec15361c2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65825951"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66015476"
 ---
 # <a name="work-with-existing-on-premises-proxy-servers"></a>Работа с имеющимися локальными прокси-серверами
 
@@ -106,13 +106,13 @@ ms.locfileid: "65825951"
 #### <a name="proxy-outbound-rules"></a>правила для исходящих подключений прокси-сервера;
 Разрешите доступ к следующим URL-адресам.
 
-| URL-адрес | Как он используется |
+| URL | Как он используется |
 | --- | --- |
 | \*.msappproxy.net;<br>\*.servicebus.windows.net. | Связь между соединителем и облачной службой прокси приложения |
 | mscrl.microsoft.com:80<br>crl.microsoft.com:80<br>ocsp.msocsp.com:80<br>www.microsoft.com:80 | Azure использует эти URL-адреса для проверки сертификатов |
 | login.windows.net<br>login.microsoftonline.com | Соединитель использует эти URL-адреса во время регистрации. |
 
-Если брандмауэр или прокси-сервер поддерживают внесение DNS в список разрешений, можно добавить подключения к \*.msappproxy.net и \*.servicebus.windows.net в список разрешений. Если нет, необходимо разрешить доступ к [диапазонам IP-адресов центра обработки данных Azure](https://www.microsoft.com/download/details.aspx?id=41653). Список диапазонов IP-адресов обновляется еженедельно.
+Если брандмауэр или прокси-сервера можно настроить списки разрешений DNS, можно разрешить подключения к \*. msappproxy.net и \*. servicebus.windows.net. Если нет, необходимо разрешить доступ к [диапазонам IP-адресов центра обработки данных Azure](https://www.microsoft.com/download/details.aspx?id=41653). Список диапазонов IP-адресов обновляется еженедельно.
 
 
 Невозможно разрешить подключения по полному доменному имени. Вместо этого укажите диапазоны IP-адресов. Используйте следующие параметры:

@@ -19,12 +19,12 @@ translation.priority.mt:
 - ru-ru
 - zh-cn
 - zh-tw
-ms.openlocfilehash: b051f844b8c221e2e53c5fcf204878f80447cfe8
-ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
+ms.openlocfilehash: 26935b53d8f852289513a5a7b5d31e3befe3e3b2
+ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65596572"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66002246"
 ---
 # <a name="lucene-query-syntax-in-azure-search"></a>Синтаксис запросов Lucene в службе "Поиск Azure"
 Вы можете использовать расширенный синтаксис [средства синтаксического анализа запросов Lucene](https://lucene.apache.org/core/4_10_2/queryparser/org/apache/lucene/queryparser/classic/package-summary.html), чтобы написать специализированные формы запросов в службе "Поиск Azure", например запросы с подстановочными знаками, поиск нечетких соответствий, поиск с учетом расположения, запросы с регулярными выражениями и т. д. Большая часть синтаксиса средства синтаксического анализа запросов Lucene [реализована без изменений в Поиске Azure](search-lucene-query-architecture.md), за исключением *поисков по диапазону*, которые создаются в Поиске Azure с использованием выражений `$filter`. 
@@ -79,7 +79,7 @@ POST /indexes/hotels/docs/search?api-version=2019-05-06
  Специальные знаки должны быть экранированы для использования в качестве части текста поискового запроса. Вы можете экранировать их, поставив перед ними обратную косую черту (\\). К специальным знакам, которые необходимо экранировать, относятся следующие:  
 `+ - && || ! ( ) { } [ ] ^ " ~ * ? : \ /`  
 
- Например, чтобы экранировать подстановочный знак, используйте \\*.
+ Например, чтобы escape-символом-шаблоном, используйте \\ \*.
 
 ### <a name="encoding-unsafe-and-reserved-characters-in-urls"></a>Кодирование небезопасных и зарезервированных знаков в URL-адресах
 

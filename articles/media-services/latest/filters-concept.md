@@ -13,14 +13,14 @@ ms.devlang: ne
 ms.topic: article
 ms.date: 05/07/2019
 ms.author: juliako
-ms.openlocfilehash: 3a562f98635d581aa320fdbd59d05a0382f09606
-ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
+ms.openlocfilehash: bfe4bbae7953479f9b5b5ce9653fb3b8d4b2d092
+ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65465540"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66002379"
 ---
-# <a name="define-account-filters-and-asset-filters"></a>Определение фильтров учетных записей и ресурсов  
+# <a name="filters"></a>Фильтры
 
 При доставке содержимого клиентам (потоковой трансляции событий или видео по запросу) клиент может потребоваться больше гибкости, чем описано в файле манифеста актива по умолчанию. Службы мультимедиа Azure позволяют определять фильтры учетной записи и фильтры ресурсов для содержимого. 
 
@@ -88,11 +88,9 @@ ms.locfileid: "65465540"
 |**Имя**|Фильтрация по имени дорожки.|
 |**Тип**|Фильтрация по типу дорожки.<br/><br/>Допускаются следующие значения: "video", "audio" и "text".|
 
-## <a name="associate-filters-with-streaming-locator"></a>Связать фильтры с указатель потоковой передачи
+### <a name="example"></a>Пример
 
-Можно указать список фильтров активов или учетной записи, которые относятся к вашей указатель потоковой передачи. [Для работы динамического упаковщика](dynamic-packaging-overview.md) применяет этот список фильтров с соответствующими клиент указывает в URL-адрес. Создает это сочетание [динамический манифест](filters-dynamic-manifest-overview.md), основанная на фильтры в URL-адрес + фильтры, укажите на указатель потоковой передачи. Мы рекомендуем использовать эту функцию, если вы хотите применить фильтры, но не требуется предоставлять имена фильтров в URL-адрес.
-
-## <a name="definition-example"></a>Пример определения
+В следующем примере определяется фильтр Live Streaming: 
 
 ```json
 {
@@ -146,6 +144,15 @@ ms.locfileid: "65465540"
   }
 }
 ```
+
+## <a name="associate-filters-with-streaming-locator"></a>Связать фильтры с указатель потоковой передачи
+
+Можно указать список [активов или учетной записи фильтров](filters-concept.md), который будет применяться к вашей [указатель потоковой передачи](https://docs.microsoft.com/rest/api/media/streaminglocators/create#request-body). [Для работы динамического упаковщика](dynamic-packaging-overview.md) применяет этот список фильтров с соответствующими клиент указывает в URL-адрес. Создает это сочетание [динамического манифеста](filters-dynamic-manifest-overview.md), основанная на фильтры в URL-адрес + фильтры, укажите на указатель потоковой передачи. Мы рекомендуем использовать эту функцию, если вы хотите применить фильтры, но не требуется предоставлять имена фильтров в URL-адрес.
+
+Рассмотрим следующие примеры:
+
+* [Связать фильтры с указатель потоковой передачи - .NET](filters-dynamic-manifest-dotnet-howto.md#associate-filters-with-streaming-locator)
+* [Связать фильтры с указатель потоковой передачи - CLI](filters-dynamic-manifest-cli-howto.md#associate-filters-with-streaming-locator)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -13,12 +13,12 @@ ms.author: ninarn
 ms.reviewer: carlrab
 manager: craigg
 ms.date: 11/14/2018
-ms.openlocfilehash: 7d07b0a098aad472b1b4f0b9810e5b63ac3c48a2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 56b4e948f4e1aab20de95a16f45ab790c7e591bb
+ms.sourcegitcommit: db3fe303b251c92e94072b160e546cec15361c2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60202170"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66019819"
 ---
 # <a name="working-with-sql-database-connection-issues-and-transient-errors"></a>Работа с проблемами подключения Базы данных SQL и временными ошибками
 
@@ -134,7 +134,7 @@ ms.locfileid: "60202170"
 При создании [строки подключения](https://msdn.microsoft.com/library/System.Data.SqlClient.SqlConnection.connectionstring.aspx) для объекта **SqlConnection** нужно правильно настроить значения следующих параметров.
 
 - **ConnectRetryCount**. &nbsp;&nbsp;Значение по умолчанию — 1. Диапазон — от 0 до 255.
-- **ConnectRetryInterval**. &nbsp;&nbsp;Значение по умолчанию — 1 секунда. Диапазон — от 1 до 60.
+- **ConnectRetryInterval**:&nbsp;&nbsp;значение по умолчанию — 10 секунд. Диапазон — от 1 до 60.
 - **Connection Timeout**. &nbsp;&nbsp;Значение по умолчанию — 15 секунд. Диапазон — от 0 до 2147483647.
 
 Выбранные значения должны обеспечить выполнение следующего равенства: Connection Timeout = ConnectRetryCount * ConnectionRetryInterval

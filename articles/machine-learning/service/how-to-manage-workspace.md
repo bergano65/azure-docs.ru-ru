@@ -9,20 +9,20 @@ ms.topic: conceptual
 ms.reviewer: jmartens
 ms.author: shipatel
 author: shivp950
-ms.date: 09/24/2018
+ms.date: 05/10/2019
 ms.custom: seodec18
-ms.openlocfilehash: e65f739a9641181381205c7255d0472325e8055c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 7f0806a1d68cd2cede1ae51f0a50a8125c1e7c8b
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60819576"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "66016529"
 ---
 # <a name="create-and-manage-azure-machine-learning-service-workspaces"></a>Создание рабочих областей службы машинного обучения Azure и управление ими
 
-В этой статье вы выполните создание, просмотр и удаление [**рабочих областей службы машинного обучения Azure**](concept-azure-machine-learning-architecture.md#workspace) на портале Azure для [службы "Машинное обучение Azure"](overview-what-is-azure-ml.md).  Можно также создавать и удалять рабочие области, [используя интерфейс командной строки (CLI)](reference-azure-machine-learning-cli.md) или [код Python](https://aka.ms/aml-sdk).
+В этой статье вы выполните создание, просмотр и удаление [**рабочих областей службы машинного обучения Azure**](concept-workspace.md) на портале Azure для [службы "Машинное обучение Azure"](overview-what-is-azure-ml.md).  Можно также создавать и удалять рабочие области, [с помощью интерфейса командной строки](reference-azure-machine-learning-cli.md), [с кодом Python](https://aka.ms/aml-sdk) или [через расширение VS Code](how-to-vscode-tools.md#get-started-with-azure-machine-learning).
 
-## <a name="create-a-workspace"></a>Создание рабочей области 
+## <a name="create-a-workspace"></a>Создание рабочей области
 
 Для создания рабочей области понадобится подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Службы машинного обучения Azure](https://aka.ms/AMLFree).
 
@@ -30,7 +30,7 @@ ms.locfileid: "60819576"
 
 ## <a name="view"></a>Просмотреть рабочую область
 
-1. В верхнем левом углу окна портала выберите **Все службы**. 
+1. В верхнем левом углу окна портала выберите **Все службы**.
 
 1. В **все службы** поле фильтра, тип **машинного обучения службы**.  
 
@@ -49,8 +49,7 @@ ms.locfileid: "60819576"
 
   ![Кнопка "Удалить"](media/how-to-manage-workspace/delete-workspace.png)
 
-
-## <a name="clean-up-resources"></a>Очистка ресурсов 
+## <a name="clean-up-resources"></a>Очистка ресурсов
 
 [!INCLUDE [aml-delete-resource-group](../../../includes/aml-delete-resource-group.md)]
 

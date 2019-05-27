@@ -257,6 +257,10 @@
       items:
         - name: Анализ рабочей нагрузки
           href: analyze-your-workload.md
+        - name: Администрирование и мониторинг уровня важности рабочей нагрузки
+          href: sql-data-warehouse-how-to-manage-and-monitor-workload-importance.md
+        - name: Настройка уровня важности рабочей нагрузки
+          href: sql-data-warehouse-how-to-configure-workload-importance.md
     - name: Управление и мониторинг
       items:
         - name: Обновление до 2-го поколения

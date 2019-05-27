@@ -11,13 +11,13 @@ author: bonova
 ms.author: bonova
 ms.reviewer: carlrab, jovanpop, sachinp
 manager: craigg
-ms.date: 02/27/2019
-ms.openlocfilehash: 9726c589472c9ff6d456c922f88d12071e5ebcaf
-ms.sourcegitcommit: 179918af242d52664d3274370c6fdaec6c783eb6
+ms.date: 05/22/2019
+ms.openlocfilehash: e091ec29c810fce7a39ad5aa5cc8f0ddae711752
+ms.sourcegitcommit: db3fe303b251c92e94072b160e546cec15361c2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65560576"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66016408"
 ---
 # <a name="overview-azure-sql-database-managed-instance-resource-limits"></a>Общие сведения об ограничениях ресурсов Управляемого экземпляра Базы данных SQL Azure
 
@@ -56,7 +56,7 @@ ms.locfileid: "65560576"
 | Максимальное количество баз данных на экземпляр | 100 | 100 |
 | Максимальное количество файлов базы данных на экземпляр | До 280 | 32 767 файлов для одной базы данных |
 | Операции ввода-вывода в секунду для данных или журнала (приблизительно) | 500–7,500 МБ/с на каждый файл<br/>\*[Зависит от размера файла](https://docs.microsoft.com/azure/virtual-machines/windows/premium-storage-performance#premium-storage-disk-sizes)| 11-110 тысяч (1375/виртуальное) |
-| Журнал пропускной способности | 22 МБ/с на экземпляр | 4 МБ в секунду на виртуальное ядро<br/>Max 48 МБ в секунду на один экземпляр|
+| Журнал пропускной способности | 3 МБ/с на виртуальное ядро;<br/>Max 22 МБ в секунду на один экземпляр | 4 МБ в секунду на виртуальное ядро<br/>Max 48 МБ в секунду на один экземпляр|
 | Пропускная способность данных (приблизительно) | 100–250 МБ/с на каждый файл<br/>\*[Зависит от размера файла](https://docs.microsoft.com/azure/virtual-machines/windows/premium-storage-performance#premium-storage-disk-sizes) | |
 | Задержка ввода-вывода (приблизительно) | 5–10 мс | 1–2 мс |
 | Максимальный размер tempdb | 192–1,920 ГБ (24 ГБ на виртуальное ядро) | Без ограничений — ограничены максимальным размером хранилища экземпляра |
