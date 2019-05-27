@@ -53,7 +53,7 @@ ms.locfileid: "60318484"
 
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 | --- | --- | --- |
-| Тип | Свойству **Тип** необходимо задать значение **Http**. | Yes |
+| type | Свойству **Тип** необходимо задать значение **Http**. | Yes |
 | url | Базовый URL-адрес веб-сервера. | Yes |
 | authenticationType | Указывает тип проверки подлинности. Допустимые значения **Anonymous**, **Basic** , **Digest**, **Windows** и **ClientCertificate**. <br><br> С дополнительными свойствами и примерами JSON этих типов проверки подлинности ознакомьтесь в последующих разделах этой статьи. | Yes |
 | enableServerCertificateValidation | Указывает, следует ли включать проверку SSL-сертификата на сервере, если источником является веб-сервер HTTPS. Если ваш сервер HTTPS использует самозаверенный сертификат, установите значение **false**. | Нет <br /> (значение по умолчанию **true**) |
@@ -68,7 +68,7 @@ ms.locfileid: "60318484"
 
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 | --- | --- | --- |
-| Имя пользователя | Имя пользователя для доступа к конечной точке HTTP. | Yes |
+| userName | Имя пользователя для доступа к конечной точке HTTP. | Yes |
 | password | Пароль пользователя (**username**). | Yes |
 
 **Пример. Использование типов проверки подлинности Basic, Digest или Windows**
@@ -160,12 +160,12 @@ ms.locfileid: "60318484"
 
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| Тип | Свойство **type** для набора данных должно иметь значение **Http**. | Yes |
+| type | Свойство **type** для набора данных должно иметь значение **Http**. | Yes |
 | relativeUrl | Относительный URL-адрес ресурса, который содержит данные. Если путь не задан, используется только URL-адрес, указанный в определении связанной службы. <br><br> Для создания динамического URL-адреса можно использовать [функции фабрики данных и системные переменные](data-factory-functions-variables.md). Пример: **relativeUrl**: **$$Text.Format('/my/report?month={0:yyyy}-{0:MM}&fmt=csv', SliceStart)**. | Нет  |
 | requestMethod | Метод HTTP. Допустимые значения: **GET** и **POST**. | Нет  <br />(значение по умолчанию — **GET**) |
 | additionalHeaders | Дополнительные заголовки HTTP-запроса. | Нет  |
 | requestBody | Текст HTTP-запроса. | Нет  |
-| свойства | Если вы хотите *извлечь данные из конечной точки HTTP "как есть"*  — без анализа, пропустите параметр **format**. <br><br> Для выполнения анализа содержимого ответа HTTP в процессе копирования поддерживаются следующие типы форматов: **TextFormat**, **JsonFormat**, **AvroFormat**, **OrcFormat** и **ParquetFormat**. Дополнительные сведения см. в разделах о [Текстовый формат](data-factory-supported-file-and-compression-formats.md#text-format), [Формат JSON](data-factory-supported-file-and-compression-formats.md#json-format), [Формат Avro](data-factory-supported-file-and-compression-formats.md#avro-format), [Формат ORC](data-factory-supported-file-and-compression-formats.md#orc-format) и [Формат Parquet](data-factory-supported-file-and-compression-formats.md#parquet-format). |Нет  |
+| format | Если вы хотите *извлечь данные из конечной точки HTTP "как есть"*  — без анализа, пропустите параметр **format**. <br><br> Для выполнения анализа содержимого ответа HTTP в процессе копирования поддерживаются следующие типы форматов: **TextFormat**, **JsonFormat**, **AvroFormat**, **OrcFormat** и **ParquetFormat**. Дополнительные сведения см. в разделах о [Текстовый формат](data-factory-supported-file-and-compression-formats.md#text-format), [Формат JSON](data-factory-supported-file-and-compression-formats.md#json-format), [Формат Avro](data-factory-supported-file-and-compression-formats.md#avro-format), [Формат ORC](data-factory-supported-file-and-compression-formats.md#orc-format) и [Формат Parquet](data-factory-supported-file-and-compression-formats.md#parquet-format). |Нет  |
 | compression | Укажите тип и уровень сжатия данных. Поддерживаемые типы: **GZip**, **Deflate**, **BZip2** и **ZipDeflate**. Поддерживаемые уровни: **Оптимальный** и **Самый быстрый**. Узнайте больше о [форматах файлов и сжатия данных в фабрике данных Azure](data-factory-supported-file-and-compression-formats.md#compression-support). |Нет  |
 
 **Пример. Использование метода GET (по умолчанию)**
