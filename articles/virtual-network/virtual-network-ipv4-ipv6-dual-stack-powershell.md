@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/22/2019
 ms.author: kumud
-ms.openlocfilehash: f26391e36e3208996160fffad01e39ec2f182318
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.openlocfilehash: a9f8066896134072665c3f5b325e033b638bf094
+ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62130970"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66000999"
 ---
 # <a name="deploy-an-ipv6-dual-stack-application-in-azure---powershell-preview"></a>Развертывание приложения двойной стек IPv6 в Azure с помощью PowerShell (Предварительная версия)
 
@@ -48,7 +48,7 @@ Get-AzProviderFeature -FeatureName AllowIPv6VirtualNetwork -ProviderNamespace Mi
 Register-AzResourceProvider -ProviderNamespace Microsoft.Network
 ```
 
-## <a name="create-a-resource-group"></a>Создать группу ресурсов
+## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
 Перед созданием виртуальной сети двойного стека, необходимо создать группу ресурсов с помощью [New AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup). В следующем примере создается группа ресурсов, с именем *myRGDualStack* в *Восток США* расположение:
 
@@ -151,7 +151,7 @@ $lbrule_v6 = New-AzLoadBalancerRuleConfig `
 
 ### <a name="create-load-balancer"></a>Создание подсистемы балансировки нагрузки
 
-Теперь создайте Load Balancer ценовой категории "Базовый" с помощью командлета [New-AzLoadBalancer](/powershell/module/az.network/new-azloadbalancer). В следующем примере создается общедоступный основные подсистемы балансировки нагрузки с именем *myLoadBalancer* с помощью интерфейсных IP-конфигураций IPv4 и IPv6, внутренние пулы, проверки работоспособности, балансировки нагрузки правила и NAT правил, который был создан на предыдущие шаги:
+Теперь создайте Load Balancer ценовой категории "Базовый" с помощью командлета [New-AzLoadBalancer](/powershell/module/az.network/new-azloadbalancer). В следующем примере создается общедоступный основные подсистемы балансировки нагрузки с именем *myLoadBalancer* с помощью IP внешнего интерфейса IPv4 и IPv6-конфигурации, внутренние пулы и правила балансировки нагрузки, созданные на предыдущих шагах:
 
 ```azurepowershell-interactive
 $lb = New-AzLoadBalancer `
@@ -167,7 +167,7 @@ $lb = New-AzLoadBalancer `
 
 ## <a name="create-network-resources"></a>Создание сетевых ресурсов
 Прежде чем развертывать виртуальные машины и можно тестировать балансировщик нагрузки, поддерживающие сетевые ресурсы — необходимо создать группу доступности, группа безопасности сети, виртуальной сети и виртуальных сетевых адаптеров. 
-### <a name="create-an-availability-set"></a>Создание группы доступности
+### <a name="create-an-availability-set"></a>Создать группу доступности
 Чтобы улучшить высокую доступность приложения, поместите виртуальные машины в группу доступности.
 
 Создайте группу доступности с помощью командлета [New-AzAvailabilitySet](/powershell/module/az.compute/new-azavailabilityset). В следующем примере создается группа доступности *myAvailabilitySet*.
@@ -231,7 +231,7 @@ $nsg = New-AzNetworkSecurityGroup `
 -Name "dsNSG1"  `
 -SecurityRules $rule1,$rule2
 ```
-### <a name="create-a-virtual-network"></a>Создание виртуальной сети
+### <a name="create-a-virtual-network"></a>Создать виртуальную сеть
 
 Создайте виртуальную сеть с помощью командлета [New-AzVirtualNetwork](/powershell/module/az.network/new-azvirtualnetwork). В следующем примере создаются виртуальная сеть *myVnet* и подсеть *mySubnet*.
 

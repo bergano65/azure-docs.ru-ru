@@ -5,19 +5,19 @@ author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 09/26/2018
-ms.openlocfilehash: eb2fee7c76bcf29aee2dcd70d7975d7631bb23f6
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 5/21/2019
+ms.openlocfilehash: 3fbffc805afb540499e38f1c0853260968228b22
+ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61459306"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66002008"
 ---
 # <a name="connect-an-existing-azure-app-service-to-azure-database-for-mysql-server"></a>Подключение существующей службы приложений Azure к базе данных Azure для сервера MySQL
 В этом разделе объясняется, как подключить имеющуюся службу приложений Azure к базе данных Azure для сервера MySQL.
 
 ## <a name="before-you-begin"></a>Перед началом работы
-Войдите на [портал Azure](https://portal.azure.com). Создайте базу данных Azure для сервера MySQL. Дополнительные сведения см. в статье [Создание базы данных Azure для сервера MySQL с помощью портала Azure](quickstart-create-mysql-server-database-using-azure-portal.md) или [Создание сервера базы данных Azure для MySQL с помощью Azure CLI](quickstart-create-mysql-server-database-using-azure-cli.md).
+Войдите на [портале Azure](https://portal.azure.com). Создайте базу данных Azure для сервера MySQL. Дополнительные сведения см. в статье [Создание базы данных Azure для сервера MySQL с помощью портала Azure](quickstart-create-mysql-server-database-using-azure-portal.md) или [Создание сервера базы данных Azure для MySQL с помощью Azure CLI](quickstart-create-mysql-server-database-using-azure-cli.md).
 
 В настоящее время существует два решения предоставления доступа из службы приложений Azure к базе данных Azure для MySQL. Оба решения включают настройку правил брандмауэра уровня сервера.
 
@@ -48,6 +48,23 @@ ms.locfileid: "61459306"
 
 ## <a name="ssl-configuration"></a>Настройка SSL
 Протокол SSL по умолчанию включен для базы данных Azure для MySQL. Если приложение не использует SSL для подключения к базе данных, необходимо отключить SSL для сервера MySQL. Дополнительные сведения о настройке SSL см. в статье [Настройка SSL-подключений в приложении для безопасного подключения к базе данных Azure для MySQL](howto-configure-ssl.md).
+
+### <a name="django-pymysql"></a>Django (PyMySQL)
+```python
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'quickstartdb',
+        'USER': 'myadmin@mydemoserver',
+        'PASSWORD': 'yourpassword',
+        'HOST': 'mydemoserver.mysql.database.azure.com',
+        'PORT': '3306',
+        'OPTIONS': {
+            'ssl': {'ssl-ca': '/var/www/html/BaltimoreCyberTrustRoot.crt.pem'}
+        }
+    }
+}
+```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Дополнительные сведения о строках подключения см. в [соответствующей статье](howto-connection-string.md).

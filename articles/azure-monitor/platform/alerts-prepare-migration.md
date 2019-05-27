@@ -7,16 +7,19 @@ ms.topic: conceptual
 ms.date: 03/19/2018
 ms.author: snmuvva
 ms.subservice: alerts
-ms.openlocfilehash: 347c89991cbb4d28b46eafff0a783148793ad2f7
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: bdbd45c2b10dec8f1c0a85110747a470e818dbf9
+ms.sourcegitcommit: db3fe303b251c92e94072b160e546cec15361c2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64727485"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66015610"
 ---
 # <a name="prepare-your-logic-apps-and-runbooks-for-migration-of-classic-alert-rules"></a>Подготовка приложений логики и модулей Runbook для миграции классической правил генерации оповещений
 
-Как [было объявлено ранее](monitoring-classic-retirement.md), классических оповещений в Azure Monitor, прекращается в июля 2019 г. Средства миграции доступен на портале Azure клиентам, кто использовать классические правила генерации оповещений, которые хотят активировать миграции сами.
+Как [было объявлено ранее](monitoring-classic-retirement.md), классических оповещений в Azure Monitor будет прекращена в сентябре 2019 (был изначально июля 2019 г). Средства миграции доступен на портале Azure клиентам, кто использовать классические правила генерации оповещений, которые хотят активировать миграции сами.
+
+> [!NOTE]
+> Из-за задержки в развертывание средства миграции даты прекращения использования для переноса классических оповещений расширен для 31 августа 2019 г. с изначально было объявлено даты 30 июня 2019 г.
 
 Если вы решили добровольно перенести классические правила генерации оповещения для нового правила генерации оповещений, имейте в виду, что существуют некоторые различия между двумя системами. Эта статья объясняет, эти различия и как вы можете подготовить для изменения.
 
@@ -30,7 +33,7 @@ ms.locfileid: "64727485"
 |---------|---------|---------|
 |REST API     | [имеет значение Microsoft.Insights/alertrules.](https://docs.microsoft.com/rest/api/monitor/alertrules)         | [Microsoft.Insights/metricalerts](https://docs.microsoft.com/rest/api/monitor/metricalerts)       |
 |Инфраструктура CLI Azure     | [Предупреждение монитора AZ](https://docs.microsoft.com/cli/azure/monitor/alert?view=azure-cli-latest)        | [оповещение о метриках AZ monitor](https://docs.microsoft.com/cli/azure/monitor/metrics/alert?view=azure-cli-latest)        |
-|PowerShell      | [Справочные материалы](https://docs.microsoft.com/powershell/module/az.monitor/add-azmetricalertrule)       |      |
+|PowerShell      | [Справочные материалы](https://docs.microsoft.com/powershell/module/az.monitor/add-azmetricalertrule)       |  [Справочные материалы](https://docs.microsoft.com/powershell/module/az.monitor/add-azmetricalertrulev2)    |
 | Шаблон Azure Resource Manager | [Для классических оповещений](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-enable-template)|[Для новых оповещений метрик](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-metric-create-templates)|
 
 ## <a name="notification-payload-changes"></a>Изменения полезные данные уведомления
@@ -48,7 +51,7 @@ ms.locfileid: "64727485"
 | Имя правила генерации оповещений | **context.Name** | **Data.Context.Name** |
 | Описание правила оповещения | **context.Description** | **Data.Context.Description** |
 | Условие правила генерации оповещений | **context.Condition** | **Data.Context.Condition** |
-| Имя метрики | **context.condition.metricName** | **data.context.condition.allOf[0].metricName** |
+| Название метрики | **context.condition.metricName** | **data.context.condition.allOf[0].metricName** |
 | Агрегат времени (как метрики агрегируются поверх окна оценки)| **data.context.condition.timeAggregation** | **data.context.condition.timeAggregation** |
 | Период оценки | **context.condition.windowSize** | **data.context.condition.windowSize** |
 | Оператор (как объединенные метрики значение сравнивается с пороговым значением) | **context.Condition.operator** | **Data.Context.Condition.operator** |

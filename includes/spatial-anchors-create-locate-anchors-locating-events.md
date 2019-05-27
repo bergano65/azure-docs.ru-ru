@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: c4339aa8548ef66c862200ad61b6aaca90332ad0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60232486"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66110642"
 ---
 После создания вашей наблюдателя `AnchorLocated` событие будет срабатывать для каждой привязки, в запросе. Это событие возникает при обнаружении привязки или если привязки не удается найти. Если в такой ситуации причина будут указаны в состояние. После обработки всех привязки наблюдатель найден или не найден, то `LocateAnchorsCompleted` событие будет срабатывать.

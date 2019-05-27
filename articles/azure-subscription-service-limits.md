@@ -8,14 +8,14 @@ tags: billing
 ms.assetid: 60d848f9-ff26-496e-a5ec-ccf92ad7d125
 ms.service: billing
 ms.topic: article
-ms.date: 04/19/2019
+ms.date: 05/17/2019
 ms.author: byvinyal
-ms.openlocfilehash: c8f1eaba726efe72e2b6845beaf1465d047c90d2
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 3f01e15e4ac39127263c8c68590b6c50be04847d
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65787659"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "66023220"
 ---
 # <a name="azure-subscription-and-service-limits-quotas-and-constraints"></a>Подписка Azure, границы, квоты и ограничения службы
 В этом документе указаны некоторые из наиболее распространенных ограничений Microsoft Azure, которые иногда называются квотами. Этот документ на текущий момент охватывает не все службы Azure. Со временем список будет расширен и обновлен, чтобы охватить больше служб.
@@ -54,6 +54,7 @@ ms.locfileid: "65787659"
 * [База данных Azure для PostgreSQL](#azure-database-for-postgresql)
 * [Azure DNS](#azure-dns-limits)
 * [Брандмауэр Azure](#azure-firewall-limits)
+* [Функции Azure](#functions-limits)
 * [Служба Azure Kubernetes (AKS)](#azure-kubernetes-service-limits)
 * [Служба "Машинное обучение Azure"](#azure-machine-learning-service-limits)
 * [служба "Карты Azure"](#azure-maps-limits);
@@ -234,6 +235,9 @@ ms.locfileid: "65787659"
 
 [!INCLUDE [azure-websites-limits](../includes/azure-websites-limits.md)]
 
+### <a name="functions-limits"></a>Ограничения функций
+[!INCLUDE [functions-limits](../includes/functions-limits.md)]
+
 ### <a name="scheduler-limits"></a>Ограничения планировщика
 [!INCLUDE [scheduler-limits-table](../includes/scheduler-limits-table.md)]
 
@@ -246,7 +250,7 @@ ms.locfileid: "65787659"
 [!INCLUDE [biztalk-services-service-limits](../includes/biztalk-services-service-limits.md)]
 
 ### <a name="azure-cosmos-db-limits"></a>Ограничения Azure Cosmos DB
-Azure Cosmos DB — это глобальная база данных, пропускную способность и хранилище которой можно масштабировать в соответствии с требованиями приложения. Если у вас есть вопросы по масштабированию Azure Cosmos DB, отправьте сообщение по адресу askcosmosdb@microsoft.com.
+Ограничения Azure Cosmos DB, см. в разделе [ограничения в Azure Cosmos DB](cosmos-db/concepts-limits.md).
 
 ### <a name="azure-database-for-mysql"></a>База данных Azure для MySQL
 Дополнительные сведения об ограничениях базы данных Azure для MySQL см. в статье [Ограничения базы данных Azure для MySQL](mysql/concepts-limits.md).

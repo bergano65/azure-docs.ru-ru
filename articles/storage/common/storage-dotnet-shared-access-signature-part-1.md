@@ -9,12 +9,12 @@ ms.date: 04/18/2017
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: 25c562e144b635cb66c5df9b5b7bd6237ce3122c
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 8bee0426f171b0fdb7793d18c352649928fdb2e8
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65154427"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65907180"
 ---
 # <a name="using-shared-access-signatures-sas"></a>Использование подписанных URL-адресов (SAS)
 
@@ -109,7 +109,7 @@ SAS можно использовать, когда доступ к ресурс
 https://myaccount.blob.core.windows.net/sascontainer/sasblob.txt?sv=2015-04-05&st=2015-04-29T22%3A18%3A26Z&se=2015-04-30T02%3A23%3A26Z&sr=b&sp=rw&sip=168.1.5.60-168.1.5.70&spr=https&sig=Z%2FRHIX5Xcg0Mq2rqI3OlWTjEg2tYkboXr1P9ZUXDtkk%3D
 ```
 
-| ИМЯ | Сегмент SAS | ОПИСАНИЕ |
+| ИМЯ | Сегмент SAS | Описание |
 | --- | --- | --- |
 | URI BLOB-объекта |`https://myaccount.blob.core.windows.net/sascontainer/sasblob.txt` |Адрес BLOB-объекта. Обратите внимание, что настоятельно рекомендуется использовать HTTPS. |
 | Версия служб хранилища |`sv=2015-04-05` |Для служб хранилища версии 2012-02-12 и более поздней этот параметр указывает используемую версию. |
@@ -129,7 +129,7 @@ https://myaccount.blob.core.windows.net/sascontainer/sasblob.txt?sv=2015-04-05&s
 https://myaccount.blob.core.windows.net/?restype=service&comp=properties&sv=2015-04-05&ss=bf&srt=s&st=2015-04-29T22%3A18%3A26Z&se=2015-04-30T02%3A23%3A26Z&sr=b&sp=rw&sip=168.1.5.60-168.1.5.70&spr=https&sig=F%6GRVAZ5Cdj2Pw4tgU7IlSTkWgn7bUkkAg8P6HESXwmf%4B
 ```
 
-| ИМЯ | Сегмент SAS | ОПИСАНИЕ |
+| ИМЯ | Сегмент SAS | Описание |
 | --- | --- | --- |
 | Универсальный код ресурса (URI) |`https://myaccount.blob.core.windows.net/?restype=service&comp=properties` |Конечная точка службы BLOB-объектов с параметрами для получения свойств службы (для запроса GET) или задания свойств службы (для запроса SET). |
 | Службы |`ss=bf` |SAS применяется к службам больших двоичных объектов и службам файлов. |
@@ -232,7 +232,7 @@ catch (StorageException e)
 Для выполнения этих примеров C# необходимо ссылаться на следующие пакеты NuGet в своем проекте:
 
 * [Клиентская библиотека службы хранилища Azure для .NET](https://www.nuget.org/packages/WindowsAzure.Storage)версии 6.0 или более поздней (для использования учетной записи SAS).
-* [Диспетчер конфигураций Azure](https://www.nuget.org/packages/Microsoft.WindowsAzure.ConfigurationManager)
+* [Диспетчер конфигураций Azure](https://www.nuget.org/packages/Microsoft.Azure.ConfigurationManager)
 
 Дополнительные примеры, в которых показано, как создать и проверить SAS, см. в разделе [Примеры кода Azure для хранилища](https://azure.microsoft.com/documentation/samples/?service=storage).
 
@@ -422,7 +422,6 @@ private static string GetBlobSasUri(CloudBlobContainer container, string blobNam
 Подписи общего доступа удобно применять в целях предоставления ограниченных разрешений для вашей учетной записи хранения тем клиентам, которые нельзя передавать ключ учетной записи. Таким образом, они являются важной частью модели обеспечения безопасности для любого приложения, использующего хранилище Azure. Если следовать указанным здесь рекомендациям, подписи общего доступа позволяют повысить гибкость доступа к ресурсам в вашей учетной записи хранения без ущерба для безопасности приложения.
 
 ## <a name="next-steps"></a>Следующие шаги
-* [Подписанные URL-адреса. Часть 2: Создание и использование подписанного URL-адреса с помощью хранилища BLOB-объектов](../blobs/storage-dotnet-shared-access-signature-part-2.md)
 * [Управление анонимным доступом на чтение к контейнерам и большим двоичным объектам](../blobs/storage-manage-access-to-resources.md)
 * [Делегирование доступа с помощью подписанного URL-адреса](https://msdn.microsoft.com/library/azure/ee395415.aspx)
 * [Введение в использование SAS таблиц и очередей](https://blogs.msdn.com/b/windowsazurestorage/archive/2012/06/12/introducing-table-sas-shared-access-signature-queue-sas-and-update-to-blob-sas.aspx)

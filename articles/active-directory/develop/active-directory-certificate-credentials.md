@@ -13,17 +13,17 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 07/24/2018
+ms.date: 05/21/2019
 ms.author: ryanwi
 ms.reviewer: nacanuma, jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 34a499ac12bcf6f4aee671eb209b709390ca6139
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.openlocfilehash: ed4e7559ff6c3b76bbdf49b538ffebf3ad09cc58
+ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65545123"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66001218"
 ---
 # <a name="certificate-credentials-for-application-authentication"></a>Учетные данные сертификата для аутентификации приложения
 
@@ -98,11 +98,10 @@ Gh95kHCOEGq5E_ArMBbDXhwKR577scxYaoJ1P{a lot of characters here}KKJDEg"
 ### <a name="uploading-the-certificate-file"></a>Передача файла сертификата
 
 При регистрации приложения Azure для клиентского приложения сделайте следующее.
-1. Выберите **Параметры > ключи**, а затем выберите **Отправить открытый ключ**. 
-2. Выберите файл сертификата, который требуется передать.
-3. Щелкните **Сохранить**. 
-   
-   После сохранения выполняется передача сертификата и отображаются значения отпечатка сертификата, даты начала и истечения срока действия. 
+1. Выберите **сертификаты и секреты**. 
+2. Щелкните **отправка сертификата** и выберите файл сертификата для отправки.
+3. Щелкните **Добавить**.
+  После отправки сертификата отпечаток, даты начала и окончания срока действия значения отображаются. 
 
 ### <a name="updating-the-application-manifest"></a>Обновление манифеста приложения
 
@@ -114,7 +113,7 @@ Gh95kHCOEGq5E_ArMBbDXhwKR577scxYaoJ1P{a lot of characters here}KKJDEg"
 Также необходимо предоставить идентификатор GUID для определения ключа в манифесте приложения (`$keyId`).
 
 При регистрации приложения Azure для клиентского приложения сделайте следующее.
-1. Откройте манифест приложения.
+1. Выберите **манифеста** открыть манифест приложения.
 2. Замените свойство *keyCredentials* данными нового сертификата, используя приведенную ниже схему.
 
    ```

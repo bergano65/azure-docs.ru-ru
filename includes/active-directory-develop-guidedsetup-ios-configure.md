@@ -5,27 +5,27 @@ services: active-directory
 documentationcenter: dev-center-name
 author: danieldobalian
 manager: CelesteDG
-editor: ''
 ms.service: active-directory
 ms.devlang: na
 ms.topic: include
 ms.tgt_pltfrm: ios
 ms.workload: identity
 ms.date: 09/19/2018
-ms.author: dadobali
+ms.author: jmprieur
+ms.reviwer: brandwe
 ms.custom: include file
-ms.openlocfilehash: 9782c6c2024c5cf490f207bb12a214c93a53b813
-ms.sourcegitcommit: 807c318f5c034f8256f91c241e9d6f8f4d7de90a
+ms.openlocfilehash: a4b0c2e2d7732c6d2a4f57411731f7145cf3e73e
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64951356"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65967673"
 ---
-## <a name="register-your-application"></a>Регистрация приложения
+## <a name="register-your-application"></a>Зарегистрировать приложение
 
 Приложение можно зарегистрировать одним из двух способов, которые описаны в следующих двух разделах.
 
-### <a name="option-1-express-mode"></a>Вариант 1. Экспресс-режим
+### <a name="option-1-express-mode"></a>Вариант 1: Экспресс-режим
 
 Теперь вам необходимо зарегистрировать приложение на *портале регистрации приложений Майкрософт*:
 

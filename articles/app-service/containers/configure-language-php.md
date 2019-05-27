@@ -13,12 +13,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 03/28/2019
 ms.author: cephalin
-ms.openlocfilehash: ed6a50ee68d39e6e0d01b405eb02edd6d4c93613
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.openlocfilehash: 637feb855c7816dfb26229c5a65a069260a58cd3
+ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65407588"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66003095"
 ---
 # <a name="configure-a-linux-php-app-for-azure-app-service"></a>Настройка приложения Linux PHP для службы приложений Azure
 
@@ -105,7 +105,7 @@ az webapp config set --resource-group <resource-group-name> --name <app-name> --
 
 ## <a name="access-environment-variables"></a>Доступ к переменным среды
 
-В Службе приложений можно [задать параметры приложения](../web-sites-configure.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#app-settings) вне кода приложения. Вы сможете обращаться к их с использованием стандарта [getenv()](https://secure.php.net/manual/function.getenv.php) шаблон. Например, для доступа к параметру приложения с именем `DB_HOST` используйте следующий код:
+В Службе приложений можно [задать параметры приложения](../configure-common.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#configure-app-settings) вне кода приложения. Вы сможете обращаться к их с использованием стандарта [getenv()](https://secure.php.net/manual/function.getenv.php) шаблон. Например, для доступа к параметру приложения с именем `DB_HOST` используйте следующий код:
 
 ```php
 getenv("DB_HOST")
@@ -147,7 +147,7 @@ if (isset($_SERVER['X-Forwarded-Proto']) && $_SERVER['X-Forwarded-Proto'] === 'h
 > Оптимальный способ увидеть версию PHP и текущий *php.ini* конфигурации заключается в вызове [phpinfo()](https://php.net/manual/function.phpinfo.php) в вашем приложении.
 >
 
-### <a name="customize-non-phpinisystem-directives"></a>Настройка не PHP_INI_SYSTEM директивы
+### <a name="Customize-non-PHP_INI_SYSTEM directives"></a>Настройка без PHP_INI_SYSTEM директивы
 
 Для настройки PHP_INI_USER PHP_INI_PERDIR и PHP_INI_ALL директивы (см. в разделе [директив php.ini](https://www.php.net/manual/ini.list.php)), добавьте *.htaccess* файл в корневой каталог приложения.
 
@@ -237,7 +237,7 @@ zend_extension=/home/site/wwwroot/bin/xdebug.so
     - В зависимости от вашей *composer.json*, разные пакеты могут быть установлены для рабочий режим (`require` и `require-dev`).
     - Некоторые веб-платформы может развернуть статические файлы по-разному в рабочем режиме.
     - Некоторые веб-платформы может использовать специальные сценарии, при выполнении в рабочем режиме.
-- Запустите приложение в службе приложений в режиме отладки. Например, в [Laravel](https://meanjs.org/), можно настроить приложение для вывода сообщения отладки в производственной среде с [параметр `APP_DEBUG` параметр приложения для `true` ](../web-sites-configure.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json).
+- Запустите приложение в службе приложений в режиме отладки. Например, в [Laravel](https://meanjs.org/), можно настроить приложение для вывода сообщения отладки в производственной среде с [параметр `APP_DEBUG` параметр приложения для `true` ](../configure-common.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#configure-app-settings).
 
 ### <a name="robots933456"></a>robots933456
 

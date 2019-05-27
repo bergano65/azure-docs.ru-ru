@@ -5,7 +5,7 @@ ms.topic: include
 ms.date: 11/09/2018
 ms.author: cynthn
 ms.openlocfilehash: b9ecccfef48af8cf3fe7e679277b870256443fab
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: f4469b7bb1f380bf9dddaf14763b24b1b508d57c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/23/2019

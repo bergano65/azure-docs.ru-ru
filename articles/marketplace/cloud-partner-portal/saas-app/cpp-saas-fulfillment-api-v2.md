@@ -7,16 +7,16 @@ ms.service: marketplace
 ms.topic: conceptual
 ms.date: 03/28/2019
 ms.author: pabutler
-ms.openlocfilehash: 551f3be2ca23bc18224d28faeea6a6df80eba1db
-ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
+ms.openlocfilehash: 4efd9556e255709204654cf0acbf1b08fa2c1fc0
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/17/2019
-ms.locfileid: "65823538"
+ms.locfileid: "65872151"
 ---
 # <a name="saas-fulfillment-apis-version-2"></a>SaaS реализации API-интерфейсов версии 2 
 
-В этой статье описывается API, который обеспечивает независимых поставщиков программного обеспечения (ISV), чтобы продавать свои приложения SaaS в Azure Marketplace и AppSource. Этот API-это требование для получения списка SaaS поддерживают на Azure Marketplace и AppSource.
+В этой статье описывается API, который обеспечивает независимых поставщиков программного обеспечения (ISV), чтобы продавать свои приложения SaaS в Azure Marketplace и AppSource. Этот API-это требование могут быть частью транзакции SaaS поддерживают на Azure Marketplace и AppSource.
 
 ## <a name="managing-the-saas-subscription-lifecycle"></a>Управление жизненным циклом подписки SaaS
 

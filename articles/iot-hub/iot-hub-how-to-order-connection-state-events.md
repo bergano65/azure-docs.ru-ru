@@ -8,11 +8,11 @@ ms.topic: conceptual
 ms.date: 04/11/2019
 ms.author: asrastog
 ms.openlocfilehash: ff8f8c6656c4cd095749b3e048c72572d113f1ad
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60400581"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "66015261"
 ---
 # <a name="order-device-connection-events-from-azure-iot-hub-using-azure-cosmos-db"></a>Упорядочение событий изменения состояния подключения устройства из Центра Интернета вещей Azure с использованием Azure Cosmos DB
 
@@ -154,7 +154,7 @@ ms.locfileid: "60400581"
 
 4. В конструкторе приложений логики прокрутите окно вправо, пока не увидите часто используемых триггеров. В разделе **шаблоны**, выберите **пустое приложение логики** , что можно создавать приложения логики с нуля.
 
-### <a name="select-a-trigger"></a>Выбор триггера
+### <a name="select-a-trigger"></a>Выберите триггер
 
 Триггер представляет собой определенное событие, которое запускает приложение логики. В этом руководстве триггер, который инициирует рабочий процесс, получает запрос через HTTP.
 
@@ -220,7 +220,7 @@ ms.locfileid: "60400581"
 
    **Идентификатор базы данных**: ToDoList
 
-   **Идентификатор коллекции**: Items
+   **Идентификатор коллекции**: Элементы
 
    **Идентификатор sproc**: LatestDeviceConnectionState
 

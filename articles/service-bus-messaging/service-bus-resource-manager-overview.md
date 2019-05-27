@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 09/11/2018
 ms.author: spelluru
 ms.openlocfilehash: 196b00f1268eada20d0e35473dc6eb43c9e48df6
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59045275"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66111134"
 ---
 # <a name="create-service-bus-resources-using-azure-resource-manager-templates"></a>Создание ресурсов служебной шины с использованием шаблонов Azure Resource Manager
 
@@ -181,7 +181,7 @@ Set-AzContext -SubscriptionID <YourSubscriptionId>
 
 ### <a name="set-the-resource-group"></a>Задание группы ресурсов
 
-Если у вас нет существующей группы ресурсов, создайте новую группу ресурсов с **New AzResourceGroup** команды. Введите имя группы ресурсов и нужное расположение. Например: 
+Если у вас нет существующей группы ресурсов, создайте новую группу ресурсов с **New AzResourceGroup** команды. Введите имя группы ресурсов и нужное расположение. Например:
 
 ```powershell
 New-AzResourceGroup -Name MyDemoRG -Location "West US"

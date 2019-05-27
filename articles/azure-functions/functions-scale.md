@@ -13,12 +13,12 @@ ms.topic: reference
 ms.date: 03/27/2019
 ms.author: glenga
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 459758142c94ddfd244df1427dd5632186efc0de
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 05fb277564f72e62a4cdacc12a16cce229b2befc
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61045853"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65872745"
 ---
 # <a name="azure-functions-scale-and-hosting"></a>Масштабирование и размещение Функций Azure
 
@@ -155,7 +155,7 @@ az appservice plan list --query "[?id=='$appServicePlanId'].sku.tier" --output t
 
 В приложении-функции существует множество аспектов, влияющих на качество его масштабирования, в том числе конфигурация узла, используемый объем среды выполнения и эффективность использования ресурсов.  Дополнительные сведения см. в разделе [Рекомендации по масштабируемости](functions-best-practices.md#scalability-best-practices). Вам также следует учитывать поведение подключений при масштабировании приложения-функции. См. дополнительные сведения об [управлении подключениями в службе "Функции Azure"](manage-connections.md).
 
-### <a name="billing-model"></a>Модель оплаты
+### <a name="billing-model"></a>Модель выставления счетов
 
 Выставление счетов для плана потребления подробно описано на [странице цен на Функции Azure]. Использование вычисляется на уровне приложения-функции. При этом учитывается только время выполнения кода функции. Счета выставляются по следующим единицам:
 
@@ -165,3 +165,9 @@ az appservice plan list --query "[?id=='$appServicePlanId'].sku.tier" --output t
 Можно найти полезные запросы и сведения о том, как расшифровка счета потребления [на выставления счетов вопросов и Ответов](https://github.com/Azure/Azure-Functions/wiki/Consumption-Plan-Cost-Billing-FAQ).
 
 [странице цен на Функции Azure]: https://azure.microsoft.com/pricing/details/functions
+
+## <a name="service-limits"></a>Ограничения служб
+
+В следующей таблице перечислены ограничения, которые применяются к приложениям-функциям, при запуске в различных планах размещения:
+
+[!INCLUDE [functions-limits](../../includes/functions-limits.md)]

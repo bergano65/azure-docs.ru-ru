@@ -9,58 +9,54 @@ ms.topic: conceptual
 ms.author: jordane
 author: jpe316
 ms.reviewer: larryfr
-ms.date: 05/02/2019
+ms.date: 05/21/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: f38f9889ca057f2981774edfb8a67bb986fdd8d7
-ms.sourcegitcommit: 3675daec6c6efa3f2d2bf65279e36ca06ecefb41
+ms.openlocfilehash: 4685d02fa9a1f08d86bdbe2915b94f177235b864
+ms.sourcegitcommit: db3fe303b251c92e94072b160e546cec15361c2c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65619864"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66016418"
 ---
 # <a name="deploy-models-with-the-azure-machine-learning-service"></a>Развертывание моделей с помощью Службы машинного обучения Azure
 
-Узнайте, как развернуть модель машинного обучения как веб-службы в облаке Azure или на устройствах IoT Edge. Сведения в этом документе объясняется, как развертывание на целевые объекты вычисления в следующем:
+Узнайте, как развернуть модель машинного обучения как веб-службы в облаке Azure или на устройствах IoT Edge. 
 
-| Целевой объект вычисления | Тип развертывания | Описание |
-| ----- | ----- | ----- |
-| [Локальный веб-службы](#local) | Тестирование и отладка | Такие ограниченные возможности для тестирования и устранения неполадок.
-| [Служба Azure Kubernetes (AKS)](#aks) | Вывод в режиме реального времени | Подходит для крупномасштабных рабочих развертываний. Она обеспечивает автоматическое масштабирование и малое время отклика. |
-| [Экземпляры контейнеров Azure (ACI)](#aci) | Тестирование | Подходит низкой масштабируемых, рабочих нагрузок на основе использования ресурсов ЦП. |
-| [Вычислительная среда Машинного обучения Azure](how-to-run-batch-predictions.md) | (Предварительная версия) Определение пакета | Запустите пакетной оценки на бессерверных вычислений. Поддерживает нормальные и низкоприоритетные виртуальные машины. |
-| [Edge Интернета вещей Azure](#iotedge) | (Предварительная версия) Модуль Интернета вещей | Развертывание и обслуживать моделей машинного Обучения на устройствах Интернета вещей. |
+Рабочий процесс аналогичен вне зависимости от [где развернуть](#target) модели:
 
-## <a name="deployment-workflow"></a>Рабочий процесс развертывания
-
-Процесс развертывания модели аналогичен для всех целевых объектов вычислений:
-
-1. Зарегистрируйте модели.
-1. Развертывание модели.
-1. Протестируйте развернутые модели.
+1. Регистрация модели.
+1. Подготовка к развертыванию (Указание целевого объекта вычислений активы, использования,)
+1. Развертывание модели для целевого объекта вычислений.
+1. Тестирование развернутого модели, также называемый веб-службы.
 
 Дополнительные сведения об основных понятиях, связанных с рабочим процессом развертывания, см. в статье [Администрирование, развертывание и мониторинг моделей с помощью службы "Машинное обучение Azure"](concept-model-management-and-deployment.md).
 
-## <a name="prerequisites-for-deployment"></a>Необходимые условия для развертывания
+## <a name="prerequisites"></a>Технические условия
 
 - Модель. Если у вас нет обученной модели, можно использовать модель и файлы зависимостей, предоставляются в [учебником](https://aka.ms/azml-deploy-cloud).
 
-- [Расширение Azure CLI для службы машинного обучения](reference-azure-machine-learning-cli.md), или [пакета SDK Azure Machine Learning Python](https://aka.ms/aml-sdk).
+- [Расширение Azure CLI для службы машинного обучения](reference-azure-machine-learning-cli.md), [пакета SDK Azure Machine Learning Python](https://aka.ms/aml-sdk), или [расширения Azure Machine Learning Visual Studio Code](how-to-vscode-tools.md).
 
-## <a id="registermodel"></a> Зарегистрировать модель машинного обучения
+## <a id="registermodel"></a> Регистрация модели
 
-Реестр моделей позволяет хранить и упорядочивать обученные модели в облаке Azure. Модели зарегистрированы в рабочей области Службы машинного обучения Azure. Модель можно обучить с помощью машинного обучения Azure, или импортируются из модель, обученная в другом месте. Следующие примеры демонстрируют, как для регистрации модели из файла:
+Регистрация для машинного обучения моделей в рабочей области машинного обучения Azure. Модели могут поступать из машинного обучения Azure или поступать из другого места. Следующие примеры демонстрируют, как для регистрации модели из файла:
 
 ### <a name="register-a-model-from-an-experiment-run"></a>Регистрация модели из на выполнение эксперимента
 
-**Пример, Scikit-Learn, с помощью интерфейса командной строки**
-```azurecli-interactive
-az ml model register -n sklearn_mnist  --asset-path outputs/sklearn_mnist_model.pkl  --experiment-name myexperiment
-```
-**С помощью пакета SDK**
-```python
-model = run.register_model(model_name='sklearn_mnist', model_path='outputs/sklearn_mnist_model.pkl')
-print(model.name, model.id, model.version, sep='\t')
-```
++ **Пример Scikit-Learn, с помощью пакета SDK**
+  ```python
+  model = run.register_model(model_name='sklearn_mnist', model_path='outputs/sklearn_mnist_model.pkl')
+  print(model.name, model.id, model.version, sep='\t')
+  ```
++ **С помощью интерфейса командной строки**
+  ```azurecli-interactive
+  az ml model register -n sklearn_mnist  --asset-path outputs/sklearn_mnist_model.pkl  --experiment-name myexperiment
+  ```
+
+
++ **С помощью VS Code**
+
+  Регистрация моделей с помощью любой модели файлы или папки с [VS Code](how-to-vscode-tools.md#deploy-and-manage-models) расширения.
 
 ### <a name="register-an-externally-created-model"></a>Зарегистрируйте модель, созданные извне
 
@@ -68,31 +64,46 @@ print(model.name, model.id, model.version, sep='\t')
 
 Вы можете зарегистрировать модель, созданные извне, предоставляя **локальный путь** в модель. Можно предоставить одного файла или папки.
 
-**Пример ONNX с помощью пакета SDK для Python.**
-```python
-onnx_model_url = "https://www.cntk.ai/OnnxModels/mnist/opset_7/mnist.tar.gz"
-urllib.request.urlretrieve(onnx_model_url, filename="mnist.tar.gz")
-!tar xvzf mnist.tar.gz
++ **Пример ONNX с помощью пакета SDK для Python.**
+  ```python
+  onnx_model_url = "https://www.cntk.ai/OnnxModels/mnist/opset_7/mnist.tar.gz"
+  urllib.request.urlretrieve(onnx_model_url, filename="mnist.tar.gz")
+  !tar xvzf mnist.tar.gz
+  
+  model = Model.register(workspace = ws,
+                         model_path ="mnist/model.onnx",
+                         model_name = "onnx_mnist",
+                         tags = {"onnx": "demo"},
+                         description = "MNIST image classification CNN from ONNX Model Zoo",)
+  ```
 
-model = Model.register(workspace = ws,
-                       model_path ="mnist/model.onnx",
-                       model_name = "onnx_mnist",
-                       tags = {"onnx": "demo"},
-                       description = "MNIST image classification CNN from ONNX Model Zoo",)
-```
-
-**С помощью интерфейса командной строки**
-```azurecli-interactive
-az ml model register -n onnx_mnist -p mnist/model.onnx
-```
++ **С помощью интерфейса командной строки**
+  ```azurecli-interactive
+  az ml model register -n onnx_mnist -p mnist/model.onnx
+  ```
 
 **Оценка времени**. Примерно 10 секунд.
 
 Дополнительные сведения см. в справочной документации по [классу Model](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py).
 
-## <a name="how-to-deploy"></a>Развертывание
+<a name="target"></a>
 
-Чтобы развернуть веб-службы, необходимо создать определение конфигурации (`InferenceConfig`) и конфигурации развертывания. В файле конфигурации вывод указать скрипты и зависимости, необходимые для использования в модели. В файл конфигурации развертывания можно указать подробные сведения для обслуживания модели в целевой объект вычислений.
+## <a name="choose-a-compute-target"></a>Выберите целевой объект вычислений
+
+Следующие целевые объекты, вычислений или вычислительных ресурсов, можно использовать для размещения вашего развертывания веб-службы. 
+
+| Целевой объект вычисления | Использование | Описание |
+| ----- | ----- | ----- |
+| [Локальный веб-службы](#local) | Тестирование и отладка | Такие ограниченные возможности для тестирования и устранения неполадок.
+| [Служба Azure Kubernetes (AKS)](#aks) | Вывод в режиме реального времени | Подходит для крупномасштабных рабочих развертываний. Она обеспечивает автоматическое масштабирование и малое время отклика. |
+| [Экземпляры контейнеров Azure (ACI)](#aci) | Тестирование | Подходит низкой масштабируемых, рабочих нагрузок на основе использования ресурсов ЦП. |
+| [Вычислительная среда Машинного обучения Azure](how-to-run-batch-predictions.md) | (Предварительная версия) Определение пакета | Запустите пакетной оценки на бессерверных вычислений. Поддерживает нормальные и низкоприоритетные виртуальные машины. |
+| [Edge Интернета вещей Azure](#iotedge) | (Предварительная версия) Модуль Интернета вещей | Развертывание и обслуживать моделей машинного Обучения на устройствах Интернета вещей. |
+
+
+## <a name="prepare-to-deploy"></a>Подготовка к развертыванию
+
+Чтобы развернуть веб-службы, необходимо создать определение конфигурации (`InferenceConfig`) и конфигурации развертывания. Определение или модель оценки, — это этап, где используется развернутой модели для прогнозирования, чаще всего для производственных данных. В файле конфигурации вывод указать скрипты и зависимости, необходимые для использования в модели. В файл конфигурации развертывания можно указать подробные сведения для обслуживания модели в целевой объект вычислений.
 
 
 ### <a id="script"></a> 1. Определите сценарий входа & зависимости
@@ -141,8 +152,8 @@ dependencies:
 
 Следующий пример демонстрирует принимают и возвращают данные JSON:
 
-**Scikit-learn пример с созданием Swagger.**
 ```python
+#example: scikit-learn and Swagger
 import json
 import numpy as np
 from sklearn.externals import joblib
@@ -199,7 +210,7 @@ inference_config = InferenceConfig(source_directory="C:/abc",
 * Каталог, содержащий ресурсы, необходимые для вывода
 * Что эта модель требует Python
 * [Сценарий входа](#script), который используется для обработки веб-запросы, отправляемые развернутой службы
-* Файл conda, который описывает пакеты Python, необходимые для формирования выводов
+* Файл conda, который описывает пакеты Python, необходимые для вывода
 
 Сведения о функциях InferenceConfig см. в разделе [расширенной конфигурации](#advanced-config) раздел.
 
@@ -219,30 +230,31 @@ inference_config = InferenceConfig(source_directory="C:/abc",
 
 Ниже показано, как создать конфигурацию развертывания, а затем использовать его для развертывания веб-службы.
 
-## <a name="where-to-deploy"></a>Расположение развертывания
+## <a name="deploy-to-target"></a>Развертывание в целевой объект
 
-### <a id="local"></a> Развертывание локально
+### <a id="local"></a> Локальное развертывание
+
+Чтобы развернуть локально, необходимо иметь **установленный Docker** на локальном компьютере.
 
 В примерах этого раздела используется [deploy_from_image](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice(class)?view=azure-ml-py#deploy-from-model-workspace--name--models--image-config--deployment-config-none--deployment-target-none-), который необходимо зарегистрировать модель и образ перед выполнением развертывания. Дополнительные сведения о методах развертывания см. в разделе [развертывание](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice(class)?view=azure-ml-py#deploy-workspace--name--model-paths--image-config--deployment-config-none--deployment-target-none-) и [deploy_from_model](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice(class)?view=azure-ml-py#deploy-from-model-workspace--name--models--image-config--deployment-config-none--deployment-target-none-).
 
-**Чтобы развернуть локально, необходимо иметь установленный на локальном компьютере Docker.**
 
-**С помощью пакета SDK**
++ **С помощью пакета SDK**
 
-```python
-deployment_config = LocalWebservice.deploy_configuration(port=8890)
-service = Model.deploy(ws, "myservice", [model], inference_config, deployment_config)
-service.wait_for_deployment(show_output = True)
-print(service.state)
-```
+  ```python
+  deployment_config = LocalWebservice.deploy_configuration(port=8890)
+  service = Model.deploy(ws, "myservice", [model], inference_config, deployment_config)
+  service.wait_for_deployment(show_output = True)
+  print(service.state)
+  ```
 
-**С помощью интерфейса командной строки**
++ **С помощью интерфейса командной строки**
 
-```azurecli-interactive
-az ml model deploy -m sklearn_mnist:1 -ic inferenceconfig.json -dc deploymentconfig.json
-```
+  ```azurecli-interactive
+  az ml model deploy -m sklearn_mnist:1 -ic inferenceconfig.json -dc deploymentconfig.json
+  ```
 
-### <a id="aci"></a> Развертывание в экземпляры контейнеров Azure (DEVTEST)
+### <a id="aci"></a> Экземпляры контейнеров Azure (DEVTEST)
 
 Экземпляры контейнеров Azure (ACI) можно использовать для развертывания моделей в качестве веб-службы, если выполняется одно или несколько из следующих условий:
 - вам важно быстро выполнять развертывание и проверку модели.
@@ -250,59 +262,65 @@ az ml model deploy -m sklearn_mnist:1 -ic inferenceconfig.json -dc deploymentcon
 
 Квоты и доступности по регионам для ACI см. в разделе [квоты и доступность по регионам для экземпляры контейнеров Azure](https://docs.microsoft.com/azure/container-instances/container-instances-quotas) статьи.
 
-**С помощью пакета SDK**
++ **С помощью пакета SDK**
 
-```python
-deployment_config = AciWebservice.deploy_configuration(cpu_cores = 1, memory_gb = 1)
-service = Model.deploy(ws, "aciservice", [model], inference_config, deployment_config)
-service.wait_for_deployment(show_output = True)
-print(service.state)
-```
+  ```python
+  deployment_config = AciWebservice.deploy_configuration(cpu_cores = 1, memory_gb = 1)
+  service = Model.deploy(ws, "aciservice", [model], inference_config, deployment_config)
+  service.wait_for_deployment(show_output = True)
+  print(service.state)
+  ```
 
-**С помощью интерфейса командной строки**
++ **С помощью интерфейса командной строки**
 
-```azurecli-interactive
-az ml model deploy -m sklearn_mnist:1 -n aciservice -ic inferenceconfig.json -dc deploymentconfig.json
-```
+  ```azurecli-interactive
+  az ml model deploy -m sklearn_mnist:1 -n aciservice -ic inferenceconfig.json -dc deploymentconfig.json
+  ```
+
+
++ **С помощью VS Code**
+
+  Чтобы [развертывания моделей с помощью VS Code](how-to-vscode-tools.md#deploy-and-manage-models) не требуется для создания контейнера ACI для заранее, тестирования, из-за создания контейнеров ACI в режиме реального времени.
 
 Дополнительные сведения см. в справочной документации по классам [AciWebservice](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.aciwebservice?view=azure-ml-py) и [Webservice](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.webservice?view=azure-ml-py).
 
-### <a id="aks"></a> Развертывание в службе Azure Kubernetes (рабочая СРЕДА)
+### <a id="aks"></a>Служба Azure Kubernetes (рабочая СРЕДА)
 
 Можно использовать существующий кластер AKS или создать его с помощью пакета SDK для службы "Машинное обучение Azure", CLI или портала Azure.
 
+<a id="deploy-aks"></a>
 
-> [!IMPORTANT]
-> Кластер AKS для рабочей области нужно создать только один раз. Один кластер можно использовать для нескольких развертываний.
-> Если вы не создали или присоединенного AKS кластера go <a href="#create-attach-aks">здесь</a>.
+При наличии подключенных кластера AKS, можно развернуть его. Если вы еще не создали или подключен кластер AKS, выполните процедуру <a href="#create-attach-aks">создать кластер AKS</a>.
 
-#### Развертывание в AKS <a id="deploy-aks"></a>
++ **С помощью пакета SDK**
 
-Можно развернуть AKS с помощью Azure ML CLI:
-```azurecli-interactive
-az ml model deploy -ct myaks -m mymodel:1 -n aksservice -ic inferenceconfig.json -dc deploymentconfig.json
-```
+  ```python
+  aks_target = AksCompute(ws,"myaks")
+  deployment_config = AksWebservice.deploy_configuration(cpu_cores = 1, memory_gb = 1)
+  service = Model.deploy(ws, "aksservice", [model], inference_config, deployment_config, aks_target)
+  service.wait_for_deployment(show_output = True)
+  print(service.state)
+  print(service.get_logs())
+  ```
 
-Можно также использовать пакет SDK для Python:
-```python
-aks_target = AksCompute(ws,"myaks")
-deployment_config = AksWebservice.deploy_configuration(cpu_cores = 1, memory_gb = 1)
-service = Model.deploy(ws, "aksservice", [model], inference_config, deployment_config, aks_target)
-service.wait_for_deployment(show_output = True)
-print(service.state)
-print(service.get_logs())
-```
++ **С помощью интерфейса командной строки**
 
-Дополнительные сведения о настройке развертывании AKS, в том числе Автомасштабирование, см. в разделе [AksWebservice.deploy_configuration](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.akswebservice) ссылки.
+  ```azurecli-interactive
+  az ml model deploy -ct myaks -m mymodel:1 -n aksservice -ic inferenceconfig.json -dc deploymentconfig.json
+  ```
 
++ **С помощью VS Code**
+
+  Вы также можете [развертывание AKS с помощью расширения VS Code](how-to-vscode-tools.md#deploy-and-manage-models), но она понадобится для настройки кластеров AKS заранее.
+
+Дополнительные сведения о развертывании AKS и автоматического масштабирования в [AksWebservice.deploy_configuration](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.akswebservice) ссылки.
+
+#### Создание нового кластера AKS<a id="create-attach-aks"></a>
 **Оценка времени:** Примерно через 5 минут.
 
-#### Создать или присоединить кластера AKS <a id="create-attach-aks"></a>
-Создание или присоединение кластера AKS **один процесс времени** для рабочей области. После кластера был связан с рабочей областью, его можно использовать для нескольких развертываний. 
+> [!IMPORTANT]
+> Создание или присоединение кластера AKS находится один раз обработать для рабочей области. Один кластер можно использовать для нескольких развертываний. При удалении кластера или содержащую его группу ресурсов, необходимо создать новый кластер в следующий раз необходимо выполнить развертывание.
 
-При удалении кластера или содержащую его группу ресурсов, необходимо создать новый кластер в следующий раз необходимо выполнить развертывание.
-
-##### <a name="create-a-new-aks-cluster"></a>Создание нового кластера AKS
 Дополнительные сведения о параметр `autoscale_target_utilization`, `autoscale_max_replicas`, и `autoscale_min_replicas`, см. в разделе [AksWebservice.deploy_configuration](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.akswebservice?view=azure-ml-py#deploy-configuration-autoscale-enabled-none--autoscale-min-replicas-none--autoscale-max-replicas-none--autoscale-refresh-seconds-none--autoscale-target-utilization-none--collect-model-data-none--auth-enabled-none--cpu-cores-none--memory-gb-none--enable-app-insights-none--scoring-timeout-ms-none--replica-max-concurrent-requests-none--max-request-wait-time-none--num-replicas-none--primary-key-none--secondary-key-none--tags-none--properties-none--description-none-) ссылки.
 Следующий пример демонстрирует создание нового кластера Azure Kubernetes Service:
 
@@ -332,7 +350,7 @@ aks_target.wait_for_completion(show_output = True)
 
 **Примерное время**: приблизительно 20 минут.
 
-##### <a name="attach-an-existing-aks-cluster"></a>Присоединение существующего кластера AKS
+#### <a name="attach-an-existing-aks-cluster"></a>Присоединение существующего кластера AKS
 
 Если вас уже есть кластер AKS в подписке Azure, и это версии 1.12. ## и имеет по крайней мере 12 виртуальных ЦП, его можно использовать для развертывания образа. Приведенный ниже показано, как подключить существующий 1.12 AKS. ## кластера к рабочей области:
 
@@ -349,7 +367,10 @@ aks_target = ComputeTarget.attach(ws, 'mycompute', attach_config)
 ```
 
 ## <a name="consume-web-services"></a>Использование веб-служб
+
 Каждый развернутой веб-службы предоставляет REST API, чтобы вы могли создавать клиентские приложения в различных языках программирования. Если вы включили проверку подлинности для службы, необходимо предоставить ключ службы как токен в заголовке запроса.
+
+### <a name="request-response-consumption"></a>Запрос ответ потребления
 
 Вот пример того, как вызвать службу на языке Python:
 ```python
@@ -376,7 +397,17 @@ print(response.json())
 
 Дополнительные сведения см. в статье [Использование модели Машинного обучения Azure, развернутой в качестве веб-службы](how-to-consume-web-service.md).
 
-## <a id="update"></a> Обновление веб-службы
+
+### <a id="azuremlcompute"></a> Использование пакетной службы
+Целевые объекты вычислений для машинного обучения Azure создаются и управляются службой машинного обучения Azure. Они могут использоваться для прогноза пакетной службы на основе конвейеры машинного обучения Azure.
+
+Пошаговое руководство, вывода пакетной службы с помощью вычислений машинного обучения Azure, в статье [как выполнить пакетные прогнозы](how-to-run-batch-predictions.md) статьи.
+
+### <a id="iotedge"></a> Вывод IoT Edge
+Для поддержки развертывания на периферии доступна Предварительная версия. Дополнительные сведения см. в разделе [развертывание машинного обучения Azure, как модуль IoT Edge](https://docs.microsoft.com/azure/iot-edge/tutorial-deploy-machine-learning) статьи.
+
+
+## <a id="update"></a> Обновите веб-службы
 
 При создании новой модели, необходимо вручную обновить каждую службу, вы хотите использовать новую модель. Чтобы обновить веб-службу, используйте метод `update`. Следующий код демонстрирует способы обновления веб-службы для использования новой модели:
 
@@ -401,15 +432,11 @@ print(service.state)
 print(service.get_logs())
 ```
 
-## <a name="clean-up"></a>Очистка
-Для удаления развернутой веб-службы используйте `service.delete()`.
-Чтобы удалить зарегистрированную модель, используйте `model.delete()`.
+<a id="advanced-config"></a>
 
-Дополнительные сведения см. в справочной документации по [WebService.delete()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice(class)?view=azure-ml-py#delete--), и [Model.delete()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#delete--).
+## <a name="advanced-settings"></a>Дополнительные параметры 
 
-## Дополнительные параметры <a id="advanced-config"></a>
-
-### <a id="customimage"></a> Использование пользовательского базового образа
+**<a id="customimage"></a> Использование пользовательского базового образа**
 
 На внутреннем уровне InferenceConfig создает образ Docker, содержащий модель и другие активы, необходимые службе. Если не указан, используется базовый образ по умолчанию.
 
@@ -453,15 +480,11 @@ inference_config.base_image_registry.password = "password"
 image_config.base_image = run.properties["AzureML.DerivedImageName"]
 ```
 
-## <a name="other-inference-options"></a>Другие параметры вывода
+## <a name="clean-up-resources"></a>Очистка ресурсов
+Для удаления развернутой веб-службы используйте `service.delete()`.
+Чтобы удалить зарегистрированную модель, используйте `model.delete()`.
 
-### <a id="azuremlcompute"></a> Определение пакета
-Целевые объекты вычислений для машинного обучения Azure создаются и управляются службой машинного обучения Azure. Они могут использоваться для прогноза пакетной службы на основе конвейеры машинного обучения Azure.
-
-Пошаговое руководство, вывода пакетной службы с помощью вычислений машинного обучения Azure, в статье [как выполнить пакетные прогнозы](how-to-run-batch-predictions.md) статьи.
-
-## <a id="iotedge"></a> Вывод в IoT Edge
-Для поддержки развертывания на периферии доступна Предварительная версия. Дополнительные сведения см. в разделе [развертывание машинного обучения Azure, как модуль IoT Edge](https://docs.microsoft.com/azure/iot-edge/tutorial-deploy-machine-learning) статьи.
+Дополнительные сведения см. в справочной документации по [WebService.delete()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice(class)?view=azure-ml-py#delete--), и [Model.delete()](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py#delete--).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Устранение неполадок развертывания](how-to-troubleshoot-deployment.md)
@@ -469,3 +492,4 @@ image_config.base_image = run.properties["AzureML.DerivedImageName"]
 * [Использование модели Машинного обучения Azure, развернутой в качестве веб-службы](how-to-consume-web-service.md)
 * [Мониторинг моделей машинного обучения в Azure с помощью Application Insights](how-to-enable-app-insights.md)
 * [Сбор данных для моделей в рабочей среде](how-to-enable-data-collection.md)
+

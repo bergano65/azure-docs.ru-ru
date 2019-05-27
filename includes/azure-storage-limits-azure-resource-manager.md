@@ -9,11 +9,11 @@ ms.date: 09/18/2018
 ms.author: tamram
 ms.custom: include file
 ms.openlocfilehash: 092b5696b97b73344a01af8103b24a01010f7a55
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57554170"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66114479"
 ---
 Следующие ограничения применяются только в том случае, при выполнении операций управления с помощью Azure Resource Manager со службой хранилища Azure.
 

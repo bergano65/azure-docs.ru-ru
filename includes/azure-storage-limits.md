@@ -9,11 +9,11 @@ ms.date: 01/11/2018
 ms.author: tamram
 ms.custom: include file
 ms.openlocfilehash: ee9b70827c19236287f81f66f4b9c6e1004a54fd
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59532786"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66114492"
 ---
 Ниже перечислены ограничения по умолчанию для Azure общего назначения версии 1, 2 и учетные записи хранения BLOB-объектов. *Ingress* ограничение относится ко всем данным из запросов, которые отправляются в учетную запись хранения. *Исходящий трафик* ограничение относится ко всем данным из ответов, полученных от учетной записи хранения.
 

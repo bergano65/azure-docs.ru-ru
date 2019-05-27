@@ -1,9 +1,9 @@
-- name: Документация по API текстовой аналитики
+- name: Документация по API "Анализ текста"
   href: index.yml
 - name: Обзор
   expanded: true
   items:
-    - name: Что такое API анализа текста?
+    - name: Что такое API "Анализ текста"?
       href: overview.md
     - name: Примеры пользовательских сценариев
       href: text-analytics-user-scenarios.md
@@ -37,7 +37,7 @@
       href: Tutorials/tutorial-power-bi-key-phrases.md
     - name: Текстовая аналитика в Power Apps
       href: 'https://powerapps.microsoft.com/tutorials/cognitive-services-api/'
-    - name: оценке тональности сообщений при потоковой передаче данных с использованием Azure Databricks
+    - name: Анализ тональности сообщений при потоковой передаче данных с использованием Azure Databricks
       maintainContext: true
       href: ../../azure-databricks/databricks-sentiment-analysis-cognitive-services.md
     - name: 'Использование Flask для перевода текста, анализа тональности и синтезирования речи'
@@ -49,7 +49,7 @@
       href: How-tos/text-analytics-how-to-signup.md
     - name: Получение ключа доступа
       href: How-tos/text-analytics-how-to-access-key.md
-    - name: Вызов API текстовой аналитики
+    - name: Вызов API "Анализ текста"
       href: How-tos/text-analytics-how-to-call-api.md
     - name: Определение языка
       href: How-tos/text-analytics-how-to-language-detection.md
@@ -67,7 +67,7 @@
           href: text-analytics-resource-container-config.md
         - name: Сведения о выполнении в Службе Azure Kubernetes
           href: How-tos/text-analytics-how-to-use-container-instance.md
-    - name: Использование подключенной службы текстовой аналитики
+    - name: Использование подключенной службы "Анализ текста"
       href: vs-text-connected-service.md
 - name: Справочные материалы
   items:
@@ -75,7 +75,7 @@
       href: 'https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest#az_cognitiveservices_list'
     - name: Справочник по PowerShell
       href: 'https://aka.ms/azure-powershell-cognitiveservices'
-    - name: API анализа текста
+    - name: API "Анализ текста"
       href: 'https://westcentralus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-v2-1/operations/56f30ceeeda5650db055a3c7'
     - name: Пакеты SDK
       items:
@@ -101,8 +101,10 @@
       href: language-support.md
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/cognitive-services/text-analytics/'
-    - name: Доступ по регионам
+    - name: Доступность по регионам
       href: 'https://azure.microsoft.com/global-infrastructure/services/'
+    - name: Соответствие требованиям
+      href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
     - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/text-analytics-api'
     - name: Ключ подписки

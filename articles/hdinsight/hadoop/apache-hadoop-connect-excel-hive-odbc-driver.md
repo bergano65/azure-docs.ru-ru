@@ -9,12 +9,12 @@ ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
 ms.date: 01/29/2019
 ms.author: hrasheed
-ms.openlocfilehash: 37fed781629351475b384ac843a588bdaf7b5b66
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 100482496df2db1bff07a070bb82c6811208cfd4
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64718164"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65891307"
 ---
 # <a name="connect-excel-to-apache-hadoop-in-azure-hdinsight-with-the-microsoft-hive-odbc-driver"></a>Подключение Excel к Apache Hadoop с помощью драйвера Microsoft Hive ODBC в Azure HDInsight
 
@@ -48,11 +48,11 @@ ms.locfileid: "64718164"
 
 4. Введите или выберите следующие значения:
    
-   | Свойство | ОПИСАНИЕ |
+   | Свойство | Описание |
    | --- | --- |
    |  Имя источника данных |Присвойте имя источнику данных |
    |  Узлы |Введите &lt;имя_кластера_HDInsight&gt;.azurehdinsight.net. Например, myHDICluster.azurehdinsight.net |
-   |  Порт |Используйте <strong>443</strong>. (Этот порт был изменен с 563 на 443.) |
+   |  Port |Используйте <strong>443</strong>. (Этот порт был изменен с 563 на 443.) |
    |  База данных |Используйте <strong>значение по умолчанию</strong>. |
    |  Механизм |Выберите <strong>Служба Azure HDInsight</strong>. |
    |  Имя пользователя |Введите имя пользователя HTTP кластера HDInsight. Имя пользователя по умолчанию — <strong>admin</strong>. |
@@ -61,7 +61,7 @@ ms.locfileid: "64718164"
    
 5. Необязательно: Выберите **Дополнительные параметры...**  
    
-   | Параметр | ОПИСАНИЕ |
+   | Параметр | Описание |
    | --- | --- |
    |  Использовать исходный запрос |При выборе этого параметра драйвер ODBC НЕ пытается преобразовать TSQL в HiveQL. Следует использовать только при 100% уверенности в отправке действительных инструкций HiveQL. При подключении к серверу SQL Server или базе данных Azure SQL необходимо снять этот флажок. |
    |  Строки, загружаемые для каждого блока |При получении большого объема записей включение этого параметра может обеспечить оптимальную производительность. |
@@ -99,7 +99,7 @@ ms.locfileid: "64718164"
 
 * [Визуализация данных Apache Hive с помощью Microsoft Power BI в Azure HDInsight](apache-hadoop-connect-hive-power-bi.md)
 * [Visualize Interactive Query Hive data with Microsoft Power BI using DirectQuery in Azure HDInsight](../interactive-query/apache-hadoop-connect-hive-power-bi-directquery.md) (Визуализация данных Hive из кластера Interactive Query с помощью Microsoft Power BI и DirectQuery в Azure HDInsight).
-* [Выполнение запросов Apache Hive в Azure HDInsight с помощью Apache Zeppelin](./../hdinsight-connect-hive-zeppelin.md)
+* [Выполнение запросов Apache Hive в Azure HDInsight с помощью Apache Zeppelin](../interactive-query/hdinsight-connect-hive-zeppelin.md)
 * [Подключение Excel к Apache Hadoop с помощью Power Query](apache-hadoop-connect-excel-power-query.md)
 * [Подключение к Azure HDInsight и выполнение запросов Apache Hive с помощью Средств Data Lake для Visual Studio](apache-hadoop-visual-studio-tools-get-started.md)
 * [Использование средств Azure HDInsight для Visual Studio Code](../hdinsight-for-vscode.md).

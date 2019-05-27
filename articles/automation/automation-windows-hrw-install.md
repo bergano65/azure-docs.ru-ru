@@ -6,15 +6,15 @@ ms.service: automation
 ms.subservice: process-automation
 author: georgewallace
 ms.author: gwallace
-ms.date: 04/22/2019
+ms.date: 05/21/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 0cc00b4f2075ba77490d310080b9968bedb8dc1f
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: cc3307a4f32d77b9b8d259ac846c4db1c1ae4a99
+ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64701761"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66002509"
 ---
 # <a name="deploy-a-windows-hybrid-runbook-worker"></a>Развертывание гибридной рабочей роли Runbook для Windows
 
@@ -60,8 +60,10 @@ ms.locfileid: "64701761"
    * *SubscriptionID* (обязательный) — идентификатор подписки Azure, которая используется для учетной записи службы автоматизации.
    * *WorkspaceName* (необязательно) — Имя рабочей области Log Analytics. Если у вас нет рабочей области Log Analytics, сценарий создаст и настроит ее.
 
-     > [!NOTE]
-     > В настоящее время поддерживается для интеграции с Azure Monitor журналы только регионов службы автоматизации, **Юго-Восточная Австралия**, **восточная часть США 2**, **Юго-Восточная Азия**и **Западная Европа**. Если ваша учетная запись службы автоматизации не находится в одном из этих регионов, сценарий все равно создаст рабочую область Log Analytics, но предупредит, что связывание невозможно.
+   > [!NOTE]
+   > При включении решений только определенные регионы поддерживают связывание рабочей области Log Analytics и учетной записи службы автоматизации.
+   >
+   > Список пар поддерживаемых сопоставлений, см. в разделе [сопоставление региона для рабочей учетной записи службы автоматизации и Log Analytics](how-to/region-mappings.md).
 
 2. На своем компьютере откройте **Windows PowerShell** на **начальном** экране в режиме администратора.
 3. Из оболочки командной строки PowerShell перейдите в папку, которая содержит загруженный сценарий. Измените значения параметров *-AutomationAccountName*, *-AAResourceGroupName*, *-OMSResourceGroupName*, *-HybridGroupName*, *-SubscriptionId* и *-WorkspaceName*. Затем выполните сценарий.
