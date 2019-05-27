@@ -9,12 +9,12 @@ ms.date: 04/12/2017
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: 7029f07b494630cc1ebe4a2dbfb297e73d85ec5e
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: ef01cf194ea7a0afea033d2888df946208073e41
+ms.sourcegitcommit: 16cb78a0766f9b3efbaf12426519ddab2774b815
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65153190"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65874119"
 ---
 # <a name="configure-azure-storage-connection-strings"></a>Настройка строк подключения службы хранилища Azure
 
@@ -35,7 +35,7 @@ ms.locfileid: "65153190"
 
 Хранение строки подключения в файле конфигурации упрощает обновление строки подключения для переключения между эмулятором хранения и учетной записью хранения Azure в облаке. Вам потребуется только изменить строку подключения, чтобы указать целевую среду.
 
-Вы можете использовать [Microsoft Azure Configuration Manager](https://www.nuget.org/packages/Microsoft.WindowsAzure.ConfigurationManager/) для доступа к строке подключения в среде выполнения независимо от того, где выполняется приложение.
+Вы можете использовать [Microsoft Azure Configuration Manager](https://www.nuget.org/packages/Microsoft.Azure.ConfigurationManager/) для доступа к строке подключения в среде выполнения независимо от того, где выполняется приложение.
 
 ## <a name="create-a-connection-string-for-the-storage-emulator"></a>Создание строки подключения для эмулятора хранения
 [!INCLUDE [storage-emulator-connection-string-include](../../../includes/storage-emulator-connection-string-include.md)]
@@ -107,7 +107,7 @@ AccountKey=<account-key>
 >
 
 ### <a name="create-a-connection-string-with-an-endpoint-suffix"></a>Создание строки подключения с суффиксом конечной точки
-Чтобы создать строку подключения для службы хранилища в регионах или экземплярах с разными суффиксами конечных точек, например Azure China (Azure для Китая) или Azure Government (Azure для государственных организаций), используйте следующий формат строки подключения. Укажите, следует ли подключаться к учетной записи хранения через HTTPS (рекомендуется) или HTTP. Замените `myAccountName` именем своей учетной записи хранения, замените `myAccountKey` ключом доступа своей учетной записи и замените `mySuffix` суффиксом URI:
+Чтобы создать строку подключения для службы хранилища в регионах или экземплярах с разными суффиксами конечных точек, таких как 21Vianet в Azure для Китая или Azure для государственных организаций, используйте следующий формат строки подключения. Укажите, следует ли подключаться к учетной записи хранения через HTTPS (рекомендуется) или HTTP. Замените `myAccountName` именем своей учетной записи хранения, замените `myAccountKey` ключом доступа своей учетной записи и замените `mySuffix` суффиксом URI:
 
 ```
 DefaultEndpointsProtocol=[http|https];
@@ -116,7 +116,7 @@ AccountKey=myAccountKey;
 EndpointSuffix=mySuffix;
 ```
 
-Ниже приведен пример строки подключения для служб хранилища в Azure для Китая.
+Ниже приведен пример строки подключения для служб хранилища в Azure для Китая 21Vianet.
 
 ```
 DefaultEndpointsProtocol=https;

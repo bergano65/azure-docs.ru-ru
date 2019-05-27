@@ -6,14 +6,14 @@ author: banisadr
 manager: timlt
 ms.service: event-grid
 ms.topic: conceptual
-ms.date: 03/29/2019
+ms.date: 05/22/2019
 ms.author: babanisa
-ms.openlocfilehash: 2d56a7cda88f96a6728dc1c3e4af8e9ad0bf946f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 87cfce6045ce84f83ca651472635227547c26ee9
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60822862"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66117022"
 ---
 # <a name="event-grid-security-and-authentication"></a>Сетка событий: безопасность и проверка подлинности 
 
@@ -43,7 +43,10 @@ ms.locfileid: "60822862"
 
    Предоставленный URL-адрес действителен в течение 5 минут. В течение этого времени состояние подготовки подписки на событие находится в `AwaitingManualAction`. Если вы не завершите проверку вручную в течение пяти минут, состояние подготовки имеет значение `Failed`. Прежде чем выполнить проверку вручную, потребуется создать подписку на событие еще раз.
 
-    Этот механизм проверки подлинности также требуется конечная точка веб-перехватчика для возврата HTTP с кодом состояния 200, таким образом, чтобы он знает, что запрос POST события проверки был принят, прежде чем его можно перевести в режим ручной проверки. Другими словами Если конечная точка возвращает 200, но ответ не возвращается обратно, проверки программным образом, режим переходе в режим ручной проверки. Если GET на URL-адрес проверки в течение пяти минут, считается, что подтверждение проверки успешной.
+    Этот механизм проверки подлинности также требуется конечная точка веб-перехватчик возвращает код состояния HTTP 200, таким образом, чтобы он знает, что запрос POST события проверки был принят, прежде чем его можно перевести в режим ручной проверки. Другими словами Если конечная точка возвращает 200, но ответ не возвращается обратно, проверки программным образом, режим переходе в режим ручной проверки. Если GET на URL-адрес проверки в течение пяти минут, считается, что подтверждение проверки успешной.
+
+> [!NOTE]
+> С использованием самозаверяющих сертификатов для проверки не поддерживается. Вместо этого используйте подписанного сертификата из центра сертификации (ЦС).
 
 ### <a name="validation-details"></a>Сведения о проверке
 
@@ -64,8 +67,8 @@ ms.locfileid: "60822862"
   "topic": "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
   "subject": "",
   "data": {
-    "validationCode": "512d38b6-c7b8-40c8-89fe-f46f9e9622b6",
-    "validationUrl": "https://rp-eastus2.eventgrid.azure.net:553/eventsubscriptions/estest/validate?id=B2E34264-7D71-453A-B5FB-B62D0FDC85EE&t=2018-04-26T20:30:54.4538837Z&apiVersion=2018-05-01-preview&token=1BNqCxBBSSE9OnNSfZM4%2b5H9zDegKMY6uJ%2fO2DFRkwQ%3d"
+    "validationCode": "0000000000-0000-0000-0000-00000000000000",
+    "validationUrl": "https://rp-eastus2.eventgrid.azure.net:553/eventsubscriptions/estest/validate?id=0000000000-0000-0000-0000-0000000000000&t=2018-04-26T20:30:54.4538837Z&apiVersion=2018-05-01-preview&token=1A1A1A1A"
   },
   "eventType": "Microsoft.EventGrid.SubscriptionValidationEvent",
   "eventTime": "2018-01-25T22:12:19.4556811Z",

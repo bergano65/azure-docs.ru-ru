@@ -5,11 +5,11 @@
   items:
     - name: Общие сведения об Identity Governance
       href: identity-governance-overview.md
-    - name: Общие сведения об управлении правами  (предварительная версия)
+    - name: Общие сведения об управлении правами (предварительная версия)
       href: entitlement-management-overview.md
     - name: Что такое проверки доступа
       href: access-reviews-overview.md
-- name: Учебники
+- name: Руководства
   expanded: true
   items:
     - name: Создание первого пакета для доступа
@@ -27,11 +27,9 @@
           href: manage-guest-access-with-access-reviews.md
         - name: Управление доступом пользователей с помощью проверок
           href: manage-user-access-with-access-reviews.md
-        - name: Управление программами и их элементами управления
-          href: manage-programs-controls.md
         - name: 'Управление пользователями, которые исключены из политик условного доступа'
           href: conditional-access-exclusion.md
-- name: Практические руководства
+- name: Инструкции
   expanded: true
   items:
     - name: Управление правами
@@ -64,8 +62,6 @@
               href: review-your-access.md
             - name: Выполнение проверки доступа
               href: complete-access-review.md
-            - name: Получение результатов проверок доступа
-              href: retrieve-access-review.md
         - name: Роли Azure AD
           items:
             - name: Создание проверки доступа

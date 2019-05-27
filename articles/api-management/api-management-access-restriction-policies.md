@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/21/2019
 ms.author: apimpm
-ms.openlocfilehash: b8c564ef2de22555930f998ccd9918b252d35f17
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.openlocfilehash: 8947637a42adfca12268c3f84e208079768870e0
+ms.sourcegitcommit: d73c46af1465c7fd879b5a97ddc45c38ec3f5c0d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65541702"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65921223"
 ---
 # <a name="api-management-access-restriction-policies"></a>Политики ограничения доступа в службе управления API
 
@@ -315,8 +315,6 @@ ms.locfileid: "65541702"
 Политика `quota-by-key` принудительно устанавливает возобновляемую или действующую в течение срока службы квоту на число вызовов и (или) квоту пропускной способности для каждого ключа. Ключ может содержать произвольное строковое значение и обычно указывается с помощью выражения политики. Чтобы указать, какие запросы следует учитывать в квоте, можно добавить дополнительное условие увеличения. Если несколько политик будут увеличивать одно и то же значение ключа, оно увеличивается только один раз за запрос. При достижении этого вызова политики вызывающий объект получает код состояния ответа `403 Forbidden`.
 
 Дополнительные сведения и примеры этой политики см. в статье [Расширенное регулирование запросов с помощью управления API](https://azure.microsoft.com/documentation/articles/api-management-sample-flexible-throttling/).
-
-> Для данной политики [выражения политики](api-management-policy-expressions.md) нельзя использовать в атрибутах политики.
 
 ### <a name="policy-statement"></a>Правило политики
 

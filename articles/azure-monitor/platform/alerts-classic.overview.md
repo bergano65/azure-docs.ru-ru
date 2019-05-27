@@ -5,14 +5,14 @@ author: rboucher
 services: azure-monitor
 ms.service: azure-monitor
 ms.topic: conceptual
-ms.date: 12/29/2018
+ms.date: 05/19/2018
 ms.author: robb
-ms.openlocfilehash: 0d91e12de075ee6efebe39fd5ab582d4998046f9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 96183e22f0aeafc681a782e7d3d8bd29a6ec9617
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60776641"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65914706"
 ---
 # <a name="what-are-classic-alerts-in-microsoft-azure"></a>Что такое классические оповещения в Microsoft Azure?
 
@@ -24,7 +24,7 @@ ms.locfileid: "60776641"
 
 ## <a name="old-and-new-alerting-capabilities"></a>Старые и новые возможности оповещений
 
-В прошлом Azure Monitor, Application Insights, Log Analytics и служба "Работоспособность служб" обладали отдельными возможностями оповещений. Со временем пользовательский интерфейс и различные методы оповещений были улучшены и объединены в Azure. Консолидация все еще выполняется. Оповещения
+В прошлом Azure Monitor, Application Insights, Log Analytics и служба "Работоспособность служб" обладали отдельными возможностями оповещений. Со временем пользовательский интерфейс и различные методы оповещений были улучшены и объединены в Azure. Консолидация все еще выполняется.
 
 Просмотреть классические оповещения можно только на экране классических оповещений пользователя портала Azure. Вы увидите этот экран, нажав на кнопку **Просмотреть классические оповещения** на экране оповещений. 
 

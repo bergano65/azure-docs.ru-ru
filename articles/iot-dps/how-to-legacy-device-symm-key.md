@@ -2,19 +2,18 @@
 title: Подготовка устаревших устройств с использованием симметричных ключей в Службе подготовки устройств к добавлению в Центр Интернета вещей Azure | Документация Майкрософт
 description: Подготовка устаревших устройств с использованием симметричных ключей в экземпляре службы подготовки устройств.
 author: wesmc7777
-ms.author: v-yiso
-origin.date: 04/10/2019
-ms.date: 05/06/2019
+ms.author: wesmc
+ms.date: 04/10/2019
 ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
-manager: timlt
-ms.openlocfilehash: 248c7977752eaec86121a0dd197e5bff2621ead5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+manager: philmea
+ms.openlocfilehash: 00161f8158ad73591687764528258e1081f81ce2
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60775185"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65914296"
 ---
 # <a name="how-to-provision-legacy-devices-using-symmetric-keys"></a>Как подготовить устаревшие устройства с использованием симметричных ключей
 
@@ -44,7 +43,7 @@ ms.locfileid: "60775185"
 ## <a name="prerequisites"></a>Технические условия
 
 * Выполните процедуру, описанную в кратком руководстве по [настройке Службы подготовки устройств к добавлению в Центр Интернета вещей на портале Azure](./quick-setup-auto-provision.md).
-* Visual Studio 2015 или [Visual Studio 2017](https://www.visualstudio.com/vs/) со включенной рабочей нагрузкой [Разработка классических приложений на C++](https://www.visualstudio.com/vs/support/selecting-workloads-visual-studio-2017/).
+* [Visual Studio](https://visualstudio.microsoft.com/vs/) 2015 или более поздней версии с ["Разработка классических приложений на C++"](https://www.visualstudio.com/vs/support/selecting-workloads-visual-studio-2017/) рабочей нагрузки включен.
 * Установите последнюю версию [Git](https://git-scm.com/download/).
 
 
@@ -173,7 +172,7 @@ Jsm0lyGpjaVYVP2g3FnmnmG9dI/9qU24wNoykUmermc=
 
 Замените значение **REG_ID** идентификатором регистрации.
 
-```PowerShell
+```powershell
 $KEY='8isrFI1sGsIlvvFSSFRiMfCNzv21fjbE/+ah/lSh3lF8e2YG1Te7w1KpZhJFFXJrqYKi9yegxkqIChbqOS9Egw=='
 $REG_ID='sn-007-888-abc-mac-a1-b2-c3-d4-e5-f6'
 
@@ -184,7 +183,7 @@ $derivedkey = [Convert]::ToBase64String($sig)
 echo "`n$derivedkey`n"
 ```
 
-```PowerShell
+```powershell
 Jsm0lyGpjaVYVP2g3FnmnmG9dI/9qU24wNoykUmermc=
 ```
 
@@ -280,7 +279,7 @@ Jsm0lyGpjaVYVP2g3FnmnmG9dI/9qU24wNoykUmermc=
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * Чтобы узнать дополнительные Reprovisioning, см. в разделе [инициализацию понятия устройства Интернета вещей](concepts-device-reprovision.md) 
-* [Краткое руководство. Подготовка имитированного устройства с использованием симметричных ключей](quick-create-simulated-device-symm-key.md)
+* [Краткое руководство Подготовка имитированного устройства с использованием симметричных ключей](quick-create-simulated-device-symm-key.md)
 * Чтобы узнать дополнительные отзыва, см. в разделе [как отменить подготовку устройств, которые были автоматически подготовлены](how-to-unprovision-devices.md) 
 
 

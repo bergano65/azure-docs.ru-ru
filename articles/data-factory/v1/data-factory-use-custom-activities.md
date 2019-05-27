@@ -13,12 +13,12 @@ author: nabhishek
 ms.author: abnarain
 manager: craigg
 robots: noindex
-ms.openlocfilehash: 0ddc235064d99e9d6385ab48e78f893952eefa15
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: f7e3b1496890a4b97fc435b49ab9bf282134d1a6
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61254829"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65910814"
 ---
 # <a name="use-custom-activities-in-an-azure-data-factory-pipeline"></a>Использование настраиваемых действий в конвейере фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -44,7 +44,7 @@ ms.locfileid: "61254829"
 
 ## <a name="walkthrough-create-a-custom-activity"></a>Пошаговое руководство по созданию настраиваемого действия
 ### <a name="prerequisites"></a>Технические условия
-* Visual Studio 2012/2013/2015
+* Visual Studio 2012, 2013/2015/2017
 * Скачайте и установите пакет [Azure .NET SDK](https://azure.microsoft.com/downloads/)
 
 ### <a name="azure-batch-prerequisites"></a>Предварительные требования для пакетной службы Azure
@@ -100,10 +100,10 @@ public IDictionary<string, string> Execute(
 ### <a name="procedure"></a>Процедура
 1. Создайте проект **библиотеки классов .NET** .
    <ol type="a">
-     <li>Запустите <b>Visual Studio 2017</b>, <b>Visual Studio 2015</b>, <b>Visual Studio 2013</b> или <b>Visual Studio 2012</b>.</li>
+     <li>Запустите Visual Studio.</li>
      <li>Щелкните <b>Файл</b>, наведите указатель мыши на пункт <b>Создать</b> и щелкните <b>Проект</b>.</li>
      <li>Разверните раздел <b>Шаблоны</b> и выберите <b>Visual C#</b>. В этом руководстве используется язык C#, но для создания настраиваемого действия вы можете использовать любой язык .NET.;</li>
-     <li>Выберите тип <b>Библиотека классов</b> из списка типов проектов справа. В VS 2017 выберите <b>Библиотека классов (.NET Framework)</b> .</li>
+     <li>Выберите тип <b>Библиотека классов</b> из списка типов проектов справа. В Visual Studio, выберите <b>библиотека классов (.NET Framework)</b> </li>
      <li>В поле <b>Имя</b> введите <b>MyDotNetActivity</b>.</li>
      <li>В качестве <b>расположения</b> укажите <b>C:\ADFGetStarted</b>.</li>
      <li>Нажмите кнопку <b>ОК</b> , чтобы создать проект.</li>

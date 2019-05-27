@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: timlt
-ms.openlocfilehash: 414ca7156fd59ec1dc08e45c73e9eb30835078d4
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 617adbcda70799aa07248945bbc27f9d95aa77a3
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60694099"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65952567"
 ---
 # <a name="manage-authentication-in-azure-maps"></a>Управление аутентификацией в Azure Maps
 
@@ -98,4 +98,8 @@ RBAC предоставляет детальный контроль доступ
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* Дополнительные сведения об аутентификации Azure AD и веб-пакете SDK Azure Maps см. в статье [Использование библиотеки Map Control в службе Azure Maps](https://docs.microsoft.com/azure/azure-maps/how-to-use-map-control).
+Дополнительные сведения об аутентификации Azure AD и веб-пакете SDK Azure Maps см. в статье [Использование библиотеки Map Control в службе Azure Maps](https://docs.microsoft.com/azure/azure-maps/how-to-use-map-control).
+
+Узнайте, как просматривать метрики использования API для учетной записи Azure Maps:
+> [!div class="nextstepaction"] 
+> [Просмотр метрик использования](how-to-view-api-usage.md)

@@ -12,17 +12,17 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 03/27/2019
+ms.date: 05/22/2019
 ms.author: ryanwi
 ms.reviewer: paulgarn, hirsin
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 593289e64c0f9cd13251a0f7b47b860158100b36
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.openlocfilehash: 8c0e5035331cbe4f54926f0ae60ae0c5c31f6a9a
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65544562"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66119727"
 ---
 # <a name="how-to-provide-optional-claims-to-your-azure-ad-app"></a>Практическое руководство: Предоставлять дополнительные утверждения для приложения Azure AD
 
@@ -125,6 +125,9 @@ ms.locfileid: "65544562"
 ## <a name="configuring-optional-claims"></a>Настройка необязательных утверждений
 
 С помощью изменения манифеста приложения можно настроить необязательные утверждения (см. пример ниже). Дополнительные сведения см. в разделе [основные сведения о статье манифеста приложения Azure AD](reference-app-manifest.md).
+
+> [!IMPORTANT]
+> Маркеры доступа являются **всегда** создан с помощью манифеста ресурса, а не на клиенте.  Таким образом, в запрос `...scope=https://graph.microsoft.com/user.read...` ресурс является графа.  Таким образом маркер доступа создается с помощью манифеста Graph, не манифест клиента.  Изменение манифеста приложения никогда не приведет к потере маркеры для графика, чтобы выглядеть по-другому.  Чтобы проверить, что ваш `accessToken` изменения вступают в силу, необходимо запросить маркер для приложения, не другого приложения.  
 
 **Пример схемы:**
 

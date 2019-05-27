@@ -5,18 +5,17 @@ author: billmath
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
-origin.date: 10/19/2018
-ms.date: 04/09/2019
+ms.date: 10/19/2018
 ms.subservice: hybrid
-ms.author: v-junlch
+ms.author: billmath
 ms.topic: reference
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 40b4be9aca5243b80151afac0ae221f0d44509c5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 1084a3e546a234739fbede46612dce96537c7d4a
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60454648"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65950639"
 ---
 # <a name="azure-ad-connect--adconnectivitytools-powershell-reference"></a>Azure AD Connect выполняет следующие функции:  Справочник по модулю PowerShell ADConnectivityTools
 
@@ -34,10 +33,10 @@ ms.locfileid: "60454648"
 Confirm-DnsConnectivity [-Forest] <String> [-DCs] <Array> [-ReturnResultAsPSObject] [<CommonParameters>]
 ```
 
-### <a name="description"></a>Описание
+### <a name="description"></a>ОПИСАНИЕ
 
 Выполняет тесты подключения к локальной службе DNS.
-Чтобы настроить соединитель Active Directory, пользователь должен использовать разрешение имен для леса, к которому он или она пытается подключиться, и для контроллеров домена, связанных с указанным лесом.
+Чтобы настроить соединитель Active Directory, пользователь должен иметь оба разрешения имен для леса, он пытается подключиться к также как и контроллеры домена, связанные с указанным лесом.
 
 ### <a name="examples"></a>Примеры
 
@@ -121,7 +120,7 @@ Accept wildcard characters: False
 Confirm-ForestExists [-Forest] <String> [<CommonParameters>]
 ```
 
-### <a name="description"></a>Описание
+### <a name="description"></a>ОПИСАНИЕ
 
 Запрашивает DNS-сервер для IP-адресов, связанных с лесом.
 
@@ -176,7 +175,7 @@ Confirm-FunctionalLevel -Forest <String> [-RunWithCurrentlyLoggedInUserCredentia
 Confirm-FunctionalLevel -ForestFQDN <Forest> [-RunWithCurrentlyLoggedInUserCredentials] [<CommonParameters>]
 ```
 
-### <a name="description"></a>Описание
+### <a name="description"></a>ОПИСАНИЕ
 
 Проверяет, равен или превышает ли функциональный уровень леса AD заданное значение MinAdForestVersion (WindowsServer2003).
 Может быть запрошена учетная запись (домен\имя пользователя) и пароль.
@@ -269,7 +268,7 @@ Accept wildcard characters: False
 Confirm-NetworkConnectivity [-DCs] <Array> [-SkipDnsPort] [-ReturnResultAsPSObject] [<CommonParameters>]
 ```
 
-### <a name="description"></a>Описание
+### <a name="description"></a>ОПИСАНИЕ
 
 Выполняет проверку локального сетевого подключения.
 
@@ -310,7 +309,7 @@ Accept wildcard characters: False
 
 #### <a name="-skipdnsport"></a>-SkipDnsPort
 
-Если пользователь не использует службы DNS, предоставляемые сайтом AD или контроллером домена входа в систему, то ему или ей может потребоваться пропустить проверку порта 53.
+Если пользователь не использует службы DNS, предоставляемые на сайте AD / входа в систему контроллера домена, то можете пропустить проверки порт 53.
 Пользователь по-прежнему должен иметь возможность разрешить имя _.ldap._tcp.\<forestfqdn\> для успешной настройки соединителя Active Directory.
 
 ```yml
@@ -359,7 +358,7 @@ Accept wildcard characters: False
 Confirm-TargetsAreReachable [-Forest] <String> [-DCs] <Array> [<CommonParameters>]
 ```
 
-### <a name="description"></a>Описание
+### <a name="description"></a>ОПИСАНИЕ
 
 Выполняет проверки связи (может ли компьютер обратиться к целевому компьютеру через сеть или Интернет).
 
@@ -436,7 +435,7 @@ Confirm-ValidDomains [-Forest <String>] [-RunWithCurrentlyLoggedInUserCredential
 Confirm-ValidDomains -ForestFQDN <Forest> [-RunWithCurrentlyLoggedInUserCredentials] [<CommonParameters>]
 ```
 
-### <a name="description"></a>Описание
+### <a name="description"></a>ОПИСАНИЕ
 
 Проверяет, доступны ли все домены в лесу, чье полное доменное имя было получено. Для этого выполняется попытка получить значения DomainGuid и DomainDN.
 Может быть запрошена учетная запись (домен\имя пользователя) и пароль.
@@ -528,7 +527,7 @@ Accept wildcard characters: False
 Confirm-ValidEnterpriseAdminCredentials [-RunWithCurrentlyLoggedInUserCredentials] [<CommonParameters>]
 ```
 
-### <a name="description"></a>Описание
+### <a name="description"></a>ОПИСАНИЕ
 
 Определяет, имеет ли указанный пользователь учетные данные администратора предприятия.
 Может быть запрошена учетная запись (домен\имя пользователя) и пароль.
@@ -583,7 +582,7 @@ Get-DomainFQDNData [[-DomainFQDNDataType] <String>] [-RunWithCurrentlyLoggedInUs
  [-ReturnExceptionOnError] [<CommonParameters>]
 ```
 
-### <a name="description"></a>Описание
+### <a name="description"></a>ОПИСАНИЕ
 
 Пытается получить объект domainFQDN из предоставленных учетных данных.
 Если объект domainFQDN является допустимым, будет возвращено значение DomainFQDNName или RootDomainName, в зависимости от выбора пользователя.
@@ -671,7 +670,7 @@ Accept wildcard characters: False
 Get-ForestFQDN [-Forest] <String> [-RunWithCurrentlyLoggedInUserCredentials] [<CommonParameters>]
 ```
 
-### <a name="description"></a>Описание
+### <a name="description"></a>ОПИСАНИЕ
 
 Пытается получить ForestFQDN из предоставленных учетных данных.
 Может быть запрошена учетная запись (домен\имя пользователя) и пароль.
@@ -742,7 +741,7 @@ Start-ConnectivityValidation [-Forest] <String> [-AutoCreateConnectorAccount] <B
  [<CommonParameters>]
 ```
 
-### <a name="description"></a>Описание
+### <a name="description"></a>ОПИСАНИЕ
 
 Выполняет все доступные механизмы, которые проверяют допустимость учетных данных AD.
 
@@ -825,7 +824,7 @@ Start-NetworkConnectivityDiagnosisTools [[-Forest] <String>] [-Credentials] <PSC
  [-ValidCredentials] [<CommonParameters>]
 ```
 
-### <a name="description"></a>Описание
+### <a name="description"></a>ОПИСАНИЕ
 
 Выполняет проверку локального сетевого подключения.
 
@@ -964,5 +963,3 @@ Accept wildcard characters: False
 
 Этот командлет поддерживает общие параметры: -Debug, -ErrorAction, -ErrorVariable, -InformationAction, -InformationVariable, -OutVariable, -OutBuffer, -PipelineVariable, -Verbose, -WarningAction и -WarningVariable.
 Дополнительные сведения см. в разделе about_CommonParameters (https://go.microsoft.com/fwlink/?LinkID=113216).
-
-<!-- Update_Description: wording update -->

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/07/2019
 ms.author: rkarlin
-ms.openlocfilehash: 8e00fd312dd335551f5ba8e7dcec2baa4f7e2643
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: 72306132f88f211180c99cd30845781667605204
+ms.sourcegitcommit: d73c46af1465c7fd879b5a97ddc45c38ec3f5c0d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65204325"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65921883"
 ---
 # <a name="connect-your-fortinet-appliance"></a>Подключение устройства Fortinet 
 
@@ -120,13 +120,50 @@ ms.locfileid: "65204325"
    > [!NOTE] 
    > Дополнительные сведения см. в статье [библиотеки документов Fortinet](https://aka.ms/asi-syslog-fortinet-fortinetdocumentlibrary). Выберите свою версию и использовать **Handbook** и **Справочник по сообщениям журнала**.
 
+ Для соответствующей схемы в Log Analytics можно использовать для событий, Fortinet, поиск `CommonSecurityLog`.
+
+
 ## <a name="step-3-validate-connectivity"></a>Шаг 3. Проверка подключения
 
 Может потребоваться до 20 минут, пока не журналов в Log Analytics. 
 
-1. Убедитесь, что ваши журналы получают к правому порту системного журнала агента. Выполните следующую команду на компьютере агента системного журнала: `tcpdump -A -ni any  port 514 -vv` Эта команда показывает журналы, которые выполняет потоковую передачу с устройства к компьютеру системного журнала. Убедитесь, что журналы получаются из исходного устройства на нужный порт и правом помещения.
+1. Убедитесь, что используется средство справа. Средство должны совпадать в устройстве и в Azure Sentinel. Вы можете проверить файл устройства, который вы используете в Azure Sentinel и изменить его в файле `security-config-omsagent.conf`. 
 
-2. Убедитесь, что обмен данными между управляющую программу Syslog и агент. Выполните следующую команду на компьютере агента системного журнала: `tcpdump -A -ni any  port 25226 -vv` Эта команда показывает журналы, которые выполняет потоковую передачу с устройства к компьютеру системного журнала. Убедитесь, что журналы также получаются на агенте.
+2. Убедитесь, что ваши журналы получают к правому порту системного журнала агента. На компьютере агента системного журнала, выполните следующую команду: `tcpdump -A -ni any  port 514 -vv` Эта команда показывает журналы, которые выполняет потоковую передачу с устройства к компьютеру системного журнала. Убедитесь, что журналы получаются из исходного устройства на нужный порт и правом помещения.
+
+3. Убедитесь, что журналы отправки соответствуют [форматы RFC 5424](https://tools.ietf.org/html/rfc542).
+
+4. На компьютере с агентом системного журнала, убедитесь, что эти порты 514, 25226 открыт и осуществляет прослушивание с помощью команды `netstat -a -n:`. Дополнительные сведения об использовании этой команды см. в разделе [netstat(8) - странице руководства Linux](https://linux.die.netman/8/netstat). Если он ожидает должным образом, вы увидите следующее:
+
+   ![Azure Sentinel порты](./media/connect-cef/ports.png) 
+
+5. Убедитесь, что управляющая программа устанавливается для прослушивания по порту 514, на котором вы отправляете журналы.
+    - Для rsyslog:<br>Убедитесь, что файл `/etc/rsyslog.conf` эта конфигурация включает в себя:
+
+           # provides UDP syslog reception
+           module(load="imudp")
+           input(type="imudp" port="514")
+        
+           # provides TCP syslog reception
+           module(load="imtcp")
+           input(type="imtcp" port="514")
+
+      Дополнительные сведения см. в разделе [imudp: Модуль ввода UDP системного журнала](https://www.rsyslog.com/doc/v8-stable/configuration/modules/imudp.html#imudp-udp-syslog-input-module) и [imtcp: Модуль TCP входные данные системного журнала](https://www.rsyslog.com/doc/v8-stable/configuration/modules/imtcp.html#imtcp-tcp-syslog-input-module)
+
+   - Для syslog-ng:<br>Убедитесь, что файл `/etc/syslog-ng/syslog-ng.conf` эта конфигурация включает в себя:
+
+           # source s_network {
+            network( transport(UDP) port(514));
+             };
+     Дополнительные сведения см. в разделе [imudp: UDP системного журнала входных данных модуль] (Дополнительные сведения см. в разделе [3,16 выпуска откройте источник для syslog-ng - руководство по администрированию](https://www.syslog-ng.com/technical-documents/doc/syslog-ng-open-source-edition/3.16/administration-guide/19#TOPIC-956455).
+
+1. Убедитесь, что обмен данными между управляющую программу Syslog и агент. На компьютере агента системного журнала, выполните следующую команду: `tcpdump -A -ni any  port 25226 -vv` Эта команда показывает журналы, которые выполняет потоковую передачу с устройства к компьютеру системного журнала. Убедитесь, что журналы также получаются на агенте.
+
+6. Если оба этих команд результаты без ошибок, проверьте см. в разделе, если поступают журналы в Log Analytics. Отображаются все события, передаваемые из этих устройств в необработанном виде в Log Analytics в разделе `CommonSecurityLog` типа.
+
+7. Проверьте наличие ошибок или если журналы не поступающих, найдите в `tail /var/opt/microsoft/omsagent/<workspace id>/log/omsagent.log`. Если отображается надпись ошибок несоответствие формата журнала, перейдите на страницу `/etc/opt/microsoft/omsagent/{0}/conf/omsagent.d/security_events.conf "https://aka.ms/syslog-config-file-linux"` и просмотрите файл `security_events.conf`и убедитесь, что журналы соответствует формату регулярных выражений, появится в этом файле.
+
+8. Убедитесь, что размер по умолчанию сообщения системного журнала ограничена 2048 байт (2 КБ). Если журналы имеют слишком большую длину, обновите security_events.conf, с помощью следующей команды: `message_length_limit 4096`
 
 1. Если журналы Fortinet не, полученных агент, выполните следующую команду, в зависимости от того, какой тип управляющей программы системного журнала, используется, чтобы задать средство и журналы для поиска слова Fortinet в журналах:
    - rsyslog.d: `sudo bash -c "printf 'local4.debug  @127.0.0.1:25226\n\n:msg, contains, \"Fortinet\"  @127.0.0.1:25226' > /etc/rsyslog.d/security-config-omsagent.conf"`
@@ -135,11 +172,6 @@ ms.locfileid: "65204325"
    - syslog-ng: `sudo bash -c "printf 'filter f_local4_oms { facility(local4); };\n  destination security_oms { tcp(\"127.0.0.1\" port(25226)); };\n  log { source(src); filter(f_local4_oms); destination(security_oms); };\n\nfilter f_msg_oms { match(\"Fortinet\" value(\"MESSAGE\")); };\n  destination security_msg_oms { tcp(\"127.0.0.1\" port(25226)); };\n  log { source(src); filter(f_msg_oms); destination(security_msg_oms); };' > /etc/syslog-ng/security-config-omsagent.conf"`
       
      Перезапустите управляющую программу Syslog: `sudo service syslog-ng restart`
-1. Если оба этих команд результаты без ошибок, проверьте см. в разделе, если поступают журналы в Log Analytics. Отображаются все события, передаваемые из этих устройств в необработанном виде в Log Analytics в разделе `CommonSecurityLog` типа.
-1. Чтобы проверить, при возникновении ошибок или если журналы не поступающих, найдите `tail /var/opt/microsoft/omsagent/<workspace id>/log/omsagent.log`
-1. Убедитесь, что размер по умолчанию сообщения системного журнала ограничена 2048 байт (2 КБ). Если журналы имеют слишком большую длину, обновите security_events.conf, с помощью следующей команды: `message_length_limit 4096`
-6. Для соответствующей схемы в Log Analytics можно использовать для событий, Fortinet, поиск **CommonSecurityLog**.
-
 
 ## <a name="next-steps"></a>Дальнейшие действия
 В этом документе вы узнали, как подключиться к Azure Sentinel Fortinet устройств. Ознакомьтесь с дополнительными сведениями об Azure Sentinel в соответствующих статьях.

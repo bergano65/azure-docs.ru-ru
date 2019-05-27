@@ -9,12 +9,12 @@ ms.date: 05/11/2017
 ms.author: normesta
 ms.reviewer: fryu
 ms.subservice: common
-ms.openlocfilehash: b929d9d1acc217c291c5aa645ee2d8952f401cd1
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: ccafa3431e12b036346c4fd654b2978dc9021471
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65192169"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65912372"
 ---
 # <a name="monitor-diagnose-and-troubleshoot-microsoft-azure-storage"></a>Мониторинг, диагностика и устранение неисправностей службы хранилища Microsoft Azure
 [!INCLUDE [storage-selector-portal-monitoring-diagnosing-troubleshooting](../../../includes/storage-selector-portal-monitoring-diagnosing-troubleshooting.md)]
@@ -426,7 +426,7 @@ queueServicePoint.UseNagleAlgorithm = false;
 Метрика **PercentThrottlingError** часто увеличивается одновременно с увеличением числа запросов к хранилищу или при первоначальном нагрузочном тестировании приложения. Это также может проявляться в получении сообщений о состоянии HTTP 503 "Сервер занят" или 500 "Время ожидания операции истекло" в клиенте при операциях с хранилищем.
 
 #### <a name="transient-increase-in-PercentThrottlingError"></a>Временное увеличение метрики PercentThrottlingError
-Если в значении метрики **PercentThrottlingError** наблюдаются пиковые скачки, совпадающие с периодами высокой активности приложения, следует реализовать стратегию повторения с экспоненциальной, а не линейной задержкой в клиенте. Это позволит снизить мгновенную нагрузку на секцию и сгладить пиковые скачки трафика. Дополнительные сведения о том, как реализовать политики повтора с помощью клиентской библиотеки хранилища, см. в статье [Microsoft.WindowsAzure.Storage.RetryPolicies Namespace](https://docs.microsoft.com/dotnet/api/microsoft.azure.storage.blob.cloudblobclient.retrypolicy) (Пространство имен Microsoft.WindowsAzure.Storage.RetryPolicies).
+Если в значении метрики **PercentThrottlingError** наблюдаются пиковые скачки, совпадающие с периодами высокой активности приложения, следует реализовать стратегию повторения с экспоненциальной, а не линейной задержкой в клиенте. Это позволит снизить мгновенную нагрузку на секцию и сгладить пиковые скачки трафика. Дополнительные сведения о том, как реализовать политики повтора с помощью клиентской библиотеки хранилища см. в разделе [пространства имен Microsoft.Azure.Storage.RetryPolicies](/dotnet/api/microsoft.azure.storage.retrypolicies).
 
 > [!NOTE]
 > В значении метрики **PercentThrottlingError** также могут наблюдаться пиковые скачки, не совпадающие с периодами высокой активности приложения. Наиболее вероятная причина в этом случае — перемещение секций службой хранилища для балансировки нагрузки.
@@ -469,15 +469,15 @@ queueServicePoint.UseNagleAlgorithm = false;
 
 | `Source` | Уровень детализации | Уровень детализации | Идентификатор запроса клиента | Operation Text |
 | --- | --- | --- | --- | --- |
-| Microsoft.WindowsAzure.Storage |Информация |3 |85d077ab -… |Начинается выполнение операции с расположением «Основное» в режиме расположения PrimaryOnly. |
-| Microsoft.WindowsAzure.Storage |Информация |3 |85d077ab -… |Отправка синхронного запроса к <https://domemaildist.blob.core.windows.netazureimblobcontainer/blobCreatedViaSAS.txt?sv=2014-02-14&sr=c&si=mypolicy&sig=OFnd4Rd7z01fIvh%2BmcR6zbudIH2F5Ikm%2FyhNYZEmJNQ%3D&api-version=2014-02-14> |
-| Microsoft.WindowsAzure.Storage |Информация |3 |85d077ab -… |Waiting for response (Ожидание ответа). |
-| Microsoft.WindowsAzure.Storage |Предупреждение |2 |85d077ab -… |При ожидании ответа возникло исключение: The remote server returned an error: (403) Forbidden (Удаленный сервер вернул ошибку: 403 — запрещено). |
-| Microsoft.WindowsAzure.Storage |Информация |3 |85d077ab -… |Response received. Код состояния = 403; идентификатор запроса = 9d67c64a-64ed-4b0d-9515-3b14bbcdc63d; Content-MD5 = ; ETag = . |
-| Microsoft.WindowsAzure.Storage |Предупреждение |2 |85d077ab -… |Во время операции возникло исключение: The remote server returned an error: (403) Forbidden (Удаленный сервер вернул ошибку: 403 — запрещено). |
-| Microsoft.WindowsAzure.Storage |Информация |3 |85d077ab -… |Проверка необходимости в повторной попытке выполнения операции. Число повторных попыток = 0; код состояния HTTP = 403; исключение = The remote server returned an error: (403) Forbidden (Удаленный сервер вернул ошибку: 403 — запрещено). |
-| Microsoft.WindowsAzure.Storage |Информация |3 |85d077ab -… |Следующим установлено расположение «Основное» в соответствием с режимом расположения. |
-| Microsoft.WindowsAzure.Storage |Ошибка |1 |85d077ab -… |Retry policy did not allow for a retry. Сбой с ошибкой The remote server returned an error: (403) Forbidden (Удаленный сервер вернул ошибку: 403 — запрещено). |
+| Microsoft.Azure.Storage |Информация |3 |85d077ab -… |Начинается выполнение операции с расположением «Основное» в режиме расположения PrimaryOnly. |
+| Microsoft.Azure.Storage |Информация |3 |85d077ab -… |Отправка синхронного запроса к <https://domemaildist.blob.core.windows.netazureimblobcontainer/blobCreatedViaSAS.txt?sv=2014-02-14&sr=c&si=mypolicy&sig=OFnd4Rd7z01fIvh%2BmcR6zbudIH2F5Ikm%2FyhNYZEmJNQ%3D&api-version=2014-02-14> |
+| Microsoft.Azure.Storage |Информация |3 |85d077ab -… |Waiting for response (Ожидание ответа). |
+| Microsoft.Azure.Storage |Предупреждение |2 |85d077ab -… |При ожидании ответа возникло исключение: The remote server returned an error: (403) Forbidden (Удаленный сервер вернул ошибку: 403 — запрещено). |
+| Microsoft.Azure.Storage |Информация |3 |85d077ab -… |Response received. Код состояния = 403; идентификатор запроса = 9d67c64a-64ed-4b0d-9515-3b14bbcdc63d; Content-MD5 = ; ETag = . |
+| Microsoft.Azure.Storage |Предупреждение |2 |85d077ab -… |Во время операции возникло исключение: The remote server returned an error: (403) Forbidden (Удаленный сервер вернул ошибку: 403 — запрещено). |
+| Microsoft.Azure.Storage |Информация |3 |85d077ab -… |Проверка необходимости в повторной попытке выполнения операции. Число повторных попыток = 0; код состояния HTTP = 403; исключение = The remote server returned an error: (403) Forbidden (Удаленный сервер вернул ошибку: 403 — запрещено). |
+| Microsoft.Azure.Storage |Информация |3 |85d077ab -… |Следующим установлено расположение «Основное» в соответствием с режимом расположения. |
+| Microsoft.Azure.Storage |Ошибка |1 |85d077ab -… |Retry policy did not allow for a retry. Сбой с ошибкой The remote server returned an error: (403) Forbidden (Удаленный сервер вернул ошибку: 403 — запрещено). |
 
 В этой ситуации вам нужно разобраться, почему срок действия маркера SAS истекает, до того как клиент отправит его серверу.
 

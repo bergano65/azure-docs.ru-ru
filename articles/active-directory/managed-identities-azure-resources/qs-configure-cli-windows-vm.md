@@ -16,11 +16,11 @@ ms.date: 11/10/2018
 ms.author: markvi
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9c61313190615c2f30a7d37202bc0f9bcf14d800
-ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58449528"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66112878"
 ---
 # <a name="configure-managed-identities-for-azure-resources-on-an-azure-vm-using-azure-cli"></a>Настройка управляемых удостоверений для ресурсов Azure на виртуальной машине Azure с помощью Azure CLI
 
@@ -118,7 +118,7 @@ az vm update -n myVM -g myResourceGroup --set identity.type="none"
 
 Чтобы назначить назначаемое пользователем удостоверение виртуальной машине во время ее создания, вашей учетной записи должны быть назначены роли [Участника виртуальных машин](/azure/role-based-access-control/built-in-roles#virtual-machine-contributor) и [Оператора управляемого удостоверения](/azure/role-based-access-control/built-in-roles#managed-identity-operator). Назначать другие роли в каталоге Azure AD не требуется.
 
-1. Если вы уже создали группу ресурсов, которую можно использовать, этот шаг можно пропустить. Создайте [группу ресурсов](~/articles/azure-resource-manager/resource-group-overview.md#terminology) для хранения и развертывания управляемого удостоверения, назначаемого пользователем, используя команду [az group create](/cli/azure/group/#az-group-create). Не забудьте заменить значения параметров `<RESOURCE GROUP>` и `<LOCATION>` собственными. :
+1. Если вы уже создали группу ресурсов, которую можно использовать, этот шаг можно пропустить. Создайте [группу ресурсов](~/articles/azure-resource-manager/resource-group-overview.md#terminology) для хранения и развертывания управляемого удостоверения, назначаемого пользователем, используя команду [az group create](/cli/azure/group/#az-group-create). Не забудьте заменить значения параметров `<RESOURCE GROUP>` и `<LOCATION>` собственными. : 
 
    ```azurecli-interactive 
    az group create --name <RESOURCE GROUP> --location <LOCATION>

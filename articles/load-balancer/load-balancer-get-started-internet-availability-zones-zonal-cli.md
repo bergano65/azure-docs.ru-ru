@@ -14,11 +14,11 @@ ms.workload: infrastructure-services
 ms.date: 03/26/2018
 ms.author: kumud
 ms.openlocfilehash: 3b89c11c11276781ec63367247601fccfd2fa858
-ms.sourcegitcommit: a65b424bdfa019a42f36f1ce7eee9844e493f293
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/04/2019
-ms.locfileid: "55699658"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66122205"
 ---
 #  <a name="create-a-standard-load-balancer-with-zonal-frontend-using-azure-cli"></a>Создание экземпляра Load Balancer (цен. категория "Стандартный") с зональным интерфейсным сервером с помощью Azure CLI
 
@@ -77,7 +77,7 @@ az network lb rule create --resource-group myResourceGroupZLB --lb-name myLoadBa
   --backend-pool-name myBackEndPool --probe-name myHealthProbe
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения см. в статье [Azure Load Balancer уровня "Стандартный" и зоны доступности](load-balancer-standard-availability-zones.md).
 
 

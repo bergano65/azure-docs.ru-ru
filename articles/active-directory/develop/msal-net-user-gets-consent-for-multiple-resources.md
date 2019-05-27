@@ -17,12 +17,12 @@ ms.author: ryanwi
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8f7d24a1e14cfbb1163ab78b94dd36ec288dce50
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.openlocfilehash: e8bd9a86d5ec0d39a7f1c26adac52f41e6420283
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65544048"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66121984"
 ---
 # <a name="user-gets-consent-for-several-resources-using-msalnet"></a>Пользователь получает разрешения для нескольких ресурсов, с помощью MSAL.NET
 Конечная точка платформы Microsoft identity не позволяет получить маркер для нескольких ресурсов за один раз. При использовании библиотеки проверки подлинности Майкрософт для .NET (MSAL.NET), параметр области в методе получения токена должны содержать только областей для одного ресурса. Тем не менее, вы можете предварительно дать согласие на наращивание ресурсов выполняется несколько ресурсов, указав дополнительные области с помощью `.WithExtraScopeToConsent` построитель метода.
@@ -32,8 +32,8 @@ ms.locfileid: "65544048"
 
 Например при наличии двух ресурсов, которые имеют 2 каждой области:
 
-- https://mytenant.onmicrosoft.com/customerapi (с 2 областей `customer.read` и `customer.write`)
-- https://mytenant.onmicrosoft.com/vendorapi (с 2 областей `vendor.read` и `vendor.write`)
+- https:\//mytenant.onmicrosoft.com/customerapi (с 2 областей `customer.read` и `customer.write`)
+- https:\//mytenant.onmicrosoft.com/vendorapi (с 2 областей `vendor.read` и `vendor.write`)
 
 Следует использовать `.WithExtraScopeToConsent` модификатор, который имеет *extraScopesToConsent* параметра, как показано в следующем примере:
 

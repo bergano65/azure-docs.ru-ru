@@ -2,18 +2,19 @@
 title: Подготовка устройств к мультитенантности в службе подготовки устройств для добавления в центр Интернета вещей Azure | Документы Майкрософт
 description: Подготовка устройств к мультитенантности с помощью экземпляра службы подготовки устройств
 author: wesmc7777
-ms.author: wesmc
-ms.date: 04/10/2019
+ms.author: v-yiso
+origin.date: 04/10/2019
+ms.date: 05/06/2019
 ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
 manager: philmea
 ms.openlocfilehash: 84e1f57175d772ad281c18b67fa1be484c0cac69
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59793169"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66116091"
 ---
 # <a name="how-to-provision-for-multitenancy"></a>Подготовка к мультитенантности 
 
@@ -41,8 +42,6 @@ ms.locfileid: "59793169"
 
 * Выполните процедуру, описанную в кратком руководстве по [настройке Службы подготовки устройств к добавлению в Центр Интернета вещей на портале Azure](./quick-setup-auto-provision.md).
 
-
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
 
 ## <a name="create-two-regional-iot-hubs"></a>Создание двух региональных центров Интернета вещей

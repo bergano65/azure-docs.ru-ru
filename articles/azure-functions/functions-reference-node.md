@@ -12,12 +12,12 @@ ms.devlang: nodejs
 ms.topic: reference
 ms.date: 02/24/2019
 ms.author: glenga
-ms.openlocfilehash: 2eea1a1d30558765a2f8320b0b23efdbe3368807
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 635e72a8e8a70b8885afea282511fbfaf24d2f94
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65140964"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65957338"
 ---
 # <a name="azure-functions-javascript-developer-guide"></a>Руководство разработчика JavaScript для Функций Azure
 
@@ -136,7 +136,7 @@ module.exports = async function (context, req) {
    };
    ```
 
-### <a name="outputs"></a>outputs
+### <a name="outputs"></a>Выходные данные
 Выходные данные (привязки `direction === "out"`) могут быть записаны в функцию несколькими способами. Во всех случаях свойство `name` привязки, определенное в файле *function.json*, соответствует имени элемента объекта, записанного в функции. 
 
 Можно назначить выходные привязки данных в одном из следующих способов (эти методы не Сочетайте):
@@ -273,7 +273,7 @@ context.log(message)
 Этот метод позволяет делать записи в потоковые журналы функций на уровне трассировки по умолчанию. В `context.log` доступны дополнительные методы ведения журнала, позволяющие выполнять запись в журналы функций на других уровнях трассировки:
 
 
-| Метод                 | ОПИСАНИЕ                                |
+| Метод                 | Описание                                |
 | ---------------------- | ------------------------------------------ |
 | **error(_message_)**   | Записывает сообщение в журнал на уровне ошибок или более низком.   |
 | **warn(_message_)**    | Записывает сообщение в журнал на уровне предупреждений или более низком. |
@@ -350,7 +350,7 @@ context.log('Request Headers = ', JSON.stringify(req.headers));
 
 У объекта (запроса) `context.req` есть следующие свойства:
 
-| Свойство      | ОПИСАНИЕ                                                    |
+| Свойство      | Описание                                                    |
 | ------------- | -------------------------------------------------------------- |
 | _body_        | Объект, содержащий текст запроса.               |
 | _headers_     | Объект, содержащий заголовок запроса.                   |
@@ -365,7 +365,7 @@ context.log('Request Headers = ', JSON.stringify(req.headers));
 
 У объекта (ответа) `context.res` есть следующие свойства:
 
-| Свойство  | ОПИСАНИЕ                                               |
+| Свойство  | Описание                                               |
 | --------- | --------------------------------------------------------- |
 | _body_    | Объект, содержащий текст ответа.         |
 | _headers_ | Объект, содержащий заголовок ответа.             |
@@ -504,7 +504,7 @@ FunctionApp
  | - myNodeFunction
  | | - function.json
  | - lib
- | | - nodeFunction.js
+ | | - sayHello.js
  | - node_modules
  | | - ... packages ...
  | - package.json
@@ -514,7 +514,7 @@ FunctionApp
 
 ```json
 {
-  "scriptFile": "../lib/nodeFunction.js",
+  "scriptFile": "../lib/sayHello.js",
   "bindings": [
     ...
   ]
@@ -544,7 +544,7 @@ class MyObj {
         this.foo = 1;
     };
 
-    function logFoo(context) { 
+    logFoo(context) { 
         context.log("Foo is " + this.foo); 
         context.done(); 
     }
@@ -579,7 +579,7 @@ module.exports = myObj;
 
 То, что вы локально разрабатывать и развертывать из проекта TypeScript зависит от ваших средств разработки.
 
-### <a name="visual-studio-code"></a>Visual Studio Code.
+### <a name="visual-studio-code"></a>Visual Studio Code
 
 [Функций Azure для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) расширение позволяет разрабатывать функции с помощью TypeScript. Основные инструменты — требование для расширения функций Azure.
 

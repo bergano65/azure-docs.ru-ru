@@ -9,12 +9,12 @@ ms.author: estfan
 ms.topic: article
 ms.date: 08/20/2018
 ms.reviewer: klam, LADocs
-ms.openlocfilehash: e371a6abe32a1a41d3babeaa27aaec3e30bd3323
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 9b304f2d4d2e498701be5977decf202cb0fa995b
+ms.sourcegitcommit: d73c46af1465c7fd879b5a97ddc45c38ec3f5c0d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65142321"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65922073"
 ---
 # <a name="add-and-run-code-by-using-azure-functions-in-azure-logic-apps"></a>Добавление и запуск кода с помощью функций Azure в Azure Logic Apps
 
@@ -51,6 +51,9 @@ ms.locfileid: "65142321"
   Прежде чем добавлять действия для запуска функций, необходимо запустить приложение логики при помощи триггера.
 
   Если вы не знакомы с приложениями логики, ознакомьтесь со статьями [Что такое Azure Logic Apps](../logic-apps/logic-apps-overview.md) и [Краткое руководство. Создание первого автоматизированного рабочего процесса с помощью Azure Logic Apps на портале Azure](../logic-apps/quickstart-create-first-logic-app-workflow.md).
+
+> [!NOTE]
+> Интеграция приложений логики с функциями не работает, когда включены слоты (Предварительная версия).
 
 <a name="create-function-external"></a>
 

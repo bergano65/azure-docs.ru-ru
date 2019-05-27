@@ -9,11 +9,11 @@ ms.date: 04/13/2018
 ms.author: genli
 ms.custom: include file
 ms.openlocfilehash: cd686e1bf62bbd7f37f61ced767e92918edf919c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60596985"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66116913"
 ---
 ## <a name="how-to-create-a-classic-vnet-using-azure-cli"></a>Создание классической виртуальной сети с помощью интерфейса командной строки Azure
 Интерфейс командной строки Azure можно использовать для управления ресурсами Azure из командной строки с любого компьютера под управлением Windows, Linux или OSX.

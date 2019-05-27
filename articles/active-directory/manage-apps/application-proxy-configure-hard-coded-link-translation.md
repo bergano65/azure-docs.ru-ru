@@ -16,12 +16,12 @@ ms.author: mimart
 ms.reviewer: harshja
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fdfd8fd642120f4e829de8fbb013f85aea2a9484
-ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
+ms.openlocfilehash: b0899a127566c4d06de7d42443a956c2660a7a6d
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65825561"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65956902"
 ---
 # <a name="redirect-hardcoded-links-for-apps-published-with-azure-ad-application-proxy"></a>Перенаправление встроенных ссылок для приложений, опубликованных с помощью прокси приложения Azure AD
 
@@ -59,7 +59,7 @@ Intune Managed Browser можно использовать для обеспеч
 
 Чтобы использовать эту возможность, пользователю необходимо скачать расширение и выполнить вход. Выполнять другие настройки не требуется. 
 
-Дополнительные сведения, включая способы настройки этого параметра см. в разделе [расширение обозревателя MyApps](https://docs.microsoft.com/en-us/azure/active-directory/user-help/my-apps-portal-end-user-access#download-and-install-the-my-apps-secure-sign-in-extension) документации.
+Дополнительные сведения, включая способы настройки этого параметра см. в разделе [расширение обозревателя MyApps](https://docs.microsoft.com/azure/active-directory/user-help/my-apps-portal-end-user-access#download-and-install-the-my-apps-secure-sign-in-extension) документации.
 
 ### <a name="option-3-link-translation-setting"></a>Вариант 3. Параметр преобразования ссылки 
 
@@ -102,7 +102,7 @@ Intune Managed Browser можно использовать для обеспеч
 * Meta
 * object
 * script
-* источник
+* source
 * Отслеживание
 * видео
 

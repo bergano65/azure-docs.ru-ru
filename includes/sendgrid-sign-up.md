@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 11/25/2018
 ms.author: erikre
 ms.openlocfilehash: 96c4da8465a87fee4c00bfc6177515c94910704a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60444870"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66121363"
 ---
 Клиенты Azure могут разблокировать 25 000 бесплатных сообщений электронной почты каждый месяц. Эти 25 000 сообщений предоставят вам доступ к расширенным отчетам и функциям аналитики, а также ко [всем интерфейсам API][all APIs] (Web, SMTP, Event, Parse и многим другим). Сведения о дополнительных службах, предоставляемых SendGrid, см. на странице [решений SendGrid][SendGrid Solutions].
 

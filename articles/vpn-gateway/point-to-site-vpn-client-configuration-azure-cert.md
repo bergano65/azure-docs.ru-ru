@@ -8,11 +8,11 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: cherylmc
 ms.openlocfilehash: b590dabbe4b2c6526f2c602aeed64667348eefa9
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59525173"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66113939"
 ---
 # <a name="create-and-install-vpn-client-configuration-files-for-native-azure-certificate-authentication-p2s-configurations"></a>Создание и установка файлов конфигурации VPN-клиента для настройки подключений типа "точка — сеть" с использованием собственной аутентификации Azure на основе сертификата
 
@@ -103,13 +103,13 @@ ms.locfileid: "59525173"
    ![Параметры аутентификации](./media/point-to-site-vpn-client-configuration-azure-cert/authsettings.png)
 6. Щелкните **Select…** (Выбрать), чтобы выбрать сертификат клиента, который будет использоваться для аутентификации. Это сертификат, установленный на шаге 2.
 
-   ![на основе сертификата.](./media/point-to-site-vpn-client-configuration-azure-cert/certificate.png)
+   ![сертификат](./media/point-to-site-vpn-client-configuration-azure-cert/certificate.png)
 7. В окне **Choose An Identity** (Выбор удостоверения) отобразится список доступных сертификатов. Выберите нужный сертификат, а затем щелкните **Continue** (Продолжить).
 
    ![identity](./media/point-to-site-vpn-client-configuration-azure-cert/identity.png)
 8. В поле **Local ID** (Локальный идентификатор) укажите имя сертификата (из шага 6). В нашем примере это ikev2Client.com. Щелкните **Apply** (Применить), чтобы сохранить изменения.
 
-   ![apply](./media/point-to-site-vpn-client-configuration-azure-cert/applyconnect.png)
+   ![применить](./media/point-to-site-vpn-client-configuration-azure-cert/applyconnect.png)
 9. В диалоговом окне **Network** (Сеть) щелкните **Apply** (Применить), чтобы сохранить все изменения. Затем щелкните **Connect** (Подключиться), чтобы установить подключение типа "точка — сеть" к виртуальной сети Azure.
 
 ## <a name="linuxgui"></a>Linux (графический пользовательский интерфейс strongSwan)
