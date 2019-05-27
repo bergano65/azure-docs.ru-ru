@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendleton
 ms.custom: codepen
-ms.openlocfilehash: d4dc6f0c8fd2dff74a1997c9dca5a31abc70c03a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 6dbd4461e7b8382ec3c4075b9688de59678f98f5
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60795930"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65957332"
 ---
 # <a name="clustering-point-data"></a>Кластеризация точки данных
 
@@ -33,7 +33,7 @@ var datasource = new atlas.source.DataSource(null, {
     //The radius in pixels to cluster points together.
     clusterRadius: 45,
 
-    //The maximium zoom level in which clustering occurs.
+    //The maximum zoom level in which clustering occurs.
     //If you zoom in more than this, all points are rendered as symbols.
     clusterMaxZoom: 15 
 });
@@ -46,9 +46,9 @@ var datasource = new atlas.source.DataSource(null, {
 
 | Метод | Тип возвращаемого значения | Описание |
 |--------|-------------|-------------|
-| getClusterChildren(clusterId: number) | Обещание&lt;функция&lt;Geometry, любой&gt; \| фигуры&gt; | Получает дочерние узлы данного кластера, на следующий уровень масштаба. Эти дочерние объекты могут представлять собой сочетание фигур и subclusters. Subclusters будет функции, свойства которых соответствуют ClusteredProperties. |
+| getClusterChildren(clusterId: number) | Обещание&lt;массива&lt;функция&lt;Geometry, любой&gt; \| фигуры&gt;&gt; | Получает дочерние узлы данного кластера, на следующий уровень масштаба. Эти дочерние объекты могут представлять собой сочетание фигур и subclusters. Subclusters будет функции, свойства которых соответствуют ClusteredProperties. |
 | getClusterExpansionZoom(clusterId: number) | Обещание&lt;номер&gt; | Вычисляет значение масштаба, по которому запускается расширение или разбить на части кластера. |
-| getClusterLeaves (clusterId: number, ограничение: число, смещения: номер) | Обещание&lt;функция&lt;Geometry, любой&gt; \| фигуры&gt; | Извлекает все точки в кластере. Задайте `limit` возврата подмножества точки, и использовать `offset` страницу через точки. |
+| getClusterLeaves (clusterId: number, ограничение: число, смещения: номер) | Обещание&lt;массива&lt;функция&lt;Geometry, любой&gt; \| фигуры&gt;&gt; | Извлекает все точки в кластере. Задайте `limit` возврата подмножества точки, и использовать `offset` страницу через точки. |
 
 ## <a name="display-clusters-using-a-bubble-layer"></a>Отображать кластеры с помощью слоя пузырьков
 
@@ -89,7 +89,7 @@ var datasource = new atlas.source.DataSource(null, {
 | cluster | Логическое | Указывает, представляет ли функция кластера. |
 | cluster_id | string | Уникальный идентификатор для кластера, который может использоваться с источником данных `getClusterExpansionZoom`, `getClusterChildren`, и `getClusterLeaves` методы. |
 | point_count | номер | Количество точек, которые содержит кластер. |
-| point_count_abbreviated | string | Строка, которая сокращает point_count значение, если он имеет большую длину. (например, 4000 становится 4K) |
+| point_count_abbreviated | string | Строка, сокращает `point_count` значение, если он имеет большую длину. (например, 4000 становится 4K) |
 
 В этом примере принимает слоя пузырьков, который отображает точки кластера и добавит событие щелчка, при активации, вычисления и масштабировать карту на новый уровень масштабирования, по которому кластер приведет к разрыву друг от друга с помощью `getClusterExpansionZoom` метод `DataSource` класс и `cluster_id` нажатого свойство clustered точки данных. 
 

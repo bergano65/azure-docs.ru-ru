@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 10/31/2018
 ms.author: genli
 ms.custom: seodec18
-ms.openlocfilehash: 3dd61ae9298a03ce0cbb9e9a5b143229c15ea9bb
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: f455985d2a7d05f45100d4a88b43c688fe1a7767
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65786372"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65955768"
 ---
 # <a name="application-performance-faqs-for-web-apps-in-azure"></a>Вопросы и ответы о производительности приложений в веб-приложениях Azure
 
@@ -161,7 +161,7 @@ ms.locfileid: "65786372"
 
 Кроме того, обратите внимание, что для 64-разрядной среды требуется план обслуживания "Базовый" или "Стандартный". В 32-разрядной среде всегда используются планы обслуживания "Бесплатный" и "Общий".
 
-Дополнительные сведения см. в статье [Настройка веб-приложений в службе приложений Azure](web-sites-configure.md).
+Дополнительные сведения см. в статье [Настройка веб-приложений в службе приложений Azure](configure-common.md).
 
 ## <a name="why-does-my-request-time-out-after-230-seconds"></a>Почему через 230 секунд истекает время ожидания запроса?
 

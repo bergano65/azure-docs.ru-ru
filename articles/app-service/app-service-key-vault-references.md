@@ -12,12 +12,12 @@ ms.topic: article
 ms.date: 11/20/2018
 ms.author: mahender
 ms.custom: seodec18
-ms.openlocfilehash: 662260c3cf37f8f8a675c522f3d3dea41153e485
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: f086850ecc2f15c41ab89db34b16d6d2e4a229cb
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60853150"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65956223"
 ---
 # <a name="use-key-vault-references-for-app-service-and-azure-functions-preview"></a>Использование ссылок на Key Vault в Службе приложений и Функциях Azure (предварительная версия)
 
@@ -67,7 +67,7 @@ ms.locfileid: "60853150"
 
 ## <a name="source-application-settings-from-key-vault"></a>Получение параметров приложения из Key Vault
 
-Ссылки на Key Vault можно использовать в качестве значений для [параметров приложения](web-sites-configure.md#app-settings), что позволяет хранить секреты в Key Vault, а не в конфигурации сайта. Параметры приложения надежно шифруются при хранении, но возможности для управления секретами для них будут обеспечены только в Key Vault.
+Ссылки на Key Vault можно использовать в качестве значений для [параметров приложения](configure-common.md#configure-app-settings), что позволяет хранить секреты в Key Vault, а не в конфигурации сайта. Параметры приложения надежно шифруются при хранении, но возможности для управления секретами для них будут обеспечены только в Key Vault.
 
 Чтобы использовать ссылку на Key Vault в качестве параметра приложения, укажите эту ссылку в значении этого параметра. Приложения смогут использовать секрет через ключ параметра, как обычно. Изменения кода не требуются.
 

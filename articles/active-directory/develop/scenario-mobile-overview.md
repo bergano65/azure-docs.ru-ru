@@ -12,15 +12,16 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 05/07/2019
-ms.author: dadobali
+ms.author: jmprieur
+ms.reviwer: brandwe
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d9978905f8ae0719f6a77ca2351f2c43bbf94ee0
-ms.sourcegitcommit: f013c433b18de2788bf09b98926c7136b15d36f1
+ms.openlocfilehash: df5b53ccdcd33e2542834769baff5b759ff7b170
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65550376"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65962366"
 ---
 # <a name="scenario-mobile-application-that-calls-web-apis"></a>Сценарий: Мобильных приложений, что вызовы веб-API
 
@@ -45,7 +46,7 @@ ms.locfileid: "65550376"
 
 Персонализированные простым пользовательским интерфейсом, очень важно для мобильных приложений.  Мобильные разработчики могут создавать этот опыт для iOS и Android пользователей платформой Microsoft identity. Приложение можно войти пользователей Azure Active Directory (Azure AD), личные пользователям учетных записей Майкрософт и пользователей Azure AD B2C и получить маркеры для вызова веб-API от их имени. Чтобы реализовать эти потоки, мы будем использовать библиотеку проверки подлинности Майкрософт (MSAL), который реализует стандартные для отрасли [потока кода авторизации OAuth 2.0](v2-oauth2-auth-code-flow.md).
 
-![Управляющая программа](./media/scenarios/mobile-app.svg)
+![Управляющие программы](./media/scenarios/mobile-app.svg)
 
 Замечания в отношении мобильных приложений.
 

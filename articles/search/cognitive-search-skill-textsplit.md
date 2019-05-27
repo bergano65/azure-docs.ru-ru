@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: luisca
 ms.custom: seodec2018
-ms.openlocfilehash: 78ed2fab81bfb1562125135c5901a2de395c3843
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: c7f5fda405ca0e5ba9cf1dd0ed44c47cd3ee74b1
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65023935"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65949861"
 ---
 #   <a name="text-split-cognitive-skill"></a>Когнитивный навык разделения текста
 
@@ -32,7 +32,7 @@ Microsoft.Skills.Text.SplitSkill
 
 Параметры зависят от регистра.
 
-| Имя параметра     | ОПИСАНИЕ |
+| Имя параметра     | Описание |
 |--------------------|-------------|
 | textSplitMode      | Страницы или приложения | 
 | maximumPageLength | Если textSplitMode имеет значение "pages", это относится к максимальной длине страницы, определяемой `String.Length`. Минимальное значение — 100.  Если textSplitMode имеет значение pages, алгоритм предпримет попытку разделить текст на блоки, размер которых будет максимально соответствовать значению maximumPageLength. В этом случае алгоритм сделает все возможное, чтобы разделить предложение на его границе. В этом случае размер блока будет немного меньше, чем значение maximumPageLength. | 
@@ -41,14 +41,14 @@ Microsoft.Skills.Text.SplitSkill
 
 ## <a name="skill-inputs"></a>Входные данные навыков
 
-| Имя параметра       | ОПИСАНИЕ      |
+| Имя параметра       | Описание      |
 |----------------------|------------------|
-| Text  | Текст, который будет разбит на подстроки. |
+| text  | Текст, который будет разбит на подстроки. |
 | languageCode  | (Необязательно.) Код языка документа.  |
 
 ## <a name="skill-outputs"></a>Выходные данные навыка 
 
-| Имя параметра     | ОПИСАНИЕ |
+| Имя параметра     | Описание |
 |--------------------|-------------|
 | textItems | Массив извлеченных подстрок. |
 
@@ -88,7 +88,7 @@ Microsoft.Skills.Text.SplitSkill
         {
             "recordId": "1",
             "data": {
-                "text": "This is a the loan application for Joe Romero, he is a Microsoft employee who was born in Chile and then moved to Australia…",
+                "text": "This is a the loan application for Joe Romero, a Microsoft employee who was born in Chile and who then moved to Australia…",
                 "languageCode": "en"
             }
         },

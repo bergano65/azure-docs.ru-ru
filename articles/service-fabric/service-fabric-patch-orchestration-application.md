@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 2/01/2019
 ms.author: brkhande
-ms.openlocfilehash: aca34ee40bfe10c55c478d9aaeb01a65d139e1e2
-ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
+ms.openlocfilehash: ccc0399b6ac886ec8d9ef7d207c3539f1d078070
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2019
-ms.locfileid: "65522379"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65951993"
 ---
 # <a name="patch-the-windows-operating-system-in-your-service-fabric-cluster"></a>Установка исправлений операционной системы Windows в кластере Service Fabric
 
@@ -141,9 +141,7 @@ POA — это приложение Azure Service Fabric, которое поз
 
 ## <a name="download-the-app-package"></a>Загрузка пакета установки
 
-Приложение и сценарии установки можно скачать по [ссылке на архив](https://go.microsoft.com/fwlink/?linkid=869566).
-
-Приложение в формате sfpkg можно скачать по [ссылке на SFPKG-файл](https://aka.ms/POA/POA.sfpkg). Это удобно для [развертывания приложения на основе Azure Resource Manager](service-fabric-application-arm-resource.md).
+Чтобы загрузить пакет приложения, см. на выпуск GitHub [страницы](https://github.com/microsoft/Service-Fabric-POA/releases/latest/) из приложения для управления исправлениями.
 
 ## <a name="configure-the-app"></a>Настройка приложения
 
@@ -205,13 +203,15 @@ POA — это приложение Azure Service Fabric, которое поз
       {
         "OperationResult": 0,
         "NodeName": "_stg1vm_1",
-        "OperationTime": "2017-05-21T11:46:52.1953713Z",
+        "OperationTime": "2019-05-13T08:44:56.4836889Z",
+        "OperationStartTime": "2019-05-13T08:44:33.5285601Z",
         "UpdateDetails": [
           {
             "UpdateId": "7392acaf-6a85-427c-8a8d-058c25beb0d6",
             "Title": "Cumulative Security Update for Internet Explorer 11 for Windows Server 2012 R2 (KB3185319)",
             "Description": "A security issue has been identified in a Microsoft software product that could affect your system. You can help protect your system by installing this update from Microsoft. For a complete listing of the issues that are included in this update, see the associated Microsoft Knowledge Base article. After you install this update, you may have to restart your system.",
-            "ResultCode": 0
+            "ResultCode": 0,
+            "HResult": 0
           }
         ],
         "OperationType": 1,
@@ -234,6 +234,9 @@ ResultCode | Как и для OperationResult | Это поле указывае
 OperationType | 1 — установка<br> 0 — поиск и скачивание| По умолчанию в результатах отображается только тип операции "Установка".
 WindowsUpdateQuery | Значение по умолчанию: IsInstalled=0 |Запрос на обновление Windows, использованный для поиска обновлений. Дополнительные сведения см. в разделе [WuQuery](https://msdn.microsoft.com/library/windows/desktop/aa386526(v=vs.85).aspx).
 RebootRequired | true — требовалась перезагрузка<br> false — перезагрузка не требовалась | Указывает, требовалась ли перезагрузка для завершения установки обновлений.
+OperationStartTime | DateTime | Указывает время, в течение которого operation(Download/Installation) к работе.
+OperationTime | DateTime | Указывает время, в какие operation(Download/Installation) завершена.
+Значение HResult | 0 — успешно<br> Прочее — сбой| Указывает причину сбоя обновления windows с помощью updateID «7392acaf-6a85-427c-8a8d-058c25beb0d6».
 
 Если обновление еще не запланировано, поле результата JSON будет пустым.
 
@@ -255,6 +258,58 @@ RebootRequired | true — требовалась перезагрузка<br> f
 
 ## <a name="diagnosticshealth-events"></a>События диагностики и работоспособности
 
+Следующий раздел рассказывает о том, как для отладки и диагностика проблем с помощью обновления исправлений через приложение для управления исправлениями в кластерах Service Fabric.
+
+> [!NOTE]
+> Должна быть версия v1.4.0 POA, для получения многие ниже вызванной себя усовершенствования диагностики.
+
+Служба ntservice агента узла создает [восстановления задач](https://docs.microsoft.com/dotnet/api/system.fabric.repair.repairtask?view=azure-dotnet) для установки обновлений на узлах. Затем каждая задача подготавливается службой координатора в соответствии с политикой задачи утверждения. Готовые задачи утверждаются и, наконец, диспетчер восстановления которой не стану утверждать любую задачу, если кластер находится в неработоспособном состоянии. Позволяет шаг за шагом перейти к понять, как продолжить обновлений на узле.
+
+1. Служба ntservice агента узла, на каждом узле, ищет доступные обновления Windows в запланированное время. Если обновления доступны, оно идет дальше и загружает их на узле.
+2. После загрузки обновлений, служба ntservice агента узла, создает соответствующий задачи восстановления для узла с именем POS___ < unique_id >. Просмотреть эти восстановления задач, с помощью командлета [Get-ServiceFabricRepairTask](https://docs.microsoft.com/powershell/module/servicefabric/get-servicefabricrepairtask?view=azureservicefabricps) или в SFX в разделе сведений узла. После создания задачи восстановления, быстро переходит к [запросить состояние](https://docs.microsoft.com/dotnet/api/system.fabric.repair.repairtaskstate?view=azure-dotnet).
+3. Службу координатора периодически ищет задачи восстановления в истекшем сроке состояния и идет дальше и обновляет их по подготовке штатов, исходя из TaskApprovalPolicy. Если TaskApprovalPolicy настроено как NodeWise, задачи восстановления, соответствующий узлу готов, только в том случае, если настоящий момент нет другие задачи восстановления в состоянии подготовки или Утверждено/выполнение/восстановления. Аналогичным образом в случае, если из UpgradeWise TaskApprovalPolicy, выполняется проверка на любом этапе есть задачи в выше в состоянии только для узлов, которые принадлежат к одному домену обновления. Подготовка состояние перемещается задачи восстановления, соответствующий узел Service Fabric после [отключена](https://docs.microsoft.com/powershell/module/servicefabric/disable-servicefabricnode?view=azureservicefabricps) блокировка с намерением как «Перезапуск».
+
+   POA(v1.4.0 and ABOVE) отправляет события со свойством «ClusterPatchingStatus» на CoordinaterService для отображения узлов, которые являются вносятся исправления. Изображении ниже показано, что обновления начало устанавливаются на _poanode_0:
+
+    [![Установка исправлений состояния кластера](media/service-fabric-patch-orchestration-application/clusterpatchingstatus.png)](media/service-fabric-patch-orchestration-application/clusterpatchingstatus.png#lightbox)
+
+4. После отключения узла задачи восстановления перемещается в состоянии выполнения. Обратите внимание, что задание восстановления, в подготовке состояние, после, так как узел является зависнуть в отключенном состоянии может привести блокирует новую задачу восстановления и поэтому halt исправления кластера.
+5. После восстановления задача находится в состоянии «выполняется», начинает установки исправления на этом узле. Здесь, установив исправление, узел может или не могут быть перезагружены в зависимости от исправления. POST, что задание восстановления перемещается в восстановлении состояние, которое позволяет обратно узел еще раз, а затем помечается как завершенная.
+
+   В v1.4.0 и более поздних версий приложения состояние обновления можно найти, просмотрев события работоспособности для службы агента узла со свойством «WUOperationStatus-[имя_узла]». Выделенные разделы на приведенные ниже изображения отображают состояние обновления windows на узле «poanode_0» и «poanode_2»:
+
+   [![Снимок экрана: состояние операции обновления Windows](media/service-fabric-patch-orchestration-application/wuoperationstatusa.png)](media/service-fabric-patch-orchestration-application/wuoperationstatusa.png#lightbox)
+
+   [![Снимок экрана: состояние операции обновления Windows](media/service-fabric-patch-orchestration-application/wuoperationstatusb.png)](media/service-fabric-patch-orchestration-application/wuoperationstatusb.png#lightbox)
+
+   Один также можно получить сведения, с помощью powershell, необходимо подключиться к кластеру и получение состояния задачи восстановления с помощью [Get-ServiceFabricRepairTask](https://docs.microsoft.com/powershell/module/servicefabric/get-servicefabricrepairtask?view=azureservicefabricps). Как и ниже показан пример этого «POS__poanode_2_125f2969 933c-4774 85 d 1-ebdf85e79f15» задача находится в состоянии DownloadComplete. Это означает, что обновления были загружены на узле «poanode_2» и установки будет предпринята попытка, когда задача перейдет в состояние Executing.
+
+   ``` powershell
+    D:\service-fabric-poa-bin\service-fabric-poa-bin\Release> $k = Get-ServiceFabricRepairTask -TaskId "POS__poanode_2_125f2969-933c-4774-85d1-ebdf85e79f15"
+
+    D:\service-fabric-poa-bin\service-fabric-poa-bin\Release> $k.ExecutorData
+    {"ExecutorSubState":2,"ExecutorTimeoutInMinutes":90,"RestartRequestedTime":"0001-01-01T00:00:00"}
+    ```
+
+   Если это еще требуется найти то, войдите в определенной виртуальной Машины или виртуальные машины на более подробную информацию о проблеме, с помощью журналов событий Windows. Выше упомянутые задачи восстановления могут иметь только эти исполнителя вложенных состояния:
+
+      ExecutorSubState | Подробности
+    -- | -- 
+      None = 1 |  Подразумевает, что не было текущей операции на узле. Возможные переходы состояния.
+      DownloadCompleted = 2 | Подразумевает операция загрузки выполнена с успех, частичного, или сбой.
+      InstallationApproved = 3 | Подразумевает ранее выполнить операцию загрузки и Repair Manager утвердил установку.
+      InstallationInProgress = 4 | Соответствует состояние выполнения задачи восстановления.
+      InstallationCompleted = 5 | Подразумевает Установка завершена с успех, частичный успех или сбой.
+      RestartRequested=6 | Подразумевает patch Установка завершена, и действие ожидает перезагрузки на узле.
+      RestartNotNeeded=7 |  Подразумевает, что перезагрузка не понадобилась после завершения установки исправления.
+      RestartCompleted=8 | Подразумевает, что перезагрузки, успешно завершена.
+      OperationCompleted = 9 | Windows операция обновления выполнена успешно.
+      OperationAborted = 10 | Подразумевает, что отмене операции обновления windows.
+
+6. В v1.4.0 и выше приложения, после завершения попытки обновления на узле событие со свойством «WUOperationStatus-[имя_узла]» отправляется в составе службы агента узла для уведомления, когда попытается Далее, чтобы скачать и установить обновления, запустите. См. на следующем рисунке:
+
+     [![Снимок экрана: состояние операции обновления Windows](media/service-fabric-patch-orchestration-application/wuoperationstatusc.png)](media/service-fabric-patch-orchestration-application/wuoperationstatusc.png#lightbox)
+
 ### <a name="diagnostic-logs"></a>Журналы диагностики
 
 Журналы приложения для оркестрации исправлений собираются как часть журналов среды выполнения Service Fabric.
@@ -269,12 +324,6 @@ RebootRequired | true — требовалась перезагрузка<br> f
 ### <a name="health-reports"></a>Отчеты о работоспособности
 
 Приложение для управления исправлениями также публикует отчеты о работоспособности для службы координатора или службы агента узла в указанных ниже случаях.
-
-#### <a name="a-windows-update-operation-failed"></a>Сбой операции обновления Windows
-
-Если на узле происходит сбой операции обновления Windows, создается отчет о работоспособности для службы агента узла. Отчет о работоспособности содержит имя проблемного узла.
-
-После установки исправления на проблемном узле отчет автоматически очищается.
 
 #### <a name="the-node-agent-ntservice-is-down"></a>Служба NTService агента узла не работает
 
@@ -347,6 +396,14 @@ RebootRequired | true — требовалась перезагрузка<br> f
 
 О. См. в разделе [Azure масштабируемого набора виртуальных машин автоматическое обновление образа ОС](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-automatic-upgrade) для оркестрации обновлений в linux.
 
+Вопрос**почему цикла обновления занимает так много времени?**
+
+О. Чтобы узнать время, необходимое для установки обновления на каждом узле, используя OperationStartTime и OperationTime(OperationCompletionTime) можно попробовать запроса для результатов json, а затем, go, используя запись цикла обновления для всех узлов и затем вы. В случае отсутствия большое временное окно в обновление не происходило, это может быть вызвано кластера был в состоянии ошибки, и из-за этого repair manager не утверждает других задач восстановления POA. Если установка обновления потребовалось бы много времени, на любой узел, затем, это может быть возможно, что узел не был обновлен из много времени и были много обновлений, ожидающих установки, которая занимает времени. Также возможны случай, в котором установки исправлений на узле блокируется из-за узел в отключенном состоянии, что обычно происходит из-за отключения узла к зависанию может привести к ситуации потери кворума или данных.
+
+В. **Почему он необходим для отключения узла, если Реализовано исправление его?**
+
+О. Приложение для управления исправлениями отключает узел с намерением «перезапустить», которая останавливается и перераспределяет все служб Service fabric работает на узле. Это позволяет убедиться, что приложения не доходят до с использованием разнообразных нового и старого библиотеки DLL, поэтому не рекомендуется для исправления узла без его отключения.
+
 ## <a name="disclaimers"></a>Заявления об отказе от ответственности
 
 - Приложение для управления исправлениями принимает условия лицензионного соглашения Центра обновления Windows от имени пользователя. При необходимости этот параметр можно отключить в конфигурации приложения.
@@ -386,6 +443,9 @@ RebootRequired | true — требовалась перезагрузка<br> f
 Администратор должен определить, почему обновление Windows приводит к ухудшению работоспособности приложения или кластера.
 
 ## <a name="release-notes"></a>Заметки о выпуске
+
+>[!NOTE]
+> Начиная с версии 1.4.0, заметки о выпуске и выпуски можно найти на GitHub выпуска [страницы](https://github.com/microsoft/Service-Fabric-POA/releases/).
 
 ### <a name="version-110"></a>Версия 1.1.0
 - Общедоступный выпуск
