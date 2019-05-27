@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 04/01/2019
 ms.author: diberry
-ms.openlocfilehash: 5fa922cb91d34483256faf4dcf70569aa2f17b97
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 318e71b68bbabeeef34c75a412f9fdd5b6db754a
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60813825"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "65073022"
 ---
 # <a name="entity-roles-for-contextual-subtypes"></a>Сущности роли для контекстных подтипы
 
@@ -37,8 +37,8 @@ buy a ticket from New York to London
 
 |Тип сущности|Имя сущности|Роль|Назначение|
 |--|--|--|--|
-|Простая|Location|origin|откуда вылетает самолет|
-|Простая|Location|ресурс destination|куда прилетает самолет|
+|Простой|Расположение|источник|откуда вылетает самолет|
+|Простой|Расположение|назначение|куда прилетает самолет|
 
 ## <a name="non-machine-learned-entity-example-of-roles"></a>Пример сущности без машин узнали ролей
 
@@ -79,12 +79,6 @@ Schedule the meeting from 8 to 9
 |--|--|
 |Мне интересно узнать больше о **Сиэтл**|Я хочу узнать больше о {Location}|
 |Купить билет из Сиэтла в Нью-Йорк|Купить билет из {расположение: Origin} до {расположение: Destination}|
-
-## <a name="how-are-roles-related-to-hierarchical-entities"></a>Как связаны ролей иерархические сущности?
-
-Роли теперь доступны для всех сущностей в примере фразы, а также предыдущем использовании шаблонов. Так как они доступны везде, они по-прежнему требуется для иерархических сущностей. Новые сущности должны создаваться с ролями, вместо использования иерархические сущности. 
-
-Иерархические сущности со временем будет считаться устаревшим.
 
 ## <a name="how-are-roles-used-in-patterns"></a>Использование ролей в шаблонах
 Во фрагменте речи шаблона роли используются внутри фрагмента речи: 

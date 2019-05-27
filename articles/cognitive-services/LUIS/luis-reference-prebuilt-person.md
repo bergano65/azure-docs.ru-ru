@@ -9,19 +9,22 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 01/23/2019
+ms.date: 05/07/2019
 ms.author: diberry
-ms.openlocfilehash: 7b748c507d5c848cc83a8a0c55cb7b05903bc542
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 3b12c69b7c6710e774d50e631d2423fd72ce828a
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61473133"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "65072176"
 ---
 # <a name="personname-prebuilt-entity-for-a-luis-app"></a>Предварительно созданная сущность PersonName для приложения LUIS
 Предварительно созданная сущность PersonName определяет имена людей. Так как эта сущность уже обучена, добавлять в намерения приложения примеры высказываний, содержащие сущности PersonName, не нужно. Сущность personName поддерживается для английского и китайского [языков и региональных параметров](luis-reference-prebuilt-entities.md).
 
 ## <a name="resolution-for-personname-entity"></a>Разрешение для сущности personName
+
+### <a name="api-version-2x"></a>API версии 2.x
+
 В следующем примере показано разрешение сущности **builtin.PersonName**.
 
 ```json
@@ -30,7 +33,7 @@ ms.locfileid: "61473133"
   "topScoringIntent": {
     "intent": "WhereIsEmployee",
     "score": 0.762141049
-  }
+  },
   "entities": [
     {
       "entity": "Jill Jones",
@@ -39,6 +42,64 @@ ms.locfileid: "61473133"
       "endIndex": 12
     }
   ]
+}
+```
+
+### <a name="preview-api-version-3x"></a>Предварительная версия API 3.x
+
+Приведенный ниже код JSON является с `verbose` параметру присвоить `false`:
+
+```json
+{
+    "query": "Is Jill Jones in Cairo?",
+    "prediction": {
+        "normalizedQuery": "is jill jones in cairo?",
+        "topIntent": "None",
+        "intents": {
+            "None": {
+                "score": 0.6544678
+            }
+        },
+        "entities": {
+            "personName": [
+                "Jill Jones"
+            ]
+        }
+    }
+}
+```
+
+Приведенный ниже код JSON является с `verbose` параметру присвоить `true`:
+
+```json
+{
+    "query": "Is Jill Jones in Cairo?",
+    "prediction": {
+        "normalizedQuery": "is jill jones in cairo?",
+        "topIntent": "None",
+        "intents": {
+            "None": {
+                "score": 0.6544678
+            }
+        },
+        "entities": {
+            "personName": [
+                "Jill Jones"
+            ],
+            "$instance": {
+                "personName": [
+                    {
+                        "type": "builtin.personName",
+                        "text": "Jill Jones",
+                        "startIndex": 3,
+                        "length": 10,
+                        "modelTypeId": 2,
+                        "modelType": "Prebuilt Entity Extractor"
+                    }
+                ]
+            }
+        }
+    }
 }
 ```
 

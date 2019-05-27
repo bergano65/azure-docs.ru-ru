@@ -216,7 +216,7 @@ FROM HiveSampleIn Group by ProfileID
       }
     }
     ```
-* Добавьте ссылку на параметр в сценарий Hive с помощью элемента **${hiveconf:parameterName}**. 
+* Добавьте ссылку на параметр в сценарий Hive с помощью элемента **${hiveconf:parameterName}** . 
   
     ```
     DROP TABLE IF EXISTS HiveSampleIn; 

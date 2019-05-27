@@ -10,16 +10,16 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: erhopf
-ms.openlocfilehash: d5af2bb61eeb986f02a31d45ff9236ecc0c8427e
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: 073166a594088bca04d81883247a5880fcbd1cb7
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65026199"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66234501"
 ---
 # <a name="quickstart-run-the-speech-devices-sdk-sample-app-on-android"></a>Краткое руководство. Запуск примера приложения Speech SDK устройства в Android
 
-В этом кратком руководстве вы узнаете, как использовать пакет SDK для устройств речи для Android для создания продукта, с поддержкой речевых функций.
+В этом кратком руководстве вы узнаете, как построить проект с поддержкой речевых функций или используйте его как с помощью пакета SDK устройства речи для Android [расшифровка дикторского текста для диалога](conversation-transcription-service.md) устройства.
 
 С этим руководством требуется [Azure Cognitive Services](get-started.md) учетной записи с ресурсом служб речи. Если у вас нет учетной записи, можно использовать [бесплатную пробную версию](https://azure.microsoft.com/try/cognitive-services/), чтобы получить ключ подписки.
 
@@ -33,9 +33,11 @@ ms.locfileid: "65026199"
 
 * Скачайте последнюю версию [Speech SDK устройств](https://aka.ms/sdsdk-download)и извлеките ZIP-файл в рабочий каталог.
    > [!NOTE]
-   > ZIP-файл включает в себя Android примера приложения.
+   > В Android пример Release.zip файле содержится Android примера приложения, и в этом кратком руководстве предполагается, что приложение извлечен в C:\SDSDK\Android-Sample-Release
 
 * Чтобы получить [ключ подписки Azure для службы распознавания речи](get-started.md)
+
+* Если вы планируете использовать расшифровка дикторского текста для сообщений необходимо использовать [циклическая микрофон устройством](get-speech-devices-sdk.md) и служба в данный момент доступна только для «en US» и «zh-CN», в регионах, «centralus» и «eastasia». Необходимо иметь ключ речи в одном из этих регионов, для использования расшифровка дикторского текста для диалога.
 
 * Если вы планируете использовать служб речи для определения намерения (или действия) из фразы для пользователя, нужно будет [службы Language Understanding (LUIS)](https://docs.microsoft.com/azure/cognitive-services/luis/azureibizasubscription) подписки. Дополнительные сведения о LUIS и распознавание сути высказывания, см. в разделе [распознавания речи намерения с помощью LUIS, C# ](https://docs.microsoft.com/azure/cognitive-services/speech-service/how-to-recognize-intents-from-speech-csharp).
 
@@ -80,18 +82,25 @@ ms.locfileid: "65026199"
 
 1. Перейдите в каталог C:\SDSDK\Android-Sample-Release\example. Нажмите кнопку **ОК**, чтобы открыть пример проекта.
 
-1. Добавьте ключ подписки службы "Речь" в исходном коде. Если вы хотите попробовать распознать намерения, также добавьте свой ключ подписки [службы "Распознавание речи"](https://azure.microsoft.com/services/cognitive-services/language-understanding-intelligent-service/) и идентификатор приложения.
+1. Добавьте ключ подписки речи к исходному коду. Если вы хотите попробовать распознать намерения, также добавьте свой ключ подписки [службы "Распознавание речи"](https://azure.microsoft.com/services/cognitive-services/language-understanding-intelligent-service/) и идентификатор приложения.
 
-   Ключи и сведения о приложении должны содержаться в следующих строках в исходном файле MainActivity.java:
+   Для распознавания речи и LUIS данные переходит в MainActivity.java:
 
    ```java
-   // Subscription
-   private static final String SpeechSubscriptionKey = "[your speech key]";
-   private static final String SpeechRegion = "westus";
-   private static final String LuisSubscriptionKey = "[your LUIS key]";
-   private static final String LuisRegion = "westus2.api.cognitive.microsoft.com";
-   private static final String LuisAppId = "[your LUIS app ID]"
+    // Subscription
+    private static String SpeechSubscriptionKey = "<enter your subscription info here>";
+    private static String SpeechRegion = "westus"; // You can change this if your speech region is different.
+    private static String LuisSubscriptionKey = "<enter your subscription info here>";
+    private static String LuisRegion = "westus2"; // you can change this, if you want to test the intent, and your LUIS region is different.
+    private static String LuisAppId = "<enter your LUIS AppId>";
    ```
+
+    Если вы используете расшифровка дикторского текста для диалога голосовых ключ и области данных также нужны в conversation.java:
+
+   ```java
+    private static final String CTSKey = "<Conversation Transcription Service Key>";
+    private static final String CTSRegion="<Conversation Transcription Service Region>";// Region may be "centralus" or "eastasia"
+    ```
 
 1. По умолчанию слово для пробуждения (ключевое слово) — "Компьютер". Можно также попробовать одно из других предоставленных слов для пробуждения — "Машина" или "Помощник". Файлы ресурсов для этих альтернативных слов пробуждения находятся в пакете SDK для речевых устройств в папке "keyword". Например, C:\SDSDK\Android-Sample-Release\keyword\Computer содержит файлы, используемые для слова пробуждения "Компьютер".
 
@@ -135,6 +144,10 @@ ms.locfileid: "65026199"
 1. Запускается пример приложения пакета SDK для речевых устройств, отображающий следующие параметры:
 
    ![Пример приложения пакета SDK для речевых устройств и параметры](media/speech-devices-sdk/qsg-8.png)
+
+1. Новые добавленные это ролик расшифровка дикторского текста для диалога. Запустите фотографировать с запустить сеанс. По умолчанию все является гостем, однако при наличии участника голосовой подписи они могут быть помещены в файл /video/participants.properties на устройстве. Для создания голосовой подписи рассмотрим [транскрипция диалогов (SDK)](how-to-use-conversation-transcription-service.md).
+
+   ![Расшифровка дикторского текста для диалога демонстрационного приложения](media/speech-devices-sdk/qsg-15.png)
 
 1. Экспериментируйте!
 

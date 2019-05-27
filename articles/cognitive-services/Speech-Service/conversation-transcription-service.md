@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 05/06/2019
 ms.author: erhopf
-ms.openlocfilehash: eebe3ed15d21b08b208667a571bd59eac98a674d
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: a31921e229a4bbfccd6fdd871666aad1eeef3232
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65190274"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66243873"
 ---
 # <a name="what-is-conversation-transcription"></a>Что такое расшифровка дикторского текста для диалога
 
@@ -67,6 +67,11 @@ ms.locfileid: "65190274"
 > Архитектура и спецификация Подробнее ["микрофон" пакет SDK для устройства Microsoft Speech](https://aka.ms/cts/microphone). Дополнительные сведения или приобрести пакет средств разработки, см. в разделе [получить Microsoft Speech пакетом SDK для устройств](https://aka.ms/cts/getsdk).
 
 Чтобы узнать, как использовать расшифровка дикторского текста для диалога с пакетом SDK для устройств речи, см. в разделе [способы использования расшифровка дикторского текста для диалога](https://aka.ms/cts/howto).
+
+
+## <a name="quick-start-with-a-sample-app"></a>Быстрый запуск с примером приложения
+
+Microsoft Speech SDK устройства имеется образец приложения быстрого запуска для всех примеров, связанных с устройства. Расшифровка дикторского текста для диалога является одним из них. Его можно найти в [Speech SDK для устройств android: Краткое руководство](https://aka.ms/sdsdk-quickstart) с примера приложения и его исходный код для справки.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

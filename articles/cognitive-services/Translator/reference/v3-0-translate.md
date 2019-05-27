@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 02/01/2019
 ms.author: v-jansko
-ms.openlocfilehash: e7ab2eba54aafda6bb00696939bf9bc32bb627ca
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 5a2192c4555c2d84587ec8e39ce9ba94c985b541
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65797004"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66235833"
 ---
 # <a name="translator-text-api-30-translate"></a>API перевода текстов 3.0: Перенести
 
@@ -54,7 +54,7 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
   </tr>
   <tr>
     <td>category</td>
-    <td><em>Необязательный параметр.</em><br/>Строка, где указано категорию (домен) перевода. Этот параметр позволяет получить переводы из пользовательской системы, созданной с помощью <a href="../customization.md">Custom Translator</a>. Добавьте идентификатор категории из проекта службы "Пользовательский переводчик" в этот параметр, чтобы использовать развернутую настраиваемую систему. Значение по умолчанию: <code>general</code>.</td>
+    <td><em>Необязательный параметр.</em><br/>Строка, где указано категорию (домен) перевода. Этот параметр позволяет получить переводы из пользовательской системы, созданной с помощью <a href="../customization.md">Custom Translator</a>. Добавить идентификатор категории из вашего пользовательского Translator <a href="https://docs.microsoft.com/azure/cognitive-services/translator/custom-translator/how-to-create-project#view-project-details">данные проекта</a> в этот параметр для использования развернутыми настройки системы. Значение по умолчанию: <code>general</code>.</td>
   </tr>
   <tr>
     <td>profanityAction</td>
