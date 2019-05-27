@@ -7,17 +7,18 @@ ms.subservice: operations
 ms.custom: ''
 ms.devlang: ''
 ms.topic: conceptual
-author: oslake
-ms.author: moslake
+author: WenJason
+ms.author: v-jay
 ms.reviewer: genemi,ayolubek, jrasnick
-manager: craigg
-ms.date: 03/12/2019
+manager: digimobile
+origin.date: 03/12/2019
+ms.date: 04/08/2019
 ms.openlocfilehash: 9704acee2ca8bad7437ae22ff5041e2253916dce
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "57880438"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66160805"
 ---
 # <a name="dns-alias-for-azure-sql-database"></a>Псевдоним DNS для Базы данных SQL Azure
 
@@ -110,7 +111,7 @@ Comment as of:  2018-01-26
 
 - *Задержка до 2 минут.* Для обновления или удаления псевдонима DNS требуется до 2 минут.
   - Независимо от задержки (даже небольшой), псевдоним немедленно прекращает ссылаться на клиентские подключения к устаревшему серверу.
-- *Поиск DNS.* Это единственный надежный способ проверить, на какой сервер ссылается псевдоним DNS.
+- *Поиск DNS.* Это единственный надежный способ проверить, на какой сервер ссылается псевдоним [DNS](https://docs.microsoft.com/windows-server/administration/windows-commands/nslookup).
 - *[Аудит таблиц не поддерживается](sql-database-auditing-and-dynamic-data-masking-downlevel-clients.md).* Невозможно использовать псевдоним DNS на сервере Базы данных SQL Azure, в которой включен *аудит таблиц*.
   - Аудит таблиц не рекомендуется.
   - Рекомендуем использовать [аудит больших двоичных объектов](sql-database-auditing.md).
