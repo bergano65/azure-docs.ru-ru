@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 04/29/2019
 ms.author: absha
-ms.openlocfilehash: 89df3a981ba3710e848f834c303772e94e10b139
-ms.sourcegitcommit: ed66a704d8e2990df8aa160921b9b69d65c1d887
+ms.openlocfilehash: ebb14d97273851585e491e3bcd36f776ec9b61b4
+ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64947180"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66000971"
 ---
 # <a name="rewrite-http-headers-with-application-gateway"></a>Перепишите заголовки HTTP с помощью шлюза приложений
 
@@ -60,7 +60,7 @@ ms.locfileid: "64947180"
 
 Шлюз приложений поддерживает эти переменные сервера:
 
-| Имя переменной | ОПИСАНИЕ                                                  |
+| Имя переменной | Описание                                                  |
 | -------------------------- | :----------------------------------------------------------- |
 | add_x_forwarded_for_proxy  | Поле заголовка запроса X-Forwarded-For клиента с `client_ip` переменной (см. описание далее в этой таблице) добавленным к нему в формате IP1, IP2, IP3 и т. д. Если поле X-Forwarded-For отсутствует в заголовке запроса клиента `add_x_forwarded_for_proxy` переменной равно `$client_ip` переменной. Эта переменная особенно полезна в случаях, когда требуется перезаписывает заголовок X-Forwarded-For, задайте шлюзом приложений, таким образом, чтобы заголовок содержит только IP-адрес без сведения о порте. |
 | ciphers_supported          | Список шифров, поддерживаемые клиентом.          |
@@ -157,9 +157,7 @@ ms.locfileid: "64947180"
 
 - Имена заголовков может содержать любые буквы, цифры и специальные символы, как определено в [RFC 7230](https://tools.ietf.org/html/rfc7230#page-27). Мы не поддерживаем символ подчеркивания (\_) специальный символ в имена заголовков.
 
-## <a name="need-help"></a>Требуется помощь?
-
-Свяжитесь с нами по адресу [ AGHeaderRewriteHelp@microsoft.com ](mailto:AGHeaderRewriteHelp@microsoft.com) Если вам нужна помощь с помощью этой функции.
+- Если ответ содержит несколько заголовков с тем же именем, затем переопределения значение одного из этих заголовков приведет к удаление других заголовков в ответе.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

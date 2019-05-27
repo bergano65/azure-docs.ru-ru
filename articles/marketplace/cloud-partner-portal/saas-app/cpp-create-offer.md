@@ -5,18 +5,22 @@ services: Azure, Marketplace, Cloud Partner Portal,
 author: dan-wesley
 ms.service: marketplace
 ms.topic: conceptual
-ms.date: 12/04/2018
-ms.author: pabutler
-ms.openlocfilehash: 246dd77c8e92a36e0601aba7d1b851efb7e7fb9a
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.date: 05/16/2019
+ms.author: pbutlerm
+ms.openlocfilehash: 646e9bf844477b3d8e1c4c42fb5956e015805433
+ms.sourcegitcommit: 3ced637c8f1f24256dd6ac8e180fff62a444b03c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64943546"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65833503"
 ---
 # <a name="create-a-new-saas-application-offer"></a>Создание предложения приложения SaaS
 
 В этой статье описывается, как создать и опубликовать запись предложения приложения SaaS для Azure Marketplace.
+
+> [!IMPORTANT] 
+> SaaS предоставляют функциональность переносится в [центра партнеров Майкрософт](https://partner.microsoft.com/dashboard/directory).  Все новые издатели необходимо использовать центр партнеров для создания новых предложений SaaS и управления существующие предложения.  Текущих издателей с предложениями SaaS batchwise переносятся из облачного портала для партнеров в центре партнеров.  На портале Cloud Partner отобразит сообщения о состоянии, чтобы указать, когда были перенесены определенные существующие предложения.
+
 
 ## <a name="offer-process"></a>Процесс предложения
 

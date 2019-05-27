@@ -19,8 +19,8 @@
 - name: Основные понятия
   expanded: false
   items:
-    - name: Базовая защита
-      href: baseline-protection.md
+    - name: Базовые политики защиты
+      href: concept-baseline-protection.md
     - name: Условия
       href: conditions.md
     - name: Условия расположения
@@ -38,6 +38,16 @@
       href: plan-conditional-access.md
     - name: Рекомендации
       href: best-practices.md
+    - name: Базовые политики
+      items:
+        - name: Обязательная многофакторная проверка подлинности для администраторов
+          href: howto-baseline-protect-administrators.md
+        - name: Защита пользователей
+          href: howto-baseline-protect-end-users.md
+        - name: Блокировка устаревших методов проверки подлинности
+          href: howto-baseline-protect-legacy-auth.md
+        - name: Запрашивание MFA для управления службами
+          href: howto-baseline-protect-azure.md
     - name: Блокировка устаревших методов проверки подлинности
       href: block-legacy-authentication.md
     - name: Перенос классических политик

@@ -2,20 +2,20 @@
 title: Руководство по проектированию распределенных таблиц в хранилище данных SQL Azure | Документация Майкрософт
 description: Рекомендации по проектированию хэш-распределенных таблиц и таблиц с распределением методом циклического перебора в хранилище данных SQL Azure.
 services: sql-data-warehouse
-author: ronortloff
+author: XiaoyuL-Preview
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
-ms.subservice: implement
+ms.subservice: development
 ms.date: 04/17/2018
-ms.author: rortloff
+ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.openlocfilehash: c3de7b46449b8075d17a19733eda88d692b1d876
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: b101a4e19d00d44805c7eb5f44d449a18d756804
+ms.sourcegitcommit: 16cb78a0766f9b3efbaf12426519ddab2774b815
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60935820"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65851615"
 ---
 # <a name="guidance-for-designing-distributed-tables-in-azure-sql-data-warehouse"></a>Руководство по проектированию распределенных таблиц в хранилище данных SQL Azure
 Рекомендации по проектированию хэш-распределенных таблиц и таблиц с распределением методом циклического перебора в хранилище данных SQL Azure.

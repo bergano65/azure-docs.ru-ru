@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/05/2018
 ms.author: spelluru
-ms.openlocfilehash: 96e3a24b0c9f9ab21652ffcd1b29deeb512581e5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 144fd11e9c1ee3e00412320840e864a3190ccdb0
+ms.sourcegitcommit: 3ced637c8f1f24256dd6ac8e180fff62a444b03c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60202710"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65833984"
 ---
 # <a name="create-multi-vm-environments-and-paas-resources-with-azure-resource-manager-templates"></a>Создание сред со множеством виртуальных машин и ресурсов PaaS с помощью шаблонов Azure Resource Manager
 
@@ -54,7 +54,7 @@ Azure DevTest Labs имеет [общедоступный репозиторий
     ![Основные файлы шаблонов Azure Resource Manager](./media/devtest-lab-create-environment-from-arm/master-template.png)
 
 - Чтобы использовать значения параметров, определенные в файле параметров, имя этого файла должно быть `azuredeploy.parameters.json`.
-- Для создания значения URI parametersLink можно использовать параметры `_artifactsLocation` и `_artifactsLocationSasToken`, чтобы служба DevTest Labs автоматически управляла вложенными шаблонами. Дополнительные сведения см. в статье [How Azure DevTest Labs makes nested Resource Manager template deployments easier for testing environments](https://blogs.msdn.microsoft.com/devtestlab/2017/05/23/how-azure-devtest-labs-makes-nested-arm-template-deployments-easier-for-testing-environments/) (Как команда Azure DevTest Labs упрощает развертывание вложенных шаблонов Resource Manager в тестовых средах).
+- Для создания значения URI parametersLink можно использовать параметры `_artifactsLocation` и `_artifactsLocationSasToken`, чтобы служба DevTest Labs автоматически управляла вложенными шаблонами. Дополнительные сведения см. в разделе [развертывание вложенных шаблонов Azure Resource Manager для сред тестирования](deploy-nested-template-environments.md).
 - Можно определить метаданные, чтобы указать отображаемое имя и описание шаблона. Эти метаданные должны находиться в файле с именем `metadata.json`. В следующем примере файла метаданных показано, как указать отображаемое имя и описание: 
 
     ```json

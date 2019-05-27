@@ -9,12 +9,12 @@ ms.date: 05/11/2018
 ms.topic: conceptual
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Container Service, containers
-ms.openlocfilehash: 9fe29e8717c76c353f3e95d4693011f3925c4e1b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 8ee50289083b12b7b2abd3b9ece2c8de345df9fe
+ms.sourcegitcommit: 16cb78a0766f9b3efbaf12426519ddab2774b815
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60686451"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65851433"
 ---
 # <a name="how-to-manage-secrets-when-working-with-an-azure-dev-space"></a>Управление секретами при работе со службой Azure Dev Space
 
@@ -24,7 +24,7 @@ ms.locfileid: "60686451"
  
 ## <a name="method-1-valuesdevyaml"></a>Метод 1. Файл values.dev.yaml
 1. Откройте VS Code с вашим проектом, который настроен для Azure Dev Spaces.
-2. Добавьте файл под названием _values.dev.yaml_ в ту же папку, что и существующий файл _values.yaml_, и определите секретный ключ и значения, как показано в следующем примере:
+2. Добавьте в файл с именем _values.dev.yaml_ в той же папке, где существующих _azds.yaml_ и определите секретного ключа и значения, как показано в следующем примере:
 
     ```yaml
     secrets:
@@ -34,12 +34,13 @@ ms.locfileid: "60686451"
         key: "secretkeyhere"
     ```
      
-3. Обновите _azds.yaml_, чтобы указать Azure Dev Spaces использовать новый файл _values.dev.yaml_. Для этого добавьте эту конфигурацию в разделе configurations.develop.container:
+3. _azds.yaml_ уже ссылается на _values.dev.yaml_ файла, если он существует. Если вы предпочитаете другое имя файла, обновите раздел «install.values»:
 
     ```yaml
-           container:
-             values:
-             - "charts/webfrontend/values.dev.yaml"
+    install:
+      values:
+      - values.dev.yaml?
+      - secrets.dev.yaml?
     ```
  
 4. Измените код службы, чтобы ссылаться на эти секреты в качестве переменных среды, как показано в следующем примере:
@@ -76,17 +77,17 @@ ms.locfileid: "60686451"
           set:
             secrets:
               redis:
-                port: "$REDIS_PORT_DEV"
-                host: "$REDIS_HOST_DEV"
-                key: "$REDIS_KEY_DEV"
+                port: "$REDIS_PORT"
+                host: "$REDIS_HOST"
+                key: "$REDIS_KEY"
     ```
      
 2.  Создайте _ENV_-файл в той же папке, что и _azds.yaml_. Введите секреты с помощью стандартной нотации пары "ключ=значение". Не фиксируйте _ENV_-файл в системе управления версиями. (Чтобы исключить из системы управления версиями на основе git, добавьте в файл _GITIGNORE_.) В следующем примере показан _ENV_-файл:
 
     ```
-    REDIS_PORT_DEV=3333
-    REDIS_HOST_DEV=myredishost
-    REDIS_KEY_DEV=myrediskey
+    REDIS_PORT=3333
+    REDIS_HOST=myredishost
+    REDIS_KEY=myrediskey
     ```
 2.  Измените исходный код службы, чтобы ссылаться на эти секреты в коде, как показано в следующем примере:
 

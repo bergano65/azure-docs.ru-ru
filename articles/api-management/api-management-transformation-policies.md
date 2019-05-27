@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/11/2019
 ms.author: apimpm
-ms.openlocfilehash: 565bcfa6c2f8a3da2ac16df0016b5adc54e27380
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.openlocfilehash: b3f86147eb91e874d5317204ca05fb45628414d3
+ms.sourcegitcommit: 3ced637c8f1f24256dd6ac8e180fff62a444b03c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65407606"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65833417"
 ---
 # <a name="api-management-transformation-policies"></a>Политики преобразования службы управления API
 В этой статье рассматриваются приведенные ниже политики управления API. Дополнительные сведения о добавлении и настройке политик см. в статье о [политиках в управлении API](https://go.microsoft.com/fwlink/?LinkID=398186).
@@ -375,7 +375,7 @@ ms.locfileid: "65407606"
 #### <a name="convert-json-to-soap-using-a-liquid-template"></a>Преобразование JSON в SOAP с помощью шаблона Liquid
 ```xml
 <set-body template="liquid">
-    <soap:Envelope xmlns="http://tempuri.org/" xmlns:soap="https://schemas.xmlsoap.org/soap/envelope/">
+    <soap:Envelope xmlns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
         <soap:Body>
             <GetOpenOrders>
                 <cust>{{body.getOpenOrders.cust}}</cust>
@@ -405,7 +405,7 @@ ms.locfileid: "65407606"
 
 |ИМЯ|Описание|Обязательно для заполнения|значение по умолчанию|
 |----------|-----------------|--------------|-------------|
-|шаблон|Используется для изменения режима шаблона, в котором будет выполняться политика set-body. В настоящее время поддерживается только одно значение:<br /><br />- liquid — политика set-body будет использовать подсистему шаблонов Liquid. |Нет|liquid|
+|шаблон|Используется для изменения режима шаблона, в котором будет выполняться политика set-body. В настоящее время поддерживается только одно значение:<br /><br />- liquid — политика set-body будет использовать подсистему шаблонов Liquid. |Нет||
 
 Для доступа к сведениям о запросе и ответе шаблон Liquid можно привязать к объекту context с помощью следующих свойств: <br />
 <pre>context.

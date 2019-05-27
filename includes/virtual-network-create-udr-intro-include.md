@@ -2,19 +2,18 @@
 title: включение файла
 description: включение файла
 services: virtual-network
-author: rockboyfor
+author: genlin
 ms.service: virtual-network
 ms.topic: include
-origin.date: 04/13/2018
-ms.date: 06/11/2018
-ms.author: v-yeche
+ms.date: 04/13/2018
+ms.author: genli
 ms.custom: include file
 ms.openlocfilehash: 482241deb1081ac8a5265a076eabbdc3fb6d659e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60743398"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66170861"
 ---
 Несмотря на то что при использовании системных маршрутов трафик для развертывания передается автоматически, существуют случаи, когда требуется управлять маршрутизацией пакетов через виртуальное устройство. Для этого нужно создать определяемые пользователем маршруты, которые указывают, чтобы при следующем прыжке пакеты, передаваемые в конкретную подсеть, передавались в виртуальное устройство, и включить IP-пересылку для виртуальной машины, работающей в качестве виртуального устройства.
 
@@ -24,3 +23,4 @@ ms.locfileid: "60743398"
 * Управление трафиком с помощью брандмауэра
 
 Дополнительные сведения об определяемых пользователем маршрутах и IP-пересылке см. в [этой статье](../articles/virtual-network/virtual-networks-udr-overview.md).
+

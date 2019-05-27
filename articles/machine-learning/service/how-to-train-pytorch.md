@@ -11,12 +11,12 @@ author: mx-iao
 ms.reviewer: sgilley
 ms.date: 12/04/2018
 ms.custom: seodec18
-ms.openlocfilehash: 02463ba47a48f5e86055b9ecb4e0edbdf9608769
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: 11819730e05e425066e1f060769e14d5290f877d
+ms.sourcegitcommit: 16cb78a0766f9b3efbaf12426519ddab2774b815
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65024575"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65851977"
 ---
 # <a name="train-pytorch-models-with-azure-machine-learning-service"></a>Обучение моделей PyTorch с помощью Службы машинного обучения Azure
 
@@ -43,7 +43,7 @@ pt_est = PyTorch(source_directory='./my-pytorch-proj',
 
 Укажем следующие параметры в конструкторе PyTorch.
 
-Параметр | ОПИСАНИЕ
+Параметр | Описание
 --|--
 `source_directory` |  Локальный каталог, который содержит весь код, необходимый для задания обучения. Эта папка копируется с локального компьютера на удаленный вычислительный ресурс.
 `script_params` |  Словарь, указав аргументы командной строки в сценарий обучения `entry_script`, в виде < аргумент командной строки, значение > пары.  Чтобы указать подробные флаг в `script_params`, используйте `<command-line argument, "">`.
@@ -84,7 +84,7 @@ pt_est = PyTorch(source_directory='./my-pytorch-project',
 
 В этом коде показаны следующие новые параметры конструктора PyTorch:
 
-Параметр | ОПИСАНИЕ | значение по умолчанию
+Параметр | Описание | значение по умолчанию
 --|--|--
 `node_count` |  Количество узлов, которые будут использоваться для задания обучения. | `1`
 `process_count_per_node` |  Количество процессов (или рабочих ролей), запускаемых на каждом узле. | `1`
@@ -105,7 +105,7 @@ run = exp.submit(pt_est)
 
 ## <a name="export-to-onnx"></a>Экспорт в ONNX
 
-Для получения выводов, оптимизированный с [среды выполнения ONNX](concept-onnx.md), можно преобразовать в формат ONNX обученной модели PyTorch. См. в разделе [руководстве](https://github.com/onnx/tutorials/blob/master/tutorials/PytorchOnnxExport.ipynb) пример.
+Для оптимизации вывод с [среды выполнения ONNX](concept-onnx.md), преобразуются в формат ONNX обученной модели PyTorch. Определение или модель оценки, — это этап, где используется развернутой модели для прогнозирования, чаще всего для производственных данных. См. в разделе [руководстве](https://github.com/onnx/tutorials/blob/master/tutorials/PytorchOnnxExport.ipynb) пример.
 
 ## <a name="examples"></a>Примеры
 

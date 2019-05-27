@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 57d3e955059724756eb7102c1b9fbbf55ed203ab
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 08794a7605ffbd3cd5d4b021b783f32afb190727
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60414720"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65861579"
 ---
 # <a name="how-to-enable-password-reset-from-windows-7-8-and-81"></a>Практическое руководство: включение сброса пароля в Windows 7, 8 и 8.1
 
@@ -35,7 +35,7 @@ ms.locfileid: "60414720"
 > [!WARNING]
 > Протокол TLS 1.2 должен быть включен, а не просто настроен на автоматический обмен записями.
 
-## <a name="install"></a>Install
+## <a name="install"></a>Установка
 
 1. Скачайте соответствующий установщик для версии Windows, в которой следует включить этот протокол.
 
@@ -60,6 +60,8 @@ ms.locfileid: "60414720"
 ![Для сброса пароля требуются дополнительные сведения о безопасности](media/howto-sspr-windows-7-8/windows-7-sspr-need-security-info.png)
 
 В этой первоначальной версии сброс пароля с использованием приложения Microsoft Authenticator для уведомлений и кодов не работает. Пользователи должны применять альтернативные зарегистрированные методы, соответствующие требованиям вашей политики.
+
+Если на компьютере включен поставщик учетных данных более чем одной третьей стороной, пользователи будут видеть несколько профилей пользователей на экране входа в систему.
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 

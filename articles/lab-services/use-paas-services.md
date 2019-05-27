@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 05/02/2019
 ms.author: spelluru
-ms.openlocfilehash: 7cdd185cddbd2403b72ff0e06530913af0b031de
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: 865ae0b3f7a7965698a67183a4c820ba71f49cd8
+ms.sourcegitcommit: 3ced637c8f1f24256dd6ac8e180fff62a444b03c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65233121"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65833909"
 ---
 # <a name="use-platform-as-a-service-paas-services-in-azure-devtest-labs"></a>Использование служб платформы как услуга (PaaS) в Azure DevTest Labs
 PaaS поддерживается в DevTest Labs с помощью функции среды. Сред в DevTest Labs поддерживает предварительно настроенных шаблонов Azure Resource Manager в репозитории Git. Средах может содержать ресурсы PaaS и IaaS. Они позволяют создавать сложные системы, которые могут включать Azure ресурсы, такие как виртуальные машины, базы данных, виртуальные сети и веб-приложениях, которые настроены для совместной работы. Эти шаблоны позволяют обеспечить согласованное развертывание и улучшенное управление сред при помощи системы управления исходным кодом. 
@@ -53,7 +53,7 @@ PaaS поддерживается в DevTest Labs с помощью функци
 [Подключение среды к виртуальной сети лаборатории](connect-environment-lab-virtual-network.md) статье описывается, как изменить шаблон Resource Manager для использования `$(LabSubnetId)` токена. При создании среды `$(LabSubnetId)` заменяется на первой метке подсети где **Создание виртуальной машиной** параметру присваивается **true**. Она позволяет нашей среде использовать ранее созданные сети. Если вы хотите использовать те же шаблоны Resource Manager в средах в тесте в качестве промежуточной и рабочей средах, использовать `$(LabSubnetId)` как значение по умолчанию в параметре шаблона Resource Manager. 
 
 #### <a name="environment-storage-account"></a>Учетная запись хранения среды
-DevTest Labs поддерживает использование [вложенных шаблонов Resource Manager](../azure-resource-manager/resource-group-linked-templates.md). [Как в Azure DevTest Labs упрощает вложенных Resource Manager шаблонов-развертываний в средах тестирования](https://azure.microsoft.com/updates/azure-devtest-labs-streamlined-nested-arm-template-deployment-support-for-arm-template-based-environments) статье объясняется, как использовать `_artifactsLocation` и `_artifactsLocationSasToken` лексем для создания URI-адрес шаблона Resource Manager в той же папке как или вложенную папку основного шаблона. Дополнительные сведения о эти два маркера, см. в разделе **развертывания артефактов** раздел [диспетчера ресурсов Azure — руководство по оптимальным методиками](https://github.com/Azure/azure-quickstart-templates/blob/master/1-CONTRIBUTION-GUIDE/best-practices.md).
+DevTest Labs поддерживает использование [вложенных шаблонов Resource Manager](../azure-resource-manager/resource-group-linked-templates.md). [[Развертывание вложенных шаблонов Azure Resource Manager для сред тестирования](deploy-nested-template-environments.md) статье объясняется, как использовать `_artifactsLocation` и `_artifactsLocationSasToken` лексем для создания URI-адрес шаблона Resource Manager в той же папке, что или вложенный Папка основного шаблона. Дополнительные сведения о эти два маркера, см. в разделе **развертывания артефактов** раздел [диспетчера ресурсов Azure — руководство по оптимальным методиками](https://github.com/Azure/azure-quickstart-templates/blob/master/1-CONTRIBUTION-GUIDE/best-practices.md).
 
 ## <a name="user-experience"></a>Взаимодействие с пользователем
 

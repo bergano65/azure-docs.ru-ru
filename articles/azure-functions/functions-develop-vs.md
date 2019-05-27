@@ -1,6 +1,6 @@
 ---
 title: Разработка Функций Azure с помощью Visual Studio | Документация Майкрософт
-description: Сведения о разработке и тестировании Функций Azure с помощью инструментов Функций Azure для Visual Studio 2017.
+description: Узнайте, как разрабатывать и тестировать функции Azure с помощью инструментов функций Azure для Visual Studio 2019.
 services: functions
 documentationcenter: .net
 author: ggailey777
@@ -10,16 +10,16 @@ ms.custom: vs-azure
 ms.topic: conceptual
 ms.date: 10/08/2018
 ms.author: glenga
-ms.openlocfilehash: 4e67e91e93ef3a2e2acf88a87b97eaab56ca6479
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 4366f09ccc9a3b2335e0aa84b7fb7398825cb87e
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60403895"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65864532"
 ---
 # <a name="develop-azure-functions-using-visual-studio"></a>Разработка Функций Azure с помощью Visual Studio  
 
-Инструменты Функций Azure для Visual Studio 2017 — это расширение для Visual Studio, которое позволяет разрабатывать, тестировать и развертывать функции C# в Azure. Если вы впервые сталкиваетесь с функциями Azure, дополнительные сведения см. в статье [Общие сведения о Функциях Azure](functions-overview.md).
+Инструменты функций Azure для Visual Studio 2019 — это расширение для Visual Studio, которое служит для разработки, тестирования и развертывания C# функции в Azure. Если вы впервые сталкиваетесь с функциями Azure, дополнительные сведения см. в статье [Общие сведения о Функциях Azure](functions-overview.md).
 
 Инструменты Функций Azure предоставляют следующие преимущества: 
 
@@ -29,16 +29,16 @@ ms.locfileid: "60403895"
 * Разработка и развертывание предварительно скомпилированных функций C#. Предварительно скомпилированные функции обеспечивают более высокую производительность при холодном запуске, чем функции C# на основе сценариев. 
 * Программирование функций в C#, сохраняя при этом все преимущества разработки в Visual Studio. 
 
-Эта статья содержит сведения о том, как разрабатывать функции C# и публиковать их в Azure с помощью инструментов Функций Azure для Visual Studio 2017. Перед прочтением этой статьи необходимо выполнить действия из статьи [Создание первой функции с помощью Visual Studio](functions-create-your-first-function-visual-studio.md). 
+Эта статья содержит сведения о том, как использовать инструменты функций Azure для Visual Studio 2019 для разработки C# функции и их публикации в Azure. Перед прочтением этой статьи необходимо выполнить действия из статьи [Создание первой функции с помощью Visual Studio](functions-create-your-first-function-visual-studio.md). 
 
 > [!IMPORTANT]
 > Не объединяйте локальную разработку и разработку с помощью портала разработки в одном приложении-функции. При публикации из локального проекта в приложение-функцию любые функции, разработанные на портале, будут перезаписаны в процессе развертывания.
 
 ## <a name="prerequisites"></a>Технические условия
 
-Инструменты решения "Функции Azure" включены в рабочую нагрузку разработки Azure в [Visual Studio 2017 15.5](https://www.visualstudio.com/vs/) или более поздней версии. Не забудьте включить рабочую нагрузку **разработка Azure** в своем экземпляре Visual Studio 2017.
+Средства функций Azure входит в рабочую нагрузку разработки Azure [Visual Studio 2017](https://www.visualstudio.com/vs/), или более поздней версии. Не забудьте включить **разработки Azure** рабочей нагрузки в установку Visual Studio 2019 г.:
 
-![Установка Visual Studio 2017 с рабочей нагрузкой разработки в Azure](./media/functions-create-your-first-function-visual-studio/functions-vs-workloads.png)
+![Установка Visual Studio 2019 с рабочей нагрузкой разработки Azure](./media/functions-create-your-first-function-visual-studio/functions-vs-workloads.png)
 
 Убедитесь, что установлены обновления Visual Studio и используется [последняя версия](#check-your-tools-version) инструментов решения "Функции Azure".
 
@@ -181,7 +181,7 @@ For an example of how to test a queue triggered function, see the [queue trigger
 
 Дополнительные сведения об использовании основных инструментов Функций Azure см. в статье [Как программировать и тестировать функции Azure в локальной среде](functions-run-local.md).
 
-## <a name="publish-to-azure"></a>Публикация в Azure
+## <a name="publish-to-azure"></a>Опубликовать в Azure
 
 [!INCLUDE [Publish the project to Azure](../../includes/functions-vstools-publish.md)]
 

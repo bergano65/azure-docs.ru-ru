@@ -11,17 +11,17 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 05/24/2018
+ms.date: 05/17/2019
 ms.author: mimart
 ms.reviewer: japere
 ms.custom: H1Hack27Feb2017, it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 214d984388869431453267ef18ebf6eb976bc496
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 545906af882be6e53297bf7a9ff2cd12e86d55f0
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65783523"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65859629"
 ---
 # <a name="kerberos-constrained-delegation-for-single-sign-on-to-your-apps-with-application-proxy"></a>Ограниченное делегирование Kerberos для поддержки единого входа в приложения с помощью прокси приложения
 
@@ -59,7 +59,8 @@ ms.locfileid: "65783523"
 2. Выберите сервер, на котором работает соединитель.
 3. Щелкните его правой кнопкой мыши и выберите **Свойства** > **Делегирование**.
 4. Выберите **Доверять компьютеру делегирование указанных служб**. 
-5. В разделе **Службы, с которыми эта учетная запись может использовать делегированные учетные данные** добавьте значение для идентификации имени субъекта-службы сервера приложений. После этого соединитель прокси приложения будет олицетворять пользователей в AD при работе с приложениями, указанными в списке.
+5. Выберите **использовать любой протокол проверки подлинности**.
+6. В разделе **Службы, с которыми эта учетная запись может использовать делегированные учетные данные** добавьте значение для идентификации имени субъекта-службы сервера приложений. После этого соединитель прокси приложения будет олицетворять пользователей в AD при работе с приложениями, указанными в списке.
 
    ![Окно свойств соединителя SVR (снимок экрана)](./media/application-proxy-configure-single-sign-on-with-kcd/Properties.jpg)
 

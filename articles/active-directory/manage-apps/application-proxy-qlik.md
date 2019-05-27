@@ -14,12 +14,12 @@ ms.author: mimart
 ms.reviewer: japere
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2fc03751859160f2c234810dcb01e1579cb3e2a8
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 8f54e08e6c3b7b673541f124a90f32dbc860fa44
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65782657"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65859537"
 ---
 # <a name="application-proxy-and-qlik-sense"></a>Прокси приложений и Qlik Sense 
 Совместное использование Azure Active Directory Application Proxy и Qlik Sense упрощает использование прокси приложения для предоставления удаленного доступа к развертыванию Qlik Sense.  
@@ -60,7 +60,9 @@ ms.locfileid: "65782657"
 Теперь приложение готово к тестированию. Перейдите по внешнему URL-адресу, который использовался для публикации QlikSense в приложении № 1, и войдите в систему как пользователь, назначенный для обоих приложений.  
 
 ## <a name="additional-references"></a>Дополнительные ссылки
-Дополнительные сведения о публикации Qlik Sense с помощью прокси приложения см. в статье сообщества Qlik: [Azure AD with Integrated Windows Authentication using a Kerberos Constrained Delegation with Qlik Sense](https://community.qlik.com/docs/DOC-20183) (Использование Azure AD со встроенной проверкой подлинности Windows с помощью ограниченного делегирования Kerberos посредством Qlik Sense).
+Дополнительные сведения о публикации Qlik Sense с помощью прокси приложения см. в следующих статьях сообщества Qlik: 
+- [Azure AD со встроенной проверкой подлинности Windows, с помощью ограниченного делегирования Kerberos с Qlik Sense](https://community.qlik.com/docs/DOC-20183)
+- [Интеграция Qlik Sense с прокси приложения Azure AD](https://community.qlik.com/t5/Technology-Partners-Ecosystem/Azure-AD-Application-Proxy/ta-p/1528396)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

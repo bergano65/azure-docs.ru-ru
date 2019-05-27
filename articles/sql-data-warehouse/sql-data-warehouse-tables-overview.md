@@ -2,20 +2,20 @@
 title: Проектирование таблиц — хранилище данных SQL Azure | Документация Майкрософт
 description: Общие сведения о проектировании таблиц в хранилище данных SQL Azure.
 services: sql-data-warehouse
-author: ronortloff
+author: XiaoyuL-Preview
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
-ms.subservice: implement
+ms.subservice: development
 ms.date: 03/15/2019
-ms.author: rortloff
+ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.openlocfilehash: 1073e1b4ad38c4b05c9195cf4ea16ade7416fbce
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 06bdd21363aee8202ce7178f157f01a5c26e3a52
+ms.sourcegitcommit: 16cb78a0766f9b3efbaf12426519ddab2774b815
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61474982"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65851591"
 ---
 # <a name="designing-tables-in-azure-sql-data-warehouse"></a>Проектирование таблиц в хранилище данных SQL Azure
 
@@ -94,7 +94,7 @@ CREATE TABLE MyTable (col1 int, col2 int );
 | Измерение      | Используйте репликацию для небольших таблиц. Если таблицы слишком велики для хранения на каждом вычислительном узле, используйте хэш-распределение. |
 | Промежуточное хранение        | Используйте циклический перебор для промежуточных таблиц. Загрузка с помощью инструкции CTAS выполняется быстро. Когда данные находятся в промежуточной таблице, используйте INSERT... ВЫБЕРИТЕ для перемещения данных в рабочие таблицы. |
 
-## <a name="table-partitions"></a>Секции таблиц
+## <a name="table-partitions"></a>Разделы таблицы
 Секционированная таблица хранит данные и выполняет операции со строками таблицы в соответствии с диапазонами данных. Например, таблицу можно разделить по дню, месяцу или году. Вы можете улучшить производительность запросов путем исключения секций, что ограничивает проверку запросов к данным в секции. Вы также можете управлять данными путем переключения разделов. Так как данные в хранилище данных SQL уже распределены, слишком большое количество разделов может замедлить производительность запросов. Дополнительные сведения см. в статье [Секционирование таблиц в хранилище данных SQL](sql-data-warehouse-tables-partition.md).  Когда в таблицу переключения секций секций, которые не являются пустыми, рассмотрите возможность использования параметра TRUNCATE_TARGET в вашей [ALTER TABLE](https://docs.microsoft.com/sql/t-sql/statements/alter-table-transact-sql) инструкции, если существующие данные к усечению. Ниже кода коммутаторы в преобразованные данные ежедневно в SalesFact, перезаписывая все существующие данные. 
 
 ```sql

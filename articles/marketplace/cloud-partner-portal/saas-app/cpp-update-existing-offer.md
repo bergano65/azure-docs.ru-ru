@@ -5,18 +5,21 @@ services: Azure, Marketplace, Cloud Partner Portal,
 author: dan-wesley
 ms.service: marketplace
 ms.topic: conceptual
-ms.date: 12/04/2018
-ms.author: pabutler
-ms.openlocfilehash: 8817c8aa7d5d589be5e03cdd04e3a505d7e2be21
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.date: 05/16/2019
+ms.author: pbutlerm
+ms.openlocfilehash: 2195c9a5e1f0d3683ea8cf6564d97cbabd072f81
+ms.sourcegitcommit: 3ced637c8f1f24256dd6ac8e180fff62a444b03c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64941663"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65834201"
 ---
 # <a name="update-an-existing-saas-application-offer"></a>Обновление имеющегося предложения приложения SaaS
 
 Существуют различные типы обновлений, которые может потребоваться применить к предложению после его публикации и активации. Любое изменение, внесенное в новую версию вашего предложения, нужно сохранить и опубликовать повторно для его отображения в Marketplace. В этой статье описана процедура обновления предложения SaaS на [Портале Cloud Partner](https://cloudpartner.azure.com/).
+
+> [!IMPORTANT] 
+> SaaS предоставляют функциональность переносится в [центра партнеров Майкрософт](https://partner.microsoft.com/dashboard/directory).  Все новые издатели необходимо использовать центр партнеров для создания новых предложений SaaS и управления существующие предложения.  Текущих издателей с предложениями SaaS batchwise переносятся из облачного портала для партнеров в центре партнеров.  На портале Cloud Partner отобразит сообщения о состоянии, чтобы указать, когда были перенесены определенные существующие предложения.
 
 Существует несколько причин, по которым может понадобиться обновить предложение, например:
 
@@ -75,7 +78,7 @@ ms.locfileid: "64941663"
 
 ![Просмотр журнала публикации на Портале Cloud Partner](./media/saas-offer-history.png)
 
-На странице Audit history (Журнал аудита) можно искать конкретные предложения и применить фильтры, например по издателю, предложению и типу события (например, OfferGoLiveRequested). Вы также можете скачать журнал аудита в виде CSV-файла.
+На странице журнала аудита можно использовать для поиска конкретное предложение и применить фильтры, такие как издателя, предложение и тип события (например, OfferGoLiveRequested.) Вы также можете скачать журнал аудита в виде CSV-файла.
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

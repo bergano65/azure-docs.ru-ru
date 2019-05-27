@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: troubleshoot
 ms.date: 04/08/2019
 ms.author: v-chjenk
-ms.openlocfilehash: 99295fd4581cd81751f7d64b694c853efe51a106
-ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
+ms.openlocfilehash: f88dee579e44a01dc1a7404ef6a670de34063552
+ms.sourcegitcommit: 3ced637c8f1f24256dd6ac8e180fff62a444b03c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2019
-ms.locfileid: "65522944"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65833568"
 ---
 # <a name="remote-desktop-client-connections"></a>Подключения клиента удаленного рабочего стола
 
@@ -28,9 +28,9 @@ ms.locfileid: "65522944"
 
 Используйте **nslookup** для подтверждения DNS может разрешить FQDN:
 
-    ```cmd
-    nslookup rdweb.wvd.microsoft.com
-    ```
+```cmd
+nslookup rdweb.wvd.microsoft.com
+```
 
 Попробуйте подключиться с другой клиент, например, клиент удаленного рабочего стола для Windows 7 или Windows 10 и проверить увидеть, если его можно открыть веб-клиента.
 
@@ -54,7 +54,7 @@ ms.locfileid: "65522944"
 
 1. Перезапустите обозреватель.
 2. Очистить файлы cookie. См. в разделе [по удалению файлов cookie в браузере Internet Explorer](https://support.microsoft.com/help/278835/how-to-delete-cookie-files-in-internet-explorer).
-3. Очистка кэша. См. в разделе [очистить кэш браузера для веб-браузера](https://binged.it/2RKyfdU).
+3. Очистите кэш браузера. См. в разделе [очистить кэш браузера для веб-браузера](https://binged.it/2RKyfdU).
 4. Открыть браузер в режиме защищенного просмотра.
 
 ## <a name="web-client-stops-responding-or-disconnects"></a>Отключение или перестает отвечать на запросы веб-клиента
@@ -74,7 +74,7 @@ ms.locfileid: "65522944"
 1. Убедитесь в правильности URL-адрес клиента.
 2. Убедитесь, что учетные данные, в среде виртуального рабочего стола Windows, привязаны к URL-адрес.
 3. Очистить файлы cookie. См. в разделе [по удалению файлов cookie в браузере Internet Explorer](https://support.microsoft.com/help/278835/how-to-delete-cookie-files-in-internet-explorer).
-4. Очистка кэша. См. в разделе [очистить кэш браузера для веб-браузера](https://binged.it/2RKyfdU).
+4. Очистите кэш браузера. См. в разделе [очистить кэш браузера для веб-браузера](https://binged.it/2RKyfdU).
 5. Открыть браузер в режиме защищенного просмотра.
 
 ## <a name="remote-desktop-client-for-windows-7-or-windows-10-stops-responding-or-cannot-be-opened"></a>Клиент удаленного рабочего стола для Windows 7 или Windows 10, перестает отвечать на запросы или не удается открыть
@@ -111,20 +111,20 @@ Remove-Item C:\Users\pavithir\AppData\Roaming\RdClientRadc\* -Recurse
 4. С помощью **Get-RdsHostPool** и **Get RdsSessionHost** командлетов, убедитесь, что устранение неполадок, проводится в пуле верный узел.
 5. Выполните следующую команду, чтобы получить список всех неудачных действий тип подключения для указанного временного окна:
 
-    ```cmd
+    ```PowerShell
      Get-RdsDiagnosticActivities -TenantName <TenantName> -username <UPN> -StartTime
      "11/21/2018 1:07:03 PM" -EndTime "11/21/2018 1:27:03 PM" -Outcome Failure -ActivityType Connection
     ```
 
 6. С помощью **ActivityId** из предыдущих выходных данных командлета, выполните приведенную ниже команду:
 
-    ```
+    ```PowerShell
     (Get-RdsDiagnosticActivities -TenantName $tenant -ActivityId <ActivityId> -Detailed).Errors
     ```
 
 7. Команда выдает результат, аналогичный приведенному ниже. Используйте **ErrorCodeSymbolic** и **ErrorMessage** для устранения основной причины.
 
-    ```
+    ```PowerShell
     ErrorSource       : <Source>
     ErrorOperation    : <Operation>
     ErrorCode         : <Error code>
@@ -159,7 +159,7 @@ Remove-Item C:\Users\pavithir\AppData\Roaming\RdClientRadc\* -Recurse
 
 Убедитесь, что пользователь, сообщающий о проблемах был назначен группы приложений с помощью этой командной строки:
 
-```cmd
+```PowerShell
 Get-RdsAppGroupUser <tenantname> <hostpoolname> <appgroupname>
 ```
 

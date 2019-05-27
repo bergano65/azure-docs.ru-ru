@@ -2,20 +2,20 @@
 title: Варианты использования предложения GROUP BY в хранилище данных SQL Azure | Документация Майкрософт
 description: Советы по реализации параметров предложения Group By в хранилище данных SQL Azure для разработки решений.
 services: sql-data-warehouse
-author: ronortloff
+author: XiaoyuL-Preview
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
-ms.subservice: implement
+ms.subservice: query
 ms.date: 04/17/2018
-ms.author: rortloff
+ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.openlocfilehash: 69a76ae9d6f355fe401b438ec2ab89d6606ba46c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: b158048929d3db8672d76027666331448a91a0a8
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60402350"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65861805"
 ---
 # <a name="group-by-options-in-sql-data-warehouse"></a>Группировка по параметрам в хранилище данных SQL
 Советы по реализации параметров предложения Group By в хранилище данных SQL Azure для разработки решений.

@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 03/26/2018
 ms.author: sngun
-ms.openlocfilehash: 4d259523d3f7fe7165d0ef4c8a5aac12bd7cd823
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 54de2d2f9b5691a47ff56891185c7655661092dd
+ms.sourcegitcommit: 3ced637c8f1f24256dd6ac8e180fff62a444b03c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61330817"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65833600"
 ---
 # <a name="serverless-database-computing-using-azure-cosmos-db-and-azure-functions"></a>Обработка данных бессерверных баз данных с помощью Azure Cosmos DB и Функций Azure
 
@@ -40,7 +40,7 @@ ms.locfileid: "61330817"
 * Входные и выходные привязки для Azure Cosmos DB можно использовать в одной и той же функции Azure. Это удобно в случаях, когда требуется найти определенные данные с помощью входной привязки, изменить их в функции Azure, а затем сохранить в том же или другом контейнере.
 * Входную привязку к контейнеру Azure Cosmos DB можно использовать в той же функции, что и триггер Azure Cosmos DB, и ее можно применять вместе с выходной привязкой или без нее. С помощью такого сочетания можно передавать актуальные данные курса валют (полученные с помощью входной привязки к контейнеру данных обмена валют) в канал изменений для новых заказов в службе корзины для покупок. Обновленную итоговую сумму для корзины для покупок, в которой учтена конвертация валют, можно записать в третий контейнер с помощью выходной привязки.
 
-## <a name="use-cases"></a>Примеры использования
+## <a name="use-cases"></a>Варианты использования
 
 В следующих вариантах использования демонстрируются несколько способов максимально эффективного использования данных Azure Cosmos DB с помощью подключения данных к функциям Azure, управляемым событиями.
 
@@ -107,11 +107,11 @@ ms.locfileid: "61330817"
 
 ## <a name="tooling"></a>Инструментарий
 
-Естественная интеграция между службой "Функции Azure" и Azure Cosmos DB доступна на портале Azure и в Visual Studio 2017.
+Естественная интеграция между Azure Cosmos DB и функции Azure доступен на портале Azure и в Visual Studio 2019.
 
 * На портале службы "Функции Azure" можно создать триггер Azure Cosmos DB. Для быстрого ознакомления с инструкциями см. раздел [Создание триггера Azure Cosmos DB на портале Azure](https://aka.ms/cosmosdbtriggerportalfunc)
 * На портале Azure Cosmos DB триггер Azure Cosmos DB можно добавить в приложение-функцию Azure в той же группе ресурсов.
-* В Visual Studio 2017 можно создать триггер Azure Cosmos DB с помощью [Функции Azure для Visual Studio 2017](../azure-functions/functions-develop-vs.md).
+* В Visual Studio 2019 г., можно создать триггер Azure Cosmos DB с помощью [инструментов функций Azure](../azure-functions/functions-develop-vs.md):
 
     >[!VIDEO https://www.youtube.com/embed/iprndNsUeeg]
 
