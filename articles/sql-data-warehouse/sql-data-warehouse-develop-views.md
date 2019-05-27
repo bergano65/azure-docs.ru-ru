@@ -2,20 +2,20 @@
 title: Применение представлений T-SQL в хранилище данных SQL Azure | Документация Майкрософт
 description: Советы по использованию представлений T-SQL в хранилище данных SQL Azure для разработки решений.
 services: sql-data-warehouse
-author: ronortloff
+author: XiaoyuL-Preview
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
-ms.subservice: implement
+ms.subservice: development
 ms.date: 04/17/2018
-ms.author: rortloff
+ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.openlocfilehash: dba6d49590cc4064155e58784a166d3abbb19b6f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: d4321f8aef6e754d8a1c5b16ac82b4fa62c40949
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61439168"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65873612"
 ---
 # <a name="views-in-azure-sql-data-warehouse"></a>Представления в хранилище данных SQL Azure
 Советы по использованию представлений T-SQL в хранилище данных SQL Azure для разработки решений. 

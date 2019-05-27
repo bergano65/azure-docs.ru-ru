@@ -11,12 +11,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: twooley
-ms.openlocfilehash: be8d4172476ca0613e80e62739b9ab36f8ab4c3b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 96c496ef67e26a3079577bf52e9d019d963467b8
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60197753"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65915853"
 ---
 # <a name="service-to-service-authentication-with-azure-data-lake-storage-gen1-using-net-sdk"></a>Аутентификация между службами в Azure Data Lake Storage 1-го поколения с помощью пакета SDK для .NET
 > [!div class="op_single_selector"]
@@ -30,25 +30,18 @@ ms.locfileid: "60197753"
 В этой статье описывается, как использовать пакет SDK для .NET для аутентификации между службами в Azure Data Lake Storage 1-го поколения. Дополнительные сведения об аутентификации пользователей в Azure Data Lake Storage 1-го поколения с помощью пакета SDK для .NET см. в статье [Аутентификация пользователя в Azure Data Lake Storage 1-го поколения с помощью пакета SDK для .NET](data-lake-store-end-user-authenticate-net-sdk.md).
 
 ## <a name="prerequisites"></a>Технические условия
-* **Visual Studio 2013, 2015 или 2017**. В инструкциях ниже используется Visual Studio 2017.
+* **Visual Studio 2013 или более поздней версии**. В инструкциях ниже используется Visual Studio 2019.
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
 
 * **Создайте веб-приложение Azure Active Directory**. Вам нужно выполнить инструкции по [аутентификации между службами в Data Lake Storage 1-го поколения с помощью Azure Active Directory](data-lake-store-service-to-service-authenticate-using-active-directory.md).
 
 ## <a name="create-a-net-application"></a>Создание приложения .NET
-1. Откройте Visual Studio и создайте консольное приложение.
-2. В меню **Файл** выберите команду **Создать**, а затем — **Проект**.
-3. В окне **Новый проект**введите или выберите следующие значения.
+1. В Visual Studio выберите **файл** меню **New**, а затем **проекта**.
+2. Выберите **консольное приложение (.NET Framework)**, а затем выберите **Далее**.
+3. В **имя_проекта**, введите `CreateADLApplication`, а затем выберите **создать**.
 
-   | Свойство | Value |
-   | --- | --- |
-   | Category |Templates/Visual C#/Windows |
-   | Шаблон |Консольное приложение |
-   | Name |CreateADLApplication |
-4. Нажмите кнопку **ОК** , чтобы создать проект.
-
-5. Добавьте пакеты NuGet в проект.
+4. Добавьте пакеты NuGet в проект.
 
    1. В обозревателе решений щелкните правой кнопкой мыши имя проекта и выберите пункт **Управление пакетами NuGet**.
    2. На вкладке **Диспетчер пакетов NuGet** в поле **Источник пакета** выберите **nuget.org** и установите флажок **Включить предварительные выпуски**.
@@ -60,7 +53,7 @@ ms.locfileid: "60197753"
         ![Добавление источника NuGet](./media/data-lake-store-get-started-net-sdk/data-lake-store-install-nuget-package.png "Создание учетной записи Azure Data Lake")
    4. Закройте **диспетчер пакетов NuGet**.
 
-6. Откройте файл **Program.cs**, удалите существующий код и включите следующие инструкции, чтобы добавить ссылки на пространства имен.
+5. Откройте файл **Program.cs**, удалите существующий код и включите следующие инструкции, чтобы добавить ссылки на пространства имен.
 
 ```csharp
 using System;

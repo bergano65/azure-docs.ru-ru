@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 09/11/2017
 ms.author: mbullwin
-ms.openlocfilehash: 0166622539a439a99aef7e476519881518baa0b0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: eecd2a50607fa42562a9ae6a7fb950a253655a45
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60904813"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65872702"
 ---
 # <a name="walkthrough-export-to-sql-from-application-insights-using-stream-analytics"></a>Пошаговое руководство. Экспорт в SQL из Application Insights с использованием Stream Analytics
 В этой статье показано, как переместить данные телеметрии из [Azure Application Insights][start] в базу данных SQL Azure, используя [непрерывный экспорт][export] и [Azure Stream Analytics](https://azure.microsoft.com/services/stream-analytics/). 
@@ -179,10 +179,10 @@ CREATE CLUSTERED INDEX [pvTblIdx] ON [dbo].[PageViewsTable]
 
 > [!TIP]
 > Используйте функцию Sample для проверки правильности входного пути. В случае сбоя убедитесь, что в хранилище для выбранного диапазона времени есть данные. Измените определение ввода и убедитесь, что учетная запись хранения, префикс пути и формат даты указаны правильно.
-> 
-> 
-> ## <a name="set-query"></a>Настройка запроса
-> Откройте раздел запроса:
+
+ 
+## <a name="set-query"></a>Настройка запроса
+Откройте раздел запроса:
 
 Замените запрос по умолчанию следующим:
 

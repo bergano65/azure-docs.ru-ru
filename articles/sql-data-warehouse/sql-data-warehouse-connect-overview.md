@@ -2,20 +2,20 @@
 title: Подключение к хранилищу данных SQL Azure | Документация Майкрософт
 description: Подключитесь к хранилищу данных SQL Azure.
 services: sql-data-warehouse
-author: KavithaJonnakuti
+author: XiaoyuL-Preview
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
-ms.subservice: consume
+ms.subservice: development
 ms.date: 04/17/2018
-ms.author: kavithaj
+ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.openlocfilehash: 85bce59563cf0424816661c97406060bcbb423ec
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 2c937285b9c54072c6d1e1b0628c3d5fbfe786f3
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60402826"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65873664"
 ---
 # <a name="connect-to-azure-sql-data-warehouse"></a>Подключение к хранилищу данных SQL Azure
 Подключитесь к хранилищу данных SQL Azure.
@@ -63,8 +63,8 @@ jdbc:sqlserver://yourserver.database.windows.net:1433;database=yourdatabase;user
 
 | Параметр базы данных | Value |
 |:--- |:--- |
-| [ANSI_NULLS][ANSI_NULLS] |ВКЛ |
-| [QUOTED_IDENTIFIERS][QUOTED_IDENTIFIERS] |ВКЛ |
+| [ANSI_NULLS][ANSI_NULLS] |ВКЛ. |
+| [QUOTED_IDENTIFIERS][QUOTED_IDENTIFIERS] |ВКЛ. |
 | [DATEFORMAT][DATEFORMAT] |мдг |
 | [DATEFIRST][DATEFIRST] |7 |
 
