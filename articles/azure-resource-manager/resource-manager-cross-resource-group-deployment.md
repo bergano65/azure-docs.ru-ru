@@ -14,11 +14,11 @@ ms.workload: na
 ms.date: 06/02/2018
 ms.author: tomfitz
 ms.openlocfilehash: 3641833f0b55f20066302de350bfab17adfade0e
-ms.sourcegitcommit: fec0e51a3af74b428d5cc23b6d0835ed0ac1e4d8
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56107010"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66128524"
 ---
 # <a name="deploy-azure-resources-to-more-than-one-subscription-or-resource-group"></a>Развертывание ресурсов Azure в нескольких подписках или группах ресурсов
 
@@ -169,7 +169,7 @@ ms.locfileid: "56107010"
 
 В следующих шаблонах демонстрируется развертывание в нескольких группах ресурсов. Скрипты для развертывания шаблонов приведены после таблицы.
 
-|Шаблон  |ОПИСАНИЕ  |
+|Шаблон  |Описание  |
 |---------|---------|
 |[Шаблон для развертывания в нескольких подписках](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/crosssubscription.json) |Развертывание одной учетной записи хранения в одной группе ресурсов и еще одной учетной записи хранения в другой группе ресурсов. Укажите значение идентификатора подписки, если вторая группа ресурсов находится в другой подписке. |
 |[Шаблон свойств для развертывания в нескольких группах ресурсов](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/crossresourcegroupproperties.json) |В этом шаблоне показано, как разрешается функция `resourceGroup()`. Он не используется для развертывания ресурсов. |
@@ -354,7 +354,7 @@ az group deployment create \
 ...
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Сведения об определении параметров в шаблоне см. в статье [Описание структуры и синтаксиса шаблонов Azure Resource Manager](resource-group-authoring-templates.md).
 * Советы по устранению распространенных ошибок развертывания см. в разделе [Устранение распространенных ошибок развертывания в Azure с помощью Azure Resource Manager](resource-manager-common-deployment-errors.md).

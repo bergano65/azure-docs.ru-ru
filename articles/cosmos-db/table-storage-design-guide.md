@@ -4,16 +4,16 @@ description: Руководство по разработке таблиц хр�
 ms.service: cosmos-db
 ms.subservice: cosmosdb-table
 ms.topic: conceptual
-ms.date: 12/07/2018
+ms.date: 05/21/2019
 author: wmengmsft
 ms.author: wmeng
 ms.custom: seodec18
-ms.openlocfilehash: 84749332c5b7ab5fec2905c0fc36d89863adc3d2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: af155b5adb2e4b45412a8b84818852ed1b1c5e72
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60579649"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65966090"
 ---
 # <a name="azure-storage-table-design-guide-designing-scalable-and-performant-tables"></a>Руководство по разработке таблиц хранилища Azure. Разработка масштабируемых и производительных таблиц
 
@@ -41,7 +41,7 @@ ms.locfileid: "60579649"
 <th></th>
 </tr>
 <tr>
-<td>Marketing</td>
+<td>Маркетинг</td>
 <td>00001</td>
 <td>2014-08-22T00:50:32Z</td>
 <td>
@@ -49,7 +49,7 @@ ms.locfileid: "60579649"
 <tr>
 <th>FirstName</th>
 <th>LastName</th>
-<th>Age</th>
+<th>Время существования</th>
 <th>Email</th>
 </tr>
 <tr>
@@ -61,7 +61,7 @@ ms.locfileid: "60579649"
 </table>
 </tr>
 <tr>
-<td>Marketing</td>
+<td>Маркетинг</td>
 <td>00002</td>
 <td>2014-08-22T00:50:34Z</td>
 <td>
@@ -69,7 +69,7 @@ ms.locfileid: "60579649"
 <tr>
 <th>FirstName</th>
 <th>LastName</th>
-<th>Age</th>
+<th>Время существования</th>
 <th>Email</th>
 </tr>
 <tr>
@@ -81,8 +81,8 @@ ms.locfileid: "60579649"
 </table>
 </tr>
 <tr>
-<td>Marketing</td>
-<td>Department</td>
+<td>Маркетинг</td>
+<td>Отдел</td>
 <td>2014-08-22T00:50:30Z</td>
 <td>
 <table>
@@ -91,7 +91,7 @@ ms.locfileid: "60579649"
 <th>EmployeeCount</th>
 </tr>
 <tr>
-<td>Marketing</td>
+<td>Маркетинг</td>
 <td>153</td>
 </tr>
 </table>
@@ -106,7 +106,7 @@ ms.locfileid: "60579649"
 <tr>
 <th>FirstName</th>
 <th>LastName</th>
-<th>Age</th>
+<th>Время существования</th>
 <th>Email</th>
 </tr>
 <tr>
@@ -653,7 +653,7 @@ ms.locfileid: "60579649"
 ![Сущность отдела и сущность сотрудника][16]
 
 #### <a name="solution"></a>Решение
-Вместо хранения данных в двух отдельных сущностях денормализуйте данные и сохраните копию со сведениями о руководителе в сущности отдела. Например:   
+Вместо хранения данных в двух отдельных сущностях денормализуйте данные и сохраните копию со сведениями о руководителе в сущности отдела. Например:  
 
 ![Денормализованная и объединенная сущность отдела][17]
 
@@ -1124,7 +1124,7 @@ foreach (var e in entities)
 <tr>
 <th>FirstName</th>
 <th>LastName</th>
-<th>Age</th>
+<th>Время существования</th>
 <th>Email</th>
 </tr>
 <tr>
@@ -1144,7 +1144,7 @@ foreach (var e in entities)
 <tr>
 <th>FirstName</th>
 <th>LastName</th>
-<th>Age</th>
+<th>Время существования</th>
 <th>Email</th>
 </tr>
 <tr>
@@ -1162,7 +1162,7 @@ foreach (var e in entities)
 <td>
 <table>
 <tr>
-<th>DepartmentName</th>
+<th>Название отдела</th>
 <th>EmployeeCount</th>
 </tr>
 <tr>
@@ -1181,7 +1181,7 @@ foreach (var e in entities)
 <tr>
 <th>FirstName</th>
 <th>LastName</th>
-<th>Age</th>
+<th>Время существования</th>
 <th>Email</th>
 </tr>
 <tr>
@@ -1217,7 +1217,7 @@ foreach (var e in entities)
 <th>EntityType</th>
 <th>FirstName</th>
 <th>LastName</th>
-<th>Age</th>
+<th>Время существования</th>
 <th>Email</th>
 </tr>
 <tr>
@@ -1239,7 +1239,7 @@ foreach (var e in entities)
 <th>EntityType</th>
 <th>FirstName</th>
 <th>LastName</th>
-<th>Age</th>
+<th>Время существования</th>
 <th>Email</th>
 </tr>
 <tr>
@@ -1259,11 +1259,11 @@ foreach (var e in entities)
 <table>
 <tr>
 <th>EntityType</th>
-<th>DepartmentName</th>
+<th>Название отдела</th>
 <th>EmployeeCount</th>
 </tr>
 <tr>
-<td>Department</td>
+<td>Отдел</td>
 <td></td>
 <td></td>
 </tr>
@@ -1280,7 +1280,7 @@ foreach (var e in entities)
 <th>EntityType</th>
 <th>FirstName</th>
 <th>LastName</th>
-<th>Age</th>
+<th>Время существования</th>
 <th>Email</th>
 </tr>
 <tr>
@@ -1515,7 +1515,7 @@ private static async Task SimpleEmployeeUpsertAsync(CloudTable employeeTable,
 
 Клиентское приложение может вызывать несколько подобных асинхронных методов, а каждый вызов метода будет выполняться в отдельном потоке.  
 
-### <a name="credits"></a>Баллы
+### <a name="credits"></a>Титры
 Мы хотели бы поблагодарить за вклад следующих членов команды Azure: Доминика Беттса, Джейсона Хогга, Джина Ганема, Джея Харидаса, Джеффа Ирвина, Вамшидхара Комминени, Виная Шаха и Сердара Озлера, а также Тома Холландера из Microsoft DX. 
 
 Мы также хотим поблагодарить следующих экспертов Майкрософт за их ценные отзывы во время циклов проверки: Игоря Папирова и Эдварда Бэккера.

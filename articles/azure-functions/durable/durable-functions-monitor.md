@@ -10,12 +10,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: azfuncdf
-ms.openlocfilehash: 9be062ec42f054832225c17a65b06e47dbcbe990
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.openlocfilehash: 243a388ee59a1a550f80882b0af61e1f1db008ca
+ms.sourcegitcommit: 59fd8dc19fab17e846db5b9e262a25e1530e96f3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62123490"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65977443"
 ---
 # <a name="monitor-scenario-in-durable-functions---weather-watcher-sample"></a>Сценарий монитора в устойчивых функциях — пример наблюдателя за погодой
 
@@ -89,7 +89,8 @@ ms.locfileid: "62123490"
 
 ## <a name="strongly-typed-data-transfer-net-only"></a>Строго типизированная передача данных (только .NET)
 
-Оркестратору требуется несколько частей данных, поэтому [​​общие объекты POCO](../functions-reference-csharp.md#reusing-csx-code) используются для строго типизированной передачи данных в C# и сценариях C#: [!code-csharp[Main](~/samples-durable-functions/samples/csx/shared/MonitorRequest.csx)].
+Оркестратору требуется несколько фрагментов данных, поэтому [общие объекты POCO](../functions-reference-csharp.md#reusing-csx-code) используются для передачи строго типизированных данных в C# и C# сценария:  
+[!code-csharp[Main](~/samples-durable-functions/samples/csx/shared/MonitorRequest.csx)]
 
 [!code-csharp[Main](~/samples-durable-functions/samples/csx/shared/Location.csx)]
 

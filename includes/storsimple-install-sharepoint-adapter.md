@@ -5,11 +5,11 @@ ms.topic: include
 ms.date: 10/26/2018
 ms.author: alkohli
 ms.openlocfilehash: e2d258f327ade2149adc92bdb7fb4bcc87cdd58c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60633408"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66155840"
 ---
 #### <a name="to-install-the-storsimple-adapter-for-sharepoint"></a>Установка адаптера StorSimple для SharePoint
 1. Скопируйте установщик на интерфейсный веб-сервер, настроенный для запуска веб-приложения центра администрирования SharePoint. 

@@ -8,16 +8,16 @@ ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: ade5d55833f1d63a8d70b6eedb3c3e4bdffe590b
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: c4bb06bd4c75dfeb164341d8cc5084030d3a08a7
+ms.sourcegitcommit: 59fd8dc19fab17e846db5b9e262a25e1530e96f3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59276496"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65979309"
 ---
 # <a name="programmatically-create-policies-and-view-compliance-data"></a>Программное создание политик и просмотр данных о соответствии
 
-В этой статье описано программное создание и управление политиками. Определения политик обеспечивают соблюдение различных правил и выполнение действий в ваших ресурсах. Принудительное применение обеспечивает соответствие ресурсов корпоративным стандартам и соглашениям об уровне обслуживания.
+В этой статье описано программное создание и управление политиками. Azure определения политик обеспечивают соблюдение различных правил и эффектов в ресурсах. Принудительное применение обеспечивает соответствие ресурсов корпоративным стандартам и соглашениям об уровне обслуживания.
 
 Сведения о соответствии см. в статье [Получение данных о соответствии](getting-compliance-data.md).
 
@@ -31,7 +31,7 @@ ms.locfileid: "59276496"
 
 1. Обновите свой модуль Azure PowerShell до последней версии. Дополнительные сведения см. в статье [Install the Azure PowerShell module](/powershell/azure/install-az-ps) (Установка модуля Azure PowerShell). Дополнительные сведения о последней версии см. по ссылке [для Azure PowerShell](https://github.com/Azure/azure-powershell/releases).
 
-1. Зарегистрируйте поставщик ресурсов Policy Insights с помощью Azure PowerShell, чтобы связать подписку с поставщиком ресурсов. Чтобы сделать это, необходимо иметь разрешение на регистрацию поставщика ресурсов. Эта операция включается в роли участника и владельца. Выполните указанную ниже команду для регистрации поставщика ресурсов.
+1. Зарегистрируйте поставщик ресурсов Azure Policy Insights, с помощью Azure PowerShell для проверки работы вашей подписки в поставщике ресурсов. Чтобы сделать это, необходимо иметь разрешение на регистрацию поставщика ресурсов. Эта операция включается в роли участника и владельца. Выполните указанную ниже команду для регистрации поставщика ресурсов.
 
    ```azurepowershell-interactive
    Register-AzResourceProvider -ProviderNamespace 'Microsoft.PolicyInsights'
@@ -148,7 +148,7 @@ ms.locfileid: "59276496"
 
    Замените {subscriptionId} идентификатором своей подписки или {managementGroupId} идентификатором своей [группы управления](../../management-groups/overview.md).
 
-   Дополнительные сведения о структуре запроса см. в статье [Policy Definitions - Create Or Update](/rest/api/resources/policydefinitions/createorupdate) (Создание и обновление определений политик) и [Policy Set Definitions - Create Or Update At Management Group](/rest/api/resources/policydefinitions/createorupdateatmanagementgroup) (Создание и обновление определений политик в группе управления).
+   Дополнительные сведения о структуре запроса см. в разделе [Azure Policy Definitions-Create или Update](/rest/api/resources/policydefinitions/createorupdate) и [Policy Definitions-Create или Update в группе управления](/rest/api/resources/policydefinitions/createorupdateatmanagementgroup)
 
 Используйте следующую процедуру для создания назначения политики и назначьте определение политики на уровне группы ресурсов.
 
@@ -230,7 +230,7 @@ ms.locfileid: "59276496"
    - Подписка — `/subscriptions/{subID}`
    - Группа управления — `/providers/Microsoft.Management/managementGroups/{mgName}`
 
-Вы можете получить идентификатор определения политики с помощью следующей команды в PowerShell.
+Идентификатор определения политики Azure можно получить с помощью PowerShell, выполнив следующую команду:
 
 ```azurecli-interactive
 az policy definition show --name 'Audit Storage Accounts with Open Public Networks'
@@ -251,5 +251,5 @@ az policy definition show --name 'Audit Storage Accounts with Open Public Networ
 - [Ресурсы REST API Azure](/rest/api/resources/)
 - [Модули Azure PowerShell](/powershell/module/az.resources/#policies).
 - [Команды Azure CLI для роботы с политикой](/cli/azure/policy?view=azure-cli-latest)
-- [Policy Insights](/rest/api/policy-insights)
-- [Упорядочение ресурсов с помощью групп управления Azure](../../management-groups/overview.md)
+- [Azure поставщик ресурсов Policy Insights Справочник по REST API](/rest/api/policy-insights)
+- [Упорядочение ресурсов с помощью групп управления Azure](../../management-groups/overview.md).

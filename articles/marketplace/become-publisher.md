@@ -8,23 +8,23 @@ ms.service: marketplace
 ms.topic: article
 ms.date: 06/05/2018
 ms.author: ellacroi
-ms.openlocfilehash: 5dcde10430308eaa1df0e6cca279803c3f7f5fe1
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.openlocfilehash: 10d2eb45b6706299336094359f10568e6811e1fb
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64935654"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65967715"
 ---
 # <a name="become-a-cloud-marketplace-publisher"></a>Регистрация в качестве издателя в облаке Marketplace
 
 В этой статье рассматривается регистрация в качестве издателя в облаке Marketplace. В зависимости от выбранного вами варианта публикации и текущего членства в партнерской сети Microsoft Partner Network некоторые шаги выполнять не нужно. После регистрации вы сможете создавать предложения Marketplace для Microsoft Azure Marketplace или AppSource.
 
 
-|  | Шаг регистрации | Duration | Сведения |  
+|  | Шаг регистрации | Продолжительность | Сведения |  
 |:--- |:--- |:--- |:--- |  
 | 1 | Регистрация в партнерской сети Microsoft Partner Network | 15 мин. | [Регистрация в партнерской сети Microsoft Partner Network](https://docs.microsoft.com/azure/marketplace/become-publisher#1-register-in-microsoft-partner-network) |  
 | 2 | Создание учетной записи Майкрософт <ul>(требуется для предложений типа "Транзакция" Microsoft Azure Marketplace; рекомендуется для других)</ul> | 15 мин. | [Создание идентификатора Майкрософт](https://docs.microsoft.com/azure/marketplace/become-publisher#2-create-a-microsoft-account) |  
-| 3 | Подача формы регистрации Marketplace | 15 мин. | [Подача формы предварительного утверждения Marketplace](https://docs.microsoft.com/azure/marketplace/become-publisher#3-submit-the-marketplace-registration-form) |  
+| 3 | Создайте учетную запись центра партнеров | 15 мин. | [Создайте учетную запись центра партнеров](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/azureisv) |  
 | 4. |  Вход на Портал Cloud Partner | От 1 до 3 дней | [Вход на Портал Cloud Partner](https://docs.microsoft.com/azure/marketplace/become-publisher#4-sign-into-cloud-partner-portal) |  
 | 5 | Регистрация в Центре разработчиков Майкрософт (Центр разработки) (для предложений типа "Транзакция" Microsoft Azure Marketplace) | От 5 до 10 дней | [Регистрация в центре разработчиков](https://docs.microsoft.com/azure/marketplace/become-publisher#5-register-in-dev-center-for-transact-publishing-option-only) |  
 
@@ -59,14 +59,19 @@ ms.locfileid: "64935654"
 
 ---
 
-## <a name="3-submit-the-marketplace-registration-form"></a>3. Подача формы регистрации Marketplace  
+## <a name="3-create-a-partner-center-account"></a>3. Создайте учетную запись центра партнеров  
 | 15 мин |  
-Заполните эту краткую [форму регистрации](https://azuremarketplace.microsoft.com/sell/signup), чтобы стать издателем Marketplace. Сведения, отправленные в этой форме, будут использоваться для создания учетной записи издателя на Портале Cloud Partner, благодаря чему вы сможете создавать, публиковать предложения Marketplace и управлять ими.
 
-Вам будет предложено указать следующую информацию:
-*   Сведения о своей организации, включая идентификатор Microsoft Partner Network (которые можно просмотреть в [Центре партнеров](https://partnercenter.microsoft.com/partner/home) или в [Центре поддержки участников Партнерской программы Майкрософт](https://partners.microsoft.com/partnerprogram/PartnerMembershipCenter.aspx)).
-*   Краткое описание исходного приложения или предложения типа "Консультационные услуги", которое вы собираетесь опубликовать, включая продукт или службу Майкрософт, в зависимости от вида приложения.
-*   Целевая аудитория для приложения или службы. 
+Как только вы [отправите свое решение](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/azureisv) в Marketplace, наши специалисты свяжутся с вами, чтобы помочь на этапе публикации. См. в разделе Практическое [создать учетную запись центра партнеров](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-account) Дополнительные сведения.
+
+<!---
+Complete this brief [registration form](https://azuremarketplace.microsoft.com/sell/signup) to become a marketplace publisher. The information submitted on this form will be used to create a publisher account in the Cloud Partner Portal which will allow you to create, publish, and manage marketplace offers.
+
+You will be asked to include the following information:
+*   Details about your organization, including your Microsoft Partner Network ID (which you can look up in either [Partner Center](https://partnercenter.microsoft.com/partner/home) or [Partner Membership Center](https://partners.microsoft.com/partnerprogram/PartnerMembershipCenter.aspx))
+*   A brief description of your initial app or consulting services offer that you intend to publish, including the Microsoft product or service to which your offer most closely aligns
+*   The target audience for your app or service 
+-->
 
 ---
 ## <a name="4-sign-into-cloud-partner-portal"></a>4. Вход на Портал Cloud Partner
@@ -90,10 +95,10 @@ ms.locfileid: "64935654"
 *   Чтобы зарегистрировать учетную запись в [Центре разработки](https://developer.microsoft.com/store/register), [начните процесс регистрации здесь](https://developer.microsoft.com/store/register).
 *   Дополнительные сведения о создании учетной записи Майкрософт см. в разделе *Создание учетной записи Майкрософт*.
  
-Выполнив регистрацию в [Центре разработки](https://developer.microsoft.com/store/register), свяжите свой профиль на Портале Cloud Partner с учетной записью [Центра разработки](https://developer.microsoft.com/store/register) (см. подробные инструкции здесь). Этот шаг необходимо выполнить перед публикацией предложения типа "Транзакция". 
+После завершения [центр разработки](https://developer.microsoft.com/store/register) регистрации, связать профиль партнера облака, с вашей [центр разработки](https://developer.microsoft.com/store/register) учетной записи ([см. Подробные инструкции здесь](https://docs.microsoft.com/en-us/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-manage-publisher-profile)). Этот шаг необходимо выполнить перед публикацией предложения типа "Транзакция". 
 
 >[!Note]
->Чтобы не платить регистрационный сбор Центра разработчиков в размере 99 долл. США, заполните [форму регистрации Marketplace](https://azuremarketplace.microsoft.com/sell/signup) и получите рекламный код по электронной почте. 
+>Чтобы не платить регистрационный сбор Центра разработчиков в размере 99 долл. США, заполните [форму регистрации Marketplace](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/azureisv) и получите рекламный код по электронной почте. См. в разделе Практическое [создать учетную запись центра партнеров](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-account) Дополнительные сведения.
 
 >[!Important]
 >Прежде чем создавать учетную запись Центра разработки Майкрософт, убедитесь, что у вашей организации еще нет такой учетной записи во избежание повторяющихся учетных записей. Дополнительные сведения см. в статье [Регистрация в центре разработки](https://docs.microsoft.com/azure/marketplace/register-dev-center).

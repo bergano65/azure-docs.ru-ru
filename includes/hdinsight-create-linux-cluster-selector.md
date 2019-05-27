@@ -5,14 +5,14 @@ ms.topic: include
 ms.date: 10/25/2018
 ms.author: jasonh
 ms.openlocfilehash: 22c71aaa444d105995ee21c6c255542c2edf77af
-ms.sourcegitcommit: 97d0dfb25ac23d07179b804719a454f25d1f0d46
-ms.translationtype: HT
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/25/2019
-ms.locfileid: "55084891"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66118681"
 ---
 > [!div class="op_single_selector"]
-> * [Обзор](../articles/hdinsight/hdinsight-hadoop-provision-linux-clusters.md)
+> * [Обзор набора средств Visual Studio для Unity](../articles/hdinsight/hdinsight-hadoop-provision-linux-clusters.md)
 > * [портал Azure](../articles/hdinsight/hdinsight-hadoop-create-linux-clusters-portal.md)
 > * [Фабрика данных Azure](../articles/hdinsight/hdinsight-hadoop-create-linux-clusters-adf.md)
 > * [Интерфейс командной строки Azure](../articles/hdinsight/hdinsight-hadoop-create-linux-clusters-azure-cli.md)

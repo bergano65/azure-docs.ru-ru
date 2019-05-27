@@ -8,12 +8,12 @@ ms.service: marketplace
 ms.topic: article
 ms.date: 10/05/2018
 ms.author: ellacroi
-ms.openlocfilehash: 559b5a519a48d4aa8022961a59f6f29cef28f948
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.openlocfilehash: 1caa523b2bc43b7b3690e01f589aecf18fd3da9e
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64937604"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65965113"
 ---
 # <a name="register-in-dev-center"></a>Регистрация в центре разработки  
 Чтобы не входить в личную учетную запись в браузере, откройте новое окно в режиме инкогнито в браузере Chrome или запустите режим InPrivate в браузере Internet Explorer.  
@@ -71,7 +71,7 @@ ms.locfileid: "64937604"
 
     | Модель выставления счетов | Дальнейшие действия |  
     |:--- |:--- |  
-    | Free | Перейдите на портал Cloud Partner.<ul> <li>Чтобы публиковать в Azure Marketplace, посетите страницу портала Cloud Partner по адресу [cloudpartner.azure.com](https://cloudpartner.azure.com).</li> </ul> |  
+    | Бесплатный | Перейдите на портал Cloud Partner.<ul> <li>Чтобы публиковать в Azure Marketplace, посетите страницу портала Cloud Partner по адресу [cloudpartner.azure.com](https://cloudpartner.azure.com).</li> </ul> |  
     | Коммерческая (транзакция) | Обновите сведения об учетной записи.<ul> <li>Дополнительные сведения о добавлении данных об учетной записи см. в разделе, посвященном [добавлению банковской и налоговой информации](#add-bank-information).</li> </ul> |  
 
     *   Примером коммерческого предложения является предложение виртуальной машины с ежечасной моделью выставления счетов.  
@@ -156,7 +156,7 @@ ms.locfileid: "64937604"
   > Убедитесь, что почтовый индекс также введен правильно. Существует проверка почтового индекса города.
 
 * **Как получить промо-код?**
-  > Заполните форму [регистрации ​​Marketplace](https://azuremarketplace.microsoft.com/en-us/sell/signup), чтобы получить специальный код центра разработки.
+  > Заполните форму [регистрации ​​Marketplace](https://partner.microsoft.com/dashboard/account/v3/enrollment/introduction/azureisv), чтобы получить специальный код центра разработки. См. в разделе Практическое [создать учетную запись центра партнеров](https://docs.microsoft.com/azure/marketplace/partner-center-portal/create-account) Дополнительные сведения.
  
 * **Что следует ожидать после завершения регистрации?**
   > Найдите письмо от verify@microsoft.com со строкой темы "Action needed: Verify your email account with Microsoft" (Необходимое действие. Проверьте учетную запись электронной почты Майкрософт). Чтобы завершить регистрацию, щелкните ссылку для конфиденциальной проверки времени. *Если вы не получили электронное письмо в течение 24 часов, проверьте папку со спамом.*

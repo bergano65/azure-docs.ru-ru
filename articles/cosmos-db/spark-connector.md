@@ -4,14 +4,14 @@ description: Сведения о соединителе Spark для Azure Cosmo
 author: tknandu
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 02/21/2019
+ms.date: 05/21/2019
 ms.author: ramkris
-ms.openlocfilehash: 60afd8128224050d456699e798d814a259e106ae
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: bc0f2044f70c674177f9c9786f56f0441db2e282
+ms.sourcegitcommit: 59fd8dc19fab17e846db5b9e262a25e1530e96f3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61330252"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65978907"
 ---
 # <a name="accelerate-big-data-analytics-by-using-the-apache-spark-to-azure-cosmos-db-connector"></a>Ускорение аналитики больших данных с помощью соединителя Apache Spark для Azure Cosmos DB
 
@@ -31,7 +31,7 @@ ms.locfileid: "61330252"
 > Cosmos DB Cassandra API, используйте [соединитель Cassandra Spark](https://github.com/datastax/spark-cassandra-connector).
 >
 
-## <a name="quickstart"></a>Краткое руководство
+## <a name="quickstart"></a>Быстрый старт
 
 * Следуйте инструкциям из статьи [приступить к работе с пакетом SDK для Java](sql-api-async-java-get-started.md) для настройки учетной записи Cosmos DB и заполняется данными.
 * Следуйте инструкциям из статьи [Приступая к работе в Azure Databricks](https://docs.azuredatabricks.net/getting-started/index.html) для настройки рабочей области Azure Databricks и кластера.

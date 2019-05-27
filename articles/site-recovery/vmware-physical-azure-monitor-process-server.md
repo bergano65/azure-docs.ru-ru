@@ -6,13 +6,13 @@ manager: carmonm
 ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 08/24/2019
-ms.author: rayne
-ms.openlocfilehash: 5fac369f15edb3ef0be31d3dc7d7434104c18dfe
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.author: raynew
+ms.openlocfilehash: f3ba08bc1d557d53bca2421b5052f496c740b185
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64928172"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65969324"
 ---
 # <a name="monitor-the-process-server"></a>Мониторинг сервера обработки
 
@@ -24,7 +24,7 @@ ms.locfileid: "64928172"
 
 [Дополнительные сведения](vmware-physical-azure-config-process-server-overview.md) о роли и развертывания серверов обработки.
 
-## <a name="monitoring-overview"></a>Обзор мониторинга
+## <a name="monitoring-overview"></a>Общие сведения о мониторинге
 
 Так как на сервере обработки включено множество ролей, особенно в реплицированные данные кэширования, сжатия и передачи в Azure, важно наблюдать за состоянием сервера обработки на постоянной основе.
 
@@ -51,9 +51,9 @@ ms.locfileid: "64928172"
 
 Сервер обработки формирует количество оповещений о работоспособности, перечисленными в следующей таблице.
 
-**Тип оповещения** | **Дополнительные сведения**
+**Тип оповещения** | **Сведения**
 --- | ---
-![Healthy][green] | Сервер обработки подключен и исправен.
+![Работоспособна][green] | Сервер обработки подключен и исправен.
 ![Предупреждение][yellow] | % ЦП > 80 для использования за последние 15 минут
 ![Предупреждение][yellow] | Использование памяти: > 80% за последние 15 минут
 ![Предупреждение][yellow] | < 30% свободного пространства кэша папку за последние 15 минут

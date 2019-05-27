@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 05/07/2019
+ms.date: 05/22/2019
 ms.author: diberry
-ms.openlocfilehash: 7c3b93db18cb8e2660118927da47ffe95abb900f
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
-ms.translationtype: MT
+ms.openlocfilehash: 59308cdadb1eda9e73b373e72112b83d93629683
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65073005"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66124276"
 ---
 # <a name="install-and-run-luis-docker-containers"></a>Установка и запуск контейнеров Docker в LUIS
  
@@ -53,12 +53,12 @@ ms.locfileid: "65073005"
 
 Этот контейнер поддерживает минимальные и рекомендуемые значения для параметров:
 
-|Контейнер| Минимальная | Рекомендуется | ТРАНЗАКЦИЙ В СЕКУНДУ<br>(Минимум, максимум)|
+|Контейнер| Минимум | Рекомендуется | ТРАНЗАКЦИЙ В СЕКУНДУ<br>(Минимум, максимум)|
 |-----------|---------|-------------|--|
 |LUIS|1 ядро, 2 ГБ памяти|1 ядро, 4 ГБ памяти|20,40|
 
 * Частота каждого ядра должна быть минимум 2,6 ГГц.
-* Транзакций в Секунду - транзакций в секунду
+* TPS — транзакций в секунду.
 
 Ядро и память соответствуют параметрам `--cpus` и `--memory`, которые используются как часть команды `docker run`.
 
@@ -109,8 +109,8 @@ docker pull mcr.microsoft.com/azure-cognitive-services/luis:latest
 |Тип пакета|Запрос API конечной точки|Запрос доступности|Формат имени файла пакета|
 |--|--|--|--|
 |Обучение пройдено|Get, Post|Только контейнер|`{APPLICATION_ID}_v{APPLICATION_VERSION}.gz`|
-|Промежуточная|Get, Post|Azure и контейнер|`{APPLICATION_ID}_STAGING.gz`|
-|Производство|Get, Post|Azure и контейнер|`{APPLICATION_ID}_PRODUCTION.gz`|
+|Промежуточное хранение|Get, Post|Azure и контейнер|`{APPLICATION_ID}_STAGING.gz`|
+|Рабочая среда|Get, Post|Azure и контейнер|`{APPLICATION_ID}_PRODUCTION.gz`|
 
 > [!IMPORTANT]
 > Не переименовать, alter, перезаписать или распаковка файлов пакета LUIS.
@@ -168,7 +168,7 @@ Host: {AZURE_REGION}.api.cognitive.microsoft.com
 Ocp-Apim-Subscription-Key: {AUTHORING_KEY}
 ```
 
-| Placeholder | Value |
+| Местозаполнитель | Value |
 |-------------|-------|
 |{APPLICATION_ID} | Идентификатор опубликованного приложения LUIS. |
 |{APPLICATION_ENVIRONMENT} | Среда опубликованного приложения LUIS. Используйте одно из следующих значений:<br/>```PRODUCTION```<br/>```STAGING``` |
@@ -196,7 +196,7 @@ Host: {AZURE_REGION}.api.cognitive.microsoft.com
 Ocp-Apim-Subscription-Key: {AUTHORING_KEY}
 ```
 
-| Placeholder | Value |
+| Местозаполнитель | Value |
 |-------------|-------|
 |{APPLICATION_ID} | Идентификатор обученного приложения LUIS. |
 |{APPLICATION_VERSION} | Версия обученного приложения LUIS. |
@@ -218,7 +218,7 @@ https://{AZURE_REGION}.api.cognitive.microsoft.com/luis/api/v2.0/package/{APPLIC
 
 Воспользуйтесь командой [docker run](https://docs.docker.com/engine/reference/commandline/run/) для запуска контейнера. В команде используются следующие параметры:
 
-| Placeholder | Value |
+| Местозаполнитель | Value |
 |-------------|-------|
 |{ENDPOINT_KEY} | Этот ключ используется для запуска контейнера. Не используйте ключ starter. |
 |{BILLING_ENDPOINT} | На портале Azure доступен выставления счетов значение конечной точки `Cognitive Services` странице "Обзор". Необходимо добавить `luis/v2.0` маршрутизации URI конечной точки, как показано в следующем примере: `https://westus.api.cognitive.microsoft.com/luis/v2.0`.|
@@ -256,13 +256,17 @@ ApiKey={ENDPOINT_KEY}
 
 [!INCLUDE [Running multiple containers on the same host](../../../includes/cognitive-services-containers-run-multiple-same-host.md)]
 
+## <a name="endpoint-apis-supported-by-the-container"></a>Конечная точка API, поддерживаемых в контейнер
+
+Обе версии 2 и [V3 (Предварительная версия)](luis-migration-api-v3.md) версии API доступны с контейнером. 
+
 ## <a name="query-the-containers-prediction-endpoint"></a>Запрос конечной точки прогнозирования контейнера
 
 Контейнер предоставляет API запроса конечной точки прогнозирования на основе REST. Конечные точки для опубликованных (промежуточных или рабочих) приложений имеют _другой_ маршрут, чем конечные точки для обученных приложений. 
 
 Используйте узел `https://localhost:5000` для API контейнера. 
 
-|Тип пакета|Метод|Маршрутизация|Параметры запроса|
+|Тип пакета|Метод|Маршрут|Параметры запроса|
 |--|--|--|--|
 |Опубликовано|[Get](https://westus.dev.cognitive.microsoft.com/docs/services/5819c76f40a6350ce09de1ac/operations/5819c77140a63516d81aee78), [Post](https://westus.dev.cognitive.microsoft.com/docs/services/5819c76f40a6350ce09de1ac/operations/5819c77140a63516d81aee79)|/luis/v2.0/apps/{appId}?|q={q}<br>&staging<br>[&timezoneOffset]<br>[&verbose]<br>[&log]<br>|
 |Обучение пройдено|Get, Post|/luis/v2.0/apps/{appId}/versions/{versionId}?|q={q}<br>[&timezoneOffset]<br>[&verbose]<br>[&log]|
@@ -272,7 +276,7 @@ ApiKey={ENDPOINT_KEY}
 |Параметр запроса|type|Назначение|
 |--|--|--|
 |`q`|string|Фраза пользователя.|
-|`timezoneOffset`|number|Параметр timezoneOffset позволяет [изменить часовой пояс](luis-concept-data-alteration.md#change-time-zone-of-prebuilt-datetimev2-entity), используемый предварительно созданной сущностью datetimeV2.|
+|`timezoneOffset`|номер|Параметр timezoneOffset позволяет [изменить часовой пояс](luis-concept-data-alteration.md#change-time-zone-of-prebuilt-datetimev2-entity), используемый предварительно созданной сущностью datetimeV2.|
 |`verbose`|Логическое|Возвращает все намерения и их оценки, если задано значение true. По умолчанию задано значение false, при котором возвращается только верхнее намерение.|
 |`staging`|Логическое|Возвращает запрос из результатов промежуточной среды, если задано значение true. |
 |`log`|Логическое|Записывает запросы в журнал, который затем можно использовать для [активного обучения](luis-how-to-review-endpoint-utterances.md). Значение по умолчанию — true.|
@@ -358,7 +362,7 @@ curl -X GET \
 |Неподдерживаемые сущности для всех языков и региональных параметров|Предварительно созданная сущность [KeyPhrase](https://docs.microsoft.com/azure/cognitive-services/luis/luis-reference-prebuilt-keyphrase) для всех языков и региональных параметров|
 |Неподдерживаемые сущности для языка и региональных параметров "Английский (en-US)"|Предварительно созданные сущности [GeographyV2](https://docs.microsoft.com/azure/cognitive-services/luis/luis-reference-prebuilt-geographyv2)|
 |Подготовка речи|Внешние зависимости не поддерживаются в контейнере.|
-|Анализ мнений|Внешние зависимости не поддерживаются в контейнере.|
+|Анализ тональности|Внешние зависимости не поддерживаются в контейнере.|
 
 ## <a name="summary"></a>Сводка
 

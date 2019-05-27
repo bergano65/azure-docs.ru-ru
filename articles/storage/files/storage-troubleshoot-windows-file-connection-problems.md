@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 01/02/2019
 ms.author: jeffpatt
 ms.subservice: files
-ms.openlocfilehash: 3e40e72a4cbb154a7ccef153959e81f7054ea003
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 9658ed46e1a46aa3fc2c7fe251fd73b2ef0a13dd
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64926384"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65991366"
 ---
 # <a name="troubleshoot-azure-files-problems-in-windows"></a>Устранение неполадок службы файлов Azure в Windows
 
@@ -268,7 +268,7 @@ Windows 8, Windows Server 2012 или более поздние версии э�
 
 Чтобы устранить эту проблему, настройте значение реестра **DirectoryCacheEntrySizeMax** разрешать кэшировать большие списки каталогов на компьютере клиента.
 
-- Расположение. HKLM\System\CCS\Services\Lanmanworkstation\Parameters
+- Расположение: HKLM\System\CCS\Services\Lanmanworkstation\Parameters
 - Имя значения: DirectoryCacheEntrySizeMax 
 - Тип значения: DWORD
  
@@ -284,6 +284,8 @@ Windows 8, Windows Server 2012 или более поздние версии э�
 ### <a name="solution"></a>Решение
 
 Включите доменную службу AAD в клиенте AAD подписки, в которой развернута учетная запись хранения. Вам необходимы права администратора клиента AAD, чтобы создать управляемый домен. Если вы не администратор клиента Azure AD, обратитесь к администратору и следуйте пошаговым инструкциям, чтобы [включить доменные службы Azure Active Directory на портале Azure](https://docs.microsoft.com/azure/active-directory-domain-services/active-directory-ds-getting-started).
+
+[!INCLUDE [storage-files-condition-headers](../../../includes/storage-files-condition-headers.md)]
 
 ## <a name="need-help-contact-support"></a>Требуется помощь? Обратитесь в службу поддержки.
 Если вам все еще нужна помощь, [обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), которая поможет быстро устранить проблему.

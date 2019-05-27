@@ -7,13 +7,13 @@ ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
 ms.date: 01/10/2019
-ms.author: adgera
-ms.openlocfilehash: 49b073952b0923b940204b19680dcc9a1ffa44b5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.author: v-adgera
+ms.openlocfilehash: 797dfc44b9897920f9fd74346ee01e4b157a4ce8
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60926202"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65967782"
 ---
 # <a name="how-to-configure-postman-for-azure-digital-twins"></a>Настройка Postman для Azure Digital Twins
 
@@ -74,7 +74,7 @@ ms.locfileid: "60926202"
     | URL-адрес обратного вызова | `https://www.getpostman.com/oauth2/callback` |
     | URL-адрес аутентификации | Использование **URL-адреса авторизации** из шага 2 |
     | Идентификатор клиента | Используйте **идентификатор приложения** для приложения Azure AD, созданного или перепрофилированного на предыдущем шаге |
-    | Область | Не указывайте |
+    | `Scope` | Не указывайте |
     | Состояние | Не указывайте |
     | Проверка подлинности клиента | `Send as Basic Auth header` |
 

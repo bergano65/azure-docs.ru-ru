@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 05/17/2018
 ms.author: tomfitz
 ms.custom: include file
-ms.openlocfilehash: daa97c8ec0c2fd728e4d1eddf090afa17e87c31f
-ms.sourcegitcommit: 59fffec8043c3da2fcf31ca5036a55bbd62e519c
-ms.translationtype: HT
+ms.openlocfilehash: ab55441650085f6ca89f05613fe74dd4ae3cba54
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2018
-ms.locfileid: "34675342"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66128897"
 ---
 1. Чтобы просмотреть теги для ресурса или группы ресурсов, ищите существующие теги в обзоре. Если теги ранее не применялись, то список будет пустым.
    

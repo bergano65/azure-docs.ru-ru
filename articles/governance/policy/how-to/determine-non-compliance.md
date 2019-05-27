@@ -7,12 +7,12 @@ ms.date: 04/26/2019
 ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
-ms.openlocfilehash: 2f856e9c42b26d4e286493e2eb5d019a8cff6c23
-ms.sourcegitcommit: e7d4881105ef17e6f10e8e11043a31262cfcf3b7
+ms.openlocfilehash: 6e3e01ca9bd459aa6c6aca8dfaacb98b1267fada
+ms.sourcegitcommit: 59fd8dc19fab17e846db5b9e262a25e1530e96f3
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64868703"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65979347"
 ---
 # <a name="determine-causes-of-non-compliance"></a>Определение причин несоответствия требованиям
 
@@ -85,7 +85,7 @@ ms.locfileid: "64868703"
 
 Приведенной ниже таблице сопоставляет каждое возможное _Причина_ чтобы ответственный [условие](../concepts/definition-structure.md#conditions) в определении политики:
 
-|Причина | Условие |
+|`Reason` | Условие |
 |-|-|
 |Текущее значение может содержать целевое значение как ключ. |containsKey или **не** notContainsKey |
 |Текущее значение может содержать целевое значение. |содержит или **не** notContains |
@@ -215,11 +215,11 @@ Audit that an application is installed inside Windows VMs                 NonCom
 
 1. На странице **Соответствие ресурсов** выберите вкладку **Журнал изменений (предварительная версия)**. После этого отобразится список обнаруженных изменений (при наличии).
 
-   ![Вкладка "Политика журнал изменений на странице соответствие ресурсов"](../media/determine-non-compliance/change-history-tab.png)
+   ![Вкладка "Azure журнал изменений политики" на странице соответствие ресурсов](../media/determine-non-compliance/change-history-tab.png)
 
 1. Выберите одно из обнаруженных изменений. _Visual diff_ для ресурса, отображаемым на **журнал изменений** страницы.
 
-   ![Политика изменения журнала Visual Diff на странице журнала изменений](../media/determine-non-compliance/change-history-visual-diff.png)
+   ![Azure политики изменений журнал Visual Diff на странице журнала изменений](../media/determine-non-compliance/change-history-visual-diff.png)
 
 _Отличия между визуальными элементами_ позволяют обнаружить изменения ресурса. Обнаружены изменения не могут быть связаны с текущее состояние соответствия ресурса.
 
@@ -228,8 +228,8 @@ _Отличия между визуальными элементами_ позв
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Просмотрите примеры доступны на [примеры политик Azure](../samples/index.md).
-- См. дополнительные сведения о [структуре определения Политики Azure](../concepts/definition-structure.md).
-- См. дополнительные сведения о [действиях политик](../concepts/effects.md).
+- Изучите статью о [структуре определения Политики Azure](../concepts/definition-structure.md).
+- Изучите [сведения о действии политик](../concepts/effects.md).
 - Понять, как [программное создание политик](programmatically-create.md).
 - Узнайте, как [получить данные о соответствии](getting-compliance-data.md).
 - Узнайте, как [исправлять несоответствующие ресурсы](remediate-resources.md).

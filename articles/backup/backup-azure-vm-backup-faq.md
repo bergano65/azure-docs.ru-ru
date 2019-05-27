@@ -6,14 +6,14 @@ author: sogup
 manager: vijayts
 ms.service: backup
 ms.topic: conceptual
-ms.date: 03/22/2019
+ms.date: 05/21/2019
 ms.author: sogup
-ms.openlocfilehash: 9f233af316bd6022b93a7208bf3fae37e913e6af
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 9d4d1db808446cb010e6551bdcec514fc550d802
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60848186"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65966318"
 ---
 # <a name="frequently-asked-questions-back-up-azure-vms"></a>Часто задаваемые вопросы — резервное копирование виртуальных машин Azure
 
@@ -24,25 +24,25 @@ ms.locfileid: "60848186"
 
 ### <a name="which-vm-images-can-be-enabled-for-backup-when-i-create-them"></a>Какие образы виртуальных Машин можно включить для резервного копирования, при их создании?
 Когда вы создаете виртуальную Машину, вы можете включить архивацию для виртуальных машин [поддерживаемые операционные системы](backup-support-matrix-iaas.md#supported-backup-actions)
- 
-### <a name="is-the-backup-cost-included-in-the-vm-cost"></a>— Это расходы на резервное копирование включает в себя стоимость виртуальной Машины? 
+
+### <a name="is-the-backup-cost-included-in-the-vm-cost"></a>— Это расходы на резервное копирование включает в себя стоимость виртуальной Машины?
 
 № Стоимость резервного копирования отделены от затрат на виртуальной Машине. Дополнительные сведения о [цены на Azure Backup](https://azure.microsoft.com/pricing/details/backup/).
- 
-### <a name="which-permissions-are-required-to-enable-backup-for-a-vm"></a>Какие разрешения необходимы для включения резервного копирования для виртуальной Машины? 
 
-Если вы участник виртуальной Машины, вы можете включить резервное копирование на виртуальной Машине. При использовании пользовательской роли, вам потребуются следующие разрешения для включения архивации виртуальной Машины: 
+### <a name="which-permissions-are-required-to-enable-backup-for-a-vm"></a>Какие разрешения необходимы для включения резервного копирования для виртуальной Машины?
 
-- Microsoft.RecoveryServices/Vaults/write 
-- Microsoft.RecoveryServices/Vaults/read 
-- Microsoft.RecoveryServices/locations/* 
-- Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/*/read 
-- Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/read 
-- Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/write 
-- Microsoft.RecoveryServices/Vaults/backupFabrics/backupProtectionIntent/write 
-- Microsoft.RecoveryServices/Vaults/backupPolicies/read 
-- Microsoft.RecoveryServices/Vaults/backupPolicies/write 
- 
+Если вы участник виртуальной Машины, вы можете включить резервное копирование на виртуальной Машине. При использовании пользовательской роли, вам потребуются следующие разрешения для включения архивации виртуальной Машины:
+
+- Microsoft.RecoveryServices/Vaults/write
+- Microsoft.RecoveryServices/Vaults/read
+- Microsoft.RecoveryServices/locations/*
+- Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/*/read
+- Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/read
+- Microsoft.RecoveryServices/Vaults/backupFabrics/protectionContainers/protectedItems/write
+- Microsoft.RecoveryServices/Vaults/backupFabrics/backupProtectionIntent/write
+- Microsoft.RecoveryServices/Vaults/backupPolicies/read
+- Microsoft.RecoveryServices/Vaults/backupPolicies/write
+
 Если хранилище служб восстановления и виртуальной Машины имеют разные группы ресурсов, убедитесь, что у вас есть разрешения на запись в группу ресурсов для хранилища служб восстановления.  
 
 
@@ -140,3 +140,6 @@ Azure Backup поддерживает [управляемые диски SSD ц
 3. Снова включить резервное копирование в том же или нового хранилища.
 
 Вы можете восстанавливать виртуальную машину из доступных точек восстановления, созданных до операции перемещения.
+
+### <a name="is-there-a-limit-on-number-of-vms-that-can-beassociated-with-a-same-backup-policy"></a>Есть ли ограничения на количество виртуальных машин, которые могут быть связаны с одной политикой резервного копирования?
+Да, есть ограничение в 100 виртуальных машин, которые можно связать в одну и ту же политику резервного копирования с портала. Мы рекомендуем для более чем 100 виртуальных машин, создайте несколько политик архивации с расписанием или другое расписание.

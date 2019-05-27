@@ -1,15 +1,15 @@
-- name: Документация по API проверки орфографии Bing
+- name: Документация по API Проверки орфографии Bing
   href: index.yml
 - name: Обзор
   items:
-    - name: Что такое с API проверки орфографии Bing?
+    - name: Что такое API Проверки орфографии Bing?
       href: overview.md
-    - name: Сравнение API-интерфейсов поиска Bing
+    - name: Сравнение API-интерфейсов Поиска Bing
       href: ../Bing-Web-Search/bing-api-comparison.md
       maintainContext: true
-- name: Быстрое начало работы
+- name: Краткие руководства
   items:
-    - name: REST API
+    - name: "REST\_API"
       expanded: true
       items:
         - name: 'Использование C#'
@@ -28,19 +28,19 @@
       items:
         - name: 'Использование C#'
           href: sdk-quickstart-spell-check.md
-- name: Учебники
+- name: Руководства
   items:
     - name: Создание веб-приложения для проверки орфографии
       href: tutorials/spellcheck.md
-- name: Практические руководства
+- name: Инструкции
   items:
     - name: Обновление с версии 5 до версии 7
       href: bing-spell-check-upgrade-guide-v5-to-v7.md
 - name: Основные понятия
   items:
-    - name: Отправка запросов к API "Проверка орфографии Bing"
+    - name: Отправка запросов к API Проверки орфографии Bing
       href: concepts/sending-requests.md
-    - name: Использование API "Проверка орфографии Bing"
+    - name: Использование API Проверки орфографии Bing
       href: concepts/using-spell-check.md
 - name: Примеры
   items:
@@ -48,9 +48,9 @@
       href: 'https://azure.microsoft.com/resources/samples/?sort=0&service=cognitive-services&term=Bing+Spell+Check'
 - name: Справочные материалы
   items:
-    - name: API проверки орфографии Bing версии 7
+    - name: API Проверки орфографии Bing версии 7
       href: 'https://docs.microsoft.com/rest/api/cognitiveservices/bing-spell-check-api-v7-reference'
-    - name: API проверки орфографии Bing версии 5 (старая версия)
+    - name: API Проверки орфографии Bing версии 5 (старая версия)
       href: 'https://docs.microsoft.com/rest/api/cognitiveservices/bing-spell-check-api-v5-reference'
     - name: Пакеты SDK
       items:
@@ -69,15 +69,15 @@
       maintainContext: true
 - name: Ресурсы
   items:
-    - name: Аналитика для API проверки орфографии Bing
+    - name: Аналитика для API Проверки орфографии Bing
       href: bing-spell-check-stats.md
     - name: Поддержка языков и региональных параметров
       href: language-support.md
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/cognitive-services/spellcheck-api/'
-    - name: Доступ по регионам
+    - name: Доступность по регионам
       href: 'https://azure.microsoft.com/global-infrastructure/services/'
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/bing-api'
     - name: Ключ подписки
       href: 'https://azure.microsoft.com/try/cognitive-services/?api=spellcheck-api'
@@ -85,3 +85,5 @@
       href: 'https://azure.microsoft.com/services/cognitive-services/spell-check/'
     - name: UserVoice
       href: 'https://cognitive.uservoice.com/forums/598195-bing-spell-check'
+    - name: Соответствие требованиям
+      href: 'https://azure.microsoft.com/en-us/support/legal/cognitive-services-compliance-and-privacy/'

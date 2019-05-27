@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: article
-ms.date: 05/15/2019
+ms.date: 05/20/2019
 ms.author: alkohli
-ms.openlocfilehash: a90475cfd1d166b8fae1c2b872cbbb9d48b50392
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: a9daf1d59b03d283be999aaab559c6d60f6405dd
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65785810"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65953123"
 ---
 # <a name="manage-compute-on-your-azure-data-box-edge"></a>Управление вычислениями в Azure Data Box Edge
 
@@ -129,24 +129,6 @@ ms.locfileid: "65785810"
 
 3. После синхронизации закройте диалоговое окно.
 
-## <a name="enable-a-network-interface-for-compute"></a>Включение сетевого интерфейса для вычислений
-
-Вы можете получить доступ к модулю, запущенному на устройстве Data Box Edge. Чтобы получить внешний доступ к модулю, нужно назначить IP-адрес сетевому интерфейсу на устройстве. Вы можете управлять этими параметрами вычислений из локального пользовательского веб-интерфейса.
-
-Выполните следующие действия в локальном веб-интерфейсе, чтобы настроить параметры вычислений.
-
-1. Выберите **Конфигурация > Параметры вычисления**.  
-
-2. **Включите** сетевой интерфейс, который вы хотите использовать для подключения к модулям вычислений на устройстве. 
-
-    - При использовании статических IP-адресов укажите IP-адрес сетевого интерфейса.
-    - Если используется DHCP, IP-адреса назначаются автоматически.
-
-3. Выберите **Применить** для применения параметров.
-
-    ![Включение параметров вычислений](media/data-box-edge-manage-compute/compute-settings-1.png)
-
-
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Узнайте, как [управлять пользователями с помощью портала Azure](data-box-edge-manage-users.md).
+- Узнайте, как [управление Edge вычислений сети с помощью портала Azure](data-box-edge-extend-compute-access-modules.md).

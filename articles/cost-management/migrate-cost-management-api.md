@@ -5,17 +5,17 @@ services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 03/20/2019
+ms.date: 05/20/2019
 ms.topic: conceptual
 ms.service: cost-management
 manager: micflan
 ms.custom: ''
-ms.openlocfilehash: e4c5607089efb247620766fb311b97cae3772770
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: c3fb1f430076b26f7b5dd83e167371ac6d957ac4
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60311954"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65967237"
 ---
 # <a name="migrate-from-enterprise-agreement-to-microsoft-customer-agreement-apis"></a>Переход с соглашения Enterprise на API-интерфейсы Microsoft Customer соглашения
 
@@ -90,7 +90,7 @@ API-интерфейсы EA использовать ключ API для про�
 - сведения о балансе.
 - Новые покупки
 - Расходах службы в Azure Marketplace
-- Корректировка
+- Корректировки
 - Расходы в связи с избытком для службы
 
 Все интерфейсы API потребления заменяются машинных интерфейсов API Azure, используйте Azure AD для аутентификации и авторизации. Дополнительные сведения о вызывать интерфейсы API REST Azure, см. в разделе [Приступая к работе с REST](/rest/api/azure/#create-the-request).
@@ -101,7 +101,7 @@ API получения Сводка баланса заменяется Microsof
 
 | Метод | URI запроса |
 | --- | --- |
-| ПОЛУЧЕНИЕ | `https://management.azure.com/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}/availableBalances?api-version=2018-11-01-preview` |
+| GET | `https://management.azure.com/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}/availableBalances?api-version=2018-11-01-preview` |
 
 ## <a name="apis-to-get-cost-and-usage"></a>API для получения затрат и использования
 
@@ -122,13 +122,13 @@ API получения Сводка баланса заменяется Microsof
 
 | Метод | URI запроса |
 | --- | --- |
-| ПОЛУЧЕНИЕ | `https://management.azure.com/{scope}/providers/Microsoft.Consumption/usageDetails?api-version=2019-01-01` |
+| GET | `https://management.azure.com/{scope}/providers/Microsoft.Consumption/usageDetails?api-version=2019-01-01` |
 
 Сведения об API использования, как и все интерфейсы API управления затрат, доступен в нескольких областях. Фактурные затрат как обычно вы получали на уровне регистрации, используйте область профиля выставления счетов.  Дополнительные сведения об областях управления затратами см. в разделе [общие принципы и работы с областями](understand-work-scopes.md).
 
 | type | Формат идентификатора |
 | --- | --- |
-| учетная запись выставления счетов; | `/Microsoft.Billing/billingAccounts/{billingAccountId}` |
+| Учетная запись выставления счетов | `/Microsoft.Billing/billingAccounts/{billingAccountId}` |
 | Профиль выставления счетов | `/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}` |
 | Подписка | `/subscriptions/{subscriptionId}` |
 | Группа ресурсов | `/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}` |
@@ -176,20 +176,20 @@ API получения Сводка баланса заменяется Microsof
 | AccountNameAccountOwnerId и AccountOwnerEmail | Н/Д | Создатель подписки не отслеживаются. Используйте invoiceSectionName (то же, как «отдел»). |
 | Дополнительные сведения | additionalInfo | &nbsp;  |
 | ChargesBilledSeparately | isAzureCreditEligible | Обратите внимание на то, что эти свойства являются противоположными. Если isAzureCreditEnabled имеет значение true, ChargesBilledSeparately будет иметь значение false. |
-| ConsumedQuantity | quantity | &nbsp; |
+| Использованный объем | quantity | &nbsp; |
 | Использованная служба | consumedService | Точное строковые значения могут отличаться. |
 | ИД использованной службы | Нет | &nbsp; |
-| CostCenter | costCenter | &nbsp; |
+| Центр затрат | costCenter | &nbsp; |
 | Дата и usageStartDate | date | &nbsp;  |
 | День | Нет | Выполняет синтаксический анализ день из даты. |
 | ИД отдела | invoiceSectionId | Точные значения отличаются. |
-| DepartmentName | invoiceSectionName | Точное строковые значения могут отличаться. Настройте разделы счетов в соответствии с отделами, при необходимости. |
+| Название отдела | invoiceSectionName | Точное строковые значения могут отличаться. Настройте разделы счетов в соответствии с отделами, при необходимости. |
 | ExtendedCost и затрат | costInBillingCurrency | &nbsp;  |
 | InstanceId | resourceId | &nbsp;  |
 | Является повторяющимся платежом | Нет | &nbsp;  |
-| Location | location | &nbsp;  |
+| Расположение | location | &nbsp;  |
 | Категория единицы измерения | meterCategory | Точное строковые значения могут отличаться. |
-| Значение MeterId | meterId | Точная строка значения отличаются. |
+| ИД единицы измерения | meterId | Точная строка значения отличаются. |
 | Имя единицы измерения | meterName | Точное строковые значения могут отличаться. |
 | Регион единицы измерения | meterRegion | Точное строковые значения могут отличаться. |
 | Подкатегория единицы измерения | meterSubCategory | Точное строковые значения могут отличаться. |
@@ -200,9 +200,9 @@ API получения Сводка баланса заменяется Microsof
 | PartNumber | Нет | Используйте meterId и productOrderName для уникальной идентификации цены. |
 | Имя плана | productOrderName | &nbsp;  |
 | Продукт | Продукт |   |
-| ProductId | productId | Точная строка значения отличаются. |
+| ИД продукта | productId | Точная строка значения отличаются. |
 | Имя издателя | publisherName | &nbsp;  |
-| ResourceGroup | имя_группы_ресурсов | &nbsp;  |
+| ResourceGroup | resourceGroupName | &nbsp;  |
 | ResourceGuid | meterId | Точная строка значения отличаются. |
 | Расположение ресурса | resourceLocation | &nbsp;  |
 | ИД расположения ресурса | Нет | &nbsp;  |
@@ -210,13 +210,13 @@ API получения Сводка баланса заменяется Microsof
 | ИД администратора службы | Н/Д | &nbsp;  |
 | Служебная информация 1 | serviceInfo1 | &nbsp;  |
 | Служебная информация 2 | serviceInfo2 | &nbsp;  |
-| ServiceName | meterCategory | Точное строковые значения могут отличаться. |
+| Имя службы | meterCategory | Точное строковые значения могут отличаться. |
 | Имя категории | meterSubCategory | Точное строковые значения могут отличаться. |
 | ИД службы хранилища | Н/Д | &nbsp;  |
 | GUID подписки | subscriptionId | &nbsp;  |
 | SubscriptionId | subscriptionId | &nbsp;  |
-| Параметр SubscriptionName | subscriptionName | &nbsp;  |
-| Теги | tags | Свойство tags применяется к корневой объект, не к свойству вложенных свойств. |
+| Имя подписки | subscriptionName | &nbsp;  |
+| Tags | теги | Свойство tags применяется к корневой объект, не к свойству вложенных свойств. |
 | Единица измерения | unitOfMeasure | Точная строка значения отличаются. |
 | usageEndDate | date | &nbsp;  |
 | Год | Нет | Выполняет синтаксический анализ год с момента. |
@@ -238,7 +238,7 @@ API получения Сводка баланса заменяется Microsof
 
 | Метод | URI запроса |
 | --- | --- |
-| ПОЛУЧЕНИЕ | `https://management.azure.com/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}/invoices?api-version=2018-11-01-preview` |
+| GET | `https://management.azure.com/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}/invoices?api-version=2018-11-01-preview` |
 
 ## <a name="price-sheet-apis"></a>API-интерфейсы таблицы стилей цена
 
@@ -252,8 +252,8 @@ API получения Сводка баланса заменяется Microsof
 
 | Метод | URI запроса |
 | --- | --- |
-| ПОЛУЧЕНИЕ | `https://consumption.azure.com/v2/enrollments/{enrollmentNumber}/pricesheet` |
-| ПОЛУЧЕНИЕ | `https://consumption.azure.com/v2/enrollments/{enrollmentNumber}/billingPeriods/{billingPeriod}/pricesheet` |
+| GET | `https://consumption.azure.com/v2/enrollments/{enrollmentNumber}/pricesheet` |
+| GET | `https://consumption.azure.com/v2/enrollments/{enrollmentNumber}/billingPeriods/{billingPeriod}/pricesheet` |
 
 ### <a name="price-sheet-api-for-microsoft-customer-agreements"></a>API прейскуранта для соглашений клиентов корпорации Microsoft
 
@@ -386,13 +386,13 @@ HTTP Status 200
 
 | Метод | URI запроса |
 | --- | --- |
-| ПОЛУЧЕНИЕ | `https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.Consumption/pricesheets/default?api-version=2018-10-01` |
+| GET | `https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.Consumption/pricesheets/default?api-version=2018-10-01` |
 
 Для получения сведений прайс-лист расчетный период с API прейскуранта.
 
 | Метод | URI запроса |
 | --- | --- |
-| ПОЛУЧЕНИЕ | `https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.Billing/billingPeriods/{billingPeriodName}/providers/Microsoft.Consumption/pricesheets/default?api-version=2018-10-01` |
+| GET | `https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.Billing/billingPeriods/{billingPeriodName}/providers/Microsoft.Consumption/pricesheets/default?api-version=2018-10-01` |
 
 Вместо приведенные выше конечные точки API используйте приведенные ниже запросы клиентов соглашения Microsoft:
 
@@ -412,7 +412,7 @@ HTTP Status 200
 
 | Метод | URI запроса |
 | --- | --- |
-| ПОЛУЧЕНИЕ | `/providers/Microsoft.Billing/billingAccounts/65085863/providers/Microsoft.Consumption/pricesheets/download?api-version=2019-01-01` |
+| GET | `/providers/Microsoft.Billing/billingAccounts/65085863/providers/Microsoft.Consumption/pricesheets/download?api-version=2019-01-01` |
 
 Соглашения Майкрософт клиента используйте сведения в следующем разделе. Он предоставляет свойства поля, используемые для соглашений клиентов Microsoft.
 
@@ -422,17 +422,17 @@ HTTP Status 200
 
 | Метод | URI запроса |
 | --- | --- |
-| ПОЛУЧЕНИЕ | `/providers/Microsoft.Billing/billingAccounts/28ae4b7f-41bb-581e-9fa4-8270c857aa5f/billingProfiles/ef37facb-cd6f-437a-9261-65df15b673f9/providers/Microsoft.Consumption/pricesheets/download?api-version=2019-01-01` |
+| GET | `/providers/Microsoft.Billing/billingAccounts/28ae4b7f-41bb-581e-9fa4-8270c857aa5f/billingProfiles/ef37facb-cd6f-437a-9261-65df15b673f9/providers/Microsoft.Consumption/pricesheets/download?api-version=2019-01-01` |
 
 В области регистрации EA ответ API и свойства идентичны. Свойства соответствуют те же свойства MCA.
 
 Более старые свойства [API-интерфейсов Azure Resource Manager цена лист](/rest/api/consumption/pricesheet) и те же свойства нового находятся в следующей таблице.
 
-| Свойства API старого Azure Resource Manager Цена таблицы стилей  | Новое свойство API Microsoft Customer соглашения прейскуранта   | ОПИСАНИЕ |
+| Свойства API старого Azure Resource Manager Цена таблицы стилей  | Новое свойство API Microsoft Customer соглашения прейскуранта   | Описание |
 | --- | --- | --- |
-| Идентификатор средства измерения | _meterId_ | Уникальный идентификатор для единицы измерения. Совпадает с идентификатором meterId. |
+| Идентификатор измерения | _meterId_ | Уникальный идентификатор для единицы измерения. Совпадает с идентификатором meterId. |
 | Название измерения | meterName | Имя индикатора. Выражают развертываемый ресурс службы Azure. |
-| Категория измерения  | свойства | Имя категории, классификации для единицы измерения. То же, как служба в прайс-лист соглашения Майкрософт клиента. Точная строка значения отличаются. |
+| Категория измерения  | служба | Имя категории, классификации для единицы измерения. То же, как служба в прайс-лист соглашения Майкрософт клиента. Точная строка значения отличаются. |
 | Подкатегория измерения | meterSubCategory | Имя категории подклассификация индикатора. На основе классификации дифференциации набор основных функций в службе. Например основные SQL DB vs базы данных SQL Standard. |
 | Регион измерения | meterRegion | &nbsp;  |
 | Единица измерения | _Неприменимо_ | Может быть проанализировано из unitOfMeasure. |
@@ -457,12 +457,12 @@ HTTP Status 200
 
 Следующие поля являются либо не доступны в API-интерфейсов Microsoft Customer соглашения цена лист или имеют те же поля.
 
-|Удалено поле| ОПИСАНИЕ|
+|Удалено поле| Описание|
 |---|---|
 | billingPeriodId | Не применимо. Соответствует InvoiceId для MCA. |
 | offerId | Не применяется Соответствует productOrderName в MCA. |
 | meterCategory  | Не применяется Соответствует службе в MCA. |
-| unit | Не применяется Может быть проанализировано из unitOfMeasure. |
+| единица измерения | Не применяется Может быть проанализировано из unitOfMeasure. |
 | currencyCode | Совпадает со значением pricingCurrency в MCA. |
 | meterLocation | Совпадает со значением meterRegion в MCA. |
 | partnumber: partnumber: | Неприменимо, поскольку в счета-фактуры MCA отсутствует серийный номер. Вместо partnumber: используйте сочетание meterId и productOrderName для однозначной идентификации цены. |
@@ -477,7 +477,7 @@ HTTP Status 200
 
 | Метод | URI запроса |
 | --- | --- |
-| ПОЛУЧЕНИЕ | `https://management.azure.com/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}/transactions?api-version=2018-11-01-preview` |
+| GET | `https://management.azure.com/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}/transactions?api-version=2018-11-01-preview` |
 
 ## <a name="recommendations-apis-replaced"></a>Рекомендации по API-интерфейсов замены
 
@@ -492,7 +492,7 @@ API-интерфейсы рекомендации покупки зарезер�
 
 | Метод | URI запроса |
 | --- | --- |
-| ПОЛУЧЕНИЕ | `https://management.azure.com/providers/Microsoft.Consumption/reservationRecommendations?api-version=2019-01-01` |
+| GET | `https://management.azure.com/providers/Microsoft.Consumption/reservationRecommendations?api-version=2019-01-01` |
 
 ## <a name="reservation-usage-apis-replaced"></a>Замена API-интерфейсов использования резервирования
 
@@ -509,13 +509,13 @@ API-интерфейсы рекомендации покупки зарезер�
 
 | Метод | URI запроса |
 | --- | --- |
-| ПОЛУЧЕНИЕ | `https://management.azure.com/providers/Microsoft.Consumption/reservationDetails?api-version=2019-01-01` |
+| GET | `https://management.azure.com/providers/Microsoft.Consumption/reservationDetails?api-version=2019-01-01` |
 
 Для получения сводки резервирования с помощью API сводок резервирования:
 
 | Метод | URI запроса |
 | --- | --- |
-| ПОЛУЧЕНИЕ | `https://management.azure.com/providers/Microsoft.Consumption/reservationSummaries?api-version=2019-01-01` |
+| GET | `https://management.azure.com/providers/Microsoft.Consumption/reservationSummaries?api-version=2019-01-01` |
 
 
 

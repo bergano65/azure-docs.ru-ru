@@ -13,16 +13,16 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/05/2019
 ms.author: juliako
-ms.openlocfilehash: 7ce57e1f8b2732ea909625c89f3e8148cb70635c
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: bbf43ecb07947fad8cc1ee064d2038e4a21d4444
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64728843"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65964770"
 ---
 # <a name="monitor-media-services-metrics-and-diagnostic-logs"></a>Отслеживание метрик службы мультимедиа и журналы диагностики
 
-[Azure Monitor](../../azure-monitor/overview.md) включает мониторинг метрик и журналов диагностики, которые помогут вам понять, как выполняемых приложений. Все данные, собранные Azure Monitor, помещаются в одну из двух основных типов, метрик и журналов. Можно отслеживать журналы диагностики служб мультимедиа и создавать оповещения и уведомления для сбора метрик и журналов. Вы можете визуализировать и анализировать данные метрик с помощью [обозревателя метрик](../../azure-monitor/platform/metrics-getting-started.md). Вы можете отправить журналы в [хранилища Azure](https://azure.microsoft.com/services/storage/), потоковая передача журналов в [концентраторов событий](https://azure.microsoft.com/services/event-hubs/)и экспортировать их в службу [Log Analytics](https://azure.microsoft.com/services/log-analytics/), или использовать сторонние службы.
+[Azure Monitor](../../azure-monitor/overview.md) включает мониторинг метрик и журналов диагностики, которые помогут вам понять, как выполняемых приложений. Все данные, собранные Azure Monitor, помещаются в одну из двух основных типов, метрики и журналы. Можно отслеживать журналы диагностики служб мультимедиа и создавать оповещения и уведомления для сбора метрик и журналов. Вы можете визуализировать и анализировать данные метрик с помощью [обозревателя метрик](../../azure-monitor/platform/metrics-getting-started.md). Вы можете отправить журналы в [хранилища Azure](https://azure.microsoft.com/services/storage/), потоковая передача журналов в [концентраторов событий](https://azure.microsoft.com/services/event-hubs/)и экспортировать их в службу [Log Analytics](https://azure.microsoft.com/services/log-analytics/), или использовать сторонние службы.
 
 Подробный обзор см. в разделе [метрик Azure Monitor](../../azure-monitor/platform/data-platform.md) и [журналов диагностики Azure Monitor](../../azure-monitor/platform/diagnostic-logs-overview.md).
 
@@ -34,11 +34,11 @@ ms.locfileid: "64728843"
 
 В настоящее время следующие службы мультимедиа [конечными точками потоковой передачи](https://docs.microsoft.com/rest/api/media/streamingendpoints) метрики передаются в Azure:
 
-|ИМЯ|ОПИСАНИЕ|
-|---|---|
-|Requests|Предоставляет сведения, общее число запросов, обслуживаемых конечной точки потоковой передачи.|
-|Исходящие|Общее число исходящих байтов. Например в потоке с конечной точки потоковой передачи байтов.|
-|Задержка успешных сквозного| Сведения о сквозная задержка успешных запросов.|
+|Метрика|`Display name`|Описание|
+|---|---|---|
+|Requests|Requests|Предоставляет сведения, общее число запросов, обслуживаемых конечной точки потоковой передачи.|
+|Исходящие|Исходящие|Общее число исходящих байтов. Например в потоке с конечной точки потоковой передачи байтов.|
+|SuccessE2ELatency|Задержка успешных сквозного| Сведения о сквозная задержка успешных запросов.|
 
 Например, чтобы получить метрики «Исходящий» с помощью интерфейса командной строки, необходимо выполнить следующие `az monitor metrics` команду интерфейса командной строки:
 
@@ -54,7 +54,7 @@ az monitor metrics list --resource \
 
 В настоящее время можно получить следующие журналы диагностики:
 
-|ИМЯ|ОПИСАНИЕ|
+|ИМЯ|Описание|
 |---|---|
 |Запрос службы доставки ключей|Журналы, которые показывают сведения о запросе службы доставки ключей. Дополнительные сведения см. в разделе [схемы](media-services-diagnostic-logs-schema.md).|
 
@@ -76,7 +76,7 @@ az monitor diagnostic-settings create --name <diagnostic name> \
     }]'
 ```
 
-Например: 
+Например:
 
 ```cli
 az monitor diagnostic-settings create --name amsv3diagnostic \

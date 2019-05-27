@@ -2,18 +2,18 @@
 title: включение файла
 description: включение файла
 services: batch
-author: dlepow
+author: laurenhughes
 ms.service: batch
 ms.topic: include
 ms.date: 10/11/2018
-ms.author: danlep
+ms.author: lahugh
 ms.custom: include file
-ms.openlocfilehash: 6b48dbfc33890df12209c3a242d812ad2103e07a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 9ffb02fce41e8805dfccf1dfd6e982cf107039ec
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60776375"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66127543"
 ---
 | **Ресурс** | **Ограничение по умолчанию** | **Максимальное ограничение** |
 | --- | --- | --- |
@@ -21,7 +21,7 @@ ms.locfileid: "60776375"
 | Выделенные ядра на учетную запись Пакетной службы | 10-100 | НД<sup>1</sup> |
 | Ядра с низким приоритетом на каждую учетную запись пакетной службы | 10-100 | Недоступно<sup>2</sup> |
 | Число заданий и графиков их выполнения<sup>3</sup> на одну учетную запись пакетной службы | 100-300 | 1,000<sup>4</sup> |
-| Количество пулов на одну учетную запись пакетной службы | 20-100 | 500<sup>4</sup> |
+| Пулы на учетную запись пакетной службы | 20-100 | 500<sup>4</sup> |
 
 > [!NOTE]
 > Ограничения по умолчанию зависят от типа подписки, используемой для создания учетной записи пакетной службы. Показанные квоты на ядра относятся к учетным записям пакетной службы в режиме пакетной службы. [Просмотр квот в учетной записи пакетной службы](../articles/batch/batch-quota-limit.md#view-batch-quotas). 

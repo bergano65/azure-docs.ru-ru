@@ -1,14 +1,14 @@
-- name: Документация по фабрике данных
+- name: Документация по Фабрике данных
   href: index.yml
 - name: Перейти к документации по версии 1
   href: v1/data-factory-introduction.md
 - name: Обзор
   items:
-    - name: Основные сведения о фабрике данных
+    - name: Основные сведения о Фабрике данных
       href: introduction.md
     - name: Сравнение текущей версии с версией 1
       href: compare-versions.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   expanded: true
   items:
     - name: Создание фабрики данных с помощью пользовательского интерфейса
@@ -27,7 +27,7 @@
       href: quickstart-create-data-factory-resource-manager-template.md
     - name: Создание потока данных
       href: data-flow-create.md
-- name: Учебники
+- name: Руководства
   items:
     - name: Копирование данных в облаке
       items:
@@ -88,7 +88,7 @@
               href: tutorial-transform-data-spark-portal.md
             - name: Azure PowerShell
               href: tutorial-transform-data-spark-powershell.md
-        - name: Databricks Notebook
+        - name: Записная книжка Databricks
           items:
             - name: Пользовательский интерфейс
               href: transform-data-using-databricks-notebook.md
@@ -104,7 +104,7 @@
           href: tutorial-control-flow-portal.md
         - name: .NET
           href: tutorial-control-flow.md
-    - name: Запуск пакетов служб SSIS в Azure
+    - name: Запуск пакетов служб Integration Services в Azure
       items:
         - name: Пользовательский интерфейс
           href: tutorial-deploy-ssis-packages-azure.md
@@ -158,7 +158,7 @@
       href: pricing-concepts.md
     - name: Правила именования
       href: naming-rules.md
-- name: Практические руководства
+- name: Инструкции
   items:
     - name: Автор
       items:
@@ -176,17 +176,17 @@
           href: connector-amazon-redshift.md
         - name: Amazon S3
           href: connector-amazon-simple-storage-service.md
-        - name: Хранилище больших двоичных объектов Azure
+        - name: Хранилище BLOB-объектов Azure
           href: connector-azure-blob-storage.md
         - name: API SQL для Azure Cosmos DB
           href: connector-azure-cosmos-db.md
-        - name: API MongoDB для Azure Cosmos DB
+        - name: "API Azure Cosmos\_DB для MongoDB"
           href: connector-azure-cosmos-db-mongodb-api.md
-        - name: Обозреватель данных Azure
+        - name: Azure Data Explorer
           href: connector-azure-data-explorer.md
-        - name: Хранилище Azure Data Lake Gen1
+        - name: Azure Data Lake Storage 1-го поколения
           href: connector-azure-data-lake-store.md
-        - name: Хранилище Azure Data Lake Gen2
+        - name: Azure Data Lake Storage 2-го поколения
           href: connector-azure-data-lake-storage.md
         - name: База данных Azure для MariaDB
           href: connector-azure-database-for-mariadb.md
@@ -198,7 +198,7 @@
           href: connector-azure-file-storage.md
         - name: Поиск Azure
           href: connector-azure-search.md
-        - name: Базы данных SQL Azure
+        - name: База данных SQL Azure
           href: connector-azure-sql-database.md
         - name: Управляемый экземпляр Базы данных SQL Azure
           href: connector-azure-sql-database-managed-insance.md
@@ -234,11 +234,11 @@
           href: connector-google-adwords.md
         - name: Google BigQuery
           href: connector-google-bigquery.md
-        - name: Google Cloud Storage;
+        - name: Google Cloud Storage
           href: connector-google-cloud-storage.md
         - name: Greenplum
           href: connector-greenplum.md
-        - name: hbase
+        - name: HBase
           href: connector-hbase.md
         - name: HDFS
           href: connector-hdfs.md
@@ -275,7 +275,7 @@
           href: connector-odata.md
         - name: ODBC
           href: connector-odbc.md
-        - name: Office 365
+        - name: "Office\_365"
           href: connector-office-365.md
         - name: Oracle
           href: connector-oracle.md
@@ -326,9 +326,9 @@
           href: connector-shopify.md
         - name: Spark
           href: connector-spark.md
-        - name: SQL Server;
+        - name: "SQL\_Server"
           href: connector-sql-server.md
-        - name: Маркер
+        - name: Square
           href: connector-square.md
         - name: Sybase
           href: connector-sybase.md
@@ -350,14 +350,14 @@
           href: delete-activity.md
         - name: Средство копирования данных
           href: copy-data-tool.md
-        - name: Загрузить хранилище Data Lake Gen2
+        - name: Загрузка Data Lake Storage 2-го поколения
           href: load-azure-data-lake-storage-gen2.md
           items:
-            - name: Копирование из хранилища Data Lake Gen1
+            - name: Копирование из Data Lake Storage 1-го поколения
               href: load-azure-data-lake-storage-gen2-from-gen1.md
-        - name: Загрузка хранилища данных SQL Azure
+        - name: Загрузка Хранилища данных SQL Azure
           href: load-azure-sql-data-warehouse.md
-        - name: Загрузить хранилище Data Lake Gen1
+        - name: Загрузка Data Lake Storage 1-го поколения
           href: load-azure-data-lake-store.md
         - name: Загрузка данных SAP BW
           href: load-sap-bw-data.md
@@ -386,15 +386,15 @@
           href: transform-data-using-hadoop-streaming.md
         - name: Действие HDInsight Spark
           href: transform-data-using-spark.md
-        - name: Действие выполнения пакета машинного обучения
+        - name: Действие выполнения пакета Машинного обучения
           href: transform-data-using-machine-learning.md
-        - name: Действия ресурса обновления машинного обучения
+        - name: Действия ресурса обновления Машинного обучения
           href: update-machine-learning-models.md
         - name: Действие хранимой процедуры
           href: transform-data-using-stored-procedure.md
         - name: Действие U-SQL Data Lake
           href: transform-data-using-data-lake-analytics.md
-        - name: Действие Databricks Notebook
+        - name: Действие записной книжки Databricks
           href: transform-data-databricks-notebook.md
         - name: Действие JAR в Databricks
           href: transform-data-databricks-jar.md
@@ -410,11 +410,11 @@
           href: control-flow-append-variable-activity.md
         - name: Действия функции Azure
           href: control-flow-azure-function-activity.md
-        - name: Выполнение действия Потока данных
+        - name: Выполнение действия потока данных
           href: control-flow-execute-data-flow-activity.md
-        - name: Действие выполнения работы
+        - name: Действие выполнения конвейера
           href: control-flow-execute-pipeline-activity.md
-        - name: Активность фильтра
+        - name: Действие фильтра
           href: control-flow-filter-activity.md
         - name: Действие For Each
           href: control-flow-for-each-activity.md
@@ -424,7 +424,7 @@
           href: control-flow-if-condition-activity.md
         - name: Действие поиска
           href: control-flow-lookup-activity.md
-        - name: Установка действия переменной
+        - name: Действие задания переменной
           href: control-flow-set-variable-activity.md
         - name: Действие Until
           href: control-flow-until-activity.md
@@ -438,7 +438,7 @@
           href: control-flow-webhook-activity.md
     - name: Преобразования потока данных
       items:
-        - name: Статистическое выражение
+        - name: Статистическое вычисление
           href: data-flow-aggregate.md
         - name: Изменение строк
           href: data-flow-alter-row.md
@@ -462,7 +462,7 @@
           href: data-flow-select.md
         - name: Приемник
           href: data-flow-sink.md
-        - name: Сортировать
+        - name: Сортировка
           href: data-flow-sort.md
         - name: Источник
           href: data-flow-source.md
@@ -470,7 +470,7 @@
           href: data-flow-surrogate-key.md
         - name: Объединение множеств
           href: data-flow-union.md
-        - name: Отмена сведения
+        - name: Отмена свертывания
           href: data-flow-unpivot.md
         - name: Окно
           href: data-flow-window.md
@@ -502,9 +502,9 @@
           href: monitor-programmatically.md
         - name: Мониторинг среды выполнения интеграции
           href: monitor-integration-runtime.md
-        - name: Мониторинг среды выполнения интеграции Azure Integration Services
+        - name: Мониторинг Azure-SSIS Integration Runtime
           href: 'monitor-integration-runtime.md#azure-ssis-integration-runtime'
-        - name: Повторная настройка среды выполнения интеграции Azure-SSIS
+        - name: Повторная настройка Azure-SSIS Integration Runtime
           href: manage-azure-ssis-integration-runtime.md
         - name: Копирование или клонирование фабрики данных
           href: copy-clone-data-factory.md
@@ -514,31 +514,31 @@
           href: create-azure-integration-runtime.md
         - name: Среда выполнения интеграции с самостоятельным размещением
           href: create-self-hosted-integration-runtime.md
-        - name: Среда выполнения интеграции Azure SSIS
+        - name: Azure-SSIS Integration Runtime
           href: create-azure-ssis-integration-runtime.md
         - name: Общая локальная среда выполнения интеграции
           href: create-shared-self-hosted-integration-runtime-powershell.md
-    - name: Запуск пакетов служб SSIS в Azure
+    - name: Запуск пакетов служб Integration Services в Azure
       items:
         - name: Запуск пакетов Integration Services с помощью действия выполнения пакета Integration Services
           href: how-to-invoke-ssis-package-ssis-activity.md
         - name: Запуск пакетов Integration Services с помощью действия хранимой процедуры
           href: how-to-invoke-ssis-package-stored-procedure-activity.md
-        - name: Планирование среды выполнения интеграции Azure-SSIS
+        - name: Планирование Azure-SSIS Integration Runtime
           href: how-to-schedule-azure-ssis-integration-runtime.md
-        - name: Присоединение среды выполнения интеграции Azure SSIS к виртуальной сети
+        - name: Присоединение Azure-SSIS IR к виртуальной сети
           href: join-azure-ssis-integration-runtime-virtual-network.md
-        - name: Включение аутентификации Azure AD для среды выполнения интеграции Azure Integration Services
+        - name: Включение аутентификации Azure AD для Azure-SSIS IR
           href: enable-aad-authentication-azure-ssis-ir.md
-        - name: Настройка выпуска Enterprise Edition для среды выполнения интеграции Azure Integration Services
+        - name: Настройка выпуска Enterprise Edition для Azure-SSIS IR
           href: how-to-configure-azure-ssis-ir-enterprise-edition.md
-        - name: Настройка среды выполнения интеграции Azure Integration Services
+        - name: Настройка Azure-SSIS IR
           href: how-to-configure-azure-ssis-ir-custom-setup.md
-        - name: Установка лицензированных компонентов для среды выполнения интеграции Azure Integration Services
+        - name: Установка лицензированных компонентов для Azure-SSIS IR
           href: how-to-develop-azure-ssis-ir-licensed-components.md
-        - name: Настройка высокой производительности среды выполнения интеграции Azure Integration Services
+        - name: Настройка высокой производительности Azure-SSIS IR
           href: configure-azure-ssis-integration-runtime-performance.md
-        - name: Настройка аварийного восстановления для среды выполнения интеграции Azure Integration Services
+        - name: Настройка аварийного восстановления для Azure-SSIS IR
           href: configure-bcdr-azure-ssis-integration-runtime.md
         - name: Очистка журналов SSISDB с помощью заданий обработки эластичных баз данных
           href: how-to-clean-up-ssisdb-logs-with-elastic-jobs.md
@@ -560,7 +560,7 @@
           href: solution-template-copy-new-files-lastmodifieddate.md
         - name: Массовое копирование с использованием контрольной таблицы
           href: solution-template-bulk-copy-with-control-table.md
-        - name: Разностное копирования с использованием контрольной таблицы
+        - name: Разностное копирование с использованием контрольной таблицы
           href: solution-template-delta-copy-with-control-table.md
         - name: Преобразование данных с помощью Databricks
           href: solution-template-databricks-notebook.md
@@ -584,11 +584,11 @@
       href: 'https://stackoverflow.com/questions/tagged/azure-data-factory'
     - name: Запрос функции
       href: 'https://feedback.azure.com/forums/270578-azure-data-factory'
-    - name: Часто задаваемые вопросы
+    - name: Вопросы и ответы
       href: frequently-asked-questions.md
     - name: Технические документы
       href: whitepapers.md
-    - name: Стратегия
+    - name: Стратегия развития
       href: 'https://azure.microsoft.com/roadmap/?tag=data-factory'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/data-factory/'

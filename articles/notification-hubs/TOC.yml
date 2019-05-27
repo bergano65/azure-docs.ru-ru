@@ -1,4 +1,4 @@
-- name: Документация по центрам уведомлений
+- name: Документация по Центрам уведомлений
   href: index.yml
 - name: Обзор
   items:
@@ -6,13 +6,13 @@
       href: notification-hubs-push-notification-overview.md
     - name: Интеграция с мобильными приложениями службы приложений
       href: notification-hubs-app-service.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   items:
     - name: Создание центра уведомлений на портале Azure
       href: create-notification-hub-portal.md
     - name: Настройка центра уведомлений на портале Azure
       href: configure-notification-hub-portal-pns-settings.md
-- name: Учебники
+- name: Руководства
   items:
     - name: Android
       items:
@@ -45,7 +45,11 @@
     - name: iOS
       items:
         - name: Отправка push-уведомлений в приложения iOS
-          href: notification-hubs-ios-apple-push-notification-apns-get-started.md
+          items:
+            - name: Objective-C
+              href: notification-hubs-ios-apple-push-notification-apns-get-started.md
+            - name: Swift
+              href: notification-hubs-ios-push-notifications-swift-apps-get-started.md
         - name: Отправка push-уведомлений на конкретные устройства
           href: notification-hubs-ios-xplat-segmented-apns-push-notification.md
         - name: Отправка push-уведомлений определенным пользователям
@@ -60,17 +64,17 @@
           href: notification-hubs-kindle-amazon-adm-push-notification.md
     - name: Windows Phone
       items:
-        - name: Отправка push-уведомлений приложениям
+        - name: Отправка push-уведомлений в приложения
           href: notification-hubs-windows-mobile-push-notifications-mpns.md
         - name: Отправка push-уведомлений на конкретные устройства
           href: notification-hubs-windows-phone-push-xplat-segmented-mpns-notification.md
-    - name: ' Windows'
+    - name: Windows
       items:
         - name: Отправка push-уведомлений в приложения универсальной платформы Windows
           href: notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md
         - name: Отправка push-уведомлений на конкретные устройства
           href: notification-hubs-windows-notification-dotnet-push-xplat-segmented-wns.md
-        - name: Отправка локализованных push-уведомлений приложениям
+        - name: Отправка локализованных push-уведомлений в приложения
           href: notification-hubs-windows-store-dotnet-xplat-localized-wns-push-notification.md
         - name: Отправка push-уведомлений определенным пользователям
           href: notification-hubs-aspnet-backend-windows-dotnet-wns-notification.md
@@ -95,7 +99,7 @@
           href: notification-hubs-templates-cross-platform-push-messages.md
     - name: Модель безопасности
       href: notification-hubs-push-notification-security.md
-- name: Практические руководства
+- name: Инструкции
   items:
     - name: Смена ценовой категории
       href: change-pricing-tier.md
@@ -155,7 +159,7 @@
       href: /azure/templates/microsoft.notificationhubs/allversions
 - name: Ресурсы
   items:
-    - name: Часто задаваемые вопросы
+    - name: Вопросы и ответы
       href: notification-hubs-push-notification-faq.md
     - name: Миграция из Google GCM в FCM
       href: notification-hubs-gcm-to-fcm.md
@@ -167,11 +171,11 @@
       href: 'https://azure.microsoft.com/pricing/details/notification-hubs/'
     - name: Форум MSDN
       href: 'https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=notificationhubs'
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-notificationhub'
     - name: Запрос функции
       href: 'https://feedback.azure.com/forums/218849-notification-hubs'
-    - name: Регионы доступности
+    - name: Доступность по регионам
       href: 'https://azure.microsoft.com/regions/services/'
     - name: Варианты поддержки
       href: 'https://azure.microsoft.com/support/options/'

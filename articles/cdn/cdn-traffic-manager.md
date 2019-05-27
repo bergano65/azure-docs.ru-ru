@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: magattus
 ms.custom: ''
-ms.openlocfilehash: afadef8b29927f909af5be1e1204180724258b74
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 956df17c821b86d95b1d87c3c8d8197bab7a95be
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60324016"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65955270"
 ---
 # <a name="set-up-failover-across-multiple-azure-cdn-endpoints-with-azure-traffic-manager"></a>Настройка отработки отказа между несколькими конечными точками Azure CDN при помощи диспетчера трафика Azure
 
@@ -62,13 +62,13 @@ ms.locfileid: "60324016"
 
     a. Для первой записи CNAME подключите к конечной точке CDN пользовательский домен с поддоменом cdnverify. Эта запись нужна для регистрации пользовательского домена в конечной точке CDN, которая была добавлена в диспетчер трафика Azure в шаге 2.
 
-      Например:  
+      Например: 
 
       `cdnverify.cdndemo101.dustydogpetcare.online  CNAME  cdnverify.cdndemo101akamai.azureedge.net`  
 
     2. Для второй записи CNAME подключите к конечной точке CDN пользовательский домен без поддомена cdnverify. Эта запись подключает пользовательский домен к диспетчеру трафика Azure. 
 
-      Например:  
+      Например: 
       
       `cdndemo101.dustydogpetcare.online  CNAME  cdndemo101.trafficmanager.net`   
 
@@ -80,10 +80,14 @@ ms.locfileid: "60324016"
 2.  В своем профиле Azure CDN выберите первую конечную точку CDN (Akamai). Выберите **добавить личный домен** и ввода *cdndemo101.dustydogpetcare.online*. Убедитесь, что флажок, подтверждающий допустимость пользовательского домена, отображается зеленым цветом. 
 
     Для завершения процесса регистрации Azure CDN использует поддомен *cdnverify* с целью проверки сопоставления DNS. Дополнительные сведения см. в разделе [Создание записи CNAME DNS](cdn-map-content-to-custom-domain.md#create-a-cname-dns-record). Этот шаг позволяет Azure CDN распознавать пользовательский домен, чтобы отвечать на его запросы.
+    
+ > [!NOTE]
+    > Включение протокола SSL для **Azure CDN от Akamai** профилей, необходимо напрямую cname личного домена с конечной точкой. cdnverify включения SSL не поддерживается. 
+    >
 
 3.  Вернитесь на веб-сайт поставщика домена для своего личного домена и обновите первое созданное сопоставление DNS, чтобы пользовательский домен был подключён ко второй конечной точке CDN.
                              
-    Например:  
+    Например: 
 
     `cdnverify.cdndemo101.dustydogpetcare.online  CNAME  cdnverify.cdndemo101verizon.azureedge.net`  
 

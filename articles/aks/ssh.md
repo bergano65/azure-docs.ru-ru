@@ -5,18 +5,18 @@ services: container-service
 author: iainfoulds
 ms.service: container-service
 ms.topic: article
-ms.date: 03/05/2019
+ms.date: 05/20/2019
 ms.author: iainfou
-ms.openlocfilehash: d421fad5f574b0d10b24453aca01adf574f493e8
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.openlocfilehash: a85c39fbfbf629e6ba9e668d55dd905c1ce0800c
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65407703"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65956352"
 ---
 # <a name="connect-with-ssh-to-azure-kubernetes-service-aks-cluster-nodes-for-maintenance-or-troubleshooting"></a>Подключение по протоколу SSH к узлам кластера Службы Azure Kubernetes (AKS) для обслуживания или устранения неполадок
 
-На протяжении жизненного цикла кластера Службы Azure Kubernetes (AKS) вам может потребоваться доступ к узлу AKS. Этот доступ используется для обслуживания, сбора журналов или других операций по устранению неполадок. Узлы AKS — это виртуальные машины Linux, поэтому к ним можно получить доступ с помощью протокола SSH. В целях безопасности узлы Службы Azure Kubernetes (AKS) недоступны через Интернет.
+На протяжении жизненного цикла кластера Службы Azure Kubernetes (AKS) вам может потребоваться доступ к узлу AKS. Этот доступ используется для обслуживания, сбора журналов или других операций по устранению неполадок. Можно получить доступ к узлам AKS с помощью SSH, в том числе на узлах Windows Server (в настоящее время в предварительной версии в AKS). Вы также можете [подключение к узлам Windows Server, с помощью протокола удаленного рабочего стола (RDP) подключений][aks-windows-rdp]. В целях безопасности узлы Службы Azure Kubernetes (AKS) недоступны через Интернет.
 
 В этой статье показано, как создать SSH-подключение к узлу AKS с использованием его частного IP-адреса.
 
@@ -24,13 +24,16 @@ ms.locfileid: "65407703"
 
 В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, обратитесь к этому краткому руководству по работе с AKS [с помощью Azure CLI][aks-quickstart-cli] или [портала Azure][aks-quickstart-portal].
 
-Вам также понадобится Azure CLI версии 2.0.59 или более поздней версии установлен и настроен. Чтобы узнать версию, выполните команду  `az --version`. Если вам необходимо выполнить установку или обновление, см. статью  [Установка Azure CLI][install-azure-cli].
+Вам также понадобится Azure CLI версии 2.0.64 или более поздней версии установлен и настроен. Чтобы узнать версию, выполните команду  `az --version`. Если вам необходимо выполнить установку или обновление, см. статью  [Установка Azure CLI][install-azure-cli].
 
 ## <a name="add-your-public-ssh-key"></a>Добавление открытого ключа SSH
 
-По умолчанию ключи SSH формируются при создании кластера AKS. Если вы не указали ключи SSH при создании кластера AKS, добавьте открытие ключи SSH в узлы AKS.
+По умолчанию ключи SSH получен, или создан, а затем добавляются на узлы, при создании кластера AKS. Если вам нужно указать различные ключи SSH, которые используются при создании кластера AKS, добавьте открытый ключ SSH к узлам Linux AKS. При необходимости можно создать в SSH ключа с помощью [macOS или Linux] [ ssh-nix] или [Windows][ssh-windows]. При использовании общего PuTTY для создания пары ключей, сохранить пару ключей в OpenSSH формате вместо кодировки по умолчанию формате закрытого ключа PuTTy (ppk-файл).
 
-Чтобы добавить ключ SSH в узел AKS, выполните следующие действия:
+> [!NOTE]
+> Can ключи SSH в настоящее время добавляться только к узлам Linux с помощью Azure CLI. Если вы используете узлы Windows Server, использовать ключи SSH, указанные при создании кластера AKS и перейдите к шагу на [как получение адреса узла AKS](#get-the-aks-node-address). Или, [подключение к узлам Windows Server, с помощью протокола удаленного рабочего стола (RDP) подключений][aks-windows-rdp].
+
+Чтобы добавить ключ SSH к узлу Linux AKS, выполните следующие действия.
 
 1. Получите имя группы ресурсов для ресурсов кластера AKS с помощью команды [az aks show][az-aks-show]. Укажите собственную основную группу ресурсов и имя кластера AKS:
 
@@ -64,7 +67,12 @@ ms.locfileid: "65407703"
 
 ## <a name="get-the-aks-node-address"></a>Получение адреса узла AKS
 
-Узлы AKS не являются общедоступными через Интернет. Чтобы подключиться к узлам AKS по протоколу SSH, используйте частный IP-адрес. На следующем шаге создается вспомогательный pod в кластере AKS, которая позволяет SSH это частный IP-адрес узла.
+Узлы AKS не являются общедоступными через Интернет. Чтобы подключиться к узлам AKS по протоколу SSH, используйте частный IP-адрес. На следующем шаге создается вспомогательный pod в кластере AKS, которая позволяет SSH это частный IP-адрес узла. Действия, чтобы получить частный IP-адрес из узлов AKS отличается на основе типа кластера AKS, при запуске:
+
+* Для большинства кластеров AKS, выполните действия, чтобы [получить IP-адрес для регулярного кластерах AKS](#regular-aks-clusters).
+* Если вы используете любой функции предварительной версии в AKS, использовать масштабируемые наборы виртуальных машин, например несколько пулов узлов или поддержка контейнеров Windows Server, [выполните действия для виртуальной машины масштабируемого набора AKS кластерах](#virtual-machine-scale-set-based-aks-clusters).
+
+### <a name="regular-aks-clusters"></a>Регулярные кластерах AKS
 
 Просмотреть частный IP-адрес узла кластера AKS можно с помощью команды [az vm list-ip-addresses][ az-vm-list-ip-addresses]. Укажите имя своей группы ресурсов кластера AKS, полученное на предыдущем шаге [az-aks-show][az-aks-show]:
 
@@ -80,6 +88,26 @@ VirtualMachine            PrivateIPAddresses
 aks-nodepool1-79590246-0  10.240.0.4
 ```
 
+### <a name="virtual-machine-scale-set-based-aks-clusters"></a>Кластерах AKS с использованием набора масштабирования виртуальной машины
+
+Внутренний IP-адрес с помощью узлов [kubectl получить команду][kubectl-get]:
+
+```console
+kubectl get nodes -o wide
+```
+
+В следующем примере выходных данных показаны внутренние IP-адреса всех узлов в кластере, включая узел Windows Server.
+
+```console
+$ kubectl get nodes -o wide
+
+NAME                                STATUS   ROLES   AGE   VERSION   INTERNAL-IP   EXTERNAL-IP   OS-IMAGE                    KERNEL-VERSION      CONTAINER-RUNTIME
+aks-nodepool1-42485177-vmss000000   Ready    agent   18h   v1.12.7   10.240.0.4    <none>        Ubuntu 16.04.6 LTS          4.15.0-1040-azure   docker://3.0.4
+aksnpwin000000                      Ready    agent   13h   v1.12.7   10.240.0.67   <none>        Windows Server Datacenter   10.0.17763.437
+```
+
+Запишите внутренний IP-адрес узла для устранения неполадок. Этот адрес используется на более позднем этапе.
+
 ## <a name="create-the-ssh-connection"></a>Создание SSH-подключения
 
 Для создания SSH-подключения к узлу AKS запустите вспомогательный модуль pod в кластере AKS. Этот модуль предоставляет доступ по протоколу SSH к кластеру, а затем дополнительный доступ к узлам SSH. Чтобы создать и использовать этот вспомогательный модуль pod, выполните следующие действия:
@@ -89,6 +117,11 @@ aks-nodepool1-79590246-0  10.240.0.4
     ```console
     kubectl run -it --rm aks-ssh --image=debian
     ```
+
+    > [!TIP]
+    > При использовании узлов Windows Server (в настоящее время в предварительной версии в AKS), добавьте узел селектора команду, чтобы запланировать Debian контейнера на узле Linux следующим образом:
+    >
+    > `kubectl run -it --rm aks-ssh --image=debian --overrides='{"apiVersion":"apps/v1","spec":{"template":{"spec":{"nodeSelector":{"beta.kubernetes.io/os":"linux"}}}}}'`
 
 1. Базовый образ Debian не включает компоненты SSH. После подключения сеанса терминала к контейнеру установите SSH-клиент, используя `apt-get` следующим образом:
 
@@ -163,3 +196,6 @@ aks-nodepool1-79590246-0  10.240.0.4
 [aks-quickstart-cli]: kubernetes-walkthrough.md
 [aks-quickstart-portal]: kubernetes-walkthrough-portal.md
 [install-azure-cli]: /cli/azure/install-azure-cli
+[aks-windows-rdp]: rdp.md
+[ssh-nix]: ../virtual-machines/linux/mac-create-ssh-keys.md
+[ssh-windows]: ../virtual-machines/linux/ssh-from-windows.md

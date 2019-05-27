@@ -3,17 +3,17 @@ title: Локальное развертывание решения для уд�
 description: В этом руководстве показано, как развернуть акселератор решения для удаленного мониторинга на локальном компьютере с помощью Visual Studio Code для тестирования и разработки.
 author: avneet723
 manager: hegate
-ms.author: avneet723
+ms.author: avneets
 ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 01/17/2019
 ms.topic: conceptual
-ms.openlocfilehash: 946f815cecea4cc172fac35c0b260d795317e6e1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: bfe28f3ff994d518cb744233e88a6f04b5771a83
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61446176"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65967532"
 ---
 # <a name="deploy-the-remote-monitoring-solution-accelerator-locally---visual-studio-code"></a>Локальное развертывание акселератора решения для удаленного мониторинга в Visual Studio Code
 
@@ -59,7 +59,7 @@ dotnet build -c Release
 
 ### <a name="deploy-all-other-microservices-on-local-machine"></a>Разверните все микрослужбы на локальном компьютере.
 
-Ниже показано, как запускать микрослужбы удаленного мониторинга в Visual Studio 2017:
+Ниже показано, как запускать микрослужбы удаленного мониторинга в Visual Studio Code:
 
 1. Запустите Visual Studio Code.
 1. Откройте модуль **azure-iot-pcs-remote-monitoring-dotnet** из локальной копии в VS Code.

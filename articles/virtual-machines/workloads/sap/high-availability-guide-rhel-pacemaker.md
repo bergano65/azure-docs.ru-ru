@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 08/17/2018
 ms.author: sedusch
-ms.openlocfilehash: b844c93a1f3e83d682b51db6f9854f11b24d82e7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: e082afb212be46c40566eb643d01bc37eababfa6
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61127126"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65992146"
 ---
 # <a name="setting-up-pacemaker-on-red-hat-enterprise-linux-in-azure"></a>Настройка кластера Pacemaker в Red Hat Enterprise Linux в Azure
 
@@ -37,7 +37,7 @@ ms.locfileid: "61127126"
 [2243692]:https://launchpad.support.sap.com/#/notes/2243692
 [1999351]:https://launchpad.support.sap.com/#/notes/1999351
 
-[virtual-machines-linux-maintenance]:../../linux/maintenance-and-updates.md#maintenance-not-requiring-a-reboot
+[virtual-machines-linux-maintenance]:../../linux/maintenance-and-updates.md#maintenance-that-doesnt-require-a-reboot
 
 > [!NOTE]
 > Pacemaker в Red Hat Enterprise Linux использует агент Azure Fence для ограждения узла кластера, если это необходимо. Отработка отказа может занять до 15 минут, если не удается выполнить остановку ресурсов или узлам кластера не удается связаться друг с другом. Дополнительные сведения см. в статье [Ограждение виртуальной машины Azure, входящей в кластер высокой доступности RHEL, занимает много времени, завершается сбоем или таймаутом до завершения работы виртуальной машины](https://access.redhat.com/solutions/3408711).

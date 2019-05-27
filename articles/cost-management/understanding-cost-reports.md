@@ -5,17 +5,17 @@ services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 04/05/2019
+ms.date: 05/20/2019
 ms.topic: conceptual
 ms.service: cost-management
 manager: benshy
 ms.custom: seodec18
-ms.openlocfilehash: 6f856aeae74ea285cd6a0326fd225e454a1cbe43
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 91dc386641c758c42f64afff387d0463d1445f1d
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61003806"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65969077"
 ---
 # <a name="understanding-cloudyn-cost-management-reports"></a>Сведения об отчетах по управлению затратами Cloudyn.
 
@@ -38,7 +38,7 @@ ms.locfileid: "61003806"
 
       - анализ затрат;
       - распределение;
-      - Управление ресурсами
+      - управление ресурсами.
       - Оптимизация
 
    Введите название фильтра и щелкните **Save** (Сохранить).
@@ -66,7 +66,7 @@ ms.locfileid: "61003806"
     ![Второй пример списка тегов, по которым можно группировать данные](./media/understanding-cost-reports/groups-tags02.png)
 
     Отчеты о распределении затрат и группы в теговых категориях групп могут включать в себя следующие компоненты:
-      - Теги
+      - Tags
       - теги группы ресурсов;
       - теги сущности затрат Cloudyn;
       - категории тегов подписки для распределения затрат.
@@ -111,7 +111,7 @@ ms.locfileid: "61003806"
        - Полная предоплата.
        - Без предоплаты.
        - Частичная предоплата.
-       - По запросу
+       - По запросу.
        - Резервирование
        - Немедленная оплата.
      - **Charge Type** (Тип платежей)

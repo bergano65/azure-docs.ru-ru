@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 02/19/2019
 ms.reviewer: mbullwin
 ms.author: cithomas
-ms.openlocfilehash: ca842ce46a58dafa87581b77bcbd802191f7fcd1
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.openlocfilehash: fd5a16334fff0319d7993fb2403a48d1777f6bce
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65511030"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65955340"
 ---
 # <a name="applicationinsightsloggerprovider-for-net-core-ilogger-logs"></a>ApplicationInsightsLoggerProvider for .NET Core ILogger logs
 
@@ -437,7 +437,7 @@ public class MyController : ApiController
 ```
 
 > [!NOTE]
-> При использовании пакета Microsoft.ApplicationInsights.AspNetCore как включить Application Insights, измените этот код, чтобы получить `TelemetryClient` непосредственно в конструкторе. Например, см. в разделе [часто задаваемых вопросов](https://docs.microsoft.com/azure/azure-monitor/app/asp-net-core-no-visualstudio#frequently-asked-questions).
+> При использовании пакета Microsoft.ApplicationInsights.AspNetCore как включить Application Insights, измените этот код, чтобы получить `TelemetryClient` непосредственно в конструкторе. Например, см. в разделе [часто задаваемых вопросов](https://docs.microsoft.com/azure/azure-monitor/app/asp-net-core#frequently-asked-questions).
 
 
 ### <a name="what-application-insights-telemetry-type-is-produced-from-ilogger-logs-or-where-can-i-see-ilogger-logs-in-application-insights"></a>Какой тип данных телеметрии Application Insights создается из журналов ILogger? Или, где можно просмотреть журналы ILogger в Application Insights?

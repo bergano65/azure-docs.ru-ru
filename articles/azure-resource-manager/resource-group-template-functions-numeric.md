@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 11/08/2017
 ms.author: tomfitz
 ms.openlocfilehash: 5ed3a0a57dad61a5fe783790eba4cb89ce19c660
-ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56266982"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66128650"
 ---
 # <a name="numeric-functions-for-azure-resource-manager-templates"></a>Числовые функции для шаблонов Azure Resource Manager
 
@@ -47,10 +47,10 @@ ms.locfileid: "56266982"
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | Описание |
 |:--- |:--- |:--- |:--- | 
-|операнд1 |Yes |int |Первое слагаемое. |
-|операнд2 |Yes |int |Второе слагаемое. |
+|операнд1 |Да |int |Первое слагаемое. |
+|операнд2 |Да |int |Второе слагаемое. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -93,7 +93,7 @@ ms.locfileid: "56266982"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| ИМЯ | type | Значение |
+| ИМЯ | type | Value |
 | ---- | ---- | ----- |
 | addResult | Int | 8 |
 
@@ -118,10 +118,10 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | Описание |
 |:--- |:--- |:--- |:--- |
-| loopName | Нет  | строка | Имя цикла для получения итерации. |
-| offset |Нет  |int |Число, добавляемое к отсчитываемому от нуля значению итерации. |
+| loopName | Нет | string | Имя цикла для получения итерации. |
+| offset |Нет |int |Число, добавляемое к отсчитываемому от нуля значению итерации. |
 
 ### <a name="remarks"></a>Примечания
 
@@ -164,10 +164,10 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | Описание |
 |:--- |:--- |:--- |:--- |
-| операнд1 |Yes |int |Делимое. |
-| операнд2 |Yes |int |Делитель. Не может иметь значение 0. |
+| операнд1 |Да |int |Делимое. |
+| операнд2 |Да |int |Делитель. Не может иметь значение 0. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -210,7 +210,7 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| ИМЯ | type | Значение |
+| ИМЯ | type | Value |
 | ---- | ---- | ----- |
 | divResult | Int | 2 |
 
@@ -235,9 +235,9 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | Описание |
 |:--- |:--- |:--- |:--- |
-| arg1 |Yes |строка или целое число |Значение, которое необходимо преобразовать в число с плавающей запятой. |
+| arg1 |Да |строка или целое число |Значение, которое необходимо преобразовать в число с плавающей запятой. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 Число с плавающей запятой.
@@ -269,9 +269,9 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | Описание |
 |:--- |:--- |:--- |:--- |
-| valueToConvert |Yes |строка или целое число |Значение, которое необходимо преобразовать в целое число. |
+| valueToConvert |Да |строка или целое число |Значение, которое необходимо преобразовать в целое число. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -304,7 +304,7 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| ИМЯ | type | Значение |
+| ИМЯ | type | Value |
 | ---- | ---- | ----- |
 | intResult | Int | 4. |
 
@@ -322,16 +322,16 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 <a id="max" />
 
-## <a name="max"></a>max
+## <a name="max"></a>максимум
 `max (arg1)`
 
 Возвращает максимальное значение из массива целых чисел или разделенный запятыми список целых чисел.
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | Описание |
 |:--- |:--- |:--- |:--- |
-| arg1 |Yes |массив целых чисел или разделенный запятыми список целых чисел |Коллекция, для которой необходимо получить максимальное значение. |
+| arg1 |Да |массив целых чисел или разделенный запятыми список целых чисел |Коллекция, для которой необходимо получить максимальное значение. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -367,7 +367,7 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| ИМЯ | type | Значение |
+| ИМЯ | type | Value |
 | ---- | ---- | ----- |
 | arrayOutput | Int | 5 |
 | intOutput | Int | 5 |
@@ -386,16 +386,16 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 <a id="min" />
 
-## <a name="min"></a>Min
+## <a name="min"></a>мин
 `min (arg1)`
 
 Возвращает минимальное значение из массива целых чисел или разделенный запятыми список целых чисел.
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | Описание |
 |:--- |:--- |:--- |:--- |
-| arg1 |Yes |массив целых чисел или разделенный запятыми список целых чисел |Коллекция, для которой необходимо получить минимальное значение. |
+| arg1 |Да |массив целых чисел или разделенный запятыми список целых чисел |Коллекция, для которой необходимо получить минимальное значение. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -431,7 +431,7 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| ИМЯ | type | Значение |
+| ИМЯ | type | Value |
 | ---- | ---- | ----- |
 | arrayOutput | Int | 0 |
 | intOutput | Int | 0 |
@@ -457,10 +457,10 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | Описание |
 |:--- |:--- |:--- |:--- |
-| операнд1 |Yes |int |Делимое. |
-| операнд2 |Yes |int |Делитель, не может быть равен 0. |
+| операнд1 |Да |int |Делимое. |
+| операнд2 |Да |int |Делитель, не может быть равен 0. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 Целое число, представляющее остаток.
@@ -502,7 +502,7 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| ИМЯ | type | Значение |
+| ИМЯ | type | Value |
 | ---- | ---- | ----- |
 | modResult | Int | 1 |
 
@@ -527,10 +527,10 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | Описание |
 |:--- |:--- |:--- |:--- |
-| операнд1 |Yes |int |Первый множитель. |
-| операнд2 |Yes |int |Второй множитель. |
+| операнд1 |Да |int |Первый множитель. |
+| операнд2 |Да |int |Второй множитель. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -573,7 +573,7 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| ИМЯ | type | Значение |
+| ИМЯ | type | Value |
 | ---- | ---- | ----- |
 | mulResult | Int | 15 |
 
@@ -598,10 +598,10 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 ### <a name="parameters"></a>Параметры
 
-| Параметр | Обязательно | type | ОПИСАНИЕ |
+| Параметр | Обязательно для заполнения | type | Описание |
 |:--- |:--- |:--- |:--- |
-| операнд1 |Yes |int |Уменьшаемое. |
-| операнд2 |Yes |int |Вычитаемое. |
+| операнд1 |Да |int |Уменьшаемое. |
+| операнд2 |Да |int |Вычитаемое. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 Целое число, представляющее разность.
@@ -643,7 +643,7 @@ New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateU
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| ИМЯ | type | Значение |
+| ИМЯ | type | Value |
 | ---- | ---- | ----- |
 | subResult | Int | 4. |
 
@@ -659,7 +659,7 @@ az group deployment create -g functionexamplegroup --template-uri https://raw.gi
 New-AzResourceGroupDeployment -ResourceGroupName functionexamplegroup -TemplateUri https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/azure-resource-manager/functions/sub.json
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Описание разделов в шаблоне Azure Resource Manager см. в статье [Создание шаблонов Azure Resource Manager](resource-group-authoring-templates.md).
 * Инструкции по объединению нескольких шаблонов см. в статье [Использование связанных шаблонов в Azure Resource Manager](resource-group-linked-templates.md).
 * Указания по выполнению заданного количества циклов итерации при создании типа ресурса см. в статье [Создание нескольких экземпляров ресурсов в Azure Resource Manager](resource-group-create-multiple.md).

@@ -14,11 +14,11 @@ ms.workload: na
 ms.date: 05/14/2018
 ms.author: tomfitz
 ms.openlocfilehash: db4e1b8705b879fd5716763869462bafdf1f905c
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55495213"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66128470"
 ---
 # <a name="manage-personal-data-associated-with-azure-resource-manager"></a>Управление персональными данными, связанными с Azure Resource Manager
 
@@ -40,7 +40,7 @@ ms.locfileid: "55495213"
 
 Чтобы удалить **развертывания** из журнала, используйте:
 
-* [Удалить](/rest/api/resources/deployments/delete)
+* [Удаление](/rest/api/resources/deployments/delete)
 * [Remove-AzResourceGroupDeployment](/powershell/module/az.resources/Remove-AzResourceGroupDeployment)
 * [az group deployment delete](/cli/azure/group/deployment#az-group-deployment-delete).
 
@@ -56,7 +56,7 @@ ms.locfileid: "55495213"
 
 Для удаления **групп ресурсов** используйте:
 
-* [Удалить](/rest/api/resources/resourcegroups/delete)
+* [Удаление](/rest/api/resources/resourcegroups/delete)
 * [Remove-AzResourceGroup](/powershell/module/az.resources/Remove-AzResourceGroup)
 * [az group delete](/cli/azure/group#az-group-delete)
 
@@ -72,9 +72,9 @@ ms.locfileid: "55495213"
 
 Для удаления **тегов** используйте:
 
-* [Удалить](/rest/api/resources/tags/delete)
+* [Удаление](/rest/api/resources/tags/delete)
 * [Remove-AzTag](/powershell/module/az.resources/Remove-AzTag)
 * [az tag delete](/cli/azure/tag#az-tag-delete).
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 * Общие сведения об Azure Resource Manager см. в [этой статье](resource-group-overview.md).

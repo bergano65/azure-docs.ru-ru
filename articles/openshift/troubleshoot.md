@@ -8,12 +8,12 @@ manager: jeconnoc
 ms.service: container-service
 ms.topic: troubleshooting
 ms.date: 05/08/2019
-ms.openlocfilehash: 9ef32273c007e7319b7f6df99f3d904f805c31f2
-ms.sourcegitcommit: f013c433b18de2788bf09b98926c7136b15d36f1
+ms.openlocfilehash: 82678091c1d0b71e6209f6d03e9d1a0ca60fe03e
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65550909"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65992170"
 ---
 # <a name="troubleshooting-for-azure-red-hat-openshift"></a>Устранение неполадок для Azure Red Hat OpenShift
 
@@ -23,10 +23,6 @@ ms.locfileid: "65550909"
 
 Если создание Azure Red Hat OpenShift кластер с помощью `az` завершается со сбоем команда интерфейса командной строки, повторная попытка создания будет завершаться сбоем.
 Используйте `az openshift delete` для удаления сбоя кластера, затем создать совершенно новый кластер.
-
-## <a name="untrusted-azure-red-hat-openshift-server-certificate"></a>Ненадежный сертификат сервера Azure Red Hat OpenShift
-
-Консоль OpenShift использует самозаверяющий сертификат. Когда в браузере появится предупреждение о "недоверенном" сертификате, подтвердите этот сертификат и закройте предупреждение.
 
 ## <a name="hidden-azure-red-hat-openshift-cluster-resource-group"></a>Скрытые группы ресурсов кластера Azure Red Hat OpenShift
 

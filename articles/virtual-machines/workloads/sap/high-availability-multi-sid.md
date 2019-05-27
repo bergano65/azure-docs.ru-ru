@@ -18,11 +18,11 @@ ms.date: 12/09/2016
 ms.author: goraco
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 1b27ea761d19eb494895daceff699b2b604eccea
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: HT
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59797332"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66153864"
 ---
 # <a name="create-an-sap-netweaver-multi-sid-configuration"></a>Создание конфигурации с несколькими идентификаторами безопасности SAP NetWeaver
 
@@ -489,7 +489,7 @@ ms.locfileid: "59797332"
 ## <a name="prepare-the-infrastructure"></a>Подготовка инфраструктуры
 Для подготовки инфраструктуры можно установить дополнительный экземпляр SAP ASCS/SCS со следующими параметрами.
 
-| Имя параметра | Значение |
+| Имя параметра | Value |
 | --- | --- |
 | ИД безопасности SAP ASCS/SCS |pr1-lb-ascs |
 | Внутренний балансировщик нагрузки экземпляра СУБД SAP | PR5 |

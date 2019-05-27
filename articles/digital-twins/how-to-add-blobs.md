@@ -7,14 +7,14 @@ ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
 ms.date: 01/11/2019
-ms.author: adgera
+ms.author: v-adgera
 ms.custom: seodec18
-ms.openlocfilehash: ffd7d71c33b569b396b9f8babf8105968ee525b9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: b77960961a7c032faad7000f7a2ce297802a1497
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60926506"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65967051"
 ---
 # <a name="add-blobs-to-objects-in-azure-digital-twins"></a>Добавление больших двоичных объектов к объектам в Azure Digital Twins
 
@@ -119,7 +119,7 @@ Azure Digital Twins поддерживает присоединение боль
 | **subtypeId** | Целое число  | Нельзя использовать идентификатор подтипа большого двоичного объекта *subtype* и *subtypeId*. |
 | **Общий доступ** | String | Можно ли предоставить большой двоичный объект для общего доступа — перечисление [`None`, `Tree`, `Global`] |
 | **description** | String | Настраиваемое описание большого двоичного объекта |
-| **contentInfos** | Массив | Указывает неструктурированную информацию о метаданных, включая версию |
+| **contentInfos** | Массив, | Указывает неструктурированную информацию о метаданных, включая версию |
 | **fullName** | String | Полное имя большого двоичного объекта |
 | **spacePaths** | String | Путь к пространству |
 

@@ -5,11 +5,11 @@ ms.topic: persist-storage
 ms.date: 9/7/2018
 ms.author: juluk
 ms.openlocfilehash: c28441b6fe25b3480a55b79682d5067b19e3023a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60200262"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66125198"
 ---
 # <a name="persist-files-in-azure-cloud-shell"></a>Сохранение файлов в Azure Cloud Shell
 Azure Cloud Shell использует хранилище файлов Azure, чтобы хранить файлы между сеансами. При первом запуске Azure Cloud Shell предлагает привязать новый или существующий файловый ресурс, чтобы сохранять файлы между сеансами.

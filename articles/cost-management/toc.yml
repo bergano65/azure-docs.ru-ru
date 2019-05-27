@@ -1,22 +1,22 @@
-- name: Документация по Azure Cost Management
+- name: Документация по Управлению затратами Azure
   href: index.yml
   items:
     - name: Обзор
       items:
-        - name: Что такое управление затратами?
+        - name: Что такое Управление затратами?
           href: overview-cost-mgt.md
-    - name: Быстрое начало работы
+    - name: Краткие руководства
       expanded: true
       items:
         - name: Начало анализа затрат
           href: quick-acm-cost-analysis.md
-    - name: Учебники
+    - name: Руководства
       items:
-        - name: 1. Создание бюджетов и управление ими
+        - name: "1.\_Создание бюджетов и управление ими"
           href: tutorial-acm-create-budgets.md
-        - name: 2. Экспорт данных
+        - name: "2.\_Экспорт данных"
           href: tutorial-export-acm-data.md
-        - name: 3. Выполнение действий на основе рекомендаций
+        - name: "3.\_Выполнение действий на основе рекомендаций"
           href: tutorial-acm-opt-recommendations.md
     - name: Основные понятия
       items:
@@ -28,7 +28,7 @@
           href: understand-work-scopes.md
         - name: Миграция из EA в API MCA
           href: migrate-cost-management-api.md
-    - name: Практические руководства
+    - name: Инструкции
       items:
         - name: Назначение прав доступа к данным
           href: assign-access-acm-data.md
@@ -40,12 +40,14 @@
           href: aws-integration-manage.md
     - name: Справочные материалы
       items:
-        - name: REST API Управления затратами Azure
+        - name: "REST\_API Управления затратами Azure"
           href: 'https://docs.microsoft.com/rest/api/cost-management'
-        - name: REST API потребления Azure
+        - name: "REST\_API потребления Azure"
           href: 'https://docs.microsoft.com/rest/api/consumption'
         - name: Шаблон Resource Manager
           href: /azure/templates/microsoft.consumption/budgets
+        - name: "Примеры REST\_API службы \"Управление затратами\""
+          href: 'https://github.com/Azure-Samples/Cost-Management-Samples'
     - name: Ресурсы
       items:
         - name: Развитие навыков с помощью Microsoft Learn
@@ -64,31 +66,31 @@
           items:
             - name: Что такое Cloudyn?
               href: overview.md
-        - name: Быстрое начало работы
+        - name: Краткие руководства
           items:
             - name: Просмотр данных о затратах
               href: quick-register-azure-sub.md
-            - name: Просмотр данных о затратах — Enterprise Agreement
+            - name: "Просмотр данных о затратах\_— EA"
               href: quick-register-ea.md
-            - name: Просмотр данных о затратах — CSP
+            - name: "Просмотр данных о затратах\_— CSP"
               href: quick-register-csp.md
-        - name: Учебники
+        - name: Руководства
           items:
-            - name: 1. Просмотр использования и затрат
+            - name: "1.\_Просмотр сведений об использовании и затратах"
               href: tutorial-review-usage.md
-            - name: 2. Прогнозирование расходов
+            - name: "2.\_Прогнозирование расходов"
               href: tutorial-forecast-spending.md
-            - name: 3. Управление затратами
+            - name: "3.\_Управление затратами"
               href: tutorial-manage-costs.md
-            - name: 4. Оптимизация зарезервированных экземпляров
+            - name: "4.\_Оптимизация зарезервированных экземпляров"
               href: tutorial-optimize-reserved-instances.md
-            - name: 5. Управление доступом к данным
+            - name: "5.\_Управление доступом к данным"
               href: tutorial-user-access.md
         - name: Основные понятия
           items:
             - name: Интерпретация отчетов о затратах
               href: understanding-cost-reports.md
-        - name: Практические руководства
+        - name: Инструкции
           items:
             - name: Активация подписок и учетных записей Azure
               href: activate-subs-accounts.md
@@ -108,7 +110,7 @@
               href: manage-budgets.md
         - name: Ресурсы
           items:
-            - name: Видео про Cloudyn
+            - name: Видео о Cloudyn
               href: ref-videos.md
             - name: Стратегия развития Azure
               href: 'https://azure.microsoft.com/roadmap/'
@@ -116,7 +118,7 @@
               href: 'https://azure.microsoft.com/pricing/details/cost-management'
             - name: Доступность Cloudyn по регионам
               href: 'https://azure.microsoft.com/regions/services/'
-            - name: Вопросы и ответы о Cloudyn
+            - name: 'Cloudyn: вопросы и ответы'
               href: cost-mgt-faq.md
             - name: Обращение в службу поддержки Cloudyn
               href: support-request-cost-management.md

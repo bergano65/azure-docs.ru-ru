@@ -1,15 +1,15 @@
-- name: Документация по API распознавания лиц
+- name: Документация по API Распознавания лиц
   href: index.yml
 - name: Обзор
   expanded: true
   items:
-    - name: Что такое API распознавания лиц?
+    - name: Что такое API Распознавания лиц?
       href: Overview.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   items:
     - name: С помощью клиентского пакета SDK
       items:
-        - name: определение лиц на изображении.
+        - name: Определение лиц на изображении
           items:
             - name: 'C#'
               href: QuickStarts/csharp-detect-sdk.md
@@ -17,7 +17,7 @@
               href: Tutorials/FaceAPIinPythonTutorial.md
     - name: Использование REST API
       items:
-        - name: определение лиц на изображении.
+        - name: Определение лиц на изображении
           items:
             - name: 'C#'
               href: QuickStarts/CSharp.md
@@ -37,7 +37,7 @@
               href: QuickStarts/Python.md
             - name: Ruby
               href: QuickStarts/Ruby.md
-- name: Учебники
+- name: Руководства
   items:
     - name: С помощью клиентского пакета SDK
       items:
@@ -47,11 +47,11 @@
           href: Tutorials/FaceAPIinJavaForAndroidTutorial.md
 - name: Основные понятия
   items:
-    - name: Обнаружение лиц
+    - name: Определение лиц
       href: concepts/face-detection.md
     - name: Распознавание лиц
       href: concepts/face-recognition.md
-- name: Практические руководства
+- name: Инструкции
   items:
     - name: Распознавание лиц
       href: Face-API-How-to-Topics/HowtoDetectFacesinImage.md
@@ -75,11 +75,11 @@
           href: face-how-to-install-containers.md
         - name: Настройка контейнеров
           href: face-resource-container-config.md
-    - name: Использование подключенной службы API распознавания лиц
+    - name: Использование подключенной службы API Распознавания лиц
       href: vs-face-connected-service.md
 - name: Справочные материалы
   items:
-    - name: API распознавания лиц
+    - name: API Распознавания лиц
       href: APIReference.md
     - name: Пакеты SDK
       items:
@@ -105,11 +105,13 @@
       href: 'https://azure.microsoft.com/pricing/details/cognitive-services/face-api'
     - name: UserVoice
       href: 'https://cognitive.uservoice.com/forums/430315-face-api'
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/microsoft-cognitive'
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/updates/?product=cognitive-services'
-    - name: Доступ по регионам
+    - name: Доступность по регионам
       href: 'https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services'
+    - name: Соответствие требованиям
+      href: 'https://azure.microsoft.com/support/legal/cognitive-services-compliance-and-privacy/'
     - name: Заметки о выпуске
       href: ReleaseNotes.md

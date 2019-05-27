@@ -10,11 +10,11 @@ ms.date: 03/14/2019
 ms.author: glenga
 ms.custom: include file
 ms.openlocfilehash: d79d1bd5ec244ad4399a02c349e2504516d06ccd
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60710538"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66131675"
 ---
 Параметры конфигурации для [устойчивых функций](../articles/azure-functions/durable-functions-overview.md).
 
@@ -45,7 +45,7 @@ ms.locfileid: "60710538"
 
 Имена центров задач должны начинаться с буквы и содержать только буквы и цифры. Если имя не указано, центру задач в приложении-функции назначается имя по умолчанию **DurableFunctionsHub**. Дополнительные сведения см. в статье о [центрах задач](../articles/azure-functions/durable-functions-task-hubs.md).
 
-|Свойство  |значение по умолчанию | ОПИСАНИЕ |
+|Свойство  |значение по умолчанию | Описание |
 |---------|---------|---------|
 |hubName|DurableFunctionsHub|Альтернативные имена [центра задач](../articles/azure-functions/durable-functions-task-hubs.md) позволяют изолировать несколько приложений устойчивых функций друг от друга, даже если они используют один и тот же интерфейс хранилища.|
 |controlQueueBatchSize|32|Количество сообщений, одновременно извлекаемых из очереди управления.|

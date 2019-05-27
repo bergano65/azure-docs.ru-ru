@@ -2,28 +2,25 @@
 author: ggailey777
 ms.service: azure-functions
 ms.topic: include
-origin.date: 09/04/2018
-ms.date: 12/26/2018
-ms.author: v-junlch
+ms.date: 09/04/2018
+ms.author: glenga
 ms.openlocfilehash: c1784111cd2fc2c93b67510f310b9e513cf2b86e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61438158"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66132468"
 ---
 [Триггеры и привязки](../articles/azure-functions/functions-triggers-bindings.md) Функций Azure взаимодействуют с различными службами Azure. При интеграции с этими службами могут возникать ошибки, поступающие из API-интерфейсов базовых служб Azure. Ошибки также могут возникать при попытке взаимодействия с другими службами из вашего кода функции с использованием REST или клиентских библиотек. Чтобы избежать потери данных и обеспечить нормальное выполнение функций, очень важно обрабатывать ошибки из любого источника.
 
 Следующие триггеры поддерживают встроенный механизм повторных попыток:
 
-- [хранилище BLOB-объектов Azure](../articles/azure-functions/functions-bindings-storage-blob.md)
-- [хранилище очередей Azure](../articles/azure-functions/functions-bindings-storage-queue.md);
-- [служебная шина Azure (очередь/тема)](../articles/azure-functions/functions-bindings-service-bus.md).
+* [хранилище BLOB-объектов Azure](../articles/azure-functions/functions-bindings-storage-blob.md)
+* [хранилище очередей Azure](../articles/azure-functions/functions-bindings-storage-queue.md);
+* [служебная шина Azure (очередь/тема)](../articles/azure-functions/functions-bindings-service-bus.md).
 
 По умолчанию для этих триггеров повторные попытки выполняются до пяти раз. После пятой повторной попытки оба триггера записывают сообщение в специальную [очередь подозрительных сообщений](../articles/azure-functions/functions-bindings-storage-queue.md#trigger---poison-messages).
 
 Для большинства триггеров не предусмотрен встроенный механизм повторных попыток, когда ошибка возникает во время выполнения функции. Во избежание потери данных триггера произойдет ошибка в функции, поэтому мы рекомендуем в коде функции использовать блоки try-catch для перехвата ошибок. При возникновении ошибки запишите сведения, передаваемые в функцию с помощью триггера, в специальную очередь "подозрительных" сообщений. Такой же подход использует и [триггер хранилища BLOB-объектов](../articles/azure-functions/functions-bindings-storage-blob.md#trigger---poison-blobs).
 
 Таким образом можно сохранить события триггера, которые могут быть потеряны из-за ошибок, и повторно выполнить их позже с помощью другой функции для обработки сообщений из очереди подозрительных сообщений с использованием хранимых сведений.  
-
-<!-- ms.date: 12/26/2018 -->

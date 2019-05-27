@@ -13,17 +13,17 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/4/2019
+ms.date: 05/22/2019
 ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 051d3faf5cea24e33f1e6560abc2d039c1059c91
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 9df592272b97bded9eba64249aa7608c72f8abdf
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65784979"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66121538"
 ---
 # <a name="authorize-access-to-web-applications-using-openid-connect-and-azure-active-directory"></a>Предоставление доступа к веб-приложениям с помощью OpenID Connect и Azure Active Directory
 
@@ -92,7 +92,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 
 | Параметр |  | Описание |
 | --- | --- | --- |
-| tenant |Требуется |Значение `{tenant}` в пути запроса можно использовать для того, чтобы контролировать, кто может входить в приложение. Допустимые значения — идентификаторы клиента, например `8eaef023-2b34-4da1-9baa-8bc8c9d6a490`, `contoso.onmicrosoft.com` или `common` для маркеров без указания клиента. |
+| клиент |Требуется |Значение `{tenant}` в пути запроса можно использовать для того, чтобы контролировать, кто может входить в приложение. Допустимые значения — идентификаторы клиента, например `8eaef023-2b34-4da1-9baa-8bc8c9d6a490`, `contoso.onmicrosoft.com` или `common` для маркеров без указания клиента. |
 | client_id |Требуется |Идентификатор приложения, назначенный вашему приложению при регистрации в Azure AD. Его значение можно найти на портале Azure. Нажмите кнопку **Azure Active Directory**, нажмите кнопку **регистрация приложений**, выберите приложение и найдите идентификатор приложения на странице приложения. |
 | response_type |Требуется |Должен включать `id_token` для входа в OpenID Connect. Параметр также может содержать другие типы response_types, например `code` или `token`. |
 | область | рекомендуется | Спецификация OpenID Connect требует область `openid`, которое преобразуется в разрешение «Вход» в пользовательского интерфейса согласия. Это и другие области OIDC учитываются в конечной точке версии 1.0, но по-прежнему рекомендуется для клиентов, соответствующих стандартам. |

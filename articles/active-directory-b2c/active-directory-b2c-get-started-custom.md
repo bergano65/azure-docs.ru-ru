@@ -7,15 +7,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 04/03/2019
+ms.date: 05/16/2019
 ms.author: davidmu
 ms.subservice: B2C
-ms.openlocfilehash: 6a66d45028b9fbf9c421b10ffb7863fcb9be5bec
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: f4ecc01f42d491f5d9d967b9983e773c1df22298
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65779847"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65986829"
 ---
 # <a name="get-started-with-custom-policies-in-azure-active-directory-b2c"></a>Начало работы с настраиваемыми политиками в Azure Active Directory B2C
 
@@ -70,17 +70,17 @@ ms.locfileid: "65779847"
 
 ### <a name="register-the-identityexperienceframework-application"></a>Регистрация приложения IdentityExperienceFramework
 
-1. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Регистрация приложений**.
-2. Выберите **Регистрация нового приложения**.
-3. Для параметра **Имя** введите `IdentityExperienceFramework`.
-4. Для параметра **Тип приложения** выберите **Веб-приложение или API**.
-5. Для параметра **URL-адрес для входа** введите `https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com`, где `your-tenant-name` — это доменное имя клиента Azure AD B2C.
-6. Нажмите кнопку **Создать**. 
-7. По завершении операции создания скопируйте идентификатор приложения и сохраните его для последующего использования.
+1. Выберите **все службы** в левом верхнем углу портала Azure найдите и выберите **Azure Active Directory**.
+2. В меню, выберите **регистрация приложений (для прежних версий)**.
+3. Выберите **Регистрация нового приложения**.
+4. Для параметра **Имя** введите `IdentityExperienceFramework`.
+5. Для параметра **Тип приложения** выберите **Веб-приложение или API**.
+6. Для параметра **URL-адрес для входа** введите `https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com`, где `your-tenant-name` — это доменное имя клиента Azure AD B2C. Всем URL-адресам следует использовать [b2clogin.com](b2clogin.md).
+7. Нажмите кнопку **Создать**. По завершении операции создания скопируйте идентификатор приложения и сохраните его для последующего использования.
 
 ### <a name="register-the-proxyidentityexperienceframework-application"></a>Регистрация приложения ProxyIdentityExperienceFramework
 
-1. Щелкните **Регистрация приложений** и выберите **Регистрация нового приложения**.
+1. В **регистрация приложений (для прежних версий)** выберите **Регистрация нового приложения**.
 2. Для параметра **Имя** введите `ProxyIdentityExperienceFramework`.
 3. Для параметра **Тип приложения** выберите **Собственный**.
 4. Для параметра **URI перенаправления** введите `https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com`, где `yourtenant` — это ваш клиент Azure AD B2C.

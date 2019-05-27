@@ -10,11 +10,11 @@ ms.date: 10/19/2018
 ms.author: glenga
 ms.custom: include file
 ms.openlocfilehash: 7d8773cc12b50382f6f300987ec6ce504cd238af
-ms.sourcegitcommit: 1d3353b95e0de04d4aec2d0d6f84ec45deaaf6ae
-ms.translationtype: HT
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/30/2018
-ms.locfileid: "50251284"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66131703"
 ---
 Управляет [функцией выборки в Application Insights](../articles/azure-functions/functions-monitoring.md#configure-sampling).
 
@@ -29,7 +29,7 @@ ms.locfileid: "50251284"
 }
 ```
 
-|Свойство  |значение по умолчанию | ОПИСАНИЕ |
+|Свойство  |значение по умолчанию | Описание |
 |---------|---------|---------| 
 |isEnabled|Да|Включает или отключает выборку.| 
 |maxTelemetryItemsPerSecond|5|Пороговое значение, при котором начинается выборка.| 

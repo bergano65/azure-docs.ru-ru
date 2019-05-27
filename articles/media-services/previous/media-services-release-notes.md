@@ -13,12 +13,12 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: 427ba2b386810749810397afed8ef3f62dcf9217
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.openlocfilehash: c519cf88f40928bbd556b0accfa30d9f8c5c0f11
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65506629"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65991915"
 ---
 # <a name="azure-media-services-release-notes"></a>Заметки о выпуске служб мультимедиа Azure
 
@@ -45,6 +45,10 @@ ms.locfileid: "65506629"
 ## <a name="a-idrestversionhistoryrest-api-version-history"></a><a id="rest_version_history"/>Журнал версий интерфейса API REST
 Сведения о журнале версий интерфейса REST API служб мультимедиа см. в [этой статье].
 
+## <a name="march-2019"></a>Марта 2019 г.
+
+Функция предварительного просмотра мультимедиа Hyperlapse служб мультимедиа Azure устарела.
+
 ## <a name="december-2018"></a>Декабрь 2018 г.
 
 Функции предварительной версии Media Hyperlapse служб мультимедиа Azure скоро будет прекращено. Начиная с 19 декабря 2018 г. прекращается внесение изменений и улучшений в компонент Media Hyperlapse Служб мультимедиа. 29 марта 2019 г. этот компонент будет выведен из эксплуатации.
@@ -59,11 +63,11 @@ ms.locfileid: "65506629"
 
 Теперь для создания эскизов спрайтов Web VTT можно использовать Службы мультимедиа и API-интерфейсы версии 2. Дополнительные сведения см. в статье [Generate a thumbnail sprite](generate-thumbnail-sprite.md) (Создание спрайта эскиза).
 
-## <a name="july-2018"></a>Июль 2018 г.
+## <a name="july-2018"></a>Июля 2018 г.
 
 В последнем выпуске службы добавлены незначительные изменения форматирования в сообщениях об ошибках, возвращаемых службой при неудачном выполнении задания, которые связаны с разбиением на две или более строк.
 
-## <a name="may-2018"></a>Май 2018 г. 
+## <a name="may-2018"></a>Май 2018 г. 
 
 С 12 мая 2018 г. динамические каналы больше не будут поддерживать протокол приема транспортного потока RTP/MPEG-2. Выполните миграцию из RTP/MPEG-2 в протокол приема RTMP или фрагментированный протокол MP4 (Smooth Streaming).
 
