@@ -9,16 +9,16 @@ ms.date: 09/26/2017
 ms.author: rambala
 ms.custom: seodec18
 ms.openlocfilehash: 888f4dedf2fda0f54297d42a5f813abf73ded748
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58121525"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66117891"
 ---
 # <a name="verifying-expressroute-connectivity"></a>Проверка подключения ExpressRoute
 Изучив сведения в этой статье, вы узнаете, как проверить и устранить неполадки с подключением ExpressRoute. Подключение ExpressRoute, расширяющее локальную сеть в Microsoft Cloud посредством частного подключения, которое обеспечивает поставщик услуг подключения, включает в себя следующие три различные сетевые зоны:
 
--   клиентскую сеть;
+-   Сеть клиента
 -   сеть поставщика;
 -   центр обработки данных Майкрософт.
 
@@ -76,7 +76,7 @@ ms.locfileid: "58121525"
 ### <a name="verification-via-the-azure-portal"></a>Проверка на портале Azure
 На портале Azure можно проверить состояние канала ExpressRoute, выбрав ![2][2] в боковом меню слева, а затем выбрав канал ExpressRoute. Выберите канал ExpressRoute в разделе "Все ресурсы", после чего откроется колонка канала ExpressRoute. В ![3][3] части колонки, ExpressRoute, essentials перечислены в том случае, как показано на следующем снимке экрана:
 
-![4..][4]    
+![4][4]    
 
 Параметр *Состояние цепи* в разделе основных сведений об ExpressRoute указывает состояние канала на стороне Майкрософт. Параметр *Состояние поставщика* указывает, был ли канал *подготовлен* на стороне поставщика услуг. 
 
@@ -157,7 +157,7 @@ ms.locfileid: "58121525"
     Sku                              : Standard
     Status                           : Enabled
 
-Чтобы подтвердить работоспособность канала ExpressRoute, обратите особое внимание на следующие поля: ServiceProviderProvisioningState : Provisioned Status                           : Включено
+Чтобы подтвердить работоспособность канала ExpressRoute, обратите особое внимание на следующие поля: ServiceProviderProvisioningState : Provisioned Status                           : Enabled
 
 > [!NOTE]
 > Если параметр *Status* имеет значение Not Enabled, обратитесь в [службу поддержки Майкрософт][Support]. Если параметр *ServiceProviderProvisioningState* имеет значение Not Provisioned, обратитесь к поставщику услуг связи.

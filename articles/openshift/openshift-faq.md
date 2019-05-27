@@ -8,16 +8,26 @@ manager: jeconnoc
 ms.service: container-service
 ms.topic: article
 ms.date: 05/08/2019
-ms.openlocfilehash: 06051eff73a83ff97a733d1863580885c5d0e174
-ms.sourcegitcommit: f013c433b18de2788bf09b98926c7136b15d36f1
+ms.openlocfilehash: 4f11eac106fe984aa06e41083c2d4f66c7d0e62c
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65551738"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65872911"
 ---
 # <a name="azure-red-hat-openshift-faq"></a>Azure Red Hat OpenShift часто задаваемые вопросы
 
 В этой статье рассматриваются часто задаваемые вопросы (FAQ) о Microsoft Azure Red Hat OpenShift.
+
+## <a name="how-do-i-get-started"></a>Как начать работу?
+
+Перед тем как использовать Azure Red Hat OpenShift, вам потребуется приобрести не менее 4 узлов приложения защищены Azure Red Hat OpenShift.
+
+Если вы являетесь клиентом Azure,[приобрести Azure Red Hat OpenShift зарезервированные экземпляры](https://aka.ms/openshift/buy) через портал Azure. После приобретения, подписки будут активированы в течение 24 часов, после чего вы сможете Подготовка кластеров.
+
+Если вы не являетесь клиентом Azure [связаться с отделом продаж](https://aka.ms/openshift/contact-sales) и заполните форму продаж в нижней части страницы, чтобы начать процесс.
+
+Ссылаться на [странице с ценами Azure Red Hat OpenShift](https://aka.ms/openshift/pricing) Дополнительные сведения.
 
 ## <a name="which-azure-regions-are-supported"></a>В каких регионах Azure поддерживаются?
 

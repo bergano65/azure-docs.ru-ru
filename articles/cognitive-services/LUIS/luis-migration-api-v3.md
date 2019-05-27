@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 05/07/2019
+ms.date: 05/22/2019
 ms.author: diberry
-ms.openlocfilehash: 6412f0a2e295a19f741c70e7870a4d198ee03b71
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: b7b4e25c78ef08bdf9a7c2f3faf96725fc5f5fc8
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65233548"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66123882"
 ---
 # <a name="preview-migrate-to-api-version-3x--for-luis-apps"></a>Предварительный просмотр: Перенос в API версии 3.x для приложения LUIS
 
@@ -343,6 +343,9 @@ _Необязательно_ `resolution` возвращает в ответе �
 
 **В версии 3**, объект помечен с помощью `startIndex` и `entityLength`.
 
+## <a name="deprecation"></a>Устаревшее 
+
+Все API версии 2 не будет считаться устаревшим для по крайней мере 9 месяцев после предварительной версии V3. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

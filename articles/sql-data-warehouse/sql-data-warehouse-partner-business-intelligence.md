@@ -2,20 +2,20 @@
 title: Партнеры по бизнес-аналитике хранилища данных SQL | Документация Майкрософт
 description: Содержит список сторонних партнерских решений для бизнес-аналитики с поддержкой хранилища данных SQL.
 services: sql-data-warehouse
-author: jrowlandjones
+author: mabasile-MSFT
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.subservice: consume
 ms.date: 03/27/2019
-ms.author: jrj
+ms.author: mabasile
 ms.reviewer: igorstan
-ms.openlocfilehash: 6860746a1b20fe06de2dafa6035ae560bde24a29
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 87379631cc7f7b9e31def157ba38336e41b693d8
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61477115"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65873816"
 ---
 # <a name="sql-data-warehouse-business-intelligence-partners"></a>Партнеры по бизнес-аналитике хранилища данных SQL
 Для создания собственного комплексного решение для хранилища данных можно воспользоваться одним из широкого спектра ведущих профессиональных средств.  В этой статье указаны партнеры Microsoft предлагают по решений официальный бизнес-аналитики (BI), которые поддерживают хранилище данных SQL Azure.

@@ -14,11 +14,11 @@ ms.date: 04/30/2018
 ms.author: shlo
 robots: noindex
 ms.openlocfilehash: 64fae56bfc95b62bd60444d49100689845f64278
-ms.sourcegitcommit: 7e772d8802f1bc9b5eb20860ae2df96d31908a32
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/06/2019
-ms.locfileid: "57445149"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66122662"
 ---
 # <a name="monitor-and-manage-azure-data-factory-pipelines-by-using-the-azure-portal-and-powershell"></a>Мониторинг конвейеров фабрики данных Azure и управление ими с помощью портала Azure и PowerShell
 > [!div class="op_single_selector"]
@@ -89,7 +89,7 @@ ms.locfileid: "57445149"
 
 <table>
 <tr>
-    <th align="left">Состояние</th><th align="left">Подсостояние</th><th align="left">ОПИСАНИЕ</th>
+    <th align="left">Состояние</th><th align="left">Подсостояние</th><th align="left">Описание</th>
 </tr>
 <tr>
     <td rowspan="8">Waiting</td><td>ScheduleTime</td><td>Время для выполнения среза еще не пришло.</td>
@@ -117,27 +117,27 @@ ms.locfileid: "57445149"
 </tr>
 <tr>
 <tr>
-<td rowspan="2">InProgress</td><td>Validating</td><td>Проверка выполняется.</td>
+<td rowspan="2">Выполняется</td><td>Выполняется проверка</td><td>Проверка выполняется.</td>
 </tr>
 <td>-</td>
 <td>Срез обрабатывается.</td>
 </tr>
 <tr>
-<td rowspan="4">Сбой</td><td>TimedOut</td><td>Выполнение действия заняло больше времени, чем разрешено для данного действия.</td>
+<td rowspan="4">Неудача</td><td>TimedOut</td><td>Выполнение действия заняло больше времени, чем разрешено для данного действия.</td>
 </tr>
 <tr>
-<td>Canceled</td><td>Срез был отменен пользователем.</td>
+<td>Отменено</td><td>Срез был отменен пользователем.</td>
 </tr>
 <tr>
-<td>Проверка</td><td>Сбой проверки.</td>
+<td>Проверка</td><td>Проверка не пройдена.</td>
 </tr>
 <tr>
 <td>-</td><td>Не удалось создать и/или проверить срез.</td>
 </tr>
-<td>Ready</td><td>-</td><td>Срез готов к использованию.</td>
+<td>Готово</td><td>-</td><td>Срез готов к использованию.</td>
 </tr>
 <tr>
-<td>Skipped</td><td>Нет</td><td>Срез не обрабатывается.</td>
+<td>Пропущен</td><td>Нет</td><td>Срез не обрабатывается.</td>
 </tr>
 <tr>
 <td>Нет</td><td>-</td><td>Срез, который ранее существовал с другим состоянием, но был сброшен.</td>
@@ -152,7 +152,7 @@ ms.locfileid: "57445149"
 
 Если срез выполнялся несколько раз, вы увидите несколько строк в списке **Выполнения действий** . Чтобы просмотреть сведения о выполнении действия, щелкните запись цикла в списке **Циклы выполнения действия** . Отобразятся все файлы журналов и сообщения об ошибках, если таковые были. Эта функция удобна для просмотра и обработки файлов журналов непосредственно из фабрики данных.
 
-![СВЕДЕНИЯ О ВЫПОЛНЕННОМ ДЕЙСТВИИ](./media/data-factory-monitor-manage-pipelines/activity-run-details.png)
+![Подробности о выполнении операции](./media/data-factory-monitor-manage-pipelines/activity-run-details.png)
 
 Если срез не находится в состоянии **Готово**, вы можете увидеть восходящие срезы, которые не находятся в состоянии готовности и блокируют выполнение текущего среза в списке **Неготовые восходящие срезы**. Эта функция удобна для просмотра восходящих зависимостей, если срез находится в состоянии **Ожидание**.
 
@@ -180,7 +180,7 @@ ms.locfileid: "57445149"
 ```powershell
 Suspend-AzDataFactoryPipeline [-ResourceGroupName] <String> [-DataFactoryName] <String> [-Name] <String>
 ```
-Например: 
+Например:
 
 ```powershell
 Suspend-AzDataFactoryPipeline -ResourceGroupName ADF -DataFactoryName productrecgamalbox1dev -Name PartitionProductsUsagePipeline
@@ -191,7 +191,7 @@ Suspend-AzDataFactoryPipeline -ResourceGroupName ADF -DataFactoryName productrec
 ```powershell
 Resume-AzDataFactoryPipeline [-ResourceGroupName] <String> [-DataFactoryName] <String> [-Name] <String>
 ```
-Например: 
+Например:
 
 ```powershell
 Resume-AzDataFactoryPipeline -ResourceGroupName ADF -DataFactoryName productrecgamalbox1dev -Name PartitionProductsUsagePipeline
@@ -224,7 +224,7 @@ Resume-AzDataFactoryPipeline -ResourceGroupName ADF -DataFactoryName productrecg
     ```powershell   
     Get-AzDataFactorySlice [-ResourceGroupName] <String> [-DataFactoryName] <String> [-DatasetName] <String> [-StartDateTime] <DateTime> [[-EndDateTime] <DateTime> ] [-Profile <AzureProfile> ] [ <CommonParameters>]
     ```   
-   Например: 
+   Например:
 
     ```powershell   
     Get-AzDataFactorySlice -ResourceGroupName ADF -DataFactoryName LogProcessingFactory -DatasetName EnrichedGameEventsTable -StartDateTime 2014-05-04 20:00:00
@@ -238,7 +238,7 @@ Resume-AzDataFactoryPipeline -ResourceGroupName ADF -DataFactoryName productrecg
     <DateTime> [-Profile <AzureProfile> ] [ <CommonParameters>]
     ```
 
-    Например: 
+    Например:
 
     ```powershell   
     Get-AzDataFactoryRun -ResourceGroupName ADF -DataFactoryName LogProcessingFactory -DatasetName EnrichedGameEventsTable -StartDateTime "5/5/2014 12:00:00 AM"

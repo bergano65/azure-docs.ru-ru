@@ -1,7 +1,7 @@
 ---
-title: Развертывание модели для выводов с графическим Процессором
+title: Развертывание модели для вывода с графическим Процессором
 titleSuffix: Azure Machine Learning service
-description: Узнайте, как развернуть модель глубокого обучения в качестве веб-службы, который использует графический Процессор для выводов. В этой статье модели Tensorflow развертывается в кластере Kubernetes службы Azure. Кластер использует виртуальные Машины с поддержкой GPU для размещения веб-службы и запросы на оценку выводов.
+description: Узнайте, как развернуть модель глубокого обучения в качестве веб-службы, который использует графический Процессор для вывода. В этой статье модели Tensorflow развертывается в кластере Kubernetes службы Azure. Кластер использует виртуальные Машины с поддержкой GPU для размещения веб-службы и оценка вывод запросов.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -10,35 +10,39 @@ ms.author: vaidyas
 author: csteegz
 ms.reviewer: larryfr
 ms.date: 05/02/2019
-ms.openlocfilehash: 7796e8dc07889c9816e4227f3b38904d91a24da3
-ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
+ms.openlocfilehash: 64d42b9082895e372bb780d2db023294c1a0a380
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65595664"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65884733"
 ---
-# <a name="deploy-a-deep-learning-model-for-inferencing-with-gpu"></a>Развертывание модели глубокого обучения для выводов с графическим Процессором
+# <a name="deploy-a-deep-learning-model-for-inference-with-gpu"></a>Развертывание модели глубокого обучения для вывода с графическим Процессором
 
-Сведения об использовании GPU выводов для модели, развернутые как веб-службы машинного обучения. В этой статье вы узнаете, как использовать службы машинного обучения Azure для развертывания пример модели глубокого обучения Tensorflow. Модель развертывается в кластер Azure Kubernetes Service (AKS), использует виртуальные Машины с поддержкой GPU для размещения службы. При отправке запросов к службе, эта модель использует графический Процессор для выполнения выводов.
+Узнайте, как использовать GPU определение для модели, развернутые как веб-службы машинного обучения. Определение или модель оценки, — это этап, где используется развернутой модели для прогнозирования, чаще всего для производственных данных.
 
-Графические процессоры предоставляют преимущества в производительности перед ЦП на высокий уровень параллелизма вычисления. Обучение и выводов для глубокого обучения модели (особенно для больших пакетов запросов) являются отличным использования для графических процессоров.  
+В этой статье объясняется, как использовать службы машинного обучения Azure для развертывания пример модели в кластер Azure Kubernetes Service (AKS) на с поддержкой GPU виртуальной машины (VM) глубокого обучения Tensorflow. При отправке запросов к службе, модель использует графический Процессор для выполнения рабочих нагрузок вывод.
 
-В этом примере показано, как развернуть модель TensorFlow сохранены для машинного обучения Azure с:
+Графические процессоры предоставляют преимущества в производительности перед ЦП на высокий уровень параллелизма вычисления. Отличная использования для виртуальных машин с поддержкой GPU включают в себя глубокого обучения модели обучения и вывода, особенно для больших пакетов запросов.
+
+В этом примере показано, как развернуть TensorFlow, сохранить модель машинного обучения Azure. Вам необходимо сделать следующее:
+
 * Создание кластера AKS с поддержкой GPU
-* Развертывание модели с графическим Процессором Tensorflow
+* Развертывание модели Tensorflow GPU
 
 ## <a name="prerequisites"></a>Технические условия
 
-* Рабочая область службы машинного обучения Azure
-* Python
-* Зарегистрировать Tensorflow SavedModel. Дополнительные сведения о регистрации моделей см. в разделе [развертывание моделей](https://docs.microsoft.com/azure/machine-learning/service/how-to-deploy-and-where#registermodel)
+* В рабочей области службы машинного обучения Azure
+* Дистрибутив Python
+* Зарегистрированный Tensorflow сохранить модель. Дополнительные сведения о регистрации модели, см. в разделе [развертывание моделей](../service/how-to-deploy-and-where.md#registermodel).
 
-Эта статья основана на записной книжки Jupyter, [развертывание модели Tensorflow в AKS](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/production-deploy-to-aks-gpu/production-deploy-to-aks-gpu.ipynb), использующий TensorFlow сохранен моделирует и развертывает в кластере AKS. Тем не менее с небольшие изменения в файл оценки и файла среды он применим для любой платформы машинного обучения, который поддерживает графических процессоров.  
+Эта статья основана на записную книжку Jupyter, [развертывание модели Tensorflow в AKS](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/deployment/production-deploy-to-aks-gpu/production-deploy-to-aks-gpu.ipynb). Записная книжка Jupyter использует TensorFlow, сохранения моделей и развертывает их в кластер AKS. Можно также применить записной книжки для машинного обучения. платформа с поддержкой графических процессоров путем внесения небольших изменений в файл оценки и файла среды.  
 
-## <a name="provision-aks-cluster-with-gpus"></a>Подготовка кластера AKS с графическими процессорами
-Azure имеет множество различных параметров GPU, которые можно использовать для определения. См. в разделе [список серии N](https://azure.microsoft.com/pricing/details/virtual-machines/linux/#n-series) полный разбор возможностей и затраты. 
+## <a name="provision-an-aks-cluster-with-gpus"></a>Подготовка кластера AKS с графическими процессорами
 
-Дополнительные сведения об использовании AKS с помощью службы машинного обучения Azure, см. в разделе [способ развертывания и где статьи.](https://docs.microsoft.com/azure/machine-learning/service/how-to-deploy-and-where#create-a-new-cluster)
+Azure имеет целый ряд разных возможностей GPU. Можно использовать любой из них для выводов. См. в разделе [список виртуальных машин серии N](https://azure.microsoft.com/pricing/details/virtual-machines/linux/#n-series) полный разбор возможностей и затраты.
+
+Дополнительные сведения об использовании AKS с помощью службы машинного обучения Azure, см. в разделе [развертывание и где](../service/how-to-deploy-and-where.md#deploy-aks).
 
 ```python
 # Provision AKS cluster with GPU machine
@@ -53,13 +57,11 @@ aks_target.wait_for_deployment()
 ```
 
 > [!IMPORTANT]
-> Azure будет выставлять вам счета, до тех пор, пока подготовки кластера AKS. Не забудьте удалить кластер AKS, после завершения его использования.
+> Azure будет выставлять вам счета, до тех пор, пока подготовки кластера AKS. Убедитесь в том, что удаление кластера AKS, когда закончите с ним.
 
+## <a name="write-the-entry-script"></a>Написать сценарий входа
 
-## <a name="write-entry-script"></a>Написать сценарий входа
-
-Сохраните следующий в рабочий каталог как `score.py`. Этот файл будет использоваться для оценки изображений, так как они передаются в службу. Этот файл загружает TensorFlow, сохранить модель, а затем на каждой отправки запроса передает изображения к сеансу TensorFlow и возвращает результирующее оценки.
-Другие платформы выводов потребует разные файлы оценки.
+Сохраните следующий код в рабочий каталог как `score.py`. Этот файл оценки изображений, когда они отправляются в службу. Загружает модель TensorFlow сохранен, передает изображения к сеансу TensorFlow на каждый запрос POST и затем возвращает полученный оценки. Другие платформы выводов необходимы разные файлы оценки.
 
 ```python
 import tensorflow as tf
@@ -107,8 +109,10 @@ if __name__ == "__main__":
 
 ```
 
-## <a name="define-conda-environment"></a>Определите среду Conda
+## <a name="define-the-conda-environment"></a>Определите среду conda
+
 Создайте файл среды conda `myenv.yml` для определения зависимостей для вашей службы. Очень важно указать, что вы используете `tensorflow-gpu` для достижения улучшенную производительность.
+
 ```yaml
 name: aml-accel-perf
 channels:
@@ -122,9 +126,9 @@ dependencies:
     - azureml-contrib-services
 ```
 
-## <a name="define-gpu-inferenceconfig"></a>Определение GPU InferenceConfig
+## <a name="define-the-gpu-inferenceconfig-class"></a>Определите класс GPU InferenceConfig
 
-Создание [ `InferenceConfig` ](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.inferenceconfig?view=azure-ml-py) указывает, что при включении GPU. Это позволит гарантировать, что CUDA входящую в состав образа.
+Создание `InferenceConfig` объект, который включает процессоры GPU и гарантирует, что CUDA установлен образа Docker.
 
 ```python
 from azureml.core.model import Model
@@ -143,7 +147,11 @@ inference_config = InferenceConfig(runtime= "python",
                                    gpu_enabled=True)
 ```
 
-Дополнительные сведения см. в разделе [InferenceConfig](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.inferenceconfig?view=azure-ml-py) и [AksServiceDeploymentConfiguration](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.aks.aksservicedeploymentconfiguration?view=azure-ml-py).
+Дополнительные сведения можно найти в разделе 
+
+- [Класс InferenceConfig](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.inferenceconfig?view=azure-ml-py)
+- [Класс AksServiceDeploymentConfiguration](https://docs.microsoft.com/python/api/azureml-core/azureml.core.webservice.aks.aksservicedeploymentconfiguration?view=azure-ml-py)
+
 ## <a name="deploy-the-model"></a>Развертывание модели
 
 Развертывание модели в кластере AKS и дождитесь его, чтобы создать службу.
@@ -161,13 +169,13 @@ print(aks_service.state)
 ```
 
 > [!NOTE]
-> Служба машинного обучения Azure не будет выполнять развертывание модели с `InferenceConfig` , ожидает, что GPU в кластере без GPU.
+> Служба машинного обучения Azure не развертывания модели с `InferenceConfig` объект, который ожидает, что GPU, чтобы включить в кластер, не имеет графического Процессора.
 
-Дополнительные сведения см. в разделе [модели](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py).
+Дополнительные сведения см. в разделе [класс модели](https://docs.microsoft.com/python/api/azureml-core/azureml.core.model.model?view=azure-ml-py).
 
-## <a name="issue-sample-query-to-deployed-model"></a>Образец запроса проблему для развертывания модели
+## <a name="issue-a-sample-query-to-your-deployed-model"></a>Выполните пример запроса к развернутой модели
 
-Выполните образец запроса к развернутой модели. Эта модель будет оценивать любое изображение jpeg направлять на него в запросе post. 
+Отправка тестового запроса к развернутой модели. При отправке изображения в формате jpeg в модель, она оценивает изображение.
 
 ```python
 scoring_url = aks_service.scoring_uri
@@ -180,14 +188,14 @@ r = requests.post(scoring_url, data = img_data, headers=headers)
 ```
 
 > [!IMPORTANT]
-> Чтобы оптимизировать задержку и пропускную способность, ваш клиент должен находиться в том же регионе Azure, что и конечная точка.  В настоящее время API создаются в регионе Azure "Восточная часть США".
+> Чтобы свести к минимуму задержки и оптимизации пропускной способности, убедитесь, что ваш клиент находится в том же регионе Azure как конечной точки. В этом примере API-интерфейсы создаются в регионе Azure восточная часть США.
 
-## <a name="cleaning-up-the-resources"></a>Очистка ресурсов
+## <a name="clean-up-the-resources"></a>Очистка ресурсов
 
-Удалите ресурсы, Закончив с этой демонстрационной версией.
+Удаление ресурсов после завершения работы с примером.
 
 > [!IMPORTANT]
-> Azure будет счета зависит от того, как долго кластер AKS развертывается. Убедитесь в том, что их можно очистить после всех возложенных на него.
+> Azure выставляет вам на основании как долго кластер AKS развертывается. Убедитесь в том, что их можно очистить после всех возложенных на него.
 
 ```python
 aks_service.delete()
@@ -196,6 +204,6 @@ aks_target.delete()
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Развернуть модель на основе FPGA](https://docs.microsoft.com/azure/machine-learning/service/how-to-deploy-fpga-web-service)
-* [Развернуть модель с помощью ONNX](https://docs.microsoft.com/azure/machine-learning/service/how-to-build-deploy-onnx#deploy)
-* [Обучение модели Tensorflow DNN](https://docs.microsoft.com/azure/machine-learning/service/how-to-train-tensorflow)
+* [Развернуть модель на основе FPGA](../service/how-to-deploy-fpga-web-service.md)
+* [Развернуть модель с помощью ONNX](../service/concept-onnx.md#deploy-onnx-models-in-azure)
+* [Обучение модели Tensorflow DNN](../service/how-to-train-tensorflow.md)

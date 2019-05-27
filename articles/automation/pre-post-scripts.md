@@ -6,15 +6,15 @@ ms.service: automation
 ms.subservice: update-management
 author: georgewallace
 ms.author: gwallace
-ms.date: 04/15/2019
+ms.date: 05/17/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 84df04a6d3fbd634524d3819657860c6a3448d65
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 7317b634ee4c8886ce5c99bb2b3395d7d1f646d5
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60499857"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65913865"
 ---
 # <a name="manage-pre-and-post-scripts"></a>Управление скрипты предварительного и последующего
 
@@ -30,9 +30,7 @@ ms.locfileid: "60499857"
 
 ![Выбор сценариев](./media/pre-post-scripts/select-scripts.png)
 
-Выберите нужный сценарий. Например, в этом примере выбран модуль Runbook **UpdateManagement-TurnOnVms**. После выбора модуля Runbook откроется страница **Настройка сценария**. Укажите значения параметров и выберите вариант **Сценарий предварительного выполнения**. Когда закончите, нажмите кнопку **ОК**.
-
-![Настройка сценария](./media/pre-post-scripts/configure-script.png)
+Выберите нужный сценарий. Например, в этом примере выбран модуль Runbook **UpdateManagement-TurnOnVms**. При выборе модуля runbook **настроить скрипт** откроется страница, выберите **скрипт предварительного выполнения**. Когда закончите, нажмите кнопку **ОК**.
 
 Повторите эту процедуру для сценария **UpdateManagement-TurnOffVms**. Но теперь для параметра **Тип сценария** выберите **Сценарий последующего выполнения**.
 
@@ -44,7 +42,7 @@ ms.locfileid: "60499857"
 
 Когда развертывание обновлений будет готово, откройте страницу **Развертывания обновлений** и проверьте результаты. Здесь вы увидите, среди прочего, состояние обоих сценариев.
 
-![Результаты обновления](./media/pre-post-scripts/update-results.png)
+![Обновление результатов](./media/pre-post-scripts/update-results.png)
 
 Чтобы получить дополнительные сведения о том или ином сценарии, щелкните строку состояния развертывания обновлений. В открывшемся окне будет ссылка на код сценария, который выполнялся.
 
@@ -87,7 +85,7 @@ foreach($summary in $finalStatus)
 
 ### <a name="softwareupdateconfigurationruncontext-properties"></a>Свойства SoftwareUpdateConfigurationRunContext
 
-|Свойство  |ОПИСАНИЕ  |
+|Свойство  |Описание  |
 |---------|---------|
 |SoftwareUpdateConfigurationName     | Имя конфигурации обновления программного обеспечения        |
 |SoftwareUpdateConfigurationRunId     | Уникальный идентификатор для запуска.        |

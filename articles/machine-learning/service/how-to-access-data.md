@@ -11,12 +11,12 @@ author: mx-iao
 ms.reviewer: sgilley
 ms.date: 02/25/2019
 ms.custom: seodec18
-ms.openlocfilehash: 0ab01187b03b3d658b171029003667588382bd7f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 15118535578419f9e1230c5b2fcfd0d7c42257ea
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60820295"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65909000"
 ---
 # <a name="access-data-from-your-datastores"></a>Доступ к данным из вашего хранилища данных
 
@@ -30,7 +30,7 @@ ms.locfileid: "60820295"
 
 ## <a name="prerequisites"></a>Технические условия
 
-Для использования хранилищ данных необходима [рабочая область](concept-azure-machine-learning-architecture.md#workspace).
+Для использования хранилищ данных необходима [рабочая область](concept-workspace.md).
 
 Необходимо начать с [создания новой рабочей области](setup-create-workspace.md#sdk) или получить существующую.
 
@@ -74,7 +74,7 @@ ds = ws.get_default_datastore()
                                                create_if_not_exists=True)
   ```
 
-+ Для **хранилище данных общей папки Azure файловой**, использовать [ `register_azure_file_share()` ](https://docs.microsoft.com/python/api/azureml-core/azureml.core.datastore(class)?view=azure-ml-py#register-azure-file-share-workspace--datastore-name--file-share-name--account-name--sas-token-none--account-key-none--protocol-none--endpoint-none--overwrite-false--create-if-not-exists-false--skip-validation-false-). Пример. 
++ Для **хранилище данных общей папки Azure файловой**, использовать [ `register_azure_file_share()` ](https://docs.microsoft.com/python/api/azureml-core/azureml.core.datastore(class)?view=azure-ml-py#register-azure-file-share-workspace--datastore-name--file-share-name--account-name--sas-token-none--account-key-none--protocol-none--endpoint-none--overwrite-false--create-if-not-exists-false--skip-validation-false-). Например: 
   ```Python
   ds = Datastore.register_azure_file_share(workspace=ws, 
                                            datastore_name='your datastore name', 
@@ -115,7 +115,7 @@ ws.set_default_datastore('your datastore name')
 ## <a name="upload--download-data"></a>Отправка и загрузка данных
 [ `upload()` ](https://docs.microsoft.com/python/api/azureml-core/azureml.data.azure_storage_datastore.azureblobdatastore?view=azure-ml-py#download-target-path--prefix-none--overwrite-false--show-progress-true-) И [ `download()` ](https://docs.microsoft.com/python/api/azureml-core/azureml.data.azure_storage_datastore.azureblobdatastore?view=azure-ml-py#download-target-path--prefix-none--overwrite-false--show-progress-true-) зависят от методов, описанных в следующих примерах и работают аналогично для [AzureBlobDatastore](https://docs.microsoft.com/python/api/azureml-core/azureml.data.azure_storage_datastore.azureblobdatastore?view=azure-ml-py) и [AzureFileDatastore](https://docs.microsoft.com/python/api/azureml-core/azureml.data.azure_storage_datastore.azurefiledatastore?view=azure-ml-py) классы.
 
-### <a name="upload"></a>Отправка
+### <a name="upload"></a>Отправьте
 
  Каталог или отдельные файлы передайте в хранилище данных с помощью пакета SDK для Python.
 
@@ -157,7 +157,7 @@ ds.download(target_path='your target path',
 ----|-----|--------
 Подключить| [`as_mount()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#as-mount--)| Используйте для подключения к хранилищу данных в целевой объект вычислений.
 Download (Скачать)|[`as_download()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#as-download-path-on-compute-none--overwrite-false-)|Использовать для загрузки содержимого из хранилища данных в расположении, заданном параметром `path_on_compute`. <br> Для контекста обучающих запусках данная загрузка происходит до запуска.
-Отправка|[`as_upload()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#as-upload-path-on-compute-none--overwrite-false-)| Передайте файл из местоположения, указанного по `path_on_compute` для хранилища данных. <br> Для контекста обучающих запусках эта отправка после запуска.
+Отправьте|[`as_upload()`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.data_reference.datareference?view=azure-ml-py#as-upload-path-on-compute-none--overwrite-false-)| Передайте файл из местоположения, указанного по `path_on_compute` для хранилища данных. <br> Для контекста обучающих запусках эта отправка после запуска.
 
  ```Python
 import azureml.data

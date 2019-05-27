@@ -6,14 +6,14 @@ ms.service: iot-hub
 services: iot-hub
 ms.devlang: c
 ms.topic: conceptual
-ms.date: 08/25/2017
+ms.date: 05/17/2019
 ms.author: yizhon
-ms.openlocfilehash: a0099fa085e21c381b74dc2690ffcf0870345f21
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: d758d761e560642de76e149c83fc6898aa78bafb
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60401311"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65910331"
 ---
 # <a name="azure-iot-device-sdk-for-c"></a>Пакет SDK для устройств Azure IoT для C
 
@@ -126,7 +126,7 @@ static const char* connectionString = "[device connection string]";
   ![Обозреватель решений Visual Studio](./media/iot-hub-device-sdk-c-intro/iothub-client-sample-mqtt.png)
 
 > [!NOTE]
-> Если открыть этот проект в Visual Studio 2017, следуйте указаниям, чтобы перенаправить его для открытия в последней версии.
+> Если Visual Studio предлагает изменить целевую платформу проекта до последней версии, примите этот запрос.
 
 Это решение содержит один проект: В этом решении установлено четыре пакета NuGet:
 
@@ -339,7 +339,7 @@ IoTHubClient_LL_Destroy(iotHubClientHandle);
   ![Решение Visual Studio для примера mqtt](./media/iot-hub-device-sdk-c-intro/simplesample_mqtt.png)
 
 > [!NOTE]
-> Если открыть этот проект в Visual Studio 2017, следуйте указаниям, чтобы перенаправить его для открытия в последней версии.
+> Если Visual Studio предлагает изменить целевую платформу проекта до последней версии, примите этот запрос.
 
 Этот пример, как и предыдущий, включает несколько пакетов NuGet:
 
@@ -414,7 +414,7 @@ END_NAMESPACE(WeatherStation);
 
 Данные и действия, определенные в модели, определяют поверхность API, которую можно использовать для отправки сообщений в Центр Интернета вещей и ответа на сообщения, отправленные устройству. Лучше всего это показать на примере.
 
-### <a name="send-messages"></a>Отправка сообщений
+### <a name="send-messages"></a>Отправить сообщения
 
 Модель определяет данные, которые вы можете отправить в Центр Интернета вещей. В нашем примере это один из двух элементов данных, определенных с помощью макроса **WITH_DATA**. Чтобы отправить в Центр Интернета вещей значения **DeviceId** и **WindSpeed**, необходимо выполнить несколько действий. Первое действие — определение данных для отправки.
 
@@ -483,7 +483,7 @@ void sendCallback(IOTHUB_CLIENT_CONFIRMATION_RESULT result, void* userContextCal
 
 Это все, что требуется для отправки сообщений из устройства в облако. Единственное, о чем осталось рассказать, — это получение сообщений.
 
-### <a name="receive-messages"></a>Получение сообщений
+### <a name="receive-messages"></a>Получить сообщения
 
 Получение сообщений выполняется аналогично обработке сообщений в библиотеке **IoTHubClient** . Сначала вам нужно зарегистрировать функцию обратного вызова сообщения:
 

@@ -2,20 +2,20 @@
 title: Создание интегрированных решений с помощью хранилища данных SQL | Документация Майкрософт
 description: 'Инструменты и партнерские решения, которые интегрируются с хранилищем данных SQL '
 services: sql-data-warehouse
-author: KavithaJonnakuti
+author: mlee3gsd
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
-ms.subservice: consume
+ms.subservice: integration
 ms.date: 04/17/2018
-ms.author: kavithaj
+ms.author: martinle
 ms.reviewer: igorstan
-ms.openlocfilehash: d2fcdd4aa28a7d3b1a8e50629e5be1d88046a12b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 43a714ae175e0d60f20b5e7ad79e1fa90125b0f8
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60747563"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65873343"
 ---
 # <a name="integrate-other-services-with-sql-data-warehouse"></a>Интеграция других служб с хранилищем данных SQL
 Помимо базовых возможностей, хранилище данных SQL позволяет пользователям интегрировать многие другие службы в Azure. К этим службам относятся следующие:

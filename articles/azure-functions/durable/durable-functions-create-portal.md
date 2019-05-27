@@ -8,15 +8,14 @@ keywords: ''
 ms.service: azure-functions
 ms.devlang: multiple
 ms.topic: conceptual
-origin.date: 10/23/2018
-ms.date: 03/25/2019
-ms.author: v-junlch
-ms.openlocfilehash: 1c60bd4dae6c279ccff637ff0aa798c48ebec6f1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 10/23/2018
+ms.author: azfuncdf, glenga
+ms.openlocfilehash: 705a43f1ef35f953d1b87c7c44bbc45fcb4334be
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60710954"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65872862"
 ---
 # <a name="create-durable-functions-using-the-azure-portal"></a>Создание Устойчивых функций с помощью портала Azure
 
@@ -24,7 +23,7 @@ ms.locfileid: "60710954"
 
 > [!NOTE]
 > 
-> * Если вы разрабатываете Устойчивые функции на языке C#, вместо этого рассмотрите возможность [разработки с помощью Visual Studio 2017](durable-functions-create-first-csharp.md).
+> * Если вы разрабатываете устойчивых функций в C#, следует рассматривать [разработки Visual Studio 2019](durable-functions-create-first-csharp.md).
 > * Если вы разрабатываете Устойчивые функции на языке JavaScript, вместо этого рассмотрите возможность [разработки с помощью Visual Studio Code](./quickstart-js-vscode.md).
 
 ## <a name="create-a-function-app"></a>Создание приложения-функции
@@ -92,7 +91,7 @@ ms.locfileid: "60710954"
 1. Используя средство HTTP, например Postman или cURL, отправьте запрос POST к скопированному URL-адресу. В следующем примере представлена команда cURL, которая отправляет запрос POST к устойчивой функции:
 
     ```bash
-    curl -X POST https://{your-function-app-name}.chinacloudsites.cn/api/orchestrators/HelloSequence
+    curl -X POST https://{your-function-app-name}.azurewebsites.net/api/orchestrators/HelloSequence
     ```
 
     В этом примере `{your-function-app-name}` — это домен, который является именем приложения-функции. Ответное сообщение содержит набор конечных точек URI, с помощью которых можно отслеживать и контролировать выполнение, которое выглядит следующим образом:
@@ -141,5 +140,3 @@ ms.locfileid: "60710954"
 
 > [!div class="nextstepaction"]
 > [Дополнительные сведения о распространенных шаблонах устойчивых функций](durable-functions-concepts.md)
-
-<!-- Update_Description: wording update -->

@@ -13,12 +13,12 @@ ms.topic: article
 ms.date: 03/28/2019
 ms.author: routlaw
 ms.custom: seodec18
-ms.openlocfilehash: 883042e7c8abb43338c55a76bba3d64844ce1c56
-ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
+ms.openlocfilehash: 3361013d8421cd859c834c07018356318d5e2989
+ms.sourcegitcommit: f4469b7bb1f380bf9dddaf14763b24b1b508d57c
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65604345"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66179812"
 ---
 # <a name="configure-a-linux-java-app-for-azure-app-service"></a>Настройка приложения Linux Java для службы приложений Azure
 
@@ -65,7 +65,7 @@ ms.locfileid: "65604345"
 
 Служба приложений Azure для Linux поддерживает поле настройки и настройки с помощью портала Azure и интерфейса командной строки. Ознакомьтесь со следующими статьями для конфигурацию Java конкретного веб-приложения:
 
-- [Настройка параметров службы приложений](../web-sites-configure.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json)
+- [Настройка параметров приложения](../configure-common.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#configure-app-settings)
 - [Настройка личного домена](../app-service-web-tutorial-custom-domain.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json)
 - [Включение SSL](../app-service-web-tutorial-custom-ssl.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json)
 - [Добавление CDN](../../cdn/cdn-add-to-web-app.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json)
@@ -73,7 +73,7 @@ ms.locfileid: "65604345"
 
 ### <a name="set-java-runtime-options"></a>Настройка параметров среды выполнения Java
 
-Чтобы задать объем выделенной памяти и других параметров среды выполнения виртуальной машины Java в средах Java SE и Tomcat, создайте [параметр приложения](../web-sites-configure.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#app-settings) с именем `JAVA_OPTS` с параметрами. При запуске служба приложений для Linux передает этот параметр в качестве переменной среды в среду выполнения Java.
+Чтобы задать объем выделенной памяти и других параметров среды выполнения виртуальной машины Java в средах Java SE и Tomcat, создайте [параметр приложения](../configure-common.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#configure-app-settings) с именем `JAVA_OPTS` с параметрами. При запуске служба приложений для Linux передает этот параметр в качестве переменной среды в среду выполнения Java.
 
 На портале Azure в разделе **Параметры приложения** для веб-приложения создайте параметр приложения `JAVA_OPTS`, включающий в себя дополнительные параметры, такие как `-Xms512m -Xmx1204m`.
 
@@ -140,11 +140,45 @@ az webapp start --name <app-name> --resource-group <resource-group-name>
 
 ### <a name="authenticate-users"></a>Проверка подлинности пользователей
 
-Настроить проверку подлинности приложений на портале Azure с помощью **проверки подлинности и авторизации** параметр. Вы можете включить аутентификацию с помощью Azure Active Directory или имен для входа в социальные сети, таких как Facebook, Google или GitHub. На портале Azure можно настроить только один поставщик аутентификации. Дополнительные сведения приведены в разделе [Настройка приложения службы приложений для использования входа с помощью Azure Active Directory](../configure-authentication-provider-aad.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json) и связанных статьях о других поставщиках удостоверений.
+Настроить проверку подлинности приложений на портале Azure с помощью **проверки подлинности и авторизации** параметр. Вы можете включить аутентификацию с помощью Azure Active Directory или имен для входа в социальные сети, таких как Facebook, Google или GitHub. На портале Azure можно настроить только один поставщик аутентификации. Дополнительные сведения приведены в разделе [Настройка приложения службы приложений для использования входа с помощью Azure Active Directory](../configure-authentication-provider-aad.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json) и связанных статьях о других поставщиках удостоверений. Если необходимо включить несколько поставщиков входа, следуйте инструкциям в статье [Настройка проверки подлинности и авторизации в службе приложений Azure](../app-service-authentication-how-to.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json).
 
-Если необходимо включить несколько поставщиков входа, следуйте инструкциям в статье [Настройка проверки подлинности и авторизации в службе приложений Azure](../app-service-authentication-how-to.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json).
+#### <a name="tomcat"></a>Tomcat
 
- Разработчики для Spring Boot могут использовать [краткое руководство по использованию Spring Boot и Azure Active Directory](/java/azure/spring-framework/configure-spring-boot-starter-java-app-with-azure-active-directory?view=azure-java-stable), чтобы защитить приложения с помощью привычных заметок и интерфейсов API Spring Security. Увеличьте максимальный размер заголовка в файле `application.properties`. Мы рекомендуем использовать значение `16384`.
+Tomcat приложение может получить доступ пользователя утверждения непосредственно из сервлет Tomcat путем приведения основной объект объект карты. Объект-сопоставление каждого типа утверждения, сопоставляется коллекцию утверждений для этого типа. В следующем коде `request` является экземпляром класса `HttpServletRequest`.
+
+```java
+Map<String, Collection<String>> map = (Map<String, Collection<String>>) request.getUserPrincipal();
+```
+
+Теперь вы можете проверить `Map` объект для любого конкретного утверждения. Например в следующем фрагменте кода выполняется итерация по все типы утверждений и печатает содержимое каждой коллекции.
+
+```java
+for (Object key : map.keySet()) {
+        Object value = map.get(key);
+        if (value != null && value instanceof Collection {
+            Collection claims = (Collection) value;
+            for (Object claim : claims) {
+                System.out.println(claims);
+            }
+        }
+    }
+```
+
+Чтобы завершить сеансы пользователей и выполнения других действий, см. документацию на [проверку подлинности службы приложений и авторизации использования](https://docs.microsoft.com/en-us/azure/app-service/app-service-authentication-how-to). Имеется также Официальная документация на Tomcat [HttpServletRequest интерфейс](https://tomcat.apache.org/tomcat-5.5-doc/servletapi/javax/servlet/http/HttpServletRequest.html) и его методы. Следующие сервлетов, которые также являются структура данных методов в зависимости от конфигурации службы приложений:
+
+```java
+public boolean isSecure()
+public String getRemoteAddr()
+public String getRemoteHost()
+public String getScheme()
+public int getServerPort()
+```
+
+Чтобы отключить эту функцию, создайте параметр приложения с именем `WEBSITE_AUTH_SKIP_PRINCIPAL` со значением `1`. Чтобы отключить все фильтры сервлетов, добавленные службы приложений, создайте параметр с именем `WEBSITE_SKIP_FILTERS` со значением `1`.
+
+#### <a name="spring-boot"></a>Spring Boot
+
+Разработчики для Spring Boot могут использовать [краткое руководство по использованию Spring Boot и Azure Active Directory](/java/azure/spring-framework/configure-spring-boot-starter-java-app-with-azure-active-directory?view=azure-java-stable), чтобы защитить приложения с помощью привычных заметок и интерфейсов API Spring Security. Увеличьте максимальный размер заголовка в файле `application.properties`. Мы рекомендуем использовать значение `16384`.
 
 ### <a name="configure-tlsssl"></a>Настройка TLS/SSL
 
@@ -232,7 +266,7 @@ az webapp start --name <app-name> --resource-group <resource-group-name>
 </appSettings>
 ```
 
-Переменные среды можно также задать в колонке "Параметры приложения" на портале Azure.
+Или задать переменные среды **конфигурации** > **параметры приложения** страницы на портале Azure.
 
 Затем определите, должен ли источник данных быть доступным для одного приложения или для всех приложений, работающих в сервлете Tomcat.
 
@@ -327,10 +361,7 @@ az webapp start --name <app-name> --resource-group <resource-group-name>
 
 Чтобы подключиться к источникам данных в приложениях Spring Boot, мы рекомендуем Создание строк подключения и вставляя их в вашей `application.properties` файл.
 
-1. В разделе «Параметры приложения» в колонке службы приложений задайте имя для строки, вставьте строку подключения JDBC в соответствующее поле и задайте для этого типа «Custom». Можно дополнительно задать эту строку подключения как параметр слота.
-
-    ! [Создание строки подключения на портале.]
-    
+1. В разделе «Конфигурация» страницы службы приложений задайте имя для строки, вставьте строку подключения JDBC в соответствующее поле и задайте для этого типа «Custom». Можно дополнительно задать эту строку подключения как параметр слота.
 
     Эта строка подключения имеет доступ к нашему приложению как переменную среды с именем `CUSTOMCONNSTR_<your-string-name>`. Например, строка подключения, созданных ранее будет называться `CUSTOMCONNSTR_exampledb`.
 
@@ -383,13 +414,13 @@ az webapp start --name <app-name> --resource-group <resource-group-name>
 
 Укажите в поле **Сценарий запуска** на портале Azure расположение скрипта запуска оболочки, например `/home/site/deployments/tools/your-startup-script.sh`.
 
-Укажите [параметры приложения](../web-sites-configure.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#app-settings) в конфигурацию приложения, чтобы передать переменные среды для использования в скрипте. В параметрах приложения хранятся строки подключения и другие секретные данные, необходимые для настройки приложения из системы управления версиями.
+Укажите [параметры приложения](../configure-common.md?toc=%2fazure%2fapp-service%2fcontainers%2ftoc.json#configure-app-settings) в конфигурацию приложения, чтобы передать переменные среды для использования в скрипте. В параметрах приложения хранятся строки подключения и другие секретные данные, необходимые для настройки приложения из системы управления версиями.
 
 ### <a name="modules-and-dependencies"></a>Модули и зависимости
 
 Чтобы установить модули и связанные зависимости в пути к классам Wildfly из интерфейса командной строки JBoss, нужно создать следующие файлы в соответствующем каталоге. Для некоторых модулей и зависимостей может понадобиться дополнительная настройка (например, JNDI или других API). Следующий список включает минимальный набор параметров для настройки зависимостей, применимый в большинстве случаев.
 
-- [Дескриптор модуля XML](https://jboss-modules.github.io/jboss-modules/manual/#descriptors). Этот XML-файл определяет имя, атрибуты и зависимости вашего модуля. Этот [пример файла module.xml](https://access.redhat.com/documentation/jboss_enterprise_application_platform/6/html/administration_and_configuration_guide/example_postgresql_xa_datasource) определяет модуль Postgres, зависимость JDBC (файл с расширением .jar) и другие требуемые зависимости модуля.
+- [Дескриптор модуля XML](https://jboss-modules.github.io/jboss-modules/manual/#descriptors). Этот XML-файл определяет имя, атрибуты и зависимости вашего модуля. Этот [пример файла module.xml](https://access.redhat.com/documentation/en-us/jboss_enterprise_application_platform/6/html/administration_and_configuration_guide/example_postgresql_xa_datasource) определяет модуль Postgres, зависимость JDBC (файл с расширением .jar) и другие требуемые зависимости модуля.
 - Все необходимые зависимости для вашего модуля (файлы с расширением .jar).
 - Скрипт с командами интерфейса командной строки JBoss CLI для настройки нового модуля. Этот файл будет содержать команды для выполнения в интерфейсе командной строки JBoss, благодаря которым сервер сможет использовать зависимости. См. [документацию по командам для добавления модулей, источников данных и поставщиков службы обмена сообщениями ](https://access.redhat.com/documentation/red_hat_jboss_enterprise_application_platform/7.0/html-single/management_cli_guide/#how_to_cli).
 - Скрипт запуска Bash для вызова интерфейса командной строки JBoss и выполнения скрипта из предыдущего шага. Этот файл будет выполняться при перезапуске экземпляра Службы приложений или подготовке новых экземпляров в ходе горизонтального масштабирования. Этот скрипт запуска позволяет реализовать и другие конфигурации для приложения, так как команды JBoss передаются в интерфейс командной строки JBoss. Как минимум, этот файл можно использовать как отдельную команду для передачи соответствующего скрипта JBoss в интерфейс командной строки JBoss:
@@ -401,7 +432,7 @@ az webapp start --name <app-name> --resource-group <resource-group-name>
 Получив файлы и содержимое для модуля, выполните следующие действия, чтобы добавить модуль Wildfly на сервер приложений.
 
 1. Передайте файлы по FTP в каталог `/home/site/deployments/tools` своего экземпляра Службы приложений. См. инструкции по получению учетных данных FTP.
-2. В колонке "Параметры приложения" на портале Azure, укажите в поле "Скрипт запуска" расположение скрипта запуска оболочки, например `/home/site/deployments/tools/your-startup-script.sh`.
+2. В **конфигурации** > **Общие параметры** страницу портала, задайте «сценарий запуска» Azure поле к расположению сценария запуска оболочки, например `/home/site/deployments/tools/your-startup-script.sh` .
 3. Перезапустите экземпляр службы приложений, нажав клавишу **перезапустите** кнопку **Обзор** раздела на портале или с помощью Azure CLI.
 
 ### <a name="configure-data-source-connections"></a>Настройка соединения с источниками данных

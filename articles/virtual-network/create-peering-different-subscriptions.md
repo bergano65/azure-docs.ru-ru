@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/09/2019
 ms.author: anavin
-ms.openlocfilehash: 3294eda4d9330332bf23c3a8f1804f067373bf7a
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.openlocfilehash: cf414cf08771090990775d124e27222e51f786e2
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59528269"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "66122017"
 ---
 # <a name="create-a-virtual-network-peering---resource-manager-different-subscriptions"></a>Создание пиринга виртуальных сетей, развернутых с помощью Resource Manager в разных подписках
 
@@ -25,11 +25,11 @@ ms.locfileid: "59528269"
 
 Действия по созданию пиринга виртуальных сетей зависят от того, находятся ли виртуальные сети в одной или разных подписках, и того, какая [модель развертывания Azure](../azure-resource-manager/resource-manager-deployment-model.md?toc=%2fazure%2fvirtual-network%2ftoc.json) использовалась для их создания. Узнайте, как создать пиринг виртуальных сетей в других сценариях, выбрав сценарий в следующей таблице.
 
-|Модель развертывания Azure  | Подписка Azure.  |
+|Модель развертывания Azure  | Подписка Azure  |
 |--------- |---------|
 |[Обе Resource Manager](tutorial-connect-virtual-networks-portal.md) |Аналогично|
 |[Одна виртуальная сеть Resource Manager, одна классическая виртуальная сеть](create-peering-different-deployment-models.md) |Аналогично|
-|[Одна виртуальная сеть Resource Manager, одна классическая виртуальная сеть](create-peering-different-deployment-models-subscriptions.md) |Разные|
+|[Одна виртуальная сеть Resource Manager, одна классическая виртуальная сеть](create-peering-different-deployment-models-subscriptions.md) |Отличающиеся|
 
 Невозможно создать пиринг между двумя виртуальными сетями, созданными с помощью классической модели развертывания. Если вам необходимо подключить виртуальные сети, созданные с помощью классической модели развертывания, можно использовать [VPN-шлюз](../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) Azure.
 
@@ -314,7 +314,7 @@ ms.locfileid: "59528269"
    ```
 
 2. Выйдите из Azure как пользователь A, а затем войдите как пользователь B.
-3. Выполните следующую команду.
+3. Выполните следующую команду:
 
    ```azurecli-interactive
    az group delete --name myResourceGroupB --yes
@@ -329,7 +329,7 @@ ms.locfileid: "59528269"
    ```
 
 2. Выйдите из Azure как пользователь A, а затем войдите как пользователь B.
-3. Выполните следующую команду.
+3. Выполните следующую команду:
 
    ```powershell
    Remove-AzResourceGroup -Name myResourceGroupB -force

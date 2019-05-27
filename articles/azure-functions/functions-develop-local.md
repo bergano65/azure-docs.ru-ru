@@ -10,12 +10,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 09/04/2018
 ms.author: glenga
-ms.openlocfilehash: 6486b38040fc92c2ece839801293817c4afc7cf5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 4721d87ab932f2e61346af3a48193e7075128622
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60614020"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65872730"
 ---
 # <a name="code-and-test-azure-functions-locally"></a>Как программировать и тестировать Функции Azure в локальной среде
 
@@ -27,9 +27,9 @@ ms.locfileid: "60614020"
 
 |Среда                              |Языки         |Описание|
 |-----------------------------------------|------------|---|
-| [Командная строка или терминал](functions-run-local.md) | [C# (библиотека классов)](functions-dotnet-class-library.md), [скрипт C# (CSX)](functions-reference-csharp.md), [JavaScript](functions-reference-node.md) | [Основные инструменты службы "Функции Azure"] предоставляют базовую среду выполнения и шаблоны для создания функций, которые обеспечивают возможность локальной разработки. Версия 2.x поддерживает разработку в Linux, MacOS и Windows. Во всех средах применяют основные инструменты для локальной среды выполнения средства "Функции". |
+| [Командная строка или терминал](functions-run-local.md) | [C# (библиотека классов)](functions-dotnet-class-library.md), [скрипт C# (CSX)](functions-reference-csharp.md), [JavaScript](functions-reference-node.md) | [Основные инструменты службы "Функции Azure"] предоставляет среда выполнения и шаблоны для создания функции, которые позволяют локальной разработки. Версия 2.x поддерживает разработку в Linux, MacOS и Windows. Во всех средах применяют основные инструменты для локальной среды выполнения средства "Функции". |
 |[Visual Studio Code](functions-create-first-function-vs-code.md)| [C# (библиотека классов)](functions-dotnet-class-library.md), [скрипт C# (CSX)](functions-reference-csharp.md), [JavaScript](functions-reference-node.md) | [Расширение Функций Azure для VS Code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) добавляет поддержку средства "Функции" в VS Code. Требуются основные инструменты. Поддерживает разработку на платформах Linux, MacOS и Windows при использовании версии 2.x основных инструментов. Для получения дополнительных сведений см. статью [Создание функции в Azure с помощью Visual Studio Code](functions-create-first-function-vs-code.md). |
-| [Visual Studio 2017](functions-develop-vs.md) | [C# (библиотека классов)](functions-dotnet-class-library.md) | Инструменты решения "Функции Azure" включены в рабочую нагрузку **разработки Azure** в [Visual Studio 2017 версии 15.5](https://www.visualstudio.com/vs/) или более поздних версий. Позволяет компилировать функции в библиотеке классов и публиковать библиотеки DLL в Azure. Включает основные инструменты для локального тестирования. Дополнительные сведения см. в статье [Инструменты Функций Azure для Visual Studio](functions-develop-vs.md). |
+| [Visual Studio 2019](functions-develop-vs.md) | [C# (библиотека классов)](functions-dotnet-class-library.md) | Средства функций Azure включены в **разработки Azure** рабочую нагрузку [Visual Studio 2019](https://www.visualstudio.com/vs/) и более поздних версий. Позволяет компилировать функции в библиотеке классов и публиковать библиотеки DLL в Azure. Включает основные инструменты для локального тестирования. Дополнительные сведения см. в статье [Инструменты Функций Azure для Visual Studio](functions-develop-vs.md). |
 | [Maven](functions-create-first-java-maven.md) (различные) | [Java](functions-reference-java.md) | Интегрируется с основными инструментами и обеспечивает возможность разработки функций Java. Версия 2.x поддерживает разработку в Linux, MacOS и Windows. Дополнительные сведения см. в статье [Создание первой функции с помощью Java и Maven](functions-create-first-java-maven.md). Также поддерживает разработку с помощью [Eclipse](functions-create-maven-eclipse.md) и [IntelliJ IDEA](functions-create-maven-intellij.md). |
 
 [!INCLUDE [Don't mix development environments](../../includes/functions-mixed-dev-environments.md)]
@@ -38,7 +38,7 @@ ms.locfileid: "60614020"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-+ Дополнительные сведения о локальной разработке скомпилированных функций C# с помощью Visual Studio 2017 см. в статье [Инструменты Функций Azure для Visual Studio](functions-develop-vs.md).
++ Дополнительные сведения о локальной разработки компиляции C# функции с помощью Visual Studio 2019 г., см. в разделе [разрабатывать функции Azure с помощью Visual Studio](functions-develop-vs.md).
 + Дополнительные сведения о локальной разработке функций с помощью VS Code на компьютерах с ОС Mac, Linux или Windows см. в статье [VS Code documentation for Azure Functions](https://code.visualstudio.com/tutorials/functions-extension/getting-started) (Документация VS Code для Функций Azure).
 + Дополнительные сведения о разработке функций из командной строки или терминала см. в статье [Как программировать и тестировать Функции Azure в локальной среде](functions-run-local.md).
 

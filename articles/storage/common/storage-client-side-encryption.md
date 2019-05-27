@@ -9,18 +9,18 @@ ms.date: 10/20/2017
 ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
-ms.openlocfilehash: d8ef24bfec541ec65c74f77a90aa9476a8b298b2
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 93386bd1fa3be88cbcdfab3d59ae07d3eb2b046d
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65153268"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65911924"
 ---
 # <a name="client-side-encryption-and-azure-key-vault-for-microsoft-azure-storage"></a>Шифрование на стороне клиента для службы хранилища Microsoft Azure
 [!INCLUDE [storage-selector-client-side-encryption-include](../../../includes/storage-selector-client-side-encryption-include.md)]
 
 ## <a name="overview"></a>Обзор
-[Клиентская библиотека службы хранилища Azure для пакета Nuget для .NET](https://www.nuget.org/packages/WindowsAzure.Storage) поддерживает шифрование данных в клиентских приложениях перед их отправкой в службу хранилища Azure и их расшифровку во время скачивания клиентом. Библиотека также поддерживает интеграцию с [хранилищем ключей Azure](https://azure.microsoft.com/services/key-vault/) для управления ключами учетной записи хранения.
+[Клиентская библиотека хранилища Azure для .NET](/dotnet/api/overview/azure/storage/client) поддерживает шифрование данных в клиентских приложениях перед их отправкой в службу хранилища Azure и расшифровку данных во время скачивания клиентом. Библиотека также поддерживает интеграцию с [хранилищем ключей Azure](https://azure.microsoft.com/services/key-vault/) для управления ключами учетной записи хранения.
 
 Подробный учебник, в котором последовательно описывается процесс шифрования больших двоичных объектов на стороне клиента с помощью хранилища ключей Azure, приведен в разделе [Шифрование и расшифровка BLOB-объектов в хранилище Microsoft Azure с помощью хранилища ключей Azure](../blobs/storage-encrypt-decrypt-blobs-key-vault.md).
 
@@ -242,7 +242,7 @@ ms.locfileid: "65153268"
 Обратите внимание, что шифрование результатов анализа данных хранилища отрицательно влияет на производительность. Ключ содержимого и вектор инициализации необходимо создать, само содержимое — зашифровать, а дополнительные метаданные — отформатировать и передать. Эти издержки зависят от объема шифруемых данных. Мы рекомендуем клиентам всегда тестировать свои приложения для повышения производительности во время разработки.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* [Руководство Шифрование и расшифровка больших двоичных объектов в службе хранилища Azure с помощью Azure Key Vault](../blobs/storage-encrypt-decrypt-blobs-key-vault.md)
+* [Учебник. Шифрование и расшифровка больших двоичных объектов в службе хранилища Azure с помощью Azure Key Vault](../blobs/storage-encrypt-decrypt-blobs-key-vault.md)
 * Скачайте [Azure Storage Client Library for .NET NuGet package](https://www.nuget.org/packages/WindowsAzure.Storage)
 * Скачайте пакеты NuGet [Core](https://www.nuget.org/packages/Microsoft.Azure.KeyVault.Core/), [Client](https://www.nuget.org/packages/Microsoft.Azure.KeyVault/) и [Extensions](https://www.nuget.org/packages/Microsoft.Azure.KeyVault.Extensions/) для хранилища ключей Azure.  
 * Просмотрите [документацию по хранилищу ключей Azure](../../key-vault/key-vault-whatis.md)
