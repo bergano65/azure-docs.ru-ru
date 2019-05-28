@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 04/15/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 3d2b22fc507b209a96870daa8bf12ea9ab60a466
-ms.sourcegitcommit: fec96500757e55e7716892ddff9a187f61ae81f7
+ms.openlocfilehash: d2de871176917dcc24d910b3742bdb2700c4f25d
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59617420"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64691767"
 ---
 # <a name="prepare-azure-resources-for-disaster-recovery-of-on-premises-machines"></a>Подготовка ресурсов Azure для аварийного восстановления локальных компьютеров
 
@@ -35,7 +35,7 @@ ms.locfileid: "59617420"
 ## <a name="before-you-start"></a>Перед началом работы
 
 - Ознакомьтесь с архитектурой для аварийного восстановления [VMware](vmware-azure-architecture.md), [Hyper-V](hyper-v-azure-architecture.md) и [физического сервера](physical-azure-architecture.md).
-- Прочтите стандартные вопросы по [VMware](vmware-azure-common-questions.md) и Hyper-V (hyper-v-azure-common-questions.md).
+- Ознакомьтесь с распространенными вопросами о [VMware](vmware-azure-common-questions.md) и [Hyper-V](hyper-v-azure-common-questions.md).
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/pricing/free-trial/), прежде чем начинать работу. Затем войдите на [портал Azure](https://portal.azure.com).
 
