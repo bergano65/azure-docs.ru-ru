@@ -8,14 +8,14 @@ ms.topic: overview
 ms.service: iot-industrialiot
 services: iot-industrialiot
 manager: philmea
-ms.openlocfilehash: 9daf1a7e58af23cb78705691217bf9709359c4d5
-ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.openlocfilehash: 15deadad3b53b64c619933db76d28f012c85d6d1
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59496818"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64730268"
 ---
-# <a name="what-is-azure-iot-open-platform-communications-opc-device-management"></a>Сведения о компоненте управления устройствами унифицированной архитектуры OPC Интернета вещей Azure
+# <a name="what-is-opc-twin"></a>Что такое OPC Twin
 
 OPC Twin, состоит из микрослужб, использующих Azure IoT Edge и Центр Интернета вещей для подключения облака и производственной сети. OPC Twin обеспечивает обнаружение, регистрацию промышленных устройств и удаленное управление ими с помощью интерфейсов REST API. OPC Twin не требует использования пакета SDK для унифицированной архитектуры OPC (OPC UA), не зависит от языка программирования и может быть включен в бессерверный рабочий процесс. В этой статье описывается несколько вариантов использования OPC Twin.
 
@@ -42,4 +42,4 @@ OPC Twin можно использовать для приложений, нап
 Теперь, когда вы узнали о принципах работы OPC Twin и вариантах его использования, предлагаем ознакомиться со статьей:
 
 > [!div class="nextstepaction"]
-> [Что собой представляет хранилище OPC](overview-opc-twin-architecture.md)
+> [Что собой представляет OPC Vault](overview-opc-twin-architecture.md)

@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 04/04/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d4bda20d9ce06f756913e6dfb3e980399ac7e0a6
-ms.sourcegitcommit: b8a8d29fdf199158d96736fbbb0c3773502a092d
+ms.openlocfilehash: 32aa7a531de2e236e3941bbe8afd84d845f80f99
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59565455"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64726026"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-rstudio-connect"></a>Руководство по Интеграция Azure Active Directory с приложением RStudio Connect
 
@@ -40,7 +40,7 @@ ms.locfileid: "59565455"
 Чтобы настроить интеграцию Azure AD с RStudio Connect, вам потребуется:
 
 * подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
-* подписка RStudio Connect с поддержкой единого входа.
+* RStudio Connect. Есть возможность [бесплатного ознакомительного использования в течение 45 дней.](https://www.rstudio.com/products/connect/)
 
 ## <a name="scenario-description"></a>Описание сценария
 
@@ -104,26 +104,26 @@ ms.locfileid: "59565455"
 
     ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
-4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия.
+4. Если вы хотите настроить приложение в режиме, инициируемом **поставщиком удостоверений**, в разделе **Базовая конфигурация SAML** выполните следующие действия, заменив `<example.com>` адресом и портом сервера RStudio Connect:
 
     ![Сведения о домене и URL-адресах единого входа для приложения RStudio Connect](common/idp-intiated.png)
 
-    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://connect.<example>.com/__login__/saml`.
+    a. В текстовом поле **Идентификатор** введите URL-адрес в формате `https://<example.com>/__login__/saml`.
 
-    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://connect.<example>.com/__login__/saml/acs`.
+    б) В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<example.com>/__login__/saml/acs`.
 
 5. Чтобы настроить приложение для работы в режиме, инициируемом **поставщиком услуг**, щелкните **Задать дополнительные URL-адреса** и выполните следующие действия.
 
     ![Сведения о домене и URL-адресах единого входа для приложения RStudio Connect](common/metadata-upload-additional-signon.png)
 
-    В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://connect.<example>.com/`.
+    В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://<example.com>/`.
 
     > [!NOTE]
-    > Эти значения приведены для примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов RStudio Connect](mailto:support@rstudio.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Эти значения приведены для примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Они определяются с помощью адреса сервера RStudio Connect (`https://example.com` в приведенных выше примерах). Если у вас возникли проблемы, обратитесь в [группу поддержки RStudio Connect](mailto:support@rstudio.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 6. Для приложения RStudio Connect утверждения SAML должны иметь определенный формат. Для этого необходимо добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию, когда **nameidentifier** сопоставляется с **user.userprincipalname**. Приложение RStudio Connect ожидает, что **nameidentifier** будет сопоставляться с **user.mail**, поэтому щелкните значок **Изменить** и измените сопоставление атрибутов.
 
-    ![изображение](common/edit-attribute.png)
+    ![image](common/edit-attribute.png)
 
 7. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы копировать **URL-адрес метаданных федерации приложений** и сохранить его на компьютере.
 
@@ -131,7 +131,36 @@ ms.locfileid: "59565455"
 
 ### <a name="configure-rstudio-connect-single-sign-on"></a>Настройка единого входа в RStudio Connect
 
-Для настройки единого входа на стороне **RStudio Connect** необходимо отправить созданный **URL-адрес метаданных федерации приложений** в [службу поддержки RStudio Connect](mailto:support@rstudio.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход для **RStudio Connect**, необходимо указать **URL-адрес метаданных федерации приложений** и **адрес сервера**, которые использовались выше. Это можно реализовать в файле конфигурации RStudio Connect по пути `/etc/rstudio-connect.rstudio-connect.gcfg`.
+
+Вот пример файла конфигурации:
+
+```
+[Server]
+SenderEmail =
+
+; Important! The user-facing URL of your RStudio Connect server.
+Address = 
+
+[Http]
+Listen = :3939
+
+[Authentication]
+Provider = saml
+
+[SAML]
+Logging = true
+
+; Important! The URL where your IdP hosts the SAML metadata or the path to a local copy of it placed in the RStudio Connect server.
+IdPMetaData = 
+
+IdPAttributeProfile = azure
+SSOInitiated = IdPAndSP
+```
+
+Укажите свой **адрес сервера** в значении `Server.Address`, а **URL-адрес метаданных федерации приложений** в значении `SAML.IdPMetaData`.
+
+Если у вас возникли проблемы с конфигурацией, ознакомьтесь с [руководством по RStudio Connect для администраторов](https://docs.rstudio.com/connect/admin/authentication.html#authentication-saml) или отправьте сообщение электронной почты в [группу поддержки RStudio ](mailto:support@rstudio.com), чтобы получить помощь.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 

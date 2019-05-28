@@ -13,14 +13,14 @@ ms.tgt_pltfrm: mobile-kindle
 ms.devlang: Java
 ms.topic: tutorial
 ms.custom: mvc
-ms.date: 01/04/2019
+ms.date: 04/29/2019
 ms.author: jowargo
-ms.openlocfilehash: 7dc969fdcf8b819f5223bdbff3cc1b9d4439c370
-ms.sourcegitcommit: 1902adaa68c660bdaac46878ce2dec5473d29275
+ms.openlocfilehash: edd0e12460e07cfd2990cc43a9056ed06b84fb1d
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/11/2019
-ms.locfileid: "57729137"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64927017"
 ---
 # <a name="get-started-with-notification-hubs-for-kindle-apps"></a>Приступая к работе с Центрами уведомлений для приложений Kindle
 
@@ -33,7 +33,7 @@ ms.locfileid: "57729137"
 > [!div class="checklist"]
 > * Добавление нового приложения на портал разработчика
 > * Создание ключа API
-> * Добавление учетных данных для центра
+> * Создание и настройка центра уведомлений
 > * Настройка приложения
 > * Создание обработчика сообщений ADM
 > * Добавление ключа API в приложение
@@ -42,33 +42,46 @@ ms.locfileid: "57729137"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Скачайте пакет SDK для Android (предполагается, что вы используете Eclipse) с [портала разработчика Android](https://go.microsoft.com/fwlink/?LinkId=389797).
-* Следуйте указаниям, приведенным в статье [Настройка среды разработки](https://developer.amazon.com/docs/fire-tablets/ft-set-up-your-development-environment.html), для настройки среды разработки для Kindle.
+- [Android Studio](https://developer.android.com/studio/?gclid=CjwKCAjwwZrmBRA7EiwA4iMzBPZ9YYmR0pbb5LtjnWhWCxe8PWrmjmeaR6ad5ksCr_j2mmkVj_-o6hoCAqwQAvD_BwE).
+- Следуйте указаниям, приведенным в статье [Настройка среды разработки](https://developer.amazon.com/docs/fire-tablets/ft-set-up-your-development-environment.html), для настройки среды разработки для Kindle.
 
 ## <a name="add-a-new-app-to-the-developer-portal"></a>Добавление нового приложения на портал разработчика
 
-1. Для начала создайте приложение на [портале разработчика Amazon].
+1. Войдите на [Портал разработчика Amazon](https://developer.amazon.com/apps-and-games/console/apps/list.html).
+2. Нажмите кнопку **Добавить новое приложение**, а затем выберите **Android**.  
 
-    ![][0]
+    ![Кнопка "Добавить новое приложение"](./media/notification-hubs-kindle-get-started/add-new-app-button.png)
+1. На странице **New App Submission** (Отправка нового приложения) выполните следующие действия, чтобы получить **ключ приложения**.
+    1. Введите **имя** приложения.
+    2. Выберите любую **категорию** (например, образование).
+    4. Введите адрес электронной почты в поле **Customer support email address** (Адрес электронной почты службы поддержки клиентов). 
+    5. Щелкните **Сохранить**.
 
-2. Скопируйте **ключ приложения**.
+        ![Страница отправки нового приложения](./media/notification-hubs-kindle-get-started/new-app-submission-page.png) 
+2.  В верхней части перейдите на вкладку **Mobile Ads** (Мобильная реклама) и сделайте следующее: 
+    1. Укажите, предназначено ли ваше приложение в первую очередь для детей младше 13 лет. Для работы с этим учебником выберите **No** (Нет).
+    2. Нажмите кнопку **Submit** (Отправить). 
 
-    ![][1]
+        ![Страница мобильной рекламы](./media/notification-hubs-kindle-get-started/mobile-ads-page.png)
+    3. Скопируйте **ключ приложения** со страницы **Mobile Ads** (Мобильная реклама). 
 
-3. На портале щелкните название вашего приложения, затем перейдите на вкладку **Device Messaging** .
+        ![Ключ приложения](./media/notification-hubs-kindle-get-started/application-key.png)
+3.  Щелкните меню **Apps & Services** (Приложения и службы) вверху и выберите свое приложение из списка. 
 
-    ![][2]
+    ![Выбор приложения из списка](./media/notification-hubs-kindle-get-started/all-apps-select.png)
+4. Перейдите на вкладку **Device Messaging** (Передача сообщений на устройства) и сделайте следующее: 
+    1. Щелкните **Create a New Security Profile** (Создать профиль безопасности).
+    2. Введите **имя** для профиля безопасности. 
+    3. Введите **описание** для профиля безопасности. 
+    4. Щелкните **Сохранить**. 
+    5. Выберите **View Security Profile** (Просмотреть профиль безопасности) на странице результатов. 
+5. Теперь на странице **Security Profile** (Профиль безопасности) сделайте следующее: 
+    1. Перейдите на вкладку **Web Settings** (​​Веб-настройки) и скопируйте значение **идентификатора клиента** и **секрета клиента** для дальнейшего использования. 
 
-4. Щелкните **Создать новый профиль безопасности**, затем создайте профиль безопасности (например, **Профиль безопасности TestAdm**). Нажмите кнопку **Сохранить**.
-
-    ![][3]
-
-5. Щелкните **Security Profiles** (Профили безопасности), чтобы просмотреть только что созданный профиль. Скопируйте значения **Код клиента** и **Секрет клиента** для последующего использования.
-
-    ![][4]
+        ![Получение идентификатора клиента и секрета](./media/notification-hubs-kindle-get-started/client-id-secret.png) 
+    2. Перейдите на страницу **Android/Kindle Settings** (Параметры Android/Kindle) и оставьте ее открытой. Вы введете эти значения в следующем разделе. 
 
 ## <a name="create-an-api-key"></a>Создание ключа API
-
 1. Откройте окно командной строки с правами администратора.
 2. Перейдите в папку пакета Android SDK.
 3. Введите следующую команду:
@@ -76,37 +89,92 @@ ms.locfileid: "57729137"
     ```shell
     keytool -list -v -alias androiddebugkey -keystore ./debug.keystore
     ```
-
-    ![][5]
-
 4. Для пароля **keystore** введите **android**.
-5. Скопируйте отпечаток **MD5** .
-6. Вернувшись на портал разработчика, на вкладке **Обмен сообщениями** щелкните **Android/Kindle**, введите имя пакета для вашего приложения (например, **com.sample.notificationhubtest**) и значение **MD5**, а затем щелкните **Создать ключ API**.
+5. Скопируйте отпечатки **MD5** и **SHA256**. 
+6. Вернувшись на портал разработчика, на вкладке **Android/Kindle Settings** (Параметры Android/Kindle) сделайте следующее: 
+    1. Введите **название ключа API**. 
+    2. Введите **имя пакета** для вашего приложения (например, **com.fabrikam.mykindleapp**) и значение **MD5**.
+        
+        >[!IMPORTANT]
+        > При создании приложения в Android Studio используйте имя пакета, указанное здесь. 
+    1. Вставьте **подпись MD5**, которую вы скопировали ранее. 
+    2. Вставьте **подпись SHA256**, которую вы скопировали ранее.  
+    3. Выберите **Generate New Key** (Создать ключ).
 
-## <a name="add-credentials-to-the-hub"></a>Добавление учетных данных для центра
+        ![Параметры Android/Kindle — создание ключа](./media/notification-hubs-kindle-get-started/android-kindle-settings.png)
+    4. Теперь выберите из списка **Show** (Показать), чтобы увидеть ключ API. 
 
-На портале добавьте секрет клиента и код клиента на вкладку **Настройка** центра уведомлений.
+        ![Параметры Android/Kindle — отображение ключа API](./media/notification-hubs-kindle-get-started/show-api-key-button.png) 
+    5. В окне **API Key Details** (Сведения о ключе API) скопируйте ключ API и сохраните его где-нибудь. Щелкните **X** в правом верхнем углу, чтобы закрыть окно. 
+
+
+## <a name="create-and-configure-a-notification-hub"></a>Создание и настройка центра уведомлений
+
+1. Выполните шаги, приведенные в статье [Создание центра уведомлений Azure с помощью портала Azure](create-notification-hub-portal.md), чтобы создать центр уведомлений. 
+2. Щелкните **Amazon (ADM)** в меню **Settings** (Параметры).
+3. Вставьте **идентификатор клиента** и **секрет**, сохраненные ранее. 
+4. На панели инструментов щелкните **Сохранить**. 
+
+    ![Настройка параметров ADM для центра уведомлений](./media/notification-hubs-kindle-get-started/configure-notification-hub.png)
+5. Выберите **Политики доступа** в левом меню и нажмите кнопку **Копировать** для строки подключения политики **DefaultListenSharedAccessSignature**. Сохраните его где-либо. Она будет использоваться далее в исходном коде. 
+
+    ![Строка подключения для ожидания передачи данных центра уведомлений](./media/notification-hubs-kindle-get-started/event-hub-listen-connection-string.png)    
 
 ## <a name="set-up-your-application"></a>Настройка приложения
 
-> [!NOTE]
-> При создании приложения используйте API уровня не ниже 17.
+1. Запустите Android Studio. 
+2. В меню выберите **File** (Файл), **New** (Создать), а затем — **New Project** (Создать проект). 
+3. На странице **Choose your project** (Выбор проекта) выберите **Phone and Tablet** (Телефоны и планшеты), **Empty Activity** (Пустое действие) и нажмите кнопку **Далее**. 
+4. В окне **Configure your project** (Настройка проекта) сделайте следующее.
+    1. Введите **имя приложения**. Возможно, вы захотите сделать его аналогичным имени приложения, созданного на Портале разработчика Amazon. 
+    2. Введите **имя пакета**. 
+        
+        >[!IMPORTANT]
+        >Имя пакета должно соответствовать имени пакета, указанному на Портале разработчика Amazon.
+    3. Просмотрите и обновите оставшиеся значения по мере необходимости. 
+    4. Выберите **Готово**. 
 
-Добавьте библиотеки ADM в проект Eclipse.
+        ![Настройка проекта Android](./media/notification-hubs-kindle-get-started/new-android-studio-project.png)
+5. Скачайте библиотеку [пакета SDK Разработки Amazon для Android](https://developer.amazon.com/sdk-download) на свой жесткий диск. Распакуйте ZIP-файл пакета SDK.
+6. В Android Studio измените структуру папок с **Android** на **Project** (Проект), если еще не выбрано значение **Project** (Проект). 
 
-1. Чтобы получить библиотеку ADM, [загрузите пакет SDK]. Распакуйте ZIP-файл пакета SDK.
-2. В Eclipse щелкните правой кнопкой мыши по проекту и выберите **Свойства**. Слева выберите **Java Build Path** (Путь сборки Java), а затем вверху откройте вкладку **Libraries** (Библиотеки). Щелкните **Add External Jar** (Добавить внешний JAR-файл) и выберите файл `\SDK\Android\DeviceMessaging\lib\amazon-device-messaging-*.jar` из каталога, в который вы распаковали пакет SDK Amazon.
-3. Загрузите пакет NotificationHubs Android SDK (ссылка).
-4. Извлеките содержимое пакета, а затем перетащите файл `notification-hubs-sdk.jar` в папку `libs` в Eclipse.
+    ![Android Studio — переключение структуры проекта](./media/notification-hubs-kindle-get-started/android-studio-project-view.png)
+7. Разверните класс **app**, чтобы увидеть папку **libs** в представлении в виде дерева.     
+8. В окне проводника перейдите в папку, в которую вы скачали пакет SDK Amazon для Android.
+9. Нажмите клавишу **CTRL** и перетащите файл **amazon-device-messaging-1.0.1.jar** в узел **lib** в представлении в виде дерева. 
 
-Изменение манифеста приложения для поддержки ADM
+    ![Android Studio — добавление JAR-файла Amazon Device Messaging](./media/notification-hubs-kindle-get-started/drag-drop-amazon-device-messaging-jar.png)
+9. В окне **Copy** (Копирование) нажмите кнопку **OК**. Если вы видите окно **Move** (Перемещение) вместо окна **Copy** (Копирование), закройте его и попробуйте выполнить операцию перетаскивания с зажатой клавишей **CTRL**. 
 
-1. Добавьте пространство имен Amazon в корневом элементе манифеста.
+    ![Android Studio — копирование JAR-файла](./media/notification-hubs-kindle-get-started/copy-jar-window.png)
+10. Добавьте следующий оператор в файл приложения **build.gradle** в разделе **dependencies**: `implementation files('libs/amazon-device-messaging-1.0.1.jar')`. 
+
+    ![Android Studio — добавление ADM в файл приложения build.gradle](./media/notification-hubs-kindle-get-started/adm-build-gradle.png)
+11. В файле `Build.Gradle` в классе **app** добавьте следующие строки в раздел **dependencies**. 
+
+    ```gradle
+    implementation 'com.microsoft.azure:notification-hubs-android-sdk:0.6@aar'
+    implementation 'com.microsoft.azure:azure-notifications-handler:1.0.1@aar'
+    ```
+12. **После** раздела **dependencies** добавьте следующий репозиторий.
+
+    ```gradle
+    repositories {
+        maven {
+            url "https://dl.bintray.com/microsoftazuremobile/SDK"
+        }
+    }
+    ```
+13. В редакторе для файла **build.gradle** для класса **app** щелкните **Sync now** (Синхронизировать сейчас) на панели инструментов. 
+
+    ![Android Studio — синхронизация build.gradle класса app](./media/notification-hubs-kindle-get-started/gradle-sync-now.png)
+14. Вернитесь к структуре Android в представлении в виде дерева.  Добавьте пространство имен Amazon в корневом элементе манифеста.
 
     ```xml
     xmlns:amazon="http://schemas.amazon.com/apk/res/android"
     ```
-
+   
+    ![Пространство имен Amazon в манифесте](./media/notification-hubs-kindle-get-started/amazon-namespace-manifest.png)
 2. Добавьте разрешения в качестве первого элемента в элементе манифеста. Вместо **[YOUR PACKAGE NAME]** укажите пакет, который вы используете для создания приложения.
 
     ```xml
@@ -125,40 +193,36 @@ ms.locfileid: "57729137"
     <!-- ADM uses WAKE_LOCK to keep the processor from sleeping when a message is received. -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     ```
-3. Вставьте приведенный ниже элемент в качестве первого потомка элемента приложения. Не забудьте заменить **[YOUR SERVICE NAME]** именем обработчика сообщений ADM, который будет создан в следующем разделе (включая пакет), а **[YOUR PACKAGE NAME]** именем пакета, с помощью которого создается приложение.
+3. Вставьте приведенный ниже элемент в качестве первого потомка элемента приложения. Вместо **[YOUR PACKAGE NAME]** укажите имя пакета, которое вы использовали для создания приложения. Вы создадите класс MyADMMessageHandler в следующем шаге. 
 
     ```xml
-    <amazon:enable-feature
-        android:name="com.amazon.device.messaging"
-        android:required="true"/>
-    <service
-        android:name="[YOUR SERVICE NAME]"
-        android:exported="false" />
+        <amazon:enable-feature
+            android:name="com.amazon.device.messaging"
+            android:required="true"/>
+        <service
+            android:name="[YOUR PACKAGE NAME].MyADMMessageHandler"
+            android:exported="false" />
+        <receiver
+            android:name="[YOUR PACKAGE NAME].MyADMMessageHandler$Receiver"
+            android:permission="com.amazon.device.messaging.permission.SEND" >
 
-    <receiver
-        android:name="[YOUR SERVICE NAME]$Receiver" />
-
-        <!-- This permission ensures that only ADM can send your app registration broadcasts. -->
-        android:permission="com.amazon.device.messaging.permission.SEND" >
-
-        <!-- To interact with ADM, your app must listen for the following intents. -->
-        <intent-filter>
-        <action android:name="com.amazon.device.messaging.intent.REGISTRATION" />
-        <action android:name="com.amazon.device.messaging.intent.RECEIVE" />
-
-        <!-- Replace the name in the category tag with your app's package name. -->
-        <category android:name="[YOUR PACKAGE NAME]" />
-        </intent-filter>
-    </receiver>
+            <!-- To interact with ADM, your app must listen for the following intents. -->
+            <intent-filter>
+                <action android:name="com.amazon.device.messaging.intent.REGISTRATION" />
+                <action android:name="com.amazon.device.messaging.intent.RECEIVE" />
+                <!-- Replace the name in the category tag with your app's package name. -->
+                <category android:name="[YOUR PACKAGE NAME]" />
+            </intent-filter>
+        </receiver>
     ```
 
 ## <a name="create-your-adm-message-handler"></a>Создание обработчика сообщений ADM
 
-1. Создайте новый класс с наследованием от `com.amazon.device.messaging.ADMMessageHandlerBase` и назовите его `MyADMMessageHandler`, как показано на следующем рисунке.
+1. Добавьте новый класс в пакет `com.fabrikam.mykindleapp` в проекте, который наследуется от `com.amazon.device.messaging.ADMMessageHandlerBase`, и назовите его `MyADMMessageHandler`, как показано на следующем изображении:
 
-    ![][6]
+    ![Создание класса MyADMMessageHandler](./media/notification-hubs-kindle-get-started/create-adm-message-handler.png)
 
-2. Добавьте следующие операторы `import` :
+2. Добавьте в класс `MyADMMessageHandler` следующие операторы `import`:
 
     ```java
     import android.app.NotificationManager;
@@ -166,120 +230,113 @@ ms.locfileid: "57729137"
     import android.content.Context;
     import android.content.Intent;
     import android.support.v4.app.NotificationCompat;
+    import android.util.Log;
     import com.amazon.device.messaging.ADMMessageReceiver;
-    import com.microsoft.windowsazure.messaging.NotificationHub
+    import com.microsoft.windowsazure.messaging.NotificationHub;
     ```
 
-3. Добавьте в созданный класс приведенный ниже код. Не забудьте подставить имя центра и строку подключения (listen).
+3. Добавьте в созданный класс приведенный ниже код. Запомните `[HUB NAME]` и `[LISTEN CONNECTION STRING]` с именем вашего центра уведомлений и строки подключения для ожидания передачи данных. 
 
     ```java
     public static final int NOTIFICATION_ID = 1;
     private NotificationManager mNotificationManager;
     NotificationCompat.Builder builder;
-        private static NotificationHub hub;
+    private static NotificationHub hub;
+
     public static NotificationHub getNotificationHub(Context context) {
         Log.v("com.wa.hellokindlefire", "getNotificationHub");
         if (hub == null) {
-            hub = new NotificationHub("[hub name]", "[listen connection string]", context);
+            hub = new NotificationHub("[HUB NAME]", "[HUB NAMESPACE CONNECTION STRING]", context);
         }
         return hub;
     }
 
     public MyADMMessageHandler() {
-            super("MyADMMessageHandler");
-        }
+        super("MyADMMessageHandler");
+    }
 
-        public static class Receiver extends ADMMessageReceiver
+    @Override
+    protected void onMessage(Intent intent) {
+        String nhMessage = intent.getExtras().getString("msg");
+        sendNotification(nhMessage);
+    }
+
+    @Override
+    protected void onRegistrationError(String s) {
+
+    }
+
+    @Override
+    protected void onRegistered(String s) {
+        try {
+            getNotificationHub(getApplicationContext()).register(s);
+        } catch (Exception e) {
+            Log.e("[your package name]", "Fail onRegister: " + e.getMessage(), e);
+        }
+    }
+
+    @Override
+    protected void onUnregistered(String s) {
+        try {
+            getNotificationHub(getApplicationContext()).unregister();
+        } catch (Exception e) {
+            Log.e("[your package name]", "Fail onUnregister: " + e.getMessage(), e);
+        }
+    }
+
+    public static class Receiver extends ADMMessageReceiver
+    {
+        public Receiver()
         {
-            public Receiver()
-            {
-                super(MyADMMessageHandler.class);
-            }
+            super(MyADMMessageHandler.class);
         }
+    }
 
-        private void sendNotification(String msg) {
-            Context ctx = getApplicationContext();
+    private void sendNotification(String msg) {
+        Context ctx = getApplicationContext();
 
-            mNotificationManager = (NotificationManager)
+        mNotificationManager = (NotificationManager)
                 ctx.getSystemService(Context.NOTIFICATION_SERVICE);
 
         PendingIntent contentIntent = PendingIntent.getActivity(ctx, 0,
                 new Intent(ctx, MainActivity.class), 0);
 
+
         NotificationCompat.Builder mBuilder =
                 new NotificationCompat.Builder(ctx)
-                .setSmallIcon(R.mipmap.ic_launcher)
-                .setContentTitle("Notification Hub Demo")
-                .setStyle(new NotificationCompat.BigTextStyle()
-                        .bigText(msg))
-                .setContentText(msg);
+                        .setSmallIcon(R.mipmap.ic_launcher)
+                        .setContentTitle("Notification Hub Demo")
+                        .setStyle(new NotificationCompat.BigTextStyle()
+                                .bigText(msg))
+                        .setContentText(msg);
 
-            mBuilder.setContentIntent(contentIntent);
-            mNotificationManager.notify(NOTIFICATION_ID, mBuilder.build());
-    }
-    ```
-4. Добавьте в метод `OnMessage()` следующий код:
-
-    ```java
-    String nhMessage = intent.getExtras().getString("msg");
-    sendNotification(nhMessage);
-    ```
-5. Добавьте в метод `OnRegistered` следующий код:
-
-    ```java
-    try {
-        getNotificationHub(getApplicationContext()).register(registrationId);
-    } catch (Exception e) {
-        Log.e("[your package name]", "Fail onRegister: " + e.getMessage(), e);
-    }
-    ```
-6. Добавьте в метод `OnUnregistered` следующий код:
-
-    ```java
-    try {
-        getNotificationHub(getApplicationContext()).unregister();
-    } catch (Exception e) {
-        Log.e("[your package name]", "Fail onUnregister: " + e.getMessage(), e);
-    }
-    ```
-7. Затем в методе `MainActivity` добавьте следующую инструкцию import:
-
-    ```java
-    import com.amazon.device.messaging.ADM;
-    ```
-8. В конец метода `OnCreate` добавьте следующий код:
-
-    ```java
-    final ADM adm = new ADM(this);
-    if (adm.getRegistrationId() == null)
-    {
-        adm.startRegister();
-    } else {
-        new AsyncTask() {
-                @Override
-                protected Object doInBackground(Object... params) {
-                    try {
-                        MyADMMessageHandler.getNotificationHub(getApplicationContext()).register(adm.getRegistrationId());
-                    } catch (Exception e) {
-                        Log.e("com.wa.hellokindlefire", "Failed registration with hub", e);
-                        return e;
-                    }
-                    return null;
-                }
-            }.execute(null, null, null);
+        mBuilder.setContentIntent(contentIntent);
+        mNotificationManager.notify(NOTIFICATION_ID, mBuilder.build());
     }
     ```
 
 ## <a name="add-your-api-key-to-your-app"></a>Добавление ключа API в приложение
+1. Выполните следующие действия, чтобы добавить папку ресурсов в проект. 
+    1. Переключитесь в представление **Project** (Проект). 
+    2. Щелкните правой кнопкой мыши класс **app**.
+    3. Нажмите кнопку **Создать**.
+    4. Щелкните **Folder** (Папка). 
+    5. Затем выберите **Assets Folder** (Папка ресурсов). 
 
-1. В Eclipse создайте файл с именем `api_key.txt` в ресурсах каталога проекта.
-2. Откройте файл и скопируйте ключ API, созданный на портале разработчика Amazon.
+        ![Добавление папки с ресурсами](./media/notification-hubs-kindle-get-started/add-assets-folder-menu.png)    
+    6. На странице **Configure Component** (Настройка компонента) сделайте следующее:
+        1. Выберите **Change folder location** (Изменить расположение папки).
+        2. Убедитесь, что для папки задано значение: `src/main/assets`.
+        3. Выберите **Готово**. 
+        
+            ![Настройка папки ресурсов](./media/notification-hubs-kindle-get-started/configure-asset-folder.png)
+2. Добавьте файл с именем **api_key.txt** в папку **assets**. В представлении в виде дерева разверните класс **app**, разверните **src**, затем разверните **main** и щелкните правой кнопкой мыши **assets**, выберите **New** (Создать), а затем — **File** (Файл). Введите **api_key.txt** в поле имени файла. 3. 
+5. Скопируйте ключ API, созданный на портале разработчика Amazon, в файл api_key.txt. 
+6. Создайте проект. 
 
 ## <a name="run-the-app"></a>Запуск приложения
-
-1. Запустите эмулятор.
-2. В эмуляторе сверху щелкните **Параметры**, затем **Моя учетная запись** и зарегистрируйтесь с использованием действующей учетной записи Amazon.
-3. В Eclipse запустите приложение.
+1. На устройстве Kindle сверху щелкните **Параметры**, затем **Моя учетная запись** и зарегистрируйтесь с использованием действующей учетной записи Amazon.
+2. Запустите приложение на устройстве Kindle из Android Studio. 
 
 > [!NOTE]
 > Если возникает проблема, проверьте время эмулятора (или устройства). Значение времени должно быть точным. Для изменения времени эмулятора Kindle выполните следующую команду из каталога средств для платформы Android SDK:
@@ -301,6 +358,8 @@ static void Main(string[] args)
 }
 ```
 
+Пример кода см. [на GitHub](https://github.com/Azure/azure-notificationhubs-dotnet/blob/master/Samples/SendPushSample/SendPushSample/Program.cs).
+
 ![][7]
 
 ## <a name="next-steps"></a>Дополнительная информация
@@ -311,8 +370,8 @@ static void Main(string[] args)
 >[Руководство по отправке push-уведомлений на конкретные устройства Android с помощью Центров уведомлений Azure и Google Cloud Messaging](notification-hubs-aspnet-backend-android-xplat-segmented-gcm-push-notification.md)
 
 <!-- URLs. -->
-[портале разработчика Amazon]: https://developer.amazon.com/home.html
-[загрузите пакет SDK]: https://developer.amazon.com/public/resources/development-tools/sdk
+[Amazon developer portal]: https://developer.amazon.com/home.html
+[download the SDK]: https://developer.amazon.com/public/resources/development-tools/sdk
 [0]: ./media/notification-hubs-kindle-get-started/notification-hub-kindle-portal1.png
 [1]: ./media/notification-hubs-kindle-get-started/notification-hub-kindle-portal2.png
 [2]: ./media/notification-hubs-kindle-get-started/notification-hub-kindle-portal3.png

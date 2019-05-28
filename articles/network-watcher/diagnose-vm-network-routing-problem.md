@@ -3,8 +3,8 @@ title: Руководство по диагностике проблемы с м
 description: Из этого руководства вы узнаете, как диагностировать проблему с маршрутизацией на виртуальной машине с помощью возможности следующего прыжка в Наблюдателе за сетями Azure.
 services: network-watcher
 documentationcenter: network-watcher
-author: jimdial
-manager: jeconnoc
+author: KumudD
+manager: twooley
 editor: ''
 tags: azure-resource-manager
 Customer intent: I need to diagnose virtual machine (VM) network routing problem that prevents communication to different destinations.
@@ -15,18 +15,18 @@ ms.topic: tutorial
 ms.tgt_pltfrm: network-watcher
 ms.workload: infrastructure
 ms.date: 04/20/2018
-ms.author: jdial
+ms.author: kumud
 ms.custom: mvc
-ms.openlocfilehash: ea64c93726c3bc5c5d60f35790bb337333d4d47a
-ms.sourcegitcommit: 6e43006c88d5e1b9461e65a73b8888340077e8a2
+ms.openlocfilehash: 3ad9cd8b620b55aaa17e84343a82ac361081de44
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/01/2018
-ms.locfileid: "32312201"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64684522"
 ---
 # <a name="tutorial-diagnose-a-virtual-machine-network-routing-problem-using-the-azure-portal"></a>Руководство по диагностике проблемы с маршрутизацией в сети виртуальной машины с помощью портала Azure
 
-При развертывании виртуальной машины Azure создает для нее несколько маршрутов по умолчанию. Вы можете создавать настраиваемые маршруты для переопределения маршрутов по умолчанию Azure. В некоторых случаях пользовательский маршрут может привести к тому, что виртуальная машина не сможет взаимодействовать с другими ресурсами. Из этого руководства вы узнаете, как выполнять такие задачи:
+При развертывании виртуальной машины Azure создает для нее несколько маршрутов по умолчанию. Вы можете создавать настраиваемые маршруты для переопределения маршрутов по умолчанию Azure. В некоторых случаях пользовательский маршрут может привести к тому, что виртуальная машина не сможет взаимодействовать с другими ресурсами. Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
 > * Создание виртуальной машины
@@ -89,7 +89,7 @@ Azure автоматически создает маршруты к пункта
     | Виртуальная машина.         | Выберите myVm                                            |
     | сетевому интерфейсу       | myvm — ваше имя сетевого интерфейса может отличаться   |
     | Исходный IP-адрес       | 10.0.0.4                                               |
-    | Конечный IP-адрес  | 13.107.21.200 — один из адресов для www.bing.com |
+    | Конечный IP-адрес  | 13.107.21.200 — один из адресов для <www.bing.com>. |
 
     ![Следующий прыжок](./media/diagnose-vm-network-routing-problem/next-hop.png)
 

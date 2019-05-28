@@ -4,233 +4,209 @@ description: Узнайте, как настроить единый вход Azu
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: daveba
+manager: mtillman
+ms.reviewer: barbkess
 ms.assetid: 4df349b2-a73f-4b88-a077-ec0fbfc26527
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 10/24/2017
+ms.topic: tutorial
+ms.date: 03/25/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 936ad2e49aaf449144296dd941a3fbc42719fe4f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 6bf79907feb4ec3b3747316f62102d2c235d407c
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60618444"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64689219"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-skillport"></a>Руководство по Интеграция Azure Active Directory с Skillport
 
 В этом руководстве описано, как интегрировать Skillport с Azure Active Directory (Azure AD).
-
 Интеграция Azure AD с приложением Skillport обеспечивает следующие преимущества.
 
-- С помощью Azure AD вы можете контролировать доступ к Skillport.
-- Вы можете включить автоматический вход пользователей в Skillport (единый вход) с учетной записью Azure AD.
-- Вы можете управлять учетными записями централизованно — через портал Azure.
+* В Azure AD вы можете контролировать доступ к Skillport.
+* Вы можете включить автоматический вход пользователей в приложение Skillport (единый вход) с помощью учетных записей Azure AD.
+* Вы можете управлять учетными записями централизованно на портале Azure.
 
-Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Skillport, вам потребуется:
 
-- подписка Azure AD;
-- подписка на Skillport с поддержкой единого входа.
-
-> [!NOTE]
-> Мы не рекомендуем использовать рабочую среду для проверки действий в этом учебнике.
-
-При проверке действий в этом учебнике соблюдайте следующие рекомендации:
-
-- Не используйте рабочую среду без необходимости.
-- Если у вас нет пробной среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
+* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* Подписка на Skillport с возможностью единого входа
 
 ## <a name="scenario-description"></a>Описание сценария
-В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
-1. Добавление Skillport из коллекции
-1. настройка и проверка единого входа в Azure AD.
+В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
+
+* Skillport поддерживает единый вход, инициированный **пакетом обновления**
 
 ## <a name="adding-skillport-from-the-gallery"></a>Добавление Skillport из коллекции
+
 Чтобы настроить интеграцию приложения Skillport с Azure AD, вам нужно добавить Skillport из коллекции в список управляемых приложений SaaS.
 
 **Чтобы добавить Skillport из коллекции, выполните следующие действия.**
 
-1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
+1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Active Directory][1]
+    ![Кнопка Azure Active Directory](common/select-azuread.png)
 
-1. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
+2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
-    ![Приложения][2]
-    
-1. В верхней части диалогового окна нажмите кнопку **Создать приложение**.
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-    ![Приложения][3]
+3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-1. В поле поиска введите **Skillport**.
+    ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-    ![Создание тестового пользователя Azure AD](./media/skillport-tutorial/tutorial_skillport_search.png)
+4. В поле поиска введите **Skillport**, на панели результатов выберите **Skillport** и нажмите на кнопку **Добавить**, чтобы добавить это приложение.
 
-1. На панели результатов выберите **Skillport** и нажмите кнопку **Добавить**, чтобы добавить приложение.
+    ![Skillport в списке результатов](common/search-new-app.png)
 
-    ![Создание тестового пользователя Azure AD](./media/skillport-tutorial/tutorial_skillport_addfromgallery.png)
+## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
-##  <a name="configuring-and-testing-azure-ad-single-sign-on"></a>настройка и проверка единого входа в Azure AD.
-В этом разделе описана настройка и проверка единого входа Azure AD в Skillport с использованием тестового пользователя Britta Simon.
-
-Для работы единого входа в Azure AD необходимо знать, какой пользователь в Skillport соответствует пользователю в Azure AD. Иными словами, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Skillport.
-
-Чтобы установить эту связь, следует назначить **имя пользователя** в Azure AD в качестве значения **имени пользователя** в Skillport.
+В этом разделе описаны настройка и проверка единого входа Azure AD в Skillport с помощью тестового пользователя **Britta Simon**.
+Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Skillport.
 
 Чтобы настроить и проверить единый вход Azure AD в Skillport, вам потребуется выполнить действия в следующих стандартных блоках.
 
-1. **[Configuring Azure AD Single Sign-On](#configuring-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-1. **[Создание тестового пользователя Azure AD](#creating-an-azure-ad-test-user)** требуется для проверки работы единого входа в Azure AD от имени пользователя Britta Simon.
-1. **[Создание тестового пользователя Skillport](#creating-a-skillport-test-user)** требуется для создания в Skillport пользователя Britta Simon, связанного с представлением этого пользователя в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assigning-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD;
-1. **[Проверка единого входа](#testing-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
+2. **[Настройка единого входа Skillport](#configure-skillport-single-sign-on)** необходима, чтобы конфигурировать параметры единого входа на стороне приложения.
+3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
+5. **[Создание тестового пользователя Skillport](#create-skillport-test-user)** требуется для того, чтобы в Skillport также существовал пользователь Britta Simon, связанный с представлением этого же пользователя в Azure AD.
+6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
 
-### <a name="configuring-azure-ad-single-sign-on"></a>Настройка единого входа в Azure AD
+### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
-В этом разделе описано, как включить единый вход Azure AD на новом портале Azure и настроить его в приложении Skillport.
+В этом разделе описано включение единого входа Azure AD на портале Azure.
 
-**Чтобы настроить единый вход Azure AD в Skillport, выполните следующие действия.**
+Чтобы настроить единый вход Azure AD в Skillport, выполните следующие действия.
 
-1. На портале Azure на странице интеграции с приложением **Skillport** щелкните **Единый вход**.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Skillport** щелкните **Единый вход**.
 
-    ![Настройка единого входа][4]
+    ![Ссылка "Настройка единого входа"](common/select-sso.png)
 
-1. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
- 
-    ![Настройка единого входа](./media/skillport-tutorial/tutorial_skillport_samlbase.png)
+2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed**, чтобы включить единый вход.
 
-1. В разделе **Домены и URL-адреса приложения Skillport** выполните следующие действия:
+    ![Режим выбора единого входа](common/select-saml-option.png)
 
-    ![Настройка единого входа](./media/skillport-tutorial/tutorial_skillport_url.png)
+3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес:
-      
-      Центр обработки данных в ЕС: `https://adfs.skillport.eu`
-   
-      Центр обработки данных в США: `https://sso.skillport.com`
+    ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
-    2. В текстовом поле **Идентификатор** введите URL-адрес:
-      
-      Центр обработки данных в ЕС: `http://adfs.skillport.eu/adfs/services/trust`
-   
-      Центр обработки данных в США: `https://sso.skillport.com`
-   
+4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
+
+    ![Сведения о домене и URL-адресах единого входа приложения Skillport](common/sp-identifier-reply.png)
+
+    a. В текстовом поле **URL-адрес входа** введите URL-адрес:
+
+    Центр обработки данных в ЕС: `https://adfs.skillport.eu`
+
+    Центр обработки данных в США: `https://sso.skillport.com`
+
+    b. В поле **Идентификатор** введите URL-адрес:
+
+    Центр обработки данных в ЕС: `http://adfs.skillport.eu/adfs/services/trust`
+
+    Центр обработки данных в США: `https://sso.skillport.com`
+
     c. В текстовом поле **URL-адрес ответа** введите URL-адрес:
-    
-      Центр обработки данных в ЕС: `https://adfs.skillport.eu/adfs/ls/`
-    
+
+    Центр обработки данных в ЕС: `https://adfs.skillport.eu/adfs/ls/`
+
       Центр обработки данных в США: `https://sso.skillport.com/sp/ACS.saml2`
- 
-1. В разделе **Сертификат подписи SAML** щелкните **XML метаданных** и сохраните XML-файл на компьютере.
 
-    ![Настройка единого входа](./media/skillport-tutorial/tutorial_skillport_certificate.png) 
+5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
 
-1. Нажмите кнопку **Сохранить** .
+    ![Ссылка для скачивания сертификата](common/metadataxml.png)
 
-    ![Настройка единого входа](./media/skillport-tutorial/tutorial_general_400.png)
+6. Скопируйте нужные URL-адреса в разделе **Настройка Skillport**.
 
-1. Чтобы настроить единый вход на стороне **Skillport**, отправьте скачанный **XML-файл метаданных** в [службу поддержки Skillport](https://www.skillsoft.com/contact.asp). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах подключения.
+    ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
+    а) URL-адрес входа.
+
+    b. Идентификатор Azure AD
+
+    c. URL-адрес выхода.
+
+### <a name="configure-skillport-single-sign-on"></a>Настройка единого входа в Skillport
+
+Чтобы настроить единый вход со стороны **Skillport**, нужно отправить в [группу поддержки Skillport](https://www.skillsoft.com/contact.asp) скачанный **XML-файл метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure. Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+
+### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
+
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-![Создание пользователя Azure AD][100]
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
-**Чтобы создать тестового пользователя в Azure AD, выполните следующие действия:**
+    ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
 
-1. На **портале Azure** в области навигации слева щелкните значок **Azure Active Directory**.
+2. В верхней части экрана выберите **Новый пользователь**.
 
-    ![Создание тестового пользователя Azure AD](./media/skillport-tutorial/create_aaduser_01.png) 
+    ![Кнопка "Новый пользователь"](common/new-user.png)
 
-1. Перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**, чтобы отобразить список пользователей.
-    
-    ![Создание тестового пользователя Azure AD](./media/skillport-tutorial/create_aaduser_02.png) 
+3. В разделе свойств пользователя сделайте следующее:
 
-1. В верхней части диалогового окна щелкните **Добавить**, чтобы открыть диалоговое окно **Пользователь**.
- 
-    ![Создание тестового пользователя Azure AD](./media/skillport-tutorial/create_aaduser_03.png) 
+    ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-1. На странице диалогового окна **Пользователь** выполните следующие действия.
- 
-    ![Создание тестового пользователя Azure AD](./media/skillport-tutorial/create_aaduser_04.png) 
+    а. В поле **Имя** введите **BrittaSimon**.
+  
+    b. В поле **Имя пользователя** введите `brittasimon@yourcompanydomain.extension`.  
+    Например BrittaSimon@contoso.com.
 
-    a. В текстовом поле **Имя** введите **BrittaSimon**.
-
-    2. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
-
-    c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
     d. Нажмите кнопку **Создать**.
- 
-### <a name="creating-a-skillport-test-user"></a>Создание тестового пользователя Skillport
 
-Чтобы создать тестового пользователя Skillport, обратитесь в [службу поддержки Skillport](https://www.skillsoft.com/contact.asp), так как они поддерживают различные бизнес-сценарии в соответствии с требованиями пользователей. Специалисты выполнят настройку после обсуждения с пользователями.  
-
-### <a name="assigning-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
+### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
 В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure путем предоставления доступа к Skillport.
 
-![Назначение пользователя][200] 
+1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем **Skillport**.
 
-**Чтобы назначить пользователя Britta Simon приложению Skillport, выполните следующие действия.**
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-1. На портале Azure откройте представление приложений, перейдите к представлению каталога, а затем выберите **Корпоративные приложения** и щелкните **Все приложения**.
+2. В списке приложений выберите **Skillport**.
 
-    ![Назначение пользователя][201] 
+    ![Ссылка на Skillport в списке приложений](common/all-applications.png)
 
-1. В списке приложений выберите **Skillport**.
+3. В меню слева выберите **Пользователи и группы**.
 
-    ![Настройка единого входа](./media/skillport-tutorial/tutorial_skillport_app.png) 
+    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
 
-1. В меню слева выберите **Пользователи и группы**.
+4. Нажмите кнопку **Добавить пользователя**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
-    ![Назначение пользователя][202] 
+    ![Область "Добавление назначения"](common/add-assign-user.png)
 
-1. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
 
-    ![Назначение пользователя][203]
+6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
 
-1. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
+7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
-1. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
+### <a name="create-skillport-test-user"></a>Создание тестового пользователя Skillport
 
-1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
-    
-### <a name="testing-single-sign-on"></a>Проверка единого входа
+Чтобы создать тестового пользователя Skillport, обратитесь в [службу поддержки Skillport](https://www.skillsoft.com/contact.asp), так как они поддерживают различные бизнес-сценарии в соответствии с требованиями пользователей. Специалисты выполнят настройку после обсуждения с пользователями.
+
+### <a name="test-single-sign-on"></a>Проверка единого входа
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув элемент Skillport на панели доступа, вы автоматически войдете в приложение Skillport.
-Дополнительные сведения о панели доступа см. в статье  [Что такое портал MyApps?](../user-help/active-directory-saas-access-panel-introduction.md) 
+Щелкнув плитку Skillport на Панели доступа, вы автоматически войдете в приложение Skillport, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Список учебников по интеграции приложений SaaS с Azure Active Directory](tutorial-list.md)
-* [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-
-<!--Image references-->
-
-[1]: ./media/skillport-tutorial/tutorial_general_01.png
-[2]: ./media/skillport-tutorial/tutorial_general_02.png
-[3]: ./media/skillport-tutorial/tutorial_general_03.png
-[4]: ./media/skillport-tutorial/tutorial_general_04.png
-
-[100]: ./media/skillport-tutorial/tutorial_general_100.png
-
-[200]: ./media/skillport-tutorial/tutorial_general_200.png
-[201]: ./media/skillport-tutorial/tutorial_general_201.png
-[202]: ./media/skillport-tutorial/tutorial_general_202.png
-[203]: ./media/skillport-tutorial/tutorial_general_203.png
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 

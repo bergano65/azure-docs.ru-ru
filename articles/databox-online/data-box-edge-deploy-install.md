@@ -1,5 +1,5 @@
 ---
-title: Руководство по установке физического устройства Azure Data Box Edge | Документация Майкрософт
+title: Руководство по установке физического устройства Azure Data Box Edge — распаковка, установка в стойку и подключение | Документация Майкрософт
 description: Во втором руководстве по установке Azure Data Box Edge описано, как распаковать, установить в стойку и подключить физическое устройство.
 services: databox
 author: alkohli
@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 03/20/2019
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to install Data Box Edge in datacenter so I can use it to transfer data to Azure.
-ms.openlocfilehash: 46192d32e70e371325abeafd4da26fa29e491b13
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 7062e9d829242a62dfa4f661c21ce6c56b0db69c
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59278485"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64924539"
 ---
 # <a name="tutorial-install-azure-data-box-edge"></a>Руководство по установке Azure Data Box Edge
 
@@ -145,7 +145,8 @@ ms.locfileid: "59278485"
 
 ### <a name="engage-and-release-the-slam-latch"></a>Фиксация и высвобождение защелок
 
-Примечание. Если устройство не оснащено защелками, зафиксируйте его в стойке винтами, как описано на шаге 3 этой процедуры.
+> [!NOTE]
+> Если устройство не оснащено защелками, зафиксируйте его в стойке винтами, как описано на шаге 3 этой процедуры.
 
 1. Защелки расположены спереди по бокам устройства.
 2. Если задвинуть устройство в стойку, защелки фиксируются автоматически. Чтобы высвободить защелки, их нужно потянуть вверх.

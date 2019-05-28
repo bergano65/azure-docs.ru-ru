@@ -1,54 +1,58 @@
 ---
 title: Мониторинг контейнеров в службе "Экземпляры контейнеров Azure"
-description: Сведения о том, как отслеживать потребление контейнерами вычислительных ресурсов, таких как ЦП и память, в службе "Экземпляры контейнеров Azure".
+description: Как отслеживать потребление контейнерами вычислительных ресурсов, таких как ЦП и память, в службе "Экземпляры контейнеров Azure".
 services: container-instances
 author: dlepow
 ms.service: container-instances
 ms.topic: overview
-ms.date: 04/24/2018
+ms.date: 04/24/2019
 ms.author: danlep
-ms.openlocfilehash: 950d8b4b5ec1a55e2054039a01d6807915b5c714
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 7b46ea0518038eeb908591b8438acc2a9095242c
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59784079"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64570894"
 ---
 # <a name="monitor-container-resources-in-azure-container-instances"></a>Мониторинг ресурсов контейнеров в службе "Экземпляры контейнеров Azure"
 
-Azure Monitor предоставляет информацию о том, какие вычислительные ресурсы используют экземпляры контейнеров. Используйте Azure Monitor, чтобы контролировать потребление ресурсов ЦП и памяти для групп контейнеров и отдельных контейнеров. Эти данные об использовании ресурсов помогут определить оптимальные настройки ЦП и памяти для конкретных групп контейнеров.
+[Azure Monitor][azure-monitoring] предоставляет информацию о том, какие вычислительные ресурсы используют экземпляры контейнеров. Эти данные об использовании ресурсов помогут определить оптимальные настройки ресурса для конкретных групп контейнеров. Azure Monitor также предоставляет метрики для отслеживания сетевой активности в экземплярах контейнеров.
 
-В этом документе описывается, как происходит сбор данных о потреблении ЦП и памяти для экземпляров контейнеров с помощью портала Azure и Azure CLI.
+В этом документе описывается, как происходит сбор метрик Azure Monitor для экземпляров контейнеров с помощью портала Azure и Azure CLI.
 
 > [!IMPORTANT]
-> Сейчас метрики потребления ресурсов доступны только для контейнеров Linux.
->
+> Метрики Azure Monitor в Экземплярах контейнеров Azure сейчас доступны в предварительной версии с некоторыми [ограничениями](#preview-limitations). Предварительные версии предоставляются только в том случае, если вы принимаете [дополнительные условия использования][terms-of-use]. Некоторые аспекты этой функции могут быть изменены до выхода общедоступной версии.
+
+## <a name="preview-limitations"></a>Ограничения предварительной версии
+
+Сейчас метрики Azure Monitor доступны только для контейнеров Linux.
 
 ## <a name="available-metrics"></a>Доступные метрики
 
-Azure Monitor предоставляет метрики по потреблению **ЦП** и **памяти** для службы "Экземпляры контейнеров Azure". Обе эти метрики доступны как для отдельных контейнеров, так и для групп контейнеров.
+Azure Monitor предоставляет следующие [метрики для Экземпляров контейнеров Azure][supported-metrics]. Эти метрики доступны как для отдельных контейнеров, так и для групп контейнеров.
 
-Метрики ЦП измеряются в **миллиядрах**. Одно миллиядро равно 0,001 используемого ядра ЦП. Таким образом, 500 миллиядер соответствует загрузке одного ядра на 50 %.
+* **Использование ЦП** — измеряется в **миллиядрах**. Одно миллиядро равно 0,001 используемого ядра ЦП. Таким образом, 500 миллиядер соответствует загрузке одного ядра на 50 %. Вычисляется в виде **среднего использования** всех ядер.
 
-Метрики памяти измеряются в **байтах**.
+* **Использование памяти** — вычисляется как **среднее число байт**.
+
+* **Получено байт по сети в секунду** и **Передано байт по сети в секунду** — вычисляется как **среднее число байт в секунду**. 
 
 ## <a name="get-metrics---azure-portal"></a>Получение метрик на портале Azure
 
-При создании группы контейнеров в Azure Monitor данные отображаются на портале Azure. Чтобы увидеть метрики для группы контейнеров, выберите нужную группу ресурсов, а затем группу контейнеров. Здесь вы видите предварительно созданные диаграммы по потреблению ЦП и памяти.
+При создании группы контейнеров в Azure Monitor данные отображаются на портале Azure. Чтобы просмотреть метрики для группы контейнеров, перейдите к странице **Обзор** для группы контейнеров. Здесь вы можете видеть предварительно созданные диаграммы для каждой из доступных метрик.
 
 ![Сдвоенные диаграммы][dual-chart]
 
-Если ваша группа контейнеров содержит несколько контейнеров, используйте функцию [измерения][monitor-dimension], чтобы получить метрики по каждому контейнеру. Чтобы создать диаграмму с метриками по отдельному контейнеру, выполните следующие действия:
+В группе из нескольких контейнеров используйте функцию [измерения][monitor-dimension], чтобы получить метрики по каждому контейнеру. Чтобы создать диаграмму с метриками по отдельному контейнеру, выполните следующие действия:
 
-1. В меню навигации слева выберите **Мониторинг**.
-2. Выберите группу контейнеров и метрику (ЦП или память).
-3. Нажмите зеленую кнопку измерения, а затем выберите **Имя контейнера**.
+1. На странице **Обзор** выберите одну из диаграмм метрик, таких как **ЦП**. 
+1. Нажмите кнопку **Применить разделение**, а затем выберите **Имя контейнера**.
 
 ![Измерение][dimension]
 
 ## <a name="get-metrics---azure-cli"></a>Получение метрик через Azure CLI
 
-Также данные о потреблении ЦП и памяти по экземплярам контейнеров можно получить с помощью Azure CLI. Для начала получите идентификатор группы контейнеров, используя приведенную ниже команду. Замените `<resource-group>` именем нужной группы ресурсов, а `<container-group>` — именем группы контейнеров.
+Метрики для экземпляров контейнеров можно также получить с помощью Azure CLI. Для начала получите идентификатор группы контейнеров, используя приведенную ниже команду. Замените `<resource-group>` именем нужной группы ресурсов, а `<container-group>` — именем группы контейнеров.
 
 
 ```console
@@ -60,80 +64,81 @@ CONTAINER_GROUP=$(az container show --resource-group <resource-group> --name <co
 ```console
 $ az monitor metrics list --resource $CONTAINER_GROUP --metric CPUUsage --output table
 
-Timestamp            Name              Average
--------------------  ------------  -----------
-2018-04-22 04:39:00  CPU Usage
-2018-04-22 04:40:00  CPU Usage
-2018-04-22 04:41:00  CPU Usage
-2018-04-22 04:42:00  CPU Usage
-2018-04-22 04:43:00  CPU Usage      0.375
-2018-04-22 04:44:00  CPU Usage      0.875
-2018-04-22 04:45:00  CPU Usage      1
-2018-04-22 04:46:00  CPU Usage      3.625
-2018-04-22 04:47:00  CPU Usage      1.5
-2018-04-22 04:48:00  CPU Usage      2.75
-2018-04-22 04:49:00  CPU Usage      1.625
-2018-04-22 04:50:00  CPU Usage      0.625
-2018-04-22 04:51:00  CPU Usage      0.5
-2018-04-22 04:52:00  CPU Usage      0.5
-2018-04-22 04:53:00  CPU Usage      0.5
+Timestamp            Name       Average
+-------------------  ---------  ---------
+2019-04-23 22:59:00  CPU Usage
+2019-04-23 23:00:00  CPU Usage
+2019-04-23 23:01:00  CPU Usage  0.0
+2019-04-23 23:02:00  CPU Usage  0.0
+2019-04-23 23:03:00  CPU Usage  0.5
+2019-04-23 23:04:00  CPU Usage  0.5
+2019-04-23 23:05:00  CPU Usage  0.5
+2019-04-23 23:06:00  CPU Usage  1.0
+2019-04-23 23:07:00  CPU Usage  0.5
+2019-04-23 23:08:00  CPU Usage  0.5
+2019-04-23 23:09:00  CPU Usage  1.0
+2019-04-23 23:10:00  CPU Usage  0.5
 ```
 
-А эта команда возвращает метрики потребления **памяти**:
+Измените значение параметра `--metric` в команде для получения других [поддерживаемых метрик][supported-metrics]. Например, используйте следующую команду для возвращения метрики потребления **памяти**. 
 
 ```console
 $ az monitor metrics list --resource $CONTAINER_GROUP --metric MemoryUsage --output table
 
-Timestamp            Name              Average
--------------------  ------------  -----------
-2018-04-22 04:38:00  Memory Usage
-2018-04-22 04:39:00  Memory Usage
-2018-04-22 04:40:00  Memory Usage
-2018-04-22 04:41:00  Memory Usage
-2018-04-22 04:42:00  Memory Usage  6.76915e+06
-2018-04-22 04:43:00  Memory Usage  9.22061e+06
-2018-04-22 04:44:00  Memory Usage  9.83552e+06
-2018-04-22 04:45:00  Memory Usage  8.42906e+06
-2018-04-22 04:46:00  Memory Usage  8.39526e+06
-2018-04-22 04:47:00  Memory Usage  8.88013e+06
-2018-04-22 04:48:00  Memory Usage  8.89293e+06
-2018-04-22 04:49:00  Memory Usage  9.2073e+06
-2018-04-22 04:50:00  Memory Usage  9.36243e+06
-2018-04-22 04:51:00  Memory Usage  9.30509e+06
-2018-04-22 04:52:00  Memory Usage  9.2416e+06
-2018-04-22 04:53:00  Memory Usage  9.1008e+06
+Timestamp            Name          Average
+-------------------  ------------  ----------
+2019-04-23 22:59:00  Memory Usage
+2019-04-23 23:00:00  Memory Usage
+2019-04-23 23:01:00  Memory Usage  0.0
+2019-04-23 23:02:00  Memory Usage  8859648.0
+2019-04-23 23:03:00  Memory Usage  9181184.0
+2019-04-23 23:04:00  Memory Usage  9580544.0
+2019-04-23 23:05:00  Memory Usage  10280960.0
+2019-04-23 23:06:00  Memory Usage  7815168.0
+2019-04-23 23:07:00  Memory Usage  7739392.0
+2019-04-23 23:08:00  Memory Usage  8212480.0
+2019-04-23 23:09:00  Memory Usage  8159232.0
+2019-04-23 23:10:00  Memory Usage  8093696.0
 ```
 
-В группе с несколькими контейнерами можно добавить измерение `containerName`, чтобы получить данные по отдельным контейнерам.
+В группе с несколькими контейнерами можно добавить измерение `containerName`, чтобы получить метрики по отдельным контейнерам.
 
 ```console
-$ az monitor metrics list --resource $CONTAINER_GROUP --metric CPUUsage --dimension containerName --output table
+$ az monitor metrics list --resource $CONTAINER_GROUP --metric MemoryUsage --dimension containerName --output table
 
 Timestamp            Name          Containername             Average
 -------------------  ------------  --------------------  -----------
-2018-04-22 17:03:00  Memory Usage  aci-tutorial-app      1.95338e+07
-2018-04-22 17:04:00  Memory Usage  aci-tutorial-app      1.93096e+07
-2018-04-22 17:05:00  Memory Usage  aci-tutorial-app      1.91488e+07
-2018-04-22 17:06:00  Memory Usage  aci-tutorial-app      1.94335e+07
-2018-04-22 17:07:00  Memory Usage  aci-tutorial-app      1.97714e+07
-2018-04-22 17:08:00  Memory Usage  aci-tutorial-app      1.96178e+07
-2018-04-22 17:09:00  Memory Usage  aci-tutorial-app      1.93434e+07
-2018-04-22 17:10:00  Memory Usage  aci-tutorial-app      1.92614e+07
-2018-04-22 17:11:00  Memory Usage  aci-tutorial-app      1.90659e+07
-2018-04-22 16:12:00  Memory Usage  aci-tutorial-sidecar  1.35373e+06
-2018-04-22 16:13:00  Memory Usage  aci-tutorial-sidecar  1.28614e+06
-2018-04-22 16:14:00  Memory Usage  aci-tutorial-sidecar  1.31379e+06
-2018-04-22 16:15:00  Memory Usage  aci-tutorial-sidecar  1.29536e+06
-2018-04-22 16:16:00  Memory Usage  aci-tutorial-sidecar  1.38138e+06
-2018-04-22 16:17:00  Memory Usage  aci-tutorial-sidecar  1.41312e+06
-2018-04-22 16:18:00  Memory Usage  aci-tutorial-sidecar  1.49914e+06
-2018-04-22 16:19:00  Memory Usage  aci-tutorial-sidecar  1.43565e+06
-2018-04-22 16:20:00  Memory Usage  aci-tutorial-sidecar  1.408e+06
+2019-04-23 22:59:00  Memory Usage  aci-tutorial-app
+2019-04-23 23:00:00  Memory Usage  aci-tutorial-app
+2019-04-23 23:01:00  Memory Usage  aci-tutorial-app      0.0
+2019-04-23 23:02:00  Memory Usage  aci-tutorial-app      16834560.0
+2019-04-23 23:03:00  Memory Usage  aci-tutorial-app      17534976.0
+2019-04-23 23:04:00  Memory Usage  aci-tutorial-app      18329600.0
+2019-04-23 23:05:00  Memory Usage  aci-tutorial-app      19742720.0
+2019-04-23 23:06:00  Memory Usage  aci-tutorial-app      14786560.0
+2019-04-23 23:07:00  Memory Usage  aci-tutorial-app      14651392.0
+2019-04-23 23:08:00  Memory Usage  aci-tutorial-app      15470592.0
+2019-04-23 23:09:00  Memory Usage  aci-tutorial-app      15450112.0
+2019-04-23 23:10:00  Memory Usage  aci-tutorial-app      15339520.0
+2019-04-23 22:59:00  Memory Usage  aci-tutorial-sidecar
+2019-04-23 23:00:00  Memory Usage  aci-tutorial-sidecar
+2019-04-23 23:01:00  Memory Usage  aci-tutorial-sidecar  0.0
+2019-04-23 23:02:00  Memory Usage  aci-tutorial-sidecar  884736.0
+2019-04-23 23:03:00  Memory Usage  aci-tutorial-sidecar  827392.0
+2019-04-23 23:04:00  Memory Usage  aci-tutorial-sidecar  831488.0
+2019-04-23 23:05:00  Memory Usage  aci-tutorial-sidecar  819200.0
+2019-04-23 23:06:00  Memory Usage  aci-tutorial-sidecar  843776.0
+2019-04-23 23:07:00  Memory Usage  aci-tutorial-sidecar  827392.0
+2019-04-23 23:08:00  Memory Usage  aci-tutorial-sidecar  954368.0
+2019-04-23 23:09:00  Memory Usage  aci-tutorial-sidecar  868352.0
+2019-04-23 23:10:00  Memory Usage  aci-tutorial-sidecar  847872.0
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о мониторинге в Azure вы найдете [в этой статье][azure-monitoring].
+
+Сведения о создании [оповещения о метриках][metric-alert] для получения уведомлений, когда значение метрики для Экземпляров контейнеров Azure достигает порогового значения.
 
 <!-- IMAGES -->
 [cpu-chart]: ./media/container-instances-monitor/cpu-multi.png
@@ -141,6 +146,11 @@ Timestamp            Name          Containername             Average
 [dual-chart]: ./media/container-instances-monitor/metrics.png
 [memory-chart]: ./media/container-instances-monitor/memory-multi.png
 
+<!-- LINKS - External -->
+[terms-of-use]: https://azure.microsoft.com/support/legal/preview-supplemental-terms/
+
 <!-- LINKS - Internal -->
-[azure-monitoring]: ../monitoring-and-diagnostics/monitoring-overview.md
+[azure-monitoring]: ../azure-monitor/overview.md
+[metric-alert]: ..//azure-monitor/platform/alerts-metric.md
 [monitor-dimension]: ../azure-monitor/platform/data-platform-metrics.md#multi-dimensional-metrics
+[supported-metrics]: ../azure-monitor/platform/metrics-supported.md#microsoftcontainerinstancecontainergroups

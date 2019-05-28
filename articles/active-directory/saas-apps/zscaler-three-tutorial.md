@@ -13,14 +13,14 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 04/09/2019
+ms.date: 04/24/2019
 ms.author: jeedes
-ms.openlocfilehash: 4a7ddc6b9f4a8638d18262e458d61108c00b618d
-ms.sourcegitcommit: b8a8d29fdf199158d96736fbbb0c3773502a092d
+ms.openlocfilehash: e2729a47771f2c3073d91cb5b0de4684b51badbd
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/15/2019
-ms.locfileid: "59564559"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64681876"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-zscaler-three"></a>Руководство по Интеграция Azure Active Directory с Zscaler Three
 
@@ -38,7 +38,7 @@ ms.locfileid: "59564559"
 
 Чтобы настроить интеграцию Azure AD с Zscaler Three, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка Zscaler Three с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -111,7 +111,7 @@ ms.locfileid: "59564559"
 
 5. Приложение Zscaler Three ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок **Изменить**, чтобы открыть диалоговое окно  **Атрибуты пользователя** .
 
-    ![изображение](common/edit-attribute.png)
+    ![image](common/edit-attribute.png)
 
 6. В дополнение к описанному выше приложение Zscaler Three ожидает несколько дополнительных атрибутов в ответе SAML. В разделе **Утверждения пользователя** диалогового окна **Атрибуты пользователя** выполните следующие действия, чтобы добавить атрибут токена SAML, как показано в приведенной ниже таблице.
     
@@ -121,9 +121,9 @@ ms.locfileid: "59564559"
 
     a. Щелкните **Добавить новое утверждение**, чтобы открыть диалоговое окно **Управление утверждениями пользователя**.
 
-    ![изображение](common/new-save-attribute.png)
+    ![image](common/new-save-attribute.png)
 
-    ![изображение](common/new-attribute-details.png)
+    ![image](common/new-attribute-details.png)
 
     b. В текстовом поле **Имя** введите имя атрибута, отображаемое для этой строки.
 
@@ -154,9 +154,17 @@ ms.locfileid: "59564559"
 
 ### <a name="configure-zscaler-three-single-sign-on"></a>Настройка единого входа для Zscaler Three
 
-1. В другом окне веб-браузера войдите на свой корпоративный сайт Zscaler Three в качестве администратора.
+1. Для автоматизации настройки в Zscaler Three необходимо установить **Расширение браузера "Безопасный вход в мои приложения"** , щелкнув **Установить расширение**.
 
-2. Выберите **Administration (Администрирование) > Authentication (Проверка подлинности) > Authentication Settings (Параметры проверки подлинности)** и выполните следующие действия:
+    ![Расширение "Мои приложения"](common/install-myappssecure-extension.png)
+
+2. Чтобы перейти к приложению Zscaler Three после добавления расширения в браузере, щелкните **Настройка Zscaler Three**. После этого укажите учетные данные администратора для входа в Zscaler Three. Расширение браузера автоматически настроит приложение и автоматизирует шаги 3–6.
+
+    ![Настройка единого входа](common/setup-sso.png)
+
+3. Если необходимо вручную настроить Zscaler Three, откройте новое окно веб-браузера, зайдите на корпоративный сайт Zscaler Three в роли администратора и выполните следующие шаги:
+
+4. Выберите **Administration (Администрирование) > Authentication (Проверка подлинности) > Authentication Settings (Параметры проверки подлинности)** и выполните следующие действия:
    
     ![Администрирование](./media/zscaler-three-tutorial/ic800206.png "Администрирование")
 
@@ -164,7 +172,7 @@ ms.locfileid: "59564559"
 
     b. Нажмите кнопку **Configure SAML** (Настроить SAML).
 
-3. В окне **Изменить параметры SAML** выполните следующие действия и нажмите кнопку "Сохранить".  
+5. В окне **Изменить параметры SAML** выполните следующие действия и нажмите кнопку "Сохранить".  
             
     ![Управление пользователями и проверкой подлинности](./media/zscaler-three-tutorial/ic800208.png "Управление пользователями и проверкой подлинности")
     
@@ -184,7 +192,7 @@ ms.locfileid: "59564559"
 
     h. Выберите команду **Сохранить**.
 
-4. На странице **Настройка проверки подлинности пользователей** выполните следующие действия.
+6. На странице **Настройка проверки подлинности пользователей** выполните следующие действия.
 
     ![Администрирование](./media/zscaler-three-tutorial/ic800207.png)
 
@@ -241,7 +249,7 @@ ms.locfileid: "59564559"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите brittasimon@yourcompanydomain.extension. Например BrittaSimon@contoso.com.
+    b. В поле **Имя пользователя** введите `brittasimon@yourcompanydomain.extension`. Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
@@ -269,15 +277,15 @@ ms.locfileid: "59564559"
 
 5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в нижней части экрана нажмите кнопку **Выбрать**.
 
-    ![изображение](./media/zscaler-three-tutorial/tutorial_zscalerthree_users.png)
+    ![image](./media/zscaler-three-tutorial/tutorial_zscalerthree_users.png)
 
 6. В диалоговом окне **Выбор роли** выберите соответствующие роли пользователей из списка, а затем нажмите кнопку **Выбрать** в нижней части экрана.
 
-    ![изображение](./media/zscaler-three-tutorial/tutorial_zscalerthree_roles.png)
+    ![image](./media/zscaler-three-tutorial/tutorial_zscalerthree_roles.png)
 
 7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
-    ![изображение](./media/zscaler-three-tutorial/tutorial_zscalerthree_assign.png)
+    ![image](./media/zscaler-three-tutorial/tutorial_zscalerthree_assign.png)
 
 ### <a name="create-zscaler-three-test-user"></a>Создание тестового пользователя Zscaler Three
 

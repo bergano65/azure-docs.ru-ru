@@ -13,12 +13,12 @@ ms.author: garye
 ms.reviewer: davidph
 manager: cgronlun
 ms.date: 04/11/2019
-ms.openlocfilehash: ada09959391c551a9eff4d96b186be29c1e3b7a8
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: cfc70b3d8e364c25ccf9fd221699695641a66ef0
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60013115"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64708588"
 ---
 # <a name="create-and-run-simple-r-scripts-in-azure-sql-database-machine-learning-services-preview"></a>Создание и выполнение простых сценариев R в Службах машинного обучения в Базе данных SQL Azure (предварительная версия)
 
@@ -73,7 +73,7 @@ print(c(c, d))
 
    > [!NOTE]
    > Если вы являетесь администратором, можете настроить автоматическое выполнение внешнего кода. Разрешение можно предоставить другим пользователям с помощью команды:
-   <br>**GRANT EXECUTE ANY EXTERNAL SCRIPT TO** *\<имя_пользователя\>*.
+   <br>**GRANT EXECUTE ANY EXTERNAL SCRIPT TO** *\<имя_пользователя\>* .
 
 2. Вычисляется корректный результат, а функция R `print`возвращает результат в окне **Сообщения**.
 
@@ -102,9 +102,9 @@ GO
 
 | | |
 |-|-|
-|*@language* | Определяет расширение языка для вызова, в данном случае это R. |
-|*@script* | Определяет команды, передаваемые в среду выполнения R. Весь сценарий R должен содержаться в этом аргументе в виде текста в Юникоде. Можно также добавить текст для переменной типа **nvarchar** и затем вызвать ее. |
-|*@input_data_1* | Данные, возвращаемые запросом, передаются в среду выполнения R, которая возвращает их в SQL Server в качестве кадра данных. |
+| @language | Определяет расширение языка для вызова, в данном случае это R. |
+| @script | Определяет команды, передаваемые в среду выполнения R. Весь сценарий R должен содержаться в этом аргументе в виде текста в Юникоде. Можно также добавить текст для переменной типа **nvarchar** и затем вызвать ее. |
+| @input_data_1 | Данные, возвращаемые запросом, передаются в среду выполнения R, которая возвращает их в SQL Server в качестве кадра данных. |
 |WITH RESULT SETS | Это предложение определяет схему возвращаемой таблицы данных для SQL Server, добавляя "Hello, World!" в качестве имени столбца с типом данных **int**. |
 
 Команда выводит следующий текст:
@@ -146,7 +146,7 @@ GO
 
     **Результаты**
 
-    ![Содержимое таблицы RTestData](./media/sql-database-connect-query-r/select-rtestdata.png)
+    ![Содержимое таблицы RTestData](./media/sql-database-quickstart-r-create-script/select-rtestdata.png)
 
 1. Выполните следующий сценарий R. Он извлекает данные из таблицы, используя инструкцию `SELECT`, передает их через среду выполнения R и возвращает в виде кадра данных. Предложение `WITH RESULT SETS` определяет схему возвращаемой таблицы данных для Базы данных SQL, добавляя имя столбца *NewColName*.
 
@@ -159,7 +159,7 @@ GO
 
     **Результаты**
 
-    ![Выходные данные из скрипта R, который возвращает данные из таблицы](./media/sql-database-connect-query-r/r-output-rtestdata.png)
+    ![Выходные данные из скрипта R, который возвращает данные из таблицы](./media/sql-database-quickstart-r-create-script/r-output-rtestdata.png)
 
 1. Давайте изменим имена входных и выходных переменных. Имена входных и выходных переменных по умолчанию — **InputDataSet** и **OutputDataSet**. Данный сценарий изменяет их на **SQL_in** и **SQL_out**.
 
@@ -193,7 +193,7 @@ GO
 
     **Результаты**
 
-    ![Результаты запроса с помощью @script в качестве входных данных](./media/sql-database-connect-query-r/r-data-generated-output.png)
+    ![Результаты запроса с помощью @script в качестве входных данных](./media/sql-database-quickstart-r-create-script/r-data-generated-output.png)
 
 ## <a name="check-r-version"></a>Проверка версии R
 
@@ -251,7 +251,7 @@ WITH result sets((
 
 **Результаты**
 
-![Установленные пакеты в R](./media/sql-database-connect-query-r/r-installed-packages.png)
+![Установленные пакеты в R](./media/sql-database-quickstart-r-create-script/r-installed-packages.png)
 
 ## <a name="next-steps"></a>Дополнительная информация
 
@@ -260,10 +260,8 @@ WITH result sets((
 > [!div class="nextstepaction"]
 > [Создание и обучение прогнозной модели на языке R с помощью Служб машинного обучения Azure в Базе данных SQL (предварительная версия)](sql-database-quickstart-r-train-score-model.md)
 
-Дополнительные сведения о Службах машинного обучения содержатся в указанных ниже статьях. Хотя некоторые из этих статьей предназначены для SQL Server, большая часть информации также применима к Службам машинного обучения (с использованием R) в Базе данных SQL Azure.
+Дополнительные сведения о Службе машинного обучения с использованием R в Базе данных SQL Azure (предварительная версия) см. в следующих статьях.
 
-- [Machine Learning Services (with R) in Azure SQL Database (preview)](sql-database-machine-learning-services-overview.md) (Службы машинного обучения (с использованием R) в Базе данных SQL Azure (предварительная версия))
-- [Службы машинного обучения SQL Server](https://docs.microsoft.com/sql/advanced-analytics/what-is-sql-server-machine-learning)
-- [Руководство Анализ данных R для разработчиков SQL](https://docs.microsoft.com/sql/advanced-analytics/tutorials/sqldev-in-database-r-for-sql-developers)
-- [Комплексное пошаговое руководство по обработке и анализу данных для R и SQL Server](https://docs.microsoft.com/sql/advanced-analytics/tutorials/walkthrough-data-science-end-to-end-walkthrough)
-- [Руководство Use RevoScaleR R functions with SQL Server data](https://docs.microsoft.com/sql/advanced-analytics/tutorials/deepdive-data-science-deep-dive-using-the-revoscaler-packages) (Руководство. Использование функций R RevoScaleR с данными SQL Server)
+- [Azure SQL Database Machine Learning Services with R (preview)](sql-database-machine-learning-services-overview.md) (Служба машинного обучения с использованием R в Базе данных SQL Azure (предварительная версия))
+- [Запись расширенных функций R в Базу данных SQL Azure с помощью Служб машинного обучения (предварительная версия)](sql-database-machine-learning-services-functions.md)
+- [Work with R and SQL data in Azure SQL Database Machine Learning Services (preview)](sql-database-machine-learning-services-data-issues.md) (Работа с данными R и SQL в Службе машинного обучения в Базе данных SQL Azure)

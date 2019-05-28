@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: gateway
 ms.topic: tutorial
-ms.date: 03/28/2019
+ms.date: 04/23/2019
 ms.author: alkohli
-ms.openlocfilehash: 34bc4d7cbdbb89cd9ff3f334ca32087c474735b7
-ms.sourcegitcommit: f8c592ebaad4a5fc45710dadc0e5c4480d122d6f
+ms.openlocfilehash: f9650cdb6935fb45f0c59e8a114a9ce1c8e2d809
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58620093"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64686534"
 ---
 # <a name="tutorial-prepare-to-deploy-azure-data-box-gateway"></a>Руководство по Подготовка Шлюза Azure Data Box к развертыванию
 
@@ -51,6 +51,8 @@ ms.locfileid: "58620093"
 Перед тем как начать, убедитесь в следующем.
 
 - Ваша подписка Microsoft Azure должна поддерживать создание ресурсов Шлюза Data Box. Подписки с оплатой по мере использования не поддерживаются.
+- У вас есть доступ к подписке в роли владельца или участника.
+- У вас есть доступ к API Graph Azure Active Directory в роли администратора или пользователя. Дополнительные сведения см. в статье [Области разрешений | Основные понятия API Graph](https://docs.microsoft.com/previous-versions/azure/ad/graph/howto/azure-ad-graph-api-permission-scopes#default-access-for-administrators-users-and-guest-users-).
 - Имеется учетная запись хранения Microsoft Azure и данные для доступа к ней.
 
 ### <a name="for-the-data-box-gateway-device"></a>Для устройства Шлюза Data Box
@@ -85,7 +87,7 @@ ms.locfileid: "58620093"
 
 1. Используя учетные данные Microsoft Azure, выполните вход
 
-    - на портал Azure по URL-адресу [https://portal.azure.com](http://portal.azure.com);
+    - на портал Azure по URL-адресу [https://portal.azure.com](https://portal.azure.com);
     - или на портал Azure для государственных организаций по URL-адресу [https://portal.azure.us](https://portal.azure.us). Дополнительные сведения см. в статье о [ подключении к Azure для государственных организаций с помощью портала](https://docs.microsoft.com/azure/azure-government/documentation-government-get-started-connect-with-portal).
 
 2. В левой области выберите **+ Создать ресурс**. Выполните поиск по запросу **Data Box Edge / Шлюз Data Box**. Выберите Data Box Edge / Шлюз Data Box. Нажмите кнопку **Создать**.

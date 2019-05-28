@@ -1,7 +1,6 @@
 ---
 title: Руководство по использованию Apache Storm для чтения и записи данных с помощью Apache Kafka — Azure HDInsight
 description: Узнайте, как создать конвейер потоковой передачи с помощью Apache Storm и Apache Kafka в HDInsight. В этом руководстве используются компоненты KafkaBolt и KafkaSpout, чтобы выполнять потоковую передачу данных из Kafka.
-services: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
 ms.reviewer: jasonh
@@ -9,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: tutorial
 ms.date: 12/06/2018
-ms.openlocfilehash: dca789a850e5df58024d13b8f592765e55c39485
-ms.sourcegitcommit: 90dcc3d427af1264d6ac2b9bde6cdad364ceefcc
+ms.openlocfilehash: c89567115079887295704e216cd4046fae99c9d1
+ms.sourcegitcommit: 8a681ba0aaba07965a2adba84a8407282b5762b2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/21/2019
-ms.locfileid: "58316955"
+ms.lasthandoff: 04/29/2019
+ms.locfileid: "64873012"
 ---
 # <a name="tutorial-use-apache-storm-with-apache-kafka-on-hdinsight"></a>Руководство по Использование Apache Storm с Apache Kafka в HDInsight
 
@@ -80,7 +79,7 @@ Apache Storm предоставляет несколько компоненто�
     * `org.apache.storm.kafka.bolt.mapper.FieldNameBasedTupleToKafkaMapper`: сопоставляет структуру данных кортежа, используемую в топологии Storm, с полями, хранящимися в Kafka.
 
 Эти компоненты доступны в пакете `org.apache.storm : storm-kafka`. Используйте версию пакета, которая соответствует версии Storm. Для HDInsight 3.6 используется Storm версии 1.1.0.
-Вам также необходим пакет `org.apache.kafka : kafka_2.10`, который содержит дополнительные компоненты Kafka. Используйте версию пакета, которая соответствует версии Kafka. Для HDInsight 3.6 используется Kafka версии 0.10.0.0.
+Вам также необходим пакет `org.apache.kafka : kafka_2.10`, который содержит дополнительные компоненты Kafka. Используйте версию пакета, которая соответствует версии Kafka. Для HDInsight 3.6 используется Kafka версии 1.1.1.
 
 Следующий XML-код является объявлением зависимости в `pom.xml` для проекта [Apache Maven](https://maven.apache.org/):
 
@@ -95,7 +94,7 @@ Apache Storm предоставляет несколько компоненто�
 <dependency>
     <groupId>org.apache.kafka</groupId>
     <artifactId>kafka_2.10</artifactId>
-    <version>0.10.0.0</version>
+    <version>1.1.1</version>
     <!-- Exclude components that are loaded from the Storm cluster at runtime -->
     <exclusions>
         <exclusion>
@@ -392,7 +391,7 @@ Apache Kafka в HDInsight не предоставляет доступ к бро
    
     <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure-Samples%2Fhdinsight-storm-java-kafka%2Fmaster%2Fcreate-kafka-storm-clusters-in-vnet.json" target="_blank"><img src="./media/hdinsight-apache-storm-with-kafka/deploy-to-azure.png" alt="Deploy to Azure"></a>
    
-    Шаблон Azure Resource Manager доступен по адресу **https://github.com/Azure-Samples/hdinsight-storm-java-kafka/blob/master/create-kafka-storm-clusters-in-vnet.json**. Он создает перечисленные ниже ресурсы.
+    Шаблон Azure Resource Manager доступен по адресу **https://github.com/Azure-Samples/hdinsight-storm-java-kafka/blob/master/create-kafka-storm-clusters-in-vnet.json** . Он создает перечисленные ниже ресурсы.
     
     * Группа ресурсов Azure
     * Виртуальная сеть Azure

@@ -4,227 +4,200 @@ description: Сведения о настройке единого входа м
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: daveba
+manager: mtillman
+ms.reviewer: barbkess
 ms.assetid: d2bc549d-d286-4679-854e-bb67c62b0475
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 05/10/2018
+ms.topic: tutorial
+ms.date: 04/15/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c097fb045db1afe65a84a2a96dc202c57e8a449e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: MT
+ms.openlocfilehash: 3595a946d930ca83b5d2f1f3d82b775bf8eb4855
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60428735"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64712687"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-cerner-central"></a>Руководство по Интеграция Azure Active Directory с Cerner Central
 
 В этом руководстве описано, как интегрировать Cerner Central с Azure Active Directory (Azure AD).
-
 Интеграция Azure AD с приложением Cerner Central обеспечивает следующие преимущества:
 
-- С помощью Azure AD вы можете контролировать доступ к Cerner Central.
-- Вы можете включить автоматический вход пользователей в Cerner Central (единый вход) с учетной записью Azure AD.
-- Вы можете управлять учетными записями централизованно — через портал Azure.
+* С помощью Azure AD вы можете контролировать доступ к Cerner Central.
+* Вы можете включить автоматический вход пользователей в Cerner Central (единый вход) с помощью учетных записей Azure AD.
+* Вы можете управлять учетными записями централизованно на портале Azure.
 
-Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Cerner Central, вам потребуется:
 
-- подписка Azure AD;
-- утвержденная системная учетная запись Cerner Central.
-
-> [!NOTE]
-> Мы не рекомендуем использовать рабочую среду для проверки действий в этом учебнике.
-
-При проверке действий в этом учебнике соблюдайте следующие рекомендации:
-
-- Не используйте рабочую среду без необходимости.
-- Если у вас нет пробной среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
+* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Cerner Central с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
-В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
-1. Добавление Cerner Central из коллекции
-1. настройка и проверка единого входа в Azure AD.
+В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
+
+* Cerner Central поддерживает единый вход, инициированный **IDP**.
+* Cerner Central поддерживает [**автоматическую** подготовку пользователей](cernercentral-provisioning-tutorial.md).
 
 ## <a name="adding-cerner-central-from-the-gallery"></a>Добавление Cerner Central из коллекции
+
 Чтобы настроить интеграцию Cerner Central с Azure AD, необходимо добавить Cerner Central из коллекции в список управляемых приложений SaaS.
 
 **Чтобы добавить Cerner Central из коллекции, сделайте следующее.**
 
-1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
+1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Active Directory][1]
+    ![Кнопка Azure Active Directory](common/select-azuread.png)
 
-1. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
+2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
-    ![ПРИЛОЖЕНИЯ][2]
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-1. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Новое приложение**.
+3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![ПРИЛОЖЕНИЯ][3]
+    ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-1. В поле поиска введите **Cerner Central**.
+4. В поле поиска введите **Cerner Central**, выберите **Cerner Central** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
-    ![Создание тестового пользователя Azure AD](./media/cernercentral-tutorial/tutorial_cernercentral_search.png)
+    ![Cerner Central в списке результатов](common/search-new-app.png)
 
-1. На панели результатов выберите **Cerner Central** и нажмите кнопку **Добавить**, чтобы добавить приложение.
+## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
-    ![Создание тестового пользователя Azure AD](./media/cernercentral-tutorial/tutorial_cernercentral_addfromgallery.png)
-
-##  <a name="configuring-and-testing-azure-ad-single-sign-on"></a>настройка и проверка единого входа в Azure AD.
-В этом разделе описаны настройка и проверка единого входа Azure AD в Cerner Central с использованием тестового пользователя Britta Simon.
-
-Для работы единого входа Azure AD необходимо знать, какой пользователь в Cerner Central соответствует пользователю в Azure AD. Иными словами, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Cerner Central.
+В этом разделе описаны настройка и проверка единого входа Azure AD в Cerner Central с использованием тестового пользователя **Britta Simon**.
+Чтобы обеспечить работу единого входа, нужно установить связь между пользователем Azure AD и соответствующим пользователем в Cerner Central.
 
 Чтобы настроить и проверить единый вход Azure AD в Cerner Central, вам потребуется выполнить действия в следующих стандартных блоках.
 
-1. **[Configuring Azure AD Single Sign-On](#configuring-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-1. **[Создание тестового пользователя Azure AD](#creating-an-azure-ad-test-user)** требуется для проверки работы единого входа в Azure AD от имени пользователя Britta Simon.
-1. **[Создание тестового пользователя Cerner Central](#creating-a-cerner-central-test-user)** требуется для создания пользователя Britta Simon в Cerner Central, связанного с соответствующим представлением в Azure AD.
-1. **[Назначение тестового пользователя Azure AD](#assigning-the-azure-ad-test-user)** необходимо, чтобы позволить Britta Simon использовать единый вход Azure AD;
-1. **[Проверка единого входа](#testing-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
+2. **[Настройка единого входа в Cerner Central](#configure-cerner-central-single-sign-on)** требуется для того, чтобы настроить параметры единого входа на стороне приложения.
+3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
+5. **[Создание тестового пользователя Cerner Central](#create-cerner-central-test-user)** требуется для того, чтобы в Cerner Central существовал пользователь Britta Simon, связанный с представлением этого же пользователя в Azure AD.
+6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
 
-### <a name="configuring-azure-ad-single-sign-on"></a>Настройка единого входа в Azure AD
+### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
-В этом разделе описано, как включить единый вход Azure AD на портале Azure и настроить его в приложении Cerner Central.
+В этом разделе описано включение единого входа Azure AD на портале Azure.
 
-**Чтобы настроить единый вход Azure AD в Cerner Central, сделайте следующее.**
+Чтобы настроить единый вход Azure AD в Cerner Central, сделайте следующее.
 
-1. На портале Azure на странице интеграции с приложением **Cerner Central** щелкните **Единый вход**.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Cerner Central** выберите **Единый вход**.
 
-    ![Настройка единого входа][4]
+    ![Ссылка "Настройка единого входа"](common/select-sso.png)
 
-1. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
+2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed**, чтобы включить единый вход.
 
-    ![Настройка единого входа](./media/cernercentral-tutorial/tutorial_cernercentral_samlbase.png)
+    ![Режим выбора единого входа](common/select-saml-option.png)
 
-1. В разделе **Домены и URL-адреса приложения Cerner Central** сделайте следующее.
+3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Настройка единого входа](./media/cernercentral-tutorial/tutorial_cernercentral_url.png)
+    ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
-    a. В текстовое поле **Идентификатор** введите значение в приведенном ниже формате.
+4. На странице **Настройка единого входа с помощью SAML** выполните следующие действия.
+
+    ![Сведения о домене и URL-адресах единого входа для приложения Cerner Central](common/idp-intiated.png)
+
+    a. В текстовом поле **Идентификатор** введите URL-адрес в таком формате:
 
     | |
     |--|
     | `https://<instancename>.cernercentral.com/session-api/protocol/saml2/metadata` |
     | `https://<instancename>.sandboxcernercentral.com/session-api/protocol/saml2/metadata` |
-    
-    2. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате:
-    
+
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате:
+
     | |
     |--|
     | `https://<instancename>.cernercentral.com/session-api/protocol/saml2/sso` |
     | `https://<instancename>.sandboxcernercentral.com/session-api/protocol/saml2/sso` |
 
     > [!NOTE]
-    > Эти значения приведены в качестве примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [службу поддержки Cerner Central](https://wiki.ucern.com/display/CernerCentral/Contacting+Cloud+Operations).
+    > Эти значения приведены для примера. Измените их на фактические значения идентификатора и URL-адреса ответа. Чтобы получить эти значения, обратитесь в [группу поддержки клиентов Cerner Central](mailto:SISupport@cbre.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
-1. В разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы скопировать **URL-адрес метаданных федерации приложений**. Затем вставьте его в Блокнот.
+5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** нажмите кнопку "Копировать", чтобы копировать **URL-адрес метаданных федерации приложений** и сохранить его на компьютере.
 
-    ![Настройка единого входа](./media/cernercentral-tutorial/tutorial_metadataurl.png)
+    ![Ссылка для скачивания сертификата](common/copy-metadataurl.png)
 
-1. Нажмите кнопку **Сохранить** .
+### <a name="configure-cerner-central-single-sign-on"></a>Настройка единого входа в Cerner Central
 
-    ![Настройка единого входа](./media/cernercentral-tutorial/tutorial_general_400.png)
+Для настройки единого входа на стороне **Cerner Central** необходимо отправить **URL-адрес метаданных федерации приложения** в [группу поддержки Cerner Central](mailto:SISupport@cbre.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
-1. Для настройки единого входа на стороне **Cerner Central** необходимо отправить **URL-адрес метаданных федерации приложения** в [службу поддержки Cerner Central](https://wiki.ucern.com/display/CernerCentral/Contacting+Cloud+Operations). Специалисты службы поддержки настроят единый вход на стороне приложения для завершения интеграции.
+### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
-### <a name="creating-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-![Создание пользователя Azure AD][100]
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
-**Чтобы создать тестового пользователя в Azure AD, выполните следующие действия:**
+    ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
 
-1. На **портале Azure** в области навигации слева щелкните значок **Azure Active Directory**.
+2. В верхней части экрана выберите **Новый пользователь**.
 
-    ![Создание тестового пользователя Azure AD](./media/cernercentral-tutorial/create_aaduser_01.png) 
+    ![Кнопка "Новый пользователь"](common/new-user.png)
 
-1. Чтобы отобразить список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
+3. В разделе свойств пользователя сделайте следующее:
 
-    ![Создание тестового пользователя Azure AD](./media/cernercentral-tutorial/create_aaduser_02.png) 
+    ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-1. Щелкните **Добавить**, чтобы открыть диалоговое окно **Пользователь**.
+    а. В поле **Имя** введите **BrittaSimon**.
+  
+    b. В поле **Имя пользователя** введите `brittasimon@yourcompanydomain.extension`. Например BrittaSimon@contoso.com.
 
-    ![Создание тестового пользователя Azure AD](./media/cernercentral-tutorial/create_aaduser_03.png) 
-
-1. На странице диалогового окна **Пользователь** выполните следующие действия.
-
-    ![Создание тестового пользователя Azure AD](./media/cernercentral-tutorial/create_aaduser_04.png) 
-
-    a. В текстовом поле **Имя** введите **BrittaSimon**.
-
-    2. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи Britta Simon.
-
-    c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
     d. Нажмите кнопку **Создать**.
 
-### <a name="creating-a-cerner-central-test-user"></a>Создание тестового пользователя Cerner Central
-
-Приложение **Cerner Central** разрешает аутентификацию посредством любого поставщика федеративных удостоверений. Если пользователь может войти на домашнюю страницу приложения, то он является федеративным и не требует подготовки вручную. Дополнительные сведения о настройке автоматической подготовки пользователей можно найти [здесь](cernercentral-provisioning-tutorial.md).
-
-### <a name="assigning-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
+### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
 В этом разделе описано, как позволить пользователю Britta Simon использовать единый вход Azure, предоставив этому пользователю доступ к Cerner Central.
 
-![Назначение пользователя][200]
+1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем **Cerner Central**.
 
-**Чтобы назначить пользователя Britta Simon в Cerner Central, сделайте следующее.**
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-1. На портале Azure откройте представление приложений, перейдите к представлению каталога, а затем выберите **Корпоративные приложения** и щелкните **Все приложения**.
+2. В списке приложений выберите **Cerner Central**.
 
-    ![Назначение пользователя][201]
+    ![Ссылка на Cerner Central в списке приложений](common/all-applications.png)
 
-1. В списке приложений выберите **Cerner Central**.
+3. В меню слева выберите **Пользователи и группы**.
 
-    ![Настройка единого входа](./media/cernercentral-tutorial/tutorial_cernercentral_app.png)
+    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
 
-1. В меню слева выберите **Пользователи и группы**.
+4. Нажмите кнопку **Добавить пользователя**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
-    ![Назначение пользователя][202]
+    ![Область "Добавление назначения"](common/add-assign-user.png)
 
-1. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
 
-    ![Назначение пользователя][203]
+6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
 
-1. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
+7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
-1. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
+### <a name="create-cerner-central-test-user"></a>Создание тестового пользователя Cerner Central
 
-1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
+Приложение **Cerner Central** разрешает аутентификацию посредством любого поставщика федеративных удостоверений. Если пользователь может войти на домашнюю страницу приложения, то он является федеративным и не требует подготовки вручную. Дополнительные сведения о настройке автоматической подготовки пользователей можно найти [здесь](cernercentral-provisioning-tutorial.md).
 
-### <a name="testing-single-sign-on"></a>Проверка единого входа
+### <a name="test-single-sign-on"></a>Проверка единого входа
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув элемент Cerner Central на панели доступа, вы автоматически войдете в приложение Cerner Central. См. дополнительные сведения о [панели доступа](../user-help/active-directory-saas-access-panel-introduction.md)
+Щелкнув плитку Cerner Central на Панели доступа, вы автоматически войдете в приложение Cerner Central, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Список учебников по интеграции приложений SaaS с Azure Active Directory](tutorial-list.md)
-* [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
-* [Руководство по настройке Google Apps для автоматической подготовки пользователей](cernercentral-provisioning-tutorial.md)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-<!--Image references-->
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-[1]: ./media/cernercentral-tutorial/tutorial_general_01.png
-[2]: ./media/cernercentral-tutorial/tutorial_general_02.png
-[3]: ./media/cernercentral-tutorial/tutorial_general_03.png
-[4]: ./media/cernercentral-tutorial/tutorial_general_04.png
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
-[100]: ./media/cernercentral-tutorial/tutorial_general_100.png
-
-[200]: ./media/cernercentral-tutorial/tutorial_general_200.png
-[201]: ./media/cernercentral-tutorial/tutorial_general_201.png
-[202]: ./media/cernercentral-tutorial/tutorial_general_202.png
-[203]: ./media/cernercentral-tutorial/tutorial_general_203.png
+- [Руководство по настройке Google Apps для автоматической подготовки пользователей](cernercentral-provisioning-tutorial.md)

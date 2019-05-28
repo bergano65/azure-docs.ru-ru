@@ -12,17 +12,16 @@ ms.workload: web
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: quickstart
-ms.date: 03/27/2019
+ms.date: 04/29/2019
 ms.author: cephalin
-ms.custom: seodec18
-ms.openlocfilehash: 04f08965d161e35a9ae4423ad5d3cf80cb407b8a
-ms.sourcegitcommit: 5f348bf7d6cf8e074576c73055e17d7036982ddb
+ms.openlocfilehash: b704e9074c8ef88d8fefd97f466884af952c46f8
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59607778"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64919607"
 ---
-# <a name="create-a-python-app-in-azure-app-service-on-linux-preview"></a>Создание приложения Python в Службе приложений Azure в Linux (предварительная версия)
+# <a name="create-a-python-app-in-azure-app-service-on-linux"></a>Создание приложения Python в Службе приложений Azure в Linux
 
 В этом кратком руководстве вы развернете простое приложение Python в [Службе приложений на платформе Linux](app-service-linux-intro.md), которая предоставляет высокомасштабируемую веб-службу размещения с самостоятельной установкой исправлений. В руководстве используется интерфейс командной строки Azure ([Azure CLI](/cli/azure/install-azure-cli)) в интерактивной браузерной оболочке Azure Cloud Shell. Поэтому все инструкции можно выполнять на компьютере Mac, Linux или Windows.
 
@@ -199,8 +198,6 @@ az webapp up -n <app-name> -l <location-name>
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Сейчас встроенный образ Python в Службе приложений на платформе Linux доступен в предварительной версии. Вы можете настроить команду для запуска приложения. Также приложения Python для рабочей среды можно создавать с помощью настраиваемого контейнера.
-
 > [!div class="nextstepaction"]
 > [Руководство по использованию приложения Python с PostgreSQL](tutorial-python-postgresql-app.md)
 
@@ -208,4 +205,4 @@ az webapp up -n <app-name> -l <location-name>
 > [Настройка приложения Python](how-to-configure-python.md)
 
 > [!div class="nextstepaction"]
-> [Руководство. Запуск приложения Python в настраиваемом контейнере](tutorial-custom-docker-image.md)
+> [Руководство Запуск приложения Python в настраиваемом контейнере](tutorial-custom-docker-image.md)

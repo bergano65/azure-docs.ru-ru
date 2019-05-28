@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-graph
 ms.topic: quickstart
 ms.date: 01/08/2018
 ms.author: lbosq
-ms.openlocfilehash: 06601fbad43b3daf00e06efbe95a092e76559e36
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: fa7b9289f4fef6962c896dba72a35088134431d9
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57849828"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64730106"
 ---
 # <a name="quickstart-create-query-and-traverse-an-azure-cosmos-db-graph-database-using-the-gremlin-console"></a>Краткое руководство. Создание, запрос и просмотр в консоли Gremlin графовой базы данных Azure Cosmos DB
 
@@ -55,7 +55,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
     Параметр|Рекомендуемое значение|ОПИСАНИЕ
     ---|---|---
-    Узлы|[*account-name*.gremlin.cosmosdb.azure.com] или [*account-name*.graphs.azure.com] для учетных записей, созданных до 20 декабря 2017 г.|Экран должен выглядеть следующим образом. Это значение Gremlin URI на странице обзора портала Azure, заключенное в квадратные скобки и без окончания 443/.
+    Узлы|[*имя_учетной_записи*.gremlin.cosmos.azure.com]|Экран должен выглядеть следующим образом. Это значение Gremlin URI на странице обзора портала Azure, заключенное в квадратные скобки и без окончания 443/.
     порт|443|Задайте значение 443.
     Имя пользователя|*Имя пользователя*|Ресурс в формате `/dbs/<db>/colls/<coll>`, где `<db>` — это имя базы данных, а `<coll>` — имя коллекции.
     password|*Значение первичного ключа*| Просмотрите второй снимок экрана ниже. Это первичный ключ, который можно получить на странице "Ключи" на портале Azure в поле "Первичный ключ". Скопируйте значение с помощью кнопки копирования в левой части поля.
@@ -69,7 +69,7 @@ Azure Cosmos DB — это глобально распределенная мн
 Файл remote-secure.yaml должен выглядеть следующим образом:
 
 ```
-hosts: [your_database_server.gremlin.cosmosdb.azure.com]
+hosts: [your_database_server.gremlin.cosmos.azure.com] 
 port: 443
 username: /dbs/your_database_account/colls/your_collection
 password: your_primary_key

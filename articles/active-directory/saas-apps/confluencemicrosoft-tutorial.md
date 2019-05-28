@@ -13,15 +13,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 04/10/2019
+ms.date: 04/22/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 44f0c99a66088aeb54ba061308fefb111610d4dc
-ms.sourcegitcommit: 41015688dc94593fd9662a7f0ba0e72f044915d6
+ms.openlocfilehash: 45c9268495ed42ca67f815615b441986cf03332f
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59501235"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64683655"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-confluence-saml-sso-by-microsoft"></a>Руководство по Интеграция Azure Active Directory с Confluence SAML SSO by Microsoft
 
@@ -37,7 +37,7 @@ ms.locfileid: "59501235"
 
 ## <a name="description"></a>Описание:
 
-Используйте учетную запись Microsoft Azure Active Directory с сервером Atlassian Confluence, чтобы включить единый вход. Таким образом все пользователи вашей организации смогут использовать учетные данные Azure AD для входа в приложение Confluence. Этот подключаемый модуль для федерации использует SAML 2.0.
+Используйте учетную запись Microsoft Azure Active Directory с сервером Atlassian Confluence, чтобы включить единый вход. Таким образом, все пользователи вашей организации смогут использовать учетные данные Azure AD для входа в приложение Confluence. Этот подключаемый модуль для федерации использует SAML 2.0.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -80,7 +80,7 @@ ms.locfileid: "59501235"
 - Confluence: 6.12.0
 
 > [!NOTE]
-> Обратите внимание, что Confluence также поддерживает Linux Ubuntu версии 16.04.
+> Обратите внимание, что наш подключаемый модуль Confluence также работает в Ubuntu версии 16.04.
 
 ## <a name="scenario-description"></a>Описание сценария
 
@@ -146,11 +146,11 @@ ms.locfileid: "59501235"
 
     ![Сведения о домене и URL-адресах единого входа для приложения Confluence SAML SSO by Microsoft](common/sp-identifier-reply.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<domain:port>/plugins/servlet/saml/auth`
+    a. В текстовое поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<domain:port>/plugins/servlet/saml/auth`.
 
-    b. В поле **Идентификатор** введите URL-адрес в следующем формате: `https://<domain:port>/`
+    b. В поле **Идентификатор** введите URL-адрес в следующем формате: `https://<domain:port>/`.
 
-    c. В текстовом поле **URL-адрес ответа** введите URL-адрес в таком формате: `https://<domain:port>/plugins/servlet/saml/auth`
+    c. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://<domain:port>/plugins/servlet/saml/auth`.
 
     > [!NOTE]
     > Эти значения приведены для примера. Замените их фактическими значениями идентификатора, URL-адреса ответа и URL-адреса входа. Если это именованный URL-адрес, то порт указывать необязательно. Эти значения предоставляются во время настройки подключаемого модуля Confluence, которая описывается далее в этом руководстве.
@@ -193,7 +193,7 @@ ms.locfileid: "59501235"
     > [!Note]
     > По умолчанию идентификатор пользователя SAML указан в идентификаторе имени. Его можно заменить атрибутом и ввести имя соответствующего атрибута.
     
-    д. Если выбран параметр **Идентификатор пользователя указан в элементе Attribute**, введите в текстовое поле **Имя атрибута** имя атрибута, в котором ожидается идентификатор пользователя. 
+    д. Если выбран параметр **User ID is in an Attribute element** (Идентификатор пользователя указан в элементе Attribute), введите в текстовое поле **Attribute name** (Имя атрибута) имя атрибута, в котором ожидается идентификатор пользователя. 
 
     Е. При использовании федеративного домена (например, AD FS и т. д.) для Azure AD выберите параметр **Включить обнаружение домашней области** и настройте **доменное имя**.
     
@@ -260,7 +260,7 @@ ms.locfileid: "59501235"
 
 Чтобы пользователи Azure AD могли входить на локальный сервер Confluence, для них необходимо выполнить подготовку в Confluence SAML SSO by Microsoft. Для Confluence SAML SSO by Microsoft подготовка выполняется вручную.
 
-**Чтобы подготовить учетную запись пользователя, выполните следующие действия.**
+**Чтобы подготовить учетную запись пользователя, сделайте следующее:**
 
 1. Войдите на локальный сервер Confluence с правами администратора.
 

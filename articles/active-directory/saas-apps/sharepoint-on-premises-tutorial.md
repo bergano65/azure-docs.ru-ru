@@ -8,19 +8,19 @@ manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 85b8d4d0-3f6a-4913-b9d3-8cc327d8280d
 ms.service: active-directory
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 02/21/2019
+ms.date: 04/25/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8ba9f4df36f753a1caf619ad90015fa073a00de3
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 8e85f390ee5ff74f02cb95fa4dcf1dfc1a35dad1
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58883383"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64699857"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sharepoint-on-premises"></a>Руководство. Интеграция Azure Active Directory с локальной версией SharePoint
 
@@ -38,7 +38,7 @@ ms.locfileid: "58883383"
 
 Чтобы настроить интеграцию Azure AD с локальной версией SharePoint, вам потребуется следующее:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
 * подписка на локальную версию SharePoint с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
@@ -65,7 +65,7 @@ ms.locfileid: "58883383"
 
     ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-4. В поле поиска введите **SharePoint (локальная версия)**, на панели результатов выберите **Локальная версия SharePoint** и нажмите кнопку **Добавить**, чтобы добавить это приложение.
+4. В поле поиска введите **SharePoint (локальная версия)** , на панели результатов выберите **Локальная версия SharePoint** и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
     ![Локальная версия SharePoint в списке результатов](common/search-new-app.png)
 
@@ -131,16 +131,16 @@ ms.locfileid: "58883383"
 
     а) URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
     > [!NOTE]
     > В локальном приложении SharePoint используется токен SAML 1.1, поэтому Azure AD ожидает запроса WS Fed от сервера SharePoint и после аутентификации создает токен SAML 1.1.
 
 ### <a name="configure-sharepoint-on-premises-single-sign-on"></a>Настройка локальной версии SharePoint с поддержкой единого входа
 
-1. В другом окне веб-браузера выполните вход на корпоративном сайте локальной версии SharePoint в качестве администратора.
+1. В другом окне веб-браузера выполните вход на корпоративный сайт локальной версии SharePoint в качестве администратора.
 
 2. **Настройка нового доверенного поставщика удостоверений в SharePoint Server 2016**
 
@@ -149,7 +149,7 @@ ms.locfileid: "58883383"
     > [!TIP]
     > Если вы не знаете, как использовать PowerShell, или хотите получить дополнительные сведения о том, как работает PowerShell, см. статью [SharePoint PowerShell](https://docs.microsoft.com/powershell/sharepoint/overview?view=sharepoint-ps).
 
-    ```powershell
+    ```
     $realm = "<Identifier value from the SharePoint on-premises Domain and URLs section in the Azure portal>"
     $wsfedurl="<SAML single sign-on service URL value which you have copied from the Azure portal>"
     $filepath="<Full path to SAML signing certificate file which you have downloaded from the Azure portal>"
@@ -160,7 +160,7 @@ ms.locfileid: "58883383"
     $map3 = New-SPClaimTypeMapping -IncomingClaimType "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/surname" -IncomingClaimTypeDisplayName "SurName" -SameAsIncoming
     $map4 = New-SPClaimTypeMapping -IncomingClaimType "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress" -IncomingClaimTypeDisplayName "Email" -SameAsIncoming
     $map5 = New-SPClaimTypeMapping -IncomingClaimType "http://schemas.microsoft.com/ws/2008/06/identity/claims/role" -IncomingClaimTypeDisplayName "Role" -SameAsIncoming
-    $ap = New-SPTrustedIdentityTokenIssuer -Name "AzureAD" -Description "SharePoint secured by Azure AD" -realm $realm -ImportTrustCertificate $cert -ClaimsMappings $map,$map2,$map3,$map4 -SignInUrl $wsfedurl -IdentifierClaim "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"
+    $ap = New-SPTrustedIdentityTokenIssuer -Name "AzureAD" -Description "SharePoint secured by Azure AD" -realm $realm -ImportTrustCertificate $cert -ClaimsMappings $map,$map2,$map3,$map4,$map5 -SignInUrl $wsfedurl -IdentifierClaim "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name"
     ```
 
     Далее включите доверенный поставщик удостоверений для вашего приложения, выполнив следующие действия:
@@ -198,7 +198,7 @@ ms.locfileid: "58883383"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
+    b. В поле **Имя пользователя** введите `brittasimon@yourcompanydomain.extension`.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -248,7 +248,7 @@ ms.locfileid: "58883383"
 
 6. Выберите **Добавить** и щелкните **Выбор API**.
 
-    ![Доступ к API](./media/sharepoint-on-premises-tutorial/required_permissions.png)
+    ![Доступ через API](./media/sharepoint-on-premises-tutorial/required_permissions.png)
 
 7. По очереди добавьте компоненты **Windows Azure Active Directory** и **API Microsoft Graph** (их невозможно добавить одновременно).
 
@@ -270,7 +270,7 @@ ms.locfileid: "58883383"
     > [!NOTE]
     > Обратите внимание на то, что AzureCP не является продуктом корпорации Майкрософт и не обслуживается службой технической поддержки Майкрософт. Скачайте приложение AzureCP на локальной ферме SharePoint по адресу https://yvand.github.io/AzureCP/. Установите и настройте программу. 
 
-11. **Предоставьте доступ группе безопасности Azure Active Directory в локальной версии SharePoint**. Группам должен быть предоставлен доступ к приложению в локальной версии SharePoint.  Следуйте инструкциям ниже, чтобы задать разрешения для доступа к веб-приложению.
+11. **Предоставьте доступ группе безопасности Azure Active Directory в локальной версии SharePoint**: группам должен быть предоставлен доступ к приложению в локальной версии SharePoint.  Следуйте инструкциям ниже, чтобы задать разрешения для доступа к веб-приложению.
 
 12. В центре администрирования щелкните "Управление приложениями" > "Управление веб-приложениями", а затем выберите веб-приложение, чтобы включить ленту, и щелкните "Политика пользователя".
 
@@ -310,19 +310,18 @@ ms.locfileid: "58883383"
 
 5. На сервере SharePoint откройте **командную консоль SharePoint 2016** и выполните приведенные ниже команды, применив использованное ранее имя доверенного издателя токена удостоверения.
 
-    ```powershell
+    ```
     $t = Get-SPTrustedIdentityTokenIssuer "AzureAD"
     $t.UseWReplyParameter=$true
     $t.Update()
     ```
-
 6. В центре администрирования перейдите к веб-приложению и включите существующий доверенный поставщик удостоверений. Не забудьте также настроить URL-адрес страницы входа в качестве настраиваемой страницы входа `/_trust/`.
 
 7. В центре администрирования щелкните веб-приложение и выберите **Политика пользователей**. Добавьте пользователя с соответствующими разрешениями, как показано выше в данной статье.
 
 ### <a name="fixing-people-picker"></a>Исправление средства выбора людей
 
-Теперь пользователи могут входить в SharePoint 2016, используя удостоверения из Azure AD. Но пользовательский интерфейс можно сделать еще лучше. Например, при поиске пользователя в средстве выбора людей система возвращает несколько результатов поиска. Для каждого из трех типов утверждений, созданных в сопоставлении утверждений, предусмотрен отдельный результат поиска. Чтобы выбрать пользователя с помощью средства выбора, вам потребуется ввести точное имя пользователя и выбрать результат утверждения **name**.
+Теперь пользователи могут входить в SharePoint 2016, используя удостоверения из Azure AD, при этом можно повысить удобство для пользователей. Например, при поиске пользователя в средстве выбора людей система возвращает несколько результатов поиска. Для каждого из трех типов утверждений, созданных в сопоставлении утверждений, предусмотрен отдельный результат поиска. Чтобы выбрать пользователя с помощью средства выбора, вам потребуется ввести точное имя пользователя и выбрать результат утверждения **name**.
 
 ![Результаты поиска утверждений](./media/sharepoint-on-premises-tutorial/fig16-claimssearchresults.png)
 

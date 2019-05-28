@@ -1,20 +1,19 @@
 ---
 title: Настройка политик Apache HBase в HDInsight с Корпоративным пакетом безопасности — Azure
 description: Сведения о настройке политик Apache Ranger для HBase в Azure HDInsight с Корпоративным пакетом безопасности.
-services: hdinsight
 ms.service: hdinsight
 author: hrasheed-msft
 ms.author: hrasheed
 ms.topic: tutorial
 ms.date: 02/01/2019
-ms.openlocfilehash: 1421b142fbca83d2de46f52f8390d0c25f22780c
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: d1f2a2b24e6f1856d021911e6f2e9c107bd38b72
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58117291"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64926093"
 ---
-# <a name="tutorial-configure-apache-hbase-policies-in-hdinsight-with-enterprise-security-package-preview"></a>Руководство по Настройка политик Apache HBase в HDInsight с Корпоративным пакетом безопасности (предварительная версия)
+# <a name="tutorial-configure-apache-hbase-policies-in-hdinsight-with-enterprise-security-package"></a>Руководство по настройке политик Apache HBase в HDInsight с Корпоративным пакетом безопасности
 
 Сведения о настройке политик Apache Ranger для кластеров Apache HBase с Корпоративным пакетом безопасности (ESP). Кластеры ESP подключены к домену, благодаря чему пользователи могут проходить аутентификацию с учетными данными домена. В этом руководстве вы создадите две политики Ranger для ограничения доступа к различным семействам столбцов в таблице HBase.
 

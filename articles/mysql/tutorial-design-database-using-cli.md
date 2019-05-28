@@ -1,21 +1,21 @@
 ---
-title: Руководство. Разработка базы данных Azure для MySQL с помощью Azure CLI
+title: Руководство по Разработка базы данных Azure для MySQL с помощью Azure CLI
 description: Это руководство содержит сведения о создании базы данных и сервера базы данных Azure для MySQL и управлении ими с помощью Azure CLI 2.0 из командной строки.
 author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.devlang: azurecli
 ms.topic: tutorial
-ms.date: 04/01/2018
+ms.date: 04/29/2019
 ms.custom: mvc
-ms.openlocfilehash: 951cf377c7e33dd3dd5e13a7b42fa05bec06245d
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 00c2efacab72c08d33b0004650bece2c369c757b
+ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58012376"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64935999"
 ---
-# <a name="tutorial-design-an-azure-database-for-mysql-using-azure-cli"></a>Руководство. Разработка базы данных Azure для MySQL с помощью Azure CLI
+# <a name="tutorial-design-an-azure-database-for-mysql-using-azure-cli"></a>Руководство по Разработка базы данных Azure для MySQL с помощью Azure CLI
 
 База данных Azure для MySQL — это служба реляционной базы данных в Microsoft Cloud на основе ядра СУБД MySQL Community Edition. Из этого руководства вы узнаете, как с помощью Azure CLI (интерфейса командной строки) и других служебных программ выполнять следующие операции:
 
@@ -53,7 +53,7 @@ az group create --name myresourcegroup --location westus
 ## <a name="create-an-azure-database-for-mysql-server"></a>Создайте сервер базы данных Azure для MySQL.
 Создайте сервер базы данных Azure для MySQL, выполнив команду az mysql server create. Сервер может управлять несколькими базами данных. Как правило, для каждого проекта и для каждого пользователя используется отдельная база данных.
 
-В следующем примере в группе ресурсов `myresourcegroup` создается сервер базы данных Azure для MySQL с именем `mydemoserver`, который расположен в `westus`. Для сервера указано имя администратора для входа `myadmin`. Это сервер общего назначения 5-го поколения с 2 виртуальными ядрами. Замените `<server_admin_password>` собственным значением.
+В следующем примере в группе ресурсов `myresourcegroup` создается сервер базы данных Azure для MySQL с именем `mydemoserver`, который расположен в `westus`. У сервера есть пользователь-администратор с именем `myadmin`. Это сервер общего назначения 5-го поколения с 2 виртуальными ядрами. Замените `<server_admin_password>` собственным значением.
 
 ```azurecli-interactive
 az mysql server create --resource-group myresourcegroup --name mydemoserver --location westus --admin-user myadmin --admin-password <server_admin_password> --sku-name GP_Gen5_2 --version 5.7
@@ -118,7 +118,7 @@ az mysql server show --resource-group myresourcegroup --name mydemoserver
 ## <a name="connect-to-the-server-using-mysql"></a>Подключение к серверу с помощью MySQL
 Используйте [программу командной строки MySQL](https://dev.mysql.com/doc/refman/5.6/en/mysql.html), чтобы подключиться к серверу базы данных Azure для MySQL. В этом примере используется следующая команда:
 ```cmd
-mysql -h mydemoserver.database.windows.net -u myadmin@mydemoserver -p
+mysql -h mydemoserver.mysql.database.azure.com -u myadmin@mydemoserver -p
 ```
 
 ## <a name="create-a-blank-database"></a>Создание пустой базы данных

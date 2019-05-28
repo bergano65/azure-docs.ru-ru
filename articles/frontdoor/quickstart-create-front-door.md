@@ -13,14 +13,14 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/31/2018
 ms.author: sharadag
-ms.openlocfilehash: 39e7626e6b4c545649e39ff2120d1f1fd105d764
-ms.sourcegitcommit: 32d218f5bd74f1cd106f4248115985df631d0a8c
+ms.openlocfilehash: 6bcd5bcc2463ec1ab9dcc97644d5046c31bfc78b
+ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46994672"
+ms.lasthandoff: 04/23/2019
+ms.locfileid: "61461992"
 ---
-# <a name="quickstart-create-a-front-door-for-a-highly-available-global-web-application"></a>Краткое руководство. Создание профиля Front Door для высокодоступного глобального веб-приложения
+# <a name="quickstart-create-a-front-door-for-a-highly-available-global-web-application"></a>Краткое руководство. Создание службы Front Door для глобального веб-приложения высокого уровня доступности
 
 В этом кратком руководстве показано, как создать профиль Front Door, который обеспечивает высокий уровень доступности и производительности глобального веб-приложения. 
 

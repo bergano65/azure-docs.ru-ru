@@ -14,14 +14,14 @@ ms.topic: tutorial
 ms.date: 01/22/2018
 ms.author: shlo
 robots: noindex
-ms.openlocfilehash: 11e92b4c6b8799cde489369a202f8f7c8c05ca6c
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: 964e6235923402814879fe59a204985b8aaac2b4
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57536000"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64573827"
 ---
-# <a name="tutorial-build-your-first-data-factory-by-using-the-azure-portal"></a>Руководство. Создание первой фабрики данных с помощью портала Azure
+# <a name="tutorial-build-your-first-data-factory-by-using-the-azure-portal"></a>Руководство по Создание первой фабрики данных с помощью портала Azure
 > [!div class="op_single_selector"]
 > * [Обзор и предварительные требования](data-factory-build-your-first-pipeline.md)
 > * [портал Azure](data-factory-build-your-first-pipeline-using-editor.md)
@@ -209,16 +209,16 @@ ms.locfileid: "57536000"
     ```
     В следующей таблице приведены описания свойств JSON, используемых в этом фрагменте кода.
 
-   | Свойство | ОПИСАНИЕ |
-   |:--- |:--- |
-   | type |Для свойства типа задано значение **AzureBlob**, так как данные хранятся в хранилище BLOB-объектов. |
-   | linkedServiceName |Ссылается на созданную ранее службу AzureStorageLinkedService. |
-   | folderPath | Определяет контейнер больших двоичных объектов и папку, которая содержит входные большие двоичные объекты. | 
-   | fileName |Это необязательное свойство. Если это свойство не указано, выбираются все файлы из папки folderPath. В этом руководстве обрабатывается только файл input.log. |
-   | type |Файлы журнала представлены в текстовом формате, поэтому используйте значение **TextFormat**. |
-   | columnDelimiter |Столбцы в файлах журнала разделяются запятыми (`,`). |
-   | frequency/interval |Для свойства frequency задано значение **Month**, а для свойства interval — значение **1**. Это означает, что срезы входных данных доступны ежемесячно. |
-   | external | Это свойство имеет значение **true**, если этот конвейер не создает входные данные. В этом руководстве файл input.log не создается этим конвейером, поэтому мы присвоим этому свойству значение **true**. |
+   | Свойство | Где находится | ОПИСАНИЕ |
+   |:--- |:--- |:--- |
+   | Тип | properties |Для свойства типа задано значение **AzureBlob**, так как данные хранятся в хранилище BLOB-объектов. |
+   | linkedServiceName | свойства |Ссылается на созданную ранее службу AzureStorageLinkedService. |
+   | folderPath | typeProperties | Определяет контейнер больших двоичных объектов и папку, которая содержит входные большие двоичные объекты. | 
+   | fileName | typeProperties |Это необязательное свойство. Если это свойство не указано, выбираются все файлы из папки folderPath. В этом руководстве обрабатывается только файл input.log. |
+   | Тип | свойства |Файлы журнала представлены в текстовом формате, поэтому используйте значение **TextFormat**. |
+   | columnDelimiter | свойства |Столбцы в файлах журнала разделяются запятыми (`,`). |
+   | frequency и interval | availability |Для свойства frequency задано значение **Month**, а для свойства interval — значение **1**. Это означает, что срезы входных данных доступны ежемесячно. |
+   | external | properties | Это свойство имеет значение **true**, если этот конвейер не создает входные данные. В этом руководстве файл input.log не создается этим конвейером, поэтому мы присвоим этому свойству значение **true**. |
 
     Дополнительные сведения об этих свойствах JSON см. в [этом разделе](data-factory-azure-blob-connector.md#dataset-properties).
 

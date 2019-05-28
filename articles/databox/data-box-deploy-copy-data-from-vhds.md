@@ -1,5 +1,5 @@
 ---
-title: Импорт данных с виртуальных жестких дисков и копирование на управляемые диски с помощью Microsoft Azure Data Box | Документация Майкрософт
+title: Руководство по импорту данных с виртуальных жестких дисков на управляемые диски с помощью Azure Data Box | Документация Майкрософт
 description: Узнайте, как копировать данные с виртуальных жестких дисков рабочих нагрузок локальных виртуальных машин в Azure Data Box.
 services: databox
 author: alkohli
@@ -8,12 +8,12 @@ ms.subservice: pod
 ms.topic: tutorial
 ms.date: 02/27/2019
 ms.author: alkohli
-ms.openlocfilehash: ec2013a793f766221a66912d6de9d8da8b8106dd
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 3284821e0ec65a76b29d5195315136639304e411
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59282565"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64925460"
 ---
 # <a name="tutorial-use-data-box-to-import-data-as-managed-disks-in-azure"></a>Руководство по Использование Data Box для импорта данных в качестве управляемых дисков в Azure.
 

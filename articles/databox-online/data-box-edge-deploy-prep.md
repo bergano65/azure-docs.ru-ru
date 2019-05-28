@@ -1,20 +1,20 @@
 ---
-title: Руководство по подготовке портала Azure к развертыванию Data Box Edge | Документация Майкрософт
+title: Руководство по подготовке портала Azure и среды центра обработки данных к развертыванию Azure Data Box Edge | Документация Майкрософт
 description: Первое руководство по развертыванию Azure Data Box Edge включает подготовку портала Azure.
 services: databox
 author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: tutorial
-ms.date: 03/07/2019
+ms.date: 04/23/2019
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to prepare the portal to deploy Data Box Edge so I can use it to transfer data to Azure.
-ms.openlocfilehash: 19c4fc96653f966ea5642149d944886e4b7f4483
-ms.sourcegitcommit: 81fa781f907405c215073c4e0441f9952fe80fe5
+ms.openlocfilehash: d7e66970db3397531c798bc37bf7c1f346e999bf
+ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/25/2019
-ms.locfileid: "58401679"
+ms.lasthandoff: 04/30/2019
+ms.locfileid: "64924776"
 ---
 # <a name="tutorial-prepare-to-deploy-azure-data-box-edge"></a>Руководство по Подготовка к развертыванию Azure Data Box Edge  
 
@@ -55,6 +55,8 @@ ms.locfileid: "58401679"
 Перед тем как начать, убедитесь в следующем.
 
 - Включена подписка Microsoft Azure для ресурса Data Box Edge. Подписки с оплатой по мере использования не поддерживаются.
+- У вас есть доступ к подписке в роли владельца или участника.
+- У вас есть доступ к API Graph Azure Active Directory в роли администратора или пользователя. Дополнительные сведения см. в статье [Области разрешений | Основные понятия API Graph](https://docs.microsoft.com/previous-versions/azure/ad/graph/howto/azure-ad-graph-api-permission-scopes#default-access-for-administrators-users-and-guest-users-).
 - Имеется учетная запись хранения Microsoft Azure и данные для доступа к ней.
 
 ### <a name="for-the-data-box-edge-device"></a>Для устройства Data Box Edge
@@ -87,11 +89,15 @@ ms.locfileid: "58401679"
 
 1. Используйте учетные данные Microsoft Azure для входа: 
     
-    - на портал Azure по URL-адресу [https://portal.azure.com](http://portal.azure.com)
-    - или на портал Azure для государственных организаций по URL-адресу [https://portal.azure.us](https://portal.azure.us).
+    - на портал Azure по URL-адресу [https://portal.azure.com](https://portal.azure.com);
+    - или на портал Azure для государственных организаций по URL-адресу [https://portal.azure.us](https://portal.azure.us). Дополнительные сведения см. в статье о [ подключении к Azure для государственных организаций с помощью портала](https://docs.microsoft.com/azure/azure-government/documentation-government-get-started-connect-with-portal).
 
 2. В левой области выберите **+ Создать ресурс**. Выполните поиск по запросу **Data Box Edge / Шлюз Data Box**. Выберите **Data Box Edge / Шлюз Data Box**. Нажмите кнопку **Создать**.
-3. Выберите подписку, которую вы хотите использовать для устройства Data Box Edge. Выберите регион, в котором вы хотите развернуть ресурс Data Box Edge. Для этого выпуска доступны такие регионы: восточная часть США, Юго-Восточная Азия и Западная Европа. Выберите расположение, ближайшее к географическому региону, в котором вы хотите развернуть устройство. В параметрах **Data Box Edge** выберите **Создать**.
+3. Выберите подписку, которую вы хотите использовать для устройства Data Box Edge. Выберите регион, в котором вы хотите развернуть ресурс Data Box Edge. Для этого выпуска доступны такие регионы: восточная часть США, Юго-Восточная Азия и Западная Европа. 
+
+    Выберите расположение, ближайшее к географическому региону, в котором вы хотите развернуть устройство. В регионе хранятся только метаданные для управления устройством. Фактические данные могут храниться в любой учетной записи хранения. 
+    
+    В параметрах **Data Box Edge** выберите **Создать**.
 
     ![Поиск службы Data Box Edge](media/data-box-edge-deploy-prep/data-box-edge-sku.png)
 

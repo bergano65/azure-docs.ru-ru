@@ -12,19 +12,19 @@ ms.workload: web
 ms.tgt_pltfrm: na
 ms.devlang: java
 ms.topic: quickstart
-ms.date: 03/26/2018
+ms.date: 04/23/2019
 ms.author: cephalin;robmcm
 ms.custom: seodec18
-ms.openlocfilehash: 3af585ede27536dfb644dd374e54183c3539d585
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: f1411ee28ca4e371f68c375242a2445c8b48f8d7
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60007361"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64706134"
 ---
 # <a name="create-your-first-java-web-app-in-azure"></a>Создание первого веб-приложения Java в Azure
 
-[Служба приложений Azure](overview.md) — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости. В этом кратком руководстве показано, как развернуть веб-приложение Java в службе приложений с помощью [интегрированной среды разработки Eclipse для разработчиков Java EE](https://www.eclipse.org/).
+Служба приложений Azure — это служба веб-размещения с самостоятельной установкой исправлений и высоким уровнем масштабируемости. В этом кратком руководстве показано, как развернуть веб-приложение Java в службе приложений с помощью интегрированной среды разработки Eclipse для разработчиков Java EE.
 
 > [!IMPORTANT]
 > Служба приложений Azure в Linux также подходит для размещения приложений Java изначально в Linux с помощью управляемых решений Tomcat, Java SE и WildFly. Если вы хотите приступить к работе со Службой приложений в Linux, обратитесь к разделу [Краткое руководство. Создание приложения Java в Службе приложений на платформе Linux](containers/quickstart-java.md)

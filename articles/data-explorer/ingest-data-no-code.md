@@ -6,13 +6,13 @@ ms.author: orspodek
 ms.reviewer: jasonh
 ms.service: data-explorer
 ms.topic: tutorial
-ms.date: 04/07/2019
-ms.openlocfilehash: 9f4b7ee0dcc87ca03fd051be0dacedf0912b5320
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.date: 04/29/2019
+ms.openlocfilehash: 187aa4b02e389c485b24ad7de256422d1880182b
+ms.sourcegitcommit: 8a681ba0aaba07965a2adba84a8407282b5762b2
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59262913"
+ms.lasthandoff: 04/29/2019
+ms.locfileid: "64872585"
 ---
 # <a name="tutorial-ingest-data-in-azure-data-explorer-without-one-line-of-code"></a>Руководство по Прием данных в Azure Data Explorer без необходимости писать код
 
@@ -380,7 +380,7 @@ ms.locfileid: "59262913"
     |---|---|---|
     | **Таблица** | *DiagnosticLogsRawRecords* | Таблица, которую вы создали в базе данных *TestDatabase*. |
     | **Формат данных** | *JSON* | Формат, используемый в этой таблице. |
-    | **Сопоставление столбцов** | *DiagnosticLogsRecordsMapping* | Сопоставление, которое вы создали в базе данных *TestDatabase* между входящими данными JSON и именами столбцов и типами данных в таблице *DiagnosticLogsRecords*.|
+    | **Сопоставление столбцов** | *DiagnosticLogsRecordsMapping* | Сопоставление, которое вы создали в базе данных *TestDatabase* между входящими данными JSON и именами столбцов и типами данных в таблице *DiagnosticLogsRawRecords*.|
     | | |
 
 1. Нажмите кнопку **Создать**.  

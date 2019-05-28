@@ -13,12 +13,12 @@ ms.author: garye
 ms.reviewer: davidph
 manager: cgronlun
 ms.date: 04/11/2019
-ms.openlocfilehash: 97309a24c0ab12720f968409856a16cab4ff7ac7
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: c1719064de53b79a127146d0ab034f461657cc64
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60013111"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64714888"
 ---
 # <a name="create-and-train-a-predictive-model-in-r-with-azure-sql-database-machine-learning-services-preview"></a>Создание и обучение прогнозной модели на языке R с помощью Служб машинного обучения Azure в Базе данных SQL (предварительная версия)
 
@@ -106,7 +106,7 @@ ms.locfileid: "60013111"
 
 1. Создайте таблицу для хранения модели, чтобы ее можно было позже использовать для прогнозирования. 
 
-   Выходными данными пакета R, который создает модель, обычно является **двоичный объект**, поэтому таблица должна содержать столбец типа **VARBINARY(max)**.
+   Выходными данными пакета R, который создает модель, обычно является **двоичный объект**, поэтому таблица должна содержать столбец типа **VARBINARY(max)** .
 
     ```sql
     CREATE TABLE dbo.stopping_distance_models (
@@ -171,7 +171,7 @@ VALUES (
 
 **Результаты**
 
-![Обученная модель с дополнительными выходными данными](./media/sql-database-connect-query-r/r-train-model-with-additional-output.png)
+![Обученная модель с дополнительными выходными данными](./media/sql-database-quickstart-r-train-score-model/r-train-model-with-additional-output.png)
 
 ## <a name="score-new-data-using-the-trained-model"></a>Оценка новых данных с помощью обученной модели
 
@@ -239,7 +239,7 @@ VALUES (
 
    **Результаты**
 
-   ![Результирующий набор для прогнозирования расстояния торможения](./media/sql-database-connect-query-r/r-predict-stopping-distance-resultset.png)
+   ![Результирующий набор для прогнозирования расстояния торможения](./media/sql-database-quickstart-r-train-score-model/r-predict-stopping-distance-resultset.png)
 
 > [!NOTE]
 > В этом примере сценария функция `str` добавляется на этапе тестирования, чтобы проверить схему данных, возвращаемых из R. Оператор можно удалить позже.
@@ -248,10 +248,9 @@ VALUES (
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Дополнительные сведения о Службах машинного обучения содержатся в указанных ниже статьях. Хотя некоторые из этих статьей предназначены для SQL Server, большая часть информации также применима к Службам машинного обучения (с использованием R) в Базе данных SQL Azure.
+Дополнительные сведения о Службе машинного обучения с использованием R в Базе данных SQL Azure (предварительная версия) см. в следующих статьях.
 
-- [Machine Learning Services (with R) in Azure SQL Database (preview)](sql-database-machine-learning-services-overview.md) (Службы машинного обучения (с использованием R) в Базе данных SQL Azure (предварительная версия))
-- [Службы машинного обучения SQL Server](https://docs.microsoft.com/sql/advanced-analytics/what-is-sql-server-machine-learning)
-- [Руководство Анализ данных R для разработчиков SQL](https://docs.microsoft.com/sql/advanced-analytics/tutorials/sqldev-in-database-r-for-sql-developers)
-- [Комплексное пошаговое руководство по обработке и анализу данных для R и SQL Server](https://docs.microsoft.com/sql/advanced-analytics/tutorials/walkthrough-data-science-end-to-end-walkthrough)
-- [Руководство Use RevoScaleR R functions with SQL Server data](https://docs.microsoft.com/sql/advanced-analytics/tutorials/deepdive-data-science-deep-dive-using-the-revoscaler-packages) (Руководство. Использование функций R RevoScaleR с данными SQL Server)
+- [Azure SQL Database Machine Learning Services with R (preview)](sql-database-machine-learning-services-overview.md) (Служба машинного обучения с использованием R в Базе данных SQL Azure (предварительная версия))
+- [Создание и выполнение простых сценариев R в Службах машинного обучения в Базе данных SQL Azure (предварительная версия)](sql-database-quickstart-r-create-script.md)
+- [Запись расширенных функций R в Базу данных SQL Azure с помощью Служб машинного обучения (предварительная версия)](sql-database-machine-learning-services-functions.md)
+- [Work with R and SQL data in Azure SQL Database Machine Learning Services (preview)](sql-database-machine-learning-services-data-issues.md) (Работа с данными R и SQL в Службе машинного обучения в Базе данных SQL Azure)

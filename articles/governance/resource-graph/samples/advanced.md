@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.service: resource-graph
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: 9a243dd236a8c499602a9070a7dd61e69541d58d
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 7684ae6b4ddb6320efc62ef6f9963bef1b9a66fa
+ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59256827"
+ms.lasthandoff: 04/28/2019
+ms.locfileid: "64691983"
 ---
 # <a name="advanced-resource-graph-queries"></a>Продвинутые запросы графика ресурсов
 
@@ -22,7 +22,7 @@ ms.locfileid: "59256827"
 Мы рассмотрим следующие продвинутые запросы:
 
 > [!div class="checklist"]
-> - [Получение емкости и размера VMSS](#vmss-capacity)
+> - [Получение сведений о емкости и производительности масштабируемого набора виртуальных машин](#vmss-capacity)
 > - [Вывести список всех названий тегов](#list-all-tags)
 > - [Виртуальные машины, сопоставленные по регулярному выражению](#vm-regex)
 
@@ -38,7 +38,7 @@ Azure CLI (с помощью расширения) и Azure PowerShell (с по�
 
 Этот запрос выполняет поиск ресурсов масштабируемого набора виртуальных машин и возвращает разные сведения, включая размер виртуальной машины и емкость масштабируемого набора. В запросе используется функция `toint()` для приведения значения емкости в число для сортировки. Наконец, столбцы переименовываются в пользовательские именованные свойства.
 
-```Query
+```kusto
 where type=~ 'microsoft.compute/virtualmachinescalesets'
 | where name contains 'contoso'
 | project subscriptionId, name, location, resourceGroup, Capacity = toint(sku.capacity), Tier = sku.name
@@ -57,7 +57,7 @@ Search-AzGraph -Query "where type=~ 'microsoft.compute/virtualmachinescalesets' 
 
 Этот запрос начинается с тега и строит объект JSON, перечисляющий все уникальные имена тегов и их соответствующие типы.
 
-```Query
+```kusto
 project tags
 | summarize buildschema(tags)
 ```
@@ -86,7 +86,7 @@ Search-AzGraph -Query "project tags | summarize buildschema(tags)"
 
 После сопоставления по имени запрос проектирует имя и порядок по возрастанию имени.
 
-```Query
+```kusto
 where type =~ 'microsoft.compute/virtualmachines' and name matches regex @'^Contoso(.*)[0-9]+$'
 | project name
 | order by name asc
