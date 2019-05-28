@@ -1,147 +1,133 @@
 - name: "Документация по доменным службам Azure\_AD"
   href: index.yml
 - name: Обзор
+  expanded: true
   items:
     - name: Что такое доменные службы Azure AD?
-      href: active-directory-ds-overview.md
-    - name: Часто задаваемые вопросы
-      href: active-directory-ds-faqs.md
-    - name: Вам это подходит?
-      items:
-        - name: "Сравнение с Windows Server\_AD"
-          href: active-directory-ds-comparison.md
-        - name: "Сравнение с присоединением Azure\_AD"
-          href: active-directory-ds-compare-with-azure-ad-join.md
-    - name: Новые возможности
-      href: 'https://azure.microsoft.com/updates/?product=active-directory-ds'
+      href: overview.md
+    - name: "Сравнение с Windows Server\_AD"
+      href: comparison.md
+    - name: "Сравнение с присоединением Azure\_AD"
+      href: active-directory-ds-compare-with-azure-ad-join.md
     - name: Функции
       href: active-directory-ds-features.md
-    - name: Сценарии
-      href: active-directory-ds-scenarios.md
+- name: Примеры
+  items:
+    - name: "Создание экземпляра Azure\_AD с помощью Azure PowerShell"
+      href: powershell-create-instance.md
+- name: Основные понятия
+  items:
     - name: Принцип действия синхронизации
-      href: active-directory-ds-synchronization.md
-    - name: Совместимое стороннее программное обеспечение
-      href: active-directory-ds-compatible-software.md
-- name: Начало работы
+      href: synchronization.md
+- name: Руководства
   items:
-    - name: Задача 1. Настройка основных параметров
-      href: active-directory-ds-getting-started.md
-    - name: Задача 2. Настройка сетевых параметров
-      href: active-directory-ds-getting-started-network.md
-    - name: "Задача\_3. Настройка группы администраторов и включение доменных служб Azure\_AD"
-      href: active-directory-ds-getting-started-admingroup.md
-    - name: "Задача\_4. Обновление параметров DNS для виртуальной сети"
-      href: active-directory-ds-getting-started-dns.md
-    - name: Задача 5. Включение синхронизации хэшированных паролей
-      href: active-directory-ds-getting-started-password-sync.md
-- name: Практическое руководство
-  items:
-    - name: Проверка работоспособности управляемого домена
-      href: active-directory-ds-check-health.md
-    - name: "Использование доменных служб Azure\_AD в подписках Azure\_CSP"
-      href: active-directory-ds-csp.md
-    - name: "Включение доменных служб Azure\_AD с помощью PowerShell"
-      href: active-directory-ds-enable-using-powershell.md
-    - name: "Настройка синхронизации определенных учетных записей Azure\_AD с управляемым доменом"
-      href: active-directory-ds-scoped-synchronization.md
-    - name: Защита управляемого домена
-      href: active-directory-ds-secure-your-domain.md
-    - name: Создание подразделения на управляемом домене
-      href: active-directory-ds-admin-guide-create-ou.md
-    - name: Создание групповой управляемой учетной записи службы в управляемом домене
-      href: active-directory-ds-create-gmsa.md
-    - name: Администрирование групповой политики в управляемом домене
-      href: active-directory-ds-admin-guide-administer-group-policy.md
-    - name: Настройка политик паролей в управляемом домене
-      href: active-directory-ds-password-policy.md
-    - name: Выбор виртуальной сети
-      href: active-directory-ds-networking.md
-    - name: Развертывание приложений
+    - name: "Создание экземпляра Azure AD\_DS"
+      items:
+        - name: "Задача\_1. Настройка основных параметров"
+          href: create-instance.md
+        - name: "Задача\_2. Настройка сетевых параметров"
+          href: active-directory-ds-getting-started-network.md
+        - name: "Задача\_3. Настройка группы администраторов и включение доменных служб Azure\_AD"
+          href: active-directory-ds-getting-started-admingroup.md
+        - name: "Задача\_4. Обновление параметров DNS для виртуальной сети"
+          href: active-directory-ds-getting-started-dns.md
+        - name: "Задача\_5. Включение синхронизации хэшированных паролей"
+          href: active-directory-ds-getting-started-password-sync.md
+    - name: "Подготовка к использованию Azure AD\_DS"
+      items:
+        - name: Сценарии
+          href: scenarios.md
+        - name: Выбор виртуальной сети
+          href: network-considerations.md
+    - name: "Управление Azure AD\_DS"
+      items:
+        - name: Проверка работоспособности управляемого домена
+          href: check-health.md
+        - name: "Настройка синхронизации определенных учетных записей Azure\_AD с управляемым доменом"
+          href: scoped-synchronization.md
+        - name: Защита управляемого домена
+          href: secure-your-domain.md
+        - name: Создание подразделения на управляемом домене
+          href: create-ou.md
+        - name: Создание групповой управляемой учетной записи службы в управляемом домене
+          href: create-gmsa.md
+        - name: "Управление групповой политикой для доменных служб Azure\_AD"
+          href: manage-group-policy.md
+        - name: Настройка политик паролей в управляемом домене
+          href: password-policy.md
+        - name: Удаление управляемого домена
+          href: delete-aadds.md
+        - name: "Создание виртуальной машины для администрирования доменных служб Azure\_AD"
+          href: manage-domain.md
+        - name: "Управление DNS для доменных служб Azure\_AD"
+          href: manage-dns.md
+        - name: 'Обновление уведомлений, отправляемых по электронной почте'
+          href: notifications.md
+        - name: "Настройка защищенного протокола LDAP (LDAPS) в домене доменных служб Azure\_AD"
+          href: configure-ldaps.md
+          items:
+            - name: "Задача\_2. Экспорт сертификата защищенного протокола LDAP"
+              href: active-directory-ds-admin-guide-configure-secure-ldap-export-pfx.md
+            - name: "Задача\_3. Включение защищенного протокола LDAP для управляемого домена с помощью портала Azure"
+              href: active-directory-ds-admin-guide-configure-secure-ldap-enable-ldaps.md
+            - name: "Задача\_4. Настройка DNS для доступа к управляемому домену через Интернет"
+              href: active-directory-ds-ldaps-configure-dns.md
+            - name: "Задача\_5. Привязка к управляемому домену и блокировка доступа по защищенному протоколу LDAP"
+              href: active-directory-ds-ldaps-bind-lockdown.md
+    - name: "Развертывание приложений в Azure AD\_DS"
       items:
         - name: Настройка поддержки синхронизации профилей для сервера SharePoint
-          href: active-directory-ds-enable-sharepoint-profile-sync.md
+          href: deploy-sp-profile-sync.md
         - name: Настройка ограниченного делегирования Kerberos
-          href: active-directory-ds-enable-kcd.md
-        - name: "Развертывание прокси-службы приложения Azure\_AD"
-          href: active-directory-ds-deploy-azure-app-proxy.md
-    - name: Удаление управляемого домена
-      href: active-directory-ds-disable-aadds.md
-- name: Присоединение к управляемому домену
-  items:
-    - name: Виртуальная машина Windows Server
-      href: active-directory-ds-admin-guide-join-windows-vm-portal.md
-    - name: Виртуальная машина Windows Server на основе шаблона
-      href: active-directory-ds-join-windows-vm-template.md
-    - name: CentOS
-      href: active-directory-ds-join-centos-linux-vm.md
-    - name: CoreOS
-      href: active-directory-ds-join-coreos-linux-vm.md
-    - name: Red Hat Enterprise Linux.
-      href: active-directory-ds-join-rhel-linux-vm.md
-    - name: Сервер Ubuntu
-      href: active-directory-ds-join-ubuntu-linux-vm.md
-- name: Администрирование управляемого домена
-  items:
-    - name: Администрирование управляемого домена
-      href: active-directory-ds-admin-guide-administer-domain.md
-    - name: Администрирование DNS на управляемом домене
-      href: active-directory-ds-admin-guide-administer-dns.md
-    - name: 'Обновление уведомлений, отправляемых по электронной почте'
-      href: active-directory-ds-notifications.md
-- name: Настройка защищенного протокола LDAP для управляемого домена
-  items:
-    - name: "Задача\_1. Получение сертификата для защищенного протокола LDAP"
-      href: active-directory-ds-admin-guide-configure-secure-ldap.md
-    - name: "Задача\_2. Экспорт сертификата защищенного протокола LDAP"
-      href: active-directory-ds-admin-guide-configure-secure-ldap-export-pfx.md
-    - name: Задача 3. Включение защищенного протокола LDAP для управляемого домена с помощью портала Azure
-      href: active-directory-ds-admin-guide-configure-secure-ldap-enable-ldaps.md
-    - name: "Задача\_4. Настройка DNS для доступа к управляемому домену через Интернет"
-      href: active-directory-ds-ldaps-configure-dns.md
-    - name: "Задача\_5. Привязка к управляемому домену и блокировка доступа по защищенному протоколу LDAP"
-      href: active-directory-ds-ldaps-bind-lockdown.md
-    - name: Устранение неполадок с защищенным протоколом LDAP
-      href: active-directory-ds-ldaps-troubleshoot.md
-- name: Устранение неполадок
-  items:
-    - name: Руководство по устранению неполадок
-      href: active-directory-ds-troubleshooting.md
-    - name: 'Устранение неполадок, связанных с оповещениями'
-      href: active-directory-ds-troubleshoot-alerts.md
+          href: deploy-kcd.md
+        - name: Развертывание Azure AD Application Proxy
+          href: deploy-azure-app-proxy.md
+    - name: Присоединение виртуальных машин к Azure AD DS
       items:
-        - name: Исправление неработающей конфигурации NSG
-          href: active-directory-ds-troubleshoot-nsg.md
-        - name: Восстановление отсутствующих субъектов-служб
-          href: active-directory-ds-troubleshoot-service-principals.md
-        - name: Ошибки защищенного протокола LDAP
-          href: active-directory-ds-troubleshoot-ldaps.md
-    - name: Устранение ошибок несоответствия клиента
-      href: active-directory-ds-mismatched-tenant-error.md
-    - name: Приостановленные домены
-      href: active-directory-ds-suspension.md
-- name: Справочные материалы
-  items:
-    - name: Примеры кода
-      href: 'https://azure.microsoft.com/resources/samples/?service=active-directory'
-- name: Сопутствующие материалы
-  items:
-    - name: Azure Active Directory
-      href: ../active-directory/fundamentals/active-directory-whatis.md
-    - name: Azure Active Directory B2C
-      href: ../active-directory-b2c/active-directory-b2c-overview.md
-    - name: Многофакторная идентификация
-      href: ../active-directory/authentication/multi-factor-authentication.md
+        - name: Виртуальная машина Windows Server
+          href: join-windows-vm.md
+        - name: Виртуальная машина Windows Server на основе шаблона
+          href: join-windows-vm-template.md
+        - name: CentOS
+          href: join-centos-linux-vm.md
+        - name: CoreOS
+          href: join-coreos-linux-vm.md
+        - name: Red Hat Enterprise Linux
+          href: join-rhel-linux-vm.md
+        - name: Сервер Ubuntu
+          href: join-ubuntu-linux-vm.md
+    - name: Устранение неполадок в Azure AD DS
+      items:
+        - name: Руководство по устранению неполадок
+          href: troubleshoot.md
+        - name: 'Устранение неполадок, связанных с оповещениями'
+          href: troubleshoot-alerts.md
+          items:
+            - name: Исправление неработающей конфигурации NSG
+              href: alert-nsg.md
+            - name: Восстановление отсутствующих субъектов-служб
+              href: alert-service-principal.md
+            - name: Ошибки защищенного протокола LDAP
+              href: alert-ldaps.md
+        - name: Устранение ошибок несоответствия клиента
+          href: mismatched-tenant-error.md
+        - name: Приостановленные домены
+          href: suspension.md
+        - name: Устранение неполадок с защищенным протоколом LDAP
+          href: tshoot-ldaps.md
 - name: Ресурсы
   items:
-    - name: "Форум по Azure\_AD"
-      href: 'https://feedback.azure.com/forums/169401-azure-active-directory'
-    - name: Стратегия развития Azure
-      href: 'https://azure.microsoft.com/roadmap/?category=security-identity'
-    - name: Свяжитесь с нами
-      href: active-directory-ds-contact-us.md
-    - name: Цены
-      href: 'https://azure.microsoft.com/pricing/details/active-directory-ds/'
-    - name: Калькулятор цен
-      href: 'https://azure.microsoft.com/pricing/calculator/'
+    - name: Часто задаваемые вопросы
+      href: faqs.md
     - name: Обновления службы
       href: 'https://azure.microsoft.com/updates/?product=active-directory-ds'
+    - name: Совместимое стороннее программное обеспечение
+      href: compatible-software.md
+    - name: Цены
+      href: 'https://azure.microsoft.com/pricing/details/active-directory-ds/'
+    - name: "Форум по Azure\_AD"
+      href: 'https://feedback.azure.com/forums/169401-azure-active-directory'
+    - name: Свяжитесь с нами
+      href: contact-us.md
+    - name: "Использование доменных служб Azure\_AD в подписках Azure\_CSP"
+      href: csp.md

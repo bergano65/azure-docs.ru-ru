@@ -121,10 +121,14 @@
           href: storage-sync-offline-data-transfer.md
         - name: Перемещение данных в службу хранилища Azure и из нее
           href: ../common/storage-moving-data.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
-        - name: AzCopy для Windows
-          href: ../common/storage-use-azcopy.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
-        - name: AzCopy в Linux
-          href: ../common/storage-use-azcopy-linux.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
+        - name: Перемещение данных с помощью AzCopy
+          items:
+            - name: Начало работы
+              href: ../common/storage-use-azcopy-v10.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
+            - name: Использование со службой "Файлы"
+              href: ../common/storage-use-azcopy-files.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
+            - name: 'Настройка, оптимизация и устранение неполадок'
+              href: ../common/storage-use-azcopy-configure.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json
     - name: Разработка
       items:
         - name: Настройка строк подключения

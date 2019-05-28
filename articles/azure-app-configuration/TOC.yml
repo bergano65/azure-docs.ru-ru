@@ -4,14 +4,14 @@
   items:
     - name: Сведения о службе "Конфигурация приложений Azure"
       href: overview.md
-    - name: Часто задаваемые вопросы
+    - name: Вопросы и ответы
       href: faq.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   expanded: true
   items:
-    - name: Параметр Configuration
+    - name: Конфигурация
       items:
-        - name: ASP.NET Core;
+        - name: ASP.NET Core
           href: quickstart-aspnet-core-app.md
         - name: .NET Core
           href: quickstart-dotnet-core-app.md
@@ -21,11 +21,11 @@
           href: quickstart-azure-function-csharp.md
         - name: Java Spring
           href: quickstart-java-spring-app.md
-    - name: управление функциями.
+    - name: Управление функциями
       items:
-        - name: ASP.NET Core;
+        - name: ASP.NET Core
           href: quickstart-feature-flag-aspnet-core.md
-- name: Учебники
+- name: Руководства
   items:
     - name: Включение динамической конфигурации в ASP.NET Core
       href: enable-dynamic-configuration-aspnet-core.md
@@ -37,7 +37,7 @@
       href: integrate-ci-cd-pipeline.md
 - name: Примеры
   items:
-    - name: Инфраструктура CLI Azure
+    - name: Azure CLI
       href: cli-samples.md
 - name: Основные понятия
   items:
@@ -45,7 +45,7 @@
       href: concept-key-value.md
     - name: Моментальный снимок на определенный момент времени
       href: concept-point-time-snapshot.md
-    - name: управление функциями.
+    - name: Управление функциями
       href: concept-feature-management.md
 - name: Практические руководства
   items:
@@ -57,19 +57,21 @@
       href: howto-best-practices.md
 - name: Справочные материалы
   items:
-    - name: Параметр Configuration
+    - name: Конфигурация
       items:
-        - name: Поставщик конфигурации .NET Core
+        - name: Azure CLI
+          href: 'https://docs.microsoft.com/cli/azure/ext/appconfig/appconfig?view=azure-cli-latest'
+        - name: Поставщик .NET Core
           href: 'https://go.microsoft.com/fwlink/?linkid=2074664'
-        - name: Построитель конфигураций .NET Framework
+        - name: Построитель .NET Framework
           href: 'https://go.microsoft.com/fwlink/?linkid=2074663'
-        - name: Поставщик конфигурации Java Spring
+        - name: Поставщик Java Spring
           href: 'https://github.com/Microsoft/spring-cloud-azure/tree/azure-config/spring-cloud-azure-starters/spring-cloud-starter-azure-config'
         - name: Пакет Azure SDK для .NET
           href: 'https://go.microsoft.com/fwlink/?linkid=2092056'
         - name: REST
           href: 'https://go.microsoft.com/fwlink/?linkid=2078296'
-    - name: управление функциями.
+    - name: Управление функциями
       items:
         - name: Библиотека .NET Core
           href: 'https://go.microsoft.com/fwlink/?linkid=2091700'
@@ -79,7 +81,11 @@
           href: 'https://go.microsoft.com/fwlink/?linkid=2091601'
 - name: Ресурсы
   items:
-    - name: Видео о начале работы
-      href: 'https://channel9.msdn.com/Shows/Azure-Friday/Getting-started-with-Azure-App-Configuration'
+    - name: Видео
+      items:
+        - name: Начало работы
+          href: 'https://channel9.msdn.com/Shows/Azure-Friday/Getting-started-with-Azure-App-Configuration'
+        - name: Управление функциями
+          href: 'https://channel9.msdn.com/Shows/NET-Community-Standups/ASPNET-Community-Standup-May-21st-2019-Introducing-MicrosoftFeatureManagement'
     - name: Отзыв о продукте
       href: 'https://github.com/Azure/AppConfiguration/issues'

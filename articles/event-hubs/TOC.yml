@@ -10,14 +10,14 @@
       href: event-hubs-capture-overview.md
     - name: Выделенные Центры событий
       href: event-hubs-dedicated-overview.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   expanded: true
   items:
     - name: Создание концентратора событий
       items:
         - name: Портал Azure
           href: event-hubs-create.md
-        - name: Инфраструктура CLI Azure
+        - name: Azure CLI
           href: event-hubs-quickstart-cli.md
         - name: Azure PowerShell
           href: event-hubs-quickstart-powershell.md
@@ -51,9 +51,7 @@
           href: event-hubs-capture-python.md
     - name: Потоковая передача данных в Центры событий для Apache Kafka
       href: event-hubs-quickstart-kafka-enabled-event-hubs.md
-    - name: Создание выделенного кластера Центров событий
-      href: event-hubs-dedicated-cluster-create-portal.md
-- name: Учебники
+- name: Руководства
   items:
     - name: Визуализация аномальных данных в потоках данных Центров событий
       href: event-hubs-tutorial-visualize-anomalies.md
@@ -72,7 +70,7 @@
           href: event-hubs-kafka-spark-tutorial.md
         - name: Подключение Apache Flink к концентраторам событий с поддержкой Apache Kafka
           href: event-hubs-kafka-flink-tutorial.md
-        - name: Интеграция поддержки Apache Kafka Connect в концентратор событий (предварительная версия)
+        - name: 'Интеграция Apache Kafka Connect с концентратором событий, поддерживающим Kafka (предварительная версия)'
           href: event-hubs-kafka-connect-tutorial.md
         - name: Подключение Akka Streams к концентраторам событий с поддержкой Apache Kafka
           href: event-hubs-kafka-akka-streams-tutorial.md
@@ -80,20 +78,24 @@
   href: event-hubs-samples.md
 - name: Основные понятия
   items:
-    - name: Особенности Центров событий
+    - name: Функции Центров событий
       href: event-hubs-features.md
     - name: Общие сведения об узле обработчика событий
       href: event-hubs-event-processor-host.md
     - name: Руководство по программированию
       href: event-hubs-programming-guide.md
-    - name: Управляемое удостоверение для ресурсов Azure
-      href: event-hubs-managed-service-identity.md
-    - name: Управление доступом на основе ролей (предварительная версия)
-      href: event-hubs-role-based-access-control.md
-    - name: Геоизбыточное аварийное восстановление и георепликация
-      href: event-hubs-geo-dr.md
-    - name: Общие сведения об аутентификации и безопасности
-      href: event-hubs-authentication-and-security-model-overview.md
+    - name: Безопасность
+      items:
+        - name: Управляемое удостоверение для ресурсов Azure
+          href: event-hubs-managed-service-identity.md
+        - name: Управление доступом на основе ролей (предварительная версия)
+          href: event-hubs-role-based-access-control.md
+        - name: Геоизбыточное аварийное восстановление и георепликация
+          href: event-hubs-geo-dr.md
+        - name: Общие сведения об аутентификации и безопасности
+          href: event-hubs-authentication-and-security-model-overview.md
+        - name: Атрибуты безопасности
+          href: event-hubs-security-attributes.md
     - name: Доступность и согласованность
       href: event-hubs-availability-and-consistency.md
     - name: "Руководство по использованию протокола AMQP\_1.0"
@@ -111,7 +113,7 @@
           href: event-hubs-create-kafka-enabled.md
         - name: Обработка событий Центров событий в Apache Kafka с использованием Stream Analytics
           href: event-hubs-kafka-stream-analytics.md
-    - name: управление
+    - name: Управление
       items:
         - name: Мониторинг Центров событий с помощью Azure Monitor
           href: event-hubs-metrics-azure-monitor.md
@@ -174,7 +176,7 @@
   items:
     - name: Развитие навыков с помощью Microsoft Learn
       href: /learn/browse/?products=azure-event-hubs
-    - name: Часто задаваемые вопросы
+    - name: Вопросы и ответы
       href: event-hubs-faq.md
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/?category=iot'
@@ -184,7 +186,7 @@
       href: 'https://azure.microsoft.com/pricing/calculator/'
     - name: Обновления службы
       href: 'https://azure.microsoft.com/updates/?product=event-hubs'
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-eventhub'
-    - name: Видеоролики
+    - name: Видео
       href: 'https://azure.microsoft.com/documentation/videos/index/?services=event-hubs'

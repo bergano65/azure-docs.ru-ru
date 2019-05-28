@@ -5,10 +5,10 @@ metadata:
   title: Документация по доменным службам Azure AD
   description: 'Узнайте, как с помощью доменных служб Active Directory присоединять к домену виртуальные машины Azure, не используя контроллеры домена. В приведенных здесь руководствах и другой документации показано, как управлять виртуальными машинами с помощью групповых политик.'
   keywords: 'Azure AD, Azure, domain join, group policy, LDAP, Kerberos, domain controller, DC, lift and shift'
-  author: mahesh-unnikrishnan
-  ms.author: maheshu
+  author: MikeStephens-MS
+  ms.author: mstephen
   manager: daveba
-  ms.date: 6/1/2018
+  ms.date: 05/22/2019
   ms.topic: landing-page
   ms.devlang: na
   ms.service: active-directory
@@ -23,17 +23,17 @@ sections:
         className: cardsM
         columns: 2
         items:
-          - href: active-directory-ds-overview.md
+          - href: overview.md
             html: <p>Узнайте о функциях доменных служб Azure AD.</p>
             image:
               src: 'https://docs.microsoft.com/media/common/i_investigate.svg'
             title: Что такое доменные службы Azure AD?
-          - href: active-directory-ds-getting-started.md
+          - href: create-instance.md
             html: <p>Создайте управляемый домен с помощью этого простого пошагового руководства.</p>
             image:
               src: 'https://docs.microsoft.com/media/common/i_deploy.svg'
             title: Начало работы
-          - href: active-directory-ds-contact-us.md
+          - href: contact-us.md
             html: '<p>Получите помощь, когда она необходима.</p>'
             image:
               src: 'https://docs.microsoft.com/media/common/i_support.svg'
@@ -43,50 +43,50 @@ sections:
             image:
               src: 'https://docs.microsoft.com/media/common/i_whats-new.svg'
             title: Новые возможности
-  - title: Видеоролики
+  - title: Видео
     items:
       - type: markdown
         text: '>[!VIDEO https://www.youtube.com/embed/T1Nd9APNceQ]'
-  - title: Планирование статей
+  - title: Статьи о планировании
     items:
       - type: list
         style: unordered
         items:
-          - html: <a href="active-directory-ds-comparison.md">Будет ли служба полезна для вас?</a>
+          - html: <a href="comparison.md">Будет ли служба полезна для вас?</a>
           - html: <a href="active-directory-ds-features.md">Возможности доменных служб Azure AD</a>
-          - html: <a href="active-directory-ds-scenarios.md">Как будет использоваться служба?</a>
-          - html: <a href="active-directory-ds-synchronization.md">Как синхронизация работает с доменными службами Azure AD</a>
+          - html: <a href="scenarios.md">Как будет использоваться служба?</a>
+          - html: <a href="synchronization.md">Как синхронизация работает с доменными службами Azure AD</a>
           - html: '<a href="https://azure.microsoft.com/pricing/details/active-directory-ds/">Цены на доменные службы Azure AD</a>'
   - title: Приложения и доменные службы Azure AD
     items:
       - type: list
         style: unordered
         items:
-          - html: <a href="active-directory-ds-deploy-azure-app-proxy.md">Развертывание прокси-службы приложения Azure AD</a>
-          - html: <a href="active-directory-ds-enable-sharepoint-profile-sync.md">Синхронизация профилей для сервера SharePoint</a>
-          - html: <a href="active-directory-ds-enable-kcd.md">Настройка ограниченного делегирования Kerberos</a>
+          - html: <a href="deploy-azure-app-proxy.md">Развертывание Azure AD App Proxy</a>
+          - html: <a href="deploy-sp-profile-sync.md">Синхронизация профилей для сервера SharePoint</a>
+          - html: <a href="deploy-kcd.md">Настройка ограниченного делегирования Kerberos</a>
   - title: Статьи с инструкциями
     items:
       - type: list
         style: unordered
         items:
-          - html: <a href="active-directory-ds-check-health.md">Проверка работоспособности управляемого домена</a>
-          - html: <a href="active-directory-ds-csp.md">Подписки Azure CSP и доменные службы Azure AD</a>
-          - html: <a href="active-directory-ds-admin-guide-administer-dns.md">Администрирование DNS</a>
-          - html: <a href="active-directory-ds-networking.md">Выбор виртуальной сети</a>
-          - html: <a href="active-directory-ds-admin-guide-configure-secure-ldap.md">Настройка защищенного протокола LDAP</a>
-          - html: <a href="active-directory-ds-admin-guide-create-ou.md">Создание подразделения</a>
-          - html: <a href="active-directory-ds-admin-guide-administer-group-policy.md">Администрирование групповой политики</a>
+          - html: <a href="check-health.md">Проверка работоспособности управляемого домена</a>
+          - html: <a href="csp.md">Подписки Azure CSP и доменные службы Azure AD</a>
+          - html: <a href="manage-dns.md">Управление DNS</a>
+          - html: <a href="network-considerations.md">Выбор виртуальной сети</a>
+          - html: <a href="configure-ldaps.md">Настройка защищенного протокола LDAP</a>
+          - html: <a href="create-ou.md">Создание подразделения</a>
+          - html: <a href="manage-group-policy.md">Управление групповой политикой</a>
   - title: Статьи по устранению неполадок
     items:
       - type: list
         style: unordered
         items:
-          - html: <a href="active-directory-ds-troubleshooting.md">Руководство по устранению неполадок</a>
-          - html: <a href="active-directory-ds-troubleshoot-alerts.md">Устранение неполадок с оповещениями в управляемом домене</a>
-          - html: <a href="active-directory-ds-faqs.md">Часто задаваемые вопросы</a>
+          - html: <a href="troubleshoot.md">Руководство по устранению неполадок</a>
+          - html: <a href="troubleshoot-alerts.md">Устранение неполадок с оповещениями в управляемом домене</a>
+          - html: <a href="faqs.md">Часто задаваемые вопросы</a>
           - html: '<a href="https://azure.microsoft.com/support/options/">Получение поддержки</a>'
-  - title: 'Другие ресурсы:'
+  - title: Другие ресурсы
     items:
       - type: list
         style: unordered

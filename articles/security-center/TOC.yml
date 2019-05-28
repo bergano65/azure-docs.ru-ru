@@ -6,18 +6,20 @@
       href: security-center-intro.md
     - name: Поддерживаемые платформы и функции в Центре безопасности
       href: security-center-os-coverage.md
-- name: Быстрое начало работы
+    - name: Оценка защиты конечной точки и рекомендации
+      href: security-center-endpoint-protection.md
+- name: Краткие руководства
   expanded: true
   items:
     - name: Подписки Azure
       href: security-center-get-started.md
-    - name: Компьютеры Windows
+    - name: Компьютеры с Windows
       href: quick-onboard-windows-computer.md
-    - name: Компьютеры Linux
+    - name: Компьютеры с Linux
       href: quick-onboard-linux-computer.md
     - name: Виртуальные машины Azure Stack
       href: quick-onboard-azure-stack.md
-- name: Учебники
+- name: Руководства
   items:
     - name: Защита ресурсов
       href: tutorial-protect-resources.md
@@ -33,7 +35,7 @@
       href: security-center-data-security.md
     - name: Использование рекомендаций для повышения уровня безопасности
       href: security-center-using-recommendations.md
-    - name: реагирование на инциденты.
+    - name: Реагирование на инциденты
       href: security-center-incident-response.md
 - name: Практические руководства
   items:
@@ -64,11 +66,11 @@
           href: security-center-policy-definitions.md
         - name: Уведомления по почте
           href: security-center-provide-security-contact-details.md
-        - name: Ценовой уровень
+        - name: Ценовая категория
           href: security-center-pricing.md
         - name: Конфигурации системы безопасности
           href: security-center-customize-os-security-config.md
-        - name: Видимость в пределах клиента
+        - name: Видимость на уровне клиента
           href: security-center-management-groups.md
     - name: Реализация рекомендаций по вопросам безопасности
       href: security-center-recommendations.md
@@ -156,17 +158,17 @@
           href: security-center-investigation.md
         - name: Управление пользовательскими данными исследования
           href: security-center-investigation-user-data.md
-        - name: Модули Playbook в Logic Apps
+        - name: Сборники схем в Logic Apps
           href: security-center-playbooks.md
         - name: Просмотр событий
           href: security-center-events-dashboard.md
-        - name: поиска
+        - name: Поиск
           href: security-center-search.md
         - name: Планирование и эксплуатация
           href: security-center-planning-and-operations-guide.md
 - name: Справочные материалы
   items:
-    - name: Интерфейсы API REST
+    - name: "Интерфейсы REST\_API"
       href: 'https://docs.microsoft.com/rest/api/securitycenter/'
     - name: Обновления службы
       href: 'https://azure.microsoft.com/updates/?product=security-center'
@@ -178,7 +180,7 @@
       href: /learn/browse/?term=securityS
     - name: Управление данными пользователей
       href: security-center-privacy.md
-    - name: Часто задаваемые вопросы
+    - name: Вопросы и ответы
       href: security-center-faq.md
     - name: Безопасность в Azure
       href: /azure/security/
@@ -188,13 +190,13 @@
       href: security-center-readiness-roadmap.md
     - name: 'Блог по безопасности, конфиденциальности и соответствию нормам Azure'
       href: 'https://blogs.msdn.com/b/azuresecurity/'
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/search?q=security-center'
-    - name: Видеоролики
+    - name: Видео
       href: 'https://azure.microsoft.com/documentation/videos/index/?services=security-center'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/security-center/'
-    - name: Доступ по регионам
+    - name: Доступность по регионам
       href: 'https://azure.microsoft.com/regions/services/'
     - name: Устранение неполадок
       href: security-center-troubleshooting-guide.md
