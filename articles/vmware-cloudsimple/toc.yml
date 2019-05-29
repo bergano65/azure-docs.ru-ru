@@ -6,8 +6,8 @@
         - name: Решение VMware от CloudSimple
           href: cloudsimple-vmware-solutions-overview.md
         - name: Основные понятия об администрировании
-          href: 'https://docs.azure.cloudsimple.com/key-concepts/'
-    - name: Быстрый запуск
+          href: key-concepts.md
+    - name: Краткое руководство
       expanded: true
       items:
         - name: Инициализация и приобретение емкости
@@ -20,9 +20,9 @@
           href: quickstart-create-vmware-virtual-machine.md
     - name: Основные понятия
       items:
-        - name: Service
-          href: 'https://docs.azure.cloudsimple.com/cloudsimple-service/'
-        - name: Nodes
+        - name: Служба
+          href: cloudsimple-service.md
+        - name: Узлы
           href: cloudsimple-node.md
         - name: Частное облако
           href: cloudsimple-private-cloud.md
@@ -45,13 +45,13 @@
         - name: Использование VMware в частном облаке
           href: vmware-components.md
         - name: Обзор безопасности
-          href: 'https://docs.azure.cloudsimple.com/cloudsimple-security/'
+          href: cloudsimple-security.md
         - name: Квота на узлы
           href: node-quota.md
         - name: Обслуживание и обновления
           href: cloudsimple-maintenance-updates.md
-        - name: Часто задаваемые вопросы
-          href: 'https://docs.azure.cloudsimple.com/cloudsimple-faq/'
+        - name: Вопросы и ответы
+          href: cloudsimple-faq.md
     - name: Учебники
       items:
         - name: Включение поставщика ресурсов
@@ -62,7 +62,7 @@
           href: 'https://docs.azure.cloudsimple.com/access-cloudsimple-portal/'
         - name: Управление узлами
           items:
-            - name: Приобретение узлов
+            - name: Покупка узлов
               href: create-nodes.md
         - name: Управление ресурсами частного облака
           items:
@@ -112,7 +112,7 @@
           items:
             - name: Создание виртуальной машины в Azure
               href: 'https://docs.azure.cloudsimple.com/azure-create-vm/'
-    - name: Практические руководства
+    - name: Инструкции
       items:
         - name: Защита среды
           href: 'https://docs.azure.cloudsimple.com/private-cloud-secure/'
