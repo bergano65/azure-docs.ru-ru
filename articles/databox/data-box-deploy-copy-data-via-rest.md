@@ -8,12 +8,12 @@ ms.subservice: pod
 ms.topic: tutorial
 ms.date: 05/09/2019
 ms.author: alkohli
-ms.openlocfilehash: b3d53b7d5fceb303259823198731b5198cfce82c
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.openlocfilehash: fcd6fc95adc892885fd8471e622ce3b04258d8b5
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65508256"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65800543"
 ---
 # <a name="tutorial-copy-data-to-azure-data-box-blob-storage-via-rest-apis"></a>Руководство по Копирование данных в хранилище BLOB-объектов Azure Data Box с помощью REST API  
 
@@ -152,6 +152,7 @@ ms.locfileid: "65508256"
 - Если данные, отправляемые Data Box, одновременно отправляются другими приложениями за пределами Data Box, это может привести к сбоям заданий отправки и повреждению данных.
 
 В этом руководстве AzCopy используется для копирования данных в хранилище BLOB-объектов Data Box. Вы также можете использовать Обозреватель службы хранилища Azure (если вы предпочитаете средство с графическим пользовательским интерфейсом) или партнерское программное обеспечение для копирования данных.
+
 Процедура копирования включает в себя следующие действия:
 
 - Создание контейнера
@@ -212,9 +213,11 @@ ms.locfileid: "65508256"
     --recursive \
     --exclude-older
 
-#### <a name="windows"></a>Windows
+#### <a name="windows"></a> Windows
 
     AzCopy /Source:C:\myfolder /Dest:https://data-box-storage-account-name.blob.device-serial-no.microsoftdatabox.com/container-name/files/ /DestKey:<key> /S /XO
+
+При возникновении ошибки во время копирования или подключения см. статью [Troubleshoot issues related to Azure Data Box Blob storage](data-box-troubleshoot-rest.md) (Устранение неполадок в хранилище BLOB-объектов службы Data Box).
 
 Следующий шаг — подготовка устройства к отправке.
 

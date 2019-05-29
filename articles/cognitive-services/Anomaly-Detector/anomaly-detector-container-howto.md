@@ -7,14 +7,14 @@ author: aahill
 ms.service: cognitive-services
 ms.subservice: anomaly-detection
 ms.topic: article
-ms.date: 05/07/2019
+ms.date: 05/28/2019
 ms.author: aahi
-ms.openlocfilehash: cc82e091ae4c033bda7f1d91c9aed36bb081de88
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: ec32d5de9e3af14abbf14f79f37ab00f3346b1c1
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65233614"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66306982"
 ---
 # <a name="install-and-run-anomaly-detector-containers"></a>Установка и запуск средства обнаружения аномалий контейнеров
 
@@ -22,7 +22,7 @@ ms.locfileid: "65233614"
 
 |Функция|Функции|
 |-|-|
-|Средства обнаружения аномалий| <li> Обнаруживает аномалии в реальном времени. <li> Обнаруживает аномалии на протяжении всего набора данных в пакетном режиме. <li> Выводит ожидаемое обычный диапазон данных. <li> Корректировки чувствительность обнаружения аномалий поддерживает лучше разместить вашей информации. |
+|Детектор аномалий| <li> Обнаруживает аномалии в реальном времени. <li> Обнаруживает аномалии на протяжении всего набора данных в пакетном режиме. <li> Выводит ожидаемое обычный диапазон данных. <li> Корректировки чувствительность обнаружения аномалий поддерживает лучше разместить вашей информации. |
 
 Подробные сведения об интерфейсах API см.:
 * [Дополнительные сведения о службе API обнаружения аномалий](https://go.microsoft.com/fwlink/?linkid=2080698&clcid=0x409)
@@ -37,7 +37,7 @@ ms.locfileid: "65233614"
 |--|--|
 |Модуль Docker| На [главном компьютере](#the-host-computer) должен быть установлен модуль Docker. Docker предоставляет пакеты, которые настраивают среду Docker в ОС [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> **В ОС Windows** для Docker нужно также настроить поддержку контейнеров Linux.<br><br>|
 |Опыт работы с Docker | Требуется базовое представление о понятиях Docker, включая реестры, репозитории, контейнеры и образы контейнеров, а также знание основных команд `docker`.| 
-|Ресурсов обнаружения аномалий |Для использования контейнеров необходимо следующее:<br><br>_Обнаружения аномалий_ ресурсов Azure, чтобы получить связанный ключ выставления счетов и выставления счетов URI конечной точки. Оба значения доступны на страницах Обзор средства обнаружения аномалий и ключей на портале Azure и необходимые для запуска контейнера.<br><br>**{BILLING_KEY}**: ключ ресурса<br><br>**{BILLING_ENDPOINT_URI}**: пример URI конечной точки: `https://westus2.api.cognitive.microsoft.com`|
+|Ресурсов обнаружения аномалий |Для использования контейнеров необходимо следующее:<br><br>_Обнаружения аномалий_ ресурсов Azure, чтобы получить связанный ключ выставления счетов и выставления счетов URI конечной точки. Оба значения доступны на страницах Обзор средства обнаружения аномалий и ключей на портале Azure и необходимые для запуска контейнера.<br><br>**{BILLING_KEY}** : ключ ресурса<br><br>**{BILLING_ENDPOINT_URI}** : пример URI конечной точки: `https://westus2.api.cognitive.microsoft.com`|
 
 ## <a name="request-access-to-the-container-registry"></a>Запрос доступа к реестру контейнеров
 
@@ -176,6 +176,10 @@ ApiKey={BILLING_KEY}
 [!INCLUDE [Container's Billing Settings](../../../includes/cognitive-services-containers-how-to-billing-info.md)]
 
 Дополнительные сведения об этих параметрах см. в статье [Настройка контейнеров](anomaly-detector-container-configuration.md).
+
+<!--blogs/samples/video coures -->
+
+[!INCLUDE [Discoverability of more container information](../../../includes/cognitive-services-containers-discoverability.md)]
 
 ## <a name="summary"></a>Сводка
 

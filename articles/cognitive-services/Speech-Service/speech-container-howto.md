@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 05/07/2019
+ms.date: 05/28/2019
 ms.author: diberry
-ms.openlocfilehash: 2adcbad55236917685ddcdbabe4809f36ab5a730
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: b620cbb8e51fbe41defb6bdbdc66ba4a7e539aa0
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65153052"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66306556"
 ---
 # <a name="install-and-run-speech-service-containers"></a>Установка и запуск контейнеров службы распознавания речи
 
@@ -25,7 +25,7 @@ ms.locfileid: "65153052"
 
 |Функция|Функции|Последние версии|
 |-|-|--|
-|Преобразование речи в текст.| <li>Расшифровывает непрерывную речь в режиме реального времени в текстовый формат.<li>Может выполнять пакетное транскрибирование аудиозаписей. <li>Поддерживает промежуточные результаты, обнаружение окончания речи, автоматическое форматирование текста и маскировку нецензурной лексики. <li>Можно вызвать в [Интеллектуальной службе распознавания речи](https://docs.microsoft.com/azure/cognitive-services/luis/) (LUIS), чтобы получить намерение пользователя из расшифрованной речи.\*|1.1.1|
+|Преобразование речи в текст| <li>Расшифровывает непрерывную речь в режиме реального времени в текстовый формат.<li>Может выполнять пакетное транскрибирование аудиозаписей. <li>Поддерживает промежуточные результаты, обнаружение окончания речи, автоматическое форматирование текста и маскировку нецензурной лексики. <li>Можно вызвать в [Интеллектуальной службе распознавания речи](https://docs.microsoft.com/azure/cognitive-services/luis/) (LUIS), чтобы получить намерение пользователя из расшифрованной речи.\*|1.1.1|
 |Преобразование текста в речь| <li>Преобразует текст в естественно звучащую речь. <li>Предлагает голоса обеих полов и диалекты для множества поддерживаемых языков. <li>Поддерживает ввод простого текста или на языке разметки синтеза речи (Speech Synthesis Markup Language, SSML). |1.1.0|
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
@@ -38,9 +38,9 @@ ms.locfileid: "65153052"
 |--|--|
 |Модуль Docker| На [главном компьютере](#the-host-computer) должен быть установлен модуль Docker. Docker предоставляет пакеты, которые настраивают среду Docker в ОС [macOS](https://docs.docker.com/docker-for-mac/), [Windows](https://docs.docker.com/docker-for-windows/) и [Linux](https://docs.docker.com/engine/installation/#supported-platforms). Ознакомьтесь с [общими сведениями о Docker и контейнерах](https://docs.docker.com/engine/docker-overview/).<br><br> Docker нужно настроить таким образом, чтобы контейнеры могли подключать и отправлять данные о выставлении счетов в Azure. <br><br> **В ОС Windows** для Docker нужно также настроить поддержку контейнеров Linux.<br><br>|
 |Опыт работы с Docker | Требуется базовое представление о понятиях Docker, включая реестры, репозитории, контейнеры и образы контейнеров, а также знание основных команд `docker`.| 
-|Ресурс речи |Чтобы использовать эти контейнеры, необходимо иметь:<br><br>Объект _речи_ ресурсов Azure, чтобы получить связанный ключ выставления счетов и выставления счетов URI конечной точки. Оба значения доступны на портале Azure **речи** страницы Обзор и ключи на них, необходимые для запуска контейнера.<br><br>**{BILLING_KEY}**: ключ ресурса<br><br>**{BILLING_ENDPOINT_URI}**: пример URI конечной точки: `https://westus.api.cognitive.microsoft.com/sts/v1.0`|
+|Ресурс речи |Для использования контейнеров необходимо следующее:<br><br>Объект _речи_ ресурсов Azure, чтобы получить связанный ключ выставления счетов и выставления счетов URI конечной точки. Оба значения доступны на портале Azure **речи** страницы Обзор и ключи на них, необходимые для запуска контейнера.<br><br>**{BILLING_KEY}** : ключ ресурса<br><br>**{BILLING_ENDPOINT_URI}** : пример URI конечной точки: `https://westus.api.cognitive.microsoft.com/sts/v1.0`|
 
-## <a name="request-access-to-the-container-registry"></a>Запрос на доступ в реестр контейнеров
+## <a name="request-access-to-the-container-registry"></a>Запрос доступа к реестру контейнеров
 
 Сначала выполните и отправить [форму запроса контейнеры речи Cognitive Services](https://aka.ms/speechcontainerspreview/) чтобы запросить доступ к контейнеру. 
 
@@ -64,7 +64,7 @@ grep -q avx2 /proc/cpuinfo && echo AVX2 supported || echo No AVX2 support detect
 
 Ниже перечислены минимальные и рекомендуемые ядер ЦП и памяти, выделяемой для каждого контейнера речи.
 
-| Контейнер | Минимальная | Рекомендуется |
+| Контейнер | Минимум | Рекомендуется |
 |-----------|---------|-------------|
 |cognitive-services-speech-to-text | 2 ядра<br>2 ГБ памяти  | 4 ядра<br>4 ГБ памяти  |
 |cognitive-services-text-to-speech | 1 ядро, 0,5 ГБ памяти| 2 ядра, 1 ГБ памяти |
@@ -155,7 +155,7 @@ grep -q avx2 /proc/cpuinfo && echo AVX2 supported || echo No AVX2 support detect
 
 ### <a name="docker-pull-for-the-speech-containers"></a>Получение образов docker для контейнеров речи
 
-#### <a name="speech-to-text"></a>Преобразование речи в текст.
+#### <a name="speech-to-text"></a>Преобразование речи в текст
 
 ```Docker
 docker pull containerpreview.azurecr.io/microsoft/cognitive-services-speech-to-text:latest
@@ -171,7 +171,7 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-text-to-spe
 
 После размещения контейнера на [главном компьютере](#the-host-computer) воспользуйтесь следующей процедурой для работы с ним.
 
-1. [Запуск контейнера](#run-the-container-with-docker-run), необязательно, но не используются параметры выставления счетов. Доступны дополнительные [примеры](speech-container-configuration.md#example-docker-run-commands) команды `docker run`. 
+1. [Запустите контейнер](#run-the-container-with-docker-run) с необходимыми, но не используемыми настройками выставления счетов. Доступны дополнительные [примеры](speech-container-configuration.md#example-docker-run-commands) команды `docker run`. 
 1. [Запрос конечной точки прогнозирования контейнера](#query-the-containers-prediction-endpoint). 
 
 ## <a name="run-the-container-with-docker-run"></a>Запуск контейнера с помощью команды `docker run`
@@ -180,7 +180,7 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-text-to-spe
 
 **На этапе предварительной версии**, выставления счетов параметров должен быть допустимым для запуска контейнера, но не будет выставлен счет за использование.
 
-| Placeholder | Value |
+| Местозаполнитель | Value |
 |-------------|-------|
 |{BILLING_KEY} | Этот ключ используется для запуска контейнера, а также доступны на странице ключей речи на портале Azure.  |
 |{BILLING_ENDPOINT_URI} | Выставления счетов значение URI конечная точка доступна на странице обзора речи на портале Azure.|
@@ -197,7 +197,7 @@ Billing={BILLING_ENDPOINT_URI} \
 ApiKey={BILLING_KEY} 
 ```
 
-### <a name="speech-to-text"></a>Преобразование речи в текст.
+### <a name="speech-to-text"></a>Преобразование речи в текст
 
 ```bash
 docker run --rm -it -p 5000:5000 --memory 2g --cpus 2 \
@@ -221,24 +221,24 @@ ApiKey={BILLING_KEY}
 
 |Контейнер|Конечная точка|
 |--|--|
-|Преобразование речи в текст.|ws: / / localhost:5000/речи/распознавания/диктовки/cognitiveservices/v1|
+|Преобразование речи в текст|ws: / / localhost:5000/речи/распознавания/диктовки/cognitiveservices/v1|
 |Преобразование текста в речь|http://localhost:5000/speech/synthesize/cognitiveservices/v1|
 
-### <a name="speech-to-text"></a>Преобразование речи в текст.
+### <a name="speech-to-text"></a>Преобразование речи в текст
 
 Контейнер предоставляет конечную точку запросов websocket API, который можно открыть с помощью [Speech SDK](index.yml).
 
-По умолчанию Speech SDK использует службы online речи. Чтобы использовать контейнер, необходимо изменить метод инициализации. См. в приведенных ниже примерах.
+По умолчанию Speech SDK использует службы online речи. Чтобы использовать контейнер, вам необходимо изменить метод инициализации. Ознакомьтесь с указанными ниже примерами.
 
-#### <a name="for-c"></a>ДляC#
+#### <a name="for-c"></a>Для C#
 
-Изменить с помощью этой вызов инициализации облака Azure:
+Смените этот вызов инициализации облака Azure:
 
 ```C#
 var config = SpeechConfig.FromSubscription("YourSubscriptionKey", "YourServiceRegion");
 ```
 
-для этого вызова, с помощью конечная точка контейнера:
+на этот вызов с использованием конечной точки контейнера:
 
 ```C#
 var config = SpeechConfig.FromEndpoint("ws://localhost:5000/speech/recognition/dictation/cognitiveservices/v1", "YourSubscriptionKey");
@@ -246,13 +246,13 @@ var config = SpeechConfig.FromEndpoint("ws://localhost:5000/speech/recognition/d
 
 #### <a name="for-python"></a>Для Python
 
-Изменить с помощью этой вызов инициализации облако Azure
+Смените этот вызов инициализации облака Azure:
 
 ```python
 speech_config = speechsdk.SpeechConfig(subscription=speech_key, region=service_region)
 ```
 
-для этого вызова, с помощью конечная точка контейнера:
+на этот вызов с использованием конечной точки контейнера:
 
 ```python
 speech_config = speechsdk.SpeechConfig(subscription=speech_key, endpoint="ws://localhost:5000/speech/recognition/dictation/cognitiveservices/v1")
@@ -272,7 +272,7 @@ speech_config = speechsdk.SpeechConfig(subscription=speech_key, endpoint="ws://l
 
 ## <a name="troubleshooting"></a>Устранение неполадок
 
-Когда вы запускаете контейнер, контейнер использует **stdout** и **stderr** для вывода информации, полезный для устранения неполадок, возникающих во время запуска или работы контейнера. 
+При запуске контейнер использует **stdout** и **stderr** для вывода информации, полезной при устранении неполадок, которые случаются при запуске или выполнении контейнера. 
 
 ## <a name="billing"></a>Выставление счетов
 
@@ -282,12 +282,16 @@ speech_config = speechsdk.SpeechConfig(subscription=speech_key, endpoint="ws://l
 
 Дополнительные сведения об этих параметрах см. в статье [Настройка контейнеров](speech-container-configuration.md).
 
+<!--blogs/samples/video coures -->
+
+[!INCLUDE [Discoverability of more container information](../../../includes/cognitive-services-containers-discoverability.md)]
+
 ## <a name="summary"></a>Сводка
 
 В этой статье вы узнали основные понятия и рабочий процесс для загрузки, установки и запуска контейнеров речи. В разделе "Сводка" сделайте следующее.
 
 * Речи реализовано два вида контейнеров Linux для Docker, инкапсулируя преобразования речи в текст и текста в речь.
-* Образы контейнеров, загружаются из закрытого реестра контейнеров в Azure.
+* Образы контейнеров скачиваются из частного реестра контейнеров в Azure.
 * Образы контейнеров выполняются в Docker.
 * Пакет SDK или REST API можно использовать для вызова операций в контейнерах речи, указав узла URI контейнера.
 * При создании экземпляра контейнера нужно указать данные для выставления счетов.

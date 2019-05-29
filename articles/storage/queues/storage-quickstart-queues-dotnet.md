@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 02/06/2018
 ms.author: mhopkins
 ms.reviewer: cbrooks
-ms.openlocfilehash: b80ff38e2afb5e9da6227537ea9c483566d03e4d
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: 41cb37eb9d96752d4732731d2a36d9bc892cbaa5
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65232597"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66159816"
 ---
 # <a name="quickstart-use-net-to-create-a-queue-in-azure-storage"></a>Краткое руководство. Использование .NET для создания очереди в службе хранилища Azure
 
@@ -257,7 +257,9 @@ if (queue != null)
 
 ### <a name="binaries-and-source-code"></a>Двоичные файлы и исходный код
 
-- Скачайте пакет NuGet для последней версии [клиентской библиотеки .NET](https://www.nuget.org/packages/WindowsAzure.Storage/) для службы хранилища Azure. 
+- Скачайте пакеты NuGet для последней версии [клиентской библиотеки службы хранилища Azure для .NET](/dotnet/api/overview/azure/storage/client).
+    - [Common](https://www.nuget.org/packages/Microsoft.Azure.Storage.Common/)
+    - [Очереди](https://www.nuget.org/packages/Azure.Storage.Queues/)
 - См. [исходный код клиентской библиотеки .NET](https://github.com/Azure/azure-storage-net) на сайте GitHub.
 
 ### <a name="client-library-reference-and-samples"></a>Справочник по клиентской библиотеке и примеры
