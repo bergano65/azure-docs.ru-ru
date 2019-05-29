@@ -1,6 +1,6 @@
 ---
 title: Руководство. Интеграция Azure Active Directory с Predictix Ordering | Документация Майкрософт
-description: Узнайте, как настроить единый вход Azure Active Directory в Predictix Ordering.
+description: Из этого руководства вы узнаете, как настроить единый вход Azure Active Directory в Predictix Ordering.
 services: active-directory
 documentationCenter: na
 author: jeevansd
@@ -15,192 +15,192 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/26/2019
 ms.author: jeedes
-ms.openlocfilehash: 2f4a877974c21dd7aead00f0b6aa949c84e2b80f
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 79e9952aefc44b7c490bb9fe375487c1a3335fc8
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59282616"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65901504"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-predictix-ordering"></a>Руководство. Интеграция Azure Active Directory с Predictix Ordering
+# <a name="tutorial-azure-active-directory-integration-with-predictix-ordering"></a>Руководство по Интеграция Azure Active Directory с Predictix Ordering
 
 В этом руководстве описано, как интегрировать Predictix Ordering с Azure Active Directory (Azure AD).
-Интеграция Azure AD с приложением Predictix Ordering обеспечивает следующие преимущества.
+Такая интеграция обеспечивает следующие преимущества.
 
 * С помощью Azure AD вы можете контролировать доступ к Predictix Ordering.
-* Вы можете включить автоматический вход пользователей в Predictix Ordering (единый вход) с использованием учетных записей Azure AD.
-* Вы можете управлять учетными записями централизованно на портале Azure.
+* Вы можете включить автоматический вход пользователей в Predictix Ordering (единый вход) с помощью учетных записей Azure AD.
+* Вы можете управлять учетными записями централизованно — через портал Azure.
 
-Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Predictix Ordering, вам потребуется:
 
-* подписка Azure AD Если у вас нет среды Azure AD, вы можете получить бесплатную учетную запись [этой ссылке](https://azure.microsoft.com/pricing/free-trial/).
+* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/pricing/free-trial/));
 * подписка Predictix Ordering с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
 
-В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
+В рамках этого руководства вы настроите и проверите единый вход Azure Active Directory в тестовой среде.
 
-* Predictix Ordering поддерживает единый вход, инициированный **поставщиком услуг**.
+* Predictix Ordering поддерживает единый вход, инициируемый поставщиком услуг.
 
-## <a name="adding-predictix-ordering-from-the-gallery"></a>Добавление приложения Predictix Ordering из коллекции
+## <a name="add-predictix-ordering-from-the-gallery"></a>Добавление приложения Predictix Ordering из коллекции
 
 Чтобы настроить интеграцию Predictix Ordering с Azure AD, необходимо добавить приложение Predictix Ordering из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Predictix Ordering из коллекции, выполните указанные ниже действия.**
+1. На [портале Azure](https://portal.azure.com) в области слева щелкните **Azure Active Directory**.
 
-1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
+    ![Выберите Azure Active Directory.](common/select-azuread.png)
 
-    ![Кнопка Azure Active Directory](common/select-azuread.png)
-
-2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
+2. Выберите **Корпоративные приложения** > **Все приложения**.
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
-3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
+3. Чтобы добавить новое приложение, выберите **Новое приложение** в верхней части окна.
 
-    ![Кнопка "Создать приложение"](common/add-new-app.png)
+    ![Выбор элемента "Новое приложение"](common/add-new-app.png)
 
-4. В поле поиска введите **Predictix Ordering**, выберите **Predictix Ordering** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
+4. В поле поиска введите **Predictix Ordering**. Выберите **Predictix Ordering** в результатах поиска, а затем щелкните **Добавить**.
 
-     ![Predictix Ordering в списке результатов](common/search-new-app.png)
+     ![Результаты поиска](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
-В этом разделе описана настройка и проверка единого входа Azure AD в Predictix Ordering с использованием тестового пользователя **Britta Simon**.
-Чтобы обеспечить работу единого входа, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Predictix Ordering.
+В этом разделе описана настройка и проверка единого входа Azure AD в Predictix Ordering с использованием тестового пользователя Britta Simon.
+Для обеспечения единого входа необходимо установить связь между пользователем в Azure AD и соответствующим пользователем в Predictix Ordering.
 
-Чтобы настроить и проверить единый вход Azure AD в Predictix Ordering, выполните следующие стандартные действия.
+Чтобы настроить и проверить единый вход Azure AD в Predictix Ordering, потребуется выполнить действия в приведенных ниже стандартных блоках.
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-2. **[Настройка единого входа в Predictix Ordering](#configure-predictix-ordering-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
-3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
-5. **[Создание тестового пользователя Predictix Ordering](#create-predictix-ordering-test-user)** требуется для создания в Predictix Ordering пользователя Britta Simon, связанного с соответствующим представлением пользователя в Azure AD.
-6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
+2. **[Настройка единого входа в Predictix Ordering](#configure-predictix-ordering-single-sign-on)** на стороне приложения.
+3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить ему использовать единый вход Azure AD.
+5. **[Создание тестового пользователя Predictix Ordering](#create-a-predictix-ordering-test-user)** , связанного с одноименным пользователем в Azure AD.
+6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться, что конфигурация работает правильно.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
 В этом разделе описано включение единого входа Azure AD на портале Azure.
 
-Чтобы настроить единый вход Azure AD в Predictix Ordering, выполните указанные ниже действия.
+Чтобы настроить единый вход Azure AD в Predictix Ordering, сделайте следующее.
 
 1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Predictix Ordering** выберите **Единый вход**.
 
-    ![Ссылка "Настройка единого входа"](common/select-sso.png)
+    ![Выбор пункта "Единый вход"](common/select-sso.png)
 
 2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed**, чтобы включить единый вход.
 
-    ![Режим выбора единого входа](common/select-saml-option.png)
+    ![Выбор метода единого входа](common/select-saml-option.png)
 
 3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+    ![Значок "Изменить"](common/edit-urls.png)
 
-4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
+4. В диалоговом окне **Базовая конфигурация SAML** выполните следующие действия.
 
-    ![Сведения о домене и URL-адресах единого входа для приложения Predictix Ordering](common/sp-identifier.png)
+    ![Диалоговое окно "Базовая конфигурация SAML"](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<companyname-pricing>.ordering.predictix.com/sso/request`.
+    1. В поле **URL-адрес для входа** введите URL-адрес в следующем формате:
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате:
+       `https://<companyname-pricing>.ordering.predictix.com/sso/request`
 
-    | |
-    |--|
-    | `https://<companyname-pricing>.dev.ordering.predictix.com` |
-    | `https://<companyname-pricing>.ordering.predictix.com` |
-    | |
+    1. В поле **Идентификатор (сущности)** введите URL-адрес в следующем формате:
+
+        | |
+        |--|
+        | `https://<companyname-pricing>.dev.ordering.predictix.com` |
+        | `https://<companyname-pricing>.ordering.predictix.com` |
+        | |
 
     > [!NOTE]
-    > Эти значения приведены для примера. Необходимо обновить эти значения действующим URL-адресом для входа и идентификатором. Чтобы получить эти значения, обратитесь в [службу поддержки клиентов Predictix Ordering](https://www.predix.io/support/). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Эти значения представляют собой заполнители. Необходимо указать фактические URL-адрес для входа и идентификатор. Чтобы получить эти значения, обратитесь к [группе поддержки Predictix Ordering](https://www.predix.io/support/). Можно также ознакомиться с шаблонами в диалоговом окне **Базовая конфигурация SAML** на портале Azure.
 
-5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Загрузить**, чтобы загрузить требуемый **сертификат (Base64)** из предложенных вариантов, и сохраните его на компьютере.
+5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните ссылку **Скачать** рядом с нужным **сертификатом (Base64)** и сохраните сертификат на компьютере.
 
     ![Ссылка для скачивания сертификата](common/certificatebase64.png)
 
-6. Требуемый URL-адрес вы можете скопировать из раздела **Настройка Predictix Ordering**.
+6. Требуемые URL-адреса можно скопировать из раздела **Настройка Predictix Ordering**.
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
+    1. **URL-адрес входа**.
 
-    b. Идентификатор Azure AD
+    2. **Идентификатор Azure AD**
 
-    c. URL-адрес выхода.
+    3. **URL-адрес выхода**.
 
 ### <a name="configure-predictix-ordering-single-sign-on"></a>Настройка единого входа в Predictix Ordering
 
-Чтобы настроить единый вход на стороне **Predictix Ordering**, нужно отправить скачанный **сертификат (Base64)** и соответствующие URL-адреса, скопированные на портале Azure, в [группу поддержки Predictix Ordering](https://www.predix.io/support/). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне Predictix Ordering, нужно отправить скачанный сертификат и URL-адреса, скопированные на портале Azure, [группе поддержки Predictix Ordering](https://www.predix.io/support/). Эта группа обеспечит правильную настройку подключения для единого входа SAML с обеих сторон.
 
-### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
+### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+В этом разделе описано, как создать на портале Azure тестового пользователя с именем Britta Simon.
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
-    ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
+    ![Выбор "Все пользователи"](common/users.png)
 
 2. В верхней части экрана выберите **Новый пользователь**.
 
-    ![Кнопка "Новый пользователь"](common/new-user.png)
+    ![Выбор "Новый пользователь"](common/new-user.png)
 
-3. В разделе свойств пользователя сделайте следующее:
+3. В диалоговом окне **Пользователь** сделайте следующее:
 
     ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-    а. В поле **Имя** введите **BrittaSimon**.
+    1. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите brittasimon@yourcompanydomain.extension. Например BrittaSimon@contoso.com.
+    1. В поле **Имя пользователя** введите **BrittaSimon @\<ваш_домен>.\<доменная_зона>** . (Например, BrittaSimon@contoso.com).
 
-    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    1. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    1. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
-В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставив доступ к Predictix Ordering.
+В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставив этому пользователю доступ к Predictix Ordering.
 
 1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **Predictix Ordering**.
 
-    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
+    ![корпоративные приложения.](common/enterprise-applications.png)
 
-2. В списке приложений выберите **Predictix Ordering**.
+2. Из списка приложений выберите **Predictix Ordering**.
 
-    ![Ссылка на Predictix Ordering в списке "Приложения"](common/all-applications.png)
+    ![Список приложений](common/all-applications.png)
 
-3. В меню слева выберите **Пользователи и группы**.
+3. В области слева выберите **Пользователи и группы**.
 
-    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
+    ![Выбор параметра "Пользователи и группы"](common/users-groups-blade.png)
 
-4. Нажмите кнопку **Добавить пользователя**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+4. Выберите **Добавить пользователя**, а в диалоговом окне **Добавление назначения** — **Пользователи и группы**.
 
-    ![Область "Добавление назначения"](common/add-assign-user.png)
+    ![Выбор элемента "Добавить пользователя"](common/add-assign-user.png)
 
-5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
+5. В диалоговом окне **Пользователи и группы** выберите **Britta Simon** в списке пользователей, а затем в нижней части экрана нажмите кнопку **Выбрать**.
 
-6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
+6. Если ожидается, что в утверждении SAML будет получено значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка. В нижней части экрана нажмите кнопку **Выбрать**.
 
-7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
+7. В диалоговом окне **Добавление назначения** выберите **Назначить**.
 
-### <a name="create-predictix-ordering-test-user"></a>Создание тестового пользователя в Predictix Ordering
+### <a name="create-a-predictix-ordering-test-user"></a>Создание тестового пользователя в Predictix Ordering
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Predictix Ordering. Обратитесь в  [группу поддержки Predictix Ordering](https://www.predix.io/support/), чтобы добавить пользователей на платформу Predictix Ordering. Перед использованием единого входа необходимо создать и активировать пользователей.
+Далее необходимо создать пользователя Britta Simon в Predictix Ordering. Чтобы добавить пользователей, обратитесь к [группе поддержки Predictix Ordering](https://www.predix.io/support/). Перед использованием единого входа необходимо создать и активировать пользователей.
 
-### <a name="test-single-sign-on"></a>Проверка единого входа 
+### <a name="test-single-sign-on"></a>Проверка единого входа
 
-В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
+Теперь необходимо проверить конфигурацию единого входа Azure AD с помощью Панели доступа.
 
-Щелкнув плитку Predictix Ordering на Панели доступа, вы автоматически войдете в приложение Predictix Ordering, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+Щелкнув элемент "Predictix Ordering" на Панели доступа, вы автоматически войдете в экземпляр Predictix Ordering, для которого настроили единый вход. Дополнительные сведения см. в разделе [Доступ и использование приложений на портале "Мои приложения"](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction).
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+- [Руководства по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
-

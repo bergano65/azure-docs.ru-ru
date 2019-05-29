@@ -7,13 +7,13 @@ ms.author: twhitney
 manager: jeconnoc
 ms.topic: tutorial
 ms.service: openshift
-ms.date: 05/08/2019
-ms.openlocfilehash: baada8a5238725456ca4a2ec7e8257c229066115
-ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
+ms.date: 05/14/2019
+ms.openlocfilehash: d8d767b97e335feeb31851c89a9b21eddf7157ea
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65466179"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65962207"
 ---
 # <a name="tutorial-create-an-azure-red-hat-openshift-cluster"></a>Руководство по Создание кластера Azure Red Hat OpenShift
 
@@ -32,13 +32,19 @@ ms.locfileid: "65466179"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
+> [!IMPORTANT]
+> Для этого учебника требуется Azure CLI 2.0.65.
+>    
+> Прежде чем вы сможете использовать Azure Red Hat OpenShift, вам необходимо приобрести как минимум 4 зарезервированных узла приложений Azure Red Hat OpenShift, как описано в разделе о [настройке среды разработки Azure Red Hat OpenShift](howto-setup-environment.md#purchase-azure-red-hat-openshift-application-nodes-reserved-instances).
+
 Перед началом работы с этим руководством выполните следующие действия:
 
 Убедитесь в том, что вы [настроили среду разработки](howto-setup-environment.md), в том числе:
-- установили последнюю версию интерфейса командной строки (версию 2.0.64 или более позднюю версию);
-- создали клиент;
-- создали объект приложения Azure;
-- создали пользователя Active Directory для входа в приложения, работающие в кластере.
+- установили последнюю версию интерфейса командной строки (версию 2.0.65 или более позднюю версию);
+- создали клиент, если у вас его еще нет;
+- создали объект приложения Azure, если у вас его еще нет;
+- Создание группы безопасности
+- создали пользователя Active Directory для входа в кластер.
 
 ## <a name="step-1-sign-in-to-azure"></a>Шаг 1. Вход в Azure
 
@@ -55,33 +61,31 @@ az login
 В окне командной строки Bash задайте следующие переменные:
 
 > [!IMPORTANT]
-> Имя кластера нужно указать прописными буквами, иначе создание кластера завершится сбоем.
+> Выберите уникальное имя для кластера (в нижнем регистре) или создание кластера завершится сбоем.
 
 ```bash
 CLUSTER_NAME=<cluster name in lowercase>
 ```
 
- Используйте то же имя для кластера, которое вы выбрали на шаге 6 процедуры [создания регистрации приложения](howto-aad-app-configuration.md#create-a-new-app-registration).
+Выберите расположение для создания кластера. Список регионов Azure, в которых поддерживается OpenShift в Azure, см. в списке [поддерживаемых регионов](supported-resources.md#azure-regions). Например, `LOCATION=eastus`.
 
 ```bash
 LOCATION=<location>
 ```
 
-Выберите расположение для создания кластера. Список регионов Azure, в которых поддерживается OpenShift в Azure, см. в списке [поддерживаемых регионов](supported-resources.md#azure-regions). Например, `LOCATION=eastus`.
-
-Параметру `FQDN` присвойте полное доменное имя кластера. Это имя составляется из имени кластера, расположения и `.cloudapp.azure.com` в конце. Оно будет совпадать с URL-адресом входа, который вы создали на шаге 6 процедуры [создания регистрации приложения](howto-aad-app-configuration.md#create-a-new-app-registration). Например:   
-
-```bash
-FQDN=$CLUSTER_NAME.$LOCATION.cloudapp.azure.com
-```
-
-Параметру `APPID` присвойте значение, которое вы сохранили на шаге 9 процедуры [создания регистрации приложения](howto-aad-app-configuration.md#create-a-new-app-registration).  
+Присвойте параметру `APPID` значение, которое вы сохранили на шаге 5 процедуры [создания регистрации приложения Azure AD](howto-aad-app-configuration.md#create-an-azure-ad-app-registration).  
 
 ```bash
 APPID=<app ID value>
 ```
 
-Параметру `SECRET` присвойте значение, которое вы сохранили на шаге 6 процедуры [создания секрета клиента](howto-aad-app-configuration.md#create-a-client-secret).  
+Присвойте параметру GROUPID значение, которое вы сохранили на шаге 10 процедуры [создания группы безопасности Azure AD](howto-aad-app-configuration.md#create-an-azure-ad-security-group).
+
+```bash
+GROUPID=<group ID value>
+```
+
+Присвойте параметру `SECRET` значение, которое вы сохранили на шаге 8 процедуры [создания секрета клиента](howto-aad-app-configuration.md#create-a-client-secret).  
 
 ```bash
 SECRET=<secret value>
@@ -93,7 +97,7 @@ SECRET=<secret value>
 TENANT=<tenant ID>
 ```
 
-Создайте группу ресурсов для кластера. Выполните следующую команду из оболочки Bash, в которой вы ранее определили переменные:
+Создайте группу ресурсов для кластера. Выполните следующую команду из той же оболочки Bash, в которой вы ранее определили переменные:
 
 ```bash
 az group create --name $CLUSTER_NAME --location $LOCATION
@@ -117,33 +121,59 @@ VNET_ID=$(az network vnet show -n {VNET name} -g {VNET resource group} --query i
 
 ### <a name="create-the-cluster"></a>Создание кластера
 
-Теперь можно создать новый кластер.
+Теперь можно создать новый кластер. Далее будет создан кластер в указанном клиенте Azure AD, указан объект приложения Azure AD и секрет для использования в качестве субъекта безопасности, а также группа безопасности, содержащая участников, у которых есть доступ администратора к кластеру.
 
- Если вы не будете подключать виртуальную сеть кластера к существующей виртуальной сети, исключите последний параметр `--vnet-peer-id $VNET_ID` из следующего примера.
+Если вы **не выполняете** пиринг кластера к виртуальной сети, используйте следующую команду:
 
 ```bash
-az openshift create --resource-group $CLUSTER_NAME --name $CLUSTER_NAME -l $LOCATION --fqdn $FQDN --aad-client-app-id $APPID --aad-client-app-secret $SECRET --aad-tenant-id $TENANT --vnet-peer-id $VNET_ID
+az openshift create --resource-group $CLUSTER_NAME --name $CLUSTER_NAME -l $LOCATION --aad-client-app-id $APPID --aad-client-app-secret $SECRET --aad-tenant-id $TENANT --customer-admin-group-id $GROUPID
 ```
 
-Через несколько минут команда `az openshift create` завершит выполнение и возвратит документ JSON с информацией о кластере.
+Если вы **выполняете** пиринг кластера к виртуальной сети, используйте следующую команду, которая добавит флаг `--vnet-peer`:
+ 
+```bash
+az openshift create --resource-group $CLUSTER_NAME --name $CLUSTER_NAME -l $LOCATION --aad-client-app-id $APPID --aad-client-app-secret $SECRET --aad-tenant-id $TENANT --customer-admin-group-id $GROUPID --vnet-peer $VNET_ID
+```
 
 > [!NOTE]
-> Если вы получите ошибку с сообщением о том, что имя узла недоступно, это может означать, что указанное имя кластера уже существует. Попробуйте удалить исходную регистрацию приложения и повторить все действия из процедуры создания регистрации приложения (howto-aad-app-configuration.md#create-a-new-app-registration) (пропустите последний шаг создания нового пользователя, так как пользователь уже создан), указав другое имя кластера.
+> Если вы получите ошибку с сообщением о том, что имя узла недоступно, это может означать, что указанное имя кластера уже существует. Попробуйте удалить исходную регистрацию приложения и повторить все действия с другим именем кластера из процедуры создания регистрации приложения (howto-aad-app-configuration.md#create-a-new-app-registration), пропустив последний шаг создания пользователя и группы безопасности.
 
-## <a name="step-3-sign-in-to-the-openshift-console"></a>Шаг 3. Войдите в консоль OpenShift
+Через несколько минут операция `az openshift create` выполнится.
+
+### <a name="get-the-sign-in-url-for-your-cluster"></a>Получение URL-адреса входа для кластера
+
+Получите URL-адрес входа для своего кластера, выполнив следующую команду:
+
+```bash
+az openshift show -n $CLUSTER_NAME -g $CLUSTER_NAME
+```
+
+Найдите `publicHostName` в выходных данных, например: `"publicHostname": "openshift.xxxxxxxxxxxxxxxxxxxx.eastus.azmosa.io"`.
+
+URL-адрес входа для кластера будет `https://`, за которым следует значение `publicHostName`.  Например, `https://openshift.xxxxxxxxxxxxxxxxxxxx.eastus.azmosa.io`.  Этот URI будет использоваться на следующем шаге как часть URI-перенаправления регистрации приложения.
+
+## <a name="step-3-update-your-app-registration-redirect-uri"></a>Шаг 3. Обновление URI-перенаправления регистрации приложения
+
+Теперь, когда у вас есть URL-адрес входа для кластера, установите URI перенаправления регистрации приложения:
+
+1. Откройте колонку [Регистрация приложений](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredAppsPreview).
+2. Щелкните объект регистрации своего приложения.
+3. Щелкните **Добавить URI перенаправления**.
+4. Убедитесь, что для параметра **Тип** установлено значение **Веб** и задайте **URI перенаправления**, используя следующий шаблон: `https://<public host name>/oauth2callback/Azure%20AD`. Например: `https://openshift.xxxxxxxxxxxxxxxxxxxx.eastus.azmosa.io/oauth2callback/Azure%20AD`
+5. Нажмите кнопку **Сохранить**
+
+## <a name="step-4-sign-in-to-the-openshift-console"></a>Шаг 4. Войдите в консоль OpenShift
 
 Теперь вы готовы войти в консоль OpenShift для нового кластера. [Веб-консоль OpenShift](https://docs.openshift.com/aro/architecture/infrastructure_components/web_console.html) позволяет визуализировать, просматривать содержимое проектов OpenShift и управлять им.
 
-Войдите с учетными данными [нового пользователя AAD](howto-aad-app-configuration.md#create-a-new-active-directory-user), которого вы создали для тестирования. Для этого вам потребуется новый экземпляр браузера, в кэше которого нет удостоверения, с которым вы обычно входите на портал Azure.
+Вам потребуется новый экземпляр браузера, в кэше которого нет удостоверения, с которым вы обычно входите на портал Azure.
 
 1. Откройте окно *инкогнито* (Chrome) или *InPrivate* (Microsoft Edge).
-2. Откройте URL-адрес входа, который вы создали на шаге 6 процедуры [создания регистрации приложения](howto-aad-app-configuration.md#create-a-new-app-registration). Например https://constoso.eastus.cloudapp.azure.com.
+2. Перейдите к полученному выше URL-адресу входа, например: `https://openshift.xxxxxxxxxxxxxxxxxxxx.eastus.azmosa.io`
 
-> [!NOTE]
-> Консоль OpenShift использует самозаверяющий сертификат.
-> Когда в браузере появится предупреждение о "недоверенном" сертификате, подтвердите этот сертификат и закройте предупреждение.
+Выполните вход с использованием имени пользователя, созданного на шаге 3 процедуры [создания пользователя Azure Active Directory](howto-aad-app-configuration.md#create-a-new-azure-active-directory-user).
 
-Войдите с именем пользователя и паролем, которые вы создали в процедуре [создания нового пользователя Active Directory](howto-aad-app-configuration.md#create-a-new-active-directory-user). Когда откроется диалоговое окно **Запрошенные разрешения**, выберите **Согласие от имени вашей организации** и щелкните **Принять**.
+Появится диалоговое окно **Запрошенные разрешения**. Выберите **Согласие от имени вашей организации**, а затем щелкните **Принять**.
 
 Итак, вы вошли в консоль кластера.
 
@@ -151,7 +181,7 @@ az openshift create --resource-group $CLUSTER_NAME --name $CLUSTER_NAME -l $LOCA
 
  Узнайте больше [об использовании консоли OpenShift](https://docs.openshift.com/aro/getting_started/developers_console.html) для создания и сборки образов, ознакомившись с [документацией по Red Hat OpenShift](https://docs.openshift.com/aro/welcome/index.html).
 
-## <a name="step-4-install-the-openshift-cli"></a>Шаг 4. Установка интерфейса командной строки OpenShift
+## <a name="step-5-install-the-openshift-cli"></a>Шаг 5. Установка интерфейса командной строки OpenShift
 
 [Интерфейс командной строки OpenShift](https://docs.openshift.com/aro/cli_reference/get_started_cli.html) (или *OC Tools*) предоставляет команды для управления приложениями и служебные программы низкого уровня для взаимодействия с разными компонентами кластера OpenShift.
 

@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 04/10/2019
 ms.author: spelluru
-ms.openlocfilehash: 31b1b852c92ad671564fd54520af3f3a23b3e3c2
-ms.sourcegitcommit: 41015688dc94593fd9662a7f0ba0e72f044915d6
+ms.openlocfilehash: 80cef3efd65a3f68dba1856a892a9a120f7d95cd
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59499807"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65990299"
 ---
 # <a name="quickstart-use-azure-powershell-to-create-a-service-bus-queue"></a>Краткое руководство. Создание очереди Служебной шины с помощью Azure PowerShell
 В этом кратком руководстве описано, как отправлять и получать сообщения через очередь служебной шины, создав с помощью PowerShell пространство имен для обмена сообщениями и очередь в этом пространстве имен, а также как получить учетные данные для авторизации в этом пространстве имен. Далее в этой процедуре демонстрируется отправка и получение сообщений через созданную очередь с применением [библиотеки .NET Standard](https://www.nuget.org/packages/Microsoft.Azure.ServiceBus).
@@ -255,6 +255,9 @@ static async Task ProcessMessagesAsync(Message message, CancellationToken token)
 }
 ```
 
+> [!NOTE]
+> Вы можете управлять ресурсами служебной шины с помощью [обозревателя служебной шины](https://github.com/paolosalvatori/ServiceBusExplorer/). Обозреватель служебной шины позволяет без труда подключаться к пространству имен служебной шины и управлять сущностями обмена сообщениями. Средство предоставляет дополнительные возможности, например функции импорта и экспорта или возможность проверять разделы, очереди, подписки, службы ретрансляции, центры уведомлений и концентраторы событий. 
+
 ## <a name="next-steps"></a>Дополнительная информация
 
 С помощью этой статьи вы создали пространство имен служебной шины и другие ресурсы, необходимые для отправки и получения сообщений через очередь. См. подробнее о **создании кода для отправки и получения сообщений**. 
@@ -262,5 +265,5 @@ static async Task ProcessMessagesAsync(Message message, CancellationToken token)
 > [!div class="nextstepaction"]
 > [Отправка и получение сообщений](service-bus-dotnet-get-started-with-queues.md)
 
-[бесплатная учетная запись]: https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio
-[Установка и настройка Azure PowerShell]: /powershell/azure/install-Az-ps
+[создайте бесплатную учетную запись Azure]: https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio
+[установке и настройке Azure PowerShell]: /powershell/azure/install-Az-ps

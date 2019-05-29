@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/03/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 943131bc746b5d2a1fd95a26a6a6c9f3bb6b9e57
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.openlocfilehash: 020e0395c7678f6856a293c8386a44d7a959bc06
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65509961"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65786532"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-saml-sso-for-jira-by-resolution-gmbh"></a>Руководство по Интеграция Azure Active Directory с SAML SSO for Jira by resolution GmbH
 
@@ -76,12 +76,12 @@ ms.locfileid: "65509961"
 
 Чтобы настроить и проверить единый вход, вам потребуется выполнить следующие действия:
 
-1. **[Настроить корпоративное приложение Azure AD для единого входа](#configure-the-azure-ad-enterprise-application-for-single-sign-on)**.
-2. **[Настроить подключаемый модуль единого входа SAML для экземпляра Jira](#configure-the-saml-sso-plugin-of-your-jira-instance)**, чтобы настроить параметры единого входа на стороне приложения.
-3. **[Создать тестового пользователя Azure AD](#create-an-azure-ad-test-user)**.
+1. **[Настроить корпоративное приложение Azure AD для единого входа](#configure-the-azure-ad-enterprise-application-for-single-sign-on)** .
+2. **[Настроить подключаемый модуль единого входа SAML для экземпляра Jira](#configure-the-saml-sso-plugin-of-your-jira-instance)** , чтобы настроить параметры единого входа на стороне приложения.
+3. **[Создать тестового пользователя Azure AD](#create-an-azure-ad-test-user)** .
 1. **[Назначить тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** и разрешить ему использовать единый вход на стороне Azure.
-1. **[Создать тестового пользователя в Jira](#create-the-test-user-also-in-jira)**, чтобы в Jira существовал тестовый пользователь, связанный с одноименным пользователем в Azure AD.
-1. **[Проверить единый вход](#test-single-sign-on)**, чтобы убедиться в корректной работе конфигурации.
+1. **[Создать тестового пользователя в Jira](#create-the-test-user-also-in-jira)** , чтобы в Jira существовал тестовый пользователь, связанный с одноименным пользователем в Azure AD.
+1. **[Проверить единый вход](#test-single-sign-on)** , чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-the-azure-ad-enterprise-application-for-single-sign-on"></a>Настройка корпоративного приложения Azure AD для единого входа
 
@@ -168,7 +168,7 @@ ms.locfileid: "65509961"
     
     d. Щелкните **Далее**.
     
-11. На странице **Identity provider configuration page** (Настройка поставщика удостоверений) нажмите кнопку **Next** (Далее).
+11. На странице **настройки поставщика удостоверений** нажмите кнопку **Далее**.
  
     ![Настройка единого входа](./media/samlssojira-tutorial/addon5b.png)
 
@@ -310,7 +310,7 @@ ms.locfileid: "65509961"
 
 1. Нажмите кнопку **Save Settings** (Сохранить параметры) в правом верхнем углу.
 
-После включения этой функции вы по-прежнему сможете выполнять запрос имени пользователя и пароля. Для этого перейдите по адресу [https://\<server-base-url>/login.jsp?nosso](https://\<server-base-url>/login.jsp?nosso) и установите флажок **Enable nosso** (Включить запрет SSO). Как и ранее, замените**\<server-base-url>** базовым URL-адресом своего экземпляра Jira.
+После включения этой функции вы по-прежнему сможете выполнять запрос имени пользователя и пароля. Для этого перейдите по адресу [https://\<server-base-url>/login.jsp?nosso](https://\<server-base-url>/login.jsp?nosso) и установите флажок **Enable nosso** (Включить запрет SSO). Как и ранее, замените **\<server-base-url>** базовым URL-адресом своего экземпляра Jira.
 
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы

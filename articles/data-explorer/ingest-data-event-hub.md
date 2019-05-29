@@ -6,13 +6,13 @@ ms.author: orspodek
 ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: quickstart
-ms.date: 02/02/2018
-ms.openlocfilehash: 52bdbe6d34fb631cd4b2205dfad25399fe0e43fb
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.date: 05/17/2019
+ms.openlocfilehash: d5bd291758d6bb445b757b93fd91a4c2321b97db
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59048393"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65898941"
 ---
 # <a name="quickstart-ingest-data-from-event-hub-into-azure-data-explorer"></a>Краткое руководство. Прием данных из концентратора событий в Azure Data Explorer
 
@@ -22,11 +22,11 @@ ms.locfileid: "59048393"
 
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/) Azure, прежде чем начинать работу.
 
-* [Тестовый кластер и база данных](create-cluster-database-portal.md)
+* [Тестовый кластер и база данных](create-cluster-database-portal.md).
 
 * [Пример приложения](https://github.com/Azure-Samples/event-hubs-dotnet-ingest), создающего данные и отправляющего их в концентратор событий. Загрузите пример приложения в систему.
 
-* [Visual Studio 2017 версии 15.3.2 или более поздней](https://www.visualstudio.com/vs/) для выполнения примера приложения
+* [Visual Studio 2019](https://visualstudio.microsoft.com/vs/) для запуска примера приложения.
 
 ## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
@@ -42,7 +42,7 @@ ms.locfileid: "59048393"
 
     Кнопка **Развернуть в Azure** выполняет переход на портал Azure для заполнения формы развертывания.
 
-    ![Развернуть в Azure](media/ingest-data-event-hub/deploy-to-azure.png)
+    ![Развертывание в Azure](media/ingest-data-event-hub/deploy-to-azure.png)
 
 1. Выберите подписку, в которой нужно создать концентратор событий, и создайте группу ресурсов с именем *test-hub-rg*.
 

@@ -14,18 +14,21 @@ ms.tgt_pltfrm: mobile-ios
 ms.devlang: objective-c
 ms.topic: tutorial
 ms.custom: mvc
-ms.date: 01/04/2019
+ms.date: 05/21/2019
 ms.author: jowargo
-ms.openlocfilehash: 2793f64528baa2b9a84c671fc73bbe399e2387ea
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.openlocfilehash: c5793d2388ddd7bb59d68f8f7fd7af773179ed41
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65411614"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65988214"
 ---
 # <a name="tutorial-push-notifications-to-ios-apps-using-azure-notification-hubs"></a>Руководство по Отправка push-уведомлений в приложения iOS с помощью Центров уведомлений Azure
 
-[!INCLUDE [notification-hubs-selector-get-started](../../includes/notification-hubs-selector-get-started.md)]
+> [!div class="op_single_selector"]
+> * [Objective-C](notification-hubs-ios-apple-push-notification-apns-get-started.md)
+> * [Swift](notification-hubs-ios-push-notifications-swift-apps-get-started.md)
+
 
 При работе с этим руководством вы отправите push-уведомления в приложения iOS с помощью Центров уведомлений Azure. Вы создадите пустое приложение iOS, получающее push-уведомления с помощью [Службы push-уведомлений Apple (APNs)](https://developer.apple.com/library/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/APNSOverview.html#//apple_ref/doc/uid/TP40008194-CH8-SW1).
 
@@ -56,25 +59,6 @@ ms.locfileid: "65411614"
 Изучение этого руководства является необходимым условием для работы со всеми другими руководствами, посвященными Центрам уведомлений для приложений iOS.
 
 [!INCLUDE [Notification Hubs Enable Apple Push Notifications](../../includes/notification-hubs-enable-apple-push-notifications.md)]
-
-## <a name="configure-your-notification-hub-for-ios-push-notifications"></a>Настройка push-уведомлений iOS в центре уведомлений 
-
-В этом разделе вы создадите центр уведомлений и настроите аутентификацию с использованием службы APNS и раннее созданного сертификата push-уведомлений (файл с расширением **.p12**). Если вы хотите использовать уже созданный центр уведомлений, перейдите к шагу 5.
-
-[!INCLUDE [notification-hubs-portal-create-new-hub](../../includes/notification-hubs-portal-create-new-hub.md)]
-
-### <a name="configure-your-notification-hub-with-apns-information"></a>Добавление данных о APNS в центр уведомлений
-
-1. В разделе **Notification Services** выберите **Apple (APNS)**.
-2. Выберите **Сертификат**.
-3. Щелкните **значок файла**.
-4. Выберите экспортированный ранее файл с расширением **.p12**.
-5. Укажите **пароль**.
-6. Выберите режим **Песочница**. Используйте **рабочую среду**, только если push-уведомления нужно отправлять пользователям, выполнившим покупку приложения в магазине.
-
-    ![Настройка сертификации APNS на портале Azure][7]
-
-Вы настроили центр для работы со службой APNS, и у вас есть строки подключения, с помощью которых вы можете зарегистрировать свое приложение и отправлять push-уведомления.
 
 ## <a name="connect-your-ios-app-to-notification-hubs"></a>Подключение приложения iOS к центрам уведомлений
 
@@ -121,7 +105,7 @@ ms.locfileid: "65411614"
      github "Azure/azure-notificationhubs-ios"
      ```
 
-     Затем обновите и создайте зависимости.
+     Затем обновите и создайте зависимости:
 
      ```shell
      $ carthage update

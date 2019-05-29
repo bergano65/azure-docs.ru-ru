@@ -10,12 +10,12 @@ ms.devlang: python
 ms.topic: quickstart
 ms.custom: mvc
 ms.date: 02/28/2019
-ms.openlocfilehash: fc303a0ab53c80c91bb29c36a1a7e0f04c4a89e6
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 03c7da3e17e8e606b46c5c5e104a1271e8fbfd33
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59006876"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65873109"
 ---
 # <a name="quickstart-send-telemetry-from-a-device-to-an-iot-hub-and-read-it-with-a-back-end-application-python"></a>Краткое руководство. Отправка данных телеметрии из устройства в Центр Интернета вещей и их чтение с помощью внутреннего приложения (Python)
 
@@ -33,7 +33,7 @@ ms.locfileid: "59006876"
 
 Примеры приложений, запускаемые в рамках этого краткого руководства, написаны на языке Python. Сейчас пакеты SDK Microsoft Azure IoT для Python поддерживают только конкретные версии Python для каждой платформы. Дополнительные сведения см. в [файле сведений пакета SDK для Python](https://github.com/Azure/azure-iot-sdk-python#important-installation-notes---dealing-with-importerror-issues).
 
-В этом кратком руководстве предполагается, что вы используете компьютер разработки под управлением Windows. Для систем Windows поддерживается только [Python 3.6.x](https://www.python.org/downloads/release/python-368/). При выборе установщика Python нужно руководствоваться архитектурой системы, в которой вы работаете. Если архитектура системы ЦП 32-разрядная, скачайте установщик x86. Для 64-разрядной архитектуры необходимо скачать установщик x86-64. Кроме того, убедитесь, что [Распространяемые компоненты Microsoft Visual C ++ для Visual Studio 2017](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) установлены для вашей архитектуры (x86 или x64).
+В этом кратком руководстве предполагается, что вы используете компьютер разработки под управлением Windows. Для систем Windows поддерживается только [Python 3.6.x](https://www.python.org/downloads/release/python-368/). При выборе установщика Python нужно руководствоваться архитектурой системы, в которой вы работаете. Если архитектура системы ЦП 32-разрядная, скачайте установщик x86. Для 64-разрядной архитектуры необходимо скачать установщик x86-64. Также убедитесь, что [Распространяемый компонент Microsoft Visual C++ для Visual Studio 2019](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) установлен для вашей архитектуры (x86 или x64).
 
 Python, предназначенный для других платформ, можно скачать на сайте [Python.org](https://www.python.org/downloads/).
 
@@ -75,7 +75,7 @@ az extension add --name azure-cli-iot-ext
 
 1. Выполните следующую команду в Azure Cloud Shell, чтобы получить _строку подключения_ зарегистрированного устройства:
 
-    **YourIoTHubName**. Замените этот заполнитель именем вашего Центра Интернета вещей.
+    **YourIoTHubName**. Замените этот заполнитель именем вашего центра Интернета вещей.
 
     ```azurecli-interactive
     az iot hub device-identity show-connection-string --hub-name YourIoTHubName --device-id MyPythonDevice --output table

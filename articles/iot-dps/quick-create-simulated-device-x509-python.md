@@ -10,12 +10,12 @@ services: iot-dps
 manager: timlt
 ms.devlang: python
 ms.custom: mvc
-ms.openlocfilehash: 6a62e75fadad14148f5f82da3a213d4b13cbe343
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 12ccff3676cb35ac27126360dbcf5a1b9b3e131f
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58122679"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65914155"
 ---
 # <a name="create-and-provision-a-simulated-x509-device-using-python-device-sdk-for-iot-hub-device-provisioning-service"></a>Создание и подготовка имитированного устройства X.509 с помощью пакета SDK службы устройства Python для службы подготовки устройств Центра Интернета вещей
 [!INCLUDE [iot-dps-selector-quick-create-simulated-device-x509](../../includes/iot-dps-selector-quick-create-simulated-device-x509.md)]
@@ -34,7 +34,7 @@ ms.locfileid: "58122679"
 
 ## <a name="prepare-the-environment"></a>Подготовка среды 
 
-1. Установите на компьютер [Visual Studio 2015](https://www.visualstudio.com/vs/older-downloads/) или [Visual Studio 2017](https://www.visualstudio.com/vs/). Для установки Visual Studio требуется включить рабочую нагрузку разработки классических приложений с помощью C++.
+1. Проверьте, установлена ли среда [Visual Studio](https://visualstudio.microsoft.com/vs/) 2015 или более поздней версии с включенной рабочей нагрузкой "Разработка классических приложений на C++".
 
 2. Скачайте и установите [систему сборки CMake](https://cmake.org/download/).
 
@@ -88,7 +88,7 @@ ms.locfileid: "58122679"
 
     ![Приложение для регистрации устройства DICE](./media/python-quick-create-simulated-device-x509/dice-device-enrollment.png)
  
-4. На компьютере с ОС Windows создайте файл **_X509testcertificate.pem_**, откройте его в любом редакторе и скопируйте в него содержимое из буфера обмена. Сохраните файл. 
+4. На компьютере с ОС Windows создайте файл **_X509testcertificate.pem_** , откройте его в любом редакторе и скопируйте в него содержимое из буфера обмена. Сохраните файл. 
 
 5. Войдите на портал Azure, нажмите кнопку **Все ресурсы** в меню слева и откройте службу подготовки.
 

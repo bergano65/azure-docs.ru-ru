@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 03/30/2018
 ms.author: yegu
-ms.openlocfilehash: 9cfb320f0623f5a93527a4dc0e8d82096980cc2c
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: bf4eb817bb1705c6af6d4e7e9e28e5789f49a906
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58893747"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65873034"
 ---
 # <a name="tutorial-create-a-cache-aside-leaderboard-on-aspnet"></a>Руководство. Создание списка лидеров с применением шаблона "Кэш на стороне" в ASP.NET
 
@@ -41,7 +41,7 @@ ms.locfileid: "58893747"
 Для работы с этим руководством необходимо следующее:
 
 * Это руководство является продолжением [краткого руководства по использованию ASP.NET для кэша Azure для Redis](cache-web-app-howto.md). Если вы еще этого не сделали, сначала ознакомьтесь с этим кратким руководством.
-* Установите [Visual Studio 2017](https://www.visualstudio.com/downloads/) с указанными ниже рабочими нагрузками:
+* Установите [Visual Studio 2019](https://www.visualstudio.com/downloads/) с указанными ниже рабочими нагрузками:
     * ASP.NET и веб-разработка.
     * разработка Azure.
     * разработка настольных приложений .NET с SQL Server Express LocalDB или [выпуском SQL Server 2017 Express](https://www.microsoft.com/sql-server/sql-server-editions-express).
@@ -156,7 +156,7 @@ ms.locfileid: "58893747"
 
 1. Добавьте раздел `connectionStrings` в раздел `configuration`. Имя строки подключения должно соответствовать имени класса контекста базы данных Entity Framework `TeamContext`.
 
-    Эта строка подключения подразумевает выполнение [предварительных требований](#prerequisites) и установку SQL Server Express LocalDB, которая является частью рабочей нагрузки *разработки настольных приложений .NET*, устанавливаемой вместе с Visual Studio 2017.
+    Эта строка подключения подразумевает выполнение [предварительных требований](#prerequisites) и установку SQL Server Express LocalDB, которая является частью рабочей нагрузки *разработки настольных приложений .NET*, устанавливаемой вместе с Visual Studio 2019.
 
     ```xml
     <connectionStrings>
@@ -187,7 +187,7 @@ ms.locfileid: "58893747"
 
     ![Добавление класса контроллера](./media/cache-web-app-cache-aside-leaderboard/cache-add-controller-class.png)
 
-1. В раскрывающемся списке **Класс модели** выберите **Team (ContosoTeamStats.Models)**. В раскрывающемся списке **Класс контекста данных** выберите **TeamContext (ContosoTeamStats.Models)**. Введите `TeamsController` в текстовое поле **Имя контроллера** (если оно не будет заполнено автоматически). Нажмите кнопку **Добавить** , чтобы создать класс контроллера и добавить представления по умолчанию.
+1. В раскрывающемся списке **Класс модели** выберите **Team (ContosoTeamStats.Models)** . В раскрывающемся списке **Класс контекста данных** выберите **TeamContext (ContosoTeamStats.Models)** . Введите `TeamsController` в текстовое поле **Имя контроллера** (если оно не будет заполнено автоматически). Нажмите кнопку **Добавить** , чтобы создать класс контроллера и добавить представления по умолчанию.
 
     ![Настройка контроллера](./media/cache-web-app-cache-aside-leaderboard/cache-configure-controller.png)
 

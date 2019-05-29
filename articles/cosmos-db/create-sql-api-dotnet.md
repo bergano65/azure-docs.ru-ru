@@ -7,13 +7,13 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.devlang: dotnet
 ms.topic: quickstart
-ms.date: 04/05/2019
-ms.openlocfilehash: e1b5ade470e3041fc15a8f71db76a4004a33f765
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.date: 05/20/2019
+ms.openlocfilehash: 432ddf6e0fea0d6de3c24dc853502dca303ce693
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65142669"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65954557"
 ---
 # <a name="quickstart-build-a-net-web-app-using-sql-api-account-in-azure-cosmos-db"></a>Краткое руководство. Создание веб-приложения .NET с помощью учетной записи API SQL в Azure Cosmos DB
 
@@ -35,8 +35,8 @@ Azure Cosmos DB — это глобально распределенная мн
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Visual Studio 2017 с установленной рабочей нагрузкой разработки в Azure.
-- Вы можете скачать и использовать **бесплатную** версию [Visual Studio 2017 Community Edition](https://www.visualstudio.com/downloads/). При установке Visual Studio необходимо включить возможность **разработки для Azure**. 
+Visual Studio 2019 с установленной рабочей нагрузкой разработки для Azure
+- Вы можете скачать и использовать **бесплатную** версию [Visual Studio 2019 Community Edition](https://www.visualstudio.com/downloads/). При установке Visual Studio необходимо включить возможность **разработки для Azure**. 
 
 Подписка Azure или бесплатная пробная учетная запись Azure Cosmos DB.
 - [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)] 

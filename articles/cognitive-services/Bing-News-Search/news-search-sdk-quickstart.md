@@ -3,20 +3,20 @@ title: Краткое руководство. Поиск новостей с п�
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве описано, как искать новости с помощью пакета SDK Поиска новостей Bing для C# и обрабатывать ответы.
 services: cognitive-services
-author: mikedodaro
+author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-news-search
 ms.topic: quickstart
 ms.date: 01/10/2019
-ms.author: v-gedod
+ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: fe9010215e5b6c4c9ece2372e3ce87bcf99b150c
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 9e0a4da2662b9d4b4b775631705e7b4fcc1eecea
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59262896"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65798675"
 ---
 # <a name="quickstart-perform-a-news-search-with-the-bing-news-search-sdk-for-c"></a>Краткое руководство. Поиск новостей с помощью пакета SDK Поиска новостей Bing для C#
 
@@ -24,7 +24,7 @@ ms.locfileid: "59262896"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Любой выпуск [Visual Studio 2017](https://www.visualstudio.com/downloads/).
+* Любой выпуск [Visual Studio 2017 или более поздней версии](https://www.visualstudio.com/downloads/).
 * Платформа [Json.NET](https://www.newtonsoft.com/json), доступная в виде пакета NuGet.
 * Если вы используете Linux или MacOS, это приложение можно запустить с помощью [Mono](https://www.mono-project.com/).
 
@@ -41,7 +41,7 @@ ms.locfileid: "59262896"
 
 ## <a name="create-and-initialize-a-project"></a>Создание и инициализация проекта
 
-1. Создайте консольное приложение C# в Visual Studio. Затем добавьте следующие элементы в основной файл кода.
+1. Создайте консольное решение C# в Visual Studio. Затем добавьте следующие элементы в основной файл кода.
     
     ```csharp
     using System;

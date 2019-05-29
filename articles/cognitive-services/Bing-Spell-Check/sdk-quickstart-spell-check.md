@@ -3,19 +3,19 @@ title: Краткое руководство. Проверка орфограф�
 titlesuffix: Azure Cognitive Services
 description: Приступите к работе с REST API проверки орфографии Bing для проверки орфографии и грамматики.
 services: cognitive-services
-author: mikedodaro
+author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-spell-check
 ms.topic: quickstart
 ms.date: 02/20/2019
-ms.author: v-gedod
-ms.openlocfilehash: 3487656f72f315aa15ce003a8dfd279c45d1f992
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.author: aahi
+ms.openlocfilehash: adbb60c7ddbc72b8b7e5cb31c6909117ce3a10cb
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58105749"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65798367"
 ---
 # <a name="quickstart-check-spelling-with-the-bing-spell-check-sdk-for-c"></a>Краткое руководство. Проверка орфографии с помощью пакета SDK для API проверки орфографии Bing для C#
 
@@ -23,10 +23,10 @@ ms.locfileid: "58105749"
 
 ## <a name="application-dependencies"></a>Зависимости приложения
 
-* Любой выпуск [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/).
+* Любой выпуск [Visual Studio 2017 или более поздней версии](https://visualstudio.microsoft.com/downloads/).
 * [Пакет NuGet](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Language.SpellCheck) для API проверки орфографии Bing.
 
-Чтобы добавить пакет SDK для API проверки орфографии Bing в проект, щелкните `Manage NuGet Packages` в обозревателе решений в Visual Studio. Добавьте пакет `Microsoft.Azure.CognitiveServices.Language.SpellCheck`. При установке этого пакета также устанавливаются следующие зависимости:
+Чтобы добавить пакет SDK API "Проверка орфографии Bing" в проект, перейдите к параметру **Manage NuGet Packages** (Управление пакетами NuGet) в **обозревателе решений** в Visual Studio. Добавьте пакет `Microsoft.Azure.CognitiveServices.Language.SpellCheck`. При установке этого пакета также устанавливаются следующие зависимости:
 
 * Microsoft.Rest.ClientRuntime
 * Microsoft.Rest.ClientRuntime.Azure

@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/05/2019
 ms.author: jeedes
-ms.openlocfilehash: 563668780c42ca23a1904757f886581f3ad0c5e8
-ms.sourcegitcommit: fec96500757e55e7716892ddff9a187f61ae81f7
+ms.openlocfilehash: 352ad9473a1c1a9360ddceb720ff968f4e97e012
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/16/2019
-ms.locfileid: "59617312"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65889267"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-tableau-online"></a>Руководство по по интеграции Azure Active Directory с Tableau Online
 
@@ -188,7 +188,7 @@ ms.locfileid: "59617312"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например, BrittaSimon\@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -229,7 +229,7 @@ ms.locfileid: "59617312"
   
     ![Создание тестового пользователя Azure AD](./media/tableauonline-tutorial/tutorial_tableauonline_15.png)
 
-2. Выберите **Add users for (SAML) authentication** (Добавить пользователей для проверки подлинности (SAML). В текстовое поле **Enter Email Addresses** (Ввести адреса электронной почты) добавьте britta.simon@contoso.com.
+2. Выберите **Add users for (SAML) authentication** (Добавить пользователей для проверки подлинности (SAML). В текстовое поле **Enter email addresses** (Введите адреса электронной почты) добавьте britta.simon\@contoso.com
   
     ![Создание тестового пользователя Azure AD](./media/tableauonline-tutorial/tutorial_tableauonline_11.png)
 

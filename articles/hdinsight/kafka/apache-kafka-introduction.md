@@ -7,15 +7,15 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: overview
-ms.date: 04/11/2018
-ms.openlocfilehash: 50a67ca5c7d1fa3165889b1e59565d1a1030690d
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.date: 05/16/2019
+ms.openlocfilehash: be2195092cf3890f754f875ea7bccc1f717eb95b
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64712138"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65762335"
 ---
-# <a name="what-is-apache-kafka-on-hdinsight"></a>Что такое Apache Kafka в HDInsight?
+# <a name="what-is-apache-kafka-in-azure-hdinsight"></a>Общие сведения об Apache Kafka в Azure HDInsight
 
 [Apache Kafka](https://kafka.apache.org) — это распределенная платформа потоковой передачи с открытым исходным кодом, которую можно использовать для создания конвейеров и приложений потоковой передачи данных в режиме реального времени. Kafka также предоставляет функцию брокера сообщений, подобную очереди сообщений, с помощью которой можно выполнять публикацию и подписываться на именованные потоки данных. 
 
@@ -53,7 +53,7 @@ Apache ZooKeeper управляет состоянием кластера Kafka.
 
 Разделы позволяют распределить записи между брокерами. При считывании записей можно использовать один потребитель на секцию, чтобы обеспечить параллельную обработку данных.
 
-Репликация используется для дублирования секций между узлами, чтобы обеспечить защиту от сбоев узлов (брокеров). Секция, обозначенная на схеме буквой *(L)*, является ведущей (leader) в определенном разделе. Трафик производителя направляется в ведущую секцию каждого узла в зависимости от состояния, которым управляет ZooKeeper.
+Репликация используется для дублирования секций между узлами, чтобы обеспечить защиту от сбоев узлов (брокеров). Секция, обозначенная на схеме буквой *(L)* , является ведущей (leader) в определенном разделе. Трафик производителя направляется в ведущую секцию каждого узла в зависимости от состояния, которым управляет ZooKeeper.
 
 ## <a name="why-use-apache-kafka-on-hdinsight"></a>Для чего использовать Apache Kafka в HDInsight?
 
@@ -63,7 +63,7 @@ Apache ZooKeeper управляет состоянием кластера Kafka.
 
     Сведения об использовании MirrorMaker см. в статье [Репликация разделов Apache Kafka с помощью Kafka в HDInsight и MirrorMaker](apache-kafka-mirroring.md).
 
-* **Модель обмена сообщениями по схеме "публикация — подписка"**. Kafka предоставляет API производителя для публикации записей в разделе Kafka. При подписке на раздел используется API пользователя.
+* **Модель обмена сообщениями по схеме "публикация — подписка"** . Kafka предоставляет API производителя для публикации записей в разделе Kafka. При подписке на раздел используется API пользователя.
 
     Дополнительные сведения см. в статье [Краткое руководство по созданию Apache Kafka в кластере HDInsight](apache-kafka-get-started.md).
 
@@ -95,6 +95,6 @@ Apache ZooKeeper управляет состоянием кластера Kafka.
 
 * [Краткое руководство Создание Apache Kafka в кластере HDInsight](apache-kafka-get-started.md)
 
-* [Руководство Использование Apache Spark с Apache Kafka в HDInsight](../hdinsight-apache-spark-with-kafka.md)
+* [Руководство. Использование Apache Spark с Apache Kafka в HDInsight](../hdinsight-apache-spark-with-kafka.md)
 
-* [Руководство Использование Apache Storm с Apache Kafka в HDInsight](../hdinsight-apache-storm-with-kafka.md)
+* [Руководство. Использование Apache Storm с Apache Kafka в HDInsight](../hdinsight-apache-storm-with-kafka.md)

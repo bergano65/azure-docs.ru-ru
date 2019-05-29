@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.date: 11/29/2018
 ms.author: lahugh
 ms.custom: mvc
-ms.openlocfilehash: 6c332861bcaf228e4c1e0a619cf4f84e3be0ba15
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: b8d7556607cdb73c3e3ae19109bcbf34b72b0915
+ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65204138"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65595344"
 ---
 # <a name="quickstart-run-your-first-azure-batch-job-with-the-net-api"></a>Краткое руководство. Выполнение пакетного задания Azure с помощью API для .NET
 
@@ -27,7 +27,7 @@ ms.locfileid: "65204138"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* [Visual Studio 2017](https://www.visualstudio.com/vs) или [.NET Core 2.1](https://www.microsoft.com/net/download/dotnet-core/2.1) для Linux, macOS либо Windows. 
+* [Visual Studio 2017 или более поздней версии](https://www.visualstudio.com/vs), или [.NET Core 2.1](https://www.microsoft.com/net/download/dotnet-core/2.1) для Linux, macOS или Windows. 
 
 * учетная запись пакетной службы и связанная учетная запись службы хранилища Azure. Чтобы создать эти учетные записи, см. примеры быстрого начала работы с пакетной службой с помощью [портала Azure](quick-create-portal.md) или [Azure CLI](quick-create-cli.md). 
 

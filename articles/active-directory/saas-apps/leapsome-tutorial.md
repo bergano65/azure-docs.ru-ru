@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 04/10/2019
 ms.author: jeedes
-ms.openlocfilehash: 602e3145a003a0413287b08151abf472ecf4ade0
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.openlocfilehash: dbdf6847658e6a5a3999007f51b409e47a65e4cd
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65406724"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65988075"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-leapsome"></a>Руководство по Интеграция Azure Active Directory с Leapsome
 
@@ -126,10 +126,10 @@ ms.locfileid: "65406724"
 
     | ИМЯ | Исходный атрибут | Пространство имен |
     | ---------------| --------------- | --------- |  
-    | firstname | user.givenname | https://schemas.xmlsoap.org/ws/2005/05/identity/claims |
-    | lastname | user.surname | https://schemas.xmlsoap.org/ws/2005/05/identity/claims |
-    | title | user.jobtitle | https://schemas.xmlsoap.org/ws/2005/05/identity/claims |
-    | picture | URL-адрес к рисунку сотрудника | https://schemas.xmlsoap.org/ws/2005/05/identity/claims |
+    | firstname | user.givenname | http://schemas.xmlsoap.org/ws/2005/05/identity/claims |
+    | lastname | user.surname | http://schemas.xmlsoap.org/ws/2005/05/identity/claims |
+    | title | user.jobtitle | http://schemas.xmlsoap.org/ws/2005/05/identity/claims |
+    | picture | URL-адрес к рисунку сотрудника | http://schemas.xmlsoap.org/ws/2005/05/identity/claims |
     | | |
 
     > [!Note]
@@ -175,7 +175,7 @@ ms.locfileid: "65406724"
 
     ![Настройка Leapsome](./media/leapsome-tutorial/tutorial_leapsome_admin.png)
 
-1. В строке меню слева щелкните пункт **Единый вход (SSO)**, а затем на странице **Единый вход на основе SAML (SSO)** выполните следующие действия.
+1. В строке меню слева щелкните пункт **Единый вход (SSO)** , а затем на странице **Единый вход на основе SAML (SSO)** выполните следующие действия.
 
     ![SAML Leapsome](./media/leapsome-tutorial/tutorial_leapsome_samlsettings.png)
 
@@ -244,7 +244,7 @@ ms.locfileid: "65406724"
 
 ### <a name="create-leapsome-test-user"></a>Создание тестового пользователя Leapsome
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Leapsome. Обратитесь в [службу поддержки клиентов Leapsome](mailto:support@leapsome.com), чтобы добавить домен или пользователей, которых нужно включить в список разрешенных на платформе Leapsome. Когда служба поддержки добавит домен, его пользователи будут автоматически подготовлены для платформы Leapsome. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении Leapsome. Обратитесь к [группе поддержки клиентов Leapsome](mailto:support@leapsome.com), чтобы добавить пользователей или домен, который нужно включить в список разрешений для платформы Leapsome. Когда служба поддержки добавит домен, его пользователи будут автоматически подготовлены для платформы Leapsome. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 

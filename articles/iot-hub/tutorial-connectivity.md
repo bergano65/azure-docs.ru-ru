@@ -9,12 +9,12 @@ ms.custom: mvc
 ms.date: 02/22/2019
 ms.topic: tutorial
 ms.service: iot-hub
-ms.openlocfilehash: cd60129e2da0b0c2130b300159953bd81c4aeb82
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: caa249dda4215dfcef13df96d2dd4245cae49efd
+ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58077570"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65595758"
 ---
 # <a name="tutorial-use-a-simulated-device-to-test-connectivity-with-your-iot-hub"></a>Руководство по Проверка подключения к центру Интернета вещей с помощью имитированного устройства
 
@@ -39,7 +39,7 @@ ms.locfileid: "58077570"
 az extension add --name azure-cli-iot-ext
 ```
 
-Приложение имитации устройства, которое вы выполните в этом руководстве, создано на основе Node.js. Вам потребуется установить Node.js 4.x.x или более позднюю версию на компьютере для разработки.
+Приложение имитации устройства, которое вы выполните в этом руководстве, создано на основе Node.js. Вам потребуется установить Node.js 10 x.x или более позднюю версию на компьютере для разработки.
 
 Node.js, предназначенный для нескольких платформ, можно скачать здесь: [nodejs.org](https://nodejs.org).
 

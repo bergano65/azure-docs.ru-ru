@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 12/21/2018
 ms.author: pryerram
 ms.custom: mvc
-ms.openlocfilehash: 9a59255097c6cb2a6728a14c3dbe19dbcbb0932a
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: 5129af1f34f8a2604e7b70c9638b370c7cad029a
+ms.sourcegitcommit: db3fe303b251c92e94072b160e546cec15361c2c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65236769"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66015548"
 ---
 # <a name="tutorial-use-azure-key-vault-with-an-azure-web-app-in-net"></a>Руководство по Использование Azure Key Vault в веб-приложении Azure (.NET)
 
@@ -43,7 +43,7 @@ ms.locfileid: "65236769"
 * Для Mac: [Visual Studio для Mac](https://visualstudio.microsoft.com/vs/mac/)
 * Для Windows, Mac и Linux:
   * [Git](https://git-scm.com/downloads)
-  * Для этого руководства требуется запустить Azure CLI локально. Необходимо установить Azure CLI версии 2.0.4 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо установить или обновить CLI, ознакомьтесь со статьей [Установка Azure CLI 2.0](https://review.docs.microsoft.com/cli/azure/install-azure-cli).
+  * Для этого руководства требуется запустить Azure CLI локально. Необходимо установить Azure CLI версии 2.0.4 или более поздней. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо установить или обновить CLI, ознакомьтесь со статьей [Установка Azure CLI 2.0](https://docs.microsoft.com/cli/azure/install-azure-cli).
   * [.NET Core](https://www.microsoft.com/net/download/dotnet-core/2.1)
 
 ## <a name="about-managed-service-identity"></a>Основные сведения об MSI
@@ -191,7 +191,7 @@ az keyvault secret show --name "AppSecret" --vault-name "<YourKeyVaultName>"
 
 ## <a name="run-the-web-app"></a>Запуск веб-приложения
 
-1. В главном меню Visual Studio 2017 выберите **Отладка** > **Запуск** (с отладкой или без нее). 
+1. В главном меню Visual Studio 2019 выберите **Отладка** > **Запуск** (с отладкой или без нее). 
 1. В браузере перейдите на страницу **О программе**.  
     Отображается значение **AppSecret**.
 

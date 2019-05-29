@@ -7,12 +7,12 @@ ms.service: azure-policy
 ms.topic: sample
 ms.date: 01/23/2019
 ms.author: dacoulte
-ms.openlocfilehash: 9d9a3a5af304c1080d1d43b9bbfbafe2554a9844
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 5b084bd5a1b34dc2ce8ac8abb2a4af03a22262d2
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59275017"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65787343"
 ---
 # <a name="sample---billing-tags-policy-initiative"></a>Пример: инициатива политики тегов для выставления счетов
 
@@ -24,11 +24,7 @@ ms.locfileid: "59275017"
 
 [!code-json[main](../../../../policy-templates/samples/PolicyInitiatives/multiple-billing-tags/azurepolicyset.json "Billing Tags Policy Initiative")]
 
-Этот шаблон можно развернуть с помощью [портала Azure](#deploy-with-the-portal) или [PowerShell](#deploy-with-powershell).
-
-## <a name="deploy-with-the-portal"></a>Развертывание с помощью портала
-
-[![Развертывание примера политики в Azure](https://azuredeploy.net/deploybutton.png)](https://aka.ms/getpolicy)
+Вы можете развернуть этот шаблон с помощью [PowerShell](#deploy-with-powershell).
 
 ## <a name="deploy-with-powershell"></a>Развертывание с помощью PowerShell
 

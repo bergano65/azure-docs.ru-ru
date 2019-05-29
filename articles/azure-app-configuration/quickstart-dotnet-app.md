@@ -14,12 +14,12 @@ ms.tgt_pltfrm: .NET
 ms.workload: tbd
 ms.date: 02/24/2019
 ms.author: yegu
-ms.openlocfilehash: acf1608257bc5416ff52ed9fbd4209008712f2d7
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.openlocfilehash: f5837e06f347a4f822ac007dfe54c99fc7457dbb
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65408710"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65872974"
 ---
 # <a name="quickstart-create-a-net-framework-app-with-azure-app-configuration"></a>Краткое руководство. Создание приложения на .NET Framework с помощью службы конфигурации приложений Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "65408710"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим руководством установите [Visual Studio 2017](https://visualstudio.microsoft.com/vs) и [.NET Framework 4.7.1](https://dotnet.microsoft.com/download) или более поздней версии, если это еще не сделано.
+Для работы с этим руководством установите [Visual Studio 2019](https://visualstudio.microsoft.com/vs) и [.NET Framework 4.7.1](https://dotnet.microsoft.com/download) или более поздней версии (если вы еще не сделали этого).
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
@@ -37,7 +37,7 @@ ms.locfileid: "65408710"
 
 [!INCLUDE [azure-app-configuration-create](../../includes/azure-app-configuration-create.md)]
 
-6. Выберите **Configuration Explorer** (Обозреватель конфигураций)  > **+ Создать**, чтобы добавить следующие пары "ключ-значение".
+6. Выберите **Configuration Explorer** (Обозреватель конфигураций)  >  **+ Создать**, чтобы добавить следующие пары "ключ-значение".
 
     | Ключ | Значение |
     |---|---|
@@ -49,7 +49,7 @@ ms.locfileid: "65408710"
 
 1. Запустите Visual Studio и выберите **Файл** > **Создать** > **Проект**.
 
-2. В разделе **Создание проекта** выберите **Установлено** > **Visual C#** > **Классическое приложение для Windows**. Выберите **Консольное приложение (.NET Framework)** и введите имя для проекта. Выберите **.NET Framework 4.7.1** или более поздней версии, а затем нажмите кнопку **ОК**.
+2. В разделе **Создание проекта** выберите **Установлено** > **Visual C#**  > **Классическое приложение для Windows**. Выберите **Консольное приложение (.NET Framework)** и введите имя для проекта. Выберите **.NET Framework 4.7.1** или более поздней версии, а затем нажмите кнопку **ОК**.
 
 ## <a name="connect-to-an-app-configuration-store"></a>Подключение к хранилищу конфигураций приложений
 

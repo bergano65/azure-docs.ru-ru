@@ -7,33 +7,35 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive,mvc
 ms.topic: tutorial
-ms.date: 05/07/2018
-ms.openlocfilehash: ed7beeadc0a550a28d1f936702aabeb45823b677
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.date: 05/16/2019
+ms.openlocfilehash: bf70abd2b3119a97af5ad1d4c56274f8e575fd3e
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64699605"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65860970"
 ---
-# <a name="tutorial-analyze-apache-spark-data-using-power-bi-in-hdinsight"></a>Руководство по Анализ данных Apache Spark с использованием Power BI в HDInsight 
+# <a name="tutorial-analyze-apache-spark-data-using-power-bi-in-hdinsight"></a>Руководство по Анализ данных Apache Spark с использованием Power BI в HDInsight
 
-Узнайте, как использовать [Microsoft Power BI](https://powerbi.microsoft.com/) для визуализации данных в кластере [Apache Spark](https://spark.apache.org/) в [Azure HDInsight](https://azure.microsoft.com/services/hdinsight/).
+Из этого учебника вы узнаете, как использовать [Microsoft Power BI](https://powerbi.microsoft.com/) для визуализации данных в кластере Apache Spark в [Azure HDInsight](https://azure.microsoft.com/services/hdinsight/).
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 > [!div class="checklist"]
 > * Визуализация данных Spark с помощью Power BI
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* **Выполните инструкции из статьи [Руководство. Загрузка данных и выполнение запросов в кластере Apache Spark в Azure HDInsight](./apache-spark-load-data-run-query.md)**.
-* **Power BI**. [Power BI Desktop](https://powerbi.microsoft.com/en-us/desktop/) и [пробная подписка Power BI](https://app.powerbi.com/signupredirect?pbi_source=web) (необязательно).
+* Выполните инструкции из статьи [Руководство. Загрузка данных и выполнение запросов в кластере Apache Spark в Azure HDInsight](./apache-spark-load-data-run-query.md).
 
+* [Power BI Desktop](https://powerbi.microsoft.com/en-us/desktop/).
+
+* Необязательно: [Пробная подписка Power BI](https://app.powerbi.com/signupredirect?pbi_source=web).
 
 ## <a name="verify-the-data"></a>Проверка данных
 
-[Записная книжка Jupyter Notebook](https://jupyter.org/), созданная при работе с [предыдущим руководством](apache-spark-load-data-run-query.md), содержит код для создания таблицы `hvac`. Эта таблица базируется на CSV-файле, доступном во всех кластерах HDInsight Spark в **\HdiSamples\HdiSamples\SensorSampleData\hvac\hvac.csv**. Ниже описана процедура проверки данных.
+[Записная книжка Jupyter Notebook](https://jupyter.org/), созданная при работе с [предыдущим руководством](apache-spark-load-data-run-query.md), содержит код для создания таблицы `hvac`. Эта таблица основана на CSV-файле, доступном во всех кластерах HDInsight Spark в `\HdiSamples\HdiSamples\SensorSampleData\hvac\hvac.csv`. Ниже описана процедура проверки данных.
 
 1. В записной книжке Jupyter вставьте приведенный ниже пример кода и нажмите клавиши **SHIFT + ВВОД**. Этот код предназначен для проверки наличия таблиц.
 
@@ -59,43 +61,47 @@ ms.locfileid: "64699605"
 
     ![Отображение строк из таблицы hvac в Spark](./media/apache-spark-use-bi-tools/select-limit.png)
 
-3. В меню **File** (Файл) записной книжки выберите пункт **Close and Halt** (Закрыть и остановить). Завершите работу записной книжки для освобождения ресурсов. 
+3. Для этого в меню **File** (Файл) элемента Notebook выберите **Close and Halt** (Закрыть и остановить). Завершите работу записной книжки для освобождения ресурсов.
 
 ## <a name="visualize-the-data"></a>Визуализация данных
 
-В этом разделе вы с помощью Power BI создадите визуализации, отчеты и панели мониторинга на основе данных из кластера Spark. 
+В этом разделе вы с помощью Power BI создадите визуализации, отчеты и панели мониторинга на основе данных из кластера Spark.
 
 ### <a name="create-a-report-in-power-bi-desktop"></a>Создание отчета в Power BI Desktop
+
 Начиная работать со Spark, в первую очередь необходимо подключиться к кластеру в Power BI Desktop, загрузить данные из кластера, а затем создать базовую визуализацию на основе этих данных.
 
 > [!NOTE]  
 > Соединитель, описанный в этой статье, находится в стадии предварительной версии. Любые отзывы о нем вы можете предоставить на [сайте сообщества Power BI](https://community.powerbi.com/) или на форуме [Power BI ideas](https://ideas.powerbi.com/forums/265200-power-bi-ideas).
 
-1. Откройте [Power BI Desktop](https://powerbi.microsoft.com/en-us/desktop/).
-1. На вкладке **Home** (Главная) щелкните **Get Data** (Получение данных), а затем **More** (Дополнительно).
+1. Откройте Power BI Desktop. Закройте экран-заставку запуска, если он открыт.
+
+2. Перейдите с вкладки **Домашняя страница** к элементу **Получение данных** > **Дополнительно...**
 
     ![Получение данных в Power BI Desktop из HDInsight Apache Spark](./media/apache-spark-use-bi-tools/hdinsight-spark-power-bi-desktop-get-data.png "Get data into Power BI from Apache Spark BI")
 
-
-2. Введите в поле поиска `Spark` и выберите **Azure HDInsight Spark**, а затем нажмите кнопку **Подключиться**.
+3. Введите в поле поиска `Spark` и выберите **Azure HDInsight Spark**, а затем щелкните **Подключиться**.
 
     ![Получение данных в Power BI из Apache Spark BI](./media/apache-spark-use-bi-tools/apache-spark-bi-import-data-power-bi.png "Получение данных в Power BI из Apache Spark BI")
 
-3. Введите URL-адрес кластера (в формате `mysparkcluster.azurehdinsight.net`), выберите **DirectQuery** и нажмите кнопку **ОК**.
+4. Введите URL-адрес кластера (в формате `mysparkcluster.azurehdinsight.net`) в текстовое поле **Сервер**.
 
-    Для Spark можно использовать любой режим подключения данных. При использовании DirectQuery изменения отображаются в отчетах, при этом весь набор данных не обновляется. В случае импорта данных необходимо обновить набор данных, чтобы увидеть изменения. Дополнительные сведения о том, как и когда следует использовать DirectQuery, см. в статье [Использование DirectQuery в Power BI](https://powerbi.microsoft.com/documentation/powerbi-desktop-directquery-about/). 
+5. В разделе **Режим подключения к данным** выберите **DirectQuery**. Нажмите кнопку **ОК**.
 
-4. Введите данные учетной записи для входа в HDInsight и нажмите кнопку **Connect** (Подключиться). Имя учетной записи по умолчанию — *admin*.
+    Для Spark можно использовать любой режим подключения данных. При использовании DirectQuery изменения отображаются в отчетах, при этом весь набор данных не обновляется. В случае импорта данных необходимо обновить набор данных, чтобы увидеть изменения. Дополнительные сведения о том, как и когда следует использовать DirectQuery, см. в статье [Использование DirectQuery в Power BI](https://powerbi.microsoft.com/documentation/powerbi-desktop-directquery-about/).
 
-5. Выберите таблицу `hvac`, дождитесь отображения данных предварительного просмотра и нажмите кнопку **Load** (Загрузить).
+6. Введите данные учетной записи для входа в HDInsight и выберите **Подключиться**. Имя учетной записи по умолчанию — *admin*.
+
+7. Выберите таблицу `hvac`, дождитесь отображения данных предварительного просмотра и щелкните **Загрузка**.
 
     ![Имя пользователя и пароль для кластера Spark](./media/apache-spark-use-bi-tools/apache-spark-bi-select-table.png "Имя пользователя и пароль для кластера Spark")
 
-    Теперь в Power BI Desktop есть все сведения, необходимые для подключения к кластеру Spark и загрузки данных из таблицы `hvac`. Таблица и ее столбцы отображаются в области **Fields** (Поля).  Экран должен выглядеть так:
+    Теперь в Power BI Desktop есть все сведения, необходимые для подключения к кластеру Spark и загрузки данных из таблицы `hvac`. Таблица и ее столбцы отображаются в области **Fields** (Поля).
 
-6. Отобразите расхождения между целевой температурой и фактической температурой для каждого здания: 
+8. Отобразите расхождения между целевой температурой и фактической температурой для каждого здания:
 
-    1. В области **визуализаций** выберите **Диаграмма с областями**. 
+    1. В области **визуализаций** выберите **Диаграмма с областями**.
+
     2. Перетащите поле **BuildingID** в раздел **Ось**, а поля **ActualTemp** и **TargetTemp** в раздел **значений**.
 
         ![Создание визуализаций данных Spark с помощью Apache Spark BI](./media/apache-spark-use-bi-tools/apache-spark-bi-add-value-columns.png "Создание визуализаций данных Spark с помощью Apache Spark BI")
@@ -104,9 +110,9 @@ ms.locfileid: "64699605"
 
         ![Создание визуализаций данных Spark с помощью Apache Spark BI](./media/apache-spark-use-bi-tools/apache-spark-bi-area-graph-sum.png "Создание визуализаций данных Spark с помощью Apache Spark BI")
 
-        По умолчанию представление показывает сумму для **фактической температуры** и **целевой температуры**. Щелкните направленную вниз стрелку рядом с полями **ActualTemp** и **TragetTemp** на панели визуализации, и вы увидите выбранную **сумму**.
+        По умолчанию представление показывает сумму для **фактической температуры** и **целевой температуры**. Выберите направленную вниз стрелку рядом с полями **ActualTemp** и **TragetTemp** на панели визуализации, и вы увидите выбранную **сумму**.
 
-    3. Щелкните направленную вниз стрелку рядом с полями **ActualTemp** и **TragetTemp** на панели визуализации, выберите **Average** (Среднее), чтобы получить среднее значение фактической и целевой температуры для каждого здания.
+    3. Щелкните направленную вниз стрелку рядом с полями **ActualTemp** и **TragetTemp** на панели визуализации, выберите **Среднее**, чтобы получить среднее значение фактической и целевой температуры для каждого здания.
 
         ![Создание визуализаций данных Spark с помощью Apache Spark BI](./media/apache-spark-use-bi-tools/apache-spark-bi-average-of-values.png "Создание визуализаций данных Spark с помощью Apache Spark BI")
 
@@ -114,7 +120,7 @@ ms.locfileid: "64699605"
 
         ![Создание визуализаций данных Spark с помощью Apache Spark BI](./media/apache-spark-use-bi-tools/apache-spark-bi-area-graph.png "Создание визуализаций данных Spark с помощью Apache Spark BI")
 
-7. Щелкните **Файл**, **Сохранить**, а затем введите имя файла `BuildingTemperature.pbix`. 
+9. Выберите **Файл** > **Сохранить**, введите имя `BuildingTemperature` для файла, а затем выберите **Сохранить**.
 
 ### <a name="publish-the-report-to-the-power-bi-service-optional"></a>Публикация отчета в службе Power BI (необязательно)
 
@@ -165,57 +171,15 @@ ms.locfileid: "64699605"
 
 Ваш визуальный элемент закреплен на информационной панели. Вы можете добавить в отчет другие визуальные элементы, а затем закрепить их на этой же информационной панели. Дополнительные сведения об отчетах и информационных панелях см. в статьях [Отчеты в Power BI](https://powerbi.microsoft.com/documentation/powerbi-service-reports/) и [Общие сведения о панелях мониторинга для разработчиков Power BI](https://powerbi.microsoft.com/documentation/powerbi-service-dashboards/).
 
-<!--
-## <a name="tableau"></a>Use Tableau Desktop 
+## <a name="clean-up-resources"></a>Очистка ресурсов
 
-> [!NOTE]
-> This section is applicable only for Spark 1.5.2 clusters created in Azure HDInsight.
->
->
+После завершения работы с этим руководством кластер можно удалить. В случае с HDInsight ваши данные хранятся в службе хранилища Azure, что позволяет безопасно удалить неиспользуемый кластер. Плата за кластеры HDInsight взимается, даже когда они не используются. Поскольку стоимость кластера во много раз превышает стоимость хранилища, экономически целесообразно удалять неиспользуемые кластеры.
 
-1. Install [Tableau Desktop](https://www.tableau.com/products/desktop) on the computer where you are running this Apache Spark BI tutorial.
-
-2. Make sure that computer also has Microsoft Spark ODBC driver installed. You can install the driver from [here](https://go.microsoft.com/fwlink/?LinkId=616229).
-
-1. Launch Tableau Desktop. In the left pane, from the list of server to connect to, click **Spark SQL**. If Spark SQL is not listed by default in the left pane, you can find it by click **More Servers**.
-2. In the Spark SQL connection dialog box, provide the values as shown in the screenshot, and then click **OK**.
-
-    ![Connect to a cluster for Apache Spark BI](./media/apache-spark-use-bi-tools/connect-to-tableau-apache-spark-bi.png "Connect to a cluster for Apache Spark BI")
-
-    The authentication drop-down lists **Microsoft Azure HDInsight Service** as an option, only if you installed the [Microsoft Spark ODBC Driver](https://go.microsoft.com/fwlink/?LinkId=616229) on the computer.
-3. On the next screen, from the **Schema** drop-down, click the **Find** icon, and then click **default**.
-
-    ![Find schema for Apache Spark BI](./media/apache-spark-use-bi-tools/tableau-find-schema-apache-spark-bi.png "Find schema for Apache Spark BI")
-4. For the **Table** field, click the **Find** icon again to list all the Hive tables available in the cluster. You should see the **hvac** table you created earlier using the notebook.
-
-    ![Find table for Apache Spark BI](./media/apache-spark-use-bi-tools/tableau-find-table-apache-spark-bi.png "Find table for Apache Spark BI")
-5. Drag and drop the table to the top box on the right. Tableau imports the data and displays the schema as highlighted by the red box.
-
-    ![Add tables to Tableau for Apache Spark BI](./media/apache-spark-use-bi-tools/tableau-add-table-apache-spark-bi.png "Add tables to Tableau for Apache Spark BI")
-6. Click the **Sheet1** tab at the bottom left. Make a visualization that shows the average target and actual temperatures for all buildings for each date. Drag **Date** and **Building ID** to **Columns** and **Actual Temp**/**Target Temp** to **Rows**. Under **Marks**, select **Area** to use an area map for Spark data visualization.
-
-     ![Add fields for Spark data visualization](./media/apache-spark-use-bi-tools/spark-data-visualization-add-fields.png "Add fields for Spark data visualization")
-7. By default, the temperature fields are shown as aggregate. If you want to show the average temperatures instead, you can do so from the drop-down, as shown in the following screenshot:
-
-    ![Take average of temperature for Spark data visualization](./media/apache-spark-use-bi-tools/spark-data-visualization-average-temperature.png "Take average of temperature for Spark data visualization")
-
-8. You can also super-impose one temperature map over the other to get a better feel of difference between target and actual temperatures. Move the mouse to the corner of the lower area map until you see the handle shape highlighted in a red circle. Drag the map to the other map on the top and release the mouse when you see the shape highlighted in red rectangle.
-
-    ![Merge maps for Spark data visualization](./media/apache-spark-use-bi-tools/spark-data-visualization-merge-maps.png "Merge maps for Spark data visualization")
-
-     Your data visualization should change as shown in the screenshot:
-
-    ![Tableau output for Spark data visualization](./media/apache-spark-use-bi-tools/spark-data-visualization-tableau-output.png "Tableau output for Spark data visualization")
-9. Click **Save** to save the worksheet. You can create dashboards and add one or more sheets to it.
--->
+Инструкции по удалению кластера см. в статье [Delete an HDInsight cluster using your browser, PowerShell, or the Azure CLI](../hdinsight-delete-cluster.md) (Удаление кластера HDInsight с помощью браузера, PowerShell или Azure CLI).
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Из этого руководства вы узнали, как выполнить следующие задачи:
+Из этого учебника вы узнали, как использовать [Microsoft Power BI](https://powerbi.microsoft.com/) для визуализации данных в кластере Apache Spark в [Azure HDInsight](https://azure.microsoft.com/services/hdinsight/). Теперь переходите к следующей статье, в которой объясняется, как перенести зарегистрированные в Spark данные в средство бизнес-аналитики, например в Power BI.
 
-- Визуализация данных Apache Spark с помощью Power BI.
-
-Теперь переходите к следующей статье, в которой объясняется, как перенести зарегистрированные в Spark данные в средство бизнес-аналитики, например в Power BI. 
 > [!div class="nextstepaction"]
 > [Запуск потоковой задачи Apache Spark](apache-spark-eventhub-streaming.md)
-

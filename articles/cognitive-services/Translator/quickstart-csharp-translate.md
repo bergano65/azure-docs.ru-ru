@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: quickstart
 ms.date: 02/21/2019
 ms.author: erhopf
-ms.openlocfilehash: 99766c0f2ed5f61cc5c5bd44b77eb7dde6537c76
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 7b596c9d16c71db8570024eec94a1c56518b38bf
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64916586"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65605384"
 ---
 # <a name="quickstart-use-the-translator-text-api-to-translate-a-string-using-c"></a>Краткое руководство. Использование API перевода текстов для перевода строки с помощью C#
 
@@ -155,7 +155,7 @@ dotnet run
 
 ## <a name="sample-response"></a>Пример ответа
 
-Найдите сокращенное наименование страны в этом [списке языков](https://docs.microsoft.com/azure/cognitive-services/translator/language-support).
+Найдите сокращенное наименование страны или региона в этом [списке языков](https://docs.microsoft.com/azure/cognitive-services/translator/language-support).
 
 ```json
 [

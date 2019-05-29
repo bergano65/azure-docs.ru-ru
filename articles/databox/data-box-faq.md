@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: overview
-ms.date: 05/08/2019
+ms.date: 05/22/2019
 ms.author: alkohli
-ms.openlocfilehash: 3fca94a56f80ec520ac6777610a90bdddf1b8988
-ms.sourcegitcommit: 399db0671f58c879c1a729230254f12bc4ebff59
+ms.openlocfilehash: 2b021975983858386cd7c847ba11a26f4feb9562
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65473261"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66150461"
 ---
 # <a name="azure-data-box-frequently-asked-questions"></a>Azure Data Box. Часто задаваемые вопросы
 
@@ -182,6 +182,9 @@ A.  To speed up the copy process:
 
 ### <a name="q-can-i-use-my-own-shipping-carrier-to-ship-data-box"></a>В. Могу ли я воспользоваться услугами своего перевозчика для отправки Data Box?
 О. Для службы Data Box корпорация Майкрософт самостоятельно организует доставку от центра обработки данных Azure и обратно. Если вы хотите воспользоваться услугами своего перевозчика, обратитесь к службе импорта и экспорта Azure. Дополнительные сведения о службе импорта и экспорта Azure см. в [этой статье](../storage/common/storage-import-export-service.md).
+
+### <a name="q-will-my-data-box-devices-cross-country-borders-during-shipping"></a>В. Будут ли мои устройства Data Box пересекать границы страны во время доставки?
+О. Пересылка всех устройств Data Box осуществляется в пределах страны получателя. Следовательно, устройства не будут пересекать международные границы. Единственное исключение — заказы в пределах Европейского Союза (ЕС), когда устройства могут перемещаться между разными странами ЕС.
 
 ### <a name="q-e-ink-display-is-not-showing-the-return-shipment-label-what-should-i-do"></a>В. На дисплее E-ink не отображается транспортная этикетка для обратной доставки. Что делать?
 О. Если на дисплее E-ink не отображается транспортная этикетка для обратной доставки, выполните следующие действия:

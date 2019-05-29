@@ -9,12 +9,12 @@ ms.date: 02/02/2019
 ms.topic: tutorial
 ms.service: event-grid
 ms.custom: seodec18
-ms.openlocfilehash: 2a050f8bc5d2437c7cdbadcf3296c2ef6d4659dc
-ms.sourcegitcommit: 3aa0fbfdde618656d66edf7e469e543c2aa29a57
+ms.openlocfilehash: 270059537fc8d06648c86088b22aef5b78ff00ec
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/05/2019
-ms.locfileid: "55728645"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65606297"
 ---
 # <a name="tutorial-route-custom-events-to-azure-relay-hybrid-connections-with-azure-cli-and-event-grid"></a>Руководство. Маршрутизация пользовательских событий на гибридные подключения Azure Relay с помощью Azure CLI и службы "Сетка событий"
 
@@ -80,7 +80,7 @@ az eventgrid event-subscription create \
 
 Вам нужно приложение, которое может получать события из гибридного подключения. Эту операцию выполняет [пример потребителя гибридного подключения сетки событий Microsoft Azure для C#](https://github.com/Azure-Samples/event-grid-dotnet-hybridconnection-destination). Вы уже выполнили необходимые действия.
 
-1. Убедитесь в том, что установлена версия Visual Studio 2017 15.5 или более поздняя.
+1. Убедитесь в том, что установлена версия Visual Studio 2019 или более поздняя.
 
 1. Клонируйте репозиторий на локальный компьютер.
 

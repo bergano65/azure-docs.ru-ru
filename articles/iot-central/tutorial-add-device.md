@@ -9,12 +9,12 @@ ms.service: iot-central
 services: iot-central
 ms.custom: mvc
 manager: peterpr
-ms.openlocfilehash: e9378f8d2b31bfed4c464951c427b1e9d00b7893
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: b073a270fabb8657be19b79601fa90f1b9a0351b
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64699374"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "66015235"
 ---
 # <a name="tutorial-add-a-real-device-to-your-azure-iot-central-application"></a>Руководство по Добавление реального устройства в приложение Azure IoT Central
 
@@ -54,7 +54,7 @@ ms.locfileid: "64699374"
 
    В **Device Explorer** отображается шаблон устройства **Подключенный кондиционер** и имитированное устройство. IoT Central автоматически создает имитированное устройство во время создания шаблона устройства.
 
-2. Чтобы подключить реальный кондиционер, выберите **Создать+**, а затем — **Реальный**.
+2. Чтобы подключить реальный кондиционер, выберите **Создать+** , а затем — **Реальный**.
 
    ![Первые шаги добавления нового реального подключенного кондиционера](media/tutorial-add-device/newreal.png)
 
@@ -348,7 +348,7 @@ ms.locfileid: "64699374"
 > * Сопоставление клиентского кода с приложением.
 > * Настройка клиентского кода для реального устройства
 
-Теперь, когда вы подключили реальное устройство к приложению Azure IoT Central, вы можете выполнить следующие действия:
+Теперь, когда вы подключили реальное устройство к приложению Azure IoT Central, вы можете выполнить некоторые из следующих действий.
 
 Будучи оператором, вы можете научиться, как:
 

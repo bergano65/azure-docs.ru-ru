@@ -10,12 +10,12 @@ ms.devlang: multiple
 ms.topic: overview
 ms.date: 12/22/2018
 ms.author: azfuncdf, glenga
-ms.openlocfilehash: 4c7b4733d05f18d3c30e45fd08c3cf9c50354ebc
-ms.sourcegitcommit: 359b0b75470ca110d27d641433c197398ec1db38
+ms.openlocfilehash: 2228f3fe05e1021d0f87ce0b0d33a8287f048a8c
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55816105"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65872813"
 ---
 # <a name="what-are-durable-functions"></a>Что такое Устойчивые функции?
 
@@ -43,13 +43,13 @@ ms.locfileid: "55816105"
 
 Устойчивые функции в настоящее время поддерживают следующие языки.
 
-* **C#**: обе [предварительно скомпилированные библиотеки классов](../functions-dotnet-class-library.md) и [сценарий C#](../functions-reference-csharp.md).
-* **F#**: предварительно скомпилированные библиотеки классов и сценарий F#. Сценарий F# (.fsx) поддерживается только в среде выполнения Функций Azure версии 1.x.
+* **C#** : обе [предварительно скомпилированные библиотеки классов](../functions-dotnet-class-library.md) и [сценарий C#](../functions-reference-csharp.md).
+* **F#** : предварительно скомпилированные библиотеки классов и сценарий F#. Сценарий F# (.fsx) поддерживается только в среде выполнения Функций Azure версии 1.x.
 * **JavaScript**: поддерживается только для версии 2.x среды выполнения Функций Azure. Требуется расширение устойчивых функций версии 1.7.0 или более поздней версии. 
 
 Целью устойчивых функций является поддержка всех [языков Функций Azure](../supported-languages.md). См. [здесь](https://github.com/Azure/azure-functions-durable-extension/issues) список проблем Устойчивых функций для получения последних сведений о состоянии работы для поддержки дополнительных языков.
 
-Подобно Функциям Azure, существуют шаблоны, которые помогут вам разрабатывать устойчивые функции с помощью [Visual Studio 2017](durable-functions-create-first-csharp.md), [Visual Studio Code](quickstart-js-vscode.md) и [портала Azure](durable-functions-create-portal.md).
+Подобно Функциям Azure, доступны шаблоны, которые помогут вам в разработке устойчивых функций с помощью [Visual Studio 2019](durable-functions-create-first-csharp.md), [Visual Studio Code](quickstart-js-vscode.md) и [портала Azure](durable-functions-create-portal.md).
 
 ## <a name="billing"></a>Выставление счетов
 
@@ -59,7 +59,7 @@ ms.locfileid: "55816105"
 
 Вы можете начать работу с Устойчивыми функциями менее чем за 10 минут, просмотрев одно из следующих кратких руководств по конкретным языкам.
 
-* [Создание устойчивой функции в C#](durable-functions-create-first-csharp.md)
+* [Создание устойчивой функции на C#](durable-functions-create-first-csharp.md)
 * [Создание устойчивой функции с помощью JavaScript](quickstart-js-vscode.md)
 
 В обоих кратких руководствах вы локально создаете и тестируете устойчивую функцию "Hello world". Затем вы опубликуете код функции в Azure. Функция, которую вы создаете, организовывает и объединяет в цепочку вызовы других функций.

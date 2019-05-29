@@ -7,13 +7,13 @@ ms.reviewer: jasonh
 ms.service: azure-databricks
 ms.custom: mvc
 ms.topic: tutorial
-ms.date: 05/07/2019
-ms.openlocfilehash: e2110378d16ff5826b8ded4620276b784ef1d68e
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.date: 05/17/2019
+ms.openlocfilehash: a6a681ace95f9bab3c77e4a0f9982a2281c778b8
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65203349"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65966443"
 ---
 # <a name="tutorial-extract-transform-and-load-data-by-using-azure-databricks"></a>Руководство по Извлечение, преобразование и загрузка данных с помощью Azure Databricks
 
@@ -55,16 +55,15 @@ ms.locfileid: "65203349"
 
 * Создайте учетную запись хранения Azure Data Lake Storage 2-го поколения. См. [Краткое руководство. Создание поддерживаемой учетной записи хранения Azure Data Lake Storage 2-го поколения](../storage/blobs/data-lake-storage-quickstart-create-account.md).
 
-*  Создание субъекта-службы. Дополнительные сведения см. в статье [Azure Создание приложения Azure Active Directory и субъект-службы с доступом к ресурсам с помощью портала](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal).
+* Создание субъекта-службы. Дополнительные сведения см. в статье [Azure Создание приложения Azure Active Directory и субъект-службы с доступом к ресурсам с помощью портала](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal).
 
    Существует несколько конкретных действий, которые необходимо выполнить при изучении этой статьи.
 
-   * При выполнении действий, описанных в разделе [Назначение приложению роли](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#assign-the-application-to-a-role) этой статьи, не забудьте назначить субъекту-службе роль **участника данных BLOB-объектов хранилища**.
+   * При выполнении действий, описанных в разделе [Назначение приложению роли](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#assign-the-application-to-a-role) этой статьи, не забудьте назначить субъекту-службе роль **Участник для данных BLOB-объектов хранилища** в области учетной записи ADLS 2-го поколения. Если вы назначите роль родительской группе ресурсов или подписке, вы будете получать ошибки, связанные с разрешениями, пока роль не будет назначена учетной записи хранения.
 
-     > [!IMPORTANT]
-     > Убедитесь в том, что роль назначается в учетной записи хранения Data Lake Storage 2-го поколения. Можно назначить роль родительской группе ресурсов или подписке, но вы будете получать ошибки, связанные с разрешениями, пока роль не будет назначена учетной записи хранения.
+      Если вы предпочитаете использовать список управления доступом (ACL), чтобы связать субъект-службу с определенным файлом или каталогом, ознакомьтесь со статьей [Access control in Azure Data Lake Storage Gen2](../storage/blobs/data-lake-storage-access-control.md) (Управление доступом в Azure Data Lake Storage 2-го поколения).
 
-   * При выполнении действий, описанных в разделе [Получение значений для входа](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#get-values-for-signing-in) этой статьи, вставьте идентификатор клиента, код приложения и значения ключа аутентификации в текстовый файл. Они вам скоро понадобятся.
+   * При выполнении действий, описанных в разделе [Получение значений для входа](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#get-values-for-signing-in) этой статьи, вставьте идентификатор клиента, идентификатор приложения и значения паролей в текстовый файл. Они вам скоро понадобятся.
 
 * Войдите на [портале Azure](https://portal.azure.com/).
 
@@ -104,11 +103,9 @@ ms.locfileid: "65203349"
     |**Местоположение.**     | Выберите **Западная часть США 2**.  Другие доступные регионы см. в статье о [доступности служб Azure по регионам](https://azure.microsoft.com/regions/services/).      |
     |**Ценовая категория**     |  Выберите **Стандартная**.     |
 
-3. Установите флажок **Закрепить на панели мониторинга** и щелкните **Создать**.
+3. Создание учетной записи займет несколько минут. Чтобы отслеживать состояние операции, просмотрите индикатор выполнения вверху.
 
-4. Создание учетной записи займет несколько минут. Во время создания учетной записи на портале с правой стороны отображается плитка **Submitting deployment for Azure Databricks** (Идет отправка развертывания для Databricks). Чтобы отслеживать состояние операции, просмотрите индикатор выполнения вверху.
-
-    ![Плитка развертывания Databricks](./media/databricks-extract-load-sql-data-warehouse/databricks-deployment-tile.png "Databricks deployment tile")
+4. Установите флажок **Закрепить на панели мониторинга** и щелкните **Создать**.
 
 ## <a name="create-a-spark-cluster-in-azure-databricks"></a>Создание кластера Spark в Azure Databricks.
 
@@ -148,22 +145,37 @@ ms.locfileid: "65203349"
 
 4. Нажмите кнопку **Создать**.
 
-5. Скопируйте следующий блок кода и вставьте его в первую ячейку.
+5. Следующий блок кода устанавливает учетные данные субъекта-службы по умолчанию для любой учетной записи ADLS 2-го поколения, доступ к которой осуществляется в сеансе Spark. Второй блок кода добавляет имя учетной записи к параметру, чтобы указать учетные данные для конкретной учетной записи ADLS 2-го поколения.  Скопируйте и вставьте любой блок кода в первую ячейку записной книжки Azure Databricks.
+
+   **Конфигурация сеанса**
+
+   ```scala
+   spark.conf.set("fs.azure.account.auth.type", "OAuth")
+   spark.conf.set("fs.azure.account.oauth.provider.type", "org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider")
+   spark.conf.set("fs.azure.account.oauth2.client.id", "<appID>")
+   spark.conf.set("fs.azure.account.oauth2.client.secret", "<password>")
+   spark.conf.set("fs.azure.account.oauth2.client.endpoint", "https://login.microsoftonline.com/<tenant-id>/oauth2/token")
+   spark.conf.set("fs.azure.createRemoteFileSystemDuringInitialization", "true")
+   dbutils.fs.ls("abfss://<file-system-name>@<storage-account-name>.dfs.core.windows.net/")
+   spark.conf.set("fs.azure.createRemoteFileSystemDuringInitialization", "false")
+   ```
+
+   **Конфигурация учетной записи**
 
    ```scala
    spark.conf.set("fs.azure.account.auth.type.<storage-account-name>.dfs.core.windows.net", "OAuth")
    spark.conf.set("fs.azure.account.oauth.provider.type.<storage-account-name>.dfs.core.windows.net", "org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider")
-   spark.conf.set("fs.azure.account.oauth2.client.id.<storage-account-name>.dfs.core.windows.net", "<application-id>")
-   spark.conf.set("fs.azure.account.oauth2.client.secret.<storage-account-name>.dfs.core.windows.net", "<authentication-key>")
+   spark.conf.set("fs.azure.account.oauth2.client.id.<storage-account-name>.dfs.core.windows.net", "<appID>")
+   spark.conf.set("fs.azure.account.oauth2.client.secret.<storage-account-name>.dfs.core.windows.net", "<password>")
    spark.conf.set("fs.azure.account.oauth2.client.endpoint.<storage-account-name>.dfs.core.windows.net", "https://login.microsoftonline.com/<tenant-id>/oauth2/token")
    spark.conf.set("fs.azure.createRemoteFileSystemDuringInitialization", "true")
    dbutils.fs.ls("abfss://<file-system-name>@<storage-account-name>.dfs.core.windows.net/")
    spark.conf.set("fs.azure.createRemoteFileSystemDuringInitialization", "false")
    ```
 
-6. В этом блоке кода замените значения заполнителя `application-id`, `authentication-id`, `tenant-id` и `storage-account-name` значениями, полученными в ходе выполнения предварительных условий этого руководства. Значение заполнителя `file-system-name` замените на имя файловой системы.
+6. В этом блоке кода замените значения заполнителя `appID`, `password`, `tenant-id` и `storage-account-name` значениями, полученными в ходе выполнения предварительных условий этого руководства. Значение заполнителя `file-system-name` замените на имя файловой системы.
 
-   * `application-id` и `authentication-id` заменяются значениями из приложения, которое вы зарегистрировали в Azure AD при создании субъекта-службы.
+   * `appID` и `password` заменяются значениями из приложения, которое вы зарегистрировали в Azure AD при создании субъекта-службы.
 
    * Значение `tenant-id` берется из подписки.
 
@@ -324,7 +336,7 @@ ms.locfileid: "65203349"
    sc.hadoopConfiguration.set(acntInfo, blobAccessKey)
    ```
 
-4. Укажите значения для подключения к экземпляру хранилища данных SQL Azure. Вы должны были создать хранилище данных SQL, выполняя требования для этой статьи.
+4. Укажите значения для подключения к экземпляру хранилища данных SQL Azure. Вы должны были создать хранилище данных SQL, выполняя требования для этой статьи. Используйте полное имя сервера для **dwServer**. Например, `<servername>.database.windows.net`.
 
    ```scala
    //SQL Data Warehouse related settings

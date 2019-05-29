@@ -1,144 +1,122 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Soloinsight-CloudGate SSO | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Soloinsight-CloudGate SSO | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Soloinsight-CloudGate SSO.
 services: active-directory
 documentationCenter: na
 author: jeevansd
 manager: mtillman
-ms.reviewer: barbkess
+ms.reviewer: celested
 ms.assetid: 9263c241-85a4-4724-afac-0351d6275958
 ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 02/07/2019
+ms.date: 05/06/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6e8b2b4d1a660fe2f1289bba6fa596d08ec824b8
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: c131f034b4a8b5afaa2556c5c8d053b3e6793b4d
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57847262"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65987221"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-soloinsight-cloudgate-sso"></a>Руководство. Интеграция Azure Active Directory с Soloinsight-CloudGate SSO
+# <a name="tutorial-integrate-soloinsight-cloudgate-sso-with-azure-active-directory"></a>Руководство по Интеграция Soloinsight-CloudGate SSO с Azure Active Directory
 
-В этом руководстве описано, как интегрировать Soloinsight-CloudGate SSO с Azure Active Directory (Azure AD).
-Интеграция Azure AD с Soloinsight-CloudGate SSO обеспечивает следующие преимущества:
+В этом руководстве описано, как интегрировать Soloinsight-CloudGate SSO с Azure Active Directory (Azure AD). Интеграция Soloinsight CloudGate SSO с Azure AD обеспечивает следующие возможности.
 
 * С помощью Azure AD вы можете управлять доступом к Soloinsight-CloudGate SSO.
-* Вы можете включить автоматический вход для пользователей в Soloinsight-CloudGate SSO (единый вход) с помощью их учетных записей Azure AD.
-* Вы можете управлять учетными записями централизованно на портале Azure.
+* Вы можете включить автоматический вход пользователей в Soloinsight-CloudGate SSO с помощью учетных записей Azure AD.
+* Централизованное управление учетными записями через портал Azure.
 
-Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
+Чтобы узнать больше об интеграции приложений SaaS с Azure AD, прочитайте статью [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы настроить интеграцию Azure AD с Soloinsight-CloudGate SSO, вам потребуется:
+Чтобы приступить к работе, потребуется следующее:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD Если у вас нет подписки, [здесь](https://azure.microsoft.com/pricing/free-trial/) вы можете получить бесплатную пробную версию сроком на один месяц.
 * подписка Soloinsight-CloudGate SSO с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
 
-В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
-
-* Soloinsight-CloudGate SSO поддерживает единый вход, инициированный **поставщиком услуг**.
+В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде. Soloinsight-CloudGate SSO поддерживает единый вход, инициируемый **поставщиком услуг**.
 
 ## <a name="adding-soloinsight-cloudgate-sso-from-the-gallery"></a>Добавление Soloinsight-CloudGate SSO из коллекции
 
 Чтобы настроить интеграцию Soloinsight-CloudGate SSO с Azure AD, необходимо добавить Soloinsight-CloudGate SSO из коллекции в список управляемых приложений SaaS.
 
-**Чтобы добавить Soloinsight-CloudGate SSO из коллекции, сделайте следующее:**
-
-1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
-
-    ![Кнопка Azure Active Directory](common/select-azuread.png)
-
-2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
-
-    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
-
-3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
-
-    ![Кнопка "Создать приложение"](common/add-new-app.png)
-
-4. В поле поиска введите **Soloinsight-CloudGate SSO**, выберите **Soloinsight-CloudGate SSO** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
-
-     ![Soloinsight-CloudGate SSO в списке результатов](common/search-new-app.png)
+1. Войдите на [портал Azure](https://portal.azure.com) с помощью личной учетной записи Майкрософт либо рабочей или учебной учетной записи.
+1. В области навигации слева выберите службу **Azure Active Directory**.
+1. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
+1. Чтобы добавить новое приложение, выберите **Новое приложение**.
+1. В разделе **Добавление из коллекции** в поле поиска введите **Soloinsight-CloudGate SSO**.
+1. Выберите **Soloinsight-CloudGate SSO** в области результатов и добавьте это приложение. Подождите несколько секунд, пока приложение не будет добавлено в ваш клиент.
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
-В этом разделе описаны настройка и проверка единого входа Azure AD в Soloinsight-CloudGate SSO с использованием тестового пользователя **Britta Simon**.
-Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Soloinsight-CloudGate SSO.
+Настройте и проверьте единый вход Azure AD в Soloinsight-CloudGate SSO с использованием тестового пользователя **Britta Simon**. Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Soloinsight-CloudGate SSO.
 
-Чтобы настроить и проверить единый вход Azure AD в Soloinsight-CloudGate SSO, вам потребуется выполнить действия в следующих стандартных блоках:
+Чтобы настроить и проверить единый вход Azure AD в Soloinsight-CloudGate SSO, потребуется выполнить действия в следующих стандартных блоках.
 
-1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-2. **[Настройка единого входа в Soloinsight-CloudGate SSO](#configure-soloinsight-cloudgate-sso-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
-3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
+1. **[Настройка единого входа Azure AD](#configure-azure-ad-sso)** необходима, чтобы пользователи могли использовать эту функцию.
+2. **[Настройка единого входа в Soloinsight-CloudGate SSO](#configure-soloinsight-cloudgate-sso)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+3. **[Создайте тестового пользователя Azure AD](#create-an-azure-ad-test-user)** для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
+4. **[Назначьте тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** , чтобы позволить Britta Simon использовать единый вход в Azure AD.
 5. **[Создание тестового пользователя Soloinsight-CloudGate SSO](#create-soloinsight-cloudgate-sso-test-user)** требуется для того, чтобы в Soloinsight-CloudGate SSO существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
+6. **[Проверка единого входа](#test-sso)** необходима, чтобы убедиться в корректной работе конфигурации.
 
-### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
+### <a name="configure-azure-ad-sso"></a>Настройка единого входа Azure AD
 
-В этом разделе описано включение единого входа Azure AD на портале Azure.
+Выполните следующие действия, чтобы включить единый вход Azure AD на портале Azure.
 
-Чтобы настроить единый вход Azure AD в Soloinsight-CloudGate SSO, выполните следующие действия:
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Soloinsight-CloudGate SSO** найдите раздел **Управление** и выберите **Единый вход**.
+1. На странице **Выбрать метод единого входа** выберите **SAML**.
+1. На странице **Настройка единого входа с помощью SAML** щелкните значок "Изменить" (значок пера), чтобы открыть диалоговое окно **Базовая конфигурация SAML** и изменить параметры.
 
-1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Soloinsight-CloudGate SSO** выберите **Единый вход**.
+   ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
-    ![Ссылка "Настройка единого входа"](common/select-sso.png)
+1. На странице **Базовая конфигурация SAML** введите значения для следующих полей.
 
-2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed**, чтобы включить единый вход.
+    1. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.sigateway.com/login`.
 
-    ![Режим выбора единого входа](common/select-saml-option.png)
+    1. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.sigateway.com/process/sso`.
 
-3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
+   > [!NOTE]
+   > Эти значения приведены для примера. Замените их фактическими значениями идентификатора и URL-адреса входа, которые описываются далее в разделе **Настройка единого входа Soloinsight-CloudGate SSO**.
 
-    ![Правка базовой конфигурации SAML](common/edit-urls.png)
+1. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** найдите пункт **Сертификат (Base64)** и щелкните **Скачать**, чтобы скачать сертификат. Сохраните этот сертификат на компьютере.
 
-4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
+   ![Ссылка для скачивания сертификата](common/certificatebase64.png)
 
-    ![Сведения о домене и URL-адресах единого входа для Soloinsight-CloudGate SSO](common/sp-identifier.png)
+1. Требуемые URL-адреса можно скопировать из раздела **Настройка Soloinsight-CloudGate SSO**.
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.sigateway.com/login`.
+   ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://<SUBDOMAIN>.sigateway.com/process/sso`.
+### <a name="configure-soloinsight-cloudgate-sso"></a>Настройка единого входа в Soloinsight-CloudGate SSO
 
-    > [!NOTE]
-    > Эти значения приведены для примера. Замените их фактическими значениями идентификатора и URL-адреса входа, которые описываются далее в разделе **Настройка единого входа Soloinsight-CloudGate SSO**.
+1. Чтобы автоматизировать настройку в Soloinsight-CloudGate SSO, необходимо установить **расширение браузера My Apps Secure Sign-in Extension**, щелкнув **Установить расширение**.
 
-4. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Загрузить**, чтобы загрузить требуемый **сертификат (Base64)** из предложенных вариантов, и сохраните его на компьютере.
+    ![Расширение "Мои приложения"](common/install-myappssecure-extension.png)
 
-    ![Ссылка для скачивания сертификата](common/certificatebase64.png)
+2. Чтобы перейти к приложению Soloinsight-CloudGate SSO после добавления расширения в браузер, щелкните **Настройка Soloinsight-CloudGate SSO**. После этого укажите учетные данные администратора для входа в Soloinsight-CloudGate SSO. Расширение браузера автоматически настроит приложение и автоматизирует шаги 3–8.
 
-6. Из раздела **Настройка Soloinsight-CloudGate SSO** скопируйте требуемые URL-адреса.
+    ![Настройка конфигурации](common/setup-sso.png)
 
-    ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
+3. Если необходимо вручную настроить Soloinsight-CloudGate SSO, откройте новое окно веб-браузера, зайдите на корпоративный сайт Soloinsight-CloudGate SSO с правами администратора и выполните следующие действия.
 
-    а) URL-адрес входа.
-
-    б) Идентификатор Azure AD.
-
-    в) URL-адрес выхода.
-
-### <a name="configure-soloinsight-cloudgate-sso-single-sign-on"></a>Настройка единого входа Soloinsight-CloudGate SSO
-
-1. Чтобы получить значения, которые нужно вставить на портале Azure при настройке базовой конфигурации SAML, войдите на веб-портал CloudGate со своими учетными данными и откройте параметры единого входа, выбрав **Home > Administration > System settings > General** (Главная страница > Администрирование > Параметры системы > Общие).
+4. Чтобы получить значения, которые нужно вставить в поля на портале Azure при настройке базовой конфигурации SAML, войдите на веб-портал CloudGate со своими учетными данными и откройте параметры единого входа, выбрав **Home > Administration > System settings > General** ("Главная страница" > "Администрирование" > "Параметры системы" > "Общие").
 
     ![Параметры CloudGate SSO](./media/soloinsight-cloudgate-sso-tutorial/sso-main-settings.png)
 
-2. **URL-адрес потребителя SAML**
+5. **URL-адрес потребителя SAML**
 
-    * Скопируйте ссылки напротив полей **URL-адреса потребителя SAML** и **URL-адреса перенаправления** и вставьте их в разделе **Базовая конфигурация SAML** портала Azure Portal в полях **Идентификатор (код сущности)** и **URL-адрес ответа** соответственно.
+    * Скопируйте ссылки напротив полей **Saml Consumer URL** (URL-адрес потребителя SAML) и **Redirect URL** (URL-адрес перенаправления). Вставьте их в разделе **Базовая конфигурация SAML** портала Azure в поля **Идентификатор (код сущности)** и **URL-адрес ответа** соответственно.
 
         ![SAMLIdentifier](./media/soloinsight-cloudgate-sso-tutorial/saml-identifier.png)
 
-3. **Сертификат подписи SAML**
+6. **Сертификат подписи SAML**
 
     * Перейдите к источнику файла сертификата (Base64), который был скачан из списков сертификатов подписи SAML на портале Azure, и щелкните его правой кнопкой мыши. Выберите **Изменить с помощью Notepad++** в списке. 
 
@@ -152,72 +130,51 @@ ms.locfileid: "57847262"
 
         ![Портал сертификатов](./media/soloinsight-cloudgate-sso-tutorial/certificate-portal.png)
 
-4. **Группа по умолчанию**
+7. **Группа по умолчанию**
 
     * Выберите **Business Admin** (Администратор бизнеса) в раскрывающемся списке параметра **Default Group** (Группа по умолчанию) на веб-портале CloudGate.
 
         ![Группа по умолчанию](./media/soloinsight-cloudgate-sso-tutorial/default-group.png)
 
-5. **Идентификатор AD и URL-адрес для входа**
+8. **Идентификатор AD и URL-адрес для входа**
 
-    * Скопированный **URL-адрес для входа** из конфигураций **Настройка Soloinsight-CloudGate SSO** на портале Azure нужно ввести в раздел параметров единого входа на веб-портале CloudGate. 
+    * Скопированный **URL-адрес для входа** из раздела параметров **Настройка Soloinsight-CloudGate SSO** на портале Azure нужно ввести в раздел параметров единого входа на веб-портале CloudGate.
 
-    * Вставьте ссылку **URL-адрес для входа** с портала Azure в поле **URL-адреса для входа в AD** на веб портале CloudGate.
-     
-    * Вставьте ссылку **Идентификатор Azure AD** с портала Azure в поле **идентификатора AD** на веб-портале CloudGate.
+    * Вставьте ссылку **URL-адрес для входа** с портала Azure в поле **AD Login URL** (URL-адрес для входа в AD) на веб-портале CloudGate.
+
+    * Вставьте ссылку **Идентификатор Azure AD** с портала Azure в поле **AD Identifier** (Идентификатор AD) на веб-портале CloudGate.
 
         ![Вход в AD](./media/soloinsight-cloudgate-sso-tutorial/ad-login.png)
 
-### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
+### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+В этом разделе описано, как создать на портале Azure тестового пользователя с именем Britta Simon.
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
-
-    ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
-
-2. В верхней части экрана выберите **Новый пользователь**.
-
-    ![Кнопка "Новый пользователь"](common/new-user.png)
-
-3. В разделе свойств пользователя сделайте следующее:
-
-    ![Диалоговое окно "Пользователь"](common/user-properties.png)
-
-    a. В поле **Имя** введите **BrittaSimon**.
-  
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
-    Например BrittaSimon@contoso.com.
-
-    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
-
-    d. Нажмите кнопку **Создать**.
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. В верхней части экрана выберите **Новый пользователь**.
+1. В разделе **Свойства пользователя** выполните следующие действия.
+   1. В поле **Имя** введите `Britta Simon`.  
+   1. В поле **Имя пользователя** введите username@companydomain.extension. Например, `BrittaSimon@contoso.com`.
+   1. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
+   1. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
-В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставляя доступ к CloudGate SSO.
+В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставив этому пользователю доступ к Soloinsight-CloudGate SSO.
 
-1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **Soloinsight-CloudGate SSO**.
+1. На портале Azure выберите **Корпоративные приложения**, а затем —**Все приложения**.
+1. В списке приложений выберите **Soloinsight CloudGate SSO**.
+1. На странице "Обзор" приложения найдите раздел **Управление** и выберите **Пользователи и группы**.
 
-    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
+   ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
 
-2. В списке приложений выберите **Soloinsight CloudGate SSO**.
+1. Выберите **Добавить пользователя**, а в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
-    ![Ссылка на Soloinsight-CloudGate SSO в списке приложений](common/all-applications.png)
+    ![Ссылка "Добавить пользователя"](common/add-assign-user.png)
 
-3. В меню слева выберите **Пользователи и группы**.
-
-    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
-
-4. Нажмите кнопку **Добавить пользователя**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
-
-    ![Область "Добавление назначения"](common/add-assign-user.png)
-
-5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
-
-6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор роли** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
-
-7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
+1. В диалоговом окне **Пользователи и группы** выберите **Britta Simon** из списка пользователей, а затем в нижней части экрана нажмите кнопку **Выбрать**.
+1. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор роли** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
+1. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
 
 ### <a name="create-soloinsight-cloudgate-sso-test-user"></a>Создание тестового пользователя Soloinsight CloudGate SSO
 
@@ -225,11 +182,9 @@ ms.locfileid: "57847262"
 
 ![Проверка сотрудника](./media/soloinsight-cloudgate-sso-tutorial/employee-test.png)
 
-### <a name="test-single-sign-on"></a>Проверка единого входа 
+### <a name="test-sso"></a>Проверка единого входа
 
-В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
-
-Щелкнув плитку Soloinsight-CloudGate SSO на панели доступа, вы автоматически войдете в приложение Soloinsight-CloudGate SSO, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+Щелкнув элемент "Soloinsight-CloudGate SSO" на Панели доступа, вы автоматически войдете в приложение Soloinsight-CloudGate SSO, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
@@ -238,4 +193,3 @@ ms.locfileid: "57847262"
 - [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
 - [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
-

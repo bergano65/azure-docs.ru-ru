@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с AnswerHub | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с AnswerHub | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении AnswerHub.
 services: active-directory
 documentationCenter: na
@@ -7,7 +7,7 @@ author: jeevansd
 manager: mtillman
 ms.reviewer: barbkess
 ms.assetid: 818b91d7-01df-4b36-9706-f167c710a73c
-ms.service: Azure-Active-Directory
+ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 95d6ff44a8d760150df491b67ee56d62c4daff31
-ms.sourcegitcommit: 50ea09d19e4ae95049e27209bd74c1393ed8327e
+ms.openlocfilehash: 52c49bdd51bda7876d19a681bde79c9dbeeb4ea7
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/26/2019
-ms.locfileid: "56882796"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65901284"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-answerhub"></a>Руководство по Интеграция Azure Active Directory с AnswerHub
 
@@ -80,7 +80,7 @@ ms.locfileid: "56882796"
 2. [Настроить единый вход в AnswerHub](#configure-answerhub-single-sign-on), чтобы настроить параметры единого входа на стороне приложения.
 3. [Создать в Azure AD тестового пользователя](#create-an-azure-ad-test-user) с именем Britta Simon.
 4. [Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user) необходимо, чтобы разрешить Britta Simon использовать единый вход Azure AD.
-5. [Создать тестового пользователя AnswerHub](#create-answerhub-test-user), который сопоставлен с тестовым пользователем в Azure AD.
+5. Создайте тестового пользователя AnswerHub, который сопоставлен и связан с тестовым пользователем Azure AD.
 6. [Проверьте единый вход](#test-single-sign-on), чтобы убедиться, что конфигурация работает правильно.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
@@ -152,7 +152,7 @@ ms.locfileid: "56882796"
 
     c. В текстовое поле **IDP Name Identifier Format** (Формат идентификатора имени поставщика удостоверений) введите значение **Идентификатор**, выбранное на портале Azure в разделе **Атрибуты пользователя**.
   
-    4.3. Щелкните **Keys and Certificates** (Ключи и сертификаты).
+    d. Щелкните **Keys and Certificates** (Ключи и сертификаты).
 
 5. В разделе **Keys and Certificates** (Ключи и сертификаты) выполните следующие действия.
 
@@ -184,12 +184,12 @@ ms.locfileid: "56882796"
 
     a. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon @<ваш_домен.доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@<ваш_домен.доменная_зона>** .  
     Например, BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    4.3. Нажмите кнопку **Создать**.
+    d. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 

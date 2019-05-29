@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: jeedes
-ms.openlocfilehash: f69ef2c7c260d8df918fb2495bded6910d6b17b1
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: e994150f68c0f274c97c27fccc89f226bc8236cd
+ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64707638"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66000501"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-hrworks-single-sign-on"></a>Руководство по Интеграция Azure Active Directory с HRworks для включения единого входа
 
@@ -128,9 +128,9 @@ ms.locfileid: "64707638"
 
 1. В другом окне веб-браузера войдите в HRworks с правами администратора.
 
-2. Выберите **Administrator (Администратор)** > **Basics (Основы)** > **Security (Безопасность)** > **Single Sign-on (Единый вход)** в левой части строки меню и выполните следующие шаги:
+2. Выберите **Administrator (Администратор)**  > **Basics (Основы)**  > **Security (Безопасность)**  > **Single Sign-on (Единый вход)** в левой части строки меню и выполните следующие шаги:
 
-       ![Настройка единого входа](./media/hrworks-single-sign-on-tutorial/configure01.png)
+       ![Configure Single Sign-On](./media/hrworks-single-sign-on-tutorial/configure01.png)
 
     a. Установите флажок **Use Single Sign-on** (Использовать единый вход).
 
@@ -138,7 +138,7 @@ ms.locfileid: "64707638"
 
     c. Выберите значение **Individual NameID identifier** (Индивидуальный идентификатор NameID) для параметра **Value for NameID** (Значение NameID).
 
-    d. В Блокноте откройте скачанный на портале Azure XML-файл метаданных, скопируйте его содержимое, а затем вставьте его в поле **Metadata** (Метаданные).
+    d. В Блокноте откройте скачанный с портала Azure XML-файл метаданных, скопируйте его содержимое, а затем вставьте его в текстовое поле **Metadata** (Метаданные).
 
     д. Выберите команду **Сохранить**.
 
@@ -200,9 +200,9 @@ ms.locfileid: "64707638"
 
 1. Войдите в HRworks с правами администратора.
 
-2. Выберите **Administrator (Администратор)** > **Persons (Лица)** > **Persons (Лица)** > **New person (Создать лицо)** в левой части строки меню.
+2. Выберите **Administrator (Администратор)**  > **Persons (Лица)**  > **Persons (Лица)**  > **New person (Создать лицо)** в левой части строки меню.
 
-     ![Настройка единого входа](./media/hrworks-single-sign-on-tutorial/configure02.png)
+     ![Настройка единого входа](./media/hrworks-single-sign-on-tutorial/configure02.png)
 
 3. Во всплывающем окне нажмите **Next** (Далее).
 

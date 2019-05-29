@@ -10,12 +10,12 @@ ms.devlang: python
 ms.topic: quickstart
 ms.custom: mvc
 ms.date: 03/26/2019
-ms.openlocfilehash: 58b4acb3ebfc1ff22c04dafb3063f197d2866311
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 74146242ef4084e5990027117689bb1371c3f272
+ms.sourcegitcommit: 3ced637c8f1f24256dd6ac8e180fff62a444b03c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59005846"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65832189"
 ---
 # <a name="quickstart-control-a-device-connected-to-an-iot-hub-python"></a>Краткое руководство. Управление подключенным к Центру Интернета вещей устройством (Python)
 
@@ -37,7 +37,7 @@ ms.locfileid: "59005846"
 
 Примеры приложений, запускаемые в рамках этого краткого руководства, написаны на языке Python. Сейчас пакеты SDK Microsoft Azure IoT для Python поддерживают только конкретные версии Python для каждой платформы. Дополнительные сведения см. в [файле сведений пакета SDK для Python](https://github.com/Azure/azure-iot-sdk-python#important-installation-notes---dealing-with-importerror-issues).
 
-В этом кратком руководстве предполагается, что вы используете компьютер разработки под управлением Windows. Для систем Windows поддерживается только [Python 3.6.x](https://www.python.org/downloads/release/python-368/). При выборе установщика Python нужно руководствоваться архитектурой системы, в которой вы работаете. Если архитектура системы ЦП 32-разрядная, скачайте установщик x86. Для 64-разрядной архитектуры необходимо скачать установщик x86-64. Кроме того, убедитесь, что [Распространяемые компоненты Microsoft Visual C ++ для Visual Studio 2017](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) установлены для вашей архитектуры (x86 или x64).
+В этом кратком руководстве предполагается, что вы используете компьютер разработки под управлением Windows. Для систем Windows поддерживается только [Python 3.6.x](https://www.python.org/downloads/release/python-368/). При выборе установщика Python нужно руководствоваться архитектурой системы, в которой вы работаете. Если архитектура системы ЦП 32-разрядная, скачайте установщик x86. Для 64-разрядной архитектуры необходимо скачать установщик x86-64. Кроме того, убедитесь, что [Распространяемые компоненты Microsoft Visual C++ для Visual Studio 2015, 2017 и 2019](https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads) установлены для вашей архитектуры (x86 или x64).
 
 Python, предназначенный для других платформ, можно скачать на сайте [Python.org](https://www.python.org/downloads/).
 

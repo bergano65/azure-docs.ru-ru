@@ -10,12 +10,12 @@ ms.topic: overview
 ms.date: 05/02/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 8201b4089759fb55fae12820f7495664c502837e
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: 24c6df6a06d08249f236fc36d64b4204b0103b3c
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65023630"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65540895"
 ---
 # <a name="what-is-cognitive-search-in-azure-search"></a>Что такое когнитивный поиск в службе "Поиск Azure"?
 
@@ -25,7 +25,7 @@ ms.locfileid: "65023630"
 
 + Навыки **обработки изображений** охватывают [распознавание текста (OCR)](cognitive-search-skill-ocr.md) и идентификацию [визуальных компонентов](cognitive-search-skill-image-analysis.md), таких как обнаружение лица, интерпретация изображений, распознавание изображений (известные люди и ориентиры) или атрибутов, таких как цвета или ориентация изображений. Вы можете создавать текстовые представления содержимого изображения, по которым можно выполнять поиск, используя все возможности запросов службы "Поиск Azure".
 
-![Схема конвейера когнитивного поиска](./media/cognitive-search-intro/cogsearch-architecture.png "Cognitive Search pipeline overview")
+![Схема конвейера когнитивного поиска](./media/cognitive-search-intro/cogsearch-architecture.png "Общие сведения о конвейере когнитивного поиска")
 
 Когнитивные навыки в службе "Поиск Azure" основываются на моделях машинного обучения в API-интерфейсах Cognitive Services: [API компьютерного зрения](https://docs.microsoft.com/azure/cognitive-services/computer-vision/) и [анализ текста](https://docs.microsoft.com/azure/cognitive-services/text-analytics/overview). 
 
@@ -61,7 +61,7 @@ ms.locfileid: "65023630"
 
 В [версии REST API api-version=2019-05-06 службы поиска](search-api-preview.md) в наборы навыков добавляется определение knowledgeStore, которое обеспечивает подключение к хранилищу Azure и проекции, описывающие способ сохранения обогащений. 
 
-Добавив хранилище знаний к набору навыков, можно спроецировать представление обогащений для сценариев, в которых не предусмотрен полнотекстовой поиск. Дополнительные сведения см. в [обзоре хранилища знаний](knowledge-store-concept-intro.md).
+Добавив хранилище знаний к набору навыков, можно спроецировать представление обогащений для сценариев, в которых не предусмотрен полнотекстовой поиск. Подробные сведения см. в [обзоре хранилища знаний](knowledge-store-concept-intro.md).
 
 ### <a name="step-3-search-index-and-query-based-access"></a>Шаг 3. Индекс поиска и доступа с помощью запросов
 
@@ -111,7 +111,7 @@ ms.locfileid: "65023630"
 
 На этом шаге для создания решения когнитивного поиска используются интерфейсы REST API. Только два API-интерфейса можно добавить или расширить для когнитивного поиска. Все остальные API сохраняют тот же синтаксис, что и в общедоступной версии.
 
-| REST API | ОПИСАНИЕ |
+| REST API | ОПИСАНИЕ |
 |-----|-------------|
 | [Создание источника данных](https://docs.microsoft.com/rest/api/searchservice/create-data-source)  | Ресурс, определяющий внешний источник данных с исходными данными, которые будут применены для создания обогащенных документов.  |
 | [Создание набора навыков (api-version=2019-05-06)](https://docs.microsoft.com/rest/api/searchservice/create-skillset)  | Ресурс, описывающий использование [стандартных навыков](cognitive-search-predefined-skills.md) и [пользовательских когнитивных навыков](cognitive-search-custom-skill-interface.md) в конвейере обогащения данных во время индексирования. |

@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Workable | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Workable | Документация Майкрософт
 description: Узнайте, как настроить единый вход в Workable с помощью Azure Active Directory.
 services: active-directory
 documentationCenter: na
@@ -8,21 +8,22 @@ manager: daveba
 ms.reviewer: barbkess
 ms.assetid: c025cdeb-786c-4aab-abd1-132907007f7e
 ms.service: active-directory
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 12/24/2018
+ms.date: 04/15/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 49c5194f75ad973514a3ec015ef29c1d6f48330a
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: a13d2a62c64ea114e45b49e38eda0ddc686fe7cf
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57838193"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66143159"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-workable"></a>Руководство. Интеграция Azure Active Directory с Workable
+# <a name="tutorial-azure-active-directory-integration-with-workable"></a>Руководство по Интеграция Azure Active Directory с Workable
 
 В этом руководстве описано, как интегрировать Workable с Azure Active Directory (Azure AD).
 Интеграция Azure AD с приложением Workable обеспечивает следующие преимущества.
@@ -68,7 +69,7 @@ ms.locfileid: "57838193"
 
 4. В поле поиска введите **Workable**, выберите **Workable** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
-     ![Workable в списке результатов](common/search-new-app.png)
+    ![Workable в списке результатов](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
@@ -80,9 +81,9 @@ ms.locfileid: "57838193"
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
 2. **[Настройка единого входа в Workable](#configure-workable-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
 3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-4. **[Создание тестового пользователя Workable](#create-workable-test-user)** требуется для того, чтобы в Workable существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-5. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
-6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
+5. **[Создание тестового пользователя Workable](#create-workable-test-user)** требуется для того, чтобы в Workable существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
+6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
@@ -127,9 +128,9 @@ ms.locfileid: "57838193"
 
     а) URL-адрес входа.
 
-    б) Идентификатор Azure AD.
+    b. Идентификатор Azure AD
 
-    в) URL-адрес выхода.
+    c. URL-адрес выхода.
 
 ### <a name="configure-workable-single-sign-on"></a>Настройка единого входа в Workable
 
@@ -141,7 +142,7 @@ ms.locfileid: "57838193"
 
 3. URL-адрес выхода.
 
-После включения единого входа ваш менеджер учетной записи Workable сообщит об этом. Затем вы сможете использовать [страницу единого входа Workable](https://www.workable.com/sso/signin), чтобы войти с помощью дочернего домена учетной записи Workable.
+После включения единого входа ваш менеджер учетных записей Workable сообщит об этом. Затем вы сможете использовать [страницу единого входа Workable](https://id.workable.com/sso/signin), чтобы войти с помощью поддомена учетной записи Workable.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -161,8 +162,7 @@ ms.locfileid: "57838193"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
-    Например BrittaSimon@contoso.com.
+    b. В поле **Имя пользователя** введите `brittasimon\@yourcompanydomain.extension`. Например, BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 

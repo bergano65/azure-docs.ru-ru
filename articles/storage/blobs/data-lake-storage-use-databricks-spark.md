@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 03/11/2019
 ms.author: normesta
 ms.reviewer: dineshm
-ms.openlocfilehash: 02cff1be85f4489a9529383d90694581f2599cba
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.openlocfilehash: b332c11e76ad335772cc607edcf569f896acb873
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64939173"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65951394"
 ---
 # <a name="tutorial-access-data-lake-storage-gen2-data-with-azure-databricks-using-spark"></a>Руководство по Доступ к данным Data Lake Storage 2-го поколения с помощью Azure Databricks и Spark
 
@@ -48,7 +48,7 @@ ms.locfileid: "64939173"
   > [!IMPORTANT]
   > Убедитесь в том, что роль назначается в учетной записи хранения Data Lake Storage 2-го поколения. Можно назначить роль родительской группе ресурсов или подписке, но вы будете получать ошибки, связанные с разрешениями, пока роль не будет назначена учетной записи хранения.
 
-  :heavy_check_mark: При выполнении действий, описанных в разделе [Получение значений для входа](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#get-values-for-signing-in) этой статьи, вставьте идентификатор клиента, код приложения и значения ключа аутентификации в текстовый файл. Они вам скоро понадобятся.
+  :heavy_check_mark: При выполнении действий, описанных в разделе [Получение значений для входа](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#get-values-for-signing-in) этой статьи, вставьте идентификатор клиента, идентификатор приложения и значения паролей в текстовый файл. Они вам скоро понадобятся.
 
 ### <a name="download-the-flight-data"></a>Скачивание данных о рейсах
 
@@ -82,11 +82,9 @@ ms.locfileid: "64939173"
 
     ![Создание рабочей области Azure Databricks](./media/data-lake-storage-use-databricks-spark/create-databricks-workspace.png "Создание службы Azure Databricks")
 
-3. Установите флажок **Закрепить на панели мониторинга** и щелкните **Создать**.
+3. Создание учетной записи займет несколько минут. Чтобы отслеживать состояние операции, просмотрите индикатор выполнения вверху.
 
-4. Создание учетной записи займет несколько минут. Во время создания учетной записи на портале с правой стороны отображается плитка **Submitting deployment for Azure Databricks** (Идет отправка развертывания для Databricks). Чтобы отслеживать состояние операции, просмотрите индикатор выполнения вверху.
-
-    ![Плитка развертывания Databricks](./media/data-lake-storage-use-databricks-spark/databricks-deployment-tile.png "Databricks deployment tile")
+4. Установите флажок **Закрепить на панели мониторинга** и щелкните **Создать**.
 
 ## <a name="create-a-spark-cluster-in-azure-databricks"></a>Создание кластера Spark в Azure Databricks.
 
@@ -110,6 +108,32 @@ ms.locfileid: "64939173"
 
     * Выберите **Create cluster** (Создать кластер). Когда кластер будет выполняться, можно присоединить к нему записные книжки и запустить на нем задания Spark.
 
+## <a name="ingest-data"></a>Прием данных
+
+### <a name="copy-source-data-into-the-storage-account"></a>Копирование исходных данных в учетную запись хранения
+
+Для копирования данных из *CSV*-файла в вашу учетную запись Data Lake Storage 2-го поколения используйте AzCopy.
+
+1. Откройте окно командной строки и введите следующие команды для входа в свою учетную запись хранения.
+
+   ```bash
+   azcopy login
+   ```
+
+   Для аутентификации учетной записи пользователя следуйте инструкциям, появляющимся в окне командной строки.
+
+2. Чтобы скопировать данные из *CSV*-файла учетной записи, введите следующую команду.
+
+   ```bash
+   azcopy cp "<csv-folder-path>" https://<storage-account-name>.dfs.core.windows.net/<file-system-name>/folder1/On_Time.csv
+   ```
+
+   * Замените значение заполнителя `<csv-folder-path>` путем к *CSV*-файлу.
+
+   * Замените значение заполнителя `<storage-account-name>` именем вашей учетной записи хранения.
+
+   * Замените заполнитель `<file-system-name>` любым именем, которое вы хотите предоставить вашей файловой системе.
+
 ## <a name="create-a-file-system-and-mount-it"></a>Создание и подключение файловой системы
 
 В этом разделе вы создадите файловую систему и папку в своей учетной записи хранения.
@@ -129,9 +153,9 @@ ms.locfileid: "64939173"
     ```Python
     configs = {"fs.azure.account.auth.type": "OAuth",
            "fs.azure.account.oauth.provider.type": "org.apache.hadoop.fs.azurebfs.oauth2.ClientCredsTokenProvider",
-           "fs.azure.account.oauth2.client.id": "<application-id>",
-           "fs.azure.account.oauth2.client.secret": "<authentication-id>",
-           "fs.azure.account.oauth2.client.endpoint": "https://login.microsoftonline.com/<tenant-id>/oauth2/token",
+           "fs.azure.account.oauth2.client.id": "<appId>",
+           "fs.azure.account.oauth2.client.secret": "<password>",
+           "fs.azure.account.oauth2.client.endpoint": "https://login.microsoftonline.com/<tenant>/oauth2/token",
            "fs.azure.createRemoteFileSystemDuringInitialization": "true"}
 
     dbutils.fs.mount(
@@ -140,46 +164,24 @@ ms.locfileid: "64939173"
     extra_configs = configs)
     ```
 
-18. В этом блоке кода замените значения заполнителя `application-id`, `authentication-id`, `tenant-id` и `storage-account-name` значениями, полученными в ходе выполнения предварительных условий этого руководства. Значение заполнителя `file-system-name` замените на имя файловой системы.
+18. В этом блоке кода замените значения заполнителя `appId`, `password`, `tenant` и `storage-account-name` значениями, полученными в ходе выполнения предварительных условий этого руководства. Замените значение заполнителя `file-system-name` именем, которое вы дали своей файловой системе ADLS на предыдущем шаге.
 
-   * `application-id` и `authentication-id` заменяются значениями из приложения, которое вы зарегистрировали в Azure AD при создании субъекта-службы.
+Используйте эти значения, чтобы заменить упомянутые заполнители.
+
+   * `appId` и `password` заменяются значениями из приложения, которое вы зарегистрировали в Azure AD при создании субъекта-службы.
 
    * Значение `tenant-id` берется из подписки.
 
    * `storage-account-name` — это имя учетной записи хранения Azure Data Lake Storage 2-го поколения.
 
+   * Замените заполнитель `file-system-name` любым именем, которое вы хотите предоставить вашей файловой системе.
+
    > [!NOTE]
-   > При настройке рабочей среды рассмотрите возможность сохранения ключа проверки подлинности в Azure Databricks. Затем в блоке кода замените ключ проверки подлинности ключом поиска. Выполнив инструкции из этого краткого руководства, ознакомьтесь с примерами такого подхода в статье о [Data Lake Storage 2-го поколения](https://docs.azuredatabricks.net/spark/latest/data-sources/azure/azure-datalake-gen2.html) на веб-сайте Azure Databricks.
+   > При настройке рабочей среды рассмотрите возможность сохранения пароля в Azure Databricks. Затем в блоке кода замените пароль ключом поиска. Выполнив инструкции из этого краткого руководства, ознакомьтесь с примерами такого подхода в статье о [Data Lake Storage 2-го поколения](https://docs.azuredatabricks.net/spark/latest/data-sources/azure/azure-datalake-gen2.html) на веб-сайте Azure Databricks.
 
 19. Нажмите клавиши **SHIFT + ВВОД**, чтобы запустить код в этом блоке.
 
    Оставьте открытой эту записную книжку, так как позже вы добавите к ней команды.
-
-## <a name="ingest-data"></a>Прием данных
-
-### <a name="copy-source-data-into-the-storage-account"></a>Копирование исходных данных в учетную запись хранения
-
-Для копирования данных из *CSV*-файла в вашу учетную запись Data Lake Storage 2-го поколения используйте AzCopy.
-
-1. Откройте окно командной строки и введите следующие команды для входа в свою учетную запись хранения.
-
-   ```bash
-   azcopy login
-   ```
-
-   Для проверки подлинности учетной записи пользователя следуйте инструкциям, появляющимся в окне командной строки.
-
-2. Чтобы скопировать данные из *CSV*-файла учетной записи, введите следующую команду.
-
-   ```bash
-   azcopy cp "<csv-folder-path>" https://<storage-account-name>.dfs.core.windows.net/<file-system-name>/folder1/On_Time.csv
-   ```
-
-   * Замените значение заполнителя `<csv-folder-path>` путем к *CSV*-файлу.
-
-   * Замените значение заполнителя `storage-account-name` именем вашей учетной записи хранения.
-
-   * Замените заполнитель `file-system-name` любым именем, которое вы хотите предоставить вашей файловой системе.
 
 ### <a name="use-databricks-notebook-to-convert-csv-to-parquet"></a>Использование Databricks Notebook для преобразования CSV-файла в файл Parquet
 

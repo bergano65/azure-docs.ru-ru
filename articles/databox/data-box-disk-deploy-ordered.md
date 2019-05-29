@@ -1,5 +1,5 @@
 ---
-title: Руководство. Заказ диска Microsoft Azure Data Box | Документация Майкрософт
+title: Учебник. Заказ Диска Azure Data Box | Документация Майкрософт
 description: Используйте это руководство для регистрации и заказа диска Azure Data Box для импорта данных в Azure.
 services: databox
 author: alkohli
@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 02/27/2019
 ms.author: alkohli
 Customer intent: As an IT admin, I need to be able to order Data Box Disk to upload on-premises data from my server onto Azure.
-ms.openlocfilehash: 67f4eb5383452a81ba288f5fe611242259217951
-ms.sourcegitcommit: 94305d8ee91f217ec98039fde2ac4326761fea22
+ms.openlocfilehash: 1d25ea2ce6e365e0d04fab325f9c13bb37382758
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57404904"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65603169"
 ---
 # <a name="tutorial-order-an-azure-data-box-disk"></a>Руководство по Заказ Диска Azure Data Box
 
@@ -65,7 +65,7 @@ ms.locfileid: "57404904"
     |---|---|
     |Подписка|Выберите подписку, для которой включена служба Data Box.<br> Подписка привязана к учетной записи для выставления счетов. |
     |Тип передачи| Импорт в Azure|
-    |Страна происхождения | Выберите страну, в которой находятся ваши данные.|
+    |Страна происхождения | Выберите страну/регион, в которой находятся ваши данные.|
     |Конечный регион Azure|Выберите регион Azure, куда вы хотите передать данные.|
 
   

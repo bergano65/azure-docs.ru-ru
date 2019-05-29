@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: jeedes
-ms.openlocfilehash: 0879f9026276eb7149ae44906377a7b369e05116
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: a3e457ca29ebe086c6097528af5a9253446b757c
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59267078"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65990559"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-vodeclic"></a>Руководство по Интеграция Azure Active Directory с Vodeclic
 
@@ -191,7 +191,7 @@ ms.locfileid: "59267078"
 Из этого раздела вы узнаете, как создать пользователя Britta Simon в приложении Vodeclic. Обратитесь в  [группу поддержки Vodeclic](mailto:hotline@vodeclic.com), чтобы добавить пользователей на платформу Vodeclic. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 > [!NOTE]
-> Согласно требованиям приложения вам, возможно, понадобится включить свой компьютер в список разрешенных устройств. Для этого отправьте свой общедоступный IP-адрес в [службу поддержки Vodeclic](mailto:hotline@vodeclic.com).
+> Согласно требованиям приложения вам, возможно, понадобится добавить свой компьютер в список разрешений. Для этого отправьте свой общедоступный IP-адрес в [службу поддержки Vodeclic](mailto:hotline@vodeclic.com).
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа 
 

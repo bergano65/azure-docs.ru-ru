@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 01/04/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d48977c60fb4a13e1fc0dbd294fa4e7708f1cd5d
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: a7462536443b2be23eef0f8b4c6f6b6412fb7032
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58878973"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65898744"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-g-suite"></a>Руководство. Интеграция Azure Active Directory с G Suite
 
@@ -87,7 +87,7 @@ ms.locfileid: "58878973"
 В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
 
 * G Suite поддерживает единый вход, инициированный **поставщиком услуг**.
-* G Suite поддерживает **[автоматическую подготовку пользователей](https://docs.microsoft.com/azure/active-directory/saas-apps/google-apps-provisioning-tutorial)**.
+* G Suite поддерживает **[автоматическую подготовку пользователей](https://docs.microsoft.com/azure/active-directory/saas-apps/google-apps-provisioning-tutorial)** .
 
 ## <a name="adding-g-suite-from-the-gallery"></a>Добавление G Suite из коллекции
 
@@ -239,11 +239,11 @@ ms.locfileid: "58878973"
 
     a. Выберите **Setup SSO with third party identity provider**(Настройка единого входа с помощью стороннего поставщика удостоверений).
 
-    b. В поле **Sign-in page URL** (URL-адрес страницы входа) в G Suite вставьте значение поля  **URL-адреса входа** , которое вы скопировали с портала Azure.
+    b. В поле **Sign-in page URL** (URL-адрес страницы входа) в G Suite вставьте значение **URL-адрес входа**, которое вы скопировали на портале Azure.
 
-    c. В поле **Sign-out page URL** (URL-адрес страницы выхода) в G Suite вставьте значение поля  **URL-адреса выхода** , которое вы скопировали с портала Azure.
+    c. В поле **Sign-out page URL** (URL-адрес страницы выхода) в G Suite вставьте значение **URL-адрес выхода**, которое вы скопировали на портале Azure.
 
-    d. В поле **Change password URL** (URL-адрес изменения пароля) в G Suite вставьте значение поля  **Изменить URL-адрес пароля** , которое вы скопировали с портала Azure.
+    d. В поле **Change password URL** (URL-адрес изменения пароля) в G Suite вставьте значение поля **Изменить URL-адрес пароля**, скопированное на портале Azure.
 
     д. В G Suite в поле **Verification certificate** (Сертификат проверки) передайте сертификат, скачанный с портала Azure.
 

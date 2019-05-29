@@ -14,12 +14,12 @@ ms.tgt_pltfrm: Azure Functions
 ms.workload: tbd
 ms.date: 02/24/2019
 ms.author: yegu
-ms.openlocfilehash: a0c677e25be86e0f82b821a7931bda0af2b35127
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.openlocfilehash: c09cb0f93f05a9574543ebabb398148638092c73
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65408657"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65864791"
 ---
 # <a name="quickstart-create-an-azure-function-with-app-configuration"></a>Краткое руководство. Создание функции Azure с использованием службы "Конфигурация приложений"
 
@@ -31,7 +31,7 @@ ms.locfileid: "65408657"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим кратким руководством установите [Visual Studio 2017](https://visualstudio.microsoft.com/vs). Убедитесь, что рабочая нагрузка **Разработка для Azure** также установлена. Также установите [новейшие инструменты Функций Azure](../azure-functions/functions-develop-vs.md#check-your-tools-version).
+Для работы с этим кратким руководством установите [Visual Studio 2019](https://visualstudio.microsoft.com/vs). Убедитесь, что рабочая нагрузка **Разработка для Azure** также установлена. Также установите [новейшие инструменты Функций Azure](../azure-functions/functions-develop-vs.md#check-your-tools-version).
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
@@ -39,7 +39,7 @@ ms.locfileid: "65408657"
 
 [!INCLUDE [azure-app-configuration-create](../../includes/azure-app-configuration-create.md)]
 
-6. Выберите **Configuration Explorer** (Обозреватель конфигураций)  > **+ Создать**, чтобы добавить следующие пары "ключ-значение".
+6. Выберите **Configuration Explorer** (Обозреватель конфигураций)  >  **+ Создать**, чтобы добавить следующие пары "ключ-значение".
 
     | Ключ | Значение |
     |---|---|
@@ -103,7 +103,7 @@ ms.locfileid: "65408657"
 
         export ConnectionString='connection-string-of-your-app-configuration-store'
 
-2. Чтобы проверить работу функции, нажмите клавишу F5. Если будет предложено, примите запрос от Visual Studio на скачивание и установку **основных инструментов решения "Функции Azure" (CLI)**. Кроме того, возможно, вам понадобиться включить исключение брандмауэра, чтобы инструменты могли обрабатывать HTTP-запросы.
+2. Чтобы проверить работу функции, нажмите клавишу F5. Если будет предложено, примите запрос от Visual Studio на скачивание и установку **основных инструментов решения "Функции Azure" (CLI)** . Кроме того, возможно, вам понадобиться включить исключение брандмауэра, чтобы инструменты могли обрабатывать HTTP-запросы.
 
 3. Скопируйте URL-адрес функции из выходных данных среды выполнения функций Azure.
 

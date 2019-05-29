@@ -3,19 +3,19 @@ title: Краткое руководство. Поиск сущностей с �
 titleSuffix: Azure Cognitive Services
 description: Используйте это краткое руководство для поиска сущностей с помощью пакета SDK Поиска сущностей Bing для C#.
 services: cognitive-services
-author: mikedodaro
+author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-entity-search
 ms.topic: quickstart
 ms.date: 02/01/2019
-ms.author: v-gedod
-ms.openlocfilehash: 99b7f05304b48b7d885a80705d05fbe24854150f
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.author: aahi
+ms.openlocfilehash: 13ef0734345df17adb2303471b8cb4178f95a2f6
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58080647"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65813746"
 ---
 # <a name="send-a-search-request-with-the-bing-entity-search-sdk-for-c"></a>Отправка запросов для поиска в пакете SDK Поиска сущностей Bing для C#
 
@@ -24,7 +24,7 @@ ms.locfileid: "58080647"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Любой выпуск [Visual Studio 2017](https://www.visualstudio.com/downloads/).
+* Любой выпуск [Visual Studio 2017 или более поздней версии](https://www.visualstudio.com/downloads/).
 * Платформа [Json.NET](https://www.newtonsoft.com/json), доступная в виде пакета NuGet.
 * Если вы используете Linux или MacOS, это приложение можно запустить с помощью [Mono](https://www.mono-project.com/).
 * [Пакет SDK Поиска новостей Bing для NuGet](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Search.EntitySearch/1.2.0). При установке этого пакета также устанавливаются следующие компоненты:
@@ -32,7 +32,7 @@ ms.locfileid: "58080647"
     * Microsoft.Rest.ClientRuntime.Azure
     * Newtonsoft.Json.
 
-Чтобы добавить пакет SDK Поиска сущностей Bing в проект Visual Studio, используйте параметр `Manage NuGet Packages` в обозревателе решений и добавьте пакет `Microsoft.Azure.CognitiveServices.Search.EntitySearch`.
+Чтобы добавить пакет SDK для API "Поиск сущностей Bing" в проект Visual Studio, используйте параметр **Manage NuGet Packages** (Управление пакетами NuGet) в **обозревателе решений** и добавьте пакет `Microsoft.Azure.CognitiveServices.Search.EntitySearch`.
 
 
 [!INCLUDE [cognitive-services-bing-news-search-signup-requirements](../../../../includes/cognitive-services-bing-entity-search-signup-requirements.md)]

@@ -7,12 +7,12 @@ ms.author: hrasheed
 ms.reviewer: hrasheed
 ms.topic: overview
 ms.date: 04/15/2019
-ms.openlocfilehash: 553f50897afaaf9c677e84f9cfffbff7d2c1e607
-ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
+ms.openlocfilehash: aa0d01bfbebd5279b5268bae9d161492f30b81de
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59679685"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65546306"
 ---
 # <a name="hdinsight-40-overview"></a>Обзор HDInsight 4.0
 
@@ -90,7 +90,7 @@ Apache Oozie 4.3.1 входит в состав HDI 4.0 со следующим�
 
 ## <a name="limitations"></a>Ограничения
 
-* HDInsight 4.0 не поддерживает MapReduce. Вместо этого используйте Apache Tez. Узнайте больше об [Apache Tez](https://tez.apache.org/).
+* HDInsight 4.0 не поддерживает MapReduce для Apache Hive. Вместо этого используйте Apache Tez. Узнайте больше об [Apache Tez](https://tez.apache.org/).
 * HDInsight 4.0 не поддерживает Apache Storm. 
 * В HDInsight 4.0 больше не используется представление Hive. 
 * Интерпретатор оболочки в Apache Zeppelin не поддерживается в кластерах Spark и Interactive Query.

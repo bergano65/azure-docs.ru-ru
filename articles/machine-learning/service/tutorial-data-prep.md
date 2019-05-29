@@ -11,12 +11,12 @@ ms.author: MayMSFT
 ms.reviewer: trbye
 ms.date: 03/29/2019
 ms.custom: seodec18
-ms.openlocfilehash: 6e7aa231cabea9fbd76cd028f9fdc698a4dac5d6
-ms.sourcegitcommit: 399db0671f58c879c1a729230254f12bc4ebff59
+ms.openlocfilehash: 67f3a0d10490c5c63dfe262d07985f51bb384e34
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65470267"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65604474"
 ---
 # <a name="tutorial-prepare-data-for-regression-modeling"></a>Руководство по Подготовка данных для моделирования регрессии
 
@@ -38,7 +38,7 @@ ms.locfileid: "65470267"
 Перейдите к разделу [Настройка среды разработки](#start), чтобы ознакомиться с шагами записной книжки, или используйте приведенные ниже инструкции, чтобы получить записную книжку и запустить ее в службе "Записные книжки Azure" или на собственном сервере записных книжек. Чтобы запустить записную книжку, вам потребуется:
 
 * Сервер записных книжек Python 3.6, на котором установлены следующие компоненты:
-    * пакет SDK службы "Машинное обучение Azure" для подготовки данных для Python;
+    *  Пакет azureml-dataprep из пакета SDK Машинного обучения Azure для Python.
 * Пример записной книжки.
 
 * Использование [облачного сервера записных книжек в рабочей области](#azure) 
@@ -56,8 +56,8 @@ ms.locfileid: "65470267"
 
 Чтобы создать локальный сервер Jupyter Notebook на компьютере, выполните следующие действия.  Выполнив указанные действия, запустите записную книжку **tutorials/regression-part1-data-prep.ipynb**.
 
-1. Чтобы создать среду Miniconda, выполните инструкции из статьи [[Краткое руководство. Использование собственного сервера записных книжек для начала работы с Машинным обучением Azure](quickstart-run-local-notebook.md)](setup-create-workspace.md#python).  Вы можете пропустить раздел **Создание рабочей области**, но рабочая область понадобится для [части 2](tutorial-auto-train-models.md) этой серии руководств.
-1. Установите пакет SDK для подготовки данных в вашей среде с помощью `pip install azureml-dataprep`.
+1. Чтобы создать среду Miniconda для службы "Машинное обучение Azure" с помощью Python, выполните действия, описанные в [этом кратком руководстве](setup-create-workspace.md#sdk).  Вы можете пропустить раздел **Создание рабочей области**, но рабочая область понадобится для [части 2](tutorial-auto-train-models.md) этой серии руководств.
+1. Установите azureml-dataprep в вашей среде с помощью `pip install azureml-dataprep`.
 1. Клонируйте [репозиторий GitHub](https://aka.ms/aml-notebooks).
 
     ```

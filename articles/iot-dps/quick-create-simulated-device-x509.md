@@ -9,12 +9,12 @@ ms.service: iot-dps
 services: iot-dps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: 2a27ec63ea4ae25823c604612bd3bcf3a057da61
-ms.sourcegitcommit: 4891f404c1816ebd247467a12d7789b9a38cee7e
+ms.openlocfilehash: ae5a1708b56db45bec38a4482b5dfd936bdedd4a
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "61250010"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65901235"
 ---
 # <a name="quickstart-provision-an-x509-simulated-device-using-the-azure-iot-c-sdk"></a>Краткое руководство. Подготовка имитированного устройства X.509 с помощью пакета SDK для устройства C Интернета вещей Azure
 
@@ -35,7 +35,7 @@ ms.locfileid: "61250010"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Visual Studio 2015 или [Visual Studio 2017](https://www.visualstudio.com/vs/) со включенной рабочей нагрузкой [Разработка классических приложений на C++](https://www.visualstudio.com/vs/support/selecting-workloads-visual-studio-2017/).
+* [Visual Studio 2015](https://visualstudio.microsoft.com/vs/) или более поздней версии с включенной рабочей нагрузкой [Разработка классических приложений на C++](https://www.visualstudio.com/vs/support/selecting-workloads-visual-studio-2017/).
 * Установите последнюю версию [Git](https://git-scm.com/download/).
 
 
@@ -110,9 +110,9 @@ ms.locfileid: "61250010"
 
 4. В меню Visual Studio выберите **Отладка** > **Запуск без отладки**, чтобы запустить решение. При появлении запроса введите **i** в окне вывода для индивидуальной регистрации. 
 
-    В окне вывода появится локально созданный самозаверяющий сертификат X.509 для имитированного устройства. Скопируйте в буфер обмена выходные данные, начиная со строки **-----BEGIN CERTIFICATE-----** и заканчивая строкой **-----END CERTIFICATE-----**. Не забудьте скопировать и эти две строки. Вам нужен только первый сертификат из окна выходных данных.
+    В окне вывода появится локально созданный самозаверяющий сертификат X.509 для имитированного устройства. Скопируйте в буфер обмена выходные данные, начиная со строки **-----BEGIN CERTIFICATE-----** и заканчивая строкой **-----END CERTIFICATE-----** . Не забудьте скопировать и эти две строки. Вам нужен только первый сертификат из окна выходных данных.
  
-5. С помощью текстового редактора сохраните сертификат в новый файл с именем **_X509testcert.pem_**. 
+5. С помощью текстового редактора сохраните сертификат в новый файл с именем **_X509testcert.pem_** . 
 
 
 ## <a name="create-a-device-enrollment-entry-in-the-portal"></a>Создание записи регистрации устройств на портале
@@ -141,7 +141,7 @@ ms.locfileid: "61250010"
 
 
 
-1. На портале Azure выберите вкладку **Обзор** службы подготовки устройств и запишите значение **_области идентификатора_**.
+1. На портале Azure выберите вкладку **Обзор** службы подготовки устройств и запишите значение **_области идентификатора_** .
 
     ![Извлеките сведения о конечной точке службы подготовки устройств из колонки на портале](./media/quick-create-simulated-device-x509/extract-dps-endpoints.png) 
 

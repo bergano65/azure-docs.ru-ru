@@ -5,21 +5,23 @@ services: container-registry
 author: dlepow
 ms.service: container-registry
 ms.topic: tutorial
-ms.date: 09/24/2018
+ms.date: 05/04/2019
 ms.author: danlep
 ms.custom: seodec18, mvc
-ms.openlocfilehash: 5aa637938433eb1f906f0a4d81038cec0d6c6dcc
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 7a9a1e3d3c92f43d19a75e7cd0e10b3fd395a9b5
+ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58893016"
+ms.lasthandoff: 05/11/2019
+ms.locfileid: "65544994"
 ---
 # <a name="tutorial-automate-container-image-builds-in-the-cloud-when-you-commit-source-code"></a>Руководство. Автоматизация создания образов контейнеров в облаке при фиксации исходного кода
 
-В дополнение к функции [быстрой задачи](container-registry-tutorial-quick-task.md) решение "Задачи ACR" поддерживает автоматические сборки образов контейнера Docker с помощью *задачи сборки*. Из этого руководства вы узнаете, как с помощью Azure CLI создать задание, которое автоматически активирует сборки образов в облаке при фиксации исходного кода в репозитории Git.
+Помимо [быстрых задач](container-registry-tutorial-quick-task.md), пакет "Задачи Реестра контейнеров Azure" поддерживает автоматическую сборку образов контейнеров Docker при фиксации исходного кода в репозитории Git.
 
-В этом руководстве, второй части серии:
+В этом руководстве решение "Задачи Реестра контейнеров Azure" компилирует и отправляет один образ контейнера, указанный в Dockerfile, при фиксации исходного кода в репозитории Git. Чтобы создать [многошаговую задачу](container-registry-tasks-multi-step.md), в которой используется YAML-файл для определения действий по сборке, отправке и тестированию (при необходимости) нескольких контейнеров при фиксации кода, см. статью [Tutorial: Run a multi-step container workflow in the cloud when you commit source code](container-registry-tutorial-multistep-task.md) (Руководство. Запуск многошагового рабочего процесса в облаке при фиксации исходного кода). Обзор решения "Задачи ACR" см. в статье [Automate OS and framework patching with ACR Tasks](container-registry-tasks-overview.md) (Автоматизация установки исправлений для ОС и платформы с помощью службы "Задачи ACR").
+
+В этом руководстве рассматриваются следующие темы:
 
 > [!div class="checklist"]
 > * Создание задачи
@@ -33,51 +35,13 @@ ms.locfileid: "58893016"
 
 Если вы хотите использовать Azure CLI локально, установите Azure CLI версии **2.0.46** или более поздней и выполните вход с помощью [az login][az-login]. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо установить или обновить CLI, см. статью [Установка Azure CLI][azure-cli].
 
-## <a name="prerequisites"></a>Предварительные требования
+[!INCLUDE [container-registry-task-tutorial-prereq.md](../../includes/container-registry-task-tutorial-prereq.md)]
 
-### <a name="get-sample-code"></a>Получение примера кода
-
-В этом руководстве предполагается, что вы уже выполнили шаги в [предыдущем руководстве](container-registry-tutorial-quick-task.md), создали вилку и клонировали пример репозитория. Если вы еще этого не сделали, выполните действия, описанные в разделе [Предварительные требования](container-registry-tutorial-quick-task.md#prerequisites) в предыдущем руководстве, прежде чем перед продолжить.
-
-### <a name="container-registry"></a>Реестр контейнеров
-
-Для выполнения заданий данного руководства необходимо иметь реестр контейнеров Azure в подписке Azure. Если у вас его нет, воспользуйтесь инструкциями в [предыдущем руководстве](container-registry-tutorial-quick-task.md) или [кратком руководстве по созданию реестра контейнеров с помощью Azure CLI](container-registry-get-started-azure-cli.md).
-
-## <a name="overview-of-acr-tasks"></a>Общие сведения о решении "Задачи ACR"
-
-Задача определяет свойства автоматической сборки, включая расположение исходного образа контейнера и событие, которое запускает сборку. Когда происходит событие, определенное в задаче, например фиксация в репозитории Git, решение "Задачи ACR" инициирует сборку образа контейнера в облаке. Затем оно по умолчанию помещает успешно созданный образ в реестр контейнеров Azure, указанный в задаче.
-
-Решение "Задачи ACR" в настоящее время поддерживает следующие триггеры:
-
-* фиксация в репозитории Git;
-* обновление базового образа.
-
-В этом руководстве в Реестре контейнеров Azure создается и отправляется один контейнер изображения, указанный в Dockerfile. С помощью решения "Задачи ACR" можно также запускать [многошаговые задачи](container-registry-tasks-multi-step.md), используя файл YAML для определения действий по созданию, отправке и тестированию (при необходимости) нескольких контейнеров.
-
-## <a name="create-a-build-task"></a>Создание задачи сборки
-
-В этом разделе вы сначала создаете личный маркер доступа GitHub (PAT) для использования с решением "Задачи ACR". Затем вы создаете задачу, которая запускает сборку при фиксации кода в вилке репозитория.
-
-### <a name="create-a-github-personal-access-token"></a>Создание личного маркера доступа GitHub
-
-Чтобы инициировать сборку при фиксации кода в репозитории Git, решению "Задачи ACR" требуется личный маркер доступа для доступа к репозиторию. Выполните следующие действия для создания PAT в GitHub:
-
-1. Перейдите на страницу создания PAT на GitHub по адресу https://github.com/settings/tokens/new.
-1. Введите краткое **описание** маркера, например "ACR Task Demo".
-1. Под флажком **repo** установите флажки **repo:status** и **public_repo**.
-
-   ![Снимок экрана со страницей создания личного маркера доступа GitHub][build-task-01-new-token]
-
-1. Нажмите кнопку **Generate token** (Создать маркер) (может появиться запрос на подтверждение пароля).
-1. Скопируйте и сохраните созданный маркер в **защищенном расположении** (вы используете этот маркер при определении задачи в следующем разделе).
-
-   ![Снимок экрана созданного личного маркера доступа на GitHub][build-task-02-generated-token]
-
-### <a name="create-the-build-task"></a>Создание задачи сборки
+## <a name="create-the-build-task"></a>Создание задачи сборки
 
 Теперь, когда вы выполнили шаги, необходимые для включения в решении "Задачи ACR" чтения состояния фиксации и создания веб-перехватчиков в репозитории, вы можете создать задачу, которая запускает сборку образа контейнера при фиксации кода в репозитории.
 
-Сначала заполните эти переменные среды оболочки значениями, подходящими для вашей среды. Этот шаг не является обязательным, но он упрощает выполнение многолинейных команд Azure CLI в этом руководстве. Если вы не заполните эти переменные среды, нужно будет вручную заменять каждое значение, где бы оно не появлялось в примерах команд.
+Сначала заполните эти переменные среды оболочки значениями, подходящими для вашей среды. Этот шаг не является обязательным, но он упрощает выполнение многолинейных команд Azure CLI в этом руководстве. Если вы не заполните эти переменные среды, вам придется вручную заменять каждое значение в примерах команд.
 
 ```azurecli-interactive
 ACR_NAME=<registry-name>        # The name of your Azure container registry
@@ -106,14 +70,6 @@ az acr task create \
 Выходные данные успешно выполненной команды [az acr task create][az-acr-task-create] имеют следующий вид:
 
 ```console
-$ az acr task create \
->     --registry $ACR_NAME \
->     --name taskhelloworld \
->     --image helloworld:{{.Run.ID}} \
->     --context https://github.com/$GIT_USER/acr-build-helloworld-node.git \
->     --branch master \
->     --file Dockerfile \
->     --git-access-token $GIT_PAT
 {
   "agentConfiguration": {
     "cpu": 2
@@ -326,12 +282,11 @@ da1                       Linux       Succeeded  Manual      2018-09-17T22:29:59
 
 <!-- LINKS - Internal -->
 [azure-cli]: /cli/azure/install-azure-cli
-[az-acr-task]: /cli/azure/acr
-[az-acr-task-create]: /cli/azure/acr
-[az-acr-task-run]: /cli/azure/acr
-[az-acr-task-list-runs]: /cli/azure/acr
+[az-acr-task]: /cli/azure/acr/task
+[az-acr-task-create]: /cli/azure/acr/task#az-acr-task-create
+[az-acr-task-run]: /cli/azure/acr/task#az-acr-task-run
+[az-acr-task-list-runs]: /cli/azure/acr/task#az-acr-task-list-runs
 [az-login]: /cli/azure/reference-index#az-login
 
-<!-- IMAGES -->
-[build-task-01-new-token]: ./media/container-registry-tutorial-build-tasks/build-task-01-new-token.png
-[build-task-02-generated-token]: ./media/container-registry-tutorial-build-tasks/build-task-02-generated-token.png
+
+

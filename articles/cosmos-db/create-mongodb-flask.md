@@ -8,12 +8,12 @@ ms.subservice: cosmosdb-mongo
 ms.devlang: python
 ms.topic: quickstart
 ms.date: 12/26/2018
-ms.openlocfilehash: 35159a1630c7f1268119cd55cc6e0ac99dfd7b5f
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 07f213de3509ed16af627af5e0583cd985c278f6
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58119213"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65954658"
 ---
 # <a name="quickstart-build-a-python-app-using-azure-cosmos-dbs-api-for-mongodb"></a>Краткое руководство. Создание приложения Python с использованием API Azure Cosmos DB для MongoDB
 
@@ -104,7 +104,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 2. Откройте окно терминала и подключитесь (`cd`) к каталогу, в котором будет сохранено приложение.
 
-3. Если вы используете Mac, задайте переменную среды для приложения Flask `set FLASK_APP=app.py` или `export FLASK_APP=app.py`.
+3. Затем задайте переменную среды, используя `set FLASK_APP=app.py` для приложения Flask, `$env:FLASK_APP = app.py` для редакторов PowerShell или `export FLASK_APP=app.py` для Mac. 
 
 4. Запустите приложение с `flask run` и перейдите по адресу [http://127.0.0.1:5000/](http://127.0.0.1:5000/).
 
@@ -130,7 +130,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 Теперь приложение со всеми сведениями, необходимыми для взаимодействия с Cosmos DB, обновлено. Это приложение можно запустить так же, как и прежде.
 
-## <a name="deploy-to-azure"></a>Развернуть в Azure
+## <a name="deploy-to-azure"></a>Развертывание в Azure
 
 Чтобы развернуть это приложение, можно создать веб-приложение в Azure и включить непрерывное развертывание с ветвления в репозитории GitHub. Для настройки непрерывного развертывания с GitHub в Azure используйте руководство [Непрерывное развертывание в службе приложений Azure](https://docs.microsoft.com/azure/app-service/deploy-continuous-deployment).
 
@@ -142,7 +142,7 @@ Azure Cosmos DB — это глобально распределенная мн
     db.authenticate(name=os.getenv("MONGO_USERNAME"),password=os.getenv("MONGO_PASSWORD"))
 ```
 
-Затем к параметрам приложения необходимо добавить MONGOURL, MONGO_PASSWORD и MONGO_USERNAME. Дополнительные сведения о параметрах приложений в веб-приложениях Azure см. в разделе [Параметры приложения](https://docs.microsoft.com/azure/app-service-web/web-sites-configure#application-settings).
+Затем к параметрам приложения необходимо добавить MONGOURL, MONGO_PASSWORD и MONGO_USERNAME. Дополнительные сведения о параметрах приложений в веб-приложениях Azure см. в разделе [Параметры приложения](https://docs.microsoft.com/azure/app-service/configure-common#configure-app-settings).
 
 Если вы не хотите создавать вилку этого репозитория, можете нажать кнопку "Развертывание в Azure" ниже. Затем перейдите в Azure и настройте параметры приложения с информацией о своей учетной записи Cosmos DB.
 

@@ -3,19 +3,19 @@ title: Краткое руководство. Получение сведени�
 titleSuffix: Azure Cognitive Services
 description: Узнайте, как отправить изображение с помощью пакета SDK визуального поиска Bing и получить аналитические сведения об этом изображении.
 services: cognitive-services
-author: mikedodaro
+author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-web-search
 ms.topic: quickstart
-ms.date: 05/16/2018
+ms.date: 05/15/2019
 ms.author: v-gedod
-ms.openlocfilehash: a7fc4686ec31b4c3a23d3e0ff72e5e2a270015b0
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: 9fd693207b429ddc0a2bfdd772f4822f188ac3f7
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57532105"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65884928"
 ---
 # <a name="quickstart-get-image-insights-using-the-bing-visual-search-sdk-for-c"></a>Краткое руководство. Получение сведений изображений с помощью пакета SDK для визуального поиска Bing для C#
 
@@ -23,7 +23,7 @@ ms.locfileid: "57532105"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Любой выпуск [Visual Studio 2017](https://www.visualstudio.com/downloads/).
+* [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/).
 * Если вы используете Linux или MacOS, это приложение можно запустить с помощью [Mono](https://www.mono-project.com/).
 * Пакет NuGet для визуального поиска. 
     - В обозревателе решений в Visual Studio щелкните правой кнопкой мыши проект и выберите `Manage NuGet Packages` в меню. Установите пакет `Microsoft.Azure.CognitiveServices.Search.VisualSearch`. При установке пакетов NuGet также устанавливаются следующие пакеты:

@@ -10,12 +10,12 @@ ms.subservice: bing-web-search
 ms.topic: quickstart
 ms.date: 03/12/2019
 ms.author: aahi
-ms.openlocfilehash: 273922c8cf48c24ff3b1b55fa44b36b69e061057
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: d6758fc5434406e42acf65ff3b712227b5cec0f8
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57863905"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65991618"
 ---
 # <a name="quickstart-use-the-bing-web-search-sdk-for-python"></a>Краткое руководство. Использование пакета SDK Поиска в Интернете Bing для Python
 
@@ -93,8 +93,8 @@ python -m pip install azure-cognitiveservices-search-websearch
     # Replace with your subscription key.
     subscription_key = "YOUR_SUBSCRIPTION_KEY"
 
-    # Instantiate the client.
-    client = WebSearchAPI(CognitiveServicesCredentials(subscription_key))
+    # Instantiate the client and replace with your endpoint.
+    client = WebSearchAPI(CognitiveServicesCredentials(subscription_key), base_url = "YOUR_ENDPOINT")
 
     # Make a request. Replace Yosemite if you'd like.
     web_data = client.web.search(query="Yosemite")
@@ -164,7 +164,9 @@ python -m pip install azure-cognitiveservices-search-websearch
         print("Didn't find any videos...")
     ```
 
-1. Замените значение `subscription_key` действительным ключом подписки.
+1. Замените значение `SUBSCRIPTION_KEY` действительным ключом подписки.
+
+1. Замените `YOUR_ENDPOINT` URL-адресом своей конечной точки на портале.
 
 1. Запустите программу. Например, `python your_program.py`.
 

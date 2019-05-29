@@ -11,12 +11,12 @@ ms.subservice: qna-maker
 ms.topic: tutorial
 ms.date: 05/07/2019
 ms.author: diberry
-ms.openlocfilehash: 85f8643a0936209c8f280498df92555a7b40c533
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: a80a815d4a1a892b5258aef1c1fc7ef4ab881fe7
+ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65149948"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65594162"
 ---
 # <a name="tutorial-from-qna-maker-portal-create-a-knowledge-base"></a>Руководство по На портале QnA Maker создайте базу знаний.
 
@@ -68,7 +68,7 @@ ms.locfileid: "65149948"
     |--|--|--|
     |URL-адрес|`https://docs.microsoft.com/azure/cognitive-services/qnamaker/faqs` |Содержимое вопросов и ответов по указанному URL-адресу находится в формате: сначала вопрос, а потом ответ. QnA Maker может интерпретировать этот формат, чтобы извлечь вопросы и связанные с ними ответы.|
     |Файл |_Не используется в этом руководстве_|Этот файл позволяет отправить файлы для вопросов и ответов. |
-    |Chit-chat (Беседа)|Понятное имя|Это придает непринужденность общим вопросам и ответам. Эти вопросы и ответы можно изменить позже. |
+    |Chit-chat (Беседа)|Понятное имя|Это придает [характер](../Concepts/best-practices.md#chit-chat) непринужденности общим вопросам и ответам. Эти вопросы и ответы можно изменить позже. |
 
     ![Шаг 4 процесса создания базы знаний](../media/qnamaker-tutorial-create-publish-query-in-portal/create-kb-step-4.png)
 

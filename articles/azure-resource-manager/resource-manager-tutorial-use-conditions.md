@@ -10,21 +10,21 @@ ms.service: azure-resource-manager
 ms.workload: multiple
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.date: 03/04/2019
+ms.date: 05/21/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: ad7c87161c550c4728978e9c975252cab34f76ec
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 6a03707246f27bcba9cc46168ec04893b7bbc4c3
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60389797"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65990795"
 ---
 # <a name="tutorial-use-condition-in-azure-resource-manager-templates"></a>Руководство по Использование условия в шаблонах Azure Resource Manager
 
 Узнайте, как развернуть ресурсы Azure на основе условий.
 
-В руководстве по [настройке порядка развертывания ресурсов](./resource-manager-tutorial-create-templates-with-dependent-resources.md) описано, как создать виртуальную машину, виртуальную сеть и некоторые другие зависимые ресурсы, включая учетную запись хранения. Чтобы не создавать учетную запись хранения каждый раз, вы можете позволить пользователям выбрать, создавать ли новую учетную запись хранения или использовать существующую. Для достижения этой цели нужно определить дополнительный параметр. Если значение параметра равно "new", будет создана новая учетная запись хранения.
+В руководстве по [настройке порядка развертывания ресурсов](./resource-manager-tutorial-create-templates-with-dependent-resources.md) описано, как создать виртуальную машину, виртуальную сеть и некоторые другие зависимые ресурсы, включая учетную запись хранения. Чтобы не создавать учетную запись хранения каждый раз, вы можете позволить пользователям выбрать, создавать ли новую учетную запись хранения или использовать существующую. Для достижения этой цели нужно определить дополнительный параметр. Если значение параметра равно "new", будет создана новая учетная запись хранения. В противном случае используется учетная запись хранения с указанным именем.
 
 ![Схема использования условия в шаблонах Azure Resource Manager](./media/resource-manager-tutorial-use-conditions/resource-manager-template-use-condition-diagram.png)
 
@@ -35,6 +35,13 @@ ms.locfileid: "60389797"
 > * Изменение шаблона
 > * Развертывание шаблона
 > * Очистка ресурсов
+
+В этом учебнике рассматривается только основной сценарий с использованием условий. Дополнительные сведения можно найти в разделе 
+
+* [Структура файла шаблона: условие](./resource-group-authoring-templates.md#condition).
+* [Conditionally deploy a resource in an Azure Resource Manager template](/azure/architecture/building-blocks/extending-templates/conditional-deploy.md) (Условное развертывание ресурсов в шаблоне Azure Resource Manager).
+* [Функция шаблона: If](./resource-group-template-functions-logical.md#if).
+* [Comparison functions for Azure Resource Manager templates](./resource-group-template-functions-comparison.md) (Функции сравнения для шаблонов Azure Resource Manager)
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
@@ -48,6 +55,7 @@ ms.locfileid: "60389797"
     ```azurecli-interactive
     openssl rand -base64 32
     ```
+
     Для защиты криптографических ключей и других секретов используйте Azure Key Vault. Дополнительные сведения см. в статье [Руководство. Интеграция с Azure Key Vault при развертывании шаблона Resource Manager](./resource-manager-tutorial-use-key-vault.md). Мы также рекомендуем обновлять пароль каждые три месяца.
 
 ## <a name="open-a-quickstart-template"></a>Открытие шаблона быстрого запуска
@@ -60,6 +68,7 @@ ms.locfileid: "60389797"
     ```url
     https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-simple-windows/azuredeploy.json
     ```
+
 3. Чтобы открыть файл, выберите **Открыть**.
 4. Шаблоном определено пять ресурсов:
 
@@ -82,12 +91,11 @@ ms.locfileid: "60389797"
 Вот что нужно сделать, чтобы внести изменения:
 
 1. Откройте файл **azuredeploy.json** в Visual Studio Code.
-2. Замените во всем шаблоне **variables('storageAccountName')** на **parameters('storageAccountName')**.  **variables('storageAccountName')** указан три раза.
+2. Замените во всем шаблоне **three variables('storageAccountName')** на **parameters('storageAccountName')** .
 3. Удалите следующее определение переменной:
 
-    ```json
-    "storageAccountName": "[concat(uniquestring(resourceGroup().id), 'sawinvm')]",
-    ```
+    ![Схема использования условия в шаблонах Azure Resource Manager](./media/resource-manager-tutorial-use-conditions/resource-manager-tutorial-use-condition-template-remove-storageaccountname.png)
+
 4. Добавьте следующие два параметра в шаблон:
 
     ```json
@@ -95,13 +103,14 @@ ms.locfileid: "60389797"
       "type": "string"
     },
     "newOrExisting": {
-      "type": "string", 
+      "type": "string",
       "allowedValues": [
-        "new", 
+        "new",
         "existing"
       ]
     },
     ```
+
     Определение обновленных параметров выглядит так:
 
     ![Условие использования Resource Manager](./media/resource-manager-tutorial-use-conditions/resource-manager-tutorial-use-condition-template-parameters.png)
@@ -117,7 +126,7 @@ ms.locfileid: "60389797"
     Обновленное определение учетной записи хранения выглядит так:
 
     ![Условие использования Resource Manager](./media/resource-manager-tutorial-use-conditions/resource-manager-tutorial-use-condition-template.png)
-6. Присвойте параметру **storageUri** следующее значение:
+6. Обновите свойство **storageUri** определения ресурса виртуальной машины следующим значением:
 
     ```json
     "storageUri": "[concat('https://', parameters('storageAccountName'), '.blob.core.windows.net')]"
@@ -129,11 +138,7 @@ ms.locfileid: "60389797"
 
 ## <a name="deploy-the-template"></a>Развертывание шаблона
 
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
-
-За инструкциями по развертыванию шаблона обратитесь к [этому разделу](./resource-manager-tutorial-create-templates-with-dependent-resources.md#deploy-the-template).
-
-При развертывании шаблона с помощью Azure PowerShell необходимо указать один дополнительный параметр: Для повышения уровня безопасности используйте пароль, созданный для учетной записи администратора виртуальной машины. См. раздел [Предварительные требования](#prerequisites).
+Следуйте инструкциям в разделе о [развертывании шаблона](./resource-manager-tutorial-create-templates-with-dependent-resources.md#deploy-the-template), чтобы открыть Cloud Shell и отправить измененный шаблон, а затем выполните сценарий PowerShell для развертывания шаблона.
 
 ```azurepowershell
 $resourceGroupName = Read-Host -Prompt "Enter the resource group name"
@@ -162,12 +167,12 @@ New-AzResourceGroupDeployment `
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Если ресурсы Azure больше не нужны, их можно удалить. Для этого необходимо удалить группу ресурсов.
+Если ресурсы Azure больше не нужны, их можно удалить. Для этого необходимо удалить группу ресурсов. Чтобы удалить группу ресурсов, выберите **Попробовать**, чтобы открыть Cloud Shell. Чтобы вставить сценарий PowerShell, щелкните панель оболочки правой кнопкой мыши и выберите **Вставить**.
 
-1. На портале Azure в меню слева выберите **Группа ресурсов**.
-2. В поле **Filter by name** (Фильтровать по имени) введите имя группы ресурсов.
-3. Выберите имя группы ресурсов.  В группе ресурсов должно появится шесть ресурсов.
-4. В главном меню выберите **Удалить группу ресурсов**.
+```azurepowershell-interactive
+$resourceGroupName = Read-Host -Prompt "Enter the same resource group name you used in the last procedure"
+Remove-AzResourceGroup -Name $resourceGroupName
+```
 
 ## <a name="next-steps"></a>Дополнительная информация
 

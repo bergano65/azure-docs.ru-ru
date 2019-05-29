@@ -9,12 +9,12 @@ ms.service: iot-dps
 services: iot-dps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: 93fc426d9de027100e70502bcf6ea3aad2c44e10
-ms.sourcegitcommit: 41015688dc94593fd9662a7f0ba0e72f044915d6
+ms.openlocfilehash: 31e71e942d7bd3f7a9739eeb83bd3ed250bb2c61
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59500215"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65909018"
 ---
 # <a name="quickstart-provision-a-simulated-device-with-symmetric-keys"></a>Краткое руководство. Подготовка имитированного устройства с использованием симметричных ключей
 
@@ -34,7 +34,7 @@ ms.locfileid: "59500215"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Visual Studio 2015 или [Visual Studio 2017](https://www.visualstudio.com/vs/) со включенной рабочей нагрузкой [Разработка классических приложений на C++](https://www.visualstudio.com/vs/support/selecting-workloads-visual-studio-2017/).
+* [Visual Studio 2015](https://visualstudio.microsoft.com/vs/) или более поздней версии с включенной рабочей нагрузкой [Разработка классических приложений на C++](https://www.visualstudio.com/vs/support/selecting-workloads-visual-studio-2017/).
 * Установите последнюю версию [Git](https://git-scm.com/download/).
 
 
@@ -124,7 +124,7 @@ ms.locfileid: "59500215"
 
 
 
-1. На портале Azure выберите вкладку **Обзор** службы подготовки устройств и запишите значение **_области идентификатора_**.
+1. На портале Azure выберите вкладку **Обзор** службы подготовки устройств и запишите значение **_области идентификатора_** .
 
     ![Извлеките сведения о конечной точке службы подготовки устройств из колонки на портале](./media/quick-create-simulated-device-x509/extract-dps-endpoints.png) 
 
@@ -205,4 +205,4 @@ ms.locfileid: "59500215"
 В этом кратком руководстве вы создали имитированное устройство на компьютере Windows и подготовили его для Центра Интернета вещей с использованием симметричного ключа в Службе подготовки устройств к добавлению в Центр Интернета вещей Azure на портале. Чтобы узнать, как выполнить программную регистрацию устройства X.509, изучите соответствующее краткое руководство. 
 
 > [!div class="nextstepaction"]
-> [Краткое руководство Azure по регистрации устройств X.509 в Службе подготовки устройств к добавлению в Центр Интернета вещей](quick-enroll-device-x509-java.md)
+> [Краткое руководство Azure. Регистрация устройств X.509 в службе подготовки устройств Центра Интернета вещей](quick-enroll-device-x509-java.md)

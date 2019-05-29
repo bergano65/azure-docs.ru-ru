@@ -3,8 +3,8 @@ title: Начало работы с Xamarin и Azure AD | Документаци
 description: Создание приложений Xamarin, которые интегрируются с Azure AD для входа в систему и вызывают программные интерфейсы, защищенные Azure AD, с помощью OAuth.
 services: active-directory
 documentationcenter: xamarin
-author: CelesteDG
-manager: mtillman
+author: rwike77
+manager: CelesteDG
 editor: ''
 ms.assetid: 198cd2c3-f7c8-4ec2-b59d-dfdea9fe7d95
 ms.service: active-directory
@@ -13,17 +13,17 @@ ms.workload: identity
 ms.tgt_pltfrm: mobile-xamarin
 ms.devlang: dotnet
 ms.topic: quickstart
-ms.date: 09/24/2018
-ms.author: celested
+ms.date: 05/22/2019
+ms.author: ryanwi
 ms.reviewer: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b0a20c2e6524b0c466f5c45578e0ba8eaad351ea
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: e3470d9220ed471a05792ed5b3bb259e0dcbe0a6
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58881891"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66121918"
 ---
 # <a name="quickstart-build-a-xamarin-app-that-integrates-microsoft-sign-in"></a>Краткое руководство. Создание приложения Xamarin, которое интегрирует функцию входа в Майкрософт
 
@@ -57,14 +57,14 @@ ms.locfileid: "58881891"
 1. Войдите на [портале Azure](https://portal.azure.com).
 2. На верхней панели щелкните свою учетную запись. Затем в списке **Каталог** выберите клиент Active Directory для регистрации приложения.
 3. В области слева щелкните **Все службы** и выберите **Azure Active Directory**.
-4. Щелкните **Регистрация приложений**, а затем выберите **Добавить**.
-5. Следуйте инструкциям на экране, чтобы создать **собственное клиентское приложение**.
-   * **Имя** — описание приложения для пользователей.
+4. Щелкните **Регистрация приложений** и выберите **Новая регистрация**.
+5. Чтобы создать клиентское приложение, следуйте инструкциям на экране.
+   * **Имя** — это описание приложения для пользователей.
+   * В разделе **Поддерживаемые типы учетных записей** выберите **Accounts in any organizational directory and personal Microsoft accounts** (Учетные записи в любом каталоге организации и личные учетные записи Майкрософт).
    * **URI перенаправления** представляет собой сочетание схемы и строки, используемое Azure AD для возвращения ответов маркеров. Введите значение (например `http://DirectorySearcher`).
 6. После завершения регистрации Azure AD присваивает приложению уникальный идентификатор. Скопируйте значение на вкладке **Приложение**. Оно потребуется вам позже.
-7. На странице **Параметры** выберите **Необходимые разрешения** и щелкните **Добавить**.
-8. Выберите API **Microsoft Graph**. В разделе **Делегированные разрешения** добавьте разрешение **Чтение данных каталога**. 
-   Это действие позволяет приложению отправлять запросы в API Graph для пользователей.
+7. На странице **Разрешения API** выберите **Добавить разрешение**. На шаге **Выбор API** щелкните ***Microsoft Graph***.
+8. В разделе **Делегированные разрешения** выберите разрешение **User.Read**, а затем щелкните **Добавить**, чтобы сохранить изменения. Это разрешение позволит приложению запрашивать API Graph для Azure AD для пользователей.
 
 ## <a name="step-3-install-and-configure-adal"></a>Шаг 3. Установка и настройка ADAL
 

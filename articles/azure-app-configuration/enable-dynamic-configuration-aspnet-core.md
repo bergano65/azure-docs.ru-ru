@@ -14,12 +14,12 @@ ms.topic: tutorial
 ms.date: 02/24/2019
 ms.author: yegu
 ms.custom: mvc
-ms.openlocfilehash: cae29fe045d1bdc17f414ff016642635b74320df
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.openlocfilehash: ee539b87c08dd00545060cb30d28ac7fcd01e61b
+ms.sourcegitcommit: 17411cbf03c3fa3602e624e641099196769d718b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65408829"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65518990"
 ---
 # <a name="tutorial-use-dynamic-configuration-in-an-aspnet-core-app"></a>Руководство по Использование динамической конфигурации в приложении ASP.NET Core
 
@@ -63,6 +63,9 @@ ASP.NET Core имеет подключаемую систему конфигур
     ```
 
     Второй параметр в методе `.Watch` — это интервал опроса, с которым клиентская библиотека ASP.NET опрашивает хранилище конфигураций приложений. Клиентская библиотека проверяет конкретный параметр конфигурации, чтобы увидеть, произошло ли какое-либо изменение.
+    
+    > [!NOTE]
+    > Для метода расширения `Watch` по умолчанию задан интервал опроса в 30 секунд, если не указано другое.
 
 2. Добавьте файл *Settings.cs*, который определяет и реализует новый класс `Settings`.
 

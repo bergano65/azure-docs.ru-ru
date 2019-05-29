@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 05/02/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8de2f7cb90e004673c59282a8023d55df364220a
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 9d4b154b8ce55c381f1398c696bc439067dccfab
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65140858"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65899749"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-alibaba-cloud-service-role-based-sso"></a>Руководство по Интеграция Azure Active Directory с Alibaba Cloud Service (единый вход на основе ролей)
 
@@ -66,7 +66,7 @@ ms.locfileid: "65140858"
 
     ![Кнопка "Создать приложение"](common/add-new-app.png)
 
-4. В поле поиска введите **Alibaba Cloud Service (единый вход на основе ролей)**, выберите **Alibaba Cloud Service (единый вход на основе ролей)** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
+4. В поле поиска введите **Alibaba Cloud Service (единый вход на основе ролей)** , выберите **Alibaba Cloud Service (единый вход на основе ролей)** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
     ![Alibaba Cloud Service (единый вход на основе ролей) в списке результатов](common/search-new-app.png)
 
@@ -135,8 +135,8 @@ ms.locfileid: "65140858"
 
     | ИМЯ | Пространство имен | Исходный атрибут|
     | ---------------| ------------| --------------- |
-    | Роль | https://www.aliyun.com/SAML-Role/Attribute | user.assignedroles |
-    | RoleSessionName | https://www.aliyun.com/SAML-Role/Attribute | user.userprincipalname |
+    | Роль | https:\//www.aliyun.com/SAML-Role/Attribute | user.assignedroles |
+    | RoleSessionName | https:\//www.aliyun.com/SAML-Role/Attribute | user.userprincipalname |
 
     > [!NOTE]
     > Перейдите по [этой ссылке](https://docs.microsoft.com/azure/active-directory/develop/active-directory-enterprise-app-role-management), чтобы прочитать о настройке **роли** в Azure AD.
@@ -252,7 +252,7 @@ ms.locfileid: "65140858"
 
 ### <a name="configure-alibaba-cloud-service-role-based-sso-single-sign-on"></a>Настройка единого входа для Alibaba Cloud Service (единый вход на основе ролей)
 
-Чтобы настроить единый вход на стороне **Alibaba Cloud Service (единый вход на основе ролей)**, нужно отправить скачанный **XML-файл метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, в [службу поддержки Alibaba Cloud Service (единый вход на основе ролей)](https://www.aliyun.com/service/). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **Alibaba Cloud Service (единый вход на основе ролей)** , нужно отправить скачанный **XML-файл метаданных федерации** и соответствующие URL-адреса, скопированные на портале Azure, в [службу поддержки Alibaba Cloud Service (единый вход на основе ролей)](https://www.aliyun.com/service/). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
@@ -282,7 +282,7 @@ ms.locfileid: "65140858"
 
 В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure путем предоставления доступа к Alibaba Cloud Service (единый вход на основе ролей).
 
-1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **Alibaba Cloud Service (единый вход на основе ролей)**.
+1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **Alibaba Cloud Service (единый вход на основе ролей)** .
 
     ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
@@ -317,7 +317,7 @@ ms.locfileid: "65140858"
 
 После завершения работы с предыдущими конфигурациями протестируйте приложение Alibaba Cloud Service (единый вход на основе ролей), выполнив следующие шаги:
 
-1. На портале Azure перейдите на страницу **Alibaba Cloud Service (единый вход на основе ролей)**, выберите **Единый вход** и нажмите **Тест**.
+1. На портале Azure перейдите на страницу **Alibaba Cloud Service (единый вход на основе ролей)** , выберите **Единый вход** и нажмите **Тест**.
 
     ![Конфигурация тестирования](./media/alibaba-cloud-service-role-based-sso-tutorial/test03.png)
 

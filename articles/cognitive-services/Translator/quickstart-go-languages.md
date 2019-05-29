@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: quickstart
 ms.date: 02/21/2019
 ms.author: erhopf
-ms.openlocfilehash: 93cc20c303d6c8ba0592651064790d83919b2948
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 113481a647b7c9b0c1499ddf376017ac9826128d
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64916638"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65602852"
 ---
 # <a name="quickstart-use-the-translator-text-api-to-get-a-list-of-supported-languages-using-go"></a>Краткое руководство. Получение списка поддерживаемых языков с помощью Go и API перевода текстов
 
@@ -25,7 +25,7 @@ ms.locfileid: "64916638"
 
 Для работы с этим кратким руководством вам понадобится:
 
-* [GO](https://golang.org/doc/install)
+* [Go](https://golang.org/doc/install)
 
 ## <a name="create-a-project-and-import-required-modules"></a>Создание проекта и импорт обязательных модулей
 
@@ -135,7 +135,7 @@ go run get-languages.go
 
 ## <a name="sample-response"></a>Пример ответа
 
-Найдите сокращенное наименование страны в этом [списке языков](https://docs.microsoft.com/azure/cognitive-services/translator/language-support).
+Найдите сокращенное наименование страны или региона в этом [списке языков](https://docs.microsoft.com/azure/cognitive-services/translator/language-support).
 
 В случае успешного выполнения ответ возвращается в формате JSON, как показано в примере ниже:
 

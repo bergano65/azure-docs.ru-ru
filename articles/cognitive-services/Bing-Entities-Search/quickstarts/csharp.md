@@ -10,12 +10,12 @@ ms.subservice: bing-entity-search
 ms.topic: quickstart
 ms.date: 03/12/2019
 ms.author: aahi
-ms.openlocfilehash: d31be245d906ba0405a44d4482272051982c943c
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 211f33d5b217714b26dc39ad63f9d1427950589a
+ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59488343"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65595777"
 ---
 # <a name="quickstart-send-a-search-request-to-the-bing-entity-search-rest-api-using-c"></a>Краткое руководство. Отправка запросов для поиска в REST API Поиска сущностей Bing с помощью C#
 
@@ -26,14 +26,15 @@ ms.locfileid: "59488343"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Любой выпуск [Visual Studio 2017](https://www.visualstudio.com/downloads/).
-* Платформа [Json.NET](https://www.newtonsoft.com/json), доступная в виде пакета NuGet.
-    * Чтобы установить пакет NuGet в Visual Studio сделайте следующее.
-        1. Щелкните правой кнопкой мыши в обозревателе решений.
-        2. Щелкните **Manage NuGet Packages...**
-        3. Найдите пакет **newtonsoft.json** и установите его.
+- Любой выпуск [Visual Studio 2017 или более поздней версии](https://www.visualstudio.com/downloads/).
 
-* Если вы используете Linux или MacOS, это приложение можно запустить с помощью [Mono](https://www.mono-project.com/).
+- Платформа [Json.NET](https://www.newtonsoft.com/json), доступная в виде пакета NuGet. Чтобы установить пакет NuGet в Visual Studio, сделайте следующее:
+
+   1. Щелкните правой кнопкой мыши имя проекта в **обозревателе решений**.
+   2. Выберите **Manage NuGet Packages...** (Управление пакетами NuGet...).
+   3. Найдите пакет *Newtonsoft.Json* и установите его.
+
+- Если вы используете Linux или MacOS, это приложение можно запустить с помощью [Mono](https://www.mono-project.com/).
 
 
 [!INCLUDE [cognitive-services-bing-news-search-signup-requirements](../../../../includes/cognitive-services-bing-entity-search-signup-requirements.md)]

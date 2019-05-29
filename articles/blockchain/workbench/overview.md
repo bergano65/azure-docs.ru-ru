@@ -5,17 +5,17 @@ services: azure-blockchain
 keywords: ''
 author: PatAltimore
 ms.author: patricka
-ms.date: 01/14/2019
+ms.date: 05/20/2019
 ms.topic: overview
 ms.service: azure-blockchain
-ms.reviewer: zeyadr
+ms.reviewer: brendal
 manager: femila
-ms.openlocfilehash: 58fd09726f05ba442c66387ecbd6cfad37f598e1
-ms.sourcegitcommit: dede0c5cbb2bd975349b6286c48456cfd270d6e9
+ms.openlocfilehash: 16e2497f4e26d16c008161477fd7d573e59e84db
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/16/2019
-ms.locfileid: "54332563"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65955198"
 ---
 # <a name="what-is-azure-blockchain-workbench"></a>Что такое Azure Blockchain Workbench?
 
@@ -41,13 +41,13 @@ Workbench автоматически передает события в служ
 
 Azure Blockchain Workbench упрощает настройку сети блокчейн консорциума в качестве предварительно настроенных решений с помощью шаблона решения Azure Resource Manager. Шаблон предоставляет упрощенное развертывание всех компонентов, необходимых для запуска консорциума. Сейчас в Blockchain Workbench поддерживается Ethereum.
 
-## <a name="use-active-directory-login"></a>Использование входа в систему Active Directory
+## <a name="use-active-directory"></a>Использовать Active Directory
 
 С помощью имеющихся протоколов блокчейна его удостоверения представлены в качестве адреса в сети. Azure Blockchain Workbench абстрагируется от удостоверения блокчейна, связав его с удостоверением Active Directory, что упрощает создание корпоративных приложений с помощью удостоверений Active Directory.
 
 ## <a name="synchronize-on-chain-data-with-off-chain-storage"></a>Синхронизация данных по цепочке с помощью хранилища вне сети
 
-Azure Blockchain Workbench упрощает анализ событий и данных блокчейна, автоматически синхронизируя эти данные в блокчейне с хранилищем вне сети. Вместо извлечения данных непосредственно из блокчейна вы можете запрашивать системы баз данных вне сети (например, SQL Server). Особый опыт работы с блокчейном не требуется для пользователей, выполняющих задачи анализа данных. 
+Azure Blockchain Workbench упрощает анализ событий и данных блокчейна, автоматически синхронизируя эти данные в блокчейне с хранилищем вне сети. Вместо извлечения данных непосредственно из блокчейна вы можете запрашивать системы баз данных вне сети (например, SQL Server). Опыт работы с блокчейном не требуется для пользователей, выполняющих задачи анализа данных.
 
 ## <a name="next-steps"></a>Дополнительная информация
 

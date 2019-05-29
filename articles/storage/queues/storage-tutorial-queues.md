@@ -9,12 +9,12 @@ ms.service: storage
 ms.subservice: queues
 ms.topic: tutorial
 ms.date: 04/24/2019
-ms.openlocfilehash: 6b833ef56b890eb4ea0db6b48fe8c2622e211498
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: 8d108e1683be03a79e87990b983f2eda3eadba90
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65233878"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65797535"
 ---
 # <a name="tutorial-work-with-azure-storage-queues"></a>Руководство по Работа с очередями хранилища Azure
 
@@ -129,18 +129,19 @@ ms.locfileid: "65233878"
 
 ## <a name="create-a-queue"></a>Создание очереди
 
-1. Добавьте пакет **WindowsAzure. Storage** в проект с помощью команды `dotnet add package`. Выполните следующую команду dotnet из папки проекта в окне консоли.
+1. Установите в проект пакеты **Microsoft.Azure.Storage.Common** и **Microsoft.Azure.Storage.Queue** с помощью команды `dotnet add package`. Выполните следующие команды dotnet из папки проекта в окне консоли.
 
    ```console
-   dotnet add package WindowsAzure.Storage
+   dotnet add package Microsoft.Azure.Storage.Common
+   dotnet add package Microsoft.Azure.Storage.Queue
    ```
 
 2. Добавьте в начало файла **Program.cs** следующие пространства имен сразу за инструкцией `using System;`. Это приложение использует типы из добавленных пространств имен, чтобы подключаться к службе хранилища Azure и работать с очередями.
 
    ```csharp
    using System.Threading.Tasks;
-   using Microsoft.WindowsAzure.Storage;
-   using Microsoft.WindowsAzure.Storage.Queue;
+   using Microsoft.Azure.Storage;
+   using Microsoft.Azure.Storage.Queue;
    ```
 
 3. Сохраните файл **Program.cs**.
@@ -206,7 +207,7 @@ ms.locfileid: "65233878"
 
 ## <a name="insert-messages-into-the-queue"></a>Вставка сообщения в очередь
 
-Создайте новый метод для отправки сообщения в очередь. Добавьте следующий метод в класс **Program**. Этот метод получает ссылку на очередь, а если она не существует, создает новую очередь с помощью вызова [CreateIfNotExistsAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.storage.queue.cloudqueue.createifnotexistsasync?view=azure-dotnet). Затем он добавляет в очередь сообщение, вызвав [AddMessageAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.storage.queue.cloudqueue.addmessageasync?view=azure-dotnet).
+Создайте новый метод для отправки сообщения в очередь. Добавьте следующий метод в класс **Program**. Этот метод получает ссылку на очередь, а если она не существует, создает новую очередь с помощью вызова [CreateIfNotExistsAsync](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.createifnotexistsasync). Затем он добавляет в очередь сообщение, вызвав [AddMessageAsync](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.addmessageasync).
 
 1. Добавьте следующий метод **SendMessageAsync** в класс **Program**.
 
@@ -229,7 +230,7 @@ ms.locfileid: "65233878"
 
 ## <a name="dequeue-messages"></a>Вывод сообщений из очереди
 
-Создайте новый метод с именем **ReceiveMessageAsync**. Этот метод получает сообщение из очереди, вызывая [GetMessageAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.storage.queue.cloudqueue.getmessageasync?view=azure-dotnet). Очень важно удалять из очереди успешно полученные сообщения, чтобы они не обрабатывались более одного раза. Получив сообщение, удалите его из очереди с помощью метода [DeleteMessageAsync](https://docs.microsoft.com/dotnet/api/microsoft.azure.storage.queue.cloudqueue.deletemessageasync?view=azure-dotnet).
+Создайте новый метод с именем **ReceiveMessageAsync**. Этот метод получает сообщение из очереди, вызывая [GetMessageAsync](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.getmessageasync). Очень важно удалять из очереди успешно полученные сообщения, чтобы они не обрабатывались более одного раза. Получив сообщение, удалите его из очереди с помощью метода [DeleteMessageAsync](/dotnet/api/microsoft.azure.storage.queue.cloudqueue.deletemessageasync).
 
 1. Добавьте следующий метод **ReceiveMessageAsync** в класс **Program**.
 
@@ -343,8 +344,8 @@ ms.locfileid: "65233878"
    ```csharp
    using System;
    using System.Threading.Tasks;
-   using Microsoft.WindowsAzure.Storage;
-   using Microsoft.WindowsAzure.Storage.Queue;
+   using Microsoft.Azure.Storage;
+   using Microsoft.Azure.Storage.Queue;
 
    namespace QueueApp
    {

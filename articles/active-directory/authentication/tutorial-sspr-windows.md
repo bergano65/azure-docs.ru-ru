@@ -11,16 +11,16 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0f8e0b79d5aebd1e92dd71bba72efa7430aa475b
-ms.sourcegitcommit: 12d67f9e4956bb30e7ca55209dd15d51a692d4f6
+ms.openlocfilehash: acd100ccc3aafc2de1f2c7970ff9437c92156b17
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/20/2019
-ms.locfileid: "58224657"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65861531"
 ---
 # <a name="tutorial-azure-ad-password-reset-from-the-login-screen"></a>Руководство. Сброс пароля Azure AD на экране входа
 
-В этом руководстве описывается процедура сброса пароля в окне входа в Windows 10. В обновлении Windows 10 с апреля 2018 года для пользователей устройств, **присоединенных к Azure AD** или **присоединенных к гибридному Azure AD**, в окне входа отображается ссылка "Сбросить пароль". Когда пользователи щелкают эту ссылку, они переходят к уже знакомому им интерфейсу самостоятельного сброса пароля (SSPR).
+В этом руководстве описывается процедура сброса пароля в окне входа в Windows 10. В обновлении Windows 10 с апреля 2018 года для пользователей устройств, **присоединенных к Azure AD** или **присоединенных к гибридному Azure AD**, в окне входа отображается ссылка "Сбросить пароль". Когда пользователи щелкают эту ссылку, они переходят к уже знакомому им интерфейсу самостоятельного сброса пароля (SSPR). Если пользователь блокируется, этот процесс не разблокирует учетные записи в локальной службе Active Directory.
 
 > [!div class="checklist"]
 > * Настройка ссылки сброса пароля с помощью Intune

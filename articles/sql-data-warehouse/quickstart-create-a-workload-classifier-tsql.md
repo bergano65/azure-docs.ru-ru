@@ -10,12 +10,12 @@ ms.subservice: workload management
 ms.date: 05/01/2019
 ms.author: rortloff
 ms.reviewer: jrasnick
-ms.openlocfilehash: 2074ea1028f6a5e8a0251c6d0c9519361db6ba8d
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 1c84bf84f8ba28a98937b02a463003a900aefaa0
+ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65150381"
+ms.lasthandoff: 05/22/2019
+ms.locfileid: "66002913"
 ---
 # <a name="quickstart-create-a-workload-classifier-using-t-sql"></a>Краткое руководство. Создание рабочей нагрузки классификатора с помощью T-SQL
 
@@ -107,6 +107,6 @@ DROP USER [TheCEO]
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Теперь вы создали классификатор рабочей нагрузки. Выполните несколько запросов как TheCEO, чтобы проверить, как они работают. Запросы и назначенную важность см. в разделе [sys.dm_pdw_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql).
-
-Дополнительные сведения об управлении рабочей нагрузкой Хранилища данных SQL см. в статьях [Важность рабочих нагрузок хранилища данных SQL (Предварительная версия)](sql-data-warehouse-workload-importance.md) и [Классификации рабочей нагрузки хранилища данных SQL (Предварительная версия)](sql-data-warehouse-workload-classification.md).
+- Теперь вы создали классификатор рабочей нагрузки. Выполните несколько запросов как TheCEO, чтобы проверить, как они работают. Запросы и назначенную важность см. в разделе [sys.dm_pdw_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql).
+- Дополнительные сведения об управлении рабочей нагрузкой Хранилища данных SQL Azure см. в статьях [Azure SQL Data Warehouse workload importance](sql-data-warehouse-workload-importance.md) (Важность рабочих нагрузок Хранилища данных SQL Azure) и [Azure SQL Data Warehouse workload classification](sql-data-warehouse-workload-classification.md) (Классификация рабочих нагрузок Хранилища данных SQL Azure).
+- См. статьи с инструкциями по [настройке уровня важности рабочих нагрузок](sql-data-warehouse-how-to-configure-workload-importance.md), а также по [администрированию и мониторингу рабочих нагрузок](sql-data-warehouse-how-to-manage-and-monitor-workload-importance.md).

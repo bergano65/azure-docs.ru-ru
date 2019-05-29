@@ -13,18 +13,18 @@ ms.topic: quickstart
 ms.date: 10/17/2018
 ms.author: glenga
 ms.custom: mvc, devcenter, vs-azure, 23113853-34f2-4f
-ms.openlocfilehash: 51f6fb8c0dc1450a39173fafb0d71efc9a59a536
-ms.sourcegitcommit: ccdea744097d1ad196b605ffae2d09141d9c0bd9
+ms.openlocfilehash: 1c07da0121b8e350c55b139901d56cfe2133386d
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 10/23/2018
-ms.locfileid: "49649981"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65864497"
 ---
 # <a name="create-your-first-function-using-visual-studio"></a>Создание первой функции с помощью Visual Studio
 
 Решение "Функции Azure" позволяет выполнять код в [бессерверной](https://azure.microsoft.com/solutions/serverless/) среде без необходимости создавать виртуальную машину или публиковать веб-приложение.
 
-Изучив эту статью, вы научитесь использовать инструменты Visual Studio 2017 для службы "Функции Azure" и локально тестировать функцию hello world. Затем вы опубликуете код функции в Azure. Эти средства доступны как часть рабочей нагрузки Azure для разработки в Visual Studio 2017.
+Изучив эту статью, вы научитесь использовать инструменты Visual Studio 2019 для решения "Функции Azure" и локально тестировать функцию hello world. Затем вы опубликуете код функции в Azure. Эти инструменты доступны как часть рабочей нагрузки Azure для разработки в Visual Studio 2019.
 
 ![Ответ функции localhost в браузере](./media/functions-create-your-first-function-visual-studio/functions-create-your-first-function-visual-studio-browser-local-final.png)
 
@@ -34,7 +34,7 @@ ms.locfileid: "49649981"
 
 Для работы с этим руководством:
 
-* Установите [Visual Studio 2017](https://azure.microsoft.com/downloads/) и убедитесь, что также установлена рабочая нагрузка **разработки Azure**.
+* Установите [Visual Studio 2019](https://azure.microsoft.com/downloads/) и убедитесь, что также установлена рабочая нагрузка **разработки Azure**.
 
 * Убедитесь, что используются [новейшие средства Функций Azure](functions-develop-vs.md#check-your-tools-version).
 

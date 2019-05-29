@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 06/20/2018
 ms.author: masoucou
-ms.openlocfilehash: c7a80ae704d13934a5d51bc5538bc28693b49e5b
-ms.sourcegitcommit: 7723b13601429fe8ce101395b7e47831043b970b
+ms.openlocfilehash: a0612ea06c71b2a93e6fb76f5d82516cfbad8657
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/21/2019
-ms.locfileid: "56588098"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65860344"
 ---
 # <a name="quickstart-build-a-xamarinforms-app-with-net-sdk-and-azure-cosmos-dbs-api-for-mongodb"></a>Краткое руководство. Создание приложения Xamarin.Forms с помощью пакета SDK для .NET и API Azure Cosmos DB для MongoDB
 
@@ -34,7 +34,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 Чтобы запустить пример, вам потребуется [Visual Studio](https://www.visualstudio.com/downloads/) или [Visual Studio для Mac](https://visualstudio.microsoft.com/vs/mac/) и действительная учетная запись Azure CosmosDB.
 
-Если вы еще не установили Visual Studio, скачайте [Visual Studio 2017 Community Edition](https://www.visualstudio.com/downloads/) с установленной и настроенной рабочей нагрузкой **Разработка мобильных приложений на .NET**.
+Если вы еще не установили Visual Studio, скачайте [Visual Studio 2019 Community Edition](https://www.visualstudio.com/downloads/) с установленной и настроенной рабочей нагрузкой **Разработка мобильных приложений на .NET**.
 
 Если вы предпочитаете работать на компьютере Mac, скачайте [Visual Studio для Mac](https://visualstudio.microsoft.com/vs/mac/) и запустите программу установки.
 
@@ -164,7 +164,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 ## <a name="run-the-app"></a>Запуск приложения
 
-### <a name="visual-studio-2017"></a>Visual Studio 2017
+### <a name="visual-studio-2019"></a>Visual Studio 2019
 
 1. В Visual Studio в **обозревателе решений** щелкните каждый проект правой кнопкой мыши и выберите **Управление пакетами NuGet**.
 2. Щелкните **Восстановить все пакеты NuGet**.

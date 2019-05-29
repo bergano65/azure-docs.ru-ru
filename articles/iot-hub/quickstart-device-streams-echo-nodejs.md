@@ -1,5 +1,5 @@
 ---
-title: Потоки устройств Центра Интернета вещей в Node.js (предварительная версия) | Документация Майкрософт
+title: Взаимодействие с приложением устройства в Node.js с помощью потоков устройств Центра Интернета вещей (предварительная версия) | Документация Майкрософт
 description: В этом кратком руководстве будет выполняться приложение Node.js на стороне службы, которое обменивается данными с устройством IoT через поток устройств.
 author: rezasherafat
 manager: briz
@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 03/14/2019
 ms.author: rezas
-ms.openlocfilehash: 4b546b91634e153fa0074adfb863596a1bf36242
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 9a123c35620cd82059eb08d370939761f7c2fe69
+ms.sourcegitcommit: 3ced637c8f1f24256dd6ac8e180fff62a444b03c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59006436"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65834054"
 ---
 # <a name="quickstart-communicate-to-a-device-application-in-nodejs-via-iot-hub-device-streams-preview"></a>Краткое руководство. Взаимодействие с приложением устройства в Node.js с помощью потоков устройств Центра Интернета вещей (предварительная версия)
 
@@ -23,7 +23,11 @@ ms.locfileid: "59006436"
 
 Центр Интернета вещей Microsoft Azure поддерживает функцию "Потоки устройств", которая сейчас доступна в режиме [предварительной версии](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
-[Потоки устройств Центра Интернета вещей](./iot-hub-device-streams-overview.md) позволяют службам и приложениям устройств безопасным и подходящим методом обмениваться данными с брандмауэром. На этапе предварительной версии пакет SDK для Node.js поддерживает только потоки устройств на стороне службы. В результате это краткое руководство охватывает только инструкции по запуску приложения на стороне службы. Вам следует запустить сопутствующее приложение на стороне устройства, которое доступно в кратких руководствах [по C](./quickstart-device-streams-echo-c.md) и [C#](./quickstart-device-streams-echo-csharp.md).
+[Потоки устройств Центра Интернета вещей](./iot-hub-device-streams-overview.md) позволяют службам и приложениям устройств безопасным и подходящим методом обмениваться данными с брандмауэром. На этапе предварительной версии пакет SDK для Node.js поддерживает только потоки устройств на стороне службы. В результате это краткое руководство охватывает только инструкции по запуску приложения на стороне службы. Вам потребуется запустить сопутствующее приложение на стороне устройства с помощью инструкций, приведенных в одном из следующих кратких руководств:
+
+* [Обмен данными с приложениями устройств в C с помощью потоков устройств Центра Интернета вещей](./quickstart-device-streams-echo-c.md)
+
+* [Обмен данными с приложениями устройств в C# с помощью потоков устройств Центра Интернета вещей](./quickstart-device-streams-echo-csharp.md)
 
 Приложение Node.js на стороне службы, используемое в этом кратком руководстве, имеет следующие функции:
 
@@ -41,12 +45,13 @@ ms.locfileid: "59006436"
 
 Предварительная версия потоков устройств сейчас поддерживается только в Центрах Интернета вещей, созданных в следующих регионах.
 
-  - **Центральная часть США**
-  - **Центральная часть США (EUAP)**
+*  **Центральная часть США**
 
-Для запуска приложения на стороне службы в этом руководстве вам понадобится Node.js версии 4.x.x или более поздней версии на компьютере разработчика.
+*  **Центральная часть США (EUAP)**
 
-Node.js, предназначенный для нескольких платформ, можно скачать здесь: [Node.js.org](https://nodejs.org).
+Для запуска приложения на стороне службы в этом руководстве вам понадобится Node.js 10.x.x или более поздней версии на компьютере разработчика.
+
+Node.js, предназначенный для нескольких платформ, можно скачать здесь: [Nodejs.org](https://nodejs.org).
 
 Текущую версию Node.js на компьютере, на котором ведется разработка, можно проверить, используя следующую команду:
 
@@ -62,13 +67,11 @@ az extension add --name azure-cli-iot-ext
 
 Если вы еще не сделали это, скачайте пример проекта Node.js по адресу https://github.com/Azure-Samples/azure-iot-samples-node/archive/streams-preview.zip и извлеките ZIP-архив.
 
-
 ## <a name="create-an-iot-hub"></a>Создание Центра Интернета вещей
 
 Если вы закончили работу с предыдущим руководством по [ отправке данных телеметрии с устройства в Центр Интернета вещей](quickstart-send-telemetry-node.md), можете пропустить этот шаг.
 
-[!INCLUDE [iot-hub-include-create-hub](../../includes/iot-hub-include-create-hub-device-streams.md)]
-
+[!INCLUDE [iot-hub-include-create-hub-device-streams](../../includes/iot-hub-include-create-hub-device-streams.md)]
 
 ## <a name="register-a-device"></a>Регистрация устройства
 
@@ -86,7 +89,7 @@ az extension add --name azure-cli-iot-ext
     az iot hub device-identity create --hub-name YourIoTHubName --device-id MyDevice
     ```
 
-2. Чтобы разрешить внутреннему приложению подключаться к Центру Интернета вещей и получать сообщения, вам необходима _строка подключения к службе_. Следующая команда извлекает строку подключения службы для Центра Интернета вещей:
+2. Чтобы разрешить внутреннему приложению подключаться к Центру Интернета вещей и получать сообщения, вам необходима *строка подключения к службе*. Следующая команда извлекает строку подключения службы для Центра Интернета вещей:
 
     **YourIoTHubName**. Замените этот заполнитель именем вашего центра Интернета вещей.
 
@@ -98,53 +101,59 @@ az extension add --name azure-cli-iot-ext
 
    `"HostName={YourIoTHubName}.azure-devices.net;SharedAccessKeyName=service;SharedAccessKey={YourSharedAccessKey}"`
 
-
 ## <a name="communicate-between-device-and-service-via-device-streams"></a>Обмен данными между устройством и службой через потоки устройств
+
+В рамках этого раздела вы запустите приложения на стороне устройства и на стороне службы, а также настроите обмен данными между двумя этими приложениями.
 
 ### <a name="run-the-device-side-application"></a>Запуск приложения на стороне устройства
 
-Как упоминалось ранее, пакет SDK для Node.js Центра Интернета вещей поддерживает только потоки устройств на стороне службы. Для приложения на стороне устройства используйте сопутствующую программу устройства, которая доступна в кратких руководствах [по C](./quickstart-device-streams-echo-c.md) и [C#](./quickstart-device-streams-echo-csharp.md). Прежде чем перейти к следующему шагу, убедитесь, что приложение на стороне устройства запущено.
+Как упоминалось ранее, пакет SDK для Node.js Центра Интернета вещей поддерживает только потоки устройств на стороне службы. Для приложения на стороне устройства используйте сопутствующую программу устройства, которая доступна в одном из этих кратких руководств:
 
+   * [Обмен данными с приложениями устройств в C с помощью потоков устройств Центра Интернета вещей](./quickstart-device-streams-echo-c.md)
+
+   * [Обмен данными с приложениями устройств в C# с помощью потоков устройств Центра Интернета вещей](./quickstart-device-streams-echo-csharp.md)
+
+Прежде чем перейти к следующему шагу, убедитесь, что приложение на стороне устройства запущено.
 
 ### <a name="run-the-service-side-application"></a>Запуск приложения на стороне службы
 
 Если приложение на стороне устройства запущено, выполните следующие действия, чтобы запустить приложение на стороне службы в Node.js.
 
-- Укажите свои учетные данные службы и идентификатор устройства в качестве переменных среды.
-  ```
-  # In Linux
-  export IOTHUB_CONNECTION_STRING="<provide_your_service_connection_string>"
-  export STREAMING_TARGET_DEVICE="MyDevice"
+* Укажите свои учетные данные службы и идентификатор устройства в качестве переменных среды.
+ 
+   ```
+   # In Linux
+   export IOTHUB_CONNECTION_STRING="<provide_your_service_connection_string>"
+   export STREAMING_TARGET_DEVICE="MyDevice"
 
-  # In Windows
-  SET IOTHUB_CONNECTION_STRING=<provide_your_service_connection_string>
-  SET STREAMING_TARGET_DEVICE=MyDevice
-  ```
-  Измените имя `MyDevice` на идентификатор выбранного вами устройства.
-
-- Перейдите к папке `Quickstarts/device-streams-service` в распакованной папке проекта и запустите образец, используя узел.
-  ```
-  cd azure-iot-samples-node-streams-preview/iot-hub/Quickstarts/device-streams-service
+   # In Windows
+   SET IOTHUB_CONNECTION_STRING=<provide_your_service_connection_string>
+   SET STREAMING_TARGET_DEVICE=MyDevice
+   ```
   
-  # Install the preview service SDK, and other dependencies
-  npm install azure-iothub@streams-preview
-  npm install
+   Измените имя `MyDevice` на идентификатор выбранного вами устройства.
 
-  node echo.js
-  ```
+* Перейдите к папке `Quickstarts/device-streams-service` в распакованной папке проекта и запустите образец, используя узел.
 
-После последнего шага программа на стороне службы инициирует поток к устройству и после установления соединения отправит службе через поток строковый буфер. В этом примере программа на стороне службы просто считывает данные из потока STDIN, введенные в окне терминала, и отправляет на устройство, которое затем возвращает их обратно. Это демонстрирует успешную двунаправленную связь между приложениями.
+   ```
+   cd azure-iot-samples-node-streams-preview/iot-hub/Quickstarts/device-streams-service
+    
+   # Install the preview service SDK, and other dependencies
+   npm install azure-iothub@streams-preview
+   npm install
 
-Выходные данные консоли на стороне службы: ![замещающий текст](./media/quickstart-device-streams-echo-nodejs/service-console-output.PNG "Выходные данные консоли на стороне службы")
+   node echo.js
+   ```
 
+После последнего шага программа на стороне службы инициирует поток к устройству и после установления соединения отправит службе через поток строковый буфер. В этом примере программа на стороне службы просто считывает данные из `stdin`, введенные в окне терминала, и отправляет на устройство, которое затем возвращает их обратно. Это демонстрирует успешную двунаправленную связь между приложениями.
+
+![Выходные данные консоли на стороне службы](./media/quickstart-device-streams-echo-nodejs/service-console-output.png)
 
 Теперь можно завершить выполнение программы, повторно нажав клавишу ВВОД.
 
-
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-[!INCLUDE [iot-hub-quickstarts-clean-up-resources](../../includes/iot-hub-quickstarts-clean-up-resources-device-streams.md)]
-
+[!INCLUDE [iot-hub-quickstarts-clean-up-resources-device-streams](../../includes/iot-hub-quickstarts-clean-up-resources-device-streams.md)]
 
 ## <a name="next-steps"></a>Дополнительная информация
 

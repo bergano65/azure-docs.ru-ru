@@ -1,5 +1,5 @@
 ---
-title: Общие сведения о политике Azure
+title: Общие сведения о Политике Azure
 description: "\"Политика Azure\" — это служба в Azure, которая используется для создания, присваивания определений политик, а также управления ими в среде Azure."
 author: DCtheGeek
 ms.author: dacoulte
@@ -7,12 +7,12 @@ ms.date: 12/06/2018
 ms.topic: overview
 ms.service: azure-policy
 manager: carmonm
-ms.openlocfilehash: 0e66327a04d1390061580d82716b44b25139bf67
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 2dd31ab29479fade21d27b8e2c23952f905f530a
+ms.sourcegitcommit: 59fd8dc19fab17e846db5b9e262a25e1530e96f3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59259462"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65979161"
 ---
 # <a name="overview-of-the-azure-policy-service"></a>Обзор службы "Политика Azure"
 
@@ -28,7 +28,7 @@ ms.locfileid: "59259462"
 
 ## <a name="how-is-it-different-from-rbac"></a>Чем это отличается от управления доступом на основе ролей?
 
-Существует ряд ключевых различий между Политикой и управлением доступом на основе ролей (RBAC). RBAC определяет действия пользователя в различных областях. Вам может быть назначена роль участника для группы ресурсов, позволяющая вносить изменения в эту группу ресурсов. Политика нацелена на свойства ресурсов во время и после их развертывания. Политика управляет такими свойствами, как типы или расположения ресурсов. В отличие от RBAC, Политика представляет собой систему разрешения по умолчанию и явного запрета.
+Между службой "Политика Azure" и управлением доступом на основе ролей (RBAC) существует ряд ключевых различий. RBAC определяет действия пользователя в различных областях. Вам может быть назначена роль участника для группы ресурсов, позволяющая вносить изменения в эту группу ресурсов. Служба "Политика Azure" нацелена на свойства ресурсов во время и после их развертывания. Она управляет такими свойствами, как типы или расположения ресурсов. В отличие от RBAC, "Политика Azure" представляет собой систему разрешения по умолчанию и явного запрета.
 
 ### <a name="rbac-permissions-in-azure-policy"></a>Разрешения RBAC в службе "Политика Azure"
 
@@ -37,7 +37,7 @@ ms.locfileid: "59259462"
 - [Microsoft.Authorization](../../role-based-access-control/resource-provider-operations.md#microsoftauthorization)
 - [Microsoft.PolicyInsights](../../role-based-access-control/resource-provider-operations.md#microsoftpolicyinsights).
 
-Большинство встроенных ролей предоставляют разрешения на доступ к ресурсам службы "Политика Azure". Пользователь с ролью **участника политики ресурсов (предварительная версия)** получает доступ к большинству операций с политиками. Пользователь с ролью **владелец** имеет полные права. **Участник** и **читатель** могут использовать все операции чтения Политики, но **участник** также может активировать исправление.
+Большинство встроенных ролей предоставляют разрешения на доступ к ресурсам службы "Политика Azure". Пользователь с ролью **Участник политики ресурсов (предварительная версия)** получает доступ к большинству операций службы "Политика Azure". Пользователь с ролью **владелец** имеет полные права. **Участник** и **читатель** могут использовать все операции чтения службы "Политика Azure", но **участник** также может активировать исправление.
 
 Если ни в одной роли нет нужных разрешений, создайте [пользовательскую роль](../../role-based-access-control/custom-roles.md).
 
@@ -115,7 +115,7 @@ ms.locfileid: "59259462"
 
 При создании параметров значения в определении инициативы вы не можете ввести другое значение во время назначения инициативы, так как оно не является частью списка.
 
-## <a name="maximum-count-of-policy-objects"></a>Максимальное количество объектов политики
+## <a name="maximum-count-of-azure-policy-objects"></a>Максимальное количество объектов службы "Политика Azure"
 
 [!INCLUDE [policy-limits](../../../includes/azure-policy-limits.md)]
 
@@ -144,8 +144,8 @@ ms.locfileid: "59259462"
 
 После знакомства с обзором службы "Политика Azure" и некоторыми представленными ключевыми концепциями можно выполнять следующие шаги.
 
-- [Назначение определения политики на портале](assign-policy-portal.md)
-- [Create a policy assignment to identify non-compliant resources in your Azure environment with the Azure CLI](assign-policy-azurecli.md) (Создание назначения политики для определения несоответствующих ресурсов в среде Azure с помощью Azure CLI)
-- [Create a policy assignment to identify non-compliant resources in your Azure environment using PowerShell](assign-policy-powershell.md) (Создание назначения политики для определения несоответствующих ресурсов в среде Azure с помощью PowerShell)
-- См. дополнительные сведения о группе управления в разделе [Упорядочение ресурсов с помощью групп управления Azure](..//management-groups/overview.md)
-- См. [Govern your Azure environment through Azure Policy](https://channel9.msdn.com/events/Build/2018/THR2030) (Система управления средой Azure с помощью службы "Политика Azure") на канале Channel 9
+- [Назначение определения политики на портале](assign-policy-portal.md).
+- [Назначение определения политики с помощью Azure CLI](assign-policy-azurecli.md).
+- [Назначение определения политики с помощью PowerShell](assign-policy-powershell.md).
+- Дополнительные сведения о группе управления см. в статье [Упорядочивание ресурсов с помощью групп управления Azure](..//management-groups/overview.md).
+- См. видео [Govern your Azure environment through Azure Policy](https://channel9.msdn.com/events/Build/2018/THR2030) (Управление средой Azure с помощью службы "Политика Azure") на канале Channel 9.

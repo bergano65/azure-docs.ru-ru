@@ -9,17 +9,17 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
 ms.topic: quickstart
-ms.date: 03/18/2019
+ms.date: 05/06/2019
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e0573448c753c763e818d641216033dbeacb9e9a
-ms.sourcegitcommit: dec7947393fc25c7a8247a35e562362e3600552f
+ms.openlocfilehash: 01cedadc115496fcf00df986b4ad4b9c5aab5139
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58199313"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65606177"
 ---
 # <a name="quickstart-set-office-365-groups-to-expire-in-azure-active-directory"></a>Краткое руководство. Задание срока действия групп Office 365 в Azure Active Directory
 
@@ -35,11 +35,11 @@ ms.locfileid: "58199313"
 
 ## <a name="prerequisite"></a>Предварительные требования
 
-Настроить срок действия группы может только глобальный администратор или администратор учетных записей в организации.
+ Роль с минимальными привилегиями, требуемыми для настройки времени окончания срока действия группы, — это администратор пользователей в организации.
 
 ## <a name="turn-on-user-creation-for-groups"></a>Включение создания пользователя для групп
 
-1. Войдите на [портал Azure](https://portal.azure.com) с помощью учетной записи глобального администратора или администратора учетных записей в организации.
+1. Войдите на [портал Azure](https://portal.azure.com) с помощью учетной записи администратора пользователей.
 
 2. Нажмите кнопку **Группы**, а затем выберите раздел **Общие**.
   
@@ -80,7 +80,7 @@ ms.locfileid: "58199313"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Дополнительные сведения о сроке действия, включая технические ограничения, добавление списка пользовательских запрещенных слов и взаимодействие с пользователем в приложениях Office 365, см. в следующей статье, которая содержит эти сведения о политике срока действия:
+См. подробнее об окончании срока действия, включая инструкции для PowerShell и технические ограничения:
 
 > [!div class="nextstepaction"]
-> [Настройка политики срока действия для групп Office 365](groups-lifecycle.md)
+> [Политика истечения срока действия PowerShell](groups-lifecycle.md)

@@ -8,12 +8,12 @@ ms.service: event-grid
 ms.topic: tutorial
 ms.date: 01/13/2019
 ms.author: spelluru
-ms.openlocfilehash: c2c49563bf505ce70c4900c6c0a8e41c0f6ac9c5
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 1ae7a18660d2a7324bc5897d6b3952da42b6c4b2
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58176622"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65603441"
 ---
 # <a name="tutorial-stream-big-data-into-a-data-warehouse"></a>Руководство. Потоковая передача больших данных в хранилище данных
 [Сетка событий](overview.md) Azure — интеллектуальная служба маршрутизации событий, позволяющая реагировать на уведомления (события) приложений и служб. Например, она может активировать функции Azure для обработки данных Центров событий, собранных в хранилище BLOB-объектов Azure или Data Lake Storage, и переноса данных в другие репозитории данных. В этом [примере интеграции Центров событий Azure и службы "Сетка событий"](https://github.com/Azure/azure-event-hubs/tree/master/samples/e2e/EventHubsCaptureEventGridDemo) показано, как с помощью Центров событий Azure и службы "Сетка событий Azure" легко перенести данные Центров событий из хранилища BLOB-объектов в Хранилище данных SQL.
@@ -45,7 +45,7 @@ ms.locfileid: "58176622"
 Для работы с этим руководством требуется:
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
-* [Visual Studio 2017 версии 15.3.2 или более поздней](https://www.visualstudio.com/vs/) с рабочими нагрузками для разработки классических приложений .NET, разработки Azure, разработки ASP.NET и веб-разработки, разработки Node.js и Python.
+* [Visual Studio 2019](https://www.visualstudio.com/vs/) с рабочими нагрузками для разработки классических приложений .NET, Azure, ASP.NET, Node.js, Python и веб-разработки.
 * Скачать на свой компьютер [пример проекта EventHubsCaptureEventGridDemo](https://github.com/Azure/azure-event-hubs/tree/master/samples/e2e/EventHubsCaptureEventGridDemo).
 
 ## <a name="deploy-the-infrastructure"></a>Развертывание инфраструктуры
@@ -76,7 +76,7 @@ ms.locfileid: "58176622"
     ![Создание хранилища для Cloud Shell](media/event-grid-event-hubs-integration/cloud-shell-initialized.png)
 
 
-### <a name="use-azure-cli"></a>Использование интерфейса командной строки Azure
+### <a name="use-azure-cli"></a>Использование Azure CLI
 
 1. Создайте группу ресурсов Azure, выполнив следующую команду в окне CLI: 
     1. Скопируйте следующую команду и вставьте ее в окно Cloud Shell.
@@ -171,7 +171,7 @@ ms.locfileid: "58176622"
 Создайте таблицу в хранилище данных, выполнив сценарий [CreateDataWarehouseTable.sql](https://github.com/Azure/azure-event-hubs/blob/master/samples/e2e/EventHubsCaptureEventGridDemo/scripts/CreateDataWarehouseTable.sql). Чтобы запустить скрипт, воспользуйтесь Visual Studio или редактором запросов на портале. В следующих шагах продемонстрировано, как использовать редактор запросов. 
 
 1. В списке ресурсов группы ресурсов выберите свое хранилище данных SQL. 
-2. На странице хранилища данных SQL в левом меню выберите **Редактор запросов (предварительная версия)**. 
+2. На странице хранилища данных SQL в левом меню выберите **Редактор запросов (предварительная версия)** . 
 
     ![Страница хранилища данных SQL](media/event-grid-event-hubs-integration/sql-data-warehouse-page.png)
 2. Введите имя **пользователя** и **пароль** для SQL Server и щелкните **ОК**. 
@@ -196,7 +196,7 @@ ms.locfileid: "58176622"
 
 ## <a name="publish-the-azure-functions-app"></a>Публикация приложения службы "Функции Azure"
 
-1. Запустите Visual Studio 2017. 
+1. Запустите Visual Studio.
 2. Откройте решение **EventHubsCaptureEventGridDemo.sln**, скачанное с портала [GitHub](https://github.com/Azure/azure-event-hubs/tree/master/samples/e2e/EventHubsCaptureEventGridDemo) во время выполнения предыдущих шагов.
 3. В обозревателе решений щелкните правой кнопкой мыши **FunctionEGDWDumper** и выберите **Публиковать**.
 

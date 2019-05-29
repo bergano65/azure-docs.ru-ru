@@ -5,17 +5,17 @@ author: LuisBosquez
 ms.service: cosmos-db
 ms.subservice: cosmosdb-graph
 ms.topic: overview
-ms.date: 01/02/2018
+ms.date: 05/21/2019
 ms.author: lbosq
-ms.openlocfilehash: fd49cc6810f4a3a479748180ddb0c44aedf04e89
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: b36c041c24a07f89701e78aea4d08270342b8d22
+ms.sourcegitcommit: 59fd8dc19fab17e846db5b9e262a25e1530e96f3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59275561"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65978934"
 ---
 # <a name="azure-cosmos-db-gremlin-graph-support"></a>Поддержка графа Gremlin в базе данных Azure Cosmos DB
-Azure Cosmos DB поддерживает язык обхода графов [Apache Tinkerpop](https://tinkerpop.apache.org), известный как [Gremlin](https://tinkerpop.apache.org/docs/current/reference/#graph-traversal-steps). Вы можете использовать язык Gremlin, чтобы создать сущности графа (вершины и ребра), изменить свойства в этих сущностях, выполнить запросы и обходы графа, а также удалить сущности. 
+Azure Cosmos DB поддерживает язык обхода графов [Apache Tinkerpop](https://tinkerpop.apache.org), известный как [Gremlin](https://tinkerpop.apache.org/docs/3.3.2/reference/#graph-traversal-steps). Вы можете использовать язык Gremlin, чтобы создать сущности графа (вершины и ребра), изменить свойства в этих сущностях, выполнить запросы и обходы графа, а также удалить сущности. 
 
 База данных Azure Cosmos DB предоставляет возможности корпоративного уровня для баз данных графа. Эти возможности включают в себя глобальное распределение, независимое масштабирование хранилища и пропускной способности, прогнозируемую задержку операций менее 10 миллисекунд, автоматическое индексирование, Соглашения об уровнях обслуживания, доступность для операций чтения для учетных записей баз данных, используемых в пределах двух и более регионов Azure. Так как база данных Azure Cosmos DB поддерживает TinkerPop и Gremlin, вы можете легко перемещать приложения, написанные с помощью другой совместимой базы данных графа. Кроме того, благодаря поддержке языка Gremlin база данных Azure Cosmos DB быстро и эффективно интегрируется с платформами аналитики, совместимыми с TinkerPop, например с [Apache Spark GraphX](https://spark.apache.org/graphx/). 
 
@@ -40,28 +40,28 @@ Azure Cosmos DB поддерживает язык обхода графов [Apa
 - Использующаяся операционная система. Ноутбук работает под управлением Windows.
 - Используемые устройства. Применяется, чтобы представить используемое устройство. Например, Робин использует телефон Motorola с серийным номером 77.
 
-Теперь выполним некоторые операции с этим графом с помощью [консоли Gremlin](https://tinkerpop.apache.org/docs/current/reference/#gremlin-console). Вы также можете выполнить эти операции с помощью драйверов Gremlin на платформе по вашему усмотрению — Java, Node.js, Python или .NET.  Прежде чем перейти к поддерживаемым базой данных Azure Cosmos DB функциям, давайте рассмотрим несколько примеров, чтобы ознакомиться с синтаксисом.
+Теперь выполним некоторые операции с этим графом с помощью [консоли Gremlin](https://tinkerpop.apache.org/docs/3.3.2/reference/#gremlin-console). Вы также можете выполнить эти операции с помощью драйверов Gremlin на платформе по вашему усмотрению — Java, Node.js, Python или .NET.  Прежде чем перейти к поддерживаемым базой данных Azure Cosmos DB функциям, давайте рассмотрим несколько примеров, чтобы ознакомиться с синтаксисом.
 
 Сначала рассмотрим операции CRUD (создание, чтение, обновление и удаление). Следующая инструкция Gremlin вставляет вершину "Thomas" в граф:
 
-```
+```java
 :> g.addV('person').property('id', 'thomas.1').property('firstName', 'Thomas').property('lastName', 'Andersen').property('age', 44)
 ```
 
 Затем инструкция Gremlin вставляет ребро "знакомства" между вершинами Thomas и Robin.
 
-```
+```java
 :> g.V('thomas.1').addE('knows').to(g.V('robin.1'))
 ```
 
 Следующий запрос возвращает вершины "людей" в порядке по убыванию их имен:
-```
+```java
 :> g.V().hasLabel('person').order().by('firstName', decr)
 ```
 
 Если часть графа подсвечивается, необходимо ответить на вопросы типа: "Какие операционные системы используют друзья Томаса?" Вы можете выполнить эту операцию обхода Gremlin, чтобы получить сведения из графа:
 
-```
+```java
 :> g.V('thomas.1').out('knows').out('uses').out('runsos').group().by('name').by(count())
 ```
 А теперь давайте рассмотрим, какие возможности предоставляет база данных Azure Cosmos DB разработчикам Gremlin.
@@ -82,7 +82,7 @@ TinkerPop — это стандартная платформа, которая 
 
 ## <a name="gremlin-wire-format-graphson"></a>Формат подключения Gremlin: GraphSON
 
-При возвращении результатов операций Gremlin в базе данных Azure Cosmos DB используется [формат GraphSON](https://github.com/thinkaurelius/faunus/wiki/GraphSON-Format). GraphSON представляет собой стандартный формат Gremlin для представления вершин, ребер и свойств (единичных и со множественными значениями) с помощью JSON. 
+При возвращении результатов операций Gremlin в базе данных Azure Cosmos DB используется [формат GraphSON](https://tinkerpop.apache.org/docs/3.3.2/reference/#graphson-reader-writer). GraphSON представляет собой стандартный формат Gremlin для представления вершин, ребер и свойств (единичных и со множественными значениями) с помощью JSON. 
 
 Например, в следующем фрагменте кода показано представление GraphSON вершины, *возвращенной клиенту* из базы данных Azure Cosmos DB. 
 
@@ -150,45 +150,51 @@ TinkerPop — это стандартная платформа, которая 
 | `value` | Значение свойства.
 
 ## <a name="gremlin-steps"></a>Шаги Gremlin
-Теперь рассмотрим шаги Gremlin, поддерживаемые базой данных Azure Cosmos DB. Дополнительные сведения о Gremlin см. в [руководстве по TinkerPop](https://tinkerpop.apache.org/docs/current/reference).
+Теперь рассмотрим шаги Gremlin, поддерживаемые базой данных Azure Cosmos DB. Дополнительные сведения о Gremlin см. в [руководстве по TinkerPop](https://tinkerpop.apache.org/docs/3.3.2/reference).
 
 | Шаг | ОПИСАНИЕ | Руководство по TinkerPop 3.2 |
 | --- | --- | --- |
-| `addE` | Добавляет ребро между двумя вершинами. | [Шаг addE](https://tinkerpop.apache.org/docs/current/reference/#addedge-step) |
-| `addV` | Добавляет вершину в граф. | [Шаг addV](https://tinkerpop.apache.org/docs/current/reference/#addvertex-step) |
-| `and` | Обеспечивает возвращение значения для всех обходов. | [Шаг and](https://tinkerpop.apache.org/docs/current/reference/#and-step) |
-| `as` | Модулятор шага для назначения переменной выходным данным шага. | [Шаг as](https://tinkerpop.apache.org/docs/current/reference/#as-step) |
-| `by` | Модулятор шага, используемый с `group` и `order`. | [Шаг by](https://tinkerpop.apache.org/docs/current/reference/#by-step) |
-| `coalesce` | Возвращает первый обход, который возвращает результат. | [Шаг coalesce](https://tinkerpop.apache.org/docs/current/reference/#coalesce-step) |
-| `constant` | Возвращает постоянное значение. Используется с `coalesce`.| [Шаг constant](https://tinkerpop.apache.org/docs/current/reference/#constant-step) |
-| `count` | Возвращает число из обхода. | [Шаг count](https://tinkerpop.apache.org/docs/current/reference/#count-step) |
-| `dedup` | Возвращает значения с удаленными повторяющимися значениями. | [Шаг dedup](https://tinkerpop.apache.org/docs/current/reference/#dedup-step) |
-| `drop` | Удаляет значения (вершины или ребра). | [Шаг drop](https://tinkerpop.apache.org/docs/current/reference/#drop-step) |
+| `addE` | Добавляет ребро между двумя вершинами. | [Шаг addE](https://tinkerpop.apache.org/docs/3.3.2/reference/#addedge-step) |
+| `addV` | Добавляет вершину в граф. | [Шаг addV](https://tinkerpop.apache.org/docs/3.3.2/reference/#addvertex-step) |
+| `and` | Обеспечивает возвращение значения для всех обходов. | [Шаг and](https://tinkerpop.apache.org/docs/3.3.2/reference/#and-step) |
+| `as` | Модулятор шага для назначения переменной выходным данным шага. | [Шаг as](https://tinkerpop.apache.org/docs/3.3.2/reference/#as-step) |
+| `by` | Модулятор шага, используемый с `group` и `order`. | [Шаг by](https://tinkerpop.apache.org/docs/3.3.2/reference/#by-step) |
+| `coalesce` | Возвращает первый обход, который возвращает результат. | [Шаг coalesce](https://tinkerpop.apache.org/docs/3.3.2/reference/#coalesce-step) |
+| `constant` | Возвращает постоянное значение. Используется с `coalesce`.| [Шаг constant](https://tinkerpop.apache.org/docs/3.3.2/reference/#constant-step) |
+| `count` | Возвращает число из обхода. | [Шаг count](https://tinkerpop.apache.org/docs/3.3.2/reference/#count-step) |
+| `dedup` | Возвращает значения с удаленными повторяющимися значениями. | [Шаг dedup](https://tinkerpop.apache.org/docs/3.3.2/reference/#dedup-step) |
+| `drop` | Удаляет значения (вершины или ребра). | [Шаг drop](https://tinkerpop.apache.org/docs/3.3.2/reference/#drop-step) |
 | `executionProfile` | Создает описание всех операций, формируемых выполненным шагом Gremlin | [Шаг executionProfile](graph-execution-profile.md) |
-| `fold` | Действует как барьер, который вычисляет статистическое значение результатов.| [Шаг fold](https://tinkerpop.apache.org/docs/current/reference/#fold-step) |
-| `group` | Группирует значения на основе указанных меток.| [Шаг group](https://tinkerpop.apache.org/docs/current/reference/#group-step) |
-| `has` | Используется для фильтрации свойств, вершин и ребер. Поддерживает варианты `hasLabel`, `hasId`, `hasNot` и `has`. | [Шаг has](https://tinkerpop.apache.org/docs/current/reference/#has-step) |
-| `inject` | Вставляет значения в поток.| [Шаг inject](https://tinkerpop.apache.org/docs/current/reference/#inject-step) |
-| `is` | Используется для выполнения фильтра с помощью логического выражения. | [Шаг is](https://tinkerpop.apache.org/docs/current/reference/#is-step) |
-| `limit` | Используется для ограничения числа элементов в обходе.| [Шаг limit](https://tinkerpop.apache.org/docs/current/reference/#limit-step) |
-| `local` | Локально обертывает раздел обхода аналогично вложенному запросу. | [Шаг local](https://tinkerpop.apache.org/docs/current/reference/#local-step) |
-| `not` | Используется для создания отрицания фильтра. | [Шаг not](https://tinkerpop.apache.org/docs/current/reference/#not-step) |
-| `optional` | Возвращает результат указанного обхода, если он выдается. В противном случае возвращается вызывающий элемент. | [Шаг optional](https://tinkerpop.apache.org/docs/current/reference/#optional-step) |
-| `or` | Гарантирует, что по крайней мере один из обходов возвращает значение. | [Шаг or](https://tinkerpop.apache.org/docs/current/reference/#or-step) |
-| `order` | Возвращает результаты в заданном порядке сортировки. | [Шаг order](https://tinkerpop.apache.org/docs/current/reference/#order-step) |
-| `path` | Возвращает полный путь обхода. | [Шаг path](https://tinkerpop.apache.org/docs/current/reference/#path-step) |
-| `project` | Выполняет проекцию свойств в виде сопоставления. | [Шаг project](https://tinkerpop.apache.org/docs/current/reference/#project-step) |
-| `properties` | Возвращает свойства для указанных меток. | [Шаг properties](https://tinkerpop.apache.org/docs/current/reference/#properties-step) |
-| `range` | Выполняет фильтрацию до заданного диапазона значений.| [Шаг range](https://tinkerpop.apache.org/docs/current/reference/#range-step) |
-| `repeat` | Повторяет шаг указанное количество раз. Используется для циклов. | [Шаг repeat](https://tinkerpop.apache.org/docs/current/reference/#repeat-step) |
-| `sample` | Используется для вывода примеров результатов из обхода. | [Шаг sample](https://tinkerpop.apache.org/docs/current/reference/#sample-step) |
-| `select` | Используется для проектирования результатов из обхода. |  [Шаг select](https://tinkerpop.apache.org/docs/current/reference/#select-step) |
-| `store` | Используется для статистических функций из обхода без блокировки. | [Шаг store](https://tinkerpop.apache.org/docs/current/reference/#store-step) |
-| `tree` | Выполняет статистическое вычисление путей из вершины в дерево. | [Шаг tree](https://tinkerpop.apache.org/docs/current/reference/#tree-step) |
-| `unfold` | Развертывает итератор.| [Шаг unfold](https://tinkerpop.apache.org/docs/current/reference/#unfold-step) |
-| `union` | Объединяет результаты из нескольких обходов.| [Шаг union](https://tinkerpop.apache.org/docs/current/reference/#union-step) |
-| `V` | Содержит шаги, необходимые для обходов между вершинами и ребрами (`V`, `E`, `out`, `in`, `both`, `outE`, `inE`, `bothE`, `outV`, `inV`, `bothV`) и `otherV` — для других вершин. | [Шаги vertex](https://tinkerpop.apache.org/docs/current/reference/#vertex-steps) |
-| `where` | Используется для фильтрации результатов из обхода. Поддерживает операторы `eq`, `neq`, `lt`, `lte`, `gt`, `gte` и `between`.  | [Шаг where](https://tinkerpop.apache.org/docs/current/reference/#where-step) |
+| `fold` | Действует как барьер, который вычисляет статистическое значение результатов.| [Шаг fold](https://tinkerpop.apache.org/docs/3.3.2/reference/#fold-step) |
+| `group` | Группирует значения на основе указанных меток.| [Шаг group](https://tinkerpop.apache.org/docs/3.3.2/reference/#group-step) |
+| `has` | Используется для фильтрации свойств, вершин и ребер. Поддерживает варианты `hasLabel`, `hasId`, `hasNot` и `has`. | [Шаг has](https://tinkerpop.apache.org/docs/3.3.2/reference/#has-step) |
+| `inject` | Вставляет значения в поток.| [Шаг inject](https://tinkerpop.apache.org/docs/3.3.2/reference/#inject-step) |
+| `is` | Используется для выполнения фильтра с помощью логического выражения. | [Шаг is](https://tinkerpop.apache.org/docs/3.3.2/reference/#is-step) |
+| `limit` | Используется для ограничения числа элементов в обходе.| [Шаг limit](https://tinkerpop.apache.org/docs/3.3.2/reference/#limit-step) |
+| `local` | Локально обертывает раздел обхода аналогично вложенному запросу. | [Шаг local](https://tinkerpop.apache.org/docs/3.3.2/reference/#local-step) |
+| `not` | Используется для создания отрицания фильтра. | [Шаг not](https://tinkerpop.apache.org/docs/3.3.2/reference/#not-step) |
+| `optional` | Возвращает результат указанного обхода, если он выдается. В противном случае возвращается вызывающий элемент. | [Шаг optional](https://tinkerpop.apache.org/docs/3.3.2/reference/#optional-step) |
+| `or` | Гарантирует, что по крайней мере один из обходов возвращает значение. | [Шаг or](https://tinkerpop.apache.org/docs/3.3.2/reference/#or-step) |
+| `order` | Возвращает результаты в заданном порядке сортировки. | [Шаг order](https://tinkerpop.apache.org/docs/3.3.2/reference/#order-step) |
+| `path` | Возвращает полный путь обхода. | [Шаг path](https://tinkerpop.apache.org/docs/3.3.2/reference/#path-step) |
+| `project` | Выполняет проекцию свойств в виде сопоставления. | [Шаг project](https://tinkerpop.apache.org/docs/3.3.2/reference/#project-step) |
+| `properties` | Возвращает свойства для указанных меток. | [Шаг properties](https://tinkerpop.apache.org/docs/3.3.2/reference/#_properties_step) |
+| `range` | Выполняет фильтрацию до заданного диапазона значений.| [Шаг range](https://tinkerpop.apache.org/docs/3.3.2/reference/#range-step) |
+| `repeat` | Повторяет шаг указанное количество раз. Используется для циклов. | [Шаг repeat](https://tinkerpop.apache.org/docs/3.3.2/reference/#repeat-step) |
+| `sample` | Используется для вывода примеров результатов из обхода. | [Шаг sample](https://tinkerpop.apache.org/docs/3.3.2/reference/#sample-step) |
+| `select` | Используется для проектирования результатов из обхода. |  [Шаг select](https://tinkerpop.apache.org/docs/3.3.2/reference/#select-step) |
+| `store` | Используется для статистических функций из обхода без блокировки. | [Шаг store](https://tinkerpop.apache.org/docs/3.3.2/reference/#store-step) |
+| `TextP.startingWith(string)` | Функция фильтрации строк. Эта функция используется в качестве предиката для шага `has()` для сопоставления свойства, начинающегося с определенной строки. | [Предикаты TextP](http://tinkerpop.apache.org/docs/3.4.0/reference/#a-note-on-predicates) |
+| `TextP.endingWith(string)` |  Функция фильтрации строк. Эта функция используется в качестве предиката для шага `has()` для сопоставления свойства, заканчивающегося определенной строкой. | [Предикаты TextP](http://tinkerpop.apache.org/docs/3.4.0/reference/#a-note-on-predicates) |
+| `TextP.containing(string)` | Функция фильтрации строк. Эта функция используется в качестве предиката для шага `has()` для сопоставления свойства, содержащего определенную строку. | [Предикаты TextP](http://tinkerpop.apache.org/docs/3.4.0/reference/#a-note-on-predicates) |
+| `TextP.notStartingWith(string)` | Функция фильтрации строк. Эта функция используется в качестве предиката для шага `has()` для сопоставления свойства, не начинающегося с определенной строки. | [Предикаты TextP](http://tinkerpop.apache.org/docs/3.4.0/reference/#a-note-on-predicates) |
+| `TextP.notEndingWith(string)` | Функция фильтрации строк. Эта функция используется в качестве предиката для шага `has()` для сопоставления свойства, не заканчивающегося определенной строкой. | [Предикаты TextP](http://tinkerpop.apache.org/docs/3.4.0/reference/#a-note-on-predicates) |
+| `TextP.notContaining(string)` | Функция фильтрации строк. Эта функция используется в качестве предиката для шага `has()` для сопоставления свойства, не содержащего определенную строку. | [Предикаты TextP](http://tinkerpop.apache.org/docs/3.4.0/reference/#a-note-on-predicates) |
+| `tree` | Выполняет статистическое вычисление путей из вершины в дерево. | [Шаг tree](https://tinkerpop.apache.org/docs/3.3.2/reference/#tree-step) |
+| `unfold` | Развертывает итератор.| [Шаг unfold](https://tinkerpop.apache.org/docs/3.3.2/reference/#unfold-step) |
+| `union` | Объединяет результаты из нескольких обходов.| [Шаг union](https://tinkerpop.apache.org/docs/3.3.2/reference/#union-step) |
+| `V` | Содержит шаги, необходимые для обходов между вершинами и ребрами (`V`, `E`, `out`, `in`, `both`, `outE`, `inE`, `bothE`, `outV`, `inV`, `bothV`) и `otherV` — для других вершин. | [Шаги vertex](https://tinkerpop.apache.org/docs/3.3.2/reference/#vertex-steps) |
+| `where` | Используется для фильтрации результатов из обхода. Поддерживает операторы `eq`, `neq`, `lt`, `lte`, `gt`, `gte` и `between`.  | [Шаг where](https://tinkerpop.apache.org/docs/3.3.2/reference/#where-step) |
 
 Оптимизированный для операций записи обработчик Azure Cosmos DB по умолчанию поддерживает автоматическое индексирование всех свойств вершин и ребер. Следовательно, запросы с фильтрами, запросы диапазона, сортировка или статистические функции для любого свойства обрабатываются из индекса и эффективно обслуживаются. Дополнительные сведения о выполнении индексирования в базе данных Azure Cosmos DB см. в руководстве об [индексировании без использования схем](https://www.vldb.org/pvldb/vol8/p1668-shukla.pdf).
 

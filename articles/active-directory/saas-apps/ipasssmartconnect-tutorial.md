@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/14/2019
 ms.author: jeedes
-ms.openlocfilehash: bf8c7e76aa6dd69cc505be237e47d8e10e7e8db5
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 8f8dc8219d65505952f35ad018ef19aeb68d64e9
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59264868"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65989766"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-ipass-smartconnect"></a>Руководство по интеграции Azure Active Directory с iPass SmartConnect
 
@@ -180,7 +180,7 @@ ms.locfileid: "59264868"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension**.  
+    b. В поле **Имя пользователя** введите **brittasimon@yourcompanydomain.extension** .  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -215,7 +215,7 @@ ms.locfileid: "59264868"
 
 ### <a name="create-ipass-smartconnect-test-user"></a>Создание тестового пользователя iPass SmartConnect
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении iPass SmartConnect. Обратитесь в  [службу поддержки iPass SmartConnect](mailto:help@ipass.com) , чтобы добавить домен или пользователей на платформу iPass SmartConnect. Если служба поддержки добавит домен, пользователи будут автоматически подготовлены для платформы iPass SmartConnect. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении iPass SmartConnect. Обратитесь к  [группе поддержки iPass SmartConnect](mailto:help@ipass.com) , чтобы добавить пользователей или домен в список разрешений для платформы iPass SmartConnect. Если служба поддержки добавит домен, пользователи будут автоматически подготовлены для платформы iPass SmartConnect. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 

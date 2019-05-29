@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Boxcryptor | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Boxcryptor | Документация Майкрософт
 description: Узнайте, как настроить единый вход между Azure Active Directory и Boxcryptor.
 services: active-directory
 documentationCenter: na
@@ -15,12 +15,12 @@ ms.topic: tutorial
 ms.date: 02/07/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8dc04a307779b47b50cd16a81c0566b72bafab95
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: c4beac0ab739d62eb7acb00e6b2db717b5f43e15
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57860569"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65987958"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-boxcryptor"></a>Руководство по Интеграция Azure Active Directory с Boxcryptor
 
@@ -146,7 +146,7 @@ ms.locfileid: "57860569"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
@@ -181,7 +181,7 @@ ms.locfileid: "57860569"
 
 ### <a name="create-boxcryptor-test-user"></a>Создание тестового пользователя в Boxcryptor
 
-В этом разделе описано, как создать пользователя Britta Simon в Boxcryptor. Обратитесь к  [группе поддержки Boxcryptor](mailto:support@boxcryptor.com), чтобы добавить домен или пользователей, которых нужно включить в список разрешений на платформе Boxcryptor. Если служба поддержки добавит домен, пользователи будут автоматически подготовлены для платформы Boxcryptor. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в Boxcryptor. Обратитесь к  [группе поддержки Boxcryptor](mailto:support@boxcryptor.com) для добавления пользователей или домена, который нужно включить в список разрешений для платформы Boxcryptor. Если служба поддержки добавит домен, пользователи будут автоматически подготовлены для платформы Boxcryptor. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа 
 

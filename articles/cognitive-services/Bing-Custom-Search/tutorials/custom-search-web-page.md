@@ -10,14 +10,14 @@ ms.subservice: bing-custom-search
 ms.topic: tutorial
 ms.date: 03/04/2019
 ms.author: aahi
-ms.openlocfilehash: 6f44d4e6e5a0ee940394e09ceff8a425700d34e1
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 0870983fe9f0ae64090652f02c526a370064b8ab
+ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58100740"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65595892"
 ---
-# <a name="tutorial-build-a-custom-search-web-page"></a>Руководство. Создание веб-страницы пользовательского поиска
+# <a name="tutorial-build-a-custom-search-web-page"></a>Руководство по Создание веб-страницы пользовательского поиска
 
 Служба "Пользовательский поиск Bing" позволяет создавать специально адаптированные интерфейсы поиска по темам, которые действительно важны для вас. Например, если веб-сайт боевых искусств предоставляет функцию поиска, то вы можете указать домены, веб-сайты и веб-страницы, по которым Bing будет выполнять поиск. Пользователи увидят результаты поиска, адаптированные к интересующей их информации, вместо того, чтобы пролистывать страницы результатов поиска с несоответствующим содержимым. 
 
@@ -35,7 +35,7 @@ ms.locfileid: "58100740"
 ## <a name="prerequisites"></a>Предварительные требования
 
 - Чтобы выполнить задания, описанные в этом руководстве, требуется ключ подписки для API пользовательского поиска Bing.  Для получения ключа см. статью [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/?api=bing-custom-search).
-- Если вы еще не установили Visual Studio 2017, вы можете скачать и использовать **бесплатный** [выпуск Community для Visual Studio 2017](https://www.visualstudio.com/downloads/).
+- Если вы еще не установили Visual Studio 2017 или более поздней версии, можете скачать и использовать **бесплатный** [выпуск Visual Studio 2019 Community](https://www.visualstudio.com/downloads/).
 
 ## <a name="create-a-custom-search-instance"></a>Создание экземпляра пользовательского поиска
 

@@ -1,5 +1,5 @@
 ---
-title: Руководство по потоковой передаче Центра Интернета вещей в C# (предварительная версия) | Документация Майкрософт
+title: Обмен данными с приложением устройства с помощью C# и потоков устройств Центра Интернета вещей (предварительная версия) | Документация Майкрософт
 description: В этом кратком руководстве будут выполняться два примера приложений C#, взаимодействующих через поток устройств, установленный при помощи Центра Интернета вещей.
 author: rezasherafat
 manager: briz
@@ -10,18 +10,18 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 03/14/2019
 ms.author: rezas
-ms.openlocfilehash: 2853bd5539a40e3b38927f619756fe37a4cec984
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 8df57d3d36dcae851c9c0e23ea609e200a429605
+ms.sourcegitcommit: 3ced637c8f1f24256dd6ac8e180fff62a444b03c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59006857"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65832904"
 ---
-# <a name="quickstart-communicate-to-device-applications-in-c-via-iot-hub-device-streams-preview"></a>Краткое руководство. Взаимодействие с приложениями устройств в C# с помощью потоков устройств Центра Интернета вещей (предварительная версия)
+# <a name="quickstart-communicate-to-a-device-application-in-c-via-iot-hub-device-streams-preview"></a>Краткое руководство. Обмен данными с приложением устройства с помощью C# и потоков устройств Центра Интернета вещей (предварительная версия)
 
 [!INCLUDE [iot-hub-quickstarts-3-selector](../../includes/iot-hub-quickstarts-3-selector.md)]
 
-Центр Интернета вещей Microsoft Azure поддерживает функцию "Потоки устройств", которая сейчас доступна в режиме [предварительной версии](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
+Центр Интернета вещей Microsoft Azure поддерживает потоки устройств, которые сейчас доступны в режиме [предварительной версии](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 [Потоки устройств Центра Интернета вещей](./iot-hub-device-streams-overview.md) позволяют службам и приложениям устройств безопасным и подходящим методом обмениваться данными с брандмауэром. Краткое руководство включает две программы C#, использующие потоки устройств для обмена данными (вывод на экран).
 
@@ -31,14 +31,15 @@ ms.locfileid: "59006857"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Предварительная версия потоков устройств сейчас поддерживается только в Центрах Интернета вещей, созданных в следующих регионах.
+*  Предварительная версия потоков устройств сейчас поддерживается только в Центрах Интернета вещей, созданных в следующих регионах.
 
-  - **Центральная часть США**
-  - **Центральная часть США (EUAP)**
+   *  **Центральная часть США**
+
+   *  **Центральная часть США (EUAP)**
 
 Примеры приложений, запускаемые в рамках этого краткого руководства, написаны на языке C#. На компьютере, на котором ведется разработка, необходимо установить пакет SDK для .NET Core версии 2.1.0 или более поздней.
 
-Пакет SDK для .NET Core, предназначенный для нескольких платформ, можно загрузить из [.NET](https://www.microsoft.com/net/download/all).
+*  Скачайте [пакет SDK для .NET Core с поддержкой нескольких платформ](https://www.microsoft.com/net/download/all).
 
 Текущую версию C# на компьютере, на котором ведется разработка, можно проверить, используя следующую команду:
 
@@ -46,17 +47,17 @@ ms.locfileid: "59006857"
 dotnet --version
 ```
 
-Выполните следующую команду, чтобы добавить расширение Интернета вещей Microsoft Azure для Azure CLI в экземпляр Cloud Shell. Расширение Интернета вещей добавляет в Azure CLI специальные команды Центра Интернета вещей, IoT Edge и службы подготовки устройств Интернета вещей (DPS).
+*  Выполните следующую команду, чтобы добавить расширение Интернета вещей Microsoft Azure для Azure CLI в экземпляр Cloud Shell. Расширение Интернета вещей добавляет в Azure CLI специальные команды Центра Интернета вещей, IoT Edge и службы подготовки устройств Интернета вещей (DPS).
 
-```azurecli-interactive
-az extension add --name azure-cli-iot-ext
-```
+    ```azurecli-interactive
+    az extension add --name azure-cli-iot-ext
+    ```
 
-Скачайте пример проекта C# по ссылке https://github.com/Azure-Samples/azure-iot-samples-csharp/archive/master.zip и извлеките ZIP-архив. Он понадобится на стороне устройства и стороне службы.
+* Скачайте пример проекта C# по ссылке https://github.com/Azure-Samples/azure-iot-samples-csharp/archive/master.zip и извлеките ZIP-архив. Он понадобится на стороне устройства и стороне службы.
 
 ## <a name="create-an-iot-hub"></a>Создание Центра Интернета вещей
 
-[!INCLUDE [iot-hub-include-create-hub](../../includes/iot-hub-include-create-hub-device-streams.md)]
+[!INCLUDE [iot-hub-include-create-hub-device-streams](../../includes/iot-hub-include-create-hub-device-streams.md)]
 
 ## <a name="register-a-device"></a>Регистрация устройства
 
@@ -86,7 +87,7 @@ az extension add --name azure-cli-iot-ext
 
     Это значение понадобится позже в рамках этого краткого руководства.
 
-3. Понадобится также _строка подключения к службе_ из Центра Интернета вещей, чтобы включить приложение на стороне службы для подключения к Центру Интернета вещей и установить потоки устройств. Следующая команда получает это значение для Центра Интернета вещей:
+3. Понадобится также *строка подключения к службе* из Центра Интернета вещей, чтобы включить приложение на стороне службы для подключения к Центру Интернета вещей и установить потоки устройств. Следующая команда получает это значение для Центра Интернета вещей:
 
    **YourIoTHubName**. Замените этот заполнитель именем вашего Центра Интернета вещей.
 
@@ -99,6 +100,8 @@ az extension add --name azure-cli-iot-ext
    `"HostName={YourIoTHubName}.azure-devices.net;SharedAccessKeyName=service;SharedAccessKey={YourSharedAccessKey}"`
 
 ## <a name="communicate-between-device-and-service-via-device-streams"></a>Обмен данными между устройством и службой через потоки устройств
+
+В рамках этого раздела вы запустите приложения на стороне устройства и на стороне службы, а также настроите обмен данными между двумя этими приложениями.
 
 ### <a name="run-the-service-side-application"></a>Запуск приложения на стороне службы
 
@@ -154,15 +157,17 @@ dotnet run <DeviceConnectionString>
 
 После последнего шага программа на стороне службы инициирует поток к устройству и после установления соединения отправит службе через поток строковый буфер. В этом примере программа на стороне службы просто возвращает те же данные устройству, демонстрируя успешную двустороннюю связь между двумя приложениями. Смотрите рисунок, приведенный ниже.
 
-Выходные данные консоли на стороне устройства: ![замещающий текст](./media/quickstart-device-streams-echo-csharp/device-console-output.png "Выходные данные консоли на стороне устройства")
+Выходные данные консоли на стороне устройства:
 
-Выходные данные консоли на стороне службы: ![замещающий текст](./media/quickstart-device-streams-echo-csharp/service-console-output.png "Выходные данные консоли на стороне службы")
+![Выходные данные консоли на стороне устройства](./media/quickstart-device-streams-echo-csharp/device-console-output.png)
 
-Трафик, передаваемый по потоку, будет туннелироваться через Центр Интернета вещей, а не напрямую. Это обеспечивает [такие преимущества](./iot-hub-device-streams-overview.md#benefits).
+Выходные данные консоли на стороне службы: ![Выходные данные консоли на стороне службы](./media/quickstart-device-streams-echo-csharp/service-console-output.png )
+
+Трафик, передаваемый по потоку, будет туннелироваться через Центр Интернета вещей, а не напрямую. См. подробнее о [преимуществах потоков устройств](./iot-hub-device-streams-overview.md#benefits).
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-[!INCLUDE [iot-hub-quickstarts-clean-up-resources](../../includes/iot-hub-quickstarts-clean-up-resources-device-streams.md)]
+[!INCLUDE [iot-hub-quickstarts-clean-up-resources-device-streams](../../includes/iot-hub-quickstarts-clean-up-resources-device-streams.md)]
 
 ## <a name="next-steps"></a>Дополнительная информация
 

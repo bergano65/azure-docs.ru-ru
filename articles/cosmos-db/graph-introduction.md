@@ -5,18 +5,18 @@ author: LuisBosquez
 ms.service: cosmos-db
 ms.subservice: cosmosdb-graph
 ms.topic: overview
-ms.date: 09/05/2018
+ms.date: 05/20/2019
 ms.author: lbosq
-ms.openlocfilehash: 36465c253996e4cecc665b2fd1d59c03adc78a2f
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 6f5d90f8b825b7076a1a5122dbef3c8b2990e216
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58110551"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65954258"
 ---
 # <a name="introduction-to-azure-cosmos-db-gremlin-api"></a>Знакомство с Azure Cosmos DB: API Gremlin
 
-[Azure Cosmos DB](introduction.md) — это глобально распределенная, многомодельная служба базы данных от Майкрософт, необходимая для работы с критически важными приложениями. Эта база данных является многомодельной и поддерживает модели данных документа, пары "ключ-значение", графы и столбчатые модели данных. API Gremlin для Azure Cosmos DB используется для хранения и обработки данных графов. API Gremlin поддерживает моделирование данных графов и предоставляет API-интерфейсы для их просмотра.
+[Azure Cosmos DB](introduction.md) — это глобально распределенная, многомодельная служба базы данных Майкрософт, необходимая для работы с критически важными приложениями. Эта база данных является многомодельной и поддерживает модели данных документа, пары "ключ-значение", графы и столбчатые модели данных. API Gremlin для Azure Cosmos DB используется для хранения и обработки данных графов. API Gremlin поддерживает моделирование данных графов и предоставляет API-интерфейсы для их просмотра.
 
 В этой статье содержатся сведения об интерфейсе API Gremlin для Azure Cosmos DB и объясняется, как его использовать для хранения больших графов с миллиардами вершин и ребер. Вы также узнаете о выполнении запросов с миллисекундными задержками и простой разработке структуры и схемы графа. Для выполнения запросов к Azure Cosmos DB вы можете использовать язык обхода графов [Apache TinkerPop](https://tinkerpop.apache.org) или [Gremlin](https://tinkerpop.apache.org/docs/current/reference/#graph-traversal-steps).
 
@@ -83,7 +83,7 @@ ms.locfileid: "58110551"
 
 В таблице ниже приведены распространенные драйверы Gremlin, которые вы можете использовать для базы данных Azure Cosmos DB.
 
-| Download (Скачать) | Документация | Приступая к работе | Поддерживаемая версия соединителя |
+| Download (Скачать) | Документация | Начало работы | Поддерживаемая версия соединителя |
 | --- | --- | --- | --- |
 | [.NET](https://tinkerpop.apache.org/docs/3.3.1/reference/#gremlin-DotNet) | [Gremlin.NET в GitHub](https://github.com/apache/tinkerpop/tree/master/gremlin-dotnet) | [Создание приложения Graph с помощью .NET](create-graph-dotnet.md) | 3.4.0-RC2 |
 | [Java](https://mvnrepository.com/artifact/com.tinkerpop.gremlin/gremlin-java) | [Документация по Gremlin для Java](https://tinkerpop.apache.org/javadocs/current/full/) | [Создание приложения Graph с помощью Java](create-graph-java.md) | 3.2.0 и выше |

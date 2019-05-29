@@ -7,7 +7,7 @@
       href: active-directory-whatis.md
     - name: Новые возможности Azure Active Directory
       href: whats-new.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   items:
     - name: Доступ к порталу и создание клиента
       href: active-directory-access-create-new-tenant.md
@@ -29,6 +29,8 @@
       href: active-directory-deployment-checklist-p2.md
     - name: Хранилище данных удостоверений для ЕС
       href: active-directory-data-storage-eu.md
+    - name: "Новые возможности Microsoft\_365 для государственных организаций"
+      href: whats-new-microsoft-365-government.md
 - name: Практические руководства
   expanded: true
   items:
@@ -72,7 +74,7 @@
           href: active-directory-users-assign-role-azure-portal.md
         - name: Назначение и удаление пользовательских лицензий
           href: license-users-groups.md
-        - name: восстановить удаленного пользователя;
+        - name: Восстановление удаленного пользователя
           href: active-directory-users-restore.md
 - name: Ресурсы
   items:

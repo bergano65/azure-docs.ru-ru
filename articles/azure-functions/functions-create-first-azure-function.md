@@ -1,5 +1,5 @@
 ---
-title: Создание первой функции на портале Azure | Документация Майкрософт
+title: Создание функции на портале Azure | Документация Майкрософт
 description: Узнайте, как создать первую функцию Azure, выполняемую без сервера, с помощью портала Azure.
 services: functions
 documentationcenter: na
@@ -12,23 +12,23 @@ ms.topic: quickstart
 ms.date: 03/28/2018
 ms.author: glenga
 ms.custom: mvc, devcenter, cc996988-fb4f-47
-ms.openlocfilehash: 1b7efd4f36d5587667010d25f30a3e7945faee4f
-ms.sourcegitcommit: 2469b30e00cbb25efd98e696b7dbf51253767a05
+ms.openlocfilehash: 4a49cb3de2dc36dcd933a0b31b6a55b838eb1336
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/06/2018
-ms.locfileid: "52997799"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65864640"
 ---
 # <a name="create-your-first-function-in-the-azure-portal"></a>Создание первой функции на портале Azure
 
-Решение "Функции Azure" позволяет выполнять код в [бессерверной](https://azure.microsoft.com/solutions/serverless/) среде без необходимости создавать виртуальную машину или публиковать веб-приложение. В этой статье вы узнаете, как создать функцию Hello World на портале Azure с помощью Функций.
+Решение "Функции Azure" позволяет выполнять код в [бессерверной](https://azure.microsoft.com/solutions/serverless/) среде без необходимости создавать виртуальную машину или публиковать веб-приложение. В этой статье описано, как создать функцию Hello World на портале Azure с помощью Функций.
 
 ![Создание приложения-функции на портале Azure](./media/functions-create-first-azure-function/function-app-in-portal-editor.png)
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
 > [!NOTE]
-> Разработчикам на языке C# следует рассмотреть вариант [создания первой функции в Visual Studio 2017](functions-create-your-first-function-visual-studio.md), а не на портале. 
+> Разработчики C# могут [создать функцию в Visual Studio 2019](functions-create-your-first-function-visual-studio.md), а не на портале. 
 
 ## <a name="log-in-to-azure"></a>Вход в Azure
 
@@ -46,7 +46,7 @@ ms.locfileid: "52997799"
 
 1. Раскройте свое приложение-функцию, а затем нажмите кнопку **+** рядом с **Функции**, выберите **На портале** и далее **Продолжить**.
 
-    ![Краткое руководство по функциям; выбор платформы.](./media/functions-create-first-azure-function/function-app-quickstart-choose-portal.png)
+    ![Краткое руководство по выбору платформы в Функциях.](./media/functions-create-first-azure-function/function-app-quickstart-choose-portal.png)
 
 1. Выберите **Веб-перехватчик + API**, а затем нажмите **Создать**.
 

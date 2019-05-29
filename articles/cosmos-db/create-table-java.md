@@ -8,12 +8,12 @@ ms.devlang: java
 ms.topic: quickstart
 ms.date: 04/10/2018
 ms.author: sngun
-ms.openlocfilehash: b0fda94f3120f1f228836713456d584d33c08a48
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: 22d5aea119d71553afc02ee923fab5cf5ead5ce0
+ms.sourcegitcommit: 17411cbf03c3fa3602e624e641099196769d718b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54033135"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65519049"
 ---
 # <a name="quickstart-build-a-table-api-app-with-java-and-azure-cosmos-db"></a>Краткое руководство. Создание приложения API таблиц с помощью Java и Azure Cosmos DB
 
@@ -35,8 +35,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
 Кроме того, сделайте следующее: 
 
-* [Комплект разработчика Java (JDK 1.7+)](https://aka.ms/azure-jdks)
-    * В Ubuntu выполните команду `apt-get install default-jdk`, чтобы установить JDK.
+* [Пакет SDK для Java (JDK) версии 8](https://aka.ms/azure-jdks)
     * Обязательно настройте переменную среды JAVA_HOME так, чтобы она указывала на папку, в которой установлен пакет JDK.
 * [Скачайте](https://maven.apache.org/download.cgi) и [установите](https://maven.apache.org/install.html) двоичный архив [Maven](https://maven.apache.org/).
     * В Ubuntu выполните команду `apt-get install maven`, чтобы установить Maven.

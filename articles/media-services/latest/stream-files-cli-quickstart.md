@@ -1,6 +1,6 @@
 ---
 title: Потоковая передача видеофайлов с помощью Служб мультимедиа Azure и Azure CLI | Документация Майкрософт
-description: Следуйте инструкциям этого краткого руководства, чтобы создать учетную запись Служб мультимедиа Azure, закодировать файл и передать его потоком в Проигрыватель мультимедиа Azure.
+description: Выполните инструкции, приведенные в этом руководстве, чтобы создать учетную запись Служб мультимедиа Azure, закодировать файл и выполнить его потоковую передачу в Проигрыватель мультимедиа Azure.
 services: media-services
 documentationcenter: ''
 author: Juliako
@@ -9,24 +9,24 @@ editor: ''
 keywords: azure media services, stream
 ms.service: media-services
 ms.workload: media
-ms.topic: quickstart
+ms.topic: tutorial
 ms.custom: ''
 ms.date: 02/19/2019
 ms.author: juliako
-ms.openlocfilehash: bd818135f289c430416909d16c8568208936a9f8
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: cce424b11cc4cd587c6e7c50bc8bdf988004a43a
+ms.sourcegitcommit: f013c433b18de2788bf09b98926c7136b15d36f1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65205404"
+ms.lasthandoff: 05/13/2019
+ms.locfileid: "65550198"
 ---
-# <a name="quickstart-stream-video-files---cli"></a>Краткое руководство. Потоковая передача видеофайлов с помощью CLI
+# <a name="tutorial-stream-video-files---cli"></a>Руководство по Потоковая передача видеофайлов с помощью CLI
 
-В этом кратком руководстве показано, как легко выполнять кодирование и осуществлять потоковую передачу видео в различных браузерах и устройствах с помощью Служб мультимедиа Azure и Azure CLI. Входное содержимое можно определить с помощью протокола HTTPS, URL-адреса SAS или путей к файлам в хранилище BLOB-объектов Azure.
+В этом кратком руководстве описано, как легко выполнять кодирование и потоковую передачу видео в разных браузерах и на разных устройствах с помощью Служб мультимедиа Azure и Azure CLI. Входное содержимое можно определить с помощью протокола HTTPS, URL-адреса SAS или путей к файлам в хранилище BLOB-объектов Azure.
 
 Пример в этой статье предназначен для кодирования содержимого, которое доступно через URL-адрес HTTPS. Версия 3 Служб мультимедиа сейчас не поддерживает кодирование блочной передачи через URL-адреса HTTPS.
 
-Изучив это краткое руководство, вы сможете выполнить потоковую передачу видео.  
+Изучив это руководство, вы сможете выполнить потоковую передачу видео.  
 
 ![Воспроизведение видео](./media/stream-files-dotnet-quickstart/final-video.png)
 
@@ -342,7 +342,7 @@ az ams streaming-endpoint list -a amsaccount -g amsResourceGroup -n default
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Если вам больше не нужны ресурсы в группе ресурсов, включая Службы мультимедиа и учетные записи хранения, созданные в рамках этого краткого руководства, удалите группу ресурсов.
+Если вам больше не нужны ресурсы в группе ресурсов, включая Службы мультимедиа и учетные записи хранения, созданные в рамках этого руководства, удалите группу ресурсов.
 
 Выполните следующую команду интерфейса командной строки:
 
@@ -350,10 +350,7 @@ az ams streaming-endpoint list -a amsaccount -g amsResourceGroup -n default
 az group delete --name amsResourceGroup
 ```
 
-## <a name="see-also"></a>См. также
-
-Дополнительные сведения см. в разделе [JobErrorCode](https://docs.microsoft.com/rest/api/media/jobs/get#joberrorcode).
-
 ## <a name="next-steps"></a>Дополнительная информация
 
 [Общие сведения о службах мультимедиа](media-services-overview.md)
+

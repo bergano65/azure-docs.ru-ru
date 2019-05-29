@@ -1,19 +1,19 @@
 ---
-title: Заказ Microsoft Azure Data Box | Документация Майкрософт
+title: Учебник по заказу Azure Data Box | Документация Майкрософт
 description: Изучите предварительные условия развертывания и порядок заказа Azure Data Box
 services: databox
 author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: tutorial
-ms.date: 03/05/2019
+ms.date: 04/23/2019
 ms.author: alkohli
-ms.openlocfilehash: 07ccd2aaec6b2325d6eef09a466a5d0707836b4b
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: b0204673c0706403c8c5a7367be19e590d9cb134
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57834274"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65604095"
 ---
 # <a name="tutorial-order-azure-data-box"></a>Руководство по Заказ Azure Data Box
 
@@ -66,10 +66,10 @@ Azure Data Box — это гибридное решение, которое по
     |---------|---------|
     |Подписка     | Выберите для использования службы Data Box подписку EA, CSP или "Спонсорское предложение Azure". <br> Подписка привязана к учетной записи для выставления счетов.       |
     |Тип передачи     | Выберите **Импорт в Azure**.        |
-    |Страна происхождения     |   Выберите страну, в которой находятся ваши данные.         |
+    |Страна происхождения     |   Выберите страну/регион, в которой находятся ваши данные.         |
     |Конечный регион Azure     |     Выберите регион Azure, куда вы хотите передать данные.        |
 
-5. Выберите Data **Box**. Максимальная полезная емкость для одного заказа составляет 786 ТБ. Для больших размеров данных можно создать несколько заказов.
+5. Выберите Data **Box**. Максимальная полезная емкость для одного заказа составляет 80 ТБ. Для больших размеров данных можно создать несколько заказов.
 
       [![Выберите Data Box вариант 1](media/data-box-deploy-ordered/select-data-box-option1.png)](media/data-box-deploy-ordered/select-data-box-option1.png#lightbox)
 

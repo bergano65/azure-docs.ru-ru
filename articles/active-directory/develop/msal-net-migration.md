@@ -4,7 +4,7 @@ description: Из этой статьи вы узнаете о различия�
 services: active-directory
 documentationcenter: dev-center-name
 author: jmprieur
-manager: celested
+manager: CelesteDG
 editor: ''
 ms.service: active-directory
 ms.subservice: develop
@@ -17,12 +17,12 @@ ms.author: jmprieur
 ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2576121bfc945b90ce8ec0260ea30ec110e14dd8
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: f9be13ac22e6eda32668d635032ebcccf417b6c7
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65138831"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65785209"
 ---
 # <a name="migrating-applications-to-msalnet"></a>Перенос приложений на MSAL.NET
 
@@ -128,7 +128,7 @@ Interactive | [Интерактивная аутентификация](https://
 Тип приложения | Предоставление доступа | ADAL.NET | MSAL.NET
 ----- | ----- | ----- | -----
 Веб-приложение, веб-API, управляющая программа | Учетные данные клиента | [Потоки учетных данных клиента в ADAL.NET](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet/wiki/Client-credential-flows) | [Потоки учетных данных клиента в MSAL.NET](msal-authentication-flows.md#client-credentials)
-Веб-интерфейс API | От имени | [Вызовы между службами от имени пользователя через ADAL.NET](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet/wiki/Service-to-service-calls-on-behalf-of-the-user) | [Вызов от имени через MSAL.NET](msal-authentication-flows.md#on-behalf-of)
+Веб-API | От имени | [Вызовы между службами от имени пользователя через ADAL.NET](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet/wiki/Service-to-service-calls-on-behalf-of-the-user) | [Вызов от имени через MSAL.NET](msal-authentication-flows.md#on-behalf-of)
 Веб-приложение | Код аутентификации | [Получение маркеров с помощью кодов авторизации в веб-приложениях через ADAL.NET](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet/wiki/Acquiring-tokens-with-authorization-codes-on-web-apps) | [Получение маркеров с помощью кодов авторизации в веб-приложениях через MSAL.NET](msal-authentication-flows.md#authorization-code)
 
 ### <a name="cache-persistence"></a>Сохраняемость кэша
@@ -192,7 +192,7 @@ var result = await app.AcquireTokenInteractive(scopes).ExecuteAsync();
 Azure AD использует следующую логику:
 - Для конечной точки ADAL (версия 1.0) с маркером доступа версии 1.0 (единственный поддерживаемый вариант) aud=resource.
 - Для конечной точки MSAL (версии 2.0), которая запрашивает маркер доступа для ресурса, принимающего маркеры версии 2.0, aud=resource.AppId.
-- Для конечной точки MSAL (версии 2.0), которая запрашивает маркер доступа для ресурса, принимающего маркеры версии 1.0 (как в примере выше), AAD выполняет синтаксический анализ параметра audience из запрошенной области, используя все символы до последней косой черты в качестве идентификатора ресурса. Поэтому если https://database.windows.net ожидает для audience значение https://database.windows.net/, следует запросить область https://database.windows.net//.default. См. также описание проблемы №[747](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/747) об отсутствии завершающей косой черты в URL-адресе ресурса, что приводит к сбою аутентификации SQL № 747.
+- Для конечной точки MSAL (версии 2.0), которая запрашивает маркер доступа для ресурса, принимающего маркеры версии 1.0 (как в примере выше), AAD выполняет синтаксический анализ параметра audience из запрошенной области, используя все символы до последней косой черты в качестве идентификатора ресурса. Поэтому если https:\//database.windows.net ожидает для audience значение https://database.windows.net/, следует запросить область https:\//database.windows.net//.default. См. также описание проблемы №[747](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/747) об отсутствии завершающей косой черты в URL-адресе ресурса, что приводит к сбою аутентификации SQL № 747.
 
 
 ### <a name="scopes-to-request-access-to-all-the-permissions-of-a-v10-application"></a>Области для запроса доступа ко всем разрешениям в приложении версии 1.0

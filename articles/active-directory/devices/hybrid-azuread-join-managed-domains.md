@@ -17,12 +17,12 @@ ms.date: 03/20/2019
 ms.author: joflore
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5f080e315430cba986642e4a24af776cc82062c0
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: 94fbcc1c29c1860642dda0afab6a1f10e719a05a
+ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65190792"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65962204"
 ---
 # <a name="tutorial-configure-hybrid-azure-active-directory-join-for-managed-domains"></a>Руководство по Настройка гибридного присоединения к Azure Active Directory для управляемых доменов
 
@@ -178,17 +178,17 @@ ms.locfileid: "65190792"
 
 ### <a name="configure-seamless-sso"></a>Настройка простого единого входа
 
-Для успешного завершения гибридного присоединения к Azure AD устройств Windows нижнего уровня в управляемом домене, использующем сквозную проверку подлинности (PTA) или синхронизацию хэша паролей (PHS) для проверки подлинности в Azure AD, необходимо также [включить простой единый вход](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-sso-quick-start#step-2-enable-the-feature). 
+Для успешного завершения гибридного присоединения к Azure AD устройств Windows нижнего уровня в управляемом домене, использующем сквозную проверку подлинности (PTA) или синхронизацию хэша паролей (PHS) для проверки подлинности в Azure AD, необходимо также [включить простой единый вход](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-sso-quick-start#step-2-enable-the-feature). Если возникают проблемы с настройкой простого единого входа, ознакомьтесь со статьей [Troubleshoot Azure Active Directory Seamless Single Sign-On](https://docs.microsoft.com/en-us/azure/active-directory/hybrid/tshoot-connect-sso) (Устранение неполадок с простым единым входом Azure Active Directory).
 
 
 ### <a name="control-windows-down-level-devices"></a>Управление устройствами Windows нижнего уровня 
 
-Чтобы регистрировать устройства Windows нижнего уровня, необходимо скачать из Центра загрузки Майкрософт и установить пакет установщика Windows (MSI-файл). Дополнительные сведения см. [здесь](hybrid-azuread-join-control.md#control-windows-down-level-devices). 
+Чтобы регистрировать устройства Windows нижнего уровня, необходимо скачать из Центра загрузки Майкрософт и установить пакет установщика Windows (MSI-файл). Дополнительные сведения см. в статье об [управлении гибридным присоединением устройств к Azure AD](hybrid-azuread-join-control.md#control-windows-down-level-devices). 
 
 
 ## <a name="verify-the-registration"></a>Проверка регистрации
 
-Чтобы проверить состояние регистрации устройства в клиенте Azure, можно использовать командлет **[Get-MsolDevice](https://docs.microsoft.com/powershell/msonline/v1/get-msoldevice)** в **[модуле PowerShell для Azure Active Directory](/powershell/azure/install-msonlinev1?view=azureadps-2.0)**.
+Чтобы проверить состояние регистрации устройства в клиенте Azure, можно использовать командлет **[Get-MsolDevice](https://docs.microsoft.com/powershell/msonline/v1/get-msoldevice)** в **[модуле PowerShell для Azure Active Directory](/powershell/azure/install-msonlinev1?view=azureadps-2.0)** .
 
 Командлет **Get-MSolDevice** можно использовать, чтобы получить сведения о службе.
 

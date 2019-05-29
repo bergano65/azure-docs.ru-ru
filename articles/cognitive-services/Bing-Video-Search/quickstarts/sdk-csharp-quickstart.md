@@ -3,19 +3,19 @@ title: Краткое руководство. Поиск видео с помо�
 titleSuffix: Azure Cognitive Services
 description: В этом кратком руководстве описано, как отправлять запросы с помощью пакета SDK Поиска видео Bing для C#.
 services: cognitive-services
-author: mikedodaro
+author: aahill
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: bing-video-search
 ms.topic: quickstart
 ms.date: 01/31/2019
-ms.author: rosh
-ms.openlocfilehash: f94db7a29827a80307f4a081d93744c5edc59edb
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.author: aahi
+ms.openlocfilehash: e10d9088f6de3b7a3a638cdbe18f51425d206b7b
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55867789"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65798181"
 ---
 # <a name="quickstart-perform-a-video-search-with-the-bing-video-search-sdk-for-c"></a>Краткое руководство. Поиск видео с помощью пакета SDK Поиска видео Bing для C#
 
@@ -23,10 +23,10 @@ ms.locfileid: "55867789"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Любой выпуск [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/).
+* Любой выпуск [Visual Studio 2017 или более поздней версии](https://visualstudio.microsoft.com/downloads/).
 * Платформа Json.NET, доступная в виде [пакета NuGet](https://www.nuget.org/packages/Newtonsoft.Json/).
 
-Чтобы добавить пакет SDK Поиска видео Bing в проект, перейдите к параметру `Manage NuGet Packages` в обозревателе решений в Visual Studio.  Добавьте пакет `Microsoft.Azure.CognitiveServices.Search.VideoSearch`.
+Чтобы добавить пакет SDK API "Поиск видео Bing" в проект, перейдите к параметру **Manage NuGet Packages** (Управление пакетами NuGet) в **обозревателе решений** в Visual Studio. Добавьте пакет `Microsoft.Azure.CognitiveServices.Search.VideoSearch`.
 
 При установке [пакета SDK NuGet для Поиска видео](https://www.nuget.org/packages/Microsoft.Azure.CognitiveServices.Search.VideoSearch/1.2.0) также будут установлены следующие зависимости:
 

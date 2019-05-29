@@ -11,12 +11,12 @@ ms.service: azure-functions
 ms.custom: mvc
 ms.devlang: python
 manager: jeconnoc
-ms.openlocfilehash: 7e2b3424c3d8edc931054dea062280ea7789dc44
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 88e8d543e8bc3c3ae07133ec333b33c4486c2684
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65143058"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65864519"
 ---
 # <a name="create-an-http-triggered-function-in-azure"></a>Создание функции, активируемой HTTP, в Azure
 
@@ -108,7 +108,7 @@ func new
 
   Каждой привязке требуется направление, тип и уникальное имя. В HTTP-триггере есть входная привязка типа [`httpTrigger`](functions-bindings-http-webhook.md#trigger) и выходная привязка типа [`http`](functions-bindings-http-webhook.md#output).
 
-* **__init__.py**. Файл сценария, который является функцией, активируемой HTTP-запросами. Просмотрите этот сценарий и убедитесь, что он содержит `main()` по умолчанию. Данные HTTP из триггера передаются в эту функцию с помощью именованного параметра привязки `req`. Определенный в файле function.json, `req` является экземпляром [класса azure.functions.HttpRequest](/python/api/azure-functions/azure.functions.httprequest). 
+* **\_\_init\_\_.py**. Файл скрипта, который является функцией, активируемой HTTP-запросами. Просмотрите этот сценарий и убедитесь, что он содержит `main()` по умолчанию. Данные HTTP из триггера передаются в эту функцию с помощью именованного параметра привязки `req`. Определенный в файле function.json, `req` является экземпляром [класса azure.functions.HttpRequest](/python/api/azure-functions/azure.functions.httprequest). 
 
     Возвращаемый объект, определенный как `$return` в файле function.json, — это экземпляр [класса azure.functions.HttpResponse](/python/api/azure-functions/azure.functions.httpresponse). Дополнительные сведения см. в статье [Триггеры и привязки HTTP в службе "Функции Azure"](functions-bindings-http-webhook.md).
 

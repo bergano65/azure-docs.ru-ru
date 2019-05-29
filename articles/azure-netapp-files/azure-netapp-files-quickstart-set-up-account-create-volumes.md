@@ -1,6 +1,6 @@
 ---
-title: Настройка Azure NetApp Files и создание тома | Документация Майкрософт
-description: Описывается, как быстро настроить Azure NetApp Files и создать том.
+title: Краткое руководство. Настройка службы Azure NetApp Files и создание тома NFS | Документация Майкрософт
+description: Краткое руководство. Описание быстрой настройки Azure NetApp Files и создания тома.
 services: azure-netapp-files
 documentationcenter: ''
 author: b-juche
@@ -12,28 +12,38 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: quickstart
-ms.date: 2/20/2019
+ms.date: 4/16/2019
 ms.author: b-juche
-ms.openlocfilehash: 634f23cf3161fff09f21c79fd8300cb269dcc5b7
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.openlocfilehash: 2bcd8163cb3c6071812d4d247b5b333edcfc89e5
+ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59546589"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65523028"
 ---
-# <a name="set-up-azure-netapp-files-and-create-a-volume"></a>Настройка Azure NetApp Files и создание тома 
+# <a name="quickstart-set-up-azure-netapp-files-and-create-an-nfs-volume"></a>Краткое руководство. Настройка Azure NetApp Files и создание тома NFS 
 
 В этой статье описывается, как быстро настроить Azure NetApp Files и создать том. 
 
+В этом кратком руководстве описывается настройка следующих элементов:
+
+- регистрации для использования Azure NetApp Files и поставщика ресурсов NetApp;
+- учетной записи NetApp;
+- пула емкости;
+- тома NFS для Azure NetApp Files.
+
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
+
 ## <a name="before-you-begin"></a>Перед началом работы 
 
-Требуется участие в программе использования общедоступной предварительной версии и добавление в список разрешений для доступа к поставщику ресурсов Microsoft.NetApp. Дополнительные сведения об участии в этой программе, см. на [страницы регистрации для использования общедоступной предварительной версии Azure NetApp Files](https://aka.ms/nfspublicpreview). 
+> [!IMPORTANT] 
+> Необходимо иметь доступ к службе Azure NetApp Files.  Запросить доступ к службе можно на [странице заявки на доступ к Azure NetApp Files](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR8cq17Xv9yVBtRCSlcD_gdVUNUpUWEpLNERIM1NOVzA5MzczQ0dQR1ZTSS4u).  Перед продолжением необходимо дождаться официального подтверждения по электронной почте от команды Azure NetApp Files. 
 
 ## <a name="register-for-azure-netapp-files-and-netapp-resource-provider"></a>Регистрация для использования Azure NetApp Files и поставщика ресурсов NetApp
 
 1. На портале Azure щелкните значок Azure Cloud Shell в верхнем правом углу.
 
-      ![значок Azure Cloud Shell](../media/azure-netapp-files/azure-netapp-files-azure-cloud-shell.png)
+    ![значок Azure Cloud Shell](../media/azure-netapp-files/azure-netapp-files-azure-cloud-shell-window.png)
 
 2. Укажите подписку, которая была добавлена в список разрешений для Azure NetApp Files.
     
@@ -84,11 +94,11 @@ ms.locfileid: "59546589"
 4. Укажите сведения о пуле емкости. 
     1. Введите имя пула **mypool1**.
     2. Выберите уровень обслуживания **Премиум**. 
-    3. Укажите размер пула **4 (Тиб)**. 
+    3. Укажите размер пула **4 (Тиб)** . 
 
 5. Последовательно выберите **ОК**.
 
-## <a name="create-a-volume-for-azure-netapp-files"></a>Создание тома для Azure NetApp Files
+## <a name="create-an-nfs-volume-for-azure-netapp-files"></a>Создание тома NFS для Azure NetApp Files
 
 1. В колонке управления Azure NetApp Files для своей учетной записи NetApp щелкните **Тома**.
 
@@ -100,7 +110,6 @@ ms.locfileid: "59546589"
 
 3. В окне "Создать том" укажите сведения о томе. 
    1. Введите имя тома **myvol1**. 
-   2. Укажите путь к файлу (**myfilepath1**), который будет использоваться для создания пути экспорта для этого тома.
    3. Выберите пул емкости (**mypool1**).
    4. Используйте значение квоты по умолчанию. 
    5. В разделе "Виртуальная сеть" щелкните **Создать**, чтобы создать виртуальную сеть Azure.  Затем укажите следующие сведения.
@@ -116,7 +125,13 @@ ms.locfileid: "59546589"
 
       ![Окно создания виртуальной сети](../media/azure-netapp-files/azure-netapp-files-create-virtual-network-window.png)  
 
-4. Щелкните **Review + create** (Просмотреть и создать).
+4. Нажмите кнопку **Протокол**, а затем для типа протокола тома выберите **NFS**.   
+
+    Укажите путь к файлу (**myfilepath1**), который будет использоваться для создания пути экспорта для этого тома. 
+
+    ![Чтобы сразу же начать работу, выберите протокол NFS](../media/azure-netapp-files/azure-netapp-files-quickstart-protocol-nfs.png)
+
+5. Щелкните **Review + create** (Просмотреть и создать).
 
     ![Окно просмотра и создания](../media/azure-netapp-files/azure-netapp-files-review-and-create-window.png)  
 
@@ -125,7 +140,31 @@ ms.locfileid: "59546589"
 
     ![Созданный том](../media/azure-netapp-files/azure-netapp-files-create-volume-created.png)  
 
+## <a name="clean-up-resources"></a>Очистка ресурсов
+
+По окончании группу ресурсов можно при необходимости удалить. Удаление группы ресурсов — необратимая операция.  
+
+> [!IMPORTANT]
+> Все ресурсы в группе ресурсов будут окончательно удалены, и отменить эту операцию невозможно. 
+
+1. В поле поиска на портале Azure введите **Azure NetApp Files**, затем выберите **Azure NetApp Files** из появившегося списка.
+
+2. В списке подписок щелкните группу ресурсов (myRG1), которую необходимо удалить. 
+
+    ![Переход к группе ресурсов](../media/azure-netapp-files/azure-netapp-files-azure-navigate-to-resource-groups.png)
+
+
+3. На странице группы ресурсов выберите команду **Удалить группу ресурсов**.
+
+    ![Удалить группу ресурсов](../media/azure-netapp-files/azure-netapp-files-azure-delete-resource-group.png) 
+
+    Откроется окно с предупреждением о ресурсах, которые будут удалены вместе с группой ресурсов.
+
+4. Введите имя группы ресурсов (myRG1) для подтверждения того, что вы хотите окончательно удалить группу ресурсов и все входящие в нее ресурсы, а затем нажмите кнопку **Удалить**.
+
+    ![Удалить группу ресурсов](../media/azure-netapp-files/azure-netapp-files-azure-confirm-resource-group-deletion.png ) 
+
 ## <a name="next-steps"></a>Дополнительная информация  
 
-* [Общие сведения об иерархии хранилища Azure NetApp Files](azure-netapp-files-understand-storage-hierarchy.md)
-* [Управление томами с помощью Azure NetApp Files](azure-netapp-files-manage-volumes.md) 
+> [!div class="nextstepaction"]
+> [Управление томами с помощью Azure NetApp Files](azure-netapp-files-manage-volumes.md)  

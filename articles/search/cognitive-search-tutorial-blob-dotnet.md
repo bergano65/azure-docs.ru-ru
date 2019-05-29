@@ -9,12 +9,12 @@ ms.devlang: NA
 ms.topic: tutorial
 ms.date: 05/02/2019
 ms.author: maheff
-ms.openlocfilehash: 1b3353cae73bb5710dc9343f1d211266d15743a2
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 7794cf256ed8063007b4eee7c5c928be85723982
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65153212"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66170200"
 ---
 # <a name="c-tutorial-call-cognitive-services-apis-in-an-azure-search-indexing-pipeline"></a>Руководство по C#. Вызов API-интерфейсов Cognitive Services в конвейере индексирования службы "Поиск Azure"
 
@@ -44,13 +44,13 @@ ms.locfileid: "65153212"
 
 В этом руководстве используются приведенные ниже службы, инструменты и данные. 
 
-[Создайте службу "Поиск Azure"](search-create-service-portal.md) или [найдите имеющуюся службу](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) в рамках текущей подписки. Вы можете использовать бесплатную службу для выполнения инструкций, описанных в этом учебнике.
++ [Создайте учетную запись хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account) для хранения примера данных. Создайте учетную запись хранения в том регионе, где находится служба "Поиск Azure".
 
-[Создайте учетную запись хранения Azure](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account) для хранения примера данных.
++ [Пример данных](https://1drv.ms/f/s!As7Oy81M_gVPa-LCb5lC_3hbS-4), который состоит из небольшого набора файлов различных типов. 
 
-[Пример данных](https://1drv.ms/f/s!As7Oy81M_gVPa-LCb5lC_3hbS-4), который состоит из небольшого набора файлов различных типов. 
++ [Установите Visual Studio](https://visualstudio.microsoft.com/), чтобы использовать решение в качестве интегрированной среды разработки.
 
-[Установите Visual Studio](https://visualstudio.microsoft.com/), чтобы использовать решение в качестве интегрированной среды разработки.
++ [Создайте службу "Поиск Azure"](search-create-service-portal.md) или [найдите имеющуюся службу](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) в рамках текущей подписки. Вы можете использовать бесплатную службу для выполнения инструкций, описанных в этом учебнике.
 
 ## <a name="get-a-key-and-url"></a>Получение ключа и URL-адреса
 
@@ -98,7 +98,7 @@ ms.locfileid: "65153212"
 
 Установите пакет NuGet `Microsoft.Azure.Search` непосредственно из консоли диспетчера пакетов в Visual Studio. Чтобы открыть консоль диспетчера пакетов, последовательно выберите **Инструменты** > **Диспетчер пакетов NuGet** > **Консоль диспетчера пакетов**. Чтобы выполнить команду, перейдите к [странице пакета Microsoft.Azure.Search NuGet](https://www.nuget.org/packages/Microsoft.Azure.Search), выберите версию 9 и скопируйте команду диспетчера пакетов. Выполните эту команду консоли диспетчера пакетов.
 
-Чтобы установить пакет NuGet `Microsoft.Extensions.Configuration.Json` в Visual Studio, последовательно выберите **Инструменты** > **Диспетчер пакетов NuGet** > **Управление пакетами NuGet для решения...**. Щелкните "Обзор" и найдите пакет NuGet `Microsoft.Extensions.Configuration.Json`. Выберите его, выберите проект, убедитесь, что используется последняя стабильная версия, и нажмите кнопку "Установить".
+Чтобы установить пакет NuGet `Microsoft.Extensions.Configuration.Json` в Visual Studio, последовательно выберите **Инструменты** > **Диспетчер пакетов NuGet** > **Управление пакетами NuGet для решения...** . Щелкните "Обзор" и найдите пакет NuGet `Microsoft.Extensions.Configuration.Json`. Выберите его, выберите проект, убедитесь, что используется последняя стабильная версия, и нажмите кнопку "Установить".
 
 ## <a name="add-azure-search-service-information"></a>Добавление сведений о службе "Поиск Azure"
 
@@ -425,7 +425,7 @@ catch (Exception e)
 
 Поля для этого индекса определяются с помощью класса модели. Каждое свойство класса модели имеет атрибуты, которые определяют связанные с поиском характеристики соответствующего поля индекса. 
 
-Мы добавим класс модели в новый файл C#. Щелкните проект правой кнопкой мыши и последовательно выберите **Добавить** > **Новый элемент...**. Выберите "Класс", присвойте файлу имя `DemoIndex.cs`, а затем щелкните **Добавить**.
+Мы добавим класс модели в новый файл C#. Щелкните проект правой кнопкой мыши и последовательно выберите **Добавить** > **Новый элемент...** . Выберите "Класс", присвойте файлу имя `DemoIndex.cs`, а затем щелкните **Добавить**.
 
 Обязательно укажите, что нужно использовать типы из пространств имен `Microsoft.Azure.Search` и `Microsoft.Azure.Search.Models`.
 

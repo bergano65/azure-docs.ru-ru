@@ -10,12 +10,12 @@ ms.subservice: personalizer
 ms.topic: overview
 ms.date: 05/07/2019
 ms.author: edjez
-ms.openlocfilehash: bce260d2a6b897d3e45b231df4eecd7ecb31ba31
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 80e5feeccc4acc3e1f3dab6b815c8605332c7c71
+ms.sourcegitcommit: 3ced637c8f1f24256dd6ac8e180fff62a444b03c
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65143246"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65834297"
 ---
 # <a name="personalizer-settings"></a>Параметры Персонализатора
 
@@ -35,7 +35,7 @@ ms.locfileid: "65143246"
 1. Найдите нужный ресурс Персонализатора. 
 1. В разделе **Управление ресурсами** выберите **Параметры**.
 
-    Прежде чем покидать портал Azure, скопируйте один из ключей ресурсов на странице **Ключи**. Он потребуется для использования [пакета SDK Персонализатора](https://aka.ms/personalizer-dotnet-sdk-docs).
+    Прежде чем покидать портал Azure, скопируйте один из ключей ресурсов на странице **Ключи**. Он потребуется для использования [пакета SDK Персонализатора](https://go.microsoft.com/fwlink/?linkid=2092353).
 
 ### <a name="configure-reward-settings-for-the-feedback-loop-based-on-use-case"></a>Настройка параметров вознаграждения для цикла обратной связи с учетом варианта использования
 
@@ -87,4 +87,7 @@ ms.locfileid: "65143246"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-[Использование контейнера Персонализатора](https://go.microsoft.com/fwlink/?linkid=2083923&clcid=0x409)
+<!--
+[How to use the Personalizer container](https://go.microsoft.com/fwlink/?linkid=2083923&clcid=0x409)
+-->
+[Подробнее о доступности по регионам](https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services)

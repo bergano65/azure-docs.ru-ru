@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 04/01/2019
 ms.author: jeedes
-ms.openlocfilehash: af849fa6790dfdb57d8073b17f6d31a3f59a532d
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: 19c2ccab6685f53ba714298f66bc8e8821b4aa02
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59999763"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65988030"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-foresee-cx-suite"></a>Руководство. Интеграция Azure Active Directory с ForeSee CX Suite
 
@@ -194,7 +194,7 @@ ms.locfileid: "59999763"
 
 ### <a name="create-foresee-cx-suite-test-user"></a>Создание тестового пользователя ForeSee CX Suite
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении ForeSee CX Suite. Обратитесь в [группу поддержки ForeSee CX Suite](mailto:support@foresee.com), чтобы добавить домен или пользователей, которых нужно включить в список разрешений на платформе ForeSee CX Suite. Когда группа поддержки добавит домен, его пользователи будут автоматически подготовлены для платформы ForeSee CX Suite. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении ForeSee CX Suite. Обратитесь к [группе поддержки ForeSee CX Suite](mailto:support@foresee.com), чтобы добавить пользователей или домен, который нужно включить в список разрешений для платформы ForeSee CX Suite. Когда группа поддержки добавит домен, его пользователи будут автоматически подготовлены для платформы ForeSee CX Suite. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа 
 

@@ -1,5 +1,5 @@
 ---
-title: Общие сведения об Azure NetApp Files | Документация Майкрософт
+title: Azure NetApp Files | Документация Майкрософт
 description: Общие сведения об Azure NetApp Files и ключевым задачам.
 services: azure-netapp-files
 documentationcenter: ''
@@ -14,22 +14,25 @@ ms.devlang: na
 ms.topic: overview
 ms.date: 03/28/2018
 ms.author: b-juche
-ms.openlocfilehash: d7eb73c8fb4573084ba0a213282fdb71e14ff5fa
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.openlocfilehash: 33a90f876f5ce35b52bb2d5625fa9d91a0a33dee
+ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59546746"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65522998"
 ---
-# <a name="introduction-to-azure-netapp-files"></a>Общие сведения об Azure NetApp Files
-Azure NetApp Files — это высокопроизводительная тарифицируемая служба хранилища файлов корпоративного класса хранилища. Azure NetApp Files поддерживает любые типы рабочих нагрузок и обеспечивает высокую доступность по умолчанию. С помощью службы можно выбрать гарантированные уровни обслуживания и производительности и настроить моментальные снимки. 
+# <a name="what-is-azure-netapp-files"></a>Общие сведения об Azure NetApp Files
+
+Azure NetApp Files — это высокопроизводительная тарифицируемая служба хранилища файлов корпоративного класса хранилища. Azure NetApp Files поддерживает любые типы рабочих нагрузок и обеспечивает высокую доступность по умолчанию. С помощью службы можно выбрать уровни обслуживания и производительности, а также настроить моментальные снимки. 
+
+## <a name="learn-how-to-use-azure-netapp-files"></a>Узнайте, как использовать Azure NetApp Files
 
 В документации по Azure NetApp Files содержатся инструкции по созданию и администрированию томов. 
 
 > [!IMPORTANT] 
-> Для выполнения всех задач, описанных в этой документации, требуется участие в программе использования общедоступной предварительной версии и добавление в список разрешений для доступа к поставщику ресурсов Microsoft.NetApp Azure. Сведения о том, как отправить запрос на участие в программе использования общедоступной предварительной версии, см. в статье о [регистрации в службе Azure NetApp Files](azure-netapp-files-register.md). 
+> Для выполнения всех задач, описанных в этой документации, требуется доступа к службе Azure NetApp Files. См. подробнее в руководстве по [отправке запроса на добавление в список ожидание для доступа к службе](azure-netapp-files-register.md#waitlist).
 
-**Начало работы** 
+## <a name="next-steps"></a>Дополнительная информация
 
 * [Общие сведения об иерархии хранилища Azure NetApp Files](azure-netapp-files-understand-storage-hierarchy.md) 
-* [Краткое руководство Set up Azure NetApp Files and create a volume](azure-netapp-files-quickstart-set-up-account-create-volumes.md) (Настройка Azure NetApp Files и создание тома)
+* [Краткое руководство Настройка Azure NetApp Files и создание тома NFS](azure-netapp-files-quickstart-set-up-account-create-volumes.md)

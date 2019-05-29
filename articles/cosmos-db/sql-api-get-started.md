@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: tutorial
 ms.date: 04/15/2019
 ms.author: sngun
-ms.openlocfilehash: 64aef17663fdc28a467172bbe8954fc06fdb7ff0
-ms.sourcegitcommit: c3d1aa5a1d922c172654b50a6a5c8b2a6c71aa91
+ms.openlocfilehash: 7574985dbcc502d03bc886c7651c859b22968c5f
+ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/17/2019
-ms.locfileid: "59680405"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65596092"
 ---
 # <a name="build-a-net-console-app-to-manage-data-in-azure-cosmos-db-sql-api-account"></a>Создание консольного приложения .NET для управления данными в учетной записи API SQL для Azure Cosmos DB
 
@@ -78,7 +78,7 @@ Visual Studio 2017 с установленной рабочей нагрузк�
 
 1. В Visual Studio 2017 выберите **Файл** > **Создать** > **Проект**.
    
-1. В диалоговом окне **Новый проект** выберите **Visual C#** > **Консольное приложение (.NET Framework)**, укажите имя проекта *AzureCosmosDBApp* и нажмите кнопку **ОК**.
+1. В диалоговом окне **Новый проект** выберите **Visual C#**  > **Консольное приложение (.NET Framework)** , укажите имя проекта *AzureCosmosDBApp* и нажмите кнопку **ОК**.
    
    ![Снимок экрана с окном нового проекта](./media/sql-api-get-started/nosql-tutorial-new-project-2.png)
    
@@ -145,6 +145,20 @@ Visual Studio 2017 с установленной рабочей нагрузк�
       {
         client = new DocumentClient(new Uri(EndpointUrl), PrimaryKey);
       }
+   ```
+
+   Если вы используете прокси-объект для подключения к Azure Cosmos DB, вместо него необходимо использовать следующий блок кода, чтобы создать объект DocumentClient. В примере в этом документе не используется прокси-объект, поэтому приведенный ниже пример используется только для справки.
+
+   ```csharp
+   HttpClientHandler handler = new HttpClientHandler()
+   {
+     Proxy = proxyObject
+     UseProxy = true,
+   };
+
+   //Pass handler to the constructor of DocumentClient.
+   DocumentClient client = new DocumentClient(new Uri(EndpointUrl), PrimaryKey, handler);
+   
    ```
    
 1. Добавьте в метод `Main` следующий код для запуска задания `GetStartedDemo`. Метод `Main` будет перехватывать исключения и записывать их в консоль.

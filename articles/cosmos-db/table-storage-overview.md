@@ -5,16 +5,16 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-table
 ms.devlang: dotnet
 ms.topic: overview
-ms.date: 11/03/2017
+ms.date: 05/20/2019
 author: wmengmsft
 ms.author: wmeng
 ms.reviewer: sngun
-ms.openlocfilehash: 69d2eb1627d42c12a0af024bf1c80e787ed5eca7
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: 37249d904343a4eddb0d1e82f451c3b9e95a479d
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54044507"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65953503"
 ---
 # <a name="azure-table-storage-overview"></a>Обзор табличного хранилища
 
@@ -30,7 +30,7 @@ ms.locfileid: "54044507"
 
 * [Обозреватель хранилищ Microsoft Azure](../vs-azure-tools-storage-manage-with-storage-explorer.md) — это бесплатное автономное приложение от корпорации Майкрософт, позволяющее визуализировать данные из службы хранилища Azure на платформе Windows, macOS и Linux.
 
-* [Getting Started with Azure Table Storage in .NET](table-storage-how-to-use-dotnet.md) (Приступая к работе с хранилищем таблиц Azure в .NET)
+* [Начало работы с API таблиц Azure Cosmos DB и хранилищем таблиц Azure с помощью пакета SDK для .NET](table-storage-how-to-use-dotnet.md)
 
 * Дополнительные сведения о доступных API-интерфейсах см. в справочной документации по службе таблиц:
 

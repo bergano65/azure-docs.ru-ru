@@ -8,12 +8,12 @@ ms.date: 01/31/2019
 ms.topic: tutorial
 ms.service: backup
 manager: carmonm
-ms.openlocfilehash: ac9a748742bda6b1e7a321a427090662542f1032
-ms.sourcegitcommit: 5978d82c619762ac05b19668379a37a40ba5755b
+ms.openlocfilehash: f20cc1107476f8d65323d277a53086b8bd035a1b
+ms.sourcegitcommit: 17411cbf03c3fa3602e624e641099196769d718b
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/31/2019
-ms.locfileid: "55486917"
+ms.lasthandoff: 05/10/2019
+ms.locfileid: "65518907"
 ---
 # <a name="back-up-azure-file-shares"></a>Резервное копирование файловых ресурсов Azure
 В этой статье описывается, как с помощью портала Azure создавать резервные копии и восстанавливать [файловые ресурсы Azure](../storage/files/storage-files-introduction.md).
@@ -56,7 +56,7 @@ ms.locfileid: "55486917"
 
     ![Выбор файлового ресурса Azure в качестве цели резервного копирования](./media/backup-file-shares/choose-azure-fileshare-from-backup-goal.png)
 
-3. Щелкните **Резервное копирование**, чтобы указать для файлового ресурса Azure хранилище служб восстановления. 
+3. Щелкните **Резервное копирование**, чтобы указать для файлового ресурса Azure хранилище служб восстановления.
 
    ![Щелкните "Резервное копирование", чтобы связать файловый ресурс Azure с хранилищем.](./media/backup-file-shares/set-backup-goal.png)
 
@@ -123,10 +123,12 @@ ms.locfileid: "55486917"
 Чтобы открыть страницу **Задания резервного копирования**, выполните следующее:
 
 - Откройте хранилище служб восстановления для мониторинга и в меню хранилища щелкните **Задания**, а затем выберите **Задания резервного копирования**.
+
    ![Выбор задания, данные которого необходимо отследить](./media/backup-file-shares/open-backup-jobs.png)
 
     Откроется список заданий резервного копирования и их состояние.
-   ![Выбор задания, данные которого необходимо отследить](./media/backup-file-shares/backup-jobs-progress-list.png)
+
+    ![Выбор задания, данные которого необходимо отследить](./media/backup-file-shares/backup-jobs-progress-list.png)
 
 ### <a name="create-a-new-policy"></a>Создание новой политики
 

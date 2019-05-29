@@ -1,5 +1,5 @@
 ---
-title: Руководство. Интеграция Azure Active Directory с Adobe Sign | Документация Майкрософт
+title: Руководство по Интеграция Azure Active Directory с Adobe Sign | Документация Майкрософт
 description: Узнайте, как настроить единый вход Azure Active Directory в приложении Adobe Sign.
 services: active-directory
 documentationCenter: na
@@ -15,14 +15,14 @@ ms.topic: tutorial
 ms.date: 12/19/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8942ebf3f006c2e1cc72b322dd243d46bf69f04d
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 91d4cf874d4d98735582d2690072e6a04683c1f5
+ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57888133"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65988725"
 ---
-# <a name="tutorial-azure-active-directory-integration-with-adobe-sign"></a>Руководство. Интеграция Azure Active Directory с Adobe Sign
+# <a name="tutorial-azure-active-directory-integration-with-adobe-sign"></a>Руководство по Интеграция Azure Active Directory с Adobe Sign
 
 В этом руководстве описано, как интегрировать Adobe Sign с Azure Active Directory (Azure AD).
 Интеграция Azure AD с Adobe Sign обеспечивает следующие преимущества:
@@ -128,7 +128,7 @@ ms.locfileid: "57888133"
 
 ### <a name="configure-adobe-sign-single-sign-on"></a>Настройка единого входа в Adobe Sign
 
-1. Перед настройкой необходимо связаться с [группой поддержки клиентов Adobe Sign](https://helpx.adobe.com/in/contact/support.html), чтобы добавить домен в утвержденный список Adobe Sign. Домен можно добавить следующим образом:
+1. Перед настройкой необходимо обратиться к [группе поддержки клиентов Adobe Sign](https://helpx.adobe.com/in/contact/support.html), чтобы добавить свой домен в список разрешений Adobe Sign. Домен можно добавить следующим образом:
 
     a. [Группа поддержки клиентов Adobe Sign](https://helpx.adobe.com/in/contact/support.html) отправит случайно сгенерированный токен. Для вашего домена токен будет выглядеть примерно так: **adobe-sign-verification= xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx**
 
@@ -193,7 +193,7 @@ ms.locfileid: "57888133"
 
     а. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите **brittasimon\@<домен_вашей_компании>.<доменная_зона>**.  
+    b. В поле **Имя пользователя** введите **brittasimon\@домен_вашей_компании.доменная_зона**.  
     Например BrittaSimon@contoso.com.
 
     c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".

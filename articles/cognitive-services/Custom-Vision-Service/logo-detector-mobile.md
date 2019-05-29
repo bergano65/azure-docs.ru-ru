@@ -10,12 +10,12 @@ ms.subservice: custom-vision
 ms.topic: tutorial
 ms.date: 03/11/2019
 ms.author: pafarley
-ms.openlocfilehash: 259787a90b61b171f391dc02276214f17a57d0d3
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 51b2cd42fabe6406f88388e99459a6f3dd3e69f5
+ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57838822"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65827656"
 ---
 # <a name="tutorial-recognize-azure-service-logos-in-camera-pictures"></a>Руководство по Распознавание логотипов служб Azure на изображениях с камеры
 
@@ -32,7 +32,7 @@ ms.locfileid: "57838822"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- [Visual Studio 2017](https://www.visualstudio.com/downloads/)
+- [Visual Studio 2017 или более поздней версии](https://www.visualstudio.com/downloads/)
 - Рабочая нагрузка Xamarin для Visual Studio (см. дополнительные сведения в статье [Установка Xamarin в Visual Studio 2017](https://docs.microsoft.com/xamarin/cross-platform/get-started/installation/windows)).
 - эмулятор iOS или Android для Visual Studio;
 - [Azure CLI](https://docs.microsoft.com/cli/azure/install-azure-cli-windows?view=azure-cli-latest) (необязательно).

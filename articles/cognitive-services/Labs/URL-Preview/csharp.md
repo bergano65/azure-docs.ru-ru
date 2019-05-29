@@ -10,12 +10,12 @@ ms.subservice: url-preview
 ms.topic: quickstart
 ms.date: 03/16/2018
 ms.author: rosh
-ms.openlocfilehash: 0e2d4b783068cfd14385eb1712ea246c94dc9500
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: 2cb3f1de803b8549a88866da1042f4f32609a601
+ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55877275"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65827163"
 ---
 # <a name="quickstart-url-preview-query-in-c"></a>Краткое руководство. Запрос на предварительный просмотр URL-адреса в C#
 
@@ -23,7 +23,7 @@ ms.locfileid: "55877275"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для выполнения этого кода на компьютерах под управлением Windows потребуется [Visual Studio 2017](https://www.visualstudio.com/downloads/). (Подойдет бесплатный выпуск Community Edition.)
+Для выполнения этого кода на компьютерах под управлением Windows потребуется [Visual Studio 2017 или более поздней версии](https://www.visualstudio.com/downloads/). (Будет работать бесплатный выпуск Community Edition.)
 
 Получите ключ доступа для бесплатной пробной версии [Cognitive Services Labs](https://aka.ms/answersearchsubscription).
 

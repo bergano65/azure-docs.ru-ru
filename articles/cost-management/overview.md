@@ -5,17 +5,17 @@ services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 03/13/2019
+ms.date: 05/14/2019
 ms.topic: overview
 ms.service: cost-management
 manager: benshy
 ms.custom: seodec18
-ms.openlocfilehash: 0bdf47991435a9a28a4db12f3aa89478b18bb9f1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 8b989e5cf5b66d21c19d58f2f64fbba1927f5d69
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61020268"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65792803"
 ---
 # <a name="what-is-the-cloudyn-service"></a>Общие сведения о службе Cloudyn
 
@@ -24,6 +24,10 @@ ms.locfileid: "61020268"
 См. ознакомительное видео [Общие сведения о службе Cloudyn](https://azure.microsoft.com/resources/videos/azure-cost-management-overview-and-demo).
 
 Служба "Управление затратами Azure" предоставляет аналогичные возможности в Cloudyn. Служба "Управление затратами Azure" является собственным решением Azure по управлению затратами. Она позволяет анализировать затраты, создавать бюджеты и управлять ими, экспортировать данные, а также просматривать рекомендации и реагировать на них с целью экономии средств. Дополнительные сведения см. в статье [Управление затратами Azure](overview-cost-mgt.md).
+
+См. подробнее о выборе соответствующего варианта в [видео об Управлении затратами Azure и Cloudyn](https://www.youtube.com/watch?v=PmwFWwSluh8).
+
+>[!VIDEO https://www.youtube.com/embed/PmwFWwSluh8]
 
 ## <a name="cloudyn-features-moving-to-azure-cost-management"></a>Перенос функций Cloudyn в службу "Управление затратами Azure"
 
@@ -37,14 +41,14 @@ ms.locfileid: "61020268"
 | --- | --- |
 | Соглашение Azure Enterprise | [Управление затратами Azure](https://ms.portal.azure.com/#blade/Microsoft_Azure_CostManagement/Menu/overview) |
 | Azure Web Direct (PAYG/MSDN) | [Управление затратами Azure](https://ms.portal.azure.com/#blade/Microsoft_Azure_CostManagement/Menu/overview) |
-| Azure Government | [Управление затратами Azure](https://ms.portal.azure.com/#blade/Microsoft_Azure_CostManagement/Menu/overview) |
+| Azure для государственных организаций | [Управление затратами Azure](https://ms.portal.azure.com/#blade/Microsoft_Azure_CostManagement/Menu/overview) |
 | Azure CSP | [Cloudyn](https://azure.cloudyn.com); |
 | Поддержка анализа затрат в нескольких облаках для AWS (предварительная версия) | [Управление затратами Azure](https://ms.portal.azure.com/#blade/Microsoft_Azure_CostManagement/Menu/overview) |
 | Рекомендации AWS | [Cloudyn](https://azure.cloudyn.com); |
 
 Некоторые из приведенных ниже функций доступны в Cloudyn, но теперь все они доступны в службе "Управление затратами Azure".
 
-- Интерфейсы API
+- API
 - Рекомендации по вычислениям Azure
 - Рекомендации по резервированию Azure
 - сведения о бюджете;

@@ -10,12 +10,12 @@ services: iot-dps
 manager: timlt
 ms.devlang: python
 ms.custom: mvc
-ms.openlocfilehash: 186bd272fdca20475686847dc4e86b8ad50e5e41
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: c302b18e34533a564904562ed39879bbe37b82ca
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58080970"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65908197"
 ---
 # <a name="create-and-provision-a-simulated-tpm-device-using-python-device-sdk-for-iot-hub-device-provisioning-service"></a>Создание и подготовка имитированного устройства TPM с помощью пакета SDK устройств для Python для службы "Подготовка устройств к добавлению в Центр Интернета вещей"
 
@@ -35,7 +35,7 @@ ms.locfileid: "58080970"
 
 ## <a name="prepare-the-environment"></a>Подготовка среды 
 
-1. Установите на компьютер [Visual Studio 2015](https://www.visualstudio.com/vs/older-downloads/) или [Visual Studio 2017](https://www.visualstudio.com/vs/). Для установки Visual Studio требуется включить рабочую нагрузку разработки классических приложений с помощью C++.
+1. Проверьте, установлена ли среда [Visual Studio](https://visualstudio.microsoft.com/vs/) 2015 или более поздней версии с включенной рабочей нагрузкой "Разработка классических приложений на C++".
 
 1. Скачайте и установите [систему сборки CMake](https://cmake.org/download/).
 
@@ -74,7 +74,7 @@ ms.locfileid: "58080970"
 
 1. Откройте решение `azure_iot_sdks.sln`, созданное в папке *cmake*, и соберите его в Visual Studio.
 
-1. Щелкните проект **tpm_device_provision** правой кнопкой мыши и выберите параметр **Назначить запускаемым проектом**. Запустите решение. Окно выходных данных отображает **_ключ подтверждения_** и **_идентификатор регистрации_**, необходимые для регистрации устройства. Запишите эти значения. 
+1. Щелкните проект **tpm_device_provision** правой кнопкой мыши и выберите параметр **Назначить запускаемым проектом**. Запустите решение. Окно выходных данных отображает **_ключ подтверждения_** и **_идентификатор регистрации_** , необходимые для регистрации устройства. Запишите эти значения. 
 
     ![Настройка TPM](./media/python-quick-create-simulated-device/tpm-setup.png)
 

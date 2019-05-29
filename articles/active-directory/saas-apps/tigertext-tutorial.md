@@ -15,186 +15,185 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/29/2019
 ms.author: jeedes
-ms.openlocfilehash: 55d8ec8f0f767aef27266aa8ea9ddcc40b7da6ed
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 840b1fe55556cfd853e0928164891d6b21b17cc2
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59261278"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65956863"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-tigertext-secure-messenger"></a>Руководство по Интеграция Azure Active Directory с TigerText Secure Messenger
 
 В этом руководстве описано, как интегрировать приложение TigerText Secure Messenger с Azure Active Directory (Azure AD).
+
 Интеграция Azure AD с приложением TigerText Secure Messenger обеспечивает следующие преимущества.
 
 * С помощью Azure AD вы можете контролировать доступ к TigerText Secure Messenger.
-* Вы можете включить автоматический вход пользователей в TigerText Secure Messenger (единый вход) с помощью их учетных записей Azure AD.
-* Вы можете управлять учетными записями централизованно на портале Azure.
+* Вы можете включить автоматический вход пользователей в TigerText Secure Messenger (единый вход) с помощью учетных записей Azure AD.
+* Вы можете управлять учетными записями централизованно — через портал Azure.
 
-Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
+Дополнительные сведения об интеграции приложения SaaS с Azure AD см. в статье [о доступе к приложениям и едином входе с помощью Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с TigerText Secure Messenger, вам потребуется:
 
-* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить пробную версию на один месяц по [этой ссылке](https://azure.microsoft.com/pricing/free-trial/));
+* подписка Azure AD Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 * подписка TigerText Secure Messenger с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
 
-В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
+В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде и интеграцию TigerText Secure Messenger с Azure AD.
 
-* TigerText Secure Messenger поддерживает единый вход, инициированный **поставщиком услуг**
+TigerText Secure Messenger поддерживает единый вход, инициируемый поставщиком услуг.
 
-## <a name="adding-tigertext-secure-messenger-from-the-gallery"></a>Добавление TigerText Secure Messenger из коллекции
+## <a name="add-tigertext-secure-messenger-from-the-azure-marketplace"></a>Добавление TigerText Secure Messenger из Azure Marketplace
 
-Чтобы настроить интеграцию TigerText Secure Messenger с Azure AD, необходимо добавить TigerText Secure Messenger из коллекции в список управляемых приложений SaaS.
+Чтобы настроить интеграцию TigerText Secure Messenger с Azure AD, необходимо добавить TigerText Secure Messenger из Azure Marketplace в список управляемых приложений SaaS.
 
-**Чтобы добавить TigerText Secure Messenger из коллекции, сделайте следующее:**
+1. Войдите на [портале Azure](https://portal.azure.com?azure-portal=true).
+1. В области слева выберите **Azure Active Directory**.
 
-1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
+    ![Пункт Azure Active Directory](common/select-azuread.png)
 
-    ![Кнопка Azure Active Directory](common/select-azuread.png)
+1. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
-2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
+    ![Область "Корпоративные приложения"](common/enterprise-applications.png)
 
-    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
+1. Чтобы добавить новое приложение, выберите **+ Новое приложение** в верхней части панели.
 
-3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
+    ![Элемент "Новое приложение"](common/add-new-app.png)
 
-    ![Кнопка "Создать приложение"](common/add-new-app.png)
+1. В поле поиска введите **TigerText Secure Messenger**. В результатах поиска выберите **TigerText Secure Messenger** и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
-4. В поле поиска введите **TigerText Secure Messenger**, выберите **TigerText Secure Messenger** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
-
-     ![TigerText Secure Messenger в списке результатов](common/search-new-app.png)
+    ![TigerText Secure Messenger в списке результатов](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
-В этом разделе описана настройка и проверка единого входа Azure AD в TigerText Secure Messenger с использованием тестового пользователя **Britta Simon**.
-Для работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в TigerText Secure Messenger.
+В этом разделе описана настройка и проверка единого входа Azure AD в TigerText Secure Messenger с использованием тестового пользователя **Britta Simon**. Для обеспечения работы единого входа необходимо установить связь между пользователем Azure AD и соответствующим пользователем в TigerText Secure Messenger.
 
 Чтобы настроить и проверить единый вход Azure AD в TigerText Secure Messenger, выполните действия в следующих стандартных блоках.
 
-1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-2. **[Настройка единого входа в TigerText Secure Messenger](#configure-tigertext-secure-messenger-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
-3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
-5. **[Создание тестового пользователя TigerText Secure Messenger](#create-tigertext-secure-messenger-test-user)** требуется для того, чтобы в TigerText Secure Messenger существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
-6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
+1. **[Настройте единый вход в Azure AD](#configure-azure-ad-single-sign-on)** , чтобы пользователи могли использовать эту функцию.
+1. **[Настройка единого входа в TigerText Secure Messenger](#configure-tigertext-secure-messenger-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+1. **[Создайте тестового пользователя Azure AD](#create-an-azure-ad-test-user)** для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
+1. **[Назначьте тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** , чтобы позволить Britta Simon использовать единый вход в Azure AD.
+1. **[Создание тестового пользователя TigerText Secure Messenger](#create-a-tigertext-secure-messenger-test-user)** требуется для того, чтобы в TigerText Secure Messenger существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
+1. **[Проверьте единый вход](#test-single-sign-on)** , чтобы убедиться в корректной работе конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
 В этом разделе описано включение единого входа Azure AD на портале Azure.
 
-Чтобы настроить единый вход Azure AD в TigerText Secure Messenger, сделайте следующее:
+Чтобы настроить единый вход Azure AD в TigerText Secure Messenger, сделайте следующее.
 
 1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **TigerText Secure Messenger** выберите **Единый вход**.
 
-    ![Ссылка "Настройка единого входа"](common/select-sso.png)
+    ![Параметр для настройки единого входа](common/select-sso.png)
 
-2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed**, чтобы включить единый вход.
+1. В области **Выбрать метод единого входа** выберите режим **SAML/WS-FED**, чтобы включить единый вход.
 
     ![Режим выбора единого входа](common/select-saml-option.png)
 
-3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
+1. На панели **Настройка единого входа с помощью SAML** щелкните **Изменить** (значок карандаша), чтобы открыть панель **Базовая конфигурация SAML**.
 
     ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
-4. В разделе **Базовая конфигурация SAML** выполните приведенные ниже действия.
+1. В области **Базовая конфигурация SAML** выполните приведенные ниже действия.
 
-    ![Сведения о домене и URL-адресах единого входа для приложения TigerText Secure Messenger](common/sp-identifier.png)
+    ![Сведения о домене и URL-адресах единого входа для TigerText Secure Messenger](common/sp-identifier.png)
 
-    a. В текстовом поле **URL-адрес входа** введите URL-адрес: `https://home.tigertext.com`.
+    1. В поле **URL-адрес для входа** введите URL-адрес:
 
-    b. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате: `https://saml-lb.tigertext.me/v1/organization/<instance Id>`.
+       `https://home.tigertext.com`
+
+    1. В текстовом поле **Идентификатор (сущности)** введите URL-адрес в следующем формате:
+
+       `https://saml-lb.tigertext.me/v1/organization/<instance ID>`
 
     > [!NOTE]
-    > Значение идентификатора приведено для примера и не является реальным. Вместо него нужно указать фактический идентификатор. Чтобы получить это значение, обратитесь к [группе поддержки клиентов TigerText Secure Messenger](mailto:prosupport@tigertext.com). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Указано ненастоящее значение **Идентификатор (сущности)** . Замените его реальным идентификатором. Чтобы получить это значение, обратитесь к [группе поддержки TigerText Secure Messenger](mailto:prosupport@tigertext.com). Можно также посмотреть шаблоны на панели **Базовая конфигурация SAML** на портале Azure.
 
-5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
+1. На панели **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать подходящий **XML-файл метаданных федерации** из предложенных вариантов и сохранить его на своем компьютере.
 
-    ![Ссылка для скачивания сертификата](common/metadataxml.png)
+    ![Элемент для скачивания XML-файла метаданных федерации](common/metadataxml.png)
 
-6. Скопируйте соответствующий вашим требованиям URL-адрес из раздела **Настройка TigerText Secure Messenger**.
+1. Требуемые URL-адреса можно скопировать в разделе **Настройка TigerText Secure Messenger**.
+
+   * **Login URL** (URL-адрес для входа)
+   * **идентификатор Azure AD**;
+   * **URL-адрес выхода**.
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
-
-    b. Идентификатор Azure AD
-
-    c. URL-адрес выхода.
-
 ### <a name="configure-tigertext-secure-messenger-single-sign-on"></a>Настройка единого входа в TigerText Secure Messenger
 
-Чтобы настроить единый вход на стороне **TigerText Secure Messenger**, отправьте скачанный **XML-файл метаданных федерации** и URL-адреса, скопированные на портале Azure, в [группу поддержки TigerText Secure Messenger](mailto:prosupport@tigertext.com). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне TigerText Secure Messenger, отправьте скачанный XML-файл метаданных федерации и URL-адреса, скопированные на портале Azure, [группе поддержки TigerText Secure Messenger](mailto:prosupport@tigertext.com). Группа поддержки TigerText Secure Messenger обеспечит правильную настройку подключения для единого входа SAML с обеих сторон.
 
-### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
+### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+В этом разделе описано, как создать на портале Azure тестового пользователя с именем Britta Simon.
 
-1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
+1. На портале Azure на панели слева выберите **Azure Active Directory**   > **Пользователи** > **Все пользователи**.
 
-    ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
+    ![Пункты меню "Пользователи" и "Все пользователи"](common/users.png)
 
-2. В верхней части экрана выберите **Новый пользователь**.
+1. В верхней части экрана щелкните **+ Новый пользователь**.
 
-    ![Кнопка "Новый пользователь"](common/new-user.png)
+    ![Элемент "Новый пользователь"](common/new-user.png)
 
-3. В разделе свойств пользователя сделайте следующее:
+1. На панели **Пользователь** выполните следующие действия:
 
-    ![Диалоговое окно "Пользователь"](common/user-properties.png)
+    ![Панель "Пользователь"](common/user-properties.png)
 
-    а. В поле **Имя** введите **BrittaSimon**.
+    1. В поле **Имя** введите **BrittaSimon**.
   
-    b. В поле **Имя пользователя** введите brittasimon@yourcompanydomain.extension. Например BrittaSimon@contoso.com.
+    1. В поле **Имя пользователя** введите **BrittaSimon\@\<домен_вашей_компании>.\<доменная_зона>** . Например **BrittaSimon\@contoso.com**.
 
-    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
+    1. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
 
-    d. Нажмите кнопку **Создать**.
+    1. Нажмите кнопку **Создать**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
-В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставив доступ к TigerText Secure Messenger.
+В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставив этому пользователю доступ к TigerText Secure Messenger.
 
-1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **TigerText Secure Messenger**.
+1. На портале Azure выберите **Корпоративные приложения** > **Все приложения** > **TigerText Secure Messenger**.
 
-    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
+    ![Область "Корпоративные приложения"](common/enterprise-applications.png)
 
-2. В списке приложений выберите **TigerText Secure Messenger**.
+1. В списке приложений выберите **TigerText Secure Messenger**.
 
-    ![Ссылка на TigerText Secure Messenger в списке приложений](common/all-applications.png)
+    ![Ссылка на TigerText Secure Messenger в списке "Приложения"](common/all-applications.png)
 
-3. В меню слева выберите **Пользователи и группы**.
+1. В области слева последовательно выберите **Управление** и **Пользователи и группы**.
 
-    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
+    ![Пункт меню "Пользователи и группы"](common/users-groups-blade.png)
 
-4. Нажмите кнопку **Добавить пользователя**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+1. Выберите **+ Добавить пользователя**, а в области **Добавление назначения** щелкните **Пользователи и группы**.
 
     ![Область "Добавление назначения"](common/add-assign-user.png)
 
-5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
+1. На панели **Пользователи и группы** выберите **Britta Simon** в списке **Пользователи**, а в нижней панели щелкните **Выбрать**.
 
-6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
+1. Если вы планируете получать значение роли в утверждении SAML, на панели **Выбор роли** выберите в списке соответствующую роль для пользователя. В нижней части панели нажмите кнопку **Выбрать**.
 
-7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
+1. В области **Добавление назначения** выберите **Назначить**.
 
-### <a name="create-tigertext-secure-messenger-test-user"></a>Создание тестового пользователя TigerText Secure Messenger
+### <a name="create-a-tigertext-secure-messenger-test-user"></a>Создание тестового пользователя TigerText Secure Messenger
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении TigerText Secure Messenger. Обратитесь в [группу поддержки TigerText Secure Messenger](mailto:prosupport@tigertext.com), чтобы добавить пользователей для платформы TigerText Secure Messenger. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении TigerText Secure Messenger. Обратитесь к [группе поддержки TigerText Secure Messenger](mailto:prosupport@tigertext.com), чтобы добавить пользователя Britta Simon в TigerText Secure Messenger. Перед использованием единого входа необходимо создать и активировать пользователей.
 
-### <a name="test-single-sign-on"></a>Проверка единого входа 
+### <a name="test-single-sign-on"></a>Проверка единого входа
 
-В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
+В этом разделе объясняется, как проверить конфигурацию единого входа Azure AD с помощью портала "Мои приложения".
 
-Щелкнув плитку TigerText Secure Messenger на Панели доступа, вы автоматически войдете в приложение TigerText Secure Messenger, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
+Щелкнув **TigerText Secure Messenger** на портале "Мои приложения", вы автоматически выполните вход с подпиской TigerText Secure Messenger, для которой настроили единый вход. Дополнительные сведения о портале "Мои приложения" см. в статье [Access and use apps on the My Apps portal](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Доступ к приложениям и их использование на портале "Мои приложения").
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
+* [Список руководств по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
+* [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
-
+* [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)

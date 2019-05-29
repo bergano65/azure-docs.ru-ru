@@ -4,232 +4,217 @@ description: Узнайте, как настроить единый вход Azu
 services: active-directory
 documentationCenter: na
 author: jeevansd
-manager: femila
-ms.reviewer: joflore
+manager: mtillman
+ms.reviewer: barbkess
 ms.assetid: 3142d947-70e5-4345-8a30-b92d8715fac9
 ms.service: active-directory
+ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-ms.date: 07/23/2018
+ms.topic: tutorial
+ms.date: 03/22/2019
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: e99f794c4eb9db78f50f63f14ccfad08c65ddb07
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 41b35324ccca8cf40edbc53ed25a2d8615a9294e
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60591080"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65813632"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-sauce-labs---mobile-and-web-testing"></a>Руководство по Интеграция Azure Active Directory с Sauce Labs - Mobile and Web Testing
 
 В этом руководстве описано, как интегрировать Sauce Labs - Mobile and Web Testing с Azure Active Directory (Azure AD).
-
 Интеграция Sauce Labs - Mobile and Web Testing с Azure AD обеспечивает следующие преимущества.
 
-- С помощью Azure AD вы можете контролировать доступ к Sauce Labs - Mobile and Web Testing.
-- Вы можете настроить автоматический вход пользователей в Sauce Labs - Mobile and Web Testing (единый вход) под учетными записями Azure AD.
-- Вы можете управлять учетными записями централизованно на портале Azure.
+* С помощью Azure AD вы можете контролировать доступ к Sauce Labs - Mobile and Web Testing.
+* Вы можете настроить автоматический вход пользователей в Sauce Labs - Mobile and Web Testing (единый вход) с помощью учетных записей Azure AD.
+* Вы можете управлять учетными записями централизованно на портале Azure.
 
-Подробнее узнать об интеграции приложений SaaS с Azure AD можно в разделе [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory](../manage-apps/what-is-single-sign-on.md).
+Дополнительные сведения об интеграции приложений SaaS с Azure AD см. в статье [Единый вход в приложениях в Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis).
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Технические условия
+## <a name="prerequisites"></a>Предварительные требования
 
 Чтобы настроить интеграцию Azure AD с Sauce Labs - Mobile and Web Testing, вам потребуются:
 
-- подписка Azure AD;
-- подписка Sauce Labs - Mobile and Web Testing с поддержкой единого входа.
-
-> [!NOTE]
-> Мы не рекомендуем использовать рабочую среду для проверки действий в этом учебнике.
-
-При проверке действий в этом учебнике соблюдайте следующие рекомендации:
-
-- Не используйте рабочую среду без необходимости.
-- Если у вас нет пробной среды Azure AD, вы можете [получить пробную версию на один месяц](https://azure.microsoft.com/pricing/free-trial/).
+* подписка Azure AD (если у вас нет среды Azure AD, вы можете получить [бесплатную учетную запись](https://azure.microsoft.com/free/));
+* подписка Sauce Labs - Mobile and Web Testing с поддержкой единого входа.
 
 ## <a name="scenario-description"></a>Описание сценария
-В рамках этого руководства проводится проверка единого входа Azure AD в тестовой среде. Сценарий, описанный в этом учебнике, состоит из двух стандартных блоков.
 
-1. Добавление Sauce Labs - Mobile and Web Testing из коллекции
-2. настройка и проверка единого входа в Azure AD.
+В рамках этого руководства вы настроите и проверите единый вход Azure AD в тестовой среде.
+
+* Sauce Labs - Mobile and Web Testing поддерживает единый вход, инициируемый **поставщиком удостоверений**.
+* Sauce Labs - Mobile and Web Testing поддерживает **JIT**-подготовку пользователей.
 
 ## <a name="adding-sauce-labs---mobile-and-web-testing-from-the-gallery"></a>Добавление Sauce Labs - Mobile and Web Testing из коллекции
+
 Чтобы настроить интеграцию Sauce Labs - Mobile and Web Testing с Azure AD, необходимо добавить Sauce Labs - Mobile and Web Testing из коллекции в список управляемых приложений SaaS.
 
 **Чтобы добавить Sauce Labs - Mobile and Web Testing из коллекции, выполните следующие действия.**
 
-1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**. 
+1. На **[портале Azure](https://portal.azure.com)** в области навигации слева щелкните значок **Azure Active Directory**.
 
-    ![Кнопка "Azure Active Directory"][1]
+    ![Кнопка Azure Active Directory](common/select-azuread.png)
 
-2. Перейдите к разделу **Корпоративные приложения**. Затем выберите **Все приложения**.
+2. Перейдите в колонку **Корпоративные приложения** и выберите **Все приложения**.
 
-    ![Колонка "Корпоративные приложения"][2]
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
 3. Чтобы добавить новое приложение, в верхней части диалогового окна нажмите кнопку **Создать приложение**.
 
-    ![Кнопка "Создать приложение"][3]
+    ![Кнопка "Создать приложение"](common/add-new-app.png)
 
 4. В поле поиска введите **Sauce Labs - Mobile and Web Testing**, выберите **Sauce Labs - Mobile and Web Testing** на панели результатов и нажмите кнопку **Добавить**, чтобы добавить это приложение.
 
-    ![Sauce Labs - Mobile and Web Testing в списке результатов](./media/saucelabs-mobileandwebtesting-tutorial/tutorial_saucelabs_addfromgallery.png)
+    ![Sauce Labs - Mobile and Web Testing в списке результатов](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Настройка и проверка единого входа в Azure AD
 
-В этом разделе описывается настройка и проверка единого входа Azure AD в Sauce Labs - Mobile and Web Testing с использованием тестового пользователя Britta Simon.
-
-Чтобы настроить единый вход, Azure AD необходимо знать, какой пользователь в Sauce Labs - Mobile and Web Testing соответствует пользователю в Azure AD. Другими словами, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Sauce Labs - Mobile and Web Testing.
+В этом разделе описывается настройка и проверка единого входа Azure AD в Sauce Labs - Mobile and Web Testing с использованием тестового пользователя **Britta Simon**.
+Чтобы единый вход работал, необходимо установить связь между пользователем Azure AD и соответствующим пользователем в Sauce Labs - Mobile and Web Testing.
 
 Чтобы настроить и проверить единый вход Azure AD в Sauce Labs - Mobile and Web Testing, потребуется выполнить действия в следующих стандартных блоках.
 
 1. **[Настройка единого входа Azure AD](#configure-azure-ad-single-sign-on)** необходима, чтобы пользователи могли использовать эту функцию.
-2. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
-3. **[Создание тестового пользователя Sauce Labs - Mobile and Web Testing](#create-a-sauce-labs---mobile-and-web-testing-test-user)** требуется для того, чтобы в Sauce Labs - Mobile and Web Testing существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
+2. **[Настройка единого входа в Sauce Labs - Mobile and Web Testing](#configure-sauce-labs---mobile-and-web-testing-single-sign-on)** необходима, чтобы настроить параметры единого входа на стороне приложения.
+3. **[Создание тестового пользователя Azure AD](#create-an-azure-ad-test-user)** требуется для проверки работы единого входа Azure AD от имени пользователя Britta Simon.
 4. **[Назначение тестового пользователя Azure AD](#assign-the-azure-ad-test-user)** необходимо, чтобы разрешить пользователю Britta Simon использовать единый вход Azure AD.
-5. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы убедиться в корректной работе конфигурации.
+5. **[Создание тестового пользователя Sauce Labs - Mobile and Web Testing](#create-sauce-labs---mobile-and-web-testing-test-user)** требуется для того, чтобы в Sauce Labs - Mobile and Web Testing существовал пользователь Britta Simon, связанный с одноименным пользователем в Azure AD.
+6. **[Проверка единого входа](#test-single-sign-on)** необходима, чтобы проверить работу конфигурации.
 
 ### <a name="configure-azure-ad-single-sign-on"></a>Настройка единого входа Azure AD
 
-В данном разделе описывается, как включить единый вход Azure AD на портале Azure и настроить единый вход в приложении Sauce Labs - Mobile and Web Testing.
+В этом разделе описано включение единого входа Azure AD на портале Azure.
 
-**Чтобы настроить единый вход Azure AD в Sauce Labs - Mobile and Web Testing, сделайте следующее.**
+Чтобы настроить единый вход Azure AD в Sauce Labs - Mobile and Web Testing, сделайте следующее.
 
-1. На портале Azure на странице интеграции с приложением **Sauce Labs - Mobile and Web Testing** щелкните **Единый вход**.
+1. На [портале Azure](https://portal.azure.com/) на странице интеграции с приложением **Sauce Labs - Mobile and Web Testing** щелкните **Единый вход**.
 
-    ![Ссылка "Настройка единого входа"][4]
+    ![Ссылка "Настройка единого входа"](common/select-sso.png)
 
-2. В диалоговом окне **Единый вход** в разделе **Режим** выберите **Вход на основе SAML**, чтобы включить функцию единого входа.
+2. В диалоговом окне **Выбрать метод единого входа** выберите режим **SAML/WS-Fed**, чтобы включить единый вход.
 
-    ![Диалоговое окно "Единый вход"](./media/saucelabs-mobileandwebtesting-tutorial/tutorial_saucelabs_samlbase.png)
+    ![Режим выбора единого входа](common/select-saml-option.png)
 
-3. В разделе **Домены и URL-адреса приложения Sauce Labs - Mobile and Web Testing** не нужно выполнять никаких действий, так как приложение уже предварительно интегрировано с Azure.
+3. На странице **Настройка единого входа с помощью SAML** щелкните **Изменить**, чтобы открыть диалоговое окно **Базовая конфигурация SAML**.
 
-    ![Сведения о домене и URL-адресах единого входа для Sauce Labs - Mobile and Web Testing](./media/saucelabs-mobileandwebtesting-tutorial/tutorial_saucelabs_url.png)
+    ![Правка базовой конфигурации SAML](common/edit-urls.png)
 
-4. В разделе **Сертификат подписи SAML** щелкните **Metadata XML** (Метаданные XML) и сохраните файл метаданных на компьютере.
+4. В разделе **Базовая конфигурация SAML** не нужно выполнять никаких действий, так как приложение уже предварительно интегрировано с Azure.
 
-    ![Ссылка для скачивания сертификата](./media/saucelabs-mobileandwebtesting-tutorial/tutorial_saucelabs_certificate.png)
+    ![Сведения о домене и URL-адресах единого входа для Sauce Labs - Mobile and Web Testing](common/preintegrated.png)
 
-5. Нажмите кнопку **Сохранить** .
+5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
 
-    ![Кнопка "Сохранить" в окне настройки единого входа](./media/saucelabs-mobileandwebtesting-tutorial/tutorial_general_400.png)
+    ![Ссылка для скачивания сертификата](common/metadataxml.png)
 
-6. В другом окне веб-браузера войдите на сайт Sauce Labs - Mobile and Web Testing своей организации в качестве администратора.
+6. Требуемые URL-адреса вы можете скопировать из раздела **Настройка Sauce Labs - Mobile and Web Testing**.
 
-7. Щелкните значок **User** (Пользователь) и выберите вкладку **Team Management** (Управление командой).
+    ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
+
+    а) URL-адрес входа.
+
+    b. Идентификатор Azure AD
+
+    c. URL-адрес выхода.
+
+### <a name="configure-sauce-labs---mobile-and-web-testing-single-sign-on"></a>Настройка единого входа в Sauce Labs - Mobile and Web Testing
+
+1. В другом окне веб-браузера войдите на сайт Sauce Labs - Mobile and Web Testing своей организации в качестве администратора.
+
+2. Щелкните значок **User** (Пользователь) и выберите вкладку **Team Management** (Управление командой).
 
     ![Настройка единого входа](./media/saucelabs-mobileandwebtesting-tutorial/configure1.png)
 
-8. Введите доменное имя в текстовом поле **Domain name** (Доменное имя).
+3. Введите доменное имя в текстовом поле **Domain name** (Доменное имя).
 
     ![Настройка единого входа](./media/saucelabs-mobileandwebtesting-tutorial/configure2.png)
 
-9. Выберите вкладку **Configure** (Настройка).
+4. Выберите вкладку **Configure** (Настройка).
 
     ![Настройка единого входа](./media/saucelabs-mobileandwebtesting-tutorial/configure3.png)
 
-10. В разделе **Configure Single Sign On** (Настройка единого входа) сделайте следующее.
+5. В разделе **Configure Single Sign On** (Настройка единого входа) сделайте следующее.
 
     ![Настройка единого входа](./media/saucelabs-mobileandwebtesting-tutorial/configure4.png)
 
     a. Нажмите кнопку **Browse** (Обзор) и передайте файл метаданных, скачанный из Azure AD.
 
-    2. Установите флажок **ALLOW JUST-IN-TIME PROVISIONING** (Разрешить JIT-подготовку).
+    b. Установите флажок **ALLOW JUST-IN-TIME PROVISIONING** (Разрешить JIT-подготовку).
 
     c. Выберите команду **Сохранить**.
 
-### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
+### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD 
 
-Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
+Цель этого раздела — создать на портале Azure тестового пользователя с именем Britta Simon.
 
-   ![Создание тестового пользователя Azure AD][100]
+1. На портале Azure в области слева выберите **Azure Active Directory**, **Пользователи**, а затем — **Все пользователи**.
 
-**Чтобы создать тестового пользователя в Azure AD, выполните следующие действия:**
+    ![Ссылки "Пользователи и группы" и "Все пользователи"](common/users.png)
 
-1. На портале Azure в области слева нажмите кнопку **Azure Active Directory**.
+2. В верхней части экрана выберите **Новый пользователь**.
 
-    ![Кнопка Azure Active Directory](./media/saucelabs-mobileandwebtesting-tutorial/create_aaduser_01.png)
+    ![Кнопка "Новый пользователь"](common/new-user.png)
 
-2. Чтобы открыть список пользователей, перейдите в раздел **Пользователи и группы** и щелкните **Все пользователи**.
+3. В разделе свойств пользователя сделайте следующее:
 
-    ![Ссылки "Пользователи и группы" и "Все пользователи"](./media/saucelabs-mobileandwebtesting-tutorial/create_aaduser_02.png)
+    ![Диалоговое окно "Пользователь"](common/user-properties.png)
 
-3. Чтобы открыть диалоговое окно **Пользователь**, в верхней части диалогового окна **Все пользователи** щелкните **Добавить**.
+    а. В поле **Имя** введите **BrittaSimon**.
+  
+    b. В поле **Имя пользователя** введите `brittasimon@yourcompanydomain.extension`.  
+    Например BrittaSimon@contoso.com.
 
-    ![Кнопка "Добавить"](./media/saucelabs-mobileandwebtesting-tutorial/create_aaduser_03.png)
-
-4. В диалоговом окне **Пользователь** сделайте следующее.
-
-    ![Диалоговое окно "Пользователь"](./media/saucelabs-mobileandwebtesting-tutorial/create_aaduser_04.png)
-
-    a. В поле **Имя** введите **BrittaSimon**.
-
-    Б. В поле **Имя пользователя** введите адрес электронной почты для пользователя Britta Simon.
-
-    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле **Пароль**.
+    c. Установите флажок **Показать пароль** и запишите значение, которое отображается в поле "Пароль".
 
     d. Нажмите кнопку **Создать**.
-  
-### <a name="create-a-sauce-labs---mobile-and-web-testing-test-user"></a>Создание тестового пользователя Sauce Labs - Mobile and Web Testing
-
-Цель этого раздела — создать в приложении Sauce Labs - Mobile and Web Testing пользователя с именем Britta Simon. Приложение Sauce Labs - Mobile and Web Testing поддерживает JIT-подготовку. Эта функция включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Пользователь создается при попытке получить доступ к приложению Sauce Labs - Mobile and Web Testing (если он еще не создан).
->[!Note]
->Чтобы создать пользователя вручную, обратитесь к  [группе поддержки Sauce Labs - Mobile and Web Testing](mailto:support@saucelabs.com).
 
 ### <a name="assign-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 
 В этом разделе описано, как разрешить пользователю Britta Simon использовать единый вход Azure, предоставив этому пользователю доступ к Sauce Labs - Mobile and Web Testing.
 
-![Назначение роли пользователя][200]
+1. На портале Azure выберите **Корпоративные приложения**, **Все приложения**, а затем — **Sauce Labs - Mobile and Web Testing**.
 
-**Чтобы назначить пользователя Britta Simon в Sauce Labs - Mobile and Web Testing, выполните следующие действия**.
-
-1. На портале Azure откройте представление приложений, перейдите к представлению каталога, а затем выберите **Корпоративные приложения** и щелкните **Все приложения**.
-
-    ![Назначение пользователя][201]
+    ![Колонка "Корпоративные приложения"](common/enterprise-applications.png)
 
 2. Из списка приложений выберите **Sauce Labs - Mobile and Web Testing**.
 
-    ![Ссылка на Sauce Labs - Mobile and Web Testing в списке приложений](./media/saucelabs-mobileandwebtesting-tutorial/tutorial_saucelabs_app.png)  
+    ![Ссылка на Sauce Labs - Mobile and Web Testing в списке приложений](common/all-applications.png)
 
 3. В меню слева выберите **Пользователи и группы**.
 
-    ![Ссылка "Пользователи и группы"][202]
+    ![Ссылка "Пользователи и группы"](common/users-groups-blade.png)
 
-4. Нажмите кнопку **Добавить**. Затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
+4. Нажмите кнопку **Добавить пользователя**, а затем в диалоговом окне **Добавление назначения** выберите **Пользователи и группы**.
 
-    ![Область "Добавление назначения"][203]
+    ![Область "Добавление назначения"](common/add-assign-user.png)
 
-5. В диалоговом окне **Пользователи и группы** в списке пользователей выберите **Britta Simon**.
+5. В диалоговом окне **Пользователи и группы** из списка пользователей выберите **Britta Simon**, а затем в верхней части экрана нажмите кнопку **Выбрать**.
 
-6. В диалоговом окне **Пользователи и группы** нажмите кнопку **Выбрать**.
+6. Если ожидается, что в утверждении SAML будет получено какое-либо значение роли, то в диалоговом окне **Выбор ролей** нужно выбрать соответствующую роль для пользователя из списка и затем нажать кнопку **Выбрать**, расположенную в нижней части экрана.
 
 7. В диалоговом окне **Добавление назначения** нажмите кнопку **Назначить**.
+
+### <a name="create-sauce-labs---mobile-and-web-testing-test-user"></a>Создание тестового пользователя Sauce Labs - Mobile and Web Testing
+
+В этом разделе вы создадите в Sauce Labs - Mobile and Web Testing пользователя с именем Britta Simon. Sauce Labs - Mobile and Web Testing поддерживает JIT-подготовку пользователей. Эта функция включена по умолчанию. В этом разделе никакие действия с вашей стороны не требуются. Если пользователь еще не существует в Sauce Labs - Mobile and Web Testing, он создается после выполнения аутентификации.
+
+> [!Note]
+> Чтобы создать пользователя вручную, обратитесь к  [группе поддержки Sauce Labs - Mobile and Web Testing](mailto:support@saucelabs.com).
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 
 В этом разделе описано, как проверить конфигурацию единого входа Azure AD с помощью панели доступа.
 
-Щелкнув элемент "Sauce Labs - Mobile and Web Testing" на панели доступа, вы автоматически войдете в приложение Sauce Labs - Mobile and Web Testing.
-Дополнительные сведения о панели доступа см. в статье с [общими сведениями о панели доступа](../active-directory-saas-access-panel-introduction.md).
+Щелкнув элемент "Sauce Labs - Mobile and Web Testing" на Панели доступа, вы автоматически войдете в приложение Sauce Labs - Mobile and Web Testing, для которого настроили единый вход. См. дополнительные сведения о [панели доступа](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction)
 
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
-* [Список учебников по интеграции приложений SaaS с Azure Active Directory](tutorial-list.md)
-* [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](../manage-apps/what-is-single-sign-on.md)
+- [Список учебников по интеграции приложений SaaS с Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list)
 
-<!--Image references-->
+- [Что такое доступ к приложениям и единый вход с помощью Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis)
 
-[1]: ./media/saucelabs-mobileandwebtesting-tutorial/tutorial_general_01.png
-[2]: ./media/saucelabs-mobileandwebtesting-tutorial/tutorial_general_02.png
-[3]: ./media/saucelabs-mobileandwebtesting-tutorial/tutorial_general_03.png
-[4]: ./media/saucelabs-mobileandwebtesting-tutorial/tutorial_general_04.png
+- [Что представляет собой условный доступ в Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
 
-[100]: ./media/saucelabs-mobileandwebtesting-tutorial/tutorial_general_100.png
-
-[200]: ./media/saucelabs-mobileandwebtesting-tutorial/tutorial_general_200.png
-[201]: ./media/saucelabs-mobileandwebtesting-tutorial/tutorial_general_201.png
-[202]: ./media/saucelabs-mobileandwebtesting-tutorial/tutorial_general_202.png
-[203]: ./media/saucelabs-mobileandwebtesting-tutorial/tutorial_general_203.png

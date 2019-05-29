@@ -9,12 +9,12 @@ ms.custom: seodec18
 ms.date: 12/06/2018
 ms.topic: tutorial
 ms.service: event-hubs
-ms.openlocfilehash: 234febe92727e5a47d4cfc5b836cd5593e99b5b5
-ms.sourcegitcommit: de81b3fe220562a25c1aa74ff3aa9bdc214ddd65
+ms.openlocfilehash: 90a17839afdddb4d6ad8abfa57963b4c76b100ed
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/13/2019
-ms.locfileid: "56238374"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65604294"
 ---
 # <a name="migrate-captured-event-hubs-data-to-a-sql-data-warehouse-using-event-grid-and-azure-functions"></a>Перенос собранных данных из Центров событий Azure в Хранилище данных SQL с помощью служб "Сетка событий" и "Функции Azure"
 
@@ -39,7 +39,7 @@ ms.locfileid: "56238374"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-- [Visual Studio 2017 версии 15.3.2 или более поздней](https://www.visualstudio.com/vs/). Вместе с программой нужно установить следующие рабочие нагрузки: разработка классических приложений .NET, разработка Azure, разработка ASP.NET и веб-разработка, разработка Node.js и Python.
+- [Visual Studio 2019](https://www.visualstudio.com/vs/). Вместе с программой нужно установить следующие рабочие нагрузки: разработка классических приложений .NET, разработка Azure, разработка ASP.NET и веб-разработка, разработка Node.js и Python.
 - Скачайте [пример Git](https://github.com/Azure/azure-event-hubs/tree/master/samples/e2e/EventHubsCaptureEventGridDemo). Пример решения состоит из следующих компонентов:
     - *WindTurbineDataGenerator* — простой издатель, который отправляет образцы данных ветровой турбины в концентратор событий с поддержкой функции "Сбор".
     - *FunctionDWDumper* — функция Azure, которая получает уведомление Сетки событий, когда файл AVRO записывается в большой двоичный объект в службе хранилища Azure. Она получает путь универсального кода ресурса (URI) большого двоичного объекта, считывает его содержимое и помещает эти данные в хранилище данных SQL.
@@ -106,7 +106,7 @@ WITH (CLUSTERED COLUMNSTORE INDEX, DISTRIBUTION = ROUND_ROBIN);
 
 ## <a name="publish-code-to-the-functions-app"></a>Публикация кода в приложение-функцию
 
-1. Откройте решение *EventHubsCaptureEventGridDemo.sln* в Visual Studio 2017 (версии 15.3.2 или более поздней). 
+1. Откройте решение *EventHubsCaptureEventGridDemo.sln* в Visual Studio 2019.
 
 1. В обозревателе решений щелкните правой кнопкой мыши *FunctionEGDWDumper* и выберите **Публиковать**.
 
@@ -137,7 +137,7 @@ WITH (CLUSTERED COLUMNSTORE INDEX, DISTRIBUTION = ROUND_ROBIN);
 
    ![Выбор функции](./media/store-captured-data-data-warehouse/select-function.png)
 
-1. Выберите **Добавление подписки для службы "Сетка событий"**.
+1. Выберите **Добавление подписки для службы "Сетка событий"** .
 
    ![Добавить подписку](./media/store-captured-data-data-warehouse/add-event-grid-subscription.png)
 

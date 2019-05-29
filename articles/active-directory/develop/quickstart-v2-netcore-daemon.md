@@ -17,16 +17,14 @@ ms.date: 04/10/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a0a40c9ee06751edfb7b218cf15275019c142545
-ms.sourcegitcommit: 1a19a5845ae5d9f5752b4c905a43bf959a60eb9d
+ms.openlocfilehash: 3851e53bb648811b46ec69d9c4fc91b920ce80fb
+ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/11/2019
-ms.locfileid: "59491327"
+ms.lasthandoff: 05/16/2019
+ms.locfileid: "65784954"
 ---
 # <a name="quickstart-acquire-a-token-and-call-microsoft-graph-api-from-a-console-app-using-apps-identity"></a>Краткое руководство. Получение маркера безопасности и вызов API Microsoft Graph из консольного приложения с помощью удостоверения приложения
-
-[!INCLUDE [active-directory-develop-applies-v2-msal](../../../includes/active-directory-develop-applies-v2-msal.md)]
 
 В этом кратком руководстве вы узнаете, как создать приложение .NET Core, которое может получить маркер доступа, используя собственное удостоверение приложения, а затем вызвать API Microsoft Graph для отображения [списка пользователей](https://docs.microsoft.com/graph/api/user-list) в каталоге. Этот сценарий полезен в ситуациях, где автономное, автоматическое задание или службу Windows необходимо запустить с использованием удостоверения приложения, а не удостоверения пользователя.
 
@@ -82,7 +80,7 @@ ms.locfileid: "59491327"
 
 #### <a name="step-2-download-your-visual-studio-project"></a>Шаг 2. Скачивание проекта Visual Studio
 
-[Скачайте проект Visual Studio.](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/archive/msal3x.zip)
+[Скачайте проект Visual Studio](https://github.com/Azure-Samples/active-directory-dotnetcore-daemon-v2/archive/msal3x.zip)
 
 #### <a name="step-3-configure-your-visual-studio-project"></a>Шаг 3. Настройка проекта Visual Studio
 
@@ -96,17 +94,17 @@ ms.locfileid: "59491327"
     "ClientSecret": "Enter_the_Client_Secret_Here"
     ```
     > > [!div renderon="portal" id="certandsecretspage" class="sxs-lookup"]
-    > > [Создайте секрет клиента.]()
+    > > [Создание секрета клиента]()
     
     > [!div renderon="docs"]
     >> Описание
-    >> * `Enter_the_Application_Id_Here` — это **идентификатор приложения (клиента)**, которое вы зарегистрировали.
-    >> * `Enter_the_Tenant_Id_Here` — замените это значение **идентификатором клиента** или **именем клиента** (например, contoso.microsoft.com).
-    >> * `Enter_the_Client_Secret_Here` — замените это значение секретом клиента, созданным на шаге 1.
+    >> * `Enter_the_Application_Id_Here` — это **идентификатор приложения (клиента)** , которое вы зарегистрировали.
+    >> * `Enter_the_Tenant_Id_Here` — замените это значение на **идентификатор клиента** или **имя клиента** (например, contoso.microsoft.com).
+    >> * `Enter_the_Client_Secret_Here` — замените это значение на секрет клиента, созданный на шаге 1.
 
     > [!div renderon="docs"]
     > > [!TIP]
-    > > Чтобы найти значения параметров **Идентификатор приложения (клиента)** и **Идентификатор каталога (клиента)**, на портале Azure перейдите на страницу приложения **Обзор**. Чтобы создать ключ, перейдите на страницу **Сертификаты и секреты**.
+    > > Чтобы найти значения параметров **Идентификатор приложения (клиента)** и **Идентификатор каталога (клиента)** , на портале Azure перейдите на страницу приложения **Обзор**. Чтобы создать ключ, перейдите на страницу **Сертификаты и секреты**.
     
 #### <a name="step-4-admin-consent"></a>Шаг 4. Согласие администратора
 
@@ -115,7 +113,7 @@ ms.locfileid: "59491327"
 ##### <a name="global-tenant-administrator"></a>Глобальный администратор клиента
 
 > [!div renderon="docs"]
-> Если вы являетесь глобальным администратором клиента, перейдите на страницу **Разрешения API** в разделе регистрации приложения (предварительная версия) на портале Azure и выберите **Предоставить согласие администратора для {имя каталога}**.
+> Если вы являетесь глобальным администратором клиента, перейдите на страницу **Разрешения API** в разделе регистрации приложения (предварительная версия) на портале Azure и выберите **Предоставить согласие администратора для {имя каталога}** .
 
 > [!div renderon="portal" class="sxs-lookup"]
 > Если вы являетесь глобальным администратором, перейдите на страницу **Разрешения API** и выберите **Предоставить согласия администратора для имя_клиента**.
@@ -132,8 +130,8 @@ https://login.microsoftonline.com/Enter_the_Tenant_Id_Here/adminconsent?client_i
 
 > [!div renderon="docs"]
 >> Описание
->> * `Enter_the_Tenant_Id_Here` — замените это значение **идентификатором клиента** или **именем клиента** (например, contoso.microsoft.com).
->> * `Enter_the_Application_Id_Here` — это **идентификатор приложения (клиента)**, которое вы зарегистрировали.
+>> * `Enter_the_Tenant_Id_Here` — замените это значение на **идентификатор клиента** или **имя клиента** (например, contoso.microsoft.com).
+>> * `Enter_the_Application_Id_Here` — это **идентификатор приложения (клиента)** , которое вы зарегистрировали.
 
 > [!NOTE]
 > После предоставления согласия для приложения с использованием предыдущего URL-адреса может появиться ошибка *AADSTS50011: для приложения не зарегистрирован адрес ответа*. Это происходит из-за того, что у этого приложения и URL-адреса нет URI перенаправления. Игнорируйте эту ошибку.
@@ -159,7 +157,7 @@ dotnet run
 
 ### <a name="msalnet"></a>MSAL.NET
 
-MSAL ([Microsoft.Identity.Client](https://www.nuget.org/packages/Microsoft.Identity.Client)) — это библиотека, используемая для выполнения входа пользователей и запросов маркеров, которые нужны для доступа к API, защищенному платформой удостоверений Майкрософт. Как описано выше, в этом кратком руководстве маркеры запрашиваются с использованием собственного удостоверения приложения вместо делегированных разрешений. Поток проверки подлинности, используемый в данном случае, называется *[потоком учетных данных клиента OAuth](v2-oauth2-client-creds-grant-flow.md)*. См. подробнее об [использовании MSAL.NET с потоком учетных данных клиента](https://aka.ms/msal-net-client-credentials).
+MSAL ([Microsoft.Identity.Client](https://www.nuget.org/packages/Microsoft.Identity.Client)) — это библиотека, используемая для выполнения входа пользователей и запросов маркеров, которые нужны для доступа к API, защищенному платформой удостоверений Майкрософт. Как описано выше, в этом кратком руководстве маркеры запрашиваются с использованием собственного удостоверения приложения вместо делегированных разрешений. Поток проверки подлинности, используемый в данном случае, называется *[потоком учетных данных клиента OAuth](v2-oauth2-client-creds-grant-flow.md)* . См. подробнее об [использовании MSAL.NET с потоком учетных данных клиента](https://aka.ms/msal-net-client-credentials).
 
  MSAL.NET можно установить, выполнив в **консоли диспетчера пакетов** Visual Studio следующую команду.
 
@@ -195,10 +193,10 @@ app = ConfidentialClientApplicationBuilder.Create(config.ClientId)
 > | Описание ||
 > |---------|---------|
 > | `config.ClientSecret` | Секрет клиента, созданный для приложения на портале Azure. |
-> | `config.ClientId` | **Идентификатор приложения (клиента)**, зарегистрированного на портале Azure. Это значение можно найти на странице приложения **Обзор** на портале Azure. |
+> | `config.ClientId` | **Идентификатор приложения (клиента)** , зарегистрированного на портале Azure. Это значение можно найти на странице приложения **Обзор** на портале Azure. |
 > | `config.Authority`    | (Необязательно.) Конечная точка службы токенов безопасности для проверки подлинности пользователей. Обычно <https://login.microsoftonline.com/{tenant}> для общедоступного облака, где {tenant} — имя или идентификатор вашего клиента.|
 
-Дополнительные сведения см. в [справочной документации по `ConfidentialClientApplication`](https://docs.microsoft.com/en-us/dotnet/api/microsoft.identity.client.iconfidentialclientapplication?view=azure-dotnet).
+Дополнительные сведения см. в [справочной документации по `ConfidentialClientApplication`](https://docs.microsoft.com/dotnet/api/microsoft.identity.client.iconfidentialclientapplication?view=azure-dotnet).
 
 ### <a name="requesting-tokens"></a>Запрос маркеров
 
@@ -233,4 +231,4 @@ result = await app.AcquireTokenForClient(scopes)
 > [Поток учетных данных клиента OAuth](v2-oauth2-client-creds-grant-flow.md)
 
 > [!div class="nextstepaction"]
-> [Потоки учетных данных клиента с MSAL.NET](https://aka.ms/msal-net-client-credentials)
+> [Потоки учетных данных клиента с использованием MSAL.NET](https://aka.ms/msal-net-client-credentials)

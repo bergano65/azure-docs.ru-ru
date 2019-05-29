@@ -9,17 +9,17 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
 ms.topic: quickstart
-ms.date: 01/31/2019
+ms.date: 04/24/2019
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d4105fa17041c7cefd1387d1ee50c177b8c55fc9
-ms.sourcegitcommit: 22ad896b84d2eef878f95963f6dc0910ee098913
+ms.openlocfilehash: a0e600204479bc54a590df6bf1bbcd634eaac7fc
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58651292"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65605641"
 ---
 # <a name="quickstart-naming-policy-for-groups-in-azure-active-directory"></a>Краткое руководство. Политика именования для групп в Azure Active Directory
 
@@ -31,121 +31,43 @@ ms.locfileid: "58651292"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="install-powershell-cmdlets"></a>Установка командлетов PowerShell
+## <a name="configure-the-group-naming-policy-for-a-tenant-using-azure-portal-preview"></a>Настройка политики именования групп для клиента с помощью портала Azure (предварительная версия)
 
-Обязательно удалите все старые версии Azure Active Directory PowerShell для модуля Graph для Windows PowerShell и установите [общедоступную предварительную версию Azure Active Directory PowerShell для Graph 2.0.0.137](https://www.powershellgallery.com/packages/AzureADPreview/2.0.0.137), прежде чем выполнять команды PowerShell. 
+1. Войдите в [Центр администрирования Azure AD](https://aad.portal.azure.com) с учетной записью администратора пользователей.
+1. Чтобы открыть страницу политики именования, выберите **Группы**, а затем — **Политика именования**.
 
-1. Запустите приложение Windows PowerShell от имени администратора.
-2. Удалите все предыдущие версии AzureADPreview.
-  
+    ![Открытие страницы "Политика именования" в центре администрирования](./media/groups-naming-policy/policy-preview.png)
 
-   ```powershell
-   Uninstall-Module AzureADPreview
-   ```
+### <a name="view-or-edit-the-prefix-suffix-naming-policy"></a>Просмотр или изменение политики добавления префикса или суффикса
 
-3. Установите последнюю версию AzureADPreview.
-  
+1. На странице **Политика именования** выберите **Политика именования групп**.
+1. Текущие политики изменения префикса или суффикса можно просматривать и изменять по отдельности, выбрав атрибуты или строки, которые необходимо применить в рамках политики именования.
+1. Чтобы удалить префикс или суффикс из списка, выберите его, а затем нажмите **Удалить**. При этом можно удалить несколько элементов одновременно.
+1. Выберите **Сохранить**, чтобы внесенные в политику изменения вступили в силу.
 
-   ```powershell
-   Install-Module AzureADPreview
-   ```
+### <a name="view-or-edit-the-custom-blocked-words"></a>Просмотр и изменение настраиваемых запрещенных слов
 
-   При появлении запроса на доступ к ненадежному репозиторию введите **Y** (Да). Установка нового модуля может занять несколько минут.
+1. На странице **Политика именования** выберите **Заблокированные слова**.
 
-## <a name="set-up-naming-policy"></a>Настройка политики именования
+    ![Изменение и передача списка запрещенных слов для политики именования](./media/groups-naming-policy/blockedwords-preview.png)
 
-### <a name="step-1-sign-in-using-powershell-cmdlets"></a>Шаг 1. Вход с использованием командлетов PowerShell
+1. Для просмотра или изменения текущего списка настраиваемых запрещенных слов выберите **Загрузить**.
+1. Передайте новый список настраиваемых запрещенных слов, щелкнув значок файла.
+1. Выберите **Сохранить**, чтобы внесенные в политику изменения вступили в силу.
 
-1. Откройте приложение Windows PowerShell. Более высокий уровень привилегий не требуется.
-
-2. Выполните следующие команды, чтобы подготовить среду к выполнению командлетов.
-  
-
-   ```powershell
-   Import-Module AzureADPreview
-   Connect-AzureAD
-   ```
-
-   На открывшемся экране **Вход в учетную запись** введите учетную запись администратора и пароль, чтобы подключиться к службе, затем выберите **Войти**.
-
-3. Чтобы создать параметры группы для этого клиента, выполните инструкции в статье [Настройка параметров групп с помощью командлетов Azure Active Directory](groups-settings-cmdlets.md).
-
-### <a name="step-2-view-the-current-settings"></a>Шаг 2. Просмотр текущих параметров
-
-1. Просмотрите текущие параметры политики именования.
-  
-
-   ```powershell
-   $Setting = Get-AzureADDirectorySetting -Id (Get-AzureADDirectorySetting | Where-Object -Property DisplayName -Value "Group.Unified" -EQ).id
-   ```
-
-  
-2. Отобразите на экране текущие параметры групп.
-  
-
-   ```powershell
-   $Setting.Values
-   ```
-
-  
-
-### <a name="step-3-set-the-naming-policy-and-any-custom-blocked-words"></a>Шаг 3. Установка политики именований и любых настраиваемых запрещенных слов
-
-1. Задайте префиксы и суффиксы имен групп в PowerShell для Azure AD. Для правильной работы функции включите [имя_группы] в параметр.
-  
-
-   ```powershell
-   $Setting["PrefixSuffixNamingRequirement"] =“GRP_[GroupName]_[Department]"
-   ```
-
-  
-2. Задайте настраиваемые запрещенные слова. В следующем примере показано, как можно добавить собственные настраиваемые слова.
-  
-
-   ```powershell
-   $Setting["CustomBlockedWordsList"]=“Payroll,CEO,HR"
-   ```
-
-  
-3. Сохраните параметры новой политики, чтобы она вступила в действие, как показано в следующем примере.
-  
-
-   ```powershell
-   Set-AzureADDirectorySetting -Id (Get-AzureADDirectorySetting | Where-Object -Property DisplayName -Value "Group.Unified" -EQ).id -DirectorySetting $Setting
-   ```
-
-  
 Вот и все. Вы настроили политику именования и добавили настраиваемые запрещенные слова.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-1. Удалите префиксы и суффиксы имен групп в PowerShell для Azure AD.
-  
+### <a name="remove-the-naming-policy-using-azure-portal-preview"></a>Удаление политики именования с помощью портала Azure (предварительная версия)
 
-   ```powershell
-   $Setting["PrefixSuffixNamingRequirement"] =""
-   ```
-
-  
-2. Удалите настраиваемые запрещенные слова
-  
-
-   ```powershell
-   $Setting["CustomBlockedWordsList"]=""
-   ```
-
-  
-3. Сохраните параметры.
-  
-
-   ```powershell
-   Set-AzureADDirectorySetting -Id (Get-AzureADDirectorySetting | Where-Object -Property DisplayName -Value "Group.Unified" -EQ).id -DirectorySetting $Setting
-   ```
+1. На странице **Политика именования** выберите **Удалить политику**.
+1. После подтверждения удаления, политика именования, в том числе все политики добавления префикса или суффикса и настраиваемые запрещенные слова, будут удалены.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом кратком руководстве вы узнали, как настроить политику именования для своего клиента Azure AD с помощью командлетов PowerShell.
+Из этого краткого руководства вы узнали, как настроить политику именования для организации Azure AD с помощью портала Azure.
 
-Дополнительные сведения о технических ограничениях, добавлении списка настраиваемых запрещенных слов или работе пользователя в приложениях Office 365 см. в следующей статье, чтобы узнать больше о политике именования.
+Перейдите к следующей статье, чтобы просмотреть дополнительные сведения, в том числе о командлетах PowerShell для политики именования, технических ограничениях, добавлении списка настраиваемых запрещенных слов или работе пользователя в приложениях Office 365 см.
 > [!div class="nextstepaction"]
-> [Применение политики именования для групп Office 365 в Azure Active Directory (предварительная версия)](groups-naming-policy.md)
+> [PowerShell для политики именования](groups-naming-policy.md)

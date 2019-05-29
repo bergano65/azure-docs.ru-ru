@@ -10,12 +10,12 @@ ms.service: application-insights
 ms.custom: mvc
 ms.topic: tutorial
 manager: carmonm
-ms.openlocfilehash: 7eae71411a1a3772dbdbaa289a32cbc69fca0e5a
-ms.sourcegitcommit: 30d23a9d270e10bb87b6bfc13e789b9de300dc6b
+ms.openlocfilehash: f906ab5db35ce8b239eceac9cdc8244f230f5a77
+ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/08/2019
-ms.locfileid: "54108755"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65596025"
 ---
 # <a name="find-and-diagnose-performance-issues-with-azure-application-insights"></a>Поиск и диагностика проблем производительности с помощью Azure Application Insights
 
@@ -32,7 +32,7 @@ Azure Application Insights собирает данные телеметрии и
 
 Для работы с этим руководством:
 
-- Установите [Visual Studio 2017](https://www.visualstudio.com/downloads/) с указанными ниже рабочими нагрузками:
+- Установите [Visual Studio 2019](https://www.visualstudio.com/downloads/) с указанными ниже рабочими нагрузками:
     - ASP.NET и веб-разработка.
     - разработка Azure;
 - Разверните приложение .NET в Azure и [включите пакет SDK для Application Insights](../../azure-monitor/app/asp-net.md).
@@ -97,7 +97,7 @@ Application Insights собирает данные о производитель
 
     ![Сводка браузера](media/tutorial-performance/browser-summary.png)
 
-2.  Прокрутите вниз до элемента **Какие страницы открывались дольше всего?**.  Отобразится список страниц приложения, которые загружались для клиента дольше всего.  Эти сведения можно использовать, чтобы определить страницы, которые оказывают значительное влияние на пользователя.
+2.  Прокрутите вниз до элемента **Какие страницы открывались дольше всего?** .  Отобразится список страниц приложения, которые загружались для клиента дольше всего.  Эти сведения можно использовать, чтобы определить страницы, которые оказывают значительное влияние на пользователя.
 3.  Выберите одну из этих страниц, чтобы открыть панель **Разметка страницы**.  В этом примере на странице **/FabrikamProd** отображается повышенная средняя длительность.  Панель **Разметка страницы** содержит подробные сведения об этой странице, включая разбивку разных диапазонов длительности.
 
     ![Разметка страницы](media/tutorial-performance/page-view.png)

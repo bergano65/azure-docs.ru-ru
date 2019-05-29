@@ -8,12 +8,12 @@ ms.author: sngun
 ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 09/24/2018
-ms.openlocfilehash: 2e43b2d6f5a127f7f0f81c2dfc2fd3737c9ee787
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 1afdc0319ae26fcd6c8cb3ada0b4aa8c31fe1fbb
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57880268"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65861304"
 ---
 # <a name="quickstart-build-a-cassandra-app-with-net-sdk-and-azure-cosmos-db"></a>Краткое руководство. Создание приложения Cassandra с помощью пакета SDK для .NET и Azure Cosmos DB
 
@@ -33,7 +33,7 @@ Azure Cosmos DB — это глобально распределенная мн
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)] Кроме того, можно воспользоваться [бесплатной пробной версией Azure Cosmos DB](https://azure.microsoft.com/try/cosmosdb/) без подписки Azure, оплаты и каких-либо обязательств.
 
 Кроме того, вам потребуется: 
-* Если вы еще не установили Visual Studio 2017, вы можете скачать и использовать **бесплатный** [выпуск Visual Studio Community 2017](https://www.visualstudio.com/downloads/). При установке Visual Studio необходимо включить возможность **разработки для Azure**.
+* Если вы еще не установили Visual Studio 2019, вы можете скачать и использовать **бесплатный** [выпуск Visual Studio 2019 Community Edition](https://www.visualstudio.com/downloads/). При установке Visual Studio необходимо включить возможность **разработки для Azure**.
 * Установите [Git](https://www.git-scm.com/), чтобы клонировать пример.
 
 <a id="create-account"></a>
@@ -122,7 +122,7 @@ Azure Cosmos DB — это глобально распределенная мн
 
     ![Просмотрите и скопируйте ключ доступа на странице "Строка подключения" портала Azure.](./media/create-cassandra-dotnet/keys.png)
 
-2. В Visual Studio 2017 откройте файл Program.cs. 
+2. В Visual Studio откройте файл Program.cs. 
 
 3. Вставьте полученное на портале значение USERNAME вместо элемента `<FILLME>` в строке 13.
 

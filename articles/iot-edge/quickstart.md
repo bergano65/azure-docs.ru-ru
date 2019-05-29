@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 7b4fcf34831d17d35e9f4d8b38455ea22293076f
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: ce6703c507e955ffe98e71f26feca08f9f37dfe5
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65148080"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66146771"
 ---
 # <a name="quickstart-deploy-your-first-iot-edge-module-from-the-azure-portal-to-a-windows-device"></a>Краткое руководство. Развертывание модуля IoT Edge на устройстве с Windows на портале Azure
 
@@ -138,6 +138,13 @@ ms.locfileid: "65148080"
 1. Если вы этого еще не сделали, выполните действия, описанные в статье [Register a new Azure IoT Edge device from the Azure portal](how-to-register-device-portal.md) (Регистрация нового устройства Azure IoT Edge на портале Azure), чтобы зарегистрировать устройство и получить для него строку подключения. 
 
 2. Откройте сеанс PowerShell от имени администратора.
+
+   >[!NOTE]
+   >Для установки IoT Edge используйте сеанс AMD64 PowerShell, а не PowerShell (x86). Чтобы узнать, какой тип сеанса используется, выполните следующую команду:
+   >
+   >```powershell
+   >(Get-Process -Id $PID).StartInfo.EnvironmentVariables["PROCESSOR_ARCHITECTURE"]
+   >```
 
 3. Команда **Deploy-IoTEdge** позволяет проверить, установлена ли на компьютере Windows поддерживаемая версия, включает функцию контейнеров, скачивает среду выполнения Moby и затем скачивает среду выполнения IoT Edge.
 

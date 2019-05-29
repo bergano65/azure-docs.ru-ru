@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 05/06/2019
 ms.author: alkohli
 Customer intent: As an IT admin, I need to be able to order Data Box Disk to upload on-premises data from my server onto Azure.
-ms.openlocfilehash: 023542dbc22234fc57e4ce8b662a9760be4efe04
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 8df9c2a5e45cf222debc733b3e051c3f707715c5
+ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65150765"
+ms.lasthandoff: 05/14/2019
+ms.locfileid: "65603084"
 ---
 # <a name="tutorial-return-azure-data-box-disk-and-verify-data-upload-to-azure"></a>Руководство по Возврат Диска Azure Data Box и проверка передачи данных в Azure
 
@@ -56,7 +56,7 @@ ms.locfileid: "65150765"
 2. Запечатайте коробку для транспортировки и убедитесь, что этикетка обратной доставки отображается.
 3. Вызовите курьера для отправки посылки службой доставки UPS. Чтобы запланировать отправку с курьером:
 
-    - Позвоните в местное отделение UPS (бесплатный номер конкретной страны).
+    - Позвоните в местное отделение UPS (бесплатный номер конкретной страны/региона).
     - При вызове укажите обратный номер для отслеживания доставки, как показано на напечатанной этикетке.
     - Если номер для отслеживания не указан, UPS потребует дополнительную плату во время приема посылки.
     - Вместо планирования отправки с курьером вы также можете оставить Диск Data Box в ближайшем отделении этой курьерской службы.
@@ -78,7 +78,7 @@ ms.locfileid: "65150765"
 
 2. Запечатайте коробку для транспортировки и убедитесь, что этикетка обратной доставки отображается.
 3. Если вы возвращаете устройство в Европе с помощью DHL, попросите доставку из DHL, посетив их веб-сайт и указав номер счета накладной.
-4. Перейдите на веб-сайт DHL Экспресс и выберите **Book a Courier Collection > eReturn Shipment** (Забронировать приезд курьера > отправка eReturn).
+4. Перейдите на веб-сайт DHL Экспресс страны/региона и выберите **Book a Courier Collection > eReturn Shipment** (Забронировать приезд курьера > Отправка eReturn).
 
     ![Возвратная расходная накладная DHL](media/data-box-disk-deploy-picked-up/dhl-ship-1.png)
     

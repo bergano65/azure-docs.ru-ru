@@ -11,12 +11,12 @@ ms.topic: quickstart
 description: Быстрая разработка в Kubernetes с использованием контейнеров, микрослужб и Java в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Java, Helm, service mesh, service mesh routing, kubectl, k8s
 manager: jeconnoc
-ms.openlocfilehash: c1c039ba8696baff11abed3930998983647f4356
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 26efa17ee699aed87ecfbbd21e7880e7538de4ea
+ms.sourcegitcommit: 59fd8dc19fab17e846db5b9e262a25e1530e96f3
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59425752"
+ms.lasthandoff: 05/21/2019
+ms.locfileid: "65979130"
 ---
 # <a name="quickstart-develop-with-java-on-kubernetes-using-azure-dev-spaces"></a>Краткое руководство. Разработка с помощью Java в Kubernetes с использованием Azure Dev Spaces
 
@@ -41,7 +41,7 @@ ms.locfileid: "59425752"
 
 ```cmd
 az group create --name MyResourceGroup --location eastus
-az aks create -g MyResourceGroup -n MyAKS --location eastus --node-count 1 --generate-ssh-keys
+az aks create -g MyResourceGroup -n MyAKS --location eastus --node-vm-size Standard_DS2_v2 --node-count 1 --disable-rbac --generate-ssh-keys
 ```
 
 ## <a name="enable-azure-dev-spaces-on-your-aks-cluster"></a>Включение Azure Dev Spaces в кластере AKS
@@ -113,7 +113,7 @@ Service 'webfrontend' port 80 (http) is available at http://localhost:54256
 ...
 ```
 
-Вы можете увидеть выполнение службы, открыв общедоступный URL-адрес, который отображается в выходных данных команды `azds up`. В этом примере общедоступный URL-адрес — *http://webfrontend.1234567890abcdef1234.eus.azds.io/*.
+Вы можете увидеть выполнение службы, открыв общедоступный URL-адрес, который отображается в выходных данных команды `azds up`. В этом примере общедоступный URL-адрес — *http://webfrontend.1234567890abcdef1234.eus.azds.io/* .
 
 Если остановить команду `azds up` с помощью сочетания клавиш *CTRL+C*, служба продолжит выполнятся в AKS, а общедоступный URL-адрес останется доступным.
 
@@ -122,7 +122,7 @@ Service 'webfrontend' port 80 (http) is available at http://localhost:54256
 Чтобы развернуть обновленную версию службы, обновите любой файл в проекте и повторно выполните команду `azds up`. Например: 
 
 1. Если `azds up` по-прежнему выполняется, нажмите клавиши *CTRL+C*.
-1. Обновите [строку 16 в `src/main/java/com/ms/sample/webfrontend/Application.java`](https://github.com/Azure/dev-spaces/blob/master/samples/java/getting-started/webfrontend/src/main/java/com/ms/sample/webfrontend/Application.java#L16):
+1. Измените [строку 19 в `src/main/java/com/ms/sample/webfrontend/Application.java`](https://github.com/Azure/dev-spaces/blob/master/samples/java/getting-started/webfrontend/src/main/java/com/ms/sample/webfrontend/Application.java#L19):
     
     ```java
     return "Hello from webfrontend in Azure!";
@@ -145,7 +145,7 @@ Service 'webfrontend' port 80 (http) is available at http://localhost:54256
 
 ## <a name="enable-visual-studio-code-to-debug-in-kubernetes"></a>Включение Visual Studio Code для отладки в Kubernetes
 
-Откройте Visual Studio Code, щелкните *Файл*, *Открыть...*, а затем перейдите в каталог *dev-spaces/samples/java/getting-started/webfrontend* и щелкните *Открыть*.
+Откройте Visual Studio Code, щелкните *Файл*, *Открыть...* , а затем перейдите в каталог *dev-spaces/samples/java/getting-started/webfrontend* и щелкните *Открыть*.
 
 Теперь у вас есть проект *webfrontend*, открытый в Visual Studio Code. Это та же служба, которая запускается с помощью команды `azds up`. Для отладки этой службы в AKS используйте Visual Studio Code, а не `azds up`. При этом нужно подготовить этот проект, чтобы использовать Visual Studio Code для взаимодействия с вашим рабочим пространством.
 
@@ -178,17 +178,17 @@ Service 'webfrontend' port 80 (http) is available at http://localhost:54256
 
 Запустите службу в режиме отладки с помощью *Launch Java Program (AZDS)* (Запуск программы на Java (AZDS)).
 
-Вернитесь в представление *Explorer*, щелкнув *Представление*, а затем — *Explorer*. Откройте `src/main/java/com/ms/sample/webfrontend/Application.java` и щелкните где-нибудь в строке 16, чтобы навести на нее курсор. Чтобы задать точку останова, нажмите клавишу *F9* или щелкните *Отладка* и *Переключить точку останова*.
+Вернитесь в представление *Explorer*, щелкнув *Представление*, а затем — *Explorer*. Откройте `src/main/java/com/ms/sample/webfrontend/Application.java` и щелкните строку 19, чтобы расположить в ней курсор. Чтобы задать точку останова, нажмите клавишу *F9* или щелкните *Отладка* и *Переключить точку останова*.
 
-Откройте службу в браузере. Вы увидите, что сообщение не отображается. Вернитесь в Visual Studio Code и обратите внимание, что строка 16 выделена. Точка останова, которую вы задали, приостановила выполнение службы в строке 16. Чтобы возобновить работу службы, нажмите клавишу *F5* или щелкните *Отладка*, а затем *Продолжить*. Вернитесь в браузер. Вы увидите, что сообщение теперь отображается.
+Откройте службу в браузере. Вы увидите, что сообщение не отображается. Вернитесь в Visual Studio Code. Вы увидите, что строка 19 выделена. Заданная вами точка останова приостановила выполнение службы на строке 19. Чтобы возобновить работу службы, нажмите клавишу *F5* или щелкните *Отладка*, а затем *Продолжить*. Вернитесь в браузер. Вы увидите, что сообщение теперь отображается.
 
 Во время выполнения службы в Kubernetes с присоединенным отладчиком у вас есть полный доступ к отладочным сведениям, включая стек вызовов, локальные переменные и данные об исключениях.
 
-Удалите точку останова, поместив курсор в строке 16 в `src/main/java/com/ms/sample/webfrontend/Application.java` и нажав клавишу *F9*.
+Удалите точку останова, поместив курсор в строке 19 в `src/main/java/com/ms/sample/webfrontend/Application.java` и нажав клавишу *F9*.
 
 ## <a name="update-code-from-visual-studio-code"></a>Обновление кода из Visual Studio Code
 
-Пока служба выполняется в режиме отладки, обновите строку 16 в `src/main/java/com/ms/sample/webfrontend/Application.java`. Например: 
+Пока служба выполняется в режиме отладки, обновите строку 19 в `src/main/java/com/ms/sample/webfrontend/Application.java`. Например: 
 ```java
 return "Hello from webfrontend in Azure while debugging!";
 ```

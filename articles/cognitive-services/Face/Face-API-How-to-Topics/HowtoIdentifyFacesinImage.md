@@ -8,65 +8,60 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: face-api
 ms.topic: sample
-ms.date: 03/01/2018
+ms.date: 04/10/2019
 ms.author: sbowles
-ms.openlocfilehash: 013467cb64220b525d429c901c48028bf65b3852
-ms.sourcegitcommit: 90cec6cccf303ad4767a343ce00befba020a10f6
+ms.openlocfilehash: c22230545ccbe1ef1b4bfa35a33f0302197463b1
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/07/2019
-ms.locfileid: "55864933"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66124525"
 ---
-# <a name="example-how-to-identify-faces-in-images"></a>Пример: Как идентифицировать лица на изображениях
+# <a name="example-identify-faces-in-images"></a>Пример: Идентификация лиц на изображении
 
-В этом руководстве показано, как идентифицировать неизвестные лица с помощью PersonGroups, заранее созданные на основе известных людей. Примеры написаны на языке C# с помощью клиентской библиотеки API распознавания лиц.
-
-## <a name="concepts"></a>Основные понятия
-
-Если вы не знакомы со следующими понятиями в этом руководстве, выполните поиск определений в нашем [глоссарии](../Glossary.md) в любое время:
-
-- Лицо — обнаружить;
-- Лицо — идентифицировать;
-- PersonGroup.
+В этом руководстве показано, как идентифицировать неизвестные лица с помощью объектов PersonGroups, заранее созданных из изображений лиц знакомых людей. Примеры написаны на языке C# с использованием клиентской библиотеки API Распознавания лиц службы Azure Cognitive Services.
 
 ## <a name="preparation"></a>Подготовка
 
-В этом образце продемонстрировано следующее:
+В этом примере демонстрируются следующее:
 
-- Как создать PersonGroup. PersonGroup содержит список известных людей.
-- Как присвоить лица каждому человеку. Эти лица используются в качестве основы для идентификации людей. Рекомендуется использовать четкое изображение лица, как в удостоверении личности. Хороший набор фотографий должен содержать фрагменты лица одного и того же человека в разных позах, в одежде разных цветов или с разными прическами.
+- Как создать PersonGroup. Объект PersonGroup содержит список знакомых людей.
+- Как сопоставлять изображения лиц с определенными людьми. Изображения лица используются как основа для идентификации человека. Мы рекомендуем использовать четкие снимки с лицами анфас. Лучше всего подходят фотографии на документах. Оптимальный набор состоит из фотографий лица одного человека в разных позах, в одежде разных цветов или с разными прическами.
 
-Чтобы выполнить демонстрацию этого образца, вам нужно подготовить много фотографий:
+Чтобы выполнить демонстрацию этого примера, подготовьте следующее:
 
-- Несколько фотографий с лицом человека. [Щелкните здесь, чтобы загрузить образец фото](https://github.com/Microsoft/Cognitive-Face-Windows/tree/master/Data) для Анны, Билла и Клэр.
-- Серию тестовых фотографий, которые могут содержать или не содержать лица Анны, Билла или Клэр, используемые для проверки идентификации. Вы также можете выбрать некоторые образцы изображений из предыдущей ссылки.
+- Несколько фотографий с лицом человека. [Скачайте примеры фотографий](https://github.com/Microsoft/Cognitive-Face-Windows/tree/master/Data) Анны, Билла и Клэр.
+- Серия тестовых фотографий. Фотографии, на части которых есть лица Анны, Билла или Клэр. Они используются для тестирования идентификации. Выберите также некоторые примеры изображений из набора по ссылке выше.
 
 ## <a name="step-1-authorize-the-api-call"></a>Шаг 1. Авторизация вызова API
 
-Каждый вызов API распознавания лиц требует ключ подписки. Этот ключ может быть либо передан через параметр строки запроса, либо указан в заголовке запроса. Чтобы передать ключ подписки через строку запроса, обратитесь к URL-адресу запроса [Face-Detect](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236) в качестве примера.
+Каждый вызов API распознавания лиц требует ключ подписки. Этот ключ может быть передан через параметр строки запроса или указан в заголовке запроса. Чтобы передать ключ подписки через строку запроса, изучите URL-адрес запроса [Face-Detect](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236) в качестве примера.
 ```
 https://westus.api.cognitive.microsoft.com/face/v1.0/detect[?returnFaceId][&returnFaceLandmarks][&returnFaceAttributes]
 &subscription-key=<Subscription key>
 ```
 
-Также можно указать ключ подписки в заголовке запроса HTTP: **ocp-apim-subscription-key: &lt;Ключ подписки&gt;**. При использовании клиентской библиотеки ключ подписки передается через конструктор класса FaceServiceClient. Например: 
+Ключ подписки также можно указать в заголовке HTTP-запроса **ocp-apim-subscription-key: &lt;Ключ подписки&gt;** .
+Если вы используете клиентскую библиотеку, ключ подписки передается через конструктор класса FaceServiceClient. Например: 
  
 ```CSharp 
 faceServiceClient = new FaceServiceClient("<Subscription Key>");
 ```
  
-Ключ подписки можно получить на странице "Marketplace" портала Azure. Ознакомьтесь со страницей [подписок](https://azure.microsoft.com/try/cognitive-services/).
+Чтобы получить ключ подписки, откройте Azure Marketplace через портал Azure. Дополнительные сведения см. на странице [Пробная версия Cognitive Services](https://azure.microsoft.com/try/cognitive-services/).
 
 ## <a name="step-2-create-the-persongroup"></a>Шаг 2. Создание PersonGroup
 
-На этом шаге мы создали группу PersonGroup с названием MyFriends, в которую входят три пользователя: Anna, Bill и Clare. Каждый пользователь имеет несколько зарегистрированных лиц. Лица должны определяться с изображений. После выполнения всех этих шагов у вас есть PersonGroup, как показано на следующем изображении:
+На этом шаге объект PersonGroup с именем MyFriends содержит фотографии Анны, Билла и Клэр. Каждый пользователь имеет несколько зарегистрированных лиц. Лица должны распознаваться на изображениях. После выполнения всех этих шагов у вас есть PersonGroup, как показано на следующем изображении:
 
-![HowToIdentify1](../Images/group.image.1.jpg)
+![MyFriends](../Images/group.image.1.jpg)
 
-### <a name="21-define-people-for-the-persongroup"></a>2.1 Определение людей для PersonGroup
-Пользователь является базовой единицей идентификации. Для пользователя может быть зарегистрировано одно или несколько известных лиц. Тем не менее, PersonGroup — это совокупность людей, и каждый человек определен в конкретной группе людей. Идентификация выполняется в PersonGroup. Таким образом от задачи требуется создать группу людей (PersonGroup), а затем создать в ней людей, таких как Анна, Билл и Клэр.
+### <a name="step-21-define-people-for-the-persongroup"></a>Шаг 2.1. Назначение людей в PersonGroup
+Пользователь является базовой единицей идентификации. Для пользователя может быть зарегистрировано одно или несколько известных лиц. PersonGroup — это совокупность людей. Каждый человек определяется в конкретной группе PersonGroup. Идентификация выполняется по принадлежности к PersonGroup. Итак, нам нужно создать объект PersonGroup и добавить в него изображения людей, например Анны, Билла и Клэр.
 
-Сначала необходимо создать группу людей. Это выполняется с помощью API [РersonGroup — создание](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395244). Соответствующим API клиентской библиотеки является метод CreatePersonGroupAsync для класса FaceServiceClient. Идентификатор группы, указанный для создания группы, уникален для каждой подписки. Вы также можете получать, обновлять или удалять PersonGroups с использованием других API группы людей. Как только группа определена, в ней можно определить людей, используя API [PersonGroup Person — Create](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523c). Метод клиентской библиотеки — CreatePersonAsync. Вы можете добавить лицо для каждого человека после его создания.
+Для начала создайте PersonGroup с помощью API-интерфейса [PersonGroup — Create](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395244). Соответствующим API клиентской библиотеки является метод CreatePersonGroupAsync для класса FaceServiceClient. Идентификатор группы, указанный при ее создании, уникален для каждой подписки. Вы можете извлекать, обновлять и удалять объекты PersonGroup через другие API-интерфейсы PersonGroup. 
+
+Определив группу, вы можете назначить в нее людей с помощью API [PersonGroup Person — Create](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523c). Метод клиентской библиотеки — CreatePersonAsync. Вы можете добавлять в PersonGroup изображения лица каждого человека из группы.
 
 ```CSharp 
 // Create an empty PersonGroup
@@ -83,10 +78,10 @@ CreatePersonResult friend1 = await faceServiceClient.CreatePersonAsync(
  
 // Define Bill and Clare in the same way
 ```
-### <a name="step2-2"></a> 2.2 Обнаружение лиц и их регистрация для корректировки человека
-Обнаружение выполняется путем отправки веб-запроса POST в API [Face — Detect](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236) с файлом изображения в теле запроса HTTP. При использовании клиентской библиотеки распознавание лиц выполняется методом DetectAsync для класса FaceServiceClient.
+### <a name="step2-2"></a> Шаг 2.2. Распознавание лица и его сопоставление с определенным человеком
+Обнаружение выполняется путем отправки веб-запроса POST в API [Face — Detect](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395236) с файлом изображения в теле запроса HTTP. При использовании клиентской библиотеки распознавание лиц выполняется в методе DetectAsync из класса FaceServiceClient.
 
-Для каждого обнаруженного лица вы можете вызвать [PersonGroup Person — Add Face](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523b), чтобы добавить его к правильному человеку.
+Для каждого обнаруженного лица вызовите [PersonGroup Person — Add Face](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523b), чтобы добавить его к соответствующему человеку.
 
 Следующий код демонстрирует процесс определения лица с изображения и добавления его к человеку:
 ```CSharp 
@@ -104,17 +99,17 @@ foreach (string imagePath in Directory.GetFiles(friend1ImageDir, "*.jpg"))
 }
 // Do the same for Bill and Clare
 ``` 
-Обратите внимание, если изображение содержит несколько лиц, добавляется только самое большое. Вы можете добавить к лицу другие лица, передав строку в формате targetFace=left, top, width, height в параметр targetFace API [PersonGroup Person — Add Face](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523b) или используя необязательный параметр targetFace для метода AddPersonFaceAsync для добавления других лиц. Каждому лицу, добавленному для человека, будет присвоен уникальный идентификатор лица, который может быть использован в [PersonGroup Person — Delete Face](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523e) и [Face — Identify](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395239).
+Если изображение содержит несколько лиц, добавляется только лицо с наибольшим размером. Вы можете добавить несколько изображений лиц для одного человека. Передайте строку в формате "targetFace = левый край, верхний край, ширина, высота" через параметр запроса targetFace для API-интерфейса [PersonGroup Person — Add Face](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523b). Для добавления новых лиц также можно использовать необязательный параметр targetFace в методе AddPersonFaceAsync. Каждому добавленному лицу присваивается уникальный постоянный идентификатор лица. Вы можете использовать этот идентификатор в интерфейсах [PersonGroup Person — Delete Face](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523e) и [Face —Identify](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395239).
 
 ## <a name="step-3-train-the-persongroup"></a>Шаг 3. Обучение PersonGroup
 
-Группа людей должна пройти обучение до того, как ее можно будет идентифицировать. Кроме того, она должна быть повторно обучена после добавления или удаления какого-либо лица, или если зарегистрированное лицо человека было изменено. Обучение выполняется API-интерфейсом [PersonGroup — Train](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395249). При использовании клиентской библиотеки это просто вызов метода TrainPersonGroupAsync:
+Нужно выполнить обучение PersonGroup, чтобы идентификация работала правильно. После добавления человека в PersonGroup, удаления его из группы или изменения зарегистрированного для него лица необходимо повторно выполнить обучение PersonGroup. Обучение выполняется API-интерфейсом [PersonGroup — Train](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395249). При использовании клиентской библиотеки достаточно вызвать метод TrainPersonGroupAsync:
  
 ```CSharp 
 await faceServiceClient.TrainPersonGroupAsync(personGroupId);
 ```
  
-Обучение является асинхронным процессом. Оно может не завершиться даже после возврата метода TrainPersonGroupAsync. Возможно, вам потребуется запросить статус обучения, используя API [PersonGroup — Get Training Status](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395247) или метод GetPersonGroupTrainingStatusAsync клиентской библиотеки. В следующем примере демонстрируется простая логика ожидания завершения обучения группы людей:
+Обучение является асинхронным процессом. Оно может продолжаться даже после возврата метода TrainPersonGroupAsync. Если нужно узнать текущее состояние обучения, используйте для этого API [PersonGroup — Get Training Status](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395247) или метод GetPersonGroupTrainingStatusAsync из клиентской библиотеки. В следующем примере демонстрируется простая логика, ожидающая завершения обучения PersonGroup:
  
 ```CSharp 
 TrainingStatus trainingStatus = null;
@@ -133,9 +128,9 @@ while(true)
 
 ## <a name="step-4-identify-a-face-against-a-defined-persongroup"></a>Шаг 4. Определение лица для определенной группы PersonGroup
 
-При выполнении идентификаций API распознавания лиц может вычислять сходство контрольной поверхности между всеми лицами внутри группы и возвращать наиболее сопоставимое лицо для этого тестируемого лица. Это осуществляется с помощью API [Face — Identify](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395239) или метода клиентской библиотеки IdentifyAsync.
+При выполнении идентификаций API Распознавания лиц вычисляет сходство распознаваемого лица со всеми лицами в группе. Оно возвращает людей с лицами, больше всего похожими на распознаваемое лицо. Этот процесс осуществляется через API [Face — Identify](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395239) или метод клиентской библиотеки IdentifyAsync.
 
-Лицо для тестирования должно быть обнаружено с использованием предыдущих шагов, а затем идентификатор лица передается идентификатору API в качестве второго аргумента. Идентификаторы нескольких лиц могут быть определены сразу, и результат будет содержать все результаты идентификации. По умолчанию идентификатор возвращает только одного человека, который лучше всего подходит для тестового лица. При желании вы можете указать необязательный параметр maxNumOfCandidatesReturned, чтобы идентификатор возвращал больше кандидатов.
+Распознаваемое лицо должно определяться на предыдущих шагах. Идентификатор лица передается в API идентификации в качестве второго аргумента. Можно определить несколько идентификаторов лица за раз. Результат будет содержать все выявленные результаты. По умолчанию процесс идентификации возвращает только одного человека, которому лучше всего соответствует распознаваемое лицо. Вы можете указать необязательный параметр maxNumOfCandidatesReturned, чтобы процесс идентификации возвращал больше кандидатов.
 
 Этот процесс идентификации показан в следующем коде:
 
@@ -166,27 +161,28 @@ using (Stream s = File.OpenRead(testImageFile))
 }
 ``` 
 
-После завершения действия вы можете попытаться определить разные лица и посмотреть, можно ли правильно определить лица Анны, Билла или Клэр в соответствии с изображениями, загруженными для обнаружения лиц. Рассмотрим следующие примеры:
+Когда вы завершите шаги, попробуйте распознать разные лица. Выясните, удается ли правильно опознать лица Анны, Билла или Клэр по изображениям, загруженным для обнаружения лиц. Рассмотрим следующие примеры:
 
-![HowToIdentify2](../Images/identificationResult.1.jpg )
+![Идентификация разных лиц](../Images/identificationResult.1.jpg )
 
-## <a name="step-5-request-for-large-scale"></a>Шаг 5. Запрос на обработку большого объема данных
+## <a name="step-5-request-for-large-scale"></a>Шаг 5. Запрос большого объема
 
-Как известно, группа людей может вмещать до 10 000 человек из-за ограничения предыдущего проектирования.
+Объект PersonGroup может содержать не более 10 000 человек из-за прежних конструктивных ограничений.
 Дополнительную информацию о миллионных сценариях см. в статье [How to use the large-scale feature](how-to-use-large-scale.md) (Как использовать функцию увеличения масштаба).
 
 ## <a name="summary"></a>Сводка
 
-В этом руководстве вы узнали о процессе создания группы людей и идентификации человека. Ниже приведено краткое напоминание об особенностях, которые были описаны и продемонстрированы:
+В этом руководстве вы изучили процесс создания PersonGroup и идентификации человека. Мы объяснили и продемонстрировали следующие возможности:
 
-- Обнаружение лиц с помощью API[Face — Detect](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d).
-- Создание PersonGroups с помощью API [PersonGroup — Create](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395244).
-- Создание группы людей с помощью API [PersonGroup Person — Create](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523c).
-- Обучение PersonGroup с помощью API [PersonGroup — Train](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395249).
-- Идентификация неизвестного лица в группе людей с помощью API [Face — Identify](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395239).
+- обнаружение лиц с помощью API [Face — Detect](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d);
+- создание объектов PersonGroup с помощью API [PersonGroup — Create](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395244);
+- назначение людей в PersonGroup с помощью API [Person — Create](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523c);
+- обучение PersonGroup с помощью API [PersonGroup — Train](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395249);
+- идентификация неизвестных лиц по лицам из PersonGroup с помощью API [Face — Identify](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395239).
 
-## <a name="related-topics"></a>Связанные темы
+## <a name="related-topics"></a>Связанные разделы
 
-- [Практическое руководство по обнаружению лиц на изображении](HowtoDetectFacesinImage.md)
-- [How to add faces](how-to-add-faces.md) (Как добавлять лица)
-- [How to use the large-scale feature](how-to-use-large-scale.md) (Использование функции для увеличения масштаба)
+- [Концепции распознавания лиц](../concepts/face-recognition.md)
+- [Определение лиц на изображении](HowtoDetectFacesinImage.md)
+- [Добавление лиц](how-to-add-faces.md)
+- [Использование функции увеличения масштаба](how-to-use-large-scale.md)

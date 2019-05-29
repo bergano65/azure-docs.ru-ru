@@ -3,33 +3,23 @@ title: Включение брандмауэра веб-приложения —
 description: Узнайте, как ограничить веб-трафик с помощью брандмауэра веб-приложения и Azure CLI.
 services: application-gateway
 author: vhorne
-manager: jpconnock
 ms.service: application-gateway
 ms.topic: tutorial
-ms.workload: infrastructure-services
-ms.date: 7/14/2018
+ms.date: 5/20/2019
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: 1387dc5bb2cabf9a3078474564aadc81b28fd9a7
-ms.sourcegitcommit: f0f21b9b6f2b820bd3736f4ec5c04b65bdbf4236
+ms.openlocfilehash: 1822fe032a7c7a6382dbae2cb9f7095d1d076008
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/26/2019
-ms.locfileid: "58443631"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65955489"
 ---
 # <a name="enable-web-application-firewall-using-the-azure-cli"></a>Включение брандмауэра веб-приложения с помощью Azure CLI
 
-> [!div class="op_single_selector"]
->
-> - [портал Azure](application-gateway-web-application-firewall-portal.md)
-> - [PowerShell](tutorial-restrict-web-traffic-powershell.md)
-> - [Интерфейс командной строки Azure](tutorial-restrict-web-traffic-cli.md)
->
-> 
+Вы можете ограничить трафик в [шлюзе приложений](overview.md) с помощью [брандмауэра веб-приложения](waf-overview.md) (WAF). Для защиты приложения WAF использует правила [OWASP](https://www.owasp.org/index.php/Category:OWASP_ModSecurity_Core_Rule_Set_Project). Эти правила включают защиту от атак, например от внедрения кода SQL, межсайтовых скриптов и захватов сеанса.
 
-Вы можете ограничить трафик в [шлюзе приложений](overview.md) с помощью [брандмауэра веб-приложения](waf-overview.md) (WAF). Для защиты приложения WAF использует правила [OWASP](https://www.owasp.org/index.php/Category:OWASP_ModSecurity_Core_Rule_Set_Project). Эти правила включают защиту от атак, например от внедрения кода SQL, межсайтовых скриптов и захватов сеанса. 
-
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+В этой статье раскрываются следующие темы:
 
 > [!div class="checklist"]
 > * Настройка сети
@@ -39,13 +29,13 @@ ms.locfileid: "58443631"
 
 ![Пример брандмауэра веб-приложений](./media/tutorial-restrict-web-traffic-cli/scenario-waf.png)
 
-При необходимости инструкции из этого руководства можно выполнить с помощью [Azure PowerShell](tutorial-restrict-web-traffic-powershell.md).
+При необходимости эти инструкции можно выполнить с помощью [Azure PowerShell](tutorial-restrict-web-traffic-powershell.md).
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
-Если вы решили установить и использовать интерфейс командной строки локально, для работы с этим руководством вам понадобится Azure CLI 2.0.4 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli).
+Если вы решили установить и использовать интерфейс командной строки локально, для работы с этой статьей вам понадобится Azure CLI 2.0.4 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0]( /cli/azure/install-azure-cli).
 
 ## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
@@ -148,7 +138,7 @@ az vmss extension set \
 
 ## <a name="create-a-storage-account-and-configure-diagnostics"></a>Создание учетной записи хранения и настройка диагностики.
 
-В этом руководстве шлюз приложений использует учетную запись хранения, чтобы хранить данные для выявления и предотвращения угроз. Для записи данных можно также использовать журналы Azure Monitor или концентратор событий. 
+В этой статье шлюз приложений использует учетную запись хранения, чтобы хранить данные для выявления и предотвращения угроз. Для записи данных можно также использовать журналы Azure Monitor или концентратор событий. 
 
 ### <a name="create-a-storage-account"></a>Создание учетной записи хранения
 
@@ -196,18 +186,9 @@ az network public-ip show \
 При необходимости вы можете удалить группу ресурсов, шлюз приложений и все связанные ресурсы.
 
 ```azurecli-interactive
-az group delete --name myResourceGroupAG --location eastus
+az group delete --name myResourceGroupAG 
 ```
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Из этого руководства вы узнали, как выполнить следующие задачи:
-
-> [!div class="checklist"]
-> * Настройка сети
-> * Создание шлюза приложений с включенным WAF.
-> * создавать масштабируемый набор виртуальных машин;
-> * Создание учетной записи хранения и настройка диагностики.
-
-> [!div class="nextstepaction"]
-> [Создание шлюза приложений с завершением SSL-запросов](./tutorial-ssl-cli.md)
+* [Создание шлюза приложений с завершением SSL-запросов](./tutorial-ssl-cli.md)

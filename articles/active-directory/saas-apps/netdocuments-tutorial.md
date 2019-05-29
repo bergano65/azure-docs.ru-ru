@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/04/2019
 ms.author: jeedes
-ms.openlocfilehash: cc5d8e4791bc109f4a804aad33bfc258eed97a25
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: d42e266de9c958c8a71cc5fa680a78c2278cec6e
+ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59281885"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65956777"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-netdocuments"></a>Руководство по Интеграция Azure Active Directory с NetDocuments
 
@@ -104,12 +104,12 @@ ms.locfileid: "59281885"
 
     ![Сведения о домене и URL-адресах единого входа для приложения NetDocuments](common/sp-reply.png)
 
-    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://vault.netvoyage.com/neWeb2/docCent.aspx?whr=<user identifier>`.
+    a. В текстовом поле **URL-адрес для входа** введите URL-адрес в следующем формате: `https://vault.netvoyage.com/neWeb2/docCent.aspx?whr=<Repository ID>`.
 
-    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://vault.netvoyage.com/neWeb2/docCent.aspx?whr=<user identifier>`.
+    b. В текстовом поле **URL-адрес ответа** введите URL-адрес в формате `https://vault.netvoyage.com/neWeb2/docCent.aspx?whr=<Repository ID>`.
 
     > [!NOTE]
-    > Эти значения приведены для примера. Замените их фактическими значениями URL-адреса входа и URL-адреса ответа. Обратитесь к [группе поддержки клиентов NetDocuments](https://support.netdocuments.com/hc/), чтобы получить эти значения. Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Эти значения приведены для примера. Замените их фактическими значениями URL-адреса входа и URL-адреса ответа. Идентификатор репозитория представляет собой значение, которое начинается "CA-", затем следует 8-значный код, связанный с репозиторием NetDocuments. Вы можете получить дополнительные сведения, ознакомившись с [документом о поддержке федеративных удостоверений NetDocuments](https://support.netdocuments.com/hc/en-us/articles/205220410-Federated-Identity-Login). Также вы можете обратиться к [группе поддержки клиентов NetDocuments](https://support.netdocuments.com/hc/), чтобы получить эти значения, если столкнетесь со сложностями при настройке с помощью указанных выше сведений. Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 5. На странице **Настройка единого входа с помощью SAML** в разделе **Сертификат подписи SAML** щелкните **Скачать**, чтобы скачать нужный вам **XML метаданных федерации**, и сохраните его на компьютере.
 

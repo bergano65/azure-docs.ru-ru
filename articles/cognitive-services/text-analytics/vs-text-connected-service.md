@@ -10,23 +10,23 @@ ms.subservice: text-analytics
 ms.topic: tutorial
 ms.date: 02/13/2019
 ms.author: aahi
-ms.openlocfilehash: 4e1c03085d6b1d0099ac66dd3d1dadd981a561aa
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: 75228b8c939cb5b8dd04471662ba86b46cfc808c
+ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60004250"
+ms.lasthandoff: 05/17/2019
+ms.locfileid: "65860476"
 ---
 # <a name="tutorial-connect-to-the-text-analytics-service-with-connected-services-in-visual-studio"></a>Руководство по Подключение к службе "Анализ текста" с помощью компонента "Подключенные службы" в Visual Studio
 
 С помощью службы "Анализ текста" можно извлекать из изображений ценные сведения для классификации и обработки визуальных данных, а функция машинной модерации изображений обеспечит необходимый контроль за вашими службами.
 
-В этой статье и других статьях этого цикла приводятся сведения об использовании компонента "Подключенная служба" Visual Studio для службы "Анализ текста". Эта возможность доступна как в Visual Studio 2017 15.7, так и в более поздней версии с установленным расширением Cognitive Services.
+В этой статье и других статьях этого цикла приводятся сведения об использовании компонента "Подключенная служба" Visual Studio для службы "Анализ текста". Эта возможность доступна в Visual Studio 2019 и в более поздних версиях с установленным расширением Cognitive Services.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 - Подписка Azure. Если у вас нет подписки, вы можете зарегистрироваться для использования [бесплатной учетной записи](https://azure.microsoft.com/pricing/free-trial/).
-- Visual Studio 2017 версии 15.7 с установленной рабочей нагрузкой "Веб-разработка". [Скачайте это приложение](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs).
+- Visual Studio 2019 с установленной рабочей нагрузкой "Веб-разработка". [Скачайте это приложение](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs).
 
 [!INCLUDE [vs-install-cognitive-services-vsix](../../../includes/vs-install-cognitive-services-vsix.md)]
 

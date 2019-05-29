@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-speech
 ms.topic: quickstart
-ms.date: 3/5/2018
+ms.date: 04/26/2019
 ms.author: v-jaswel
 ROBOTS: NOINDEX,NOFOLLOW
-ms.openlocfilehash: a76c11341d0e145e6d2e9f86a7300ddb9319f6f5
-ms.sourcegitcommit: 8ca6cbe08fa1ea3e5cdcd46c217cfdf17f7ca5a7
+ms.openlocfilehash: b4fe4f651340ef54c2907192f3a96e9a017ab1dd
+ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/22/2019
-ms.locfileid: "56673893"
+ms.lasthandoff: 05/20/2019
+ms.locfileid: "65910514"
 ---
 # <a name="quickstart-translator-speech-api-with-c"></a>Краткое руководство. API перевода речи с C#
 <a name="HOLTop"></a>
@@ -27,7 +27,7 @@ ms.locfileid: "56673893"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для выполнения этого кода на компьютерах под управлением Windows потребуется [Visual Studio 2017](https://www.visualstudio.com/downloads/). (Будет работать бесплатный выпуск Community Edition.) Если вы используете Mac OS или Linux, в качестве альтернативы можно также применить текстовый редактор [Visual Studio Code](https://code.visualstudio.com/Download).
+Для выполнения этого кода на компьютерах под управлением Windows потребуется [Visual Studio 2019](https://www.visualstudio.com/downloads/). (Будет работать бесплатный выпуск Community Edition.) Если вы используете Mac OS или Linux, в качестве альтернативы можно также применить текстовый редактор [Visual Studio Code](https://code.visualstudio.com/Download).
 
 Вам необходимо иметь файл WAV, который называется "speak.wav" в той же папке, что и исполняемый файл, который будете компилировать из приведенного ниже кода. Этот файл WAV должен быть в стандартном формате PCM: 16 бит, 16 кГц, моно.
 
