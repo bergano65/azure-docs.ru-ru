@@ -11,10 +11,10 @@ ms.date: 04/02/2019
 ms.topic: article
 ms.service: multiple
 ms.openlocfilehash: c1d7b52bdce77ca108781a999a8a85b3e3fca0b8
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 05/27/2019
 ms.locfileid: "61487484"
 ---
 # <a name="mainframe-rehosting-on-azure-virtual-machines"></a>Повторного размещения мэйнфреймов, на виртуальных машинах Azure
@@ -31,7 +31,7 @@ ms.locfileid: "61487484"
 
 Относительно легко можно перенести в Azure для некоторых рабочих нагрузок мэйнфреймов, хотя другие может быть повторно размещен в Azure с помощью одного из партнерских решений к сети. Подробные инструкции о выборе одного из партнерских решений [Центр миграции Azure мэйнфреймов](https://azure.microsoft.com/migration/mainframe/) может помочь.
 
-## <a name="mainframe-migration"></a>Миграция решений для мэйнфреймов
+## <a name="mainframe-migration"></a>Миграция мейнфреймов
 
 Повторное размещение, rebuild, замените или снять с учета? IaaS или PaaS? Для определения стратегии правой миграции приложения мэйнфрейма, см. в разделе [переход с мэйнфреймов](/azure/architecture/cloud-adoption/infrastructure/mainframe-migration/overview) руководство в центре архитектуры Azure.
 

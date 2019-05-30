@@ -8,11 +8,11 @@ ms.devlang: azurecli
 ms.topic: conceptual
 ms.date: 04/01/2018
 ms.openlocfilehash: f3850623f5918ea9405131edb1821b941019ac34
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57532336"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66160443"
 ---
 # <a name="how-to-back-up-and-restore-a-server-in-azure-database-for-mysql-using-the-azure-cli"></a>Как создать резервную копию сервера в службе "База данных Azure для MySQL" и восстановить его с помощью портала Azure
 
@@ -69,7 +69,7 @@ az mysql server restore --resource-group myresourcegroup --name mydemoserver-res
 
 Для команды `az mysql server restore` обязательны указанные ниже параметры.
 
-| Параметр | Рекомендуемое значение | ОПИСАНИЕ  |
+| Параметр | Предлагаемое значение | Описание  |
 | --- | --- | --- |
 | resource-group |  myresourcegroup |  Группа ресурсов, в которой находится исходный сервер.  |
 | name | mydemoserver-restored | Имя нового сервера, созданного командой restore. |
@@ -107,7 +107,7 @@ az mysql server georestore --resource-group newresourcegroup --name mydemoserver
 
 Для команды `az mysql server georestore` обязательны указанные ниже параметры.
 
-| Параметр | Рекомендуемое значение | ОПИСАНИЕ  |
+| Параметр | Предлагаемое значение | Описание  |
 | --- | --- | --- |
 |resource-group| myresourcegroup | Имя группы ресурсов, к которой будет принадлежать новый сервер.|
 |name | mydemoserver-georestored | Имя нового сервера. |
