@@ -45,6 +45,8 @@
       href: security-center-onboarding.md
     - name: Защита сервера с помощью ATP в Защитнике Windows
       href: security-center-wdatp.md
+    - name: Расширенная защита данных для IaaS
+      href: security-center-iaas-advanced-data.md
     - name: Защита Службы приложений
       href: security-center-app-services.md
     - name: Использование политик безопасности
@@ -62,8 +64,6 @@
       items:
         - name: Сбор данных
           href: security-center-enable-data-collection.md
-        - name: Расширенная защита данных для IaaS
-          href: security-center-iaas-advanced-data.md
         - name: Встроенные политики безопасности
           href: security-center-policy-definitions.md
         - name: Уведомления по почте

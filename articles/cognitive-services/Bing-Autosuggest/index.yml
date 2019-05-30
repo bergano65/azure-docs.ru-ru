@@ -1,6 +1,6 @@
 ### YamlMime:YamlDocument
 documentType: LandingData
-title: Документация по API автозаполнения Bing
+title: Документация по API Автозаполнения Bing
 metadata:
   document_id: ce69fd12-adf8-11e7-abc4-cec278b6b50a
   title: "Документация по API автозаполнения Bing. Учебные материалы, краткие руководства и справочники по API\_| Документация Майкрософт"
@@ -39,7 +39,7 @@ sections:
             image:
               src: ../media/index/i_guidelines.svg
             title: Поддерживаемые языки
-  - title: 5-минутные руководства по началу работы
+  - title: Пятиминутные руководства по началу работы
     items:
       - type: paragraph
         text: 'Начните работу с API автозаполнения Bing, составив запрос и просмотрев ответ в формате JSON.'
@@ -49,7 +49,7 @@ sections:
           - image:
               src: media/index/logo_csharp.svg
             href: quickstarts/csharp
-            text: 'C&#35;'
+            text: 'C#'
           - image:
               src: media/index/logo_java.svg
             href: quickstarts/java
@@ -82,11 +82,11 @@ sections:
         style: cards
         className: cardsD
         items:
-          - title: Интерфейсы API
-            html: '<p><a href="https://docs.microsoft.com/rest/api/cognitiveservices/bing-autosuggest-api-v7-reference">API автозаполнения Bing версии 7</a></p> <p><a href="https://docs.microsoft.com/rest/api/cognitiveservices/bing-autosuggest-api-v5-reference">API автозаполнения Bing версии 5</p>'
+          - title: API
+            html: '<p><a href="https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-autosuggest-api-v7-reference">API автозаполнения Bing версии 7</a></p> <p><a href="https://docs.microsoft.com/rest/api/cognitiveservices/bing-autosuggest-api-v5-reference">API автозаполнения Bing версии 5</p>'
           - title: Пакеты SDK
-            html: '<p><a href="https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/bingautosuggest?view=azure-dotnet">.NET</a></p> <p><a href="https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v1.0/autosuggest">GO</a></p> <p><a href="https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/autosuggest?view=azure-java-stable">Java</a></p>'
+            html: '<p><a href="https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/bingautosuggest?view=azure-dotnet">.NET</a></p> <p><a href="https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v1.0/autosuggest">Go</a></p> <p><a href="https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/autosuggest?view=azure-java-stable">Java</a></p>'
           - title: PowerShell
             html: '<p><a href="https://docs.microsoft.com/powershell/module/az.cognitiveservices/#cognitive_services">Azure PowerShell</a></p>'
-          - title: Интерфейс командной строки
-            html: '<p><a href="https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest">Интерфейс командной строки Azure</a></p>'
+          - title: CLI
+            html: "<p><a href=\"https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest\">Azure\_CLI</a></p>"

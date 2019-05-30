@@ -176,7 +176,7 @@
           href: how-to-train-ml-models.md
         - name: Использование класса PyTorch
           href: how-to-train-pytorch.md
-        - name: Использование TensorFlow и Keras
+        - name: Использование класса TensorFlow
           href: how-to-train-tensorflow.md
         - name: Настройка гиперпараметров
           displayName: parameter

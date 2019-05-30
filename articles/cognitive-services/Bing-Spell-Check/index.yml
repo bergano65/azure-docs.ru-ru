@@ -1,6 +1,6 @@
 ### YamlMime:YamlDocument
 documentType: LandingData
-title: Документация по API проверки орфографии Bing
+title: Документация по API Проверки орфографии Bing
 metadata:
   document_id: ce69fd12-adf8-11e7-abc4-cec278b6b50a
   title: "Документация по API проверки орфографии Bing. Руководства и справочник по API\_— Azure Cognitive Services\_| Документация Майкрософт"
@@ -28,7 +28,7 @@ sections:
             html: <p>Сведения об API "Проверка орфографии Bing".</p>
             image:
               src: ../media/index/i_overview.svg
-            title: Что такое с API проверки орфографии Bing?
+            title: Что такое API Проверки орфографии Bing?
           - href: /azure/cognitive-services/bing-spell-check/concepts/sending-requests
             html: '<p>Узнайте, как отправлять запросы на проверку орфографии к API "Проверка орфографии Bing".</p>'
             image:
@@ -39,7 +39,7 @@ sections:
             image:
               src: ../media/index/i_guidelines.svg
             title: Ответ Поиска изображений
-  - title: 5-минутные руководства по началу работы
+  - title: Пятиминутные руководства по началу работы
     items:
       - type: paragraph
         text: 'Начните работу с API проверки орфографии Bing, составив запрос и просмотрев ответ в формате JSON.'
@@ -48,7 +48,7 @@ sections:
         items:
           - image:
               src: media/index/logo_csharp.svg
-            text: 'C&#35;'
+            text: 'C#'
             href: quickstarts/csharp
           - image:
               src: media/index/logo_java.svg
@@ -93,10 +93,10 @@ sections:
         className: cardsD
         items:
           - title: REST
-            html: '<p><a href="https://docs.microsoft.com/rest/api/cognitiveservices/bing-spell-check-api-v7-reference">Справочник по API проверки орфографии Bing версии 7</a></p> <p><a href="https://docs.microsoft.com/rest/api/cognitiveservices/bing-spell-check-api-v5-reference">Справочник по API проверки орфографии Bing версии 5</a> (старая версия)</p>'
+            html: '<p><a href="https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-spell-check-api-v7-reference">Справочник по API проверки орфографии Bing версии 7</a></p> <p><a href="https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-spell-check-api-v5-reference">Справочник по API проверки орфографии Bing версии 5</a> (старая версия)</p>'
           - title: Пакеты SDK
             html: '<p><a href="https://docs.microsoft.com/dotnet/api/overview/azure/cognitiveservices/client/bingspellcheck?view=azure-dotnet">.NET</a></p> <p><a href="https://docs.microsoft.com/javascript/api/azure-cognitiveservices-spellcheck?view=azure-node-latest">Node.js</a></p> <p><a href="https://docs.microsoft.com/python/api/overview/azure/cognitiveservices/spellcheck?view=azure-python">Python</a></p> <p><a href="https://godoc.org/github.com/Azure/azure-sdk-for-go/services/cognitiveservices/v1.0/spellcheck">GO</a></p> <p><a href="https://docs.microsoft.com/java/api/overview/azure/cognitiveservices/client/spellcheck?view=azure-java-stable">Java</a></p>'
           - title: PowerShell
             html: '<p><a href="https://docs.microsoft.com/powershell/module/az.cognitiveservices/#cognitive_services">Azure PowerShell</a></p>'
-          - title: Интерфейс командной строки
-            html: '<p><a href="https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest#az-cognitiveservices-list">Интерфейс командной строки Azure</a></p>'
+          - title: CLI
+            html: "<p><a href=\"https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest#az-cognitiveservices-list\">Azure\_CLI</a></p>"

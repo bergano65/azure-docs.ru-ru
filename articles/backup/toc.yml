@@ -219,18 +219,18 @@
           href: backup-azure-restore-windows-server.md
         - name: Восстановление состояния системы Windows Server
           href: backup-azure-restore-system-state.md
-        - name: Управление хранилищами Служб восстановления и их мониторинг
-          href: backup-azure-manage-windows-server.md
     - name: Хранилище Служб восстановления
       items:
         - name: Обзор хранилищ Служб восстановления
           href: backup-azure-recovery-services-vault-overview.md
-        - name: Обновление резервного хранилища до хранилища Служб восстановления
-          href: backup-azure-upgrade-backup-to-recovery-services.md
+        - name: Создание хранилища Служб восстановления
+          href: backup-create-rs-vault.md
         - name: Удаление хранилища Служб восстановления
           href: backup-azure-delete-vault.md
         - name: Перемещение хранилища Служб восстановления
           href: backup-azure-move-recovery-services-vault.md
+        - name: Управление хранилищами Служб восстановления и их мониторинг
+          href: backup-azure-manage-windows-server.md
     - name: Устранение неполадок
       items:
         - name: Azure

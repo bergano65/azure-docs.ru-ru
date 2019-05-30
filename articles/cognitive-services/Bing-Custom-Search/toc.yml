@@ -62,13 +62,13 @@
 - name: Справочные материалы
   items:
     - name: Справочник по API Пользовательского автозаполнения Bing
-      href: 'https://docs.microsoft.com/rest/api/cognitiveservices/bing-custom-autosuggest-api-v7-reference'
+      href: 'https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-custom-autosuggest-api-v7-reference'
     - name: Справочник по API Пользовательского поиска изображений Bing
-      href: 'https://docs.microsoft.com/rest/api/cognitiveservices/bing-custom-images-api-v7-reference'
+      href: 'https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-custom-images-api-v7-reference'
     - name: Справочник по API Пользовательского поиска Bing
-      href: 'https://docs.microsoft.com/rest/api/cognitiveservices/bing-custom-search-api-v7-reference'
+      href: 'https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-custom-search-api-v7-reference'
     - name: Справочник по API Пользовательского поиска видео Bing
-      href: 'https://docs.microsoft.com/rest/api/cognitiveservices/bing-custom-videos-api-v7-reference'
+      href: 'https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-custom-videos-api-v7-reference'
     - name: Требования к использованию и отображению API-интерфейсов Поиска Bing
       href: ../Bing-Web-Search/use-display-requirements.md
       maintainContext: true
@@ -96,7 +96,7 @@
       href: 'https://cognitive.uservoice.com/forums/598147-bing-custom-search-api'
     - name: Stack Overflow
       href: 'https://stackoverflow.com/search?q=bing+custom+search'
-    - name: Доступ по регионам
+    - name: Доступность по регионам
       href: 'https://azure.microsoft.com/global-infrastructure/services/'
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/'
