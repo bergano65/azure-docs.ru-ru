@@ -7,12 +7,12 @@ ms.service: mariadb
 ms.devlang: azurecli
 ms.topic: conceptual
 ms.date: 11/10/2018
-ms.openlocfilehash: 41e75a946f51f67b2b77a36dc0525cd4ff5fcd64
-ms.sourcegitcommit: 71ee622bdba6e24db4d7ce92107b1ef1a4fa2600
-ms.translationtype: HT
+ms.openlocfilehash: 409fe7b76306036cad19980459ca718c87118d8f
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 12/17/2018
-ms.locfileid: "53543127"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66171393"
 ---
 # <a name="how-to-back-up-and-restore-a-server-in-azure-database-for-mariadb-using-the-azure-cli"></a>Как создать резервную копию сервера в службе "База данных Azure для MariaDB" и восстановить его с помощью Azure CLI
 
@@ -20,7 +20,7 @@ ms.locfileid: "53543127"
 
 Чтобы обеспечить возможность восстановления, для серверов службы "База данных Azure для MariaDB" периодически выполняется резервное копирование. С помощью этой функции можно восстановить сервер и все его базы данных до более ранней точки во времени на новом сервере.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 Вот что вам нужно, чтобы выполнить инструкции, приведенные в этом руководстве:
 
@@ -70,7 +70,8 @@ az mariadb server restore --resource-group myresourcegroup --name mydemoserver-r
 ```
 
 Для команды `az mariadb server restore` обязательны указанные ниже параметры.
-| Параметр | Рекомендуемое значение | ОПИСАНИЕ  |
+
+| Параметр | Предлагаемое значение | Описание  |
 | --- | --- | --- |
 | resource-group |  myresourcegroup |  Группа ресурсов, в которой находится исходный сервер.  |
 | name | mydemoserver-restored | Имя нового сервера, созданного командой restore. |
@@ -109,7 +110,8 @@ az mariadb server georestore --resource-group newresourcegroup --name mydemoserv
 ```
 
 Для команды `az mariadb server georestore` обязательны указанные ниже параметры.
-| Параметр | Рекомендуемое значение | ОПИСАНИЕ  |
+
+| Параметр | Предлагаемое значение | Описание  |
 | --- | --- | --- |
 |resource-group| myresourcegroup | Имя группы ресурсов, к которой будет принадлежать новый сервер.|
 |name | mydemoserver-georestored | Имя нового сервера. |
@@ -122,7 +124,7 @@ az mariadb server georestore --resource-group newresourcegroup --name mydemoserv
 
 После завершения восстановления найдите новый сервер, чтобы убедиться, что данные были восстановлены, как и ожидалось.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Подробнее о [резервном копировании](concepts-backup.md) в службе.
 - Подробнее о вариантах обеспечения [непрерывности бизнеса](concepts-business-continuity.md).
