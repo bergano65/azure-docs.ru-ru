@@ -9,17 +9,17 @@ ms.topic: article
 ms.date: 04/09/2019
 ms.author: ninarn
 ms.openlocfilehash: 99f19971eafaa1ddad1f96b187e18b79810560a2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 05/27/2019
 ms.locfileid: "61244465"
 ---
-# <a name="sql-database-documentation"></a>Документация по базе данных SQL
+# <a name="sql-database-documentation"></a>Документация по Базе данных SQL
 
-База данных SQL Azure — это реляционная база данных общего назначения, предоставляемая по модели "как услуга" (DBaaS), на основе последней стабильной версии ядра СУБД Microsoft SQL Server. База данных SQL — это высокопроизводительная, надежная и безопасная облачная база данных, с помощью которой можно создавать приложения и веб-сайты на основе данных, используя любой язык программирования, без необходимости управлять инфраструктурой. Узнайте, как использовать базу данных SQL, с помощью наших шаблонов быстрого запуска, примеров и руководств.
+База данных SQL Azure — это реляционная база данных общего назначения, предоставляемая по модели "как услуга" (DBaaS), на основе последней стабильной версии ядра СУБД Microsoft SQL Server. База данных SQL — это высокопроизводительная, надежная и безопасная облачная база данных, с помощью которой можно создавать приложения и веб-сайты на основе данных, используя любой язык программирования, без необходимости управлять инфраструктурой. Узнайте, как использовать Базу данных SQL, с помощью наших шаблонов быстрого запуска, примеров и руководств.
 
-## <a name="5-minute-quickstarts"></a>5-минутные руководства по началу работы
+## <a name="5-minute-quickstarts"></a>Пятиминутные руководства по началу работы
 
 База данных SQL Azure позволяет легко выполнять основные задачи управления с помощью портала Azure, Azure CLI и Azure PowerShell. Узнайте, как выполнять основные задачи управления с использованием примеров из следующих кратких руководств:
 
@@ -34,17 +34,17 @@ ms.locfileid: "61244465"
 - Начало работы с [отдельной базой данных](/azure/sql-database/sql-database-single-database-quickstart-guide) с использованием нашего краткого руководства.
 - Создание и проектирование схемы для новой отдельной базы данных с помощью [SSMS](/azure/sql-database/sql-database-design-first-database) или [.NET](/azure/sql-database/sql-database-design-first-database-csharp)
 - Перенос существующей базы данных в Azure с помощью [Помощника по миграции баз данных](/azure/dms/tutorial-sql-server-to-azure-sql) или [импорта файла BACPAC](/azure/sql-database/sql-database-import).
-- [Secure your Azure SQL Database](/azure/sql-database/sql-database-security-tutorial) (Безопасность базы данных SQL Azure)
+- [Защита базы данных SQL Azure](/azure/sql-database/sql-database-security-tutorial)
 - [Troubleshoot performance issues and optimize your database](/azure/sql-database/sql-database-performance-tutorial) (Устранение проблем с производительностью и оптимизация базы данных)
 - [Реализация мультитенантного приложения SaaS с помощью базы данных SQL](/azure/sql-database/sql-database-multi-tenant-application)
 
-## <a name="free-pluralsight-video-training"></a>Бесплатные видеоуроки PluralSight
+## <a name="free-pluralsight-video-training"></a>Бесплатные видеоуроки Pluralsight
 
 - [Разработка с помощью .NET](https://www.pluralsight.com/courses/developing-dotnet-microsoft-azure-getting-started?twoid=d6abac77-7dcc-4d33-9e03-f85e78989f02)
 
 ## <a name="samples"></a>Примеры
 
-Поиск скриптов для выполнения типовых задач.
+Найдите скрипты для выполнения типовых задач.
 
 - [Интерфейс командной строки Azure](/azure/sql-database/sql-database-cli-samples)
 - [Azure PowerShell](/azure/sql-database/sql-database-powershell-samples)

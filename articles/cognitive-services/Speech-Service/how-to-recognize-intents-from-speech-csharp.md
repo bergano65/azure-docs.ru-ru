@@ -10,16 +10,14 @@ ms.subservice: speech-service
 ms.topic: tutorial
 ms.date: 09/24/2018
 ms.author: wolfma
-ms.openlocfilehash: 9a00dfd1186d19ce9432db8e636bffa40eb977af
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 0e24f66369cf990f6b271b894a31dc8395068e17
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59280542"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66257334"
 ---
 # <a name="tutorial-recognize-intents-from-speech-using-the-speech-sdk-for-c"></a>Руководство по Распознавание намерений в речи с помощью пакета SDK службы "Речь" для C#
-
-[!INCLUDE [Article selector](../../../includes/cognitive-services-speech-service-how-to-recognize-intents-from-speech-selector.md)]
 
 [Пакет SDK службы "Речь"](~/articles/cognitive-services/speech-service/speech-sdk.md) в Cognitive Services интегрируется с [Интеллектуальной службой распознавания речи (LUIS)](https://www.luis.ai/home) для предоставления возможности **распознавания намерений**. Намерение — это действие, которое хочет выполнить пользователь, например забронировать билет на самолет, проверить прогноз погоды или совершить звонок. Пользователь может использовать любые термины, которые кажутся естественными. С помощью машинного обучения LUIS сопоставит пользовательские запросы с определенными намерениями.
 

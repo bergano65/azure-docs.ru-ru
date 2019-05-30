@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.service: cost-management
 manager: vitavor
 ms.custom: secdec18
-ms.openlocfilehash: efc012e496045d3d5d12d6fe756b62e4ae19cc2a
-ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
+ms.openlocfilehash: 9999518b81d264cb1e46f3c03ec65379d35aa603
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66002141"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66242443"
 ---
 # <a name="activate-azure-subscriptions-and-accounts-with-cloudyn"></a>Активация подписок и учетных записей Azure с помощью Cloudyn
 
@@ -64,7 +64,7 @@ ms.locfileid: "66002141"
     2. На портале Azure выберите **Azure Active Directory**.
     3. Чтобы получить идентификатор клиента, щелкните **Свойства** для клиента Azure AD.
     4. Скопируйте идентификатор каталога (GUID). Это и есть ваш идентификатор клиента.
-    Дополнительные сведения см. в разделе [Получение идентификатора клиента](../active-directory/develop/howto-create-service-principal-portal.md#get-tenant-id).
+    Дополнительные сведения см. в разделе [Получение идентификатора клиента](../active-directory/develop/howto-create-service-principal-portal.md#get-values-for-signing-in).
 3. При необходимости выберите идентификатор тарифа. Если вы не знаете свой идентификатор тарифа, выполните следующие действия, чтобы найти его.
     1. В верхнем правом углу на портале Azure щелкните информацию о пользователе, а затем выберите **Показать мой счет**.
     2. В разделе **Учетная запись выставления счетов** щелкните **Подписки**.

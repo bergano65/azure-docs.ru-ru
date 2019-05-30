@@ -9,17 +9,17 @@ ms.topic: article
 ms.date: 04/27/2017
 ms.author: sewatson
 ms.openlocfilehash: b0a8deb5f656fafde358dbcf2e1a2724f1a84113
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61225445"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "64727629"
 ---
 # <a name="linux-virtual-machines-documentation"></a>Документация по виртуальным машинам Linux
 
 Виртуальные машины Linux Azure предоставляют по запросу безопасную высокомасштабируемую виртуализированную инфраструктуру с использованием Red Hat, Ubuntu или дистрибутива Linux по вашему выбору. Узнайте, как создавать, настраивать, масштабировать виртуальные машины Linux и управлять ими, используя наши шаблоны быстрого запуска, примеры и руководства.
 
-## <a name="5-minute-quickstarts"></a>5-минутные руководства по началу работы
+## <a name="5-minute-quickstarts"></a>Пятиминутные руководства по началу работы
 
 Сведения о развертывании веб сервера NGINX на виртуальной машине под управлением Ubuntu:
 
@@ -44,7 +44,7 @@ ms.locfileid: "61225445"
 - [Monitor VM security with the Azure Security Center](/azure/virtual-machines/linux/tutorial-azure-security) (Мониторинг безопасности виртуальных машин с помощью центра безопасности Azure)
 - [Create a CI/CD infrastructure with Jenkins, Docker, and GitHub](/azure/virtual-machines/linux/tutorial-jenkins-github-docker-cicd) (Создание инфраструктуры непрерывной интеграции и доставки с помощью Jenkins, Docker и GitHub)
 
-## <a name="free-pluralsight-video-training"></a>Бесплатные видеоуроки PluralSight
+## <a name="free-pluralsight-video-training"></a>Бесплатные видеоуроки Pluralsight
 
 - [Администратор Azure](https://go.microsoft.com/fwlink/?linkid=2012827)
 

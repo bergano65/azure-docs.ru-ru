@@ -1,5 +1,5 @@
 ---
-title: Что такое API Bing для поиска видео?
+title: Что такое API Поиска видео Bing
 titlesuffix: Azure Cognitive Services
 description: Узнайте, как искать видео в Интернете с помощью API Bing для поиска видео.
 services: cognitive-services
@@ -11,13 +11,13 @@ ms.topic: overview
 ms.date: 01/31/2019
 ms.author: scottwhi
 ms.openlocfilehash: f56893f830720c57c66eb4c17bb2771efbb73f6f
-ms.sourcegitcommit: f715dcc29873aeae40110a1803294a122dfb4c6a
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/14/2019
-ms.locfileid: "56267178"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "62124648"
 ---
-# <a name="what-is-the-bing-video-search-api"></a>Что такое API Bing для поиска видео?
+# <a name="what-is-the-bing-video-search-api"></a>Что такое API Поиска видео Bing
 
 API Bing для поиска видео позволяет легко добавлять возможности поиска видео в службы и приложения. Отправляя пользовательские поисковые запросы с помощью API, можете получить и отобразить соответствующие и высококачественные видео, которые аналогичны [Видео Bing](https://www.bing.com/video). Используйте этот API для результатов поиска, которые содержат только видео. [API Bing для поиска видео](../bing-web-search/search-the-web.md) может возвращать другие типы веб-содержимого, включая веб-страницы, видео, новости и изображения.
 

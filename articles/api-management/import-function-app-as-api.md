@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 08/28/2018
 ms.author: apimpm
-ms.openlocfilehash: fe6a008a6cbd2ca4e8aedeeca6d96cc00f6b29d1
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: e5e8ffc18db902eeaa8484122e3844f35046191f
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59046059"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66243163"
 ---
 # <a name="import-an-azure-function-app-as-an-api-in-azure-api-management"></a>Импорт приложения-функции Azure в качестве API в службу управления API Azure
 
@@ -115,10 +115,10 @@ ms.locfileid: "59046059"
 
 Во время импорта приложения-функции Azure автоматически создается:
 
-* ключ узла в приложении-функции с именем apim-{*имя экземпляра службы "Управление API Azure"*};
+* ключ узла в приложении-функции с именем apim-{*имя экземпляра службы "Управление API Azure"* };
 * именованное значение в экземпляре службы "Управление API Azure" с именем {*имя экземпляра приложения-функции Azure*}-key, которое содержит созданный ключ узла.
 
-При использовании интерфейсов API, созданных после 4 апреля 2019 г., ключ узла передается в HTTP-запросе от службы "Управление API" к приложению-функции в заголовке. Более старые API передают ключ узла в виде [параметра запроса](../azure-functions/functions-bindings-http-webhook.md#api-key-authorization). Такое поведение можно изменить с помощью вызова [REST API](https://docs.microsoft.com/rest/api/apimanagement/backend/update#backendcredentialscontract) `PATCH Backend` к сущности *Backend*, связанной с приложением-функцией.
+При использовании интерфейсов API, созданных после 4 апреля 2019 г., ключ узла передается в HTTP-запросе от службы "Управление API" к приложению-функции в заголовке. Более старые API передают ключ узла в виде [параметра запроса](../azure-functions/functions-bindings-http-webhook.md#api-key-authorization). Такое поведение можно изменить с помощью вызова [REST API](https://docs.microsoft.com/rest/api/apimanagement/2019-01-01/backend/update#backendcredentialscontract) `PATCH Backend` к сущности *Backend*, связанной с приложением-функцией.
 
 > [!WARNING]
 > Удаление или изменение значения ключа узла в приложении-функции Azure или именованного значения службы "Управление API Azure" приведет к разрыву подключения между службами. Значения не синхронизируются автоматически.

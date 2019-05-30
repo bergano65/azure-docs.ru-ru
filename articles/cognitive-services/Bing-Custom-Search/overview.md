@@ -1,5 +1,5 @@
 ---
-title: Знакомство с API пользовательского поиска Bing
+title: Знакомство с API Пользовательского поиска Bing
 titlesuffix: Azure Cognitive Services
 description: Служба "API пользовательского поиска Bing" позволяет создавать специально адаптированные интерфейсы поиска по темам, которые действительно важны для вас.
 services: cognitive-services
@@ -11,13 +11,13 @@ ms.topic: overview
 ms.date: 03/4/2019
 ms.author: aahi
 ms.openlocfilehash: e788da047cb0567fc00f27130621a2f21e575dc4
-ms.sourcegitcommit: 8b41b86841456deea26b0941e8ae3fcdb2d5c1e1
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57337742"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "61335541"
 ---
-# <a name="what-is-the-bing-custom-search-api"></a>Знакомство с API пользовательского поиска Bing
+# <a name="what-is-the-bing-custom-search-api"></a>Знакомство с API Пользовательского поиска Bing
 
 Служба "API пользовательского поиска Bing" позволяет создавать специально адаптированные интерфейсы поиска без рекламы по темам, которые действительно важны для вас. Вы можете указать домены и веб-страницы для поиска Bing, а также закрепить определенное содержимое, повысить или понизить его уровень, чтобы создать пользовательское представление веб-сайта и помочь пользователю быстро найти релевантные результаты поиска. 
 

@@ -7,15 +7,15 @@ services: search
 ms.service: search
 ms.devlang: NA
 ms.topic: tutorial
-ms.date: 05/02/2019
+ms.date: 05/28/2019
 ms.author: luisca
 ms.custom: seodec2018
-ms.openlocfilehash: 0ce1c8b811c11d0268cde79a609c05e740a529b6
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: fb45d2e36939a53d6242cf7cd5a0b9f1990780c3
+ms.sourcegitcommit: 8c49df11910a8ed8259f377217a9ffcd892ae0ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66171570"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66299051"
 ---
 # <a name="rest-tutorial-call-cognitive-services-apis-in-an-azure-search-indexing-pipeline"></a>Руководство по использованию REST. Вызов API-интерфейсов Cognitive Services в конвейере индексирования службы "Поиск Azure"
 
@@ -419,7 +419,7 @@ Content-Type: application/json
 
 Предупреждения часто возникают с некоторыми исходными файлами и комбинациями навыков и не всегда указывают на проблему. В этом руководстве предупреждения являются неопасными (например, нет текстовых входных данных из файлов JPEG). Вы можете просмотреть ответ о состоянии, чтобы получить подробную информацию о предупреждениях, выдаваемых при индексировании.
  
-## <a name="verify-content"></a>Проверка содержимого
+## <a name="query-your-index"></a>Отправка запроса в индекс
 
 После завершения индексации выполните запросы, возвращающие содержимое отдельных полей. По умолчанию служба "Поиск Azure" возвращает 50 лучших результатов. Примеры данных малы, поэтому параметр по умолчанию работает нормально. Однако при работе с большими наборами данных вам может потребоваться включить параметры в строку запроса, чтобы вернуть больше результатов. Инструкции см. в статье [Разбивка результатов поиска на страницы в службе поиска Azure](search-pagination-page-layout.md).
 
@@ -445,74 +445,8 @@ Content-Type: application/json
 
 Можно использовать методы GET или POST, в зависимости от сложности и длины строки запроса. Дополнительные сведения см. в статье [Отправка запросов в индекс службы поиска Azure с помощью REST API](https://docs.microsoft.com/rest/api/searchservice/search-documents).
 
-<a name="access-enriched-document"></a>
 
-## <a name="accessing-the-enriched-document"></a>Доступ к обогащенному документу
 
-Когнитивный поиск позволяет увидеть структуру обогащенного документа. Обогащенные документы — это временные структуры, которые создаются во время обогащения и удаляются после завершения процесса.
-
-Чтобы сделать снимок обогащенного документа, созданного во время индексирования, добавьте в индекс поле ```enriched```. Индексатор автоматически помещает в поле строковое представление всех экземпляров обогащения этого документа.
-
-Поле ```enriched``` будет содержать строку, которая является логическим представлением обогащенного документа в JSON, находящегося в памяти.  Значение поля является допустимым документом JSON. Кавычки экранируются, поэтому вам нужно заменить `\"` на `"`, чтобы просмотреть документ в формате JSON.  
-
-Поле ```enriched``` предназначено для целей отладки, чтобы помочь вам понять логическую форму содержимого, используемого для обработки выражений. Это может быть полезным средством для понимания и отладки набора навыков.
-
-Повторите предыдущее упражнение, в том числе поле `enriched`, чтобы сохранить содержимое обогащенного документа:
-
-### <a name="request-body-syntax"></a>Синтаксис текста запроса
-```json
-{
-  "fields": [
-    {
-      "name": "id",
-      "type": "Edm.String",
-      "key": true,
-      "searchable": true,
-      "filterable": false,
-      "facetable": false,
-      "sortable": true
-    },
-    {
-      "name": "content",
-      "type": "Edm.String",
-      "sortable": false,
-      "searchable": true,
-      "filterable": false,
-      "facetable": false
-    },
-    {
-      "name": "languageCode",
-      "type": "Edm.String",
-      "searchable": true,
-      "filterable": false,
-      "facetable": false
-    },
-    {
-      "name": "keyPhrases",
-      "type": "Collection(Edm.String)",
-      "searchable": true,
-      "filterable": false,
-      "facetable": false
-    },
-    {
-      "name": "organizations",
-      "type": "Collection(Edm.String)",
-      "searchable": true,
-      "sortable": false,
-      "filterable": false,
-      "facetable": false
-    },
-    {
-      "name": "enriched",
-      "type": "Edm.String",
-      "searchable": false,
-      "sortable": false,
-      "filterable": false,
-      "facetable": false
-    }
-  ]
-}
-```
 <a name="reset"></a>
 
 ## <a name="reset-and-rerun"></a>Сброс и повторный запуск

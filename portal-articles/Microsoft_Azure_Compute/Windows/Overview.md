@@ -9,17 +9,17 @@ ms.topic: article
 ms.date: 04/27/2017
 ms.author: sewatson
 ms.openlocfilehash: 15a89a03e07deb02a812e54c01e857f972681931
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61234659"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "64710775"
 ---
 # <a name="windows-virtual-machines-documentation"></a>Документация по виртуальным машинам Windows
 
 Виртуальные машины Windows Azure предоставляют по запросу безопасную высокомасштабируемую виртуализированную инфраструктуру с использованием Windows Server. Узнайте, как создавать, настраивать, масштабировать виртуальные машины Windows и управлять ими, используя наши шаблоны быстрого запуска, примеры и руководства.
 
-## <a name="5-minute-quickstarts"></a>5-минутные руководства по началу работы
+## <a name="5-minute-quickstarts"></a>Пятиминутные руководства по началу работы
 
 Сведения о развертывании веб сервера IIS на виртуальной машине под управлением Windows Server 2016:
 
@@ -44,7 +44,7 @@ ms.locfileid: "61234659"
 - [Monitor VM security with the Azure Security Center](/azure/virtual-machines/windows/tutorial-azure-security) (Мониторинг безопасности виртуальных машин с помощью центра безопасности Azure)
 
 
-## <a name="free-pluralsight-video-training"></a>Бесплатные видеоуроки PluralSight
+## <a name="free-pluralsight-video-training"></a>Бесплатные видеоуроки Pluralsight
 
 - [Администратор Azure](https://go.microsoft.com/fwlink/?linkid=2012827)
 

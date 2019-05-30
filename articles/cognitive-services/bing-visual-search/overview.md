@@ -1,5 +1,5 @@
 ---
-title: Знакомство с API визуального поиска Bing
+title: Знакомство с API Визуального поиска Bing
 titleSuffix: Azure Cognitive Services
 description: Визуальный поиск Bing предоставляет аналитические сведения об изображении, например похожие изображения или возможности приобретения.
 services: cognitive-services
@@ -11,13 +11,13 @@ ms.topic: overview
 ms.date: 03/27/2019
 ms.author: scottwhi
 ms.openlocfilehash: bd93166cb878fbd961795492ed9a035c919429a8
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 05/27/2019
 ms.locfileid: "64916619"
 ---
-# <a name="what-is-the-bing-visual-search-api"></a>Знакомство с API визуального поиска Bing
+# <a name="what-is-the-bing-visual-search-api"></a>Знакомство с API Визуального поиска Bing
 
 API Визуального поиска Bing возвращает аналитические сведения об изображении. Изображение можно передать или указать его URL-адрес. Аналитические сведения — это визуально похожие изображения, ресурсы для покупок, веб-страницы с изображениями и т. п. Аналитические сведения, возвращаемые API Визуального поиска Bing, похожи на изображения, отображаемые в разделе Bing.com/images.
 
@@ -26,7 +26,7 @@ API Визуального поиска Bing возвращает аналити
 > [!IMPORTANT]
 > Если вы получаете сведения об изображении с помощью API Bing для поиска изображений, рассмотрите возможность перехода на API визуального поиска Bing, обеспечивающий более полные аналитические сведения.
 
-## <a name="insights"></a>Аналитика
+## <a name="insights"></a>Аналитические сведения
 
 Следующие аналитические сведения можно получить с помощью Визуального поиска Bing:
 

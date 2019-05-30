@@ -9,17 +9,17 @@ ms.topic: article
 ms.date: 05/10/2017
 ms.author: sewatson
 ms.openlocfilehash: cc37fbe218dd94da865e61e4b4275a7171fdbe7a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60344146"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "64708113"
 ---
 # <a name="azure-functions-documentation"></a>Документация по функциям Azure
 
 Функции Azure — это независимая от сервера служба вычислений, которая позволяет выполнять код по требованию без необходимости явно подготавливать или администрировать инфраструктуру. Используйте функции Azure для выполнения скрипта или фрагмента кода в ответ на разные события. Узнайте, как использовать функции Azure, ознакомившись с нашими шаблонами быстрого запуска, примерами и руководствами.
 
-## <a name="5-minute-quickstarts"></a>5-минутные руководства по началу работы
+## <a name="5-minute-quickstarts"></a>Пятиминутные руководства по началу работы
 
 Узнайте, как создать функцию Hello World, используя:
 
@@ -35,7 +35,7 @@ ms.locfileid: "60344146"
 
 ## <a name="samples"></a>Примеры
 
-Поиск скриптов для выполнения типовых задач.
+Найдите скрипты для выполнения типовых задач.
 
 - [Интерфейс командной строки Azure](/azure/azure-functions/functions-cli-samples)
 

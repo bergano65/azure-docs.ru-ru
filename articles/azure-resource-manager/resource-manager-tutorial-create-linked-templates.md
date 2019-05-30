@@ -13,12 +13,12 @@ ms.devlang: na
 ms.date: 03/18/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: e811d1f7fb84e2539ba9daea3eea13f5e028f997
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: de2e848bd587f3b9bf2efe3fa8df3710e24243e4
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60389565"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66241379"
 ---
 # <a name="tutorial-create-linked-azure-resource-manager-templates"></a>Руководство. Создание связанных шаблонов Azure Resource Manager
 
@@ -89,7 +89,7 @@ ms.locfileid: "60389565"
 2. Выполните следующие изменения:
 
     * Удалите все параметры, кроме **location**.
-    * Добавьте параметр с именем **storageAccountName**. 
+    * Добавьте параметр с именем **storageAccountName**.
         ```json
         "storageAccountName":{
           "type": "string",
@@ -99,7 +99,7 @@ ms.locfileid: "60389565"
         },
         ```
         Имя учетной записи хранения и расположение передаются из основного в связанный шаблон в качестве параметров.
-        
+
     * Удалите элемент **variables** и все определения переменных.
     * Удалите все ресурсы, за исключением учетной записи хранения. Удаляются всего четыре ресурса.
     * Измените значение элемента **name** учетной записи хранения ресурса на:
@@ -109,7 +109,7 @@ ms.locfileid: "60389565"
         ```
 
     * Обновите элемент **выходных данных**, чтобы он выглядел так, как изображено ниже.
-    
+
         ```json
         "outputs": {
           "storageUri": {
@@ -272,7 +272,7 @@ echo "Linked template URI with SAS token: $templateURI"
     Обратите внимание на следующие детали.
 
     * В основном шаблоне используется ресурс `Microsoft.Resources/deployments` для ссылки на другой шаблон.
-    * Ресурс `deployments` имеет имя `linkedTemplate`. Это имя используется для [настройки зависимостей](#configure-dependency).  
+    * Ресурс `deployments` имеет имя `linkedTemplate`. Это имя используется для [настройки зависимостей](#configure-dependency).
     * Для обоих связанного и вложенного шаблонов можно использовать только [добавочный](./deployment-modes.md) режим развертывания.
     * `templateLink/uri` содержит URI связанного шаблона. Обновите это значение, указав URI, полученный при отправке связанного шаблона (тот, который с маркером SAS).
     * Чтобы передать значение из основного шаблона в связанный, используйте `parameters`.
@@ -305,7 +305,7 @@ echo "Linked template URI with SAS token: $templateURI"
 
     ![Связанные шаблоны Azure Resource Manager настраивают зависимости](./media/resource-manager-tutorial-create-linked-templates/resource-manager-template-linked-templates-configure-dependency.png)
 
-    *linkedTemplate* — имя ресурса развертываний.  
+    *linkedTemplate* — имя ресурса развертываний.
 3. Обновите **properties/diagnosticsProfile/bootDiagnostics/storageUri**, как показано на предыдущем снимке экрана.
 4. Сохраните измененный шаблон.
 
@@ -334,4 +334,4 @@ echo "Linked template URI with SAS token: $templateURI"
 В этом руководстве вы разделили шаблон на основной и связанный. Чтобы узнать, как использовать расширения виртуальной машины для задач, выполняемых после развертывания, перейдите к следующей статье:
 
 > [!div class="nextstepaction"]
-> [Развертывание расширений виртуальной машины](./deployment-manager-tutorial.md)
+> [Развертывание расширений виртуальной машины](./resource-manager-tutorial-deploy-vm-extensions.md)

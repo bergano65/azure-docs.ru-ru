@@ -2,20 +2,20 @@
 title: Руководство по работе с Kubernetes в Azure. Создание реестра контейнеров
 description: С помощью этого руководства Azure Kubernetes Service (AKS) вы создадите экземпляр Реестра контейнеров Azure и отправите образ контейнера примера приложения.
 services: container-service
-author: iainfoulds
+author: tylermsft
 ms.service: container-service
 ms.topic: tutorial
 ms.date: 12/19/2018
-ms.author: iainfou
+ms.author: twhitney
 ms.custom: mvc
-ms.openlocfilehash: 1ba320a523d21beebe089084f40efff4b36dc4af
-ms.sourcegitcommit: 039263ff6271f318b471c4bf3dbc4b72659658ec
+ms.openlocfilehash: 1bd41dc464c251a2e7dab3087f3feffb15db785f
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55753577"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66304409"
 ---
-# <a name="tutorial-deploy-and-use-azure-container-registry"></a>Руководство. Развертывание реестра контейнеров Azure и его использование
+# <a name="tutorial-deploy-and-use-azure-container-registry"></a>Руководство по Развертывание реестра контейнеров Azure и его использование
 
 Реестр контейнеров Azure (ACR) — это частный реестр для образов контейнеров. Частный реестр контейнеров позволяет безопасно выполнять сборку и развертывать приложения, а также пользовательский код. В этом руководстве (здесь представлена вторая его часть из семи) вы развернете экземпляр ACR и отправите образ контейнера в экземпляр. Вы узнаете, как выполнять следующие задачи:
 

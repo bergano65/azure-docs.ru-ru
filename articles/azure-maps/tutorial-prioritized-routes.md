@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc
-ms.openlocfilehash: 3e33eef430db627a82bb82e8c22ddc861d08982b
-ms.sourcegitcommit: 031e4165a1767c00bb5365ce9b2a189c8b69d4c0
+ms.openlocfilehash: e0d201baec253abee9ad8a998dd36968927a25a6
+ms.sourcegitcommit: 8e76be591034b618f5c11f4e66668f48c090ddfd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/13/2019
-ms.locfileid: "59546278"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66357592"
 ---
 # <a name="find-routes-for-different-modes-of-travel-using-azure-maps"></a>Поиск маршрутов для различных способов перемещения с помощью службы "Карты Azure"
 
@@ -216,7 +216,7 @@ ms.locfileid: "59546278"
     var routeURL = new atlas.service.RouteURL(pipeline);
     ```
 
-   `SubscriptionKeyCredential` создает политику `SubscriptionKeyCredentialPolicy` для аутентификации HTTP-запросов для Azure Maps с помощью ключа подписки. `atlas.service.MapsURL.newPipeline()` принимает политику `SubscriptionKeyCredential` и создает экземпляр [конвейера](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.pipeline?view=azure-iot-typescript-latest). `routeURL` представляет собой URL-адрес [для операций маршрута](https://docs.microsoft.com/rest/api/maps/route) Azure Maps.
+   `SubscriptionKeyCredential` создает политику `SubscriptionKeyCredentialPolicy` для аутентификации HTTP-запросов для Azure Maps с помощью ключа подписки. `atlas.service.MapsURL.newPipeline()` принимает политику `SubscriptionKeyCredential` и создает экземпляр [конвейера](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.pipeline?view=azure-maps-typescript-latest). `routeURL` представляет собой URL-адрес [для операций маршрута](https://docs.microsoft.com/rest/api/maps/route) Azure Maps.
 
 2. После настройки учетных данных и URL-адреса добавьте следующий код JavaScript для создания маршрута из начальной точки в конечную точку для грузовика с грузом типа USHazmatClass2 и отображения результатов.
 
@@ -245,7 +245,7 @@ ms.locfileid: "59546278"
     });
     ```
 
-    Приведенный выше фрагмент кода создает запрос к службе построения маршрутов Azure Maps с помощью метода [getRouteDirections](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.models.routedirectionsrequestbody?view=azure-iot-typescript-latest). Затем линия маршрута извлекается из ответа коллекции компонентов GeoJSON, который извлекается с помощью метода `geojson.getFeatures()`. Затем линия маршрута добавляется к источнику данных. Также добавляется индекс 0, чтобы обеспечить обработку этой лини перед другими линиями в источнике данных. Это необходимо, так как расчет маршрута грузовика часто будет выполняться медленнее, чем расчет маршрута легкового автомобиля, и если линия маршрута грузовика добавляется в источник данных после маршрута легкового автомобиля, она будет показана над ним. К линии маршрута грузовика добавляются два свойства: цвет линии (синий) и ее ширина (девять пикселей).
+    Приведенный выше фрагмент кода создает запрос к службе построения маршрутов Azure Maps с помощью метода [getRouteDirections](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.models.routedirectionsrequestbody?view=azure-maps-typescript-latest). Затем линия маршрута извлекается из ответа коллекции компонентов GeoJSON, который извлекается с помощью метода `geojson.getFeatures()`. Затем линия маршрута добавляется к источнику данных. Также добавляется индекс 0, чтобы обеспечить обработку этой лини перед другими линиями в источнике данных. Это необходимо, так как расчет маршрута грузовика часто будет выполняться медленнее, чем расчет маршрута легкового автомобиля, и если линия маршрута грузовика добавляется в источник данных после маршрута легкового автомобиля, она будет показана над ним. К линии маршрута грузовика добавляются два свойства: цвет линии (синий) и ее ширина (девять пикселей).
 
 3. Чтобы создать маршрут для легкового автомобиля и отобразить результаты, добавьте следующий код JavaScript.
 
@@ -265,7 +265,7 @@ ms.locfileid: "59546278"
     });
     ```
 
-    Приведенный выше фрагмент кода создает запрос к службе построения маршрутов Azure Maps с помощью метода [getRouteDirections](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.models.routedirectionsrequestbody?view=azure-iot-typescript-latest). Затем линия маршрута извлекается из ответа коллекции компонентов GeoJSON, который извлекается с помощью метода `geojson.getFeatures()`. Затем линия маршрута добавляется к источнику данных. К линии маршрута легкового автомобиля добавляются два свойства: цвет линии (сиреневый) и ее ширина (пять пикселей).  
+    Приведенный выше фрагмент кода создает запрос к службе построения маршрутов Azure Maps с помощью метода [getRouteDirections](https://docs.microsoft.com/javascript/api/azure-maps-rest/atlas.service.models.routedirectionsrequestbody?view=azure-maps-typescript-latest). Затем линия маршрута извлекается из ответа коллекции компонентов GeoJSON, который извлекается с помощью метода `geojson.getFeatures()`. Затем линия маршрута добавляется к источнику данных. К линии маршрута легкового автомобиля добавляются два свойства: цвет линии (сиреневый) и ее ширина (пять пикселей).  
 
 4. Сохраните файл **MapTruckRoute.html** и обновите браузер, чтобы просмотреть результат. Для успешного подключения к интерфейсам API службы "Карты Azure" должна использоваться карта следующего вида.
 

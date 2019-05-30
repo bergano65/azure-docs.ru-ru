@@ -1,5 +1,5 @@
 ---
-title: Что такое с API проверки орфографии Bing?
+title: Что такое API Проверки орфографии Bing?
 titlesuffix: Azure Cognitive Services
 description: Сведения об API проверки орфографии Bing, который использует машинное обучение и статистический машинный перевод для контекстной проверки орфографии.
 services: cognitive-services
@@ -11,13 +11,13 @@ ms.topic: overview
 ms.date: 02/20/2019
 ms.author: aahi
 ms.openlocfilehash: 22f75efb3cb4baa645030e7ad64072674de662ed
-ms.sourcegitcommit: 24906eb0a6621dfa470cb052a800c4d4fae02787
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/27/2019
-ms.locfileid: "56890807"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "60593209"
 ---
-# <a name="what-is-the-bing-spell-check-api"></a>Что такое с API проверки орфографии Bing?
+# <a name="what-is-the-bing-spell-check-api"></a>Что такое API Проверки орфографии Bing?
 
 API проверки орфографии Bing позволяет выполнять контекстную проверку орфографии и грамматики в тексте. Большинство средств проверки орфографии выполняют проверку с использованием наборов правил на основе словаря, а в Bing используется машинное обучение и статистический машинный перевод для точных исправлений с учетом контекста. 
 

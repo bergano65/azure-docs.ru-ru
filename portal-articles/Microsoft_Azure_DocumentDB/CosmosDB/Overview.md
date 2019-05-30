@@ -9,21 +9,21 @@ ms.topic: article
 ms.date: 12/13/2017
 ms.author: sewatson
 ms.openlocfilehash: bd5951fe86bde7e71c77d5564216421c1d2d1ea4
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61227119"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "64708466"
 ---
-# <a name="azure-cosmos-db-documentation"></a>Документация по базе данных Azure Cosmos
+# <a name="azure-cosmos-db-documentation"></a>Документация по Azure Cosmos DB
 
 Azure Cosmos DB – это глобально распределенная служба базы данных, которая позволяет гибко и независимо масштабировать пропускную способность и ресурсы хранилища в любых регионах в рамках полного соглашения об уровне обслуживания. С помощью базы данных Cosmos вы можете разрабатывать документы, пары "ключ-значение" или базы данных графов, используя ряд популярных API-интерфейсов и модели программирования. Узнайте, как использовать базу данных Cosmos, ознакомившись с нашими шаблонами быстрого запуска, примерами и руководствами.
 
-## <a name="5-minute-quickstarts"></a>5-минутные руководства по началу работы
+## <a name="5-minute-quickstarts"></a>Пятиминутные руководства по началу работы
 
 Сведения об использовании Azure Cosmos DB для создания глобально распределенной базы данных с помощью одного из многомодельных API-интерфейсов:
 
-### <a name="sql-api"></a>API-интерфейс SQL
+### <a name="sql-api"></a>API SQL
 
 - [.NET](/azure/cosmos-db/create-sql-api-dotnet)
 - [Java](/azure/cosmos-db/create-sql-api-java)
@@ -55,11 +55,11 @@ Azure Cosmos DB – это глобально распределенная сл
 - Импорт данных в Cosmos DB: [SQL](/azure/cosmos-db/sql-api-import-data) | [MongoDB](/azure/cosmos-db/mongodb-migrate) 
 - Запрашивание данных с помощью Cosmos DB: [SQL](/azure/cosmos-db/tutorial-query-sql-api) | [MongoDB](/azure/cosmos-db/tutorial-query-mongodb) | [Table](/azure/cosmos-db/tutorial-query-table) | [Graph](/azure/cosmos-db/tutorial-query-graph)
 - Репликация глобальных баз данных с помощью Cosmos DB: [SQL](/azure/cosmos-db/tutorial-global-distribution-sql-api) | [MongoDB](/azure/cosmos-db/tutorial-global-distribution-mongodb) | [Table](/azure/cosmos-db/tutorial-global-distribution-table | [Graph](/azure/cosmos-db/tutorial-global-distribution-graph)
-- [Разработка приложений локально с помощью эмулятора](/azure/cosmos-db/local-emulator)
+- [Локальная разработка приложений с помощью эмулятора](/azure/cosmos-db/local-emulator)
 
 ## <a name="samples"></a>Примеры
 
-Поиск скриптов для выполнения типовых задач.
+Найдите скрипты для выполнения типовых задач.
 
 - [Интерфейс командной строки Azure](/azure/cosmos-db/cli-samples)
 - [Azure PowerShell](/azure/cosmos-db/powershell-samples)

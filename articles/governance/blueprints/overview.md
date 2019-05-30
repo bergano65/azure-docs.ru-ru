@@ -1,5 +1,5 @@
 ---
-title: Обзор Azure Blueprint
+title: Обзор Azure Blueprints
 description: Описание службы Azure Blueprints, с помощью которой можно создавать, определять и развертывать артефакты в среде Azure.
 author: DCtheGeek
 ms.author: dacoulte
@@ -8,11 +8,11 @@ ms.topic: overview
 ms.service: blueprints
 manager: carmonm
 ms.openlocfilehash: 960b8145e5f53c6c37820604fd634ccf5fd77c6b
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59259428"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "60876245"
 ---
 # <a name="overview-of-the-azure-blueprints-service"></a>Обзор службы Azure Blueprints
 
