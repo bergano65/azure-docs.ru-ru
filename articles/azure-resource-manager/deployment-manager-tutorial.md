@@ -10,15 +10,15 @@ ms.service: azure-resource-manager
 ms.workload: multiple
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.date: 04/02/2019
+ms.date: 05/23/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: a4f14a1e68042704ca8e8c49f1bd76b722c90d4d
-ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
+ms.openlocfilehash: aa58d0405176a63ff9d1cc25b572f3f3754dbbdc
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65466302"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66238849"
 ---
 # <a name="tutorial-use-azure-deployment-manager-with-resource-manager-templates-public-preview"></a>Руководство по использованию диспетчера развертывания Azure с шаблонами Resource Manager (общедоступная предварительная версия)
 
@@ -55,7 +55,6 @@ ms.locfileid: "65466302"
 Для работы с этой статьей необходимо иметь следующее.
 
 * Опыт разработки [шаблонов Azure Resource Manager](./resource-group-overview.md).
-* Диспетчер развертывания Azure предоставляется в закрытой предварительной версии. Чтобы зарегистрироваться с помощью диспетчера развертывания Azure, заполните [регистрационный лист](https://aka.ms/admsignup). 
 * Установите Azure PowerShell. Дополнительные сведения см. в статье [Начало работы с Azure PowerShell](https://docs.microsoft.com/powershell/azure/get-started-azureps).
 * Командлеты диспетчера развертывания. Чтобы установить эти командлеты предварительной версии, вам понадобится последняя версия PowerShellGet. Сведения о получении последней версии см. в статье [Установка PowerShellGet](/powershell/gallery/installing-psget). После установки PowerShellGet закройте окно PowerShell. Откройте новое окно PowerShell с повышенными привилегиями и выполните следующую команду:
 
@@ -106,18 +105,18 @@ ms.locfileid: "65466302"
 
 Две версии (1.0.0.0 и 1.0.0.1) предназначены для [развертывания версии](#deploy-the-revision). Несмотря на то, что как артефакты шаблонов, так и двоичные артефакты имеют две версии, только двоичные артефакты различаются между двумя версиями. На практике двоичные артефакты чаще обновляются по сравнению с артефактами шаблонов.
 
-1. Откройте **\ArtifactStore\templates\1.0.0.0\ServiceWUS\CreateStorageAccount.json** в текстовом редакторе. Это базовый шаблон для создания учетной записи хранения.  
-2. Откройте **\ArtifactStore\templates\1.0.0.0\ServiceWUS\CreateWebApplication.json**. 
+1. Откройте **\ArtifactStore\templates\1.0.0.0\ServiceWUS\CreateStorageAccount.json** в текстовом редакторе. Это базовый шаблон для создания учетной записи хранения.
+2. Откройте **\ArtifactStore\templates\1.0.0.0\ServiceWUS\CreateWebApplication.json**.
 
     ![Руководство по работе с диспетчером развертывания Azure: создание шаблона веб-приложения](./media/deployment-manager-tutorial/azure-deployment-manager-tutorial-create-web-application-packageuri.png)
 
     Шаблон вызывает пакет развертывания, который содержит файлы веб-приложения. В этом руководстве сжатый пакет содержит только файл index.html.
-3. Откройте **\ArtifactStore\templates\1.0.0.0\ServiceWUS\CreateWebApplicationParameters.json**. 
+3. Откройте **\ArtifactStore\templates\1.0.0.0\ServiceWUS\CreateWebApplicationParameters.json**.
 
     ![Руководство по работе с диспетчером развертывания Azure: параметры containerRoot для создания шаблона веб-приложения](./media/deployment-manager-tutorial/azure-deployment-manager-tutorial-create-web-application-parameters-deploypackageuri.png)
 
     Значение deployPackageUri является путем к пакету развертывания. Параметр содержит переменную **$containerRoot**. Значение $containerRoot предоставляется в [шаблоне выпуска](#create-the-rollout-template) путем объединения исходного расположения артефакта SAS, корня артефакта и deployPackageUri.
-4. Откройте **\ArtifactStore\binaries\1.0.0.0\helloWorldWebAppWUS.zip\index.html**.  
+4. Откройте **\ArtifactStore\binaries\1.0.0.0\helloWorldWebAppWUS.zip\index.html**.
 
     ```html
     <html>
@@ -159,7 +158,7 @@ ms.locfileid: "65466302"
 1. Войдите на [портале Azure](https://portal.azure.com).
 2. Создайте [управляемое удостоверение, назначаемое пользователем](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal.md).
 3. На портале щелкните **Подписки** в меню слева и выберите свою подписку.
-4. Выберите **Управление доступом (IAM)**, а затем **Добавление назначения ролей**.
+4. Выберите **Управление доступом (IAM)** , а затем **Добавление назначения ролей**.
 5. Введите или выберите следующие значения:
 
     ![Руководство по использованию диспетчера развертывания Azure: управление доступом с помощью управляемого удостоверения, назначаемого пользователем](./media/deployment-manager-tutorial/azure-deployment-manager-tutorial-access-control.png)
@@ -257,7 +256,7 @@ ms.locfileid: "65466302"
 
 ![Руководство по использованию диспетчера развертывания Azure: шаг ожидания ресурса шаблона выпуска](./media/deployment-manager-tutorial/azure-deployment-manager-tutorial-rollout-template-resources-wait-step.png)
 
-Длительность соответствует [стандарту ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Durations). **PT1M** (заглавные буквы обязательны) является примером одноминутного ожидания. 
+Длительность соответствует [стандарту ISO 8601](https://en.wikipedia.org/wiki/ISO_8601#Durations). **PT1M** (заглавные буквы обязательны) является примером одноминутного ожидания.
 
 На следующем снимке экрана показаны только некоторые части определения развертывания:
 
@@ -292,13 +291,13 @@ ms.locfileid: "65466302"
 
 ## <a name="deploy-the-templates"></a>Развертывание шаблонов.
 
-Azure PowerShell можно использовать для развертывания шаблонов. 
+Azure PowerShell можно использовать для развертывания шаблонов.
 
 1. Запустите сценарий для развертывания топологии службы.
 
     ```azurepowershell
     $resourceGroupName = "<Enter a Resource Group Name>"
-    $location = "Central US"  
+    $location = "Central US"
     $filePath = "<Enter the File Path to the Downloaded Tutorial Files>"
 
     # Create a resource group
@@ -429,7 +428,7 @@ Azure PowerShell можно использовать для развертыва
     * **&lt;namePrefix>ServiceWUSrg**: содержит ресурсы, определенные в ServiceWUS.
     * **&lt;namePrefix>ServiceEUSrg**: содержит ресурсы, определенные в ServiceEUS.
     * Группа ресурсов для определяемого пользователем управляемого удостоверения.
-3. Выберите имя группы ресурсов.  
+3. Выберите имя группы ресурсов.
 4. В главном меню выберите **Удалить группу ресурсов**.
 5. Повторите последние два шага для удаления других групп ресурсов, созданных в этом руководстве.
 

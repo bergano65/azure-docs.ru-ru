@@ -4,7 +4,7 @@
   items:
     - name: Что такое Azure Logic Apps
       href: logic-apps-overview.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   expanded: true
   items:
     - name: "Создание приложений логики\_— портал Azure"
@@ -13,7 +13,7 @@
       href: quickstart-create-logic-apps-with-visual-studio.md
     - name: "Создание приложений логики\_в Visual Studio Code"
       href: quickstart-create-logic-apps-visual-studio-code.md
-- name: Учебники
+- name: Руководства
   items:
     - name: Регулярная проверка трафика
       href: tutorial-build-schedule-recurring-logic-app-workflow.md
@@ -25,6 +25,8 @@
   items:
     - name: Соединители для Logic Apps
       href: ../connectors/apis-list.md
+    - name: Планирование автоматизированных повторяющихся рабочих процессов
+      href: concepts-schedule-automated-recurring-tasks-workflows.md
     - name: Бессерверные вычисления с помощью Azure
       href: logic-apps-serverless-overview.md
     - name: Интеграция B2B и обработка EDI
@@ -159,7 +161,7 @@
       items:
         - name: AS2
           href: logic-apps-enterprise-integration-as2.md
-        - name: Хранилище больших двоичных объектов Azure
+        - name: Хранилище BLOB-объектов Azure
           href: ../connectors/connectors-create-api-azureblobstorage.md
         - name: Центры событий Azure
           href: ../connectors/connectors-create-api-azure-event-hubs.md
@@ -169,7 +171,7 @@
           href: logic-apps-http-endpoint.md
         - name: Azure Service Bus
           href: ../connectors/connectors-create-api-servicebus.md
-        - name: Базы данных SQL Azure
+        - name: База данных SQL Azure
           href: ../connectors/connectors-create-api-sqlazure.md
         - name: Поиск Bing
           href: ../connectors/connectors-create-api-bingsearch.md
@@ -179,6 +181,8 @@
           href: logic-apps-create-api-app.md
         - name: DB2
           href: ../connectors/connectors-create-api-db2.md
+        - name: Задержка
+          href: ../connectors/connectors-native-delay.md
         - name: DropBox
           href: ../connectors/connectors-create-api-dropbox.md
         - name: "Dynamics\_365 CRM Online"
@@ -235,6 +239,8 @@
           href: ../connectors/connectors-create-api-outlook.md
         - name: Project Online
           href: ../connectors/connectors-create-api-projectonline.md
+        - name: Периодичность
+          href: ../connectors/connectors-native-recurrence.md
         - name: Запрос и ответ
           href: ../connectors/connectors-native-reqres.md
         - name: RSS
@@ -243,10 +249,8 @@
           href: ../connectors/connectors-create-api-salesforce.md
         - name: SAP (новая версия)
           href: logic-apps-using-sap-connector.md
-        - name: SAP
+        - name: Протокол SAP
           href: logic-apps-using-sap-connector-old.md
-        - name: Расписание
-          href: ../connectors/connectors-native-recurrence.md
         - name: SendGrid
           href: ../connectors/connectors-create-api-sendgrid.md
         - name: SFTP
@@ -257,9 +261,11 @@
           href: ../connectors/connectors-create-api-sharepoint.md
         - name: Slack
           href: ../connectors/connectors-create-api-slack.md
+        - name: Скользящее окно
+          href: ../connectors/connectors-native-sliding-window.md
         - name: SMTP
           href: ../connectors/connectors-create-api-smtp.md
-        - name: SQL Server;
+        - name: "SQL\_Server"
           href: ../connectors/connectors-create-api-sqlazure.md
         - name: Преобразование XML
           href: logic-apps-enterprise-integration-transform.md
@@ -277,7 +283,7 @@
           href: logic-apps-enterprise-integration-xml-validation.md
         - name: Yammer
           href: ../connectors/connectors-create-api-yammer.md
-    - name: управление
+    - name: Управление
       items:
         - name: 'Управление приложениями логики: Visual Studio'
           href: manage-logic-apps-with-visual-studio.md
@@ -366,7 +372,7 @@
       href: 'https://azure.microsoft.com/roadmap/'
     - name: Форум MSDN
       href: 'https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=azurelogicapps'
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-logic-apps'
     - name: Twitter
       href: 'https://twitter.com/logicappsio'
@@ -378,5 +384,5 @@
       href: 'https://azure.microsoft.com/updates/?product=logic-apps'
     - name: Истории клиентов
       href: 'https://customers.microsoft.com/en-us/search?sq=%22Azure%20Logic%20Apps%20%22&ff=story_product_categories%26%3EAzure&p=0&so=story_publish_date%20desc'
-    - name: Видеоролики
+    - name: Видео
       href: 'https://azure.microsoft.com/resources/videos/index/?services=logic-apps&sort=newest'

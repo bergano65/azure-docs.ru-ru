@@ -4,7 +4,7 @@
   items:
     - name: Что такое наборы масштабирования виртуальных машин?
       href: overview.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   expanded: true
   items:
     - name: Создание с помощью портала Azure
@@ -19,7 +19,7 @@
           href: quick-create-template-linux.md
         - name: Масштабируемый набор Windows
           href: quick-create-template-windows.md
-- name: Учебники
+- name: Руководства
   items:
     - name: 1. Создание масштабируемого набора и управление им
       items:
@@ -86,14 +86,14 @@
         - name: Оптимизированные для вычислений
           href: ../virtual-machines/windows/sizes-compute.md
           maintainContext: true
-        - name: Оптимизированные для памяти
+        - name: Оптимизированные для операций в памяти
           href: ../virtual-machines/windows/sizes-memory.md
           maintainContext: true
           items:
             - name: Ограниченное число виртуальных ЦП
               href: ../virtual-machines/windows/constrained-vcpu.md
               maintainContext: true
-        - name: Оптимизированные для хранилища
+        - name: Оптимизированные для операций в хранилище
           href: ../virtual-machines/windows/sizes-storage.md
           maintainContext: true
         - name: Оптимизированные для GPU
@@ -215,7 +215,7 @@
           href: virtual-machine-scale-sets-convert-template-to-md.md
         - name: Использование виртуальных машин с низким приоритетом
           href: virtual-machine-scale-sets-use-low-priority.md
-    - name: управление
+    - name: Управление
       items:
         - name: Общие задачи управления
           items:
@@ -223,6 +223,14 @@
               href: virtual-machine-scale-sets-manage-cli.md
             - name: Использование Azure PowerShell
               href: virtual-machine-scale-sets-manage-powershell.md
+        - name: Изменение масштабируемого набора
+          href: virtual-machine-scale-sets-upgrade-scale-set.md
+        - name: Работа в сети для масштабируемых наборов
+          href: virtual-machine-scale-sets-networking.md
+        - name: Автоматические обновления ОС
+          href: virtual-machine-scale-sets-automatic-upgrade.md
+        - name: Защита экземпляров (предварительная версия)
+          href: virtual-machine-scale-sets-instance-protection.md
         - name: Общедоступные коллекции образов
           items:
             - name: Обзор
@@ -237,14 +245,8 @@
               href: troubleshooting-shared-images.md
         - name: Вертикальное масштабирование в масштабируемом наборе
           href: virtual-machine-scale-sets-vertical-scale-reprovision.md
-        - name: Автоматические обновления ОС
-          href: virtual-machine-scale-sets-automatic-upgrade.md
-        - name: Изменение масштабируемого набора
-          href: virtual-machine-scale-sets-upgrade-scale-set.md
         - name: Использование DSC и масштабируемых наборов
           href: virtual-machine-scale-sets-dsc.md
-        - name: Работа в сети для масштабируемых наборов
-          href: virtual-machine-scale-sets-networking.md
         - name: Преобразование шаблона в управляемый диск
           href: virtual-machine-scale-sets-convert-template-to-md.md
         - name: Плановое техническое обслуживание
@@ -264,7 +266,7 @@
   items:
     - name: Azure PowerShell
       href: /powershell/azure/overview
-    - name: Инфраструктура CLI Azure
+    - name: "Azure\_CLI"
       href: ../virtual-machines/azure-cli-arm-commands.md
     - name: REST
       href: /rest/api/virtualmachinescalesets/
@@ -282,5 +284,5 @@
           href: 'https://azure.microsoft.com/pricing/details/virtual-machine-scale-sets/windows/'
     - name: Калькулятор цен
       href: 'https://azure.microsoft.com/pricing/calculator/'
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-vm-scale-set'

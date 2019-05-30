@@ -4,7 +4,7 @@
   items:
     - name: Что такое пакетная служба Azure?
       href: batch-technical-overview.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   expanded: true
   items:
     - name: Выполнение пакетного задания — CLI
@@ -15,7 +15,7 @@
       href: quick-run-dotnet.md
     - name: Выполнение пакетного задания — Python
       href: quick-run-python.md
-- name: Учебники
+- name: Руководства
   items:
     - name: Параллельная обработка файлов — .NET
       href: tutorial-parallel-dotnet.md
@@ -59,13 +59,13 @@
           href: batch-account-create-portal.md
         - name: Управление учетными записями пакетной службы с помощью библиотеки .NET для управления пакетной службой
           href: batch-management-dotnet.md
-    - name: "Проверка подлинности с помощью Azure\_AD"
+    - name: "Аутентификация с помощью Azure\_AD"
       items:
         - name: Azure AD и пакетная служба
           href: batch-aad-auth.md
         - name: Azure AD и управление пакетной службой
           href: batch-aad-auth-management.md
-    - name: Создание пакетов приложений
+    - name: Использование пакетов приложений
       href: batch-application-packages.md
     - name: Создание пулов и управление ими
       items:
@@ -127,7 +127,7 @@
       items:
         - name: Использование Azure PowerShell
           href: batch-powershell-cmdlets-get-started.md
-        - name: Использование интерфейса командной строки Azure
+        - name: Использование Azure CLI
           href: batch-cli-get-started.md
           items:
             - name: Использование шаблонов интерфейса командной строки пакетной службы
@@ -162,7 +162,7 @@
       href: ../data-factory/transform-data-using-dotnet-custom-activity.md?toc=%2fazure%2fbatch%2ftoc.json
 - name: Справочные материалы
   items:
-    - name: Инфраструктура CLI Azure
+    - name: Azure CLI
       href: /cli/azure/batch
     - name: Azure PowerShell
       href: /powershell/module/az.batch
@@ -221,7 +221,7 @@
       href: /azure/templates/microsoft.batch/batchaccounts
     - name: Обновления службы
       href: 'https://azure.microsoft.com/updates/?product=batch&updatetype=&platform='
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-batch'
-    - name: Видеоролики
+    - name: Видео
       href: 'https://azure.microsoft.com/documentation/videos/index/?services=batch'

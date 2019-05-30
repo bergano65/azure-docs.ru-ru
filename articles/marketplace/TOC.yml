@@ -8,15 +8,6 @@
     - name: 'Общие сведения об Azure Marketplace и AppSource, а также преимуществах их использования'
       href: ./marketplace-publishers-guide.md
       items:
-        - name: Как стать издателем в Marketplace
-          href: ./become-publisher.md
-          items:
-            - name: Создание учетной записи Майкрософт
-              href: ./guidelines.md
-            - name: Регистрация в центре разработки
-              href: ./register-dev-center.md
-            - name: Определение потребления услуг Azure клиентами партнеров
-              href: ./azure-partner-customer-usage-attribution.md
         - name: Два онлайн-магазина на одной площадке Marketplace
           href: ./comparing-appsource-azure-marketplace.md
         - name: Варианты публикации и рекомендации
@@ -30,6 +21,8 @@
               href: ./private-offers.md
             - name: Стандартный контракт
               href: ./standard-contract.md
+            - name: Определение потребления услуг Azure клиентами партнеров
+              href: ./azure-partner-customer-usage-attribution.md
         - name: Руководство по публикации разных типов предложений
           href: ./publisher-guide-by-offer-type.md
           items:
@@ -481,6 +474,15 @@
       items:
         - name: Создание предложения SaaS
           href: ./partner-center-portal/create-new-saas-offer.md
+        - name: API исполнения SaaS
+          href: ./partner-center-portal/pc-saas-fulfillment-apis.md
+          items:
+            - name: Регистрация приложения SaaS
+              href: ./partner-center-portal/pc-saas-registration.md
+            - name: "API исполнения SaaS версии\_2"
+              href: ./partner-center-portal/pc-saas-fulfillment-api-v2.md
+            - name: "API исполнения SaaS версии\_1 (не рекомендуется)"
+              href: ./partner-center-portal/pc-saas-fulfillment-api-v1.md
     - name: Состояние публикации
       href: ./partner-center-portal/publishing-status.md
     - name: Обновление существующих предложений

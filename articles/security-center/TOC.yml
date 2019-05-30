@@ -57,6 +57,8 @@
       href: security-center-powershell-onboarding.md
     - name: Параметры центра безопасности
       href: security-center-policies-overview.md
+    - name: Сравнение базовых показателей с помощью мониторинга целостности файлов
+      href: security-center-file-integrity-monitoring-baselines.md
       items:
         - name: Сбор данных
           href: security-center-enable-data-collection.md

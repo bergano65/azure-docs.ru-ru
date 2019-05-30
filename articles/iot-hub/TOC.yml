@@ -4,7 +4,7 @@
   items:
     - name: Что такое Центр Интернета вещей в Azure?
       href: about-iot-hub.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   items:
     - name: Отправка данных телеметрии
       items:
@@ -50,13 +50,13 @@
           href: quickstart-device-streams-proxy-nodejs.md
         - name: C
           href: quickstart-device-streams-proxy-c.md
-- name: Учебники
+- name: Руководства
   items:
     - name: Маршрутизация сообщений
       items:
         - name: "Часть\_1. Настройка маршрутизации сообщений"
           items:
-            - name: Microsoft Azure
+            - name: Портал
               href: tutorial-routing.md
             - name: Шаблон Azure RM
               href: tutorial-routing-config-message-routing-RM-template.md
@@ -66,6 +66,8 @@
               href: tutorial-routing-config-message-routing-PowerShell.md
         - name: "Часть\_2. Просмотр результатов маршрутизации сообщений"
           href: tutorial-routing-view-message-routing-results.md
+    - name: Обогащение сообщений
+      href: tutorial-message-enrichments.md
     - name: Использование метрик и журналов диагностики
       href: tutorial-use-metrics-and-diags.md
     - name: Выполнение перехода на другой ресурс вручную
@@ -78,6 +80,8 @@
       href: tutorial-connectivity.md
 - name: Основные понятия
   items:
+    - name: Общие сведения об обогащении сообщений
+      href: iot-hub-message-enrichments-overview.md
     - name: Обзор управления устройствами
       href: iot-hub-device-management-overview.md
     - name: Сравнение Центра Интернета вещей и службы "Центры событий"
@@ -96,7 +100,7 @@
       href: iot-hub-device-sdk-platform-support.md
     - name: Общие сведения о потоках устройств Центра Интернета вещей (предварительная версия)
       href: iot-hub-device-streams-overview.md
-    - name: Руководство разработчика по центру Azure IoT (IoT — Интернет вещей)
+    - name: Руководство для разработчиков
       href: iot-hub-devguide.md
       items:
         - name: Руководство по функциям отправки сообщений с устройства в облако
@@ -233,7 +237,7 @@
               href: iot-hub-python-twin-getstarted.md
         - name: Начало работы с двойниками модулей
           items:
-            - name: Microsoft Azure
+            - name: Портал
               href: iot-hub-portal-csharp-module-twin-getstarted.md
             - name: .NET
               href: iot-hub-csharp-csharp-module-twin-getstarted.md
@@ -263,7 +267,7 @@
               href: iot-hub-java-java-schedule-jobs.md
             - name: Python
               href: iot-hub-python-python-schedule-jobs.md
-    - name: управление
+    - name: Управление
       items:
         - name: Создание Центра Интернета вещей
           items:
@@ -273,7 +277,7 @@
               href: iot-hub-create-use-iot-toolkit.md
             - name: Использование Azure PowerShell
               href: iot-hub-create-using-powershell.md
-            - name: Использование интерфейса командной строки Azure
+            - name: Использование Azure CLI
               href: iot-hub-create-using-cli.md
             - name: Использование REST API
               href: iot-hub-rm-rest.md
@@ -288,7 +292,7 @@
               href: iot-hub-configure-file-upload.md
             - name: Использование Azure PowerShell
               href: iot-hub-configure-file-upload-powershell.md
-            - name: Использование интерфейса командной строки Azure
+            - name: Использование Azure CLI
               href: iot-hub-configure-file-upload-cli.md
         - name: Метрики в Azure Monitor
           href: iot-hub-metrics.md
@@ -306,7 +310,7 @@
           items:
             - name: Использование портала Azure
               href: iot-hub-automatic-device-management.md
-            - name: Использование интерфейса командной строки Azure
+            - name: Использование Azure CLI
               href: iot-hub-automatic-device-management-cli.md
         - name: Массовый импорт и экспорт устройств Интернета вещей
           href: iot-hub-bulk-identity-mgmt.md
@@ -377,7 +381,7 @@
       href: 'https://docs.microsoft.com/javascript/api/azure-iothub/'
     - name: Пакет SDK для устройств для C
       href: 'https://docs.microsoft.com/azure/iot-hub/iot-c-sdk-ref/'
-    - name: Edge Интернета вещей Azure
+    - name: Azure IoT Edge
       href: 'http://azure.github.io/iot-edge/'
     - name: REST (устройство)
       href: 'https://docs.microsoft.com/rest/api/iothub/device'
@@ -415,11 +419,11 @@
           href: /azure/azure-maps
         - name: Аналитика временных рядов Azure
           href: /azure/time-series-insights
-    - name: Microsoft Edge
+    - name: Edge
       items:
         - name: IoT Edge
           href: /azure/iot-edge
-        - name: Пакеты SDK для устройств IoT
+        - name: Пакеты SDK для устройств Интернета вещей
           href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks'
 - name: Ресурсы
   items:
@@ -435,7 +439,7 @@
       href: 'https://azure.microsoft.com/resources/samples/azure-iot-samples-ios/'
     - name: 'Каталог устройств, сертифицированных по программе Microsoft Azure Certified for IoT'
       href: 'https://catalog.azurazureiotsolutionseiotsuite.com/'
-    - name: Центр разработчика IoT Azure
+    - name: Центр разработчиков Azure IoT
       href: 'https://azure.microsoft.com/develop/iot/'
     - name: Запросы данных клиентов
       href: iot-hub-customer-data-requests.md
@@ -455,7 +459,7 @@
       href: 'https://azure.microsoft.com/pricing/calculator/'
     - name: Обновления службы
       href: 'https://azure.microsoft.com/updates/?product=iot-hub'
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-iot-hub'
     - name: Технические примеры использования
       href: 'https://microsoft.github.io/techcasestudies/#technology=IoT&sortBy=featured'

@@ -1,4 +1,4 @@
-- name: API Azure для FHIR
+- name: Azure API для FHIR
   href: index.yml
 - name: Обзор
   items:
@@ -6,7 +6,7 @@
       href: overview.md
     - name: Обзор FHIR Server для Azure
       href: overview-open-source-server.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   expanded: true
   items:
     - name: "Развертывание API Azure для FHIR\_— портал"
@@ -23,7 +23,9 @@
       href: fhir-oss-cli-quickstart.md
     - name: Настройка CORS
       href: configure-cross-origin-resource-sharing.md
-- name: Учебники
+    - name: "Настройка Cosmos\_DB"
+      href: configure-cosmos-db.md
+- name: Руководства
   expanded: false
   items:
     - name: Получение доступа к API FHIR с помощью Postman
@@ -47,7 +49,7 @@
       href: find-identity-object-ids.md
 - name: Ресурсы
   items:
-    - name: Часто задаваемые вопросы
+    - name: Вопросы и ответы
       href: fhir-faq.md
     - name: Поддерживаемые функции
       href: fhir-features-supported.md

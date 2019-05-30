@@ -229,16 +229,20 @@
                   href: msal-js-initializing-client-applications.md
             - name: Обработка ошибок и исключений
               href: msal-handling-exceptions.md
+            - name: Тестирование приложений MSAL
+              href: msal-testing.md
             - name: Ведение журналов
               href: msal-logging.md
             - name: Единый вход (JS)
               href: msal-js-sso.md
             - name: Поведение запроса (JS)
               href: msal-js-prompt-behavior.md
-            - name: Предоставление собственного клиента HttpClient (.NET)
-              href: msal-net-provide-httpclient.md
             - name: "Интеграция с Azure\_AD\_B2C"
-              href: msal-b2c-overview.md
+              items:
+                - name: JavaScript
+                  href: msal-b2c-overview.md
+                - name: .NET
+                  href: msal-net-aad-b2c-considerations.md
             - name: Рекомендации и известные проблемы
               items:
                 - name: MSAL.NET
@@ -253,8 +257,6 @@
                       href: msal-net-xamarin-ios-considerations.md
                     - name: Универсальная платформа Windows
                       href: msal-net-uwp-considerations.md
-                    - name: "Применение политики AAD\_B2C"
-                      href: msal-net-aad-b2c-considerations.md
                 - name: MSAL.js
                   items:
                     - name: Рекомендации по использованию Internet Explorer
@@ -360,6 +362,8 @@
                   href: msal-net-instantiate-confidential-client-config-options.md
                 - name: Получение согласия для нескольких ресурсов
                   href: msal-net-user-gets-consent-for-multiple-resources.md
+                - name: Предоставление собственного клиента HttpClient
+                  href: msal-net-provide-httpclient.md
         - name: Работа с Visual Studio
           items:
             - name: Использование подключенной службы Active Directory

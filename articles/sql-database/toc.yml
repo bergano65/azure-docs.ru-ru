@@ -296,6 +296,8 @@
               href: transparent-data-encryption-byok-azure-sql.md
         - name: Атрибуты безопасности
           href: sql-database-security-attributes.md
+        - name: Ограничения компонентов
+          href: sql-database-feature-restrictions.md
     - name: Масштабируемость
       items:
         - name: Общие сведения о масштабируемости
@@ -368,12 +370,20 @@
           href: sql-database-temporal-tables.md
         - name: Автоматизация заданий
           href: sql-database-job-automation-overview.md
-        - name: Службы машинного обучения
+        - name: Связанные службы
+          href: 'https://docs.microsoft.com/sql/relational-databases/linked-servers/linked-servers-database-engine?toc=/azure/sql-database/toc.json'
+        - name: Service Broker
+          href: 'https://docs.microsoft.com/sql/database-engine/configure-windows/sql-server-service-broker?toc=/azure/sql-database/toc.json'
+        - name: Компонент Database Mail
+          href: 'https://docs.microsoft.com/sql/relational-databases/database-mail/database-mail?toc=/azure/sql-database/toc.json'
+        - name: Служба машинного обучения
           items:
             - name: Обзор
               href: sql-database-machine-learning-services-overview.md
             - name: Основные отличия
               href: sql-database-machine-learning-services-differences.md
+        - name: Интеграция со средой CLR (.NET) на стороне сервера
+          href: 'https://docs.microsoft.com/sql/relational-databases/clr-integration/common-language-runtime-integration-overview?toc=/azure/sql-database/toc.json'
 - name: Практические руководства
   items:
     - name: Обзор

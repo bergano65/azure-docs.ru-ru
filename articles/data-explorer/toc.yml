@@ -4,7 +4,7 @@
   items:
     - name: Что такое обозреватель данных?
       href: data-explorer-overview.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   expanded: true
   items:
     - name: Создание кластера и базы данных
@@ -41,15 +41,7 @@
           href: web-query-data.md
         - name: Python
           href: python-query-data.md
-    - name: Визуализируйте данные
-      items:
-        - name: "Power\_BI\_— соединитель"
-          href: power-bi-connector.md
-        - name: "Power\_BI\_— импортированный запрос"
-          href: power-bi-imported-query.md
-        - name: "Power\_BI\_— SQL-запрос"
-          href: power-bi-sql-query.md
-- name: Учебники
+- name: Руководства
   items:
     - name: Прием данных без использования кода
       href: ingest-data-no-code.md
@@ -80,7 +72,21 @@
           href: anomaly-detection.md
         - name: Машинное обучение
           href: machine-learning-clustering.md
-    - name: управление
+    - name: Визуализация данных
+      items:
+        - name: Power BI
+          items:
+            - name: Соединитель
+              href: power-bi-connector.md
+            - name: Импортированный запрос
+              href: power-bi-imported-query.md
+            - name: Запросы SQL
+              href: power-bi-sql-query.md
+        - name: Sisense
+          href: sisense.md
+        - name: Grafana
+          href: grafana.md
+    - name: Управление
       items:
         - name: Управление разрешениями базы данных
           href: manage-database-permissions.md
@@ -108,8 +114,6 @@
           href: kqlmagic.md
         - name: Копирование данных с помощью Фабрики данных Azure
           href: data-factory-load-data.md
-        - name: Визуализация данных в Grafana
-          href: grafana.md
         - name: Подключение с помощью ODBC
           href: connect-odbc.md
     - name: Устранение неполадок
@@ -126,7 +130,7 @@
       href: /azure/kusto/query/
     - name: Команды управления
       href: /azure/kusto/management/
-    - name: Интерфейсы API
+    - name: API
       href: /azure/kusto/api/
     - name: Средства
       href: /azure/kusto/tools/
@@ -138,7 +142,7 @@
       href: 'https://azure.microsoft.com/blog/tag/azure-data-explorer/'
     - name: Форумы
       items:
-        - name: Переполнение стека
+        - name: Stack Overflow
           href: 'https://stackoverflow.com/questions/tagged/azure-data-explorer'
         - name: Техническое сообщество Майкрософт
           href: 'https://techcommunity.microsoft.com/t5/Azure-Data-Explorer/bd-p/Kusto'

@@ -101,6 +101,8 @@
       href: event-sources.md
     - name: Обработчики событий
       href: event-handlers.md
+    - name: Аварийное восстановление с георепликацией
+      href: geo-disaster-recovery.md
 - name: Практические руководства
   items:
     - name: Публикация в пользовательском разделе
@@ -127,7 +129,7 @@
       href: custom-disaster-recovery.md
 - name: Справочные материалы
   items:
-    - name: Инфраструктура CLI Azure
+    - name: "Azure\_CLI"
       href: /cli/azure/eventgrid
     - name: PowerShell
       href: /powershell/module/az.eventgrid
@@ -162,7 +164,7 @@
           href: event-schema-resource-groups.md
         - name: Служебная шина Azure
           href: event-schema-service-bus.md
-        - name: Карты Azure
+        - name: Azure Maps
           href: event-schema-azure-maps.md
     - name: Ресурсы шаблона
       items:

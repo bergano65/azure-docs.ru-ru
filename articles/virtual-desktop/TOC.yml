@@ -2,9 +2,9 @@
   href: index.yml
 - name: Обзор
   items:
-    - name: Виртуальный рабочий стол Windows
+    - name: Что такое Виртуальный рабочий стол Windows
       href: overview.md
-- name: Руководства
+- name: Учебники
   items:
     - name: 1. Создание клиента в Виртуальном рабочем столе Windows
       href: tenant-setup-azure-active-directory.md
@@ -48,6 +48,8 @@
       href: delegated-access-virtual-desktop.md
     - name: Методы балансировки нагрузки пула узлов
       href: host-pool-load-balancing.md
+    - name: Контейнеры профилей FSLogix и Файлы Azure
+      href: fslogix-containers-azure-files.md
 - name: Устранение неполадок
   items:
     - name: 'Общие сведения об устранении неисправностей, отзывы и поддержка'
