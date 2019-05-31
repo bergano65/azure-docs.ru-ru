@@ -1,20 +1,20 @@
 ---
-title: Создание правил брандмауэра базы данных Azure для PostgreSQL и управление ими с помощью Azure CLI
-description: В этой статье описывается, как создать базу данных Azure для правил брандмауэра PostgreSQL и управлять ею с помощью интерфейса командной строки Azure.
+title: Создание и управление правилами брандмауэра в базе данных Azure для PostgreSQL - отдельного сервера с помощью интерфейса командной строки Azure
+description: В этой статье описывается создание и управление правилами брандмауэра в базе данных Azure для PostgreSQL - отдельного сервера с помощью командной строки Azure.
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.devlang: azurecli
 ms.topic: conceptual
-ms.date: 04/09/2019
-ms.openlocfilehash: 9a96361d3fb155ea5b400990690e3c2b1f65f819
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 5/6/2019
+ms.openlocfilehash: 03b1c215994e4089ad0aed4eac3868b05c564c4c
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60422378"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "65067538"
 ---
-# <a name="create-and-manage-azure-database-for-postgresql-firewall-rules-using-azure-cli"></a>Создание правил брандмауэра базы данных Azure для PostgreSQL и управление ими с помощью Azure CLI
+# <a name="create-and-manage-firewall-rules-in-azure-database-for-postgresql---single-server-using-azure-cli"></a>Создание и управление правилами брандмауэра в базе данных Azure для PostgreSQL - отдельного сервера с помощью интерфейса командной строки Azure
 Правила брандмауэра уровня сервера можно использовать для управления доступом к базе данных Azure для сервера PostgreSQL с определенный IP-адрес или диапазон IP-адресов. С помощью удобных команд Azure CLI можно создавать, обновлять, удалять, выводить список и отображать правила брандмауэра для управления сервером. Общие сведения о базе данных Azure для правил брандмауэра PostgreSQL, см. в разделе [базы данных Azure для правил брандмауэра сервера PostgreSQL](concepts-firewall-rules.md).
 
 Правилами виртуальных сетей (VNet) также может использоваться для обеспечения безопасного доступа к серверу. Дополнительные сведения о [Создание и управление виртуальной сетью на базе службы конечных точек и правил, с помощью Azure CLI](howto-manage-vnet-using-cli.md).

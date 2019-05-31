@@ -18,12 +18,12 @@ ms.author: ryanwi
 ms.reviewer: saeeda, jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3ec10359c6f684b1d7fb008946b7ceca2ed626ba
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.openlocfilehash: cd7055794860398ecc6296d0174a691e7fac4450
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65545360"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66235250"
 ---
 # <a name="application-types-for-microsoft-identity-platform"></a>Типы приложений для платформы удостоверений Microsoft
 
@@ -51,7 +51,7 @@ https://login.microsoftonline.com/common/oauth2/v2.0/token
 
 ## <a name="single-page-apps-javascript"></a>Одностраничные приложения (JavaScript)
 
-Многие современные приложения содержат интерфейсное одностраничное приложение, созданное преимущественно на языке JavaScript. Часто они создаются с помощью таких платформ, как AngularJS, Ember.js или Durandal.js. Конечная точка платформы удостоверений Microsoft поддерживает эти приложения с помощью [неявного потока OAuth 2.0](v2-oauth2-implicit-grant-flow.md).
+Многие современные приложения содержат интерфейсное одностраничное приложение, созданное преимущественно на языке JavaScript. Часто они записываются с помощью таких платформ как Angular, React или Vue. Конечная точка платформы удостоверений Microsoft поддерживает эти приложения с помощью [неявного потока OAuth 2.0](v2-oauth2-implicit-grant-flow.md).
 
 В этом потоке приложение получает маркеры непосредственно с платформой Microsoft identity конечной точки, без обмена любого сервера на сервер авторизации. Вся логика аутентификации и обработки сеансов размещается в клиенте JavaScript без перенаправления на дополнительные страницы.
 

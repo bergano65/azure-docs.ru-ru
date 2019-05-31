@@ -12,12 +12,12 @@ ms.author: moslake
 ms.reviewer: ninarn, carlrab
 manager: craigg
 ms.date: 02/28/2019
-ms.openlocfilehash: 96160745fa8702fc6f931904098c28d8968de2c1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: c1db16475224cc3c91a5353ead0aabd091098e14
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60936407"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66240363"
 ---
 # <a name="elastic-pools-help-you-manage-and-scale-multiple-azure-sql-databases"></a>Управление несколькими базами данных SQL Azure и их масштабирование с помощью эластичных пулов
 
@@ -132,7 +132,7 @@ ms.locfileid: "60936407"
 
 ### <a name="elastic-jobs-and-elastic-pools"></a>Эластичные задания и эластичные пулы
 
-Пул упрощает выполнение задач управления, так как позволяет выполнять сценарии в **[заданиях обработки эластичных БД](sql-database-elastic-jobs-overview.md)**. Задания обработки эластичных БД позволяют сократить объем трудоемких операций, связанных с управлением большим количеством баз данных. Сведения о начале работы см. в статье [Начало работы с заданиями обработки эластичных баз данных](sql-database-elastic-jobs-getting-started.md).
+Пул упрощает выполнение задач управления, так как позволяет выполнять сценарии в **[заданиях обработки эластичных БД](elastic-jobs-overview.md)** . Задания обработки эластичных БД позволяют сократить объем трудоемких операций, связанных с управлением большим количеством баз данных.
 
 Дополнительные сведения о других средствах баз данных для работы с несколькими базами данных см. в статье [Развертывание с помощью Базы данных SQL Azure](sql-database-elastic-scale-introduction.md).
 

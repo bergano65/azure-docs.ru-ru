@@ -11,14 +11,14 @@ ms.workload: mobile
 ms.tgt_pltfrm: mobile-xamarin
 ms.devlang: dotnet
 ms.topic: conceptual
-ms.date: 09/24/2018
+ms.date: 05/09/2019
 ms.author: crdun
-ms.openlocfilehash: b99513cad34bba1b050a24795ecb21d0357d19c1
-ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
+ms.openlocfilehash: b0719f6ac2f99f9e665b1265665752dd53ccbaf0
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65416077"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66242663"
 ---
 # <a name="create-a-xamarinforms-app-with-azure"></a>Создание приложения Xamarin.Forms в Azure
 
@@ -39,26 +39,18 @@ ms.locfileid: "65416077"
 * (Необязательно) Чтобы создать приложение iOS, потребуется компьютер Mac с установкой Xcode 9.0 или более поздней версии. Visual Studio для Mac можно использовать для разработки приложений iOS или Visual Studio 2017 или более поздней версии можно использовать (условии, что компьютер Mac доступен в сети).
 
 ## <a name="create-a-new-mobile-apps-back-end"></a>Создание серверной части при помощи функции "Мобильные приложения"
-
-Для создания серверной части при помощи функции "Мобильные приложения" выполните инструкции ниже.
-
 [!INCLUDE [app-service-mobile-dotnet-backend-create-new-service](../../includes/app-service-mobile-dotnet-backend-create-new-service.md)]
 
-Теперь с помощью функции "Мобильные приложения" мы настроили серверную часть, которую могут использовать ваши мобильные приложения. Далее мы скачаем серверный проект со списком простых задач и опубликуем его в Azure.
+## <a name="create-a-database-connection-and-configure-the-client-and-server-project"></a>Создание подключения к базе данных и настройка проекта клиента и сервера
+[!INCLUDE [app-service-mobile-configure-new-backend.md](../../includes/app-service-mobile-configure-new-backend.md)]
 
-## <a name="configure-the-server-project"></a>Настройка серверного проекта
-
-Чтобы настроить серверный проект для использования серверной части .NET или Node.js, выполните инструкции ниже.
-
-[!INCLUDE [app-service-mobile-configure-new-backend](../../includes/app-service-mobile-configure-new-backend.md)]
-
-## <a name="download-and-run-the-xamarinforms-solution"></a>Скачивание и запуск решения Xamarin.Forms
+## <a name="run-the-xamarinforms-solution"></a>Запуск решения Xamarin.Forms
 
 Инструменты Visual Studio для Xamarin необходимы, чтобы открыть решение, как описано в [инструкциях по установке Xamarin][Install Xamarin]. Если эти инструменты уже установлены, сделайте следующее, чтобы скачать и открыть решение:
 
 ### <a name="visual-studio"></a>Visual Studio
 
-1. Перейдите на [портал Azure].
+1. Перейдите на [портал Azure](https://portal.azure.com/).
 
 2. В колонке параметров мобильного приложения щелкните **Быстрый запуск** (в разделе "Развертывание") > **Xamarin.Forms**. На этапе 3 выберите **Создать приложение** (если вы еще не сделали этого).  Затем нажмите кнопку **Загрузить** .
 
@@ -66,25 +58,23 @@ ms.locfileid: "65416077"
 
 3. Извлеките Скачанный проект и откройте его в Visual Studio.
 
-   ![Извлеченный проект в Visual Studio][8]
-
 4. Приведенные ниже инструкции позволяют запустить проект Android или Windows, а если в сети есть доступный компьютер Mac, то и проект iOS.
 
 ### <a name="visual-studio-for-mac"></a>Visual Studio для Mac
 
-1. Перейдите на [портал Azure].
+1. Перейдите к [портала Azure](https://portal.azure.com/) и перейдите к мобильное приложение, которое вы создали. На `Overview` колонке найдите URL-адрес, который является общедоступной конечной точки для мобильного приложения. Пример - sitename для моей имя приложения «test123» будет https://test123.azurewebsites.net.
 
-2. В колонке параметров мобильного приложения щелкните **Быстрый запуск** (в разделе "Развертывание") > **Xamarin.Forms**. На этапе 3 выберите **Создать приложение** (если вы еще не сделали этого).  Затем нажмите кнопку **Загрузить** .
+2. Откройте файл `Constants.cs` в этой папке - xamarin.forms/ZUMOAPPNAME. Имя приложения — `ZUMOAPPNAME`.
 
-   После этого будет скачан проект, содержащий клиентское приложение, подключенное к вашему мобильному приложению. Сохраните сжатый файл проекта на локальном компьютере и запомните путь к нему.
+3. В `Constants.cs` класса, замените `ZUMOAPPURL` переменной с общедоступной конечной точки выше.
 
-3. Извлеките скачанный проект и откройте его в Visual Studio для Mac.
+    `public static string ApplicationURL = @"ZUMOAPPURL";`
 
-   ![Извлеченный проект в Visual Studio для Mac][9]
+    становится
 
-4. Выполните следующие инструкции, чтобы запустить проекты Android или iOS.
-
-
+    `public static string ApplicationURL = @"https://test123.azurewebsites.net";`
+    
+4. Приведенные ниже инструкции позволяют запустить проект Android или Windows, а если в сети есть доступный компьютер Mac, то и проект iOS.
 
 ## <a name="optional-run-the-android-project"></a>(Необязательно) Запуск проекта Android
 
@@ -106,9 +96,7 @@ ms.locfileid: "65416077"
 
 2. Чтобы выполнить сборку проекта и запустить приложение в эмуляторе Android, щелкните пункт меню **Выполнить**, а затем **Начать отладку**.
 
-
-
-В приложении введите содержательный текст, например *Изучение Xamarin*, и выберите знак плюса (**+**).
+В приложении введите содержательный текст, например *Изучение Xamarin*, и выберите знак плюса ( **+** ).
 
 ![Приложение Android для списка задач][11]
 
@@ -138,9 +126,7 @@ ms.locfileid: "65416077"
 
 2. В меню **Выполнить** выберите **Начать отладку**, чтобы выполнить сборку проекта и запустить приложение в эмуляторе iPhone.
 
-
-
-В приложении введите содержательный текст, например *Изучение Xamarin*, и выберите знак плюса (**+**).
+В приложении введите содержательный текст, например *Изучение Xamarin*, и выберите знак плюса ( **+** ).
 
 ![Приложение iOS для списка задач][10]
 
@@ -167,9 +153,7 @@ ms.locfileid: "65416077"
 > [!NOTE]
 > Проект Windows нельзя запускать на macOS.
 
-
-
-В приложении введите содержательный текст, например *Изучение Xamarin*, и выберите знак плюса (**+**).
+В приложении введите содержательный текст, например *Изучение Xamarin*, и выберите знак плюса ( **+** ).
 
 После этого в новую серверную часть, созданную при помощи функции "Мобильные приложения" и размещенную в Azure, будет отправлен запрос POST. Данные из запроса вставляются в таблицу TodoItem. Элементы, хранящиеся в таблице, возвращаются серверной частью, созданной при помощи функции "Мобильные приложения", а данные отображаются в списке.
 
@@ -185,32 +169,10 @@ ms.locfileid: "65416077"
 
 Обратите внимание, что все пакеты поддержки, на которые содержатся ссылки в проекте Android, должны быть одной версии. [Пакет NuGet для мобильных приложений Azure](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/) имеет зависимость `Xamarin.Android.Support.CustomTabs` для платформы Android, поэтому если в проекте используются пакеты поддержки более новой версии, во избежание конфликтов необходимо установить требуемую версию пакета.
 
-## <a name="next-steps"></a>Дальнейшие действия
-
-* [Добавление аутентификации в приложение](app-service-mobile-xamarin-forms-get-started-users.md). Сведения об аутентификации пользователей приложения с помощью поставщика удостоверений.
-
-* [Добавление push-уведомлений в приложение](app-service-mobile-xamarin-forms-get-started-push.md). Сведения о включении в мобильном приложении поддержки push-уведомлений и настройке в серверной части, созданной с помощью функции "Мобильные приложения", концентраторов уведомлений Azure для отправки push-уведомлений.
-
-* [Включение автономной синхронизации для мобильного приложения](app-service-mobile-xamarin-forms-get-started-offline-data.md). Сведения о включении поддержки автономной работы приложения с помощью серверной части мобильного приложения. Автономная синхронизация позволяет просматривать, добавлять или изменять данные мобильного приложения даже при отсутствии подключения к сети.
-
-* [Использование управляемого клиента для функции "Мобильные приложения"](app-service-mobile-dotnet-how-to-use-client-library.md). Сведения об использовании пакета SDK для управляемого клиента в приложении Xamarin.
-
-* [Другие службы Azure с Xamarin.Forms](https://docs.microsoft.com/xamarin/xamarin-forms/data-cloud/). Сведения о добавлении в приложения Xamarin.Forms дополнительных функций Azure, такие как поиск, хранилище и (или) когнитивные службы.
-
-<!-- Anchors. -->
-[Get started with Mobile Apps back ends]:#getting-started
-[Create a new Mobile Apps back end]:#create-new-service
-[Next steps]:#next-steps
-
 <!-- Images. -->
-[6]: ./media/app-service-mobile-xamarin-forms-get-started/xamarin-forms-quickstart.png
-[8]: ./media/app-service-mobile-xamarin-forms-get-started/xamarin-forms-quickstart-vs.png
-[9]: ./media/app-service-mobile-xamarin-forms-get-started/xamarin-forms-quickstart-xs.png
 [10]: ./media/app-service-mobile-xamarin-forms-get-started/mobile-quickstart-startup-ios.png
 [11]: ./media/app-service-mobile-xamarin-forms-get-started/mobile-quickstart-startup-android.png
 [12]: ./media/app-service-mobile-xamarin-forms-get-started/mobile-quickstart-startup-windows.png
 
 <!-- URLs. -->
 [Install Xamarin]: https://docs.microsoft.com/xamarin/cross-platform/get-started/installation/
-[Mobile app SDK]: https://go.microsoft.com/fwlink/?LinkId=257545
-[портал Azure]: https://portal.azure.com/

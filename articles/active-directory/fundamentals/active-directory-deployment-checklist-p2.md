@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6e9ee0d6fab96c84eee8a520d01d97faddab49f2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 8b0844030d069fba40bfd2fdf55252d8b9e3b1c2
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60249711"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66235127"
 ---
 # <a name="azure-active-directory-feature-deployment-guide"></a>Руководство по развертыванию компонентов Azure Active Directory
 
@@ -65,7 +65,7 @@ ms.locfileid: "60249711"
 | Задача | Описание | Требуемая лицензия |
 | ---- | ------ | ---------------- |
 | [Установка Azure AD Connect](../connect/active-directory-aadconnect-select-installation.md) | Приготовьтесь к синхронизации пользователей из существующего локального каталога в облако. | Azure AD уровня "Бесплатный" |
-| [Реализация синхронизации хэшей паролей](../connect/active-directory-aadconnectsync-implement-password-hash-synchronization.md) | Синхронизируйте хэши паролей, чтобы разрешить репликацию изменений пароля, обнаружение и исправление неправильных паролей, а также формирование отчетов об утечке учетных данных. | Azure AD Premium P1 |
+| [Реализация синхронизации хэшей паролей](../connect/active-directory-aadconnectsync-implement-password-hash-synchronization.md) | Синхронизируйте хэши паролей, чтобы разрешить репликацию изменений пароля, обнаружение и исправление неправильных паролей, а также формирование отчетов об утечке учетных данных. | Azure AD уровня "Бесплатный" |
 | [Реализация обратной записи паролей](../authentication/howto-sspr-writeback.md) | Разрешите обратную запись измененного в облаке пароля в локальной среде Active Directory в Windows Server. | Azure AD Premium P1 |
 | [Внедрение Azure AD Connect Health](../connect-health/active-directory-aadconnect-health.md) | Включите мониторинг статистики ключевых показателей работоспособности для серверов Azure AD Connect, серверов AD FS и контроллеров домена. | Azure AD Premium P1 |
 | [Назначение лицензий пользователям в соответствии с членством в группах в Azure Active Directory](../users-groups-roles/licensing-groups-assign.md) | Экономьте время и силы, создавая группы лицензирования, с помощью которых можно включать и отключать компоненты по группам вместо настройки для каждого пользователя. | |

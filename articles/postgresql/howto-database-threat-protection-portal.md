@@ -1,19 +1,19 @@
 ---
-title: Расширенная защита от угроз — база данных Azure для PostgreSQL
+title: Advanced Threat Protection - база данных Azure для PostgreSQL — одном сервере
 description: Система защиты от угроз обнаруживает подозрительные действия в базе данных, указывающие на наличие потенциальных угроз безопасности.
 author: bolzmj
 ms.author: mbolz
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 01/24/2019
-ms.openlocfilehash: bbb48708d0e5a7cd07a3971a6966f40696107562
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 5/6/2019
+ms.openlocfilehash: a69a8b651188b9566fdbec4bc6de09a8fec164c7
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60421337"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "65067462"
 ---
-# <a name="advanced-threat-protection-for-azure-database-for-postgresql"></a>Расширенная защита от угроз для Базы данных Azure для PostgreSQL
+# <a name="advanced-threat-protection-for-azure-database-for-postgresql---single-server"></a>Расширенная защита от угроз для базы данных Azure для PostgreSQL: один сервер
 
 Служба "Расширенная защита от угроз" для Базы данных Azure для PostgreSQL позволяет выявить подозрительную активность, указывающую на необычные и потенциально опасные попытки получить доступ к базам данных или воспользоваться ими.
 
@@ -28,7 +28,7 @@ ms.locfileid: "60421337"
 
 ## <a name="set-up-threat-detection"></a>Настройка обнаружения угроз
 1. Запустите портал Azure: [https://portal.azure.com](https://portal.azure.com).
-2. Перейдите на страницу настройки сервера Базы данных Azure для PostgreSQL, который требуется защитить. В параметрах безопасности выберите **Расширенная защита от угроз (предварительная версия)**.
+2. Перейдите на страницу настройки сервера Базы данных Azure для PostgreSQL, который требуется защитить. В параметрах безопасности выберите **Расширенная защита от угроз (предварительная версия)** .
 3. На странице настройки **Расширенная защита от угроз (предварительная версия)** сделайте следующее:
 
    - Включите расширенную защиту от угроз на сервере.

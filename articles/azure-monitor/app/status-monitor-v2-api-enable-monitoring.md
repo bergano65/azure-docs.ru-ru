@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: tilee
-ms.openlocfilehash: 17798c78b167821f5f30a11996ac90cf67fb0179
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 0a443df0c55dc916ef6d12d53811e9d9932370e7
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65144947"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66255919"
 ---
 # <a name="status-monitor-v2-api-enable-applicationinsightsmonitoring-v021-alpha"></a>Состояние монитора v2 API: Enable-ApplicationInsightsMonitoring (v0.2.1-альфа-версия)
 
@@ -28,7 +28,7 @@ ms.locfileid: "65144947"
 > Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
 > Дополнительные сведения см. в разделе [дополнительные условия использования предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)
 
-## <a name="description"></a>ОПИСАНИЕ
+## <a name="description"></a>Описание
 
 Включение кода без участия присоединения, мониторинг приложений IIS на целевом компьютере.
 Этот командлет будет изменять IIS applicationHost.config и задать некоторые разделы реестра.
@@ -156,7 +156,7 @@ Successfully enabled Application Insights Status Monitor
  - [Изучите метрики](../../azure-monitor/app/metrics-explorer.md), чтобы отслеживать производительность и использование.
 - [Поиск событий и журналов](../../azure-monitor/app/diagnostic-search.md) для диагностики проблем
 - [Аналитика](../../azure-monitor/app/analytics.md) для создания расширенных запросов.
-- [Создайте панели мониторинга](../../azure-monitor/app/app-insights-dashboards.md)
+- [Создайте панели мониторинга](../../azure-monitor/app/overview-dashboard.md)
  
  Добавление данных телеметрии:
  - [Создание веб-тестов](monitor-web-app-availability.md) чтобы убедиться, что ваш сайт продолжает работать.

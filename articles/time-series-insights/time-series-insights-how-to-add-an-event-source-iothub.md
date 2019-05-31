@@ -4,19 +4,19 @@ description: Из этой статьи вы узнаете, как добави
 ms.service: time-series-insights
 services: time-series-insights
 author: ashannon7
-ms.author: anshan
+ms.author: dpalled
 manager: cshankar
 ms.reviewer: v-mamcge, jasonh, kfile, anshan
 ms.workload: big-data
 ms.topic: conceptual
 ms.date: 05/01/2019
 ms.custom: seodec18
-ms.openlocfilehash: 258b603b8cd2e0cdfcc72ca17cd3cb0d034caf5b
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 79d2062f0e174eeb7550205f90c1650185e1623a
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65143353"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66236989"
 ---
 # <a name="add-an-iot-hub-event-source-to-your-time-series-insights-environment"></a>Добавление в среду службы "Аналитика временных рядов Azure" источник событий центра Интернета вещей
 
@@ -73,7 +73,7 @@ ms.locfileid: "65143353"
 
    [![Новая область источника событий - свойства для указания в использовать центр Интернета вещей из доступных подписок параметр](media/time-series-insights-how-to-add-an-event-source-iothub/iothub_four.png)](media/time-series-insights-how-to-add-an-event-source-iothub/iothub_four.png#lightbox)
 
-   | Свойство | ОПИСАНИЕ |
+   | Свойство | Описание |
    | --- | --- |
    | Идентификатор подписки | Выберите подписку, в которой был создан центр Интернета вещей.
    | IoT hub name (Имя Центра Интернета вещей) | Выберите имя центра Интернета вещей.
@@ -85,7 +85,7 @@ ms.locfileid: "65143353"
 
 1. В следующей таблице описаны обязательные свойства при выборе варианта **Указать параметры Центра Интернета вещей вручную**:
 
-   | Свойство | ОПИСАНИЕ |
+   | Свойство | Описание |
    | --- | --- |
    | Идентификатор подписки | Подписка, в которой был создан центр Интернета вещей.
    | Группа ресурсов | Имя группы ресурсов, в которой создан центр Интернета вещей.

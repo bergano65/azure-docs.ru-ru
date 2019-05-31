@@ -5,15 +5,15 @@ services: virtual-machines
 author: cynthn
 ms.service: virtual-machines
 ms.topic: include
-ms.date: 04/25/2019
+ms.date: 05/21/2019
 ms.author: cynthn
 ms.custom: include file
-ms.openlocfilehash: 82187b05a398c066f9da94c57cbe8a59a6ba3275
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
-ms.translationtype: HT
+ms.openlocfilehash: bae66078a1bcb1d80f0798b1d501598fa785fb80
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66145806"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66241209"
 ---
 ## <a name="launch-azure-cloud-shell"></a>Запуск Azure Cloud Shell
 
@@ -105,3 +105,20 @@ $job.State
 >
 > Можно также хранить вашей версии образа в [избыточное хранилище](https://docs.microsoft.com/azure/storage/common/storage-redundancy-zrs) , добавив `-StorageAccountType Standard_ZRS` при создании версию образа.
 >
+
+
+## <a name="share-the-gallery"></a>Общий доступ к коллекции.
+
+Рекомендуется, чтобы совместно использовать доступ на уровне коллекции изображений. Использовать адрес электронной почты и [Get-AzADUser](/powershell/module/az.resources/get-azaduser) командлет, чтобы получить идентификатор объекта для пользователя, а затем используйте [New AzRoleAssignment](/powershell/module/Az.Resources/New-AzRoleAssignment) чтобы предоставить им доступ к коллекции. Замените пример электронного письма, alinne_montes@contoso.com в этом примере собственными данными.
+
+```azurepowershell-interactive
+# Get the object ID for the user
+$user = Get-AzADUser -StartsWith alinne_montes@contoso.com
+# Grant access to the user for our gallery
+New-AzRoleAssignment `
+   -ObjectId $user.Id `
+   -RoleDefinitionName Reader `
+   -ResourceName $gallery.Name `
+   -ResourceType Microsoft.Compute/galleries `
+   -ResourceGroupName $resourceGroup.ResourceGroupName
+```

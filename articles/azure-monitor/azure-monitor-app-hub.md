@@ -10,12 +10,12 @@ ms.service: application-insights
 ms.topic: landing-page
 ms.date: 01/15/2019
 ms.author: mbullwin
-ms.openlocfilehash: 514f0c193dbbca6d8583c9f93feadee3415f163c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 451a2d6e658c08823d1629270bb7503ebd236c02
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60494615"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66255698"
 ---
 <div id="main" class="v2">
     <div class="container">
@@ -56,22 +56,7 @@ ms.locfileid: "60494615"
                                                 </a>
                                             </li>
                                             <li>
-                                                <a href="">
-                                                    <div class="cardSize">
-                                                        <div class="cardPadding">
-                                                            <div class="card">
-                                                                <div class="cardImageOuter">
-                                                                    <div class="cardImage">
-                                                                        <img alt="" src="/learn/achievements/secure-azure-resources-with-conditional-access.svg" data-linktype="external">
-                                                                    </div>
-                                                                </div>
-                                                                <div class="cardText" style="padding-left: 0px">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </li>
+                                           </li>
                                         </ul>
                                     </li>
                                     <li>
@@ -79,7 +64,13 @@ ms.locfileid: "60494615"
                                             <div class="cardPadding">
                                                 <div class="card">
                                                     <div class="cardText">
-                                                        <h3>Быстрое начало работы</h3>
+                                                        <h3>Новые возможности</h3>
+                                                        <p>
+                                                            <a href="./app/kubernetes.md">Мониторинг приложений в Kubernetes</a><br>
+                                                            <a href="./app/status-monitor-v2-overview.md">Состояние монитора v2 для приложений IIS</a><br>
+                                                        </p>
+                                                        <br><br>
+                                                        <h3>Краткие руководства</h3>
                                                         <p>
                                                             <a href="./learn/quick-monitor-portal.md">ASP.NET</a><br>
                                                             <a href="./learn/dotnetcore-quick-start.md">ASP.NET Core</a><br>
@@ -89,7 +80,7 @@ ms.locfileid: "60494615"
                                                             <a href="./app/website-monitoring.md">Запуск мониторинга веб-сайта</a>
                                                         </p>
                                                         <br><br>
-                                                        <h3>Учебники</h3>
+                                                        <h3>Руководства</h3>
                                                         <p>
                                                             <a href="./learn/tutorial-runtime-exceptions.md">Поиск и диагностика исключений во время выполнения</a><br>
                                                             <a href="./learn/tutorial-performance.md">Поиск и диагностика проблем производительности</a><br>
@@ -192,7 +183,7 @@ ms.locfileid: "60494615"
                                                     <div class="cardText">
                                                         <h3>Анализ поведения пользователей</h3>
                                                         <p>
-                                                            <a href="./app/usage-overview.md">Обзор</a><br>
+                                                            <a href="./app/usage-overview.md">Обзор набора средств Visual Studio для Unity</a><br>
                                                             <a href="./app/usage-send-user-context.md">Отправка идентификаторов контекста пользователей для обеспечения оптимальной работы в Azure Application Insights</a><br>
                                                             <a href="./app/usage-segmentation.md">Анализ пользователей, сеансов и событий в Application Insights</a><br>
                                                             <a href="./app/usage-funnels.md">Воронки</a><br>
@@ -225,7 +216,7 @@ ms.locfileid: "60494615"
                                                         <br><br>
                                                         <h3>Модель данных</h3>
                                                         <p>
-                                                            <a href="./app/data-model.md">Обзор</a><br>
+                                                            <a href="./app/data-model.md">Обзор набора средств Visual Studio для Unity</a><br>
                                                             <a href="./app/data-model-request-telemetry.md">Запрос</a><br>
                                                             <a href="./app/data-model-dependency-telemetry.md">Dependency</a><br>
                                                             <a href="./app/data-model-exception-telemetry.md">Исключение</a><br>

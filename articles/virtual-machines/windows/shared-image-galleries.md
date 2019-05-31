@@ -1,6 +1,6 @@
 ---
-title: Предоставление доступа к образам виртуальных машин с помощью коллекции общих образов в Azure | Документация Майкрософт
-description: Узнайте, как предоставлять сотрудникам своей организации доступ к образам виртуальных машин с помощью коллекции общих образов в Azure.
+title: Общий коллекции образов Azure | Документация Майкрософт
+description: Узнайте, как предоставлять сотрудникам своей организации доступ к образам виртуальных машин с помощью коллекций общих образов.
 services: virtual-machines-windows
 documentationcenter: virtual-machines
 author: axayjo
@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 05/06/2019
 ms.author: akjosh; cynthn
 ms.custom: ''
-ms.openlocfilehash: 6c19f26cd382c89e7fdb90473581d256e762cf5e
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: 982a24cc47ff17c56b1d75e4dcdc01f15ebdea32
+ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65236487"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66418422"
 ---
 # <a name="shared-image-gallery-overview"></a>Обзор коллекции общих образов
 

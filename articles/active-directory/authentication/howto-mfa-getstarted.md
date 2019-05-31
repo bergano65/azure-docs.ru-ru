@@ -11,14 +11,14 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6c2c5006eb050b70b783ab8199724e0e98766381
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 1ca69fc23d580b61e74fe56b3d0c3524fdfad747
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60359347"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66235533"
 ---
-# <a name="planning-a-cloud-based-azure-multi-factor-authentication"></a>Планирование облачных многофакторной идентификации Azure
+# <a name="planning-a-cloud-based-azure-multi-factor-authentication-deployment"></a>Планирование развертывания облачной многофакторной идентификации Azure
 
 Пользователи подключаются к ресурсам организации на все более сложные сценарии. Людей используют для подключения из принадлежащие организации, личных и общих устройств на и вне корпоративной сети с использованием смарт-телефоны, планшеты, ПК и ноутбуки, часто на нескольких платформах. В этом мире всегда подключены, нескольких устройств и нескольких платформ безопасность учетных записей пользователей важнее, чем когда-либо. Пароли, независимо от их сложности, используемый между устройствами, сетями и платформами, больше не достаточно для обеспечения безопасности учетной записи пользователя, особенно в том случае, если пользователи склонны используйте пароли повторно для учетных записей. Сложных фишинг и другие методы социальной инженерии, можно привести имена пользователей и пароли, ID и проданных в публичного атак.
 
@@ -46,7 +46,7 @@ ms.locfileid: "60359347"
 
 Корпорация Майкрософт предоставляет [шаблоны взаимодействия](https://aka.ms/mfatemplates) и [документации для конечных пользователей](../user-help/security-info-setup-signin.md) помогут создать черновик связи. Вы можете перенаправить пользователей к [ https://myprofile.microsoft.com ](https://myprofile.microsoft.com) регистрируемый напрямую, выбрав **сведения о безопасности** ссылки на этой странице.
 
-## <a name="deployment-considerations"></a>Требования к развертыванию
+## <a name="deployment-considerations"></a>Рекомендации по развертыванию
 
 Многофакторная Идентификация Azure развертывается путем применения политик с помощью условного доступа. Объект [политики условного доступа](../conditional-access/overview.md) может требоваться выполнить многофакторную проверку подлинности при выполнении определенных условий такие как:
 
@@ -60,14 +60,12 @@ ms.locfileid: "60359347"
 * Устройства, соответствующие требованиям
 * Гибридные устройства, присоединенные к Azure AD
 * Утвержденные клиентские приложения
- 
 
-Используйте настраиваемые плакаты и шаблоны сообщений электронной почты в [материалы, внедрение многофакторной проверки подлинности] для развертывания многофакторной проверки подлинности для вашей организации. (https://www.microsoft.com/en-us/download/details.aspx?id=57600&WT.mc_id=rss_alldownloads_all)
+Используйте настраиваемые плакатов и шаблонов писем в [материалы внедрение многофакторной проверки подлинности](https://www.microsoft.com/download/details.aspx?id=57600&WT.mc_id=rss_alldownloads_all) для развертывания многофакторной проверки подлинности для вашей организации.
 
 ## <a name="enable-multi-factor-authentication-with-conditional-access"></a>Включение службы Многофакторной идентификации Azure с условным доступом
 
 Политики условного доступа принудительная регистрация, требуя незарегистрированных пользователей завершить регистрацию при первом входе в систему, рассмотрения важный элемент обеспечения безопасности.
-
 
 [Защита идентификации Azure AD](../identity-protection/howto-configure-risk-policies.md) вносит политики регистрации и политики автоматических риска обнаружение и исправление в истории многофакторной идентификации Azure. Политики могут быть созданы для принудительного изменения пароля, когда существует угроза скомпрометированного удостоверения или требовать многофакторную Идентификацию, если вход в систему считается рискованные ниже [события](../reports-monitoring/concept-risk-events.md):
 
@@ -97,7 +95,7 @@ ms.locfileid: "60359347"
       2. Укажите диапазоны IP-адрес
    2. При использовании страны и регионы
       1. Разверните раскрывающееся меню и выберите стран или регионов, которые необходимо определить для этого именованного расположения.
-      2. Решить, следует ли включить неизвестные области. Неизвестные области — это IP-адреса, которые невозможно сопоставить со страной или регионом.
+      2. Решить, следует ли включить неизвестные области. Неизвестные области — это IP-адресов, не может быть сопоставлен страны или региона.
 7. Нажмите кнопку **Создать**.
 
 ## <a name="plan-authentication-methods"></a>Планирование методов проверки подлинности
@@ -145,13 +143,13 @@ Push-уведомление отправляется в приложение Mic
 
 Если ваша организация использует Azure Active Directory Identity Protection, [Настройка политики регистрации многофакторной проверки Подлинности](../identity-protection/howto-mfa-policy.md) запрашивать пользователям зарегистрироваться при следующем входе в интерактивном режиме.
 
-### <a name="registration-without-identity-protection"></a>Регистрация без identity Protection
+### <a name="registration-without-identity-protection"></a>Регистрация без защиты идентификации
 
 Если вашей организации нет лицензий, включение защиты идентификации Azure, пользователям предлагается зарегистрироваться при следующем обязательна многофакторная проверка Подлинности при входе в систему. Пользователи могут быть не зарегистрирована для многофакторной проверки Подлинности, если они не используют приложения, защищенные с помощью многофакторной проверки Подлинности. Очень важно для получения всех пользователей, зарегистрированных недобросовестных сторон не может подобрать пароль пользователя и регистрации для многофакторной проверки Подлинности от их имени, эффективно контролирует учетной записи.
 
 #### <a name="enforcing-registration"></a>Принудительной регистрацией
 
-Выполнив следующие действия в политике условного доступа можно принудительно регистрации для многофакторной проверки подлинности пользователей
+Выполнив следующие действия условного доступа политики можно принудительно регистрации для многофакторной проверки подлинности пользователей
 
 1. Создайте группу, добавить всех пользователей, не зарегистрирован.
 2. С помощью условного доступа, применять многофакторную проверку подлинности для этой группы, для доступа ко всем ресурсам.
@@ -169,6 +167,72 @@ Get-MsolUser -All | where {$_.StrongAuthenticationMethods -ne $null} | Select-Ob
 
 ```PowerShell
 Get-MsolUser -All | where {$_.StrongAuthenticationMethods.Count -eq 0} | Select-Object -Property UserPrincipalName | Sort-Object userprincipalname 
+```
+
+### <a name="convert-users-from-per-user-mfa-to-conditional-access-based-mfa"></a>Convert пользователей из многофакторной проверки Подлинности пользователя для условного доступа на основе многофакторной проверки Подлинности
+
+Если пользователи были включены с помощью включена для пользователя и принудительная многофакторная Идентификация Azure следующую команду PowerShell можно поможет выполнить преобразование в условного доступа на основе многофакторной идентификации Azure.
+
+```PowerShell
+# Disable MFA for all users, keeping their MFA methods intact
+Get-MsolUser -All | Disable-MFA -KeepMethods
+
+# Enforce MFA for all users
+Get-MsolUser -All | Set-MfaState -State Enforced
+
+# Wrapper to disable MFA with the option to keep the MFA
+# methods (to avoid having to proof-up again later)
+function Disable-Mfa {
+
+    [CmdletBinding()]
+    param(
+        [Parameter(ValueFromPipeline=$True)]
+        $User,
+        [switch] $KeepMethods
+    )
+
+    Process {
+
+        Write-Verbose ("Disabling MFA for user '{0}'" -f $User.UserPrincipalName)
+        $User | Set-MfaState -State Disabled
+
+        if ($KeepMethods) {
+            # Restore the MFA methods which got cleared when disabling MFA
+            Set-MsolUser -ObjectId $User.ObjectId `
+                         -StrongAuthenticationMethods $User.StrongAuthenticationMethods
+        }
+    }
+}
+
+# Sets the MFA requirement state
+function Set-MfaState {
+
+    [CmdletBinding()]
+    param(
+        [Parameter(ValueFromPipelineByPropertyName=$True)]
+        $ObjectId,
+        [Parameter(ValueFromPipelineByPropertyName=$True)]
+        $UserPrincipalName,
+        [ValidateSet("Disabled","Enabled","Enforced")]
+        $State
+    )
+
+    Process {
+        Write-Verbose ("Setting MFA state for user '{0}' to '{1}'." -f $ObjectId, $State)
+        $Requirements = @()
+        if ($State -ne "Disabled") {
+            $Requirement =
+                [Microsoft.Online.Administration.StrongAuthenticationRequirement]::new()
+            $Requirement.RelyingParty = "*"
+            $Requirement.State = $State
+            $Requirements += $Requirement
+        }
+
+        Set-MsolUser -ObjectId $ObjectId -UserPrincipalName $UserPrincipalName `
+                     -StrongAuthenticationRequirements $Requirements
+    }
+}
+
 ```
 
 ## <a name="plan-conditional-access-policies"></a>Планирование политик условного доступа
@@ -200,7 +264,7 @@ Get-MsolUser -All | where {$_.StrongAuthenticationMethods.Count -eq 0} | Select-
 1. Для переключателя **Включить политику** установите значение **Вкл.**
 1. Нажмите кнопку **Создать**.
 
-![Создание политики условного доступа для включения MFA для пользователей портала Azure в пилотной группе](media/howto-mfa-getstarted/conditionalaccess-newpolicy.png)
+![Создание политики условного доступа, чтобы включить MFA для пользователей Azure портала в пилотной группе](media/howto-mfa-getstarted/conditionalaccess-newpolicy.png)
 
 ## <a name="plan-integration-with-on-premises-systems"></a>Планирование интеграции с локальными системами
 
@@ -210,7 +274,7 @@ Get-MsolUser -All | where {$_.StrongAuthenticationMethods.Count -eq 0} | Select-
 * Локальные приложения RADIUS, которые нужно будет использовать адаптер многофакторной проверки Подлинности с NPS-сервер.
 * Локальных приложений AD FS, которые потребуются для использования адаптером MFA с AD FS 2016.
 
-Приложения, которые прямой проверки подлинности в Azure AD и современную аутентификацию (WS-Fed, SAML, OAuth, OpenID Connect) можно сделать непосредственно использовать политик условного доступа.
+Приложения, которые прямой проверки подлинности в Azure AD и современную аутентификацию (WS-Fed, SAML, OAuth, OpenID Connect) можно воспользоваться условного доступа политики напрямую.
 
 ### <a name="use-azure-mfa-with-azure-ad-application-proxy"></a>Использование Azure MFA с помощью прокси приложения Azure AD
 
@@ -227,7 +291,7 @@ Get-MsolUser -All | where {$_.StrongAuthenticationMethods.Count -eq 0} | Select-
 * С помощью протокола CHAPv2 поддерживаются только Push-уведомления приложения структуры проверки подлинности и голосовой вызов.
 * Невозможно применить политики условного доступа.
 
-Расширение NPS выполняет функции адаптера между RADIUS и облачной службе Azure MFA предоставлять второй фактор проверки подлинности для защиты [VPN](howto-mfa-nps-extension-vpn.md), [подключений шлюза удаленных рабочих столов](howto-mfa-nps-extension-rdg.md), или другие поддерживает RADIUS приложения. Пользователи, что регистрация для Azure MFA в этой среде запрашиваются все попытки проверки подлинности, отсутствие среднее политики условного доступа многофакторной проверки Подлинности требуется всегда.
+Расширение NPS выполняет функции адаптера между RADIUS и облачной службе Azure MFA предоставлять второй фактор проверки подлинности для защиты [VPN](howto-mfa-nps-extension-vpn.md), [подключений шлюза удаленных рабочих столов](howto-mfa-nps-extension-rdg.md), или другие поддерживает RADIUS приложения. Пользователи, что регистрация для Azure MFA в этой среде запрашиваются все попытки проверки подлинности, отсутствие политики условного доступа означает, что всегда обязательна многофакторная проверка Подлинности.
 
 #### <a name="implementing-your-nps-server"></a>Реализация сервера политики сети
 
@@ -304,7 +368,7 @@ Get-MsolUser -All | where {$_.StrongAuthenticationMethods.Count -eq 0} | Select-
 
 Многофакторная Идентификация Azure предоставляет отчеты на портале Azure:
 
-| Отчет | Location | ОПИСАНИЕ |
+| Отчет | Расположение | Описание |
 | --- | --- | --- |
 | Предупреждения об использовании и о мошенничестве | "Azure AD > События входа" | Сведения об общем использовании, сводка пользователей, сведения о пользователях, а также история предупреждений о мошенничестве, отправленных в течение указанного диапазона дат. |
 

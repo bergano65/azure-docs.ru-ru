@@ -1,6 +1,6 @@
 ---
 title: Управление и наблюдение за важной рабочей нагрузки в хранилище данных SQL Azure | Документация Майкрософт
-description: Узнайте, как управлять и отслеживать запрос уровня важности
+description: Узнайте, как управлять и отслеживать запрос уровня важности.
 services: sql-data-warehouse
 author: ronortloff
 manager: craigg
@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 05/20/2019
 ms.author: rortloff
 ms.reviewer: igorstan
-ms.openlocfilehash: 8d6cd80f569be58b520a53faa0d4bda8f86af104
-ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
+ms.openlocfilehash: a39d71e0f8b8072cab6a3af9a2f0913973f303ee
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66003496"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66235929"
 ---
 # <a name="manage-and-monitor-workload-importance-in-azure-sql-data-warehouse"></a>Управление и наблюдение за важной рабочей нагрузки в хранилище данных SQL Azure
 

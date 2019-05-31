@@ -7,12 +7,12 @@ ms.service: storage
 ms.topic: article
 ms.date: 09/19/2018
 ms.author: rogarana
-ms.openlocfilehash: af903ce3ce7cfa165c278e415827dda36630e7b4
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: ad8ddf7e9e324bbcc48f15c95870a24fe7476828
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65209728"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66237768"
 ---
 # <a name="overview-of-azure-active-directory-authentication-over-smb-for-azure-files-preview"></a>Обзор проверки подлинности Azure Active Directory по протоколу SMB для файлов Azure (предварительная версия)
 [!INCLUDE [storage-files-aad-auth-include](../../../includes/storage-files-aad-auth-include.md)]
@@ -26,7 +26,7 @@ ms.locfileid: "65209728"
     Azure Active Directory (Azure AD) — это мультитенантный облачный каталог и служба управления удостоверениями корпорации Майкрософт. Azure AD объединяет в себе базовые службы каталогов, функции управления доступом к приложениям и защиту удостоверений. Дополнительные сведения см. в статье [Что такое Azure Active Directory](../../active-directory/fundamentals/active-directory-whatis.md).
 
 -   **Доменные службы Azure AD**  
-    Доменные службы Azure AD предоставляют управляемые доменные службы (отвечающие за присоединение к домену, применение групповой политики, использование протокола LDAP, выполнение проверки подлинности методом Kerberos или NTLM). Эти службы полностью совместимы с Windows Server Active Directory. Дополнительные сведения см. в статье [Доменные службы Azure Active Directory (AD)](../../active-directory-domain-services/active-directory-ds-overview.md).
+    Доменные службы Azure AD предоставляют управляемые доменные службы (отвечающие за присоединение к домену, применение групповой политики, использование протокола LDAP, выполнение проверки подлинности методом Kerberos или NTLM). Эти службы полностью совместимы с Windows Server Active Directory. Дополнительные сведения см. в статье [Доменные службы Azure Active Directory (AD)](../../active-directory-domain-services/overview.md).
 
 -   **Управление доступом на основе ролей (RBAC) в Azure**  
     Контроль доступа на основе ролей (RBAC) Azure обеспечивает точное управление доступом для Azure. С помощью RBAC можно управлять доступом к ресурсам, предоставляя пользователям минимальные разрешения, необходимые для выполнения поставленных задач. Дополнительные сведения о RBAC см. в статье [Что такое управление доступом на основе ролей (RBAC) в Azure](../../role-based-access-control/overview.md).
@@ -60,7 +60,7 @@ Azure AD по протоколу SMB для файлов Azure обладает 
 ### <a name="enable-azure-ad-authentication-over-smb"></a>Включение аутентификации Azure AD через SMB
 Вы можете включить проверку подлинности Azure AD по протоколу SMB для файлов Azure в новых или существующих учетных записях хранения, созданных после 24 сентября 2018 г. 
 
-Прежде чем включать проверку подлинности Azure AD по протоколу SMB, убедитесь, что доменные службы Azure AD развернуты для основного клиента Azure AD, с которым связана ваша учетная запись хранения. Если вы еще не настроили доменные службы Azure AD, следуйте пошаговым инструкциям, предоставленным в статье [Включение доменных служб Azure Active Directory на портале Azure](../../active-directory-domain-services/active-directory-ds-getting-started.md).
+Прежде чем включать проверку подлинности Azure AD по протоколу SMB, убедитесь, что доменные службы Azure AD развернуты для основного клиента Azure AD, с которым связана ваша учетная запись хранения. Если вы еще не настроили доменные службы Azure AD, следуйте пошаговым инструкциям, предоставленным в статье [Включение доменных служб Azure Active Directory на портале Azure](../../active-directory-domain-services/create-instance.md).
 
 Развертывание доменных служб AD Azure обычно занимает 10–15 минут. После развертывания доменных служб Azure AD вы можете включить проверку подлинности Azure AD по протоколу SMB для файлов Azure. Дополнительные сведения см. в разделе [Включение проверки подлинности Azure Active Directory по протоколу SMB для файлов Azure (предварительная версия)](storage-files-active-directory-enable.md). 
 

@@ -7,12 +7,12 @@ ms.service: storage
 ms.topic: article
 ms.date: 01/02/2019
 ms.author: rogarana
-ms.openlocfilehash: d5e2f9dba3afee953d296316e990b58c536cbdae
-ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
+ms.openlocfilehash: 26251ebd3c83f6cd44203e1d3cc5f1b523a0d8d9
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65602021"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66237775"
 ---
 # <a name="enable-azure-active-directory-authentication-over-smb-for-azure-files-preview"></a>Включение аутентификации Azure Active Directory по протоколу SMB для службы файлов Azure (предварительная версия)
 [!INCLUDE [storage-files-aad-auth-include](../../../includes/storage-files-aad-auth-include.md)]
@@ -47,13 +47,13 @@ ms.locfileid: "65602021"
 
 2.  **Включите доменные службы Azure AD в клиенте Azure AD**.
 
-    Чтобы поддерживать аутентификацию с помощью учетных данных Azure AD, нужно включить доменные службы Azure AD для вашего клиента Azure AD. Если вы не администратор клиента Azure AD, обратитесь к администратору и следуйте пошаговым инструкциям, чтобы [включить доменные службы Azure Active Directory на портале Azure](../../active-directory-domain-services/active-directory-ds-getting-started.md).
+    Чтобы поддерживать аутентификацию с помощью учетных данных Azure AD, нужно включить доменные службы Azure AD для вашего клиента Azure AD. Если вы не администратор клиента Azure AD, обратитесь к администратору и следуйте пошаговым инструкциям, чтобы [включить доменные службы Azure Active Directory на портале Azure](../../active-directory-domain-services/create-instance.md).
 
     Для развертывания доменных служб Azure AD обычно требуется около 15 минут. Прежде чем переходить к следующему шагу, убедитесь, что для доменных служб Azure AD отображается состояние работоспособности **Выполняется** и включена синхронизация хэша паролей.
 
 3.  **Присоедините виртуальную машину Azure к домену доменных служб Azure AD.**
 
-    Чтобы получить доступ к файловому ресурсу с использованием учетных данных Azure AD с виртуальной машины, ваша виртуальная машина должна быть подключена к домену доменных служб Azure AD. Дополнительные сведения см. в статье [Присоединение виртуальной машины Windows Server к управляемому домену](../../active-directory-domain-services/active-directory-ds-admin-guide-join-windows-vm-portal.md).
+    Чтобы получить доступ к файловому ресурсу с использованием учетных данных Azure AD с виртуальной машины, ваша виртуальная машина должна быть подключена к домену доменных служб Azure AD. Дополнительные сведения см. в статье [Присоединение виртуальной машины Windows Server к управляемому домену](../../active-directory-domain-services/join-windows-vm.md).
 
     > [!NOTE]
     > Аутентификации Azure AD по протоколу SMB в службе файлов Azure поддерживается только на виртуальных машинах Azure, работающих на ОС версий выше Windows 7 или Windows Server 2008 R2.
@@ -79,7 +79,7 @@ ms.locfileid: "65602021"
 
 1. На портале Azure перейдите к существующей учетной записи хранения или [создайте ее](../common/storage-quickstart-create-account.md).
 2. В разделе **Параметры** выберите **Конфигурация**.
-3. Включите **аутентификацию Azure Active Directory для службы файлов Azure (предварительная версия)**.
+3. Включите **аутентификацию Azure Active Directory для службы файлов Azure (предварительная версия)** .
 
 На рисунке ниже показано, как включить аутентификацию Azure AD по протоколу SMB для учетной записи хранения.
 

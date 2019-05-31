@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 1/29/2019
 ms.author: barclayn
-ms.openlocfilehash: 13183282e5e607f0052194a474203f97e0160adb
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 9c100bd6815e003d49efcdca65b16d7efa35ac34
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60610915"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66234238"
 ---
 # <a name="security-services-and-technologies-available-on-azure"></a>Службы и технологии безопасности, доступные в Azure
 
@@ -39,7 +39,7 @@ ms.locfileid: "60610915"
 
 <!---|[Azure&nbsp;Disk&nbsp;Encryption](azure-security-disk-encryption-overview.md)| THIS WILL GO TO THE NEW OVERVIEW TOPIC MEGHAN STEWART IS WRITING|--->
 
-## <a name="storage-security"></a>Безопасность хранилища
+## <a name="storage-security"></a>Безопасность хранилищ
 |Service|Описание|
 |------|--------|
 | [Шифрование&nbsp;службы&nbsp;хранения&nbsp;Azure](../storage/common/storage-service-encryption.md)|Функция безопасности, которая автоматически шифрует данные в хранилище Azure.   |
@@ -63,13 +63,13 @@ ms.locfileid: "60610915"
 | [Аудит баз данных SQL Azure](../sql-database/sql-database-auditing.md)|Возможность аудита базы данных SQL, позволяющая отслеживать события базы данных и записывать их в журнал аудита в учетной записи хранения Azure.  |
 
 
-## <a name="identity-and-access-management"></a>Управление идентификационной информацией и доступом
+## <a name="identity-and-access-management"></a>Управление удостоверениями и доступом
 |Service|Описание|
 |------|--------|
 | [Управление доступом&nbsp;на основе&nbsp;ролей&nbsp;Azure](../active-directory/role-based-access-control-configure.md)|Функция контроля доступа, которая позволяет предоставлять пользователям доступ только к ресурсам, доступ к которым основан на их ролях в рамках организации.  |
 | [Azure Active Directory](../active-directory/fundamentals/active-directory-whatis.md)|Облачный репозиторий аутентификации, который поддерживает несколько клиентов, облачный каталог и несколько служб управления удостоверениями в рамках Azure.  |
 | [Azure Active Directory B2C](../active-directory-b2c/active-directory-b2c-overview.md)|Это служба управления идентификацией, которая позволяет администрировать процессы входа и регистрации пользователей, а также управлять их профилями при использовании приложений на основе Azure.   |
-| [Доменные службы Azure Active Directory](../active-directory-domain-services/active-directory-ds-overview.md)| Облачная и управляемая версия доменных служб Active Directory. |
+| [Доменные службы Azure Active Directory](../active-directory-domain-services/overview.md)| Облачная и управляемая версия доменных служб Active Directory. |
 | [Многофакторная идентификация Azure](../active-directory/authentication/multi-factor-authentication.md)| Подготовка безопасности, которая использует несколько различных форм аутентификации и проверки перед предоставлением защищенной информации. |
 
 ## <a name="backup-and-disaster-recovery"></a>Резервное копирование и аварийное восстановление
@@ -91,4 +91,4 @@ ms.locfileid: "60610915"
 | [Прокси приложения Azure](../active-directory/active-directory-application-proxy-get-started.md)| Внешний интерфейс аутентификации, используемый для защиты удаленного доступа к веб-приложениям, размещенным локально. |
 |[Брандмауэр Azure](../firewall/overview.md)|Управляемая облачная служба сетевой безопасности, которая защищает ресурсы виртуальной сети Azure.|
 |[Защита от атак DDoS Azure](../virtual-network/ddos-protection-overview.md)|Эта служба обеспечивает защиту от атак DDoS, если соблюдаются рекомендации по проектированию приложений.|
-|[Конечные точки службы виртуальной сети](../virtual-network/virtual-network-service-endpoints-overview.md)|Расширяют пространство частных адресов и возможности идентификации вашей виртуальной сети в службах Azure благодаря прямому соединению.|
+|[Конечные точки служб для виртуальной сети](../virtual-network/virtual-network-service-endpoints-overview.md)|Расширяют пространство частных адресов и возможности идентификации вашей виртуальной сети в службах Azure благодаря прямому соединению.|

@@ -1,20 +1,20 @@
 ---
-title: Резервное копирование и восстановление сервера в службе "База данных Azure для PostgreSQL"
-description: Узнайте, как выполнить резервное копирование и восстановление сервера в базе данных Azure для PostgreSQL с помощью Azure CLI.
+title: Резервное копирование и восстановление сервера в базе данных Azure для PostgreSQL — один сервер
+description: Узнайте, как резервное копирование и восстановление сервера в базе данных Azure для PostgreSQL — один сервер с помощью Azure CLI.
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.devlang: azurecli
 ms.topic: conceptual
-ms.date: 04/01/2018
-ms.openlocfilehash: 3415910426d365ea2dc17e7515871c1bf4841fd3
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 05/06/2019
+ms.openlocfilehash: 85fb00ad221ae982e4d3ddc9d2d5d20dd4f2793d
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60419927"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "65069096"
 ---
-# <a name="how-to-back-up-and-restore-a-server-in-azure-database-for-postgresql-using-the-azure-cli"></a>Как выполнить резервное копирование и восстановление сервера в базе данных Azure для PostgreSQL с помощью Azure CLI
+# <a name="how-to-back-up-and-restore-a-server-in-azure-database-for-postgresql---single-server-using-the-azure-cli"></a>Резервное копирование и восстановление сервера в базе данных Azure для PostgreSQL — отдельного сервера с помощью Azure CLI
 
 ## <a name="backup-happens-automatically"></a>Резервное копирование выполняется автоматически
 Чтобы обеспечить возможность восстановления, для серверов службы "База данных Azure для PostgreSQL" периодически выполняется резервное копирование. С помощью этой функции можно восстановить сервер и все его базы данных до более ранней точки во времени на новом сервере.
@@ -69,7 +69,7 @@ az postgres server restore --resource-group myresourcegroup --name mydemoserver-
 
 Для команды `az postgres server restore` обязательны указанные ниже параметры.
 
-| Параметр | Рекомендуемое значение | ОПИСАНИЕ  |
+| Параметр | Предлагаемое значение | Описание  |
 | --- | --- | --- |
 | resource-group |  myresourcegroup |  Группа ресурсов, в которой находится исходный сервер.  |
 | name | mydemoserver-restored | Имя нового сервера, созданного командой restore. |
@@ -109,7 +109,7 @@ az postgres server georestore --resource-group newresourcegroup --name mydemoser
 
 Для команды `az postgres server georestore` обязательны указанные ниже параметры.
 
-| Параметр | Рекомендуемое значение | ОПИСАНИЕ  |
+| Параметр | Предлагаемое значение | Описание  |
 | --- | --- | --- |
 |resource-group| myresourcegroup | Имя группы ресурсов, к которой будет принадлежать новый сервер.|
 |name | mydemoserver-georestored | Имя нового сервера. |

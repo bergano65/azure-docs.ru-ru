@@ -16,12 +16,12 @@ ms.author: mimart
 ms.reviewer: harshja
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a9ee8800d84d1090f97fb72980123f59d5aa0375
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: cf8e7fed30a9b25b2960e3321eca5c4398911f35
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65783479"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66236251"
 ---
 # <a name="network-topology-considerations-when-using-azure-active-directory-application-proxy"></a>Аспекты топологии сети при использовании прокси приложения Azure Active Directory
 
@@ -102,7 +102,7 @@ ms.locfileid: "65783479"
 
 Эта статья посвящена выбору расположения для соединителя, но для улучшения характеристик задержки вы можете также переместить само приложение.
 
-Все больше организаций перемещают сети в размещенные среды. В этой ситуации приложения также могут мигрировать в размещенную среду, оставаясь в пределах корпоративной сети и домена. В шаблонах, которые описаны в предыдущем разделе, можно учесть новое расположение приложения. Если вы рассматриваете этот вариант, перейдите на страницу [Доменные службы Azure Active Directory](../../active-directory-domain-services/active-directory-ds-overview.md).
+Все больше организаций перемещают сети в размещенные среды. В этой ситуации приложения также могут мигрировать в размещенную среду, оставаясь в пределах корпоративной сети и домена. В шаблонах, которые описаны в предыдущем разделе, можно учесть новое расположение приложения. Если вы рассматриваете этот вариант, перейдите на страницу [Доменные службы Azure Active Directory](../../active-directory-domain-services/overview.md).
 
 Кроме того, рассмотрите возможность использования [групп соединителей](application-proxy-connector-groups.md) для целевых приложений, находящихся в разных расположениях и сетях. 
 

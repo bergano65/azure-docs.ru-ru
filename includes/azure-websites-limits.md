@@ -4,12 +4,12 @@ ms.service: billing
 ms.topic: include
 ms.date: 11/09/2018
 ms.author: jroth
-ms.openlocfilehash: c2db5740d6373c8f6be5dabe0260fe7f99575641
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: ce64047fd7490106790ea8bb1ad7963d82a87c24
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57554275"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66238137"
 ---
 | Ресурс | Free | Совмещаемая блокировка | базовая; | Стандартная | Премиум (версия 2) | Isolated </th> |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -23,13 +23,13 @@ ms.locfileid: "57554275"
 | Память (1 час) |1024 МБ на один план службы приложений |1024 МБ на одно приложение |Н/Д |Н/Д |Н/Д |Н/Д |
 | Пропускная способность |165 MB |Без ограничений, применяются [тарифы на передачу данных](https://azure.microsoft.com/pricing/details/data-transfers/) |Без ограничений, применяются [тарифы на передачу данных](https://azure.microsoft.com/pricing/details/data-transfers/) |Без ограничений, применяются [тарифы на передачу данных](https://azure.microsoft.com/pricing/details/data-transfers/) |Без ограничений, применяются [тарифы на передачу данных](https://azure.microsoft.com/pricing/details/data-transfers/) |Без ограничений, применяются [тарифы на передачу данных](https://azure.microsoft.com/pricing/details/data-transfers/) |
 | Архитектура приложения |32-битная |32-битная |32- или 64-битная |32- или 64-битная |32- или 64-битная |32- или 64-битная |
-| Веб-сокеты на один экземпляр<sup>7</sup> |5 |35 |350 |Без ограничений |Без ограничений |Без ограничений |
+| Веб-сокеты на один экземпляр<sup>7</sup> |5 |35 |350 |Не ограничено |Не ограничено |Без ограничений |
 | Количество одновременных [подключений к отладчику](../articles/app-service/troubleshoot-dotnet-visual-studio.md) для каждого приложения |1 |1 |1 |5 |5 |5 |
 | Сертификаты службы приложений в рамках одной подписки<sup>10</sup>| Не поддерживается | Не поддерживается |10 |10 |10 |10 |
 | Количество личных доменов на одно приложение</a> |0 (только поддомен azurewebsites.net)|500 |500 |500 |500 |500 |
 | личных доменов [Поддержка SSL](../articles/app-service/app-service-web-tutorial-custom-ssl.md) |Не поддерживается, групповой сертификат для *. azurewebsites.net по умолчанию|Не поддерживается, групповой сертификат для *. azurewebsites.net по умолчанию|Неограниченное количество подключений SSL на основе SNI |Включено неограниченное количество подключений SSL на основе SNI и 1 подключение SSL на основе IP |Включено неограниченное количество подключений SSL на основе SNI и 1 подключение SSL на основе IP | Включено неограниченное количество подключений SSL на основе SNI и 1 подключение SSL на основе IP|
 | Интегрированная служба load balancer | |X |X |X |X |X<sup>9</sup> |
-| [Всегда включено](../articles/app-service/web-sites-configure.md) | | |X |X |X |X |
+| [Всегда включено](../articles/app-service/configure-common.md) | | |X |X |X |X |
 | [Плановое резервное копирование](../articles/app-service/manage-backup.md) | | | | Плановое резервное копирование каждые 2 часа более 12 резервных копий в день (ручные + плановые) | Плановая архивация каждый час, более 50 резервных копий в день (ручные + плановые) | Плановая архивация каждый час, более 50 резервных копий в день (ручные + плановые) |
 | [Autoscale](../articles/app-service/web-sites-scale.md) | | | |X |X |X |
 | [Веб-задания](../articles/app-service/webjobs-create.md)<sup>8</sup> |X |X |X |X |X |X |

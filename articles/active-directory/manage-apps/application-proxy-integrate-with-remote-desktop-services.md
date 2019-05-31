@@ -11,17 +11,17 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 06/27/2018
+ms.date: 05/23/2019
 ms.author: mimart
 ms.custom: it-pro
 ms.reviewer: harshja
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2ecd55cbb3a8eefc150db731901458561d90f033
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 621ca9a7a55f86a92f0c809b6e220245f47dfd39
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65783407"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66233715"
 ---
 # <a name="publish-remote-desktop-with-azure-ad-application-proxy"></a>Публикация удаленного рабочего стола с помощью прокси приложения Azure AD
 
@@ -71,8 +71,9 @@ ms.locfileid: "65783407"
    - Перевод веб-страниц в заголовках: Нет
 2. Назначьте пользователей опубликованному приложению удаленных рабочих столов. Убедитесь также, что все они имеют доступ к RDS.
 3. Для параметра единого входа для приложения оставьте значение **Единый вход Azure AD отключен**. Пользователи будут один раз проходить аутентификацию в Azure AD и еще один раз — на веб-сайте удаленных рабочих столов, но смогут использовать единый вход на шлюз удаленных рабочих столов.
-4. Выберите **Azure Active Directory** > **Регистрация приложений** > *Приложения* > **Параметры**.
-5. Выберите **Свойства** и обновите значение поля **URL-адрес домашней страницы**, указав конечную точку веб-сайта удаленных рабочих столов (например, `https://\<rdhost\>.com/RDWeb`).
+4. Выберите **Azure Active Directory**, а затем **регистрация приложений**. Выберите приложение из списка.
+5. В разделе **управление**выберите **фирменной символики**.
+6. Обновление **URL-адрес домашней страницы** поле, чтобы к удаленным рабочим Столам конечную точку веб-(например `https://\<rdhost\>.com/RDWeb`).
 
 ### <a name="direct-rds-traffic-to-application-proxy"></a>Направление трафика RDS в прокси приложения
 

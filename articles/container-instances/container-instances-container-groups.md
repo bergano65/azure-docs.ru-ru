@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: danlep
 ms.custom: mvc
-ms.openlocfilehash: f4bbea8acd447a731cf5c56f9876baf9183735ea
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: cba57875daf9b570d274ec8c4e9c4146af0dc045
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60518638"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "65072830"
 ---
 # <a name="container-groups-in-azure-container-instances"></a>Группы контейнеров в службе "Экземпляры контейнеров Azure"
 
@@ -65,7 +65,7 @@ ms.locfileid: "60518638"
 
 * Выделить **минимальное** 1 ЦП и 1 ГБ памяти для группы контейнеров. Экземпляры отдельных контейнеров в группе может быть предоставлен меньше, чем 1 ЦП и 1 ГБ памяти. 
 
-* Для **максимальное** ресурсы в группе контейнеров, см. в статье [доступность ресурсов] [aci--доступность по регионам] для экземпляры контейнеров Azure в области развертывания.
+* Для **максимальное** ресурсы в группе контейнеров, см. в разделе [доступность ресурсов] [ region-availability] экземпляры контейнеров Azure в области развертывания.
 
 ## <a name="networking"></a>Сеть
 

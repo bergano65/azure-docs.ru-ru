@@ -10,14 +10,14 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
-ms.date: 05/21/2019
+ms.date: 05/22/2019
 ms.author: mbullwin
-ms.openlocfilehash: 8522b1d0a8f8466870966d3f11ce66f7bf15672b
-ms.sourcegitcommit: db3fe303b251c92e94072b160e546cec15361c2c
+ms.openlocfilehash: cb7ace20fd0a59dafff3d7f8240f54c3c8e12492
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66016370"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66226402"
 ---
 # <a name="application-insights-for-aspnet-core-applications"></a>Application Insights для приложений ASP.NET Core
 
@@ -138,7 +138,7 @@ ms.locfileid: "66016370"
 
 [Журналы ILogger](https://docs.microsoft.com/azure/azure-monitor/app/ilogger) серьезности `Warning` или выше, автоматически зарегистрированные из пакета SDK версии 2.7.0-beta3 или более поздней версии.
 
-### <a name="live-metrics"></a>Интерактивные метрики
+### <a name="live-metrics"></a>Live Metrics
 
 Может занять несколько минут для телеметрии до начала отображения на портале. Чтобы быстро узнать, если все работает, то лучше использовать [Live Metrics](https://docs.microsoft.com/azure/application-insights/app-insights-live-stream), тогда как при отправке запросов к запущенному приложению.
 
@@ -382,7 +382,8 @@ using Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel;
 
 ## <a name="video"></a>Видео
 
-- Внешнее пошаговые видео о [Настройка Application Insights с использованием .NET Core и Visual Studio](https://www.youtube.com/watch?v=NoS9UhcR4gA&t) с нуля.
+- Пошаговые видеоинструкции по [настройке Application Insights с помощью .NET Core и Visual Studio](https://www.youtube.com/watch?v=NoS9UhcR4gA&t).
+- Внешнее пошаговые видео о [Настройка Application Insights с использованием .NET Core и Visual Studio Code](https://youtu.be/ygGt84GDync) с нуля.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Изучите маршруты пользователей](../../azure-monitor/app/usage-flows.md), чтобы понять, как пользователи перемещаются через приложение.

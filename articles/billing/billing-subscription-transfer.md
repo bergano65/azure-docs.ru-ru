@@ -10,15 +10,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 05/16/2019
+ms.date: 05/24/2019
 ms.author: banders
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: b3f070cafa026679eb9322ac7ba2eafe4c7e233d
-ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
+ms.openlocfilehash: 33d0e5f92d5de104530882b204b1f196360511b2
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65826761"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66236463"
 ---
 # <a name="transfer-ownership-of-an-azure-subscription-to-another-account"></a>Передача прав владения подпиской Azure другой учетной записи
 
@@ -59,7 +59,7 @@ ms.locfileid: "65826761"
    ![Первая страница процесса передачи подписки](./media/billing-subscription-transfer/image4.png)
 
    ![Вторая страница процесса передачи подписки](./media/billing-subscription-transfer/image5.png)
-1. Выполнено! Теперь подписка передана.
+1. Готово! Теперь подписка передана.
 
 <a id="EA"></a>
 
@@ -102,7 +102,9 @@ ms.locfileid: "65826761"
 
 ### <a name="whoisaa"></a> Кто является администратором учетной записи для подписки?
 
-Администратор учетной записи — это пользователь, который зарегистрировал или приобрел подписку Azure. Он может получить доступ к [Центру управления учетной записью](https://account.azure.com/Subscriptions) и выполнять различные задачи управления, такие как создание и отмена подписки, изменение выставляемых счетов за подписку или администратора службы. Если вы не знаете, кто является администратором учетной записи для вашей подписки, следуйте инструкциям ниже, чтобы узнать это.
+Администратор учетной записи — это пользователь, который зарегистрировал или приобрел подписку Azure. Он может получить доступ к [Центру управления учетной записью](https://account.azure.com/Subscriptions) и выполнять различные задачи управления, такие как создание и отмена подписки, изменение выставляемых счетов за подписку или администратора службы. Дополнительные сведения о основные сведения о ролях администратора и разрешениях см. в разделе [разрешения роли администратора в Azure Active Directory](../active-directory/users-groups-roles/directory-assign-admin-roles.md)
+
+Если вы не знаете, кто является администратором учетной записи для вашей подписки, следуйте инструкциям ниже, чтобы узнать это.
 
 1. Перейдите на [страницу "Подписки" на портале Azure](https://portal.azure.com/#blade/Microsoft_Azure_Billing/SubscriptionsBlade).
 1. Выберите подписку, которую требуется проверить, а затем просмотрите раздел **Параметры**.

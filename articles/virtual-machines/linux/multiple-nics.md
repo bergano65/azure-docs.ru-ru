@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 06/07/2018
 ms.author: cynthn
-ms.openlocfilehash: b77ed879375cff8d45f7d532283647e70252bdab
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 838afe38cc3b2b98ddad358ddb23ab6b6727e867
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60772439"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66236851"
 ---
 # <a name="how-to-create-a-linux-virtual-machine-in-azure-with-multiple-network-interface-cards"></a>Как создать виртуальную машину Linux в Azure с несколькими сетевыми картами
 
@@ -100,7 +100,7 @@ az vm create \
     --nics myNic1 myNic2
 ```
 
-Добавьте таблицы маршрутизации для гостевой ОС, выполнив инструкции в статье о [настройке гостевой ОС для нескольких сетевых адаптеров](#configure-guest-os-for- multiple-nics).
+Добавьте таблицы маршрутизации для гостевой ОС, выполнив инструкции в статье о [настройке гостевой ОС для нескольких сетевых адаптеров](#configure-guest-os-for-multiple-nics).
 
 ## <a name="add-a-nic-to-a-vm"></a>Добавление сетевой карты к виртуальной машине
 На предыдущих шагах вы создали виртуальную машину с несколькими сетевыми картами. С помощью Azure CLI можно также добавить сетевые адаптеры к существующей виртуальной машине. Различные [размеры виртуальных машин](sizes.md) поддерживают разное число сетевых карт, так что выбирайте соответствующий размер виртуальной машины. При необходимости вы можете [изменить размер виртуальной машины](change-vm-size.md).
@@ -138,7 +138,7 @@ az vm nic add \
 az vm start --resource-group myResourceGroup --name myVM
 ```
 
-Добавьте таблицы маршрутизации для гостевой ОС, выполнив инструкции в статье о [настройке гостевой ОС для нескольких сетевых адаптеров](#configure-guest-os-for- multiple-nics).
+Добавьте таблицы маршрутизации для гостевой ОС, выполнив инструкции в статье о [настройке гостевой ОС для нескольких сетевых адаптеров](#configure-guest-os-for-multiple-nics).
 
 ## <a name="remove-a-nic-from-a-vm"></a>Удаление сетевой карты с виртуальной машины
 Чтобы удалить сетевую карту с существующей виртуальной машины, сначала отмените распределение виртуальной машины с помощью команды [az vm deallocate](/cli/azure/vm). В следующем примере отменяется распределение виртуальной машины *myVM*.
@@ -183,7 +183,7 @@ az vm start --resource-group myResourceGroup --name myVM
 
 Вы можете ознакомиться с полным примером [создания нескольких сетевых карт с помощью шаблонов Resource Manager](../../virtual-network/template-samples.md).
 
-Добавьте таблицы маршрутизации для гостевой ОС, выполнив инструкции в статье о [настройке гостевой ОС для нескольких сетевых адаптеров](#configure-guest-os-for- multiple-nics).
+Добавьте таблицы маршрутизации для гостевой ОС, выполнив инструкции в статье о [настройке гостевой ОС для нескольких сетевых адаптеров](#configure-guest-os-for-multiple-nics).
 
 ## <a name="configure-guest-os-for-multiple-nics"></a>Настройка гостевой ОС для нескольких сетевых карт
 

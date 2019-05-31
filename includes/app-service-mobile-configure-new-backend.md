@@ -5,50 +5,101 @@ services: app-service\mobile
 author: conceptdev
 ms.service: app-service-mobile
 ms.topic: include
-ms.date: 05/25/2018
+ms.date: 05/06/2019
 ms.author: crdun
 ms.custom: include file
-ms.openlocfilehash: 894dd5ea7270390780813b647fe7a8b4c0f173bd
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
-ms.translationtype: HT
+ms.openlocfilehash: 99ca7e82a11687d25355589e7ea539a14cdb493b
+ms.sourcegitcommit: 51a7669c2d12609f54509dbd78a30eeb852009ae
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66139879"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66420803"
 ---
-1. Нажмите кнопку **Службы приложений**, выберите нужную серверную часть мобильных приложений, откройте раздел **Быстрый запуск**, а затем выберите клиентскую платформу (iOS, Android, Xamarin или Cordova).
+1. Скачайте клиент примеры использования пакета SDK для следующих платформ:
+    
+    [iOS (Objective-C)](https://github.com/Azure/azure-mobile-apps-quickstarts/tree/master/client/iOS)  
+    [iOS (Swift)](https://github.com/Azure/azure-mobile-apps-quickstarts/tree/master/client/iOS-Swift)  
+    [Android (Java)](https://github.com/Azure/azure-mobile-apps-quickstarts/tree/master/client/android)  
+    [Xamarin.iOS](https://github.com/Azure/azure-mobile-apps-quickstarts/tree/master/client/xamarin.iOS)  
+    [Xamarin.Android](https://github.com/Azure/azure-mobile-apps-quickstarts/tree/master/client/xamarin.android)  
+    [Xamarin.Forms](https://github.com/Azure/azure-mobile-apps-quickstarts/tree/master/client/xamarin.forms)  
+    [Cordova](https://github.com/Azure/azure-mobile-apps-quickstarts/tree/master/client/cordova)  
+    [Windows (C#)](https://github.com/Azure/azure-mobile-apps-quickstarts/tree/master/client/windows-uwp-cs)  
 
-    ![Портал Azure с выделенным пунктом "Mobile Apps Quickstart" (Быстрый запуск мобильных приложений)][quickstart]
+    > [!NOTE]
+    > Если вы используете проект iOS необходимо скачать «azuresdk-iOS -\*ZIP-файл» из [последний выпуск GitHub](https://github.com/Azure/azure-mobile-apps-ios-client/releases/latest). Распакуйте и добавьте `MicrosoftAzureMobile.framework` файл в корне проекта.
+    >
 
-1. Если подключение к базе данных не настроено, создайте его, сделав следующее:
+2. Необходимо добавить подключение к базе данных или подключиться к существующему подключению. Сначала определите, можно ли будет создание хранилища данных или использовать уже существующий.
 
-    ![Подключение мобильных приложений к базе данных на портале Azure][connect]
+    - **Создать новое хранилище данных**: Если вы собираетесь создать хранилище данных, используйте инструкции из краткого руководства:
 
-    a. Создайте сервер и базу данных SQL. Может потребоваться оставить для поля имени строки подключения значение по умолчанию MS_TableConnectionString для выполнения шага 3 ниже.
+        [Краткое руководство Приступая к работе с отдельных баз данных в базе данных SQL Azure](https://docs.microsoft.com/azure/sql-database/sql-database-single-database-quickstart-guide)
 
-    ![Создание базы данных и сервера для мобильных приложений на портале Azure][server]
+    - **Источник данных**: Выполните приведенные ниже инструкции, если вы хотите использовать существующее подключение базы данных
 
-    2. Подождите, пока подключение к данным не будет успешно создано.
+        1. Формат строки подключения базы данных SQL — `Data Source=tcp:{your_SQLServer},{port};Initial Catalog={your_catalogue};User ID={your_username};Password={your_password}`
 
-    ![Уведомление портала Azure об успешном создании подключения к данным][notification]
+           **{your_SQLServer}**  Имя сервера, это можно найти на странице "Обзор" для базы данных и обычно указывается в виде «server_name.database.windows.net».
+            **{port}**  обычно 1433.
+            **{your_catalogue}**  Имя базы данных.
+            **{ваше_имя_пользователя}**  Имя пользователя для доступа к базе данных.
+            **{ваш_пароль}**  Пароль для доступа к базе данных.
 
-    c. Подключение к данным должно быть успешными.
+            [Дополнительные сведения о формате строки подключения SQL](https://docs.microsoft.com/dotnet/framework/data/adonet/connection-string-syntax#sqlclient-connection-strings)
 
-    ![Уведомление на портале Azure: "Уже имеется подключение к данным"][already-connection]
+        2. Добавьте строку подключения к вашей **мобильное приложение** в службе приложений вы можете управлять строки подключения для приложения с помощью **конфигурации** в меню.
 
-1. В разделе **2. Создание API таблицы** выберите **язык серверной части** — Node.js.
+            Чтобы добавить строку подключения:
 
-1. Примите подтверждение и выберите **Создание таблицы TodoItem**.
-    В базе данных будет создана таблица с элементами списка дел.
+            1. Щелкните **параметры приложения** вкладки.
 
-    >[!IMPORTANT]
-    > При переключении существующей серверной части на Node.js все содержимое перезаписывается. Чтобы вместо этого создать серверную часть .NET, см. раздел [Work with the .NET backend server SDK for Azure Mobile Apps][instructions] (Работа с пакетом SDK для серверной части .NET мобильных приложений Azure).
+            2. Щелкните **[+] новая строка подключения**.
 
-<!-- Images. -->
-[quickstart]: ./media/app-service-mobile-configure-new-backend/quickstart.png
-[connect]: ./media/app-service-mobile-configure-new-backend/connect-to-bd.png
-[notification]: ./media/app-service-mobile-configure-new-backend/notification-data-connection-create.png
-[server]: ./media/app-service-mobile-configure-new-backend/create-new-server.png
-[already-connection]: ./media/app-service-mobile-configure-new-backend/already-connection.png
+            3. Вам нужно будет предоставлять **имя**, **значение** и **типа** для строки подключения.
 
-<!-- URLs -->
-[instructions]: ../articles/app-service-mobile/app-service-mobile-dotnet-backend-how-to-use-server-sdk.md#create-app
+            4. Тип **имя** как `MS_TableConnectionString`
+
+            5. Значение должно быть, сформированным на шаге перед строку подключения.
+
+            6. При добавлении строки подключения к базе данных SQL Azure выберите **SQLAzure** под **тип**.
+
+3. Мобильные приложения Azure есть пакеты SDK для .NET и Node.js серверных систем.
+
+   - **Сервер Node.js**
+    
+     Если вы собираетесь использовать приложение быстрого запуска Node.js, следуйте приведенным ниже инструкциям.
+
+     1. На портале Azure перейдите к **простые таблицы**, отобразится следующий экран.
+      
+        ![Узел простых таблиц](./media/app-service-mobile-configure-new-backend/node-easy-tables.png)
+
+     2. Убедитесь, что строка подключения SQL уже добавлен в **конфигурации** вкладки. Затем установите флажок для **я подтверждаю, что это перезапишет все содержимое сайта** и нажмите кнопку **создание таблицы TodoItem** кнопки.
+     
+        ![Конфигурация узла простые таблицы](./media/app-service-mobile-configure-new-backend/node-easy-tables-configuration.png)
+
+     3. В **простые таблицы**, нажмите кнопку **+ добавить** кнопки.
+    
+        ![Кнопка "Добавить" простые таблицы узла](./media/app-service-mobile-configure-new-backend/node-easy-tables-add.png)
+
+     4. Создание `TodoItem` таблицы с анонимным доступом.
+      
+        ![Простые таблицы узла добавить таблицу](./media/app-service-mobile-configure-new-backend/node-easy-tables-table-add.png)
+
+   - **Сервер .NET**
+    
+        Если вы собираетесь использовать приложение быстрого запуска .NET, следуйте приведенным ниже инструкциям.
+
+        1. Скачайте серверный проект .NET для мобильных приложений Azure из [репозитория azure-mobile-apps-краткие руководства](https://github.com/Azure/azure-mobile-apps-quickstarts/tree/master/backend/dotnet/Quickstart).
+
+        2. Создается серверный проект .NET локально в Visual Studio.
+
+        3. В Visual Studio откройте обозреватель решений, щелкните правой кнопкой мыши `ZUMOAPPNAMEService` проекта, щелкните **публикации**, вы увидите `Publish to App Service` окна. Если вы работаете на компьютере Mac, просмотрите другие способы развертывания приложения [здесь](https://docs.microsoft.com/en-us/azure/app-service/deploy-local-git).
+        
+           ![Публикации в Visual studio](./media/app-service-mobile-configure-new-backend/visual-studio-publish.png)
+
+        4. Выберите **службы приложений** как целевого объекта публикации, нажмите кнопку **выбрать существующее**, затем нажмите кнопку **публикации** расположенную в нижней части окна.
+
+        5. Необходимо будет войти в Visual Studio с подпиской Azure, сначала. Выберите `Subscription`, `Resource Group`, а затем выберите имя приложения. Когда будете готовы, нажмите кнопку **ОК**, это будет развертывание серверного проекта .NET, у вас есть локально в серверную часть службы приложений. После завершения развертывания вы будете перенаправлены к `http://{zumoappname}.azurewebsites.net/` в браузере.
+        
+           ![Серверная часть является вверх](./media/app-service-mobile-configure-new-backend/backend-is-up.png)

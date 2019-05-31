@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 01/23/2019
 ms.author: pepogors
-ms.openlocfilehash: 9224ecebed35a631514c5254703ad2694675d40e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 2dfe1493c6611fb69a417895aaa1028ad5881b9c
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66159933"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66237420"
 ---
 # <a name="infrastructure-as-code"></a>Инфраструктура как код
 
@@ -95,6 +95,47 @@ for root, dirs, files in os.walk(self.microservices_app_package_path):
         microservices_sfpkg.write(os.path.join(root, file), os.path.join(root_folder, file))
 
 microservices_sfpkg.close()
+```
+
+## <a name="azure-virtual-machine-operating-system-automatic-upgrade-configuration"></a>Конфигурация автоматического обновления операционной системы виртуальной машины Azure 
+Обновление виртуальных машин — это операция инициированной пользователем, и рекомендуется использовать [обновление ОС виртуальной машины масштабируемого задать автоматическое](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-automatic-upgrade) для кластеров Azure Service Fabric управление исправлениями узла; Приложение для управления исправлениями — это альтернативное решение, предназначенное для при размещении за пределами Azure, несмотря на то, что им можно использовать в Azure, с издержками, на котором размещается Реализовано в Azure, выполняется Наиболее частая причина использовать автоматическое обновление виртуальной машины операционной системы над Реализовано. Ниже приведены свойства шаблона вычислений виртуальной машины масштабируемого задать Resource Manager для включения операционной системы автоматического обновления.
+
+```json
+"upgradePolicy": {
+   "mode": "Automatic",
+   "automaticOSUpgradePolicy": {
+        "enableAutomaticOSUpgrade": true,
+        "disableAutomaticRollback": false
+    }
+},
+```
+При использовании автоматического обновления ОС с помощью Service Fabric, новый образ ОС разворачивается в одном домене обновления за раз, чтобы обеспечить высокий уровень доступности служб, работающих в Service Fabric. Для использования автоматических обновлений ОС в Service Fabric ваш кластер должен быть настроен на использование уровня надежности Silver или выше.
+
+Убедитесь, что следующий раздел реестра имеет значение false, чтобы предотвратить запуск несогласованных обновлений хост-компьютерах windows: HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU.
+
+Ниже приведены свойства шаблона вычислений виртуальной машины масштабируемого задать Resource Manager настроить ключ реестра WindowsUpdate значение false.
+```json
+"osProfile": {
+        "computerNamePrefix": "{vmss-name}",
+        "adminUsername": "{your-username}",
+        "secrets": [],
+        "windowsConfiguration": {
+          "provisionVMAgent": true,
+          "enableAutomaticUpdates": false
+        }
+      },
+```
+
+## <a name="azure-service-fabric-cluster-upgrade-configuration"></a>Обновление конфигурации кластера Azure Service Fabric
+Ниже приведен свойство шаблона Resource Manager, чтобы включить автоматическое обновление кластера Service Fabric.
+```json
+"upgradeMode": "Automatic",
+```
+Чтобы вручную обновить кластер, скачайте cab/deb распространения к виртуальной машине кластера, а затем вызывать следующую команду PowerShell:
+```powershell
+Copy-ServiceFabricClusterPackage -Code -CodePackagePath <"local_VM_path_to_msi"> -CodePackagePathInImageStore ServiceFabric.msi -ImageStoreConnectionString "fabric:ImageStore"
+Register-ServiceFabricClusterPackage -Code -CodePackagePath "ServiceFabric.msi"
+Start-ServiceFabricClusterUpgrade -Code -CodePackageVersion <"msi_code_version">
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия

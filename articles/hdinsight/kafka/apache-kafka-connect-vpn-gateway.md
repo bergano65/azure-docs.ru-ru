@@ -7,13 +7,13 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 11/06/2018
-ms.openlocfilehash: 93b5aeafafdc6ab7ee233f6360bb5e09f45b387f
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.date: 05/28/2019
+ms.openlocfilehash: ddff9ffb00f4167cb8f64a75b129711467de739d
+ms.sourcegitcommit: 8c49df11910a8ed8259f377217a9ffcd892ae0ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64708824"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66297064"
 ---
 # <a name="connect-to-apache-kafka-on-hdinsight-through-an-azure-virtual-network"></a>Подключение к Apache Kafka в HDInsight с помощью виртуальной сети Azure
 
@@ -85,7 +85,7 @@ HDInsight не разрешает прямое подключение к Kafka �
 
 1. Дополнительные сведения см. в статье [Создание и экспорт сертификатов для подключений типа "точка — сеть" с помощью PowerShell в Windows 10](../../vpn-gateway/vpn-gateway-certificates-point-to-site.md). Там приведены действия по созданию сертификатов, необходимых для шлюза.
 
-2. Откройте командную строку PowerShell и используйте следующий код, чтобы войти в подписку Azure:
+2. Откройте командную строку PowerShell и используйте следующий код для входа в подписку Azure:
 
     ```powershell
     Connect-AzAccount
@@ -197,8 +197,10 @@ HDInsight не разрешает прямое подключение к Kafka �
     New-AzStorageAccount `
         -ResourceGroupName $resourceGroupName `
         -Name $storageName `
-        -Type Standard_GRS `
-        -Location $location
+        -SkuName Standard_GRS `
+        -Location $location `
+        -Kind StorageV2 `
+        -EnableHttpsTrafficOnly 1
 
     # Get the storage account keys and create a context
     $defaultStorageKey = (Get-AzStorageAccountKey -ResourceGroupName $resourceGroupName `
@@ -240,7 +242,7 @@ HDInsight не разрешает прямое подключение к Kafka �
 
 По умолчанию Apache Zookeeper возвращает клиентам доменное имя брокеров Kafka. Эта конфигурация не работает для программного VPN-клиента, так как он не может использовать разрешение имен для сущностей в виртуальной сети. Для этой конфигурации выполните следующие действия, чтобы настроить Kafka для объявления IP-адресов вместо доменных имен:
 
-1. Откройте веб-браузер и перейдите по адресу https://CLUSTERNAME.azurehdinsight.net. Замените __CLUSTERNAME__ именем кластера Kafka HDInsight.
+1. Откройте веб-браузер и перейдите по адресу `https://CLUSTERNAME.azurehdinsight.net`. Замените `CLUSTERNAME` именем Kafka в кластере HDInsight.
 
     При появлении запроса введите имя пользователя и пароль HTTPS для кластера. Отобразится веб-интерфейс Ambari для кластера.
 
@@ -320,7 +322,9 @@ HDInsight не разрешает прямое подключение к Kafka �
 
 2. Чтобы установить клиент [kafka-python](https://kafka-python.readthedocs.io/), используйте следующую команду:
 
-        pip install kafka-python
+    ```bash
+    pip install kafka-python
+    ```
 
 3. Чтобы отправить данные в Kafka, используйте следующий код Python:
 

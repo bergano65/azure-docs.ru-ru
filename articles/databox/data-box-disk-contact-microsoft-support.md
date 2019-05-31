@@ -6,39 +6,39 @@ author: alkohli
 ms.service: databox
 ms.subservice: ''
 ms.topic: article
-ms.date: 09/27/2018
+ms.date: 05/24/2019
 ms.author: alkohli
-ms.openlocfilehash: 5b392fecd75f5c18793a6122b8d5d967a2e54afa
-ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
+ms.openlocfilehash: acba9d2c87d2fb23e48ac24cec22388044702bac
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65604440"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66240151"
 ---
 # <a name="open-a-support-ticket-for-azure-data-box"></a>Открытие запроса в службу поддержки для Azure Data Box 
 
-Эта статья касается Устройства Azure Data Box и Диска Azure Data Box, которыми управляет служба Azure Data Box. Если у вас возникли проблемы со службой Azure Data Box, можно обратиться за помощью в службу технической поддержки. В этой статье описаны следующие операции.
+Эта статья относится к Azure Data Box, Azure Data Box большой и диска Azure Data Box, которые управляются службой Azure Data Box. Если у вас возникли проблемы со службой Azure Data Box, можно обратиться за помощью в службу технической поддержки. В этой статье описаны следующие операции.
 
 * Создание запроса на техническую поддержку.
 * Управление жизненным циклом запроса на техническую поддержку на портале.
 
-## <a name="create-a-support-request"></a>Создать запрос на получение поддержки
+## <a name="create-a-support-request"></a>Создание запроса на обслуживание
 
 Для создания запроса на обслуживание выполните следующие действия.
 
 1. Перейдите к вашему заказу Диска Data Box или Data Box. Перейдите в раздел **Поддержка и устранение неполадок** и щелкните **Новый запрос в службу поддержки**.
      
-    ![Новый запрос в службу поддержки](./media/data-box-disk-contact-microsoft-support/data-box-disk-support-request.png)
+    ![Новый запрос на техническую поддержку](./media/data-box-disk-contact-microsoft-support/data-box-disk-support-request.png)
    
 2. В разделе **Новый запрос в службу поддержки** выберите **Основные**. В колонке **Основные** сделайте следующее:
     
     1. В раскрывающемся списке **Тип проблемы** выберите **Техническая**.
     2. Выберите свою **подписку**.
-    3. В разделе **Служба** установите переключатель **Все службы**. В раскрывающемся списке выберите **Data Box (предварительная версия)**. 
+    3. В разделе **Служба** установите переключатель **Все службы**. В раскрывающемся списке выберите **Data Box**. 
     4. Укажите ваш **план поддержки**.
     5. Нажмите кнопку **Далее**.
 
-        ![Основные сведения](./media/data-box-disk-contact-microsoft-support/data-box-disk-support1.png)
+        ![Основы](./media/data-box-disk-contact-microsoft-support/data-box-disk-support1.png)
 
 3. В разделе **Новый запрос в службу поддержки** выберите шаг 2 **Проблема**. В колонке **Проблема** сделайте следующее:
     
@@ -72,11 +72,11 @@ ms.locfileid: "65604440"
 
 1. Чтобы открыть страницу справки и поддержки, последовательно щелкните **Обзор > Справка и поддержка**.
 
-    ![Управление запросами в службу поддержки](./media/data-box-disk-contact-microsoft-support/data-box-disk-manage-support-ticket1.png)   
+    ![Управление запросами на поддержку](./media/data-box-disk-contact-microsoft-support/data-box-disk-manage-support-ticket1.png)   
 
 2. Список **недавних запросов в службу поддержки** в виде таблицы отображается в разделе **Справка и поддержка**.
 
-    ![Управление запросами в службу поддержки](./media/data-box-disk-contact-microsoft-support/data-box-disk-manage-support-ticket2.png) 
+    ![Управление запросами на поддержку](./media/data-box-disk-contact-microsoft-support/data-box-disk-manage-support-ticket2.png) 
 
 3. Выберите и щелкните запрос на поддержку. Для запроса можно просмотреть состояние и подробные сведения. Щелкните **+ Новое сообщение**, если нужно следить за этим запросом.
 
@@ -84,3 +84,5 @@ ms.locfileid: "65604440"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные сведения см. в статье [Устранение неполадок в Диске Azure Data Box (предварительная версия)](data-box-disk-troubleshoot.md).
+Узнайте, как [Устранение неполадок, связанных с Data Box](data-box-troubleshoot.md).
+Узнайте, как [Устранение неполадок, связанных с хранилище BLOB-объектов поле данных](data-box-troubleshoot-rest.md).

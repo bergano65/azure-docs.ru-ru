@@ -9,12 +9,12 @@ ms.date: 09/11/2018
 ms.topic: conceptual
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: 'Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s '
-ms.openlocfilehash: 39ef23d04dc1cf1b48297ecf8f0accfef4935cd2
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
-ms.translationtype: HT
+ms.openlocfilehash: 693abccd7e54a1dfef92cd57a715ac96bfd56a8c
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66158943"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66234000"
 ---
 # <a name="troubleshooting-guide"></a>Руководство по устранению неполадок
 
@@ -404,3 +404,8 @@ azds controller create --name <cluster name> -g <resource group name> -tn <clust
 ```cmd
 azds controller create --name my-controller --target-name MyAKS --resource-group MyResourceGroup
 ```
+
+## <a name="enabling-dev-spaces-failing-when-windows-node-pools-are-added-to-an-aks-cluster"></a>Включение пробелы разработки сбой при добавлении пулы узлов Windows в кластере AKS
+
+### <a name="reason"></a>`Reason`
+В настоящее время пробелы разработки Azure должен работать на Linux модулей и только узлы. В настоящее время невозможно включить Azure Dev пробелы в кластере AKS с помощью пул узлов Windows.

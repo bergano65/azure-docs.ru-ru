@@ -1,20 +1,20 @@
 ---
-title: Поддерживаемые версии в службе "База данных Azure для PostgreSQL"
-description: Описываются поддерживаемые версии в базе данных Azure для PostgreSQL.
+title: 'Поддерживаемые версии в базе данных Azure для PostgreSQL: один сервер'
+description: 'Описываются поддерживаемые версии в базе данных Azure для PostgreSQL: один сервер.'
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 04/24/2019
-ms.openlocfilehash: 16064d662c5b101e30f8d2fbb64b39db0848f49f
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.date: 5/6/2019
+ms.openlocfilehash: 4dcbaf159fce6b5f5495a6a25a2a3420cad9e5e8
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64702308"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "65067256"
 ---
 # <a name="supported-postgresql-database-versions"></a>Поддерживаемые версии базы данных PostgreSQL
-Корпорация Майкрософт планирует реализовать поддержку ядра PostgreSQL версий n-2 в службе "База данных Azure для PostgreSQL". В Azure будут поддерживаться текущая основная версия (n) и две предыдущие основные версии (–2).
+Корпорация Майкрософт стремится поддерживать n-2 версии ядра PostgreSQL в базе данных Azure для PostgreSQL: один сервер. В Azure будут поддерживаться текущая основная версия (n) и две предыдущие основные версии (–2).
 
 В настоящее время база данных Azure для PostgreSQL поддерживает следующие версии:
 

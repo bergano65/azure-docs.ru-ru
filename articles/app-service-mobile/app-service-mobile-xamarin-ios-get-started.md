@@ -12,14 +12,14 @@ ms.workload: na
 ms.tgt_pltfrm: mobile-xamarin-ios
 ms.devlang: dotnet
 ms.topic: conceptual
-ms.date: 10/01/2016
+ms.date: 05/06/2019
 ms.author: crdun
-ms.openlocfilehash: 03fb286bd24bb12f3a1e508627a2de156e185568
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.openlocfilehash: 559050cbc575fce5bdb5b32ec266e1cc3d09b2d5
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62097486"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66242705"
 ---
 # <a name="create-a-xamarinios-app"></a>Создание приложения Xamarin.iOS
 [!INCLUDE [app-service-mobile-selector-get-started](../../includes/app-service-mobile-selector-get-started.md)]
@@ -33,59 +33,40 @@ ms.locfileid: "62097486"
 Для работы с данным руководством вам потребуется:
 
 * Активная учетная запись Azure. Если у вас нет учетной записи, зарегистрируйтесь для получения бесплатной пробной версии Azure и получите до 10 бесплатных мобильных приложений, которые можно использовать и после окончания пробного периода. Дополнительные сведения см. в разделе [Бесплатная пробная версия Azure](https://azure.microsoft.com/pricing/free-trial/).
-* Visual Studio с Xamarin. Инструкции см. в статье об [установке и настройке Visual Studio и Xamarin](/visualstudio/cross-platform/setup-and-install).
-* Компьютер Mac с установленным ПО XCode версии 7.0 или выше и Xamarin Studio Community. См. статьи об [установке и настройке Visual Studio и Xamarin](/visualstudio/cross-platform/setup-and-install) и [установке, настройке и проверке для пользователей Mac](/visualstudio/cross-platform/setup-install-and-verifications-for-mac-users) (MSDN).
-
+* Visual Studio для Mac. См. в разделе [Установка и настройка для Visual Studio для Mac](https://docs.microsoft.com/visualstudio/mac/installation?view=vsmac-2019)
+* Компьютер Mac с Xcode 9.0 или более поздней версии.
+  
 ## <a name="create-an-azure-mobile-app-backend"></a>Создание серверной части мобильного приложения Azure
-Чтобы создать серверную часть мобильного приложения, выполните указанные ниже действия.
-
 [!INCLUDE [app-service-mobile-dotnet-backend-create-new-service](../../includes/app-service-mobile-dotnet-backend-create-new-service.md)]
 
-## <a name="configure-the-server-project"></a>Настройка серверного проекта
-Итак, вы подготовили серверную часть мобильного Azure, которая может использоваться мобильными клиентскими приложениями. Теперь скачайте серверный проект со списком простых задач и опубликуйте его в Azure.
-
-Выполните следующие действия, чтобы настроить серверный проект для использования серверной части .NET или Node.js.
-
+## <a name="create-a-database-connection-and-configure-the-client-and-server-project"></a>Создание подключения к базе данных и настройка проекта клиента и сервера
 [!INCLUDE [app-service-mobile-configure-new-backend](../../includes/app-service-mobile-configure-new-backend.md)]
 
-## <a name="download-and-run-the-xamarinios-app"></a>Скачивание и запуск приложения Xamarin.iOS
-1. В окне браузера откройте [портал Azure] .
-2. В колонке параметров мобильного приложения щелкните **Приступая к работе** > **Xamarin.iOS**. На этапе 3 нажмите кнопку **Создать приложение** (если вы еще не сделали этого).  Затем нажмите кнопку **Загрузить** .
+## <a name="run-the-xamarinios-app"></a>Запуск приложения Xamarin.iOS
+1. Откройте проект Xamarin.iOS.
 
-      После этого клиентское приложение, которое подключается к серверной части мобильной службы, будет скачано. Сохраните сжатый файл проекта на локальном компьютере и запомните путь к нему.
-3. Извлеките скачанный проект и откройте его в Xamarin Studio (или Visual Studio).
+2. Перейдите к [портала Azure](https://portal.azure.com/) и перейдите к мобильное приложение, которое вы создали. На `Overview` колонке найдите URL-адрес, который является общедоступной конечной точки для мобильного приложения. Пример - sitename для моей имя приложения «test123» будет https://test123.azurewebsites.net.
 
-    ![][9]
+3. Откройте файл `QSTodoService.cs` в этой папке - xamarin.iOS/ZUMOAPPNAME. Имя приложения — `ZUMOAPPNAME`.
 
-    ![][8]
-4. Нажмите клавишу F5, чтобы выполнить сборку проекта и запустить приложение в эмуляторе iPhone.
-5. В приложении введите содержательный текст, например *Изучение Xamarin*, и нажмите кнопку **+**.
+4. В `QSTodoService` класса, замените `ZUMOAPPURL` переменной с общедоступной конечной точки выше.
+
+    `const string applicationURL = @"ZUMOAPPURL";`
+
+    становится
+    
+    `const string applicationURL = @"https://test123.azurewebsites.net";`
+    
+5. Нажмите клавишу F5, чтобы развернуть и запустить приложение в эмуляторе iPhone.
+
+6. В приложении введите содержательный текст, таких как *работы с этим руководством* и нажмите кнопку +.
 
     ![][10]
 
-    Данные из запроса вставляются в таблицу TodoItem. Элементы, хранящиеся в таблице, возвращаются серверной частью мобильной службы, а данные отображаются в списке.
+    Данные из запроса вставляются в таблицу TodoItem. Элементы, сохраненные в таблице, возвращаются серверной частью мобильного приложения, а данные отображаются в списке.
 
-> [!NOTE]
-> Код, который обращается к серверной части вашей мобильной службы для запроса и вставки данных, можно просмотреть в файле C# QSTodoService.cs.
->
->
-
-## <a name="next-steps"></a>Дальнейшие действия
-* [Включение автономной синхронизации для мобильного приложения Xamarin.Android](app-service-mobile-xamarin-ios-get-started-offline-data.md)
-* [Добавление аутентификации в приложение](app-service-mobile-xamarin-ios-get-started-users.md)
-* [Добавление push-уведомлений в приложение Xamarin.Android](app-service-mobile-xamarin-ios-get-started-push.md)
-* [Использование управляемого клиента для мобильных приложений Azure](app-service-mobile-dotnet-how-to-use-client-library.md)
-
-<!-- Anchors. -->
-[Getting started with mobile app backends]:#getting-started
-[Create a new mobile app backend]:#create-new-service
-[Next Steps]:#next-steps
-
+   > [!NOTE]
+   > Вы можете просмотреть код, который получает доступ к внутреннему серверу мобильного приложения для запроса и вставки данных, которые находятся в файле C# ToDoActivity.cs.
+   
 <!-- Images. -->
-[6]: ./media/app-service-mobile-xamarin-ios-get-started/xamarin-ios-quickstart.png
-[8]: ./media/app-service-mobile-xamarin-ios-get-started/mobile-xamarin-project-ios-vs.png
-[9]: ./media/app-service-mobile-xamarin-ios-get-started/mobile-xamarin-project-ios-xs.png
 [10]: ./media/app-service-mobile-xamarin-ios-get-started/mobile-quickstart-startup-ios.png
-
-<!-- URLs. -->
-[портал Azure]: https://portal.azure.com/

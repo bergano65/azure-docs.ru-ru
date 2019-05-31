@@ -15,12 +15,12 @@ ms.author: billmath
 search.appverid:
 - MET150
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 146fdc3ca2af708a96e6b9a604493eb63c2e6530
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 66ff1cb57bb3317adc7ab6208ebf5029361b7c54
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60348337"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66235155"
 ---
 # <a name="implement-password-hash-synchronization-with-azure-ad-connect-sync"></a>Реализация синхронизации хэшированных паролей в службе синхронизации Azure AD Connect
 В этой статье содержатся сведения о том, как синхронизировать пароли пользователей локального экземпляра службы Active Directory (AD) и облачного экземпляра службы Azure Active Directory (Azure AD).
@@ -64,7 +64,7 @@ ms.locfileid: "60348337"
 >Оригинальный MD4-хэш не передается в Azure AD. Вместо этого передается SHA256-хэш от оригинального MD4-хэша. Это означает, что хранимый в Azure AD хэш невозможно использовать для атаки Pass-the-Hash на локальную систему, даже если удастся его получить.
 
 ### <a name="how-password-hash-synchronization-works-with-azure-active-directory-domain-services"></a>Как работает синхронизация хэшированных паролей с доменными службами Azure Active Directory
-Функцию синхронизации хэшированных паролей можно использовать для синхронизации локальных паролей с [доменными службами Azure Active Directory](../../active-directory-domain-services/active-directory-ds-overview.md). В этом сценарии доменная служба Azure AD выполняет аутентификацию пользователей в облаке, применяя все методы, доступные в локальном экземпляре Active Directory. Действия в этом сценарии аналогичны использованию инструмента миграции Active Directory Migration Tool (ADMT) в локальной среде.
+Функцию синхронизации хэшированных паролей можно использовать для синхронизации локальных паролей с [доменными службами Azure Active Directory](../../active-directory-domain-services/overview.md). В этом сценарии доменная служба Azure AD выполняет аутентификацию пользователей в облаке, применяя все методы, доступные в локальном экземпляре Active Directory. Действия в этом сценарии аналогичны использованию инструмента миграции Active Directory Migration Tool (ADMT) в локальной среде.
 
 ### <a name="security-considerations"></a>Вопросы безопасности
 При синхронизации паролей их текстовое значение никогда не передается в службу синхронизации хэшированных паролей, в Azure AD или другие связанные службы.

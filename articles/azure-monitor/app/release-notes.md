@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 05/17/2017
 ms.author: mbullwin
-ms.openlocfilehash: 0dd55a3b0e27c87f9ab5d4aa4a3ce89446ee0519
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: ad8aa9f5e37ab4d3df730cbb58fec0994bcbd509
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60373340"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66255960"
 ---
 # <a name="sdk-release-notes---application-insights"></a>Заметки о выпуске пакета SDK для Application Insights
 Ниже приведены подробные заметки о выпуске и инструкции по обновлению для наших пакетов SDK.
@@ -28,7 +28,6 @@ ms.locfileid: "60373340"
 * [ASP.NET Core](https://github.com/Microsoft/ApplicationInsights-aspnet5/releases)
 * [Java](https://github.com/Microsoft/ApplicationInsights-Java)
 * [JavaScript](https://github.com/Microsoft/ApplicationInsights-JS/commits/master)
-* [Средства Visual Studio](release-notes-vsix.md)
 * [другие платформы.](https://github.com/Microsoft/ApplicationInsights-Home)
 
 Ознакомьтесь также с нашими [блогами](https://azure.microsoft.com/blog/tag/application-insights/) и [обновлениями службы](https://azure.microsoft.com/updates/?service=application-insights), которые содержат сводку основных улучшений службы Application Insights в целом.

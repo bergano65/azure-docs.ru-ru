@@ -12,17 +12,16 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 03/14/2019
 ms.author: lagayhar
-ms.openlocfilehash: bbf9c162cd52dc94ee820c8597f36f7cbfeace5a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 4cc1456aa9928cbd4a24c203eab62e3e75b4d7c1
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60691330"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66256183"
 ---
 # <a name="get-started-with-application-insights-in-a-java-web-project"></a>Приступая к работе с Application Insights в веб-проекте Java
 
-
-[Application Insights](https://azure.microsoft.com/services/application-insights/) — это расширяемая служба аналитики для разработчиков веб-ресурсов, позволяющая оценивать производительность и использование работающего приложения. Используйте ее, чтобы [автоматически инструментировать запросы, отслеживать зависимости и собирать счетчики производительности](auto-collect-dependencies.md#java), [диагностировать проблемы с производительностью и исключения](../../azure-monitor/app/detect-triage-diagnose.md), а также [писать код][api] для отслеживания действий, которые пользователи выполняют с приложением. 
+[Application Insights](https://azure.microsoft.com/services/application-insights/) — это расширяемая служба аналитики для разработчиков веб-ресурсов, позволяющая оценивать производительность и использование работающего приложения. С ее помощью можно [автоматически инструментирования запроса, отслеживание зависимостей и счетчики производительности, сбор](auto-collect-dependencies.md#java), диагностика проблем с производительностью и исключений, и [писать код] [ api] для отслеживания, что пользователи делают с вашим приложением. 
 
 ![Снимок экрана: обзор с примером данных](./media/java-get-started/overview-graphs.png)
 
@@ -487,7 +486,6 @@ Application Insights может тестировать ваш веб-сайт ч
 * [Отслеживайте счетчики производительности Unix.](java-collectd.md)
 * Добавляйте [мониторинг на веб-страницы](javascript.md), чтобы отслеживать время загрузки страниц, вызовы AJAX и исключения браузера.
 * Пишите [пользовательскую телеметрию](../../azure-monitor/app/api-custom-events-metrics.md) для отслеживания использования в браузере или на сервере.
-* Создавайте [панели мониторинга](../../azure-monitor/app/app-insights-dashboards.md) для объединения основных диаграмм, позволяющих выполнять мониторинг системы.
 * Используйте [аналитику](../../azure-monitor/app/analytics.md), чтобы выполнять эффективные запросы телеметрии из приложения.
 * Дополнительные сведения см. в разделе [Azure for Java developers](/java/azure) (Azure для разработчиков Java).
 

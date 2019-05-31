@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.topic: conceptual
 ms.date: 03/13/2019
 ms.author: pabutler
-ms.openlocfilehash: 0b14180c894977d822aa30ea5f46a2e21e247dc1
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.openlocfilehash: dd2e68c820a8c9e503a3539fd50bf3fba68e3949
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64942315"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66257531"
 ---
 # <a name="dynamics-365-for-customer-engagement-prerequisites"></a>Предварительные требования для Dynamics 365 for Customer Engagement
 
@@ -24,7 +24,7 @@ ms.locfileid: "64942315"
 Приложение Dynamics 365 for Customer Engagement должно соответствовать требованиям, установленным в [руководстве по оценке приложений в Microsoft AppSource](https://smp-cdn-prod.azureedge.net/documents/AppsourceGuidelines/Microsoft%20AppSource%20app%20review%20guidelines_v5.pdf), в частности:
 
 
-|              Требование             |        ОПИСАНИЕ           |
+|              Требование             |        Описание           |
 |            ---------------           |      ---------------         |
 | Интеграция Azure Active Directory   | В вашем приложении должен предоставляться федеративный единый вход в Azure Active Directory с включенным запросом на согласие. Дополнительные сведения см. в статье [Как получить сертификат AppSource для Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/howto-get-appsource-certified). |
 | Интеграция с облачными службами Майкрософт (необязательно) | Если это необходимо, приложения должны интегрироваться с другими облачными службами Майкрософт, такими как службы Microsoft Power BI, Microsoft Flow, или службами Microsoft Azure, такими как Машинное обучение и Cognitive Services. |
@@ -40,7 +40,7 @@ ms.locfileid: "64942315"
 
 Бизнес-требования включают следующие процедурные, контрактные и юридические обязательства.
 
-* Вы должны быть зарегистрированы в программе [Microsoft Partner Network (MPN)](https://partners.microsoft.com/PartnerProgram/simplifiedenrollment.aspx) или быть зарегистрированным издателем в облаке Marketplace. Если вы еще не зарегистрированы, выполните действия для [регистрации в качестве издателя в облаке Marketplace](../../become-publisher.md)  (на третьем шаге используйте [форму предварительного утверждения партнера AppSource](https://appsource.microsoft.com/partners/signup)). 
+* Вы должны быть зарегистрированы в программе [Microsoft Partner Network (MPN)](https://partners.microsoft.com/PartnerProgram/simplifiedenrollment.aspx) или быть зарегистрированным издателем в облаке Marketplace. Если вы еще не зарегистрированы, выполните действия для [регистрации в качестве издателя в облаке Marketplace](https://docs.microsoft.com/azure/marketplace/become-publisher)  (на третьем шаге используйте [форму предварительного утверждения партнера AppSource](https://appsource.microsoft.com/partners/signup)). 
 
     >[!NOTE]
     >Следует использовать одну и ту же учетную запись регистрации Центра разработки для Майкрософт для входа на портал Cloud Partner. У вас должна быть только одна учетная запись Майкрософт для публикации предложений в Azure Marketplace. Эта учетная запись не должна быть привязана к конкретным службам или предложениям.

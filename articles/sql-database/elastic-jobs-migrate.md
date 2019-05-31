@@ -12,18 +12,18 @@ ms.author: joke
 ms.reviewer: sstein
 manager: craigg
 ms.date: 03/13/2019
-ms.openlocfilehash: f71fe4ff14e5a6f5fd6b91713970a097e4e56fb9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 627b29018afff2adb57b3b8b5c816bea9c421f68
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61475802"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66236863"
 ---
 # <a name="migrate-to-the-new-elastic-database-jobs"></a>Миграция к новым заданиям обработки эластичных баз данных
 
 Доступна новая версия [задания обработки эластичных баз данных](elastic-jobs-overview.md).
 
-Если у вас есть существующая версия [задания обработки эластичных баз данных](sql-database-elastic-jobs-overview.md), установленная на стороне пользователя, миграцию на последнюю версию можно упростить с помощью следующих командлетов и скриптов миграции.
+При наличии существующего клиента размещаются версию задания эластичной базы данных, миграции командлетов и скриптов, предоставленных для простому переносу до последней версии.
 
 
 ## <a name="prerequisites"></a>Технические условия
@@ -32,7 +32,7 @@ ms.locfileid: "61475802"
 
 ### <a name="install-the-latest-elastic-jobs-cmdlets"></a>Установка агента задания обработки эластичных баз данных
 
-Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/), прежде чем начинать работу.
+Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/) перед началом работы.
 
 Установите модуль **Az.Sql** предварительной версии 1.1.1, чтобы получать актуальные командлеты заданий обработки эластичных баз данных. Выполните приведенные ниже команды в PowerShell с правами администратора.
 

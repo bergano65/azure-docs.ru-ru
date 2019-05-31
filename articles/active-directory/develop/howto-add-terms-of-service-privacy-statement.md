@@ -12,17 +12,17 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 09/24/2018
+ms.date: 05/22/2019
 ms.author: ryanwi
 ms.reviwer: lenalepa, sureshja
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b2242c6fc46f5556de0b0dd63659670e9c3f998d
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.openlocfilehash: 399f72c7819378ddc1566c2bdde94801b2c71687
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65540189"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66235300"
 ---
 # <a name="how-to-configure-terms-of-service-and-privacy-statement-for-an-app"></a>Практическое руководство: Настройка условия службы и заявление о конфиденциальности для приложения
 
@@ -56,33 +56,20 @@ ms.locfileid: "65540189"
 
 Подготовив условия обслуживания и заявление о конфиденциальности, можно добавить ссылки на эти документы в приложение с помощью одного из следующих методов:
 
-* [с помощью портала Azure](#registered-in-azure-portal);
-* [на портале регистрации приложений или в Центре разработки](#registered-in-app-reg-portal);
+* [с помощью портала Azure](#azure-portal);
 * [с помощью JSON объекта приложения](#app-object-json);
 * [с помощью бета-версии REST API MSGraph](#msgraph-beta-rest-api).
 
-### <a name="registered-in-azure-portal"></a>Если приложение зарегистрировано на портале Azure
-
-Если приложение зарегистрировано на портале Azure, выполните следующие действия.
+### <a name="azure-portal"></a>С помощью портала Azure
+Выполните следующие действия на портале Azure.
 
 1. Войдите на [портале Azure](https://portal.azure.com/).
 2. Перейдите к разделу **Регистрация приложений** и выберите свое приложение.
-3. Откройте раздел **Свойства** для приложения.
+3. Откройте **фирменной символики** области.
 4. Заполните поля **URL-адрес условий предоставления услуг** и **URL-адрес заявления о конфиденциальности**.
 5. Сохраните изменения.
 
     ![Раздел свойств приложения с URL-адресами условий обслуживания и заявления о конфиденциальности](./media/howto-add-terms-of-service-privacy-statement/azure-portal-terms-service-privacy-statement-urls.png)
-
-### <a name="registered-in-app-reg-portal"></a>Если приложение зарегистрировано на портале регистрации приложений
-
-Если приложение зарегистрировано на портале регистрации приложений или в Центре разработки, выполните следующие действия.
-
-1. Войдите на [портал регистрации приложений](https://apps.dev.microsoft.com/).
-2. Выберите свое приложение и прокрутите до раздела **Профиль**.
-3. Заполните поля **URL-адрес условий предоставления услуг** и **URL-адрес заявления о конфиденциальности**.
-4. Сохраните изменения.
-
-    ![Раздел профиля приложения с URL-адресами условий обслуживания и заявления о конфиденциальности](./media/howto-add-terms-of-service-privacy-statement/app-registration-portal-profile-terms-service-privacy-statement-urls.png)
 
 ### <a name="app-object-json"></a>Использование JSON объекта приложения
 

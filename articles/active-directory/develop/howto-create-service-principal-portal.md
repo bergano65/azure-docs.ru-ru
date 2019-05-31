@@ -11,17 +11,17 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 05/14/2019
+ms.date: 05/17/2019
 ms.author: ryanwi
 ms.reviewer: tomfitz
 ms.custom: seoapril2019
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d0208d25e4583672ad2110d959f8e255affbf3e0
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 8b5a16e2d5e3ac723675ebdb536a51d20412681f
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65764898"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66235398"
 ---
 # <a name="how-to-use-the-portal-to-create-an-azure-ad-application-and-service-principal-that-can-access-resources"></a>Практическое руководство: Создание приложения Azure Active Directory и субъекта-службы с доступом к ресурсам с помощью портала
 
@@ -40,11 +40,11 @@ ms.locfileid: "65764898"
 
    ![Выберите "Регистрация приложений".](./media/howto-create-service-principal-portal/select-app-registrations.png)
 
-1. Выберите **Регистрация нового приложения**.
+1. Выберите **Новая регистрация**.
 
    ![Добавление приложения](./media/howto-create-service-principal-portal/select-add-app.png)
 
-1. Укажите имя и URL-адрес для приложения. В качестве типа создаваемого приложения выберите **Веб-приложение или API**. Вы не можете создать учетные данные для [собственного приложения](../manage-apps/application-proxy-configure-native-client-application.md). Этот тип нельзя использовать для автоматизированного приложения. Выбрав нужные значения, нажмите кнопку **Создать**.
+1. Укажите имя для приложения. Выберите учетную запись поддерживаемый тип, который определяет, кто может использовать приложение. В разделе **URI перенаправления**выберите **Web** для типа приложения, которые вы хотите создать. Введите URI, где маркер доступа отправляется.  Вы не можете создать учетные данные для [собственного приложения](../manage-apps/application-proxy-configure-native-client-application.md). Этот тип нельзя использовать для автоматизированного приложения. Выбрав нужные значения, нажмите кнопку **Зарегистрировать**.
 
    ![Имя приложения](./media/howto-create-service-principal-portal/create-app.png)
 
@@ -58,7 +58,7 @@ ms.locfileid: "65764898"
 
 1. Перейдите на уровень области действия, которому вы хотите назначить приложение. Например, чтобы назначить роль в области действия подписки, выберите **Все службы** и **Подписки**.
 
-   ![Выбрать подписку](./media/howto-create-service-principal-portal/select-subscription.png)
+   ![Выберите подписку.](./media/howto-create-service-principal-portal/select-subscription.png)
 
 1. Выберите определенную подписку, для которой хотите назначить приложение.
 
@@ -66,7 +66,7 @@ ms.locfileid: "65764898"
 
    Если требуемая подписка не отображается, выберите **фильтр глобальных подписок**. Убедитесь, что для портала была выбрана необходимая подписка. 
 
-1. Выберите **Управление доступом (IAM)**.
+1. Выберите **Управление доступом (IAM)** .
 1. Выберите **Добавить назначение ролей**.
 
    ![Добавление назначения ролей](./media/howto-create-service-principal-portal/select-add.png)
@@ -81,37 +81,47 @@ ms.locfileid: "65764898"
 
 ## <a name="get-values-for-signing-in"></a>Получение значений для входа
 
-### <a name="get-tenant-id"></a>Получение идентификатора клиента
-
-Когда выполняется программный вход, необходимо передать идентификатор клиента в запросе на проверку подлинности.
+Когда выполняется программный вход, необходимо передать идентификатор клиента в запросе на проверку подлинности. Вам также понадобится идентификатор приложения и ключ проверки подлинности. Получить эти значения можно следующим образом.
 
 1. Выберите **Azure Active Directory**.
-1. Выберите **Свойства**.
-
-   ![Выбор свойств Azure AD](./media/howto-create-service-principal-portal/select-ad-properties.png)
-
-1. Чтобы получить идентификатор клиента, скопируйте **идентификатор каталога**.
-
-   ![Tenant ID](./media/howto-create-service-principal-portal/copy-directory-id.png)
-
-### <a name="get-application-id-and-authentication-key"></a>Получение идентификатора приложения и ключа проверки подлинности
-
-Вам также понадобится идентификатор приложения и ключ проверки подлинности. Получить эти значения можно следующим образом.
 
 1. В Azure Active Directory в разделе **Регистрация приложений** выберите нужное приложение.
 
    ![Выбор приложения](./media/howto-create-service-principal-portal/select-app.png)
 
+1. Копирование идентификатора каталога (клиента) и сохраните его в коде приложения.
+
+    ![Tenant ID](./media/howto-create-service-principal-portal/copy-tenant-id.png)
+
 1. Скопируйте **идентификатор приложения** и сохраните его в коде приложения.
 
    ![Идентификатор клиента](./media/howto-create-service-principal-portal/copy-app-id.png)
 
+## <a name="certificates-and-secrets"></a>Сертификаты и секреты
+Управляющая программа приложения могут использовать два вида учетных данных для аутентификации в Azure AD: сертификаты и секреты приложения.  Мы рекомендуем использовать сертификат, но можно также создать новый секретный код приложения.
+
+### <a name="upload-a-certificate"></a>Загрузить сертификат
+
+Можно использовать существующий сертификат, если таковой имеется.  При необходимости можно создать самозаверяющий сертификат для целей тестирования. Откройте PowerShell и выполните [New-SelfSignedCertificate](/powershell/module/pkiclient/new-selfsignedcertificate) со следующими параметрами, чтобы создать самозаверяющий сертификат в хранилище сертификатов пользователя на компьютере: `$cert=New-SelfSignedCertificate -Subject "CN=DaemonConsoleCert" -CertStoreLocation "Cert:\CurrentUser\My"  -KeyExportPolicy Exportable -KeySpec Signature`.  Экспортировать этот сертификат с помощью [Управление сертификатом пользователя](/dotnet/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in) оснастку MMC на панели управления Windows.
+
+Чтобы отправить сертификат:
+1. Выберите **сертификаты и секреты**.
+
+   ![Выбор элемента "Параметры"](./media/howto-create-service-principal-portal/select-certs-secrets.png)
+1. Щелкните **отправка сертификата** и выберите сертификат (существующий сертификат или самозаверяющий сертификат можно экспортировать).
+    ![Отправка сертификата](./media/howto-create-service-principal-portal/upload-cert.png)
+1. Щелкните **Добавить**.
+
+После регистрации сертификата с приложением на портале регистрации приложений, необходимо включить в коде клиентского приложения для использования сертификата.
+
+### <a name="create-a-new-application-secret"></a>Создание секрета приложения
+Если вы решили не использовать сертификат, можно создать новый секретный код приложения.
 1. Выберите **сертификаты и секреты**.
 
    ![Выбор элемента "Параметры"](./media/howto-create-service-principal-portal/select-certs-secrets.png)
 
 1. Выберите **секреты клиента "->" новый секрет клиента**.
-1. Введите описание секрет и длительность. Закончив, выберите команду **добавить**.
+1. Введите описание секрет и длительность. Когда все будет готово, нажмите **Добавить**.
 
    ![Сохраните секрет](./media/howto-create-service-principal-portal/save-secret.png)
 

@@ -2,7 +2,7 @@
 title: Моделирование временных рядов с помощью службы "Аналитика временных рядов Azure" (предварительная версия) | Документация Майкрософт
 description: Основные сведения о модели временного ряда в службе "Аналитика временных рядов".
 author: ashannon7
-ms.author: anshan
+ms.author: dpalled
 ms.workload: big-data
 manager: cshankar
 ms.service: time-series-insights
@@ -10,12 +10,12 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 04/29/2019
 ms.custom: seodec18
-ms.openlocfilehash: a9de28c96c2833033a3811835f57cffcccdf4619
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: 3e6e8ae76c0ae6f688dd4a039b34c52af16b6e0f
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65190331"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66244026"
 ---
 # <a name="time-series-model"></a>Модель временных рядов
 
@@ -84,7 +84,7 @@ ms.locfileid: "65190331"
 
 [![Определение переменной типа table](media/v2-update-tsm/table.png)](media/v2-update-tsm/table.png#lightbox)
 
-| Определение | ОПИСАНИЕ |
+| Определение | Описание |
 | --- | ---|
 | Тип переменной |  *Числовые* и *агрегатные* поддерживаются типы |
 | Фильтр переменной | Фильтр переменной определяет необязательное предложение фильтра для ограничения числа строк, которые предполагается использовать для вычисления на основе условий. |

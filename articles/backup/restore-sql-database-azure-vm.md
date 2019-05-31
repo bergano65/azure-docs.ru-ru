@@ -6,14 +6,14 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: backup
 ms.topic: conceptual
-ms.date: 03/14/2019
+ms.date: 05/22/2019
 ms.author: raynew
-ms.openlocfilehash: 1712e46494796e563c26316b4f45d968872c304f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: d8ade598e4f1b6331367e8bd04ad59951ef5de8f
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60781803"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66242373"
 ---
 # <a name="restore-sql-server-databases-on-azure-vms"></a>Восстановление баз данных SQL Server на виртуальных машинах Azure
 
@@ -41,6 +41,7 @@ ms.locfileid: "60781803"
     - Только имя указанного клиента можно открыть соединение.
 - Для всех системных баз данных (модели, master, msdb) остановите службу агента SQL Server, прежде чем активировать восстановление.
 - Закройте все приложения, которые может попытаться выполнить подключение к любому из этих баз данных.
+- При наличии нескольких экземпляров на сервере, все экземпляры должен работать и в противном случае запуск сервера не будет отображаться в списке конечных серверов для восстановления базы данных.
 
 ## <a name="restore-a-database"></a>Восстановление базы данных
 
@@ -152,6 +153,13 @@ ms.locfileid: "60781803"
 1. Отслеживать ход выполнения восстановления в **уведомления** области или отслеживать их, выбрав **задания восстановления** меню базы данных.
 
     ![Ход выполнения задания восстановления](./media/backup-azure-sql-database/restore-job-notification.png)
+
+### <a name="restore-databases-with-large-number-of-files"></a>Восстановление баз данных с большим числом файлов
+
+Если общая строка размера файлов в базе данных больше, чем [определенного предела](backup-sql-server-azure-troubleshoot.md#files-size-limit-beyond-which-restore-happens-to-default-path), службы архивации Azure хранит список файлов базы данных в компоненте разных pit таким образом, что вы не сможете задать путь к целевой объект восстановления во время восстановления операция. Файлы будут восстановлены на путь по умолчанию SQL.
+
+  ![Восстановление базы данных с большими файлами](./media/backup-azure-sql-database/restore-large-files.jpg)
+
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

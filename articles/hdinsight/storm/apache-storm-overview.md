@@ -7,14 +7,14 @@ keywords: варианты использования apache storm, класте
 ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
-ms.date: 02/27/2018
+ms.date: 05/24/2019
 ms.author: hrasheed
-ms.openlocfilehash: 5688056bc0d371c780bce02254769792e9a95696
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 42aaa91906319133fd2864cd836447fcf3ca3a07
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64696112"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66257778"
 ---
 # <a name="what-is-apache-storm-on-azure-hdinsight"></a>Основные сведения об Apache Storm в Azure HDInsight
 
@@ -47,7 +47,7 @@ ms.locfileid: "64696112"
 
 Список компаний, использующих Apache Storm в качестве решения для анализа данных в реальном времени, см. на [этой странице](https://storm.apache.org/documentation/Powered-By.html).
 
-Чтобы начать работу с помощью Storm, см. в разделе [приступить к работе с Apache Storm в HDInsight][gettingstarted].
+Чтобы начать работу с помощью Storm, см. в разделе [приступить к работе с Apache Storm в HDInsight](apache-storm-tutorial-get-started-linux.md).
 
 ## <a name="how-does-apache-storm-work"></a>Использование Apache Storm
 
@@ -75,7 +75,7 @@ Storm работает с топологиями, а не заданиями [Ap
 
 ## <a name="ease-of-use"></a>Простота использования
 
-* __Подключение Secure Shell (SSH)__. Головные узлы кластера Storm доступны через Интернет по протоколу SSH. С помощью SSH вы можете выполнять команды непосредственно в кластере.
+* __Подключение Secure Shell (SSH)__ . Головные узлы кластера Storm доступны через Интернет по протоколу SSH. С помощью SSH вы можете выполнять команды непосредственно в кластере.
 
   Дополнительные сведения см. в статье [Использование SSH с Hadoop на основе Linux в HDInsight из Linux, Unix или OS X](../hdinsight-hadoop-linux-use-ssh-unix.md).
 
@@ -177,10 +177,5 @@ Storm использует [Apache Log4j 2](https://logging.apache.org/log4j/2.x
 
 Ниже приведены статьи с описанием решений для анализа данных в реальном времени с помощью Apache Storm в HDInsight.
 
-* [Начало работы с примерами Storm Starter для аналитики больших данных в HDInsight под управлением Linux][gettingstarted]
+* [Начало работы с Apache Storm в HDInsight с использованием примеров storm-starter](apache-storm-tutorial-get-started-linux.md)
 * [Примеры топологий и компонентов Storm для Apache Storm в HDInsight](apache-storm-example-topology.md)
-
-[stormtrident]: https://storm.apache.org/documentation/Trident-API-Overview.html
-[samoa]: https://yahooeng.tumblr.com/post/65453012905/introducing-samoa-an-open-source-platform-for-mining
-[apachetutorial]: https://storm.apache.org/documentation/Tutorial.html
-[gettingstarted]: apache-storm-tutorial-get-started-linux.md

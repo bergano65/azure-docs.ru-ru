@@ -8,12 +8,12 @@ ms.date: 04/25/2019
 ms.topic: conceptual
 ms.service: iot-central
 manager: hegate
-ms.openlocfilehash: c0a03b70c6e5e4742e03d4892b2b5f97c908ab9c
-ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
+ms.openlocfilehash: c50271e28db104522c0e8811508fa882dc316eab
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65467986"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66235810"
 ---
 # <a name="build-workflows-with-the-iot-central-connector-in-microsoft-flow"></a>Создание рабочих процессов с помощью соединителя IoT Central в Microsoft Flow
 
@@ -41,7 +41,7 @@ Microsoft Flow позволяет автоматизировать рабочи�
 
     ![Создание действия Microsoft Flow](media/howto-add-microsoft-flow/createflowaction.png)
 
-1. Вы увидите список tha рабочие процессы, имеют доступ к и вложенные в это правило IoT Central. Нажмите кнопку **ознакомьтесь с шаблонами** или **Создать > создать из шаблона** и можно выбрать любой из доступных шаблонов. 
+1. Вы увидите список рабочих процессов, которые имеют доступ к и вложенные в это правило IoT Central. Нажмите кнопку **ознакомьтесь с шаблонами** или **Создать > создать из шаблона** и можно выбрать любой из доступных шаблонов. 
 
     ![Доступные шаблоны Microsoft Flow](media/howto-add-microsoft-flow/flowtemplates1.png)
 

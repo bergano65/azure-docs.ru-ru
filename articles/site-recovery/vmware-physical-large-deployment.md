@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 05/14/2019
 ms.author: raynew
-ms.openlocfilehash: 593a82221ec94e43d50b7382ba89053d5f68864a
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: e96aafe61c0d8547ffca9e97bfd9e90c9529155f
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65805926"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66237266"
 ---
 # <a name="set-up-disaster-recovery-at-scale-for-vmware-vmsphysical-servers"></a>Настройка аварийного восстановления в масштабе для виртуальных машин VMware или физических серверов
 
@@ -188,7 +188,7 @@ ms.locfileid: "65805926"
 1. Назначьте администратором аварийного восстановления, чтобы отслеживать состояние работоспособности реплицированные машины.
 2. [Наблюдения за событиями](site-recovery-monitor-and-troubleshoot.md) для реплицированных элементов и инфраструктуры.
 3. [Наблюдать за работоспособностью](vmware-physical-azure-monitor-process-server.md) серверов обработки масштабирования.
-4. Зарегистрируйтесь для получения [уведомления по электронной почте](https://docs.microsoft.com/azure/site-recovery/site-recovery-monitor-and-troubleshoot.md#subscribe-to-email-notifications) для событий, для упрощения мониторинга.
+4. Зарегистрируйтесь для получения [уведомления по электронной почте](https://docs.microsoft.com/azure/site-recovery/site-recovery-monitor-and-troubleshoot#subscribe-to-email-notifications) для событий, для упрощения мониторинга.
 5. Регулярное проведение [аварийного восстановления](site-recovery-test-failover-to-azure.md), чтобы убедиться, что все работает должным образом.
 
 

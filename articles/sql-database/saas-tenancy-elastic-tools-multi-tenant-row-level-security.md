@@ -12,12 +12,12 @@ ms.author: vanto
 ms.reviewer: sstein
 manager: craigg
 ms.date: 12/18/2018
-ms.openlocfilehash: 71d2d542d71977f9d8dfe07370dffd7fe508bc92
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 4834688496330210b273f40f1d6f11230a6ae1c8
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61485495"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66234128"
 ---
 # <a name="multi-tenant-applications-with-elastic-database-tools-and-row-level-security"></a>Мультитенантные приложения со средствами эластичных баз данных и безопасностью на уровне строк
 
@@ -228,7 +228,7 @@ All blogs for TenantId {0} (using ADO.NET SqlClient):", tenantId4);
     - Предикат BLOCK запрещает создавать (INSERT) или обновлять (UPDATE) строки, не соответствующие этому фильтру.
     - Если значение SESSION\_CONTEXT не задано, функция возвращает значение NULL и запрещает просмотр или добавление любых строк.
 
-Чтобы включить безопасность на уровне строк для всех сегментов, выполните следующий запрос T-SQL с помощью Visual Studio (SSDT), SSMS или скрипта PowerShell, который включен в этот проект. Если же вы используете [задания обработки эластичных баз данных](sql-database-elastic-jobs-overview.md), можно автоматизировать выполнение инструкции T-SQL для всех сегментов.
+Чтобы включить безопасность на уровне строк для всех сегментов, выполните следующий запрос T-SQL с помощью Visual Studio (SSDT), SSMS или скрипта PowerShell, который включен в этот проект. Если же вы используете [задания обработки эластичных баз данных](elastic-jobs-overview.md), можно автоматизировать выполнение инструкции T-SQL для всех сегментов.
 
 ```sql
 CREATE SCHEMA rls; -- Separate schema to organize RLS objects.
@@ -339,7 +339,7 @@ GO
 ```
 
 
-### <a name="maintenance"></a>Обслуживание
+### <a name="maintenance"></a>Обслуживание, 
 
 - **Добавление новых сегментов**. Выполните скрипт T-SQL, чтобы включить политику RLS для всех новых сегментов, иначе запросы в таких сегментах фильтроваться не будут.
 - **Добавление новых таблиц**. Добавляйте предикаты FILTER и BLOCK в политику безопасности на всех сегментах при создании любой новой таблицы. Без этого запросы к такой таблице фильтроваться не будут. Добавление предикатов можно автоматизировать с помощью триггера DDL, как это описано в записи об [автоматическом применении безопасности на уровне строк для вновь созданных таблиц](https://blogs.msdn.com/b/sqlsecurity/archive/20../../apply-row-level-security-automatically-to-newly-created-tables.aspx).

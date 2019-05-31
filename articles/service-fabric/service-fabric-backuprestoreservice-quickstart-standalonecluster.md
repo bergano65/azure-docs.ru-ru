@@ -12,14 +12,14 @@ ms.devlang: dotnet
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 10/29/2018
+ms.date: 5/24/2019
 ms.author: hrushib
-ms.openlocfilehash: 28378b4b769e0d0e70a82a45baac0872d1476036
-ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
+ms.openlocfilehash: 154efffcb1f86907fefecc060419c1d9450470f8
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65413640"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66237344"
 ---
 # <a name="periodic-backup-and-restore-in-azure-service-fabric"></a>Периодическое резервное копирование и восстановление в Azure Service Fabric
 > [!div class="op_single_selector"]
@@ -170,9 +170,6 @@ $url = "http://localhost:19080/BackupRestore/BackupPolicies/$/Create?api-version
 Invoke-WebRequest -Uri $url -Method Post -Body $body -ContentType 'application/json'
 ```
 
-> [!IMPORTANT]
-> Из-за проблемы в среде выполнения убедитесь, что длительность хранения в политике хранения составляет не менее 24 дней. В противном случае в службе резервного копирования и восстановления произойдет потеря кворума после отработки отказа реплики.
-
 ### <a name="enable-periodic-backup"></a>Включение периодического резервного копирования
 После определения политики резервного копирования, соответствующей требованиям защиты данных приложения, необходимо связать ее с приложением. В зависимости от требований политику резервного копирования можно связать с приложением, службой или секцией.
 
@@ -265,11 +262,6 @@ LsnOfLastBackupRecord   : 2437
 CreationTimeUtc         : 2018-04-01T20:09:44Z
 FailureError            : 
 ```
-
-## <a name="known-issues"></a>Известные проблемы
-- Убедитесь, что настроенная длительность хранения не превышает 24 дня. 
-- Служба восстановления резервного копирования не отображается в системах языковых стандартов, где в качестве десятичного разделителя используется символ, отличный от точки.
-- Служба восстановления резервного копирования не отображается в кластерах, защищенных системой безопасности на основе gMSA.
 
 ## <a name="limitation-caveats"></a>Ограничения и предупреждения
 - Командлеты PowerShell для Service Fabric находятся в режиме предварительного просмотра.

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-policy
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: 050f301b55c718e80c1b4157639bd9dce506f6ba
-ms.sourcegitcommit: 59fd8dc19fab17e846db5b9e262a25e1530e96f3
+ms.openlocfilehash: 428a1614889409300064420e1d3d4fbc0423a0ec
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65979470"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66237529"
 ---
 # <a name="get-compliance-data-of-azure-resources"></a>Получить данные о соответствии ресурсов Azure
 
@@ -416,7 +416,8 @@ Trent Baker
 
 ## <a name="azure-monitor-logs"></a>Журналы Azure Monitor
 
-Если у вас есть [рабочей области Log Analytics](../../../log-analytics/log-analytics-overview.md) с `AzureActivity` из [решение для анализа журнала действий](../../../azure-monitor/platform/collect-activity-logs.md) связана с подпиской, вы также можете просмотреть результаты несоответствия с помощью цикла оценки простых запросов Kusto и `AzureActivity` таблицы. С учетом подробных сведений о несоответствии в журналах Azure Monitor вы также можете настроить оповещения для отслеживания несоответствия.
+Если у вас есть [рабочей области Log Analytics](../../../log-analytics/log-analytics-overview.md) с `AzureActivity` из [решение для анализа журнала действий](../../../azure-monitor/platform/activity-log-collect.md) связана с подпиской, вы также можете просмотреть результаты несоответствия с помощью цикла оценки простых запросов Kusto и `AzureActivity` таблицы. С учетом подробных сведений о несоответствии в журналах Azure Monitor вы также можете настроить оповещения для отслеживания несоответствия.
+
 
 ![Соответствие требованиям политики с помощью журналов Azure Monitor](../media/getting-compliance-data/compliance-loganalytics.png)
 
@@ -427,4 +428,4 @@ Trent Baker
 - Изучите [сведения о действии политик](../concepts/effects.md).
 - Понять, как [программное создание политик](programmatically-create.md).
 - Узнайте, как [исправлять несоответствующие ресурсы](remediate-resources.md).
-- Просмотрите, какие группы управления — с [упорядочение ресурсов с помощью групп управления Azure](../../management-groups/overview.md).
+- Дополнительные сведения о группе управления см. в статье [Упорядочивание ресурсов с помощью групп управления Azure](../../management-groups/overview.md).

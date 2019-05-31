@@ -3,7 +3,7 @@ title: Сравнение присоединения к Azure AD и доменн
 description: Выбор между присоединением к Azure AD и доменными службами Azure AD
 services: active-directory-ds
 documentationcenter: ''
-author: eringreenlee
+author: MikeStephens-MS
 manager: daveba
 editor: curtand
 ms.assetid: 31a71d36-58c1-4839-b958-80da0c6a77eb
@@ -13,14 +13,14 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 10/26/2017
-ms.author: ergreenl
-ms.openlocfilehash: d4f50ea89f2623d387fb77acb09e609def547468
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 05/20/2019
+ms.author: mstephen
+ms.openlocfilehash: eaa8cb54a46b1ff3c2c0f7c40c824f6ddcca16b9
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60359438"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66234958"
 ---
 # <a name="choose-between-azure-active-directory-join-and-azure-active-directory-domain-services"></a>Выбор между присоединением к Azure AD и доменными службами Azure Active Directory
 В этой статье описываются различия между присоединением к Azure Active Directory (AD) и доменными службами Azure AD. Изучив ее, вы сможете выбрать нужный вам вариант.
@@ -59,21 +59,21 @@ Azure AD позволяет управлять идентификаторами 
 | Устройство управляется | Azure AD | с помощью управляемого домена доменных служб Azure AD |
 | Представление в каталоге | Объекты устройств в каталоге Azure AD | Объекты компьютеров в управляемом домене доменных служб Azure AD |
 | Authentication | Протоколы на основе OAuth или OpenID Connect | Протоколы Kerberos, NTLM |
-| управления | Программное обеспечение для управления мобильными устройствами (MDM), например Intune | Групповая политика |
+| Управление | Программное обеспечение для управления мобильными устройствами (MDM), например Intune | Групповая политика |
 | Сеть | Работает через Интернет | Компьютер должен быть в той же виртуальной сети, что и управляемый домен|
 | Отлично подойдет для: | мобильных или настольных устройств пользователей | виртуальных машин сервера, развернутых в Azure |
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 ### <a name="learn-more-about-azure-ad-domain-services"></a>Дополнительные сведения о доменных службах Azure AD
-* [Доменные службы Azure AD](active-directory-ds-overview.md)
+* [Доменные службы Azure AD](overview.md)
 * [Функции](active-directory-ds-features.md)
-* [Сценарии развертывания и варианты использования](active-directory-ds-scenarios.md)
-* [Как определить, подходят ли вам доменные службы Azure AD](active-directory-ds-comparison.md)
-* [Синхронизация в управляемом домене доменных служб Azure AD](active-directory-ds-synchronization.md)
+* [Сценарии развертывания и варианты использования](scenarios.md)
+* [Как определить, подходят ли вам доменные службы Azure AD](comparison.md)
+* [Синхронизация в управляемом домене доменных служб Azure AD](synchronization.md)
 
 ### <a name="learn-more-about-azure-ad-join"></a>Дополнительные сведения о присоединении к Azure AD
 * [Общие сведения об управлении устройствами в Azure Active Directory](../active-directory/device-management-introduction.md)
 
 ### <a name="get-started-with-azure-ad-domain-services"></a>Приступая к работе с доменными службами Azure AD
-* [Включение доменных служб Azure Active Directory с помощью портала Azure (предварительная версия)](active-directory-ds-getting-started.md)
+* [Включение доменных служб Azure Active Directory с помощью портала Azure (предварительная версия)](create-instance.md)

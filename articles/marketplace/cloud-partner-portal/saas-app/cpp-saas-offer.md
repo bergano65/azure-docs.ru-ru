@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.topic: conceptual
 ms.date: 05/16/2019
 ms.author: pbutlerm
-ms.openlocfilehash: 08baf908d47cdc6a9bc1e97f88eb5ff509d6790e
-ms.sourcegitcommit: 3ced637c8f1f24256dd6ac8e180fff62a444b03c
+ms.openlocfilehash: 813cfb25ebcd3dd15314d7aa05933d0bf1167917
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65835055"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66258054"
 ---
 # <a name="azure-saas-application-offer"></a>Предложение приложения Azure SaaS
 
@@ -20,6 +20,7 @@ ms.locfileid: "65835055"
 
 > [!IMPORTANT] 
 > SaaS предоставляют функциональность переносится в [центра партнеров Майкрософт](https://partner.microsoft.com/dashboard/directory).  Все новые издатели необходимо использовать центр партнеров для создания новых предложений SaaS и управления существующие предложения.  Текущих издателей с предложениями SaaS batchwise переносятся из облачного портала для партнеров в центре партнеров.  На портале Cloud Partner отобразит сообщения о состоянии, чтобы указать, когда были перенесены определенные существующие предложения.
+> Дополнительные сведения см. в разделе [создайте новое предложение SaaS](../../partner-center-portal/create-new-saas-offer.md).
 
 
 Используйте приложения SaaS, когда решение будет развернуто в вашей подписке Azure и пользователи будут выполнять вход через интерфейс проектирования и управления для тестирования приложения. Для тестирования существующей пробной среды используется <a href="https://azure.microsoft.com/services/active-directory">Azure Active Directory (Azure AD)</a>.

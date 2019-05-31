@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.topic: conceptual
 ms.date: 05/16/2019
 ms.author: pbutlerm
-ms.openlocfilehash: 2195c9a5e1f0d3683ea8cf6564d97cbabd072f81
-ms.sourcegitcommit: 3ced637c8f1f24256dd6ac8e180fff62a444b03c
+ms.openlocfilehash: 825170be5dc4d1b25980c7d5037d72779169b3cc
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65834201"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66258074"
 ---
 # <a name="update-an-existing-saas-application-offer"></a>Обновление имеющегося предложения приложения SaaS
 
@@ -20,6 +20,7 @@ ms.locfileid: "65834201"
 
 > [!IMPORTANT] 
 > SaaS предоставляют функциональность переносится в [центра партнеров Майкрософт](https://partner.microsoft.com/dashboard/directory).  Все новые издатели необходимо использовать центр партнеров для создания новых предложений SaaS и управления существующие предложения.  Текущих издателей с предложениями SaaS batchwise переносятся из облачного портала для партнеров в центре партнеров.  На портале Cloud Partner отобразит сообщения о состоянии, чтобы указать, когда были перенесены определенные существующие предложения.
+> Дополнительные сведения см. в разделе [создайте новое предложение SaaS](../../partner-center-portal/create-new-saas-offer.md).
 
 Существует несколько причин, по которым может понадобиться обновить предложение, например:
 

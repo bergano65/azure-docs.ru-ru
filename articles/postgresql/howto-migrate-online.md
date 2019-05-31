@@ -1,19 +1,19 @@
 ---
-title: Миграция в базу данных Azure для PostgreSQL с минимальным временем простоя
-description: В этой статье объясняется, как с помощью Azure Database Migration Service перенести базу данных PostgreSQL в Базу данных Azure для PostgreSQL с минимальным временем простоя.
+title: Миграция в базу данных Azure для PostgreSQL - один сервер с минимальным временем простоя
+description: 'В этой статье описывается выполнение миграции с минимальным временем простоя базы данных PostgreSQL в базу данных Azure для PostgreSQL: один сервер с помощью Azure Database Migration Service.'
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 12/07/2018
-ms.openlocfilehash: ceb64781dc7e5243f785ad239c24e5f21b0481ce
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 5/6/2019
+ms.openlocfilehash: 93cd390889c023adf1c30a8470e1c2298598439e
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60421246"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "65067512"
 ---
-# <a name="minimal-downtime-migration-to-azure-database-for-postgresql"></a>Миграция в базу данных Azure для PostgreSQL с минимальным временем простоя
+# <a name="minimal-downtime-migration-to-azure-database-for-postgresql---single-server"></a>Миграция в базу данных Azure для PostgreSQL - один сервер с минимальным временем простоя
 Благодаря новой возможности **непрерывной синхронизации**, реализованной в службе [Azure Database Migration Service](https://aka.ms/get-dms) (DMS), вы можете переносить базы данных PostgreSQL в Базу данных Azure для PostgreSQL с минимальным временем простоя. Эта функция позволяет сократить время простоя при работе приложения.
 
 ## <a name="overview"></a>Обзор

@@ -5,15 +5,15 @@ author: markjbrown
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.topic: conceptual
-ms.date: 05/06/2019
+ms.date: 05/23/2019
 ms.author: mjbrown
 ms.custom: seodec18
-ms.openlocfilehash: 186e0365ae8aee3b7f92fcc06142e4d0496ffd08
-ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
+ms.openlocfilehash: 70de178df86a4b202298eda63b0f59cb7bc96281
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65415458"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66237833"
 ---
 # <a name="sql-language-reference-for-azure-cosmos-db"></a>Справочник по языку SQL для Azure Cosmos DB 
 
@@ -3159,7 +3159,7 @@ GetCurrentDateTime ()
   |YYYY|четыре цифры года|
   |ММ|две цифры месяца (01 = январь, и т.д.)|
   |DD|двузначным днем месяца (от 01 до 31)|
-  |н|signifier для начала элементов времени|
+  |T|signifier для начала элементов времени|
   |hh|час из двух цифр (от 00 до 23)|
   |ММ|минута из двух цифр (от 00 до 59)|
   |ss|секунда из двух цифр (от 00 до 59)|

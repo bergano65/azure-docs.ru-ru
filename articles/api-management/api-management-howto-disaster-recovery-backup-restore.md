@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/14/2018
 ms.author: apimpm
-ms.openlocfilehash: 0c1efa0e5cfa4bf31e58be64b3fe78075b79b515
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
-ms.translationtype: HT
+ms.openlocfilehash: e0c02829a2fef6e281794fdba6c9fb5d9b8a736b
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66141688"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66241701"
 ---
 # <a name="how-to-implement-disaster-recovery-using-service-backup-and-restore-in-azure-api-management"></a>Реализация аварийного восстановления с помощью функций резервного копирования и восстановления службы в Azure API Management
 
@@ -63,7 +63,7 @@ ms.locfileid: "66141688"
 6. Введите в поле **URI перенаправления** любой URL-адрес, например `http://resources`. Это поле является обязательным, но введенное значение впоследствии не используется. Установите флажок, чтобы сохранить приложение.
 7. Нажмите кнопку **Создать**.
 
-### <a name="add-an-application"></a>Добавить приложение
+### <a name="add-an-application"></a>Добавление приложения
 
 1. После создания приложения щелкните **Параметры**.
 2. Теперь щелкните **Требуемые разрешения**.
@@ -117,14 +117,14 @@ namespace GetTokenResourceManagerRequests
 
     Когда все значения будут указаны, этот пример кода должен вернуть примерно такой маркер:
 
-    ![Токен][api-management-arm-token]
+    ![по маркеру][api-management-arm-token]
 
     > [!NOTE]
     > Срок действия маркера может истечь после определенного периода. Выполнить образец кода снова, чтобы создать новый маркер.
 
 ## <a name="calling-the-backup-and-restore-operations"></a>Вызов операций резервного копирования и восстановления
 
-Интерфейсы REST API: [служба управления API — резервное копирование](/rest/api/apimanagement/apimanagementservice/backup) и [служба управления API — восстановление](/rest/api/apimanagement/apimanagementservice/restore).
+Интерфейсы REST API: [служба управления API — резервное копирование](/rest/api/apimanagement/2019-01-01/apimanagementservice/backup) и [служба управления API — восстановление](/rest/api/apimanagement/2019-01-01/apimanagementservice/restore).
 
 Прежде чем выполнять операции резервного копирования и восстановления, описанные в следующих разделах, задайте заголовок запроса авторизации для вызова REST.
 

@@ -12,14 +12,14 @@ ms.devlang: dotnet
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 05/01/2018
+ms.date: 2/01/2019
 ms.author: hrushib
-ms.openlocfilehash: 31c5feac577dc5e9e0eed9ced9ccfe25c12d3086
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: b1b36ed5197aeb056c70200a49e09cc777d66d0b
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60310475"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66237361"
 ---
 # <a name="understanding-periodic-backup-configuration-in-azure-service-fabric"></a>Основные сведения о настройке периодического резервного копирования в Azure Service Fabric
 
@@ -137,9 +137,6 @@ ms.locfileid: "60310475"
             "MinimumNumberOfBackups": 20
         }
         ```
-
-> [!IMPORTANT]
-> Из-за проблемы в среде выполнения убедитесь, что длительность хранения в политике хранения составляет не менее 24 дней. В противном случае в службе резервного копирования и восстановления произойдет потеря кворума после отработки отказа реплики.
 
 ## <a name="enable-periodic-backup"></a>Включение периодического резервного копирования
 После определения политики резервного копирования, которая соответствует требованиям данных резервного копирования, ее необходимо соответствующим образом связать с _приложением_, _службой_ или _разделом_.

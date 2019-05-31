@@ -3,7 +3,7 @@ title: Привязка к управляемому домену доменны�
 description: Привязка к управляемому домену доменных служб Azure AD с помощью защищенного протокола LDAP (LDAPS)
 services: active-directory-ds
 documentationcenter: ''
-author: eringreenlee
+author: MikeStephens-MS
 manager: daveba
 editor: curtand
 ms.assetid: 6871374a-0300-4275-9a45-a39a52c65ae4
@@ -13,14 +13,14 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 08/01/2018
-ms.author: ergreenl
-ms.openlocfilehash: 62776408675acba1ee8a57252c794e5a1c840155
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 05/20/2019
+ms.author: mstephen
+ms.openlocfilehash: 47c9553b4191fe6dbae8d92d75dfae83f191a063
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60417047"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66234857"
 ---
 # <a name="bind-to-an-azure-ad-domain-services-managed-domain-using-secure-ldap-ldaps"></a>Привязка к управляемому домену доменных служб Azure AD с помощью защищенного протокола LDAP (LDAPS)
 
@@ -64,13 +64,13 @@ ms.locfileid: "60417047"
 
 
 ## <a name="related-content"></a>Связанная информация
-* [Приступая к работе с доменными службами Azure AD](active-directory-ds-getting-started.md)
-* [Administer an Azure AD Domain Services managed domain (Администрирование управляемого домена доменных служб Azure AD)](active-directory-ds-admin-guide-administer-domain.md)
+* [Приступая к работе с доменными службами Azure AD](create-instance.md)
+* [Управление домен доменных служб Azure AD](manage-domain.md)
 * [LDAP Query Basics](https://technet.microsoft.com/library/aa996205.aspx) (Основы запроса LDAP)
-* [Administer Group Policy on an Azure AD Domain Services managed domain](active-directory-ds-admin-guide-administer-group-policy.md) (Администрирование групповой политики в управляемом домене доменных служб Azure AD)
+* [Управление групповой политики для доменных служб Azure AD](manage-group-policy.md)
 * [Группы безопасности сети](../virtual-network/security-overview.md)
 * [Создание группы безопасности сети](../virtual-network/tutorial-filter-network-traffic.md)
 
 
 ## <a name="next-step"></a>Дальнейшие действия
-[Руководство по устранению неполадок с защищенным протоколом LDAP в управляемом домене](active-directory-ds-ldaps-troubleshoot.md)
+[Руководство по устранению неполадок с защищенным протоколом LDAP в управляемом домене](tshoot-ldaps.md)

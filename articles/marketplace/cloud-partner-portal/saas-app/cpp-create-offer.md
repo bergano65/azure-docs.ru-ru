@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.topic: conceptual
 ms.date: 05/16/2019
 ms.author: pbutlerm
-ms.openlocfilehash: 646e9bf844477b3d8e1c4c42fb5956e015805433
-ms.sourcegitcommit: 3ced637c8f1f24256dd6ac8e180fff62a444b03c
+ms.openlocfilehash: 9ca85e4414739bff05176eddc1f31963e453dcf0
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65833503"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66258121"
 ---
 # <a name="create-a-new-saas-application-offer"></a>Создание предложения приложения SaaS
 
@@ -20,7 +20,7 @@ ms.locfileid: "65833503"
 
 > [!IMPORTANT] 
 > SaaS предоставляют функциональность переносится в [центра партнеров Майкрософт](https://partner.microsoft.com/dashboard/directory).  Все новые издатели необходимо использовать центр партнеров для создания новых предложений SaaS и управления существующие предложения.  Текущих издателей с предложениями SaaS batchwise переносятся из облачного портала для партнеров в центре партнеров.  На портале Cloud Partner отобразит сообщения о состоянии, чтобы указать, когда были перенесены определенные существующие предложения.
-
+> Дополнительные сведения см. в разделе [создайте новое предложение SaaS](../../partner-center-portal/create-new-saas-offer.md).
 
 ## <a name="offer-process"></a>Процесс предложения
 

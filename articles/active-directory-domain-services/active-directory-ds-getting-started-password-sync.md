@@ -3,7 +3,7 @@ title: Доменные службы Azure Active Directory. Включение 
 description: Приступая к работе с доменными службами Azure Active Directory
 services: active-directory-ds
 documentationcenter: ''
-author: eringreenlee
+author: MikeStephens-MS
 manager: daveba
 editor: curtand
 ms.assetid: 5a32a0df-a3ca-4ebe-b980-91f58f8030fc
@@ -13,14 +13,14 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 04/02/2018
-ms.author: ergreenl
-ms.openlocfilehash: ad905f93a8c4b03fd6ccc9edb93b52f23bcb2c58
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 05/10/2019
+ms.author: mstephen
+ms.openlocfilehash: 734e4bad970229ea8eb770d586062b098e586353
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60417491"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66234892"
 ---
 # <a name="enable-password-hash-synchronization-to-azure-active-directory-domain-services"></a>Включение синхронизации хэшей паролей с доменными службами Azure AD
 Выполняя предыдущие задачи, вы включили доменные службы Azure Active Directory для клиента Azure Active Directory (Azure AD). Следующая задача — включить синхронизацию необходимых хэшей паролей, чтобы проверить подлинность NTLM и Kerberos в доменных службах Azure AD. Когда синхронизация хэшей паролей настроена, пользователи могут входить в управляемый домен с помощью учетных данных организации.
@@ -78,10 +78,10 @@ ms.locfileid: "60417491"
 
 Новый пароль вступает в силу в доменных службах Azure Active Directory через несколько минут после изменения. Входить на компьютеры, подключенные к управляемому домену, с помощью нового пароля можно примерно через 20 минут.
 
-## <a name="related-content"></a>Похожий контент
+## <a name="related-content"></a>См. также
 * [Как изменить свой пароль](../active-directory/user-help/active-directory-passwords-update-your-own-password.md)
 * [Приступая к работе с компонентами управления паролями](../active-directory/authentication/quickstart-sspr.md)
 * [Включение синхронизации хэшей паролей с доменными службами Azure AD для синхронизированного клиента Azure AD](active-directory-ds-getting-started-password-sync-synced-tenant.md)
-* [Администрирование управляемого домена доменных служб Azure Active Directory](active-directory-ds-admin-guide-administer-domain.md)
+* [Управление домен доменных служб Azure AD](manage-domain.md)
 * [Присоединение виртуальной машины Windows Server к управляемому домену](active-directory-ds-admin-guide-join-windows-vm.md)
 * [Присоединение виртуальной машины Red Hat Enterprise Linux 7 к управляемому домену](active-directory-ds-admin-guide-join-rhel-linux-vm.md)

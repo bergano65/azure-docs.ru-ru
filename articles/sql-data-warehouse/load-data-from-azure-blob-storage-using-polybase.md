@@ -10,12 +10,12 @@ ms.subservice: load data
 ms.date: 04/26/2019
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: a8ca3b52d181578e6b35090489b7133a94b55cbd
-ms.sourcegitcommit: 16cb78a0766f9b3efbaf12426519ddab2774b815
+ms.openlocfilehash: ac0f8cb4d9069d2ef7ce48939ad2dd1c92732d1a
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65852073"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66242966"
 ---
 # <a name="tutorial-load-new-york-taxicab-data-to-azure-sql-data-warehouse"></a>Руководство по Загрузка данных о такси Нью-Йорка в Хранилище данных SQL Azure
 
@@ -126,7 +126,7 @@ ms.locfileid: "65852073"
 Теперь с помощью этого IP-адреса можно подключиться к серверу SQL и его хранилищам данных. Подключение выполняется из SQL Server Management Studio или другого инструмента на ваше усмотрение. При подключении используйте созданную ранее учетную запись ServerAdmin.  
 
 > [!IMPORTANT]
-> По умолчанию доступ через брандмауэр базы данных SQL включен для всех служб Azure. На этой странице щелкните **Откл.**, а затем нажмите кнопку **Сохранить**, чтобы отключить брандмауэр для всех служб Azure.
+> По умолчанию доступ через брандмауэр базы данных SQL включен для всех служб Azure. На этой странице щелкните **Откл.** , а затем нажмите кнопку **Сохранить**, чтобы отключить брандмауэр для всех служб Azure.
 
 ## <a name="get-the-fully-qualified-server-name"></a>Получение полного имени сервера
 
@@ -181,7 +181,7 @@ ms.locfileid: "65852073"
     CREATE USER LoaderRC20 FOR LOGIN LoaderRC20;
     ```
 
-3. Нажмите **Execute (Выполнить)**.
+3. Нажмите **Execute (Выполнить)** .
 
 4. Щелкните правой кнопкой мыши **mySampleDataWarehouse** и выберите **Новый запрос**. Откроется окно нового запроса.  
 
@@ -195,7 +195,7 @@ ms.locfileid: "65852073"
     EXEC sp_addrolemember 'staticrc20', 'LoaderRC20';
     ```
 
-6. Нажмите **Execute (Выполнить)**.
+6. Нажмите **Execute (Выполнить)** .
 
 ## <a name="connect-to-the-server-as-the-loading-user"></a>Подключение к серверу от имени пользователя, выполняющего загрузку
 
@@ -590,7 +590,7 @@ ms.locfileid: "65852073"
   
 1. **Установка подключения Polybase к учетной записи службы хранилища Azure:**
     
-   1. Создание учетных данных для базы данных с помощью **IDENTITY = «Управляемое удостоверение службы»**:
+   1. Создание учетных данных для базы данных с помощью **IDENTITY = «Управляемое удостоверение службы»** :
 
        ```SQL
        CREATE DATABASE SCOPED CREDENTIAL msi_cred WITH IDENTITY = 'Managed Service Identity';
@@ -640,7 +640,7 @@ ms.locfileid: "65852073"
 > * просмотрели ход выполнения загрузки данных;
 > * создали статистику для вновь загруженных данных.
 
-Перейдите к обзору процесса переноса, чтобы узнать больше о переносе существующей базы данных в хранилище данных SQL.
+Перейдите к Общие сведения о разработке, чтобы узнать, как перенести существующую базу данных в хранилище данных SQL.
 
 > [!div class="nextstepaction"]
->[Узнать больше о переносе существующей базы данных в хранилище данных SQL](sql-data-warehouse-overview-migrate.md)
+>[Проектные решения для переноса существующей базы данных в хранилище данных SQL](sql-data-warehouse-overview-migrate.md)

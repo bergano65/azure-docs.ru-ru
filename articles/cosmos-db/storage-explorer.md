@@ -4,15 +4,15 @@ description: Узнайте, как подключиться к Azure Cosmos DB 
 author: deborahc
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 12/07/2018
+ms.date: 05/23/2019
 ms.author: dech
 ms.custom: seodec18
-ms.openlocfilehash: 8700d0988927b221ace82a492e9902f1f36a562b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 6c3c8aee51a4484013126a5959d3d275a88aa1cc
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60951263"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66242647"
 ---
 # <a name="work-with-data-using-azure-storage-explorer"></a>Работа с данными с помощью Обозревателя службы хранилища Azure
 
@@ -106,7 +106,7 @@ ms.locfileid: "60951263"
 #### <a name="create-a-database"></a>Создание базы данных 
 -   Щелкните правой кнопкой мыши учетную запись Azure Cosmos DB, выберите **Создать базу данных**, введите имя базы данных и нажмите клавишу **ВВОД**.
        
-    ![Создать базу данных](./media/storage-explorer/create-database.png) 
+    ![Создание базы данных](./media/storage-explorer/create-database.png) 
 
 #### <a name="delete-a-database"></a>удаление базы данных.
 - Щелкните правой кнопкой мыши базу данных, выберите **Удалить базу данных**и нажмите кнопку **Да** во всплывающем окне. После удаления узла базы данных учетная запись Azure Cosmos DB будет обновлена автоматически.
@@ -158,7 +158,7 @@ ms.locfileid: "60951263"
 1. Чтобы создать новую вершину, откройте раздел **Graph** (Граф) в окне слева, выберите **New Vertex** (Создать вершину), отредактируйте содержимое, а затем нажмите кнопку **ОК**.    
 2. Чтобы изменить существующую вершину, щелкните значок карандаша справа.   
 
-    ![Граф](./media/storage-explorer/vertex.png)
+    ![График](./media/storage-explorer/vertex.png)
 
 #### <a name="delete-a-graph"></a>Удаление графа
 - Чтобы удалить вершину, щелкните значок корзины рядом с именем вершины.
@@ -246,7 +246,7 @@ ms.locfileid: "60951263"
   - extaccounts-файл.
 - При выполнении входа проверьте наличие сообщений об ошибках в консоли средств разработчика (F12).
 
-![консоль](./media/storage-explorer/console.png)
+![console](./media/storage-explorer/console.png)
 
 #### <a name="unable-to-see-the-authentication-page"></a>Не отображается страница аутентификации 
 

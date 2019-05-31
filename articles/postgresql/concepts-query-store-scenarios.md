@@ -1,21 +1,21 @@
 ---
-title: Сценарии использования хранилища запросов в базе данных Azure для PostgreSQL
-description: В этой статье описаны некоторые сценарии использования хранилища запросов в базе данных Azure для PostgreSQL.
+title: 'Сценарии использования Store запросов в базе данных Azure для PostgreSQL: один сервер'
+description: 'Этой статье описаны некоторые сценарии для Store запросов в базе данных Azure для PostgreSQL: один сервер.'
 author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 03/26/2018
-ms.openlocfilehash: 873462354b70d13e56ca108c3257031ef34873f8
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 5/6/2019
+ms.openlocfilehash: 029c595ba983d3b758568fbacaf6577014d893db
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60563194"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "65067337"
 ---
 # <a name="usage-scenarios-for-query-store"></a>Сценарии использования хранилища запросов
 
-**Область применения** База данных Azure для PostgreSQL 9.6 и 10
+**Область применения** База данных Azure для PostgreSQL — один сервер 9.6 и 10
 
 Хранилище запросов можно использовать в разнообразных сценариях, где важно отслеживать и сохранять прогнозируемую производительность рабочих нагрузок. Рассмотрим следующие примеры. 
 - Определение и настройка наиболее ресурсоемких запросов 

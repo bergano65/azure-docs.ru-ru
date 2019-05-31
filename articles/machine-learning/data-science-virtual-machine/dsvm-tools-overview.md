@@ -16,12 +16,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 02/22/2019
 ms.author: gokuma
-ms.openlocfilehash: 1defaea3743ebb8ddb688cef28efb7eee8ecb07c
-ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
+ms.openlocfilehash: 0a503b82c07da62b5c5c768d8e1c92cb19e75aee
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65597105"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66236479"
 ---
 # <a name="get-to-know-your-data-science-virtual-machine"></a>Общие сведения о виртуальной машине для обработки и анализа данных
 
@@ -30,15 +30,15 @@ ms.locfileid: "65597105"
 DSVM также содержит несколько примеров кода и пошаговые руководства в виде записных книжек Jupyter, который может выполняться локально. Кроме того, имеется также документация для облегчения понимания этих образцов. 
 
 > [!NOTE]
-> Можно использовать [записных книжек Azure](/azure/notebooks/azure-notebooks-overview.md) для создания, выполнения и совместно использовать записные книжки Jupyter в облаке. Вы можете [подключить к виртуальной Машине обработки и анализа данных для записных книжек Azure](/azure/notebooks/configure-manage-azure-notebooks-projects.md#compute-tier) расширить доступные вычислительные ресурсы.
+> Можно использовать [записных книжек Azure](/azure/notebooks/azure-notebooks-overview) для создания, выполнения и совместно использовать записные книжки Jupyter в облаке. Вы можете [подключить к виртуальной Машине обработки и анализа данных для записных книжек Azure](/azure/notebooks/configure-manage-azure-notebooks-projects#compute-tier) расширить доступные вычислительные ресурсы.
 
 Средства, платформы, служебные программы и примеры, предоставленные для виртуальной машины для обработки и анализа данных, разделены на следующие разделы:
 
-1. **[Платформы глубокого обучения и искусственного интеллекта](dsvm-deep-learning-ai-frameworks.md)**.
-2. **[Средства машинного обучения и обработки и анализа данных](dsvm-ml-data-science-tools.md)**.
+1. **[Платформы глубокого обучения и искусственного интеллекта](dsvm-deep-learning-ai-frameworks.md)** .
+2. **[Средства машинного обучения и обработки и анализа данных](dsvm-ml-data-science-tools.md)** .
 3. **[Языки, поддерживаемые на виртуальных машинах для обработки и анализа данных](dsvm-languages.md)**
-4. **[Средства разработки и среды IDE](dsvm-tools-development.md)**.
+4. **[Средства разработки и среды IDE](dsvm-tools-development.md)** .
 5. **[Средства приема данных виртуальных машин для обработки и анализа данных](dsvm-tools-ingestion.md)**
-6. **[Инструменты исследования и визуализации данных](dsvm-tools-explore-and-visualize.md)**.
+6. **[Инструменты исследования и визуализации данных](dsvm-tools-explore-and-visualize.md)** .
 7. **[Платформы данных](dsvm-data-platforms.md)**
 8. **[Примеры для виртуальных машин для обработки и анализа данных](dsvm-samples-and-walkthroughs.md)**

@@ -8,12 +8,12 @@ services: site-recovery
 ms.topic: conceptual
 ms.date: 05/10/2019
 ms.author: raynew
-ms.openlocfilehash: 2d1999077f6315658dbfd69473ddf5561bd76e0b
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.openlocfilehash: 514aaaf7a274e60a17bbae62b3c62e7cf3668e7a
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65540585"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66237303"
 ---
 # <a name="support-matrix-for-disaster-recovery--of-vmware-vms-and-physical-servers-to-azure"></a>Таблица поддержки аварийного восстановления виртуальных машин VMware и физических серверов в Azure
 
@@ -46,7 +46,7 @@ VMware | vCenter Server 6.7, 6.5, 6.0, 5.5 или vSphere 6.7, 6.5, 6.0, 5.5 | �
 Количество дисков | 3 диска<br/><br/> В состав дисков входят: диск ОС, диск кэша сервера обработки, диск хранения (для восстановления размещения).
 Свободное место на диске | Для кэша сервера обработки необходимо 600 ГБ.
 Свободное место на диске | Для диска хранения необходимо 600 ГБ.
-Операционная система  | Windows Server 2012 R2 или Windows Server 2016. |
+Операционная система  | Windows Server 2012 R2 или Windows Server 2016 с возможностями рабочего стола |
 Язык операционной системы | Английский (en-us)
 PowerCLI | [PowerCLI 6.0](https://my.vmware.com/web/vmware/details?productId=491&downloadGroup=PCLI600R1 "PowerCLI 6.0") не является обязательным для сервера конфигурации с версиями из [9.14](https://support.microsoft.com/help/4091311/update-rollup-23-for-azure-site-recovery).
 Роли Windows Server | Не включать: <br/> — доменные службы Active Directory; <br/>— службы IIS; <br/> — Hyper-V. |

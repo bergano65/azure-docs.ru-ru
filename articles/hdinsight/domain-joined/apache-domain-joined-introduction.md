@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 04/19/2019
-ms.openlocfilehash: 8142caf867ffe811726677fb1dcbadc7d1458251
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 0582fa8b26bee05e4d2948037cc39a71ed656fce
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65793555"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66243956"
 ---
 # <a name="what-is-enterprise-security-package-in-azure-hdinsight"></a>Что такое пакет безопасности предприятия в Azure HDInsight
 
@@ -36,7 +36,7 @@ ms.locfileid: "65793555"
 Еще один уровень безопасности периметра обеспечивает служба VPN-шлюза. Шлюз выступает в качестве первой линии обороны для любого входящего запроса к кластеру HDInsight. Он принимает запрос, проверяет его и только после этого разрешает его передачу на другие узлы в кластере. Таким образом шлюз обеспечивает безопасность периметра для других узлов имени и данных в кластере.
 
 ## <a name="authentication"></a>Authentication
-Корпоративный администратор может создать кластер HDInsight с ESP в [виртуальной сети](https://azure.microsoft.com/services/virtual-network/). Все узлы кластера HDInsight присоединяются к этому домену, управление которым осуществляется организацией. Для этого используются [доменные службы Azure Active Directory](../../active-directory-domain-services/active-directory-ds-overview.md). 
+Корпоративный администратор может создать кластер HDInsight с ESP в [виртуальной сети](https://azure.microsoft.com/services/virtual-network/). Все узлы кластера HDInsight присоединяются к этому домену, управление которым осуществляется организацией. Для этого используются [доменные службы Azure Active Directory](../../active-directory-domain-services/overview.md). 
 
 С помощью такой конфигурации сотрудники компании могут входить узлах кластера с помощью учетных данных домена. Кроме того, с помощью этих учетных данных можно проверять подлинность в других утвержденных конечных точках, например представлениях Apache Ambari, ODBC, JDBC, PowerShell и интерфейсах REST API, а также обеспечить взаимодействие с кластером. Администратор полностью управляет доступом, ограничивая число пользователей, взаимодействующих с кластером через эти конечные точки.
 

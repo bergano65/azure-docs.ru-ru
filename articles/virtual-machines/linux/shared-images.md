@@ -1,5 +1,5 @@
 ---
-title: Создание общих образов виртуальных машин с помощью Azure CLI | Документация Майкрософт
+title: Создание коллекций общего образа с помощью Azure CLI | Документация Майкрософт
 description: В этой статье вы узнаете, как с помощью Azure CLI создать общий образ виртуальной машины Azure.
 services: virtual-machines-linux
 documentationcenter: virtual-machines
@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 05/06/2019
 ms.author: akjosh; cynthn
 ms.custom: ''
-ms.openlocfilehash: f69b1aff28165b9bf37c49fe62d1fb5aada91285
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: bb6db6e5d5e33b7c7b5ba5a8711a06d6394b71f2
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65236401"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66226043"
 ---
 # <a name="create-a-shared-image-gallery-with-the-azure-cli"></a>Создание коллекции общих образов с помощью Azure CLI
 
@@ -46,15 +46,17 @@ ms.locfileid: "65236401"
 
 ## <a name="create-a-vm"></a>Создание виртуальной машины
 
-Создайте виртуальную машину из версии образа, используя [az vm create](/cli/azure/vm#az-vm-create).
+Создание виртуальной Машины из последнюю версию образа с помощью [Создание виртуальной машины az](/cli/azure/vm#az-vm-create).
 
 ```azurecli-interactive 
 az vm create\
-   -g myGalleryRG \
-   -n myVM \
-   --image "/subscriptions/<subscription-ID>/resourceGroups/myGalleryRG/providers/Microsoft.Compute/galleries/myGallery/images/myImageDefinition/versions/1.0.0" \
+   --resource-group myGalleryRG \
+   --name myVM \
+   --image "/subscriptions/subscription ID where the gallery is located>/resourceGroups/myGalleryRG/providers/Microsoft.Compute/galleries/myGallery/images/myImageDefinition" \
    --generate-ssh-keys
 ```
+
+Также можно использовать конкретную версию, используя идентификатор версии изображения для `--image` параметра. Например, чтобы использовать версию образа *1.0.0* типа: `--image "/subscriptions/<subscription ID where the gallery is located>/resourceGroups/myGalleryRG/providers/Microsoft.Compute/galleries/myGallery/images/myImageDefinition/versions/1.0.0"`.
 
 [!INCLUDE [virtual-machines-common-gallery-list-cli](../../../includes/virtual-machines-common-gallery-list-cli.md)]
 

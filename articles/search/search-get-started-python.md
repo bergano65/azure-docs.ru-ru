@@ -1,7 +1,7 @@
 ---
 title: Краткое руководство. Python и API-интерфейсы REST - службы поиска Azure
 description: Создание, загрузка и отправка запросов в индекс, с помощью Python, записные книжки Jupyter и API REST службы поиска Azure.
-ms.date: 05/15/2019
+ms.date: 05/23/2019
 author: heidisteen
 manager: cgronlun
 ms.author: heidist
@@ -10,12 +10,12 @@ ms.service: search
 ms.devlang: rest-api
 ms.topic: conceptual
 ms.custom: seodec2018
-ms.openlocfilehash: a79a5fe1632eeabee670274ebbb19c4c34bd84d2
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: 99b4ec0be8e9fa631c5081edd42474ea89dc5dc3
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66117340"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66244793"
 ---
 # <a name="quickstart-create-an-azure-search-index-using-jupyter-python-notebooks"></a>Краткое руководство. Создание индекса службы поиска Azure с помощью записных книжек Jupyter Python
 > [!div class="op_single_selector"]
@@ -36,7 +36,7 @@ ms.locfileid: "66117340"
 
 + [Anaconda 3.x](https://www.anaconda.com/distribution/#download-section), предоставляя Python 3.x и записные книжки Jupyter.
 
-+ [Создайте службу "Поиск Azure"](search-create-service-portal.md) или [найдите имеющуюся службу](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) в рамках текущей подписки. Вы можете использовать бесплатную службу для выполнения инструкций, описанных в этом кратком руководстве. 
++ [Создайте службу "Поиск Azure"](search-create-service-portal.md) или [найдите имеющуюся службу](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) в рамках текущей подписки. В этом кратком руководстве используется уровень "бесплатный". 
 
 ## <a name="get-a-key-and-url"></a>Получение ключа и URL-адреса
 
@@ -52,7 +52,7 @@ ms.locfileid: "66117340"
 
 ## <a name="connect-to-azure-search"></a>Подключение к Поиску Azure
 
-Откройте записную книжку Jupyter и проверить подключение из локальной рабочей станции, запросив список индексов в службе. В Windows с помощью Anaconda3 можно использовать Навигатор Anaconda запустить записную книжку.
+В этой задаче запустить записную книжку Jupyter и убедитесь, что можно подключиться к службе поиска Azure. Это будет сделать, запросив список индексов из службы. В Windows с помощью Anaconda3 можно использовать Навигатор Anaconda запустить записную книжку.
 
 1. Создание записной книжки Python3.
 
@@ -73,7 +73,7 @@ ms.locfileid: "66117340"
            'api-key': '<YOUR-ADMIN-API-KEY>' }
    ```
 
-1. В третью ячейку сформулируйте запрос. Этот запрос GET обращается к коллекции индексов службы поиска и выбирает свойства name.
+1. В третью ячейку сформулируйте запрос. Этот запрос GET обращается к коллекции индексов службы поиска и выбирает свойства name атрибута существующие индексы.
 
    ```python
    url = endpoint + "indexes" + api_version + "&$select=name"
@@ -82,20 +82,20 @@ ms.locfileid: "66117340"
    pprint(index_list)
    ```
 
-1. Выполните каждый шаг. Если существует индексов, ответ содержит список индексов. На следующем снимке экрана служба включает в себя azureblob индекса и индекса realestate-us-sample.
+1. Выполните каждый шаг. Если существует индексов, ответ содержит список имен индексов. На следующем снимке экрана служба уже имеет azureblob индекса и индекса realestate-us-sample.
 
    ![Скрипт Python в записной книжке Jupyter с HTTP запросы в службу поиска Azure](media/search-get-started-python/connect-azure-search.png "скрипт Python в записной книжке Jupyter с HTTP запросы в службу поиска Azure")
 
-   Коллекцию индексов пустой возвращает такой ответ: `{'@odata.context': 'https://mydemo.search.windows.net/$metadata#indexes(name)', 'value': []}`
+   Напротив коллекции пустой индекс возвращает такой ответ: `{'@odata.context': 'https://mydemo.search.windows.net/$metadata#indexes(name)', 'value': []}`
 
 > [!Tip]
 > На это бесплатная служба вы будете ограничены трех индексов, индексаторов и источников данных. В этом кратком руководстве создается по одному экземпляру каждого. Убедитесь, что у вас достаточно места для создания новых объектов, прежде чем продолжить.
 
 ## <a name="1---create-an-index"></a>1. Создание индекса
 
-Если вы используете портал, индекс должен существовать в службе перед загрузкой данных. Этот шаг использует [REST API создания индекса](https://docs.microsoft.com/rest/api/searchservice/create-index) для принудительной отправки схему индекса для службы
+Если вы используете портал, индекс должен существовать в службе перед загрузкой данных. Этот шаг использует [REST API создания индекса](https://docs.microsoft.com/rest/api/searchservice/create-index) для принудительной отправки схему индекса для службы.
 
-Коллекция полей определяет структуру *документа*. Обязательные элементы индекса включают имя и коллекцию полей. Каждое поле имеет имя, тип и атрибуты, которые определяют, как он используется (например, является ли это полнотекстового поиска для поиска, фильтрацию или отображалось в результатах поиска). В индексе, одно из полей типа `Edm.String` необходимо назначить в качестве *ключ* для идентификации документа.
+Обязательные элементы индекса включают имя, коллекцию полей и ключ. Коллекция полей определяет структуру *документа*. Каждое поле имеет имя, тип и атрибуты, которые определяют, как используется поле (например, является ли это полнотекстового поиска для поиска, фильтрацию или отображалось в результатах поиска). В индексе, одно из полей типа `Edm.String` необходимо назначить в качестве *ключ* для идентификации документа.
 
 Этот индекс имеет имя «hotels-py» и определения полей, указанные ниже. Он является частью более крупной [индекса отелей](https://github.com/Azure-Samples/azure-search-sample-data/blob/master/hotels/Hotels_IndexDefinition.JSON) используется в других пошаговых руководств. Мы усекаются в этом кратком руководстве для краткости.
 
@@ -127,7 +127,7 @@ ms.locfileid: "66117340"
     }
     ```
 
-2. В другую ячейку сформулируйте запрос. Этого ПОМЕСТИТЕ запрос обращается к коллекции индексов службы поиска и создается индекс на основе схемы индекс, указанный на предыдущем шаге.
+2. В другую ячейку сформулируйте запрос. Этого ПОМЕСТИТЕ запрос обращается к коллекции индексов службы поиска и создается индекс на основе схемы индекс, указанный в предыдущей ячейке.
 
    ```python
    url = endpoint + "indexes" + api_version
@@ -138,12 +138,12 @@ ms.locfileid: "66117340"
 
 3. Выполните каждый шаг.
 
-   Ответ включает JSON-представление схемы. Следующий снимок экрана Обрезка части схемы индекса, таким образом, чтобы вы могли увидеть больше ответа.
+   Ответ включает JSON-представление схемы. Следующий снимок экрана отображается только часть ответа.
 
     ![Запрос на создание индекса](media/search-get-started-python/create-index.png "запрос на создание индекса")
 
 > [!Tip]
-> Для проверки подлинности, можно также проверить список индексов на портале или повторно выполнить запрос на подключение службы к см. в разделе *гостиницы py* индекса, перечисленных в коллекции индексов.
+> Другой способ проверить создание индекса — проверить список индексов на портале.
 
 <a name="load-documents"></a>
 
@@ -211,6 +211,7 @@ ms.locfileid: "66117340"
             "StateProvince": "GA",
             "PostalCode": "30326",
             "Country": "USA"
+            }
         },
         {
         "@search.action": "upload",
@@ -229,11 +230,11 @@ ms.locfileid: "66117340"
             "StateProvince": "TX",
             "PostalCode": "78216",
             "Country": "USA"
-       }
-      }
-     ]
+            }
+        }
+    ]
     }
-    ```
+    ```   
 
 2. В другую ячейку сформулируйте запрос. Для этого запроса POST обращается к коллекции документация индекса отелей py и помещает документы, предоставляемые на предыдущем шаге.
 
@@ -246,26 +247,7 @@ ms.locfileid: "66117340"
 
 3. Выполните каждый шаг, чтобы отправлять документы в индекс службы поиска. Результаты должны выглядеть аналогично приведенному ниже. 
 
-   ```
-   {'@odata.context': "https://mydemo.search.windows.net/indexes('hotels-py')/$metadata#Collection(Microsoft.Azure.Search.V2019_05_06.IndexResult)",
-    'value': [{'errorMessage': None,
-            'key': '1',
-            'status': True,
-            'statusCode': 201},
-           {'errorMessage': None,
-            'key': '2',
-            'status': True,
-            'statusCode': 201},
-           {'errorMessage': None,
-            'key': '3',
-            'status': True,
-            'statusCode': 201}]},
-           {'errorMessage': None,
-            'key': '4',
-            'status': True,
-            'statusCode': 201}]}
-     ```
-
+    ![Отправка документов в индекс](media/search-get-started-python/load-index.png "отправлять документы в индекс")
 
 ## <a name="3---search-an-index"></a>3. Поиск в индексе
 
@@ -278,7 +260,7 @@ ms.locfileid: "66117340"
    searchstring = '&search=hotels wifi&$count=true&$select=HotelId,HotelName'
    ```
 
-2. Сформулируйте запрос. Этот запрос GET обращается к коллекции документация индекса отелей py и присоединяет запрос, который вы указали на предыдущем шаге.
+2. В другую ячейку формулировки запроса. Этот запрос GET обращается к коллекции документация индекса отелей py и присоединяет запрос, который вы указали на предыдущем шаге.
 
    ```python
    url = endpoint + "indexes/hotels-py/docs" + api_version + searchstring
@@ -287,32 +269,29 @@ ms.locfileid: "66117340"
    pprint(query)
    ```
 
-   Результаты должны выглядеть аналогично приведенному ниже. Результаты будут unranked (search.score = 1.0), так как мы не предоставляем никаких критериев для сопоставления.
+3. Выполните каждый шаг. Результаты должны выглядеть аналогично приведенному ниже. 
 
-   ```
-   {'@odata.context': "https://mydemo.search.windows.net/indexes('hotels-py')/$metadata#docs(*)",
-    '@odata.count': 3,
-    'value': [{'@search.score': 1.0,
-               'HotelId': '1',
-               'HotelName': 'Secret Point Motel'},
-              {'@search.score': 1.0,
-               'HotelId': '2',
-               'HotelName': 'Twin Dome Motel'},
-              {'@search.score': 1.0,
-               'HotelId': '3',
-               'HotelName': 'Triple Landscape Hotel'},
-              {'@search.score': 1.0,
-               'HotelId': '4',
-               'HotelName': 'Sublime Cliff Hotel'}]}
+    ![Поиск в индексе](media/search-get-started-python/search-index.png "поиск в индексе")
+
+4. Еще несколько примеров запросов к знакомству с синтаксисом. Можно заменить фрагментом searchstring с приведенными ниже примерами и затем снова запустите запрос поиска. 
+
+   Применение фильтра: 
+
+   ```python
+   searchstring = '&search=*&$filter=Rating gt 4&$select=HotelId,HotelName,Description'
    ```
 
-3. Еще несколько примеров запросов к знакомству с синтаксисом. Можно применить фильтр, принимать два первых результата или упорядочить по определенному полю.
+   Выполните два лучших результатов.
 
-   + `searchstring = '&search=*&$filter=Rating gt 4&$select=HotelId,HotelName,Description'`
+   ```python
+   searchstring = '&search=boutique&$top=2&$select=HotelId,HotelName,Description'
+   ```
 
-   + `searchstring = '&search=boutique&$top=2&$select=HotelId,HotelName,Description'`
+    Упорядочить по определенному полю:
 
-   + `searchstring = '&search=pool&$orderby=Address/City&$select=HotelId, HotelName, Address/City, Address/StateProvince'`
+   ```python
+   searchstring = '&search=pool&$orderby=Address/City&$select=HotelId, HotelName, Address/City, Address/StateProvince'
+   ```
 
 ## <a name="clean-up"></a>Очистка 
 

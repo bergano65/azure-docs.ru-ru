@@ -4,15 +4,15 @@ description: С помощью Azure Powershell управлять учетны�
 author: markjbrown
 ms.service: cosmos-db
 ms.topic: samples
-ms.date: 05/06/2019
+ms.date: 05/23/2019
 ms.author: mjbrown
 ms.custom: seodec18
-ms.openlocfilehash: 347c3a1c6cabca9532e5ada1237f2933841d5094
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.openlocfilehash: f720b678f2c7a6e564ef3e8fa9ae071b004ed1a6
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65077595"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66243387"
 ---
 # <a name="manage-azure-cosmos-db-sql-api-resources-using-powershell"></a>Управление ресурсами Azure Cosmos DB SQL API с помощью PowerShell
 
@@ -22,7 +22,7 @@ ms.locfileid: "65077595"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-## <a name="getting-started"></a>Приступая к работе
+## <a name="getting-started"></a>Начало работы
 
 Следуйте инструкциям в [описывается установка и настройка Azure PowerShell] [ powershell-install-configure] для установки и войдите в свою учетную запись Azure в Powershell.
 

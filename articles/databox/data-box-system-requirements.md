@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: article
-ms.date: 01/23/2019
+ms.date: 05/22/2019
 ms.author: alkohli
-ms.openlocfilehash: 7d52af9e3948f40936795efab5b6671c3f71007a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 3bce5dd1dd34c53276c5486cc255c4cd93bb6080
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60746936"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66242177"
 ---
 # <a name="azure-data-box-system-requirements"></a>Требования к системе для Azure Data Box
 
@@ -31,68 +31,28 @@ ms.locfileid: "60746936"
 
 ### <a name="supported-operating-systems-for-clients"></a>Поддерживаемые версии операционных систем для клиентов
 
-Ниже приведен список поддерживаемых операционных систем для копирования данных при помощи клиентов, подключенных к устройству Data Box.
-
-| **Операционная система** | **Версии** | 
-| --- | --- | 
-| Windows Server |2008 R2 с пакетом обновления 1 (SP1) <br> 2012 <br> 2012 R2 <br> 2016 | 
-|  Windows |7, 8, 10 | 
-|Linux    |         |
+[!INCLUDE [data-box-supported-os-clients](../../includes/data-box-supported-os-clients.md)]
 
 ### <a name="supported-file-systems-for-linux-clients"></a>Поддерживаемые файловые системы для клиентов Linux
 
-| **Протоколы** | **Версии** | 
-| --- | --- | 
-| SMB |2.x и более поздние версии |
-| NFS | Версия 4.1 и все более ранние версии|
+[!INCLUDE [data-box-supported-file-systems-clients](../../includes/data-box-supported-file-systems-clients.md)]
 
 ### <a name="supported-storage-accounts"></a>Учетные записи хранилища BLOB-объектов
 
-Ниже приведен список поддерживаемых учетных записей хранения и типов хранилищ для устройства Data Box. Полный список всех типов учетных записей хранения и все их возможности см. в [этом разделе](/azure/storage/common/storage-account-overview#types-of-storage-accounts).
-
-| **Учетные записи хранения и поддерживаемые типы хранилищ** | **Блочный BLOB-объект** |**Страничный BLOB-объект*** |**Файлы Azure** |**Примечания**|
-| --- | --- | -- | -- | -- |
-| Классическая категории "Стандартный" | Да | Да | Да |
-| Общего назначения версии 1 категории "Стандартный"  | Да | Да | Да | Поддерживаются и "горячие" и "холодные" уровни.|
-| Общего назначения версии 1 категории "Премиум"  |  | Да| | |
-| Общего назначения версии 2 категории "Стандартный"  | Да | Да | Да | Поддерживаются и "горячие" и "холодные" уровни.|
-| Общего назначения версии 2 категории "Премиум"  |  |Да | | |
-| Хранилище BLOB-объектов категории "Стандартный" |Да | | |Поддерживаются и "горячие" и "холодные" уровни. |
-
-\* *Данные, отправленные в страничные BLOB-объекты, должны быть размером 512 байт и выровнены, как VHD.*
-
->[!NOTE]
-> Учетные записи второго поколения Azure Data Lake Storage не поддерживаются.
-
+[!INCLUDE [data-box-supported-storage-accounts](../../includes/data-box-supported-storage-accounts.md)]
 
 ### <a name="supported-storage-types"></a>Поддерживаемые типы хранилищ
 
-Ниже приведен список поддерживаемых типов хранилищ для устройства Data Box.
-
-| **Формат файлов** | **Примечания** |
-| --- | --- |
-| Блочный BLOB-объект Azure | |
-| Страничный BLOB-объект Azure  | Данные должны быть выровнены по размеру 512 байт.|
-| Файлы Azure | |
-
+[!INCLUDE [data-box-supported-storage-types](../../includes/data-box-supported-storage-types.md)]
 
 ### <a name="supported-web-browsers"></a>Поддерживаемые веб-браузеры
 
-Ниже приведен список поддерживаемых веб-браузеров для локального пользовательского веб-интерфейса.
-
-| **"Обзор"** | **Версии** | **Дополнительные требования и примечания** |
-| --- | --- | --- |
-| Google Chrome |Последняя версия |Протестировано с помощью Chrome|
-| Microsoft Edge |Последняя версия | |
-| FireFox | Последняя версия | Протестировано с помощью FireFox|
-| Internet Explorer |Последняя версия |Если вам не удается выполнить вход, проверьте, включены ли файлы cookie и Javascript. Чтобы включить доступ к пользовательскому интерфейсу, добавьте IP-адрес устройства в раздел **Конфиденциальность для отдельных веб-сайтов**, чтобы устройство получило доступ к файлам cookie. |
-
+[!INCLUDE [data-box-supported-web-browsers](../../includes/data-box-supported-web-browsers.md)]
 
 ## <a name="networking-requirements"></a>Требования к сети
 
 Центр обработки данных должен иметь высокоскоростную сеть. Настоятельно рекомендуем использовать хотя бы одно соединение Ethernet со скоростью передачи данных 10 Гбит/с. Если подключение Ethernet 10 Гбит/с недоступно, для копирования можно использовать канал передачи данных со скоростью 1 Гбит/с, но это повлияет на скорость копирования.
 
-## <a name="next-step"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дальнейшие действия
 
 * [Развертывание Azure Data Box](data-box-deploy-ordered.md)
-

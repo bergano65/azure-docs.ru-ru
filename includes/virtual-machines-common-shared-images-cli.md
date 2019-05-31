@@ -5,15 +5,15 @@ services: virtual-machines
 author: axayjo
 ms.service: virtual-machines
 ms.topic: include
-ms.date: 04/30/2019
+ms.date: 05/21/2019
 ms.author: akjosh; cynthn
 ms.custom: include file
-ms.openlocfilehash: 9647cdd584b53f581f46f728ca2d08f9a113ce92
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
-ms.translationtype: HT
+ms.openlocfilehash: 841027fe8d6b97e661faa038dc9381edbb3d4cd8
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66156150"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66226046"
 ---
 ## <a name="before-you-begin"></a>Перед началом работы
 
@@ -25,6 +25,8 @@ Azure Cloud Shell — это бесплатная интерактивная о�
 
 Чтобы открыть Cloud Shell, просто выберите **Попробовать** в правом верхнем углу блока кода. Cloud Shell можно также запустить в отдельной вкладке браузера, перейдя на страницу [https://shell.azure.com/bash](https://shell.azure.com/bash). Нажмите кнопку **Копировать**, чтобы скопировать блоки кода. Вставьте код в Cloud Shell и нажмите клавишу "ВВОД", чтобы выполнить его.
 
+Если вы хотите установить и использовать CLI локально, см. в разделе [установить Azure CLI](/cli/azure/install-azure-cli).
+
 ## <a name="create-an-image-gallery"></a>Создание коллекции образов 
 
 Коллекция образов является основным ресурсом, который позволяет обмен изображениями. Допустимыми знаками для имени коллекции являются прописные или строчные буквы, цифры и точки. Имя коллекции не может содержать дефисы.   Имена коллекций должны быть уникальным в пределах вашей подписки. 
@@ -33,7 +35,7 @@ Azure Cloud Shell — это бесплатная интерактивная о�
 
 ```azurecli-interactive
 az group create --name myGalleryRG --location WestCentralUS
-az sig create -g myGalleryRG --gallery-name myGallery
+az sig create --resource-group myGalleryRG --gallery-name myGallery
 ```
 
 ## <a name="create-an-image-definition"></a>Создание определения образа
@@ -44,7 +46,7 @@ az sig create -g myGalleryRG --gallery-name myGallery
 
 ```azurecli-interactive 
 az sig image-definition create \
-   -g myGalleryRG \
+   --resource-group myGalleryRG \
    --gallery-name myGallery \
    --gallery-image-definition myImageDefinition \
    --publisher myPublisher \
@@ -60,16 +62,16 @@ az sig image-definition create \
 
 Допустимыми знаками для имени версии образа являются цифры и точки. Числа должны быть в диапазоне 32-битного целого числа. Формат: *MajorVersion*. *MinorVersion*. *Исправление*.
 
-В этом примере — версия наш образ *1.0.0* и мы собираемся создать 2 реплики в *Центрально-Западная* регион, 1 репликой в *центральных штатах юга США* региона и 1 реплика в *восточная часть США 2* регион.
+В этом примере — версия наш образ *1.0.0* и мы собираемся создать 2 реплики в *Центрально-Западная* регион, 1 репликой в *центральных штатах юга США* региона и 1 реплика в *восточная часть США 2* регион с помощью хранилища, избыточного в пределах зоны.
 
 
 ```azurecli-interactive 
 az sig image-version create \
-   -g myGalleryRG \
+   --resource-group myGalleryRG \
    --gallery-name myGallery \
    --gallery-image-definition myImageDefinition \
    --gallery-image-version 1.0.0 \
-   --target-regions "WestCentralUS" "SouthCentralUS=1" "EastUS2=1" \
+   --target-regions "WestCentralUS" "SouthCentralUS=1" "EastUS2=1=Standard_ZRS" \
    --replica-count 2 \
    --managed-image "/subscriptions/<subscription ID>/resourceGroups/myResourceGroup/providers/Microsoft.Compute/images/myImage"
 ```
@@ -77,5 +79,24 @@ az sig image-version create \
 > [!NOTE]
 > Необходимо дождаться версию образа, чтобы полностью завершить сборки и репликацию перед один и тот же управляемый образ можно использовать для создания другой версии образа.
 >
-> Можно также хранить вашей версии образа в [избыточное хранилище](https://docs.microsoft.com/azure/storage/common/storage-redundancy-zrs) , добавив `--storage-account-type standard_zrs` при создании версию образа.
+> Можно также сохранить все ваши реплики версии образа в [избыточное хранилище](https://docs.microsoft.com/azure/storage/common/storage-redundancy-zrs) , добавив `--storage-account-type standard_zrs` при создании версию образа.
 >
+
+## <a name="share-the-gallery"></a>Общий доступ к коллекции.
+
+Рекомендуется, чтобы совместно использовать с другими пользователями на уровне коллекции. Чтобы получить идентификатор объекта коллекции, используйте [az sig show](/cli/azure/sig#az-sig-show).
+
+```azurecli-interactive
+az sig show \
+   --resource-group myGalleryRG \
+   --gallery-name myGallery \
+   --query id
+```
+
+Используйте идентификатор объекта в качестве области, а также адрес электронной почты и [Создание назначений ролей az](/cli/azure/role/assignment#az-role-assignment-create) чтобы предоставить пользователю доступ к общей коллекции.
+
+```azurecli-interactive
+az role assignment create --role "Reader" --assignee <email address> --scope <gallery ID>
+```
+
+

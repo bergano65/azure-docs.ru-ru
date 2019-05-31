@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 01/29/2019
 ms.author: iainfou
-ms.openlocfilehash: d5a287a8da884290e94e9ac1c864abe28e47d53d
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.openlocfilehash: 23922ec02f7406b5cbc482c938dbcf6a56cad6d7
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65508141"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66234161"
 ---
 # <a name="preview---automatically-scale-a-cluster-to-meet-application-demands-on-azure-kubernetes-service-aks"></a>Preview — автоматическое масштабирование кластера в соответствии с требованиями приложения в службе Azure Kubernetes (AKS)
 
@@ -21,9 +21,10 @@ ms.locfileid: "65508141"
 В этой статье показано, как включить и администрировать средство автомасштабирования для кластера AKS. Автомасштабирования кластера следует тестировать только в предварительной версии в кластерах AKS на одном узле пула.
 
 > [!IMPORTANT]
-> Компоненты предварительной версии AKS, самообслуживания и согласиться. Предварительные версии предоставляются для сбора отзывов и ошибки нашего сообщества. Тем не менее они не поддерживаются в службе технической поддержки Azure. Если создать кластер, или добавить эти компоненты в имеющиеся кластеры, этого кластера не поддерживается, пока эта функция больше не находится в предварительной версии и этапах общедоступная (GA).
+> Функции предварительной версии AKS: самообслуживания, согласиться. Они предназначены для сбора отзывов и ошибки нашего сообщества. В предварительной версии эти функции не предназначены для использования в рабочей среде. Функции в общедоступной предварительной версии подпадают под поддержки «оптимальных затрат». Помощь от групп разработчиков AKS Техническая поддержка доступна во время рабочих часов тихоокеанского часового пояса (по тихоокеанскому времени) только. Дополнительные сведения обратитесь в следующие справочные статьи:
 >
-> При возникновении проблем с помощью функции предварительной версии, [сообщите о них в репозитории AKS GitHub] [ aks-github] именем функции предварительной версии в заголовке ошибки.
+> * [Политики поддержки AKS][aks-support-policies]
+> * [Часто задаваемые вопросы о поддержке Azure][aks-faq]
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
@@ -92,7 +93,7 @@ az provider register --namespace Microsoft.ContainerService
 
 ## <a name="create-an-aks-cluster-and-enable-the-cluster-autoscaler"></a>Создание кластера AKS и включение средства автомасштабирования кластера
 
-Если вам нужен новый кластер AKS, выполните команду [az aks create][az-aks-create]. В параметре *--kubernetes-version* укажите версию не ниже минимально необходимой, как описано выше в разделе [Перед началом работы](#before-you-begin). Чтобы включить и настроить средство автомасштабирования кластера, примените параметр *--enable-cluster-autoscaler* и укажите минимальное (*--min-count*) и максимальное (*--max-count*) число узлов.
+Если вам нужен новый кластер AKS, выполните команду [az aks create][az-aks-create]. В параметре *--kubernetes-version* укажите версию не ниже минимально необходимой, как описано выше в разделе [Перед началом работы](#before-you-begin). Чтобы включить и настроить средство автомасштабирования кластера, примените параметр *--enable-cluster-autoscaler* и укажите минимальное ( *--min-count*) и максимальное ( *--max-count*) число узлов.
 
 > [!IMPORTANT]
 > Компонент Kubernetes является средством автомасштабирования кластера. Хотя в кластере AKS используется масштабируемый набор виртуальных машин для узлов, не включайте и не изменяйте вручную параметры автомасштабирования масштабируемого набора на портале Azure или с помощью Azure CLI. Разрешите средству автомасштабирования кластера Kubernetes устанавливать необходимые параметры масштабирования. Дополнительные сведения см. в разделе часто задаваемых вопросов [Можно ли изменять теги и другие свойства ресурсов AKS в группе ресурсов MC_*?](faq.md#can-i-modify-tags-and-other-properties-of-the-aks-resources-in-the-mc_-resource-group).
@@ -181,7 +182,8 @@ az aks update \
 [az-feature-register]: /cli/azure/feature#az-feature-register
 [az-feature-list]: /cli/azure/feature#az-feature-list
 [az-provider-register]: /cli/azure/provider#az-provider-register
-[aks-github]: https://github.com/azure/aks/issues
+[aks-support-policies]: support-policies.md
+[aks-faq]: faq.md
 
 <!-- LINKS - external -->
 [az-aks-update]: https://github.com/Azure/azure-cli-extensions/tree/master/src/aks-preview

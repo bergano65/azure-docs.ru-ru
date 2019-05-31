@@ -10,12 +10,12 @@ ms.author: larryfr
 author: Blackmist
 ms.date: 04/15/2019
 ms.custom: seodec18
-ms.openlocfilehash: 3167f60cca9997c9713efad0fbb8a51b20def76b
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
-ms.translationtype: HT
+ms.openlocfilehash: e57133a750e282484271261d8e4ddb9a12de2a0e
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66151180"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66242427"
 ---
 # <a name="how-azure-machine-learning-service-works-architecture-and-concepts"></a>Принципы работы Службы машинного обучения Azure: архитектура и основные понятия
 
@@ -23,7 +23,7 @@ ms.locfileid: "66151180"
 
 [![Архитектура и рабочий процесс Службы машинного обучения Azure](./media/concept-azure-machine-learning-architecture/workflow.png)](./media/concept-azure-machine-learning-architecture/workflow.png#lightbox)
 
-## <a name="workflow"></a>Документооборот
+## <a name="workflow"></a>Рабочий процесс
 
 Рабочего процесса конечного автомата обучения обычно выполняется в следующей последовательности:
 
@@ -37,6 +37,7 @@ ms.locfileid: "66151180"
 Вы выполните эти действия в перечисленных ниже.
 + [Пакет SDK службы "Машинное обучение Azure" для Python](https://docs.microsoft.com/python/api/overview/azure/ml/intro?view=azure-ml-py)
 + [Azure Machine Learning интерфейса командной строки](https://docs.microsoft.com/azure/machine-learning/service/reference-azure-machine-learning-cli)
++ [Расширение Azure Machine Learning VS Code](how-to-vscode-tools.md)
 +  [Визуальный интерфейс для службы машинного обучения Azure (Предварительная версия)](ui-concept-visual-interface.md)
 
 > [!NOTE]
@@ -88,7 +89,7 @@ ms.locfileid: "66151180"
 
 Пример конфигураций запуска см. в статье [Настройка целевых объектов вычислений для обучения моделей](how-to-set-up-training-targets.md).
 
-## <a name="dataset"></a>Набор данных
+## <a name="dataset"></a>Выборка
 
 Наборы данных (Предварительная версия) обучения Azure машины облегчают доступ и работы с данными. Наборы данных, управление данными в различных сценариях, таких как Обучение модели и создания конвейера. С помощью пакета SDK для Azure Machine Learning, можно получить доступ к базовым хранилищем, изучение и Подготовка данных, а также выполнять их жизненного цикла разные определения набора данных и сравнения между наборами данных, используемых при обучении и в рабочей среде.
 
@@ -141,7 +142,7 @@ ms.locfileid: "66151180"
 
 Пример см. в статье [Руководство. Обучение модели классификации изображений с помощью Службы машинного обучения Azure](tutorial-train-models-with-aml.md).
 
-## <a name="run"></a>Запуск
+## <a name="run"></a>Run (Запустить)
 
 Запуск — это запись, которая содержит следующие сведения:
 

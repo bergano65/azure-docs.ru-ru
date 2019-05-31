@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 05/17/2019
 ms.author: iainfou
-ms.openlocfilehash: 4086b73313d563afaecad9b6a9289905d7085004
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
-ms.translationtype: HT
+ms.openlocfilehash: 4af2e97e8ace432c37a770f1930514dd19e30944
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66142639"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66235757"
 ---
 # <a name="preview---create-and-manage-multiple-node-pools-for-a-cluster-in-azure-kubernetes-service-aks"></a>Предварительный просмотр - Создание и управление несколькими пулами узла для кластера в службе Azure Kubernetes (AKS)
 
@@ -21,9 +21,10 @@ ms.locfileid: "66142639"
 В этой статье показано, как создавать и управлять ими несколько пулов узлов в кластере AKS. Эта функция в настоящее время находится на стадии предварительной версии.
 
 > [!IMPORTANT]
-> Компоненты предварительной версии AKS, самообслуживания и согласиться. Предварительные версии предоставляются для сбора отзывов и ошибки нашего сообщества. Тем не менее они не поддерживаются в службе технической поддержки Azure. Если создать кластер, или добавить эти компоненты в имеющиеся кластеры, этого кластера не поддерживается, пока эта функция больше не находится в предварительной версии и этапах общедоступная (GA).
+> Функции предварительной версии AKS: самообслуживания, согласиться. Они предназначены для сбора отзывов и ошибки нашего сообщества. В предварительной версии эти функции не предназначены для использования в рабочей среде. Функции в общедоступной предварительной версии подпадают под поддержки «оптимальных затрат». Помощь от групп разработчиков AKS Техническая поддержка доступна во время рабочих часов тихоокеанского часового пояса (по тихоокеанскому времени) только. Дополнительные сведения обратитесь в следующие справочные статьи:
 >
-> При возникновении проблем с помощью функции предварительной версии, [сообщите о них в репозитории AKS GitHub] [ aks-github] именем функции предварительной версии в заголовке ошибки.
+> * [Политики поддержки AKS][aks-support-policies]
+> * [Часто задаваемые вопросы о поддержке Azure][aks-faq]
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
@@ -72,6 +73,7 @@ az provider register --namespace Microsoft.ContainerService
 * Несколько пулов узлов доступны только для кластеров, созданных после успешной регистрации *MultiAgentpoolPreview* и *VMSSPreview* компоненты для вашей подписки. Невозможно добавить или Управление пулами узел в существующий кластер AKS создан, прежде чем эти функции были успешно зарегистрирован.
 * Невозможно удалить пул первый узел.
 * Нельзя использовать надстройку маршрутизации HTTP приложения.
+* Вы не можете пулы Добавление, обновление и удаление узлов, используя существующий шаблон Resource Manager, как и большинство операций. Вместо этого [использовать отдельный шаблон Resource Manager](#manage-node-pools-using-a-resource-manager-template) вносить изменения в пулы узлов в кластере AKS.
 
 Пока эта функция находится на этапе предварительной версии, применяются следующие дополнительные ограничения.
 
@@ -328,6 +330,95 @@ Events:
 
 Можно запланировать только для модулей, которые имеют этот нарушить проверку применения на узлах в *gpunodepool*. Любые другие pod будет запланировано в *nodepool1* узлов в пуле. При создании пулов дополнительный узел, можно использовать дополнительные taints и tolerations для ограничения какие-либо модулей, которые могут быть назначены на эти ресурсы узла.
 
+## <a name="manage-node-pools-using-a-resource-manager-template"></a>Управление пулами узел, с помощью шаблона Resource Manager
+
+При использовании шаблона Azure Resource Manager для создания и управляемые ресурсы, обычно можно обновить параметры в шаблоне и повторное развертывание для обновления ресурса. Профиль начальной nodepool с nodepools в AKS нельзя обновить после создания кластера AKS. Это означает, что невозможно обновить существующий шаблон Resource Manager, внести изменения в пулах узлов и повторное развертывание. Вместо этого необходимо создать отдельный шаблон Resource Manager, который обновляет только пулы агентов для существующего кластера AKS.
+
+Создание шаблона, такие как `aks-agentpools.json` и вставьте приведенный ниже пример манифест. Этот пример шаблона настраивает следующие параметры:
+
+* Обновления *Linux* пул агентов с именем *myagentpool* для запуска трех узлов.
+* Задает узлы в пуле узел для запуска Kubernetes версии *1.12.8*.
+* Определяет размер узла как *Standard_DS2_v2*.
+
+Измените эти значения, как требуется обновление, добавление или удаление пулов узлов при необходимости.
+
+```json
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "clusterName": {
+      "type": "string",
+      "metadata": {
+        "description": "The name of your existing AKS cluster."
+      }
+    },
+    "location": {
+      "type": "string",
+      "metadata": {
+        "description": "The location of your existing AKS cluster."
+      }
+    },
+    "agentPoolName": {
+      "type": "string",
+      "defaultValue": "myagentpool",
+      "metadata": {
+        "description": "The name of the agent pool to create or update."
+      }
+    },
+    "vnetSubnetId": {
+      "type": "string",
+      "defaultValue": "",
+      "metadata": {
+        "description": "The Vnet subnet resource ID for your existing AKS cluster."
+      }
+    }
+  },
+  "variables": {
+    "apiVersion": {
+      "aks": "2019-04-01"
+    },
+    "agentPoolProfiles": {
+      "maxPods": 30,
+      "osDiskSizeGB": 0,
+      "agentCount": 3,
+      "agentVmSize": "Standard_DS2_v2",
+      "osType": "Linux",
+      "vnetSubnetId": "[parameters('vnetSubnetId')]"
+    }
+  },
+  "resources": [
+    {
+      "apiVersion": "2019-04-01",
+      "type": "Microsoft.ContainerService/managedClusters/agentPools",
+      "name": "[concat(parameters('clusterName'),'/', parameters('agentPoolName'))]",
+      "location": "[parameters('location')]",
+      "properties": {
+            "maxPods": "[variables('agentPoolProfiles').maxPods]",
+            "osDiskSizeGB": "[variables('agentPoolProfiles').osDiskSizeGB]",
+            "count": "[variables('agentPoolProfiles').agentCount]",
+            "vmSize": "[variables('agentPoolProfiles').agentVmSize]",
+            "osType": "[variables('agentPoolProfiles').osType]",
+            "storageProfile": "ManagedDisks",
+      "type": "VirtualMachineScaleSets",
+            "vnetSubnetID": "[variables('agentPoolProfiles').vnetSubnetId]",
+            "orchestratorVersion": "1.12.8"
+      }
+    }
+  ]
+}
+```
+
+Разверните этот шаблон с использованием [Создание развертывания группы az] [ az-group-deployment-create] команды, как показано в следующем примере. Вам будет предложено на существующие имя кластера AKS и расположение:
+
+```azurecli-interactive
+az group deployment create \
+    --resource-group myResourceGroup \
+    --template-file aks-agentpools.json
+```
+
+Может занять несколько минут на обновление кластера AKS в зависимости от параметров пула узла и операции, которые задаются в шаблоне Resource Manager.
+
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 В этой статье вы создали кластер AKS, который включает в себя узлы, на основе графического Процессора. Чтобы уменьшить излишних затрат, может потребоваться удалить *gpunodepool*, или весь кластер AKS.
@@ -351,7 +442,6 @@ az group delete --name myResourceGroup --yes --no-wait
 Чтобы создать и использовать пулы узлов контейнера Windows Server, см. в разделе [создадим контейнер Windows Server в AKS][aks-windows].
 
 <!-- EXTERNAL LINKS -->
-[aks-github]: https://github.com/azure/aks/issues
 [kubernetes-drain]: https://kubernetes.io/docs/tasks/administer-cluster/safely-drain-node/
 [kubectl-get]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#get
 [kubectl-taint]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#taint
@@ -379,3 +469,6 @@ az group delete --name myResourceGroup --yes --no-wait
 [supported-versions]: supported-kubernetes-versions.md
 [operator-best-practices-advanced-scheduler]: operator-best-practices-advanced-scheduler.md
 [aks-windows]: windows-container-cli.md
+[az-group-deployment-create]: /cli/azure/group/deployment#az-group-deployment-create
+[aks-support-policies]: support-policies.md
+[aks-faq]: faq.md

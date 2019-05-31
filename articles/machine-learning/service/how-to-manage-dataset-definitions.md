@@ -1,5 +1,5 @@
 ---
-title: Определение набора данных и управление версиями с помощью наборов данных машинного обучения Azure
+title: Версия определения набора данных с наборами данных машинного обучения Azure и управлять ими
 titleSuffix: Azure Machine Learning service
 description: Узнайте, как обновлять определения наборов данных и управление жизненным циклом определений
 services: machine-learning
@@ -10,14 +10,14 @@ ms.author: sihhu
 author: MayMSFT
 ms.reviewer: larryfr
 ms.date: 05/02/2019
-ms.openlocfilehash: e58ce156deaaad259ea7b74521bcf9b79afbd183
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
-ms.translationtype: HT
+ms.openlocfilehash: 4476bdd902f054683fa544dc44b548689f3a1881
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66146205"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66241885"
 ---
-# <a name="update-and-manage-the-lifecycle-of-dataset-definitions"></a>Обновления и управления жизненным циклом определения наборов данных
+# <a name="version-and-manage-your-dataset-definitions"></a>Версия вашего определения набора данных и управлять ими
 
 Узнайте, как обновление и управление ими для определения наборов данных с помощью Azure Machine Learning наборы данных (Предварительная версия).
 
@@ -37,7 +37,7 @@ ms.locfileid: "66146205"
 
 Пример файла, используемые в примерах в этом документе предоставляется [ https://dprepdata.blob.core.windows.net/dataset-sample-files/crime.csv ](https://dprepdata.blob.core.windows.net/dataset-sample-files/crime.csv).
 
-## <a name="update-dataset-definitions"></a>Обновить определения набора данных
+## <a name="create-and-update-definitions"></a>Создание и обновление определений
 
 Сначала мы создадим и зарегистрировать набора данных в рабочей области.
 
@@ -173,7 +173,7 @@ ds_def_old.head(5)
       <th>ИД</th>
       <th>Серийный номер</th>
       <th>Date</th>
-      <th>Заблокировать</th>
+      <th>Блок</th>
       <th>IUCR</th>
       <th>Основной тип</th>
       <th>Описание</th>

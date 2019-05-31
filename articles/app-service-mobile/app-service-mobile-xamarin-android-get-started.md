@@ -12,14 +12,14 @@ ms.workload: mobile
 ms.tgt_pltfrm: mobile-xamarin-android
 ms.devlang: dotnet
 ms.topic: conceptual
-ms.date: 09/24/2018
+ms.date: 05/06/2019
 ms.author: crdun
-ms.openlocfilehash: 29efa963a254913e3d4744ade1d161c5c8ce42e4
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.openlocfilehash: f3e8ca4f9736dffe4928fc8920b0890dff87367b
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62127902"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66236024"
 ---
 # <a name="create-a-xamarinandroid-app"></a>Создание приложения Xamarin.Android
 [!INCLUDE [app-service-mobile-selector-get-started](../../includes/app-service-mobile-selector-get-started.md)]
@@ -46,15 +46,27 @@ ms.locfileid: "62127902"
 
 Итак, вы подготовили серверную часть мобильного Azure, которая может использоваться мобильными клиентскими приложениями. Теперь скачайте серверный проект со списком простых задач и опубликуйте его в Azure.
 
-## <a name="configure-the-server-project"></a>Настройка серверного проекта
+## <a name="create-a-database-connection-and-configure-the-client-and-server-project"></a>Создание подключения к базе данных и настройка проекта клиента и сервера
 [!INCLUDE [app-service-mobile-configure-new-backend.md](../../includes/app-service-mobile-configure-new-backend.md)]
 
-## <a name="download-and-run-the-xamarinandroid-app"></a>Скачивание и запуск приложения Xamarin.Android
-1. В разделе **Download and run your Xamarin.Android project** (Загрузка и запуск проекта Xamarin.Android) нажмите кнопку **Download** (Загрузить).
+## <a name="run-the-xamarinandroid-app"></a>Запуск приложения Xamarin.Android
+1. Откройте проект Xamarin.Android.
 
-      Сохраните сжатый файл проекта на локальном компьютере и запомните путь к нему.
-2. Нажмите клавишу **F5** , чтобы выполнить сборку проекта, после чего запустите приложение.
-3. В приложении введите содержательный текст, например *Работа с руководством*, и нажмите кнопку **Добавить**.
+2. Перейдите к [портала Azure](https://portal.azure.com/) и перейдите к мобильное приложение, которое вы создали. На `Overview` колонке найдите URL-адрес, который является общедоступной конечной точки для мобильного приложения. Пример - sitename для моей имя приложения «test123» будет https://test123.azurewebsites.net.
+
+3. Откройте файл `ToDoActivity.cs` в этой папке - xamarin.android/ZUMOAPPNAME/ToDoActivity.cs. Имя приложения — `ZUMOAPPNAME`.
+
+4. В `ToDoActivity` класса, замените `ZUMOAPPURL` переменной с общедоступной конечной точки выше.
+
+    `const string applicationURL = @"ZUMOAPPURL";`
+
+    становится
+    
+    `const string applicationURL = @"https://test123.azurewebsites.net";`
+    
+5. Нажмите клавишу F5, чтобы развернуть и запустить приложение.
+
+6. В приложении введите содержательный текст, например *Работа с руководством*, и нажмите кнопку **Добавить**.
 
     ![][10]
 
@@ -62,27 +74,14 @@ ms.locfileid: "62127902"
 
    > [!NOTE]
    > Вы можете просмотреть код, который получает доступ к внутреннему серверу мобильного приложения для запроса и вставки данных, которые находятся в файле C# ToDoActivity.cs.
-   >
-   >
-
+   
 ## <a name="troubleshooting"></a>Устранение неполадок
 При проблемах со сборкой проекта запустите диспетчер пакетов NuGet и выполните обновление пакетов поддержки `Xamarin.Android`. Проекты быстрого запуска не всегда включают самые свежие версии.
 
 Обратите внимание, что все пакеты поддержки, на которые содержатся ссылки в проекте Android, должны быть одной версии. [Пакет NuGet для мобильных приложений Azure](https://www.nuget.org/packages/Microsoft.Azure.Mobile.Client/) имеет зависимость `Xamarin.Android.Support.CustomTabs` для платформы Android, поэтому если в проекте используются пакеты поддержки более новой версии, во избежание конфликтов необходимо установить требуемую версию пакета.
 
-## <a name="next-steps"></a>Дальнейшие действия
-* [Включение автономной синхронизации для мобильного приложения Xamarin.Android](app-service-mobile-xamarin-android-get-started-offline-data.md)
-* [Добавление аутентификации в приложение](app-service-mobile-xamarin-android-get-started-users.md)
-* [Добавление push-уведомлений в приложение Xamarin.Android](app-service-mobile-xamarin-android-get-started-push.md)
-* [Использование управляемого клиента для мобильных приложений Azure](app-service-mobile-dotnet-how-to-use-client-library.md)
-
 <!-- Images. -->
 [0]: ./media/app-service-mobile-xamarin-android-get-started/mobile-quickstart-completed-android.png
-[6]: ./media/app-service-mobile-xamarin-android-get-started/mobile-portal-quickstart-xamarin.png
-[8]: ./media/app-service-mobile-xamarin-android-get-started/mobile-xamarin-project-android-vs.png
-[9]: ./media/app-service-mobile-xamarin-android-get-started/mobile-xamarin-project-android-xs.png
 [10]: ./media/app-service-mobile-xamarin-android-get-started/mobile-quickstart-startup-android.png
-
 <!-- URLs. -->
-[Azure Portal]: https://azure.portal.com/
 [Visual Studio]: https://go.microsoft.com/fwLink/p/?LinkID=534203

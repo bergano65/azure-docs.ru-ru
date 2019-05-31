@@ -1,9 +1,9 @@
 ---
-title: Создание сертификата защищенного протокола LDAP для управляемого домена доменных служб Azure AD | Документация Майкрософт
+title: Создать. PFX-файл с помощью сертификата защищенного протокола LDAP (LDAPS) для домена доменных служб Azure AD
 description: Создание сертификата защищенного протокола LDAP для управляемого домена доменных служб Azure AD
 services: active-directory-ds
 documentationcenter: ''
-author: eringreenlee
+author: MikeStephens-MS
 manager: daveba
 editor: curtand
 ms.assetid: c6da94b6-4328-4230-801a-4b646055d4d7
@@ -13,22 +13,23 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 08/01/2017
-ms.author: ergreenl
-ms.openlocfilehash: 801ba3b84ba9956ca8d13916ac4d90060a7f4037
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 05/13/2019
+ms.author: mstephen
+ms.openlocfilehash: b79418c6e64727e4fdf13b3f4f267d84fcf5da85
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60418563"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66235027"
 ---
 # <a name="create-a-pfx-file-with-the-secure-ldap-ldaps-certificate-for-a-managed-domain"></a>Создание PFX-файла с сертификатом защищенного протокола LDAP (LDAPS) для управляемого домена
 
 ## <a name="before-you-begin"></a>Перед началом работы
-Выполните инструкции из раздела [Задача 1. Получение сертификата для защищенного протокола LDAP](active-directory-ds-admin-guide-configure-secure-ldap.md).
 
+Выполните инструкции из раздела [Задача 1. Получение сертификата для защищенного протокола LDAP](configure-ldaps.md).
 
 ## <a name="task-2-export-the-secure-ldap-certificate-to-a-pfx-file"></a>Задача 2. Экспорт сертификата защищенного протокола LDAP в PFX-файл
+
 Прежде чем приступить к этой задаче, получите сертификат защищенного протокола LDAP из общедоступного центра сертификации либо создайте самозаверяющий сертификат.
 
 Чтобы экспортировать сертификат протокола LDAPS в PFX-файл, сделайте следующее:
@@ -37,10 +38,10 @@ ms.locfileid: "60418563"
 
     ![Запуск консоли MMC](./media/active-directory-domain-services-admin-guide/secure-ldap-start-run.png)
 2. В окне **Контроль учетных записей пользователей** щелкните **ДА**, чтобы запустить консоль управления (MMC) от имени администратора.
-3. В меню **Файл** выберите **Добавить или удалить оснастку…**.
+3. В меню **Файл** выберите **Добавить или удалить оснастку…** .
 
     ![Добавление оснастки в консоль MMC](./media/active-directory-domain-services-admin-guide/secure-ldap-add-snapin.png)
-4. В диалоговом окне **Добавление и удаление оснасток** выберите оснастку **Сертификаты** и нажмите кнопку **Добавить >**.
+4. В диалоговом окне **Добавление и удаление оснасток** выберите оснастку **Сертификаты** и нажмите кнопку **Добавить >** .
 
     ![Добавление оснастки диспетчера сертификатов в консоль MMC](./media/active-directory-domain-services-admin-guide/secure-ldap-add-certificates-snapin.png)
 5. В мастере **Оснастка диспетчера сертификатов** установите переключатель в положение **Учетная запись компьютера** и нажмите кнопку **Далее**.
@@ -56,7 +57,7 @@ ms.locfileid: "60418563"
 
     ![Открытие хранилища личных сертификатов](./media/active-directory-domain-services-admin-guide/secure-ldap-open-personal-store.png)
 9. В окне должен отобразиться только что созданный самозаверяющий сертификат. Чтобы проверить, совпадает ли отпечаток с тем, который был указан в окнах PowerShell при создании сертификата, просмотрите свойства этого сертификата.
-10. Выберите самозаверяющий сертификат и **щелкните его правой кнопкой мыши**. В контекстном меню последовательно выберите пункты **Все задачи** и **Экспорт…**.
+10. Выберите самозаверяющий сертификат и **щелкните его правой кнопкой мыши**. В контекстном меню последовательно выберите пункты **Все задачи** и **Экспорт…** .
 
     ![Экспорт сертификата](./media/active-directory-domain-services-admin-guide/secure-ldap-export-cert.png)
 11. В **мастере экспорта сертификатов** нажмите кнопку **Далее**.
@@ -71,7 +72,7 @@ ms.locfileid: "60418563"
     >
     >
 
-13. На странице **Формат экспортируемого файла** для экспортируемого сертификата установите переключатель в положение **Файл обмена личной информацией — PKCS #12 (.PFX)**.
+13. На странице **Формат экспортируемого файла** для экспортируемого сертификата установите переключатель в положение **Файл обмена личной информацией — PKCS #12 (.PFX)** .
 
     ![Формат файла экспортируемого сертификата](./media/active-directory-domain-services-admin-guide/secure-ldap-export-to-pfx.png)
 
@@ -96,6 +97,6 @@ ms.locfileid: "60418563"
 
     ![Экспорт сертификата выполнен](./media/active-directory-domain-services-admin-guide/secure-ldap-exported-as-pfx.png)
 
-
 ## <a name="next-step"></a>Дальнейшие действия
+
 [Задача 3. Включение защищенного протокола LDAP для управляемого домена](active-directory-ds-admin-guide-configure-secure-ldap-enable-ldaps.md)

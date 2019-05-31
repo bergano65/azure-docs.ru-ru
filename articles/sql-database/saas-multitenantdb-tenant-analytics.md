@@ -12,12 +12,12 @@ ms.author: sstein
 ms.reviewer: anjangsh,billgib,genemi
 manager: craigg
 ms.date: 09/19/2018
-ms.openlocfilehash: 0146f6ca610a25e57771fb21436a70acbdd5a5ef
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 4bf97c0c447bfabc1454959d457bbd50f3490299
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61486664"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66242803"
 ---
 # <a name="cross-tenant-analytics-using-extracted-data---multi-tenant-app"></a>Получение межклиентской аналитики на основе извлеченных с мультитенантного приложения данных
  
@@ -100,9 +100,9 @@ ms.locfileid: "61486664"
 
 В обозревателе объектов сделайте следующее:
 
-1. Разверните сервер *tenants1-mt-\<Пользователь\>*.
+1. Разверните сервер *tenants1-mt-\<Пользователь\>* .
 2. Разверните узел "Базы данных", и вы увидите базу данных *tenants1*, содержащую несколько клиентов.
-3. Разверните сервер *catalog-mt-\<Пользователь\>*.
+3. Разверните сервер *catalog-mt-\<Пользователь\>* .
 4. Проверьте наличие хранилища аналитики и базы данных учетной записи задания.
 
 Проверьте следующее в отношении баз данных в обозревателе объектов SSMS, развернув узел хранилища аналитики:
@@ -170,7 +170,7 @@ ms.locfileid: "61486664"
 Выполните шаги ниже, чтобы подключиться к Power BI, а также импортировать созданные ранее представления:
 
 1. Запустите Power BI Desktop.
-2. На вкладке "Главная" выберите **Получение данных**, а затем выберите **Дополнительно…**.  в меню.
+2. На вкладке "Главная" выберите **Получение данных**, а затем выберите **Дополнительно…** .  в меню.
 3. В окне **получения данных** выберите базу данных SQL Azure.
 4. В окне входа в базу данных введите имя сервера (catalog-mt-\<Пользователь\>.database.windows.net). Выберите **Импорт** для **режима подключения к данным**, а затем нажмите кнопку "ОК". 
 
@@ -242,5 +242,5 @@ AverageTicketsSold = DIVIDE(DIVIDE(COUNTROWS(fact_Tickets),DISTINCT(dim_Venues[V
 ## <a name="additional-resources"></a>Дополнительные ресурсы
 
 Дополнительные [руководства по работе с приложением SaaS Wingtip](saas-dbpertenant-wingtip-app-overview.md#sql-database-wingtip-saas-tutorials). 
-- [Управление масштабируемыми облачными базами данных](sql-database-elastic-jobs-overview.md).
+- [Управление масштабируемыми облачными базами данных](elastic-jobs-overview.md).
 - [Межклиентская аналитика на основе извлеченных с однотенантного приложения данных](saas-tenancy-tenant-analytics.md) 

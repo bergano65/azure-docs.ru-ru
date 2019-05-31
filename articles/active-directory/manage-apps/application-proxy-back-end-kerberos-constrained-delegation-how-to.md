@@ -16,12 +16,12 @@ ms.date: 04/23/2019
 ms.author: mimart
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c95eb45d75a54af75fdc8004316bc8bfeeddbd7e
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 0cfaea53156b78fad024046bb6f55229f8ad6536
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65783931"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66236274"
 ---
 # <a name="troubleshoot-kerberos-constrained-delegation-configurations-for-application-proxy"></a>Устранение неполадок конфигураций ограниченного делегирования Kerberos для прокси-сервера приложения
 
@@ -182,4 +182,4 @@ ms.locfileid: "65783931"
 - Проверка подлинности с несколькими прыжками — обычно используется в сценариях с многоуровневым приложением, где проверка подлинности требуется как для серверной, так и для интерфейсной части (например, SQL Server Reporting Services). Сведения о настройке сценария с несколькими прыжками см. в статье [Kerberos Constrained Delegation May Require Protocol Transition in Multi-hop Scenarios](https://support.microsoft.com/help/2005838/kerberos-constrained-delegation-may-require-protocol-transition-in-mul) (Ограниченное делегирование Kerberos: изменение протокола в сценариях с несколькими прыжками).
 
 ## <a name="next-steps"></a>Дальнейшие действия
-[Настройка ограниченного делегирования Kerberos в управляемом домене](../../active-directory-domain-services/active-directory-ds-enable-kcd.md)
+[Настройка ограниченного делегирования Kerberos в управляемом домене](../../active-directory-domain-services/deploy-kcd.md)

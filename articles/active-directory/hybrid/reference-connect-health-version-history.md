@@ -15,12 +15,12 @@ ms.topic: reference
 ms.date: 03/20/2019
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f273104366b3e583bd98ebcc6d50387a3fb1d335
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 58de8de9a9fab67d743d4560ccda037d8f41301b
+ms.sourcegitcommit: 8c49df11910a8ed8259f377217a9ffcd892ae0ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64572828"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66298989"
 ---
 # <a name="azure-ad-connect-health-version-release-history"></a>Azure AD Connect Health. Журнал выпуска версий
 Команда Azure Active Directory регулярно добавляет в Azure AD Connect Health новые функции и возможности. В этой статье перечислены выпущенные версии и компоненты.  
@@ -31,7 +31,14 @@ ms.locfileid: "64572828"
 
 Агент Azure AD Connect Health для синхронизации интегрируется с установленным средством Azure AD Connect. Дополнительные сведения см. в [истории выпусков версий Azure AD Connect](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-version-history). Вы можете оставить отзыв и проголосовать за функцию на [канале Connect Health на сайте User Voice](https://feedback.azure.com/forums/169401-azure-active-directory/filters/new?category_id=165591).
 
-## <a name="april-2019"></a>Апреля 2019 г.
+
+## <a name="may-2019"></a>Май 2019 г.
+**Обновление агента:** 
+* Агент Azure AD Connect Health для AD FS (версия 3.1.51.0) 
+   1. Исправление ошибки для различения нескольких операциях входа, которые совместно используют же client-request-id.
+   2. Исправление ошибки синтаксического разбора ввода неправильного имени пользователя и пароля на языке локализации серверов.   
+
+## <a name="april-2019"></a>Апрель 2019 г.
 **Обновление агента:** 
 * Агент Azure AD Connect Health для AD FS (версия 3.1.46.0) 
    1. Устранить предупреждения процесса проверки повторяющееся имя участника-службы для служб федерации Active Directory
@@ -66,11 +73,11 @@ ms.locfileid: "64572828"
    3. Решить проблему с блокировкой EventHandler диагностики агента
    4. Исправлены ошибки с регистрацией агента Health.
 
-## <a name="august-2018"></a>Август 2018 г. 
+## <a name="august-2018"></a>Август 2018 г. 
 *  Агент Azure AD Connect Health для синхронизации (версия 3.1.7.0) выпущен вместе с Azure AD Connect версии 1.1.880.0.    
    1. Исправление проблемы с [высоким уровнем использования ЦП для агента мониторинга в выпусках базы знаний .NET Framework](https://support.microsoft.com/help/4346822/high-cpu-issue-in-azure-active-directory-connect-health-for-sync).
 
-## <a name="june-2018"></a>Июнь 2018 г. 
+## <a name="june-2018"></a>Июнь 2018 г. 
 **Новые функции предварительной версии:** 
 * Azure AD Connect Health для синхронизации. Диагностика и устранение ошибок синхронизации повторяющихся атрибутов с помощью портала 
 
@@ -86,7 +93,7 @@ ms.locfileid: "64572828"
   1. Исправление для средств управления памятью агента и связанных оповещений специально для версии 3.0.244.0
 
 
-## <a name="may-2018"></a>Май 2018 г.
+## <a name="may-2018"></a>Май 2018 г.
 **Обновление агента:**
 * Агент Azure AD Connect Health для AD DS (версия 3.0.244.0).
   1. Повышение конфиденциальности агентов.  

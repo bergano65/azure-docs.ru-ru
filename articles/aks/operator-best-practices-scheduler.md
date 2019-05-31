@@ -2,18 +2,17 @@
 title: 'Рекомендации для оператора: основные функции планировщика в службах AKS'
 description: Рекомендации для оператора кластера по использованию основных функций планировщика, таких как квоты ресурсов и бюджеты неработоспособности pod в "Службе Azure Kubernetes" (AKS)
 services: container-service
-author: rockboyfor
+author: iainfoulds
 ms.service: container-service
 ms.topic: conceptual
-origin.date: 11/26/2018
-ms.date: 04/08/2019
-ms.author: v-yeche
-ms.openlocfilehash: 8233330973946e552e36a85a11bdbbfb06c739f0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 11/26/2018
+ms.author: iainfou
+ms.openlocfilehash: f6e370442c9c359a38025762fb90269119ec0ea6
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60463886"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "65074121"
 ---
 # <a name="best-practices-for-basic-scheduler-features-in-azure-kubernetes-service-aks"></a>Рекомендации по основным функциям планировщика в "Службе Azure Kubernetes" (AKS)
 
@@ -95,7 +94,7 @@ spec:
       app: nginx-frontend
 ```
 
-Можно также определить процент, например *60 %*, что позволит автоматически компенсировать набор реплик, увеличив количество pod.
+Можно также определить процент, например *60 %* , что позволит автоматически компенсировать набор реплик, увеличив количество pod.
 
 Можно определить максимальное число недоступных экземпляров в наборе реплик. В этом случае также можно определить процент максимального количества недоступных pod. Следующий манифест YAML бюджета неработоспособности pod определяет, что не более двух pod в реплике набора будут недоступны:
 
@@ -127,6 +126,8 @@ kubectl apply -f nginx-pdb.yaml
 
 [Kube-advisor] [ kube-advisor] средство — связанный проект с открытым кодом AKS, просматривают кластер Kubernetes и сообщают о проблемах, которые она находит. Полезная проверка — поиск контейнеров pod без установленных запросов и ограничений ресурсов.
 
+Kube-помощник может отчетов на запросом ресурсов и ограничения, отсутствующие в PodSpecs для Windows-приложений, а также приложений Linux, а само средство kube помощника должно быть назначено на Linux pod. Вы можете запланировать pod для запуска в пуле узлов с определенной операционной системы с помощью [селектор узла] [ k8s-node-selector] в конфигурации pod.
+
 В кластере AKS с большим количеством команд разработчиков и приложений может быть сложно отслеживать контейнеры pod без установленных запросов и ограничений ресурсов. Рекомендуем регулярно запускать `kube-advisor` для кластеров AKS, особенно в том случае, если не назначены квоты ресурсов пространствам имен.
 
 ## <a name="next-steps"></a>Дальнейшие действия
@@ -148,3 +149,4 @@ kubectl apply -f nginx-pdb.yaml
 [aks-best-practices-cluster-isolation]: operator-best-practices-cluster-isolation.md
 [aks-best-practices-advanced-scheduler]: operator-best-practices-advanced-scheduler.md
 [aks-best-practices-identity]: operator-best-practices-identity.md
+[k8s-node-selector]: concepts-clusters-workloads.md#node-selectors

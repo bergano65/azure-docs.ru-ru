@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/19/2019
 ms.author: spelluru
-ms.openlocfilehash: 91c598bde0912cffb8aa1dd7ba022c86a9084faa
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: a46d816c04d9f5629c2ee9538016d42c53f9a331
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64713016"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66244393"
 ---
 # <a name="azure-devtest-labs-faq"></a>Часто задаваемые вопросы об Azure DevTest Labs
 В этой статье содержатся ответы на некоторые самые распространенные вопросы об Azure DevTest Labs.
@@ -280,7 +280,7 @@ foreach($labVM in $labVMs)
 
 Существует два варианта, чтобы автоматизировать процесс передачи VHD-файлов для создания пользовательских образов:
 
-- Скопируйте или передайте VHD-файлы в учетную запись хранения, связанную с лабораторией, с помощью [AzCopy](../storage/common/storage-use-azcopy.md#upload-blobs-to-blob-storage).
+- Скопируйте или передайте VHD-файлы в учетную запись хранения, связанную с лабораторией, с помощью [AzCopy](../storage/common/storage-use-azcopy-v10.md).
 - Или воспользуйтесь [обозревателем хранилищ Azure](../vs-azure-tools-storage-manage-with-storage-explorer.md). Обозреватель хранилищ — это автономное приложение, работающее на платформе Windows, OSX и Linux.
 
 Чтобы найти целевую учетную запись хранения, связанную с лабораторией, сделайте следующее:

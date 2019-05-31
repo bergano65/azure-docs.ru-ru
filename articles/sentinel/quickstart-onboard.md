@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 04/07/2019
+ms.date: 05/27/2019
 ms.author: rkarlin
-ms.openlocfilehash: 0061fb7946e4c35f855d1a409cb9bc210c73641a
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: 891f9fbd26b53b392ac84ed9d420b58558cd20c2
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65228305"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66258433"
 ---
 # <a name="on-board-azure-sentinel-preview"></a>Предварительная версия встроенного Sentinel Azure
 
@@ -41,7 +41,7 @@ ms.locfileid: "65228305"
 - Рабочая область log Analytics. Узнайте, как [создать рабочую область Log Analytics](../log-analytics/log-analytics-quick-create-workspace.md)
 
 -  Чтобы включить Azure Sentinel, необходимо разрешения участника для подписки, в котором находится рабочей области Azure Sentinel. 
-- Чтобы использовать Azure Sentinel, необходимо иметь разрешения участника или средство просмотра на группы ресурсов, к которой принадлежит рабочей области
+- Чтобы использовать Azure Sentinel, необходимо иметь разрешения участника или читателя в группе ресурсов, к которой принадлежит рабочей области
 - Для подключения определенных источников данных может потребоваться дополнительные разрешения
  
 ## Включение Azure Sentinel <a name="enable"></a>

@@ -5,15 +5,15 @@ services: container-instances
 author: dlepow
 ms.service: container-instances
 ms.topic: article
-ms.date: 11/30/2018
+ms.date: 04/15/2019
 ms.author: danlep
 ms.custom: mvc
-ms.openlocfilehash: 0a1e3c2facc10b68fe4b33d4cd0531f181b1e813
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: df9c3ecbec6dccd9ba8db2b375cfab3276005098
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60581128"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "65072986"
 ---
 # <a name="azure-container-instances-and-container-orchestrators"></a>Экземпляры контейнеров Azure и оркестраторы контейнеров
 
@@ -56,7 +56,7 @@ ms.locfileid: "60581128"
 
 ## <a name="sample-implementation-virtual-nodes-for-azure-kubernetes-service-aks"></a>Пример реализации: виртуальные узлы для Службы Azure Kubernetes (AKS)
 
-Чтобы быстро масштабировать рабочие нагрузки приложений в кластере [Службы Azure Kubernetes](../aks/intro-kubernetes.md) (AKS), используйте *виртуальные узлы*, созданные динамически в экземплярах контейнеров Azure. Сейчас виртуальные узлы находятся в предварительной версии, обеспечивая взаимодействие контейнеров pod в сети, которые выполняются в кластерах ACI и AKS. 
+Чтобы быстро масштабировать рабочие нагрузки приложений в кластере [Службы Azure Kubernetes](../aks/intro-kubernetes.md) (AKS), используйте *виртуальные узлы*, созданные динамически в экземплярах контейнеров Azure. Виртуальные узлы обеспечивают взаимодействие контейнеров pod в сети, которые выполняются в кластерах ACI и AKS. 
 
 В настоящее время виртуальные узлы поддерживают экземпляры контейнеров Linux. Начните работать с виртуальными узлами с помощью [Azure CLI](https://go.microsoft.com/fwlink/?linkid=2047538) или [портала Azure](https://go.microsoft.com/fwlink/?linkid=2047545).
 

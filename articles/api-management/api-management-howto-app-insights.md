@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/20/2018
 ms.author: apimpm
-ms.openlocfilehash: 69f36773b702d9f0059e0cd27dbb864ccd7f7b2b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 3bbab82831fba389cd4bf172e7ea762d5971579b
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60527595"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66241846"
 ---
 # <a name="how-to-integrate-azure-api-management-with-azure-application-insights"></a>Интеграция управления API Azure в Azure Application Insights
 
@@ -51,7 +51,7 @@ ms.locfileid: "60527595"
     ![Средство ведения журнала App Insights](media/api-management-howto-app-insights/apim-app-insights-logger-2.png)  
 
 > [!NOTE]
-> Фактически сущность [средства ведения журнала](https://docs.microsoft.com/rest/api/apimanagement/logger/createorupdate) создается в экземпляре службы управления API с ключом инструментирования экземпляра Application Insights.
+> Фактически сущность [средства ведения журнала](https://docs.microsoft.com/rest/api/apimanagement/2019-01-01/logger/createorupdate) создается в экземпляре службы управления API с ключом инструментирования экземпляра Application Insights.
 
 ## <a name="enable-application-insights-logging-for-your-api"></a>Включение ведения Application Insights для вашего API
 
@@ -70,9 +70,9 @@ ms.locfileid: "60527595"
 > Если переопределить значение **0** по умолчанию в поле **First bytes of body** (Первые байты тела запроса), можно существенно снизить производительность интерфейсов API.
 
 > [!NOTE]
-> Фактически сущность [Диагностика](https://docs.microsoft.com/rest/api/apimanagement/diagnostic/createorupdate) с именем applicationinsights создается на уровне API.
+> Фактически сущность [Диагностика](https://docs.microsoft.com/rest/api/apimanagement/2019-01-01/diagnostic/createorupdate) с именем applicationinsights создается на уровне API.
 
-| Имя параметра                        | Тип значения                        | ОПИСАНИЕ                                                                                                                                                                                                                                                                                                                                      |
+| Имя параметра                        | Тип значения                        | Описание                                                                                                                                                                                                                                                                                                                                      |
 |-------------------------------------|-----------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Включение                              | Логическое                           | Указывает, включено ли ведение журнала для данного API.                                                                                                                                                                                                                                                                                                |
 | Место назначения                         | Средство ведения журнала Azure Application Insights | Указывает используемое средство ведения журнала Azure Application Insights                                                                                                                                                                                                                                                                                           |

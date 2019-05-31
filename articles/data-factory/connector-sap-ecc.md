@@ -3,22 +3,21 @@ title: Копирование данных из SAP ECC с помощью фаб
 description: Узнайте, как копировать данные из SAP ECC в поддерживаемые хранилища данных, используемые в качестве приемника, с помощью действия копирования в конвейере фабрики данных Azure.
 services: data-factory
 documentationcenter: ''
-author: WenJason
-manager: digimobile
+author: linda33wj
+manager: craigg
 ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-origin.date: 04/26/2018
-ms.date: 04/22/2019
-ms.author: v-jay
-ms.openlocfilehash: d86264b632daa09a899fae28e73e117b16322617
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.date: 04/26/2018
+ms.author: jingwang
+ms.openlocfilehash: 7c75793a696137a1d4cc24fa94877a7fb4e4247a
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62128123"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66243922"
 ---
 # <a name="copy-data-from-sap-ecc-using-azure-data-factory"></a>Копирование данных из SAP ECC с помощью фабрики данных Azure
 
@@ -33,6 +32,9 @@ ms.locfileid: "62128123"
 - копирование данных из SAP ECC в SAP NetWeaver 7.0 и более поздних версий; 
 - копирование данных из любых объектов, предоставляемых службами SAP ECC OData (например, таблиц и представлений SAP, BAPI, средств извлечения данных и т. д.), или данных и документов IDOC, отправляемых в SAP PI, которые могут быть получены как OData через относительные адаптеры;
 - Копирование данных с помощью базовой проверки подлинности.
+
+>[!TIP]
+>Чтобы скопировать данные из SAP ECC с помощью SAP таблицы или представления, можно использовать [таблицы SAP](connector-sap-table.md) соединитель, который обеспечивает более высокую производительность и масштабируемость.
 
 ## <a name="prerequisites"></a>Технические условия
 
@@ -163,7 +165,7 @@ ms.locfileid: "62128123"
 | Тип данных OData | Тип промежуточных данных фабрики данных |
 |:--- |:--- |
 | Edm.Binary | String |
-| Edm.Boolean | Bool |
+| Edm.Boolean | Логический |
 | Edm.Byte | String |
 | Edm.DateTime | DateTime |
 | Edm.Decimal | Decimal |

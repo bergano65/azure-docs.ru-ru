@@ -7,17 +7,17 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 12/15/2018
-ms.openlocfilehash: 84946083146517146ad9aeb48693230aaaaf7943
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.date: 05/21/2019
+ms.openlocfilehash: 3812cf55a26a12ef110b8acf14edd0e8bfd36851
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64701178"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66236517"
 ---
 # <a name="use-hdinsight-spark-cluster-to-read-and-write-data-to-azure-sql-database"></a>Чтение данных из базы данных SQL Azure и запись в нее с использованием кластера HDInsight Spark
 
-Узнайте, как подключить кластер Apache Spark в Azure HDInsight с помощью базы данных SQL Azure, а также как выполнять чтение из базы данных SQL, запись и потоковую передачу данных в нее. В приведенных здесь инструкциях для выполнения фрагментов кода Scala используется [Jupyter Notebook](https://jupyter.org/). Тем не менее вы можете создать изолированное приложение на языке Scala или Python и выполнять такие же задачи. 
+Узнайте, как подключить кластер Apache Spark в Azure HDInsight с помощью базы данных SQL Azure, а также как выполнять чтение из базы данных SQL, запись и потоковую передачу данных в нее. В приведенных здесь инструкциях для выполнения фрагментов кода Scala используется [Jupyter Notebook](https://jupyter.org/). Тем не менее вы можете создать изолированное приложение на языке Scala или Python и выполнять такие же задачи.
 
 ## <a name="prerequisites"></a>Технические условия
 
@@ -36,7 +36,7 @@ ms.locfileid: "64701178"
 Сначала создайте [записную книжку Jupyter](https://jupyter.org/), связанную с кластером Spark. Она понадобится для выполнения фрагментов кода, используемых в этой статье. 
 
 1. Откройте кластер на [портале Azure](https://portal.azure.com/).
-1. Выберите **Записная книжка Jupyter** в разделе **Панели мониторинга кластера** справа.  Если раздел **Панели мониторинга кластера** не отображается, в колонке в меню слева щелкните **Обзор**. При появлении запроса введите учетные данные администратора для кластера.
+1. Выберите **Записная книжка Jupyter** в разделе **Панели мониторинга кластера** справа.  Если вы не видите **панели мониторинга кластера**выберите **Обзор** в меню слева. При появлении запроса введите учетные данные администратора для кластера.
 
     ![Записная книжка Jupyter в Spark](./media/apache-spark-connect-to-sql-database/hdinsight-spark-cluster-dashboard-jupyter-notebook.png "Записная книжка Jupyter в Spark")
    
@@ -164,7 +164,7 @@ ms.locfileid: "64701178"
 
 1. Сначала проверьте, что таблица **hvactable** пустая. С помощью SSMS выполните следующий запрос к таблице.
 
-       DELETE FROM [dbo].[hvactable]
+       TRUNCATE TABLE [dbo].[hvactable]
 
 1. Создайте записную книжку Jupyter в кластере HDInsight Spark. Вставьте следующий фрагмент кода в ячейку кода и нажмите клавиши **SHIFT+ВВОД**.
 
@@ -174,7 +174,7 @@ ms.locfileid: "64701178"
        import org.apache.spark.sql.streaming._
        import java.sql.{Connection,DriverManager,ResultSet}
 
-1. Мы выполняем потоковую передачу данных из **HVAC.csv** в hvactable. Файл HVAC.csv находится в кластере в папке */HdiSamples/HdiSamples/SensorSampleData/HVAC/*. В следующем фрагменте кода мы сначала получаем схему данных для потоковой передачи. Затем создаем кадр данных потоковой передачи с помощью этой схемы. Вставьте фрагмент кода в ячейку кода и нажмите клавиши **SHIFT+ВВОД**, чтобы выполнить код.
+1. Мы выполняем потоковую передачу данных из **HVAC.csv** в hvactable. Файл HVAC.csv находится в кластере в `/HdiSamples/HdiSamples/SensorSampleData/HVAC/`. В следующем фрагменте кода мы сначала получаем схему данных для потоковой передачи. Затем создаем кадр данных потоковой передачи с помощью этой схемы. Вставьте фрагмент кода в ячейку кода и нажмите клавиши **SHIFT+ВВОД**, чтобы выполнить код.
 
        val userSchema = spark.read.option("header", "true").csv("wasbs:///HdiSamples/HdiSamples/SensorSampleData/hvac/HVAC.csv").schema
        val readStreamDf = spark.readStream.schema(userSchema).csv("wasbs:///HdiSamples/HdiSamples/SensorSampleData/hvac/") 

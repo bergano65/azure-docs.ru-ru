@@ -2,20 +2,30 @@
 author: conceptdev
 ms.service: app-service-mobile
 ms.topic: include
-ms.date: 08/23/2018
+ms.date: 05/09/2019
 ms.author: crdun
-ms.openlocfilehash: 505eac0996129a17b6b68e8ab4ea2d4fc80fd473
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
-ms.translationtype: HT
+ms.openlocfilehash: 63c54f8af91b6b4a76ba49d5e6fc7b3cda9f5b98
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66140988"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66240317"
 ---
-1. Войдите на [портал Azure]. Щелкните **Просмотреть все** > **Мобильные приложения** и выберите только что созданную серверную часть приложения. В параметрах мобильного приложения щелкните **Быстрый старт** > **Android**. В разделе **Настройка клиентского приложения** щелкните **Загрузить**. Загрузится полный проект Android для приложения, предварительно настроенный для подключения к серверу. 
-2. Откройте проект при помощи **Android Studio**, выберите **Import project (Eclipse ADT, Gradle, etc.)** (Импорт проекта (Eclipse ADT, Gradle и т. д.)). Обязательно используйте эту функцию импорта, чтобы избежать ошибок JDK.
-3. Нажмите кнопку **Run 'app'** (Запустить приложение), чтобы создать проект и запустить приложение в симуляторе Android.
-4. В приложении введите содержательный текст, например *Работа с учебником* , и нажмите кнопку «Add» (Добавить). Это отправляет запрос POST на ранее развернутый внутренний сервер Azure. Сервер вносит данные из запроса в таблицу TodoItem SQL и возвращает сведения о только что сохраненных элементах в мобильное приложение. В мобильном приложении эти данные отображаются в списке. 
-   
-    ![](./media/app-service-mobile-android-quickstart/mobile-quickstart-startup-android.png)
+1. Откройте проект при помощи **Android Studio**, выберите **Import project (Eclipse ADT, Gradle, etc.)** (Импорт проекта (Eclipse ADT, Gradle и т. д.)). Обязательно используйте эту функцию импорта, чтобы избежать ошибок JDK.
 
-[портал Azure]: https://portal.azure.com/
+2. Откройте файл `ToDoActivity.java` в этой папке - ZUMOAPPNAME/приложения/src/main/java/com/пример/zumoappname. Имя приложения — `ZUMOAPPNAME`.
+
+3. Перейдите к [портала Azure](https://portal.azure.com/) и перейдите к мобильное приложение, которое вы создали. На `Overview` колонке найдите URL-адрес, который является общедоступной конечной точки для мобильного приложения. Пример - sitename для моей имя приложения «test123» будет https://test123.azurewebsites.net.
+
+4. В `onCreate()` метод, замените `ZUMOAPPURL` параметр с общедоступной конечной точки выше.
+    
+    `new MobileServiceClient("ZUMOAPPURL", this).withFilter(new ProgressFilter());` 
+    
+    становится
+    
+    `new MobileServiceClient("https://test123.azurewebsites.net", this).withFilter(new ProgressFilter());`
+    
+5. Нажмите кнопку **Run 'app'** (Запустить приложение), чтобы создать проект и запустить приложение в симуляторе Android.
+
+4. В приложении введите содержательный текст, например *Работа с учебником* , и нажмите кнопку «Add» (Добавить). Это отправляет запрос POST на ранее развернутый внутренний сервер Azure. Сервер вносит данные из запроса в таблицу TodoItem SQL и возвращает сведения о только что сохраненных элементах в мобильное приложение. В мобильном приложении эти данные отображаются в списке.
+    ![Краткое руководство Android](./media/app-service-mobile-android-quickstart/mobile-quickstart-startup-android.png)

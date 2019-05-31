@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 01/29/2019
-ms.openlocfilehash: 3368be291770133cdfa10158f6e30540e17b8223
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: f0e62c27885e2f6d5097194e1b9d869e167c4a4c
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61363765"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66304971"
 ---
 # <a name="use-reference-data-from-a-sql-database-for-an-azure-stream-analytics-job-preview"></a>Использование эталонных данных из Базы данных SQL для задания Azure Stream Analytics (предварительная версия)
 
@@ -53,22 +53,20 @@ Azure Stream Analytics поддерживает Базу данных SQL Azure 
 
 После того как вы настроите другие входные и выходные данные, а также запрос, можно запустить задание Stream Analytics.
 
-## <a name="tools-for-visual-studio"></a>Средства для Visual Studio
+## <a name="tools-for-visual-studio"></a>Инструменты для Visual Studio
 
 Чтобы добавить Базу данных SQL Azure в качестве источника эталонных входных данных с помощью Visual Studio, выполните приведенные ниже действия.
 
 ### <a name="visual-studio-prerequisites"></a>Предварительные требования при использовании Visual Studio
 
-1. Если вы используете Visual Studio 2017, обновите его до версии 15.8.2 или выше. В настоящее время версия 16.0 и более поздние не поддерживаются.
-
-2. [Установите инструменты Stream Analytics для Visual Studio](stream-analytics-tools-for-visual-studio-install.md). Поддерживаются следующие версии Visual Studio:
+1. [Установите инструменты Stream Analytics для Visual Studio](stream-analytics-tools-for-visual-studio-install.md). Поддерживаются следующие версии Visual Studio:
 
    * Visual Studio 2015
-   * Visual Studio 2017
+   * Visual Studio 2019
 
-3. Ознакомьтесь со статьей [Краткое руководство. Создание задания Stream Analytics с использованием инструментов Azure Stream Analytics для Visual Studio](stream-analytics-quick-create-vs.md).
+2. Ознакомьтесь со статьей [Краткое руководство. Создание задания Stream Analytics с использованием инструментов Azure Stream Analytics для Visual Studio](stream-analytics-quick-create-vs.md).
 
-4. Создайте учетную запись хранения.
+3. Создайте учетную запись хранения.
 
 ### <a name="create-a-sql-database-table"></a>Создание таблицы базы данных SQL
 
@@ -80,7 +78,7 @@ Azure Stream Analytics поддерживает Базу данных SQL Azure 
 create table chemicals(Id Bigint,Name Nvarchar(max),FullName Nvarchar(max));
 ```
 
-### <a name="choose-your-subscription"></a>Выбрать подписку
+### <a name="choose-your-subscription"></a>Выберите свою подписку
 
 1. В Visual Studio в меню **Вид** выберите **Обозреватель серверов**.
 
@@ -118,7 +116,7 @@ create table chemicals(Id Bigint,Name Nvarchar(max),FullName Nvarchar(max));
 
 4. Откройте файл SQL в редакторе и напишите SQL-запрос.
 
-5. Если вы используете Visual Studio 2017 и установили SQL Server Data Tools, запрос можно проверить, щелкнув **Выполнить**. Появится окно мастера, которое поможет вам подключиться к базе данных SQL, а результат запроса появится в окне внизу.
+5. Если вы используете Visual Studio 2019 и установки SQL Server Data tools, можно проверить запрос, нажав кнопку **Execute**. Появится окно мастера, которое поможет вам подключиться к базе данных SQL, а результат запроса появится в окне внизу.
 
 ### <a name="specify-storage-account"></a>Определение учетной записи хранения
 
@@ -159,7 +157,7 @@ create table chemicals(Id Bigint,Name Nvarchar(max),FullName Nvarchar(max));
  
 2. Создайте разностный запрос. 
    
-   Этот запрос извлекает все строки базы данных SQL, которые были вставлены или удалены в течение времени начала,  **\@deltaStartTime**и время окончания  **\@deltaEndTime**. Разностный запрос должен возвращать те же столбцы, что и запрос моментального снимка, а также столбец **_operation_**. Этот столбец определяет, если строка вставляется или удаляется между  **\@deltaStartTime** и  **\@deltaEndTime**. Итоговые строки помечены как **1**, если записи были вставлены, или **2**, если они были удалены. 
+   Этот запрос извлекает все строки базы данных SQL, которые были вставлены или удалены в течение времени начала,  **\@deltaStartTime**и время окончания  **\@deltaEndTime**. Разностный запрос должен возвращать те же столбцы, что и запрос моментального снимка, а также столбец **_operation_** . Этот столбец определяет, если строка вставляется или удаляется между  **\@deltaStartTime** и  **\@deltaEndTime**. Итоговые строки помечены как **1**, если записи были вставлены, или **2**, если они были удалены. 
 
    Темпоральная таблица ведет учет обновленных записей путем записи операций вставки и удаления. Затем среда выполнения Stream Analytics применит результаты разностного запроса к предыдущему моментальному снимку, чтобы обновить эталонные данные. Ниже показан пример разностного запроса.
 
@@ -174,6 +172,9 @@ create table chemicals(Id Bigint,Name Nvarchar(max),FullName Nvarchar(max));
    ```
  
    Обратите внимание, что в дополнение к разностному запросу среда выполнения Stream Analytics может периодически выполнять запрос моментального снимка для хранения контрольных точек.
+
+## <a name="test-your-query"></a>Тестирование запроса
+   Важно, чтобы убедиться, что ваш запрос возвращает ожидаемый набор данных, и задание Stream Analytics будет использовать в качестве ссылочных данных. Чтобы проверить запрос, входные данные в разделе "топология задания" на портале перейдите к. Затем можно выбрать демонстрационные данные на ссылку на базу данных SQL входных данных. Когда образец станет доступным, можно загрузить файл и проверьте, находится ли возврата данных как ожидалось. Если вы хотите оптимизировать итерации разработки и тестирования, мы рекомендуем использовать [инструменты Stream Analytics для Visual Studio](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-tools-for-visual-studio-install). Вы можете также любой другой инструмент предпочитаемой сначала убедитесь, что запрос возвращает правильные результаты от вас базы данных SQL Azure, а затем использовать, в задании Stream Analytics. 
 
 ## <a name="faqs"></a>Часто задаваемые вопросы
 
@@ -194,10 +195,6 @@ create table chemicals(Id Bigint,Name Nvarchar(max),FullName Nvarchar(max));
 
 Azure Stream Analytics будет работать с любым типом Базы данных SQL Azure. Однако важно понимать, что частота обновления, заданная для эталонных входных данных, может повлиять на загрузку запросов. Чтобы использовать разносные запросы, рекомендуется использовать темпоральные таблицы в Базе данных SQL Azure.
 
-**Могу ли я делать выборки из эталонных входных данных Базы данных SQL?**
-
-Эта функция недоступна.
-
 **Почему Azure Stream Analytics хранит моментальные снимки в учетной записи хранения Azure?**
 
 Она гарантирует обработку событий только один раз и по крайней мере одну доставку событий. В случаях, когда временные проблемы влияют на задание, для восстановления состояния необходимо выполнить небольшое количество воспроизведений. Чтобы включить воспроизведение, эти моментальные снимки должны храниться в учетной записи хранения Azure. Дополнительные сведения о воспроизведении контрольных точек см. в статье [Концепции контрольных точек и воспроизведения в Azure Stream Analytics](stream-analytics-concepts-checkpoint-replay.md).
@@ -205,5 +202,5 @@ Azure Stream Analytics будет работать с любым типом Ба
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Использование эталонных данных для уточняющих запросов в Stream Analytics](stream-analytics-use-reference-data.md)
-* [Краткое руководство. по созданию задания Stream Analytics с использованием инструментов Azure Stream Analytics для Visual Studio](stream-analytics-quick-create-vs.md)
+* [Краткое руководство по созданию задания Stream Analytics с использованием инструментов Azure Stream Analytics для Visual Studio](stream-analytics-quick-create-vs.md)
 * [Тестирование реальных данных в локальной среде с помощью инструментов Azure Stream Analytics для Visual Studio (предварительная версия)](stream-analytics-live-data-local-testing.md)

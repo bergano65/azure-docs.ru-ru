@@ -9,17 +9,17 @@ ms.date: 1/10/2019
 ms.author: jingwang
 ms.custom: include file
 ms.openlocfilehash: 6d06ac6efd08c14f77fd963ddf2c67de54260959
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64733749"
+ms.lasthandoff: 05/23/2019
+ms.locfileid: "66238530"
 ---
 Фабрика данных Azure является мультитенантной службой, имеет следующие ограничения по умолчанию в месте, чтобы убедиться в том, что подписки клиентов защищены от рабочих нагрузок друг друга. Чтобы увеличить значения ограничений, вплоть до максимального значения для вашей подписки, обратитесь в службу поддержки.
 
 ### <a name="version-2"></a>версия 2
 
-| Resource | Ограничение по умолчанию | Максимальное ограничение |
+| Ресурс | Ограничение по умолчанию | Максимальное ограничение |
 | -------- | ------------- | ------------- |
 | Число фабрик данных в подписке Azure. | 50 | [Обратитесь в службу поддержки](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |
 | Общее число сущностей, таких как конвейеры, наборы данных, триггеры, связанные службы и сред выполнения интеграции в фабрике данных. | 5 000 | [Обратитесь в службу поддержки](https://azure.microsoft.com/blog/2014/06/04/azure-limits-quotas-increase-requests/). |

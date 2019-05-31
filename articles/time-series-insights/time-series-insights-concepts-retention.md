@@ -4,19 +4,19 @@ description: В этой статье описываются две параме
 ms.service: time-series-insights
 services: time-series-insights
 author: ashannon7
-ms.author: anshan
+ms.author: dpalled
 manager: cshankar
 ms.reviewer: jasonh, kfile, anshan
 ms.workload: big-data
 ms.topic: conceptual
 ms.date: 04/30/2019
 ms.custom: seodec18
-ms.openlocfilehash: 443599e1b2876012bcbdf720bef7762a24e1ff90
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: e3336df30873b40d2b8a464d1f866b524f76776d
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65790433"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66236994"
 ---
 # <a name="understand-data-retention-in-azure-time-series-insights"></a>Хранение данных в Azure Time Series Insights
 
@@ -42,7 +42,7 @@ ms.locfileid: "65790433"
 
 Сравнение реакции на событие хранения данных:
 
-## <a name="purge-old-data"></a>Очистить старые данные
+## <a name="purge-old-data"></a>Очистка старых данных
 
 - Это поведение по умолчанию для среды Time Series Insights.  
 - Такое поведение предпочтительнее, если пользователи хотят всегда видеть их *самыми последними данными* в своей среде Time Series Insights.
@@ -63,7 +63,7 @@ ms.locfileid: "65790433"
 
 Если этот показатель превышен в этой среде, данные не смогут храниться в течение 180 дней, так как некоторые из них будут удалены. Рассмотрим эту же среду в насыщенный интервал времени. Предположим, что скорость приема данных среды может увеличиться до среднего значения — 0,189 ГБ в день. В таком интервале времени сохраняются данные за 158 дней (30 ГБ / 0,189 = 158,73 дней хранения). Это меньше желаемого интервала времени хранения данных.
 
-## <a name="pause-ingress"></a>Приостановить входящий трафик
+## <a name="pause-ingress"></a>Остановка приема данных
 
 - **Остановки приема данных** параметр позволяет убедиться, что данные не удаляются, если ограничения размера и количества достигаются до истечения периода хранения.  
 - **Остановки приема данных** предоставляет дополнительное время для пользователей для увеличения емкости среды до удаления данных из-за истечения периода хранения

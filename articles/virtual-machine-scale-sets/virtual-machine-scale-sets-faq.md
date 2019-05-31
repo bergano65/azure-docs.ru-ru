@@ -13,15 +13,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/25/2019
+ms.date: 05/24/2019
 ms.author: manayar
 ms.custom: na
-ms.openlocfilehash: b5af6c5007130d71f94e1fa748adc333a8d08a48
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 0674d8c98f4bf37bbf9417de60ff4c60910d802a
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64689325"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66258291"
 ---
 # <a name="azure-virtual-machine-scale-sets-faqs"></a>Часто задаваемые вопросы о масштабируемых наборах виртуальных машин Azure
 
@@ -72,7 +72,7 @@ ms.locfileid: "64689325"
  Да! Дополнительные сведения см. в [документации по зонам масштабируемых наборов](./virtual-machine-scale-sets-use-availability-zones.md).
 
 
-## <a name="autoscale"></a>Autoscale
+## <a name="autoscale"></a>Автомасштабирование
 
 ### <a name="what-are-best-practices-for-azure-autoscale"></a>Существуют ли рекомендации по автомасштабированию Azure?
 
@@ -229,11 +229,11 @@ az sf cluster create -h
 }
 ```
 
-Имя элемента конфигурации Linux | Обязательно для заполнения | type | ОПИСАНИЕ
+Имя элемента конфигурации Linux | Обязательно для заполнения | type | Описание
 --- | --- | --- | ---
-ssh | Нет  | Коллекция | Указывает конфигурацию ключа SSH для операционной системы Linux.
-path | Yes | Строка | Указывает путь к файлу Linux, где должны храниться ключи SSH или сертификат.
-keyData | Yes | Строка | Указывает открытый ключ SSH в кодировке Base64.
+ssh | Нет | Коллекция | Указывает конфигурацию ключа SSH для операционной системы Linux.
+путь | Да | String | Указывает путь к файлу Linux, где должны храниться ключи SSH или сертификат.
+keyData | Да | String | Указывает открытый ключ SSH в кодировке Base64.
 
 Пример см. в [шаблоне быстрого запуска 101-vm-sshkey на сайте GitHub](https://github.com/Azure/azure-quickstart-templates/blob/master/101-vm-sshkey/azuredeploy.json).
 
@@ -344,7 +344,7 @@ Update-AzVmss -VirtualMachineScaleSet $vmss -ResourceGroup $rg -Name $vmssName
 Да. Вы увидите некоторые примеры шаблонов MSI в шаблонах быстрого запуска Azure для [Linux](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-msi) и [Windows](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vmss-msi).
 
 
-## <a name="extensions"></a>расширения.
+## <a name="extensions"></a>Расширения
 
 ### <a name="how-do-i-delete-a-virtual-machine-scale-set-extension"></a>Как удалить расширение масштабируемого набора виртуальных машин?
 
@@ -564,7 +564,7 @@ IP-адреса выбираются из указанной подсети.
 
 Да. Вы можете добавить идентификаторы ресурсов для нескольких пулов адресов серверной части шлюза приложений для _applicationGatewayBackendAddressPools_ в списке _IP-конфигураций_ сеть задать раздел масштабирования профиль.
 
-## <a name="scale"></a>Масштаб
+## <a name="scale"></a>Масштабирование
 
 ### <a name="in-what-case-would-i-create-a-virtual-machine-scale-set-with-fewer-than-two-vms"></a>В каких случаях следует создавать масштабируемый набор с одной виртуальной машиной или без них?
 
@@ -621,11 +621,11 @@ IP-адреса выбираются из указанной подсети.
 
 ## <a name="patching-and-operations"></a>Установка исправлений и эксплуатация
 
-### <a name="how-do-i-create-a-scale-set-in-an-existing-resource-group"></a>Как создать масштабируемый набор в существующей группе ресурсов?
+### <a name="can-i-create-a-scale-set-in-an-existing-resource-group"></a>Как создать масштабируемый набор в существующей группе ресурсов?
 
-Создание масштабируемых наборов в существующей группе ресурсов на портале Azure пока невозможно, но можно указать существующую группу ресурсов при развертывании масштабируемого набора с помощью шаблона Azure Resource Manager. Можно также указать существующую группу ресурсов при создании масштабируемого набора с помощью Azure PowerShell или интерфейса командной строки.
+Да, вы можете создать масштабируемый набор в существующей группе ресурсов.
 
-### <a name="can-we-move-a-scale-set-to-another-resource-group"></a>Можно ли переместить масштабируемый набор другую группу ресурсов?
+### <a name="can-i-move-a-scale-set-to-another-resource-group"></a>Можно ли переместить масштабируемый набор в другую группу ресурсов?
 
 Да, ресурсы масштабируемого набора можно переместить в новую подписку или группу ресурсов.
 
@@ -686,7 +686,7 @@ az vmss extension set --name MicrosoftMonitoringAgent --publisher Microsoft.Ente
 
 Нет. Вы не можете передать разные аргументы расширения на разные виртуальные машины в масштабируемом наборе. Но расширения могут действовать на основе уникальных свойств виртуальной машины, на которых они выполняются, таких как имя машины. Кроме того, расширения могут запрашивать метаданные экземпляра на сайте http://169.254.169.254, чтобы получить дополнительные сведения о виртуальной машине.
 
-### <a name="why-are-there-gaps-between-my-virtual-machine-scale-set-vm-machine-names-and-vm-ids-for-example-0-1-3"></a>Почему между именами виртуальных машин в масштабируемом наборе и их идентификаторами существуют пропуски? Например:  0, 1, 3...
+### <a name="why-are-there-gaps-between-my-virtual-machine-scale-set-vm-machine-names-and-vm-ids-for-example-0-1-3"></a>Почему между именами виртуальных машин в масштабируемом наборе и их идентификаторами существуют пропуски? Пример: 0, 1, 3...
 
 Пропуски между именами виртуальных машин в масштабируемом наборе и их идентификаторами возникают, потому что для свойства **overprovision** масштабируемого набора задано стандартное значение **true**. Если значение избыточной подготовки — **true**, создается большее количество виртуальных машин, чем запрашивалось. Лишние виртуальные машины удаляются. Это позволит повысить надежность развертывания, но повлияет на связанные правила преобразования сетевых адресов и именования.
 
