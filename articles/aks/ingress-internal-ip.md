@@ -5,14 +5,14 @@ services: container-service
 author: iainfoulds
 ms.service: container-service
 ms.topic: article
-ms.date: 03/27/2019
+ms.date: 05/24/2019
 ms.author: iainfou
-ms.openlocfilehash: 4a648bd2704e93abedeefae14aee66ae8bfeecef
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: 27d93f963003cfb30b8827d45c0472405b0ed0a6
+ms.sourcegitcommit: 51a7669c2d12609f54509dbd78a30eeb852009ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65073905"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66392661"
 ---
 # <a name="create-an-ingress-controller-to-an-internal-virtual-network-in-azure-kubernetes-service-aks"></a>Создание контроллера входящего трафика для внутренней виртуальной сети в Службе Azure Kubernetes (AKS)
 
@@ -31,7 +31,7 @@ ms.locfileid: "65073905"
 
 В этой статье для установки контроллера входящего трафика NGINX cert-manager и примера веб-приложения используется Helm. Поэтому необходимо инициализировать Helm в кластере AKS и использовать учетную запись службы для Tiller. Дополнительную информацию о настройке и использовании Helm см. в статье [Использование Helm со службой Azure Kubernetes][use-helm].
 
-Здесь также предполагается, что вы используете Azure CLI версии 2.0.61 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli-install].
+Здесь также предполагается, что вы используете Azure CLI версии 2.0.64 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli-install].
 
 ## <a name="create-an-ingress-controller"></a>Создание контроллера входящего трафика
 
@@ -49,6 +49,8 @@ controller:
 
 Разверните диаграмму *nginx ingress* с помощью Helm. Чтобы использовать файл манифеста, созданный на предыдущем шаге, добавьте параметр `-f internal-ingress.yaml`. Для обеспечения дополнительной избыточности развертываются две реплики контроллеров входящего трафика NGINX с использованием параметра `--set controller.replicaCount`. Чтобы максимально эффективно использовать реплики контроллера входящего трафика, убедитесь, что в кластере AKS используется несколько узлов.
 
+Входящий контроллер также должен быть запланирован на узле Linux. Узлы Windows Server (в настоящее время в предварительной версии в AKS) не следует выполнять контроллеру входящего трафика. Имя узла задается с помощью `--set nodeSelector` параметр, чтобы сообщить планировщик Kubernetes для выполнения входящего контроллера NGINX на узле под управлением Linux.
+
 > [!TIP]
 > В следующем примере создается пространство имен Kubernetes для входящего трафика ресурсов с именем *входящих данных basic*. Укажите необходимые пространства имен для конкретной среды. Если кластер AKS не включена RBAC, добавьте `--set rbac.create=false` командам Helm.
 
@@ -60,7 +62,9 @@ kubectl create namespace ingress-basic
 helm install stable/nginx-ingress \
     --namespace ingress-basic \
     -f internal-ingress.yaml \
-    --set controller.replicaCount=2
+    --set controller.replicaCount=2 \
+    --set controller.nodeSelector."beta\.kubernetes\.io/os"=linux \
+    --set defaultBackend.nodeSelector."beta\.kubernetes\.io/os"=linux
 ```
 
 При создании службы распределения нагрузки Kubernetes для контроллера входящего трафика NGINX назначается внутренний IP-адрес, как показано в следующем примере выходных данных.
@@ -117,19 +121,19 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: nginx
     nginx.ingress.kubernetes.io/ssl-redirect: "false"
-    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/rewrite-target: /$1
 spec:
   rules:
   - http:
       paths:
-      - path: /
-        backend:
+      - backend:
           serviceName: aks-helloworld
           servicePort: 80
-      - path: /hello-world-two
-        backend:
+        path: /(.*)
+      - backend:
           serviceName: ingress-demo
           servicePort: 80
+        path: /hello-world-two(/|$)(.*)
 ```
 
 Создайте ресурс входящего трафика, используя команду `kubectl apply -f hello-world-ingress.yaml`.
@@ -154,13 +158,13 @@ kubectl run -it --rm aks-ingress-test --image=debian --namespace ingress-basic
 apt-get update && apt-get install -y curl
 ```
 
-Теперь получите адрес контроллера входящего трафика Kubernetes с помощью `curl`, например *http://10.240.0.42*. Укажите свой внутренний IP-адрес, указанный при развертывании контроллера входящего трафика на первом шаге, описанном в этой статье.
+Теперь получите адрес контроллера входящего трафика Kubernetes с помощью `curl`, например *http://10.240.0.42* . Укажите свой внутренний IP-адрес, указанный при развертывании контроллера входящего трафика на первом шаге, описанном в этой статье.
 
 ```console
 curl -L http://10.240.0.42
 ```
 
-Так как с этим адресом не было указано дополнительного пути, для контроллера входящего трафика по умолчанию указан маршрут */*. Первое демонстрационное приложение возвращается, как показано в следующем сокращенном примере выходных данных:
+Так как с этим адресом не было указано дополнительного пути, для контроллера входящего трафика по умолчанию указан маршрут */* . Первое демонстрационное приложение возвращается, как показано в следующем сокращенном примере выходных данных:
 
 ```
 $ curl -L 10.240.0.42
@@ -173,7 +177,7 @@ $ curl -L 10.240.0.42
 [...]
 ```
 
-Теперь добавьте к адресу путь */hello-world-two*, например *http://10.240.0.42/hello-world-two*. Второе демонстрационное приложение с настраиваемым заголовком возвращается, как показано в следующем сокращенном примере выходных данных:
+Теперь добавьте к адресу путь */hello-world-two*, например *http://10.240.0.42/hello-world-two* . Второе демонстрационное приложение с настраиваемым заголовком возвращается, как показано в следующем сокращенном примере выходных данных:
 
 ```
 $ curl -L -k http://10.240.0.42/hello-world-two

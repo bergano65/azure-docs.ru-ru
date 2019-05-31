@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/16/2019
 ms.author: kumud;tyao
-ms.openlocfilehash: 3701a69ab72abf20a4f1608a1cee56c9cea38aca
-ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
+ms.openlocfilehash: 99b0cab3fd277f90a675f0e6087d572853053a08
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2019
-ms.locfileid: "65523644"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66387334"
 ---
 # <a name="configure-a-web-application-firewall-rate-limit-rule-using-azure-powershell"></a>Настройка web application скорость ограничение правила брандмауэра с помощью Azure PowerShell
 Azure web приложения (WAF) скорость ограничение правило для входной двери Azure управляет количеством запросов, разрешенных с одного клиентского IP-адреса за период до минуты.
@@ -65,10 +65,10 @@ Install-Module -Name Az.FrontDoor
      -MatchValue "/promo"
 ```
 ## <a name="create-a-custom-rate-limit-rule"></a>Создайте правило ограничение уровня пользовательской скорости
-Задать ограничение скорости с помощью [New AzFrontDoorCustomRuleObject](/powershell/module/az.frontdoor/new-azfrontdoorwafcustomruleobject). В следующем примере ограничение присваивается значение 1000. Запросы из любого клиента рекламная акция на экземпляр страницы, превышает 1000 за одну минуту, блокируются до начала следующей минуты.
+Задать ограничение скорости с помощью [New AzFrontDoorWafCustomRuleObject](/powershell/module/az.frontdoor/new-azfrontdoorwafcustomruleobject). В следующем примере ограничение присваивается значение 1000. Запросы из любого клиента рекламная акция на экземпляр страницы, превышает 1000 за одну минуту, блокируются до начала следующей минуты.
 
 ```powershell-interactive
-   $promoRateLimitRule = New-AzFrontDoorCustomRuleObject `
+   $promoRateLimitRule = New-AzFrontDoorWafCustomRuleObject `
      -Name "rateLimitRule" `
      -RuleType RateLimitRule `
      -MatchCondition $promoMatchCondition `

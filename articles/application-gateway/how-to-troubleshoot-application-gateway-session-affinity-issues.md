@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 02/22/2019
 ms.author: absha
-ms.openlocfilehash: 07165a497e75934a65719e48a9af7d8d6906ee7b
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.openlocfilehash: 66f61b5d6fcb86ed93e4dbae802ae7a80613c83d
+ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65538343"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66397839"
 ---
 # <a name="troubleshoot-azure-application-gateway-session-affinity-issues"></a>Устранение проблем со сходством сеансов шлюза приложения Azure
 
@@ -82,11 +82,11 @@ ms.locfileid: "65538343"
     **Совет** Если вы не знаете, как использовать приложение Fiddler, установите флажок "**требуется сбор сетевого трафика и анализировать их с помощью веб-отладчик**" внизу.
 
 2. Проверьте и анализ журналов сеанса, чтобы определить, имеют ли файлы cookie, предоставленных клиентом ARRAffinity сведения. Если вы не нашли ARRAffinity таких сведений, таких как "**ARRAffinity =** *ARRAffinityValue*" в наборе файлов cookie, это значит, что клиент не отвечает с файлом cookie СОЗД, предоставляемый Шлюз приложений.
-    Например: 
+    Например:
 
     ![Устранение неполадок сеанса сходство проблемы-3](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-3.png)
 
-        ![troubleshoot-session-affinity-issues-4](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-4.png)
+    ![Устранение неполадок сеанса сходство проблемы-4](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-4.png)
 
 Приложение продолжает попытки задать файл cookie при каждом запросе, пока не получит ответа.
 
@@ -96,7 +96,7 @@ ms.locfileid: "65538343"
 
 #### <a name="resolution"></a>Способы устранения:
 
-Чтобы устранить эту проблему, следует получить доступ к шлюзу приложений с помощью полного доменного ИМЕНИ. Например, использовать [ http://website.com ](https://website.com/) или [ http://appgw.website.com ](http://appgw.website.com/) .
+Чтобы устранить эту проблему, для доступа к Шлюзу приложений следует использовать полное доменное имя. Например, использовать [ http://website.com ](https://website.com/) или [ http://appgw.website.com ](http://appgw.website.com/) .
 
 ## <a name="additional-logs-to-troubleshoot"></a>Дополнительные журналы для устранения неполадок
 
@@ -167,23 +167,23 @@ ms.locfileid: "65538343"
 
 2. Щелкните правой кнопкой мыши исполняемый файл установки и запуска от имени администратора для установки.
 
-            ![troubleshoot-session-affinity-issues-12](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-12.png)
+    ![Устранение неполадок сеанса сходство проблемы-12](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-12.png)
 
 3. При открытии Fiddler, она автоматически начнет записывать трафик (Обратите внимание, что запись в левом нижнем углу). Нажмите клавишу F12, чтобы запустить или остановить запись трафика.
 
-        ![troubleshoot-session-affinity-issues-13](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-13.png)
+    ![Устранение неполадок сеанса сходство проблемы-13](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-13.png)
 
 4. Скорее всего, вас могут заинтересовать расшифрованный HTTPS-трафика, и расшифровки HTTPS можно включить, установив **средства** > **параметры Fiddler**и установите флажок " **расшифровки HTTPS-трафика**«.
 
-        ![troubleshoot-session-affinity-issues-14](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-14.png)
+    ![Устранение неполадок сеанса сходство проблемы-14](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-14.png)
 
 5. Вы можете удалить предыдущие сеансы несвязанных перед воспроизводящий проблему, щелкнув **X** (значок) > **удалить все** как выполните снимок экрана: 
 
-        ![troubleshoot-session-affinity-issues-15](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-15.png)
+    ![Устранение неполадок сеанса сходство проблемы-15](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-15.png)
 
 6. Как только воспроизвести проблему, сохраните файл на проверку, выбрав **файл** > **Сохранить** > **все сеансы...** . 
 
-        ![troubleshoot-session-affinity-issues-16](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-16.png)
+    ![Устранение неполадок сеанса сходство проблемы-16](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-16.png)
 
 7. Проверьте и проанализировать журналы сеанса, чтобы определить, какая проблема.
 
@@ -194,11 +194,11 @@ ms.locfileid: "65538343"
    > [!NOTE]
    > Это значение ARRAffinity является идентификатором файла cookie, шлюз приложений задает для клиента отправку определенного сервера серверной части.
 
-    ![Устранение неполадок сеанса сходство проблемы-17](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-17.png)
+   ![Устранение неполадок сеанса сходство проблемы-17](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-17.png)
 
 - **Пример б** Следующий журнал сеансов следуют предыдущий ответа обратно в шлюз приложений, который задан ARRAAFFINITY клиента. Если идентификатор cookie ARRAffinity совпадает, пакет должен отправляться на том же сервере серверной части, который использовался ранее. Проверьте следующие несколько строк из HTTP-соединений, чтобы увидеть, меняется ли файл cookie ARRAffinity клиента.
 
-    ![Устранение неполадок сеанса сходство проблемы-18](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-18.png)
+   ![Устранение неполадок сеанса сходство проблемы-18](./media/how-to-troubleshoot-application-gateway-session-affinity-issues/troubleshoot-session-affinity-issues-18.png)
 
 > [!NOTE]
 > Для одного сеанса связи файл cookie должен не позволяют менять. Проверьте поле сверху, справа от оператора, перейдите на вкладку «Файлы cookie» для определения соответствия клиента с помощью файла cookie и отправкой обратно в шлюз приложений. В противном случае браузера клиента не сохранение, используя файл cookie для диалогов. В некоторых случаях может быть клиент.

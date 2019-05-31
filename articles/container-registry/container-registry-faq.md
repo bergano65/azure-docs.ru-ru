@@ -8,12 +8,12 @@ ms.service: container-instances
 ms.topic: article
 ms.date: 5/13/2019
 ms.author: sajaya
-ms.openlocfilehash: 86efb6b655405500f994a5a5ec7acbd18c645004
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.openlocfilehash: 1400c023e43179a9c8490334e262711486c75a2d
+ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65957855"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66417926"
 ---
 # <a name="frequently-asked-questions-about-azure-container-registry"></a>Часто задаваемые вопросы о реестре контейнеров Azure
 
@@ -253,10 +253,11 @@ az acr login -n MyRegistry
 - [Новые разрешения пользователя не действовать сразу после обновления](#new-user-permissions-may-not-be-effective-immediately-after-updating)
 - [Сведения о проверке подлинности не имеет неправильный формат на прямые вызовы REST API](#authentication-information-is-not-given-in-the-correct-format-on-direct-rest-api-calls)
 - [Почему портала Azure не включает все репозитории или теги?](#why-does-the-azure-portal-not-list-all-my-repositories-or-tags)
+- [Как собирать трассировки http в Windows?](#how-do-i-collect-http-traces-on-windows)
 
 ### <a name="docker-pull-fails-with-error-nethttp-request-canceled-while-waiting-for-connection-clienttimeout-exceeded-while-awaiting-headers"></a>Вытягивание из docker завершается с ошибкой: net/http: запрос отменен во время ожидания подключения (превышено время, пока ожидаются заголовки Client.Timeout)
 
- - Если эта ошибка является временной, попытка будет успешной. 
+ - Если эта ошибка является временной, попытка будет успешной.
  - Если `docker pull` сбое постоянно, тогда возможны проблемы с управляющей программы docker. Обычно проблему можно устранить путем перезапуска управляющей программы docker. 
  - Если вы продолжаете видеть эту проблему, перезапустите управляющую программу docker, проблема может быть некоторые проблемы с сетевым подключением с машиной. Чтобы проверить, является ли работоспособным общие сети на компьютере, повторите команду, такие как `ping www.bing.com`.
  - Вы должны всегда иметь механизм повтора на всех операций клиента docker.
@@ -283,7 +284,7 @@ unauthorized: authentication required
 ```
 
 Чтобы устранить эту ошибку, сделайте следующее:
-1. Добавьте параметр `--signature-verification=false` в файл конфигурации управляющей программы docker `/etc/sysconfig/docker`. Например:
+1. Добавьте параметр `--signature-verification=false` в файл конфигурации управляющей программы docker `/etc/sysconfig/docker`. Пример:
 
   ```
   OPTIONS='--selinux-enabled --log-driver=journald --live-restore --signature-verification=false'
@@ -386,7 +387,29 @@ curl $redirect_url
 
 ### <a name="why-does-the-azure-portal-not-list-all-my-repositories-or-tags"></a>Почему портала Azure не включает все репозитории или теги? 
 
-Если вы используете браузер Edge, вы увидите не более 100 репозитории или теги, отображаемые. Если реестр содержит более ста репозитории или теги, мы рекомендуем использовать Firefox или Chrome браузера, чтобы перечислить их все.
+Если вы пользуетесь браузером Microsoft Edge, вы увидите не более 100 репозитории или теги, отображаемые. Если реестр содержит более ста репозитории или теги, мы рекомендуем использовать Firefox или Chrome браузера, чтобы перечислить их все.
+
+### <a name="how-do-i-collect-http-traces-on-windows"></a>Как собирать трассировки http в Windows?
+
+#### <a name="prerequisites"></a>Технические условия
+
+- Включение расшифровки https в fiddler:  <https://docs.telerik.com/fiddler/Configure-Fiddler/Tasks/DecryptHTTPS>
+- Включите Docker на использование прокси-сервера через пользовательский интерфейс Docker: <https://docs.docker.com/docker-for-windows/#proxies>
+- Не забудьте вернуть после завершения.  Docker не будет работать эта функция включена и fiddler не запущена.
+
+#### <a name="windows-containers"></a>Контейнеры Windows
+
+Настройка прокси-сервера Docker для 127.0.0.1:8888
+
+#### <a name="linux-containers"></a>Контейнеры Linux
+
+Найти IP-адреса Docker виртуальный коммутатор виртуальной машины:
+
+```powershell
+(Get-NetIPAddress -InterfaceAlias "*Docker*" -AddressFamily IPv4).IPAddress
+```
+
+Настройка прокси-сервера Docker, выходные данные предыдущей команды и порт 8888 (например 10.0.75.1:8888)
 
 ## <a name="tasks"></a>Задачи
 

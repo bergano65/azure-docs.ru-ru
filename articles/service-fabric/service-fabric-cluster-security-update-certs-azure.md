@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 11/13/2018
 ms.author: aljo
-ms.openlocfilehash: 0038de621a02a2edf3198686e1f2fc88fb917d9c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: f1998ec2fe82b9fd52547fbccb208542b22bc949
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66161840"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66306915"
 ---
 # <a name="add-or-remove-certificates-for-a-service-fabric-cluster-in-azure"></a>Добавление и удаление сертификатов для кластера Service Fabric в Azure
 Рекомендуется ознакомиться с тем, как Service Fabric использует сертификаты X.509, и просмотреть раздел [Сценарии защиты кластера Service Fabric](service-fabric-cluster-security.md). Необходимо понять, что такое сертификат кластера и для чего он используется, прежде чем продолжить.
@@ -48,7 +48,7 @@ Service Fabric позволяет указать в дополнение к се
 
 ## <a name="add-a-secondary-certificate-using-resource-manager-powershell"></a>Добавление дополнительного сертификата с помощью PowerShell для Resource Manager
 > [!TIP]
-> Теперь стало лучше и проще добавлять дополнительные сертификаты, используя [AzServiceFabricClusterCertificate добавить](/powershell/module/az.servicefabric/add-azservicefabricclustercertificate) командлета. Остальные инструкции в этом разделе выполнять не обязательно.  Кроме того, вы не обязательно шаблона, который изначально использовался для создания и развертывания кластера при использовании [AzServiceFabricClusterCertificate добавить](/powershell/module/az.servicefabric/add-azservicefabricclustercertificate) командлета.
+> Есть теперь проще и удобнее способ добавлять дополнительный сертификат, используя [AzServiceFabricClusterCertificate добавить](/powershell/module/az.servicefabric/add-azservicefabricclustercertificate) командлета. Остальные инструкции в этом разделе выполнять не обязательно.  Кроме того, вы не обязательно шаблона, который изначально использовался для создания и развертывания кластера при использовании [AzServiceFabricClusterCertificate добавить](/powershell/module/az.servicefabric/add-azservicefabricclustercertificate) командлета.
 
 В этих инструкциях предполагается, что у вас есть опыт работы с Resource Manager, вы развернули хотя бы один кластер Service Fabric с помощью шаблона Resource Manager и у вас есть шаблон, который использовался для настройки этого кластера. Предполагается также, что вы уверенно используете JSON.
 
@@ -195,7 +195,7 @@ Service Fabric позволяет указать в дополнение к се
 ### <a name="deploy-the-template-to-azure"></a>Развертывание шаблона в Azure
 
 - Теперь все готово к развертыванию шаблона в Azure. Откройте командную строку Azure PowerShell версии не ниже 1.
-- Войдите со своей учетной записью Azure и выберите конкретную подписку Azure. Это важный шаг для пользователей, имеющих доступ к нескольким подпискам Azure.
+- Войдите в учетную запись Azure и выберите конкретную подписку azure. Это важный шаг для пользователей, имеющих доступ к нескольким подпискам Azure.
 
 ```powershell
 Connect-AzAccount

@@ -1,24 +1,24 @@
 ---
 title: Разработка и отладка модулей в Visual Studio — Edge Интернета вещей Azure | Документация Майкрософт
-description: Использовать Visual Studio 2017 для разработки и отладки модулей для Azure IoT Edge
+description: Использовать 2019 г. Visual Studio для разработки и отладки модулей для Azure IoT Edge
 services: iot-edge
 author: shizn
 manager: philmea
 ms.author: xshi
-ms.date: 04/03/2019
+ms.date: 05/27/2019
 ms.topic: article
 ms.service: iot-edge
 ms.custom: seodec18
-ms.openlocfilehash: f2228726d4edc25efe46a660d25d398959c3ea59
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 96a67a9a593655b3b187fe1bb0decfc7252d2d10
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60596010"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66253059"
 ---
-# <a name="use-visual-studio-2017-to-develop-and-debug-modules-for-azure-iot-edge-preview"></a>Использовать Visual Studio 2017 для разработки и отладки модулей для Azure IoT Edge (Предварительная версия)
+# <a name="use-visual-studio-2019-to-develop-and-debug-modules-for-azure-iot-edge-preview"></a>Использовать 2019 г. Visual Studio для разработки и отладки модулей для Azure IoT Edge (Предварительная версия)
 
-Вы можете превратить бизнес-логику в модули для Azure IoT Edge. В этой статье показано, как использовать Visual Studio 2017 в качестве основного средства для разработки и отладки модулей.
+Вы можете превратить бизнес-логику в модули для Azure IoT Edge. В этой статье показано, как использовать Visual Studio 2019 как основной инструмент для разработки и отладки модулей.
 
 Средства Azure IoT Edge для Visual Studio обеспечивают следующие преимущества:
 
@@ -27,7 +27,7 @@ ms.locfileid: "60596010"
 - Код модулей Azure IoT на языке C или C# сохраняя при этом все преимущества разработки в Visual Studio.
 - управление устройствами и модулями Azure IoT Edge с помощью пользовательского интерфейса.
 
-В этой статье показано, как использовать средства Edge Интернета вещей Azure для Visual Studio 2017 для разработки модулей IoT Edge. Вы также узнаете, как развернуть свой проект на устройство Azure IoT Edge.
+В этой статье показано, как использовать инструменты Azure IoT Edge для Visual Studio 2019 для разработки модулей IoT Edge. Вы также узнаете, как развернуть свой проект на устройство Azure IoT Edge.
 
 > [!TIP]
 > Структура проекта IoT Edge, созданного в Visual Studio, отличается от структуры проекта Visual Studio Code.
@@ -36,11 +36,14 @@ ms.locfileid: "60596010"
 
 В этой статье предполагается, что для разработки вы используете компьютер или виртуальную машину под управлением Windows. Устройство IoT Edge может быть другим физическим устройством.
 
-Так как в этой статье в качестве основного средства разработки используется Visual Studio 2017, установите Visual Studio. Не забудьте включить **разработки Azure** и **разработка классических приложений C++** рабочих нагрузок в вашей установке Visual Studio 2017. Вы можете [изменение Visual Studio 2017](https://docs.microsoft.com/visualstudio/install/modify-visual-studio?view=vs-2017) для добавления рабочих нагрузок.
+Так как в этой статье используется Visual Studio 2019 как основное средство разработки, установите Visual Studio. Не забудьте включить **разработки Azure** и **разработка классических приложений на C++**  рабочих нагрузок в вашей установке Visual Studio 2019. Вы можете [изменение Visual Studio 2019](https://docs.microsoft.com/visualstudio/install/modify-visual-studio?view=vs-2019) для добавления рабочих нагрузок.
 
-После того как Visual Studio 2017 будет настроена, вам также понадобятся следующие средства и компоненты.
+Когда в Visual Studio 2019 будет готов, необходимо также следующие средства и компоненты:
 
-- Скачайте и установите [расширение Azure IoT Edge (предварительная версия)](https://marketplace.visualstudio.com/items?itemName=vsc-iot.vsiotedgetools) из Visual Studio Marketplace для создания проекта IoT Edge в Visual Studio 2017.
+- Скачайте и установите [средства Edge Интернета вещей Azure (Предварительная версия)](https://marketplace.visualstudio.com/items?itemName=vsc-iot.vs16iotedgetools) из Visual Studio marketplace для создания проекта IoT Edge в Visual Studio 2019.
+
+> [!TIP]
+> Если вы используете Visual Studio 2017, plrease, загрузите и установите [средства Edge Интернета вещей Azure (Предварительная версия)](https://marketplace.visualstudio.com/items?itemName=vsc-iot.vsiotedgetools) для Visual STUDIO 2017 в Visual Studio Marketplace
 
 - Скачайте и установите [Docker Community Edition](https://docs.docker.com/install/) на компьютере разработки для сборки и запуска образов модуля. Вам необходимо настроить Docker CE для работы в режиме контейнера в Linux или Windows.
 
@@ -74,7 +77,7 @@ ms.locfileid: "60596010"
 
 1. Откройте меню **Средства** и выберите пункт **Расширения и обновления**. Разверните **Установленные > Средства** и найдите **средства Azure IoT Edge** и **Cloud Explorer для Visual Studio**.
 
-1. Запишите номер установленной версии. Вы можете сравнить эту версию с последней версией в Visual Studio Marketplace ([Cloud Explorer](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.CloudExplorerForVS), [Azure IoT Edge](https://marketplace.visualstudio.com/items?itemName=vsc-iot.vsiotedgetools)).
+1. Запишите номер установленной версии. Вы можете сравнить эту версию с последней версией в Visual Studio Marketplace ([Cloud Explorer](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.CloudExplorerForVS2019), [Azure IoT Edge](https://marketplace.visualstudio.com/items?itemName=vsc-iot.vs16iotedgetools)).
 
 1. Если вы используете более раннюю версию, чем та, которая доступна в Visual Studio Marketplace, обновите инструменты в Visual Studio, как показано в следующем разделе.
 
@@ -92,18 +95,14 @@ ms.locfileid: "60596010"
 
 Шаблон проекта Azure IoT Edge в Visual Studio создает проект, который можно развернуть на устройства Azure IoT Edge в Центре Интернета вещей. Сначала вы создаете решение Azure IoT Edge, и затем создать в этом решении первый модуль. Каждое решение IoT Edge может содержать несколько модулей.
 
-1. В Visual Studio в меню **Файл** выберите **Создать** > **Проект**.
-
-1. В **новый проект** диалоговом окне выберите **установленные**выберите **Интернета вещей Azure**выберите **Azure IoT Edge**, введите имя проекта и Укажите расположение, а затем выберите **ОК**. Имя проекта по умолчанию — **AzureIoTEdgeApp1**.
-
-   ![Создать проект](./media/how-to-visual-studio-develop-csharp-module/create-new.jpg)
+1. В Visual Studio диалоговое окно нового проекта, найдите и выберите **Azure IoT Edge**, введите имя проекта и укажите расположение и затем выберите **ОК**. Имя проекта по умолчанию — **AzureIoTEdgeApp1**.
 
 1. В **Добавление приложения Edge Интернета вещей и модуль** выберите **Linux Amd64**, **Windows Amd64**, так и в качестве платформы приложений. При выборе вариантов, создайте решение с двумя проектами, которые ссылаются на модуль кода по умолчанию.
 
    > [!TIP]
    > Расширение Azure IoT Edge для Visual Studio не в настоящее время поддерживает создание новых проектов для платформы ARM. См. в разделе, это [запись в блоге разработчиков Интернета вещей](https://devblogs.microsoft.com/iotdev/easily-build-and-debug-iot-edge-modules-on-your-remote-device-with-azure-iot-edge-for-vs-code-1-9-0/) пример с помощью Visual Studio Code для разработки решения для ARM32v7/armhf.
 
-1. Выберите либо  **C# модуль** или **модуль C** и укажите имя модуля и модуль репозитория образов. Visual Studio автоматически заполняет имя модуля значением **localhost:5000/<имя вашего модуля\>**. Замените его собственными данными реестра. Если для тестирования вы используете локальный реестр Docker, вполне подойдет значение **localhost**. Если используется Реестр контейнеров Azure, укажите сервер входа, заданный в параметрах реестра. Значение для сервера входа выглядит так: ***\<имя реестра\>*.azurecr.io**. Замените только часть **localhost:5000** строки, чтобы конечный результат выглядел следующим образом: **\<* имя реестра*\>.azurecr.io/*\<имя вашего модуля\>***. Имя модуля по умолчанию — **IoTEdgeModule1**.
+1. Выберите либо  **C# модуль** или **модуль C** и укажите имя модуля и модуль репозитория образов. Visual Studio автоматически заполняет имя модуля значением **localhost:5000/<имя вашего модуля\>** . Замените его собственными данными реестра. Если для тестирования вы используете локальный реестр Docker, вполне подойдет значение **localhost**. Если используется Реестр контейнеров Azure, укажите сервер входа, заданный в параметрах реестра. Значение для сервера входа выглядит так: * **\<имя реестра\>*.azurecr.io**. Замените только часть **localhost:5000** строки, чтобы конечный результат выглядел следующим образом: * *\<* имя реестра *\>.azurecr.io/* \<имя вашего модуля\>***. Имя модуля по умолчанию — **IoTEdgeModule1**.
 
 1. Выберите **ОК** для создания решения Azure IoT Edge с модулем, который использует либо C# или C.
 
@@ -123,7 +122,7 @@ ms.locfileid: "60596010"
 
    ![Копирование строки подключения устройства IoT Edge](./media/how-to-visual-studio-develop-csharp-module/copy-edge-conn-string.png)
 
-1. Щелкните правой кнопкой мыши проект **AzureIoTEdgeApp1**, а затем выберите **Set Edge Device Connection String** (Установить строку подключения устройства Edge), чтобы открыть окно настройки Azure IoT Edge.
+1. Перейдите к **средства** > **средства Edge Интернета вещей Azure** > **симулятор Edge Интернета вещей установки**, pasten строку подключения и нажмите кнопку **ОК** .
 
    ![Открытое окно установки строки подключения к Edge](./media/how-to-visual-studio-develop-csharp-module/set-edge-conn-string.png)
 
@@ -225,7 +224,7 @@ ms.locfileid: "60596010"
 
 При использовании руководства по настройке устройства IoT Edge модуль был развернут с помощью портала Azure. Вы также можете развернуть модули с помощью Cloud Explorer для Visual Studio. У вас уже есть манифест развертывания, подготовленный для вашего сценария, —это файл `deployment.json`. Вам остается только выбрать устройство для получения развертывания.
 
-1. Откройте **Cloud Explorer**, щелкнув **Просмотр** > **Cloud Explorer**. Войдите в Visual Studio 2017.
+1. Откройте **Cloud Explorer**, щелкнув **Просмотр** > **Cloud Explorer**. Убедитесь, что вы вошли в Visual Studio 2019.
 
 1. В **Cloud Explorer** разверните подписку, найдите Центр Интернета вещей Azure и устройство Azure IoT Edge, которое нужно развернуть.
 
@@ -238,9 +237,9 @@ ms.locfileid: "60596010"
 
 ## <a name="view-generated-data"></a>Просмотр сформированных данных
 
-1. Для отслеживания сообщений D2C для конкретного устройства щелкните его кнопкой мыши в списке и выберите **Start Monitoring D2C Messages** (Начать мониторинг сообщений D2C) в окне **Действие**.
+1. Чтобы отслеживать сообщения D2C для конкретного устройства, выберите устройство в списке и нажмите кнопку **начать мониторинг встроенную событий конечную точку** в **действие** окна.
 
-1. Чтобы завершить отслеживание данных, щелкните устройство в списке и выберите **Stop Monitoring D2C Messages** (Завершить мониторинг сообщений D2C) в окне **Действие**.
+1. Чтобы перестать отслеживать данные, выберите устройство в списке, а затем выберите **Остановить мониторинг встроенную событий конечную точку** в **действие** окна.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -6,14 +6,14 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: article
-ms.date: 12/31/2018
+ms.date: 05/30/2019
 ms.author: raynew
-ms.openlocfilehash: a6be2fbbf946f13213f95b8876cfdddfa2ffbe67
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.openlocfilehash: c3b9aa6fcf5cf96e3ef1f3bdd76e9f1d19be5c5c
+ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62098173"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66400104"
 ---
 # <a name="set-up-disaster-recovery-to-azure-for-on-premises-physical-servers"></a>Настройка аварийного восстановления в Azure для локальных физических серверов
 
@@ -72,7 +72,7 @@ ms.locfileid: "62098173"
 - Сеть должна располагаться в том же регионе, что и хранилище служб восстановления.
 
 
-## <a name="set-up-an-azure-storage-account"></a>Настройка учетной записи хранения Azure
+## <a name="set-up-an-azure-storage-account"></a>Настроить учетную запись хранения Azure
 
 Настройте [учетную запись хранения Azure](../storage/common/storage-quickstart-create-account.md).
 
@@ -152,7 +152,7 @@ ms.locfileid: "62098173"
 
 ## <a name="create-a-replication-policy"></a>Создание политики репликации
 
-1. Чтобы создать новую политику репликации, щелкните **Инфраструктура Site Recovery** > **Политики репликации** > **+Политика репликации**.
+1. Чтобы создать новую политику репликации, щелкните **Инфраструктура Site Recovery** > **Политики репликации** >  **+Политика репликации**.
 2. На странице **Создать политику репликации** укажите имя политики.
 3. В разделе **Пороговое значение RPO** укажите ограничение целевой точки восстановления (RPO). Это значение указывает, как часто создаются точки восстановления данных. Если непрерывная репликация превышает это значение, выдаются оповещения.
 4. В поле **Хранение точки восстановления** укажите продолжительность периода хранения для каждой точки восстановления (в часах). Реплицированные виртуальные машины можно восстановить до любой точки в рамках этого периода. Для компьютеров, реплицируемых в хранилище класса Premium, поддерживается период удержания до 24 часов, а для хранилище класса Standard — до 72 часов.

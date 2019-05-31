@@ -12,22 +12,22 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload8: na
-ms.date: 01/14/2019
+ms.date: 05/28/2019
 ms.author: barclayn
 ms.custom: azlog
-ms.openlocfilehash: 4f6a724fe6c1e8668084f1c1cefbaa01cffba181
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 9f7d482b088003e3800debb2db9f6f26bda1672a
+ms.sourcegitcommit: 8c49df11910a8ed8259f377217a9ffcd892ae0ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60444621"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66298174"
 ---
 # <a name="azure-log-integration-faq"></a>Часто задаваемые вопросы об интеграции журналов Azure
 
 В этой статье содержатся ответы на некоторые часто задаваемые вопросы о службе интеграции журналов Azure.
 
 >[!IMPORTANT]
-> Использование службы интеграции журналов Azure будет прекращено до 01.06.2019. Файлы для скачивания AzLog недоступны с 27 июня 2018 г. Сведения о том, что делать дальше, см. в блоге [Используйте Azure-монитор для интеграции с инструментами SIEM](https://azure.microsoft.com/blog/use-azure-monitor-to-integrate-with-siem-tools/) 
+> Функция интеграции журналов Azure будет считаться нерекомендуемой с 06/15/2019 г. Файлы для скачивания AzLog недоступны с 27 июня 2018 г. Сведения о том, что делать дальше, см. в блоге [Используйте Azure-монитор для интеграции с инструментами SIEM](https://azure.microsoft.com/blog/use-azure-monitor-to-integrate-with-siem-tools/) 
 
 Служба интеграции журналов Azure (служба ОС Windows) позволяет интегрировать необработанные журналы из ресурсов Azure с локальными системами SIEM. Такая интеграция обеспечивает единую панель мониторинга для всех локальных и облачных ресурсов. Интеграция также позволяет выполнять статистическое вычисление, сопоставление и анализ, а также предупреждать о событиях безопасности, связанных с приложениями.
 
@@ -49,7 +49,7 @@ ms.locfileid: "60444621"
 
 ## <a name="how-can-i-tell-which-subscription-the-azure-log-integration-logs-are-from"></a>Как определить, из каких подписок получены журналы службы интеграции журналов Azure?
 
-Если журналы аудита хранятся в каталогах **AzureResourcemanagerJson**, то идентификатором подписки является имя файла журнала. Это правило применяется и к журналам в папке **AzureSecurityCenterJson**. Например: 
+Если журналы аудита хранятся в каталогах **AzureResourcemanagerJson**, то идентификатором подписки является имя файла журнала. Это правило применяется и к журналам в папке **AzureSecurityCenterJson**. Пример:
 
 20170407T070805_2768037.0000000023.**1111e5ee-1111-111b-a11e-1e111e1111dc**.json
 
@@ -105,7 +105,7 @@ XML-файл события содержит следующие метаданн
 
 ## <a name="where-can-i-find-the-definition-of-the-properties-in-the-audit-log"></a>Где найти определения свойств в журнале аудита?
 
-См.:
+Пример
 
 * [Просмотр журналов действий для аудита действий с ресурсами](../azure-resource-manager/resource-group-audit.md);
 * [Activity Logs](https://msdn.microsoft.com/library/azure/dn931934.aspx) (Журналы действий).

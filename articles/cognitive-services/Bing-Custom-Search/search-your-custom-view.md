@@ -10,12 +10,12 @@ ms.subservice: bing-custom-search
 ms.topic: conceptual
 ms.date: 05/09/2019
 ms.author: maheshb
-ms.openlocfilehash: 7a60ea934c6bb9008889992726ddca5dad21a640
-ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
+ms.openlocfilehash: 9c0c4fc21f6f4b23b14c8020ecd7e95c63dedcbf
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65595615"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66388548"
 ---
 # <a name="call-your-bing-custom-search-instance-from-the-portal"></a>Вызов экземпляра API пользовательского поиска Bing с портала
 
@@ -26,7 +26,7 @@ ms.locfileid: "65595615"
 
 После входа на [портал](https://customsearch.ai) API пользовательского поиска Bing выберите свой экземпляр поиска и откройте вкладку **Рабочая среда**. На вкладке **Конечные точки** выберите конечную точку API (например, веб-API). Список конечных точек зависит от вашей подписки.
 
-Чтобы создать поисковой запрос, введите значения параметров для конечной точки. Обратите внимание, что список параметров зависит от выбранной конечной точки. См. в разделе [Справочник по API пользовательского поиска](https://docs.microsoft.com/rest/api/cognitiveservices/bing-custom-search-api-v7-reference#query-parameters) Дополнительные сведения. Чтобы изменить подписку, которую использует экземпляр поиска, добавьте ключ соответствующую подписку и обновить соответствующие параметры рынка и/или языка.
+Чтобы создать поисковой запрос, введите значения параметров для конечной точки. Обратите внимание, что список параметров зависит от выбранной конечной точки. См. в разделе [Справочник по API пользовательского поиска](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-custom-search-api-v7-reference#query-parameters) Дополнительные сведения. Чтобы изменить подписку, которую использует экземпляр поиска, добавьте ключ соответствующую подписку и обновить соответствующие параметры рынка и/или языка.
 
 Ниже приведены некоторые важные параметры.
 

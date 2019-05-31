@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 03/04/2019
 ms.author: scottwhi
 ms.custom: seodec2018
-ms.openlocfilehash: c53b84f31100ab72458ab6fb79b2009450eda15c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 3e005677f6a21c0f795f649f43407b55bec2a40a
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60914591"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66383587"
 ---
 # <a name="resize-and-crop-thumbnail-images"></a>Изменение размера и обрезка эскизов
 
@@ -28,7 +28,7 @@ ms.locfileid: "60914591"
 ![Expanded view of thumbnail image](../bing-web-search/media/cognitive-services-bing-web-api/bing-web-image-thumbnail-expansion.PNG)
 -->
 
-Если пользователь щелкает эскиз, вы можете использовать [contentUrl](https://docs.microsoft.com/rest/api/cognitiveservices/bing-images-api-v7-reference#image-contenturl) для отображения полноразмерного изображения пользователю. Обязательно описывайте изображение.
+Если пользователь щелкает эскиз, вы можете использовать [contentUrl](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#image-contenturl) для отображения полноразмерного изображения пользователю. Обязательно описывайте изображение.
 
 Если `shoppingSourcesCount` или `recipeSourcesCount` больше нуля, добавьте значки, например тележку для покупок, на эскиз, чтобы указать, что для объекта на изображении существуют покупки или квитанции.
 
@@ -36,12 +36,12 @@ ms.locfileid: "60914591"
 ![Shopping sources badge](./media/cognitive-services-bing-images-api/bing-images-shopping-source.PNG)
 -->
 
-Чтобы получить представление об изображении, например о веб-страницах, содержащих изображение, или людях, которые были распознаны на изображении, используйте [imageInsightsToken](https://docs.microsoft.com/rest/api/cognitiveservices/bing-images-api-v7-reference#image-imageinsightstoken). Дополнительные сведения см. в статье [Get insights about an image](image-insights.md) (Получение аналитических сведений об изображении).
+Чтобы получить представление об изображении, например о веб-страницах, содержащих изображение, или людях, которые были распознаны на изображении, используйте [imageInsightsToken](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#image-imageinsightstoken). Дополнительные сведения см. в статье [Get insights about an image](image-insights.md) (Получение аналитических сведений об изображении).
 
 ## <a name="resizing-and-cropping-thumbnails"></a>Изменение размера и обрезка эскизов
 
 Можно также изменить размер и развернуть эскизы, например, когда пользователь наводит на них курсор.
 > [!NOTE]
-> Обязательно описывайте изображение, если оно будет раскрываться. Например, извлекая узел из [hostPageDisplayUrl](https://docs.microsoft.com/rest/api/cognitiveservices/bing-images-api-v7-reference#image-hostpagedisplayurl) и отображая его под изображением.
+> Обязательно описывайте изображение, если оно будет раскрываться. Например, извлекая узел из [hostPageDisplayUrl](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#image-hostpagedisplayurl) и отображая его под изображением.
 
 [!INCLUDE [cognitive-services-bing-resize-crop-thumbnails](../../../includes/cognitive-services-bing-resize-crop-thumbnails.md)]

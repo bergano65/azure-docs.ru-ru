@@ -8,26 +8,27 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 05/22/2019
 ms.author: srinathvasireddy
-ms.openlocfilehash: 179f806fcff5ce0e384455fdc9db3b2253449eb0
-ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
+ms.openlocfilehash: 23137cd686bcdba59880ff705a43b16ced992b59
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66002313"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66303996"
 ---
 # <a name="troubleshoot-azure-virtual-machine-backup"></a>Устранение неполадок при архивации виртуальных машин Azure
 Способы устранения ошибок, возникающих при использовании службы архивации Azure с помощью приведенной ниже информацией:
 
 ## <a name="backup"></a>Azure Backup
+В этом разделе рассматриваются сбой операции резервного копирования Azure виртуальной машины.
 
-### <a name="copyingvhdsfrombackupvaulttakinglongtime--copying-backed-up-data-from-vault-timed-out"></a>CopyingVHDsFromBackUpVaultTakingLongTime-копирование данных из резервных копий из хранилища, истекло время ожидания
+## <a name="copyingvhdsfrombackupvaulttakinglongtime---copying-backed-up-data-from-vault-timed-out"></a>CopyingVHDsFromBackUpVaultTakingLongTime - копирование данных из резервных копий из хранилища, истекло время ожидания
 
 Код ошибки: CopyingVHDsFromBackUpVaultTakingLongTime <br/>
 Сообщение об ошибке: Копирование данных из резервных копий из хранилища, истекло время ожидания
 
 Это может произойти из-за ошибки временного хранилища или учетной записи хранения недостаточно операций ввода-ВЫВОДА для службы резервного копирования для передачи данных в хранилище в течение периода ожидания. Настройка резервного копирования виртуальной Машины, используя эти [рекомендации](backup-azure-vms-introduction.md#best-practices) и повторите операцию архивации.
 
-### <a name="usererrorvmnotindesirablestate---vm-is-not-in-a-state-that-allows-backups"></a>UserErrorVmNotInDesirableState - виртуальная машина находится не в состоянии, допускающем резервных копий.
+## <a name="usererrorvmnotindesirablestate---vm-is-not-in-a-state-that-allows-backups"></a>UserErrorVmNotInDesirableState - виртуальная машина находится не в состоянии, допускающем резервных копий.
 
 Код ошибки: UserErrorVmNotInDesirableState <br/>
 Сообщение об ошибке: Текущее состояние виртуальной машины не позволяет выполнять архивацию.<br/>
@@ -37,7 +38,7 @@ ms.locfileid: "66002313"
 * Если виртуальная машина находится в состоянии перехода из **рабочего** в состояние **завершения работы**, дождитесь изменения состояния. Затем запустите задание резервного копирования.
 *  Если это виртуальная машина Linux, которая использует модуль ядра Security Enhanced Linux, то необходимо исключить путь агента Linux для Azure **/var/lib/waagent** из политики безопасности, чтобы обеспечить установку расширения резервного копирования.
 
-### <a name="usererrorfsfreezefailed---failed-to-freeze-one-or-more-mount-points-of-the-vm-to-take-a-file-system-consistent-snapshot"></a>UserErrorFsFreezeFailed - не удалось заморозить одну или несколько точек подключения виртуальной машины, чтобы создать согласованный моментальный снимок файловой системы
+## <a name="usererrorfsfreezefailed---failed-to-freeze-one-or-more-mount-points-of-the-vm-to-take-a-file-system-consistent-snapshot"></a>UserErrorFsFreezeFailed - не удалось заморозить одну или несколько точек подключения виртуальной машины, чтобы создать согласованный моментальный снимок файловой системы
 
 Код ошибки: UserErrorFsFreezeFailed <br/>
 Сообщение об ошибке: Не удалось заморозить одну или несколько точек подключения виртуальной машины для создания моментального снимка, согласованного с файловой системой.
@@ -47,7 +48,7 @@ ms.locfileid: "66002313"
 * Запустите проверку согласованности файла системы на этих устройствах с помощью **fsck** команды.
 * Повторно подключите эти устройства и повторите операцию резервного копирования.</ol>
 
-### <a name="extensionsnapshotfailedcom--extensioninstallationfailedcom--extensioninstallationfailedmdtc---extension-installationoperation-failed-due-to-a-com-error"></a>ExtensionSnapshotFailedCOM / ExtensionInstallationFailedCOM / ExtensionInstallationFailedMDTC - расширение установки/не удалось выполнить операцию из-за ошибки COM +
+## <a name="extensionsnapshotfailedcom--extensioninstallationfailedcom--extensioninstallationfailedmdtc---extension-installationoperation-failed-due-to-a-com-error"></a>ExtensionSnapshotFailedCOM / ExtensionInstallationFailedCOM / ExtensionInstallationFailedMDTC - расширение установки/не удалось выполнить операцию из-за ошибки COM +
 
 Код ошибки: ExtensionSnapshotFailedCOM <br/>
 Сообщение об ошибке: Сбой операции создания моментального снимка из-за ошибки COM+
@@ -55,21 +56,22 @@ ms.locfileid: "66002313"
 Код ошибки: ExtensionInstallationFailedCOM  <br/>
 Сообщение об ошибке: Сбой операции установки расширения из-за ошибки COM +
 
-Код ошибки: Ошибка ExtensionInstallationFailedMDTC сообщение об ошибке: Во время установки расширения произошла ошибка «Отсутствует связь COM+ с координатором распределенных транзакций».
+Код ошибки: ExtensionInstallationFailedMDTC <br/>
+Сообщение об ошибке: Во время установки расширения произошла ошибка «Отсутствует связь COM+ с координатором распределенных транзакций». <br/>
 
 Сбой операции резервного копирования из-за проблемы со службой Windows **система COM +** приложения.  Проблему можно устранить следующим способом.
 
 * Повторите запуск или перезапуск службы Windows **системное приложение COM +** (из командной строки с повышенными правами **-net start COMSysApp**).
-* Убедитесь, **координатора распределенных транзакций** запущены как службы **сетевой службы** учетной записи. Если это не так, измените его для запуска в качестве **сетевой службы** учетной записи и перезапустите **системное приложение COM +**.
+* Убедитесь, **координатора распределенных транзакций** запущены как службы **сетевой службы** учетной записи. Если это не так, измените его для запуска в качестве **сетевой службы** учетной записи и перезапустите **системное приложение COM +** .
 * Если не удается перезапустить службу, переустановите **координатора распределенных транзакций** службу, выполнив следующие действия:
     * Остановите работу службы MSDTC.
     * Откройте окно командной строки (cmd).
     * Выполните команду «msdtc-удалить»
     * Команда отмены «msdtc-Установка»
     * Запустите службу MSDTC.
-* Запустите службу Windows **Системное приложение COM+**. После запуска службы **Системное приложение COM+** активируйте задание резервного копирования на портале Azure.</ol>
+* Запустите службу Windows **Системное приложение COM+** . После запуска службы **Системное приложение COM+** активируйте задание резервного копирования на портале Azure.</ol>
 
-### <a name="extensionfailedvsswriterinbadstate---snapshot-operation-failed-because-vss-writers-were-in-a-bad-state"></a>ExtensionFailedVssWriterInBadState - операции моментального снимка, не удалось, так как модули записи VSS в неисправном состоянии
+## <a name="extensionfailedvsswriterinbadstate---snapshot-operation-failed-because-vss-writers-were-in-a-bad-state"></a>ExtensionFailedVssWriterInBadState - операции моментального снимка, не удалось, так как модули записи VSS в неисправном состоянии
 
 Код ошибки: ExtensionFailedVssWriterInBadState <br/>
 Сообщение об ошибке: Сбой операции моментального снимка, так как модули записи VSS в неисправном состоянии.
@@ -79,7 +81,7 @@ ms.locfileid: "66002313"
   * ```net stop serviceName```
   * ```net start serviceName```
 
-### <a name="extensionconfigparsingfailure--failure-in-parsing-the-config-for-the-backup-extension"></a>ExtensionConfigParsingFailure - Сбой анализа конфигурации для расширения резервного копирования
+## <a name="extensionconfigparsingfailure--failure-in-parsing-the-config-for-the-backup-extension"></a>ExtensionConfigParsingFailure - Сбой анализа конфигурации для расширения резервного копирования
 
 Код ошибки: ExtensionConfigParsingFailure<br/>
 Сообщение об ошибке: Сбой анализа конфигурации для расширения резервного копирования.
@@ -108,7 +110,7 @@ ms.locfileid: "66002313"
     * В разделе **Личное** > **Сертификаты** удалите все сертификаты с полем **Получатель сертификата**, имеющим значение **Windows Azure CRP Certificate Generator**.
 3. Активируйте задание архивации виртуальной машины.
 
-### <a name="extensionstuckindeletionstate---extension-state-is-not-supportive-to-backup-operation"></a>ExtensionStuckInDeletionState - состояние расширения не поддерживает архивацию
+## <a name="extensionstuckindeletionstate---extension-state-is-not-supportive-to-backup-operation"></a>ExtensionStuckInDeletionState - состояние расширения не поддерживает архивацию
 
 Код ошибки: ExtensionStuckInDeletionState <br/>
 Сообщение об ошибке: Состояние расширения не поддерживает архивацию
@@ -121,7 +123,7 @@ ms.locfileid: "66002313"
 * После удаления расширения попробуйте снова выполнить резервное копирование.
 * При выполнении последующей операции резервного копирования будет установлено новое расширение в требуемом состоянии.
 
-### <a name="extensionfailedsnapshotlimitreachederror---snapshot-operation-failed-as-snapshot-limit-is-exceeded-for-some-of-the-disks-attached"></a>Превышено ExtensionFailedSnapshotLimitReachedError - предельного числа снимков сбой операции моментального снимка для некоторых подключенных дисков
+## <a name="extensionfailedsnapshotlimitreachederror---snapshot-operation-failed-as-snapshot-limit-is-exceeded-for-some-of-the-disks-attached"></a>Превышено ExtensionFailedSnapshotLimitReachedError - предельного числа снимков сбой операции моментального снимка для некоторых подключенных дисков
 
 Код ошибки: ExtensionFailedSnapshotLimitReachedError  <br/>
 Сообщение об ошибке: Для некоторых подключенных дисков превышения предельного числа снимков сбой операции моментального снимка
@@ -135,7 +137,7 @@ ms.locfileid: "66002313"
     * Убедитесь, значения **isanysnapshotfailed** имеет значение false в /etc/azure/vmbackup.conf
     * Запланируйте Azure Site Recovery в другое время, таким образом, чтобы оно не конфликтовало операции резервного копирования.
 
-### <a name="extensionfailedtimeoutvmnetworkunresponsive---snapshot-operation-failed-due-to-inadequate-vm-resources"></a>ExtensionFailedTimeoutVMNetworkUnresponsive - моментальных снимков не удалось из-за недостатка ресурсов виртуальной Машины.
+## <a name="extensionfailedtimeoutvmnetworkunresponsive---snapshot-operation-failed-due-to-inadequate-vm-resources"></a>ExtensionFailedTimeoutVMNetworkUnresponsive - моментальных снимков не удалось из-за недостатка ресурсов виртуальной Машины.
 
 Код ошибки: ExtensionFailedTimeoutVMNetworkUnresponsive<br/>
 Сообщение об ошибке: Сбой операции моментального снимка из-за недостатка ресурсов виртуальной Машины.
@@ -157,9 +159,9 @@ REG ADD "HKLM\SOFTWARE\Microsoft\BcdrAgentPersistentKeys" /v CalculateSnapshotTi
 
 **Шаг 3**. Попробуйте [увеличение размера виртуальной Машины](https://azure.microsoft.com/blog/resize-virtual-machines/) и повторите операцию
 
-### <a name="common-vm-backup-errors"></a>Распространенные ошибки резервного копирования виртуальной Машины
+## <a name="common-vm-backup-errors"></a>Распространенные ошибки резервного копирования виртуальной Машины
 
-| Информация об ошибке | Возможное решение |
+| Сведения об ошибке | Возможное решение |
 | ------ | --- |
 | Код ошибки: 320001<br/> Сообщение об ошибке: Не удалось выполнить операцию, поскольку виртуальная машина больше не существует. <br/> <br/> Код ошибки: 400094 <br/> Сообщение об ошибке: Виртуальная машина не существует <br/> <br/>  Виртуальная машина Azure не найдена.  |Эта ошибка возникает, когда основная виртуальная машина удалена, но политика резервного копирования продолжает ее поиск, чтобы выполнить резервное копирование. Чтобы исправить эту ошибку, выполните следующие действия. <ol><li> Повторно создайте виртуальную машину с тем же именем и тем же именем группы ресурсов **имя облачной службы**,<br>**или диспетчер конфигурации служб**</li><li> Отключите защиту виртуальной машины, удаляя или не удаляя данные резервного копирования. Дополнительные сведения см. в разделе [Отключение защиты виртуальных машин](backup-azure-manage-vms.md#stop-protecting-a-vm).</li></ol>|
 | Виртуальная машина находится в состоянии сбоя подготовки. <br>Перезапустите виртуальную машину и убедитесь, что она находится в запущенном или остановленном состоянии. | Эта ошибка возникает, когда неполадка расширения приводит к тому, что виртуальная машина переходит в состояние сбоя подготовки. Перейдите к списку расширений и проверьте, нет ли сбоев в работе расширений. Удалите соответствующее расширение и попробуйте перезапустить виртуальную машину. Если все расширения находятся в рабочем состоянии, проверьте, запущена ли служба агента виртуальной машины. Если нет, то перезапустите службу агента виртуальной машины. |
@@ -173,16 +175,16 @@ REG ADD "HKLM\SOFTWARE\Microsoft\BcdrAgentPersistentKeys" /v CalculateSnapshotTi
 | Сбой операции создания моментального снимка из-за ошибки при установке распространяемого компонента Visual C++ для Visual Studio 2012. | Перейдите в папку C:\Packages\Plugins\Microsoft.Azure.RecoveryServices.VMSnapshot\agentVersion и установите компонент vcredist2012_x64.<br/>Убедитесь, что значение раздела реестра, который допускает установку службы задано правильное значение. Это значит, значение **запустить** значение в **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Msiserver** для **3** и не **4**. <br><br>Если проблемы с установкой не исчезли, перезапустите службу установки, последовательно выполнив команды **MSIEXEC /UNREGISTER** и **MSIEXEC /REGISTER** в командной строке с повышенными привилегиями.  |
 
 
-## <a name="jobs"></a>Задания (job)
+## <a name="jobs"></a>Задания
 
-| Информация об ошибке | Возможное решение |
+| Сведения об ошибке | Возможное решение |
 | --- | --- |
 | Отмена не поддерживается в этом типе задания. <br>Дождитесь завершения задания. |Нет |
 | Задание не находится в состоянии отмены. <br>Дождитесь завершения задания. <br>**или диспетчер конфигурации служб**<br> Выбранное задание не находится в состоянии отмены. <br>Дождитесь остановки задания. |Скорее всего, задание почти выполнено. Дождитесь завершения задания.|
 | Резервное копирование не может отменить задание, так как оно не выполняется. <br>Отмена поддерживается только для выполняющихся заданий. Попытайтесь отменить выполняющееся задание. |Эта ошибка возникает из-за переходного состояния. Подождите минуту и повторите отмену. |
 | При резервном копировании не удалось отменить задание. <br>Дождитесь завершения задания. |Нет |
 
-## <a name="restore"></a>Восстановление
+## <a name="restore"></a>восстановление;
 
 | Сведения об ошибке | Возможное решение |
 | --- | --- |
@@ -201,7 +203,7 @@ REG ADD "HKLM\SOFTWARE\Microsoft\BcdrAgentPersistentKeys" /v CalculateSnapshotTi
 ## <a name="backup-or-restore-takes-time"></a>Резервное копирование или восстановление занимает время
 Если резервное копирование у вас выполняется дольше 12 часов или на восстановление данных требуется больше 6 часов, ознакомьтесь с [лучшими методиками](backup-azure-vms-introduction.md#best-practices) и [рекомендациями по производительности](backup-azure-vms-introduction.md#backup-performance).
 
-## <a name="vm-agent"></a>Агент ВМ
+## <a name="vm-agent"></a>Агент виртуальной машины
 ### <a name="set-up-the-vm-agent"></a>Настройка агента виртуальной машины
 Как правило, агент виртуальной машины уже имеется на виртуальных машинах, которые созданы с помощью коллекции Azure. Но на виртуальных машинах, которые переносятся из локальных центров обработки данных, агента виртуальной машины не будет. Для таких виртуальных машин агент ВМ необходимо установить явным образом.
 
@@ -239,7 +241,7 @@ REG ADD "HKLM\SOFTWARE\Microsoft\BcdrAgentPersistentKeys" /v CalculateSnapshotTi
 ## <a name="troubleshoot-vm-snapshot-issues"></a>Решение проблем со снимками виртуальных машин
 Архивация виртуальных машин зависит от команды моментального снимка в базовом хранилище. Отсутствие доступа к хранилищу или задержка в выполнении задачи создания моментального снимка может привести к неудачному завершению задания резервного копирования. Сбой задачи создания снимка может быть вызван следующими условиями.
 
-- **Сетевой доступ к хранилищу блокируется при помощи групп NSG**. Узнайте о том, как [включить сетевой доступ](backup-azure-arm-vms-prepare.md#establish-network-connectivity) к хранилищу с помощью списка разрешенных IP-адресов или прокси-сервера.
+- **Сетевой доступ к хранилищу блокируется при помощи групп NSG**. Дополнительные сведения о том, как [установления сетевого доступа](backup-azure-arm-vms-prepare.md#establish-network-connectivity) в хранилище с помощью либо список разрешенных IP-адресов или прокси-сервера.
 - **Виртуальные машины с настроенной архивацией SQL Server могут вызвать задержку задачи создания моментальных снимков**. По умолчанию при архивации виртуальной машины создается полная резервная копия VSS на виртуальных машинах Windows. На виртуальных машинах, где выполняется SQL Server и настроена архивация SQL Server, это может привести к задержке создания моментального снимка. Если эти задержки приводят к ошибкам резервного копирования, установите следующий ключ реестра.
 
    ```
@@ -262,8 +264,8 @@ REG ADD "HKLM\SOFTWARE\Microsoft\BcdrAgentPersistentKeys" /v CalculateSnapshotTi
 
 После правильного разрешения имен также требуется предоставить доступ к IP-адресам Azure. Чтобы разблокировать доступ к инфраструктуре Azure, выполните одно из следующих действий.
 
-- Добавьте диапазоны IP-адресов центра обработки данных Azure в список разрешений.
-   1. Получите список [IP-адресов центра обработки данных Azure](https://www.microsoft.com/download/details.aspx?id=41653) для добавления в разрешенный список.
+- Разрешить список диапазонов IP-адресов центра обработки данных Azure:
+   1. Получите список [центра обработки данных Azure IP-адреса](https://www.microsoft.com/download/details.aspx?id=41653) чтобы быть в список разрешений.
    1. Разблокируйте IP-адреса с помощью командлета [New-NetRoute](https://docs.microsoft.com/powershell/module/nettcpip/new-netroute). Запустите этот командлет на виртуальной машине Azure в окне PowerShell с повышенными привилегиями. Запустите от имени администратора.
    1. Добавьте правила в группу безопасности сети, если она настроена, для доступа к IP-адресам.
 - Создание пути для прохождения трафика HTTP

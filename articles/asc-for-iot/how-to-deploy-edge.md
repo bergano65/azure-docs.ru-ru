@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/1/2019
 ms.author: mlottner
-ms.openlocfilehash: 5d56c878eab92a7152bc0b248cab5c2ebf7e6dde
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: 85e342f08e5402e50e5b0dfd1fe2df90337f29ca
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65198417"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66254295"
 ---
 # <a name="deploy-a-security-module-on-your-iot-edge-device"></a>Развертывание модуля безопасности на вашем устройстве IoT Edge
 
@@ -70,7 +70,7 @@ ms.locfileid: "65198417"
 
 Существует три действия, чтобы создать развертывание IoT Edge для центра безопасности Azure для Интернета вещей. В следующих разделах описан каждый из этих шагов. 
 
-#### <a name="step-1-add-modules"></a>Шаг 1. Добавить модули
+#### <a name="step-1-add-modules"></a>Шаг 1. Добавление модулей
 
 1. Из **Добавление модулей** вкладке **развертывания модулей** область, нажмите кнопку **AzureSecurityCenterforIoT**. 
    
@@ -158,7 +158,7 @@ ms.locfileid: "65198417"
    
    | ИМЯ | ИЗОБРАЖЕНИЕ |
    | --- | --- |
-   | azureIoTSecurity | mcr.Microsoft.com/ascforiot/azureiotsecurity:0.0.3 |
+   | azureiotsecurity | mcr.Microsoft.com/ascforiot/azureiotsecurity:0.0.3 |
    | edgeHub | mcr.Microsoft.com/ascforiot/edgehub:1.0.9-Preview |
    | edgeAgent | mcr.Microsoft.com/azureiotedge-Agent:1.0 |
    

@@ -5,14 +5,14 @@ services: batch
 ms.service: batch
 author: mscurrell
 ms.author: markscu
-ms.date: 9/25/2018
+ms.date: 05/28/2019
 ms.topic: conceptual
-ms.openlocfilehash: 8d8df9935e935ac8d5a1194cfab103a006cf5546
-ms.sourcegitcommit: d89b679d20ad45d224fd7d010496c52345f10c96
+ms.openlocfilehash: b0a9d04fccce7ccbacb700f7af5126c6ae05140a
+ms.sourcegitcommit: 8e76be591034b618f5c11f4e66668f48c090ddfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/12/2019
-ms.locfileid: "57791347"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66357762"
 ---
 # <a name="check-for-pool-and-node-errors"></a>Проверка на наличие ошибок в пуле и узле
 
@@ -84,18 +84,27 @@ ms.locfileid: "57791347"
 
 Сбой при скачивании и распаковке пакета приложения сообщается с помощью свойства узла [errors](https://docs.microsoft.com/rest/api/batchservice/computenode/get#computenodeerror). Пакетная служба устанавливает состояние узла **unusable** (Непригоден).
 
+### <a name="container-download-failure"></a>Сбой загрузки контейнера
+
+Можно указать одну или несколько ссылок контейнера в пуле. Пакет загружает указанные контейнеры к каждому узлу. Узел [ошибки](https://docs.microsoft.com/rest/api/batchservice/computenode/get#computenodeerror) свойство сообщает об ошибке для загрузки контейнера и устанавливает состояние узла **непригодным для использования**.
+
 ### <a name="node-in-unusable-state"></a>Узел с состоянием unusable (Непригоден)
 
 Пакетная служба Azure может установить [состояние узла](https://docs.microsoft.com/rest/api/batchservice/computenode/get#computenodestate) на **unusable** (Непригоден) по многим причинам. Если состояние узла установлено на **unusable** (Непригоден), задачи для узла не могут быть запланированы, но плата по-прежнему взимается.
 
-Пакетная служба пытается восстановить непригодные узлы, но такие узлы не всегда можно восстановить. Это зависит от причины возникновения такого состояния.
+Узлы в **unsuable**, но без [ошибки](https://docs.microsoft.com/rest/api/batchservice/computenode/get#computenodeerror) состояние означает, что пакет не удается установить связь с виртуальной Машиной. В этом случае пакет всегда пытается восстановить виртуальную Машину. Пакет не будет пытаться автоматически восстанавливать виртуальные машины, которые не удалось установить пакеты приложений или контейнеров, несмотря на то, что они состоянии **непригодным для использования**.
 
 Если пакетная служба может определить причину, свойство узла [errors](https://docs.microsoft.com/rest/api/batchservice/computenode/get#computenodeerror) сообщает об этом.
 
 Ниже приведены дополнительные примеры возможных причин возникновения состояния узлов **unusable** (Непригоден).
 
 - Образ виртуальной машины является недопустимым. Например, образ подготовлено неправильно.
+
 - Виртуальная машина перемещена из-за сбоя инфраструктуры или обновления нижнего уровня. Пакетная служба восстанавливает узел.
+
+- Образ виртуальной Машины будет развернута на оборудовании, которые не поддерживают его. Например «» образ виртуальной Машины HPC под управлением на оборудовании, отличных от HPC. Например, при попытке запустить образ CentOS HPC [Standard_D1_v2](../virtual-machines/linux/sizes-general.md#dv2-series) виртуальной Машины.
+
+- Виртуальные машины находятся в [виртуальной сети Azure](batch-virtual-network.md), и трафик заблокирован для ключевые порты.
 
 ### <a name="node-agent-log-files"></a>Файлы журнала агента узла
 

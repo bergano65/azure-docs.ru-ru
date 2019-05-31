@@ -10,12 +10,12 @@ ms.subservice: bing-custom-search
 ms.topic: conceptual
 ms.date: 03/04/2019
 ms.author: aahi
-ms.openlocfilehash: d8c2c69a81597c2702d608ccac8dceed1e832aff
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: bc33d65972e12591130389e0c3cb8697898d1da9
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65790230"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66390348"
 ---
 # <a name="custom-search"></a>Пользовательский поиск
 Служба "Пользовательский поиск Bing" позволяет создавать специально адаптированные интерфейсы поиска по темам, которые действительно важны для вас. Ваши пользователи увидят результаты поиска, адаптированные к интересующей их информации, вместо того, чтобы пролистывать результаты поиска с ненужным содержимым.
@@ -28,10 +28,10 @@ ms.locfileid: "65790230"
  GET https://api.cognitive.microsoft.com/bingcustomsearch/v7.0/search  
 ```
 
-Примеры с описанием методов настройки источников для пользовательского поиска вы найдете в [этом руководстве](https://docs.microsoft.com/azure/cognitive-services/bing-custom-search/tutorials/custom-search-web-page). Подробные сведения о заголовках, параметрах, рыночных кодах, объектах ответов, ошибках и т. п., вы найдете в справочной информации [по API пользовательского поиска Bing версии 7](https://docs.microsoft.com/rest/api/cognitiveservices/bing-custom-search-api-v7-reference).
+Примеры с описанием методов настройки источников для пользовательского поиска вы найдете в [этом руководстве](https://docs.microsoft.com/azure/cognitive-services/bing-custom-search/tutorials/custom-search-web-page). Подробные сведения о заголовках, параметрах, рыночных кодах, объектах ответов, ошибках и т. п., вы найдете в справочной информации [по API пользовательского поиска Bing версии 7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-custom-search-api-v7-reference).
 
 ## <a name="custom-search-response-json"></a>Ответ службы пользовательского поиска в формате JSON
-Запрос к службе пользовательского поиска возвращает результаты в виде объектов ответа JSON, которые описаны [здесь](https://docs.microsoft.com/rest/api/cognitiveservices/bing-custom-search-api-v7-reference#response-objects). 
+Запрос к службе пользовательского поиска возвращает результаты в виде объектов ответа JSON, которые описаны [здесь](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-custom-search-api-v7-reference#response-objects). 
 
 ## <a name="custom-autosuggest"></a>Пользовательское автозаполнение
 API пользовательского автозаполнения позволяет отправить в Bing частичный поисковый запрос и получить список предложений по запросам, которые вы можете настроить. Пользовательское автозаполнение позволяет добавить предложения, полученные от API, а при необходимости указать, нужно ли включать в результаты предложения Bing.

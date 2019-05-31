@@ -5,30 +5,30 @@ services: expressroute
 author: cherylmc
 ms.service: expressroute
 ms.topic: include
-ms.date: 06/12/2018
+ms.date: 05/28/2019
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: c025c431d826d3a2951a9eb5c09308695e172887
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: 9f7f9b1504533e0ec503e97c086c380da71671a0
+ms.sourcegitcommit: 8c49df11910a8ed8259f377217a9ffcd892ae0ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66170731"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66299700"
 ---
 | Ресурс | По умолчанию и максимальные ограничения |
 | --- | --- |
 | Каналы ExpressRoute для каждой подписки |10 |
 | Каналы ExpressRoute на регион на подписку, с помощью Azure Resource Manager |10 |
-| Максимальное количество маршрутов для частного пиринга Azure со стандартом ExpressRoute |4000 |
-| Максимальное количество маршрутов для частного пиринга Azure с надстройкой ExpressRoute Premium |10 000 |
-| Максимальное количество маршрутов для частного пиринга Azure из адресного пространства виртуальной сети для подключения ExpressRoute |200 | 
-| Максимальное количество маршрутов для пиринга Microsoft Azure со стандартом ExpressRoute |200 |
-| Максимальное количество маршрутов для пиринга Microsoft Azure с надстройкой ExpressRoute Premium |200 |
+| Максимальное количество маршрутов, объявленных для частного пиринга Azure со стандартом ExpressRoute |4000 |
+| Максимальное количество маршрутов, объявленных для частного пиринга Azure с надстройкой ExpressRoute Premium |10 000 |
+| Максимальное количество маршрутов, объявленных из частного пиринга Azure из адресного пространства виртуальной сети для подключения ExpressRoute |200 |
+| Максимальное количество маршрутов, объявленных для Майкрософт, пиринга со стандартом ExpressRoute |200 |
+| Максимальное количество маршрутов, объявленных для Майкрософт, пиринг с надстройкой ExpressRoute Premium |200 |
 | Максимальное число каналов ExpressRoute, связанных с одной и той же виртуальной сети в одном расположении пиринга |4. |
 | Максимальное число каналов ExpressRoute, связанных с одной и той же виртуальной сетью в разных расположениях пиринга |4. |
-| Количество связей виртуальных сетей на канал ExpressRoute |См. в следующей таблице. |
+| Количество связей виртуальных сетей на канал ExpressRoute |См. в разделе [количество виртуальных сетей на канал ExpressRoute](#vnetpercircuit) таблицы.  |
 
-#### <a name="number-of-virtual-networks-per-expressroute-circuit"></a>Количество виртуальных сетей на канал ExpressRoute
+#### <a name="vnetpercircuit"></a> Количество виртуальных сетей на канал ExpressRoute
 | **Размер канала** | **Число связей виртуальных сетей для уровня Standard** | **Число связей виртуальных сетей с надстройкой Premium** |
 | --- | --- | --- |
 | 50 Мбит/с |10 |20 |

@@ -3,7 +3,7 @@ title: Интеграция Advanced Threat Protection в Защитнике Win
 description: В этом документе описана интеграция между центром безопасности Azure и Advanced Threat Protection в Защитнике Windows.
 services: security-center
 documentationcenter: na
-author: barclayn
+author: monhaber
 manager: barbkess
 editor: ''
 ms.service: security-center
@@ -11,21 +11,23 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 12/13/2018
-ms.author: barclayn
-ms.openlocfilehash: 75ca1401f72e00454dc3355d31c8b8ea64669a72
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.date: 05/27/2018
+ms.author: monhaber
+ms.openlocfilehash: 8511f8987368d5746373f71e9f553013e385e0ee
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62129133"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66258501"
 ---
 # <a name="windows-defender-advanced-threat-protection-with-azure-security-center"></a>Интеграция Advanced Threat Protection в Защитнике Windows с центром безопасности Azure
 
 Центр безопасности Azure расширяет свои предложения облачных платформ для защиты рабочих нагрузок за счет интеграции со службой [Advanced Threat Protection в Защитнике Windows](https://www.microsoft.com/en-us/WindowsForBusiness/windows-atp) (ATP).
 Это изменение обеспечивает широкие возможности обнаружения конечных точек и реагирования на них. Интеграция ATP в Защитнике Windows позволяет обнаруживать аномалии. Кроме того, можно обнаруживать расширенные атаки на конечные точки сервера, отслеживаемые центром безопасности Azure, и реагировать на них.
 
-Клиенты центра безопасности Azure теперь могут использовать функции ATP в Защитнике Windows:
+## <a name="windows-defender-atp-features-in-security-center"></a>Функции ATP в Защитнике Windows в центре безопасности
+
+При использовании ATP в Защитнике Windows, вы получаете:
 
 - **Датчики следующего поколения для обнаружения брешей в системе безопасности после атаки**. Датчики ATP Защитника Windows для серверов Windows собирают широкий спектр сигналов поведения.
 
@@ -53,9 +55,10 @@ ms.locfileid: "62129133"
 
 ## <a name="platform-support"></a>Поддержка платформ
 
-Эта функция поддерживает обнаружение в Windows Server 2012 R2 и Windows Server 2016.
+ATP в Защитнике Windows в центре безопасности поддерживает обнаружение в Windows Server 2012 R2 и Windows Server 2016 операционных системах, принадлежащими к подписке обслуживания Standard.
 
-Поддерживаются только серверы в подписках с уровнем служб "Стандартный".
+> [!NOTE]
+> При использовании центра безопасности Azure для наблюдения за серверами клиента ATP в Защитнике Windows создается автоматически, и данные ATP в Защитнике Windows по умолчанию хранится в Европе. Если вам нужно переместить данные в другое расположение, необходимо обратитесь в службу поддержки Майкрософт, чтобы сбросить клиент.
 
 ## <a name="onboarding-servers-to-security-center"></a>Подключение серверов к Центру безопасности 
 
@@ -69,7 +72,6 @@ ms.locfileid: "62129133"
 4. После подключения вы сможете выполнять мониторинг компьютеров в разделе **Вычисления и приложения**.
 
    ![Подключение компьютеров](media/security-center-wdatp/onboard-computers.png)
-
 
 ## <a name="enable-windows-defender-atp-integration"></a>Включение интеграции ATP в Защитнике Windows
 

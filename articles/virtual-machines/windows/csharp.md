@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/17/2017
 ms.author: cynthn
-ms.openlocfilehash: ce05d097aa69aa1aadb8450e40722448bc5a7de0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 55b73f5f4e6998eb1eb8c5ebc873fa20f8722a3e
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61402047"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66304591"
 ---
 # <a name="create-and-manage-windows-vms-in-azure-using-c"></a>Развертывание виртуальной машины Azure с помощью C# #
 
@@ -41,7 +41,7 @@ ms.locfileid: "61402047"
 
 1. Если вы этого еще не сделали, установите [Visual Studio](https://docs.microsoft.com/visualstudio/install/install-visual-studio). На странице рабочих нагрузок выберите **Разработка классических приложений .NET** и нажмите кнопку **Установить**. В сводке вы увидите, что **средства разработки .NET Framework 4–4.6** выберутся автоматически. Если вы уже установили Visual Studio, можно добавить рабочую нагрузку .NET с помощью средства запуска Visual Studio.
 2. В Visual Studio выберите **Файл** > **Создать** > **Проект**.
-3. В разделе **Шаблоны** > **Visual C#** выберите пункт **Консольное приложение (.NET Framework)**, укажите имя *myDotnetProject* и расположение проекта, а затем нажмите кнопку **OK**.
+3. В разделе **Шаблоны** > **Visual C#** выберите пункт **Консольное приложение (.NET Framework)** , укажите имя *myDotnetProject* и расположение проекта, а затем нажмите кнопку **OK**.
 
 ## <a name="install-the-package"></a>Установка пакета
 
@@ -80,12 +80,12 @@ ms.locfileid: "61402047"
 4. Задайте переменную среды в Windows с именем AZURE_AUTH_LOCATION с полным путем к файлу авторизации, созданному вами. Например, можно использовать следующую команду PowerShell:
 
     ```
-    [Environment]::SetEnvironmentVariable("AZURE_AUTH_LOCATION", "C:\Visual Studio 2017\Projects\myDotnetProject\myDotnetProject\azureauth.properties", "User")
+    [Environment]::SetEnvironmentVariable("AZURE_AUTH_LOCATION", "C:\Visual Studio 2019\Projects\myDotnetProject\myDotnetProject\azureauth.properties", "User")
     ```
 
 ### <a name="create-the-management-client"></a>Создание клиента управления
 
-1. Откройте файл Program.cs для созданного проекта и добавьте в начало файла (к существующим операторам) следующие операторы using:
+1. Откройте файл Program.cs для созданного проекта. Затем добавьте в начало файла следующие операторы к существующим операторам using:
 
     ```
     using Microsoft.Azure.Management.Compute.Fluent;
@@ -108,7 +108,7 @@ ms.locfileid: "61402047"
         .WithDefaultSubscription();
     ```
 
-## <a name="create-resources"></a>Создать ресурсы
+## <a name="create-resources"></a>Создание ресурсов
 
 ### <a name="create-the-resource-group"></a>Создание группы ресурсов
 
@@ -365,7 +365,7 @@ Console.ReadLine();
 
 ### <a name="add-a-data-disk-to-the-vm"></a>Добавление диска данных в виртуальную машину
 
-Чтобы добавить диск данных в виртуальную машину, добавьте следующий код в метод Main. При этом будет добавлен диск данных размером 2 ГБ, имеющий логический номер устройства (LUN) 0 и тип кэширования ReadWrite:
+Чтобы добавить диск данных к виртуальной машине, добавьте следующий код в метод Main. В этом примере добавляет диск данных 2 ГБ, размер которого, Хан LUN 0 и тип кэширования ReadWrite:
 
 ```
 Console.WriteLine("Adding data disk to vm...");
@@ -376,7 +376,7 @@ Console.WriteLine("Press enter to delete resources...");
 Console.ReadLine();
 ```
 
-## <a name="delete-resources"></a>Удаление ресурсов
+## <a name="delete-resources"></a>Удаление ресурсов.
 
 Так как за использование ресурсов Azure взимается плата, рекомендуется всегда удалять ресурсы, которые больше не нужны. Если вы хотите удалить виртуальные машины и все вспомогательные ресурсы, достаточно удалить группу ресурсов.
 

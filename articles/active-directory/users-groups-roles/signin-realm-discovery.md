@@ -13,12 +13,12 @@ ms.author: curtand
 ms.reviewer: kexia
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e9f21b592f31790daa9cc4eeb217ea6e2987fc38
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: db627359b75aa0ea19e30a8d22bcacaa3409cb4a
+ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64920512"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66418211"
 ---
 # <a name="home-realm-discovery-for-azure-active-directory-sign-in-pages"></a>Обнаружение домашней области для страницы входа Azure Active Directory
 
@@ -32,19 +32,19 @@ ms.locfileid: "64920512"
 
 Дополнительным преимуществом часть этой работы является улучшенная ошибки обмена сообщениями. Вот несколько примеров, улучшенный ошибки обмена сообщениями при входе в приложение, которое поддерживает только для пользователей Azure Active Directory.
 
-1. Неверном вводе имени пользователя или имя пользователя не был синхронизирован с Azure AD:
+- Неверном вводе имени пользователя или имя пользователя не был синхронизирован с Azure AD:
   
     ![имя пользователя неправильно ввел или не найден](./media/signin-realm-discovery/typo-username.png)
   
-2. Неверном вводе имя домена:
+- Неверном вводе имя домена:
   
     ![имя домена неправильно ввел или не найден](./media/signin-realm-discovery/typo-domain.png)
   
-3. Пользователь пытается выполнить вход с использованием доменом известных клиента:
+- Пользователь пытается выполнить вход с использованием доменом известных клиента:
   
     ![вход в систему с доменом известных клиента](./media/signin-realm-discovery/consumer-domain.png)
   
-4. Является неправильно ввел пароль, но точное имя пользователя:  
+- Является неправильно ввел пароль, но точное имя пользователя:  
   
     ![неверном вводе пароля с хорошим именем пользователя](./media/signin-realm-discovery/incorrect-password.png)
   

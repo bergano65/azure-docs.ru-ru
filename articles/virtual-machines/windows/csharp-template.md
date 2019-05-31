@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/14/2017
 ms.author: cynthn
-ms.openlocfilehash: 50d0d78e9dc0c7f51fcd82dd16eab5a180eae073
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 80c2a1f4b9b724058b8b573f265a3cb2a99302a0
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61402189"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66305958"
 ---
 # <a name="deploy-an-azure-virtual-machine-using-c-and-a-resource-manager-template"></a>Развертывание виртуальной машины Azure с помощью C# и шаблона Resource Manager
 
@@ -36,7 +36,7 @@ ms.locfileid: "61402189"
 
 1. Если вы этого еще не сделали, установите [Visual Studio](https://docs.microsoft.com/visualstudio/install/install-visual-studio). На странице рабочих нагрузок выберите **Разработка классических приложений .NET** и нажмите кнопку **Установить**. В сводке вы увидите, что **средства разработки .NET Framework 4–4.6** выберутся автоматически. Если вы уже установили Visual Studio, можно добавить рабочую нагрузку .NET с помощью средства запуска Visual Studio.
 2. В Visual Studio выберите **Файл** > **Создать** > **Проект**.
-3. В разделе **Шаблоны** > **Visual C#** выберите пункт **Консольное приложение (.NET Framework)**, укажите имя *myDotnetProject* и расположение проекта, а затем нажмите кнопку **OK**.
+3. В разделе **Шаблоны** > **Visual C#** выберите пункт **Консольное приложение (.NET Framework)** , укажите имя *myDotnetProject* и расположение проекта, а затем нажмите кнопку **OK**.
 
 ## <a name="install-the-packages"></a>Установка пакетов
 
@@ -166,7 +166,7 @@ ms.locfileid: "61402189"
 
 ### <a name="create-the-parameters-file"></a>Создание файла параметров
 
-Чтобы задать значения для параметров ресурсов, определенных в шаблоне, создайте файл параметров, содержащий эти значения.
+Чтобы задать значения для параметров ресурсов в шаблоне, создайте файл параметров, который содержит значения.
 
 1. В обозревателе решений щелкните правой кнопкой мыши *myDotnetProject* > **Добавить** > **Новый элемент** и в списке **Элементы Visual C#** выберите *Текстовый файл*. Назовите файл *Parameters.json*, а затем щелкните **Добавить**.
 2. Добавьте следующий код JSON в созданный файл:
@@ -205,17 +205,17 @@ ms.locfileid: "61402189"
     Замените **&lt;subscription-id&gt;** своим идентификатором подписки, **&lt;application-id&gt;** — идентификатором приложения Active Directory, **&lt;authentication-key&gt;** — ключом приложения, а **&lt;tenant-id&gt;** — идентификатором клиента.
 
 3. Сохраните файл azureauth.properties.
-4. Задайте переменную среды в Windows с именем AZURE_AUTH_LOCATION с полным путем к файлу авторизации, созданному вами. Например, можно использовать такую команду PowerShell:
+4. Набор, переменной среды в Windows с именем AZURE_AUTH_LOCATION с полным путем к файлу авторизации, который вы создали, например можно использовать следующую команду PowerShell:
 
     ```powershell
-    [Environment]::SetEnvironmentVariable("AZURE_AUTH_LOCATION", "C:\Visual Studio 2017\Projects\myDotnetProject\myDotnetProject\azureauth.properties", "User")
+    [Environment]::SetEnvironmentVariable("AZURE_AUTH_LOCATION", "C:\Visual Studio 2019\Projects\myDotnetProject\myDotnetProject\azureauth.properties", "User")
     ```
 
     
 
 ## <a name="create-the-management-client"></a>Создание клиента управления
 
-1. Откройте файл Program.cs для созданного проекта и добавьте в начало файла (к существующим операторам) следующие операторы using:
+1. Откройте файл Program.cs для созданного проекта. Затем добавьте в начало файла следующие операторы к существующим операторам using:
 
     ```csharp
     using Microsoft.Azure.Management.Compute.Fluent;
@@ -240,7 +240,7 @@ ms.locfileid: "61402189"
         .WithDefaultSubscription();
     ```
 
-## <a name="create-a-resource-group"></a>Создать группу ресурсов
+## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
 Чтобы задать значения для приложения, добавьте код в метод Main:
 

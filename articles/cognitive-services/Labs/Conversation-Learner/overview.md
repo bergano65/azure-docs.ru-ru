@@ -3,19 +3,19 @@ title: Что такое Conversation Learner? (Microsoft Cognitive Services) | 
 titleSuffix: Azure
 description: Узнайте о том, что такое Conversation Learner и как он работает.
 services: cognitive-services
-author: v-jaswel
+author: nitinme
 manager: nolachar
 ms.service: cognitive-services
 ms.subservice: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
-ms.author: v-jaswel
-ms.openlocfilehash: c46ffe2076d4b1491a3b27958dfbf5ed09115eaa
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.author: nitinme
+ms.openlocfilehash: f8bc7590f2d7a622b4b1ffb21bfeccef89691fd5
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "60708317"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66389500"
 ---
 # <a name="what-is-conversation-learner"></a>Что такое Conversation Learner?
 

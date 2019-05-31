@@ -15,12 +15,12 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b2204fe3e08b3c4b909ddc8b7ade4cec219d34fb
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.openlocfilehash: 82e6cbcd01c87ddffb7eac8d0ea0faef85f41a13
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65406637"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66254009"
 ---
 # <a name="web-app-that-signs-in-users---code-configuration"></a>Веб-приложение, выполняет вход пользователей - код конфигурации
 
@@ -110,6 +110,9 @@ ms.locfileid: "65406637"
 
 В веб-приложений ASP.NET Core (и веб-API), код, выполнив инициализации приложения находится в `Startup.cs` файл, и явным образом, чтобы добавить проверку подлинности с помощью платформы (прежнее название — Azure AD) версии 2.0 Microsoft Identity, необходимо добавить следующий код. Комментарии в коде должно быть говорит само за себя.
 
+  > [!NOTE]
+  > При запуске проекта с по умолчанию и веб-проекта ASP.NET core в Visual studio или с помощью `dotnet new mvc` метод `AddAzureAD` доступна по умолчанию, так как связанные пакеты загружаются автоматически. Тем не менее если построить проект с нуля и пытаетесь использовать ниже кода мы рекомендуем добавить пакет NuGet **«Microsoft.AspNetCore.Authentication.AzureAD.UI»** в проект, чтобы сделать `AddAzureAD` из доступных методов.
+  
 ```CSharp
  services.AddAuthentication(AzureADDefaults.AuthenticationScheme)
          .AddAzureAD(options => configuration.Bind("AzureAd", options));

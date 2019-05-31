@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 3/19/2019
 ms.author: victorh
-ms.openlocfilehash: 1259e755642563a7baad5496bc84ed736d5499f8
-ms.sourcegitcommit: 16cb78a0766f9b3efbaf12426519ddab2774b815
+ms.openlocfilehash: ee901fdcae9717cc6d03d7653bcaacc0c32518e0
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65849808"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66254322"
 ---
 # <a name="overview-of-ssl-termination-and-end-to-end-ssl-with-application-gateway"></a>Общие сведения о завершение запросов SSL и сквозного режима связи SSL со шлюзом приложений
 
@@ -50,7 +50,7 @@ Secure Sockets Layer (SSL) — это технология стандартна�
 Дополнительные сведения см. в разделе [настройке завершения запросов SSL со шлюзом приложений](https://docs.microsoft.com/azure/application-gateway/create-ssl-portal).
 
 ### <a name="size-of-the-certificate"></a>Размер сертификата
-Файл обмена личной информацией (PFX), сведениями о сертификате SSL не должно быть размером более 10 КБ.
+Проверьте [ограничения шлюза приложений](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits) раздел, чтобы узнать максимальное SSL сертификатов поддерживаемый размер.
 
 ## <a name="end-to-end-ssl-encryption"></a>Сквозное шифрование SSL
 

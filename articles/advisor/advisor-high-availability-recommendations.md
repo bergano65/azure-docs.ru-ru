@@ -8,12 +8,12 @@ ms.author: kasparks
 ms.service: advisor
 ms.topic: article
 ms.date: 01/29/2019
-ms.openlocfilehash: 793c881d08e8feb038cc6e7ac82b7e95384e1b55
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: bdba3f135f852312af1692f77643095d865f1d06
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60467733"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66254664"
 ---
 # <a name="improve-availability-of-your-application-with-azure-advisor"></a>Повышение уровня доступности приложения с использованием Помощника по Azure
 
@@ -69,6 +69,30 @@ ms.locfileid: "60467733"
 ## <a name="use-production-vpn-gateways-to-run-your-production-workloads"></a>Производственный VPN-шлюзы можно использовать для запуска рабочих нагрузок
 
 Помощник по Azure проверка для любой VPN-шлюзов, которые являются SKU "базовый" и рекомендуется использовать вместо создания номера SKU. SKU "базовый" предназначена для разработки и тестирования. SKU рабочей предлагают большего количества туннелей, поддержки BGP, параметры конфигурации активный активный, пользовательские политики Ipsec/IKE и более поздней версии стабильности и доступности.
+
+## <a name="repair-invalid-log-alert-rules"></a>Правила генерации оповещений недопустимый журнал восстановления
+
+Помощник по Azure обнаружит правила генерации оповещений, которые имеют недопустимые запросы, указанные в разделе свои условия. Правила генерации оповещений журнала создаются в Azure Monitor и используются для выполнения запросов аналитики с заданными интервалами. Результаты запроса определить, нужно ли запускать оповещение. Аналитические запросы может стать недопустимым сверхурочные из-за изменений в ресурсы, на которую указывает ссылка, таблиц или команды. Ядра СУБД даст рекомендации исправить запрос в правило генерации оповещений для предотвращения отключено автоматически в начало и охвата мониторинга ресурсов в Azure. [Дополнительные сведения об устранении неполадок правила генерации оповещений](https://aka.ms/aa_logalerts_queryrepair)
+
+## <a name="configure-consistent-indexing-mode-on-your-cosmos-db-collection"></a>Настройка согласованным режимом индексирования в коллекции Cosmos DB
+
+Контейнеры Azure Cosmos DB, настроены асинхронный режим индексирования может повлиять на актуальность результатов запроса. Помощник по обнаружит, что контейнеры настроены таким образом и рекомендуем переключение согласованный режим. [Дополнительные сведения об индексировании политики Cosmos DB](https://aka.ms/cosmosdb/how-to-manage-indexing-policy)
+
+## <a name="configure-your-azure-cosmos-db-containers-with-a-partition-key"></a>Настройка контейнеров Azure Cosmos DB с помощью ключа секции
+
+Помощник по Azure определит несекционированной коллекций Azure Cosmos DB, которые приближаетесь свою квоту объема подготовленного хранилища. Мастер может порекомендовать, миграция этих коллекций для новых коллекций с определением ключа секции, чтобы их можно автоматически масштабировать службой. [Дополнительные сведения о выборе ключа секции](https://aka.ms/cosmosdb/choose-partitionkey)
+
+## <a name="upgrade-your-azure-cosmos-db-net-sdk-to-the-latest-version-from-nuget"></a>Исходная версия Azure Cosmos DB .NET SDK до последней версии Nuget
+
+Помощник по Azure определит учетные записи Azure Cosmos DB, использующих старые версии пакета SDK для .NET, но Microsoft рекомендует выполнить обновление до последней версии из Nuget, последние исправления, повышение производительности и новые функции. [Дополнительные сведения о пакете SDK для .NET Cosmos DB](https://aka.ms/cosmosdb/sql-api-sdk-dotnet)
+
+## <a name="upgrade-your-azure-cosmos-db-java-sdk-to-the-latest-version-from-maven"></a>Обновление пакета SDK Java Azure Cosmos DB до последней версии из Maven
+
+Помощник по Azure определит учетные записи Azure Cosmos DB, использующих старые версии пакета SDK для Java, но Microsoft рекомендует выполнить обновление до последней версии из Maven последние исправления, повышение производительности и новые функции. [Дополнительные сведения о пакете SDK для Java Cosmos DB](https://aka.ms/cosmosdb/sql-api-sdk-dotnet)
+
+## <a name="upgrade-your-azure-cosmos-db-spark-connector-to-the-latest-version-from-maven"></a>Обновление соединителя Azure Cosmos DB Spark до последней версии из Maven
+
+Помощник по Azure определит учетные записи Azure Cosmos DB, использующих старые версии соединителя Spark для Cosmos DB, но Microsoft рекомендует выполнить обновление до последней версии из Maven последние исправления, повышение производительности и новые функции. [Дополнительные сведения о соединителе Spark для Cosmos DB](https://aka.ms/cosmosdb/spark-connector)
 
 ## <a name="how-to-access-high-availability-recommendations-in-advisor"></a>Как получить доступ к рекомендациям по высокой доступности в Advisor
 

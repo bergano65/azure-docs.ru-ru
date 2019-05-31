@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/01/2019
 ms.author: tomfitz
-ms.openlocfilehash: bbbaef306b9ed2bb415b29bc6d96dcfe649338f9
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: 95044373800441bdcc04bdb84e8485dce29f11e7
+ms.sourcegitcommit: 8e76be591034b618f5c11f4e66668f48c090ddfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65205945"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66357404"
 ---
 # <a name="using-linked-and-nested-templates-when-deploying-azure-resources"></a>Использование связанных и вложенных шаблонов при развертывании ресурсов Azure
 
@@ -91,7 +91,7 @@ ms.locfileid: "65205945"
 > [!NOTE]
 > При вложении шаблона вы не можете использовать параметры или переменные, определенные во вложенном шаблоне. Можно использовать параметры и переменные из основного шаблона. В приведенном выше примере `[variables('storageName')]` извлекает значение из основного, а не из вложенного шаблона. Это ограничение не распространяется на внешние шаблоны.
 >
-> Для двух ресурсов, определенных в шаблон вложенности и один ресурс зависит от другого, значение зависимость — это просто имя зависели ресурса:
+> Для двух ресурсов, определенных внутри вложенного шаблона и один ресурс зависит от другого, значение зависимость — это просто имя зависимого ресурса:
 > ```json
 > "dependsOn": [
 >   "[variables('storageAccountName')]"
@@ -554,7 +554,7 @@ az group deployment create --resource-group ExampleGroup --template-uri $url?$to
 
 В следующих примерах показаны наиболее частые способы использования связанных шаблонов.
 
-|Основной шаблон  |Связанный шаблон |ОПИСАНИЕ  |
+|Основной шаблон  |Связанный шаблон |Описание  |
 |---------|---------| ---------|
 |[Привет, мир!](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/helloworldparent.json) |[связанный шаблон](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/helloworld.json) | Возвращает строку из связанного шаблона. |
 |[Подсистема балансировки нагрузки с общедоступным IP-адресом](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/public-ip-parentloadbalancer.json) |[связанный шаблон](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/public-ip.json) |Возвращает общедоступный IP-адрес из связанного шаблона и задает это значение в подсистеме балансировки нагрузки. |

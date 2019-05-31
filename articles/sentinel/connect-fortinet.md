@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/07/2019
 ms.author: rkarlin
-ms.openlocfilehash: 72306132f88f211180c99cd30845781667605204
-ms.sourcegitcommit: d73c46af1465c7fd879b5a97ddc45c38ec3f5c0d
+ms.openlocfilehash: 4418b11de4da7c69dd13ae74d94be90daadcb1f6
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65921883"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66390541"
 ---
 # <a name="connect-your-fortinet-appliance"></a>Подключение устройства Fortinet 
 
@@ -133,7 +133,7 @@ ms.locfileid: "65921883"
 
 3. Убедитесь, что журналы отправки соответствуют [форматы RFC 5424](https://tools.ietf.org/html/rfc542).
 
-4. На компьютере с агентом системного журнала, убедитесь, что эти порты 514, 25226 открыт и осуществляет прослушивание с помощью команды `netstat -a -n:`. Дополнительные сведения об использовании этой команды см. в разделе [netstat(8) - странице руководства Linux](https://linux.die.netman/8/netstat). Если он ожидает должным образом, вы увидите следующее:
+4. На компьютере с агентом системного журнала, убедитесь, что эти порты 514, 25226 открыт и осуществляет прослушивание с помощью команды `netstat -a -n:`. Дополнительные сведения об использовании этой команды см. в разделе [netstat(8) - странице руководства Linux](https://linux.die.net/man/8/netstat). Если он ожидает должным образом, вы увидите следующее:
 
    ![Azure Sentinel порты](./media/connect-cef/ports.png) 
 

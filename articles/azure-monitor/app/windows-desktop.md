@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 05/15/2018
 ms.author: mbullwin
-ms.openlocfilehash: 95ff8d1a70325357fee4bc24fd96c1a1c7a73845
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 567163a5d5ce37eeffb5ef2bc6f9adb7c5b027ec
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60371484"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66255723"
 ---
 # <a name="monitoring-usage-and-performance-in-classic-windows-desktop-apps"></a>Мониторинг использования и производительности в классических приложениях для Windows
 
@@ -35,9 +35,9 @@ ms.locfileid: "60371484"
    
     `<InstrumentationKey>`*ваш ключ*`</InstrumentationKey>` 
    
-    Если используется файл ApplicationInsights.config, убедитесь, что его свойства в обозревателе решений имеют следующие значения: **"Действие сборки = содержимое", "Копировать в выходной каталог = копировать"**.
+    Если используется файл ApplicationInsights.config, убедитесь, что его свойства в обозревателе решений имеют следующие значения: **"Действие сборки = содержимое", "Копировать в выходной каталог = копировать"** .
 5. [Используйте API](../../azure-monitor/app/api-custom-events-metrics.md) для отправки данных телеметрии.
-6. Запустите приложение и понаблюдайте за телеметрией в ресурсе, созданном на портале Azure.
+6. Запустите приложение и просмотреть данные телеметрии в ресурс, который вы создали на портале Azure.
 
 ## <a name="telemetry"></a>Пример кода
 ```csharp
@@ -77,7 +77,7 @@ ms.locfileid: "60371484"
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
-* [Создание панели мониторинга](../../azure-monitor/app/app-insights-dashboards.md)
+* [Создание панели мониторинга](../../azure-monitor/app/overview-dashboard.md)
 * [Поиск по журналу диагностики](../../azure-monitor/app/diagnostic-search.md)
 * [Изучение метрик](../../azure-monitor/app/metrics-explorer.md)
 * [Написание запросов аналитики](../../azure-monitor/app/analytics.md)

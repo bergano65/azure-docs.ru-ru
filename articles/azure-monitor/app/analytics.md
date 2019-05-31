@@ -12,23 +12,20 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 02/02/2019
 ms.author: mbullwin
-ms.openlocfilehash: d75544a30a441b5178a1e9dd368f1ce41cd4d321
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: f5819194e7967b5921f34223cad299752460de30
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64574262"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66255641"
 ---
 # <a name="analytics-in-application-insights"></a>Аналитика в Application Insights
 Analytics — это мощный инструмент [Application Insights](app-insights-overview.md) для поиска и создания запросов. Analytics — это веб-инструмент, поэтому дополнительная настройка не требуется.
-Если вы уже настроили Application Insights для одного из приложений, вы можете проанализировать данные приложения, открыв Analytics в [колонке обзора](app-insights-dashboards.md) своего приложения.
+Если вы уже настроили Application Insights для одного из приложений можно анализировать данные вашего приложения, открыв Analytics из колонки "Обзор" вашего приложения.
 
 ![На сайте portal.azure.com откройте ресурс Application Insights и щелкните "Аналитика".](./media/analytics/001.png)
 
 Можно также использовать [площадку для Analytics](https://go.microsoft.com/fwlink/?linkid=859557) — бесплатную демонстрационную среду, содержащую множество примеров данных.
-<br>
-<br>
-> [!VIDEO https://channel9.msdn.com/events/Connect/2016/123/player] 
 
 ## <a name="relation-to-azure-monitor-logs"></a>Отношение к журналам Azure Monitor
 Аналитика Application Insights основана на [Azure Data Explorer](/azure/data-explorer), как и журналы Azure Monitor, а также использует [язык запросов Kusto](/azure/kusto/query). Она использует тот же [портал Log Analytics](../log-query/get-started-portal.md), что и журналы Azure Monitor, несмотря на то что ее данные хранятся в отдельном разделе.

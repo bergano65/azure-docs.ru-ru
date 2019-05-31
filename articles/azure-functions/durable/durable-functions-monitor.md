@@ -10,12 +10,12 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: azfuncdf
-ms.openlocfilehash: 243a388ee59a1a550f80882b0af61e1f1db008ca
-ms.sourcegitcommit: 59fd8dc19fab17e846db5b9e262a25e1530e96f3
+ms.openlocfilehash: 9d5e06c3d72d87a87b41a52ed4df369ebc04dccd
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65977443"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66387081"
 ---
 # <a name="monitor-scenario-in-durable-functions---weather-watcher-sample"></a>Сценарий монитора в устойчивых функциях — пример наблюдателя за погодой
 
@@ -42,7 +42,7 @@ ms.locfileid: "65977443"
 
 Этот пример включает в себя использование API Weather Underground для проверки текущих погодных условий для местоположения.
 
-Для начала потребуется учетная запись Weather Underground. Вы можете создать бесплатную учетную запись, перейдя по этому адресу [https://www.wunderground.com/signup](https://www.wunderground.com/signup). После этого нужно будет приобрести ключ API. Для этого откройте страницу [https://www.wunderground.com/weather/api](https://www.wunderground.com/weather/api), а затем выберите параметры ключа. Бесплатного плана Stratus Developer достаточно для запуска этого примера.
+Для начала потребуется учетная запись Weather Underground. Вы можете создать бесплатную учетную запись, перейдя по этому адресу [https://www.wunderground.com/signup](https://www.wunderground.com/signup). После этого нужно будет приобрести ключ API. Для этого откройте страницу [https://www.wunderground.com/weather/api](https://www.wunderground.com/weather/api/?MR=1), а затем выберите параметры ключа. Бесплатного плана Stratus Developer достаточно для запуска этого примера.
 
 Получив ключ API, добавьте следующие **параметры приложения** в приложение-функцию.
 

@@ -6,14 +6,14 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 12/28/2018
+ms.date: 05/29/2019
 ms.author: hrasheed
-ms.openlocfilehash: 9da9c6c438aac2c160a9ec7bc658e5d7b4ea207e
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: cf1a6ffa61b41af5abd20dac13b85024001d2ed2
+ms.sourcegitcommit: 51a7669c2d12609f54509dbd78a30eeb852009ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64715186"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66393996"
 ---
 # <a name="create-linux-based-clusters-in-hdinsight-by-using-the-azure-portal"></a>Создание кластеров под управлением Linux в HDInsight с помощью портала Azure
 [!INCLUDE [selector](../../includes/hdinsight-create-linux-cluster-selector.md)]
@@ -42,9 +42,9 @@ ms.locfileid: "64715186"
    
     ![Создание кластера на портале Azure](./media/hdinsight-hadoop-create-linux-clusters-portal/hdinsight-create-cluster.png "Creating a new cluster in the Azure portal")
 
-1. На странице **HDInsight** выберите параметр **Настраиваемое (размер, параметры, приложения)**.
+1. На странице **HDInsight** выберите параметр **Настраиваемое (размер, параметры, приложения)** .
 
-1. Выберите раздел **1, "Основные сведения"**. Введите следующие сведения:
+1. Выберите раздел **1, "Основные сведения"** . Введите следующие сведения:
 
     ![Настройка основных параметров](./media/hdinsight-hadoop-create-linux-clusters-portal/hdinsight-create-cluster-basics.png "Создание кластера на портале Azure")
 
@@ -80,7 +80,7 @@ ms.locfileid: "64715186"
 
      ![Настройка параметров хранения](./media/hdinsight-hadoop-create-linux-clusters-portal/hdinsight-create-cluster-storage.png "Создание кластера на портале Azure")
 
-     | Хранилище                                      | ОПИСАНИЕ |
+     | Хранилище                                      | Описание |
      |----------------------------------------------|-------------|
      | **Большие двоичные объекты службы хранилища Azure как хранилище по умолчанию**   | <ul><li>В разделе **Тип первичного хранилища** выберите **Служба хранилища Azure**. В разделе **Метод выбора** выберите вариант **Мои подписки**, если хотите указать учетную запись хранения, которая входит в вашу подписку Azure. Затем выберите свою учетную запись хранения. В противном случае щелкните **Ключ доступа**. Затем укажите сведения об учетной записи хранения, которая не входит в вашу подписку Azure.</li><li>В поле **Контейнер по умолчанию** выберите имя контейнера по умолчанию, предлагаемое порталом, или укажите собственное.</li><li>Если в качестве хранилища по умолчанию используется хранилище BLOB-объектов Azure, также щелкните **Дополнительные учетные записи хранения**, чтобы указать дополнительные учетные записи хранения, которые нужно связать с кластером. Для параметра **Ключи хранилища Azure** выберите **Добавить ключ хранилища**. Затем можно предоставить учетную запись хранения из подписок Azure или из других подписок. Укажите ключ доступа к учетной записи хранения.</li><li>Если в качестве хранилища по умолчанию используется хранилище BLOB-объектов, выберите **Data Lake Storage access** (Доступ к Data Lake Storage) и укажите в качестве дополнительного хранилища Azure Data Lake Storage. Дополнительные сведения см. в разделе [ по настройке кластеров в HDInsight](../storage/data-lake-storage/quickstart-create-connect-hdi-cluster.md).</li></ul> |
      | **Azure Data Lake Storage как хранилище по умолчанию** | Для параметра **Тип первичного хранилища** выберите **Azure Data Lake Storage 1-го поколения** или **Azure Data Lake Storage 2-го поколения**. Затем ознакомьтесь со статьей [Краткое руководство по настройке кластеров в HDInsight](../storage/data-lake-storage/quickstart-create-connect-hdi-cluster.md). |

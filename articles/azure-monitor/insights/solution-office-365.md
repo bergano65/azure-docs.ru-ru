@@ -10,18 +10,26 @@ ms.service: operations-management-suite
 ms.workload: tbd
 ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 01/24/2019
+ms.date: 05/29/2019
 ms.author: bwren
-ms.openlocfilehash: da9e322f74433df7066ec574db7a49123f96d76b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 4c7e1225a8da1e20bc90986d1530b781f7f2c11a
+ms.sourcegitcommit: 8e76be591034b618f5c11f4e66668f48c090ddfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66130590"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66357578"
 ---
 # <a name="office-365-management-solution-in-azure-preview"></a>Решение по управлению Office 365 в Azure (предварительная версия)
 
 ![Логотип Office 365](media/solution-office-365/icon.png)
+
+
+> [!NOTE]
+> Включение рекомендуемый метод для установки и настройки решения Office 365 [соединителя Office 365](../../sentinel/connect-office-365.md) в [Azure Sentinel](../../sentinel/overview.md) вместо, следуя инструкциям в этой статье. Это обновленная версия решения Office 365 с помощью средств улучшенной конфигурацией. Чтобы подключиться журналов Azure AD, используйте [соединитель Azure Sentinel Azure AD](../../sentinel/connect-azure-active-directory.md), который предоставляет более подробные данные журнала, чем журналы управления Office 365. 
+>
+> Когда вы [встроенного Sentinel Azure](../../sentinel/quickstart-onboard.md), укажите рабочую область Log Analytics, необходимо установить в решение Office 365. После включения соединителя решения будут доступны в рабочей области и использовать точно так же, как другие установленные мониторинга решения.
+>
+> Пользователи облака Azure для государственных организаций необходимо установить Office 365, используя шаги в этой статье, так как Azure Sentinel еще недоступна в облаке для государственных организаций.
 
 Решение по управлению Office 365 позволяет выполнять мониторинг среды Office 365 в Azure Monitor.
 
@@ -30,6 +38,7 @@ ms.locfileid: "66130590"
 - Выявлять и анализировать нежелательное поведение пользователей, которое можно настраивать, исходя из потребностей организации.
 - Выполнять аудит и проверку соответствия. Например, можно отслеживать операции доступа к файлам для конфиденциальных файлов, что поможет в процессе аудита и проверки соответствия.
 - Оперативно устраняйте неполадки с помощью [запросов журнала](../log-query/log-query-overview.md) на основе данных о действиях Office 365 в вашей организации.
+
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 

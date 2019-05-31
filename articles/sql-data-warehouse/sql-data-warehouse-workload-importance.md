@@ -1,5 +1,5 @@
 ---
-title: Важность рабочих нагрузок | Документация Майкрософт
+title: Azure важность рабочих нагрузок хранилища данных SQL | Документация Майкрософт
 description: Рекомендации по настройке важности для запросов в хранилище данных SQL Azure.
 services: sql-data-warehouse
 author: ronortloff
@@ -10,18 +10,18 @@ ms.subservice: workload management
 ms.date: 05/01/2019
 ms.author: rortloff
 ms.reviewer: jrasnick
-ms.openlocfilehash: 92990b68969e754ee126b6cd5a22ecfa700c0494
-ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
+ms.openlocfilehash: 0147977307ec22134777d6c3e8242a4191362ada
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66002889"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66233843"
 ---
-# <a name="sql-data-warehouse-workload-importance"></a>Важность рабочих нагрузок хранилища данных SQL
+# <a name="azure-sql-data-warehouse-workload-importance"></a>Azure важность рабочих нагрузок хранилища данных SQL
 
 В этой статье объясняется, как влияют на порядок выполнения для запросов хранилища данных SQL для рабочей нагрузки importance.
 
-## <a name="importance"></a>Важность
+## <a name="importance"></a>приоритет
 
 > [!Video https://www.youtube.com/embed/_2rLMljOjw8]
 
@@ -64,5 +64,5 @@ Q1, Q2, вопрос 3 и 4 квартал выполняются запросы
 - Дополнительные сведения о создании классификатора, см. в разделе [СОЗДАНИЯ КЛАССИФИКАТОРА рабочей НАГРУЗКИ (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-workload-classifier-transact-sql).  
 - Дополнительные сведения о классификации рабочей нагрузки хранилища данных SQL, см. в разделе [классификации рабочей нагрузки](sql-data-warehouse-workload-classification.md).  
 - Это краткое руководство см. в разделе [Создание рабочей нагрузки классификатора](quickstart-create-a-workload-classifier-tsql.md) по созданию классификатора рабочей нагрузки.
-- См. в разделе статьи с инструкциями по [Настройка рабочей нагрузки Importance](sql-data-warehouse-how-to-configure-workload-importance.md) и [мониторинг управления рабочими нагрузками и управление](sql-data-warehouse-how-to-manage-and-monitor-workload-importance.md).
+- См. статьи с инструкциями по [настройке уровня важности рабочих нагрузок](sql-data-warehouse-how-to-configure-workload-importance.md), а также по [администрированию и мониторингу рабочих нагрузок](sql-data-warehouse-how-to-manage-and-monitor-workload-importance.md).
 - Запросы и назначенную важность см. в разделе [sys.dm_pdw_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql).

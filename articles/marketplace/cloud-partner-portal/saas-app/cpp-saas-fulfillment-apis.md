@@ -7,14 +7,18 @@ ms.service: marketplace
 ms.topic: conceptual
 ms.date: 03/26/2019
 ms.author: pabutler
-ms.openlocfilehash: ec206c2d637f9fb2727d72cf17087050a765672c
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.openlocfilehash: e7a01af1eba865b0a088b0fa7226273527abd70e
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64941963"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66257404"
 ---
 # <a name="saas-fulfillment-apis"></a>API исполнения SaaS
+
+> [!IMPORTANT] 
+> SaaS предоставляют функциональность была перенесена [центра партнеров Майкрософт](https://partner.microsoft.com/dashboard/directory).  Все новые издатели необходимо использовать центр партнеров для создания новых предложений SaaS и управления существующие предложения.  Текущих издателей с предложениями SaaS batchwise переносятся из облачного портала для партнеров в центре партнеров.  На портале Cloud Partner отобразит сообщения о состоянии, чтобы указать, когда были перенесены определенные существующие предложения.
+> Дополнительные сведения см. в разделе [создайте новое предложение SaaS](../../partner-center-portal/create-new-saas-offer.md).
 
 API-интерфейсы выполнения SaaS включить независимых поставщиков программного обеспечения (ISV) интегрировать свои приложения SaaS с Azure Marketplace. Эти интерфейсы API позволяют приложениям независимых поставщиков программного обеспечения для участия в все каналы commerce включен: direct, осуществляемое партнерами (торгового посредника) и поле под руководством.  Они являются обязательными для получения списка могут быть частью транзакции SaaS предложения в Azure Marketplace.
 

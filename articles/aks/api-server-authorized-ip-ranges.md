@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 05/06/2019
 ms.author: iainfou
-ms.openlocfilehash: 1b983c534ab92218759175655bbf396788e4c39d
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.openlocfilehash: 5c27d47a918939d012abee3c2317eba39587d734
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65956495"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66243585"
 ---
 # <a name="preview---secure-access-to-the-api-server-using-authorized-ip-address-ranges-in-azure-kubernetes-service-aks"></a>Предварительная версия — безопасный доступ к серверу API с помощью авторизованных диапазоны IP-адресов в службе Azure Kubernetes (AKS)
 
@@ -21,9 +21,10 @@ ms.locfileid: "65956495"
 В этой статье показано, как использовать диапазоны IP-адресов API сервера авторизации для ограничения запросов для плоскости управления. Эта функция в настоящее время находится на стадии предварительной версии.
 
 > [!IMPORTANT]
-> Компоненты предварительной версии AKS, самообслуживания и согласиться. Предварительные версии предоставляются для сбора отзывов и ошибки нашего сообщества. Тем не менее они не поддерживаются в службе технической поддержки Azure. Если создать кластер, или добавить эти компоненты в имеющиеся кластеры, этого кластера не поддерживается, пока эта функция больше не находится в предварительной версии и этапах общедоступная (GA).
+> Функции предварительной версии AKS: самообслуживания, согласиться. Они предназначены для сбора отзывов и ошибки нашего сообщества. В предварительной версии эти функции не предназначены для использования в рабочей среде. Функции в общедоступной предварительной версии подпадают под поддержки «оптимальных затрат». Помощь от групп разработчиков AKS Техническая поддержка доступна во время рабочих часов тихоокеанского часового пояса (по тихоокеанскому времени) только. Дополнительные сведения обратитесь в следующие справочные статьи:
 >
-> При возникновении проблем с помощью функции предварительной версии, [сообщите о них в репозитории AKS GitHub] [ aks-github] именем функции предварительной версии в заголовке ошибки.
+> * [Политики поддержки AKS][aks-support-policies]
+> * [Часто задаваемые вопросы о поддержке Azure][aks-faq]
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
@@ -242,7 +243,6 @@ az aks update \
 Дополнительные сведения см. в разделе [концепции безопасности для приложений и кластеров в AKS] [ concepts-security] и [советы и рекомендации для обеспечения безопасности кластера и обновления в AKS] [ operator-best-practices-cluster-security].
 
 <!-- LINKS - external -->
-[aks-github]: https://github.com/azure/aks/issues]
 [azure-firewall-costs]: https://azure.microsoft.com/pricing/details/azure-firewall/
 
 <!-- LINKS - internal -->
@@ -265,3 +265,5 @@ az aks update \
 [az-network-firewall-ip-config-create]: /cli/azure/ext/azure-firewall/network/firewall/ip-config#ext-azure-firewall-az-network-firewall-ip-config-create
 [az-network-firewall-network-rule-create]: /cli/azure/ext/azure-firewall/network/firewall/network-rule#ext-azure-firewall-az-network-firewall-network-rule-create
 [az-network-route-table-route-create]: /cli/azure/network/route-table/route#az-network-route-table-route-create
+[aks-support-policies]: support-policies.md
+[aks-faq]: faq.md

@@ -12,16 +12,16 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 03/14/2019
 ms.author: mbullwin
-ms.openlocfilehash: 13379111706eaa816a8fa16cfe72711b7bf4d739
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: f2a30d5a040c2713f04173e83732cea5fa19af3b
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60576500"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66255285"
 ---
 # <a name="monitor-your-nodejs-services-and-apps-with-application-insights"></a>Мониторинг служб и приложений Node.js с помощью Application Insights
 
-[Azure Application Insights](../../azure-monitor/app/app-insights-overview.md) отслеживает развернутые службы и компоненты серверной части для [обнаружения и быстрой диагностики проблем производительности, а также других проблем](../../azure-monitor/app/detect-triage-diagnose.md). Вы можете использовать Application Insights для служб Node.js, размещенных в центре обработки данных, на виртуальных машинах Azure, в веб-приложениях и даже в сторонних общедоступных облаках.
+[Azure Application Insights](../../azure-monitor/app/app-insights-overview.md) отслеживает серверные службы и компоненты после развертывания, которые помогут обнаружить и быстрой диагностики проблем производительности и другие проблемы. Вы можете использовать Application Insights для служб Node.js, размещенных в центре обработки данных, на виртуальных машинах Azure, в веб-приложениях и даже в сторонних общедоступных облаках.
 
 Для получения, хранения и анализа данных мониторинга включите пакет SDK в ваш код, а затем настройте соответствующий ресурс Application Insights в Azure. Пакет SDK отправляет данные в этот ресурс для дальнейшего анализа и исследования.
 
@@ -202,7 +202,7 @@ server.on("listening", () => {
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-* [Навигация и панели мониторинга на портале Application Insights](../../azure-monitor/app/app-insights-dashboards.md)
+* [Навигация и панели мониторинга на портале Application Insights](../../azure-monitor/app/overview-dashboard.md)
 * [Знакомство с аналитикой в Application Insights](../../azure-monitor/log-query/get-started-portal.md)
 
 <!--references-->

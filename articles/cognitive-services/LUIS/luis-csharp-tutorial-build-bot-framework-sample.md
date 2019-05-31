@@ -9,18 +9,20 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 01/09/2019
+ms.date: 05/30/2019
 ms.author: diberry
-ms.openlocfilehash: f23cf78bfca48b3a78e234520d645abdb354038f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 9d8f3461e94f04e8e82658ede5e60d53350056c5
+ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60197464"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66399639"
 ---
 # <a name="luis-bot-in-c-with-the-bot-framework-3x-and-the-azure-web-app-bot"></a>Создание бота Интеллектуальной службы распознавания речи на C# с помощью Bot Framework 3.x и бота веб-приложения Azure
 
 Создавайте чат-боты, интегрированные со службой распознавания речи (LUIS), используя C#. Для быстрой реализации решений ботов этот чат-бот использует предварительно созданный домен HomeAutomation. Бот создается с помощью Bot Framework 3.x и бота веб-приложения Azure.
+
+Объект [Bot Framework 4.x с руководством LUIS](luis-csharp-tutorial-bf-v4.md) также доступна.
 
 ## <a name="prerequisite"></a>Предварительные требования
 
@@ -55,7 +57,7 @@ ms.locfileid: "60197464"
    * Выберите значение для поля **LUIS App Location** (Расположение приложения LUIS). Это [регион](luis-reference-regions.md) разработки, в котором создано приложение.
    * Установите флажок принятия юридического уведомления. Условия юридического уведомления приводятся под флажком.
 
-     ![Служба Bot Service](./media/luis-tutorial-cscharp-web-bot/bot-service-setting-callout-template.png)
+     ![Служба Azure Bot](./media/luis-tutorial-cscharp-web-bot/bot-service-setting-callout-template.png)
 
 
 5. Убедитесь, что служба Bot Service развернута.

@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.custom: seodec18
-ms.openlocfilehash: 3fcc1926d580007750e7e1f5a3de06ef6578e1b5
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.openlocfilehash: c0f8a56df5b41236256115ced0d46a87c5ee91a5
+ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65957453"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66400235"
 ---
 # <a name="configure-automated-ml-experiments-in-python"></a>Настройка автоматических эксперименты машинного Обучения на Python
 
@@ -42,7 +42,7 @@ ms.locfileid: "65957453"
 
 Эта служба также поддерживает приведенные ниже алгоритмы для автоматизации и настройки. Пользователю не нужно указывать алгоритм. Хотя алгоритмы DNN доступны во время обучения, автоматических машинного Обучения не выполняет сборку моделей DNN.
 
-Классификация | Регрессия | Прогнозирование временных рядов
+классификация; | Регрессия | Прогнозирование временных рядов
 |-- |-- |--
 [Логистическая регрессия](https://scikit-learn.org/stable/modules/linear_model.html#logistic-regression)| [Эластичная сеть](https://scikit-learn.org/stable/modules/linear_model.html#elastic-net)| [Эластичная сеть](https://scikit-learn.org/stable/modules/linear_model.html#elastic-net)
 [Упрощенный алгоритм GBM](https://lightgbm.readthedocs.io/en/latest/index.html)|[Упрощенный алгоритм GBM](https://lightgbm.readthedocs.io/en/latest/index.html)|[Упрощенный алгоритм GBM](https://lightgbm.readthedocs.io/en/latest/index.html)
@@ -59,6 +59,14 @@ ms.locfileid: "65957453"
 [Упрощенный алгоритм Байеса](https://scikit-learn.org/stable/modules/naive_bayes.html#bernoulli-naive-bayes)|
 [Стохастический градиентный спуск (SGD)](https://scikit-learn.org/stable/modules/sgd.html#sgd)|
 
+Используйте `task` параметр в `AutoMLConfig` конструктора для указания типа вашего эксперимента.
+
+```python
+from azureml.train.automl import AutoMLConfig
+
+# task can be one of classification, regression, forecasting
+automl_config = AutoMLConfig(task="classification")
+```
 
 ## <a name="data-source-and-format"></a>Источник данных и формат
 Автоматическое машинное обучение поддерживает данные, находящиеся на локальном компьютере или в облаке в хранилище BLOB-объектов Azure. Данные можно считать в поддерживаемых форматах данных scikit-learn. Можно считывать данные в:
@@ -121,7 +129,7 @@ automl_config = AutoMLConfig(****, data_script=project_folder + "/get_data.py", 
 ---|---|---|---
 X | Кадр данных Pandas или массив Numpy | data_train, метка, столбцы |  Все признаки для обучения
 y | Кадр данных Pandas или массив Numpy |   label   | Данные метки для обучения. Для классификации это должен быть массив целых чисел
-X_valid | Кадр данных Pandas или массив Numpy   | data_train, метка | _Необязательно._ Все признаки для проверки. Если не указано, X разделяется на экземпляры для обучения и проверки
+X_valid | Кадр данных Pandas или массив Numpy   | data_train, метка | _Необязательный_ признаков. данные, относящиеся к формирующему набора для проверки. Если не указано, X разделяется на экземпляры для обучения и проверки
 y_valid |   Кадр данных Pandas или массив Numpy | data_train, метка | _Необязательно._ Данные метки для проверки. Если не указано, y разделяется на экземпляры для обучения и проверки
 sample_weight | Кадр данных Pandas или массив Numpy |   data_train, метка, столбцы| _Необязательно._ Значение веса для каждой выборки. Используйте, если необходимо назначить разный вес для точек данных
 sample_weight_valid | Кадр данных Pandas или массив Numpy | data_train, метка, столбцы |    _Необязательно._ Значение веса для каждой выборки для проверки. Если не указано, sample_weight разделяется на экземпляры для обучения и проверки
@@ -129,30 +137,6 @@ data_train |    Кадр данных Pandas |  X, y, X_valid, y_valid |    Вс
 label | string  | X, y, X_valid, y_valid |  Какой столбец в data_train представляет метку
 columns | Массив строк  ||  _Необязательно._ Список разрешений столбцов для использования с признаками
 cv_splits_indices   | массив целых чисел ||  _Необязательно._ Список индексов для разделения данных для перекрестной проверки
-
-### <a name="load-and-prepare-data-using-data-prep-sdk"></a>Загрузка и Подготовка данных с помощью подготовки данных в пакет SDK
-Автоматические экспериментов машинного обучения поддерживает загрузку данных и преобразования, с помощью пакета SDK для подготовки данных. Этот пакет SDK предоставляет следующие возможности:
-
->* загрузка из файлов многих типов с автоматическим обнаружением параметров для синтаксического анализа (кодировка, разделитель, заголовки);
->* преобразование типов на основе зависимостей во время загрузки файла;
->* поддержка подключений к MS SQL Server и хранилищу Azure Data Lake.
->* Добавление столбца с помощью выражения
->* Добавление отсутствующих значений
->* Получение столбцов по образцу
->* Фильтрация
->* Пользовательские преобразования Python
-
-Дополнительные сведения о пакете SDK для подготовки данных см. в статье [Как подготовить данные для моделирования](how-to-load-data.md).
-Ниже приведен пример загрузки данных с помощью пакета SDK для подготовки данных.
-```python
-# The data referenced here was pulled from `sklearn.datasets.load_digits()`.
-simple_example_data_root = 'https://dprepdata.blob.core.windows.net/automl-notebook-data/'
-X = dprep.auto_read_file(simple_example_data_root + 'X.csv').skip(1)  # Remove the header row.
-# You can use `auto_read_file` which intelligently figures out delimiters and datatypes of a file.
-
-# Here we read a comma delimited file and convert all columns to integers.
-y = dprep.read_csv(simple_example_data_root + 'y.csv').to_long(dprep.ColumnSelector(term='.*', use_regex = True))
-```
 
 ## <a name="train-and-validation-data"></a>Обучение и проверка данных
 
@@ -222,7 +206,7 @@ y = dprep.read_csv(simple_example_data_root + 'y.csv').to_long(dprep.ColumnSelec
 ### <a name="primary-metric"></a>Основная метрика
 Основной показатель; как показано в приведенных выше примерах, определяет метрику для использования во время обучения модели для оптимизации. Основным показателем, который можно выбрать определяется тип задачи, который выбран. Ниже приведен список доступных метрик.
 
-|Классификация | Регрессия | Прогнозирование временных рядов
+|классификация; | Регрессия | Прогнозирование временных рядов
 |-- |-- |--
 |accuracy| spearman_correlation; | spearman_correlation;
 |AUC_weighted | normalized_root_mean_squared_error; | normalized_root_mean_squared_error;
@@ -501,6 +485,8 @@ from azureml.widgets import RunDetails
 RunDetails(local_run).show()
 ```
 ![Диаграмма важности признаков](./media/how-to-configure-auto-train/feature-importance.png)
+
+Дополнительные сведения о как можно включить объяснения модели и показатели важности компонентов в других частях пакета SDK за пределами автоматических машинного обучения, см. в разделе [концепция](machine-learning-interpretability-explainability.md) статьи на interpretability.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.topic: conceptual
 ms.date: 04/01/2019
 ms.author: pabutler
-ms.openlocfilehash: da594ca5793bbf61f393fb1380309403fd808cef
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.openlocfilehash: 8c32043d9bf3ca68563ae01d415bdc0e1f6993f7
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64942216"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66258134"
 ---
 # <a name="prerequisites-for-managing-accounts-on-the-cloud-partner-portal"></a>Необходимые условия для управления учетными записями на облачном портале для партнеров 
 
@@ -23,12 +23,13 @@ ms.locfileid: "64942216"
 
 Внимательно просмотрите ваши права и обязанности в группе [соглашение об использовании служб Майкрософт](https://www.microsoft.com/servicesagreement) и [условия использования Майкрософт](https://www.microsoft.com/legal/intellectualproperty/copyright) перед созданием учетной записи.  
 
-Тщательно выбирайте имя вашей учетной записи.  Он представляет вашей организации, поэтому не должны содержать слов авторским правом или Соревнующиеся за ресурсы.  Например Корпорация Майкрософт запрещает использование авторским правом условия, такие как «Azure» и «Microsoft», в именах учетных записей.  Дополнительные сведения см. в разделе [рекомендации по Azure Marketplace](../../guidelines.md)
+Тщательно выбирайте имя вашей учетной записи.  Он представляет вашей организации, поэтому не должны содержать слов авторским правом или Соревнующиеся за ресурсы.  Например Корпорация Майкрософт запрещает использование авторским правом условия, такие как «Azure» и «Microsoft», в именах учетных записей.  Дополнительные сведения см. в разделе [рекомендации по Azure Marketplace](https://docs.microsoft.com/azure/marketplace/guidelines)
 
 
 ## <a name="registration-steps"></a>Действия для регистрации
 
-В следующей таблице перечислены действия, необходимые для полностью зарегистрироваться как издатель облака Microsoft.  Полные инструкции см. в разделе [стать издателем Cloud Marketplace](../../become-publisher.md). 
+В следующей таблице перечислены действия, необходимые для полностью зарегистрироваться как издатель облака Microsoft.  Полные инструкции см. в разделе [стать издателем Cloud Marketplace](https://docs.microsoft.com/azure/marketplace/become-publisher
+). 
 
 
 |                   Шаг                   |  Итоговый регистрации или ресурс                     |

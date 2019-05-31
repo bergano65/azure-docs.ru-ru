@@ -8,12 +8,12 @@ manager: barbkess
 ms.date: 01/02/2019
 ms.service: key-vault
 ms.topic: conceptual
-ms.openlocfilehash: d003e851dcfa77b18a67450946a71e4a13ce495c
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 00274f8e15006f6f58a7c5f153bf0bbc0d26afb9
+ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64700973"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66416437"
 ---
 # <a name="virtual-network-service-endpoints-for-azure-key-vault"></a>Конечные точки служб для виртуальной сети для Azure Key Vault
 
@@ -53,7 +53,7 @@ ms.locfileid: "64700973"
 > Следует учитывать следующие ограничения конфигурации:
 > * Допускается не более 127 правил виртуальной сети и 127 правил IPv4. 
 > * Не поддерживаются малые диапазоны адресов с префиксом /31 или /32. Такие диапазоны следует настраивать в отдельных правилах для IP-адресов.
-> * Правила IP-сети можно применять только в общедоступных IP-адресах. Диапазоны IP-адресов, зарезервированные для частных сетей (как определено в документе RFC 1918), запрещено использовать в правилах IP. Частные сети включают адреса, начинающиеся с **10.**, **172.16-31**, и **192.168.**. 
+> * Правила IP-сети можно применять только в общедоступных IP-адресах. Диапазоны IP-адресов, зарезервированные для частных сетей (как определено в документе RFC 1918), запрещено использовать в правилах IP. Частные сети включают адреса, начинающиеся с **10.** , **172.16-31**, и **192.168.** . 
 > * Сейчас поддерживаются только IPV4-адреса.
 
 ## <a name="trusted-services"></a>Доверенные службы
@@ -68,7 +68,7 @@ ms.locfileid: "64700973"
 |Служба архивации Azure|Разрешение резервного копирования и восстановления соответствующих ключей и секретов во время резервного копирования виртуальной машины Azure с помощью службы [Azure Backup](../backup/backup-introduction-to-azure-backup.md).|
 |Exchange Online и SharePoint Online|Разрешение доступа к ключу клиента для функции шифрования службы хранилища Azure с использованием [ключа пользователя](https://support.office.com/article/Controlling-your-data-in-Office-365-using-Customer-Key-f2cd475a-e592-46cf-80a3-1bfb0fa17697).|
 |Azure Information Protection|Разрешение доступа к ключу клиента для [Azure Information Protection.](https://docs.microsoft.com/azure/information-protection/what-is-information-protection)|
-|Служба приложений Azure|[Развертывание сертификата веб-приложения Azure через Key Vault](https://blogs.msdn.microsoft.com/appserviceteam/2016/05/24/deploying-azure-web-app-certificate-through-key-vault/)|
+|Служба приложений Azure|[Развертывание сертификата веб-приложения Azure через Key Vault](https://azure.github.io/AppService/2016/05/24/Deploying-Azure-Web-App-Certificate-through-Key-Vault.html)|
 |Базы данных SQL Azure|[Прозрачное шифрование данных с поддержкой использования собственных ключей для Базы данных SQL Azure и Хранилища данных SQL Azure](../sql-database/transparent-data-encryption-byok-azure-sql.md?view=sql-server-2017&viewFallbackFrom=azuresqldb-current)|
 |Хранилище Azure|[Шифрование службы хранилища с помощью управляемых пользователем ключей в Azure Key Vault](../storage/common/storage-service-encryption-customer-managed-keys.md).|
 |Хранилище озера данных Azure|[Шифрование данных в Azure Data Lake Storage](../data-lake-store/data-lake-store-encryption.md) с помощью управляемого пользователем ключа.|

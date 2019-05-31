@@ -12,12 +12,12 @@ ms.date: 05/03/2019
 ms.author: mimart
 ms.reviewer: arvindh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 41dde1579fc98db37ab7d92ce362d0a4ce9a82cf
-ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
+ms.openlocfilehash: 23e5fc24e426c87bbc5062183f2ee2db0e546484
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65824559"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66388214"
 ---
 # <a name="end-user-experiences-for-applications-in-azure-active-directory"></a>Возможности для взаимодействия пользователя с приложениями в Azure Active Directory
 Azure Active Directory (Azure AD) предоставляет несколько настраиваемых способов развертывания приложений для пользователей в организации:
@@ -48,7 +48,7 @@ Azure Active Directory (Azure AD) предоставляет несколько 
 ## <a name="direct-sign-on-to-federated-apps"></a>Прямой вход в федеративные приложения
 Большинство федеративных приложений, поддерживающих SAML 2.0, WS-Federation или OpenID Connect, также дают пользователям возможность запустить приложение, а затем выполнить вход через Azure AD с помощью автоматического перенаправления или ссылки для входа. Это называется входом, инициируемым поставщиком услуг. Большинство федеративных приложений в коллекции приложений Azure AD поддерживает его (дополнительные сведения приведены в документах, доступных по ссылкам в мастере настройки единого входа в приложении на портале Azure).
 
-![](./media/end-user-experiences/workdaymobile.png)
+![Пример того, страница входа мобильное приложение](./media/end-user-experiences/workdaymobile.png)
 
 ## <a name="direct-sign-on-links"></a>Ссылки для прямого входа
 Azure AD также поддерживает ссылки для прямого единого входа в отдельные приложения, которые поддерживают единый вход на основе пароля, связанный единый вход или любой вид федеративного единого входа.

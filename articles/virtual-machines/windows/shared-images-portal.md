@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 05/06/2019
 ms.author: cynthn
 ms.custom: ''
-ms.openlocfilehash: d46c545db9e1950988b49cdb577d074b6d04380c
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: f63b705f7967eeddaf522941d6db9be5d9f2719d
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65236594"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66244987"
 ---
 # <a name="create-a-shared-image-gallery-using-the-azure-portal"></a>Создание общего образа коллекции с помощью портала Azure
 
@@ -67,6 +67,7 @@ ms.locfileid: "65236594"
 1. Если вы хотите разрешить удаленный доступ к виртуальной Машине, в разделе **общедоступных входящих портов**, выберите **разрешить выбранные порты** , а затем выберите **RDP (3389)** из раскрывающегося списка. Если вы не хотите разрешить удаленный доступ к виртуальной Машине, оставьте **None** выбранного для **общедоступных входящих портов**.
 1. Когда вы закончите настройку, выберите **проверки + создать** расположенную в нижней части страницы.
 1. Когда виртуальная машина проходит проверку, выберите **создать** в нижней части страницы, чтобы начать развертывание.
+
 
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов

@@ -11,12 +11,12 @@ ms.subservice: bing-web-search
 ms.topic: reference
 ms.date: 02/12/2019
 ms.author: scottwhi
-ms.openlocfilehash: 8e5876c9141a3eb85593b12f45b0bde4c7984adf
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: e3d78a1b7488e7489b02e34e9733a5d741213855
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61431146"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66384887"
 ---
 # <a name="upgrade-from-bing-web-search-api-v5-to-v7"></a>Обновление API Bing для поиска в Интернете с версии 5 до версии 7
 
@@ -39,7 +39,7 @@ ms.locfileid: "61431146"
 
 - Коды ошибок версии 5 заменены следующими возможными значениями `code` и `subCode`.
 
-|Код|SubCode (дополнительный код)|ОПИСАНИЕ
+|Код|SubCode (дополнительный код)|Описание
 |-|-|-
 |ServerError|UnexpectedError<br/>ResourceError<br/>NotImplemented|Bing возвращает ошибку ServerError при соблюдении любого из условий вложенного кода. Ответ будет включать в себя ошибки, если код состояния HTTP — 500.
 |InvalidRequest|ParameterMissing<br/>ParameterInvalidValue<br/>HttpNotAllowed<br/>Заблокировано|Bing возвращает ошибку InvalidRequest (недопустимый запрос) всякий раз, когда любая часть запроса недопустима. Например, отсутствует обязательный параметр или значение параметра недопустимо.<br/><br/>В случае ошибки ParameterMissing (отсутствующий параметр) или ParameterInvalidValue (недопустимое значение параметра) кодом состояния HTTP будет 400.<br/><br/>При ошибке HttpNotAllowed (HTTP запрещен) будет наблюдаться код состояния HTTP 410.
@@ -75,14 +75,14 @@ InsufficientScope|InsufficientAuthorization
 
 ### <a name="headers"></a>Заголовки
 
-- Добавлен необязательный заголовок запроса [Pragma](https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference#pragma). По умолчанию Bing возвращает кэшированное содержимое, если оно доступно. Чтобы Bing не возвращал кэшированное содержимое, установите для заголовка Pragma значение no-cache (например, Pragma: no-cache).
+- Добавлен необязательный заголовок запроса [Pragma](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#pragma). По умолчанию Bing возвращает кэшированное содержимое, если оно доступно. Чтобы Bing не возвращал кэшированное содержимое, установите для заголовка Pragma значение no-cache (например, Pragma: no-cache).
 
 ### <a name="query-parameters"></a>Параметры запроса
 
-- Добавлен параметр запроса [answerCount](https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference#answercount). С помощью этого параметра можно указать число ответов, которое должен включать ответ. Ответы выбираются на основе ранжирования. Например, если задать этот параметр равным трем (3), ответ будет включать три ответа с самым высоким приоритетом.  
+- Добавлен параметр запроса [answerCount](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#answercount). С помощью этого параметра можно указать число ответов, которое должен включать ответ. Ответы выбираются на основе ранжирования. Например, если задать этот параметр равным трем (3), ответ будет включать три ответа с самым высоким приоритетом.  
 
-- Добавлен параметр запроса [promote](https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference#promote). Используя этот параметр вместе с `answerCount`, можно явно включить один или несколько типов ответов независимо от их ранга. Например, для включения в ответ видео и изображений следует задать для параметра promote значение *videos,images*. Список ответов, который требуется включить, не учитывается в предельном количестве `answerCount`. Например, если для `answerCount` задано значение 2, а для `promote` установлено значение *videos,images*, в ответ могут быть включены веб-страницы, новости, видео и изображения.
+- Добавлен параметр запроса [promote](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#promote). Используя этот параметр вместе с `answerCount`, можно явно включить один или несколько типов ответов независимо от их ранга. Например, для включения в ответ видео и изображений следует задать для параметра promote значение *videos,images*. Список ответов, который требуется включить, не учитывается в предельном количестве `answerCount`. Например, если для `answerCount` задано значение 2, а для `promote` установлено значение *videos,images*, в ответ могут быть включены веб-страницы, новости, видео и изображения.
 
 ### <a name="object-changes"></a>Изменения объектов
 
-- Поле `someResultsRemoved` добавлено в объект [WebAnswer](https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference#webanswer). Поле содержит логическое значение, которое указывает, были ли исключены из ответа некоторые результаты ответа при поиске в Интернете.  
+- Поле `someResultsRemoved` добавлено в объект [WebAnswer](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#webanswer). Поле содержит логическое значение, которое указывает, были ли исключены из ответа некоторые результаты ответа при поиске в Интернете.  

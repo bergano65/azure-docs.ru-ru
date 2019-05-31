@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.topic: conceptual
 ms.date: 04/01/2019
 ms.author: pabutler
-ms.openlocfilehash: d35e221790c2f94caf582859f78389ecca987709
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.openlocfilehash: 58451dd225a4f0625a6922bde672a6928ea50943
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64942199"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66257488"
 ---
 # <a name="cloud-partner-portal-management"></a>Управление облаком портал для партнеров
 
@@ -24,7 +24,7 @@ ms.locfileid: "64942199"
 Прежде чем использовать облачный портал для партнеров, следует ознакомиться со следующими статьями:
 
 - [Azure Marketplace политики и условия](../../policies-terms.md) перечислены различные юридических и технических требований и правил, которые применяются к пользователям и издателям [Azure Marketplace](https://azuremarketplace.microsoft.com) и [AppSource](https://appsource.microsoft.com).
-- [Как стать издателем Cloud Marketplace](../../become-publisher.md) Обзор все действия, необходимые для станут официальной Microsoft publisher облака.
+- [Как стать издателем Cloud Marketplace](https://docs.microsoft.com/azure/marketplace/become-publisher) Обзор все действия, необходимые для станут официальной Microsoft publisher облака.
 
 
 ## <a name="account-creation-and-management"></a>Создание учетной записи и управление ими

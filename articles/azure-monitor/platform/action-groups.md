@@ -5,15 +5,15 @@ author: dkamstra
 services: azure-monitor
 ms.service: azure-monitor
 ms.topic: conceptual
-ms.date: 5/10/2019
+ms.date: 5/30/2019
 ms.author: dukek
 ms.subservice: alerts
-ms.openlocfilehash: fba5119feb1ff7a0170a573371e479caa5fc33eb
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.openlocfilehash: f4f10191ea28f73732f81eb9dc25321f82683652
+ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65544486"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66416958"
 ---
 # <a name="create-and-manage-action-groups-in-the-azure-portal"></a>Создание групп действий и управление ими на портале Azure
 ## <a name="overview"></a>Обзор ##
@@ -35,9 +35,9 @@ ms.locfileid: "65544486"
 1. На [портале](https://portal.azure.com) выберите **Монитор**. **Монитор** области объединяет всех параметров мониторинга и данных в одном представлении.
 
     ![Служба "Монитор"](./media/action-groups/home-monitor.png)
-1. Выберите **Оповещения**, а затем **Управлять группами действий**.
+1. Выберите **оповещения** выберите **Управление действиями**.
 
-    ![Кнопка "Управлять группами действий"](./media/action-groups/manage-action-groups.png)
+    ![Управление кнопкой "действия"](./media/action-groups/manage-action-groups.png)
 1. Выберите **Add action group** (Добавить группу действий) и заполните поля.
 
     ![Команда Add action group (Добавить группу действий)](./media/action-groups/add-action-group.png)
@@ -102,6 +102,8 @@ ms.locfileid: "65544486"
  - 13.106.57.196
  - 52.244.68.117
  - 52.244.65.137
+ - 52.183.31.0
+ - 52.184.145.166
  - 51.4.138.199
  - 51.5.148.86
  - 51.5.149.19

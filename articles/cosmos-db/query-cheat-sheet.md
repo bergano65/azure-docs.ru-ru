@@ -1,17 +1,17 @@
 ---
 title: Памятка по запросам Azure Cosmos DB (в формате PDF)
 description: Распечатываемая памятка в формате PDF, которая помогает использовать Azure Cosmos DB, MongoDB, API Graph и API таблицы для запроса данных
-author: rockboyfor
+author: SnehaGunda
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 03/18/2019
-ms.author: v-yeche
-ms.openlocfilehash: 848b5a75e4e957b2ad61072ff2e229cacdba2019
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 05/28/2019
+ms.author: sngun
+ms.openlocfilehash: 51660fb416aa9850381f515a3a31cc57519094b0
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60928220"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66256978"
 ---
 # <a name="azure-cosmos-db-query-cheat-sheets"></a>Памятка по запросам Azure Cosmos DB
 

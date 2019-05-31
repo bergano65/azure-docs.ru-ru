@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: troubleshooting
 ms.date: 12/20/2018
 ms.author: genli
-ms.openlocfilehash: b121996530ea0618fc757f1ae12dfafde10ed7bb
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
-ms.translationtype: HT
+ms.openlocfilehash: 6557649eb1b97ad4d88876906737f8249e18b958
+ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55979383"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66399801"
 ---
 # <a name="windows-activation-fails-in-forced-tunneling-scenario"></a>Активация Windows завершается ошибкой в случае принудительного туннелирования
 
@@ -51,7 +51,7 @@ IP-адрес сервера управления ключами для глоб
 
 ### <a name="for-resource-manager-vms"></a>Виртуальные машины Resource Manager
 
-[!INCLUDE [updated-for-az-vm.md](../../../includes/updated-for-az-vm.md)]
+[!INCLUDE [updated-for-az.md](../../../includes/updated-for-az.md)]
 
 1. Откройте Azure PowerShell и [войдите в свою подписку Azure](https://docs.microsoft.com/powershell/azure/authenticate-azureps).
 2. Выполните следующие команды:
@@ -68,6 +68,12 @@ IP-адрес сервера управления ключами для глоб
     Add-AzRouteConfig -Name "DirectRouteToKMS" -AddressPrefix 23.102.135.246/32 -NextHopType Internet -RouteTable $RouteTable
 
     Set-AzRouteTable -RouteTable $RouteTable
+
+    # Next, attach the route table to the subnet that hosts the VMs
+
+    Set-AzVirtualNetworkSubnetConfig -Name "Subnet01" -VirtualNetwork $vnet -AddressPrefix "10.0.0.0/24" -RouteTable $RouteTable
+
+    Set-AzVirtualNetwork -VirtualNetwork $vnet
     ```
 3. Перейдите на виртуальную машину, на которой возникла проблема с активацией. Используйте команду [PsPing](https://docs.microsoft.com/sysinternals/downloads/psping), чтобы проверить возможность доступа к серверу управления ключами.
 
@@ -101,7 +107,7 @@ IP-адрес сервера управления ключами для глоб
 
 4. Попробуйте активировать Windows, чтобы увидеть, устранена ли проблема.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - [Ключи установки клиента сервера управления ключами](https://docs.microsoft.com/windows-server/get-started/kmsclientkeys
 )

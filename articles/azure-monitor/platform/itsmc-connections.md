@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 05/24/2018
 ms.author: v-jysur
-ms.openlocfilehash: 0ff73e342a668fef6d405783c130cf216f8003b4
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: ffd9c4bfc934faff1664ff39c0e979a9d6c09487
+ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60395652"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66399783"
 ---
 # <a name="connect-itsm-productsservices-with-it-service-management-connector"></a>Подключение продуктов и служб ITSM с помощью соединителя управления ИТ-службами
 В этой статье описывается, как настроить в Log Analytics связь между продуктами или службами ITSM и соединителем управления ИТ-службами (ITSM), чтобы централизованно управлять рабочими элементами ITSM. Дополнительные сведения об ITSMC см. в [этом обзоре](../../azure-monitor/platform/itsmc-overview.md).
@@ -72,8 +72,8 @@ ms.locfileid: "60395652"
 | **URL-адрес сервера**   | Введите URL-адрес веб-приложения Service Manager. Дополнительные сведения о веб-приложении Service Manager см. [здесь](#create-and-deploy-service-manager-web-app-service).
 | **Идентификатор клиента**   | Введите созданный вами идентификатор клиента (с помощью автоматического сценария) для выполнения проверки подлинности веб-приложения. Дополнительные сведения об автоматическом сценарии см. [здесь](../../azure-monitor/platform/itsmc-service-manager-script.md).|
 | **Секрет клиента**   | Введите секрет клиента, созданный для этого идентификатора.   |
-| **Область синхронизации данных**   | Выберите рабочие элементы Service Manager, которые вы хотите синхронизировать через ITSMC.  Эти рабочие элементы импортируются в службу Log Analytics. **Параметры:**  инциденты, запросы на изменения.|
-| **Синхронизация данных** | Введите число прошедших дней, которые будут учитываться при синхронизации. **Максимальное ограничение:** 120 дней. |
+| **Синхронизация данных**   | Выберите рабочие элементы Service Manager, которые вы хотите синхронизировать через ITSMC.  Эти рабочие элементы импортируются в службу Log Analytics. **Параметры:**  инциденты, запросы на изменения.|
+| **Область синхронизации данных** | Введите число прошедших дней, которые будут учитываться при синхронизации. **Максимальное ограничение:** 120 дней. |
 | **Создание нового элемента конфигурации в решении ITSM** | Выберите этот параметр, если вы хотите создать элементы конфигурации в продукте ITSM. После выбора этого параметра Log Analytics создаст зависимые элементы как элементы конфигурации (в случае, если эти элементы еще не созданы) в поддерживаемой системе ITSM. **Параметр по умолчанию**: отключено. |
 
 ![Подключение к Service Manager](media/itsmc-connections/service-manager-connection.png)
@@ -185,11 +185,12 @@ ms.locfileid: "60395652"
 ### <a name="prerequisites"></a>Технические условия
 Выполните указанные ниже предварительные требования.
 - ITSMC установлен. Дополнительные сведения: [Adding the IT Service Management Connector Solution](../../azure-monitor/platform/itsmc-overview.md#adding-the-it-service-management-connector-solution) (Добавление решения "Соединитель управления ИТ-услугами").
-- Установлена поддерживаемая версия ServiceNow: Лондон, Kingston, Jakarta, Istanbul, Helsinki, Geneva.
+- Установлена поддерживаемая версия ServiceNow: Мадрид, Лондон, Kingston, Jakarta, Istanbul, Helsinki, Geneva.
 
 **Администраторы ServiceNow должны выполнить в экземплярах ServiceNow следующие действия:**
 - Создать идентификатор и секрет клиента для продукта ServiceNow. Дополнительные сведения о том, как создать идентификатор и секрет клиента, см. в соответствующих разделах:
 
+    - [Настройка OAuth для Мадрид](https://docs.servicenow.com/bundle/madrid-platform-administration/page/administer/security/task/t_SettingUpOAuth.html)
     - [Настройка OAuth для Лондон](https://docs.servicenow.com/bundle/london-platform-administration/page/administer/security/task/t_SettingUpOAuth.html)
     - [Настройка OAuth для версии Kingston](https://docs.servicenow.com/bundle/kingston-platform-administration/page/administer/security/task/t_SettingUpOAuth.html)
     - [Настройка OAuth для версии Jakarta](https://docs.servicenow.com/bundle/jakarta-platform-administration/page/administer/security/task/t_SettingUpOAuth.html)

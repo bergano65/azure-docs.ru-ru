@@ -13,12 +13,12 @@ ms.date: 08/03/2018
 ms.author: lizross
 ms.reviewer: jairoc
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dfd38e775ba418fbe31cafa8df5f37b45c3b0643
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 62faa47c116cceb941f575a9f76052e8bc57f036
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60474539"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66243272"
 ---
 # <a name="join-your-work-device-to-your-organizations-network"></a>Присоединения рабочего устройства к сети организации
 Присоедините свое рабочее устройство Windows 10 к сети вашей организации, чтобы вы могли получать доступ к потенциально ограниченным ресурсам.
@@ -116,3 +116,4 @@ ms.locfileid: "60474539"
 
 - Если ваша организация хочет, чтобы вы зарегистрировали личное устройство, например, ваш телефон, перейдите к статье [Регистрация персонального устройства в сети организации](user-help-register-device-on-network.md).
 
+- Если ваша организация управляется с помощью Microsoft Intune, и у вас есть вопросы о регистрации, входа в систему или других связанных с Intune проблемы, см. в разделе [содержимое справки для пользователя Intune](https://docs.microsoft.com/intune-user-help/use-managed-devices-to-get-work-done).

@@ -2,17 +2,17 @@
 title: Ограничения для пулов узлов Windows Server в службе Azure Kubernetes (AKS)
 description: Дополнительные сведения об известных ограничениях при выполнении пулы узлов Windows Server и рабочих нагрузок приложений в службе Azure Kubernetes (AKS)
 services: container-service
-author: iainfoulds
+author: tylermsft
 ms.service: container-service
 ms.topic: article
 ms.date: 05/06/2019
-ms.author: iainfou
-ms.openlocfilehash: 3d249271995d96307722dadf6b3e012e63565e6a
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.author: twhitney
+ms.openlocfilehash: 34ece6e49332f781f688a8741db3514faf8c9a25
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65956279"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66304399"
 ---
 # <a name="current-limitations-for-windows-server-node-pools-and-application-workloads-in-azure-kubernetes-service-aks"></a>Текущие ограничения для пулов узлов Windows Server и рабочих нагрузок приложений в службе Azure Kubernetes (AKS)
 
@@ -21,9 +21,10 @@ ms.locfileid: "65956279"
 В этой статье приведены некоторые ограничения и основные понятия операционной системы для узлов Windows Server в AKS. Пулы узлов Windows Server в настоящее время доступны в предварительной версии.
 
 > [!IMPORTANT]
-> Компоненты предварительной версии AKS, самообслуживания и согласиться. Предварительные версии предоставляются для сбора отзывов и ошибки нашего сообщества. Тем не менее они не поддерживаются в службе технической поддержки Azure. Если создать кластер, или добавить эти компоненты в имеющиеся кластеры, этого кластера не поддерживается, пока эта функция больше не находится в предварительной версии и этапах общедоступная (GA).
+> Функции предварительной версии AKS: самообслуживания, согласиться. Они предназначены для сбора отзывов и ошибки нашего сообщества. В предварительной версии эти функции не предназначены для использования в рабочей среде. Функции в общедоступной предварительной версии подпадают под поддержки «оптимальных затрат». Помощь от групп разработчиков AKS Техническая поддержка доступна во время рабочих часов тихоокеанского часового пояса (по тихоокеанскому времени) только. Дополнительные сведения обратитесь в следующие справочные статьи:
 >
-> При возникновении проблем с помощью функции предварительной версии, [сообщите о них в репозитории AKS GitHub] [ aks-github] именем функции предварительной версии в заголовке ошибки.
+> * [Политики поддержки AKS][aks-support-policies]
+> * [Часто задаваемые вопросы о поддержке Azure][aks-faq]
 
 ## <a name="limitations-for-windows-server-in-kubernetes"></a>Ограничения для Windows Server в Kubernetes
 
@@ -57,6 +58,8 @@ ms.locfileid: "65956279"
 - Предварительные версии компонентов в AKS, такие как политики сети и автомасштабирования кластера не одобрены для узлов Windows Server.
 - Входящие контроллеры должно планироваться, только на узлах Linux, с помощью NodeSelector.
 - Azure Dev пробелы в данный момент доступна только для пулов узлов под управлением Linux.
+- Группе управляемых учетных записей служб (gMSA) поддержка на случай возникновения узлы Windows Server не присоединены к домену Active Directory недоступна в данный момент в AKS.
+    - Открытым кодом, upstream [aks-engine] [ aks-engine] проект в настоящее время предоставляет поддержку групповой управляемой учетной записи, если вам нужно использовать эту функцию.
 
 ## <a name="os-concepts-that-are-different"></a>Основные понятия операционной системы, которые отличаются
 
@@ -74,11 +77,13 @@ Kubernetes — Исторически ориентированных на Linux.
 
 <!-- LINKS - external -->
 [upstream-limitations]: https://kubernetes.io/docs/setup/windows/#limitations
-[aks-github]: https://github.com/azure/aks/issues]
 [kubernetes]: https://kubernetes.io
+[aks-engine]: https://github.com/azure/aks-engine
 
 <!-- LINKS - internal -->
 [azure-network-models]: concepts-network.md#azure-virtual-networks
 [configure-azure-cni]: configure-azure-cni.md
 [nodepool-upgrade]: use-multiple-node-pools.md#upgrade-a-node-pool
 [windows-node-cli]: windows-container-cli.md
+[aks-support-policies]: support-policies.md
+[aks-faq]: faq.md

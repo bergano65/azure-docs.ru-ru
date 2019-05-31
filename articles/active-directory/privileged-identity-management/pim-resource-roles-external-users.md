@@ -15,12 +15,12 @@ ms.date: 04/09/2019
 ms.author: rolyon
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f5846d2bd85a382b8e2aee539af405518e9fb221
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 0afec1d6eded25a2d9b2389c950e2e21e06e0d54
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60289022"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66307062"
 ---
 # <a name="invite-guest-users-and-assign-azure-resource-roles-in-pim"></a>Приглашение гостевых пользователей и назначение ролей ресурсов Azure в PIM
 
@@ -127,7 +127,7 @@ Azure Active Directory (Azure AD) предприятие предприятие 
 
     ![Проверка разрешений](./media/pim-resource-roles-external-users/invite-accept.png)
 
-1. Возможно, вам будет предложено принять условия использования и указать, нужно ли постоянно оставаться в системе.
+1. Вам может быть предложено принять условия использования и укажите, хотите ли вы оставаться в системе.
 
     Открывается портал Azure. Если вам назначена только возможность принять роль, доступ к ресурсам пока невозможен.
 

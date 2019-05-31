@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 05/08/2019
 ms.author: mbullwin
-ms.openlocfilehash: c69e925913d4dcb3a8bec34cbf25dac184ea65c5
-ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
+ms.openlocfilehash: 5b719566ce42639c0c435a8d631e12541d0a0e9d
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65595547"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66256624"
 ---
 # <a name="set-up-application-insights-for-your-aspnet-website"></a>Настройка Application Insights для веб-сайта ASP.NET
 
@@ -63,7 +63,7 @@ ms.locfileid: "65595547"
 > [!NOTE]
 > Если вы не хотите отправлять данные телеметрии на портал во время отладки, просто добавьте пакет SDK Application Insights в приложение, но не настраивайте ресурс на портале. Во время отладки можно просмотреть данные телеметрии в Visual Studio. Позже вы сможете вернуться на эту страницу настроек или можете дождаться, когда приложение будет развернуто, и [переключиться на данные телеметрии во время выполнения](../../azure-monitor/app/monitor-performance-live-website-now.md).
 
-## <a name="run"></a> Шаг 2. Запуск приложения
+## <a name="run"></a> Шаг 2. Запуск приложения для Android
 Запустите приложение, нажав клавишу F5. Откройте разные страницы, чтобы создать некоторый объем данных телеметрии.
 
 В Visual Studio вы увидите число записанных в журнал событий.
@@ -99,12 +99,10 @@ ms.locfileid: "65595547"
 
 На портале щелкните любую плитку, чтобы просмотреть подробные сведения.
 
-[Дополнительные сведения об использовании Application Insights на портале Azure](../../azure-monitor/app/app-insights-dashboards.md).
-
 ## <a name="step-4-publish-your-app"></a>Шаг 4. Публикация приложения
 Опубликуйте приложение на сервере IIS или в Azure. Просмотрите [динамический поток метрик](../../azure-monitor/app/metrics-explorer.md#live-metrics-stream), чтобы убедиться в бесперебойной работе приложения.
 
-Телеметрия создается на портале Application Insights, где можно отслеживать метрики, выполнять поиск данных телеметрии и настраивать [панели мониторинга](../../azure-monitor/app/app-insights-dashboards.md). Можно также использовать эффективный [язык запросов Kusto](/azure/kusto/query/) для анализа использования и производительности или поиска определенных событий.
+Сборками телеметрии вверх на портале Application Insights, где можно отслеживать метрики, поиска данных телеметрии. Можно также использовать эффективный [язык запросов Kusto](/azure/kusto/query/) для анализа использования и производительности или поиска определенных событий.
 
 Кроме того, можно продолжить анализировать телеметрию в [Visual Studio](../../azure-monitor/app/visual-studio.md) с помощью таких средств, как поиск по журналу диагностики и [тренды](../../azure-monitor/app/visual-studio-trends.md).
 
@@ -140,13 +138,12 @@ ms.locfileid: "65595547"
 
 * **[Данные загрузки браузера и страниц](../../azure-monitor/app/javascript.md)**  — вставьте фрагмент кода в веб-страницы.
 * **[Более подробные зависимости и данные отслеживание исключений](../../azure-monitor/app/monitor-performance-live-website-now.md)**  — установите монитор состояния на сервере.
-* **[Добавьте в приложение код для пользовательских событий](../../azure-monitor/app/api-custom-events-metrics.md)**, чтобы считать, фиксировать время и измерять действия пользователя.
+* **[Добавьте в приложение код для пользовательских событий](../../azure-monitor/app/api-custom-events-metrics.md)** , чтобы считать, фиксировать время и измерять действия пользователя.
 * **[Получение данных журнала](../../azure-monitor/app/asp-net-trace-logs.md)**  — согласовывайте данные журналов с данными телеметрии.
 
 ### <a name="analysis"></a>Анализ
 
 * **[Работа с Application Insights в Visual Studio](../../azure-monitor/app/visual-studio.md)**<br/>Содержит сведения об отладке с помощью телеметрии, о поиске по журналу диагностики и детализации кода.
-* **[Работа с порталом Application Insights](../../azure-monitor/app/app-insights-dashboards.md)**<br/> Содержит сведения о панелях мониторинга, эффективных средствах диагностики и анализа, оповещениях, картах динамических зависимостей приложения, а также сведения об экспорте данных телеметрии.
 * **[Аналитика](../../azure-monitor/log-query/get-started-portal.md)**  — эффективный язык запросов.
 
 ### <a name="alerts"></a>Оповещения

@@ -1,6 +1,6 @@
 ---
 title: Отслеживание зависимостей в Azure Application Insights | Документация Майкрософт
-description: Анализ использования, доступности и производительности локального приложения или веб-приложения Microsoft Azure с помощью Application Insights.
+description: Отслеживайте вызовы зависимостей от локальной или веб-приложения Microsoft Azure с помощью Application Insights.
 services: application-insights
 documentationcenter: .net
 author: mrbullwinkle
@@ -12,80 +12,165 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: mbullwin
-ms.openlocfilehash: c77b5810164aef7508f717a0f75d90cf6cba2089
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 479b810c5a66917bde5754d32991fb489ea26c9b
+ms.sourcegitcommit: 8c49df11910a8ed8259f377217a9ffcd892ae0ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60691381"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66299278"
 ---
-# <a name="set-up-application-insights-dependency-tracking"></a>Настройка Application Insights: отслеживание зависимостей
-*Зависимость* – это внешний компонент, который вызывается приложением. Как правило, это служба, вызываемая с использованием HTTP, база данных или файловая система. [Application Insights](../../azure-monitor/app/app-insights-overview.md) измеряет время, в течение которого приложение ожидает зависимости, и определяет, как часто происходит сбой вызова зависимости. Можно изучить определенные вызовы и установить их взаимосвязь с теми или иными запросами и исключениями.
+# <a name="dependency-tracking-in-azure-application-insights"></a>Отслеживание зависимостей в Azure Application Insights 
 
-Сейчас монитор зависимостей по умолчанию предоставляет отчеты о вызовах зависимостей таких типов:
+*Зависимость* – это внешний компонент, который вызывается приложением. Как правило, это служба, вызываемая с использованием HTTP, база данных или файловая система. [Application Insights](../../azure-monitor/app/app-insights-overview.md) измеряет длительность вызовов зависимостей, является ли его сбоем или нет, а также дополнительные сведения, такие как имя зависимости и т. д. Можно исследовать вызовы конкретных зависимостей и их корреляции запросов и исключений.
 
-* Сервер
-  * базы данных SQL;
-  * веб-службы и службы WCF ASP.NET, использующие привязки на основе HTTP;
-  * локальные или удаленные HTTP-вызовы;
-  * Azure Cosmos DB, таблица, хранилище BLOB-объектов и очередь. 
-* Веб-страницы
-  * Вызовы AJAX
+## <a name="automatically-tracked-dependencies"></a>Автоматически отслеживаемых зависимостей
 
-Мониторинг работает с помощью [инструментирования байт-кода](https://msdn.microsoft.com/library/z9z62c29.aspx) вокруг выбранных методов или на основе обратных вызовов DiagnosticSource (в последних пакетах SDK для .NET) из .NET Framework. Снижение производительности при этом сводится к минимуму.
+Пакеты SDK Application Insights для .NET и .NET Core поставляется с `DependencyTrackingTelemetryModule` модуля телеметрии, эта функция автоматически собирает зависимости. Эта коллекция зависимостей включается автоматически для [ASP.NET](https://docs.microsoft.com/azure/azure-monitor/app/asp-net) и [ASP.NET Core](https://docs.microsoft.com/azure/azure-monitor/app/asp-net-core) приложения при соответствии с связанного официальной документации. `DependencyTrackingTelemetryModule` поставляется как [это](https://www.nuget.org/packages/Microsoft.ApplicationInsights.DependencyCollector/) пакет NuGet и будет подключен к автоматически при использовании любого из пакетов NuGet `Microsoft.ApplicationInsights.Web` или `Microsoft.ApplicationInsights.AspNetCore`.
 
-Можно также написать собственные вызовы пакета SDK для мониторинга других зависимостей (в клиентском и серверном коде) с помощью [API TrackDependency](../../azure-monitor/app/api-custom-events-metrics.md#trackdependency).
+ `DependencyTrackingTelemetryModule` в настоящее время автоматически отслеживает следующие зависимости:
 
-> [!NOTE]
-> Azure Cosmos DB отслеживается автоматически только в том случае, если используется [HTTP/HTTPS](../../cosmos-db/performance-tips.md#networking). Режим TCP не будет отслеживаться с помощью Application Insights.
+|Зависимости |Сведения|
+|---------------|-------|
+|HTTP/Https | Локальный или удаленный вызовы http/https |
+|WCF-вызовов| Отслеживания только при использовании привязки на основе Http.|
+|SQL | Вызовы, сделанные с помощью `SqlClient`. См. в разделе [это](##advanced-sql-tracking-to-get-full-sql-query) записи SQL выполните запрос.  |
+|[Хранилище Azure (больших двоичных объектов, таблиц, очереди)](https://www.nuget.org/packages/WindowsAzure.Storage/) | Вызовы, сделанные с помощью клиента хранилища Azure. |
+|[Пакет SDK для клиента концентратора событий.](https://www.nuget.org/packages/Microsoft.Azure.EventHubs) | Версии 1.1.0 и более поздних версий. |
+|[Пакет SDK для клиента служебной шины](https://www.nuget.org/packages/Microsoft.Azure.ServiceBus)| Версии 3.0.0 и выше. |
+|Azure Cosmos DB | Отслеживаются автоматически только, если используется HTTP/HTTPS. Режим TCP не будет отслеживаться с помощью Application Insights. |
 
-## <a name="set-up-dependency-monitoring"></a>Настройка мониторинга зависимостей
-Неполные сведения о зависимостях собираются автоматически [пакетом SDK для Application Insights](asp-net.md). Чтобы получить полные данные, установите соответствующий агент для сервера узла.
 
-| платформа | Установка |
+## <a name="setup-automatic-dependency-tracking-in-console-apps"></a>Настройка автоматического слежения в консольных приложениях
+
+Автоматически отслеживать зависимости от.NET/.NET Core консольных приложений, установите пакет Nuget `Microsoft.ApplicationInsights.DependencyCollector`и инициализировать `DependencyTrackingTelemetryModule` следующим образом:
+
+```csharp
+    DependencyTrackingTelemetryModule depModule = new DependencyTrackingTelemetryModule();
+    depModule.Initialize(TelemetryConfiguration.Active);
+```
+
+### <a name="how-automatic-dependency-monitoring-works"></a>Мониторинг работает автоматической зависимостей?
+
+Зависимости автоматически собираются с помощью одного из следующих способов:
+
+* С помощью инструментирования байт-кода вокруг методами выбора. (InstrumentationEngine из StatusMonitor или расширение Azure веб-приложения)
+* Обратные вызовы EventSource
+* Обратные вызовы DiagnosticSource (в последних пакетов SDK Core.NET/.NET)
+
+## <a name="manually-tracking-dependencies"></a>Отслеживание зависимостей вручную
+
+Ниже приведены некоторые примеры зависимостей, которые не автоматический сбор и поэтому требует отслеживания вручную.
+
+* Azure Cosmos DB отслеживается автоматически только в том случае, если используется [HTTP/HTTPS](../../cosmos-db/performance-tips.md#networking). Режим TCP не будет отслеживаться с помощью Application Insights.
+* Redis
+
+Эти зависимости, автоматически собираются пакетом SDK, вы можете отслеживать их вручную с помощью [TrackDependency API](api-custom-events-metrics.md#trackdependency) , используемое модулей сбора стандартной автоматически.
+
+Например, формируя код на основе готовой сборки, можно назначить время для всех вызовов этого кода и таким образом выяснить, как он влияет на время отклика вашей системы. Чтобы эти данные отображались в диаграммах зависимостей в Application Insights, используйте для их отправки командлет `TrackDependency`.
+
+```csharp
+
+    var startTime = DateTime.UtcNow;
+    var timer = System.Diagnostics.Stopwatch.StartNew();
+    try
+    {
+        // making dependency call
+        success = dependency.Call();
+    }
+    finally
+    {
+        timer.Stop();
+        telemetryClient.TrackDependency("myDependencyType", "myDependencyCall", "myDependencyData",  startTime, timer.Elapsed, success);
+    }
+```
+
+Кроме того `TelemetryClient` предоставляет методы расширения `StartOperation` и `StopOperation` которого можно использовать для отслеживания зависимостей, вручную, как показано [здесь](custom-operations-tracking.md#outgoing-dependencies-tracking)
+
+Если вы хотите отключить стандартный модуль отслеживания зависимостей, удалите ссылку на DependencyTrackingTelemetryModule в [ApplicationInsights.config](../../azure-monitor/app/configuration-with-applicationinsights-config.md) для приложений ASP.NET. Для приложений ASP.NET Core, следуйте инструкциям [здесь](asp-net-core.md#configuring-or-removing-default-telemetrymodules).
+
+## <a name="tracking-ajax-calls-from-web-pages"></a>Отслеживание вызовов AJAX с веб-страниц
+
+Для веб-страниц, пакет SDK JavaScript Application Insights автоматически собирает вызовы AJAX как зависимости, указанные [здесь](javascript.md#ajax-performance). Этот документ посвящен зависимости из серверных компонентов.
+
+## <a name="advanced-sql-tracking-to-get-full-sql-query"></a>Advanced отслеживания, чтобы получить полный SQL-запрос SQL
+
+Для вызовов SQL, имя сервера и базы данных всегда собираются и хранятся в виде имя собранных `DependencyTelemetry`. Нет дополнительных поле с именем «данные», которая может содержать полный текст SQL-запроса.
+
+Для приложений ASP.NET Core нет никакие дополнительные действия, необходимые, чтобы получить полный SQL-запрос.
+
+Для приложений ASP.NET с помощью инструментирования байт-кода, который требует инструментирования ядра собираются полный SQL-запрос. Дополнительные действия для конкретных платформ, как описано ниже, являются обязательными.
+
+| платформа | Шаги, которые необходимы для получения полный SQL-запрос |
 | --- | --- |
-| Сервер IIS |[Установите монитор состояний на сервере](../../azure-monitor/app/monitor-performance-live-website-now.md) или [обновите свое приложение до .NET Framework 4.6 или более поздней версии](https://go.microsoft.com/fwlink/?LinkId=528259) и установите в нем [пакет SDK для Application Insights](asp-net.md). |
-| Веб-приложение Azure |На панели управления веб-приложения [откройте колонку "Application Insights"](../../azure-monitor/app/azure-web-apps.md) и при появлении соответствующего запроса выберите "Установить". |
-| Облачная служба Azure |[Используйте задачу при запуске](../../azure-monitor/app/cloudservices.md) или [установите платформу .NET Framework 4.6 или более поздней версии](../../cloud-services/cloud-services-dotnet-install-dotnet.md). |
+| Веб-приложение Azure |В панели управления web app [откройте колонку Application Insights](../../azure-monitor/app/azure-web-apps.md) и позволяют выполнять команды SQL в .NET |
+| Сервер IIS (виртуальная машина Azure в локальной среде и т. д.) | [Установите монитор состояний на сервере, где выполняется приложение](../../azure-monitor/app/monitor-performance-live-website-now.md) и перезапустите службы IIS.
+| Облачная служба Azure |[Используйте задачу при запуске](../../azure-monitor/app/cloudservices.md) для [установите монитор состояния](monitor-performance-live-website-now.md#download) |
+| IIS Express. | Не поддерживается
+
+В указанных случаях правильным способом проверки двигателя инструментария является правильно установлена — путем проверки того, что версии пакета SDK собираются `DependencyTelemetry` является «rddp». «rdddsd» или «rddf» указывает зависимости собираются через обратные вызовы DiagnosticSource или EventSource и поэтому не будет отслеживаться полный SQL-запрос.
 
 ## <a name="where-to-find-dependency-data"></a>Где найти данные зависимостей
-* [Схема приложения](#application-map) наглядно представляет зависимости между приложением и смежными компонентами.
-* [Колонки "Производительность", "Браузер" и "Сбой"](https://docs.microsoft.com/azure/azure-monitor/learn/tutorial-performance) отображают данные зависимостей сервера.
-* [Колонка "Браузеры"](#ajax-calls) содержит вызовы AJAX из браузеров ваших пользователей.
+
+* [Схема приложения](app-map.md) наглядно представляет зависимости между приложением и смежными компонентами.
+* [Диагностика транзакций](transaction-diagnostics.md) показано единой, коррелированных данных сервера.
+* [Колонка "Браузеры"](javascript.md#ajax-performance) содержит вызовы AJAX из браузеров ваших пользователей.
 * Щелкните по очереди медленные или неудачно завершенные запросы, чтобы проверить их вызовы зависимостей.
 * [Аналитику](#analytics) можно использовать для запроса данных зависимостей.
 
-## <a name="application-map"></a>Схема сопоставления приложений
-Схема сопоставления приложений — это визуальное средство, которое позволяет обнаруживать зависимости между компонентами приложения. Она создается автоматически на основе данных телеметрии из приложения. В этом примере показаны вызовы AJAX из сценариев браузера и вызовы REST из серверного приложения к двум внешним службам.
-
-![Схема сопоставления приложений](./media/asp-net-dependencies/cloud-rolename.png)
-
-* **Из полей перейдите** к соответствующей зависимости и другим диаграммам.
-* **Закрепите схему сопоставления** на [панели мониторинга](../../azure-monitor/app/app-insights-dashboards.md), где она будет полностью функциональной.
-
-[Узнайте больше](../../azure-monitor/app/app-map.md).
-
-## <a name="performance-and-failure-blades"></a>Колонки "Производительность" и "Сбой"
-В колонке "Производительность" отображается длительность вызовов зависимостей, выполненных серверным приложением.
-
-В колонке **Сбой** отображены **количества сбоев**. Сбоем является любой код возврата, который не попадает в диапазон 200–399 либо неизвестен.
-
-> [!NOTE]
-> **100% failures?** (100 % сбоев?) — вероятно, означает, что вы получаете только неполные данные зависимостей. Необходимо [настроить мониторинг зависимостей в соответствии со своей платформой](#set-up-dependency-monitoring).
->
->
-
-## <a name="ajax-calls"></a>Вызовы AJAX
-Колонка "Браузеры" отображает длительность и частоту сбоев вызовов AJAX из [JavaScript на веб-страницах](../../azure-monitor/app/javascript.md). Они отображаются как зависимости.
-
 ## <a name="diagnosis"></a> Диагностика медленных запросов
-Каждое событие запроса связано с вызовами зависимостей, исключениями и другими событиями, которые отслеживаются во время обработки запроса приложением. Поэтому, если какие-либо запросы завершаются неудачно, можно узнать, не является ли причиной этого медленный отклик зависимости.
+
+Каждое событие запроса связано с вызовами зависимостей, исключениями и другими событиями, которые отслеживаются во время обработки запроса вашим приложением. Поэтому если некоторые запросы плохо, можно найти не является ли из-за замедление отклика от зависимости.
+
+Давайте подробно рассмотрим подобный пример.
+
+### <a name="tracing-from-requests-to-dependencies"></a>Трассировка от запросов до зависимостей
+
+Откройте колонку "Производительность" и посмотрите на сетку запросов.
+
+![Список запросов со средними значениями и их количеством](./media/asp-net-dependencies/02-reqs.png)
+
+Верхний занимает много времени. Стоит попытаться выяснить, на что потрачено время.
+
+Щелкните эту строку, чтобы просмотреть события для отдельного запроса.
+
+![Список вхождений запросов](./media/asp-net-dependencies/03-instances.png)
+
+Щелкните любой длительный экземпляр, чтобы проверить его более детально, и прокрутите вниз до удаленных вызовов зависимостей, связанных с этим запросом.
+
+![Найдите вызовы удаленных зависимостей и определите необычную продолжительность.](./media/asp-net-dependencies/04-dependencies.png)
+
+По-видимому, большую часть времени обработки этого запроса занял вызов локальной службы.
+
+Выберите эту строку, чтобы получить дополнительную информацию.
+
+![Щелкните эту удаленную зависимость, чтобы определить причину.](./media/asp-net-dependencies/05-detail.png)
+
+Похоже, эта зависимость не на проблемные. Мы выявили проблему, так что теперь осталось выяснить, почему этот вызов занимает так много времени.
+
+### <a name="request-timeline"></a>Временная шкала запроса
+
+В другом случае вызов зависимости не имеет большую длительность. Но, переключившись на представление временной шкалы, мы видим, где произошла задержка во время внутренней обработки.
+
+![Найдите вызовы удаленных зависимостей и определите необычную продолжительность.](./media/asp-net-dependencies/04-1.png)
+
+Похоже, после первого вызова зависимости была большая задержка. Нам нужно изучить наш код, чтобы узнать, почему так произошло.
 
 ### <a name="profile-your-live-site"></a>Выполните профилирование активного сайта
 
-Не имеете представления, куда девается время? [Профилировщик Application Insights](../../azure-monitor/app/profiler.md) трассировки HTTP вызывает активному веб-сайту и показывает, какие функции в коде выполнялись дольше.
+Не имеете представления, куда девается время? [Профилировщик Application Insights](../../azure-monitor/app/profiler.md) трассировки HTTP вызывает для активного сайта и показаны функции кода, которые выполнялись дольше.
+
+## <a name="failed-requests"></a>Failed requests (Неудачные запросы)
+
+Неудачно завершенные запросы также могут быть связаны с неудачными вызовами зависимостей. Опять же, мы можем определить причину проблемы.
+
+![Щелкните диаграмму неудачных запросов.](./media/asp-net-dependencies/06-fail.png)
+
+Щелкните экземпляр неудачно завершенного запроса и просмотрите связанные с ним события.
+
+![Щелкните тип запроса, а затем его экземпляр, чтобы открыть этот же экземпляр в другом представлении. Щелкните его еще раз, чтобы просмотреть подробную информацию об исключении.](./media/asp-net-dependencies/07-faildetail.png)
 
 ## <a name="analytics"></a>Аналитика
+
 Вы можете отслеживать зависимости, используя [язык запросов Kusto](/azure/kusto/query/). Ниже приведены некоторые примеры.
 
 * Поиск неудачно завершенных вызовов зависимостей:
@@ -123,49 +208,22 @@ ms.locfileid: "60691381"
       on operation_Id
 ```
 
+## <a name="video"></a>Видео
 
+> [!VIDEO https://channel9.msdn.com/events/Connect/2016/112/player]
 
-## <a name="custom-dependency-tracking"></a>Пользовательское отслеживание зависимостей
-Стандартный модуль отслеживания зависимостей выявляет внешние зависимости, например базы данных и API REST, автоматически. Однако при необходимости аналогичную обработку можно настроить и для других компонентов.
+## <a name="frequently-asked-questions"></a>Часто задаваемые вопросы
 
-Код, который отправляет сведения о зависимостях, можно написать с использованием того же интерфейса [API TrackDependency](../../azure-monitor/app/api-custom-events-metrics.md#trackdependency) , что используется в стандартных модулях.
+### <a name="how-does-automatic-dependency-collector-report-failed-calls-to-dependencies"></a>*Как выполняет автоматическое зависимостей сборщика отчетов неудачные вызовы зависимостей?*
 
-Например, формируя код на основе готовой сборки, можно назначить время для всех вызовов этого кода и таким образом выяснить, как он влияет на время отклика вашей системы. Чтобы эти данные отображались в диаграммах зависимостей в Application Insights, используйте для их отправки командлет `TrackDependency`.
+* Вызовы зависимостей со сбоями будут иметь поле 'success', значение False. `DependencyTrackingTelemetryModule` не сообщает о `ExceptionTelemetry`. Описывается модель полного набора данных для зависимостей [здесь](data-model-dependency-telemetry.md).
 
-```csharp
+## <a name="open-source-sdk"></a>Пакет SDK с открытым исходным кодом
+Как и каждый пакет SDK Application Insights модуль коллекции зависимостей также является открытым исходным кодом. Чтение и вносить дополнения в код или сообщить о проблемах в [официальный репозиторий GitHub](https://github.com/Microsoft/ApplicationInsights-dotnet-server).
 
-            var startTime = DateTime.UtcNow;
-            var timer = System.Diagnostics.Stopwatch.StartNew();
-            try
-            {
-                success = dependency.Call();
-            }
-            finally
-            {
-                timer.Stop();
-                telemetry.TrackDependency("myDependency", "myCall", startTime, timer.Elapsed, success);
-                // The call above has been made obsolete in the latest SDK. The updated call follows this format:
-                // TrackDependency (string dependencyTypeName, string dependencyName, string data, DateTimeOffset startTime, TimeSpan duration, bool success);
-            }
-```
-
-Чтобы отключить стандартный модуль отслеживания зависимостей, удалите ссылку на DependencyTrackingTelemetryModule в файле [ApplicationInsights.config](../../azure-monitor/app/configuration-with-applicationinsights-config.md).
-
-## <a name="troubleshooting"></a>Устранение неполадок
-*Флаг успешной зависимости всегда показывает значение true или false.*
-
-*SQL-запрос отображается не полностью.*
-
-Просмотрите таблицу ниже и проверьте, правильную ли конфигурацию вы выбрали для мониторинга зависимостей своего приложения.
-
-| платформа | Установка |
-| --- | --- |
-| Сервер IIS |Либо [установите Монитор состояния на сервер](../../azure-monitor/app/monitor-performance-live-website-now.md), либо [обновите в своем приложении .NET Framework до версии 4.6 (или новее)](https://go.microsoft.com/fwlink/?LinkId=528259) и установите в него [пакет SDK для Application Insights](asp-net.md). |
-| IIS Express. |Вместо этого используйте сервер IIS. |
-| Веб-приложение Azure |На панели управления веб-приложения [откройте колонку "Application Insights"](../../azure-monitor/app/azure-web-apps.md) и при появлении соответствующего запроса выберите "Установить". |
-| Облачная служба Azure |[Используйте задачу при запуске](../../azure-monitor/app/cloudservices.md) или [установите платформу .NET Framework 4.6 или более поздней версии](../../cloud-services/cloud-services-dotnet-install-dotnet.md). |
 
 ## <a name="next-steps"></a>Дальнейшие действия
+
 * [Исключения](../../azure-monitor/app/asp-net-exceptions.md)
 * [Данные пользователей и страниц](../../azure-monitor/app/javascript.md)
 * [Доступность](../../azure-monitor/app/monitor-web-app-availability.md)

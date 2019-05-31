@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 07/23/2018
 ms.author: mbullwin
-ms.openlocfilehash: 467586fd23332469338dabd2feb6a42ce4b17af5
-ms.sourcegitcommit: 399db0671f58c879c1a729230254f12bc4ebff59
+ms.openlocfilehash: cf818756f583974a8a9b53a9a0cce31dd93d042b
+ms.sourcegitcommit: 8c49df11910a8ed8259f377217a9ffcd892ae0ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65471849"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66299304"
 ---
 # <a name="troubleshooting-no-data---application-insights-for-net"></a>Устранение неполадок, связанных с тем, что в Application Insights для .NET не отображаются данные
 ## <a name="some-of-my-telemetry-is-missing"></a>Некоторая телеметрия отсутствует
@@ -25,6 +25,16 @@ ms.locfileid: "65471849"
 
 * Если постоянно отображается одна и та же часть, это может быть связано с адаптивной [выборкой](../../azure-monitor/app/sampling.md). Чтобы проверить это, откройте область поиска (из колонки "Обзор") и посмотрите на экземпляр запроса или другого события. В нижней части раздела свойств нажмите кнопку "...", чтобы отобразить все сведения свойств. Если число запросов > 1, то выборка работает.
 * В противном случае, возможно, превышено [ограничение на скорость передачи данных](../../azure-monitor/app/pricing.md#limits-summary) для вашего плана ценообразования. Эти ограничения применяются в пропорционально по минутам.
+
+*У меня возникают потери данных случайным образом.*
+
+* Проверьте, если вы столкнулись с потерей данных на [канал телеметрии](telemetry-channels.md#does-applicationinsights-channel-offer-guaranteed-telemetry-delivery-or-what-are-the-scenarios-where-telemetry-can-be-lost)
+
+* Поиск известных проблемах в канал телеметрии [репозиторий Github](https://github.com/Microsoft/ApplicationInsights-dotnet/issues)
+
+*У меня возникают потери данных в консольном приложении или на веб-приложения, когда приложение собирается остановить.*
+
+* Пакет SDK для канала сохраняет данные телеметрии в буфер и отправляет их в пакеты. Если приложение завершает работу, может потребоваться явно вызывать [Flush()](api-custom-events-metrics.md#flushing-data). Поведение `Flush()` зависит от фактического [канал](telemetry-channels.md#built-in-telemetrychannels) используется.
 
 ## <a name="no-data-from-my-server"></a>Нет данных с моего сервера
 *На моем веб-сервере установлено приложение, но данные телеметрии сервера не отображаются. На компьютере разработки все работало хорошо.*
@@ -58,7 +68,6 @@ ms.locfileid: "65471849"
 * Убедитесь, что вы указали правильные учетные данные для входа в учетную запись Azure.
 * В браузере убедитесь, что у вас есть доступ к [порталу Azure](https://portal.azure.com). Откройте параметры и проверьте, нет ли каких-либо ограничений.
 * [Добавьте Application Insights в существующий проект](../../azure-monitor/app/asp-net.md). В обозревателе решений щелкните проект правой кнопкой мыши и выберите пункт "Добавить Application Insights".
-* Если устранить проблему не удалось, добавьте ресурс на портал [вручную](../../azure-monitor/app/windows-services.md) , а затем добавьте в проект пакет SDK.
 
 ## <a name="emptykey"></a>Появляется сообщение об ошибке «ключ инструментирования не может быть пустым»
 Вероятно, произошла ошибка при установке Application Insights или же адаптера ведения журнала.

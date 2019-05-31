@@ -3,19 +3,19 @@ title: Переход на API перевода текстов версии 3
 titlesuffix: Azure Cognitive Services
 description: Узнайте, как перейти с API перевода текстов версии 2 на версию 3.
 services: cognitive-services
-author: v-pawal
+author: rajdeep-in
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: conceptual
 ms.date: 02/01/2019
-ms.author: v-jansko
-ms.openlocfilehash: fa1733ddd70de3f8ef93452a880094ccf8b9ef56
-ms.sourcegitcommit: 807c318f5c034f8256f91c241e9d6f8f4d7de90a
+ms.author: v-pawal
+ms.openlocfilehash: 81b2e5c9c659a3811d7417d87b811a86f4350a52
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64951474"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66382914"
 ---
 # <a name="translator-text-api-v2-to-v3-migration"></a>Переход с API перевода текстов версии 2 на версию 3
 
@@ -118,8 +118,8 @@ Microsoft Translator V3 имеет такую же модель ценообра
 
 | |Конечная точка|    Соответствие требованиям процессора GDPR|  Использование Translator Hub| Использование Пользовательского переводчика (предварительная версия)|
 |:-----|:-----|:-----|:-----|:-----|
-|API перевода текстов версии 2| api.microsofttranslator.com|    Нет   |Yes    |Нет |
-|API перевода текстов версии 3| api.cognitive.microsofttranslator.com|  Yes|    Нет| Yes|
+|API перевода текстов версии 2| api.microsofttranslator.com|    Нет  |Да    |Нет|
+|API перевода текстов версии 3| api.cognitive.microsofttranslator.com|  Да|    Нет| Да|
 
 **API перевода текстов версии 3**
 * Является общедоступным и полностью поддерживается.

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 01/25/2019
 ms.author: aljo
-ms.openlocfilehash: 2cf5bf26dbe18d7b4c6e3b1a93aa38d7748dc5a3
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: dbc8363052556f29633c069bcd82af5249a3406f
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66119117"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66306881"
 ---
 # <a name="create-your-first-service-fabric-container-application-on-windows"></a>Создание первого контейнера-приложения Service Fabric в Windows
 
@@ -175,9 +175,9 @@ docker rm my-web-site
 
 Убедившись, что контейнер запускается на компьютере разработки, отправьте образ в реестр в реестре контейнеров Azure.
 
-Выполните команду ``docker login``, чтобы войти в реестр контейнеров с помощью [учетных данных реестра](../container-registry/container-registry-authentication.md).
+Запустите ``docker login`` для входа в реестр контейнеров с помощью вашей [учетных данных реестра](../container-registry/container-registry-authentication.md).
 
-Следующая команда передает идентификатор и пароль [субъекта-службы](../active-directory/develop/app-objects-and-service-principals.md) Azure Active Directory. Например, назначение субъекта-службы для реестра позволяет автоматизировать некоторые сценарии. Или вы можете входить, используя имя и пароль реестра.
+Следующая команда передает идентификатор и пароль [субъекта-службы](../active-directory/develop/app-objects-and-service-principals.md) Azure Active Directory. Например, назначение субъекта-службы для реестра позволяет автоматизировать некоторые сценарии. Или может войти с помощью реестра имя пользователя и пароль.
 
 ```
 docker login myregistry.azurecr.io -u xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx -p myPassword
@@ -308,8 +308,6 @@ New-SelfSignedCertificate -Type DocumentEncryptionCert -KeyUsage DataEnciphermen
 $cer = Import-AzureKeyVaultCertificate -VaultName $vaultName -Name $certificateName -FilePath $filepath -Password $certpwd
 
 Set-AzKeyVaultAccessPolicy -VaultName $vaultName -ResourceGroupName $groupname -EnabledForDeployment
-
-# Add the certificate to all the VMs in the cluster.
 Add-AzServiceFabricApplicationCertificate -ResourceGroupName $groupname -Name $clustername -SecretIdentifier $cer.SecretId
 ```
 Зашифруйте пароль с помощью командлета [Invoke-ServiceFabricEncryptText](/powershell/module/servicefabric/Invoke-ServiceFabricEncryptText?view=azureservicefabricps).
@@ -421,7 +419,11 @@ Windows поддерживает два режима изоляции для к�
 ```
 ## <a name="configure-docker-healthcheck"></a>Настройка инструкции HEALTHCHECK в Docker 
 
-Начиная с версии 6.1 Service Fabric автоматически интегрирует события [Docker HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) в отчеты о работоспособности системы. Это означает, что если в вашем контейнере включена инструкция **HEALTHCHECK**, то Service Fabric будет отправлять отчет о работоспособности при каждом изменении состояния контейнера согласно сведениям Docker. В [Service Fabric Explorer](service-fabric-visualizing-your-cluster.md) будет отображаться состояние работоспособности **ОК**, если значение *health_status* равно *healthy*. Если же значение *health_status* равно *unhealthy*, отобразится **предупреждение**. В файле Dockerfile, который используется при создании образа контейнера, должна содержаться инструкция **HEALTHCHECK**, указывающая на фактическую проверку для отслеживания работоспособности контейнера. 
+Начиная с версии 6.1 Service Fabric автоматически интегрирует события [Docker HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) в отчеты о работоспособности системы. Это означает, что если в вашем контейнере включена инструкция **HEALTHCHECK**, то Service Fabric будет отправлять отчет о работоспособности при каждом изменении состояния контейнера согласно сведениям Docker. В [Service Fabric Explorer](service-fabric-visualizing-your-cluster.md) будет отображаться состояние работоспособности **ОК**, если значение *health_status* равно *healthy*. Если же значение *health_status* равно *unhealthy*, отобразится **предупреждение**. 
+
+Начиная с последней версии обновления v6.4, у вас есть возможность указать, что docker HEALTHCHECK оценок должны сопровождаться ошибку. Если этот параметр включен, **ОК** отображается отчет о работоспособности, когда *health_status* — *работоспособное* и **ошибка** отображается, когда *health_status* — *неработоспособное*.
+
+В файле Dockerfile, который используется при создании образа контейнера, должна содержаться инструкция **HEALTHCHECK**, указывающая на фактическую проверку для отслеживания работоспособности контейнера.
 
 ![HealthCheckHealthy][3]
 
@@ -436,12 +438,18 @@ Windows поддерживает два режима изоляции для к�
     <ServiceManifestRef ServiceManifestName="ContainerServicePkg" ServiceManifestVersion="2.0.0" />
     <Policies>
       <ContainerHostPolicies CodePackageRef="Code">
-        <HealthConfig IncludeDockerHealthStatusInSystemHealthReport="true" RestartContainerOnUnhealthyDockerHealthStatus="false" />
+        <HealthConfig IncludeDockerHealthStatusInSystemHealthReport="true"
+              RestartContainerOnUnhealthyDockerHealthStatus="false" 
+              TreatContainerUnhealthyStatusAsError="false" />
       </ContainerHostPolicies>
     </Policies>
 </ServiceManifestImport>
 ```
-По умолчанию для *IncludeDockerHealthStatusInSystemHealthReport* задано значение **true**, а для *RestartContainerOnUnhealthyDockerHealthStatus* — значение **false**. Если для *RestartContainerOnUnhealthyDockerHealthStatus* задано значение **true**, контейнер, для которого несколько раз отображалось неработоспособное состояние, перезапускается (возможно, на других узлах).
+По умолчанию *IncludeDockerHealthStatusInSystemHealthReport* присваивается **true**, *RestartContainerOnUnhealthyDockerHealthStatus* присваивается  **false**, и *TreatContainerUnhealthyStatusAsError* присваивается **false**. 
+
+Если для *RestartContainerOnUnhealthyDockerHealthStatus* задано значение **true**, контейнер, для которого несколько раз отображалось неработоспособное состояние, перезапускается (возможно, на других узлах).
+
+Если *TreatContainerUnhealthyStatusAsError* присваивается **true**, **ошибка** отображаются отчеты о работоспособности контейнера *health_status*— *неработоспособное*.
 
 Если вы хотите отключить интеграцию с **HEALTHCHECK** во всем кластере Service Fabric, задайте для [EnableDockerHealthCheckIntegration](service-fabric-cluster-fabric-settings.md) значение **false**.
 
@@ -471,7 +479,7 @@ docker rmi myregistry.azurecr.io/samples/helloworldapp
 
 ## <a name="windows-server-container-os-and-host-os-compatibility"></a>Совместимость ОС контейнера Windows Server и ОС узла
 
-Контейнеры Windows Server совместимы не со всеми версиями ОС узла. Например:
+Контейнеры Windows Server совместимы не со всеми версиями ОС узла. Пример:
  
 - Контейнеры Windows Server, созданные с использованием Windows Server 1709, не работают на узле с ОС Windows Server версии 2016. 
 - Контейнеры Windows Server, созданные с использованием Windows Server 2016, работают в режиме изоляции Hyper-V только на узле с ОС Windows Server версии 1709. 
@@ -479,7 +487,7 @@ docker rmi myregistry.azurecr.io/samples/helloworldapp
  
 Дополнительные сведения см. в разделе [Совместимость версий контейнеров Windows](https://docs.microsoft.com/virtualization/windowscontainers/deploy-containers/version-compatibility).
 
-Учитывайте совместимость ОС узла и контейнера при создании и развертывании контейнеров в кластере Service Fabric. Например:
+Учитывайте совместимость ОС узла и контейнера при создании и развертывании контейнеров в кластере Service Fabric. Пример:
 
 - Развертывайте контейнеры с ОС, совместимой с ОС на узлах кластера.
 - Убедитесь, что режим изоляции, указанный для приложения-контейнера, поддерживается для ОС контейнера на узле, где оно развертывается.
@@ -726,15 +734,6 @@ NtTvlzhk11LIlae/5kjPv95r3lw6DHmV4kXLwiCNlcWPYIWBGIuspwyG+28EWSrHmN7Dt2WqEWqeNQ==
 ## <a name="next-steps"></a>Дальнейшие действия
 * Дополнительные сведения о запуске [контейнеров в Service Fabric](service-fabric-containers-overview.md).
 * Ознакомьтесь с руководством [Развертывание приложения-контейнера .NET в Azure Service Fabric](service-fabric-host-app-in-a-container.md).
-* Дополнительные сведения о [жизненном цикле приложения](service-fabric-application-lifecycle.md) Service Fabric.
-* Извлечение [примеров кода контейнера Service Fabric](https://github.com/Azure-Samples/service-fabric-containers) на GitHub.
-
-[1]: ./media/service-fabric-get-started-containers/MyFirstContainerError.png
-[2]: ./media/service-fabric-get-started-containers/MyFirstContainerReady.png
-[3]: ./media/service-fabric-get-started-containers/HealthCheckHealthy.png
-[4]: ./media/service-fabric-get-started-containers/HealthCheckUnhealthy_App.png
-[5]: ./media/service-fabric-get-started-containers/HealthCheckUnhealthy_Dsp.png
-Учебник, c-Host-App-in-a-Container.MD).
 * Дополнительные сведения о [жизненном цикле приложения](service-fabric-application-lifecycle.md) Service Fabric.
 * Извлечение [примеров кода контейнера Service Fabric](https://github.com/Azure-Samples/service-fabric-containers) на GitHub.
 

@@ -10,16 +10,16 @@ ms.subservice: bing-news-search
 ms.topic: conceptual
 ms.date: 01/10/2019
 ms.author: scottwhi
-ms.openlocfilehash: 1d344f388b03acb3a81fcfde0e214eb7d82dc9b9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 1eab92dcc9c1890e82f9999e26e54378a3687c6d
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60578731"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66390481"
 ---
 # <a name="how-to-page-through-news-search-results"></a>Разбивка на страницы с помощью результатов поиска новостей
 
-Когда вы вызываете API Bing для поиска новостей, Bing возвращает список результатов, которые относятся к запросу. Чтобы получить предполагаемое общее количество доступных результатов, необходимо обратиться к полю [totalEstimatedMatches](https://docs.microsoft.com/rest/api/cognitiveservices/bing-news-api-v7-reference#news-totalmatches) объекта ответа.  
+Когда вы вызываете API Bing для поиска новостей, Bing возвращает список результатов, которые относятся к запросу. Чтобы получить предполагаемое общее количество доступных результатов, необходимо обратиться к полю [totalEstimatedMatches](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#news-totalmatches) объекта ответа.  
   
 В следующем примере показано поле `totalEstimatedMatches`, содержащееся в результатах поиска новостей.  
 
@@ -32,10 +32,10 @@ ms.locfileid: "60578731"
 }  
 ```  
   
-Чтобы разбить на страницы список доступных статей, используйте параметры запроса [count](https://docs.microsoft.com/rest/api/cognitiveservices/bing-news-api-v7-reference#count) и [offset](https://docs.microsoft.com/rest/api/cognitiveservices/bing-news-api-v7-reference#offset).  
+Чтобы разбить на страницы список доступных статей, используйте параметры запроса [count](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#count) и [offset](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#offset).  
  
 
-|Параметр  |ОПИСАНИЕ  |
+|Параметр  |Описание  |
 |---------|---------|
 |`count`     | Задает количество результатов, возвращаемых в ответе. Максимальное количество результатов, которые можно запросить в ответе, равно 100. По умолчанию задано значение 10. Фактическое число полученных результатов может быть меньше запрошенного.        |
 |`offset`     | Задает количество пропускаемых результатов. Значение `offset` начинается с нуля и должно быть меньше (`totalEstimatedMatches` - `count`).          |

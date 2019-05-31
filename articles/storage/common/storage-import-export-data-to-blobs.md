@@ -5,15 +5,15 @@ author: alkohli
 services: storage
 ms.service: storage
 ms.topic: article
-ms.date: 04/08/2019
+ms.date: 05/29/2019
 ms.author: alkohli
 ms.subservice: common
-ms.openlocfilehash: 82672136d6f9af50a3d91da2044f6e0ced4b44a6
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.openlocfilehash: ddaead7a0e616b3138dca0b18a58d64e38a46f9e
+ms.sourcegitcommit: 8e76be591034b618f5c11f4e66668f48c090ddfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65409364"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66356429"
 ---
 # <a name="use-the-azure-importexport-service-to-import-data-to-azure-blob-storage"></a>Использование службы "Импорт и экспорт Azure" для импорта данных в хранилище BLOB-объектов Azure
 
@@ -58,7 +58,7 @@ ms.locfileid: "65409364"
 6.  Чтобы подготовить диск, выполните следующую команду. **В зависимости от размера данных это может занять от нескольких часов до нескольких дней.** 
 
     ```
-    ./WAImportExport.exe PrepImport /j:<journal file name> /id:session#<session number> /sk:<Storage account key> /t:<Drive letter> /bk:<BitLocker key> /srcdir:<Drive letter>:\ /dstdir:<Container name>/ /skipwrite 
+    ./WAImportExport.exe PrepImport /j:<journal file name> /id:session#<session number> /t:<Drive letter> /bk:<BitLocker key> /srcdir:<Drive letter>:\ /dstdir:<Container name>/ /skipwrite /enablecontentmd5 
     ```
     Файл журнала создается в той же папке, где вы запустили средство. Также создаются два других файла: файл *XML* (папка, в которой выполняется средство) и файл *drive-manifest.xml* (папка, в которой хранятся данные).
     
@@ -68,18 +68,18 @@ ms.locfileid: "65409364"
     |---------|---------|
     |/j:     |Имя файла журнала с расширением .jrn. Файл журнала создается для каждого диска. Рекомендуем использовать в качестве имени файла журнала серийный номер диска.         |
     |/id:     |Идентификатор сеанса. Используйте уникальный номер сеанса для каждого экземпляра команды.      |
-    |/sk:     |Ключ учетной записи хранения Azure.         |
     |/t:     |Буква отправляемого диска. Например, диск `D`.         |
     |/bk:     |Ключ BitLocker для диска. Числовой пароль из выходных данных `manage-bde -protectors -get D:`      |
     |/srcdir:     |Буква отправляемого диска и `:\`. Например, `D:\`.         |
     |/dstdir:     |Имя целевого контейнера в службе хранилища Azure.         |
     |/skipwrite:     |Параметр, который указывает, что новые данные не требуется копировать и что на диске нужно подготовить существующие данные.          |
+    |/enablecontentmd5:     |Если параметр включен, гарантирует, что MD5 вычисляется во время передачи блочных BLOB-объектов в Azure.          |
 7. Повторите предыдущий шаг для каждого диска, который необходимо отправить. Файл журнала с предоставленным именем создается при каждом запуске командной строки.
     
     > [!IMPORTANT]
     > - Вместе с файлом журнала в той же папке, где находится средство, также создается файл `<Journal file name>_DriveInfo_<Drive serial ID>.xml`. XML-файл используется вместо файла журнала при создании задания, если файл журнала слишком велик. 
 
-## <a name="step-2-create-an-import-job"></a>Шаг 2. Создать задание импорта
+## <a name="step-2-create-an-import-job"></a>Шаг 2. создание задания импорта;
 
 Чтобы создать задание импорта на портале Azure, выполните следующие шаги.
 

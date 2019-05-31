@@ -6,14 +6,14 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: article
-ms.date: 12/27/2018
+ms.date: 05/30/2019
 ms.author: raynew
-ms.openlocfilehash: cefde79cf8c544a6900b1efa5dbcefbc43638d40
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: d2f7f83654f397cc6b93adbbebc25193155bcedb
+ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60679335"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66399377"
 ---
 # <a name="prepare-network-mapping-for-hyper-v-vm-disaster-recovery-to-azure"></a>Подготовка сетевого сопоставления для аварийного восстановления виртуальных машин Hyper-V в Azure
 
@@ -57,9 +57,9 @@ ms.locfileid: "60679335"
 **Местоположение.** | **Сервер VMM** | **Сети виртуальных машин** | **Сопоставление**
 ---|---|---|---
 Нью-Йорк | VMM-NewYork| VMNetwork1-NewYork | Сопоставляется с VMNetwork1-Chicago
- |  | VMNetwork2-NewYork | Не сопоставлено
+ |  | VMNetwork2-NewYork | Не сопоставлена
 Чикаго | VMM-Chicago| VMNetwork1-Chicago | Сопоставляется с VMNetwork1-NewYork
- | | VMNetwork2-Chicago | Не сопоставлено
+ | | VMNetwork2-Chicago | Не сопоставлена
 
 В данном примере:
 
@@ -92,9 +92,9 @@ SilverCloud2 | <p>Нет данных</p><p></p> | <p>LogicalNetwork1-NewYork</p
 **Выбор** | **Защищенное облако** | **Защита облака** | **Доступная целевая сеть**
 ---|---|---|---
 VMNetwork1-Chicago | SilverCloud1 | SilverCloud2 | Доступна
- | GoldCloud1 | GoldCloud2 | Доступно
+ | GoldCloud1 | GoldCloud2 | Доступна
 VMNetwork2-Chicago | SilverCloud1 | SilverCloud2 | Недоступно
- | GoldCloud1 | GoldCloud2 | Доступно
+ | GoldCloud1 | GoldCloud2 | Доступна
 
 
 Если целевая сеть включает несколько подсетей и одна из этих подсетей имеет то же имя, что и подсеть, в которой размещается исходная виртуальная машина, то после отработки отказа реплика виртуальной машины будет подключена к этой целевой подсети. Если нет подсетей с таким же именем, виртуальная машина будет подключена к первой подсети в сети.
@@ -107,7 +107,7 @@ VMNetwork2-Chicago | SilverCloud1 | SilverCloud2 | Недоступно
 
 **Виртуальная машина** | **Подключенная сеть виртуальных машин**
 ---|---
-ВМ1 | VMNetwork1-Network
+VM1 | VMNetwork1-Network
 VM2 (реплика VM1) | VMNetwork1-Chicago
 
 Приняв эти параметры, рассмотрим, что происходит в нескольких возможных сценариях.

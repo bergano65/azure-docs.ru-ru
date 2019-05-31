@@ -2,31 +2,24 @@
 title: Проверка пропускной способности VPN для виртуальной сети Microsoft Azure | Документы Майкрософт
 description: Этот документ помогает пользователю проверить пропускную способность сети от своих локальных ресурсов до виртуальной машины Azure.
 services: vpn-gateway
-documentationcenter: na
-author: chadmath
+author: cherylmc
 manager: jasmc
-editor: ''
-tags: azure-resource-manager,azure-service-management
-ms.assetid: ''
 ms.service: vpn-gateway
-ms.devlang: na
 ms.topic: troubleshooting
-ms.tgt_pltfrm: na
-ms.workload: infrastructure-services
-ms.date: 06/15/2018
+ms.date: 05/29/2019
 ms.author: radwiv;chadmat;genli
-ms.openlocfilehash: 819415712d8e605825957aa602fc99dcf6902d82
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: c1117afcf6254c32ebe0a4e72ad5619606098253
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60457566"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66388617"
 ---
 # <a name="how-to-validate-vpn-throughput-to-a-virtual-network"></a>Порядок проверки пропускной способности VPN для виртуальной сети
 
 Подключение к VPN-шлюзу позволяет установить защищенное распределенное соединение между виртуальной сетью в Azure и локальной ИТ-инфраструктурой.
 
-В этой статье описано, как проверить пропускную способность сети от локальных ресурсов до виртуальной машины Azure. Кроме того, в ней приведены рекомендации по устранению неполадок.
+В этой статье описано, как проверить пропускную способность сети от локальных ресурсов до виртуальной машины Azure. Кроме того, в ней приведены рекомендации по устранению неполадок. 
 
 >[!NOTE]
 >Эта статья помогает диагностировать и устранить распространенные проблемы. Если вам не удается решить проблему с помощью приведенных ниже сведений, [обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
@@ -109,7 +102,7 @@ ms.locfileid: "60457566"
 
     Ниже представлены выходные данные для этого примера:
 
-    ![Выходные данные](./media/vpn-gateway-validate-throughput-to-vnet/06theoutput.png)
+    ![Выход](./media/vpn-gateway-validate-throughput-to-vnet/06theoutput.png)
 
 5. (НЕОБЯЗАТЕЛЬНО) Чтобы сохранить результаты тестирования, выполните следующую команду:
 
@@ -127,7 +120,7 @@ ms.locfileid: "60457566"
 - Недостаточная скорость чтения и записи виртуальной машины. Дополнительные сведения см. в статье [Устранение неполадок службы хранилища Azure](../storage/common/storage-e2e-troubleshooting.md).
 
 ## <a name="on-premises-device-external-facing-interface"></a>Внешний интерфейс для локального устройства
-Если IP-адрес для Интернета локального VPN-устройства включен в определение [локальной сети](vpn-gateway-howto-site-to-site-resource-manager-portal.md#LocalNetworkGateway) в Azure, вы можете столкнуться с невозможностью запуска VPN, нерегулярными отключениями либо снижением производительности.
+Если-IP адрес локального VPN-устройства включен в [локальной сети](vpn-gateway-howto-site-to-site-resource-manager-portal.md#LocalNetworkGateway) определение пространства адресов в Azure, могут возникнуть невозможностью запуска VPN, нерегулярными отключает вверх или проблем с производительностью.
 
 ## <a name="checking-latency"></a>Проверка задержки
 Используйте команду tracert для трассировки до устройства Microsoft Azure, чтобы определить наличие задержки более 100 мс между прыжками.

@@ -9,14 +9,14 @@ editor: ''
 ms.service: media-services
 ms.workload: na
 ms.topic: article
-ms.date: 05/01/2019
+ms.date: 05/29/2019
 ms.author: juliako
-ms.openlocfilehash: 8f50188480b963d13460c79175ea6972d3e68f6a
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: a5ce6467a547b9fded03b3b5a6f40f84d29d3618
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65153067"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66385147"
 ---
 # <a name="azure-media-services-v3-release-notes"></a>Заметки о выпуске Служб мультимедиа Azure версии 3
 
@@ -34,14 +34,28 @@ ms.locfileid: "65153067"
 
 Дополнительные сведения см. в статье [Руководство по миграции из версии 2 в версию 3 Служб мультимедиа](migrate-from-v2-to-v3.md#known-issues).
 
-## <a name="may-2019"></a>Мая 2019 г.
+## <a name="may-2019"></a>Май 2019 г.
+
+### <a name="hls-v4-and-above-support-in-dynamic-packaging"></a>HLS версии 4 и выше поддерживается динамическая упаковка 
+
+Добавлены HLS (версии 4 или более поздней версии) поддерживает в динамическую упаковку для ресурсов, которые существенно нескольких звуковых дорожек с несколькими кодеки и языков.
+
+Дополнительные сведения см. в разделе [динамической упаковки](dynamic-packaging-overview.md).
+
+### <a name="korea-regional-pair-is-open-for-media-services"></a>Пары регионов Кореи открыт для служб мультимедиа 
+
+Службы мультимедиа теперь доступна в регионах центральная Корея и Юг Кореи. 
+
+Дополнительные сведения см. в разделе [облаков и регионы, в которой службы мультимедиа находится v3](azure-clouds-regions.md).
 
 ### <a name="performance-improvements"></a>Повышение производительности.
+
+Добавлены обновления, включающие улучшения производительности служб мультимедиа.
 
 * Максимальный размер файла поддерживается при обработке был обновлен. См. в разделе, [квоты и ограничения](limits-quotas-constraints.md).
 * [Улучшения скорости кодирования](media-reserved-units-cli-how-to.md#choosing-between-different-reserved-unit-types).
 
-## <a name="april-2019"></a>Апреля 2019 г.
+## <a name="april-2019"></a>Апрель 2019 г.
 
 ### <a name="new-presets"></a>Новые предустановки
 
@@ -52,7 +66,7 @@ ms.locfileid: "65153067"
 
 Динамическая упаковка теперь поддерживает Dolby Atmos. Дополнительные сведения см. в разделе [аудиокодеки поддерживаются динамической упаковкой](dynamic-packaging-overview.md#audio-codecs-supported-by-dynamic-packaging).
 
-Теперь можно указать список фильтров активов или учетной записи, которые относятся к вашей указатель потоковой передачи. Дополнительные сведения см. в разделе [связать фильтры с указатель потоковой передачи](filters-concept.md#associate-filters-with-streaming-locator).
+Теперь можно указать список фильтров активов или учетной записи, которые относятся к вашей указатель потоковой передачи. Дополнительные сведения см. в разделе [связать фильтры с указатель потоковой передачи](filters-concept.md#associating-filters-with-streaming-locator).
 
 ## <a name="february-2019"></a>Февраль 2019 г.
 
@@ -200,7 +214,7 @@ ms.locfileid: "65153067"
 
 ## <a name="may-2018---preview"></a>Май 2018 г. Предварительная версия
 
-### <a name="net-sdk"></a>ПАКЕТ SDK .NET
+### <a name="net-sdk"></a>Пакет SDK для .NET
 
 Следующие компоненты входят в пакет SDK для .NET:
 
@@ -215,10 +229,10 @@ ms.locfileid: "65153067"
 
 * При отправке задания можно указать исходное видео для приема, используя URL-адреса HTTPS, URL-адреса SAS или пути к файлам, находящимся в хранилище BLOB-объектов Azure. В настоящее время AMS версии 3 не поддерживает кодирование блочной передачи по URL-адресам HTTPS.
 
-## <a name="ask-questions-give-feedback-get-updates"></a>Задавайте вопросы, отзыв, получить обновления
+## <a name="ask-questions-give-feedback-get-updates"></a>Получение справки, отправка отзывов, получение обновлений
 
 Прочитайте статью [сообщества Служб мультимедиа Azure](media-services-community.md), чтобы узнать, как задавать вопросы, оставлять отзывы и получать новости о Службах мультимедиа.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Обзор](media-services-overview.md)
+[Обзор набора средств Visual Studio для Unity](media-services-overview.md)

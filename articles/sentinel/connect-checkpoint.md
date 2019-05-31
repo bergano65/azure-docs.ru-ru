@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/07/2019
 ms.author: rkarlin
-ms.openlocfilehash: c487856c7fb959f684700dee1d463783954b1a53
-ms.sourcegitcommit: d73c46af1465c7fd879b5a97ddc45c38ec3f5c0d
+ms.openlocfilehash: cad1f84f611ac3214b8823bb11817ffceb3e2017
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65921969"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66388703"
 ---
 # <a name="connect-your-check-point-appliance"></a>Подключение устройства Check Point
 
@@ -123,7 +123,7 @@ ms.locfileid: "65921969"
 
 3. Убедитесь, что журналы отправки соответствуют [форматы RFC 5424](https://tools.ietf.org/html/rfc542).
 
-4. На компьютере с агентом системного журнала, убедитесь, что эти порты 514, 25226 открыт и осуществляет прослушивание с помощью команды `netstat -a -n:`. Дополнительные сведения об использовании этой команды см. в разделе [netstat(8) - странице руководства Linux](https://linux.die.netman/8/netstat). Если он ожидает должным образом, вы увидите следующее:
+4. На компьютере с агентом системного журнала, убедитесь, что эти порты 514, 25226 открыт и осуществляет прослушивание с помощью команды `netstat -a -n:`. Дополнительные сведения об использовании этой команды см. в разделе [netstat(8) - странице руководства Linux](https://linux.die.net/man/8/netstat). Если он ожидает должным образом, вы увидите следующее:
 
    ![Azure Sentinel порты](./media/connect-cef/ports.png) 
 

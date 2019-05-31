@@ -10,17 +10,17 @@ ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: dc208f3231882a0726733c897e70557c657cddf3
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.openlocfilehash: 6e627de5b22a67051961e70bab56b2d931129281
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
-ms.locfileid: "65024522"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66244801"
 ---
 # <a name="how-to-work-with-search-results-in-azure-search"></a>Как работать с результатами поиска в службе "Поиск Azure"
 В данной статье приводятся рекомендации по реализации стандартных элементов страницы результатов поиска, например, общего подсчета, извлечения документа, порядка сортировки и навигации. Связанные со страницей параметры, добавляющие данные или информацию к результатам поиска, задаются в запросах [поиска в документе](https://docs.microsoft.com/rest/api/searchservice/Search-Documents), отправляемых службе "Поиск Azure". 
 
-В REST API запросы включают команду GET, путь и параметры запроса, уведомляющие службу о том, что запрашивается и как сформировать ответ. В пакете SDK для .NET эквивалентным API является [класс DocumentSearchResult](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.documentsearchresult?view=azure-dotnet).
+В REST API запросы включают команду GET, путь и параметры запроса, уведомляющие службу о том, что запрашивается и как сформировать ответ. В пакете SDK для .NET эквивалентным API является [класс DocumentSearchResult](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.models.documentsearchresult-1).
 
 В некоторых примерах кода предусмотрен пользовательский веб-интерфейс, который можно найти здесь: [демонстрационное приложение New York City Jobs](https://azjobsdemo.azurewebsites.net/) и [CognitiveSearchFrontEnd](https://github.com/LuisCabrer/CognitiveSearchFrontEnd).
 

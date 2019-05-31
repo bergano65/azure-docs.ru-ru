@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: tilee
-ms.openlocfilehash: 3aca64c7b0f1ad04967782cb3349da302db557a0
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 6eca2b47c2362f34415db8b4f335f3089babc58b
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65145089"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66255884"
 ---
 # <a name="status-monitor-v2-detailed-instructions"></a>Состояние монитора v2 подробные инструкции
 
@@ -224,7 +224,7 @@ SerializationVersion           1.1.0.1
 Пакет SDK Application Insights необходимо отправлять данные телеметрии вашего приложения в корпорацию Майкрософт. Рекомендуется настроить параметры прокси-сервера для вашего приложения в файле web.config. См. в разделе [Application Insights часто задаваемые вопросы: Прокси-сервера Passthrough](https://docs.microsoft.com/azure/azure-monitor/app/troubleshoot-faq#proxy-passthrough) Дополнительные сведения.
 
 
-## <a name="enable-monitoring"></a>Включить мониторинг 
+## <a name="enable-monitoring"></a>Включение мониторинга 
 
 Cmd: `Enable-ApplicationInsightsMonitoring`
 
@@ -239,7 +239,7 @@ Cmd: `Enable-ApplicationInsightsMonitoring`
 - [Изучите метрики](../../azure-monitor/app/metrics-explorer.md), чтобы отслеживать производительность и использование.
 - [Поиск событий и журналов](../../azure-monitor/app/diagnostic-search.md) для диагностики проблем
 - [Аналитика](../../azure-monitor/app/analytics.md) для создания расширенных запросов.
-- [Создайте панели мониторинга](../../azure-monitor/app/app-insights-dashboards.md)
+- [Создайте панели мониторинга](../../azure-monitor/app/overview-dashboard.md)
 
  Добавление данных телеметрии:
 

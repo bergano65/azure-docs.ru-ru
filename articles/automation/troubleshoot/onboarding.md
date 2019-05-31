@@ -4,16 +4,16 @@ description: Сведения о том, как устранить ошибки 
 services: automation
 author: georgewallace
 ms.author: gwallace
-ms.date: 03/20/2019
+ms.date: 05/22/2019
 ms.topic: conceptual
 ms.service: automation
 manager: carmonm
-ms.openlocfilehash: 16a03840f6bbf44853cf01e50189a194672d153e
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 8867912d98897a695c1e59ebd4177301230281bb
+ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65145149"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66399761"
 ---
 # <a name="troubleshoot-errors-when-onboarding-solutions"></a>Устранение неполадок при подключении решения
 
@@ -42,6 +42,24 @@ The solution cannot be enabled on this VM because the permission to read the wor
 #### <a name="resolution"></a>Способы устранения:
 
 Убедитесь, что у вас есть разрешение на подключение виртуальной машины. Просмотрите [разрешения, необходимые для подключения компьютеров](../automation-role-based-access-control.md#onboarding), и попробуйте еще раз подключить решение. Если возникает ошибка `The solution cannot be enabled on this VM because the permission to read the workspace is missing`, убедитесь в наличии `Microsoft.OperationalInsights/workspaces/read` разрешение, чтобы иметь возможность найти, если виртуальная машина будет подключена к рабочей области.
+
+### <a name="diagnostic-logging"></a>Сценарий. Подключение завершится сбоем с сообщением - не удалось настроить учетную запись службы автоматизации для ведения журнала диагностики
+
+#### <a name="issue"></a>Проблема
+
+При попытке подключить виртуальную машину к решению вы получаете следующее сообщение:
+
+```error
+Failed to configure automation account for diagnostic logging
+```
+
+#### <a name="cause"></a>Причина:
+
+Эта ошибка может возникать Ценовая категория не соответствует модели выставления счетов подписки. Дополнительные сведения см. в разделе [мониторинг использования и ожидаемых затрат в Azure Monitor](http://aka.ms/PricingTierWarning).
+
+#### <a name="resolution"></a>Способы устранения:
+
+Создайте рабочую область Log Analytics вручную и повторите процесс адаптации и выберите рабочую область, созданную.
 
 ### <a name="computer-group-query-format-error"></a>Сценарий. ComputerGroupQueryFormatError
 
@@ -97,13 +115,13 @@ The link cannot be updated or deleted because it is linked to Update Management 
 
 Чтобы устранить эту проблему, необходимо удалить следующие решения из рабочей области, если они используются:
 
-* управление обновлениями;
+* Управление обновлениями
 * Отслеживание изменений
 * Запуск и остановка виртуальных машин в нерабочее время
 
 После удаления решения, можно удалить связь с рабочей области. Важно очистить все существующие артефакты из этих решений из рабочей области и учетной записи службы автоматизации также.  
 
-* управление обновлениями;
+* Управление обновлениями
   * Удаление развертываний обновлений (расписания) из учетной записи службы автоматизации
 * Запуск и остановка виртуальных машин в нерабочее время
   * Удалите все блокировки на компоненты решения в вашей учетной записи службы автоматизации в **параметры** > **блокировки**.

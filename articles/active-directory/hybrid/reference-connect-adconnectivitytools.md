@@ -10,12 +10,12 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.topic: reference
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1084a3e546a234739fbede46612dce96537c7d4a
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.openlocfilehash: 318f21beffb401053c56576ccd9e641dc89cf559
+ms.sourcegitcommit: 8c49df11910a8ed8259f377217a9ffcd892ae0ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65950639"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66298804"
 ---
 # <a name="azure-ad-connect--adconnectivitytools-powershell-reference"></a>Azure AD Connect выполняет следующие функции:  Справочник по модулю PowerShell ADConnectivityTools
 
@@ -33,10 +33,9 @@ ms.locfileid: "65950639"
 Confirm-DnsConnectivity [-Forest] <String> [-DCs] <Array> [-ReturnResultAsPSObject] [<CommonParameters>]
 ```
 
-### <a name="description"></a>ОПИСАНИЕ
+### <a name="description"></a>Описание
 
-Выполняет тесты подключения к локальной службе DNS.
-Чтобы настроить соединитель Active Directory, пользователь должен иметь оба разрешения имен для леса, он пытается подключиться к также как и контроллеры домена, связанные с указанным лесом.
+Выполняет тесты подключения к локальной службе DNS. Чтобы настроить соединитель Active Directory, пользователь должен иметь оба разрешения имен для леса, он пытается подключиться к также как и контроллеры домена, связанные с указанным лесом.
 
 ### <a name="examples"></a>Примеры
 
@@ -120,7 +119,7 @@ Accept wildcard characters: False
 Confirm-ForestExists [-Forest] <String> [<CommonParameters>]
 ```
 
-### <a name="description"></a>ОПИСАНИЕ
+### <a name="description"></a>Описание
 
 Запрашивает DNS-сервер для IP-адресов, связанных с лесом.
 
@@ -175,7 +174,7 @@ Confirm-FunctionalLevel -Forest <String> [-RunWithCurrentlyLoggedInUserCredentia
 Confirm-FunctionalLevel -ForestFQDN <Forest> [-RunWithCurrentlyLoggedInUserCredentials] [<CommonParameters>]
 ```
 
-### <a name="description"></a>ОПИСАНИЕ
+### <a name="description"></a>Описание
 
 Проверяет, равен или превышает ли функциональный уровень леса AD заданное значение MinAdForestVersion (WindowsServer2003).
 Может быть запрошена учетная запись (домен\имя пользователя) и пароль.
@@ -268,7 +267,7 @@ Accept wildcard characters: False
 Confirm-NetworkConnectivity [-DCs] <Array> [-SkipDnsPort] [-ReturnResultAsPSObject] [<CommonParameters>]
 ```
 
-### <a name="description"></a>ОПИСАНИЕ
+### <a name="description"></a>Описание
 
 Выполняет проверку локального сетевого подключения.
 
@@ -358,7 +357,7 @@ Accept wildcard characters: False
 Confirm-TargetsAreReachable [-Forest] <String> [-DCs] <Array> [<CommonParameters>]
 ```
 
-### <a name="description"></a>ОПИСАНИЕ
+### <a name="description"></a>Описание
 
 Выполняет проверки связи (может ли компьютер обратиться к целевому компьютеру через сеть или Интернет).
 
@@ -435,7 +434,7 @@ Confirm-ValidDomains [-Forest <String>] [-RunWithCurrentlyLoggedInUserCredential
 Confirm-ValidDomains -ForestFQDN <Forest> [-RunWithCurrentlyLoggedInUserCredentials] [<CommonParameters>]
 ```
 
-### <a name="description"></a>ОПИСАНИЕ
+### <a name="description"></a>Описание
 
 Проверяет, доступны ли все домены в лесу, чье полное доменное имя было получено. Для этого выполняется попытка получить значения DomainGuid и DomainDN.
 Может быть запрошена учетная запись (домен\имя пользователя) и пароль.
@@ -527,7 +526,7 @@ Accept wildcard characters: False
 Confirm-ValidEnterpriseAdminCredentials [-RunWithCurrentlyLoggedInUserCredentials] [<CommonParameters>]
 ```
 
-### <a name="description"></a>ОПИСАНИЕ
+### <a name="description"></a>Описание
 
 Определяет, имеет ли указанный пользователь учетные данные администратора предприятия.
 Может быть запрошена учетная запись (домен\имя пользователя) и пароль.
@@ -582,7 +581,7 @@ Get-DomainFQDNData [[-DomainFQDNDataType] <String>] [-RunWithCurrentlyLoggedInUs
  [-ReturnExceptionOnError] [<CommonParameters>]
 ```
 
-### <a name="description"></a>ОПИСАНИЕ
+### <a name="description"></a>Описание
 
 Пытается получить объект domainFQDN из предоставленных учетных данных.
 Если объект domainFQDN является допустимым, будет возвращено значение DomainFQDNName или RootDomainName, в зависимости от выбора пользователя.
@@ -670,7 +669,7 @@ Accept wildcard characters: False
 Get-ForestFQDN [-Forest] <String> [-RunWithCurrentlyLoggedInUserCredentials] [<CommonParameters>]
 ```
 
-### <a name="description"></a>ОПИСАНИЕ
+### <a name="description"></a>Описание
 
 Пытается получить ForestFQDN из предоставленных учетных данных.
 Может быть запрошена учетная запись (домен\имя пользователя) и пароль.
@@ -741,7 +740,7 @@ Start-ConnectivityValidation [-Forest] <String> [-AutoCreateConnectorAccount] <B
  [<CommonParameters>]
 ```
 
-### <a name="description"></a>ОПИСАНИЕ
+### <a name="description"></a>Описание
 
 Выполняет все доступные механизмы, которые проверяют допустимость учетных данных AD.
 
@@ -824,7 +823,7 @@ Start-NetworkConnectivityDiagnosisTools [[-Forest] <String>] [-Credentials] <PSC
  [-ValidCredentials] [<CommonParameters>]
 ```
 
-### <a name="description"></a>ОПИСАНИЕ
+### <a name="description"></a>Описание
 
 Выполняет проверку локального сетевого подключения.
 

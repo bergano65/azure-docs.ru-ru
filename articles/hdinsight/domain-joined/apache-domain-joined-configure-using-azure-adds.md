@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.topic: conceptual
 ms.custom: seodec18
 ms.date: 04/23/2019
-ms.openlocfilehash: b084790bf5a4edfed74dd95a40c11eec26d34dbe
-ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
+ms.openlocfilehash: e1bc99cdc089050fbfa931bbbc7b9a6a316a3a75
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65415466"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66240172"
 ---
 # <a name="configure-a-hdinsight-cluster-with-enterprise-security-package-by-using-azure-active-directory-domain-services"></a>Настройка кластера HDInsight с корпоративным пакетом безопасности с помощью доменных служб Azure Active Directory
 
@@ -31,13 +31,13 @@ ms.locfileid: "65415466"
 >
 > Если системой хранения данных кластера является хранилище BLOB-объектов Azure (WASB), оставьте Многофакторную идентификацию включенной.
 
-Включение доменных служб Azure AD является необходимым предварительным условием, которое нужно выполнить, прежде чем вы сможете создать кластер HDInsight с ESP. Дополнительные сведения см. в разделе [Включение доменных служб Azure Active Directory с помощью портала Azure](../../active-directory-domain-services/active-directory-ds-getting-started.md). 
+Включение доменных служб Azure AD является необходимым предварительным условием, которое нужно выполнить, прежде чем вы сможете создать кластер HDInsight с ESP. Дополнительные сведения см. в разделе [Включение доменных служб Azure Active Directory с помощью портала Azure](../../active-directory-domain-services/create-instance.md). 
 
 Если доменные службы Azure AD включены, все пользователи и объекты начинают синхронизацию из Azure Active Directory (AAD) в Azure AD DS по умолчанию. Продолжительность операции синхронизации зависит от числа объектов в Azure AD. Синхронизация сотен тысяч объектов может занять несколько дней. 
 
-Вы можете синхронизировать только группы, которым требуется доступ к кластерам HDInsight. Этот вариант синхронизации только определенных групп называется *синхронизацией определенных объектов*. Инструкции см. в статье [Configure Scoped Synchronization from Azure AD to your managed domain](../../active-directory-domain-services/active-directory-ds-scoped-synchronization.md) (Настройка синхронизации определенных объектов из Azure AD в управляемый домен).
+Вы можете синхронизировать только группы, которым требуется доступ к кластерам HDInsight. Этот вариант синхронизации только определенных групп называется *синхронизацией определенных объектов*. Инструкции см. в статье [Configure Scoped Synchronization from Azure AD to your managed domain](../../active-directory-domain-services/scoped-synchronization.md) (Настройка синхронизации определенных объектов из Azure AD в управляемый домен).
 
-При включении защищенных протоколов LDAP укажите в сертификате доменное имя в качестве имени субъекта или альтернативного имени субъекта. Например, если ваше доменное имя — *contoso100.onmicrosoft.com*, убедитесь, что в сертификате существует такое же имя субъекта или альтернативное имя субъекта. Дополнительные сведения см. в разделе [Настройка защищенного протокола LDAP для управляемого домена Azure AD-DS](../../active-directory-domain-services/active-directory-ds-admin-guide-configure-secure-ldap.md). Ниже приведен пример создания самозаверяющего сертификата с именем домена (*contoso100.onmicrosoft.com*) в имени субъекта и DnsName (альтернативное имя субъекта).
+При включении защищенных протоколов LDAP укажите в сертификате доменное имя в качестве имени субъекта или альтернативного имени субъекта. Например, если ваше доменное имя — *contoso100.onmicrosoft.com*, убедитесь, что в сертификате существует такое же имя субъекта или альтернативное имя субъекта. Дополнительные сведения см. в разделе [Настройка защищенного протокола LDAP для управляемого домена Azure AD-DS](../../active-directory-domain-services/configure-ldaps.md). Ниже приведен пример создания самозаверяющего сертификата с именем домена (*contoso100.onmicrosoft.com*) в имени субъекта и DnsName (альтернативное имя субъекта).
 
 ```powershell
 $lifetime=Get-Date

@@ -7,12 +7,12 @@ ms.service: analysis-services
 ms.topic: conceptual
 ms.date: 04/26/2019
 ms.author: chlound
-ms.openlocfilehash: abbad97e29f60e5f135017cd43f9d30eba1805ca
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: 4cae93cff594ad561973f8029ea7335dc4c60263
+ms.sourcegitcommit: 8e76be591034b618f5c11f4e66668f48c090ddfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66142786"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66357000"
 ---
 # <a name="refresh-with-azure-automation"></a>Обновление с помощью службы автоматизации Azure
 
@@ -26,7 +26,7 @@ ms.locfileid: "66142786"
 
 Все вызовы должны пройти проверку подлинности допустимый токен Azure Active Directory (OAuth 2).  Пример в этой статье будут выполнять проверку подлинности в Azure Analysis Services (Субъекта-службы).
 
-Дополнительные сведения о создании субъекта-службы, см. в разделе]
+Дополнительные сведения о создании субъекта-службы, см. в разделе [создать субъект-службу с помощью портала Azure](../active-directory/develop/howto-create-service-principal-portal.md).
 
 ## <a name="prerequisites"></a>Технические условия
 
@@ -43,7 +43,7 @@ ms.locfileid: "66142786"
 
 3. Выберите SqlServer, а затем нажмите кнопку **импорта**.
  
-    ![Импортировать модуль](./media/analysis-services-refresh-azure-automation/2.png)
+    ![Импорт модуля](./media/analysis-services-refresh-azure-automation/2.png)
 
 4. Последовательно выберите **ОК**.
  
@@ -67,11 +67,11 @@ ms.locfileid: "66142786"
 
 3. Импорт Runbook службы автоматизации
 
-    ![Импортировать Runbook](./media/analysis-services-refresh-azure-automation/8.png)
+    ![Импортировать модуль Runbook](./media/analysis-services-refresh-azure-automation/8.png)
 
 4. Поиск **обновления Model.ps1** файл, укажите **имя** и **описание**, а затем нажмите кнопку **создать**.
 
-    ![Импортировать Runbook](./media/analysis-services-refresh-azure-automation/9.png)
+    ![Импортировать модуль Runbook](./media/analysis-services-refresh-azure-automation/9.png)
 
 5. При создании Runbook автоматически перейдет в режим редактирования.  Нажмите кнопку **Опубликовать**.
 
@@ -149,7 +149,7 @@ ms.locfileid: "66142786"
 |---------|---------|
 |**AnalysisServicesDatabase**     |Имя базы данных Azure Analysis Services <br/> Пример: AdventureWorksDB         |
 |**AnalysisServicesServer**     |Имя сервера Azure Analysis Services. <br/> Пример: https:\//westus.asazure.windows.net/servers/myserver/models/AdventureWorks/         |
-|**DatabaseRefreshType**     |Тип обновления для выполнения. <br/> Пример: Полный         |
+|**DatabaseRefreshType**     |Тип обновления для выполнения. <br/> Пример: Полное         |
 
 Пример текста JSON:
 

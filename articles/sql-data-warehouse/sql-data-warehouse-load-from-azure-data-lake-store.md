@@ -1,5 +1,5 @@
 ---
-title: Руководство по Загрузки из хранилища Озера данных Azure в хранилище данных Azure SQL | Документация Майкрософт
+title: Учебник нагрузки из хранилища Озера данных Azure в хранилище данных Azure SQL | Документация Майкрософт
 description: Используйте внешние таблицы PolyBase для загрузки данных из хранилища Озера данных Azure в хранилище данных SQL Azure.
 services: sql-data-warehouse
 author: kevinvngo
@@ -10,12 +10,12 @@ ms.subservice: load data
 ms.date: 04/26/2019
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: 9d6a2c097a6040e7c005cc0feeefd59caf352441
-ms.sourcegitcommit: 16cb78a0766f9b3efbaf12426519ddab2774b815
+ms.openlocfilehash: a706fca7f7653c6916efc72d07988e79c9015a43
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65850501"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66244502"
 ---
 # <a name="load-data-from-azure-data-lake-storage-to-sql-data-warehouse"></a>Загрузка данных из хранилища Озера данных Azure в хранилище данных SQL
 Используйте внешние таблицы PolyBase для загрузки данных из хранилища Озера данных Azure в хранилище данных SQL Azure. Несмотря на то, что можно запускать специальные запросы к данным, хранящимся в хранилище Озера данных, мы рекомендуем импортировать данные в хранилище данных SQL для достижения оптимальной производительности.

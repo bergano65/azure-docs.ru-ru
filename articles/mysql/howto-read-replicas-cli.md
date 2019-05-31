@@ -5,20 +5,20 @@ author: ajlam
 ms.author: andrela
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 04/29/2019
-ms.openlocfilehash: a9ca34953827c1f94e2696eb4f09163be335d2f4
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.date: 05/28/2019
+ms.openlocfilehash: ba8af55f7467e361136e4b0c57c97b4fa187cec0
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65510685"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66304964"
 ---
 # <a name="how-to-create-and-manage-read-replicas-in-azure-database-for-mysql-using-the-azure-cli"></a>Создание реплик чтения и управление ими в Базе данных Azure для MySQL с помощью Azure CLI
 
 В этой статье вы узнаете, как создать реплики чтения и управлять ими в одном регионе Azure в службе "База данных Azure для MySQL" с помощью Azure CLI.
 
-> [!NOTE]
-> Интерфейс командной строки Azure пока не поддерживает создание реплик в другом регионе с главного сервера. Чтобы создать реплику между регионами, используйте [портала Azure]( howto-read-replicas-portal.md) вместо этого.
+> [!IMPORTANT]
+> Можно создать чтения реплики, в том же регионе, что главный сервер, или в любом другом регионе Azure по своему усмотрению. Репликация между регионами в настоящее время находится в общедоступной предварительной версии.
 
 ## <a name="prerequisites"></a>Технические условия
 
@@ -44,6 +44,12 @@ az mysql server replica create --name mydemoreplicaserver --source-server mydemo
 | name | mydemoreplicaserver | Имя нового сервера реплики, который создается. |
 | source-server | mydemoserver | Имя или идентификатор имеющегося главного сервера для репликации. |
 
+Для создания перекрестного регион чтения реплики, используйте `--location` параметра. Приведенный ниже пример CLI создает реплику в западной части США.
+
+```azurecli-interactive
+az mysql server replica create --name mydemoreplicaserver --source-server mydemoserver --resource-group myresourcegroup --location westus
+```
+
 > [!NOTE]
 > Реплики чтения создаются с той же конфигурацией сервера, что и у главного сервера. Вы можете изменить созданную конфигурацию сервера-реплики. Чтобы сервер-реплика мог работать с главным сервером, рекомендуется, чтобы значения конфигурации сервера-реплики были равны или превосходили значения конфигурации главного сервера.
 
@@ -67,7 +73,7 @@ az mysql server replica stop --name mydemoreplicaserver --resource-group myresou
 
 ## <a name="delete-a-replica-server"></a>Удаление сервера-реплики
 
-Сервер реплики чтения можно удалить, выполнив команду **[az mysql server delete](/cli/azure/mysql/server)**.
+Сервер реплики чтения можно удалить, выполнив команду **[az mysql server delete](/cli/azure/mysql/server)** .
 
 ```azurecli-interactive
 az mysql server delete --resource-group myresourcegroup --name mydemoreplicaserver
@@ -78,7 +84,7 @@ az mysql server delete --resource-group myresourcegroup --name mydemoreplicaserv
 > [!IMPORTANT]
 > Удаление главного сервера приводит к остановке репликации на все серверы-реплики и удалению самого главного сервера. Серверы-реплики становятся автономными серверами, которые начинают поддерживать операции чтения и записи.
 
-Чтобы удалить главный сервер, можно выполнить команду **[az mysql server delete](/cli/azure/mysql/server)**.
+Чтобы удалить главный сервер, можно выполнить команду **[az mysql server delete](/cli/azure/mysql/server)** .
 
 ```azurecli-interactive
 az mysql server delete --resource-group myresourcegroup --name mydemoserver

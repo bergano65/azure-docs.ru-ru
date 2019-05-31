@@ -11,15 +11,15 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/21/2019
+ms.date: 05/28/2019
 ms.author: juliako
 ms.custom: seodec18
-ms.openlocfilehash: e13bcb7d4eeded691669277b64aba9048f3bbefa
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 99aea38ec877074075eaec8cf9ab8da077901acf
+ms.sourcegitcommit: 51a7669c2d12609f54509dbd78a30eeb852009ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65150420"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66393112"
 ---
 # <a name="content-protection-with-dynamic-encryption"></a>Защита содержимого при использовании динамического шифрования
 
@@ -39,14 +39,13 @@ ms.locfileid: "65150420"
 
 1. Код службы мультимедиа Azure
   
-   [DRM](https://github.com/Azure-Samples/media-services-v3-dotnet-tutorials/blob/master/AMSV3Tutorials/EncryptWithDRM/Program.cs) образце показано, как реализовать систему мульти DRM с помощью Media Services v3, а также использовать службы доставки лицензий и ключей служб мультимедиа. Каждый ресурс можно зашифровать с помощью нескольких типов шифрования (AES-128, PlayReady, Widevine, FairPlay). Чтобы понять, что лучше объединять, см. раздел [Протоколы потоковой передачи и типы шифрования](#streaming-protocols-and-encryption-types).
+   [DRM](https://github.com/Azure-Samples/media-services-v3-dotnet-tutorials/blob/master/AMSV3Tutorials/EncryptWithDRM/Program.cs) образце показано, как реализовать систему мульти DRM служб мультимедиа версии 3 с помощью .NET. Также показано, как использовать службы доставки лицензий и ключей служб мультимедиа. Каждый ресурс можно зашифровать с помощью нескольких типов шифрования (AES-128, PlayReady, Widevine, FairPlay). Чтобы понять, что лучше объединять, см. раздел [Протоколы потоковой передачи и типы шифрования](#streaming-protocols-and-encryption-types).
   
    В примере показано, как выполнить следующие задачи.
 
-   1. Создание и настройка [содержимого политики ключа](https://docs.microsoft.com/rest/api/media/contentkeypolicies).
+   1. Создание и настройка [содержимого политики ключа](content-key-policy-concept.md). Создании **политике ключ содержимого** настроить порядок доставки ключа содержимого (который обеспечивает безопасный доступ к ресурсам) клиентам.    
 
       * Определите авторизацию доставки лицензии, определяющую логику проверки авторизации на основании утверждений в JWT.
-      * Настройка шифрования DRM путем указания ключа содержимого.
       * Настройка [PlayReady](playready-license-template-overview.md), [Widevine](widevine-license-template-overview.md), и/или [FairPlay](fairplay-license-overview.md) лицензии. Шаблоны позволяют настраивать права и разрешения для каждого используемого DRM.
 
         ```
@@ -54,11 +53,11 @@ ms.locfileid: "65150420"
         ContentKeyPolicyWidevineConfiguration widevineConfig = ConfigureWidevineLicenseTempate();
         ContentKeyPolicyFairPlayConfiguration fairPlayConfig = ConfigureFairPlayPolicyOptions();
         ```
-   2. Создание [указатель потоковой передачи](https://docs.microsoft.com/rest/api/media/streaminglocators) , настроенный для потоковой передачи зашифрованного актива. 
+   2. Создание [указатель потоковой передачи](streaming-locators-concept.md) , настроенный для потоковой передачи зашифрованного актива. 
   
-      **Указатель потоковой передачи** должно быть связано с [потоковой передачи политики](https://docs.microsoft.com/rest/api/media/streamingpolicies). В приведенном примере задается StreamingLocator.StreamingPolicyName в политику «Predefined_MultiDrmCencStreaming». Эта политика, то будет для два ключа содержимого (конверта и CENC) для получения созданных и задания на указателя. Таким образом применяются шифрования типа конверт, PlayReady и Widevine (ключ доставляется клиенту воспроизведения на основе настроенных лицензий DRM). Если необходимо выполнить шифрование потока с помощью CBCS (FairPlay), используйте Predefined_MultiDrmStreaming.
-    
-      Поскольку нам требуется шифровать видео, **политики ключей содержимого** ранее мы настроили также имеет связанных с **указатель потоковой передачи**. 
+      **Указатель потоковой передачи** должно быть связано с [потоковой передачи политики](streaming-policy-concept.md). В приведенном примере задается StreamingLocator.StreamingPolicyName в политику «Predefined_MultiDrmCencStreaming». Применения шифрования PlayReady и Widevine, ключ будет доставлен клиенту воспроизведения, в зависимости от настроенных лицензий DRM. Если необходимо выполнить шифрование потока с помощью CBCS (FairPlay), используйте Predefined_MultiDrmStreaming.
+      
+      Указатель потоковой передачи также связан с **политики ключей содержимого** , был определен.
     
    3. Создание тестового токена.
 
@@ -102,11 +101,11 @@ ms.locfileid: "65150420"
 
 |Формат контейнера|Схема шифрования|Пример URL-адреса|
 |---|---|---|
-|Все|AES|`https://amsv3account-usw22.streaming.media.azure.net/<id>/ignite.ism/manifest(format=m3u8-aapl,encryption=cbc)`|
-|MPG2-TS |CBCS (FairPlay) ||
-|CMAF(fmp4) |CBCS (FairPlay) |`https://amsv3account-usw22.streaming.media.azure.net/<id>/ignite.ism/manifest(format=m3u8-cmaf,encryption=cbcs-aapl)`|
-|MPG2-TS |CENC (PlayReady) ||
-|CMAF(fmp4) |CENC (PlayReady) ||
+|Все|AES|`https://amsv3account-usw22.streaming.media.azure.net/00000000-0000-0000-0000-000000000000/ignite.ism/manifest(format=m3u8-aapl,encryption=cbc)`|
+|MPG2-TS |CBCS (FairPlay) |`https://amsv3account-usw22.streaming.media.azure.net/00000000-0000-0000-0000-000000000000/ignite.ism/manifest(format=m3u8-aapl,encryption=cbcs-aapl)`|
+|CMAF(fmp4) |CBCS (FairPlay) |`https://amsv3account-usw22.streaming.media.azure.net/00000000-0000-0000-0000-000000000000/ignite.ism/manifest(format=m3u8-cmaf,encryption=cbcs-aapl)`|
+|MPG2-TS |CENC (PlayReady) |`https://amsv3account-usw22.streaming.media.azure.net/00000000-0000-0000-0000-000000000000/ignite.ism/manifest(format=m3u8-aapl,encryption=cenc)`|
+|CMAF(fmp4) |CENC (PlayReady) |`https://amsv3account-usw22.streaming.media.azure.net/00000000-0000-0000-0000-000000000000/ignite.ism/manifest(format=m3u8-cmaf,encryption=cenc)`|
 
 HLS/CMAF + FairPlay (включая HEVC / H.265) поддерживается на следующих устройствах:
 
@@ -120,9 +119,9 @@ MPEG-DASH протокол поддерживает следующие форм�
 
 |Формат контейнера|Схема шифрования|Примеры URL-адресов
 |---|---|---|
-|Все|AES|`https://amsv3account-usw22.streaming.media.azure.net/<id>/ignite.ism/manifest(format=mpd-time-csf,encryption=cbc)`|
-|CSF(fmp4) |CENC (Widevine + PlayReady) |`https://amsv3account-usw22.streaming.media.azure.net/<id>/ignite.ism/manifest(format=mpd-time-csf,encryption=cenc)`|
-|CMAF(fmp4)|CENC (Widevine + PlayReady)||
+|Все|AES|`https://amsv3account-usw22.streaming.media.azure.net/00000000-0000-0000-0000-000000000000/ignite.ism/manifest(format=mpd-time-csf,encryption=cbc)`|
+|CSF(fmp4) |CENC (Widevine + PlayReady) |`https://amsv3account-usw22.streaming.media.azure.net/00000000-0000-0000-0000-000000000000/ignite.ism/manifest(format=mpd-time-csf,encryption=cenc)`|
+|CMAF(fmp4)|CENC (Widevine + PlayReady)|`https://amsv3account-usw22.streaming.media.azure.net/00000000-0000-0000-0000-000000000000/ignite.ism/manifest(format=mpd-time-cmaf,encryption=cenc)`|
 
 ### <a name="smooth-streaming"></a>Smooth Streaming
 
@@ -130,8 +129,8 @@ MPEG-DASH протокол поддерживает следующие форм�
 
 |Протокол|Формат контейнера|Схема шифрования|
 |---|---|---|
-|fMP4|AES||
-|fMP4 | CENC (PlayReady) |`https://amsv3account-usw22.streaming.media.azure.net/<id>/ignite.ism/manifest(encryption=cenc)`|
+|fMP4|AES|`https://amsv3account-usw22.streaming.media.azure.net/00000000-0000-0000-0000-000000000000/ignite.ism/manifest(encryption=cbc)`|
+|fMP4 | CENC (PlayReady) |`https://amsv3account-usw22.streaming.media.azure.net/00000000-0000-0000-0000-000000000000/ignite.ism/manifest(encryption=cenc)`|
 
 ### <a name="browsers"></a>Браузеры
 
@@ -168,7 +167,7 @@ MPEG-DASH протокол поддерживает следующие форм�
 * StreamingPolicyWidevineConfiguration.CustomLicenseAcquisitionUrlTemplate - аналогично описанному выше, только для Widevine. 
 * StreamingPolicyFairPlayConfiguration.CustomLicenseAcquisitionUrlTemplate - аналогично описанному выше, только для FairPlay.  
 
-Например: 
+Пример:
 
 ```csharp
 streamingPolicy.EnvelopEncryption.customKeyAcquisitionUrlTemplate = "https://mykeyserver.hostname.com/envelopekey/{AlternativeMediaId}/{ContentKeyId}";
@@ -192,7 +191,7 @@ streamingPolicy.EnvelopEncryption.customKeyAcquisitionUrlTemplate = "https://myk
 
 Чтобы защитить неактивные ресурсы, их нужно зашифровать на стороне хранилища. В следующей таблице показано, как происходит шифрование на стороне хранилища в службах мультимедиа версии 3.
 
-|Вариант шифрования|ОПИСАНИЕ|Службы мультимедиа версии 3|
+|Вариант шифрования|Описание|Службы мультимедиа версии 3|
 |---|---|---|
 |Шифрование хранилища Служб мультимедиа| Шифрование AES-256. Ключами управляют Службы мультимедиа|Не поддерживается<sup>(1)</sup>|
 |[Шифрование службы хранилища для неактивных данных](https://docs.microsoft.com/azure/storage/common/storage-service-encryption)|Шифрование на стороне сервера, предоставляемое службой хранилища Azure. Ключами управляет Azure или клиент|Поддерживаются|
@@ -206,7 +205,7 @@ streamingPolicy.EnvelopEncryption.customKeyAcquisitionUrlTemplate = "https://myk
 
 Если возникают ошибки, которые заканчиваются `_NOT_SPECIFIED_IN_URL`, убедитесь, что указывать формат шифрования в URL-адрес. Например, `…/manifest(format=m3u8-cmaf,encryption=cbcs-aapl)`. См. в разделе [потоковых протоколов и типов шифрования](#streaming-protocols-and-encryption-types).
 
-## <a name="ask-questions-give-feedback-get-updates"></a>Задавайте вопросы, отзыв, получить обновления
+## <a name="ask-questions-give-feedback-get-updates"></a>Получение справки, отправка отзывов, получение обновлений
 
 Прочитайте статью [сообщества Служб мультимедиа Azure](media-services-community.md), чтобы узнать, как задавать вопросы, оставлять отзывы и получать новости о Службах мультимедиа.
 

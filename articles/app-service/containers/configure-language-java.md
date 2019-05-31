@@ -13,12 +13,12 @@ ms.topic: article
 ms.date: 03/28/2019
 ms.author: routlaw
 ms.custom: seodec18
-ms.openlocfilehash: 3361013d8421cd859c834c07018356318d5e2989
-ms.sourcegitcommit: f4469b7bb1f380bf9dddaf14763b24b1b508d57c
+ms.openlocfilehash: cf9356c2792781558c4403608ff5de0e3aaddb6a
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66179812"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66254468"
 ---
 # <a name="configure-a-linux-java-app-for-azure-app-service"></a>Настройка приложения Linux Java для службы приложений Azure
 
@@ -164,7 +164,7 @@ for (Object key : map.keySet()) {
     }
 ```
 
-Чтобы завершить сеансы пользователей и выполнения других действий, см. документацию на [проверку подлинности службы приложений и авторизации использования](https://docs.microsoft.com/en-us/azure/app-service/app-service-authentication-how-to). Имеется также Официальная документация на Tomcat [HttpServletRequest интерфейс](https://tomcat.apache.org/tomcat-5.5-doc/servletapi/javax/servlet/http/HttpServletRequest.html) и его методы. Следующие сервлетов, которые также являются структура данных методов в зависимости от конфигурации службы приложений:
+Чтобы завершить сеансы пользователей и выполнения других действий, см. документацию на [проверку подлинности службы приложений и авторизации использования](https://docs.microsoft.com/azure/app-service/app-service-authentication-how-to). Имеется также Официальная документация на Tomcat [HttpServletRequest интерфейс](https://tomcat.apache.org/tomcat-5.5-doc/servletapi/javax/servlet/http/HttpServletRequest.html) и его методы. Следующие сервлетов, которые также являются структура данных методов в зависимости от конфигурации службы приложений:
 
 ```java
 public boolean isSecure()

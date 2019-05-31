@@ -10,16 +10,16 @@ ms.subservice: bing-image-search
 ms.topic: article
 ms.date: 03/04/2019
 ms.author: aahi
-ms.openlocfilehash: 9b3edd10d2928a512b94e9273000439f80cb8f33
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 076dbb26c267cf65a0d6f3a9835375b09951f2aa
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65777097"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66388517"
 ---
 # <a name="endpoints-for-the-bing-image-search-api"></a>Конечные точки для API Bing для поиска изображений
 
-**API для поиска изображений** включает три конечные точки.  Конечная точка 1 возвращает изображения из Интернета на основе запроса. Конечная точка 2 возвращает [ImageInsights](https://docs.microsoft.com/rest/api/cognitiveservices/bing-images-api-v7-reference#imageinsightsresponse) (аналитические сведения об изображениях).  Конечная точка 3 возвращает популярные видео.
+**API для поиска изображений** включает три конечные точки.  Конечная точка 1 возвращает изображения из Интернета на основе запроса. Конечная точка 2 возвращает [ImageInsights](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#imageinsightsresponse) (аналитические сведения об изображениях).  Конечная точка 3 возвращает популярные видео.
 
 ## <a name="endpoints"></a>Конечные точки
 
@@ -34,9 +34,9 @@ GET https://api.cognitive.microsoft.com/bing/v7.0/images/search
 ```
  GET or POST https://api.cognitive.microsoft.com/bing/v7.0/images/details
 ```
-Запрос GET возвращает аналитические сведения об изображении, например веб-страницы, содержащие данное изображение. Включите в запрос `GET` параметр [insightsToken](https://docs.microsoft.com/rest/api/cognitiveservices/bing-images-api-v7-reference#insightstoken).
+Запрос GET возвращает аналитические сведения об изображении, например веб-страницы, содержащие данное изображение. Включите в запрос `GET` параметр [insightsToken](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#insightstoken).
 
-Вы также можете включить в текст запроса `POST` двоичный файл изображения и задать для параметра [modules](https://docs.microsoft.com/rest/api/cognitiveservices/bing-images-api-v7-reference#modulesrequested) значение `RecognizedEntities`. При этом будет возвращено значение [insightsToken](https://docs.microsoft.com/rest/api/cognitiveservices/bing-images-api-v5-reference#insightstoken), используемое в качестве параметра в следующем запросе `GET`, который возвращает сведения о людях на данном изображении.  Задайте для параметра `modules` значение `All`, чтобы получить в результатах `POST` все аналитические сведения, кроме `RecognizedEntities`. При этом не потребуется выполнять второй вызов, используя параметр `insightsToken`.
+Вы также можете включить в текст запроса `POST` двоичный файл изображения и задать для параметра [modules](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#modulesrequested) значение `RecognizedEntities`. При этом будет возвращено значение [insightsToken](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v5-reference#insightstoken), используемое в качестве параметра в следующем запросе `GET`, который возвращает сведения о людях на данном изображении.  Задайте для параметра `modules` значение `All`, чтобы получить в результатах `POST` все аналитические сведения, кроме `RecognizedEntities`. При этом не потребуется выполнять второй вызов, используя параметр `insightsToken`.
 
 
 **Конечная точка 3:** возвращает изображения, которые набирают популярность. За основу берутся результаты поисковых запросов, выполненных другими пользователями. Изображения разделяются на различные категории, например, если в них фигурируют примечательные люди или события.
@@ -46,7 +46,7 @@ GET https://api.cognitive.microsoft.com/bing/v7.0/images/trending
 
 Список рынков, для которых поддерживается поиск популярных изображений, см. в статье [Получение изображений, набирающих популярность](https://docs.microsoft.com/azure/cognitive-services/bing-image-search/trending-images).
 
-Дополнительные сведения о заголовках, параметрах, кодах рынков, объектах ответов, ошибках и т. п. вы найдете в справочнике [по API Bing для поиска изображений версии 7](https://docs.microsoft.com/rest/api/cognitiveservices/bing-images-api-v7-reference).
+Дополнительные сведения о заголовках, параметрах, кодах рынков, объектах ответов, ошибках и т. п. вы найдете в справочнике [по API Bing для поиска изображений версии 7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference).
 ## <a name="response-json"></a>Ответ в формате JSON
 Ответ на запрос на поиск изображений содержит результаты в виде объектов JSON. Примеры синтаксического анализа результатов см. в этом [руководстве](https://docs.microsoft.com/azure/cognitive-services/bing-image-search/tutorial-bing-image-search-single-page-app) и [исходном коде](https://docs.microsoft.com/azure/cognitive-services/bing-image-search/tutorial-bing-image-search-single-page-app-source).
 

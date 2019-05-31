@@ -2,19 +2,19 @@
 title: Возможности запроса данных клиента в службе "Аналитика временных рядов Azure" | Документация Майкрософт
 description: Краткие сведения о возможностях запроса данных клиентов в службе "Аналитика временных рядов Azure".
 author: ashannon7
-ms.author: anshan
+ms.author: dpalled
 manager: cshankar
 ms.date: 05/08/2019
 ms.topic: conceptual
 ms.service: time-series-insights
 services: time-series-insights
 ms.custom: seodec18
-ms.openlocfilehash: 67aea6b3d535eeb0838da4ac6990c50e607617bf
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.openlocfilehash: f99a54f5623100e057e0c02249f5886f46656a21
+ms.sourcegitcommit: 8e76be591034b618f5c11f4e66668f48c090ddfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65546392"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66355931"
 ---
 # <a name="summary-of-customer-data-request-features"></a>Сводка о возможностях запроса данных клиента
 
@@ -36,7 +36,7 @@ ms.locfileid: "65546392"
 
 Однако перед этим необходимо удалить клиентские политики доступа из среды "Аналитика временных рядов" в рамках портала Azure. Дополнительные сведения см. в статье [Предоставление доступа к данным для среды "Аналитика временных рядов" с помощью портала Azure](time-series-insights-data-access.md).
 
-Вы также можете выполнять операции удаления в политиках доступа с помощью REST API. Дополнительные сведения см. в статье [Access Policies - Delete](https://docs.microsoft.com/rest/api/time-series-insights-management/accesspolicies/delete) (Удаление политик доступа).
+Вы также можете выполнять операции удаления в политиках доступа с помощью REST API. Дополнительные сведения см. в статье [Access Policies - Delete](/rest/api/time-series-insights/management/accesspolicies/delete) (Удаление политик доступа).
 
 Служба "Аналитика временных рядов" интегрирована с колонкой "Политика" на портале Azure. Просматривать, экспортировать и удалять пользовательские данные, хранимые в службе, можно из обоих этих расположений. Данные пользователя, удаленные в колонке "Политика" на портале Azure, также удаляются в службе "Аналитика временных рядов". Например, если пользователь сохранил персональный запрос, этот запрос окончательно удаляется из обозревателя службы "Аналитика временных рядов". Если пользователь имеет общий запрос, этот запрос сохраняется, но информация о пользователе удаляется навсегда. Приведенное ниже примечание содержит инструкции о способах выполнения этих задач.
 
@@ -48,7 +48,7 @@ ms.locfileid: "65546392"
 
 Администратор клиента может просматривать политики доступа к данным в среде "Аналитика временных рядов" на портале Azure. Дополнительные сведения см. в статье [Предоставление доступа к данным для среды "Аналитика временных рядов" с помощью портала Azure](time-series-insights-data-access.md).
 
-Кроме того, операции экспорта в политиках доступа можно выполнять, используя операцию перечисления по средах в предоставленном REST API. Дополнительные сведения см. в статье [Access Policies - List By Environment](https://docs.microsoft.com/rest/api/time-series-insights-management/accesspolicies/listbyenvironment) (Политики доступа. Перечисление по средам).
+Кроме того, операции экспорта в политиках доступа можно выполнять, используя операцию перечисления по средах в предоставленном REST API. Дополнительные сведения см. в статье [Access Policies - List By Environment](/rest/api/time-series-insights/management/accesspolicies/listbyenvironment) (Политики доступа. Перечисление по средам).
 
 ## <a name="to-delete-data-stored-within-time-series-insights"></a>Удаление данных, хранимых в службе "Аналитика временных рядов"
 

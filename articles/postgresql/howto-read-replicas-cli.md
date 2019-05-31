@@ -5,20 +5,20 @@ author: rachel-msft
 ms.author: raagyema
 ms.service: postgresql
 ms.topic: conceptual
-ms.date: 5/6/2019
-ms.openlocfilehash: 9730faf3191ef2e2bd0b6c3caddefa0492b33fc5
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.date: 05/28/2019
+ms.openlocfilehash: 9a6a1a744a8441d2f082d4d14a3aba8aa1cfc09e
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65510237"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66306024"
 ---
 # <a name="create-and-manage-read-replicas-from-the-azure-cli"></a>Создание и управление ими чтения реплик с помощью Azure CLI
 
 В этой статье вы узнаете, как создавать и управлять ими чтения реплик в базе данных Azure для PostgreSQL с помощью Azure CLI. Дополнительные сведения о репликах чтения см. в [этой статье](concepts-read-replicas.md).
 
-> [!NOTE]
-> Интерфейс командной строки Azure пока не поддерживает создание реплик в другом регионе с главного сервера. Чтобы создать реплику между регионами, используйте [портала Azure](howto-read-replicas-portal.md).
+> [!IMPORTANT]
+> Можно создать чтения реплики, в том же регионе, что главный сервер, или в любом другом регионе Azure по своему усмотрению. Репликация между регионами в настоящее время находится в общедоступной предварительной версии.
 
 ## <a name="prerequisites"></a>Технические условия
 - [Сервер службы "База данных Azure для PostgreSQL"](quickstart-create-server-up-azure-cli.md) в качестве главного.
@@ -55,8 +55,16 @@ ms.locfileid: "65510237"
 | name | mydemoserver реплики | Имя нового сервера реплики, который создается. |
 | source-server | mydemoserver | Имя или ресурса идентификатор существующего главного сервера для репликации из. |
 
+В следующем примере интерфейс командной строки в том же регионе, что и основной Создание реплики.
+
 ```azurecli-interactive
 az postgres server replica create --name mydemoserver-replica --source-server mydemoserver --resource-group myresourcegroup
+```
+
+Для создания перекрестного регион чтения реплики, используйте `--location` параметра. Приведенный ниже пример CLI создает реплику в западной части США.
+
+```azurecli-interactive
+az postgres server replica create --name mydemoserver-replica --source-server mydemoserver --resource-group myresourcegroup --location westus
 ```
 
 Если вы не задали `azure.replication_support` параметр **РЕПЛИКИ** на общего назначения или оптимизированной для памяти главного сервера и перезапустите сервер, то возникнет ошибка. Завершения этих этапов, прежде чем создавать реплики.

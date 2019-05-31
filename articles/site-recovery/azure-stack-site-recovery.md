@@ -6,14 +6,14 @@ author: rayne-wiselman
 manager: carmonm
 ms.topic: conceptual
 ms.service: site-recovery
-ms.date: 12/27/2018
+ms.date: 05/30/2019
 ms.author: raynew
-ms.openlocfilehash: a84cbba968baf50563a2c2b0e2843d64f17bb34a
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.openlocfilehash: 11d409f904c43c0df4bbbd44fdb24531f2f989f6
+ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62124719"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66399598"
 ---
 # <a name="replicate-azure-stack-vms-to-azure"></a>Репликация виртуальных машин Azure Stack в Azure
 
@@ -255,7 +255,7 @@ ms.locfileid: "62124719"
 > Для мониторинга добавляемых виртуальных машин укажите последнее время обнаружения, выбрав **Серверы конфигурации** > **Последний контакт в**. Чтобы добавить виртуальные машины, не дожидаясь запланированного обнаружения, выделите сервер конфигурации (не выбирая его) и нажмите кнопку **Обновить**.
 
 
-## <a name="step-6-run-a-disaster-recovery-drill"></a>Шаг 6. Выполнение отработки аварийного восстановления
+## <a name="step-6-run-a-disaster-recovery-drill"></a>Шаг 6. Отработка аварийного восстановления
 
 Запустите тестовую отработку отказа в Azure, чтобы убедиться в надлежащей работе всех компонентов. Эта отработка отказа не влияет на рабочую среду.
 

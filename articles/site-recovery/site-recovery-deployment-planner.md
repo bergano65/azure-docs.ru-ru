@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 04/18/2019
 ms.author: mayg
-ms.openlocfilehash: a1fbc8a42492b4a9c2254ccea2ddc2909219ad23
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
-ms.translationtype: HT
+ms.openlocfilehash: 42ef6087663c48cad965be768f14920efa777a62
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65969344"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66244324"
 ---
 # <a name="about-the-azure-site-recovery-deployment-planner-for-vmware-to-azure"></a>О Планировщике развертывания Azure Site Recovery для восстановления виртуальных машин VMware в Azure
 В этой статье приведены рекомендации по использованию планировщика развертывания Azure Site Recovery в сценариях рабочих развертываний виртуальных машин VMware в Azure.
@@ -121,7 +121,7 @@ ms.locfileid: "65969344"
 
 ## <a name="version-history"></a>Журнал версий
 Последняя версия средства планировщика развертывания Site Recovery — 2.4.
-Описание исправлений, добавляемых при каждом обновлении, см. на странице [журнала версий планировщика развертывания Site Recovery](https://docs.microsoft.com/en-us/azure/site-recovery/site-recovery-deployment-planner-history).
+Описание исправлений, добавляемых при каждом обновлении, см. на странице [журнала версий планировщика развертывания Site Recovery](https://docs.microsoft.com/azure/site-recovery/site-recovery-deployment-planner-history).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 [Запуск планировщика развертывания Azure Site Recovery для сценариев развертывания виртуальных машин VMware в Azure](site-recovery-vmware-deployment-planner-run.md)

@@ -3,19 +3,19 @@ title: Как развернуть бот Conversation Learner — Microsoft Cog
 titleSuffix: Azure
 description: Сведения о развертывании бота Conversation Learner.
 services: cognitive-services
-author: v-jaswel
+author: nitinme
 manager: nolachar
 ms.service: cognitive-services
 ms.subservice: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
-ms.author: v-jaswel
-ms.openlocfilehash: ae984cc2e0f43b81b8aa2f08b3944886733c9054
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.author: nitinme
+ms.openlocfilehash: 5522f762f3893f1d67cd3755b1e022f0118cc004
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60848271"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66385314"
 ---
 # <a name="how-to-deploy-a-conversation-learner-bot"></a>Развертывание бота Conversation Learner
 
@@ -90,7 +90,7 @@ ms.locfileid: "60848271"
 
 2. Откроется окно диалога с ботом.
 
-## <a name="option-2-deploy-to-azure"></a>Вариант 2. Развернуть в Azure
+## <a name="option-2-deploy-to-azure"></a>Вариант 2. Развертывание в Azure
 
 Публикация бота Conversation Learner выполняется почти так же, как и для любого другого бота. Если коротко, то вам нужно лишь передать код на размещенный веб-сайт, задать необходимые значения конфигурации и зарегистрировать бот в нужных каналах. В этом видео представлены подробные инструкции по публикации бота с помощью службы Azure Bot.
 

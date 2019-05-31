@@ -12,16 +12,16 @@ ms.topic: conceptual
 ms.date: 03/04/2019
 ms.author: scottwhi
 ms.custom: seodec2018
-ms.openlocfilehash: 38b2244d68de25f53d59dd4eb0a6beba03f0e51d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 9368abe7d3b6ad6cf6e86b503dca4fca4f18739c
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60916688"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66388459"
 ---
 # <a name="page-through-the-images-results"></a>Разбивка на страницы списка возвращаемых изображений
 
-Когда вы вызываете API для поиска изображений, Bing возвращает список результатов. Список — это подмножество общего количества результатов, относящихся к запросу. Чтобы получить предполагаемое общее количество доступных результатов, необходимо обратиться к полю [totalEstimatedMatches](https://docs.microsoft.com/rest/api/cognitiveservices/bing-images-api-v7-reference#totalestimatedmatches) объекта ответа.  
+Когда вы вызываете API для поиска изображений, Bing возвращает список результатов. Список — это подмножество общего количества результатов, относящихся к запросу. Чтобы получить предполагаемое общее количество доступных результатов, необходимо обратиться к полю [totalEstimatedMatches](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#totalestimatedmatches) объекта ответа.  
 
 В следующем примере показано поле `totalEstimatedMatches`, содержащееся в результатах поиска изображений.  
 
@@ -34,7 +34,7 @@ ms.locfileid: "60916688"
 }  
 ```  
 
-Чтобы разбить на страницы список доступных изображений, используйте параметры запроса [count](https://docs.microsoft.com/rest/api/cognitiveservices/bing-images-api-v7-reference#count) и [offset](https://docs.microsoft.com/rest/api/cognitiveservices/bing-images-api-v7-reference#offset).  
+Чтобы разбить на страницы список доступных изображений, используйте параметры запроса [count](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#count) и [offset](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#offset).  
 
 Параметр `count` задает количество результатов, возвращаемых в ответе. Максимальное количество результатов, которые можно запросить в ответе, равно 150. Значение по умолчанию — 35. Фактическое число полученных результатов может быть меньше запрошенного.
 
@@ -58,7 +58,7 @@ Host: api.cognitive.microsoft.com
 
 Можно предположить, что для разбиения списка на страницы по 35 изображений на каждой странице для параметра `offset` необходимо при первом запросе задать значение 0, а затем увеличивать `offset` на 35 при каждом последующем запросе. Но некоторые результаты из предыдущего ответа могут повторяться в последующем ответе. Например, первые два изображения в ответе могут совпадать с последними двумя изображениями из предыдущего ответа.
 
-Чтобы исключить повторяющиеся результаты, используйте поле [nextOffset](https://docs.microsoft.com/rest/api/cognitiveservices/bing-images-api-v7-reference#nextoffset) объекта `Images`. В поле `nextOffset` указывается значение `offset` для следующего запроса. Например, для разбиения по 30 изображений на страницу при первом запросе необходимо задать для параметра `count` значение 30, а для `offset` — 0. При следующем запросе задайте для параметра `count` значение 30, а для `offset` — значение `nextOffset` из предыдущего ответа. Для перемещения по страницам в обратном направлении рекомендуется использовать такой же стек смещений и отображать самые последние результаты.
+Чтобы исключить повторяющиеся результаты, используйте поле [nextOffset](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#nextoffset) объекта `Images`. В поле `nextOffset` указывается значение `offset` для следующего запроса. Например, для разбиения по 30 изображений на страницу при первом запросе необходимо задать для параметра `count` значение 30, а для `offset` — 0. При следующем запросе задайте для параметра `count` значение 30, а для `offset` — значение `nextOffset` из предыдущего ответа. Для перемещения по страницам в обратном направлении рекомендуется использовать такой же стек смещений и отображать самые последние результаты.
 
 > [!NOTE]
 > Разбиение на страницы доступно только для поиска изображений (/images/search) и не применимо к аналитическим сведениям об изображениях или изображениям, набирающим популярность (/images/trending).

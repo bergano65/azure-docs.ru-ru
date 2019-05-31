@@ -10,12 +10,12 @@ author: anumjs
 ms.author: anjangsh
 ms.reviewer: jrasnick
 manager: craigg
-ms.openlocfilehash: 215f7c9c65658ddbb10498bb59f3d326bf3a10f1
-ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
+ms.openlocfilehash: 9e5f10c2b4c2108626db79ad9821a8b07e57a2e3
+ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65988287"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66417703"
 ---
 # <a name="azure-sql-data-warehouse-release-notes"></a>Заметки о выпуске для Хранилища данных SQL Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "65988287"
 
 Использование даты, определенных для подтверждения, который выпуска применен в хранилище данных SQL Azure.
 
-## <a name="may-2019"></a>Мая 2019 г.
+## <a name="may-2019"></a>Май 2019 г.
 
 | Улучшения службы | Сведения |
 | --- | --- |
@@ -37,7 +37,8 @@ ms.locfileid: "65988287"
 |**Важность рабочей нагрузки теперь общедоступны**|Классификации управления рабочей нагрузки и важность обеспечения возможности влияют на порядок выполнения запросов. Дополнительные сведения о важности рабочей нагрузки, см. в разделе [классификации](sql-data-warehouse-workload-classification.md) и [важности](sql-data-warehouse-workload-importance.md) обзорные статьи в документации. Ознакомьтесь с [СОЗДАНИЯ КЛАССИФИКАТОРА рабочей НАГРУЗКИ](/sql/t-sql/statements/create-workload-classifier-transact-sql?view=azure-sqldw-latest) также doc.<br/><br/>Важность рабочих нагрузок в действии см. в разделе ниже видео:<br/> -[Основные понятия управления рабочей нагрузки](https://www.youtube.com/embed/QcCRBAhoXpM)<br/> -[Сценарии управления рабочей нагрузкой](https://www.youtube.com/embed/_2rLMljOjw8)|
 |**Дополнительная поддержка T-SQL**|Контактную зону языка T-SQL для хранилища данных SQL была расширена для поддержки: </br> - [TRIM](/sql/t-sql/functions/trim-transact-sql?view=azure-sqldw-latest)|
 |**Функции JSON**|Бизнес-аналитикам теперь можно использовать знакомый язык T-SQL для запроса и работы с документами, которые имеют формат данных JSON с использованием следующие новые функции JSON в хранилище данных.</br> - [ISJSON](/sql/t-sql/functions/isjson-transact-sql?view=azure-sqldw-latest)</br> - [JSON_VALUE](/sql/t-sql/functions/json-value-transact-sql?view=azure-sqldw-latest)</br> -  [JSON_QUERY](/sql/t-sql/functions/json-query-transact-sql?view=azure-sqldw-latest)</br> -  [JSON_MODIFY](/sql/t-sql/functions/json-modify-transact-sql?view=azure-sqldw-latest)</br> - [OPENJSON](/sql/t-sql/functions/openjson-transact-sql?view=azure-sqldw-latest)|
-|**Результирующий набор, кэширование (Предварительная версия)**|Результирующий набор кэширование позволяет время ответа на запрос мгновенных при уменьшает время для получения сведений для бизнес-аналитики и отчетности пользователей. Дополнительные сведения можно найти в разделе </br> - [ALTER DATABASE (Transact-SQL)](/sql/t-sql/statements/alter-database-transact-sql?view=azure-sqldw-latest)</br> - [Параметры ALTER DATABASE SET (Transact-SQL)](/sql/t-sql/statements/alter-database-transact-sql-set-options?view=azure-sqldw-latest)</br> - [РЕЗУЛЬТИРУЮЩИЙ НАБОР для НАБОРА КЭШИРОВАНИЯ (Transact-SQL)](/sql/t-sql/statements/set-result-set-caching-transact-sql?view=azure-sqldw-latest)</br> - [Инструкция SET (Transact-SQL)](/sql/t-sql/statements/set-statements-transact-sql)</br> - [sys.databases (Transact-SQL)](/sql/relational-databases/system-catalog-views/sys-databases-transact-sql?view=azure-sqldw-latest)|
+|**Результирующий набор, кэширование (Предварительная версия)**|Результирующий набор кэширование позволяет время ответа на запрос мгновенных при уменьшает время для получения сведений для бизнес-аналитики и отчетности пользователей. Дополнительные сведения можно найти в разделе</br> - [ALTER DATABASE (Transact-SQL)](/sql/t-sql/statements/alter-database-transact-sql?view=azure-sqldw-latest)</br> - [Параметры ALTER DATABASE SET (Transact-SQL)](/sql/t-sql/statements/alter-database-transact-sql-set-options?view=azure-sqldw-latest)</br> - [РЕЗУЛЬТИРУЮЩИЙ НАБОР для НАБОРА КЭШИРОВАНИЯ (Transact-SQL)](/sql/t-sql/statements/set-result-set-caching-transact-sql?view=azure-sqldw-latest)</br> - [Инструкция SET (Transact-SQL)](/sql/t-sql/statements/set-statements-transact-sql)</br> - [sys.databases (Transact-SQL)](/sql/relational-databases/system-catalog-views/sys-databases-transact-sql?view=azure-sqldw-latest)|
+|**Упорядоченные кластеризованный индекс columnstore (Предварительная версия)**|ColumnStore является является ключевой для хранения и эффективно запрашивать большие объемы данных. Для каждой таблицы он делит входящих данных на группы строк и каждого столбца в группе строк формы сегмента на диске.  Упорядоченные кластеризованный индекс columnstore дополнительные индексы оптимизируют выполнение запроса, позволяя эффективно сегмент исключения.   Дополнительные сведения можно найти в разделе</br> -  [CREATE TABLE (хранилище данных Azure SQL)](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?view=azure-sqldw-latest)</br> -  [CREATE COLUMNSTORE INDEX (Transact-SQL)](/sql/t-sql/statements/create-columnstore-index-transact-sql?view=azure-sqldw-latest).|
 
 ## <a name="march-2019"></a>Марта 2019 г.
 

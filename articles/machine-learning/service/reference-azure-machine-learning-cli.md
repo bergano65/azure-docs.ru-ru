@@ -11,12 +11,12 @@ ms.author: jordane
 author: jpe316
 ms.date: 05/02/2019
 ms.custom: seodec18
-ms.openlocfilehash: 163b8e1f68b8d5a102465022c67f7d0da57a7215
-ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
+ms.openlocfilehash: 541ffe70ae5198e631568584a58d02ac283e89d3
+ms.sourcegitcommit: 8c49df11910a8ed8259f377217a9ffcd892ae0ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65596959"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66298240"
 ---
 # <a name="use-the-cli-extension-for-azure-machine-learning-service"></a>Использование расширения интерфейса командной строки для Службы машинного обучения Azure
 
@@ -40,7 +40,7 @@ CLI для Машинного обучения Azure является расши
 
 Найти [Полная справочная документация по azure-cli-ml расширение Azure CLI](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/?view=azure-cli-latest).
 
-## <a name="install-the-extension"></a>Установить расширение
+## <a name="install-the-extension"></a>Установка расширения
 
 Чтобы установить расширение интерфейса командной строки Машинного обучения, выполните следующую команду:
 
@@ -165,13 +165,11 @@ az extension remove -n azure-cli-ml
     Дополнительные сведения см. в разделе [профиль модели az ml](https://docs.microsoft.com/cli/azure/ext/azure-cli-ml/ml/model?view=azure-cli-latest#ext-azure-cli-ml-az-ml-model-profile).
 
 + Развертывание модели в AKS
-
     ```azurecli-interactive
-    az ml model deploy -n myservice -m mymodel:1 --ic inferenceconfig.json --dc deploymentconfig.json
+    az ml model deploy -n myservice -m mymodel:1 --ic inferenceconfig.json --dc deploymentconfig.json --ct akscomputetarget
     ```
-
+    
     Ниже приведен пример `inferenceconfig.json` документа:
-
     ```json
     {
     "entryScript": "score.py",
@@ -182,6 +180,13 @@ az extension remove -n azure-cli-ml
     "enableGpu": false,
     "baseImage": null,
     "baseImageRegistry": null
+    }
+    ```
+    Ниже приведен пример документа «deploymentconfig.json»:
+    ```json
+    {
+    "computeType": "aks",
+    "ComputeTarget": "akscomputetarget"
     }
     ```
 

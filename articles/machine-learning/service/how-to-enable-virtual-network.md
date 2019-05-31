@@ -10,12 +10,12 @@ ms.reviewer: jmartens
 ms.author: aashishb
 author: aashishb
 ms.date: 01/08/2019
-ms.openlocfilehash: c1006aa21b3009bb7508c7a24ab501d39737261c
-ms.sourcegitcommit: 59fd8dc19fab17e846db5b9e262a25e1530e96f3
+ms.openlocfilehash: 48c59ddc1e203030bd967911d536930cb94761d3
+ms.sourcegitcommit: 8e76be591034b618f5c11f4e66668f48c090ddfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65978224"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66356180"
 ---
 # <a name="securely-run-experiments-and-inference-inside-an-azure-virtual-network"></a>Безопасным образом запускать эксперименты и вывод внутри виртуальной сети Azure
 
@@ -141,7 +141,7 @@ ms.locfileid: "65978224"
 
 ![Пример определяемый пользователем маршрут для префикса адреса](./media/how-to-enable-virtual-network/user-defined-route.png)
 
-Дополнительные сведения см. в разделе [создать пул пакетной службы Azure в виртуальной сети](/azure/batch/batch-virtual-network.md#user-defined-routes-for-forced-tunneling) статьи.
+Дополнительные сведения см. в разделе [создать пул пакетной службы Azure в виртуальной сети](../../batch/batch-virtual-network.md#user-defined-routes-for-forced-tunneling) статьи.
 
 ### <a name="create-machine-learning-compute-in-a-virtual-network"></a>Создание Вычислительной среды Машинного обучения в виртуальной сети
 
@@ -221,7 +221,7 @@ except ComputeTargetException:
 
     * __Тег службы источника__. Выберите __AzureMachineLearning__.
 
-    * __Диапазоны исходных портов__. Выберите __*__.
+    * __Диапазоны исходных портов__. Выберите __*__ .
 
     * __Назначение__. Выберите __Любые__.
 
@@ -271,11 +271,11 @@ except ComputeTargetException:
 
     - __Подсеть.__ Выберите подсеть.
 
-    - __Диапазон адресов службы Kubernetes.__ Выберите диапазон адресов службы Kubernetes. Для определения диапазона доступных IP-адресов используется нотация CIDR. Этот диапазон IP-адресов не должен пересекаться с диапазонами любой подсети. Например: 10.0.0.0/16.
+    - __Диапазон адресов службы Kubernetes.__ Выберите диапазон адресов службы Kubernetes. Для определения диапазона доступных IP-адресов используется нотация CIDR. Этот диапазон IP-адресов не должен пересекаться с диапазонами любой подсети. Пример: 10.0.0.0/16.
 
-    - __IP-адрес службы доменных имен (DNS) Kubernetes.__ Выберите IP-адрес службы доменных имен Kubernetes. Это IP-адрес, назначенный службе DNS Kubernetes. Он должен находиться в пределах диапазона адресов службы Kubernetes. Например: 10.0.0.10
+    - __IP-адрес службы доменных имен (DNS) Kubernetes.__ Выберите IP-адрес службы доменных имен Kubernetes. Это IP-адрес, назначенный службе DNS Kubernetes. Он должен находиться в пределах диапазона адресов службы Kubernetes. Пример: 10.0.0.10
 
-    - __Адрес моста Docker.__ Выберите адрес моста Docker. Этот IP-адрес, назначенный мосту Docker. Он не должен пересекаться с диапазоном IP-адресов, выделенным для любой подсети или службы Kubernetes. Например: 172.17.0.1/16.
+    - __Адрес моста Docker.__ Выберите адрес моста Docker. Этот IP-адрес, назначенный мосту Docker. Он не должен пересекаться с диапазоном IP-адресов, выделенным для любой подсети или службы Kubernetes. Пример: 172.17.0.1/16.
 
    ![Служба машинного обучения Azure. Параметры виртуальной сети для Вычислительной среды Машинного обучения](./media/how-to-enable-virtual-network/aks-virtual-network-screen.png)
 

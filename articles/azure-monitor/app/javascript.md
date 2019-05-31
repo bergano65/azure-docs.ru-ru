@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 03/14/2017
 ms.author: mbullwin
-ms.openlocfilehash: fee172eccd79fd28e281b2beece9702630ac39b5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 2192bad89764f20c24c85d9571bebbd6518de307
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60901736"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66387274"
 ---
 # <a name="application-insights-for-web-pages"></a>Application Insights для веб-страниц
 Узнайте о производительности и использовании своей веб-страницы или приложения. Если добавить [Application Insights](app-insights-overview.md) в скрипт страницы, вы узнаете время загрузки страницы и вызовов AJAX, сведения об исключениях браузера, ошибках AJAX и их количестве, а также количество пользователей и сеансов. Все эти данные можно разбить по страницам, версии клиентской ОС и браузера, географическому расположению и другим показателям. Можно также настроить оповещения для определенного количества сбоев или медленной загрузки страниц. Кроме того, вставив вызовы трассировки в код JavaScript, вы можете отслеживать использование различных функций приложения веб-страницы.
@@ -57,17 +57,17 @@ and before any other scripts. Your first data will appear
 automatically in just a few seconds.
 -->
 <script type="text/javascript">
-var appInsights=window.appInsights||function(a){
-  function b(a){c[a]=function(){var b=arguments;c.queue.push(function(){c[a].apply(c,b)})}}var c={config:a},d=document,e=window;setTimeout(function(){var b=d.createElement("script");b.src=a.url||"https://az416426.vo.msecnd.net/scripts/a/ai.0.js",d.getElementsByTagName("script")[0].parentNode.appendChild(b)});try{c.cookie=d.cookie}catch(a){}c.queue=[];for(var f=["Event","Exception","Metric","PageView","Trace","Dependency"];f.length;)b("track"+f.pop());if(b("setAuthenticatedUserContext"),b("clearAuthenticatedUserContext"),b("startTrackEvent"),b("stopTrackEvent"),b("startTrackPage"),b("stopTrackPage"),b("flush"),!a.disableExceptionTracking){f="onerror",b("_"+f);var g=e[f];e[f]=function(a,b,d,e,h){var i=g&&g(a,b,d,e,h);return!0!==i&&c["_"+f](a,b,d,e,h),i}}return c
+var sdkInstance="appInsightsSDK";window[sdkInstance]="appInsights";var aiName=window[sdkInstance],aisdk=window[aiName]||function(e){
+  function n(e){t[e]=function(){var n=arguments;t.queue.push(function(){t[e].apply(t,n)})}}var t={config:e};t.initialize=!0;var i=document,a=window;setTimeout(function(){var n=i.createElement("script");n.src=e.url||"https://az416426.vo.msecnd.net/next/ai.2.min.js",i.getElementsByTagName("script")[0].parentNode.appendChild(n)});try{t.cookie=i.cookie}catch(e){}t.queue=[],t.version=2;for(var r=["Event","PageView","Exception","Trace","DependencyData","Metric","PageViewPerformance"];r.length;)n("track"+r.pop());n("startTrackPage"),n("stopTrackPage");var s="Track"+r[0];if(n("start"+s),n("stop"+s),n("setAuthenticatedUserContext"),n("clearAuthenticatedUserContext"),n("flush"),!(!0===e.disableExceptionTracking||e.extensionConfig&&e.extensionConfig.ApplicationInsightsAnalytics&&!0===e.extensionConfig.ApplicationInsightsAnalytics.disableExceptionTracking)){n("_"+(r="onerror"));var o=a[r];a[r]=function(e,n,i,a,s){var c=o&&o(e,n,i,a,s);return!0!==c&&t["_"+r]({message:e,url:n,lineNumber:i,columnNumber:a,error:s}),c},e.autoExceptionInstrumented=!0}return t
   }({
       instrumentationKey:"<your instrumentation key>"
   });
-  
-window.appInsights=appInsights,appInsights.queue&&0===appInsights.queue.length&&appInsights.trackPageView();
+
+window[aiName]=aisdk,aisdk.queue&&0===aisdk.queue.length&&aisdk.trackPageView({});
 </script>
 ```
 
-Вставьте сценарий непосредственно перед тегом `</head>` каждой страницы, которую вы хотите отслеживать. Если на вашем веб-сайте есть главная страница, можно разместить сценарий на ней. Пример.
+Вставьте сценарий непосредственно перед тегом `</head>` каждой страницы, которую вы хотите отслеживать. Если на вашем веб-сайте есть главная страница, можно разместить сценарий на ней. Пример:
 
 * В проекте ASP.NET MVC разместите сценарий на странице `View\Shared\_Layout.cshtml`
 * На сайте SharePoint на панели управления откройте [Параметры сайта/Главная страница](sharepoint.md).
@@ -86,7 +86,7 @@ window.appInsights=appInsights,appInsights.queue&&0===appInsights.queue.length&&
       // Insert here
     });
 
-[Доступные параметры](https://github.com/Microsoft/ApplicationInsights-JS/blob/master/API-reference.md#config) включают:
+Полный список параметров конфигурации, см. в разделе [странице GitHub](https://github.com/microsoft/applicationinsights-js#configuration). Ниже перечислены некоторые доступные параметры.
 
     // Send telemetry immediately without batching.
     // Remember to remove this when no longer required, as it
@@ -96,17 +96,21 @@ window.appInsights=appInsights,appInsights.queue&&0===appInsights.queue.length&&
     // Don't log browser exceptions.
     disableExceptionTracking: boolean,
 
+    // Set false to enable autocollection of [Fetch requests](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API) (disabled by default)
+    disableFetchTracking: boolean, // default is true
+    
     // Don't log ajax calls.
     disableAjaxTracking: boolean,
 
     // Limit number of Ajax calls logged, to reduce traffic.
     maxAjaxCallsPerView: 10, // default is 500
-
+    
     // Time page load up to execution of first trackPageView().
     overridePageViewDuration: boolean,
 
     // Set dynamically for an authenticated user.
     accountId: string,
+    
 
 ## <a name="run"></a>Запуск приложения
 Запустите веб-приложение, используйте его в течение непродолжительного времени для формирования телеметрии и подождите несколько секунд. Вы также можете запустить приложение на компьютере, на котором ведется разработка, нажав клавишу **F5**, или опубликовать и позволить пользователям его использовать.
@@ -146,11 +150,11 @@ window.appInsights=appInsights,appInsights.queue&&0===appInsights.queue.length&&
 
 Щелкните `...`, чтобы увидеть полный список свойств для данного события или проверить вызовы AJAX и связанные события. Медленные вызовы AJAX влияют на общее время загрузки страницы, если они выполняются синхронно. К связанным событиям относятся запросы сервера для того же URL-адреса (если вы настроили Application Insights на веб-сервере).
 
-**Производительность страниц со временем.**  Вернитесь в колонку "Браузеры" и вместо таблицы "Время загрузки страницы" выберите график, на котором отображаются пиковые значения в определенное время:
+**Производительность страниц со временем.** Вернитесь в колонку "Браузеры" и вместо таблицы "Время загрузки страницы" выберите график, на котором отображаются пиковые значения в определенное время:
 
 ![Щелкните заголовок таблицы и выберите новый тип диаграммы.](./media/javascript/10-page-perf-area.png)
 
-**Сегментация по другим показателям.**  Возможно, загрузка страниц происходит медленнее в конкретном браузере, клиентской ОС или расположении пользователя? Добавьте новую диаграмму и поэкспериментируйте с параметром **Группировать по** .
+**Сегментация по другим показателям.** Возможно, загрузка страниц происходит медленнее в конкретном браузере, клиентской ОС или расположении пользователя? Добавьте новую диаграмму и поэкспериментируйте с параметром **Группировать по** .
 
 ![](./media/javascript/21.png)
 

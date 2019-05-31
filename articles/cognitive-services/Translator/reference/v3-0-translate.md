@@ -3,25 +3,25 @@ title: Метод Translate в API перевода текстов
 titleSuffix: Azure Cognitive Services
 description: Использование метода Translate в API перевода текстов.
 services: cognitive-services
-author: v-pawal
+author: rajdeep-in
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: reference
 ms.date: 02/01/2019
-ms.author: v-jansko
-ms.openlocfilehash: 5a2192c4555c2d84587ec8e39ce9ba94c985b541
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.author: v-pawal
+ms.openlocfilehash: be61d8932288b9a6b2cc96e53d3630124ec0f610
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66235833"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66389750"
 ---
-# <a name="translator-text-api-30-translate"></a>API перевода текстов 3.0: Перенести
+# <a name="translator-text-api-30-translate"></a>API перевода текстов 3.0: Перевод
 
 Этот интерфейс позволяет переводить текст.
 
-## <a name="request-url"></a>URL-адрес запроса
+## <a name="request-url"></a>Request URL (URL-адрес запроса)
 
 Отправьте запрос `POST` на следующий адрес.
 
@@ -201,7 +201,7 @@ https://api.cognitive.microsofttranslator.com/translate?api-version=3.0
   </tr>
   <tr>
     <td>401</td>
-    <td>Не удалось выполнить проверку подлинности запроса. Убедитесь, что указаны допустимые учетные данные.</td>
+    <td>Не удалось выполнить аутентификацию запроса. Убедитесь, что указаны допустимые учетные данные.</td>
   </tr>
   <tr>
     <td>403</td>
@@ -401,7 +401,7 @@ curl -X POST "https://api.cognitive.microsofttranslator.com/translate?api-versio
   </tr>
 </table> 
 
-Например:
+Пример:
 
 # <a name="curltabcurl"></a>[curl](#tab/curl)
 

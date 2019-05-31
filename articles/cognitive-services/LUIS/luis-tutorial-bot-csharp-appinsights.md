@@ -9,20 +9,20 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 01/23/2019
+ms.date: 05/30/2019
 ms.author: diberry
-ms.openlocfilehash: d546951cf283cf15874b1b6d95da75549a8a93ac
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 56ceb48be9d5cc9d1cdceed7505e2e3e918a7286
+ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60496872"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66399658"
 ---
 # <a name="add-luis-results-to-application-insights-with-a-bot-in-c"></a>Добавление результатов LUIS в Application Insights с помощью бота на C#
 
-В этом учебнике приведена процедура добавления данных ответа LUIS в хранилище данных телеметрии [Application Insights](https://azure.microsoft.com/services/application-insights/). После получения этих данных можно включить их запрос (используя язык Kusto или PowerBi) для анализа, статистической обработки и создания отчетов по намерениям и сущностям фрагментов речи в режиме реального времени. Этот анализ помогает определить, следует ли добавлять или изменять намерения и сущности приложения LUIS.
+В этом учебнике приведена процедура добавления данных ответа LUIS в хранилище данных телеметрии [Application Insights](https://azure.microsoft.com/services/application-insights/). Получив эти данные, можно выполнить запрос Kusto языка или Power BI для анализа, статистической обработки и создавать отчеты о намерения и сущности utterance в режиме реального времени. Этот анализ помогает определить, следует ли добавлять или изменять намерения и сущности приложения LUIS.
 
-Бот создается с помощью Bot Framework 3.x и бота веб-приложения Azure.
+Бот создается с помощью Bot Framework 3.x и бота веб-приложения Azure. Объект [Bot Framework 4.x с руководством LUIS](luis-csharp-tutorial-bf-v4.md) также доступна.
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 
@@ -89,7 +89,7 @@ ms.locfileid: "60496872"
 
 Установите и настройте Application Insights в Visual Studio.
 
-1. В Visual Studio 2017 в верхнем меню выберите **Проект**, а затем **Добавить телеметрию Application Insights...**.
+1. В Visual Studio 2017 в верхнем меню выберите **Проект**, а затем **Добавить телеметрию Application Insights...** .
 
 2. В окне **Конфигурация Application Insights** выберите **Начать бесплатно**.
 
@@ -204,7 +204,7 @@ ms.locfileid: "60496872"
 
 1. На портале выберите **Все ресурсы**, выполните фильтрацию по имени бота веб-приложения. Щелкните ресурс с типом **Application Insights**. Значок для Application Insights — лампочка.
 
-    ![Поиск Application Insights на портале Azure](./media/luis-tutorial-bot-csharp-appinsights/portal-service-list-app-insights.png)
+    ![Поиск Application insights на портале Azure](./media/luis-tutorial-bot-csharp-appinsights/portal-service-list-app-insights.png)
 
 2. Когда ресурс откроется, щелкните значок **поиска** (лупы) на крайней правой панели. Откроется новая панель справа. В зависимости от объема обнаруженных данных телеметрии вывод панели может занять некоторое время. Выполните поиск `LUIS`. Список будет уточнен для включения только тех результатов запросов LUIS, которые были добавлены в этом учебнике.
 
@@ -221,7 +221,7 @@ ms.locfileid: "60496872"
 
 ## <a name="query-application-insights-for-intent-score-and-utterance"></a>Запрос Application Insights для получения намерения, оценки и фрагмента речи
 
-Application Insights позволяет выполнять запросы данных с помощью языка [Kusto](https://docs.microsoft.com/azure/application-insights/app-insights-analytics#query-data-in-analytics), а также экспортировать их в [PowerBI](https://powerbi.microsoft.com).
+Application Insights дает возможность запросить данные с помощью [Kusto](https://docs.microsoft.com/azure/application-insights/app-insights-analytics#query-data-in-analytics) языка, а также экспорта его [Power BI](https://powerbi.microsoft.com).
 
 1. Щелкните **Аналитика** в верхней части списка зависимостей над полем фильтра.
 
@@ -243,7 +243,7 @@ Application Insights позволяет выполнять запросы дан
 
     ![Пользовательский отчет аналитики](./media/luis-tutorial-bot-csharp-appinsights/analytics-query-2.png)
 
-Дополнительные сведения о [языке запросов Kusto](https://docs.microsoft.com/azure/log-analytics/query-language/get-started-queries) или [экспорте данных в PowerBI](https://docs.microsoft.com/azure/application-insights/app-insights-export-power-bi).
+Дополнительные сведения о [язык запросов Kusto](https://docs.microsoft.com/azure/log-analytics/query-language/get-started-queries) или [Экспорт данных в Power BI](https://docs.microsoft.com/azure/application-insights/app-insights-export-power-bi).
 
 ## <a name="learn-more-about-bot-framework"></a>Дополнительные сведения о платформе Bot Framework
 

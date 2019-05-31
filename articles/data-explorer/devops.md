@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 05/05/2019
-ms.openlocfilehash: a70a887ccb19d9c1cbdb5f8ebf6aa8d4b25a0dfd
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 0628d5c07d7258cc4d68727c364e65bd81c78e8e
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65161075"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66388996"
 ---
 # <a name="azure-devops-task-for-azure-data-explorer"></a>Задача DevOps в Azure для обозревателя данных Azure
 
@@ -44,7 +44,7 @@ ms.locfileid: "65161075"
 > [!TIP]
 > При создании собственного рабочего процесса, рекомендуется выровнять идемпотентными вашего кода. Например, использовать [слияния при создании таблицы](/azure/kusto/management/tables#create-merge-tables) вместо [при создании таблицы](/azure/kusto/management/tables#create-table)и использовать [при создании или alter](/azure/kusto/management/functions#create-or-alter-function) вместо функции [при создании](/azure/kusto/management/functions#create-function) функция.
 
-## <a name="create-a-release-pipeline"></a>Создание конвейера выпуска
+## <a name="create-a-release-pipeline"></a>Создать конвейер выпуска
 
 1. Войдите в ваш [Azure DevOps организации](https://dev.azure.com/).
 1. Выберите **конвейеры** > **выпуски** меню слева и выберите **новый конвейер**.
@@ -67,7 +67,7 @@ ms.locfileid: "65161075"
 
     ![Создание переменной](media/devops/create-variable.png)
 
-    Чтобы найти ваш Endpoint_URL, на странице общих сведений вашей **кластера обозревателя данных Azure** в Azure портал содержит URI кластера обозреватель данных Azure. Формирование URI в следующем формате `https://<Azure Data Explorer cluster URI>?DatabaseName=<DBName>`.  Например https://kustodocs.westus.kusto.windows.net?DatabaseName=SampleDB.
+    Чтобы найти ваш Endpoint_URL, на странице общих сведений вашей **кластера обозревателя данных Azure** в Azure портал содержит URI кластера обозреватель данных Azure. Формирование URI в следующем формате `https://<Azure Data Explorer cluster URI>?DatabaseName=<DBName>`.  Например, https:\//kustodocs.westus.kusto.windows.net?DatabaseName=SampleDB
 
     ![URI кластера Azure обозреватель данных](media/devops/adx-cluster-uri.png)
 
@@ -85,7 +85,7 @@ ms.locfileid: "65161075"
 
 1. Щелкните **Kusto команда** слева, а обновление задач со следующими сведениями:
     * **Отображаемое имя**. Имя задачи
-    * **Путь к файлу**: В **таблиц** задач, укажите */Tables/*.csl, так как файлы создания таблицы находятся в *таблицы* папки.
+    * **Путь к файлу**: В **таблиц** задач, укажите */Tables/* .csl, так как файлы создания таблицы находятся в *таблицы* папки.
     * **URL-адрес конечной точки**: введите `EndPoint URL`переменной, созданной на предыдущем шаге.
     * Выберите **используемой конечной точки службы** и выберите **+ создать**.
 

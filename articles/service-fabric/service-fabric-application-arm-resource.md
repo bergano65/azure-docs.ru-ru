@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 12/06/2017
 ms.author: dekapur
-ms.openlocfilehash: e2e1b2ae354d26c3d9729e3a3fdf39bee43647ca
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: db515454c68fe3a7eb1a4616c3278d9fc93ddb2c
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60621468"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66258666"
 ---
 # <a name="manage-applications-and-services-as-azure-resource-manager-resources"></a>Управление приложениями и службами как ресурсами Azure Resource Manager
 
@@ -258,6 +258,17 @@ ms.locfileid: "60621468"
    > Свойству *ApiVersion* нужно присвоить значение `"2017-07-01-preview"`. Этот шаблон также можно развертывать независимо от кластера, если кластер уже развернут.
 
 5. Разверните шаблон. 
+
+## <a name="remove-service-fabric-resource-provider-application-resource"></a>Удалить ресурс приложения поставщика ресурсов Service Fabric
+Ниже будет активировать приложение пакета будут неподготовленным из кластера, и это приведет к очистке используемое место на диске:
+```powershell
+Get-AzureRmResource -ResourceId /subscriptions/{sid}/resourceGroups/{rg}/providers/Microsoft.ServiceFabric/clusters/{cluster}/applicationTypes/{apptType}/versions/{version} -ApiVersion "2017-07-01-preview" | Remove-AzureRmResource -Force -ApiVersion "2017-07-01-preview"
+```
+Удаление Microsoft.ServiceFabric/clusters/application с помощью шаблона ARM не отменяет подготовку приложения
+
+>[!NOTE]
+> После завершения удаления вы не увидите версию пакета в SFX или ARM больше. Не удается удалить ресурс версии типа приложения, что приложение работает с; Это предотвратит ARM/SFRP. При попытке отменить подготовку выполнение пакета, но среда выполнения не его.
+
 
 ## <a name="manage-an-existing-application-via-resource-manager"></a>Управление существующим приложением с помощью Resource Manager
 

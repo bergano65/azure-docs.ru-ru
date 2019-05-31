@@ -5,17 +5,17 @@ services: cost-management
 keywords: ''
 author: bandersmsft
 ms.author: banders
-ms.date: 05/20/2019
+ms.date: 05/30/2019
 ms.topic: conceptual
 ms.service: cost-management
 manager: dougeby
 ms.custom: seodec18
-ms.openlocfilehash: 67cf15b00e597131afe421bf8306a5df4511af9a
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.openlocfilehash: 81180d6930816a4a7715ce60313347019029fccd
+ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65965520"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66416094"
 ---
 # <a name="tutorial-optimize-costs-from-recommendations"></a>Руководство. Рекомендации по оптимизации затрат
 
@@ -49,7 +49,17 @@ ms.locfileid: "65965520"
 
 В списке рекомендаций указаны неэффективность использования или рекомендации по покупке, которые помогут вам сэкономить деньги. В категории **Potential yearly savings** (Потенциальная ежегодная экономия) указанно общую сумму, которую вы можете сэкономить, если завершите работу всех своих виртуальных машин, которые соответствуют правилам рекомендации, или ликвидируете их. Если вы не хотите завершать их работу, то можете изменить их размер с более экономичным номером SKU для виртуальных машин.
 
-Категории **Impact** (Влияние) и **Potential yearly savings** (Потенциальная ежегодная экономия) должны помочь определить рекомендации, которые позволят больше сэкономить. Рекомендации с максимальным влиянием: [Приобретение зарезервированных экземпляров виртуальных машин для экономии средств по сравнению с применением оплаты по мере использования](../advisor/advisor-cost-recommendations.md#buy-reserved-virtual-machine-instances-to-save-money-over-pay-as-you-go-costs) и [Оптимизация затрат на виртуальные машины путем изменения размеров или завершения работы недостаточно нагруженных экземпляров](../advisor/advisor-cost-recommendations.md#optimize-virtual-machine-spend-by-resizing-or-shutting-down-underutilized-instances). Рекомендации с умеренным влиянием: [Сокращение расходов за счет исключения неподготовленных каналов ExpressRoute](../advisor/advisor-cost-recommendations.md#reduce-costs-by-eliminating-unprovisioned-expressroute-circuits) и [Сокращение расходов за счет удаления или перенастройки неактивных шлюзов виртуальной сети](../advisor/advisor-cost-recommendations.md#reduce-costs-by-deleting-or-reconfiguring-idle-virtual-network-gateways).
+Категории **Impact** (Влияние) и **Potential yearly savings** (Потенциальная ежегодная экономия) должны помочь определить рекомендации, которые позволят больше сэкономить.
+
+Высокая степень влияния на рекомендации:
+- [Купить зарезервированные экземпляры виртуальных машин для экономии по сравнению с оплатой](../advisor/advisor-cost-recommendations.md#buy-reserved-virtual-machine-instances-to-save-money-over-pay-as-you-go-costs)
+- [Оптимизация затрат на виртуальные машины путем изменения размеров или завершения работы недостаточно нагруженных экземпляров](../advisor/advisor-cost-recommendations.md#optimize-virtual-machine-spend-by-resizing-or-shutting-down-underutilized-instances)
+- [Используют хранилище класса Standard для хранения моментальных снимков управляемые диски ](../advisor/advisor-cost-recommendations.md#use-standard-snapshots-for-managed-disks)
+
+Рекомендации со средним уровнем влияния:
+- [Удалить конвейеров фабрики данных Azure, завершающихся неудачей](../advisor/advisor-cost-recommendations.md#delete-azure-data-factory-pipelines-that-are-failing)
+- [Снизить затраты, устраняя неподготовленным каналов ExpressRoute](../advisor/advisor-cost-recommendations.md#reduce-costs-by-eliminating-unprovisioned-expressroute-circuits)
+- [Снизить затраты, удаление или изменение конфигурации неактивные шлюзы виртуальной сети](../advisor/advisor-cost-recommendations.md#reduce-costs-by-deleting-or-reconfiguring-idle-virtual-network-gateways)
 
 ## <a name="act-on-a-recommendation"></a>Выполнение рекомендации
 

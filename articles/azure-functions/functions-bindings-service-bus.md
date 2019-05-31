@@ -12,12 +12,12 @@ ms.devlang: multiple
 ms.topic: reference
 ms.date: 04/01/2017
 ms.author: cshoe
-ms.openlocfilehash: e1cd7d9e135f5e3196f02237076c5c8069048fb0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 199ce2fe24d76595493dc2128cebb3fcb642fcab
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61442738"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66241152"
 ---
 # <a name="azure-service-bus-bindings-for-azure-functions"></a>Привязки служебной шины Azure для службы "Функции Azure"
 
@@ -330,7 +330,7 @@ module.exports = function(context, myQueueItem) {
 |`CorrelationId`|`string`|Идентификатор корреляции.|
 
 > [!NOTE]
-> В настоящее время триггер работает только для очередей и подписок, которые не используют сеансы. Можно отслеживать [этот элемент функциональности](https://github.com/Azure/azure-functions-host/issues/563) во всех дальнейших обновлениях, касающихся этой функции. 
+> В настоящее время триггера шины службы, который работает с очередями, поддерживающая сеансы и подписками доступна Предварительная версия. Можно отслеживать [этот элемент](https://github.com/Azure/azure-webjobs-sdk/issues/529#issuecomment-491113458) дальнейших обновлений по этому вопросу. 
 
 См. [примеры кода](#trigger---example), в которых используются эти свойства, в предыдущих разделах этой статьи.
 

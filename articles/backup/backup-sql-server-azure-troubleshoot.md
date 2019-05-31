@@ -6,18 +6,18 @@ author: anuragm
 manager: shivamg
 ms.service: backup
 ms.topic: article
-ms.date: 03/13/2019
+ms.date: 05/27/2019
 ms.author: anuragm
-ms.openlocfilehash: db204c0e881200f667484daf4348c336f94a0ce7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 8459bb451c4ff462ee816b986cafdbf776603917
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60254678"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66306968"
 ---
 # <a name="troubleshoot-back-up-sql-server-on-azure"></a>Устранении неполадок резервного копирования SQL Server в Azure
 
-В этой статье приведены сведения об устранении неполадок для защиты виртуальных машин SQL Server в Azure (предварительная версия).
+В этой статье содержатся сведения об устранении неполадок для защиты виртуальных машин SQL Server в Azure.
 
 ## <a name="feature-consideration-and-limitations"></a>Рекомендации и ограничения касательно функций
 
@@ -27,117 +27,95 @@ ms.locfileid: "60254678"
 
 Чтобы настроить защиту базы данных SQL Server на виртуальной машине, на этой виртуальной машине должно быть установлено расширение **AzureBackupWindowsWorkload**. Если вы получили сообщение об ошибке, **UserErrorSQLNoSysadminMembership**, это означает, что ваш экземпляр SQL не имеет необходимых разрешений на резервное копирование. Чтобы устранить эту ошибку, выполните действия, описанные в разделе [Установка разрешений для виртуальных машин SQL, не поддерживающих marketplace](backup-azure-sql-database.md#fix-sql-sysadmin-permissions).
 
-## <a name="troubleshooting-errors"></a>Устранение ошибок
 
-Используйте сведения в следующих таблицах для устранения неполадок и ошибок, возникающих при защите SQL Server в Azure.
+## <a name="backup-type-unsupported"></a>Неподдерживаемый тип резервного копирования
 
-## <a name="alerts"></a>Оповещения
-
-### <a name="backup-type-unsupported"></a>Неподдерживаемый тип резервного копирования
-
-| Уровень серьезности | ОПИСАНИЕ | Возможные причины | Рекомендуемое действие |
+| Severity | Описание | Возможные причины | Рекомендуемое действие |
 |---|---|---|---|
-| Предупреждение | В текущих параметрах базы данных отсутствует поддержка некоторых типов резервной копии, которые представлены в связанной политике. | <li>**База данных master**. Только операция резервного копирования всей базы данных может быть выполнена в базе данных master; ни **разностные** резервное копирование, ни транзакции **журналы** возможна резервного копирования. </li> <li>В любой базе данных в **простой модели восстановления** запрещается резервное копирование **журналов** транзакций.</li> | Поддерживается изменение параметров базы данных, например всех типов резервных копий в политике. Таким образом, можно изменять текущую политику, что позволить включить только требуемые типы резервной копии. В противном случае неподдерживаемые типы резервного копирования будут пропущены во время запланированного резервного копирования или задания резервного копирования завершаются сбоем для нерегламентированного резервного копирования.
+| Предупреждение | Текущие параметры для этой базы данных не поддерживают типы резервных копий в соответствующей политике определенного типа. | <li>**База данных master**. Только операция резервного копирования всей базы данных может быть выполнена в базе данных master; ни **разностные** резервное копирование, ни транзакции **журналы** возможна резервного копирования. </li> <li>В любой базе данных в **простой модели восстановления** запрещается резервное копирование **журналов** транзакций.</li> | Поддерживается изменение параметров базы данных, например всех типов резервных копий в политике. Таким образом, можно изменять текущую политику, что позволить включить только требуемые типы резервной копии. В противном случае неподдерживаемые типы резервного копирования будут пропущены во время запланированного резервного копирования или задания резервного копирования завершаются сбоем для нерегламентированного резервного копирования.
 
 
-## <a name="backup-failures"></a>Сбои резервного копирования
-
-Следующие таблицы организованы в соответствии с кодом ошибки.
-
-### <a name="usererrorsqlpodoesnotsupportbackuptype"></a>UserErrorSQLPODoesNotSupportBackupType
+## <a name="usererrorsqlpodoesnotsupportbackuptype"></a>UserErrorSQLPODoesNotSupportBackupType
 
 | Сообщение об ошибке | Возможные причины | Рекомендуемое действие |
 |---|---|---|
 | This SQL database does not support the requested backup type. (Эта база данных SQL не поддерживает запрашиваемый тип резервного копирования.) | Возникает, когда модель восстановления базы данных не разрешает запрашиваемый тип резервного копирования. Ошибка может произойти в следующих ситуациях: <br/><ul><li>База данных, использующая простую модель восстановления, не позволяет создавать резервные копии журналов.</li><li>Разностные резервные копии и резервные копии журналов не допускаются для базы данных Master.</li></ul>Дополнительные сведения см. в статье [Модели восстановления (SQL Server)](https://docs.microsoft.com/sql/relational-databases/backup-restore/recovery-models-sql-server). | Если резервная копия журнала базы данных завершилась сбоем в простой модели восстановления, попробуйте один из следующих вариантов:<ul><li>Если база данных находится в режиме простого восстановления, отключите резервные копии журналов.</li><li>Используйте [документацию SQL](https://docs.microsoft.com/sql/relational-databases/backup-restore/view-or-change-the-recovery-model-of-a-database-sql-server), чтобы изменить модель восстановления базы данных на модель с полным или не полным протоколированием. </li><li> Если вы не хотите изменять модель восстановления, и у вас есть стандартная политика резервного копирования нескольких баз данных, которую нельзя изменить, игнорируйте ошибку. Полные и разностные резервные копии будут работать по расписанию. Резервные копии журналов будут пропущены, что ожидаемо в этом случае.</li></ul>Если это база данных Master, и вы настроили разностное резервное копирование или резервное копирование журналов, выполните одно из следующих действий:<ul><li>Используйте портал, чтобы изменить расписание политики резервного копирования для базы данных Master, на полное копирование.</li><li>Если у вас есть стандартная политика резервного копирования нескольких баз данных, которую нельзя изменить, игнорируйте ошибку. Ваше полное резервное копирование будет работать по расписанию. Разностное резервное копирование или резервное копирование журналов не произойдет, что ожидаемо в этом случае.</li></ul> |
 | Operation canceled as a conflicting operation was already running on the same database. (Операция отменена, так как конфликтная операция уже выполняется в одной базе данных.) | См. [запись в блоге о резервных копиях и ограничениях восстановления](https://blogs.msdn.microsoft.com/arvindsh/2008/12/30/concurrency-of-full-differential-and-log-backups-on-the-same-database), которые запускаются одновременно.| [Используйте SQL Server Management Studio (SSMS) для мониторинга заданий резервного копирования.](manage-monitor-sql-database-backup.md) Если конфликтная операция завершится сбоем, перезапустите ее.|
 
-### <a name="usererrorsqlpodoesnotexist"></a>UserErrorSQLPODoesNotExist
+## <a name="usererrorsqlpodoesnotexist"></a>UserErrorSQLPODoesNotExist
 
 | Сообщение об ошибке | Возможные причины | Рекомендуемое действие |
 |---|---|---|
 | SQL database does not exist. (База данных SQL не существует.) | База данных была либо удалена, либо переименована. | Проверьте, не была ли база данных случайно удалена или переименована.<br/><br/> Если база данных была случайно удалена, чтобы продолжить резервное копирование, восстановите базу данных в ее исходном расположении.<br/><br/> Если вы удалили базу данных и не нуждаетесь в будущих резервных копиях, то в хранилище служб восстановления выберите [удалить или сохранить данные](manage-monitor-sql-database-backup.md), чтобы остановить резервное копирование.
 
-### <a name="usererrorsqllsnvalidationfailure"></a>UserErrorSQLLSNValidationFailure
+## <a name="usererrorsqllsnvalidationfailure"></a>UserErrorSQLLSNValidationFailure
 
 | Сообщение об ошибке | Возможные причины | Рекомендуемое действие |
 |---|---|---|
 | Log chain is broken. (Цепочка журналов прерывается.) | База данных или виртуальная машина резервируются с использованием другого решения для резервного копирования, которое усекает цепочку журналов.|<ul><li>Проверьте, используется ли другое решение или скрипт резервного копирования. В этом случае остановите резервное копирование. </li><li>Если резервная копия была триггер нерегламентированных журнала резервного копирования, создание полных резервных копий начните новую цепочку журналов. Для запланированных резервных копий журнала никаких действий не требуется, так как служба Azure Backup автоматически запускает полное резервное копирование, чтобы исправить эту проблему.</li>|
 
-### <a name="usererroropeningsqlconnection"></a>UserErrorOpeningSQLConnection
+## <a name="usererroropeningsqlconnection"></a>UserErrorOpeningSQLConnection
 
 | Сообщение об ошибке | Возможные причины | Рекомендуемое действие |
 |---|---|---|
 | Azure Backup is not able to connect to the SQL instance. (Azure Backup не может подключиться к экземпляру SQL.) | Служба Azure Backup не может подключиться к экземпляру SQL. | Используйте дополнительные сведения в меню ошибок портала Azure, чтобы сузить круг возможных причин проблемы. Дополнительные сведения см. в статье [Устранение неполадок при соединении с компонентом SQL Server Database Engine](https://docs.microsoft.com/sql/database-engine/configure-windows/troubleshoot-connecting-to-the-sql-server-database-engine).<br/><ul><li>Если параметры SQL по умолчанию не позволяют выполнять удаленные подключения, измените их. Ознакомьтесь со следующими статьями, сведения об изменении настроек.<ul><li>[MSSQLSERVER_-1](/previous-versions/sql/sql-server-2016/bb326495(v=sql.130))</li><li>[MSSQLSERVER_2](/sql/relational-databases/errors-events/mssqlserver-2-database-engine-error)</li><li>[MSSQLSERVER_53](/sql/relational-databases/errors-events/mssqlserver-53-database-engine-error)</li></ul></li></ul><ul><li>Если есть проблемы со входом, перейдите по ссылкам ниже, чтобы их исправить:<ul><li>[MSSQLSERVER_18456](/sql/relational-databases/errors-events/mssqlserver-18456-database-engine-error)</li><li>[MSSQLSERVER_18452](/sql/relational-databases/errors-events/mssqlserver-18452-database-engine-error)</li></ul></li></ul> |
 
-### <a name="usererrorparentfullbackupmissing"></a>UserErrorParentFullBackupMissing
+## <a name="usererrorparentfullbackupmissing"></a>UserErrorParentFullBackupMissing
 
 | Сообщение об ошибке | Возможные причины | Рекомендуемое действие |
 |---|---|---|
 | First full backup is missing for this data source. (Полная резервная копия отсутствует для этого источника данных.) | Полная резервная копия для базы данных отсутствует. Разностные резервные копии и резервные копии журналов являются родительскими для полной резервной копии, поэтому перед их запуском необходимо сделать полную резервную копию. | Активируйте Нерегламентированное полное резервное копирование.   |
 
-### <a name="usererrorbackupfailedastransactionlogisfull"></a>UserErrorBackupFailedAsTransactionLogIsFull
+## <a name="usererrorbackupfailedastransactionlogisfull"></a>UserErrorBackupFailedAsTransactionLogIsFull
 
 | Сообщение об ошибке | Возможные причины | Рекомендуемое действие |
 |---|---|---|
 | Невозможно выполнить резервное копирование, так как журнал транзакций для источника данных заполнен. | Пространство журнала транзакций базы данных заполнено. | Чтобы устранить эту проблему, см. [документацию по SQL](https://docs.microsoft.com/sql/relational-databases/errors-events/mssqlserver-9002-database-engine-error). |
-| This SQL database does not support the requested backup type. (Эта база данных SQL не поддерживает запрашиваемый тип резервного копирования.) | Вторичные реплики группы доступности Always On не поддерживают полное и разностное резервное копирование. | <ul><li>При активации Нерегламентированное резервное копирование активируйте резервные копии на основном узле.</li><li>Если резервная копия была запланирована политикой, убедитесь, что основной узел зарегистрирован. Чтобы зарегистрировать узел, [выполните действия по обнаружению базы данных SQL Server](backup-sql-server-database-azure-vms.md#discover-sql-server-databases).</li></ul> |
 
-## <a name="restore-failures"></a>Сбои при восстановлении
-
-Следующие коды ошибок отображаются при сбое задания восстановления.
-
-### <a name="usererrorcannotrestoreexistingdbwithoutforceoverwrite"></a>UserErrorCannotRestoreExistingDBWithoutForceOverwrite
+## <a name="usererrorcannotrestoreexistingdbwithoutforceoverwrite"></a>UserErrorCannotRestoreExistingDBWithoutForceOverwrite
 
 | Сообщение об ошибке | Возможные причины | Рекомендуемое действие |
 |---|---|---|
 | Database with same name already exists at the target location (База данных с тем же именем уже существует в целевом расположении) | В целевом расположении для восстановления уже имеется база данных с тем же именем.  | <ul><li>Измените имя целевой базы данных</li><li>или используйте параметр принудительной перезаписи на странице восстановления</li> |
 
-### <a name="usererrorrestorefaileddatabasecannotbeofflined"></a>UserErrorRestoreFailedDatabaseCannotBeOfflined
+## <a name="usererrorrestorefaileddatabasecannotbeofflined"></a>UserErrorRestoreFailedDatabaseCannotBeOfflined
 
 | Сообщение об ошибке | Возможные причины | Рекомендуемое действие |
 |---|---|---|
 | Restore failed as the database could not be brought offline. (Не удалось выполнить восстановление, так как база данных не может быть отключена.) | При восстановлении целевая база данных должна быть отключена. Azure Backup не может переносить эти данные в автономном режиме. | Используйте дополнительные сведения в меню ошибок портала Azure, чтобы сузить круг возможных причин проблемы. Дополнительные сведения см. в [документации по SQL](https://docs.microsoft.com/sql/relational-databases/backup-restore/restore-a-database-backup-using-ssms). |
 
-###  <a name="usererrorcannotfindservercertificatewiththumbprint"></a>UserErrorCannotFindServerCertificateWithThumbprint
+##  <a name="usererrorcannotfindservercertificatewiththumbprint"></a>UserErrorCannotFindServerCertificateWithThumbprint
 
 | Сообщение об ошибке | Возможные причины | Рекомендуемое действие |
 |---|---|---|
 | Cannot find the server certificate with thumbprint on the target. (Не удается найти сертификат сервера с отпечатком на целевом сервере.) | База данных Master в экземпляре среды назначения не имеет действительного отпечатка шифрования. | Импортируйте действительный отпечаток сертификата, используемый в исходном экземпляре, в целевой экземпляр. |
 
-### <a name="usererrorrestorenotpossiblebecauselogbackupcontainsbulkloggedchanges"></a>UserErrorRestoreNotPossibleBecauseLogBackupContainsBulkLoggedChanges
+## <a name="usererrorrestorenotpossiblebecauselogbackupcontainsbulkloggedchanges"></a>UserErrorRestoreNotPossibleBecauseLogBackupContainsBulkLoggedChanges
 
 | Сообщение об ошибке | Возможные причины | Рекомендуемое действие |
 |---|---|---|
 | Для восстановления резервной копии журнала содержит изменения с неполным протоколированием. Он не может использоваться для остановки в произвольный момент времени согласно рекомендациям по SQL. | Если база данных находится в режиме восстановления журнала массового, данные между транзакции с неполным протоколированием и далее журнала транзакций невозможно восстановить. | Выберите другую точку во времени для восстановления. [Подробнее](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/ms186229(v=sql.105))
 
 
-## <a name="registration-failures"></a>Ошибки регистрации
-
-Следующие коды ошибок предназначены для индикации ошибок регистрации.
-
-### <a name="fabricsvcbackuppreferencecheckfailedusererror"></a>FabricSvcBackupPreferenceCheckFailedUserError
+## <a name="fabricsvcbackuppreferencecheckfailedusererror"></a>FabricSvcBackupPreferenceCheckFailedUserError
 
 | Сообщение об ошибке | Возможные причины | Рекомендуемое действие |
 |---|---|---|
 | Backup preference for SQL Always On Availability Group cannot be met as some nodes of the Availability Group are not registered. (Требование резервного копирования для группы доступности SQL Always On не может быть выполнено, поскольку некоторые узлы группы доступности не зарегистрированы.) | Узлы, необходимые для выполнения резервного копирования, не зарегистрированы или недоступны. | <ul><li>Убедитесь, что все узлы, необходимые для выполнения резервного копирования этой базы данных, зарегистрированы и работоспособны, а затем повторите операцию.</li><li>Измените предпочитаемый тип резервного копирования группы доступности SQL Always On.</li></ul> |
 
-### <a name="vmnotinrunningstateusererror"></a>VMNotInRunningStateUserError
+## <a name="vmnotinrunningstateusererror"></a>VMNotInRunningStateUserError
 
 | Сообщение об ошибке | Возможные причины | Рекомендуемое действие |
 |---|---|---|
 | SQL server VM is either shutdown and not accessible to Azure Backup service. (Виртуальная машина SQL server либо отключена, либо недоступна службе Azure Backup.) | Виртуальная машина завершила работу. | Убедитесь, что SQL Server запущен. |
 
-### <a name="guestagentstatusunavailableusererror"></a>GuestAgentStatusUnavailableUserError
+## <a name="guestagentstatusunavailableusererror"></a>GuestAgentStatusUnavailableUserError
 
 | Сообщение об ошибке | Возможные причины | Рекомендуемое действие |
 |---|---|---|
 | Служба Azure Backup использует гостевой агент виртуальной машины Azure VM для выполнения резервного копирования, но агент недоступен на целевом сервере. | Гостевой агент отключен или неисправен | [Установите гостевой агент виртуальной машины](../virtual-machines/extensions/agent-windows.md) вручную. |
 
-## <a name="configure-backup-failures"></a>Сбои при настройке резервного копирования
-
-Следующие коды ошибок предназначены для индикации ошибок настройки резервного копирования.
-
-### <a name="autoprotectioncancelledornotvalid"></a>AutoProtectionCancelledOrNotValid
+## <a name="autoprotectioncancelledornotvalid"></a>AutoProtectionCancelledOrNotValid
 
 | Сообщение об ошибке | Возможные причины | Рекомендуемое действие |
 |---|---|---|
@@ -171,6 +149,75 @@ ms.locfileid: "60254678"
   * Один из узлов группы Доступности не получили полной резервной копии конфигурации, это может произойти во время регистрации группы доступности в хранилище, или когда добавляется новый узел  <br>
     В приведенных выше сценариях рекомендуется активировать повторно зарегистрировать операцию на виртуальной Машине. Этот параметр доступен только через PowerShell и скоро станет доступна на портале Azure.
 
+## <a name="files-size-limit-beyond-which-restore-happens-to-default-path"></a>Ограничение размера файла за пределами какие восстановления происходит с путь по умолчанию
+
+Строка общий размер файлов зависит не только на количество файлов, но также на их имена и пути. Для каждого из файлов базы данных получите логическое имя файла и физический путь.
+Можно использовать SQL-запрос, приведенный ниже:
+
+  ```
+  SELECT mf.name AS LogicalName, Physical_Name AS Location FROM sys.master_files mf
+                 INNER JOIN sys.databases db ON db.database_id = mf.database_id
+                 WHERE db.name = N'<Database Name>'"
+ ```
+
+Теперь, расположите их в формате, приведены ниже:
+
+  ```[{"path":"<Location>","logicalName":"<LogicalName>","isDir":false},{"path":"<Location>","logicalName":"<LogicalName>","isDir":false}]}
+  ```
+
+Пример:
+
+  ```[{"path":"F:\\Data\\TestDB12.mdf","logicalName":"TestDB12","isDir":false},{"path":"F:\\Log\\TestDB12_log.ldf","logicalName":"TestDB12_log","isDir":false}]}
+  ```
+
+Если содержимое, предоставленное выше размер строки превышает 20 000 байт, затем файлы базы данных хранятся по-разному, и во время восстановления не можно задать путь к целевому файлу для восстановления. Файлы будут восстановлены в пути SQL по умолчанию, предоставляемых SQL Server.
+
+### <a name="override-the-default-target-restore-file-path"></a>Переопределить путь к файлу по умолчанию целевой объект восстановления
+
+Можно переопределить путь к целевому файлу восстановления во время операции восстановления, поместив файл JSON, который содержит сопоставление файла базы данных для восстановления целевой путь. Для этого создайте файл `database_name.json` и поместите его в расположение *C:\Program Files\Azure рабочей нагрузки Backup\bin\plugins\SQL*.
+
+Содержимое файла должно быть в формате, приведены ниже:
+  ```[
+    {
+      "Path": "<Restore_Path>",
+      "LogicalName": "<LogicalName>",
+      "IsDir": "false"
+    },
+    {
+      "Path": "<Restore_Path>",
+      "LogicalName": "LogicalName",
+      "IsDir": "false"
+    },  
+  ]
+  ```
+
+Пример:
+
+  ```[
+      {
+        "Path": "F:\\Data\\testdb2_1546408741449456.mdf",
+        "LogicalName": "testdb7",
+       "IsDir": "false"
+      },
+      {
+        "Path": "F:\\Log\\testdb2_log_1546408741449456.ldf",
+        "LogicalName": "testdb7_log",
+        "IsDir": "false"
+      },  
+    ]
+  ```
+
+ 
+В приведенном выше содержимое можно получить логическое имя файла базы данных, с помощью SQL-запрос, приведенный ниже:
+
+```
+SELECT mf.name AS LogicalName FROM sys.master_files mf
+                INNER JOIN sys.databases db ON db.database_id = mf.database_id
+                WHERE db.name = N'<Database Name>'"
+  ```
+
+
+Этот файл должен размещаться перед запуском операции восстановления.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

@@ -3,18 +3,18 @@ title: Отслеживание служб и приложений Azure с по
 description: Маршрутизация данных Azure Monitor и Application Insights для просмотра в Grafana.
 services: azure-monitor
 keywords: ''
-author: lingliw
-ms.author: v-lingwu
-ms.date: 04/12/19
+author: rboucher
+ms.author: robb
+ms.date: 11/06/2017
 ms.topic: conceptual
 ms.service: azure-monitor
 ms.subservice: ''
-ms.openlocfilehash: 6ea8f4e591399e23b103871da115dbb937227ca9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: e9a20aba84e79e87f84d63e4bdae3ba1aac062f5
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60396092"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66387194"
 ---
 # <a name="monitor-your-azure-services-in-grafana"></a>Мониторинг служб Azure в Grafana
 Теперь можно отслеживать службы Azure и приложения из [Grafana](https://grafana.com/) с помощью [подключаемого модуля источника данных Azure Monitor](https://grafana.com/plugins/grafana-azure-monitor-datasource). Подключаемый модуль собирает данные производительности приложения, собранные Azure Monitor, включая различные журналы и метрики. Затем эти данные можно отобразить на панели мониторинга Grafana.
@@ -103,7 +103,7 @@ ms.locfileid: "60396092"
      > [!NOTE]
      >
      > В запросе по умолчанию, который предоставляется с подключаемым модулем, используются два макроса: "$__timeFilter() и $__interval. 
-     > Эти макросы позволяют Grafana динамическим образом вычислять диапазон и интервал времени при увеличении части диаграммы. Можно удалить эти макросы и использовать стандартный фильтр времени, например *TimeGenerated > ago(1h)*, но это означает, что график не будет поддерживать функцию увеличения.
+     > Эти макросы позволяют Grafana динамическим образом вычислять диапазон и интервал времени при увеличении части диаграммы. Можно удалить эти макросы и использовать стандартный фильтр времени, например *TimeGenerated > ago(1h)* , но это означает, что график не будет поддерживать функцию увеличения.
     
      ![Настройка графика Grafana для Azure Log Analytics](./media/grafana-plugin/grafana-graph-config-for-azure-log-analytics-dark.png)
 
@@ -119,8 +119,6 @@ ms.locfileid: "60396092"
 
 Вот хорошие справочные статьи о том, как использовать Telegraf, InfluxDB, Prometheus и Docker:
  - [How To Monitor System Metrics with the TICK Stack on Ubuntu 16.04](https://www.digitalocean.com/community/tutorials/how-to-monitor-system-metrics-with-the-tick-stack-on-ubuntu-16-04) (Мониторинг метрик системы с помощью TICK Stack в Ubuntu 16.04)
-
- - [Monitor Docker resource metrics with Grafana, InfluxDB, and Telegraf](https://blog.vpetkov.net/2016/08/04/monitor-docker-resource-metrics-with-grafana-influxdb-and-telegraf/) (Мониторинг метрик ресурса Docker с помощью Grafana, InfluxDB и Telegraf)
 
  - [A monitoring solution for Docker hosts, containers and containerized services](https://stefanprodan.com/2016/a-monitoring-solution-for-docker-hosts-containers-and-containerized-services/) (Решение для мониторинга для служб контейнеров, контейнеров и узлов Docker)
 
@@ -168,3 +166,4 @@ Usage
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Обзор метрик в Microsoft Azure](data-platform.md)
+

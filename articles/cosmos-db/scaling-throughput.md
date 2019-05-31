@@ -4,21 +4,21 @@ description: В этой статье описывается гибкое мас
 author: dharmas-cosmos
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 03/24/2019
+ms.date: 05/23/2019
 ms.author: dharmas
 ms.reviewer: sngun
-ms.openlocfilehash: b645fe210e7eeb073380dcadefead3e1b4d7ccc0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: f930b5c478cc880952b4559be4c6647b260efcf2
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60926425"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66243492"
 ---
 # <a name="globally-scale-provisioned-throughput"></a>Глобальное масштабирование подготовленной пропускной способности 
 
 В Azure Cosmos DB, подготовленной пропускной способности представлены в виде запроса единиц в секунду (ЕЗ/с или множественном RUs). Эти единицы запросов измеряют стоимость операций чтения и записи в контейнере Cosmos, как показано на рисунке ниже.
 
-![Единицы запроса](./media/scaling-throughput/request-unit-charge-of-read-and-write-operations.png)
+![Единицы запросов](./media/scaling-throughput/request-unit-charge-of-read-and-write-operations.png)
 
 Вы можете подготовить ЕЗ в контейнере Cosmos или базе данных Cosmos. Количество единиц в контейнере доступны исключительно для операций, выполняемых в этом контейнере. ЕЗ, подготовленные в базе данных, распределяются между всеми контейнерами в этой базе данных (за исключением контейнеров с отдельно назначенными ЕЗ).
 

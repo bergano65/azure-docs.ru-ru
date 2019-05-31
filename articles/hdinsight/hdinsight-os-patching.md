@@ -7,12 +7,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 01/24/2019
-ms.openlocfilehash: 5b8ed75863087e077d483c792ac4134a0c3e1eb0
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: cfbd68e66730fc338130bc16849fe0b2f4abd6be
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65203642"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66244414"
 ---
 # <a name="os-patching-for-hdinsight"></a>Обновление путем частичной замены ОС для кластеров HDInsight 
 
@@ -45,6 +45,7 @@ ms.locfileid: "65203642"
 
 > [!NOTE]  
 > Этот сценарий необходимо пометить как сохраняемый, если он применяется к существующему кластеру. В противном случае все новые узлы, созданные операциями масштабирования, будут использовать расписание обновления путем частичной замены ОС по умолчанию.  Если применить сценарий при создании кластера, он сохраняется автоматически.
+
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

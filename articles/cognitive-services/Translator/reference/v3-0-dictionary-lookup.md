@@ -3,19 +3,19 @@ title: Метод поиска по словарю в API перевода те�
 titlesuffix: Azure Cognitive Services
 description: Использование метода поиска по словарю в API перевода текстов.
 services: cognitive-services
-author: v-pawal
+author: rajdeep-in
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: reference
 ms.date: 03/29/2018
-ms.author: v-jansko
-ms.openlocfilehash: b844ac4018ef768527ca17bd68ca53baaf5d9552
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.author: v-pawal
+ms.openlocfilehash: 10ccdcf0fda424e67b993c7c9300f0b84c56121f
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60605506"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66389789"
 ---
 # <a name="translator-text-api-30-dictionary-lookup"></a>API перевода текстов 3.0: Поиск по словарю
 
@@ -35,7 +35,7 @@ https://api.cognitive.microsofttranslator.com/dictionary/lookup?api-version=3.0
 
 <table width="100%">
   <th width="20%">Параметр запроса</th>
-  <th>ОПИСАНИЕ</th>
+  <th>Описание</th>
   <tr>
     <td>api-version</td>
     <td>*Обязательный параметр.*<br/>Версия API, запрошенная клиентом. Необходимое значение: `3.0`.</td>
@@ -45,7 +45,7 @@ https://api.cognitive.microsofttranslator.com/dictionary/lookup?api-version=3.0
     <td>*Обязательный параметр.*<br/>Определяет язык вводимого текста. Исходный язык должен быть одним из [поддерживаемых языков](./v3-0-languages.md), включенных в область `dictionary`.</td>
   </tr>
   <tr>
-    <td>значение</td>
+    <td>до</td>
     <td>*Обязательный параметр.*<br/>Определяет язык выходного текста. Целевой язык должен быть одним из [поддерживаемых языков](./v3-0-languages.md), включенных в область `dictionary`.</td>
   </tr>
 </table>
@@ -54,7 +54,7 @@ https://api.cognitive.microsofttranslator.com/dictionary/lookup?api-version=3.0
 
 <table width="100%">
   <th width="20%">Заголовки</th>
-  <th>ОПИСАНИЕ</th>
+  <th>Описание</th>
   <tr>
     <td>Заголовки проверки подлинности</td>
     <td><em>Обязательный заголовок запроса</em>.<br/>См. <a href="https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication">описание доступных способов аутентификации</a>.</td>
@@ -104,7 +104,7 @@ https://api.cognitive.microsofttranslator.com/dictionary/lookup?api-version=3.0
 
     * `posTag`: строка, связывающая этот термин с тегом части речи.
 
-        | Имя тега | ОПИСАНИЕ  |
+        | Имя тега | Описание  |
         |----------|--------------|
         | ADJ      | Прилагательные   |
         | ADV      | Наречия      |

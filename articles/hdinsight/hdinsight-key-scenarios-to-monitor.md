@@ -1,19 +1,19 @@
 ---
 title: Мониторинг производительности кластера в Azure HDInsight
 description: Описывается, как отслеживать кластер HDInsight для обеспечения необходимой емкости и производительности.
-author: maxluk
+author: hrasheed-msft
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 11/06/2018
-ms.author: arindamc
-ms.openlocfilehash: 9a6a63748ef36bbbceb00bc815616f2cb12692a7
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.date: 05/29/2019
+ms.author: hrasheed
+ms.openlocfilehash: 3fcd1e54a8993b2693b169a2c8b4c6e9bca57119
+ms.sourcegitcommit: 51a7669c2d12609f54509dbd78a30eeb852009ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65799793"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66393414"
 ---
 # <a name="monitor-cluster-performance"></a>Мониторинг производительности кластера
 
@@ -27,7 +27,7 @@ ms.locfileid: "65799793"
 
 Чтобы получить общее представление об узлах кластера и их загрузке, войдите в [Управление кластерами HDInsight с помощью веб-интерфейса Ambari](hdinsight-hadoop-manage-ambari.md), а затем выберите вкладку **Hosts** (Узлы). Для узлов в списке указаны их полные доменные имена. Состояние каждого узла обозначается цветным индикатором работоспособности.
 
-| Цвет | Описание |
+| Color | Описание |
 | --- | --- |
 | Красный | Как минимум один ведущий компонент на узле не работает. Наведите указатель мыши, чтобы просмотреть подсказку с перечнем затронутых компонентов. |
 | Оранжевый | По крайней мере один дополнительный компонент на узле не работает. Наведите указатель мыши, чтобы просмотреть подсказку с перечнем затронутых компонентов. |

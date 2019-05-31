@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.topic: conceptual
 ms.date: 03/13/2019
 ms.author: pabutler
-ms.openlocfilehash: 296f843f9d09b57e12e867700f456126eca128b3
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.openlocfilehash: 64039234a3863332ca19b915fb59a5271625d695
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64942882"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66258187"
 ---
 # <a name="azure-application-prerequisites"></a>Необходимые условия для приложения Azure
 
@@ -38,7 +38,8 @@ ms.locfileid: "64942882"
 
 Бизнес-требования включают следующие процедурные, контрактные и юридические обязательства.
 
-* Необходимо зарегистрироваться в качестве издателя в облаке Marketplace. Если вы не зарегистрирован, выполните действия, описанные в статье [стать издателем Cloud Marketplace](../../become-publisher.md).
+* Необходимо зарегистрироваться в качестве издателя в облаке Marketplace. Если вы не зарегистрирован, выполните действия, описанные в статье [стать издателем Cloud Marketplace](https://docs.microsoft.com/azure/marketplace/become-publisher
+).
 
 >[!NOTE]
 >Следует использовать одну и ту же учетную запись регистрации Центра разработки для Майкрософт для входа на портал Cloud Partner. У вас должна быть только одна учетная запись Майкрософт для публикации предложений в Azure Marketplace. Эта учетная запись не должна быть привязана к конкретным службам или предложениям.

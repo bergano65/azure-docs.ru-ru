@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/23/2018
 ms.author: mikerou
-ms.openlocfilehash: 552c9820cca4380c00e1bf435fdb3d068c0690fb
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.openlocfilehash: 128f28d2a8b97feb3d20c34b7468b60c446a78a6
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62111310"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66306934"
 ---
 # <a name="scale-a-service-fabric-cluster-programmatically"></a>Программное масштабирование кластера Service Fabric 
 
@@ -29,16 +29,16 @@ ms.locfileid: "62111310"
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="manage-credentials"></a>Управление учетными данными
-Одна из проблем написания службы для обработки масштабирования заключается в том, что служба должна иметь возможность доступа к ресурсам масштабируемого набора виртуальных машин без интерактивного входа в систему. Доступ к кластеру Service Fabric прост, если служба масштабирования изменяет собственное приложение Service Fabric, но для доступа к масштабируемому набору нужны учетные данные. Для входа в систему можно использовать [субъект-службу](https://docs.microsoft.com/cli/azure/create-an-azure-service-principal-azure-cli), созданный с помощью [Azure CLI](https://github.com/azure/azure-cli).
+Одна из проблем написания службы для обработки масштабирования заключается в том, что служба должна иметь возможность доступа к ресурсам масштабируемого набора виртуальных машин без интерактивного входа в систему. Доступ к кластеру Service Fabric прост, если служба масштабирования изменяет собственное приложение Service Fabric, но для доступа к масштабируемому набору нужны учетные данные. Чтобы войти в систему, можно использовать [субъекта-службы](https://docs.microsoft.com/cli/azure/create-an-azure-service-principal-azure-cli) созданные с помощью [Azure CLI](https://github.com/azure/azure-cli).
 
 Чтобы создать субъект-службу, необходимо выполнить следующие действия:
 
-1. Войдите в интерфейс командной строки Azure (`az login`) как пользователь с правом доступа к масштабируемому набору виртуальных машин.
+1. Войдите в Azure CLI (`az login`) как пользователя с доступом для виртуальной машины масштабируемого набора
 2. Создайте субъект-службу с помощью `az ad sp create-for-rbac`.
     1. Запишите идентификатор приложения (другое название — идентификатор клиента), имя, пароль и клиент для последующего использования.
     2. Также вам понадобится идентификатор подписки, который можно просмотреть с помощью `az account list`.
 
-Свободная библиотека вычислений может войти в систему, используя эти учетные данные, следующим образом (обратите внимание, что основные типы свободных библиотек Azure, например `IAzure`, расположены в пакете [Microsoft.Azure.Management.Fluent](https://www.nuget.org/packages/Microsoft.Azure.Management.Fluent/)):
+Свободная библиотека вычислений может входить с помощью эти учетные данные следующим образом (Обратите внимание, что core fluent Azure типов, таких как `IAzure` в [Microsoft.Azure.Management.Fluent](https://www.nuget.org/packages/Microsoft.Azure.Management.Fluent/) пакета):
 
 ```csharp
 var credentials = new AzureCredentials(new ServicePrincipalLoginInformation {

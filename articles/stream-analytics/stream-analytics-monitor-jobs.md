@@ -9,12 +9,12 @@ ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 04/20/2017
-ms.openlocfilehash: eaeb2b4decc7da4caa75cb2af68829b4bf7ce64d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 7be57733f9bb5936747c77aa06bde3397eb84fa1
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61478901"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66302903"
 ---
 # <a name="programmatically-create-a-stream-analytics-job-monitor"></a>Создание монитора заданий Stream Analytics программным способом
 
@@ -24,7 +24,7 @@ ms.locfileid: "61478901"
 
 Прежде чем начать этот процесс, необходимо иметь следующее:
 
-* Visual Studio 2017 или Visual Studio 2015.
+* 2019 г. Visual Studio или Visual Studio 2015
 * Скачанный и установленный [пакет SDK Azure для .NET](https://azure.microsoft.com/downloads/).
 * Существующее задание Stream Analytics, отслеживание которого нужно включить.
 

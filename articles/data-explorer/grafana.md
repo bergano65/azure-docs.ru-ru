@@ -7,12 +7,12 @@ ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 12/05/2018
-ms.openlocfilehash: 188cb310cfc13fe2fc41ba3e01deb01068c0184d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 135f8f1c9c352f9d2307a8bf9ad1bec892aac179
+ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60447134"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66399916"
 ---
 # <a name="visualize-data-from-azure-data-explorer-in-grafana"></a>Визуализация данных из Azure Data Explorer в Grafana
 
@@ -163,7 +163,7 @@ ms.locfileid: "60447134"
 
     Если тест завершится успешно, переходите к следующему разделу. Если возникнут проблемы, проверьте указанные в Grafana значения и повторите предыдущие шаги.
 
-## <a name="visualize-data"></a>Визуализируйте данные
+## <a name="visualize-data"></a>Визуализация данных
 
 Итак, вы завершили настройку Azure Data Explorer в качестве источника данных для Grafana, и теперь пора визуализировать данные. Мы покажем здесь простой пример, но возможностей намного больше. Рекомендуем просмотреть примеры других запросов к примеру набора данных в статье [Написание запросов для обозревателя данных Azure](write-queries.md).
 
@@ -208,6 +208,6 @@ ms.locfileid: "60447134"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-[Написание запросов для обозревателя данных Azure](write-queries.md)
+* [Написание запросов для обозревателя данных Azure](write-queries.md)
 
-[Руководство. Визуализация данных из обозревателя данных Azure в Power BI](visualize-power-bi.md)
+* [Руководство. Визуализация данных из обозревателя данных Azure в Power BI](visualize-power-bi.md)

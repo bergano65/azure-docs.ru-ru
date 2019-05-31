@@ -14,12 +14,12 @@ ms.topic: article
 ms.date: 12/03/2018
 ms.author: cephalin;dariagrigoriu
 ms.custom: seodec18
-ms.openlocfilehash: fcb2c270b36d5efbe7b799787cf2a123b51bea5c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 384f709bb32f973efec39518eaa895e25136fe23
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60765706"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66390634"
 ---
 # <a name="continuous-deployment-to-azure-app-service"></a>Непрерывное развертывание в службе приложений Azure
 В этой статье показано, как настроить непрерывное развертывание для [службы приложений Azure](overview.md). Служба приложений обеспечивает непрерывное развертывание из BitBucket, GitHub и [Azure DevOps Services](https://www.visualstudio.com/team-services/), выбирая самые последние обновления из существующего репозитория в одной из этих служб.
@@ -130,7 +130,7 @@ ms.locfileid: "60765706"
 
 На странице **Тест** выберите, следует ли включать тесты нагрузки, затем нажмите **Продолжить**.
 
-В зависимости от [ценовой категории](https://azure.microsoft.com/pricing/details/app-service/plans/) вашего плана App Service также можно увидеть страницу **Разворачивание по этапам**. Выберите, нужно ли [включить слоты развертывания](deploy-staging-slots.md) или нет, затем нажмите **Продолжить**. 
+В зависимости от [ценовой категории](https://azure.microsoft.com/pricing/details/app-service/plans/) вашего плана App Service также можно увидеть страницу **Разворачивание по этапам**. Выберите, нужно ли [включить слоты развертывания](deploy-staging-slots.md) или нет, затем нажмите **Продолжить**. DevOps не поддерживает непрерывная доставка в рабочий слот. Это сделано намеренно для предотвращения случайных развертываний в рабочей среде. Следует непрерывной доставки в промежуточном слоте, проверить изменения в ней и переключить слоты, когда будете готовы.
 
 ### <a name="finish-configuration"></a>Завершение настройки
 

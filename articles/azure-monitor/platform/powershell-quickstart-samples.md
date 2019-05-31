@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 2/14/2018
 ms.author: robb
 ms.subservice: ''
-ms.openlocfilehash: 59cb14c86963d956b0bd63f65b10776dff4aa97f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: ada62fbfa51604a6b3188c27d5c14da40c8ac116
+ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60452727"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66400211"
 ---
 # <a name="azure-monitor-powershell-quick-start-samples"></a>Примеры для быстрого запуска Azure Monitor с помощью PowerShell
 В этой статье показаны примеры команд PowerShell, с помощью которых можно быстро получить доступ к функциям Azure Monitor.
@@ -42,6 +42,11 @@ Connect-AzAccount
 Get-AzSubscription
 ```
 
+Чтобы просмотреть рабочий контекст (подписка какие выполняются для вашей команды), используйте следующую команду:
+
+```powershell
+Get-AzContext
+```
 Чтобы сменить рабочий контекст на другую подписку, используйте следующую команду.
 
 ```powershell
@@ -50,18 +55,23 @@ Set-AzContext -SubscriptionId <subscriptionid>
 
 
 ## <a name="retrieve-activity-log-for-a-subscription"></a>Получение журнала действий для подписки
-Используйте командлет `Get-AzLog` .  Ниже приведено несколько типичных примеров.
+Используйте [Get AzLog](https://docs.microsoft.com/powershell/module/az.monitor/get-azlog) командлета.  Ниже приведено несколько типичных примеров. Журнал действий содержит последние 90 дней операций. С помощью дат ранее этого времени результаты в сообщении об ошибке.  
+
+См. в разделе, чтобы убедиться, что время ожидания для использования в приведенных ниже команд Каковы текущие дату и время:
+```powershell
+Get-Date
+```
 
 Получение записей журнала, начиная с указанной даты и времени и до настоящего момента.
 
 ```powershell
-Get-AzLog -StartTime 2016-03-01T10:30
+Get-AzLog -StartTime 2019-03-01T10:30
 ```
 
 Получение записей журнала в пределах диапазона дат и времени.
 
 ```powershell
-Get-AzLog -StartTime 2015-01-01T10:30 -EndTime 2015-01-01T11:30
+Get-AzLog -StartTime 2019-01-01T10:30 -EndTime 2015-01-01T11:30
 ```
 
 Получение записей журнала для определенной группы ресурсов.
@@ -85,13 +95,13 @@ Get-AzLog -Caller 'myname@company.com'
 Следующая команда извлекает последние 1000 событий из журнала:
 
 ```powershell
-Get-AzLog -MaxEvents 1000
+Get-AzLog -MaxRecord 10
 ```
 
 `Get-AzLog` поддерживает много других параметров. Дополнительные сведения см. в справке по `Get-AzLog`.
 
 > [!NOTE]
-> `Get-AzLog` предоставляет данные журнала только за 15 дней. С помощью параметра **-MaxEvents** можно запрашивать N последних событий за 15 дней. Чтобы получить события старше 15 дней, используйте REST API или пакет SDK (пример на C# с использованием пакета SDK). Если не указать **StartTime**, то значением **EndTime** по умолчанию будет минус один час. Если не указать **EndTime**, то значением по умолчанию будет текущее время. Все значения времени указаны в формате UTC.
+> `Get-AzLog` предоставляет данные журнала только за 15 дней. С помощью **- MaxRecords** параметр позволяет запрашивать N последних событий за 15 дней. Чтобы получить события старше 15 дней, используйте REST API или пакет SDK (пример на C# с использованием пакета SDK). Если не указать **StartTime**, то значением **EndTime** по умолчанию будет минус один час. Если не указать **EndTime**, то значением по умолчанию будет текущее время. Все значения времени указаны в формате UTC.
 > 
 > 
 
@@ -142,15 +152,15 @@ Get-AzAlertRule -ResourceGroup montest -TargetResourceId /subscriptions/s1/resou
 
 | Параметр | value |
 | --- | --- |
-| Name |simpletestdiskwrite |
+| ИМЯ |simpletestdiskwrite |
 | Расположение этого правила генерации оповещений |Восточная часть США |
 | ResourceGroup |montest |
 | TargetResourceId |/subscriptions/s1/resourceGroups/montest/providers/Microsoft.Compute/virtualMachines/testconfig |
 | MetricName созданного оповещения |\PhysicalDisk(_Total)\Disk Writes/sec. Точные имена метрик можно получить с помощью командлета `Get-MetricDefinitions`. |
-| operator |GreaterThan |
+| оператор |GreaterThan |
 | Пороговое значение (число/с для этой метрики) |1 |
 | WindowSize (в формате чч:мм:сс) |00:05:00 |
-| агрегатор (статистические данные о метрике — в этом случае при использовании среднего значения) |Средняя |
+| агрегатор (статистические данные о метрике — в этом случае при использовании среднего значения) |Средние |
 | пользовательские сообщения электронной почты (строковый массив) |'foo@example.com','bar@example.com' |
 | отправка сообщений электронной почты владельцам, участникам и читателям |-SendToServiceOwners |
 

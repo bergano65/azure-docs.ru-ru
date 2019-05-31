@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 11/19/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: 83de0046a56788e40b9224823af0411a18dea5eb
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 0db301109da657083d121cc8b986372adcb54171
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66122473"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66389045"
 ---
 # <a name="move-data-from-odbc-data-stores-using-azure-data-factory"></a>Перемещение данных из хранилищ данных ODBC с помощью фабрики данных Azure
 > [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
@@ -71,8 +71,8 @@ ms.locfileid: "66122473"
 | connectionString |Учетные данные в строке подключения, не используемые для получения доступа, а также дополнительные зашифрованные учетные данные. Примеры приведены в следующих разделах. <br/><br/>Можно указать строку подключения с шаблоном `"Driver={SQL Server};Server=Server.database.windows.net; Database=TestDatabase;"` или использовать системное имя DSN (имя источника данных), которое вы настроили на компьютере шлюза с помощью `"DSN=<name of the DSN>;"` (вы все равно должны указать соответствующие учетные данные в связанной службе). |Да |
 | credential |Учетные данные в строке подключения, используемые для получения доступа и указанные в формате "драйвер-определенное свойство-значение". Пример: `"Uid=<user ID>;Pwd=<password>;RefreshToken=<secret refresh token>;"`. |Нет |
 | authenticationType |Тип проверки подлинности, используемый для подключения к хранилищу данных ODBC. Возможные значения: Anonymous (анонимная) и Basic (обычная). |Да |
-| userName |При использовании обычной проверки подлинности укажите имя пользователя. |Нет |
-| password |Введите пароль для учетной записи пользователя, указанной для выбранного имени пользователя. |Нет |
+| userName |Укажите имя пользователя, при использовании обычной проверки подлинности. |Нет |
+| password |Укажите пароль для учетной записи пользователя, который вы указали для имени пользователя. |Нет |
 | gatewayName |Имя шлюза, который следует использовать службе фабрики данных для подключения к хранилищу данных ODBC. |Да |
 
 ### <a name="using-basic-authentication"></a>Использовать обычную проверку подлинности

@@ -10,12 +10,12 @@ ms.author: larryfr
 author: Blackmist
 ms.date: 05/14/2019
 ms.custom: seodec18
-ms.openlocfilehash: 3acaf86123f2cab871bc2f99cc873a73015875e2
-ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
+ms.openlocfilehash: 2dd397e879dd76cabd119a3cbedff34041be2d13
+ms.sourcegitcommit: 8c49df11910a8ed8259f377217a9ffcd892ae0ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65989848"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66298487"
 ---
 # <a name="azure-machine-learning-service-release-notes"></a>Заметки о выпуске службы "Машинное обучение Azure"
 
@@ -24,6 +24,21 @@ ms.locfileid: "65989848"
 + [**Пакет SDK для подготовки данных**](https://aka.ms/data-prep-sdk) Машинного обучения Azure.
 
 Ознакомьтесь со [списком известных проблем](resource-known-issues.md), чтобы получить сведения об известных ошибках и способах их устранения.
+
+## <a name="2019-05-28"></a>2019-05-28
+
+### <a name="azure-machine-learning-data-prep-sdk-v114"></a>Пакет SDK v1.1.4 подготовки данных машинного обучения Azure
+
++ **Новые функции**
+  + Теперь можно использовать следующие функции языка выражений для извлечения и анализа значений даты и времени в новые столбцы.
+    + `RegEx.extract_record()` Извлекает элементы даты и времени в новый столбец.
+    + `create_datetime()` создает объекты datetime из элементов отдельные даты и времени.
+  + При вызове `get_profile()`, теперь можно увидеть, что квантиля столбцы помечены как (оценка) для четкого указания, что значения являются приближенными.
+  + Теперь вы можете использовать ** глобализации при чтении из хранилища BLOB-объектов Azure.
+    + Например, `dprep.read_csv(path='https://yourblob.blob.core.windows.net/yourcontainer/**/data/*.csv')`
+
++ **Исправления ошибок**
+  + Исправлена ошибка, связанная с чтение файла Parquet из удаленного источника (BLOB-объектов Azure).
 
 ## <a name="2019-05-14"></a>2019-05-14
 

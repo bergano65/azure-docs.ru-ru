@@ -7,14 +7,14 @@ manager: christw
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.date: 02/21/2019
-ms.author: v-rada
+ms.author: v-pawal
 ms.topic: conceptual
-ms.openlocfilehash: 73fc0d26612d32f2614899c62f680ff9e85d1609
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 901b5312d216c241331b90a6b61d263437ab5c70
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60512864"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66389301"
 ---
 # <a name="migrate-hub-workspace-and-projects-to-custom-translator"></a>Перенос рабочей области и проектов центра в Custom Translator
 
@@ -130,14 +130,14 @@ ms.locfileid: "60512864"
 
 В этой таблице сравниваются возможности Microsoft Translator Hub и Custom Translator.
 
-|   | Microsoft Translator Hub | Custom Translator |
+|   | Microsoft Translator Hub | Пользовательский переводчик |
 |:-----|:----:|:----:|
 |Состояние компонента настройки   | Общедоступная версия  | Общедоступная версия |
 | Версия API перевода текстов  | V2    | V3  |
-| Настройка SMT | Yes   | Нет  |
-| Настройка NMT | Нет     | Yes |
-| Настройка новых единых служб распознавания речи | Нет     | Yes |
-| Без трассировки | Yes | Yes |
+| Настройка SMT | Да   | Нет |
+| Настройка NMT | Нет    | Да |
+| Настройка новых единых служб распознавания речи | Нет    | Да |
+| Без трассировки | Да | Да |
 
 ## <a name="new-languages"></a>Новые языки
 

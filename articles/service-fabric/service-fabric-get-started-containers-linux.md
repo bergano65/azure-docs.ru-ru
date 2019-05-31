@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 1/4/2019
 ms.author: aljo
-ms.openlocfilehash: 9e8f209f1448119ed2e3dfd5d38d42699a4be01c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 58af752d8b7fcec5c681e2b8975d109a0f731878
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60947918"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66302279"
 ---
 # <a name="create-your-first-service-fabric-container-application-on-linux"></a>Создание первого контейнера-приложения Service Fabric в Linux
 > [!div class="op_single_selector"]
@@ -141,9 +141,9 @@ docker rm my-web-site
 ## <a name="push-the-image-to-the-container-registry"></a>Отправка образа в реестр контейнеров
 Убедившись, что приложение запускается в Docker, отправьте образ в реестр в реестре контейнеров Azure.
 
-Выполните команду `docker login`, чтобы войти в реестр контейнеров с помощью [учетных данных реестра](../container-registry/container-registry-authentication.md).
+Запустите `docker login` для входа в реестр контейнеров с помощью вашей [учетных данных реестра](../container-registry/container-registry-authentication.md).
 
-Следующая команда передает идентификатор и пароль [субъекта-службы](../active-directory/develop/app-objects-and-service-principals.md) Azure Active Directory. Например, назначение субъекта-службы для реестра позволяет автоматизировать некоторые сценарии. Или вы можете входить, используя имя и пароль реестра.
+Следующая команда передает идентификатор и пароль [субъекта-службы](../active-directory/develop/app-objects-and-service-principals.md) Azure Active Directory. Например, назначение субъекта-службы для реестра позволяет автоматизировать некоторые сценарии. Или может войти с помощью реестра имя пользователя и пароль.
 
 ```bash
 docker login myregistry.azurecr.io -u xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx -p myPassword
@@ -231,7 +231,12 @@ service-fabric-get-started-containers.md#configure-cluster-wide-credentials) д�
 
 
 ## <a name="configure-docker-healthcheck"></a>Настройка инструкции HEALTHCHECK в Docker 
-Начиная с версии 6.1 Service Fabric автоматически интегрирует события [Docker HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) в отчеты о работоспособности системы. Это означает, что если в вашем контейнере включена инструкция **HEALTHCHECK**, то Service Fabric будет отправлять отчет о работоспособности при каждом изменении состояния контейнера согласно сведениям Docker. В [Service Fabric Explorer](service-fabric-visualizing-your-cluster.md) будет отображаться состояние работоспособности **ОК**, если значение *health_status* равно *healthy*. Если же значение *health_status* равно *unhealthy*, отобразится **предупреждение**. В файле Dockerfile, который используется при создании образа контейнера, должна содержаться инструкция **HEALTHCHECK**, указывающая на фактическую проверку для отслеживания работоспособности контейнера. 
+
+Начиная с версии 6.1 Service Fabric автоматически интегрирует события [Docker HEALTHCHECK](https://docs.docker.com/engine/reference/builder/#healthcheck) в отчеты о работоспособности системы. Это означает, что если в вашем контейнере включена инструкция **HEALTHCHECK**, то Service Fabric будет отправлять отчет о работоспособности при каждом изменении состояния контейнера согласно сведениям Docker. В [Service Fabric Explorer](service-fabric-visualizing-your-cluster.md) будет отображаться состояние работоспособности **ОК**, если значение *health_status* равно *healthy*. Если же значение *health_status* равно *unhealthy*, отобразится **предупреждение**. 
+
+Начиная с последней версии обновления v6.4, у вас есть возможность указать, что docker HEALTHCHECK оценок должны сопровождаться ошибку. Если этот параметр включен, **ОК** отображается отчет о работоспособности, когда *health_status* — *работоспособное* и **ошибка** отображается, когда *health_status* — *неработоспособное*.
+
+В файле Dockerfile, который используется при создании образа контейнера, должна содержаться инструкция **HEALTHCHECK**, указывающая на фактическую проверку для отслеживания работоспособности контейнера.
 
 ![HealthCheckHealthy][1]
 
@@ -246,12 +251,18 @@ service-fabric-get-started-containers.md#configure-cluster-wide-credentials) д�
     <ServiceManifestRef ServiceManifestName="ContainerServicePkg" ServiceManifestVersion="2.0.0" />
     <Policies>
       <ContainerHostPolicies CodePackageRef="Code">
-        <HealthConfig IncludeDockerHealthStatusInSystemHealthReport="true" RestartContainerOnUnhealthyDockerHealthStatus="false" />
+        <HealthConfig IncludeDockerHealthStatusInSystemHealthReport="true"
+              RestartContainerOnUnhealthyDockerHealthStatus="false" 
+              TreatContainerUnhealthyStatusAsError="false" />
       </ContainerHostPolicies>
     </Policies>
 </ServiceManifestImport>
 ```
-По умолчанию для *IncludeDockerHealthStatusInSystemHealthReport* задано значение **true**, а для *RestartContainerOnUnhealthyDockerHealthStatus* — значение **false**. Если для *RestartContainerOnUnhealthyDockerHealthStatus* задано значение **true**, контейнер, для которого несколько раз отображалось неработоспособное состояние, перезапускается (возможно, на других узлах).
+По умолчанию *IncludeDockerHealthStatusInSystemHealthReport* присваивается **true**, *RestartContainerOnUnhealthyDockerHealthStatus* присваивается  **false**, и *TreatContainerUnhealthyStatusAsError* присваивается **false**. 
+
+Если для *RestartContainerOnUnhealthyDockerHealthStatus* задано значение **true**, контейнер, для которого несколько раз отображалось неработоспособное состояние, перезапускается (возможно, на других узлах).
+
+Если *TreatContainerUnhealthyStatusAsError* присваивается **true**, **ошибка** отображаются отчеты о работоспособности контейнера *health_status*— *неработоспособное*.
 
 Если вы хотите отключить интеграцию с **HEALTHCHECK** во всем кластере Service Fabric, задайте для [EnableDockerHealthCheckIntegration](service-fabric-cluster-fabric-settings.md) значение **false**.
 

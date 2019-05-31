@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: eebb68218fd6f9cbda229aae3d9e544e87441562
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: 5a0e0508babdd9ae703e38d58b079ab5fa16f68c
+ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65192435"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66397882"
 ---
 # <a name="dynamic-membership-rules-for-groups-in-azure-active-directory"></a>Правила динамического членства в группах для Azure Active Directory
 
@@ -61,7 +61,7 @@ user.department -eq "Sales"
 Существует три типа свойств, которые можно использовать для создания правил членства.
 
 * Boolean
-* Строка
+* String
 * Коллекция строк
 
 Ниже приведены свойства пользователя, которые можно использовать для создания одного выражения.
@@ -353,7 +353,6 @@ user.extension_c272a57b722d4eb29bfe327874ae79cb__OfficeNumber -eq "123"
  deviceManufacturer | Любое строковое значение | (device.deviceManufacturer -eq "Samsung")
  deviceModel | Любое строковое значение | (device.deviceModel -eq "iPad Air")
  deviceOwnership | Personal, Company, Unknown | (device.deviceOwnership -eq "Company")
- domainName | Любое строковое значение | (device.domainName -eq "contoso.com")
  enrollmentProfileName | Имя профиля регистрации устройства Apple или профиля Windows Autopilot | (device.enrollmentProfileName -eq "DEP iPhones")
  isRooted | true, false | (device.isRooted -eq true)
  managementType | MDM (для мобильных устройств).<br>PC (для компьютеров, управляемых агентом Intune PC). | (device.managementType -eq "MDM")
@@ -372,4 +371,4 @@ user.extension_c272a57b722d4eb29bfe327874ae79cb__OfficeNumber -eq "123"
 * [Создание группы и добавление участников](../fundamentals/active-directory-groups-create-azure-portal.md)
 * [Управление параметрами группы](../fundamentals/active-directory-groups-settings-azure-portal.md)
 * [Управление членством в группе](../fundamentals/active-directory-groups-membership-azure-portal.md)
-* [Управление динамическими правилами для пользователей в группе](groups-dynamic-membership.md)
+* [Управление динамическими правилами для пользователей в группе](groups-create-rule.md)

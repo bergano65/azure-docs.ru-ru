@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.topic: conceptual
 ms.date: 03/13/2019
 ms.author: pabutler
-ms.openlocfilehash: c6b9f54d073b671b55f259bfbb2aa70d9eacfdc4
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.openlocfilehash: c436522bd5f1a9d52b71d85b7b47ac9a089c0b25
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64943313"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66258171"
 ---
 # <a name="power-bi-app-offer-prerequisites"></a>Приложение Power BI предоставляют необходимые компоненты
 
@@ -29,7 +29,7 @@ ms.locfileid: "64943313"
 
 Бизнес-требования включают процедурного контрактные и юридические обязательства.  Необходимо следующее:
 
-- Быть издателя marketplace зарегистрированное облако. Если вы не зарегистрирован, выполните действия, описанные в [стать издателем Cloud Marketplace](../../become-publisher.md).
+- Быть издателя marketplace зарегистрированное облако. Если вы не зарегистрирован, выполните действия, описанные в [стать издателем Cloud Marketplace](https://docs.microsoft.com/azure/marketplace/become-publisher).
 
     > [!NOTE] 
     > Использовать одну и ту же учетную запись регистрации центра разработчиков Майкрософт для входа [облачный портал для партнеров](https://cloudpartner.azure.com). У вас должна быть только одна учетная запись Майкрософт для публикации предложений в AppSource. Учетные записи не должно быть только к отдельным службам или предложениям.

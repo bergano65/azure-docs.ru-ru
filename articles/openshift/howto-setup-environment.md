@@ -3,18 +3,18 @@ title: Настройте среду разработки Azure Red Hat OpenShif
 description: Ниже приведены предварительные требования для работы с Microsoft Azure Red Hat OpenShift.
 services: openshift
 keywords: red hat openshift Настройка
-author: TylerMSFT
-ms.author: twhitney
+author: jimzim
+ms.author: jzim
 ms.date: 05/10/2019
 ms.topic: conceptual
 ms.service: openshift
 manager: jeconnoc
-ms.openlocfilehash: 6ba7e67620ebfd7ff98c1ba81c7cecb133288be7
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.openlocfilehash: f0ef421d7954aa33cf69e7de2f4902a86ed8b580
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65962127"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66306402"
 ---
 # <a name="set-up-your-azure-red-hat-openshift-dev-environment"></a>Настройка среды разработки Azure Red Hat OpenShift
 
@@ -65,31 +65,43 @@ az --version
     az account set --subscription <SUBSCRIPTION ID>
     ```
 
-2. Зарегистрируйтесь для использования функции openshiftmanagedcluster Microsoft.ContainerService:
+1. Зарегистрируйтесь для использования функции openshiftmanagedcluster Microsoft.ContainerService:
 
     ```bash
     az feature register --namespace Microsoft.ContainerService -n openshiftmanagedcluster
     ```
 
-3. Зарегистрируйте поставщик Microsoft.Solutions:
+1. Зарегистрируйте поставщик Microsoft.Storage:
+
+    ```bash
+    az provider register -n Microsoft.Storage --wait
+    ```
+    
+1. Зарегистрируйте поставщик Microsoft.Compute:
+
+    ```bash
+    az provider register -n Microsoft.Compute --wait
+    ```
+
+1. Зарегистрируйте поставщик Microsoft.Solutions:
 
     ```bash
     az provider register -n Microsoft.Solutions --wait
     ```
 
-4. Регистрация поставщика Microsoft.Network:
+1. Регистрация поставщика Microsoft.Network:
 
     ```bash
     az provider register -n Microsoft.Network --wait
     ```
 
-5. Зарегистрируйте поставщик Microsoft.KeyVault:
+1. Зарегистрируйте поставщик Microsoft.KeyVault:
 
     ```bash
     az provider register -n Microsoft.KeyVault --wait
     ```
 
-6. Обновите регистрацию поставщика ресурсов Microsoft.ContainerService:
+1. Обновите регистрацию поставщика ресурсов Microsoft.ContainerService:
 
     ```bash
     az provider register -n Microsoft.ContainerService --wait

@@ -9,71 +9,75 @@ editor: ''
 ms.service: media-services
 ms.workload: ''
 ms.topic: article
-ms.date: 05/15/2019
+ms.date: 05/28/2019
 ms.author: juliako
-ms.openlocfilehash: 510899e44e4ea4a90e21473ee6af546744c2be2a
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: a813c77e81e51bfe13e75ed6c8d0e24b4d0fa645
+ms.sourcegitcommit: 51a7669c2d12609f54509dbd78a30eeb852009ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66120195"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66392927"
 ---
 # <a name="streaming-policies"></a>Политики потоковой передачи
 
 [Политики потоковой передачи](https://docs.microsoft.com/rest/api/media/streamingpolicies) в Службах мультимедиа Azure версии 3 позволяют определять протоколы потоковой передачи и параметры шифрования для [указателей потоковой передачи](streaming-locators-concept.md). V3 службы мультимедиа предоставляют несколько готовых политик потоковой передачи, таким образом, чтобы их можно использовать непосредственно для пробной версии или рабочей среде. 
 
-В настоящее время доступны стандартные политики потоковой передачи:<br/>Predefined_DownloadOnly, Predefined_ClearStreamingOnly, Predefined_DownloadAndClearStreaming, Predefined_ClearKey, Predefined_MultiDrmCencStreaming и Predefined_MultiDrmStreaming.
+В настоящее время доступны стандартные политики потоковой передачи:<br/>
+* «Predefined_DownloadOnly»
+* «Predefined_ClearStreamingOnly»
+* «Predefined_DownloadAndClearStreaming»
+* «Predefined_ClearKey»
+* «Predefined_MultiDrmCencStreaming» 
+* «Predefined_MultiDrmStreaming»
 
-При наличии особых требований (например, если вы хотите указать разные протоколы, нужно использовать службу доставки пользовательских ключей или понадобится очистить звуковой дорожки с), можно создать настраиваемую политику потоковой передачи. 
+Следующее дерево принятия решений «» вы сможете выбрать стандартную политику потоковой передачи для вашего сценария.
 
- 
 > [!IMPORTANT]
 > * Свойства **политик потоковой передачи** типа Datetime всегда задаются в формате UTC.
 > * Следует разработать ограниченный набор политик для учетной записи Служб мультимедиа и повторно использовать их для указателей потоковой передачи каждый раз, когда требуются те же параметры. Дополнительные сведения см. в статье [Квоты и ограничения](limits-quotas-constraints.md).
 
 ## <a name="decision-tree"></a>Дерево принятия решений
 
-Следующее дерево принятия решений поможет выбрать стандартную политику потоковой передачи для вашего сценария.
+Щелкните изображение, чтобы просмотреть его полноразмерную версию.  
 
-Щелкните изображение, чтобы просмотреть его полноразмерную версию.  <br/>
-<a href="./media/streaming-policy/large.png" target="_blank"><img src="./media/streaming-policy/small.png"></a> 
+<a href="./media/streaming-policy/large.png" target="_blank"><img src="./media/streaming-policy/large.png"></a> 
 
-## <a name="examples"></a>Примеры
+Если шифрование содержимого, необходимо создать [политике ключ содержимого](content-key-policy-concept.md), **политике ключ содержимого** не требуется для очистки потоковой передачи или загрузки. 
 
-### <a name="not-encrypted"></a>Не зашифровано
+Если у вас есть особые требования (например, если вы хотите указать разные протоколы, нужно использовать службу доставки пользовательских ключей или понадобится очистить звуковой дорожки с), вы можете [создать](https://docs.microsoft.com/rest/api/media/streamingpolicies/create) настраиваемую политику потоковой передачи. 
 
-Если нужно передавать потоком вашего файла в-clear (без шифрования), набор предопределенных четкую политику потоковой передачи: для «Predefined_ClearStreamingOnly» (в .NET, можно использовать перечисления PredefinedStreamingPolicy.ClearStreamingOnly).
+## <a name="get-a-streaming-policy-definition"></a>Получить определение политики потоковой передачи  
 
-```csharp
-StreamingLocator locator = await client.StreamingLocators.CreateAsync(
-    resourceGroup,
-    accountName,
-    locatorName,
-    new StreamingLocator
-    {
-        AssetName = assetName,
-        StreamingPolicyName = PredefinedStreamingPolicy.ClearStreamingOnly
-    });
+Если вы хотите просмотреть определение политики потоковой передачи, используйте [получить](https://docs.microsoft.com/rest/api/media/streamingpolicies/get) и укажите имя политики. Пример:
+
+### <a name="rest"></a>REST
+
+Запрос:
+
+```
+GET https://management.azure.com/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/contoso/providers/Microsoft.Media/mediaServices/contosomedia/streamingPolicies/clearStreamingPolicy?api-version=2018-07-01
 ```
 
-### <a name="encrypted"></a>Зашифровано 
+Ответ:
 
-Если нужно зашифровать содержимое с помощью шифрования конверта и CENC, установите политику Predefined_MultiDrmCencStreaming. Эта политика указывает, что для получения созданного и настроенного указателя требуются два ключа содержимого (конверт и CENC). Таким образом применяются шифрования типа конверт, PlayReady и Widevine (ключ доставляется клиенту воспроизведения на основе настроенных лицензий DRM).
-
-```csharp
-StreamingLocator locator = await client.StreamingLocators.CreateAsync(
-    resourceGroup,
-    accountName,
-    locatorName,
-    new StreamingLocator
-    {
-        AssetName = assetName,
-        StreamingPolicyName = "Predefined_MultiDrmCencStreaming",
-        DefaultContentKeyPolicyName = contentPolicyName
-    });
 ```
-
-Если необходимо выполнить шифрование потока с помощью CBCS (FairPlay), используйте Predefined_MultiDrmStreaming.
+{
+  "name": "clearStreamingPolicy",
+  "id": "/subscriptions/00000000-0000-0000-0000-000000000000/resourceGroups/contoso/providers/Microsoft.Media/mediaservices/contosomedia/streamingPolicies/clearStreamingPolicy",
+  "type": "Microsoft.Media/mediaservices/streamingPolicies",
+  "properties": {
+    "created": "2018-08-08T18:29:30.8501486Z",
+    "noEncryption": {
+      "enabledProtocols": {
+        "download": true,
+        "dash": true,
+        "hls": true,
+        "smoothStreaming": true
+      }
+    }
+  }
+}
+```
 
 ## <a name="filtering-ordering-paging"></a>Фильтрации, упорядочивание, разбиение по страницам
 

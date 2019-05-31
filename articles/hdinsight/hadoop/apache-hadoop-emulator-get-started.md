@@ -7,14 +7,14 @@ author: hrasheed-msft
 ms.service: hdinsight
 ms.custom: hdinsightactive,hdiseo17may2017
 ms.topic: conceptual
-ms.date: 12/11/2017
+ms.date: 05/29/2019
 ms.author: hrasheed
-ms.openlocfilehash: 15152196e45265985c8abb409523982bd4c5d427
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 2cb99cfe765e1d3444f362e591812f5088c78c0e
+ms.sourcegitcommit: 51a7669c2d12609f54509dbd78a30eeb852009ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64697423"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66393149"
 ---
 # <a name="get-started-with-an-apache-hadoop-sandbox-an-emulator-on-a-virtual-machine"></a>Начало работы с изолированной Apache Hadoop, эмулятором на виртуальной машине
 
@@ -24,19 +24,16 @@ ms.locfileid: "64697423"
 * [Oracle VirtualBox](https://www.virtualbox.org/). Скачайте и установите приложение [отсюда](https://www.virtualbox.org/wiki/Downloads).
 
 
-
 ## <a name="download-and-install-the-virtual-machine"></a>Скачивание и установка виртуальной машины
-1. Перейдите на [страницу загрузок Hortonworks](https://hortonworks.com/downloads/#sandbox).
+1. Перейдите к [Cloudera загружает](https://www.cloudera.com/downloads/hortonworks-sandbox/hdp.html).
 
-2. Щелкните **DOWNLOAD FOR VIRTUALBOX** (Файл загрузки для VirtualBox), чтобы скачать последнюю песочницу Hortonworks на виртуальную машину. Перед началом скачивания вам будет предложено зарегистрироваться в Hortonworks. Скачивание может длиться один-два часа в зависимости от скорости сети.
+2. Нажмите кнопку **VIRTUALBOX** под **Выбор типа установки** скачать последнюю песочницу Hortonworks на виртуальную Машину. Вход или заполните форму процент продукта.
 
-    ![Изображение ссылки для скачивания песочницы Hortonworks для VirtualBox](./media/apache-hadoop-emulator-get-started/download-sandbox.png)
-3. На этой же веб-странице щелкните ссылку **Import on Virtual Box** (Импорт в VirtualBox), чтобы скачать PDF-файл, содержащий инструкции по установке для виртуальной машины.
+1. Нажмите кнопку **"песочницы" (последняя версия HDP)** чтобы начать загрузку.
 
-Чтобы скачать старую песочницу версии HDP, разверните архив:
+Инструкции по настройке песочницы см. в разделе ["песочницы" развертывания и руководстве по установке](https://hortonworks.com/tutorial/sandbox-deployment-and-install-guide/section/1/).
 
-![Архив песочницы Hortonworks](./media/apache-hadoop-emulator-get-started/hortonworks-sandbox-archive.png)
-
+Чтобы скачать старую песочницу версии HDP, см. по ссылкам в разделе **более старых версий**.
 
 ## <a name="start-the-virtual-machine"></a>Запуск виртуальной машины
 
@@ -52,7 +49,7 @@ ms.locfileid: "64697423"
 1. На **начальном шаге** на странице песочницы Hortonworks выберите **View Advanced Options** (Просмотр дополнительных параметров). Используйте сведения на этой странице, чтобы войти в песочницу с помощью SSH. Введите указанные имя и пароль.
 
    > [!NOTE]
-   > Если клиент SSH не установлен, можно использовать веб-SSH, предоставляемый виртуальной машиной по адресу **http://localhost:4200/**.
+   > Если клиент SSH не установлен, можно использовать веб-SSH, предоставляемый виртуальной машиной по адресу **http://localhost:4200/** .
 
     При первом подключении с помощью SSH вам будет предложено изменить пароль для учетной записи root. Введите новый пароль, используемый при входе с помощью SSH.
 

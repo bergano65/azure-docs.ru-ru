@@ -15,12 +15,12 @@ ms.date: 03/17/2017
 ms.reviewer: mbullwin
 ms.pm_owner: daviste;NumberByColors
 ms.author: daviste
-ms.openlocfilehash: 9ad3484e9134f1ff96823968b65d7b6dc45c7539
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: d4f7cfab8291fcb6d0160035b9e421a8d47b2396
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60372419"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66255186"
 ---
 # <a name="application-insights-telemetry-in-visual-studio-codelens"></a>Телеметрия Application Insights в Visual Studio CodeLens
 Методы в коде веб-приложения можно обозначить с помощью данных телеметрии об исключениях во время выполнения и времени ответа на запрос. Если установить в приложении [Azure Application Insights](../../azure-monitor/app/app-insights-overview.md), данные телеметрии будут отображаться в Visual Studio [CodeLens](https://msdn.microsoft.com/library/dn269218.aspx) в виде примечаний в верхней части данных о функции. Там обычно приведены такие полезные сведения, как число расположений со ссылками на функцию или имя пользователя, который последним вносил в нее изменения.
@@ -41,7 +41,7 @@ ms.locfileid: "60372419"
 > 
 
 ## <a name="exceptions-in-codelens"></a>Исключения в CodeLens
-![ПОДЛЕЖИТ УТОЧНЕНИЮ](./media/visual-studio-codelens/codelens-exceptions.png)
+![Подлежит определению](./media/visual-studio-codelens/codelens-exceptions.png)
 
 Индикатор исключений CodeLens показывает количество исключений, возникших за последние 24 часа, для 15 наиболее часто возникающих в приложении исключений за период обработки запросов, выполненных с помощью метода.
 
@@ -58,12 +58,12 @@ ms.locfileid: "60372419"
 > Если в CodeLens отображается индикатор "Исключений: 0", но известно, что исключения должны быть, убедитесь, что в CodeLens выбран нужный ресурс Application Insights. Чтобы выбрать другой ресурс, щелкните проект правой кнопкой мыши в обозревателе решений и выберите **Application Insights > Выбрать источник телеметрии**. В CodeLens отображаются только 15 наиболее часто встречающихся исключений в приложении за последние 24 часа, поэтому, если исключение на 16-м или одном из последующих мест по частоте возникновения, вы увидите индикатор "Исключений: 0". Исключения из представлений ASP.NET могут не отображаться в методах контроллера, с помощью которых были созданы эти представления.
 > 
 > [!TIP]
-> Если в CodeLens отображается индикатор "Исключений: ?", необходимо связать учетную запись Azure с Visual Studio. Также это возможно, если срок действия учетных данных Azure истек. В любом случае щелкните индикатор "Исключений: ?" и выберите **Добавить учетную запись...**, чтобы указать учетные данные.
+> Если в CodeLens отображается индикатор "Исключений: ?", необходимо связать учетную запись Azure с Visual Studio. Также это возможно, если срок действия учетных данных Azure истек. В любом случае щелкните индикатор "Исключений: ?" и выберите **Добавить учетную запись...** , чтобы указать учетные данные.
 > 
 > 
 
 ## <a name="requests-in-codelens"></a>Запросы в CodeLens
-![ПОДЛЕЖИТ УТОЧНЕНИЮ](./media/visual-studio-codelens/codelens-requests.png)
+![Подлежит определению](./media/visual-studio-codelens/codelens-requests.png)
 
 Индикатор запросов CodeLens показывает количество HTTP-запросов, выполненных с помощью метода за последние 24 часа, а также процент невыполненных запросов.
 
@@ -80,5 +80,5 @@ ms.locfileid: "60372419"
 | --- | --- |
 | **[Работа с Application Insights в Visual Studio](../../azure-monitor/app/visual-studio.md)**<br/>Поиск телеметрии, просмотр данных в CodeLens и настройка Application Insights — все это в Visual Studio |![Щелкните проект правой кнопкой мыши и последовательно выберите пункты "Application Insights" и "Поиск".](./media/visual-studio-codelens/34.png) |
 | **[Добавление данных](../../azure-monitor/app/asp-net-more.md)**<br/>Мониторинг использования, доступности, зависимостей и исключений. Интеграция трассировок из платформ ведения журналов. Написание пользовательской телеметрии. |![Visual studio](./media/visual-studio-codelens/64.png) |
-| **[Работа с порталом Application Insights](../../azure-monitor/app/app-insights-dashboards.md)**<br/>Панели мониторинга, эффективные средства диагностики и анализа, оповещения, карта динамических зависимостей приложения, а также экспорт данных телеметрии. |![Visual studio](./media/visual-studio-codelens/62.png) |
+| **[Работа с порталом Application Insights](../../azure-monitor/app/overview-dashboard.md)**<br/>Панели мониторинга, эффективные средства диагностики и анализа, оповещения, карта динамических зависимостей приложения, а также экспорт данных телеметрии. |![Visual studio](./media/visual-studio-codelens/62.png) |
 

@@ -11,16 +11,16 @@ ms.subservice: bing-web-search
 ms.topic: conceptual
 ms.date: 05/15/2019
 ms.author: aahi
-ms.openlocfilehash: fa02c0913329ec740e3066b05b2e44a36ad379ce
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: a038dc2706c7cb128751630f8997851409886290
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65797805"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66384815"
 ---
 # <a name="how-to-page-through-results-from-the-bing-web-search-api"></a>Как просматривать результаты постранично в API Bing для поиска в Интернете
 
-Когда вы вызываете API Bing для поиска в Интернете, Bing возвращает список результатов. Список — это подмножество общего количества результатов, относящихся к запросу. Чтобы получить предполагаемое общее количество доступных результатов, необходимо обратиться к полю [totalEstimatedMatches](https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference) объекта ответа.  
+Когда вы вызываете API Bing для поиска в Интернете, Bing возвращает список результатов. Список — это подмножество общего количества результатов, относящихся к запросу. Чтобы получить предполагаемое общее количество доступных результатов, необходимо обратиться к полю [totalEstimatedMatches](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference) объекта ответа.  
 
 В следующем примере показано поле `totalEstimatedMatches`, содержащееся в результатах поиска в Интернете.  
 
@@ -35,7 +35,7 @@ ms.locfileid: "65797805"
 }  
 ```
 
-Чтобы разбить на страницы список доступных веб-страниц, используйте параметры запроса [count](https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference#count) и [offset](https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference#offset).  
+Чтобы разбить на страницы список доступных веб-страниц, используйте параметры запроса [count](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#count) и [offset](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#offset).  
 
 Параметр `count` задает количество результатов, возвращаемых в ответе. Максимальное количество результатов, которые можно запросить в ответе, равно 50. По умолчанию задано значение 10. Фактическое число полученных результатов может быть меньше запрошенного.
 
@@ -59,7 +59,7 @@ Ocp-Apim-Subscription-Key: 123456789ABCDE
 Host: api.cognitive.microsoft.com  
 ```
 
-API для поиска в Интернете возвращает результаты, которые включают в себя веб-страницы и могут также включать изображения, видео и новости. При разбиении на страницы результатов поиска используется ответ [WebAnswer](https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference#webanswer), но не другие ответы (изображения или новости). Например, если задать для параметра `count` значение 50, будут возвращены 50 найденных веб-страниц, однако ответ может содержать и результаты других типов. Например, ответ может включать в себя 15 изображений и 4 статьи. Возможно также, что на первой странице результатов будут отображены новости, но их не будет на второй странице, или наоборот.   
+API для поиска в Интернете возвращает результаты, которые включают в себя веб-страницы и могут также включать изображения, видео и новости. При разбиении на страницы результатов поиска используется ответ [WebAnswer](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#webanswer), но не другие ответы (изображения или новости). Например, если задать для параметра `count` значение 50, будут возвращены 50 найденных веб-страниц, однако ответ может содержать и результаты других типов. Например, ответ может включать в себя 15 изображений и 4 статьи. Возможно также, что на первой странице результатов будут отображены новости, но их не будет на второй странице, или наоборот.   
 
 Если вы указали параметр запроса `responseFilter` и не добавили Webpages в список фильтров, не используйте параметры `count` и `offset`. 
 

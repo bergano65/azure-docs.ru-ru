@@ -3,25 +3,25 @@ title: Метод Detect в API перевода текстов
 titlesuffix: Azure Cognitive Services
 description: Использование метода Detect в API перевода текстов.
 services: cognitive-services
-author: v-pawal
+author: rajdeep-in
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: reference
 ms.date: 02/01/2019
-ms.author: v-jansko
-ms.openlocfilehash: ea8fe989dd0ef7026957153fb5c9836742d008dd
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.author: v-pawal
+ms.openlocfilehash: 275cf91eb3bf72a612882164c24e4773edcad0f2
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65797495"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66389802"
 ---
-# <a name="translator-text-api-30-detect"></a>API перевода текстов 3.0: Обнаружить
+# <a name="translator-text-api-30-detect"></a>API перевода текстов 3.0: Определение
 
 Определяет язык для фрагмента текста.
 
-## <a name="request-url"></a>URL-адрес запроса
+## <a name="request-url"></a>Request URL (URL-адрес запроса)
 
 Отправьте запрос `POST` на следующий адрес.
 
@@ -150,7 +150,7 @@ https://api.cognitive.microsofttranslator.com/detect?api-version=3.0
   </tr>
   <tr>
     <td>401</td>
-    <td>Не удалось выполнить проверку подлинности запроса. Убедитесь, что указаны допустимые учетные данные.</td>
+    <td>Не удалось выполнить аутентификацию запроса. Убедитесь, что указаны допустимые учетные данные.</td>
   </tr>
   <tr>
     <td>403</td>

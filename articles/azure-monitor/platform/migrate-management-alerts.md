@@ -1,26 +1,26 @@
 ---
 title: Перенос оповещений Azure о событиях управления в оповещения журнала действий
 description: Оповещения о событиях управления будут удалены 1 октября. Подготовьтесь к этому, перенеся существующие оповещения.
-author: lingliw
+author: rboucher
 services: monitoring
 ms.service: azure-monitor
 ms.topic: conceptual
-ms.date: 04/12/19
-ms.author: v-lingwu
+ms.date: 08/14/2017
+ms.author: robb
 ms.subservice: alerts
-ms.openlocfilehash: fb54e11c9da6bec2a1e0354317df6343140cbf09
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 78519dad85739b6e4d760bc34719837956638f48
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60255922"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66388717"
 ---
 # <a name="migrate-azure-alerts-on-management-events-to-activity-log-alerts"></a>Перенос оповещений Azure о событиях управления в оповещения журнала действий
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
 > [!WARNING]
-> Оповещения о событиях управления будут отключены в течение или после 1 октября. Чтобы понять, есть ли у вас такие оповещения, и перенести их, если они имеются, следуйте приведенным ниже инструкциям.
+> Оповещения о событиях управления будут отключены в течение или после октября 1,2017. Чтобы понять, есть ли у вас такие оповещения, и перенести их, если они имеются, следуйте приведенным ниже инструкциям.
 
 ## <a name="what-is-changing"></a>Изменения
 
@@ -32,7 +32,7 @@ ms.locfileid: "60255922"
 Следующий сценарий PowerShell возвращает список всех оповещений о событиях управления, имеющихся в подписке, а также условий, заданных для каждого оповещения.
 
 ```powershell
-Connect-AzAccount -Environment AzureChinaCloud
+Connect-AzAccount
 $alerts = $null
 foreach ($rg in Get-AzResourceGroup ) {
   $alerts += Get-AzAlertRule -ResourceGroup $rg.ResourceGroupName
@@ -115,3 +115,4 @@ ResourceUri          : /subscriptions/<subscription-id>/resourceGroups/<resource
 * Просмотрите [схему webhook оповещений журнала действий](../../azure-monitor/platform/activity-log-alerts-webhook.md).
 * Узнайте больше об [уведомлениях службы](../../azure-monitor/platform/service-notifications.md).
 * Узнайте больше о [группах действий](../../azure-monitor/platform/action-groups.md).
+

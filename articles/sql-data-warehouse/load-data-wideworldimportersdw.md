@@ -10,16 +10,16 @@ ms.subservice: load data
 ms.date: 04/17/2018
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: 6bc1431ace55538c489d73e0a62d18f274c06d57
-ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
+ms.openlocfilehash: a8bca6c1e56595e4a7d64f9f388c9daca0b166ac
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65873756"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66242910"
 ---
 # <a name="tutorial-load-data-to-azure-sql-data-warehouse"></a>Руководство по Загрузка данных в Хранилище данных SQL Azure
 
-В этом руководстве описана загрузка хранилища данных WideWorldImportersDW из хранилища BLOB-объектов Azure в хранилище данных SQL Azure с помощью PolyBase. В рамках этого руководства [портал Azure](https://portal.azure.com) и [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) (SSMS) используются, чтобы выполнить такие действия: 
+В этом руководстве описана загрузка хранилища данных WideWorldImportersDW из хранилища BLOB-объектов Azure в хранилище данных SQL Azure с помощью PolyBase. В рамках этого руководства [портал Azure](https://portal.azure.com) и [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) (SSMS) используются, чтобы выполнить такие действия:
 
 > [!div class="checklist"]
 > * создать хранилище данных на портале Azure;
@@ -37,7 +37,6 @@ ms.locfileid: "65873756"
 ## <a name="before-you-begin"></a>Перед началом работы
 
 Перед началом работы с этим руководством скачайте и установите последнюю версию [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms) (SSMS).
-
 
 ## <a name="log-in-to-the-azure-portal"></a>Войдите на портал Azure.
 
@@ -127,7 +126,7 @@ ms.locfileid: "65873756"
 Теперь с помощью этого IP-адреса можно подключиться к серверу SQL и его хранилищам данных. Подключение выполняется из SQL Server Management Studio или другого инструмента на ваше усмотрение. При подключении используйте созданную ранее учетную запись serveradmin.  
 
 > [!IMPORTANT]
-> По умолчанию доступ через брандмауэр базы данных SQL включен для всех служб Azure. На этой странице щелкните **Откл.**, а затем нажмите кнопку **Сохранить**, чтобы отключить брандмауэр для всех служб Azure.
+> По умолчанию доступ через брандмауэр базы данных SQL включен для всех служб Azure. На этой странице щелкните **Откл.** , а затем нажмите кнопку **Сохранить**, чтобы отключить брандмауэр для всех служб Azure.
 
 ## <a name="get-the-fully-qualified-server-name"></a>Получение полного имени сервера
 
@@ -182,7 +181,7 @@ ms.locfileid: "65873756"
     CREATE USER LoaderRC60 FOR LOGIN LoaderRC60;
     ```
 
-3. Нажмите **Execute (Выполнить)**.
+3. Нажмите **Execute (Выполнить)** .
 
 4. Щелкните правой кнопкой мыши **SampleDW** и выберите **Создать запрос**. Откроется окно нового запроса.  
 
@@ -196,7 +195,7 @@ ms.locfileid: "65873756"
     EXEC sp_addrolemember 'staticrc60', 'LoaderRC60';
     ```
 
-6. Нажмите **Execute (Выполнить)**.
+6. Нажмите **Execute (Выполнить)** .
 
 ## <a name="connect-to-the-server-as-the-loading-user"></a>Подключение к серверу от имени пользователя, выполняющего загрузку
 
@@ -1121,7 +1120,7 @@ ms.locfileid: "65873756"
 > * просмотрели ход выполнения загрузки данных;
 > * создали статистику для вновь загруженных данных.
 
-Перейдите к обзору процесса переноса, чтобы узнать больше о переносе существующей базы данных в хранилище данных SQL.
+Перейдите к Общие сведения о разработке, чтобы узнать, как перенести существующую базу данных в хранилище данных SQL.
 
 > [!div class="nextstepaction"]
->[Узнать больше о переносе существующей базы данных в хранилище данных SQL](sql-data-warehouse-overview-migrate.md)
+>[Проектные решения для переноса существующей базы данных в хранилище данных SQL](sql-data-warehouse-overview-develop.md)

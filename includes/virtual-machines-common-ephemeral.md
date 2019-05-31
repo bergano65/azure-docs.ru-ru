@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 05/02/2019
 ms.author: azcspmt;jonbeck;cynthn
 ms.custom: include file
-ms.openlocfilehash: 47407df90a83501b8739a428789e20cddc59e83d
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: 3e9885466d422a0428311ed3013e2ab34341cd25
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66145925"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66391449"
 ---
 Временные диски ОС создаются в локальном хранилище виртуальной машины (VM) и не сохраняется в удаленном хранилище Azure. Временные диски ОС хорошо подходят для без отслеживания состояния рабочих нагрузок, где приложения устойчивы к большому ошибок для отдельных виртуальных Машин, но более важен время, необходимое для крупномасштабного развертывания или времени, чтобы повторно создать образ отдельными экземплярами виртуальных Машин. Он также подходит для приложений, развернутых с помощью классической модели развертывания, чтобы переместить в модель развертывания Resource Manager. Временный диск ОС обеспечивает более низкую задержку при операциях чтения и записи на диск ОС, а также ускоренное повторное создание образов виртуальных машин. Кроме того диск операционной системы временные предоставляется бесплатно, плата не расходы на хранилище для диска операционной системы. 
  
@@ -38,38 +38,6 @@ ms.locfileid: "66145925"
 | Специальной поддержки диска операционной системы | Да                                                                                          | Нет                                                                                 |
 | Изменения размера диска операционной системы              | Поддерживаемые во время создания виртуальной Машины, и после виртуальная машина будет остановлена (освобождена)                                | Поддерживается при создании виртуальной Машины только                                                  |
 | Изменение размера для нового размера виртуальной Машины   | Сохраняются данные диска операционной системы                                                                    | Данные на диске операционной системы, ОС значение перенастроены                                      |
-
-## <a name="register-for-the-preview"></a>Зарегистрируйтесь для использования предварительной версии
-
-
-Для регистрации на предварительную версию временные диски операционной системы, используя последнюю версию Azure CLI или Azure PowerShell.
-
-### <a name="powershell"></a>PowerShell
-
-```azurepowershell-interactive
-Register-AzResourceProvider -ProviderNamespace Microsoft.Compute
-Register-AzProviderFeature –FeatureName LocalDiffDiskPreview -ProviderNamespace Microsoft.Compute
-```
-
-Чтобы проверить, если вы зарегистрированы для предварительного просмотра:
-
-```azurepowershell-interactive
-Get-AzProviderFeature –FeatureName LocalDiffDiskPreview -ProviderNamespace Microsoft.Compute
-```
-
-### <a name="cli"></a>Интерфейс командной строки
-
-```azurecli-interactive
-az provider register --namespace Microsoft.Compute
-az feature register --namespace Microsoft.Compute --name LocalDiffDiskPreview
-```
-
-Чтобы проверить, если вы зарегистрированы для предварительного просмотра:
- 
-```azurecli-interactive
-az provider show --namespace Microsoft.Compute
-```
-
 
 ## <a name="scale-set-deployment"></a>Развертывание масштабируемого набора  
 Процесс создания масштабируемого набора, который использует временный диск ОС является добавление `diffDiskSettings` свойства `Microsoft.Compute/virtualMachineScaleSets/virtualMachineProfile` тип ресурса в шаблоне. Кроме того, политики кэширования должно быть присвоено `ReadOnly` для временный диск ОС. 
@@ -196,7 +164,7 @@ id}/resourceGroups/{rgName}/providers/Microsoft.Compute/VirtualMachines/{vmName}
 Ответ. Временные диски не поддерживают:
 - Запись образов виртуальных Машин
 - моментальными снимками дисков. 
-- Шифрование диска Azure 
+- Дисковое шифрование Azure 
 - Служба архивации Azure
 - Azure Site Recovery  
 - Переключения дисков ОС 

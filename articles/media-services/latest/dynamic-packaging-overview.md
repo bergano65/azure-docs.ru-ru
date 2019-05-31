@@ -11,14 +11,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/27/2019
+ms.date: 05/22/2019
 ms.author: juliako
-ms.openlocfilehash: 78e3897ec653326bcd88a538a6ea7d33938659b9
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 25c0fe7a179db484f18c1aca16471e39a739052c
+ms.sourcegitcommit: 8c49df11910a8ed8259f377217a9ffcd892ae0ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65761948"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66299189"
 ---
 # <a name="dynamic-packaging"></a>Динамическая упаковка
 
@@ -31,6 +31,9 @@ ms.locfileid: "65761948"
 В результате вы сможете хранить и оплачивать файлы только в одном формате, а службы мультимедиа выполнят сборку и будут обслуживать соответствующий ответ на основе запросов клиента. 
 
 В службах мультимедиа динамической упаковки, используется ли потоковая передача прямом эфире или по запросу. 
+
+> [!NOTE]
+> В настоящее время вы не можете использовать портал Azure для управления ресурсами версии 3. Используйте [REST API](https://aka.ms/ams-v3-rest-ref), [CLI](https://aka.ms/ams-v3-cli-ref) или один из поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).
 
 ## <a name="common-on-demand-workflow"></a>Общий рабочий процесс по запросу
 
@@ -92,10 +95,32 @@ ms.locfileid: "65761948"
 
 ## <a name="audio-codecs-supported-by-dynamic-packaging"></a>Аудиокодеки, поддерживаемые для динамической упаковки
 
-Динамическое упаковывание поддерживает MP4-файлов, которые содержат аудио, закодированные с [AAC](https://en.wikipedia.org/wiki/Advanced_Audio_Coding) (AAC-LC, HE-AAC v1, HE-AAC v2), [Dolby Digital Plus](https://en.wikipedia.org/wiki/Dolby_Digital_Plus)(Enhanced AC-3 или E-AC3), Dolby Atmos или [службDTS](https://en.wikipedia.org/wiki/DTS_%28sound_system%29) (DTS Express, LBR служб DTS, HD служб DTS, HD служб DTS без потери данных). Потоковая передача содержимого Dolby Atmos поддерживается стандартов, как протокол MPEG-DASH с общий формат потоковой передачи (CSF) или формате распространенных приложений мультимедиа (CMAF) фрагментированный MP4, а через HTTP Live Streaming (HLS) с CMAF.
+### <a name="mp4-files-support"></a>Поддерживает MP4-файлов
 
-> [!NOTE]
-> Для динамической упаковки не поддерживаются файлы с аудиоданными в формате [Dolby Digital](https://en.wikipedia.org/wiki/Dolby_Digital) (AC3) (это устаревший кодек).
+Динамическое упаковывание поддерживает MP4-файлов, которые содержат аудио, закодирован с использованием 
+
+* [AAC](https://en.wikipedia.org/wiki/Advanced_Audio_Coding) (AAC-LC, HE-AAC v1, HE-AAC v2)
+* [Dolby Digital Plus](https://en.wikipedia.org/wiki/Dolby_Digital_Plus)(Enhanced AC-3 "или" E-AC3)
+* Dolby Atmos
+   
+   Потоковая передача содержимого Dolby Atmos поддерживается стандартов, как протокол MPEG-DASH с общий формат потоковой передачи (CSF) или формате распространенных приложений мультимедиа (CMAF) фрагментированный MP4, а через HTTP Live Streaming (HLS) с CMAF.
+
+* [СЛУЖБЫ DTS](https://en.wikipedia.org/wiki/DTS_%28sound_system%29)
+
+    Перечислены кодеки служб DTS, поддерживаемых форматов упаковки DASH CSF, DASH CMAF, HLS M2TS и HLS CMAF.  
+
+    * Цифровое объемное служб DTS (dtsc)
+    * Высокое разрешение служб DTS-HD и основных служб DTS-HD Audio (dtsh)
+    * DTS Express (dtse)
+    * Без потерь DTS-HD (не ядра) (dtsl)
+
+### <a name="hls-support"></a>Поддержка HLS
+
+Динамическое упаковывание поддерживает HLS (версии 4 или более поздней версии) для ресурсов, которые имеют нескольких звуковых дорожек с несколькими кодеки и языков.
+
+### <a name="not-supported"></a>Не поддерживается
+
+Для динамической упаковки не поддерживаются файлы с аудиоданными в формате [Dolby Digital](https://en.wikipedia.org/wiki/Dolby_Digital) (AC3) (это устаревший кодек).
 
 ## <a name="dynamic-encryption"></a>Динамическое шифрование
 
@@ -193,10 +218,7 @@ QualityLevels(128041)/Manifest(aac_eng_2_128041_2_1,format=m3u8-aapl)
 
 ## <a name="dynamic-manifest"></a>Динамические манифесты
 
-Динамической фильтрации используется для управления количеством дорожек, форматы, скоростей и периоды времени презентации, которые будут отправлены игроков. Дополнительные сведения см. в разделе [фильтры и динамические манифесты](filters-dynamic-manifest-overview.md).
-
-> [!NOTE]
-> В настоящее время вы не можете использовать портал Azure для управления ресурсами версии 3. Используйте [REST API](https://aka.ms/ams-v3-rest-ref), [CLI](https://aka.ms/ams-v3-cli-ref) или один из поддерживаемых [пакетов SDK](media-services-apis-overview.md#sdks).
+Динамической фильтрации используется для управления количеством дорожек, форматы, скоростей и периоды времени презентации, которые будут отправлены игроков. Дополнительные сведения см. в разделе [предварительная фильтрация манифестов с динамическим упаковщиком](filters-dynamic-manifest-overview.md).
 
 ## <a name="ask-questions-give-feedback-get-updates"></a>Получение справки, отправка отзывов, получение обновлений
 

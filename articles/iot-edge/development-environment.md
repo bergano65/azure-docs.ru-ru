@@ -8,12 +8,12 @@ ms.date: 01/04/2019
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: f3d1fb393138aeb590bc0645d6abe93652a52a5b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: a6fc2af0cbe770ee787da757966bbc1647717e5a
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61247560"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66302684"
 ---
 # <a name="prepare-your-development-and-test-environment-for-iot-edge"></a>Подготовка среды разработки и тестирования для IoT Edge
 
@@ -35,7 +35,7 @@ Azure IoT Edge работает в определенном наборе [по
 
 Единственным поддерживаемым модулем контейнеров для устройств IoT Edge в рабочей среде является Moby. Тем не менее любой модуль контейнеров, совместимый с Open Container Initiative, например Docker, может создавать образы модулей IoT Edge. 
 
-## <a name="development-tools"></a>Средства разработки
+## <a name="development-tools"></a>Инструменты разработки
 
 Visual Studio и Visual Studio Code включают дополнительные расширения для разработки решений IoT Edge. Эти расширения предоставляют шаблоны для конкретного языка, которые помогают создавать и развертывать новые сценарии IoT Edge. Расширения Azure IoT Edge для Visual Studio и Visual Studio Code позволяют писать код, создавать, развертывать и отлаживать решения IoT Edge. Вы можете создать полное решение IoT Edge, которое содержит несколько модулей, и расширения будут автоматически изменять шаблон манифеста развертывания при добавлении каждого нового модуля. С помощью расширений вы также можете управлять устройствами Интернета вещей из Visual Studio или Visual Studio Code. Вы можете развертывать модули на устройстве, отслеживать состояние и просматривать сообщения по мере их поступления в Центр Интернета вещей. Оба расширения используют [средство разработки IoT EdgeHub](#iot-edgehub-dev-tool) для включения локального запуска и отладки модулей на компьютере разработки. 
 
@@ -53,7 +53,7 @@ Visual Studio и Visual Studio Code включают дополнительн
 
 Шаблоны модулей для некоторых языков и служб включают предварительные требования, необходимые для создания папок проекта на компьютере разработки с Visual Studio Code.
 
-| Шаблон модуля | Необходимое условие |
+| Шаблон модуля | Предварительные требования |
 | --------------- | ------------ |
 | Функции Azure | [Пакет SDK для .NET Core 2.1](https://www.microsoft.com/net/download). |
 | C | [Git](https://git-scm.com/) |
@@ -62,11 +62,11 @@ Visual Studio и Visual Studio Code включают дополнительн
 | Node.js | <ul><li>[Node.js](https://nodejs.org/) <li> [Yeoman](https://www.npmjs.com/package/yo) <li> [Генератор модулей Node.js Azure IoT Edge](https://www.npmjs.com/package/generator-azure-iot-edge-module)</ul> |
 | Python |<ul><li> [Python](https://www.python.org/downloads/) <li> [Pip](https://pip.pypa.io/en/stable/installing/#installation) <li> [Cookiecutter](https://cookiecutter.readthedocs.io/en/latest/installation.html) <li> [Git](https://git-scm.com/) </ul> |
 
-### <a name="visual-studio-2017-extension"></a>Расширение Visual Studio 2017
+### <a name="visual-studio-20172019-extension"></a>Расширение Visual Studio 2017/2019 г.
 
-Средства Azure IoT Edge для Visual Studio включают шаблон модуля IoT Edge на основе C#. 
+Средства Azure IoT Edge для Visual Studio предоставляют IoT Edge на основе шаблона модуля C# и C. 
 
-Дополнительные сведения и ссылки для загрузки см. в разделе [Средства Azure IoT Edge для Visual Studio 2017](https://marketplace.visualstudio.com/items?itemName=vsc-iot.vsiotedgetools).
+Дополнительные сведения и загрузки см. в разделе [средства Edge Интернета вещей Azure для Visual Studio 2017](https://marketplace.visualstudio.com/items?itemName=vsc-iot.vsiotedgetools) или [средства Edge Интернета вещей Azure для Visual Studio 2019](https://marketplace.visualstudio.com/items?itemName=vsc-iot.vs16iotedgetools).
 
 ### <a name="iot-edge-dev-tool"></a>Средство разработки IoT Edge
 
@@ -80,7 +80,7 @@ Visual Studio и Visual Studio Code включают дополнительн
 
 Для развертывания в рабочей среде поддерживаются только среда выполнения IoT Edge, однако следующие средства позволяют моделировать и легко создавать устройства IoT Edge для разработки и тестирования. Эти средства не являются взаимоисключающими и могут работать, формируя полноценную среду разработки. 
 
-| Tool | Другое название | Поддерживаемые платформы | Оптимально для |
+| Средство | Другое название | Поддерживаемые платформы | Оптимально для |
 | ---- | ------------- | ------------------- | --------- |
 | Средство разработки IoT EdgeHub  | iotedgehubdev | Windows, Linux, macOS | Имитация устройства для отладки модулей. |
 | Контейнер разработки IoT Edge | microsoft/iotedgedev | Windows, Linux, macOS | Разработка без установки зависимостей. |
@@ -109,7 +109,7 @@ Visual Studio и Visual Studio Code включают дополнительн
 
 ### <a name="iot-edge-device-container"></a>Контейнер устройств IoT Edge
 
-Контейнер устройств IoT Edge — это полноценное устройство IoT Edge, готовое к запуску на любом компьютере с модулем контейнеров. Контейнер устройств включает среду выполнения IoT Edge и собственно модуль контейнеров. Каждый экземпляр контейнера является полностью функциональным устройством самостоятельной подготовки IoT Edge. Контейнер устройств поддерживает удаленную отладку модулей при наличии сетевого маршрута к модулю. Контейнер устройств хорошо подходит для быстрого создания большого количества устройств IoT Edge для тестирования в крупномасштабных сценариях или конвейерах DevOps. Он также поддерживает развертывание в Kubernetes с помощью Helm. 
+Контейнер устройств IoT Edge — это полноценное устройство IoT Edge, готовое к запуску на любом компьютере с модулем контейнеров. Контейнер устройств включает среду выполнения IoT Edge и собственно модуль контейнеров. Каждый экземпляр контейнера является полностью функциональным устройством самостоятельной подготовки IoT Edge. Контейнер устройств поддерживает удаленную отладку модулей при наличии сетевого маршрута к модулю. Контейнер устройств хорошо подходят для быстрого создания большого количества Edge Интернета вещей устройства для тестирования в крупномасштабных сценариях или конвейеры Azure. Он также поддерживает развертывание в Kubernetes с помощью Helm. 
 
 Дополнительные сведения см. в разделе [Контейнер устройств Azure IoT Edge](https://github.com/toolboc/azure-iot-edge-device-container).
 

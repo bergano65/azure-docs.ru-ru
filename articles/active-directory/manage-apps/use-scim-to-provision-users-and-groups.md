@@ -11,17 +11,17 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 5/06/2019
+ms.date: 05/06/2019
 ms.author: mimart
 ms.reviewer: arvinh
 ms.custom: aaddev;it-pro;seohack1
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ad90cd66d922c29887aaa8094e798edb28022b27
-ms.sourcegitcommit: db3fe303b251c92e94072b160e546cec15361c2c
+ms.openlocfilehash: e5c2d987a1556513e36fc0a81e903d9eefdcae68
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66015457"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66388161"
 ---
 # <a name="using-system-for-cross-domain-identity-management-scim-to-automatically-provision-users-and-groups-from-azure-active-directory-to-applications"></a>Использование системы для управления удостоверениями между доменами (SCIM) для автоматической подготовки пользователей и групп из Azure Active Directory в приложения
 
@@ -229,7 +229,7 @@ Azure AD можно настроить автоматическую подгот
 }
 ```
 
-##### <a name="response"></a>Отклик
+##### <a name="response"></a>Ответ
 *HTTP/1.1 201 Создано*
 ```json
 {
@@ -262,7 +262,7 @@ Azure AD можно настроить автоматическую подгот
 ###### <a name="request"></a>Запрос
 *GET /Users/5d48a0a8e9f04aa38008* 
 
-###### <a name="response"></a>Отклик
+###### <a name="response"></a>Ответ
 *HTTP/1.1 200 OK*
 ```json
 {
@@ -293,7 +293,7 @@ Azure AD можно настроить автоматическую подгот
 ##### <a name="request"></a>Запрос
 *GET /Users?filter=userName eq "Test_User_dfeef4c5-5681-4387-b016-bdf221e82081"*
 
-##### <a name="response"></a>Отклик
+##### <a name="response"></a>Ответ
 *HTTP/1.1 200 OK*
 ```json
 {
@@ -332,7 +332,7 @@ Azure AD можно настроить автоматическую подгот
 ##### <a name="request"></a>Запрос
 *GET /Users?filter=userName eq "non-existent user"*
 
-##### <a name="response"></a>Отклик
+##### <a name="response"></a>Ответ
 *HTTP/1.1 200 OK*
 ```json
 {
@@ -367,7 +367,7 @@ Azure AD можно настроить автоматическую подгот
 }
 ```
 
-##### <a name="response"></a>Отклик
+##### <a name="response"></a>Ответ
 *HTTP/1.1 200 OK*
 ```json
 {
@@ -409,7 +409,7 @@ Azure AD можно настроить автоматическую подгот
 }
 ```
 
-##### <a name="response"></a>Отклик
+##### <a name="response"></a>Ответ
 *HTTP/1.1 200 OK*
 ```json
 {
@@ -442,7 +442,7 @@ Azure AD можно настроить автоматическую подгот
 ##### <a name="request"></a>Запрос
 *УДАЛИТЬ /Users/5171a35d82074e068ce2 HTTP/1.1*
 
-##### <a name="response"></a>Отклик
+##### <a name="response"></a>Ответ
 *HTTP/1.1 204 Нет содержимого*
 
 ### <a name="group-operations"></a>Операции группы
@@ -452,7 +452,7 @@ Azure AD можно настроить автоматическую подгот
 * Обновление запроса PATCH группы должен передать *HTTP 204 No Content* в ответе. Возвращение текста со списком всех элементов не рекомендуется.
 * Нет необходимости для поддержки возвращение всех элементов группы.
 
-#### <a name="create-group"></a>Создать группу
+#### <a name="create-group"></a>Создание группы
 
 ##### <a name="request"></a>Запрос
 *POST/Groups HTTP/1.1*
@@ -468,7 +468,7 @@ Azure AD можно настроить автоматическую подгот
 }
 ```
 
-##### <a name="response"></a>Отклик
+##### <a name="response"></a>Ответ
 *HTTP/1.1 201 Создано*
 ```json
 {
@@ -486,12 +486,12 @@ Azure AD можно настроить автоматическую подгот
 }
 ```
 
-#### <a name="get-group"></a>Получить группу
+#### <a name="get-group"></a>Получение группы
 
 ##### <a name="request"></a>Запрос
 *GET/группы/40734ae655284ad3abcc? excludedAttributes = члены HTTP/1.1*
 
-##### <a name="response"></a>Отклик
+##### <a name="response"></a>Ответ
 *HTTP/1.1 200 OK*
 ```json
 {
@@ -512,7 +512,7 @@ Azure AD можно настроить автоматическую подгот
 ##### <a name="request"></a>Запрос
 */ Groups GET? excludedAttributes = фильтр & члены = displayName eq «displayName» HTTP/1.1*
 
-##### <a name="response"></a>Отклик
+##### <a name="response"></a>Ответ
 *HTTP/1.1 200 OK*
 ```json
 {
@@ -549,7 +549,7 @@ Azure AD можно настроить автоматическую подгот
 }
 ```
 
-##### <a name="response"></a>Отклик
+##### <a name="response"></a>Ответ
 *HTTP/1.1 204 Нет содержимого*
 
 ### <a name="update-group-add-members"></a>Группа обновлений [добавление членов]
@@ -570,7 +570,7 @@ Azure AD можно настроить автоматическую подгот
 }
 ```
 
-##### <a name="response"></a>Отклик
+##### <a name="response"></a>Ответ
 *HTTP/1.1 204 Нет содержимого*
 
 #### <a name="update-group-remove-members"></a>Обновить группу [удалить участников]
@@ -591,7 +591,7 @@ Azure AD можно настроить автоматическую подгот
 }
 ```
 
-##### <a name="response"></a>Отклик
+##### <a name="response"></a>Ответ
 *HTTP/1.1 204 Нет содержимого*
 
 #### <a name="delete-group"></a>Удалить группу
@@ -599,7 +599,7 @@ Azure AD можно настроить автоматическую подгот
 ##### <a name="request"></a>Запрос
 *DELETE /Groups/cdb1ce18f65944079d37 HTTP/1.1*
 
-##### <a name="response"></a>Отклик
+##### <a name="response"></a>Ответ
 *HTTP/1.1 204 Нет содержимого*
 
 
@@ -783,7 +783,7 @@ Azure AD можно настроить автоматическую подгот
 * GlobalSign;
 * Go Daddy;
 * VeriSign;
-* WoSign
+* WoSign.
 
 Сертификат проверки подлинности сервера можно привязать к порту на узле Windows с помощью служебной программы сетевой оболочки. 
 
@@ -1328,9 +1328,9 @@ Azure Active Directory может предоставлять веб-службе
 | Facsimile-TelephoneNumber |phoneNumbers[type eq "fax"].value |
 | givenName |name.givenName |
 | jobTitle |title |
-| почта |emails[type eq "work"].value |
+| mail |emails[type eq "work"].value |
 | mailNickname |externalId |
-| руководитель |manager |
+| manager |manager |
 | mobile |phoneNumbers[type eq "mobile"].value |
 | objectId |ИД |
 | postalCode |addresses[type eq "work"].postalCode |
@@ -1346,9 +1346,9 @@ Azure Active Directory может предоставлять веб-службе
 | Группа Azure Active Directory | urn:ietf:params:scim:schemas:core:2.0:Group |
 | --- | --- |
 | displayName |externalId |
-| почта |emails[type eq "work"].value |
+| mail |emails[type eq "work"].value |
 | mailNickname |displayName |
-| члены |члены |
+| members |members |
 | objectId |ИД |
 | proxyAddresses |emails[type eq "other"].Value |
 

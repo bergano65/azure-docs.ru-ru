@@ -9,43 +9,45 @@ ms.topic: conceptual
 ms.author: mesameki
 author: mesameki
 ms.reviewer: larryfr
-ms.date: 04/29/2019
-ms.openlocfilehash: 4261e869fe17283886d7d8ea8101e03110d6dad4
-ms.sourcegitcommit: 16cb78a0766f9b3efbaf12426519ddab2774b815
+ms.date: 05/30/2019
+ms.openlocfilehash: 94309a019800b560cf6731d84cea324932e3f357
+ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65851991"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66398549"
 ---
 # <a name="model-interpretability-with-azure-machine-learning-service"></a>Interpretability модели со службой машинного обучения Azure
 
-В этой статье вы узнаете, как объяснить, почему ваша модель приняли прогнозы как с помощью пакета SDK Python для машины обучения на interpretability.
+В этой статье вы узнаете, как объяснить, почему ваша модель приняли прогнозы как с помощью различных пакетов interpretability пакета SDK Azure Machine Learning Python.
 
-Использование классов и методов в этом пакете, вы можете получить:
-+ Interpretability на наборы реальных данных в масштабе, во время обучения и вывода. 
+Использование классов и методов в пакете SDK, вы можете получить:
++ Функция значения важности для необработанных и спроектированные функции
++ Interpretability на наборы реальных данных в масштабе, во время обучения и вывода.
 + Интерактивные визуализации, которые могут помочь при обнаружение закономерностей в данных и объяснения во время обучения
-+ Значения важности компонентов: необработанных и спроектированные функции
 
-На этапе обучения цикла разработки конструкторы моделей и средств оценки можно использовать для объяснения выходные данные модели заинтересованным лицам, чтобы установить доверие.  Они также используем аналитику в модель для отладки, проверки поведения модели сопоставляет их целей, а также проверки наличия сдвиг.
+На этапе обучения цикла разработки конструкторы моделей и средств оценки можно использовать выходные данные interpretability модели для проверки гипотез и доверительные отношения с другими заинтересованными лицами.  Они также используем аналитику в модель для отладки, проверки поведения модели сопоставляет их целей, а также проверки наличия сдвиг.
 
-Определение или модель оценки, — это этап, где используется развернутой модели для прогнозирования, чаще всего для производственных данных. На этом этапе обработке и анализу данных смогут объяснить результирующие прогнозы, чтобы пользователи, применяющие модель. Например, почему модели запрета ссуды ипотеки или предсказать, что портфелем капиталовложений выполняет подвергается риску?
+В машинном обучении **функции** полей данных, использовать для прогнозирования целевой точки данных. Например для прогнозирования кредитного риска, может использовать поля данных, размер учетной записи и срока действия учетной записи. В этом случае возраста, размер учетной записи и срок действия учетных записей являются **функции**. Показатели важности компонентов сообщит о том, влияние каждого поля данных прогнозы модели. Например возраст сильно можно включить в прогноз Хотя размер учетной записи и возраст существенно не воздействуют на точность прогноза. Этот процесс позволяет по обработке и анализу данных объяснить результирующие прогнозы, таким образом, чтобы заинтересованные лица могли видеть какие точек данных наиболее важны в модели.
 
-Используя эти предложения, вы сможете разъяснить моделей машинного обучения **глобально ко всем данным**, или **локально на точку данных** с использованием технологий современных образом-удобное и масштабируемое.
+С помощью этих средств, способных прояснить моделей машинного обучения **глобально ко всем данным**, или **локально в определенных точках данных** с использованием технологий современных образом-удобное и масштабируемое.
 
-Классы interpretability становятся доступными через два пакета Python. Узнайте, как [установить пакеты SDK для машинного обучения Azure](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py).
+Классы interpretability становятся доступными через несколько пакетов SDK. Узнайте, как [установить пакеты SDK для машинного обучения Azure](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py).
 
-* [`azureml.explain.model`](https://docs.microsoft.com/python/api/azureml-explain-model/?view=azure-ml-py), главный пакет, содержащий функциональные возможности, поддерживаемые корпорацией Майкрософт. 
+* [`azureml.explain.model`](https://docs.microsoft.com/python/api/azureml-explain-model/?view=azure-ml-py), главный пакет, содержащий функциональные возможности, поддерживаемые корпорацией Майкрософт.
 
 * `azureml.contrib.explain.model`, предварительного просмотра и экспериментальные функции, которые вы можете повторить.
 
+* `azureml.train.automl.automlexplainer` пакет для интерпретации автоматических моделей машинного обучения.
+
 > [!IMPORTANT]
-> Вещи в contrib поддерживаются не полностью. Как экспериментальные функции становятся более зрелыми, они будут перемещены постепенно главного пакета.
+> Содержимое в `contrib` пространство имен поддерживается не полностью. Как экспериментальные функции становятся более зрелыми, они будут перемещены постепенно главного пространства имен.
 
 ## <a name="how-to-interpret-your-model"></a>Способ интерпретации модели
 
 Можно применить interpretability классы и методы понимание глобальных поведение модели или конкретных прогнозов. Первое из них называется глобального объяснение и называется локальной объяснение.
 
-Методы можно также классифицировать в зависимости от метода зависит от модели или определенной модели. Некоторые методы предназначенных для определенного типа модели. Например элемента ФИГУРЫ дерева пояснения применяется только к модели на основе дерева. Некоторые методы обрабатывать модели как черный ящик, например отражения пояснения или пояснения ядра ФИГУРЫ. `explain` Пакет использует эти подходы на основе наборов данных, типы моделей и вариантов использования. 
+Методы можно также классифицировать в зависимости от метода зависит от модели или определенной модели. Некоторые методы предназначенных для определенного типа модели. Например элемента ФИГУРЫ дерева пояснения применяется только к модели на основе дерева. Некоторые методы обрабатывать модели как черный ящик, например отражения пояснения или пояснения ядра ФИГУРЫ. `explain` Пакет использует эти подходы на основе наборов данных, типы моделей и вариантов использования.
 
 Выходные данные — это набор сведения о том, как данной модели делает прогноза, такие как:
 * Показатели важности компонентов относительный глобальных и локальных
@@ -103,9 +105,9 @@ __Meta explainers__ автоматически выбрать подходящи
 
 ### <a name="train-and-explain-locally"></a>Обучение и объяснить локально
 
-1. Обучение модели в локальные записные книжки Jupyter. 
+1. Обучение модели в локальные записные книжки Jupyter.
 
-    ``` python
+    ```python
     # load breast cancer dataset, a well-known small dataset that comes with scikit-learn
     from sklearn.datasets import load_breast_cancer
     from sklearn import svm
@@ -126,8 +128,9 @@ __Meta explainers__ автоматически выбрать подходящи
     # "features" and "classes" fields are optional
     explainer = TabularExplainer(model, x_train, features=breast_cancer_data.feature_names, classes=classes)
     ```
-    или
-    
+
+    или диспетчер конфигурации служб
+
     ```python
     from azureml.explain.model.mimic.mimic_explainer import MimicExplainer
     from azureml.explain.model.mimic.models.lightgbm_model import LGBMExplainableModel
@@ -152,16 +155,18 @@ __Meta explainers__ автоматически выбрать подходящи
     ```python
     # explain the first data point in the test set
     local_explanation = explainer.explain_local(x_test[0])
-    
+
     # sorted feature importance values and feature names
     sorted_local_importance_names = local_explanation.get_ranked_local_names()
     sorted_local_importance_values = local_explanation.get_ranked_local_values()
     ```
+
     или
+
     ```python
     # explain the first five data points in the test set
     local_explanation = explainer.explain_local(x_test[0:4])
-    
+
     # sorted feature importance values and feature names
     sorted_local_importance_names = local_explanation.get_ranked_local_names()
     sorted_local_importance_values = local_explanation.get_ranked_local_values()
@@ -173,14 +178,14 @@ __Meta explainers__ автоматически выбрать подходящи
 
 1. Создайте скрипт обучения в локальной записной книжки Jupyter (например, run_explainer.py).
 
-    ``` python  
+    ```python
     run = Run.get_context()
     client = ExplanationClient.from_run(run)
-    
+
     # Train your model here
 
-    # explain predictions on your local machine   
-    # "features" and "classes" fields are optional 
+    # explain predictions on your local machine
+    # "features" and "classes" fields are optional
     explainer = TabularExplainer(model, x_train, features=breast_cancer_data.feature_names, classes=classes)
     # explain overall model predictions (global explanation)
     global_explanation = explainer.explain_global(x_test)
@@ -198,10 +203,9 @@ __Meta explainers__ автоматически выбрать подходящи
 
 2. Следуйте инструкциям на [настроить целевые объекты вычисления для обучения модели](how-to-set-up-training-targets.md#amlcompute) Дополнительные сведения о том, как настроить Azure вычислений для машинного обучения в качестве целевого объекта вычислений и отправить запуска обучения.
 
-3. Скачайте объяснение в вашей локальной записной книжки Jupyter. 
+3. Скачайте объяснение в вашей локальной записной книжки Jupyter.
 
-
-    ``` python
+    ```python
     from azureml.contrib.explain.model.explanation.explanation_client import ExplanationClient
     # Get model explanation data
     client = ExplanationClient.from_run(run)
@@ -239,6 +243,7 @@ __Meta explainers__ автоматически выбрать подходящи
 [![Панель мониторинга для визуализации глобального](./media/machine-learning-interpretability-explainability/global-charts.png)](./media/machine-learning-interpretability-explainability/global-charts.png#lightbox)
 
 ### <a name="local-visualizations"></a>Локальные визуализации
+
 Можно щелкнуть любой отдельной точке данных в любое время предыдущего графики для загрузки построения важности локальную функцию для точки данных.
 
 |График|Описание|
@@ -253,11 +258,11 @@ __Meta explainers__ автоматически выбрать подходящи
 from azureml.contrib.explain.model.visualize import ExplanationDashboard
 
 ExplanationDashboard(global_explanation, model, x_test)
-``` 
+```
 
 ## <a name="raw-feature-transformations"></a>Преобразования необработанных признаков
 
-При необходимости можно передать ваш компонент конвейера преобразования пояснения для получения объяснения с точки зрения необработанных признаков до преобразования (а не реконструированные признаки). Если пропустить этот шаг, пояснения содержатся разъяснения с точки зрения реконструированные признаки. 
+При необходимости можно передать ваш компонент конвейера преобразования пояснения для получения объяснения с точки зрения необработанных признаков до преобразования (а не реконструированные признаки). Если пропустить этот шаг, пояснения содержатся разъяснения с точки зрения реконструированные признаки.
 
 Поддерживаемые преобразования имеет следующий формат же тот, описанными в [sklearn pandas](https://github.com/scikit-learn-contrib/sklearn-pandas). Как правило любые преобразования поддерживаются, пока они работают по одному столбцу и, следовательно, очевидно, что один ко многим.
 
@@ -292,33 +297,37 @@ tabular_explainer = TabularExplainer(clf.steps[-1][1], initialization_examples=x
 Пояснения могут развертываться вместе с исходной модели и может использоваться для предоставления локального описания во время оценки. Процесс развертывания оценки пояснения похоже на развертывание модели и включает следующие шаги:
 
 1. Создайте объект объяснение:
+
    ```python
    from azureml.contrib.explain.model.tabular_explainer import TabularExplainer
 
    explainer = TabularExplainer(model, x_test)
-   ``` 
+   ```
 
 1. Создание оценки пояснения, используя объект объяснение:
+
    ```python
    scoring_explainer = explainer.create_scoring_explainer(x_test)
 
    # Pickle scoring explainer
    scoring_explainer_path = scoring_explainer.save('scoring_explainer_deploy')
-   ``` 
+   ```
 
 1. Настройка и регистрация образа, использующего модель оценки пояснения.
+
    ```python
    # Register explainer model using the path from ScoringExplainer.save - could be done on remote compute
    run.upload_file('breast_cancer_scoring_explainer.pkl', scoring_explainer_path)
    model = run.register_model(model_name='breast_cancer_scoring_explainer', model_path='breast_cancer_scoring_explainer.pkl')
    print(model.name, model.id, model.version, sep = '\t')
-   ``` 
+   ```
 
 1. [Необязательно] Получение оценки пояснения из облака и проверить пояснения
+
    ```python
    from azureml.contrib.explain.model.scoring.scoring_explainer import ScoringExplainer
 
-   # Retreive the scoring explainer model from cloud"
+   # Retrieve the scoring explainer model from cloud"
    scoring_explainer_model = Model(ws, 'breast_cancer_scoring_explainer')
    scoring_explainer_model_path = scoring_explainer_model.download(target_dir=os.getcwd(), exist_ok=True)
 
@@ -333,6 +342,7 @@ tabular_explainer = TabularExplainer(clf.steps[-1][1], initialization_examples=x
 1. Разверните образ на целевой объект вычислений:
 
    1. Создание оценки файла (до выполнения этого действия, выполните действия, описанные в [развертывать модели в службе машинного обучения Azure](https://docs.microsoft.com/azure/machine-learning/service/how-to-deploy-and-where) регистрируемый исходная модель прогнозирования)
+
         ```python
         %%writefile score.py
         import json
@@ -365,50 +375,55 @@ tabular_explainer = TabularExplainer(clf.steps[-1][1], initialization_examples=x
             local_importance_values = scoring_explainer.explain(data)
             # You can return any data type as long as it is JSON-serializable
             return {'predictions': predictions.tolist(), 'local_importance_values': local_importance_values}
-        ``` 
-    1. Определение конфигурации развертывания (Эта конфигурация зависит от требований вашей модели. В следующем примере определяется конфигурацию, которая использует одно ядро ЦП и 1 ГБ памяти)
+        ```
+
+   1. Определение конфигурации развертывания (Эта конфигурация зависит от требований вашей модели. В следующем примере определяется конфигурацию, которая использует одно ядро ЦП и 1 ГБ памяти)
+
         ```python
         from azureml.core.webservice import AciWebservice
 
-        aciconfig = AciWebservice.deploy_configuration(cpu_cores=1, 
-                                                       memory_gb=1, 
-                                                       tags={"data": "breastcancer",  
-                                                             "method" : "local_explanation"}, 
+        aciconfig = AciWebservice.deploy_configuration(cpu_cores=1,
+                                                       memory_gb=1,
+                                                       tags={"data": "breastcancer",
+                                                             "method" : "local_explanation"},
                                                        description='Get local explanations for breast cancer data')
-        ``` 
+        ```
 
-    1. Создайте файл с зависимостями среды
+   1. Создайте файл с зависимостями среды
 
         ```python
-        from azureml.core.conda_dependencies import CondaDependencies 
+        from azureml.core.conda_dependencies import CondaDependencies
 
         # WARNING: to install this, g++ needs to be available on the Docker image and is not by default (look at the next cell)
 
 
-        myenv = CondaDependencies.create(pip_packages=["azureml-defaults", "azureml-explain-model", "azureml-contrib-explain-model"], 
+        myenv = CondaDependencies.create(pip_packages=["azureml-defaults", "azureml-explain-model", "azureml-contrib-explain-model"],
                                         conda_packages=["scikit-learn"])
 
         with open("myenv.yml","w") as f:
             f.write(myenv.serialize_to_string())
-            
+
         with open("myenv.yml","r") as f:
             print(f.read())
-        ``` 
-    1. Создание пользовательского dockerfile с помощью g ++ установлен
+        ```
+
+   1. Создание пользовательского dockerfile с помощью g ++ установлен
 
         ```python
         %%writefile dockerfile
-        RUN apt-get update && apt-get install -y g++  
-        ``` 
-    1. Развернуть созданный образ (оценка времени: 5 минут)
+        RUN apt-get update && apt-get install -y g++
+        ```
+
+   1. Развернуть созданный образ (оценка времени: 5 минут)
+
         ```python
         from azureml.core.webservice import Webservice
         from azureml.core.image import ContainerImage
 
         # Use the custom scoring, docker, and conda files we created above
         image_config = ContainerImage.image_configuration(execution_script="score.py",
-                                                        docker_file="dockerfile", 
-                                                        runtime="python", 
+                                                        docker_file="dockerfile",
+                                                        runtime="python",
                                                         conda_file="myenv.yml")
 
         # Use configs and models generated above
@@ -419,9 +434,10 @@ tabular_explainer = TabularExplainer(clf.steps[-1][1], initialization_examples=x
                                             image_config=image_config)
 
         service.wait_for_deployment(show_output=True)
-        ``` 
+        ```
 
 1. тестирование развертывания
+
     ```python
     import requests
 
@@ -438,9 +454,33 @@ tabular_explainer = TabularExplainer(clf.steps[-1][1], initialization_examples=x
     print("POST to url", service.scoring_uri)
     # can covert back to Python objects from json string if desired
     print("prediction:", resp.text)
-    ``` 
+    ```
 
 1. Очистка: Для удаления развернутой веб-службы используйте `service.delete()`.
+
+## <a name="interpretability-in-automated-ml"></a>Interpretability в автоматических машинного Обучения
+
+Автоматические машинного обучения содержит пакеты, для интерпретации показатели важности компонентов в моделях, подготовленный автоматически. Кроме того классификации сценарии позволяют получить показатели важности компонентов уровня класса. Существует два метода для обеспечения такого поведения в рамках автоматических машинного обучения:
+
+* Чтобы включить показатели важности компонентов для модели обученных совокупности, используйте [ `explain_model()` ](https://docs.microsoft.com/en-us/python/api/azureml-train-automl/azureml.train.automl.automlexplainer?view=azure-ml-py) функции.
+
+    ```python
+    from azureml.train.automl.automlexplainer import explain_model
+
+    shap_values, expected_values, overall_summary, overall_imp, \
+        per_class_summary, per_class_imp = explain_model(fitted_model, X_train, X_test)
+    ```
+
+* Чтобы включить показатели важности компонентов для каждого отдельного запуска до обучения, задайте `model_explainability` параметр `True` в `AutoMLConfig` объекта, а также предоставляет данные проверки. Затем с помощью [ `retrieve_model_explanation()` ](https://docs.microsoft.com/en-us/python/api/azureml-train-automl/azureml.train.automl.automlexplainer?view=azure-ml-py) функции.
+
+    ```python
+    from azureml.train.automl.automlexplainer import retrieve_model_explanation
+
+    shap_values, expected_values, overall_summary, overall_imp, per_class_summary, \
+        per_class_imp = retrieve_model_explanation(best_run)
+    ```
+
+Дополнительные сведения см. в разделе [руководства](how-to-configure-auto-train.md#explain-the-model-interpretability) о включении функции interpretability в автоматических машинного обучения.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

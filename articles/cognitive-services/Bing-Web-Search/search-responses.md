@@ -11,16 +11,16 @@ ms.topic: conceptual
 ms.date: 02/12/2019
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: 85087ce5a4fa3dd733f47a35bc18d76f1f4bc652
-ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
+ms.openlocfilehash: 47a573fd4ed4d058b9f9a265c8774f0856371b94
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65606688"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66390097"
 ---
 # <a name="bing-web-search-api-response-structure-and-answer-types"></a>Структура откликов и типы ответов API Bing для поиска в Интернете  
 
-При отправке поискового запроса службе "Поиск в Интернете Bing" она возвращает объект [`SearchResponse`](https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference#searchresponse) в тексте отклика. Объект содержит поле для каждого ответа, который система Bing посчитала соответствующим запросу. Этот пример иллюстрирует объект отклика, если система Bing вернула все ответы:
+При отправке поискового запроса службе "Поиск в Интернете Bing" она возвращает объект [`SearchResponse`](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#searchresponse) в тексте отклика. Объект содержит поле для каждого ответа, который система Bing посчитала соответствующим запросу. Этот пример иллюстрирует объект отклика, если система Bing вернула все ответы:
 
 ```json
 {
@@ -38,11 +38,11 @@ ms.locfileid: "65606688"
 }, ...
 ```
 
-Как правило, служба "Поиск в Интернете Bing" возвращает только некоторые из ответов. Например, если отправить запрос с терминами *плавание на ялах*, отклик может включать ответы `webPages`, `images` и `rankingResponse`. Если вы не отфильтровали веб-страницы с помощью объекта [responseFilter](https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference#responsefilter), отклик всегда включает ответы `webpages` и `rankingResponse`.
+Как правило, служба "Поиск в Интернете Bing" возвращает только некоторые из ответов. Например, если отправить запрос с терминами *плавание на ялах*, отклик может включать ответы `webPages`, `images` и `rankingResponse`. Если вы не отфильтровали веб-страницы с помощью объекта [responseFilter](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#responsefilter), отклик всегда включает ответы `webpages` и `rankingResponse`.
 
 ## <a name="webpages-answer"></a>Ответ с веб-страницами
 
-Ответ [webPages](https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference#webanswer) содержит список ссылок на веб-страницы, которые служба "Поиск в Интернете Bing" посчитала соответствующими запросу. Каждый объект [веб-страницы](https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference#webpage) в списке будет содержать название, URL-адрес, отображаемый URL-адрес, краткое описание содержимого и дату обнаружения контента системой Bing.
+Ответ [webPages](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#webanswer) содержит список ссылок на веб-страницы, которые служба "Поиск в Интернете Bing" посчитала соответствующими запросу. Каждый объект [веб-страницы](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#webpage) в списке будет содержать название, URL-адрес, отображаемый URL-адрес, краткое описание содержимого и дату обнаружения контента системой Bing.
 
 ```json
 {
@@ -65,7 +65,7 @@ The following shows an example of how you might display the webpage in a search 
 
 ## <a name="images-answer"></a>Ответ при поиске изображений
 
-Ответ [images](https://docs.microsoft.com/rest/api/cognitiveservices/bing-images-api-v7-reference#images) содержит список изображений, которые система Bing посчитала соответствующими запросу. Каждый объект [изображения](https://docs.microsoft.com/rest/api/cognitiveservices/bing-images-api-v7-reference#image) в списке содержит URL-адрес изображения, его размер, ширину и высоту, а также формат кодирования. Объект изображения также содержит URL-адрес эскиза изображения и его размеры.
+Ответ [images](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#images) содержит список изображений, которые система Bing посчитала соответствующими запросу. Каждый объект [изображения](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference#image) в списке содержит URL-адрес изображения, его размер, ширину и высоту, а также формат кодирования. Объект изображения также содержит URL-адрес эскиза изображения и его размеры.
 
 ```json
 {
@@ -109,7 +109,7 @@ The following shows an example of how you might display the webpage in a search 
 
 ## <a name="related-searches-answer"></a>Ответ со связанными поисковыми запросами
 
-Ответ [relatedSearches](https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference#searchresponse-relatedsearches) содержит список наиболее популярных связанных запросов, отправленных другими пользователями. Каждый объект [запроса](https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference#query_obj) в списке включает строку запроса (`text`), строку запроса с символами выделения совпадений (`displayText`) и URL-адрес (`webSearchUrl`) страницы результатов поиска Bing по этому запросу.
+Ответ [relatedSearches](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#searchresponse-relatedsearches) содержит список наиболее популярных связанных запросов, отправленных другими пользователями. Каждый объект [запроса](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#query_obj) в списке включает строку запроса (`text`), строку запроса с символами выделения совпадений (`displayText`) и URL-адрес (`webSearchUrl`) страницы результатов поиска Bing по этому запросу.
 
 ```json
 {
@@ -129,7 +129,7 @@ The following shows an example of how you might display the webpage in a search 
 
 ## <a name="videos-answer"></a>Ответ с видео
 
-Ответ [videos](https://docs.microsoft.com/rest/api/cognitiveservices/bing-video-api-v7-reference#videos) содержит список видео, которые система Bing посчитала соответствующими запросу. Каждый объект [видео](https://docs.microsoft.com/rest/api/cognitiveservices/bing-video-api-v7-reference#video) в списке содержит URL-адрес видео, его продолжительность, размеры и формат кодировки. Объект видео также содержит URL-адрес эскиза видео и его размеры.
+Ответ [videos](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#videos) содержит список видео, которые система Bing посчитала соответствующими запросу. Каждый объект [видео](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference#video) в списке содержит URL-адрес видео, его продолжительность, размеры и формат кодировки. Объект видео также содержит URL-адрес эскиза видео и его размеры.
 
 ```json
 {
@@ -183,7 +183,7 @@ The following shows an example of how you might display the webpage in a search 
 
 ## <a name="news-answer"></a>Ответ с новостными статьями
 
-Ответ [news](https://docs.microsoft.com/rest/api/cognitiveservices/bing-news-api-v7-reference#news) содержит список новостных статей, которые система Bing посчитала соответствующими запросу. Каждый объект [новостной статьи](https://docs.microsoft.com/rest/api/cognitiveservices/bing-news-api-v7-reference#newsarticle) в списке содержит название, описание и URL-адрес статьи на исходном веб-сайте. Если статья содержит изображение, то объект включает эскиз этого изображения.
+Ответ [news](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#news) содержит список новостных статей, которые система Bing посчитала соответствующими запросу. Каждый объект [новостной статьи](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#newsarticle) в списке содержит название, описание и URL-адрес статьи на исходном веб-сайте. Если статья содержит изображение, то объект включает эскиз этого изображения.
 
 ```json
 {
@@ -218,9 +218,9 @@ The following shows an example of how you might display articles in a search res
 
 ## <a name="computation-answer"></a>Ответ с вычислениями
 
-Если пользователь введет математическое выражение или запрос на преобразование единиц измерения, то отклик может содержать ответ [Computation](https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference#computation). Ответ `computation` содержит нормализованное выражение и его результат.
+Если пользователь введет математическое выражение или запрос на преобразование единиц измерения, то отклик может содержать ответ [Computation](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#computation). Ответ `computation` содержит нормализованное выражение и его результат.
 
-Запрос на преобразование единиц измерения преобразует одни единицы в другие. Примеры: *Сколько футов в 10 метрах?*, *Сколько столовых ложек в 1/4 чашки?*
+Запрос на преобразование единиц измерения преобразует одни единицы в другие. Примеры: *Сколько футов в 10 метрах?* , *Сколько столовых ложек в 1/4 чашки?*
 
 Ниже показан ответ `computation` на запрос *Сколько футов в 10 метрах?*
 
@@ -290,7 +290,7 @@ Encoded query: 8^2%2B11^2-2*8*11*cos%2837%29
 
 |Знак|Описание|
 |------------|-----------------|
-|+|Добавление|
+|+|Сложение|
 |-|Вычитание|
 |/|Деление|
 |*|Умножение|
@@ -326,7 +326,7 @@ Encoded query: 8^2%2B11^2-2*8*11*cos%2837%29
 
 ## <a name="timezone-answer"></a>Ответ TimeZone
 
-Если пользователь вводит запрос времени или даты, отклик может содержать ответ [TimeZone](https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference#timezone). Этот ответ поддерживает как явные, так и неявные запросы. Неявный запрос, например *Который час?*, возвращает местное время, соответствующее местоположению пользователя. Явный запрос, например *Который час в Сиэтле?*, возвращает местное время в Сиэтле, штат Вашингтон.
+Если пользователь вводит запрос времени или даты, отклик может содержать ответ [TimeZone](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#timezone). Этот ответ поддерживает как явные, так и неявные запросы. Неявный запрос, например *Который час?* , возвращает местное время, соответствующее местоположению пользователя. Явный запрос, например *Который час в Сиэтле?* , возвращает местное время в Сиэтле, штат Вашингтон.
 
 В ответе `timeZone` указываются название региона, текущие дата и время в формате UTC в указанном местоположении, а также смещение от UTC. Если границы географического региона находятся в нескольких временных поясах, то ответ содержит текущие дату и время в формате UTC для всех часовых поясов в рамках этой границы. Например, так как штат Флорида находится в двух часовых поясах, ответ содержит локальные дату и время обоих часовых поясов.  
 
@@ -417,7 +417,7 @@ Query: What time is it in the U.S.
 
 ## <a name="spellsuggestion-answer"></a>Ответ SpellSuggestion
 
-Если система Bing устанавливает, что пользователь мог искать что-то другое, отклик включает объект [SpellSuggestions](https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference#spellsuggestions). Например, если пользователь вводит запрос *карлос пен*, то Bing может установить, что пользователь наверняка искал имя "Карлос Пена" (на основании предыдущих поисковых запросов со словами *карлос пен*). Ниже представлен пример отклика с исправлением правописания.
+Если система Bing устанавливает, что пользователь мог искать что-то другое, отклик включает объект [SpellSuggestions](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#spellsuggestions). Например, если пользователь вводит запрос *карлос пен*, то Bing может установить, что пользователь наверняка искал имя "Карлос Пена" (на основании предыдущих поисковых запросов со словами *карлос пен*). Ниже представлен пример отклика с исправлением правописания.
 
 ```json
 "spellSuggestions": {
@@ -481,4 +481,4 @@ Query: What time is it in the U.S.
 
 ## <a name="see-also"></a>См. также  
 
-* [Справка по API Bing для поиска в Интернете версии 7](https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference)
+* [Справка по API Bing для поиска в Интернете версии 7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference)

@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 05/08/2019
 ms.author: raynew
-ms.openlocfilehash: 2267a4e836fe1aff214f40e34afa830de50fa2d5
-ms.sourcegitcommit: 399db0671f58c879c1a729230254f12bc4ebff59
+ms.openlocfilehash: 2f48e0d8b46684d067fe2e32f241e28d94c2edbd
+ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65471648"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66399674"
 ---
 # <a name="support-matrix-for-azure-vm-backup"></a>Матрица поддержки для резервного копирования виртуальных машин Azure
 Можно использовать [службы архивации Azure](backup-overview.md) для резервного копирования локальных компьютеров и рабочих нагрузок и виртуальных машин (ВМ) Azure. В этой статье перечислены параметры поддержки и ограничения при резервном копировании виртуальных машин Azure с помощью службы архивации Azure.
@@ -40,7 +40,7 @@ ms.locfileid: "65471648"
 
 **Действие** | **Поддержка**
 --- | ---
-Включение резервного копирования при создании виртуальной машины Azure Windows | Поддерживается для:  Windows Server 2019 (ядро центра обработки данных или Datacenter), Windows Server 2016 (ядро центра обработки данных или Datacenter); Windows Server 2012 R2 Datacenter; Windows Server 2008 R2 (RTM и SP1)
+Включение резервного копирования при создании виртуальной машины Azure Windows | Поддерживается для: <br/><br/> — Windows Server 2019 г. (Core центра обработки данных или Datacenter/Standard) <br/><br/> — Windows Server 2016 (основной центр обработки данных или Datacenter/Standard) <br/><br/> — Windows Server 2012 R2 (Datacenter/Standard) <br/><br/> — Windows Server 2008 R2 (RTM и SP1 Standard)
 Включение резервного копирования при создании виртуальной машины Linux | Поддерживается для:<br/><br/> — Ubuntu Server: 18.04, 17.10, 17.04, 16.04 (LTS), 14.04 (LTS)<br/><br/> — Red Hat: RHEL 6.7, 6.8, 6.9, 7.2, 7.3, 7.4;<br/><br/> — SUSE Linux Enterprise Server: 11 SP4, 12 SP2, 12 SP3, 15 <br/><br/> — Debian: 8, 9<br/><br/> — CentOS: 6.9, 7.3;<br/><br/> -Oracle Linux: 6.7, 6.8, 6.9, 7.2, 7.3.
 Резервное копирование виртуальной Машины shutdown/автономной виртуальной Машины |  Поддерживается.<br/><br/> Можно создать только отказоустойчивый моментальный снимок, но не согласованный на уровне приложений.
 Резервное копирование дисков после перехода на управляемые диски |  Поддерживается.<br/><br/> Резервное копирование продолжит работу. Никаких действий не требуется.
@@ -61,7 +61,7 @@ ms.locfileid: "65471648"
 
 **Сценарий** | **Поддержка ОС**
 --- | ---
-Резервное копирование с помощью расширения агента виртуальной машины Azure | Клиент Windows: Не поддерживается<br/><br/> Windows Server 2019 (ядро центра обработки данных или Datacenter), Windows Server 2016 (ядро центра обработки данных или Datacenter); Windows Server 2012 R2 Datacenter; Windows Server 2008 R2 (RTM и SP1)
+Резервное копирование с помощью расширения агента виртуальной машины Azure | Клиент Windows: Не поддерживается<br/><br/>— Windows Server 2019 г. (Core центра обработки данных или Datacenter/Standard) <br/><br/> — Windows Server 2016 (основной центр обработки данных или Datacenter/Standard) <br/><br/> — Windows Server 2012 R2 (Datacenter/Standard) <br/><br/> — Windows Server 2008 R2 (RTM и SP1 Standard)
 Резервное копирование с помощью агента MARS | Поддерживаемые операционные системы см. [здесь](backup-support-matrix-mars-agent.md#support-for-direct-backups).
 Резервное копирование с помощью DPM или MABS | См. поддерживаемые версии операционных систем для резервного копирования с помощью [MABS](backup-mabs-protection-matrix.md) и [DPM](https://docs.microsoft.com/system-center/dpm/dpm-protection-matrix?view=sc-dpm-1807).
 

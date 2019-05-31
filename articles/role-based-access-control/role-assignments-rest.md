@@ -15,12 +15,12 @@ ms.topic: conceptual
 ms.date: 06/20/2018
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 0e0c83d411242be38992dd763dea72eda70ffbf4
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: e9c307b2b2e720881acb983a2a1b00ac8e03dac4
+ms.sourcegitcommit: 8e76be591034b618f5c11f4e66668f48c090ddfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60531845"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66357064"
 ---
 # <a name="manage-access-to-azure-resources-using-rbac-and-the-rest-api"></a>Управление доступом к ресурсам Azure с помощью RBAC и REST API
 
@@ -38,15 +38,19 @@ ms.locfileid: "60531845"
 
 1. Внутри URI замените *{scope}* областью, для которой требуется вывести список назначений ролей.
 
-    | Область | type |
+    | `Scope` | type |
     | --- | --- |
     | `subscriptions/{subscriptionId}` | Подписка |
     | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | Группа ресурсов |
     | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1/ providers/Microsoft.Web/sites/mysite1` | Ресурс |
-
+    
+       
+     > [!NOTE]
+     > В приведенном выше примере используется поставщик ресурсов — Microsoft.web ссылающийся на экземпляр службы приложений. Аналогичным образом можно использовать любой другой поставщик ресурсов и построения URI области. Чтобы понять сведения см. [поставщики и типы ресурсов Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-supported-services) и поддерживаемых [операции поставщиков ресурсов Azure RM](https://docs.microsoft.com/azure/role-based-access-control/resource-provider-operations).  
+     
 1. Замените *{filter}* условием, по которому требуется отфильтровать список назначений ролей.
 
-    | Фильтр | ОПИСАНИЕ |
+    | Фильтр | Описание |
     | --- | --- |
     | `$filter=atScope()` | Вывод списка назначений ролей только для определенной области без учета внутренних областей. |
     | `$filter=principalId%20eq%20'{objectId}'` | Вывод списка назначений ролей для определенного пользователя, группы или субъекта-службы. |
@@ -77,7 +81,7 @@ ms.locfileid: "60531845"
     
 1. Внутри URI замените *{scope}* областью для назначения роли.
 
-    | Область | type |
+    | `Scope` | type |
     | --- | --- |
     | `subscriptions/{subscriptionId}` | Подписка |
     | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | Группа ресурсов |
@@ -105,7 +109,7 @@ ms.locfileid: "60531845"
 
 1. Внутри URI замените *{scope}* областью для удаления назначения роли.
 
-    | Область | type |
+    | `Scope` | type |
     | --- | --- |
     | `subscriptions/{subscriptionId}` | Подписка |
     | `subscriptions/{subscriptionId}/resourceGroups/myresourcegroup1` | Группа ресурсов |

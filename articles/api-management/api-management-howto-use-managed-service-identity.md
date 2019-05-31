@@ -11,18 +11,16 @@ ms.workload: integration
 ms.topic: article
 ms.date: 10/18/2017
 ms.author: apimpm
-ms.openlocfilehash: ebded5d1d58baf501ee5106d622162edc62d46ec
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 75a02abb6cce332daad12e1feb25fb425f89f7f4
+ms.sourcegitcommit: 51a7669c2d12609f54509dbd78a30eeb852009ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60656700"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66393384"
 ---
 # <a name="use-managed-identities-in-azure-api-management"></a>Использование управляемых удостоверений в Azure API Management
 
 В этой статье показано, как создать управляемое удостоверение для экземпляра службы управления API и как получить доступ к другим ресурсам. Управляемые удостоверения, созданные Azure Active Directory (Azure AD) позволяет экземпляру службы управления API для простого и безопасного доступа к AD защищенные ресурсы Azure, например Azure Key Vault. Это удостоверение управляется с помощью Azure и не требует подготавливать или сменять секреты. Дополнительные сведения об управляемых удостоверениях см. в разделе [что такое управляемые удостоверения для ресурсов Azure](../active-directory/managed-identities-azure-resources/overview.md).
-
-[!INCLUDE [premium-dev-standard-basic.md](../../includes/api-management-availability-premium-dev-standard-basic.md)]
 
 ## <a name="create-a-managed-identity-for-an-api-management-instance"></a>Создать управляемое удостоверение для экземпляра службы управления API
 
@@ -242,3 +240,4 @@ Set-AzureKeyVaultSecret -VaultName KEY_VAULT_NAME -Name KEY_VAULT_SECRET_NAME -S
 
 * [Что такое управляемые удостоверения для ресурсов Azure](../active-directory/managed-identities-azure-resources/overview.md)
 * [Шаблоны диспетчера ресурсов Azure](https://github.com/Azure/azure-quickstart-templates)
+* [Проверка подлинности с помощью управляемого удостоверения в политике](./api-management-authentication-policies.md#ManagedIdentity)

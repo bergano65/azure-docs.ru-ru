@@ -7,16 +7,16 @@ ms.service: event-grid
 ms.author: babanisa
 ms.topic: conceptual
 ms.date: 01/17/2019
-ms.openlocfilehash: c49044d8bd96efb7e86cf54509c32033900be305
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 73c837897f4a104fabb4143d4b49fa3fbc258bb4
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60561782"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66305029"
 ---
 # <a name="manage-topics-and-publish-events-using-event-domains"></a>Управление разделами и публикация событий с помощью доменов событий
 
-В этой статье показано, как сделать следующее:
+В этой статье показано, как:
 
 * создать домен в Сетке событий;
 * подписаться на разделы службы "Сетка событий";
@@ -27,10 +27,6 @@ ms.locfileid: "60561782"
 
 [!INCLUDE [requires-azurerm](../../includes/requires-azurerm.md)]
 
-## <a name="install-preview-feature"></a>Установка предварительной версии функции
-
-[!INCLUDE [event-grid-preview-feature-note.md](../../includes/event-grid-preview-feature-note.md)]
-
 ## <a name="create-an-event-domain"></a>Создание Домена событий
 
 Чтобы управлять большими наборами разделов, создайте домен событий.
@@ -38,10 +34,6 @@ ms.locfileid: "60561782"
 Для интерфейса командной строки Azure:
 
 ```azurecli-interactive
-# If you haven't already installed the extension, do it now.
-# This extension is required for preview features.
-az extension add --name eventgrid
-
 az eventgrid domain create \
   -g <my-resource-group> \
   --name <my-domain-name> \
@@ -51,10 +43,6 @@ az eventgrid domain create \
 Для PowerShell используйте команду:
 
 ```azurepowershell-interactive
-# If you have not already installed the module, do it now.
-# This module is required for preview features.
-Install-Module -Name AzureRM.EventGrid -AllowPrerelease -Force -Repository PSGallery
-
 New-AzureRmEventGridDomain `
   -ResourceGroupName <my-resource-group> `
   -Name <my-domain-name> `
@@ -203,6 +191,23 @@ Get-AzureRmEventGridDomainKey `
 ```
 
 Затем используйте предпочтительный метод создания запроса HTTP POST для публикации событий в домен Сетки событий.
+
+## <a name="search-lists-of-topics-or-subscriptions"></a>Поиск в списках разделов или подписок
+
+Чтобы сделать поиск и управление большим количеством разделов или подписок, сетка событий API-интерфейсы поддерживают список разбиение на страницы.
+
+### <a name="using-cli"></a>Использование синтаксиса командной строки
+
+Для использования его убедитесь в том, что вы используете версию расширения Azure CLI "Сетка событий" 0.4.1 или более поздней версии.
+
+```azurecli-interactive
+# If you haven't already installed the extension, do it now.
+# This extension is required for preview features.
+az extension add --name eventgrid
+
+az eventgrid topic list \
+    --odata-query "contains(name, 'my-test-filter')"
+```
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

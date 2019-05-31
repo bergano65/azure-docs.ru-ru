@@ -6,14 +6,14 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: conceptual
-ms.date: 03/18/2019
+ms.date: 05/30/2019
 ms.author: raynew
-ms.openlocfilehash: 856d03b1ecc1c7a3bd527eb265061f9a305d8f50
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 5b7858793ec75d20bb367a6cf49b59fa9906ec9b
+ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60196054"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66396486"
 ---
 # <a name="about-migration"></a>Общие сведения о миграции
 
@@ -36,7 +36,7 @@ Azure Site Recovery можно использовать не только для
 
 ## <a name="migration-scenarios"></a>Сценарии миграции
 
-**Сценарий** | **Дополнительные сведения**
+**Сценарий** | **Сведения**
 --- | ---
 **Миграция из локальной среды в Azure** | Вы можете переносить в Azure локальные виртуальные машины VMware и Hyper-V, а также физические серверы. Для этого вам нужно выполнить практически те же действия, что и при полном аварийном восстановлении. Вы просто не выполняете отработку отказа для виртуальных машин из Azure на локальный сайт.
 **Миграция между регионами Azure** | Вы можете перенести виртуальные машины Azure из одного региона Azure в другой. После завершения миграции можно настроить аварийное восстановление для виртуальных машин Azure в дополнительном регионе, в который был выполнен перенос.

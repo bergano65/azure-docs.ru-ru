@@ -12,12 +12,12 @@ ms.reviewer: sstein, carlrab, bonova
 manager: craigg
 ms.date: 03/13/2019
 ms.custom: seoapril2019
-ms.openlocfilehash: 17609212fcc7620dc0d6d617e7626d12c8bb0592
-ms.sourcegitcommit: 16cb78a0766f9b3efbaf12426519ddab2774b815
+ms.openlocfilehash: 5c8a15aa5198983a56a0238c1bb56f9345d07acc
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65852147"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66258595"
 ---
 # <a name="azure-sql-database-managed-instance-t-sql-differences-from-sql-server"></a>Различия T-SQL между Управляемым экземпляром Базы данных SQL Azure и SQL Server
 
@@ -27,12 +27,13 @@ ms.locfileid: "65852147"
 - [Безопасность](#security) включает различия в [аудита](#auditing), [сертификаты](#certificates), [учетные данные](#credential), [поставщиков служб шифрования](#cryptographic-providers), [имена входа и пользователи](#logins-and-users)и [ключ службы и главный ключ службы](#service-key-and-service-master-key).
 - [Конфигурация](#configuration) включает различия в [расширение буферного пула](#buffer-pool-extension), [параметры сортировки](#collation), [уровни совместимости](#compatibility-levels), [зеркального отображения базы данных ](#database-mirroring), [параметры базы данных](#database-options), [агента SQL Server](#sql-server-agent), и [параметры таблицы](#tables).
 - [Функциональные возможности](#functionalities) включает в себя [BULK INSERT или OPENROWSET](#bulk-insert--openrowset), [CLR](#clr), [DBCC](#dbcc), [распределенные транзакции](#distributed-transactions), [расширенные события](#extended-events), [внешние библиотеки](#external-libraries), [filestream и FileTable](#filestream-and-filetable), [полнотекстовый семантический поиск](#full-text-semantic-search), [связанных серверов](#linked-servers), [PolyBase](#polybase), [репликации](#replication), [ВОССТАНОВИТЬ](#restore-statement), [компонента Service Broker](#service-broker), [хранимых процедур, функций и триггеров](#stored-procedures-functions-and-triggers).
+- [Параметры среды](#Environment) такие как виртуальные сети и подсети.
 - [Функции, которые имеют разное поведение в управляемых экземплярах](#Changes).
 - [Временные ограничения и известные проблемы](#Issues).
 
 Вариант развертывания в виде управляемого экземпляра обеспечивает высокий уровень совместимости с локальным ядром СУБД SQL Server. В управляемом экземпляре поддерживается большинство функций ядра СУБД SQL Server.
 
-![Перенос](./media/sql-database-managed-instance/migration.png)
+![Миграция](./media/sql-database-managed-instance/migration.png)
 
 ## <a name="availability"></a>Доступность
 
@@ -92,7 +93,7 @@ ms.locfileid: "65852147"
 - Новый синтаксис `TO URL` можно использовать для указания URL-адрес контейнера хранилища BLOB-объектов Azure, где `.xel` файлы помещаются.
 - Синтаксис `TO FILE` не поддерживается, так как управляемый экземпляр не может обращаться к файловым ресурсам Windows.
 
-Дополнительные сведения можно найти в разделе  
+Дополнительные сведения можно найти в разделе 
 
 - [CREATE SERVER AUDIT (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/create-server-audit-transact-sql) 
 - [ALTER SERVER AUDIT (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/alter-server-audit-transact-sql)
@@ -192,7 +193,7 @@ WITH PRIVATE KEY (<private_key_options>)
 - [Расширение буферного пула](https://docs.microsoft.com/sql/database-engine/configure-windows/buffer-pool-extension) не поддерживается.
 - `ALTER SERVER CONFIGURATION SET BUFFER POOL EXTENSION` не поддерживается. См. статью [ALTER SERVER CONFIGURATION (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/statements/alter-server-configuration-transact-sql).
 
-### <a name="collation"></a>Параметры сортировки
+### <a name="collation"></a>Collation
 
 Параметр сортировки экземпляра по умолчанию — `SQL_Latin1_General_CP1_CI_AS`. Этот параметр можно указать как параметр создания. См. статью [Параметры сортировки](https://docs.microsoft.com/sql/t-sql/statements/collations).
 
@@ -276,12 +277,12 @@ WITH PRIVATE KEY (<private_key_options>)
 ### <a name="sql-server-agent"></a>Агент SQL Server
 
 - Параметры агента SQL Server доступны только для чтения. Процедура `sp_set_agent_properties` не поддерживается в управляемом экземпляре. 
-- Задания (job)
+- Задания
   - Шаги задания T-SQL поддерживаются.
   - Поддерживаются следующие задания репликации:
     - Читатель журнала транзакций.
     - Снимок
-    - Распространитель
+    - Распространитель.
   - Шаги задания служб SSIS поддерживаются.
   - Сейчас не поддерживаются другие типы шагов заданий:
     - Шаг задания репликации слиянием не поддерживается. 
@@ -299,7 +300,7 @@ WITH PRIVATE KEY (<private_key_options>)
 
 Следующие функции сейчас не поддерживаются, но будут добавлены в будущем:
 
-- Прокси-серверы
+- прокси-серверы;
 - Планирование заданий простоя ЦП
 - Включение или отключение агента
 - Оповещения
@@ -454,6 +455,19 @@ MSDTC и [эластичные транзакции](sql-database-elastic-transa
 - `xp_cmdshell` не поддерживается. См. раздел [xp_cmdshell (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/xp-cmdshell-transact-sql).
 - `Extended stored procedures` не поддерживаются, включая `sp_addextendedproc`  и `sp_dropextendedproc`. См. в разделе [расширенные хранимые процедуры](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/general-extended-stored-procedures-transact-sql).
 - `sp_attach_db`, `sp_attach_single_file_db` и `sp_detach_db` не поддерживаются. См. статьи [sp_attach_db (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-attach-db-transact-sql), [sp_attach_single_file_db (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-attach-single-file-db-transact-sql) и [sp_detach_db (Transact-SQL)](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-detach-db-transact-sql).
+
+## <a name="Environment"></a>Ограничения Environmet
+
+### <a name="subnet"></a>Подсеть
+- В подсеть, зарезервированную для управляемого экземпляра не удается разместить другие ресурсы (например, виртуальные машины). Поместите эти ресурсы в других подсетях.
+- Подсеть должна иметь достаточное количество доступных [IP-адреса](sql-database-managed-instance-connectivity-architecture.md#network-requirements). Минимальное значение — 16, хотя рекомендуется иметь по крайней мере 32 IP-адресов в подсети.
+- [Конечные точки службы не может быть связана с подсетью управляемого экземпляра](sql-database-managed-instance-connectivity-architecture.md#network-requirements). Убедитесь, что службы конечных точек может быть отключена при создании виртуальной сети.
+- Количество и типы экземпляров, которые можно поместить в подсети имеют некоторые [ограничения и ограничения](sql-database-managed-instance-resource-limits.md#strategies-for-deploying-mixed-general-purpose-and-business-critical-instances)
+- Существуют некоторые [правила безопасности, которые должны применяться в подсети](sql-database-managed-instance-connectivity-architecture.md#network-requirements).
+
+### <a name="vnet"></a>Виртуальная сеть
+- Виртуальную сеть можно развернуть с помощью модели Resource - классической модели для виртуальной сети не поддерживается.
+- Некоторые службы, такие как среды службы приложений, Logic apps и управляемые экземпляры (используется для географической репликации, репликация транзакций, или с помощью связанных серверов) не удается доступ к управляемых экземпляров в разных регионах, если их виртуальные сети соединены с помощью [пиринга глобальной](../virtual-network/virtual-networks-faq.md#what-are-the-constraints-related-to-global-vnet-peering-and-load-balancers). Можно соединиться с этих ресурсов с помощью ExpressRoute или виртуальная сеть — сеть через шлюзы виртуальной сети.
 
 ## <a name="Changes"></a> Изменения в поведении
 

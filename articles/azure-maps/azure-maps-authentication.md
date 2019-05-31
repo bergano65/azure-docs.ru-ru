@@ -4,17 +4,17 @@ description: Аутентификация для использования сл
 author: walsehgal
 ms.author: v-musehg
 ms.date: 02/12/2019
-ms.topic: tutorial
+ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
-manager: timlt
+manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: 9dfe4024607e106565984d6d49de94d793bf7a8f
-ms.sourcegitcommit: 15e9613e9e32288e174241efdb365fa0b12ec2ac
-ms.translationtype: HT
+ms.openlocfilehash: 22aba19e16e4349a5b495b307c9906f7ded5a636
+ms.sourcegitcommit: 51a7669c2d12609f54509dbd78a30eeb852009ae
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "57010418"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66393678"
 ---
 # <a name="authentication-with-azure-maps"></a>Аутентификация в Azure Maps
 
@@ -54,7 +54,7 @@ https://login.microsoftonline.com
 
 После получения токена из Azure AD можно отправить запрос в Azure Maps с набором из таких двух обязательных заголовков запросов.
 
-| Заголовок запроса    |    Значение    |
+| Заголовок запроса    |    Value    |
 |:------------------|:------------|
 | x-ms-client-id    | 30d7cc….9f55|
 | Авторизация     | Bearer eyJ0e….HNIVN |
@@ -87,7 +87,7 @@ Azure Maps поддерживает управление доступом на �
 
 [Управляемые удостоверения для ресурсов Azure](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview) предоставляют службам Azure (Службе приложений Azure, Функциям Azure, Виртуальным машинам Azure и т. д.) автоматически управляемое удостоверение, которое можно авторизовать для доступа к службам Azure Maps.  
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 * Дополнительные сведения об аутентификации приложения в Azure AD и Azure Maps см. в статье об [управлении аутентификацией](https://review.docs.microsoft.com/azure/azure-maps/how-to-manage-authentication).
 

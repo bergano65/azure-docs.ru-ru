@@ -10,12 +10,12 @@ ms.subservice: bing-image-search
 ms.topic: article
 ms.date: 03/04/2019
 ms.author: aahi
-ms.openlocfilehash: 57a96648e480c89d1112f069676edb1abcc7cfc3
-ms.sourcegitcommit: e7d4881105ef17e6f10e8e11043a31262cfcf3b7
+ms.openlocfilehash: 6f4c354c89fa00d5fc65c635f5f6315761be2f01
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64869854"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66384142"
 ---
 # <a name="language-and-region-support-for-the-bing-image-search-api"></a>Поддержка языков и регионов в API Bing для поиска изображений
 
@@ -32,7 +32,7 @@ API Bing для поиска изображений поддерживает б�
 > - en-AU (английский, Австралия)
 > - zh-CN (китайский, Китай)
 
-## <a name="countriesregions"></a>Страны/регионы
+## <a name="countriesregions"></a>Страны и регионы
 
 |Страна или регион|Код|
 |-------|----|
@@ -119,4 +119,4 @@ API Bing для поиска изображений поддерживает б�
 |США|Испанский|es-US|
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Дополнительные сведения о конечных точках API "Поиск новостей Bing" см. в [справочнике по API Bing для поиска изображений версии 7](https://docs.microsoft.com/rest/api/cognitiveservices/bing-images-api-v7-reference).
+Дополнительные сведения о конечных точках API "Поиск новостей Bing" см. в [справочнике по API Bing для поиска изображений версии 7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-images-api-v7-reference).

@@ -7,12 +7,12 @@ ms.service: event-grid
 ms.topic: conceptual
 ms.date: 01/21/2019
 ms.author: spelluru
-ms.openlocfilehash: 9f284fea701220906a994cf108ed58cb6998aef9
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: 76a4c16afc9edef0a88ac9f2892de9738fd30289
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65187652"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66305056"
 ---
 # <a name="understand-event-filtering-for-event-grid-subscriptions"></a>Общие сведения о фильтрации событий для подписок на службу "Сетка событий Azure"
 
@@ -107,7 +107,7 @@ ms.locfileid: "65187652"
 
 Для событий в схеме "Сетка событий" используются следующие значения для ключа:
 
-* Идентификатор
+* Id
 * Раздел
 * Subject
 * EventType
@@ -140,8 +140,6 @@ ms.locfileid: "65187652"
 * пять расширенных фильтров на каждую подписку сетки событий;
 * 512 знаков для значения строки;
 * пять значений для операторов **in** и **not in**;
-* Ключ может иметь только один уровень вложения (например, data.key1).
-* Схемы настраиваемых событий можно отфильтровать только по полям верхнего уровня.
 
 Один ключ можно использовать в нескольких фильтрах.
 

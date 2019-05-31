@@ -3,19 +3,19 @@ title: Добавление предварительно обученных су
 titleSuffix: Azure
 description: Сведения о добавлении предварительно обученных сущностей в модель Conversation Learner.
 services: cognitive-services
-author: v-jaswel
+author: nitinme
 manager: nolachar
 ms.service: cognitive-services
 ms.subservice: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
-ms.author: v-jaswel
-ms.openlocfilehash: dade442cb04f79ef75e65d6eb29128b105e72b40
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.author: nitinme
+ms.openlocfilehash: fb70983c2f9fd20368bb8c6803c9568b27141af7
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60707755"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66389256"
 ---
 # <a name="how-to-add-pre-trained-entities"></a>Добавление предварительно обученных сущностей
 В этом руководстве описано, как добавить предварительно обученные сущности в модель Conversation Learner.

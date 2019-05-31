@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: tilee
-ms.openlocfilehash: 976545f588895421e7c2be7e18b844d7994bc1ff
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 2adc706c5da4fa53ace2a8a471789e276878c491
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65779995"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66255862"
 ---
 # <a name="status-monitor-v2"></a>Монитор состояния версии 2
 
@@ -34,7 +34,7 @@ ms.locfileid: "65779995"
 https://www.powershellgallery.com/packages/Az.ApplicationMonitor
 
 
-## <a name="instructions"></a>Инструкции
+## <a name="instructions"></a>Указания
 - Просмотрите наши [инструкциями по началу работы](status-monitor-v2-get-started.md) быстро начать работу с образцами краткого кода.
 - Просмотрите наши [подробные инструкции](status-monitor-v2-detailed-instructions.md) подробный обзор о том, как приступить к работе.
 
@@ -74,7 +74,7 @@ https://www.powershellgallery.com/packages/Az.ApplicationMonitor
 * [Изучите метрики](../../azure-monitor/app/metrics-explorer.md), чтобы отслеживать производительность и использование.
 * [Поиск событий и журналов](../../azure-monitor/app/diagnostic-search.md) для диагностики проблем
 * [Аналитика](../../azure-monitor/app/analytics.md) для создания расширенных запросов.
-* [Создайте панели мониторинга](../../azure-monitor/app/app-insights-dashboards.md)
+* [Создайте панели мониторинга](../../azure-monitor/app/overview-dashboard.md)
 
 Добавление данных телеметрии:
 

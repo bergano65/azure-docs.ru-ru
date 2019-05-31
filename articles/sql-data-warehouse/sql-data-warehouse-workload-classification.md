@@ -1,5 +1,5 @@
 ---
-title: Классификации хранилища данных SQL | Документация Майкрософт
+title: Azure классификации хранилища данных SQL | Документация Майкрософт
 description: Руководство по использованию классификации для управления параллелизмом, важность и вычислительными ресурсами для запросов в хранилище данных SQL Azure.
 services: sql-data-warehouse
 author: ronortloff
@@ -10,18 +10,18 @@ ms.subservice: workload management
 ms.date: 05/01/2019
 ms.author: rortloff
 ms.reviewer: jrasnick
-ms.openlocfilehash: c4630e11ef4001c546aecfe74dbced346b6d30e4
-ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
+ms.openlocfilehash: 3edae23183896651efcbf7f867204a618a10c85d
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66000122"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66236906"
 ---
-# <a name="sql-data-warehouse-workload-classification"></a>Классификации рабочей нагрузки хранилища данных SQL
+# <a name="azure-sql-data-warehouse-workload-classification"></a>Azure классификации рабочей нагрузки хранилища данных SQL
 
 В этой статье объясняется процесс классификации рабочей нагрузки хранилища данных SQL назначения класс ресурсов и важность входящих запросов.
 
-## <a name="classification"></a>Классификация
+## <a name="classification"></a>классификация;
 
 > [!Video https://www.youtube.com/embed/QcCRBAhoXpM]
 

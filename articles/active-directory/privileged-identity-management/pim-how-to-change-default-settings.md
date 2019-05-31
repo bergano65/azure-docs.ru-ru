@@ -10,16 +10,16 @@ ms.service: active-directory
 ms.topic: conceptual
 ms.workload: identity
 ms.subservice: pim
-ms.date: 04/09/2019
+ms.date: 05/31/2019
 ms.author: rolyon
 ms.custom: pim
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3cb8944578caf00fac5ca430e411f044a875f6af
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 2bc7d3ffcb56251825bf5f6d760de647938f1ead
+ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60288736"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66417871"
 ---
 # <a name="configure-azure-ad-role-settings-in-pim"></a>Настройка параметров Azure AD роли в PIM
 
@@ -72,7 +72,8 @@ ms.locfileid: "60288736"
 * Пользователи, использующие для электронной почты учетные записи Майкрософт (как правило, @outlook.com, но не обязательно), не могут зарегистрироваться в службе "Многофакторная идентификация Azure" (MFA) . Если вы хотите назначить роли пользователям с учетными записями Майкрософт, то следует сделать их постоянными администраторами или отключить проверку MFA для этих ролей.
 * Нельзя отключить MFA для ролей с высоким уровнем привилегий в Azure AD и Office 365. С помощью этой функции безопасности должны быть надежно защищены следующие роли:  
   
-  * администратора выставления счетов; 
+  * Администратор Azure Information Protection
+  * администратора выставления счетов;
   * Администратор облачных приложений
   * Администратор соответствия требованиям
   * Администратор условного доступа
@@ -81,7 +82,6 @@ ms.locfileid: "60288736"
   * Создатели каталогов
   * Администратор Exchange
   * глобального администратора;
-  * Администратор Azure Information Protection
   * Администратор службы Intune
   * Администратор службы Power BI
   * Администратор привилегированных ролей

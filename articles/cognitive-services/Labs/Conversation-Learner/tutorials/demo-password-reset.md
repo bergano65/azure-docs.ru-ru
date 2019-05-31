@@ -3,19 +3,19 @@ title: Демонстрационная модель приложения Conver
 titleSuffix: Azure
 description: Узнайте, как создать демонстрационную модель Conversation Learner.
 services: cognitive-services
-author: v-jaswel
+author: nitinme
 manager: nolachar
 ms.service: cognitive-services
 ms.subservice: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
-ms.author: v-jaswel
-ms.openlocfilehash: 6436193dadb5933074fdce861a31672a0f4849de
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.author: nitinme
+ms.openlocfilehash: 15aa3a8346087908cf77f1f68db916cc2c184448
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60313159"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66389871"
 ---
 # <a name="demo-password-reset"></a>Демонстрация. Сброс паролей
 В этом руководстве показана простая программ-бот технической поддержки, которая может помочь ученику в процессе смены паролей на основе Conversation Learner. Модель бота может изучать нестандартные диалоговые потоки информации, сложные последовательности, включая классы за пределами домена. Задачу можно выполнить без кода или дополнительных сущностей.

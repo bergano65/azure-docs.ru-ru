@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: conceptual
-ms.date: 05/23/2017
+ms.date: 05/29/2019
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.reviewer: elisolMS
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4d4aae8eb29b9e90bd1cb84949e97e21ed68c04c
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: d1466614dfeb8fa4d3d095bae070d01c6503c5bb
+ms.sourcegitcommit: 8e76be591034b618f5c11f4e66668f48c090ddfd
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65812773"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66357243"
 ---
 # <a name="limitations-of-azure-ad-b2b-collaboration"></a>Ограничения службы совместной работы Azure Active Directory B2B
 К службе совместной работы Azure Active Directory B2B применяются ограничения, описанные в этой статье.
@@ -29,6 +29,9 @@ ms.locfileid: "65812773"
 
 ## <a name="azure-ad-directories"></a>Каталоги Azure AD
 Для Azure AD B2B действуют ограничения каталогов служб Azure AD. Дополнительные сведения о количество каталогов, которые может создать пользователь, и количестве каталогов, с которыми может быть связан обычный или гостевой пользователь, см. в разделе [Ограничения службы Azure AD](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-service-limits-restrictions).
+
+## <a name="national-clouds"></a>Национальные облака
+[Национальные облака](https://docs.microsoft.com/azure/active-directory/develop/authentication-national-cloud) — это физически изолированный экземпляры Azure. Служба совместной работы B2B не поддерживается через границы в национальном облаке. Например если клиента Azure в облаке глобального уровня, общедоступный, нельзя пригласить пользователя, чья учетная запись находится в национальном облаке. Для совместной работы с пользователем, попросите его для другого адреса электронной почты или создать учетную запись пользователя член для них в вашем каталоге.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

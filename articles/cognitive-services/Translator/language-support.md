@@ -3,19 +3,19 @@ title: 'API перевода текстов: поддерживаемые язы
 titleSuffix: Azure Cognitive Services
 description: Список естественных языков, поддерживаемых API перевода текстов.
 services: cognitive-services
-author: v-pawal
+author: rajdeep-in
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: reference
 ms.date: 02/21/2019
-ms.author: v-jansko
-ms.openlocfilehash: 8de9d7e6aac052ca24f1eef5f99c3146029bddbb
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.author: v-pawal
+ms.openlocfilehash: 153fd5a8202ca0d919a2254449d846f8798bd10d
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64690146"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66382495"
 ---
 # <a name="language-and-region-support-for-the-translator-text-api"></a>Поддержка языков и регионов в API перевода текстов
 
@@ -134,7 +134,7 @@ API перевода текстов поддерживает следующие 
 | Телугу | `te` | Телугу `Telu` | --> | Латиница `Latn` |
 | Тайский | `th` | Тайский `Thai` | <--> | Латиница `Latn` |
 
-## <a name="dictionary"></a>Dictionary
+## <a name="dictionary"></a>Словарь
 
 Словарь поддерживает перевод с/на английский для следующих языков с использованием методов поиска и примеров.
 
@@ -191,7 +191,7 @@ API перевода текстов поддерживает следующие 
 | Вьетнамский      | `vi`          |
 | Валлийский      | `cy`          |
 
-## <a name="detect"></a>Detect
+## <a name="detect"></a>Определение
 
 API перевода текстов обнаруживает все языки, доступные для преобразования и транслитерации.
 

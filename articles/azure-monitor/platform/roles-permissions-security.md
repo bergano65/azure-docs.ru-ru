@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 11/27/2017
 ms.author: johnkem
 ms.subservice: ''
-ms.openlocfilehash: bac57b18ec5474cfe3c27ad1079c5af7e1d2c451
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 4949391aded58f27ba8acd5c9ec437e8933f9843
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60453094"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66243423"
 ---
 # <a name="get-started-with-roles-permissions-and-security-with-azure-monitor"></a>Приступая к работе с ролями, разрешениями и системой безопасности с помощью Azure Monitor
 
@@ -28,11 +28,11 @@ ms.locfileid: "60453094"
 Пользователи, которым назначена роль Monitoring Reader, могут просматривать все данные мониторинга в подписке, но не могут изменять какие-либо ресурсы или параметры, связанные с ресурсами мониторинга. Эта роль подходит для тех пользователей в организации (например, инженеров службы поддержки или инженеров по операциям), которым необходимо иметь следующие возможности.
 
 * Просмотр панелей мониторинга на портале и создание собственных частных панелей мониторинга.
-* Просмотр правил генерации оповещений, определенных в интерфейсе [оповещений Azure](../../azure-monitor/platform/alerts-overview.md).
-* Запрос метрик с помощью [REST API Azure Monitor](https://msdn.microsoft.com/library/azure/dn931930.aspx), [командлетов PowerShell](../../azure-monitor/platform/powershell-quickstart-samples.md) или [кроссплатформенного интерфейса командной строки](../../azure-monitor/platform/cli-samples.md).
+* Просмотр правил генерации оповещений, определенных в интерфейсе [оповещений Azure](alerts-overview.md).
+* Запрос метрик с помощью [REST API Azure Monitor](https://msdn.microsoft.com/library/azure/dn931930.aspx), [командлетов PowerShell](powershell-quickstart-samples.md) или [кроссплатформенного интерфейса командной строки](cli-samples.md).
 * Запрос журнала действий с помощью портала, REST API Azure Monitor, командлетов PowerShell или кроссплатформенного интерфейса командной строки.
-* Просмотр [параметров диагностики](../../azure-monitor/platform/diagnostic-logs-overview.md#diagnostic-settings) для ресурса.
-* Просмотр [профиля журнала](../../azure-monitor/platform/activity-logs-overview.md#export-the-activity-log-with-a-log-profile) для подписки.
+* Просмотр [параметров диагностики](diagnostic-logs-overview.md#diagnostic-settings) для ресурса.
+* Просмотр [профиля журнала](activity-log-export.md) для подписки.
 * Просмотр параметров автомасштабирования.
 * Просмотр действий и параметров оповещений.
 * Доступ к данным Application Insights и просмотр данных в Application Insights Analytics.
@@ -52,9 +52,9 @@ ms.locfileid: "60453094"
 Пользователи, которым назначена роль Monitoring Contributor, могут просматривать все данные мониторинга в подписке и создавать или изменять параметры мониторинга, но не могут изменять какие-либо другие ресурсы. Эта роль включает в себя все разрешения роли Monitoring Reader и подходит для участников команды мониторинга в организации или поставщиков управляемых служб, которым, помимо приведенных выше разрешений, также необходимо иметь следующие возможности.
 
 * Публикация панелей мониторинга для совместного использования.
-* Задайте [параметров диагностики](../../azure-monitor/platform/diagnostic-logs-overview.md#diagnostic-settings) для ресурса.\*
-* Задайте [профиль журнала](../../azure-monitor/platform/activity-logs-overview.md#export-the-activity-log-with-a-log-profile) для подписки.\*
-* Настройка действий и параметров для правил генерации оповещений при помощи интерфейса [оповещений Azure](../../azure-monitor/platform/alerts-overview.md).
+* Задайте [параметров диагностики](diagnostic-logs-overview.md#diagnostic-settings) для ресурса.\*
+* Задайте [профиль журнала](activity-log-export.md) для подписки.\*
+* Настройка действий и параметров для правил генерации оповещений при помощи интерфейса [оповещений Azure](alerts-overview.md).
 * Создание веб-тестов и компонентов Application Insights.
 * Вывод списка общих ключей рабочей области Log Analytics.
 * Включение или отключение мониторинга пакетов в рабочей области Log Analytics.
@@ -71,7 +71,7 @@ ms.locfileid: "60453094"
 ## <a name="monitoring-permissions-and-custom-rbac-roles"></a>Разрешения мониторинга и настраиваемые роли RBAC
 Если приведенные выше встроенные роли не отвечают потребностям вашей команды, вы можете [создать настраиваемую роль RBAC](../../role-based-access-control/custom-roles.md) с более детализированными разрешениями. Ниже приведены распространенные операции RBAC для Azure Monitor с описаниями.
 
-| Операция | ОПИСАНИЕ |
+| Операция | Описание |
 | --- | --- |
 | Microsoft.Insights/ActionGroups/[Read, Write, Delete] |Чтение, запись и удаление групп действий. |
 | Microsoft.Insights/ActivityLogAlerts/[Read, Write, Delete] |Чтение, запись и удаление оповещений журнала действий. |

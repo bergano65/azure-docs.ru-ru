@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.topic: article
 ms.date: 11/17/2018
 ms.author: yijenj
-ms.openlocfilehash: dcab4d24ca948980f28483fd09f29588e0329b63
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 09ce4cdc6ab4556f0ba68507bb23d09e02ae0357
+ms.sourcegitcommit: 8c49df11910a8ed8259f377217a9ffcd892ae0ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65800978"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66296816"
 ---
 # <a name="azure-partner-customer-usage-attribution"></a>Определение потребления услуг Azure клиентами партнеров
 
@@ -186,7 +186,7 @@ provider "azurerm" {
 
    ![Выбор действия Add Tracking GUID (Добавить GUID отслеживания)](media/marketplace-publishers-guide/guid-how-to-add-tracking.png)
 
-1. В поле **Tracking GUID** (GUID отслеживания) введите созданный GUID отслеживания. Здесь идентификатор GUID вводится без префикса **pid-**. В поле **Custom Description** (Пользовательское описание) введите произвольное имя или описание предложения.
+1. В поле **Tracking GUID** (GUID отслеживания) введите созданный GUID отслеживания. Здесь идентификатор GUID вводится без префикса **pid-** . В поле **Custom Description** (Пользовательское описание) введите произвольное имя или описание предложения.
 
    ![Страница профиля](media/marketplace-publishers-guide/guid-dev-center-login.png)
 
@@ -208,7 +208,7 @@ provider "azurerm" {
 
 Когда вы измените шаблон и выполните тестовое развертывание, запустите указанный ниже скрипт PowerShell, чтобы получить данные о развернутых ресурсах с указанным тегом.
 
-Этот скрипт позволяет убедиться, что GUID успешно добавлен в шаблон Resource Manager. Скрипт не применяется к развертыванию через API Resource Manager.
+Этот скрипт позволяет убедиться, что GUID успешно добавлен в шаблон Resource Manager. Скрипт не применяется к развертываниям API Resource Manager или Terraform.
 
 Войдите в Azure. Перед выполнением скрипта выберите подписку, в которой размещено тестируемое развертывание. Выполните скрипт в контексте подписки развертывания.
 

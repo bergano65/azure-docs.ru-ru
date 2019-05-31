@@ -11,12 +11,12 @@ author: msmimart
 manager: celestedg
 ms.reviewer: mal
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d00808295d39247729f6e843ac59ad7b23407148
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 99fe386ec75e60a16f3095f22dccc3852883f8aa
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65785418"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66304513"
 ---
 # <a name="azure-active-directory-b2b-collaboration-invitation-redemption"></a>Активация приглашения службы совместной работы Azure Active Directory B2B
 
@@ -56,7 +56,7 @@ ms.locfileid: "65785418"
 
 ## <a name="terms-of-use"></a>Условия использования
 
-Условия использования можно показывать гостевому пользователю во время начальной активации с помощью функции "Условия использования" Azure AD. В Azure Active Directory эту функцию можно найти в разделе **Управление** > **Организационные связи** > **Условия использования** или в разделе **Безопасность** > **Условный доступ** > **Условия использования**. Дополнительные сведения см. в разделе [Функция "Условия использования" в Azure AD](../conditional-access/terms-of-use.md).
+Условия использования можно представить пользователю-гостю во время начальной активации с помощью Azure AD условия использования компонентов. В Azure Active Directory эту функцию можно найти в разделе **Управление** > **Организационные связи** > **Условия использования** или в разделе **Безопасность** > **Условный доступ** > **Условия использования**. Дополнительные сведения см. в разделе [компонент Azure AD условия использования](../conditional-access/terms-of-use.md).
 
 ![Снимок экрана с новыми условиями использования](media/redemption-experience/organizational-relationships-terms-of-use.png) 
 

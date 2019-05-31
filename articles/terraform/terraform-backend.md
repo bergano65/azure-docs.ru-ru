@@ -7,12 +7,12 @@ ms.service: azure
 ms.topic: article
 ms.date: 09/13/2018
 ms.author: tarcher
-ms.openlocfilehash: 7145a50bc53fd28afafd3de9c724b5e5f71624fa
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 89108f02957990ad1c7eb736f39de89537f06db5
+ms.sourcegitcommit: 8c49df11910a8ed8259f377217a9ffcd892ae0ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60905890"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66297921"
 ---
 # <a name="store-terraform-state-in-azure-storage"></a>Хранение состояния Terraform в службе хранилища Azure
 
@@ -79,7 +79,7 @@ export ARM_ACCESS_KEY=$(az keyvault secret show --name terraform-backend-key --v
 
 Чтобы настроить Terraform для использования сервера, включите блок конфигурации *backend* типа *azurerm* в конфигурацию Terraform. Добавьте значения *storage_account_name*, *container_name* и *key* в блок конфигурации.
 
-В приведенном ниже примере настраивается сервер Terraform и создается группа ресурсов Azure. Замените значения значениями для своей среды.
+В следующем примере настраивает Terraform серверной части и создает группу ресурсов Azure. Замените значения значениями для своей среды.
 
 ```json
 terraform {

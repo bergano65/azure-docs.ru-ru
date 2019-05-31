@@ -9,18 +9,20 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: article
-ms.date: 01/30/2019
+ms.date: 05/30/2019
 ms.author: diberry
-ms.openlocfilehash: 27ebe827e97c8361c7f93a125f09aa9e339a6a14
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 8bd6a9df9518cb1b2312b525e8876629a2189bd2
+ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60197059"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66399620"
 ---
 # <a name="luis-bot-in-nodejs-with-the-bot-framework-3x-and-the-azure-web-app-bot"></a>Создание бота Интеллектуальной службы распознавания речи на Node.js с помощью Bot Framework 3.x и бота веб-приложения Azure
 
 Создавайте чат-боты, интегрированные со службой распознавания речи (LUIS), используя Node.js. Для быстрой реализации решений ботов этот чат-бот использует предварительно созданный домен HomeAutomation. Бот создается с помощью Bot Framework 3.x и бота веб-приложения Azure.
+
+Объект [Bot Framework 4.x с руководством LUIS](luis-nodejs-tutorial-bf-v4.md) также доступна.
 
 ## <a name="prerequisite"></a>Предварительные требования
 
@@ -98,7 +100,7 @@ ms.locfileid: "60197059"
 
   ![Обновление идентификатора приложения LUIS в Azure](./media/luis-tutorial-node-bot/bot-service-app-id.png)
 
-Если у вас нет идентификатора приложения LUIS, войдите на веб-сайт [LUIS](luis-reference-regions.md) с помощью учетной записи, используемой для входа в Azure. Выберите **Мои приложения**. 
+Если у вас нет идентификатора приложения LUIS, войдите [LUIS](luis-reference-regions.md) веб-сайт, используя ту же учетную запись, используйте для входа Azure. Выберите **Мои приложения**. 
 
 1. Найдите ранее созданное приложение LUIS, которое содержит намерения и сущности из предметной области HomeAutomation.
 
@@ -236,7 +238,7 @@ bot.dialog('TurnOff',
 ```
 ## <a name="test-the-bot"></a>Тестирование бота
 
-На портале Azure выберите **Тестировать в веб-чате**, чтобы протестировать бот. Введите сообщения, такие как "Turn on the lights" (Включить свет) "turn off my heater" (Выключить нагреватель), чтобы вызвать добавленные намерения.
+На портале Azure, выберите на **тестирования в Интернете** для тестирования бота. Введите сообщения, такие как "Turn on the lights" (Включить свет) "turn off my heater" (Выключить нагреватель), чтобы вызвать добавленные намерения.
    ![Тестирование бота HomeAutomation веб-чате](./media/luis-tutorial-node-bot/bot-service-chat-results.png)
 
 > [!TIP]
