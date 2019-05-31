@@ -12,12 +12,12 @@ ms.topic: article
 ms.date: 11/20/2018
 ms.author: mahender
 ms.custom: seodec18
-ms.openlocfilehash: f086850ecc2f15c41ab89db34b16d6d2e4a229cb
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.openlocfilehash: 9b7bc043c748000f03a98a28f856299527015388
+ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65956223"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66397824"
 ---
 # <a name="use-key-vault-references-for-app-service-and-azure-functions-preview"></a>Использование ссылок на Key Vault в Службе приложений и Функциях Azure (предварительная версия)
 
@@ -37,7 +37,7 @@ ms.locfileid: "65956223"
    > [!NOTE] 
    > Ссылки на Key Vault сейчас поддерживают только назначаемые системой управляемые удостоверения. Вы не сможете использовать удостоверения, назначаемые пользователем.
 
-1. Создайте [политику доступа в Key Vault](../key-vault/key-vault-secure-your-key-vault.md#key-vault-access-policies) для созданного ранее удостоверения приложения. Включите в этой политике разрешения "Get" на получение секретов. Не устанавливайте "авторизованное приложение" или параметр `appliationId`, так как он не совместим с управляемым удостоверением.
+1. Создайте [политику доступа в Key Vault](../key-vault/key-vault-secure-your-key-vault.md#key-vault-access-policies) для созданного ранее удостоверения приложения. Включите в этой политике разрешения "Get" на получение секретов. Не устанавливайте "авторизованное приложение" или параметр `applicationId`, так как он не совместим с управляемым удостоверением.
 
 ## <a name="reference-syntax"></a>Синтаксис ссылок
 

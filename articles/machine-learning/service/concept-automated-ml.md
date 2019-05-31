@@ -11,12 +11,12 @@ author: nacharya1
 ms.author: nilesha
 ms.date: 05/21/2019
 ms.custom: seodec18
-ms.openlocfilehash: df666843b8a42711aa860a6f8c5e916fb68f036d
-ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
-ms.translationtype: HT
+ms.openlocfilehash: 16d100256f9252b478500488c2dc5a01c7e6a0b5
+ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
+ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 05/30/2019
-ms.locfileid: "66389930"
+ms.locfileid: "66418058"
 ---
 # <a name="what-is-automated-machine-learning"></a>Что такое автоматическое машинное обучение?
 
@@ -155,9 +155,11 @@ normalized_root_mean_squared_log_error;|Нормализованная сред�
 
 Автоматические машинного Обучения доступна также в других решениях Microsoft такие как:
 
-+ В приложениях .NET, с помощью Visual Studio и Visual Studio Code с помощью [ML.NET](https://docs.microsoft.com/dotnet/machine-learning/automl-overview)
-+ [В HDInsight](../../hdinsight/spark/apache-spark-run-machine-learning-automl.md), где горизонтальное масштабирование автоматизированными ML обучения заданиями в Spark в кластерах HDInsight в параллельном режиме.
-+ [В Power BI](https://docs.microsoft.com/power-bi/service-machine-learning-automated)
+|Интеграции|Описание
+|------------|-----------
+|ML.NET|Выбор автоматического модели и обучения в приложения .NET с помощью Visual Studio и Visual Studio Code с помощью ML.NET автоматизировать машинного Обучения (Предварительная версия). [Подробнее](https://docs.microsoft.com/dotnet/machine-learning/automl-overview)
+|HDIsnight|Горизонтальное масштабирование автоматизированными заданиями машинного Обучения обучение в Spark в HDInsight кластеров в параллельном режиме. [Подробнее](../../hdinsight/spark/apache-spark-run-machine-learning-automl.md)
+|PowerBI|Вызов модели машинного обучения, непосредственно в Power BI (Предварительная версия). [Подробнее](https://docs.microsoft.com/power-bi/service-machine-learning-automated)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
