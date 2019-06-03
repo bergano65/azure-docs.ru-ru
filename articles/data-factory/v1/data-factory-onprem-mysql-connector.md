@@ -333,7 +333,7 @@ ms.locfileid: "60823952"
 | smallint |Int16 |
 | Text |String |
 | time |TimeSpan |
-|  timestamp |DateTime |
+| timestamp |DateTime |
 | tinyblob |Byte[] |
 | tinyint unsigned |Int16 |
 | tinyint; |Int16 |

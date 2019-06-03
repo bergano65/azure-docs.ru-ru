@@ -33,9 +33,9 @@
               href: storsimple-virtual-array-deploy3-fs-setup.md
             - name: Настройка в качестве сервера iSCSI
               href: storsimple-virtual-array-deploy3-iscsi-setup.md
-    - name: Практическое руководство
+    - name: Руководства
       items:
-        - name: Управление через портал Azure
+        - name: Управление с помощью портала Azure
           href: storsimple-virtual-array-manager-service-administration.md
           items:
             - name: Установка последнего обновления
@@ -87,14 +87,16 @@
           href: storsimple-ova-web-ui-admin.md
     - name: Заметки о выпуске
       items:
-        - name: "Обновление\_1.1 (текущая версия)"
+        - name: Обновление 1.2
+          href: storsimple-virtual-array-update-12-release-notes.md
+        - name: Обновление 1.1
           href: storsimple-virtual-array-update-11-release-notes.md
         - name: "Обновление\_1"
           href: storsimple-virtual-array-update-1-release-notes.md
-        - name: "Обновление\_0.6"
-          href: storsimple-virtual-array-update-06-release-notes.md
         - name: Архив
           items:
+            - name: "Обновление\_0.6"
+              href: storsimple-virtual-array-update-06-release-notes.md
             - name: "Обновление\_0.5"
               href: storsimple-virtual-array-update-05-release-notes.md
             - name: "Обновление\_0.4"
@@ -103,7 +105,7 @@
               href: storsimple-ova-update-03-release-notes.md
             - name: Обновление 0.2 и 0.1
               href: storsimple-ova-update-01-release-notes.md
-- name: "StorSimple серии\_8000 (портал Azure)"
+- name: Хранилище StorSimple серии 8000
   items:
     - name: Обзор
       items:
@@ -115,7 +117,7 @@
           href: 'https://azure.microsoft.com/documentation/learning-paths/storsimple-typical/'
         - name: Вопросы безопасности
           href: storsimple-8000-security.md
-        - name: Регионы доступности
+        - name: Доступность по регионам
           href: storsimple-regions.md
     - name: Начало работы
       items:
@@ -155,9 +157,9 @@
               href: storsimple-snapshot-manager-deployment.md
             - name: Адаптер StorSimple для SharePoint
               href: storsimple-adapter-for-sharepoint.md
-    - name: Практическое руководство
+    - name: Руководства
       items:
-        - name: управление
+        - name: Управление
           items:
             - name: Использование службы StorSimple Manager
               href: storsimple-8000-manager-service-administration.md
@@ -355,7 +357,7 @@
               href: storsimple-july-2014-release-notes.md
     - name: Справочные материалы
       items:
-        - name: REST API
+        - name: "REST\_API"
           href: 'https://docs.microsoft.com/rest/api/storsimple'
         - name: Использование Windows PowerShell для командлетов StorSimple
           href: 'https://technet.microsoft.com/library/dn688168.aspx'
@@ -371,7 +373,7 @@
       items:
         - name: Использование Диспетчера данных StorSimple
           href: storsimple-data-manager-ui.md
-    - name: Практическое руководство
+    - name: Руководства
       items:
         - name: Запуск заданий с помощью .NET
           href: storsimple-data-manager-dotnet-jobs.md
@@ -395,7 +397,7 @@
           href: 'https://aka.ms/storsimple-virtual-array-latest-relnote'
         - name: Заметки о выпуске CSP
           href: 'https://partner.microsoft.com/Support/whats-new'
-        - name: 'StorSimple для CSP: Часто задаваемые вопросы'
+        - name: 'StorSimple для CSP: Вопросы и ответы'
           href: storsimple-partner-csp-faq.md
 - name: Сопутствующие материалы
   items:
@@ -423,5 +425,5 @@
       href: 'https://blogs.msdn.com/b/storsimple/'
     - name: Уведомления сторонних производителей
       href: 'https://download.microsoft.com/download/2/0/0/2003271D-69D5-4143-85A2-F1D8EA058F52/StorSimple TPNs.zip'
-    - name: Видеоролики
+    - name: Видео
       href: 'https://azure.microsoft.com/documentation/videos/index/?services=storsimple'

@@ -83,7 +83,7 @@
           displayName: roles
         - name: Извлечение неструктурированных данных
           href: luis-tutorial-pattern-any.md
-    - name: Использование ботов
+    - name: "Использование Bot Framework версии\_4"
       items:
         - name: 'Использование C#'
           href: luis-csharp-tutorial-bf-v4.md
@@ -198,7 +198,7 @@
           href: luis-tutorial-bing-spellcheck.md
         - name: Со службой "Речь"
           href: luis-tutorial-speech-to-intent.md
-        - name: С ботом
+        - name: "Использование Bot Framework версии\_3"
           items:
             - name: Бот веб-приложения
               items:
@@ -279,6 +279,8 @@
       displayName: 'failover, fail-over, fail over, Europe, EU, Australia, business continuity, bcdr'
     - name: Границы
       href: luis-boundaries.md
+    - name: Параметры приложения
+      href: luis-reference-application-settings.md
     - name: Справочник по предварительно созданным сущностям
       items:
         - name: Сущности по языкам и региональным параметрам
@@ -398,6 +400,8 @@
       href: 'https://github.com/Microsoft/Cognitive-Samples-IntelligentKiosk'
 - name: Ресурсы
   items:
+    - name: Новые возможности
+      href: whats-new.md
     - name: Доступность по регионам
       href: 'https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services'
     - name: Поддержка языков и региональных параметров

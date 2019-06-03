@@ -1,8 +1,11 @@
-- name: Рабочие среды Azure для разработчиков
+- name: Azure Dev Spaces
+  href: ./index.yml
   items:
     - name: Обзор
-      href: index.yml
-    - name: Быстрое начало работы
+      items:
+        - name: Azure Dev Spaces
+          href: about.md
+    - name: Краткие руководства
       items:
         - name: Командная разработка
           href: quickstart-team-development.md
@@ -10,11 +13,11 @@
           href: quickstart-java.md
         - name: .NET Core (VS Code и CLI)
           href: quickstart-netcore.md
-        - name: .NET Core (Visual Studio 2017)
+        - name: .NET Core (Visual Studio)
           href: quickstart-netcore-visualstudio.md
         - name: Node.js (VS Code и CLI)
           href: quickstart-nodejs.md
-    - name: Учебники
+    - name: Руководства
       items:
         - name: Java (VS Code и CLI)
           items:
@@ -32,7 +35,7 @@
               href: multi-service-netcore.md
             - name: "3.\_Командная разработка"
               href: team-development-netcore.md
-        - name: .NET Core (Visual Studio 2017)
+        - name: .NET Core (Visual Studio)
           items:
             - name: "1.\_Начало работы"
               href: get-started-netcore-visualstudio.md
@@ -52,7 +55,7 @@
       items:
         - name: Принцип работы Dev Spaces
           href: how-dev-spaces-works.md
-    - name: Практическое руководство
+    - name: Руководства
       items:
         - name: Создание кластера Kubernetes с помощью Azure Cloud Shell
           href: how-to/create-cluster-cloud-shell.md

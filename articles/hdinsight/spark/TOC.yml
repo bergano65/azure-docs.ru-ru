@@ -16,7 +16,7 @@
     - name: Создание кластера Apache Spark с использованием шаблона Resource Manager
       displayName: 'resource manager template, arm template, resource manager group'
       href: apache-spark-jupyter-spark-sql.md
-- name: Руководства
+- name: Учебники
   items:
     - name: Выполнение запросов в кластере Apache Spark
       href: apache-spark-load-data-run-query.md
@@ -46,9 +46,9 @@
   items:
     - name: Компоненты Apache Hadoop в HDInsight
       href: ../hdinsight-component-versioning.md
-    - name: HDInsight 4.0
+    - name: "HDInsight\_4.0"
       href: ../hdinsight-version-release.md
-- name: Практическое руководство
+- name: Руководства
   items:
     - name: Использование системы хранения данных кластера
       items:
@@ -126,7 +126,7 @@
           href: ../hdinsight-apache-spark-with-kafka.md
         - name: Создание заданий потоковой передачи Apache Spark со строго однократной обработкой событий
           href: apache-spark-streaming-exactly-once.md
-    - name: Apache Spark и машинное обучение
+    - name: Apache Spark и Машинное обучение
       items:
         - name: Прогнозирование результата проверки продуктов
           href: apache-spark-machine-learning-mllib-ipython.md
@@ -134,7 +134,7 @@
           href: apache-spark-custom-library-website-log-analysis.md
         - name: Использование Caffe для глубокого обучения
           href: apache-spark-deep-learning-caffe.md
-        - name: Использование набора средств Microsoft Cognitive Toolkit
+        - name: Использование Microsoft Cognitive Toolkit
           href: apache-spark-microsoft-cognitive-toolkit.md
         - name: Создание конвейера машинного обучения Apache Spark
           href: apache-spark-creating-ml-pipelines.md
@@ -148,7 +148,7 @@
           href: apache-spark-analyze-application-insight-logs.md
     - name: Расширение кластеров
       items:
-        - name: Настройка кластеров с использованием Bootstrap
+        - name: Настройка кластеров с использованием начальной загрузки
           href: ../hdinsight-hadoop-customize-cluster-bootstrap.md
         - name: Настройка кластеров с помощью действия скрипта
           href: ../hdinsight-hadoop-customize-cluster-linux.md
@@ -184,7 +184,7 @@
           href: ../hdinsight-authorize-users-to-ambari.md
     - name: Управление
       items:
-        - name: Управление кластерными ресурсами
+        - name: Управление ресурсами кластера
           href: apache-spark-resource-manager.md
         - name: Управление приложениями Apache Spark с помощью расширенного сервера журнала
           href: apache-azure-spark-history-server.md
@@ -212,7 +212,7 @@
               href: 'https://docs.microsoft.com/java/api/overview/azure/hdinsight?view=azure-java-stable#create-a-cluster'
             - name: Использование Azure PowerShell
               href: ../hdinsight-hadoop-create-linux-clusters-azure-powershell.md
-            - name: Использование cURL и Azure REST API
+            - name: Использование cURL и REST API Azure
               href: ../hdinsight-hadoop-create-linux-clusters-curl-rest.md
             - name: Использование Azure CLI
               href: ../hdinsight-hadoop-create-linux-clusters-azure-cli.md
@@ -238,7 +238,7 @@
           items:
             - name: Оптимизация кластеров с помощью пользовательского веб-интерфейса Apache Ambari
               href: ../hdinsight-changing-configs-via-ambari.md
-            - name: Использование Apache Ambari REST API
+            - name: Использование REST API Apache Ambari
               href: ../hdinsight-hadoop-manage-ambari-rest-api.md
         - name: Управление журналами для кластера HDInsight
           href: ../hdinsight-log-management.md
@@ -261,9 +261,9 @@
               href: ../hadoop/apache-hadoop-use-sqoop-powershell.md
         - name: Использование Apache Oozie для рабочих процессов
           href: ../hdinsight-use-oozie-linux-mac.md
-        - name: Порты и универсальные коды ресурса (URI) кластеров и служб
+        - name: Порты и универсальные коды ресурсов (URI) кластеров и служб
           href: ../hdinsight-hadoop-port-settings-for-services.md
-        - name: Перенос в среду средств разработки Resource Manager
+        - name: Миграция в среду средств разработки Resource Manager
           href: ../hdinsight-hadoop-development-using-azure-resource-manager.md
         - name: Доступность и надежность
           href: ../hdinsight-high-availability-linux.md
@@ -341,7 +341,7 @@
               href: ../hdinsight-migrate-granular-access-cluster-configurations.md
         - name: Стратегия развития Azure
           href: 'https://azure.microsoft.com/roadmap/?category=intelligence-analytics'
-        - name: Получить помощь на форуме
+        - name: Получение помощи на форуме
           href: 'https://social.msdn.microsoft.com/forums/azure/home?forum=hdinsight'
         - name: Схема обучения
           href: 'https://azure.microsoft.com/documentation/learning-paths/hdinsight-self-guided-hadoop-training/'
@@ -371,6 +371,10 @@
       href: ../hdinsight-hadoop-create-linux-clusters-with-secure-transfer-storage.md
     - name: Доступ к сети
       items:
+        - name: Архитектура виртуальной сети HDInsight
+          href: ../hdinsight-virtual-network-architecture.md
+        - name: Ограничение исходящего трафика с помощью брандмауэра
+          href: ../hdinsight-restrict-outbound-traffic.md
         - name: HDInsight в виртуальной сети Azure
           href: ../hdinsight-extend-hadoop-virtual-network.md
         - name: Подключение HDInsight к локальной сети

@@ -5,7 +5,7 @@
     - name: Компоненты Apache Hadoop в HDInsight
       href: ../hdinsight-component-versioning.md
       maintainContext: true
-    - name: HDInsight 4.0
+    - name: "HDInsight\_4.0"
       href: ../hdinsight-version-release.md
       maintainContext: true
 - name: Краткие руководства
@@ -19,7 +19,7 @@
     - name: Установка приложений HDInsight
       href: ../hdinsight-apps-install-applications.md
       maintainContext: true
-    - name: Планирование загрузки
+    - name: Планирование ресурсов
       href: ../hdinsight-capacity-planning.md
       maintainContext: true
 - name: Практическое руководство
@@ -115,7 +115,7 @@
           maintainContext: true
     - name: Расширение кластеров
       items:
-        - name: Настройка кластеров с использованием Bootstrap
+        - name: Настройка кластеров с использованием начальной загрузки
           href: ../hdinsight-hadoop-customize-cluster-bootstrap.md
           maintainContext: true
         - name: Настройка кластеров с помощью действия скрипта
@@ -178,7 +178,7 @@
             - name: Использование Azure PowerShell
               href: ../hdinsight-hadoop-create-linux-clusters-azure-powershell.md
               maintainContext: true
-            - name: Использование cURL и Azure REST API
+            - name: Использование cURL и REST API Azure
               href: ../hdinsight-hadoop-create-linux-clusters-curl-rest.md
               maintainContext: true
             - name: Использование Azure CLI
@@ -215,7 +215,7 @@
             - name: Оптимизация кластеров с помощью пользовательского веб-интерфейса Apache Ambari
               href: ../hdinsight-changing-configs-via-ambari.md
               maintainContext: true
-            - name: Использование Apache Ambari REST API
+            - name: Использование REST API Apache Ambari
               href: ../hdinsight-hadoop-manage-ambari-rest-api.md
               maintainContext: true
         - name: Масштабирование кластера HDInsight
@@ -233,13 +233,13 @@
         - name: Отправка данных для заданий Apache Hadoop
           href: ../hdinsight-upload-data.md
           maintainContext: true
-        - name: Использование нескольких кластеров HDInsight с Data Lake Store
+        - name: Использование нескольких кластеров HDInsight с Data Lake Storage
           href: ../hdinsight-multiple-clusters-data-lake-store.md
           maintainContext: true
-        - name: Порты и универсальные коды ресурса (URI) кластеров и служб
+        - name: Порты и универсальные коды ресурсов (URI) кластеров и служб
           href: ../hdinsight-hadoop-port-settings-for-services.md
           maintainContext: true
-        - name: Перенос в среду средств разработки Resource Manager
+        - name: Миграция в среду средств разработки Resource Manager
           href: ../hdinsight-hadoop-development-using-azure-resource-manager.md
           maintainContext: true
         - name: Доступность и надежность
@@ -320,12 +320,14 @@
       maintainContext: true
     - name: Доступ к сети
       items:
+        - name: Архитектура виртуальной сети HDInsight
+          href: ../hdinsight-virtual-network-architecture.md
+        - name: Ограничение исходящего трафика с помощью брандмауэра
+          href: ../hdinsight-restrict-outbound-traffic.md
         - name: HDInsight в виртуальной сети Azure
           href: ../hdinsight-extend-hadoop-virtual-network.md
-          maintainContext: true
         - name: Подключение HDInsight к локальной сети
           href: ../connect-on-premises-network.md
-          maintainContext: true
     - name: Мониторинг с использованием журналов Azure Monitor
       items:
         - name: Использование журналов Azure Monitor
@@ -374,7 +376,7 @@
           href: ../hdinsight-migrate-granular-access-cluster-configurations.md
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/?category=intelligence-analytics'
-    - name: Получить помощь на форуме
+    - name: Получение помощи на форуме
       href: 'https://social.msdn.microsoft.com/forums/azure/en-US/home?forum=hdinsight'
     - name: Схема обучения
       href: 'https://azure.microsoft.com/documentation/learning-paths/hdinsight-self-guided-hadoop-training/'

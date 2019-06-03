@@ -837,6 +837,8 @@
                   href: platform/action-groups-create-resource-manager-template.md
                 - name: Реализация действия для приложения логики
                   href: platform/action-groups-logic-app.md
+                - name: Интеграция общей схемы оповещений с Logic Apps
+                  href: platform/alerts-common-schema-integrations.md
             - name: Решение по управлению оповещениями
               href: platform/alert-management-solution.md
             - name: Пользовательский интерфейс оповещений

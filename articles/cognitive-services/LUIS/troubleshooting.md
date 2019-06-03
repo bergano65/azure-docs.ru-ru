@@ -11,16 +11,20 @@ ms.subservice: language-understanding
 ms.topic: article
 ms.date: 05/15/2019
 ms.author: diberry
-ms.openlocfilehash: b114b1c3b1c421c6e6944666e3fd928d2aced966
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: f922f9c64f182377365192543305b48659c518da
+ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66225877"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66417978"
 ---
 # <a name="language-understanding-frequently-asked-questions-faq"></a>Часто задаваемые вопросы о службе "Распознавание речи"
 
 В этой статье приведены ответы на часто задаваемые вопросы о службе "Распознавание речи" (LUIS).
+
+## <a name="whats-new"></a>Новые возможности
+
+[Дополнительные сведения](whats-new.md) о новинках в Language Understanding.
 
 <a name="luis-authoring"></a>
 

@@ -222,6 +222,8 @@
           displayName: 'C#, C++, Java, .NET, .NET Core, UWP, Android, Linux, Windows'
         - name: Доступность сценариев
           href: scenario-availability.md
+        - name: Доставка приложения
+          href: ship-application.md
         - name: Заметки о выпуске
           href: releasenotes.md
         - name: C++
@@ -269,7 +271,7 @@
       href: speech-synthesis-markup.md
     - name: PowerShell
       href: 'https://aka.ms/azure-powershell-cognitiveservices'
-    - name: "Azure\_CLI"
+    - name: Azure CLI
       href: 'https://docs.microsoft.com/cli/azure/cognitiveservices?view=azure-cli-latest#az_cognitiveservices_list'
     - name: Поддержка языков
       href: language-support.md

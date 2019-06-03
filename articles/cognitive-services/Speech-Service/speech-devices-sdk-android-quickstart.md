@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: erhopf
-ms.openlocfilehash: 073166a594088bca04d81883247a5880fcbd1cb7
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: bd0160073898a5a83af2e7b2bba2dba007c04513
+ms.sourcegitcommit: ef06b169f96297396fc24d97ac4223cabcf9ac33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66234501"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66425666"
 ---
 # <a name="quickstart-run-the-speech-devices-sdk-sample-app-on-android"></a>Краткое руководство. Запуск примера приложения Speech SDK устройства в Android
 
@@ -95,7 +95,7 @@ ms.locfileid: "66234501"
     private static String LuisAppId = "<enter your LUIS AppId>";
    ```
 
-    Если вы используете расшифровка дикторского текста для диалога голосовых ключ и области данных также нужны в conversation.java:
+    Если вы используете расшифровка дикторского текста для диалога, голосовых ключ и области данных также нужны в conversation.java:
 
    ```java
     private static final String CTSKey = "<Conversation Transcription Service Key>";
@@ -145,7 +145,7 @@ ms.locfileid: "66234501"
 
    ![Пример приложения пакета SDK для речевых устройств и параметры](media/speech-devices-sdk/qsg-8.png)
 
-1. Новые добавленные это ролик расшифровка дикторского текста для диалога. Запустите фотографировать с запустить сеанс. По умолчанию все является гостем, однако при наличии участника голосовой подписи они могут быть помещены в файл /video/participants.properties на устройстве. Для создания голосовой подписи рассмотрим [транскрипция диалогов (SDK)](how-to-use-conversation-transcription-service.md).
+1. Попробуйте новую демонстрацию с использованием расшифровка дикторского текста для диалога. Запустите фотографировать с запустить сеанс. По умолчанию все является гостем. Тем не менее, при наличии участника голосовой подписи они могут быть помещены в файл `/video/participants.properties` на устройстве. Для создания подписи голоса, рассмотрим [транскрипция диалогов (SDK)](how-to-use-conversation-transcription-service.md).
 
    ![Расшифровка дикторского текста для диалога демонстрационного приложения](media/speech-devices-sdk/qsg-15.png)
 
