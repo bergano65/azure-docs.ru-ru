@@ -27,6 +27,9 @@
         - name: 'Признаки: действие и контекст'
           href: concepts-features.md
           displayName: 'action, context, feature, namespace, JSON, best practice, set'
+        - name: Активное обучение
+          href: concept-active-learning.md
+          displayName: 'active, inactive'
         - name: Вознаграждения
           href: concept-rewards.md
           displayName: 'reward, wait time, default reward'
@@ -44,7 +47,7 @@
   items:
     - name: Создание и настройка Персонализатора
       href: how-to-settings.md
-      displayName: 'azure, portal, settings, evaluation, offline, policy'
+      displayName: 'azure, portal, settings, evaluation, offline, policy, export, model'
     - name: Анализ
       items:
         - name: Автономная оценка

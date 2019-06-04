@@ -5,6 +5,8 @@
   items:
     - name: Что такое служба "Распознавание речи"?
       href: what-is-luis.md
+    - name: Новые возможности
+      href: whats-new.md
 - name: Краткие руководства
   items:
     - name: 'Создание приложения, использующего предварительно созданный домен'
@@ -197,8 +199,9 @@
         - name: "С API Проверки орфографии Bing версии\_7"
           href: luis-tutorial-bing-spellcheck.md
         - name: Со службой "Речь"
-          href: luis-tutorial-speech-to-intent.md
-        - name: "Использование Bot Framework версии\_3"
+          maintainContext: true
+          href: ../speech-service/how-to-recognize-intents-from-speech-csharp.md?toc=/azure/cognitive-services/luis/toc.json&bc=/azure/cognitive-services/luis/breadcrumb/toc.json
+        - name: С ботом
           items:
             - name: Бот веб-приложения
               items:
@@ -400,8 +403,6 @@
       href: 'https://github.com/Microsoft/Cognitive-Samples-IntelligentKiosk'
 - name: Ресурсы
   items:
-    - name: Новые возможности
-      href: whats-new.md
     - name: Доступность по регионам
       href: 'https://azure.microsoft.com/global-infrastructure/services/?products=cognitive-services'
     - name: Поддержка языков и региональных параметров

@@ -20,14 +20,6 @@
       href: concepts-dependency-visualization.md
 - name: Практические руководства
   items:
-    - name: Рекомендации по миграции
-      items:
-        - name: Рекомендации по обеспечению безопасности и управлению после миграции
-          href: migrate-best-practices-security-management.md
-        - name: Рекомендации по работе с сетями после миграции
-          href: migrate-best-practices-networking.md
-        - name: Рекомендации по оценке затрат и определению размеров системы после миграции
-          href: migrate-best-practices-costs.md
     - name: Ряд примеров по миграции Contoso
       href: contoso-migration-overview.md
     - name: Обнаружение и оценка крупной среды

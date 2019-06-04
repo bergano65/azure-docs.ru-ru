@@ -4,7 +4,7 @@
   items:
     - name: Общие сведения о службе "Блокчейн Azure"
       href: overview.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   expanded: true
   items:
     - name: "Создание участника\_— портал"
@@ -19,7 +19,7 @@
           href: connect-geth.md
         - name: Использование Truffle
           href: connect-truffle.md
-- name: Учебники
+- name: Руководства
   items:
     - name: Отправка транзакций
       href: send-transaction.md
@@ -58,12 +58,12 @@
     - name: Сообщество
       href: 'https://techcommunity.microsoft.com/t5/Blockchain/bd-p/AzureBlockchain'
     - name: Форум
-      href: 'https://social.msdn.microsoft.com/Forums/home?forum=azureblockchain'
+      href: 'https://aka.ms/workbenchforum'
     - name: Отзыв о продукте
       href: 'https://feedback.azure.com/forums/921130-azure-blockchain-service'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/blockchain-service'
-    - name: Регионы доступности
+    - name: Доступность по регионам
       href: 'https://azure.microsoft.com/global-infrastructure/services/?products=blockchainservice'
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/AzureBlockchainService'
