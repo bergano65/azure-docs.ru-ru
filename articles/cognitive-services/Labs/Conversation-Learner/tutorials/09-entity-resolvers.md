@@ -1,5 +1,5 @@
 ---
-title: Сопоставители сущности в модели ученика диалога - Microsoft Cognitive Services | Документация Майкрософт
+title: Сопоставители сущности в модели ученика диалога - Azure Cognitive Services | Документация Майкрософт
 titleSuffix: Azure
 description: Узнайте, как использовать сопоставители сущностей в модели Conversation Learner.
 services: cognitive-services
@@ -10,12 +10,12 @@ ms.subservice: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: nitinme
-ms.openlocfilehash: 7b5f5645a8b5d1d993f87d18503fe270f42c5de5
-ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
+ms.openlocfilehash: 51f74f504f0ad70c8c7f73be8ee6a05add685824
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66390026"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66475739"
 ---
 # <a name="entity-resolvers"></a>Сопоставители сущностей
 
@@ -94,4 +94,4 @@ ms.locfileid: "66390026"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Альтернативные входные данные](./10-alternative-inputs.md)
+> [Перечисление сущностей](./tutorial-enum-set-entity.md)

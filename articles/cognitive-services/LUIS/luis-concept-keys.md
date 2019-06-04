@@ -11,12 +11,12 @@ ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 01/18/2019
 ms.author: diberry
-ms.openlocfilehash: 1f5aab607c5046df0dee4db5caf36b0b7de53c4d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: feb4622be14b51cfa72c33cda6c2477f799758c6
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60813934"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66473593"
 ---
 # <a name="authoring-and-query-prediction-endpoint-keys-in-luis"></a>Ключи разработки и запрашивания конечной точки прогнозирования в LUIS
 В LUIS используются два ключа: [разработки](#programmatic-key) и [конечных точек](#endpoint-key). Ключ разработки формируется автоматически при создании учетной записи LUIS. Когда вы будете готовы опубликовать свое приложение LUIS, потребуется [создать ключ конечной точки](luis-how-to-azure-subscription.md), [назначить его](luis-how-to-azure-subscription.md) приложению LUIS и [использовать его в запросе к конечной точке](#use-endpoint-key-in-query). 
@@ -49,11 +49,11 @@ ms.locfileid: "60813934"
 
 Создав ресурс Azure, [назначьте ключ](luis-how-to-azure-subscription.md) приложению. 
 
-    * Ключ конечной точки предоставляет квоту обращений к конечной точке, которая зависит от плана использования, указанного при создании ключа. Сведения о ценах см. в разделе [Цены на Cognitive Services](https://azure.microsoft.com/pricing/details/cognitive-services/language-understanding-intelligent-services/?v=17.23h).
+* Ключ конечной точки предоставляет квоту обращений к конечной точке, которая зависит от плана использования, указанного при создании ключа. Сведения о ценах см. в разделе [Цены на Cognitive Services](https://azure.microsoft.com/pricing/details/cognitive-services/language-understanding-intelligent-services/?v=17.23h).
 
-    * Ключ конечной точки можно использовать для всех приложений LUIS или для конкретных приложений LUIS. 
+* Ключ конечной точки можно использовать для всех приложений LUIS или для конкретных приложений LUIS. 
 
-    * Не используйте ключ конечной точки для разработки приложений LUIS. 
+* Не используйте ключ конечной точки для разработки приложений LUIS. 
 
 ## <a name="use-endpoint-key-in-query"></a>Использование ключа конечной точки в запросе
 Конечная точка LUIS принимает два стиля запроса. Ключ конечной точки используется в каждом из них, но в различных местах:

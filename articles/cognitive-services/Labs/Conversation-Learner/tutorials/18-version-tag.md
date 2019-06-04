@@ -1,5 +1,5 @@
 ---
-title: Использование тегов версий в модели Conversation Learner в Microsoft Cognitive Services | Документация Майкрософт
+title: Как использовать теги версии с помощью модели диалога ученика — Azure Cognitive Services | Документация Майкрософт
 titleSuffix: Azure
 description: Узнайте, как использовать управление версиями и расстановку тегов в приложении Conversation Learner.
 services: cognitive-services
@@ -10,12 +10,12 @@ ms.subservice: conversation-learner
 ms.topic: article
 ms.date: 04/30/2018
 ms.author: nitinme
-ms.openlocfilehash: 7a1d94700cf84068f918ecff4f4dd433358341e0
-ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
+ms.openlocfilehash: 4067c7fb43cc200b8f49dbc14151c69a188e4e8e
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66388398"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66475703"
 ---
 # <a name="how-to-use-version-tagging"></a>Как использовать теги версии
 
@@ -109,4 +109,4 @@ ms.locfileid: "66388398"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Демонстрация: сброс пароля](./demo-password-reset.md)
+> [Перечисление сущностей и укажите сущности действия](./tutorial-enum-set-entity.md)

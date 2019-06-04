@@ -10,12 +10,12 @@ ms.subservice: custom-vision
 ms.topic: conceptual
 ms.date: 04/03/2019
 ms.author: anroth
-ms.openlocfilehash: d0f0f3b120187a7538989f219876a8c10569a98e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 3cb67b57f406774b4bcaf57c24b8e7741068ced6
+ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60606357"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66497310"
 ---
 # <a name="how-to-build-a-classifier-with-custom-vision"></a>Как создать классификатор с помощью Пользовательской службы визуального распознавания
 
@@ -28,7 +28,7 @@ ms.locfileid: "60606357"
 
 
 ## <a name="create-custom-vision-resources-in-the-azure-portal"></a>Создание пользовательских концепции ресурсов на портале Azure
-С помощью службы Пользовательского визуального распознавания вам необходимо создать ресурсы обучения и прогнозирования этой службы на [портале Azure](https://portal.azure.com/?microsoft_azure_marketplace_ItemHideKey=microsoft_azure_cognitiveservices_customvision#create/Microsoft.CognitiveServicesCustomVision). Благодаря этому будет создан ресурс обучения и прогнозирования. 
+Использование пользовательской службы визуального распознавания, необходимо создать ресурсы Custom Vision обучения и прогнозирования в [портала Azure](https://portal.azure.com/?microsoft_azure_marketplace_ItemHideKey=microsoft_azure_cognitiveservices_customvision#create/Microsoft.CognitiveServicesCustomVision). Благодаря этому будет создан ресурс обучения и прогнозирования. 
 
 ## <a name="create-a-new-project"></a>Создание нового проекта
 
@@ -71,7 +71,7 @@ ms.locfileid: "60606357"
 * стиль изображения;
 * отдельные объекты и группы;
 * size
-* Тип
+* type
 
 Также убедитесь, что все обучающие изображения соответствуют следующим критериям:
 * файлы с расширением .jpg, .png или .bmp;

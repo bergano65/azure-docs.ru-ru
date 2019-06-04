@@ -1,5 +1,5 @@
 ---
-title: Взаимодействие
+title: Совместная работа
 titleSuffix: Language Understanding - Azure Cognitive Services
 description: У приложения LUIS должен быть один владелец и могут быть участники совместной работы над ним — соавторы приложения.
 services: cognitive-services
@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
-ms.date: 04/01/2019
+ms.date: 06/03/2019
 ms.author: diberry
-ms.openlocfilehash: 8c2ed8932e67a2e0c83fe4e3fdf6783c24e56a6e
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.openlocfilehash: 294905ccfd0ce8db6da8737277b0ce978ba837ea
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65956978"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66473518"
 ---
 # <a name="collaborating-with-other-authors"></a>Совместная работа с другими авторами
 
@@ -31,7 +31,7 @@ ms.locfileid: "65956978"
 
 ## <a name="luis-app-owner"></a>Владелец приложения LUIS
 
-Учетной записи, в котором создается приложение является владельцем и у каждого приложения есть один владелец. Владелец указан в приложении **[параметры](luis-how-to-collaborate.md)** страницы. Владелец может удалить приложение получать электронную почту, когда квота конечная точка достигает 75% месячного лимита. 
+Учетной записи, в котором создается приложение является владельцем и у каждого приложения есть один владелец. Владелец указан в приложении **[параметры](luis-how-to-collaborate.md)** страницы. Владелец получает сообщение электронной почты, когда квота конечная точка достигает 75% месячного лимита. 
 
 ## <a name="authorization-roles"></a>Роли для авторизации
 LUIS не поддерживает различные роли для владельцев и участников совместной работы за одним исключением. Только пользователь с учетной записью владельца может удалить приложение.
