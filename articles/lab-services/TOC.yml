@@ -205,6 +205,8 @@
               href: devtest-lab-announcements.md
             - name: Добавление сведений о поддержке в лабораторию
               href: devtest-lab-internal-support-message.md
+            - name: Настройка коллекции общих образов в Azure DevTest Labs
+              href: configure-shared-image-gallery.md
         - name: Выбор пользовательского образа или формулы
           href: devtest-lab-comparing-vm-base-image-types.md
         - name: Управление пользовательскими образами

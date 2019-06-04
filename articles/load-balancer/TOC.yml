@@ -18,6 +18,9 @@
       href: quickstart-load-balancer-standard-public-cli.md
     - name: Создание Load Balancer ценовой категории "Стандартный" с помощью Azure PowerShell
       href: quickstart-create-standard-load-balancer-powershell.md
+    - name: Создание Load Balancer (цен. категория "Стандартный") с помощью шаблона Azure Resource Manager
+      displayName: ARM
+      href: quickstart-load-balancer-standard-public-template.md
 - name: Руководства
   items:
     - name: Балансировка интернет-трафика на виртуальных машинах
@@ -32,7 +35,7 @@
       href: tutorial-load-balancer-port-forwarding-portal.md
 - name: Примеры
   items:
-    - name: Azure CLI
+    - name: "Azure\_CLI"
       href: cli-samples.md
     - name: Azure PowerShell
       href: powershell-samples.md

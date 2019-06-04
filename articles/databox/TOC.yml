@@ -111,7 +111,7 @@
           items:
             - name: Управление с помощью портала Azure
               href: data-box-portal-ui-admin.md
-            - name: Устранение неполадок с дисками
+            - name: Устранение неполадок с Azure Data Box Heavy
               href: data-box-disk-troubleshoot.md
             - name: Запрос в службу поддержки
               href: data-box-disk-contact-microsoft-support.md
@@ -121,12 +121,32 @@
           items:
             - name: Что такое Data Box Heavy?
               href: data-box-heavy-overview.md
+        - name: Руководства
+          items:
+            - name: 1. Заказ
+              href: data-box-heavy-deploy-ordered.md
+            - name: 2. Настройка
+              href: data-box-heavy-deploy-set-up.md
+            - name: "3.\_Подключение и копирование"
+              items:
+                - name: По SMB
+                  href: data-box-heavy-deploy-copy-data.md
+            - name: '4. Возврат, отправка, проверка'
+              href: data-box-heavy-deploy-picked-up.md
         - name: Основные понятия
           items:
             - name: Обзор требований
               href: data-box-heavy-system-requirements.md
             - name: Изучение ограничений
               href: data-box-heavy-limits.md
+        - name: Руководства
+          items:
+            - name: Управление с помощью портала Azure
+              href: data-box-portal-admin.md
+            - name: Устранение неполадок с устройствами
+              href: data-box-troubleshoot.md
+            - name: Запрос в службу поддержки
+              href: data-box-disk-contact-microsoft-support.md
     - name: Ресурсы
       items:
         - name: Продукт Data Box

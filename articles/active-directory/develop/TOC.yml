@@ -229,8 +229,6 @@
                   href: msal-js-initializing-client-applications.md
             - name: Обработка ошибок и исключений
               href: msal-handling-exceptions.md
-            - name: Тестирование приложений MSAL
-              href: msal-testing.md
             - name: Ведение журналов
               href: msal-logging.md
             - name: Единый вход (JS)
@@ -366,6 +364,12 @@
                   href: msal-net-user-gets-consent-for-multiple-resources.md
                 - name: Предоставление собственного клиента HttpClient
                   href: msal-net-provide-httpclient.md
+            - name: MSAL.js
+              items:
+                - name: Предотвращение перезагрузок страницы
+                  href: msal-js-avoid-page-reloads.md
+                - name: Передача пользовательского состояния в запросах на аутентификацию
+                  href: msal-js-pass-custom-state-authentication-request.md
         - name: Работа с Visual Studio
           items:
             - name: Использование подключенной службы Active Directory

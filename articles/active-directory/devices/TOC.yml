@@ -22,6 +22,8 @@
   items:
     - name: Единый вход для доступа к локальным ресурсам
       href: azuread-join-sso.md
+    - name: Основные токены обновления
+      href: concept-primary-refresh-token.md
     - name: Управляемые рабочие станции Azure
       href: concept-azure-managed-workstation.md
 - name: Практические руководства
@@ -35,7 +37,7 @@
       href: azureadjoin-plan.md
     - name: Планирование реализации гибридного присоединения к Azure AD
       href: hybrid-azuread-join-plan.md
-    - name: Управление гибридным присоединением устройств к Azure AD
+    - name: "Контролируемая проверка гибридного присоединения к Azure\_AD"
       href: hybrid-azuread-join-control.md
     - name: Назначение локальных администраторов присоединенным к Azure AD устройствам
       href: assign-local-admin.md

@@ -275,7 +275,9 @@
           href: storage-blob-event-overview.md
         - name: Возможности страничных BLOB-объектов
           href: storage-blob-pageblob-overview.md
-    - name: Практическое руководство
+        - name: Статические веб-сайты
+          href: storage-blob-static-website.md
+    - name: Руководства
       items:
         - name: Создание учетных записей хранения и управление ими
           items:
@@ -353,7 +355,7 @@
         - name: Задание и получение свойств и метаданных
           href: storage-properties-metadata.md
         - name: Размещение статического веб-сайта
-          href: storage-blob-static-website.md
+          href: storage-blob-static-website-how-to.md
         - name: Сопоставление Azure CDN с личным доменом для доступа по HTTPS
           href: storage-https-custom-domain-cdn.md
         - name: Настройка личного домена
