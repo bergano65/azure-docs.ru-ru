@@ -269,7 +269,7 @@ ms.locfileid: "64688865"
 
 | Ключ | Value |
 | --- | ----- |
-| Имя пользователя | `user-account` |
+| username | `user-account` |
 | password | `password1` |
 | grant_type | password |
 | scope | openid `application-id` offline_access |
