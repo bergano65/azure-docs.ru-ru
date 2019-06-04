@@ -87,7 +87,7 @@ ms.locfileid: "65546203"
 | cloud_graph_host_name |
 | cloud_instance_name |
 | cnf |
-| Код |
+| code |
 | controls |
 | credential_keys |
 | csr |
@@ -105,7 +105,7 @@ ms.locfileid: "65546203"
 | grant_type |
 | graph |
 | group_sids |
-| групп |
+| groups |
 | hasgroups |
 | hash_alg |
 | home_oid |
@@ -156,10 +156,10 @@ ms.locfileid: "65546203"
 | refresh_token |
 | refreshtoken |
 | request_nonce |
-| Ресурс |
-| роль |
-| роли |
-| область |
+| resource |
+| role |
+| roles |
+| scope |
 | scp |
 | sid |
 | signature |
