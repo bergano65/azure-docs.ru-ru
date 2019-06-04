@@ -71,7 +71,7 @@ ms.locfileid: "60309210"
 | --- | --- | --- |
 | type |Свойству type необходимо задать значение **Salesforce**. |Yes |
 | environmentUrl | Укажите URL-адрес экземпляра Salesforce. <br><br> -Значение по умолчанию — «https:\//login.salesforce.com». <br> Чтобы скопировать данные из песочницы, укажите https://test.salesforce.com. <br> — Чтобы скопировать данные из пользовательского домена, укажите URL-адрес, например https://[домен].my.salesforce.com. |Нет  |
-| Имя пользователя |Укажите имя пользователя для учетной записи пользователя. |Yes |
+| username |Укажите имя пользователя для учетной записи пользователя. |Yes |
 | password |Укажите пароль для учетной записи пользователя. |Yes |
 | securityToken |Укажите маркер безопасности для учетной записи пользователя. Инструкции по получению и сбросу маркера безопасности см. в статье [Get security token](https://help.salesforce.com/apex/HTViewHelpDoc?id=user_security_token.htm) (Получение маркера безопасности). Общие сведения о маркере безопасности см. в статье [Security and the API](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_concepts_security.htm) (Безопасность и API). |Yes |
 
