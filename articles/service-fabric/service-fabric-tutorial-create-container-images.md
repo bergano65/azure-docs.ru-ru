@@ -16,12 +16,12 @@ ms.workload: na
 ms.date: 09/15/2017
 ms.author: suhuruli
 ms.custom: mvc
-ms.openlocfilehash: c081a6296e1fae89f24a2c3ddb1ae66f7a3f94aa
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.openlocfilehash: fe01d55b17c0f6f6dd6a621fbac0cf4d3a268ee3
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58662556"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66306783"
 ---
 # <a name="tutorial-create-container-images-on-a-linux-service-fabric-cluster"></a>Руководство. Создание образов контейнеров в кластере Service Fabric на платформе Linux
 
@@ -88,7 +88,7 @@ tiangolo/uwsgi-nginx-flask   python3.6           590e17342131        5 days ago 
 
 ## <a name="deploy-azure-container-registry"></a>Развертывание реестра контейнеров Azure
 
-Сначала выполните команду **az login**, чтобы войти с учетной записью Azure.
+Сначала выполните команду **az login**, чтобы войти в учетную запись Azure.
 
 ```bash
 az login
@@ -116,7 +116,7 @@ az acr create --resource-group <myResourceGroup> --name <acrName> --sku Basic --
 
 В остальной части этого руководства acrName будет заменять в примерах имя реестра контейнеров. Запишите это значение.
 
-## <a name="log-in-to-your-container-registry"></a>Вход в реестр контейнеров
+## <a name="sign-in-to-your-container-registry"></a>Вход в реестр контейнеров
 
 Войдите в свой экземпляр реестра контейнеров Azure, прежде чем отправлять в него образы. Используйте команду **az acr login**, чтобы выполнить операцию. Укажите уникальное имя реестра контейнеров, заданное при его создании.
 

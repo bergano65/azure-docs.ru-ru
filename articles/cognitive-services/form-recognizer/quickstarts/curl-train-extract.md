@@ -9,12 +9,12 @@ ms.subservice: form-recognizer
 ms.topic: quickstart
 ms.date: 04/15/2019
 ms.author: pafarley
-ms.openlocfilehash: bd68e2803b3b538011cfa37378890f2cc7b22223
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: 942f84723bc207c200b36a63ca7f65cb9d7dab59
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65906996"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66235613"
 ---
 # <a name="quickstart-train-a-form-recognizer-model-and-extract-form-data-by-using-the-rest-api-with-curl"></a>Краткое руководство. Обучение модели Распознавателя документов и извлечение данных форм с помощью REST API и cURL
 
@@ -108,7 +108,7 @@ curl -X POST "https://<Endpoint>/formrecognizer/v1.0-preview/custom/train" -H "C
 
 1. Замените `<Endpoint>` конечной точкой, которую вы получили из своего ключа подписки Распознавателя документов (см. ресурс Распознавателя документов на вкладке **Обзор**).
 1. Замените `<modelID>` идентификатором модели, полученным в предыдущем разделе.
-1. Замените `<path to your form>` путем к файлу формы.
+1. Замените `<path to your form>` путем к файлу формы. Например, c:\temp\file.pdf. 
 1. Замените `<file type>` типом файла (PDF, изображение JPEG, изображение PNG).
 1. Замените `<subscription key>` ключом своей подписки.
 

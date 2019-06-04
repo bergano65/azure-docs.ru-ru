@@ -12,12 +12,12 @@ ms.topic: overview
 ms.date: 05/08/2019
 ms.author: lizross
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1e471f447b0c50c9c65923d7135b2b48789728df
-ms.sourcegitcommit: 399db0671f58c879c1a729230254f12bc4ebff59
+ms.openlocfilehash: a8a200df2f474cead197a0e74ae7e27927f814d2
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65470696"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66242276"
 ---
 # <a name="security-info-preview-overview"></a>Обзор сведений для защиты (предварительная версия)
 
@@ -28,7 +28,7 @@ ms.locfileid: "65470696"
 >[!Important]
 >Эти материалы предназначены для пользователей. Администраторы могут найти дополнительные сведения о том, как настроить и контролировать среду Azure Active Directory (Azure AD), в [документации по Azure Active Directory](https://docs.microsoft.com/azure/active-directory).
 
-## <a name="security-info-articles"></a>Статьи о сведениях для защиты
+## <a name="security-info-related-articles"></a>Статьи о сведениях для защиты
 
 Подробную информацию и инструкции по добавлению, обновлению и удалению сведений о защите в зависимости от выбранного метода можно получить в следующих статьях.
 

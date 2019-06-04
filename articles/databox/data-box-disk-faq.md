@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: disk
 ms.topic: overview
-ms.date: 04/08/2019
+ms.date: 05/23/2019
 ms.author: alkohli
-ms.openlocfilehash: 27200406f0866697100e1cf9b32c199203ad600d
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 69068304a6bc72f503ed85edf05229f10e4a8bc0
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59258782"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66236354"
 ---
 # <a name="what-is-azure-data-box-disk"></a>Что такое диск Azure Data Box
 
@@ -55,6 +55,9 @@ ms.locfileid: "59258782"
 
 ### <a name="q-which-regions-can-i-store-data-in-with-data-box-disks"></a>В. В каких регионах можно хранить данные с помощью дисков Data Box?
 О. В режиме предварительной версии Диск Data Box поддерживается во всех регионах США, Канаде, Австралии, Западной и Северной Европе, Корее и Японии. Поддерживаются регионы только общедоступного облака Azure. Облако Azure для государственных организаций и другие национальные облака не поддерживаются.
+
+### <a name="q-will-my-data-box-disk-cross-country-borders-during-shipping"></a>В. Будет ли мой Диск Data Box пересекать границы страны во время доставки?
+О. Пересылка Диска Data Box осуществляется в пределах страны получателя. Следовательно, он не будет пересекать международные границы. Единственное исключение — заказы в пределах Европейского Союза (ЕС), когда диски могут перемещаться между разными странами ЕС.
 
 ### <a name="q-whom-should-i-contact-if-i-encounter-any-issues--with-data-box-disks"></a>В. С кем следует связаться при возникновении проблем с дисками Data Box?
 О. При любых проблемах с Data Box Disks обратитесь в [службу поддержки Майкрософт](https://docs.microsoft.com/azure/databox/data-box-disk-contact-microsoft-support).
@@ -164,9 +167,9 @@ ms.locfileid: "59258782"
 
 ### <a name="q-i-copied-data-to-manageddisk-folder-i-dont-see-any-managed-disks-with-the-resource-group-specified-for-managed-disks-was-my-data-uploaded-to-azure-and-how-can-i-locate-it"></a>В. Данные скопированы в папку ManagedDisk. Но я не вижу управляемых дисков с группой ресурсов, определенной для таких дисков. Отправлены ли мои данные в Azure и как их можно найти?
 О. Да. Ваши данные были переданы в Azure, но если вы не видите управляемых дисков с определенными группами ресурсов, вполне вероятно, что данные были недопустимыми. Если страничные BLOB-объекты, блочные BLOB-объекты, Файлы Azure и управляемые диски недопустимы, они помещаются в следующие папки:
- - Страничные BLOB-объекты помещаются в контейнер блочных BLOB-объектов, имя которого начинается с *databoxdisk-invalid-pb-*.
- - Файлы Azure помещаются в контейнер блочных BLOB-объектов, имя которого начинается с *databoxdisk-invalid-af-*.
- - Управляемые диски помещаются в контейнер блочных BLOB-объектов, имя которого начинается с *databoxdisk-invalid-md-*.
+ - Страничные BLOB-объекты помещаются в контейнер блочных BLOB-объектов, имя которого начинается с *databoxdisk-invalid-pb-* .
+ - Файлы Azure помещаются в контейнер блочных BLOB-объектов, имя которого начинается с *databoxdisk-invalid-af-* .
+ - Управляемые диски помещаются в контейнер блочных BLOB-объектов, имя которого начинается с *databoxdisk-invalid-md-* .
 
 ## <a name="next-steps"></a>Дополнительная информация
 

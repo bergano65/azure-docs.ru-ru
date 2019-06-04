@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 01/17/2019
 ms.author: aljo
 ms.custom: mvc
-ms.openlocfilehash: a8f4e89adec0a6be001f3e6d6df1a252677c5916
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 48dd09bf70e99adc250027df872266bea39a786b
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66158164"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66302409"
 ---
 # <a name="tutorial-add-an-https-endpoint-to-an-aspnet-core-web-api-front-end-service-using-kestrel"></a>Руководство по Добавление конечной точки HTTPS в интерфейсную службу веб-API ASP.NET Core с использованием Kestrel
 
@@ -52,7 +52,7 @@ ms.locfileid: "66158164"
 Перед началом работы с этим руководством выполните следующие действия:
 
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* [Установите Visual Studio 2017](https://www.visualstudio.com/) версии 15.5 или более поздней версии, а также рабочие нагрузки **разработка Azure** и **ASP.NET и веб-разработка**.
+* [Установите Visual Studio 2019](https://www.visualstudio.com/) (15.5 или более поздней версии), а также рабочие нагрузки **Разработка для Azure** и **ASP.NET и разработка веб-приложений**.
 * [Установите пакет SDK для Service Fabric](service-fabric-get-started.md)
 
 ## <a name="obtain-a-certificate-or-create-a-self-signed-development-certificate"></a>Получение сертификата или создание самозаверяющего сертификат разработки
@@ -185,7 +185,7 @@ private X509Certificate2 GetCertificateFromStore()
 
 ## <a name="give-network-service-access-to-the-certificates-private-key"></a>Предоставление службе NETWORK SERVICE доступа к закрытому ключу сертификата
 
-На предыдущем шаге вы импортировали сертификат в хранилище `Cert:\LocalMachine\My` на компьютере разработки.  Вы также должны явно предоставить доступ к закрытому ключу сертификата учетной записи, запускающей службу (по умолчанию NETWORK SERVICE). Вы можете сделать это вручную (используя средство certlm.msc), но лучше автоматически запустить скрипт PowerShell, [настроив скрипт запуска](service-fabric-run-script-at-service-startup.md) в **SetupEntryPoint** манифеста службы.
+На предыдущем шаге вы импортировали сертификат в хранилище `Cert:\LocalMachine\My` на компьютере разработки.  Теперь нужно предоставить доступ к закрытому ключу сертификата учетной записи, из которой запускается служба (по умолчанию NETWORK SERVICE). Этот шаг можно выполнить вручную (используя средство certlm.msc), но лучше автоматически запустить скрипт PowerShell, [настроив скрипт запуска](service-fabric-run-script-at-service-startup.md) в **SetupEntryPoint** манифеста службы.
 
 ### <a name="configure-the-service-setup-entry-point"></a>Настройка точки входа установки службы
 

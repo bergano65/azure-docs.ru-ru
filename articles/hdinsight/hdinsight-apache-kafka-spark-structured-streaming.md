@@ -6,33 +6,32 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.custom: hdinsightactive,seodec18
 ms.topic: tutorial
-ms.date: 11/06/2018
+ms.date: 05/22/2019
 ms.author: hrasheed
-ms.openlocfilehash: 388ce607cf75a12705c9a32fe19086dbf9f15e71
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 51f84234ac35be5f60d1aaa5dac661ad9ce5e0c2
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64707991"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66257902"
 ---
 # <a name="tutorial-use-apache-spark-structured-streaming-with-apache-kafka-on-hdinsight"></a>Руководство. Использование структурированной потоковой передачи Apache Spark с Apache Kafka в HDInsight
 
-В этом руководстве показано, как использовать [структурированную потоковую передачу Apache Spark](https://spark.apache.org/docs/latest/structured-streaming-programming-guide.html), чтобы считывать и записывать данные с использованием [Apache Kafka](https://kafka.apache.org/) в Azure HDInsight.
+В этом руководстве показано, как использовать [структурированную потоковую передачу Apache Spark](https://spark.apache.org/docs/latest/structured-streaming-programming-guide), чтобы считывать и записывать данные с использованием [Apache Kafka](https://kafka.apache.org/) в Azure HDInsight.
 
-Структурированная потоковая передача Spark — это механизм обработки потока, встроенный в Spark SQL. Он позволяет выражать потоковые вычисления так же, как пакетные вычисления статических данных.  
+Структурированная потоковая передача Spark — это механизм обработки потока, встроенный в Spark SQL. Он позволяет выражать потоковые вычисления так же, как пакетные вычисления статических данных.  
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
-> * Структурированная потоковая передача с помощью Kafka
-> * Создание кластеров Kafka и Spark.
-> * Передача записной книжки в Spark.
-> * Использование записной книжки
-> * Очистка ресурсов
+> * Использование шаблона Azure Resource Manager для создания кластеров.
+> * Использование структурированной потоковой передачи Spark с Kafka.
 
 Выполнив инструкции, не забудьте удалить кластеры, чтобы избежать ненужных расходов.
 
 ## <a name="prerequisites"></a>Предварительные требования
+
+* jq — обработчик командной строки JSON.  Дополнительные сведения см. на странице [https://stedolan.github.io/jq/](https://stedolan.github.io/jq/).
 
 * Опыт работы с [записными книжками Jupyter](https://jupyter.org/) и Spark в HDInsight. Дополнительные сведения см. в статье [Руководство. Загрузка данных и выполнение запросов в кластере Apache Spark в Azure HDInsight](spark/apache-spark-load-data-run-query.md).
 
@@ -60,6 +59,7 @@ val kafkaDF = spark.read.format("kafka")
                 .option("subscribe", kafkaTopic)
                 .option("startingOffsets", "earliest")
                 .load()
+
 // Select data and write to file
 kafkaDF.select(from_json(col("value").cast("string"), schema) as "trip")
                 .write
@@ -76,6 +76,7 @@ val kafkaStreamDF = spark.readStream.format("kafka")
                 .option("subscribe", kafkaTopic)
                 .option("startingOffsets", "earliest")
                 .load()
+
 // Select data from the stream and write to file
 kafkaStreamDF.select(from_json(col("value").cast("string"), schema) as "trip")
                 .writeStream
@@ -93,11 +94,11 @@ kafkaStreamDF.select(from_json(col("value").cast("string"), schema) as "trip")
 | `write` | `writeStream` |
 | `save` | `start` |
 
-Операция потоковой передачи также использует `awaitTermination(30000)`, что останавливает потоковую передачу спустя 30 000 мс. 
+Операция потоковой передачи также использует `awaitTermination(30000)`, что останавливает потоковую передачу спустя 30 000 мс. 
 
 Чтобы использовать структурированную потоковую передачу с помощью Kafka, ваш проект должен иметь зависимость в пакете `org.apache.spark : spark-sql-kafka-0-10_2.11`. Версия этого пакета должна соответствовать версии Spark в HDInsight. Для Spark версии 2.2.0 (доступна в HDInsight 3.6) можно найти сведения о зависимости для разных типов проекта по адресу [https://search.maven.org/#artifactdetails%7Corg.apache.spark%7Cspark-sql-kafka-0-10_2.11%7C2.2.0%7Cjar](https://search.maven.org/#artifactdetails%7Corg.apache.spark%7Cspark-sql-kafka-0-10_2.11%7C2.2.0%7Cjar).
 
-Для записной книжки Jupyter, предоставленной в этом руководстве, следующие ячейки передают зависимость пакета:
+Для приложения Jupyter Notebook, используемого в рамках этого руководства, следующая ячейка передает зависимость пакета:
 
 ```
 %%configure -f
@@ -123,10 +124,10 @@ Apache Kafka в HDInsight не предоставляет доступ к бро
 Чтобы создать виртуальную сеть Azure, а затем создать кластеры Kafka и Spark в ее пределах, выполните такие действия:
 
 1. Нажмите эту кнопку, чтобы войти в Azure и открыть шаблон на портале Azure.
-    
+
     <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure-Samples%2Fhdinsight-spark-kafka-structured-streaming%2Fmaster%2Fazuredeploy.json" target="_blank"><img src="./media/hdinsight-apache-spark-with-kafka/deploy-to-azure.png" alt="Deploy to Azure"></a>
-    
-    Шаблон Azure Resource Manager доступен по адресу **https://raw.githubusercontent.com/Azure-Samples/hdinsight-spark-kafka-structured-streaming/master/azuredeploy.json**.
+
+    Шаблон Azure Resource Manager доступен по адресу **https://raw.githubusercontent.com/Azure-Samples/hdinsight-spark-kafka-structured-streaming/master/azuredeploy.json** .
 
     Этот шаблон создает следующие ресурсы:
 
@@ -160,32 +161,157 @@ Apache Kafka в HDInsight не предоставляет доступ к бро
 > [!NOTE]  
 > Создание кластеров может занять до 20 минут.
 
-## <a name="upload-the-notebook"></a>Передача записной книжки
+## <a name="use-spark-structured-streaming"></a>Использование структурированной потоковой передачи Spark
 
-Чтобы отправить записные книжки из проекта в кластер Spark в HDInsight, выполните следующие действия:
+В этом примере показано, как использовать структурированную потоковую передачу Spark с Kafka в HDInsight. Для этого примера используются данные о поездках в такси, предоставленные сайтом города Нью-Йорк.  Набор данных, используемых в этой записной книжке, взят на странице [2016 Green Taxi Trip Data](https://data.cityofnewyork.us/Transportation/2016-Green-Taxi-Trip-Data/hvrh-b6nb).
 
-1. Скачайте проект по этому адресу [https://github.com/Azure-Samples/hdinsight-spark-kafka-structured-streaming](https://github.com/Azure-Samples/hdinsight-spark-kafka-structured-streaming).
+1. Выполните сбор информации об узле. Воспользуйтесь приведенными ниже командами curl и [jq](https://stedolan.github.io/jq/), чтобы получить сведения об узлах Kafka ZooKeeper и брокера. Эти команды предназначены для командной строки Windows. Команды для других сред будут немного отличаться. Замените `KafkaCluster` именем кластера Kafka, а `KafkaPassword` — паролем для входа в кластер. Также замените `C:\HDI\jq-win64.exe` фактическим путем к папке установки jq. Введите команды в командной строке Windows и сохраните выходные данные для использования в следующих шагах.
 
-1. В веб-браузере подключитесь к записной книжке Jupyter в вашем кластере Spark. В следующем URL-адресе замените `CLUSTERNAME` именем вашего кластера __Spark__:
+    ```cmd
+    set CLUSTERNAME=KafkaCluster
+    set PASSWORD=KafkaPassword
+    
+    curl -u admin:%PASSWORD% -G "https://%CLUSTERNAME%.azurehdinsight.net/api/v1/clusters/%CLUSTERNAME%/services/ZOOKEEPER/components/ZOOKEEPER_SERVER" | C:\HDI\jq-win64.exe -r "["""\(.host_components[].HostRoles.host_name):2181"""] | join(""",""")"
+    
+    curl -u admin:%PASSWORD% -G "https://%CLUSTERNAME%.azurehdinsight.net/api/v1/clusters/%CLUSTERNAME%/services/KAFKA/components/KAFKA_BROKER" | C:\HDI\jq-win64.exe -r "["""\(.host_components[].HostRoles.host_name):9092"""] | join(""",""")"
+    ```
+
+2. В веб-браузере подключитесь к записной книжке Jupyter в вашем кластере Spark. В следующем URL-адресе замените `CLUSTERNAME` именем вашего кластера __Spark__:
 
         https://CLUSTERNAME.azurehdinsight.net/jupyter
 
     При появлении запроса введите имя администратора кластера и пароль, которые использовались при создании кластера.
 
-2. В правой верхней части страницы нажмите кнопку __Отправить__, чтобы отправить файл __spark-structured-streaming-kafka.ipynb__ в кластер. Нажмите __Открыть__ для запуска отправки.
+3. Выберите **New > Spark** (Создать > Spark), чтобы создать записную книжку.
 
-    ![Использование кнопки "Отправить" для выбора и загрузки блокнота](./media/hdinsight-apache-kafka-spark-structured-streaming/upload-button.png)
+4. Загрузите пакеты, используемые Notebook, указав следующие сведения в ячейке Notebook. Выполните команду, нажав клавиши **CTRL+ВВОД**.
 
-    ![Выбор файла KafkaStreaming.ipynb](./media/hdinsight-apache-kafka-spark-structured-streaming/select-notebook.png)
+    ```
+    %%configure -f
+    {
+        "conf": {
+            "spark.jars.packages": "org.apache.spark:spark-sql-kafka-0-10_2.11:2.2.0",
+            "spark.jars.excludes": "org.scala-lang:scala-reflect,org.apache.spark:spark-tags_2.11"
+        }
+    }
+    ```
 
-3. Найдите запись __spark-structured-streaming-kafka.ipynb__ в списке записных книжек, а затем нажмите расположенную рядом кнопку __Отправить__.
+5. Создайте раздел Kafka. Измените указанную ниже команду, заменив `YOUR_ZOOKEEPER_HOSTS` сведениями об узле Zookeeper, которые вы извлекли на первом шаге. Введите измененную команду в Jupyter Notebook, чтобы создать раздел `tripdata`.
 
-    ![Чтобы отправить записную книжку, нажмите кнопку отправки рядом с записью KafkaStreaming.ipynb.](./media/hdinsight-apache-kafka-spark-structured-streaming/upload-notebook.png)
+    ```scala
+    %%bash
+    export KafkaZookeepers="YOUR_ZOOKEEPER_HOSTS"
 
+    /usr/hdp/current/kafka-broker/bin/kafka-topics.sh --create --replication-factor 3 --partitions 8 --topic tripdata --zookeeper $KafkaZookeepers
+    ```
 
-## <a name="use-the-notebook"></a>Использование записной книжки
+6. Получите данные о поездках в такси. Введите команду в следующей ячейке, чтобы загрузить данные о поездках в такси в Нью-Йорке. Данные загружаются в таблицу данных, которая потом отображается в виде выходных данных ячейки.
 
-После отправки файлов выберите запись __spark-structured-streaming-kafka.ipynb__, чтобы открыть записную книжку. Чтобы узнать, как использовать структурированную потоковую передачу Spark с Kafka в HDInsight, следуйте инструкциям в записной книжке.
+    ```scala
+    import spark.implicits._
+
+    // Load the data from the New York City Taxi data REST API for 2016 Green Taxi Trip Data
+    val url="https://data.cityofnewyork.us/resource/pqfs-mqru.json"
+    val result = scala.io.Source.fromURL(url).mkString
+    
+    // Create a dataframe from the JSON data
+    val taxiDF = spark.read.json(Seq(result).toDS)
+    
+    // Display the dataframe containing trip data
+    taxiDF.show()
+    ```
+
+7. Укажите сведения об узлах брокера Kafka. Замените `YOUR_KAFKA_BROKER_HOSTS` информацией об узлах брокера, которую вы извлекли на первом шаге.  Введите измененную команду в следующей ячейке Jupyter Notebook.
+
+    ```scala
+    // The Kafka broker hosts and topic used to write to Kafka
+    val kafkaBrokers="YOUR_KAFKA_BROKER_HOSTS"
+    val kafkaTopic="tripdata"
+    
+    println("Finished setting Kafka broker and topic configuration.")
+    ```
+
+8. Отправьте данные в Kafka. В приведенной ниже команде поле `vendorid` используется в качестве значения ключа для сообщения Kafka. Kafka использует ключ при секционировании данных. Все поля хранятся в сообщении Kafka в виде строковых значений JSON. Введите следующую команду в Jupyter, чтобы сохранить данные в Kafka с помощью пакетного запроса.
+
+    ```scala
+    // Select the vendorid as the key and save the JSON string as the value.
+    val query = taxiDF.selectExpr("CAST(vendorid AS STRING) as key", "to_JSON(struct(*)) AS value").write.format("kafka").option("kafka.bootstrap.servers", kafkaBrokers).option("topic", kafkaTopic).save()
+
+    println("Data sent to Kafka")
+    ```
+
+9. Объявите схему. В приведенной ниже команде показано, как использовать схему при считывании данных JSON из Kafka. Введите команду в следующую ячейку Jupyter.
+
+    ```scala
+    // Import bits useed for declaring schemas and working with JSON data
+    import org.apache.spark.sql._
+    import org.apache.spark.sql.types._
+    import org.apache.spark.sql.functions._
+    
+    // Define a schema for the data
+    val schema = (new StructType).add("dropoff_latitude", StringType).add("dropoff_longitude", StringType).add("extra", StringType).add("fare_amount", StringType).add("improvement_surcharge", StringType).add("lpep_dropoff_datetime", StringType).add("lpep_pickup_datetime", StringType).add("mta_tax", StringType).add("passenger_count", StringType).add("payment_type", StringType).add("pickup_latitude", StringType).add("pickup_longitude", StringType).add("ratecodeid", StringType).add("store_and_fwd_flag", StringType).add("tip_amount", StringType).add("tolls_amount", StringType).add("total_amount", StringType).add("trip_distance", StringType).add("trip_type", StringType).add("vendorid", StringType)
+    // Reproduced here for readability
+    //val schema = (new StructType)
+    //   .add("dropoff_latitude", StringType)
+    //   .add("dropoff_longitude", StringType)
+    //   .add("extra", StringType)
+    //   .add("fare_amount", StringType)
+    //   .add("improvement_surcharge", StringType)
+    //   .add("lpep_dropoff_datetime", StringType)
+    //   .add("lpep_pickup_datetime", StringType)
+    //   .add("mta_tax", StringType)
+    //   .add("passenger_count", StringType)
+    //   .add("payment_type", StringType)
+    //   .add("pickup_latitude", StringType)
+    //   .add("pickup_longitude", StringType)
+    //   .add("ratecodeid", StringType)
+    //   .add("store_and_fwd_flag", StringType)
+    //   .add("tip_amount", StringType)
+    //   .add("tolls_amount", StringType)
+    //   .add("total_amount", StringType)
+    //   .add("trip_distance", StringType)
+    //   .add("trip_type", StringType)
+    //   .add("vendorid", StringType)
+    
+    println("Schema declared")
+    ```
+
+10. Выберите данные и начните потоковую передачу. В приведенной ниже команде показано, как извлечь данные из Kafka с помощью пакетного запроса и записать результаты в HDFS в кластере Spark. В этом примере `select` получает сообщение (значение поля) из Kafka и применяет схему к нему. Затем данные записываются в HDFS (WASB или ADL) в формате Parquet. Введите команду в следующую ячейку Jupyter.
+
+    ```scala
+    // Read a batch from Kafka
+    val kafkaDF = spark.read.format("kafka").option("kafka.bootstrap.servers", kafkaBrokers).option("subscribe", kafkaTopic).option("startingOffsets", "earliest").load()
+    
+    // Select data and write to file
+    val query = kafkaDF.select(from_json(col("value").cast("string"), schema) as "trip").write.format("parquet").option("path","/example/batchtripdata").option("checkpointLocation", "/batchcheckpoint").save()
+    
+    println("Wrote data to file")
+    ```
+
+11. Чтобы проверить, созданы ли файлы, введите команду в следующую ячейку Jupyter. Отобразится список файлов из каталога `/example/batchtripdata`.
+
+    ```scala
+    %%bash
+    hdfs dfs -ls /example/batchtripdata
+    ```
+
+12. В предыдущем примере использовался пакетный запрос. В следующей команде показано, как сделать то же самое, используя запрос потоковой передачи. Введите команду в следующую ячейку Jupyter.
+
+    ```scala
+    // Stream from Kafka
+    val kafkaStreamDF = spark.readStream.format("kafka").option("kafka.bootstrap.servers", kafkaBrokers).option("subscribe", kafkaTopic).option("startingOffsets", "earliest").load()
+    
+    // Select data from the stream and write to file
+    kafkaStreamDF.select(from_json(col("value").cast("string"), schema) as "trip").writeStream.format("parquet").option("path","/example/streamingtripdata").option("checkpointLocation", "/streamcheckpoint").start.awaitTermination(30000)
+    println("Wrote data to file")
+    ```
+
+13. Выполните следующую ячейку, чтобы проверить, записаны ли файлы в ответ на запрос потоковой передачи.
+
+    ```scala
+    %%bash
+    hdfs dfs -ls /example/streamingtripdata
+    ```
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

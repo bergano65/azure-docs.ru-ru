@@ -16,12 +16,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/25/2019
 ms.author: kumud
-ms.openlocfilehash: a947b5983f4a7d58878fc15785cfbcbcbba7f226
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 698714990b9b34567d918d3b8c536bc3e39d66b8
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66156195"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66257699"
 ---
 # <a name="quickstart-create-a-load-balancer-to-load-balance-vms-using-azure-cli"></a>Краткое руководство. Создание подсистемы балансировки нагрузки с помощью Azure CLI для распределения нагрузки между виртуальными машинами
 
@@ -146,7 +146,7 @@ ms.locfileid: "66156195"
 ```
 ### <a name="create-nics"></a>Создание сетевых адаптеров
 
-Создайте три сетевых интерфейса с помощью команды [az network nic create](/cli/azure/network/nic#az-network-nic-create) и привяжите их к общедоступному IP-адресу и группе безопасности сети. 
+Создайте два сетевых интерфейса с помощью команды [az network nic create](/cli/azure/network/nic#az-network-nic-create) и привяжите их к общедоступному IP-адресу и группе безопасности сети. 
 
 ```azurecli-interactive
 for i in `seq 1 2`; do
@@ -164,7 +164,7 @@ done
 
 ## <a name="create-backend-servers"></a>Создание внутренних серверов
 
-В этом примере описано, как создать три виртуальные машины, которые будут использоваться в качестве внутренних серверов для подсистемы балансировки нагрузки. Чтобы проверить, успешно ли создана подсистема балансировки нагрузки, установите NGINX на виртуальных машинах.
+В этом примере описано создание двух виртуальных машин для использования в качестве внутренних серверов для подсистемы балансировки нагрузки. Чтобы проверить, успешно ли создана подсистема балансировки нагрузки, установите NGINX на виртуальных машинах.
 
 ### <a name="create-an-availability-set"></a>Создание группы доступности
 

@@ -6,20 +6,20 @@ author: hrasheed-msft
 ms.reviewer: jasonh
 ms.custom: hdinsightactive,mvc
 ms.topic: tutorial
-ms.date: 11/06/2018
+ms.date: 05/24/2019
 ms.author: hrasheed
-ms.openlocfilehash: 87efac96aa0120bfcc804f7a2a49a5ac3da1036b
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: ed6a8f83d2ef31513aeadbc6741dd77c30c30070
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64719068"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66252883"
 ---
 # <a name="tutorial-build-an-apache-spark-machine-learning-application-in-hdinsight"></a>Руководство по Создание приложения машинного обучения Apache Spark в HDInsight 
 
 Из этого руководства вы узнаете, как с помощью [Jupyter Notebook](https://jupyter.org/) создать приложение машинного обучения [Apache Spark](https://spark.apache.org/) для Azure HDInsight. 
 
-[MLlib](https://spark.apache.org/docs/1.1.0/mllib-guide.html) — масштабируемая библиотека машинного обучения Spark, состоящая из общих алгоритмов и служебных программ обучения, включая классификацию, регрессию, кластеризацию, совместную фильтрацию, сокращение размерности, а также базовые элементы оптимизации.
+[MLlib](https://spark.apache.org/docs/latest/ml-guide.html) — масштабируемая библиотека машинного обучения Spark, состоящая из общих алгоритмов и служебных программ обучения, включая классификацию, регрессию, кластеризацию, совместную фильтрацию, сокращение размерности, а также базовые элементы оптимизации.
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 > [!div class="checklist"]
@@ -27,15 +27,15 @@ ms.locfileid: "64719068"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 
-## <a name="prerequisites"></a>Предварительные требования:
+## <a name="prerequisites"></a>Предварительные требования
 
-Необходимо следующее:
+* Кластер Apache Spark в HDInsight. Ознакомьтесь со статьей [Краткое руководство. Создание кластера Apache Spark в HDInsight с помощью шаблона](./apache-spark-jupyter-spark-sql-use-portal.md).
 
-* Изучите руководство по [созданию кластера Apache Spark в Azure HDInsight](apache-spark-jupyter-spark-sql.md).
+* Опыт работы с записными книжками Jupyter с Spark в HDInsight. Дополнительные сведения см. в статье [Руководство. Загрузка данных и выполнение запросов в кластере Apache Spark в Azure HDInsight](./apache-spark-load-data-run-query.md).
 
 ## <a name="understand-the-data-set"></a>Общие сведения о наборе данных
 
-Приложение использует данные из примера файла HVAC.csv, который по умолчанию доступен на всех кластерах. Файл находится в папке **\HdiSamples\HdiSamples\SensorSampleData\hvac**. Это данные о целевой температуре и фактической температуре некоторых зданий, в которых установлена система кондиционирования воздуха. В столбце **System** указан идентификатор системы, а в столбце **SystemAge** — срок эксплуатации системы кондиционирования в годах. Используя эти сведения, вы можете спрогнозировать, будет ли температура здания выше или ниже относительно целевой температуры на основе идентификатора системы и срока ее эксплуатации.
+Приложение использует данные из примера файла HVAC.csv, который по умолчанию доступен на всех кластерах. Файл находится в папке `\HdiSamples\HdiSamples\SensorSampleData\hvac`. Это данные о целевой температуре и фактической температуре некоторых зданий, в которых установлена система кондиционирования воздуха. В столбце **System** указан идентификатор системы, а в столбце **SystemAge** — срок эксплуатации системы кондиционирования в годах. Используя эти сведения, вы можете спрогнозировать, будет ли температура здания выше или ниже относительно целевой температуры на основе идентификатора системы и срока ее эксплуатации.
 
 ![Моментальный снимок данных, используемых для примера машинного обучения Spark](./media/apache-spark-ipython-notebook-machine-learning/spark-machine-learning-understand-data.png "Моментальный снимок данных, используемых для примера машинного обучения Spark")
 
@@ -60,6 +60,7 @@ ms.locfileid: "64719068"
     from pyspark.mllib.regression import LabeledPoint
     from numpy import array
     ```
+
 3. Загрузите данные (hvac.csv), проанализируйте их и используйте эти данные для обучения модели. 
 
     ```PySpark
@@ -96,7 +97,7 @@ ms.locfileid: "64719068"
     pipeline = Pipeline(stages=[tokenizer, hashingTF, lr])
     ```
 
-    См. дополнительные сведения о <a href="https://spark.apache.org/docs/latest/ml-guide.html#how-it-works" target="_blank">конвейере машинного обучения Apache Spark и том, как он работает</a>.
+    См. дополнительные сведения о [конвейере машинного обучения Apache Spark и том, как он работает](https://spark.apache.org/docs/latest/ml-pipeline.html).
 
 5. Впишите конвейер в документ для обучения.
    
@@ -187,12 +188,7 @@ ms.locfileid: "64719068"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Из этого руководства вы узнали, как выполнить следующие задачи:
-
-* разработка приложения машинного обучения Apache Spark.
-
-Перейдите к следующему руководству, чтобы научиться использовать IntelliJ IDEA для заданий Spark. 
+Из этого руководства вы узнали, как с помощью Jupyter Notebook создать приложение машинного обучения Apache Spark для Azure HDInsight. Перейдите к следующему руководству, чтобы научиться использовать IntelliJ IDEA для заданий Spark. 
 
 > [!div class="nextstepaction"]
 > [Создание приложения Scala Maven с помощью IntelliJ](./apache-spark-create-standalone-application.md)
-

@@ -14,14 +14,14 @@ ms.tgt_pltfrm: virtual-network
 ms.workload: infrastructure
 ms.date: 12/13/2018
 ms.author: kumud
-ms.openlocfilehash: ad34c6a876ca21bc7ef32cce638240e0d23b3177
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 4097d4fc46aac88cd44d21a4cdcf0d7d5093feea
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64723905"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66242732"
 ---
-# <a name="tutorial-filter-network-traffic-with-a-network-security-group-using-the-azure-portal"></a>Руководство. Фильтрация сетевого трафика с помощью групп безопасности сети, используя портал Azure
+# <a name="tutorial-filter-network-traffic-with-a-network-security-group-using-the-azure-portal"></a>Руководство по Фильтрация сетевого трафика с помощью групп безопасности сети на портале Azure
 
 Вы можете отфильтровать входящий и исходящий трафик в подсети виртуальной сети с помощью группы безопасности сети. Группы безопасности сети содержат правила безопасности, которые фильтруют трафик по IP-адресу, порту и протоколу. Правила безопасности применяются к ресурсам, развернутым в подсети. Из этого руководства вы узнаете, как выполнять следующие задачи:
 

@@ -10,13 +10,13 @@ ms.service: dms
 ms.workload: data-services
 ms.custom: mvc, tutorial
 ms.topic: article
-ms.date: 05/08/2019
-ms.openlocfilehash: b73249a9f72e4616f6d36e16f110913278f04590
-ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
+ms.date: 05/24/2019
+ms.openlocfilehash: 0b3af3d29e6e938f0301d751a79170c7c1964b45
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65415608"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66243800"
 ---
 # <a name="tutorial-migrate-oracle-to-azure-database-for-postgresql-online-using-dms-preview"></a>Руководство по Сетевой перенос Oracle в Базу данных Azure для PostgreSQL с помощью DMS (предварительная версия)
 
@@ -24,6 +24,7 @@ ms.locfileid: "65415608"
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 > [!div class="checklist"]
+>
 > * оценка мероприятий по миграции с помощью средства ora2pg;
 > * перенос примера схемы с помощью средства ora2pg;
 > * создание экземпляра Azure Database Migration Service;
@@ -204,7 +205,7 @@ ms.locfileid: "65415608"
 psql -f [FILENAME] -h [AzurePostgreConnection] -p 5432 -U [AzurePostgreUser] -d database 
 ```
 
-Например: 
+Например:
 
 ```
 psql -f %namespace%\schema\sequences\sequence.sql -h server1-server.postgres.database.azure.com -p 5432 -U username@server1-server -d database

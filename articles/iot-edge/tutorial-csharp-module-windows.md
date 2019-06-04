@@ -9,12 +9,12 @@ ms.date: 04/23/2019
 ms.topic: tutorial
 ms.service: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 046398af8678e708784614dfdc231778454ed945
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 7678415b7ce505da7678a00a4bcf2d933e260530
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/26/2019
-ms.locfileid: "64576201"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66303969"
 ---
 # <a name="tutorial-develop-a-c-iot-edge-module-for-windows-devices"></a>Руководство по Разработка модулей IoT Edge на языке C# для устройств Windows
 
@@ -34,11 +34,11 @@ ms.locfileid: "64576201"
 
 ## <a name="solution-scope"></a>Область действия решения
 
-В этом руководстве показана разработка модуля на языке **C#** с помощью **Visual Studio 2017** и его развертывание на **устройстве Windows**. Если вы разрабатываете модули для устройств Linux, обратитесь к этому руководству [по разработке модуля IoT Edge на языке C# для устройств Linux](tutorial-csharp-module.md). 
+В этом руководстве показано, как выполнить разработку модуля на языке **C#** с помощью **Visual Studio 2019** и его развертывание на **устройстве Windows**. Если вы разрабатываете модули для устройств Linux, обратитесь к этому руководству [по разработке модуля IoT Edge на языке C# для устройств Linux](tutorial-csharp-module.md). 
 
 В следующей таблице перечислены возможные варианты для разработки и развертывания модулей C для устройств с Windows: 
 
-| C# | Visual Studio Code. | Visual Studio 2017 | 
+| C# | Visual Studio Code | Visual Studio 2017 или 2019 | 
 | -- | ------------------ | ------------------ |
 | **Разработка Windows AMD64** | ![Разработка модулей C# для WinAMD64 в VS Code](./media/tutorial-c-module/green-check.png) | ![Разработка модулей C# для WinAMD64 в Visual Studio](./media/tutorial-c-module/green-check.png) |
 | **Отладка Windows AMD64** |   | ![Отладка модулей C# для WinAMD64 в Visual Studio](./media/tutorial-c-module/green-check.png) |
@@ -49,9 +49,12 @@ ms.locfileid: "64576201"
 
 * [Центр Интернета вещей](../iot-hub/iot-hub-create-through-portal.md) ценовой категории "Бесплатный" или "Стандартный" в Azure.
 * [Устройство с Windows, на котором выполняется Azure IoT Edge](quickstart.md).
-* Реестр контейнеров, например [Реестр контейнеров Azure](https://docs.microsoft.com/azure/container-registry/).
-* Среда [Visual Studio 2017](https://docs.microsoft.com/visualstudio/install/install-visual-studio?view=vs-2017) версии 15.7 или более поздней версии, настроенная с помощью расширения [Azure IoT Edge Tools](https://marketplace.visualstudio.com/items?itemName=vsc-iot.vsiotedgetools).
+* реестр контейнеров, например [Реестр контейнеров Azure](https://docs.microsoft.com/azure/container-registry/);
+* Настроенная среда [Visual Studio 2019](https://docs.microsoft.com/visualstudio/install/install-visual-studio) с расширением [Azure IoT Edge Tools](https://marketplace.visualstudio.com/items?itemName=vsc-iot.vs16iotedgetools).
 * Приложение [Docker CE](https://docs.docker.com/install/), настроенное для запуска контейнеров Windows.
+
+> [!TIP]
+> Если вы используете Visual Studio 2017 (15.7 или последующей версии), скачайте и установите [средства Azure IoT Edge (предварительная версия)](https://marketplace.visualstudio.com/items?itemName=vsc-iot.vsiotedgetools) для этой версии из Visual Studio Marketplace.
 
 ## <a name="create-a-module-project"></a>Создание проекта модуля
 
@@ -59,21 +62,22 @@ ms.locfileid: "64576201"
 
 ### <a name="create-a-new-project"></a>Создание нового проекта
 
-Расширение Azure IoT Tools предоставляет шаблоны проектов для всех поддерживаемых языков модулей IoT Edge в Visual Studio 2017. Эти шаблоны содержат все файлы и код, необходимые, чтобы развернуть рабочий модуль для тестирования IoT Edge, а также станут отправной точкой для настройки шаблона в соответствии с вашей собственной бизнес-логикой. 
+Расширение Azure IoT Edge Tools предоставляет шаблоны проектов для всех поддерживаемых языков модулей IoT Edge в Visual Studio. Эти шаблоны содержат все файлы и код, необходимые для развертывания рабочего модуля для тестирования IoT Edge, а также станут отправной точкой для настройки шаблона в соответствии с вашей бизнес-логикой. 
 
-1. Запустите Visual Studio от имени администратора.
+1. Запустите Visual Studio 2019 и выберите **Создать проект**.
 
-2. Выберите **Файл** > **Создать** > **Проект**. 
-
-3. В окне нового проекта выберите тип проекта **Azure IoT** и выберите проект **Azure IoT Edge**. Присвойте проекту и решению описательное имя, например **CSharpTutorialApp**. Нажмите кнопку **ОК**, чтобы создать проект. 
+2. В окне нового проекта найдите проект **IoT Edge** и выберите для него тип **Azure IoT Edge (Windows amd64)** . Щелкните **Далее**. 
 
    ![Создание проекта Azure IoT Edge](./media/tutorial-csharp-module-windows/new-project.png)
+
+3. В окне настроек проекта присвойте проекту и решению описательное имя, например **CSharpTutorialApp**. Щелкните **Создать**, чтобы создать проект. 
+
+   ![Настройка нового проекта Azure IoT Edge](./media/tutorial-csharp-module-windows/configure-project.png)
 
 4. В приложении и окне модуля IoT Edge настройте проект, указав следующие значения: 
 
    | Поле | Значение |
    | ----- | ----- |
-   | Платформа приложений | Снимите флажок **Linux Amd64** и установите флажок **WindowsAmd64**. |
    | Выберите шаблон | Выберите **Модуль C#** . | 
    | Имя проекта модуля | Присвойте модулю имя **CSharpModule**. | 
    | Репозиторий образа Docker | Репозиторий изображений включает в себя имя реестра контейнеров и имя образа контейнера. Образ контейнера предварительно заполняется значением имени проекта модуля. Замените **localhost:5000** на значение сервера входа из реестра контейнеров Azure. Вы можете извлечь сервер входа на странице "Обзор" реестра контейнеров на портале Azure. <br><br> Окончательный репозиторий образа выглядит так: \<имя_регистра\>.azurecr.io/csharpmodule. |
@@ -290,13 +294,13 @@ The default module code receives messages on an input queue and passes them alon
    docker login -u <ACR username> -p <ACR password> <ACR login server>
    ```
 
-   Может появиться предупреждение системы безопасности с рекомендацией использовать `--password-stdin`. Для рабочих сценариев это лучшая методика, но мы не будем рассматривать ее в этом учебнике. Дополнительные сведения см. в описании команды [docker login](https://docs.docker.com/engine/reference/commandline/login/#provide-a-password-using-stdin) в справочнике.
+   Возможно, появится предупреждение системы безопасности, в котором рекомендуется использовать `--password-stdin`. Для рабочих сценариев это лучшая методика, но мы не будем рассматривать ее в этом учебнике. Дополнительные сведения см. в описании команды [docker login](https://docs.docker.com/engine/reference/commandline/login/#provide-a-password-using-stdin) в справочнике.
 
 2. В обозревателе решений Visual Studio щелкните правой кнопкой мыши имя проекта, который хотите скомпилировать. Имя по умолчанию — **AzureIotEdgeApp1**, и так как вы создаете модуль Windows, должно быть расширение **Windows.Amd64**. 
 
 3. Выберите **Build and Push IoT Edge Modules** (Создание и отправка модулей IoT Edge). 
 
-   Команда сборки и отправки запускает три операции. Во-первых, она создает в решении папку с именем **config**, которая содержит полный манифест развертывания на основе сведений из шаблона развертывания и других файлов решения. Во-вторых, она выполняет команду `docker build` для сборки образа контейнера на основе подходящего файла dockerfile для целевой архитектуры. В-третьих, она выполняет команду `docker push` для отправки репозитория образа в реестр контейнеров. 
+   Команда сборки и отправки запускает три операции. Во-первых,в решении создается папка с именем **config**, которая содержит полный манифест развертывания на основе информации из шаблона развертывания и других файлов решения. Во-вторых, выполняется `docker build` для сборки образа контейнера на основе подходящего файла dockerfile для целевой архитектуры. В-третьих, выполняется `docker push` для отправки образа в реестр контейнеров. 
 
 ## <a name="deploy-modules-to-device"></a>Развертывание модулей на устройстве
 
@@ -322,7 +326,7 @@ The default module code receives messages on an input queue and passes them alon
 
 1. В Visual Studio Cloud Explorer выберите имя устройства IoT Edge. 
 
-2. В списке **Actions** (Действия) выберите **Start Monitoring D2C Message** (Начать мониторинг сообщения D2C). 
+2. В списке **Actions** (Действия) выберите **Start Monitoring Built-in Event Endpoint** (Начать мониторинг встроенной конечной точки событий). 
 
 3. Просмотрите сообщения, поступающие в Центр Интернета вещей. Для поступления сообщений может потребоваться некоторое время, так как измененный нами код CSharpModule ожидает, пока температура компьютера не достигнет 25 градусов, и лишь затем отправляет сообщения. Он также присваивает тип **Предупреждение** всем сообщениям, которые сообщают о достижении порогового значения температуры. 
 

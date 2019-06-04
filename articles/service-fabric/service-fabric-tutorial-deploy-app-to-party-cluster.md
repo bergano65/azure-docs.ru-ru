@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 01/14/2019
 ms.author: aljo,mikhegn
 ms.custom: mvc
-ms.openlocfilehash: 451cfde133955b987b97bc2447724d2e00010892
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.openlocfilehash: 4b3922ea97391a83d729bcf8b25c489a45119046
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58667384"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66302439"
 ---
 # <a name="tutorial-deploy-a-service-fabric-application-to-a-cluster-in-azure"></a>Руководство по Развертывание приложения Service Fabric в кластер в Azure
 
@@ -44,7 +44,7 @@ ms.locfileid: "58667384"
 Перед началом работы с этим руководством выполните следующие действия:
 
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* [Установите Visual Studio 2017](https://www.visualstudio.com/), а также рабочие нагрузки **Разработка Azure** и **ASP.NET и веб-разработка**.
+* [Установите Visual Studio 2019](https://www.visualstudio.com/), а также рабочие нагрузки **Разработка для Azure** и **ASP.NET и разработка веб-приложений**.
 * [Установите пакет SDK для Service Fabric](service-fabric-get-started.md).
 
 ## <a name="download-the-voting-sample-application"></a>Скачивание примера приложения для голосования
@@ -75,7 +75,7 @@ git clone https://github.com/Azure-Samples/service-fabric-dotnet-quickstart
 <Endpoint Protocol="http" Name="ServiceEndpoint" Type="Input" Port="8080" />
 ```
 
-Запишите конечную точку службы, которая необходима на следующем этапе.  Если вы развертываете в существующий кластер, откройте этот порт, создав правило и пробу балансировщика нагрузки Azure с помощью [сценария PowerShell](./scripts/service-fabric-powershell-open-port-in-load-balancer.md) или балансировщика нагрузки для этого кластера на [портале Azure](https://portal.azure.com).
+Запишите конечную точку службы, которая необходима на следующем этапе.  Если вы развертываете в существующий кластер, откройте этот порт, создав правило и пробу в подсистеме балансировки нагрузки Azure с помощью [скрипта PowerShell](./scripts/service-fabric-powershell-open-port-in-load-balancer.md) или подсистеме балансировки нагрузки для этого кластера на [портале Azure](https://portal.azure.com).
 
 ### <a name="create-a-test-cluster-in-azure"></a>Создание тестового кластера в Azure
 Щелкните правой кнопкой мыши проект в **приложении для голосования** и выберите пункт **Опубликовать**.
@@ -86,7 +86,7 @@ git clone https://github.com/Azure-Samples/service-fabric-dotnet-quickstart
 
 ![Создание кластера](./media/service-fabric-tutorial-deploy-app-to-party-cluster/create-cluster.png)
 
-Введите пароль и путь вывода для сертификата кластера на вкладке **Сертификат**. Самозаверяющий сертификат создается в виде PFX-файла и сохраняется по указанному пути вывода.  Он используется для обеспечения безопасности как между узлами, так и между клиентами.  Самозаверяющий сертификат не должен использоваться для рабочих кластеров.  Этот сертификат используется в Visual Studio для проверки подлинности кластера и развертывания приложений. Выберите **Импорт сертификата**, чтобы установить PFX в хранилище сертификатов CurrentUser\My вашего компьютера.  Щелкните **Далее**.
+Введите пароль и путь вывода для сертификата кластера на вкладке **Сертификат**. Самозаверяющий сертификат создается в виде PFX-файла и сохраняется по указанному пути вывода.  Он используется для обеспечения безопасности как между узлами, так и между клиентами.  Не используйте самозаверяющий сертификат для кластеров в рабочей среде.  Этот сертификат используется в Visual Studio для проверки подлинности кластера и развертывания приложений. Выберите **Импорт сертификата**, чтобы установить PFX в хранилище сертификатов CurrentUser\My вашего компьютера.  Щелкните **Далее**.
 
 ![Создание кластера](./media/service-fabric-tutorial-deploy-app-to-party-cluster/certificate.png)
 

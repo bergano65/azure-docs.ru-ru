@@ -12,12 +12,12 @@ ms.author: sstein
 ms.reviewer: ''
 manager: craigg
 ms.date: 03/25/2019
-ms.openlocfilehash: 3959eb789102cd3d54fc7bab32e585b3c09d897b
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 7870322746d8cb647547e5c85036579611ac3292
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65792154"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66303306"
 ---
 # <a name="quickstart-use-net-and-c-in-visual-studio-to-connect-to-and-query-an-azure-sql-database"></a>Краткое руководство. Использование .NET и C# в Visual Studio для подключения и создания запросов к базе данных SQL Azure
 
@@ -43,7 +43,7 @@ ms.locfileid: "65792154"
   > [!IMPORTANT]
   > Скрипты в этой статье предназначены для использования базы данных Adventure Works. Используя управляемый экземпляр, необходимо импортировать базу данных Adventure Works в базу данных экземпляра или изменить скрипты в этой статье для использования базы данных Wide World Importers.
 
-- [Visual Studio 2017](https://www.visualstudio.com/downloads/) — выпуски Community, Professional или Enterprise.
+- [Visual Studio 2019](https://www.visualstudio.com/downloads/) — выпуск Community, Professional или Enterprise.
 
 ## <a name="get-sql-server-connection-information"></a>Получение сведений о подключении к SQL Server
 
@@ -59,7 +59,7 @@ ms.locfileid: "65792154"
 
 1. В Visual Studio выберите **Файл** > **Создать** > **Проект**. 
    
-1. В диалоговом окне **Новый проект** выберите **Visual C#**, а затем — **Консольное приложение (.NET Framework)**.
+1. В диалоговом окне **Новый проект** выберите **Visual C#** , а затем — **Консольное приложение (.NET Framework)** .
    
 1. Введите название проекта *sqltest*, а затем нажмите кнопку **ОК**. Создается новый проект. 
    

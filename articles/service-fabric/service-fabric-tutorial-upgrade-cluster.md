@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 11/28/2017
 ms.author: aljo
 ms.custom: mvc
-ms.openlocfilehash: 7e48684024d370d64f44b55cb4df0efb8f16cd3b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 8bb8a635c3699828376390c489697b6315030937
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66157969"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66306677"
 ---
 # <a name="tutorial-upgrade-the-runtime-of-a-service-fabric-cluster-in-azure"></a>Руководство по Обновление среды выполнения кластера Service Fabric в Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "66157969"
 > [!WARNING]
 > Для изучения этой части руководства требуется PowerShell. Обновление среды выполнения кластера еще не поддерживается инструментами Azure CLI. Кроме того, кластер можно обновить на портале. Дополнительные сведения см. в статье [Обновление кластера Azure Service Fabric](service-fabric-cluster-upgrade.md).
 
-Если на кластере уже выполняется последняя версия среды выполнения Service Fabric, выполнять этот шаг не требуется. Однако эту статью можно использовать для установки любой поддерживаемой среды выполнения в кластере Azure Service Fabric.
+Если в кластере уже выполняется последняя версия среды выполнения Service Fabric, выполнять этот шаг не требуется. Однако эту статью можно использовать для установки любой поддерживаемой среды выполнения в кластере Azure Service Fabric.
 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 
@@ -55,7 +55,7 @@ ms.locfileid: "66157969"
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * Установите [Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-Az-ps) или [Azure CLI](/cli/azure/install-azure-cli).
 * Создание защищенного [кластера Windows](service-fabric-tutorial-create-vnet-and-windows-cluster.md) в Azure
-* Настройте среду разработки Windows. [Установите Visual Studio 2017](https://www.visualstudio.com), а также рабочие нагрузки **разработка Azure**, **ASP.NET и веб-разработка** и **кроссплатформенная разработка .NET Core**.  Теперь настройте [среду разработки .NET](service-fabric-get-started.md).
+* Настройте среду разработки Windows. [Установите Visual Studio 2019](https://www.visualstudio.com), а также рабочие нагрузки **Разработка для Azure**, **ASP.NET и разработка веб-приложений** и **Кроссплатформенная разработка .NET Core**.  Теперь настройте [среду разработки .NET](service-fabric-get-started.md).
 
 ### <a name="sign-in-to-azure"></a>Вход в Azure
 
@@ -76,7 +76,7 @@ Get-AzServiceFabricCluster -ResourceGroupName SFCLUSTERTUTORIALGROUP -Name aztes
     | Select-Object ClusterCodeVersion
 ```
 
-Можно также просто получить список всех кластеров в подписке с помощью следующей команды.
+Можно также просто получить список всех кластеров в подписке с помощью следующего примера.
 
 ```powershell
 Get-AzServiceFabricCluster | Select-Object Name, ClusterCodeVersion
@@ -207,8 +207,7 @@ sfctl cluster upgrade-status
 > * Обновление среды выполнения кластера.
 > * Отслеживание обновления.
 
-[!div class="checklist"]
-> * Получение версии среды выполнения кластера.
-> * Обновление среды выполнения кластера.
-> * Отслеживание обновления.
+Перейдите к следующему руководству:
 
+> [!div class="nextstepaction"]
+> [Удаление кластера](service-fabric-tutorial-delete-cluster.md)

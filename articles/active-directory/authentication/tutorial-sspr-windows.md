@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: acd100ccc3aafc2de1f2c7970ff9437c92156b17
-ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
+ms.openlocfilehash: ea65120a2a735477d048b9012e160e0cdafe8835
+ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65861531"
+ms.lasthandoff: 05/28/2019
+ms.locfileid: "66253072"
 ---
 # <a name="tutorial-azure-ad-password-reset-from-the-login-screen"></a>Руководство. Сброс пароля Azure AD на экране входа
 
@@ -29,7 +29,7 @@ ms.locfileid: "65861531"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-* Система должна работать под управлением Windows 10 (или более поздних версий) с обновлением за апрель 2018 г. Допустимые устройства:
+* Система должна работать под управлением Windows 10 (или более поздних версий) с обновлением за апрель 2018 г. (версия 1803). Допустимые устройства:
    * [присоединенные к Azure AD](../device-management-azure-portal.md);
    * [с гибридным присоединением к Azure AD](../device-management-hybrid-azuread-joined-devices-setup.md) и сетевым подключением к контроллеру домена.
 * Нужно включить функцию самостоятельного сброса пароля Azure AD.

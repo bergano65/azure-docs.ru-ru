@@ -8,12 +8,12 @@ ms.date: 12/20/2018
 ms.topic: quickstart
 ms.service: stream-analytics
 ms.custom: mvc
-ms.openlocfilehash: 1a72e2874e28a2aa5b69866bd959743707ea9d99
-ms.sourcegitcommit: 25936232821e1e5a88843136044eb71e28911928
+ms.openlocfilehash: 9f62cd132e9aa969a804cd48d552baf9719a0eb6
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54021923"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66303001"
 ---
 # <a name="quickstart-create-a-stream-analytics-job-by-using-the-azure-stream-analytics-tools-for-visual-studio"></a>Краткое руководство. Создание задания Stream Analytics с использованием инструментов Azure Stream Analytics для Visual Studio
 
@@ -25,7 +25,7 @@ ms.locfileid: "54021923"
 
 * Войдите на [портале Azure](https://portal.azure.com/).
 
-* Установите Visual Studio 2017, Visual Studio 2015 или Visual Studio 2013 с обновлением 4. Поддерживаются выпуски Enterprise (Ultimate/Premium), Professional и Community. Выпуск Express не поддерживается.
+* Установите Visual Studio 2019, Visual Studio 2015 или Visual Studio 2013 с обновлением 4. Поддерживаются выпуски Enterprise (Ultimate/Premium), Professional и Community. Выпуск Express не поддерживается.
 
 * Следуйте [инструкциям по установке](https://docs.microsoft.com/azure/stream-analytics/stream-analytics-tools-for-visual-studio-install), чтобы установить средства Stream Analytics для Visual Studio.
 
@@ -50,7 +50,7 @@ ms.locfileid: "54021923"
 
 4. По завершении выберите **Next: Set size and scale** (Далее: задать размер и масштаб).
 
-5. Выберите **ценовую категорию и уровень масштабирования**. Для этого краткого руководства выберите уровень **F1 — "Бесплатный"**, если он доступен для вашей подписки. Если ценовая категория "Бесплатный" недоступна, выберите минимальную доступную категорию. Дополнительные сведения см. на странице [цен на Центр Интернета вещей Azure](https://azure.microsoft.com/pricing/details/iot-hub/).
+5. Выберите **ценовую категорию и уровень масштабирования**. Для этого краткого руководства выберите уровень **F1 — "Бесплатный"** , если он доступен для вашей подписки. Если ценовая категория "Бесплатный" недоступна, выберите минимальную доступную категорию. Дополнительные сведения см. на странице [цен на Центр Интернета вещей Azure](https://azure.microsoft.com/pricing/details/iot-hub/).
 
    ![Выбор размера и масштаба для Центра Интернета вещей](./media/stream-analytics-quick-create-vs/iot-hub-size-and-scale.png)
 
@@ -70,7 +70,7 @@ ms.locfileid: "54021923"
 
 2. В области **создания учетной записи хранения** введите имя для учетной записи хранения, расположение и группу ресурсов. Выберите такое же расположение и группу ресурсов, как и для созданного Центра Интернета вещей. Щелкните **Просмотр и создание**, чтобы создать учетную запись.
 
-   ![Создать учетную запись хранения](./media/stream-analytics-quick-create-portal/create-storage-account.png)
+   ![Создание учетной записи хранения](./media/stream-analytics-quick-create-portal/create-storage-account.png)
 
 3. После создания учетной записи хранения щелкните плитку **BLOB-объекты** в области **Обзор**.
 

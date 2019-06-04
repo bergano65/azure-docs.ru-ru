@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc
-ms.openlocfilehash: 41589dccae4e1259e4dc9368d5825ba770b4bdcc
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: 11fa72f5853350c76b2a8d0aa4fd7b96b598b670
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66146708"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66303851"
 ---
 # <a name="tutorial-develop-iot-edge-modules-for-linux-devices"></a>Руководство по Разработка модулей IoT Edge для устройств Linux
 
@@ -42,18 +42,18 @@ ms.locfileid: "66146708"
 
 При разработке модулей IoT Edge важно понимать разницу между компьютером для разработки и целевым устройством IoT Edge, где в конечном итоге будет развернут модуль. Контейнер, созданный для хранения кода модуля, должен соответствовать операционной системе (ОС) *целевого устройства*. Например, самый распространенный сценарий — это разработка модуля на компьютере под управлением Windows для его использования на устройстве IoT Edge под управлением Linux. В этом случае операционной системой контейнера будет Linux. При прохождении данного учебника помните о разнице между *ОС компьютера разработки* и *ОС контейнера*.
 
-Этот учебник предназначен для устройств Linux с IoT Edge. Вы можете использовать предпочитаемую операционную систему компьютера разработки, если ваш компьютер может запускать контейнеры Linux. Для разработки решений для устройств Linux мы советуем использовать Visual Studio Code, поэтому в этом учебнике будет использоваться именно эта среда. Вы также можете использовать Visual Studio 2017, хотя между этими двумя средствами есть различия в поддержке.
+Этот учебник предназначен для устройств Linux с IoT Edge. Вы можете использовать предпочитаемую операционную систему компьютера разработки, если ваш компьютер может запускать контейнеры Linux. Для разработки решений для устройств Linux мы советуем использовать Visual Studio Code, поэтому в этом учебнике будет использоваться именно эта среда. Вы можете также использовать Visual Studio, хотя поддержка этих двух инструментов отличается.
 
-В следующей таблице перечислены поддерживаемые сценарии разработки **контейнеров Linux** в Visual Studio Code и Visual Studio 2017.
+В следующей таблице перечислены поддерживаемые сценарии разработки **контейнеров Linux** в Visual Studio Code и Visual Studio.
 
-|   | Visual Studio Code | Visual Studio 2017 |
+|   | Visual Studio Code | Visual Studio 2017 или Visual Studio 2019 |
 | - | ------------------ | ------------------ |
 | **Архитектура устройств Linux** | Linux AMD64 <br> Linux ARM32 | Linux AMD64 <br> Linux ARM32 |
 | **Службы Azure**; | Функции Azure <br> Azure Stream Analytics <br> Машинное обучение Azure |   |
 | **Языки** | C <br> C# <br> Java <br> Node.js <br> Python | C <br> C# |
-| **Дополнительные сведения** | [Azure IoT Edge для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-edge) | [Средства Azure IoT Edge для Visual Studio 2017](https://marketplace.visualstudio.com/items?itemName=vsc-iot.vsiotedgetools) |
+| **Дополнительные сведения** | [Azure IoT Edge для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-edge) | [Azure IoT Edge Tools для Visual Studio 2017](https://marketplace.visualstudio.com/items?itemName=vsc-iot.vsiotedgetools), [Azure IoT Edge Tools для Visual Studio 2019](https://marketplace.visualstudio.com/items?itemName=vsc-iot.vs16iotedgetools) |
 
-В этом учебнике описываются этапы разработки в Visual Studio Code. Дополнительные сведения см. в статье [Use Visual Studio 2017 to develop and debug modules for Azure IoT Edge (Preview)](how-to-visual-studio-develop-module.md) (Разработка и отладка модулей для Azure IoT Edge (предварительная версия) с помощью Visual Studio 2017).
+В этом учебнике описываются этапы разработки в Visual Studio Code. Инструкции по использованию Visual Studio приведены в статье [Использование Visual Studio 2019 для разработки и отладки модулей для Azure IoT Edge (предварительная версия)](how-to-visual-studio-develop-module.md).
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -156,7 +156,7 @@ ms.locfileid: "66146708"
 
 В настоящее время Visual Studio Code позволяет разрабатывать модули C для устройств Linux AMD64 и Linux ARM32v7. Для каждого решения вам нужно выбрать одну архитектуру, так как это влияет на то, как будет создаваться и работать контейнер. По умолчанию используется Linux AMD64. 
 
-1. Откройте палитру команд и найдите **Azure IoT Edge: Set Default Target Platform for Edge Solution** (Azure IoT Edge: установить целевую платформу по умолчанию для решения Edge) или выберите значок ярлыка на боковой панели в нижней части окна. 
+1. Откройте палитру команд и выполните поиск **Azure IoT Edge: Set Default Target Platform for Edge Solution** (Azure IoT Edge: установить целевую платформу по умолчанию для решения Edge) или выберите значок ярлыка на боковой панели в нижней части окна. 
 
    ![Выбор значка архитектуры на боковой панели](./media/tutorial-develop-for-linux/select-architecture.png)
 
@@ -220,7 +220,7 @@ ms.locfileid: "66146708"
 
    ![Создание и отправка модулей IoT Edge](./media/tutorial-develop-for-linux/build-and-push-modules.png)
 
-   Команда сборки и отправки запускает три операции. Во-первых, она создает в решении папку с именем **config**, которая содержит полный манифест развертывания на основе сведений из шаблона развертывания и других файлов решения. Во-вторых, она выполняет команду `docker build` для сборки образа контейнера на основе подходящего файла dockerfile для целевой архитектуры. В-третьих, она выполняет команду `docker push` для отправки репозитория образов в реестр контейнеров. 
+   Команда сборки и отправки запускает три операции. Во-первых,в решении создается папка с именем **config**, которая содержит полный манифест развертывания на основе информации из шаблона развертывания и других файлов решения. Во-вторых, выполняется `docker build` для сборки образа контейнера на основе подходящего файла dockerfile для целевой архитектуры. В-третьих, она выполняет команду `docker push` для отправки репозитория образов в реестр контейнеров. 
 
    В первый раз выполнение этого процесса может занять несколько минут, но при следующем запуске команд он будет быстрее. 
 
@@ -284,7 +284,7 @@ ms.locfileid: "66146708"
 
 Код SampleModule получает сообщения через свою очередь входящих сообщений и передает их через свою очередь выходящих сообщений. В манифесте развертывания объявлены маршруты, которые передают сообщения в SampleModule из tempSensor, а затем пересылают сообщения из SampleModule в Центр Интернета вещей. Средства Интернета вещей Azure для Visual Studio Code позволяют просматривать сообщения по мере их поступления в Центр Интернета вещей с ваших отдельных устройств. 
 
-1. В обозревателе Visual Studio Code щелкните правой кнопкой мыши имя устройства IoT Edge, которое вы хотите отслеживать, и выберите **Start monitoring D2C message** (Начать мониторинг сообщений D2C). 
+1. В обозревателе Visual Studio Code щелкните правой кнопкой мыши имя устройства IoT Edge, которое вы хотите отслеживать, и выберите **Start Monitoring Built-in Event Endpoint** (Начать мониторинг встроенной конечной точки событий). 
 
 2. Посмотрите в окно вывода в Visual Studio Code, чтобы увидеть сообщения, поступающие в центр Интернета вещей. 
 

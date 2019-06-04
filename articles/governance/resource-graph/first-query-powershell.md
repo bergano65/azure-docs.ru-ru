@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.service: resource-graph
 manager: carmonm
 ms.custom: seodec18
-ms.openlocfilehash: 17003864c7bcc5f8be6acf17d40ce2039f031313
-ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
+ms.openlocfilehash: dfe4f226302b6bb6a010d9d4348fde05b2d31193
+ms.sourcegitcommit: 8e76be591034b618f5c11f4e66668f48c090ddfd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65823245"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66356943"
 ---
 # <a name="quickstart-run-your-first-resource-graph-query-using-azure-powershell"></a>Краткое руководство. Выполните первый запрос графика ресурсов с помощью Azure PowerShell
 
@@ -90,6 +90,10 @@ ms.locfileid: "65823245"
 
 Когда окончательный запрос выполняется несколько раз при условии, что ничего в вашей среде не изменяется, возвращаемые результаты будут последовательны и ожидаемы — упорядочены по свойству **Имя** и ограничены пятью первыми результатами.
 
+> [!NOTE]
+> Если запрос не возвращает результаты из подписки, к которой у вас уже есть доступ, имейте ввиду, что командлет `Search-AzGraph` использует значения по умолчанию для подписок в контексте по умолчанию. Чтобы просмотреть список идентификаторов подписок, которые входят в контекст по умолчанию, выполните `(Get-AzContext).Account.ExtendedProperties.Subscriptions`. Если требуется выполнить поиск во всех подписках, к которым у вас есть доступ, можно задать для PSDefaultParameterValues значение `Search-AzGraph' cmdlet by running 
+> `$PSDefaultParameterValues=@{"Search-AzGraph:Subscription"= $(Get-AzSubscription).ID }`
+   
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
 Если вы хотите удалить модуль "График ресурсов" из среды Azure PowerShell, это можно сделать с помощью следующей команды:

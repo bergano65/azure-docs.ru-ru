@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: pod
 ms.topic: overview
-ms.date: 05/22/2019
+ms.date: 05/23/2019
 ms.author: alkohli
-ms.openlocfilehash: 2b021975983858386cd7c847ba11a26f4feb9562
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: 18c6175ede1e8459d3a9ca60f7890cc43d75e5ba
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66150461"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66236281"
 ---
 # <a name="azure-data-box-frequently-asked-questions"></a>Azure Data Box. Часто задаваемые вопросы
 
@@ -184,7 +184,7 @@ A.  To speed up the copy process:
 О. Для службы Data Box корпорация Майкрософт самостоятельно организует доставку от центра обработки данных Azure и обратно. Если вы хотите воспользоваться услугами своего перевозчика, обратитесь к службе импорта и экспорта Azure. Дополнительные сведения о службе импорта и экспорта Azure см. в [этой статье](../storage/common/storage-import-export-service.md).
 
 ### <a name="q-will-my-data-box-devices-cross-country-borders-during-shipping"></a>В. Будут ли мои устройства Data Box пересекать границы страны во время доставки?
-О. Пересылка всех устройств Data Box осуществляется в пределах страны получателя. Следовательно, устройства не будут пересекать международные границы. Единственное исключение — заказы в пределах Европейского Союза (ЕС), когда устройства могут перемещаться между разными странами ЕС.
+О. Пересылка всех устройств Data Box осуществляется в пределах страны получателя. Следовательно, устройства не будут пересекать международные границы. Единственное исключение — заказы в пределах Европейского Союза (ЕС), когда устройства могут перемещаться между разными странами ЕС. Это относится к устройствам Data Box и Data Box Heavy.
 
 ### <a name="q-e-ink-display-is-not-showing-the-return-shipment-label-what-should-i-do"></a>В. На дисплее E-ink не отображается транспортная этикетка для обратной доставки. Что делать?
 О. Если на дисплее E-ink не отображается транспортная этикетка для обратной доставки, выполните следующие действия:

@@ -1,6 +1,6 @@
 ---
 title: Краткое руководство. Создание рабочей нагрузки классификатора. T-SQL | Документация Майкрософт
-description: Использование T-SQL для создания классификатора рабочей нагрузки с высокой важностью
+description: Использование T-SQL для создания классификатора рабочей нагрузки с высокой важностью.
 services: sql-data-warehouse
 author: ronortloff
 manager: craigg
@@ -10,12 +10,12 @@ ms.subservice: workload management
 ms.date: 05/01/2019
 ms.author: rortloff
 ms.reviewer: jrasnick
-ms.openlocfilehash: 1c84bf84f8ba28a98937b02a463003a900aefaa0
-ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
+ms.openlocfilehash: 9fd11425d22daa87ec5bf2191a5864251ef86f77
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66002913"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66241255"
 ---
 # <a name="quickstart-create-a-workload-classifier-using-t-sql"></a>Краткое руководство. Создание рабочей нагрузки классификатора с помощью T-SQL
 

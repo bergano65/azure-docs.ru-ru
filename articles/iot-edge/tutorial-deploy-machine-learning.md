@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc, seodec18
-ms.openlocfilehash: 6f85b0088fac97f4b9f2dd2835e3052cb598a987
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 6c48aaf404803c45122ed3fad0d6af1345406f7b
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65142762"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66239667"
 ---
 # <a name="tutorial-deploy-azure-machine-learning-as-an-iot-edge-module-preview"></a>Руководство по Развертывание службы "Машинное обучение Azure" в качестве модуля IoT Edge (предварительная версия)
 
@@ -139,13 +139,13 @@ ms.locfileid: "65142762"
 
 1. В Visual Studio Code выберите **IoT Hub Devices** (Устройства Центра Интернета вещей).
 
-2. Выберите меню **...**, затем — **Set IoT Hub Connection String** (Задать строку подключения Центра Интернета вещей).
+2. Выберите меню **...** , затем — **Set IoT Hub Connection String** (Задать строку подключения Центра Интернета вещей).
 
    ![Установка строки подключения Центра Интернета вещей](./media/tutorial-deploy-machine-learning/set-connection.png)
 
 3. В текстовое поле, которое откроется в верхней части страницы, введите строку подключения для вашего Центра Интернета вещей — iothubowner. Устройство IoT Edge должно появиться в списке устройств Центра Интернета вещей.
 
-4. Выберите **...** еще раз, а затем выберите **Start monitoring D2C message** (Начать мониторинг сообщения D2C).
+4. Щелкните **...** еще раз и выберите **Start Monitoring Built-in Event Endpoint** (Начать мониторинг встроенной конечной точки событий).
 
 5. Просмотрите сообщения, поступающие от tempSensor каждые пять секунд. Текст сообщения содержит свойство с именем **anomaly**, которое модуль machinelearningmodule отображает со значением true или false. Свойство **AzureMLResponse** свойство содержит значение "OK", если модель выполнен успешно.
 

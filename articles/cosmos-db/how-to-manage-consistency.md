@@ -4,14 +4,14 @@ description: Сведения об управлении согласованно
 author: rimman
 ms.service: cosmos-db
 ms.topic: sample
-ms.date: 04/17/2019
+ms.date: 05/23/2019
 ms.author: rimman
-ms.openlocfilehash: 4a444631de4bc26881ab195333b1b798a7ee6719
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 68a1a757b5c5e4ce63d7f12a8502d57942d4ec42
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64925330"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66240933"
 ---
 # <a name="manage-consistency-levels-in-azure-cosmos-db"></a>Управление уровнями согласованности в Azure Cosmos DB
 
@@ -61,7 +61,7 @@ New-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts" `
 
 ### <a name="azure-portal"></a>Портал Azure
 
-Чтобы просмотреть или изменить уровень согласованности по умолчанию, войдите на портал Azure. Найдите учетную запись Azure Cosmos DB и откройте область **Согласованность по умолчанию**. Выберите требуемый уровень согласованности в качестве нового значения по умолчанию, а затем выберите **Сохранить**.
+Чтобы просмотреть или изменить уровень согласованности по умолчанию, войдите на портал Azure. Найдите учетную запись Azure Cosmos DB и откройте область **Согласованность по умолчанию**. Выберите требуемый уровень согласованности в качестве нового значения по умолчанию, а затем выберите **Сохранить**. На портале Azure также представлена визуализация разных уровней согласованности на основе музыкальных нот. 
 
 ![Меню согласованности на портале Azure](./media/how-to-manage-consistency/consistency-settings.png)
 
@@ -211,7 +211,7 @@ item = client.ReadItem(doc_link, options)
 
 ## <a name="monitor-probabilistically-bounded-staleness-pbs-metric"></a>Мониторинг метрики вероятностного ограниченного устаревания (PBS)
 
-Насколько итоговая согласованность является итоговой? В среднем мы можем предложить границы устаревания с учетом журнала версий и времени. Метрика [**Probabilistically Bounded Staleness (PBS)**](https://pbs.cs.berkeley.edu/) (Вероятностное ограниченное устаревание) пытается количественно оценить вероятность устаревания и отображает полученные результаты. Чтобы просмотреть метрику PBS, перейдите к учетной записи Azure Cosmos DB на портале Azure. Откройте панель **Метрики** и выберите вкладку **Согласованность**. Просмотрите график с названием **Probability of strongly consistent reads based on your workload (see PBS)** (Вероятность строго согласованных операций чтения на основании вашей рабочей нагрузки (см. PBS)).
+Насколько итоговая согласованность является итоговой? В среднем мы можем предложить границы устаревания с учетом журнала версий и времени. Метрика [**Probabilistically Bounded Staleness (PBS)** ](https://pbs.cs.berkeley.edu/) (Вероятностное ограниченное устаревание) пытается количественно оценить вероятность устаревания и отображает полученные результаты. Чтобы просмотреть метрику PBS, перейдите к учетной записи Azure Cosmos DB на портале Azure. Откройте панель **Метрики** и выберите вкладку **Согласованность**. Просмотрите график с названием **Probability of strongly consistent reads based on your workload (see PBS)** (Вероятность строго согласованных операций чтения на основании вашей рабочей нагрузки (см. PBS)).
 
 ![График PBS на портале Azure](./media/how-to-manage-consistency/pbs-metric.png)
 

@@ -10,22 +10,22 @@ ms.service: azure-resource-manager
 ms.workload: multiple
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.date: 03/04/2019
+ms.date: 05/23/2019
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: seodec18
-ms.openlocfilehash: c147023635f337e203f02779ef6df3d0a0f0088c
-ms.sourcegitcommit: db3fe303b251c92e94072b160e546cec15361c2c
+ms.openlocfilehash: 0d78e6eaca708073c3a216507b320fe8783a25b6
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66015553"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66239244"
 ---
 # <a name="tutorial-integrate-azure-key-vault-in-resource-manager-template-deployment"></a>Руководство. Интеграция с Azure Key Vault при развертывании шаблона Resource Manager
 
 Узнайте, как получить секреты из Azure Key Vault и передавать эти секреты в качестве параметров во время развертывания Resource Manager. Это значение никогда не будет раскрыто, так как указывается только его идентификатор в хранилище ключей. Дополнительные сведения см. в статье [Использование Azure Key Vault для передачи защищенного значения параметра во время развертывания](./resource-manager-keyvault-parameter.md).
 
-В руководстве по [настройке порядка развертывания ресурсов](./resource-manager-tutorial-create-templates-with-dependent-resources.md) описано, как создать виртуальную машину, виртуальную сеть и некоторые другие зависимые ресурсы. Вы также настроите шаблон, чтобы получить пароль администратора виртуальной машины из хранилища ключей.
+С помощью инструкций в [руководстве по настройке порядка развертывания ресурсов](./resource-manager-tutorial-create-templates-with-dependent-resources.md) вы создали виртуальную машину. Вам нужно предоставить имя и пароль администратора для виртуальной машины. Вместо предоставления пароля можно предварительно сохранить пароль в Azure Key Vault, а затем настроить шаблон для извлечения пароля из хранилища ключей во время развертывания.
 
 ![Схема интеграции Key Vault при развертывании шаблона Resource Manager](./media/resource-manager-tutorial-use-key-vault/resource-manager-template-key-vault-diagram.png)
 
@@ -55,82 +55,54 @@ ms.locfileid: "66015553"
     ```
     Убедитесь, что созданный пароль соответствует требованиям к паролю виртуальной машины. У каждой службы Azure есть определенные требования к паролю. Чтобы увидеть требования к паролю виртуальной машины, обратитесь к разделу [Какие требования к паролю при создании виртуальной машины?](../virtual-machines/windows/faq.md#what-are-the-password-requirements-when-creating-a-vm).
 
-## <a name="prepare-a-key-vault"></a>Подготовка хранилища ключей
+## <a name="prepare-a-key-vault"></a>Подготовка хранилища ключей.
 
-В этом разделе описано, как использовать шаблон Resource Manager, чтобы создать хранилище ключей и секрет. Этот шаблон делает следующее.
+Из этого раздела вы узнаете, как создать хранилище ключей и добавить в него секрет, который будет получен при развертывании шаблона. Существует много способов создания хранилища ключей. В этом руководстве описывается, как развернуть [шаблон Resource Manager](https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/tutorials-use-key-vault/CreateKeyVault.json) с помощью Azure PowerShell. Этот шаблон делает следующее.
 
 * Создание хранилища ключей с помощью включенного свойства `enabledForTemplateDeployment`. Это свойство должно получить значение true до того, как процесс развертывания шаблона сможет получить доступ к секретам, определенным в этом хранилище ключей.
 * Добавление секрета в хранилище ключей.  Секрет хранит пароль администратора виртуальной машины.
 
-Если вы (в качестве пользователя для развертывания шаблона виртуальной машины) не являетесь владельцем или участником хранилища ключей, владелец или участник хранилища ключей должен предоставить вам доступ к разрешению Microsoft.KeyVault/vaults/deploy/action для хранилища ключей. Дополнительные сведения см. в статье [Использование Azure Key Vault для передачи защищенного значения параметра во время развертывания](./resource-manager-keyvault-parameter.md).
+> [!NOTE]
+> Если вы (в качестве пользователя для развертывания шаблона виртуальной машины) не являетесь владельцем или участником хранилища ключей, владелец или участник хранилища ключей должен предоставить вам доступ к разрешению Microsoft.KeyVault/vaults/deploy/action для хранилища ключей. Дополнительные сведения см. в статье [Использование Azure Key Vault для передачи защищенного значения параметра во время развертывания](./resource-manager-keyvault-parameter.md).
 
-Шаблону для настройки разрешений требуется идентификатор объекта пользователя Azure AD. Следующая процедура возвращает идентификатор объекта (GUID).
+Для запуска следующего скрипта PowerShell выберите вкладку **Попробовать**, чтобы открыть Cloud Shell. Чтобы вставить скрипт, щелкните правой кнопкой на панели оболочки и выберите **Вставить**.
 
-1. Выполните следующую команду в интерфейсе командной строки Azure или Azure PowerShell.  
+```azurepowershell-interactive
+$projectName = Read-Host -Prompt "Enter a project name that is used for generating resource names"
+$location = Read-Host -Prompt "Enter the location (i.e. centralus)"
+$upn = Read-Host -Prompt "Enter your user principal name (email address) used to sign in to Azure"
+$secretValue = Read-Host -Prompt "Enter the virtual machine administrator password" -AsSecureString
 
-    # <a name="clitabcli"></a>[ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ](#tab/CLI)
-    ```azurecli-interactive
-    echo "Enter your email address that is associated with your Azure subscription):" &&
-    read upn &&
-    az ad user show --upn-or-object-id $upn --query "objectId" &&
-    ```   
-    # <a name="powershelltabpowershell"></a>[PowerShell](#tab/PowerShell)
-    ```azurepowershell-interactive
-    $upn = Read-Host -Prompt "Enter your user principal name (email address) used to sign in to Azure"
-    (Get-AzADUser -UserPrincipalName $upn).Id
-    ```
-    или
-    ```azurepowershell-interactive
-    $displayName = Read-Host -Prompt "Enter your user display name (i.e. John Dole, see the upper right corner of the Azure portal)"
-    (Get-AzADUser -DisplayName $displayName).Id
-    ```
-    ---
-2. Запишите идентификатор объекта. Он понадобится в дальнейшем при работе с этим руководством.
+$resourceGroupName = "${projectName}rg"
+$keyVaultName = $projectName
+$adUserId = (Get-AzADUser -UserPrincipalName $upn).Id
+$templateUri = "https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/tutorials-use-key-vault/CreateKeyVault.json"
 
-Чтобы создать хранилище ключей, сделайте следующее:
+New-AzResourceGroup -Name $resourceGroupName -Location $location
+New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateUri $templateUri -keyVaultName $keyVaultName -adUserId $adUserId -secretValue $secretValue
+```
 
-1. Выберите следующее изображение, чтобы войти на портал Azure и открыть шаблон. Шаблон создает хранилище ключей и секрет.
+Некоторые важные моменты:
 
-    <a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Farmtutorials.blob.core.windows.net%2Fcreatekeyvault%2FCreateKeyVault.json"><img src="./media/resource-manager-tutorial-use-key-vault/deploy-to-azure.png" alt="deploy to azure"/></a>
+* Имя группы ресурсов — это имя проекта с добавлением **rg**. Чтобы было проще [удалить ресурсы, созданные при работе с этим руководством](#clean-up-resources), используйте то же имя проекта и имя группы ресурсов при [развертывании следующего шаблона](#deploy-the-template).
+* Имя секрета по умолчанию — **vmAdminPassword**. Оно жестко запрограммировано в шаблоне.
+* Чтобы шаблон мог получить секрет, необходимо включить политику доступа к хранилищу ключей, представленную параметром **Включить доступ к Azure Resource Manager для развертывания шаблонов**. В шаблоне эта политика включена. Подробные сведения об этой политике доступа см. в разделе о [развертывании хранилищ ключей и секретов](./resource-manager-keyvault-parameter.md#deploy-key-vaults-and-secrets).
 
-2. Введите или выберите следующие значения.  Не выбирайте **Купить** после ввода значений.
+У шаблона есть выходное значение с именем **keyVaultId**. Запишите его. Вам понадобиться этот идентификатор при развертывании виртуальной машины. Формат идентификатора ресурса выглядит следующим образом:
 
-    ![Шаблон Resource Manager на портале интеграции развертывания Key Vault](./media/resource-manager-tutorial-use-key-vault/resource-manager-tutorial-create-key-vault-portal.png)
+```json
+/subscriptions/<SubscriptionID>/resourceGroups/mykeyvaultdeploymentrg/providers/Microsoft.KeyVault/vaults/<KeyVaultName>
+```
 
-    * **Подписка**. Выберите нужную подписку Azure.
-    * **Группа ресурсов**. Укажите уникальное имя. Запишите это имя, так как вы будете использовать ту же группу ресурсов для развертывания виртуальной машины в следующем сеансе. Размещение хранилища ключей и виртуальной машины в той же группе ресурсов облегчает очистку ресурса в конце этого руководства.
-    * **Расположение**. Выберите расположение.  Расположение по умолчанию: **Центральная часть США**.
-    * **Имя Key Vault** . Укажите уникальное имя. 
-    * **Идентификатор клиента**. Функция шаблона автоматически получает идентификатор клиента.  Не изменяйте значение по умолчанию.
-    * **Ad User Id** (Идентификатор пользователя AD). Введите идентификатор объекта пользователя Azure AD, который вы получили на последнем этапе.
-    * **Имя секрета.** Имя по умолчанию — **vmAdminPassword**. Если изменить имя секрета здесь, то нужно обновить имя секрета при развертывании виртуальной машины.
-    * **Значение секрета.** Введите секрет.  Секрет — это пароль, используемый для входа в виртуальную машину. Рекомендуется использовать созданный на последнем шаге пароль.
-    * **I agree to the terms and conditions state above** (Я принимаю указанные выше условия). Установите этот флажок.
-3. Выберите **Изменить параметры** в верхней части экрана, чтобы взглянуть на шаблон.
-4. Перейдите к строке 28 JSON-файла шаблона. Это определение ресурса хранилища ключей.
-5. Перейдите к строке 35:
+При копировании и вставке идентификатора он может быть разбит на несколько строк. Вам необходимо объединить строки и удалить лишние пробелы.
 
-    ```json
-    "enabledForTemplateDeployment": true,
-    ```
-    `enabledForTemplateDeployment` — это свойство Key Vault. Это свойство должно получить значение true, чтобы вы могли получить секреты из этого хранилища ключей во время развертывания.
-6. Перейдите к строке 89. Это определение секрета Key Vault.
-7. В нижней части страницы щелкните **Отклонить**. Не изменяйте ничего.
-8. Проверьте, указали ли вы все значения, как показано на предыдущем снимке экрана, а затем в нижней части страницы щелкните **Купить**.
-9. Выберите значок колокольчика (уведомление) в верхней части страницы, чтобы открыть область **Уведомления**. Подождите, пока ресурс не будет успешно развернут.
-10. Выберите **Перейти к группе ресурсов** в области **Уведомления**. 
-11. Выберите имя хранилища ключей, чтобы открыть его.
-12. Выберите **Секреты** в левой области. Секрет **vmAdminPassword** должен быть в списке.
-13. В левой области выберите **Политики доступа**. Имя (Active Directory) должно быть указано, в противном случае у вас нет разрешения на доступ к хранилищу ключей.
-14. Выберите **Щелкните, чтобы показать политики расширенного доступа**. Обратите внимание, что выбрано значение **Включить доступ к Azure Resource Manager для развертывания шаблонов**. Этот параметр — это еще одно условие, чтобы интеграция хранилища ключей работала.
+Чтобы проверить развертывание, выполните следующую команду PowerShell в той же панели оболочки, чтобы получить секрет в виде простого текста. Команду можно выполнить только в том же сеансе оболочки, так как она использует переменную $keyVaultName, определяемую в предыдущем скрипте PowerShell.
 
-    ![Шаблон Resource Manager: политики доступа Key Vault для интеграции](./media/resource-manager-tutorial-use-key-vault/resource-manager-tutorial-key-vault-access-policies.png)
-15. Выберите **Свойства** в левой области.
-16. Создайте копию **идентификатора ресурса**. Вам понадобиться этот идентификатор при развертывании виртуальной машины.  Формат идентификатора ресурса выглядит следующим образом:
+```azurepowershell
+(Get-AzKeyVaultSecret -vaultName $keyVaultName  -name "vmAdminPassword").SecretValueText
+```
 
-    ```json
-    /subscriptions/<SubscriptionID>/resourceGroups/mykeyvaultdeploymentrg/providers/Microsoft.KeyVault/vaults/<KeyVaultName>
-    ```
+Итак, вы подготовили хранилище ключей и секрет. В следующих разделах описано, как настроить существующий шаблон, чтобы получить секрет во время развертывания.
 
 ## <a name="open-a-quickstart-template"></a>Открытие шаблона быстрого запуска
 
@@ -142,6 +114,7 @@ ms.locfileid: "66015553"
     ```url
     https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-simple-windows/azuredeploy.json
     ```
+
 3. Чтобы открыть файл, выберите **Открыть**. Это тот же сценарий, который использовался в статье [Руководство. Создание шаблонов Azure Resource Manager с зависимыми ресурсами](./resource-manager-tutorial-create-templates-with-dependent-resources.md).
 4. Шаблоном определено пять ресурсов:
 
@@ -177,24 +150,28 @@ ms.locfileid: "66015553"
     },
     ```
 
-    Замените **идентификатор** идентификатором ресурса вашего хранилища ключей, созданным на предыдущем этапе.  
+    > [!IMPORTANT]
+    > Замените значение **идентификатора** идентификатором ресурса своего хранилища ключей, созданного на предыдущем этапе.
 
     ![Интеграция Key Vault и файла параметров развертывания виртуальной машины шаблона Resource Manager](./media/resource-manager-tutorial-use-key-vault/resource-manager-tutorial-create-vm-parameters-file.png)
 3. Укажите значения для таких свойств:
 
     * **adminUsername**. Имя учетной записи администратора виртуальной машины.
     * **dnsLabelPrefix**: назовите dnsLabelPrefix.
+
+    См. пример на предыдущем снимке экрана.
+
 4. Сохраните изменения.
 
 ## <a name="deploy-the-template"></a>Развертывание шаблона
 
-За инструкциями по развертыванию шаблона обратитесь к [этому разделу](./resource-manager-tutorial-create-templates-with-dependent-resources.md#deploy-the-template). Вам нужно отправить оба файла — **azuredeploy.json** и **azuredeploy.parameters.json** в Cloud Shell. После этого используйте следующий сценарий PowerShell для развертывания шаблона:
+За инструкциями по развертыванию шаблона обратитесь к [этому разделу](./resource-manager-tutorial-create-templates-with-dependent-resources.md#deploy-the-template). Вам нужно отправить оба файла — **azuredeploy.json** и **azuredeploy.parameters.json** в Cloud Shell. После этого выполните следующий скрипт PowerShell, чтобы развернуть шаблон:
 
 ```azurepowershell
-$resourceGroupName = Read-Host -Prompt "Enter the Resource Group name"
-$location = Read-Host -Prompt "Enter the location (i.e. centralus)"
+$projectName = Read-Host -Prompt "Enter the same project name that is used for creating the key vault"
+$location = Read-Host -Prompt "Enter the same location that is used for creating the key vault (i.e. centralus)"
+$resourceGroupName = "${projectName}rg"
 
-New-AzResourceGroup -Name $resourceGroupName -Location $location
 New-AzResourceGroupDeployment `
     -ResourceGroupName $resourceGroupName `
     -TemplateFile "$HOME/azuredeploy.json" `
@@ -208,7 +185,7 @@ New-AzResourceGroupDeployment `
 После успешного развертывания виртуальной машины протестируйте вход в систему с помощью пароля, сохраненного в хранилище ключей.
 
 1. Откройте [портал Azure](https://portal.azure.com).
-2. Выберите **Группы ресурсов**/**Имя_вашей_группы_ресурсов >**/**simpleWinVM**
+2. Выберите **Группы ресурсов**/**Имя_вашей_группы_ресурсов >** /**simpleWinVM**
 3. В верхней части страницы выберите **Подключение**.
 4. Выберите **Скачать RDP-файл** и следуйте инструкциям, чтобы войти в виртуальную машину с помощью пароля, сохраненного в хранилище ключей.
 
@@ -216,10 +193,12 @@ New-AzResourceGroupDeployment `
 
 Если ресурсы Azure больше не нужны, их можно удалить. Для этого необходимо удалить группу ресурсов.
 
-1. На портале Azure в меню слева выберите **Группа ресурсов**.
-2. В поле **Filter by name** (Фильтровать по имени) введите имя группы ресурсов.
-3. Выберите имя группы ресурсов.  В группе ресурсов должно появится шесть ресурсов.
-4. В главном меню выберите **Удалить группу ресурсов**.
+```azurepowershell-interactive
+$projectName = Read-Host -Prompt "Enter the same project name that is used for creating the key vault"
+$resourceGroupName = "${projectName}rg"
+
+Remove-AzResourceGroup -Name $resourceGroupName
+```
 
 ## <a name="next-steps"></a>Дополнительная информация
 

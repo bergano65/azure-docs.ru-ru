@@ -5,21 +5,21 @@ services: container-service
 author: iainfoulds
 ms.service: container-service
 ms.topic: overview
-ms.date: 03/05/2019
+ms.date: 05/06/2019
 ms.author: iainfou
 ms.custom: mvc
-ms.openlocfilehash: a147d95701af166c650411a91fb24e3448cfec09
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: b14e4b452c1dcd92cc3e5447428c28f1d2c5b18e
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "59995036"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "65073816"
 ---
 # <a name="azure-kubernetes-service-aks"></a>Служба Azure Kubernetes (AKS)
 
 Служба Azure Kubernetes (AKS) упрощает развертывание управляемого кластера Kubernetes в Azure. AKS снижает сложность управления службой Kubernetes и связанные временные затраты, делегируя ответственность за большую их часть облаку Azure. Размещенная в Azure служба Kubernetes отвечает за критические задачи, в частности за мониторинг работоспособности и техническое обслуживание. Azure управляет мастером Kubernetes. Вы только управляете и обслуживаете узлы агентов. Как управляемая среда Kubernetes, AKS предоставляется бесплатно, оплачиваются только узлы агента в кластерах, а не мастера.
 
-С помощью Azure CLI или шаблона на основе параметров развертывания на портале Azure можно создать кластер AKS, например шаблоны Resource Manager и Terraform. При развертывании кластера AKS мастер Kubernetes и все узлы развертываются и настраиваются под ваши потребности. Дополнительные компоненты, например дополнительные сети, интеграция Azure Active Directory и мониторинг, можно также настроить во время развертывания.
+С помощью Azure CLI или шаблона на основе параметров развертывания на портале Azure можно создать кластер AKS, например шаблоны Resource Manager и Terraform. При развертывании кластера AKS мастер Kubernetes и все узлы развертываются и настраиваются под ваши потребности. Дополнительные компоненты, например дополнительные сети, интеграция Azure Active Directory и мониторинг, можно также настроить во время развертывания. Сейчас в AKS реализована предварительная версия поддержки контейнеров Windows Server.
 
 Дополнительные сведения о Kubernetes см. в статье о [ключевых концепциях Kubernetes для службы Azure Kubernetes (AKS)][concepts-clusters-workloads].
 
@@ -43,9 +43,9 @@ ms.locfileid: "59995036"
 
 Дополнительные сведения см. в разделе [Мониторинг работоспособности службы Azure Kubernetes (AKS) (предварительная версия)][container-health].
 
-## <a name="cluster-and-node"></a>Кластер и узел
+## <a name="clusters-and-nodes"></a>Кластеры и узлы
 
-Узлы AKS выполняются на виртуальных машинах Azure. Можно подключить хранилище к узлам и pod, обновить компоненты кластера и использовать GPU.
+Узлы AKS выполняются на виртуальных машинах Azure. Можно подключить хранилище к узлам и pod, обновить компоненты кластера и использовать GPU. AKS поддерживает кластеры Kubernetes, которые используют несколько пулов узлов для поддержки смешанных операционных систем и контейнеров Windows Server (в настоящее время доступна предварительная версия). Узлы Linux используют настроенный образ операционной системы Ubuntu, а узлы Windows Server — настроенный образ операционной системы Windows Server 2019.
 
 ### <a name="cluster-node-and-pod-scaling"></a>Масштабирование узла и pod кластера
 

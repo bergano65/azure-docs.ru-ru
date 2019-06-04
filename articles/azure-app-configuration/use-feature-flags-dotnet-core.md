@@ -14,12 +14,12 @@ ms.topic: tutorial
 ms.date: 04/19/2019
 ms.author: yegu
 ms.custom: mvc
-ms.openlocfilehash: 28ba4397ca5a5fd3c281555238fc7eec8a82943d
-ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
+ms.openlocfilehash: b0e48a0db63eded9e9c4921d33b03af39656ce0d
+ms.sourcegitcommit: 8c49df11910a8ed8259f377217a9ffcd892ae0ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65413672"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66299265"
 ---
 # <a name="tutorial-use-feature-flags-in-a-net-core-app"></a>Руководство по использованию флагов функций в приложении .NET Core
 
@@ -27,7 +27,7 @@ ms.locfileid: "65413672"
 
 В [этом кратком руководстве](./quickstart-feature-flag-aspnet-core.md) показано несколько способов добавления флагов функций в приложение ASP.NET Core. В этом руководстве они рассматриваются более подробно. Полную справочную документацию см. в [документации по управлению функциями ASP.NET Core](https://go.microsoft.com/fwlink/?linkid=2091410).
 
-Из этого руководства вы узнаете, как выполнять следующие задачи:
+Из этого учебника вы узнаете следующее:
 
 > [!div class="checklist"]
 > * Добавить флаги функций в ключевых частях приложения для управления доступностью функций.
@@ -66,7 +66,7 @@ public class Startup
 }
 ```
 
-При использовании в флагах функций фильтров вам необходимо включить дополнительную библиотеку и зарегистрировать ее. В приведенном ниже примере показано, как использовать встроенный фильтр функций под названием **PercentageFilter**.
+При использовании фильтров в флагах функций вам необходимо включить дополнительную библиотеку и зарегистрировать ее. В приведенном ниже примере показано, как использовать встроенный фильтр функций под названием **PercentageFilter**.
 
 ```csharp
 using Microsoft.FeatureManagement;
@@ -262,6 +262,6 @@ app.UseForFeature(featureName, appBuilder => {
 
 В этом руководстве вы узнали, как с помощью библиотек `Microsoft.FeatureManagement` реализовать флаги функций в приложении ASP.NET Core. Дополнительные сведения о поддержке управления функциями в службе "Конфигурация приложений" и ASP.NET Core см. по следующим ссылкам.
 
-* [Пример кода для флага функции ASP.NET Core]()
-* [Документация по Microsoft.FeatureManagement]()
+* [Пример кода для флага функции ASP.NET Core](/azure/azure-app-configuration/quickstart-feature-flag-aspnet-core)
+* [Документация по Microsoft.FeatureManagement](https://docs.microsoft.com/dotnet/api/microsoft.featuremanagement)
 * [Руководство по управлению флагами функций](./manage-feature-flags.md)

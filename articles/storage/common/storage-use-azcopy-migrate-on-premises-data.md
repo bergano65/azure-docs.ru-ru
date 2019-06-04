@@ -5,26 +5,21 @@ services: storage
 author: normesta
 ms.service: storage
 ms.topic: tutorial
-ms.date: 12/14/2017
+ms.date: 05/14/2019
 ms.author: normesta
 ms.reviewer: seguler
 ms.subservice: common
-ms.openlocfilehash: 5c10edc4f11aad23801045011b67592b6cc537e4
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: 64d79abd1e142a231c08e02e7d62e8bfbab7b90e
+ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65912146"
+ms.lasthandoff: 05/27/2019
+ms.locfileid: "66244741"
 ---
 #  <a name="tutorial-migrate-on-premises-data-to-cloud-storage-by-using-azcopy"></a>Руководство по Миграция локальных данных в службу хранилища Azure с помощью AzCopy
 
 Средство командной строки AzCopy принимает простые команды, позволяющие копировать данные в хранилища BLOB-объектов Azure, файлов Azure и таблиц Azure, а также из этих хранилищ. Команды рассчитаны на оптимальную производительность. С помощью AzCopy вы можете перемещать данные между файловой системой и учетной записью хранения или между разными учетными записями хранения. AzCopy может использоваться для копирования локальных данных в учетную запись хранения.
 
-Загрузите версию AzCopy, подходящую для вашей операционной системы:
-
-* [AzCopy для Linux](storage-use-azcopy-linux.md) создана на основе платформы .NET Core Framework. Она предназначена для платформы Linux и поддерживает параметры командной строки в стиле POSIX. 
-* [AzCopy для Windows](storage-use-azcopy.md) создана на основе платформы .NET Framework. Она предлагает параметры командной строки в стиле Windows. 
- 
 Из этого руководства вы узнаете, как выполнять следующие задачи:
 
 > [!div class="checklist"]
@@ -37,7 +32,7 @@ ms.locfileid: "65912146"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Чтобы выполнить инструкции из этого руководства, скачайте последнюю версию AzCopy для [Linux](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-linux#download-and-install-azcopy) или [Windows](https://aka.ms/downloadazcopy).
+Чтобы выполнить инструкции из этого руководства, скачайте последнюю версию AzCopy. См. подробнее о [начале работы с AzCopy](storage-use-azcopy-v10.md).
 
 Если вы работаете в Windows, вам потребуется средство [Schtasks](https://msdn.microsoft.com/library/windows/desktop/bb736357(v=vs.85).aspx), так как в этом руководстве оно используется для планирования задач. Пользователи Linux вместо этого будут использовать команду crontab.
 
@@ -45,77 +40,97 @@ ms.locfileid: "65912146"
 
 ## <a name="create-a-container"></a>Создание контейнера
 
-Первый шаг — создать контейнер, потому что большие двоичные объекты должны всегда загружаться в контейнер. Контейнеры выступают средством упорядочения групп больших двоичных объектов подобно тому, как папки используются для упорядочения файлов на компьютере. 
+Первый шаг — создать контейнер, потому что большие двоичные объекты должны всегда загружаться в контейнер. Контейнеры выступают средством упорядочения групп больших двоичных объектов подобно тому, как папки используются для упорядочения файлов на компьютере.
 
 Чтобы создать контейнер, сделайте следующее.
 
 1. Нажмите кнопку **Учетные записи хранения** на главной странице и выберите созданную учетную запись хранилища.
-2. Выберите **Большие двоичные объекты** в разделе **Службы**, а затем выберите **Контейнер**. 
+2. Выберите **Большие двоичные объекты** в разделе **Службы**, а затем выберите **Контейнер**.
 
    ![Создание контейнера](media/storage-azcopy-migrate-on-premises-data/CreateContainer.png)
  
 Имя контейнера должно начинаться с буквы или цифры. Эти имена могут содержать только буквы, цифры и знак дефиса (-). Дополнительные сведения об именовании больших двоичных объектов и контейнеров см. в статье [Naming and Referencing Containers, Blobs, and Metadata](/rest/api/storageservices/naming-and-referencing-containers--blobs--and-metadata) (Именование контейнеров, больших двоичных объектов и метаданных и ссылка на них).
 
+## <a name="download-azcopy"></a>Скачивание AzCopy
+
+Скачайте исполняемый файл AzCopy версии 10.
+
+- [Windows](https://aka.ms/downloadazcopy-v10-windows) (ZIP-файл)
+- [Linux](https://aka.ms/downloadazcopy-v10-linux) (TAR-файл)
+- [MacOS](https://aka.ms/downloadazcopy-v10-mac) (ZIP-файл)
+
+Поместите файл AzCopy в любое расположение на компьютере. Добавьте расположение файла в системную переменную пути, чтобы можно было ссылаться на этот исполняемый файл из любой папки на компьютере.
+
+## <a name="authenticate-with-azure-ad"></a>Аутентификация с помощью Azure AD
+
+Сначала назначьте своему удостоверению роль [участника для данных больших двоичных объектов хранилища](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#storage-queue-data-contributor). См. подробнее о [предоставлении доступа к большому двоичному объекту Azure и создании очереди данных с помощью управления доступом на основе ролей на портале Azure](https://docs.microsoft.com/azure/storage/common/storage-auth-aad-rbac-portal).
+
+Затем откройте командную строку, введите следующую команду и нажмите клавишу ВВОД.
+
+```azcopy
+azcopy login
+```
+
+Эта команда возвращает код проверки подлинности и URL-адрес веб-сайта. Откройте веб-сайт, укажите код и нажмите кнопку **Далее**.
+
+![Создание контейнера](media/storage-use-azcopy-v10/azcopy-login.png)
+
+Откроется окно входа. В этом окне войдите в свою учетную запись Azure с помощью соответствующих данных. Выполнив вход, можно закрыть окно браузера и начать работу с AzCopy.
+
 ## <a name="upload-contents-of-a-folder-to-blob-storage"></a>Отправка содержимого папки в хранилище BLOB-объектов
 
 С помощью AzCopy вы можете передать все файлы из определенной папки в [Windows](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy#upload-blobs-to-blob-storage) или [Linux](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy-linux#blob-download) в хранилище больших двоичных объектов. Чтобы передать все большие двоичные объекты, содержащиеся в папке, введите следующую команду AzCopy:
 
-# <a name="linuxtablinux"></a>[Linux](#tab/linux)
+```AzCopy
+azcopy copy "<local-folder-path>" "https://<storage-account-name>.<blob or dfs>.core.windows.net/<container-name>" --recursive=true
+```
 
-    azcopy \
-        --source /mnt/myfolder \
-        --destination https://myaccount.blob.core.windows.net/mycontainer \
-        --dest-key <key> \
-        --recursive
+* Замените заполнитель `<local-folder-path>` путем к папке, которая содержит файлы (например, `C:\myFolder` или `/mnt/myFolder`).
 
-# <a name="windowstabwindows"></a>[Windows](#tab/windows)
+* Замените заполнитель `<storage-account-name>` именем вашей учетной записи хранения.
 
-    AzCopy /Source:C:\myfolder /Dest:https://myaccount.blob.core.windows.net/mycontainer /DestKey:<key> /S
----
+* Замените заполнитель `<container-name>` именем созданного контейнера.
 
-Вместо `<key>` и `key` укажите ключ учетной записи. Ключ учетной записи вы можете узнать на портале Azure, выбрав пункт **Ключи доступа** в разделе **Параметры** для учетной записи хранения. Выберите ключ и вставьте его в команду AzCopy. Если указанный контейнер назначения не существует, AzCopy создаст его и передаст в него файл. В качестве исходного пути укажите путь к нужному каталогу данных, а в URL-адресе назначения замените **myaccount** именем учетной записи хранилища.
-
-Чтобы рекурсивно передать все содержимое определенного каталога в хранилище больших двоичных объектов, укажите параметр `--recursive` (для Linux) или `/S` (для Windows). При запуске с этими параметрами AzCopy передает все вложенные папки и файлы.
+Чтобы рекурсивно передать все содержимое определенного каталога в хранилище BLOB-объектов, укажите параметр `--recursive`. При запуске с этим параметром AzCopy передает все вложенные папки и файлы.
 
 ## <a name="upload-modified-files-to-blob-storage"></a>Отправка измененных файлов в хранилище BLOB-объектов
 
-Вы можете использовать AzCopy для [передачи файлов](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy#other-azcopy-features) с учетом времени их последнего изменения. Чтобы проверить этот режим, измените или создайте несколько тестовых файлов в исходном каталоге. Чтобы отправить только те файлы, которые обновлены или добавлены, укажите параметр `--exclude-older` (для Linux) или `/XO` (для Windows) в команде AzCopy.
+Вы можете использовать AzCopy для передачи файлов с учетом времени их последнего изменения. 
 
-Если вы хотите скопировать только те ресурсы, которые существуют в папке источника и отсутствуют в целевой папке, укажите параметры `--exclude-older` и `--exclude-newer` (для Linux) или `/XO` и `/XN` (для Windows) в команде AzCopy. AzCopy передаст только обновленные данные, учитывая отметки времени файлов.
+Чтобы проверить этот режим, измените или создайте несколько тестовых файлов в исходном каталоге. Затем выполните команду AzCopy `sync`.
 
-# <a name="linuxtablinux"></a>[Linux](#tab/linux)
+```AzCopy
+azcopy sync "<local-folder-path>" "https://<storage-account-name>.blob.core.windows.net/<container-name>" --recursive=true
+```
 
-    azcopy \
-    --source /mnt/myfolder \
-    --destination https://myaccount.blob.core.windows.net/mycontainer \
-    --dest-key <key> \
-    --recursive \
-    --exclude-older
+* Замените заполнитель `<local-folder-path>` путем к папке, которая содержит файлы (например, `C:\myFolder` или `/mnt/myFolder`).
 
-# <a name="windowstabwindows"></a>[Windows](#tab/windows)
+* Замените заполнитель `<storage-account-name>` именем вашей учетной записи хранения.
 
-    AzCopy /Source:C:\myfolder /Dest:https://myaccount.blob.core.windows.net/mycontainer /DestKey:<key> /S /XO
----
+* Замените заполнитель `<container-name>` именем созданного контейнера.
+
+См. подробнее о команде `sync` в руководстве по [синхронизации файлов](storage-use-azcopy-blobs.md#synchronize-files).
 
 ## <a name="create-a-scheduled-task"></a>Создание запланированной задачи
 
 Вы можете создать запланированную задачу или задание cron, которые выполняют скрипт с командой AzCopy. Этот скрипт обнаруживает и отправляет в облачное хранилище обновленные локальные данные через определенные промежутки времени.
 
-Скопируйте команду AzCopy в текстовый редактор. Замените значения параметров в команде AzCopy подходящими значениями. Сохраните файл AzCopy с именем `script.sh` (для Linux) или `script.bat` (для Windows).
+Скопируйте команду AzCopy в текстовый редактор. Замените значения параметров в команде AzCopy подходящими значениями. Сохраните файл AzCopy с именем `script.sh` (для Linux) или `script.bat` (для Windows). 
+
+В этих примерах используется имя папки `myFolder`, имя учетной записи хранения `mystorageaccount` и имя контейнера `mycontainer`.
 
 # <a name="linuxtablinux"></a>[Linux](#tab/linux)
 
-    azcopy --source /mnt/myfiles --destination https://myaccount.blob.core.windows.net/mycontainer --dest-key <key> --recursive --exclude-older --exclude-newer --verbose >> Path/to/logfolder/`date +\%Y\%m\%d\%H\%M\%S`-cron.log
+    azcopy sync "/mnt/myfiles" "https://mystorageaccount.blob.core.windows.net/mycontainer" --recursive=true
 
 # <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
-    cd C:\Program Files (x86)\Microsoft SDKs\Azure\AzCopy
-    AzCopy /Source: C:\myfolder  /Dest:https://myaccount.blob.core.windows.net/mycontainer /DestKey:<key> /V /XO /XN >C:\Path\to\logfolder\azcopy%date:~-4,4%%date:~-7,2%%date:~-10,2%%time:~-11,2%%time:~-8,2%%time:~-5,2%.log
+    azcopy sync "C:\myFolder" "https://mystorageaccount.blob.core.windows.net/mycontainer" --recursive=true
+
 ---
 
-AzCopy может выполняться в режиме подробных сведений, если указан параметр `--verbose` (для Linux) или `/V` (для Windows). Вывод перенаправляется в файл журнала.
-
 В этом руководстве мы применим [Schtasks](https://msdn.microsoft.com/library/windows/desktop/bb736357(v=vs.85).aspx) для создания в Windows запланированной задачи. Команда [Crontab](http://crontab.org/) позволяет создать задание cron в Linux.
+
  **Schtasks** позволяет администратору создавать, удалять, просматривать, изменять, выполнять или завершать запланированные задачи на локальном или удаленном компьютере. **Cron** в Linux и Unix дает пользователям возможность выполнять команды или скрипты в определенное время определенного дня с помощью [выражений cron](https://en.wikipedia.org/wiki/Cron#CRON_expression).
 
 # <a name="linuxtablinux"></a>[Linux](#tab/linux)
@@ -133,8 +148,10 @@ crontab -e
 
 Чтобы создать в Windows назначенную задачу, введите в командной строке или в PowerShell следующую команду:
 
+В этом примере предполагается, что скрипт размещен в корневом диске компьютера, но его можно разместить в любом удобном расположении.
+
 ```cmd
-schtasks /CREATE /SC minute /MO 5 /TN "AzCopy Script" /TR C:\Users\username\Documents\script.bat
+schtasks /CREATE /SC minute /MO 5 /TN "AzCopy Script" /TR C:\script.bat
 ```
 
 Эта команда использует следующие параметры:
@@ -147,17 +164,22 @@ schtasks /CREATE /SC minute /MO 5 /TN "AzCopy Script" /TR C:\Users\username\Docu
 
 ---
 
-Чтобы проверить правильность работы запланированных задач и (или) заданий cron, создайте в каталоге `myfolder` новые файлы. Подождите пять минут, чтобы новые файлы успели переместиться в учетную запись хранения. Перейдите в каталог журнала и проверьте содержимое журналов для запланированной задачи или задания cron.
+Чтобы проверить правильность работы запланированных задач и (или) заданий cron, создайте в каталоге `myFolder` новые файлы. Подождите пять минут, чтобы новые файлы успели переместиться в учетную запись хранения. Перейдите в каталог журнала и проверьте содержимое журналов для запланированной задачи или задания cron.
 
 ## <a name="next-steps"></a>Дополнительная информация
 
 Дополнительные сведения о способах перемещения данных из локальной среды в службу хранилища Azure и обратно см. по этой ссылке:
 
-> [!div class="nextstepaction"]
-> [Перемещение данных в службу хранилища Azure и обратно](https://docs.microsoft.com/azure/storage/common/storage-moving-data?toc=%2fazure%2fstorage%2ffiles%2ftoc.json)  
+* [Перемещение данных в службу хранилища Azure и обратно](https://docs.microsoft.com/azure/storage/common/storage-moving-data?toc=%2fazure%2fstorage%2ffiles%2ftoc.json)  
 
-Для получения дополнительных сведений об AzCopy выберите подходящую статью для своей операционной системы:
+См. подробнее об AzCopy:
 
-> [!div class="nextstepaction"]
-> [Перенос данных с помощью AzCopy для Windows](storage-use-azcopy.md)
-> [Перенос данных с помощью AzCopy для Linux](storage-use-azcopy-linux.md)
+* [Get started with AzCopy](storage-use-azcopy-v10.md) (Начало работы с AzCopy)
+
+* [Transfer data with AzCopy and blob storage](storage-use-azcopy-blobs.md) (Передача данных с помощью AzCopy и хранилища BLOB-объектов)
+
+* [Transfer data with AzCopy and file storage](storage-use-azcopy-files.md) (Передача данных с помощью AzCopy и хранилища файлов)
+
+* [Передача данных с помощью AzCopy и контейнеров Amazon S3](storage-use-azcopy-s3.md)
+ 
+* [Configure, optimize, and troubleshoot AzCopy](storage-use-azcopy-configure.md) (Настройка, оптимизация и устранение неполадок с AzCopy)

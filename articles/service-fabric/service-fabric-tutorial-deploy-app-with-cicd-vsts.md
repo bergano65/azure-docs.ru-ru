@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 12/02/2018
 ms.author: atsenthi
 ms.custom: mvc
-ms.openlocfilehash: c805d2bc03ad07635b01a5e978822ecab2425457
-ms.sourcegitcommit: c6dc9abb30c75629ef88b833655c2d1e78609b89
+ms.openlocfilehash: ba0975486039546d5be0f704fb617beb1a9e0908
+ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/29/2019
-ms.locfileid: "58668846"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66306892"
 ---
 # <a name="tutorial-deploy-an-application-with-cicd-to-a-service-fabric-cluster"></a>Руководство. Развертывание приложения с непрерывной интеграцией и развертыванием в кластере Service Fabric
 
@@ -47,7 +47,7 @@ ms.locfileid: "58668846"
 Перед началом работы с этим руководством выполните следующие действия:
 
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
-* [Установите Visual Studio 2017](https://www.visualstudio.com/), а также рабочие нагрузки **разработка Azure** и **ASP.NET и веб-разработка**.
+* [Установите Visual Studio 2019](https://www.visualstudio.com/), а также рабочие нагрузки **Разработка для Azure** и **ASP.NET и разработка веб-приложений**.
 * [Установите пакет SDK для Service Fabric](service-fabric-get-started.md)
 * Создайте кластер Service Fabric с Windows, например с помощью [этого руководства](service-fabric-tutorial-create-vnet-and-windows-cluster.md).
 * Создание [организации Azure DevOps](https://docs.microsoft.com/azure/devops/organizations/accounts/create-organization-msa-or-work-student). Это позволяет создать проект в Azure DevOps и использовать Azure Pipelines.
@@ -86,7 +86,7 @@ git clone https://github.com/Azure-Samples/service-fabric-dotnet-quickstart
 
 ## <a name="configure-continuous-delivery-with-azure-pipelines"></a>Настройка непрерывной поставки с помощью Azure Pipelines
 
-Конвейер сборки Azure Pipelines описывает рабочий процесс, включающий набор последовательно выполняемых шагов сборки. Создайте конвейер сборки, который создает пакет приложения Service Fabric и другие артефакты для развертывания в кластере Service Fabric. Дополнительные сведения [о конвейерах сборки в Azure Pipelines](https://www.visualstudio.com/docs/build/define/create). 
+Конвейер сборки Azure Pipelines описывает рабочий процесс, состоящий из набора последовательно выполняемых шагов сборки. Создайте конвейер сборки, который создает пакет приложения Service Fabric и другие артефакты для развертывания в кластере Service Fabric. Дополнительные сведения [о конвейерах сборки в Azure Pipelines](https://www.visualstudio.com/docs/build/define/create). 
 
 Конвейер выпуска Azure Pipelines описывает рабочий процесс, развертывающий пакет приложения в кластере. При совместном использовании конвейер сборки и конвейер выпуска выполняют весь рабочий процесс от получения файлов с исходным кодом до запуска приложения в кластере. См. дополнительные сведения о [конвейерах выпуска Azure Pipelines](https://www.visualstudio.com/docs/release/author-release-definition/more-release-definition).
 
@@ -134,7 +134,7 @@ git clone https://github.com/Azure-Samples/service-fabric-dotnet-quickstart
 
 Нажмите кнопку **Добавить**, чтобы сохранить подключение кластера.
 
-Затем добавьте в конвейер артефакт сборки, чтобы для конвейера выпуска были доступны выходные данные сборки. Выберите **Конвейер** и **Артефакты**->**+ Добавить**.  В поле **Источник (определение сборки)** выберите созданный ранее конвейер сборки.  Щелкните **Добавить**, чтобы сохранить артефакт сборки.
+Затем добавьте в конвейер артефакт сборки, чтобы для конвейера выпуска были доступны выходные данные сборки. Выберите **Конвейер** и **Артефакты**-> **+ Добавить**.  В поле **Источник (определение сборки)** выберите созданный ранее конвейер сборки.  Щелкните **Добавить**, чтобы сохранить артефакт сборки.
 
 ![Добавление артефакта][add-artifact]
 
@@ -191,6 +191,7 @@ git clone https://github.com/Azure-Samples/service-fabric-dotnet-quickstart
 > * Автоматическое развертывание и обновление приложения
 
 Перейдите к следующему руководству:
+> [!div class="nextstepaction"]
 > [Настройка мониторинга и диагностики приложения](service-fabric-tutorial-monitoring-aspnet.md)
 
 <!-- Image References -->

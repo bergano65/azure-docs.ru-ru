@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 05/20/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b7a2d793a1fbd68d6a71f48b556a77ddcaaaf111
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: 93a1ad1f9fbc01cd06b3aaffc8a718634e8454d6
+ms.sourcegitcommit: 8e76be591034b618f5c11f4e66668f48c090ddfd
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66112149"
+ms.lasthandoff: 05/29/2019
+ms.locfileid: "66357032"
 ---
 # <a name="tutorial-integrate-displayr-with-azure-active-directory"></a>Руководство по Интеграция Displayr с Azure Active Directory
 
@@ -91,11 +91,11 @@ ms.locfileid: "66112149"
 
    ![Ссылка для скачивания сертификата](common/certificatebase64.png)
 
-1. Приложение Displayr ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Щелкните значок **Изменить** , чтобы открыть диалоговое окно "Атрибуты пользователя".
+1. Приложение Displayr ожидает проверочные утверждения SAML в определенном формате, который требует добавить настраиваемые сопоставления атрибутов в конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию. Нажмите кнопку **Изменить**, чтобы открыть диалоговое окно "Атрибуты пользователя".
 
     ![image](common/edit-attribute.png)
 
-1. В дополнение к описанному выше приложение Displayr ожидает несколько дополнительных атрибутов в ответе SAML. В разделе **Утверждения и атрибуты пользователя** в диалоговом окне **Утверждения групп (предварительная версия)**  выполните следующие действия:
+1. В дополнение к описанному выше приложение Displayr ожидает несколько дополнительных атрибутов в ответе SAML. В разделе**Утверждения и атрибуты пользователя** в диалоговом окне **Утверждения групп (предварительная версия)** выполните следующие действия:
 
     a. Щелкните **значок ручки** рядом с параметром **Группы, возвращенные в утверждении**.
 
@@ -131,15 +131,15 @@ ms.locfileid: "66112149"
 
 4. Щелкните **Settings** (Параметры), а затем выберите **Account** (Учетная запись).
 
-    ![Параметр Configuration](./media/displayr-tutorial/config01.png)
+    ![Конфигурация](./media/displayr-tutorial/config01.png)
 
 5. Выберите вкладку **Settings** (Параметры) в верхнем меню и прокрутите вниз страницы, чтобы выбрать **Configure Single Sign On (SAML)** (Настройка единого входа (SAML)).
 
-    ![Параметр Configuration](./media/displayr-tutorial/config02.png)
+    ![Конфигурация](./media/displayr-tutorial/config02.png)
 
 6. На странице **Single Sign On (SAML)** (Единый вход (SAML)) выполните следующие действия:
 
-    ![Параметр Configuration](./media/displayr-tutorial/config03.png)
+    ![Конфигурация](./media/displayr-tutorial/config03.png)
 
     a. Установите флажок **Enable Single Sign On (SAML)** (Включить единый вход (SAML)).
 
