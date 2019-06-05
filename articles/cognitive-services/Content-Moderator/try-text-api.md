@@ -8,17 +8,17 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: content-moderator
 ms.topic: conceptual
-ms.date: 04/30/2019
-ms.openlocfilehash: edf4a3e9d9e9b51ac44f839cababa9d14bc0d17a
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.date: 05/29/2019
+ms.openlocfilehash: 21209548d1cfe7b6eebb1757e817a12c797e78a9
+ms.sourcegitcommit: 6932af4f4222786476fdf62e1e0bf09295d723a1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65228050"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66688838"
 ---
 # <a name="moderate-text-from-the-api-console"></a>Модерация текста с помощью консоли API
 
-Используйте [API модерации текста](https://westus.dev.cognitive.microsoft.com/docs/services/57cf753a3f9b070c105bd2c1/operations/57cf753a3f9b070868a1f66f) в Azure Content Moderator для проверки содержимого текста. Операция проверяет содержимое ненормативной и сравнивает содержимое с пользовательским и общим списков запрещенных данных.
+Используйте [API модерации текста](https://westus.dev.cognitive.microsoft.com/docs/services/57cf753a3f9b070c105bd2c1/operations/57cf753a3f9b070868a1f66f) в Azure Content Moderator проверять содержимое текста для ненормативной лексики и сопоставить ее с пользовательским и общим списки.
 
 ## <a name="get-your-api-key"></a>Получение ключа API
 
@@ -72,7 +72,7 @@ Also, 999-99-9999 looks like a social security number (SSN).
 
 ## <a name="analyze-the-response"></a>Анализ ответа
 
-Приведенный ниже ответ показывает различные важные сведения из API. Он содержит потенциальное наличие ненормативной лексики, личных сведений, результаты классификации (предварительная версия) и вариант автозамены.
+Приведенный ниже ответ показывает различные важные сведения из API. Он содержит ненормативную лексику, персональные данные, классификации (Предварительная версия) и версии исправлены автоматически.
 
 > [!NOTE]
 > Функция машинной классификации находится в режиме предварительной версии и поддерживает только английский язык.
