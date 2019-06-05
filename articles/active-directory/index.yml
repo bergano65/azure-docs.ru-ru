@@ -1,0 +1,264 @@
+### YamlMime:Hub
+title: Документация Azure Active Directory
+summary: Azure Active Directory (Azure AD) — это мультитенантная облачная служба управления удостоверениями и доступом.
+brand: azure
+metadata:
+  title: Документация по Azure Active Directory. Руководства и справочник по API
+  description: Azure Active Directory (Azure AD) — это мультитенантный облачный каталог и служба управления удостоверениями корпорации Майкрософт, которая объединяет базовые службы каталогов, функции управления доступом к приложениям и защиты идентификации в одно решение.
+  author: mtillman
+  manager: daveba
+  ms.service: active-directory
+  ms.topic: hub-page
+  ms.date: 04/25/2019
+  ms.author: mtillman
+  ms.collection: M365-identity-device-management
+highlightedContent:
+  items:
+  - title: Что такое Azure AD?
+    itemType: overview
+    url: /azure/active-directory/fundamentals/active-directory-whatis
+  - title: Новые возможности в Azure AD
+    itemType: whats-new
+    url: /azure/active-directory/fundamentals/whats-new
+  - title: Назначение ролей пользователям
+    itemType: how-to-guide
+    url: /azure/active-directory/fundamentals/active-directory-users-assign-role-azure-portal
+  - title: Создание группы и добавление участников
+    itemType: how-to-guide
+    url: /azure/active-directory/fundamentals/add-users-azure-active-directory
+  - title: Контрольный список для развертывания Azure AD
+    itemType: concept
+    url: /azure/active-directory/fundamentals/active-directory-deployment-checklist-p2
+  - title: Добавление подписки к арендатору
+    itemType: how-to-guide
+    url: /azure/active-directory/fundamentals/active-directory-how-subscriptions-associated-directory
+conceptualContent:
+  items:
+  - title: Управление приложениями
+    links:
+    - url: /azure/active-directory/manage-apps/what-is-single-sign-on
+      itemType: concept
+      text: Что собой представляет единый вход?
+    - url: /azure/active-directory/manage-apps/user-provisioning
+      itemType: tutorial
+      text: Автоматическая подготовка пользователей
+    - url: /azure/active-directory/manage-apps/application-proxy
+      itemType: concept
+      text: Прокси приложения для локальных приложений
+    footerLink:
+      url: /azure/active-directory/manage-apps/index
+      text: Дополнительные сведения
+  - title: Аутентификация
+    links:
+    - url: /azure/active-directory/authentication/concept-mfa-howitworks
+      itemType: concept
+      text: Принцип работы. Многофакторная идентификация Azure
+    - url: /azure/active-directory/authentication/concept-sspr-howitworks
+      itemType: concept
+      text: Самостоятельный сброс пароля в Azure AD
+    - url: /azure/active-directory/authentication/concept-password-ban-bad
+      itemType: concept
+      text: Защита паролей Azure AD
+    footerLink:
+      url: /azure/active-directory/authentication/index
+      text: Дополнительные сведения
+  - title: Категория "бизнес — бизнес" (B2B)
+    links:
+    - url: /azure/active-directory/b2b/what-is-b2b
+      itemType: overview
+      text: Что собой представляет Azure AD B2B?
+    - url: /azure/active-directory/b2b/add-users-administrator
+      itemType: how-to-guide
+      text: Добавление гостевых пользователей на портале
+    - url: /azure/active-directory/b2b/o365-external-user
+      itemType: concept
+      text: Общий доступ в Office 365 и B2B
+    footerLink:
+      url: /azure/active-directory/b2b/index
+      text: Дополнительные сведения
+  - title: Категория "бизнес — потребитель" (B2C)
+    links:
+    - url: /azure/active-directory-b2c/active-directory-b2c-overview
+      itemType: overview
+      text: Что собой представляет Azure AD B2C?
+    - url: /azure/active-directory-b2c/tutorial-create-tenant
+      itemType: tutorial
+      text: Создание клиента Azure AD B2C
+    - url: /azure/active-directory-b2c/active-directory-b2c-get-started-custom
+      itemType: how-to-guide
+      text: Пользовательские политики в Azure AD B2C
+    footerLink:
+      url: /azure/active-directory-b2c/index
+      text: Дополнительные сведения
+  - title: условный доступ;
+    links:
+    - url: /azure/active-directory/conditional-access/overview
+      itemType: overview
+      text: Что собой представляет условный доступ
+    - url: /azure/active-directory/conditional-access/app-based-mfa
+      itemType: quickstart
+      text: Требование многофакторной проверки подлинности для конкретных приложений
+    - url: /azure/active-directory/conditional-access/location-condition
+      itemType: concept
+      text: Условия на основе расположения
+    footerLink:
+      url: /azure/active-directory/conditional-access/index
+      text: Дополнительные сведения
+  - title: Разработчики
+    links:
+    - url: /azure/active-directory/develop/about-microsoft-identity-platform
+      itemType: overview
+      text: Общие сведения о платформе удостоверений Майкрософт
+    - url: /azure/active-directory/develop/v2-oauth2-auth-code-flow
+      itemType: concept
+      text: Поток кода авторизации OAuth 2.0
+    - url: /azure/active-directory/develop/quickstart-register-app
+      itemType: quickstart
+      text: Регистрация приложения с помощью платформы удостоверений Майкрософт
+    footerLink:
+      url: /azure/active-directory/develop/index
+      text: Дополнительные сведения
+  - title: Управление устройствами
+    links:
+    - url: /azure/active-directory/devices/overview
+      itemType: overview
+      text: Что собой представляет управление устройством?
+    - url: /azure/active-directory/devices/hybrid-azuread-join-plan
+      itemType: how-to-guide
+      text: Планирование гибридного присоединения к Azure AD
+    - url: /azure/active-directory/devices/azureadjoin-plan
+      itemType: how-to-guide
+      text: Планирование присоединения к Azure AD
+    footerLink:
+      url: /azure/active-directory/devices/index
+      text: Дополнительные сведения
+  - title: Доменные службы
+    links:
+    - url: /azure/active-directory-domain-services/active-directory-ds-overview
+      itemType: overview
+      text: Что такое доменные службы Azure AD?
+    - url: /azure/active-directory-domain-services/active-directory-ds-getting-started
+      itemType: quickstart
+      text: Включение доменных служб Azure AD
+    - url: /azure/active-directory-domain-services/active-directory-ds-admin-guide-administer-group-policy
+      itemType: how-to-guide
+      text: Администрирование групповой политики
+    footerLink:
+      url: /azure/active-directory-domain-services/index
+      text: Дополнительные сведения
+  - title: Пользователи Enterprise
+    links:
+    - url: /azure/active-directory/users-groups-roles/groups-create-rule
+      itemType: how-to-guide
+      text: Создание динамической группы
+    - url: /azure/active-directory/users-groups-roles/groups-settings-v2-cmdlets
+      itemType: how-to-guide
+      text: PowerShell для групп Azure AD
+    - url: /azure/active-directory/users-groups-roles/directory-service-limits-restrictions
+      itemType: reference
+      text: Ограничения службы Azure AD
+    footerLink:
+      url: /azure/active-directory/users-groups-roles/index
+      text: Дополнительные сведения
+  - title: Гибридное удостоверение
+    links:
+    - url: /azure/active-directory/hybrid/whatis-hybrid-identity
+      itemType: overview
+      text: Что собой представляет гибридная идентификация
+    - url: /azure/active-directory/hybrid/how-to-connect-sso
+      itemType: how-to-guide
+      text: Единый вход с использованием Azure AD Connect
+    - url: /azure/active-directory/hybrid/how-to-connect-install-custom
+      itemType: how-to-guide
+      text: Выборочная установка Azure AD Connect
+    footerLink:
+      url: /azure/active-directory/hybrid/index
+      text: Дополнительные сведения
+  - title: Identity Governance
+    links:
+    - url: /azure/active-directory/governance/create-access-review
+      itemType: how-to-guide
+      text: Создание проверки доступа
+    - url: /azure/active-directory/governance/perform-access-review
+      itemType: how-to-guide
+      text: Запуск проверки доступа
+    - url: /azure/active-directory/conditional-access/terms-of-use
+      itemType: how-to-guide
+      text: Обязательное применение условий использования
+    footerLink:
+      url: /azure/active-directory/governance/index
+      text: Дополнительные сведения
+  - title: Защита идентификации
+    links:
+    - url: /azure/active-directory/identity-protection/overview
+      itemType: overview
+      text: Что собой представляет защита идентификации?
+    - url: /azure/active-directory/identity-protection/quickstart-sign-in-risk-policy
+      itemType: quickstart
+      text: Блокировка доступа при обнаружении риска для безопасности сеанса
+    - url: /azure/active-directory/identity-protection/howto-unblock-user
+      itemType: how-to-guide
+      text: Как разблокировать пользователей
+    footerLink:
+      url: /azure/active-directory/identity-protection/index
+      text: Дополнительные сведения
+  - title: Управляемые удостоверения для ресурсов Azure
+    links:
+    - url: /azure/active-directory/managed-identities-azure-resources/tutorial-windows-vm-access-sql
+      itemType: tutorial
+      text: Доступ к SQL Azure с помощью виртуальной машины Windows
+    - url: /azure/active-directory/managed-identities-azure-resources/how-to-use-vm-token
+      itemType: how-to-guide
+      text: Использование виртуальной машины Azure для получения токена
+    - url: /azure/active-directory/managed-identities-azure-resources/services-support-managed-identities
+      itemType: concept
+      text: Службы с поддержкой управляемых удостоверений
+    footerLink:
+      url: /azure/active-directory/managed-identities-azure-resources/index
+      text: Дополнительные сведения
+  - title: Управление привилегированными пользователями (PIM)
+    links:
+    - url: /azure/active-directory/privileged-identity-management/pim-getting-started
+      itemType: how-to-guide
+      text: Начало работы с PIM
+    - url: /azure/active-directory/privileged-identity-management/pim-how-to-activate-role
+      itemType: how-to-guide
+      text: Активация ролей каталога
+    - url: /azure/active-directory/privileged-identity-management/pim-how-to-add-role-to-user
+      itemType: how-to-guide
+      text: Назначение ролей каталога
+    footerLink:
+      url: /azure/active-directory/privileged-identity-management/index
+      text: Дополнительные сведения
+  - title: Отчеты и мониторинг
+    links:
+    - url: /azure/active-directory/reports-monitoring/concept-audit-logs
+      itemType: concept
+      text: Журналы аудита
+    - url: /azure/active-directory/reports-monitoring/concept-sign-ins
+      itemType: concept
+      text: Журналы входа
+    - url: /azure/active-directory/reports-monitoring/reference-sign-ins-error-codes
+      itemType: reference
+      text: Справочник по кодам ошибок при входе
+    footerLink:
+      url: /azure/active-directory/reports-monitoring/index
+      text: Дополнительные сведения
+additionalContent:
+  sections:
+  - items:
+    - title: Microsoft 365
+      summary: Изучите Microsoft 365, полнофункциональное решение, которое включает Azure AD.
+      url: https://docs.microsoft.com/microsoft-365/
+    - title: Azure AD PowerShell
+      summary: Узнайте, как установить и использовать модуль Azure AD PowerShell.
+      url: https://docs.microsoft.com/powershell/module/azuread/
+    - title: Команды Azure CLI для Azure AD
+      summary: Команды Azure AD можно найти в справочнике по CLI.
+      url: https://docs.microsoft.com/cli/azure/ad
+ms.openlocfilehash: 1a019b58d4c2f1e5569cc4e8dd9109e08f313d6c
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
+ms.translationtype: HT
+ms.contentlocale: ru-RU
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66481871"

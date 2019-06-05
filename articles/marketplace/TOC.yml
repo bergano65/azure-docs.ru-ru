@@ -470,8 +470,12 @@
           href: ./partner-center-portal/manage-account.md
         - name: Поиск или создание учетной записи компании
           href: ./partner-center-portal/company-work-accounts.md
+        - name: Перенос учетной записи из CPP в Центр партнеров
+          href: ./partner-center-portal/account-migration-from-cpp-to-pc.md
     - name: Создание нового предложения
       items:
+        - name: Контрольный список для создания предложений
+          href: ./partner-center-portal/offer-creation-checklist.md
         - name: Создание предложения SaaS
           href: ./partner-center-portal/create-new-saas-offer.md
         - name: API исполнения SaaS

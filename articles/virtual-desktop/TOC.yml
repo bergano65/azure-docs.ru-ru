@@ -64,6 +64,8 @@
       href: troubleshoot-client-connection.md
     - name: "Виртуальный рабочий стол Windows\_— PowerShell"
       href: troubleshoot-powershell.md
+    - name: Диагностика проблем с производительностью графической обработки
+      href: remotefx-graphics-performance-counters.md
 - name: Справочные материалы
   items:
     - name: PowerShell

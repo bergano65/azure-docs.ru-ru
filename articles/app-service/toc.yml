@@ -19,6 +19,16 @@
       href: app-service-web-get-started-dotnet-framework.md
     - name: Создание приложения Node.js
       href: app-service-web-get-started-nodejs.md
+    - name: Создание приложения Node.js с помощью Visual Studio Code
+      items:
+        - name: Начало работы
+          href: tutorial-javascript-vscode-get-started.md
+        - name: Создание приложения
+          href: tutorial-javascript-vscode-create-app.md
+        - name: Развертывание веб-сайта
+          href: tutorial-javascript-vscode-deploy-app.md
+        - name: Просмотр журналов
+          href: tutorial-javascript-vscode-tail-logs.md
     - name: Создание приложения PHP
       href: app-service-web-get-started-php.md
     - name: Создание приложения Java
@@ -55,7 +65,7 @@
       href: app-service-web-tutorial-auth-aad.md
 - name: Примеры
   items:
-    - name: Azure CLI
+    - name: "Azure\_CLI"
       href: samples-cli.md
     - name: Azure PowerShell
       href: samples-powershell.md
@@ -78,8 +88,12 @@
           href: overview-patch-os-runtime.md
         - name: Атрибуты безопасности
           href: app-service-security-attributes.md
+    - name: Функции сетей
+      href: networking-features.md
     - name: Входящие и исходящие IP-адреса
       href: overview-inbound-outbound-ips.md
+    - name: Интеграция с виртуальной сетью
+      href: web-sites-integrate-with-vnet.md
     - name: Гибридные подключения
       href: app-service-hybrid-connections.md
     - name: Интеграция диспетчера трафика
@@ -98,8 +112,6 @@
           href: web-sites-php-configure.md
         - name: Настройка Java
           href: configure-language-java.md
-        - name: Подключение к локальным ресурсам
-          href: web-sites-integrate-with-vnet.md
     - name: Развертывание в Azure
       items:
         - name: Развертывание приложения
@@ -238,7 +250,7 @@
           href: troubleshoot-dotnet-visual-studio.md
         - name: Устранение неполадок с приложением Node.js
           href: app-service-web-nodejs-best-practices-and-troubleshoot-guide.md
-        - name: "Устранение неполадок в HTTP\_502 и\_503"
+        - name: "Устранение неполадок в HTTP\_502 и 503"
           href: troubleshoot-http-502-http-503.md
         - name: Устранение проблем с производительностью
           href: troubleshoot-performance-degradation.md

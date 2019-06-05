@@ -7,34 +7,10 @@
 - name: Краткие руководства
   expanded: true
   items:
-    - name: Создание кластера и базы данных
-      items:
-        - name: Портал Azure
-          href: create-cluster-database-portal.md
-        - name: Инфраструктура CLI Azure
-          href: create-cluster-database-cli.md
-        - name: PowerShell
-          href: create-cluster-database-powershell.md
-        - name: 'C#'
-          href: create-cluster-database-csharp.md
-        - name: Python
-          href: create-cluster-database-python.md
-    - name: Прием данных
-      items:
-        - name: "Потоковая передача данных\_— концентратор событий"
-          href: ingest-data-event-hub.md
-        - name: "Потоковая передача данных\_— Сетка событий"
-          href: ingest-data-event-grid.md
-        - name: "Потоковая передача данных\_— Kafka"
-          href: ingest-data-kafka.md
-        - name: "Пакетная обработка данных\_— Python"
-          href: python-ingest-data.md
-        - name: "Пакетная обработка данных\_— пакет SDK для Node"
-          href: node-ingest-data.md
-        - name: "Пакетная обработка данных\_— пакет SDK для .NET\_Standard"
-          href: net-standard-ingest-data.md
-        - name: "Пакетная обработка данных\_— Logstash"
-          href: ingest-data-logstash.md
+    - name: "Создание кластера и базы данных\_— портал Azure"
+      href: create-cluster-database-portal.md
+    - name: Принятие демонстрационных данных
+      href: ingest-sample-data.md
     - name: Запрос данных
       items:
         - name: Веб-интерфейс
@@ -52,12 +28,38 @@
     - name: Общие сведения о приеме данных
       displayName: 'pipelines, connectors, plugins, Python, .NET, Java, Node, REST'
       href: ingest-data-overview.md
+    - name: Обзор визуализации данных
+      href: viz-overview.md
 - name: Практические руководства
   items:
-    - name: Начало работы
+    - name: Создание кластера и базы данных
       items:
-        - name: Принятие демонстрационных данных
-          href: ingest-sample-data.md
+        - name: Инфраструктура CLI Azure
+          href: create-cluster-database-cli.md
+        - name: PowerShell
+          href: create-cluster-database-powershell.md
+        - name: 'C#'
+          href: create-cluster-database-csharp.md
+        - name: Python
+          href: create-cluster-database-python.md
+    - name: Прием данных
+      items:
+        - name: Концентратор событий
+          href: ingest-data-event-hub.md
+        - name: Сетка событий Azure
+          href: ingest-data-event-grid.md
+        - name: Kafka
+          href: ingest-data-kafka.md
+        - name: Python
+          href: python-ingest-data.md
+        - name: Пакет SDK для Node
+          href: node-ingest-data.md
+        - name: Пакет SDK для .NET Standard
+          href: net-standard-ingest-data.md
+        - name: Logstash
+          href: ingest-data-logstash.md
+        - name: Копирование данных с помощью Фабрики данных Azure
+          href: data-factory-load-data.md
     - name: Развертывание
       items:
         - name: Задание DevOps
@@ -82,10 +84,14 @@
               href: power-bi-imported-query.md
             - name: Запросы SQL
               href: power-bi-sql-query.md
+        - name: Соединитель ODBC
+          href: connect-odbc.md
         - name: Sisense
           href: sisense.md
         - name: Grafana
           href: grafana.md
+        - name: Tableau
+          href: tableau.md
     - name: Управление
       items:
         - name: Управление разрешениями базы данных
@@ -104,7 +110,7 @@
       items:
         - name: Мониторинг работоспособности кластера с использованием метрик
           href: using-metrics.md
-    - name: Работа с другими средствами
+    - name: Интеграция с другими средствами
       items:
         - name: Соединитель Apache Spark
           href: spark-connector.md
@@ -112,10 +118,6 @@
           href: connect-from-databricks.md
         - name: Анализ данных в Jupyter Notebook и Kqlmagic
           href: kqlmagic.md
-        - name: Копирование данных с помощью Фабрики данных Azure
-          href: data-factory-load-data.md
-        - name: Подключение с помощью ODBC
-          href: connect-odbc.md
     - name: Устранение неполадок
       items:
         - name: Создание кластера

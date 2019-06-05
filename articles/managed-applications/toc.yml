@@ -39,6 +39,8 @@
           href: create-uidefinition-overview.md
         - name: Тестирование интерфейса портала
           href: test-createuidefinition.md
+        - name: Запрос JIT-доступа
+          href: request-just-in-time-access.md
         - name: Обновление управляемых ресурсов
           href: update-managed-resources.md
         - name: Публикация определения приложения с помощью портала
@@ -51,6 +53,8 @@
       items:
         - name: Мониторинг управляемого приложения
           href: monitor-managed-application-portal.md
+        - name: Утверждение JIT-доступа
+          href: approve-just-in-time-access.md
 - name: Справочные материалы
   items:
     - name: "Azure\_CLI"

@@ -4,11 +4,11 @@
   items:
     - name: Что такое Azure Maps?
       href: about-azure-maps.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   items:
     - name: Создание веб-приложения
       href: quick-demo-map-app.md
-- name: Учебники
+- name: Руководства
   items:
     - name: Учебные материалы по веб-пакетам SDK
       items:
@@ -164,6 +164,8 @@
       items:
         - name: Управление картами
           href: 'https://docs.microsoft.com/javascript/api/azure-maps-javascript/'
+        - name: Инструменты для рисования
+          href: 'https://docs.microsoft.com/javascript/api/azure-maps-drawing-tools/'
         - name: Модуль службы
           href: 'https://docs.microsoft.com/javascript/api/azure-maps-rest/'
     - name: Шаблон Resource Manager
@@ -176,7 +178,7 @@
       href: 'https://azure.microsoft.com/pricing/details/azure-maps'
     - name: Калькулятор цен
       href: 'https://azure.microsoft.com/pricing/calculator/'
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-maps'
     - name: Форум MSDN
       href: 'https://social.msdn.microsoft.com/Forums/azure/home?forum=azurelbs'
@@ -186,7 +188,7 @@
       href: glossary.md
     - name: Обновления службы
       href: 'https://azure.microsoft.com/updates'
-    - name: Центр разработчика IoT Azure
+    - name: Центр разработчиков Azure IoT
       href: 'https://azure.microsoft.com/develop/iot/'
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/?category=iot'
@@ -208,15 +210,15 @@
           href: /azure/iot-hub
         - name: Служба подготовки устройств к добавлению в Центр Интернета вещей
           href: /azure/iot-dps
-        - name: Карты
+        - name: Maps
           href: /azure/azure-maps
-        - name: Пакеты SDK службы
+        - name: Пакеты SDK для служб
           href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks'
-        - name: Аналитика временных рядов Azure
+        - name: Аналитика временных рядов
           href: /azure/time-series-insights
     - name: IoT Edge
       items:
         - name: IoT Edge
           href: /azure/iot-edge
-        - name: Пакеты SDK для устройств IoT
+        - name: Пакеты SDK для устройств Интернета вещей
           href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks'

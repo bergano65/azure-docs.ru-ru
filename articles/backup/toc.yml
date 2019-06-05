@@ -13,6 +13,9 @@
       href: quick-backup-vm-powershell.md
     - name: Резервное копирование виртуальной машины с помощью интерфейса командной строки
       href: quick-backup-vm-cli.md
+    - name: "Резервное копирование виртуальной машины\_— шаблон Resource Manager"
+      displayName: ARM
+      href: quick-backup-vm-template.md
 - name: Руководства
   items:
     - name: Резервное копирование виртуальных машин Azure в нужном масштабе
@@ -249,6 +252,8 @@
           href: troubleshoot-azure-files.md
         - name: "SQL\_Server"
           href: backup-sql-server-azure-troubleshoot.md
+        - name: Состояние системы
+          href: backup-azure-system-state-troubleshoot.md
     - name: Мониторинг рабочих нагрузок Azure Backup
       items:
         - name: Использование портала Azure

@@ -74,7 +74,11 @@
         - name: Настройка шифрования токенов SAML (предварительная версия)
           href: howto-saml-token-encryption.md
     - name: Единый вход
-      href: what-is-single-sign-on.md
+      items:
+        - name: Что собой представляет единый вход
+          href: what-is-single-sign-on.md
+        - name: Планирование развертывания единого входа
+          href: plan-sso-deployment.md
     - name: Порталы пользователей
       href: end-user-experiences.md
 - name: Практические руководства
@@ -93,7 +97,9 @@
           href: application-proxy-configure-for-claims-aware-applications.md
         - name: Регистрация соединителя (автоматическая установка)
           href: application-proxy-register-connector-powershell.md
-        - name: Настройка собственных клиентских приложений
+        - name: Предоставление мобильным и классическим приложениям доступа к локальным API-интерфейсам
+          href: application-proxy-secure-api-access.md
+        - name: Настройка клиентских мобильных и классических приложений
           href: application-proxy-configure-native-client-application.md
         - name: Настройка пользовательской домашней страницы
           href: application-proxy-configure-custom-home-page.md

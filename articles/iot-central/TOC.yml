@@ -105,6 +105,8 @@
           href: howto-configure-homepage.md
         - name: Настройка пользовательского интерфейса приложения
           href: howto-customize-ui.md
+        - name: Использование шаблонов приложений
+          href: howto-use-app-templates.md
         - name: Управление с помощью портала Azure
           href: howto-manage-iot-central-from-portal.md
         - name: Управление с помощью Azure CLI
@@ -141,9 +143,9 @@
           href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks'
         - name: Аналитика временных рядов
           href: /azure/time-series-insights
-    - name: Edge
+    - name: IoT Edge
       items:
-        - name: IoT Edge
+        - name: Azure IoT Edge
           href: /azure/iot-edge
         - name: Пакеты SDK для устройств Интернета вещей
           href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks'

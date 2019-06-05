@@ -4,11 +4,11 @@
   items:
     - name: Что такое Azure Front Door Service?
       href: front-door-overview.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   items:
     - name: Создание профиля Front Door
       href: quickstart-create-front-door.md
-- name: Учебники
+- name: Руководства
   items:
     - name: Добавление личного домена в службу Front Door
       href: front-door-custom-domain.md
@@ -28,7 +28,7 @@
       href: front-door-caching.md
     - name: Геофильтрация
       href: front-door-geo-filtering.md
-    - name: Пробы работоспособности.
+    - name: Пробы работоспособности
       href: front-door-health-probes.md
     - name: Подбор правила маршрутизации для запроса в службе Front Door
       href: front-door-route-matching.md
@@ -70,13 +70,15 @@
           href: waf-front-door-create-portal.md
         - name: "Настройка политики WAF\_— Azure PowerShell"
           href: waf-front-door-custom-rules-powershell.md
+        - name: Настройка защиты от ботов
+          href: waf-front-door-policy-configure-bot-protection.md
         - name: Настройка кода отклика
           href: waf-front-door-configure-custom-response-code.md
         - name: Настройка ограничений IP-адресов
           href: waf-front-door-configure-ip-restriction.md
         - name: "Настройка ограничения скорости\_— Azure PowerShell"
           href: waf-front-door-rate-limit-powershell.md
-- name: Часто задаваемые вопросы
+- name: Вопросы и ответы
   items:
     - name: Часто задаваемые вопросы о службе Front Door
       href: front-door-faq.md
@@ -84,11 +86,11 @@
       href: waf-faq.md
 - name: Справочные материалы
   items:
-    - name: Инфраструктура CLI Azure
+    - name: Azure CLI
       href: /cli/azure/ext/front-door/
     - name: Azure PowerShell
       href: /powershell/module/az.frontdoor
-    - name: REST API
+    - name: "REST\_API"
       href: /rest/api/frontdoor
 - name: Ресурсы
   items:

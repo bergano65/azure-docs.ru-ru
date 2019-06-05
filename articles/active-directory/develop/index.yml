@@ -1,213 +1,222 @@
-### YamlMime:YamlDocument
-documentType: LandingData
+### YamlMime:Landing
 title: "Платформа удостоверений Майкрософт (ранее\_— Azure Active Directory для разработчиков)"
-metadata:
-  title: Платформа удостоверений Майкрософт (Azure Active Directory для разработчиков)
-  description: 'Узнайте, как можно использовать платформу удостоверений Майкрософт для создания приложений, которые обеспечивают безопасный вход пользователей с любыми удостоверениями Майкрософт, получают маркеры для вызова Microsoft Graph, других интерфейсов API Майкрософт или интерфейсов API, которые создали разработчики.'
-  services: active-directory
-  author: CelesteDG
-  manager: CelesteDG
-  ms.service: active-directory
-  ms.subservice: develop
-  ms.tgt_pltfrm: na
-  ms.devlang: na
-  ms.topic: landing-page
-  ms.date: 05/07/2019
-  ms.author: celested
-abstract:
-  description: "Платформа удостоверений Майкрософт\_— это решение на основе платформы для разработчиков Azure Active Directory (Azure AD). С ее помощью разработчики могут создавать приложения, которые обеспечивают вход с использованием любых удостоверений Майкрософт и получение маркеров для вызова таких программных API-интерфейсов Майкрософт, как Microsoft Graph или других программных интерфейсов, созданных разработчиками. Это полнофункциональная платформа, состоящая из стандартных совместимых служб аутентификации OAuth\_2.0 и OpenID Connect, библиотек с открытым кодом, возможностей регистрации и настройки приложений, обзорной и справочной документации, примеров для быстрого запуска, примеров кода, материалов и практических руководств."
-  aside:
-    image:
-      alt: null
-      height: 110
-      src: ./media/index/identity-platform-thumbnail.png
-      width: 250
-    title: 'Общие сведения о платформе удостоверений Майкрософт (2:20)'
-    href: 'https://youtu.be/y_fgJAatVhk'
-    width: 250
-sections:
-  - items:
-      - type: list
-        style: cards
-        className: cardsM
-        columns: 3
-        items:
-          - href: /azure/active-directory/develop/about-microsoft-identity-platform
-            html: '<p>Узнайте больше о платформе удостоверений Майкрософт, а также о ее компонентах и возможностях.</p>'
-            image:
-              src: ./media/index/i_get-started.svg
-            title: Развитие платформы удостоверений Майкрософт
-          - href: /azure/active-directory/develop/v2-overview
-            html: '<p>Создавайте приложения, которые поддерживают вход во все удостоверения Майкрософт и получают маркеры для вызова API Microsoft, например Microsoft Graph, или API, созданные разработчиками.</p>'
-            image:
-              src: ./media/index/i_investigate.svg
-            title: Версия 2.0
-          - href: /azure/active-directory/develop/azure-ad-developers-guide/
-            html: '<p>Аутентификация удостоверений Azure AD (рабочие и учебные учетные записи) путем запроса маркеров у конечной точки Azure AD версии 1.0 с помощью библиотеки аутентификации Azure AD (ADAL), портала Azure и API Graph Azure AD.</p>'
-            image:
-              src: ./media/index/i_advanced.svg
-            title: Версия 1.0
-  - title: Сценарии приложений
-    items:
-      - type: paragraph
-        text: 'Работа с удостоверениями не обязательно должна быть сложной. Выберите подходящий сценарий. Для каждого сценария предоставляются общие сведения о регистрации приложения и инструкции по настройке кода приложения, примеры кода для получения маркера и вызова API, а также рекомендации по перемещению приложения в рабочую среду.'
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="/azure/active-directory/develop/scenario-spa-overview">Одностраничное приложение</a>
-          - html: '<a href="/azure/active-directory/develop/scenario-web-app-sign-user-overview">Веб-приложение, которое поддерживает вход пользователей</a>'
-          - html: '<a href="/azure/active-directory/develop/scenario-web-app-call-api-overview">Веб-приложение, которое вызывает веб-API</a>'
-          - html: <a href="/azure/active-directory/develop/scenario-protected-web-api-overview">Защищенный веб-API</a>
-          - html: '<a href="/azure/active-directory/develop/scenario-web-api-call-api-overview">Веб-API, который вызывает подчиненные веб-API</a>'
-          - html: '<a href="/azure/active-directory/develop/scenario-desktop-overview">Классическое приложение, которое вызывает веб-API</a>'
-          - html: <a href="/azure/active-directory/develop/scenario-daemon-overview">Управляющая программа</a>
-          - html: <a href="/azure/active-directory/develop/scenario-mobile-overview">Мобильное приложение</a>
-  - title: Краткие руководства
-    items:
-      - type: paragraph
-        text: 'Выполните эти краткие руководства, в которых описано, как использовать пример кода, который поддерживает вход пользователей, получает маркер доступа для вызова API Microsoft Graph или любого веб-API и многое другое.'
-      - type: table
-        style: dataMatrix
-        columns:
-          - image:
-              src: ./media/index/logo_js.svg
-            title: JavaScript
-          - image:
-              src: ./media/index/logo_NET.svg
-            title: ASP.NET
-          - image:
-              src: ./media/index/logo_NETcore.svg
-            title: ASP.NET Core
-          - image:
-              src: ./media/index/logo_nodejs.svg
-            title: Node.js
-          - image:
-              src: ./media/index/logo_android.svg
-            title: Android
-          - image:
-              src: ./media/index/logo_ios.svg
-            title: iOS
-          - image:
-              src: ./media/index/logo_Windows.svg
-            title: Универсальная платформа Windows
-          - image:
-              src: ./media/index/logo_Windows.svg
-            title: Платформа .NET для классических приложений Windows
-          - image:
-              src: ./media/index/logo_NET.svg
-            title: .NET
-        rows:
-          - title: Одностраничное приложение
-            values:
-              - href: quickstart-v2-javascript.md
-              - href: null
-              - href: null
-              - href: null
-              - href: null
-              - href: null
-              - href: null
-              - href: null
-              - href: null
-          - title: Веб-приложение
-            values:
-              - href: null
-              - href: quickstart-v2-aspnet-webapp.md
-              - href: quickstart-v2-aspnet-core-webapp.md
-              - href: 'https://github.com/AzureADQuickStarts/AppModelv2-WebApp-OpenIDConnect-nodejs'
-              - href: null
-              - href: null
-              - href: null
-              - href: null
-              - href: null
-          - title: Веб-API
-            values:
-              - href: null
-              - href: 'https://github.com/azureadquickstarts/appmodelv2-nativeclient-dotnet'
-              - href: 'https://azure.microsoft.com/resources/samples/active-directory-dotnet-native-aspnetcore-v2'
-              - href: null
-              - href: null
-              - href: null
-              - href: null
-              - href: null
-              - href: null
-          - title: Классические и мобильные приложения
-            values:
-              - href: null
-              - href: null
-              - href: null
-              - href: null
-              - href: quickstart-v2-android.md
-              - href: quickstart-v2-ios.md
-              - href: quickstart-v2-uwp.md
-              - href: quickstart-v2-windows-desktop.md
-              - href: null
-          - title: Управляющая программа
-            values:
-              - href: null
-              - href: null
-              - href: null
-              - href: null
-              - href: null
-              - href: null
-              - href: null
-              - href: null
-              - href: quickstart-v2-netcore-daemon.md
-  - title: Руководства
-    items:
-      - type: paragraph
-        text: 'Используйте платформу удостоверений Майкрософт и следуйте подробным процедурам на основе сценариев с распространенными задачами для разработчиков решений по аутентификации, включая реализацию поддержки входа пользователей, получение маркера доступа для вызова API Microsoft Graph и создание базового запроса к API Microsoft Graph.'
-      - type: table
-        style: dataMatrix
-        columns:
-          - image:
-              src: ./media/index/logo_js.svg
-            title: JavaScript
-          - image:
-              src: ./media/index/logo_NET.svg
-            title: ASP.NET
-          - image:
-              src: ./media/index/logo_android.svg
-            title: Android
-          - image:
-              src: ./media/index/logo_ios.svg
-            title: iOS
-          - image:
-              src: ./media/index/logo_Windows.svg
-            title: Универсальная платформа Windows
-          - image:
-              src: ./media/index/logo_Windows.svg
-            title: Платформа .NET для классических приложений Windows
-        rows:
-          - title: Одностраничное приложение
-            values:
-              - href: tutorial-v2-javascript-spa.md
-              - href: null
-              - href: null
-              - href: null
-              - href: null
-              - href: null
-          - title: Веб-приложение
-            values:
-              - href: null
-              - href: tutorial-v2-asp-webapp.md
-              - href: null
-              - href: null
-              - href: null
-              - href: null
-          - title: Классические и мобильные приложения
-            values:
-              - href: null
-              - href: null
-              - href: tutorial-v2-android.md
-              - href: tutorial-v2-ios.md
-              - href: tutorial-v2-windows-uwp.md
-              - href: tutorial-v2-windows-desktop.md
-  - title: Примеры
-    items:
-      - type: paragraph
-        text: 'Ознакомьтесь с примерами кода, соответствующими типу приложения, которое вы разрабатываете, а также используемым платформе и интерфейсам API.'
-      - type: list
-        style: unordered
-        items:
-          - html: <a href="/azure/active-directory/develop/sample-v2-code">Примеры кода версии 2.0 для сценариев</a>
-          - html: "<a href=\"/azure/active-directory/develop/sample-v1-code\">Примеры кода версии\_1.0 для сценариев</a>"
+summary: "Платформа удостоверений Майкрософт\_— это решение на основе платформы для разработчиков Azure Active Directory (Azure AD). С ее помощью разработчики могут создавать приложения, которые обеспечивают вход с использованием любых удостоверений Майкрософт и получение маркеров для вызова таких программных API-интерфейсов Майкрософт, как Microsoft Graph или других программных интерфейсов, созданных разработчиками. Это полнофункциональная платформа, состоящая из стандартных совместимых служб аутентификации OAuth\_2.0 и OpenID Connect, библиотек с открытым кодом, возможностей регистрации и настройки приложений, обзорной и справочной документации, примеров для быстрого запуска, примеров кода, материалов и практических руководств."
+landingContent:
+  - title: Общие сведения о платформе удостоверений Майкрософт
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Развитие платформы удостоверений Майкрософт
+            url: about-microsoft-identity-platform.md
+          - text: "Платформа удостоверений Майкрософт (версия\_2.0)"
+            url: v2-overview.md
+          - text: "Azure Active Directory для разработчиков (версия\_1.0)"
+            url: v1-overview.md
+      - linkListType: learn
+        links:
+          - text: "One Dev Minute\_— платформа удостоверений Майкрософт"
+            url: 'https://youtu.be/y_fgJAatVhk'
+  - title: Создание одностраничного приложения
+    linkLists:
+      - linkListType: get-started
+        links:
+          - text: Обзор сценария
+            url: scenario-spa-overview.md
+      - linkListType: quickstart
+        links:
+          - text: JavaScript
+            url: quickstart-v2-javascript.md
+      - linkListType: tutorial
+        links:
+          - text: JavaScript
+            url: tutorial-v2-javascript-spa.md
+      - linkListType: deploy
+        links:
+          - text: Тестирование интеграции приложений
+            url: identity-platform-integration-checklist.md
+      - linkListType: download
+        links:
+          - text: "Примеры\_— JavaScript, Angular"
+            url: 'sample-v2-code.md#single-page-applications-spa'
+          - text: "Пример\_— SPA и Azure\_AD\_B2C"
+            url: 'https://github.com/Azure-Samples/active-directory-b2c-javascript-msal-singlepageapp'
+  - title: 'Создание веб-приложения, которое поддерживает вход пользователей'
+    linkLists:
+      - linkListType: get-started
+        links:
+          - text: Обзор сценария
+            url: scenario-web-app-sign-user-overview.md
+      - linkListType: quickstart
+        links:
+          - text: ASP.NET Core
+            url: quickstart-v2-aspnet-core-webapp.md
+          - text: 'ASP.NET:'
+            url: quickstart-v2-aspnet-webapp.md
+      - linkListType: tutorial
+        links:
+          - text: ASP.NET Core
+            url: 'https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2'
+      - linkListType: deploy
+        links:
+          - text: Тестирование интеграции приложений
+            url: identity-platform-integration-checklist.md
+      - linkListType: download
+        links:
+          - text: "Примеры\_— ASP.NET Core, ASP.NET"
+            url: 'sample-v2-code.md#web-applications'
+  - title: 'Создание веб-приложения, которое вызывает веб-API'
+    linkLists:
+      - linkListType: get-started
+        links:
+          - text: Обзор сценария
+            url: scenario-web-app-call-api-overview.md
+      - linkListType: tutorial
+        links:
+          - text: ASP.NET Core
+            url: 'https://github.com/Azure-Samples/active-directory-aspnetcore-webapp-openidconnect-v2#scope-of-this-tutorial'
+      - linkListType: deploy
+        links:
+          - text: Тестирование интеграции приложений
+            url: identity-platform-integration-checklist.md
+      - linkListType: download
+        links:
+          - text: "Примеры\_— ASP.NET Core, ASP.NET, Node.js, Ruby"
+            url: 'sample-v2-code.md#web-applications'
+  - title: Создание защищенного веб-API
+    linkLists:
+      - linkListType: get-started
+        links:
+          - text: Обзор сценария
+            url: scenario-protected-web-api-overview.md
+      - linkListType: tutorial
+        links:
+          - text: Веб-API ASP.NET Core
+            url: 'https://github.com/Azure-Samples/active-directory-dotnet-native-aspnetcore-v2'
+      - linkListType: deploy
+        links:
+          - text: Тестирование интеграции приложений
+            url: identity-platform-integration-checklist.md
+      - linkListType: download
+        links:
+          - text: "Пример\_— ASP.NET"
+            url: 'https://github.com/Azure-Samples/active-directory-dotnet-native-aspnetcore-v2'
+  - title: 'Веб-API, которые вызывают веб-API'
+    linkLists:
+      - linkListType: get-started
+        links:
+          - text: Обзор сценария
+            url: scenario-web-api-call-api-overview.md
+      - linkListType: tutorial
+        links:
+          - text: 'Веб-API ASP.NET Core, который вызывает Microsoft Graph'
+            url: 'https://github.com/Azure-Samples/active-directory-dotnet-native-aspnetcore-v2/tree/master/2.%20Web%20API%20now%20calls%20Microsoft%20Graph'
+      - linkListType: deploy
+        links:
+          - text: Тестирование интеграции приложений
+            url: identity-platform-integration-checklist.md
+  - title: 'Создание классического приложения, которое вызывает веб-API'
+    linkLists:
+      - linkListType: get-started
+        links:
+          - text: Обзор сценария
+            url: scenario-desktop-overview.md
+      - linkListType: quickstart
+        links:
+          - text: Получение маркера и вызов API Microsoft Graph (классическое приложение Windows)
+            url: quickstart-v2-windows-desktop.md
+          - text: Получение маркера и вызов API Microsoft Graph (UWP)
+            url: quickstart-v2-uwp.md
+      - linkListType: tutorial
+        links:
+          - text: Вызов API Microsoft Graph (классическое приложение Windows)
+            url: tutorial-v2-windows-desktop.md
+          - text: Вызов API Microsoft Graph (UWP)
+            url: tutorial-v2-windows-uwp.md
+      - linkListType: deploy
+        links:
+          - text: Тестирование интеграции приложений
+            url: identity-platform-integration-checklist.md
+      - linkListType: download
+        links:
+          - text: "Пример\_— .NET, .NET Core"
+            url: 'sample-v2-code.md#desktop-and-mobile-public-client-apps'
+  - title: 'Создание управляющей программы, которая вызывает веб-API'
+    linkLists:
+      - linkListType: get-started
+        links:
+          - text: Обзор сценария
+            url: scenario-daemon-overview.md
+      - linkListType: quickstart
+        links:
+          - text: Получение маркера и вызов API Microsoft Graph (консоль .NET Core)
+            url: quickstart-v2-netcore-daemon.md
+          - text: Получение маркера и вызов API Microsoft Graph (веб-приложение ASP.NET)
+            url: 'https://github.com/Azure-Samples/ms-identity-aspnet-daemon-webapp'
+      - linkListType: deploy
+        links:
+          - text: Тестирование интеграции приложений
+            url: identity-platform-integration-checklist.md
+      - linkListType: download
+        links:
+          - text: "Примеры\_— консоль ASP.NET, веб-приложение ASP.NET"
+            url: 'sample-v2-code.md#daemon-applications'
+  - title: 'Создание мобильного приложения, которое вызывает веб-API'
+    linkLists:
+      - linkListType: get-started
+        links:
+          - text: Обзор сценария
+            url: scenario-mobile-overview.md
+      - linkListType: quickstart
+        links:
+          - text: Получение маркера и вызов API Microsoft Graph (Android)
+            url: quickstart-v2-android.md
+          - text: Получение маркера и вызов API Microsoft Graph (iOS)
+            url: quickstart-v2-ios.md
+          - text: Получение маркера и вызов API Microsoft Graph (Xamarin iOS и Android)
+            url: 'https://github.com/Azure-Samples/active-directory-xamarin-native-v2'
+      - linkListType: tutorial
+        links:
+          - text: Обеспечение входа пользователей и вызов API Microsoft Graph (Android)
+            url: tutorial-v2-android.md
+          - text: Обеспечение входа пользователей и вызов API Microsoft Graph (iOS)
+            url: tutorial-v2-ios.md
+      - linkListType: deploy
+        links:
+          - text: Тестирование интеграции приложений
+            url: identity-platform-integration-checklist.md
+      - linkListType: download
+        links:
+          - text: "Пример\_— Android, iOS, Xamarin"
+            url: 'sample-v2-code.md#desktop-and-mobile-public-client-apps'
+  - title: Вызов API Microsoft Graph
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Сведения о Microsoft Graph
+            url: 'https://docs.microsoft.com/graph/overview'
+      - linkListType: quickstart
+        links:
+          - text: Настройка и подготовка к работе за три минуты
+            url: 'https://developer.microsoft.com/graph/get-started'
+      - linkListType: learn
+        links:
+          - text: Использование API
+            url: 'https://docs.microsoft.com/graph/use-the-api'
+          - text: "REST API Microsoft Graph, версия\_1.0"
+            url: 'https://docs.microsoft.com/graph/api/overview?toc=.%2Fref%2Ftoc.json&view=graph-rest-1.0'
+          - text: 'REST API Microsoft Graph, бета-версия'
+            url: 'https://docs.microsoft.com/graph/api/overview?toc=.%2Fref%2Ftoc.json&view=graph-rest-beta'
+      - linkListType: deploy
+        links:
+          - text: Песочница Graph
+            url: 'https://developer.microsoft.com/graph/graph-explorer/'
+  - title: 'Создание приложения для клиентов, при входе в которое используются удостоверения социальных сетей и локальные удостоверения'
+    linkLists:
+      - linkListType: overview
+        links:
+          - text: Общие сведения об Azure AD B2C
+            url: 'https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-overview'
+      - linkListType: tutorial
+        links:
+          - text: "Добавление поставщиков удостоверений в приложения в Azure\_AD\_B2C"
+            url: 'https://docs.microsoft.com/azure/active-directory-b2c/tutorial-add-identity-providers'

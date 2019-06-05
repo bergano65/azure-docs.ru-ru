@@ -51,6 +51,8 @@
           href: event-hubs-capture-python.md
     - name: Потоковая передача данных в Центры событий для Apache Kafka
       href: event-hubs-quickstart-kafka-enabled-event-hubs.md
+    - name: Создание кластера ценовой категории "Выделенный"
+      href: event-hubs-dedicated-cluster-create-portal.md
 - name: Руководства
   items:
     - name: Визуализация аномальных данных в потоках данных Центров событий

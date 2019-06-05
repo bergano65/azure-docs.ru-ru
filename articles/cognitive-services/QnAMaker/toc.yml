@@ -96,9 +96,9 @@
         - name: Создание и публикация базы знаний
           href: Quickstarts/create-publish-knowledge-base.md
           displayName: 'create bot, bot, publish to bot, test, edit'
-        - name: Получение ответов
+        - name: Получение ответа с помощью метаданных
           href: How-To/metadata-generateanswer-usage.md
-          displayName: 'isTest, test, route, request, http, post, body, header, json, metadata, top, strictFilters, GenerateAnswer, API, answer'
+          displayName: 'isTest, test, route, request, http, post, body, header, json, metadata, top, strictFilters, GenerateAnswer, API, answer, RankerType, id, text, question, context'
         - name: Создание бота с базой знаний
           href: Tutorials/integrate-qnamaker-luis.md
         - name: Создание базы знаний на разных языках

@@ -1,55 +1,104 @@
-### YamlMime:YamlDocument
-documentType: LandingData
-title: Edge Интернета вещей Azure
-metadata:
-  title: 'Azure IoT Edge: руководства и справочник по API'
-  description: Развертывайте службы Azure и пользовательскую бизнес-логику на пограничных устройствах с помощью Azure IoT Edge.
-  author: kgremban
-  manager: philmea
-  ms.service: iot-edge
-  services: iot-edge
-  ms.topic: landing-page
-  ms.date: 03/13/2019
-  ms.author: kgremban
-abstract:
-  description: 'Azure IoT Edge — это служба Интернета вещей на основе Центра Интернета вещей. Эта служба предназначена для клиентов, которым необходимо анализировать данные на так называемых пограничных устройствах, а не в облаке. В результате перемещения части рабочей нагрузки в пограничную область устройства тратят меньше времени на отправку сообщений в облако и быстрее реагируют на изменения в состоянии.'
-  aside:
-    image:
-      alt: null
-      height: 110
-      src: ./media/index/iot-edge-thumbnail.png
-      width: 250
-    title: 'Создание интеллектуальной границы с помощью Azure IoT Edge (6:59)'
-    href: 'https://channel9.msdn.com/Shows/Internet-of-Things-Show/Creating-the-intelligent-edge-with-Azure-IoT-Edge'
-    width: 250
-sections:
-  - title: 5-минутные руководства по началу работы
-    items:
-      - type: paragraph
-        text: "Создайте виртуальную машину Azure, настройте ее для запуска в качестве устройства IoT\_Edge и разверните в ней код."
-      - type: list
-        style: icon48
-        items:
-          - image:
-              src: 'https://docs.microsoft.com/media/logos/logo_Windows.svg'
-            text: ' Windows'
-            href: /azure/iot-edge/quickstart
-          - image:
-              src: 'https://docs.microsoft.com/media/logos/logo_linux-color.svg'
-            text: Linux
-            href: /azure/iot-edge/quickstart-linux
-  - title: Пошаговые руководства
-    items:
-      - type: paragraph
-        text: 'Узнайте, как установить и настроить IoT Edge, развернуть модули и использовать службы Azure, например Stream Analytics и Пользовательскую службу визуального распознавания, на пограничных устройствах.'
-      - type: list
-        style: ordered
-        items:
-          - html: Настройка компьютера разработки и сведения о модулях IoT Edge для устройств <a href="/azure/iot-edge/tutorial-develop-for-linux">Linux</a> и <a href="/azure/iot-edge/tutorial-develop-for-windows">Windows</a>.
-          - html: 'Разработка пользовательских модулей кода для устройств Linux на <a href="/azure/iot-edge/tutorial-c-module">C</a>, <a href="/azure/iot-edge/tutorial-csharp-module">C#</a>, <a href="/azure/iot-edge/tutorial-python-module">Python</a>, <a href="/azure/iot-edge/tutorial-node-module">Node.js</a> и <a href="/azure/iot-edge/tutorial-java-module">Java</a>.'
-          - html: 'Разработка настраиваемых модулей кода для устройств Linux на <a href="/azure/iot-edge/tutorial-c-module-windows">C</a> и <a href="/azure/iot-edge/tutorial-csharp-module-windows">C#</a>.'
-          - html: <a href="/azure/iot-edge/tutorial-deploy-function">Фильтрация сообщений с помощью службы "Функции Azure"</a>
-          - html: '<a href="/azure/iot-edge/tutorial-deploy-stream-analytics">Определение средних значений с помощью решения Azure Stream Analytics, используемого в качестве модуля</a>'
-          - html: '<a href="/azure/iot-edge/tutorial-deploy-machine-learning">Оценка данных с помощью службы "Машинное обучение Azure", используемой в качестве модуля</a>'
-          - html: <a href="/azure/iot-edge/tutorial-deploy-custom-vision">Классификация изображений с использованием Пользовательской службы визуального распознавания в качестве модуля</a>
-          - html: <a href="/azure/iot-edge/tutorial-store-data-sql-server">Хранение данных в граничной системе с помощью SQL Server</a>
+### YamlMime:Landing
+title: Azure IoT Edge
+summary: 'Azure IoT Edge — это служба Интернета вещей на основе Центра Интернета вещей. Эта служба предназначена для клиентов, которым необходимо анализировать данные не в облаке, а на пограничных устройствах. В результате перемещения части рабочей нагрузки в пограничную область устройства тратят меньше времени на отправку сообщений в облако и быстрее реагируют на события.'
+landingContent:
+  - title: Разработка для устройств Linux
+    linkLists:
+      - linkListType: quickstart
+        links:
+          - text: Развертывание модуля IoT Edge на устройстве под управлением ОС Linux
+            url: quickstart-linux.md
+      - linkListType: tutorial
+        links:
+          - text: Разработка модулей IoT Edge для устройств Linux
+            url: tutorial-develop-for-linux.md
+      - linkListType: how-to-guide
+        links:
+          - text: Использование Visual Studio Code для разработки и отладки модулей
+            url: how-to-vs-code-develop-module.md
+  - title: Разработка для устройств Windows
+    linkLists:
+      - linkListType: quickstart
+        links:
+          - text: Развертывание модуля IoT Edge на устройстве с Windows
+            url: quickstart.md
+      - linkListType: tutorial
+        links:
+          - text: разработке модулей IoT Edge для устройств с Windows
+            url: tutorial-develop-for-windows.md
+      - linkListType: how-to-guide
+        links:
+          - text: "Использование Visual Studio\_2017 для разработки и отладки модулей"
+            url: how-to-visual-studio-develop-module.md
+  - title: Подготовка устройств IoT Edge
+    linkLists:
+      - linkListType: how-to-guide
+        links:
+          - text: "Установка IoT Edge при использовании Linux\_x64"
+            url: how-to-install-iot-edge-linux.md
+          - text: "Установка IoT Edge при использовании Linux\_ARM32"
+            url: how-to-install-iot-edge-linux-arm.md
+          - text: "Установка IoT Edge при использовании Windows\_x64"
+            url: how-to-install-iot-edge-windows.md
+          - text: Автоматическая подготовка устройств с Linux
+            url: how-to-auto-provision-simulated-device-linux.md
+          - text: Автоматическая подготовка устройств с Windows
+            url: how-to-auto-provision-simulated-device-windows.md
+  - title: Участие в сообществе разработчиков решений с открытым кодом
+    linkLists:
+      - linkListType: get-started
+        links:
+          - text: Репозиторий IoT Edge
+            url: 'https://github.com/Azure/iotedge'
+          - text: 'Проблемы с IoT Edge, о которых сообщили на сайте GitHub'
+            url: 'https://github.com/Azure/iotedge/issues'
+          - text: Последние выпуски и журналы изменений
+            url: 'https://github.com/Azure/azure-iotedge/releases'
+  - title: Использование устройств IoT Edge в качестве шлюзов
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Использование устройства IoT Edge в качестве шлюза
+            url: iot-edge-as-gateway.md
+      - linkListType: how-to-guide
+        links:
+          - text: Настройка прозрачного шлюза
+            url: how-to-create-transparent-gateway.md
+          - text: Подключение подчиненного устройства
+            url: how-to-connect-downstream-device.md
+  - title: Подготовка к рабочим сценариям
+    linkLists:
+      - linkListType: concept
+        links:
+          - text: Основные сведения об автоматическом развертывании
+            url: module-deployment-monitoring.md
+          - text: Поддержка платформ
+            url: support.md
+          - text: Контрольный список для развертывания в рабочей среде
+            url: production-checklist.md
+          - text: Основные сведения об использовании сертификатов IoT Edge
+            url: iot-edge-certs.md
+          - text: Стандарты безопасности для IoT Edge
+            url: security.md
+      - linkListType: how-to-guide
+        links:
+          - text: "Развертывание и мониторинг в требуемом масштабе с помощью Azure\_CLI"
+            url: how-to-deploy-monitor-cli.md
+          - text: Создание конвейера CI/CD с помощью Azure Pipelines
+            url: how-to-ci-cd.md
+      - linkListType: deploy
+        links:
+          - text: REST API для Центра Интернета вещей
+            url: 'https://docs.microsoft.com/rest/api/iothub/'
+  - title: Развертывание средств ИИ на пограничных устройствах
+    linkLists:
+      - linkListType: tutorial
+        links:
+          - text: Развертывание службы "Машинное обучение Azure" в качестве модуля IoT Edge
+            url: tutorial-deploy-machine-learning.md
+          - text: классификации изображений в пограничной системе с помощью Пользовательской службы визуального распознавания
+            url: tutorial-deploy-custom-vision.md
+      - linkListType: deploy
+        links:
+          - text: Модули Azure Cognitive Services можно найти в Azure Marketplace
+            url: 'https://azuremarketplace.microsoft.com/marketplace/apps/category/internet-of-things?subcategories=iot-edge-modules&search=azure%20cognitive%20services'

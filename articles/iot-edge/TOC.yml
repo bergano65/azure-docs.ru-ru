@@ -43,7 +43,7 @@
       items:
         - name: Фильтрация данных с помощью службы "Функции Azure"
           href: tutorial-deploy-function.md
-        - name: Определение средних значений с помощью ASA
+        - name: Определение средних значений с помощью Azure Stream Analytics
           href: tutorial-deploy-stream-analytics.md
         - name: Оценка данных с помощью Службы машинного обучения Azure
           href: tutorial-deploy-machine-learning.md
