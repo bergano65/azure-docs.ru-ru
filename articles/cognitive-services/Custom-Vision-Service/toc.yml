@@ -70,8 +70,6 @@
       href: 'https://go.microsoft.com/fwlink/?linkid=865446'
     - name: API прогнозирования Пользовательского визуального распознавания
       href: 'https://go.microsoft.com/fwlink/?linkid=865445'
-    - name: Глоссарий
-      href: glossary-of-terms.md
     - name: Пакеты SDK
       items:
         - name: .NET

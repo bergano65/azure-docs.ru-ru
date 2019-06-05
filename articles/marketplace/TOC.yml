@@ -58,8 +58,6 @@
         - name: Преимущества использования Marketplace
           href: ./gtm-your-marketplace-benefits.md
           items:
-            - name: Развитие бизнеса с помощью решений Майкрософт
-              href: ./gtm-promote-your-business.md
             - name: Предпочтительные решения
               href: ./preferred-solutions.md
             - name: Интегрированные решения

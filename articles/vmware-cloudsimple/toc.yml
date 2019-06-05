@@ -55,11 +55,11 @@
     - name: Учебники
       items:
         - name: Включение поставщика ресурсов
-          href: 'https://docs.azure.cloudsimple.com/enable-cloudsimple-service/'
+          href: enable-cloudsimple-service.md
         - name: Создание службы CloudSimple
-          href: 'https://docs.azure.cloudsimple.com/create-cloudsimple-service/'
+          href: create-cloudsimple-service.md
         - name: Доступ к порталу CloudSimple
-          href: 'https://docs.azure.cloudsimple.com/access-cloudsimple-portal/'
+          href: access-cloudsimple-portal.md
         - name: Управление узлами
           items:
             - name: Покупка узлов

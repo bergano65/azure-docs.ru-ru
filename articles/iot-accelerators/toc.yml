@@ -14,11 +14,11 @@
       items:
         - name: Выбор архитектуры
           href: iot-accelerators-remote-monitoring-architectural-choices.md
-    - name: Быстрое начало работы
+    - name: Краткие руководства
       items:
         - name: Пробное использование решения для удаленного мониторинга
           href: quickstart-remote-monitoring-deploy.md
-    - name: Учебники
+    - name: Руководства
       items:
         - name: Мониторинг устройств Интернета вещей
           href: iot-accelerators-remote-monitoring-monitor.md
@@ -139,7 +139,7 @@
           href: overview-opc-vault.md
         - name: Общие сведения о подключенной фабрике
           href: iot-accelerators-connected-factory-features.md
-    - name: Быстрое начало работы
+    - name: Краткие руководства
       items:
         - name: Пробное использование решения подключенной фабрики
           href: quickstart-connected-factory-deploy.md
@@ -147,16 +147,12 @@
       items:
         - name: Архитектура двойника OPC
           href: overview-opc-twin-architecture.md
-        - name: Архитектура подключенной фабрики
-          href: iot-accelerators-connected-factory-sample-walkthrough.md
     - name: Практические руководства
       items:
         - name: Подключенная фабрика
           items:
             - name: Использование панели мониторинга
               href: iot-accelerators-connected-factory-dashboard.md
-            - name: Развертывание шлюза
-              href: iot-accelerators-connected-factory-gateway-deployment.md
             - name: Использование издателя OPC
               href: 'https://github.com/Azure/iot-edge-opc-publisher/blob/master/README.md'
             - name: настройка акселератора решений;
@@ -191,11 +187,11 @@
   items:
     - name: Обзор
       href: iot-accelerators-device-simulation-overview.md
-    - name: Быстрое начало работы
+    - name: Краткие руководства
       items:
         - name: Пробное использование симулятора устройств
           href: quickstart-device-simulation-deploy.md
-    - name: Учебники
+    - name: Руководства
       items:
         - name: Создание и запуск модели
           href: iot-accelerators-device-simulation-create-simulation.md
@@ -223,7 +219,7 @@
   items:
     - name: Обзор
       href: iot-accelerators-predictive-walkthrough.md
-    - name: Быстрое начало работы
+    - name: Краткие руководства
       items:
         - name: Пробное использование решения прогнозного обслуживания
           href: quickstart-predictive-maintenance-deploy.md
@@ -265,15 +261,15 @@
           href: /azure/azure-maps
         - name: Аналитика временных рядов Azure
           href: /azure/time-series-insights
-    - name: Microsoft Edge
+    - name: Edge
       items:
         - name: IoT Edge
           href: /azure/iot-edge
-        - name: Пакеты SDK для устройств IoT
+        - name: Пакеты SDK для устройств Интернета вещей
           href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-device-sdks'
     - name: Stream Analytics
       href: /azure/stream-analytics/
-    - name: Центры событий;
+    - name: Центры событий
       href: /azure/event-hubs/
     - name: Машинное обучение
       href: /azure/machine-learning/
@@ -281,9 +277,9 @@
   items:
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/'
-    - name: Часто задаваемые вопросы
+    - name: Вопросы и ответы
       href: iot-accelerators-faq.md
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-iot-suite'
     - name: "Удаленный мониторинг (версия\_1)"
       href: 'https://docs.microsoft.com/previous-versions/azure/iot-suite/'

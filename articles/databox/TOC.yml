@@ -123,6 +123,10 @@
           items:
             - name: Что такое Data Box Heavy?
               href: data-box-heavy-overview.md
+        - name: Краткие руководства
+          items:
+            - name: Настройка (портал Azure)
+              href: data-box-heavy-quickstart-portal.md
         - name: Руководства
           items:
             - name: 1. Заказ
