@@ -5,14 +5,14 @@ author: hrasheed-msft
 ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: conceptual
-ms.date: 02/19/2019
+ms.date: 05/30/2019
 ms.author: hrasheed
-ms.openlocfilehash: 6452e73b2429ab89a466b1c3b59cc892eca31205
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: f381090e663923ec9f45fba03d0688c9879ab173
+ms.sourcegitcommit: ef06b169f96297396fc24d97ac4223cabcf9ac33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64707315"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66427382"
 ---
 # <a name="use-azure-data-lake-storage-gen2-with-azure-hdinsight-clusters"></a>Использование Azure Data Lake Storage 2-го поколения с кластерами Azure HDInsight
 
@@ -22,18 +22,18 @@ Azure Gen2 хранилища Озера данных — это служба х
 
 Gen2 хранилища Озера данных доступен в качестве хранилища для почти всех типов кластера HDInsight Azure как дополнительную учетную запись хранения и по умолчанию. Тем не менее, HBase, может иметь только одну учетную запись Gen2 хранилища Озера данных.
 
-> [!Note] 
+> [!Note]  
 > После выбора Gen2 хранилища Озера данных как к **тип первичного хранилища**, вы не выберете учетную запись Gen1 хранилища Озера данных как дополнительное хранилище.
 
 ## <a name="create-a-cluster-with-data-lake-storage-gen2-through-the-azure-portal"></a>Создание кластера с Gen2 хранилища Озера данных на портале Azure
 
 Чтобы создать кластер HDInsight, который использует Gen2 хранилища Озера данных для хранения, выполните следующие действия для настройки учетной записи Gen2 хранилища Озера данных.
 
-### <a name="create-a-user-managed-identity"></a>Создание пользовательского управляемого удостоверения
+### <a name="create-a-user-assigned-managed-identity"></a>Создание управляемого удостоверения, назначаемого пользователем
 
 Создайте управляемое удостоверение, назначаемое пользователем, если у вас его еще нет. См. статью [Создание, получение списка, удаление ролей и их назначение для управляемого удостоверения, назначаемого пользователем, с помощью портала Azure](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal.md#create-a-user-assigned-managed-identity). Дополнительные сведения об управляемых рабочих удостоверений в Azure HDInsight, см. в разделе [управляемые удостоверения в Azure HDInsight](hdinsight-managed-identities.md).
 
-![Создание управляемого удостоверения, назначаемого пользователем](./media/hdinsight-hadoop-data-lake-storage-gen2/create-user-assigned-managed-identity-portal.png)
+![Создание управляемого удостоверения, назначаемого пользователем](./media/hdinsight-hadoop-use-data-lake-storage-gen2/create-user-assigned-managed-identity-portal.png)
 
 ### <a name="create-a-data-lake-storage-gen2-account"></a>Создание учетной записи Azure Data Lake Storage 2-го поколения
 
@@ -41,7 +41,7 @@ Gen2 хранилища Озера данных доступен в качест
 
 ![Снимок экрана, на котором показано создание учетной записи хранения на портале Azure](./media/hdinsight-hadoop-data-lake-storage-gen2/azure-data-lake-storage-account-create-advanced.png)
 
-### <a name="setup-permissions-for-the-managed-identity-on-the-data-lake-storage-gen2-account"></a>Настроить разрешения для управляемого удостоверения учетной записи Gen2 хранилища Озера данных
+### <a name="set-up-permissions-for-the-managed-identity-on-the-data-lake-storage-gen2-account"></a>Настройка разрешений для управляемого удостоверения учетной записи Gen2 хранилища Озера данных
 
 Назначить управляемое удостоверение для **владельца данных хранилища BLOB-объектов** роли в учетной записи хранения. Дополнительные сведения см. в разделе [Управление правами доступа к данным в BLOB-объектах и очередях Azure с помощью RBAC (предварительная версия)](../storage/common/storage-auth-aad-rbac.md).
 

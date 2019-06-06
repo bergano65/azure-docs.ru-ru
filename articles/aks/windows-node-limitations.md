@@ -5,14 +5,14 @@ services: container-service
 author: tylermsft
 ms.service: container-service
 ms.topic: article
-ms.date: 05/06/2019
+ms.date: 05/31/2019
 ms.author: twhitney
-ms.openlocfilehash: 34ece6e49332f781f688a8741db3514faf8c9a25
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.openlocfilehash: 12fb9dc67e8afae3dcb9ade97dd61ab438e0fac5
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66304399"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66475405"
 ---
 # <a name="current-limitations-for-windows-server-node-pools-and-application-workloads-in-azure-kubernetes-service-aks"></a>Текущие ограничения для пулов узлов Windows Server и рабочих нагрузок приложений в службе Azure Kubernetes (AKS)
 
@@ -45,6 +45,7 @@ ms.locfileid: "66304399"
 Следующие дополнительные ограничения применяются к поддержка пула узлов Windows Server в AKS.
 
 - Кластер службы контейнеров AZURE всегда содержит пул узлов Linux в качестве первого узла пула. Этот первый узел под управлением Linux пул нельзя удалить, пока удаляется сам кластер AKS.
+- AKS, в настоящее время поддерживает только базовые load balancer, который разрешает только один внутренний пул, пул узлов Linux по умолчанию. В результате всегда будет исходящий трафик из модулей Windows [преобразуются в управляемые Azure общедоступный IP-адрес][azure-outbound-traffic]. Так как этот IP-адрес не настраивается, не сейчас невозможно добавить в список разрешений трафик, поступающий из модулей Windows. 
 - Кластерах AKS необходимо использовать (Дополнительно) сетевой модели Azure CNI.
     - Сети Kubenet (basic) не поддерживается. Не удается создать кластер AKS, использующий kubenet. Дополнительные сведения о различиях в моделях сетей см. в разделе [сети основные понятия для приложений в AKS][azure-network-models].
     - Модель сетевого Azure CNI требует дополнительного планирования и рекомендации по управлению IP-адресов. Дополнительные сведения о том, как следует планировать и внедрять Azure CNI см. в разделе [CNI Azure настройте сети в AKS][configure-azure-cni].
@@ -87,3 +88,4 @@ Kubernetes — Исторически ориентированных на Linux.
 [windows-node-cli]: windows-container-cli.md
 [aks-support-policies]: support-policies.md
 [aks-faq]: faq.md
+[azure-outbound-traffic]: ../load-balancer/load-balancer-outbound-connections.md#defaultsnat

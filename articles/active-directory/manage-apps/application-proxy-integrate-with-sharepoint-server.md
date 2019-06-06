@@ -16,12 +16,12 @@ ms.author: mimart
 ms.reviewer: japere
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9e491f0c452b7b51eac4e8cccab1cc7ed8430e49
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: c5eff7925599931104440213112ce288fd521b61
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65783448"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66473773"
 ---
 # <a name="enable-remote-access-to-sharepoint-with-azure-ad-application-proxy"></a>Настройка удаленного доступа к SharePoint с помощью прокси приложения Azure AD
 
@@ -114,8 +114,8 @@ setspn -S HTTP/SharePoint demo\spAppPoolAccount
 
 Итак, вы настроили ограниченное делегирование Kerberos, и теперь готовы настроить Azure Active Directory Application Proxy.
 
-1. Опубликуйте сайт SharePoint со следующими параметрами. Пошаговые инструкции см. в статье [Публикация приложений с помощью прокси приложения Azure AD](application-proxy-publish-azure-portal.md).
-   * **Внутренний URL-адрес**. Внутренний URL-адрес SharePoint, который был выбран ранее, например **<https://SharePoint/>**.
+1. Опубликуйте сайт SharePoint со следующими параметрами. Пошаговые инструкции см. в статье [Публикация приложений с помощью прокси приложения Azure AD](application-proxy-add-on-premises-application.md#add-an-on-premises-app-to-azure-ad).
+   * **Внутренний URL-адрес**. Внутренний URL-адрес SharePoint, который был выбран ранее, например **<https://SharePoint/>** .
    * **Метод предварительной проверки подлинности**. Azure Active Directory
    * **Перевод веб-страниц в заголовках**. НЕТ
 
@@ -129,7 +129,7 @@ setspn -S HTTP/SharePoint demo\spAppPoolAccount
    1. На странице приложения на портале выберите **Единый вход**.
    2. Для единого входа выберите режим **Встроенная проверка подлинности Windows**.
    3. Задайте для параметра "Внутреннее имя субъекта-службы приложения" значение, заданное ранее. В нашем примере это будет значение **HTTP/SharePoint**.
-   4. В поле "Делегированное удостоверение для входа" выберите **Имя локальной учетной записи управления лицензиями (SAM)**.
+   4. В поле "Делегированное удостоверение для входа" выберите **Имя локальной учетной записи управления лицензиями (SAM)** .
 
    ![Настройка встроенной проверки подлинности Windows для единого входа](./media/application-proxy-integrate-with-sharepoint-server/configure-iwa.png)
 
@@ -180,7 +180,7 @@ setspn -S HTTP/SharePoint demo\spAppPoolAccount
 
 3. Откройте консоль службы IIS.
 4. Разверните сервер в представлении дерева, разверните "Сайты", выберите узел "SharePoint – AAD Proxy" и щелкните **Привязки**.
-5. Выберите привязку https и щелкните **Изменить...**.
+5. Выберите привязку https и щелкните **Изменить...** .
 6. В поле сертификата SSL выберите сертификат **SharePoint** и щелкните ОК.
 
 Теперь вы можете получать внешний доступ к сайту SharePoint через прокси приложения Azure AD.

@@ -11,12 +11,12 @@ author: MayMSFT
 manager: cgronlun
 ms.reviewer: nibaccam
 ms.date: 05/21/2019
-ms.openlocfilehash: 949468dfe26b076b5c5cf5cab8bbdc2038c7bd2a
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: 021b9035b10ad5a08bca1842e8d0714b33c84271
+ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66165885"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66492435"
 ---
 # <a name="create-and-access-datasets-preview-in-azure-machine-learning"></a>Создание и доступ к наборам данных (Предварительная версия) в машинном обучении Azure
 
@@ -40,7 +40,7 @@ ms.locfileid: "66165885"
 
 * Подписка Azure. Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Службы машинного обучения Azure](https://aka.ms/AMLFree).
 
-* [Рабочей области службы машинного обучения Azure в рабочей области службы машинного обучения Azure](https://docs.microsoft.com/azure/machine-learning/service/setup-create-workspace)
+* [Рабочей области службы машинного обучения Azure](https://docs.microsoft.com/azure/machine-learning/service/setup-create-workspace)
 
 * [Azure Machine Learning и пакет SDK для Python, установленной](https://docs.microsoft.com/python/api/overview/azure/ml/install?view=azure-ml-py), который включает пакет наборы данных машинного обучения Azure.
 

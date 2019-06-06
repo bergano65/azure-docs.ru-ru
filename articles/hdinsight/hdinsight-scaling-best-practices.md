@@ -6,13 +6,13 @@ ms.author: ashish
 ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
-ms.date: 05/13/2019
-ms.openlocfilehash: 622261d0f7e602635aa6a638357278a9c63a6ecd
-ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
+ms.date: 06/03/2019
+ms.openlocfilehash: eb68421c4f62d94eedf266a0c34a0e276eacc4a6
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65990513"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66479282"
 ---
 # <a name="scale-hdinsight-clusters"></a>Масштабирование кластеров HDInsight
 
@@ -34,7 +34,7 @@ HDInsight обеспечивает гибкость, предоставляя в
 |[Интерфейс командной строки Azure](hdinsight-administer-use-command-line.md)|Изменение размера кластера Azure hdinsight \<Имя_кластера > \<счетчик целевых экземпляров > |
 |[портал Azure](https://portal.azure.com)|Откройте панель кластера HDInsight, выберите **размер кластера** в меню слева, а затем на панели размер кластера, введите количество рабочих узлов и выберите Save.|  
 
-![Изменить масштаб кластера](./media/hdinsight-scaling-best-practices/scale-cluster-blade.png)
+![Изменение масштаба кластера](./media/hdinsight-scaling-best-practices/scale-cluster-blade.png)
 
 С помощью любого из этих методов можно увеличивать или уменьшать масштаб кластера HDInsight за считанные минуты.
 
@@ -58,13 +58,12 @@ HDInsight обеспечивает гибкость, предоставляя в
 1. Вручную завершите заданий.
 1. После завершения операции масштабирования, повторно отправьте задания.
 
-Чтобы просмотреть список ожидающих и выполняет задания, можно использовать YARN **пользовательский Интерфейс ResourceManager**, сделав следующее:
+Чтобы просмотреть список ожидающих и выполняет задания, можно использовать YARN **пользовательского интерфейса диспетчера ресурсов**, сделав следующее:
 
-1. Войдите на [портал Azure](https://portal.azure.com).
-2. Слева, перейдите к **все службы** > **Analytics** > **кластеры HDInsight**, а затем выберите свой кластер.
-3. В главном представлении откройте **панели мониторинга кластера** > **Ambari домашней**. Введите свои учетные данные кластера.
-4. В пользовательском Интерфейсе Ambari выберите **YARN** в списке служб в меню слева.  
-5. На странице YARN выберите **быстрые ссылки** и наведите указатель мыши на активный головной узел, а затем выберите **пользовательский Интерфейс ResourceManager**.
+1. Из [портала Azure](https://portal.azure.com/), выберите свой кластер.  Инструкции см. в разделе [Отображение кластеров](./hdinsight-administer-use-portal-linux.md#showClusters). Кластер откроется на новой странице портала.
+2. В главном представлении откройте **панели мониторинга кластера** > **Ambari домашней**. Введите свои учетные данные кластера.
+3. В пользовательском Интерфейсе Ambari выберите **YARN** в списке служб в меню слева.  
+4. На странице YARN выберите **быстрые ссылки** и наведите указатель мыши на активный головной узел, а затем выберите **пользовательский Интерфейс ResourceManager**.
 
     ![Пользовательский интерфейс ResourceManager](./media/hdinsight-scaling-best-practices/resourcemanager-ui.png)
 
@@ -80,7 +79,7 @@ HDInsight обеспечивает гибкость, предоставляя в
 yarn application -kill <application_id>
 ```
 
-Например:
+Пример:
 
 ```bash
 yarn application -kill "application_1499348398273_0003"

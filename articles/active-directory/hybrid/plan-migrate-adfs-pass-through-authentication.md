@@ -1,5 +1,5 @@
 ---
-title: 'Azure AD Connect выполняет следующие функции: Переход с федеративной на сквозную проверку подлинности для Azure Active Directory | Документация Майкрософт'
+title: 'Azure AD Connect выполняет следующие функции: Перенос из федерации PTA для Azure AD'
 description: В этой статье представлены сведения о переводе среды гибридных удостоверений с федеративной проверки подлинности на сквозную.
 services: active-directory
 author: billmath
@@ -8,16 +8,16 @@ ms.reviewer: martincoetzer
 ms.service: active-directory
 ms.workload: identity
 ms.topic: article
-ms.date: 12/13/2018
+ms.date: 05/31/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bf0bb51470272099ed2824d0450082f93fe65f14
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: eb421442a7b45f3cd5925fd1475a0a69053c3113
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60382782"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66473382"
 ---
 # <a name="migrate-from-federation-to-pass-through-authentication-for-azure-active-directory"></a>Переход с федеративной на сквозную проверку подлинности для Azure Active Directory
 
@@ -75,7 +75,7 @@ ms.locfileid: "60382782"
 2. На странице **Дополнительные задачи** выберите **Просмотр текущей конфигурации**, а затем щелкните **Далее**.<br />
  
    ![Снимок экрана с параметром "Просмотр текущей конфигурации" на странице "Дополнительные задачи"](media/plan-migrate-adfs-pass-through-authentication/migrating-adfs-to-pta_image2.png)<br />
-3. Прокрутите страницу **Ознакомьтесь с решением** до раздела **Службы федерации Active Directory (AD FS)**.<br />
+3. Прокрутите страницу **Ознакомьтесь с решением** до раздела **Службы федерации Active Directory (AD FS)** .<br />
 
    * Если в этом разделе есть конфигурация AD FS, можно считать, что службы AD FS были изначально настроены с помощью Azure AD Connect. Вы можете преобразовать федеративные домены в управляемые с помощью параметра **Смена имени пользователя для входа** в Azure AD Connect. Дополнительные сведения об этом процессе см. в разделе **Вариант 1. Настройка сквозной проверки подлинности с помощью Azure AD Connect**.
    * Если службы федерации Active Directory не указаны в текущих параметрах, необходимо вручную преобразовать федеративные домены в управляемые с помощью PowerShell. Дополнительные сведения об этом процессе см. в разделе **Вариант 2. Переход с федеративной проверки подлинности на сквозную проверку подлинности с помощью Azure AD Connect и PowerShell**.
@@ -233,7 +233,7 @@ Get-MsolDomainFederationSettings -DomainName Contoso.com | fl *
 
 Вы можете изменить метод входа на сквозную проверку подлинности и включить эффективный единый вход двумя способами.
 
-#### <a name="option-a-configure-pass-through-authentication-by-using-azure-ad-connect"></a>Вариант А. Настройка сквозной проверки подлинности с помощью Azure AD Connect
+#### <a name="option-a-configure-pass-through-authentication-by-using-azure-ad-connect"></a>Вариант 1. Настройка сквозной проверки подлинности с помощью Azure AD Connect
 
 Используйте этот метод, только если среда AD FS была изначально настроена с помощью Azure AD Connect. Этот метод нельзя использовать, если среда AD FS *не была* изначально настроена с помощью Azure AD Connect.
 

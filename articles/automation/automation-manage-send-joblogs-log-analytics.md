@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 02/05/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 8672bc28ea5e8562472408810a38ea0de6778cfd
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: e0f2d3491db24ecbb49c189232dbc7f698e09fb1
+ms.sourcegitcommit: 087ee51483b7180f9e897431e83f37b08ec890ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65200618"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66430771"
 ---
 # <a name="forward-job-status-and-job-streams-from-automation-to-azure-monitor-logs"></a>Пересылка состояния задания и потоков заданий из службы автоматизации для журналов Azure Monitor
 
@@ -89,14 +89,14 @@ Get-AzDiagnosticSetting -ResourceId $automationAccountId
 
 ### <a name="job-logs"></a>Журналы заданий
 
-| Свойство | ОПИСАНИЕ |
+| Свойство | Описание |
 | --- | --- |
 | TimeGenerated |Дата и время выполнения задания Runbook. |
 | RunbookName_s |Имя Runbook. |
 | Caller_s |Сторона, инициировавшая операцию. Допустимые значения: электронный адрес или system для запланированных заданий. |
 | Tenant_g | GUID, идентифицирующий клиента для вызывающего объекта. |
 | JobId_g |GUID, представляющий собой идентификатор задания Runbook. |
-| ResultType |Состояние задания Runbook. Возможные значения:<br>Новое<br>Started<br>- Остановлена<br>Приостановлено<br>Сбой<br>Завершено |
+| ResultType |Состояние задания Runbook. Возможные значения:<br>Новое<br>-Создать<br>Started<br>- Остановлена<br>Приостановлено<br>Сбой<br>Завершено |
 | Category | Классификация типа данных. Для службы автоматизации значением является JobLogs. |
 | OperationName | Указывает тип операции, выполняемой в Azure. Для службы автоматизации значением является Job. |
 | Resource | Имя учетной записи службы автоматизации |
@@ -111,7 +111,7 @@ Get-AzDiagnosticSetting -ResourceId $automationAccountId
 
 
 ### <a name="job-streams"></a>Потоки заданий
-| Свойство | ОПИСАНИЕ |
+| Свойство | Описание |
 | --- | --- |
 | TimeGenerated |Дата и время выполнения задания Runbook. |
 | RunbookName_s |Имя Runbook. |

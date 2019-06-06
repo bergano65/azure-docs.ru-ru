@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/27/2018
 ms.author: monhaber
-ms.openlocfilehash: 8511f8987368d5746373f71e9f553013e385e0ee
-ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
+ms.openlocfilehash: 15232c92e60d21d759bec59597cb161480b8c2ea
+ms.sourcegitcommit: 7042ec27b18f69db9331b3bf3b9296a9cd0c0402
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66258501"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66743230"
 ---
 # <a name="windows-defender-advanced-threat-protection-with-azure-security-center"></a>Интеграция Advanced Threat Protection в Защитнике Windows с центром безопасности Azure
 
@@ -44,10 +44,6 @@ ms.locfileid: "66258501"
 - **Подробное исследование компьютера**. Клиенты Центра безопасности Azure могут получить доступ к консоли ATP в Защитнике Windows, чтобы выполнить подробное исследование и выявить область бреши.
 
 ![Центр безопасности Azure, где отображается список оповещений и общая информация о каждом из них](media/security-center-wdatp/image1.png)
-
-Вы можете [исследовать оповещение](security-center-investigation.md) в центре безопасности Azure:
-
-![Панель мониторинга для изучения оповещений в центре безопасности Azure](media/security-center-wdatp/image2.png)
 
 Вы можете продолжить изучение проблемы, выполнив сведение оповещений ATP в Защитнике Windows. Здесь можно просмотреть дополнительные сведения, например дерево процессов оповещений и граф инцидентов. Вы также можете увидеть подробную временную шкалу компьютера, где показана каждая реакция на событие за исторический период до шести месяцев.
 

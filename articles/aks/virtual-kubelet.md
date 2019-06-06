@@ -6,14 +6,14 @@ author: iainfoulds
 manager: jeconnoc
 ms.service: container-service
 ms.topic: article
-ms.date: 08/14/2018
+ms.date: 05/31/2019
 ms.author: iainfou
-ms.openlocfilehash: f7a0269ff22987648d134cb7f4fba8e28e29fd8b
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.openlocfilehash: cc0c3becf21cb54b97a88e9ba35b38308af81a85
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65956293"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66475422"
 ---
 # <a name="use-virtual-kubelet-with-azure-kubernetes-service-aks"></a>Использование Virtual Kubelet со службой Azure Kubernetes (AKS)
 
@@ -30,13 +30,13 @@ ms.locfileid: "65956293"
 
 Для выполнения этих инструкций у вас должен быть кластер AKS. Если вам необходим кластер AKS, обратитесь к [руководству по началу работы со службой Azure Kubernetes][aks-quick-start].
 
-Вам также потребуется Azure CLI **2.0.33** или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
+Вам понадобится Azure CLI версии **2.0.65** или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0](/cli/azure/install-azure-cli).
 
-Для установки Virtual Kubelet также необходим набор инструментов [Helm](https://docs.helm.sh/using_helm/#installing-helm).
+Чтобы установить Virtual Kubelet, установите и настройте [Helm] [ aks-helm] в кластере AKS. Убедитесь, что ваш Tiller [настроен для использования с Kubernetes RBAC](#for-rbac-enabled-clusters), при необходимости.
 
 ### <a name="register-container-instances-feature-provider"></a>Зарегистрировать поставщик функций экземпляры контейнеров
 
-Если вы не использовали ранее службы экземпляра контейнера Azure (ACI), необходимо зарегистрируйте поставщик служб с вашей подпиской. Можно проверить состояние регистрации поставщика ACI, с помощью команды [az provider list] [az provider list], как показано в следующем примере:
+Если вы не использовали ранее службы экземпляра контейнера Azure (ACI), необходимо зарегистрируйте поставщик служб с вашей подпиской. Вы можете проверить состояние регистрации поставщика ACI с помощью команды [az provider list][az-provider-list], как показано в следующем примере.
 
 ```azurecli-interactive
 az provider list --query "[?contains(namespace,'Microsoft.ContainerInstance')]" -o table
@@ -44,13 +44,13 @@ az provider list --query "[?contains(namespace,'Microsoft.ContainerInstance')]" 
 
 Поставщик *Microsoft.ContainerInstance* должен иметь состояние *Registered*, как показано в следующем примере выходных данных.
 
-```
+```console
 Namespace                    RegistrationState
 ---------------------------  -------------------
 Microsoft.ContainerInstance  Registered
 ```
 
-Если поставщик отображается в том, что *NotRegistered*, зарегистрируйте поставщик с помощью [az зарегистрировать поставщик] [az provider register], как показано в следующем примере:
+Если поставщик имеет состояние *NotRegistered*, зарегистрируйте поставщик с помощью команды [az provider register][az-provider-register], как показано в следующем примере.
 
 ```azurecli-interactive
 az provider register --namespace Microsoft.ContainerInstance
@@ -83,7 +83,7 @@ subjects:
 
 Примените учетную запись службы и привязку с помощью команды [kubectl apply][kubectl-apply] и укажите файл *rbac-virtual-kubelet.yaml*, как показано в следующем примере.
 
-```
+```console
 $ kubectl apply -f rbac-virtual-kubelet.yaml
 
 clusterrolebinding.rbac.authorization.k8s.io/tiller created
@@ -102,10 +102,14 @@ helm init --service-account tiller
 Для установки Virtual Kubelet выполните команду [az aks install-connector][aks-install-connector]. В следующем примере разворачиваются соединители как для Linux, так и для Windows.
 
 ```azurecli-interactive
-az aks install-connector --resource-group myAKSCluster --name myAKSCluster --connector-name virtual-kubelet --os-type Both
+az aks install-connector \
+    --resource-group myResourceGroup \
+    --name myAKSCluster \
+    --connector-name virtual-kubelet \
+    --os-type Both
 ```
 
-В команде `aks install-connector` могут использоваться следующие аргументы.
+Эти аргументы доступны для [az aks install соединитель] [ aks-install-connector] команды.
 
 | Аргумент: | Описание | Обязательно для заполнения |
 |---|---|:---:|
@@ -122,17 +126,15 @@ az aks install-connector --resource-group myAKSCluster --name myAKSCluster --con
 
 ## <a name="validate-virtual-kubelet"></a>Проверка Virtual Kubelet
 
-Чтобы проверить установку Virtual Kubelet, получите список узлов Kubernetes, выполнив команду [kubectl get nodes][kubectl-get].
+Чтобы проверить, что был установлен Virtual Kubelet, получения списка узлов Kubernetes с помощью [kubectl получить узлы] [ kubectl-get] команды:
 
-```
+```console
 $ kubectl get nodes
 
-NAME                                    STATUS    ROLES     AGE       VERSION
-aks-nodepool1-23443254-0                Ready     agent     16d       v1.9.6
-aks-nodepool1-23443254-1                Ready     agent     16d       v1.9.6
-aks-nodepool1-23443254-2                Ready     agent     16d       v1.9.6
-virtual-kubelet-virtual-kubelet-linux   Ready     agent     4m        v1.8.3
-virtual-kubelet-virtual-kubelet-win     Ready     agent     4m        v1.8.3
+NAME                                             STATUS   ROLES   AGE   VERSION
+aks-nodepool1-56577038-0                         Ready    agent   11m   v1.12.8
+virtual-kubelet-virtual-kubelet-linux-eastus     Ready    agent   39s   v1.13.1-vk-v0.9.0-1-g7b92d1ee-dev
+virtual-kubelet-virtual-kubelet-windows-eastus   Ready    agent   37s   v1.13.1-vk-v0.9.0-1-g7b92d1ee-dev
 ```
 
 ## <a name="run-linux-container"></a>Запуск контейнера Linux
@@ -178,11 +180,11 @@ kubectl create -f virtual-kubelet-linux.yaml
 
 Чтобы вывести список pod для назначенного узла, выполните команду [kubectl get pods][kubectl-get] с аргументом `-o wide`. Обратите внимание, что pod `aci-helloworld` был назначен на узел `virtual-kubelet-virtual-kubelet-linux`.
 
-```
+```console
 $ kubectl get pods -o wide
 
-NAME                                READY     STATUS    RESTARTS   AGE       IP             NODE
-aci-helloworld-2559879000-8vmjw     1/1       Running   0          39s       52.179.3.180   virtual-kubelet-virtual-kubelet-linux
+NAME                              READY   STATUS    RESTARTS   AGE     IP               NODE
+aci-helloworld-7b9ffbf946-rx87g   1/1     Running   0          22s     52.224.147.210   virtual-kubelet-virtual-kubelet-linux-eastus
 ```
 
 ## <a name="run-windows-container"></a>Запуск контейнера Windows
@@ -226,13 +228,13 @@ spec:
 kubectl create -f virtual-kubelet-windows.yaml
 ```
 
-Чтобы вывести список pod для назначенного узла, выполните команду [kubectl get pods][kubectl-get] с аргументом `-o wide`. Обратите внимание, что pod `nanoserver-iis` был назначен на узел `virtual-kubelet-virtual-kubelet-win`.
+Чтобы вывести список pod для назначенного узла, выполните команду [kubectl get pods][kubectl-get] с аргументом `-o wide`. Обратите внимание, что pod `nanoserver-iis` был назначен на узел `virtual-kubelet-virtual-kubelet-windows`.
 
-```
+```console
 $ kubectl get pods -o wide
 
-NAME                                READY     STATUS    RESTARTS   AGE       IP             NODE
-nanoserver-iis-868bc8d489-tq4st     1/1       Running   8         21m       138.91.121.91   virtual-kubelet-virtual-kubelet-win
+NAME                              READY   STATUS    RESTARTS   AGE     IP               NODE
+nanoserver-iis-5d999b87d7-6h8s9   1/1     Running   0          47s     52.224.143.39    virtual-kubelet-virtual-kubelet-windows-eastus
 ```
 
 ## <a name="remove-virtual-kubelet"></a>Удаление Virtual Kubelet
@@ -240,7 +242,11 @@ nanoserver-iis-868bc8d489-tq4st     1/1       Running   8         21m       138.
 Для удаления Virtual Kubelet выполните команду [az aks remove-connector][aks-remove-connector]. Замените значения аргументов на имя соединителя, кластера AKS и группы ресурсов кластера AKS.
 
 ```azurecli-interactive
-az aks remove-connector --resource-group myAKSCluster --name myAKSCluster --connector-name virtual-kubelet
+az aks remove-connector \
+    --resource-group myResourceGroup \
+    --name myAKSCluster \
+    --connector-name virtual-kubelet \
+    --os-type Both
 ```
 
 > [!NOTE]
@@ -259,6 +265,9 @@ az aks remove-connector --resource-group myAKSCluster --name myAKSCluster --conn
 [aks-install-connector]: /cli/azure/aks#az-aks-install-connector
 [virtual-nodes-cli]: virtual-nodes-cli.md
 [virtual-nodes-portal]: virtual-nodes-portal.md
+[aks-helm]: kubernetes-helm.md
+[az-provider-list]: /cli/azure/provider#az-provider-list
+[az-provider-register]: /cli/azure/provider#az-provider-register
 
 <!-- LINKS - external -->
 [kubectl-create]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#create

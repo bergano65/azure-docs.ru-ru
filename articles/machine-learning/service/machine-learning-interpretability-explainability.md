@@ -10,12 +10,12 @@ ms.author: mesameki
 author: mesameki
 ms.reviewer: larryfr
 ms.date: 05/30/2019
-ms.openlocfilehash: 94309a019800b560cf6731d84cea324932e3f357
-ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
+ms.openlocfilehash: 4f1dd0bfc0637c6681b513860a63df2b8c35fe5e
+ms.sourcegitcommit: 087ee51483b7180f9e897431e83f37b08ec890ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66398549"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66430855"
 ---
 # <a name="model-interpretability-with-azure-machine-learning-service"></a>Interpretability модели со службой машинного обучения Azure
 
@@ -161,7 +161,7 @@ __Meta explainers__ автоматически выбрать подходящи
     sorted_local_importance_values = local_explanation.get_ranked_local_values()
     ```
 
-    или
+    или диспетчер конфигурации служб
 
     ```python
     # explain the first five data points in the test set
@@ -462,7 +462,7 @@ tabular_explainer = TabularExplainer(clf.steps[-1][1], initialization_examples=x
 
 Автоматические машинного обучения содержит пакеты, для интерпретации показатели важности компонентов в моделях, подготовленный автоматически. Кроме того классификации сценарии позволяют получить показатели важности компонентов уровня класса. Существует два метода для обеспечения такого поведения в рамках автоматических машинного обучения:
 
-* Чтобы включить показатели важности компонентов для модели обученных совокупности, используйте [ `explain_model()` ](https://docs.microsoft.com/en-us/python/api/azureml-train-automl/azureml.train.automl.automlexplainer?view=azure-ml-py) функции.
+* Чтобы включить показатели важности компонентов для модели обученных совокупности, используйте [ `explain_model()` ](https://docs.microsoft.com/python/api/azureml-train-automl/azureml.train.automl.automlexplainer?view=azure-ml-py) функции.
 
     ```python
     from azureml.train.automl.automlexplainer import explain_model
@@ -471,7 +471,7 @@ tabular_explainer = TabularExplainer(clf.steps[-1][1], initialization_examples=x
         per_class_summary, per_class_imp = explain_model(fitted_model, X_train, X_test)
     ```
 
-* Чтобы включить показатели важности компонентов для каждого отдельного запуска до обучения, задайте `model_explainability` параметр `True` в `AutoMLConfig` объекта, а также предоставляет данные проверки. Затем с помощью [ `retrieve_model_explanation()` ](https://docs.microsoft.com/en-us/python/api/azureml-train-automl/azureml.train.automl.automlexplainer?view=azure-ml-py) функции.
+* Чтобы включить показатели важности компонентов для каждого отдельного запуска до обучения, задайте `model_explainability` параметр `True` в `AutoMLConfig` объекта, а также предоставляет данные проверки. Затем с помощью [ `retrieve_model_explanation()` ](https://docs.microsoft.com/python/api/azureml-train-automl/azureml.train.automl.automlexplainer?view=azure-ml-py) функции.
 
     ```python
     from azureml.train.automl.automlexplainer import retrieve_model_explanation

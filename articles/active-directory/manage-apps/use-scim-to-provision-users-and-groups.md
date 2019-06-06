@@ -16,12 +16,12 @@ ms.author: mimart
 ms.reviewer: arvinh
 ms.custom: aaddev;it-pro;seohack1
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e5c2d987a1556513e36fc0a81e903d9eefdcae68
-ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
+ms.openlocfilehash: a62f44783d63131812794a4b55f0e9f9f3b45f27
+ms.sourcegitcommit: 7042ec27b18f69db9331b3bf3b9296a9cd0c0402
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66388161"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66742486"
 ---
 # <a name="using-system-for-cross-domain-identity-management-scim-to-automatically-provision-users-and-groups-from-azure-active-directory-to-applications"></a>Использование системы для управления удостоверениями между доменами (SCIM) для автоматической подготовки пользователей и групп из Azure Active Directory в приложения
 
@@ -81,7 +81,7 @@ Azure AD можно настроить автоматическую подгот
    *Рисунок 3. Настройка автоматической подготовки пользователей на портале Azure*
     
 1. В поле **URL-адрес клиента** введите URL-адрес конечной точки SCIM приложения. Пример: https://api.contoso.com/scim/v2/
-1. Если конечной точке SCIM требуется токен носителя OAuth от издателя, отличного от Azure AD, скопируйте необходимый токен носителя OAuth в необязательное для заполнения поле **Секретный токен**. Если это поле оставить пустым, Azure AD включает токен носителя OAuth, выданный Azure AD с каждым запросом. Приложения, использующие Azure AD в качестве поставщика удостоверений, могут проверить этот выданный Azure AD токен.
+1. Если конечной точке SCIM требуется токен носителя OAuth от издателя, отличного от Azure AD, скопируйте необходимый токен носителя OAuth в необязательное для заполнения поле **Секретный токен**. 
 1. Выберите **проверить подключение** Azure Active Directory попробует подключиться к конечной точке SCIM. Если попытка завершается неудачей, сведения об ошибке отображается.  
 
     >[!NOTE]
@@ -667,8 +667,7 @@ Azure AD можно настроить автоматическую подгот
     
 1. В поле **URL-адрес клиента** введите доступные в Интернете URL-адрес и порт конечной точки SCIM. Это будет строка типа http://testmachine.contoso.com:9000 или http://\<ip-address>:9000/, где \<ip-address> является IP-адресом, доступным в Интернете. 
 
-1. Если конечной точке SCIM требуется токен носителя OAuth от издателя, отличного от Azure AD, скопируйте необходимый токен носителя OAuth в необязательное для заполнения поле **Секретный токен**. Если это поле оставлено пустым, Azure AD будет включать токен носителя OAuth, выданный Azure AD с каждым запросом. Приложения, использующие Azure AD в качестве поставщика удостоверений, могут проверить этот выданный Azure AD токен.
-
+1. Если конечной точке SCIM требуется токен носителя OAuth от издателя, отличного от Azure AD, скопируйте необходимый токен носителя OAuth в необязательное для заполнения поле **Секретный токен**. 
 1. Выберите **проверить подключение** Azure Active Directory попробует подключиться к конечной точке SCIM. Если попытка завершается неудачей, сведения об ошибке отображается.  
 
     >[!NOTE]
@@ -1328,7 +1327,7 @@ Azure Active Directory может предоставлять веб-службе
 | Facsimile-TelephoneNumber |phoneNumbers[type eq "fax"].value |
 | givenName |name.givenName |
 | jobTitle |title |
-| mail |emails[type eq "work"].value |
+| почта |emails[type eq "work"].value |
 | mailNickname |externalId |
 | manager |manager |
 | mobile |phoneNumbers[type eq "mobile"].value |
@@ -1346,7 +1345,7 @@ Azure Active Directory может предоставлять веб-службе
 | Группа Azure Active Directory | urn:ietf:params:scim:schemas:core:2.0:Group |
 | --- | --- |
 | displayName |externalId |
-| mail |emails[type eq "work"].value |
+| почта |emails[type eq "work"].value |
 | mailNickname |displayName |
 | members |members |
 | objectId |ИД |

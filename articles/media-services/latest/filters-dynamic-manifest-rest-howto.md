@@ -11,18 +11,20 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: ne
 ms.topic: article
-ms.date: 05/22/2019
+ms.date: 06/03/2019
 ms.author: juliako
-ms.openlocfilehash: 69399513291a47f7109003e825052314f447125a
-ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
+ms.openlocfilehash: 01c1711fb70d31fe84c7e20272de0eb7ce82c879
+ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66002327"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66494235"
 ---
 # <a name="creating-filters-with-media-services-rest-api"></a>Создание фильтров с помощью REST API Служб мультимедиа
 
-При распространении содержимого пользователям (потоковой трансляции событий или видео по запросу) клиенту может потребоваться больше возможностей, чем определено в файле манифеста ресурса-контейнера по умолчанию. Службы мультимедиа Azure позволяют определять фильтры учетной записи и фильтры ресурсов для содержимого. Дополнительные сведения см. в разделе [фильтры](filters-concept.md) и [динамические манифесты](filters-dynamic-manifest-overview.md).
+При распространении содержимого пользователям (потоковой трансляции событий или видео по запросу) клиенту может потребоваться больше возможностей, чем определено в файле манифеста ресурса-контейнера по умолчанию. Службы мультимедиа Azure позволяют определять фильтры учетной записи и фильтры ресурсов для содержимого. 
+
+Подробное описание этой функции и сценарии его использования см. в разделе [динамические манифесты](filters-dynamic-manifest-overview.md) и [фильтры](filters-concept.md).
 
 В этой статье показано, как определить фильтр для ресурса-контейнера видео по запросу и использовать REST API, чтобы создать [фильтры учетных записей](https://docs.microsoft.com/rest/api/media/accountfilters) и [фильтры ресурсов-контейнеров](https://docs.microsoft.com/rest/api/media/assetfilters). 
 
@@ -81,7 +83,7 @@ ms.locfileid: "66002327"
 
 ## <a name="create-account-filters"></a>Создание фильтров учетной записи
 
-В загруженной ранее коллекции Postman последовательно выберите **Account Filters (Фильтры учетной записи)**->**Create or update an Account Filter (Создать или обновить фильтр учетной записи)**.
+В загруженной ранее коллекции Postman последовательно выберите **Account Filters (Фильтры учетной записи)** ->**Create or update an Account Filter (Создать или обновить фильтр учетной записи)** .
 
 Метод HTTP-запроса **PUT** аналогичен следующему:
 

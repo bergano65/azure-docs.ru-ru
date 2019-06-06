@@ -1,5 +1,5 @@
 ---
-title: 'Azure Cosmos DB: API-интерфейс, пакет SDK и ресурсы .NET для библиотеки Bulk Executor'
+title: Azure Cosmos DB — API-интерфейс, пакет SDK и ресурсы .NET для библиотеки Bulk Executor
 description: Сведения об API и пакетах SDK .NET для библиотеки Bulk Executor, в том числе даты выхода, даты снятия с учета и изменения, внесенные в каждую версию пакета SDK .NET для Bulk Executor в Azure Cosmos DB.
 author: tknandu
 ms.service: cosmos-db
@@ -8,12 +8,12 @@ ms.devlang: dotnet
 ms.topic: reference
 ms.date: 11/19/2018
 ms.author: ramkris
-ms.openlocfilehash: 4f2d8b3246901f139695998224dfe036cccb9833
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 74eddadd7fd967daa1eebb9d7cb223fdc708025f
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60627156"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66471422"
 ---
 # <a name="net-bulk-executor-library-download-information"></a>Библиотека Bulk Executor для .NET: информация о скачивании 
 
@@ -42,6 +42,18 @@ ms.locfileid: "60627156"
 
 ## <a name="release-notes"></a>Заметки о выпуске
 
+### <a name="a-name230-preview2230-preview2"></a><a name="2.3.0-preview2"/>2.3.0-preview2
+
+* Добавлена поддержка для исполнителя массового graph для принятия ttl на вершины и ребра
+
+### <a name="a-name220-preview2220-preview2"></a><a name="2.2.0-preview2"/>2.2.0-preview2
+
+* Устранена проблема, которая вызвали исключения во время гибкое масштабирование Azure Cosmos DB при работе в режиме шлюза. Это исправление позволяет функционально эквивалентен 1.4.1 выпуска.
+
+### <a name="a-name210-preview2210-preview2"></a><a name="2.1.0-preview2"/>2.1.0-preview2:
+
+* Добавлена массового удаления поддержки учетных записей SQL API для приема ключ секции, кортежи идентификатор документа для удаления. Это изменение делает функционально эквивалентен 1.4.0 выпуска.
+
 ### <a name="a-name200-preview2200-preview2"></a><a name="2.0.0-preview2"/>2.0.0-preview2
 
 * Включено MongoBulkExecutor для поддержки .NET Standard 2.0. Благодаря этой возможности выпуск функционально эквивалентен выпуску 1.3.0 с добавлением поддержки .NET Standard 2.0 в качестве целевой платформы.
@@ -50,10 +62,24 @@ ms.locfileid: "60627156"
 
 * Добавлена .NET Standard 2.0 в качестве одной из поддерживаемых целевых платформ, чтобы библиотека BulkExecutor работала с приложениями .NET Core.
 
+### <a name="a-name160160"></a><a name="1.6.0"/>1.6.0
+
+* Обновить массового исполнителя, чтобы использовать последнюю версию Azure Cosmos DB .NET SDK (версии 2.4.0)
+
+### <a name="a-name150150"></a><a name="1.5.0"/>1.5.0
+
+* Добавлена поддержка для исполнителя массового graph для принятия ttl на вершины и ребра
+
+### <a name="a-name141141"></a><a name="1.4.1"/>1.4.1
+
+* Устранена проблема, которая вызвали исключения во время гибкое масштабирование Azure Cosmos DB при работе в режиме шлюза.
+
+### <a name="a-name140140"></a><a name="1.4.0"/>1.4.0
+
+* Добавлена массового удаления поддержки учетных записей SQL API для приема ключ секции, кортежи идентификатор документа для удаления.
+
 ### <a name="a-name130130"></a><a name="1.3.0"/>1.3.0
 
-* Добавлена перегрузка операции BulkDelete для учетных записей SQL API для приема ключа секции и кортежи идентификатора документа для удаления.
-* Добавлена перегрузка операции BulkDelete для учетных записей SQL API для приема RequestOptions, содержащих ключ секции, указывающий значение ключа секции, в дополнение к использованию его в качестве фильтра во входном запросе, указывающем документы, которые требуется удалить.
 * Устранена проблема, вызывавшая проблему форматирования в агенте пользователя, используемом в BulkExecutor.
 
 ### <a name="a-name120120"></a><a name="1.2.0"/>1.2.0

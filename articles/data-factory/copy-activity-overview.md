@@ -13,17 +13,17 @@ ms.topic: conceptual
 ms.date: 04/29/2019
 ms.author: jingwang
 ms.openlocfilehash: 8f5a7d3f6300be100feffd23b98bd7dcd8f48148
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.sourcegitcommit: 7042ec27b18f69db9331b3bf3b9296a9cd0c0402
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/06/2019
 ms.locfileid: "65150882"
 ---
 # <a name="copy-activity-in-azure-data-factory"></a>Действие копирования в фабрике данных Azure
 
 ## <a name="overview"></a>Обзор
 
-> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
+> [!div class="op_single_selector" title1="Выберите версию службы фабрики данных, которую вы используете:"]
 > * [Версия 1](v1/data-factory-data-movement-activities.md)
 > * [Текущая версия](copy-activity-overview.md)
 
@@ -136,11 +136,11 @@ ms.locfileid: "65150882"
 | typeProperties | Группа свойств для настройки действия копирования. | Yes |
 | source | Укажите тип источника копирования и соответствующие свойства, определяющие конкретный сценарий извлечения данных.<br/><br/>Дополнительные сведения см. в разделе "Свойства действия копирования" в статье о соединителях, приведенных в разделе [Поддерживаемые хранилища данных и форматы](#supported-data-stores-and-formats). | Yes |
 | sink | Укажите тип приемника копирования и соответствующие свойства, определяющие конкретный сценарий записи данных.<br/><br/>Дополнительные сведения см. в разделе "Свойства действия копирования" в статье о соединителях, приведенных в разделе [Поддерживаемые хранилища данных и форматы](#supported-data-stores-and-formats). | Yes |
-| translator | Укажите явные сопоставления столбцов от источника к приемнику. Применяется, когда действие копирования по умолчанию не может удовлетворить ваши потребности.<br/><br/>Дополнительные сведения см. в статье [Schema mapping in copy activity](copy-activity-schema-and-type-mapping.md) (Сопоставление диаграммы в действии копирования). | Нет  |
-| dataIntegrationUnits | Укажите число единиц перемещения для [интегрированной среды выполнения Azure](concepts-integration-runtime.md), обеспечивающей копирование данных. Прежнее название — единицы перемещения облачных данных <br/><br/>См. дополнительные сведения об [единицах интеграции данных](copy-activity-performance.md#data-integration-units). | Нет  |
-| parallelCopies | Укажите показатель параллелизма, который должно использовать действие копирования при считывании данных из источника и записи данных в приемник.<br/><br/>Дополнительные сведения см. в разделе [Parallel copy](copy-activity-performance.md#parallel-copy) (Параллельное копирование). | Нет  |
-| enableStaging<br/>stagingSettings | Выберите разместить временные данные в хранилище BLOB-объектов, а не непосредственно на копирование данных из источника в приемник.<br/><br/>Дополнительные сведения о полезных сценариях и конфигурации см. в разделе [Staged copy](copy-activity-performance.md#staged-copy) (Промежуточное копирование). | Нет  |
-| enableSkipIncompatibleRow<br/>redirectIncompatibleRowSettings| Позволяет выбрать способ обработки несовместимых строк при копировании данных из источника в приемник.<br/><br/>Дополнительные сведения см. в статье [Fault tolerance of copy activity in Azure Data Factory](copy-activity-fault-tolerance.md) (Отказоустойчивость действия копирования в фабрике данных Azure). | Нет  |
+| translator | Укажите явные сопоставления столбцов от источника к приемнику. Применяется, когда действие копирования по умолчанию не может удовлетворить ваши потребности.<br/><br/>Дополнительные сведения см. в статье [Schema mapping in copy activity](copy-activity-schema-and-type-mapping.md) (Сопоставление диаграммы в действии копирования). | Нет |
+| dataIntegrationUnits | Укажите число единиц перемещения для [интегрированной среды выполнения Azure](concepts-integration-runtime.md), обеспечивающей копирование данных. Прежнее название — единицы перемещения облачных данных <br/><br/>См. дополнительные сведения об [единицах интеграции данных](copy-activity-performance.md#data-integration-units). | Нет |
+| parallelCopies | Укажите показатель параллелизма, который должно использовать действие копирования при считывании данных из источника и записи данных в приемник.<br/><br/>Дополнительные сведения см. в разделе [Parallel copy](copy-activity-performance.md#parallel-copy) (Параллельное копирование). | Нет |
+| enableStaging<br/>stagingSettings | Выберите разместить временные данные в хранилище BLOB-объектов, а не непосредственно на копирование данных из источника в приемник.<br/><br/>Дополнительные сведения о полезных сценариях и конфигурации см. в разделе [Staged copy](copy-activity-performance.md#staged-copy) (Промежуточное копирование). | Нет |
+| enableSkipIncompatibleRow<br/>redirectIncompatibleRowSettings| Позволяет выбрать способ обработки несовместимых строк при копировании данных из источника в приемник.<br/><br/>Дополнительные сведения см. в статье [Fault tolerance of copy activity in Azure Data Factory](copy-activity-fault-tolerance.md) (Отказоустойчивость действия копирования в фабрике данных Azure). | Нет |
 
 ## <a name="monitoring"></a>Мониторинг
 

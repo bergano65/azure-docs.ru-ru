@@ -5,14 +5,14 @@ services: container-service
 author: tylermsft
 ms.service: container-service
 ms.topic: article
-ms.date: 05/06/2019
+ms.date: 06/04/2019
 ms.author: twhitney
-ms.openlocfilehash: 6b5ebbab717a3db7c9b50549d2762df61c274131
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.openlocfilehash: 11f6869d4d5a2ee0ef2e986ee8268c7a001ea015
+ms.sourcegitcommit: 6932af4f4222786476fdf62e1e0bf09295d723a1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66307352"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66688636"
 ---
 # <a name="connect-with-rdp-to-azure-kubernetes-service-aks-cluster-windows-server-nodes-for-maintenance-or-troubleshooting"></a>Подключение с помощью протокола удаленного рабочего СТОЛА для службы Azure Kubernetes (AKS) узлов кластера Windows Server для обслуживания или устранения неполадок
 
@@ -32,7 +32,18 @@ ms.locfileid: "66307352"
 
 Windows Server узлы кластера AKS отсутствует доступный IP-адресов. Чтобы сделать RDP-подключение, можно развернуть виртуальную машину с общедоступным IP-адрес для той же подсети, что узлы Windows Server.
 
-В следующем примере создается виртуальная машина с именем *myVM* в *myResourceGroup* группы ресурсов. Замените *$SUBNET_ID* с Идентификатором подсети, используемой в пуле узлов Windows Server.
+В следующем примере создается виртуальная машина с именем *myVM* в *myResourceGroup* группы ресурсов.
+
+Во-первых получите подсети, используемой в пуле узлов Windows Server. Чтобы получить идентификатор подсети, необходимо знать имя подсети. Чтобы получить имя подсети, необходимо знать имя виртуальной сети. Получите имя виртуальной сети путем запроса для его список сетей кластера. Чтобы запросить кластер, необходимо его имя. Вы можете получить все это, выполнив в Azure Cloud Shell:
+
+```azurecli-interactive
+CLUSTER_RG=$(az aks show -g myResourceGroup -n myAKSCluster --query nodeResourceGroup -o tsv)
+VNET_NAME=$(az network vnet list -g $CLUSTER_RG --query [0].name -o tsv)
+SUBNET_NAME=$(az network vnet subnet list -g $CLUSTER_RG --vnet-name $VNET_NAME --query [0].name -o tsv)
+SUBNET_ID=$(az network vnet subnet show -g $CLUSTER_RG --vnet-name $VNET_NAME --name $SUBNET_NAME --query id -o tsv)
+```
+
+Теперь, когда у вас есть SUBNET_ID, выполните следующую команду в окне Azure Cloud Shell для создания виртуальной Машины:
 
 ```azurecli-interactive
 az vm create \

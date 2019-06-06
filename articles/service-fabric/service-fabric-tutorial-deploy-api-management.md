@@ -15,12 +15,12 @@ ms.workload: NA
 ms.date: 9/26/2018
 ms.author: aljo
 ms.custom: mvc
-ms.openlocfilehash: 970d533424e2e603a96bf7e36317cbcdf5110304
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.openlocfilehash: fc2c23d93a1800232b81c5eb2f861e8b71c3e437
+ms.sourcegitcommit: ef06b169f96297396fc24d97ac4223cabcf9ac33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66306816"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66428069"
 ---
 # <a name="integrate-api-management-with-service-fabric-in-azure"></a>Развертывание управления API с помощью Service Fabric в Azure
 
@@ -43,7 +43,7 @@ ms.locfileid: "66306816"
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * Установите [Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-Az-ps) или [Azure CLI](/cli/azure/install-azure-cli).
 * Создайте защищенный [кластер Windows](service-fabric-tutorial-create-vnet-and-windows-cluster.md) в группе безопасности сети.
-* Если вы развертываете кластер Windows, настройте среду разработки Windows. [Установите Visual Studio 2017](https://www.visualstudio.com), а также рабочие нагрузки **разработка Azure**, **ASP.NET и веб-разработка** и **кроссплатформенная разработка .NET Core**.  Теперь настройте [среду разработки .NET](service-fabric-get-started.md).
+* Если вы развертываете кластер Windows, настройте среду разработки Windows. [Установите Visual Studio 2019](https://www.visualstudio.com), а также рабочие нагрузки **Разработка для Azure**, **ASP.NET и разработка веб-приложений** и **Кроссплатформенная разработка .NET Core**.  Теперь настройте [среду разработки .NET](service-fabric-get-started.md).
 
 ## <a name="network-topology"></a>Топология сети
 
@@ -88,7 +88,7 @@ az account set --subscription <guid>
     </Resources>
     ```
 
-    После удаления порт в Service Fabric будет динамически выбираться из диапазона портов приложения, который мы открыли через группу безопасности сети в шаблоне Resource Manager для кластера. К нему будет направляться трафик из службы управления API.
+    Удаление порта позволяет Service Fabric указать порт динамически из диапазона портов приложения, открыт через группы безопасности сети в шаблоне Resource Manager кластера направляться трафик к нему с помощью управления API.
 
  6. Нажмите клавишу F5 в Visual Studio, чтобы убедиться, что веб-API доступен локально.
 

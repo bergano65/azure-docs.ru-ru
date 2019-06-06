@@ -11,14 +11,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: ne
 ms.topic: article
-ms.date: 05/11/2019
+ms.date: 06/06/2019
 ms.author: juliako
-ms.openlocfilehash: c025a4c6e2a5a06e12e25ce226a327b099b95306
-ms.sourcegitcommit: f013c433b18de2788bf09b98926c7136b15d36f1
+ms.openlocfilehash: f04ae727957d988e75ea0984d0005a6a140ca63f
+ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65550963"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66732986"
 ---
 # <a name="live-events-and-live-outputs"></a>События и выходные данные прямой трансляции
 
@@ -79,48 +79,53 @@ ms.locfileid: "65550963"
 
 Можно использовать запоминающиеся и незапоминающиеся URL-адреса. 
 
+> [!NOTE] 
+> Для приема URL-адрес, чтобы спрогнозировать, задайте режим «личный».
+
 * Незапоминающийся URL-адрес
 
     Незапоминающиеся URL-адреса — это режим по умолчанию в AMS версии 3. Таким образом, вы можете быстро получить событие потоковой трансляции, но URL-адрес приема будет известен только после запуска события. URL-адрес изменится, если вы остановите или запустите событие потоковой трансляции. <br/>Незапоминающиеся URL-адреса полезны в сценариях, когда пользователь хочет транслировать поток с помощью приложения максимально быстро и имеющийся динамический URL-адрес приема не является проблемой.
 * Запоминающийся URL-адрес
 
     Режим запоминающихся URL-адресов является предпочтительным для крупных медиа-вещателей, которые используют аппаратные широковещательные кодировщики и не хотят повторно их настраивать при запуске события потоковой трансляции. Им нужен прогнозируемый URL-адрес приема, который не будет изменяется со временем.
+    
+    Чтобы указать этот режим, необходимо задать `vanityUrl` для `true` во время создания (значение по умолчанию — `false`). Необходимо также передать маркер доступа (`LiveEventInput.accessToken`) во время создания. Можно указать значение маркера, чтобы избежать случайного токен в URL-адрес. Маркер доступа должен быть допустимой строкой идентификатора GUID (с или без дефисов). Когда используется режим ее нельзя обновить.
 
-> [!NOTE] 
-> Чтобы URL-адрес был прогнозируемым, необходимо использовать режим запоминающихся адресов и передать собственный маркер доступа (чтобы избежать случайного маркера в URL-адресе).
+    Маркер доступа должно быть уникальным в вашем центре обработки данных. Если приложение должно использовать запоминающемся URL-АДРЕСЕ, рекомендуется всегда создавать новый экземпляр GUID для токена доступа (а не повторно использовать любой существующий GUID). 
 
 ### <a name="live-ingest-url-naming-rules"></a>Правила именования URL-адресов динамического приема
 
 *Случайная* строка ниже представляет собой 128-разрядное шестнадцатеричное число (состоящее из 32 знаков: 0–9 и a–f).<br/>
-*Маркер доступа*, приведенный ниже, — это то, что вам нужно указать для фиксированного URL-адреса. Он также является 128-разрядным шестнадцатеричным числом.
+*Маркер доступа* необходимо указать для основных URL-адреса. Необходимо задать строку токена доступа, являющийся строковым GUID допустимую длину. <br/>
+*Имя потока* указывает имя потока для определенного подключения. Значение имени потока обычно добавляется динамическим кодировщиком, в использовании.
 
 #### <a name="non-vanity-url"></a>Незапоминающийся URL-адрес
 
 ##### <a name="rtmp"></a>RTMP
 
-`rtmp://<random 128bit hex string>.channel.media.azure.net:1935/<access token>`
-`rtmp://<random 128bit hex string>.channel.media.azure.net:1936/<access token>`
-`rtmps://<random 128bit hex string>.channel.media.azure.net:2935/<access token>`
-`rtmps://<random 128bit hex string>.channel.media.azure.net:2936/<access token>`
+`rtmp://<random 128bit hex string>.channel.media.azure.net:1935/live/<access token>/<stream name>`<br/>
+`rtmp://<random 128bit hex string>.channel.media.azure.net:1936/live/<access token>/<stream name>`<br/>
+`rtmps://<random 128bit hex string>.channel.media.azure.net:2935/live/<access token>/<stream name>`<br/>
+`rtmps://<random 128bit hex string>.channel.media.azure.net:2936/live/<access token>/<stream name>`<br/>
 
 ##### <a name="smooth-streaming"></a>Smooth Streaming
 
-`http://<random 128bit hex string>.channel.media.azure.net/<access token>/ingest.isml`
-`https://<random 128bit hex string>.channel.media.azure.net/<access token>/ingest.isml`
+`http://<random 128bit hex string>.channel.media.azure.net/<access token>/ingest.isml/streams(<stream name>)`<br/>
+`https://<random 128bit hex string>.channel.media.azure.net/<access token>/ingest.isml/streams(<stream name>)`<br/>
 
 #### <a name="vanity-url"></a>Запоминающийся URL-адрес
 
 ##### <a name="rtmp"></a>RTMP
 
-`rtmp://<live event name>-<ams account name>-<region abbrev name>.channel.media.azure.net:1935/<access token>`
-`rtmp://<live event name>-<ams account name>-<region abbrev name>.channel.media.azure.net:1936/<access token>`
-`rtmps://<live event name>-<ams account name>-<region abbrev name>.channel.media.azure.net:2935/<access token>`
-`rtmps://<live event name>-<ams account name>-<region abbrev name>.channel.media.azure.net:2936/<access token>`
+`rtmp://<live event name>-<ams account name>-<region abbrev name>.channel.media.azure.net:1935/live/<access token>/<stream name>`<br/>
+`rtmp://<live event name>-<ams account name>-<region abbrev name>.channel.media.azure.net:1936/live/<access token>/<stream name>`<br/>
+`rtmps://<live event name>-<ams account name>-<region abbrev name>.channel.media.azure.net:2935/live/<access token>/<stream name>`<br/>
+`rtmps://<live event name>-<ams account name>-<region abbrev name>.channel.media.azure.net:2936/live/<access token>/<stream name>`<br/>
 
 ##### <a name="smooth-streaming"></a>Smooth Streaming
 
-`http://<live event name>-<ams account name>-<region abbrev name>.channel.media.azure.net/<access token>/ingest.isml`
-`https://<live event name>-<ams account name>-<region abbrev name>.channel.media.azure.net/<access token>/ingest.isml`
+`http://<live event name>-<ams account name>-<region abbrev name>.channel.media.azure.net/<access token>/ingest.isml/streams(<stream name>)`<br/>
+`https://<live event name>-<ams account name>-<region abbrev name>.channel.media.azure.net/<access token>/ingest.isml/streams(<stream name>)`<br/>
 
 ## <a name="live-event-preview-url"></a>URL-адрес для предварительного просмотра событий потоковой трансляции
 

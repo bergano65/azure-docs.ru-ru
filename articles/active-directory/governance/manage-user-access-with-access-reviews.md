@@ -16,12 +16,12 @@ ms.date: 06/21/2018
 ms.author: rolyon
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5efbc3b78800caa9d603e870b81705424c4d3fd6
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: 9d873f1dace3e3be6a8767e77d57db5ac554afd7
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66113232"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66473807"
 ---
 # <a name="manage-user-access-with-azure-ad-access-reviews"></a>Управление пользовательским доступом с помощью проверок доступа Azure AD
 
@@ -44,7 +44,7 @@ ms.locfileid: "66113232"
 
 2. Выберите тип проверки: для отдельной процедуры доступа каждого пользователя или для общего доступа одного или нескольких пользователей.
 
-3. Как глобальный администратор или администратор пользователей, перейдите к [страницу проверки доступа](https://portal.azure.com/#blade/Microsoft_AAD_ERM/DashboardBlade/).
+3. Как глобальный администратор или администратор пользователей, перейдите к [страница управления удостоверениями](https://portal.azure.com/#blade/Microsoft_AAD_ERM/DashboardBlade/).
 
 4. Создайте проверку доступа. Дополнительные сведения см. в разделе [Создание проверки доступа групп или приложений](create-access-review.md).
 

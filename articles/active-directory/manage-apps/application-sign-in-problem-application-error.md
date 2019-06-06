@@ -16,12 +16,12 @@ ms.date: 07/11/2017
 ms.author: mimart
 ms.reviewer: asteen
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 234fc94a0a2ad3d3bee49853cf1dfc6a805a0166
-ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
+ms.openlocfilehash: adfc96d2d7abf38c00f32a5d53615bb7c99c320e
+ms.sourcegitcommit: 7042ec27b18f69db9331b3bf3b9296a9cd0c0402
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65825408"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66742386"
 ---
 # <a name="error-on-an-applications-page-after-signing-in"></a>Ошибка на странице приложения после входа
 
@@ -67,9 +67,11 @@ ms.locfileid: "65825408"
 
 При следующем входе пользователя в приложение Azure AD отправляет новый атрибут в ответе SAML.
 
-## <a name="the-application-expects-a-different-user-identifier-value-or-format"></a>Приложение ожидает идентификатор пользователя с другим значением или в другом формате
+## <a name="the-application-doesnt-identify-the-user"></a>Приложение не определяет пользователя
 
-Вход в приложение не удается выполнить, потому что в ответе SAML отсутствуют такие атрибуты, как роли, либо приложение ожидает другой формат для атрибута EntityID.
+Вход в приложение происходит сбой, так как ответ SAML отсутствуют такие атрибуты, такие как роли или приложение ожидает другой формат или значение для атрибута EntityID.
+
+Если вы используете [Автоматическая подготовка пользователей Azure AD](https://docs.microsoft.com/azure/active-directory/manage-apps/user-provisioning) для создания, поддержания и удалять пользователей в приложении. Затем убедитесь, что пользователь успешно подготовлено к приложению SaaS. Дополнительные сведения см. в разделе [пользователи не подготавливаются к работе для приложения из коллекции Azure AD](https://docs.microsoft.com/azure/active-directory/manage-apps/application-provisioning-config-problem-no-users-provisioned)
 
 ## <a name="add-an-attribute-in-the-azure-ad-application-configuration"></a>Добавление атрибута в конфигурацию приложения Azure AD
 

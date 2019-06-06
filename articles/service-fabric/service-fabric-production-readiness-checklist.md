@@ -12,28 +12,22 @@ ms.devlang: dotNet
 ms.topic: conceptual
 ms.tgt_pltfrm: NA
 ms.workload: NA
-ms.date: 7/10/2018
+ms.date: 6/05/2019
 ms.author: aljo
-ms.openlocfilehash: e94280f9df1d4ac59856a73f6f6c2b7f7a0b9cc0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: a75b02b8173507a28204a3ec2030ce7ed9838495
+ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60726593"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66729861"
 ---
 # <a name="production-readiness-checklist"></a>Контрольный список готовности рабочей среды
 
 Готовы ли ваше приложение и кластер к приему рабочего трафика? Запуск и тестирование приложения и кластера не обязательно означает, что они готовы к перемещению в рабочую среду. Обеспечьте бесперебойную работу приложения и кластера, выполнив следующий контрольный список. Мы настоятельно рекомендуем выполнить все его пункты. Разумеется, вы можете использовать альтернативные решения для какого-либо пункта (например, собственные инфраструктуры диагностики).
 
 
-## <a name="pre-requisites-for-production"></a>Предварительные требования для рабочей среды
-1. [Рекомендации по безопасности Azure Service Fabric](https://docs.microsoft.com/azure/security/azure-service-fabric-security-best-practices): 
-1. Использование сертификата X.509.
-1. Настроить политики безопасности
-1. Настройка SSL для Azure Service Fabric.
-1. Обеспечение изоляции и безопасности сетей с помощью Azure Service Fabric
-1. Настройка Azure Key Vault для обеспечения безопасности
-1. Пользователи Microsoft.Network/loadBalancersAssign с ролями
+## <a name="prerequisites-for-production"></a>Предварительные требования для рабочей среды
+1. Рекомендации по Azure Service Fabric: [Разработка приложений](./service-fabric-best-practices-applications.md), [безопасности](./service-fabric-best-practices-security.md), [сети](./service-fabric-best-practices-networking.md), [планирования емкости и масштабирования](./service-fabric-best-practices-capacity-scaling.md), [инфраструктура как код](./service-fabric-best-practices-infrastructure-as-code.md), и [мониторинг и диагностика](./service-fabric-best-practices-monitoring.md). 
 1. Если используется модель программирования субъектов, реализуйте конфигурации безопасности на основе Reliable Actors.
 1. Для кластеров с более чем 20 ядрами или 10 узлами создайте выделенный тип основного узла для системных служб. Добавьте [ограничения размещения](service-fabric-cluster-resource-manager-advanced-placement-rules-placement-policies.md), чтобы зарезервировать тип основного узла для системных служб.
 1. Используйте номер SKU D2v2 или выше для типа основного узла. Рекомендуется выбрать номер SKU с емкостью диска по меньшей мере 50 ГБ.

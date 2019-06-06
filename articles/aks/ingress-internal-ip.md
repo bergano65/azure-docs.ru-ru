@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 05/24/2019
 ms.author: iainfou
-ms.openlocfilehash: 27d93f963003cfb30b8827d45c0472405b0ed0a6
-ms.sourcegitcommit: 51a7669c2d12609f54509dbd78a30eeb852009ae
+ms.openlocfilehash: f3986b68242d580d9a6bd0e0cc38ce2c9d3aeeb5
+ms.sourcegitcommit: 087ee51483b7180f9e897431e83f37b08ec890ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66392661"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66430970"
 ---
 # <a name="create-an-ingress-controller-to-an-internal-virtual-network-in-azure-kubernetes-service-aks"></a>Создание контроллера входящего трафика для внутренней виртуальной сети в Службе Azure Kubernetes (AKS)
 
@@ -53,6 +53,9 @@ controller:
 
 > [!TIP]
 > В следующем примере создается пространство имен Kubernetes для входящего трафика ресурсов с именем *входящих данных basic*. Укажите необходимые пространства имен для конкретной среды. Если кластер AKS не включена RBAC, добавьте `--set rbac.create=false` командам Helm.
+
+> [!TIP]
+> Если вы хотите включить [сохранение IP-адрес исходного клиента] [ client-source-ip] для запросов к контейнерам в кластере, добавьте `--set controller.service.externalTrafficPolicy=Local` для Helm команды установки. Источник клиента, IP-адрес хранится в заголовке запроса в разделе *X-Forwarded-For*. При использовании входящего контроллера с помощью клиента исходный IP-адрес включенным режимом сохранения, сквозной SSL не будет работать.
 
 ```console
 # Create a namespace for your ingress resources
@@ -275,3 +278,4 @@ kubectl delete namespace ingress-basic
 [aks-ingress-static-tls]: ingress-static-ip.md
 [aks-http-app-routing]: http-application-routing.md
 [aks-ingress-own-tls]: ingress-own-tls.md
+[client-source-ip]: concepts-network.md#ingress-controllers

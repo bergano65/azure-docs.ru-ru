@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 05/27/2019
 ms.author: anantr
 ms.subservice: alerts
-ms.openlocfilehash: b51b9f08819a4c496e051d375f6d52aaa985c8e6
-ms.sourcegitcommit: 51a7669c2d12609f54509dbd78a30eeb852009ae
+ms.openlocfilehash: 13cb3880662e1665b03dd63f009645acbe97fc75
+ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66394136"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66734888"
 ---
 # <a name="how-to-integrate-the-common-alert-schema-with-logic-apps"></a>Как интегрировать в общей схеме оповещений с помощью Logic Apps
 
@@ -21,7 +21,7 @@ ms.locfileid: "66394136"
 
 ## <a name="overview"></a>Обзор
 
-[Общей схеме оповещений](https://aka.ms/commonAlertSchemaDocs) предоставляет стандартизированный и расширяемую схему JSON для всех разных типов оповещений. Общая схема оповещения наиболее полезна в тех случаях, когда управлять программными средствами — с помощью веб-перехватчиков, модулей Runbook и logic apps. В этой статье мы покажем, как единого приложения логики могут разрабатываться для обработки всех предупреждений. Те же принципы могут применяться к другим программными методами. Приложение логики, описанные в этой статье мы создадим четко определенных переменных для [«важных» полей](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-common-schema-definitions#essentials-fields), а также описывает, как обработать [тип оповещений]('https://docs.microsoft.com/azure/azure-monitor/platform/alerts-common-schema-definitions#alert-context-fields') определенной логики.
+[Общей схеме оповещений](https://aka.ms/commonAlertSchemaDocs) предоставляет стандартизированный и расширяемую схему JSON для всех разных типов оповещений. Общая схема оповещения наиболее полезна в тех случаях, когда управлять программными средствами — с помощью веб-перехватчиков, модулей Runbook и logic apps. В этой статье мы покажем, как единого приложения логики могут разрабатываться для обработки всех предупреждений. Те же принципы могут применяться к другим программными методами. Приложение логики, описанные в этой статье мы создадим четко определенных переменных для [«важных» полей](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-common-schema-definitions#essentials-fields), а также описывает, как обработать [тип оповещений](/azure/azure-monitor/platform/alerts-common-schema-definitions#alert-context-fields) определенной логики.
 
 
 ## <a name="prerequisites"></a>Технические условия 
@@ -125,7 +125,7 @@ ms.locfileid: "66394136"
 
     ![Выражение логики приложения](media/alerts-common-schema-integrations/logic-app-expressions.png "выражение приложения логики")
     
-     [Поля «monitoringService»]('https://docs.microsoft.com/azure/azure-monitor/platform/alerts-common-schema-definitions#alert-context-fields') позволяет однозначно идентифицировать тип оповещения на основе, на которой можно создавать условную логику.
+     [Поля «monitoringService»](/azure/azure-monitor/platform/alerts-common-schema-definitions#alert-context-fields) позволяет однозначно идентифицировать тип оповещения на основе, на которой можно создавать условную логику.
 
     
     Например ниже фрагмент кода проверяет, если предупреждение оповещения журнала на основе Application Insights и если да, выводит результаты поиска. В противном случае он выводит «Н/д».

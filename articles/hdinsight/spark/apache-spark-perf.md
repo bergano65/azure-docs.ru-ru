@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 04/03/2019
-ms.openlocfilehash: dfbbdf3f2414f7b00445b271b667ad761ba93df0
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 5701bb534d0fd0e25aab90f9d1035c96bb55c518
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64724367"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66476107"
 ---
 # <a name="optimize-apache-spark-jobs"></a>Оптимизация заданий Apache Spark
 
@@ -59,10 +59,10 @@ Spark поддерживает многие форматы, такие как CS
 
 | Тип хранилища данных | Файловая система | Speed | Промежуточный | Варианты использования |
 | --- | --- | --- | --- | --- |
-| Хранилище больших двоичных объектов Azure | **wasb [s]:**//url/ | **Стандартный** | Yes | Промежуточный кластер |
-| Общего хранилища Озера данных Azure 2| **abfs [s]:**//url/ | **Более быстрая** | Yes | Промежуточный кластер |
-| Хранилище Azure Data Lake поколения 1| **adl:**//url/ | **Более быстрая** | Yes | Промежуточный кластер |
-| Локальная система HDFS | **hdfs:**//url/ | **Самая быстрая** | Нет  | Интерактивный постоянно доступный кластер |
+| Хранилище BLOB-объектов Azure | **wasb:** //url/ | **Стандартный** | Да | Промежуточный кластер |
+| Общего хранилища Озера данных Azure 2| **abfs [s]:** //url/ | **Более быстрая** | Да | Промежуточный кластер |
+| Хранилище Azure Data Lake поколения 1| **adl:** //url/ | **Более быстрая** | Да | Промежуточный кластер |
+| Локальная система HDFS | **hdfs:** //url/ | **Самая быстрая** | Нет | Интерактивный постоянно доступный кластер |
 
 ## <a name="use-the-cache"></a>Использование кэша
 

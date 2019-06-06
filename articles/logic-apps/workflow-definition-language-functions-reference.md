@@ -9,12 +9,12 @@ ms.author: estfan
 ms.reviewer: klam, LADocs
 ms.topic: reference
 ms.date: 08/15/2018
-ms.openlocfilehash: 24e0a0ae2a6af964d3ed87d1817de6e5f403c9b1
-ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
+ms.openlocfilehash: 506076e2d9b171e1ec1ff604519cbbfbe4339e87
+ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66416355"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66733070"
 ---
 # <a name="functions-reference-for-workflow-definition-language-in-azure-logic-apps-and-microsoft-flow"></a>Справочник по функциям для языка определения рабочих процессов в Azure Logic Apps и Microsoft Flow
 
@@ -737,7 +737,7 @@ addToTime('<timestamp>', <interval>, '<timeUnit>', '<format>'?)
 addToTime('2018-01-01T00:00:00Z', 1, 'Day')
 ```
 
-Возвращается такой результат: `"2018-01-02T00:00:00:0000000Z"`
+Возвращается такой результат: `"2018-01-02T00:00:00.0000000Z"`
 
 *Пример 2*
 
@@ -1813,7 +1813,7 @@ first(createArray(0, 1, 2))
 
 <a name="float"></a>
 
-### <a name="float"></a>float;
+### <a name="float"></a>float
 
 Преобразует строковую версию числа с плавающей запятой в фактическое число с плавающей запятой.
 Эту функцию можно использовать только в том случае, при передаче пользовательских параметров в приложении, например, приложения логики или последовательности.
@@ -2573,7 +2573,7 @@ lastIndexOf('hello world', 'world')
 
 <a name="length"></a>
 
-### <a name="length"></a>длина
+### <a name="length"></a>length
 
 Возвращает число элементов в коллекции.
 
@@ -2904,7 +2904,7 @@ not(equals(1, 1))
 
 <a name="or"></a>
 
-### <a name="or"></a>или диспетчер конфигурации служб
+### <a name="or"></a>или
 
 Проверяет, является ли хотя бы одно выражение истинным.
 Возвращает значение true, если хотя бы одно выражение истинно, или значение false, когда все являются ложными.

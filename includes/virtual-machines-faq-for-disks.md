@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 05/13/2019
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: 0e361edfea6365c3d3fe072e12bb303e71bb8d63
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: b993b34f81298b40c8849084380b2d1770708351
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66248973"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66482438"
 ---
 # <a name="frequently-asked-questions-about-azure-iaas-vm-disks-and-managed-and-unmanaged-premium-disks"></a>Часто задаваемые вопросы о дисках виртуальных машин Azure IaaS, а также об управляемых и неуправляемых дисках уровня "Премиум"
 
@@ -143,7 +143,7 @@ ms.locfileid: "66248973"
 
 **Какие типы дисков поддерживают моментальные снимки?**
 
-"Премиум" SSD, стандартная SSD и стандартный SSD поддерживают моментальные снимки, без какого-либо ограничения размера. Поэтому вы можете дисков большого объема моментальных снимков (до 32 ТБ). Ultra SSDs не поддерживают моментальные снимки.
+"Премиум" SSD, стандартная SSD и стандартные жесткие ДИСКИ поддерживают моментальные снимки. Для этих типов трех дисков моментальных снимков поддерживаются для всех размеров диска (включая диски размером до 32 ТБ в размере). Ultra SSDs не поддерживают моментальные снимки.
 
 ## <a name="standard-ssd-disks"></a>Диски SSD категории "Стандартный"
 

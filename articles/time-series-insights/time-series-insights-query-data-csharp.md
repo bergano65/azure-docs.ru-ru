@@ -10,18 +10,18 @@ reviewer: jasonwhowell, kfile, tsidocs
 ms.devlang: csharp
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 05/09/2019
+ms.date: 06/05/2019
 ms.custom: seodec18
-ms.openlocfilehash: e91c6fb4949a4902194bb95f98e49327434cdbfd
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 250dd691c3ef3146d6768123de52bf0628b10e42
+ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66244114"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66728962"
 ---
 # <a name="query-data-from-the-azure-time-series-insights-ga-environment-using-c"></a>Запрос данных с помощью среды Azure время Series Insights GAC#
 
-Это C# примере показано, как запрашивать данные из среды времени серии Azure Insights-общедоступной версии. 
+Это C# примере показано, как запрашивать данные из среды времени серии Azure Insights-общедоступной версии.
 
 В нем показано несколько простых способов использования API запроса:
 
@@ -31,7 +31,7 @@ ms.locfileid: "66244114"
 1. В качестве примера запроса веб-сокета для выбранной среды запрашиваются объединенные данные событий. Данные запрашиваются для всего диапазона времени доступности.
 
 > [!NOTE]
-> Пример кода доступен на [ https://github.com/Azure-Samples/Azure-Time-Series-Insights ](https://github.com/Azure-Samples/Azure-Time-Series-Insights/tree/master/csharp-ga-preview-sample).
+> Пример кода доступен на [ https://github.com/Azure-Samples/Azure-Time-Series-Insights ](https://github.com/Azure-Samples/Azure-Time-Series-Insights/tree/master/csharp-tsi-ga-sample).
 
 ## <a name="project-dependencies"></a>Зависимости проекта
 

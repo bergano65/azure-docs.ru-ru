@@ -1,26 +1,26 @@
 ---
 title: Рекомендации по устранению рисков упреждающего исполнения в Azure | Документация Майкрософт
 description: Рекомендации по устранению рисков при уязвимостях упреждающего исполнения по сторонним каналам в Azure.
-services: virtual-machines-windows
+services: virtual-machines-linux
 documentationcenter: ''
 author: cynthn
 manager: jeconnoc
 editor: ''
 tags: azure-resource-manager
 keywords: spectre,meltdown,specter
-ms.service: virtual-machines-windows
+ms.service: virtual-machines-linux
 ms.workload: infrastructure-services
-ms.tgt_pltfrm: vm-windows
+ms.tgt_pltfrm: vm-linux
 ms.devlang: na
 ms.topic: article
-ms.date: 05/14/2019
+ms.date: 06/04/2019
 ms.author: cynthn
-ms.openlocfilehash: 55b74ecbfd51f69db3b71259f66209c02e927fe9
-ms.sourcegitcommit: 3675daec6c6efa3f2d2bf65279e36ca06ecefb41
+ms.openlocfilehash: 02c89cda7b2c11678539581e16d7162d3466a850
+ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65619966"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66735278"
 ---
 # <a name="guidance-for-mitigating-speculative-execution-side-channel-vulnerabilities-in-azure"></a>Рекомендации по устранению рисков при уязвимостях упреждающего исполнения по сторонним каналам в Azure
 

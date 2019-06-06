@@ -12,12 +12,12 @@ ms.author: jovanpop
 ms.reviewer: jrasnik, carlrab
 manager: craigg
 ms.date: 01/25/2019
-ms.openlocfilehash: e476f27e2a1945135bd90435078d5bcd47c4b3de
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: c918abdc635e7a4a831e367e159354bb752e95e6
+ms.sourcegitcommit: 7042ec27b18f69db9331b3bf3b9296a9cd0c0402
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "65073140"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66743108"
 ---
 # <a name="dynamically-scale-database-resources-with-minimal-downtime"></a>Динамическое масштабирование ресурсов базы данных с минимальным временем простоя
 
@@ -55,6 +55,9 @@ ms.locfileid: "65073140"
 - Для [отдельной базы данных](sql-database-single-database-scale.md) можно воспользоваться моделями на основе [DTU](sql-database-dtu-resource-limits-single-databases.md) или [виртуальных ядер](sql-database-vcore-resource-limits-single-databases.md), чтобы определить максимальное количество ресурсов, которые будут назначены каждой базе данных.
 - [Управляемый экземпляр](sql-database-managed-instance.md) использует режим [виртуальных ядер](sql-database-managed-instance.md#vcore-based-purchasing-model) и позволяет определять максимальное число ядер ЦП и максимальный объем хранилища, выделяемый экземпляру. Ресурсы, выделенные экземпляру, будут общими для всех баз данных в этом экземпляре.
 - [Эластичные пулы](sql-database-elastic-pool-scale.md) позволяют определять максимальный предел использования ресурсов для каждой группы баз данных в пуле.
+
+> [!NOTE]
+> Можно ожидать, разрыв короткий подключения при шкалы вертикальным и горизонтальным процесса завершения. Если вы реализовали [логика повторных попыток для стандартных временных ошибок](sql-database-connectivity-issues.md#retry-logic-for-transient-errors), вы не заметите отработки отказа.
 
 ## <a name="alternative-scale-methods"></a>Альтернативные методы масштабирования
 

@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 04/29/2019
 ms.author: absha
-ms.openlocfilehash: ebb14d97273851585e491e3bcd36f776ec9b61b4
-ms.sourcegitcommit: 13cba995d4538e099f7e670ddbe1d8b3a64a36fb
+ms.openlocfilehash: 9160d300270bf1ab5043bee632d27bcc4b7bf332
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/22/2019
-ms.locfileid: "66000971"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66476038"
 ---
 # <a name="rewrite-http-headers-with-application-gateway"></a>Перепишите заголовки HTTP с помощью шлюза приложений
 
@@ -153,11 +153,11 @@ ms.locfileid: "66000971"
 
 ## <a name="limitations"></a>Ограничения
 
+- Если ответ содержит несколько заголовков с тем же именем, затем переопределения значение одного из этих заголовков приведет к удаление других заголовков в ответе. Обычно возможно с заголовком Set-Cookie, так как имеется более одного заголовка Set-Cookie в ответе. Одним из таких сценариев, когда вы используете службу приложений со шлюзом приложений и настроили сходства сеансов на основе файлов cookie в шлюзе приложений. В этом случае ответ будет содержать 2 заголовки Set-Cookie: тому, который используется службой приложений, т. е. `Set-Cookie: ARRAffinity=ba127f1caf6ac822b2347cc18bba0364d699ca1ad44d20e0ec01ea80cda2a735;Path=/;HttpOnly;Domain=sitename.azurewebsites.net` , а другой для сопоставления и шлюза приложения, т. е. `Set-Cookie: ApplicationGatewayAffinity=c1a2bd51lfd396387f96bl9cc3d2c516; Path=/`. Переопределения одного из заголовков Set-Cookie в этом сценарии может привести к появлению удаления заголовке Set-Cookie из ответа.
+
 - Переопределения заголовков подключения, обновления и узла сейчас не поддерживается.
 
 - Имена заголовков может содержать любые буквы, цифры и специальные символы, как определено в [RFC 7230](https://tools.ietf.org/html/rfc7230#page-27). Мы не поддерживаем символ подчеркивания (\_) специальный символ в имена заголовков.
-
-- Если ответ содержит несколько заголовков с тем же именем, затем переопределения значение одного из этих заголовков приведет к удаление других заголовков в ответе.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

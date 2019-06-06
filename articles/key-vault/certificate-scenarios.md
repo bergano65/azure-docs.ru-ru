@@ -9,12 +9,12 @@ ms.service: key-vault
 ms.topic: conceptual
 ms.date: 01/07/2019
 ms.author: mbaldwin
-ms.openlocfilehash: a0ff97eb17dcf2625e1bb75dabf3e4a9686b5b85
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 805f11d57a635f4e73309d025e185049b511570b
+ms.sourcegitcommit: ef06b169f96297396fc24d97ac4223cabcf9ac33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64725718"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66427838"
 ---
 # <a name="get-started-with-key-vault-certificates"></a>Начало работы с сертификатами Key Vault
 Следующие сценарии описывают некоторые основные примеры использования службы управления сертификатами Key Vault, включая дополнительные действия, необходимые для создания первого сертификата в хранилище ключей.
@@ -39,8 +39,7 @@ ms.locfileid: "64725718"
 -   Подключение ИТ-администратора, администратора PKI или любого управляющего учетными записями в центрах сертификации для данной компании (например, Contoso) является необходимым условием для использования сертификатов Key Vault.  
     Следующие центры сертификации являются партнерскими поставщиками Key Vault:  
     -   DigiCert — Key Vault предоставляет OV SSL-сертификаты в DigiCert.  
-    -   GlobalSign — Key Vault предоставляет OV SSL-сертификаты в GlobalSign.  
-    -   WoSign — Key Vault предоставляет OV SSL или EV SSL-сертификаты в WoSign на основе параметров, настроенных пользователем в своей учетной записи на портале WoSign.  
+    -   Globaltrust - Key Vault предлагает OV-SSL, сертификаты с Globaltrust.  
 
 **Шаг 2** — администратор учетной записи создает для поставщика центра сертификации учетные данные, которые Key Vault использует для регистрации, обновления и использования SSL-сертификатов через Key Vault.
 

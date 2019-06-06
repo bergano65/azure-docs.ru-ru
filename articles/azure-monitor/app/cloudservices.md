@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.workload: tbd
 ms.date: 09/05/2018
 ms.author: mbullwin
-ms.openlocfilehash: 1520b01826de2a80d8baeccf4913fa180d385644
-ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
+ms.openlocfilehash: eb7cbb80be12498242363eb8141a468e08cba73a
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66256304"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66478325"
 ---
 # <a name="application-insights-for-azure-cloud-services"></a>Использование Application Insights для облачных служб Azure
 С помощью [Application Insights][start] можно отслеживать [приложения облачной службы Azure](https://azure.microsoft.com/services/cloud-services/) на предмет доступности, производительности, сбоев и использования, объединяя данные из пакета SDK Application Insights с данными [системы диагностики Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/azure-diagnostics) из облачных служб. Благодаря получаемым данным о производительности и эффективности работы приложения на практике вы можете принимать осознанные решения о направлении разработки в каждом жизненном цикле.
@@ -194,18 +194,18 @@ ms.locfileid: "66256304"
 ## <a name="performance-counters"></a>Счетчики производительности
 По умолчанию собираются приведенные ниже счетчики.
 
-    * \Process(??APP_WIN32_PROC??)\% Загруженность процессора
-    * \Память\доступные байты
-    * \.NET CLR Exceptions(??APP_CLR_PROC??)\# Исключений в секунду
-    * \Process(??APP_WIN32_PROC??)\Байт исключительного пользования
-    * \Process(??APP_WIN32_PROC??)\I/O — обмен данными, байт в секунду
-    * \Процессор (_общий объем ресурсов)\% загруженности процессора
+* \Process(??APP_WIN32_PROC??)\% Загруженность процессора
+* \Память\доступные байты
+* \.NET CLR Exceptions(??APP_CLR_PROC??)\# Исключений в секунду
+* \Process(??APP_WIN32_PROC??)\Байт исключительного пользования
+* \Process(??APP_WIN32_PROC??)\I/O — обмен данными, байт в секунду
+* \Процессор (_общий объем ресурсов)\% загруженности процессора
 
 Эти счетчики также собираются для веб-ролей.
 
-    * \ASP.NET Applications(??APP_W3SVC_PROC??)\Запросов в секунду
-    * \ASP.NET Applications(??APP_W3SVC_PROC??)\Время выполнения запросов
-    * \ASP.NET Applications(??APP_W3SVC_PROC??)\Запросы в очереди приложений
+* \ASP.NET Applications(??APP_W3SVC_PROC??)\Запросов в секунду
+* \ASP.NET Applications(??APP_W3SVC_PROC??)\Время выполнения запросов
+* \ASP.NET Applications(??APP_W3SVC_PROC??)\Запросы в очереди приложений
 
 Можно указать дополнительные пользовательские или другие счетчики производительности Windows, [изменив файл *ApplicationInsights.config*](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/Samples/AzureEmailService/WorkerRoleA/ApplicationInsights.config#L14).
 

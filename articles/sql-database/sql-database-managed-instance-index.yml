@@ -69,7 +69,7 @@ sections:
       - type: list
         style: unordered
         items:
-          - html: '(Предварительная версия) <a href="https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-timezone">Настройка часового пояса</a> во время создания экземпляра.'
+          - html: '<a href="https://docs.microsoft.com/azure/sql-database/sql-database-managed-instance-timezone">Настройте часовой пояс</a> во время создания экземпляра.'
           - html: 'Создание экземпляров с <a href="https://aka.ms/managed-instance-collation">параметры сортировки уровня сервера по своему усмотрению</a>.'
           - html: 'Географическое восстановление позволяет <a href="https://medium.com/@jocapc/geo-restore-your-databases-on-azure-sql-instances-1451480e90fa">восстановить базу данных в другой центр обработки данных, с помощью PowerShell</a>.'
           - html: '(Предварительная версия) <a href="https://medium.com/@jocapc/re-create-dropped-databases-in-azure-sql-managed-instance-dc369ed60266">Повторного создания удалении баз данных с помощью PowerShell</a>'

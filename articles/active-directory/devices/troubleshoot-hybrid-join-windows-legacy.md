@@ -16,12 +16,12 @@ ms.date: 04/23/2018
 ms.author: joflore
 ms.reviewer: jairoc
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 76177972cbd002793f5d9fc4ab8bbe6ef2121e91
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.openlocfilehash: ce1d2aaed85f61e2e18f696d749219a1b951c862
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62106697"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66474250"
 ---
 # <a name="troubleshooting-hybrid-azure-active-directory-joined-down-level-devices"></a>Устранение неполадок на устройствах нижнего уровня с гибридным присоединением к Azure Active Directory 
 
@@ -87,7 +87,7 @@ ms.locfileid: "62106697"
     
   - Autoworkplace.exe не удалось выполнить автоматическую аутентификацию с помощью Azure AD или AD FS. Это может быть вызвано отсутствием или неправильной настройкой AD FS (для федеративных доменов) или отсутствующим или неправильно сконфигурированным эффективным единым входом в Azure AD (для управляемых доменов), или сетевыми проблемами. 
     
-    - Возможно, что Многофакторная идентификация (MFA) включена или настроена для пользователя, а WIAORMUTLIAUTHN не настроен на сервере AD FS. 
+    - Возможно, что многофакторная проверка подлинности (MFA) для пользователя включена или настроена и WIAORMULTIAUTHN не настроен на сервере AD FS. 
      
     - Другой вариант — страница обнаружения домашней области (HRD) ожидает взаимодействия с пользователем, что предотвращает автоматическое запрашивание токена программой **Autoworkplace.exe**.
      

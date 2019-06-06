@@ -8,17 +8,17 @@ ms.topic: article
 ms.date: 2/1/2019
 ms.author: normesta
 ms.reviewer: seguler
-ms.openlocfilehash: 261fd9f820f3e5421d9d0f4f7c9220ec31003283
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: d5077b75ff9e760917e9d5d02bea49dc4967a08b
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65148441"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66473450"
 ---
 # <a name="how-to-mount-blob-storage-as-a-file-system-with-blobfuse"></a>Как подключить хранилище BLOB-объектов в качестве файловой системы с использованием blobfuse
 
 ## <a name="overview"></a>Обзор
-[blobfuse](https://github.com/Azure/azure-storage-fuse) — это виртуальный драйвер файловой системы для хранилища BLOB-объектов Azure. blobfuse позволяет получить доступ к имеющимся данным блочного BLOB-объекта в учетной записи хранения через файловую систему Linux. Хранилище BLOB-объектов Azure — это служба хранения объектов, не имеющая иерархического пространства имен. blobfuse предоставляет это пространство имен, используя схему виртуального каталога с прямой косой чертой (/) в качестве разделителя.  
+[blobfuse](https://github.com/Azure/azure-storage-fuse) — это виртуальный драйвер файловой системы для хранилища BLOB-объектов Azure. blobfuse позволяет получить доступ к имеющимся данным блочного BLOB-объекта в учетной записи хранения через файловую систему Linux. Blobfuse использует схему виртуального каталога с прямой косой черты «/» как разделитель.  
 
 В этом руководстве показано, как использовать blobfuse, подключить контейнер хранилища BLOB-объектов в Linux, а также получить доступ к данным. Дополнительные сведения о blobfuse см. в [репозитории blobfuse](https://github.com/Azure/azure-storage-fuse).
 

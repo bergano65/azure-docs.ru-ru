@@ -10,14 +10,14 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 03/07/2019
+ms.date: 06/03/2019
 ms.author: spelluru
-ms.openlocfilehash: 1001e6aec7ba2f6ce62eb267d218149296048bb9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 574cc0c41ce645c71302178afcf6e7deaec69d8e
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60394360"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66476083"
 ---
 # <a name="specify-a-resource-group-for-lab-virtual-machines-in-azure-devtest-labs"></a>Выбор группы ресурсов для виртуальных машин лаборатории в Azure DevTest Labs
 
@@ -29,6 +29,9 @@ ms.locfileid: "60394360"
 - Объединить в одну группу ресурсов для упрощения отслеживания этих ресурсов и установки все ресурсы лаборатории [политики](../governance/policy/overview.md) для управления ресурсами на уровне группы ресурсов.
 
 С помощью этой функции можно использовать сценарий для указания новой или существующей группе ресурсов в подписке Azure для всех виртуальных машин лаборатории. В настоящее время Azure DevTest Labs поддерживает эту функцию с помощью API.
+
+> [!NOTE]
+> При создании лаборатории в DevTest Labs, действуют все ограничения подписки. Считать лаборатории любой другой ресурс в вашей подписке. При наличии групп ресурсов, это значение равно [980 групп ресурсов на одну подписку](../azure-subscription-service-limits.md#subscription-limits---azure-resource-manager). 
 
 ## <a name="use-azure-portal"></a>Использование портала Azure
 Выполните следующие действия, чтобы указать группу ресурсов для всех виртуальных машин, созданных в лаборатории. 

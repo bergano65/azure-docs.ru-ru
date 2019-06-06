@@ -5,15 +5,15 @@ author: alkohli
 services: storage
 ms.service: storage
 ms.topic: article
-ms.date: 05/29/2019
+ms.date: 05/31/2019
 ms.author: alkohli
 ms.subservice: common
-ms.openlocfilehash: ddaead7a0e616b3138dca0b18a58d64e38a46f9e
-ms.sourcegitcommit: 8e76be591034b618f5c11f4e66668f48c090ddfd
+ms.openlocfilehash: 68f62a6945f3b651781414e3194104b6d2e6295c
+ms.sourcegitcommit: ec7b0bf593645c0d1ef401a3350f162e02c7e9b8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66356429"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66455811"
 ---
 # <a name="use-the-azure-importexport-service-to-import-data-to-azure-blob-storage"></a>Использование службы "Импорт и экспорт Azure" для импорта данных в хранилище BLOB-объектов Azure
 
@@ -58,7 +58,7 @@ ms.locfileid: "66356429"
 6.  Чтобы подготовить диск, выполните следующую команду. **В зависимости от размера данных это может занять от нескольких часов до нескольких дней.** 
 
     ```
-    ./WAImportExport.exe PrepImport /j:<journal file name> /id:session#<session number> /t:<Drive letter> /bk:<BitLocker key> /srcdir:<Drive letter>:\ /dstdir:<Container name>/ /skipwrite /enablecontentmd5 
+    ./WAImportExport.exe PrepImport /j:<journal file name> /id:session#<session number> /t:<Drive letter> /bk:<BitLocker key> /srcdir:<Drive letter>:\ /dstdir:<Container name>/ /blobtype:<BlockBlob or PageBlob> /skipwrite /enablecontentmd5 
     ```
     Файл журнала создается в той же папке, где вы запустили средство. Также создаются два других файла: файл *XML* (папка, в которой выполняется средство) и файл *drive-manifest.xml* (папка, в которой хранятся данные).
     
@@ -72,6 +72,7 @@ ms.locfileid: "66356429"
     |/bk:     |Ключ BitLocker для диска. Числовой пароль из выходных данных `manage-bde -protectors -get D:`      |
     |/srcdir:     |Буква отправляемого диска и `:\`. Например, `D:\`.         |
     |/dstdir:     |Имя целевого контейнера в службе хранилища Azure.         |
+    |/blobtype:     |Этот параметр указывает тип больших двоичных объектов для импорта данных. Для блочных BLOB-объектов, это `BlockBlob` и страничных BLOB-объектов, это `PagaBlob`.         |
     |/skipwrite:     |Параметр, который указывает, что новые данные не требуется копировать и что на диске нужно подготовить существующие данные.          |
     |/enablecontentmd5:     |Если параметр включен, гарантирует, что MD5 вычисляется во время передачи блочных BLOB-объектов в Azure.          |
 7. Повторите предыдущий шаг для каждого диска, который необходимо отправить. Файл журнала с предоставленным именем создается при каждом запуске командной строки.

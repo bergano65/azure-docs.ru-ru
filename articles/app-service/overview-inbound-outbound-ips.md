@@ -11,15 +11,15 @@ ms.workload: web
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 04/20/2018
+ms.date: 06/06/2019
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: 96f580532d9ea45dd767e32c2451243e83af66ea
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: de9ae8e5c0cbf0997811db9624f6c6b92e03a5df
+ms.sourcegitcommit: 7042ec27b18f69db9331b3bf3b9296a9cd0c0402
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60835300"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66742939"
 ---
 # <a name="inbound-and-outbound-ip-addresses-in-azure-app-service"></a>Входящие и исходящие IP-адреса в Службе приложений Azure
 
@@ -35,9 +35,17 @@ ms.locfileid: "60835300"
 - удалите последнее приложение в некотором сочетании группы ресурсов _и_ региона и создадите его заново;
 - удалите существующую SSL-привязку, например во время обновления сертификатов (см. раздел [об обновлении сертификатов](app-service-web-tutorial-custom-ssl.md#renew-certificates)).
 
-## <a name="get-static-inbound-ip"></a>Получение статического входящего IP-адреса
+## <a name="find-the-inbound-ip"></a>Поиск входящих IP-адреса
 
-Для некоторых задач приложениям может потребоваться выделенный статический IP-адрес. Чтобы получить статический входящий IP-адрес, следует настроить [SSL-привязку на основе IP-адреса](app-service-web-tutorial-custom-ssl.md#bind-your-ssl-certificate). Если вам не нужны функциональные возможности SSL для защиты приложения, для этой привязки можно даже передать самозаверяющий сертификат. Привязка SSL на основе IP-адреса сопоставляет сертификат напрямую с IP-адресом, и для этого служба приложений предоставляет ей статический IP-адрес. 
+Просто выполните следующую команду в локальном окне терминала:
+
+```bash
+nslookup <app-name>.azurewebsites.net
+```
+
+## <a name="get-a-static-inbound-ip"></a>Получение статического входящего IP-адреса
+
+Для некоторых задач приложениям может потребоваться выделенный статический IP-адрес. Чтобы получить статический входящий IP-адрес, следует настроить [SSL-привязку на основе IP-адреса](app-service-web-tutorial-custom-ssl.md#secure-a-custom-domain). Если вам не нужны функциональные возможности SSL для защиты приложения, для этой привязки можно даже передать самозаверяющий сертификат. Привязка SSL на основе IP-адреса сопоставляет сертификат напрямую с IP-адресом, и для этого служба приложений предоставляет ей статический IP-адрес. 
 
 ## <a name="when-outbound-ips-change"></a>Если изменяются исходящие IP-адреса
 

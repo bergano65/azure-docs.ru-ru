@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 05/10/2019
 ms.author: robinsh
-ms.openlocfilehash: 2de945d2ef1d87b47ea81aac034916466d3c9bda
-ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
+ms.openlocfilehash: 6ddfd90956fde0c57e14083a3704cbf365456c75
+ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66258854"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66735165"
 ---
 # <a name="message-enrichments-for-device-to-cloud-iot-hub-messages-preview"></a>Усовершенствования сообщения для сообщения центра Интернета вещей устройства в облако (Предварительная версия)
 
@@ -49,6 +49,8 @@ ms.locfileid: "66258854"
 
 Можно добавить усовершенствования, которые будут во встроенную конечную точку центра Интернета вещей сообщения или сообщения, направляемые в пользовательские конечные точки, например хранилища BLOB-объектов Azure, в очередь служебной шины или раздел служебной шины.
 
+Можно также добавить усовершенствования для сообщений, которые публикуются "Сетка событий", выбрав конечную точку как "Сетка событий". Дополнительные сведения см. в разделе [центра Интернета вещей и "Сетка событий"](iot-hub-event-grid.md).
+
 Усовершенствования применяются каждой конечной точки. Если указать пять усовершенствования колонтитулов для конкретной конечной точки, все сообщения, отправляемые этой конечной точки имеют же пять усовершенствования.
 
 Опробовать усовершенствования сообщений см. в разделе [руководстве усовершенствования сообщения](tutorial-message-enrichments.md)
@@ -75,7 +77,7 @@ ms.locfileid: "66258854"
 
 ## <a name="availability"></a>Доступность
 
-Эта возможность доступна в предварительной версии и доступна во всех регионах, за исключением восточной части США, Западная часть США, Западная Европа, [Azure для государственных организаций](/azure-government/documentation-government-welcome.md), [21Vianet в Azure для Китая](/azure/china/china-welcome.md), и [Azure для Германии](https://azure.microsoft.com/global-infrastructure/germany/).
+Эта возможность доступна в предварительной версии и доступна во всех регионах, за исключением восточной части США, Западная часть США, Западная Европа, [Azure для государственных организаций](/azure/azure-government/documentation-government-welcome), [21Vianet в Azure для Китая](/azure/china/china-welcome), и [Azure для Германии](https://azure.microsoft.com/global-infrastructure/germany/).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

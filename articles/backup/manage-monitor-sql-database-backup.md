@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 03/14/2018
 ms.author: raynew
-ms.openlocfilehash: f5ec5a64f1de39cd0d196242fb1a93669dbab15d
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: d850cb222b0028f862cdba302140ce12af8576db
+ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64681842"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66492743"
 ---
 # <a name="manage-and-monitor-backed-up-sql-server-databases"></a>Мониторинг резервных копий баз данных SQL Server и управление ими
 
@@ -89,6 +89,14 @@ ms.locfileid: "64681842"
     ![Сохранить или удалить данные в меню остановки резервного копирования](./media/backup-azure-sql-database/stop-backup-button.png)
 
 6. Выберите **остановить архивацию**.
+
+>
+> [!NOTE]
+См. ниже дополнительные сведения о вариант удаления данных: часто задаваемые вопросы: <br/>
+* [Если удалить базу данных из экземпляра autoprotected, что произойдет с резервные копии?](faq-backup-sql-server.md#if-i-delete-a-database-from-an-autoprotected-instance-what-will-happen-to-the-backups)<br/>
+* [Когда я останавливаю операции резервного копирования базы данных autoprotected каким будет ее поведение?](faq-backup-sql-server.md#if-i-change-the-name-of-the-database-after-it-has-been-protected-what-will-be-the-behavior)
+>
+>
 
 
 ## <a name="resume-protection-for-a-sql-database"></a>возобновление защиты базы данных SQL;

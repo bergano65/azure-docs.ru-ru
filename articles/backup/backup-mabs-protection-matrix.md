@@ -9,12 +9,12 @@ ms.date: 11/13/2018
 ms.topic: conceptual
 ms.author: raynew
 manager: carmonm
-ms.openlocfilehash: 050e3032d47b8215ae1aef8492c247031275ab86
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 83cfd2b7ccdf8ec14e828baec1031e11b28c988c
+ms.sourcegitcommit: ef06b169f96297396fc24d97ac4223cabcf9ac33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60237620"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66427365"
 ---
 # <a name="azure-backup-server-protection-matrix"></a>Таблица защиты посредством Azure Backup Server
 
@@ -82,6 +82,15 @@ ms.locfileid: "60237620"
 |Виртуальные машины VMware|VMware vCenter/vSphere ESX/ESXi Лицензированные версии 5.5/6.0/6.5 |Физический сервер, <br/>Локальная виртуальная машина Hyper-V, <br/> Виртуальная машина Windows в VMWare|Да|Да|Виртуальные машины VMware в общих томах кластера (CSV), NFS и системе хранения данных сети SAN<br /> Восстановление файлов и папок на уровне элементов доступно только для виртуальных машин Windows, виртуальные приложения VMware не поддерживаются.|
 |Виртуальные машины VMware|[VMware vSphere 6.7](backup-azure-backup-server-vmware.md#vmware-vsphere-67) |Физический сервер, <br/>Локальная виртуальная машина Hyper-V, <br/> Виртуальная машина Windows в VMWare|Да|Нет|Виртуальные машины VMware в общих томах кластера (CSV), NFS и системе хранения данных сети SAN<br /> Восстановление файлов и папок на уровне элементов доступно только для виртуальных машин Windows, виртуальные приложения VMware не поддерживаются.|
 |Linux|Linux работает как гость Hyper-V или VMware|Физический сервер, <br/>Локальная виртуальная машина Hyper-V, <br/> Виртуальная машина Windows в VMWare|Да|Да|Система Hyper-V должна работать в Windows Server 2012 R2 или Windows Server 2016. Защита: вся виртуальная машина<br /><br />Восстановление: вся виртуальная машина <br/><br/> Полный список поддерживаемых дистрибутивов Linux и их версий см. в статье [Дистрибутивы Linux, рекомендованные для использования в Azure](../virtual-machines/linux/endorsed-distros.md).|
+
+## <a name="azure-expressroute-support"></a>Поддержка Azure ExpressRoute
+
+Если Azure ExpressRoute настроен пиринг Майкрософт или частный, он не может использоваться для резервного копирования данных в Azure.
+
+Если Azure ExpressRoute настроен с общедоступным Пирингом, его можно использоваться для резервного копирования данных в Azure.
+
+>[!NOTE]
+>Общедоступный Пиринг является устаревшим для новых каналов.
 
 ## <a name="cluster-support"></a>Поддержка кластера
 Azure Backup Server может защищать данные в следующих кластерных приложениях:

@@ -5,14 +5,14 @@ author: msmbaldwin
 ms.service: security
 ms.topic: article
 ms.author: mbaldwin
-ms.date: 04/16/2019
+ms.date: 06/05/2019
 ms.custom: seodec18
-ms.openlocfilehash: 5c49a639c0426b4535c4c2e88d36d447c10826f1
-ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
+ms.openlocfilehash: 149452bd7d43ce46f320b9bae63a6f9cd48d98d4
+ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66416707"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66730702"
 ---
 # <a name="azure-disk-encryption-for-iaas-vms-faq"></a>Часто задаваемые вопросы о шифровании дисков Azure для виртуальных машин IaaS
 
@@ -82,6 +82,9 @@ Server дистрибутивы Linux не поддерживается в Azure
 ## <a name="how-do-i-rotate-secrets-or-encryption-keys"></a>Как смена секретов и ключей шифрования?
 
 Чтобы сменить секреты, просто вызовите той же команды, которые использовались при шифровании дисков, указав в другом хранилище ключей. Для смены ключа шифрования ключей, вызовите ту же команду, которые использовались при шифровании дисков, указание нового ключа шифрования. 
+
+>[!WARNING]
+> - Если вы уже использовали [дискового шифрования Azure с помощью приложения Azure AD](azure-security-disk-encryption-prerequisites-aad.md) , указав учетные данные Azure AD для шифрования этой виртуальной Машины, необходимо будет по-прежнему использовать этот параметр для шифрования виртуальной Машины. На этой зашифрованной виртуальной машине нельзя использовать [шифрование дисков Azure](azure-security-disk-encryption-prerequisites.md), так как этот сценарий не работает — переключение из приложения AAD для данной зашифрованной виртуальной машины сейчас не поддерживается.
 
 ## <a name="how-do-i-add-or-remove-a-key-encryption-key-if-i-didnt-originally-use-one"></a>Как добавить или удалить ключ шифрования ключей, если я не использую изначально один?
 

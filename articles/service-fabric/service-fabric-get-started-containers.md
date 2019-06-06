@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 01/25/2019
 ms.author: aljo
-ms.openlocfilehash: dbc8363052556f29633c069bcd82af5249a3406f
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.openlocfilehash: 3bc67d7fdc582b6d45596b152bb5d58e41152a46
+ms.sourcegitcommit: ef06b169f96297396fc24d97ac4223cabcf9ac33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66306881"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66428113"
 ---
 # <a name="create-your-first-service-fabric-container-application-on-windows"></a>Создание первого контейнера-приложения Service Fabric в Windows
 
@@ -38,7 +38,7 @@ ms.locfileid: "66306881"
 ## <a name="prerequisites"></a>Технические условия
 
 * Компьютер для разработки, на котором установлено ПО, перечисленное ниже.
-  * Visual Studio 2015 или Visual Studio 2017.
+  * Visual Studio 2015 или Visual Studio 2019.
   * [Пакет SDK и средства для Service Fabric](service-fabric-get-started.md).
   *  Docker для Windows. [Скачать Docker CE для Windows (стабильная версия)](https://store.docker.com/editions/community/docker-ce-desktop-windows?tab=description). После установки и запуска Docker щелкните правой кнопкой мыши значок в области уведомлений и выберите **Switch to Windows containers** (Переключиться на контейнеры Windows). Это необходимо для запуска образов Docker на базе Windows.
 
@@ -482,7 +482,7 @@ docker rmi myregistry.azurecr.io/samples/helloworldapp
 Контейнеры Windows Server совместимы не со всеми версиями ОС узла. Пример:
  
 - Контейнеры Windows Server, созданные с использованием Windows Server 1709, не работают на узле с ОС Windows Server версии 2016. 
-- Контейнеры Windows Server, созданные с использованием Windows Server 2016, работают в режиме изоляции Hyper-V только на узле с ОС Windows Server версии 1709. 
+- Контейнеры Windows Server, построенных с помощью Windows Server 2016 работать в режиме изоляции Hyper-V только на узле под управлением Windows Server версии 1709. 
 - Для контейнеров Windows Server, созданных с использованием Windows Server 2016, может потребоваться убедиться, что номера редакции версии ОС контейнера и узла ОС совпадают при работе в режиме изоляции процессов на узле под управлением Windows Server 2016.
  
 Дополнительные сведения см. в разделе [Совместимость версий контейнеров Windows](https://docs.microsoft.com/virtualization/windowscontainers/deploy-containers/version-compatibility).

@@ -11,13 +11,13 @@ author: danimir
 ms.author: danil
 ms.reviewer: jrasnik, carlrab
 manager: craigg
-ms.date: 03/12/2019
-ms.openlocfilehash: 2af8ef7d29d1ac506ddca654544bc938758aa0d8
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 06/03/2019
+ms.openlocfilehash: 0050745ea9d624adb6b7a28d5db91924d1c54b0a
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66149858"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66479442"
 ---
 # <a name="email-notifications-for-automatic-tuning"></a>Уведомления по электронной почте об автоматической настройке
 
@@ -59,14 +59,9 @@ ms.locfileid: "66149858"
 
 ## <a name="update-azure-automation-modules"></a>Обновление модулей службы автоматизации Azure
 
-Для получения рекомендаций по автоматической настройке сценарий PowerShell использует [Get-AzResource](https://docs.microsoft.com/powershell/module/az.Resources/Get-azResource) и [Get AzSqlDatabaseRecommendedAction](https://docs.microsoft.com/powershell/module/az.Sql/Get-azSqlDatabaseRecommendedAction) команды для обновления модулей Azure до версии 4 и выше является обязательным.
+Для получения рекомендаций по автоматической настройке сценарий PowerShell использует [Get-AzResource](https://docs.microsoft.com/powershell/module/az.Resources/Get-azResource) и [Get AzSqlDatabaseRecommendedAction](https://docs.microsoft.com/powershell/module/az.Sql/Get-azSqlDatabaseRecommendedAction) команды для какой модуль Azure версии 4 и более поздней.
 
-Вот как можно обновить модули Azure PowerShell.
-
-- Перейдите в область приложения Automation и выберите **Модули** в меню слева (прокрутите страницу вниз, так как этот пункт меню расположен в разделе "Общие ресурсы").
-- Вверху области "Модули" щелкните **Обновить модули Azure** и подождите, пока не появится сообщение "Модули Azure обновлены". Процесс создания может занять несколько минут.
-
-![Обновление модулей службы автоматизации Azure](./media/sql-database-automatic-tuning-email-notifications/howto-email-02.png)
+- Если модули Azure необходимо обновить, см. в разделе [Az поддержка модуля в службе автоматизации Azure](../automation/az-modules.md).
 
 ## <a name="create-azure-automation-runbook"></a>Создание runbook службы автоматизации Azure
 

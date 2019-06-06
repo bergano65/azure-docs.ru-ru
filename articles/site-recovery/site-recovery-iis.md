@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 11/27/2018
 ms.author: mayg
-ms.openlocfilehash: aa42371692cd5d0dc96835db5b66fe0877b90665
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 66b9342f1a67c4c9d35fda447a297cc64d048c1e
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61280423"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66480294"
 ---
 # <a name="set-up-disaster-recovery-for-a-multi-tier-iis-based-web-application"></a>Настройка аварийного восстановления для многоуровневого веб-приложения на основе IIS
 
@@ -109,7 +109,7 @@ VMware | Да | Да
         </connectionStrings>
         </configuration>
 
-Чтобы обновить строку подключения на веб-уровне, добавьте [скрипт обновления для подключения IIS](https://aka.ms/asr-update-webtier-script-classic) в группу 3 в плане восстановления.
+Чтобы обновить строку подключения на веб-уровне, добавьте [скрипт обновления для подключения IIS](https://gallery.technet.microsoft.com/Update-IIS-connection-2579aadc) в группу 3 в плане восстановления.
 
 #### <a name="site-bindings-for-the-application"></a>Привязки сайта для приложения
 Каждый сайт содержит сведения о привязке, которые включают в себя тип привязки, IP-адрес, на котором сервер IIS прослушивает запросы к сайту, номер порта и имена узлов сайта. Во время отработки отказа вам необходимо обновить эти привязки, если изменяется связанный с ними IP-адрес.

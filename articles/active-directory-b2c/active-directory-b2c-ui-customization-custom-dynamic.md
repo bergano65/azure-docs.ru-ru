@@ -2,20 +2,20 @@
 title: Динамическая настройка пользовательского интерфейса Azure AD B2C с помощью пользовательских политик в Azure Active Directory B2C | Документация Майкрософт
 description: Сведения о том, как обеспечить поддержку нескольких фирменных символик с помощью содержимого HTML5 или каскадных таблиц стилей (CSS), которое динамически изменяется в среде выполнения.
 services: active-directory-b2c
-author: davidmu1
+author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 09/20/2017
-ms.author: davidmu
+ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: c655a1ed7cefcc7af8a22ed1d869b1a2e8b81715
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: e1abdfa8bc47f42f7373760370588c0bc41fc1dc
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64708877"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66507784"
 ---
 # <a name="azure-active-directory-b2c-configure-the-ui-with-dynamic-content-by-using-custom-policies"></a>Azure Active Directory B2C: настройка пользовательского интерфейса с динамическим содержимым, используя пользовательские политики
 
@@ -39,7 +39,7 @@ ms.locfileid: "64708877"
 
 Раздел `ContentDefinitions` содержит серии XML-элементов `ContentDefinition`. Атрибут идентификатора элемента `ContentDefinition` указывает тип страниц, относящихся к определению содержимого. Таким образом, этот элемент определяет контекст, который пользовательский шаблон HTML5/CSS будет применять. В следующей таблице описан набор идентификаторов определений содержимого, распознаваемых ядром IEF, и типы страниц, относящихся к ним.
 
-| Идентификатор для определения содержимого | Шаблон HTML5 по умолчанию| ОПИСАНИЕ | 
+| Идентификатор для определения содержимого | Шаблон HTML5 по умолчанию| Описание | 
 |-----------------------|--------|-------------|
 | *api.error* | [exception.cshtml](https://login.microsoftonline.com/static/tenant/default/exception.cshtml) | **Страница ошибки.** Эта страница отображается при обнаружении исключения или ошибки. |
 | *api.idpselections* | [idpSelector.cshtml](https://login.microsoftonline.com/static/tenant/default/idpSelector.cshtml) | **Страница выбора поставщика удостоверений.** На этой странице содержится список поставщиков удостоверений, которые пользователи могут выбирать во время входа. Обычно это поставщики удостоверений организаций, социальных сетей, включая Facebook и Google+, или локальных учетных записей. |
@@ -68,7 +68,7 @@ ms.locfileid: "64708877"
 
 1. Создайте проект в Visual Studio, выбрав **Файл** > **Создать** > **Проект**.
 
-2. В окне **Новый проект** выберите **Visual C#** > **Интернет** > **Веб-приложение ASP.NET Core (.NET Core)**.
+2. В окне **Новый проект** выберите **Visual C#**  > **Интернет** > **Веб-приложение ASP.NET Core (.NET Core)** .
 
 3. Присвойте имя приложению, например *Contoso.AADB2C.UI*, а затем нажмите кнопку **ОК**.
 

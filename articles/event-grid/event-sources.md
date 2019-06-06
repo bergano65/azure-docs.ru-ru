@@ -7,12 +7,12 @@ ms.service: event-grid
 ms.topic: conceptual
 ms.date: 02/12/2019
 ms.author: spelluru
-ms.openlocfilehash: f6c00f4ada0590df91fce0c36281d0c0cac67b77
-ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
+ms.openlocfilehash: 3611072759c62f42294730405f1dc402c496acce
+ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66257952"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66735006"
 ---
 # <a name="event-sources-in-azure-event-grid"></a>Источники событий в службе "Сетка событий Azure"
 
@@ -140,6 +140,15 @@ ms.locfileid: "66257952"
 | [Реагирование на события Azure Maps c помощью Сетки событий](../azure-maps/azure-maps-event-grid-integration.md?toc=%2fazure%2fevent-grid%2ftoc.json) | Общие сведения об интеграции Azure Maps со службой "Сетка событий". |
 | [Учебник. Настройка геозоны с использованием Azure Maps](../azure-maps/tutorial-geofence.md?toc=%2fazure%2fevent-grid%2ftoc.json) | Это руководство поможет выполнить основные действия по настройке геозоны с помощью Azure Maps. Используйте Сетку событий Azure для выполнения потоковой передачи результатов геозоны и на их основе создавайте уведомления. |
 | [Схема событий службы "Сетка событий Azure" для подписок](event-schema-azure-maps.md) | Отображает поля в событиях службы Azure Maps. |
+
+## <a name="app-configuration"></a>Конфигурация приложений
+Подписаться на события конфигурации приложения Azure для реагирования на события изменения значений ключа.
+
+|Название | Описание |
+|---------|---------|
+| [Реагирование на события конфигурации приложения Azure с помощью сетки событий](../azure-app-configuration/concept-app-configuration-event.md?toc=%2fazure%2fevent-grid%2ftoc.json) | Общие сведения об интеграции Конфигурация приложения Azure с помощью сетки событий. |
+| [Краткое руководство: перенаправление событий Конфигурация приложения Azure пользовательские сетевую конечную точку с помощью Azure CLI](../azure-app-configuration/howto-app-configuration-event.md?toc=%2fazure%2fevent-grid%2ftoc.json) | Показано, как с помощью Azure CLI для отправки событий Конфигурация приложения Azure в веб-перехватчика. |
+| [Схема событий службы "Сетка событий Azure" для подписок](event-schema-app-configuration.md) | Отображает поля в событиях Конфигурация приложения Azure. |
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.service: container-service
 ms.date: 05/06/2019
 ms.author: iainfou
-ms.openlocfilehash: 7631a2d6aef2efedf30c0b9015913c89949d4c29
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.openlocfilehash: b149ba2bccb4bfb6f459b177096afcccbbfc3051
+ms.sourcegitcommit: 7042ec27b18f69db9331b3bf3b9296a9cd0c0402
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65506960"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66742791"
 ---
 # <a name="create-and-configure-an-azure-kubernetes-services-aks-cluster-to-use-virtual-nodes-using-the-azure-cli"></a>Создание и настройка кластера Службы Azure Kubernetes (AKS) для использования виртуальных узлов с помощью Azure CLI
 
@@ -44,7 +44,7 @@ Microsoft.ContainerInstance  Registered
 az provider register --namespace Microsoft.ContainerInstance
 ```
 
-## <a name="regional-availability"></a>Доступность в регионах
+## <a name="regional-availability"></a>Доступность по регионам
 
 Для развертывания на узле виртуального поддерживаются следующие регионы:
 
@@ -69,6 +69,7 @@ az provider register --namespace Microsoft.ContainerInstance
 * [Псевдонимы узлов](https://kubernetes.io/docs/concepts/services-networking/add-entries-to-pod-etc-hosts-with-host-aliases/)
 * [Аргументы](../container-instances/container-instances-exec.md#restrictions) для exec в ACI
 * [Наборы Daemonset](concepts-clusters-workloads.md#statefulsets-and-daemonsets) не будет выполнять развертывание модулей на виртуальный узел
+* [Узлы Windows Server (в настоящее время в предварительной версии в AKS)](windows-container-cli.md) вместе с виртуальными узлами не поддерживаются. Виртуальные узлы можно использовать для планирования контейнеры Windows Server без необходимости для узлов Windows Server в кластере AKS.
 
 ## <a name="launch-azure-cloud-shell"></a>Запуск Azure Cloud Shell
 
@@ -280,7 +281,7 @@ kubectl run -it --rm virtual-node-test --image=debian
 apt-get update && apt-get install -y curl
 ```
 
-Теперь откройте адрес этой группы pod с помощью `curl`, например, *http://10.241.0.4*. Укажите внутренний IP-адрес, который вы получили от предыдущей команды `kubectl get pods`.
+Теперь откройте адрес этой группы pod с помощью `curl`, например, *http://10.241.0.4* . Укажите внутренний IP-адрес, который вы получили от предыдущей команды `kubectl get pods`.
 
 ```console
 curl -L http://10.241.0.4

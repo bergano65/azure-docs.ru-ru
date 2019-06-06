@@ -12,12 +12,12 @@ ms.author: jovanpop
 ms.reviewer: sstein
 manager: craigg
 ms.date: 12/04/2018
-ms.openlocfilehash: e9f40e749642f2025c5298df74f9d8ff87aec14b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 90989a9105405f1784b3be9ab59f55cd3433feaf
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60709336"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66479229"
 ---
 # <a name="business-critical-tier---azure-sql-database"></a>Уровень "Критически важный для бизнеса" для Базы данных SQL Azure
 
@@ -49,6 +49,7 @@ Azure прозрачно обновляет и исправляет базову
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
+- Найти характеристики ресурсов (число ядер, ввод-ВЫВОД, память) уровня "критически важный для бизнеса" в [управляемый экземпляр](sql-database-managed-instance-resource-limits.md#service-tier-characteristics)одной базы данных в [модели виртуальное](sql-database-vcore-resource-limits-single-databases.md#business-critical-service-tier-for-provisioned-compute-tier) или [модели на основе DTU](sql-database-dtu-resource-limits-single-databases.md#premium-service-tier), или эластичной пул в [модели виртуальное](sql-database-vcore-resource-limits-elastic-pools.md#business-critical-service-tier-storage-sizes-and-compute-sizes) и [модели на основе DTU](sql-database-dtu-resource-limits-elastic-pools.md#premium-elastic-pool-limits).
 - См. дополнительные сведения об уровнях [Общего назначения](sql-database-service-tier-general-purpose.md) и [Гипермасштабирование](sql-database-service-tier-hyperscale.md).
 - См. дополнительные сведения о [Service Fabric](../service-fabric/service-fabric-overview.md).
 - Дополнительные сведения об обеспечении высокой доступности и аварийного восстановления см. в руководстве по [обеспечении непрерывности бизнес-процессов](sql-database-business-continuity.md).

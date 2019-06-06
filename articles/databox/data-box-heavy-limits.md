@@ -8,14 +8,15 @@ ms.subservice: heavy
 ms.topic: article
 ms.date: 05/21/2019
 ms.author: alkohli
-ms.openlocfilehash: 115c1a3ab9a7ffe564924edce47f9915448f97e9
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: da518de4702925ebad29727e2bdce99e67d40249
+ms.sourcegitcommit: ef06b169f96297396fc24d97ac4223cabcf9ac33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66248014"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66427760"
 ---
-# <a name="azure-data-box-heavy-limits"></a>Ограничения Azure активно поле данных
+# <a name="azure-data-box-heavy-limits-preview"></a>Ограничения Azure активно поле данных (Предварительная версия)
+
 
 Учитывайте эти ограничения, как развертывание и эксплуатация устройства Azure Data Box большой. Ограничения для Data Box описаны в следующей таблице.
 

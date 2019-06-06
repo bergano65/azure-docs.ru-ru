@@ -12,12 +12,12 @@ ms.devlang: nodejs
 ms.topic: reference
 ms.date: 02/24/2019
 ms.author: glenga
-ms.openlocfilehash: 635e72a8e8a70b8885afea282511fbfaf24d2f94
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.openlocfilehash: a021ed2be3a94add7500a98d71a962bb580078e9
+ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65957338"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66729463"
 ---
 # <a name="azure-functions-javascript-developer-guide"></a>Руководство разработчика JavaScript для Функций Azure
 
@@ -110,7 +110,7 @@ module.exports = async function (context, req) {
 
 ### <a name="inputs"></a>Входные данные
 Входные данные в Функциях Azure делятся на две категории: входные данные от триггера и дополнительные входные данных. Привязки триггера и другие привязки для ввода (привязки `direction === "in"`) могут считываться функцией тремя способами.
- - **_[Рекомендуется.]_ Как параметры, передаваемые функции.** Они передаются в функцию в том же порядке, в каком они определены в файле *function.json*. `name` Свойство, определенное в *function.json* не должны совпадать с именем параметра, несмотря на то, что он должен.
+ - ** _[Рекомендуется.]_ Как параметры, передаваемые функции.** Они передаются в функцию в том же порядке, в каком они определены в файле *function.json*. `name` Свойство, определенное в *function.json* не должны совпадать с именем параметра, несмотря на то, что он должен.
  
    ```javascript
    module.exports = async function(context, myTrigger, myInput, myOtherInput) { ... };
@@ -136,12 +136,12 @@ module.exports = async function (context, req) {
    };
    ```
 
-### <a name="outputs"></a>Выходные данные
+### <a name="outputs"></a>outputs
 Выходные данные (привязки `direction === "out"`) могут быть записаны в функцию несколькими способами. Во всех случаях свойство `name` привязки, определенное в файле *function.json*, соответствует имени элемента объекта, записанного в функции. 
 
 Можно назначить выходные привязки данных в одном из следующих способов (эти методы не Сочетайте):
 
-- **_[Рекомендуется, если существует несколько экземпляров выходных данных.]_ Возврат объекта.** Если вы используете async/обещание, возвращая функции, может возвращать объект с назначенного выходных данных. В приведенном ниже примере выходные привязки в файле *function.json* называются httpResponse и queueOutput.
+- ** _[Рекомендуется, если существует несколько экземпляров выходных данных.]_ Возврат объекта.** Если вы используете async/обещание, возвращая функции, может возвращать объект с назначенного выходных данных. В приведенном ниже примере выходные привязки в файле *function.json* называются httpResponse и queueOutput.
 
   ```javascript
   module.exports = async function(context) {
@@ -156,8 +156,8 @@ module.exports = async function (context, req) {
   ```
 
   Если вы используете синхронную функцию, вы можете вернуть этот объект с помощью [`context.done`](#contextdone-method) (см. пример).
-- **_[Рекомендуется для одного экземпляра выходных данных.]_ Возвращает значение напрямую и с использованием имени привязки $return.** Этот метод работает для функций возврата (асинхронной или функции обещаний). См. пример в разделе [Экспорт асинхронной функции](#exporting-an-async-function). 
-- **Присвоение значений для свойства `context.bindings`**. Вы можете присвоить значения непосредственно для context.bindings.
+- ** _[Рекомендуется для одного экземпляра выходных данных.]_ Возвращает значение напрямую и с использованием имени привязки $return.** Этот метод работает для функций возврата (асинхронной или функции обещаний). См. пример в разделе [Экспорт асинхронной функции](#exporting-an-async-function). 
+- **Присвоение значений для свойства `context.bindings`** . Вы можете присвоить значения непосредственно для context.bindings.
 
   ```javascript
   module.exports = async function(context) {
@@ -397,9 +397,9 @@ context.log('Request Headers = ', JSON.stringify(req.headers));
     ```javascript
     context.bindings.response = { status: 201, body: "Insert succeeded." };
     ```
-+ **_[Только ответ.]_ Путем вызова `context.res.send(body?: any)`.** HTTP-ответ создается с входными данными `body` в качестве текста ответа. `context.done()` вызывается неявным образом.
++ ** _[Только ответ.]_ Путем вызова `context.res.send(body?: any)`.** HTTP-ответ создается с входными данными `body` в качестве текста ответа. `context.done()` вызывается неявным образом.
 
-+ **_[Только ответ.]_ Путем вызова `context.done()`.** Специальный тип привязки HTTP возвращает ответ, передавшийся методу `context.done()`. Следующая привязка вывода HTTP определяет параметр вывода `$return`:
++ ** _[Только ответ.]_ Путем вызова `context.done()`.** Специальный тип привязки HTTP возвращает ответ, передавшийся методу `context.done()`. Следующая привязка вывода HTTP определяет параметр вывода `$return`:
 
     ```json
     {
@@ -465,23 +465,16 @@ module.exports = function(context) {
 
 ## <a name="environment-variables"></a>Переменные среды
 
-В Функциях [параметры приложения](functions-app-settings.md), такие как строки подключения службы, доступны в виде переменных среды во время выполнения. Вы можете получить доступ к этим параметрам с помощью `process.env`, как показано в функции `GetEnvironmentVariable`:
+В Функциях [параметры приложения](functions-app-settings.md), такие как строки подключения службы, доступны в виде переменных среды во время выполнения. Вы можете получить доступ к эти параметры с помощью `process.env`, как показано ниже, во второй и третий вызовах `context.log()` где мы журнал `AzureWebJobsStorage` и `WEBSITE_SITE_NAME` переменные среды:
 
 ```javascript
-module.exports = function (context, myTimer) {
+module.exports = async function (context, myTimer) {
     var timeStamp = new Date().toISOString();
 
     context.log('Node.js timer trigger function ran!', timeStamp);
-    context.log(GetEnvironmentVariable("AzureWebJobsStorage"));
-    context.log(GetEnvironmentVariable("WEBSITE_SITE_NAME"));
-
-    context.done();
+    context.log("AzureWebJobsStorage: " + process.env["AzureWebJobsStorage"]);
+    context.log("WEBSITE_SITE_NAME: " + process.env["WEBSITE_SITE_NAME"]);
 };
-
-function GetEnvironmentVariable(name)
-{
-    return name + ": " + process.env[name];
-}
 ```
 
 [!INCLUDE [Function app settings](../../includes/functions-app-settings.md)]
@@ -579,7 +572,7 @@ module.exports = myObj;
 
 То, что вы локально разрабатывать и развертывать из проекта TypeScript зависит от ваших средств разработки.
 
-### <a name="visual-studio-code"></a>Visual Studio Code
+### <a name="visual-studio-code"></a>Visual Studio Code
 
 [Функций Azure для Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-azurefunctions) расширение позволяет разрабатывать функции с помощью TypeScript. Основные инструменты — требование для расширения функций Azure.
 

@@ -11,12 +11,12 @@ ms.devlang: multiple
 ms.topic: reference
 ms.date: 11/15/2018
 ms.author: cshoe
-ms.openlocfilehash: e4ec13453c204885f38b10272e76245e641fbef9
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: f54da6e350b2cf9027b6e9e02ace2a90e292e1ce
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65203595"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66472341"
 ---
 # <a name="azure-blob-storage-bindings-for-azure-functions"></a>Привязки хранилища BLOB-объектов Azure для службы "Функции Azure"
 
@@ -258,7 +258,7 @@ public void run(
 
 В [библиотеках классов C#](functions-dotnet-class-library.md) используйте следующие атрибуты для настройки триггера большого двоичного объекта:
 
-* [BlobTriggerAttribute](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs/BlobTriggerAttribute.cs)
+* [BlobTriggerAttribute](https://github.com/Azure/azure-webjobs-sdk/blob/master/src/Microsoft.Azure.WebJobs.Extensions.Storage/Blobs/BlobTriggerAttribute.cs)
 
   Конструктор атрибута принимает строку пути, которая указывает на контейнер для просмотра, и при необходимости [шаблон имени большого двоичного объекта](#trigger---blob-name-patterns). Ниже приведен пример:
 
@@ -391,7 +391,7 @@ public void run(
 
 Триггер BLOB-объектов предоставляет несколько свойств метаданных. Эти свойства можно использовать как часть выражений привязки в других привязках или как параметры в коде. Эти значения имеют ту же семантику, что и тип [CloudBlob](https://docs.microsoft.com/dotnet/api/microsoft.azure.storage.blob.cloudblob?view=azure-dotnet).
 
-|Свойство  |type  |ОПИСАНИЕ  |
+|Свойство  |type  |Описание  |
 |---------|---------|---------|
 |`BlobTrigger`|`string`|Путь к большому двоичному объекту, активирующему триггер.|
 |`Uri`|`System.Uri`|Код URI BLOB-объекта для основного расположения.|
@@ -420,7 +420,7 @@ module.exports = function (context, myBlob) {
 
 Функции Azure сохраняют уведомления о получении BLOB-объектов в контейнере с именем *azure-webjobs-hosts* в учетной записи хранения Azure для приложения-функции (указывается с помощью параметра приложения `AzureWebJobsStorage`). Уведомление о получении большого двоичного объекта содержит следующую информацию:
 
-* активированная функция (*&lt;имя_приложения-функции>*.Functions.*&lt;имя_функции>*, например: MyFunctionApp.Functions.CopyBlob);
+* активированная функция ( *&lt;имя_приложения-функции>* .Functions. *&lt;имя_функции>* , например: MyFunctionApp.Functions.CopyBlob);
 * имя контейнера;
 * тип большого двоичного объекта (BlockBlob или PageBlob);
 * имя большого двоичного объекта;
@@ -434,7 +434,7 @@ module.exports = function (context, myBlob) {
 
 В случае сбоя после 5 попыток запуска Функции Azure добавляют сообщение в очередь службы хранилища с именем *webjobs-blobtrigger-poison*. Сообщением очереди для подозрительных больших двоичных объектов является объект JSON, содержащий следующие свойства:
 
-* FunctionId (идентификатор функции в формате *&lt;имя_приложения-функции>*.Functions.*&lt;имя_функции>*);
+* FunctionId (идентификатор функции в формате *&lt;имя_приложения-функции>* .Functions. *&lt;имя_функции>* );
 * BlobType (BlockBlob или PageBlob);
 * ContainerName;
 * BlobName
