@@ -12,12 +12,12 @@ ms.author: mlandzic
 ms.reviewer: vanto, carlrab
 manager: craigg
 ms.date: 04/19/2019
-ms.openlocfilehash: 8eb924b3dc6ff912db402596c763dd69b85147a3
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: c2c4bd7bffd923430d0817cb6ea975f4c1596623
+ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60390721"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66729169"
 ---
 # <a name="manage-transparent-data-encryption-in-a-managed-instance-using-your-own-key-from-azure-key-vault-preview"></a>Управление прозрачным шифрованием данных в управляемом экземпляре, с использованием собственного ключа из хранилища ключей Azure (Предварительная версия)
 
@@ -29,7 +29,7 @@ ms.locfileid: "60390721"
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
-[!INCLUDE [cloud-shell-powershell.md](../../../includes/cloud-shell-powershell.md)]
+[!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
 Локально с помощью обоих PowerShell или Azure Cloud Shell требуется AZ PowerShell 1.1.1-preview или более поздней версии предварительной версии. Если необходимо выполнить обновление, см. в разделе [установке модуля Azure PowerShell](/powershell/azure/install-az-ps), или запустите ниже пример сценария для установки модуля.
 
@@ -37,7 +37,7 @@ ms.locfileid: "60390721"
 
 Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
 
-## <a name="sample-scripts"></a>Примеры сценариев
+## <a name="sample-scripts"></a>Примеры скриптов
 
 [!code-powershell-interactive[main](../../../powershell_scripts/sql-database/transparent-data-encryption/setup-tde-byok-sqlmi.ps1 "Set up BYOK TDE for SQL Managed Instance")]
 

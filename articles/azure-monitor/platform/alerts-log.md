@@ -1,6 +1,6 @@
 ---
-title: Создание, просмотр и управление ими с помощью Azure Monitor оповещения журнала | Документация Майкрософт
-description: Использование Azure Monitor для авторизации, просмотра и управления правилами генерации оповещений журнала в Azure.
+title: Создавать, просматривать и управлять ими с помощью Azure Monitor оповещения журнала | Документация Майкрософт
+description: Azure Monitor позволяет создавать, просматривать и управлять правилами генерации оповещений журнала в Azure.
 author: msvijayn
 services: azure-monitor
 ms.service: azure-monitor
@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 05/30/2019
 ms.author: vinagara
 ms.subservice: alerts
-ms.openlocfilehash: b7240b38e595fdcf9f9d4f995f71643154ee0f9b
-ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
+ms.openlocfilehash: f758007a0fa0d7fb619873d94d762e7019077e05
+ms.sourcegitcommit: ef06b169f96297396fc24d97ac4223cabcf9ac33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66399175"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66427445"
 ---
 # <a name="create-view-and-manage-log-alerts-using-azure-monitor"></a>Создание и просмотр оповещений журнала, а также управление ими с помощью Azure Monitor
 

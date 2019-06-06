@@ -8,14 +8,14 @@ ms.subservice: heavy
 ms.topic: article
 ms.date: 05/22/2019
 ms.author: alkohli
-ms.openlocfilehash: 8cd2f96954cde367eb99d89e89bcf672b53dd590
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: b9e249885bd0e930773d4b374f85d72e60abdbdc
+ms.sourcegitcommit: ef06b169f96297396fc24d97ac4223cabcf9ac33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66247999"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66427739"
 ---
-# <a name="azure-data-box-heavy-system-requirements"></a>Azure активно поле данных требования к системе
+# <a name="azure-data-box-heavy-system-requirements-preview"></a>Поле данных в большой системе требования к Azure (Предварительная версия)
 
 В этой статье описываются важные системные требования для устройства Azure Data Box большой, а также для клиентов, подключающихся к устройству. Мы рекомендуем внимательно ознакомиться с информацией перед развертыванием в большой поле данных и перечитывать ее при необходимости во время развертывания и последующих действий.
 

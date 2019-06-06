@@ -6,40 +6,38 @@ manager: deshner
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 12/27/2018
+ms.date: 06/05/2019
 ms.author: stefanmsft
 ms.custom: seodec18
-ms.openlocfilehash: 6122cd4507ed0883d1b78ca519269c25098e55ff
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 455e78c63960103f5facae764aff3d2b3b2a590d
+ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60924862"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66735197"
 ---
 # <a name="how-to-debug-user-defined-functions-in-azure-digital-twins"></a>Сведения о том, как выполнять отладку пользовательских функций в Azure Digital Twins
 
-В этой статье описаны способы диагностики и отладки пользовательских функций. Она также описывает некоторые наиболее распространенные сценарии, обнаруженные при отладке.
+В этой статье перечислены способы диагностики и отладки определяемых пользователем функций в Двойниках цифровых Azure. Она также описывает некоторые наиболее распространенные сценарии, обнаруженные при отладке.
 
 >[!TIP]
 > Дополнительные сведения о настройке средств отладки в Azure Digital Twins с использованием журналов действий, журналов диагностики и Azure Monitor см. в разделе [Настройка мониторинга и ведения журнала](./how-to-configure-monitoring.md).
 
 ## <a name="debug-issues"></a>Отладка проблем
 
-Умение диагностировать ошибки, возникающие в экземпляре Azure Digital Twins, поможет вам эффективно определять суть проблемы, ее причину и решение.
+Нужно знать, как диагностировать проблемы в цифровой двойниками Azure позволяет эффективно анализировать проблемы, определять причины проблем и предоставить соответствующие решения для их.
 
-### <a name="enable-log-analytics-for-your-instance"></a>Включение Log Analytics для используемого экземпляра
+С этой целью предоставляются разнообразные средства диагностики, ведение журнала и аналитики.
 
-Журналы и метрики для экземпляра Azure Digital Twins предоставлены в Azure Monitor. В этой документации предполагается, что вы создали [журналы Azure Monitor](../azure-monitor/log-query/log-query-overview.md) рабочую область с помощью [портал Azure](../azure-monitor/learn/quick-create-workspace.md), до [Azure CLI](../azure-monitor/learn/quick-create-workspace-cli.md), или с помощью [ PowerShell](../azure-monitor/learn/quick-create-workspace-posh.md).
+### <a name="enable-logging-for-your-instance"></a>Включение ведения журнала для своего экземпляра
 
-> [!NOTE]
-> Возможны задержки 5 минут при отправке событий в журналы Azure Monitor в первый раз.
+Azure Digital Twins поддерживает надежные механизмы ведения журнала, мониторинга и аналитики. Разработчики решений могут использовать журналы, журналы диагностики, журналы действий и других служб Azure Monitor для поддержки сложных задач мониторинга приложения Интернета вещей. Можно сочетать несколько вариантов ведения журнала для запрашивания или отображения записей в нескольких службах и получения подробных сведений в журналах для многих служб.
 
-Чтобы настроить мониторинг и ведение журнала для ресурсов Azure Digital Twins, обратитесь к разделу [Настройка мониторинга и ведения журнала](./how-to-configure-monitoring.md).
+* Конфигурацию ведения журнала, относящиеся к Azure цифровой Двойники, чтение [как настроить мониторинг и ведение журнала](./how-to-configure-monitoring.md).
+* Обратитесь к [Azure Monitor](../azure-monitor/overview.md) обзором и узнайте о параметрах мощные журнала с помощью Azure Monitor.
+* Ознакомьтесь со статьей [сбор и использование данных журнала из ресурсов Azure](../azure-monitor/platform/diagnostic-logs-overview.md) для настройки параметров журнала диагностики в Двойниках цифровых Azure через портал Azure, Azure CLI или PowerShell.
 
-В статье [Сбор и использование данных журнала из ресурсов Azure](../azure-monitor/platform/diagnostic-logs-overview.md) описано, как настроить параметры диагностики журнала в Azure Digital Twins с помощью портала Azure, Azure CLI или PowerShell.
-
->[!IMPORTANT]
-> Не забудьте выбрать все категории журналов, метрики и рабочую область Azure Log Analytics.
+После настройки, вы сможете выбрать все категории журналов, метрики и использовать мощные рабочие области log analytics Azure Monitor для поддержки усилия при отладке.
 
 ### <a name="trace-sensor-telemetry"></a>Отслеживание телеметрии от датчика
 
@@ -47,7 +45,7 @@ ms.locfileid: "60924862"
 
 Чтобы сопоставлять сообщения телеметрии от датчиков с соответствующими журналами, можно указать идентификатор корреляции в отправляемых данных событий. Для этого задайте для свойства `x-ms-client-request-id` значение GUID.
 
-После отправки данных телеметрии, откройте log analytics для запроса для журналов с помощью набора идентификатор корреляции:
+После отправки данных телеметрии, откройте log analytics для запроса журналов с помощью набора идентификатор корреляции:
 
 ```Kusto
 AzureDiagnostics
@@ -209,4 +207,6 @@ function process(telemetry, executionContext) {
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- Дополнительные сведения о включении [журналов и мониторинга](../azure-monitor/platform/activity-logs-overview.md) для Azure Digital Twins.
+- Дополнительные сведения о включении [журналов и мониторинга](./how-to-configure-monitoring.md) для Azure Digital Twins.
+
+- Чтение [журнал действий Azure Обзор](../azure-monitor/platform/activity-logs-overview.md) статьи для Azure параметры ведения журнала.
