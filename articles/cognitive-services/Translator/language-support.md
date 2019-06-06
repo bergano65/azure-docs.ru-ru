@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: reference
-ms.date: 02/21/2019
+ms.date: 06/04/2019
 ms.author: v-pawal
-ms.openlocfilehash: 1cfe4038ff422ecba68f110707e9535226ccd4a5
-ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
+ms.openlocfilehash: 924324b11f49a50bfb5f00e117b33c0cc572e3bb
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
 ms.lasthandoff: 06/04/2019
-ms.locfileid: "66472104"
+ms.locfileid: "66514988"
 ---
 # <a name="language-and-region-support-for-the-translator-text-api"></a>Поддержка языков и регионов в API перевода текстов
 
@@ -35,7 +35,7 @@ API перевода текстов поддерживает следующие 
 * Нейронная по умолчанию: Нейронная система — это система перевода по умолчанию. Используйте параметр `category=smt` для доступа к статистической системе и использования с Microsoft Translator Hub.
 * Только нейронная: Доступен только нейронный перевод.
 
-**API перевода текстов версии 3** является нейронной системой по умолчанию. Статистические системы доступны только в случае ее отсутствия. 
+**API перевода текстов версии 3** является нейронной системой по умолчанию. Статистические системы доступны только в случае ее отсутствия.
 
 > [!NOTE]
 > В настоящее время некоторый набор языков нейронной в Custom Translator и постепенно мы добавляем еще несколько. [Просмотреть доступные сейчас в Translator пользовательские языки](#customization).
