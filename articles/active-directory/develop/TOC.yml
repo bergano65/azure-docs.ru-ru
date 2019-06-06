@@ -235,6 +235,8 @@
               href: msal-js-sso.md
             - name: Поведение запроса (JS)
               href: msal-js-prompt-behavior.md
+            - name: Поддержка ADFS (.NET)
+              href: msal-net-adfs-support.md
             - name: "Интеграция с Azure\_AD\_B2C"
               items:
                 - name: JavaScript

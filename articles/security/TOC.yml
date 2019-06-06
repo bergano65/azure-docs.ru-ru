@@ -52,7 +52,7 @@
             - name: Общие сведения о шифровании дисков Azure
               displayName: 'Bitlocker, bek'
               href: azure-security-disk-encryption-overview.md
-            - name: Быстрое начало работы
+            - name: Краткие руководства
               items:
                 - name: Шифрование виртуальных машин с помощью Azure PowerShell
                   href: quick-encrypt-vm-powershell.md
@@ -204,7 +204,7 @@
             - name: Интеграция журналов из Key Vault
               displayName: keyvault
               href: security-azure-log-integration-keyvault-eventhub.md
-            - name: Часто задаваемые вопросы
+            - name: Вопросы и ответы
               href: security-azure-log-integration-faq.md
     - name: Операционная безопасность
       href: azure-operational-security-overview.md
@@ -226,6 +226,8 @@
     - name: FedRAMP
       displayName: 'blueprint, privacy, certifications'
       items:
+        - name: Службы Azure по области аудита
+          href: ./compliance/azure-services-in-fedramp-auditscope.md
         - name: Аналитика данных
           href: ./blueprints/fedramp-analytics-overview.md
         - name: Хранилище данных
@@ -325,7 +327,7 @@
       displayName: stride
       href: azure-security-threat-modeling-tool.md
       items:
-        - name: Приступая к работе
+        - name: Начало работы
           href: azure-security-threat-modeling-tool-getting-started.md
         - name: Обзор возможностей
           href: azure-security-threat-modeling-tool-feature-overview.md
@@ -347,7 +349,7 @@
           items:
             - name: Аудит и ведение журнала
               href: azure-security-threat-modeling-tool-auditing-and-logging.md
-            - name: Authentication
+            - name: Аутентификация
               href: azure-security-threat-modeling-tool-authentication.md
             - name: Авторизация
               href: azure-security-threat-modeling-tool-authorization.md

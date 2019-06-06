@@ -1,8 +1,8 @@
-- name: Документация по управлению устройствами
+- name: Документация по удостоверениям устройств
   href: index.yml
 - name: Обзор
   items:
-    - name: Общие сведения об управлении устройствами в Azure AD
+    - name: Что собой представляет удостоверение устройства
       href: overview.md
     - name: Служба Enterprise State Roaming
       href: enterprise-state-roaming-overview.md
@@ -29,7 +29,7 @@
 - name: Практические руководства
   expanded: true
   items:
-    - name: Управление устройствами с помощью портала Azure
+    - name: Управление удостоверением устройства
       href: device-management-azure-portal.md
     - name: Управление устаревшими устройствами
       href: manage-stale-devices.md

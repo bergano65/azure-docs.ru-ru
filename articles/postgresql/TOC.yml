@@ -186,8 +186,12 @@
       items:
         - name: Портал Azure
           href: howto-configure-server-parameters-using-portal.md
-        - name: Azure CLI
+        - name: Инфраструктура CLI Azure
           href: howto-configure-server-parameters-using-cli.md
+    - name: Автоматическое увеличение хранилища
+      items:
+        - name: Портал Azure
+          href: howto-auto-grow-storage-portal.md
     - name: Доступ к журналам сервера
       items:
         - name: Портал Azure

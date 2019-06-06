@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: tutorial
-ms.date: 04/02/2019
+ms.date: 06/04/2019
 ms.author: erhopf
-ms.openlocfilehash: 69e6797e91fc645e3bd3e3b300cea6852a662214
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 4df2de7f0428ffe35712a29bfef645b6feb66813
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59007407"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66515009"
 ---
 # <a name="tutorial-build-a-flask-app-with-azure-cognitive-services"></a>Руководство по Создание приложения Flask в Azure Cognitive Services
 
@@ -59,8 +59,8 @@ Flask — это микроплатформа для создания веб-п
 ## <a name="create-an-account-and-subscribe-to-resources"></a>Создание учетной записи и подписки на ресурсы
 
 Как упоминалось ранее, в этом руководстве вам потребуются три ключа подписки. Это означает, что в учетной записи Azure следует создать ресурсы для следующих служб:
-* Перевод текста
-* Текстовая аналитика
+* Перевод текстов
+* Анализ текста
 * Службы распознавания речи
 
 В руководстве по [созданию учетной записи Cognitive Services на портале Azure](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account) приведены пошаговые инструкции по созданию ресурсов.
@@ -106,7 +106,7 @@ Flask — это микроплатформа для создания веб-п
    | платформа | Оболочка | Команда |
    |----------|-------|---------|
    | Mac OS и Linux | bash/zsh | `source venv/bin/activate` |
-   |  Windows | bash | `source venv/Scripts/activate` |
+   | Windows | bash | `source venv/Scripts/activate` |
    | | Командная строка | `venv\Scripts\activate.bat` |
    | | PowerShell | `venv\Scripts\Activate.ps1` |
 
@@ -481,7 +481,7 @@ flask run
 * обновим код HTML, добавив область для оценки тональности и кнопку запуска анализа;
 * напишем код JavaScript, который позволяет пользователям взаимодействовать с приложением Flask из HTML.
 
-### <a name="call-the-text-analytics-api"></a>Вызов API текстовой аналитики
+### <a name="call-the-text-analytics-api"></a>Вызов API "Анализ текста"
 
 Сейчас мы создадим функцию для вызова API Анализа текста. Эта функция будет принимать четыре аргумента: `input_text`, `input_language`, `output_text` и `output_language`. Эта функция вызывается всякий раз, когда пользователь нажимает в приложении кнопку анализа тональности. Данные, предоставленные пользователем в текстовой области и средстве выбора языка, а также определенный язык и полученный перевод предоставляются с каждым запросом. Объект ответа содержит тональность высказываний, определенную для исходного текста и перевода. В следующих разделах описано, как создать код JavaScript, который будет анализировать ответ и применять его в приложении. А пока давайте перейдем к вызову API Анализа текста.
 

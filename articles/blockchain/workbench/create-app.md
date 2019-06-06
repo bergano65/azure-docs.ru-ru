@@ -5,17 +5,17 @@ services: azure-blockchain
 keywords: ''
 author: PatAltimore
 ms.author: patricka
-ms.date: 05/14/2019
+ms.date: 05/30/2019
 ms.topic: tutorial
 ms.service: azure-blockchain
 ms.reviewer: brendal
 manager: femila
-ms.openlocfilehash: 92a37133d84833c43fff5b1a6c31e003ef53f7de
-ms.sourcegitcommit: 3675daec6c6efa3f2d2bf65279e36ca06ecefb41
+ms.openlocfilehash: b444ad799eaa356d654952c32ac58188de8d7131
+ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65619753"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66417371"
 ---
 # <a name="tutorial-create-a-blockchain-application-in-azure-blockchain-workbench"></a>Руководство по Создание блокчейн-приложения в Azure Blockchain Workbench
 
@@ -39,9 +39,10 @@ ms.locfileid: "65619753"
 
 ## <a name="hello-blockchain"></a>Представляем вам технологию Блокчейн
 
-Давайте создадим базовое приложение, в котором один пользователь отправляет запрос, а второй дает на него ответ. Например, на запрос "Привет, как дела?" поступает ответ "Отлично!". Запрос и ответ записываются в базовый блокчейн. 
+Давайте создадим базовое приложение, в котором один пользователь отправляет запрос, а второй дает на него ответ.
+Например, на запрос "Привет, как дела?" поступает ответ "Отлично!". Запрос и ответ записываются в базовый блокчейн.
 
-Выполните шаги, чтобы создать файл приложения, или же [загрузите пример на сайте GitHub](https://github.com/Azure-Samples/blockchain/tree/master/blockchain-workbench/application-and-smart-contract-samples/hello-blockchain). 
+Выполните шаги, чтобы создать файл приложения, или же [загрузите пример на сайте GitHub](https://github.com/Azure-Samples/blockchain/tree/master/blockchain-workbench/application-and-smart-contract-samples/hello-blockchain).
 
 ## <a name="configuration-file"></a>Файл конфигурации
 
@@ -215,7 +216,7 @@ ms.locfileid: "65619753"
 
 ### <a name="workflows"></a>Рабочие процессы
 
-Рабочие процессы определяют один или несколько этапов и действий контракта. В сценарии запроса и ответа первый этап (состояние) рабочего процесса такой: источник запроса (роль) выполняет действие (переход) для отправки запроса (функция). Следующий этап (состояние): респондент (роль) выполняет действие (переход) для отправки ответа (функция). Рабочий процесс приложения может включать в себя свойства, функции и состояния, необходимые для описания потока контракта. 
+Рабочие процессы определяют один или несколько этапов и действий контракта. В сценарии запроса и ответа первый этап (состояние) рабочего процесса такой: источник запроса (роль) выполняет действие (переход) для отправки запроса (функция). Следующий этап (состояние): респондент (роль) выполняет действие (переход) для отправки ответа (функция). Рабочий процесс приложения может включать в себя свойства, функции и состояния, необходимые для описания потока контракта.
 
 Дополнительные сведения о содержимом файлов конфигурации см. в статье [справочных сведений о конфигурации рабочего процесса Azure Blockchain](configuration.md).
 
@@ -229,24 +230,23 @@ ms.locfileid: "65619753"
 
 ### <a name="version-pragma"></a>Директива версии
 
-Рекомендуется указать версию Solidity, которую вы собираетесь использовать. Указание версии помогает избежать проблем с совместимостью с будущими версиями Solidity. 
+Рекомендуется указать версию Solidity, которую вы собираетесь использовать. Указание версии помогает избежать проблем с совместимостью с будущими версиями Solidity.
 
 Добавьте следующую директиву версии в верхнюю область файла с кодом смарт-контракта `HelloBlockchain.sol`.
 
-
-  ``` solidity
-  pragma solidity ^0.4.20;
-  ```
+``` solidity
+pragma solidity >=0.4.25 <0.6.0;
+```
 
 ### <a name="configuration-and-smart-contract-code-relationship"></a>Связь между конфигурацией и кодом смарт-контракта
 
-Blockchain Workbench использует файл конфигурации и файл с кодом смарт-контракта для создания блокчейн-приложения. Между конфигурацией и кодом смарт-контракта есть определенная связь. Для создания приложения необходимо сопоставить подробные сведения о контракте, функции, параметры и типы. Перед созданием приложения Blockchain Workbench проверяет файлы. 
+Blockchain Workbench использует файл конфигурации и файл с кодом смарт-контракта для создания блокчейн-приложения. Между конфигурацией и кодом смарт-контракта есть определенная связь. Для создания приложения необходимо сопоставить подробные сведения о контракте, функции, параметры и типы. Перед созданием приложения Blockchain Workbench проверяет файлы.
 
 ### <a name="contract"></a>Контракт
 
 Добавьте заголовок **contract** в файл кода смарт-контракта `HelloBlockchain.sol`.
 
-```
+``` solidity
 contract HelloBlockchain {
 ```
 
@@ -254,17 +254,17 @@ contract HelloBlockchain {
 
 Переменные состояния хранят значения состояния каждого экземпляра контракта. Переменные состояния в вашем контракте должны соответствовать свойствам рабочего процесса, определенным в файле конфигурации.
 
-Добавьте переменные состояния в контракт в файле кода смарт-контракта `HelloBlockchain.sol`. 
+Добавьте переменные состояния в контракт в файле кода смарт-контракта `HelloBlockchain.sol`.
 
-```
+``` solidity
     //Set of States
     enum StateType { Request, Respond}
-    
+
     //List of properties
     StateType public  State;
     address public  Requestor;
     address public  Responder;
-    
+
     string public RequestMessage;
     string public ResponseMessage;
 ```
@@ -275,11 +275,11 @@ contract HelloBlockchain {
 
 Перед созданием контракта в функции конструктора напишите любую бизнес-логику, которую вы хотите выполнить. Например, инициализируйте переменные состояния с начальными значениями.
 
-Добавьте функцию конструктора в контракт в файле кода смарт-контракта `HelloBlockchain.sol`. 
+Добавьте функцию конструктора в контракт в файле кода смарт-контракта `HelloBlockchain.sol`.
 
-```
+``` solidity
     // constructor function
-    constructor(string message) public
+    constructor(string memory message) public
     {
         Requestor = msg.sender;
         RequestMessage = message;
@@ -287,28 +287,29 @@ contract HelloBlockchain {
     }
 ```
 
-### <a name="functions"></a>Функции
+### <a name="functions"></a>Функции Azure
 
 Функции являются исполняемыми единицами бизнес-логики в контракте. Обязательные параметры для функции определяются как параметры функции в файле конфигурации. Количество, порядок и тип параметров должны совпадать в обоих файлах. Функции связаны с переходами в рабочем процессе Blockchain Workbench в файле конфигурации. Переход — это действие, выполняемое, чтобы перейти к следующему этапу рабочего процесса приложения, как определено в контракте.
 
 Напишите любую бизнес-логику, которую вы хотите выполнить в функции. Например, чтобы изменить значение переменной состояния.
 
-1. Добавьте следующие функции в контракт в файле кода смарт-контракта `HelloBlockchain.sol`. 
+1. Добавьте следующие функции в контракт в файле кода смарт-контракта `HelloBlockchain.sol`.
 
-    ```
+    ``` solidity
         // call this function to send a request
-        function SendRequest(string requestMessage) public
+        function SendRequest(string memory requestMessage) public
         {
             if (Requestor != msg.sender)
             {
                 revert();
             }
+    
             RequestMessage = requestMessage;
             State = StateType.Request;
         }
     
         // call this function to send a response
-        function SendResponse(string responseMessage) public
+        function SendResponse(string memory responseMessage) public
         {
             Responder = msg.sender;
     
@@ -334,13 +335,13 @@ contract HelloBlockchain {
 Развертывание блокчейн-приложения займет несколько минут. После завершения развертывания новое приложение появится в области **приложений**. 
 
 > [!NOTE]
-> Вы также можете создать блокчейн-приложения с помощью [REST API Azure Blockchain Workbench](https://docs.microsoft.com/rest/api/azure-blockchain-workbench). 
+> Вы также можете создать блокчейн-приложения с помощью [REST API Azure Blockchain Workbench](https://docs.microsoft.com/rest/api/azure-blockchain-workbench).
 
 ## <a name="add-blockchain-application-members"></a>Добавление участников блокчейн-приложения
 
 Добавьте участников приложения в свое приложение, чтобы выполнять действия с контрактами. Чтобы добавить участников приложения, вы должны быть [администратором Blockchain Workbench](manage-users.md#manage-blockchain-workbench-administrators).
 
-1. Выберите **Приложения** > **Hello, Blockchain!**.
+1. Выберите **Приложения** > **Hello, Blockchain!** .
 2. Количество участников, связанных с приложением, будет отображаться в правом верхнем углу страницы. В новом приложении количество участников будет равно нулю.
 3. Щелкните ссылку **Участники** в правом верхнем углу страницы. Появится текущий список участников приложения.
 4. В списке участников выберите **Добавить участников**.

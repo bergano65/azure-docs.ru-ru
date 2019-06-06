@@ -10,12 +10,12 @@ ms.subservice: content-moderator
 ms.topic: tutorial
 ms.date: 03/11/2019
 ms.author: pafarley
-ms.openlocfilehash: fc49081c765834a0ed0e5199923606ced7daa081
-ms.sourcegitcommit: 6da4959d3a1ffcd8a781b709578668471ec6bf1b
+ms.openlocfilehash: 4a28e9f1f911e274f9a53275afa577024405b336
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/27/2019
-ms.locfileid: "58522083"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66474684"
 ---
 # <a name="tutorial-video-and-transcript-moderation"></a>Руководство по Модерация видео и расшифровок речи
 
@@ -34,7 +34,7 @@ ms.locfileid: "58522083"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-- Зарегистрируйтесь на сайте ](https://contentmoderator.cognitive.microsoft.com/)Средства проверки Content Moderator[ и создайте пользовательские теги. Если на этом этапе вам нужна помощь, ознакомьтесь со статьей [Создание и использование тегов для модерации](Review-Tool-User-Guide/tags.md).
+- Зарегистрируйтесь на сайте Средства проверки [Content Moderator](https://contentmoderator.cognitive.microsoft.com/) и создайте пользовательские теги. Если на этом этапе вам нужна помощь, ознакомьтесь со статьей [Создание и использование тегов для модерации](Review-Tool-User-Guide/tags.md).
 
     ![Снимок экрана пользовательских тегов для модерации видео](images/video-tutorial-custom-tags.png)
 - Для запуска примера приложения необходимы учетная запись Azure, ресурс Служб мультимедиа Azure, ресурс Azure Content Moderator и учетные данные Azure Active Directory. Инструкции о том, как их получить, см. в руководстве [Анализ содержимого видео для выявления нежелательного содержимого в C#](video-moderation-api.md).
@@ -44,15 +44,15 @@ ms.locfileid: "58522083"
 
 Измените файл `App.config` и добавьте имя клиента, конечные точки службы и ключи подписки Active Directory, помеченные `#####`. Вам понадобятся следующие сведения:
 
-    |Ключ|ОПИСАНИЕ|
-    |-|-|
-    |`AzureMediaServiceRestApiEndpoint`|Конечная точка для API Служб мультимедиа Azure (AMS)|
-    |`ClientSecret`|Ключи подписки для Службы мультимедиа Azure|
-    |`ClientId`|Идентификатор клиента для Служб мультимедиа Azure|
-    |`AzureAdTenantName`|Имя клиента Active Directory, представляющего вашу организацию|
-    |`ContentModeratorReviewApiSubscriptionKey`|Ключ подписки для API проверки Content Moderator|
-    |`ContentModeratorApiEndpoint`|Конечная точка для API Content Moderator|
-    |`ContentModeratorTeamId`|Идентификатор команды Content Moderator|
+|Ключ|ОПИСАНИЕ|
+|-|-|
+|`AzureMediaServiceRestApiEndpoint`|Конечная точка для API Служб мультимедиа Azure (AMS)|
+|`ClientSecret`|Ключи подписки для Службы мультимедиа Azure|
+|`ClientId`|Идентификатор клиента для Служб мультимедиа Azure|
+|`AzureAdTenantName`|Имя клиента Active Directory, представляющего вашу организацию|
+|`ContentModeratorReviewApiSubscriptionKey`|Ключ подписки для API проверки Content Moderator|
+|`ContentModeratorApiEndpoint`|Конечная точка для API Content Moderator|
+|`ContentModeratorTeamId`|Идентификатор команды Content Moderator|
 
 ## <a name="examine-the-main-code"></a>Просмотр основного кода
 

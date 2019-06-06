@@ -73,6 +73,8 @@
           href: waf-overview.md
         - name: Конфигурация WAF
           href: application-gateway-waf-configuration.md
+        - name: Настраиваемые правила
+          href: custom-waf-rules-overview.md
     - name: Мониторинг работоспособности
       items:
         - name: Проверка работоспособности
@@ -141,6 +143,12 @@
           href: application-gateway-customize-waf-rules-powershell.md
         - name: Инфраструктура CLI Azure
           href: application-gateway-customize-waf-rules-cli.md
+    - name: Настраиваемые правила WAF
+      items:
+        - name: Примеры настраиваемых правил
+          href: create-custom-waf-rules.md
+        - name: Настройка WAF с использованием настраиваемых правил
+          href: configure-waf-custom-rules.md
     - name: Маршрутизация на основе URL-адреса
       items:
         - name: Azure PowerShell

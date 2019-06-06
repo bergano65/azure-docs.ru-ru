@@ -4,7 +4,7 @@
   items:
     - name: Что такое База данных Azure для MariaDB?
       href: overview.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   expanded: true
   items:
     - name: Создание базы данных с помощью портала
@@ -15,7 +15,7 @@
       items:
         - name: MySQL Workbench
           href: connect-workbench.md
-- name: Учебники
+- name: Руководства
   items:
     - name: Проектирование базы данных
       items:
@@ -25,7 +25,7 @@
           href: tutorial-design-database-cli.md
 - name: Примеры
   items:
-    - name: Инфраструктура CLI Azure
+    - name: Azure CLI
       href: sample-scripts-azure-cli.md
 - name: Основные понятия
   items:
@@ -35,7 +35,7 @@
           href: concepts-servers.md
         - name: Поддерживаемые версии
           href: concepts-supported-versions.md
-        - name: высокую доступность;
+        - name: Высокий уровень доступности
           href: concepts-high-availability.md
     - name: Ресурсы
       items:
@@ -45,7 +45,7 @@
           href: concepts-limits.md
     - name: Доступ к данным и безопасность
       items:
-        - name: Правила файрволла
+        - name: Правила брандмауэра
           href: concepts-firewall-rules.md
         - name: Настройка SSL
           href: concepts-ssl-connection-security.md
@@ -55,7 +55,7 @@
       items:
         - name: Обзор
           href: concepts-business-continuity.md
-        - name: Архивация и восстановление
+        - name: Резервное копирование и восстановление
           href: concepts-backup.md
     - name: Мониторинг
       items:
@@ -75,19 +75,19 @@
           href: concepts-data-in-replication.md
 - name: Практические руководства
   items:
-    - name: Правила файрволла
+    - name: Правила брандмауэра
       items:
         - name: Портал Azure
           href: howto-manage-firewall-portal.md
-        - name: Инфраструктура CLI Azure
+        - name: Azure CLI
           href: howto-manage-firewall-cli.md
     - name: Восстановление сервера
       items:
         - name: Портал Azure
           href: howto-restore-server-portal.md
-        - name: Инфраструктура CLI Azure
+        - name: Azure CLI
           href: howto-restore-server-cli.md
-    - name: Перенос базы данных
+    - name: Миграция базы данных
       items:
         - name: Дамп и восстановление
           href: howto-migrate-dump-restore.md
@@ -105,11 +105,15 @@
           href: howto-server-parameters.md
         - name: Инфраструктура CLI Azure
           href: howto-configure-server-parameters-cli.md
+    - name: Автоматическое увеличение хранилища
+      items:
+        - name: Портал Azure
+          href: howto-auto-grow-storage-portal.md
     - name: Доступ к журналам сервера
       items:
         - name: Портал Azure
           href: howto-configure-server-logs-portal.md
-        - name: Инфраструктура CLI Azure
+        - name: Azure CLI
           href: howto-configure-server-logs-cli.md
     - name: Мониторинг
       items:
@@ -121,7 +125,7 @@
           href: howto-data-in-replication.md
     - name: Устранение неполадок
       items:
-        - name: Устранение ошибок подключения
+        - name: Устранение неполадок с подключением
           href: howto-troubleshoot-common-connection-issues.md
         - name: Решение проблем с производительностью запросов
           href: howto-troubleshoot-query-performance.md
@@ -129,7 +133,7 @@
       items:
         - name: Портал Azure
           href: howto-manage-vnet-portal.md
-        - name: Инфраструктура CLI Azure
+        - name: Azure CLI
           href: howto-manage-vnet-cli.md
     - name: Перезапуск сервера
       items:
@@ -139,7 +143,7 @@
           href: howto-restart-server-cli.md
 - name: Справочные материалы
   items:
-    - name: Инфраструктура CLI Azure
+    - name: Azure CLI
       href: /cli/azure/mariadb
     - name: REST API
       href: /rest/api/mariadb
@@ -157,11 +161,11 @@
       href: 'https://azure.microsoft.com/pricing/details/mariadb/'
     - name: Форум MSDN
       href: 'https://social.msdn.microsoft.com/forums/en-US/home?forum=AzureDatabaseforMariaDB'
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-database-mariadb'
     - name: Запрос функции
       href: 'https://feedback.azure.com/forums/915439-azure-database-for-mariadb'
-    - name: Регионы доступности
+    - name: Доступность по регионам
       href: 'https://azure.microsoft.com/regions/services/'
     - name: Варианты поддержки
       href: 'https://azure.microsoft.com/support/options/'
