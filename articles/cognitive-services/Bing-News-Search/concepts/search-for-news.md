@@ -10,12 +10,12 @@ ms.subservice: bing-news-search
 ms.topic: overview
 ms.date: 01/11/2019
 ms.author: scottwhi
-ms.openlocfilehash: 612a3961d901f53147ab2f3cfeea20f9c11d96b7
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 77f8e41b2271770e49c2e5c4d1591c213eaa257d
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58087862"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66383419"
 ---
 # <a name="search-for-news-with-the-bing-news-search-api"></a>Поиск новостей с помощью API Bing для поиска новостей
 
@@ -27,7 +27,7 @@ API Bing для поиска новостей в основном находит
 
 Если вы предоставили окно поиска, в котором пользователь вводит свой поисковый запрос, используйте [API автозаполнения Bing](../../bing-autosuggest/get-suggested-search-terms.md), чтобы оптимизировать работу. API возвращает предложенные строки запроса на основе частичного поиска, как пользовательские типы.
 
-После ввода условия поиска URL-адрес закодирует его перед установкой параметра запроса [q](https://docs.microsoft.com/rest/api/cognitiveservices/bing-news-api-v7-reference#query). Например, если пользователь вводит *парусные шлюпки*, установите для параметра `q` значение `sailing+dinghies` или `sailing%20dinghies`.
+После ввода условия поиска URL-адрес закодирует его перед установкой параметра запроса [q](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#query). Например, если пользователь вводит *парусные шлюпки*, установите для параметра `q` значение `sailing+dinghies` или `sailing%20dinghies`.
 
 ## <a name="get-general-news"></a>Получение общих новостей
 
@@ -99,9 +99,9 @@ GET https://api.cognitive.microsoft.com/bing/v7.0/news/search?q=sailing+dinghies
 }
 ```
 
-В ответе [Новости](https://docs.microsoft.com/rest/api/cognitiveservices/bing-news-api-v5-reference#news) перечислены новостные статьи, которые система Bing посчитала соответствующими запросу. Поле `totalEstimatedMatches` содержит оценку количества статей, доступных для просмотра. Сведения о разбиении статей на страницы см. в разделе [Разбиение новостей по страницам](../paging-news.md).
+В ответе [Новости](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-news-api-v5-reference#news) перечислены новостные статьи, которые система Bing посчитала соответствующими запросу. Поле `totalEstimatedMatches` содержит оценку количества статей, доступных для просмотра. Сведения о разбиении статей на страницы см. в разделе [Разбиение новостей по страницам](../paging-news.md).
 
-Каждый объект [новостной статьи](https://docs.microsoft.com/rest/api/cognitiveservices/bing-news-api-v5-reference#newsarticle) в списке содержит название, описание и URL-адрес статьи на исходном веб-сайте. Если статья содержит изображение, то объект включает эскиз этого изображения. Используйте свойства `name` и `url`, чтобы создать гиперссылку, направляющую пользователя к новостной статье на исходном сайте. Если статья содержит изображение, также сделайте его интерактивным с помощью свойства `url`. Обязательно используйте свойство `provider`, чтобы указать источник статьи.
+Каждый объект [новостной статьи](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-news-api-v5-reference#newsarticle) в списке содержит название, описание и URL-адрес статьи на исходном веб-сайте. Если статья содержит изображение, то объект включает эскиз этого изображения. Используйте свойства `name` и `url`, чтобы создать гиперссылку, направляющую пользователя к новостной статье на исходном сайте. Если статья содержит изображение, также сделайте его интерактивным с помощью свойства `url`. Обязательно используйте свойство `provider`, чтобы указать источник статьи.
 
 Если Bing может определить категорию новостной статьи, значит в ней содержится поле `category`.
 
@@ -135,7 +135,7 @@ X-MSEdge-ClientID: <blobFromPriorResponseGoesHere>
 Host: api.cognitive.microsoft.com
 ```
 
-Используйте параметр запроса [Категория](https://docs.microsoft.com/rest/api/cognitiveservices/bing-news-api-v7-reference#category), чтобы указать категорию статей для получения. Список возможных категорий новостей, которые можно указать, см. в разделе [News Categories by Market](https://docs.microsoft.com/rest/api/cognitiveservices/bing-news-api-v7-reference#news-categories-by-market) (Категории новостей по рынку).
+Используйте параметр запроса [Категория](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#category), чтобы указать категорию статей для получения. Список возможных категорий новостей, которые можно указать, см. в разделе [News Categories by Market](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#news-categories-by-market) (Категории новостей по рынку).
 
 Ответ на получение новостей по категориям почти такой же, как и на получение общих новостей. Однако все статьи принадлежат к указанной категории.
 
@@ -153,11 +153,11 @@ X-MSEdge-ClientID: <blobFromPriorResponseGoesHere>
 Host: api.cognitive.microsoft.com
 ```
 
-Не включайте параметр запроса [Категория](https://docs.microsoft.com/rest/api/cognitiveservices/bing-news-api-v7-reference#category).
+Не включайте параметр запроса [Категория](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#category).
 
 Ответ на получение краткой сводки новостей почти такой же, как и на получение главных новостей за сегодняшний день. Если статья является новостной сводкой, полю `headline` присваивается значение **true**.
 
-По умолчанию ответ включает до 12 новостных сводок. Чтобы изменить количество новостных сводок для возврата, укажите параметр запроса [headlineCount](https://docs.microsoft.com/rest/api/cognitiveservices/bing-news-api-v7-reference#headlinecount). Ответ также включает до четырех информационных статей по каждой категории новостей.
+По умолчанию ответ включает до 12 новостных сводок. Чтобы изменить количество новостных сводок для возврата, укажите параметр запроса [headlineCount](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#headlinecount). Ответ также включает до четырех информационных статей по каждой категории новостей.
 
 Ответ считает сгруппированные статьи как одну. Поскольку в группе несколько статей, ответ может включать более 12 новостных сводок и более четырех информационных статей по каждой категории.
 
@@ -223,7 +223,7 @@ Host: api.cognitive.microsoft.com
 
 ## <a name="getting-related-news"></a>Получение похожих новостей
 
-Если есть другие статьи, связанные с новостной статьей, то она может включать в себя поле [clusteredArticles](https://docs.microsoft.com/rest/api/cognitiveservices/bing-news-api-v7-reference#newsarticle-clusteredarticles). Ниже показаны сгруппированные статьи.
+Если есть другие статьи, связанные с новостной статьей, то она может включать в себя поле [clusteredArticles](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-news-api-v7-reference#newsarticle-clusteredarticles). Ниже показаны сгруппированные статьи.
 
 ```json
     {

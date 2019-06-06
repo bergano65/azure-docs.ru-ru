@@ -14,12 +14,12 @@ ms.topic: tutorial
 ms.date: 02/24/2019
 ms.author: yegu
 ms.custom: mvc
-ms.openlocfilehash: ee539b87c08dd00545060cb30d28ac7fcd01e61b
-ms.sourcegitcommit: 17411cbf03c3fa3602e624e641099196769d718b
+ms.openlocfilehash: 9cbdfe957587977b01bc46b46818856f789f46d8
+ms.sourcegitcommit: 51a7669c2d12609f54509dbd78a30eeb852009ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2019
-ms.locfileid: "65518990"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66393619"
 ---
 # <a name="tutorial-use-dynamic-configuration-in-an-aspnet-core-app"></a>Руководство по Использование динамической конфигурации в приложении ASP.NET Core
 
@@ -167,7 +167,7 @@ ASP.NET Core имеет подключаемую систему конфигур
 
     ![Краткое руководство. Запуск приложения, размещенного локально](./media/quickstarts/aspnet-core-app-launch-local-before.png)
 
-4. Войдите на [портале Azure](https://aka.ms/azconfig/portal). Щелкните **Все ресурсы** и выберите экземпляр хранилища конфигураций приложений, который вы создали по инструкциям из краткого руководства.
+4. Войдите на [портале Azure](https://portal.azure.com). Щелкните **Все ресурсы** и выберите экземпляр хранилища конфигураций приложений, который вы создали по инструкциям из краткого руководства.
 
 5. Выберите **Configuration Explorer** (Обозреватель конфигураций) и измените значения следующих ключей.
 

@@ -1,5 +1,5 @@
 ---
-title: Что такое API автозаполнения Bing?
+title: Что такое API Автозаполнения Bing?
 titlesuffix: Azure Cognitive Services
 description: Узнайте, как использовать API автозаполнения Bing.
 services: cognitive-services
@@ -10,14 +10,14 @@ ms.subservice: bing-autosuggest
 ms.topic: overview
 ms.date: 02/20/2019
 ms.author: scottwhi
-ms.openlocfilehash: 669eaaf0eaf28c696a7ca368c02f5816054e5d10
-ms.sourcegitcommit: 15e9613e9e32288e174241efdb365fa0b12ec2ac
+ms.openlocfilehash: 24f35d795b34e7d9c214a23c040791841b4a711b
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/28/2019
-ms.locfileid: "57010112"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66382570"
 ---
-# <a name="what-is-bing-autosuggest"></a>Что такое API автозаполнения Bing?
+# <a name="what-is-bing-autosuggest"></a>Что такое API Автозаполнения Bing?
 
 Если ваше приложение отправляет запросы любому из API "Поиск Bing", вы можете использовать API "Автозаполнение Bing", чтобы улучшить работу пользователей с полем поиска. API "Автозаполнение Bing" возвращает список предлагаемых запросов на основе частично введенной строки запроса в поле поиска. Когда пользователь вводит символы в поле поиска, варианты поиска отображаются в раскрывающимся списке.
 
@@ -47,7 +47,7 @@ API автозаполнения Bing является веб-службой RES
 
 Сведения о том, как быстро создать первый запрос, см. в статье [Краткое руководство по API автозаполнения Bing с использованием C#](quickstarts/csharp.md).
 
-Ознакомьтесь с руководством [API автозаполнения Bing версии 7](https://docs.microsoft.com/rest/api/cognitiveservices/bing-autosuggest-api-v7-reference). Руководство содержит список конечных точек, заголовков и параметров запроса, которые будут использоваться для запроса предложенных терминов запроса, а также определения объектов ответа.
+Ознакомьтесь с руководством [API автозаполнения Bing версии 7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-autosuggest-api-v7-reference). Руководство содержит список конечных точек, заголовков и параметров запроса, которые будут использоваться для запроса предложенных терминов запроса, а также определения объектов ответа.
 
 Узнайте, как выполнять поиск в Интернете с помощью статьи [Документация по API Bing для поиска в Интернете](../bing-web-search/search-the-web.md).
 

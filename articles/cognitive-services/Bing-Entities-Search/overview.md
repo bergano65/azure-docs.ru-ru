@@ -10,12 +10,12 @@ ms.subservice: bing-entity-search
 ms.topic: overview
 ms.date: 02/01/2019
 ms.author: scottwhi
-ms.openlocfilehash: 0755688d1cc2f00ffef253b7695d9cb504f9e169
-ms.sourcegitcommit: e7d4881105ef17e6f10e8e11043a31262cfcf3b7
+ms.openlocfilehash: 679a3d9efbeeb75e0aa8e3986fa85b7ecf0d77bd
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2019
-ms.locfileid: "64866839"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66388499"
 ---
 # <a name="what-is-bing-entity-search-api"></a>Основные сведения об API Bing для поиска сущностей
 
@@ -39,5 +39,5 @@ API Bing для поиска сущностей является веб-служ
 
 * Попробуйте [интерактивную демоверсию](https://azure.microsoft.com/services/cognitive-services/bing-entity-search-api/) API Bing для поиска сущностей. 
 * Сведения о том, как быстро создать первый запрос, см. в [этом кратком руководстве](quickstarts/csharp.md).
-* См. раздел справочника по [API Bing для поиска сущностей версии 7](https://docs.microsoft.com/rest/api/cognitiveservices/bing-entities-api-v7-reference).
+* См. раздел справочника по [API Bing для поиска сущностей версии 7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-entities-api-v7-reference).
 * В статье [Требования к использованию и отображению API поиска Bing](./use-display-requirements.md) рассматриваются приемлемые варианты использования содержимого и информации, получаемой с помощью API Bing для поиска.

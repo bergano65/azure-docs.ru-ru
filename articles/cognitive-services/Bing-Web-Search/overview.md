@@ -11,12 +11,12 @@ ms.topic: overview
 ms.date: 03/12/2019
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: b6e546130efd52312fca62ab4e6a22626778a19e
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 65e28b557a3708c155bf80f21a784374c4497783
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "60648158"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66383038"
 ---
 # <a name="what-is-the-bing-web-search-api"></a>Знакомство с API Bing для поиска в Интернете
 
@@ -50,5 +50,5 @@ API Bing для поиска в Интернете легко вызываетс
 
 * Осуществите свой первый вызов API Bing для поиска в Интернете, следуя нашему [краткому руководству для Python](quickstarts/python.md).  
 * [Создайте одностраничное веб-приложение](tutorial-bing-web-search-single-page-app.md).
-* Просмотрите [справочную документацию по API Bing для поиска в Интернете версии 7](https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference).  
+* Просмотрите [справочную документацию по API Bing для поиска в Интернете версии 7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference).  
 * Узнайте о [требованиях к использованию и отображению](UseAndDisplayRequirements.md) для API Bing для поиска в Интернете.  

@@ -10,12 +10,12 @@ ms.subservice: bing-autosuggest
 ms.topic: quickstart
 ms.date: 02/20/2019
 ms.author: aahi
-ms.openlocfilehash: 55c1a2a56743b53d6d5932665be0c45e1ac9b9b3
-ms.sourcegitcommit: 1fbc75b822d7fe8d766329f443506b830e101a5e
+ms.openlocfilehash: 4cd77c1e71287ea2cec2a4098e5ef7f713350f9f
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65596050"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66388638"
 ---
 # <a name="quickstart-suggest-search-queries-with-the-bing-autosuggest-rest-api-and-c"></a>Краткое руководство. Предложение поисковых запросов с помощью REST API Автозаполнения Bing и C#
 
@@ -40,7 +40,7 @@ ms.locfileid: "65596050"
     using System.Text;
     ```
 
-2. В новом классе создайте переменные для хоста и пути API, [рыночного кода](https://docs.microsoft.com/rest/api/cognitiveservices/bing-autosuggest-api-v7-reference#market-codes) и частичного поискового запроса.
+2. В новом классе создайте переменные для хоста и пути API, [рыночного кода](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-autosuggest-api-v7-reference#market-codes) и частичного поискового запроса.
 
     ```csharp
     static string host = "https://api.cognitive.microsoft.com";
@@ -166,4 +166,4 @@ ms.locfileid: "65596050"
 ## <a name="see-also"></a>См. также
 
 - [Что такое API автозаполнения Bing?](../get-suggested-search-terms.md)
-- [Справочник по API автозаполнения Bing версии 7](https://docs.microsoft.com/rest/api/cognitiveservices/bing-autosuggest-api-v7-reference)
+- [Справочник по API автозаполнения Bing версии 7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-autosuggest-api-v7-reference)

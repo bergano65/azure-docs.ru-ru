@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: quickstart
-ms.date: 02/21/2019
+ms.date: 06/04/2019
 ms.author: erhopf
-ms.openlocfilehash: f0690d2e95084712c4260ade9df493ee078979a0
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: cf0a7598d7af583e3339c511556a121523d12a7a
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57863735"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66514890"
 ---
 # <a name="quickstart-use-the-translator-text-api-to-translate-a-string-using-go"></a>Краткое руководство. Использование API перевода текстов для перевода строки с помощью Go
 
@@ -27,7 +27,7 @@ ms.locfileid: "57863735"
 
 Для работы с этим кратким руководством вам понадобится:
 
-* [GO](https://golang.org/doc/install)
+* [Go](https://golang.org/doc/install)
 * ключ подписки Azure для API перевода текстов.
 
 ## <a name="create-a-project-and-import-required-modules"></a>Создание проекта и импорт обязательных модулей

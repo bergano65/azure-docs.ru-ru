@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: quickstart
-ms.date: 02/21/2019
+ms.date: 06/04/2019
 ms.author: erhopf
-ms.openlocfilehash: 08dca771050f1b62cd85208a4b8f3d39340fb97d
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 7c4ec0304211d4ce311d3db2275b065219f37f0f
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57834296"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66514767"
 ---
 # <a name="quickstart-use-the-translator-text-api-to-translate-a-string-with-nodejs"></a>Краткое руководство. Использование API перевода текстов для перевода строки с помощью Node.js
 
@@ -77,8 +77,7 @@ let options = {
     url: 'translate',
     qs: {
       'api-version': '3.0',
-      'to': 'it',
-      'to': 'de'
+      'to': ['de', 'it']
     },
     headers: {
       'Ocp-Apim-Subscription-Key': subscriptionKey,
@@ -92,7 +91,7 @@ let options = {
 };
 ```
 
-### <a name="authentication"></a>Authentication
+### <a name="authentication"></a>Аутентификация
 
 Самый простой способ выполнить проверку подлинности запроса — это передать ключ подписки как заголовок `Ocp-Apim-Subscription-Key`, который мы используем в этом примере. В качестве альтернативы вы можете обменять свой ключ подписки на маркер доступа и передать маркер доступа в виде заголовка `Authorization` для проверки своего запроса. Дополнительные сведения см. в разделе [Authenticate to the Speech API](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-reference#authentication) (Аутентификация в API речи).
 

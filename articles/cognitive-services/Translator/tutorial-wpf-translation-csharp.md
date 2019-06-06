@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: tutorial
-ms.date: 02/13/2019
+ms.date: 06/04/2019
 ms.author: erhopf
-ms.openlocfilehash: f7f8e86f17b0fdb715afc96dba80db0746440cef
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 2deaa0ed8b21d5e091fe5d3b3e6986eaf2340281
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58078131"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66514712"
 ---
 # <a name="tutorial-create-a-translation-app-with-wpf"></a>Руководство по Создание приложения для перевода текста с помощью WPF
 
@@ -39,10 +39,10 @@ ms.locfileid: "58078131"
 
 | Service | Функция | ОПИСАНИЕ |
 |---------|---------|-------------|
-| Перевод текста | [Get Languages](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-languages) | Получение полного списка поддерживаемых языков для перевода текста. |
-| Перевод текста | [Translate](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-translate) | Перевод текста более чем на 60 языков. |
-| Перевод текста | [Detect](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-detect) | Определение языка исходного текста. Для определения используется показатель достоверности. |
-| API Bing для проверки орфографии | [Spell Check](https://docs.microsoft.com/rest/api/cognitiveservices/bing-spell-check-api-v7-reference) | Исправление орфографических ошибок для повышения точности перевода. |
+| Перевод текстов | [Get Languages](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-languages) | Получение полного списка поддерживаемых языков для перевода текста. |
+| Перевод текстов | [Translate](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-translate) | Перевод текста более чем на 60 языков. |
+| Перевод текстов | [Detect](https://docs.microsoft.com/azure/cognitive-services/translator/reference/v3-0-detect) | Определение языка исходного текста. Для определения используется показатель достоверности. |
+| API Проверки орфографии Bing | [Spell Check](https://docs.microsoft.com/rest/api/cognitiveservices/bing-spell-check-api-v7-reference) | Исправление орфографических ошибок для повышения точности перевода. |
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -60,7 +60,7 @@ ms.locfileid: "58078131"
 Прежде всего, настройте проект в Visual Studio.
 
 1. Откройте Visual Studio. Затем выберите **Файл > Новый > Проект**.
-2. На панели слева выберите **Visual C#**. Затем выберите на центральной панели **Приложение WPF (.NET Framework)**.
+2. На панели слева выберите **Visual C#** . Затем выберите на центральной панели **Приложение WPF (.NET Framework)** .
    ![Создание приложения WPF в Visual Studio](media/create-wpf-project-visual-studio.png)
 3. Укажите имя проекта, платформу **.NET Framework 4.5.2 или более поздней версии**, а затем нажмите кнопку **OK**.
 4. Вы создали проект. Обратите внимание на две открытые вкладки: `MainWindow.xaml` и `MainWindow.xaml.cs`. В рамках этого руководства мы будем добавлять код в эти два файла. Первый файл предназначен для пользовательского интерфейса приложения, а второй — для вызовов Перевода текстов и Проверки орфографии Bing.
@@ -79,9 +79,9 @@ ms.locfileid: "58078131"
 1. Найдите проект в обозревателе решений Visual Studio (на панели справа). Чтобы открыть **диспетчер ссылок**, щелкните правой кнопкой мыши проект, а затем выберите **Добавить > Ссылка...**
    ![Добавление ссылок для сборки](media/add-assemblies-sample.png)
 2. На вкладке со сборками перечислены все сборки платформы .NET, для которых можно указать ссылки. Воспользуйтесь панелью поиска в правом верхнем углу экрана, чтобы найти эти ссылки и добавить их в проект:
-   * [System.Runtime.Serialization](https://docs.microsoft.com/dotnet/api/system.runtime.serialization?view=netframework-4.7.2)
-   * [System.Web](https://docs.microsoft.com/dotnet/api/system.web?view=netframework-4.7.2);
-   * [System.Web.Extensions](https://docs.microsoft.com/dotnet/api/system.web?view=netframework-4.7.2).
+   * [System.Runtime.Serialization](https://docs.microsoft.com/dotnet/api/system.runtime.serialization)
+   * [System.Web](https://docs.microsoft.com/dotnet/api/system.web);
+   * [System.Web.Extensions](https://docs.microsoft.com/dotnet/api/system.web).
 3. После добавления этих ссылок в проект вы можете нажать кнопку **ОК**, чтобы закрыть **диспетчер ссылок**.
 
 > [!NOTE]

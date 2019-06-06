@@ -1,22 +1,22 @@
 ---
-title: Руководство. Загрузка примера данных в таблицу Cassandra API в Azure Cosmos DB с помощью приложения Java
+title: Руководство по Загрузка примера данных в таблицу Cassandra API в Azure Cosmos DB с помощью приложения Java
 description: Данное руководство описывает, как в Azure Cosmos DB загрузить пример данных пользователя в таблицу учетной записи API Cassandra с помощью приложения Java.
 author: kanshiG
 ms.service: cosmos-db
 ms.subservice: cosmosdb-cassandra
 ms.topic: tutorial
-ms.date: 12/03/2018
+ms.date: 05/20/2019
 ms.author: govindk
 ms.reviewer: sngun
 Customer intent: As a developer, I want to build a Java application to load data to a Cassandra API table in Azure Cosmos DB so that customers can store and manage the key/value data and utilize the global distribution, elastic scaling, multi-master, and other capabilities offered by Azure Cosmos DB.
-ms.openlocfilehash: 68baffea86ce5c877217ec05d477288b71830a42
-ms.sourcegitcommit: 8330a262abaddaafd4acb04016b68486fba5835b
+ms.openlocfilehash: e9fc96b9f26344045aa7e45fe7bdbe389e329377
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 01/04/2019
-ms.locfileid: "54037435"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66472680"
 ---
-# <a name="tutorial-load-sample-data-into-a-cassandra-api-table-in-azure-cosmos-db"></a>Руководство. Загрузка примера данных в таблицу API Cassandra в Azure Cosmos DB
+# <a name="tutorial-load-sample-data-into-a-cassandra-api-table-in-azure-cosmos-db"></a>Руководство по Загрузка примера данных в таблицу API Cassandra в Azure Cosmos DB
 
 Как у разработчика у вас должно быть приложение, использующее пары "ключ-значение". Можно использовать учетную запись Cassandra API в Azure Cosmos DB для хранения данных "ключ-значение" и управления ими. Данное руководство описывает, как в Azure Cosmos DB загрузить пример данных пользователя в таблицу в учетной записи API Cassandra с помощью приложения Java. Приложение Java использует [драйвер Java](https://github.com/datastax/java-driver) и загружает данные пользователя, например, идентификатор пользователя, имя пользователя, город пользователя. 
 

@@ -10,12 +10,12 @@ ms.subservice: bing-video-search
 ms.topic: overview
 ms.date: 01/31/2019
 ms.author: scottwhi
-ms.openlocfilehash: f56893f830720c57c66eb4c17bb2771efbb73f6f
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 2f6be01a3aee4e156b7af184fa2537455fc73f3f
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "62124648"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66386523"
 ---
 # <a name="what-is-the-bing-video-search-api"></a>Что такое API Поиска видео Bing
 
@@ -50,6 +50,6 @@ API Bing для поиска видео является веб-службой R
 
 ## <a name="see-also"></a>См. также
 
-* Страница [Video Search API v7 reference](https://docs.microsoft.com/rest/api/cognitiveservices/bing-video-api-v7-reference) (Справочник по API Bing для поиска видео версии 7) содержит список конечных точек, заголовков и параметров запроса, используемых для запроса результатов поиска.
+* Страница [Video Search API v7 reference](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-video-api-v7-reference) (Справочник по API Bing для поиска видео версии 7) содержит список конечных точек, заголовков и параметров запроса, используемых для запроса результатов поиска.
 
 * В статье [Требования к использованию и отображению API поиска Bing](./useanddisplayrequirements.md) рассматриваются приемлемые варианты использования содержимого и информации, получаемой с помощью API Bing для поиска.

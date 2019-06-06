@@ -1,5 +1,5 @@
 ---
-title: Что собой представляет API перевода текстов API перевода текстов
+title: Что собой представляет API Перевода текстов API перевода текстов
 titlesuffix: Azure Cognitive Services
 description: Интеграция API перевода текстов в приложения, веб-сайты, инструменты и другие решения обеспечивает многоязычное взаимодействие с пользователем.
 services: cognitive-services
@@ -8,17 +8,17 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: overview
-ms.date: 02/21/2019
+ms.date: 06/04/2019
 ms.author: erhopf
 ms.custom: seodec18
-ms.openlocfilehash: 79f0474950cf1f48f3552b1ae843a29b5d8dbb24
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: 89b836109818f7a4c1aafdbc9a1b3a72fe806269
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "57883378"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66515039"
 ---
-# <a name="what-is-translator-text-api"></a>Что собой представляет API перевода текстов?
+# <a name="what-is-the-translator-text-api"></a>Что собой представляет API Перевода текстов
 
 API перевода текстов легко интегрируется в приложения, веб-сайты, инструменты и решения. Он позволяет добавлять многоязычное взаимодействие с пользователем [более чем на 60 языках](languages.md), и его можно использовать на любой аппаратной платформе с любой операционной системой для текстового перевода.
 

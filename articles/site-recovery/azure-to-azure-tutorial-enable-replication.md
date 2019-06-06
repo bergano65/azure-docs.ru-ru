@@ -6,15 +6,15 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: tutorial
-ms.date: 04/16/2019
+ms.date: 05/30/2019
 ms.author: raynew
 ms.custom: mvc
-ms.openlocfilehash: 588fe452473ddc2434d92f90afbf8a0e1bc8c275
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 5602298ffe60ad15d3daf52587c50357c310200c
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65795762"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66480110"
 ---
 # <a name="set-up-disaster-recovery-for-azure-vms"></a>Настройка аварийного восстановления для виртуальных машин Azure
 
@@ -35,7 +35,7 @@ ms.locfileid: "65795762"
 
 Для работы с этим руководством:
 
-- Вам должны быть понятны [архитектура и компоненты сценария](concepts-azure-to-azure-architecture.md).
+- Ознакомьтесь с [архитектурой и компонентами сценария](concepts-azure-to-azure-architecture.md).
 - Перед началом работы ознакомьтесь с [требованиями поддержки](site-recovery-support-matrix-azure-to-azure.md).
 
 ## <a name="create-a-recovery-services-vault"></a>Создание хранилища служб восстановления

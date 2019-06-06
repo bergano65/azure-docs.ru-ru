@@ -8,12 +8,12 @@ ms.subservice: pod
 ms.topic: tutorial
 ms.date: 05/14/2019
 ms.author: alkohli
-ms.openlocfilehash: 83eabca3b2ec1903e25b02083b1a2d5b49745396
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 6b2a0655173405008e0bccf3e31a8db391da6127
+ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65800450"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66496293"
 ---
 # <a name="tutorial-copy-data-to-azure-data-box-via-smb"></a>Руководство по Копирование данных в Azure Data Box через SMB
 
@@ -202,7 +202,7 @@ ms.locfileid: "65800450"
 
 Дополнительные сведения о команде Robocopy см. в статье [Robocopy и несколько примеров](https://social.technet.microsoft.com/wiki/contents/articles/1073.robocopy-and-a-few-examples.aspx).
 
-Откройте папку назначения для просмотра и проверки скопированных файлов. Если в процессе копирования возникли ошибки, скачайте файл с ошибками для устранения неполадок. Дополнительные сведения см. в разделе [Просмотр журналов ошибок во время копирования данных в Data Box](data-box-logs.md#view-error-log-during-data-copy-to-data-box). Подробный список ошибок во время копирования данных см. в статье об [устранении неполадок, связанных с Azure Data Box](data-box-troubleshoot.md).
+Откройте папку назначения для просмотра и проверки скопированных файлов. Если в процессе копирования возникли ошибки, скачайте файл с ошибками для устранения неполадок. Дополнительные сведения см. в разделе [Просмотр журналов ошибок во время копирования данных в Data Box](data-box-logs.md#view-error-log-during-data-copy). Подробный список ошибок во время копирования данных см. в статье об [устранении неполадок, связанных с Azure Data Box](data-box-troubleshoot.md).
 
 Чтобы обеспечить целостность данных, при копировании данных система вычисляет их контрольные суммы. По завершении копирования проверьте использованное и свободное место на устройстве.
     

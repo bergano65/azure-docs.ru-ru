@@ -7,14 +7,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: form-recognizer
 ms.topic: overview
-ms.date: 05/28/2019
+ms.date: 05/31/2019
 ms.author: pafarley
-ms.openlocfilehash: f65375bfd826660f8583068875a1fddc545a86d7
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.openlocfilehash: 1c9e68f643f27f70190b5847225692d554cc5480
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66306535"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66475444"
 ---
 # <a name="install-and-run-form-recognizer-containers"></a>Установка и запуск контейнеров Распознавателя документов
 Распознаватель документов применяет технологии машинного обучения, чтобы идентифицировать и извлечь пары "ключ — значение" и таблицы из форм. Он связывает с ними значения и записи в таблицах, а затем выводит структурированные данные, которые включают в себя связи в исходном файле. Вы можете вызывать пользовательскую модель Распознавателя документов с помощью простого REST API, чтобы упростить и легко интегрировать ее в свой рабочий процесс автоматизации или другое приложение. Необходимо всего пять документов (или пустых форм), поэтому вы можете получать результаты быстро, точно и с учетом специфики вашего содержимого, не прибегая к сложному ручному вмешательству или продолжительной обработке и анализу данных. Это не требует добавления меток данных или заметок к данным.
@@ -114,9 +114,9 @@ docker pull containerpreview.azurecr.io/microsoft/cognitive-services-form-recogn
 
 ```bash
 docker run --rm -it -p 5000:5000 --memory 8g --cpus 2 \
-containerpreview.azurecr.io/microsoft/cognitive-services-form-recognizer \
 --mount type=bind,source=c:\input,target=/input  \
 --mount type=bind,source=c:\output,target=/output \
+containerpreview.azurecr.io/microsoft/cognitive-services-form-recognizer \
 Eula=accept \
 Billing={BILLING_ENDPOINT_URI} \
 ApiKey={BILLING_KEY} \
@@ -142,6 +142,8 @@ FormRecognizer:ComputerVisionEndpointUri={COMPUTER_VISION_ENDPOINT_URI}
 
 ```bash 
 docker run --rm -it -p 5000:5000 --memory 4g --cpus 1 \
+--mount type=bind,source=c:\input,target=/input  \
+--mount type=bind,source=c:\output,target=/output \
 containerpreview.azurecr.io/microsoft/cognitive-services-form-recognizer \
 Eula=accept \
 Billing={BILLING_ENDPOINT_URI} \

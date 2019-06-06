@@ -10,12 +10,12 @@ ms.subservice: bing-autosuggest
 ms.topic: quickstart
 ms.date: 02/20/2019
 ms.author: aahi
-ms.openlocfilehash: 64b6ed680ba0812322d5796debc5edada19bc926
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: f41e81d948bfa482a016e3770a705344f9c26b0c
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58118839"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66390433"
 ---
 # <a name="quickstart-suggest-search-queries-with-the-bing-autosuggest-rest-api-and-java"></a>Краткое руководство. Предложение поисковых запросов с помощью REST API Автозаполнения Bing и Java
 
@@ -44,7 +44,7 @@ ms.locfileid: "58118839"
     import com.google.gson.JsonParser;
     ```
 
-2. Создайте переменные ключа подписки, узла API и пути к нему, [код рынка](https://docs.microsoft.com/rest/api/cognitiveservices/bing-autosuggest-api-v7-reference#market-codes) и поисковый запрос.
+2. Создайте переменные ключа подписки, узла API и пути к нему, [код рынка](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-autosuggest-api-v7-reference#market-codes) и поисковый запрос.
     
     ```java
     static String subscriptionKey = "enter key here";
@@ -207,4 +207,4 @@ public static String prettify(String json_text) {
 > [Создание одностраничного веб-приложения](../tutorials/autosuggest.md)
 
 - [Что такое API автозаполнения Bing?](../get-suggested-search-terms.md)
-- [Справочник по API автозаполнения Bing версии 7](https://docs.microsoft.com/rest/api/cognitiveservices/bing-autosuggest-api-v7-reference)
+- [Справочник по API автозаполнения Bing версии 7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-autosuggest-api-v7-reference)

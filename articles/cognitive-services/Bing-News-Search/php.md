@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.date: 1/10/2019
 ms.author: aahi
 ms.custom: seodec2018
-ms.openlocfilehash: e77c7ea6036e92c33c975f8180053a8880db55a0
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: fa253f95c01e35505e154d9709ca88033735fa52
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58090531"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66390469"
 ---
 # <a name="quickstart-perform-a-news-search-using-php-and-the-bing-news-search-rest-api"></a>Краткое руководство. Поиск новостей с помощью PHP и REST API Bing для поиска новостей
 
@@ -34,7 +34,7 @@ ms.locfileid: "58090531"
 
 ## <a name="run-the-application"></a>Выполнение приложения
 
-[API Bing для поиска новостей](https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference) возвращает результаты поиска новостей из поисковой системы Bing.
+[API Bing для поиска новостей](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference) возвращает результаты поиска новостей из поисковой системы Bing.
 
 1. Убедитесь, что в `php.ini` включена поддержка безопасного HTTP, как описано в комментарии к коду.
 2. Создайте проект PHP в используемой вами интегрированной среде разработки или редакторе.
