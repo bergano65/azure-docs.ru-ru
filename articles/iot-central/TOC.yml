@@ -91,6 +91,8 @@
               href: howto-export-data-blob-storage.md
         - name: Создание настраиваемых правил
           href: howto-create-custom-rules.md
+        - name: Создание настраиваемой функции аналитики
+          href: howto-create-custom-analytics.md
         - name: Визуализация данных в Power BI
           href: howto-connect-powerbi.md
         - name: Подключение других облаков Интернета вещей

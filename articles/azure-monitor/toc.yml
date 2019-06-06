@@ -95,10 +95,6 @@
           href: platform/alerts-overview.md
         - name: Классические оповещения
           href: platform/alerts-classic.overview.md
-        - name: Смарт-группы
-          href: platform/alerts-smartgroups-overview.md
-        - name: Автомасштабирование
-          href: platform/autoscale-overview.md
         - name: Оповещения о метриках
           href: platform/alerts-metric-overview.md
         - name: Оповещения журналов
@@ -109,6 +105,10 @@
           href: platform/alerts-common-schema.md
         - name: Правила действий
           href: platform/alerts-action-rules.md
+        - name: Смарт-группы
+          href: platform/alerts-smartgroups-overview.md
+        - name: Автомасштабирование
+          href: platform/autoscale-overview.md
         - name: Анализ изменений
           href: app/change-analysis.md
     - name: Визуализация данных

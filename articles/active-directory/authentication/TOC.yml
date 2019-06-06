@@ -142,10 +142,6 @@
               href: active-directory-certificate-based-authentication-android.md
             - name: CBA на устройствах iOS
               href: active-directory-certificate-based-authentication-ios.md
-    - name: Разработка
-      items:
-        - name: Встраивание MFA в пользовательские приложения
-          href: howto-mfa-sdk.md
     - name: Отчеты
       items:
         - name: Отчеты SSPR

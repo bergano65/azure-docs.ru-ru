@@ -38,10 +38,6 @@
       items:
         - name: Отправка push-уведомлений с помощью службы push-уведомлений облака Baidu
           href: notification-hubs-baidu-china-android-notifications-get-started.md
-    - name: Chrome
-      items:
-        - name: Отправка push-уведомлений в приложения Chrome
-          href: notification-hubs-chrome-push-notifications-get-started.md
     - name: iOS
       items:
         - name: Отправка push-уведомлений в приложения iOS
