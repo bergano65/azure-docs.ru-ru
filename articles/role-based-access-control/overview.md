@@ -14,12 +14,12 @@ ms.workload: identity
 ms.date: 03/13/2019
 ms.author: rolyon
 ms.reviewer: bagovind
-ms.openlocfilehash: 6510099f9fb145951cbce1ea168b36dba5f76e07
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.openlocfilehash: db9424ff4ddd2663ae1342294181dc885c6ed937
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65540919"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66479554"
 ---
 # <a name="what-is-role-based-access-control-rbac-for-azure-resources"></a>Общие сведения об управлении доступом на основе ролей (RBAC) для ресурсов Azure
 
@@ -84,7 +84,7 @@ RBAC — это система авторизации на основе [Azure 
 
 ![Область для назначения ролей](./media/overview/rbac-scope.png)
 
-При предоставлении доступа к родительской области дочерние области наследуют эти разрешения. Например: 
+При предоставлении доступа к родительской области дочерние области наследуют эти разрешения. Например:
 
 - Если назначить роль [Владелец](built-in-roles.md#owner) пользователю в области действия группы управления, такой пользователь может управлять всеми ресурсами во всех подписках в группе управления.
 - Если вы назначаете роль [Читатель](built-in-roles.md#reader) группе в области подписки, участники этой группы могут просматривать все группы ресурсов и ресурсы в подписке.
@@ -132,6 +132,10 @@ RBAC — это система авторизации на основе [Azure 
 1. Если у пользователя нет роли с действием в запрашиваемой области, доступ не предоставляется. В противном случае Azure Resource Manager проверяет, применяется ли запрет назначения.
 
 1. Если применяется запрет назначения, доступ блокируется. В противном случае доступ предоставляется.
+
+## <a name="license-requirements"></a>Требования лицензий
+
+[!INCLUDE [Azure AD free license](../../includes/active-directory-free-license.md)]
 
 ## <a name="next-steps"></a>Дополнительная информация
 

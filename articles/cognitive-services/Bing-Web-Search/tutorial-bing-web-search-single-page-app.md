@@ -10,12 +10,12 @@ ms.subservice: bing-web-search
 ms.topic: tutorial
 ms.date: 05/15/2019
 ms.author: aahi
-ms.openlocfilehash: 668c380f38f410083ffe7d2cd6690be447f614dc
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 1203947efadf4fed328655c9cfb839f666a80b0c
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65798336"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66390051"
 ---
 # <a name="tutorial-create-a-single-page-app-using-the-bing-web-search-api"></a>Руководство по Создание одностраничного веб-приложения с помощью API Bing для поиска в Интернете
 
@@ -80,7 +80,7 @@ npm install
 
 ## <a name="query-options"></a>Параметры запроса
 
-HTML-форма содержит параметры, которые соответствуют параметрам запросов в [API Bing для поиска в Интернете версии 7](https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference#query-parameters). В этой таблице содержатся подробные сведения о том, как пользователи могут фильтровать результаты поиска с помощью примера приложения:
+HTML-форма содержит параметры, которые соответствуют параметрам запросов в [API Bing для поиска в Интернете версии 7](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#query-parameters). В этой таблице содержатся подробные сведения о том, как пользователи могут фильтровать результаты поиска с помощью примера приложения:
 
 | Параметр | ОПИСАНИЕ |
 |-----------|-------------|
@@ -93,7 +93,7 @@ HTML-форма содержит параметры, которые соотве
 | `offset` | Скрытое поле. Смещение первого результата поиска в запросе. Используется для разбиения по страницам. Сбрасывается к `0` при каждом новом запросе. |
 
 > [!NOTE]
-> API Bing для поиска в Интернете предоставляет дополнительные параметры запроса, чтобы уточнить результаты поиска. В этом примере используются всего несколько из них. Полный список доступных параметров см. в [этом разделе](https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference#query-parameters).
+> API Bing для поиска в Интернете предоставляет дополнительные параметры запроса, чтобы уточнить результаты поиска. В этом примере используются всего несколько из них. Полный список доступных параметров см. в [этом разделе](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-web-api-v7-reference#query-parameters).
 
 Функция `bingSearchOptions()` преобразует эти параметры, чтобы они соответствовали формату, требуемому API поиска Bing.
 
