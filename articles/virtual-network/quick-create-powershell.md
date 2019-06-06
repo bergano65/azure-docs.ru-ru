@@ -14,12 +14,12 @@ ms.tgt_pltfrm: virtual-network
 ms.workload: infrastructure
 ms.date: 12/04/2018
 ms.author: kumud
-ms.openlocfilehash: a040f3895f710f4ebbdcd3f73568775a909aa64c
-ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
+ms.openlocfilehash: 3a21bff9e4c696063458d5734a579fc7c37258a7
+ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66258275"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66730080"
 ---
 # <a name="quickstart-create-a-virtual-network-using-powershell"></a>Краткое руководство. Создание виртуальной сети с помощью PowerShell
 
@@ -27,7 +27,7 @@ ms.locfileid: "66258275"
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-powershell.md)]
+[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
 Чтобы установить и использовать PowerShell локально, для работы с этим быстрым началом вам понадобится модуль Azure PowerShell 1.0.0 или более поздней версии. Выполните командлет `Get-Module -ListAvailable Az`, чтобы узнать установленную версию. Сведения об установке или обновлении см. в [этой статье](/powershell/azure/install-az-ps).
 

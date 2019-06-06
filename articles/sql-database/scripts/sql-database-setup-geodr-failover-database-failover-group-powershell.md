@@ -12,12 +12,12 @@ ms.author: mathoma
 ms.reviewer: carlrab
 manager: craigg
 ms.date: 03/12/2019
-ms.openlocfilehash: f049b61df4ad86fedea81c2e36c1690b8b7eb884
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: a90753d075f7f4db9dbae95fde979d471db3247c
+ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66115964"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66729190"
 ---
 # <a name="use-powershell-to-configure-an-active-geo-replication-failover-group-for-a-single-database-in-azure-sql-database"></a>Настройка группы отработки отказа активной георепликации для отдельной базы данных в Базе данных SQL Azure с помощью PowerShell
 
@@ -25,11 +25,11 @@ ms.locfileid: "66115964"
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
-[!INCLUDE [cloud-shell-powershell.md](../../../includes/cloud-shell-powershell.md)]
+[!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
 Чтобы установить и использовать PowerShell локально, вам понадобится AZ PowerShell 1.4.0 или последующей версии для работы с этим руководством. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
 
-## <a name="sample-scripts"></a>Примеры сценариев
+## <a name="sample-scripts"></a>Примеры скриптов
 
 [!code-powershell-interactive[main](../../../powershell_scripts/sql-database/setup-geodr-and-failover/setup-geodr-and-failover-database-failover-group.ps1?highlight=18-21 "Set up failover group for single database")]
 

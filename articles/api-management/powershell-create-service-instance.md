@@ -12,12 +12,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 11/15/2017
 ms.author: apimpm
-ms.openlocfilehash: 7f316cd24bbb7b00c263566efdd81805c79f2e48
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 7cd4810059199ddfc88261e27bc910331abe096d
+ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66141274"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66730636"
 ---
 # <a name="create-a-new-azure-api-management-service-instance"></a>Создание экземпляра службы управления API Azure
 
@@ -33,7 +33,7 @@ ms.locfileid: "66141274"
 
 Войдите на портал Azure по адресу https://portal.azure.com.
 
-[!INCLUDE [cloud-shell-powershell.md](../../includes/cloud-shell-powershell.md)]
+[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
 Чтобы установить и использовать PowerShell локально для работы с этим руководством, вам понадобится модуль Azure PowerShell 1.0 или последующих версий. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-Az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
 

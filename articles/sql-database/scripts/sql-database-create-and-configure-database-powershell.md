@@ -12,12 +12,12 @@ ms.author: sstein
 ms.reviewer: ''
 manager: craigg
 ms.date: 03/12/2019
-ms.openlocfilehash: 949e0569a0ee2095e0dc7044160ec4e16ce33c78
-ms.sourcegitcommit: 3ced637c8f1f24256dd6ac8e180fff62a444b03c
+ms.openlocfilehash: 3eeedd87f8cfb734c81a238a1a8a6295145f0241
+ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65834261"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66729424"
 ---
 # <a name="use-powershell-to-create-a-single-azure-sql-database-and-configure-a-sql-database-server-firewall-rule"></a>Создание отдельной базы данных SQL Azure и настройка правила брандмауэра для сервера Базы данных SQL с помощью PowerShell
 
@@ -25,7 +25,7 @@ ms.locfileid: "65834261"
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
-[!INCLUDE [cloud-shell-powershell.md](../../../includes/cloud-shell-powershell.md)]
+[!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
 Чтобы установить и использовать PowerShell локально, для работы с этим руководством вам понадобится AZ PowerShell 1.4.0 или более поздней версии. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
 

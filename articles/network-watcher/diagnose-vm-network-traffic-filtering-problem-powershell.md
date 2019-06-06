@@ -17,12 +17,12 @@ ms.workload: infrastructure
 ms.date: 04/20/2018
 ms.author: kumud
 ms.custom: mvc
-ms.openlocfilehash: 7b8916310d7971779934ec0bbf2a4805492590a5
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 5cc735c6ad3986161b155ab97bbb3d6be5713d15
+ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64711308"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66729876"
 ---
 # <a name="quickstart-diagnose-a-virtual-machine-network-traffic-filter-problem---azure-powershell"></a>Краткое руководство. Диагностика проблемы с фильтром трафика на виртуальной машине с помощью Azure PowerShell
 
@@ -32,7 +32,7 @@ ms.locfileid: "64711308"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-powershell.md)]
+[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
 Чтобы установить и использовать PowerShell локально, для работы с этим кратким руководством вам понадобится модуль `Az` Azure PowerShell. Выполните командлет `Get-Module -ListAvailable Az`, чтобы узнать установленную версию. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-Az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
 

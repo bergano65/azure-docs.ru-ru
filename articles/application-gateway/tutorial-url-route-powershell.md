@@ -10,12 +10,12 @@ ms.workload: infrastructure-services
 ms.date: 10/25/2018
 ms.author: victorh
 ms.custom: mvc
-ms.openlocfilehash: 2d82b2669fef638144f1c584350b1526d36d5006
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: c636ab9956b369702c8319d67a83e33070113857
+ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "66133245"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66729503"
 ---
 # <a name="route-web-traffic-based-on-the-url-using-azure-powershell"></a>Маршрутизация веб-трафика на основе URL-адреса с использованием Azure PowerShell
 
@@ -38,7 +38,7 @@ ms.locfileid: "66133245"
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-[!INCLUDE [cloud-shell-powershell.md](../../includes/cloud-shell-powershell.md)]
+[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
 Если вы решили установить и использовать PowerShell локально, то для работы с этим учебником вам понадобится модуль Azure PowerShell версии 1.0.0 или более поздней. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Login-AzAccount`, чтобы создать подключение к Azure.
 

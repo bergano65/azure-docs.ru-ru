@@ -10,12 +10,12 @@ ms.date: 02/20/2018
 ms.author: rogarana
 ms.custom: mvc
 ms.subservice: blobs
-ms.openlocfilehash: a5b6c22b3917784b20ad11bddf200d1546c48597
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 38fd62eff663c7714acf00afe3ffa559c1eeb7e0
+ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66168228"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66729095"
 ---
 # <a name="create-a-virtual-machine-and-storage-account-for-a-scalable-application"></a>Создание виртуальной машины и учетной записи хранения для масштабируемого приложения
 
@@ -32,7 +32,7 @@ ms.locfileid: "66168228"
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-[!INCLUDE [cloud-shell-powershell.md](../../../includes/cloud-shell-powershell.md)]
+[!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
 Чтобы установить и использовать PowerShell локально для работы с этим руководством, вам понадобится модуль Azure PowerShell 0.7 или более поздней версии. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-Az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
 

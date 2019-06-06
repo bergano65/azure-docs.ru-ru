@@ -12,12 +12,12 @@ ms.author: sstein
 ms.reviewer: carlrab
 manager: craigg
 ms.date: 05/24/2019
-ms.openlocfilehash: be8fb1f7219ae017d520744778c0b83feb748379
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: b9bc0e255dadd1c45654b00d571477b8f8920bf9
+ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66244222"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66729355"
 ---
 # <a name="use-powershell-to-import-a-bacpac-file-into-an-azure-sql-database"></a>Импорт файла BACPAC в базу данных SQL Azure с помощью PowerShell
 
@@ -25,7 +25,7 @@ ms.locfileid: "66244222"
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
-[!INCLUDE [cloud-shell-powershell.md](../../../includes/cloud-shell-powershell.md)]
+[!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
 Чтобы установить и использовать PowerShell локально, вам понадобится AZ PowerShell 1.4.0 или последующей версии для работы с этим руководством. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
 

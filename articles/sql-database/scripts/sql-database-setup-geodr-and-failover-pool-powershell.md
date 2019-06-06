@@ -12,12 +12,12 @@ ms.author: mathoma
 ms.reviewer: carlrab
 manager: craigg
 ms.date: 03/12/2019
-ms.openlocfilehash: acf7d15f0c96ec07b4ba1200827b61adaebc3167
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 737d60d89928bd7ade9aeb9c3aad91dc4e84ab03
+ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60390109"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66729235"
 ---
 # <a name="use-powershell-to-configure-active-geo-replication-for-a-pooled-database-in-azure-sql-database"></a>Настройка активной георепликации для базы данных в пуле в Базе данных SQL Azure с помощью PowerShell
 
@@ -25,11 +25,11 @@ ms.locfileid: "60390109"
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
-[!INCLUDE [cloud-shell-powershell.md](../../../includes/cloud-shell-powershell.md)]
+[!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
 Чтобы установить и использовать PowerShell локально, для работы с этим руководством вам понадобится AZ PowerShell 1.4.0 или более поздней версии. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
 
-## <a name="sample-scripts"></a>Примеры сценариев
+## <a name="sample-scripts"></a>Примеры скриптов
 
 [!code-powershell-interactive[main](../../../powershell_scripts/sql-database/setup-geodr-and-failover/setup-geodr-and-failover-elastic-pool.ps1?highlight=17-20 "Set up active geo-replication for elastic pool")]
 

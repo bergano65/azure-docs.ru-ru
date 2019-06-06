@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.date: 10/26/2018
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 439a1c60942b1540328bf9972d74d7dd4d573a65
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: e32aead791fb84415da1b00f1e979a6ac0f28155
+ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64700649"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66729022"
 ---
 # <a name="quickstart-create-and-manage-an-azure-file-share-with-azure-powershell"></a>Краткое руководство. Создание общих файловых ресурсов Azure и управление ими с помощью Azure PowerShell 
 В этом руководстве рассматриваются основы работы с [общими файловыми ресурсами Azure](storage-files-introduction.md) с помощью PowerShell. Общие файловые ресурсы Azure отличаются от других ресурсов тем, что хранятся в облаке и поддерживаются платформой Azure. Общие файловые ресурсы Azure поддерживают отраслевой протокол SMB и позволяют совместно использовать файлы на нескольких компьютерах, а также в нескольких приложениях и экземплярах. 
@@ -22,7 +22,7 @@ ms.locfileid: "64700649"
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-[!INCLUDE [cloud-shell-powershell.md](../../../includes/cloud-shell-powershell.md)]
+[!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
 Если вы хотите установить и использовать PowerShell локально для работы с этим руководством, вам понадобится Az модуля Azure PowerShell 0.7 или более поздней версии. Чтобы узнать, какую версию модуля Azure PowerShell вы используете, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-Az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить `Login-AzAccount`, чтобы войти в учетную запись Azure.
 
@@ -40,7 +40,7 @@ New-AzResourceGroup `
 ## <a name="create-a-storage-account"></a>Создание учетной записи хранения
 Учетная запись хранения представляет собой общий пул носителей, который можно использовать для развертывания файловых ресурсов Azure или других ресурсов хранения, например больших двоичных объектов или очередей. Учетная запись хранения может содержать любое количество общих ресурсов, а общий ресурс может содержать любое количество файлов, насколько позволяет емкость учетной записи хранения.
 
-В этом примере создается учетная запись хранения с помощью командлета [New-AzStorageAccount](/powershell/module/az.storage/new-azstorageaccount). Учетная запись хранения называется *mystorageaccount\<случайное число>*, и к переменной **$storageAcct** добавляется ссылка на эту учетную запись. Имена учетных записей хранения должны быть уникальными. Чтобы сделать имя уникальным, используйте команду `Get-Random` для добавления к нему номера. 
+В этом примере создается учетная запись хранения с помощью командлета [New-AzStorageAccount](/powershell/module/az.storage/new-azstorageaccount). Учетная запись хранения называется *mystorageaccount\<случайное число>* , и к переменной **$storageAcct** добавляется ссылка на эту учетную запись. Имена учетных записей хранения должны быть уникальными. Чтобы сделать имя уникальным, используйте команду `Get-Random` для добавления к нему номера. 
 
 ```azurepowershell-interactive 
 $storageAcct = New-AzStorageAccount `

@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 01/07/2019
 ms.author: barclayn
-ms.openlocfilehash: eb9a18ad0fb00fc9f648e3b22b0db1ea4eda479d
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 8d6260d462b4c244dfb41630e06710a1ce8baf6c
+ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64712754"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66726779"
 ---
 # <a name="quickstart-set-and-retrieve-a-secret-from-azure-key-vault-using-powershell"></a>Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью PowerShell
 
@@ -25,7 +25,7 @@ Azure Key Vault — это облачная служба, которая раб�
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-[!INCLUDE [cloud-shell-powershell.md](../../includes/cloud-shell-powershell.md)]
+[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
 Чтобы установить и использовать PowerShell локально для работы с этим руководством, понадобится модуль Azure PowerShell 1.0.0 или более поздней версии. Чтобы узнать версию, введите `$PSVersionTable.PSVersion`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Login-AzAccount`, чтобы создать подключение к Azure.
 
@@ -41,7 +41,7 @@ Login-AzAccount
 New-AzResourceGroup -Name ContosoResourceGroup -Location EastUS
 ```
 
-## <a name="create-a-key-vault"></a>создать хранилище ключей;
+## <a name="create-a-key-vault"></a>Создание хранилища ключей
 
 Далее вы создадите Key Vault. При выполнении этого шага вам понадобятся некоторые сведения:
 

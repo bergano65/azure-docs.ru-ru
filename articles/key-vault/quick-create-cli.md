@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 01/08/2019
 ms.author: barclayn
-ms.openlocfilehash: 353334ac371ad571f3290a43ce50b55770e06b1b
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: e9537c158afad2877bb2df2650500ab218de676f
+ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64718332"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66726772"
 ---
 # <a name="quickstart-set-and-retrieve-a-secret-from-azure-key-vault-using-azure-cli"></a>Краткое руководство. Настройка и получение секрета из Azure Key Vault с помощью Azure CLI
 
@@ -23,7 +23,7 @@ Azure Key Vault — это облачная служба, которая раб�
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 
-[!INCLUDE [cloud-shell-powershell.md](../../includes/cloud-shell-try-it.md)]
+[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
 Если вы решили установить и использовать CLI локально, для выполнения инструкций из этого руководства вам потребуется Azure CLI 2.0.4 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI]( /cli/azure/install-azure-cli).
 
@@ -43,7 +43,7 @@ az login
 az group create --name "ContosoResourceGroup" --location eastus
 ```
 
-## <a name="create-a-key-vault"></a>создать хранилище ключей;
+## <a name="create-a-key-vault"></a>Создание хранилища ключей
 
 Затем вы создадите Key Vault в группе ресурсов, созданной на предыдущем шаге. Необходимо будет указать следующие сведения:
 
@@ -72,7 +72,7 @@ az keyvault create --name "Contoso-Vault2" --resource-group "ContosoResourceGrou
 az keyvault secret set --vault-name "Contoso-Vault2" --name "ExamplePassword" --value "hVFkk965BuUv"
 ```
 
-Теперь пароль, добавленный в Azure Key Vault, можно вызвать, используя его URI. Используйте **https://ContosoVault.vault.azure.net/secrets/ExamplePassword**, чтобы получить текущую версию. 
+Теперь пароль, добавленный в Azure Key Vault, можно вызвать, используя его URI. Используйте **https://ContosoVault.vault.azure.net/secrets/ExamplePassword** , чтобы получить текущую версию. 
 
 Чтобы просмотреть содержащееся в секрете значение в виде обычного текста, введите следующее:
 

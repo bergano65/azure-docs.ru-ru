@@ -12,19 +12,19 @@ ms.author: sstein
 ms.reviewer: ''
 manager: craigg
 ms.date: 03/25/2019
-ms.openlocfilehash: 518ac4aba64cdda4ddb3f40ee30620d6f156cc8c
-ms.sourcegitcommit: 3ced637c8f1f24256dd6ac8e180fff62a444b03c
+ms.openlocfilehash: 03bec71cca445d580605c1b0f4705e619933000a
+ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65832548"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66729136"
 ---
 # <a name="azure-powershell-samples-for-azure-sql-database"></a>Примеры Azure PowerShell для базы данных SQL Azure
 
 Служба "База данных SQL Azure" позволяет настраивать базы данных, экземпляры и пулы с помощью Azure PowerShell.
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
-[!INCLUDE [cloud-shell-powershell.md](../../includes/cloud-shell-powershell.md)]
+[!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
 Чтобы установить и использовать PowerShell локально, для работы с этим руководством вам понадобится AZ PowerShell 1.4.0 или более поздней версии. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
 

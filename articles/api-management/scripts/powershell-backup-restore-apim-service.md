@@ -13,12 +13,12 @@ ms.topic: sample
 ms.date: 11/16/2017
 ms.author: apimpm
 ms.custom: mvc
-ms.openlocfilehash: a918302993b72fbe0257d082d72348719365bdfd
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 547e93fbd9f8d9e676060b8f9e6146ea3537e59b
+ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66141258"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66730609"
 ---
 # <a name="backup-and-restore-service"></a>Резервное копирование и восстановление службы
 
@@ -26,7 +26,7 @@ ms.locfileid: "66141258"
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 
-[!INCLUDE [cloud-shell-powershell.md](../../../includes/cloud-shell-powershell.md)]
+[!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
 Чтобы установить и использовать PowerShell локально для работы с этим руководством, вам понадобится модуль Azure PowerShell 1.0 или последующих версий. Чтобы узнать версию, выполните команду `Get-Module -ListAvailable Az`. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-Az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
 

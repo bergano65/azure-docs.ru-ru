@@ -12,12 +12,12 @@ ms.author: xiwu
 ms.reviewer: carlrab
 manager: craigg
 ms.date: 03/12/2019
-ms.openlocfilehash: d87ac21b02dcf8c523a4479afdf666c2b7a86c75
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: a30f448bfa2c7b47181bd2c198605932e0f09711
+ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66115926"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66729256"
 ---
 # <a name="use-powershell-to-sync-between-a-sql-database-and-a-sql-server-on-premises-database"></a>Использование PowerShell для синхронизации данных между базой данных SQL и локальной базой данных SQL Server
 
@@ -25,7 +25,7 @@ ms.locfileid: "66115926"
 
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
-[!INCLUDE [cloud-shell-powershell.md](../../../includes/cloud-shell-powershell.md)]
+[!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
 Чтобы установить и использовать PowerShell локально, для работы с этим руководством вам понадобится AZ PowerShell 1.4.0 или более поздней версии. Если вам необходимо выполнить обновление, ознакомьтесь со статьей, посвященной [установке модуля Azure PowerShell](/powershell/azure/install-az-ps). Если модуль PowerShell запущен локально, необходимо также выполнить командлет `Connect-AzAccount`, чтобы создать подключение к Azure.
 
