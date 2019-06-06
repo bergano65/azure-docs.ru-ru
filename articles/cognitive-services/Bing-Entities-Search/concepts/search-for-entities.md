@@ -10,12 +10,12 @@ ms.subservice: bing-entity-search
 ms.topic: overview
 ms.date: 02/01/2019
 ms.author: aahi
-ms.openlocfilehash: 948110e5532aeeb2b9acbbb66361eb9c55eaf897
-ms.sourcegitcommit: bd15a37170e57b651c54d8b194e5a99b5bcfb58f
+ms.openlocfilehash: c205f792138ebd7e8094b3bd7cd303d54dfa8d8f
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
-ms.locfileid: "57543344"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66389865"
 ---
 # <a name="searching-for-entities-with-the-bing-entity-api"></a>Поиск сущностей с помощью API Bing для сущностей
 
@@ -23,9 +23,9 @@ ms.locfileid: "57543344"
 
 Если вы предоставили окно поиска, в котором пользователь вводит свой поисковый запрос, используйте [API автозаполнения Bing](../../bing-autosuggest/get-suggested-search-terms.md), чтобы оптимизировать работу. API возвращает предложенные строки запроса на основе частичного поиска, как пользовательские типы.
 
-После ввода условия поиска URL-адрес закодирует его перед установкой параметра запроса [q](https://docs.microsoft.com/rest/api/cognitiveservices/bing-entities-api-v7-reference#query). Например, если пользователь вводит *Marcus Appel*, задайте `q` как *Marcus+Appel* или *Marcus%20Appel*.
+После ввода условия поиска URL-адрес закодирует его перед установкой параметра запроса [q](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-entities-api-v7-reference#query). Например, если пользователь вводит *Marcus Appel*, задайте `q` как *Marcus+Appel* или *Marcus%20Appel*.
 
-Если условие поиска содержит орфографические ошибки, ответ поиска включает объект [QueryContext](https://docs.microsoft.com/rest/api/cognitiveservices/bing-entities-api-v7-reference#querycontext). Объект показывает исходное написание и исправленное написание, которое Bing использует для поиска.
+Если условие поиска содержит орфографические ошибки, ответ поиска включает объект [QueryContext](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-entities-api-v7-reference#querycontext). Объект показывает исходное написание и исправленное написание, которое Bing использует для поиска.
 
 ```json
 "queryContext": {
@@ -38,15 +38,15 @@ ms.locfileid: "57543344"
 
 ## <a name="the-bing-entity-search-api-response"></a>Ответ API Поиска сущностей Bing
 
-Ответ API содержит объект [SearchResponse](https://docs.microsoft.com/rest/api/cognitiveservices/bing-entities-api-v7-reference#searchresponse). Обнаружив релевантные сущности или места, объект включает поле `entities` или `places`, или оба. В противном случае объект ответа не включает какое-либо поле.
+Ответ API содержит объект [SearchResponse](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-entities-api-v7-reference#searchresponse). Обнаружив релевантные сущности или места, объект включает поле `entities` или `places`, или оба. В противном случае объект ответа не включает какое-либо поле.
 > [!NOTE]
 > Ответы сущности поддерживают разные рынки, но ответ Places поддерживает только расположения организаций в США. 
 
-Поле `entities` является объектом [EntityAnswer](https://docs.microsoft.com/rest/api/cognitiveservices/bing-entities-api-v7-reference), который содержит список объектов [Сущность](https://docs.microsoft.com/rest/api/cognitiveservices/bing-entities-api-v7-reference#entity) (см. поле `value`). Список может содержать одну главную сущность, несколько объектов, несколько уточняющих сущностей, или и то, и другое. 
+Поле `entities` является объектом [EntityAnswer](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-entities-api-v7-reference), который содержит список объектов [Сущность](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-entities-api-v7-reference#entity) (см. поле `value`). Список может содержать одну главную сущность, несколько объектов, несколько уточняющих сущностей, или и то, и другое. 
 
 Главная сущность возвращается, если Bing считает ее единственной, соответствующей запросу (не возникло неопределенности о том, какие сущности соответствуют запросу). Если несколько объектов могут удовлетворять запросу, список содержит несколько объектов для устранения неоднозначности. Например, если запрос использует универсальный заголовок серии фильмов, список, вероятно, будет содержать уточнение сущностей. Но, если в запросе указывается конкретный заголовок из серии фильмов, список, вероятно, будет содержать одну главную сущность.
 
-Сюда входят известные личности, такие как певцы, актеры, спортсмены, модели и т. д; места и достопримечательности, такие как гора Рейнир или Мемориал Линкольна; и такие вещи, как бананы, золотые украшения, книги или название фильма. Поле [EntityPresentationInfo](https://docs.microsoft.com/rest/api/cognitiveservices/bing-entities-api-v7-reference#entitypresentationinfo) содержит указания, которые определяют тип сущности. Например, если это лицо, фильм, животное или достопримечательность. Список возможных типов см. в разделе [Entity Types](https://docs.microsoft.com/rest/api/cognitiveservices/bing-entities-api-v7-reference#entity-types) (Типы сущностей).
+Сюда входят известные личности, такие как певцы, актеры, спортсмены, модели и т. д; места и достопримечательности, такие как гора Рейнир или Мемориал Линкольна; и такие вещи, как бананы, золотые украшения, книги или название фильма. Поле [EntityPresentationInfo](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-entities-api-v7-reference#entitypresentationinfo) содержит указания, которые определяют тип сущности. Например, если это лицо, фильм, животное или достопримечательность. Список возможных типов см. в разделе [Entity Types](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-entities-api-v7-reference#entity-types) (Типы сущностей).
 
 ```json
 "entityPresentationInfo": {
@@ -174,9 +174,9 @@ ms.locfileid: "57543344"
 
 ## <a name="find-places"></a>Поиск мест
 
-Поле `places` является объектом [LocalEntityAnswer](https://docs.microsoft.com/rest/api/cognitiveservices/bing-entities-api-v7-reference), который содержит список объектов [Место](https://docs.microsoft.com/rest/api/cognitiveservices/bing-entities-api-v7-reference#place) (дополнительные сведения см. в разделе [Типы сущностей](https://docs.microsoft.com/rest/api/cognitiveservices/bing-entities-api-v7-reference#entity-types)). Список содержит одну или несколько локальных сущностей, которые соответствуют запросу.
+Поле `places` является объектом [LocalEntityAnswer](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-entities-api-v7-reference), который содержит список объектов [Место](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-entities-api-v7-reference#place) (дополнительные сведения см. в разделе [Типы сущностей](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-entities-api-v7-reference#entity-types)). Список содержит одну или несколько локальных сущностей, которые соответствуют запросу.
 
-Места включают рестораны, гостиницы или локальные организации. Поле [EntityPresentationInfo](https://docs.microsoft.com/rest/api/cognitiveservices/bing-entities-api-v7-reference#entitypresentationinfo) содержит указания, которые определяют тип локальной сущности. Список содержит перечисленные указания, например место, локальные организации, ресторан. Каждое последующее указание в массиве сужает тип сущности. Список возможных типов см. в разделе [Entity Types](https://docs.microsoft.com/rest/api/cognitiveservices/bing-entities-api-v7-reference#entity-types) (Типы сущностей).
+Места включают рестораны, гостиницы или локальные организации. Поле [EntityPresentationInfo](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-entities-api-v7-reference#entitypresentationinfo) содержит указания, которые определяют тип локальной сущности. Список содержит перечисленные указания, например место, локальные организации, ресторан. Каждое последующее указание в массиве сужает тип сущности. Список возможных типов см. в разделе [Entity Types](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-entities-api-v7-reference#entity-types) (Типы сущностей).
 
 ```json
 "entityPresentationInfo": {
@@ -189,7 +189,7 @@ ms.locfileid: "57543344"
 > [!NOTE]
 > Ответы сущности поддерживают разные рынки, но ответ Places поддерживает только расположения организаций в США. 
 
-Локальные запросы на объекты, такие как *ресторан рядом со мной*, требуют расположение пользователя, чтобы давать точные результаты. Запросы всегда должны использовать заголовки X-Search-Location и X-MSEdge-ClientIP для указания расположения пользователя. Если Bing считает, что запрос из расположения пользователя будет полезен, он устанавливает полю `askUserForLocation` [QueryContext](https://docs.microsoft.com/rest/api/cognitiveservices/bing-entities-api-v7-reference#querycontext) значение **true**. 
+Локальные запросы на объекты, такие как *ресторан рядом со мной*, требуют расположение пользователя, чтобы давать точные результаты. Запросы всегда должны использовать заголовки X-Search-Location и X-MSEdge-ClientIP для указания расположения пользователя. Если Bing считает, что запрос из расположения пользователя будет полезен, он устанавливает полю `askUserForLocation` [QueryContext](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-entities-api-v7-reference#querycontext) значение **true**. 
 
 ```json
 {
@@ -290,7 +290,7 @@ ms.locfileid: "57543344"
 
 ### <a name="license-attribution"></a>Определение принадлежности лицензии
 
-Если список договорных правил содержит правило [LicenseAttribution](https://docs.microsoft.com/rest/api/cognitiveservices/bing-entities-api-v7-reference#licenseattribution), сразу после содержимого, к которому применяется лицензия, необходимо добавить строку уведомления. Правило `LicenseAttribution` определяет свойство, к которому применяется лицензия, с помощью поля `targetPropertyName`.
+Если список договорных правил содержит правило [LicenseAttribution](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-entities-api-v7-reference#licenseattribution), сразу после содержимого, к которому применяется лицензия, необходимо добавить строку уведомления. Правило `LicenseAttribution` определяет свойство, к которому применяется лицензия, с помощью поля `targetPropertyName`.
 
 Ниже приведен пример с использованием правила `LicenseAttribution`.
 
@@ -300,7 +300,7 @@ ms.locfileid: "57543344"
 
 ### <a name="link-and-text-attribution"></a>Определение принадлежности текста или ссылки
 
-Как правило, правила [LinkAttribution](https://docs.microsoft.com/rest/api/cognitiveservices/bing-entities-api-v7-reference#linkattribution) и [TextAttribution](https://docs.microsoft.com/rest/api/cognitiveservices/bing-entities-api-v7-reference#textattribution) определяют поставщика данных. Поле `targetPropertyName` определяет поле, к которому применяется правило.
+Как правило, правила [LinkAttribution](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-entities-api-v7-reference#linkattribution) и [TextAttribution](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-entities-api-v7-reference#textattribution) определяют поставщика данных. Поле `targetPropertyName` определяет поле, к которому применяется правило.
 
 Чтобы определить принадлежность поставщиков, сразу после содержимого, к которому применяется определение принадлежности (например, целевое поле), добавьте строку. Строка должна четко указывать, что данные принадлежат этим поставщикам. Например, "Данные с contoso.com". Если используются правила `LinkAttribution`, необходимо создать гиперссылку на веб-сайта поставщика.
 
@@ -310,7 +310,7 @@ ms.locfileid: "57543344"
 
 ### <a name="media-attribution"></a>Определение принадлежности медиаданных
 
-Если сущность содержит изображение, необходимо указать ссылку для перехода на веб-сайта поставщика. Если сущность включает правило [MediaAttribution](https://docs.microsoft.com/rest/api/cognitiveservices/bing-entities-api-v7-reference#mediaattribution), создайте такую ссылку, указав URL-адрес правила. В противном случае используйте URL-адрес в поле `provider` изображения.
+Если сущность содержит изображение, необходимо указать ссылку для перехода на веб-сайта поставщика. Если сущность включает правило [MediaAttribution](https://docs.microsoft.com/rest/api/cognitiveservices-bingsearch/bing-entities-api-v7-reference#mediaattribution), создайте такую ссылку, указав URL-адрес правила. В противном случае используйте URL-адрес в поле `provider` изображения.
 
 Ниже приведен пример, в котором используется поле `provider` изображения и договорные правила. Так как в этом примере содержится договорное правило, вы должны игнорировать поле `provider` изображения и применить правило `MediaAttribution`.
 

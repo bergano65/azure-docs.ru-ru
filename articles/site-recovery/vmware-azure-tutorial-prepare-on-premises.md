@@ -6,15 +6,15 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: tutorial
-ms.date: 04/08/2019
+ms.date: 05/30/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 1095a80ba05aa3e0ae6dfcd526db7ffd18fb9d4d
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: 7a61edc01a87be8996b4d7dd5093f9d3554e6585
+ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59359368"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66417756"
 ---
 # <a name="prepare-on-premises-vmware-servers-for-disaster-recovery-to-azure"></a>Подготовка локальных серверов VMware для аварийного восстановления в Azure
 
@@ -92,7 +92,7 @@ Site Recovery требуется доступ к серверам VMware, что
 Чтобы подключиться к виртуальным машинам Windows с помощью RDP после отработки отказа, сделайте следующее:
 
 - **Доступ к Интернету**. Включите службу RDP на локальных виртуальных машинах перед отработкой отказа. Убедитесь в том, что правила для протоколов TCP и UDP для **общедоступного** профиля добавлены, а протокол RDP разрешен в разделе **Брандмауэр Windows** > **Разрешенные программы** для всех профилей.
-- **VPN-подключение типа "сеть — сеть"**:
+- **VPN-подключение типа "сеть — сеть"** :
     - Перед отработкой отказа включите протокол удаленного рабочего стола на локальном компьютере.
     - Протокол удаленного рабочего стола должен быть разрешен в разделе **Брандмауэр Windows** -> **Allowed apps and features** (Разрешенные приложения и компоненты) для сетей **домена и частных сетей**.
     - Убедитесь, что для политики сети SAN операционной системы задано значение **OnlineAll**. [Узнайте больше](https://support.microsoft.com/kb/3031135).

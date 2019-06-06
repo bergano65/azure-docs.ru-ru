@@ -14,12 +14,12 @@ ms.tgt_pltfrm: Spring
 ms.workload: tbd
 ms.date: 01/08/2019
 ms.author: yidon
-ms.openlocfilehash: 9137262ffc7c172e6a99920a7abb31459a8703fe
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.openlocfilehash: a91c61edd773b5742b092f5d72a5a22f1d90e63b
+ms.sourcegitcommit: 51a7669c2d12609f54509dbd78a30eeb852009ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65408573"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66393547"
 ---
 # <a name="quickstart-create-a-java-spring-app-with-app-configuration"></a>Краткое руководство. Создание приложения Java Spring с помощью службы конфигурации приложений Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "65408573"
 
 ## <a name="prerequisites"></a>Предварительные требования
 
-Для работы с этим руководством установите поддерживаемую версию [комплекта разработчика Java (JDK)](https://aka.ms/azure-jdks) версии 8 и [Apache Maven](https://maven.apache.org/) версии 3.0 или выше.
+Для работы с этим руководством установите поддерживаемую версию [комплекта разработчика Java (JDK)](https://docs.microsoft.com/java/azure/jdk) версии 8 и [Apache Maven](https://maven.apache.org/) версии 3.0 или выше.
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
@@ -37,7 +37,7 @@ ms.locfileid: "65408573"
 
 [!INCLUDE [azure-app-configuration-create](../../includes/azure-app-configuration-create.md)]
 
-6. Выберите **Configuration Explorer** (Обозреватель конфигураций)  > **+ Создать**, чтобы добавить следующие пары "ключ-значение".
+6. Выберите **Configuration Explorer** (Обозреватель конфигураций)  >  **+ Создать**, чтобы добавить следующие пары "ключ-значение".
 
     | Ключ | Значение |
     |---|---|

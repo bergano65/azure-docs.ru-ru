@@ -2,20 +2,20 @@
 title: Что такое Azure Active Directory B2C | Документация Майкрософт
 description: Сведения о том, как создать действия с удостоверениями, такие как регистрация, вход и управление профилем в приложении, а также управлять ими с помощью Azure Active Directory B2C.
 services: active-directory-b2c
-author: davidmu1
+author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: overview
 ms.date: 02/20/2019
-ms.author: davidmu
+ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 33c6f9e06439ebeb17608aa374532ac4f7a020cf
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 5cceac260979b4322d41843038eab0998c8e8ba4
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64701357"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66509752"
 ---
 # <a name="what-is-azure-active-directory-b2c"></a>Что такое Azure Active Directory B2C
 
@@ -110,7 +110,7 @@ Azure AD B2C поддерживает протоколы [OpenID Connect и OAut
 
 Если вы разрабатываете одностраничные приложения на Node.js, настройте в приложении проверку подлинности, выполнив инструкции из статьи [Руководство. Включение в одностраничном приложении аутентификации на основе учетных записей с помощью Azure Active Directory B2C](active-directory-b2c-tutorials-spa.md).
 
-### <a name="apis"></a>Интерфейсы API
+### <a name="apis"></a>API
 Если клиенту или веб-приложениям нужно вызывать API-интерфейсы, вы можете настроить безопасный доступ к этим ресурсам в Azure AD B2C.
 
 Если вы являетесь разработчиком веб-приложений ASP.NET, настройте приложение для вызова защищенного API, выполнив инструкции из статьи [Руководство. Предоставление доступа к веб-API ASP.NET с помощью Azure Active Directory B2C](active-directory-b2c-tutorials-web-api.md).
@@ -132,4 +132,4 @@ Azure AD B2C поддерживает протоколы [OpenID Connect и OAut
 Приступите к настройке приложения для процедур регистрации и входа, перейдя к следующему руководству.
 
 > [!div class="nextstepaction"]
-> [Руководство Создание клиента Azure Active Directory B2C](tutorial-create-tenant.md).
+> [Руководство. Создание клиента Azure Active Directory B2C](tutorial-create-tenant.md).

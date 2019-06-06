@@ -5,16 +5,15 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: tutorial
-ms.tgt_pltfrm: na
-ms.date: 03/18/2019
+ms.date: 05/30/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: 5de6ba8ab64797da24039718ca7f2c0b88d1d33d
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: c449b74a9d6185b0616f62d31926feb6ff218cbb
+ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "58881347"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66400085"
 ---
 # <a name="migrate-servers-running-windows-server-2008-to-azure"></a>Перенос серверов под управлением Windows Server 2008 в Azure
 
@@ -80,7 +79,7 @@ ms.locfileid: "58881347"
   >
 
 
-## <a name="getting-started"></a>Приступая к работе
+## <a name="getting-started"></a>Начало работы
 
 Выполните следующие задачи для подготовки подписки Azure и локальной среды VMware или физического окружения.
 
@@ -118,7 +117,7 @@ ms.locfileid: "58881347"
 
 ## <a name="set-up-a-replication-policy"></a>Настройка политики репликации
 
-1. Чтобы создать новую политику репликации, щелкните **Инфраструктура Site Recovery** > **Политики репликации** > **+Политика репликации**.
+1. Чтобы создать новую политику репликации, щелкните **Инфраструктура Site Recovery** > **Политики репликации** >  **+Политика репликации**.
 2. На странице **Создать политику репликации** укажите имя политики.
 3. В разделе **Пороговое значение RPO** укажите ограничение целевой точки восстановления (RPO). Если значение RPO репликации превышает порог, создается оповещение.
 4. В поле **Хранение точки восстановления** укажите продолжительность периода хранения для каждой точки восстановления (в часах). Реплицированные серверы можно восстановить до любой точки в рамках этого периода. Для компьютеров, реплицируемых в хранилище класса Premium, поддерживается период удержания до 24 часов, а для хранилище класса Standard — до 72 часов.

@@ -16,12 +16,12 @@ ms.topic: tutorial
 ms.date: 05/20/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bb9c8d1fb234efd5df297082cfc1001f28ca1656
-ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
+ms.openlocfilehash: 2b9e4f5208eb1f6abb0d6fd786630c183a04ce50
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65990375"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66388865"
 ---
 # <a name="tutorial-integrate-workday-with-azure-active-directory"></a>Руководство по Интеграция Workday с Azure Active Directory
 
@@ -88,7 +88,7 @@ ms.locfileid: "65990375"
 
     > [!NOTE]
     > Эти значения приведены в качестве примера. Замените их фактическими значениями URL-адреса входа и URL-адреса ответа. URL-адрес ответа должен содержать поддомен (например, www, wd2, wd3, wd3-impl, wd5, wd5-impl).
-    > Например, значение "`http://www.myworkday.com`" допустимо, а значение "`http://myworkday.com`" — нет. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов Workday](https://www.workday.com/partners-services/services/support.html). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Например, значение "`http://www.myworkday.com`" допустимо, а значение "`http://myworkday.com`" — нет. Чтобы получить эти значения, обратитесь к [группе поддержки клиентов Workday](https://www.workday.com/en-us/partners-services/services/support.html). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 6. Приложение Workday ожидает проверочные утверждения SAML в определенном формате, поэтому следует добавить настраиваемые сопоставления атрибутов в вашу конфигурацию атрибутов токена SAML. На следующем снимке экрана показан список атрибутов по умолчанию, когда **nameidentifier** сопоставляется с **user.userprincipalname**. Приложение Workday ожидает, что **nameidentifier** будет сопоставляться с **user.mail**, **UPN** и т. д., поэтому необходимо изменить сопоставление атрибутов, щелкнув значок **Изменить**.
 
@@ -138,7 +138,7 @@ ms.locfileid: "65990375"
    > [!NOTE]
    > Значение атрибута "Среда" привязано к значению URL-адреса клиента.  
    > Если URL-адрес имени домена клиента Workday начинается с impl (например: *https:\//impl.workday.com/\<клиент\>/login-saml2.flex*), атрибуту **Environment** должно быть присвоено значение Implementation.  
-   > Если имя домена начинается с другого значения, следует обратиться к [группе поддержки клиентов Workday](https://www.workday.com/partners-services/services/support.html), чтобы получить соответствующее значение атрибута **Environment**.
+   > Если имя домена начинается с другого значения, следует обратиться к [группе поддержки клиентов Workday](https://www.workday.com/en-us/partners-services/services/support.html), чтобы получить соответствующее значение атрибута **Environment**.
 
 4. В разделе **Настройка SAML** выполните следующие действия.
 
