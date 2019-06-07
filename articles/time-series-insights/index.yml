@@ -56,7 +56,7 @@ sections:
         className: cardsD
         items:
           - title: API-интерфейсы службы "Аналитика временных рядов" (общедоступная версия)
-            html: <p><a href="rest/api/time-series-insights/ga">Доступ к данным</a></p> <p><a href="/rest/api/time-series-insights/ga-query-api">API запроса</a></p> <p><a href="/rest/api/time-series-insights/ga-query-syntax">Синтаксис запросов</a></p>
+            html: <p><a href="/rest/api/time-series-insights/ga">Доступ к данным</a></p> <p><a href="/rest/api/time-series-insights/ga-query-api">API запроса</a></p> <p><a href="/rest/api/time-series-insights/ga-query-syntax">Синтаксис запросов</a></p>
           - title: API-интерфейсы службы "Аналитика временных рядов" (предварительная версия)
             html: <p><a href="/rest/api/time-series-insights/preview-query">API запроса</a></p> <p><a href="/rest/api/time-series-insights/preview-model">API модели</a></p> <p><a href="/rest/api/time-series-insights/preview-env">API среды</a></p> <p><a href="/rest/api/time-series-insights/preview-tsx">API языка TSX (Time Series Expression)</a></p>
           - title: Клиентский пакет SDK

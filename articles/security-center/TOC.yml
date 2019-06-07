@@ -61,19 +61,18 @@
       href: security-center-policies-overview.md
     - name: Сравнение базовых показателей с помощью мониторинга целостности файлов
       href: security-center-file-integrity-monitoring-baselines.md
-      items:
-        - name: Сбор данных
-          href: security-center-enable-data-collection.md
-        - name: Встроенные политики безопасности
-          href: security-center-policy-definitions.md
-        - name: Уведомления по почте
-          href: security-center-provide-security-contact-details.md
-        - name: Ценовая категория
-          href: security-center-pricing.md
-        - name: Конфигурации системы безопасности
-          href: security-center-customize-os-security-config.md
-        - name: Видимость на уровне клиента
-          href: security-center-management-groups.md
+    - name: Сбор данных
+      href: security-center-enable-data-collection.md
+    - name: Встроенные политики безопасности
+      href: security-center-policy-definitions.md
+    - name: Уведомления по почте
+      href: security-center-provide-security-contact-details.md
+    - name: Ценовая категория
+      href: security-center-pricing.md
+    - name: Конфигурации системы безопасности
+      href: security-center-customize-os-security-config.md
+    - name: Видимость на уровне клиента
+      href: security-center-management-groups.md
     - name: Реализация рекомендаций по вопросам безопасности
       href: security-center-recommendations.md
       items:
