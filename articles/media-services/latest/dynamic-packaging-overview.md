@@ -11,14 +11,14 @@ ms.workload: media
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: article
-ms.date: 05/22/2019
+ms.date: 06/03/2019
 ms.author: juliako
-ms.openlocfilehash: 25c0fe7a179db484f18c1aca16471e39a739052c
-ms.sourcegitcommit: 8c49df11910a8ed8259f377217a9ffcd892ae0ae
+ms.openlocfilehash: c25aef76b5559b6d00ccf60675d61ea5ea346773
+ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66299189"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66494351"
 ---
 # <a name="dynamic-packaging"></a>Динамическая упаковка
 
@@ -114,10 +114,10 @@ ms.locfileid: "66299189"
     * DTS Express (dtse)
     * Без потерь DTS-HD (не ядра) (dtsl)
 
-### <a name="hls-support"></a>Поддержка HLS
+### <a name="multi-audio-tracks"></a>Нескольких звуковых дорожек
 
-Динамическое упаковывание поддерживает HLS (версии 4 или более поздней версии) для ресурсов, которые имеют нескольких звуковых дорожек с несколькими кодеки и языков.
-
+При потоковой передаче активом нескольких звуковых дорожек с несколькими кодеки и языков, динамической упаковки поддерживает нескольких звуковых дорожек для вывода HLS (версии 4 или более поздней версии).
+ 
 ### <a name="not-supported"></a>Не поддерживается
 
 Для динамической упаковки не поддерживаются файлы с аудиоданными в формате [Dolby Digital](https://en.wikipedia.org/wiki/Dolby_Digital) (AC3) (это устаревший кодек).

@@ -10,14 +10,14 @@ ms.service: application-insights
 ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
-ms.date: 08/31/2018
+ms.date: 06/03/2019
 ms.author: mbullwin
-ms.openlocfilehash: 47c83e6bc700f972e6dff83e4d067e61218c04bd
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: d1823779f8a8070149811e2349fc9f4281072d38
+ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60255620"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66497151"
 ---
 # <a name="application-insights-overview-dashboard"></a>Обзорная панель мониторинга Application Insights
 
@@ -60,9 +60,12 @@ Application Insights всегда предоставляло сводную па
 
 ![Кнопка "Обзор"](./media/overview-dashboard/app-insights-overview-dashboard-07.png)
 
+## <a name="troubleshooting"></a>Устранение неполадок
+
+При выборе **Настройка параметров плитки** и задайте заданного интервала времени, превышающий 31 день, панели мониторинга не будут отображаться за пределами 31 день, даже с срок хранения данных по умолчанию 90 дней. В настоящее время нет решения для этого поведения.
+
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - [Воронки](../../azure-monitor/app/usage-funnels.md)
 - [Сохранение](../../azure-monitor/app/usage-retention.md)
 - [Средство "Маршруты пользователей"](../../azure-monitor/app/usage-flows.md)
-- [Панели мониторинга](../../azure-monitor/app/app-insights-dashboards.md)

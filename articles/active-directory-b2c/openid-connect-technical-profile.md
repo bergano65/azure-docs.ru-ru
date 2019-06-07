@@ -2,20 +2,20 @@
 title: Определения технического профиля на OpenId Connect в настраиваемую политику в Azure Active Directory B2C | Документация Майкрософт
 description: Определите Технический профиль на OpenId Connect в настраиваемую политику в Azure Active Directory B2C.
 services: active-directory-b2c
-author: davidmu1
+author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
 ms.date: 09/10/2018
-ms.author: davidmu
+ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 9ec323d4596c866da33c4a8ff5499bf2ad92a8bd
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 6d16415aa5111388ec2d2a1009ff477574ae42c5
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64710310"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66512912"
 ---
 # <a name="define-an-openid-connect-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Определения технического профиля на OpenId Connect в настраиваемую политику Azure Active Directory B2C
 
@@ -23,7 +23,7 @@ ms.locfileid: "64710310"
 
 Azure Active Directory (Azure AD) B2C поддерживает протокол [OpenId Connect](https://openid.net/2015/04/17/openid-connect-certification-program/) для поставщиков удостоверений. OpenID Connect 1.0 определяет уровень идентификации поверх OAuth 2.0 и представляет собой оптимизированный протокол среди современных протоколов аутентификации. С помощью OpenId Connect технического профиля можно использовать для федерации с поставщиком удостоверений на основе OpenId Connect, таких как Azure AD. Федеративные отношения с поставщиком удостоверений позволяет пользователям вход с помощью существующие социальных сетей или корпоративными удостоверениями.
 
-## <a name="protocol"></a>Protocol
+## <a name="protocol"></a>Протокол
 
 Атрибуту **Name** элемента **Protocol** необходимо присвоить значение `OpenIdConnect`. Например, `OpenIdConnect` — это протокол для технического профиля **MSA-OIDC**.
 
@@ -73,28 +73,28 @@ Azure Active Directory (Azure AD) B2C поддерживает протокол 
 
 ## <a name="metadata"></a>Метаданные
 
-| Атрибут | Обязательно для заполнения | ОПИСАНИЕ |
+| Атрибут | Обязательно для заполнения | Описание |
 | --------- | -------- | ----------- |
-| client_id | Yes | Идентификатор приложения поставщика удостоверений. |
-| IdTokenAudience | Нет  | Аудитория id_token. Если указан, Azure AD B2C проверяет, содержится ли маркер в утверждении, возвращаемом поставщиком удостоверений, и соответствует ли он указанному. |
-| METADATA | Yes | URL-адрес, указывающий на документ конфигурации JSON, отформатированный в соответствии со спецификацией OpenID Connect Discovery, которая также известна как распространенная конечная точка конфигурации openid. |
-| ProviderName | Нет  | Имя поставщика удостоверений. |
-| response_types | Нет  | Тип ответа в соответствии со спецификацией OpenID Connect Core 1.0. Возможные значения: `id_token`, `code` или `token`. |
-| response_mode | Нет  | Метод, который использует поставщик удостоверений, чтобы отправить результат обратно в Azure AD B2C. Возможные значения: `query`, `form_post` (по умолчанию) или `fragment`. |
-| scope | Нет  | Область запроса, который определен в соответствии со спецификацией OpenID Connect Core 1.0. Возможные значения: `openid`, `profile` и `email`. |
-| HttpBinding | Нет  | Ожидаемая привязка HTTP для маркера доступа и конечных точек маркера утверждений. Возможные значения: `GET` или `POST`.  |
-| ValidTokenIssuerPrefixes | Нет  | Ключ, который можно использовать для входа во все клиенты при использовании мультитенантного поставщика удостоверений, например Azure Active Directory. |
-| UsePolicyInRedirectUri | Нет  | Указывает, следует ли использовать политику при создании универсального кода ресурса (URI) перенаправления. При настройке приложения в поставщике удостоверений необходимо указать URI перенаправления. URI перенаправления указывает на Azure AD B2C `https://login.microsoftonline.com/te/{tenant}/oauth2/authresp` (login.microsoftonline.com можно изменить с помощью your-tenant-name.b2clogin.com).  Если вы указываете `false`, необходимо добавить URI перенаправления для каждой используемой политики. Например, `https://login.microsoftonline.com/te/{tenant}/{policy}/oauth2/authresp`. |
-| MarkAsFailureOnStatusCode5xx | Нет  | Указывает, должен ли запрос внешней службы помечаться как запрос, завершившийся сбоем, если код состояния Http находится в диапазоне 5xx. Значение по умолчанию — `false`. |
-| DiscoverMetadataByTokenIssuer | Нет  | Указывает, следует ли обнаруживать метаданные OIDC с помощью издателя в маркере JWT. |
+| client_id | Да | Идентификатор приложения поставщика удостоверений. |
+| IdTokenAudience | Нет | Аудитория id_token. Если указан, Azure AD B2C проверяет, содержится ли маркер в утверждении, возвращаемом поставщиком удостоверений, и соответствует ли он указанному. |
+| METADATA | Да | URL-адрес, указывающий на документ конфигурации JSON, отформатированный в соответствии со спецификацией OpenID Connect Discovery, которая также известна как распространенная конечная точка конфигурации openid. |
+| ProviderName | Нет | Имя поставщика удостоверений. |
+| response_types | Нет | Тип ответа в соответствии со спецификацией OpenID Connect Core 1.0. Возможные значения: `id_token`, `code` или `token`. |
+| response_mode | Нет | Метод, который использует поставщик удостоверений, чтобы отправить результат обратно в Azure AD B2C. Возможные значения: `query`, `form_post` (по умолчанию) или `fragment`. |
+| scope | Нет | Область запроса, который определен в соответствии со спецификацией OpenID Connect Core 1.0. Возможные значения: `openid`, `profile` и `email`. |
+| HttpBinding | Нет | Ожидаемая привязка HTTP для маркера доступа и конечных точек маркера утверждений. Возможные значения: `GET` или `POST`.  |
+| ValidTokenIssuerPrefixes | Нет | Ключ, который можно использовать для входа во все клиенты при использовании мультитенантного поставщика удостоверений, например Azure Active Directory. |
+| UsePolicyInRedirectUri | Нет | Указывает, следует ли использовать политику при создании универсального кода ресурса (URI) перенаправления. При настройке приложения в поставщике удостоверений необходимо указать URI перенаправления. URI перенаправления указывает на Azure AD B2C `https://login.microsoftonline.com/te/{tenant}/oauth2/authresp` (login.microsoftonline.com можно изменить с помощью your-tenant-name.b2clogin.com).  Если вы указываете `false`, необходимо добавить URI перенаправления для каждой используемой политики. Например, `https://login.microsoftonline.com/te/{tenant}/{policy}/oauth2/authresp`. |
+| MarkAsFailureOnStatusCode5xx | Нет | Указывает, должен ли запрос внешней службы помечаться как запрос, завершившийся сбоем, если код состояния Http находится в диапазоне 5xx. Значение по умолчанию — `false`. |
+| DiscoverMetadataByTokenIssuer | Нет | Указывает, следует ли обнаруживать метаданные OIDC с помощью издателя в маркере JWT. |
 
 ## <a name="cryptographic-keys"></a>Криптографические ключи
 
 Элемент **CryptographicKeys** содержит следующий атрибут:
 
-| Атрибут | Обязательно для заполнения | ОПИСАНИЕ |
+| Атрибут | Обязательно для заполнения | Описание |
 | --------- | -------- | ----------- |
-| client_secret | Yes | Секрет клиента приложения поставщика удостоверений. Ключ шифрования является обязательным, только если для метаданных **response_types** задано значение `code`. В этом случае Azure AD B2C выполняет другой вызов для обмена кода авторизации на маркер доступа. Если для метаданных задано значение `id_token`, можно опустить криптографический ключ.  |  
+| client_secret | Да | Секрет клиента приложения поставщика удостоверений. Ключ шифрования является обязательным, только если для метаданных **response_types** задано значение `code`. В этом случае Azure AD B2C выполняет другой вызов для обмена кода авторизации на маркер доступа. Если для метаданных задано значение `id_token`, можно опустить криптографический ключ.  |  
 
 ## <a name="redirect-uri"></a>URI перенаправления
  

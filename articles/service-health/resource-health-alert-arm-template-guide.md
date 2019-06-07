@@ -6,12 +6,12 @@ ms.author: stbaron
 ms.topic: conceptual
 ms.service: service-health
 ms.date: 9/4/2018
-ms.openlocfilehash: 3d9a5ebb2e25cfbabf8cfdbd94c2d1d04ae1bbee
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: e552b90a4c98eff7b04cbeaef26aa10749ce672c
+ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65788458"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66493398"
 ---
 # <a name="configure-resource-health-alerts-using-resource-manager-templates"></a>Настройка оповещений о работоспособности ресурсов с помощью шаблонов Resource Manager
 
@@ -31,7 +31,7 @@ ms.locfileid: "65788458"
 1. Необходимо установить [модуля Azure PowerShell](https://docs.microsoft.com/powershell/azure/install-Az-ps)
 2. [Создать или повторно использовать группу действий](../azure-monitor/platform/action-groups.md), настроенную на уведомление.
 
-## <a name="instructions"></a>Инструкции
+## <a name="instructions"></a>Указания
 1. С помощью PowerShell войдите в Azure с помощью учетной записи и выберите нужную подписку.
 
         Login-AzAccount
@@ -442,5 +442,7 @@ ms.locfileid: "65788458"
 -  [Обзор службы "Работоспособность ресурсов Azure"](Resource-health-overview.md)
 -  [Типы ресурсов и проверок работоспособности, доступные в службе работоспособности ресурсов Azure](resource-health-checks-resource-types.md)
 
+
 Создание оповещений службы "Работоспособность служб":
 -  [Создание оповещений журнала действий для уведомлений службы](../azure-monitor/platform/alerts-activity-log-service-notifications.md) 
+-  [Схема событий журнала действий Azure](../azure-monitor/platform/activity-log-schema.md)

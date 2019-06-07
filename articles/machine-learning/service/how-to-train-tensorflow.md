@@ -10,30 +10,31 @@ ms.author: minxia
 author: mx-iao
 ms.date: 05/28/2019
 ms.custom: seodec18
-ms.openlocfilehash: 314917ce91407206d786b191df118893696ac82c
-ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
+ms.openlocfilehash: 4a6f9734a7b2b59035efcbb0f4e2d75f47e053be
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66417132"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66515596"
 ---
 # <a name="train-and-register-tensorflow-models-at-scale-with-azure-machine-learning-service"></a>Обучение и зарегистрируйте модели TensorFlow в масштабе с помощью службы машинного обучения Azure
 
-В этой статье показано, как обучать и зарегистрируйте модели TensorFlow с помощью службы машинного обучения Azure. Мы будем использовать популярный [набора данных MNIST](http://yann.lecun.com/exdb/mnist/) для классификации рукописных цифр, с помощью глубоких нейронных сетях на основе TensorFlow.
+В этой статье показано, как обучать и зарегистрируйте модели TensorFlow с помощью службы машинного обучения Azure. Мы будем использовать популярный [набора данных MNIST](http://yann.lecun.com/exdb/mnist/) для классификации рукописных цифр, с помощью глубокой нейронной сети, созданные с помощью [библиотеки TensorFlow Python](https://www.tensorflow.org/overview).
 
-С помощью службы машинного обучения Azure вы сможете быстро масштабировать свои задания обучения с открытым исходным кодом, с помощью эластичных облачных вычислительных ресурсов. Также можно отслеживать в учебных запусков, версии модели, развертывания моделей и многое другое. 
+С помощью службы машинного обучения Azure вы сможете быстро масштабировать свои задания обучения с открытым исходным кодом, с помощью эластичных облачных вычислительных ресурсов. Также можно отслеживать в учебных запусков, версии модели, развертывания моделей и многое другое.
 
 Вы разрабатываете модель TensorFlow из нуля или вам нужно добавить существующую модель в облако, вы можете создавать готовые модели со службой машинного обучения Azure.
 
 ## <a name="prerequisites"></a>Технические условия
 
-- установить пакет SDK для Машинного обучения Azure для Python.
-- Необязательно: Создание файла конфигурации рабочей области
+- Установка [машинного обучения Azure SDK для Python](setup-create-workspace.md#sdk). Необязательно: создание `config.json` файла конфигурации.
 - Скачайте [образцы файлов скрипта](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/training-with-deep-learning/train-hyperparameter-tune-deploy-with-tensorflow) `mnist-tf.py` и `utils.py`
 
-Можно выполнить [руководство по установке пакета SDK для Python](setup-create-workspace.md#sdk) пошаговые инструкции по настройке среды. Образцы файлов обучения можно найти на наших [страница примеров GitHub](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/training-with-deep-learning/train-hyperparameter-tune-deploy-with-tensorflow) с указанием расширенного записной книжки Juypter версии этого руководства.
+Вы также найдете завершенного [версии записной книжки Jupyter](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/training-with-deep-learning/train-hyperparameter-tune-deploy-with-tensorflow/train-hyperparameter-tune-deploy-with-tensorflow.ipynb) данного руководства на нашей странице Github образцов. Записная книжка включает развернутой, освещая настройки гиперпараметров интеллектуальные и развертыванию модели.
 
 ## <a name="set-up-the-experiment"></a>Настроить эксперимент
+
+В этом разделе устанавливает обучающий эксперимент с помощью загрузки пакетов требуется python, инициализация рабочей области, создания эксперимента и отправки данных для обучения и скриптов обучения, с помощью пакета SDK для Python.
 
 ### <a name="import-packages"></a>Импорт пакетов
 
@@ -54,7 +55,7 @@ from azureml.core.compute_target import ComputeTargetException
 
 ### <a name="initialize-a-workspace"></a>Инициализация рабочей области
 
-Объект рабочей области — это ресурс верхнего уровня для службы. Он предоставляет централизованное расположение для работы с все артефакты, созданные.
+[Рабочей области машинного обучения Azure службы](concept-workspace.md) — это ресурс верхнего уровня для службы. Он предоставляет централизованное расположение для работы с все артефакты, созданные. В пакете SDK для Python, можно получить доступ к артефактам рабочей области путем создания [ `workspace` ](https://docs.microsoft.com/python/api/azureml-core/azureml.core.workspace.workspace?view=azure-ml-py) объекта.
 
 Если вы выполнили необязательный шаг в [предварительных](#prerequisites), можно использовать `Workspace.from_config()` быстро создать объект рабочей области от деталей, хранятся в файле конфигурации.
 
@@ -62,7 +63,7 @@ from azureml.core.compute_target import ComputeTargetException
 ws = Workspace.from_config()
 ```
 
-Можно также созданием рабочей области явным образом.
+Также можно явно создать рабочую область:
 
 ```Python
 ws = Workspace.create(name='<workspace-name>',
@@ -75,7 +76,7 @@ ws = Workspace.create(name='<workspace-name>',
 
 ### <a name="create-an-experiment"></a>Создание эксперимента
 
-Создание эксперимента и папку для хранения сценариев обучения. В этом примере создаете эксперимент, который называется «tf-mnist»
+Создание эксперимента и папку для хранения сценариев обучения. В этом примере Создайте эксперимент, который называется «tf-mnist».
 
 ```Python
 script_folder = './tf-mnist'
@@ -88,7 +89,7 @@ exp = Experiment(workspace=ws, name='tf-mnist')
 
 [Хранилище данных](how-to-access-data.md) — это место, где можно хранить данные и осуществляется подключаются или при копировании данных на целевой объект вычислений. Каждая рабочая область предоставляет хранилище данных по умолчанию. Мы отправите наших данных и скриптов обучения, чтобы они могут быть легко доступны во время обучения.
 
-1. Загрузка набора данных MNIST локально
+1. Скачайте набор данных MNIST локально.
 
     ```Python
     os.makedirs('./data/mnist', exist_ok=True)
@@ -115,7 +116,7 @@ exp = Experiment(workspace=ws, name='tf-mnist')
 
 ## <a name="create-a-compute-target"></a>Создание целевого объекта вычислений
 
-Создание целевого объекта вычислений для задания TensorFlow под управлением. В этом примере мы создадим кластер AmlCompute с поддержкой GPU. Список доступных учебных целевых объектов вычислений, см. в разделе [в этой статье](how-to-set-up-training-targets.md#compute-targets-for-training)
+Создание целевого объекта вычислений для задания TensorFlow под управлением. В этом примере мы создадим вычислительного кластера с поддержкой GPU машинного обучения Azure. Список доступных учебных целевых объектов вычислений, см. в разделе [в этой статье](how-to-set-up-training-targets.md#compute-targets-for-training)
 
 ```Python
 cluster_name = "gpucluster"
@@ -135,9 +136,11 @@ except ComputeTargetException:
 
 ## <a name="create-a-tensorflow-estimator"></a>Создание оценки TensorFlow
 
-[TensorFlow estimator](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.tensorflow?view=azure-ml-py) предоставляет простой способ запуска задание обучения TensorFlow в целевой объект вычислений. Он автоматически предоставляет образ docker, который был установлен TensorFlow.
+[TensorFlow estimator](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.dnn.tensorflow?view=azure-ml-py) предоставляет простой способ запуска задание обучения TensorFlow в целевой объект вычислений. Он создаст образ docker, который был установлен TensorFlow.
 
-Можно включить дополнительные пакеты pip или conda в итоговый образ docker, передав их имена через `pip_packages` и `conda_packages` аргументы.
+Оценщик TensorFlow реализуется с помощью универсального [ `estimator` ](https://docs.microsoft.com//python/api/azureml-train-core/azureml.train.estimator.estimator?view=azure-ml-py) класс, который может использоваться для поддержки любой платформы. Дополнительные сведения об обучении моделей с помощью универсальный механизм оценки, см. в разделе [обучения моделей с машинным обучением Azure, с помощью механизма оценки](how-to-train-ml-models.md)
+
+Если сценарий обучения требуются дополнительные pip или conda пакеты для запуска, может иметь пакетами, устанавливаемыми на итоговый образ docker, передав их имена через `pip_packages` и `conda_packages` аргументы.
 
 ```Python
 script_params = {
@@ -149,9 +152,9 @@ script_params = {
 }
 
 est = TensorFlow(source_directory=script_folder,
+                 entry_script='tf_mnist.py',
                  script_params=script_params,
                  compute_target=compute_target,
-                 entry_script='tf_mnist.py',
                  use_gpu=True)
 ```
 
@@ -168,7 +171,7 @@ run.wait_for_completion(show_output=True)
 
 - **Подготовка**: В соответствии с оценщика TensorFlow создается образ docker. Изображение отправлены в реестр контейнеров в рабочей области и кэшируются для выполнения более поздней версии. Также будут отправлены в журнал выполнения и отслеживать ход выполнения можно просмотреть журналы.
 
-- **Масштабирование**. Кластер будет предпринята попытка увеличить масштаб, если для кластера Batch AI требуется больше узлов для выполнения запуска, чем в настоящее время доступны.
+- **Масштабирование**. Кластер попытается увеличить масштаб, если для кластера Batch AI требуется больше узлов для выполнения запуска, чем в настоящее время доступны.
 
 - **Running**. Все сценарии в папке сценария передаются целевого объекта вычислений, хранилищ данных отправляются подключен или копируются, а также выполняется entry_script. Выходные данные stdout и. / Папка журналов будут отправлены в журнал выполнения и может использоваться для отслеживания выполнения.
 
@@ -201,8 +204,8 @@ for f in run.get_file_names():
 
 Служба машинного обучения Azure поддерживает два метода распределенного обучения в TensorFlow.
 
-* [На основе MPI](https://www.open-mpi.org/) распределенного обучения с помощью [Horovod](https://github.com/uber/horovod) framework
-* Собственный [распределенных TensorFlow](https://www.tensorflow.org/deploy/distributed) с помощью параметра метода сервера
+- [На основе MPI](https://www.open-mpi.org/) распределенного обучения с помощью [Horovod](https://github.com/uber/horovod) framework
+- Собственный [распределенных TensorFlow](https://www.tensorflow.org/deploy/distributed) с помощью параметра метода сервера
 
 ### <a name="horovod"></a>Horovod
 
@@ -220,7 +223,8 @@ estimator= TensorFlow(source_directory=project_folder,
                       entry_script='script.py',
                       node_count=2,
                       process_count_per_node=1,
-                      distributed_backend='mpi',
+                      distributed_training=MpiConfiguration(),
+                      framework_version='1.13',
                       use_gpu=True)
 ```
 
@@ -233,6 +237,9 @@ estimator= TensorFlow(source_directory=project_folder,
 ```Python
 from azureml.train.dnn import TensorFlow
 
+distributed_training = TensorflowConfiguration()
+distributed_training.worker_count = 2
+
 # Tensorflow constructor
 estimator= TensorFlow(source_directory=project_folder,
                       compute_target=compute_target,
@@ -240,14 +247,14 @@ estimator= TensorFlow(source_directory=project_folder,
                       entry_script='script.py',
                       node_count=2,
                       process_count_per_node=1,
-                      distributed_backend='ps',
+                      distributed_backend=distributed_training,
                       use_gpu=True)
 
 # submit the TensorFlow job
 run = exp.submit(tf_est)
 ```
 
-#### <a name="note-on-tfconfig"></a>Примечания по `TF_CONFIG`
+#### <a name="define-cluster-specifications-in-tfconfig"></a>Определить характеристики кластера в «TF_CONFIG»
 
 Вам также потребуется сетевых адресов и портов кластера для [ `tf.train.ClusterSpec` ](https://www.tensorflow.org/api_docs/python/tf/train/ClusterSpec), поэтому машинного обучения Azure задает `TF_CONFIG` переменной среды для вас.
 
@@ -266,7 +273,7 @@ TF_CONFIG='{
 
 Для высокого уровня TensorFlow [ `tf.estimator` ](https://www.tensorflow.org/api_docs/python/tf/estimator) проанализирует API, TensorFlow, это `TF_CONFIG` переменной и построения кластера по спецификациям для вас.
 
-TensorFlow на нижнем уровне основными интерфейсами API для обучения, анализа `TF_CONFIG` переменной и построения `tf.train.ClusterSpec` в коде обучения. В [этом примере](https://aka.ms/aml-notebook-tf-ps) эти действия выполняются в **сценарии обучения** следующим образом:
+TensorFlow на нижнем уровне основными интерфейсами API для обучения, анализа `TF_CONFIG` переменной и построения `tf.train.ClusterSpec` в коде обучения.
 
 ```Python
 import os, json

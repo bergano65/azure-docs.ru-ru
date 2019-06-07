@@ -1,6 +1,6 @@
 ---
 title: Передавать данные из хранилища BLOB-объектов Azure с помощью AzCopy v10 | Документация Майкрософт
-description: В этой статье содержится коллекция AzCopy пример команды, которые помогут вам создавать контейнеры, скопируйте файлы и синхронизации папок между локальной файловой системы и контейнерами.
+description: В этой статье содержится коллекция AzCopy пример команды, помогающие создавать контейнеры, копирования файлов и синхронизация каталогов между локальной файловой системы и контейнерами.
 services: storage
 author: normesta
 ms.service: storage
@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 05/14/2019
 ms.author: normesta
 ms.subservice: common
-ms.openlocfilehash: 98e33f838ee9b6f506bf1dc01e1dd61ad587aa05
-ms.sourcegitcommit: 8c49df11910a8ed8259f377217a9ffcd892ae0ae
+ms.openlocfilehash: 140f2ec6252eac2958f236b2ffb48225fa16fe2b
+ms.sourcegitcommit: 6932af4f4222786476fdf62e1e0bf09295d723a1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66299410"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66688054"
 ---
 # <a name="transfer-data-with-azcopy-and-blob-storage"></a>Передача данных с помощью AzCopy и BLOB-хранилища
 
@@ -42,13 +42,13 @@ AzCopy — программа командной строки, который м
 
 ## <a name="upload-files"></a>Upload files
 
-Можно использовать AzCopy `copy` команду, чтобы передать файлы и папки на локальном компьютере.
+Можно использовать AzCopy `copy` команду, чтобы передать файлы и каталоги на локальном компьютере.
 
 В этом разделе содержатся следующие примеры:
 
 > [!div class="checklist"]
 > * Отправка файла
-> * Отправка папки
+> * Отправить каталог
 > * Отправка файлов с использованием подстановочных знаков
 
 > [!NOTE]
@@ -59,53 +59,53 @@ AzCopy — программа командной строки, который м
 |    |     |
 |--------|-----------|
 | **Синтаксис** | `azcopy cp "<local-file-path>" "https://<storage-account-name>.<blob or dfs>.core.windows.net/<container-name>/<blob-name>"` |
-| **Пример** | `azcopy copy "C:\myFolder\myTextFile.txt" "https://mystorageaccount.blob.core.windows.net/mycontainer/myTextFile.txt"` |
-| **Пример** (иерархического пространства имен) | `azcopy copy "C:\myFolder\myTextFile.txt" "https://mystorageaccount.dfs.core.windows.net/mycontainer/myTextFile.txt"` |
+| **Пример** | `azcopy copy "C:\myDirectory\myTextFile.txt" "https://mystorageaccount.blob.core.windows.net/mycontainer/myTextFile.txt"` |
+| **Пример** (иерархического пространства имен) | `azcopy copy "C:\myDirectory\myTextFile.txt" "https://mystorageaccount.dfs.core.windows.net/mycontainer/myTextFile.txt"` |
 
 > [!NOTE]
 > По умолчанию AzCopy передает данные в блочных BLOB-объектов. Для передачи файлов, как добавочных или страничных BLOB-объектов используйте флаг `--blob-type=[BlockBlob|PageBlob|AppendBlob]`.
 
-### <a name="upload-a-folder"></a>Отправка папки
+### <a name="upload-a-directory"></a>Отправить каталог
 
-В этом примере копирует папки (и все файлы в этой папке) в контейнер больших двоичных объектов. Результатом является папкой в контейнере с тем же именем.
-
-|    |     |
-|--------|-----------|
-| **Синтаксис** | `azcopy copy "<local-folder-path>" "https://<storage-account-name>.<blob or dfs>.core.windows.net/<container-name>" --recursive` |
-| **Пример** | `azcopy copy "C:\myFolder" "https://mystorageaccount.blob.core.windows.net/mycontainer" --recursive` |
-| **Пример** (иерархического пространства имен) | `azcopy copy "C:\myFolder" "https://mystorageaccount.dfs.core.windows.net/mycontainer" --recursive` |
-
-Чтобы скопировать в папку в контейнере, просто укажите имя папки в командной строке.
+В этом примере копирует каталог (и все файлы в этом каталоге) в контейнер больших двоичных объектов. Результат представляет собой каталог в контейнере с тем же именем.
 
 |    |     |
 |--------|-----------|
-| **Пример** | `azcopy copy "C:\myFolder" "https://mystorageaccount.blob.core.windows.net/mycontainer/myBlobFolder" --recursive` |
-| **Пример** (иерархического пространства имен) | `azcopy copy "C:\myFolder" "https://mystorageaccount.dfs.core.windows.net/mycontainer/myBlobFolder" --recursive` |
+| **Синтаксис** | `azcopy copy "<local-directory-path>" "https://<storage-account-name>.<blob or dfs>.core.windows.net/<container-name>" --recursive` |
+| **Пример** | `azcopy copy "C:\myDirectory" "https://mystorageaccount.blob.core.windows.net/mycontainer" --recursive` |
+| **Пример** (иерархического пространства имен) | `azcopy copy "C:\myDirectory" "https://mystorageaccount.dfs.core.windows.net/mycontainer" --recursive` |
 
-Если указать имя папки, которая не существует в контейнере, AzCopy создает новую папку с таким именем.
-
-### <a name="upload-the-contents-of-a-folder"></a>Отправьте содержимое папки
-
-Вы можете отправить содержимое папки без копирования папку, содержащую сам, используя подстановочный знак (*).
+Чтобы скопировать каталог в контейнере, просто укажите имя этого каталога в командной строке.
 
 |    |     |
 |--------|-----------|
-| **Синтаксис** | `azcopy copy "<local-folder-path>\*" "https://<storage-account-name>.<blob or dfs>.core.windows.net/<container-name>/<folder-path>` |
-| **Пример** | `azcopy copy "C:\myFolder\*" "https://mystorageaccount.blob.core.windows.net/mycontainer/myBlobFolder"` |
-| **Пример** (иерархического пространства имен) | `azcopy copy "C:\myFolder\*" "https://mystorageaccount.dfs.core.windows.net/mycontainer/myBlobFolder"` |
+| **Пример** | `azcopy copy "C:\myDirectory" "https://mystorageaccount.blob.core.windows.net/mycontainer/myBlobDirectory" --recursive` |
+| **Пример** (иерархического пространства имен) | `azcopy copy "C:\myDirectory" "https://mystorageaccount.dfs.core.windows.net/mycontainer/myBlobDirectory" --recursive` |
+
+Если указать имя каталога, который не существует в контейнере, AzCopy создаст новый каталог с таким именем.
+
+### <a name="upload-the-contents-of-a-directory"></a>Отправьте содержимое папки
+
+Вы можете отправить содержимое каталога без копирования каталога, содержащего сам, используя подстановочный знак (*).
+
+|    |     |
+|--------|-----------|
+| **Синтаксис** | `azcopy copy "<local-directory-path>\*" "https://<storage-account-name>.<blob or dfs>.core.windows.net/<container-name>/<directory-path>` |
+| **Пример** | `azcopy copy "C:\myDirectory\*" "https://mystorageaccount.blob.core.windows.net/mycontainer/myBlobDirectory"` |
+| **Пример** (иерархического пространства имен) | `azcopy copy "C:\myDirectory\*" "https://mystorageaccount.dfs.core.windows.net/mycontainer/myBlobDirectory"` |
 
 > [!NOTE]
-> Добавление `--recursive` флаг для отправки файлов во всех вложенных папках.
+> Добавление `--recursive` флаг для отправки файлов во всех вложенных каталогах.
 
 ## <a name="download-files"></a>Скачивание файлов
 
-Можно использовать AzCopy `copy` команду, чтобы скачать большие двоичные объекты, папок и контейнеров на локальный компьютер.
+Можно использовать AzCopy `copy` команду, чтобы скачать большие двоичные объекты, каталоги и контейнеры для локального компьютера.
 
 В этом разделе содержатся следующие примеры:
 
 > [!div class="checklist"]
 > * скачать файл;
-> * Папка загрузки
+> * Скачать каталог
 > * Загрузка файлов с помощью подстановочных знаков
 
 > [!NOTE]
@@ -116,33 +116,33 @@ AzCopy — программа командной строки, который м
 |    |     |
 |--------|-----------|
 | **Синтаксис** | `azcopy copy "https://<storage-account-name>.<blob or dfs>.core.windows.net/<container-name>/<blob-path>" "<local-file-path>"` |
-| **Пример** | `azcopy copy "https://mystorageaccount.blob.core.windows.net/mycontainer/myTextFile.txt" "C:\myFolder\myTextFile.txt"` |
-| **Пример** (иерархического пространства имен) | `azcopy copy "https://mystorageaccount.dfs.core.windows.net/mycontainer/myTextFile.txt" "C:\myFolder\myTextFile.txt"` |
+| **Пример** | `azcopy copy "https://mystorageaccount.blob.core.windows.net/mycontainer/myTextFile.txt" "C:\myDirectory\myTextFile.txt"` |
+| **Пример** (иерархического пространства имен) | `azcopy copy "https://mystorageaccount.dfs.core.windows.net/mycontainer/myTextFile.txt" "C:\myDirectory\myTextFile.txt"` |
 
-### <a name="download-a-folder"></a>Папка загрузки
+### <a name="download-a-directory"></a>Скачать каталог
 
 |    |     |
 |--------|-----------|
-| **Синтаксис** | `azcopy copy "https://<storage-account-name>.<blob or dfs>.core.windows.net/<container-name>/<folder-path>" "<local-folder-path>" --recursive` |
-| **Пример** | `azcopy copy "https://mystorageaccount.blob.core.windows.net/mycontainer/myBlobFolder "C:\myFolder"  --recursive` |
-| **Пример** (иерархического пространства имен) | `azcopy copy "https://mystorageaccount.dfs.core.windows.net/mycontainer/myBlobFolder "C:\myFolder"  --recursive` |
+| **Синтаксис** | `azcopy copy "https://<storage-account-name>.<blob or dfs>.core.windows.net/<container-name>/<directory-path>" "<local-directory-path>" --recursive` |
+| **Пример** | `azcopy copy "https://mystorageaccount.blob.core.windows.net/mycontainer/myBlobDirectory "C:\myDirectory"  --recursive` |
+| **Пример** (иерархического пространства имен) | `azcopy copy "https://mystorageaccount.dfs.core.windows.net/mycontainer/myBlobDirectory "C:\myDirectory"  --recursive` |
 
-В этом примере результаты в папку с именем `C:\myFolder\myBlobFolder` , содержащий все загруженные файлы.
+В этом примере результаты в каталог с именем `C:\myDirectory\myBlobDirectory` , содержащий все загруженные файлы.
 
-### <a name="download-the-contents-of-a-folder"></a>Загрузить содержимое папки
+### <a name="download-the-contents-of-a-directory"></a>Загрузить содержимое каталога
 
-Можно загрузить содержимое папки без копирования папку, содержащую сам, используя подстановочный знак (*).
+Можно загрузить содержимое каталога без копирования каталога, содержащего сам, используя подстановочный знак (*).
 
 > [!NOTE]
 > В настоящее время этот сценарий поддерживается только для учетных записей, у которых нет иерархического пространства имен.
 
 |    |     |
 |--------|-----------|
-| **Синтаксис** | `azcopy copy "https://<storage-account-name>.blob.core.windows.net/<container-name>/*" "<local-folder-path>/"` |
-| **Пример** | `azcopy copy "https://mystorageaccount.blob.core.windows.net/mycontainer/myBlobFolder/*" "C:\myFolder"` |
+| **Синтаксис** | `azcopy copy "https://<storage-account-name>.blob.core.windows.net/<container-name>/*" "<local-directory-path>/"` |
+| **Пример** | `azcopy copy "https://mystorageaccount.blob.core.windows.net/mycontainer/myBlobDirectory/*" "C:\myDirectory"` |
 
 > [!NOTE]
-> Добавление `--recursive` флаг для загрузки файлов во всех вложенных папках.
+> Добавление `--recursive` флаг для загрузки файлов во всех вложенных каталогах.
 
 ## <a name="copy-blobs-between-storage-accounts"></a>Копирование больших двоичных объектов между учетными записями хранения
 
@@ -157,9 +157,9 @@ AzCopy использует [поместить блок из URL-адрес](ht
 
 > [!div class="checklist"]
 > * Копирование большого двоичного объекта в другую учетную запись хранения
-> * Скопируйте папку в другую учетную запись хранения
+> * Копирование каталога в другой учетной записи хранения
 > * Копирование контейнерам в другую учетную запись хранения
-> * Скопируйте все контейнеры, папки и файлы в другую учетную запись хранения
+> * Скопируйте все контейнеры, каталоги и файлы в другую учетную запись хранения
 
 ### <a name="copy-a-blob-to-another-storage-account"></a>Копирование большого двоичного объекта в другую учетную запись хранения
 
@@ -168,12 +168,12 @@ AzCopy использует [поместить блок из URL-адрес](ht
 | **Синтаксис** | `azcopy cp "https://<source-storage-account-name>.blob.core.windows.net/<container-name>/<blob-path>" "https://<destination-storage-account-name>.blob.core.windows.net/<container-name>/<blob-path>"` |
 | **Пример** | `azcopy cp "https://mysourceaccount.blob.core.windows.net/mycontainer/myTextFile.txt" "https://mydestinationaccount.blob.core.windows.net/mycontainer/myTextFile.txt"` |
 
-### <a name="copy-a-folder-to-another-storage-account"></a>Скопируйте папку в другую учетную запись хранения
+### <a name="copy-a-directory-to-another-storage-account"></a>Копирование каталога в другой учетной записи хранения
 
 |    |     |
 |--------|-----------|
-| **Синтаксис** | `azcopy cp "https://<source-storage-account-name>.blob.core.windows.net/<container-name>/<folder-path>" "https://<destination-storage-account-name>.blob.core.windows.net/<container-name>/<folder-path>" --recursive` |
-| **Пример** | `azcopy cp "https://mysourceaccount.blob.core.windows.net/mycontainer/myBlobFolder" "https://mydestinationaccount.blob.core.windows.net/mycontainer/myBlobFolder" --recursive` |
+| **Синтаксис** | `azcopy cp "https://<source-storage-account-name>.blob.core.windows.net/<container-name>/<directory-path>" "https://<destination-storage-account-name>.blob.core.windows.net/<container-name>/<directory-path>" --recursive` |
+| **Пример** | `azcopy cp "https://mysourceaccount.blob.core.windows.net/mycontainer/myBlobDirectory" "https://mydestinationaccount.blob.core.windows.net/mycontainer/myBlobDirectory" --recursive` |
 
 ### <a name="copy-a-containers-to-another-storage-account"></a>Копирование контейнерам в другую учетную запись хранения
 
@@ -182,7 +182,7 @@ AzCopy использует [поместить блок из URL-адрес](ht
 | **Синтаксис** | `azcopy cp "https://<source-storage-account-name>.blob.core.windows.net/<container-name>" "https://<destination-storage-account-name>.blob.core.windows.net/<container-name>" --recursive` |
 | **Пример** | `azcopy cp "https://mysourceaccount.blob.core.windows.net/mycontainer" "https://mydestinationaccount.blob.core.windows.net/mycontainer" --recursive` |
 
-### <a name="copy-all-containers-folders-and-files-to-another-storage-account"></a>Скопируйте все контейнеры, папки и файлы в другую учетную запись хранения
+### <a name="copy-all-containers-directories-and-files-to-another-storage-account"></a>Скопируйте все контейнеры, каталоги и файлы в другую учетную запись хранения
 
 |    |     |
 |--------|-----------|
@@ -196,7 +196,7 @@ AzCopy использует [поместить блок из URL-адрес](ht
 > [!NOTE]
 > Текущая версия AzCopy не будет синхронизировать между другие источники и назначения (например: Хранилище файлов или S3, Amazon Web Services (AWS) сегментов).
 
-`sync` Команда сравнивает имена файлов и последнего изменения отметки времени. Задайте `--delete-destination` необязательный флаг в значение `true` или `prompt` на удаление файлов в папке назначения, если эти файлы больше не существуют в исходной папке.
+`sync` Команда сравнивает имена файлов и последнего изменения отметки времени. Задайте `--delete-destination` необязательный флаг в значение `true` или `prompt` для удаления файлов в каталоге назначения в том случае, если эти файлы больше не существуют в исходном каталоге.
 
 Если задать `--delete-destination` флаг `true` AzCopy удаляет файлы без предоставления в строке. Запрос на предшествуют AzCopy удаляет файл, задайте `--delete-destination` флаг `prompt`.
 
@@ -209,9 +209,9 @@ AzCopy использует [поместить блок из URL-адрес](ht
 
 |    |     |
 |--------|-----------|
-| **Синтаксис** | `azcopy sync "<local-folder-path>" "https://<storage-account-name>.<blob or dfs>.core.windows.net/<container-name>" --recursive` |
-| **Пример** | `azcopy sync "C:\myFolder" "https://mystorageaccount.blob.core.windows.net/mycontainer" --recursive` |
-| **Пример** (иерархического пространства имен) | `azcopy sync "C:\myFolder" "https://<storage-account-name>.dfs.core.windows.net/mycontainer" --recursive` |
+| **Синтаксис** | `azcopy sync "<local-directory-path>" "https://<storage-account-name>.<blob or dfs>.core.windows.net/<container-name>" --recursive` |
+| **Пример** | `azcopy sync "C:\myDirectory" "https://mystorageaccount.blob.core.windows.net/mycontainer" --recursive` |
+| **Пример** (иерархического пространства имен) | `azcopy sync "C:\myDirectory" "https://<storage-account-name>.dfs.core.windows.net/mycontainer" --recursive` |
 
 
 ### <a name="synchronize-a-local-file-system-to-a-container"></a>Синхронизация локальной файловой системе в контейнер
@@ -220,20 +220,20 @@ AzCopy использует [поместить блок из URL-адрес](ht
 
 |    |     |
 |--------|-----------|
-| **Синтаксис** | `azcopy sync "https://<storage-account-name>.<blob or dfs>.core.windows.net/<container-name>" "C:\myFolder" --recursive` |
-| **Пример** | `azcopy sync "https://mystorageaccount.blob.core.windows.net/mycontainer" "C:\myFolder" --recursive` |
-| **Пример** (иерархического пространства имен) | `azcopy sync "https://mystorageaccount.dfs.core.windows.net/mycontainer" "C:\myFolder" --recursive` |
+| **Синтаксис** | `azcopy sync "https://<storage-account-name>.<blob or dfs>.core.windows.net/<container-name>" "C:\myDirectory" --recursive` |
+| **Пример** | `azcopy sync "https://mystorageaccount.blob.core.windows.net/mycontainer" "C:\myDirectory" --recursive` |
+| **Пример** (иерархического пространства имен) | `azcopy sync "https://mystorageaccount.dfs.core.windows.net/mycontainer" "C:\myDirectory" --recursive` |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Дополнительные примеры можно найти в любой из следующих статей:
 
-- [Начало работы с AzCopy](storage-use-azcopy-v10.md)
+- [Get started with AzCopy](storage-use-azcopy-v10.md) (Начало работы с AzCopy)
 
 - [Учебник. Миграция локальных данных в Облачное хранилище с помощью AzCopy](storage-use-azcopy-migrate-on-premises-data.md)
 
-- [Передача данных с помощью AzCopy и хранилищем файлов](storage-use-azcopy-files.md)
+- [Transfer data with AzCopy and file storage](storage-use-azcopy-files.md) (Передача данных с помощью AzCopy и хранилища файлов)
 
-- [Передача данных с помощью AzCopy и Amazon S3 сегментов](storage-use-azcopy-s3.md)
+- [Передача данных с помощью AzCopy и контейнеров Amazon S3](storage-use-azcopy-s3.md)
 
-- [Настроить, оптимизировать и устранение неполадок с AzCopy](storage-use-azcopy-configure.md)
+- [Configure, optimize, and troubleshoot AzCopy](storage-use-azcopy-configure.md) (Настройка, оптимизация и устранение неполадок с AzCopy)

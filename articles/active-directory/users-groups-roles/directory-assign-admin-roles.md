@@ -9,17 +9,17 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: users-groups-roles
 ms.topic: article
-ms.date: 05/31/2019
+ms.date: 06/04/2019
 ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5044567396d832d3c3b2b46e3c3e90e053834595
-ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
+ms.openlocfilehash: d31bde1a33d622c2c0b7aa716cbbbfbc8ef42ecf
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66417899"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66514578"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Разрешения роли администратора в Azure Active Directory
 
@@ -407,7 +407,7 @@ ms.locfileid: "66417899"
 | microsoft.office365.supportTickets/allEntities/allTasks | Создание запросов в службу поддержки Office 365 и управление ими. |
 
 ### <a name="desktop-analytics-administrator"></a>Администратор аналитики классических приложений
-Может получать доступ к службам и средствам управления компьютерами, включая Intune, и управлять ими.
+Может управлять Analytics рабочий стол и службы настройки Office & политику. Для рабочего стола аналитики это включает в себя возможность просмотра данных инвентаризации активов, создавать планы развертывания, просмотр состояния развертывания и работоспособности. Для настройки Office & политики службы эта роль позволяет пользователям управлять политиками Office.
 
   > [!NOTE]
   > Эта роль имеет дополнительные разрешения за пределами Azure Active Directory. Дополнительные сведения см. в описании ролей выше.

@@ -12,12 +12,12 @@ ms.author: xiwu
 ms.reviewer: carlrab
 manager: craigg
 ms.date: 01/25/2019
-ms.openlocfilehash: f83eb87d2eecb91aa18b1caceb42f9d8bd6c2a0e
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.openlocfilehash: cfa94fc1c75bcd1eaa9a076cfe63369f60ce5f1c
+ms.sourcegitcommit: 18a0d58358ec860c87961a45d10403079113164d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64939590"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66693080"
 ---
 # <a name="sync-data-across-multiple-cloud-and-on-premises-databases-with-sql-data-sync"></a>Синхронизация данных в нескольких облачных и локальных базах данных с помощью синхронизации данных SQL
 
@@ -129,6 +129,7 @@ ms.locfileid: "64939590"
 - Имена объектов (баз данных, таблиц и столбцов) не могут содержать печатаемые символы: точку (.), левую квадратную скобку ([) или правую квадратную скобку (]).
 - Аутентификация Azure Active Directory не поддерживается.
 - Таблицы с одинаковыми именами, но разными схемами (например, dbo.customers и sales.customers) не поддерживаются.
+- Столбцы с помощью определяемых пользователем типов данных не поддерживаются
 
 #### <a name="unsupported-data-types"></a>Неподдерживаемые типы данных
 
@@ -139,7 +140,7 @@ ms.locfileid: "64939590"
 
 #### <a name="unsupported-column-types"></a>Неподдерживаемые типы столбцов
 
-При синхронизации данных столбцы только для чтения и созданные системой столбцы не синхронизируются. Например: 
+При синхронизации данных столбцы только для чтения и созданные системой столбцы не синхронизируются. Например:
 
 - Вычисляемые столбцы.
 - Созданные системой столбцы для темпоральных таблиц.

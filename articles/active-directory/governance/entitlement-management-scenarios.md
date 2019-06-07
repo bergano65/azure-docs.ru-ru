@@ -16,17 +16,17 @@ ms.date: 04/23/2019
 ms.author: rolyon
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 96442a9d49581da6841fa7acb8329354ec727f60
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 6a50f4a8a63022668dac68c974f8c828c72777c9
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64918475"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66473135"
 ---
 # <a name="common-scenarios-in-azure-ad-entitlement-management-preview"></a>Распространенные сценарии, в управление правами Azure AD (Предварительная версия)
 
 > [!IMPORTANT]
-> Управление правами Azure Active Directory (Azure AD) в настоящее время находится в общедоступной предварительной версии.
+> Управление правами Azure Active Directory (Azure AD) сейчас предоставляется в общедоступной предварительной версии.
 > Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
 > Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
@@ -46,16 +46,16 @@ ms.locfileid: "64918475"
 > [!div class="mx-tableFixed"]
 > | Действия | Пример |
 > | --- | --- |
-> | **1.** [Создание нового пакета доступа в каталоге](entitlement-management-access-package-create.md#start-new-access-package) | ![Создание пакета доступа](./media/entitlement-management-scenarios/access-package.png) |
+> | **1.** [Создание нового пакета доступа в каталоге](entitlement-management-access-package-create.md#start-new-access-package) | ![Создание пакета для доступа](./media/entitlement-management-scenarios/access-package.png) |
 > | **2.** [Добавление ролей ресурсов, доступ к пакету](entitlement-management-access-package-edit.md#add-resource-roles)<ul><li>Группы</li><li>ПРИЛОЖЕНИЯ</li><li>Сайты SharePoint</li></ul> | ![Добавление ролей ресурсов](./media/entitlement-management-scenarios/resource-roles.png) |
 > | **3.** [Добавление политики](entitlement-management-access-package-edit.md#policy-for-users-in-your-directory)<ul><li>Для пользователей в каталоге</li><li>Требуется утверждение</li><li>Параметры срока действия</li></ul> | ![добавление политики;](./media/entitlement-management-scenarios/policy.png) |
 
-### <a name="i-want-to-allow-users-from-my-business-partners-including-users-not-yet-in-my-directory-to-request-access-to-groups-applications-or-sharepoint-sites"></a>Я хочу дать пользователям из моей деловыми партнерами (в том числе пользователей еще не в моем каталоге), чтобы запросить доступ для группы приложений и сайтов SharePoint
+### <a name="i-want-to-allow-users-from-my-business-partners-directory-including-users-not-yet-in-my-directory-to-request-access-to-groups-applications-or-sharepoint-sites"></a>Я хочу разрешить пользователям из моего бизнеса партнеров каталога, (в том числе пользователей еще не в моем каталоге), чтобы запросить доступ для группы приложений и сайтов SharePoint
 
 > [!div class="mx-tableFixed"]
 > | Действия | Пример |
 > | --- | --- |
-> | **1.** [Создание нового пакета доступа в каталоге](entitlement-management-access-package-create.md#start-new-access-package) | ![Создание пакета доступа](./media/entitlement-management-scenarios/access-package.png) |
+> | **1.** [Создание нового пакета доступа в каталоге](entitlement-management-access-package-create.md#start-new-access-package) | ![Создание пакета для доступа](./media/entitlement-management-scenarios/access-package.png) |
 > | **2.** [Добавление ролей ресурсов, доступ к пакету](entitlement-management-access-package-edit.md#add-resource-roles) | ![Добавление ролей ресурсов](./media/entitlement-management-scenarios/resource-roles.png) |
 > | **3.** [Добавление политики для внешних пользователей](entitlement-management-access-package-edit.md#policy-for-users-not-in-your-directory)<ul><li>Для пользователей, не в каталоге</li><li>Требуется утверждение</li><li>Параметры срока действия</li></ul> | ![Добавление политики для внешних пользователей](./media/entitlement-management-scenarios/policy-external.png) |
 > | **4.** [Отправьте ссылку портала мой доступ для запроса доступа пакета для деловых партнеров](entitlement-management-access-package-edit.md#copy-my-access-portal-link)<ul><li>Деловой партнер может предоставить ссылку на своих пользователей</li></ul> |  |
@@ -83,7 +83,7 @@ ms.locfileid: "64918475"
 > | --- | --- |
 > | [Просмотреть отчет назначения пользователей](entitlement-management-reports.md)<ul><li>Представление, когда в каком они запрашиваются и кто утвердил</li></ul> |  |
 
-## <a name="approvers"></a>Утверждающие
+## <a name="approvers"></a>Утверждающих
 
 ### <a name="i-want-to-approve-requests-to-access-groups-applications-or-sharepoint-sites"></a>Я хочу утверждать запросы на доступ к группам, приложений или сайтов SharePoint
 
@@ -123,5 +123,5 @@ ms.locfileid: "64918475"
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Руководство Создайте свой первый пакет доступа](entitlement-management-access-package-first.md)
-- [Изменение и управление ею существующий пакет доступа](entitlement-management-access-package-edit.md)
+- [Учебник. Создайте свой первый пакет доступа](entitlement-management-access-package-first.md)
+- [Изменение и администрирование существующего пакета для доступа](entitlement-management-access-package-edit.md)

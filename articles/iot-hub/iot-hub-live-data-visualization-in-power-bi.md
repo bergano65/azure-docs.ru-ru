@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 4/11/2018
 ms.author: robinsh
-ms.openlocfilehash: 7c770aced36e4c90f654de8d31c12d55ad80c8d0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 3e932048b41e9af149f14a814a1c92d86bd26f29
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60780127"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66479868"
 ---
 # <a name="visualize-real-time-sensor-data-from-azure-iot-hub-using-power-bi"></a>Визуализация данных, поступающих от датчиков в реальном времени, из Центра Интернета вещей с помощью Power BI
 
@@ -25,7 +25,7 @@ ms.locfileid: "60780127"
 
 ## <a name="what-you-learn"></a>Что вы узнаете
 
-Вы узнаете, как с помощью Power BI визуализировать данные, которые в реальном времени поступают с датчиков в Центр Интернета вещей Azure. Сведения о том, как визуализировать данные в центре Интернета вещей с помощью веб-приложений, см. в статье [Визуализация данных, поступающих от датчиков в реальном времени, из Центра Интернета вещей с помощью веб-приложений службы приложений Azure](iot-hub-live-data-visualization-in-web-apps.md).
+Вы узнаете, как с помощью Power BI визуализировать данные, которые в реальном времени поступают с датчиков в Центр Интернета вещей Azure. Если вы хотите попробовать toe визуализации данных в центре Интернета вещей с помощью веб-приложения, см. в разделе [визуализация данных датчиков в реальном времени из центра Интернета вещей с помощью веб-приложения](iot-hub-live-data-visualization-in-web-apps.md).
 
 ## <a name="what-you-do"></a>Что нужно сделать
 
@@ -53,7 +53,7 @@ ms.locfileid: "60780127"
 
 ### <a name="create-a-stream-analytics-job"></a>Создание задания Stream Analytics
 
-1. На [портале Azure](https://portal.azure.com) последовательно выберите **Создать ресурс** > **"Интернет вещей"** > **Stream Analytics job** (Задание Stream Analytics).
+1. На [портале Azure](https://portal.azure.com) последовательно выберите **Создать ресурс** >  **"Интернет вещей"**  > **Stream Analytics job** (Задание Stream Analytics).
 
 2. Введите представленные ниже сведения для задания.
 
@@ -179,6 +179,6 @@ ms.locfileid: "60780127"
 
 Вы успешно использовали Power BI для визуализации данных, полученных от датчика в режиме реального времени, из Центра Интернета вещей Azure.
 
-Но это не единственный способ для визуализации данных из Центра Интернета вещей Azure. Дополнительные сведения см. в статье [Визуализация данных, поступающих от датчиков в реальном времени, из Центра Интернета вещей с помощью веб-приложений Azure](iot-hub-live-data-visualization-in-web-apps.md).
+Еще один способ визуализации данных из центра Интернета вещей Azure, см. в разделе [визуализация данных датчиков в реальном времени из центра Интернета вещей с помощью веб-приложения](iot-hub-live-data-visualization-in-web-apps.md).
 
 [!INCLUDE [iot-hub-get-started-next-steps](../../includes/iot-hub-get-started-next-steps.md)]

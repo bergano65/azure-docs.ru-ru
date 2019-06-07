@@ -5,17 +5,17 @@ author: billmath
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
-ms.date: 10/19/2018
+ms.date: 05/31/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.topic: reference
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 318f21beffb401053c56576ccd9e641dc89cf559
-ms.sourcegitcommit: 8c49df11910a8ed8259f377217a9ffcd892ae0ae
+ms.openlocfilehash: d6b90ff82601acca1249c7d8c353944e39e89f95
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66298804"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66473785"
 ---
 # <a name="azure-ad-connect--adconnectivitytools-powershell-reference"></a>Azure AD Connect выполняет следующие функции:  Справочник по модулю PowerShell ADConnectivityTools
 
@@ -35,7 +35,8 @@ Confirm-DnsConnectivity [-Forest] <String> [-DCs] <Array> [-ReturnResultAsPSObje
 
 ### <a name="description"></a>Описание
 
-Выполняет тесты подключения к локальной службе DNS. Чтобы настроить соединитель Active Directory, пользователь должен иметь оба разрешения имен для леса, он пытается подключиться к также как и контроллеры домена, связанные с указанным лесом.
+Выполняет тесты подключения к локальной службе DNS.
+Чтобы настроить соединитель Active Directory, пользователь должен иметь оба всем имя для леса, они пытается подключиться к также как и контроллеры домена, связанные с указанным лесом.
 
 ### <a name="examples"></a>Примеры
 
@@ -309,7 +310,7 @@ Accept wildcard characters: False
 #### <a name="-skipdnsport"></a>-SkipDnsPort
 
 Если пользователь не использует службы DNS, предоставляемые на сайте AD / входа в систему контроллера домена, то можете пропустить проверки порт 53.
-Пользователь по-прежнему должен иметь возможность разрешить имя _.ldap._tcp.\<forestfqdn\> для успешной настройки соединителя Active Directory.
+Пользователь по-прежнему должен быть способен разрешить _.ldap._tcp. \<forestfqdn\> в конфигурации соединителя Active Directory для успешного выполнения.
 
 ```yml
 Type: SwitchParameter

@@ -9,14 +9,14 @@ editor: ''
 ms.service: media-services
 ms.workload: na
 ms.topic: article
-ms.date: 05/29/2019
+ms.date: 06/04/2019
 ms.author: juliako
-ms.openlocfilehash: a5ce6467a547b9fded03b3b5a6f40f84d29d3618
-ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
+ms.openlocfilehash: e34e0f9fee1d09e66dcdd5069e800dc1f3f750cb
+ms.sourcegitcommit: 6932af4f4222786476fdf62e1e0bf09295d723a1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66385147"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66688653"
 ---
 # <a name="azure-media-services-v3-release-notes"></a>Заметки о выпуске Служб мультимедиа Azure версии 3
 
@@ -36,11 +36,18 @@ ms.locfileid: "66385147"
 
 ## <a name="may-2019"></a>Май 2019 г.
 
-### <a name="hls-v4-and-above-support-in-dynamic-packaging"></a>HLS версии 4 и выше поддерживается динамическая упаковка 
+### <a name="azure-monitor-support-for-media-services-diagnostic-logs-and-metrics"></a>Поддержка монитора Azure для журналов диагностики службы мультимедиа и метрик
 
-Добавлены HLS (версии 4 или более поздней версии) поддерживает в динамическую упаковку для ресурсов, которые существенно нескольких звуковых дорожек с несколькими кодеки и языков.
+Теперь можно использовать Azure Monitor для просмотра emmited данных телеметрии с помощью служб мультимедиа.
 
-Дополнительные сведения см. в разделе [динамической упаковки](dynamic-packaging-overview.md).
+* Использование журналов диагностики Azure Monitor для наблюдения за запросами доставки ключей служб мультимедиа конечной точкой. 
+* Мониторинг метрик, генерируемые службами мультимедиа [конечными точками потоковой передачи](streaming-endpoint-concept.md).   
+
+Дополнительные сведения см. в разделе [служб мультимедиа монитор метрики и журналы диагностики](media-services-metrics-diagnostic-logs.md).
+
+### <a name="multi-audio-tracks-support-in-dynamic-packaging"></a>Поддержка нескольких звуковых дорожек в динамической упаковки 
+
+При потоковой передаче активом нескольких звуковых дорожек с несколькими кодеки и языков, [динамической упаковки](dynamic-packaging-overview.md) теперь поддерживает нескольких звуковых дорожек для вывода HLS (версии 4 или более поздней версии).
 
 ### <a name="korea-regional-pair-is-open-for-media-services"></a>Пары регионов Кореи открыт для служб мультимедиа 
 

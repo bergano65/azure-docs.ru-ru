@@ -2,20 +2,20 @@
 title: Сложность пароля в Azure Active Directory B2C | Документация Майкрософт
 description: Узнайте, как настроить требования к сложности паролей, которые клиенты указывают в Azure Active Directory B2C.
 services: active-directory-b2c
-author: davidmu1
+author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 02/11/2019
-ms.author: davidmu
+ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 5c47a22883de4a3b28a42b390ef78368277e22be
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 37f8305d8ed212cf2c6678b35220d823611b9d7a
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64703745"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66509016"
 ---
 # <a name="configure-complexity-requirements-for-passwords-in-azure-active-directory-b2c"></a>Настройка требований к сложности паролей в Azure Active Directory B2C.
 
@@ -45,7 +45,7 @@ Azure Active Directory (Azure AD) B2C поддерживает изменени�
 
 ### <a name="comparison-chart"></a>Сравнительная таблица
 
-| Сложность | ОПИСАНИЕ |
+| Сложность | Описание |
 | --- | --- |
 | Простая | Пароль, который содержит от 8 до 64 знаков. |
 | Уровень согласованности Strong (сильная) | Пароль, который содержит от 8 до 64 знаков. Он требует наличия 3 из 4 знаков нижнего и верхнего регистра, цифр или символов. |

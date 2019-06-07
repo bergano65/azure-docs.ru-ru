@@ -8,16 +8,16 @@ ms.topic: article
 ms.date: 04/23/2019
 ms.author: normesta
 ms.subservice: common
-ms.openlocfilehash: c0bc74ac0fe45f2502064340a0c3ce5b82694b06
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: b18c4c039b615c7c88268b6e668df9f7fec9fabf
+ms.sourcegitcommit: 6932af4f4222786476fdf62e1e0bf09295d723a1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66245704"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66687924"
 ---
 # <a name="copy-data-from-amazon-s3-buckets-by-using-azcopy"></a>Копирование данных из Amazon S3 сегментов с помощью AzCopy
 
-AzCopy — программа командной строки, который можно использовать для копирования больших двоичных объектов или файлов из учетной записи хранения. Эта статья поможет вам копировать объекты, папок и контейнеров из S3, Amazon Web Services (AWS) в хранилище больших двоичных объектов с помощью AzCopy.
+AzCopy — программа командной строки, который можно использовать для копирования больших двоичных объектов или файлов из учетной записи хранения. Эта статья поможет вам копировать объекты, каталоги и контейнеры из S3, Amazon Web Services (AWS) в хранилище больших двоичных объектов с помощью AzCopy.
 
 ## <a name="choose-how-youll-provide-authorization-credentials"></a>Выберите, каким образом необходимо предоставить учетные данные авторизации
 
@@ -46,7 +46,7 @@ AzCopy — программа командной строки, который м
 | **Linux** | `export AWS_ACCESS_KEY_ID=<access-key>`<br>`export AWS_SECRET_ACCESS_KEY=<secret-access-key>` |
 | **MacOS** | `export AWS_ACCESS_KEY_ID=<access-key>`<br>`export AWS_SECRET_ACCESS_KEY=<secret-access-key>`|
 
-## <a name="copy-objects-folders-and-buckets"></a>Копировать объекты, папок и контейнеров
+## <a name="copy-objects-directories-and-buckets"></a>Копировать объекты, каталоги и контейнеры
 
 AzCopy использует [поместить блок из URL-адрес](https://docs.microsoft.com/rest/api/storageservices/put-block-from-url) API, поэтому данные копируются напрямую между AWS S3 и серверов хранилища. Эти операции копирования не использовать пропускную способность сети компьютера.
 
@@ -64,12 +64,12 @@ AzCopy использует [поместить блок из URL-адрес](ht
 >
 > Дополнительные сведения о размещении виртуальных сегментов, см. в разделе [виртуального размещения из сегментов]] (https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html).
 
-### <a name="copy-a-folder"></a>Скопируйте папку
+### <a name="copy-a-directory"></a>Копирование каталога
 
 |    |     |
 |--------|-----------|
-| **Синтаксис** | `azcopy cp "https://s3.amazonaws.com/<bucket-name>/<folder-name>" "https://<storage-account-name>.blob.core.windows.net/<container-name>/<folder-name>" --recursive=true` |
-| **Пример** | `azcopy cp "https://s3.amazonaws.com/mybucket/myfolder" "https://mystorageaccount.blob.core.windows.net/mycontainer/myfolder" --recursive=true` |
+| **Синтаксис** | `azcopy cp "https://s3.amazonaws.com/<bucket-name>/<directory-name>" "https://<storage-account-name>.blob.core.windows.net/<container-name>/<directory-name>" --recursive=true` |
+| **Пример** | `azcopy cp "https://s3.amazonaws.com/mybucket/mydirectory" "https://mystorageaccount.blob.core.windows.net/mycontainer/mydirectory" --recursive=true` |
 
 ### <a name="copy-a-bucket"></a>Скопируйте контейнер
 
@@ -132,10 +132,10 @@ AzCopy выполняет следующие действия.
 
 Дополнительные примеры можно найти в любой из следующих статей:
 
-- [Начало работы с AzCopy](storage-use-azcopy-v10.md)
+- [Get started with AzCopy](storage-use-azcopy-v10.md) (Начало работы с AzCopy)
 
-- [Передача данных с помощью AzCopy и BLOB-хранилища](storage-use-azcopy-blobs.md)
+- [Transfer data with AzCopy and blob storage](storage-use-azcopy-blobs.md) (Передача данных с помощью AzCopy и хранилища BLOB-объектов)
 
-- [Передача данных с помощью AzCopy и хранилищем файлов](storage-use-azcopy-files.md)
+- [Transfer data with AzCopy and file storage](storage-use-azcopy-files.md) (Передача данных с помощью AzCopy и хранилища файлов)
 
-- [Настроить, оптимизировать и устранение неполадок с AzCopy](storage-use-azcopy-configure.md)
+- [Configure, optimize, and troubleshoot AzCopy](storage-use-azcopy-configure.md) (Настройка, оптимизация и устранение неполадок с AzCopy)

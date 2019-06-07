@@ -2,20 +2,20 @@
 title: Примеры преобразования утверждений строк для схемы инфраструктуры процедур идентификации Azure Active Directory B2C | Документация Майкрософт
 description: Примеры преобразования утверждений строк для схемы инфраструктуры процедур идентификации Azure Active Directory B2C.
 services: active-directory-b2c
-author: davidmu1
+author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
 ms.date: 09/10/2018
-ms.author: davidmu
+ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 6c6b90cb2b24f6a87504a3a0dbd47f998b67ebc1
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: a06447aaa6579052285e7e2cd93bf40183ed173f
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64707458"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66512587"
 ---
 # <a name="string-claims-transformations"></a>Преобразования утверждений строк
 
@@ -156,7 +156,7 @@ ms.locfileid: "64707458"
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | inputClaim1 | string | Тип первого утверждения, которое необходимо сравнить. |
 | inputClaim | inputClaim2 | string | Тип второго утверждения, которое необходимо сравнить. |
-| InputParameter | operator | string | Возможные значения: `EQUAL` или `NOT EQUAL`. |
+| InputParameter | оператор | string | Возможные значения: `EQUAL` или `NOT EQUAL`. |
 | InputParameter | ignoreCase | Логическое | Указывает, следует ли в этом сравнении игнорировать регистр сравниваемых строк. |
 | outputClaim | outputClaim | Логическое | Параметр ClaimType, который создается после вызова этого преобразования утверждений. |
 
@@ -196,7 +196,7 @@ ms.locfileid: "64707458"
 | Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | inputClaim1 | string | Тип утверждения, которое необходимо сравнить. |
-| InputParameter | operator | string | Возможные значения: `EQUAL` или `NOT EQUAL`. |
+| InputParameter | оператор | string | Возможные значения: `EQUAL` или `NOT EQUAL`. |
 | InputParameter | compareTo | string | сравнение строк, одно из значений: Ordinal, OrdinalIgnoreCase. |
 | InputParameter | ignoreCase | Логическое | Указывает, следует ли в этом сравнении игнорировать регистр сравниваемых строк. |
 | outputClaim | outputClaim | Логическое | Параметр ClaimType, который создается после вызова этого преобразования утверждений. |
@@ -476,7 +476,7 @@ ms.locfileid: "64707458"
 | Элемент | TransformationClaimType | Тип данных | Примечания |
 | ---- | ----------------------- | --------- | ----- |
 | InputClaim | emailAddress | string | Параметр ClaimType, содержащий адрес электронной почты. |
-| outputClaim | Домен | string | Параметр ClaimType, который создается после вызова этого преобразования утверждений, со значением домена. |
+| outputClaim | домен | string | Параметр ClaimType, который создается после вызова этого преобразования утверждений, со значением домена. |
 
 Это преобразование утверждений используется для анализа доменного имени после символа @ пользователя. Это может быть полезно при удалении персональных данных (PII) из данных аудита. В следующих преобразованиях утверждений показано, как проанализировать доменное имя из утверждения **email**.
 

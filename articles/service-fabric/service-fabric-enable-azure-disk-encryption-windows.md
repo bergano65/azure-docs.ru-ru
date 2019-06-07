@@ -1,6 +1,6 @@
 ---
 title: Включить шифрование дисков для кластеров Azure Service Fabric Windows | Документация Майкрософт
-description: В этой статье описывается, как включить шифрование дисков в узлах кластера Service Fabric в Azure с помощью Azure Resource Manager и Azure Key Vault.
+description: В этой статье описывается, как включить шифрование дисков для узлов кластера Azure Service Fabric с помощью Azure Key Vault в Azure Resource Manager.
 services: service-fabric
 documentationcenter: .net
 author: aljo-microsoft
@@ -13,47 +13,53 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 03/22/2019
 ms.author: aljo
-ms.openlocfilehash: 2e9c41409c1f528947e3bef281e9a3c34da39e9b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: c31fc43729bcb58c755959db0c8bc5185b8197f4
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66119162"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66471413"
 ---
-# <a name="enable-disk-encryption-for-service-fabric-windows-cluster-nodes"></a>Включение шифрования дисков в узлах кластера Service Fabric на платформе Windows 
+# <a name="enable-disk-encryption-for-azure-service-fabric-cluster-nodes-in-windows"></a>Включить шифрование дисков для узлов кластера Azure Service Fabric в Windows 
 > [!div class="op_single_selector"]
 > * [Шифрование дисков для Windows](service-fabric-enable-azure-disk-encryption-windows.md)
 > * [Шифрование дисков для Linux](service-fabric-enable-azure-disk-encryption-linux.md)
 >
 >
 
-Выполните следующие действия, чтобы включить шифрование дисков в узлах кластера Service Fabric для Windows. Вам нужно будет сделать это для каждого типа узлов или масштабируемых наборов виртуальных машин. Для шифрования узлов мы будем использовать возможности шифрования дисков Azure для масштабируемых наборов виртуальных машин.
+В этом руководстве вы узнаете, как включить шифрование дисков на узлах кластера Service Fabric в Windows. Вам потребуется выполнить следующие действия для каждого из типов узлов и масштабируемые наборы виртуальных машин. Для шифрования узлов, мы будем использовать функцию шифрования диска Azure в наборах масштабирования виртуальных машин.
 
-В этом руководстве описываются следующие процедуры.
+В этом руководстве описываются следующие темы:
 
-* Основные понятия, которые необходимо учитывать, чтобы включить шифрование дисков в масштабируемом наборе виртуальных машин кластера Service Fabric на платформе Windows.
-* Предварительные требования, которые необходимо выполнить перед включением шифрования дисков в масштабируемом наборе виртуальных машин кластера Service Fabric на платформе Windows.
-* Шаги, которые необходимо выполнить, чтобы включить шифрование дисков в масштабируемом наборе виртуальных машин кластера Service Fabric на платформе Windows.
+* Основные понятия, которые следует учитывать при задает включения шифрования диска в масштабируемом виртуальных машин кластера Service Fabric в Windows.
+* Шаги следует перед включением шифрования дисков в Service Fabric кластера узлов в Windows.
+* Действия, чтобы следовать, чтобы включить шифрование дисков на узлах кластера Service Fabric в Windows.
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="prerequisites"></a>Технические условия
-* **Автоматическая регистрация**. Для использования предварительной версии службы шифрования дисков масштабируемого набора виртуальных машин требуется автоматическая регистрация.
-* Вы можете самостоятельно зарегистрировать свою подписку, выполнив следующие шаги: 
-```powershell
-Register-AzProviderFeature -ProviderNamespace Microsoft.Compute -FeatureName "UnifiedDiskEncryption"
-```
-* Подождите около 10 минут, пока состояние не изменится на "Зарегистрировано". Вы можете проверить состояние, выполнив следующую команду: 
-```powershell
-Get-AzProviderFeature -ProviderNamespace "Microsoft.Compute" -FeatureName "UnifiedDiskEncryption"
-Register-AzResourceProvider -ProviderNamespace Microsoft.Compute
-```
-* **Azure Key Vault**. Создайте новое хранилище ключей в тех же подписке и регионе, что и масштабируемый набор, и настройте политику доступа EnabledForDiskEncryption в хранилище ключей с помощью командлета PowerShell. Вы также можете установить политику, используя пользовательский интерфейс Key Vault на портале Azure: 
-```powershell
-Set-AzKeyVaultAccessPolicy -VaultName $keyVaultName -EnabledForDiskEncryption
-```
-* Установите последнюю версию [Azure CLI](/cli/azure/install-azure-cli) , который содержит новые команды шифрования.
-* Установите последнюю версию [пакета Azure SDK из выпуска Azure PowerShell](https://github.com/Azure/azure-powershell/releases). Ниже приведены командлеты ADE масштабируемого набора виртуальных машин для включения ([Set](/powershell/module/az.compute/set-azvmssdiskencryptionextension)) шифрования, получения ([Get](/powershell/module/az.compute/get-azvmssvmdiskencryption)) состояния шифрования и удаления ([disable](/powershell/module/az.compute/disable-azvmssdiskencryption)) шифрования в экземпляре масштабируемого набора.
+
+**Самостоятельной регистрации** 
+
+Обзор шифрования диска для масштабируемого набора виртуальных машин требуется самостоятельной регистрации. Выполните следующие действия. 
+
+1. Во-первых выполните следующую команду:
+    ```powershell
+    Register-AzProviderFeature -ProviderNamespace Microsoft.Compute -FeatureName "UnifiedDiskEncryption"
+    ```
+2. Подождите около 10 минут, пока не находится в состоянии *зарегистрированные*. Вы можете проверить состояние, выполнив следующую команду: 
+    ```powershell
+    Get-AzProviderFeature -ProviderNamespace "Microsoft.Compute" -FeatureName "UnifiedDiskEncryption"
+    Register-AzResourceProvider -ProviderNamespace Microsoft.Compute
+    ```
+**Хранилище ключей Azure** 
+
+1. Создание хранилища ключей в той же подписке и регионе, что и масштабируемый набор, а затем выберите **EnabledForDiskEncryption** политику для хранилища ключей доступа с помощью командлета PowerShell. Можно также задать политику с помощью пользовательского интерфейса хранилища ключей на портале Azure, выполнив следующую команду:
+    ```powershell
+    Set-AzKeyVaultAccessPolicy -VaultName $keyVaultName -EnabledForDiskEncryption
+    ```
+2. Установите последнюю версию [Azure CLI](/cli/azure/install-azure-cli), который содержит новые команды шифрования.
+3. Установите последнюю версию [пакета SDK для Azure с помощью Azure PowerShell](https://github.com/Azure/azure-powershell/releases) выпуска. Ниже приведены масштабируемого набора виртуальных машин командлеты шифрования дисков Azure, чтобы включить ([задать](/powershell/module/az.compute/set-azvmssdiskencryptionextension)) шифрования, получения ([получить](/powershell/module/az.compute/get-azvmssvmdiskencryption)) состояние шифрования, а также удалите ([отключить](/powershell/module/az.compute/disable-azvmssdiskencryption)) экземпляр набора шифрования на шкале.
 
 | Команда | Version |  `Source`  |
 | ------------- |-------------| ------------|
@@ -66,17 +72,17 @@ Set-AzKeyVaultAccessPolicy -VaultName $keyVaultName -EnabledForDiskEncryption
 
 
 ## <a name="supported-scenarios-for-disk-encryption"></a>Поддерживаемые сценарии для шифрования дисков
-* Шифрование масштабируемого набора виртуальных машин поддерживается только для масштабируемых наборов, созданных с помощью управляемых дисков, и не поддерживается для масштабируемых наборов на основе собственных (или неуправляемых) дисков.
-* Шифрование к масштабируемым наборам виртуальных машин поддерживается для томов операционной системы и данных для масштабируемого набора виртуальных машин Windows. Отключение шифрования поддерживается для томов операционной системы и данных в масштабируемых наборах Windows.
-* Масштабируемый набор виртуальных машин пересоздания образа виртуальной Машины и операции обновления не поддерживаются в текущей предварительной версии.
+* Шифрование для масштабируемых наборов виртуальных машин поддерживается только для масштабируемых наборов, созданных с помощью управляемых дисков. Оно не поддерживается для масштабируемых наборов на основе собственных (или неуправляемых) дисков.
+* Шифрование поддерживается для ОС и томов данных в масштабируемый набор виртуальных машин задает в Windows. Отключить шифрование также поддерживается для операционной системы и задает томов данных для масштабирования виртуальных машин в Windows.
+* Операции пересоздания образа и обновления виртуальной машины для масштабируемых наборов виртуальных машин не поддерживаются в текущей предварительной версии.
 
 
-### <a name="create-new-cluster-and-enable-disk-encryption"></a>Создание нового кластера и включение шифрования дисков
+## <a name="create-a-new-cluster-and-enable-disk-encryption"></a>Создать новый кластер и включить шифрование дисков
 
-Используйте следующие команды для создания кластера, а также включить шифрование дисков, с помощью шаблона Azure Resource Manager и самозаверяющий сертификат.
+Используйте следующие команды для создания кластера и включения шифрования дисков с использованием шаблона Azure Resource Manager и самозаверяющего сертификата.
 
 ### <a name="sign-in-to-azure"></a>Вход в Azure 
-
+Войдите в систему с помощью следующих команд:
 ```powershell
 Login-AzAccount
 Set-AzContext -SubscriptionId <guid>
@@ -90,11 +96,11 @@ az account set --subscription $subscriptionId
 
 ```
 
-#### <a name="use-the-custom-template-that-you-already-have"></a>Использование собственного пользовательского шаблона 
+### <a name="use-the-custom-template-that-you-already-have"></a>Использование собственного пользовательского шаблона 
 
-Если необходимо создать пользовательский шаблон в соответствии с потребностями, настоятельно рекомендуется начать с одного из шаблонов, доступных в [примерах шаблонов Azure Service Fabric](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master). [Настройте шаблон кластера][customize-your-cluster-template], следуя инструкциям и учитывая пояснения в разделе ниже.
+Если вам нужно создать пользовательский шаблон в соответствии с потребностями, настоятельно рекомендуется начать с одного из шаблонов, доступных на [примеры шаблонов для создания кластера Azure Service Fabric](https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master) страницы. Чтобы [Настройте шаблон кластера] [ customize-your-cluster-template] разделе, см. в следующем руководстве.
 
-Если у вас уже есть пользовательский шаблон, дважды проверьте, что все три параметра, связанные с сертификатом, в шаблоне и файле параметров имеют указанные ниже имена, а значения равны нулю.
+Если у вас уже есть пользовательский шаблон, еще раз убедиться, что все три связанные с сертификатом параметра в шаблоне и файле параметров имеют следующие имена и что значения являются null следующим образом:
 
 ```Json
    "certificateThumbprint": {
@@ -143,11 +149,13 @@ az sf cluster create --resource-group $resourceGroupName --location $resourceGro
 
 ```
 
-#### <a name="deploy-application-to-windows-service-fabric-cluster"></a>Развертывание приложения в кластере Service Fabric на платформе Windows
-Выполните шаги и рекомендации по [развертыванию приложения в кластере](service-fabric-deploy-remove-applications.md).
+### <a name="deploy-an-application-to-a-service-fabric-cluster-in-windows"></a>Развертывание приложения в кластер Service Fabric в Windows
+Чтобы развернуть приложение в кластере, выполните действия и инструкции см. на [развертывание и удаление приложений с помощью PowerShell](service-fabric-deploy-remove-applications.md).
 
 
-#### <a name="enable-disk-encryption-for-service-fabric-cluster-virtual-machine-scale-set-created-above"></a>Включите шифрование диска для масштабируемого набора виртуальных машин кластера Service Fabric, созданного выше.
+### <a name="enable-disk-encryption-for-the-virtual-machine-scale-sets-created-previously"></a>Включить шифрование дисков для масштабируемых наборов виртуальных машин, созданную ранее
+
+Чтобы включить шифрование дисков для масштабирования виртуальных машин задает созданный просмотрите предыдущие шаги, выполните следующие команды:
  
 ```powershell
 
@@ -169,9 +177,8 @@ az vmss encryption enable -g <resourceGroupName> -n <VMSS name> --disk-encryptio
 ```
 
 
-#### <a name="validate-if-disk-encryption-enabled-for-windows-virtual-machine-scale-set"></a>Проверьте, включено ли шифрование дисков для масштабируемых наборов виртуальных машин Windows.
-Получите состояние всего масштабируемого набора виртуальных машин или любого экземпляра в масштабируемом наборе. Ознакомьтесь с командами ниже.
-Кроме того пользователь может войти в виртуальную Машину в масштабируемом наборе и убедитесь, что диски шифруются
+### <a name="validate-if-disk-encryption-is-enabled-for-a-virtual-machine-scale-set-in-windows"></a>Проверить, если включено шифрование диска для виртуальной машины масштабируемого набора в Windows
+Получение состояния в масштабируемый набор всей виртуальной машины или любой экземпляр в масштабируемом наборе, выполнив следующие команды.
 
 ```powershell
 
@@ -190,8 +197,10 @@ az vmss encryption show -g <resourceGroupName> -n <VMSS name>
 ```
 
 
-#### <a name="disable-disk-encryption-for-service-fabric-cluster-virtual-machine-scale-set"></a>Отключение шифрования дисков для масштабируемого набора виртуальных машин кластера Service Fabric 
-Отключение шифрования дисков распространяется на масштабируемый набор, а не на экземпляр. 
+Кроме того можно входить масштабируемый набор виртуальных машин и убедитесь, что диски шифруются.
+
+### <a name="disable-disk-encryption-for-a-virtual-machine-scale-set-in-a-service-fabric-cluster"></a>Отключить шифрование дисков виртуальной машины масштабируемого набора в кластере Service Fabric 
+Отключите шифрование дисков виртуальной машины масштабируемого набора, выполнив следующие команды. Обратите внимание на то, что отключение шифрования диска применяется ко всей виртуальной машины масштабируемого набора и не каждого отдельного экземпляра.
 
 ```powershell
 
@@ -209,6 +218,6 @@ az vmss encryption disable -g <resourceGroupName> -n <VMSS name>
 
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Теперь у вас есть безопасный кластер, в котором можно включить или отключить шифрование дисков для масштабируемого набора виртуальных машин кластера Service Fabric. [Enable Disk encryption for service fabric Linux cluster nodes](service-fabric-enable-azure-disk-encryption-linux.md) (Включение шифрования дисков в кластерах Service Fabric на платформе Linux) 
+На этом этапе необходимо иметь защищенного кластера и знаете, как включить и отключить шифрование дисков для узлов кластера Service Fabric и масштабируемые наборы виртуальных машин. Одинаковые рекомендации на узлах кластера Service Fabric в Linux см. в разделе [шифрование дисков для Linux](service-fabric-enable-azure-disk-encryption-linux.md).
 
 [customize-your-cluster-template]: https://github.com/Azure-Samples/service-fabric-cluster-templates/tree/master/5-VM-Windows-1-NodeTypes-Secure#creating-a-custom-arm-template

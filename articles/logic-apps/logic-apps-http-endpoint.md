@@ -1,29 +1,25 @@
 ---
-title: Вызовы, срабатывания триггеров и создание вложенных рабочих процессов c помощью конечных точек HTTP в Azure Logic Apps | Документация Майкрософт
+title: Вызовы, срабатывания триггеров или создания вложенных рабочих процессов с помощью конечных точек HTTP — Azure Logic Apps
 description: Настройка конечных точек HTTP для вызова, срабатывания триггеров или создания вложенных рабочих процессов для Azure Logic Apps
 services: logic-apps
-keywords: рабочие процессы, конечные точки HTTP
-author: jeffhollan
-manager: jeconnoc
-editor: ''
-documentationcenter: ''
-ms.assetid: 73ba2a70-03e9-4982-bfc8-ebfaad798bc2
 ms.service: logic-apps
-ms.devlang: na
-ms.topic: article
-ms.tgt_pltfrm: na
 ms.workload: integration
+author: ecfan
+ms.author: klam; LADocs
+ms.reviewer: jehollan, klam, LADocs
+manager: carmonm
+ms.assetid: 73ba2a70-03e9-4982-bfc8-ebfaad798bc2
+ms.topic: article
 ms.custom: H1Hack27Feb2017
 ms.date: 03/31/2017
-ms.author: klam; LADocs
-ms.openlocfilehash: c58b39f8e2d49eeb3e64c7ffce1d34d7a7b7b780
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: b091fb8c6f0b2b655ce0595188c362206f79d702
+ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60304278"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66495051"
 ---
-# <a name="call-trigger-or-nest-workflows-with-http-endpoints-in-logic-apps"></a>Вызовы, срабатывания триггеров и создание вложенных рабочих процессов в приложениях логики
+# <a name="call-trigger-or-nest-workflows-with-http-endpoints-in-azure-logic-apps"></a>Вызовы, срабатывания триггеров или создания вложенных рабочих процессов с конечными точками HTTP в Azure Logic Apps
 
 Вы можете предоставлять доступ к синхронным конечным точкам HTTP, выступающим в качестве триггеров в приложениях логики, с помощью которых можно активировать или вызвать приложение логики через URL-адрес. Также вы можете создавать вложенные рабочие процессы в приложениях логики с помощью шаблона вызываемых конечных точек.
 
@@ -245,7 +241,7 @@ ms.locfileid: "60304278"
 
 У ответов есть следующие свойства:
 
-| Свойство | ОПИСАНИЕ |
+| Свойство | Описание |
 | --- | --- |
 | statusCode |Указывает код состояния HTTP для ответа на входящий запрос. Это может быть любой допустимый код состояния, который начинается с 2xx, 4xx или 5xx. Но коды состояния 3xx не допускаются. |
 | Заголовки |Определяет число заголовков для включения в ответ. |

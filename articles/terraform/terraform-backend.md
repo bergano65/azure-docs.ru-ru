@@ -7,12 +7,12 @@ ms.service: azure
 ms.topic: article
 ms.date: 09/13/2018
 ms.author: tarcher
-ms.openlocfilehash: 89108f02957990ad1c7eb736f39de89537f06db5
-ms.sourcegitcommit: 8c49df11910a8ed8259f377217a9ffcd892ae0ae
+ms.openlocfilehash: a88ad25e335026d5172c7997f62629d5ada46f6e
+ms.sourcegitcommit: 18a0d58358ec860c87961a45d10403079113164d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66297921"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66693310"
 ---
 # <a name="store-terraform-state-in-azure-storage"></a>Хранение состояния Terraform в службе хранилища Azure
 
@@ -102,7 +102,7 @@ resource "azurerm_resource_group" "state-demo-secure" {
 
 При использовании Azure Storage Blob для хранения состояния большой двоичный объект автоматически блокируется до выполнения любых операций записи состояния. Благодаря такой конфигурации предотвращается параллельное выполнение нескольких операций с состоянием, которое может привести к повреждению. Дополнительные сведения см. в разделе [State Locking][terraform-state-lock] (Блокировка состояния) в документации Terraform.
 
-Блокировку можно увидеть при просмотре большого двоичного объекта на портале Azure или с помощью других средств управления Azure.
+Блокировку можно увидеть при изучении двоичный объект с помощью портала Azure или других средств управления Azure.
 
 ![BLOB-объект Azure с блокировкой](media/terraform-backend/lock.png)
 

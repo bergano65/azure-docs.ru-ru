@@ -2,20 +2,20 @@
 title: Примеры и определения журналов аудита в Azure Active Directory B2C | Документация Майкрософт
 description: Руководство и примеры по обращению к журналам аудита Azure AD B2C.
 services: active-directory-b2c
-author: davidmu1
+author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.topic: conceptual
 ms.workload: identity
 ms.date: 08/04/2017
-ms.author: davidmu
+ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: fdc3578fe78e60086a148e4204019a8293030b83
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 27c91185bacea839ec73a3f4bd06f5df43bd4edf
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64688753"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66509657"
 ---
 # <a name="accessing-azure-ad-b2c-audit-logs"></a>Обращение к журналам аудита Azure AD B2C
 
@@ -27,13 +27,13 @@ Azure Active Directory B2C (Azure AD B2C) создает журналы ауди
 ## <a name="overview-of-activities-available-in-the-b2c-category-of-audit-logs"></a>Общие сведения о действиях, доступных в категории B2C для журналов аудита
 Категория **B2C** в журналах аудита содержит следующие типы действий:
 
-|тип действия; |ОПИСАНИЕ  |
+|тип действия; |Описание  |
 |---------|---------|
 |Авторизация |Действия, касающиеся авторизации пользователя для доступа к ресурсам B2C (например, доступ администратора к списку политик B2C)         |
 |Каталог |Действия, связанные с атрибутами каталога, полученными при входе администратора через портал Azure |
 |Приложение | Операции CRUD для приложений B2C |
 |Ключ |Операции CRUD для ключей, хранящихся в контейнере ключей B2C |
-|Resource |Операции CRUD для ресурсов B2C (например, политик и поставщиков удостоверений)
+|Ресурс |Операции CRUD для ресурсов B2C (например, политик и поставщиков удостоверений)
 |Authentication |Проверка учетных данных пользователя и выдача токенов|
 
 > [!NOTE]

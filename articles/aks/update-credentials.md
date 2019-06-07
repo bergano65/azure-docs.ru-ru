@@ -2,18 +2,17 @@
 title: Сброс учетных данных для кластера Службы Azure Kubernetes (AKS)
 description: Дополнительные сведения о том, как обновить или сбросить учетные данные участника службы для кластера в Службе Azure Kubernetes (AKS)
 services: container-service
-author: rockboyfor
+author: iainfoulds
 ms.service: container-service
 ms.topic: article
-origin.date: 01/30/2019
-ms.date: 03/04/2019
-ms.author: v-yeche
-ms.openlocfilehash: d880615d0d132403c935fe39e8478d7b3fc48dbe
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 05/31/2019
+ms.author: iainfou
+ms.openlocfilehash: 189bcf2ddc7d301c8100f74e51374abd217a144f
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61029370"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66475487"
 ---
 # <a name="update-or-rotate-the-credentials-for-a-service-principal-in-azure-kubernetes-service-aks"></a>Обновление или выполнение циклического сдвига учетных данных для субъект-службы в Службе Azure Kubernetes (AKS)
 
@@ -21,7 +20,7 @@ ms.locfileid: "61029370"
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
-Кроме того, вам необходимо установить и настроить службу Azure CLI версии 2.0.56 или более поздней. Чтобы узнать версию, выполните команду  `az --version`. Если вам необходимо выполнить установку или обновление, см. статью  [Установка Azure CLI][install-azure-cli].
+Требуется Azure CLI версии 2.0.65 или более поздней версии установлен и настроен. Чтобы узнать версию, выполните команду  `az --version`. Если вам необходимо выполнить установку или обновление, см. статью  [Установка Azure CLI][install-azure-cli].
 
 ## <a name="choose-to-update-or-create-a-service-principal"></a>Выбор создания или обновления субъект-службы
 
@@ -34,17 +33,18 @@ ms.locfileid: "61029370"
 
 ### <a name="get-the-service-principal-id"></a>Получение идентификатора субъект-службы
 
-Чтобы обновить учетные данные для существующей субъект-службы, получите идентификатор субъект-службы своего кластера с помощью команды [az aks show][az-aks-show]. В следующем примере возвращается идентификатор для кластера *myAKSCluster* в группе ресурсов *myResourceGroup*. Идентификатор субъект-службы задается в виде переменной для использования в дополнительной команде.
+Чтобы обновить учетные данные для существующей субъект-службы, получите идентификатор субъект-службы своего кластера с помощью команды [az aks show][az-aks-show]. В следующем примере возвращается идентификатор для кластера *myAKSCluster* в группе ресурсов *myResourceGroup*. Идентификатор субъекта-службы задается как переменная с именем *SP_ID* для использования в дополнительную команду.
 
-```azurecli
-SP_ID=$(az aks show -g myResourceGroup -n myAKSCluster --query servicePrincipalProfile.clientId -o tsv)
+```azurecli-interactive
+SP_ID=$(az aks show --resource-group myResourceGroup --name myAKSCluster \
+    --query servicePrincipalProfile.clientId -o tsv)
 ```
 
 ### <a name="update-the-service-principal-credentials"></a>Обновление учетных данных субъект-службы
 
 С помощью набора переменных, который содержит идентификатор субъект-службы, сбросьте учетные данные с помощью [учетных данных az ad sp][az-ad-sp-credential-reset]. Следующий пример позволяет платформе Azure создать новый безопасный секрет для субъект-службы. Этот новый безопасный секрет также хранится в виде переменной.
 
-```azurecli
+```azurecli-interactive
 SP_SECRET=$(az ad sp credential reset --name $SP_ID --query password -o tsv)
 ```
 
@@ -56,7 +56,7 @@ SP_SECRET=$(az ad sp credential reset --name $SP_ID --query password -o tsv)
 
 Чтобы создать субъект-службу, а затем обновить кластер AKS для использования этих новых учетных данных, используйте команду [az ad sp create-for-rbac][az-ad-sp-create]. В следующем примере параметр `--skip-assignment` запрещает присваивание любых дополнительных назначений по умолчанию.
 
-```azurecli
+```azurecli-interactive
 az ad sp create-for-rbac --skip-assignment
 ```
 
@@ -73,7 +73,7 @@ az ad sp create-for-rbac --skip-assignment
 
 Теперь определите переменные для идентификатора субъект-службы и секрета клиента, используя выходные данные своей собственной команды [az ad sp create-for-rbac][az-ad-sp-create], как показано в следующем примере. *SP_ID* — это ваш *appId*, а *SP_SECRET* — это ваш *пароль*.
 
-```azurecli
+```azurecli-interactive
 SP_ID=7d837646-b1f3-443d-874c-fd83c7c739c5
 SP_SECRET=a5ce83c9-9186-426d-9183-614597c7f2f7
 ```
@@ -82,7 +82,7 @@ SP_SECRET=a5ce83c9-9186-426d-9183-614597c7f2f7
 
 Независимо от того, решили ли вы создать или обновить учетные данные для существующей субъект-службы, теперь вы обновите кластер AKS новыми учетными данными, используя команду [az aks update-credentials][az-aks-update-credentials]. Используются переменные для *--service-principal* и *--client-secret*.
 
-```azurecli
+```azurecli-interactive
 az aks update-credentials \
     --resource-group myResourceGroup \
     --name myAKSCluster \
@@ -98,9 +98,9 @@ az aks update-credentials \
 В этой статье была обновлена субъект-служба для самого кластера AKS. Дополнительные сведения о том, как управлять удостоверениями для рабочих нагрузок в кластере, см. в статье [Рекомендации по аутентификации и авторизации в службе Azure Kubernetes (AKS)][best-practices-identity].
 
 <!-- LINKS - internal -->
-[install-azure-cli]: https://docs.azure.cn/zh-cn/cli/install-azure-cli?view=azure-cli-latest
-[az-aks-show]: https://docs.microsoft.com/cli/azure/aks?view=azure-cli-latest#az-aks-show
-[az-aks-update-credentials]: https://docs.microsoft.com/cli/azure/aks?view=azure-cli-latest#az-aks-update-credentials
+[install-azure-cli]: /cli/azure/install-azure-cli
+[az-aks-show]: /cli/azure/aks#az-aks-show
+[az-aks-update-credentials]: /cli/azure/aks#az-aks-update-credentials
 [best-practices-identity]: operator-best-practices-identity.md
-[az-ad-sp-create]: https://docs.azure.cn/zh-cn/cli/ad/sp?view=azure-cli-latest#az-ad-sp-create-for-rbac
-[az-ad-sp-credential-reset]: https://docs.azure.cn/zh-cn/cli/ad/sp/credential?view=azure-cli-latest#az-ad-sp-credential-reset
+[az-ad-sp-create]: /cli/azure/ad/sp#az-ad-sp-create-for-rbac
+[az-ad-sp-credential-reset]: /cli/azure/ad/sp/credential#az-ad-sp-credential-reset

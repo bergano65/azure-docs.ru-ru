@@ -2,20 +2,20 @@
 title: Руководство. Настройка удобного для пользователей интерфейса в Azure Active Directory B2C | Документация Майкрософт
 description: Узнайте, как настроить пользовательский интерфейс своих приложений в Azure Active Directory B2C с помощью портала Azure.
 services: B2C
-author: davidmu1
+author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 02/01/2019
-ms.author: davidmu
+ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: c2a84bf72ab68937224ac93bd9ffd035e32c603d
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 4c0fdbee2c5108dd3203217cb721576703b3faca
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64702550"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66512082"
 ---
 # <a name="tutorial-customize-the-interface-of-user-experiences-in-azure-active-directory-b2c"></a>Руководство по Настройка удобного для пользователей интерфейса в Azure Active Directory B2C
 
@@ -138,7 +138,7 @@ ms.locfileid: "64702550"
 ## <a name="update-the-user-flow"></a>Обновление потока пользователя
 
 1. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Azure AD B2C**.
-2. Выберите **Потоки пользователей (политики)**, а затем — поток пользователя *B2C_1_signupsignin1*.
+2. Выберите **Потоки пользователей (политики)** , а затем — поток пользователя *B2C_1_signupsignin1*.
 3. Выберите **Макеты страниц**, а затем в разделе **Единая страница регистрации или входа** щелкните **Да** для параметра **Использовать пользовательское содержимое страницы**.
 4. В поле **Код URI пользовательской страницы** введите универсальный код ресурса (URI) для файла *custom-ui.html*, записанного ранее.
 5. В верхней части страницы щелкните **Сохранить**.

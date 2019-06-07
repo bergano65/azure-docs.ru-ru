@@ -8,14 +8,14 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 05/07/2019
 ms.author: raynew
-ms.openlocfilehash: e7cea725a25d48ac9f1ffad6acc434e21145890e
-ms.sourcegitcommit: 399db0671f58c879c1a729230254f12bc4ebff59
+ms.openlocfilehash: a7dd5530c3941fe55e8a649f8adb217159823f5d
+ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65473248"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66492786"
 ---
-# <a name="delete-a-recovery-services-vault"></a>Удаление хранилища служб восстановления
+# <a name="delete-a-recovery-services-vault"></a>Удаление хранилища Служб восстановления
 
 В этой статье описывается удаление [Azure Backup](backup-overview.md) хранилище служб восстановления. Он содержит инструкции для удаления зависимостей и затем удалить хранилище и удаление хранилища принудительно.
 
@@ -62,7 +62,7 @@ ms.locfileid: "65473248"
 
 ### <a name="use-azure-resource-manager-client-to-delete-recovery-services-vault"></a>Используйте Azure Resource Manager клиента, чтобы удалить хранилище служб восстановления
 
-1. Выполните следующую команду, используя ваш идентификатор подписки, имя группы ресурсов и имя хранилища. W\hen выполнения команды, что он удаляет хранилище, если у вас нет зависимые компоненты.
+1. Выполните следующую команду, используя ваш идентификатор подписки, имя группы ресурсов и имя хранилища. При выполнении команды удаляет хранилище, если у вас нет зависимые компоненты.
 
    ```
    ARMClient.exe delete /subscriptions/<subscriptionID>/resourceGroups/<resourcegroupname>/providers/Microsoft.RecoveryServices/vaults/<recovery services vault name>?api-version=2015-03-15

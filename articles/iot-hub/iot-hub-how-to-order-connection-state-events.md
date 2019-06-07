@@ -7,12 +7,12 @@ author: ash2017
 ms.topic: conceptual
 ms.date: 04/11/2019
 ms.author: asrastog
-ms.openlocfilehash: ff8f8c6656c4cd095749b3e048c72572d113f1ad
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.openlocfilehash: f4baab6e0909144efc613572207e7f24c4b4fe1f
+ms.sourcegitcommit: 7042ec27b18f69db9331b3bf3b9296a9cd0c0402
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "66015261"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66743270"
 ---
 # <a name="order-device-connection-events-from-azure-iot-hub-using-azure-cosmos-db"></a>Упорядочение событий изменения состояния подключения устройства из Центра Интернета вещей Azure с использованием Azure Cosmos DB
 
@@ -154,7 +154,7 @@ ms.locfileid: "66015261"
 
 4. В конструкторе приложений логики прокрутите окно вправо, пока не увидите часто используемых триггеров. В разделе **шаблоны**, выберите **пустое приложение логики** , что можно создавать приложения логики с нуля.
 
-### <a name="select-a-trigger"></a>Выберите триггер
+### <a name="select-a-trigger"></a>Выбор триггера
 
 Триггер представляет собой определенное событие, которое запускает приложение логики. В этом руководстве триггер, который инициирует рабочий процесс, получает запрос через HTTP.
 
@@ -266,13 +266,13 @@ ms.locfileid: "66015261"
 
 4. Заполните **сведения о подписке на событие**: Укажите описательное имя и выберите **Схема Сетки событий**.
 
-5. Заполните **типы событий** поля. Снимите флажок **подписка на все типы событий** и выберите **устройство подключено** и **устройство отключено** в меню.
+5. Заполните **типы событий** поля. В раскрывающемся списке выберите только **устройство подключено** и **устройство отключено** в меню. Щелкните в любом месте на экране, чтобы закрыть список и сохранить изменения.
 
    ![Задайте типы событий для поиска](./media/iot-hub-how-to-order-connection-state-events/set-event-types.png)
 
 6. Для **сведения о конечной точке**, выберите тип конечной точки как **веб-перехватчик** щелкните выберите конечную точку и вставьте URL-адрес, скопированный из приложения логики и подтвердите выбор.
 
-   ![Выберите URL-адрес конечной точки](./media/iot-hub-how-to-order-connection-state-events/endpoint-url.png)
+   ![Выберите URL-адрес конечной точки](./media/iot-hub-how-to-order-connection-state-events/endpoint-select.png)
 
 7. Формы теперь должен выглядеть аналогично приведенному ниже:
 
@@ -302,11 +302,9 @@ ms.locfileid: "66015261"
 
    ![ConnectionString для устройства](./media/iot-hub-how-to-order-connection-state-events/DeviceConnString.png)
 
-HostName=test-eventgrid-hub.azure-devices.net;DeviceId=Demo-Device-1; SharedAccessKey = cv8uPNixe7E2R9EHtimoY/PlJfBV/lOYCMajVOp/Cuw =
-
 ### <a name="start-raspberry-pi-simulator"></a>Запуск симулятора Raspberry Pi
 
-1. Давайте используем веб-симулятор Raspberry Pi для имитации подключения устройства.
+Давайте используем веб-симулятор Raspberry Pi для имитации подключения устройства.
 
 [Запустить симулятор Raspberry Pi](https://azure-samples.github.io/raspberry-pi-web-simulator/#Getstarted)
 
@@ -340,7 +338,7 @@ HostName=test-eventgrid-hub.azure-devices.net;DeviceId=Demo-Device-1; SharedAcce
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-В этом руководстве используются ресурсы, за которые в подписке Azure предусмотрена плата. По завершении работы с этим руководством и тестирования результатов отключите или удалите ресурсы, которые больше не нужны.
+В этом руководстве используются ресурсы, за которые в подписке Azure предусмотрена плата. После завершения работы с этим руководством и тестирования результатов, отключить или удалить ресурсы, которые вы не хотите сохранить.
 
 Чтобы не потерять работу, проделанную в приложении логики, мы рекомендуем отключить ресурсы, а не удалять их.
 

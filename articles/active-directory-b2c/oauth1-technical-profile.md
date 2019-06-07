@@ -2,20 +2,20 @@
 title: Определить OAuth1 технического профиля в настраиваемую политику в Azure Active Directory B2C | Документация Майкрософт
 description: Определите OAuth1 технического профиля в настраиваемую политику в Azure Active Directory B2C.
 services: active-directory-b2c
-author: davidmu1
+author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
 ms.date: 09/10/2018
-ms.author: davidmu
+ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 7b3d579e9d4ceb92ee961778ba6083292461c144
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 993fc8b2e318b59775f61de391ac75fa765485f0
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64699828"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66513116"
 ---
 # <a name="define-an-oauth1-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Определить OAuth1 технического профиля в настраиваемую политику Azure Active Directory B2C
 
@@ -23,7 +23,7 @@ ms.locfileid: "64699828"
 
 Azure Active Directory (Azure AD) B2C поддерживает [протокол OAuth 1.0](https://tools.ietf.org/html/rfc5849) для поставщиков удостоверений. В этой статье описаны особенности технического профиля для взаимодействия с поставщиком утверждений, который поддерживает этот стандартизированный протокол. С помощью OAuth1 технического профиля можно использовать для федерации с поставщиком удостоверений на основе OAuth1, таких как Twitter. Федеративные отношения с поставщиком удостоверений позволяет пользователям вход с помощью существующие социальных сетей или корпоративными удостоверениями.
 
-## <a name="protocol"></a>Protocol
+## <a name="protocol"></a>Протокол
 
 Атрибуту **Name** элемента **Protocol** необходимо присвоить значение `OAuth1`. Например, `OAuth1` — это протокол для технического профиля **Twitter-OAUTH1**.
 
@@ -67,23 +67,23 @@ Azure Active Directory (Azure AD) B2C поддерживает [протокол
 
 ## <a name="metadata"></a>Метаданные
 
-| Атрибут | Обязательно для заполнения | ОПИСАНИЕ |
+| Атрибут | Обязательно для заполнения | Описание |
 | --------- | -------- | ----------- |
-| client_id | Yes | Идентификатор приложения поставщика удостоверений. |
-| ProviderName | Нет  | Имя поставщика удостоверений. |
-| request_token_endpoint | Yes | URL-адрес конечной точки маркера запроса согласно RFC 5849. |
-| authorization_endpoint | Yes | URL-адрес конечной точки авторизации согласно RFC 5849. |
-| access_token_endpoint | Yes | URL-адрес конечной точки маркера согласно RFC 5849. |
-| ClaimsEndpoint | Нет  | URL-адрес конечной точки информации о пользователе. | 
-| ClaimsResponseFormat | Нет  | Формат ответа утверждений.|
+| client_id | Да | Идентификатор приложения поставщика удостоверений. |
+| ProviderName | Нет | Имя поставщика удостоверений. |
+| request_token_endpoint | Да | URL-адрес конечной точки маркера запроса согласно RFC 5849. |
+| authorization_endpoint | Да | URL-адрес конечной точки авторизации согласно RFC 5849. |
+| access_token_endpoint | Да | URL-адрес конечной точки маркера согласно RFC 5849. |
+| ClaimsEndpoint | Нет | URL-адрес конечной точки информации о пользователе. | 
+| ClaimsResponseFormat | Нет | Формат ответа утверждений.|
 
 ## <a name="cryptographic-keys"></a>Криптографические ключи
 
 Элемент **CryptographicKeys** содержит следующий атрибут:
 
-| Атрибут | Обязательно для заполнения | ОПИСАНИЕ |
+| Атрибут | Обязательно для заполнения | Описание |
 | --------- | -------- | ----------- |
-| client_secret | Yes | Секрет клиента приложения поставщика удостоверений.   | 
+| client_secret | Да | Секрет клиента приложения поставщика удостоверений.   | 
 
 ## <a name="redirect-uri"></a>URI перенаправления
 

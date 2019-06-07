@@ -8,18 +8,18 @@ ms.topic: conceptual
 ms.date: 10/29/2018
 ms.author: vinagara
 ms.subservice: alerts
-ms.openlocfilehash: 8b1a9b3dee999a35950559a049230f7fdbbc47b6
-ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
+ms.openlocfilehash: 03a6ea45577b4a4bf57501b1834f91438feb4e2b
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66399189"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66477859"
 ---
 # <a name="troubleshoot-log-alerts-in-azure-monitor"></a>Устранение неполадок: предупреждения журнала в Azure Monitor  
 
 В этой статье показано, как устранить распространенные неполадки, которые могут возникнуть при настройке оповещений журнала в Azure Monitor. Он также предоставляет способы решения распространенных проблем с помощью функции или настройки оповещений журнала. 
 
-Термин *оповещения журнала* описываются оповещения, что огня на основе журнала запроса в [рабочей области Azure Log Analytics](../learn/tutorial-viewdata.md) или в [Azure Application Insights](../../azure-monitor/app/analytics.md). Дополнительные сведения о функциональные возможности, терминология и типы в [оповещениях журналов в Azure Monitor](../platform/alerts-unified-log.md).
+Термин *оповещения журнала* описываются правила, что огня на основе журнала запроса в [рабочей области Azure Log Analytics](../learn/tutorial-viewdata.md) или в [Azure Application Insights](../../azure-monitor/app/analytics.md). Дополнительные сведения о функциональные возможности, терминология и типы в [оповещениях журналов в Azure Monitor](../platform/alerts-unified-log.md).
 
 > [!NOTE]
 > В этой статье не считает случаях, когда на портале Azure отображаются активации правила оповещения и уведомления не выполняется, соответствующей группе действий. См. сведения в таких случаях [Создание групп действий на портале Azure и управление ими](../platform/action-groups.md).

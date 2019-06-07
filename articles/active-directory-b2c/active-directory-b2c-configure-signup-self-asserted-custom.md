@@ -2,20 +2,20 @@
 title: Добавление утверждений и настройка пользовательского ввода с помощью настраиваемых политик в Azure Active Directory B2C | Документация Майкрософт
 description: Узнайте, как настраивать пользовательский ввод и использовать утверждения при регистрации или входе в Azure Active Directory B2C.
 services: active-directory-b2c
-author: davidmu1
+author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 02/07/2019
-ms.author: davidmu
+ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: a64c58d23543279a3a32d2d7b612b43dee8741eb
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: c15d315d186af5622d9fa988945750d93e8eb11f
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65768013"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66507562"
 ---
 #  <a name="add-claims-and-customize-user-input-using-custom-policies-in-azure-active-directory-b2c"></a>Добавление утверждений и настройка пользовательского ввода с помощью настраиваемых политик в Azure Active Directory B2C
 
@@ -263,7 +263,7 @@ ms.locfileid: "65768013"
 1. Войдите на [портале Azure](https://portal.azure.com).
 2. Убедитесь, что используете каталог, содержащий клиент организации Azure AD, щелкнув **Фильтр каталога и подписки** в верхнем меню и выбрав каталог, который содержит ваш клиент Azure AD.
 3. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Регистрация приложений**.
-4. Выберите **Identity Experience Framework (предварительная версия)**.
+4. Выберите **Identity Experience Framework (предварительная версия)** .
 5. Выберите **Отправка пользовательской политики** и отправьте два файла политики, которые вы изменили ранее.
 2. Выберите отправленную вами политику регистрации или входа и нажмите кнопку **Выполнить**.
 3. Вы сможете зарегистрироваться, используя адрес электронной почты.

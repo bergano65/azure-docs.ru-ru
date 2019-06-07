@@ -2,20 +2,20 @@
 title: Хранилище данных SQL Azure. Архитектура MPP | Документация Майкрософт
 description: Узнайте, как в хранилище данных SQL Azure с помощью массового параллелизма (MPP) и возможностей хранилища Azure можно достичь высокой эффективности и масштабируемости.
 services: sql-data-warehouse
-author: happynicolle
+author: mlee3gsd
 manager: craigg
 ms.service: sql-data-warehouse
 ms.topic: conceptual
 ms.subservice: design
 ms.date: 04/17/2018
-ms.author: nicw
+ms.author: martinle
 ms.reviewer: igorstan
-ms.openlocfilehash: c3cdd464dffc810e76cf101ac70c2a14bbc4f9ff
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 25dc469c9f50dee7d088fccd214020791ff73def
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65790718"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66515797"
 ---
 # <a name="azure-sql-data-warehouse---massively-parallel-processing-mpp-architecture"></a>Хранилище данных SQL Azure. Архитектура обработки с массовым параллелизмом (MPP)
 Узнайте, как в хранилище данных SQL Azure с помощью массового параллелизма (MPP) и возможностей хранилища Azure можно достичь высокой эффективности и масштабируемости. 
@@ -40,8 +40,8 @@ ms.locfileid: "65790718"
 В хранилище данных SQL используется служба хранилища Azure для безопасного хранения данных пользователя.  Так как ваши данные хранятся в службе хранилища Azure и управляются ею, в хранилище данных SQL предусмотрена отдельная плата за использование хранилища. Для оптимизации производительности системы сами данные сегментированы в **дистрибутивы**. При определении таблицы вы можете выбрать шаблон сегментирования, который будет использоваться для распределения данных. Хранилище данных SQL поддерживает следующие шаблоны сегментирования:
 
 * Хэш
-* Циклический перебор
-* Реплицировать
+* Циклический перебор,
+* Репликация
 
 ### <a name="control-node"></a>Управляющий узел
 

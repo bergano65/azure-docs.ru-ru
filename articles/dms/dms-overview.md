@@ -2,20 +2,20 @@
 title: Обзор Azure Database Migration Service | Документация Майкрософт
 description: Обзор службы Azure Database Migration Service, которая обеспечивает непрерывную миграцию из множества источников баз данных на платформы данных Azure.
 services: database-migration
-author: HJToland3
+author: pochiraju
 ms.author: jtoland
 manager: craigg
 ms.reviewer: craigg
 ms.service: dms
 ms.workload: data-services
 ms.topic: article
-ms.date: 05/24/2019
-ms.openlocfilehash: 05ff39c65ae96e4131f57da513173848bbb6f319
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.date: 05/31/2019
+ms.openlocfilehash: 0b1c45fcb030ac31934a5fb7aad478ef08d66129
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66225394"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66478191"
 ---
 # <a name="what-is-azure-database-migration-service"></a>Что такое служба Azure Database Migration Service?
 

@@ -2,20 +2,20 @@
 title: Арбитры утверждений в пользовательских политиках Azure Active Directory B2C | Документация Майкрософт
 description: Сведения об использовании арбитров утверждений в пользовательской политике Azure Active Directory B2C.
 services: active-directory-b2c
-author: davidmu1
+author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
 ms.date: 01/25/2019
-ms.author: davidmu
+ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 1f4bb5deb0c30ba113f315c69393e92bddfe0d27
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: a13d4b0b44c51f78a068b1619fe083a08756af6b
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64703465"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66511603"
 ---
 # <a name="about-claim-resolvers-in-azure-active-directory-b2c-custom-policies"></a>Арбитры утверждений в пользовательских политиках Azure Active Directory B2C
 
@@ -45,7 +45,7 @@ ms.locfileid: "64703465"
 
 ### <a name="culture"></a>Язык и региональные параметры
 
-| Утверждение | ОПИСАНИЕ | Пример |
+| Утверждение | Описание | Пример |
 | ----- | ----------- | --------|
 | {Culture:LanguageName} | Двухбуквенный код ISO для языка. | en |
 | {Culture:LCID}   | Код языка (локаль). | 1033 |
@@ -54,7 +54,7 @@ ms.locfileid: "64703465"
 
 ### <a name="policy"></a>Политика
 
-| Утверждение | ОПИСАНИЕ | Пример |
+| Утверждение | Описание | Пример |
 | ----- | ----------- | --------|
 | {Policy:PolicyId} | Имя политики проверяющей стороны. | B2C_1A_signup_signin |
 | {Policy:RelyingPartyTenantId} | Идентификатор клиента для политики проверяющей стороны. | your-tenant.onmicrosoft.com |
@@ -63,7 +63,7 @@ ms.locfileid: "64703465"
 
 ### <a name="openid-connect"></a>OpenID Connect
 
-| Утверждение | ОПИСАНИЕ | Пример |
+| Утверждение | Описание | Пример |
 | ----- | ----------- | --------|
 | {OIDC:AuthenticationContextReferences} |Параметр `acr_values` строки запроса. | Н/Д |
 | {OIDC:ClientId} |Параметр `client_id` строки запроса. | 00000000-0000-0000-0000-000000000000 |
@@ -77,7 +77,7 @@ ms.locfileid: "64703465"
 
 ### <a name="context"></a>Context
 
-| Утверждение | ОПИСАНИЕ | Пример |
+| Утверждение | Описание | Пример |
 | ----- | ----------- | --------|
 | {Context:BuildNumber} | Версия инфраструктури процедур идентификации (номер сборки).  | 1.0.507.0 |
 | {Context:CorrelationId} | Идентификатор корреляции.  | 00000000-0000-0000-0000-000000000000 |
@@ -90,7 +90,7 @@ ms.locfileid: "64703465"
 
 Любое имя параметра, включенное в запрос OIDC или OAuth2, можно сопоставить с утверждением в пути взаимодействия пользователя. Например, запрос из приложения может включать в себя параметр строки запроса с именем `app_session`, `loyalty_number` или любую пользовательскую строку запроса.
 
-| Утверждение | ОПИСАНИЕ | Пример |
+| Утверждение | Описание | Пример |
 | ----- | ----------------------- | --------|
 | {OAUTH-KV:campaignId} | Параметр строки запроса. | Гавайи |
 | {OAUTH-KV:app_session} | Параметр строки запроса. | A3C5R |
@@ -99,7 +99,7 @@ ms.locfileid: "64703465"
 
 ### <a name="oauth2"></a>OAuth2
 
-| Утверждение | ОПИСАНИЕ | Пример |
+| Утверждение | Описание | Пример |
 | ----- | ----------------------- | --------|
 | {oauth2:access_token} | Маркер доступа. | Н/Д |
 

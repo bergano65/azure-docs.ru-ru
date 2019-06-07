@@ -8,22 +8,18 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 04/08/2019
+ms.date: 05/31/2019
 ms.author: tyao;kumud
-ms.openlocfilehash: 5368ed8d1e60a646366065e2cf617fb2f3735b53
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: e4ba6cca679ce4910ea941d9578939721514b2ec
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61459765"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66478968"
 ---
 # <a name="azure-web-application-firewall-monitoring-and-logging"></a>Брандмауэр Azure веб-приложения мониторинга и ведения журнала 
 
 Azure web application брандмауэра (WAF) мониторинг и ведение журнала обеспечивается ведения журналов и интеграции с Azure Monitor и Azure Monitor журналы.
-
-> [!IMPORTANT]
-> WAF, мониторинг и ведение журнала для входной двери Azure сейчас находится в общедоступной предварительной версии.
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 ## <a name="azure-monitor"></a>Azure Monitor
 

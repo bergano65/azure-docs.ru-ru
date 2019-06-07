@@ -2,20 +2,20 @@
 title: Настройка языка в Azure Active Directory B2C | Документация Майкрософт
 description: Дополнительные сведения о настройке языка.
 services: active-directory-b2c
-author: davidmu1
+author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 11/30/2018
-ms.author: davidmu
+ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 3c319349d721a390562faac0fc6f90a7b471db0f
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 48633b195df997f0e9a8f06bd4f5c553ca620e98
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64703422"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66509390"
 ---
 # <a name="language-customization-in-azure-active-directory-b2c"></a>Настройка языка в Azure Active Directory B2C
 
@@ -164,7 +164,7 @@ https://wingtiptoysb2c.blob.core.windows.net/fr/wingtip/unified.html
 >Прежде чем вы сможете сохранить, необходимо включить пользовательские языки или отправить переопределения для них.
 >
 
-## <a name="additional-information"></a>Дополнительная информация
+## <a name="additional-information"></a>Дополнительные сведения
 
 ### <a name="page-ui-customization-labels-as-overrides"></a>Использование меток настройки пользовательского интерфейса страницы для переопределения параметров страницы
 При включении настройки языка все предыдущие изменения меток, использующих настройки пользовательского интерфейса страницы, сохраняются в JSON-файле для английского языка (en). Вы можете продолжить изменять метки и другие текстовые строки, отправив языковые ресурсы в настройках языка.

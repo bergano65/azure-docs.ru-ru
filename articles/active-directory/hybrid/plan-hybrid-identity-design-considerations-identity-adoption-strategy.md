@@ -17,12 +17,12 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.custom: seohack1
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 39495e11e42853bf3cf9481475d970667c56223f
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: c55dc0cbc175542d0b208bbe72566a0adb55a371
+ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64919105"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66496739"
 ---
 # <a name="define-a-hybrid-identity-adoption-strategy"></a>Определение стратегии внедрения гибридной идентификации
 В этой статье вы определяете стратегию внедрения гибридной идентификации для гибридных решений идентификации, которая соответствует бизнес-требованиям, выработанным вами с помощью таких статей:
@@ -199,8 +199,7 @@ ms.locfileid: "64919105"
 | Локальная служба AD |Сервер Многофакторной идентификации |
 
 > [!NOTE]
-> Следует убедиться, что выбранный вариант многофакторной проверки подлинности поддерживает функции, которые вы считаете обязательными для вашей сети.  Подробнее об этом см. в статье [Выбор решения многофакторной безопасности](../authentication/concept-mfa-whichversion.md#what-am-i-trying-to-secure).
-> 
+> Следует убедиться, что выбранный вариант многофакторной проверки подлинности поддерживает функции, которые вы считаете обязательными для вашей сети.  Подробнее об этом см. в статье [Выбор решения многофакторной безопасности](../authentication/concept-mfa-howitworks.md).
 > 
 
 ## <a name="multi-factor-auth-provider"></a>поставщик Multi-Factor Authentication.

@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 04/12/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 6465fd069e73a571e0671d528f5d0b4da4602dc7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: bb34c3f04302e6a2b5cc307b98bafe93e09fcf2f
+ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60499469"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66734707"
 ---
 # <a name="credential-assets-in-azure-automation"></a>Ресурсы учетных данных в службе автоматизации Azure
 
@@ -29,7 +29,7 @@ ms.locfileid: "60499469"
 
 Командлеты, представленные в следующей таблице, используются для создания ресурсов учетных данных службы автоматизации и управления ими с помощью Windows PowerShell.  Они поставляются как часть [модуля Azure PowerShell](/powershell/azure/overview), которая доступна для использования в модулях Runbook службы автоматизации и конфигурации DSC.
 
-| Командлеты | ОПИСАНИЕ |
+| Командлеты | Описание |
 |:--- |:--- |
 | [Get-AzureAutomationCredential](/powershell/module/servicemanagement/azure/get-azureautomationcredential) |Извлекает сведения о ресурсе учетных данных. Сами учетные данные можно извлечь только с помощью действия **Get-AutomationPSCredential** . |
 | [New-AzureAutomationCredential](/powershell/module/servicemanagement/azure/new-azureautomationcredential) |Создает новые учетные данные службы автоматизации. |
@@ -40,7 +40,7 @@ ms.locfileid: "60499469"
 
 Для AzureRM командлеты, представленные в следующей таблице, используются для создания ресурсов учетных данных службы автоматизации и управления ими с помощью Windows PowerShell.  Они поставляются как часть [модуля AzureRM.Automation](/powershell/azure/overview), которая доступна для использования в модулях Runbook службы автоматизации и конфигурации DSC.
 
-| Командлеты | ОПИСАНИЕ |
+| Командлеты | Описание |
 |:--- |:--- |
 | [Get-AzureRMAutomationCredential](/powershell/module/azurerm.automation/get-azurermautomationcredential) |Извлекает сведения о ресурсе учетных данных. Это не возвращает объект PSCredential.  |
 | [New-AzureRMAutomationCredential](/powershell/module/azurerm.automation/new-azurermautomationcredential) |Создает новые учетные данные службы автоматизации. |
@@ -51,7 +51,7 @@ ms.locfileid: "60499469"
 
 Действия в следующей таблице используются для доступа к учетным данным в модуле Runbook и конфигурациях DSC.
 
-| Действия | ОПИСАНИЕ |
+| Действия | Описание |
 |:--- |:--- |
 | Get-AutomationPSCredential |Получает учетные данные для использования в модуле Runbook или в конфигурации DSC. Возвращает объект [System.Management.Automation.PSCredential](/dotnet/api/system.management.automation.pscredential) . |
 
@@ -62,7 +62,7 @@ ms.locfileid: "60499469"
 
 Функция, приведенная в следующей таблице, используется для доступа к учетным данным в модуле Runbook Python2.
 
-| Функция | ОПИСАНИЕ |
+| Функция | Описание |
 |:---|:---|
 | automationassets.get_automation_credential | Извлекает сведения о ресурсе учетных данных. |
 
@@ -112,7 +112,7 @@ $password = $myCredential.GetNetworkCredential().Password
 Можно также использовать учетные данные для проверки подлинности в Azure с помощью [Connect-AzureRmAccount](/powershell/module/azurerm.profile/connect-azurermaccount). В большинстве случаев следует использовать [учетной записи запуска от имени](../manage-runas-account.md) и его извлечения [Get-AutomationConnection](../automation-connections.md).
 
 ```azurepowershell
-$myCred = Get-AutomationPSCredential -Name 'MyCredential`
+$myCred = Get-AutomationPSCredential -Name 'MyCredential'
 $userName = $myCred.UserName
 $securePassword = $myCred.Password
 $password = $myCred.GetNetworkCredential().Password

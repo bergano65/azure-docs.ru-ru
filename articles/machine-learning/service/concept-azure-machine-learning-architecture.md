@@ -10,12 +10,12 @@ ms.author: larryfr
 author: Blackmist
 ms.date: 04/15/2019
 ms.custom: seodec18
-ms.openlocfilehash: e57133a750e282484271261d8e4ddb9a12de2a0e
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 8bb06d04aec8e98308c0f5595b6b39e4b98302ff
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66242427"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66480057"
 ---
 # <a name="how-azure-machine-learning-service-works-architecture-and-concepts"></a>Принципы работы Службы машинного обучения Azure: архитектура и основные понятия
 
@@ -162,6 +162,9 @@ ms.locfileid: "66242427"
 ## <a name="snapshot"></a>Снимок
 
 При отправке запуска Машинное обучение Azure сжимает каталог, содержащий сценарий, как ZIP-файл и отправляет его в целевой объект вычислений. ZIP-файл затем извлекается, и сценарий выполняется в нем. Машинное обучение Azure также сохраняет ZIP-файл в качестве моментального снимка как часть записи о выполнении. Любой пользователь с доступом к рабочей области может просмотреть запись о выполнении и загрузить моментальный снимок.
+
+> [!NOTE]
+> Чтобы предотвратить ненужные файлы, включаемого в моментальном снимке, сделайте с файлом игнорирования (.gitignore или .amlignore). Поместите этот файл в каталоге моментальных снимков и добавьте имена файлов, чтобы игнорировать его. Файл .amlignore использует тот же [синтаксис и шаблоны, что файл .gitignore](https://git-scm.com/docs/gitignore). Если существуют оба файла, файл .amlignore имеет приоритет.
 
 ## <a name="activity"></a>Действие
 

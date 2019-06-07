@@ -7,7 +7,7 @@ author: bobbytreed
 manager: carmonm
 editor: ''
 tags: azure-resource-manager
-keywords: dsc
+keywords: DSC
 ms.assetid: bbacbc93-1e7b-4611-a3ec-e3320641f9ba
 ms.service: virtual-machines-windows
 ms.devlang: na
@@ -16,12 +16,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: na
 ms.date: 05/02/2018
 ms.author: robreed
-ms.openlocfilehash: 6ec85e840f8e61c46e86b0fa8fb947fb763a4265
-ms.sourcegitcommit: 17411cbf03c3fa3602e624e641099196769d718b
+ms.openlocfilehash: 410990ecdca8a94be9c7c3d0b48a5092fcaa6060
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2019
-ms.locfileid: "65518859"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66515904"
 ---
 # <a name="introduction-to-the-azure-desired-state-configuration-extension-handler"></a>Общие сведения об обработчике расширения Desired State Configuration в Azure
 
@@ -81,7 +81,7 @@ ms.locfileid: "65518859"
 (Get-AzAutomationRegistrationInfo -ResourceGroupName <resourcegroupname> -AutomationAccountName <accountname>).PrimaryKey
 ```
 
-Имя конфигурации узла, убедитесь, что вы используете имя *конфигурации узла* и отсутствует конфигурация.
+Имя конфигурации узла убедитесь, что конфигурации узла существует в конфигурации состояний Azure.  Если этого не произошло, развертывание расширения возвращает ошибку.  Также убедитесь, что вы используете имя *конфигурации узла* и отсутствует конфигурация.
 Конфигурация определяется в скрипте, который используется [для компиляции конфигурации узла (MOF-файл)](https://docs.microsoft.com/azure/automation/automation-dsc-compile).
 Всегда будет носить имя конфигурации, за которым следует `.` и либо `localhost` или имени конкретного компьютера.
 

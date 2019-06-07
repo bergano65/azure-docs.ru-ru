@@ -1,6 +1,6 @@
 ---
-title: Начало работы с гибридными подключениями WebSocket к Azure Relay в .NET | Документация Майкрософт
-description: 'Написание консольного приложения #C для гибридных подключений WebSocket к Azure Relay.'
+title: Начало работы с Azure ретранслятор гибридных подключений WebSockets в .NET | Документация Майкрософт
+description: Запись C# консольное приложение для гибридных подключений Azure Relay WebSockets.
 services: service-bus-relay
 documentationcenter: .net
 author: spelluru
@@ -14,12 +14,12 @@ ms.tgt_pltfrm: dotnet
 ms.workload: na
 ms.date: 11/01/2018
 ms.author: spelluru
-ms.openlocfilehash: 88d540f274d8b07bfbdbb566c670adf6ddfefd74
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 6ad1d5415feefcf30ebae860bc8f4d8a3e2261d5
+ms.sourcegitcommit: ef06b169f96297396fc24d97ac4223cabcf9ac33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60749740"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66428356"
 ---
 # <a name="get-started-with-relay-hybrid-connections-websockets-in-net"></a>Начало работы с гибридными подключениями Azure Relay с использованием WebSocket и .NET
 [!INCLUDE [relay-selector-hybrid-connections](../../includes/relay-selector-hybrid-connections.md)]
@@ -64,7 +64,7 @@ ms.locfileid: "60749740"
 
     ![running-applications](./media/relay-hybrid-connections-dotnet-get-started/running-applications.png)
 
-Поздравляем, вы создали приложение для гибридных подключений.
+Поздравляем, вы создали законченное приложение гибридных подключений.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 В этом кратком руководстве описано, как создать клиентские и серверные приложения .NET, которые отправляют и получают сообщения по протоколу WebSocket. Функция гибридных подключений службы Azure Relay также поддерживает использование протокола HTTP для отправки и получения сообщений. См. дополнительные сведения об [использовании протокола HTTP с гибридными подключениями Azure Relay](relay-hybrid-connections-http-requests-dotnet-get-started.md).

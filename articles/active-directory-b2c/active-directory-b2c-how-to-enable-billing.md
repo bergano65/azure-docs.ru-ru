@@ -2,20 +2,20 @@
 title: Как связать подписку Azure с Azure Active Directory B2C | Документация Майкрософт
 description: Пошаговое руководство по настройке выставления счетов для клиента Azure AD B2C в подписке Azure.
 services: active-directory-b2c
-author: davidmu1
+author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.topic: conceptual
 ms.workload: identity
 ms.date: 01/24/2019
-ms.author: davidmu
+ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 8f9e3e63942c8fac5fc24ca26969b71e6ef4257f
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: d2440b638a9c8eb27505b747d26917de8032e6cd
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64706824"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66510123"
 ---
 # <a name="link-an-azure-subscription-to-an-azure-active-directory-b2c-tenant"></a>Связывание подписки Azure с клиентом Azure Active Directory B2C
 

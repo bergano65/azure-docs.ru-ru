@@ -10,12 +10,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 04/22/2019
 ms.author: tyleonha, glenga
-ms.openlocfilehash: b699379448863c8df84fda0e059fc10846c09931
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: f02d2eed2030a5d2f54b3bee85885bbb572ac762
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65230079"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66476677"
 ---
 # <a name="debug-powershell-azure-functions-locally"></a>Локальная отладка функций Azure PowerShell
 
@@ -95,15 +95,28 @@ if($name) {
 
 ## <a name="debug-in-visual-studio-code"></a>Отладка в Visual Studio Code
 
-Чтобы выполнить отладку функций PowerShell в Visual Studio Code, необходимо иметь следующие расширения для Visual Studio Code:
+Для отладки функций PowerShell в Visual Studio Code, необходимо иметь следующие компоненты:
 
-* [PowerShell](/powershell/scripting/components/vscode/using-vscode)
-* [Функции Azure](functions-create-first-function-vs-code.md)
+* [Расширения PowerShell для Visual Studio Code](/powershell/scripting/components/vscode/using-vscode)
+* [Расширение "Функции Azure" для Visual Studio Code](functions-create-first-function-vs-code.md)
+* [PowerShell Core 6.2 или более поздней версии](/powershell/scripting/install/installing-powershell#powershell-core)
 
-После установки расширения функций Azure и PowerShell, загрузите существующий проект приложения функции. Вы также можете [создать проект функции](functions-create-first-function-vs-code.md).
+После установки этих зависимостей, загрузки существующего проекта функции PowerShell, или [создайте свой первый проект функции PowerShell](functions-create-first-function-powershell.md).
 
 >[!NOTE]
 > Проект не следует файлы необходимые настройки, будет предложено добавить их.
+
+### <a name="set-the-powershell-version"></a>Задайте версию PowerShell
+
+PowerShell Core устанавливается параллельно с Windows PowerShell. PowerShell Core в качестве версии PowerShell для использования с расширением PowerShell для Visual Studio Code.
+
+1. Нажмите клавишу F1, чтобы отобразить палитру команд, а затем найдите `Session`.
+
+1. Выберите **PowerShell: Показать меню сеанса**.
+
+1. Если ваш **текущего сеанса** не **PowerShell Core 6**, выберите **переключиться в режим: PowerShell Core 6**.
+
+При наличии файла откройте PowerShell, вы видите версию, показаны зеленым цветом в нижней правой части окна. Также при выборе этот текст отображается в меню сеанса. Дополнительные сведения см. в разделе [выбирается версия PowerShell для использования с расширением](/powershell/scripting/components/vscode/using-vscode#choosing-a-version-of-powershell-to-use-with-the-extension).
 
 ### <a name="start-the-function-app"></a>Запустите приложение-функция
 
@@ -140,7 +153,7 @@ Invoke-RestMethod "http://localhost:7071/api/HttpTrigger?Name=Functions"
 * В консоли PowerShell, который выполнял `Invoke-RestMethod` вернула результат
 * Встроенная консоль PowerShell в Visual Studio Code ожидает скрипт, выполняемый
 
-В следующий раз при вызове той же функции, отладчик в PowerShell, расширение нарушает непосредственно после `Wait-Debugger`.
+Позже при вызове той же функции, отладчик в расширении PowerShell разбивает непосредственно после `Wait-Debugger`.
 
 ## <a name="debugging-in-a-powershell-console"></a>Отладка в консоли PowerShell
 

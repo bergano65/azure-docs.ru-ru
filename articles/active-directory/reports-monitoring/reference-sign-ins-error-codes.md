@@ -17,12 +17,12 @@ ms.date: 05/08/2019
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0986610007f5c470589eb94d6761b8d31dd79e72
-ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
+ms.openlocfilehash: 3208afc7ec18013c6e70e148995d33114cf7e06c
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65463498"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66513664"
 ---
 # <a name="sign-in-activity-report-error-codes"></a>Коды ошибок отчета о действиях при входе 
 
@@ -181,6 +181,8 @@ ms.locfileid: "65463498"
 |500121| Сбой проверки подлинности во время выполнения строгой проверки подлинности запроса.|
 |500133| Превышен допустимый диапазон времени для утверждения. Убедитесь, что срок действия маркера доступа не истек, прежде чем использовать его для утверждения пользователя. Либо запросите новый маркер.|
 |530021|Приложение не соответствует требованиям условного доступа утвержденные приложения.|
+|7000218|Текст запроса должен содержать следующий параметр: «client_assertion» или «client_secret».|
+
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

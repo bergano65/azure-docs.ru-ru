@@ -2,20 +2,20 @@
 title: ClaimsProviders в Azure Active Directory B2C | Документация Майкрософт
 description: Сведения об указании элемента ClaimsProviders настраиваемой политики в Azure Active Directory B2C.
 services: active-directory-b2c
-author: davidmu1
+author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
 ms.date: 09/10/2018
-ms.author: davidmu
+ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: ababd7e9f1de33eb8679e583c2db18d2992cfb1c
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 8d2570af6abb34a87ac4c69dd63408c8ec2e8005
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64699629"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66511525"
 ---
 # <a name="claimsproviders"></a>ClaimsProviders
 
@@ -41,7 +41,7 @@ ms.locfileid: "64699629"
 
 Элемент **ClaimsProviders** содержит следующий элемент.
 
-| Элемент | Вхождения | ОПИСАНИЕ |
+| Элемент | Вхождения | Описание |
 | ------- | ----------- | ----------- |
 | ClaimsProvider | 1:n | Аккредитованный поставщик утверждений, который может использоваться в различных путях взаимодействия пользователя. |
 
@@ -49,7 +49,7 @@ ms.locfileid: "64699629"
 
 Элемент **ClaimsProvider** содержит следующие элементы.
 
-| Элемент | Вхождения | ОПИСАНИЕ |
+| Элемент | Вхождения | Описание |
 | ------- | ---------- | ----------- |
 | Домен | 0:1 | Строка, содержащая имя домена для поставщика утверждений. Например, если в техническом профиле указан поставщик удостоверений Facebook, доменное имя будет иметь значение Facebook.com. Если не переопределен технический профиль, это доменное имя используется для всех технических профилей, определенных в поставщике утверждений. Имя домена также можно использовать в **domain_hint**. Дополнительные сведения см. в разделе **Перенаправление операции входа в поставщик социальных сетей** статьи [Настройка прямого входа в систему с помощью Azure Active Directory B2C](direct-signin.md). |
 | DisplayName | 0:1 | Строка с именем технического профиля, отображаемым для пользователей. |

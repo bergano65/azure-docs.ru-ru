@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 10/16/2018
 ms.author: jeffpatt
 ms.subservice: files
-ms.openlocfilehash: 06b3a5110bfdea2a2067979c806701011dc16f3d
-ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
+ms.openlocfilehash: 0a6b48dbba232c06945b00d5107581d8d0c017b0
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65987708"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66472417"
 ---
 # <a name="troubleshoot-azure-files-problems-in-linux"></a>Устранение неполадок службы файлов Azure в Linux
 
@@ -110,14 +110,13 @@ ms.locfileid: "65987708"
 
 Если используемый SMB-клиент Linux не поддерживает шифрование, подключите службу файлов Azure с помощью SMB 2.1 с виртуальной машины Linux в Azure, которая расположена в том же центре обработки данных, что и общий файловый ресурс. Убедитесь, что параметр [Требуется безопасное перемещение]( https://docs.microsoft.com/azure/storage/common/storage-require-secure-transfer) отключен в учетной записи хранения. 
 
-<a id="accessdeniedportal"></a>
-## <a name="error-access-denied-when-browsing-to-an-azure-file-share-in-the-portal"></a>Ошибка "Доступ запрещен" при переходе к общему файловому ресурсу Azure на портале
+<a id="authorizationfailureportal"></a>
+## <a name="error-authorization-failure-when-browsing-to-an-azure-file-share-in-the-portal"></a>Ошибка «Сбой авторизации» при переходе по файловый ресурс Azure на портале
 
 При переходе к общему файловому ресурсу Azure на портале, может появиться следующая ошибка.
 
-Доступ запрещен  
-Нет доступа  
-Похоже, у вас нет доступа к этому контенту. Чтобы получить его, обратитесь к владельцу.  
+Сбой авторизации  
+Нет доступа
 
 ### <a name="cause-1-your-user-account-does-not-have-access-to-the-storage-account"></a>Причина 1. Учетная запись пользователя не имеет доступа к учетной записи хранения
 
@@ -140,7 +139,7 @@ ms.locfileid: "65987708"
 
 ### <a name="solution"></a>Решение
 
-Чтобы проверить, отключено ли кэширование, найдите запись **cache=**. 
+Чтобы проверить, отключено ли кэширование, найдите запись **cache=** . 
 
 Запись **cache=none** означает, что кэширование отключено. Повторно подключите общедоступный ресурс, введя команду mount по умолчанию или явно добавив в нее параметр **cache=strict**, чтобы включить режим кэширования по умолчанию или "строгий" режим кэширования соответственно.
 

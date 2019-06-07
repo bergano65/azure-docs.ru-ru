@@ -6,13 +6,13 @@ ms.author: orspodek
 ms.reviewer: mblythe
 ms.service: data-explorer
 ms.topic: conceptual
-ms.date: 05/30/2019
-ms.openlocfilehash: 6147269ab38ac14c2a2ecadaac3448a491af7c20
-ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
+ms.date: 06/04/2019
+ms.openlocfilehash: 0bfacc968a04f8ef9e39a31cff5e81cf4e04c6fb
+ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66399314"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66494626"
 ---
 # <a name="visualize-data-using-the-azure-data-explorer-connector-for-power-bi"></a>Визуализация данных с помощью соединителя Azure Data Explorer для Power BI
 
@@ -38,13 +38,11 @@ Azure Data Explorer поддерживает три варианта подкл�
 
     ![Получение данных](media/power-bi-connector/get-data-more.png)
 
-1. Выполните поисковой запрос *Azure Data Explorer*, выберите **Azure Data Explorer (бета-версия)** и нажмите **Подключиться**.
+1. Поиск *обозреватель данных Azure*выберите **обозреватель данных Azure** затем **Connect**.
 
     ![Поиск и получение данных](media/power-bi-connector/search-get-data.png)
 
-1. На странице **Предварительная версия соединителя** нажмите кнопку **Продолжить**.
-
-1. На следующей странице заполните форму, указав такую информацию.
+1. На **обозреватель данных Azure (Kusto)** экрана, заполните форму, указав следующие сведения.
 
     ![Кластер, база данных, параметры таблицы](media/power-bi-connector/cluster-database-table.png)
 

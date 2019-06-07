@@ -8,12 +8,12 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 08/15/2018
 ms.topic: conceptual
-ms.openlocfilehash: cdd2b24e6f833ee0acb229a37c7cd3b8b6f36339
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 7cbab38db859935c9f4490d79a131d6c9a7e302b
+ms.sourcegitcommit: ef06b169f96297396fc24d97ac4223cabcf9ac33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66143398"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66427567"
 ---
 # <a name="deploy-a-new-simulated-device"></a>Развертывание нового имитированного устройства
 
@@ -88,13 +88,14 @@ ms.locfileid: "66143398"
 1. Скопируйте имеющиеся файлы моделей устройств из контейнера в новое расположение. Сначала найдите идентификатор контейнера для имитирования устройств.
 
     ```sh
-    docker ps
+    sudo docker ps
     ```
 
     Затем скопируйте файлы моделей устройств в папку **tmp** на виртуальной машине. В указанной ниже команде предполагается, что идентификатор контейнера — c378d6878407. Замените это значение идентификатором контейнера для имитирования устройств.
 
     ```sh
-    docker cp c378d6878407:/app/webservice/data/devicemodels /tmp
+    sudo docker cp c378d6878407:/app/webservice/data/devicemodels /tmp
+    sudo chown -R azureuser /tmp/devicemodels/
     ```
 
     Не закрывайте окно **Bash** с сеансом SSH.
@@ -116,13 +117,13 @@ ms.locfileid: "66143398"
     Чтобы просмотреть состояние запущенных контейнеров Docker и их идентификаторы, выполните следующую команду:
 
     ```sh
-    docker ps
+    sudo docker ps
     ```
 
     Чтобы просмотреть журнал из контейнера для имитирования устройств, выполните следующую команду. Замените идентификатор контейнера идентификатором вашего контейнера для имитирования устройств:
 
     ```sh
-    docker logs -f 5d3f3e78822e
+    sudo docker logs -f 5d3f3e78822e
     ```
 
 ## <a name="run-simulation"></a>Выполнение имитации

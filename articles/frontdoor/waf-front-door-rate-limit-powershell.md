@@ -9,22 +9,18 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 04/16/2019
+ms.date: 05/31/2019
 ms.author: kumud;tyao
-ms.openlocfilehash: 99b0cab3fd277f90a675f0e6087d572853053a08
-ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
+ms.openlocfilehash: 903405c8fada6165b79e780a7828c6de3b95163e
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66387334"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66478920"
 ---
 # <a name="configure-a-web-application-firewall-rate-limit-rule-using-azure-powershell"></a>Настройка web application скорость ограничение правила брандмауэра с помощью Azure PowerShell
 Azure web приложения (WAF) скорость ограничение правило для входной двери Azure управляет количеством запросов, разрешенных с одного клиентского IP-адреса за период до минуты.
 В этой статье показано, как настроить правило WAF скорость ограничение, которое управляет количеством запросов, разрешенных из одного клиента веб-приложению, которое содержит */promo* в URL-адрес, с помощью Azure PowerShell.
-
-> [!IMPORTANT]
-> Функция правила ограничения частоты WAF передовой линии для Azure в настоящее время находится в общедоступной предварительной версии.
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены. Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/?WT.mc_id=A261C142F), прежде чем начинать работу.
 

@@ -9,12 +9,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 05/30/2019
 ms.author: sogup
-ms.openlocfilehash: b345f5e7f6f32d7fbb76d4f0227c8f4f925ff884
-ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
+ms.openlocfilehash: 9fba7d679b7d0edb3c99207c99b23f9616c6fa0e
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66400301"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66477585"
 ---
 # <a name="create-a-recovery-services-vault"></a>Создание хранилища служб восстановления
 
@@ -76,7 +76,7 @@ ms.locfileid: "66400301"
    - Дополнительные сведения о [географически](../storage/common/storage-redundancy-grs.md) и [локального](../storage/common/storage-redundancy-lrs.md) избыточности.
 
 > [!NOTE]
-> После выбора **тип репликации хранилища** из **геоизбыточное** для **локально избыточное**, нельзя вернуться назад.
+> Изменение **тип репликации хранилища** (локально избыточное / Гео избыточное) для хранилища служб восстановления должна быть выполнена перед настройкой резервного копирования в хранилище. После настройки резервного копирования, отключен параметр, чтобы изменить, и его нельзя изменить **тип репликации хранилища**. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

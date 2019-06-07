@@ -10,15 +10,15 @@ ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 05/24/2019
+ms.date: 06/03/2019
 ms.author: banders
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 33d0e5f92d5de104530882b204b1f196360511b2
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 91880e43382662b5d55f112455ee8f4c92ad01c5
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66236463"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66471601"
 ---
 # <a name="transfer-ownership-of-an-azure-subscription-to-another-account"></a>Передача прав владения подпиской Azure другой учетной записи
 
@@ -116,7 +116,8 @@ ms.locfileid: "66236463"
 
 ### <a id="no-button"></a>Почему не отображается кнопка "Перенос подписки"?
 
-К сожалению самостоятельный перенос подписки недоступен для вашего предложения. Просмотр списка поддерживаемых предложений в [поддерживается предложения](#supported-offers) этой статьи.
+К сожалению самостоятельный перенос подписки недоступен для вашего предложения. Просмотр списка поддерживаемых предложений в [поддерживается предложения](#supported-offers) этой статьи. Кроме того мы не блокируют перемещение подписки для любой страны. Тем не менее кросс-Страна передачи не поддерживается. Для передачи прав владения подпиской кросс-страны, [обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade). 
+
 
 ### <a name="can-i-transfer-ownership-to-an-account-in-another-country"></a>Как передавать право собственности на учетную запись в другой стране?
 

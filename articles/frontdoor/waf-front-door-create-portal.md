@@ -11,14 +11,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
-ms.date: 04/8/2019
+ms.date: 05/31/2019
 ms.author: kumud;tyao
-ms.openlocfilehash: 26db3a67c3efbd0ba2a5c58facd0c07175f7ed12
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 15a80dac0e0601480e22ad960f2827f3d8f290c0
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61460249"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66479066"
 ---
 # <a name="create-a-waf-policy-for-azure-front-door-by-using-the-azure-portal"></a>Создание политики WAF передовой линии для Azure с помощью портала Azure
 
@@ -48,7 +48,7 @@ ms.locfileid: "61460249"
     | Параметр                 | Value                                              |
     | ---                     | ---                                                |
     | Передовой линии              | Выберите имя своего профиля двери.|
-    | Интерфейсный узел           | Выберите имя узла двери, а затем **добавить**.|
+    | Узел внешнего интерфейса           | Выберите имя узла двери, а затем **добавить**.|
     
     > [!NOTE]
     > Если узла frontend связан с политикой WAF, оно будет показано, как серым цветом. Необходимо удалить из соответствующей политике узла frontend и повторное связывание узла frontend для новой политики WAF.
@@ -63,17 +63,19 @@ ms.locfileid: "61460249"
 
  ![Режим применения политик изменение WAF](./media/waf-front-door-create-portal/policy.png)
 
+### <a name="custom-rules"></a>Настраиваемые правила
+
+Можно создать настраиваемое правило, выбрав **добавить настраиваемое правило** под **настраиваемых правил** раздел. Откроется страница конфигурации настраиваемое правило. Ниже приведен пример настройки настраиваемое правило для блокировки запроса, если строка запроса содержит **blockme**.
+
+![Режим применения политик изменение WAF](./media/waf-front-door-create-portal/customquerystring2.png)
+
 ### <a name="default-rule-set-drs"></a>Набор правил по умолчанию (DRS)
 
 Управляемые Azure набор правил по умолчанию включена по умолчанию. Чтобы отключить отдельное правило в группе правил, развернуть правила в этой группе правил, выберите **флажок** перед номер правила, а затем выберите **отключить** на вкладке "," выше. Чтобы изменить типы действий, для отдельных правил в правиле, задайте, установите флажок "" перед номер правила, затем выберите **изменить действие** вкладкой.
 
- ![Изменить набор правил WAF](./media/waf-front-door-create-portal/managed.png)
+ ![Изменить набор правил WAF](./media/waf-front-door-create-portal/managed2.png)
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
 - Дополнительные сведения о [брандмауэр Azure веб-приложения](waf-overview.md).
 - Дополнительные сведения о [Azure входной двери](front-door-overview.md).
-
-
-
-

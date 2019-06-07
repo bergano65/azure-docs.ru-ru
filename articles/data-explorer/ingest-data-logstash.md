@@ -1,24 +1,24 @@
 ---
-title: Краткое руководство. Прием данных из Logstash в Azure Data Explorer
-description: В этом кратком руководстве описывается процесс выполнения приема данных (загрузки) в Azure Data Explorer из Logstash.
+title: Прием данных из Logstash в Azure Data Explorer
+description: В этой статье вы узнаете, как прием данных (загрузка) в обозреватель данных Azure из Logstash
 author: tamirkamara
 ms.author: takamara
 ms.reviewer: orspodek
 ms.service: data-explorer
-ms.topic: quickstart
-ms.date: 01/14/2019
-ms.openlocfilehash: e0d81454e6036d09bb74af6f522063a1aed5fffe
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: HT
+ms.topic: conceptual
+ms.date: 06/03/2019
+ms.openlocfilehash: 86f6732cbf2409d3c79a3d7709100e8af24988a0
+ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59046416"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66494542"
 ---
-# <a name="quickstart-ingest-data-from-logstash-to-azure-data-explorer"></a>Краткое руководство. Прием данных из Logstash в Azure Data Explorer
+# <a name="ingest-data-from-logstash-to-azure-data-explorer"></a>Прием данных из Logstash в Azure Data Explorer
 
-[Logstash](https://www.elastic.co/products/logstash) — это конвейер с открытым кодом на стороне сервера для обработки данных, который одновременно принимает данные из множества источников, преобразовывает данные, а затем отправляет их в избранный "тайник". В этом кратком руководстве вы отправите данные в Azure Data Explorer, которая является быстрой и высокомасштабируемой службой для изучения данных журналов и телеметрии. Изначально вы создадите таблицу и сопоставление данных в тестовом кластере, а затем поручите Logstash отправить данные в таблицу и проверить результаты.
+[Logstash](https://www.elastic.co/products/logstash) — это конвейер с открытым кодом на стороне сервера для обработки данных, который одновременно принимает данные из множества источников, преобразовывает данные, а затем отправляет их в избранный "тайник". В этой статье вы отправите этих данных в обозреватель данных Azure, которая является службой просмотра высокомасштабируемые данных для данных журналов и данных телеметрии. Изначально вы создадите таблицу и сопоставление данных в тестовом кластере, а затем поручите Logstash отправить данные в таблицу и проверить результаты.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Подписка Azure. Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начать работу.
 * [Тестовый кластер и база данных](create-cluster-database-portal.md) Azure Data Explorer.
@@ -106,7 +106,7 @@ output {
 }
 ```
 
-| Имя параметра | ОПИСАНИЕ |
+| Имя параметра | Описание |
 | --- | --- |
 | **path** | Подключаемый модуль Logstash записывает события во временные файлы перед их отправкой в Azure Data Explorer. Этот параметр включает в себя путь, куда следует записывать файлы, и выражение времени для смены файлов, чтобы активировать отправку в службу Azure Data Explorer.|
 | **ingest_url** | Конечная точка Kusto для обмена данными, связанными с приемом.|
@@ -144,7 +144,6 @@ output {
 .drop table logs
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-> [!div class="nextstepaction"]
-> [Написание запросов](write-queries.md)
+* [Написание запросов](write-queries.md)

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 03/27/2019
 ms.author: mbullwin
-ms.openlocfilehash: 6e20aef77625fe426526884c3fcee83019afd0c0
-ms.sourcegitcommit: 8c49df11910a8ed8259f377217a9ffcd892ae0ae
+ms.openlocfilehash: 5194b9e6f40dbcd5e48b33c12db4b3cd94f75de3
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66299252"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66478404"
 ---
 # <a name="application-insights-api-for-custom-events-and-metrics"></a>API Application Insights для пользовательских событий и метрик
 
@@ -153,7 +153,7 @@ telemetry.trackEvent({name: "WinGame"});
 
 Данные телеметрии доступны в таблице `customEvents` в [службе аналитики Application Insights](analytics.md). Каждая строка представляет собой вызов `trackEvent(..)` в приложении.
 
-Если действует [выборка](../../azure-monitor/app/sampling.md), свойство itemCount имеет значение больше 1. Например, itemCount==10 означает, что из 10 вызовов trackEvent() процесс выборки передал только один. Поэтому, чтобы получить правильное количество пользовательских событий, следует использовать такой код, как `customEvents | summarize sum(itemCount)`.
+Если действует [выборка](../../azure-monitor/app/sampling.md), свойство itemCount имеет значение больше 1. Например, itemCount==10 означает, что из 10 вызовов trackEvent() процесс выборки передал только один. Чтобы получить правильное количество пользовательских событий, вы должны таким образом используйте следующий код `customEvents | summarize sum(itemCount)`.
 
 ## <a name="getmetric"></a>GetMetric
 
@@ -590,7 +590,7 @@ trackTrace(message: string, properties?: {[string]:string}, severityLevel?: AI.S
 Вы можете выполнять поиск содержимого сообщения, но (в отличие от значений свойств) не можете фильтровать его.
 
 Ограничения по размеру `message` гораздо выше, чем ограничение для свойств.
-Преимуществом TrackTrace является возможность добавления в сообщения относительно длинных данных,  например данных POST.  
+Преимуществом TrackTrace является возможность добавления в сообщения относительно длинных данных, например данных POST.  
 
 Кроме того, вы можете настроить для сообщения уровень серьезности. Как и для других данных телеметрии, вы можете добавлять значения свойства, используемые для фильтрации или поиска различных наборов трассировки. Пример:
 

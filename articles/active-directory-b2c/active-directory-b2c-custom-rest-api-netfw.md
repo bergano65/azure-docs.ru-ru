@@ -2,20 +2,20 @@
 title: Интеграция обмена утверждениями REST API в путях взаимодействия пользователей Azure Active Directory B2C | Документация Майкрософт
 description: Сведения об интеграции обмена утверждениями REST API в путях взаимодействия пользователей Azure AD B2C как проверки входных данных.
 services: active-directory-b2c
-author: davidmu1
+author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 09/30/2017
-ms.author: davidmu
+ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: e44bb1ed6a7a090b4b1213ca14be2b42642475e4
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: b3b896b2c423f2f9155ddb7803e59e719bd027cf
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64717291"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66510725"
 ---
 # <a name="integrate-rest-api-claims-exchanges-in-your-azure-ad-b2c-user-journey-as-validation-of-user-input"></a>Интеграция обмена утверждениями REST API в путях взаимодействия пользователей Azure AD B2C как проверка входных данных
 
@@ -60,7 +60,7 @@ Azure AD B2C позволяет добавлять собственную биз
 
 1. Создайте проект в Visual Studio, выбрав **Файл** > **Создать** > **Проект**.
 
-2. В окне **Новый проект** выберите **Visual C#** > **Интернет** > **Веб-приложение ASP.NET (.NET Framework)**.
+2. В окне **Новый проект** выберите **Visual C#**  > **Интернет** > **Веб-приложение ASP.NET (.NET Framework)** .
 
 3. В поле **Имя** введите имя приложения (например, *Contoso.AADB2C.API*), а затем нажмите кнопку **ОК**.
 
@@ -248,13 +248,13 @@ Azure AD B2C позволяет добавлять собственную биз
 
 Следующий фрагмент XML-кода содержит узел поставщика утверждений с двумя техническими профилями:
 
-* **TechnicalProfile Id="REST-API-SignUp"**: определяет службу RESTful.
+* **TechnicalProfile Id="REST-API-SignUp"** : определяет службу RESTful.
   * `Proprietary` описан как протокол для поставщика на основе RESTful.
   * `InputClaims` определяет утверждения, которые отправляются из Azure AD B2C в службу REST.
 
     В этом примере содержимое утверждения `givenName` отправляется в службу REST в качестве `firstName`, содержимое утверждения `surname` отправляется в службу REST в качестве `lastName`, а `email` отправляется как есть. Элемент `OutputClaims` определяет утверждения, извлекаемые из службы RESTful обратно в Azure AD B2C.
 
-* **TechnicalProfile Id="LocalAccountSignUpWithLogonEmail"**: добавляет технический профиль проверки в существующий технический профиль (определяемый в базовой политике). Во время регистрации технический профиль проверки вызывает предыдущий технический профиль. Если служба RESTful возвращает сообщение об ошибке HTTP 409 (ошибка из-за конфликта), сообщение об ошибке отображается пользователю.
+* **TechnicalProfile Id="LocalAccountSignUpWithLogonEmail"** : добавляет технический профиль проверки в существующий технический профиль (определяемый в базовой политике). Во время регистрации технический профиль проверки вызывает предыдущий технический профиль. Если служба RESTful возвращает сообщение об ошибке HTTP 409 (ошибка из-за конфликта), сообщение об ошибке отображается пользователю.
 
 Найдите узел `<ClaimsProviders>`, а затем добавьте следующий фрагмент XML-кода в узел `<ClaimsProviders>`:
 

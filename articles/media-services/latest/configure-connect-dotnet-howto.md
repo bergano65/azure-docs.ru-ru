@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/04/2019
 ms.author: juliako
-ms.openlocfilehash: 8f8a1434af768180e34afcaacd6e92ab402ad8cd
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 464d01b7b818b461024737a83d88c78947453c37
+ms.sourcegitcommit: ef06b169f96297396fc24d97ac4223cabcf9ac33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60736145"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66428480"
 ---
 # <a name="connect-to-media-services-v3-api---net"></a>Подключение к API v3 служб мультимедиа - .NET
 
@@ -27,7 +27,7 @@ ms.locfileid: "60736145"
 ## <a name="prerequisites"></a>Технические условия
 
 - [Создание учетной записи Служб мультимедиа](create-account-cli-how-to.md). Запомните имя группы ресурсов и имя учетной записи служб мультимедиа
-- Установите это средство, которое вы хотите использовать для разработки приложений .NET. В этой статье показано, как использовать [Visual Studio 2017 Community Edition](https://www.visualstudio.com/downloads/). Вы можете использовать Visual Studio Code, см. в разделе [работа с C# ](https://code.visualstudio.com/docs/languages/csharp). Или можно использовать другом редакторе кода.
+- Установите это средство, которое вы хотите использовать для разработки приложений .NET. В этой статье показано, как использовать [2019 г. Visual Studio Community Edition](https://www.visualstudio.com/downloads/). Вы можете использовать Visual Studio Code, см. в разделе [работа с C# ](https://code.visualstudio.com/docs/languages/csharp). Или можно использовать другом редакторе кода.
 
 ## <a name="create-a-console-application"></a>Создание консольного приложение
 
@@ -42,7 +42,7 @@ ms.locfileid: "60736145"
 1. В Visual Studio выберите **средства** > **диспетчер пакетов NuGet** > **консоли диспетчера NuGet**.
 2. В **консоль диспетчера пакетов** окно, используйте `Install-Package` команду, чтобы добавить следующие пакеты NuGet. Например, `Install-Package Microsoft.Azure.Management.Media`.
 
-|Package|ОПИСАНИЕ|
+|Пакет|Описание|
 |---|---|
 |`Microsoft.Azure.Management.Media`|Пакет SDK служб мультимедиа Azure. <br/>Чтобы убедиться, что вы используете последнюю версию пакета служб мультимедиа Azure, проверьте [Microsoft.Azure.Management.Media](https://www.nuget.org/packages/Microsoft.Azure.Management.Media).|
 |`Microsoft.Rest.ClientRuntime.Azure.Authentication`|Библиотека проверки подлинности ADAL для пакета Azure SDK для NET|
@@ -225,9 +225,9 @@ namespace ConsoleApp1
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Руководство Отправка, кодирование и потоковая передача видео с помощью .NET](stream-files-tutorial-with-api.md) 
-- [Руководство Потоковая трансляция в реальном времени с помощью Служб мультимедиа Azure версии 3 и .NET](stream-live-tutorial-with-api.md)
-- [Руководство Анализ видео с помощью Служб мультимедиа версии 3 и .NET](analyze-videos-tutorial-with-api.md)
+- [Учебник. Отправка, кодирование и потоковая передача видео с помощью .NET](stream-files-tutorial-with-api.md) 
+- [Учебник. Потоковая трансляция в реальном времени с помощью Служб мультимедиа Azure версии 3 и .NET](stream-live-tutorial-with-api.md)
+- [Учебник. Анализ видео с помощью Служб мультимедиа версии 3 и .NET](analyze-videos-tutorial-with-api.md)
 - [Создание входных данных задания из локального файла с помощью .NET](job-input-from-local-file-how-to.md)
 - [Создание входных данных задания из URL-адреса HTTPS с помощью .NET](job-input-from-http-how-to.md)
 - [Кодирование с помощью пользовательского преобразования с помощью .NET](customize-encoder-presets-how-to.md)

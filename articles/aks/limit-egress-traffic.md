@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: article
 ms.date: 05/14/2019
 ms.author: iainfou
-ms.openlocfilehash: 13fbb20cde454a0aaab156a74a9fbcbac2d90d07
-ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
+ms.openlocfilehash: b5a203150906758bde33431a1dab717e090f2e28
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66418130"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66475576"
 ---
 # <a name="preview---limit-egress-traffic-for-cluster-nodes-and-control-access-to-required-ports-and-services-in-azure-kubernetes-service-aks"></a>Предварительная версия — ограничение исходящий трафик для узлов кластера и управление доступом для требуемых портов и служб в службе Azure Kubernetes (AKS)
 
@@ -75,7 +75,7 @@ az provider register --namespace Microsoft.ContainerService
 
 | ПОЛНОЕ ДОМЕННОЕ ИМЯ                      | Port      | Использование      |
 |---------------------------|-----------|----------|
-| *. azmk8s.io               | HTTPS:443 | Этот адрес является конечной точкой сервера API. |
+| *. azmk8s.io               | HTTPS:443,22,9000 | Этот адрес является конечной точкой сервера API. |
 | aksrepos.azurecr.io       | HTTPS:443 | Этот адрес необходим для доступа к образов в реестр контейнеров Azure (ACR). |
 | *.blob.core.windows.net   | HTTPS:443 | Этот адрес является серверным хранилищем для изображений, хранящихся в ACR. |
 | mcr.microsoft.com         | HTTPS:443 | Этот адрес необходим для доступа к образов в реестр контейнеров (MCR). |

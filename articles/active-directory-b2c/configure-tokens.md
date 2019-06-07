@@ -2,20 +2,20 @@
 title: Настройка маркеров — Azure Active Directory B2C | Документация Майкрософт
 description: Узнайте, как настроить параметры токена время существования и совместимости в Azure Active Directory B2C.
 services: active-directory-b2c
-author: davidmu1
+author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 04/16/2019
-ms.author: davidmu
+ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 69a6284ea7b8905bb5efdb1f4c9f26027bd6f9d9
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: e1163c88a100ebb7500607475ab5740557904137
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64689606"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66511331"
 ---
 # <a name="configure-tokens-in-azure-active-directory-b2c"></a>Настройка маркеров в Azure Active Directory B2C
 
@@ -32,7 +32,7 @@ ms.locfileid: "64689606"
 1. Войдите на [портале Azure](https://portal.azure.com).
 2. Убедитесь, что вы используете каталог, содержащий клиент Azure AD B2C. Выберите **фильтр каталога и подписки** в верхнем меню и выберите каталог, содержащий клиент Azure AD B2C.
 3. Выберите **Все службы** в левом верхнем углу окна портала Azure, а затем найдите и выберите **Azure AD B2C**.
-4. Выберите **маршруты пользователей (политики)**.
+4. Выберите **маршруты пользователей (политики)** .
 5. Откройте ранее созданный поток пользователя. 
 6. Выберите **Свойства**.
 7. В разделе **время существования маркера**, измените следующие свойства в соответствии с потребностями вашего приложения:
@@ -43,7 +43,7 @@ ms.locfileid: "64689606"
 
 ## <a name="configure-token-compatibility"></a>Настройка совместимости токенов
 
-1. Выберите **маршруты пользователей (политики)**.
+1. Выберите **маршруты пользователей (политики)** .
 2. Откройте ранее созданный поток пользователя. 
 3. Выберите **Свойства**.
 4. В разделе **маркеров параметров совместимости**, измените следующие свойства в соответствии с потребностями вашего приложения:

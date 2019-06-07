@@ -2,20 +2,20 @@
 title: Руководство. Добавление поставщиков удостоверений приложениям в Azure Active Directory B2C | Документация Майкрософт
 description: Узнайте, как добавить поставщики удостоверений своим приложениям в Azure Active Directory B2C с помощью портала Azure.
 services: active-directory-b2c
-author: davidmu1
+author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: article
 ms.date: 02/01/2019
-ms.author: davidmu
+ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: c1bd78442f6a7218dde3710236766117816c42fe
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 76e12dc6bf9bcb50dc58e7730f3a08dd6a9d4440
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64710134"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66512192"
 ---
 # <a name="tutorial-add-identity-providers-to-your-applications-in-azure-active-directory-b2c"></a>Руководство по Добавление поставщиков удостоверений приложениям в Azure Active Directory B2C
 
@@ -130,7 +130,7 @@ ms.locfileid: "64710134"
 
 В этом руководстве, которое вы завершили как часть предварительных условий, вы создали пользовательский поток для регистрации и входа с именем *B2C_1_signupsignin1*. В этом разделе вы добавляете поставщики удостоверений в поток пользователя *B2C_1_signupsignin1*.
 
-1. Выберите **Потоки пользователей (политики)**, а затем выберите поток пользователя *B2C_1_signupsignin1*.
+1. Выберите **Потоки пользователей (политики)** , а затем выберите поток пользователя *B2C_1_signupsignin1*.
 2. В разделе **Поставщики удостоверений** выберите **Facebook**, а затем добавленные поставщики удостоверений **Azure AD Contoso**.
 3. Щелкните **Сохранить**.
 

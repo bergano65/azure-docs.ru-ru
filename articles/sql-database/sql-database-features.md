@@ -12,12 +12,12 @@ ms.author: jovanpop
 ms.reviewer: bonova, sstein
 manager: craigg
 ms.date: 05/10/2019
-ms.openlocfilehash: 79cf4c713d60fa600bbb80b9c16728502ffc88ff
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 4d8d2fd9a7408bb77939c9a1c8fdd67251282f49
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66236827"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66479203"
 ---
 # <a name="feature-comparison-azure-sql-database-versus-sql-server"></a>Сравнение возможностей службы "База данных SQL Azure" и SQL Server
 
@@ -96,8 +96,9 @@ ms.locfileid: "66236827"
 | [Поддержка данных JSON](https://docs.microsoft.com/sql/relational-databases/json/json-data-sql-server) | [Да](sql-database-json-features.md) | [Да](sql-database-json-features.md) |
 | [Элементы языка](https://docs.microsoft.com/sql/t-sql/language-elements/language-elements-transact-sql) | Большинство. Дополнительные сведения см. в разделах по отдельным элементам. |  Да. См. раздел [T-SQL differences from SQL Server](sql-database-managed-instance-transact-sql-information.md) (Отличия T-SQL от SQL Server). |
 | [Связанные серверы](https://docs.microsoft.com/sql/relational-databases/linked-servers/linked-servers-database-engine) | Нет. Дополнительные сведения см. в статье [Отчеты по масштабируемым облачным базам данных (предварительная версия)](sql-database-elastic-query-horizontal-partitioning.md). | Только к [SQL Server и базы данных SQL](sql-database-managed-instance-transact-sql-information.md#linked-servers) |
-| [Доставка журналов](https://docs.microsoft.com/sql/database-engine/log-shipping/about-log-shipping-sql-server) | [Функция высокого уровня доступности](sql-database-high-availability.md) включается в каждой базе данных. Сведения об аварийном восстановлении см. в статье [Обзор. Группы отработки отказа и активная георепликация](sql-database-business-continuity.md). |[Функция высокого уровня доступности](sql-database-high-availability.md) включается в каждой базе данных. Сведения об аварийном восстановлении см. в статье [Обзор. Группы отработки отказа и активная георепликация](sql-database-business-continuity.md). |
+| [Доставка журналов](https://docs.microsoft.com/sql/database-engine/log-shipping/about-log-shipping-sql-server) | [Функция высокого уровня доступности](sql-database-high-availability.md) включается в каждой базе данных. Сведения об аварийном восстановлении см. в статье [Обзор. Группы отработки отказа и активная георепликация](sql-database-business-continuity.md). | В собственном коде встроенных как часть процесса миграции DMS. [Высокий уровень доступности](sql-database-high-availability.md) входит в состав каждой базы данных и не рекомендуется использовать доставку журналов в качестве альтернативы высокого уровня ДОСТУПНОСТИ. Сведения об аварийном восстановлении см. в статье [Обзор. Группы отработки отказа и активная георепликация](sql-database-business-continuity.md). |
 | [Имена входа и пользователи](https://docs.microsoft.com/sql/relational-databases/security/authentication-access/principals-database-engine) | Да, но `CREATE` и `ALTER` инструкций login не предоставляют все параметры (не Windows и имена входа Azure Active Directory на уровне сервера). `EXECUTE AS LOGIN` — не поддерживается — использовать `EXECUTE AS USER` вместо этого.  | Да, с некоторыми [различия](sql-database-managed-instance-transact-sql-information.md#logins-and-users). Имена входа Windows не поддерживаются и их необходимо заменить имена входа Azure Active Directory. |
+| [Долгосрочное хранение резервных копий - LTR](sql-database-long-term-retention.md) | Да, будьте в резервные копии автоматически сделанной до 10 лет. | Пока нет. Используйте `COPY_ONLY` [ручное резервное копирование](sql-database-managed-instance-transact-sql-information.md#backup) в качестве временного решения. |
 | [Master Data Services (MDS)](https://docs.microsoft.com/sql/master-data-services/master-data-services-overview-mds) | Нет | Нет |
 | [Минимальное ведение журнала при массовом импорте](https://docs.microsoft.com/sql/relational-databases/import-export/prerequisites-for-minimal-logging-in-bulk-import) | Нет | Нет |
 | [Изменение системных данных](https://docs.microsoft.com/sql/relational-databases/databases/system-databases) | Нет | Да |

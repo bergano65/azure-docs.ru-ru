@@ -2,20 +2,20 @@
 title: Определение самоподтвержденного технического профиля в настраиваемой политике в Azure Active Directory B2C | Документация Майкрософт
 description: Определение самоподтвержденного технического профиля в настраиваемой политике в Azure Active Directory B2C.
 services: active-directory-b2c
-author: davidmu1
+author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
 ms.date: 09/10/2018
-ms.author: davidmu
+ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 41305cc5825344a61ff15ddb5deb629cd0f1c679
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 3c728660f1a77c02f1e4b5fdeb467a7dbba4e36a
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64691033"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66512663"
 ---
 # <a name="define-a-self-asserted-technical-profile-in-an-azure-active-directory-b2c-custom-policy"></a>Определение самоподтвержденного технического профиля в настраиваемой политике Azure Active Directory B2C
 
@@ -23,7 +23,7 @@ ms.locfileid: "64691033"
 
 Все взаимодействия в Azure Active Directory (Azure AD) B2C, где пользователь должен предоставить входные данные, выполняются с использованием самоподтвержденных технических профилей. Например, страница регистрации, страница входа, страница сброса пароля.
 
-## <a name="protocol"></a>Protocol
+## <a name="protocol"></a>Протокол
 
 Атрибуту **Name** элемента **Protocol** необходимо присвоить значение `Proprietary`. Атрибут **handler** должен содержать полное имя сборки обработчика протокола, которое используется Azure AD B2C, для самоподтверждения: `Web.TPEngine.Providers.SelfAssertedAttributeProvider, Web.TPEngine, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null`.
 
@@ -65,7 +65,7 @@ ms.locfileid: "64691033"
 <OutputClaim ClaimTypeReferenceId="identityProvider" DefaultValue="live.com" AlwaysUseDefaultValue="true" />
 ```
 
-### <a name="use-case"></a>Вариант использования 
+### <a name="use-case"></a>Вариант использования
 
 Существует четыре сценария исходящих утверждений:
 
@@ -127,16 +127,16 @@ ms.locfileid: "64691033"
 
 ## <a name="metadata"></a>Метаданные
 
-| Атрибут | Обязательно для заполнения | ОПИСАНИЕ |
+| Атрибут | Обязательно для заполнения | Описание |
 | --------- | -------- | ----------- |
-| setting.showContinueButton | Нет  | Отображает кнопку "Продолжить". Возможные значения: `true` (по умолчанию) или `false`. |
-| setting.showCancelButton | Нет  | Отображает кнопку "Отмена". Возможные значения: `true` (по умолчанию) или `false`. |
-| setting.operatingMode | Нет  | Для страницы входа в систему это свойство управляет поведением поля имени пользователя, таким как проверка входных данных и вывод сообщений об ошибках. Ожидаемые значения: `Username` или `Email`. |
-| ContentDefinitionReferenceId | Yes | Идентификатор [определения содержимого](contentdefinitions.md), связанного с этим техническим профилем. |
-| EnforceEmailVerification | Нет  | При регистрации или изменении профиля применяет проверку по электронной почте. Возможные значения: `true` (по умолчанию) или `false`. | 
-| setting.showSignupLink | Нет  | Отображает кнопку "Регистрация". Возможные значения: `true` (по умолчанию) или `false`. |
-| setting.retryLimit | Нет  | Определяет, сколько раз пользователь может попытаться предоставить данные, что проверяется на соответствие техническому профилю проверки. Например, пользователь пытается зарегистрироваться с помощью учетной записи, которая уже существует, и продолжает попытки до достижения предела.
-| SignUpTarget | Нет  | Идентификатор обмена целевого объекта регистрации. Когда пользователь нажимает кнопку "Регистрация", Azure AD B2C выполняет указанный идентификатор обмена. |
+| setting.showContinueButton | Нет | Отображает кнопку "Продолжить". Возможные значения: `true` (по умолчанию) или `false`. |
+| setting.showCancelButton | Нет | Отображает кнопку "Отмена". Возможные значения: `true` (по умолчанию) или `false`. |
+| setting.operatingMode | Нет | Для страницы входа в систему это свойство управляет поведением поля имени пользователя, таким как проверка входных данных и вывод сообщений об ошибках. Ожидаемые значения: `Username` или `Email`. |
+| ContentDefinitionReferenceId | Да | Идентификатор [определения содержимого](contentdefinitions.md), связанного с этим техническим профилем. |
+| EnforceEmailVerification | Нет | При регистрации или изменении профиля применяет проверку по электронной почте. Возможные значения: `true` (по умолчанию) или `false`. | 
+| setting.showSignupLink | Нет | Отображает кнопку "Регистрация". Возможные значения: `true` (по умолчанию) или `false`. |
+| setting.retryLimit | Нет | Определяет, сколько раз пользователь может попытаться предоставить данные, что проверяется на соответствие техническому профилю проверки. Например, пользователь пытается зарегистрироваться с помощью учетной записи, которая уже существует, и продолжает попытки до достижения предела.
+| SignUpTarget | Нет | Идентификатор обмена целевого объекта регистрации. Когда пользователь нажимает кнопку "Регистрация", Azure AD B2C выполняет указанный идентификатор обмена. |
 
 ## <a name="cryptographic-keys"></a>Криптографические ключи
 

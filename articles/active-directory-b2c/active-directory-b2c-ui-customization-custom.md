@@ -2,20 +2,20 @@
 title: Настройка пользовательского интерфейса приложения с помощью настраиваемой политики в Azure Active Directory B2C | Документация Майкрософт
 description: Дополнительные сведения о настройке пользовательского интерфейса с помощью настраиваемой политики в Azure Active Directory B2C.
 services: active-directory-b2c
-author: davidmu1
+author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 12/18/2018
-ms.author: davidmu
+ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 5dc60c1fbdbd04653160db4d7794f8887305859d
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: c3c97e786e2147f043a63b90b886e01eb5944cb4
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64696882"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66507679"
 ---
 # <a name="customize-the-user-interface-of-your-application-using-a-custom-policy-in-azure-active-directory-b2c"></a>Настройка пользовательского интерфейса приложения с помощью настраиваемой политики в Azure Active Directory B2C
 
@@ -37,7 +37,7 @@ ms.locfileid: "64696882"
 
 Создадим содержимое HTML с названием вашей торговой марки в заголовке.
 
-1. Скопируйте следующий фрагмент кода HTML. Это код HTML5 с правильным форматом. Он содержит пустой элемент *\<div id="api"\>\</div\>*, заключенный в теги *\<body\>*. Этот элемент определяет расположение, в которое будет вставлено содержимое Azure AD B2C.
+1. Скопируйте следующий фрагмент кода HTML. Это код HTML5 с правильным форматом. Он содержит пустой элемент *\<div id="api"\>\</div\>* , заключенный в теги *\<body\>* . Этот элемент определяет расположение, в которое будет вставлено содержимое Azure AD B2C.
 
    ```html
    <!DOCTYPE html>
@@ -167,7 +167,7 @@ git clone https://github.com/azureadquickstarts/b2c-azureblobstorage-client
 
 Папка sample_templates/wingtip содержит следующие файлы HTML:
 
-| Шаблон HTML5 | ОПИСАНИЕ |
+| Шаблон HTML5 | Описание |
 |----------------|-------------|
 | *phonefactor.html* | Этот файл используется как шаблон для страницы многофакторной проверки подлинности. |
 | *ResetPassword.html* | Этот файл используется как шаблон для страницы восстановления пароля. |
@@ -177,7 +177,7 @@ git clone https://github.com/azureadquickstarts/b2c-azureblobstorage-client
 
 В разделе "Изменение настраиваемой политики регистрации или входа" мы настроили определение содержимого для `api.idpselections`. Полный набор идентификаторов для определения содержимого, распознаваемых в инфраструктуре Identity Experience Framework Azure AD B2C, а также их описания представлены в таблице ниже.
 
-| Идентификатор для определения содержимого | ОПИСАНИЕ | 
+| Идентификатор для определения содержимого | Описание | 
 |-----------------------|-------------|
 | *api.error* | **Страница ошибки.** Эта страница отображается при обнаружении исключения или ошибки. |
 | *api.idpselections* | **Страница выбора поставщика удостоверений.** На этой странице содержится список поставщиков удостоверений, которых можно выбирать во время входа пользователя. Это поставщики удостоверений организаций, социальных сетей, включая Facebook и Google+, или локальных учетных записей. |

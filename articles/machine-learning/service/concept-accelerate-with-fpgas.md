@@ -11,12 +11,12 @@ author: tedway
 ms.reviewer: jmartens
 ms.date: 04/24/2019
 ms.custom: seodec18
-ms.openlocfilehash: 1a690ea350ea98589e9134cd6f401c6ac3c58083
-ms.sourcegitcommit: 16cb78a0766f9b3efbaf12426519ddab2774b815
+ms.openlocfilehash: 9204b0d8513d4adbb9c93be94284d7d46de41e06
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65851024"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66479560"
 ---
 # <a name="what-are-field-programmable-gate-arrays-fpga"></a>Что такое программируемые пользователем Вентильные (матрицы FPGA)
 
@@ -80,7 +80,7 @@ FPGAs используется в следующих случаях:
 
 Ознакомьтесь с этими видеоматериалами и записями блога.
 
-+ [Гипермасштабируемое оборудование: машинное обучение в соответствующем масштабе на основе Azure и ППВМ. Сборка 2018 (видео)](https://www.youtube.com/watch?v=BMgQAHIx2eY)
++ [Гипермасштабируемое оборудование: машинное обучение в соответствующем масштабе на основе Azure и ППВМ. Сборка 2018 (видео)](https://channel9.msdn.com/events/Build/2018/BRK3202)
 
 + [Внутренние параметры настраиваемого облака на основе FPGA Microsoft (видео)](https://channel9.msdn.com/Events/Build/2017/B8063)
 

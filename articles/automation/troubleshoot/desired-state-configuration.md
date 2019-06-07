@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 04/16/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 63bb5c6338cf230c2bb47cb0a2c03810053f970a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 7cb0d77a266dbe8afd331782965e7e9a44663671
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61087274"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66514468"
 ---
 # <a name="troubleshoot-desired-state-configuration-dsc"></a>Устранение неполадок с платформой Desired State Configuration (DSC)
 
@@ -145,6 +145,25 @@ System.InvalidOperationException error processing property 'Credential' of type 
 #### <a name="resolution"></a>Способы устранения:
 
 * Убедитесь, что передайте правильные **ConfigurationData** присвоить **PSDscAllowPlainTextPassword** значение true для конфигурации каждого узла, указанное в конфигурации. См. дополнительные сведения о [ресурсах в службе Automation DSC Azure](../automation-dsc-compile.md#assets).
+
+### <a name="failure-processing-extension"></a>Сценарий. Помощь с внедрением от расширения dsc, ошибка «Сбой модуля обработки»
+
+#### <a name="issue"></a>Проблема
+
+При возникновении подключение с помощью расширения DSC, сбой с ошибкой:
+
+```error
+VM has reported a failure when processing extension 'Microsoft.Powershell.DSC'. Error message: \"DSC COnfiguration 'RegistrationMetaConfigV2' completed with error(s). Following are the first few: Registration of the Dsc Agent with the server <url> failed. The underlying error is: The attempt to register Dsc Agent with Agent Id <ID> with the server <url> return unexpected response code BadRequest. .\".
+```
+
+#### <a name="cause"></a>Причина:
+
+Эта ошибка обычно возникает, когда узел назначается имя конфигурации узла, который не существует в службе.
+
+#### <a name="resolution"></a>Способы устранения:
+
+* Убедитесь, что назначаете узлу имя конфигурации узла, который точно соответствует имени в службе.
+* Вы можете не включать имя конфигурации узла, что приведет к адаптации узел, но не Назначение конфигурации узлу
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

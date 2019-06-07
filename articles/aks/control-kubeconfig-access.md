@@ -5,14 +5,14 @@ services: container-service
 author: iainfoulds
 ms.service: container-service
 ms.topic: article
-ms.date: 01/03/2019
+ms.date: 05/31/2019
 ms.author: iainfou
-ms.openlocfilehash: d4d3d9a3ff57a7a388e9703d0d145d8ce6eafd12
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: b55cc226cfbb462cdccd73b3b80cfb0d56c10711
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66143011"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66475613"
 ---
 # <a name="use-azure-role-based-access-controls-to-define-access-to-the-kubernetes-configuration-file-in-azure-kubernetes-service-aks"></a>Чтобы определить доступ к файлу конфигурации Kubernetes в службе Azure Kubernetes (AKS), используйте элементы управления доступом на основе ролей.
 
@@ -24,7 +24,7 @@ ms.locfileid: "66143011"
 
 В этой статье предполагается, что у вас есть кластер AKS. Если вам нужен кластер AKS, обратитесь к этому краткому руководству по работе с AKS [с помощью Azure CLI][aks-quickstart-cli] или [портала Azure][aks-quickstart-portal].
 
-Для этой статьи требуется Azure CLI 2.0.53 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli-install].
+Здесь также предполагается, что вы используете Azure CLI версии 2.0.65 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli-install].
 
 ## <a name="available-cluster-roles-permissions"></a>Доступные разрешения ролей кластера
 
@@ -45,9 +45,9 @@ ms.locfileid: "66143011"
 
 ## <a name="assign-role-permissions-to-a-user-or-group"></a>Назначить разрешения роли пользователя или группы
 
-Чтобы назначить одну из доступных ролей, необходимо получить идентификатор ресурса кластера AKS и идентификатор учетной записи пользователя Azure AD или группы. Команды в приведенном ниже примере позволяют выполнить следующие действия:
+Чтобы назначить одну из доступных ролей, необходимо получить идентификатор ресурса кластера AKS и идентификатор учетной записи пользователя Azure AD или группы. Команды в следующем примере:
 
-* Получить идентификатор ресурса кластера с помощью команды [az aks show][az-aks-show] для кластера с именем *myAKSCluster* в группе ресурсов *myResourceGroup*. При необходимости укажите имя вашей группы ресурсов и кластера.
+* Получить идентификатор ресурса кластера с помощью [az aks show] [ az-aks-show] команду для кластера с именем *myAKSCluster* в *myResourceGroup* Группа ресурсов. При необходимости укажите имя вашей группы ресурсов и кластера.
 * Использует [az учетной записи, отображают] [ az-account-show] и [show пользователя ad az] [ az-ad-user-show] команды, чтобы получить свой идентификатор пользователя.
 * Назначить роль (с использованием команды [az role assignment create][az-role-assignment-create]).
 
@@ -69,7 +69,7 @@ az role assignment create \
 ```
 
 > [!TIP]
-> Если вы хотите назначить разрешения для группы Azure AD, обновите `--assignee` параметр с Идентификатором объекта, для группы, а не для пользователя, как показано в предыдущем примере. Чтобы получить идентификатор объекта для группы, используйте [Показать группы ad az] [ az-ad-group-show] команды. В следующем примере возвращается идентификатор объекта группы Azure AD с именем *appdev*: `az ad group show --group appdev --query objectId -o tsv`
+> Если вы хотите назначить разрешения для группы Azure AD, обновите `--assignee` показано в предыдущем примере с Идентификатором объекта, для параметра *группы* вместо *пользователя*. Чтобы получить идентификатор объекта для группы, используйте [Показать группы ad az] [ az-ad-group-show] команды. В следующем примере возвращается идентификатор объекта группы Azure AD с именем *appdev*: `az ad group show --group appdev --query objectId -o tsv`
 
 При необходимости можно изменить предыдущее назначение на *роль пользователя кластера*.
 

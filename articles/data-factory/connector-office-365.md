@@ -12,20 +12,21 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 05/07/2019
 ms.author: jingwang
-ms.openlocfilehash: 80ef8870bafa00f3debda99db299018a39d42a82
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 1a8d622aa280794d9a4d6fe7320ddcc21ac044f4
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66245039"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66475664"
 ---
 # <a name="copy-data-from-office-365-into-azure-using-azure-data-factory"></a>Копирование данных из Office 365 в Azure с помощью фабрики данных Azure
 
-Фабрика данных Azure позволяет в большом масштабе перемещать в Azure наборы корпоративных данных, хранимые в Office 365, чтобы на основе этих ценных ресурсов данных создавать аналитические приложения и получать важные сведения. Интеграция с Privileged Access Management обеспечивает безопасное управление доступом к ценным и проверенным данным в Office 365.  Дополнительные сведения о подключении Microsoft Graph к данным см. [здесь](https://docs.microsoft.com/graph/data-connect-concept-overview).
+Фабрика данных Azure интегрируется с [подключения данных Microsoft Graph](https://docs.microsoft.com/graph/data-connect-concept-overview), позволяя вам использовать широкий набор функций по организации данных в Office 365 клиента в Azure, масштабируемое и сборки приложений для анализа и извлекать сводки, на основе Эти ценных ресурсов данных. Интеграция с Privileged Access Management обеспечивает безопасное управление доступом к ценным и проверенным данным в Office 365.  Обратитесь к [эту ссылку](https://docs.microsoft.com/graph/data-connect-concept-overview) Общие сведения о Microsoft Graph данных подключения и ссылаться на [эту ссылку](https://docs.microsoft.com/graph/data-connect-policies#licensing) сведения о лицензировании.
 
 Из этой статьи вы узнаете, как с помощью действия копирования в Фабрике данных Azure скопировать данные из Office 365. Это продолжение [статьи об обзоре действия копирования](copy-activity-overview.md), в которой представлены общие сведения о действии копирования.
 
 ## <a name="supported-capabilities"></a>Поддерживаемые возможности
+Соединитель ADF Office 365 и данных Microsoft Graph подключения позволяет при обработке масштабирования различных типов наборов данных из почтовых ящиков поддержкой электронной почты Exchange, включая адресной книги, события календаря, сообщений электронной почты, сведения о пользователе, параметры почтового ящика, и т. д.  См. [здесь](https://docs.microsoft.com/graph/data-connect-datasets) чтобы увидеть полный список доступных наборов данных.
 
 Сейчас в пределах отдельного действия копирования вы можете только **копировать данные из Office 365 в [хранилище BLOB-объектов](connector-azure-blob-storage.md), [Gen1 хранилища Озера данных Azure](connector-azure-data-lake-store.md), и [Gen2 хранилища Озера данных Azure ](connector-azure-data-lake-storage.md) в формате JSON** (тип setOfObjects). Если вы хотите загрузить данные Office 365 в хранилища других типов или в других форматах, добавьте к первому действию копирования дополнительные действия, которые передадут эти данные в любое [поддерживаемое ADF целевое хранилище](copy-activity-overview.md#supported-data-stores-and-formats) (см. столбец "Поддерживается в качестве приемника" в таблице "Поддерживаемые хранилища и форматы данных").
 

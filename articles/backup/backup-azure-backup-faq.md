@@ -8,12 +8,12 @@ ms.service: backup
 ms.topic: conceptual
 ms.date: 01/08/2019
 ms.author: raynew
-ms.openlocfilehash: 479edc11604670189b0accba67aa8f345f6260cd
-ms.sourcegitcommit: f013c433b18de2788bf09b98926c7136b15d36f1
+ms.openlocfilehash: a0a2bc58603a81ba23ff3f1feb05f4d2350cfe72
+ms.sourcegitcommit: 6932af4f4222786476fdf62e1e0bf09295d723a1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65551378"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66688742"
 ---
 # <a name="azure-backup---frequently-asked-questions"></a>Часто задаваемые вопросы по Azure Backup
 Эта статья содержит ответы на часто задаваемые вопросы о службе Azure Backup.
@@ -43,7 +43,7 @@ ms.locfileid: "65551378"
 - На уровне Элементов не поддерживается для точек оперативного восстановления локальных виртуальных машин резервного копирования Azure backup Server или System Center DPM.
 
 
-## <a name="azure-backup-agent"></a>Агент службы архивации Azure
+## <a name="azure-backup-agent"></a>Агент Azure Backup
 
 ### <a name="where-can-i-find-common-questions-about-the-azure-backup-agent-for-azure-vm-backup"></a>Где мне найти вопросы и ответы об агенте Azure Backup для резервного копирования виртуальных машин Azure?
 
@@ -182,8 +182,8 @@ Exchange |Сумма размеров всех баз данных Exchange на
 ### <a name="is-there-a-limit-on-the-number-of-recovery-points-that-can-be-created"></a>Существует ли ограничение на число создаваемых точек восстановления?
 Для одного защищенного экземпляра можно создать до 9999 точек восстановления. Защищенный экземпляр — это компьютер, сервер (физический или виртуальный) или рабочая нагрузка, для которых настроено резервное копирование данных в Azure.
 
-- См. дополнительные сведения о [резервном копировании и восстановлении](./backup-introduction-to-azure-backup.md#backup-and-retention).
-- См. дополнительные сведения о [защищенных экземплярах](./backup-introduction-to-azure-backup.md#what-is-a-protected-instance).
+- См. дополнительные сведения о [резервном копировании и восстановлении](./backup-overview.md#backup-and-retention).
+
 
 ### <a name="how-many-times-can-i-recovery-data-thats-backed-up-to-azure"></a>Сколько раз я могу восстанавливать данные резервного копирования, сохраненные в Azure?
 Ограничение на количество операций восстановления из службы архивации Azure отсутствует.

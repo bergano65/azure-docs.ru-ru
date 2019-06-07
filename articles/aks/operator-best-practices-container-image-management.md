@@ -7,12 +7,12 @@ ms.service: container-service
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.author: iainfou
-ms.openlocfilehash: 1cc91f55d3895f06176875cb9ae620685dc09a26
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: ea39bceaa6b58e84def9635436d902002e33cd14
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60464819"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66514512"
 ---
 # <a name="best-practices-for-container-image-management-and-security-in-azure-kubernetes-service-aks"></a>Рекомендации по управлению и защите образов контейнеров в Службе Azure Kubernetes (AKS)
 
@@ -22,7 +22,6 @@ ms.locfileid: "60464819"
 
 > [!div class="checklist"]
 > * сканировать и устранять уязвимости образов;
-> * использовать доверенный реестр с образами контейнеров, содержащими цифровую подпись;
 > * автоматически активировать и повторно развертывать образы контейнеров при обновлении базового образа.
 
 Вы также можете изучить рекомендации по [безопасности кластера][best-practices-cluster-security] и [безопасности pod][best-practices-pod-security].
@@ -36,16 +35,6 @@ ms.locfileid: "60464819"
 ![Сканирование и исправление, проверка и развертывания образов контейнеров](media/operator-best-practices-container-security/scan-container-images-simplified.png)
 
 В реальном примере вы можете использовать конвейер непрерывной интеграции и непрерывного развертывания (CI/CD) для автоматизации сканирования, проверки и развертывания образов. Реестр контейнеров Azure включает в себя эти возможные сканирования уязвимости.
-
-## <a name="use-a-trusted-registry"></a>Использования доверенного реестра
-
-**Советы и рекомендации**. Ограничьте реестры образов, которые могут использовать модули pod и развертывания. Разрешите только доверенные реестры, в которых вы проверяете и контролируете доступные образы.
-
-Для обеспечения дополнительной безопасности можно также поставить цифровую подпись на образах контейнеров или на коде приложения. Только тогда вы разрешаете AKS развертывать подписанные образы. Этот процесс обеспечивает дополнительный уровень безопасности, поскольку вы ограничиваете AKS извлечением только доверенных образов с цифровой подписью, а не тех образов, которые проходят проверку на уязвимость. Кроме того, вы убедитесь, что образ контейнера не изменен и заменен образом с точно таким же именем.
-
-Доверенные реестры, которые предоставляют образы контейнеров с цифровой подписью, усложняют задачи вашей среде, но может потребоваться, чтобы они соответствовали определенной политике или требованиям. Реестр контейнеров Azure поддерживает использование доверенных реестров и подписанных образов.
-
-Дополнительные сведения о подписанных образах см. в разделе [Доверие к содержимому в Реестре контейнеров Azure][acr-content-trust].
 
 ## <a name="automatically-build-new-images-on-base-image-update"></a>Автоматическое создание новых образов на основе обновления базового образа
 
@@ -62,7 +51,6 @@ ms.locfileid: "60464819"
 Эта статья посвящена вопросам безопасности контейнеров. Для реализации части этих рекомендаций требуются сведения, опубликованные в следующих статьях:
 
 * [Руководство. автоматизации сборок образов контейнера при обновлении базового образа в службе "Реестр контейнеров Azure"][acr-base-image-update]
-* [Доверия содержимому в реестре контейнеров Azure][acr-content-trust]
 
 <!-- EXTERNAL LINKS -->
 [azure-pipelines]: /azure/devops/pipelines/?view=vsts
@@ -72,5 +60,4 @@ ms.locfileid: "60464819"
 <!-- INTERNAL LINKS -->
 [best-practices-cluster-security]: operator-best-practices-cluster-security.md
 [best-practices-pod-security]: developer-best-practices-pod-security.md
-[acr-content-trust]: ../container-registry/container-registry-content-trust.md
 [acr-base-image-update]: ../container-registry/container-registry-tutorial-base-image-update.md

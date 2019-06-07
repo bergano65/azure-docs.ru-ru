@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/27/2018
 ms.author: kumud
-ms.openlocfilehash: da8433e6c03aec5c5b2ff5d290065804816ac724
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: cb01aa84201c1e0727414215974a343e8cf3b724
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66122304"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66475903"
 ---
 # <a name="create-an-internal-load-balancer-to-load-balance-vms-using-azure-cli"></a>Создание внутренней подсистемы балансировки нагрузки с помощью Azure CLI для распределения нагрузки между виртуальными машинами
 
@@ -60,7 +60,7 @@ ms.locfileid: "66122304"
 
 ### <a name="create-the-load-balancer"></a>Создание подсистемы балансировки нагрузки
 
-С помощью команды [az network lb create](https://docs.microsoft.com/cli/azure/network/lb?view=azure-cli-latest) создайте общедоступную подсистему балансировки нагрузки уровня "Базовый" **myLoadBalancer** с интерфейсной конфигурацией IP-адресов **myFrontEnd** и внутренним пулом **myBackEndPool**, связанным с частным IP-адресом **10.0.0.7.
+Создание внутренней подсистемы балансировки нагрузки с [создать балансировки нагрузки сети az](https://docs.microsoft.com/cli/azure/network/lb?view=azure-cli-latest) с именем **myLoadBalancer** , включает в себя внешнюю IP-конфигурацию с именем **myFrontEnd**, пулу серверной части с именем **myBackEndPool** связанный с частным IP-адресом ** 10.0.0.7.
 
 ```azurecli-interactive
   az network lb create \

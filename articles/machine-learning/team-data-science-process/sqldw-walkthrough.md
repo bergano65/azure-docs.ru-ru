@@ -11,12 +11,12 @@ ms.topic: article
 ms.date: 11/24/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: e27c4462e7137145917d1284bfb6f8838e8a090b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: f9da031fd4b35c2fa9126f545eecacf6143b18a1
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61045483"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66478854"
 ---
 # <a name="the-team-data-science-process-in-action-using-sql-data-warehouse"></a>Процесс обработки и анализа данных группы на практике: использование хранилища данных SQL
 В этом руководстве описаны шаги по созданию и развертыванию модели машинного обучения с использованием хранилища данных SQL для общедоступного набора данных [Поездки такси Нью-Йорка](https://www.andresmh.com/nyctaxitrips/). Модель двоичной классификации позволяет спрогнозировать получение чаевых за поездку. Кроме того, здесь рассматриваются модели многоклассовой классификации и регрессии, которые помогают спрогнозировать распространение сумм чаевых, оплачиваемых за поездку.
@@ -584,11 +584,11 @@ ms.locfileid: "61045483"
 
 Чтобы запустить пример IPython Notebook или файл сценария Python, необходимо установить следующие пакеты Python. Если вы используете службу IPython Notebook Машинного обучения Azure, эти пакеты уже установлены.
 
-    - pandas
-    - numpy
-    - matplotlib
-    - pyodbc
-    - PyTables
+- pandas
+- numpy
+- matplotlib
+- pyodbc
+- PyTables
 
 Во время создания расширенных аналитических решений с использованием данных больших объемов с помощью Машинного обучения Azure рекомендуется придерживаться такой последовательности действий:
 
@@ -711,7 +711,7 @@ ms.locfileid: "61045483"
 
 ![вывод гистограммы][3]
 
-Azure и
+и
 
     pd.Series(trip_dist_bin_id).value_counts().plot(kind='line')
 
@@ -880,7 +880,7 @@ Azure и
 ### <a name="license-information"></a>Сведения о лицензии
 Этот образец пошагового руководства и сопровождающие его сценарии и файлы IPython Notebook предоставлены корпорацией Майкрософт на условиях лицензии MIT. Дополнительные сведения см. в файле LICENSE.txt каталога примеров кода на сайте GitHub.
 
-## <a name="references"></a>Ссылки
+## <a name="references"></a>Справочники
 • [Страница Андреса Монройя (Andrés Monroy) для скачивания данных о поездках в такси Нью-Йорка](https://www.andresmh.com/nyctaxitrips/) • [Получение данных о поездке Криса Вонга (Chris Whong) в такси Нью-Йорка](https://chriswhong.com/open-data/foil_nyc_taxi/) • [Статистические данные о комиссионных по такси и лимузинам Нью-Йорка](https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page)
 
 [1]: ./media/sqldw-walkthrough/sql-walkthrough_26_1.png

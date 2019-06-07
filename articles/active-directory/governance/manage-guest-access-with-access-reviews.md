@@ -16,12 +16,12 @@ ms.date: 12/13/2018
 ms.author: rolyon
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6fc5bcdbbe821008f74e85a91889044c8975ce93
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: 7c896356b67de185c55396e98aa6bb2e61dd004d
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66113263"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66472901"
 ---
 # <a name="manage-guest-access-with-azure-ad-access-reviews"></a>Управление гостевым доступом с помощью проверок доступа Azure AD
 
@@ -41,7 +41,7 @@ ms.locfileid: "66113263"
 
 ## <a name="create-and-perform-an-access-review-for-guests"></a>Создание и выполнение проверки доступа для гостей
 
-Во-первых, как глобальный администратор или администратор пользователей, перейдите к [страницу проверки доступа](https://portal.azure.com/#blade/Microsoft_AAD_ERM/DashboardBlade/) чтобы убедиться, что проверки доступа будет подходить для вашей организации.
+Во-первых, как глобальный администратор или администратор пользователей, перейдите к [страница управления удостоверениями](https://portal.azure.com/#blade/Microsoft_AAD_ERM/DashboardBlade/) чтобы убедиться, что проверки доступа будет подходить для вашей организации.
 
 Azure AD обеспечивает несколько сценариев проверок гостевых пользователей.
 

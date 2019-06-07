@@ -1,6 +1,6 @@
 ---
-title: 'Справочник по API v2 монитор состояния Azure: Получение состояния | Документация Майкрософт'
-description: Status Monitor v2 API Reference Get-ApplicationInsightsMonitoringStatus. Мониторинг производительности веб-сайта без повторного развертывания веб-сайта. Работает с веб-приложениями ASP.NET, размещенными локально, на виртуальных машинах или в Azure.
+title: 'Монитор состояния v2 Справочник по API Azure: Получение состояния | Документация Майкрософт'
+description: Справочник по API v2 монитор состояния. Get-ApplicationInsightsMonitoringStatus. Мониторинг производительности веб-сайта без повторного развертывания веб-сайта. Работает с веб-приложениями ASP.NET, размещенными локально, на виртуальных машинах или в Azure.
 services: application-insights
 documentationcenter: .net
 author: MS-TimothyMothra
@@ -12,37 +12,37 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: tilee
-ms.openlocfilehash: ff61cf2bfb49a64d2f885cb13fd6c48e32c1f8f3
-ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
+ms.openlocfilehash: 860226320fe1a546798cc462e4e5c06d4b9228cf
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65416006"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66514305"
 ---
 # <a name="status-monitor-v2-api-get-applicationinsightsmonitoringstatus-v022-alpha"></a>Состояние монитора v2 API: Get-ApplicationInsightsMonitoringStatus (v0.2.2-альфа-версия)
 
-В этом документе описывается командлет, который поставляется как член [модуль Az.ApplicationMonitor PowerShell](https://www.powershellgallery.com/packages/Az.ApplicationMonitor/).
+В этой статье описывается командлет, который является членом [модуль Az.ApplicationMonitor PowerShell](https://www.powershellgallery.com/packages/Az.ApplicationMonitor/).
 
 > [!IMPORTANT]
 > Состояние монитора v2 в настоящее время находится в общедоступной предварительной версии.
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
-> Дополнительные сведения см. в разделе [дополнительные условия использования предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)
+> Эта предварительная версия предоставляется без соглашения об уровне обслуживания, и мы не рекомендуем для рабочих нагрузок. Некоторые функции могут не поддерживаться, а некоторые могут иметь ограниченные возможности.
+> Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 ## <a name="description"></a>Описание
 
-Этот командлет предназначен для устранения неполадок модуль PowerShell используется.
-Этот командлет сообщает сведения о версии и файлы ключа, необходимые для отслеживания.
-Дополнительные параметры предоставляют дополнительные отчеты о текущем состоянии мониторинга.
+Включает устранение неполадок модуля PowerShell, который используется.
+Этот командлет сообщает сведения о версии и сведения о файлах ключей, необходимые для отслеживания.
+Дополнительные параметры предоставляют дополнительные отчеты на состояние мониторинга.
 
 > [!IMPORTANT] 
-> Для этого командлета требуется сеанс PowerShell с правами администратора.
+> Для этого командлета требуется сеанс PowerShell с разрешениями администратора.
 
 ## <a name="examples"></a>Примеры
 
 
-### <a name="example-basic-information"></a>Пример: основные сведения
+### <a name="example-basic-information"></a>Пример: Основные сведения
 
-Выполните команду: `Get-ApplicationInsightsMonitoringStatus` для получения выходных данных сведения об этом модуле:
+Запустите `Get-ApplicationInsightsMonitoringStatus` для отображения сведений о текущем модуле:
 
 ```
 PS C:\> Get-ApplicationInsightsMonitoringStatus
@@ -77,11 +77,11 @@ Machine Identifier:
 0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF
 ```
 
-### <a name="example-runtime-status"></a>Пример: состояние среды выполнения
+### <a name="example-runtime-status"></a>Пример: Состояние среды выполнения
 
 Вы можете проверить процесс на компьютере инструментированного ли все библиотеки DLL загружаются. Если мониторинг работает, по крайней мере 12 библиотеки DLL должны быть загружены.
 
-- Cmd: `Get-ApplicationInsightsMonitoringStatus -InspectProcess`
+Выполните команду `Get-ApplicationInsightsMonitoringStatus -InspectProcess`:
 
 
 ```
@@ -115,19 +115,19 @@ listdlls64.exe -accepteula w3wp
 0x000000000ad60000  0x108000  C:\Windows\TEMP\2.4.0.0.Microsoft.ApplicationInsights.Extensions.Intercept_x64.dll
 ```
 
-## <a name="parameters"></a>Параметры 
+## <a name="parameters"></a>Параметры
 
-### <a name="no-params"></a>(Без параметров)
+### <a name="no-parameters"></a>(Без параметров)
 
-По **по умолчанию**, он сообщит, номера версий и путей к DLL-библиотеки, необходимые для отслеживания.
+По умолчанию этот командлет сообщает номера версий и путей к DLL-библиотеки, необходимые для отслеживания.
 
 Используйте этот параметр, если вам нужно определить версию любой библиотеки DLL, в том числе пакет SDK Application Insights.
 
 
 ### <a name="-inspectprocess"></a>-InspectProcess
 
-**Необязательный**. Этот командлет будет сообщать, если IIS работает.
-Этот командлет также будет загружать внешние средства для проверки, если необходимые библиотеки DLL загружаются в среду выполнения служб IIS.
+**Необязательный**. Используйте этот параметр, чтобы сообщить, работает ли службы IIS.
+Также будут загружены внешние средства, чтобы определить необходимые библиотеки DLL загружаются в среду выполнения служб IIS.
 
 
 Если этот процесс завершается ошибкой по любой причине, можно вручную выполните следующие команды:
@@ -138,7 +138,7 @@ listdlls64.exe -accepteula w3wp
 
 ### <a name="-force"></a>-Force
 
-**Необязательный**. Используется только с InspectProcess. Этот параметр пропустит сообщение для пользователя на загрузку дополнительных средств.
+**Необязательный**. Используется только с InspectProcess. Используйте этот параметр, чтобы пропустить запрос к пользователю, которое появляется перед загружаются дополнительные средства.
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

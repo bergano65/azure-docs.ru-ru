@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.date: 03/06/2019
 ms.author: mayg
-ms.openlocfilehash: bcfeca34eb11caaddac06971fe7f825a142586a2
-ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
+ms.openlocfilehash: efb49db6cce7ba238d40bf80ddf87b2a1a83834f
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65602068"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66479984"
 ---
 # <a name="install-a-linux-master-target-server-for-failback"></a>Установка главного целевого сервера Linux для восстановления размещения
 После отработки отказа виртуальных машин в Azure для них можно восстановить размещение на локальном сайте. Для восстановления размещения из Azure на локальном сайте необходимо повторно включить защиту виртуальной машины. Для этого понадобится локальный главный целевой сервер, который будет получать трафик. 
@@ -91,7 +91,7 @@ ms.locfileid: "65602068"
 
 1. Чтобы создать учетную запись пользователя, введите имя пользователя и выберите **Продолжить**.
 
-      ![Создать учетную запись пользователя](./media/vmware-azure-install-linux-master-target/image9.png)
+      ![Создание учетной записи пользователя](./media/vmware-azure-install-linux-master-target/image9.png)
 
 1. Введите пароль для новой учетной записи пользователя, а затем выберите **Продолжить**.
 
@@ -245,7 +245,7 @@ ms.locfileid: "65602068"
 
     ![Идентификатор Multipath](./media/vmware-azure-install-linux-master-target/image27.png)
 
-3. Отформатируйте диск и затем создайте файловую систему на новом диске: **mkfs.ext4 /dev/mapper/<ИД Multipath диска хранения>**.
+3. Отформатируйте диск и затем создайте файловую систему на новом диске: **mkfs.ext4 /dev/mapper/<ИД Multipath диска хранения>** .
     
     ![Файловая система](./media/vmware-azure-install-linux-master-target/image23-centos.png)
 

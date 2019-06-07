@@ -9,12 +9,12 @@ ms.topic: article
 ms.date: 01/02/2019
 ms.author: jeffpatt
 ms.subservice: files
-ms.openlocfilehash: 9658ed46e1a46aa3fc2c7fe251fd73b2ef0a13dd
-ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
+ms.openlocfilehash: 7bc7f3631748f4ac74a76e9e67aa2aef2c8f9a71
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65991366"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66480319"
 ---
 # <a name="troubleshoot-azure-files-problems-in-windows"></a>Устранение неполадок службы файлов Azure в Windows
 
@@ -136,14 +136,13 @@ Windows 8, Windows Server 2012 или более поздние версии э�
 
 Сократите количество одновременно открытых дескрипторов, закрыв некоторые из них, и повторите попытку. Дополнительные сведения см. в статье [Производительность хранилища Microsoft Azure и контрольный список масштабируемости](../common/storage-performance-checklist.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json).
 
-<a id="accessdeniedportal"></a>
-## <a name="error-access-denied-when-browsing-to-an-azure-file-share-in-the-portal"></a>Ошибка "Доступ запрещен" при переходе к общему файловому ресурсу Azure на портале
+<a id="authorizationfailureportal"></a>
+## <a name="error-authorization-failure-when-browsing-to-an-azure-file-share-in-the-portal"></a>Ошибка «Сбой авторизации» при переходе по файловый ресурс Azure на портале
 
 При переходе к общему файловому ресурсу Azure на портале, может появиться следующая ошибка.
 
-Доступ запрещен  
-Нет доступа  
-Похоже, у вас нет доступа к этому контенту. Чтобы получить его, обратитесь к владельцу.  
+Сбой авторизации  
+Нет доступа 
 
 ### <a name="cause-1-your-user-account-does-not-have-access-to-the-storage-account"></a>Причина 1. Учетная запись пользователя не имеет доступа к учетной записи хранения
 
@@ -268,7 +267,7 @@ Windows 8, Windows Server 2012 или более поздние версии э�
 
 Чтобы устранить эту проблему, настройте значение реестра **DirectoryCacheEntrySizeMax** разрешать кэшировать большие списки каталогов на компьютере клиента.
 
-- Расположение: HKLM\System\CCS\Services\Lanmanworkstation\Parameters
+- Расположение. HKLM\System\CCS\Services\Lanmanworkstation\Parameters
 - Имя значения: DirectoryCacheEntrySizeMax 
 - Тип значения: DWORD
  

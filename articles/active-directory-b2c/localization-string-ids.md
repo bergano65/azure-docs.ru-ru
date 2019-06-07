@@ -2,20 +2,20 @@
 title: Azure Active Directory B2C. Идентификаторы строк локализации | Документация Майкрософт
 description: Сведения об указании идентификаторов для определения содержимого с идентификатором api.signuporsignin в настраиваемой политике в Azure Active Directory B2C.
 services: active-directory-b2c
-author: davidmu1
+author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: reference
 ms.date: 09/10/2018
-ms.author: davidmu
+ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: c6cabcc89e66e9fbf153f2931bfe8b9b70c5f426
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 41a72013f1538b0a857c76bc949a7109e1cd54b4
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64682707"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66510928"
 ---
 # <a name="localization-string-ids"></a>Идентификаторы строк локализации
 
@@ -33,7 +33,7 @@ ms.locfileid: "64682707"
 | **logonIdentifier_email** | Электронная почта |
 | **requiredField_email** | Введите свой адрес электронной почты |
 | **invalid_email** | Введите действительный адрес электронной почты |
-| **email_pattern** | ^[a-zA-Z0-9.!#$%&’'*+/=?^_\`{\|}~-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)*$ |
+| **email_pattern** | ^[a-zA-Z0-9.!#$%&’' *+/=?^_\`{\|}~-]+@[a-zA-Z0-9-]+(?:\\.[a-zA-Z0-9-]+)* $ |
 | **local_intro_username** | Войти, используя свое имя пользователя |
 | **logonIdentifier_username** | Имя пользователя |
 | **requiredField_username** | Введите свое имя пользователя |
@@ -120,7 +120,7 @@ ms.locfileid: "64682707"
 | **ver_incorrect_format** | Неверный формат. |
 | **ver_but_edit** | Изменить адрес электронной почты |
 | **ver_but_verify** | Проверить код |
-| **alert_no** | Нет  |
+| **alert_no** | Нет |
 | **ver_info_msg** | Код проверки отправлен на ваш адрес. Скопируйте его в поле ввода ниже. |
 | **day** | День |
 | **ver_fail_throttled** | Отправлено слишком много запросов на проверку этого адреса электронной почты. Повторите попытку позже. |

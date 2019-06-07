@@ -2,20 +2,20 @@
 title: Устранение неполадок в пользовательских политиках в Azure Active Directory B2C | Документация Майкрософт
 description: Узнайте о способах решения проблем при работе с пользовательскими политиками в Azure Active Directory B2C.
 services: active-directory-b2c
-author: davidmu1
+author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 05/07/2017
-ms.author: davidmu
+ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 5345069005f9161ff04fffb063fda99b7594ec08
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 552f056a6637b3ebacfbd15eb878c28adbec6b88
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64703045"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66509975"
 ---
 # <a name="troubleshoot-azure-ad-b2c-custom-policies-and-identity-experience-framework"></a>Устранение неполадок в пользовательских политиках Azure AD B2C и инфраструктуре процедур идентификации
 
@@ -57,8 +57,8 @@ ms.locfileid: "64703045"
 
 * Используйте `Run Now` и `https://jwt.io`, чтобы проверить свои политики независимо от мобильного приложения или веб-приложения. Этот веб-сайт работает как приложение проверяющей стороны. Он отображает содержимое маркера JSON Web Token (JWT), созданного политикой Azure AD B2C. Чтобы создать тестовое приложение в инфраструктуре процедур идентификации, используйте следующие свойства:
     * Имя: TestApp
-    * Веб-приложение или веб-API: Нет 
-    * Собственный клиент: Нет 
+    * Веб-приложение или веб-API: Нет
+    * Собственный клиент: Нет
 
 * Чтобы отследить обмен сообщениями между клиентским браузером и Azure AD B2C, используйте [Fiddler](https://www.telerik.com/fiddler). Это позволит узнать, где в шагах оркестрации случился сбой пути взаимодействия пользователя.
 

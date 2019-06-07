@@ -1,24 +1,24 @@
 ---
-title: Краткое руководство. Прием данных из Kafka в Azure Data Explorer
-description: В этом кратком руководстве описывается, как выполняется прием данных (загрузка) в Azure Data Explorer из Kafka.
+title: Прием данных из Kafka в Azure Data Explorer
+description: В этой статье вы узнаете, как прием данных (загрузка) в обозреватель данных Azure из Kafka.
 author: orspod
 ms.author: orspodek
 ms.reviewer: mblythe
 ms.service: data-explorer
-ms.topic: quickstart
-ms.date: 05/17/2019
-ms.openlocfilehash: f36acb7237438848a53fdf91c291c4f67233af5d
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
-ms.translationtype: HT
+ms.topic: conceptual
+ms.date: 06/03/2019
+ms.openlocfilehash: 03b46ff50683149a22c71ccb155480a0f08455bd
+ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65901022"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66497285"
 ---
-# <a name="quickstart-ingest-data-from-kafka-into-azure-data-explorer"></a>Краткое руководство. Прием данных из Kafka в Azure Data Explorer
+# <a name="ingest-data-from-kafka-into-azure-data-explorer"></a>Прием данных из Kafka в Azure Data Explorer
  
 Обозреватель данных Azure — это быстрая и высокомасштабируемая служба для изучения данных журналов и телеметрии. Azure Data Explorer позволяет принимать (загружать) данные из Kafka. Kafka — это распределенная платформа потоковой передачи, которая позволяет в режиме реального времени выполнять сборку конвейеров потоковой передачи данных, обеспечивающих надежный обмен данными между системами и приложениями.
  
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
  
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/) Azure, прежде чем начинать работу. 
  
@@ -160,7 +160,6 @@ cd ./azure-kusto-samples-dotnet/kafka/
  
     ![Набор результатов для сообщений](media/ingest-data-event-hub/message-result-set.png)
  
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
  
-> [!div class="nextstepaction"]
-> [Краткое руководство Запрос данных в Azure Data Explorer](web-query-data.md)
+* [Запросы к данным в обозреватель данных Azure](web-query-data.md)

@@ -1,8 +1,8 @@
 ---
-title: Операции и управление в рабочей среде Azure
-description: В этой статье дается общее описание управления и функционирования сети Azure.
+title: Управление рабочей сети Azure — Microsoft Azure
+description: В этой статье описывается, как корпорация Майкрософт управляет и работает в рабочей сети Azure для защиты центров обработки данных Azure.
 services: security
-documentationcenter: na
+documentationcenter: n
 author: TerryLanfear
 manager: barbkess
 editor: TomSh
@@ -12,16 +12,20 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 06/28/2018
+ms.date: 05/30/2019
 ms.author: terrylan
-ms.openlocfilehash: 0099eb61d97f813f7adca320b47c195fa1aabbdc
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 515896851c5bf7b9c847416ebadedf1242e0eeb9
+ms.sourcegitcommit: ef06b169f96297396fc24d97ac4223cabcf9ac33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60591472"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66428265"
 ---
-# <a name="azure-production-operations-and-management"></a>Операции и управление в рабочей среде Azure    
+# <a name="management-and-operation-of-the-azure-production-network"></a>Управление и функционирование сети рабочей среды Azure    
+В этой статье описывается, как корпорация Майкрософт управляет и работает в рабочей сети Azure для защиты центров обработки данных Azure.
+
+## <a name="monitor-log-and-report"></a>Монитор, журналов и отчетов
+
 Эксплуатация производственной сети Azure и управление ею — это скоординированная работа операционных команд Azure и Базы данных SQL Azure. В среде командами используются несколько инструментов мониторинга производительности приложений и систем. Они используют соответствующие инструменты для контроля сетевых устройств, серверов, служб и процессов приложений.
 
 Для обеспечения безопасной работы служб в среде Azure операционные команды реализуют несколько уровней мониторинга, ведения журналов и отчетов, включая следующие действия.

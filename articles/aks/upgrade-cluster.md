@@ -5,22 +5,24 @@ services: container-service
 author: iainfoulds
 ms.service: container-service
 ms.topic: article
-ms.date: 02/12/2019
+ms.date: 05/31/2019
 ms.author: iainfou
-ms.openlocfilehash: 59d52db8c3f5f8968eae1a544abe1e5c6bbaacca
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: 2cadd4b33cb52307599ce1e83eee8370ef9850fe
+ms.sourcegitcommit: 18a0d58358ec860c87961a45d10403079113164d
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65072741"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66692781"
 ---
 # <a name="upgrade-an-azure-kubernetes-service-aks-cluster"></a>Обновление кластера службы Azure Kubernetes (AKS)
 
-Частое обновление Kubernetes до последней версии является частью жизненного цикла кластера AKS. Очень важно применять последние выпуски безопасности Kubernetes или обновлять последние функции. В этой статье показано, как выполнить обновление существующего кластера AKS.
+Частое обновление Kubernetes до последней версии является частью жизненного цикла кластера AKS. Очень важно применять последние выпуски безопасности Kubernetes или обновлять последние функции. В этой статье показано, как обновить основные компоненты или отдельный пул по умолчанию узел в кластере AKS.
+
+AKS кластеры, использующие несколько пулов узлов или узлов Windows Server (как в настоящее время в предварительной версии в AKS), см. в разделе [обновить пуле узел в AKS][nodepool-upgrade].
 
 ## <a name="before-you-begin"></a>Перед началом работы
 
-Для работы с этой статьей требуется Azure CLI 2.0.56 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli-install].
+Здесь предполагается, что вы используете Azure CLI версии 2.0.65 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI 2.0][azure-cli-install].
 
 ## <a name="check-for-available-aks-cluster-upgrades"></a>Проверка доступных обновлений кластера AKS
 
@@ -31,24 +33,26 @@ az aks get-upgrades --resource-group myResourceGroup --name myAKSCluster --outpu
 ```
 
 > [!NOTE]
-> После обновления кластера AKS промежуточные версии Kubernetes невозможно пропустить. Например, разрешены обновления между версиями *1.10.x* -> *1.11.x* или *1.11.x* -> *1.12.x*, но *1.10.x* -> *1.12.x* запрещено.
+> После обновления кластера AKS промежуточные версии Kubernetes невозможно пропустить. Например, обновляет между *1.11.x* -> *1.12.x* или *1.12.x* -> *1.13.x* разрешены, однако *1.11.x* -> *1.13.x* не является.
 >
-> Чтобы выполнить обновление с *1.10.x* -> *1.12.x*, сначала обновите с *1.10.x* -> *1.11.x*, а затем — с *1.11.x* -> *1.12.x*.
+> Чтобы обновить, из *1.11.x* -> *1.13.x*, сначала обновление с *1.11.x* -> *1.12.x*, затем обновления из *1.12.x* -> *1.13.x*.
 
-В следующем примере выходных данных показано кластер, который можно обновить до версии *1.11.5* или *1.11.6*.
+В следующем примере выходных данных показано, что кластер можно обновить до версии *1.12.7* или *1.12.8*:
 
 ```console
-Name     ResourceGroup    MasterVersion    NodePoolVersion    Upgrades
--------  ---------------  ---------------  -----------------  --------------
-default  myResourceGroup  1.10.12          1.10.12            1.11.5, 1.11.6
+Name     ResourceGroup    MasterVersion  NodePoolVersion  Upgrades
+-------  ---------------  -------------  ---------------  --------------
+default  myResourceGroup  1.11.9         1.11.9           1.12.7, 1.12.8
 ```
 
 ## <a name="upgrade-an-aks-cluster"></a>Обновление кластера AKS
 
-С помощью команды [az aks upgrade][az-aks-upgrade] обновите кластер AKS, используя список доступных версий. Чтобы свернуть сбой выполнения приложений, в ходе процесса обновления AKS добавит новый узел в кластер, а затем узлы будут по очереди [блокироваться и останавливаться][kubernetes-drain]. В следующем примере кластер обновляется до версии *1.11.6*.
+С помощью команды [az aks upgrade][az-aks-upgrade] обновите кластер AKS, используя список доступных версий. В процессе обновления AKS добавляет новый узел в кластер под управлением указанной версии Kubernetes, затем внимательно [cordon и продвижения] [ kubernetes-drain] один из старого узлов, чтобы свести к минимуму нарушения работы приложения. Когда новый узел утверждается как запущенные модули приложения, удаляется старый узел. Этот процесс повторяется до обновления всех узлов в кластере.
+
+В следующем примере обновляется кластер до версии *1.12.8*:
 
 ```azurecli-interactive
-az aks upgrade --resource-group myResourceGroup --name myAKSCluster --kubernetes-version 1.11.6
+az aks upgrade --resource-group myResourceGroup --name myAKSCluster --kubernetes-version 1.12.8
 ```
 
 Время, требуемое для выполнения обновления кластера, зависит от количества узлов.
@@ -59,12 +63,12 @@ az aks upgrade --resource-group myResourceGroup --name myAKSCluster --kubernetes
 az aks show --resource-group myResourceGroup --name myAKSCluster --output table
 ```
 
-В следующем примере выходных данных видно, что версия кластера — *1.11.6*.
+В следующем примере выходных данных показано, что кластера теперь выполняются *1.12.8*:
 
 ```json
 Name          Location    ResourceGroup    KubernetesVersion    ProvisioningState    Fqdn
 ------------  ----------  ---------------  -------------------  -------------------  ---------------------------------------------------------------
-myAKSCluster  eastus      myResourceGroup  1.11.6               Succeeded            myaksclust-myresourcegroup-19da35-90efab95.hcp.eastus.azmk8s.io
+myAKSCluster  eastus      myResourceGroup  1.12.8               Succeeded            myaksclust-myresourcegroup-19da35-90efab95.hcp.eastus.azmk8s.io
 ```
 
 ## <a name="next-steps"></a>Дальнейшие действия
@@ -83,3 +87,4 @@ myAKSCluster  eastus      myResourceGroup  1.11.6               Succeeded       
 [az-aks-get-upgrades]: /cli/azure/aks#az-aks-get-upgrades
 [az-aks-upgrade]: /cli/azure/aks#az-aks-upgrade
 [az-aks-show]: /cli/azure/aks#az-aks-show
+[nodepool-upgrade]: use-multiple-node-pools.md#upgrade-a-node-pool

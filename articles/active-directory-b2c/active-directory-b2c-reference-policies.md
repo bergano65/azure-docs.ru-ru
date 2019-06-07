@@ -2,20 +2,20 @@
 title: Потоки пользователей в Azure Active Directory B2C | Документация Майкрософт
 description: Сведения о расширяемой платформе политик Azure Active Directory B2C и создании различных потоков пользователей.
 services: active-directory-b2c
-author: davidmu1
+author: mmacy
 manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: conceptual
 ms.date: 11/30/2018
-ms.author: davidmu
+ms.author: marsma
 ms.subservice: B2C
-ms.openlocfilehash: 3bb7b5d4126cde854da01451fd62ba969e605c1f
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 54677dc0771f65b7636b4d1cac77f53f9c04a09d
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64703707"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66508936"
 ---
 # <a name="user-flows-in-azure-active-directory-b2c"></a>Потоки пользователей в Azure Active Directory B2C
 
@@ -71,7 +71,7 @@ client_id=2d4d11a2-f814-46a7-890a-274a72a7309e      // Your registered Applicati
 
 ## <a name="linking-user-flows"></a>Связывание потоков пользователей
 
-При использовании потока пользователя **регистрации или входа** с локальными учетными записями на первой странице интерфейса отображается ссылка **Забыли пароль?**. При переходе по этой ссылке поток пользователя сброса паролей не активируется автоматически. 
+При использовании потока пользователя **регистрации или входа** с локальными учетными записями на первой странице интерфейса отображается ссылка **Забыли пароль?** . При переходе по этой ссылке поток пользователя сброса паролей не активируется автоматически. 
 
 Вместо этого в приложение возвращается код ошибки `AADB2C90118`. Приложение должно обработать этот код ошибки, выполнив конкретный поток пользователя, который позволяет сбросить пароль. Чтобы увидеть пример, просмотрите [простой пример ASP.NET](https://github.com/AzureADQuickStarts/B2C-WebApp-OpenIDConnect-DotNet-SUSI), в котором демонстрируется связывание потоков пользователей.
 

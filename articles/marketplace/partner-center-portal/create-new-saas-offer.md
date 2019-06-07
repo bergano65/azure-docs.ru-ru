@@ -7,27 +7,28 @@ ms.author: mattwoj
 ms.service: marketplace
 ms.topic: conceptual
 ms.date: 05/30/2019
-ms.openlocfilehash: 9750aa924ba4b6e4e5f3a51e5b34531d3fab0a6e
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 9c8b8a6ad8a10a65a05b46bf433d00b4e3ecb402
+ms.sourcegitcommit: ec7b0bf593645c0d1ef401a3350f162e02c7e9b8
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66243306"
+ms.lasthandoff: 06/01/2019
+ms.locfileid: "66455630"
 ---
 # <a name="create-a-new-saas-offer"></a>Создайте новое предложение SaaS
 
-Чтобы начать создавать программное обеспечение как услуга (SaaS) предлагает, убедитесь, первый [создать учетную запись центра партнеров](./create-account.md) и откройте [коммерческих Marketplace панели мониторинга](https://partner.microsoft.com/dashboard/commercial-marketplace/offers), с **предлагает** выделенной вкладки. 
+Чтобы начать создавать программное обеспечение как услуга (SaaS) предлагает, убедитесь, первый [создать учетную запись центра партнеров](./create-account.md) и откройте [коммерческих Marketplace панели мониторинга](https://partner.microsoft.com/dashboard/commercial-marketplace/offers), с **Обзор** выделенной вкладки.
 
-![Коммерческие Marketplace мониторинга в центре партнеров](./media/commercial-marketplace-offers.png)
+![Коммерческие Marketplace мониторинга в центре партнеров](./media/new-offer-overview.png)
 
 Выберите + **создайте новый...** кнопки, а затем выберите **программное обеспечение как услуга** пункта меню. 
 
 При выборе одной из других типов предложений, вы будете перенаправлены к старому [облачный портал для партнеров](https://cloudpartner.azure.com/).  Только предложения SaaS доступны на портале коммерческих решений партнеров в центре партнеров в настоящее время. 
 
-![Создать окно предложения в центре партнеров](./media/new-offer.png)
+![Создать окно предложения в центре партнеров](./media/new-offer-click.png)
 
+**Новое предложение** диалоговое окно. 
 
-**Новое предложение** диалоговое окно. ![Диалоговое окно нового предложения](./media/new-offer-popup.png)
+![Диалоговое окно нового предложения](./media/new-offer-popup.png)
 
 
 ## <a name="offer-id-and-name"></a>Идентификатор предложения и имя

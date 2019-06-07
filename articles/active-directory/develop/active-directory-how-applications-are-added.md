@@ -13,17 +13,17 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 04/18/2018
+ms.date: 06/04/2019
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: elisol, lenalepa
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8cc9d0a951ac6f7ed18ad6558ae9edb2d1f9c8f4
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.openlocfilehash: 84069fb80ac751cbde53b0febdac451b54cd2b29
+ms.sourcegitcommit: 6932af4f4222786476fdf62e1e0bf09295d723a1
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2019
-ms.locfileid: "65544650"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66688754"
 ---
 # <a name="how-and-why-applications-are-added-to-azure-ad"></a>Как и почему приложения добавляются в Azure AD
 
@@ -32,9 +32,9 @@ ms.locfileid: "65544650"
 * [Субъекты-службы](app-objects-and-service-principals.md#service-principal-object) — их можно считать экземпляром приложения. Субъекты-службы обычно ссылаются на объект приложения, а на один объект приложения могут ссылаться несколько субъектов-служб в каталогах.
 
 ## <a name="what-are-application-objects-and-where-do-they-come-from"></a>Что такое объекты приложений и откуда они берутся?
-Вы можете управлять [объектами приложения](app-objects-and-service-principals.md#application-object) на портале Azure в разделе [Регистрации приложений](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ApplicationsListBlade). Объекты приложений описывают приложение для Azure AD и могут считаться определением приложения, так как предоставляют службе сведения о том, как выдавать маркеры безопасности для приложения в соответствии с его параметрами. Объект приложения будет существовать только в своем домашнем каталоге, даже если это мультитенантное приложение, поддерживающее субъекты-службы в других каталогах. В объекте приложения могут содержаться любые из следующих сведений (а также дополнительные сведения, не упомянутые здесь):
+Вы можете управлять [объектами приложения](app-objects-and-service-principals.md#application-object) на портале Azure в разделе [Регистрации приложений](https://aka.ms/appregistrations). Объекты приложений описывают приложение для Azure AD и могут считаться определением приложения, так как предоставляют службе сведения о том, как выдавать маркеры безопасности для приложения в соответствии с его параметрами. Объект приложения будет существовать только в своем домашнем каталоге, даже если это мультитенантное приложение, поддерживающее субъекты-службы в других каталогах. В объекте приложения могут содержаться любые из следующих сведений (а также дополнительные сведения, не упомянутые здесь):
 * имя, логотип и издатель;
-* URL-адреса ответа
+* URI перенаправления
 * секретные ключи (симметричные и/или асимметричные ключи, применяемые для проверки подлинности приложения);
 * зависимости API (OAuth);
 * опубликованные API-интерфейсы, ресурсы, области (OAuth);
@@ -74,7 +74,7 @@ ms.locfileid: "65544650"
   * Когда вы подписываетесь на Office 365 или начинаете работать с пробной версией, в каталоге создается один или несколько субъектов-служб, которые представляют различные службы, используемые для предоставления всех возможностей, связанных с Office 365.
   * Некоторые службы Office 365, например SharePoint, создают субъекты-службы на постоянной основе, чтобы обеспечивать безопасное взаимодействие между компонентами, включая рабочие процессы.
 * Когда администратор добавляет приложение из коллекции приложений (при этом также создается объект базового приложения).
-* Добавление приложения для использования [Azure AD Application Proxy](https://msdn.microsoft.com/library/azure/dn768219.aspx).
+* Добавление приложения для использования [Azure AD Application Proxy](/azure/active-directory/manage-apps/application-proxy).
 * Подключение приложения для единого входа в систему с помощью SAML или единого входа по паролю (SSO)
 * Программным путем через API Graph Azure AD или PowerShell
 
@@ -101,8 +101,8 @@ ms.locfileid: "65544650"
   * утверждает правила преобразования.
   * Сопоставление атрибутов (подготовка пользователей)
 * Более подробные сведения об объектах субъекта-службы и приложений см. в справочной документации по Azure AD Graph REST API.
-  * [Приложения](https://msdn.microsoft.com/library/azure/ad/graph/api/entity-and-complex-type-reference#application-entity)
-  * [Субъект-служба](https://msdn.microsoft.com/library/azure/ad/graph/api/entity-and-complex-type-reference#serviceprincipal-entity)
+  * [Приложения](/previous-versions/azure/ad/graph/api/entity-and-complex-type-reference#application-entity)
+  * [Субъект-служба](/previous-versions/azure/ad/graph/api/entity-and-complex-type-reference#serviceprincipal-entity)
 
 ## <a name="why-do-applications-integrate-with-azure-ad"></a>Зачем интегрировать приложения с Azure AD?
 Приложения добавляются в Azure AD, чтобы использовать одну или несколько служб, предоставляемых данной системой, включая следующее:

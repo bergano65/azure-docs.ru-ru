@@ -1,24 +1,24 @@
 ---
-title: Краткое руководство. Прием данных с помощью пакета SDK .NET Standard для Azure Data Explorer (предварительная версия)
-description: В этом кратком руководстве описано, как принимать (загружать) данные в Azure Data Explorer с помощью пакета SDK .NET Standard.
+title: Прием данных с помощью пакета SDK .NET Standard для Azure Data Explorer (предварительная версия)
+description: В этой статье вы узнаете, как прием данных (загрузка) в обозреватель данных Azure с помощью пакета SDK для .NET Standard.
 author: orspod
 ms.author: orspodek
 ms.reviewer: mblythe
 ms.service: data-explorer
-ms.topic: quickstart
-ms.date: 11/18/2018
-ms.openlocfilehash: 6a068c45a13bd45a09ed51fd154b5842938e0c5e
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
-ms.translationtype: HT
+ms.topic: conceptual
+ms.date: 06/03/2019
+ms.openlocfilehash: 53cf055a0900a25923fe67b961755c1f4367e1fb
+ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59044676"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66496889"
 ---
-# <a name="quickstart-ingest-data-using-the-azure-data-explorer-net-standard-sdk-preview"></a>Краткое руководство. Прием данных с помощью пакета SDK .NET Standard для Azure Data Explorer (предварительная версия)
+# <a name="ingest-data-using-the-azure-data-explorer-net-standard-sdk-preview"></a>Прием данных с помощью пакета SDK .NET Standard для Azure Data Explorer (предварительная версия)
 
-Обозреватель данных Azure (ADX)— это быстрая и высокомасштабируемая служба для изучения данных журналов и телеметрии. ADX предоставляет две клиентские библиотеки для .NET Standard: [библиотеку приема](https://www.nuget.org/packages/Microsoft.Azure.Kusto.Ingest.NETStandard) и [библиотеку данных](https://www.nuget.org/packages/Microsoft.Azure.Kusto.Data.NETStandard). Они позволяют принимать (загружать) данные в кластер и запрашивать данные из кода. В этом кратком руководстве вы создадите таблицу и сопоставление данных в кластере тестирования. Затем вы поставите в очередь прием данных в кластер и проверите результаты.
+Обозреватель данных Azure (ADX)— это быстрая и высокомасштабируемая служба для изучения данных журналов и телеметрии. ADX предоставляет две клиентские библиотеки для .NET Standard: [библиотеку приема](https://www.nuget.org/packages/Microsoft.Azure.Kusto.Ingest.NETStandard) и [библиотеку данных](https://www.nuget.org/packages/Microsoft.Azure.Kusto.Data.NETStandard). Они позволяют принимать (загружать) данные в кластер и запрашивать данные из кода. В этой статье необходимо сначала создать таблицу и сопоставление данных в кластер тестирования. Затем вы поставите в очередь прием данных в кластер и проверите результаты.
 
-## <a name="prerequisites"></a>Предварительные требования
+## <a name="prerequisites"></a>Технические условия
 
 * Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись](https://azure.microsoft.com/free/) Azure, прежде чем начинать работу.
 
@@ -226,13 +226,12 @@ using (var cslQueryProvider = KustoClientFactory.CreateCslQueryProvider(kustoCon
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Если вы планируете работать с другими нашими краткими и подробными руководствами, сохраните созданные ресурсы. В противном случае выполните в своей базе данных следующую команду, чтобы очистить таблицу `StormEvents`.
+Если вы планируете выполнить другие статьи, сохраните созданные ресурсы. В противном случае выполните в своей базе данных следующую команду, чтобы очистить таблицу `StormEvents`.
 
 ```Kusto
 .drop table StormEvents
 ```
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
-> [!div class="nextstepaction"]
-> [Написание запросов](write-queries.md)
+* [Написание запросов](write-queries.md)
