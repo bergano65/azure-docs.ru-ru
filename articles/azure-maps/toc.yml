@@ -154,6 +154,8 @@
           href: 'https://docs.microsoft.com/rest/api/maps/data'
         - name: Служба геолокации
           href: 'https://docs.microsoft.com/rest/api/maps/geolocation'
+        - name: Служба Mobility Service
+          href: 'https://docs.microsoft.com/rest/api/maps/mobility'
         - name: Служба отрисовки
           href: 'https://docs.microsoft.com/rest/api/maps/render'
         - name: Служба построения маршрутов

@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 05/22/2019
 ms.author: wellsi
-ms.openlocfilehash: fab23c86ee2e8f654ac4a9619c39d05ee4e9e4c1
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 1c91cde45a6a420376af36f70487adf7fe0ee83a
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66237935"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66751810"
 ---
 # <a name="release-notes-of-cognitive-services-speech-devices-sdk"></a>Заметки о выпуске пакета SDK для речевых устройств в Cognitive Services
 В следующих разделах перечислены изменения в последних выпусках.
@@ -49,7 +49,7 @@ ms.locfileid: "66237935"
 
 **Критические изменения** 
 
-*   [Установка слово пробуждения](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-devices-sdk-qsg#run-a-sample-application) была упрощена, он теперь является частью приложения и не требуется отдельная Установка на устройстве.
+*   [Установка слово пробуждения](https://docs.microsoft.com/azure/cognitive-services/speech-service/speech-devices-sdk-create-kws) была упрощена, он теперь является частью приложения и не требуется отдельная Установка на устройстве.
 *   Поддерживаются два события, и распознавания слова пробуждения был изменен.
     - RecognizingKeyword, указывает, что результат распознавания речи содержит текст ключевого слова (не проверено).
     - RecognizedKeyword, указывает, что ключевое слово распознавания завершения распознавание заданное ключевое слово.

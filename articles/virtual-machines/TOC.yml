@@ -10,8 +10,10 @@
   items:
     - name: Oracle
       href: workloads/oracle/oracle-considerations.md
-    - name: SAP
+    - name: Протокол SAP
       href: workloads/sap/get-started.md
+    - name: Высокопроизводительные вычисления
+      href: workloads/hpc/configure.md
     - name: Повторное размещение мейнфреймов
       href: workloads/mainframe-rehosting/overview.md
 - name: Классические развертывания

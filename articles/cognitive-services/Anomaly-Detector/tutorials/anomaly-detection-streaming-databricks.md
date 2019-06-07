@@ -10,16 +10,16 @@ ms.subservice: anomaly-detector
 ms.topic: article
 ms.date: 05/08/2019
 ms.author: aahi
-ms.openlocfilehash: d1808bb88ac1bb27f2fd0652585521fbb2abdf56
-ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
+ms.openlocfilehash: a5790b5412023f06d9f9fd1d2ff61c11db4c53f3
+ms.sourcegitcommit: f9448a4d87226362a02b14d88290ad6b1aea9d82
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66734669"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66807476"
 ---
 # <a name="tutorial-anomaly-detection-on-streaming-data-using-azure-databricks"></a>Руководство по Обнаружение аномалий при потоковой передаче данных с помощью Azure Databricks
 
-[Azure Databricks](https://azure.microsoft.com/en-us/services/databricks/) — это служба аналитики на основе Apache Spark быстрые, простые и совместной работы. API обнаружения аномалий, частью Azure Cognitive Services, предоставляет способ мониторинга данные временных рядов. Запустите обнаружение аномалий в потоке данных практически в реальном времени с помощью данного учебника с помощью Azure Databricks. Вы будете приема данных twitter с помощью концентраторов событий Azure и импортировать их в Azure Databricks с помощью соединителя концентраторов событий Spark. После этого вы используете API обнаружения аномалий данных потоковой передачи. 
+[Azure Databricks](https://azure.microsoft.com/services/databricks/) — это служба аналитики на основе Apache Spark быстрые, простые и совместной работы. API обнаружения аномалий, частью Azure Cognitive Services, предоставляет способ мониторинга данные временных рядов. Запустите обнаружение аномалий в потоке данных практически в реальном времени с помощью данного учебника с помощью Azure Databricks. Вы будете приема данных twitter с помощью концентраторов событий Azure и импортировать их в Azure Databricks с помощью соединителя концентраторов событий Spark. После этого вы используете API обнаружения аномалий данных потоковой передачи. 
 
 На следующем рисунке показан поток в приложении.
 
@@ -164,7 +164,7 @@ ms.locfileid: "66734669"
 
     |Value |Описание  |
     |---------|---------|
-    |Name     | Имя ресурса обнаружения аномалий.        |
+    |ИМЯ     | Имя ресурса обнаружения аномалий.        |
     |Подписка     | Подписки Azure ресурс будет связан.        |
     |Расположение     | Расположение Azure.        |
     |Ценовая категория     | Ценовую категорию для службы. Дополнительные сведения о ценах обнаружения аномалий, см. в разделе [странице с ценами](https://azure.microsoft.com/pricing/details/cognitive-services/anomaly-detector/).        |
