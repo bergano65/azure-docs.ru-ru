@@ -15,12 +15,12 @@ ms.date: 05/16/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: it-pro
-ms.openlocfilehash: 5d964ebd40ac1bd8817bc93d5e4f78096f221be2
-ms.sourcegitcommit: 59fd8dc19fab17e846db5b9e262a25e1530e96f3
+ms.openlocfilehash: 427c4615fcbb036ffff56a8fc592f258fb98845e
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65977765"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66755111"
 ---
 # <a name="built-in-roles-for-azure-resources"></a>Встроенные роли для ресурсов Azure
 
@@ -56,14 +56,14 @@ ms.locfileid: "65977765"
 | [Оператор Avere](#avere-operator) | Используемые в кластере vFXT Avere для управления кластером |
 | [Роль администратора кластера в Службе Azure Kubernetes](#azure-kubernetes-service-cluster-admin-role) | Список действий, выполненных с помощью учетных данных администратора кластера. |
 | [Роль пользователя кластера в Службе Azure Kubernetes](#azure-kubernetes-service-cluster-user-role) | Список действий, выполненных с помощью учетных данных пользователя кластера. |
-| [Модуль чтения данных карты Azure (Предварительная версия)](#azure-maps-data-reader-preview) | Предоставляет доступ для чтения связанных данных карты в учетной записи Azure Maps. |
+| [Модуль чтения данных карты Azure (Предварительная версия)](#azure-maps-data-reader-preview) | Предоставляет доступ для чтения сопоставить связанные данные из учетной записи Azure maps. |
 | [Владелец регистрации Azure Stack](#azure-stack-registration-owner) | Позволяет управлять регистрациями Azure Stack. |
 | [Участник резервного копирования](#backup-contributor) | Позволяет управлять службой архивации, но не разрешает создавать хранилища и предоставлять доступ другим пользователям |
 | [Оператор резервного копирования](#backup-operator) | Позволяет управлять службами архивации, но не удалять архивные копии, создавать хранилища или предоставлять доступ другим пользователям |
 | [Читатель резервных копий](#backup-reader) | Может просматривать службы резервного копирования, но не может вносить изменения. |
 | [Читатель счетов](#billing-reader) | Разрешает читать данные выставления счетов. |
 | [Участник BizTalk](#biztalk-contributor) | Позволяет управлять службами BizTalk, но не доступом к ним. |
-| [Доступ к узлам Блокчейн член (Предварительная версия)](#blockchain-member-node-access-preview) | Разрешает доступ к узлам элементов блокчейна |
+| [Доступ к узлам Блокчейн член (Предварительная версия)](#blockchain-member-node-access-preview) | Разрешает доступ к узлам Блокчейн член |
 | [Участник конечных точек CDN](#cdn-endpoint-contributor) | Может управлять конечными точками CDN, но не может предоставлять доступ другим пользователям. |
 | [Читатель конечной точки CDN](#cdn-endpoint-reader) | Может просматривать конечные точки CDN, но не может вносить изменения. |
 | [Участник профиля CDN](#cdn-profile-contributor) | Может управлять профилями CDN и их конечными точками, но не может предоставлять доступ другим пользователям. |
@@ -578,11 +578,11 @@ ms.locfileid: "65977765"
 > | **NotDataActions** |  |
 > | *Нет* |  |
 
-## <a name="azure-maps-data-reader-preview"></a>Читатель данных Azure Maps (предварительная версия)
+## <a name="azure-maps-data-reader-preview"></a>Читатель данных Azure Maps (предварительная версия)
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Описание** | Предоставляет доступ для чтения связанных данных карты в учетной записи Azure Maps. |
+> | **Описание** | Предоставляет доступ для чтения сопоставить связанные данные из учетной записи Azure maps. |
 > | **Id** | 423170ca-a8f6-4b0f-8487-9e4eb8f49bfa |
 > | **Действия** |  |
 > | *Нет* |  |
@@ -834,11 +834,11 @@ ms.locfileid: "65977765"
 > | **NotDataActions** |  |
 > | *Нет* |  |
 
-## <a name="blockchain-member-node-access-preview"></a>Доступ к узлам элементов блокчейна (предварительная версия)
+## <a name="blockchain-member-node-access-preview"></a>Доступ к узлам Блокчейн член (Предварительная версия)
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Описание** | Разрешает доступ к узлам элементов блокчейна |
+> | **Описание** | Разрешает доступ к узлам Блокчейн член |
 > | **Id** | 31a002a1-acaf-453e-8a5b-297c9ca1ea24 |
 > | **Действия** |  |
 > | Microsoft.Blockchain/blockchainMembers/transactionNodes/read | Получает или перечисляет существующие узлы транзакции член Блокчейна. |
@@ -2533,7 +2533,7 @@ ms.locfileid: "65977765"
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Описание** | Чтение, запись и удаление контейнеров службы хранилища Azure и больших двоичных объектов. Чтобы узнать, какие действия необходимы для данной операции с данными, см. в разделе [разрешения для вызова операции с данными больших двоичных объектов и очереди](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-rest-operations). |
+> | **Описание** | Чтение, запись и удаление контейнеров службы хранилища Azure и больших двоичных объектов. Чтобы узнать, какие действия необходимы для данной операции с данными, см. в разделе [разрешения для вызова операции с данными больших двоичных объектов и очереди](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations). |
 > | **Id** | ba92f5b4-2d11-453d-a403-e96b0029c9fe |
 > | **Действия** |  |
 > | Microsoft.Storage/storageAccounts/blobServices/containers/delete | Удаление контейнера. |
@@ -2552,7 +2552,7 @@ ms.locfileid: "65977765"
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Описание** | Предоставляет полный доступ к контейнерам больших двоичных объектов службы хранилища Azure и данных, включая назначение контроля доступа POSIX. Чтобы узнать, какие действия необходимы для данной операции с данными, см. в разделе [разрешения для вызова операции с данными больших двоичных объектов и очереди](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-rest-operations). |
+> | **Описание** | Предоставляет полный доступ к контейнерам больших двоичных объектов службы хранилища Azure и данных, включая назначение контроля доступа POSIX. Чтобы узнать, какие действия необходимы для данной операции с данными, см. в разделе [разрешения для вызова операции с данными больших двоичных объектов и очереди](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations). |
 > | **Id** | b7e6dc6d-f1e8-4753-8033-0f276bb0955b |
 > | **Действия** |  |
 > | Microsoft.Storage/storageAccounts/blobServices/containers/* | Полные разрешения на контейнеры. |
@@ -2567,7 +2567,7 @@ ms.locfileid: "65977765"
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Описание** | Чтение и отображение контейнеры службы хранилища Azure и больших двоичных объектов. Чтобы узнать, какие действия необходимы для данной операции с данными, см. в разделе [разрешения для вызова операции с данными больших двоичных объектов и очереди](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-rest-operations). |
+> | **Описание** | Чтение и отображение контейнеры службы хранилища Azure и больших двоичных объектов. Чтобы узнать, какие действия необходимы для данной операции с данными, см. в разделе [разрешения для вызова операции с данными больших двоичных объектов и очереди](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations). |
 > | **Id** | 2a2b9908-6ea1-4ae2-8e65-a410df84e7d1 |
 > | **Действия** |  |
 > | Microsoft.Storage/storageAccounts/blobServices/containers/read | Возвращает контейнер или список контейнеров. |
@@ -2582,7 +2582,7 @@ ms.locfileid: "65977765"
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Описание** | Чтение, запись и удаление очередей службы хранилища Azure и очередями сообщений. Чтобы узнать, какие действия необходимы для данной операции с данными, см. в разделе [разрешения для вызова операции с данными больших двоичных объектов и очереди](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-rest-operations). |
+> | **Описание** | Чтение, запись и удаление очередей службы хранилища Azure и очередями сообщений. Чтобы узнать, какие действия необходимы для данной операции с данными, см. в разделе [разрешения для вызова операции с данными больших двоичных объектов и очереди](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations). |
 > | **Id** | 974c5e8b-45b9-4653-ba55-5f855dd0fb88 |
 > | **Действия** |  |
 > | Microsoft.Storage/storageAccounts/queueServices/queues/delete | Удаление очереди. |
@@ -2601,7 +2601,7 @@ ms.locfileid: "65977765"
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Описание** | Показать, получение и удаление сообщений из очереди службы хранилища Azure. Чтобы узнать, какие действия необходимы для данной операции с данными, см. в разделе [разрешения для вызова операции с данными больших двоичных объектов и очереди](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-rest-operations). |
+> | **Описание** | Показать, получение и удаление сообщений из очереди службы хранилища Azure. Чтобы узнать, какие действия необходимы для данной операции с данными, см. в разделе [разрешения для вызова операции с данными больших двоичных объектов и очереди](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations). |
 > | **Id** | 8a0f0c08-91a1-4084-bc3d-661d67233fed |
 > | **Действия** |  |
 > | *Нет* |  |
@@ -2617,7 +2617,7 @@ ms.locfileid: "65977765"
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Описание** | Добавление сообщений в очередь службы хранилища Azure. Чтобы узнать, какие действия необходимы для данной операции с данными, см. в разделе [разрешения для вызова операции с данными больших двоичных объектов и очереди](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-rest-operations). |
+> | **Описание** | Добавление сообщений в очередь службы хранилища Azure. Чтобы узнать, какие действия необходимы для данной операции с данными, см. в разделе [разрешения для вызова операции с данными больших двоичных объектов и очереди](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations). |
 > | **Id** | c6a89b2d-59bc-44d0-9896-0f6e12d7b80a |
 > | **Действия** |  |
 > | *Нет* |  |
@@ -2632,7 +2632,7 @@ ms.locfileid: "65977765"
 > [!div class="mx-tableFixed"]
 > | | |
 > | --- | --- |
-> | **Описание** | Чтение и отображение и сообщениям в очередях службы хранилища Azure. Чтобы узнать, какие действия необходимы для данной операции с данными, см. в разделе [разрешения для вызова операции с данными больших двоичных объектов и очереди](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-rest-operations). |
+> | **Описание** | Чтение и отображение и сообщениям в очередях службы хранилища Azure. Чтобы узнать, какие действия необходимы для данной операции с данными, см. в разделе [разрешения для вызова операции с данными больших двоичных объектов и очереди](https://docs.microsoft.com/rest/api/storageservices/authenticate-with-azure-active-directory#permissions-for-calling-blob-and-queue-data-operations). |
 > | **Id** | 19e7f393-937e-4f77-808e-94535e297925 |
 > | **Действия** |  |
 > | Microsoft.Storage/storageAccounts/queueServices/queues/read | Возвращает очередь или список очередей. |

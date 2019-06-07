@@ -8,12 +8,12 @@ ms.service: security
 ms.topic: article
 ms.date: 07/13/2018
 ms.author: jomolesk
-ms.openlocfilehash: 95e10f4727de239016a2e3c88571e74267e3967b
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.openlocfilehash: e3ee5a0aa22d1231dca7d02a77d39e0a2b569314
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62109333"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66753855"
 ---
 # <a name="azure-security-and-compliance-blueprint-paas-web-application-hosting-for-uk-official-workloads"></a>Схема безопасности и соответствия требованиям Azure. Размещение веб-приложения PaaS для рабочих нагрузок UK OFFICIAL
 
@@ -191,7 +191,7 @@ ms.locfileid: "62109333"
 
 #### <a name="azure-activity-logs"></a>журналы действий Azure;
 
-[Журналы действий Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-activity-logs#what-you-can-do-with-the-activity-log) позволяют выполнять аудит событий уровня управления в подписках. С помощью журнала действий можно ответить на вопросы "что? кто? когда?", касающиеся любой операции записи (PUT, POST, DELETE) для ресурсов в вашей подписке. Вы также можете отслеживать состояние операции и другие ее свойства.
+[Журналы действий Azure](https://docs.microsoft.com/azure/azure-monitor/platform/activity-logs-overview) позволяют выполнять аудит событий уровня управления в подписках. С помощью журнала действий можно ответить на вопросы "что? кто? когда?", касающиеся любой операции записи (PUT, POST, DELETE) для ресурсов в вашей подписке. Вы также можете отслеживать состояние операции и другие ее свойства.
 
 #### <a name="azure-monitor"></a>Azure Monitor
 

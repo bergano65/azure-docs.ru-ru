@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 05/27/2018
 ms.author: monhaber
-ms.openlocfilehash: 15232c92e60d21d759bec59597cb161480b8c2ea
-ms.sourcegitcommit: 7042ec27b18f69db9331b3bf3b9296a9cd0c0402
+ms.openlocfilehash: d42b929807bf67b73d0587232608efc0cea6d717
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66743230"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66752577"
 ---
 # <a name="windows-defender-advanced-threat-protection-with-azure-security-center"></a>Интеграция Advanced Threat Protection в Защитнике Windows с центром безопасности Azure
 
@@ -93,7 +93,7 @@ ATP в Защитнике Windows в центре безопасности по�
 
 ## <a name="set-the-firewall-configuration"></a>Настройка конфигурации брандмауэра
 
-Если у вас есть прокси-сервер или брандмауэр, блокирующий анонимный трафик, так как датчик ATP в Защитнике Windows подключается из системного контекста, убедитесь, что анонимный трафик разрешен. Следуйте инструкциям в разделе [Enable access to Windows Defender ATP service URLs in the proxy server](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-atp/configure-proxy-internet-windows-defender-advanced-threat-protection#enable-access-to-windows-defender-atp-service-urls-in-the-proxy-server) (Включение доступа к URL-адресам службы ATP в Защитнике Windows на прокси-сервере).
+Если у вас есть прокси-сервер или брандмауэр, блокирующий анонимный трафик, так как датчик ATP в Защитнике Windows подключается из системного контекста, убедитесь, что анонимный трафик разрешен. Следуйте инструкциям в разделе [Enable access to Windows Defender ATP service URLs in the proxy server](https://docs.microsoft.com/windows/security/threat-protection/windows-defender-atp/configure-proxy-internet-windows-defender-advanced-threat-protection#enable-access-to-microsoft-defender-atp-service-urls-in-the-proxy-server) (Включение доступа к URL-адресам службы ATP в Защитнике Windows на прокси-сервере).
 
 ## <a name="test-the-feature"></a>Тестирование компонента
 

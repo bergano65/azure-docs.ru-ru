@@ -4,14 +4,14 @@ description: Список типов ресурсов Azure, подлежащи�
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: reference
-ms.date: 5/17/2019
+ms.date: 6/6/2019
 ms.author: tomfitz
-ms.openlocfilehash: dcac557f29a987ea732744c1b82f90f858623ec5
-ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
+ms.openlocfilehash: 314b28edbd5770186d96fb2a2b203f26ff27bda0
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65872556"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66752350"
 ---
 # <a name="move-operation-support-for-resources"></a>Поддержка операции перемещения для ресурсов
 В этой статье указано, поддерживается ли для тех или иных типов ресурсов Azure операция перемещения. Несмотря на то что тип ресурса поддерживает операцию перемещения, некоторые условия могут препятствовать перемещению ресурса. Дополнительные сведения об условиях, влияющих на операции перемещения, см. в статье [Перемещение ресурсов в новую группу ресурсов или подписку](resource-group-move-resources.md).
@@ -36,7 +36,7 @@ ms.locfileid: "65872556"
 ## <a name="microsoftanalysisservices"></a>Microsoft.AnalysisServices
 | Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| серверы | Да | Да |
+| servers | Да | Да |
 
 ## <a name="microsoftapimanagement"></a>Microsoft.ApiManagement
 | Тип ресурса | Группа ресурсов | Подписка |
@@ -92,7 +92,7 @@ ms.locfileid: "65872556"
 | ------------- | ----------- | ---------- |
 | clusters | Нет | Нет |
 | fileservers | Нет | Нет |
-| задания | Нет | Нет |
+| jobs | Нет | Нет |
 | workspaces | Нет | Нет |
 
 ## <a name="microsoftbingmaps"></a>Microsoft.BingMaps
@@ -157,24 +157,24 @@ ms.locfileid: "65872556"
 ## <a name="microsoftcognitiveservices"></a>Microsoft.CognitiveServices
 | Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| учетные записи | Да | Да |
+| accounts | Да | Да |
 
 ## <a name="microsoftcompute"></a>Microsoft.Compute;
 | Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | availabilitysets | Да | Да |
-| диски | Да | Да |
+| disks | Да | Да |
 | galleries | Нет | Нет |
 | galleries/images | Нет | Нет |
 | galleries/images/versions | Нет | Нет |
 | hostgroups | Нет | Нет |
 | hostgroups/hosts | Нет | Нет |
-| образы | Да | Да |
+| images | Да | Да |
 | proximityplacementgroups | Нет | Нет |
 | restorepointcollections | Нет | Нет |
 | sharedvmimages | Нет | Нет |
 | sharedvmimages/versions | Нет | Нет |
-| моментальные снимки | Да | Да |
+| snapshots | Да | Да |
 | virtualmachines | Да | Да |
 | virtualmachines/extensions | Да | Да |
 | virtualmachinescalesets | Да | Да |
@@ -208,12 +208,12 @@ ms.locfileid: "65872556"
 ## <a name="microsoftcontentmoderator"></a>Microsoft.ContentModerator
 | Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| приложения | Да | Да |
+| веб-масштабированием; | Да | Да |
 
 ## <a name="microsoftcortanaanalytics"></a>Microsoft.CortanaAnalytics
 | Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| учетные записи | Нет | Нет |
+| accounts | Нет | Нет |
 
 ## <a name="microsoftcostmanagement"></a>Microsoft.CostManagement
 | Тип ресурса | Группа ресурсов | Подписка |
@@ -228,7 +228,7 @@ ms.locfileid: "65872556"
 ## <a name="microsoftdatabox"></a>Microsoft.DataBox
 | Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| задания | Нет | Нет |
+| jobs | Нет | Нет |
 
 ## <a name="microsoftdataboxedge"></a>Microsoft.DataBoxEdge
 | Тип ресурса | Группа ресурсов | Подписка |
@@ -271,12 +271,12 @@ ms.locfileid: "65872556"
 ## <a name="microsoftdatalakeanalytics"></a>Microsoft.DataLakeAnalytics
 | Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| учетные записи | Да | Да |
+| accounts | Да | Да |
 
 ## <a name="microsoftdatalakestore"></a>Microsoft.DataLakeStore
 | Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| учетные записи | Да | Да |
+| accounts | Да | Да |
 
 ## <a name="microsoftdatamigration"></a>Microsoft.DataMigration
 | Тип ресурса | Группа ресурсов | Подписка |
@@ -288,18 +288,18 @@ ms.locfileid: "65872556"
 ## <a name="microsoftdbformariadb"></a>Microsoft.DBforMariaDB
 | Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| серверы | Да | Да |
+| servers | Да | Да |
 
 ## <a name="microsoftdbformysql"></a>Microsoft.DBforMySQL
 | Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| серверы | Да | Да |
+| servers | Да | Да |
 
 ## <a name="microsoftdbforpostgresql"></a>Microsoft.DBforPostgreSQL
 | Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | servergroups | Нет | Нет |
-| серверы | Да | Да |
+| servers | Да | Да |
 | serversv2 | Да | Да |
 
 ## <a name="microsoftdeploymentmanager"></a>Microsoft.DeploymentManager
@@ -373,12 +373,12 @@ ms.locfileid: "65872556"
 | Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | clusters | Да | Да |
-| пространства имен | Да | Да |
+| namespaces | Да | Да |
 
 ## <a name="microsoftgenomics"></a>Microsoft.Genomics
 | Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| учетные записи | Нет | Нет |
+| accounts | Нет | Нет |
 
 ## <a name="microsofthanaonazure"></a>Microsoft.HanaOnAzure
 | Тип ресурса | Группа ресурсов | Подписка |
@@ -398,7 +398,7 @@ ms.locfileid: "65872556"
 ## <a name="microsofthybridcompute"></a>Microsoft.HybridCompute
 | Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| Компьютеры | Нет | Нет |
+| Машины | Нет | Нет |
 
 ## <a name="microsofthybriddata"></a>Microsoft.HybridData
 | Тип ресурса | Группа ресурсов | Подписка |
@@ -408,12 +408,12 @@ ms.locfileid: "65872556"
 ## <a name="microsoftimportexport"></a>Microsoft.ImportExport
 | Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| задания | Да | Да |
+| jobs | Да | Да |
 
 ## <a name="microsoftinsights"></a>microsoft.insights
 | Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| учетные записи | Нет | Нет |
+| accounts | Нет | Нет |
 | actiongroups | Да | Да |
 | activitylogalerts | Нет | Нет |
 | alertrules | Да | Да |
@@ -423,9 +423,9 @@ ms.locfileid: "65872556"
 | metricalerts | Нет | Нет |
 | notificationgroups | Нет | Нет |
 | notificationrules | Нет | Нет |
-| scheduledqueryrules | Нет | Нет |
+| scheduledqueryrules | Да | Да |
 | webtests | Да | Да |
-| книги | Да | Да |
+| workbooks | Да | Да |
 
 ## <a name="microsoftiotcentral"></a>Microsoft.IoTCentral
 | Тип ресурса | Группа ресурсов | Подписка |
@@ -436,7 +436,7 @@ ms.locfileid: "65872556"
 | Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | checknameavailability | Да | Да |
-| Граф | Да | Да |
+| graph | Да | Да |
 
 ## <a name="microsoftkeyvault"></a>Microsoft.KeyVault
 | Тип ресурса | Группа ресурсов | Подписка |
@@ -457,12 +457,12 @@ ms.locfileid: "65872556"
 ## <a name="microsoftlocationbasedservices"></a>Microsoft.LocationBasedServices
 | Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| учетные записи | Да | Да |
+| accounts | Да | Да |
 
 ## <a name="microsoftlocationservices"></a>Microsoft.LocationServices
 | Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| учетные записи | Нет | Нет |
+| accounts | Нет | Нет |
 
 ## <a name="microsoftlogic"></a>Microsoft.Logic
 | Тип ресурса | Группа ресурсов | Подписка |
@@ -488,7 +488,7 @@ ms.locfileid: "65872556"
 ## <a name="microsoftmachinelearningexperimentation"></a>Microsoft.MachineLearningExperimentation
 | Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| учетные записи | Нет | Нет |
+| accounts | Нет | Нет |
 | accounts/workspaces | Нет | Нет |
 | accounts/workspaces/projects | Нет | Нет |
 | teamaccounts | Нет | Нет |
@@ -498,7 +498,7 @@ ms.locfileid: "65872556"
 ## <a name="microsoftmachinelearningmodelmanagement"></a>Microsoft.MachineLearningModelManagement
 | Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| учетные записи | Да | Да |
+| accounts | Да | Да |
 
 ## <a name="microsoftmachinelearningoperationalization"></a>Microsoft.MachineLearningOperationalization
 | Тип ресурса | Группа ресурсов | Подписка |
@@ -518,7 +518,7 @@ ms.locfileid: "65872556"
 ## <a name="microsoftmaps"></a>Microsoft.Maps
 | Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| учетные записи | Да | Да |
+| accounts | Да | Да |
 
 ## <a name="microsoftmarketplaceapps"></a>Microsoft.MarketplaceApps
 | Тип ресурса | Группа ресурсов | Подписка |
@@ -556,7 +556,7 @@ ms.locfileid: "65872556"
 | applicationsecuritygroups | Да | Да |
 | azurefirewalls | Да | Да |
 | bastionhosts | Нет | Нет |
-| подключения | Да | Да |
+| connections | Да | Да |
 | ddoscustompolicies | Да | Да |
 | ddosprotectionplans | Нет | Нет |
 | dnszones | Да | Да |
@@ -564,7 +564,7 @@ ms.locfileid: "65872556"
 | expressroutecrossconnections | Нет | Нет |
 | expressroutegateways | Нет | Нет |
 | expressrouteports | Нет | Нет |
-| frontdoor | Да | Да |
+| frontdoors | Да | Да |
 | frontdoorwebapplicationfirewallpolicies | Да | Да |
 | loadbalancers | Да | Да |
 | localnetworkgateways | Да | Да |
@@ -601,7 +601,7 @@ ms.locfileid: "65872556"
 ## <a name="microsoftnotificationhubs"></a>Microsoft.NotificationHubs
 | Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| пространства имен | Да | Да |
+| namespaces | Да | Да |
 | namespaces/notificationhubs | Да | Да |
 
 ## <a name="microsoftoperationalinsights"></a>Microsoft.OperationalInsights
@@ -614,7 +614,7 @@ ms.locfileid: "65872556"
 | ------------- | ----------- | ---------- |
 | managementconfigurations | Да | Да |
 | solutions | Да | Да |
-| просмотры | Да | Да |
+| узел "Представления" | Да | Да |
 
 ## <a name="microsoftpeering"></a>Microsoft.Peering
 | Тип ресурса | Группа ресурсов | Подписка |
@@ -644,7 +644,7 @@ ms.locfileid: "65872556"
 ## <a name="microsoftprojectoxford"></a>Microsoft.ProjectOxford
 | Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| учетные записи | Нет | Нет |
+| accounts | Нет | Нет |
 
 ## <a name="microsoftrecoveryservices"></a>Microsoft.RecoveryServices
 | Тип ресурса | Группа ресурсов | Подписка |
@@ -654,17 +654,17 @@ ms.locfileid: "65872556"
 ## <a name="microsoftrelay"></a>Microsoft.Relay
 | Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| пространства имен | Да | Да |
+| namespaces | Да | Да |
 
 ## <a name="microsoftsaas"></a>Microsoft.SaaS
 | Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| приложения | Да | Нет |
+| веб-масштабированием; | Да | Нет |
 
 ## <a name="microsoftscheduler"></a>Microsoft.Scheduler
 | Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| Потоки | Да | Да |
+| flows | Да | Да |
 | jobcollections | Да | Да |
 
 ## <a name="microsoftsearch"></a>Microsoft.Search
@@ -686,29 +686,29 @@ ms.locfileid: "65872556"
 ## <a name="microsoftservicebus"></a>Microsoft.ServiceBus
 | Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| пространства имен | Да | Да |
+| namespaces | Да | Да |
 
 ## <a name="microsoftservicefabric"></a>Microsoft.ServiceFabric
 | Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| приложения | Нет | Нет |
+| веб-масштабированием; | Нет | Нет |
 | clusters | Да | Да |
 | containergroups | Нет | Нет |
 | containergroupsets | Нет | Нет |
 | edgeclusters | Нет | Нет |
-| Сети | Нет | Нет |
+| networks | Нет | Нет |
 | secretstores | Нет | Нет |
-| тома | Нет | Нет |
+| volumes. | Нет | Нет |
 
 ## <a name="microsoftservicefabricmesh"></a>Microsoft.ServiceFabricMesh
 | Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| приложения | Да | Да |
+| веб-масштабированием; | Да | Да |
 | containergroups | Нет | Нет |
 | gateways | Да | Да |
-| Сети | Да | Да |
-| секреты | Да | Да |
-| тома | Да | Да |
+| networks | Да | Да |
+| секретные коды | Да | Да |
+| volumes. | Да | Да |
 
 ## <a name="microsoftsignalrservice"></a>Microsoft.SignalRService
 | Тип ресурса | Группа ресурсов | Подписка |
@@ -726,7 +726,7 @@ ms.locfileid: "65872556"
 | appliancedefinitions | Нет | Нет |
 | appliances | Нет | Нет |
 | applicationdefinitions | Нет | Нет |
-| приложения | Нет | Нет |
+| веб-масштабированием; | Нет | Нет |
 | jitrequests | Нет | Нет |
 
 ## <a name="microsoftsql"></a>Microsoft.Sql
@@ -735,7 +735,7 @@ ms.locfileid: "65872556"
 | instancepools | Да | Да |
 | managedinstances | Да | Да |
 | managedinstances/databases | Да | Да |
-| серверы | Да | Да |
+| servers | Да | Да |
 | servers/databases | Да | Да |
 | servers/elasticpools | Да | Да |
 | virtualclusters | Да | Да |
@@ -791,7 +791,7 @@ ms.locfileid: "65872556"
 | ------------- | ----------- | ---------- |
 | environments | Нет | Нет |
 | environments/eventsources | Нет | Нет |
-| Экземпляры | Нет | Нет |
+| instances | Нет | Нет |
 | instances/environments | Нет | Нет |
 | instances/environments/eventsources | Нет | Нет |
 
@@ -799,7 +799,7 @@ ms.locfileid: "65872556"
 | Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
 | providerregistrations | Нет | Нет |
-| ресурсы | Нет | Нет |
+| ресурсов | Нет | Нет |
 
 ## <a name="microsofttimeseriesinsights"></a>Microsoft.TimeSeriesInsights
 | Тип ресурса | Группа ресурсов | Подписка |
@@ -835,13 +835,13 @@ ms.locfileid: "65872556"
 ## <a name="microsoftweb"></a>Microsoft.Web
 | Тип ресурса | Группа ресурсов | Подписка |
 | ------------- | ----------- | ---------- |
-| сертификаты | Нет | Да |
+| certificates | Нет | Да |
 | connectiongateways | Да | Да |
-| подключения | Да | Да |
+| connections | Да | Да |
 | customapis | Да | Да |
 | hostingenvironments | Нет | Нет |
 | serverfarms | Да | Да |
-| сайты | Да | Да |
+| sites | Да | Да |
 | sites/premieraddons | Да | Да |
 | sites/slots | Да | Да |
 

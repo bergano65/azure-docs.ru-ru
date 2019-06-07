@@ -10,12 +10,12 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 05/20/2019
 ms.custom: seodec18
-ms.openlocfilehash: 8587fb0138309040232b6e0abc0f3eb17cc3093a
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 33ca86fc2d13fb7f6e29c43e9a7c1d2dc6ef4169
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66244075"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66755233"
 ---
 # <a name="data-storage-and-ingress-in-azure-time-series-insights-preview"></a>Хранилище данных и входящий трафик в Аналитике временных рядов Azure (предварительная версия)
 
@@ -37,7 +37,7 @@ Insights Preview ряда времени использует хранилище
 
 Общие сведения о хранилище BLOB-объектов Azure см. в [этой статье](https://docs.microsoft.com/azure/storage/blobs/storage-blobs-introduction).
 
-Дополнительные сведения о типах файлов Parquet см. в статье [Поддерживаемые форматы файлов и кодеки сжатия в фабрике данных Azure](https://docs.microsoft.com/azure/data-factory/supported-file-formats-and-compression-codecs#Parquet-format).
+Дополнительные сведения о типах файлов Parquet см. в статье [Поддерживаемые форматы файлов и кодеки сжатия в фабрике данных Azure](https://docs.microsoft.com/azure/data-factory/supported-file-formats-and-compression-codecs#parquet-format).
 
 ## <a name="parquet-file-format"></a>Пример файла Parquet
 

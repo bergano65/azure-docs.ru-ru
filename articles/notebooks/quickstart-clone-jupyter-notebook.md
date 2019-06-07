@@ -10,15 +10,15 @@ ms.service: azure-notebooks
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: quickstart
 ms.date: 12/04/2018
 ms.author: kraigb
-ms.openlocfilehash: 30625423553b71e848d27d047d4b7bc3add6eaff
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: MT
+ms.openlocfilehash: e180192ed8375e00464ed9ec96080cde10295e5c
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60238686"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66754049"
 ---
 # <a name="quickstart-clone-a-notebook"></a>Краткое руководство. Клонирование записной книжки
 
@@ -74,7 +74,7 @@ ms.locfileid: "60238686"
 
 1. Чтобы изменить файлы, не являющиеся записными книжками, щелкните правой кнопкой мыши файл в проекте и выберите **Edit file** (Изменить файл) (сочетание клавиш: I). Действие по умолчанию, **Запустить** (сочетание клавиш: r), позволяет только просматривать содержимое файла без редактирования
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
 > [Руководство по созданию и запуску записной книжки Jupyter для выполнения линейной регрессии](tutorial-create-run-jupyter-notebook.md)

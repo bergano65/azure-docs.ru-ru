@@ -7,12 +7,12 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 06/03/2019
-ms.openlocfilehash: 9a592533a92ec724c9a332bef5fdfcf385cb7b2c
-ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
+ms.openlocfilehash: 1ec4786291d6e2e5be6785e52cf3ab5bb5bbc690
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66730683"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66754540"
 ---
 # <a name="migrate-to-granular-role-based-access-for-cluster-configurations"></a>Переход на детализированный доступ на основе ролей для конфигураций кластера
 
@@ -59,10 +59,10 @@ ms.locfileid: "66730683"
 - [**GET /configurations/ {configurationName}** ](https://docs.microsoft.com/rest/api/hdinsight/hdinsight-cluster#get-configuration) (конфиденциальные данные удалены)
     - Ранее, используется для получения отдельной конфигурации типов (включая секретов).
     - Этот вызов API теперь возвращает типы отдельных конфигураций с секретными данными опущен. Для получения всех конфигураций, включая секреты, используйте новый вызов /configurations POST. Чтобы получить только параметры шлюза, используйте новый вызов /getGatewaySettings POST.
-- [**GET /configurations** ](https://docs.microsoft.com/rest/api/hdinsight/hdinsight-cluster#get-configurations) (устаревшая версия)
+- [**GET /configurations** ](https://docs.microsoft.com/rest/api/hdinsight/hdinsight-cluster#get-configuration) (устаревшая версия)
     - Ранее, используемый для получения всех конфигураций (в том числе секреты)
     - Этот вызов API, больше не будет поддерживаться. Для получения всех конфигураций, в дальнейшем используется новый вызов /configurations POST. Чтобы получить конфигурацию с конфиденциальные параметры опущен, используйте вызов /configurations/ {configurationName} GET.
-- [**POST /configurations/ {configurationName}** ](https://docs.microsoft.com/rest/api/hdinsight/hdinsight-cluster#change-connectivity-settings) (устаревшая версия)
+- [**POST /configurations/ {configurationName}** ](https://docs.microsoft.com/rest/api/hdinsight/hdinsight-cluster#update-gateway-settings) (устаревшая версия)
     - Ранее, используется для обновления учетных данных шлюза.
     - Этот вызов API устарело и больше не поддерживается. Вместо этого используйте новые /updateGatewaySettings POST.
 

@@ -7,12 +7,12 @@ ms.service: virtual-desktop
 ms.topic: how-to
 ms.date: 03/21/2019
 ms.author: helohr
-ms.openlocfilehash: 7687abf5fc4af0eea9fa6aa210cfd6734cec2b36
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.openlocfilehash: e9f500e3ab965b9dbfc5e395a6572497c85f6f8f
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65410570"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66755132"
 ---
 # <a name="automatically-scale-session-hosts"></a>Автоматическое масштабирование узлов сеанса
 
@@ -26,7 +26,7 @@ ms.locfileid: "65410570"
 
 - Клиент виртуального рабочего стола Windows и учетная запись или субъект-службу с разрешениями для запроса клиента (например, участник служб удаленных рабочих СТОЛОВ).
 - Виртуальные машины пула узлов сеанса настройки и регистрации в службе виртуальный рабочий стол Windows.
-- Дополнительная виртуальная машина, выполнение запланированной задачи с помощью планировщика заданий и имеет доступ к сети для узлов сеанса. Это будет, ссылающиеся позднее в этом документе как scaler виртуальной Машины.
+- Дополнительная виртуальная машина, выполнение запланированной задачи с помощью планировщика заданий и имеет доступ к сети для узлов сеанса. Это будет называться позднее в этом документе scaler виртуальной Машины.
 - [Модуля Microsoft Azure Resource Manager PowerShell](https://docs.microsoft.com/powershell/azure/azurerm/install-azurerm-ps) установлен на виртуальной Машине, выполнение запланированной задачи.
 - [Модуля PowerShell для виртуальных рабочих столов Windows](https://docs.microsoft.com/powershell/windows-virtual-desktop/overview) установлен на виртуальной Машине, выполнение запланированной задачи.
 

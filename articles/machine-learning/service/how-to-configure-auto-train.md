@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.custom: seodec18
-ms.openlocfilehash: c0f8a56df5b41236256115ced0d46a87c5ee91a5
-ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
+ms.openlocfilehash: df05bd984667283b0ccc143ba14fff6b35d69144
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66400235"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66753174"
 ---
 # <a name="configure-automated-ml-experiments-in-python"></a>Настройка автоматических эксперименты машинного Обучения на Python
 
@@ -158,7 +158,7 @@ cv_splits_indices   | массив целых чисел ||  _Необязате
 
 Затем следует определить, где модель будет обучаться. Эксперимент автоматического машинного обучения можно запустить в следующих вычислительных средах.
 *   Локальный компьютер или ноутбук. Как правило, при наличии небольшого набора данных и если вы по-прежнему находитесь на этапе изучения.
-*   Удаленный компьютер в облаке. [Управляемая Вычислительная среда Машинного обучения Azure](concept-azure-machine-learning-architecture.md#managed-and-unmanaged-compute-targets) — это управляемая служба, которая позволяет обучать модели машинного обучения в кластерах виртуальных машин Azure.
+*   Удаленный компьютер в облаке. [Управляемая Вычислительная среда Машинного обучения Azure](concept-compute-target.md#amlcompute) — это управляемая служба, которая позволяет обучать модели машинного обучения в кластерах виртуальных машин Azure.
 
 На [сайте GitHub](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/automated-machine-learning) доступны примеры записных книжек с локальными и удаленными целевыми объектами вычислений.
 

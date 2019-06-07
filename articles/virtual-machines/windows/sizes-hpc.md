@@ -3,7 +3,7 @@ title: Размеры виртуальных машин Windows в Azure, опт
 description: Список различных размеров виртуальных машин Windows в Azure, оптимизированных для высокопроизводительных вычислений. Сведения о количестве виртуальных ЦП, дисков данных и сетевых адаптеров, а также о пропускной способности хранилища и сети для размеров виртуальных машин этой серии.
 services: virtual-machines-windows
 documentationcenter: ''
-author: jonbeck7
+author: vermagit
 manager: jeconnoc
 editor: ''
 tags: azure-resource-manager,azure-service-management
@@ -14,13 +14,13 @@ ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 10/12/2018
-ms.author: jonbeck
-ms.openlocfilehash: 58d4ced041b6f5cf767b45191e28a4b395f584b6
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.author: jonbeck;amverma
+ms.openlocfilehash: ad490084b34a8bf6e89c7feb14d5cd2e70a8138f
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60540518"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66755320"
 ---
 # <a name="high-performance-compute-vm-sizes"></a>Размеры виртуальных машин, оптимизированных для высокопроизводительных вычислений
 
@@ -35,20 +35,29 @@ ms.locfileid: "60540518"
 
 * **MPI** — Microsoft MPI (MS-MPI) 2012 R2 и более поздних версий, библиотека Intel MPI 5.x.
 
-  Для взаимодействия между экземплярами поддерживаемые реализации MPI используют интерфейс Microsoft Network Direct. 
+  На виртуальные машины не SR-IOV поддерживаемые реализации MPI используют интерфейс Microsoft сети прямой (ND) для взаимодействия между экземплярами. Параметры SR-IOV включена размеры виртуальных Машин (серии гибридного подключения и HB) в Azure позволяют почти любую версию MPI для использования с Mellanox OFED. 
 
-* **Адресное пространство сети RDMA.** Сеть RDMA в Azure резервирует адресное пространство 172.16.0.0/16. Чтобы выполнять приложения MPI в экземплярах, развернутых в виртуальной сети Azure, убедитесь, что адресное пространство виртуальной сети не пересекается с сетью RDMA.
+* **Расширение виртуальной Машины InfiniBandDriverWindows** — на виртуальных машинах с поддержкой RDMA добавить расширение InfiniBandDriverWindows, обеспечивающее InfiniBand. Это расширение виртуальной Машины Windows устанавливает драйверы Windows Network Direct (на виртуальных машинах не SR-IOV) или драйверы Mellanox OFED (на виртуальных машинах SR-IOV) для подключения RDMA.
+В некоторых развертываниях экземпляров A8 и A9 расширение HpcVmDrivers добавляется автоматически. Обратите внимание на то, что расширение виртуальных Машин HpcVmDrivers рекомендуется; он не обновляется. Чтобы добавить в виртуальную машину расширение виртуальной машины, можно использовать командлеты [Azure PowerShell](/powershell/azure/overview). 
 
-* **Расширение виртуальных машин HpcVmDrivers**. На виртуальных машинах с поддержкой RDMA следует добавить расширение HpcVmDrivers для установки драйверов сетевых устройств Windows, обеспечивающих подключение RDMA. (В некоторых развертываниях экземпляров A8 и A9 расширение HpcVmDrivers добавляется автоматически.) Чтобы добавить в виртуальную машину расширение виртуальной машины, можно использовать командлеты [Azure PowerShell](/powershell/azure/overview). 
-
-  
-  Следующая команда устанавливает последнюю версию (1.1) расширения HpcVMDrivers на существующую виртуальную машину с поддержкой RDMA, которая носит имя *myVM*. Эта машина развернута в группе ресурсов с именем *myResourceGroup* в регионе *Западная часть США*:
+  Следующая команда устанавливает модуль InfiniBandDriverWindows последней версии 1.0 на существующей виртуальной Машины с поддержкой RDMA с именем *myVM* развернута в группе ресурсов с именем *myResourceGroup* в  *Западная часть США* региона:
 
   ```powershell
-  Set-AzVMExtension -ResourceGroupName "myResourceGroup" -Location "westus" -VMName "myVM" -ExtensionName "HpcVmDrivers" -Publisher "Microsoft.HpcCompute" -Type "HpcVmDrivers" -TypeHandlerVersion "1.1"
+  Set-AzVMExtension -ResourceGroupName "myResourceGroup" -Location "westus" -VMName "myVM" -ExtensionName "InfiniBandDriverWindows" -Publisher "Microsoft.HpcCompute" -Type "InfiniBandDriverWindows" -TypeHandlerVersion "1.0"
+  ```
+  Кроме того расширения виртуальных Машин могут быть включены в шаблоны Azure Resource Manager для более удобного развертывания, с помощью следующего элемента JSON:
+  ```json
+  "properties":{
+  "publisher": "Microsoft.HpcCompute",
+  "type": "InfiniBandDriverWindows",
+  "typeHandlerVersion": "1.0",
+  } 
   ```
   
   Дополнительные сведения см. в статье [Обзор расширений и компонентов виртуальной машины под управлением Windows](extensions-features.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). Вы также можете работать с расширениями для виртуальных машин, развернутых в рамках [классической модели развертывания](classic/manage-extensions.md).
+
+* **Адресное пространство сети RDMA.** Сеть RDMA в Azure резервирует адресное пространство 172.16.0.0/16. Чтобы выполнять приложения MPI в экземплярах, развернутых в виртуальной сети Azure, убедитесь, что адресное пространство виртуальной сети не пересекается с сетью RDMA.
+
 
 ### <a name="cluster-configuration-options"></a>Параметры конфигурации кластера
 
@@ -56,7 +65,7 @@ Azure предоставляет несколько вариантов для с
 
 * **Виртуальные машины**. Разверните виртуальные машины HPC с поддержкой RDMA в одну группу доступности (используя модель развертывания Azure Resource Manager). Если вы используете классическую модель развертывания, разверните виртуальные машины в одну облачную службу. 
 
-* **Масштабируемый набор виртуальных машин**. В масштабируемом наборе виртуальных машин ограничьте развертывание одной группой размещения. Например, в шаблоне Resource Manager задайте значение `true` для свойства `singlePlacementGroup`. 
+* **Масштабируемые наборы виртуальных машин** — в масштабируемый набор виртуальных машин задано, убедитесь, что вы ограниченного развертывания одной группы размещения. Например, в шаблоне Resource Manager задайте значение `true` для свойства `singlePlacementGroup`. 
 
 * **Azure CycleCloud**. Создайте кластер HPC в [Azure CycleCloud](/azure/cyclecloud/), чтобы запустить задания MPI на узлах Windows.
 
@@ -79,7 +88,3 @@ Azure предоставляет несколько вариантов для с
 - Сведения об использовании экземпляров для ресурсоемких вычислений при запуске приложений MPI с использованием пакетной службы Azure см. в статье [Использование задач с несколькими экземплярами для запуска приложений с интерфейсом передачи сообщений в пакетной службе](../../batch/batch-mpi.md).
 
 - Узнайте больше о том, как с помощью [единиц вычислений Azure (ACU)](acu.md) сравнить производительность вычислений для различных номеров SKU Azure.
-
-
-
-

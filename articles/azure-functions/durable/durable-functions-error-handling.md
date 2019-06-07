@@ -10,16 +10,16 @@ ms.devlang: multiple
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: azfuncdf
-ms.openlocfilehash: f3d7f916d31a03d7b868749026f541dd646459f6
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 79af90d1c2c5b698ee7394f7fb20486b3069038c
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60732524"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66751939"
 ---
 # <a name="handling-errors-in-durable-functions-azure-functions"></a>Обработка ошибок в устойчивых функциях (Функции Azure)
 
-Оркестрации устойчивых функций реализованы в коде и могут использовать возможности языка программирования по обработке ошибок. С учетом этого при внедрении в оркестрации обработки и компенсации ошибок не требуется изучать новые концепции. Однако следует помнить о некоторых особенностях поведения.
+Оркестрации устойчивых функций реализованы в коде и могут использовать возможности языка программирования по обработке ошибок. С учетом этого не требуется получить сведения о внедрении в оркестрации обработки и компенсации ошибок новые концепции. Однако следует помнить о некоторых особенностях поведения.
 
 ## <a name="errors-in-activity-functions"></a>Ошибки в функциях действий
 
@@ -139,7 +139,7 @@ module.exports = df.orchestrator(function*(context) {
 
 API `CallActivityWithRetryAsync` (.NET) или `callActivityWithRetry` (JavaScript) принимает параметр `RetryOptions`. В вызовах суборкестрации через API `CallSubOrchestratorWithRetryAsync` (.NET) или `callSubOrchestratorWithRetry` (JavaScript) можно использовать эти же политики повтора.
 
-Существует несколько параметров настройки политики автоматического повтора. Среди них следующие страны:
+Существует несколько параметров настройки политики автоматического повтора. К ним относятся следующие:
 
 * **Max number of attempts** (Максимальное число попыток). Максимальное число повторных попыток.
 * **First retry interval** (Интервал до первого повтора). Время ожидания перед первой повторной попыткой.

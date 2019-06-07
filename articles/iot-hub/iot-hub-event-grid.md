@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 02/20/2019
 ms.author: kgremban
-ms.openlocfilehash: f08845dbf4168627d0198e81d2092a1fe56c6c89
-ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
+ms.openlocfilehash: 73a9aebfd0c5338f63927860ce3f6c57b20428a4
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66733867"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66754774"
 ---
 # <a name="react-to-iot-hub-events-by-using-event-grid-to-trigger-actions"></a>Реагирование на события в Центре Интернета вещей с использованием службы "Сетка событий" для запуска действий
 
@@ -25,7 +25,7 @@ ms.locfileid: "66733867"
 
 ## <a name="regional-availability"></a>Доступность по регионам
 
-Интеграция со службой "Сетка событий" доступна для центров IoT, расположенных в регионах, где поддерживается эта служба. Все события устройства, за исключением устройств телеметрии являются общедоступными. Событие телеметрии устройства в общедоступной предварительной версии и доступна во всех регионах, за исключением восточной части США, Западная часть США, Западная Европа, [Azure для государственных организаций](/azure/azure-government/documentation-government-welcome), [21Vianet в Azure для Китая](/azure/china/china-welcome), и [Azure для Германии](https://azure.microsoft.com/global-infrastructure/germany/). Наиболее актуальный список регионов см. в статье [Общие сведения о службе "Сетка событий Azure"](../event-grid/overview.md).
+Интеграция со службой "Сетка событий" доступна для центров IoT, расположенных в регионах, где поддерживается эта служба. Все события устройства, за исключением устройств телеметрии являются общедоступными. Событие телеметрии устройства в общедоступной предварительной версии и доступна во всех регионах, за исключением восточной части США, Западная часть США, Западная Европа, [Azure для государственных организаций](/azure/azure-government/documentation-government-welcome), [21Vianet в Azure для Китая](/azure/china), и [Azure для Германии](https://azure.microsoft.com/global-infrastructure/germany/). Наиболее актуальный список регионов см. в статье [Общие сведения о службе "Сетка событий Azure"](../event-grid/overview.md).
 
 ## <a name="event-types"></a>Типы событий
 

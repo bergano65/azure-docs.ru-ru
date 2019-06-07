@@ -14,12 +14,12 @@ ms.topic: article
 ms.custom: seodec18
 ms.date: 12/06/2018
 ms.author: shvija
-ms.openlocfilehash: 7b3b3b019df70b6c27833afdd0447ecf32da32ff
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.openlocfilehash: a1dafb8e4c16a59bfed51016ce9ccb0ec3eb7d6c
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66305009"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66754765"
 ---
 # <a name="azure-event-hubs---geo-disaster-recovery"></a>Геоизбыточное аварийное восстановление в службе "Центры событий Azure" 
 
@@ -98,7 +98,7 @@ ms.locfileid: "66305009"
  
 2. Тот факт, что данные не реплицируются, означает, что в настоящее время активные сеансы не реплицируются. Кроме того, обнаружение дубликатов и запланированные сообщения могут не работать. Новые сеансы, запланированные сообщения и новые дубликаты будут работать. 
 
-3. Отработку отказа сложной распределенной инфраструктуры необходимо [протестировать](/azure/architecture/resiliency/disaster-recovery-azure-applications#disaster-simulation) по крайней мере один раз. 
+3. Отработку отказа сложной распределенной инфраструктуры необходимо [протестировать](/azure/architecture/reliability/disaster-recovery#disaster-recovery-plan) по крайней мере один раз. 
 
 4. Синхронизация сущностей может занять некоторое время (примерно 50–100 сущностей в минуту).
 

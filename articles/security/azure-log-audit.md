@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/14/2019
 ms.author: TomSh
-ms.openlocfilehash: 6ab6ec6a88dbba066be9ecf9919be876090cfdff
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.openlocfilehash: edadb369461bb3865dd6894c3329e7079fa9d13f
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62121507"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66752551"
 ---
 # <a name="azure-logging-and-auditing"></a>Ведение журналов и аудит Azure
 
@@ -101,14 +101,14 @@ Azure предоставляет множество настраиваемых �
 **Поддерживаемые службы, схема для журналов диагностики и поддерживаемые категории журналов для каждого типа ресурса**
 
 
-| Service | Схема и документация | Тип ресурса | Category |
+| Service | Схема и документация | Тип ресурса | Категория |
 | ------- | ------------- | ------------- | -------- |
-|Балансировщик нагрузки Azure| [Журналы Azure Monitor для подсистемы балансировки нагрузки (Предварительная версия)](https://docs.microsoft.com/azure/load-balancer/load-balancer-monitor-log)|Microsoft.Network/loadBalancers<br>Microsoft.Network/loadBalancers|    LoadBalancerAlertEvent<br>LoadBalancerProbeHealthStatus|
+|Azure Load Balancer| [Журналы Azure Monitor для подсистемы балансировки нагрузки (Предварительная версия)](https://docs.microsoft.com/azure/load-balancer/load-balancer-monitor-log)|Microsoft.Network/loadBalancers<br>Microsoft.Network/loadBalancers|    LoadBalancerAlertEvent<br>LoadBalancerProbeHealthStatus|
 |группы сетевой безопасности;|[Журналы Azure Monitor для групп безопасности сети](https://docs.microsoft.com/azure/virtual-network/virtual-network-nsg-manage-log)|Microsoft.Network/networksecuritygroups<br>Microsoft.Network/networksecuritygroups|NetworkSecurityGroupEvent<br>NetworkSecurityGroupRuleCounter|
 |Шлюз приложений Azure|[Ведение журнала диагностики для шлюза приложений](https://docs.microsoft.com/azure/application-gateway/application-gateway-diagnostics)|Microsoft.Network/applicationGateways<br>Microsoft.Network/applicationGateways<br>Microsoft.Network/applicationGateways|ApplicationGatewayAccessLog<br>ApplicationGatewayPerformanceLog<br>ApplicationGatewayFirewallLog|
-|Хранилище Azure Key Vault|[Журналы Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-logging)|Microsoft.KeyVault/vaults|AuditEvent|
+|Хранилище ключей Azure|[Журналы Key Vault](https://docs.microsoft.com/azure/key-vault/key-vault-logging)|Microsoft.KeyVault/vaults|AuditEvent|
 |поиск Azure;|[Включение и использование аналитики поискового трафика](https://docs.microsoft.com/azure/search/search-traffic-analytics)|Microsoft.Search/searchServices|OperationLogs|
-|Azure Data Lake Store|[Доступ к журналам диагностики для Data Lake Store](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-diagnostic-logs)|Microsoft.DataLakeStore/accounts<br>Microsoft.DataLakeStore/accounts|Аудит<br>Requests|
+|Хранилище озера данных Azure|[Доступ к журналам диагностики для Data Lake Store](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-diagnostic-logs)|Microsoft.DataLakeStore/accounts<br>Microsoft.DataLakeStore/accounts|Аудит<br>Requests|
 |Azure Data Lake Analytics|[Доступ к журналам диагностики для Data Lake Analytics](https://docs.microsoft.com/azure/data-lake-analytics/data-lake-analytics-diagnostic-logs)|Microsoft.DataLakeAnalytics/accounts<br>Microsoft.DataLakeAnalytics/accounts|Аудит<br>Requests|
 |Azure Logic Apps|[Настраиваемая схема отслеживания сообщений B2B для приложений логики](https://docs.microsoft.com/azure/logic-apps/logic-apps-track-integration-account-custom-tracking-schema)|Microsoft.Logic/workflows<br>Microsoft.Logic/integrationAccounts|WorkflowRuntime<br>IntegrationAccountTrackingEvents|
 |Пакетная служба Azure|[Журналы диагностики пакетной службы Azure](https://docs.microsoft.com/azure/batch/batch-diagnostics)|Microsoft.Batch/batchAccounts|ServiceLog|
@@ -212,13 +212,13 @@ Azure Active Directory (Azure AD) формирует отчеты о безоп�
 
 Хотя журналы потоков предназначены для NSG, они отображаются не так, как другие журналы. Журналы потоков хранятся только в учетной записи хранения.
 
-К журналам потоков применяются те же политики хранения, что и к другим журналам. Для журналов действует политика хранения, в которой можно задать период от 1 до 365 дней. Если не задать эту политику, время хранения журналов не ограничено.
+К журналам потоков применяются те же политики хранения, что и к другим журналам. Для журналов действует политика хранения, в которой можно задать период от 1 до 365 дней. Если политика хранения не задана, то журналы сохраняются неограниченно долго.
 
 **Журналы диагностики**
 
 Периодические и спонтанные события создаваемые сетевыми ресурсами в журнал в учетных записях хранения и отправлено в концентратор событий или журналов Azure Monitor. Эти журналы содержат подробные сведения о работоспособности ресурса. Их можно просмотреть в средства, такие как журналы Power BI и Azure Monitor. Чтобы узнать, как просматривать журналы диагностики, см. в разделе [журналы Azure Monitor](https://docs.microsoft.com/azure/log-analytics/log-analytics-azure-networking-analytics).
 
-![Журналы диагностики](./media/azure-log-audit/azure-log-audit-fig5.png)
+![Раздел "Журналы диагностики"](./media/azure-log-audit/azure-log-audit-fig5.png)
 
 Доступны журналы диагностики для [Load Balancer](https://docs.microsoft.com/azure/load-balancer/load-balancer-monitor-log), [групп безопасности сети](https://docs.microsoft.com/azure/virtual-network/virtual-network-nsg-manage-log), маршрутов и [шлюза приложений](https://docs.microsoft.com/azure/application-gateway/application-gateway-diagnostics).
 
@@ -279,7 +279,7 @@ Application Insights помогает постоянно улучшать про
 |[Сопоставление приложений](https://docs.microsoft.com/azure/application-insights/app-insights-app-map)|Компоненты приложения с основными метриками и оповещениями.|
 |[Поиск данных экземпляра в системе диагностики](https://docs.microsoft.com/azure/application-insights/app-insights-diagnostic-search)| Поиск и фильтрация событий, таких как запросы, исключения, вызовы зависимостей, журналы трассировки и просмотры страниц.|
 |[Обозреватель метрик для статистических данных](https://docs.microsoft.com/azure/azure-monitor/app/metrics-explorer)|Просмотр, фильтрация и сегментирование объединенных данных, таких как частоты запросов, ошибок и исключений, время отклика и время загрузки страницы.|
-|[Панели мониторинга](https://docs.microsoft.com/azure/application-insights/app-insights-dashboards#dashboards)|Объединение разнородных данных из нескольких ресурсов и их совместное использование с другими пользователями. Идеальное решение для многокомпонентных приложений, а также для непрерывного отображения в комнате команды.|
+|[Панели мониторинга](https://docs.microsoft.com/azure/azure-monitor/app/overview-dashboard)|Объединение разнородных данных из нескольких ресурсов и их совместное использование с другими пользователями. Идеальное решение для многокомпонентных приложений, а также для непрерывного отображения в комнате команды.|
 |[Динамический поток метрик](https://docs.microsoft.com/azure/azure-monitor/app/live-stream)|При развертывании новой сборки просматривайте эти индикаторы производительности в режиме, близком к реальному времени, чтобы убедиться, что все работает правильно.|
 |[Аналитика в Application Insights](https://docs.microsoft.com/azure/application-insights/app-insights-analytics)|Получите ответы на сложные вопросы о производительности и использовании приложения с помощью этого мощного языка запросов.|
 |[Автоматические и ручные оповещения](https://docs.microsoft.com/azure/application-insights/app-insights-alerts)|Автоматические оповещения адаптируются к стандартным шаблонам телеметрии приложения и активируются, когда что-то не соответствует стандартному шаблону. Также можно настроить оповещения для определенных уровней пользовательских или стандартных метрик.|
@@ -328,33 +328,33 @@ Application Insights помогает постоянно улучшать про
 
 * Сценарии для сбора и публикации данных в журналы Azure Monitor (пустые ячейки в таблице ниже, а также для служб, которые не перечислены)
 
-| Service | Тип ресурса | Журналы | Метрики | Решение |
+| Service | Тип ресурса | Журналы | metrics | Решение |
 | :------ | :------------ | :--- | :------ | :------- |
-|Шлюз приложений Azure| Microsoft.Network/<br>applicationGateways|  Диагностика|Диагностика|    [Анализ шлюзов](https://docs.microsoft.com/azure/log-analytics/log-analytics-azure-networking-analytics#azure-application-gateway-analytics-solution-in-log-analytics) [приложений Azure](https://docs.microsoft.com/azure/log-analytics/log-analytics-azure-networking-analytics#azure-application-gateway-analytics-solution-in-log-analytics)|
+|Шлюз приложений Azure| Microsoft.Network/<br>applicationGateways|  Диагностика|Диагностика|    [Анализ шлюзов](https://docs.microsoft.com/azure/azure-monitor/insights/azure-networking-analytics#azure-application-gateway-analytics-solution-in-azure-monitor) [приложений Azure](https://docs.microsoft.com/azure/azure-monitor/insights/azure-networking-analytics)|
 |Application Insights||     Соединитель|  Соединитель|  [Соединитель Application Insights](https://blogs.technet.microsoft.com/msoms/2016/09/26/application-insights-connector-in-oms/) [(предварительная версия)](https://blogs.technet.microsoft.com/msoms/2016/09/26/application-insights-connector-in-oms/)|
 |Учетные записи для службы автоматизации Azure| Microsoft.Automation/<br>AutomationAccounts|    Диагностика||       [Дополнительные сведения](https://docs.microsoft.com/azure/automation/automation-manage-send-joblogs-log-analytics)|
 |Учетные записи для пакетной службы Azure|  Microsoft.Batch/<br>batchAccounts|  Диагностика|    Диагностика||
 |Классические облачные службы||       Хранилище||       [Дополнительные сведения](https://docs.microsoft.com/azure/log-analytics/log-analytics-azure-storage-iis-table)|
-|Cognitive Services|    Microsoft.CognitiveServices/<br>учетные записи|       Диагностика|||
+|Cognitive Services|    Microsoft.CognitiveServices/<br>accounts|       Диагностика|||
 |Azure Data Lake Analytics| Microsoft.DataLakeAnalytics/<br>accounts|   Диагностика|||
-|Azure Data Lake Store| Microsoft.DataLakeStore/<br>учетные записи|   Диагностика|||
+|Хранилище озера данных Azure| Microsoft.DataLakeStore/<br>accounts|   Диагностика|||
 |Пространство имен для концентратора событий Azure| Microsoft.EventHub/<br>namespaces|  Диагностика|    Диагностика||
 |Центр Интернета вещей Azure| Microsoft.Devices/<br>IotHubs||     Диагностика||
-|Хранилище Azure Key Vault|   Microsoft.KeyVault/<br>vaults|  Диагностика  || [Анализ хранилища ключей](https://docs.microsoft.com/azure/log-analytics/log-analytics-azure-key-vault)|
-|Балансировщик нагрузки Azure|   Microsoft.Network/<br>loadBalancers|    Диагностика|||
+|Хранилище ключей Azure|   Microsoft.KeyVault/<br>vaults|  Диагностика  || [Анализ хранилища ключей](https://docs.microsoft.com/azure/log-analytics/log-analytics-azure-key-vault)|
+|Azure Load Balancer|   Microsoft.Network/<br>loadBalancers|    Диагностика|||
 |Azure Logic Apps|  Microsoft.Logic/<br>workflows|  Диагностика|    Диагностика||
 ||Microsoft.Logic/<br>integrationAccounts||||
-|группы сетевой безопасности;|   Microsoft.Network/<br>networksecuritygroups|Диагностика||   [Анализ групп безопасности сети Azure](https://docs.microsoft.com/azure/log-analytics/log-analytics-azure-networking-analytics#azure-network-security-group-analytics-solution-in-log-analytics)|
+|группы сетевой безопасности;|   Microsoft.Network/<br>networksecuritygroups|Диагностика||   [Анализ групп безопасности сети Azure](https://docs.microsoft.com/azure/azure-monitor/insights/azure-networking-analytics#azure-application-gateway-and-network-security-group-analytics)|
 |Хранилища восстановления|   Microsoft.RecoveryServices/<br>vaults|||[Служба анализа служб восстановления Azure (предварительная версия)](https://github.com/krnese/AzureDeploy/blob/master/OMS/MSOMS/Solutions/recoveryservices/)|
 |Службы поиска|   Microsoft.Search/<br>searchServices|    Диагностика|    Диагностика||
-|Пространство имен служебной шины| Microsoft.ServiceBus/<br>пространства имен|    Диагностика|Диагностика|    [Служба анализа служебной шины (предварительная версия)](https://github.com/Azure/azure-quickstart-templates/tree/master/oms-servicebus-solution)|
+|Пространство имен служебной шины| Microsoft.ServiceBus/<br>namespaces|    Диагностика|Диагностика|    [Служба анализа служебной шины (предварительная версия)](https://github.com/Azure/azure-quickstart-templates/tree/master/oms-servicebus-solution)|
 |Service Fabric||       Хранилище||    [Анализ Service Fabric (предварительная версия)](https://docs.microsoft.com/azure/log-analytics/log-analytics-service-fabric)|
-|SQL (версия 12)| Microsoft.Sql/<br>servers/<br>базы_данных||       Диагностика||
+|SQL (версия 12)| Microsoft.Sql/<br>servers/<br>databases||       Диагностика||
 ||Microsoft.Sql/<br>servers/<br>elasticPools||||
 |Хранилище|||         Скрипт| [Служба анализа службы хранилища Azure (предварительная версия)](https://github.com/Azure/azure-quickstart-templates/tree/master/oms-azure-storage-analytics-solution)|
-|Виртуальные машины Azure|    Microsoft.Compute/<br>virtualMachines|  Расширение|  Расширение||
+|Виртуальные машины Azure|    Microsoft.Compute/<br>virtualMachines|  Добавочный номер|  Добавочный номер||
 ||||Диагностика||
-|Масштабируемые наборы виртуальных машин|    Microsoft.Compute/<br>virtualMachines    ||Диагностика||
+|наборы для масштабирования виртуальных машин|    Microsoft.Compute/<br>virtualMachines    ||Диагностика||
 ||Microsoft.Compute/<br>virtualMachineScaleSets/<br>virtualMachines||||
 |фермы веб-серверов;|Microsoft.Web/<br>serverfarms||   Диагностика
 |Веб-сайты|  Microsoft.Web/<br>sites ||      Диагностика|    [Дополнительные сведения](https://github.com/Azure/azure-quickstart-templates/tree/master/101-webappazure-oms-monitoring)|

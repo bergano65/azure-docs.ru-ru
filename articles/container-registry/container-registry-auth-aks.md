@@ -7,18 +7,20 @@ ms.service: container-service
 ms.topic: article
 ms.date: 08/08/2018
 ms.author: danlep
-ms.openlocfilehash: 1d7e130d619f580aeb82939e19ea5abf680ff039
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: a541af77daf4136c0056cf9919d69c538d1dc5b6
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61333622"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66754474"
 ---
 # <a name="authenticate-with-azure-container-registry-from-azure-kubernetes-service"></a>Аутентификация с помощью реестра контейнеров Azure из Службы Azure Kubernetes
 
 При использовании реестра контейнеров Azure (ACR) со Службой Azure Kubernetes (AKS) необходимо установить механизм аутентификации. В этой статье описаны рекомендуемые конфигурации для аутентификации между этими двумя службами Azure.
 
-В этой статье предполагается, что вы уже создали кластер AKS и у вас есть доступ к кластеру через клиент командной строки `kubectl`. 
+Необходимо настроить один из этих методов проверки подлинности. Наиболее распространенным подходом является [предоставления доступа с помощью субъекта-службы AKS](#grant-aks-access-to-acr). Если у вас есть конкретным потребностям, вы можете при необходимости [предоставления доступа с помощью секреты Kubernetes](#access-with-kubernetes-secret).
+
+В этой статье предполагается, что вы уже создали кластер AKS и у вас есть доступ к кластеру через клиент командной строки `kubectl`.
 
 ## <a name="grant-aks-access-to-acr"></a>Предоставление AKS доступа к ACR
 

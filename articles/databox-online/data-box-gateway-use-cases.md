@@ -8,12 +8,12 @@ ms.subservice: gateway
 ms.topic: article
 ms.date: 03/02/2019
 ms.author: alkohli
-ms.openlocfilehash: cdc1b07b93386c0225c1e6c5f570ea1247e450b5
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: e9092fb91ad98e6147647717e11d1a64bcff580e
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64924393"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66754178"
 ---
 # <a name="use-cases-for-azure-data-box-gateway"></a>Сценарии использования для шлюза Azure Data Box
 
@@ -50,7 +50,7 @@ ms.locfileid: "64924393"
 - После отправки данных переведите хранилище на архивный уровень. Уровень для больших двоичных объектов можно задать двумя способами: скрипт Azure PowerShell или политика управления жизненным циклом службы хранилища Azure.  
     - Если вы используете Azure PowerShell, выполните [эти действия](/azure/databox/data-box-how-to-set-data-tier#use-azure-powershell-to-set-the-blob-tier), чтобы переместить данные на архивный уровень.
     - Если вы используете управление жизненным циклом, выполните следующие действия, чтобы переместить данные на архивный уровень:
-        - [Зарегистрируйтесь](/azure/storage/common/storage-lifecycle-management-concepts#register-for-preview) для использования предварительной версии службы управления жизненным циклом BLOB-объектов, чтобы получить доступ к архивному уровню.
+        - [Зарегистрируйтесь](/azure/storage/common/storage-lifecycle-management-concepts) для использования предварительной версии службы управления жизненным циклом BLOB-объектов, чтобы получить доступ к архивному уровню.
         - Используйте описанную ниже политику [архивации данных при приеме](/azure/storage/blobs/storage-lifecycle-management-concepts#archive-data-at-ingest).
 - Большие двоичные объекты, отмеченные как архивные, не могут быть изменены шлюзом, пока вы не переместите их на горячий или холодный уровень доступа. Если файл сохраняется в локальном хранилище, любые изменения в его локальной копии (в том числе удаление файла) не передаются на архивный уровень.
 - Чтобы считать данные с архивного уровня, их нужно восстановить, переместив хранилище на горячий или холодный уровень. При [обновлении общей папки](data-box-gateway-manage-shares.md#refresh-shares) в шлюзе большой двоичный объект не восстанавливается.

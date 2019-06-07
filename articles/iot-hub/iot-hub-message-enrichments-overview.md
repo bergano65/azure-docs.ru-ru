@@ -8,12 +8,12 @@ services: iot-hub
 ms.topic: conceptual
 ms.date: 05/10/2019
 ms.author: robinsh
-ms.openlocfilehash: 6ddfd90956fde0c57e14083a3704cbf365456c75
-ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
+ms.openlocfilehash: 13e35ab93fc37541548785c6355489eaf3a3efc2
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/06/2019
-ms.locfileid: "66735165"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66754550"
 ---
 # <a name="message-enrichments-for-device-to-cloud-iot-hub-messages-preview"></a>Усовершенствования сообщения для сообщения центра Интернета вещей устройства в облако (Предварительная версия)
 
@@ -77,7 +77,7 @@ ms.locfileid: "66735165"
 
 ## <a name="availability"></a>Доступность
 
-Эта возможность доступна в предварительной версии и доступна во всех регионах, за исключением восточной части США, Западная часть США, Западная Европа, [Azure для государственных организаций](/azure/azure-government/documentation-government-welcome), [21Vianet в Azure для Китая](/azure/china/china-welcome), и [Azure для Германии](https://azure.microsoft.com/global-infrastructure/germany/).
+Эта возможность доступна в предварительной версии и доступна во всех регионах, за исключением восточной части США, Западная часть США, Западная Европа, [Azure для государственных организаций](/azure/azure-government/documentation-government-welcome), [21Vianet в Azure для Китая](/azure/china), и [Azure для Германии](https://azure.microsoft.com/global-infrastructure/germany/).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

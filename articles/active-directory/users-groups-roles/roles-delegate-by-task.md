@@ -15,12 +15,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9e65f7ca0a01e0ceee6448ea49e1d6d6da696cf6
-ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
+ms.openlocfilehash: f3f21f552add551ac2434618b184eb18c53ad5be
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66417077"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66752233"
 ---
 # <a name="administrator-roles-by-admin-task-in-azure-active-directory"></a>Роли администратора для задач администратора в Azure Active Directory
 
@@ -56,6 +56,9 @@ Disable application proxy (Отключение прокси приложени�
 Создание, чтение, изменение и удаление пользователей | Глобальный администратор ([см. документацию](https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-faqs))
 Чтение всех конфигураций | глобального администратора; | 
 Чтение журналов аудита B2C | Глобальный администратор ([см. документацию](https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-faqs)) | 
+
+> [!NOTE]
+> Глобальные администраторы Azure AD B2C имеет те же разрешения, что глобальные Администраторы Azure AD. Если у вас есть права глобального администратора Azure AD B2C, убедитесь, что вы находитесь в каталоге Azure AD B2C и не каталог Azure AD.
 
 ## <a name="company-branding"></a>Корпоративная фирменная символика
 

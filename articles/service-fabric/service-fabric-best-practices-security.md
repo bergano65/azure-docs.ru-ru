@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: NA
 ms.date: 01/23/2019
 ms.author: pepogors
-ms.openlocfilehash: 449dbb04d58fe7980c845b8c5bc8d837b643c1be
-ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
+ms.openlocfilehash: 69e51f23980aa1d4225f2e5062470f94e5ca9008
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66386725"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66753785"
 ---
 # <a name="azure-service-fabric-security"></a>Безопасность Azure Service Fabric 
 
@@ -205,7 +205,7 @@ cosmos_db_password=$(curl 'https://management.azure.com/subscriptions/<YOUR SUBS
 [Мы рекомендуем реализовать на стандартный конфигурацию, которая широко известные и хорошо протестированных, такие как базовые показатели системы безопасности Майкрософт, в отличие от самостоятельного создания базовых показателей](https://docs.microsoft.com/windows/security/threat-protection/windows-security-baselines); параметр для подготовки этих на виртуальной машине Масштабируемые наборы заключается в использовании обработчика расширения Desired State Configuration (DSC) Azure, чтобы настроить виртуальные машины, так как они работают в оперативном режиме, поэтому они выполняются производственного программного обеспечения.
 
 ## <a name="azure-firewall"></a>Брандмауэр Azure
-[Брандмауэр Azure — это служба безопасности управляемой, облачной сети, которая защищает ваши ресурсы виртуальной сети Azure. Это полностью отслеживает состояние как встроенные функции высокой доступности и масштабируемости ограничено облачной службы. ](https://docs.microsoft.com/azure/firewall/overview); это дает возможность ограничить исходящий трафик HTTP/S, заданный список полные доменные имена (FQDN), включая подстановочные знаки. Эта функция не требует завершения SSL-запросов. Его рекомендуется использовать [FQDN брандмауэра Azure теги](https://docs.microsoft.com/azure/firewall/fqdn-tags) для обновлений Windows, а также поддерживать сетевой трафик к центру обновления Майкрософт Windows конечные точки могут передаваться через брандмауэр. [Развертывание брандмауэра Azure, с помощью шаблона](https://docs.microsoft.com/azure/firewall/deploy-template) представлен пример определения шаблона Microsoft.Network/azureFirewalls ресурсов.
+[Брандмауэр Azure — это служба безопасности управляемой, облачной сети, которая защищает ваши ресурсы виртуальной сети Azure. Это полностью отслеживает состояние как встроенные функции высокой доступности и масштабируемости ограничено облачной службы. ](https://docs.microsoft.com/azure/firewall/overview); это дает возможность ограничить исходящий трафик HTTP/S, заданный список полные доменные имена (FQDN), включая подстановочные знаки. Эта функция не требует завершения SSL-запросов. Его рекомендуется использовать [FQDN брандмауэра Azure теги](https://docs.microsoft.com/azure/firewall/fqdn-tags) для обновлений Windows, а также поддерживать сетевой трафик к центру обновления Майкрософт Windows конечные точки могут передаваться через брандмауэр. [Развертывание брандмауэра Azure, с помощью шаблона](https://docs.microsoft.com/azure/firewall/deploy-template) представлен пример определения шаблона Microsoft.Network/azureFirewalls ресурсов. Два правила брандмауэра, общие для приложений Service Fabric является предоставление вашей сети кластеров для взаимодействия с * download.microsoft.com, и * servicefabric.azure.com; для извлечения, обновления Windows и код расширения Service Fabric вычислений виртуальной машины.
 
 ## <a name="tls-12"></a>TLS 1.2
 [ШЛЮЗА СЛУЖБ ТЕРМИНАЛОВ](https://github.com/Azure/Service-Fabric-Troubleshooting-Guides/blob/master/Security/TLS%20Configuration.md)

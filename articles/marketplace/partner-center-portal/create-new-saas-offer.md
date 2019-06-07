@@ -7,12 +7,12 @@ ms.author: mattwoj
 ms.service: marketplace
 ms.topic: conceptual
 ms.date: 05/30/2019
-ms.openlocfilehash: 9c8b8a6ad8a10a65a05b46bf433d00b4e3ecb402
-ms.sourcegitcommit: ec7b0bf593645c0d1ef401a3350f162e02c7e9b8
+ms.openlocfilehash: 897634ac0c30b4a2cc496c225965f465a94fe4e9
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66455630"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66751898"
 ---
 # <a name="create-a-new-saas-offer"></a>Создайте новое предложение SaaS
 
@@ -74,7 +74,7 @@ ms.locfileid: "66455630"
 
 - Предложения должны быть совместимы с клиентами Azure. (Часто приложений SaaS также размещены в Azure для оптимальной производительности и совместимости, но это не обязательное требование.) 
 - Необходимо использовать предложение [Azure Active Directory (Azure AD)](https://azure.microsoft.com/services/active-directory/) для управления удостоверениями и проверки подлинности.
-- Необходимо использовать предложение [интерфейсами API SaaS Fulfillment](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/saas-app/cpp-saas-fulfillment-api-v2) интегрировать с Azure Marketplace.
+- Необходимо использовать предложение [интерфейсами API SaaS Fulfillment](https://docs.microsoft.com/azure/marketplace/partner-center-portal/pc-saas-fulfillment-api-v2) интегрировать с Azure Marketplace.
 
 #### <a name="billing-infrastructure-costs"></a>Выставление счетов за использование инфраструктуры
 Для предложения SaaS, как издатель, нужно учесть плату инфраструктуры Azure, доступность и стоимость лицензирования программного обеспечения как элемент одного затрат. Эти затраты представляется как фиксированная ежемесячная плата клиенту. Использование инфраструктуры Azure управляемые и выставлен счет за вас, партнеров, напрямую. Фактическая стоимость использования инфраструктуры не видна пользователю. Как правило, издатели добавляют плату за использование инфраструктуры Azure в счета за лицензирование программного обеспечения. 

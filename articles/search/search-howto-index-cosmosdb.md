@@ -10,18 +10,18 @@ ms.service: search
 ms.devlang: rest-api
 ms.topic: conceptual
 ms.custom: seodec2018
-ms.openlocfilehash: 07989b06b756e1e360ac3c37927a8267c84d9162
-ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
+ms.openlocfilehash: 0610f57e264189961a6803bee5bb93c1ec9fb103
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2019
-ms.locfileid: "65522833"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66753997"
 ---
 # <a name="how-to-index-cosmos-db-using-an-azure-search-indexer"></a>Как индексировать Cosmos DB с помощью индексатора поиска Azure
 
 
 > [!Note]
-> Поддержка MongoDB API находится в предварительной версии и не предназначена для использования в рабочей среде. [2019 г. версия REST API-05-06-Preview](search-api-preview.md) предоставляет эту функцию. Нет, портал или поддержки пакета SDK для .NET в настоящее время.
+> Поддержка MongoDB API находится в предварительной версии и не предназначена для использования в рабочей среде. Эта функция предоставляется в [версии REST API 2019-05-06-Preview](search-api-preview.md). Нет, портал или поддержки пакета SDK для .NET в настоящее время.
 >
 > SQL API является общедоступным.
 
@@ -176,10 +176,10 @@ ms.locfileid: "65522833"
 
 | Поле   | Описание |
 |---------|-------------|
-| **name** | Обязательный. Выберите любое имя для представления объектом источника данных. |
-|**type**| Обязательный. Этот параметр должен содержать значение `cosmosdb`. |
-|**credentials** | Обязательный. Должен быть строкой подключения Cosmos DB.<br/>Для коллекций SQL строки подключения, в следующем формате: `AccountEndpoint=<Cosmos DB endpoint url>;AccountKey=<Cosmos DB auth key>;Database=<Cosmos DB database id>`<br/>Для коллекций MongoDB добавьте **типа API = MongoDb** строку подключения:<br/>`AccountEndpoint=<Cosmos DB endpoint url>;AccountKey=<Cosmos DB auth key>;Database=<Cosmos DB database id>;ApiKind=MongoDb`<br/>Не рекомендуется указывать номера портов в URL-адресе конечной точки. Если вы укажете номер порта, служба поиска Azure не сможет индексировать базу данных Azure Cosmos DB.|
-| **container** | содержит следующие элементы: <br/>**name**. Обязательный. Укажите идентификатор коллекции базы данных для индексирования.<br/>**query**. Необязательный элемент. Можно указать запрос на сведение произвольного документа JSON в неструктурированную схему, индексируемую поиском Azure.<br/>Для коллекций MongoDB запросы не поддерживаются. |
+| **name** | Обязательный элемент. Выберите любое имя для представления объектом источника данных. |
+|**type**| Обязательный элемент. Этот параметр должен содержать значение `cosmosdb`. |
+|**credentials** | Обязательный элемент. Должен быть строкой подключения Cosmos DB.<br/>Для коллекций SQL строки подключения, в следующем формате: `AccountEndpoint=<Cosmos DB endpoint url>;AccountKey=<Cosmos DB auth key>;Database=<Cosmos DB database id>`<br/>Для коллекций MongoDB добавьте **типа API = MongoDb** строку подключения:<br/>`AccountEndpoint=<Cosmos DB endpoint url>;AccountKey=<Cosmos DB auth key>;Database=<Cosmos DB database id>;ApiKind=MongoDb`<br/>Не рекомендуется указывать номера портов в URL-адресе конечной точки. Если вы укажете номер порта, служба поиска Azure не сможет индексировать базу данных Azure Cosmos DB.|
+| **container** | содержит следующие элементы: <br/>**name**. Обязательный элемент. Укажите идентификатор коллекции базы данных для индексирования.<br/>**query**. Необязательный элемент. Можно указать запрос на сведение произвольного документа JSON в неструктурированную схему, индексируемую поиском Azure.<br/>Для коллекций MongoDB запросы не поддерживаются. |
 | **dataChangeDetectionPolicy** | (рекомендуется). Ознакомьтесь с разделом [Индексация измененных документов](#DataChangeDetectionPolicy).|
 |**dataDeletionDetectionPolicy** | Необязательный элемент. Ознакомьтесь с разделом [удаленных документов](#DataDeletionDetectionPolicy).|
 
@@ -258,7 +258,7 @@ ms.locfileid: "65522833"
 | Логический |Edm.Boolean, Edm.String |
 | Числа, которые выглядят как целые числа |Edm.Int32, Edm.Int64, Edm.String |
 | Числа, которые выглядят как числа с плавающей запятой |Edm.Double, Edm.String |
-| Строка |Edm.String |
+| String |Edm.String |
 | Массивы типов-примитивов, например [a, b, c] |Collection(Edm.String) |
 | Строки, которые выглядят как даты |Edm.DateTimeOffset, Edm.String |
 | Объекты GeoJSON, например { "type": "Point", "coordinates": [long, lat] } |Edm.GeographyPoint |
@@ -282,6 +282,8 @@ ms.locfileid: "65522833"
 Этот индексатор выполняется каждые два часа (интервал расписания имеет значение PT2H). Чтобы запускать индексатор каждые 30 минут, задайте интервал "PT30M". Самый короткий интервал, который можно задать, составляет 5 минут. Расписание является необязательным. Если оно не указано, то индексатор выполняется только один раз при его создании. Однако индексатор можно запустить по запросу в любое время.   
 
 Дополнительные сведения об API создания индексатора см. в разделе [Создание индексатора](https://docs.microsoft.com/rest/api/searchservice/create-indexer).
+
+Дополнительные сведения об определении расписания индексаторов см. в разделе [планирование индексаторы поиска Azure](search-howto-schedule-indexers.md).
 
 ## <a name="use-net"></a>Использование .NET
 

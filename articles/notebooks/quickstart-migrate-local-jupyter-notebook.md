@@ -10,15 +10,15 @@ ms.service: azure-notebooks
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: quickstart
 ms.date: 12/04/2018
 ms.author: kraigb
-ms.openlocfilehash: 5ee9970a255928bca9d08111229be6298f20d7b3
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: MT
+ms.openlocfilehash: 7df64c3fb70bdf3e7689787ec558bfe0e4942352
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60235586"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66754013"
 ---
 # <a name="quickstart-migrate-a-local-jupyter-notebook"></a>Краткое руководство. Перенос локальной записной книжки Jupyter
 
@@ -36,7 +36,7 @@ ms.locfileid: "60235586"
 
     ![Ссылка "Мои проекты" в верхней части окна браузера](media/quickstarts/my-projects-link.png)
 
-1. На странице **Мои проекты** выберите **+ Новый проект** (сочетание клавиш: n). Если окно браузера сужено, кнопка может отображаться как **+**:
+1. На странице **Мои проекты** выберите **+ Новый проект** (сочетание клавиш: n). Если окно браузера сужено, кнопка может отображаться как **+** :
 
     ![Команда "Новый проект" на странице "Мои проекты"](media/quickstarts/new-project-command.png)
 
@@ -64,7 +64,7 @@ ms.locfileid: "60235586"
 
 1. Чтобы изменить файлы, не являющиеся записными книжками, щелкните правой кнопкой мыши файл в проекте и выберите **Изменить файл** (сочетание клавиш: i). Действие по умолчанию, **Запустить** (сочетание клавиш: r), позволяет только просматривать содержимое файла без редактирования
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
 > [Руководство по созданию и запуску записной книжки Jupyter для выполнения линейной регрессии](tutorial-create-run-jupyter-notebook.md)

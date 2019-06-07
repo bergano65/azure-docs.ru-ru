@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 03/12/2019
+ms.date: 06/06/2019
 ms.author: roiyz
-ms.openlocfilehash: 538eb492829c8ad171d1d27b51405725f53f352a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 8b24af016349db0fcfb4106a1e69da395e3d0150
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60743604"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66755157"
 ---
 # <a name="azure-monitor-virtual-machine-extension-for-linux"></a>Расширение виртуальной машины Azure Monitor для Linux
 
@@ -39,7 +39,7 @@ ms.locfileid: "60743604"
 
 Расширение агента Log Analytics можно выполнять с использованием указанных ниже дистрибутивов Linux.
 
-| Дистрибуция | Version |
+| Дистрибутив | Version |
 |---|---|
 | CentOS Linux | 6 (x86 или x64) и 7 (x64) |
 | Amazon Linux | 2017.09 (x64) | 
@@ -53,11 +53,27 @@ ms.locfileid: "60743604"
 >OpenSSL ниже версии 1.x не поддерживается на любой платформе, а версия 1.10 поддерживается только на платформах x86_64 (64-разрядная версия).  
 >
 
+### <a name="agent-prerequisites"></a>Предварительные требования к агенту
+
+В следующей таблице выделены пакеты, необходимые для поддерживаемых дистрибутивов Linux, которые агент будет устанавливаться на.
+
+|Требуемый пакет |Описание |Минимальная версия |
+|-----------------|------------|----------------|
+|Glibc |    Библиотека C GNU | 2.5-12 
+|Openssl    | Библиотеки OpenSSL | 1.0.x или 1.1.x |
+|Curl | Веб-клиент cURL | 7.15.5 |
+|Python-ctypes | | 
+|PAM | Подключаемые модули аутентификации | | 
+
+>[!NOTE]
+>Для сбора сообщений системного журнала требуется rsyslog или syslog-ng. Управляющая программа syslog по умолчанию не поддерживается для сбора событий системного журнала в Red Hat Enterprise Linux версии 5, CentOS и Oracle Linux (sysklog). Чтобы собирать данные системного журнала из дистрибутивов этих версий, требуется установить и настроить управляющую программу rsyslog, которая заменит sysklog.
+
 ### <a name="agent-and-vm-extension-version"></a>Версия агента и расширения виртуальной машины
 Следующая таблица предоставляет сопоставление версии расширения виртуальной Машины Azure Monitor и пакетов агента Log Analytics для каждого выпуска. В ней также указана ссылка на заметки о выпуске для версии пакета агента Log Analytics. Заметки о выпуске содержат сведения об исправлениях ошибок и новых функциях, доступных в данном выпуске агента.  
 
 | Версия расширения Azure Monitor виртуальной Машины Linux | Версия пакета агента Log Analytics | 
 |--------------------------------|--------------------------|
+|1.10.0 | [1.10.0-1](https://github.com/microsoft/OMS-Agent-for-Linux/releases/tag/OMSAgent_v1.10.0-1) |
 | 1.9.1 | [1.9.0-0](https://github.com/Microsoft/OMS-Agent-for-Linux/releases/tag/OMSAgent_v1.9.0-0) |
 | 1.8.11 | [1.8.1-256](https://github.com/Microsoft/OMS-Agent-for-Linux/releases/tag/OMSAgent_v1.8.1.256)| 
 | 1.8.0 | [1.8.0-256](https://github.com/Microsoft/OMS-Agent-for-Linux/releases/tag/1.8.0-256)| 
@@ -116,11 +132,11 @@ ms.locfileid: "60743604"
 
 ### <a name="property-values"></a>Значения свойств
 
-| ИМЯ | Значение и пример |
+| Name | Значение и пример |
 | ---- | ---- |
 | версия_API | 2018-06-01 |
 | publisher | Microsoft.EnterpriseCloud.Monitoring |
-| тип | OmsAgentForLinux |
+| type | OmsAgentForLinux |
 | typeHandlerVersion | 1.7 |
 | workspaceID (пример) | 6f680a37-00c6-41c7-a93f-1437e3462574 |
 | workspaceKey (пример) | z4bU3p1/GrnWpQkky4gdabWXAhbWSTz70hm4m2Xt92XI+rSRgE8qVvRhsGo9TXffbrTahyrwv35W0pOqQAU7uQ== |

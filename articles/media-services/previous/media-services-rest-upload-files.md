@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: f63087d107b9db30e2af6273afde7f51f1c72404
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: b7583a0fda2fca0d8ff80879389b824a7b352a84
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60817698"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66752891"
 ---
 # <a name="upload-files-into-a-media-services-account-using-rest"></a>Передача файлов в учетную запись служб мультимедиа с помощью REST  
 > [!div class="op_single_selector"]
@@ -68,7 +68,7 @@ ms.locfileid: "60817698"
 
     Значения для первых пяти из этих переменных вы найдете в статье [Доступ к API служб мультимедиа Azure с помощью аутентификации Azure AD](media-services-use-aad-auth-to-access-ams-api.md). 
 
-    ![Отправить файл](./media/media-services-rest-upload-files/postman-import-env.png)
+    ![Отправка файла](./media/media-services-rest-upload-files/postman-import-env.png)
 2. Укажите значение для переменной среды **MediaFileName**.
 
     Укажите имя файла мультимедиа, который вы собираетесь передать. В нашем примере это файл BigBuckBunny.mp4. 
@@ -90,7 +90,7 @@ ms.locfileid: "60817698"
 
     Часть URL-адреса заполняется переменной среды **AzureADSTSEndpoint** (ранее в этом руководстве вы задали значения переменных среды, поддерживающих коллекции).
 
-    ![Отправить файл](./media/media-services-rest-upload-files/postment-get-token.png)
+    ![Отправка файла](./media/media-services-rest-upload-files/postment-get-token.png)
 
 5. Нажмите кнопку **Отправить**.
 
@@ -112,7 +112,7 @@ ms.locfileid: "60817698"
 1. Выберите **AccessPolicy** -> **Create AccessPolicy for Upload** (Создать AccessPolicy для отправки).
 2. Нажмите кнопку **Отправить**.
 
-    ![Отправить файл](./media/media-services-rest-upload-files/postman-access-policy.png)
+    ![Отправка файла](./media/media-services-rest-upload-files/postman-access-policy.png)
 
     Скрипт test получает идентификатор AccessPolicy и сохраняет его в соответствующей переменной среды.
 
@@ -133,7 +133,7 @@ ms.locfileid: "60817698"
 1. Выберите **Ресурсы** -> **Создать ресурс**.
 2. Нажмите кнопку **Отправить**.
 
-    ![Отправить файл](./media/media-services-rest-upload-files/postman-create-asset.png)
+    ![Отправка файла](./media/media-services-rest-upload-files/postman-create-asset.png)
 
     Скрипт test получает идентификатор ресурса и сохраняет его в соответствующей переменной среды.
 
@@ -166,7 +166,7 @@ ms.locfileid: "60817698"
 
     Скрипт test создает URL-адрес отправки, используя указанное вами имя файла мультимедиа и сведения о локаторе SAS, а затем сохраняет его в соответствующей переменной среды.
 
-    ![Отправить файл](./media/media-services-rest-upload-files/postman-create-sas-locator.png)
+    ![Отправка файла](./media/media-services-rest-upload-files/postman-create-sas-locator.png)
 
 ## <a name="upload-a-file-to-blob-storage-using-the-upload-url"></a>Отправка файла в хранилище больших двоичных объектов с помощью URL-адреса отправки.
 
@@ -176,7 +176,7 @@ ms.locfileid: "60817698"
 
 - [Использование REST API службы хранилища Azure](https://docs.microsoft.com/azure/storage/common/storage-rest-api-auth?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)
 - [PUT Blob](https://docs.microsoft.com/rest/api/storageservices/put-blob)
-- [Upload blobs to Blob storage](https://docs.microsoft.com/azure/storage/common/storage-use-azcopy#upload-blobs-to-blob-storage) (Отправка больших двоичных объектов в хранилище BLOB-объектов)
+- [Upload blobs to Blob storage](https://docs.microsoft.com/previous-versions/azure/storage/storage-use-azcopy#upload-blobs-to-blob-storage) (Отправка больших двоичных объектов в хранилище BLOB-объектов)
 
 ### <a name="upload-a-file-with-postman"></a>Отправка файла с помощью Postman
 
@@ -185,15 +185,15 @@ ms.locfileid: "60817698"
 Запрос на отправку не входит в коллекцию **AzureMedia**. 
 
 Создайте и настройте новый запрос.
-1. Нажмите **+**, чтобы создать новую вкладку запроса.
-2. Выберите операцию **PUT** и скопируйте в URL-адрес значение **{{UploadURL}}**.
+1. Нажмите **+** , чтобы создать новую вкладку запроса.
+2. Выберите операцию **PUT** и скопируйте в URL-адрес значение **{{UploadURL}}** .
 2. Оставьте вкладку **Авторизация** без изменений (не устанавливайте значение **маркера носителя**).
 3. На вкладке **Заголовки** укажите следующие параметры: **Ключ** — "x-ms-blob-type" и **Значение** — "BlockBlob".
 2. На вкладке **Текст** выберите вариант **двоичный**.
 4. Выберите файл с именем, которое сохранено в переменной среды **MediaFileName**.
 5. Нажмите кнопку **Отправить**.
 
-    ![Отправить файл](./media/media-services-rest-upload-files/postman-upload-file.png)
+    ![Отправка файла](./media/media-services-rest-upload-files/postman-upload-file.png)
 
 ##  <a name="create-a-metadata-in-the-asset"></a>Создание метаданных в ресурсе
 
@@ -202,7 +202,7 @@ ms.locfileid: "60817698"
 1. Выберите **AssetFiles** -> **CreateFileInfos**.
 2. Нажмите кнопку **Отправить**.
 
-    ![Отправить файл](./media/media-services-rest-upload-files/postman-create-file-info.png)
+    ![Отправка файла](./media/media-services-rest-upload-files/postman-create-file-info.png)
 
 Это действие запускает отправку файла и создание метаданных.
 

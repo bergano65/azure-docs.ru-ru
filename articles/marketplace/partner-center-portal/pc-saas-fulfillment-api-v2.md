@@ -7,12 +7,12 @@ ms.service: marketplace
 ms.topic: reference
 ms.date: 05/23/2019
 ms.author: evansma
-ms.openlocfilehash: 1aba0ab7083c437210166d2d5a2d77e7a657afe9
-ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
+ms.openlocfilehash: da23b90e44869dcbd21acf9b2c4e04f30153ae09
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66474583"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66751777"
 ---
 # <a name="saas-fulfillment-apis-version-2"></a>Выполнение приложениям SaaS API версии 2 
 
@@ -107,7 +107,7 @@ ms.locfileid: "66474583"
 |  Content-Type      | `application/json` |
 |  x-ms-requestid    |  Уникальное строковое значение для отслеживания запроса от клиента, желательно GUID. Если это значение не указано, оно создается случайным образом и возвращается в заголовке ответа. |
 |  x-ms-correlationid |  Уникальное строковое значение для операции на стороне клиента. Этот параметр сопоставляет все события из клиентской операции с событиями на стороне сервера. Если это значение не указано, оно создается случайным образом и возвращается в заголовке ответа.  |
-|  authorization     |  [Получение токена JSON web token (JWT) носителя](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/saas-app/cpp-saas-registration#get-a-token-based-on-the-azure-ad-app) |
+|  authorization     |  [Получение токена JSON web token (JWT) носителя](https://docs.microsoft.com/azure/marketplace/partner-center-portal/pc-saas-registration#get-a-token-based-on-the-azure-ad-app) |
 |  x-ms-marketplace-token  |  Параметр маркера запроса в URL-АДРЕСЕ, когда пользователь перенаправляется на веб-сайт SaaS независимого поставщика программного обеспечения из Azure (например: `https://contoso.com/signup?token=..`). *Примечание.* URL-адрес декодирует значение токена из браузера перед его использованием.  |
 
 *Коды ответов:*
@@ -171,7 +171,7 @@ Response body:
 | Content-Type       |  `application/json`  |
 | x-ms-requestid     |  Уникальное строковое значение для отслеживания запроса от клиента, желательно GUID. Если это значение не указано, оно создается случайным образом и возвращается в заголовке ответа. |
 | x-ms-correlationid |  Уникальное строковое значение для операции на стороне клиента. Этот параметр сопоставляет все события из клиентской операции с событиями на стороне сервера. Если это значение не указано, один будет сгенерирован и в заголовке ответа.  |
-| authorization      |  [Получите маркер JSON web token (JWT) носителя.](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/saas-app/cpp-saas-registration#get-a-token-based-on-the-azure-ad-app)  |
+| authorization      |  [Получите маркер JSON web token (JWT) носителя.](https://docs.microsoft.com/azure/marketplace/partner-center-portal/pc-saas-registration#get-a-token-based-on-the-azure-ad-app)  |
 
 *Коды ответов:*
 
@@ -198,7 +198,7 @@ Response body:
               "Read" // Possible Values: Read, Update, Delete.
           ], // Indicates operations allowed on the SaaS subscription. For CSP initiated purchases, this will always be Read.
           "sessionMode": "None", // Possible Values: None, DryRun (Dry Run indicates all transactions run as Test-Mode in the commerce stack)
-          "saasSubscriptionStatus": "Subscribed" // Indicates the status of the operation. [Provisioning, Subscribed, Suspended, Unsubscribed]
+          "saasSubscriptionStatus": "Subscribed" // Indicates the status of the operation: [NotStarted, PendingFulfillmentStart, Subscribed, Suspended, Unsubscribed]
       }
   ],
   "continuationToken": ""
@@ -241,7 +241,7 @@ Response body:
 |  Content-Type      |  `application/json`  |
 |  x-ms-requestid    |  Уникальное строковое значение для отслеживания запроса от клиента, желательно GUID. Если это значение не указано, оно создается случайным образом и возвращается в заголовке ответа. |
 |  x-ms-correlationid |  Уникальное строковое значение для операции на стороне клиента. Этот параметр сопоставляет все события из клиентской операции с событиями на стороне сервера. Если это значение не указано, один будет сгенерирован и в заголовке ответа.  |
-|  authorization     |  [Получите маркер JSON web token (JWT) носителя.](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/saas-app/cpp-saas-registration#get-a-token-based-on-the-azure-ad-app)  |
+|  authorization     |  [Получите маркер JSON web token (JWT) носителя.](https://docs.microsoft.com/azure/marketplace/partner-center-portal/pc-saas-registration#get-a-token-based-on-the-azure-ad-app)  |
 
 *Коды ответов:*
 
@@ -305,7 +305,7 @@ Response Body:
 |   Content-Type     |  `application/json` |
 |   x-ms-requestid   |   Уникальное строковое значение для отслеживания запроса от клиента, желательно GUID. Если это значение не указано, оно создается случайным образом и возвращается в заголовке ответа. |
 |  x-ms-correlationid  | Уникальное строковое значение для операции на стороне клиента. Этот параметр сопоставляет все события из клиентской операции с событиями на стороне сервера. Если это значение не указано, оно создается случайным образом и возвращается в заголовке ответа. |
-|  authorization     |  [Получите маркер JSON web token (JWT) носителя.](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/saas-app/cpp-saas-registration#get-a-token-based-on-the-azure-ad-app) |
+|  authorization     |  [Получите маркер JSON web token (JWT) носителя.](https://docs.microsoft.com/azure/marketplace/partner-center-portal/pc-saas-registration#get-a-token-based-on-the-azure-ad-app) |
 
 *Коды ответов:*
 
@@ -359,7 +359,7 @@ Response Body:
 |  Content-Type      | `application/json`  |
 |  x-ms-requestid    | Уникальное строковое значение для отслеживания запроса от клиента, желательно GUID. Если это значение не указано, оно создается случайным образом и возвращается в заголовке ответа.  |
 |  x-ms-correlationid  | Уникальное строковое значение для операции на стороне клиента. Эта строка сопоставляет все события из клиентской операции с событиями на стороне сервера. Если это значение не указано, один будет сгенерирован и в заголовке ответа.  |
-|  authorization     |  [Получите маркер JSON web token (JWT) носителя.](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/saas-app/cpp-saas-registration#get-a-token-based-on-the-azure-ad-app) |
+|  authorization     |  [Получите маркер JSON web token (JWT) носителя.](https://docs.microsoft.com/azure/marketplace/partner-center-portal/pc-saas-registration#get-a-token-based-on-the-azure-ad-app) |
 
 *Запрос:*
 
@@ -416,7 +416,7 @@ Response Body:
 |  Content-Type      | `application/json` |
 |  x-ms-requestid    |   Уникальное строковое значение для отслеживания запроса клиента, желательно GUID. Если это значение не указано, оно создается случайным образом и возвращается в заголовке ответа.  |
 |  x-ms-correlationid  |  Уникальное строковое значение для операции на стороне клиента. Этот параметр сопоставляет все события из клиентской операции с событиями на стороне сервера. Если это значение не указано, один будет сгенерирован и в заголовке ответа.    |
-| authorization      |  [Получите маркер JSON web token (JWT) носителя.](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/saas-app/cpp-saas-registration#get-a-token-based-on-the-azure-ad-app)  |
+| authorization      |  [Получите маркер JSON web token (JWT) носителя.](https://docs.microsoft.com/azure/marketplace/partner-center-portal/pc-saas-registration#get-a-token-based-on-the-azure-ad-app)  |
 
 *Полезные данные запроса:*
 
@@ -482,7 +482,7 @@ Request Body:
 |  Content-Type      | `application/json` |
 |  x-ms-requestid    |   Уникальное строковое значение для отслеживания запроса клиента, желательно GUID. Если это значение не указано, оно создается случайным образом и возвращается в заголовке ответа.  |
 |  x-ms-correlationid  |  Уникальное строковое значение для операции на стороне клиента. Этот параметр сопоставляет все события из клиентской операции с событиями на стороне сервера. Если это значение не указано, один будет сгенерирован и в заголовке ответа.    |
-| authorization      |  [Получите маркер JSON web token (JWT) носителя.](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/saas-app/cpp-saas-registration#get-a-token-based-on-the-azure-ad-app)  |
+| authorization      |  [Получите маркер JSON web token (JWT) носителя.](https://docs.microsoft.com/azure/marketplace/partner-center-portal/pc-saas-registration#get-a-token-based-on-the-azure-ad-app)  |
 
 *Полезные данные запроса:*
 
@@ -548,7 +548,7 @@ Request Body:
 |   Content-Type     |  `application/json` |
 |  x-ms-requestid    |   Уникальное строковое значение для отслеживания запроса клиента, желательно GUID. Если это значение не указано, один будет сгенерирован и в заголовке ответа.   |
 |  x-ms-correlationid  |  Уникальное строковое значение для операции на стороне клиента. Этот параметр сопоставляет все события из клиентской операции с событиями на стороне сервера. Если это значение не указано, один будет сгенерирован и в заголовке ответа.   |
-|  authorization     |  [Получите маркер JSON web token (JWT) носителя.](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/saas-app/cpp-saas-registration#get-a-token-based-on-the-azure-ad-app)  |
+|  authorization     |  [Получите маркер JSON web token (JWT) носителя.](https://docs.microsoft.com/azure/marketplace/partner-center-portal/pc-saas-registration#get-a-token-based-on-the-azure-ad-app)  |
 
 *Коды ответов:*
 
@@ -601,7 +601,7 @@ Request Body:
 |   Content-Type     |  `application/json` |
 |  x-ms-requestid    |  Уникальное строковое значение для отслеживания запроса клиента, желательно GUID. Если это значение не указано, оно создается случайным образом и возвращается в заголовке ответа.  |
 |  x-ms-correlationid |  Уникальное строковое значение для операции на стороне клиента. Этот параметр сопоставляет все события из клиентской операции с событиями на стороне сервера. Если это значение не указано, один будет сгенерирован и в заголовке ответа.  |
-|  authorization     |  [Получите маркер JSON web token (JWT) носителя.](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/saas-app/cpp-saas-registration#get-a-token-based-on-the-azure-ad-app)  |
+|  authorization     |  [Получите маркер JSON web token (JWT) носителя.](https://docs.microsoft.com/azure/marketplace/partner-center-portal/pc-saas-registration#get-a-token-based-on-the-azure-ad-app)  |
 
 *Коды ответов:*
 
@@ -664,7 +664,7 @@ Request Body:
 |  Content-Type      |  `application/json`   |
 |  x-ms-requestid    |   Уникальное строковое значение для отслеживания запроса клиента, желательно GUID. Если это значение не указано, оно создается случайным образом и возвращается в заголовке ответа.  |
 |  x-ms-correlationid |  Уникальное строковое значение для операции на стороне клиента. Этот параметр сопоставляет все события из клиентской операции с событиями на стороне сервера. Если это значение не указано, один будет сгенерирован и в заголовке ответа.  |
-|  authorization     |[Получите маркер JSON web token (JWT) носителя.](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/saas-app/cpp-saas-registration#get-a-token-based-on-the-azure-ad-app)  |
+|  authorization     |[Получите маркер JSON web token (JWT) носителя.](https://docs.microsoft.com/azure/marketplace/partner-center-portal/pc-saas-registration#get-a-token-based-on-the-azure-ad-app)  |
 
 *Коды ответов:* Код: 200<br> Возвращает указанный ожидающей операции SaaS<br>
 Полезные данные ответа:
@@ -727,7 +727,7 @@ Response body:
 |   Content-Type     | `application/json`   |
 |   x-ms-requestid   |   Уникальное строковое значение для отслеживания запроса клиента, желательно GUID. Если это значение не указано, оно создается случайным образом и возвращается в заголовке ответа. |
 |  x-ms-correlationid |  Уникальное строковое значение для операции на стороне клиента. Этот параметр сопоставляет все события из клиентской операции с событиями на стороне сервера. Если это значение не указано, один будет сгенерирован и в заголовке ответа. |
-|  authorization     |  [Получите маркер JSON web token (JWT) носителя.](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal/saas-app/cpp-saas-registration#get-a-token-based-on-the-azure-ad-app)  |
+|  authorization     |  [Получите маркер JSON web token (JWT) носителя.](https://docs.microsoft.com/azure/marketplace/partner-center-portal/pc-saas-registration#get-a-token-based-on-the-azure-ad-app)  |
 
 *Полезные данные запроса:*
 
