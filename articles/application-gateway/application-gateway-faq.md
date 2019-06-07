@@ -6,18 +6,20 @@ author: vhorne
 ms.service: application-gateway
 ms.topic: article
 ms.workload: infrastructure-services
-ms.date: 4/30/2019
+ms.date: 6/1/2019
 ms.author: victorh
-ms.openlocfilehash: 72eaa18d570e85274efbea80f12e9a7301eecbfa
-ms.sourcegitcommit: ed66a704d8e2990df8aa160921b9b69d65c1d887
+ms.openlocfilehash: 25779cd62f70df41a7734d2f8097504923dcb3a3
+ms.sourcegitcommit: 087ee51483b7180f9e897431e83f37b08ec890ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64947069"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66430885"
 ---
 # <a name="frequently-asked-questions-about-application-gateway"></a>Часто задаваемые вопросы о шлюзе приложений
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
+Ниже приведены часто задаваемые вопросы и ответы о шлюзе приложений Azure.
 
 ## <a name="general"></a>Общие сведения
 
@@ -187,13 +189,18 @@ ms.locfileid: "64947069"
 
 Поле Host указывает имя, чтобы отправить пробу после настройки многосайтового на шлюзе приложений. В противном случае используйте "127.0.0.1». Это значение отличается от имени узла виртуальной машины. Его формат \<протокола\>://\<узла\>:\<порт\>\<путь\>.
 
-### <a name="can-i-whitelist-application-gateway-access-to-only-a-few-source-ips"></a>Можно ли добавить в список разрешений шлюза приложений доступ к только нескольким исходным IP-адреса?
+### <a name="can-i-allow-application-gateway-access-to-only-a-few-source-ip-addresses"></a>Разрешить доступ шлюза приложений к только несколько исходных IP-адресов?
 
-Да. См. в разделе [ограничить доступ для определенных IP-адреса источника](https://docs.microsoft.com/azure/application-gateway/configuration-overview#whitelist-application-gateway-access-to-a-few-source-ips).
+Да. См. в разделе [ограничить доступ для определенных IP-адреса источника](https://docs.microsoft.com/azure/application-gateway/configuration-overview#allow-application-gateway-access-to-a-few-source-ips).
 
 ### <a name="can-i-use-the-same-port-for-both-public-facing-and-private-facing-listeners"></a>Можно использовать тот же порт для прослушивателей общедоступные и частные выходом?
 
 №
+
+### <a name="is-there-guidance-available-to-migrate-from-the-v1-sku-to-the-v2-sku"></a>Есть ли рекомендации, доступные для переноса с v1 SKU на v2 SKU?
+
+Да. Дополнительные сведения см., [перенос шлюза приложений Azure и брандмауэра веб-приложения с v1 на v2](migrate-v1-v2.md).
+
 
 ## <a name="configuration---ssl"></a>Конфигурация — SSL
 
@@ -312,6 +319,10 @@ ms.locfileid: "64947069"
 ### <a name="does-waf-support-ddos-protection"></a>Поддерживает ли WAF защита от атак DDoS?
 
 Да. Вы можете включить защиту от атак DDoS в виртуальной сети, где развертывается шлюз приложений. Этот параметр гарантирует, что служба защиты от атак DDoS Azure также защищает приложения шлюза виртуальный IP-адрес (VIP).
+
+### <a name="is-there-guidance-available-to-migrate-from-the-v1-sku-to-the-v2-sku"></a>Есть ли рекомендации, доступные для переноса с v1 SKU на v2 SKU?
+
+Да. Дополнительные сведения см., [перенос шлюза приложений Azure и брандмауэра веб-приложения с v1 на v2](migrate-v1-v2.md).
 
 ## <a name="diagnostics-and-logging"></a>Диагностика и ведение журнала
 

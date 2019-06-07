@@ -15,12 +15,12 @@ ms.devlang: multiple
 ms.topic: article
 ms.date: 03/11/2019
 ms.author: jowargo
-ms.openlocfilehash: 8af545f5700e90303562174a3c27cc5438b28e24
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.openlocfilehash: 579d50a95ad0e478f401b7db012e7c743ce58491
+ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
-ms.locfileid: "64925881"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66730463"
 ---
 # <a name="push-notifications-with-azure-notification-hubs-frequently-asked-questions"></a>Отправка push-уведомлений с помощью Центров уведомлений Azure: Часто задаваемые вопросы
 
@@ -56,7 +56,7 @@ ms.locfileid: "64925881"
 
 ### <a name="how-do-i-upgrade-or-downgrade-my-hub-or-namespace-to-a-different-tier"></a>Как мне повысить или понизить уровень для узла или пространства имен?
 
-Перейдите на **[портал Azure]** > **Notification Hubs Namespaces** (Пространства имен Центров уведомлений) или **Центры уведомлений**. Выберите ресурс, который требуется обновить, и перейдите на **страницу цен**. Обратите внимание на следующие требования:
+Перейдите на **[портал Azure]**  > **Notification Hubs Namespaces** (Пространства имен Центров уведомлений) или **Центры уведомлений**. Выберите ресурс, который требуется обновить, и перейдите на **страницу цен**. Обратите внимание на следующие требования:
 
 * Новая ценовая категория будет применяться ко *всем* узлам в пространстве имен, с которыми вы работаете.
 * Если при снижении уровня будет превышен лимит на число устройств, установленный для нового уровня, такое изменение вступит в силу только тогда, когда вы удалите все лишние устройства.
@@ -69,13 +69,13 @@ ms.locfileid: "64925881"
 
 ### <a name="which-client-platforms-do-you-support"></a>Какие клиентские платформы вы поддерживаете?
 
-Push-уведомления поддерживаются на платформах [iOS](notification-hubs-ios-apple-push-notification-apns-get-started.md), [Android](notification-hubs-android-push-notification-google-fcm-get-started.md), [Windows Universal](notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md), [Windows Phone](notification-hubs-windows-mobile-push-notifications-mpns.md), [Kindle](notification-hubs-kindle-amazon-adm-push-notification.md), [Android China (через Baidu)](notification-hubs-baidu-china-android-notifications-get-started.md), Xamarin ([iOS](xamarin-notification-hubs-ios-push-notification-apns-get-started.md) и Android), в [приложениях Chrome](notification-hubs-chrome-push-notifications-get-started.md) и [Safari](https://github.com/Azure/azure-notificationhubs-samples/tree/master/PushToSafari). Дополнительные сведения см. на странице [Отправка push-уведомлений с помощью центров уведомлений Azure в iOS].
+Push-уведомления поддерживаются для [iOS](notification-hubs-ios-apple-push-notification-apns-get-started.md), [Android](notification-hubs-android-push-notification-google-fcm-get-started.md), [универсальной Windows](notification-hubs-windows-store-dotnet-get-started-wns-push-notification.md), [Windows Phone](notification-hubs-windows-mobile-push-notifications-mpns.md), [Kindle](notification-hubs-kindle-amazon-adm-push-notification.md), [Android China (через Baidu)](notification-hubs-baidu-china-android-notifications-get-started.md), Xamarin ([iOS](xamarin-notification-hubs-ios-push-notification-apns-get-started.md) и Android, и [Safari](https://github.com/Azure/azure-notificationhubs-samples/tree/master/PushToSafari). Дополнительные сведения см. на странице [Отправка push-уведомлений с помощью центров уведомлений Azure в iOS].
 
 ### <a name="do-you-support-text-message-email-or-web-notifications"></a>Поддерживаются ли уведомления по SMS и электронной почте, а также веб-уведомления?
 
 Центы уведомлений в первую очередь созданы для отправки уведомлений в мобильные приложения и не поддерживают отправку электронных писем или текстовых сообщений. Но с помощью [Мобильные приложения] вы можете интегрировать сторонние платформы, которые предоставляют такие возможности, с Центрами уведомлений, отправляющими системные push-уведомления.
 
-Кроме того, Центры уведомлений также не предоставляют возможность отправки push-уведомлений в браузере по умолчанию. Клиенты могут внедрить эту функцию с помощью SignalR на базе поддерживаемых серверных платформ. Если вы хотите отправлять уведомления в приложения браузера в "песочнице" Chrome, ознакомьтесь со статьей [учебником по приложениям Chrome].
+Кроме того, Центры уведомлений также не предоставляют возможность отправки push-уведомлений в браузере по умолчанию. Клиенты могут внедрить эту функцию с помощью SignalR на базе поддерживаемых серверных платформ. 
 
 ### <a name="how-are-mobile-apps-and-azure-notification-hubs-related-and-when-do-i-use-them"></a>Как связаны мобильные приложения и Центры уведомлений Azure, и в каких случаях их нужно использовать?
 
@@ -210,7 +210,6 @@ Push-уведомления поддерживаются на платформа
 [Notification Hubs SLA]: https://azure.microsoft.com/support/legal/sla/
 [Использование интерфейса REST центров уведомлений]: https://msdn.microsoft.com/library/azure/dn530746.aspx
 [Отправка push-уведомлений с помощью центров уведомлений Azure в iOS]: https://azure.microsoft.com/documentation/articles/notification-hubs-ios-get-started/
-[учебником по приложениям Chrome]: https://azure.microsoft.com/documentation/articles/notification-hubs-chrome-get-started/
 [Mobile Services Pricing]: https://azure.microsoft.com/pricing/details/mobile-services/
 [Регистрация из внутренней службы приложения]: https://msdn.microsoft.com/library/azure/dn743807.aspx
 [Управление регистрацией]: https://msdn.microsoft.com/library/azure/dn530747.aspx

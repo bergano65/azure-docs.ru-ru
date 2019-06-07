@@ -4,12 +4,12 @@ ms.service: billing
 ms.topic: include
 ms.date: 11/09/2018
 ms.author: jroth
-ms.openlocfilehash: 65c89730e7d3d492b91daa8aba50e5606ca700a1
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: 610f5fcf80db8ffa0c7207d459b98087cbb4773b
+ms.sourcegitcommit: 087ee51483b7180f9e897431e83f37b08ec890ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66238521"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66455129"
 ---
 В следующей таблице перечислены ограничения, которые применяются к ресурсам службы подготовки Интернета вещей центр устройств.
 
@@ -20,6 +20,7 @@ ms.locfileid: "66238521"
 | Максимальное количество действий регистрации | 1 000 000 |
 | Максимальное количество групп регистрации | 100 |
 | Максимальное количество центров сертификации | 25 |
+| Максимальный размер сообщения | 96 КБ|
 
 > [!NOTE]
 > Чтобы увеличить число экземпляров в вашей подписке, обратитесь в службу [поддержки Майкрософт](https://azure.microsoft.com/support/options/).

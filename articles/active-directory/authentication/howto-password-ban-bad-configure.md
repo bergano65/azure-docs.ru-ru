@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a7f6dbc869db4a0a444d09a2dc234e171758c706
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 28201e09a4025c0c8820abc6836a5923e48eb885
+ms.sourcegitcommit: 7042ec27b18f69db9331b3bf3b9296a9cd0c0402
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60414871"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66742287"
 ---
 # <a name="configuring-the-custom-banned-password-list"></a>Настройка пользовательского списка заблокированных паролей
 
@@ -24,7 +24,7 @@ ms.locfileid: "60414871"
 
 ## <a name="add-to-the-custom-list"></a>Добавление в пользовательский список
 
-Чтобы настроить пользовательский список заблокированных паролей, вам потребуется лицензия Azure Active Directory Premium P1 или P2. Дополнительные сведения о лицензировании Azure Active Directory см. на [странице цен на Azure Active Directory](https://azure.microsoft.com/pricing/details/active-directory/).
+Чтобы настроить пользовательский список заблокированных паролей, вам потребуется лицензия Azure Active Directory Premium P1 или P2. Более подробные сведения о лицензировании Azure Active Directory, см. в разделе [странице цен на Azure Active Directory](https://azure.microsoft.com/pricing/details/active-directory/).
 
 1. Войдите в [портала Azure](https://portal.azure.com) и перейдите к **Azure Active Directory**, **методы проверки подлинности**, затем **защиту паролем**.
 1. Для параметра **Принудительный настраиваемый список** задайте значение **Да**.

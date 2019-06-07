@@ -1,6 +1,6 @@
 ---
 title: Обзор Azure v2 монитор состояния | Документация Майкрософт
-description: Обзор монитора состояния v2. Мониторинг производительности веб-сайта без повторного развертывания веб-сайта. Работает с веб-приложениями ASP.NET, размещенными локально, на виртуальных машинах или в Azure.
+description: Обзор монитора состояния v2. Мониторинг производительности веб-сайта без повторного развертывания веб-сайта. Работает с веб-приложений ASP.NET, размещенным на предприятиях, на виртуальных машинах или в Azure.
 services: application-insights
 documentationcenter: .net
 author: MS-TimothyMothra
@@ -12,31 +12,33 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: tilee
-ms.openlocfilehash: 2adc706c5da4fa53ace2a8a471789e276878c491
-ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
+ms.openlocfilehash: 2126408222433e6339723dc2da0d2611bb234fe8
+ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66255862"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66734165"
 ---
 # <a name="status-monitor-v2"></a>Монитор состояния версии 2
 
-Состояние монитора v2 представляет собой модуль PowerShell, опубликованные в [PowerShellGallery](https://www.powershellgallery.com/packages/Az.ApplicationMonitor) и является заменой для [монитор состояния](https://docs.microsoft.com/azure/azure-monitor/app/monitor-performance-live-website-now). Этот модуль предоставляет инструментарий без использования кода .NET веб-приложений, размещенных в IIS.
-Данные телеметрии отправляются на портал Azure здесь можно [монитор](https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview) приложения.
+V2 состояние монитора является опубликован модуль PowerShell [коллекции PowerShell](https://www.powershellgallery.com/packages/Az.ApplicationMonitor).
+Он заменяет [монитор состояния](https://docs.microsoft.com/azure/azure-monitor/app/monitor-performance-live-website-now).
+Модуль предоставляет предоставления без помощи кода инструментирование веб-приложений .NET, размещенных в IIS.
+Данные телеметрии отправляются на портал Azure, где вы можете [монитор](https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview) приложения.
 
 > [!IMPORTANT]
 > Состояние монитора v2 в настоящее время находится в общедоступной предварительной версии.
-> Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
-> Дополнительные сведения см. в разделе [дополнительные условия использования предварительных версий Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/)
+> Эта предварительная версия предоставляется без соглашения об уровне обслуживания, и мы не рекомендуем для рабочих нагрузок. Некоторые функции могут не поддерживаться, а некоторые могут иметь ограниченные возможности.
+> Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 ## <a name="powershell-gallery"></a>Коллекция PowerShell
 
-https://www.powershellgallery.com/packages/Az.ApplicationMonitor
+В коллекции PowerShell находится здесь: https://www.powershellgallery.com/packages/Az.ApplicationMonitor.
 
 
 ## <a name="instructions"></a>Указания
-- Просмотрите наши [инструкциями по началу работы](status-monitor-v2-get-started.md) быстро начать работу с образцами краткого кода.
-- Просмотрите наши [подробные инструкции](status-monitor-v2-detailed-instructions.md) подробный обзор о том, как приступить к работе.
+- См. в разделе [инструкциями по началу работы](status-monitor-v2-get-started.md) работать с образцами краткого кода.
+- См. в разделе [подробные инструкции](status-monitor-v2-detailed-instructions.md) подробный обзор о том, как приступить к работе.
 
 ## <a name="powershell-api-reference"></a>Справочник по PowerShell API
 - [Disable-ApplicationInsightsMonitoring](status-monitor-v2-api-disable-monitoring.md)
@@ -56,13 +58,16 @@ https://www.powershellgallery.com/packages/Az.ApplicationMonitor
 
 - Монитор состояния версии 2 поддерживает установки прокси-сервера?
 
-  **Да**. Существует несколько способов, чтобы скачать монитор состояния v2. Если компьютер имеет доступ к Интернету, вы сможете подключать к коллекции PowerShell с помощью `-Proxy` параметров. Можно также вручную загрузить этот модуль и установите его на компьютере или с помощью модуля напрямую. Каждый из этих параметров описан в наших [подробные инструкции](status-monitor-v2-detailed-instructions.md).
+  *Да*. Существует несколько способов, чтобы скачать монитор состояния v2. Если компьютер имеет доступ к Интернету, вы можете решить эту задачу в коллекции PowerShell с помощью `-Proxy` параметров.
+Можно также вручную загрузить модуль и установите его на компьютере или использовать его напрямую.
+Каждый из этих параметров описан [подробные инструкции](status-monitor-v2-detailed-instructions.md).
   
-- Проверка подключения выполнена успешно?
+- Как проверить, что включение успешно?
 
-   Нам не нужно проверить успешность этого Включение командлета. Мы рекомендуем использовать [Live Metrics](https://docs.microsoft.com/azure/azure-monitor/app/live-stream) Чтобы быстро просматривать, если приложение может отправлять нам данные телеметрии.
+   Чтобы убедиться в успешной Включение командлета не существует.
+Мы рекомендуем использовать [Live Metrics](https://docs.microsoft.com/azure/azure-monitor/app/live-stream) можно быстро определить, если приложение отправляет данные телеметрии.
 
-   Можно также использовать [Analytics](../log-query/get-started-portal.md) Чтобы получить список всех ролей облака, в настоящее время отправку данных телеметрии.
+   Можно также использовать [Log Analytics](../log-query/get-started-portal.md) Чтобы получить список всех ролей облака, в настоящее время отправку данных телеметрии:
    ```Kusto
    union * | summarize count() by cloud_RoleName, cloud_RoleInstance
    ```
@@ -71,14 +76,14 @@ https://www.powershellgallery.com/packages/Az.ApplicationMonitor
 
 Просмотр телеметрии:
 
-* [Изучите метрики](../../azure-monitor/app/metrics-explorer.md), чтобы отслеживать производительность и использование.
-* [Поиск событий и журналов](../../azure-monitor/app/diagnostic-search.md) для диагностики проблем
-* [Аналитика](../../azure-monitor/app/analytics.md) для создания расширенных запросов.
-* [Создайте панели мониторинга](../../azure-monitor/app/overview-dashboard.md)
+* [Изучение метрик](../../azure-monitor/app/metrics-explorer.md) для контроля производительности и использования.
+* [Поиск событий и журналов](../../azure-monitor/app/diagnostic-search.md) для диагностики проблем.
+* [Использование аналитики](../../azure-monitor/app/analytics.md) для создания расширенных запросов.
+* [Создание панелей мониторинга](../../azure-monitor/app/overview-dashboard.md).
 
 Добавление данных телеметрии:
 
 * [Создание веб-тестов](monitor-web-app-availability.md) чтобы убедиться, что ваш сайт продолжает работать.
-* [Добавьте телеметрию веб-клиента](../../azure-monitor/app/javascript.md) чтобы просматривать исключения в коде веб-страницы и вставлять вызовы трассировки.
-* [Добавьте пакет SDK Application Insights в код](../../azure-monitor/app/asp-net.md) , можно вставить трассировки и журналов вызовов
+* [Добавьте телеметрию веб-клиента](../../azure-monitor/app/javascript.md) чтобы просматривать исключения в коде веб-страницы и включить вызовы трассировки.
+* [Добавьте пакет SDK Application Insights в код](../../azure-monitor/app/asp-net.md) чтобы можно было вставить трассировки и журналов вызовов.
 

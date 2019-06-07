@@ -6,15 +6,15 @@ manager: alinast
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 12/26/2018
+ms.date: 06/03/2018
 ms.author: v-adgera
 ms.custom: seodec18
-ms.openlocfilehash: 3c35633c9b25eafdb738ed591c7c7022fbd8149a
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.openlocfilehash: 9765af13a22a0ae9db8a45c396e7d5a32b71b79c
+ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65967826"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66730325"
 ---
 # <a name="how-to-configure-monitoring-in-azure-digital-twins"></a>Настройка мониторинга в Azure Digital Twins
 
@@ -40,17 +40,17 @@ Azure Digital Twins поддерживает надежные механизмы
 1. Выберите экземпляр Azure Digital Twins.
 1. Выберите **Журнал действий**, чтобы открыть эту панель отображения:
 
-    ![Журнал действий][1]
+    [![Журнал действий](media/how-to-configure-monitoring/activity-log.png)](media/how-to-configure-monitoring/activity-log.png#lightbox)
 
 Расширенные данные о ведении журнала действий вы найдете, выполнив указанные ниже действия.
 
 1. Выберите параметр **Журналы**, чтобы отобразить панель **Обзор аналитики журнала действий**:
 
-    ![Выбор][2]
+    [![Выбор](media/how-to-configure-monitoring/activity-log-select.png)](media/how-to-configure-monitoring/activity-log-select.png#lightbox)
 
 1. В разделе **Обзор аналитики журнала действий** указаны важнейшие сводные данные по журналу действий.
 
-    ![Обзор аналитики журнала действий][3]
+    [![Обзор Activity log analytics]( media/how-to-configure-monitoring/log-analytics-overview.png)]( media/how-to-configure-monitoring/log-analytics-overview.png#lightbox)
 
 >[!TIP]
 >Используйте **журналы действий** для быстрого анализа событий на уровне подписки.
@@ -70,12 +70,12 @@ Azure Digital Twins поддерживает надежные механизмы
 1. Откройте нужный ресурс на портале Azure.
 1. Щелкните **Параметры диагностики**.
 
-    ![Параметры диагностики, экран первый][4]
+    [![Параметры диагностики один](media/how-to-configure-monitoring/diagnostic-settings-one.png)](media/how-to-configure-monitoring/diagnostic-settings-one.png#lightbox)
 
 1. Щелкните **Включить диагностику**, чтобы начать сбор данных (если не был включен ранее).
 1. Заполните предложенные поля и выберите, как и где будут храниться данные.
 
-    ![Параметры диагностики, экран второй][5]
+    [![Параметры диагностики двух](media/how-to-configure-monitoring/diagnostic-settings-two.png)](media/how-to-configure-monitoring/diagnostic-settings-two.png#lightbox)
 
     Часто сохранения журналов диагностики с помощью [хранилища файлов Azure](../storage/files/storage-files-deployment-guide.md) и совместно используется с [журналы Azure Monitor](../azure-monitor/log-query/get-started-portal.md). Вы можете выбрать оба варианта.
 
@@ -99,24 +99,24 @@ Azure Monitor включает мощные службу log analytics, что �
 1. Найдите **Log Analytics** на портале Azure.
 1. Вы увидите в доступных **рабочей области Log Analytics** экземпляров. Выберите один из них и щелкните **Журналы**, чтобы создать запрос.
 
-    ![Служба Log Analytics][6]
+    [![Log analytics](media/how-to-configure-monitoring/log-analytics.png)](media/how-to-configure-monitoring/log-analytics.png#lightbox)
 
 1. Если у вас нет **рабочей области Log Analytics** экземпляр, можно создать рабочую область, щелкнув **добавить** кнопки:
 
-    ![Создание OMS][7]
+    [![Создать OMS](media/how-to-configure-monitoring/log-analytics-oms.png)](media/how-to-configure-monitoring/log-analytics-oms.png#lightbox)
 
 Один раз в **рабочей области Log Analytics** экземпляр подготавливается, вы можете использовать мощные запросы на поиск записей в журналах кратных и на основе определенных критериев с помощью **управление журналом**:
 
-   ![Управление журналами][8]
+   [![Управление журналами](media/how-to-configure-monitoring/log-analytics-management.png)](media/how-to-configure-monitoring/log-analytics-management.png#lightbox)
 
 Дополнительные сведения о мощных операциях с запросами см. в статье [о начале работы с запросами](../azure-monitor/log-query/get-started-queries.md).
 
 > [!NOTE]
 > Вы возможна задержка 5 минут при отправке событий **рабочей области Log Analytics** в первый раз.
 
-Журналы Azure Monitor также предоставляет мощные ошибки и уведомления о предупреждении служб, которые можно просмотреть, щелкнув **Диагностика и решение проблем**:
+Журналы Azure Monitor также предоставляют мощный ошибки и службы уведомления о предупреждении, которые можно просмотреть, щелкнув **Диагностика и решение проблем**:
 
-   ![Уведомления об ошибках и предупреждениях][9]
+   [![Предупреждение и ошибка уведомления](media/how-to-configure-monitoring/log-analytics-notifications.png)](media/how-to-configure-monitoring/log-analytics-notifications.png#lightbox)
 
 >[!TIP]
 >Используйте **рабочей области Log Analytics** к истории журнала запросов для нескольких функций приложения, подписки и служб.
@@ -132,14 +132,3 @@ Azure Digital Twins также поддерживает ведение журн�
 - Глубже изучите параметры системы диагностики Azure в [обзоре журналов диагностики](../azure-monitor/platform/diagnostic-logs-overview.md).
 
 - Дополнительные сведения о [журналы Azure Monitor](../azure-monitor/log-query/get-started-portal.md).
-
-<!-- Images -->
-[1]: media/how-to-configure-monitoring/activity-log.png
-[2]: media/how-to-configure-monitoring/activity-log-select.png
-[3]: media/how-to-configure-monitoring/log-analytics-overview.png
-[4]: media/how-to-configure-monitoring/diagnostic-settings-one.png
-[5]: media/how-to-configure-monitoring/diagnostic-settings-two.png
-[6]: media/how-to-configure-monitoring/log-analytics.png
-[7]: media/how-to-configure-monitoring/log-analytics-oms.png
-[8]: media/how-to-configure-monitoring/log-analytics-management.png
-[9]: media/how-to-configure-monitoring/log-analytics-notifications.png

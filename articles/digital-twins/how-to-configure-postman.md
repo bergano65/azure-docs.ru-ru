@@ -6,14 +6,14 @@ manager: alinast
 ms.service: digital-twins
 services: digital-twins
 ms.topic: conceptual
-ms.date: 01/10/2019
+ms.date: 06/05/2019
 ms.author: v-adgera
-ms.openlocfilehash: 797dfc44b9897920f9fd74346ee01e4b157a4ce8
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.openlocfilehash: 31944c08bad503c20832ea7e4e682c0063ab0f9f
+ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65967782"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66735035"
 ---
 # <a name="how-to-configure-postman-for-azure-digital-twins"></a>Настройка Postman для Azure Digital Twins
 
@@ -27,7 +27,7 @@ ms.locfileid: "65967782"
 
 Начните работу в Azure Digital Twins с помощью клиентского средства REST, например [Postman](https://www.getpostman.com/), чтобы подготовить локальную среду тестирования. Клиент Postman помогает быстро создавать сложные HTTP-запросы. Скачайте версию клиента Postman для рабочего стола, перейдя по адресу [www.getpostman.com/apps](https://www.getpostman.com/apps).
 
-[Postman](https://www.getpostman.com/) — это средство тестирования REST, которое размещает ключевые возможности HTTP-запроса в полезном графическом пользовательском интерфейсе на основе плагина для настольных систем. 
+[Postman](https://www.getpostman.com/) — это средство тестирования REST, которое размещает ключевые возможности HTTP-запроса в полезном графическом пользовательском интерфейсе на основе плагина для настольных систем.
 
 С помощью клиента Postman разработчики решений могут указать тип HTTP-запроса (*POST*, *GET*, *UPDATE*, *PATCH* и *DELETE*), конечную точку API, которую нужно вызвать, и использование SSL. Postman также поддерживает добавление заголовков, параметров, данных форм и текста HTTP-запросов.
 
@@ -39,15 +39,15 @@ ms.locfileid: "65967782"
 
 1. В разделе **Необходимые разрешения** выберите **Добавить** и введите **Azure Digital Twins** в разделе **Добавить доступ через API**. Если найти API не удается, выполните поиск по запросу **Azure Smart Spaces**. Затем выберите **Предоставление разрешений > Делегированные разрешения** и нажмите **Готово**.
 
-    ![Добавление API при регистрации приложения в Azure AD](../../includes/media/digital-twins-permissions/aad-app-req-permissions.png)
+    [![Регистрация приложений для Azure Active Directory добавьте api](../../includes/media/digital-twins-permissions/aad-app-req-permissions.png)](../../includes/media/digital-twins-permissions/aad-app-req-permissions.png#lightbox)
 
 1. Щелкните **Манифест**, чтобы открыть манифест вашего приложения. Для *oauth2AllowImplicitFlow* задайте значение `true`.
 
-      ![Неявный поток Azure AD][1]
+    [![Неявный поток Azure Active Directory](media/how-to-configure-postman/implicit-flow.png)](media/how-to-configure-postman/implicit-flow.png#lightbox)
 
 1. В качестве **URL-адреса ответа** укажите `https://www.getpostman.com/oauth2/callback`.
 
-      ![URL-адрес ответа Azure AD][2]
+    [![URL-адрес ответа Azure Active Directory](media/how-to-configure-postman/reply-url.png)](media/how-to-configure-postman/reply-url.png#lightbox)
 
 1. Скопируйте и сохраните **идентификатор приложения** Azure AD. Он используется в последующих шагах.
 
@@ -76,11 +76,11 @@ ms.locfileid: "65967782"
     | Идентификатор клиента | Используйте **идентификатор приложения** для приложения Azure AD, созданного или перепрофилированного на предыдущем шаге |
     | `Scope` | Не указывайте |
     | Состояние | Не указывайте |
-    | Проверка подлинности клиента | `Send as Basic Auth header` |
+    | Аутентификация клиента | `Send as Basic Auth header` |
 
 1. Теперь клиент должен выглядеть следующим образом.
 
-   ![Пример клиента Postman][3]
+    [![Пример клиента postman](media/how-to-configure-postman/postman-oauth-token.png)](media/how-to-configure-postman/postman-oauth-token.png#lightbox)
 
 1. Выберите **Request Token** (Токен запроса).
 
@@ -98,13 +98,13 @@ ms.locfileid: "65967782"
 
 1. На вкладке **Верхний колонтитул** добавьте ключ заголовка HTTP-запроса **Content-Type** со значением `multipart/mixed`.
 
-   ![Составной или смешанный тип содержимого][4]
+   [![Тип содержимого multipart/mixed](media/how-to-configure-postman/content-type.png)](media/how-to-configure-postman/content-type.png#lightbox)
 
 1. Сериализируйте текстовые данные в файлы. Данные JSON будут сохранены в качестве JSON-файла.
 1. На вкладке **Основной текст** добавьте каждый файл с присвоенным именем **key**, выбрав `file` или `text`.
 1. Далее выберите каждый файл, используя кнопку **Выберите файл**.
 
-   ![Пример клиента Postman][5]
+   [![Пример клиента postman](media/how-to-configure-postman/form-body.png)](media/how-to-configure-postman/form-body.png#lightbox)
 
    >[!NOTE]
    > * Клиент Postman не требует, чтобы составные части имели назначенный вручную **Content-Type** или **Content-Disposition**.
@@ -120,10 +120,3 @@ ms.locfileid: "65967782"
 - Дополнительные сведения о составных запросах см. в статье [Добавление больших двоичных объектов к объектам в Azure Digital Twins](./how-to-add-blobs.md).
 
 - Сведения о проверке подлинности в API управления см. в статье [Подключение к API и аутентификация](./security-authenticating-apis.md).
-
-<!-- Images -->
-[1]: media/how-to-configure-postman/implicit-flow.png
-[2]: media/how-to-configure-postman/reply-url.png
-[3]: media/how-to-configure-postman/postman-oauth-token.png
-[4]: media/how-to-configure-postman/content-type.png
-[5]: media/how-to-configure-postman/form-body.png

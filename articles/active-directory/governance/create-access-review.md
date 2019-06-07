@@ -15,12 +15,12 @@ ms.date: 05/21/2019
 ms.author: rolyon
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6bafa4614e40bb1796ec90e07ecf5b9286a8acb9
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: 1ef72f1649c3f3e0af7fba53b2e8dbcee49d4b59
+ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66113503"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66734563"
 ---
 # <a name="create-an-access-review-of-groups-or-applications-in-azure-ad-access-reviews"></a>Создание проверки доступа групп или приложений в Azure AD проверок доступа
 
@@ -31,14 +31,13 @@ ms.locfileid: "66113503"
 ## <a name="prerequisites"></a>Технические условия
 
 - Azure AD Premium P2
-- [Включение проверок доступа](access-reviews-overview.md)
-- Глобальный администратор или администратор пользователей
+- глобальный администратор или администратор пользователей.
 
 Дополнительные сведения см. в разделе [какие пользователи должны иметь лицензии?](access-reviews-overview.md#which-users-must-have-licenses).
 
 ## <a name="create-one-or-more-access-reviews"></a>Создайте один или несколько проверок доступа
 
-1. Войдите на портале Azure и откройте [страницу проверки доступа](https://portal.azure.com/#blade/Microsoft_AAD_ERM/DashboardBlade/).
+1. Войдите на портале Azure и откройте [страница управления удостоверениями](https://portal.azure.com/#blade/Microsoft_AAD_ERM/DashboardBlade/).
 
 1. В меню слева щелкните **проверок доступа**.
 
@@ -88,7 +87,7 @@ ms.locfileid: "66113503"
 
     Чтобы просмотреть список программ, go, доступ к просматривает страницы и выберите пункт **программы**. Если вы находитесь в глобального администратора или роль администратора пользователя, можно создать дополнительные программы. Например, вы можете использовать одну программу для каждой инициативы по обеспечению соответствия или бизнес-цели. Если программа больше не нужна и с ней не связаны элементы управления, вы можете ее удалить.
 
-### <a name="upon-completion-settings"></a>После заполнения параметров
+### <a name="upon-completion-settings"></a>Настройки после завершения
 
 1. Чтобы указать, что происходит после завершения проверки, разверните раздел **Настройки после завершения**.
 

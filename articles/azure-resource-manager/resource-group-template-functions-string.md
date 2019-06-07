@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/08/2019
 ms.author: tomfitz
-ms.openlocfilehash: bf9faa34c1f0923761ce583c22ba4084d7bd42a8
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 82b9403a3d5a5b6938f5b95bbfce888d1e70e451
+ms.sourcegitcommit: 087ee51483b7180f9e897431e83f37b08ec890ae
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60782928"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66431211"
 ---
 # <a name="string-functions-for-azure-resource-manager-templates"></a>Строковые функции для шаблонов Azure Resource Manager
 
@@ -116,7 +116,7 @@ ms.locfileid: "60782928"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| ИМЯ | type | Value |
+| Name | type | Value |
 | ---- | ---- | ----- |
 | base64Output | String | b25lLCB0d28sIHRocmVl |
 | toStringOutput | String | one, two, three |
@@ -181,7 +181,7 @@ ms.locfileid: "60782928"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| ИМЯ | type | Value |
+| Name | type | Value |
 | ---- | ---- | ----- |
 | base64Output | String | b25lLCB0d28sIHRocmVl |
 | toStringOutput | String | one, two, three |
@@ -246,7 +246,7 @@ ms.locfileid: "60782928"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| ИМЯ | type | Value |
+| Name | type | Value |
 | ---- | ---- | ----- |
 | base64Output | String | b25lLCB0d28sIHRocmVl |
 | toStringOutput | String | one, two, three |
@@ -294,7 +294,7 @@ ms.locfileid: "60782928"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| ИМЯ | type | Value |
+| Name | type | Value |
 | ---- | ---- | ----- |
 | concatOutput | String | prefix-5yj4yjf5mbg72 |
 
@@ -335,11 +335,11 @@ ms.locfileid: "60782928"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| ИМЯ | type | Value |
+| Name | type | Value |
 | ---- | ---- | ----- |
-| return | Массив | ["1-1", "1-2", "1-3", "2-1", "2-2", "2-3"] |
+| return | Массив, | ["1-1", "1-2", "1-3", "2-1", "2-2", "2-3"] |
 
-## <a name="contains"></a>содержит
+## <a name="contains"></a>contains
 
 `contains (container, itemToFind)`
 
@@ -411,7 +411,7 @@ ms.locfileid: "60782928"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| ИМЯ | type | Value |
+| Name | type | Value |
 | ---- | ---- | ----- |
 | stringTrue | Bool | Истина |
 | stringFalse | Логический | False |
@@ -470,7 +470,7 @@ ms.locfileid: "60782928"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| ИМЯ | type | Value |
+| Name | type | Value |
 | ---- | ---- | ----- |
 | dataUriOutput | String | data:text/plain;charset=utf8;base64,SGVsbG8= |
 | toStringOutput | String | Привет, мир! |
@@ -589,7 +589,7 @@ ms.locfileid: "60782928"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| ИМЯ | type | Value |
+| Name | type | Value |
 | ---- | ---- | ----- |
 | arrayEmpty | Логический | Истина |
 | objectEmpty | Логический | Истина |
@@ -652,7 +652,7 @@ ms.locfileid: "60782928"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| ИМЯ | type | Value |
+| Name | type | Value |
 | ---- | ---- | ----- |
 | startsTrue | Логический | Истина |
 | startsCapTrue | Логический | Да |
@@ -708,7 +708,7 @@ ms.locfileid: "60782928"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| ИМЯ | type | Value |
+| Name | type | Value |
 | ---- | ---- | ----- |
 | arrayOutput | String | one |
 | stringOutput | String | O |
@@ -894,7 +894,7 @@ ms.locfileid: "60782928"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| ИМЯ | type | Value |
+| Name | type | Value |
 | ---- | ---- | ----- |
 | firstT | Int | 0 |
 | lastT | int | 3 |
@@ -949,7 +949,7 @@ ms.locfileid: "60782928"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| ИМЯ | type | Value |
+| Name | type | Value |
 | ---- | ---- | ----- |
 | arrayOutput | String | three |
 | stringOutput | String | e |
@@ -1007,7 +1007,7 @@ ms.locfileid: "60782928"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| ИМЯ | type | Value |
+| Name | type | Value |
 | ---- | ---- | ----- |
 | firstT | Int | 0 |
 | lastT | int | 3 |
@@ -1015,7 +1015,7 @@ ms.locfileid: "60782928"
 | lastString | Int | 0 |
 | notFound | Int | -1 |
 
-## <a name="length"></a>длина
+## <a name="length"></a>length
 
 `length(string)`
 
@@ -1069,7 +1069,7 @@ ms.locfileid: "60782928"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| ИМЯ | type | Value |
+| Name | type | Value |
 | ---- | ---- | ----- |
 | arrayLength | Int | 3 |
 | stringLength | Int | 13 |
@@ -1123,7 +1123,7 @@ ms.locfileid: "60782928"
 
 Выходные данные из предыдущего примера зависит от каждого развертывания, однако будет выглядеть так:
 
-| ИМЯ | type | Value |
+| Name | type | Value |
 | ---- | ---- | ----- |
 | guidOutput | string | b76a51fc-bd72-4a77-b9a2-3c29e7d2e551 |
 
@@ -1166,7 +1166,7 @@ ms.locfileid: "60782928"
 
 Выходные данные из предыдущего примера зависит от каждого развертывания, однако будет выглядеть так:
 
-| ИМЯ | type | Value |
+| Name | type | Value |
 | ---- | ---- | ----- |
 | nameOutput | string | storagenziwvyru7uxie |
 
@@ -1181,7 +1181,7 @@ ms.locfileid: "60782928"
 
 | Параметр | Обязательно для заполнения | type | Описание |
 |:--- |:--- |:--- |:--- |
-| значение_для_заполнения  |Да |строка или целое число |Значение, выравниваемое по правому краю. |
+| значение_для_заполнения |Да |строка или целое число |Значение, выравниваемое по правому краю. |
 | общая_длина |Да |int |Общее число символов в возвращаемой строке. |
 | символ_заполнения |Нет |один знак |Символ, используемый для заполнения левой части до достижения общей длины. Значение по умолчанию — пробел. |
 
@@ -1217,7 +1217,7 @@ ms.locfileid: "60782928"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| ИМЯ | type | Value |
+| Name | type | Value |
 | ---- | ---- | ----- |
 | stringOutput | String | 0000000123 |
 
@@ -1259,7 +1259,7 @@ ms.locfileid: "60782928"
             "type": "string",
             "value": "[replace(parameters('testString'),'-', '')]"
         },
-        "secodeOutput": {
+        "secondOutput": {
             "type": "string",
             "value": "[replace(parameters('testString'),'1234', 'xxxx')]"
         }
@@ -1272,9 +1272,9 @@ ms.locfileid: "60782928"
 | ИМЯ | type | Value |
 | ---- | ---- | ----- |
 | firstOutput | String | 1231231234 |
-| secodeOutput | String | 123-123-xxxx |
+| secondOutput | String | 123-123-xxxx |
 
-## <a name="skip"></a>пропустить
+## <a name="skip"></a>skip
 
 `skip(originalValue, numberToSkip)`
 
@@ -1337,9 +1337,9 @@ ms.locfileid: "60782928"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| ИМЯ | type | Value |
+| Name | type | Value |
 | ---- | ---- | ----- |
-| arrayOutput | Массив | ["three"] |
+| arrayOutput | Массив, | ["three"] |
 | stringOutput | String | two three |
 
 ## <a name="split"></a>split
@@ -1396,10 +1396,10 @@ ms.locfileid: "60782928"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| ИМЯ | type | Value |
+| Name | type | Value |
 | ---- | ---- | ----- |
-| firstOutput | Массив | ["one", "two", "three"] |
-| secondOutput | Массив | ["one", "two", "three"] |
+| firstOutput | Массив, | ["one", "two", "three"] |
+| secondOutput | Массив, | ["one", "two", "three"] |
 
 ## <a name="startswith"></a>startsWith
 
@@ -1477,7 +1477,7 @@ ms.locfileid: "60782928"
 
 | Параметр | Обязательно для заполнения | type | Описание |
 |:--- |:--- |:--- |:--- |
-| valueToConvert |Да | Все |Значение, которое необходимо преобразовать в строку. Можно преобразовать любой тип значения, включая объекты и массивы. |
+| valueToConvert |Да | Любой |Значение, которое необходимо преобразовать в строку. Можно преобразовать любой тип значения, включая объекты и массивы. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -1532,7 +1532,7 @@ ms.locfileid: "60782928"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| ИМЯ | type | Value |
+| Name | type | Value |
 | ---- | ---- | ----- |
 | objectOutput | String | {"valueA":10,"valueB":"Example Text"} |
 | arrayOutput | String | ["a","b","c"] |
@@ -1550,7 +1550,7 @@ ms.locfileid: "60782928"
 |:--- |:--- |:--- |:--- |
 | stringToParse |Да |string |Исходная строка, из которой извлекается подстрока. |
 | startIndex |Нет |int |Отсчитываемая от нуля позиция первого знака для подстроки. |
-| длина |Нет |int |Число символов в подстроке. Этот параметр должен ссылаться на позицию в строке. Значение этого параметра должно быть равным нулю или больше него. |
+| length |Нет |int |Число символов в подстроке. Этот параметр должен ссылаться на позицию в строке. Значение этого параметра должно быть равным нулю или больше него. |
 
 ### <a name="return-value"></a>Возвращаемое значение
 
@@ -1595,7 +1595,7 @@ ms.locfileid: "60782928"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| ИМЯ | type | Value |
+| Name | type | Value |
 | ---- | ---- | ----- |
 | substringOutput | String | two |
 
@@ -1662,10 +1662,10 @@ ms.locfileid: "60782928"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| ИМЯ | type | Value |
+| Name | type | Value |
 | ---- | ---- | ----- |
-| arrayOutput | Массив | ["one", "two"] |
-| stringOutput | String | на |
+| arrayOutput | Массив, | ["one", "two"] |
+| stringOutput | String | on |
 
 ## <a name="tolower"></a>toLower
 
@@ -1713,7 +1713,7 @@ ms.locfileid: "60782928"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| ИМЯ | type | Value |
+| Name | type | Value |
 | ---- | ---- | ----- |
 | toLowerOutput | String | one two three |
 | toUpperOutput | String | ONE TWO THREE |
@@ -1764,7 +1764,7 @@ ms.locfileid: "60782928"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| ИМЯ | type | Value |
+| Name | type | Value |
 | ---- | ---- | ----- |
 | toLowerOutput | String | one two three |
 | toUpperOutput | String | ONE TWO THREE |
@@ -1893,7 +1893,7 @@ ms.locfileid: "60782928"
 }
 ```
 
-## <a name="uri"></a>универсальный код ресурса
+## <a name="uri"></a>uri
 
 `uri (baseUri, relativeUri)`
 
@@ -1951,7 +1951,7 @@ ms.locfileid: "60782928"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| ИМЯ | type | Value |
+| Name | type | Value |
 | ---- | ---- | ----- |
 | uriOutput | String | http://contoso.com/resources/nested/azuredeploy.json |
 | componentOutput | String | http%3A%2F%2Fcontoso.com%2Fresources%2Fnested%2Fazuredeploy.json |
@@ -2061,7 +2061,7 @@ ms.locfileid: "60782928"
 
 Выходные данные из предыдущего примера со значениями по умолчанию:
 
-| ИМЯ | type | Value |
+| Name | type | Value |
 | ---- | ---- | ----- |
 | uriOutput | String | http://contoso.com/resources/nested/azuredeploy.json |
 | componentOutput | String | http%3A%2F%2Fcontoso.com%2Fresources%2Fnested%2Fazuredeploy.json |
@@ -2134,7 +2134,7 @@ ms.locfileid: "60782928"
 
 Выходные данные из предыдущего примера зависит от каждого развертывания, однако будет выглядеть так:
 
-| ИМЯ | type | Value |
+| Name | type | Value |
 | ---- | ---- | ----- |
 | utcOutput | string | 20190305T175318Z |
 | utcShortOutput | string | 03/05/2019 |

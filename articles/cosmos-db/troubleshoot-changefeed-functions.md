@@ -7,12 +7,12 @@ ms.date: 05/23/2019
 ms.author: maquaran
 ms.topic: troubleshooting
 ms.reviewer: sngun
-ms.openlocfilehash: 66eff6ee603ced03a8f4d75d4569752e0b11a6e7
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 09ea70ac302806b4cb0e97fde92dda4208e3d659
+ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66242532"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66734517"
 ---
 # <a name="diagnose-and-troubleshoot-issues-when-using-azure-cosmos-db-trigger-in-azure-functions"></a>Диагностика и устранение неполадок при использовании триггер Azure Cosmos DB в функциях Azure
 
@@ -88,6 +88,12 @@ ms.locfileid: "66242532"
 Кроме того, сценарий может быть проверен, если вы знаете, сколько экземпляров приложения-функции Azure у вас есть под управлением. Если проверить аренды контейнера и подсчета числа элементов аренды в различных значений `Owner` свойство в них должно быть равно числу экземпляров приложения-функции. При наличии нескольких владельцев, чем известных экземпляров приложения-функции Azure, она означает, эти лишние владельцев один «украсть» изменения.
 
 Один простой способ обхода этой ситуации является применение `LeaseCollectionPrefix/leaseCollectionPrefix` функции со значением новую или другую или в качестве альтернативы тестирования с помощью новой аренды контейнера.
+
+### <a name="binding-can-only-be-done-with-ireadonlylistdocument-or-jarray"></a>Привязка может быть выполнено только IReadOnlyList<Document> или JArray
+
+Эта ошибка возникает, если проект функций Azure (или любой проект) содержит вручную ссылки на пакет SDK Azure Cosmos DB с помощью версию, отличную от, предоставляемых NuGet [Cosmos DB Azure Functions Extension](./troubleshoot-changefeed-functions.md#dependencies).
+
+Чтобы обойти эту проблему этой ситуации, удалить ссылки NuGet вручную, которая была добавлена и задать ссылки пакета SDK для Azure Cosmos DB решения через Azure функции Cosmos DB пакет расширения.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

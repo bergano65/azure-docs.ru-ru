@@ -8,12 +8,12 @@ ms.service: iot-accelerators
 services: iot-accelerators
 ms.date: 01/17/2019
 ms.topic: conceptual
-ms.openlocfilehash: bfe28f3ff994d518cb744233e88a6f04b5771a83
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.openlocfilehash: ed3301eb0e723e05e2a642ffea2f1609032553b4
+ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65967532"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66730168"
 ---
 # <a name="deploy-the-remote-monitoring-solution-accelerator-locally---visual-studio-code"></a>Локальное развертывание акселератора решения для удаленного мониторинга в Visual Studio Code
 
@@ -62,13 +62,14 @@ dotnet build -c Release
 Ниже показано, как запускать микрослужбы удаленного мониторинга в Visual Studio Code:
 
 1. Запустите Visual Studio Code.
-1. Откройте модуль **azure-iot-pcs-remote-monitoring-dotnet** из локальной копии в VS Code.
-1. Скопируйте файлы **launch.json** и **tasks.json** из scripts\local\launch\idesettings\vscode\. Создайте новую папку **azure-iot-pcs-remote-monitoring-dotnet\.vscode** и вставьте в него файлы.
-1. Откройте панель отладки в VS Code и выполните конфигурацию **Run all microservices** (Запуск всех микрослужб). Эта конфигурация запускает микрослужбу симулятора устройства в Docker и запускает другие микрослужбы в отладчике.
+1. В VS Code откройте **azure-iot-pcs-remote-monitoring-dotnet** папки.
+1. Создайте новую папку с именем **.vscode** в **azure-iot-pcs-remote-monitoring-dotnet** папки.
+1. Скопируйте файлы **launch.json** и **tasks.json** из services\scripts\local\launch\idesettings\vscode для **.vscode** созданную папку.
+1. Откройте **панели отладки** в VS Code и выполнения **запустить все микрослужбы** конфигурации. Эта конфигурация запускает микрослужбу симулятора устройства в Docker и запускает другие микрослужбы в отладчике.
 
-Например, выходные данные для службы **Проверка подлинности** на **консоли отладки** выглядят следующим образом:
+В результате выполнения **запустить все микрослужбы** в консоли отладки выглядит следующим образом:
 
-[![Deploy-Local-Auth-Service](./media/deploy-locally-vscode/auth-debug-results-inline.png)](./media/deploy-locally-vscode/auth-debug-results-expanded.png#lightbox)
+[![Развернуть Local Микрослужб](./media/deploy-locally-vscode/auth-debug-results-inline.png)](./media/deploy-locally-vscode/auth-debug-results-expanded.png#lightbox)
 
 ### <a name="run-the-web-ui"></a>Запуск веб-интерфейса
 
