@@ -9,12 +9,12 @@ ms.author: gwallace
 ms.date: 05/22/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 885c5266e80114b54007d05d2220fbf5ea5ab84e
-ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
+ms.openlocfilehash: 4df40febefa872fa52afdfaaf31b94dba7000af5
+ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
-ms.locfileid: "66397639"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66729486"
 ---
 # <a name="update-management-solution-in-azure"></a>Решение для управления обновлениями в Azure
 
@@ -79,9 +79,6 @@ ms.locfileid: "66397639"
 |SUSE Linux Enterprise Server 11 (x86 или x64) и 12 (x64)     | У агентов Linux должен быть доступ к репозиторию обновлений.        |
 |Ubuntu 14.04 LTS, 16.04 LTS и 18.04 LTS (x86/x64)      |У агентов Linux должен быть доступ к репозиторию обновлений.         |
 
-> [!NOTE]
-> Наборы масштабирования виртуальных машин Azure можно управлять с помощью управления обновлениями. Управление обновлениями работает на экземплярах, сами и не базового образа. Необходимо запланировать обновления в поэтапный способ, чтобы не обновить все экземпляры виртуальных Машин за один раз.
-
 ### <a name="unsupported-client-types"></a>Неподдерживаемые типы клиентов
 
 В следующей таблице перечислены неподдерживаемые операционные системы:
@@ -93,7 +90,7 @@ ms.locfileid: "66397639"
 
 ### <a name="client-requirements"></a>Требования к клиенту
 
-#### <a name="windows"></a> Windows
+#### <a name="windows"></a>Windows
 
 На агентах Windows необходимо настроить связь с сервером служб WSUS или доступ к Центру обновления Майкрософт. Решение "Управление обновлениями" можно использовать вместе с System Center Configuration Manager. Дополнительные сведения о сценариях интеграции см. в разделе [Параметр Configuration](oms-solution-updatemgmt-sccmintegration.md#configuration). [Агент Windows](../azure-monitor/platform/agent-windows.md) является обязательным компонентом. При подключении виртуальной машины Azure этот агент устанавливается автоматически.
 
@@ -155,7 +152,7 @@ Heartbeat
 | where OSType == "Linux" | summarize arg_max(TimeGenerated, *) by SourceComputerId | top 500000 by Computer asc | render table
 ```
 
-#### <a name="windows"></a> Windows
+#### <a name="windows"></a>Windows
 
 ```loganalytics
 Heartbeat
@@ -195,7 +192,7 @@ Heartbeat
 
 Дважды в день выполняется проверка каждого управляемого компьютера Windows. Каждые 15 минут вызывается API Windows, чтобы запросить время последнего обновления и определить, изменилось ли состояние. Если состояние изменилось, запускается проверка на соответствие.
 
-Каждые 3 часа выполняется проверка всех управляемых компьютеров Linux.
+Просмотр выполняется каждый час для каждого управляемого компьютера Linux.
 
 Отображение обновленных данных с управляемых компьютеров на панели мониторинга может занять от 30 минут до 6 часов.
 
@@ -228,7 +225,7 @@ Heartbeat
 
 | Свойство | Описание |
 | --- | --- |
-| ИМЯ |Уникальное имя для идентификации развертывания обновлений. |
+| Name |Уникальное имя для идентификации развертывания обновлений. |
 |Операционная система| Windows или Linux|
 | Группы для обновления |Для машин в Azure Определите запрос на основе сочетания подписки, группы ресурсов, расположения и теги для создания динамической группы виртуальных машин Azure, чтобы включить в развертывание. </br></br>Для виртуальных машин, отличные от Azure выберите сохраненный поисковый запрос для выбора группы компьютеров не Azure, чтобы включить в развертывание. </br></br>Дополнительные сведения см. в статье [о динамических группах](automation-update-management.md#using-dynamic-groups).|
 | Компьютеры, на которые нужно установить обновления |Щелкните "Сохраненные условия поиска", "Импортировать группу" или выберите "Компьютер" в раскрывающемся списке и выберите нужные компьютеры. Если выберете **Компьютеры**, готовность к обновлению будет показана в столбце **Готовность к обновлению агента**.</br> Дополнительные сведения о различных способах создания групп компьютеров в журналах Azure Monitor см. в статье [Группы компьютеров в запросах к журналам Azure Monitor](../azure-monitor/platform/computer-groups.md). |
@@ -272,7 +269,7 @@ New-AzureRmAutomationSoftwareUpdateConfiguration  -ResourceGroupName $rg -Automa
 
 В следующих таблицах содержатся списки классификаций обновлений в Управлении обновлениями с определениями для каждой классификации.
 
-### <a name="windows"></a> Windows
+### <a name="windows"></a>Windows
 
 |классификация;  |Описание  |
 |---------|---------|
@@ -492,7 +489,7 @@ Update
 | summarize hint.strategy=partitioned arg_max(TimeGenerated, UpdateState, Classification, Approved) by Computer, SourceComputerId, UpdateID
 | where UpdateState=~"Needed" and Approved!=false
 | summarize by UpdateID, Classification )
-| summarize allUpdatesCount=count(), criticalUpdatesCount=countif(Classification has "Critical"), securityUpdatesCount=countif(Classification has "Security"), otherUpdatesCount=countif(Classification !has "Critical" and Classification !has "Security"
+| summarize allUpdatesCount=count(), criticalUpdatesCount=countif(Classification has "Critical"), securityUpdatesCount=countif(Classification has "Security"), otherUpdatesCount=countif(Classification !has "Critical" and Classification !has "Security")
 ```
 
 ##### <a name="computers-list"></a>Список компьютеров

@@ -16,12 +16,12 @@ ms.author: celested
 ms.reviewer: harshja
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 365f017fe7d71500c17d0a9ccd9c5a0a26a78b75
-ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
+ms.openlocfilehash: ab08c93662988655154cf300ac4ee3758fbc7872
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65989606"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66472800"
 ---
 # <a name="header-based-authentication-for-single-sign-on-with-application-proxy-and-pingaccess"></a>Аутентификация на основе заголовка для единого входа с использованием прокси приложения и PingAccess
 
@@ -78,7 +78,7 @@ ms.locfileid: "65989606"
 1. Если это еще не сделали, войдите в [портал Azure Active Directory](https://aad.portal.azure.com/) как администратор приложений.
 2. Выберите **корпоративные приложения** > **новое приложение** > **локальное приложение**. **Добавление собственного приложения в локальной** появится страница.
 
-   ![Добавление локального приложения](./media/application-proxy-configure-single-sign-on-with-ping-access/add-your-own-on-premises-application.png)
+   ![Добавление собственного приложения на предприятии](./media/application-proxy-configure-single-sign-on-with-ping-access/add-your-own-on-premises-application.png)
 3. Заполните обязательные поля с информацией о нового приложения. Следуйте инструкциям ниже для параметров.
 
    > [!NOTE]
@@ -117,18 +117,18 @@ ms.locfileid: "65989606"
 
    ![Регистрация приложений](./media/application-proxy-configure-single-sign-on-with-ping-access/app-registrations.png)
 2. Выберите приложение.
-3. Выберите ссылку рядом с полем **URI перенаправления**, показывая количество перенаправления, настроить идентификаторы URI для общедоступных клиентских приложений и веб.  **\<Имя приложения >-проверки подлинности** появится страница.
+3. Выберите ссылку рядом с полем **URI перенаправления**, показывая количество перенаправления, настроить идентификаторы URI для общедоступных клиентских приложений и веб. **\<Имя приложения >-проверки подлинности** появится страница.
 4. Проверьте, является ли внешний URL-адрес, назначенный приложению ранее в **URI перенаправления** списка. Если это не так, добавьте внешний URL-адрес, с помощью типа URI перенаправления **Web**и выберите **Сохранить**.
 
 Наконец настройте приложение в локальной, чтобы пользователи имеют доступ на чтение и других приложений с доступом на чтение и запись:
 
 1. Из **регистрация приложений** боковой панели для вашего приложения, выберите **разрешения API** > **добавить разрешение**  >   **API-интерфейсов Microsoft** > **Microsoft Graph**. **Разрешения запроса API** странице **Microsoft Graph** появится, который содержит API-интерфейсы для Windows Azure Active Directory.
 
-   ![Запрос разрешений API](./media/application-proxy-configure-single-sign-on-with-ping-access/required-permissions.png)
+   ![Запросить разрешения API](./media/application-proxy-configure-single-sign-on-with-ping-access/required-permissions.png)
 2. Выберите **делегированные разрешения** > **пользователя** > **User.Read**.
 3. Выберите **разрешения приложения** > **приложения** > **Application.ReadWrite.All**.
 4. Выберите **добавить разрешения**.
-5. В **разрешения API** выберите **предоставления согласия администратора \<имя каталога >**.
+5. В **разрешения API** выберите **предоставления согласия администратора \<имя каталога >** .
 
 #### <a name="collect-information-for-the-pingaccess-steps"></a>Сбор сведений об этапах PingAccess
 
@@ -150,7 +150,7 @@ ms.locfileid: "65989606"
 4. Далее **каталог (клиент) идентификатор** значений, также выберите **Копировать в буфер обмена**, затем скопируйте и сохраните его. Задайте это значение позже как издателя в PingAccess.
 5. Из боковой панели элемента **регистрация приложений** для вашего приложения, выберите **сертификаты и секреты** > **новый секрет клиента**. **Добавление секрета клиента** появится страница.
 
-   ![Добавить секрет клиента](./media/application-proxy-configure-single-sign-on-with-ping-access/add-a-client-secret.png)
+   ![Добавление секрета клиента](./media/application-proxy-configure-single-sign-on-with-ping-access/add-a-client-secret.png)
 6. В **описание**, тип `PingAccess key`.
 7. В разделе **Expires**, выберите способ для указания ключа PingAccess: **Через 1 год**, **в 2 года**, или **никогда**.
 8. Выберите **Добавить**. PingAccess ключ отображается в таблице секреты клиента со случайным строкой, autofills в **значение** поля.
@@ -158,9 +158,9 @@ ms.locfileid: "65989606"
 
 ### <a name="update-graphapi-to-send-custom-fields-optional"></a>Обновление API Graph для отправки настраиваемых полей (необязательно)
 
-Список маркеров безопасности, отправляемых для проверки подлинности Azure AD, см. в разделе [маркеры Идентификации платформы удостоверений Microsoft](../develop/id-tokens.md). Если требуется пользовательское утверждение, отправляющее другие маркеры, задайте `acceptMappedClaims` поле приложения `True`. Можно использовать Graph Explorer или манифест приложения на портале Azure AD, чтобы внести это изменение.
+Если требуется пользовательское утверждение, отправляющее другие маркеры в маркер доступа, потребляемая PingAccess, задайте `acceptMappedClaims` поле приложения `True`. Можно использовать Graph Explorer или манифест приложения на портале Azure AD, чтобы внести это изменение.
 
-В этом примере используется Graph Explorer.
+**В этом примере используется Graph Explorer.**
 
 ```
 PATCH https://graph.windows.net/myorganization/applications/<object_id_GUID_of_your_application>
@@ -170,7 +170,7 @@ PATCH https://graph.windows.net/myorganization/applications/<object_id_GUID_of_y
 }
 ```
 
-В этом примере используется [портал Azure Active Directory](https://aad.portal.azure.com/) обновить `acceptMappedClaims` поля:
+**В этом примере используется [портал Azure Active Directory](https://aad.portal.azure.com/) обновить `acceptMappedClaims` поля:**
 
 1. Войдите в [портал Azure Active Directory](https://aad.portal.azure.com/) как администратор приложений.
 2. Выберите **Azure Active Directory** > **Регистрация приложений**. Появится список приложений.
@@ -179,7 +179,28 @@ PATCH https://graph.windows.net/myorganization/applications/<object_id_GUID_of_y
 5. Поиск `acceptMappedClaims` поле и измените значение на `True`.
 6. Щелкните **Сохранить**.
 
-### <a name="use-a-custom-claim-optional"></a>Использовать настраиваемое утверждение (необязательно)
+
+### <a name="use-of-optional-claims-optional"></a>Необязательные утверждения (необязательно)
+Необязательные утверждения можно добавить standard-but-not-included-by-default утверждения, у каждого пользователя и клиента. Необязательные утверждения для приложения можно настроить, изменив манифест приложения. Дополнительные сведения см. в разделе [основные сведения о статье манифеста приложения Azure AD](https://docs.microsoft.com/azure/active-directory/develop/reference-app-manifest/)
+
+Пример для включения адрес электронной почты в маркер доступа, который будет потреблять PingAccess.
+```
+    "optionalClaims": {
+        "idToken": [],
+        "accessToken": [
+            {
+                "name": "email",
+                "source": null,
+                "essential": false,
+                "additionalProperties": []
+            }
+        ],
+        "saml2Token": []
+    },
+```
+
+### <a name="use-of-claims-mapping-policy-optional"></a>Использование утверждений, сопоставление политики (необязательно)
+[Утверждения сопоставления политики (Предварительная версия)](https://docs.microsoft.com/azure/active-directory/develop/active-directory-claims-mapping#claims-mapping-policy-properties/) для атрибутов, которые не существуют в Azure AD. Сопоставление утверждений позволяет переносить старых локальных приложений в облако путем добавления дополнительных настраиваемых утверждений, связанных с ADFS или пользователь объектов
 
 Чтобы сделать приложение использовать настраиваемое утверждение и включение дополнительных полей, убедитесь, что вы уже также [создается политика сопоставления настраиваемых утверждений и назначается приложение](../develop/active-directory-claims-mapping.md#claims-mapping-policy-assignment).
 
@@ -187,6 +208,16 @@ PATCH https://graph.windows.net/myorganization/applications/<object_id_GUID_of_y
 > Чтобы использовать настраиваемое утверждение, также необходимо определить настраиваемую политику и назначить ее приложению. Эта политика должна включать все обязательные настраиваемые атрибуты.
 >
 > Это можно сделать, определения политики и назначения с помощью PowerShell, Azure AD Graph Explorer или Microsoft Graph. Если вы выполняете их в PowerShell, может потребоваться сначала использовать `New-AzureADPolicy` и назначьте его в приложение с помощью `Add-AzureADServicePrincipalPolicy`. Дополнительные сведения см. в разделе [назначение политики сопоставления утверждений](../develop/active-directory-claims-mapping.md#claims-mapping-policy-assignment).
+
+Пример:
+```powershell
+$pol = New-AzureADPolicy -Definition @('{"ClaimsMappingPolicy":{"Version":1,"IncludeBasicClaimSet":"true", "ClaimsSchema": [{"Source":"user","ID":"employeeid","JwtClaimType":"employeeid"}]}}') -DisplayName "AdditionalClaims" -Type "ClaimsMappingPolicy"
+
+Add-AzureADServicePrincipalPolicy -Id "<<The object Id of the Enterprise Application you published in the previous step, which requires this claim>>" -RefObjectId $pol.Id 
+```
+
+### <a name="enable-pingaccess-to-use-custom-claims-optional-but-required-if-you-expect-the-application-to-consume-additional-claims"></a>Включить PingAccess использовать настраиваемые утверждения (необязательно, но требуется, если предполагается, что приложению применять дополнительные утверждения)
+При следующем шаге вы настроите PingAccess, веб-сеанс будет создан (доступа на "->" Параметры "->" веб-сеансами) должен иметь **запроса профиля** отменой выделения и **обновить атрибуты пользователя** значение **нет**
 
 ## <a name="download-pingaccess-and-configure-your-application"></a>Скачивание PingAccess и настройка приложения
 

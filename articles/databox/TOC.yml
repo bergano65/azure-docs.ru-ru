@@ -111,9 +111,7 @@
           items:
             - name: Управление с помощью портала Azure
               href: data-box-portal-ui-admin.md
-            - name: Перемещение данных на уровень больших двоичных объектов
-              href: data-box-how-to-set-data-tier.md
-            - name: Устранение неполадок с Azure Data Box Heavy
+            - name: Устранение неполадок с диском Data Box
               href: data-box-disk-troubleshoot.md
             - name: Запрос в службу поддержки
               href: data-box-disk-contact-microsoft-support.md
@@ -155,12 +153,18 @@
               href: data-box-local-web-ui-admin.md
             - name: Устранение неполадок с устройствами
               href: data-box-troubleshoot.md
+            - name: Перемещение данных на уровень больших двоичных объектов
+              href: data-box-how-to-set-data-tier.md
             - name: Запрос в службу поддержки
               href: data-box-disk-contact-microsoft-support.md
             - name: Миграция
               items:
+                - name: В SharePoint Online
+                  href: data-box-heavy-migrate-spo.md
                 - name: В службу "Синхронизация файлов Azure"
                   href: ../storage/files/storage-sync-offline-data-transfer.md?toc=/azure/databox/toc.json&bc=/azure/databox/breadcrumb/toc.json
+                - name: Из хранилища HDFS
+                  href: ../storage/blobs/data-lake-storage-migrate-on-premises-hdfs-cluster.md?toc=/azure/databox/toc.json&bc=/azure/databox/breadcrumb/toc.json
     - name: Ресурсы
       items:
         - name: Продукт Data Box

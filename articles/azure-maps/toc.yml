@@ -42,6 +42,8 @@
           href: render-coverage.md
         - name: Наличие информации о маршрутизации
           href: routing-coverage.md
+        - name: Наличие информации о мобильности
+          href: mobility-coverage.md
     - name: Поддержка локализации
       href: supported-languages.md
     - name: Поддерживаемые стили карт
@@ -50,6 +52,8 @@
       href: supported-browsers.md
     - name: Уровни увеличения и параметры сетки
       href: zoom-levels-and-tile-grid.md
+    - name: Структура данных Службы мобильности
+      href: mobility-service-data-structure.md
 - name: Практические руководства
   items:
     - name: Управление учетными записями службы "Карты"
@@ -70,6 +74,10 @@
           href: how-to-use-best-practices-for-search.md
         - name: Отображение пользовательских данных на статической карте
           href: how-to-render-custom-data.md
+        - name: Запрос маршрутов общественного транспорта
+          href: how-to-request-transit-data.md
+        - name: Запрос данных о работе общественного транспорта в реальном времени
+          href: how-to-request-real-time-data.md
     - name: Разработка с помощью веб-пакета SDK
       items:
         - name: Управление картами

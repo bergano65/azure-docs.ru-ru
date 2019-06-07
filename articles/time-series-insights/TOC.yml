@@ -4,7 +4,7 @@
   items:
     - name: Сведения о службе "Аналитика временных рядов"
       href: time-series-insights-update-overview.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   items:
     - name: Аналитика временных рядов Azure (общедоступная версия)
       items:
@@ -14,7 +14,7 @@
       items:
         - name: Обзор службы "Аналитика временных рядов" (предварительная версия)
           href: time-series-insights-update-quickstart.md
-- name: Учебники
+- name: Руководства
   items:
     - name: Изучение клиентской библиотеки JavaScript для службы "Аналитика временных рядов Azure"
       href: tutorial-explore-js-client-lib.md
@@ -112,7 +112,7 @@
           href: time-series-insights-update-how-to-shape-events.md
 - name: Справочные материалы
   items:
-    - name: Аналитика временных рядов Azure
+    - name: Аналитика временных рядов
       items:
         - name: Аналитика временных рядов Azure (общедоступная версия)
           href: /rest/api/time-series-insights/ga
@@ -137,6 +137,10 @@
               href: /rest/api/time-series-insights/preview-env
             - name: Синтаксис и общие сведения о языке TSX
               href: /rest/api/time-series-insights/preview-tsx
+    - name: Клиентский пакет SDK
+      items:
+        - name: Пакет SDK для клиента JavaScript
+          href: 'https://github.com/microsoft/tsiclient/blob/master/docs/API.md'
 - name: Сопутствующие материалы
   items:
     - name: Решения
@@ -151,13 +155,13 @@
           href: /azure/iot-hub
         - name: Служба подготовки устройств к добавлению в Центр Интернета вещей
           href: /azure/iot-dps
-        - name: Карты
+        - name: Maps
           href: /azure/azure-maps
-        - name: Пакеты SDK службы
+        - name: Пакеты SDK для служб
           href: '/azure/iot-hub/iot-hub-devguide-sdks#azure-iot-service-sdks'
-        - name: Аналитика временных рядов Azure
+        - name: Аналитика временных рядов
           href: /azure/time-series-insights
-    - name: Microsoft Edge
+    - name: Edge
       items:
         - name: IoT Edge
           href: /azure/iot-edge
@@ -175,13 +179,13 @@
       href: 'https://azure.microsoft.com/pricing/details/time-series-insights/'
     - name: Калькулятор цен
       href: 'https://azure.microsoft.com/pricing/calculator/'
-    - name: Регионы доступности
+    - name: Доступность по регионам
       href: 'https://azure.microsoft.com/regions/services/'
     - name: Форум MSDN
       href: 'https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureTimeSeriesInsights'
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-timeseries-insights'
     - name: Варианты поддержки
       href: 'https://azure.microsoft.com/support/options/'
-    - name: Видеоролики
+    - name: Видео
       href: 'https://azure.microsoft.com/resources/videos/index/?services=time-series-insights'

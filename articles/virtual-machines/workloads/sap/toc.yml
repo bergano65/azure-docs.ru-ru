@@ -54,7 +54,7 @@
       items:
         - name: Параметры и рекомендации
           href: hana-overview-high-availability-disaster-recovery.md
-        - name: Архивация и восстановление
+        - name: Резервное копирование и восстановление
           href: hana-backup-restore.md
         - name: Принципы и подготовка
           href: hana-concept-preparation.md
@@ -66,7 +66,7 @@
           href: troubleshooting-monitoring.md
         - name: Мониторинг и устранение неполадок со стороны HANA
           href: hana-monitor-troubleshoot.md
-    - name: Практическое руководство
+    - name: Руководства
       items:
         - name: Управление крупными экземплярами HANA в Azure с помощью портала Azure
           href: hana-li-portal.md
@@ -86,6 +86,8 @@
       href: cal-s4h.md
     - name: Конфигурации инфраструктуры SAP HANA и работа с ней в Azure
       href: hana-vm-operations.md
+    - name: Конфигурации хранилища виртуальных машин SAP HANA в Azure
+      href: hana-vm-operations-storage.md
     - name: Доступность SAP HANA в Виртуальных машинах Azure
       items:
         - name: Общие сведения о доступности SAP HANA в Azure

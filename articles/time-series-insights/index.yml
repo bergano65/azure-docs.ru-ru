@@ -11,7 +11,7 @@ metadata:
   ms.tgt_pltfrm: na
   ms.devlang: na
   ms.topic: landing-page
-  ms.date: 04/23/2019
+  ms.date: 06/03/2019
   ms.author: anshan
 abstract:
   description: 'Добро пожаловать в службу "Аналитика временных рядов Azure". Служба "Аналитика временных рядов Azure" предоставляет мощные средства телеметрии и исследования данных, с помощью которых можно усовершенствовать анализ операций. В этой документации описана служба, а также приведены инструкции по началу работы с множеством ее функций, клиентским пакетом SDK и мощными API службы "Аналитика временных рядов". Сведения приводятся для двух версий службы "Аналитика временных рядов": одна из них уже общедоступна, а другая представляет собой предварительную версию основного обновления службы.'
@@ -25,7 +25,7 @@ abstract:
     href: 'https://channel9.msdn.com/Shows/Internet-of-Things-Show/Azure-Time-Series-Insights-e2e-solution-for-industrial-IoT-analytics'
     width: 250
 sections:
-  - title: 5-минутные руководства по началу работы
+  - title: Пятиминутные руководства по началу работы
     items:
       - type: paragraph
         text: 'Ознакомьтесь со службой "Аналитика временных рядов Azure", изучив примеры, которые помогут вам приступить к работе за несколько минут.'
@@ -46,9 +46,9 @@ sections:
         className: cardsD
         items:
           - title: Аналитика временных рядов Azure (общедоступная версия)
-            html: <p><a href="/azure/time-series-insights/tutorial-create-populate-tsi-environment">Создание среды</a></p> <p><a href="/azure/time-series-insights/tutorial-create-tsi-sample-spa">Создание одностраничного веб-приложения</a></p> <p><a href="/azure/time-series-insights/tutorial-explore-js-client-lib">Обзор клиентской библиотеки JavaScript</a></p>
+            html: <p><a href="/azure/time-series-insights/tutorial-create-populate-tsi-environment">Создание среды службы "Аналитика временных рядов Azure"</a></p> <p><a href="/azure/time-series-insights/tutorial-create-tsi-sample-spa">Создание одностраничного веб-приложения</a></p> <p><a href="/azure/time-series-insights/tutorial-explore-js-client-lib">Обзор клиентской библиотеки JavaScript</a></p>
           - title: Аналитика временных рядов Azure (предварительная версия)
-            html: <p><a href="/azure/time-series-insights/time-series-insights-update-create-environment">Руководство по работе с предварительной версией</a></p>
+            html: <p><a href="/azure/time-series-insights/time-series-insights-update-create-environment">Настройка среды службы "Аналитика временных рядов Azure" (предварительная версия)</a></p>
   - title: Справочные материалы
     items:
       - type: list
@@ -56,6 +56,8 @@ sections:
         className: cardsD
         items:
           - title: API-интерфейсы службы "Аналитика временных рядов" (общедоступная версия)
-            html: <p><a href="/rest/api/time-series-insights-management">API управления ресурсами</a></p> <p><a href="/rest/api/time-series-insights/ga-query-api">API запроса</a></p> <p><a href="/rest/api/time-series-insights/ga-query-syntax">Синтаксис запросов</a></p>
+            html: <p><a href="rest/api/time-series-insights/ga">Доступ к данным</a></p> <p><a href="/rest/api/time-series-insights/ga-query-api">API запроса</a></p> <p><a href="/rest/api/time-series-insights/ga-query-syntax">Синтаксис запросов</a></p>
           - title: API-интерфейсы службы "Аналитика временных рядов" (предварительная версия)
             html: <p><a href="/rest/api/time-series-insights/preview-query">API запроса</a></p> <p><a href="/rest/api/time-series-insights/preview-model">API модели</a></p> <p><a href="/rest/api/time-series-insights/preview-env">API среды</a></p> <p><a href="/rest/api/time-series-insights/preview-tsx">API языка TSX (Time Series Expression)</a></p>
+          - title: Клиентский пакет SDK
+            html: '<p><a href="https://github.com/microsoft/tsiclient/blob/master/docs/API.md">Пакет SDK для клиента JavaScript</a></p>'

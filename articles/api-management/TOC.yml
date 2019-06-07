@@ -6,14 +6,14 @@
       href: api-management-key-concepts.md
     - name: Доступность функций службы управления API
       href: api-management-features.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   expanded: true
   items:
     - name: Создание экземпляра (портал)
       href: get-started-create-service-instance.md
     - name: Создание экземпляра (PowerShell)
       href: powershell-create-service-instance.md
-- name: Учебники
+- name: Руководства
   items:
     - name: 1. Импорт вашего первого API
       href: import-and-publish.md
@@ -121,6 +121,8 @@
           href: api-management-howto-manage-protocols-ciphers.md
     - name: Настройка процесса разработки
       items:
+        - name: Доступ к новому порталу разработчика и его настройка
+          href: api-management-howto-developer-portal.md
         - name: Изменение содержимого и макета страницы
           href: api-management-modify-content-layout.md
         - name: Настройка системных страниц с помощью шаблонов
@@ -167,7 +169,7 @@
       items:
         - name: Шаблоны
           href: api-management-developer-portal-templates-reference.md
-        - name: Интерфейсы API
+        - name: API
           href: api-management-api-templates.md
         - name: Продукты
           href: api-management-product-templates.md
@@ -209,7 +211,7 @@
           items:
             - name: Обзор
               href: ../service-fabric/service-fabric-api-management-overview.md
-            - name: Учебник
+            - name: Руководство
               href: ../service-fabric/service-fabric-tutorial-deploy-api-management.md
 - name: Справочные материалы
   items:
@@ -223,21 +225,21 @@
       href: /azure/templates/microsoft.apimanagement/allversions
 - name: Ресурсы
   items:
-    - name: Часто задаваемые вопросы
+    - name: Вопросы и ответы
       href: api-management-faq.md
     - name: Цены
       href: 'https://aka.ms/apimpricing'
-    - name: Доступ по регионам
+    - name: Доступность по регионам
       href: 'https://azure.microsoft.com/regions/services/'
-    - name: Стратегия
+    - name: Стратегия развития
       href: 'https://aka.ms/apimroadmap'
     - name: Запросы функций
       href: 'https://aka.ms/apimwish'
-    - name: Видеоролики
+    - name: Видео
       href: 'https://azure.microsoft.com/documentation/videos/index/?services=api-management'
     - name: Форум MSDN
       href: 'https://social.msdn.microsoft.com/Forums/azure/en-US/home?forum=azureapimgmt'
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/questions/tagged/azure-api-management'
     - name: Руководство по проектированию API
       href: 'https://docs.microsoft.com/azure/architecture/best-practices/api-design?toc=%2Fazure%2Fapi-management%2Ftoc.json'

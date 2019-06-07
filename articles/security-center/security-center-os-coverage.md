@@ -12,14 +12,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 5/27/2019
+ms.date: 6/03/2019
 ms.author: monhaber
-ms.openlocfilehash: 807bde76bb6bb50490ee599768273a59c49d5e45
-ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
+ms.openlocfilehash: c5b5b88ee1334ac6d7b39b8ad53bd020e6042454
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66258706"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66480533"
 ---
 # <a name="platforms-and-features-supported-by-azure-security-center"></a>Поддерживаемые платформы и возможности в центре безопасности Azure
 
@@ -59,7 +59,7 @@ ms.locfileid: "66258706"
 * Oracle Linux 6 и 7
 * Red Hat Enterprise Linux Server 6 и 7
 * Debian GNU/Linux 8 и 9
-* Ubuntu Linux 14.04 LTS, 16.04 LTS и 18.04 LTS
+* Ubuntu Linux 14.04 LTS, 16.04 LTS и 18.04 LTS
 * SUSE Linux Enterprise Server 12
 
 32-битная
@@ -93,7 +93,7 @@ ms.locfileid: "66258706"
 |FIM;|✔|✔|✔|✔|✔|✔|Стандартная|
 |Оценка шифрования диска|✔|✔|X|✔|✔|X|Free|
 |Стороннее развертывание|✔|X|X|✔|X|X|Free|
-|Оценка группы безопасности сети|✔|✔|X|✔|✔|X|Free|
+|Оценка безопасности сети|✔|✔|X|✔|✔|X|Free|
 |Обнаружение бесфайловых угроз|✔|✔|✔|X|X|X|Стандартная|
 |Карта сети|✔|✔|X|✔|✔|X|Стандартная|
 |Адаптивные элементы управления сетью|✔|✔|X|✔|✔|X|Стандартная|
@@ -129,7 +129,7 @@ ms.locfileid: "66258706"
 |SQL|✔| ✔|
 |PostGreSQL*|✔| ✔|
 |MySQL*|✔| ✔|
-|Учетные записи хранилища BLOB-объектов Azure*|✔| ✔|
+|Учетные записи хранения BLOB-объектов Azure|✔| ✔|
 |Службы приложений|✔| ✔|
 |Облачные службы|✔| X|
 |Виртуальные сети|✔| Нет данных|
@@ -137,7 +137,6 @@ ms.locfileid: "66258706"
 |сетевые карты;|✔| Нет данных|
 |Группы NSG|✔| Нет данных|
 |Подписка|✔ **| ✔|
-|Служба приложений|✔| Нет данных|
 |Пакетная служба Azure|✔| Нет данных|
 |Service Fabric|✔| Нет данных|
 |Учетная запись службы автоматизации|✔| Нет данных|
@@ -147,14 +146,9 @@ ms.locfileid: "66258706"
 |Stream Analytics|✔| Нет данных|
 |концентратор событий;|✔| Нет данных|
 |приложениях логики.|✔| Нет данных|
-|Подсеть|✔| Нет данных|
-|Виртуальная сеть|✔| Нет данных|
 |Учетная запись хранения|✔| Нет данных|
 |Redis|✔| Нет данных|
-|SQL|✔| Нет данных|
 |Data Lake Analytics|✔| Нет данных|
-|Учетная запись хранения|✔| Нет данных|
-|Подписка|✔| Нет данных|
 |Хранилище ключей|✔| Нет данных|
 
 

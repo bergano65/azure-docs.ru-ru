@@ -9,17 +9,17 @@ ms.service: search
 ms.topic: conceptual
 ms.date: 05/02/2019
 ms.custom: ''
-ms.openlocfilehash: 9d2cd2a2f4b3143d58d0ef03d67de094ea03303e
-ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
+ms.openlocfilehash: 567f32cba76aaf2d1657b2476c4d11596d44dec5
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2019
-ms.locfileid: "65523091"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66753946"
 ---
 # <a name="azure-search-encryption-using-customer-managed-keys-in-azure-key-vault"></a>Шифрование поиска Azure с помощью управляемых клиентом ключей в хранилище ключей Azure
 
 > [!Note]
-> Шифрование с помощью управляемых пользователем ключей находится в предварительной версии и не предназначена для использования в рабочей среде. [2019 г. версия REST API-05-06-Preview](search-api-preview.md) предоставляет эту функцию. Можно также использовать пакет SDK для .NET версии 8.0-preview.
+> Шифрование с помощью управляемых пользователем ключей находится в предварительной версии и не предназначена для использования в рабочей среде. Эта функция предоставляется в [версии REST API 2019-05-06-Preview](search-api-preview.md). Можно также использовать пакет SDK для .NET версии 8.0-preview.
 >
 > Эта функция недоступна для бесплатных служб Необходимо использовать в службе поиска оплачиваемых, созданной в течение или после 2019-01-01. Отсутствует поддержка портала в данный момент.
 
@@ -227,7 +227,7 @@ az keyvault update -n <vault_name> -g <resource_group> --enable-soft-delete --en
 
 1. [Создайте приложение Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#create-an-azure-active-directory-application).
 
-1. [Получение идентификатора приложения и проверка подлинности ключа](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#get-application-id-and-authentication-key) , те, которые потребуются для создания зашифрованного индекса. Значения, необходимо будет предоставить включают **идентификатор приложения** и **ключ проверки подлинности**.
+1. [Получение идентификатора приложения и проверка подлинности ключа](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#get-values-for-signing-in) , те, которые потребуются для создания зашифрованного индекса. Значения, необходимо будет предоставить включают **идентификатор приложения** и **ключ проверки подлинности**.
 
 >[!Important]
 > При определении использование приложения AAD для проверки подлинности вместо управляемого удостоверения учитывайте тот факт, что поиск Azure не авторизован для управления приложением AAD от вашего имени, и вы для управления приложением AAD, например периодической смены из ключ проверки подлинности приложения.

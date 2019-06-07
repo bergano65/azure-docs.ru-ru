@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 05/16/2019
 ms.author: heidist
 ms.custom: seodec2018
-ms.openlocfilehash: 3fa463cb7178fa5cc2108383047a7ca94ffb48a3
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: bac897178c8220abe72a92a5cf14fc4767cdd3bf
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65797379"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66755059"
 ---
 # <a name="monitor-resource-consumption-and-query-activity-in-azure-search"></a>Мониторинг использования ресурсов и обработки запросов в Поиске Azure
 
@@ -114,7 +114,7 @@ resourceId=/subscriptions/<subscriptionID>/resourcegroups/<resourceGroupName>/pr
 | ИМЯ | type | Пример | Примечания |
 | --- | --- | --- | --- |
 | Twitter в режиме реального |Datetime |"2018-12-07T00:00:43.6872559Z" |Метка времени операции |
-| ResourceId |строка |"/SUBSCRIPTIONS/11111111-1111-1111-1111-111111111111/<br/>RESOURCEGROUPS/DEFAULT/PROVIDERS/<br/>  MICROSOFT.SEARCH/SEARCHSERVICES/SEARCHSERVICE" |Идентификатор вашего ресурса |
+| ResourceId |строка |"/SUBSCRIPTIONS/11111111-1111-1111-1111-111111111111/<br/>RESOURCEGROUPS/DEFAULT/PROVIDERS/<br/> MICROSOFT.SEARCH/SEARCHSERVICES/SEARCHSERVICE" |Идентификатор вашего ресурса |
 | operationName |строка |"Query.Search" |Имя операции |
 | operationVersion |string |"2019-05-06" |Используемая версия API |
 | category |строка |"OperationLogs" |константа |
@@ -125,7 +125,7 @@ resourceId=/subscriptions/<subscriptionID>/resourcegroups/<resourceGroupName>/pr
 
 **Схема свойств**
 
-| ИМЯ | type | Пример | Примечания |
+| Name | type | Пример | Примечания |
 | --- | --- | --- | --- |
 | ОПИСАНИЕ |строка |"GET /indexes('content')/docs" |Конечная точка операции |
 | Запрос |string |"?search=AzureSearch&$count=true&api-version=2019-05-06" |Параметры запроса |
@@ -138,7 +138,7 @@ resourceId=/subscriptions/<subscriptionID>/resourcegroups/<resourceGroupName>/pr
 
 | ИМЯ | type | Пример | Примечания |
 | --- | --- | --- | --- |
-| ResourceId |строка |"/SUBSCRIPTIONS/11111111-1111-1111-1111-111111111111/<br/>RESOURCEGROUPS/DEFAULT/PROVIDERS/<br/> MICROSOFT.SEARCH/SEARCHSERVICES/SEARCHSERVICE" |Идентификатор вашего ресурса |
+| ResourceId |строка |"/SUBSCRIPTIONS/11111111-1111-1111-1111-111111111111/<br/>RESOURCEGROUPS/DEFAULT/PROVIDERS/<br/>MICROSOFT.SEARCH/SEARCHSERVICES/SEARCHSERVICE" |Идентификатор вашего ресурса |
 | metricName |строка |"Latency" |имя метрики |
 | time |Datetime |"2018-12-07T00:00:43.6872559Z" |метка времени операции |
 | average |int |64 |Среднее количество необработанных выборок в течение интервала времени метрики |
@@ -175,7 +175,7 @@ REST API Поиска Azure и пакет SDK для .NET Поиска Azure о�
 * [Подсчет документов](/rest/api/searchservice/count-documents)
 * [Получение состояния индексатора](/rest/api/searchservice/get-indexer-status)
 
-Сведения о включении мониторинга с помощью PowerShell или Azure CLI см. в документации [здесь](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-of-diagnostic-logs#how-to-enable-collection-of-diagnostic-logs).
+Сведения о включении мониторинга с помощью PowerShell или Azure CLI см. в документации [здесь](https://docs.microsoft.com/azure/azure-monitor/platform/diagnostic-logs-overview).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

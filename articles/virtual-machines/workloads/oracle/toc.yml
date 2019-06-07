@@ -1,16 +1,20 @@
 - name: Обзор
   items:
-    - name: Рекомендации для виртуальных машин Oracle
-      href: oracle-considerations.md
-- name: Быстрое начало работы
+    - name: Обзор решений Oracle
+      href: oracle-overview.md
+    - name: Решения для виртуальных машин Azure
+      href: oracle-vm-solutions.md
+    - name: Решения с использованием OCI (предварительная версия)
+      href: oracle-oci-overview.md
+- name: Краткие руководства
   items:
     - name: "Создание Oracle\_DB"
       href: oracle-database-quick-create.md
-- name: Учебники
+- name: Руководства
   items:
     - name: "Настройка Oracle\_ASM"
       href: configure-oracle-asm.md
-    - name: Настройка Oracle DataGuard
+    - name: Настройка Oracle Data Guard
       href: configure-oracle-dataguard.md
     - name: Настройка Oracle GoldenGate
       href: configure-oracle-golden-gate.md

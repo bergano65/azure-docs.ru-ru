@@ -1,33 +1,32 @@
 ---
 title: Отправка данных для заданий Apache Hadoop в HDInsight
 description: Сведения об отправке данных и получении доступа к ним для заданий Apache Hadoop в HDInsight с помощью классического интерфейса командной строки Azure, Обозревателя службы хранилища Azure, Azure PowerShell, командной строки Hadoop или Sqoop.
-keywords: etl hadoop, вставка данных в hadoop, загрузка данных hadoop
 author: hrasheed-msft
-ms.reviewer: jasonh
 ms.author: hrasheed
+ms.reviewer: jasonh
 ms.service: hdinsight
-ms.custom: hdinsightactive,hdiseo17may2017
+ms.custom: hdiseo17may2017
 ms.topic: conceptual
-ms.date: 02/08/2019
-ms.openlocfilehash: 3283c885956c5b43171c6287dc00efa9a82db28e
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.date: 06/03/2019
+ms.openlocfilehash: 0dbd5a886e2369d29a568eca47dda5558f43c8cd
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64722795"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66479140"
 ---
 # <a name="upload-data-for-apache-hadoop-jobs-in-hdinsight"></a>Отправка данных для заданий Apache Hadoop в HDInsight
 
-Служба Azure HDInsight — это полнофункциональная распределенная файловая система Hadoop (HDFS), в основе которой лежит служба хранилища Azure и Azure Data Lake Storage (1-го и 2-го поколения). Служба хранилища Azure и Data Lake Storage 1-го и 2-го поколения, разработанные в качестве расширений HDFS, обеспечивают клиентам высочайшее удобство работы. Благодаря им все компоненты экосистемы Hadoop работают непосредственно с данными, управляемыми службой. Служба хранилища Azure, а также Data Lake Storage 1-го и 2-го поколения — это разные файловые системы, оптимизированные для хранения и обработки данных. Сведения о преимуществах использования службы хранилища Azure см. в статьях [Использование службы хранилища Azure с кластерами Azure HDInsight][hdinsight-storage], [Использование Data Lake Storage 1-го поколения с кластерами Azure HDInsight](hdinsight-hadoop-use-data-lake-store.md) и [Использование Azure Data Lake Storage 2-го поколения с кластерами Azure HDInsight](hdinsight-hadoop-use-data-lake-storage-gen2.md).
+Служба Azure HDInsight — это полнофункциональная распределенная файловая система Hadoop (HDFS), в основе которой лежит служба хранилища Azure и Azure Data Lake Storage (1-го и 2-го поколения). Служба хранилища Azure и Data Lake Storage 1-го и 2-го поколения, разработанные в качестве расширений HDFS, обеспечивают клиентам высочайшее удобство работы. Благодаря им все компоненты экосистемы Hadoop работают непосредственно с данными, управляемыми службой. Служба хранилища Azure, а также Data Lake Storage 1-го и 2-го поколения — это разные файловые системы, оптимизированные для хранения и обработки данных. Сведения о преимуществах использования службы хранилища Azure, см. в разделе [использование хранилища Azure с HDInsight](hdinsight-hadoop-use-blob-storage.md), [Gen1 хранилища Озера данных используется с HDInsight](hdinsight-hadoop-use-data-lake-store.md), и [Gen2 хранилища Озера данных использования с HDInsight](hdinsight-hadoop-use-data-lake-storage-gen2.md).
 
 ## <a name="prerequisites"></a>Технические условия
 
 Перед началом работы необходимо ознакомиться со следующими требованиями:
 
-* Кластер Azure HDInsight. Инструкции см. в статье [Руководство по Hadoop. Приступая к работе с Hadoop в HDInsight][hdinsight-get-started] или [Установка кластеров в HDInsight с использованием Hadoop, Spark, Kafka и других технологий](hdinsight-hadoop-provision-linux-clusters.md).
+* Кластер Azure HDInsight. Инструкции см. в разделе [приступить к работе с Azure HDInsight](hadoop/apache-hadoop-linux-tutorial-get-started.md) или [кластеров HDInsight, создайте](hdinsight-hadoop-provision-linux-clusters.md).
 * Изучите следующие статьи:
 
-    - [Использование службы хранилища Azure с HDInsight][hdinsight-storage]
+    - [Использование службы хранилища Azure с HDInsight](hdinsight-hadoop-use-blob-storage.md)
     - [Использование Data Lake Store с кластерами Azure HDInsight](hdinsight-hadoop-use-data-lake-store.md)
     - [Использование хранилища Azure Data Lake Storage Gen2 (предварительная версия) с кластерами Azure HDInsight](hdinsight-hadoop-use-data-lake-storage-gen2.md)  
 
@@ -36,7 +35,7 @@ ms.locfileid: "64722795"
 ## <a name="utilities"></a>Техническое оборудование
 Корпорация Майкрософт предоставляет следующие служебные программы для работы со службой хранилища Azure:
 
-| Средство | Linux | OS X |  Windows |
+| Средство | Linux | OS X | Windows |
 | --- |:---:|:---:|:---:|
 | [портал Azure](../storage/blobs/storage-quickstart-blobs-portal.md) |✔ |✔ |✔ |
 | [Интерфейс командной строки Azure](../storage/blobs/storage-quickstart-blobs-cli.md) |✔ |✔ |✔ |
@@ -60,15 +59,15 @@ ms.locfileid: "64722795"
 hadoop -copyFromLocal <localFilePath> <storageFilePath>
 ```
 
-Например `hadoop fs -copyFromLocal data.txt /example/data/data.txt`.
+Например: `hadoop fs -copyFromLocal data.txt /example/data/data.txt`
 
 Так как файловая система по умолчанию для HDInsight находится в службе хранилища Azure, файл /example/data.txt фактически располагается там же. Можно также использовать следующую ссылку на файл:
 
-    wasb:///example/data/data.txt
+    wasbs:///example/data/data.txt
 
 или
 
-    wasb://<ContainerName>@<StorageAccountName>.blob.core.windows.net/example/data/davinci.txt
+    wasbs://<ContainerName>@<StorageAccountName>.blob.core.windows.net/example/data/davinci.txt
 
 Список других команд Hadoop, которые работают с файлами, см. здесь: [https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/FileSystemShell.html](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-common/FileSystemShell.html)
 
@@ -78,7 +77,7 @@ hadoop -copyFromLocal <localFilePath> <storageFilePath>
 ## <a name="graphical-clients"></a>Графические клиенты
 Существуют также несколько приложений, которые предоставляют графический интерфейс для работы с хранилищем Azure. В следующей таблице приведен список некоторых из таких приложений:
 
-| Клиент | Linux | OS X |  Windows |
+| Клиент | Linux | OS X | Windows |
 | --- |:---:|:---:|:---:|
 | [Microsoft Visual Studio Tools для HDInsight](hadoop/apache-hadoop-visual-studio-tools-get-started.md#explore-linked-resources) |✔ |✔ |✔ |
 | [Azure Storage Explorer;](../storage/blobs/storage-quickstart-blobs-storage-explorer.md) |✔ |✔ |✔ |
@@ -98,13 +97,13 @@ hadoop -copyFromLocal <localFilePath> <storageFilePath>
 |Тип хранилища|Документация|
 |----|----|
 |Хранилище больших двоичных объектов Azure|[Копирование данных в хранилище BLOB-объектов Azure и обратно с помощью фабрики данных Azure](../data-factory/connector-azure-blob-storage.md)|
-|Хранилище Azure Data Lake Gen1|[Копирование данных в Azure Data Lake Storage 1-го поколения и из него с помощью фабрики данных Azure](../data-factory/connector-azure-data-lake-store.md)|
-|Хранилище Azure Data Lake Gen2 |[Загрузка данных в Azure Data Lake Storage 2-го поколения с помощью Фабрики данных Azure](../data-factory/load-azure-data-lake-storage-gen2.md)|
+|Azure Data Lake Storage 1-го поколения|[Копирование данных в Azure Data Lake Storage 1-го поколения и из него с помощью фабрики данных Azure](../data-factory/connector-azure-data-lake-store.md)|
+|Azure Data Lake Storage 2-го поколения |[Загрузка данных в Azure Data Lake Storage 2-го поколения с помощью Фабрики данных Azure](../data-factory/load-azure-data-lake-storage-gen2.md)|
 
 ### <a id="sqoop"></a>Apache Sqoop
 Sqoop — это средство, предназначенное для передачи данных между Hadoop и реляционными базами данных. С его помощью можно импортировать данные из системы управления реляционными базами данных (РСУБД), например SQL Server, MySQL или Oracle, в распределенную файловую систему Hadoop (HDFS), преобразовать данные в системе Hadoop с использованием MapReduce или Hive, а затем экспортировать данные обратно в РСУБД.
 
-Дополнительные сведения см. в разделе [Использование Sqoop с Hadoop в HDInsight][hdinsight-use-sqoop].
+Дополнительные сведения см. в разделе [использование Sqoop с HDInsight](hadoop/hdinsight-use-sqoop.md).
 
 ### <a name="development-sdks"></a>Пакеты SDK для разработки
 Доступ к службе хранилища Azure также можно получить с помощью пакета Azure SDK со следующих языков программирования:
@@ -152,28 +151,21 @@ hadoop -fs -D fs.azure.write.request.size=4194304 -copyFromLocal test_large_file
 
 Можно также глобально увеличить значение `fs.azure.write.request.size` с помощью Apache Ambari. Чтобы изменить значение в веб-интерфейсе Ambari, сделайте следующее:
 
-1. В браузере перейдите к веб-интерфейсу Ambari для кластера Это https://CLUSTERNAME.azurehdinsight.net, где **ИМЯ_КЛАСТЕРА** — имя кластера.
+1. В браузере перейдите к веб-интерфейсу Ambari для кластера Это `https://CLUSTERNAME.azurehdinsight.net`, где `CLUSTERNAME` — это имя вашего кластера.
 
     При появлении запроса введите имя и пароль администратора для кластера.
 2. В левой части экрана выберите **HDFS**, а затем перейдите на вкладку **Configs** (Конфигурации).
 3. В поле **Фильтр...** введите `fs.azure.write.request.size`. Посредине страницы отобразится поле и его текущее значение.
 4. Измените значение с 262 144 (256 КБ) на новое. Например, 4 194 304 (4 MB).
 
-![Изображение смены значения через веб-интерфейс Ambari](./media/hdinsight-upload-data/hbase-change-block-write-size.png)
+    ![Изображение смены значения через веб-интерфейс Ambari](./media/hdinsight-upload-data/hbase-change-block-write-size.png)
 
 Подробные сведения об использовании Ambari см. в статье [Управление кластерами HDInsight с помощью веб-интерфейса Ambari](hdinsight-hadoop-manage-ambari.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Теперь, когда вы знаете, как передавать данные в HDInsight, узнайте, как их можно анализировать.
 
-* [Руководство по Hadoop. Начало работы с Hadoop в HDInsight на платформе Linux][hdinsight-get-started]
-* [Отправка заданий Apache Hadoop программными средствами][hdinsight-submit-jobs]
-* [Использование Apache Hive с HDInsight][hdinsight-use-hive]
-* [Использование Apache Pig с HDInsight][hdinsight-use-pig]
-
-[hdinsight-use-sqoop]:hadoop/hdinsight-use-sqoop.md
-[hdinsight-storage]: hdinsight-hadoop-use-blob-storage.md
-[hdinsight-submit-jobs]:hadoop/submit-apache-hadoop-jobs-programmatically.md
-[hdinsight-get-started]:hadoop/apache-hadoop-linux-tutorial-get-started.md
-[hdinsight-use-hive]:hadoop/hdinsight-use-hive.md
-[hdinsight-use-pig]:hadoop/hdinsight-use-pig.md
+* [Приступая к работе с Azure HDInsight](hadoop/apache-hadoop-linux-tutorial-get-started.md)
+* [Отправка заданий Apache Hadoop программными средствами](hadoop/submit-apache-hadoop-jobs-programmatically.md)
+* [Использование Hive и HiveQL с Hadoop в HDInsight для анализа примера файла Apache log4j](hadoop/hdinsight-use-hive.md)
+* [Использование Pig с Hadoop в HDInsight](hadoop/hdinsight-use-pig.md)

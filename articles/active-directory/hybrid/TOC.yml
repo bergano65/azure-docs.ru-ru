@@ -18,6 +18,10 @@
       href: tutorial-phs-backup.md
 - name: Основные понятия
   items:
+    - name: Гибридное удостоверение
+      items:
+        - name: Облачное управление для локальных рабочих нагрузок
+          href: cloud-governed-management-for-on-premises.md
     - name: Azure AD Connect с расширением Azure AD Connect Health
       items:
         - name: Что такое Azure AD Connect с расширением Azure AD Connect Health
@@ -278,7 +282,7 @@
           href: whatis-aadc-admin-agent.md
         - name: Что собой представляет модуль PowerShell ADConnectivityTools
           href: how-to-connect-adconnectivitytools.md
-        - name: Соединение
+        - name: Возможность подключения
           href: tshoot-connect-connectivity.md
         - name: Ошибки при синхронизации
           href: tshoot-connect-sync-errors.md
