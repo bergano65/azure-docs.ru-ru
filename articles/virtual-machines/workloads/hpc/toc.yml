@@ -1,0 +1,30 @@
+- name: Документация по высокопроизводительным вычислениям (HPC)
+  items:
+    - name: Обзор
+      href: 'https://docs.microsoft.com/azure/architecture/topics/high-performance-computing/'
+    - name: Конфигурация
+      items:
+        - name: Оптимизация Linux
+          href: configure.md
+        - name: Включение InfiniBand
+          href: enable-infiniband.md
+    - name: Настройка MPI
+      href: setup-mpi.md
+    - name: Масштабирование приложений
+      href: compiling-scaling-applications.md
+    - name: Виртуальные машины
+      items:
+        - name: "Серия\_HB"
+          items:
+            - name: Обзор
+              href: hb-series-overview.md
+            - name: Производительность
+              href: hb-series-performance.md
+        - name: "Серия\_HC"
+          items:
+            - name: Обзор
+              href: hc-series-overview.md
+            - name: Производительность
+              href: hc-series-performance.md
+        - name: Известные проблемы с виртуальными машинами серий HB и HC
+          href: hb-hc-known-issues.md

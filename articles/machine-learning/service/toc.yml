@@ -86,24 +86,27 @@
     - name: Рабочая область
       displayName: concept definitions architecture
       href: concept-workspace.md
+    - name: Целевой объект вычисления
+      displayName: concept definitions architecture
+      href: concept-compute-target.md
     - name: Графический интерфейс
       displayName: concept
       href: ui-concept-visual-interface.md
-    - name: Автоматическое машинное обучение
+    - name: Автоматическое Машинное обучение
       displayName: 'automl, auto ml'
       href: concept-automated-ml.md
     - name: Служба управления моделями (MLOps)
       displayName: 'deploy, deployment, mlops, operationalize, operationalization'
       href: concept-model-management-and-deployment.md
+    - name: Возможность повторного использования конвейеров Машинного обучения
+      href: concept-ml-pipelines.md
     - name: Интерпретируемость модели
       displayName: explainability
       href: machine-learning-interpretability-explainability.md
-    - name: Ускорение с использованием FPGA
+    - name: Общие сведения о ППВМ
       href: concept-accelerate-with-fpgas.md
-    - name: Оптимизация с использованием среды выполнения ONNX и ONNX
+    - name: Open Neural Network Exchange и среда выполнения ONNX
       href: concept-onnx.md
-    - name: Конвейеры машинного обучения
-      href: concept-ml-pipelines.md
     - name: Безопасность
       items:
         - name: Общие сведения об обеспечении безопасности на уровне предприятия

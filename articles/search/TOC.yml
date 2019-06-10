@@ -163,24 +163,28 @@
       items:
         - name: Общие сведения об индексаторах
           href: search-indexer-overview.md
-        - name: Индексатор хранилища BLOB-объектов
-          href: search-howto-indexing-azure-blob-storage.md
-        - name: Индексатор Хранилища таблиц
+        - name: Индексатор Хранилища таблиц Azure
           href: search-howto-indexing-azure-tables.md
         - name: Индексатор Базы данных SQL
           href: search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md
-        - name: "Индексатор Cosmos\_DB"
+        - name: Индексатор Azure Cosmos DB
           href: search-howto-index-cosmosdb.md
-        - name: Индексирование больших двоичных объектов по модели "один ко многим"
-          href: search-howto-index-one-to-many-blobs.md
-        - name: Индексирование больших двоичных объектов в формате CSV
-          href: search-howto-index-csv-blobs.md
-        - name: Индексирование больших двоичных объектов в формате JSON
-          href: search-howto-index-json-blobs.md
+        - name: Индексатор хранилища BLOB-объектов Azure
+          items:
+            - name: Настройка индексатора больших двоичных объектов
+              href: search-howto-indexing-azure-blob-storage.md
+            - name: Индексирование больших двоичных объектов по модели "один ко многим"
+              href: search-howto-index-one-to-many-blobs.md
+            - name: Индексация больших двоичных объектов CSV
+              href: search-howto-index-csv-blobs.md
+            - name: Индексация больших двоичных объектов JSON
+              href: search-howto-index-json-blobs.md
+        - name: Расписание индексаторов
+          href: search-howto-schedule-indexers.md
+        - name: Сопоставление полей
+          href: search-indexer-field-mappings.md
         - name: Подключение к виртуальным машинам SQL Server
           href: search-howto-connecting-azure-sql-iaas-to-azure-search-using-indexers.md
-        - name: Сопоставления полей
-          href: search-indexer-field-mappings.md
         - name: Устранение распространенных неполадок
           href: search-indexer-troubleshooting.md
     - name: Расширение возможностей с помощью ИИ

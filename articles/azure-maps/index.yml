@@ -13,9 +13,9 @@ metadata:
   ms.date: 02/14/2019
   ms.author: philmea
 abstract:
-  description: "Служба Azure Maps предоставляет разработчикам всех направлений мощные геопространственные функции, дополненные актуальными картографическими данными для предоставления географического контекста веб-приложениям и мобильным приложениям. Azure Maps\_— это совместимый с API Azure One набор интерфейсов REST API для служб Maps, а также решений, использующих поиск, маршрутизацию, трафик, часовые пояса, геозоны, данные карт и пространственные операции с поддержкой веб-пакетов SDK и пакетов SDK для Android. Это решение обеспечивает простоту и гибкость разработки, а также возможность переноса на разные платформы."
+  description: "Служба Azure Maps предоставляет разработчикам всех направлений мощные геопространственные функции, дополненные актуальными картографическими данными для предоставления географического контекста веб-приложениям и мобильным приложениям. Azure Maps\_— это совместимый с API Azure One набор интерфейсов REST API для Maps, Поиска, служб маршрутизации, мобильности и часовых поясов, Службы трафика, Службы геолокации, служб геозон и данных карт, а также службы \"Пространственные операции\", с поддержкой веб-пакетов SDK и пакетов SDK для Android. Это решение обеспечивает простоту и гибкость разработки, а также возможность переноса на разные платформы."
 sections:
-  - title: 5-минутные руководства по началу работы
+  - title: Пятиминутные руководства по началу работы
     items:
       - type: paragraph
         text: 'Узнайте, как создавать геопространственные приложения с помощью Azure Maps.'
@@ -54,4 +54,4 @@ sections:
           - title: JavaScript
             html: '<p><a href="https://docs.microsoft.com/javascript/api/azure-maps-javascript/">Управление картами</a></p>'
           - title: REST
-            html: '<p><a href="https://docs.microsoft.com/rest/api/maps/data">Служба данных</a></p><p><a href="https://docs.microsoft.com/rest/api/maps/geolocation">Служба геолокации</a></p><p><a href="https://docs.microsoft.com/rest/api/maps/render">Служба отрисовки</a></p><p><a href="https://docs.microsoft.com/rest/api/maps/route">Служба построения маршрутов</a></p><p><a href="https://docs.microsoft.com/rest/api/maps/search">Служба поиска</a></p><p><a href="https://docs.microsoft.com/rest/api/maps/spatial">Служба пространственных данных</a></p><p><a href="https://docs.microsoft.com/rest/api/maps/timezone">Служба часового пояса</a></p><p><a href="https://docs.microsoft.com/rest/api/maps/traffic">Служба отслеживания дорожного движения</a></p>'
+            html: '<p><a href="https://docs.microsoft.com/rest/api/maps/data">Служба данных</a></p><p><a href="https://docs.microsoft.com/rest/api/maps/geolocation">Служба геолокации</a></p><p><a href="https://docs.microsoft.com/rest/api/maps/mobility">Служба Mobility Service</a></p><p><a href="https://docs.microsoft.com/rest/api/maps/render">Служба отрисовки</a></p><p><a href="https://docs.microsoft.com/rest/api/maps/route">Служба построения маршрутов</a></p><p><a href="https://docs.microsoft.com/rest/api/maps/search">Служба поиска</a></p><p><a href="https://docs.microsoft.com/rest/api/maps/spatial">Служба пространственных данных</a></p><p><a href="https://docs.microsoft.com/rest/api/maps/timezone">Служба часового пояса</a></p><p><a href="https://docs.microsoft.com/rest/api/maps/traffic">Служба отслеживания дорожного движения</a></p>'

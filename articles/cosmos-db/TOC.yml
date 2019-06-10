@@ -533,8 +533,8 @@
           href: how-to-sql-subquery.md
     - name: Канал изменений
       items:
-        - name: "Журналы триггеров Azure Cosmos\_DB"
-          href: how-to-configure-cosmos-db-trigger-logs.md
+        - name: Политика подключения триггера Azure Cosmos DB
+          href: how-to-configure-cosmos-db-trigger-connection-policy.md
         - name: "Использование нескольких триггеров Azure Cosmos\_DB"
           href: how-to-create-multiple-cosmos-db-triggers.md
         - name: "Устранение неполадок с триггерами Azure Cosmos\_DB"
