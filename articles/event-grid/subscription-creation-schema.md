@@ -35,8 +35,8 @@ PUT /subscriptions/{subscription-id}/resourceGroups/examplegroup/providers/Micro
 
 | Свойство | type | Описание |
 | -------- | ---- | ----------- |
-| назначение | object | Объект, который определяет конечную точку. |
-| фильтр | object | Необязательное поле для фильтрации событий по типам. |
+| destination | object | Объект, который определяет конечную точку. |
+| filter | object | Необязательное поле для фильтрации событий по типам. |
 
 ### <a name="destination-object"></a>Объект destination
 
