@@ -65,17 +65,17 @@ ms.locfileid: "60619830"
 
 | ИМЯ | Значение и пример | Тип данных
 | ---- | ---- | ---- 
-| версия_API | `2018-10-01` | date |
+| apiVersion | `2018-10-01` | date |
 | publisher | `Microsoft.ManagedServices` | string |
-| тип | `ApplicationHealthLinux` (Linux), `ApplicationHealthWindows` (Windows) | string |
+| type | `ApplicationHealthLinux` (Linux), `ApplicationHealthWindows` (Windows) | string |
 | typeHandlerVersion | `1.0` | int |
 
 ### <a name="settings"></a>Параметры
 
 | ИМЯ | Значение и пример | Тип данных
 | ---- | ---- | ----
-| протокол | `http` или `tcp` | string |
-| порт | Необязательно, если используется протокол `http`; обязательно, если используется протокол `tcp` | int |
+| protocol | `http` или `tcp` | string |
+| port | Необязательно, если используется протокол `http`; обязательно, если используется протокол `tcp` | int |
 | requestPath | Обязательно, если используется протокол `http`; не разрешено, если используется протокол `tcp` | string |
 
 ## <a name="deploy-the-application-health-extension"></a>Развертывание расширение "Работоспособность приложения"
