@@ -17,12 +17,12 @@ ms.date: 06/04/2019
 ms.author: joflore
 ms.reviewer: sandeo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8f91ff65d0e11ed2e9f923f94c740314c9136d99
-ms.sourcegitcommit: 6932af4f4222786476fdf62e1e0bf09295d723a1
+ms.openlocfilehash: faabc65a78626c053aecfac81b560b4731e40b95
+ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/05/2019
-ms.locfileid: "66688687"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66729996"
 ---
 # <a name="what-is-a-device-identity"></a>Что такое удостоверение устройства?
 
@@ -155,5 +155,5 @@ ms.locfileid: "66688687"
 - Настройка
    - устройств Windows 10, зарегистрированных в Azure Active Directory, описывается в разделе [Регистрация персонального устройства в сети организации](../user-help/device-management-azuread-registered-devices-windows10-setup.md);
    - устройств, присоединенных к Azure Active Directory, описывается в разделе [Практическое руководство: Планирование реализации присоединения к Azure AD](azureadjoin-plan.md);
-   - гибридные устройства, присоединенные к Azure AD, ознакомьтесь со статьей [Как планировать гибридную реализацию присоединения к Azure Active Directory](hybrid-azuread-join-plan.md).   
+   - гибридные устройства, присоединенные к Azure AD, ознакомьтесь со статьей [Как планировать гибридную реализацию присоединения к Azure Active Directory](hybrid-azuread-join-plan.md).
 - Дополнительные сведения об условном доступе на основе устройств см. в статье [Практическое руководство. Требование использовать только управляемые устройства для доступа к облачным приложениям с помощью условного доступа](../conditional-access/require-managed-devices.md).
