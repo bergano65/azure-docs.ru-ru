@@ -14,12 +14,12 @@ ms.topic: tutorial
 ms.date: 01/31/2019
 ms.author: cephalin
 ms.custom: seodec18
-ms.openlocfilehash: c83e14d65b30775f0dad54ab9ade1a7bed5ac821
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: ad211eef673731a856c4db99fe0b4712217b23e5
+ms.sourcegitcommit: f9448a4d87226362a02b14d88290ad6b1aea9d82
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66139465"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66808483"
 ---
 # <a name="tutorial-build-an-aspnet-core-and-sql-database-app-in-azure-app-service"></a>Руководство по Создание приложения ASP.NET Core и Базы данных SQL в Службе приложений Azure
 
@@ -148,7 +148,7 @@ az sql db create --resource-group myResourceGroup --server <server_name> --name 
 
 ### <a name="create-connection-string"></a>Создание строки подключения
 
-В следующей строке замените *\<server_name>*, *\<db_username>* и *\<db_password>* на использованные ранее значения.
+В следующей строке замените *\<server_name>* , *\<db_username>* и *\<db_password>* на использованные ранее значения.
 
 ```
 Server=tcp:<server_name>.database.windows.net,1433;Database=coreDB;User ID=<db_username>;Password=<db_password>;Encrypt=true;Connection Timeout=30;
@@ -371,7 +371,7 @@ git push azure master
 
 При запуске приложения ASP.NET Core в Службе приложений Azure можно передавать журналы консоли в Cloud Shell. Таким образом, вы будете получать те же диагностические сообщения, которые помогут устранить ошибки приложения.
 
-В примере проекта уже выполнены инструкции из руководства [Ведение журналов в ASP.NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/logging#logging-in-azure) и внесены два изменения в настройки:
+В примере проекта уже выполнены инструкции из руководства [Ведение журналов в ASP.NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/logging#azure-app-service-provider) и внесены два изменения в настройки:
 
 - в файле *DotNetCoreSqlDb.csproj* содержится ссылка на `Microsoft.Extensions.Logging.AzureAppServices`.
 - в файле *Startup.cs* содержится вызов `loggerFactory.AddAzureWebAppDiagnostics()`.

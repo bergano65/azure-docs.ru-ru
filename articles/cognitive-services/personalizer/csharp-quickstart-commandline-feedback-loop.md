@@ -10,12 +10,12 @@ ms.subservice: personalizer
 ms.topic: overview
 ms.date: 05/08/2019
 ms.author: edjez
-ms.openlocfilehash: b0dc8fbbb80a4d03b2cb64d09ffe9a36883c5bf9
-ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
+ms.openlocfilehash: a7f6c6fe25bf9dff2f102080f93fc1e0024ac660
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2019
-ms.locfileid: "65521369"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66478628"
 ---
 # <a name="quickstart-personalize-content-using-c"></a>Краткое руководство. Персонализация содержимого с помощью C# 
 
@@ -41,6 +41,8 @@ ms.locfileid: "65521369"
 ## <a name="change-the-model-update-frequency"></a>Изменение частоты обновления модели
 
 В ресурсе "Персонализатор" на портале Azure установите для параметра **Частота обновления модели** значение 10 секунд. С этим значением служба будет обучаться быстро, и вы увидите, как главное действие меняется с каждой итерацией.
+
+После создания цикла Персонализатора модель не используется, поскольку отсутствуют вызовы API вознаграждения для обучения. Вызовы ранжирования будут возвращать равновероятностный результат для каждого элемента. Приложение должно по-прежнему ранжировать содержимое на основе выходных данных RewardActionId.
 
 ![Изменение частоты обновления модели](./media/settings/configure-model-update-frequency-settings.png)
 

@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.date: 05/20/2019
 ms.author: iainfou
 ms.custom: H1Hack27Feb2017, mvc, devcenter
-ms.openlocfilehash: b96c1ada1ebb1bc53f7f55311c69a3cdc04f7574
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.openlocfilehash: b99ee8e6a379a1e86eaf37bb232176c3ca13c0d9
+ms.sourcegitcommit: 6932af4f4222786476fdf62e1e0bf09295d723a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
-ms.locfileid: "65956446"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66687952"
 ---
 # <a name="quickstart-deploy-an-azure-kubernetes-service-aks-cluster-using-the-azure-cli"></a>Краткое руководство. Развертывание кластера Службы Azure Kubernetes (AKS) с помощью Azure CLI
 
@@ -238,7 +238,7 @@ azure-vote-front   LoadBalancer   10.0.37.27   52.179.23.131   80:30572/TCP   2m
 
 После создания кластера AKS для сбора метрик работоспособности узлов кластера и модулей pod включается служба "Azure Monitor для контейнеров". Эти метрики работоспособности доступны на портале Azure.
 
-Чтобы увидеть текущее состояние, время доступности и использование ресурсов для модулей pod Azure для голосования, выполните следующие действия:
+Чтобы увидеть текущее состояние, время доступности и использование ресурсов для объектов pod приложения Azure для голосования, выполните следующие действия.
 
 1. В веб-браузере перейдите на портал Azure [https://portal.azure.com][azure-portal].
 1. Выберите свою группу ресурсов, например *myResourceGroup*, а затем — кластер AKS, например *myAKSCluster*.
@@ -251,11 +251,11 @@ azure-vote-front   LoadBalancer   10.0.37.27   52.179.23.131   80:30572/TCP   2m
 
 ![Представление работоспособности запущенных контейнеров в AKS](media/kubernetes-walkthrough/monitor-containers.png)
 
-Чтобы просмотреть журналы для модуля pod `azure-vote-front`, выберите параметр **Просмотр в службе Analytics**, а затем щелкните ссылку **Просмотреть журналы контейнера** в правой части списка контейнеров. Эти журналы содержат потоки *stdout* и *stderr* из контейнера.
+Чтобы просмотреть журналы для pod `azure-vote-back`, выберите параметр **Просмотр в службе Analytics**, а затем щелкните ссылку **Просмотреть журналы контейнера** в правой части списка контейнеров. Эти журналы содержат потоки *stdout* и *stderr* из контейнера.
 
 ![Представление журналов контейнеров в AKS](media/kubernetes-walkthrough/monitor-container-logs.png)
 
-## <a name="delete-cluster"></a>Удаление кластера
+## <a name="delete-the-cluster"></a>Удаление кластера
 
 Чтобы удалить ненужные кластер, группу ресурсов, службу контейнеров и все связанные с ней ресурсы, выполните команду [az group delete][az-group-delete].
 

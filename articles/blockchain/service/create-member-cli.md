@@ -5,17 +5,17 @@ services: azure-blockchain
 keywords: ''
 author: PatAltimore
 ms.author: patricka
-ms.date: 05/02/2019
+ms.date: 05/29/2019
 ms.topic: quickstart
 ms.service: azure-blockchain
 ms.reviewer: seal
 manager: femila
-ms.openlocfilehash: e1b7558ea83c8948a8984215e15040e4d929cb1b
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: be5a8151f0de0a33db09194a7159aded6848c78a
+ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65141381"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66416173"
 ---
 # <a name="quickstart-create-an-azure-blockchain-service-blockchain-member-using-azure-cli"></a>Краткое руководство. Создание участника блокчейн-сети службы "Блокчейн Azure" с помощью Azure CLI
 
@@ -41,56 +41,23 @@ az group create --name myResourceGroup --location eastus
 
 ## <a name="create-a-blockchain-member"></a>Создание участника блокчейн-сети
 
-Создайте участника блокчейн-сети в службе "Блокчейн Azure", которая выполняет протокол реестра Quorum в новом консорциуме.
+Создайте участника блокчейн-сети в службе "Блокчейн Azure", которая выполняет протокол реестра Quorum в новом консорциуме. Для этого вам нужно передать несколько параметров и свойств. Замените примеры параметров своими значениями.
 
-Для этого вам нужно передать несколько параметров и свойств. Замените указанные ниже параметры своими значениями.
+```azurecli-interactive
+az resource create --resource-group myResourceGroup --name myblockchainmember --resource-type Microsoft.Blockchain/blockchainMembers --is-full-object --properties "{ \"location\": \"eastus\", \"properties\": {\"password\": \"strongMemberAccountPassword@1\", \"protocol\": \"Quorum\", \"consortium\": \"myConsortiumName\", \"consortiumManagementAccountPassword\": \"strongConsortiumManagementPassword@1\" }, \"sku\": { \"name\": \"S0\" } }"
+```
 
 | Параметр | ОПИСАНИЕ |
 |---------|-------------|
 | **resource-group** | Имя группы ресурсов, в которой создаются ресурсы службы "Блокчейн Azure". Выберите группу ресурсов, созданную при работе с предыдущим разделом.
 | **name** | Уникальное имя, идентифицирующее участника блокчейн-сети в службе "Блокчейн Azure". Это имя используется в адресе общедоступной конечной точки. Например, `myblockchainmember.blockchain.azure.com`.
 | **расположение** | Регион Azure, в котором создается участник блокчейн-сети. Например, `eastus`. Выберите расположение, наиболее близкое к пользователям или другим приложениям Azure.
-| **password** | Пароль учетной записи участника. Пароль учетной записи участника используется для обычной аутентификации в общедоступной конечной точке участника блокчейн-сети.
+| **password** | Пароль для узла транзакций по умолчанию участника. Этот пароль используется для обычной проверки подлинности при подключении к общедоступной конечной точке узла транзакций участника блокчейна.
 | **consortium** | Имя консорциума, который создается или к которому присоединяется участник.
-| **consortiumManagementAccountPassword** | Пароль управления консорциума. Используется для присоединения к консорциуму.
+| **consortiumAccountPassword** | Пароль учетной записи консорциума, также называется паролем учетной записи участника. Пароль учетной записи участника используется для шифрования закрытого ключа для учетной записи Ethereum, созданного для вашего участника. Учетная запись участника и ее пароль используются для управления консорциумом.
 | **skuName** | Тип уровня. Используйте S0, чтобы выбрать ценовую категорию "Стандартный", или B0, чтобы выбрать ценовую категорию "Базовый".
 
-```azurecli-interactive
-az resource create --resource-group myResourceGroup --name myblockchainmember --resource-type Microsoft.Blockchain/blockchainMembers --is-full-object --properties "{ \"location\": \"eastus\", \"properties\": {\"password\": \"strongMemberAccountPassword@1\", \"protocol\": \"Quorum\", \"consortium\": \"myConsortiumName\", \"consortiumManagementAccountPassword\": \"strongConsortiumManagementPassword@1\" }, \"sku\": { \"name\": \"S0\" } }"
-```
-
 Для создания участника блокчейн-сети и вспомогательных ресурсов требуется около 10 минут.
-
-В следующем примере выходных данных показано, что операция создания успешно выполнена.
-
-```json
-{
-  "id": "/subscriptions/<subscriptionId>/resourceGroups/myResourceGroup/providers/Microsoft.Blockchain/blockchainMembers/mymembername",
-  "kind": null,
-  "location": "eastus",
-  "name": "mymembername",
-  "properties": {
-    "ConsortiumMemberDisplayName": "mymembername",
-    "consortium": "myConsortiumName",
-    "consortiumManagementAccountAddress": "0xfe5fbb9d1036298abf415282f52397ade5d5beef",
-    "consortiumManagementAccountPassword": null,
-    "consortiumRole": "ADMIN",
-    "dns": "mymembername.blockchain.azure.com",
-    "protocol": "Quorum",
-    "provisioningState": "Succeeded",
-    "userName": "mymembername",
-    "validatorNodesSku": {
-      "capacity": 2
-    }
-  },
-  "resourceGroup": "myResourceGroup",
-  "sku": {
-    "name": "S0",
-    "tier": "Standard"
-  },
-  "type": "Microsoft.Blockchain/blockchainMembers"
-}
-```
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
@@ -104,7 +71,7 @@ az group delete --name myResourceGroup --yes
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-Теперь, когда вы создали участника блокчейн-сети, ознакомьтесь с одним из кратких руководств по подключению к узлу транзакций для [Geth](connect-geth.md), [MetaMask](connect-metamask.md) или [Truffle](connect-truffle.md).
+Теперь, когда вы создали участника блокчейна, ознакомьтесь с одним из кратких руководств по подключению с помощью [Geth](connect-geth.md), [MetaMask](connect-metamask.md) или [Truffle](connect-truffle.md).
 
 > [!div class="nextstepaction"]
 > [Подключение к сети службы "Блокчейн Azure" с использованием Truffle](connect-truffle.md)

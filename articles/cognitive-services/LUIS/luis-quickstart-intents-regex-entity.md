@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: tutorial
-ms.date: 05/07/2018
+ms.date: 06/03/2019
 ms.author: diberry
-ms.openlocfilehash: 71104ecf0514b61e4f0d224d25f2ace9457f3cd3
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.openlocfilehash: 5e79de8dc8b4e81f427925b6e3d662bd4931804d
+ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
-ms.locfileid: "65145530"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66497024"
 ---
 # <a name="tutorial-get-well-formatted-data-from-the-utterance"></a>Руководство по Получение данных правильного формата из высказывания
 В этом руководстве создается приложение для извлечения согласованно отформатированных данных из фразы с помощью сущности **регулярного выражения**.
@@ -28,8 +28,8 @@ ms.locfileid: "65145530"
 > * Создание нового приложения 
 > * Добавление намерения
 > * Добавление сущности регулярного выражения 
-> * Train
-> * Опубликовать
+> * Обучение
+> * Публикация
 > * Получать намерения и сущности из конечной точки.
 
 [!INCLUDE [LUIS Free account](../../../includes/cognitive-services-luis-free-key-short.md)]
@@ -125,7 +125,11 @@ LUIS помечает высказывания, добавляемые в нам
 
 1. [!INCLUDE [LUIS How to get endpoint first step](../../../includes/cognitive-services-luis-tutorial-how-to-get-endpoint.md)]
 
-2. Перейдите в конец URL-адреса и введите `When were HRF-123456 and hrf-234567 published in the last year?`. Последний параметр строки запроса — `q`. Это **запрос** фразы. Эта фраза не совпадает ни с какими помеченными фразами, поэтому она является хорошим тестом. В результате должно быть возвращено намерение `FindForm` с двумя номерами форм: `HRF-123456` и `hrf-234567`.
+2. В конце URL-адреса введите такое высказывание:
+
+    `When were HRF-123456 and hrf-234567 published in the last year?`
+
+    Последний параметр строки запроса — `q`. Это **запрос** фразы. Эта фраза не совпадает ни с какими помеченными фразами, поэтому она является хорошим тестом. В результате должно быть возвращено намерение `FindForm` с двумя номерами форм: `HRF-123456` и `hrf-234567`.
 
     ```json
     {

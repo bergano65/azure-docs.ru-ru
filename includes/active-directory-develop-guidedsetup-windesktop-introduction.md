@@ -14,27 +14,27 @@ ms.workload: identity
 ms.date: 04/10/2019
 ms.author: jmprieur
 ms.custom: include file
-ms.openlocfilehash: f0cc888eaf3724737e9c868c69a641094a19348c
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: ae17ef749a353cd60227e31ba4dadf328b1dc935
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66121594"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66482275"
 ---
 # <a name="call-the-microsoft-graph-api-from-a-windows-desktop-app"></a>Вызов API Microsoft Graph из классического приложения для Windows
 
-В этом руководстве описывается, как классическое приложение для Windows .NET (XAML) может получить маркер доступа и вызвать API Microsoft Graph или другие API, требующие маркеры доступа от конечной точки платформы удостоверений Майкрософт для разработчиков (предыдущее название — Azure AD) версии 2.0.
+В этом руководстве показано, как в классическом приложении .NET для Windows (XAML) используется маркер доступа для вызова API Microsoft Graph. Приложению также доступны другие API, которым требуются маркеры доступа из конечной точки платформы удостоверений Microsoft для разработчиков версии 2.0. Эта платформа ранее именовалась Azure AD.
 
 Когда вы завершите работу с руководством, ваше приложение сможет вызывать защищенный API, использующий личные учетные записи (в том числе outlook.com, live.com и другие). Приложение будет также использовать рабочие и учебные учетные записи из любой компании или организации, использующей Azure Active Directory.  
 
 > [!NOTE]
-> Для работы с руководством требуется Visual Studio 2015 с обновлением 3 или Visual Studio 2017. У вас нет ни одной из этих версий? [Скачайте Visual Studio 2017 бесплатно.](https://www.visualstudio.com/downloads/)
+> Для работы с руководством требуется Visual Studio 2015 с обновлением 3 или Visual Studio 2019. У вас нет ни одной из этих версий? [Скачайте бесплатно Visual Studio 2019](https://www.visualstudio.com/downloads/).
 
 ## <a name="how-the-sample-app-generated-by-this-guide-works"></a>Как работает пример приложения, созданный в этом руководстве
 
-![Работа примера приложения, созданного при работе с этими руководствами.](./media/active-directory-develop-guidedsetup-windesktop-intro/windesktophowitworks.svg)
+![Схема работы примера приложения, создаваемого в этом кратком руководстве](./media/active-directory-develop-guidedsetup-windesktop-intro/windesktophowitworks.svg)
 
-Пример приложения, созданный с помощью этого руководства, позволяет классическому приложению для Windows выполнять запрос к API Microsoft Graph или веб-API, принимающему маркеры от конечной точки платформы удостоверений Майкрософт. В этом сценарии маркер добавляется в запросы HTTP с помощью заголовка авторизации. Получение маркера и его обновление выполняет библиотека проверки подлинности Майкрософт (MSAL).
+Пример приложения, создаваемый с помощью этого руководства, позволяет классическому приложению для Windows выполнять запрос к API Microsoft Graph или веб-API, принимающему маркеры от конечной точки платформы удостоверений Майкрософт. В этом сценарии маркер добавляется в запросы HTTP с помощью заголовка авторизации. Получение маркера и его обновление выполняет библиотека проверки подлинности Майкрософт (MSAL).
 
 ## <a name="handling-token-acquisition-for-accessing-protected-web-apis"></a>Обработка получения маркера для доступа к защищенным веб-интерфейсам API
 

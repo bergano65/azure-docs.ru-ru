@@ -10,12 +10,12 @@ ms.service: search
 ms.devlang: dotnet
 ms.topic: quickstart
 ms.date: 05/16/2019
-ms.openlocfilehash: 8d186ae83e1016de9c4548d4b1c39303025a5270
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 0392cc6334aaf383f43d55134fa65f82c44270c3
+ms.sourcegitcommit: ef06b169f96297396fc24d97ac4223cabcf9ac33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65795812"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66428404"
 ---
 # <a name="quickstart-1---create-an-azure-search-index-in-c"></a>Краткое руководство. Часть 1. Создание индекса службы "Поиск Azure" с помощью C#
 > [!div class="op_single_selector"]
@@ -26,7 +26,7 @@ ms.locfileid: "65795812"
 > * [Postman](search-fiddler.md)
 >*
 
-Эта статья описывает создание [индекса службы "Поиск Azure"](search-what-is-an-index.md) с помощью C# и [пакета SDK для .NET](https://aka.ms/search-sdk). Это первый из трех уроков по созданию и загрузке индекса, а также выполнению к нему запроса. Создание индекса предусматривает выполнение следующих задач:
+Эта статья описывает создание [индекса службы "Поиск Azure"](search-what-is-an-index.md) с помощью C# и [пакета SDK для .NET](https://aka.ms/search-sdk). Это краткое руководство представляет собой первый из трех уроков по созданию и загрузке индекса, а также выполнению к нему запросов. Создание индекса предусматривает выполнение следующих задач:
 
 > [!div class="checklist"]
 > * Создание объекта [`SearchServiceClient`](https://docs.microsoft.com/dotnet/api/microsoft.azure.search.searchserviceclient?view=azure-dotnet), который будет подключен к службе поиска.
@@ -39,7 +39,7 @@ ms.locfileid: "65795812"
 
 + [Создайте службу "Поиск Azure"](search-create-service-portal.md) или [найдите имеющуюся службу](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResourceBlade/resourceType/Microsoft.Search%2FsearchServices) в рамках текущей подписки. Вы можете использовать бесплатную службу для выполнения инструкций, описанных в этом кратком руководстве.
 
-+ [Visual Studio 2017](https://visualstudio.microsoft.com/downloads/) (любой выпуск). Пример кода и инструкции были протестированы с помощью бесплатного выпуска Community Edition.
+[Visual Studio 2019](https://visualstudio.microsoft.com/downloads/) (любой выпуск). Пример кода и инструкции были протестированы с помощью бесплатного выпуска Community Edition.
 
 + [DotNetHowTo](https://github.com/Azure-Samples/search-dotnet-getting-started/tree/master/DotNetHowTo) предоставляет пример решения, консольное приложение .NET Core на C#, которое находится в репозитории GitHub с примерами Azure. Скачайте и извлеките решение. По умолчанию решения доступны только для чтения. Щелкните решение правой кнопкой мыши и снимите атрибут только для чтения таким образом, чтобы файлы можно было изменить. Данные включены в решение.
 
@@ -61,15 +61,13 @@ ms.locfileid: "65795812"
 
 1. В файле appsettings.json замените содержимое по умолчанию на приведенный ниже пример, а затем укажите имя службы и ключ API администратора для своей службы. 
 
-
    ```json
    {
        "SearchServiceName": "Put your search service name here (not the full URL)",
        "SearchServiceAdminApiKey": "Put your primary or secondary API key here",
     }
    ```
-
-  В качестве имени службы укажите ее название. Например, если ваш URL-адрес — https://mydemo.search.windows.net, добавьте `mydemo` в JSON-файл.
+   В качестве имени службы укажите ее название. Например, если ваш URL-адрес — https://mydemo.search.windows.net, добавьте `mydemo` в JSON-файл.
 
 1. Нажмите клавишу F5, чтобы создать решение, и запустите консольное приложение. Последующие шаги в данном руководстве являются иллюстрацией работы этого кода. 
 
@@ -108,7 +106,7 @@ private static SearchServiceClient CreateSearchServiceClient(IConfigurationRoot 
 
 1. Задайте имя вашего индекса в качестве значения для свойства `Name` объекта `Index`.
 
-2. Назначьте свойству `Fields` объекта `Index` массив объектов `Field`. Самый простой способ создания объектов `Field` — вызвать метод `FieldBuilder.BuildForType`, передав класс модели для параметра типа. Свойства класса модели сопоставляются с полями индекса. Это позволяет привязать документы из индекса поиска к экземплярам класса модели.
+2. Назначьте свойству `Fields` объекта `Index` массив объектов `Field`. Самый простой способ создания объектов `Field` — вызвать метод `FieldBuilder.BuildForType`, передав класс модели для параметра типа. Свойства класса модели сопоставляются с полями индекса. Это сопоставление позволяет привязать документы из индекса поиска к экземплярам класса модели.
 
 > [!NOTE]
 > Если вы не планируете использовать класс модели, индекс можно определить путем непосредственного создания объектов `Field`. Имя поля вместе с типом данных можно указать в конструкторе (или анализаторе для строковых полей). Кроме того, вы можете задать другие свойства, например `IsSearchable`, `IsFilterable` и т. д.
@@ -175,7 +173,7 @@ public partial class Hotel
 
 Мы тщательно выбрали атрибуты для каждого свойства в зависимости от того, как мы планируем использовать их в приложении. Например, вполне вероятно, что людей, которые ищут гостиницы, будут интересовать совпадения по ключевым словам в поле `description`, поэтому мы включаем для него полнотекстовый поиск, добавив атрибут `IsSearchable` для свойства `Description`.
 
-Обратите внимание, что только одно поле в индексе типа `string` должно быть назначено как поле *key*, для чего нужно добавить атрибут `Key` (см. `HotelId` в примере выше).
+Обратите внимание на то, что только одно поле в индексе типа `string` должно быть назначено как поле *key*, для чего нужно добавить атрибут `Key` (см. `HotelId` в примере выше).
 
 В приведенном выше определении индекса используется языковой анализатор для поля `description_fr`, так как оно предназначено для текста на французском языке. Дополнительные сведения см. в статье [Add language analyzers to an Azure Search index](index-add-language-analyzers.md) (Добавление анализатора языка в индекс Поиска Azure).
 
@@ -203,7 +201,7 @@ serviceClient.Indexes.Create(definition);
 
 В случае успешного запроса метод возвращает обычные данные. При наличии проблем с запросом, например недопустимого параметра, метод вызывает исключение `CloudException`.
 
-Если вы завершили работу с индексом и хотите удалить его, вызовите `Indexes.Delete` для `SearchServiceClient`. Например: 
+Если вы завершили работу с индексом и хотите удалить его, вызовите `Indexes.Delete` для `SearchServiceClient`. Например:
 
 ```csharp
 serviceClient.Indexes.Delete("hotels");

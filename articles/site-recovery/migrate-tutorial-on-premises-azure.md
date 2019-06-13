@@ -5,15 +5,15 @@ author: rayne-wiselman
 manager: carmonm
 ms.service: site-recovery
 ms.topic: tutorial
-ms.date: 04/08/2019
+ms.date: 05/30/2019
 ms.author: raynew
 ms.custom: MVC
-ms.openlocfilehash: fc15db91b8f4cc6dbdecd0e7321abdbf81744f08
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: df4f89bd1b2e3c0423f5d758cfa637e4da9e04d0
+ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59357976"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66396540"
 ---
 # <a name="migrate-on-premises-machines-to-azure"></a>Миграция локальных компьютеров в Azure
 
@@ -63,7 +63,7 @@ ms.locfileid: "59357976"
 --- | --- 
 VMware | Настройте [исходную среду](vmware-azure-set-up-source.md) и [сервер конфигурации](vmware-azure-deploy-configuration-server.md).
 Физический компьютер | [Настройте](physical-azure-set-up-source.md) исходную среду и сервер конфигурации.
-Hyper-V. | Настройте [исходную среду](hyper-v-azure-tutorial.md#set-up-the-source-environment)<br/><br/> Настройте [исходную среду](hyper-v-vmm-azure-tutorial.md#set-up-the-source-environment) для Hyper-V, развернутой с System Center VMM.
+Hyper-V | Настройте [исходную среду](hyper-v-azure-tutorial.md#set-up-the-source-environment)<br/><br/> Настройте [исходную среду](hyper-v-vmm-azure-tutorial.md#set-up-the-source-environment) для Hyper-V, развернутой с System Center VMM.
 
 ## <a name="set-up-the-target-environment"></a>Настройка целевой среды
 
@@ -82,7 +82,7 @@ Hyper-V. | Настройте [исходную среду](hyper-v-azure-tutori
 --- | --- 
 VMware | Настройте [политику репликации](vmware-azure-set-up-replication.md) для виртуальных машин VMware.
 Физический компьютер | Настройте [политику репликации](physical-azure-disaster-recovery.md#create-a-replication-policy) для физических компьютеров.
-Hyper-V. | Настройте [политику репликации](hyper-v-azure-tutorial.md#set-up-a-replication-policy)<br/><br/> Настройте [политику репликации](hyper-v-vmm-azure-tutorial.md#set-up-a-replication-policy) для Hyper-V, развернутой с помощью System Center VMM.
+Hyper-V | Настройте [политику репликации](hyper-v-azure-tutorial.md#set-up-a-replication-policy)<br/><br/> Настройте [политику репликации](hyper-v-vmm-azure-tutorial.md#set-up-a-replication-policy) для Hyper-V, развернутой с помощью System Center VMM.
 
 ## <a name="enable-replication"></a>Включение репликации
 
@@ -90,7 +90,7 @@ Hyper-V. | Настройте [политику репликации](hyper-v-az
 --- | --- 
 VMware | [Включите репликацию](vmware-azure-enable-replication.md) виртуальных машин VMware.
 Физический компьютер | [Включите репликацию](physical-azure-disaster-recovery.md#enable-replication) для физических компьютеров.
-Hyper-V. | [Включение репликации](hyper-v-azure-tutorial.md#enable-replication)<br/><br/> [Включите репликацию](hyper-v-vmm-azure-tutorial.md#enable-replication) для Hyper-V, развернутой с помощью System Center VMM.
+Hyper-V | [Включение репликации](hyper-v-azure-tutorial.md#enable-replication)<br/><br/> [Включите репликацию](hyper-v-vmm-azure-tutorial.md#enable-replication) для Hyper-V, развернутой с помощью System Center VMM.
 
 
 ## <a name="run-a-test-migration"></a>Выполнение тестовой миграции

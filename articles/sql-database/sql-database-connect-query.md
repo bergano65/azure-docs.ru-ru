@@ -12,12 +12,12 @@ ms.author: sstein
 ms.reviewer: ''
 manager: craigg
 ms.date: 12/18/2018
-ms.openlocfilehash: a8513344c35c14ebf06f3693da618ed20047d07b
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: f1eac83f2b5460bf56ddff1bf15d9180adb49a48
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65792054"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66382277"
 ---
 # <a name="quickstarts-azure-sql-database-connect-and-query"></a>Краткие руководства: Подключение и создание запросов к Базе данных SQL Azure
 
@@ -39,6 +39,7 @@ ms.locfileid: "65792054"
 |[PHP](sql-database-connect-query-php.md)|В этом кратком руководстве показано, как использовать PHP для создания программы, которая подключается к Базе данных SQL Azure, а затем с помощью инструкций Transact-SQL выполнить запрос данных.|
 |[Python](sql-database-connect-query-python.md)|В этом кратком руководстве показано, как использовать Python для подключения к Базе данных SQL Azure, а затем с помощью инструкций Transact-SQL выполнить запрос данных. |
 |[Ruby](sql-database-connect-query-ruby.md)|В этом кратком руководстве показано, как использовать Ruby для создания программы, которая подключается к Базе данных SQL Azure, а затем с помощью инструкций Transact-SQL выполнить запрос данных.|
+|[R](sql-database-connect-query-r.md)|В этом кратком руководстве показано, как использовать R и Службы машинного обучения в Базе данных SQL Azure, чтобы создать программу для подключения к базе данных SQL Azure, а затем с помощью инструкций Transact-SQL выполнять запросы данных.|
 |||
 
 ## <a name="tls-considerations-for-sql-database-connectivity"></a>Рекомендации по использованию протокола TLS для подключения к базе данных SQL

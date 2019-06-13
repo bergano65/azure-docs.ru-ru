@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: tutorial
-ms.date: 05/07/2018
+ms.date: 06/03/2019
 ms.author: diberry
-ms.openlocfilehash: 3315af0898cb3b18af0334a433a94242b056a8bd
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.openlocfilehash: 1408e29793fdac77b89e3f0cc0a7be525f7fa1d2
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
-ms.locfileid: "65236207"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66479770"
 ---
 # <a name="tutorial--get-sentiment-of-utterance"></a>Руководство по  Получение данных о тональности речевого фрагмента
 
@@ -54,6 +54,7 @@ ms.locfileid: "65236207"
 
 ## <a name="add-personname-prebuilt-entity"></a>Добавление предварительно созданной сущности PersonName 
 
+1. Выберите **Build** (Создать) в меню навигации.
 
 1. Выберите **Сущности** в меню навигации слева.
 
@@ -69,11 +70,11 @@ ms.locfileid: "65236207"
 
 Добавьте новое намерение, чтобы получить отзывы о сотрудниках от других работников компании. 
 
-1. [!INCLUDE [Start in Build section](../../../includes/cognitive-services-luis-tutorial-build-section.md)]
+1. Выберите **намерения** на панели слева.
 
-2. Выберите **Create new intent**. (Создать намерение).
+1. Выберите **Create new intent**. (Создать намерение).
 
-3. В качестве имени нового намерения введите `EmployeeFeedback`.
+1. В качестве имени нового намерения введите `EmployeeFeedback`.
 
     ![Диалоговое окно для создания намерения с именем EmployeeFeedback](./media/luis-quickstart-intent-and-sentiment-analysis/hr-create-new-intent-ddl.png)
 
@@ -106,7 +107,7 @@ ms.locfileid: "65236207"
 
 1. На правой верхней панели навигации выберите **Управление** и щелкните **Параметры публикации** в меню слева.
 
-1. Выберите параметр **Анализ тональности**, чтобы включить его. 
+1. Выберите **Use sentiment analysis to determine if a user's utterance is positive, negative, or neutral** (Использовать анализ тональности для определения того, является ли фраза пользователя позитивной, негативной или нейтральной), чтобы включить этот параметр. 
 
     ![Добавление анализа тональности как параметра публикации](./media/luis-quickstart-intent-and-sentiment-analysis/turn-on-sentiment-analysis-as-publish-setting.png)
 
@@ -118,7 +119,11 @@ ms.locfileid: "65236207"
 
 1. [!INCLUDE [LUIS How to get endpoint first step](../../../includes/cognitive-services-luis-tutorial-how-to-get-endpoint.md)]
 
-1. Перейдите в конец URL-адреса и введите `Jill Jones work with the media team on the public portal was amazing`. Последний параметр строки запроса — `q`. Это **запрос** фразы. Эта фраза не совпадает ни с какими помеченными фразами, поэтому она является хорошим тестом. В результате должно быть возвращено намерение `EmployeeFeedback` с извлечением анализа тональности.
+1. В конце URL-адреса введите такое высказывание:
+
+    `Jill Jones work with the media team on the public portal was amazing` 
+
+    Последний параметр строки запроса — `q`. Это **запрос** фразы. Эта фраза не совпадает ни с какими помеченными фразами, поэтому она является хорошим тестом. В результате должно быть возвращено намерение `EmployeeFeedback` с извлечением анализа тональности.
     
     ```json
     {
@@ -153,6 +158,8 @@ ms.locfileid: "65236207"
     ```
 
     Анализ тональности является положительным с оценкой 86 %. 
+
+    Попробуйте другое высказывание, удалив значение для `q` в адресной строке браузера: `William Jones did a terrible job presenting his ideas.` Оценка тональности свидетельствует о негативной тональности, возвращая низкую оценку в `0.18597582`.
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 

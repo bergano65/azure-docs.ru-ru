@@ -5,14 +5,14 @@ services: virtual-desktop
 author: Heidilohr
 ms.service: virtual-desktop
 ms.topic: overview
-ms.date: 03/21/2019
+ms.date: 05/31/2019
 ms.author: helohr
-ms.openlocfilehash: 820c89ce352db772f629a99a438ed86448af02fe
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.openlocfilehash: 296ea271e88dfbbd91b901dc1b24d49fc31c139e
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65965718"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66476731"
 ---
 # <a name="what-is-windows-virtual-desktop-preview"></a>Общие сведения о Виртуальном рабочем столе Windows (предварительная версия) 
 
@@ -26,6 +26,12 @@ ms.locfileid: "65965718"
 * Перенос существующих служб удаленных рабочих столов, а также рабочих столов и приложений Windows Server на любой компьютер.
 * Виртуализация рабочих столов и приложений.
 * Управление рабочими столами и приложениями Windows 10, Windows Server и Windows 7 с помощью унифицированных средств управления.
+
+## <a name="introductory-video"></a>Вступительное видео
+
+В следующем видео Скотт Манчестер демонстрирует некоторые из возможностей виртуального рабочего стола Windows:
+
+<br></br><iframe src="https://www.youtube-nocookie.com/embed/30dOLcZ4_9U" width="640" height="320" allowFullScreen="true" frameBorder="0"></iframe>
 
 ## <a name="key-capabilities"></a>Ключевые возможности
 
@@ -92,7 +98,6 @@ ms.locfileid: "65965718"
 
 * [Windows](https://docs.microsoft.com/azure/virtual-desktop/connect-windows-7-and-10)
 * [HTML5](https://docs.microsoft.com/azure/virtual-desktop/connect-web)
-
 
 ## <a name="supported-virtual-machine-os-image"></a>Поддерживаемый образ ОС виртуальной машины
 

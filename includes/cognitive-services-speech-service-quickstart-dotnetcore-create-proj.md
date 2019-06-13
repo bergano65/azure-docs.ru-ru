@@ -4,14 +4,14 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 12/12/2018
 ms.author: erhopf
-ms.openlocfilehash: 6e49db90aa9e9f933a190425afbafd15e0057fca
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: 777b2608cf5f326556dfaea307f4f3e9346213f8
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66146063"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66482327"
 ---
-1. Запустите Visual Studio 2017.
+1. Запустите Visual Studio 2019.
 
 1. Убедитесь, что рабочая нагрузка **.NET cross-platform development** (Кроссплатформенная разработка .NET) доступна. Выберите **Tools**(Средства) > **Get Tools and Features** (Получить средства и компоненты) в строке меню Visual Studio, чтобы открыть установщик Visual Studio. Если эта рабочая нагрузка уже включена, закройте диалоговое окно.
 
@@ -19,7 +19,7 @@ ms.locfileid: "66146063"
 
    В противном случае установите флажок рядом с полем **Кроссплатформенная разработка .NET Core** и выберите **Изменить** в правом нижнем углу диалогового окна. Для установки нового компонента нужно некоторое время.
 
-1. Создайте новое консольное приложение .NET Core Visual C#. В диалоговом окне **Создать проект** в левой области разверните **Установлено** > **Visual C#** > **.NET Core**. Затем выберите **Console App (.NET Core)** (Консольное приложение (.NET Core)). В качестве имени проекта введите *helloworld*.
+1. Создайте новое консольное приложение .NET Core Visual C#. В диалоговом окне **Создать проект** в левой области разверните **Установлено** > **Visual C#**  >  **.NET Core**. Затем выберите **Console App (.NET Core)** (Консольное приложение (.NET Core)). В качестве имени проекта введите *helloworld*.
 
    ![Снимок экрана диалогового окна нового проекта](../articles/cognitive-services/Speech-Service/media/sdk/qs-csharp-dotnetcore-windows-01-new-console-app.png "Создание консольного приложения Visual C# (.NET Core)")
 

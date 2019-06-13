@@ -10,12 +10,12 @@ ms.topic: quickstart
 description: Коллективная разработка в Kubernetes с использованием контейнеров и микрослужб Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
 manager: jeconnoc
-ms.openlocfilehash: 94083639ca769d12b04c4dc316a9f9867e4209b1
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: e9f9198f8e086bee6c6b02b67ae7dd9cf523416c
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65765241"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66480361"
 ---
 # <a name="quickstart-team-development-on-kubernetes-using-azure-dev-spaces"></a>Краткое руководство. Коллективная разработка в Kubernetes с использованием Azure Dev Spaces
 
@@ -35,7 +35,7 @@ ms.locfileid: "65765241"
 
 ## <a name="create-an-azure-kubernetes-service-cluster"></a>Создание кластера Службы Azure Kubernetes
 
-Вам нужно создать кластер AKS в [поддерживаемом регионе](https://docs.microsoft.com/azure/dev-spaces/#a-rapid,-iterative-kubernetes-development-experience-for-teams). Следующие команды создают группу ресурсов *MyResourceGroup* и кластер AKS *MyAKS*.
+Вам нужно создать кластер AKS в [поддерживаемом регионе][supported-regions]. Следующие команды создают группу ресурсов *MyResourceGroup* и кластер AKS *MyAKS*.
 
 ```cmd
 az group create --name MyResourceGroup --location eastus
@@ -92,6 +92,8 @@ cd charts/
 helm init --wait
 helm install -n bikesharing . --dep-up --namespace dev --atomic --wait
 ```
+> [!Note]
+> **Если вы используете кластер с поддержкой RBAC**, обязательно настройте [учетную запись службы для Tiller](https://helm.sh/docs/using_helm/#role-based-access-control). В противном случае выполнение команды `helm` завершится ошибкой.
 
 Выполнение команды `helm install` может занять несколько минут. Выходные данные команды отобразят состояние всех служб, которые она развернула в кластере:
 
@@ -232,3 +234,6 @@ az group delete --name MyResourceGroup --yes --no-wait
 
 > [!div class="nextstepaction"]
 > [Работа с несколькими контейнерами и командной разработкой](multi-service-nodejs.md)
+
+
+[supported-regions]: about.md#supported-regions-and-configurations

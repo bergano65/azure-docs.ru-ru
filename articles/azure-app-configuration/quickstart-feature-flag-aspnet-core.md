@@ -14,18 +14,18 @@ ms.tgt_pltfrm: ASP.NET Core
 ms.workload: tbd
 ms.date: 04/19/2019
 ms.author: yegu
-ms.openlocfilehash: 95f702b1d85dc8fe22b1800df3f7b0ebc987bee5
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.openlocfilehash: f83283dbf2a78b3717ba719f21dd9249a8a09d1f
+ms.sourcegitcommit: 51a7669c2d12609f54509dbd78a30eeb852009ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65411840"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66393290"
 ---
 # <a name="quickstart-add-feature-flags-to-an-aspnet-core-app"></a>Краткое руководство. Добавление флагов функций в приложение ASP.NET Core
 
-Чтобы управлять функциями в ASP.NET Core, можно подключить свое приложение к Конфигурации приложений Azure. С помощью этой управляемой службы можно централизованно хранить все флаги функций и управлять их состояниями. В этом кратком руководстве показано, как внедрить данную службу в веб-приложение ASP.NET Core, чтобы реализовать комплексное управление функциями.
+Чтобы управлять функциями в ASP.NET Core, можно подключить свое приложение к Конфигурации приложений Azure. С помощью этой управляемой службы можно централизованно хранить все флаги функций и управлять их состояниями. В этом кратком руководстве показано, как внедрить Конфигурацию приложений в веб-приложение ASP.NET Core, чтобы реализовать комплексное управление функциями.
 
-Библиотеки управления функциями .NET Core расширяют возможности платформы за счет всесторонней поддержки флагов функций. Они создаются на основе системы конфигурации .NET Core. Они легко интегрируются с Конфигурацией приложений посредством поставщика конфигураций .NET Core.
+Библиотеки управления функциями .NET Core расширяют возможности платформы за счет всесторонней поддержки флагов функций. Эти библиотеки создаются на основе системы конфигурации .NET Core. Они легко интегрируются с Конфигурацией приложений посредством поставщика конфигураций .NET Core.
 
 Шаги из этого краткого руководства можно выполнять в любом редакторе кода. [Visual Studio Code](https://code.visualstudio.com/) является отличным вариантом, который доступен на платформах Windows, macOS и Linux.
 
@@ -35,11 +35,11 @@ ms.locfileid: "65411840"
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="create-an-app-configuration-store"></a>Создание хранилища конфигураций приложений
+## <a name="create-an-app-configuration-store"></a>Создание хранилища Конфигурации приложений
 
 [!INCLUDE [azure-app-configuration-create](../../includes/azure-app-configuration-create.md)]
 
-6. Выберите **Feature Manager** (Диспетчер функций)  > **+ Создать**, чтобы добавить следующие флаги функций.
+6. Выберите **Feature Manager** (Диспетчер функций)  >  **+ Создать**, чтобы добавить следующие флаги функций.
 
     | Ключ | Состояние |
     |---|---|
@@ -47,19 +47,22 @@ ms.locfileid: "65411840"
 
 ## <a name="create-an-aspnet-core-web-app"></a>Создание веб-приложения ASP.NET Core
 
-Используйте [интерфейс командной строки .NET Core](https://docs.microsoft.com/dotnet/core/tools/) для создания проекта веб-приложения MVC для ASP.NET Core. Преимущество использования .NET Core CLI по сравнению с Visual Studio заключается в том, что он доступен на платформах Windows, macOS и Linux.
+Используйте [интерфейс командной строки .NET Core](https://docs.microsoft.com/dotnet/core/tools/) для создания проекта веб-приложения MVC для ASP.NET Core. Преимущество использования .NET Core CLI вместо Visual Studio заключается в том, что .NET Core CLI доступен на платформах Windows, MacOS и Linux.
 
 1. Создайте новый каталог для своего проекта В этом кратком руководстве назовите его *TestFeatureFlags*.
 
-2. В новой папке выполните следующую команду, чтобы создать проект веб-приложения MVC для ASP.NET Core:
+1. В новой папке выполните следующую команду, чтобы создать проект веб-приложения MVC для ASP.NET Core:
 
-        dotnet new mvc
+   ```    
+   dotnet new mvc
+   ```
 
 ## <a name="add-secret-manager"></a>Добавление диспетчера секретов
 
 Добавьте в проект [инструмент "Диспетчер секретов"](https://docs.microsoft.com/aspnet/core/security/app-secrets). Инструмент "Диспетчер секретов" хранит конфиденциальные данные для разработки вне вашего дерева проектов. Этот подход помогает предотвратить случайный обмен секретами приложений в исходном коде.
 
-- Откройте *CSPROJ*-файл. Добавьте элемент `UserSecretsId`, как показано здесь, и замените его своим значением, которое обычно является идентификатором GUID. Сохраните файл.
+1. Откройте *CSPROJ*-файл.
+1. Добавьте элемент `UserSecretsId`, как показано в примере ниже, и замените его значение своим значением, которое обычно является идентификатором GUID.
 
     ```xml
     <Project Sdk="Microsoft.NET.Sdk.Web">
@@ -77,37 +80,45 @@ ms.locfileid: "65411840"
     </Project>
     ```
 
-## <a name="connect-to-an-app-configuration-store"></a>Подключение к хранилищу конфигураций приложений
+1. Сохраните файл.
+
+## <a name="connect-to-an-app-configuration-store"></a>Подключение к хранилищу Конфигурации приложений
 
 1. Добавьте ссылки на пакеты NuGet `Microsoft.Extensions.Configuration.AzureAppConfiguration` и `Microsoft.FeatureManagement`, выполнив следующие команды.
 
-        dotnet add package Microsoft.Extensions.Configuration.AzureAppConfiguration --version 1.0.0-preview-008520001
+    ```
+    dotnet add package Microsoft.Extensions.Configuration.AzureAppConfiguration --version 1.0.0-preview-008520001
 
-        dotnet add package Microsoft.FeatureManagement.AspNetCore --version 1.0.0-preview-008560001-910
+    dotnet add package Microsoft.FeatureManagement.AspNetCore --version 1.0.0-preview-008560001-910
+    ```
 
-2. Выполните следующую команду, чтобы восстановить пакеты проекта:
+1. Выполните следующую команду, чтобы восстановить пакеты проекта:
 
-        dotnet restore
+    ```
+    dotnet restore
+    ```
 
-3. Добавьте секрет с именем *ConnectionStrings:AppConfig* в диспетчер секретов.
+1. Добавьте секрет с именем **ConnectionStrings:AppConfig** в диспетчер секретов.
 
-    Этот секрет содержит строку подключения для получения доступа к хранилищу конфигураций приложений. Замените значение в следующей команде строкой подключения для вашего хранилища конфигураций приложений.
+    Этот секрет содержит строку подключения для получения доступа к хранилищу Конфигурации приложений. Замените значение `<your_connection_string>` в следующей команде строкой подключения к своему хранилищу Конфигурации приложений.
 
     Эта команда должна выполняться в том же каталоге, что и файл *CSPROJ*.
 
-        dotnet user-secrets set ConnectionStrings:AppConfig <your_connection_string>
+    ```
+    dotnet user-secrets set ConnectionStrings:AppConfig <your_connection_string>
+    ```
 
-    Диспетчер секретов используется только для локальной проверки веб-приложения. При развертывании приложения, например в [Службе приложений Azure](https://azure.microsoft.com/services/app-service/web), вы будете использовать параметр приложения **Строки подключения** в Службе приложений, а не хранить строку подключения с помощью диспетчера секретов.
+    Диспетчер секретов используется только для локальной проверки веб-приложения. При развертывании приложения, например, в [Службе приложений Azure](https://azure.microsoft.com/services/app-service) вы будете использовать параметр приложения **Строки подключения** в Службе приложений, а не хранить строку подключения с помощью диспетчера секретов.
 
-    Доступ к этому секрету осуществляется с помощью API конфигурации. Двоеточие (:) используется в имени конфигурации с API конфигурации на всех поддерживаемых платформах. Дополнительные сведения см. в статье [Конфигурация в .NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/configuration/index?tabs=basicconfiguration&view=aspnetcore-2.0).
+    Этот секрет можно получить с помощью API Конфигурации приложений. Двоеточие (:) используется в имени конфигурации при работе с API Конфигурации приложений на всех поддерживаемых платформах. Дополнительные сведения см. в статье [Конфигурация в .NET Core](https://docs.microsoft.com/aspnet/core/fundamentals/configuration).
 
-4. Откройте файл *Program.cs* и добавьте ссылку на поставщик конфигурации приложений .NET Core.
+1. Откройте файл *Program.cs* и добавьте в него ссылку на поставщик Конфигурации приложений .NET Core.
 
     ```csharp
     using Microsoft.Extensions.Configuration.AzureAppConfiguration;
     ```
 
-5. Обновите метод `CreateWebHostBuilder`, чтобы использовать службу "Конфигурация приложений", путем вызова метода `config.AddAzureAppConfiguration()`.
+1. Обновите метод `CreateWebHostBuilder`, чтобы использовать службу "Конфигурация приложений", путем вызова метода `config.AddAzureAppConfiguration()`.
 
     ```csharp
     public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
@@ -123,13 +134,13 @@ ms.locfileid: "65411840"
             .UseStartup<Startup>();
     ```
 
-6. Откройте файл *Startup.cs* и добавьте в него ссылки на диспетчер функций .NET Core.
+1. Откройте файл *Startup.cs* и добавьте в него ссылки на диспетчер функций .NET Core.
 
     ```csharp
     using Microsoft.FeatureManagement.AspNetCore;
     ```
 
-7. Измените метод `ConfigureServices`, чтобы добавить поддержку флагов функций посредством вызова метода `services.AddFeatureManagement()`. Дополнительно можно указать какой-либо фильтр для флагов функций с помощью вызова `services.AddFeatureFilter<FilterType>()`.
+1. Обновите метод `ConfigureServices`, добавив поддержку флагов функций с помощью вызова метода `services.AddFeatureManagement()`. При необходимости можно добавить любой фильтр для флагов функций, вызвав `services.AddFeatureFilter<FilterType>()`.
 
     ```csharp
     public void ConfigureServices(IServiceCollection services)
@@ -138,7 +149,7 @@ ms.locfileid: "65411840"
     }
     ```
 
-8. Добавьте файл *MyFeatureFlags.cs*.
+1. Добавьте файл *MyFeatureFlags.cs*.
 
     ```csharp
     namespace TestFeatureFlags
@@ -150,7 +161,7 @@ ms.locfileid: "65411840"
     }
     ```
 
-9. Добавьте файл *BetaController.cs* в каталог "Контроллеры".
+1. Добавьте файл *BetaController.cs* в каталог *Контроллеры*.
 
     ```csharp
     using Microsoft.AspNetCore.Mvc;
@@ -176,13 +187,13 @@ ms.locfileid: "65411840"
     }
     ```
 
-10. Откройте файл *_ViewImports.cshtml* в каталоге "Представления" и добавьте вспомогательную функцию тега диспетчера функций.
+1. Откройте файл *_ViewImports.cshtml* в каталоге *Представления* и добавьте в него вспомогательную функцию тегов диспетчера функций.
 
     ```html
     @addTagHelper *, Microsoft.FeatureManagement.AspNetCore
     ```
 
-11. Откройте файл *_Layout.cshtml* в каталоге "Представления > Общие" и замените его блок `<nav>` под строкой `<body>` > `<header>` следующим кодом.
+1. Откройте файл *_Layout.cshtml* в каталоге *Представления*\\*Общие* и замените штрихкод `<nav>` под строкой `<body>` > `<header>` следующим кодом.
 
     ```html
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
@@ -211,7 +222,7 @@ ms.locfileid: "65411840"
     </nav>
     ```
 
-12. Создайте каталог "Бета-версия" в каталоге "Представления" и добавьте в него файл *Index.cshtml*.
+1. Создайте каталог *Beta* в каталоге *Представления* и добавьте в него файл *Index.cshtml*.
 
     ```html
     @{
@@ -227,25 +238,29 @@ ms.locfileid: "65411840"
 
 1. Чтобы создать приложение с помощью .NET Core CLI, выполните следующую команду в оболочке командной строки:
 
-        dotnet build
+    ```
+    dotnet build
+    ```
 
-2. Когда создание завершится, запустите веб-приложение локально с помощью следующей команды:
+1. Когда создание завершится, запустите веб-приложение локально с помощью следующей команды:
 
-        dotnet run
+    ```
+    dotnet run
+    ```
 
-3. Откройте окно браузера и перейдите по адресу `https://localhost:5001`, который является URL-адресом по умолчанию для веб-приложения, размещенного локально.
+1. Откройте окно браузера и перейдите по адресу `https://localhost:5001`, который является URL-адресом по умолчанию для веб-приложения, размещенного локально.
 
     ![Краткое руководство. Запуск приложения, размещенного локально](./media/quickstarts/aspnet-core-feature-flag-local-before.png)
 
-4. Войдите на [портале Azure](https://aka.ms/azconfig/portal). Щелкните **Все ресурсы** и выберите экземпляр хранилища конфигураций приложений, который вы создали по инструкциям из краткого руководства.
+1. Войдите на [портале Azure](https://portal.azure.com). Щелкните **Все ресурсы** и выберите экземпляр хранилища Конфигурации приложений, который вы создали по инструкциям из краткого руководства.
 
-5. Выберите **Feature Manager** (Диспетчер функций) и измените значение флага *Beta* на *Включен*.
+1. Выберите **Feature Manager** (Диспетчер функций) и измените состояние ключа **Beta** на **On** (Включен).
 
     | Ключ | Состояние |
     |---|---|
     | Beta | С |
 
-6. Обновите страницу браузера, чтобы просмотреть новые параметры конфигурации.
+1. Обновите страницу браузера, чтобы просмотреть новые параметры конфигурации.
 
     ![Краткое руководство. Запуск приложения, размещенного локально](./media/quickstarts/aspnet-core-feature-flag-local-after.png)
 
@@ -255,8 +270,8 @@ ms.locfileid: "65411840"
 
 ## <a name="next-steps"></a>Дополнительная информация
 
-В этом кратком руководстве вы создали хранилище конфигураций приложения и использовали его для управления функциями веб-приложения ASP.NET Core с помощью [библиотек управления функциями](https://go.microsoft.com/fwlink/?linkid=2074664).
+В этом кратком руководстве вы создали хранилище Конфигурации приложений и использовали его для управления функциями веб-приложения ASP.NET Core с помощью [библиотек управления функциями](https://go.microsoft.com/fwlink/?linkid=2074664).
 
-* Узнайте больше об [управлении функциями](./concept-feature-management.md).
-* [Руководство по управлению флагами функций](./manage-feature-flags.md)
-* [Использование флагов компонентов в приложении ASP.NET Core](./use-feature-flags-dotnet-core.md)
+- Узнайте больше об [управлении функциями](./concept-feature-management.md).
+- [Управляйте флагами функций](./manage-feature-flags.md).
+- [Используйте флаги функций в приложении ASP.NET Core](./use-feature-flags-dotnet-core.md).

@@ -11,12 +11,12 @@ ms.topic: quickstart
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
 manager: jeconnoc
-ms.openlocfilehash: 1ffb3f0071409e148f394913d4bda5ba73319e3e
-ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
+ms.openlocfilehash: 3f502b84145b81153d5e39a03cca104d4285c581
+ms.sourcegitcommit: 51a7669c2d12609f54509dbd78a30eeb852009ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65861629"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66393429"
 ---
 # <a name="quickstart-develop-with-net-core-on-kubernetes-using-azure-dev-spaces-visual-studio-code"></a>Краткое руководство. Разработка с использованием .NET Core в Kubernetes и Azure Dev Spaces (Visual Studio Code)
 
@@ -35,7 +35,7 @@ ms.locfileid: "65861629"
 
 ## <a name="create-an-azure-kubernetes-service-cluster"></a>Создание кластера Службы Azure Kubernetes
 
-Вам нужно создать кластер AKS в [поддерживаемом регионе](https://docs.microsoft.com/azure/dev-spaces/#a-rapid,-iterative-kubernetes-development-experience-for-teams). Следующие команды создают группу ресурсов *MyResourceGroup* и кластер AKS *MyAKS*.
+Вам нужно создать кластер AKS в [поддерживаемом регионе][supported-regions]. Следующие команды создают группу ресурсов *MyResourceGroup* и кластер AKS *MyAKS*.
 
 ```cmd
 az group create --name MyResourceGroup --location eastus
@@ -115,13 +115,13 @@ Service 'webfrontend' port 80 (http) is available at http://localhost:54256
 ...
 ```
 
-Вы можете увидеть выполнение службы, открыв общедоступный URL-адрес, который отображается в выходных данных команды `azds up`. В этом примере общедоступный URL-адрес — *http://webfrontend.1234567890abcdef1234.eus.azds.io/*.
+Вы можете увидеть выполнение службы, открыв общедоступный URL-адрес, который отображается в выходных данных команды `azds up`. В этом примере общедоступный URL-адрес — *http://webfrontend.1234567890abcdef1234.eus.azds.io/* .
 
 Если остановить команду `azds up` с помощью сочетания клавиш *CTRL+C*, служба продолжит выполнятся в AKS, а общедоступный URL-адрес останется доступным.
 
 ## <a name="update-code"></a>Обновление кода
 
-Чтобы развернуть обновленную версию службы, обновите любой файл в проекте и повторно выполните команду `azds up`. Например: 
+Чтобы развернуть обновленную версию службы, обновите любой файл в проекте и повторно выполните команду `azds up`. Например:
 
 1. Если `azds up` по-прежнему выполняется, нажмите клавиши *CTRL+C*.
 1. Обновите [строку 20 в `Controllers/HomeController.cs`](https://github.com/Azure/dev-spaces/blob/master/samples/dotnetcore/getting-started/webfrontend/Controllers/HomeController.cs#L20):
@@ -148,7 +148,7 @@ Service 'webfrontend' port 80 (http) is available at http://localhost:54256
 
 ## <a name="enable-visual-studio-code-to-debug-in-kubernetes"></a>Включение Visual Studio Code для отладки в Kubernetes
 
-Откройте Visual Studio Code, щелкните *Файл*, *Открыть...*, а затем перейдите в каталог *dev-spaces/samples/dotnetcore/getting-started/webfrontend* и щелкните *Открыть*.
+Откройте Visual Studio Code, щелкните *Файл*, *Открыть...* , а затем перейдите в каталог *dev-spaces/samples/dotnetcore/getting-started/webfrontend* и щелкните *Открыть*.
 
 Теперь у вас есть проект *webfrontend*, открытый в Visual Studio Code. Это та же служба, которая запускается с помощью команды `azds up`. Для отладки этой службы в AKS используйте Visual Studio Code, а не `azds up`. При этом нужно подготовить этот проект, чтобы использовать Visual Studio Code для взаимодействия с вашим рабочим пространством.
 
@@ -183,7 +183,7 @@ Service 'webfrontend' port 80 (http) is available at http://localhost:54256
 
 ## <a name="update-code-from-visual-studio-code"></a>Обновление кода из Visual Studio Code
 
-Пока служба выполняется в режиме отладки, обновите строку 20 в `Controllers/HomeController.cs`. Например: 
+Пока служба выполняется в режиме отладки, обновите строку 20 в `Controllers/HomeController.cs`. Например:
 
 ```csharp
 ViewData["Message"] = "Your application description page in Azure while debugging!";
@@ -209,3 +209,6 @@ az group delete --name MyResourceGroup --yes --no-wait
 
 > [!div class="nextstepaction"]
 > [Работа с несколькими контейнерами и командной разработкой](multi-service-netcore.md)
+
+
+[supported-regions]: about.md#supported-regions-and-configurations

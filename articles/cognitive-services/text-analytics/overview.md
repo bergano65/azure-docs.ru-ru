@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: overview
 ms.date: 04/03/2019
 ms.author: aahi
-ms.openlocfilehash: ae1d8f18705b1058c10d4720c64f624ed0ef4a3d
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 7d52585b51af09c430130141c3680b5630f7b95e
+ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "60829537"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66417287"
 ---
 # <a name="what-is-text-analytics-api"></a>Что такое API анализа текста?
 
@@ -34,7 +34,7 @@ API — это компонент [Microsoft Cognitive Services](https://docs.m
 Автоматическое [извлечение ключевых фраз](how-tos/text-analytics-how-to-keyword-extraction.md) в тексте поможет быстро определить основные мысли. Например, для входного текста "Еда была вкусной и персонал был замечательным" API вернет основные тезисы в записи: "еда" и "замечательный персонал". Можно использовать [REST](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-V2-1/operations/56f30ceeeda5650db055a3c6) API или [.NET](https://docs.microsoft.com/azure/cognitive-services/text-analytics/quickstarts/csharp#install-the-nuget-sdk-package) SDK.
 
 ## <a name="language-detection"></a>Распознавание языка
-Вы можете [определить, на каком языке написан входной текст](how-tos/text-analytics-how-to-language-detection.md), и сообщить единый код языка для каждого документа, представленного по запросу, более чем на 120 языках. Код языка сопряжен с показателем, указывающим степень оценки. Можно использовать [REST](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-V2-1/operations/56f30ceeeda5650db055a3c7) API или [.NET](https://docs.microsoft.com/azure/cognitive-services/text-analytics/quickstarts/csharp#install-the-nuget-sdk-package) SDK.
+Вы можете [определить, на каком языке написан входной текст](how-tos/text-analytics-how-to-language-detection.md), и сообщить единый код языка для каждого документа, представленного по запросу, на разных языках, диалектах и некоторых местных наречиях. Код языка сопряжен с показателем, указывающим степень оценки. Можно использовать [REST](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-V2-1/operations/56f30ceeeda5650db055a3c7) API или [.NET](https://docs.microsoft.com/azure/cognitive-services/text-analytics/quickstarts/csharp#install-the-nuget-sdk-package) SDK.
 
 ## <a name="named-entity-recognition"></a>Распознавание именованных сущностей
 [Определение сущностей и их распределение по категориям](how-tos/text-analytics-how-to-entity-linking.md), таким как текст, люди, места, организации, дата и время, количество, проценты, валюта и многое другое. Также можно определить известные сущности и связать их с дополнительной информацией в Интернете. Можно использовать [REST](https://westus.dev.cognitive.microsoft.com/docs/services/TextAnalytics-V2-1/operations/5ac4251d5b4ccd1554da7634) API.

@@ -1,5 +1,5 @@
 ---
-title: Руководство.  Интеграция одного леса AD с Azure с помощью синхронизации хэша паролей (PHS) | Документация Майкрософт
+title: Руководство по  интеграции одного леса AD в Azure с помощью PHS
 description: Демонстрируется настройка гибридной среды идентификации с синхронизацией хэша паролей.
 services: active-directory
 documentationcenter: ''
@@ -10,16 +10,16 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: tutorial
-ms.date: 09/17/2018
+ms.date: 05/31/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 45379f8f955c50e2598ebcebd34e971c29b2c81c
-ms.sourcegitcommit: 5839af386c5a2ad46aaaeb90a13065ef94e61e74
+ms.openlocfilehash: b17300fa69b61c7713c860e2a35e63fcb6584bc4
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58103236"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66474015"
 ---
 # <a name="tutorial--integrate-a-single-ad-forest-using-password-hash-sync-phs"></a>Руководство.  Интеграция одного леса AD с помощью синхронизации хэша паролей (PHS)
 
@@ -31,7 +31,7 @@ ms.locfileid: "58103236"
 Для работы с этим учебником требуется следующее:
 - Компьютер с установленным [Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/hyper-v-technology-overview).  Рекомендуется использовать компьютер с ОС [Windows 10](https://docs.microsoft.com/virtualization/hyper-v-on-windows/about/supported-guest-os) или [Windows Server 2016](https://docs.microsoft.com/windows-server/virtualization/hyper-v/supported-windows-guest-operating-systems-for-hyper-v-on-windows).
 - [Внешний сетевой адаптер](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/connect-to-network) для связи виртуальной машины с Интернетом.
--  [Подписка Azure](https://azure.microsoft.com/free)
+- [Подписка Azure](https://azure.microsoft.com/free)
 - Копия Windows Server 2016.
 
 > [!NOTE]
@@ -177,7 +177,7 @@ New-ADUser -Name $Name -GivenName $Givenname -Surname $Surname -DisplayName $Dis
 Set-ADUser -Identity $Identity -PasswordNeverExpires $true -ChangePasswordAtLogon $false -Enabled $true
 ```
 
-## <a name="create-an-azure-ad-tenant"></a>Создание клиента Azure AD
+## <a name="create-an-azure-ad-tenant"></a>Создание клиента Azure AD
 Теперь нужно создать клиент Azure AD, чтобы синхронизировать пользователей с облаком.  Чтобы создать клиент Azure AD, выполните указанные ниже действия.
 
 1. Перейдите на [портал Azure](https://portal.azure.com) и выполните вход с учетной записью, имеющей подписку Azure.

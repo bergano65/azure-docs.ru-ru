@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: sample
 ms.date: 05/23/2019
 ms.author: mjbrown
-ms.openlocfilehash: 07d177987db1dea261520e8ee2543d871d552acb
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: abd50f4e2ca08bea2af491f4b3991278a6dc3b5e
+ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66240885"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66399883"
 ---
 # <a name="manage-an-azure-cosmos-account"></a>Управление учетной записью Azure Cosmos
 
@@ -41,7 +41,7 @@ az cosmosdb create \
 
 ### <a id="create-database-account-via-ps"></a>Azure PowerShell
 ```azurepowershell-interactive
-# Create an Azure Cosmos Account for Core (SQL) API
+# Create an Azure Cosmos account for Core (SQL) API
 $resourceGroupName = "myResourceGroup"
 $location = "West US"
 $accountName = "mycosmosaccount" # must be lower case.
@@ -71,7 +71,7 @@ New-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts" `
 
 ### <a id="create-database-account-via-arm-template"></a>Шаблон Azure Resource Manager
 
-Этот шаблон Azure Resource Manager позволяет создать учетную запись Azure Cosmos DB для любого поддерживаемого API, настроенную для двух регионов и позволяющую выбрать уровень согласованности, автоматический переход на другой ресурс и несколько источников. Чтобы развернуть этот шаблон, нажмите кнопку Deploy to Azure (Развернуть в Azure) на странице файла сведений в разделе о [создании учетной записи Azure Cosmos DB](https://github.com/Azure/azure-quickstart-templates/tree/master/101-cosmosdb-create-multi-region-account).
+Этот шаблон Azure Resource Manager позволяет создать учетную запись Azure Cosmos для любого поддерживаемого API, настроенную для двух регионов и позволяющую выбрать уровень согласованности, автоматический переход на другой ресурс и несколько источников. Чтобы развернуть этот шаблон, нажмите кнопку "Deploy to Azure" (Развернуть в Azure) на странице файла сведений в разделе о [создании учетной записи Azure Cosmos](https://github.com/Azure/azure-quickstart-templates/tree/master/101-cosmosdb-create-multi-region-account).
 
 ## <a name="addremove-regions-from-your-database-account"></a>Добавление и удаление регионов из учетной записи базы данных
 
@@ -185,7 +185,7 @@ az cosmosdb update --name $accountName --resource-group $resourceGroupName --ena
 ### <a id="configure-multiple-write-regions-ps"></a>Azure PowerShell
 
 ```azurepowershell-interactive
-# Update an Azure Cosmos Account from single to multi-master
+# Update an Azure Cosmos account from single to multi-master
 
 $account = Get-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts" `
     -ApiVersion "2015-04-08" -ResourceGroupName $resourceGroupName -Name $accountName
@@ -200,7 +200,7 @@ Set-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts" `
 
 ### <a id="configure-multiple-write-regions-arm"></a>шаблон Resource Manager
 
-Учетную запись можно преобразовать из записи с одним источником в учетную запись с несколькими источниками путем развертывания шаблона Resource Manager, используемого для создания учетной записи, и применения параметра `enableMultipleWriteLocations: true`. Следующий шаблон Azure Resource Manager представляет собой минимальный шаблон, который позволяет развернуть учетную запись Azure Cosmos DB для API SQL с одним регионом и включенными несколькими источниками.
+Учетную запись можно преобразовать из записи с одним источником в учетную запись с несколькими источниками путем развертывания шаблона Resource Manager, используемого для создания учетной записи, и применения параметра `enableMultipleWriteLocations: true`. Следующий шаблон Azure Resource Manager представляет собой минимальный шаблон, который позволяет развернуть учетную запись Azure Cosmos для API SQL с одним регионом и включенными несколькими источниками.
 
 ```json
 {
@@ -239,13 +239,13 @@ Set-AzResource -ResourceType "Microsoft.DocumentDb/databaseAccounts" `
 }
 ```
 
-## <a id="automatic-failover"></a>Включение автоматического перехода на другой ресурс для учетной записи Azure Cosmos DB
+## <a id="automatic-failover"></a>Включение автоматического перехода на другой ресурс для учетной записи Azure Cosmos
 
 Если какой-либо регион становится недоступным, возможность автоматического перехода на другой ресурс позволяет Azure Cosmos DB выполнять отработку отказа в регион с наибольшим приоритетом отработки отказа без каких-либо действий со стороны пользователя. При включенном автоматическом переходе на другой ресурс приоритет региона можно изменить. В учетной записи должно быть два или более регионов, чтобы включить автоматический переход на другой ресурс.
 
 ### <a id="enable-automatic-failover-via-portal"></a>Портал Azure
 
-1. В учетной записи Azure Cosmos DB откройте панель **Глобальная репликация данных**.
+1. В учетной записи Azure Cosmos откройте панель **Глобальная репликация данных**.
 
 2. В верхней части панели выберите **Автоматический переход на другой ресурс**.
 
@@ -344,7 +344,7 @@ Invoke-AzResourceAction -Action failoverPriorityChange `
 Процесс выполнения перехода на другой ресурс вручную включает изменение региона записи учетной записи (приоритет отработки отказа = 0) на другой регион, настроенный для учетной записи.
 
 > [!NOTE]
-> Выполнить отработку отказа для учетной записи с несколькими источниками вручную невозможно. Для приложений, использующих пакет SDK для Azure Cosmos DB, пакет SDK будет определять, когда регион становится недоступным, а затем выполнять автоматическое перенаправление в следующий ближайший регион при использовании API множественной адресации в пакете SDK.
+> Выполнить отработку отказа для учетной записи с несколькими источниками вручную невозможно. Для приложений, использующих пакет SDK для Azure Cosmos, пакет SDK будет определять, когда регион становится недоступным, а затем выполнять автоматическое перенаправление в следующий ближайший регион при использовании API множественной адресации в пакете SDK.
 
 ### <a id="enable-manual-failover-via-portal"></a>Портал Azure
 

@@ -11,19 +11,17 @@ ms.workload: tbd
 ms.tgt_pltfrm: ibiza
 ms.topic: overview
 ms.custom: mvc
-ms.date: 02/14/2019
+ms.date: 06/03/2019
 ms.author: mbullwin
-ms.openlocfilehash: ec595e23fbbf3ace5bfd0786d88250a88b61453c
-ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
+ms.openlocfilehash: cdaae4e539d5216cf4950c15349f01b54ae8acd2
+ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66256648"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66496373"
 ---
 # <a name="what-is-application-insights"></a>Что такое Azure Application Insights?
 Application Insights — это расширяемая служба управления производительностью приложений (APM) для веб-разработчиков на нескольких платформах. Используйте ее для мониторинга вашего работающего веб-приложения. Она автоматически обнаруживает аномалии производительности. Эта служба включает мощные аналитические средства, которые помогут вам диагностировать проблемы и понять, что пользователи фактически делают в вашем приложении.  Эта служба помогает постоянно улучшать производительность и удобство использования. Application Insights работает с приложениями на самых разнообразных платформах, включая .NET, Node.js и Java EE, с локальным, гибридным или общедоступным облачным размещением. Эта служба интегрируется с процессом DevOps и содержит точки подключения ко многим инструментам разработки. Она может выполнять мониторинг и анализ данных телеметрии из мобильных приложений благодаря интеграции с Центром приложений Visual Studio.
-
-[Просмотрите этот ознакомительный анимированный ролик](https://www.youtube.com/watch?v=fX2NtGrh-Y0).
 
 ## <a name="how-does-application-insights-work"></a>Как работает Application Insights?
 Вы устанавливаете небольшой пакет инструментирования в приложение и настраиваете ресурс Application Insights на портале Microsoft Azure. Пакет инструментирования отслеживает приложение и отправляет данные телеметрии на портал. (Приложение может работать где угодно. Его не обязательно размещать в Azure.)
@@ -104,11 +102,13 @@ Application Insights — одна из многих служб, размещен
 
 Начать работу можно несколькими способами. Начните с того, который вам лучше подходит. Остальные можно использовать позже.
 
-* **Во время выполнения — инструментирование веб-приложения на сервере.** Не допускает обновление кода. Требуется административный доступ на сервер.
-  * [**Локальные или размещенные на виртуальной машине службы IIS**](../../azure-monitor/app/monitor-performance-live-website-now.md);
-  * [**веб-приложения или виртуальные машины Azure**](../../azure-monitor/app/monitor-performance-live-website-now.md);
-* **Во время разработки — добавление Application Insights в код.** Таким образом вы получаете возможность записывать пользовательскую телеметрию, а также инструментировать серверные и классические приложения.
-  * [Visual Studio](../../azure-monitor/app/asp-net.md) 2013 с обновлением 2 или более поздняя версия.
+* **Во время выполнения — инструментирование веб-приложения на сервере.** Идеально подходит для приложений, которые уже развернуты. Не допускает обновление кода.
+  * [**Приложения ASP.NET, размещенные в IIS локально или на виртуальной машине**](../../azure-monitor/app/monitor-performance-live-website-now.md)
+  * [**Приложения ASP.NET или ASP.NET Core, размещенные в веб-приложениях Azure**](../../azure-monitor/app/azure-web-apps.md)
+* **Во время разработки — добавление Application Insights в код.** Позволяет настроить сбор данных телеметрии и отправлять дополнительные данные телеметрии.
+  * [Приложения ASP.NET](../../azure-monitor/app/asp-net.md)
+  * [Приложения ASP.NET Core](../../azure-monitor/app/asp-net-core.md)
+  * [Консольные приложения .NET](../../azure-monitor/app/console.md)
   * [Java](../../azure-monitor/app/java-get-started.md)
   * [Node.js](../../azure-monitor/app/nodejs.md)
   * [другие платформы.](../../azure-monitor/app/platforms.md)
@@ -120,10 +120,12 @@ Application Insights — одна из многих служб, размещен
 Приступите к работе во время выполнения с помощью:
 
 * [сервера IIS;](../../azure-monitor/app/monitor-performance-live-website-now.md)
+* [Веб-приложения Azure](../../azure-monitor/app/azure-web-apps.md)
 
 Приступите к работе во время разработки с помощью:
 
 * [ASP.NET](../../azure-monitor/app/asp-net.md)
+* [ASP.NET Core](../../azure-monitor/app/asp-net-core.md)
 * [Java](../../azure-monitor/app/java-get-started.md)
 * [Node.js](../../azure-monitor/app/nodejs.md)
 
@@ -139,9 +141,9 @@ Application Insights — одна из многих служб, размещен
 
 ## <a name="videos"></a>Видео
 
-[![Анимационное ознакомительное видео](./media/app-insights-overview/video-front-1.png)](https://www.youtube.com/watch?v=fX2NtGrh-Y0)
-
-> [!VIDEO https://channel9.msdn.com/events/Connect/2016/100/player] 
+- Внешнее видео: [Configuring Application Insights with an ASP.NET application](https://www.youtube.com/watch?v=blnGAVgMAfA) (Настройка Application Insights с помощью приложения ASP.NET).
+- Внешнее видео: [Configuring Application Insights with ASP.NET Core and Visual Studio](https://www.youtube.com/watch?v=NoS9UhcR4gA&t) (Настройка Application Insights с помощью ASP.NET Core и Visual Studio).
+- Внешнее видео: [Configuring Application Insights with ASP.NET Core and Visual Studio Code](https://youtu.be/ygGt84GDync) (Настройка Application Insights с помощью ASP.NET Core и Visual Studio Code).
 
 <!--Link references-->
 

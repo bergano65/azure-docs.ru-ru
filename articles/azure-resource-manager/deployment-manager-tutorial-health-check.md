@@ -10,15 +10,15 @@ ms.service: azure-resource-manager
 ms.workload: multiple
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.date: 05/06/2019
+ms.date: 05/31/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 8ffc64359faab539ab74e354caad4081f31fcd43
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: d43a0e7c48db9dd42c7cf3b52e5d4072a4827898
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65790130"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66479174"
 ---
 # <a name="tutorial-use-health-check-in-azure-deployment-manager-public-preview"></a>Руководство по использованию проверки работоспособности в диспетчере развертывания Azure (общедоступная предварительная версия)
 
@@ -50,18 +50,18 @@ ms.locfileid: "65790130"
 Для работы с этой статьей необходимо иметь следующее.
 
 * Завершите работу с руководством по [использованию диспетчера развертывания Azure с шаблонами Resource Manager](./deployment-manager-tutorial.md).
-* Скачайте [шаблоны и артефакты](https://armtutorials.blob.core.windows.net/admtutorial/ADMTutorial.zip), используемые в этом руководстве. 
+* Скачайте [шаблоны и артефакты](https://armtutorials.blob.core.windows.net/admtutorial/ADMTutorial.zip), используемые в этом руководстве.
 
 ## <a name="create-a-health-check-service-simulator"></a>Создание симулятора службы проверки работоспособности
 
-В рабочей среде обычно используется один или несколько поставщиков мониторинга. Чтобы максимально упростить интеграцию функций работоспособности, корпорация Майкрософт сотрудничает с некоторыми ведущими компаниями по мониторингу работоспособности служб, чтобы предоставить вам простое решение для копирования и вставки, позволяющее интегрировать проверки работоспособности с вашими развертываниями. Список этих компаний см. в разделе [Поставщики мониторинга работоспособности](./deployment-manager-health-check.md#health-monitoring-providers). В рамках этого руководства вы создадите [функцию Azure](/azure/azure-functions/) для имитации службы мониторинга работоспособности. Эта функция принимает код состояния и возвращает тот же код. В шаблоне диспетчера развертывания Azure используется код состояния, чтобы определить способ выполнения развертывания. 
+В рабочей среде обычно используется один или несколько поставщиков мониторинга. Чтобы максимально упростить интеграцию функций работоспособности, корпорация Майкрософт сотрудничает с некоторыми ведущими компаниями по мониторингу работоспособности служб, чтобы предоставить вам простое решение для копирования и вставки, позволяющее интегрировать проверки работоспособности с вашими развертываниями. Список этих компаний см. в разделе [Поставщики мониторинга работоспособности](./deployment-manager-health-check.md#health-monitoring-providers). В рамках этого руководства вы создадите [функцию Azure](/azure/azure-functions/) для имитации службы мониторинга работоспособности. Эта функция принимает код состояния и возвращает тот же код. В шаблоне диспетчера развертывания Azure используется код состояния, чтобы определить способ выполнения развертывания.
 
 Следующие два файла используются для развертывания функции Azure. Не нужно скачивать эти файлы для работы с этим руководством.
 
-* Шаблон Resource Manager, который находится по адресу [https://armtutorials.blob.core.windows.net/admtutorial/deploy_hc_azure_function.json](https://armtutorials.blob.core.windows.net/admtutorial/deploy_hc_azure_function.json). Вы развернете этот шаблон, чтобы создать функцию Azure.  
-* ZIP-файл исходного кода функции Azure, который находится по адресу [http://armtutorials.blob.core.windows.net/admtutorial/ADMHCFunction0417.zip](http://armtutorials.blob.core.windows.net/admtutorial/RestHealthTest.zip). Этот ZIP-файл вызывается шаблоном Resource Manager.
+* Шаблон Resource Manager, который находится по адресу [https://armtutorials.blob.core.windows.net/admtutorial/deploy_hc_azure_function.json](https://armtutorials.blob.core.windows.net/admtutorial/deploy_hc_azure_function.json). Вы развернете этот шаблон, чтобы создать функцию Azure.
+* ZIP-файл исходного кода функции Azure, который находится по адресу [http://armtutorials.blob.core.windows.net/admtutorial/ADMHCFunction0417.zip](http://armtutorials.blob.core.windows.net/admtutorial/ADMHCFunction0417.zip). Этот ZIP-файл вызывается шаблоном Resource Manager.
 
-Чтобы развернуть функцию Azure, выберите **Попробовать**, чтобы открыть Azure Cloud Shell, а затем вставьте следующий скрипт в окно оболочки.  Чтобы вставить код, щелкните окно оболочки правой кнопкой мыши, а затем выберите **Вставить**. 
+Чтобы развернуть функцию Azure, выберите **Попробовать**, чтобы открыть Azure Cloud Shell, а затем вставьте следующий скрипт в окно оболочки.  Чтобы вставить код, щелкните окно оболочки правой кнопкой мыши, а затем выберите **Вставить**.
 
 > [!IMPORTANT]
 > Параметр **projectName** в скрипте PowerShell используется, чтобы создавать имена для служб Azure, которые будут развернуты в этом руководстве. Различные службы Azure имеют различные требования к именам. Чтобы убедиться, что развертывание прошло успешно, выберите имя длиной не более 12 символов, состоящее только со строчных букв и цифр.
@@ -81,7 +81,7 @@ New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateUri
 1. Откройте [портал Azure](https://portal.azure.com).
 1. Откройте группу ресурсов.  Имя по умолчанию — имя проекта с добавлением **rg**.
 1. В группе ресурсов выберите службу приложений.  Имя службы приложений по умолчанию — имя проекта с добавлением **webapp**.
-1. Разверните **Функции**, а затем выберите **HttpTrigger1**. 
+1. Разверните **Функции**, а затем выберите **HttpTrigger1**.
 
     ![Проверка работоспособности функции Azure в диспетчере развертывания Azure](./media/deployment-manager-tutorial-health-check/azure-deployment-manager-hc-function.png)
 
@@ -178,7 +178,7 @@ New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateUri
     },
     ```
 
-    В зависимости от определения, развертывание продолжается, если состоянием работоспособности — *healthy* или *warning*. 
+    В зависимости от определения, развертывание продолжается, если состоянием работоспособности — *healthy* или *warning*.
 
 1. Обновите параметр **dependsON** определения выпуска так, чтобы включить новый заданный шаг проверки работоспособности:
 
@@ -189,7 +189,7 @@ New-AzResourceGroupDeployment -ResourceGroupName $resourceGroupName -TemplateUri
     ],
     ```
 
-1. Обновите параметр **stepGroups**, чтобы включить шаг проверки работоспособности. **healthCheckStep** вызывается в **postDeploymentSteps** группы **stepGroup2**. **stepGroup3** и **stepGroup4** развертываются только, если состоянием работоспособности — *healthy* или *warning*. 
+1. Обновите параметр **stepGroups**, чтобы включить шаг проверки работоспособности. **healthCheckStep** вызывается в **postDeploymentSteps** группы **stepGroup2**. **stepGroup3** и **stepGroup4** развертываются только, если состоянием работоспособности — *healthy* или *warning*.
 
     ```json
     "stepGroups": [
@@ -265,7 +265,7 @@ New-AzResourceGroupDeployment `
 
 ## <a name="deploy-the-rollout-with-the-unhealthy-status"></a>Развертывание выпуска с неработоспособным состоянием
 
-Чтобы упростить работу с руководством, измененный шаблон выпуска опубликован в следующем общем расположении, поэтому вам не нужно подготавливать собственную копию. Если вы хотите использовать собственную, следуйте указаниям в статье [Руководство. Использование диспетчера развертывания Azure с шаблонами Resource Manager (закрытая предварительная версия)](./deployment-manager-tutorial.md).
+Чтобы упростить работу с руководством, измененный шаблон выпуска опубликован в следующих общих расположениях, поэтому вам не нужно подготавливать собственную копию. Если вы хотите использовать собственную, следуйте указаниям в статье [Руководство. Использование диспетчера развертывания Azure с шаблонами Resource Manager (закрытая предварительная версия)](./deployment-manager-tutorial.md).
 
 * Шаблон топологии: https://armtutorials.blob.core.windows.net/admtutorial/ADMTemplatesHC/CreateADMRollout.json
 * Хранилище артефактов: https://armtutorials.blob.core.windows.net/admtutorial/ArtifactStore
@@ -394,7 +394,7 @@ Tags                    :
     * **&lt;namePrefix>ServiceWUSrg**: содержит ресурсы, определенные в ServiceWUS.
     * **&lt;namePrefix>ServiceEUSrg**: содержит ресурсы, определенные в ServiceEUS.
     * Группа ресурсов для определяемого пользователем управляемого удостоверения.
-3. Выберите имя группы ресурсов.  
+3. Выберите имя группы ресурсов.
 4. В главном меню выберите **Удалить группу ресурсов**.
 5. Повторите последние два шага для удаления других групп ресурсов, созданных в этом руководстве.
 

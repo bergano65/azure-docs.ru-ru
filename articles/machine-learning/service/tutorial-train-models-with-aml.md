@@ -10,18 +10,18 @@ author: sdgilley
 ms.author: sgilley
 ms.date: 05/08/2019
 ms.custom: seodec18
-ms.openlocfilehash: 097fb3422ce3868d9ef499ad6c92c8b7fa12e852
-ms.sourcegitcommit: 4891f404c1816ebd247467a12d7789b9a38cee7e
+ms.openlocfilehash: ed2b35c5a1a0a017cb6bea086601282c83956d88
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
-ms.locfileid: "65442061"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66515553"
 ---
 # <a name="tutorial-train-image-classification-models-with-mnist-data-and-scikit-learn-using-azure-machine-learning"></a>Руководство по Обучение моделей классификации изображений с помощью данных MNIST и scikit-learn в Службе машинного обучения Azure
 
 В этом руководстве необходимо обучить модель машинного обучения на удаленных вычислительных ресурсах. Вы будете использовать рабочий процесс обучения и развертывания для службы "Машинное обучение Azure" (предварительная версия) в Jupyter Notebook для Python.  Затем можно использовать записную книжку как шаблон для обучения собственной модели машинного обучения со своими данными. Это руководство представляет собой **первую часть серии, состоящей из двух частей**.  
 
-Это руководство обучает простую логистическую регрессию по набору данных [MNIST](http://yann.lecun.com/exdb/mnist/) с помощью библиотеки [scikit-learn](https://scikit-learn.org) и Службы машинного обучения Azure. MNIST — это популярный набор данных, состоящий из 70 000 изображений в оттенках серого. Каждое изображение содержит рукописную цифру размером 28 x 28 пикселей, то есть числа от нуля до девяти. Целью является создание многоклассового классификатора для идентификации цифры, которую отображает указанное изображение. 
+Это руководство обучает простую логистическую регрессию по набору данных [MNIST](http://yann.lecun.com/exdb/mnist/) с помощью библиотеки [scikit-learn](https://scikit-learn.org) и Службы машинного обучения Azure. MNIST — это популярный набор данных, состоящий из 70 000 изображений в оттенках серого. Каждое изображение содержит рукописную цифру размером 28 x 28 пикселей, то есть числа от нуля до девяти. Целью является создание многоклассового классификатора для идентификации цифры, которую отображает указанное изображение.
 
 Узнайте, как выполнять следующие действия:
 
@@ -31,12 +31,12 @@ ms.locfileid: "65442061"
 > * Обучайте простую логистическую регрессию на удаленном кластере.
 > * Проверка результатов обучения и регистрация наилучшей модели.
 
-Во [второй части этого руководства](tutorial-deploy-models-with-aml.md) описано, как выбрать и развернуть модель. 
+Во [второй части этого руководства](tutorial-deploy-models-with-aml.md) описано, как выбрать и развернуть модель.
 
 Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Службы машинного обучения Azure](https://aka.ms/AMLFree).
 
 >[!NOTE]
-> Код в этой статье протестирован с помощью пакета SDK для Машинного обучения Azure версии 1.0.8.
+> Код в этой статье протестирован с помощью пакета SDK для Машинного обучения Azure версии 1.0.41.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
@@ -50,8 +50,8 @@ ms.locfileid: "65442061"
 * Файл конфигурации для рабочей области в том же каталоге, что и записная книжка.
 
 Получите все необходимые компоненты, перейдя к нужному из разделов, щелкнув соответствующую ссылку ниже.
- 
-* Использование [облачного сервера записных книжек в рабочей области](#azure) 
+
+* Использование [облачного сервера записных книжек в рабочей области](#azure)
 * Использование [собственного сервера записных книжек](#server)
 
 ### <a name="azure"></a>Использование облачного сервера записных книжек в рабочей области
@@ -61,7 +61,6 @@ ms.locfileid: "65442061"
 [!INCLUDE [aml-azure-notebooks](../../../includes/aml-azure-notebooks.md)]
 
 * После запуска веб-страницы записной книжки откройте записную книжку **tutorials/img-classification-part1-training.ipynb**.
-
 
 ### <a name="server"></a>Использование собственного сервера записных книжек Jupyter
 
@@ -106,7 +105,7 @@ print(ws.name, ws.location, ws.resource_group, ws.location, sep = '\t')
 
 ### <a name="create-an-experiment"></a>Создание эксперимента
 
-Чтобы отслеживать сведения о выполнении в рабочей области, создайте эксперимент. Рабочая область может содержать несколько экспериментов. 
+Чтобы отслеживать сведения о выполнении в рабочей области, создайте эксперимент. Рабочая область может содержать несколько экспериментов.
 
 ```python
 experiment_name = 'sklearn-mnist'
@@ -120,7 +119,6 @@ exp = Experiment(workspace=ws, name=experiment_name)
 Использование Вычислительной среды Машинного обучения Azure (управляемой службы) позволяет специалистам по обработке и анализу данных обучать модели машинного обучения в кластерах виртуальных машин Azure. Часто используются виртуальные машины с поддержкой GPU. В этом руководстве описано, как создать Вычислительную среду Машинного обучения Azure в качестве среды обучения. Приведенный ниже код создаст вычислительные кластеры, если они еще не существуют в вашей рабочей области.
 
  **Создание вычислительной среды занимает около пяти минут.** Если вычислительная среда уже находится в рабочей области, код сразу применяет ее, пропуская процесс создания.
-
 
 ```python
 from azureml.core.compute import AmlCompute
@@ -143,21 +141,21 @@ if compute_name in ws.compute_targets:
 else:
     print('creating a new compute target...')
     provisioning_config = AmlCompute.provisioning_configuration(vm_size = vm_size,
-                                                                min_nodes = compute_min_nodes, 
+                                                                min_nodes = compute_min_nodes,
                                                                 max_nodes = compute_max_nodes)
 
     # create the cluster
     compute_target = ComputeTarget.create(ws, compute_name, provisioning_config)
-    
-    # can poll for a minimum number of nodes and for a specific timeout. 
+
+    # can poll for a minimum number of nodes and for a specific timeout.
     # if no min node count is provided it will use the scale settings for the cluster
     compute_target.wait_for_completion(show_output=True, min_node_count=None, timeout_in_minutes=20)
-    
+
      # For a more detailed view of current AmlCompute status, use get_status()
     print(compute_target.get_status().serialize())
 ```
 
-Теперь у вас есть необходимые пакеты и вычислительные ресурсы для обучения модели в облаке. 
+Теперь у вас есть необходимые пакеты и вычислительные ресурсы для обучения модели в облаке.
 
 ## <a name="explore-data"></a>Изучение данных
 
@@ -171,7 +169,6 @@ else:
 
 Скачайте набор данных MNIST и сохраните файлы в локальном каталоге `data`. Загрузите изображения и метки для обучения и тестирования.
 
-
 ```python
 import urllib.request
 import os
@@ -184,13 +181,12 @@ urllib.request.urlretrieve('http://yann.lecun.com/exdb/mnist/train-labels-idx1-u
 urllib.request.urlretrieve('http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz', filename=os.path.join(data_folder, 'test-images.gz'))
 urllib.request.urlretrieve('http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz', filename=os.path.join(data_folder, 'test-labels.gz'))
 ```
+
 Вы увидите примерно такие выходные данные: ```('./data/test-labels.gz', <http.client.HTTPMessage at 0x7f40864c77b8>)```.
 
 ### <a name="display-some-sample-images"></a>Отображение некоторых примеров изображений
 
 Загрузите сжатые файлы в массивы `numpy`. Затем с помощью `matplotlib` постройте график 30 случайных изображений из набора данных с подписями над ними. На этом шаге потребуется функция `load_data`, которая содержится в файле `util.py`. Этот файл находится в папке примера. Разместите его в той же папке, где находится эта записная книжка. Функция `load_data` выполняет анализ сжатых файлов, преобразовывая их в массивы numpy.
-
-
 
 ```python
 # make sure utils.py is in the same directory as this code
@@ -234,8 +230,8 @@ print(ds.datastore_type, ds.account_name, ds.container_name)
 
 ds.upload(src_dir=data_folder, target_path='mnist', overwrite=True, show_progress=True)
 ```
-Теперь у вас есть все необходимое для начала обучения модели. 
 
+Теперь у вас есть все необходимое для начала обучения модели.
 
 ## <a name="train-on-a-remote-cluster"></a>Обучение на удаленном кластере
 
@@ -243,7 +239,7 @@ ds.upload(src_dir=data_folder, target_path='mnist', overwrite=True, show_progres
 * создать каталог;
 * Создание сценария обучения
 * Создание объекта оценщика
-* отправить задание. 
+* отправить задание.
 
 ### <a name="create-a-directory"></a>создать каталог;
 
@@ -293,7 +289,7 @@ print(X_train.shape, y_train.shape, X_test.shape, y_test.shape, sep = '\n')
 run = Run.get_context()
 
 print('Train a logistic regression model with regularization rate of', args.reg)
-clf = LogisticRegression(C=1.0/args.reg, random_state=42)
+clf = LogisticRegression(C=1.0/args.reg, solver="liblinear", multi_class="auto", random_state=42)
 clf.fit(X_train, y_train)
 
 print('Predict the test set')
@@ -324,35 +320,31 @@ joblib.dump(value=clf, filename='outputs/sklearn_mnist_model.pkl')
   shutil.copy('utils.py', script_folder)
   ```
 
-
 ### <a name="create-an-estimator"></a>Создание оценщика
 
-Объект оценщика используется для отправки потокового выполнения. Создайте оценщик, выполнив следующий код, который определяет следующие элементы:
+Объект [оценщика SKLearn](https://docs.microsoft.com/python/api/azureml-train-core/azureml.train.sklearn.sklearn?view=azure-ml-py) используется для отправки потокового выполнения. Создайте оценщик, выполнив следующий код, который определяет следующие элементы:
 
 * Имя оценщика — `est`.
-* Выберите каталог, который содержит скрипт. Все файлы в этом каталоге передаются в узел кластера для выполнения. 
+* Выберите каталог, который содержит скрипт. Все файлы в этом каталоге передаются в узел кластера для выполнения.
 * Целевой объект вычисления. В этом примере используется созданный вычислительный кластер Службы машинного обучения Azure.
 * Имя скрипта обучения — **train.py**.
-* Параметры, требуемые от скрипта обучения. 
-* Необходимые для обучения пакеты Python.
+* Параметры, требуемые от скрипта обучения.
 
 В этом руководстве целевой средой является AMLCompute. Все файлы в папке скриптов передаются для выполнения в узлы кластера. Параметр **data_folder** настраивается на использование хранилища данных `ds.path('mnist').as_mount()`.
 
 ```python
-from azureml.train.estimator import Estimator
+from azureml.train.sklearn import SKLearn
 
 script_params = {
     '--data-folder': ds.path('mnist').as_mount(),
-    '--regularization': 0.8
+    '--regularization': 0.5
 }
 
-est = Estimator(source_directory=script_folder,
+est = SKLearn(source_directory=script_folder,
                 script_params=script_params,
                 compute_target=compute_target,
-                entry_script='train.py',
-                conda_packages=['scikit-learn'])
+                entry_script='train.py')
 ```
-
 
 ### <a name="submit-the-job-to-the-cluster"></a>Отправка задания в кластер
 
@@ -371,7 +363,7 @@ run
 
 Что происходит, пока вы ожидаете завершения?
 
-- **Создание образа**. Создается образ Docker, который соответствует среде Python, указанной в оценщике. Изображение загружается в рабочую область. Создание и отправка изображений занимает **около пяти минут**. 
+- **Создание образа**. Создается образ Docker, который соответствует среде Python, указанной в оценщике. Изображение загружается в рабочую область. Создание и отправка изображений занимает **около пяти минут**.
 
   Этот этап выполняется один раз для каждой среды Python, а для последующих запусков контейнер помещается в кэш. Во время создания образа журналы будут отправлены в журнал выполнения. С помощью этих журналов вы можете отслеживать ход создания образа.
 
@@ -381,20 +373,18 @@ run
 
 - **Постобработка**. Каталог **./outputs** завершенного выполнения копируется в журнал выполнения в рабочей области, чтобы вы могли обращаться к этим результатам.
 
-
-Ход выполнения запущенного задания можно контролировать несколькими способами. В этом руководстве используются мини-приложение Jupyter и метод `wait_for_completion`. 
+Ход выполнения запущенного задания можно контролировать несколькими способами. В этом руководстве используются мини-приложение Jupyter и метод `wait_for_completion`.
 
 ### <a name="jupyter-widget"></a>Мини-приложение Jupyter
 
 Отслеживайте ход выполнения с помощью мини-приложения Jupyter. Как и отправка выполнения, мини-приложение работает асинхронно и в реальном времени предоставляет обновления каждые 10–15 секунд, пока не завершит задание.
-
 
 ```python
 from azureml.widgets import RunDetails
 RunDetails(run).show()
 ```
 
-Этот снимок демонстрирует окно мини-приложение в конце процесса обучения.
+В конце обучения мини-приложение будет выглядеть следующим образом:
 
 ![Мини-приложение записной книжки](./media/tutorial-train-models-with-aml/widget.png)
 
@@ -402,8 +392,7 @@ RunDetails(run).show()
 
 ### <a name="get-log-results-upon-completion"></a>Получение результатов записи по завершении
 
-Обучение и мониторинг модели происходит в фоновом режиме. Прежде, чем выполнять другой код, дождитесь завершения обучения модели. `wait_for_completion` позволяет узнать, когда завершится обучение модели. 
-
+Обучение и мониторинг модели происходит в фоновом режиме. Прежде, чем выполнять другой код, дождитесь завершения обучения модели. `wait_for_completion` позволяет узнать, когда завершится обучение модели.
 
 ```python
 run.wait_for_completion(show_output=False) # specify True for a verbose log
@@ -416,6 +405,7 @@ run.wait_for_completion(show_output=False) # specify True for a verbose log
 ```python
 print(run.get_metrics())
 ```
+
 В выходных данных показано, что точность удаленной модели — 0,9204.
 
 `{'regularization rate': 0.8, 'accuracy': 0.9204}`
@@ -435,7 +425,7 @@ print(run.get_file_names())
 Зарегистрируйте модель в рабочей области, чтобы вы или другие участники смогли позже запросить, проверить и развернуть ее.
 
 ```python
-# register model 
+# register model
 model = run.register_model(model_name='sklearn_mnist', model_path='outputs/sklearn_mnist_model.pkl')
 print(model.name, model.id, model.version, sep = '\t')
 ```
@@ -445,7 +435,6 @@ print(model.name, model.id, model.version, sep = '\t')
 [!INCLUDE [aml-delete-resource-group](../../../includes/aml-delete-resource-group.md)]
 
 Вычислительный кластер Машинного обучения Azure можно удалить. Но для него включено автомасштабирование с минимальным размером, равным нулю. Это означает, что этот ресурс не создает дополнительных расходов, когда он не используется.
-
 
 ```python
 # optionally, delete the Azure Machine Learning Compute cluster

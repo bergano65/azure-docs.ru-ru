@@ -9,12 +9,12 @@ ms.devlang: java
 ms.topic: quickstart
 ms.date: 04/10/2019
 ms.author: spelluru
-ms.openlocfilehash: 076e3b41a50681e453c1a07575ac6cb7071d97d2
-ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
+ms.openlocfilehash: e34599b12b8b0c487c6813038951b051d1eaf425
+ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65992031"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66400264"
 ---
 # <a name="quickstart-use-the-azure-cli-to-create-a-service-bus-queue"></a>Краткое руководство. Создание очереди служебной шины с помощью Azure CLI
 В этом кратком руководстве объясняется, как отправлять и принимать сообщения через Служебную шину с помощью Azure CLI и библиотеки Java для Служебной шины. И наконец, если вас интересует более подробная техническая информация, изучите [это описание](#understand-the-sample-code) ключевых элементов нашего примера кода.
@@ -22,7 +22,7 @@ ms.locfileid: "65992031"
 [!INCLUDE [howto-service-bus-queues](../../includes/howto-service-bus-queues.md)]
 
 ## <a name="prerequisites"></a>Предварительные требования
-Если у вас еще нет подписки Azure, вы можете создать [бесплатная учетная запись][], прежде чем начинать работу.
+Если у вас еще нет подписки Azure, создайте [бесплатную учетную запись][free account], прежде чем приступить к работе.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -377,7 +377,7 @@ void registerReceiver(QueueClient queueClient, ExecutorService executorService) 
 > [!div class="nextstepaction"]
 > [Отправка и получение сообщений](service-bus-dotnet-get-started-with-queues.md)
 
-[бесплатная учетная запись]: https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio
+[free account]: https://azure.microsoft.com/free/?ref=microsoft.com&utm_source=microsoft.com&utm_medium=docs&utm_campaign=visualstudio
 [fully qualified domain name]: https://wikipedia.org/wiki/Fully_qualified_domain_name
 [Install the Azure CLI]: /cli/azure/install-azure-cli
 [az group create]: /cli/azure/group#az_group_create

@@ -14,12 +14,12 @@ ms.devlang: multiple
 ms.topic: tutorial
 ms.date: 05/14/2019
 ms.author: spelluru
-ms.openlocfilehash: b29798bb87b7c5c677e7d80e552e45e8d1290541
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: b7dbc7dbc0b670de81a3f4603b0d52bce7559af8
+ms.sourcegitcommit: ef06b169f96297396fc24d97ac4223cabcf9ac33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65786845"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66428319"
 ---
 # <a name="respond-to-azure-service-bus-events-received-via-azure-event-grid-by-using-azure-functions-and-azure-logic-apps"></a>Реагирование на события служебной шины Azure, получаемые через Сетку событий Azure с помощью Функций Azure и Azure Logic Apps
 Узнайте, как отвечать на события служебной шины Azure, получаемые через Сетку событий Azure с помощью Функций Azure и Azure Logic Apps. Вы сделаете следующее:
@@ -280,13 +280,12 @@ ms.locfileid: "65786845"
     3. Для параметра **Имя ресурса** выберите пространство имен служебной шины. 
     4. Щелкните **Добавить параметр** и выберите **Фильтр суффиксов**. 
     5. В разделе **Фильтр суффиксов** укажите имя вашей второй подписки раздела служебной шины. 
-
         ![Конструктор Logic Apps — настройка события](./media/service-bus-to-event-grid-integration-example/logic-app-configure-event.png)
 6. В конструкторе щелкните **+ Новый шаг** и сделайте следующее:
     1. Введите **Служебная шина** для поиска.
     2. Выберите **Служебная шина** в списке. 
     3. Выберите **Получить сообщения** в списке **Действия**. 
-    4. Выберите **Получение сообщений из подписки раздела (с блокировкой при извлечении)**. 
+    4. Выберите **Получение сообщений из подписки раздела (с блокировкой при извлечении)** . 
 
         ![Конструктор Logic Apps — действие получения сообщений](./media/service-bus-to-event-grid-integration-example/service-bus-get-messages-step.png)
     5. Укажите **имя подключения**. Например:  **Получение сообщений из подписки раздела**. Затем выберите пространство имен служебной шины. 

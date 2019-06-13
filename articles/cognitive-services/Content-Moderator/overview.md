@@ -10,12 +10,12 @@ ms.subservice: content-moderator
 ms.topic: overview
 ms.date: 02/20/2019
 ms.author: pafarley
-ms.openlocfilehash: 7e9c12c7da701fb627c51373e57f870d3fc77ac5
-ms.sourcegitcommit: f013c433b18de2788bf09b98926c7136b15d36f1
+ms.openlocfilehash: 14cf500cff9f1f7f8b1573862c3060326e6518fa
+ms.sourcegitcommit: 6932af4f4222786476fdf62e1e0bf09295d723a1
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65551316"
+ms.lasthandoff: 06/05/2019
+ms.locfileid: "66688857"
 ---
 # <a name="what-is-azure-content-moderator"></a>Что такое Azure Content Moderator?
 
@@ -27,9 +27,12 @@ API Azure Content Moderator — это когнитивная служба, ко
 
 - интернет-магазины с модерацией каталогов продукции и создаваемого пользователями содержимого;
 - компании-разработчики игр, которые модерируют создаваемые пользователями игровые артефакты и чаты;
-- социальная платформа обмена сообщениями с модерацией изображений, текста и видео, добавляемых пользователями;
+- социальные платформы для обмена сообщениями с модерацией изображений, текста и видео, добавляемых пользователями;
 - корпоративные медиакомпании, внедряющие централизованную модерацию своего содержимого;
 - поставщики образовательных решений K-12, фильтрующие неуместное содержимое для учащихся и преподавателей.
+
+> [!NOTE]
+> Вы не можете использовать Content Moderator для проверки изображений на наличие сцен противозаконной эксплуатации детей. Однако уполномоченные организации могут использовать [облачную службу PhotoDNA](https://www.microsoft.com/photodna "Microsoft PhotoDNA Cloud Service") для этих целей.
 
 ## <a name="what-it-includes"></a>Компоненты
 

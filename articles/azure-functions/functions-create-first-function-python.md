@@ -11,12 +11,12 @@ ms.service: azure-functions
 ms.custom: mvc
 ms.devlang: python
 manager: jeconnoc
-ms.openlocfilehash: 88e8d543e8bc3c3ae07133ec333b33c4486c2684
-ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
+ms.openlocfilehash: ea890a49fc7b6a153ece183b153f5bc2a49760b5
+ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65864519"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66496568"
 ---
 # <a name="create-an-http-triggered-function-in-azure"></a>Создание функции, активируемой HTTP, в Azure
 
@@ -175,7 +175,7 @@ az functionapp create --resource-group myResourceGroup --os-type Linux \
 ```
 
 > [!NOTE]
-> Приложения Windows и Linux не могут размещаться в одной группе ресурсов. Если у вас есть группа ресурсов `myResourceGroup` с приложением-функцией Windows или веб-приложением, необходимо использовать другую группу ресурсов.
+> Функции Azure с планом потребления для Linux в настоящее время находятся на этапе предварительной версии и доступны только в следующих регионах: западная часть США, восточная часть США, Западная Европа, Восточная Азия. Более того, приложения для Windows и Linux не могут размещаться в одной группе ресурсов. Если у вас есть группа ресурсов `myResourceGroup` с приложением-функцией Windows или веб-приложением, необходимо использовать другую группу ресурсов.
 
 Теперь вы готовы опубликовать локальный проект функций в приложение-функцию в Azure.
 

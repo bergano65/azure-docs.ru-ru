@@ -11,12 +11,12 @@ ms.service: application-insights
 ms.custom: mvc
 ms.topic: quickstart
 manager: carmonm
-ms.openlocfilehash: e1574b55f9f14daba1831ba7f73b7f9ebde4c7f6
-ms.sourcegitcommit: bf509e05e4b1dc5553b4483dfcc2221055fa80f2
+ms.openlocfilehash: dd1644ad9b7fcee951b31997ab549f117530f635
+ms.sourcegitcommit: f9448a4d87226362a02b14d88290ad6b1aea9d82
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/22/2019
-ms.locfileid: "60006902"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66808377"
 ---
 # <a name="start-monitoring-your-java-web-application"></a>Запуск мониторинга веб-приложения Java
 
@@ -85,7 +85,7 @@ ms.locfileid: "60006902"
 
    ![Меню "Конфигурация Azure для Eclipse"](./media/java-quick-start/0007-j.png)
 
-5. После настройки подключаемого модуля Application Insights необходимо [впервые или повторно опубликовать](https://docs.microsoft.com/azure/app-service/app-service-web-get-started-java#publish-the-web-app-to-azure) приложение перед тем, как оно сможет отправлять данные телеметрии.
+5. После настройки подключаемого модуля Application Insights необходимо [впервые или повторно опубликовать](https://docs.microsoft.com/azure/app-service/app-service-web-get-started-java#deploy-the-app) приложение перед тем, как оно сможет отправлять данные телеметрии.
 
 > [!NOTE]
 > Пакет SDK Application Insights для Java может собирать и визуализировать динамические метрики, но после включения сборки данных телеметрии впервые они могут появиться на портале через несколько минут. Если это тестовое приложение со сниженным трафиком, следует помнить, что большинство метрик собираются только при наличии активных запросов или операций.
@@ -98,7 +98,7 @@ ms.locfileid: "60006902"
 
 2. Щелкните **схему приложений**, чтобы получить визуальный макет отношений зависимости между компонентами приложения. Каждый компонент показывает ключевой показатель эффективности, такие как производительность, сбои и оповещения.
 
-   ![Схема сопоставления приложений](./media/java-quick-start/4appmap.png)
+   ![Схема приложений](./media/java-quick-start/4appmap.png)
 
 3.  Щелкните значок **аналитики приложений** > ![значок схемы приложений](./media/java-quick-start/006.png) > **Просмотр в службе Analytics**.  Откроется окно **Application Insights Analytics** (Application Insights — аналитика), которое предоставляет полнофункциональный язык запросов для анализа всех данных, собранных Application Insights. В этом случае создается запрос, который преобразовывает число запросов для просмотра в виде диаграммы. Вы можете записывать собственные запросы для анализа других данных.
 

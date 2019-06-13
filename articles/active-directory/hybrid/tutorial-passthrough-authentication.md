@@ -1,5 +1,5 @@
 ---
-title: Руководство.  Интеграция одного леса AD с Azure с помощью сквозной аутентификации (PTA) | Документация Майкрософт
+title: Руководство по  интеграции одного леса AD в Azure с помощью PTA
 description: Демонстрируется настройка гибридной среды идентификации со сквозной проверкой подлинности.
 services: active-directory
 author: billmath
@@ -7,16 +7,16 @@ manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 09/18/2018
+ms.date: 05/31/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1d848202840d49dde18d358769519329141c2b35
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: 96846d75111fe11b225704a248baeb006a3df3fb
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66233906"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66473006"
 ---
 # <a name="tutorial--integrate-a-single-ad-forest-using-pass-through-authentication-pta"></a>Руководство.  Интеграция одного леса AD с помощью сквозной аутентификации (PTA)
 
@@ -27,7 +27,7 @@ ms.locfileid: "66233906"
 ## <a name="prerequisites"></a>Предварительные требования
 Для работы с этим учебником требуется следующее:
 - Компьютер с установленным [Hyper-V](https://docs.microsoft.com/windows-server/virtualization/hyper-v/hyper-v-technology-overview).  Рекомендуется использовать компьютер с ОС [Windows 10](https://docs.microsoft.com/virtualization/hyper-v-on-windows/about/supported-guest-os) или [Windows Server 2016](https://docs.microsoft.com/windows-server/virtualization/hyper-v/supported-windows-guest-operating-systems-for-hyper-v-on-windows).
--  [Подписка Azure](https://azure.microsoft.com/free)
+- [Подписка Azure](https://azure.microsoft.com/free)
 - - [Внешний сетевой адаптер](https://docs.microsoft.com/virtualization/hyper-v-on-windows/quick-start/connect-to-network) для связи виртуальной машины с Интернетом.
 - Копия Windows Server 2016.
 - [Личный домен](../../active-directory/fundamentals/add-custom-domain.md), который можно проверить.

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 03/04/2019
 ms.author: jeedes
-ms.openlocfilehash: bb18aa35c89657f01319512eac6c15096174891f
-ms.sourcegitcommit: c174d408a5522b58160e17a87d2b6ef4482a6694
+ms.openlocfilehash: dd4fe4f7b105fd7aa2d2cf7ee568f85a7ad98ecb
+ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59265735"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66734812"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-excelityglobal"></a>Руководство по Руководство по интеграции Azure Active Directory с приложением ExcelityGlobal
 
@@ -140,7 +140,7 @@ ms.locfileid: "59265735"
 
 ### <a name="configure-excelityglobal-single-sign-on"></a>Настройка единого входа в ExcelityGlobal
 
-Чтобы настроить единый вход на стороне **ExcelityGlobal**, нужно отправить **значение отпечатка** и соответствующие URL-адреса, скопированные на портале Azure, [группе поддержки ExcelityGlobal](https://www.excelityglobal.com/contact-us/our-locations/). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **ExcelityGlobal**, нужно отправить **значение отпечатка** и соответствующие URL-адреса, скопированные на портале Azure, [группе поддержки ExcelityGlobal](https://www.excelityglobal.com/contact-us). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -195,7 +195,7 @@ ms.locfileid: "59265735"
 
 ### <a name="create-excelityglobal-test-user"></a>Создание тестового пользователя ExcelityGlobal
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении ExcelityGlobal. Обратитесь к  [группе поддержки ExcelityGlobal](https://www.excelityglobal.com/contact-us/our-locations/), чтобы добавить пользователей на платформу ExcelityGlobal. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении ExcelityGlobal. Обратитесь к  [группе поддержки ExcelityGlobal](https://www.excelityglobal.com/contact-us), чтобы добавить пользователей на платформу ExcelityGlobal. Перед использованием единого входа необходимо создать и активировать пользователей.
 
 ### <a name="test-single-sign-on"></a>Проверка единого входа
 

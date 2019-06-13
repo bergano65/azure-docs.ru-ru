@@ -10,15 +10,15 @@ ms.service: azure-notebooks
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: quickstart
 ms.date: 12/04/2018
 ms.author: kraigb
-ms.openlocfilehash: b1618e2ac997445606ce98fc72a1ec35ca1280be
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: MT
+ms.openlocfilehash: 42f5d3abda715d83d58b0d341aed784de639e460
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60239803"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66751798"
 ---
 # <a name="quickstart-create-and-share-a-notebook"></a>Краткое руководство. Создание и совместное использование записной книжки
 
@@ -28,7 +28,7 @@ ms.locfileid: "60239803"
 
     ![Ссылка "Мои проекты" в верхней части окна браузера](media/quickstarts/my-projects-link.png)
 
-1. На странице **Мои проекты** выберите **+ Новый проект** (сочетание клавиш: n). Если окно браузера сужено, кнопка может отображаться как **+**:
+1. На странице **Мои проекты** выберите **+ Новый проект** (сочетание клавиш: n). Если окно браузера сужено, кнопка может отображаться как **+** :
 
     ![Команда "Новый проект" на странице "Мои проекты"](media/quickstarts/new-project-command.png)
 
@@ -41,11 +41,11 @@ ms.locfileid: "60239803"
 
      ![Всплывающее окно нового проекта, заполненное сведениями](media/quickstarts/new-project-popup.png)
 
-1. Через несколько секунд Записные книжки Azure перенаправят вас в окно нового проекта. Добавьте записную книжку в проект. Для этого выберите раскрывающийся список **+ Создать** (который может отображаться в виде **+**), а затем элемент **Notebook** (Записная книжка):
+1. Через несколько секунд Записные книжки Azure перенаправят вас в окно нового проекта. Добавьте записную книжку в проект. Для этого выберите раскрывающийся список **+ Создать** (который может отображаться в виде **+** ), а затем элемент **Notebook** (Записная книжка):
 
     [![](media/quickstarts/empty-project-new-notebook-button.png "Новый, пустой проект и команда добавления записной книжки")](media/quickstarts/empty-project-new-notebook-button.png#lightbox)
 
-1. В появившемся всплывающем окне **Create New Notebook** (Создание записной книжки) введите имя файла для записной книжки, например *HelloWorldInPython.ipynb* (*.ipynb* означает, что это записная книжка IronPython (Jupyter)) и выберите **Python 3.6** в качестве языка (также называемого *ядром*):
+1. В появившемся всплывающем окне **Create New Notebook** (Создание записной книжки) введите имя файла для записной книжки, например *HelloWorldInPython.ipynb* ( *.ipynb* означает, что это записная книжка IronPython (Jupyter)) и выберите **Python 3.6** в качестве языка (также называемого *ядром*):
 
     ![Всплывающее окно Create New Notebook (Создание записной книжки)](media/quickstarts/new-notebook-popup.png)
 
@@ -93,7 +93,7 @@ ms.locfileid: "60239803"
 
     ![Значок сохранения на панели инструментов записной книжки Jupyter](media/quickstarts/hello-results-save-icon.png)
 
-1. Выберите **файл** > **закрыть и остановить выполнение** команды меню, чтобы остановить сервер и закройте окно браузера.
+1. Выберите команду меню **Файл** > **Halt and close** (Остановить и закрыть), чтобы остановить работу сервера и закрыть окно браузера.
 
 ## <a name="share-the-notebook"></a>Предоставление общего доступа к записной книжке
 
@@ -103,7 +103,7 @@ ms.locfileid: "60239803"
 
 ![Команда предоставления общего доступа к проекту](media/quickstarts/share-project-command.png)
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 > [!div class="nextstepaction"]
 > [Руководство по созданию и запуску записной книжки Jupyter для выполнения линейной регрессии](tutorial-create-run-jupyter-notebook.md)

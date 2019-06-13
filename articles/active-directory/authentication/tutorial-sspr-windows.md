@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ea65120a2a735477d048b9012e160e0cdafe8835
-ms.sourcegitcommit: 25a60179840b30706429c397991157f27de9e886
+ms.openlocfilehash: 2a4bdaba45c466b7f1f6fb8e91033f9a7665e034
+ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/28/2019
-ms.locfileid: "66253072"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66730545"
 ---
 # <a name="tutorial-azure-ad-password-reset-from-the-login-screen"></a>Руководство. Сброс пароля Azure AD на экране входа
 
@@ -113,6 +113,8 @@ ms.locfileid: "66253072"
 Когда пользователи сбрасывают свои пароли с экрана входа на устройство с Windows 10, создается "defaultuser1" — временная учетная запись с низким уровнем прав. Эта учетная запись используется для обеспечения безопасности процесса сброса пароля. Учетная запись имеет случайно сгенерированный пароль, который не отображается при входе в устройство и будет автоматически удален после сброса пользователем пароля. Существует несколько профилей "defaultuser", но вы можете спокойно их игнорировать.
 
 ## <a name="limitations"></a>Ограничения
+
+Разблокирование учетных записей, уведомление от мобильного приложения и код мобильного приложения не поддерживаются SSPR для Windows 10.
 
 При тестировании этой функции с помощью Hyper-V ссылка "Сброс пароля" не отображается.
 

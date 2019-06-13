@@ -15,18 +15,18 @@ ms.workload: NA
 ms.date: 01/31/2019
 ms.author: aljo
 ms.custom: mvc
-ms.openlocfilehash: afeaccd798204ab0973be87ea36c275e1d633403
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 03f2f6bb572c46a1683d73ba42f435eca59829e5
+ms.sourcegitcommit: ef06b169f96297396fc24d97ac4223cabcf9ac33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66110424"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66428098"
 ---
 # <a name="quickstart-deploy-windows-containers-to-service-fabric"></a>Краткое руководство. Развертывание контейнеров Windows в Service Fabric
 
 Azure Service Fabric — это платформа распределенных систем для развертывания масштабируемых надежных микрослужб и контейнеров и управления ими.
 
-Чтобы запустить существующее приложение в контейнере Windows кластера Service Fabric, не требуется вносить изменения в приложение. В этом кратком руководстве показано, как развернуть готовый образ контейнера Docker в приложении Service Fabric. В итоге у вас будет рабочий Windows Server Core 2016 и контейнер для IIS. В этом кратком руководстве объясняется, как развернуть контейнер Windows. Чтобы узнать, как развернуть контейнер Linux, ознакомьтесь с [этим кратким руководством](service-fabric-quickstart-containers-linux.md).
+Чтобы запустить существующее приложение в контейнере Windows кластера Service Fabric, не требуется вносить изменения в приложение. В этом кратком руководстве показано, как развернуть готовый образ контейнера Docker в приложении Service Fabric. В итоге у вас будет рабочий Windows Server Core 2016 и контейнер для IIS. В этом кратком руководстве описывается развертывание контейнера Windows. Развертывание контейнера Linux описывается [в этом кратком руководстве](service-fabric-quickstart-containers-linux.md).
 
 ![Страница служб IIS по умолчанию][iis-default]
 
@@ -44,7 +44,7 @@ Azure Service Fabric — это платформа распределенных 
 
 * Подписка Azure. Вы можете создать [бесплатную учетную запись](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
 * Компьютер для разработки, на котором установлено ПО, перечисленное ниже.
-  * Visual Studio 2015 или Visual Studio 2017.
+  * Visual Studio 2015 или Windows 2019.
   * [Пакет SDK и средства для Service Fabric](service-fabric-get-started.md).
 
 ## <a name="package-a-docker-image-container-with-visual-studio"></a>Упаковка контейнера образов Docker с помощью Visual Studio
@@ -67,7 +67,7 @@ Azure Service Fabric — это платформа распределенных 
 
 ## <a name="specify-the-os-build-for-your-container-image"></a>Укажите сборку операционной системы для образа контейнера
 
-Контейнеры, созданные с помощью одной версии Windows Server могут не работать на узле под управлением другой версии Windows Server. Например, созданные с помощью Windows Server версии 1709 контейнеры, не работают в Windows Server 2016. Дополнительные сведения см. в разделе [ОС контейнера Windows Server и совместимость ОС узлов](service-fabric-get-started-containers.md#windows-server-container-os-and-host-os-compatibility). 
+Контейнеры, созданные с помощью одной версии Windows Server могут не работать на узле под управлением другой версии Windows Server. Например, созданные с помощью Windows Server версии 1709 контейнеры не работают на узлах под управлением Windows Server 2016. Дополнительные сведения см. в разделе [ОС контейнера Windows Server и совместимость ОС узлов](service-fabric-get-started-containers.md#windows-server-container-os-and-host-os-compatibility). 
 
 В версии 6.1 среды выполнения Service Fabric и более поздних можно указать несколько образов операционной системы на контейнер и отметить каждый из них, указав версию сборки операционной системы, для которой он будет развертываться. Это помогает обеспечить запуск приложения на узлах под управлением других версий ОС Windows. Дополнительные сведения см. в разделе [Указание сборок ОС для образов контейнеров](service-fabric-get-started-containers.md#specify-os-build-specific-container-images). 
 
@@ -106,7 +106,7 @@ Azure Service Fabric — это платформа распределенных 
 
 Предоставив значения для переменных, нажмите клавишу **F5**, чтобы запустить сценарий.
 
-После выполнения сценария и создания кластера в выходных данных найдите значение `ClusterEndpoint`. Например: 
+После выполнения сценария и создания кластера в выходных данных найдите значение `ClusterEndpoint`. Например:
 
 ```powershell
 ...
@@ -115,7 +115,7 @@ ClusterEndpoint : https://southcentralus.servicefabric.azure.com/runtime/cluster
 
 ### <a name="install-the-certificate-for-the-cluster"></a>Установка сертификата для кластера
 
-Теперь мы установим PFX в хранилище сертификатов *CurrentUser\My*. PFX-файл будет расположен в каталоге, указанном с помощью переменной среды `certfolder` в приведенном выше сценарии PowerShell.
+Теперь мы установим PFX-файл в хранилище сертификатов *CurrentUser\My*. PFX-файл будет расположен в каталоге, указанном с помощью переменной среды `certfolder` в приведенном выше сценарии PowerShell.
 
 Перейдите в этот каталог, а затем выполните следующую команду PowerShell, подставив имя PFX-файла, который находится в каталоге `certfolder`, и пароль, указанный в переменной `certpwd`. В этом примере текущий каталог получает значение каталога, указанного в переменной `certfolder` в сценарии PowerShell. Из этого каталога выполняется команда `Import-PfxCertificate`:
 
@@ -142,7 +142,7 @@ Thumbprint                                Subject
 
 Щелкните правой кнопкой мыши **MyFirstContainer** в обозревателе решений и выберите команду **Опубликовать**. Появится диалоговое окно "Опубликовать".
 
-Скопируйте содержимое после **CN=** из результатов выполнения приведенной выше команды `Import-PfxCertificate` в окне PowerShell и добавьте к нему порт `19000`. Например, `mysfcluster.SouthCentralUS.cloudapp.azure.com:19000`. Скопируйте его в поле **Конечная точка подключения**. Запомните это значение, так как оно понадобится при выполнении следующего шага.
+Скопируйте содержимое после **CN=** из результатов выполнения приведенной выше команды `Import-PfxCertificate` в окне PowerShell и добавьте к нему порт `19000`. Например, `mysfcluster.SouthCentralUS.cloudapp.azure.com:19000`. Скопируйте его в поле **Конечная точка подключения**. Запомните это значение, так как оно понадобится при выполнении предстоящего шага.
 
 Щелкните **Расширенные параметры подключения** и проверьте сведения о параметрах подключения.  Значения *FindValue* и *ServerCertThumbprint* должны соответствовать отпечатку сертификата, установленного при выполнении командлета `Import-PfxCertificate` на предыдущем шаге.
 

@@ -1,6 +1,6 @@
 ---
 title: Руководство по Интеграция Azure Active Directory с Control | Документация Майкрософт
-description: Узнайте, как настроить единый вход Azure Active Directory в Control.
+description: Узнайте, как настроить единый вход Azure Active Directory в Continuity Control.
 services: active-directory
 documentationCenter: na
 author: jeevansd
@@ -16,16 +16,16 @@ ms.topic: tutorial
 ms.date: 05/16/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 569021d79e74bc7a5a2582741109e1094ba90de8
-ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
+ms.openlocfilehash: aa66ae77ccc271e475d61b286e0f236429e40feb
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65874052"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66507507"
 ---
-# <a name="tutorial-integrate-control-with-azure-active-directory"></a>Руководство по Интеграция Control с Azure Active Directory
+# <a name="tutorial-integrate-continuity-control-with-azure-active-directory"></a>Руководство по Интеграция Continuity Control с Azure Active Directory
 
-В этом руководстве описано, как интегрировать Control с Azure Active Directory (Azure AD). Интеграция Control с Azure AD обеспечивает следующие возможности.
+В этом руководстве описано, как интегрировать Continuity Control (Control) с Azure Active Directory (Azure AD). Интеграция Control с Azure AD обеспечивает следующие возможности.
 
 * С помощью Azure AD вы можете контролировать доступ к Control.
 * Вы можете включить автоматический вход пользователей в Control с помощью учетных записей Azure AD.
@@ -83,7 +83,7 @@ ms.locfileid: "65874052"
     В текстовом поле **URL-адрес входа** введите URL-адрес в формате `https://<SUBDOMAIN>.continuity.net/auth/saml`.
 
     > [!Note]
-    > Это значение приведено для примера. Вместо него необходимо указать фактический URL-адрес входа. Чтобы получить это значение, обратитесь к [группе поддержки клиентов Control](mailto:help@continuity.net). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
+    > Это значение приведено для примера. Вместо него нужно указать правильный поддомен. Поддомен единого входа может быть настроен с помощью [стратегий аутентификации Control](https://control.continuity.net/settings/account_profile#tab/security). Можно также посмотреть шаблоны в разделе **Базовая конфигурация SAML** на портале Azure.
 
 1. В разделе **Сертификат подписи SAML** щелкните кнопку **Правка**, чтобы открыть диалоговое окно **Сертификат подписи SAML**.
 
@@ -93,19 +93,13 @@ ms.locfileid: "65874052"
 
     ![Копирование значения "Отпечаток"](common/copy-thumbprint.png)
 
-1. Требуемые URL-адреса можно скопировать из раздела **Настройка Control**.
+1. В разделе **Настройка Control** скопируйте URL-адрес входа и сохраните его на компьютере.
 
     ![Копирование URL-адресов настройки](common/copy-configuration-urls.png)
 
-    а) URL-адрес входа.
-
-    b. Идентификатор Azure AD
-
-    c. URL-адрес выхода.
-
 ### <a name="configure-control-sso"></a>Настройка единого входа в Control
 
-Чтобы настроить единый вход на стороне **Control**, нужно отправить **значение отпечатка** и соответствующие URL-адреса, скопированные на портале Azure, [группе поддержки Control](mailto:help@continuity.net). Специалисты службы поддержки настроят подключение единого входа SAML на обеих сторонах.
+Чтобы настроить единый вход на стороне **Control**, необходимо обновить параметры аутентификации единого входа в [стратегиях аутентификации Control](https://control.continuity.net/settings/account_profile#tab/security). В поле **SAML SSO URL** (URL-адрес единого входа SAML) укажите значение **URL-адрес входа**, а в поле **Certificate Fingerprint** (Отпечаток сертификата) — значение **Отпечаток** с портала Azure.
 
 ### <a name="create-an-azure-ad-test-user"></a>Создание тестового пользователя Azure AD
 
@@ -139,7 +133,7 @@ ms.locfileid: "65874052"
 
 ### <a name="create-control-test-user"></a>Создание тестового пользователя Control
 
-В этом разделе описано, как создать пользователя Britta Simon в приложении Control. Обратитесь к  [группе поддержки Control](mailto:help@continuity.net), чтобы добавить пользователей на платформу Control. Перед использованием единого входа необходимо создать и активировать пользователей.
+В этом разделе описано, как создать пользователя Britta Simon в приложении Control. Обратитесь к  [группе поддержки Control](mailto:help@continuity.net), чтобы добавить пользователей на платформу Control. Укажите **имя пользователя** Britta Simon в Azure AD в качестве значения **Identity Provider User ID** (Идентификатор пользователя поставщика удостоверений) в Control. Прежде чем пользователи смогут использовать единый вход, их нужно создать в Control и настроить для них параметр **Identity Provider User ID** (Идентификатор пользователя поставщика удостоверений).
 
 ### <a name="test-sso"></a>Проверка единого входа
 

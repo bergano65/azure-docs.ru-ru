@@ -1,5 +1,5 @@
 ---
-title: Разработка в .NET Core и AKS с помощью Azure Dev Spaces и Visual Studio 2017
+title: Разработка в .NET Core и AKS с помощью Azure Dev Spaces и Visual Studio
 titleSuffix: Azure Dev Spaces
 author: zr-msft
 services: azure-dev-spaces
@@ -13,30 +13,29 @@ keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, 
 manager: jeconnoc
 ms.custom: vs-azure
 ms.workload: azure-vs
-ms.openlocfilehash: 7a85afd3c0a00260112ef2a945b0f5c5a538194e
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 110962c03f0236ebb26c9ed586981b51f36c635f
+ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65765302"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66399223"
 ---
-# <a name="quickstart-develop-with-net-core-on-kubernetes-with-azure-dev-spaces-visual-studio-2017"></a>Краткое руководство. Разработка в .NET Core и Kubernetes с помощью Azure Dev Spaces (Visual Studio 2017)
+# <a name="quickstart-develop-with-net-core-on-kubernetes-with-azure-dev-spaces-visual-studio"></a>Краткое руководство. Разработка в .NET Core и Kubernetes с помощью Azure Dev Spaces (Visual Studio)
 
 Из этого руководства вы узнаете, как выполнить следующие задачи:
 
 - Настройка Azure Dev Spaces с помощью управляемого кластера Kubernetes в Azure.
-- Итеративная разработка кода в контейнерах с помощью Visual Studio 2017.
-- Отладка кода, запущенного в кластере, с помощью Visual Studio 2017.
+- итеративно разрабатывать код в контейнерах с помощью Visual Studio.
+- Отладка кода, запущенного в кластере, с помощью Visual Studio.
 
 ## <a name="prerequisites"></a>Предварительные требования
 
 - Подписка Azure. Если ее нет, можно создать [бесплатную учетную запись](https://azure.microsoft.com/free).
-- Visual Studio 2017 в среде Windows с установленной рабочей нагрузкой "Веб-разработка". Если эта среда не установлена, скачайте ее [с этой страницы](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs).
-- Установленные [Средства Visual Studio для Kubernetes](https://aka.ms/get-vsk8stools).
+- Visual Studio 2019 в Windows с установленной рабочей нагрузкой для разработки в Azure. Можно также использовать Visual Studio 2017 в Windows с установленной рабочей нагрузкой для веб-разработки и [Средствами Visual Studio для Kubernetes](https://aka.ms/get-vsk8stools). Если среда Visual Studio не установлена, скачайте ее [отсюда](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs).
 
 ## <a name="create-an-azure-kubernetes-service-cluster"></a>Создание кластера Службы Azure Kubernetes
 
-Вам нужно создать кластер AKS в [поддерживаемом регионе](https://docs.microsoft.com/azure/dev-spaces/#a-rapid,-iterative-kubernetes-development-experience-for-teams). Чтобы создать кластер, сделайте следующее:
+Вам нужно создать кластер AKS в [поддерживаемом регионе][supported-regions]. Чтобы создать кластер, сделайте следующее:
 
 1. Войдите на [портал Azure](https://portal.azure.com)
 1. Выберите *+ Создать ресурс > Служба Kubernetes*. 
@@ -55,7 +54,7 @@ ms.locfileid: "65765302"
 
 ## <a name="create-a-new-aspnet-web-app"></a>Создание веб-приложения ASP.NET
 
-1. Откройте Visual Studio 2017.
+1. Откройте Visual Studio.
 1. создание проекта;
 1. Выберите *Веб-приложение ASP.NET Core* и присвойте проекту имя *webfrontend*.
 1. Последовательно выберите *ОК*.
@@ -101,7 +100,7 @@ Completed warmup for project 'webfrontend' in 125 seconds.
 
 ## <a name="update-code"></a>Обновление кода
 
-Если пространство разработки все еще подключено к Visual Studio 2017, нажмите кнопку остановки. В файле `Controllers/HomeController.cs` замените строку 20 такими данными:
+Если пространство разработки еще подключено к Visual Studio, нажмите кнопку остановки. В файле `Controllers/HomeController.cs` замените строку 20 такими данными:
     
 ```csharp
 ViewData["Message"] = "Your application description page in Azure.";
@@ -113,9 +112,9 @@ ViewData["Message"] = "Your application description page in Azure.";
 
 ## <a name="setting-and-using-breakpoints-for-debugging"></a>Настройка и использование точек останова для отладки
 
-Если пространство разработки все еще подключено к Visual Studio 2017, нажмите кнопку остановки. Откройте `Controllers/HomeController.cs` и щелкните строку 20, чтобы расположить в ней курсор. Чтобы задать точку останова, нажмите клавишу *F9* или щелкните *Отладка* и *Переключить точку останова*. Чтобы запустить службу в режиме отладки в пространстве разработки, нажмите клавишу *F5* или щелкните *Отладка* и *Начать отладку*.
+Если пространство разработки еще подключено к Visual Studio, нажмите кнопку остановки. Откройте `Controllers/HomeController.cs` и щелкните строку 20, чтобы расположить в ней курсор. Чтобы задать точку останова, нажмите клавишу *F9* или щелкните *Отладка* и *Переключить точку останова*. Чтобы запустить службу в режиме отладки в пространстве разработки, нажмите клавишу *F5* или щелкните *Отладка* и *Начать отладку*.
 
-Откройте службу в браузере. Вы увидите, что сообщение не отображается. Вернувшись в Visual Studio 2017, вы увидите, что строка 20 выделена. Заданная вами точка останова приостановила выполнение службы на строке 20. Чтобы возобновить работу службы, нажмите клавишу *F5* или щелкните *Отладка*, а затем *Продолжить*. Вернитесь в браузер. Вы увидите, что сообщение теперь отображается.
+Откройте службу в браузере. Вы увидите, что сообщение не отображается. Вернувшись в Visual Studio, вы увидите, что строка 20 выделена. Заданная вами точка останова приостановила выполнение службы на строке 20. Чтобы возобновить работу службы, нажмите клавишу *F5* или щелкните *Отладка*, а затем *Продолжить*. Вернитесь в браузер. Вы увидите, что сообщение теперь отображается.
 
 Во время выполнения службы в Kubernetes с присоединенным отладчиком у вас есть полный доступ к отладочным сведениям, включая стек вызовов, локальные переменные и данные об исключениях.
 
@@ -135,3 +134,4 @@ az group delete --name MyResourceGroup --yes --no-wait
 > [Работа с несколькими контейнерами и командной разработкой](multi-service-netcore-visualstudio.md)
 
 [ingress-update]: how-dev-spaces-works.md#how-running-your-code-is-configured
+[supported-regions]: about.md#supported-regions-and-configurations

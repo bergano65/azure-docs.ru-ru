@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 12/19/2018
 ms.author: twhitney
 ms.custom: mvc
-ms.openlocfilehash: f183fd9c9aca3e1c8ed5e2e31d2a451fae92e0a4
-ms.sourcegitcommit: 009334a842d08b1c83ee183b5830092e067f4374
+ms.openlocfilehash: 05eac7e673ad01e9d3e0fb25f261444fd7bc4e6d
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66304482"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66475512"
 ---
 # <a name="tutorial-update-an-application-in-azure-kubernetes-service-aks"></a>Руководство по Обновление приложения в Службе Azure Kubernetes (AKS)
 
@@ -85,7 +85,10 @@ az acr list --resource-group myResourceGroup --query "[].{acrLoginServer:loginSe
 docker tag azure-vote-front <acrLoginServer>/azure-vote-front:v2
 ```
 
-Теперь используйте команду [docker push][docker-push], чтобы передать образ в реестр. Замените `<acrLoginServer>` именем сервера для входа ACR. Если возникают проблемы с отправкой данных в реестр ACR, убедитесь, что выполнена команда [az acr login][az-acr-login].
+Теперь используйте команду [docker push][docker-push], чтобы передать образ в реестр. Замените `<acrLoginServer>` именем сервера для входа ACR.
+
+> [!NOTE]
+> Если возникают проблемы с отправкой данных в реестр ACR, убедитесь, что вход в систему по-прежнему выполнен. Выполните команду [az acr login][az-acr-login], используя имя Реестра контейнеров Azure, который вы создали на шаге [создания реестра контейнеров Azure](tutorial-kubernetes-prepare-acr.md#create-an-azure-container-registry). Например, `az acr login --name <azure container registry name>`.
 
 ```console
 docker push <acrLoginServer>/azure-vote-front:v2

@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: sample
 ms.date: 05/06/2019
 ms.author: sngun
-ms.openlocfilehash: 43aa0956ef1f44fa5705800ff2b424608ec75499
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 2c6af53aeec5d40f603d65595d93527107c0d80a
+ms.sourcegitcommit: ef06b169f96297396fc24d97ac4223cabcf9ac33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65795617"
+ms.lasthandoff: 05/31/2019
+ms.locfileid: "66427701"
 ---
 # <a name="how-to-use-azure-kubernetes-with-azure-cosmos-db-preview"></a>Использование Azure Kubernetes с Azure Cosmos DB (предварительная версия)
 
@@ -29,7 +29,7 @@ API etcd в Azure Cosmos DB позволяет использовать Azure Co
 
 1. Установите [последнюю версию](/cli/azure/install-azure-cli?view=azure-cli-latest) Azure CLI. Вы можете скачать и установить Azure CLI, соответствующий вашей операционной системе.
 
-1. Установите Azure Kubernetes Engine версии [0.32.3](https://github.com/Azure/aks-engine/releases/tag/v0.32.3). Инструкции по установке для различных операционных систем см. на странице [Azure Kubernetes Engine](https://github.com/Azure/aks-engine/blob/master/docs/tutorials/quickstart.md#install-aks-engine). Вам просто нужно выполнить шаги, приведенные в разделе**Install AKS Engine** (Установка AKS Engine) связанного документа. После скачивания извлеките ZIP-файл.
+1. Установите [последнюю версию](https://github.com/Azure/aks-engine/releases) Azure Kubernetes Engine. Инструкции по установке для различных операционных систем см. на странице [Azure Kubernetes Engine](https://github.com/Azure/aks-engine/blob/master/docs/tutorials/quickstart.md#install-aks-engine). Вам просто нужно выполнить шаги, приведенные в разделе**Install AKS Engine** (Установка AKS Engine) связанного документа. После скачивания извлеките ZIP-файл.
 
    Модуль Azure Kubernetes (**aks-engine**) создает шаблоны Azure Resource Manager для кластеров Kubernetes в Azure. Входными данными для aks-engine является файл определения кластера, который содержит описание желаемого кластера, включая оркестратор, функции и агенты. Структура входных файлов аналогична общедоступному API для Azure Kubernetes Service.
 
@@ -77,7 +77,7 @@ API etcd в Azure Cosmos DB позволяет использовать Azure Co
 1. В командной строке перейдите в папку, содержащую исполняемый файл Azure Kubernetes Engine. Например, в командной строке вы можете перейти в следующую папку:
 
    ```cmd
-   cd "\aks-engine-v0.32.3-windows-amd64\aks-engine-v0.32.3-windows-amd64"
+   cd "\aks-engine-v0.36.3-windows-amd64\aks-engine-v0.36.3-windows-amd64"
    ```
 
 1. Откройте любой текстовый редактор и определите шаблон Resource Manager, который развертывает кластер Azure Kubernetes с помощью API etcd Azure Cosmos DB. Скопируйте следующее определение JSON в текстовый редактор и сохраните файл как `apiModel.json`:

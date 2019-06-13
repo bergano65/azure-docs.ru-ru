@@ -9,12 +9,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: tutorial
 ms.date: 04/06/2019
-ms.openlocfilehash: fe26417c6e3a9f159e884c19d7bd7c9dc7569229
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 8512ca2fe01c772d7e4c21a5cb09303b9804899c
+ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65787838"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66389209"
 ---
 # <a name="tutorial-deploy-a-machine-learning-model-with-the-visual-interface"></a>Руководство по развертыванию модели машинного обучения с помощью графического интерфейса
 
@@ -107,7 +107,7 @@ ms.locfileid: "65787838"
 
     ![Снимок экрана: страница тестирования веб-службы](./media/ui-tutorial-automobile-price-deploy/web-service-test.png)
 
-1. Введите данные тестирования или используйте автозаполненный пример данных и щелкните **Тест** внизу. Тестовый запрос отправляется в веб-службу, и результаты отображаются на странице.
+1. Введите данные тестирования или используйте автозаполненный пример данных и щелкните **Тест** внизу. Тестовый запрос отправляется в веб-службу, и результаты отображаются на странице. Значение цены формируется на основе входных данных, но при расчете прогнозируемого значения они не используются.
 
 ## <a name="manage-the-web-service"></a>Управление веб-службой
 

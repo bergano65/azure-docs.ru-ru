@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 03/14/2019
 ms.author: rezas
-ms.openlocfilehash: 9a123c35620cd82059eb08d370939761f7c2fe69
-ms.sourcegitcommit: 3ced637c8f1f24256dd6ac8e180fff62a444b03c
+ms.openlocfilehash: d9d083569d648b2bd22438f295a640b4e8d03b77
+ms.sourcegitcommit: 4cdd4b65ddbd3261967cdcd6bc4adf46b4b49b01
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65834054"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66733240"
 ---
 # <a name="quickstart-communicate-to-a-device-application-in-nodejs-via-iot-hub-device-streams-preview"></a>Краткое руководство. Взаимодействие с приложением устройства в Node.js с помощью потоков устройств Центра Интернета вещей (предварительная версия)
 
@@ -162,4 +162,4 @@ az extension add --name azure-cli-iot-ext
 Используйте приведенные ниже ссылки для получения дополнительных сведений о потоках устройства:
 
 > [!div class="nextstepaction"]
-> [IoT Hub Device Streams (preview)](./iot-hub-device-streams-overview.md) (Потоки устройств (предварительная версия))
+> [IoT Hub Device Streams (preview)](./iot-hub-device-streams-overview.md) (Потоки устройств (предварительная версия)) 

@@ -11,12 +11,12 @@ ms.date: 07/09/2018
 ms.topic: tutorial
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, служба контейнеров Azure, служба Azure Kubernetes, контейнеры, Helm, сетка службы, сетка службы маршрутизации, kubectl, k8s
-ms.openlocfilehash: 39948479cc563d2f622763ea7b4d09910ffc494c
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 9b529780387e1129dd7827e4d9c805d185a459d0
+ms.sourcegitcommit: d89032fee8571a683d6584ea87997519f6b5abeb
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65779873"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66399255"
 ---
 # <a name="get-started-on-azure-dev-spaces-with-net-core-and-visual-studio"></a>Начало работы в Azure Dev Spaces с .NET Core и Visual Studio
 
@@ -36,7 +36,7 @@ ms.locfileid: "65779873"
 1. Войдите на портал Azure по адресу https://portal.azure.com.
 1. Выберите **Создать ресурс**, выполните поиск **Kubernetes**, затем выберите **Kubernetes Service** (Служба Kubernetes)  >  **Создать**.
 
-   Выполните следующие шаги под каждым заголовком формы *Создание кластера Kubernetes* и убедитесь, что выбранный вами [регион поддерживает Azure Dev Spaces](https://docs.microsoft.com/azure/dev-spaces/#a-rapid,-iterative-kubernetes-development-experience-for-teams).
+   Выполните следующие шаги под каждым заголовком формы *Создание кластера Kubernetes* и убедитесь, что выбранный вами [регион поддерживает Azure Dev Spaces][supported-regions].
 
    - **Сведения о проекте**: выберите подписку Azure и создайте новую или выберите существующую группу ресурсов Azure.
    - **CLUSTER DETAILS** (Сведения о кластере): введите имя, регион, версию и префикс DNS-имени для кластера AKS.
@@ -54,10 +54,7 @@ ms.locfileid: "65779873"
 1. Выберите **Review + create** (Проверить и создать), а по завершении щелкните **Create** (Создать).
 
 ## <a name="get-the-visual-studio-tools"></a>Получение средств Visual Studio
-1. Установите последнюю версию [Visual Studio 2017](https://www.visualstudio.com/vs/).
-1. Убедитесь, что выбрана следующая рабочая нагрузка в установщике Visual Studio:
-    * ASP.NET и веб-разработка.
-1. Установка [Средств Visual Studio для Kubernetes](https://aka.ms/get-azds-visualstudio)
+Установите последнюю версию [Visual Studio 2017](https://www.visualstudio.com/vs/). Для Visual Studio 2019 в Windows следует установить рабочую нагрузку для разработки в Azure. Для Visual Studio 2017 в Windows необходимо установить рабочую нагрузку для разработки приложений ASP.NET и веб-приложений, а также [Средства Visual Studio для Kubernetes](https://aka.ms/get-azds-visualstudio).
 
 ## <a name="create-a-web-app-running-in-a-container"></a>Создание веб-приложения для работы в контейнере
 
@@ -65,7 +62,7 @@ ms.locfileid: "65779873"
 
 ### <a name="create-an-aspnet-web-app"></a>Создание веб-приложения ASP.NET
 
-Создайте новый проект в Visual Studio 2017. В настоящее время проект должен быть **веб-приложением ASP.NET Core**. Присвойте проекту имя **webfrontend**.
+Создайте новый проект в Visual Studio. В настоящее время проект должен быть **веб-приложением ASP.NET Core**. Присвойте проекту имя **webfrontend**.
 
 ![](media/get-started-netcore-visualstudio/NewProjectDialog1.png)
 
@@ -150,3 +147,6 @@ Azure Dev Spaces — это не просто среда выполнения к
 
 > [!div class="nextstepaction"]
 > [Узнайте больше о разработке с использованием нескольких служб](multi-service-netcore-visualstudio.md)
+
+
+[supported-regions]: about.md#supported-regions-and-configurations

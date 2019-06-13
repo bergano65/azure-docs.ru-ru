@@ -10,12 +10,12 @@ author: sdgilley
 ms.author: sgilley
 ms.date: 05/14/2019
 ms.custom: seodec18
-ms.openlocfilehash: f2984ed9a7edd36b166c0dff9aa87d86c6d2ab45
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.openlocfilehash: 9709d18b00d65578ca3a63fe5044e0b9f7b52d58
+ms.sourcegitcommit: adb6c981eba06f3b258b697251d7f87489a5da33
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
-ms.locfileid: "65800735"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66515587"
 ---
 # <a name="tutorial-deploy-an-image-classification-model-in-azure-container-instances"></a>Руководство по Развертывание модели классификации изображений в Экземплярах контейнеров Azure
 
@@ -35,7 +35,7 @@ ms.locfileid: "65800735"
 Экземпляры контейнеров — это идеальное решение для тестирования и понимания рабочего процесса. Для масштабируемых рабочих развертываний рекомендуется использовать Службу Azure Kubernetes. Дополнительные сведения см. в статье [Развертывание моделей с помощью Службы машинного обучения Azure](how-to-deploy-and-where.md).
 
 >[!NOTE]
-> Код в этой статье протестирован с помощью пакета SDK для Машинного обучения Azure версии 1.0.8.
+> Код в этой статье протестирован с помощью пакета SDK для Машинного обучения Azure версии 1.0.41.
 
 ## <a name="prerequisites"></a>Предварительные требования
 Перейдите к разделу о [настройке среды разработки](#start), чтобы ознакомиться с шагами записной книжки.  
@@ -93,7 +93,7 @@ os.stat(file_path)
 
 ### <a name="load-test-data"></a>Загрузка тестовых данных
 
-Загрузите тестовые данные из каталога **./data/**, созданного в обучающем руководстве:
+Загрузите тестовые данные из каталога **./data/** , созданного в обучающем руководстве:
 
 ```python
 from utils import load_data

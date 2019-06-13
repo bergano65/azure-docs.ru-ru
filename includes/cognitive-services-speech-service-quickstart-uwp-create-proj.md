@@ -4,14 +4,14 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 2/20/2019
 ms.author: erhopf
-ms.openlocfilehash: fe2978e176b986164ebb01fddbd29481f8a117bd
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.openlocfilehash: faa93b75bde3a14e48baa7d27a3eb6439a137e44
+ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66145431"
+ms.lasthandoff: 06/04/2019
+ms.locfileid: "66482235"
 ---
-1. Запустите Visual Studio 2017.
+1. Запустите Visual Studio 2019.
 
 1. Убедитесь, что рабочая нагрузка **Разработка приложений для универсальной платформы Windows** доступна. Выберите **Инструменты** > **Get Tools and Features** (Получить средства и компоненты) в строке меню Visual Studio, чтобы открыть Visual Studio Installer. Если эта рабочая нагрузка уже включена, закройте диалоговое окно.
 
@@ -23,7 +23,7 @@ ms.locfileid: "66145431"
 
     ![Снимок экрана: диалоговое окно нового проекта](../articles/cognitive-services/Speech-Service/media/sdk/qs-csharp-uwp-01-new-blank-app.png)
 
-1. Для пакета SDK службы "Речь" требуется, чтобы ваше приложение было создано для Windows 10 Fall Creators Update или более поздней версии. В появившемся окне **Новый проект приложения для универсальной платформы Windows** выберите значение **Windows 10 Fall Creators Update (10.0; сборка 16299)** для параметра **Минимальная версия**. В окне **Целевая версия** выберите ту же или более позднюю версию, после чего нажмите кнопку **ОК**.
+1. Для пакета SDK службы "Речь" требуется, чтобы ваше приложение было создано для Windows 10 Fall Creators Update или последующей версии. В появившемся окне **Новый проект приложения для универсальной платформы Windows** выберите значение **Windows 10 Fall Creators Update (10.0; сборка 16299)** для параметра **Минимальная версия**. В окне **Целевая версия** выберите эту или последующую версию и нажмите кнопку **ОК**.
 
     ![Снимок экрана окна нового проекта приложения для универсальной платформы Windows](../articles/cognitive-services/Speech-Service/media/sdk/qs-csharp-uwp-02-new-uwp-project.png)
 

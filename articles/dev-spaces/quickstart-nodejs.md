@@ -11,12 +11,12 @@ ms.topic: quickstart
 description: Быстрая разработка в Kubernetes с использованием контейнеров, микрослужб и Node.js в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Kubernetes Service, containers, Helm, service mesh, service mesh routing, kubectl, k8s
 manager: jeconnoc
-ms.openlocfilehash: 7507b6741a373f28e0e780af08d076235e377839
-ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
+ms.openlocfilehash: 5efacc38ab6b30a1a4ae45772f2b81030e76eb83
+ms.sourcegitcommit: 51a7669c2d12609f54509dbd78a30eeb852009ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65873147"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66393933"
 ---
 # <a name="quickstart-develop-with-nodejs-on-kubernetes-using-azure-dev-spaces"></a>Краткое руководство. Разработка с помощью Node.js в Kubernetes с помощью Azure Dev Spaces
 
@@ -35,7 +35,7 @@ ms.locfileid: "65873147"
 
 ## <a name="create-an-azure-kubernetes-service-cluster"></a>Создание кластера Службы Azure Kubernetes
 
-Вам нужно создать кластер AKS в [поддерживаемом регионе](https://docs.microsoft.com/azure/dev-spaces/#a-rapid,-iterative-kubernetes-development-experience-for-teams). Следующие команды создают группу ресурсов *MyResourceGroup* и кластер AKS *MyAKS*.
+Вам нужно создать кластер AKS в [поддерживаемом регионе][supported-regions]. Следующие команды создают группу ресурсов *MyResourceGroup* и кластер AKS *MyAKS*.
 
 ```cmd
 az group create --name MyResourceGroup --location eastus
@@ -111,13 +111,13 @@ Service 'webfrontend' port 80 (http) is available at http://localhost:54256
 ...
 ```
 
-Вы можете увидеть выполнение службы, открыв общедоступный URL-адрес, который отображается в выходных данных команды `azds up`. В этом примере общедоступный URL-адрес — *http://webfrontend.1234567890abcdef1234.eus.azds.io/*.
+Вы можете увидеть выполнение службы, открыв общедоступный URL-адрес, который отображается в выходных данных команды `azds up`. В этом примере общедоступный URL-адрес — *http://webfrontend.1234567890abcdef1234.eus.azds.io/* .
 
 Если остановить команду `azds up` с помощью сочетания клавиш *CTRL+C*, служба продолжит выполнятся в AKS, а общедоступный URL-адрес останется доступным.
 
 ## <a name="update-code"></a>Обновление кода
 
-Чтобы развернуть обновленную версию службы, обновите любой файл в проекте и повторно выполните команду `azds up`. Например: 
+Чтобы развернуть обновленную версию службы, обновите любой файл в проекте и повторно выполните команду `azds up`. Например:
 
 1. Если `azds up` по-прежнему выполняется, нажмите клавиши *CTRL+C*.
 1. Измените [строку 10 в `server.js`](https://github.com/Azure/dev-spaces/blob/master/samples/nodejs/getting-started/webfrontend/server.js#L10):
@@ -168,7 +168,7 @@ Service 'webfrontend' port 80 (http) is available at http://localhost:54256
 
 ## <a name="setting-and-using-breakpoints-for-debugging"></a>Настройка и использование точек останова для отладки
 
-Запуск службы осуществляется с помощью пункта *Запустить сервер (AZDS)*.
+Запуск службы осуществляется с помощью пункта *Запустить сервер (AZDS)* .
 
 Вернитесь в представление *Explorer*, щелкнув *Представление*, а затем — *Explorer*. Откройте `server.js` и щелкните где-нибудь в строке 10, чтобы навести на нее курсор. Чтобы задать точку останова, нажмите клавишу *F9* или щелкните *Отладка* и *Переключить точку останова*.
 
@@ -190,7 +190,7 @@ Service 'webfrontend' port 80 (http) is available at http://localhost:54256
 
 Перейдите к запущенной службе с помощью браузера и поработайте с ней.
 
-Пока служба выполняется, вернитесь в VS Code и обновите строку 10 в `server.js`. Например: 
+Пока служба выполняется, вернитесь в VS Code и обновите строку 10 в `server.js`. Например:
 ```javascript
     res.send('Hello from webfrontend in Azure while debugging!');
 ```
@@ -211,3 +211,6 @@ az group delete --name MyResourceGroup --yes --no-wait
 
 > [!div class="nextstepaction"]
 > [Работа с несколькими контейнерами и командной разработкой](multi-service-nodejs.md)
+
+
+[supported-regions]: about.md#supported-regions-and-configurations

@@ -11,12 +11,12 @@ ms.author: nilesha
 ms.reviewer: trbye
 ms.date: 04/11/2019
 ms.custom: seodec18
-ms.openlocfilehash: d6e478cba13c7b4cf628535a4a1ecdbec344a733
-ms.sourcegitcommit: eea74d11a6d6ea6d187e90e368e70e46b76cd2aa
+ms.openlocfilehash: 907383c057c0c1eebee6550a0d1e9c75dd88513c
+ms.sourcegitcommit: c05618a257787af6f9a2751c549c9a3634832c90
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/03/2019
-ms.locfileid: "65035460"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66417295"
 ---
 # <a name="tutorial-use-automated-machine-learning-to-build-your-regression-model"></a>Руководство по Создание регрессионной модели с помощью автоматического машинного обучения
 
@@ -38,7 +38,7 @@ ms.locfileid: "65035460"
 Если у вас еще нет подписки Azure, создайте бесплатную учетную запись Azure, прежде чем начинать работу. Опробуйте [бесплатную или платную версию Службы машинного обучения Azure](https://aka.ms/AMLFree).
 
 >[!NOTE]
-> Код в этой статье протестирован с пакетом SDK для Машинного обучения Azure версии 1.0.0.
+> Код в этой статье протестирован с помощью пакета SDK для Машинного обучения Azure версии 1.0.39.
 
 ## <a name="prerequisites"></a>Предварительные требования
 

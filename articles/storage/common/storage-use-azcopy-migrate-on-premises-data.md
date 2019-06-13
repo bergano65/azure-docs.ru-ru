@@ -9,12 +9,12 @@ ms.date: 05/14/2019
 ms.author: normesta
 ms.reviewer: seguler
 ms.subservice: common
-ms.openlocfilehash: 64d79abd1e142a231c08e02e7d62e8bfbab7b90e
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.openlocfilehash: e40a0b35cd99565bec4e26862c938f6228bf9836
+ms.sourcegitcommit: 51a7669c2d12609f54509dbd78a30eeb852009ae
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
-ms.locfileid: "66244741"
+ms.lasthandoff: 05/30/2019
+ms.locfileid: "66393732"
 ---
 #  <a name="tutorial-migrate-on-premises-data-to-cloud-storage-by-using-azcopy"></a>Руководство по Миграция локальных данных в службу хранилища Azure с помощью AzCopy
 
@@ -119,9 +119,12 @@ azcopy sync "<local-folder-path>" "https://<storage-account-name>.blob.core.wind
 
 В этих примерах используется имя папки `myFolder`, имя учетной записи хранения `mystorageaccount` и имя контейнера `mycontainer`.
 
+> [!NOTE]
+> В примере Linux добавляется маркер SAS. Вам потребуется указать его в команде. Текущая версия AzCopy V10 не поддерживает авторизацию Azure AD в заданиях Cron.
+
 # <a name="linuxtablinux"></a>[Linux](#tab/linux)
 
-    azcopy sync "/mnt/myfiles" "https://mystorageaccount.blob.core.windows.net/mycontainer" --recursive=true
+    azcopy sync "/mnt/myfiles" "https://mystorageaccount.blob.core.windows.net/mycontainer?sv=2018-03-28&ss=bfqt&srt=sco&sp=rwdlacup&se=2019-05-30T06:57:40Z&st=2019-05-29T22:57:40Z&spr=https&sig=BXHippZxxx54hQn%2F4tBY%2BE2JHGCTRv52445rtoyqgFBUo%3D" --recursive=true
 
 # <a name="windowstabwindows"></a>[Windows](#tab/windows)
 

@@ -10,15 +10,15 @@ ms.service: azure-notebooks
 ms.workload: na
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
+ms.topic: tutorial
 ms.date: 01/11/2019
 ms.author: kraigb
-ms.openlocfilehash: c593b472326fc373c0b715865b839cca3b6bcf45
-ms.sourcegitcommit: cababb51721f6ab6b61dda6d18345514f074fb2e
-ms.translationtype: MT
+ms.openlocfilehash: 09d4038e705fb3bc4ff2c82daf5dc4c07f346f94
+ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66480250"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66751756"
 ---
 # <a name="tutorial-create-and-run-a-jupyter-notebook-with-python"></a>Руководство. Создание и запуск записной книжки Jupyter с помощью Python
 
@@ -49,7 +49,7 @@ ms.locfileid: "66480250"
 
 ## <a name="create-the-data-file"></a>Создание файла данных
 
-Модель линейной регрессии, которую вы создадите в записной книжке, извлекает данные из содержащегося в проекте файла с именем *cricket_chirps.csv*. Можно создать этот файл, скопировав ее из [GitHub - примеры записных книжек Azure](https://github.com/Microsoft/AzureNotebooks/tree/master/Samples/Linear%20Regression%20-%20Cricket%20Chirps), либо непосредственно введя данные. В следующих разделах описаны оба подхода.
+Модель линейной регрессии, которую вы создадите в записной книжке, извлекает данные из содержащегося в проекте файла с именем *cricket_chirps.csv*. Этот файл можно создать, скопировав его со страницы [примеров для Записных книжек Azure на сайте GitHub](https://github.com/Microsoft/AzureNotebooks/tree/master/Samples/Linear%20Regression%20-%20Cricket%20Chirps), непосредственно введя данные. В следующих разделах описаны оба подхода.
 
 ### <a name="upload-the-data-file"></a>Отправка файла данных
 
@@ -150,7 +150,7 @@ ms.locfileid: "66480250"
 
 Команды в меню разделяются на следующие группы:
 
-| Меню | Описание |
+| Меню | ОПИСАНИЕ |
 | --- | --- |
 | Файл | Команды для управления файлом записной книжки, включая команды создания и копирования записных книжек, предварительного просмотра для печати и скачивания записной книжки в различных форматах. |
 | Редактирование | Типовые команды вырезания, копирования и вставки ячеек, поиска и замены значений, управления вложениями в ячейках и вставки изображений.  |
@@ -160,7 +160,7 @@ ms.locfileid: "66480250"
 | Kernel (Ядро) | Команды для управления способом выполнения кода в ядре, а также команда **Change kernel** (Изменить ядро) для изменения языка или версии Python, используемой для запуска записной книжки. |
 | Данные | Команды для отправки и скачивания файлов из проекта или сеанса. См. статью о [работе с файлами данных проекта](work-with-project-data-files.md). |
 | Мини-приложения | Команды для управления [мини-приложениями Jupyter](https://ipywidgets.readthedocs.io/en/stable/examples/Widget%20Basics.html), которые предоставляют дополнительные возможности для визуализации, построения карт и графиков.|
-| Help | Команды, предоставляющие справочные сведения и документацию по интерфейсу Jupyter. |
+| Справка | Команды, предоставляющие справочные сведения и документацию по интерфейсу Jupyter. |
 
 Большинству команд на панели инструментов соответствуют эквивалентные команды меню. Единственным исключением является команда **Enter/Edit RISE Slideshow** (Открыть/изменить слайд-шоу RISE), которая описывается в статье об [общем доступе к записным книжкам и их представлении](present-jupyter-notebooks-slideshow.md).
 
@@ -419,7 +419,7 @@ ms.locfileid: "66480250"
 
 Чтобы узнать больше о дополнительных функциях Visual Studio Code для записных книжек Jupyter, см. [эту статью](https://code.visualstudio.com/docs/python/jupyter-support).
 
-## <a name="next-steps"></a>Дальнейшие действия
+## <a name="next-steps"></a>Дополнительная информация
 
 - [Обзор примеров записных книжек](azure-notebooks-samples.md)
 

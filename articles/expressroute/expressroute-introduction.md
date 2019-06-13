@@ -8,17 +8,17 @@ ms.topic: overview
 ms.date: 05/20/2019
 ms.author: mialdrid
 ms.custom: seodec18
-ms.openlocfilehash: 9b13c57728c43e02f7ebf9d7730d82d681f5fc1f
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.openlocfilehash: 6d83cb76abad3923dc7f0473f4a609938093d990
+ms.sourcegitcommit: 1aefdf876c95bf6c07b12eb8c5fab98e92948000
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65965877"
+ms.lasthandoff: 06/06/2019
+ms.locfileid: "66730494"
 ---
 # <a name="expressroute-overview"></a>Обзор ExpressRoute
 ExpressRoute позволяет переносить локальные сети в Microsoft Cloud по частному подключению, которое обеспечивается поставщиком услуг подключения. ExpressRoute позволяет устанавливать подключения к облачным службам Майкрософт, таким как Microsoft Azure, Office 365 и Dynamics 365.
 
-Это может быть подключение типа "любой к любому" (IP VPN), подключение Ethernet типа "точка-точка" или виртуальное кросс-подключение через поставщика услуг подключения на совместно используемом сервере. Подключения ExpressRoute не проходят через общедоступный Интернет. Это обеспечивает повышенный уровень безопасности, надежности и быстродействия подключений ExpressRoute и более низкий уровень задержки по сравнению с типовыми подключениями через Интернет. Сведения о том, как подключить сеть к облаку Майкрософт с помощью ExpressRoute, см. в статье [Модели подключения ExpressRoute](expressroute-connectivity-models.md).
+Это может быть подключение типа "любой к любому" (IP VPN), подключение Ethernet типа "точка-точка" или виртуальное кросс-подключение через поставщика услуг подключения на совместно используемом сервере. Подключения ExpressRoute не проходят через общедоступный Интернет. Это обеспечивает повышенный уровень безопасности, надежности и быстродействия подключений ExpressRoute и сопоставимый уровень задержек по сравнению с типовыми подключениями через Интернет. Сведения о том, как подключить сеть к облаку Майкрософт с помощью ExpressRoute, см. в статье [Модели подключения ExpressRoute](expressroute-connectivity-models.md).
 
 ![Варианты подключения ExpressRoute](./media/expressroute-introduction/expressroute-connection-overview.png)
 
