@@ -13,10 +13,10 @@ ms.reviewer: martincoetzer
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 3a3a57fbe5df690e4dbdba8cbab85e62648bb298
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60295384"
 ---
 # <a name="factors-influencing-the-performance-of-azure-ad-connect"></a>Факторы, влияющие на производительность Azure AD Connect
@@ -26,7 +26,7 @@ Azure AD Connect синхронизирует ваш Active Directory с Azure A
 | **Фактор проектирования**| **Определение** |
 |:-|-|
 | Топология| Распределение конечных точек и компонентов, которыми Azure AD Connect необходимо управлять в сети. |
-| Масштаб| Число объектов, таких как пользователи, группы и подразделения, которыми необходимо управлять с помощью Azure AD Connect. |
+| Масштабирование| Число объектов, таких как пользователи, группы и подразделения, которыми необходимо управлять с помощью Azure AD Connect. |
 | Оборудование| Оборудование (физическое или виртуальное) для Azure AD Connect и зависимая производительность каждого компонента оборудования, включая конфигурацию ЦП, памяти, сети и жесткого диска. |
 | Параметр Configuration| Как Azure AD Connect обрабатывает каталоги и информацию. |
 | загрузить| Частота изменений объектов. Нагрузки могут меняться в течение часа, дня или недели. В зависимости от компонента может потребоваться разработка с учетом пиковой или средней нагрузки. |
