@@ -16,10 +16,10 @@ ms.date: 01/26/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 121d147a3f8c91f17e955120b2c14f7dbd3da592
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60280120"
 ---
 # <a name="tutorial-configure-docusign-for-automatic-user-provisioning"></a>Руководство по Настройка DocuSign для автоматической подготовки пользователей
@@ -76,7 +76,7 @@ ms.locfileid: "60280120"
    
     a. В текстовом поле **Имя пользователя администратора** введите имя учетной записи DocuSign, для которой в DocuSign.com назначен профиль **Системный администратор**.
    
-    2. В текстовом поле **Пароль администратора** введите пароль для этой учетной записи.
+    2\. В текстовом поле **Пароль администратора** введите пароль для этой учетной записи.
 
 1. На портале Azure щелкните **Проверить подключение**, чтобы убедиться, что Azure AD может подключиться к приложению DocuSign.
 

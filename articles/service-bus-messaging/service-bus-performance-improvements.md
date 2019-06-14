@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 09/14/2018
 ms.author: aschhab
 ms.openlocfilehash: f5ce8a237bc2ba7fe15acfcd6afa0edcda7ef713
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60589652"
 ---
 # <a name="best-practices-for-performance-improvements-using-service-bus-messaging"></a>Рекомендации по повышению производительности с помощью обмена сообщениями через служебную шину
@@ -84,7 +84,7 @@ ms.locfileid: "60589652"
 
 По умолчанию интервал пакетной обработки в клиенте составляет 20 мс. Интервал пакетной обработки можно изменить с помощью свойства [BatchFlushInterval][BatchFlushInterval], которое задается перед созданием фабрики обмена сообщениями. Этот параметр влияет на все клиенты, создаваемые этой фабрикой.
 
-Чтобы отключить пакетную обработку, задайте для свойства [BatchFlushInterval][BatchFlushInterval] значение **TimeSpan.Zero**. Например: 
+Чтобы отключить пакетную обработку, задайте для свойства [BatchFlushInterval][BatchFlushInterval] значение **TimeSpan.Zero**. Пример:
 
 ```csharp
 MessagingFactorySettings mfs = new MessagingFactorySettings();
@@ -113,7 +113,7 @@ MessagingFactory messagingFactory = MessagingFactory.Create(namespaceUri, mfs);
 
 Последующие операции с хранилищем, выполняемые в течение этого периода, добавляются в пакет. Пакетный доступ к хранилищу влияет только на операции **отправки** и **завершения**. Операции получения не затрагиваются. Пакетный доступ к хранилищу является свойством сущности. Пакетная обработка применяется ко всем сущностям, для которых включен пакетный доступ к хранилищу.
 
-При создании новой очереди, раздела или подписки пакетный доступ к хранилищу включен по умолчанию. Чтобы отключить пакетный доступ к хранилищу, задайте для свойства [EnableBatchedOperations][EnableBatchedOperations] значение **false** перед созданием сущности. Например: 
+При создании новой очереди, раздела или подписки пакетный доступ к хранилищу включен по умолчанию. Чтобы отключить пакетный доступ к хранилищу, задайте для свойства [EnableBatchedOperations][EnableBatchedOperations] значение **false** перед созданием сущности. Пример:
 
 ```csharp
 QueueDescription qd = new QueueDescription();

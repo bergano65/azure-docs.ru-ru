@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 12/02/2016
 ms.author: ghogen
 ms.openlocfilehash: a9a4475465fefb01ec53e6e0eb814f9b8f192a1b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60390834"
 ---
 # <a name="getting-started-with-azure-storage-azure-webjob-projects"></a>Начало работы со службой хранилища Azure (проекты веб-заданий Azure)
@@ -30,7 +30,7 @@ ms.locfileid: "60390834"
 В некоторых фрагментах кода демонстрируется использование атрибута **Table** в функциях, вызванных вручную, т. е. без использования атрибутов активации.
 
 ## <a name="how-to-add-entities-to-a-table"></a>Как добавить сущность в таблицу
-Чтобы добавить сущности в таблицу, используйте атрибут **Table** с параметром **ICollector<T>** или **IAsyncCollector<T>**, где **T** обозначает схему сущностей, которые нужно добавить. Конструктор атрибута принимает строковый параметр, который указывает имя таблицы.
+Чтобы добавить сущности в таблицу, используйте атрибут **Table** с параметром **ICollector<T>** или **IAsyncCollector<T>** , где **T** обозначает схему сущностей, которые нужно добавить. Конструктор атрибута принимает строковый параметр, который указывает имя таблицы.
 
 Следующий пример кода добавляет сущности **Person** в таблицу с именем *Ingress*.
 
@@ -79,7 +79,7 @@ ms.locfileid: "60390834"
 ![Функция входа выполнена](./media/vs-storage-webjobs-getting-started-tables/ingresssuccess.png)
 
 ## <a name="how-to-read-multiple-entities-from-a-table"></a>Как выполнять чтение нескольких сущностей из таблицы
-Для чтения таблиц используйте атрибут **Table** с параметром **IQueryable<T>**, где тип **T** является производным от **TableEntity** или реализует **ITableEntity**.
+Для чтения таблиц используйте атрибут **Table** с параметром **IQueryable<T>** , где тип **T** является производным от **TableEntity** или реализует **ITableEntity**.
 
 Следующий пример кода считывает и записывает все строки таблицы **Ingress** .
 

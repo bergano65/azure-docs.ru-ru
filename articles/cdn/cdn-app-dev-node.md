@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 01/23/2017
 ms.author: mazha
 ms.openlocfilehash: 48a84520a61d19968b467091871459e21898dd5e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60564248"
 ---
 # <a name="get-started-with-azure-cdn-development"></a>Приступая к разработке для Azure CDN
@@ -86,7 +86,7 @@ ms.locfileid: "60564248"
     var msRestAzure = require('ms-rest-azure');
     var cdnManagementClient = require('azure-arm-cdn');
     ```
-2. Необходимо определить несколько констант, которые будут использоваться нашими методами.  Добавьте следующий код.  Обязательно замените заполнители, включая **&lt;угловые скобки&gt;**, собственными значениями.
+2. Необходимо определить несколько констант, которые будут использоваться нашими методами.  Добавьте следующий код.  Обязательно замените заполнители, включая **&lt;угловые скобки&gt;** , собственными значениями.
    
     ``` javascript
     //Tenant app constants
@@ -119,7 +119,7 @@ ms.locfileid: "60564248"
     var cdnClient = new cdnManagementClient(credentials, subscriptionId);
     ```
    
-    Не забудьте заменить правильными данными все элементы в **&lt;угловых скобках&gt;**.  Вместо `<redirect URI>`укажите универсальный код ресурса (URI) перенаправления, который вы ввели при регистрации приложения в Azure AD.
+    Не забудьте заменить правильными данными все элементы в **&lt;угловых скобках&gt;** .  Вместо `<redirect URI>`укажите универсальный код ресурса (URI) перенаправления, который вы ввели при регистрации приложения в Azure AD.
 4. Консольное приложение Node.js будет принимать некоторые параметры командной строки.  Давайте добавим проверку того, что передан хотя бы один параметр.
    
    ```javascript

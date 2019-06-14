@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 08/23/2018
 ms.author: meladie
 ms.openlocfilehash: c17f16ce796c9f296facd69c18de4effc7ff5258
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60610163"
 ---
 # <a name="azure-security-and-compliance-blueprint---paas-web-application-for-australia-protected"></a>Схема безопасности и соответствия требованиям Azure. Веб-приложение PaaS для среды AU-PROTECTED
@@ -52,8 +52,8 @@ ms.locfileid: "60610163"
 - Среда службы приложений Azure версии 2
 - Служба автоматизации Azure
 - Azure DNS
-- Хранилище Azure Key Vault
-- Балансировщик нагрузки Azure
+- Хранилище ключей Azure
+- Azure Load Balancer
 - Azure Monitor
 - Azure Resource Manager
 - Центр безопасности Azure

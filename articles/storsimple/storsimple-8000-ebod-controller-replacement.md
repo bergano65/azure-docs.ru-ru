@@ -15,10 +15,10 @@ ms.workload: TBD
 ms.date: 06/02/2017
 ms.author: alkohli
 ms.openlocfilehash: b05d1f36d1e74b3d915e216676859654fbcbacf3
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60578697"
 ---
 # <a name="replace-an-ebod-controller-on-your-storsimple-device"></a>Замена контроллера EBOD на устройстве StorSimple
@@ -54,12 +54,12 @@ ms.locfileid: "60578697"
    
      **Рис. 1.** Задняя поверхность модуля EBOD
    
-   | Метка | ОПИСАНИЕ |
+   | Метка | Описание |
    |:--- |:--- |
    | 1 |Индикатор сбоя |
    | 2 |Индикатор питания |
    | 3 |Соединители SAS |
-   | 4. |Индикаторы SAS |
+   | 4\. |Индикаторы SAS |
    | 5 |Последовательные порты только для служебного использования |
    | 6 |Порт A (Входной порт узла) |
    | 7 |Порт B (Выходной порт узла) |
@@ -86,12 +86,12 @@ ms.locfileid: "60578697"
    
     **Рис. 4**. Повторное подключение кабелей
    
-   | Метка | ОПИСАНИЕ |
+   | Метка | Описание |
    |:--- |:--- |
    | 1 |Основной корпус |
    | 2 |PCM 0 |
    | 3 |PCM 1 |
-   | 4. |Контроллер 0 |
+   | 4\. |Контроллер 0 |
    | 5 |Контроллер 1 |
    | 6 |Контроллер EBOD 0 |
    | 7 |Контроллер EBOD 1 |

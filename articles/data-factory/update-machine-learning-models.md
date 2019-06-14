@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 01/16/2018
 ms.author: shlo
 ms.openlocfilehash: 8f1320db0af85f6c83a9daf8e17a691336c9b251
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60335494"
 ---
 # <a name="update-azure-machine-learning-models-by-using-update-resource-activity"></a>Обновление моделей машинного обучения Azure с помощью действия обновления ресурса
@@ -59,13 +59,13 @@ ms.locfileid: "60335494"
 
 | Свойство                      | ОПИСАНИЕ                              | Обязательно для заполнения |
 | :---------------------------- | :--------------------------------------- | :------- |
-| name                          | Имя действия в конвейере.     | Yes      |
-| description                   | Описание действия.  | Нет        |
-| Тип                          | Для действия обновления ресурса в службе машинного обучения Azure тип действия — **AzureMLUpdateResource**. | Yes      |
-| linkedServiceName             | Связанная служба машинного обучения Azure, которая содержит свойство updateResourceEndpoint. | Yes      |
-| trainedModelName              | Имя модуля модели обучения для обновления в эксперименте веб-службы. | Yes      |
-| trainedModelLinkedServiceName | Имя связанной службы хранилища Azure, содержащей файл iLearner, который был отправлен действием обновления. | Yes      |
-| trainedModelFilePath          | Относительный путь к файлу в trainedModelLinkedService для представления файла iLearner, который отправлен действием обновления. | Yes      |
+| name                          | Имя действия в конвейере.     | Да      |
+| description                   | Описание действия.  | Нет       |
+| type                          | Для действия обновления ресурса в службе машинного обучения Azure тип действия — **AzureMLUpdateResource**. | Да      |
+| linkedServiceName             | Связанная служба машинного обучения Azure, которая содержит свойство updateResourceEndpoint. | Да      |
+| trainedModelName              | Имя модуля модели обучения для обновления в эксперименте веб-службы. | Да      |
+| trainedModelLinkedServiceName | Имя связанной службы хранилища Azure, содержащей файл iLearner, который был отправлен действием обновления. | Да      |
+| trainedModelFilePath          | Относительный путь к файлу в trainedModelLinkedService для представления файла iLearner, который отправлен действием обновления. | Да      |
 
 ## <a name="end-to-end-workflow"></a>Комплексный рабочий процесс
 

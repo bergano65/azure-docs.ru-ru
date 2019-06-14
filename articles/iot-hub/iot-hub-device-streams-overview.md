@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 01/15/2019
 ms.author: rezas
 ms.openlocfilehash: 672b06dda41edb18cbf31352188b0fdd2a155782
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60401108"
 ---
 # <a name="iot-hub-device-streams-preview"></a>Потоки устройств Центра Интернета вещей (предварительная версия)
@@ -198,7 +198,7 @@ az iot hub devicestream show --name <YourIoTHubName>
 | SDK    | Локальный прокси-сервер службы                                       | Локальный прокси-сервер устройства                                |
 |--------|-----------------------------------------------------------|---------------------------------------------------|
 | C#     | [Ссылка](quickstart-device-streams-proxy-csharp.md)  | [Ссылка](quickstart-device-streams-proxy-csharp.md) |
-| NodeJS | [Ссылка](quickstart-device-streams-proxy-nodejs.md)         | -                                                 |
+| Node.js | [Ссылка](quickstart-device-streams-proxy-nodejs.md)         | -                                                 |
 | C      | -                                                         | [Ссылка](quickstart-device-streams-proxy-c.md)      |
 
 ## <a name="next-steps"></a>Дальнейшие действия

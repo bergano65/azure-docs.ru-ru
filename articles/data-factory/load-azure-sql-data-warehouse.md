@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 06/22/2018
 ms.author: jingwang
 ms.openlocfilehash: 6a7e0a27d3cda4193a04467d541f851a9e57fa46
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60549092"
 ---
 # <a name="load-data-into-azure-sql-data-warehouse-by-using-azure-data-factory"></a>Загрузка данных в службу "Хранилище данных SQL Azure" с помощью службы "Фабрика данных Azure"
@@ -40,7 +40,7 @@ ms.locfileid: "60549092"
 
 * Подписка Azure. Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/), прежде чем начинать работу.
 * Хранилище данных SQL Azure. Хранилище данных содержит данные, копируемые из базы данных SQL. Если у вас нет хранилища данных SQL Azure, см. руководство [Загрузка данных из хранилища BLOB-объектов Azure в хранилище данных SQL Azure с помощью PolyBase](../sql-data-warehouse/sql-data-warehouse-get-started-tutorial.md).
-* Подключение к базе данных SQL Azure и Этом руководстве данные копируются из базы данных Azure SQL с Adventure Works LT демонстрационными данными. Вы можете создать базу данных SQL, следуя указаниям в статье [Создание базы данных SQL Azure на портале Azure](../sql-database/sql-database-get-started-portal.md). 
+* База данных SQL Azure: Этом руководстве данные копируются из базы данных Azure SQL с Adventure Works LT демонстрационными данными. Вы можете создать базу данных SQL, следуя указаниям в статье [Создание базы данных SQL Azure на портале Azure](../sql-database/sql-database-get-started-portal.md). 
 * Учетная запись хранения Azure: Служба хранилища Azure используется в качестве _промежуточных_ BLOB-объектов в операции массового копирования. Если у вас нет учетной записи хранения Azure, см. инструкции по [ее созданию](../storage/common/storage-quickstart-create-account.md).
 
 ## <a name="create-a-data-factory"></a>Создание фабрики данных
@@ -53,7 +53,7 @@ ms.locfileid: "60549092"
       
    ![Страница "Новая фабрика данных"](./media/load-azure-sql-data-warehouse/new-azure-data-factory.png)
  
-    * **Имя.** Введите глобальное уникальное имя фабрики данных Azure. Если отобразится сообщение об ошибке "Имя \"LoadSQLDWDemo\" фабрики данных недоступно", введите другое имя. Например, вы можете использовать имя _**ваше_имя**_**ADFTutorialDataFactory**. Попробуйте создать фабрику данных еще раз. Правила именования артефактов службы "Фабрика данных" см. в [этой](naming-rules.md) статье.
+    * **Имя.** Введите глобальное уникальное имя фабрики данных Azure. Если отобразится сообщение об ошибке "Имя \"LoadSQLDWDemo\" фабрики данных недоступно", введите другое имя. Например, вы можете использовать имя _**ваше_имя**_ **ADFTutorialDataFactory**. Попробуйте создать фабрику данных еще раз. Правила именования артефактов службы "Фабрика данных" см. в [этой](naming-rules.md) статье.
     * **Подписка**: Выберите подписку Azure, в рамках которой нужно создать фабрику данных. 
     * **Группа ресурсов.** Выберите существующую группу ресурсов из раскрывающегося списка или щелкните вариант **Создать новую** и введите имя группы ресурсов. Сведения о группах ресурсов см. в статье, где описывается [использование групп ресурсов для управления ресурсами Azure](../azure-resource-manager/resource-group-overview.md).  
     * **Версия.** Выберите **V2**.
@@ -81,7 +81,7 @@ ms.locfileid: "60549092"
 
     ![Страница исходного хранилища данных](./media/load-azure-sql-data-warehouse/new-source-linked-service.png)
 
-    2. В коллекции выберите элемент **База данных SQL Azure** и нажмите кнопку **Продолжить**. Вы можете ввести текст "SQL" в поле поиска, чтобы отфильтровать соединители.
+    2\. В коллекции выберите элемент **База данных SQL Azure** и нажмите кнопку **Продолжить**. Вы можете ввести текст "SQL" в поле поиска, чтобы отфильтровать соединители.
 
     ![Выбор Базы данных SQL Azure](./media/load-azure-sql-data-warehouse/select-azure-sql-db-source.png)
 
@@ -103,7 +103,7 @@ ms.locfileid: "60549092"
 
     ![Страница хранилища данных, выступающего в роли приемника](./media/load-azure-sql-data-warehouse/new-sink-linked-service.png)
 
-    2. В коллекции выберите элемент **Хранилище данных SQL Azure** и нажмите кнопку **Далее**.
+    2\. В коллекции выберите элемент **Хранилище данных SQL Azure** и нажмите кнопку **Далее**.
 
     ![Выбор хранилища данных SQL Azure](./media/load-azure-sql-data-warehouse/select-azure-sql-dw-sink.png)
 
@@ -132,7 +132,7 @@ ms.locfileid: "60549092"
 
     ![Настройка промежуточного хранения](./media/load-azure-sql-data-warehouse/configure-staging.png)
 
-    2. На странице **New Linked Service** (Новая связанная служба) выберите учетную запись хранения и нажмите кнопку **Готово**.
+    2\. На странице **New Linked Service** (Новая связанная служба) выберите учетную запись хранения и нажмите кнопку **Готово**.
    
     ![Настройка службы хранилища Azure](./media/load-azure-sql-data-warehouse/configure-blob-storage.png)
 

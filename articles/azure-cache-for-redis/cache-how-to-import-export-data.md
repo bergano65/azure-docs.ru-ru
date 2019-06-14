@@ -12,14 +12,13 @@ ms.workload: tbd
 ms.tgt_pltfrm: cache
 ms.devlang: na
 ms.topic: article
-origin.date: 07/31/2017
-ms.date: 02/27/2019
-ms.author: v-junlch
+ms.date: 07/31/2017
+ms.author: yegu
 ms.openlocfilehash: dfa8b47ced70386efa1daa44af318f1da55f49e1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60542345"
 ---
 # <a name="import-and-export-data-in-azure-cache-for-redis"></a>Импорт и экспорт данных в кэше Azure для Redis
@@ -100,16 +99,16 @@ ms.locfileid: "60542345"
 ## <a name="importexport-faq"></a>Часто задаваемые вопросы о функции импорта/экспорта
 Этот раздел содержит часто задаваемые вопросы о функции импорта/экспорта.
 
-- [В каких ценовых категориях можно функцию импорта/экспорта?](#what-pricing-tiers-can-use-importexport)
-- [Можно ли импортировать данные с любого сервера Redis?](#can-i-import-data-from-any-redis-server)
-- [Какие версии RDB-файлов можно импортировать?](#what-rdb-versions-can-i-import)
-- [Доступен ли кэш во время операции импорта или экспорта?](#is-my-cache-available-during-an-importexport-operation)
-- [Можно использовать функцию импорта/экспорта с кластером Redis?](#can-i-use-importexport-with-redis-cluster)
-- [Как работает импорт и экспорт в базах данных с пользовательскими настройками?](#how-does-importexport-work-with-a-custom-databases-setting)
-- [Чем отличается функция импорта/экспорта от сохраняемости Redis?](#how-is-importexport-different-from-redis-persistence)
-- [Можно ли автоматизировать функцию импорта/экспорта с помощью PowerShell, интерфейса командной строки или других клиентов управления?](#can-i-automate-importexport-using-powershell-cli-or-other-management-clients)
-- [Возникла ошибка времени ожидания во время операции импорта или экспорта. Что это означает?](#i-received-a-timeout-error-during-my-importexport-operation-what-does-it-mean)
-- [При экспорте данных в хранилище BLOB-объектов Azure возникла ошибка. Что произошло?](#i-got-an-error-when-exporting-my-data-to-azure-blob-storage-what-happened)
+* [В каких ценовых категориях можно функцию импорта/экспорта?](#what-pricing-tiers-can-use-importexport)
+* [Можно ли импортировать данные с любого сервера Redis?](#can-i-import-data-from-any-redis-server)
+* [Какие версии RDB-файлов можно импортировать?](#what-rdb-versions-can-i-import)
+* [Доступен ли кэш во время операции импорта или экспорта?](#is-my-cache-available-during-an-importexport-operation)
+* [Можно использовать функцию импорта/экспорта с кластером Redis?](#can-i-use-importexport-with-redis-cluster)
+* [Как работает импорт и экспорт в базах данных с пользовательскими настройками?](#how-does-importexport-work-with-a-custom-databases-setting)
+* [Чем отличается функция импорта/экспорта от сохраняемости Redis?](#how-is-importexport-different-from-redis-persistence)
+* [Можно ли автоматизировать функцию импорта/экспорта с помощью PowerShell, интерфейса командной строки или других клиентов управления?](#can-i-automate-importexport-using-powershell-cli-or-other-management-clients)
+* [Возникла ошибка времени ожидания во время операции импорта или экспорта. Что это означает?](#i-received-a-timeout-error-during-my-importexport-operation-what-does-it-mean)
+* [При экспорте данных в хранилище BLOB-объектов Azure возникла ошибка. Что произошло?](#i-got-an-error-when-exporting-my-data-to-azure-blob-storage-what-happened)
 
 ### <a name="what-pricing-tiers-can-use-importexport"></a>В каких ценовых категориях можно функцию импорта/экспорта?
 Функция импорта/экспорта доступна только в ценовой категории "Премиум".
@@ -127,8 +126,8 @@ ms.locfileid: "60542345"
 Кэш Azure для Redis поддерживает импорт RDB-файлов вплоть до RDB версии 7.
 
 ### <a name="is-my-cache-available-during-an-importexport-operation"></a>Доступен ли кэш во время операции импорта или экспорта?
-- **Экспорт** — кэши остаются доступными, и во время операции экспорта можно продолжить работу с кэшем.
-- **Импорт** — кэши становятся недоступными при запуске операции импорта, а по ее завершении вновь становятся доступными для использования.
+* **Экспорт** — кэши остаются доступными, и во время операции экспорта можно продолжить работу с кэшем.
+* **Импорт** — кэши становятся недоступными при запуске операции импорта, а по ее завершении вновь становятся доступными для использования.
 
 ### <a name="can-i-use-importexport-with-redis-cluster"></a>Можно использовать функцию импорта/экспорта с кластером Redis?
 Да, и вы можете выполнять импорт/экспорт между кластеризованным и некластеризованный кэшами. Так как кластер Redis [поддерживает только базу данных 0](cache-how-to-premium-clustering.md#do-i-need-to-make-any-changes-to-my-client-application-to-use-clustering), данные в базах данных, отличных от 0, не импортируются. При импорте данных кластеризованного кэша ключи перераспределяются между сегментами кластера.
@@ -136,10 +135,10 @@ ms.locfileid: "60542345"
 ### <a name="how-does-importexport-work-with-a-custom-databases-setting"></a>Как работает импорт и экспорт в базах данных с пользовательскими настройками?
 Некоторые ценовые категории имеют различные [ограничения для количества баз данных](cache-configure.md#databases), поэтому существуют определенные рекомендации по импорту, актуальные, если вы задали пользовательское значение для параметра `databases` во время создания кэша.
 
-- При импорте в ценовую категорию с более низким ограничением для параметра `databases` , чем у категории, из которой выполняется импорт:
-  - Если вы используете заданное по умолчанию количество `databases` (16 для всех ценовых категорий), то данные не теряются.
-  - Если вы используете настраиваемое количество `databases` , находящееся в пределах категории, в которую выполняется импорт, данные не теряются.
-  - Если экспортируемые данные включают в себя данные из баз данных, которые являются превышением ограничения для новой категории, данные из таких баз данных не импортируются.
+* При импорте в ценовую категорию с более низким ограничением для параметра `databases` , чем у категории, из которой выполняется импорт:
+  * Если вы используете заданное по умолчанию количество `databases` (16 для всех ценовых категорий), то данные не теряются.
+  * Если вы используете настраиваемое количество `databases` , находящееся в пределах категории, в которую выполняется импорт, данные не теряются.
+  * Если экспортируемые данные включают в себя данные из баз данных, которые являются превышением ограничения для новой категории, данные из таких баз данных не импортируются.
 
 ### <a name="how-is-importexport-different-from-redis-persistence"></a>Чем отличается функция импорта/экспорта от сохраняемости Redis?
 Сохраняемость кэша Azure для Redis обеспечивает целостность данных в кэше Redis посредством службы хранилища Azure. Если настроена сохраняемость, кэш Azure для Redis сохраняет собственный моментальный снимок на диске в двоичном формате Redis в соответствии с настроенной частотой резервного копирования. В случае аварии, при которой становятся недоступными как основной экземпляр кэша, так и реплика кэша, данные кэша восстанавливаются автоматически из последнего моментального снимка. Дополнительные сведения см. в статье [How to configure data persistence for a Premium Azure Cache for Redis](cache-how-to-premium-persistence.md) (Настройка сохраняемости для кэша Azure для Redis уровня "Премиум").
@@ -162,7 +161,7 @@ ms.locfileid: "60542345"
 ## <a name="next-steps"></a>Дальнейшие действия
 Узнайте, как использовать расширенные функции кэша.
 
-- [Общие сведения о кэше Azure для Redis уровня "Премиум"](cache-premium-tier-intro.md)    
+* [Общие сведения о кэше Azure для Redis уровня "Премиум"](cache-premium-tier-intro.md)    
 
 <!-- IMAGES -->
 [cache-settings-import-export-menu]: ./media/cache-how-to-import-export-data/cache-settings-import-export-menu.png
@@ -177,6 +176,3 @@ ms.locfileid: "60542345"
 [cache-import-choose-blobs]: ./media/cache-how-to-import-export-data/cache-import-choose-blobs.png
 [cache-import-blobs]: ./media/cache-how-to-import-export-data/cache-import-blobs.png
 [cache-import-data-import-complete]: ./media/cache-how-to-import-export-data/cache-import-data-import-complete.png
-
-
-<!-- Update_Description: update metedata properties -->

@@ -6,16 +6,16 @@ metadata:
   title: "Базы данных SQL Azure\_— масштабируемость"
   meta.description: Learn how to scale your Azure SQL Database.
   services: sql-database
-  author: WenJason
-  manager: digimobile
+  ms.subservice: scale-out
+  author: jovanpop-msft
+  manager: craigg
   requires-business-manager-approval: false
   ms.service: sql-database
   ms.tgt_pltfrm: na
   ms.devlang: null
   ms.topic: overview
-  origin.date: 01/25/2019
-  ms.date: 02/25/2019
-  ms.author: v-jay
+  ms.date: 01/25/2019
+  ms.author: jovanpop-msft
 sections:
   - items:
       - type: paragraph
@@ -26,22 +26,22 @@ sections:
         columns: 3
         items:
           - title: Вертикальное масштабирование
-            href: /sql-database/sql-database-scale-resources
+            href: /azure/sql-database/sql-database-scale-resources
             html: '<p>Легко добавляйте или удаляйте ресурсы в вашей Базе данных SQL, чтобы найти лучшее соотношение цены и производительности или устранить проблемы с производительностью.</p>'
           - title: Горизонтальное масштабирование для чтения
-            href: /sql-database/sql-database-read-scale-out
+            href: /azure/sql-database/sql-database-read-scale-out
             html: '<p>Уровень "Критически важный для бизнеса" предоставляет бесплатную реплику базы данных, где можно запускать отчеты, аналитику и другие запросы только для чтения к копиям данных.</p>'
           - title: Сегментирование базы данных
-            href: /sql-database/sql-database-elastic-scale-introduction
+            href: /azure/sql-database/sql-database-elastic-scale-introduction
             html: '<p>Вы можете использовать несколько сегментов баз данных для горизонтального масштабирования базы данных, превышая максимальные пределы ресурсов вычисления и хранения для отдельной базы данных.</p>'
           - title: Эластичные запросы
-            href: /sql-database/sql-database-elastic-query-overview
+            href: /azure/sql-database/sql-database-elastic-query-overview
             html: <p>Эластичные запросы позволяют выполнять стандартные запросы Transact-SQL к набору сегментов глобально распределенной базы данных.</p>
           - title: Эластичные транзакции
-            href: /sql-database/sql-database-elastic-transactions-overview
+            href: /azure/sql-database/sql-database-elastic-transactions-overview
             html: '<p>Используйте глобально распределенные транзакции, чтобы обеспечить транзакционно согласованный доступ к распределенным данным.</p>'
           - title: Перекрестные задания баз данных
-            href: /sql-database/elastic-jobs-overview
+            href: /azure/sql-database/elastic-jobs-overview
             html: <p>Обрабатывайте набор баз данных с помощью эластичных заданий обработки межбазовых данных.</p>
   - title: Дополнительные ресурсы
     items:

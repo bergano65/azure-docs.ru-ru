@@ -16,10 +16,10 @@ ms.date: 03/27/2019
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ea1f4d4a6b60961515826a1ba7409bf149b318e8
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60277041"
 ---
 # <a name="tutorial-configure-g-suite-for-automatic-user-provisioning"></a>Руководство по настройке G Suite для автоматической подготовки пользователей
@@ -87,7 +87,7 @@ ms.locfileid: "60277041"
   
     a. На [портале Azure](https://portal.azure.com) в области навигации слева выберите **Active Directory**. Выберите свой каталог в списке каталогов.
 
-    2. Выберите **Доменное имя** в левой области навигации, а затем — **Добавить**.
+    2\. Выберите **Доменное имя** в левой области навигации, а затем — **Добавить**.
 
     ![Домен](./media/google-apps-provisioning-tutorial/domain_1.png)
 
@@ -114,7 +114,7 @@ ms.locfileid: "60277041"
 
     ![Выбор доменов][20]
 
-    2. Выберите **Add a domain or a domain alias** (Добавить домен или псевдоним домена).
+    2\. Выберите **Add a domain or a domain alias** (Добавить домен или псевдоним домена).
 
     ![Добавление нового домена][21]
 

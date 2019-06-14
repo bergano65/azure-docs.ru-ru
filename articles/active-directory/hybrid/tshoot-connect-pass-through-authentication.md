@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ae83cea866367fa6a6596caa683d0287bea96c29
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60456177"
 ---
 # <a name="troubleshoot-azure-active-directory-pass-through-authentication"></a>Устранение неполадок в работе сквозной аутентификации Azure Active Directory
@@ -44,7 +44,7 @@ ms.locfileid: "60456177"
 
 Если пользователи не могут выполнить вход с использованием сквозной аутентификации, для них могут отображаться следующие ошибки на экране входа в Azure AD: 
 
-|Ошибка|ОПИСАНИЕ|Способы устранения:
+|Ошибка|Описание|Способы устранения:
 | --- | --- | ---
 |AADSTS80001|Не удалось подключиться к Active Directory|Убедитесь, что серверы с агентами являются членами того же леса, что и пользователи, чьи пароли должны быть проверены, и могут подключиться к Active Directory.  
 |AADSTS8002|Истекло время ожидания подключения к Active Directory|Убедитесь, что служба Active Directory доступна и отвечает на запросы агентов.
@@ -133,7 +133,7 @@ ms.locfileid: "60456177"
 
 ### <a name="detailed-trace-logs"></a>Подробные журналы трассировки
 
-Для диагностики и устранения неполадок при входе пользователей найдите журналы трассировки в папке **%ProgramData%\Microsoft\Azure AD Connect Authentication Agent\Trace\\**. В этих журналах содержатся причины сбоев, возникших при входе пользователей с помощью сквозной аутентификации. Эти ошибки также сопоставляются с причинами ошибок входа, показанными в предыдущей таблице причин ошибок входа. Ниже приведен пример записи в журнале.
+Для диагностики и устранения неполадок при входе пользователей найдите журналы трассировки в папке **%ProgramData%\Microsoft\Azure AD Connect Authentication Agent\Trace\\** . В этих журналах содержатся причины сбоев, возникших при входе пользователей с помощью сквозной аутентификации. Эти ошибки также сопоставляются с причинами ошибок входа, показанными в предыдущей таблице причин ошибок входа. Ниже приведен пример записи в журнале.
 
 ```
     AzureADConnectAuthenticationAgentService.exe Error: 0 : Passthrough Authentication request failed. RequestId: 'df63f4a4-68b9-44ae-8d81-6ad2d844d84e'. Reason: '1328'.
@@ -161,7 +161,7 @@ ms.locfileid: "60456177"
 
 ## <a name="performance-monitor-counters"></a>Счетчики системного монитора
 
-Другой способ наблюдения за агентами аутентификации — отслеживание счетчиков системного монитора на каждом сервере, на котором установлен агент аутентификации. Используйте приведенные глобальные счетчики (**# PTA authentications**, **#PTA failed authentications** и **#PTA successful authentications**) и счетчики ошибок (**# PTA authentication errors**).
+Другой способ наблюдения за агентами аутентификации — отслеживание счетчиков системного монитора на каждом сервере, на котором установлен агент аутентификации. Используйте приведенные глобальные счетчики ( **# PTA authentications**, **#PTA failed authentications** и **#PTA successful authentications**) и счетчики ошибок ( **# PTA authentication errors**).
 
 ![Счетчики системного монитора для сквозной аутентификации](./media/tshoot-connect-pass-through-authentication/pta12.png)
 

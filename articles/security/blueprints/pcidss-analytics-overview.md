@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 07/03/2018
 ms.author: meladie
 ms.openlocfilehash: 6a2ffef9a1384ac2e2a678404171f33312b5d63a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60609523"
 ---
 # <a name="azure-security-and-compliance-blueprint-analytics-for-pci-dss"></a>Схема безопасности и соответствия требованиям Azure. Аналитика для PCI DSS
@@ -48,10 +48,10 @@ Azure предоставляет клиентам множество разли�
 - Application Insights
 - Azure Active Directory
 - Каталог данных Azure
-- Шифрование дисков Azure
+- Дисковое шифрование Azure
 - Сетка событий Azure
 - Функции Azure
-- Хранилище Azure Key Vault
+- Хранилище ключей Azure
 - Машинное обучение Azure
 - Azure Monitor
 - Центр безопасности Azure

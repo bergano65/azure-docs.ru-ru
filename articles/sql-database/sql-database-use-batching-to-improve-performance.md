@@ -13,10 +13,10 @@ ms.reviewer: genemi
 manager: craigg
 ms.date: 01/25/2019
 ms.openlocfilehash: e76b5ecd3d6401c317f6500ec376fc25d3fa55b8
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60331134"
 ---
 # <a name="how-to-use-batching-to-improve-sql-database-application-performance"></a>Как повысить производительность приложений базы данных SQL с помощью пакетной обработки
@@ -105,7 +105,7 @@ using (SqlConnection connection = new SqlConnection(CloudConfigurationManager.Ge
 | 100 |12 662 |10 395 |
 | 1000 |128 852 |102 917 |
 
-**Между средами в Azure (один центр обработки данных)**:
+**Между средами в Azure (один центр обработки данных)** :
 
 | Операции | Без транзакций (мс) | С транзакциями (мс) |
 | --- | --- | --- |

@@ -14,10 +14,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: abfdad1db655c102dbfb300434eac952fe2154dc
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60381892"
 ---
 # <a name="troubleshoot-azure-active-directory-seamless-single-sign-on"></a>Устранение неполадок с простым единым входом Azure Active Directory
@@ -91,7 +91,7 @@ ms.locfileid: "60381892"
 
 ### <a name="domain-controller-logs"></a>Журналы контроллеров домена
 
-Если на контроллере домена включен аудит успешных попыток, то каждый раз, когда пользователь входит в систему с использованием простого единого входа, в журнал событий заносится запись безопасности. Эти события безопасности можно найти с помощью приведенного ниже запроса. (Найдите событие **4769**, связанное с учетной записью компьютера **AzureADSSOAcc$**.)
+Если на контроллере домена включен аудит успешных попыток, то каждый раз, когда пользователь входит в систему с использованием простого единого входа, в журнал событий заносится запись безопасности. Эти события безопасности можно найти с помощью приведенного ниже запроса. (Найдите событие **4769**, связанное с учетной записью компьютера **AzureADSSOAcc$** .)
 
 ```
     <QueryList>

@@ -18,10 +18,10 @@ ms.author: joflore
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 610668768c7baca13cb60caf1d810cced31ebec3
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60452965"
 ---
 # <a name="azure-active-directory-identity-protection---security-overview"></a>Защита идентификации Azure Active Directory. Обзор безопасности
@@ -35,7 +35,7 @@ ms.locfileid: "60452965"
 - Плитки справа выделяют ключевые текущие проблемы в вашей организации и подсказывают, как быстро принять меры.
 
 
-![Обзор безопасности](./media/security-overview/01.png)
+![Обзор системы безопасности](./media/security-overview/01.png)
   
 ## <a name="trends"></a>Тренды
 
@@ -53,7 +53,7 @@ ms.locfileid: "60452965"
 
 На плитке "Пользователи с высоким уровнем риска" отображаются последние данные о количестве пользователей с высокой вероятностью компрометации удостоверения. Это должны быть основным приоритетном для расследования. Щелкнув плитку "Пользователи с высоким уровнем риска", вы перенаправитесь на отфильтрованное представление отчета "Пользователи, совершающие рискованные действия", в котором будут показаны только пользователи с высоким уровнем риска. Используя этот отчет, вы можете узнать больше и применять защитные меры к пользователям с помощью сброса пароля.
 
-![Обзор безопасности](./media/security-overview/02.png)
+![Обзор системы безопасности](./media/security-overview/02.png)
 
 
 ### <a name="medium-risk-users"></a>Пользователи со средним уровнем риска

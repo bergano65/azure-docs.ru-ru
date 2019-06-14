@@ -18,10 +18,10 @@ ms.topic: conceptual
 ms.date: 09/11/2017
 ms.author: gokuma
 ms.openlocfilehash: 586f37ff972a6102da351794365f719a185857fc
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60502262"
 ---
 # <a name="languages-supported-on-the-data-science-virtual-machine"></a>Языки, поддерживаемые на виртуальных машинах для обработки и анализа данных 
@@ -234,12 +234,12 @@ R установлен на DSVM в глобальной среде, котор�
 
 ## <a name="other-languages"></a>Остальные языки
 
-**C#**: доступный в Windows и в выпуске Visual Studio Community или в `Developer Command Prompt for Visual Studio`, где можно просто запустить команду `csc`. 
+**C#** : доступный в Windows и в выпуске Visual Studio Community или в `Developer Command Prompt for Visual Studio`, где можно просто запустить команду `csc`. 
 
 **Java**: OpenJDK доступен в выпусках Linux и Windows DSVM и задан в пути. Для использования Java можно ввести команду `javac` или `java` в командной строке в Windows или в оболочке Bash в Linux. 
 
 **Node.js**: node.js доступен в выпусках Linux и Windows DSVM и задан в пути. Чтобы получить доступ к Node.js, можно ввести команду `node` или `npm` в командной строке в Windows или в оболочке Bash в Linux. В Windows установлены инструменты Node.js для расширения Visual Studio, которые предоставляют графическую IDE для разработки приложения Node.js. 
 
-**F#**: доступный в Windows и в выпуске Visual Studio Community или в `Developer Command Prompt for Visual Studio`, где можно просто запустить команду `fsc`. 
+**F#** : доступный в Windows и в выпуске Visual Studio Community или в `Developer Command Prompt for Visual Studio`, где можно просто запустить команду `fsc`. 
 
 

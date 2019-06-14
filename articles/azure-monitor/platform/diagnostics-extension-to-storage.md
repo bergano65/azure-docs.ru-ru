@@ -9,10 +9,10 @@ ms.date: 08/01/2016
 ms.author: jeconnoc
 ms.subservice: diagnostic-extension
 ms.openlocfilehash: 23379e9d9bb29efb7fb026260e8245e8eb8a2d71
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60395073"
 ---
 # <a name="store-and-view-diagnostic-data-in-azure-storage"></a>Хранение и просмотр диагностических данных в хранилище Azure
@@ -71,7 +71,7 @@ ms.locfileid: "60395073"
 * **custom** : пользовательский контейнер на основе каталогов конфигурации, которые отслеживаются монитором диагностики.  Имя этого контейнера BLOB-объектов указывается в элементе WADDirectoriesTable.
 
 ## <a name="tools-to-view-diagnostic-data"></a>Средства для просмотра диагностических данных
-Данные после их передачи в хранилище можно просмотреть с помощью нескольких средств. Например: 
+Данные после их передачи в хранилище можно просмотреть с помощью нескольких средств. Пример:
 
 * Обозреватель сервера в Visual Studio. Если установлены инструменты Azure для Microsoft Visual Studio, можно использовать узел хранилища Azure в обозревателе сервера для просмотра больших двоичных объектов, доступных только для чтения, и табличных данных из учетных записей хранения Azure. Вы можете отображать данные из своей локальной учетной записи эмулятора хранения, а также из учетных записей хранения, созданных для Azure. Дополнительные сведения см. в статье [Обзор ресурсов хранилища с помощью обозревателя сервера и управление ими](/visualstudio/azure/vs-azure-tools-storage-resources-server-explorer-browse-manage).
 * [Обозреватель службы хранилища Microsoft Azure](../../vs-azure-tools-storage-manage-with-storage-explorer.md) — это автономное приложение, которое упрощает работу с данными из службы хранилища Azure на платформе Windows, OSX и Linux.

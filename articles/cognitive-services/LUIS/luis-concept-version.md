@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 01/15/2019
 ms.author: diberry
 ms.openlocfilehash: 9da79e5b744f8ba70c0e265f0d1f0126b37eba49
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60509691"
 ---
 # <a name="understand-how-and-when-to-use-a-luis-version"></a>Основные принципы работы с версиями LUIS
@@ -51,7 +51,7 @@ ms.locfileid: "60509691"
 Экспортированный файл не содержит сведения, прошедшие машинное обучение, так как после импорта приложение обучается повторно. Экспортированный файл не содержит участников совместной работы. Их необходимо добавить обратно после импорта версии в новое приложение.
 
 ## <a name="export-each-version-as-app-backup"></a>Экспорт каждой версии как резервной копии приложения
-Чтобы создать резервную копию приложения LUIS, экспортируйте каждую версию на странице **[Параметры](luis-how-to-manage-versions.md)**.
+Чтобы создать резервную копию приложения LUIS, экспортируйте каждую версию на странице **[Параметры](luis-how-to-manage-versions.md)** .
 
 ## <a name="delete-a-version"></a>Удаление версии
 Из списка версий на странице параметров можно удалить все версии, кроме активной. 

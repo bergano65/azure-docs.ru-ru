@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 06/21/2018
 ms.author: magattus
 ms.openlocfilehash: 7edf0a9f8d4eb4c01b6d80fd82a1061b6cbb1e35
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60324158"
 ---
 # <a name="using-azure-cdn-with-sas"></a>Использование Azure CDN с SAS
@@ -39,7 +39,7 @@ SAS дает возможность определить различные па
 
 `https://<account name>.blob.core.windows.net/<container>/<file>?sv=<SAS token>`
  
-Например: 
+Пример:
  ```
 https://democdnstorage1.blob.core.windows.net/container1/demo.jpg?sv=2017-07-29&ss=b&srt=co&sp=r&se=2038-01-02T21:30:49Z&st=2018-01-02T13:30:49Z&spr=https&sig=QehoetQFWUEd1lhU5iOMGrHBmE727xYAbKJl5ohSiWI%3D
 ```
@@ -60,7 +60,7 @@ https://democdnstorage1.blob.core.windows.net/container1/demo.jpg?sv=2017-07-29&
    
    Итоговый URL-адрес конечной точки CDN имеет следующий формат: `https://<endpoint hostname>.azureedge.net/<container>/<file>?sv=<SAS token>`.
 
-   Например:    
+   Пример:   
    ```
    https://demoendpoint.azureedge.net/container1/demo.jpg/?sv=2017-07-29&ss=b&srt=c&sp=r&se=2027-12-19T17:35:58Z&st=2017-12-19T09:35:58Z&spr=https&sig=kquaXsAuCLXomN7R00b8CYM13UpDbAHcsRfGOW3Du1M%3D
    ```
@@ -91,7 +91,7 @@ https://democdnstorage1.blob.core.windows.net/container1/demo.jpg?sv=2017-07-29&
 
 2. После того, как новое правило станет активным, к файлам в указанном контейнере конечной точки CDN сможет получить доступ любой желающий, даже без маркера SAS в URL-адресе. Используется следующий формат: `https://<endpoint hostname>.azureedge.net/<container>/<file>`.
  
-   Например:    
+   Пример:   
    `https://sasstoragedemo.azureedge.net/container1/demo.jpg`
        
 
@@ -106,7 +106,7 @@ https://democdnstorage1.blob.core.windows.net/container1/demo.jpg?sv=2017-07-29&
    URL-адрес конечной точки с маркером безопасности имеет следующий формат:   
    `https://<endpoint hostname>.azureedge.net/<container>/<file>?<security_token>`
  
-   Например:    
+   Пример:   
    ```
    https://sasstoragedemo.azureedge.net/container1/demo.jpg?a4fbc3710fd3449a7c99986bkquaXsAuCLXomN7R00b8CYM13UpDbAHcsRfGOW3Du1M%3D
    ```
@@ -133,7 +133,7 @@ https://democdnstorage1.blob.core.windows.net/container1/demo.jpg?sv=2017-07-29&
 
 Так как параметры SAS не отображаются в Azure CDN, Azure CDN не может изменить свой режим доставки на их основе. Определенные ограничения параметров применяются только к запросам, которые Azure CDN отправляет на сервер-источник, а не к запросам клиента к Azure CDN. Это различие следует учитывать при настройке параметров SAS. Если необходимы эти дополнительные возможности и вы используете [вариант 3](#option-3-using-cdn-security-token-authentication-with-a-rewrite-rule), установите соответствующие ограничения в маркере безопасности Azure CDN.
 
-| Имя параметра SAS | ОПИСАНИЕ |
+| Имя параметра SAS | Описание |
 | --- | --- |
 | Начало | Время, когда Azure CDN сможет обращаться к файлу большого двоичного объекта. Из-за разницы в показаниях часов (когда сигнал времени поступает в разное время для различных компонентов) установите время на 15 минут раньше, если вы хотите, чтобы ресурс был доступен немедленно. |
 | End | Время, после которого Azure CDN больше не сможет обращаться к файлу большого двоичного объекта. Ранее кэшированные файлы в Azure CDN по-прежнему будут доступны. Чтобы управлять временем окончания срока действия файла, установите соответствующее время для маркера безопасности Azure CDN либо очистите ресурс. |

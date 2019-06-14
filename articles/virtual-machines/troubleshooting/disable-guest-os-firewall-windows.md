@@ -15,10 +15,10 @@ ms.devlang: azurecli
 ms.date: 11/22/2018
 ms.author: delhan
 ms.openlocfilehash: a8856bd46f516aa3c64965648d4f23b9ba665b1b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60505467"
 ---
 # <a name="disable-the-guest-os-firewall-in-azure-vm"></a>Отключение брандмауэра гостевой ОС на виртуальной машине Azure
@@ -104,7 +104,7 @@ ms.locfileid: "60505467"
 
 4.  Откройте экземпляр  **Services.msc**.
 
-5.  Щелкните элемент **Службы (локальные)**.
+5.  Щелкните элемент **Службы (локальные)** .
 
 6.  Выберите **Connect to another computer** (Подключение к другому компьютеру).
 

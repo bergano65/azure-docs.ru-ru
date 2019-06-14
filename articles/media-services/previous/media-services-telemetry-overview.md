@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 04/01/2019
 ms.author: juliako
 ms.openlocfilehash: 8e8b493881662483e66dd835d1cc68a471b18454
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60545526"
 ---
 # <a name="azure-media-services-telemetry"></a>Телеметрия Служб мультимедиа Azure  
@@ -74,13 +74,13 @@ ms.locfileid: "60545526"
 
 Данные телеметрии хранятся в одной таблице, TelemetryMetrics20160321, где 20160321 — дата ее создания. Система телеметрии создает отдельную таблицу для данных по каждому новому дню в 00:00 (UTC). Таблица используется для хранения повторяющихся значений, например скорости приема в пределах заданного периода времени, количества отправленных байтов и т. д. 
 
-Свойство|Value|Примеры и примечания
+Свойство|Значение|Примеры и примечания
 ---|---|---
 PartitionKey|{ИД_учетной_записи}_{ИД_сущности}|e49bef329c29495f9b9570989682069d_64435281c50a4dd8ab7011cb0f4cdf66<br/<br/>Идентификатор учетной записи добавляется в ключ секции для упрощения рабочих процессов, в которых несколько учетных записей служб мультимедиа записывают данные в одну учетную запись хранения.
 RowKey|{число секунд до полуночи}_{случайное значение}|01688_00199<br/><br/>Ключ строки начинается с числа секунд до полуночи, чтобы сделать возможным выполнение запросов получения N первых элементов в секции. Дополнительные сведения см. в [этой статье](../../cosmos-db/table-storage-design-guide.md#log-tail-pattern). 
 Timestamp|Дата и время|Создаваемая автоматически метка времени из таблицы Azure: 2016-Auto-09-09T22:43:42.241Z.
 type|Тип сущности, предоставляющей данные телеметрии.|Channel, StreamingEndpoint, Archive.<br/><br/>Тип события — это просто строковое значение.
-ИМЯ|Имя события телеметрии.|ChannelHeartbeat, StreamingEndpointRequestLog.
+Name|Имя события телеметрии.|ChannelHeartbeat, StreamingEndpointRequestLog.
 ObservedTime|Время возникновения события телеметрии (UTC).|2016-09-09T22:42:36.924Z<br/><br/>Наблюдаемое время предоставляется сущностью, отправляющей данные телеметрии (например, сущностью Channel). Возможны проблемы синхронизации между компонентами, поэтому данное значение является приблизительным.
 ServiceID|{ИД_службы}|f70bd731-691d-41c6-8f2d-671d0bdc9c7e
 Свойства, относящиеся к сущности|Определяются событием.|StreamName: stream1, Bitrate 10123…<br/><br/>Остальные свойства определены для конкретного типа события. Таблица Azure содержит пары "ключ-значение".  (То есть различные строки в таблице имеют разные наборы свойств.)
@@ -95,13 +95,13 @@ ServiceID|{ИД_службы}|f70bd731-691d-41c6-8f2d-671d0bdc9c7e
 
 **Конечная точка потоковой передачи**
 
-Свойство|Value|Примеры
+Свойство|Значение|Примеры
 ---|---|---
 PartitionKey|PartitionKey|e49bef329c29495f9b9570989682069d_64435281c50a4dd8ab7011cb0f4cdf66
 RowKey|RowKey|01688_00199
 Timestamp|Timestamp|Создаваемая автоматически метка времени из таблицы Azure: 2016-Auto-09-09T22:43:42.241Z.
 type|type|StreamingEndpoint
-ИМЯ|ИМЯ|StreamingEndpointRequestLog
+Name|Name|StreamingEndpointRequestLog
 ObservedTime|ObservedTime|2016-09-09T22:42:36.924Z
 ServiceID|Идентификатор службы.|f70bd731-691d-41c6-8f2d-671d0bdc9c7e
 HostName|Имя узла конечной точки.|builddemoserver.origin.mediaservices.windows.net
@@ -114,13 +114,13 @@ E2ELatency|Средняя совокупная задержка.|250
 
 **Динамический канал**
 
-Свойство|Value|Примеры и примечания
+Свойство|Значение|Примеры и примечания
 ---|---|---
 PartitionKey|PartitionKey|e49bef329c29495f9b9570989682069d_64435281c50a4dd8ab7011cb0f4cdf66
 RowKey|RowKey|01688_00199
 Timestamp|Timestamp|Создаваемая автоматически метка времени из таблицы Azure: 2016-Auto-09-09T22:43:42.241Z.
 type|type|Канал
-ИМЯ|ИМЯ|ChannelHeartbeat
+Name|Name|ChannelHeartbeat
 ObservedTime|ObservedTime|2016-09-09T22:42:36.924Z
 ServiceID|Идентификатор службы.|f70bd731-691d-41c6-8f2d-671d0bdc9c7e
 TrackType|Тип дорожки: видео, звук или текст.|video/audio
@@ -139,13 +139,13 @@ Healthy|Значение True, если значения <br/>overlapCount, <br/
 
 **Динамический архив**
 
-Свойство|Value|Примеры и примечания
+Свойство|Значение|Примеры и примечания
 ---|---|---
 PartitionKey|PartitionKey|e49bef329c29495f9b9570989682069d_64435281c50a4dd8ab7011cb0f4cdf66
 RowKey|RowKey|01688_00199
 Timestamp|Timestamp|Создаваемая автоматически метка времени из таблицы Azure: 2016-Auto-09-09T22:43:42.241Z.
 type|type|Архив
-ИМЯ|ИМЯ|ArchiveHeartbeat
+Name|Name|ArchiveHeartbeat
 ObservedTime|ObservedTime|2016-09-09T22:42:36.924Z
 ServiceID|Идентификатор службы.|f70bd731-691d-41c6-8f2d-671d0bdc9c7e
 ManifestName|URL-адрес программы.|asset-eb149703-ed0a-483c-91c4-e4066e72cce3/a0a5cfbf-71ec-4bd2-8c01-a92a2b38c9ba.ism

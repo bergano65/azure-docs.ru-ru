@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 04/15/2019
 ms.author: damaerte
 ms.openlocfilehash: 2511f2c8fb706e232cde9ee4c02c7f8114bd3a2b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60200706"
 ---
 # <a name="using-the-azure-cloud-shell-window"></a>Использование окна Azure Cloud Shell
@@ -28,7 +28,7 @@ ms.locfileid: "60200706"
 ## <a name="swap-between-bash-and-powershell-environments"></a>Переключение между средами Bash и PowerShell
 
 Для переключения между средами Bash и PowerShell используйте селектора сред на панели инструментов Cloud Shell.  
-![Выбор среды](media/using-the-shell-window/env-selector.png)
+![Выберите среду](media/using-the-shell-window/env-selector.png)
 
 ## <a name="restart-cloud-shell"></a>Перезапуск Cloud Shell
 Щелкните значок перезапуска на панели инструментов Cloud Shell, чтобы сбросить состояние компьютера.  
@@ -61,7 +61,7 @@ Cloud Shell обеспечивает нескольких параллельны
 ## <a name="cloud-shell-editor"></a>Редактор Cloud Shell
 * Ссылаться на [с помощью редактора Azure Cloud Shell](using-cloud-shell-editor.md) страницы.
 
-## <a name="web-preview"></a>Просмотр в Интернете
+## <a name="web-preview"></a>Веб-Просмотр
 Щелкните значок предварительного просмотра web в верхнем левом углу окна, выберите «Настройка», укажите, чтобы открыть нужный порт.  Выберите либо «открыть порт» только открыть порт, или «открыть и просмотреть» для открытия порта и предварительного просмотра порт в новой вкладке.  
 ![Веб-Просмотр](media/using-the-shell-window/preview.png)  
 <br>

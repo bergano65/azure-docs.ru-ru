@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 05/02/2018
 ms.author: jomolesk
 ms.openlocfilehash: 3c78aed2f30ea85f5bc16a8c0fb270bb1c761be8
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60586038"
 ---
 # <a name="azure-security-and-compliance-blueprint-data-warehouse-for-fedramp-automation"></a>Схема безопасности и соответствия требованиям Azure. Хранилище данных для автоматизации FedRAMP
@@ -67,7 +67,7 @@ Azure Active Directory
 
 Хранилище служб восстановления
 
-Хранилище Azure Key Vault
+Хранилище ключей Azure
 
 Журналы Azure Monitor
 
@@ -121,7 +121,7 @@ Azure Active Directory
 -   [Столбцы Always Encrypted](https://docs.microsoft.com/azure/sql-database/sql-database-always-encrypted-azure-key-vault) гарантируют, что конфиденциальные данные никогда не отобразятся как открытый текст внутри системы баз данных. После включения шифрования данных получить доступ к данным в виде открытого текста смогут только клиентские приложения и серверы приложений, у которых есть доступ к ключам.
 -   После развертывания эталонной архитектуры можно выполнить [динамическое маскирование данных в базе данных SQL](https://docs.microsoft.com/azure/sql-database/sql-database-dynamic-data-masking-get-started). Клиентам потребуется настроить параметры динамического маскирования данных в соответствии со своей схемой базы данных.
 
-### <a name="business-continuity"></a>Непрерывная работа
+### <a name="business-continuity"></a>Непрерывность бизнес-процессов
 **Высокий уровень доступности**. Рабочие нагрузки сервера группируются в [доступности](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-windows-manage-availability?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) для обеспечения высокой доступности виртуальных машин в Azure. Во время планового или внепланового технического обслуживания доступна как минимум одна виртуальная машина, что соответствует соглашению об уровне обслуживания Azure, гарантирующему доступность в течение 99,95 % времени.
 
 **Хранилище служб восстановления**. [Хранилище Служб восстановления](https://docs.microsoft.com/azure/backup/backup-azure-recovery-services-vault-overview) содержит резервные копии данных и защищает все конфигурации виртуальных машин Azure в этой архитектуре. С помощью хранилища служб восстановления клиенты могут восстановить отдельные файлы и папки виртуальной машины IaaS, а не всю виртуальную машину. Это сокращает время восстановления.

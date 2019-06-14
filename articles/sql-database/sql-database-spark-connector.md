@@ -13,10 +13,10 @@ ms.reviewer: carlrab
 manager: craigg
 ms.date: 09/25/2018
 ms.openlocfilehash: 8e531de34302ef8aee571c960955d33a4832aa11
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60331526"
 ---
 # <a name="accelerate-real-time-big-data-analytics-with-spark-connector-for-azure-sql-database-and-sql-server"></a>Ускорение анализа больших данных в режиме реального времени с помощью базы данных SQL Azure и SQL Server
@@ -34,7 +34,7 @@ ms.locfileid: "60331526"
 | Scala                                |2.10 или более поздние версии            |
 | Microsoft JDBC Driver для SQL Server |6.2 или более поздние версии             |
 | Microsoft SQL Server                 |SQL Server 2008 или более поздняя версия |
-| Базы данных SQL Azure                   |Поддерживаются                |
+| База данных SQL Azure                   |Поддерживаются                |
 
 Соединитель Spark для базы данных SQL Azure и SQL Server использует Microsoft JDBC Driver для SQL Server, чтобы перемещать данные между рабочими узлами Spark и базами данных SQL:
  

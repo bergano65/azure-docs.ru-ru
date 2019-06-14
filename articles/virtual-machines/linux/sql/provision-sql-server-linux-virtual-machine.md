@@ -13,10 +13,10 @@ ms.workload: iaas-sql-server
 ms.author: mathoma
 ms.reviewer: jroth
 ms.openlocfilehash: 468db9d62a98e079fbe6954843e23a518eaabd0a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60478608"
 ---
 # <a name="provision-a-linux-sql-server-virtual-machine-in-the-azure-portal"></a>Подготовка виртуальной машины SQL Server на базе Linux на портале Azure
@@ -92,7 +92,7 @@ ms.locfileid: "60478608"
 
    * **Имя пользователя**. Введите имя администратора для виртуальной машины.
    * **Открытый ключ SSH**. Введите открытый ключ RSA.
-   * **Общедоступные входящие порты**. Выберите **Разрешить выбранные порты**, а затем выберите порт **SSH (22)** в списке **общедоступных входящих портов**. В этом руководстве это необходимо для подключения и завершения настройки SQL Server. Если вы хотите удаленно подключиться к SQL Server, также выберите **MS SQL (1433)**, чтобы открыть порт 1433 для подключения через Интернет.
+   * **Общедоступные входящие порты**. Выберите **Разрешить выбранные порты**, а затем выберите порт **SSH (22)** в списке **общедоступных входящих портов**. В этом руководстве это необходимо для подключения и завершения настройки SQL Server. Если вы хотите удаленно подключиться к SQL Server, также выберите **MS SQL (1433)** , чтобы открыть порт 1433 для подключения через Интернет.
 
    ![Входящие порты](./media/provision-sql-server-linux-virtual-machine/port-settings.png)
 

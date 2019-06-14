@@ -14,10 +14,10 @@ ms.workload: infrastructure
 ms.date: 09/24/2018
 ms.author: hermannd
 ms.openlocfilehash: 4483a7f53e084be5f245840829f4c9c95648b1af
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60477097"
 ---
 # <a name="verify-and-troubleshoot-sap-hana-scale-out-high-availability-setup-on-sles-12-sp3"></a>Проверка и устранение неполадок при настройке горизонтального масштабирования SAP HANA с высоким уровнем доступности в SLES 12 SP3 
@@ -802,7 +802,7 @@ hso-hana-vm-s2-2 DEMOTED     online     slave:slave:worker:slave     -10000 HSOS
 crm configure show
 </code></pre>
 
-В конфигурации кластера вы обнаружите новое ограничение расположения, вызванное предыдущей миграцией ресурсов вручную. Этот пример записи начинается со строки **location cli-**:
+В конфигурации кластера вы обнаружите новое ограничение расположения, вызванное предыдущей миграцией ресурсов вручную. Этот пример записи начинается со строки **location cli-** :
 
 <pre><code>
 location cli-ban-msl_SAPHanaCon_HSO_HDB00-on-hso-hana-vm-s1-0 msl_SAPHanaCon_HSO_HDB00 role=Started -inf: hso-hana-vm-s1-0

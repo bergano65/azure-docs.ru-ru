@@ -11,10 +11,10 @@ ms.date: 11/28/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 551d0cd149c4d1555a40ccf0d7baeff97c6809c2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60336378"
 ---
 # <a name="collaborative-coding-with-git"></a>Совместное программирование с помощью Git
@@ -48,7 +48,7 @@ Azure DevOps Services предоставляет удобный способ п�
 
 Также вы можете связать рабочий элемент с существующей ветвью. Для этого на странице **сведений** для рабочего элемента вместо элемента **Создать новую ветвь** щелкните **+ Добавить ссылку**. Затем выберите ветвь, с которой нужно связать рабочий элемент. 
 
-![4.](./media/collaborative-coding-with-git/4-link-to-an-existing-branch.png)
+![4\.](./media/collaborative-coding-with-git/4-link-to-an-existing-branch.png)
 
 Кроме того, можно создать ветвь с помощью команд Git в оболочке Bash. Если родительская ветвь <base branch name\> отсутствует, в _главной ветви_ создается ветвь <new branch name\>. 
     

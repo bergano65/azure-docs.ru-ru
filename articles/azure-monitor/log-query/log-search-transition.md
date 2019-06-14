@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 01/16/2019
 ms.author: bwren
 ms.openlocfilehash: dc3a754bd1a9f689f4b24b9ee2c1e4cbc0611684
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60519901"
 ---
 # <a name="transition-from-log-analytics-log-search-to-azure-monitor-logs"></a>Переход с поиска по журналам Log Analytics на анализ журналов Azure Monitor
@@ -32,11 +32,11 @@ ms.locfileid: "60519901"
 ![Фильтр журналов](media/log-search-transition/filter-logs.png)
 
 ## <a name="extract-custom-fields"></a>Извлечение настраиваемых полей 
-В поиске по журналам вы извлекаете [настраиваемые поля](../platform/custom-fields.md) из представления списка, где меню поля включает в себя действие _Извлечь поля из "название таблицы"_.
+В поиске по журналам вы извлекаете [настраиваемые поля](../platform/custom-fields.md) из представления списка, где меню поля включает в себя действие _Извлечь поля из "название таблицы"_ .
 
 ![Извлечение полей в интерфейсе поиска по журналам](media/log-search-transition/extract-fields-log-search.png)
 
-В журналах Azure Monitor настраиваемые поля извлекаются из представления таблицы. Разверните запись, щелкнув стрелку слева от нее, а затем щелкните многоточие, чтобы получить доступ к действию _Извлечь поля из "название таблицы"_.
+В журналах Azure Monitor настраиваемые поля извлекаются из представления таблицы. Разверните запись, щелкнув стрелку слева от нее, а затем щелкните многоточие, чтобы получить доступ к действию _Извлечь поля из "название таблицы"_ .
 
 ![Извлечение полей журналов](media/log-search-transition/extract-fields-logs.png)
 

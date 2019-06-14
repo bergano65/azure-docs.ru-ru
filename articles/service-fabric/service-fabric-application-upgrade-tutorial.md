@@ -15,10 +15,10 @@ ms.workload: NA
 ms.date: 2/23/2018
 ms.author: subramar
 ms.openlocfilehash: 8fe0bf9c8827b7248195f89377176fd834845e32
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60615179"
 ---
 # <a name="service-fabric-application-upgrade-tutorial-using-visual-studio"></a>Учебник по обновлению приложений Service Fabric с помощью Visual Studio
@@ -43,7 +43,7 @@ Azure Service Fabric упрощает процесс обновления обл
 
 Теперь можно нажать кнопку **Опубликовать** в диалоговом окне. Для просмотра кластера и приложения теперь можно использовать [обозреватель Service Fabric](service-fabric-visualizing-your-cluster.md). Приложение Visual Objects включает в себя веб-службу, к которой можно перейти, указав в адресной строке браузера [http://localhost:8081/visualobjects/](http://localhost:8081/visualobjects/).  Вы должны увидеть 10 плавающих визуальных объектов, перемещающихся по экрану.
 
-**Примечание**. Если развертывание `Cloud.xml` профиля (Azure Service Fabric), приложение должно быть доступно по **http://{ServiceFabricName}. {} Region}.cloudapp.Azure.com:8081/visualobjects/**. Убедитесь, что в балансировщике нагрузки настроен `8081/TCP` (балансировщик нагрузки находится в той же группе ресурсов, что и экземпляр Service Fabric).
+**Примечание**. Если развертывание `Cloud.xml` профиля (Azure Service Fabric), приложение должно быть доступно по **http://{ServiceFabricName}. {} Region}.cloudapp.Azure.com:8081/visualobjects/** . Убедитесь, что в балансировщике нагрузки настроен `8081/TCP` (балансировщик нагрузки находится в той же группе ресурсов, что и экземпляр Service Fabric).
 
 ## <a name="step-2-update-the-visual-objects-sample"></a>Шаг 2. Обновление образца визуальных объектов
 Вы можете заметить, что в версии, развернутой на шаге 1, визуальные объекты не вращаются. Давайте обновим это приложение до версии, в которой визуальные объекты будут вращаться.

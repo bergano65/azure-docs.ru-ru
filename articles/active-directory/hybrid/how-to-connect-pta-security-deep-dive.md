@@ -16,10 +16,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7f5e2443a285e065426e3dba0312ef6420097ef1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60348100"
 ---
 # <a name="azure-active-directory-pass-through-authentication-security-deep-dive"></a>Руководство по безопасности сквозной аутентификации Azure Active Directory
@@ -186,7 +186,7 @@ ms.locfileid: "60348100"
 
 Приложение Updater автоматически обновляет агент аутентификации при выпуске новой версии (с помощью исправления или улучшения производительности). Приложение Updater не обрабатывает запросы на проверку пароля для вашего клиента.
 
-Azure AD размещает новую версию программного обеспечения как подписанный **пакет установщика Windows (MSI-файл)**. MSI-файл подписывается с помощью [Microsoft Authenticode](https://msdn.microsoft.com/library/ms537359.aspx) с использованием алгоритма хэш-кода SHA256. 
+Azure AD размещает новую версию программного обеспечения как подписанный **пакет установщика Windows (MSI-файл)** . MSI-файл подписывается с помощью [Microsoft Authenticode](https://msdn.microsoft.com/library/ms537359.aspx) с использованием алгоритма хэш-кода SHA256. 
 
 ![Автоматическое обновление](./media/how-to-connect-pta-security-deep-dive/pta5.png)
 

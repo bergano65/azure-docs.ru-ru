@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: spelluru
 ms.openlocfilehash: 6faf32232c42f863bff52fdfb3c0714aee8e9b88
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60702442"
 ---
 # <a name="create-an-environment-with-multiple-vms-inside-a-template-vm-of-a-classroom-lab"></a>Создание среды с несколькими виртуальными машинами внутри шаблона виртуальной Машины лаборатории аудитории
@@ -65,7 +65,7 @@ ms.locfileid: "60702442"
         > Запишите имя пользователя и пароль. Они больше не будут отображаться.
     3. Нажмите кнопку **Создать**. 
 
-        ![Задайте учетные данные](../media/tutorial-setup-classroom-lab/set-credentials.png)
+        ![Настройка учетных данных](../media/tutorial-setup-classroom-lab/set-credentials.png)
 6. На странице **настройки шаблона** отображаются сведения о состоянии создания лаборатории. Создание шаблона лаборатории занимает до 20 минут. 
 
     ![Настройка шаблона](../media/tutorial-setup-classroom-lab/configure-template.png)

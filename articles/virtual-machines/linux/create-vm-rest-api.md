@@ -16,10 +16,10 @@ ms.workload: infrastructure
 ms.date: 06/05/2018
 ms.author: cynthn
 ms.openlocfilehash: 2b078cd769a9b4e5e66fe132fd4ef73ec4621efc
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60391367"
 ---
 # <a name="create-a-linux-virtual-machine-that-uses-ssh-authentication-with-the-rest-api"></a>Создание виртуальной машины Linux, в которой используется проверка подлинности по SSH с интерфейсом REST API
@@ -52,7 +52,7 @@ PUT https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/
 
 Ниже приведены обязательные заголовки.
 
-| Заголовок запроса   | ОПИСАНИЕ |
+| Заголовок запроса   | Описание |
 |------------------|-----------------|
 | *Content-Type:*  | Обязательный элемент. Задайте значение `application/json`. |
 | *Authorization:* | Обязательный элемент. Задайте в качестве значения [допустимый токен доступа](https://docs.microsoft.com/rest/api/azure/#authorization-code-grant-interactive-clients) `Bearer`. |
@@ -63,10 +63,10 @@ PUT https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/
 
 Для создания текста запроса используются следующие общие определения.
 
-| Name                       | Обязательно для заполнения | type                                                                                | ОПИСАНИЕ  |
+| Name                       | Обязательно для заполнения | type                                                                                | Описание  |
 |----------------------------|----------|-------------------------------------------------------------------------------------|--------------|
-| location                   | Истина     | строка                                                                              | Расположение ресурса. |
-| name                       |          | строка                                                                              | Имя виртуальной машины. |
+| location                   | Истина     | string                                                                              | Расположение ресурса. |
+| name                       |          | string                                                                              | Имя виртуальной машины. |
 | properties.hardwareProfile |          | [HardwareProfile](/rest/api/compute/virtualmachines/createorupdate#hardwareprofile) | Указывает параметры оборудования виртуальной машины. |
 | properties.storageProfile  |          | [StorageProfile](/rest/api/compute/virtualmachines/createorupdate#storageprofile)   | Указывает параметры хранилища дисков виртуальной машины. |
 | properties.osProfile       |          | [OSProfile](/rest/api/compute/virtualmachines/createorupdate#osprofile)             | Указывает параметры операционной системы виртуальной машины. |
@@ -133,11 +133,11 @@ PUT https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/
 
 Вы можете отправить HTTP-запроса с помощью предпочитаемого клиента. Кроме того, вы можете также использовать [инструмент в браузере](https://docs.microsoft.com/rest/api/compute/virtualmachines/createorupdate), нажав кнопку **Попробовать**.
 
-### <a name="responses"></a>Ответы
+### <a name="responses"></a>Responses
 
 Существует два успешных ответа для операции по созданию или обновлению виртуальной машины.
 
-| Name        | Тип                                                                              | ОПИСАНИЕ |
+| Name        | Тип                                                                              | Описание |
 |-------------|-----------------------------------------------------------------------------------|-------------|
 | 200 ОК      | [VirtualMachine](/rest/api/compute/virtualmachines/createorupdate#virtualmachine) | OК          |
 | 201 Создано | [VirtualMachine](/rest/api/compute/virtualmachines/createorupdate#virtualmachine) | Создано     |

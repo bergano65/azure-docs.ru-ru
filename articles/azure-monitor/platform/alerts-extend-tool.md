@@ -9,10 +9,10 @@ ms.date: 06/04/2018
 ms.author: vinagara
 ms.subservice: alerts
 ms.openlocfilehash: 9d734f74c4e12b369e46c15dcb9d01a8185dddd6
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60431176"
 ---
 # <a name="extend-alerts-from-log-analytics-into-azure-alerts"></a>Расширение оповещений из Log Analytics в оповещения Azure
@@ -232,7 +232,7 @@ armclient POST  /subscriptions/<subscriptionId>/resourceGroups/<resourceGroupNam
 
     Когда применяется [политика Azure](../../governance/policy/overview.md), она ограничивает любые ресурсы, созданные в подписке или группе ресурсов, которые содержатся в рабочей области Log Analytics (Operations Management Suite). Системе не удалось расширить оповещения в Azure или создать необходимые группы.
     
-    Для устранения отредактируйте политику, которая вызвала ошибку *[RequestDisallowedByPolicy](../../azure-resource-manager/resource-manager-policy-requestdisallowedbypolicy-error.md)*, препятствующую созданию новых ресурсов в вашей подписке или группе ресурсов, в которых содержится рабочая область. Это можно сделать с помощью портала Azure, PowerShell, Azure CLI или API. Чтобы найти соответствующую политику, из-за которой происходит ошибка, можно использовать аудит действий. Дополнительные сведения см. в статье [Просмотр журналов действий для аудита действий с ресурсами](../../azure-resource-manager/resource-group-audit.md). 
+    Для устранения отредактируйте политику, которая вызвала ошибку *[RequestDisallowedByPolicy](../../azure-resource-manager/resource-manager-policy-requestdisallowedbypolicy-error.md)* , препятствующую созданию новых ресурсов в вашей подписке или группе ресурсов, в которых содержится рабочая область. Это можно сделать с помощью портала Azure, PowerShell, Azure CLI или API. Чтобы найти соответствующую политику, из-за которой происходит ошибка, можно использовать аудит действий. Дополнительные сведения см. в статье [Просмотр журналов действий для аудита действий с ресурсами](../../azure-resource-manager/resource-group-audit.md). 
     
     После устранения проблемы с помощью действий, приведенных в статье, Operations Management Suite расширяет оповещения в Azure на следующий день в рамках запланированного запуска. Выполнять дальнейшие действия или инициировать что-либо не требуется.
 

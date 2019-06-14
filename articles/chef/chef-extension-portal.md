@@ -9,10 +9,10 @@ ms.author: tarcher
 ms.date: 05/15/2018
 ms.topic: article
 ms.openlocfilehash: cf7afb50006fb273b4d685f9e4259be1cb60fe4e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60563893"
 ---
 # <a name="install-the-chef-client-from-the-azure-portal"></a>Установка клиента Chef с портала Azure
@@ -82,7 +82,7 @@ ms.locfileid: "60563893"
 
 1. На вкладке **Установка расширения** укажите приведенные ниже значения, после чего щелкните **ОК**.
 
-    - **URL-адрес сервера Chef**. Введите URL-адрес сервера Chef, который включает имя организации, например *https://api.chef.io/organization/mycompany*.
+    - **URL-адрес сервера Chef**. Введите URL-адрес сервера Chef, который включает имя организации, например *https://api.chef.io/organization/mycompany* .
     - **Chef Node Name** (Имя узла Chef). Введите имя узла Chef. Это может быть любое значение.
     - **Список запуска**. Введите список запуска Chef, добавленный на этот компьютер. Это поле можно оставить пустым.
     - **Validation Client Name** (Имя клиента для проверки). Введите имя клиента Chef для проверки. Пример: *tarcher-validator*.

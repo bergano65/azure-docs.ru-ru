@@ -15,10 +15,10 @@ ms.topic: conceptual
 ms.date: 11/01/2018
 ms.author: spelluru
 ms.openlocfilehash: 145960db27247a8535eb96640000b86d810619c0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60420210"
 ---
 # <a name="expose-an-on-premises-wcf-service-to-a-web-application-in-the-cloud-by-using-azure-relay"></a>Предоставление локальной службы WCF для веб-приложения в облаке с помощью Azure Relay 
@@ -81,7 +81,7 @@ ms.locfileid: "60420210"
 ### <a name="create-the-project"></a>Создание проекта
 1. Запустите Microsoft Visual Studio, используя привилегии администратора. Для этого щелкните правой кнопкой мыши значок программы Visual Studio и выберите **Запустить от имени администратора**.
 2. В меню **Файл** Visual Studio выберите **Создать**, а затем — **Проект**.
-3. В разделе **Visual C#** области **Установленные шаблоны** щелкните **Консольное приложение (.NET Framework)**. В поле **Имя** введите **ProductsServer**.
+3. В разделе **Visual C#** области **Установленные шаблоны** щелкните **Консольное приложение (.NET Framework)** . В поле **Имя** введите **ProductsServer**.
 
    ![Диалоговое окно "Новый проект"][11]
 4. Нажмите кнопку **ОК**, чтобы создать проект **ProductsServer**.
@@ -229,7 +229,7 @@ ms.locfileid: "60420210"
 
 1. Убедитесь, что система Visual Studio запущена с правами администратора.
 2. В меню **Файл** Visual Studio выберите **Создать**, а затем — **Проект**.
-3. В разделе **Visual C#** области **Установленные шаблоны** щелкните **Веб-приложение ASP.NET (.NET Framework)**. Присвойте проекту имя **ProductsPortal**. Нажмите кнопку **ОК**.
+3. В разделе **Visual C#** области **Установленные шаблоны** щелкните **Веб-приложение ASP.NET (.NET Framework)** . Присвойте проекту имя **ProductsPortal**. Нажмите кнопку **ОК**.
 
    ![Диалоговое окно "Новый проект"][15]
 
