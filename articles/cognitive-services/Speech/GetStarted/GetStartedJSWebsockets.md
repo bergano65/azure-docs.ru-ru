@@ -12,10 +12,10 @@ ms.date: 09/18/2018
 ms.author: zhouwang
 ROBOTS: NOINDEX,NOFOLLOW
 ms.openlocfilehash: 17901ad40a48e9ee8d1a8b872b04ad52b75b3a52
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60515208"
 ---
 # <a name="get-started-with-the-speech-recognition-api-in-javascript"></a>Приступите к работе с API распознавания речи в JavaScript
@@ -66,10 +66,10 @@ cd SpeechToText-WebSockets-Javascript && npm run bundle
 
 ## <a name="remarks"></a>Примечания
 
-- API распознавания речи поддерживает три [режима распознавания](../concepts.md#recognition-modes). Режим можно переключить, обновив функцию **Setup()**,которую можно найти в файле Sample.html. Образец устанавливает режим `Interactive` по умолчанию. Чтобы изменить режим, обновите параметр `SR.RecognitionMode.Interactive` до другого режима. Например, измените параметр на `SR.RecognitionMode.Conversation`.
+- API распознавания речи поддерживает три [режима распознавания](../concepts.md#recognition-modes). Режим можно переключить, обновив функцию **Setup()** ,которую можно найти в файле Sample.html. Образец устанавливает режим `Interactive` по умолчанию. Чтобы изменить режим, обновите параметр `SR.RecognitionMode.Interactive` до другого режима. Например, измените параметр на `SR.RecognitionMode.Conversation`.
 - Полный список поддерживаемых языков см. в разделе [ Поддерживаемые языки ](../API-Reference-REST/supportedlanguages.md).
 
-## <a name="related-topics"></a>Связанные разделы
+## <a name="related-topics"></a>См. также
 
 - [Репозитории образцов API распознавания речи JavaScript](https://github.com/Azure-Samples/SpeechToText-WebSockets-Javascript)
 - [Начало работы с REST API](GetStartedREST.md)
