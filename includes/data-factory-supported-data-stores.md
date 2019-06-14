@@ -5,10 +5,10 @@ ms.topic: include
 ms.date: 11/19/2018
 ms.author: jingwang
 ms.openlocfilehash: 0c381cc6e2e2957c946207491c666667821184ad
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66122561"
 ---
 | Категория | Хранилище данных | Поддерживается в качестве источника | Поддерживается в качестве приемника |
@@ -19,7 +19,7 @@ ms.locfileid: "66122561"
 | &nbsp; |[база данных SQL Azure;](../articles/data-factory/v1/data-factory-azure-sql-connector.md) |✓ |✓ |
 | &nbsp; |[Хранилище данных Azure SQL](../articles/data-factory/v1/data-factory-azure-sql-data-warehouse-connector.md) |✓ |✓ |
 | &nbsp; |[Индекс службы поиска Azure](../articles/data-factory/v1/data-factory-azure-search-connector.md) | |✓ |
-| &nbsp; |[Хранилище таблиц Azure](../articles/data-factory/v1/data-factory-azure-table-connector.md) |✓ |✓  |
+| &nbsp; |[Хранилище таблиц Azure](../articles/data-factory/v1/data-factory-azure-table-connector.md) |✓ |✓ |
 | **Базы данных** |[Amazon Redshift](../articles/data-factory/v1/data-factory-amazon-redshift-connector.md) |✓ | |
 | &nbsp; |[DB2](../articles/data-factory/v1/data-factory-onprem-db2-connector.md)* |✓ | |
 | &nbsp; |[MySQL](../articles/data-factory/v1/data-factory-onprem-mysql-connector.md)* |✓ | |
