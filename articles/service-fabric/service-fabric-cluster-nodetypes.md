@@ -77,16 +77,16 @@ ms.locfileid: "64684689"
 | **Имя** | **Допустимые значения** | ** --- ** | **Рекомендация или краткое описание** |
 | --- | --- | --- | --- |
 | name | string | --- | уникальное имя для расширения |
-| Тип | «ServiceFabricLinuxNode» или «ServiceFabricWindowsNode | --- | Идентифицирует начальной загрузке для операционной системы Service Fabric |
+| type | «ServiceFabricLinuxNode» или «ServiceFabricWindowsNode | --- | Идентифицирует начальной загрузке для операционной системы Service Fabric |
 | autoUpgradeMinorVersion | Значение true или false | --- | Включить автообновление SF незначительные версий |
 | publisher | Microsoft.Azure.ServiceFabric | --- | Имя издателя расширения Service Fabric |
 | clusterEndpont | string | --- | URI:Port к конечной точке управления |
 | nodeTypeRef | string | --- | Имя типа узла |
-| значение durabilityLevel | бронза, серебро, золото, platinum | --- | допустимое время для приостановки Неизменяемая инфраструктура Azure |
+| durabilityLevel | бронза, серебро, золото, platinum | --- | допустимое время для приостановки Неизменяемая инфраструктура Azure |
 | enableParallelJobs | Значение true или false | --- | Включить ParallelJobs вычислений, как удалить виртуальную Машину и виртуальную Машину в той же шкале, наборе в параллельном режиме |
 | nicPrefixOverride | string | --- | Префикс подсети, например «10.0.0.0/24» |
 | commonNames | string[] | --- | Имена общих сертификатов установленных кластера |
-| X509StoreName | string | --- | Имя Store, где находится сертификат установленных кластера |
+| x509StoreName | string | --- | Имя Store, где находится сертификат установленных кластера |
 | typeHandlerVersion | 1,1 | --- | Версия расширения. Рекомендуется использовать для обновления до 1.1 1.0 классической версии расширения |
 
 ## <a name="next-steps"></a>Дальнейшие действия
