@@ -18,10 +18,10 @@ ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 8ab30dfeccc4ae1c7b09a8f48846ffb9e71cfc23
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60439173"
 ---
 # <a name="prerequisites-to-access-the-azure-active-directory-reporting-api"></a>Предварительные требования для доступа к API отчетов Azure Active Directory
@@ -78,7 +78,7 @@ API отчетов использует [OAuth](https://msdn.microsoft.com/libra
 
     a. В текстовом поле **Имя** введите `Reporting API application`.
 
-    2. В качестве **типа приложения** выберите **Веб-приложение или API**.
+    2\. В качестве **типа приложения** выберите **Веб-приложение или API**.
 
     c. В текстовом поле **URL-адрес входа** введите `https://localhost`.
 
@@ -209,7 +209,7 @@ API отчетов использует [OAuth](https://msdn.microsoft.com/libra
 
     a. В текстовом поле **Описание** введите `Reporting API`.
 
-    2. Для параметра **Срок действия истекает** выберите значение **Через 2 года**.
+    2\. Для параметра **Срок действия истекает** выберите значение **Через 2 года**.
 
     c. Выберите команду **Сохранить**.
 

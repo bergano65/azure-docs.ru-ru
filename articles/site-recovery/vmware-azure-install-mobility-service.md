@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 03/25/2019
 ms.author: ramamill
 ms.openlocfilehash: 628be573d03d42ec62a358071074facfe228852d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60318194"
 ---
 # <a name="prepare-source-machine-for-push-installation-of-mobility-agent"></a>Подготовка исходного компьютера для принудительной установки агента мобильности
@@ -27,7 +27,7 @@ ms.locfileid: "60318194"
     - В разделе реестра HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System добавьте параметр DWORD: **LocalAccountTokenFilterPolicy**. Присвойте ему значение **1**.
     -  Для этого выполните в командной строке следующую команду:  
    `REG ADD HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v LocalAccountTokenFilterPolicy /t REG_DWORD /d
-3. В брандмауэре Windows на компьютере, который нужно защитить, выберите **Разрешить запуск программы или компонента через брандмауэр Windows**. Активируйте **общий доступ к файлам и принтерам** и **инструментарий управления Windows (WMI)**. Для компьютеров, принадлежащих домену, можно настроить политику брандмауэра с помощью объекта групповой политики.
+3. В брандмауэре Windows на компьютере, который нужно защитить, выберите **Разрешить запуск программы или компонента через брандмауэр Windows**. Активируйте **общий доступ к файлам и принтерам** и **инструментарий управления Windows (WMI)** . Для компьютеров, принадлежащих домену, можно настроить политику брандмауэра с помощью объекта групповой политики.
 
    ![Параметры брандмауэра](./media/vmware-azure-install-mobility-service/mobility1.png)
 

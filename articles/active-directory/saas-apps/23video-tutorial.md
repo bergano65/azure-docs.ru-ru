@@ -16,10 +16,10 @@ ms.date: 05/26/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ec0cfaaf0d4ae692581d63c7745660ffeacfb11f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60439732"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-23-video"></a>Руководство по Интеграция Azure Active Directory с 23 Video
@@ -132,7 +132,7 @@ ms.locfileid: "60439732"
 
     ![Настройка единого входа](./media/23video-tutorial/tutorial_23video_configure.png) 
 
-7. Чтобы настроить единый вход на стороне **23 Video**, нужно отправить скачанный **сертификат (Base64)**, **URL-адрес выхода, идентификатор сущности SAML и URL-адрес службы единого входа SAML** в [службу поддержки 23 Video](mailto:support@23company.com). 
+7. Чтобы настроить единый вход на стороне **23 Video**, нужно отправить скачанный **сертификат (Base64)** , **URL-адрес выхода, идентификатор сущности SAML и URL-адрес службы единого входа SAML** в [службу поддержки 23 Video](mailto:support@23company.com). 
 
 
 > [!TIP]
@@ -163,7 +163,7 @@ ms.locfileid: "60439732"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    2. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    2\. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -193,7 +193,7 @@ ms.locfileid: "60439732"
 
     a. В текстовом поле **E-mail addresses** (Адреса электронной почты) введите адрес электронной почты пользователя Britta Simon в Azure AD.  
  
-    2. Щелкните **Add the user**(Добавить пользователя).   
+    2\. Щелкните **Add the user**(Добавить пользователя).   
 
 ### <a name="assigning-the-azure-ad-test-user"></a>Назначение тестового пользователя Azure AD
 

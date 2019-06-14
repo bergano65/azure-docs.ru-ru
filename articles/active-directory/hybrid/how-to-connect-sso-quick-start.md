@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 06566ab81b6af847a7eb174731105b7f43a7197f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60242768"
 ---
 # <a name="azure-active-directory-seamless-single-sign-on-quick-start"></a>Простой единый вход Azure Active Directory: Быстрый запуск
@@ -124,7 +124,7 @@ ms.locfileid: "60242768"
 
 1. Откройте редактор "Управление групповыми политиками".
 2. Измените групповую политику, которая применяется к некоторым или всем пользователям. В этом примере используется **политика домена по умолчанию**.
-3. Перейдите к **Конфигурация пользователя** > **политики** > **административные шаблоны** > **Windows Компоненты** > **Internet Explorer** > **панель управления браузером** > **странице "Безопасность"**. Выберите **Список назначений зоны для веб-сайтов**.
+3. Перейдите к **Конфигурация пользователя** > **политики** > **административные шаблоны** > **Windows Компоненты** > **Internet Explorer** > **панель управления браузером** > **странице "Безопасность"** . Выберите **Список назначений зоны для веб-сайтов**.
     ![Единый вход](./media/how-to-connect-sso-quick-start/sso6.png)
 4. Включите политику и введите следующие значения в диалоговом окне.
    - **Имя значения**: это URL-адрес Azure AD, на который пересылаются билеты Kerberos.

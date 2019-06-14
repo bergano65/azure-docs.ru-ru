@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: twooley
 ms.openlocfilehash: fd887560c0011fb1ec2141e33f02f7e3d8a39c81
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60196614"
 ---
 # <a name="register-data-from-azure-data-lake-storage-gen1-in-azure-data-catalog"></a>Регистрация данных из Azure Data Lake Storage 1-го поколения в каталоге данных Azure
@@ -54,7 +54,7 @@ ms.locfileid: "60196614"
 
     a. Поле **Иерархия серверов** представляет структуру папки учетной записи Data Lake Storage 1-го поколения. **$Root** представляет корень учетной записи Data Lake Storage 1-го поколения, а **AmbulanceData** — папку, созданную в корне учетной записи Data Lake Storage 1-го поколения.
 
-    2. В поле **Доступные объекты** перечислены файлы и папки, расположенные в папке **AmbulanceData**.
+    2\. В поле **Доступные объекты** перечислены файлы и папки, расположенные в папке **AmbulanceData**.
 
     c. **Объекты для регистрации** перечислены файлы и папки, которые вы хотите зарегистрировать в службе "Каталог данных Azure".
 

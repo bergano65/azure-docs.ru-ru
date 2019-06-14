@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 17a2661883dd069e8cb719672f6b92442f1a8a0a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60357518"
 ---
 # <a name="how-to-configure-password-writeback"></a>Практическое руководство. Настройка компонента обратной записи паролей
@@ -42,7 +42,7 @@ ms.locfileid: "60357518"
 
 ## <a name="licensing-requirements-for-password-writeback"></a>Требования к лицензированию для обратной записи паролей
 
-**Самостоятельный сброс пароля, изменение и разблокировка при помощи локальной обратной записи — это возможности Azure AD уровня "Премиум"**. Дополнительные сведения о лицензировании см. на [веб-сайте с ценами на Azure Active Directory](https://azure.microsoft.com/pricing/details/active-directory/).
+**Самостоятельный сброс пароля, изменение и разблокировка при помощи локальной обратной записи — это возможности Azure AD уровня "Премиум"** . Дополнительные сведения о лицензировании см. на [веб-сайте с ценами на Azure Active Directory](https://azure.microsoft.com/pricing/details/active-directory/).
 
 Чтобы использовать компонент обратной записи паролей, клиенту должна быть назначена одна из приведенных ниже лицензий:
 

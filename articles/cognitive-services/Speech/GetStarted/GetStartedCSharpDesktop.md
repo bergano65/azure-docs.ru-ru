@@ -12,10 +12,10 @@ ms.date: 09/18/2018
 ms.author: zhouwang
 ROBOTS: NOINDEX,NOFOLLOW
 ms.openlocfilehash: 5f3b70a2dd9816210ed61280be38504a3980d205
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60515353"
 ---
 # <a name="quickstart-use-the-bing-speech-recognition-api-in-c35-for-net-on-windows"></a>Краткое руководство. Использование API распознавания речи Bing в C# для .NET на платформе Windows
@@ -101,7 +101,7 @@ Speech API — элемент Cognitive Services (ранее Project Oxford). В
 
 Обработчики событий уже описаны в коде в виде комментариев к коду.
 
-## <a name="related-topics"></a>Связанные разделы
+## <a name="related-topics"></a>См. также
 
 * [Справка о рабочей библиотеке речи C# Microsoft](https://cdn.rawgit.com/Microsoft/Cognitive-Speech-STT-Windows/master/docs/SpeechSDK/index.html)
 * [Начало работы с API распознавания речи Microsoft в Java на Android](GetStartedJavaAndroid.md)

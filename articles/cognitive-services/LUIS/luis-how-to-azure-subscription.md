@@ -12,10 +12,10 @@ ms.topic: article
 ms.date: 03/01/2019
 ms.author: diberry
 ms.openlocfilehash: 7315c80ad74eae07e41577fb2ac13742002e729e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60198654"
 ---
 # <a name="using-subscription-keys-with-your-luis-app"></a>Использование ключей подписки с приложением LUIS
@@ -90,9 +90,9 @@ ms.locfileid: "60198654"
 ```
 
 ### <a name="enable-bing-spell-checker"></a>Включение проверки орфографии Bing 
-Флажок **Проверка орфографии Bing** в **настройках URL-адреса конечной точки** позволяет LUIS проверять орфографию перед прогнозированием. Создайте **[ключ API проверки орфографии Bing](https://azure.microsoft.com/try/cognitive-services/?api=spellcheck-api)**. 
+Флажок **Проверка орфографии Bing** в **настройках URL-адреса конечной точки** позволяет LUIS проверять орфографию перед прогнозированием. Создайте **[ключ API проверки орфографии Bing](https://azure.microsoft.com/try/cognitive-services/?api=spellcheck-api)** . 
 
-Добавьте параметры строки запроса **spellCheck=true** и **bing-spell-check-subscription-key={YOUR_BING_KEY_HERE}**. Замените `{YOUR_BING_KEY_HERE}` своим ключом проверки правописания Bing.
+Добавьте параметры строки запроса **spellCheck=true** и **bing-spell-check-subscription-key={YOUR_BING_KEY_HERE}** . Замените `{YOUR_BING_KEY_HERE}` своим ключом проверки правописания Bing.
 
 ```JSON
 {
@@ -122,7 +122,7 @@ ms.locfileid: "60198654"
 
     Этот API POST принимает указанные ниже параметры.
 
-    |Верхний колонтитул|Value|
+    |Верхний колонтитул|Значение|
     |--|--|
     |`Authorization`|Значение заголовка `Authorization` — `Bearer {token}`. Обратите внимание, что перед значением маркера должны находиться слово `Bearer` и пробел.| 
     |`Ocp-Apim-Subscription-Key`|Ваш [ключ разработки](luis-how-to-account-settings.md).|
@@ -133,7 +133,7 @@ ms.locfileid: "60198654"
 
     Этот API POST принимает указанные ниже параметры.
 
-    |type|Параметр|Value|
+    |type|Параметр|Значение|
     |--|--|--|
     |Верхний колонтитул|`Authorization`|Значение заголовка `Authorization` — `Bearer {token}`. Обратите внимание, что перед значением маркера должны находиться слово `Bearer` и пробел.|
     |Верхний колонтитул|`Ocp-Apim-Subscription-Key`|Ваш [ключ разработки](luis-how-to-account-settings.md).|

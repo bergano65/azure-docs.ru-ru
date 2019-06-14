@@ -12,10 +12,10 @@ ms.custom: mvc
 ms.topic: article
 ms.date: 03/12/2019
 ms.openlocfilehash: 3b3bbe45c4850d1bb37a4d991e323d5f6d9a8a0a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60532424"
 ---
 # <a name="services-and-tools-available-for-data-migration-scenarios"></a>Доступные службы и средства для сценариев переноса данных
@@ -29,7 +29,7 @@ ms.locfileid: "60532424"
 
 ## <a name="business-justification-phase"></a>Этап коммерческого обоснования
 
-| **Источник** | **Цель** | **Обнаружение /**<br/>**инвентаризация** | **Целевое средство и рекомендация**<br/>**по номеру SKU** | **Совокупная стоимость владения/рентабельность инвестиций и**<br/>**бизнес-модель** |
+| **Source** | **Цель** | **Обнаружение /**<br/>**инвентаризация** | **Целевое средство и рекомендация**<br/>**по номеру SKU** | **Совокупная стоимость владения/рентабельность инвестиций и**<br/>**бизнес-модель** |
 | --- | --- | --- | --- | --- |
 | SQL Server; | База данных Azure SQL | [MAP Toolkit](https://msdn.microsoft.com/library/bb977556.aspx)<br/>[Миграция Azure](https://azure.microsoft.com/services/azure-migrate/)<br/>[Cloudamize*](https://www.cloudamize.com/) | [DMA](https://docs.microsoft.com/sql/dma/dma-overview?view=sql-server-2017)<br/>[Cloud Atlas*](https://www.unifycloud.com/cloud-migration-tool/)<br/>[Cloudamize*](https://www.cloudamize.com/) | [Калькулятор совокупной стоимости владения](https://azure.microsoft.com/pricing/tco/calculator/) |
 | SQL Server; | Управляемый экземпляр Базы данных SQL Azure | [MAP Toolkit](https://msdn.microsoft.com/library/bb977556.aspx)<br/>[Миграция Azure](https://azure.microsoft.com/services/azure-migrate/)<br/>[Cloudamize*](https://www.cloudamize.com/) | [Cloud Atlas*](https://www.unifycloud.com/cloud-migration-tool/)<br/>[Cloudamize*](https://www.cloudamize.com/) | [Калькулятор совокупной стоимости владения](https://azure.microsoft.com/pricing/tco/calculator/) |
@@ -47,13 +47,13 @@ ms.locfileid: "60532424"
 | PostgreSQL | База данных Azure для PostgreSQL | [Миграция Azure](https://azure.microsoft.com/services/azure-migrate/) |  | [Калькулятор совокупной стоимости владения](https://azure.microsoft.com/pricing/tco/calculator/) |
 | RDS PostgreSQL | База данных Azure для PostgreSQL |  |  | [Калькулятор совокупной стоимости владения](https://azure.microsoft.com/pricing/tco/calculator/) |
 | DB2 | База данных SQL Azure, Управляемый экземпляр, виртуальная машина |  |  |  |
-| Access | База данных SQL Azure, Управляемый экземпляр, виртуальная машина |  |  |  |
+| Доступ | База данных SQL Azure, Управляемый экземпляр, виртуальная машина |  |  |  |
 | Sybase | База данных SQL Azure, Управляемый экземпляр, виртуальная машина |  |  |  |
 | | | | | |
 
 ## <a name="pre-migration-phase"></a>Этап подготовки к миграции
 
-| **Источник** | **Цель** | **Доступ к данным приложений**<br/>**Оценка слоя** | **База данных**<br/>**Оценка** | **Производительность**<br/>**Оценка** |
+| **Source** | **Цель** | **Доступ к данным приложений**<br/>**Оценка слоя** | **База данных**<br/>**Оценка** | **Производительность**<br/>**Оценка** |
 | --- | --- | --- | --- | --- |
 | SQL Server; | База данных Azure SQL |  | [DMA](https://docs.microsoft.com/sql/dma/dma-overview?view=sql-server-2017)<br/>[Cloud Atlas*](https://www.unifycloud.com/cloud-migration-tool/)<br/>[Cloudamize*](https://www.cloudamize.com/) | [DEA](https://www.microsoft.com/download/details.aspx?id=54090)<br/>[Cloudamize*](https://www.cloudamize.com/) |
 | SQL Server; | Управляемый экземпляр Базы данных SQL Azure |  | [DMA](https://docs.microsoft.com/sql/dma/dma-overview?view=sql-server-2017)<br/>[Cloud Atlas*](https://www.unifycloud.com/cloud-migration-tool/)<br/>[Cloudamize*](https://www.cloudamize.com/) | [DEA](https://www.microsoft.com/download/details.aspx?id=54090)<br/>[Cloudamize*](https://www.cloudamize.com/) |
@@ -71,13 +71,13 @@ ms.locfileid: "60532424"
 | PostgreSQL | База данных Azure для PostgreSQL |  |  |  |
 | RDS PostgreSQL | База данных Azure для PostgreSQL |  |  |  |
 | DB2 | База данных SQL Azure, Управляемый экземпляр, виртуальная машина |  | [SSMA](https://docs.microsoft.com/sql/ssma/sql-server-migration-assistant?view=sql-server-2017) |  |
-| Access | База данных SQL Azure, Управляемый экземпляр, виртуальная машина |  | [SSMA](https://docs.microsoft.com/sql/ssma/sql-server-migration-assistant?view=sql-server-2017) |  |
+| Доступ | База данных SQL Azure, Управляемый экземпляр, виртуальная машина |  | [SSMA](https://docs.microsoft.com/sql/ssma/sql-server-migration-assistant?view=sql-server-2017) |  |
 | Sybase | База данных SQL Azure, Управляемый экземпляр, виртуальная машина |  | [SSMA](https://docs.microsoft.com/sql/ssma/sql-server-migration-assistant?view=sql-server-2017) |  |
 | | | | | |
 
 ## <a name="migration-phase"></a>Этап миграции
 
-| **Источник** | **Цель** | **Схема** | **Данные**<br/>**(не в сети)** | **Данные**<br/>**(в сети)** |
+| **Source** | **Цель** | **Схема** | **Данные**<br/>**(не в сети)** | **Данные**<br/>**(в сети)** |
 | --- | --- | --- | --- | --- |
 | SQL Server; | База данных Azure SQL | [DMA](https://docs.microsoft.com/sql/dma/dma-overview?view=sql-server-2017)<br/>[Cloudamize*](https://www.cloudamize.com/) | [DMS](https://azure.microsoft.com/services/database-migration/)<br/>[Cloudamize*](https://www.cloudamize.com/) | [DMS](https://azure.microsoft.com/services/database-migration/)<br/>[Cloudamize*](https://www.cloudamize.com/)<br/>[Attunity*](https://www.attunity.com/products/replicate/)<br/>[Striim*](https://www.striim.com/partners/striim-for-microsoft-azure/) |
 | SQL Server; | Управляемый экземпляр Базы данных SQL Azure | [DMS](https://azure.microsoft.com/services/database-migration/)<br/>[Cloudamize*](https://www.cloudamize.com/) | [DMS](https://azure.microsoft.com/services/database-migration/)<br/>[Cloudamize*](https://www.cloudamize.com/) | [DMS](https://azure.microsoft.com/services/database-migration/)<br/>[Cloudamize*](https://www.cloudamize.com/)<br/>[Attunity*](https://www.attunity.com/products/replicate/)<br/>[Striim*](https://www.striim.com/partners/striim-for-microsoft-azure/) |
@@ -95,13 +95,13 @@ ms.locfileid: "60532424"
 | PostgreSQL | База данных Azure для PostgreSQL | [pg_dump*](https://www.postgresql.org/docs/11/static/app-pgdump.html) | [DMS](https://azure.microsoft.com/services/database-migration/) | [DMS](https://azure.microsoft.com/services/database-migration/)<br/>[Attunity*](https://www.attunity.com/products/replicate/)<br/>[Striim*](https://www.striim.com/partners/striim-for-microsoft-azure/) |
 | RDS PostgreSQL | База данных Azure для PostgreSQL | [pg_dump*](https://www.postgresql.org/docs/11/static/app-pgdump.html) | [DMS](https://azure.microsoft.com/services/database-migration/) | [DMS](https://azure.microsoft.com/services/database-migration/)<br/>[Attunity*](https://www.attunity.com/products/replicate/)<br/>[Striim*](https://www.striim.com/partners/striim-for-microsoft-azure/) |
 | DB2 | База данных SQL Azure, Управляемый экземпляр, виртуальная машина | [SSMA](https://docs.microsoft.com/sql/ssma/sql-server-migration-assistant?view=sql-server-2017) | [SSMA](https://docs.microsoft.com/sql/ssma/sql-server-migration-assistant?view=sql-server-2017) | [DMS](https://azure.microsoft.com/services/database-migration/)<br/>[Attunity*](https://www.attunity.com/products/replicate/)<br/>[Striim*](https://www.striim.com/partners/striim-for-microsoft-azure/) |
-| Access | База данных SQL Azure, Управляемый экземпляр, виртуальная машина | [SSMA](https://docs.microsoft.com/sql/ssma/sql-server-migration-assistant?view=sql-server-2017) | [SSMA](https://docs.microsoft.com/sql/ssma/sql-server-migration-assistant?view=sql-server-2017) | [SSMA](https://docs.microsoft.com/sql/ssma/sql-server-migration-assistant?view=sql-server-2017) |
+| Доступ | База данных SQL Azure, Управляемый экземпляр, виртуальная машина | [SSMA](https://docs.microsoft.com/sql/ssma/sql-server-migration-assistant?view=sql-server-2017) | [SSMA](https://docs.microsoft.com/sql/ssma/sql-server-migration-assistant?view=sql-server-2017) | [SSMA](https://docs.microsoft.com/sql/ssma/sql-server-migration-assistant?view=sql-server-2017) |
 | Sybase | База данных SQL Azure, Управляемый экземпляр, виртуальная машина | [SSMA](https://docs.microsoft.com/sql/ssma/sql-server-migration-assistant?view=sql-server-2017) | [SSMA](https://docs.microsoft.com/sql/ssma/sql-server-migration-assistant?view=sql-server-2017) | [DMS](https://azure.microsoft.com/services/database-migration/)<br/>[Attunity*](https://www.attunity.com/products/replicate/)<br/>[Striim*](https://www.striim.com/partners/striim-for-microsoft-azure/) |
 | | | | | |
 
 ## <a name="post-migration-phase"></a>Этап после миграции
 
-| **Источник** | **Цель** | **Optimize** (Оптимизация) |
+| **Source** | **Цель** | **Optimize** (Оптимизация) |
 | --- | --- | --- |
 | SQL Server; | База данных Azure SQL | [Cloud Atlas*](https://www.unifycloud.com/cloud-migration-tool/)<br/>[Cloudamize*](https://www.cloudamize.com/) |
 | SQL Server; | Управляемый экземпляр Базы данных SQL Azure | [Cloud Atlas*](https://www.unifycloud.com/cloud-migration-tool/)<br/>[Cloudamize*](https://www.cloudamize.com/) |
@@ -119,7 +119,7 @@ ms.locfileid: "60532424"
 | PostgreSQL | База данных Azure для PostgreSQL |  |
 | RDS PostgreSQL | База данных Azure для PostgreSQL |  |
 | DB2 | База данных SQL Azure, Управляемый экземпляр, виртуальная машина |  |
-| Access | База данных SQL Azure, Управляемый экземпляр, виртуальная машина |  |
+| Доступ | База данных SQL Azure, Управляемый экземпляр, виртуальная машина |  |
 | Sybase | База данных SQL Azure, Управляемый экземпляр, виртуальная машина |  |
 | | | |
 

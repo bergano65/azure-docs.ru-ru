@@ -12,10 +12,10 @@ ms.date: 04/17/2019
 ms.author: pafarley
 ms.custom: seodec18
 ms.openlocfilehash: 257da397e11843ee96e93f7b3e9bc5ada29822cf
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60203351"
 ---
 # <a name="categorize-images-by-subject-matter"></a>Классификация изображений по теме
@@ -53,7 +53,7 @@ ms.locfileid: "60203351"
 
 В приведенной ниже таблице показаны типичный набор изображений и категория, возвращаемая компьютерным зрением для каждого из них.
 
-| Image | Category |
+| Image | Категория |
 |-------|----------|
 | ![Четыре человека позируют как семья](./Images/family_photo.png) | people_group |
 | ![Щенок, сидящий на лужайке](./Images/cute_dog.png) | animal_dog |

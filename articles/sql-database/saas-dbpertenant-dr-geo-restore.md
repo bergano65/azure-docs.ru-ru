@@ -13,10 +13,10 @@ ms.reviewer: sstein
 manager: craigg
 ms.date: 01/14/2019
 ms.openlocfilehash: c96f2dc2b44ea2118d9f0dd6c988017efcba5800
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60557075"
 ---
 # <a name="use-geo-restore-to-recover-a-multitenant-saas-application-from-database-backups"></a>Использование геовосстановления для восстановления мультитенантного приложения SaaS из резервных копий базы данных
@@ -80,7 +80,7 @@ ms.locfileid: "60557075"
 ## <a name="review-the-healthy-state-of-the-application"></a>Проверка состояния работоспособности приложения
 Перед тем как начать процесс восстановления, проверьте состояние работоспособности приложения.
 
-1. В веб-браузере откройте концентратор событий Wingtip Tickets по адресу http://events.wingtip-dpt.&lt;user&gt;.trafficmanager.net, где &lt;user&gt; — это имя пользователя для вашего развертывания.
+1. В веб-браузере откройте концентратор событий Wingtip Tickets по адресу http://events.wingtip-dpt.&lt ;user&gt;.trafficmanager.net, где &lt; user&gt; — это имя пользователя для вашего развертывания.
     
    Прокрутите страницу вниз и обратите внимание на имя и расположение сервера каталогов в нижнем колонтитуле. Расположение — это регион, в котором вы развернули приложение.    
 
@@ -200,7 +200,7 @@ ms.locfileid: "60557075"
  
     ![Процесс восстановления](media/saas-dbpertenant-dr-geo-restore/events-hub-tenants-offline-in-recovery-region.png)    
 
-  * На странице событий клиента, который в этот момент не подключен, отображается уведомление об автономном режиме клиента. Например, попробуйте перейти по адресу http://events.wingtip-dpt.&lt;user&gt;.trafficmanager.net/contosoconcerthall, когда клиент Contoso Concert Hall отключен.
+  * На странице событий клиента, который в этот момент не подключен, отображается уведомление об автономном режиме клиента. Например, попробуйте перейти по адресу http://events.wingtip-dpt.&lt ;user&gt;.trafficmanager.net/contosoconcerthall, когда клиент Contoso Concert Hall отключен.
 
     ![Процесс восстановления](media/saas-dbpertenant-dr-geo-restore/dr-in-progress-offline-contosoconcerthall.png)
 
@@ -266,7 +266,7 @@ ms.locfileid: "60557075"
 
 3. Нажмите клавишу F5, чтобы выполнить скрипт.
 
-4. Обновите страницу событий Contoso Concert Hall (http://events.wingtip-dpt.&lt;user&gt;.trafficmanager.net/contosoconcerthall) и обратите внимание, что событие Seriously Strauss исчезло.
+4. Обновите страницу событий Contoso Concert Hall (http://events.wingtip-dpt.&lt ;user&gt;.trafficmanager.net/contosoconcerthall) и обратите внимание, что событие Seriously Strauss исчезло.
 
 На этом этапе в руководстве уже восстановлено приложение, которое выполняется в регионе восстановления. Новый клиент подготовлен в регионе восстановления, а также подготовлены измененные данные одного из восстановленных клиентов.  
 
@@ -330,7 +330,7 @@ ms.locfileid: "60557075"
 
     Нажмите клавишу F5, чтобы запустить скрипт восстановления в новом окне PowerShell. Возвращение займет несколько минут, а его состояние можно отслеживать в окне PowerShell.
 
-3. Пока выполняется сценарий, обновите страницу концентратора событий (http://events.wingtip-dpt.&lt;user&gt;.trafficmanager.net).
+3. Пока выполняется сценарий, обновите страницу концентратора событий (http://events.wingtip-dpt.&lt ;user&gt;.trafficmanager.net).
 
     Обратите внимание, что все клиенты находятся в оперативном режиме и доступны на протяжении всего процесса.
 

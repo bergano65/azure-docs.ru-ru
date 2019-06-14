@@ -10,10 +10,10 @@ ms.service: data-lake-analytics
 ms.topic: conceptual
 ms.date: 12/05/2016
 ms.openlocfilehash: 83742a4f82fb4d67fd258ff0d242847eab634c78
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60334114"
 ---
 # <a name="analyze-website-logs-using-azure-data-lake-analytics"></a>Анализ журналов веб-сайта с помощью Azure Data Lake Analytics
@@ -21,7 +21,7 @@ ms.locfileid: "60334114"
 
 ## <a name="prerequisites"></a>Технические условия
 * **Visual Studio 2015 или Visual Studio 2013**.
-* **[Средства Data Lake для Visual Studio](https://aka.ms/adltoolsvs)**.
+* **[Средства Data Lake для Visual Studio](https://aka.ms/adltoolsvs)** .
 
     После установки Средств Data Lake для Visual Studio вы увидите пункт **Data Lake** в меню **Сервис** Visual Studio.
 

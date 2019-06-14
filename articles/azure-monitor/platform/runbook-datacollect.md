@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 05/27/2017
 ms.author: bwren
 ms.openlocfilehash: 67378a5911e5bd83888342aa3773f7f5ed4ccf29
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60454197"
 ---
 # <a name="collect-data-in-log-analytics-with-an-azure-automation-runbook"></a>Сбор данных в Log Analytics с использованием модуля runbook в службе автоматизации Azure
@@ -65,10 +65,10 @@ ms.locfileid: "60454197"
 
 | Свойство | Значение идентификатора рабочей области | Значение ключа рабочей области |
 |:--|:--|:--|
-| Name | WorkspaceId | WorkspaceKey |
+| ИМЯ | WorkspaceId | WorkspaceKey |
 | type | String | String |
-| Value | Вставьте идентификатор рабочей области Log Analytics. | Вставьте первичный или вторичный ключ рабочей области Log Analytics. |
-| зашифрованные; | Нет  | Yes |
+| Значение | Вставьте идентификатор рабочей области Log Analytics. | Вставьте первичный или вторичный ключ рабочей области Log Analytics. |
+| зашифрованные; | Нет | Да |
 
 ## <a name="3-create-runbook"></a>3. Создание модуля Runbook
 
@@ -179,13 +179,13 @@ ms.locfileid: "60454197"
 2. Последовательно выберите **Добавить расписание** > **Связать расписание с модулем Runbook** > **Создать новое расписание**.
 5. Введите указанные ниже значения для расписания и нажмите кнопку **Создать**.
 
-| Свойство | Value |
+| Свойство | Значение |
 |:--|:--|
 | Name | AutomationJobs-Hourly |
 | Запуск | Выберите любое время как минимум на 5 минут позже текущего. |
 | Периодичность | Повторение |
 | Повторять каждые | 1 час |
-| Срок действия | Нет  |
+| Срок действия | Нет |
 
 Создав расписание, задайте значения параметров, которые будут использоваться при каждом запуске модуля runbook по этому расписанию.
 

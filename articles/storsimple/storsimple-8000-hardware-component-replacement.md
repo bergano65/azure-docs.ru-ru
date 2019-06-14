@@ -16,10 +16,10 @@ ms.date: 06/02/2017
 ms.author: alkohli
 ms.custom: ''
 ms.openlocfilehash: e05a37122647d4979089f0ba00b1fc15f9b84b0f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60321829"
 ---
 # <a name="replace-a-hardware-component-on-your-storsimple-8000-series-device"></a>Замена аппаратного компонента на устройстве StorSimple серии 8000
@@ -34,7 +34,7 @@ ms.locfileid: "60321829"
 ### <a name="safety-icon-conventions"></a>Условные обозначения сведений о безопасности
 В следующей таблице описаны условные обозначения сведений о безопасности, используемые в данных учебниках. Обращайте пристальное внимание на эти условные обозначения при выполнении действий по снятию и замене компонентов устройства.
 
-| Значок | Text | Дополнительная информация |
+| Значок | Text | Дополнительные сведения |
 |:--- |:--- |:--- |
 | ![Значок "Внимание!"](./media/storsimple-hardware-component-replacement/Warning.png) |**ОПАСНОСТЬ!** |Указывает на опасную ситуацию, которая наверняка приведет к смерти или серьезной травме. Это сигнальное слово применяется только к самым крайним случаям. |
 | ![Значок "Внимание!"](./media/storsimple-hardware-component-replacement/Warning.png) |**ВНИМАНИЕ!** |Указывает на опасную ситуацию, которая может привести к смерти или серьезной травме. |
@@ -67,11 +67,11 @@ ms.locfileid: "60321829"
 
 | Компоненты | Количество | Подключаемый модуль? | Процедура замены |
 |:--- |:--- |:--- |:--- |
-| Корпус |1 |Нет  |[Замена корпуса устройства StorSimple](storsimple-8000-chassis-replacement.md) |
-| Основные контроллеры |2 |Yes |[Замена модуля контроллера на устройстве StorSimple](storsimple-8000-controller-replacement.md) |
-| Блоки питания и охлаждения (БПО) мощностью 764 Вт |2 |Yes |[Замена блока питания и охлаждения на устройстве StorSimple](storsimple-8000-power-cooling-module-replacement.md) |
-| Резервный аккумулятор |2 |Yes |[Замена резервного аккумулятора на устройстве StorSimple](storsimple-8000-battery-replacement.md) |
-| Диски |12 |Yes |[Замена диска на устройстве StorSimple](storsimple-8000-disk-drive-replacement.md) |
+| Корпус |1 |Нет |[Замена корпуса устройства StorSimple](storsimple-8000-chassis-replacement.md) |
+| Основные контроллеры |2 |Да |[Замена модуля контроллера на устройстве StorSimple](storsimple-8000-controller-replacement.md) |
+| Блоки питания и охлаждения (БПО) мощностью 764 Вт |2 |Да |[Замена блока питания и охлаждения на устройстве StorSimple](storsimple-8000-power-cooling-module-replacement.md) |
+| Резервный аккумулятор |2 |Да |[Замена резервного аккумулятора на устройстве StorSimple](storsimple-8000-battery-replacement.md) |
+| Диски |12 |Да |[Замена диска на устройстве StorSimple](storsimple-8000-disk-drive-replacement.md) |
 
 **Таблица 1.** Компоненты оборудования в основном корпусе
 
@@ -79,10 +79,10 @@ ms.locfileid: "60321829"
 
 | Компоненты | Количество | Подключаемый модуль? | Процедура замены |
 |:--- |:--- |:--- |:--- |
-| Корпус |1 |Нет  |[Замена корпуса устройства StorSimple](storsimple-8000-chassis-replacement.md) |
-| Контроллеры EBOD |2 |Yes |[Замена контроллера EBOD на устройстве StorSimple](storsimple-8000-ebod-controller-replacement.md) |
-| Блоки питания и охлаждения (БПО) мощностью 580 Вт |2 |Yes |[Замена блока питания и охлаждения на устройстве StorSimple](storsimple-8000-power-cooling-module-replacement.md) |
-| Диски |12 |Yes |[Замена диска на устройстве StorSimple](storsimple-8000-disk-drive-replacement.md) |
+| Корпус |1 |Нет |[Замена корпуса устройства StorSimple](storsimple-8000-chassis-replacement.md) |
+| Контроллеры EBOD |2 |Да |[Замена контроллера EBOD на устройстве StorSimple](storsimple-8000-ebod-controller-replacement.md) |
+| Блоки питания и охлаждения (БПО) мощностью 580 Вт |2 |Да |[Замена блока питания и охлаждения на устройстве StorSimple](storsimple-8000-power-cooling-module-replacement.md) |
+| Диски |12 |Да |[Замена диска на устройстве StorSimple](storsimple-8000-disk-drive-replacement.md) |
 
 **Таблица 2.** Компоненты оборудования в корпусе EBOD
 
@@ -92,7 +92,7 @@ ms.locfileid: "60321829"
 
 **Рис. 1.** Передняя часть устройства
 
-| Метка | ОПИСАНИЕ |
+| Метка | Описание |
 |:--- |:--- |
 | 0–11 |Дисковые накопители (всего 12) |
 
@@ -102,23 +102,23 @@ ms.locfileid: "60321829"
 
 **Рис. 2.** Обратная сторона основного корпуса
 
-| Метка | ОПИСАНИЕ |
+| Метка | Описание |
 |:--- |:--- |
 | 1 |PCM 0 |
 | 2 |PCM 1 |
 | 3 |Контроллер 0 |
-| 4. |Контроллер 1 |
+| 4\. |Контроллер 1 |
 
 ![Задняя панель модулей корпуса EBOD устройства](./media/storsimple-hardware-component-replacement/IC769599.png)
 
 **Рис. 3.** Обратная сторона корпуса EBOD
 
-| Метка | ОПИСАНИЕ |
+| Метка | Описание |
 |:--- |:--- |
 | 1 |PCM 0 |
 | 2 |PCM 1 |
 | 3 |Контроллер EBOD 0 |
-| 4. |Контроллер EBOD 1 |
+| 4\. |Контроллер EBOD 1 |
 
 ## <a name="field-replaceable-units"></a>Блоки, заменяемые в полевых условиях
 Для устройства StorSimple доступны следующие блоки, заменяемые в полевых условиях:

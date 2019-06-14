@@ -16,10 +16,10 @@ ms.workload: infrastructure-services
 ms.date: 10/31/2018
 ms.author: genli
 ms.openlocfilehash: 4e11b1bc16f874f892288f9677a71023f483de7c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60458124"
 ---
 # <a name="integrate-azure-vpn-gateway-radius-authentication-with-nps-server-for-multi-factor-authentication"></a>Интеграция аутентификации RADIUS шлюза Azure с NPS-сервером для обеспечения Многофакторной идентификации 
@@ -71,7 +71,7 @@ ms.locfileid: "60458124"
 
 1. Войдите на [портал Azure](https://portal.azure.com).
 2. Откройте шлюз виртуальной сети, который вы создали. Убедитесь, что для него указан тип шлюза **VPN** и тип VPN **На основе маршрута**.
-3. Выберите **Конфигурация " точка-сеть"** > **Настроить сейчас**, а затем укажите следующие параметры.
+3. Выберите **Конфигурация " точка-сеть"**  > **Настроить сейчас**, а затем укажите следующие параметры.
 
     - **Пул адресов.** Введите подсеть шлюза, созданную на шаге 1.
     - **Тип проверки подлинности.** Выберите **Проверка подлинности RADIUS**.

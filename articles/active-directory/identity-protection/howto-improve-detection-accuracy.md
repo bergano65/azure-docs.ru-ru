@@ -18,13 +18,13 @@ ms.author: joflore
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7724d69a9294b420ca061d5ad26ad64826372203
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60453299"
 ---
-# <a name="how-to-improve-the-detection-accuracy"></a>Практическое руководство. Повышение точности обнаружения 
+# <a name="how-to-improve-the-detection-accuracy"></a>Как Повышение точности обнаружения 
 
 Защита идентификации предоставляет механизмы для отзыва с Azure AD об обнаружении рисков в вашей среде. Чтобы оставить отзыв, вы можете подтвердить статус обнаруженного рискованного пользователя или событие входа. Корпорация Майкрософт использует этот отзыв для принятия мер в отношении текущих обнаружений рисков и повышения точности будущих обнаружений. 
 

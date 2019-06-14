@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 01/10/2019
 ms.author: sajagtap
 ms.openlocfilehash: 7e987c1249360b14fddf8af57c61fdd1a46ee6c5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60605316"
 ---
 # <a name="analyze-video-content-for-objectionable-material-in-c"></a>Анализ содержимого видео для выявления нежелательного содержимого в C#
@@ -120,7 +120,7 @@ private static readonly string CONTENT_MODERATOR_PRESET_FILE = "preset.json";
 
 Если вы хотите использовать локальный видеофайл (простейший случай), добавьте его в проект и введите его путь как значение `INPUT_FILE` (относительные пути относятся к каталогу выполнения).
 
-Вам также необходимо создать файл _preset.json_ в текущем каталоге и использовать его для указания номера версии. Например: 
+Вам также необходимо создать файл _preset.json_ в текущем каталоге и использовать его для указания номера версии. Пример:
 
 ```JSON
 {
@@ -365,7 +365,7 @@ static void StateChanged(object sender, JobStateChangedEventArgs e)
 
 - сводка по видео;
 - **видеоролики**, обозначенные как "**fragments**";
-- **ключевые кадры**, обозначенные как "**events**" с флагом необходимости проверки **"reviewRecommended" (принимает значение true или false)**, который присваивается на основе оценок **Asult** и **Racy**;
+- **ключевые кадры**, обозначенные как "**events**" с флагом необходимости проверки **"reviewRecommended" (принимает значение true или false)** , который присваивается на основе оценок **Asult** и **Racy**;
 - значения **start** (начало), **duration** (длительность), **totalDuration** (общая длительность) и **timestamp** (метка времени), выраженные в тактах. Чтобы получить значение в секундах, поделите величину в тактах на значение **timescale** (шкала времени).
  
 > [!NOTE]

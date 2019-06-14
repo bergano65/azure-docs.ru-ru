@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 01/07/2019
 ms.author: tomfitz
 ms.openlocfilehash: 6554c05f40f580a6d7ae086e1d09834298f86621
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60550773"
 ---
 # <a name="authenticate-requests-across-tenants"></a>Запросы на аутентификацию в разных клиентах
@@ -26,7 +26,7 @@ ms.locfileid: "60550773"
 
 Запрос содержит следующие значения заголовков аутентификации.
 
-| Имя заголовка | ОПИСАНИЕ | Пример значения |
+| Имя заголовка | Описание | Пример значения |
 | ----------- | ----------- | ------------ |
 | Авторизация | Основной токен | Bearer &lt;основной_токен&gt; |
 | x-ms-authorization-auxiliary | Вспомогательные токены | Bearer &lt;вспомогательный_токен1&gt;; EncryptedBearer &lt;вспомогательный_токен2&gt;; Bearer &lt;вспомогательный_токен3&gt; |

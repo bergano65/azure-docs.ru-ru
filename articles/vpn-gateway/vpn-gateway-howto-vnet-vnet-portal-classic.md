@@ -16,10 +16,10 @@ ms.workload: infrastructure-services
 ms.date: 02/14/2018
 ms.author: cherylmc
 ms.openlocfilehash: 48377f981e4d2c9ab480a1a734e6207a0246712a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60407990"
 ---
 # <a name="configure-a-vnet-to-vnet-connection-classic"></a>Настройка подключения между виртуальными сетями (классическая модель)
@@ -246,7 +246,7 @@ ms.locfileid: "60407990"
    ```powershell
    Get-AzureVNetConfig -ExportToFile C:\AzureNet\NetworkConfig.xml
    ```
-4. Откройте файл в текстовом редакторе и просмотрите имена для виртуальных сетей и сайтов. Это будут имена, использующиеся при создании подключений.<br>Имена виртуальных сетей перечислены как **VirtualNetworkSite name =**.<br>Имена сайтов перечислены как **LocalNetworkSiteRef name =**.
+4. Откройте файл в текстовом редакторе и просмотрите имена для виртуальных сетей и сайтов. Это будут имена, использующиеся при создании подключений.<br>Имена виртуальных сетей перечислены как **VirtualNetworkSite name =** .<br>Имена сайтов перечислены как **LocalNetworkSiteRef name =** .
 
 ## <a name="createconnections"></a>Шаг 8. Создание подключений VPN-шлюза
 

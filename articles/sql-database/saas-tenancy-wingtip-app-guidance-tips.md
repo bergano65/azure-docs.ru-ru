@@ -13,10 +13,10 @@ ms.reviewer: sstein
 manager: craigg
 ms.date: 12/18/2018
 ms.openlocfilehash: 758cb47760f4a15e262a4d682089ac7d9fee64e8
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60326300"
 ---
 # <a name="general-guidance-for-working-with-wingtip-tickets-sample-saas-apps"></a>Общие рекомендации по работе с примерами приложений SaaS Wingtip Tickets
@@ -79,9 +79,9 @@ ms.locfileid: "60326300"
 
 В развертывании изначально указаны клиенты и серверы Базы данных SQL каталога для подключения. Схема именования серверов зависит от шаблона аренды базы данных (ниже приведены точные сведения). 
 
-   - **Изолированное приложение:** серверы для каждого клиента (например, сервер *contosoconcerthall-&lt;Пользователь&gt;*) и *catalog-sa-&lt;Пользователь&gt;*.
-   - **Однотенантная база данных:** серверы *tenants1-dpt-&lt;Пользователь&gt;*  и *catalog-dpt-&lt;Пользователь&gt;*.
-   - **Мультитенантная база данных:** серверы *tenants1-mt-&lt;Пользователь&gt;*  и *catalog-mt-&lt;Пользователь&gt;*.
+   - **Изолированное приложение:** серверы для каждого клиента (например, сервер *contosoconcerthall-&lt;Пользователь&gt;* ) и *catalog-sa-&lt;Пользователь&gt;* .
+   - **Однотенантная база данных:** серверы *tenants1-dpt-&lt;Пользователь&gt;*  и *catalog-dpt-&lt;Пользователь&gt;* .
+   - **Мультитенантная база данных:** серверы *tenants1-mt-&lt;Пользователь&gt;*  и *catalog-mt-&lt;Пользователь&gt;* .
 
 Для успешного выполнения демонстрационного подключения на обоих серверах есть [правило брандмауэра](sql-database-firewall-configure.md), которое разрешает трафик со всех IP-адресов.
 
@@ -90,7 +90,7 @@ ms.locfileid: "60326300"
     - **Изолированное приложение:** серверы отдельных клиентов (например, *contosoconcerthall-&lt;Пользователь&gt;.database.windows.net*). 
     - **Однотенантная база данных:** *tenants1-dpt-&lt;Пользователь&gt;.database.windows.net*.
     - **Мультитенантная база данных:** *tenants1-mt-&lt;Пользователь&gt;.database.windows.net*. 
-2. Щелкните **Подключить** > **Компонент ядра СУБД…**:
+2. Щелкните **Подключить** > **Компонент ядра СУБД…** :
 
    ![сервер каталога](media/saas-tenancy-wingtip-app-guidance-tips/connect.png)
 

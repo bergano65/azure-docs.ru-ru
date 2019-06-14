@@ -16,10 +16,10 @@ ms.workload: na
 ms.date: 02/19/2019
 ms.author: banders
 ms.openlocfilehash: f93152ae3db926fb989c219d1e515abaf0281bf4
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60372179"
 ---
 # <a name="understand-the-charges-on-your-microsoft-customer-agreements-invoice"></a>Основная информация о расходах в соглашении клиента Microsoft счет
@@ -143,7 +143,7 @@ ms.locfileid: "60372179"
  | --- | --- |
  |Отдел бухгалтерского учета |invoiceSectionName |
  |Плата за использование — план Microsoft Azure |productOrderName |
- |Службы вычислений |serviceFamily |
+ |Среда выполнения приложений |serviceFamily |
 
 1. Фильтр **invoiceSectionName** столбца в CSV-файл для **учет Dept**.
 2. Фильтр **productOrderName** столбца в CSV-файл для **план Microsoft Azure**.

@@ -15,10 +15,10 @@ ms.workload: NA
 ms.date: 02/21/2019
 ms.author: srrengar
 ms.openlocfilehash: ba4923edbc59f0e6650fda1a71e1c4f79b884cf2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60393491"
 ---
 # <a name="event-analysis-and-visualization-with-azure-monitor-logs"></a>Анализ и визуализация с помощью Azure Monitor журналов событий
@@ -43,7 +43,7 @@ Azure Monitor регистрирует собирает данные из упр
 
 В [портал Azure](https://portal.azure.com), перейдите в группу ресурсов, в котором вы создали решение аналитики Service Fabric.
 
-Выберите ресурс **ServiceFabric\<имя_рабочей_области_OMS\>**.
+Выберите ресурс **ServiceFabric\<имя_рабочей_области_OMS\>** .
 
 В `Summary` вы увидите плитки в форме графа для каждого включенного решения, включая одну для Service Fabric. Щелкните граф **Service Fabric**, чтобы продолжить решение службы Fabric Analytics.
 

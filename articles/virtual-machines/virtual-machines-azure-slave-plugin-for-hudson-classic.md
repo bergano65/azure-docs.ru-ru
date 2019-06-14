@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 04/25/2017
 ms.author: robmcm
 ms.openlocfilehash: ef24e356c9ac8424fc519a3b16af5d37a20e706f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60444216"
 ---
 # <a name="how-to-use-the-azure-slave-plug-in-with-hudson-continuous-integration"></a>Использование подчиненного подключаемого модуля Azure на сервере непрерывной интеграции Hudson
@@ -152,7 +152,7 @@ ms.locfileid: "60444216"
 5. На странице настройки задания выберите **Restrict where this project can be run**(Ограничения для запуска этого проекта).
 6. Откройте меню **Node and label** (Узел и метка) и выберите вариант **linux** (мы указали эту метку при создании шаблона виртуальной машины в предыдущем разделе).
 7. В поле **Build** (Сборка) щелкните **Add build step** (Добавить шаг сборки) и выберите **Execute shell** (Запустить оболочку).
-8. В показанном ниже сценарии вместо **{your github account name}**, **{your project name}** и **{your project directory}** укажите соответствующие значения и вставьте измененный сценарий в появившуюся текстовую область.
+8. В показанном ниже сценарии вместо **{your github account name}** , **{your project name}** и **{your project directory}** укажите соответствующие значения и вставьте измененный сценарий в появившуюся текстовую область.
    
         # Clone from git repo
    

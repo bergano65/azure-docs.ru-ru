@@ -13,10 +13,10 @@ ms.topic: troubleshooting
 ms.date: 11/16/2018
 ms.author: genli
 ms.openlocfilehash: 3a8e005f8678deef9fc4aebd2d620619fe6074bc
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60307333"
 ---
 # <a name="how-to-reset-network-interface-for-azure-windows-vm"></a>Как сбросить сетевой интерфейс для виртуальной машины Azure под управлением Windows 
@@ -79,7 +79,7 @@ ms.locfileid: "60307333"
 #### <a name="use-azure-portal"></a>Использование портала Azure
 
 1.  Перейдите на [портал Azure]( https://ms.portal.azure.com).
-2.  Выберите **Виртуальные машины (классика)**.
+2.  Выберите **Виртуальные машины (классика)** .
 3.  Выберите задействованную виртуальную машину.
 4.  Выберите **IP-адреса**.
 5.  Если для **назначения частного IP-адреса** не установлено значение **Статический**, установите **его**.

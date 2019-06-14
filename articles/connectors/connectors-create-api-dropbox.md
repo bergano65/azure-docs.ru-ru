@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 03/01/2019
 tags: connectors
 ms.openlocfilehash: 5a1bfe8ca38fc23f09b13195fb8ca5bd443a4afd
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60312564"
 ---
 # <a name="upload-and-manage-files-in-dropbox-by-using-azure-logic-apps"></a>Отправка файлов и управления ими в Dropbox с помощью Azure Logic Apps
@@ -57,7 +57,7 @@ ms.locfileid: "60312564"
 
 1. Если вы еще не уже имеет право Azure Logic Apps для доступа к Dropbox, теперь авторизации доступа.
 
-1. Чтобы найти путь к файлу, вы хотите использовать, рядом с полем **путь к файлу** , нажмите кнопку с многоточием (**...** ) кнопку. 
+1. Чтобы найти путь к файлу, вы хотите использовать, рядом с полем **путь к файлу** , нажмите кнопку с многоточием ( **...** ) кнопку. 
 
    Можно также щелкнуть внутри **путь к файлу** из списка динамического содержимого выберите **путь к файлу**, значение которого доступен в виде выходных данных из триггера, добавленный в предыдущем разделе.
 

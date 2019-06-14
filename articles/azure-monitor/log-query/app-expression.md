@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 01/25/2019
 ms.author: bwren
 ms.openlocfilehash: a1a605bc733597430f64dceeb6c485db0abf657b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60589249"
 ---
 # <a name="app-expression-in-azure-monitor-query"></a>Выражение app() в запросах Azure Monitor
@@ -35,7 +35,7 @@ ms.locfileid: "60589249"
 
 - *Идентификатор:* идентифицирует приложение с помощью одного из форматов, представленных в таблице ниже.
 
-| Идентификатор | ОПИСАНИЕ | Пример
+| Идентификатор | Описание | Пример
 |:---|:---|:---|
 | Имя ресурса | Понятное для человека имя приложения (или имя компонента) | app("fabrikamapp") |
 | Полное имя | Полное имя приложения в формате subscriptionName/resourceGroup/componentName | app('AI-Prototype/Fabrikam/fabrikamapp') |

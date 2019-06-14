@@ -14,14 +14,14 @@ ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: dc72ec9bf2e7e7c5c77685368167357a0108f2d3
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60335443"
 ---
 # <a name="move-data-from-amazon-redshift-using-azure-data-factory"></a>Перемещение данных из Amazon Redshift с помощью фабрики данных Azure
-> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
+> [!div class="op_single_selector" title1="Выберите версию службы фабрики данных, которую вы используете:"]
 > * [Версия 1](data-factory-amazon-redshift-connector.md)
 > * [Версия 2 (текущая)](../connector-amazon-redshift.md)
 
@@ -62,12 +62,12 @@ ms.locfileid: "60335443"
 
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 | --- | --- | --- |
-| **type** |Этому свойству необходимо задать значение **AmazonRedshift**. |Yes |
-| **server** |IP-адрес или имя узла сервера Amazon Redshift. |Yes |
+| **type** |Этому свойству необходимо задать значение **AmazonRedshift**. |Да |
+| **server** |IP-адрес или имя узла сервера Amazon Redshift. |Да |
 | **port** |Номер TCP-порта, используемого сервером Amazon Redshift для прослушивания клиентских подключений. |Нет (значение по умолчанию — 5439) |
-| **database** |Имя базы данных Amazon Redshift. |Yes |
-| **username** |Имя пользователя, имеющего доступ к базе данных. |Yes |
-| **password** |Пароль для учетной записи пользователя. |Yes |
+| **database** |Имя базы данных Amazon Redshift. |Да |
+| **username** |Имя пользователя, имеющего доступ к базе данных. |Да |
+| **password** |Пароль для учетной записи пользователя. |Да |
 
 ## <a name="dataset-properties"></a>Свойства набора данных
 
@@ -88,7 +88,7 @@ ms.locfileid: "60335443"
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 | --- | --- | --- |
 | **query** | Используйте пользовательский запрос для чтения данных. |Нет (если для свойства **tableName** задано значение dataset). |
-| **redshiftUnloadSettings** | Содержит группу свойств при использовании команды Redshift **UNLOAD**. | Нет  |
+| **redshiftUnloadSettings** | Содержит группу свойств при использовании команды Redshift **UNLOAD**. | Нет |
 | **s3LinkedServiceName** | Используется Amazon S3 в качестве промежуточного хранилища. Связанная служба указывается с помощью имени типа фабрики данных Azure **AwsAccessKey**. | Требуется при использовании свойства **redshiftUnloadSettings**. |
 | **bucketName** | Указывает контейнер Amazon S3 для хранения промежуточных данных. Если это свойство не указано, действие копирования автоматически создаст контейнер. | Требуется при использовании свойства **redshiftUnloadSettings**. |
 
@@ -339,8 +339,8 @@ ms.locfileid: "60335443"
 | BOOLEAN |String |
 | CHAR |String |
 | VARCHAR |String |
-| DATE |Datetime |
-| TIMESTAMP |Datetime |
+| DATE |DateTime |
+| TIMESTAMP |DateTime |
 | TEXT |String |
 
 ## <a name="map-source-to-sink-columns"></a>Сопоставление столбцов источника и приемника

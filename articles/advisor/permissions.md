@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 04/03/2019
 ms.author: kasparks
 ms.openlocfilehash: cbd2e456c96dbf8ca01387f0c7c17a1541dbfe55
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60467618"
 ---
 # <a name="permissions-in-azure-advisor"></a>Разрешения в помощник по Azure
@@ -30,7 +30,7 @@ ms.locfileid: "60467618"
 |Группа ресурсов владельца|**X**|--|--|**X**|**X**|
 |Группа ресурсов участника|**X**|--|--|**X**|**X**|
 |Группа ресурсов чтения|**X**|--|--|--|--|
-|Владелец ресурсов|**X**|--|--|--|**X**|
+|Владелец ресурса|**X**|--|--|--|**X**|
 |Участник ресурсов|**X**|--|--|--|**X**|
 |Средства чтения ресурсов|**X**|--|--|--|--|
 

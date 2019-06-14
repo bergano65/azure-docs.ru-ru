@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 04/24/2015
 ms.author: MicrosoftHelp@twilio.com
 ms.openlocfilehash: 3b8b21de9664a969e8b1ce5699034aa9ab41d0f1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60329503"
 ---
 # <a name="how-to-use-twilio-for-voice-and-sms-capabilities-from-azure"></a>Использование Twilio для поддержки голосовых вызовов и SMS в Azure
@@ -85,7 +85,7 @@ Twilio предоставляет набор вспомогательных би
 
 Twilio предоставляет пять библиотек для разработчиков .NET:
 
-| Библиотека | ОПИСАНИЕ |
+| Библиотека | Описание |
 | --- | --- |
 | Twilio.API | Основная библиотека Twilio, реализующая интерфейс API REST Twilio в виде понятной библиотеки .NET. Эта библиотека доступна для .NET, Silverlight и Windows Phone 7. |
 | Twilio.TwiML | Позволяет создавать разметку TwiML удобным для .NET способом. |
@@ -176,7 +176,7 @@ catch (TwilioException ex)
 Когда приложение инициирует вызов API Twilio (например, с использованием метода **CallResource.Create**), Twilio отправляет ваш запрос на URL-адрес, который должен вернуть ответ TwiML. В примере, показанном в разделе [Практическое руководство. Осуществление исходящего звонка](#howto_make_call), для возврата отклика используется URL-адрес [https://twimlets.com/message][twimlet_message_url], предоставляемый Twilio.
 
 > [!NOTE]
-> Хотя TwiML предназначается для использования веб-службами, TwiML можно также просмотреть в браузере. Например, щелкните [https://twimlets.com/message][twimlet_message_url], чтобы просмотреть пустой элемент `<Response>`, или щелкните [https://twimlets.com/message?Message%5B0%5D=Hello%20World](https://twimlets.com/message?Message%5B0%5D=Hello%20World), чтобы просмотреть элемент `<Response>`, который содержит элемент &lt;Say&gt;.
+> Хотя TwiML предназначается для использования веб-службами, TwiML можно также просмотреть в браузере. Например, щелкните [https://twimlets.com/message][twimlet_message_url], чтобы просмотреть пустой элемент `<Response>` , или щелкните [https://twimlets.com/message?Message%5B0%5D=Hello%20World](https://twimlets.com/message?Message%5B0%5D=Hello%20World), чтобы просмотреть элемент `<Response>` , который содержит элемент &lt; Say&gt;.
 >
 
 Вместо того чтобы использовать URL-адрес, предоставленный Twilio, можно создать собственный URL-адрес для возврата HTTP-ответов. Веб-сайт можно создавать на любом языке, который возвращает HTTP-ответы. В этом разделе предполагается, что URL-адрес будет размещаться из универсального обработчика ASP.NET.

@@ -12,10 +12,10 @@ ms.topic: article
 tags: connectors
 ms.date: 08/25/2018
 ms.openlocfilehash: e636b2bb08477e6c56c6ae41f08983fc5bfa2a9b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60450749"
 ---
 # <a name="monitor-and-manage-sharepoint-resources-with-azure-logic-apps"></a>Мониторинг ресурсов SharePoint и управление ими с помощью Azure Logic Apps
@@ -70,7 +70,7 @@ ms.locfileid: "60450749"
    В списке действий выберите любое необходимое действие.
 
    Чтобы добавить действие между шагами, переместите указатель на стрелку между шагами. 
-   Выберите появившийся знак "плюс" (**+**), а затем щелкните **Добавить действие**.
+   Выберите появившийся знак "плюс" ( **+** ), а затем щелкните **Добавить действие**.
 
 1. Когда вам будет предложено войти в систему, укажите необходимые сведения о подключении. Если вы используете SharePoint Server, убедитесь, что выбран **подключиться через локальный шлюз данных**. Когда все будет готово, выберите **Создать**.
 

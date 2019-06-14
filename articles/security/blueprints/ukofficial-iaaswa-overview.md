@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 02/08/2018
 ms.author: jomolesk
 ms.openlocfilehash: 13ea2b68027c81bca7b43cef62cf7039aa0ea8dd
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60609495"
 ---
 # <a name="azure-security-and-compliance-blueprint---three-tier-iaas-web-application-for-uk-official"></a>Схема безопасности и соответствия требованиям Azure. Трехуровневое веб-приложение IaaS для UK OFFICIAL
@@ -154,7 +154,7 @@ Load Balancer
 
 **Группы безопасности сети**. Группы [NSG](https://docs.microsoft.com/azure/virtual-network/virtual-networks-nsg) содержат списки управления доступом, которые разрешают или запрещают трафик в виртуальной сети. Группы безопасности сети можно использовать для защиты трафика на уровне отдельных виртуальных машин или подсети.
 
-**Доменные службы Active Directory (AD DS)**. Эта архитектура предоставляет выделенное развертывание [доменных служб Active Directory](https://technet.microsoft.com/library/hh831484.aspx).
+**Доменные службы Active Directory (AD DS)** . Эта архитектура предоставляет выделенное развертывание [доменных служб Active Directory](https://technet.microsoft.com/library/hh831484.aspx).
 
 **Ведение журнала и аудит**. [Журнал действий Azure](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-activity-logs) записывает операции, выполненные на ресурсе в подписке, например, кто инициировал операцию, когда произошла операция, состояние операции и значения других свойств, которые могут помочь исследовать операцию. Журнал действий Azure — эта служба платформы Azure, записывающая все действия в подписку. При необходимости журналы можно заархивировать или экспортировать.
 

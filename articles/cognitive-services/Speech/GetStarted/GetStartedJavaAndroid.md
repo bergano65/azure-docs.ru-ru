@@ -12,10 +12,10 @@ ms.date: 09/18/2018
 ms.author: zhouwang
 ROBOTS: NOINDEX,NOFOLLOW
 ms.openlocfilehash: 147042e300e629dd7e354d4e9079cc4855a8146c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60515185"
 ---
 # <a name="quickstart-use-the-bing-speech-recognition-api-in-java-on-android"></a>Краткое руководство. Использование API распознавания речи Bing в Java на платформе Android
@@ -144,7 +144,7 @@ void initializeRecoClient()
   * В режиме `LongDictation` обработчик событий может вызываться несколько раз в зависимости от того, где служба распознает паузы в предложении.
   * **Для каждого из самых лучших вариантов** возвращаются значение достоверности и несколько различных форм распознанного текста. Для получения дополнительных сведений см. раздел [Формат выходных данных](../Concepts.md#output-format).
 
-## <a name="related-topics"></a>Связанные разделы
+## <a name="related-topics"></a>См. также
 
 * [Справочник по клиентской библиотеке для Android](https://github.com/Azure-Samples/Cognitive-Speech-STT-Android/tree/master/docs)
 * [Get started with the Speech Recognition API in C# for .NET on Windows](GetStartedCSharpDesktop.md) (Начало работы с API распознавания речи в C# для .NET на платформе Windows)

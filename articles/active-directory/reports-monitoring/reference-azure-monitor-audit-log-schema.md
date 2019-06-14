@@ -18,10 +18,10 @@ ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d9f58b213e50a021651f35112a48d8f74ae59571
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60437079"
 ---
 # <a name="interpret-the-azure-ad-audit-logs-schema-in-azure-monitor-preview"></a>Интерпретация схемы журналов аудита Azure AD в Azure Monitor (предварительная версия)
@@ -147,7 +147,7 @@ ms.locfileid: "60437079"
 
 ## <a name="field-and-property-descriptions"></a>Описания свойств и полей
 
-| Имя поля | ОПИСАНИЕ |
+| Имя поля | Описание |
 |------------|-------------|
 | time       | Дата и время (в формате UTC). |
 | operationName | Имя операции. |
@@ -167,7 +167,7 @@ ms.locfileid: "60437079"
 
 <br>
 
-| Имя свойства | ОПИСАНИЕ |
+| Имя свойства | Описание |
 |---------------|-------------|
 | AuditEventCategory | Тип события аудита. Может иметь значение *User Management*, *Application Management* или другого типа.|
 | Identity Type | Это может быть *Application* или *User*. |

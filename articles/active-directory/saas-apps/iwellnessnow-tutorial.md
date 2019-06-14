@@ -17,10 +17,10 @@ ms.date: 05/16/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 02b831df98db5b9d63873a0da93e603cd7cbf308
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60269095"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-iwellnessnow"></a>Руководство. Интеграция Azure Active Directory с iWellnessNow
@@ -113,7 +113,7 @@ ms.locfileid: "60269095"
 
     ![Передача конфигурации домена и URL-адресов для единого входа в приложение iWellnessNow](./media/iwellnessnow-tutorial/tutorial_iwellnessnow_uploadconfig.png)
 
-    2. Щелкните **значок папки**, выберите файл метаданных и нажмите кнопку **Отправить**.
+    2\. Щелкните **значок папки**, выберите файл метаданных и нажмите кнопку **Отправить**.
     
     c. После успешной передачи **файла метаданных поставщика службы** значения **идентификатора** и **URL-адреса ответа** автоматически добавятся в раздел **Домены и URL-адреса приложения iWellnessNow**, как показано ниже:
 
@@ -125,7 +125,7 @@ ms.locfileid: "60269095"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `http://<CustomerName>.iwellnessnow.com`
 
-    2. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<CustomerName>.iwellnessnow.com/ssologin`.
+    2\. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<CustomerName>.iwellnessnow.com/ssologin`.
 
 1. Установите флажок **Показать дополнительные параметры URL-адресов**, и выполните следующее действие, если хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**:
 

@@ -12,10 +12,10 @@ ms.date: 12/15/2017
 ms.author: glenga
 ms.reviewer: sunayv
 ms.openlocfilehash: 9f4bbf91b09abeb917fd9f49482881e33bf788ec
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60499635"
 ---
 # <a name="exporting-an-azure-hosted-api-to-powerapps-and-microsoft-flow"></a>Экспорт размещенного в Azure API в PowerApps и Microsoft Flow
@@ -66,7 +66,7 @@ ms.locfileid: "60499635"
 
 2. Используйте настройки, указанные в таблице.
 
-    |Параметр|ОПИСАНИЕ|
+    |Параметр|Описание|
     |--------|------------|
     |**Environment**|Выберите среду, в которую нужно сохранить настраиваемый соединитель. Дополнительные сведения см. в статье [Обзор сред](https://powerapps.microsoft.com/tutorials/environments-overview/).|
     |**Имя пользовательского API**|Введите имя, которое разработчики PowerApps and Microsoft Flow увидят в своих списках соединителей.|

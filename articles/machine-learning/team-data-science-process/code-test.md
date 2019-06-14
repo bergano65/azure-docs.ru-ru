@@ -12,10 +12,10 @@ ms.date: 05/19/2018
 ms.author: tdsp
 ms.custom: seodec18, previous-author=weig, previous-ms.author=weig
 ms.openlocfilehash: 10692fcb720be819dcf94a8ecbc541983ffc8853
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60336700"
 ---
 # <a name="data-science-code-testing-on-azure-with-the-team-data-science-process-and-azure-devops-services"></a>Тестирование кода обработки и анализа данных в Azure с помощью командного процесса обработки и анализа данных и Azure DevOps Services
@@ -116,7 +116,7 @@ ms.locfileid: "60336700"
 
        ![Selections for starting a new build process](./media/code-test/create_new_build.PNG)
 
-    2. Следуйте инструкциям на экране, чтобы выбрать расположение исходного кода, имя проекта, репозиторий и сведения о ветви.
+    2\. Следуйте инструкциям на экране, чтобы выбрать расположение исходного кода, имя проекта, репозиторий и сведения о ветви.
     
        ![Source, name, repository, and branch information](./media/code-test/fill_in_build_info.PNG)
 
@@ -154,7 +154,7 @@ ms.locfileid: "60336700"
 * В [репозитории прогноза доходов UCI](https://github.com/Azure/MachineLearningSamples-TDSPUCIAdultIncome) представлены конкретные примеры модульных тестов для сценариев обработки и анализа данных.
 * Выполните приведенные выше рекомендации и примеры для сценария прогнозирования доходов UCI в собственных проектах обработки и анализа данных.
 
-## <a name="references"></a>Ссылки
+## <a name="references"></a>Справочники
 * [Что такое процесс обработки и анализа данных группы?](https://aka.ms/tdsp)
 * [Средства тестирования для Visual Studio](https://www.visualstudio.com/vs/features/testing-tools/)
 * [Ресурсы для тестирования в Azure DevOps](https://www.visualstudio.com/team-services/)

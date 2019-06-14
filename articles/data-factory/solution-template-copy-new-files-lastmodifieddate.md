@@ -14,10 +14,10 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 3/8/2019
 ms.openlocfilehash: cae75f4d64c8b3f74cc40e94a675c0f10a6bd9ec
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60312819"
 ---
 # <a name="copy-new-and-changed-files-by-lastmodifieddate-with-azure-data-factory"></a>Копирование новых и измененных файлов, Дата последнего изменения с помощью фабрики данных Azure
@@ -60,12 +60,12 @@ ms.locfileid: "60312819"
     ![Отображение конвейера](media/solution-template-copy-new-files-lastmodifieddate/copy-new-files-lastmodifieddate5.png)
 
 6. Выберите **Отладка**, записать значение для **параметры** и выберите **Готово**.  В приведенном далее рисунке, параметров задается следующим образом.
-   - **FolderPath_Source** = **/source/**
-   - **FolderPath_Destination** = **/destination/**
+   - **FolderPath_Source** =  **/source/**
+   - **FolderPath_Destination** =  **/destination/**
    - **LastModified_From** =  **2019-02-01T00:00:00Z**
    - **LastModified_To** = **2019-03-01T00:00:00Z**
     
-     Пример указывает, какой-либо файлы, которые последнего изменения в промежутке времени между *2019-02-01T00:00:00Z* и *2019-03-01T00:00:00Z* копируется из папки */source/*  в папку */destination/*.  Вы можете заменить эти примеры своими параметрами.
+     Пример указывает, какой-либо файлы, которые последнего изменения в промежутке времени между *2019-02-01T00:00:00Z* и *2019-03-01T00:00:00Z* копируется из папки */source/*  в папку */destination/* .  Вы можете заменить эти примеры своими параметрами.
     
      ![Запуск конвейера](media/solution-template-copy-new-files-lastmodifieddate/copy-new-files-lastmodifieddate6.png)
 
@@ -86,10 +86,10 @@ ms.locfileid: "60312819"
     ![Создание триггера](media/solution-template-copy-new-files-lastmodifieddate/copy-new-files-lastmodifieddate10.png)    
     
 11. Записать значение для **параметры выполнения триггера** как следующее, а затем выберите **Готово**.
-    - **FolderPath_Source** = **/source/**.  Можно заменить папки в качестве источника хранилища данных.
-    - **FolderPath_Destination** = **/destination/**.  Можно заменить папки в целевое хранилище данных.
-    - **LastModified_From** =  **@trigger(). outputs.windowStartTime**.  Это системная переменная из триггера, определяющим время, когда конвейер было включено время последнего.
-    - **LastModified_To** = **@trigger(). outputs.windowEndTime**.  Это системная переменная из триггера, определяющим время, при активации этого времени конвейера.
+    - **FolderPath_Source** =  **/source/** .  Можно заменить папки в качестве источника хранилища данных.
+    - **FolderPath_Destination** =  **/destination/** .  Можно заменить папки в целевое хранилище данных.
+    - **LastModified_From** =   **@trigger(). outputs.windowStartTime**.  Это системная переменная из триггера, определяющим время, когда конвейер было включено время последнего.
+    - **LastModified_To** =  **@trigger(). outputs.windowEndTime**.  Это системная переменная из триггера, определяющим время, при активации этого времени конвейера.
     
     ![Входные параметры](media/solution-template-copy-new-files-lastmodifieddate/copy-new-files-lastmodifieddate11.png)
     

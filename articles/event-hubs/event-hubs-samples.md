@@ -16,10 +16,10 @@ ms.workload: na
 ms.date: 12/06/2018
 ms.author: shvija
 ms.openlocfilehash: 1c1198733fb56303d328ee97152442d25dbe945a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60343483"
 ---
 # <a name="git-repositories-with-samples-for-azure-event-hubs"></a>Репозитории Git с примерами кодов для Центров событий Azure 
@@ -27,14 +27,14 @@ ms.locfileid: "60343483"
 
 ## <a name="net-samples"></a>Примеры для .NET
 
-| Имя примера | ОПИСАНИЕ | 
+| Имя примера | Описание | 
 | ----------- | ----------- | 
 | [SampleSender](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Microsoft.Azure.EventHubs/SampleSender) | В этом примере показано, как написать консольное приложение для .NET Core, которое отправляет набор событий в концентратор событий. |
 | [SampleEHReceiver](https://github.com/Azure/azure-event-hubs/tree/master/samples/DotNet/Microsoft.Azure.EventHubs/SampleEphReceiver) | В этом примере показано, как создать консольное приложение .NET Core для получения набора событий из концентратора событий с помощью библиотеки узла обработчика событий.  | 
 
 ## <a name="java-samples"></a>Примеры для Java
 
-| Имя примера | ОПИСАНИЕ | 
+| Имя примера | Описание | 
 | ----------- | ----------- | 
 | [SendBatch](https://github.com/Azure/azure-event-hubs/tree/master/samples/Java/Basic/SendBatch)  | В этом примере показано, как принимать пакеты событий в концентратор событий. | 
 | [SimpleSend](https://github.com/Azure/azure-event-hubs/tree/master/samples/Java/Basic/SimpleSend) | В этом примере показано, как принимать события в концентратор событий. |

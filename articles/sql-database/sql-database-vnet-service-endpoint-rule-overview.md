@@ -13,10 +13,10 @@ ms.reviewer: vanto, genemi
 manager: craigg
 ms.date: 03/12/2019
 ms.openlocfilehash: 8c33cd7fe702f46f9c88643895b96445a9aa6a78
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60331417"
 ---
 # <a name="use-virtual-network-service-endpoints-and-rules-for-database-servers"></a>Использование конечных точек служб и правил виртуальной сети для серверов базы данных
@@ -209,7 +209,7 @@ PolyBase часто используют для загрузки данных в
        CREATE MASTER KEY [ENCRYPTION BY PASSWORD = 'somepassword'];
        ```
     
-   1. Создайте учетные данные базы данных, указав **IDENTITY = 'Managed Service Identity'**:
+   1. Создайте учетные данные базы данных, указав **IDENTITY = 'Managed Service Identity'** :
 
        ```SQL
        CREATE DATABASE SCOPED CREDENTIAL msi_cred WITH IDENTITY = 'Managed Service Identity';
@@ -248,7 +248,7 @@ PolyBase часто используют для загрузки данных в
 
 ### <a name="error-40914"></a>Ошибка 40914
 
-*Текст сообщения.* Невозможно открыть сервер *[имя-сервера]*, запрашиваемый именем входа. Клиенту запрещен доступ к серверу.
+*Текст сообщения.* Невозможно открыть сервер *[имя-сервера]* , запрашиваемый именем входа. Клиенту запрещен доступ к серверу.
 
 *Описание ошибки.* Клиент находится в подсети, которая содержит конечные точки сервера виртуальной сети. Но для сервера Базы данных SQL Azure не установлено правило виртуальной сети, разрешающее подсети обмениваться данными с базой данных SQL.
 

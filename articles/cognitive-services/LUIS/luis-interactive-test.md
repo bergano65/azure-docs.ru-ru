@@ -12,10 +12,10 @@ ms.topic: article
 ms.date: 01/23/2019
 ms.author: diberry
 ms.openlocfilehash: 51c6a58567b35c9b8486d8634b0bed1af7218994
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60199165"
 ---
 # <a name="test-your-luis-app-in-the-luis-portal"></a>Тестирование приложения LUIS на портале LUIS
@@ -105,7 +105,7 @@ ms.locfileid: "60199165"
 
 2. На открывшейся панели **Inspect** (Проверка) выберите **[Compare with published](#compare-with-published-version)** (Сравнить с опубликованной). 
 
-3. На открывшейся панели **Published** (Опубликовано) щелкните ссылку **[Дополнительные параметры](#additional-settings-in-test-panel)**.
+3. На открывшейся панели **Published** (Опубликовано) щелкните ссылку **[Дополнительные параметры](#additional-settings-in-test-panel)** .
 
 4. Во всплывающем диалоговом окне введите ключ службы **проверки орфографии Bing**. 
     ![Ввод ключа службы проверки орфографии Bing](./media/luis-how-to-interactive-test/interactive-with-spell-check-service-key.png)

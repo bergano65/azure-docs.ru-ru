@@ -13,10 +13,10 @@ ms.date: 12/10/2018
 ms.author: abnarain
 ms.reviewer: douglasl
 ms.openlocfilehash: 562ce675acc43002ce468d60f8a8c412410be86c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60395401"
 ---
 # <a name="transform-data-by-using-databricks-in-azure-data-factory"></a>Преобразование данных с помощью Databricks в Фабрике данных Azure
@@ -71,7 +71,7 @@ ms.locfileid: "60395401"
 
 1.  Создайте **маркер доступа Databricks**, чтобы Фабрика данных могла получать доступ к Databricks. **Сохраните маркер доступа** для дальнейшего использования при создании связанной службы Databricks. Он выглядит примерно так: "dapi32db32cbb4w6eee18b7d87e45exxxxxx".
 
-    ![4.](media/solution-template-Databricks-notebook/Databricks-tutorial-image04.png)
+    ![4\.](media/solution-template-Databricks-notebook/Databricks-tutorial-image04.png)
 
     ![5](media/solution-template-Databricks-notebook/Databricks-tutorial-image05.png)
 

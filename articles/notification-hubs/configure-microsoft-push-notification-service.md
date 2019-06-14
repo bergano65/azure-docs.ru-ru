@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 03/25/2019
 ms.author: jowargo
 ms.openlocfilehash: 1c76b44438e6527439d0a370c92f4120424b8da5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60240318"
 ---
 # <a name="configure-microsoft-push-notification-service-mpns-settings-for-a-notification-hub-in-the-azure-portal"></a>Настройка параметров Microsoft Push Notification Service (MPNS) для концентратора уведомлений на портале Azure
@@ -34,7 +34,7 @@ ms.locfileid: "60240318"
 
       ![Снимок экрана, на котором показано, как включить push-уведомления без проверки подлинности](./media/notification-hubs-windows-phone-get-started/azure-portal-unauth.png)
 
-   2. Чтобы включить push-уведомления с проверкой подлинности, сделайте следующее:
+   2\. Чтобы включить push-уведомления с проверкой подлинности, сделайте следующее:
       * На панели инструментов щелкните **Отправка сертификата**.
       * Щелкните значок файла, а затем выберите файл сертификата.
       * Введите пароль для сертификата.

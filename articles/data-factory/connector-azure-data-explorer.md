@@ -14,10 +14,10 @@ ms.topic: conceptual
 ms.date: 04/16/2019
 ms.author: orspodek
 ms.openlocfilehash: f501257903f3b7c621512f06d1c8c7109e22db1e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60394512"
 ---
 # <a name="copy-data-to-or-from-azure-data-explorer-using-azure-data-factory"></a>Копирование данных из Azure Data Explorer или обратно с помощью Фабрики данных Azure
@@ -71,7 +71,7 @@ ms.locfileid: "60394512"
 | type | Свойству **type** необходимо задать значение **AzureDataExplorer** | Yes |
 | endpoint | URL-адрес конечной точки кластера Azure Data Explorer в формате `https://<clusterName>.<regionName>.kusto.windows.net`. | Yes |
 | database | Имя базы данных. | Yes |
-| tenant | Укажите сведения о клиенте (доменное имя или идентификатор клиента), в котором находится приложение. Это связано с тем, что обычно знаете как "**Идентификации**" в [строку подключения Kusto](https://docs.microsoft.com/azure/kusto/api/connection-strings/kusto#application-authentication-properties). Получите его, наведя указатель мыши на правый верхний угол страницы портала Azure. | Yes |
+| клиент | Укажите сведения о клиенте (доменное имя или идентификатор клиента), в котором находится приложение. Это связано с тем, что обычно знаете как "**Идентификации**" в [строку подключения Kusto](https://docs.microsoft.com/azure/kusto/api/connection-strings/kusto#application-authentication-properties). Получите его, наведя указатель мыши на правый верхний угол страницы портала Azure. | Yes |
 | servicePrincipalId | Укажите идентификатора клиента приложения. Это связано с тем, что обычно знаете как "**идентификатор клиента приложения AAD**" в [строку подключения Kusto](https://docs.microsoft.com/azure/kusto/api/connection-strings/kusto#application-authentication-properties). | Yes |
 | servicePrincipalKey | Укажите ключ приложения. Это связано с тем, что обычно знаете как "**ключ приложения AAD**" в [строку подключения Kusto](https://docs.microsoft.com/azure/kusto/api/connection-strings/kusto#application-authentication-properties). Пометьте это поле как **SecureString**, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Yes |
 
@@ -139,7 +139,7 @@ ms.locfileid: "60394512"
 |:--- |:--- |:--- |
 | type | Свойству **type** источника действия копирования необходимо задать значение **AzureDataExplorerSource** | Yes |
 | query | Запрос только для чтения в [формате KQL](/azure/kusto/query/). Используйте пользовательский запрос KQL в качестве ссылки. | Yes |
-| queryTimeout | Время ожидания до истечения срока запроса. Значение по умолчанию — 10 мин. (00:10:00); допустимое максимальное значение — 1 час (01:00:00). | Нет  |
+| queryTimeout | Время ожидания до истечения срока запроса. Значение по умолчанию — 10 мин. (00:10:00); допустимое максимальное значение — 1 час (01:00:00). | Нет |
 
 >[!NOTE]
 >Размер источника в обозреватель данных Azure по умолчанию ограничен 500 000 записей или 64 МБ. Чтобы получить все записи без усечения, можно указать `set notruncation;` в начале запроса. Ссылаться на [запроса ограничения](https://docs.microsoft.com/azure/kusto/concepts/querylimits) на дополнительные сведения см.
@@ -184,7 +184,7 @@ ms.locfileid: "60394512"
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | type | Свойству **type** приемника действия копирования необходимо присвоить значение **AzureDataExplorerSink** | Yes |
-| ingestionMappingName | Имя предварительно созданной **[сопоставление](/azure/kusto/management/mappings#csv-mapping)** в таблице Kusto. Чтобы сопоставить столбцы из источника в обозреватель данных Azure — которая применяется к **[все поддерживаемые исходные хранилища/форматы](copy-activity-overview.md#supported-data-stores-and-formats)** включая CSV или JSON и Avro форматирует и т.д., можно использовать действие копирования [столбца сопоставление](copy-activity-schema-and-type-mapping.md) (неявно по имени или явно в соответствии с настройками) и/или сопоставления обозреватель данных Azure. | Нет  |
+| ingestionMappingName | Имя предварительно созданной **[сопоставление](/azure/kusto/management/mappings#csv-mapping)** в таблице Kusto. Чтобы сопоставить столбцы из источника в обозреватель данных Azure — которая применяется к **[все поддерживаемые исходные хранилища/форматы](copy-activity-overview.md#supported-data-stores-and-formats)** включая CSV или JSON и Avro форматирует и т.д., можно использовать действие копирования [столбца сопоставление](copy-activity-schema-and-type-mapping.md) (неявно по имени или явно в соответствии с настройками) и/или сопоставления обозреватель данных Azure. | Нет |
 
 **Пример.**
 

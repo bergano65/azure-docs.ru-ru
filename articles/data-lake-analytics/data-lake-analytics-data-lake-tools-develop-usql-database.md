@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.workload: big-data
 ms.date: 07/03/2018
 ms.openlocfilehash: 47235fa5676acd8de8a7cc0d969b813837faf0af
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60628852"
 ---
 # <a name="use-a-u-sql-database-project-to-develop-a-u-sql-database-for-azure-data-lake"></a>Использование проекта базы данных U-SQL в разработке базы данных U-SQL для Azure Data Lake
@@ -101,11 +101,11 @@ ms.locfileid: "60628852"
 Проект U-SQL может ссылаться на проект базы данных U-SQL. Ссылка влияет на две рабочие нагрузки:
 
 - *Построение проекта*: Настройка сред связанной базе данных перед созданием скриптов U-SQL. 
-- *Локальная учетная запись выполнения (local-проекте)*: Которых также развертываются среды указанной базы данных (в локальной-проект) учетной записи перед выполнением скрипта U-SQL. Дополнительные сведения см. в разделе [Запуск скриптов U-SQL на локальном компьютере](data-lake-analytics-data-lake-tools-local-run.md).
+- *Локальная учетная запись выполнения (local-проекте)* : Которых также развертываются среды указанной базы данных (в локальной-проект) учетной записи перед выполнением скрипта U-SQL. Дополнительные сведения см. в разделе [Запуск скриптов U-SQL на локальном компьютере](data-lake-analytics-data-lake-tools-local-run.md).
 
 ### <a name="how-to-add-a-u-sql-database-reference"></a>Добавление ссылки на базу данных U-SQL
 
-1. В **обозревателе решений** щелкните проект U-SQL правой кнопкой мыши и выберите **Добавить ссылку на Базу данных U-SQL...**.
+1. В **обозревателе решений** щелкните проект U-SQL правой кнопкой мыши и выберите **Добавить ссылку на Базу данных U-SQL...** .
 
     ![Добавление ссылки на проект базы данных с помощью Средств Data Lake для Visual Studio](./media/data-lake-analytics-data-lake-tools-develop-usql-database/data-lake-tools-add-database-project-reference.png)
 

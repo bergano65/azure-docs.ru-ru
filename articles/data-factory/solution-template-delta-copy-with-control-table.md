@@ -14,10 +14,10 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 12/24/2018
 ms.openlocfilehash: c32592ce539eeb2dec71792e4a6eb31e7d904eff
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60312513"
 ---
 # <a name="delta-copy-from-a-database-with-a-control-table"></a>Разностного копирования из базы данных с помощью элемента управления таблицы
@@ -108,11 +108,11 @@ ms.locfileid: "60312513"
 
      ![Проверка конвейера](media/solution-template-delta-copy-with-control-table/DeltaCopyfromDB_with_ControlTable8.png)
 
-9. Выберите **хранимой процедуры**. Для **имя хранимой процедуры**, выберите **[update_watermark]**. Выберите **параметра импорта**, а затем выберите **добавить динамическое содержимое**.  
+9. Выберите **хранимой процедуры**. Для **имя хранимой процедуры**, выберите **[update_watermark]** . Выберите **параметра импорта**, а затем выберите **добавить динамическое содержимое**.  
 
      ![Задайте действие хранимой процедуры](media/solution-template-delta-copy-with-control-table/DeltaCopyfromDB_with_ControlTable9.png) 
 
-10. Напишите содержимое,  **\@{activity('LookupCurrentWaterMark').output.firstRow.NewWatermarkValue}**, а затем выберите **Готово**.  
+10. Напишите содержимое,  **\@{activity('LookupCurrentWaterMark').output.firstRow.NewWatermarkValue}** , а затем выберите **Готово**.  
 
      ![Напишите содержимое, для параметров хранимой процедуры](media/solution-template-delta-copy-with-control-table/DeltaCopyfromDB_with_ControlTable10.png)      
      

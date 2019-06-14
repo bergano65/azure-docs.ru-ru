@@ -13,10 +13,10 @@ ms.date: 02/13/2019
 ms.author: lizross
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ea9e4ae21ecc6538b33aed1566c10ddcd22b86c7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60482276"
 ---
 # <a name="set-up-security-info-preview-to-use-text-messaging"></a>Настройка использования обмена текстовыми сообщениями в сведениях для защиты (предварительная версия)
@@ -86,11 +86,11 @@ ms.locfileid: "60482276"
 
     ![Ссылка на изменение метода входа по умолчанию](media/security-info/securityinfo-myprofile-phonetext-defaultchange.png)
 
-2. Выберите вариант **Phone - text (Телефон — текстовое сообщение) (*_номер_телефона_*)** из раскрывающегося списка доступных методов, а затем щелкните **Подтвердить**.
+2. Выберите вариант **Phone - text (Телефон — текстовое сообщение) ( *_номер_телефона_* )** из раскрывающегося списка доступных методов, а затем щелкните **Подтвердить**.
 
     ![Выбор метода для входа по умолчанию](media/security-info/securityinfo-myprofile-phonetext-changeddefault.png)
 
-    Теперь по умолчанию будет использоваться новый метод входа в систему: **Phone - text (Телефон — текстовое сообщение) (*_номер_телефона_*)**.
+    Теперь по умолчанию будет использоваться новый метод входа в систему: **Phone - text (Телефон — текстовое сообщение) ( *_номер_телефона_* )** .
 
 ## <a name="additional-security-info-methods"></a>Дополнительные методы проверки сведений для защиты
 Чтобы подтвердить вашу личность, ваша организация может связаться с вами различными способами, в зависимости от того, что именно вы пытаетесь выполнить. Эти способы могут быть следующими:

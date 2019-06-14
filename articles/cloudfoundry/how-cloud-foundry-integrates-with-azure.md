@@ -16,10 +16,10 @@ ms.workload: infrastructure-services
 ms.date: 05/11/2018
 ms.author: ningk
 ms.openlocfilehash: 7cbffdd40e574c7e906a9388b70ca9d32fd84649
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60198977"
 ---
 # <a name="integrate-cloud-foundry-with-azure"></a>Интеграция Cloud Foundry и Azure
@@ -46,7 +46,7 @@ Cloud Foundry — это платформа приложений, созданн
 [Шлюз приложений Azure](https://docs.microsoft.com/azure/application-gateway/application-gateway-introduction) предлагает разные возможности балансировки нагрузки седьмого уровня, включая разгрузку SSL, сквозное подключение SSL, брандмауэр веб-приложений, сходство сеансов на основе файлов cookie и многое другое. Вы можете [настроить шлюз приложений в Cloud Foundry с открытым исходным кодом](https://github.com/cloudfoundry-incubator/bosh-azure-cpi-release/tree/master/docs/advanced/application-gateway). Дополнительные сведения см. в [примечаниях к выпуску PCF 2.1](https://docs.pivotal.io/pivotalcf/2-1/pcf-release-notes/opsmanager-rn.html#azure-application-gateway) для теста POC.
 
 ### <a name="azure-standard-load-balancer-"></a>Azure Load Balancer уровня "Стандартный" *
-Azure Load Balancer — это подсистема балансировки нагрузки четвертого уровня. Он используется для распределения трафика между экземплярами служб в наборе балансировки нагрузки. Стандартная версия включает [дополнительные возможности](https://docs.microsoft.com/azure/load-balancer/load-balancer-overview) наряду с возможностями базовой версии, например: 1. Максимальный размер внутреннего пула повышен с 100 до 1000 виртуальных машин.  2. Конечные точки теперь поддерживают несколько групп доступности вместо одной.  3. Дополнительные функции, такие как порты высокой ДОСТУПНОСТИ, более подробные данные мониторинга и т. д. Если вы перемещаете Azure зону доступности, load balancer стандартный не требуется. При работе с новым развертыванием рекомендуется начать с Azure Load Balancer уровня "Стандартный". 
+Azure Load Balancer — это подсистема балансировки нагрузки четвертого уровня. Он используется для распределения трафика между экземплярами служб в наборе балансировки нагрузки. Стандартная версия включает [дополнительные возможности](https://docs.microsoft.com/azure/load-balancer/load-balancer-overview) наряду с возможностями базовой версии, например: 1\. Максимальный размер внутреннего пула повышен с 100 до 1000 виртуальных машин.  2. Конечные точки теперь поддерживают несколько групп доступности вместо одной.  3. Дополнительные функции, такие как порты высокой ДОСТУПНОСТИ, более подробные данные мониторинга и т. д. Если вы перемещаете Azure зону доступности, load balancer стандартный не требуется. При работе с новым развертыванием рекомендуется начать с Azure Load Balancer уровня "Стандартный". 
 
 ## <a name="3-authentication"></a>3. Authentication 
 [Cloud Foundry User Account and Authentication](https://docs.cloudfoundry.org/concepts/architecture/uaa.html) (UAA) — это служба централизованного управления удостоверениями для платформы CF и ее компонентов. [Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-whatis) — это мультитенантный облачный каталог и служба управления удостоверениями корпорации Майкрософт. По умолчанию для проверки подлинности в Cloud Foundry используется служба UAA. UAA также позволяет использовать Azure AD в качестве внешнего пользовательского хранилища. Пользователи Azure AD могут получить доступ к Cloud Foundry с помощью удостоверения LDAP без учетной записи Cloud Foundry. См. дополнительные сведения о [настройке Azure AD для UAA в PCF](https://docs.pivotal.io/p-identity/1-6/azure/index.html).

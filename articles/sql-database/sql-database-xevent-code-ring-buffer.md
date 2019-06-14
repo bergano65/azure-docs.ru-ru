@@ -13,10 +13,10 @@ ms.reviewer: jrasnik
 manager: craigg
 ms.date: 12/19/2018
 ms.openlocfilehash: bb493fc0a9d3a9173ef4faf17b3cdd4e3781a557
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60331032"
 ---
 # <a name="ring-buffer-target-code-for-extended-events-in-sql-database"></a>Код целевого объекта "Кольцевой буфер" для расширенных событий в базе данных SQL
@@ -30,7 +30,7 @@ ms.locfileid: "60331032"
 1. создает таблицу с данными для демонстрации;
 2. Создает сеанс для имеющегося расширенного события, а именно **sqlserver.sql_statement_starting**.
    
-   * Событие ограничивается операторами SQL, содержащими определенную строку обновления: **оператор LIKE '%UPDATE tabEmployee%'**.
+   * Событие ограничивается операторами SQL, содержащими определенную строку обновления: **оператор LIKE '%UPDATE tabEmployee%'** .
    * Выбирает отправку выходных данных события в целевой объект типа "Кольцевой буфер", а именно **package0.ring_buffer**.
 3. Запускает сеанс событий.
 4. Выдает пару простых операторов SQL UPDATE.
@@ -55,7 +55,7 @@ ms.locfileid: "60331032"
 
 ## <a name="code-sample"></a>Пример кода
 
-С небольшими изменениями приведенный ниже пример кода кольцевого буфера можно выполнять как в базе данных SQL Azure, так и на Microsoft SQL Server. Разница заключается в наличии узла "_database" в имени некоторых динамических административных представлений, используемых в части FROM (шаг 5). Например: 
+С небольшими изменениями приведенный ниже пример кода кольцевого буфера можно выполнять как в базе данных SQL Azure, так и на Microsoft SQL Server. Разница заключается в наличии узла "_database" в имени некоторых динамических административных представлений, используемых в части FROM (шаг 5). Пример:
 
 * sys.dm_xe<strong>_database</strong>_session_targets
 * sys.dm_xe_session_targets

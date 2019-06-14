@@ -18,10 +18,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 8ff2caae7cb387f4f0d88cf059d01ad28861b9ad
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60348456"
 ---
 # <a name="azure-ad-connect-sync-running-the-installation-wizard-a-second-time"></a>Синхронизация Azure AD Connect: Повторный запуск мастера установки
@@ -75,7 +75,7 @@ ms.locfileid: "60348456"
 ## <a name="configure-staging-mode"></a>Настройка промежуточного режима
 Этот параметр позволяет включить и отключить на сервере промежуточный режим. Дополнительные сведения о промежуточном режиме и его использовании см. [здесь](how-to-connect-sync-staging-server.md).
 
-Рядом с параметром будет показано, включен или отключен промежуточный режим в данный момент:   
+Рядом с параметром будет показано, включен или отключен промежуточный режим в данный момент:  
 ![Параметр, который также отображает текущее состояние промежуточного режима](./media/how-to-connect-installation-wizard/stagingmodecurrentstate.png)
 
 Для изменения состояния выберите этот параметр и установите или снимите флажок.  

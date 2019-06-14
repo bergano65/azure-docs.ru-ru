@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 2a3e7373a8b0354a3d08debf944f2f77f1609382
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60347755"
 ---
 # <a name="azure-ad-connect-upgrade-from-a-previous-version-to-the-latest"></a>Azure AD Connect выполняет следующие функции: обновление до последней версии
@@ -33,7 +33,7 @@ ms.locfileid: "60347755"
 
 Существует несколько различных стратегий обновления Azure AD Connect.
 
-| Метод | ОПИСАНИЕ |
+| Метод | Описание |
 | --- | --- |
 | [Автоматическое обновление](how-to-connect-install-automatic-upgrade.md) |Самый простой вариант — для клиентов с экспресс-установкой. |
 | [Обновление «на месте»](#in-place-upgrade) |Если у вас один сервер, то установку можно обновить "на месте". |

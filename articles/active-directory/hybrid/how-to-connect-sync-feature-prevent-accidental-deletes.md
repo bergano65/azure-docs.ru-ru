@@ -4,23 +4,23 @@ description: В этом разделе описывается функция п
 services: active-directory
 documentationcenter: ''
 author: billmath
-manager: mtillman
+manager: daveba
 editor: ''
 ms.assetid: 6b852cb4-2850-40a1-8280-8724081601f7
 ms.service: active-directory
 ms.devlang: na
-ms.topic: article
+ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-origin.date: 07/12/2017
-ms.date: 11/09/2018
-ms.component: hybrid
-ms.author: v-junlch
+ms.date: 07/12/2017
+ms.subservice: hybrid
+ms.author: billmath
+ms.collection: M365-identity-device-management
 ms.openlocfilehash: b1244dd460196e5882caab0d4b526850da48d084
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60383411"
 ---
 # <a name="azure-ad-connect-sync-prevent-accidental-deletes"></a>Синхронизация Azure AD Connect: предотвращения случайного удаления
@@ -31,9 +31,9 @@ ms.locfileid: "60383411"
 ## <a name="what-is-prevent-accidental-deletes"></a>Предотвращение случайного удаления
 Распространенные сценарии включают следующие:
 
-- изменения [фильтрации](how-to-connect-sync-configure-filtering.md), когда целое [подразделение](how-to-connect-sync-configure-filtering.md#organizational-unitbased-filtering) или [домен](how-to-connect-sync-configure-filtering.md#domain-based-filtering) остаются невыбранными;
-- удаление всех объектов в подразделении;
-- подразделение переименовывается так, что все объекты в нем становятся исключенными из области синхронизации.
+* изменения [фильтрации](how-to-connect-sync-configure-filtering.md), когда целое [подразделение](how-to-connect-sync-configure-filtering.md#organizational-unitbased-filtering) или [домен](how-to-connect-sync-configure-filtering.md#domain-based-filtering) остаются невыбранными;
+* удаление всех объектов в подразделении;
+* подразделение переименовывается так, что все объекты в нем становятся исключенными из области синхронизации.
 
 Значение по умолчанию 500 можно изменить с помощью PowerShell командой `Enable-ADSyncExportDeletionThreshold`, которая входит в состав модуля AD Sync, устанавливаемого вместе с Azure Active Directory Connect. Это значение необходимо задать в соответствии с размером вашей организации. Так как планировщик синхронизации запускается каждые 30 минут, это значение равно числу операций удаления, выполненных за 30 минут.
 
@@ -69,6 +69,5 @@ ms.locfileid: "60383411"
 ## <a name="next-steps"></a>Дальнейшие действия
 **Обзорные статьи**
 
-- [Синхронизация Azure AD Connect: общие сведений о синхронизации и ее настройка](how-to-connect-sync-whatis.md)
-- [Интеграция локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md)
-
+* [Синхронизация Azure AD Connect: общие сведений о синхронизации и ее настройка](how-to-connect-sync-whatis.md)
+* [Интеграция локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md)

@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.workload: big-data
 ms.date: 09/14/2018
 ms.openlocfilehash: b035be727df2dfecb613da79681affd740c69bec
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60333882"
 ---
 # <a name="how-to-set-up-a-cicd-pipeline-for-azure-data-lake-analytics"></a>Настройка конвейера CI/CD для Azure Data Lake Analytics  
@@ -83,7 +83,7 @@ msbuild USQLBuild.usqlproj /p:USQLSDKPath=packages\Microsoft.Azure.DataLake.USQL
 * **USQLTargetType=Merge или SyntaxCheck**:
     * **Merge**. Режим слияния компилирует файлы с выделенным кодом. Примеры — файлы **CS**, **PY**, и **R**. В этом режиме полученная библиотека пользовательского кода включается в скрипт U-SQL. Этот режим используется для двоичных файлов DLL, кода Python или R.
     * **SyntaxCheck**. Режим SyntaxCheck сначала объединяет файлы с выделенным кодом в скрипт U-SQL. Затем он компилирует скрипт U-SQL для проверки кода.
-* **Корневая папка =\<пути к DataRoot >**. DataRoot используется только в режиме SyntaxCheck. Создавая скрипт в режиме SyntaxCheck, MSBuild проверяет включаемые в этот скрипт ссылки на объекты базы данных. Перед сборкой настройте на компьютере сборки локальную среду так, чтобы она содержала в папке DataRoot все объекты, на которые ссылается база данных U-SQL. Вы также можете управлять этими зависимостями базы данных, используя [ссылки на проект базы данных U-SQL](data-lake-analytics-data-lake-tools-develop-usql-database.md#reference-a-u-sql-database-project). MSBuild проверяет только ссылки на объекты базы данных, но не файлы.
+* **Корневая папка =\<пути к DataRoot >** . DataRoot используется только в режиме SyntaxCheck. Создавая скрипт в режиме SyntaxCheck, MSBuild проверяет включаемые в этот скрипт ссылки на объекты базы данных. Перед сборкой настройте на компьютере сборки локальную среду так, чтобы она содержала в папке DataRoot все объекты, на которые ссылается база данных U-SQL. Вы также можете управлять этими зависимостями базы данных, используя [ссылки на проект базы данных U-SQL](data-lake-analytics-data-lake-tools-develop-usql-database.md#reference-a-u-sql-database-project). MSBuild проверяет только ссылки на объекты базы данных, но не файлы.
 * **EnableDeployment=true** или **false**. EnableDeployment указывает, разрешено ли развертывать указанные базы данных U-SQL во время процесса сборки. Если вы ссылаетесь на проект базы данных U-SQL и используете объекты базы данных в скрипте U-SQL, установите для этого параметра значение **true**.
 
 ### <a name="continuous-integration-through-azure-pipelines"></a>Непрерывная интеграция с помощью Azure Pipelines
@@ -354,7 +354,7 @@ msbuild DatabaseProject.usqldbproj /p:USQLSDKPath=packages\Microsoft.Azure.DataL
 
 ## <a name="deploy-u-sql-database-through-azure-pipelines"></a>Развертывание U-SQL database в Azure Pipelines
 
-`PackageDeploymentTool.exe` предоставляет программный интерфейс и интерфейс командной строки, которые помогают развернуть пакеты развертывания базы данных U-SQL (**.usqldbpack**). Этот пакет SDK включен в [пакет SDK NuGet для U-SQL](https://www.nuget.org/packages/Microsoft.Azure.DataLake.USQL.SDK/), размещенный в файле **build/runtime/PackageDeploymentTool.exe**. С помощью `PackageDeploymentTool.exe` можно развертывать базы данных U-SQL в Azure Data Lake Analytics и локальных учетных записях.
+`PackageDeploymentTool.exe` предоставляет программный интерфейс и интерфейс командной строки, которые помогают развернуть пакеты развертывания базы данных U-SQL ( **.usqldbpack**). Этот пакет SDK включен в [пакет SDK NuGet для U-SQL](https://www.nuget.org/packages/Microsoft.Azure.DataLake.USQL.SDK/), размещенный в файле **build/runtime/PackageDeploymentTool.exe**. С помощью `PackageDeploymentTool.exe` можно развертывать базы данных U-SQL в Azure Data Lake Analytics и локальных учетных записях.
 
 > [!NOTE]
 >
@@ -454,22 +454,22 @@ msbuild DatabaseProject.usqldbproj /p:USQLSDKPath=packages\Microsoft.Azure.DataL
 
 #### <a name="common-parameters"></a>Основные параметры
 
-| Параметр | ОПИСАНИЕ | По умолчанию | Обязательно для заполнения |
+| Параметр | Описание | Значение по умолчанию | Обязательно для заполнения |
 |---------|-----------|-------------|--------|
-|Package|Путь к развертываемому пакету развертывания базы данных U-SQL.|null|Да|
+|Пакет|Путь к развертываемому пакету развертывания базы данных U-SQL.|null|Да|
 |База данных|Имя развертываемой или создаваемой базы данных.|master|false|
 |LogFile|Путь к файлу для ведения журнала. По умолчанию используется стандартный выход (консоль).|null|false|
 |LogLevel|Уровень ведения журнала: подробный, обычный, предупреждения, ошибки.|LogLevel.Normal|false|
 
 #### <a name="parameter-for-local-deployment"></a>Параметр для локального развертывания
 
-|Параметр|ОПИСАНИЕ|По умолчанию|Обязательно для заполнения|
+|Параметр|Описание|Значение по умолчанию|Обязательно для заполнения|
 |---------|-----------|-------------|--------|
 |DataRoot|Локальный путь к корневой папке данных.|null|Да|
 
 #### <a name="parameters-for-azure-data-lake-analytics-deployment"></a>Параметры для развертывания Azure Data Lake Analytics
 
-|Параметр|ОПИСАНИЕ|По умолчанию|Обязательно для заполнения|
+|Параметр|Описание|Значение по умолчанию|Обязательно для заполнения|
 |---------|-----------|-------------|--------|
 |Учетная запись.|Определяет имя учетной записи Azure Data Lake Analytics, в которую выполняется развертывание.|null|Да|
 |ResourceGroup|Имя группы ресурсов Azure для учетной записи Azure Data Lake Analytics.|null|Да|

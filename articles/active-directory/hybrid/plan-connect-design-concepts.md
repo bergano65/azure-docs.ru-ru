@@ -18,10 +18,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 311ba489073805fdb034b435ab9e5e1ddc2c4e3c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60382287"
 ---
 # <a name="azure-ad-connect-design-concepts"></a>Azure AD Connect выполняет следующие функции: Принципы проектирования
@@ -120,7 +120,7 @@ Azure AD Connect (версии 1.1.524.0 и более поздних верси
 
 ![Выборочная установка: настройка sourceAnchor](./media/plan-connect-design-concepts/consistencyGuid-02.png)
 
-| Параметр | ОПИСАНИЕ |
+| Параметр | Описание |
 | --- | --- |
 | Параметр "Azure управляет привязкой к источнику" | Выберите этот параметр, если вы хотите, чтобы среда Azure AD выбирала этот атрибут автоматически. Если выбрать этот параметр, то мастер Azure AD Connect применит [логику выбора атрибута sourceAnchor, использованную при экспресс-установке](#express-installation). Как и при экспресс-установке, мастер сообщит, какой атрибут был выбран в качестве атрибута привязки к источнику после завершения выборочной установки. |
 | Определенный атрибут | Выберите этот параметр, если вы хотите указать имеющийся атрибут AD в качестве атрибута sourceAnchor. |

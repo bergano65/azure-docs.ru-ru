@@ -16,10 +16,10 @@ ms.date: 07/12/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 22c136225e5a8526afd482e5ef8400198947422f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60264240"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-kanbanize"></a>Руководство по интеграции Azure Active Directory с Kanbanize
@@ -110,7 +110,7 @@ ms.locfileid: "60264240"
 
     a. В текстовом поле **Идентификатор** введите URL-адрес в следующем формате: `https://<subdomain>.kanbanize.com/`
 
-    2. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<subdomain>.kanbanize.com/saml/acs`.
+    2\. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://<subdomain>.kanbanize.com/saml/acs`.
 
     c. Установите флажок **Показать дополнительные параметры URL-адресов**,
 
@@ -157,7 +157,7 @@ ms.locfileid: "60264240"
 
     a. В текстовое поле **IDP Entity ID** (Идентификатор сущности IdP) вставьте значение **SAML Entity ID** (Идентификатор сущности SAML), скопированное на портале Azure.
 
-    2. В текстовое поле **IdP Login Endpoint** (Конечная точка входа IdP) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
+    2\. В текстовое поле **IdP Login Endpoint** (Конечная точка входа IdP) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
 
     c. В текстовое поле **IdP Logout Endpoint** (Конечная точка выхода IdP) вставьте значение **Sign-Out URL** (URL-адрес выхода), скопированное на портале Azure.
 

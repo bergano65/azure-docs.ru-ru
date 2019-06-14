@@ -13,10 +13,10 @@ ms.date: 12/09/2018
 ms.author: mavane
 ms.custom: seodec18
 ms.openlocfilehash: 390e49a09136c21f3fd2f6555c0d56fde6e3b267
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60388154"
 ---
 # <a name="develop-azure-resource-manager-templates-for-cloud-consistency"></a>Разработка шаблонов Azure Resource Manager для обеспечения согласованности с облаком
@@ -493,7 +493,7 @@ Azure предоставляет широкий выбор образов вир
 az vm image list -all
 ```
 
-Тот же список можно получить с помощью командлета Azure PowerShell [Get-AzureRmVMImagePublisher](/powershell/module/az.compute/get-azvmimagepublisher), указав расположение с помощью параметра `-Location`. Например: 
+Тот же список можно получить с помощью командлета Azure PowerShell [Get-AzureRmVMImagePublisher](/powershell/module/az.compute/get-azvmimagepublisher), указав расположение с помощью параметра `-Location`. Пример:
 
 ```azurepowershell-interactive
 Get-AzureRmVMImagePublisher -Location "West Europe" | Get-AzureRmVMImageOffer | Get-AzureRmVMImageSku | Get-AzureRmVMImage
@@ -596,7 +596,7 @@ Get-AzureRmVMSize -Location "West Europe"
 az vm extension image list --location myLocation
 ```
 
-Вы также можете выполнить командлет Azure PowerShell [Get-AzureRmVmImagePublisher](/powershell/module/az.compute/get-azvmimagepublisher) и использовать `-Location` для указания расположения образа виртуальной машины. Например: 
+Вы также можете выполнить командлет Azure PowerShell [Get-AzureRmVmImagePublisher](/powershell/module/az.compute/get-azvmimagepublisher) и использовать `-Location` для указания расположения образа виртуальной машины. Пример:
 
 ```azurepowershell-interactive
 Get-AzureRmVmImagePublisher -Location myLocation | Get-AzureRmVMExtensionImageType | Get-AzureRmVMExtensionImage | Select Type, Version

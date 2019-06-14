@@ -13,10 +13,10 @@ ms.reviewer: carlrab
 manager: craigg
 ms.date: 01/30/2019
 ms.openlocfilehash: 928338a911efae051df7164239dbd19f9317338a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60584613"
 ---
 # <a name="planning-for-azure-maintenance-events-in-azure-sql-database"></a>Планирование событий обслуживания Azure в Базе данных SQL Azure
@@ -39,7 +39,7 @@ ms.locfileid: "60584613"
 
 В среднем каждый месяц происходят 1,7 событий планового обслуживания.
 
-## <a name="resource-health"></a>Работоспособность ресурсов
+## <a name="resource-health"></a>Работоспособность ресурса
 
 Если в базе данных SQL возникли ошибки входа, на [портале Azure](https://portal.azure.com) просмотрите окно [Работоспособность ресурсов](../service-health/resource-health-overview.md#getting-started), чтобы узнать текущее состояние. Раздел "Работоспособность ресурсов" содержит причину простоя для каждого события (если она доступна).
 

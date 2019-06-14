@@ -9,10 +9,10 @@ ms.date: 04/23/2018
 ms.author: sngun
 ms.subservice: tables
 ms.openlocfilehash: 97373f6f0138d3ed8028ed4327b7e6cf90ad76a7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60325873"
 ---
 # <a name="design-for-querying"></a>Разработка для запросов
@@ -41,7 +41,7 @@ ms.locfileid: "60325873"
 | **RowKey** (ИД сотрудника) |String |
 | **FirstName** |String |
 | **LastName** |String |
-| **Age** |Целое число  |
+| **Age** |Целое число |
 | **EmailAddress** |String |
 
 В статье [Общие сведения о Хранилище таблиц Azure](table-storage-overview.md) описываются некоторые ключевые особенности службы таблиц Azure, оказывающие прямое влияние на процесс разработки запросов. С их учетом были сформулированы следующие общие рекомендации по разработке запросов службы таблиц. Обратите внимание, что синтаксис фильтрации, используемый в приведенных ниже примерах, взят из REST API службы таблиц. Дополнительные сведения см. в статье о [сущностях запроса](https://docs.microsoft.com/rest/api/storageservices/Query-Entities).  

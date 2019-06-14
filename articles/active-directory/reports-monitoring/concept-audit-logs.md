@@ -18,10 +18,10 @@ ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 3da96c09026baff3965e0a90d1f461fd948a3a50
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60441140"
 ---
 # <a name="audit-activity-reports-in-the-azure-active-directory-portal"></a>Отчеты о действиях аудита на портале Azure Active Directory 
@@ -79,9 +79,9 @@ ms.locfileid: "60441140"
 Данные аудита можно отфильтровать в следующих полях:
 
 - Service
-- Category
+- Категория
 - Действие
-- Статус
+- Status
 - Цель
 - инициатор (субъект);
 - диапазон дат;
@@ -127,7 +127,7 @@ ms.locfileid: "60441140"
 
 **Действия** фильтр основан на категории и действия ресурсов тип выбора, сделанного. Вы можете выбрать определенное действие или просмотреть все. 
 
-Чтобы получить список всех действий аудита, используйте API Graph https://graph.windows.net/$tenantdomain/activities/auditActivityTypes?api-version=beta, где $tenantdomain — это доменное имя, или см. статью [о событиях в отчете аудита](reference-audit-activities.md).
+Чтобы получить список всех действий аудита, используйте API Graph https://graph.windows.net/ $tenantdomain/activities/auditActivityTypes?api-version=beta, где $tenantdomain — это доменное имя, или см. статью [о событиях в отчете аудита](reference-audit-activities.md).
 
 **Состояние** фильтр позволяет выполнять фильтрацию на основе состояния операции аудита. Состояние может принимать одно из следующих:
 

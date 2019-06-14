@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 12/19/2018
 ms.author: cherylmc
 ms.openlocfilehash: 032b6a4f5147d06a4613a827a0372437dca47f47
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60407751"
 ---
 # <a name="create-a-site-to-site-connection-in-the-azure-portal"></a>Создание подключения типа "сеть — сеть" на портале Azure
@@ -44,7 +44,7 @@ ms.locfileid: "60407751"
 
 * **Имя виртуальной сети:** TestVNet1
 * **Адресное пространство:** 10.1.0.0/16
-* **Подписка**: Подписка, которая будет использоваться
+* **Подписка**. Подписка, которая будет использоваться
 * **Группа ресурсов:** TestRG1
 * **Расположение**. Восточная часть США
 * **Подсеть**. Внешний интерфейс: 10.1.0.0/24, серверная часть: 10.1.1.0/24 (необязательно для этого упражнения)

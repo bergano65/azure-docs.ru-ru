@@ -13,10 +13,10 @@ ms.author: lizross
 ms.reviewer: olhaun
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9634e2578ea256d1dec71389f676ee53627e6272
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60474235"
 ---
 # <a name="backup-and-recover-account-credentials-with-the-microsoft-authenticator-app"></a>Резервное копирование и восстановление учетных данных с помощью приложения Microsoft Authenticator.
@@ -102,7 +102,7 @@ ms.locfileid: "60474235"
 ## <a name="next-steps"></a>Дальнейшие действия
 Итак, вы успешно выполнили резервное копирование учетных данных и восстановили их из резервной копии на новое устройство. Теперь вы можете обычным образом использовать приложение Microsoft Authenticator для проверки идентификации. Дополнительные сведения см. в разделе [войти в учетные записи с помощью приложения Microsoft Authenticator](user-help-sign-in.md).
 
-## <a name="related-topics"></a>Связанные разделы
+## <a name="related-topics"></a>См. также
 
 - [Что такое приложение Microsoft Authenticator?](user-help-auth-app-overview.md)
 

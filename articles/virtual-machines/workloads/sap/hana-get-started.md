@@ -17,10 +17,10 @@ ms.workload: infrastructure-services
 ms.date: 09/06/2018
 ms.author: hermannd
 ms.openlocfilehash: 5091932989849943f00cb71f72378dd17af23a4a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60205053"
 ---
 # <a name="quickstart-manual-installation-of-single-instance-sap-hana-on-azure-virtual-machines"></a>Краткое руководство. Установка вручную из одного экземпляра SAP HANA на виртуальных машинах Azure
@@ -179,7 +179,7 @@ ms.locfileid: "60205053"
 - Безопасность
 - Рекомендуется
 - Необязательно
-- Функция
+- Компонент
 - Документ
 - yast
 
@@ -188,8 +188,8 @@ ms.locfileid: "60205053"
 - критические ошибки.
 - Важно!
 - Средний
-- Низкий
-- Не указано
+- Низкая
+- Этот атрибут не задан
 
 Команда **zypper** находит только те обновления, которые требуются для установленных пакетов. Например можно использовать эту команду:
 

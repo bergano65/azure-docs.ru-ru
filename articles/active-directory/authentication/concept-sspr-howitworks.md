@@ -12,10 +12,10 @@ manager: daveba
 ms.reviewer: sahenry
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 47a6f475b5f1152850ec918b196883c6974f4d95
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60415639"
 ---
 # <a name="how-it-works-azure-ad-self-service-password-reset"></a>Принцип работы. Самостоятельный сброс пароля в Azure AD
@@ -125,7 +125,7 @@ ms.locfileid: "60415639"
 
 Включение этого параметра позволяет требовать, чтобы пользователь завершил регистрацию для сброса пароля, если для входа в приложения он использует Azure AD. К этому рабочему процессу относятся следующие приложения:
 
-* Office 365
+* Office 365
 * Портал Azure
 * Панель доступа
 * федеративные приложения;

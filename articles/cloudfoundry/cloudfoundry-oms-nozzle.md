@@ -13,10 +13,10 @@ ms.workload: infrastructure-services
 ms.date: 07/22/2017
 ms.author: ningk
 ms.openlocfilehash: 6220aebdef6970f3d5f7017e4ae48f6f409ae0ce
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60199403"
 ---
 # <a name="deploy-azure-log-analytics-nozzle-for-cloud-foundry-system-monitoring"></a>Развертывание компонента Azure Log Analytics Nozzle для мониторинга системы Cloud Foundry
@@ -194,7 +194,7 @@ cf apps
 
 В случае необходимости можно [создавать оповещения](https://docs.microsoft.com/azure/log-analytics/log-analytics-alerts), настраивать запросы и пороговые значения. Ниже приведены рекомендуемые оповещения.
 
-| Поисковый запрос                                                                  | Создать оповещение на основе | ОПИСАНИЕ                                                                       |
+| Поисковый запрос                                                                  | Создать оповещение на основе | Описание                                                                       |
 | ----------------------------------------------------------------------------- | ----------------------- | --------------------------------------------------------------------------------- |
 | Type=CF_ValueMetric_CL Origin_s=bbs Name_s="Domain.cf-apps"                   | Число результатов < 1   | **bbs.Domain.cf-apps** указывает, актуальны ли данные домена cf-apps, то есть синхронизированы ли выполняемые запросы приложения CF из Cloud Controller с bbs.LRPsDesired (ИИ Diego-desired). Если данные не получены, это означает, что данные домена cf-apps не являются актуальными в указанный период времени. |
 | Type=CF_ValueMetric_CL Origin_s=rep Name_s=UnhealthyCell Value_d>1            | Число результатов > 0   | Для ячеек Diego 0 означает работоспособное состояние, а 1 — неработоспособное. Установите оповещение, срабатывающее при обнаружении нескольких неработоспособных ячеек Diego в указанный период времени. |
@@ -205,7 +205,7 @@ cf apps
 | Type=CF_ValueMetric_CL Name_s=slowConsumerAlert                               | Число результатов > 0   | Когда компонент Nozzle получает от loggregator оповещение медленно потребителя, он отправляет **slowConsumerAlert** журналы о ValueMetric в Azure Monitor. |
 | Type=CF_CounterEvent_CL Job_s=nozzle Name_s=eventsLost Delta_d>0              | Число результатов > 0   | Если количество потерянных событий достигает порогового значения, это может указывать на проблемы в работе Nozzle. |
 
-## <a name="scale"></a>Масштаб
+## <a name="scale"></a>Масштабирование
 
 Nozzle и Loggregator можно масштабировать.
 

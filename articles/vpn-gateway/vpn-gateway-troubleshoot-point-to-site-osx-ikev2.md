@@ -16,10 +16,10 @@ ms.workload: infrastructure-services
 ms.date: 03/27/2018
 ms.author: alzam
 ms.openlocfilehash: 0c058cb6547d67469d3138dc331b6181c07e6e65
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60457076"
 ---
 # <a name="troubleshoot-point-to-site-vpn-connections-from-mac-os-x-vpn-clients"></a>Устранение неполадок VPN-подключений "точка — сеть" для клиентов Mac OS X
@@ -66,7 +66,7 @@ ms.locfileid: "60457076"
 1. Отфильтруйте результаты по строке *isakmp* и найдите пакеты **IKE_SA**. Сведения о предложении SA вы найдете в разделе **Payload: Security Association** (Полезные данные: сопоставление безопасности). 
 2. Убедитесь, что для клиента и сервера используется один и тот же набор.
 
-   ![Пакет](./media/vpn-gateway-troubleshoot-point-to-site-osx-ikev2/packet5.jpg) 
+   ![пакет](./media/vpn-gateway-troubleshoot-point-to-site-osx-ikev2/packet5.jpg) 
   
 3. Если нет ответа сервера для трассировок сети, убедитесь, что вы включили протокол IKEv2 на странице настройки шлюза Azure на сайте портала Azure.
 

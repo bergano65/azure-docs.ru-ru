@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 02/07/2017
 ms.author: jegeib
 ms.openlocfilehash: 27028903daeaf62a25584300944538341a861c80
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60610569"
 ---
 # <a name="security-frame-sensitive-data--mitigations"></a>Механизм безопасности. Конфиденциальные данные | Устранение угроз 
@@ -52,7 +52,7 @@ ms.locfileid: "60610569"
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
 | **Компонент**               | Отношения доверия между компьютерами | 
-| **Этап SDL**               | Сборка |  
+| **Этап SDL**               | Создание |  
 | **Применимые технологии** | Универсальный |
 | **Атрибуты**              | Н/Д  |
 | **Справочные материалы**              | Н/Д  |
@@ -73,8 +73,8 @@ ms.locfileid: "60610569"
 
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
-| **Компонент**               | Web Application | 
-| **Этап SDL**               | Сборка |  
+| **Компонент**               | Веб-приложение | 
+| **Этап SDL**               | Создание |  
 | **Применимые технологии** | Универсальные, веб-формы, MVC 5, MVC 6 |
 | **Атрибуты**              | Н/Д  |
 | **Справочные материалы**              | Н/Д  |
@@ -126,8 +126,8 @@ public override void OnActionExecuting(ActionExecutingContext filterContext)
 
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
-| **Компонент**               | Web Application | 
-| **Этап SDL**               | Сборка |  
+| **Компонент**               | Веб-приложение | 
+| **Этап SDL**               | Создание |  
 | **Применимые технологии** | Универсальный |
 | **Атрибуты**              | Н/Д  |
 | **Справочные материалы**              | [Практическое руководство. Шифрование разделов конфигурации в ASP.NET 2.0 с помощью DPAPI](https://msdn.microsoft.com/library/ff647398.aspx), [сведения об указании поставщика защищенной конфигурации](https://msdn.microsoft.com/library/68ze1hb2.aspx), [использование Azure Key Vault для защиты секретов приложения](https://azure.microsoft.com/documentation/articles/guidance-multitenant-identity-keyvault/) |
@@ -137,8 +137,8 @@ public override void OnActionExecuting(ActionExecutingContext filterContext)
 
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
-| **Компонент**               | Web Application | 
-| **Этап SDL**               | Сборка |  
+| **Компонент**               | Веб-приложение | 
+| **Этап SDL**               | Создание |  
 | **Применимые технологии** | Универсальный |
 | **Атрибуты**              | Н/Д  |
 | **Справочные материалы**              | [Сведения об атрибуте autocomplete на сайте MSDN](https://msdn.microsoft.com/library/ms533486(VS.85).aspx), [использование функции автозаполнение в формах HTML](https://msdn.microsoft.com/library/ms533032.aspx), [Бюллетень по безопасности (Майкрософт) MS10-071 — критическое](https://technet.microsoft.com/security/bulletin/MS10-071), [запись блога о функции автозаполнения](https://blog.mindedsecurity.com/2011/10/autocompleteagain.html) |
@@ -156,8 +156,8 @@ public override void OnActionExecuting(ActionExecutingContext filterContext)
 
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
-| **Компонент**               | Web Application | 
-| **Этап SDL**               | Сборка |  
+| **Компонент**               | Веб-приложение | 
+| **Этап SDL**               | Создание |  
 | **Применимые технологии** | Универсальный |
 | **Атрибуты**              | Н/Д  |
 | **Справочные материалы**              | Н/Д  |
@@ -168,7 +168,7 @@ public override void OnActionExecuting(ActionExecutingContext filterContext)
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
 | **Компонент**               | База данных | 
-| **Этап SDL**               | Сборка |  
+| **Этап SDL**               | Создание |  
 | **Применимые технологии** | SQL Azure, локальные |
 | **Атрибуты**              | Версия SQL: 12, MsSQL2016 |
 | **Справочные материалы**              | [динамическое маскирование данных;](https://msdn.microsoft.com/library/mt130841) |
@@ -179,7 +179,7 @@ public override void OnActionExecuting(ActionExecutingContext filterContext)
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
 | **Компонент**               | База данных | 
-| **Этап SDL**               | Сборка |  
+| **Этап SDL**               | Создание |  
 | **Применимые технологии** | Универсальный |
 | **Атрибуты**              | Н/Д  |
 | **Справочные материалы**              | [Хеширование паролей с использованием API .NET для шифрования](https://docs.asp.net/en/latest/security/data-protection/consumer-apis/password-hashing.html) |
@@ -190,7 +190,7 @@ public override void OnActionExecuting(ActionExecutingContext filterContext)
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
 | **Компонент**               | База данных | 
-| **Этап SDL**               | Сборка |  
+| **Этап SDL**               | Создание |  
 | **Применимые технологии** | Универсальный |
 | **Атрибуты**              | Версия SQL: все |
 | **Справочные материалы**              | [Контрольный список. Шифрование конфиденциальных данных](https://technet.microsoft.com/library/ff848751(v=sql.105).aspx), [ Шифрование столбца данных](https://msdn.microsoft.com/library/ms179331), [ENCRYPTBYCERT (Transact-SQL)](https://msdn.microsoft.com/library/ms188061) |
@@ -201,7 +201,7 @@ public override void OnActionExecuting(ActionExecutingContext filterContext)
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
 | **Компонент**               | База данных | 
-| **Этап SDL**               | Сборка |  
+| **Этап SDL**               | Создание |  
 | **Применимые технологии** | Универсальный |
 | **Атрибуты**              | Н/Д  |
 | **Справочные материалы**              | [Основные сведения о прозрачном шифровании данных (TDE)](https://technet.microsoft.com/library/bb934049(v=sql.105).aspx) |
@@ -212,7 +212,7 @@ public override void OnActionExecuting(ActionExecutingContext filterContext)
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
 | **Компонент**               | База данных | 
-| **Этап SDL**               | Сборка |  
+| **Этап SDL**               | Создание |  
 | **Применимые технологии** | SQL Azure, локальные |
 | **Атрибуты**              | Версия SQL: 12, MsSQL2014 |
 | **Справочные материалы**              | [Шифрование резервной копии](https://msdn.microsoft.com/library/dn449489) |
@@ -223,7 +223,7 @@ public override void OnActionExecuting(ActionExecutingContext filterContext)
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
 | **Компонент**               | Веб-API | 
-| **Этап SDL**               | Сборка |  
+| **Этап SDL**               | Создание |  
 | **Применимые технологии** | MVC 5, MVC 6 |
 | **Атрибуты**              | Поставщик удостоверений — ADFS или Azure AD |
 | **Справочные материалы**              | Н/Д  |
@@ -247,7 +247,7 @@ cacheLocation: 'localStorage', // enable this for IE, as sessionStorage does not
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
 | **Компонент**               | Azure DocumentDB | 
-| **Этап SDL**               | Сборка |  
+| **Этап SDL**               | Создание |  
 | **Применимые технологии** | Универсальный |
 | **Атрибуты**              | Н/Д  |
 | **Справочные материалы**              | Н/Д  |
@@ -269,7 +269,7 @@ cacheLocation: 'localStorage', // enable this for IE, as sessionStorage does not
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
 | **Компонент**               | Граница доверия Service Fabric | 
-| **Этап SDL**               | Сборка |  
+| **Этап SDL**               | Создание |  
 | **Применимые технологии** | Универсальный |
 | **Атрибуты**              | Среда: Azure |
 | **Справочные материалы**              | [Управление секретами в приложениях Service Fabric](https://azure.microsoft.com/documentation/articles/service-fabric-application-secret-management/) |
@@ -280,7 +280,7 @@ cacheLocation: 'localStorage', // enable this for IE, as sessionStorage does not
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
 | **Компонент**               | Dynamics CRM | 
-| **Этап SDL**               | Сборка |  
+| **Этап SDL**               | Создание |  
 | **Применимые технологии** | Универсальный |
 | **Атрибуты**              | Н/Д  |
 | **Справочные материалы**              | Н/Д  |
@@ -324,7 +324,7 @@ cacheLocation: 'localStorage', // enable this for IE, as sessionStorage does not
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
 | **Компонент**               | Хранилище Azure | 
-| **Этап SDL**               | Сборка |  
+| **Этап SDL**               | Создание |  
 | **Применимые технологии** | Универсальный |
 | **Атрибуты**              | Тип хранилища: большой двоичный объект |
 | **Справочные материалы**              | [Шифрование службы хранилища Azure для неактивных данных (предварительная версия)](https://azure.microsoft.com/documentation/articles/storage-service-encryption/) |
@@ -335,7 +335,7 @@ cacheLocation: 'localStorage', // enable this for IE, as sessionStorage does not
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
 | **Компонент**               | Хранилище Azure | 
-| **Этап SDL**               | Сборка |  
+| **Этап SDL**               | Создание |  
 | **Применимые технологии** | Универсальный |
 | **Атрибуты**              | Н/Д  |
 | **Справочные материалы**              | [Шифрование на стороне клиента для службы хранилища Microsoft Azure](https://azure.microsoft.com/documentation/articles/storage-client-side-encryption/), [Руководство. Шифрование и расшифровка BLOB-объектов в хранилище Microsoft Azure с помощью хранилища ключей Azure](https://azure.microsoft.com/documentation/articles/storage-encrypt-decrypt-blobs-key-vault/), [запись блога о безопасном хранении данных в хранилище BLOB-объектов Azure с расширениями шифрования Azure](https://blogs.msdn.microsoft.com/partnercatalystteam/2015/06/17/storing-data-securely-in-azure-blob-storage-with-azure-encryption-extensions/) |
@@ -346,7 +346,7 @@ cacheLocation: 'localStorage', // enable this for IE, as sessionStorage does not
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
 | **Компонент**               | Мобильный клиент | 
-| **Этап SDL**               | Сборка |  
+| **Этап SDL**               | Создание |  
 | **Применимые технологии** | Универсальные, Xamarin  |
 | **Атрибуты**              | Н/Д  |
 | **Справочные материалы**              | [Создание политики конфигурации](https://docs.microsoft.com/intune/deploy-use/manage-settings-and-features-on-your-devices-with-microsoft-intune-policies), [сведения об обслуживании цепочки ключей](https://components.xamarin.com/view/square.valet) |
@@ -396,7 +396,7 @@ Allow screen capture
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
 | **Компонент**               | Мобильный клиент | 
-| **Этап SDL**               | Сборка |  
+| **Этап SDL**               | Создание |  
 | **Применимые технологии** | Универсальный |
 | **Атрибуты**              | Н/Д  |
 | **Справочные материалы**              | [Crypto Obfuscator для .NET](https://www.ssware.com/cryptoobfuscator/obfuscator-net.htm) |
@@ -407,7 +407,7 @@ Allow screen capture
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
 | **Компонент**               | WCF | 
-| **Этап SDL**               | Сборка |  
+| **Этап SDL**               | Создание |  
 | **Применимые технологии** | .NET Framework 3 |
 | **Атрибуты**              | Н/Д  |
 | **Справочные материалы**              | [Fortify](https://vulncat.fortify.com/en/detail?id=desc.config.dotnet.wcf_misconfiguration_weak_token) |
@@ -426,7 +426,7 @@ Allow screen capture
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
 | **Компонент**               | WCF | 
-| **Этап SDL**               | Сборка |  
+| **Этап SDL**               | Создание |  
 | **Применимые технологии** | Универсальные, .NET Framework 3 |
 | **Атрибуты**              | Режим безопасности — транспорт или сообщение |
 | **Справочные материалы**              | [MSDN](https://msdn.microsoft.com/library/ff648500.aspx), [Fortify Kingdom](https://vulncat.fortify.com/en/detail?id=desc.config.dotnet.wcf_misconfiguration_weak_class_reference), [основы безопасности WCF](https://www.codemag.com/article/0611051) |

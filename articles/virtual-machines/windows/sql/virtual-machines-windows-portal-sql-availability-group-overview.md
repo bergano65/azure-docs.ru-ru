@@ -16,10 +16,10 @@ ms.workload: iaas-sql-server
 ms.date: 01/13/2017
 ms.author: mikeray
 ms.openlocfilehash: b9977965dc076ec36aa90680a1732b6640b1e41a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60325823"
 ---
 # <a name="introducing-sql-server-always-on-availability-groups-on-azure-virtual-machines"></a>Введение в группы доступности AlwaysOn SQL Server на виртуальных машинах Azure #
@@ -38,10 +38,10 @@ ms.locfileid: "60325823"
 
 |  | Версия Windows Server | Версия SQL Server | Выпуск SQL Server | Конфигурация кворума WSFC | Аварийное Восстановление с поддержкой нескольких регионов | Поддержка нескольких подсетей | Поддержка существующих Рекламы | Аварийное Восстановление с многозонных том же регионе | Поддержка dist-AG без домена AD | Поддержка dist-AG с без кластера |  
 | :------ | :-----| :-----| :-----| :-----| :-----| :-----| :-----| :-----| :-----| :-----|
-| [ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ ВИРТУАЛЬНОЙ МАШИНЫ SQL](virtual-machines-windows-sql-availability-group-cli.md) | 2016 | 2017 </br>2016   | ENT | Облако-свидетель | Нет  | Да | Да | Да | Нет  | Нет  |
-| [Шаблоны быстрого запуска](virtual-machines-windows-sql-availability-group-quickstart-template.md) | 2016 | 2017</br>2016  | ENT | Облако-свидетель | Нет  | Да | Да | Да | Нет  | Нет  |
-| [Шаблон портала](virtual-machines-windows-portal-sql-alwayson-availability-groups.md) | 2016 </br>2012 R2 | 2016</br>2014 | ENT | Общая папка | Нет  | Нет  | Нет  | Нет  | Нет  | Нет  |
-| [Вручную](virtual-machines-windows-portal-sql-availability-group-prereq.md) | Все | Все | Все | Все | Yes | Да | Да | Да | Да | Yes |
+| [ИНТЕРФЕЙС КОМАНДНОЙ СТРОКИ ВИРТУАЛЬНОЙ МАШИНЫ SQL](virtual-machines-windows-sql-availability-group-cli.md) | 2016 | 2017 </br>2016   | ENT | Облако-свидетель | Нет | Да | Да | Да | Нет | Нет |
+| [Шаблоны быстрого запуска](virtual-machines-windows-sql-availability-group-quickstart-template.md) | 2016 | 2017</br>2016  | ENT | Облако-свидетель | Нет | Да | Да | Да | Нет | Нет |
+| [Шаблон портала](virtual-machines-windows-portal-sql-alwayson-availability-groups.md) | 2016 </br>2012 R2 | 2016</br>2014 | ENT | Общая папка | Нет | Нет | Нет | Нет | Нет | Нет |
+| [Вручную](virtual-machines-windows-portal-sql-availability-group-prereq.md) | Все | Все | Все | Все | Да | Да | Да | Да | Да | Да |
 | &nbsp; | &nbsp; |&nbsp; |&nbsp; |&nbsp; |&nbsp; |&nbsp; |&nbsp; |&nbsp; |&nbsp; |&nbsp; |
 
 Когда все будет готово к созданию группы доступности SQL Server на виртуальных машинах Azure, обратитесь к этим руководствам.
