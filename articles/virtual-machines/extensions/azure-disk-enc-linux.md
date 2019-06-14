@@ -74,9 +74,9 @@ ms.locfileid: "60800184"
 
 | ИМЯ | Значение и пример | Тип данных |
 | ---- | ---- | ---- |
-| версия_API | 2015-06-15 | date |
+| apiVersion | 2015-06-15 | date |
 | publisher | Microsoft.Azure.Security | string |
-| тип | AzureDiskEncryptionForLinux | string |
+| type | AzureDiskEncryptionForLinux | string |
 | typeHandlerVersion | 0.1, 1.1 (VMSS) | int |
 | AADClientID | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | GUID | 
 | AADClientSecret | password | string |
@@ -86,7 +86,7 @@ ms.locfileid: "60800184"
 | KeyEncryptionAlgorithm | 'RSA-OAEP', 'RSA-OAEP-256', 'RSA1_5' | string |
 | KeyEncryptionKeyURL | url | string |
 | KeyVaultURL | url | string |
-| Парольная фраза | password | string | 
+| Passphrase | password | string | 
 | SequenceVersion | uniqueidentifier | string |
 | VolumeType | ОС, данные, все | string |
 
