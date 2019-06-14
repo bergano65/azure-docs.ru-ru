@@ -78,9 +78,9 @@ ms.locfileid: "65521780"
 
 | ИМЯ | Значение и пример |
 | ---- | ---- |
-| версия_API | 2015-01-01 |
+| apiVersion | 2015-01-01 |
 | publisher | Microsoft.Azure.Monitoring.DependencyAgent |
-| тип | DependencyAgentWindows |
+| type | DependencyAgentWindows |
 | typeHandlerVersion | 9,5 |
 
 ## <a name="template-deployment"></a>Развертывание шаблона
