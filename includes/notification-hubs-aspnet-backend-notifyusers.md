@@ -9,10 +9,10 @@ ms.date: 03/22/2019
 ms.author: spelluru
 ms.custom: include file
 ms.openlocfilehash: 28eac814364b56f59b8edc6f59209a6d742ff403
-ms.sourcegitcommit: 778e7376853b69bbd5455ad260d2dc17109d05c1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66156789"
 ---
 ## <a name="create-the-webapi-project"></a>Создание проекта веб-API
@@ -40,7 +40,7 @@ ms.locfileid: "66156789"
 2. Щелкните **Обозреватель серверов** и войдите в свою учетную запись Azure. Чтобы создать ресурсы веб-сайта в своей учетной записи, вы должны войти.
 
 3. В Visual Studio щелкните правой кнопкой мыши решение Visual Studio и последовательно выберите **Добавить** и **Новый проект**.
-4. Разверните узел **Visual C#**, выберите **Веб** и щелкните **Веб-приложение ASP.NET**.
+4. Разверните узел **Visual C#** , выберите **Веб** и щелкните **Веб-приложение ASP.NET**.
 
 5. В поле **Имя** введите **AppBackend**, а затем нажмите кнопку **ОК**.
 

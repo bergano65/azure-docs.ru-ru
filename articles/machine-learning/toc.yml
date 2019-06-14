@@ -3,5 +3,4 @@
 - name: Студия машинного обучения Azure
   href: studio/index.yml
 - name: Сравнение продуктов Машинного обучения от корпорации Майкрософт
-  href: /azure/architecture/data-guide/technology-choices/data-science-and-machine-learning
-  maintainContext: true
+  href: /azure/architecture/data-guide/technology-choices/data-science-and-machine-learning?context=azure/machine-learning/context/ml-context

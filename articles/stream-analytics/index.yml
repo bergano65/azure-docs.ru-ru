@@ -43,7 +43,7 @@ sections:
             href: 'https://docs.microsoft.com/azure/stream-analytics/stream-analytics-quick-create-vs'
           - image:
               src: 'https://docs.microsoft.com/media/logos/logo_vs-code.svg'
-            text: Visual Studio Code.
+            text: Visual Studio Code
             href: 'https://docs.microsoft.com/azure/stream-analytics/quick-create-vs-code'
   - title: Пошаговые руководства
     items:
@@ -64,7 +64,7 @@ sections:
         className: cardsD
         items:
           - title: Предварительный просмотр
-            html: '<p><a href="stream-analytics-previews#public-previews">Общедоступные предварительные версии</a></p><p><a href="stream-analytics-previews#private-previews">Закрытые предварительные версии</a></p>'
+            html: '<p><a href="stream-analytics-previews#public-previews">Общедоступные предварительные версии</a></p><p><a href="stream-analytics-previews#other-previews">Закрытые предварительные версии</a></p>'
           - title: Командная строка
             html: '<p><a href="https://docs.microsoft.com/powershell/module/az.streamanalytics/#stream_analytics">Azure PowerShell</a></p>'
           - title: Языки

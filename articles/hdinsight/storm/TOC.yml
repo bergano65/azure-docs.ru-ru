@@ -233,7 +233,5 @@
   items:
     - name: Кластеры Windows
       items:
-        - name: Перенос кластеров Windows в кластеры Linux
-          href: ../hdinsight-migrate-from-windows-to-linux.md
         - name: Перенос решений .NET в кластеры Linux
           href: ../hdinsight-hadoop-migrate-dotnet-to-linux.md
