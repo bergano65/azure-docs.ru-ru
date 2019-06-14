@@ -17,10 +17,10 @@ ms.topic: conceptual
 ms.date: 03/16/2018
 ms.author: gokuma
 ms.openlocfilehash: 27e0deae9c35ad8fa00659e3e3e505cace6e9014
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60516501"
 ---
 # <a name="data-platforms-supported-on-the-data-science-virtual-machine"></a>Языки, поддерживаемые Виртуальной машиной для обработки и анализа данных
@@ -34,7 +34,7 @@ ms.locfileid: "60516501"
 | | |
 | ------------- | ------------- |
 | Что это такое?   | Экземпляр локальной реляционной базы данных      |
-| Поддерживаемые выпуски виртуальных машин для обработки и анализа данных (DSVM)      |  Windows      |
+| Поддерживаемые выпуски виртуальных машин для обработки и анализа данных (DSVM)      | Windows      |
 | Распространенные способы применения      | Быстрая локальная разработка приложений с меньшим набором данных <br/> Запуск R внутри базы данных   |
 | Ссылки на примеры      |    Небольшой пример набора данных поездок по Нью-Йорку загружается в базу данных SQL `nyctaxi`. <br/> Пример Jupyter, показывающий аналитику Microsoft R и внутреннюю аналитику, можно найти в следующем файле:<br/> `~notebooks/SQL_R_Services_End_to_End_Tutorial.ipynb`  |
 | Дополнительные средства на виртуальной машине для обработки и анализа данных       | SQL Server Management Studio <br/> Драйверы ODBC и JDBC<br/> pyodbc, RODBC<br />Apache Drill      |
@@ -101,7 +101,7 @@ SQL Server устанавливается обычным образом. Его 
 ### <a name="how-is-it-configured--installed-on-the-dsvm"></a>Настройка и установка на DSVM 
 |платформа|Размещение установки ($SPARK_HOME)|
 |:--------|:--------|
-| Windows | c:\dsvm\tools\spark-X.X.X-bin-hadoopX.X|
+|Windows | c:\dsvm\tools\spark-X.X.X-bin-hadoopX.X|
 |Linux   | /dsvm/tools/spark-X.X.X-bin-hadoopX.X|
 
 

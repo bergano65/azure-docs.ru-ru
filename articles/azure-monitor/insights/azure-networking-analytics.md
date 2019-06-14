@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 06/21/2018
 ms.author: bwren
-ms.openlocfilehash: 244df90a9db2a2b0d5f6ca6e1874bce94fc7f5bf
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.openlocfilehash: 13908706f8dcec0eb2d1773bcef2ee622b4ebcc1
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65506419"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67048641"
 ---
 # <a name="azure-networking-monitoring-solutions-in-azure-monitor"></a>Решения в Azure Monitor для мониторинга сетей Azure
 
@@ -32,7 +32,7 @@ Azure Monitor предлагает следующие решения для мо
     * метрику шлюза приложений Azure.
 * Решения для отслеживания и аудита сетевой активности в облачной сети.
     * [Анализ трафика](https://docs.microsoft.com/azure/networking/network-monitoring-overview#traffic-analytics). 
-    * Анализ группы безопасности сети Azure
+    * Анализ групп безопасности сети Azure
 
 ## <a name="network-performance-monitor-npm"></a>Монитор производительности сети
 
@@ -54,7 +54,7 @@ Azure Monitor предлагает следующие решения для мо
 Если не включить ведение журналов диагностики для определенного типа ресурсов, но установить решение, то колонки панели мониторинга для этого ресурса будут пустыми, а также появится сообщение об ошибке.
 
 > [!NOTE]
-> В январе 2017 г поддерживаемый способ отправки журналов из шлюзов приложений и групп безопасности сети к рабочей области Log Analytics изменены. Если отобразится устаревшее решение **Анализ сетевой активности Azure (не рекомендуется)**, то выполните действия, описанные в разделе [Миграция из устаревшего решения для анализа сетевой активности](#migrating-from-the-old-networking-analytics-solution).
+> В январе 2017 г поддерживаемый способ отправки журналов из шлюзов приложений и групп безопасности сети к рабочей области Log Analytics изменены. Если отобразится устаревшее решение **Анализ сетевой активности Azure (не рекомендуется)** , то выполните действия, описанные в разделе [Миграция из устаревшего решения для анализа сетевой активности](#migrating-from-the-old-networking-analytics-solution).
 >
 >
 
@@ -221,13 +221,13 @@ Set-AzDiagnosticSetting -ResourceId $nsg.ResourceId  -WorkspaceId $workspaceId -
 
      | Используйте такую замену: | Используйте следующую команду: |
      | --- | --- |
-     | NetworkApplicationgateways &#124; where OperationName=="ApplicationGatewayAccess" | AzureDiagnostics &#124; where ResourceType="APPLICATIONGATEWAYS" and OperationName=="ApplicationGatewayAccess" |
-     | NetworkApplicationgateways &#124; where OperationName=="ApplicationGatewayPerformance" | AzureDiagnostics &#124; where ResourceType=="APPLICATIONGATEWAYS" and OperationName=ApplicationGatewayPerformance |
+     | NetworkApplicationgateways &#124; where OperationName=="ApplicationGatewayAccess" | AzureDiagnostics &#124; where ResourceType=="APPLICATIONGATEWAYS" and OperationName=="ApplicationGatewayAccess" |
+     | NetworkApplicationgateways &#124; where OperationName=="ApplicationGatewayPerformance" | AzureDiagnostics &#124; where ResourceType=="APPLICATIONGATEWAYS" and OperationName=="ApplicationGatewayPerformance" |
      | NetworkSecuritygroups | AzureDiagnostics &#124; where ResourceType=="NETWORKSECURITYGROUPS" |
 
    + Для любого поля, имя которого содержит суффикс \_s, \_d или \_g, переведите первый знак в нижний регистр.
    + Для любого поля, имя которого содержит суффикс \_o, данные разбиваются на отдельные поля на основе имен вложенных полей.
-4. Удалите устаревшее решение *Анализ сетевой активности Azure (не рекомендуется)*.
+4. Удалите устаревшее решение *Анализ сетевой активности Azure (не рекомендуется)* .
    + Если используется PowerShell, то выполните следующую команду: `Set-AzureOperationalInsightsIntelligencePack -ResourceGroupName <resource group that the workspace is in> -WorkspaceName <name of the log analytics workspace> -IntelligencePackName "AzureNetwork" -Enabled $false`
 
 Данные, собранные до этого изменения, не отображаются в новом решении. Эти данные по-прежнему можно запрашивать с помощью старых имен типов и полей.

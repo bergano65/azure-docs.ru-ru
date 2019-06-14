@@ -9,10 +9,10 @@ ms.topic: reference
 ms.date: 03/12/2019
 ms.author: spelluru
 ms.openlocfilehash: c5998ff428c4b6f4c1f7a4087c6ccb27d93773eb
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60345470"
 ---
 # <a name="azure-event-grid-event-schema-for-container-registry"></a>Схема событий службы "Сетка событий Azure" для Реестра контейнеров
@@ -187,7 +187,7 @@ ms.locfileid: "60345470"
 | repository | строка | Имя репозитория. |
 | tag | строка | Имя тега. |
 | name | строка | Имя диаграммы. |
-| version | строка | Версия диаграммы. |
+| версия | строка | Версия диаграммы. |
 
 Объект запроса имеет следующие свойства:
 
@@ -196,7 +196,7 @@ ms.locfileid: "60345470"
 | id | строка | Идентификатор запроса, инициировавшего событие. |
 | addr | строка | IP-адрес или имя узла и, возможно, порт клиентского подключения, инициировавшего событие. Это значение — RemoteAddr из стандартного HTTP-запроса. |
 | host | строка | Доступное из внешней сети имя узла на экземпляре реестра, которое указано в заголовке host во входящих HTTP-запросах. |
-| method | строка | Метод запроса, который создал событие. |
+| метод | строка | Метод запроса, который создал событие. |
 | useragent | строка | Заголовок user agent из запроса. |
 
 ## <a name="next-steps"></a>Дальнейшие действия

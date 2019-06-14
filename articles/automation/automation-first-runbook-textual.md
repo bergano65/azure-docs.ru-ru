@@ -11,10 +11,10 @@ ms.date: 09/24/2018
 ms.topic: conceptual
 manager: carmonm
 ms.openlocfilehash: 1697f479cf013f2ef94dd5a8a2fc637d72e6e18a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60740013"
 ---
 # <a name="my-first-powershell-workflow-runbook"></a>Первый Runbook рабочего процесса PowerShell
@@ -61,7 +61,7 @@ ms.locfileid: "60740013"
    }
    ```
 
-1. Введите *Write-Output "Привет, мир!"*  между фигурными скобками.
+1. Введите *Write-Output "Привет, мир!"* между фигурными скобками.
 
    ```powershell-interactive
    Workflow MyFirstRunbook-Workflow
@@ -103,16 +103,16 @@ ms.locfileid: "60740013"
 1. Откроется область заданий с созданным заданием runbook. Эту область можно закрыть, но сейчас оставьте ее открытой, чтобы следить за ходом выполнения задания.
 1. Состояние задания отображается в поле **Сводка по заданию** и отражает состояния, которые вы наблюдали при тестировании модуля runbook.
 
-   ![Сводка по заданию](media/automation-first-runbook-textual/job-pane-status-blade-jobsummary.png)
+   ![Сводные данные задания](media/automation-first-runbook-textual/job-pane-status-blade-jobsummary.png)
 
 1. Как только состояние модуля Runbook изменится на *Выполнено*, щелкните **Выходные данные**. Откроется область "Выходные данные" с текстом *Hello World*.
 
-   ![Сводка по заданию](media/automation-first-runbook-textual/job-pane-status-blade-outputtile.png)  
+   ![Сводные данные задания](media/automation-first-runbook-textual/job-pane-status-blade-outputtile.png)  
 
 1. Закройте область выходных данных.
 1. Щелкните **Все журналы** , чтобы открыть область "Потоки" для задания Runbook. Вы увидите только *Hello World* в выходных данных потока, но в этом представлении можно отобразить другие потоки заданий runbook, например Verbose и ошибка Если runbook записывает в них.
 
-   ![Сводка по заданию](media/automation-first-runbook-textual/job-pane-status-blade-alllogstile.png)
+   ![Сводные данные задания](media/automation-first-runbook-textual/job-pane-status-blade-alllogstile.png)
 
 1. Закройте страницы "Потоки" и на странице задания, чтобы вернуться к странице MyFirstRunbook.
 1. Нажмите кнопку **заданий** чтобы открыть страницу заданий для этого модуля runbook. Откроется страница всех заданий, созданных этим модулем Runbook. Список должен содержать одно задание, так как вы запустили задание только один раз.
@@ -150,13 +150,13 @@ ms.locfileid: "60740013"
 1. Щелкните **Тестовая область**, чтобы проверить модуль runbook.
 1. Щелкните **Пуск** , чтобы начать тестирование. После его завершения на экране должны отобразиться приблизительно такие основные сведения из вашей учетной записи. Это действие подтверждает допустимость учетных данных.
 
-   ![Проверить подлинность](media/automation-first-runbook-textual/runbook-auth-output.png)
+   ![Проверка подлинности](media/automation-first-runbook-textual/runbook-auth-output.png)
 
 ## <a name="step-6---add-code-to-start-a-virtual-machine"></a>Шаг 6. Добавление кода запуска виртуальной машины
 
 Теперь, когда модуль runbook прошел аутентификацию в подписке Azure, вы можете управлять ресурсами. Добавьте команду для запуска виртуальной машины. Вы можете выбрать любую виртуальную машину в подписке Azure, а пока вы жестко этому имени в модуле runbook. Если вы управляете ресурсов в нескольких подписках, необходимо использовать **- AzureRmContext** с параметром [Get-AzureRmContext](/powershell/module/azurerm.profile/get-azurermcontext).
 
-1. После команды *Connect-AzureRmAccount* введите команду *Start-AzureRmVM -Name 'имя_ВМ' -ResourceGroupName 'имя_группы_ресурсов'*, указав имя виртуальной машины, которую нужно запустить, и имя ее группы ресурсов.  
+1. После команды *Connect-AzureRmAccount* введите команду *Start-AzureRmVM -Name 'имя_ВМ' -ResourceGroupName 'имя_группы_ресурсов'* , указав имя виртуальной машины, которую нужно запустить, и имя ее группы ресурсов.  
 
    ```powershell-interactive
    workflow MyFirstRunbook-Workflow
@@ -204,7 +204,7 @@ ms.locfileid: "60740013"
 5. Остановите виртуальную машину, запущенную на предыдущем этапе.
 6. Щелкните **Пуск** , чтобы запустить модуль Runbook. Введите значения **VMName** и **ResourceGroupName** для виртуальной машины, которую нужно запустить.
 
-   ![Запустить Runbook](media/automation-first-runbook-textual/automation-pass-params.png)
+   ![Запуск модуля Runbook](media/automation-first-runbook-textual/automation-pass-params.png)
 
 7. Когда модуль Runbook будет выполнен, проверьте, запустилась ли виртуальная машина.  
 

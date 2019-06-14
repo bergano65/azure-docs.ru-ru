@@ -14,14 +14,14 @@ ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: dfd0443dafbc4fcc221937f248bf6d2f292b528f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60335402"
 ---
 # <a name="copy-data-to-and-from-azure-sql-data-warehouse-using-azure-data-factory"></a>Копирование данных в хранилище данных Azure SQL и из него с помощью фабрики данных Azure
-> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
+> [!div class="op_single_selector" title1="Выберите версию службы фабрики данных, которую вы используете:"]
 > * [Версия 1](data-factory-azure-sql-data-warehouse-connector.md)
 > * [Версия 2 (текущая)](../connector-azure-sql-data-warehouse.md)
 
@@ -99,9 +99,9 @@ ms.locfileid: "60335402"
 
 | Свойство | ОПИСАНИЕ | Допустимые значения | Обязательно для заполнения |
 | --- | --- | --- | --- |
-| sqlReaderQuery |Используйте пользовательский запрос для чтения данных. |Строка запроса SQL. Например, select * from MyTable. |Нет  |
-| sqlReaderStoredProcedureName |Имя хранимой процедуры, которая считывает данные из исходной таблицы. |Имя хранимой процедуры. Последней инструкцией SQL должна быть инструкция SELECT в хранимой процедуре. |Нет  |
-| storedProcedureParameters |Параметры для хранимой процедуры. |Пары имен и значений. Имена и регистр параметров должны совпадать с именами и регистром параметров хранимой процедуры. |Нет  |
+| sqlReaderQuery |Используйте пользовательский запрос для чтения данных. |Строка запроса SQL. Например, select * from MyTable. |Нет |
+| sqlReaderStoredProcedureName |Имя хранимой процедуры, которая считывает данные из исходной таблицы. |Имя хранимой процедуры. Последней инструкцией SQL должна быть инструкция SELECT в хранимой процедуре. |Нет |
+| storedProcedureParameters |Параметры для хранимой процедуры. |Пары имен и значений. Имена и регистр параметров должны совпадать с именами и регистром параметров хранимой процедуры. |Нет |
 
 Если для SqlDWSource указано **sqlReaderQuery** , то действие копирования выполняет этот запрос для хранилища данных SQL Azure с целью получения данных.
 
@@ -145,15 +145,15 @@ GO
 
 | Свойство | ОПИСАНИЕ | Допустимые значения | Обязательно для заполнения |
 | --- | --- | --- | --- |
-| sqlWriterCleanupScript |Укажите запрос на выполнение действия копирования, позволяющий убедиться в том, что данные конкретного среза очищены. Дополнительные сведения см. в [разделе о повторяемости](#repeatability-during-copy). |Инструкция запроса. |Нет  |
-| allowPolyBase |Указывает, следует ли использовать PolyBase (если применимо) вместо механизма BULKINSERT. <br/><br/> **Использование PolyBase — рекомендуемый способ загрузки данных в хранилище данных SQL.** Подробные сведения и ограничения приведены в разделе [Загрузка данных в хранилище данных SQL Azure с помощью PolyBase](#use-polybase-to-load-data-into-azure-sql-data-warehouse). |Истина <br/>False (по умолчанию) |Нет  |
-| polyBaseSettings |Группа свойств, которые можно задать, если свойство **allowPolybase** имеет значение **true**. |&nbsp; |Нет  |
-| rejectValue |Указывает количество или процент строк, которые могут быть отклонены, прежде чем запрос завершится с ошибкой. <br/><br/>Дополнительные сведения о параметрах отклонения PolyBase см. в подразделе **Аргументы** раздела [CREATE EXTERNAL TABLE (Transact-SQL)](https://msdn.microsoft.com/library/dn935021.aspx). |0 (по умолчанию), 1, 2, ... |Нет  |
-| rejectType |Указывает тип значения, заданного для параметра rejectValue: литеральное значение или процент. |Value (по умолчанию), Percentage |Нет  |
+| sqlWriterCleanupScript |Укажите запрос на выполнение действия копирования, позволяющий убедиться в том, что данные конкретного среза очищены. Дополнительные сведения см. в [разделе о повторяемости](#repeatability-during-copy). |Инструкция запроса. |Нет |
+| allowPolyBase |Указывает, следует ли использовать PolyBase (если применимо) вместо механизма BULKINSERT. <br/><br/> **Использование PolyBase — рекомендуемый способ загрузки данных в хранилище данных SQL.** Подробные сведения и ограничения приведены в разделе [Загрузка данных в хранилище данных SQL Azure с помощью PolyBase](#use-polybase-to-load-data-into-azure-sql-data-warehouse). |Истина <br/>False (по умолчанию) |Нет |
+| polyBaseSettings |Группа свойств, которые можно задать, если свойство **allowPolybase** имеет значение **true**. |&nbsp; |Нет |
+| rejectValue |Указывает количество или процент строк, которые могут быть отклонены, прежде чем запрос завершится с ошибкой. <br/><br/>Дополнительные сведения о параметрах отклонения PolyBase см. в подразделе **Аргументы** раздела [CREATE EXTERNAL TABLE (Transact-SQL)](https://msdn.microsoft.com/library/dn935021.aspx). |0 (по умолчанию), 1, 2, ... |Нет |
+| rejectType |Указывает тип значения, заданного для параметра rejectValue: литеральное значение или процент. |Value (по умолчанию), Percentage |Нет |
 | rejectSampleValue |Определяет количество строк, которое PolyBase следует получить до повторного вычисления процента отклоненных строк. |1, 2, … |Да, если **rejectType** имеет значение **percentage**. |
-| useTypeDefault |Указывает способ обработки отсутствующих значений в текстовых файлах с разделителями, когда PolyBase получает данные из текстового файла.<br/><br/>Дополнительные сведения об этом свойстве см. в подразделе "Аргументы" раздела [CREATE EXTERNAL FILE FORMAT (Transact-SQL)](https://msdn.microsoft.com/library/dn935026.aspx). |True, False (по умолчанию) |Нет  |
+| useTypeDefault |Указывает способ обработки отсутствующих значений в текстовых файлах с разделителями, когда PolyBase получает данные из текстового файла.<br/><br/>Дополнительные сведения об этом свойстве см. в подразделе "Аргументы" раздела [CREATE EXTERNAL FILE FORMAT (Transact-SQL)](https://msdn.microsoft.com/library/dn935026.aspx). |True, False (по умолчанию) |Нет |
 | writeBatchSize |Вставляет данные в таблицу SQL, когда размер буфера достигает значения writeBatchSize. |Целое число (количество строк) |Нет (по умолчанию 10 000) |
-| writeBatchTimeout |Время ожидания до выполнения операции пакетной вставки, пока не завершится срок ее действия. |Интервал времени<br/><br/> Пример: "00:30:00" (30 минут). |Нет  |
+| writeBatchTimeout |Время ожидания до выполнения операции пакетной вставки, пока не завершится срок ее действия. |Интервал времени<br/><br/> Пример: "00:30:00" (30 минут). |Нет |
 
 #### <a name="sqldwsink-example"></a>Пример SqlDWSink
 
@@ -167,8 +167,8 @@ GO
 ## <a name="use-polybase-to-load-data-into-azure-sql-data-warehouse"></a>Загрузка данных в хранилище данных SQL Azure с помощью PolyBase.
 Применение **[PolyBase](https://docs.microsoft.com/sql/relational-databases/polybase/polybase-guide)** — это эффективный способ загрузки большого объема данных в хранилище данных SQL Azure с высокой пропускной способностью. Используя PolyBase вместо стандартного механизма BULKINSERT, можно значительно увеличить пропускную способность. Подробное сравнение см. в разделе [Базовые показатели производительности](data-factory-copy-activity-performance.md#performance-reference). Пошаговое руководство и пример использования см. в статье [Загрузка 1 ТБ в хранилище данных SQL Azure с помощью фабрики данных Azure [мастер копирования] менее чем за 15 минут](data-factory-load-sql-data-warehouse.md).
 
-* Если исходные данные находятся в **хранилище BLOB-объектов Azure или в Azure Data Lake Store** и их формат соответствует требованиям PolyBase, то копирование можно выполнять напрямую в хранилище данных SQL Azure, используя PolyBase. Дополнительные сведения см. в разделе **[Прямое копирование с помощью PolyBase](#direct-copy-using-polybase)**.
-* Если хранилище и формат исходных данных изначально не поддерживаются PolyBase, то можно использовать функцию **[промежуточного копирования с помощью PolyBase](#staged-copy-using-polybase)**. Она также обеспечивает лучшую пропускную способность за счет автоматического преобразования данных в формат, совместимый с PolyBase, и хранения данных в хранилище BLOB-объектов Azure. После этого данные загружаются в хранилище данных SQL.
+* Если исходные данные находятся в **хранилище BLOB-объектов Azure или в Azure Data Lake Store** и их формат соответствует требованиям PolyBase, то копирование можно выполнять напрямую в хранилище данных SQL Azure, используя PolyBase. Дополнительные сведения см. в разделе **[Прямое копирование с помощью PolyBase](#direct-copy-using-polybase)** .
+* Если хранилище и формат исходных данных изначально не поддерживаются PolyBase, то можно использовать функцию **[промежуточного копирования с помощью PolyBase](#staged-copy-using-polybase)** . Она также обеспечивает лучшую пропускную способность за счет автоматического преобразования данных в формат, совместимый с PolyBase, и хранения данных в хранилище BLOB-объектов Azure. После этого данные загружаются в хранилище данных SQL.
 
 Задайте свойству `allowPolyBase` значение **true**, как показано в следующем примере, чтобы фабрика данных Azure использовала PolyBase для копирования данных в хранилище данных SQL Azure. Если присвоить allowPolyBase значение true, то можно указать определенные свойства PolyBase, используя группу свойств `polyBaseSettings`. В разделе [SqlDWSink](#sqldwsink) представлены дополнительные сведения о свойствах, которые можно использовать с polyBaseSettings.
 
@@ -349,9 +349,9 @@ All columns of the table must be specified in the INSERT BULK statement.
 | binary |Byte[] |
 | bit |Boolean |
 | char |String, Char[] |
-| date |Datetime |
-| Datetime |Datetime |
-| datetime2 |Datetime |
+| date |DateTime |
+| DateTime |DateTime |
+| datetime2 |DateTime |
 | Datetimeoffset |DateTimeOffset |
 | Decimal |Decimal |
 | FILESTREAM attribute (varbinary(max)) |Byte[] |
@@ -365,13 +365,13 @@ All columns of the table must be specified in the INSERT BULK statement.
 | nvarchar |String, Char[] |
 | real |Single |
 | rowversion |Byte[] |
-| smalldatetime |Datetime |
+| smalldatetime |DateTime |
 | smallint |Int16 |
 | smallmoney |Decimal |
 | sql_variant |Object * |
 | Text |String, Char[] |
 | time |TimeSpan |
-|  timestamp |Byte[] |
+| timestamp |Byte[] |
 | tinyint |Byte |
 | uniqueidentifier |Guid |
 | varbinary |Byte[] |

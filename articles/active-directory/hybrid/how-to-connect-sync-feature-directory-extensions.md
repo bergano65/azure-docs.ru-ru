@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ff0fd4d01eab739b79685c1de67cb8fe28873961
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60347991"
 ---
 # <a name="azure-ad-connect-sync-directory-extensions"></a>Синхронизация Azure AD Connect: Расширения каталогов
@@ -35,7 +35,7 @@ ms.locfileid: "60347991"
 
 ![Мастер расширения схемы](./media/how-to-connect-sync-feature-directory-extensions/extension2.png)  
 
- При установке отображаются следующие допустимые атрибуты:
+При установке отображаются следующие допустимые атрибуты:
 
 * Типы объектов пользователей и групп
 * Однозначные атрибуты: строка, логическое значение, целое число, двоичное значение.
@@ -62,7 +62,7 @@ ms.locfileid: "60347991"
 Или же вы можете запросить атрибуты через API Microsoft Graph с помощью [обозревателя Microsoft Graph](https://developer.microsoft.com/graph/graph-explorer#).
 
 >[!NOTE]
-> Необходимо запросить возврат атрибута. Явно выберите такие атрибуты, как https://graph.microsoft.com/beta/users/abbie.spencer@fabrikamonline.com?$select=extension_9d98ed114c4840d298fad781915f27e4_employeeID,extension_9d98ed114c4840d298fad781915f27e4_division. 
+> Необходимо запросить возврат атрибута. Явно выберите такие атрибуты, как https://graph.microsoft.com/beta/users/abbie.spencer@fabrikamonline.com? $select=extension_9d98ed114c4840d298fad781915f27e4_employeeID,extension_9d98ed114c4840d298fad781915f27e4_division. 
 >
 > Дополнительные сведения см. в статье [Настройка ответов с помощью параметров запроса ](https://developer.microsoft.com/graph/docs/concepts/query_parameters#select-parameter).
 

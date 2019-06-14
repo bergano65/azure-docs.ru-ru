@@ -18,10 +18,10 @@ ms.author: billmath
 ms.custom: H1Hack27Feb2017
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ae932191c7b76590ea217386dfd729add5566f87
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60384192"
 ---
 # <a name="using-connectors-with-the-azure-ad-connect-sync-service-manager"></a>Использование соединителей с Synchronization Service Manager Azure AD Connect
@@ -67,7 +67,7 @@ ms.locfileid: "60384192"
 
 Начните с выбора **пространства**. Можно выполнять поиск на основе данных (RDN DN, привязка, поддерево) или состояния объекта (все другие параметры).  
 ![Диспетчер службы синхронизации](./media/how-to-connect-sync-service-manager-ui-connectors/cssearchscope.png)  
- Если, к примеру, выполняется поиск в поддереве, вы получаете все объекты в одном подразделении.  
+Если, к примеру, выполняется поиск в поддереве, вы получаете все объекты в одном подразделении.  
 ![Диспетчер службы синхронизации](./media/how-to-connect-sync-service-manager-ui-connectors/cssearchsubtree.png)  
 Здесь можно выбрать объект и **свойства**, а также [отслеживать объект](tshoot-connect-object-not-syncing.md) из исходного пространства соединителя через метавселенную до целевого пространства соединителя.
 

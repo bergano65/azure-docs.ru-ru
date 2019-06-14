@@ -2,17 +2,16 @@
 title: Использование Draft с AKS и реестром контейнеров Azure
 description: Использование Draft с AKS и реестром контейнеров Azure
 services: container-service
-author: rockboyfor
+author: zr-msft
 ms.service: container-service
 ms.topic: article
-origin.date: 08/15/2018
-ms.date: 04/08/2019
-ms.author: v-yeche
+ms.date: 08/15/2018
+ms.author: zarhoads
 ms.openlocfilehash: 462cfd6ec0a6b25f85dda0245dd4f5feed7cb712
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60465159"
 ---
 # <a name="use-draft-with-azure-kubernetes-service-aks"></a>Использование Draft со службой Azure Kubernetes (AKS)
@@ -77,7 +76,7 @@ az role assignment create --assignee $AKS_SP_ID --scope $ACR_RESOURCE_ID --role 
 1. Задайте значение *registry* в файле конфигурации Draft. В следующих командах замените `<acrName>` именем своего реестра ACR:
 
     ```console
-    draft config set registry <acrName>.azurecr.cn
+    draft config set registry <acrName>.azurecr.io
     ```
 
 1. Войдите в реестр ACR, выполнив команду [az acr login][az-acr-login]:
@@ -220,7 +219,7 @@ Hello World, I'm Java
 vi src/main/java/helloworld/Hello.java
 ```
 
-Измените выходной текст на *Hello World, I'm Java in AKS!*:
+Измените выходной текст на *Hello World, I'm Java in AKS!* :
 
 ```java
 package helloworld;
@@ -271,4 +270,4 @@ Hello World, I'm Java in AKS!
 [aks-helm]: ./kubernetes-helm.md
 [kubernetes-ingress]: ./ingress-basic.md
 [aks-quickstart]: ./kubernetes-walkthrough.md
-[az-acr-login]: https://docs.azure.cn/zh-cn/cli/acr?view=azure-cli-latest#az-acr-login
+[az-acr-login]: /cli/azure/acr#az-acr-login

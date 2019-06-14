@@ -18,10 +18,10 @@ ms.date: 02/03/2019
 ms.author: rclaus
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: a840deb2349d952b1ef4faeab4ee860e6b0b99df
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60651771"
 ---
 [1928533]:https://launchpad.support.sap.com/#/notes/1928533
@@ -196,7 +196,7 @@ ms.locfileid: "60651771"
 
 # <a name="sap-ascsscs-instance-multi-sid-high-availability-with-windows-server-failover-clustering-and-file-share-on-azure"></a>Обеспечение высокого уровня доступности экземпляра ASCS/SCS с несколькими ИД безопасности с помощью отказоустойчивой кластеризации Windows Server и файлового ресурса в Azure
 
-> ![ Windows][Logo_Windows]  Windows
+> ![Windows][Logo_Windows] Windows
 >
 
 Можно управлять несколькими виртуальными IP-адресами с помощью [внутренней подсистемы балансировки нагрузки Azure][load-balancer-multivip-overview]. 
@@ -268,7 +268,7 @@ _**Рис. 2.** Конфигурация SAP с несколькими иден
 _**Рис. 3.** SOFS с несколькими ИД безопасности размещается на глобальном узле SAP_
 
 > [!IMPORTANT]
->Для второй системы **SAP\<SID2>** используются тот же Volume1 и то же имя сети **\<SAPGlobalHost>**.
+>Для второй системы **SAP\<SID2>** используются тот же Volume1 и то же имя сети **\<SAPGlobalHost>** .
 >Поскольку вы уже задали имя общего ресурса **SAPMNT** для систем SAP, снова использовать сетевое имя **\<SAPGlobalHost >** вы можете только в сочетании с тем же **Volume1**.
 >
 >Путь к файлу \<SID2 > глобального узла является C:\ClusterStorage\\**Volume1**\usr\sap\<SID2 > \SYS\.
@@ -430,7 +430,7 @@ _**Рисунок 10.** Отключение всех параметров_
 
 Предоставьте разрешения *Полный доступ* на файлы и ресурс sapmnt для следующих пользователей.
 * Группа пользователей домена **SAP_\<SID>_GlobalAdmin**.
-* Объект-компьютер для узлов кластера ASCS/SCS **ascs-1$** и **ascs-2$**.
+* Объект-компьютер для узлов кластера ASCS/SCS **ascs-1$** и **ascs-2$** .
 
 ![Рисунок 11. Разрешения на полный доступ для учетных записей группы пользователей и компьютера][sap-ha-guide-figure-8022]
 

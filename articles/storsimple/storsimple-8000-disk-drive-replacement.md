@@ -15,10 +15,10 @@ ms.workload: TBD
 ms.date: 8/25/2017
 ms.author: alkohli
 ms.openlocfilehash: 3d6ef22e4df36996d68194589f43ea0f57def22c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60576957"
 ---
 # <a name="replace-a-disk-drive-on-your-storsimple-8000-series-device"></a>Замена диска на устройстве StorSimple серии 8000
@@ -46,14 +46,14 @@ ms.locfileid: "60576957"
    
     **Рис. 1.** Защитная защелка закрыта
    
-   | Метка | ОПИСАНИЕ |
+   | Метка | Описание |
    |:--- |:--- |
    | 1 |Щель индикатора |
    | 2 |Защитная защелка |
 2. Поворачивайте ключ против часовой стрелки, пока красный индикатор в щели над ключом не перестанет быть видимым.
 3. Извлеките ключ.
    
-    ![ Защитная защелка открыта](./media/storsimple-disk-drive-replacement/IC741057.png)
+    ![Защитная защелка открыта](./media/storsimple-disk-drive-replacement/IC741057.png)
    
     **Рис. 2.** Защитная защелка открыта
 4. Теперь диск можно снять.

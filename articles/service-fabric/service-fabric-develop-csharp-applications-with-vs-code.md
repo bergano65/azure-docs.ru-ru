@@ -15,10 +15,10 @@ ms.workload: NA
 ms.date: 06/29/2018
 ms.author: pepogors
 ms.openlocfilehash: 680c141e32333c4747ee69919229bd9381f536a4
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60393801"
 ---
 # <a name="develop-c-service-fabric-applications-with-visual-studio-code"></a>Разработка приложений Service Fabric на C# с помощью Visual Studio Code
@@ -42,7 +42,7 @@ git clone https://github.com/Azure-Samples/service-fabric-dotnet-core-getting-st
 
 ## <a name="open-the-application-in-vs-code"></a>Открытие приложения в VS Code
 
-### <a name="windows"></a> Windows
+### <a name="windows"></a>Windows
 Щелкните правой кнопкой мыши значок VS Code в меню "Пуск" и выберите **Запуск от имени администратора**. Чтобы подключить отладчик к службам, необходимо запустить VS Code от имени администратора.
 
 ### <a name="linux"></a>Linux

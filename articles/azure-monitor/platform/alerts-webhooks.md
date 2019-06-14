@@ -7,12 +7,12 @@ ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 04/03/2017
 ms.author: snmuvva
-ms.component: alerts
+ms.subservice: alerts
 ms.openlocfilehash: 264f3eb042a3c29523ed93df93dfa6d45c00ae87
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60345794"
 ---
 # <a name="have-a-classic-metric-alert-notify-a-non-azure-system-using-a-webhook"></a>Уведомление с помощью веб-перехватчика и классического оповещения метрики для системы за пределами Azure
@@ -73,7 +73,7 @@ ms.locfileid: "60345794"
 |:--- |:--- |:--- |:--- |
 | status |Да |Activated, Resolved |Состояние оповещения на основе заданных условий. |
 | context |Да | |Контекст оповещения. |
-|  timestamp |Да | |Время активации оповещения |
+| timestamp |Да | |Время активации оповещения |
 | id |Да | |Каждое правило оповещения имеет уникальный идентификатор. |
 | name |Да | |Имя оповещения. |
 | description |Да | |Описание оповещения. |
@@ -85,9 +85,9 @@ ms.locfileid: "60345794"
 | threshold |Для оповещений на основе метрик | |Пороговое значение, при котором активируется оповещение. |
 | windowSize |Для оповещений на основе метрик | |Период времени, используемый для отслеживания активности оповещения по пороговому значению. Значение должно составлять от 5 минут до 24 часов. Значение должно быть в формате длительности ISO 8601. |
 | timeAggregation |Для оповещений на основе метрик |Average, Last, Maximum, Minimum, None, Total |Порядок объединения данных, собранных за определенный период. Значение по умолчанию — Average (Среднее). См. [допустимые значения](https://msdn.microsoft.com/library/microsoft.azure.insights.models.aggregationtype.aspx). |
-| operator |Для оповещений на основе метрик | |Оператор, используемый для сравнения текущих данных метрик с заданным пороговым значением. |
+| оператор |Для оповещений на основе метрик | |Оператор, используемый для сравнения текущих данных метрик с заданным пороговым значением. |
 | subscriptionId |Да | |Идентификатор подписки Azure. |
-| имя_группы_ресурсов |Да | |Имя группы ресурсов для затронутого ресурса. |
+| resourceGroupName |Да | |Имя группы ресурсов для затронутого ресурса. |
 | resourceName |Да | |Имя затронутого ресурса. |
 | тип_ресурса |Да | |Тип ресурса затронутого ресурса. |
 | resourceId |Да | |Идентификатор ресурса затронутого ресурса. |
@@ -106,3 +106,4 @@ ms.locfileid: "60345794"
 * Узнайте, как [использовать приложение логики для отправки сообщения SMS с помощью Twilio из оповещения Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-text-message-with-logic-app).
 * Узнайте, как [использовать приложение логики для отправки сообщения Slack из оповещения Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-slack-with-logic-app).
 * Узнайте, как [использовать приложение логики для отправки сообщения в очередь Azure из оповещения Azure](https://github.com/Azure/azure-quickstart-templates/tree/master/201-alert-to-queue-with-logic-app).
+

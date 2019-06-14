@@ -16,10 +16,10 @@ ms.workload: iaas-sql-server
 ms.date: 05/30/2017
 ms.author: maghan
 ms.openlocfilehash: 29e851772e665b4130ee58b04c264d55bcd54523
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60609466"
 ---
 # <a name="sql-server-business-intelligence-in-azure-virtual-machines"></a>Бизнес-аналитика SQL Server на виртуальных машинах Azure
@@ -42,7 +42,7 @@ ms.locfileid: "60609466"
 <!--![SQL image in azure VM gallery](./media/virtual-machines-windows-classic-ps-sql-bi/IC741367.png)-->
 ![Образ SQL в коллекции виртуальных Машин Azure](./media/virtual-machines-windows-classic-ps-sql-bi/vm-sql-images.png)
 
-![PowerShell](./media/virtual-machines-windows-classic-ps-sql-bi/IC660119.gif)  Следующий сценарий PowerShell возвращает список образов Azure, содержащих значение «SQL-Server» в элементе ImageName:
+![PowerShell](./media/virtual-machines-windows-classic-ps-sql-bi/IC660119.gif) Следующий сценарий PowerShell возвращает список образов Azure, содержащих значение «SQL-Server» в элементе ImageName:
 
     # assumes you have already uploaded a management certificate to your Microsoft Azure Subscription. View the thumbprint value from the "Subscriptions" menu in Azure portal.
 
@@ -86,7 +86,7 @@ ms.locfileid: "60609466"
 
 <sup>1</sup> Дополнительные сведения о SharePoint и виртуальных машинах Azure см. в статьях [Архитектуры Microsoft Azure для SharePoint 2013](https://technet.microsoft.com/library/dn635309.aspx) и [Развертывание SharePoint на виртуальных машинах Microsoft Azure](https://www.microsoft.com/download/details.aspx?id=34598).
 
-![PowerShell](./media/virtual-machines-windows-classic-ps-sql-bi/IC660119.gif)  Выполните следующую команду PowerShell, чтобы получить список установленных служб, в имени которых содержится значение «SQL».
+![PowerShell](./media/virtual-machines-windows-classic-ps-sql-bi/IC660119.gif) Выполните следующую команду PowerShell, чтобы получить список установленных служб, в имени которых содержится значение «SQL».
 
     get-service | Where-Object{ $_.DisplayName -like '*SQL*' } | Select DisplayName, status, servicetype, dependentservices | format-Table -AutoSize
 
@@ -94,10 +94,10 @@ ms.locfileid: "60609466"
 * При использовании SQL Server Enterprise Edition минимальный размер, рекомендуемый для виртуальной машины, — **A3** . Размер виртуальной машины **A4** рекомендуется использовать для развертывания бизнес-аналитики SQL Server в службах Analysis Services и Reporting Services.
   
     Сведения о текущих размерах виртуальных машин см. в разделе [Размеры виртуальных машин в Azure](../sizes.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
-* В рамках управления дисками рекомендуется хранить данные, журналы и файлы резервных копий на дисках, отличных от **C:** и **D:**. Например, создайте диски данных **E:** и **F:**.
+* В рамках управления дисками рекомендуется хранить данные, журналы и файлы резервных копий на дисках, отличных от **C:** и **D:** . Например, создайте диски данных **E:** и **F:** .
   
   * Политика кэширования диска для диска по умолчанию **C:** не является оптимальным выбором для работы с данными.
-  * **D:**— это временный диск, который используется в основном для файла подкачки. Диск **D:** не является сохраняемым и не сохраняется в хранилище BLOB-объектов. Задачи управления, такие как изменение размера виртуальной машины, приводят к сбросу диска **D:**. **НЕ** рекомендуется использовать диск **D:** для файлов базы данных, включая tempdb.
+  * **D:** — это временный диск, который используется в основном для файла подкачки. Диск **D:** не является сохраняемым и не сохраняется в хранилище BLOB-объектов. Задачи управления, такие как изменение размера виртуальной машины, приводят к сбросу диска **D:** . **НЕ** рекомендуется использовать диск **D:** для файлов базы данных, включая tempdb.
     
     Дополнительные сведения о создании и подключении дисков см. в разделе [Подключение диска данных к виртуальной машине](../classic/attach-disk-classic.md?toc=%2fazure%2fvirtual-machines%2fwindows%2fclassic%2ftoc.json).
 * Остановите или удалите службы, которые не планируете использовать. Например, если виртуальная машина используется только для служб Reporting Services, остановите или удалите службы Analysis Services и службы SQL Server Integration Services. На рисунке приведен пример служб, которые запускаются по умолчанию.
@@ -224,7 +224,7 @@ ms.locfileid: "60609466"
 
 1. Создайте конечную точку для виртуальной машины через TCP-порт 80. Дополнительные сведения см. в разделе [Конечные точки виртуальной машины и порты брандмауэра](#virtual-machine-endpoints-and-firewall-ports) этого документа.
 2. Откройте порт 80 в брандмауэре виртуальной машины.
-3. Перейдите к веб-порталу или диспетчеру отчетов, используя **DNS-имя** виртуальной машины Azure в качестве имени сервера в URL-адресе. Пример.
+3. Перейдите к веб-порталу или диспетчеру отчетов, используя **DNS-имя** виртуальной машины Azure в качестве имени сервера в URL-адресе. Пример:
    
     **Сервер отчетов**: http://uebi.cloudapp.net/reportserver  **Веб-портал**: http://uebi.cloudapp.net/reports
    

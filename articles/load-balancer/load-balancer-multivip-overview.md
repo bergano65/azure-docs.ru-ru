@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 03/22/2018
 ms.author: chkuhtz
 ms.openlocfilehash: b9a140314b8eba6386c37bdbcf2bb3de58589335
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60594133"
 ---
 # <a name="multiple-frontends-for-azure-load-balancer"></a>Использование нескольких внешних интерфейсов Azure Load Balancer
@@ -30,12 +30,12 @@ Azure Load Balancer позволяет выполнять балансировк
 
 В следующей таблице приведены некоторые примеры интерфейсных конфигураций:
 
-| Интерфейсный сервер | IP-адрес | протокол | порт |
+| Внешний интерфейс | IP-адрес | protocol | port |
 | --- | --- | --- | --- |
 | 1 |65.52.0.1 |TCP |80 |
 | 2 |65.52.0.1 |TCP |*8080* |
 | 3 |65.52.0.1 |*UDP* |80 |
-| 4. |*65.52.0.2* |TCP |80 |
+| 4\. |*65.52.0.2* |TCP |80 |
 
 В таблице представлены четыре разных внешних интерфейса. Внешние интерфейсы 1, 2 и 3 — это один внешний интерфейс с несколькими правилами. Используется один IP-адрес, но порт или протокол отличаются для каждого внешнего интерфейса. Внешние интерфейсы 1 и 4 являются примерами нескольких внешних интерфейсов, где один интерфейсный протокол и один порт повторно используются для разных внешних интерфейсов.
 
@@ -54,7 +54,7 @@ Azure Load Balancer позволяет сочетать оба типа прав
 
 В этом сценарии внешние интерфейсы настроены следующим образом:
 
-| Интерфейсный сервер | IP-адрес | протокол | порт |
+| Внешний интерфейс | IP-адрес | protocol | port |
 | --- | --- | --- | --- |
 | ![зеленый интерфейс](./media/load-balancer-multivip-overview/load-balancer-rule-green.png) 1 |65.52.0.1 |TCP |80 |
 | ![сиреневый интерфейс](./media/load-balancer-multivip-overview/load-balancer-rule-purple.png) 2 |*65.52.0.2* |TCP |80 |
@@ -63,14 +63,14 @@ Azure Load Balancer позволяет сочетать оба типа прав
 
 Мы определим два правила:
 
-| Правило | Сопоставить внешний интерфейс | С внутренним пулом |
+| правило; | Сопоставить внешний интерфейс | С внутренним пулом |
 | --- | --- | --- |
-| 1 |![зеленый интерфейс](./media/load-balancer-multivip-overview/load-balancer-rule-green.png) Frontend1:80 |![серверная часть](./media/load-balancer-multivip-overview/load-balancer-rule-green.png) DIP1:80, ![серверная часть](./media/load-balancer-multivip-overview/load-balancer-rule-green.png)  DIP2:80 |
-| 2 |![VIP](./media/load-balancer-multivip-overview/load-balancer-rule-purple.png) Frontend2:80 |![серверная часть](./media/load-balancer-multivip-overview/load-balancer-rule-purple.png) DIP1:81, ![серверная часть](./media/load-balancer-multivip-overview/load-balancer-rule-purple.png)  DIP2:81 |
+| 1 |![зеленый интерфейс](./media/load-balancer-multivip-overview/load-balancer-rule-green.png) Frontend1:80 |![серверная часть](./media/load-balancer-multivip-overview/load-balancer-rule-green.png) DIP1:80, ![серверная часть](./media/load-balancer-multivip-overview/load-balancer-rule-green.png) DIP2:80 |
+| 2 |![Виртуальный IP-адрес](./media/load-balancer-multivip-overview/load-balancer-rule-purple.png) Frontend2:80 |![серверная часть](./media/load-balancer-multivip-overview/load-balancer-rule-purple.png) DIP1:81, ![серверная часть](./media/load-balancer-multivip-overview/load-balancer-rule-purple.png) DIP2:81 |
 
 Полное сопоставление в Azure Load Balancer теперь выглядит следующим образом:
 
-| Правило | Внешний IP-адрес | протокол | порт | Место назначения | порт |
+| правило; | Интерфейсный IP-адрес | protocol | port | Место назначения | port |
 | --- | --- | --- | --- | --- | --- |
 | ![правило зеленого интерфейса](./media/load-balancer-multivip-overview/load-balancer-rule-green.png) 1 |65.52.0.1 |TCP |80 |Выделенный IP-адрес (DIP) |80 |
 | ![правило сиреневого интерфейса](./media/load-balancer-multivip-overview/load-balancer-rule-purple.png) 2 |65.52.0.2 |TCP |80 |Выделенный IP-адрес (DIP) |81 |
@@ -104,21 +104,21 @@ Azure Load Balancer обеспечивает гибкость, позволяя 
 
 Предположим, что интерфейсная конфигурация такая же, как в предыдущем сценарии:
 
-| Интерфейсный сервер | IP-адрес | протокол | порт |
+| Внешний интерфейс | IP-адрес | protocol | port |
 | --- | --- | --- | --- |
 | ![зеленый интерфейс](./media/load-balancer-multivip-overview/load-balancer-rule-green.png) 1 |65.52.0.1 |TCP |80 |
 | ![сиреневый интерфейс](./media/load-balancer-multivip-overview/load-balancer-rule-purple.png) 2 |*65.52.0.2* |TCP |80 |
 
 Мы определим два правила:
 
-| Правило | Интерфейсный сервер | Сопоставление с внутренним пулом |
+| правило; | Внешний интерфейс | Сопоставление с внутренним пулом |
 | --- | --- | --- |
-| 1 |![правило](./media/load-balancer-multivip-overview/load-balancer-rule-green.png) Frontend1:80 |![серверная часть](./media/load-balancer-multivip-overview/load-balancer-rule-green.png) Frontend1:80 (на виртуальной машине 1 и 2) |
-| 2 |![правило](./media/load-balancer-multivip-overview/load-balancer-rule-purple.png) Frontend2:80 |![серверная часть](./media/load-balancer-multivip-overview/load-balancer-rule-purple.png) Frontend2:80 (на виртуальной машине 1 и 2) |
+| 1 |![правило;](./media/load-balancer-multivip-overview/load-balancer-rule-green.png) Frontend1:80 |![серверная часть](./media/load-balancer-multivip-overview/load-balancer-rule-green.png) Frontend1:80 (на виртуальной машине 1 и 2) |
+| 2 |![правило;](./media/load-balancer-multivip-overview/load-balancer-rule-purple.png) Frontend2:80 |![серверная часть](./media/load-balancer-multivip-overview/load-balancer-rule-purple.png) Frontend2:80 (на виртуальной машине 1 и 2) |
 
 Следующая таблица демонстрирует полное сопоставление в балансировщике нагрузки:
 
-| Правило | Внешний IP-адрес | протокол | порт | Место назначения | порт |
+| правило; | Интерфейсный IP-адрес | protocol | port | Место назначения | port |
 | --- | --- | --- | --- | --- | --- |
 | ![правило зеленого интерфейса](./media/load-balancer-multivip-overview/load-balancer-rule-green.png) 1 |65.52.0.1 |TCP |80 |такое, как у внешнего интерфейса (65.52.0.1) |такое, как у внешнего интерфейса (80) |
 | ![правило сиреневого интерфейса](./media/load-balancer-multivip-overview/load-balancer-rule-purple.png) 2 |65.52.0.2 |TCP |80 |такое, как у внешнего интерфейса (65.52.0.2) |такое, как у внешнего интерфейса (80) |
