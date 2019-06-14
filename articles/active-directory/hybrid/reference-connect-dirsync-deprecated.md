@@ -18,10 +18,10 @@ ms.author: billmath
 ms.custom: H1Hack27Feb2017
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 803fcc0161f2a092006e60db5a98f5bf18dce1c1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60381184"
 ---
 # <a name="upgrade-windows-azure-active-directory-sync-and-azure-active-directory-sync"></a>Обновление Windows Azure Active Directory Sync и Azure Active Directory Sync
@@ -63,7 +63,7 @@ Azure AD Connect является преемником DirSync и Azure AD Sync.
 Служба DirSync (Azure AD Sync) продолжит работу после 13 апреля 2017 года.  Но после 31 декабря 2017 г. служба Azure AD больше не будет принимать подключения из DirSync и Azure AD Sync.
 
 **Вопрос. Какие версии DirSync можно обновить?**  
- Поддерживается обновление любой версии DirSync, которая используется в настоящее время. 
+Поддерживается обновление любой версии DirSync, которая используется в настоящее время. 
 
 **Вопрос. Как насчет соединителя Azure AD для FIM/MIM?**  
 Соединитель Azure AD для FIM или MIM устаревшим **не** объявлен. Проект **заморожен**, т. е. новые функции не добавляются, а ошибки не исправляются. Корпорация Майкрософт рекомендует использующим его клиентам перейти на Azure AD Connect. Настоятельно рекомендуем не запускать с его помощью никакие новые развертывания. В будущем соединитель будет объявлен устаревшим.

@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 01/23/2019
 ms.author: aschhab
 ms.openlocfilehash: 6e5895392db1d75a985674bf2f878a84bc8dd926
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60311018"
 ---
 # <a name="distributed-tracing-and-correlation-through-service-bus-messaging"></a>Распределенная трассировка и корреляция путем обмена сообщениями через служебную шину
@@ -30,7 +30,7 @@ ms.locfileid: "60311018"
 Служебная шина Microsoft Azure для обмена сообщениями имеет определенные свойства полезных данных, которые производитель и потребитель должны использовать для передачи этого контекста трассировки.
 Протокол основан на [протоколе HTTP для корреляции](https://github.com/dotnet/corefx/blob/master/src/System.Diagnostics.DiagnosticSource/src/HttpCorrelationProtocol.md).
 
-| Имя свойства        | ОПИСАНИЕ                                                 |
+| Имя свойства        | Описание                                                 |
 |----------------------|-------------------------------------------------------------|
 |  Diagnostic-Id       | Уникальный идентификатор внешнего вызова от производителя к очереди. Обоснование, рекомендации и сведения о формате см. в разделе [Request-Id](https://github.com/dotnet/corefx/blob/master/src/System.Diagnostics.DiagnosticSource/src/HttpCorrelationProtocol.md#request-id) протокола HTTP. |
 |  Correlation-Context | Контекст операции, который распространяется на все службы, участвующие в обработке операции. Дополнительные сведения см. в разделе [Correlation-Context](https://github.com/dotnet/corefx/blob/master/src/System.Diagnostics.DiagnosticSource/src/HttpCorrelationProtocol.md#correlation-context) протокола HTTP. |

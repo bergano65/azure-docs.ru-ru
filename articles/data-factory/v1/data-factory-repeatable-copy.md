@@ -14,10 +14,10 @@ ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: 20c916275acd6bb79675c592711b17b277c9fc78
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60605177"
 ---
 # <a name="repeatable-copy-in-azure-data-factory"></a>Повторяющаяся операция копирования в фабрике данных Azure
@@ -111,7 +111,7 @@ ID    Product        Quantity    ModifiedDate
 
 Фабрика данных Azure будет использовать этот столбец для достижения повторяемости, не изменяя при этом схему таблицы. Способ применения этого подхода:
 
-1. Определите в целевой таблице SQL столбец двоичного типа (**binary (32)**). Для этого столбца не должно быть никаких ограничений. Для нашего примера давайте назовем столбец AdfSliceIdentifier.
+1. Определите в целевой таблице SQL столбец двоичного типа (**binary (32)** ). Для этого столбца не должно быть никаких ограничений. Для нашего примера давайте назовем столбец AdfSliceIdentifier.
 
 
     Исходная таблица:

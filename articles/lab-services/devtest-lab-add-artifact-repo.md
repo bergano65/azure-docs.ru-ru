@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 04/17/2018
 ms.author: spelluru
 ms.openlocfilehash: 5d7665cbfdf855e194f61910f0c8ee2bce5469b1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60311734"
 ---
 # <a name="add-a-git-repository-to-store-custom-artifacts-and-resource-manager-templates"></a>Добавление репозитория Git для хранения пользовательских артефактов и шаблонов Resource Manager
@@ -54,7 +54,7 @@ ms.locfileid: "60311734"
 
 ### <a name="get-the-azure-repos-clone-url-and-personal-access-token"></a>Получение URL-адреса клона и персонального маркера доступа из Azure Repos
 
-1. Перейдите на домашнюю страницу групповой коллекции (например, https://contoso-web-team.visualstudio.com)) и выберите свой проект.
+1. Перейдите на домашнюю страницу групповой коллекции (например, https://contoso-web-team.visualstudio.com) ) и выберите свой проект.
 2. На домашней странице проекта выберите **Код**.
 3. Чтобы увидеть URL-адрес клона, на странице **Код** проекта выберите **Клон**.
 4. Сохраните URL-адрес — он потребуется позже.
@@ -74,7 +74,7 @@ ms.locfileid: "60311734"
 1. Войдите на [портале Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
 2. Щелкните **Больше служб**, а затем выберите в списке служб **DevTest Labs**.
 3. В списке лабораторий выберите свою лабораторию. 
-4. Выберите **Configuration and policies** (Конфигурация и политики) > **Репозитории** > **+ Добавить**.
+4. Выберите **Configuration and policies** (Конфигурация и политики) > **Репозитории** >  **+ Добавить**.
 
     ![Кнопка добавления репозитория](./media/devtest-lab-add-repo/devtestlab-add-repo.png)
 5. На второй странице **Репозитории** укажите следующие сведения:

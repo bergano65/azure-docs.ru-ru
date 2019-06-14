@@ -12,16 +12,15 @@ ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-origin.date: 07/13/2017
-ms.date: 04/09/2019
+ms.date: 07/13/2017
 ms.subservice: hybrid
-ms.author: v-junlch
+ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 10a4078f49abbdf431f42c6cde7cf882112e5848
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60384721"
 ---
 # <a name="azure-ad-connect-sync-service-shadow-attributes"></a>Теневые атрибуты службы синхронизации Azure AD Connect
@@ -39,11 +38,11 @@ ms.locfileid: "60384721"
 ### <a name="userprincipalname"></a>userPrincipalName
 У пользователя имеются следующие значения атрибутов в непроверенном домене.
 
-| Атрибут | Value |
+| Атрибут | Значение |
 | --- | --- |
 | userPrincipalName для локальной среды | lee.sperry@fabrikam.com |
 | shadowUserPrincipalName для Azure AD | lee.sperry@fabrikam.com |
-| userPrincipalName для Azure AD | lee.sperry@fabrikam.partner.onmschina.cn |
+| userPrincipalName для Azure AD | lee.sperry@fabrikam.onmicrosoft.com |
 
 Атрибут userPrincipalName — это значение, отображаемое при использовании PowerShell.
 
@@ -54,7 +53,7 @@ ms.locfileid: "60384721"
 
 Для пользователя почтового ящика, размещенного в локальной среде или Exchange Online, отображаются только значения для проверенных доменов. Это выглядит следующим образом.
 
-| Атрибут | Value |
+| Атрибут | Значение |
 | --- | --- |
 | proxyAddresses для локальной среды | SMTP:abbie.spencer@fabrikamonline.com</br>smtp:abbie.spencer@fabrikam.com</br>smtp:abbie@fabrikamonline.com |
 | proxyAddresses для Exchange Online | SMTP:abbie.spencer@fabrikamonline.com</br>smtp:abbie@fabrikamonline.com</br>SIP:abbie.spencer@fabrikamonline.com |
@@ -78,5 +77,3 @@ ProxyCalc может потратить некоторое время на об�
 ## <a name="see-also"></a>См. также
 * [Службы синхронизации Azure AD Connect](how-to-connect-sync-whatis.md)
 * [Интеграция локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md).
-
-<!-- Update_Description: wording update -->

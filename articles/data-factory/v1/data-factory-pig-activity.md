@@ -14,14 +14,14 @@ ms.date: 01/10/2018
 ms.author: shlo
 robots: noindex
 ms.openlocfilehash: 78ee2c1ce402a29f1a9dfdd29f31daef09134eba
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60611335"
 ---
 # <a name="transform-data-using-pig-activity-in-azure-data-factory"></a>Преобразование данных с помощью действия Pig в фабрике данных Azure
-> [!div class="op_single_selector" title1="Transformation Activities"]
+> [!div class="op_single_selector" title1="Действия преобразования"]
 > * [Действие Hive](data-factory-hive-activity.md) 
 > * [Действие Pig](data-factory-pig-activity.md)
 > * [Действие MapReduce](data-factory-map-reduce.md)

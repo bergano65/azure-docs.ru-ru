@@ -14,14 +14,14 @@ ms.date: 02/02/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: 0de8d4145ff41b498149774af8ed74c56375dea9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60605178"
 ---
 # <a name="move-data-from-sybase-using-azure-data-factory"></a>Перемещение данных из Sybase с помощью фабрики данных Azure
-> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
+> [!div class="op_single_selector" title1="Выберите версию службы фабрики данных, которую вы используете:"]
 > * [Версия 1](data-factory-onprem-sybase-connector.md)
 > * [Версия 2 (текущая)](../connector-sybase.md)
 
@@ -71,7 +71,7 @@ ms.locfileid: "60605178"
 | database |Имя базы данных Sybase. |Yes |
 | schema |Имя схемы в базе данных. |Нет |
 | authenticationType |Тип проверки подлинности, используемый для подключения к базе данных Sybase. Возможные значения: Anonymous, Basic и Windows. |Yes |
-| username |При использовании обычной проверки подлинности или проверки подлинности Windows укажите имя пользователя. |Нет |
+| имя пользователя |При использовании обычной проверки подлинности или проверки подлинности Windows укажите имя пользователя. |Нет |
 | password |Введите пароль для учетной записи пользователя, указанной для выбранного имени пользователя. |Нет |
 | gatewayName |Имя шлюза, который следует использовать службе фабрики данных для подключения к локальной базе данных Sybase. |Yes |
 

@@ -19,10 +19,10 @@ ms.reviewer: sahandle
 ms.custom: seohack1
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 3357cfd5e845346534f263c768b5cf6b6a38ea4e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60296305"
 ---
 # <a name="get-started-with-azure-active-directory-identity-protection-and-microsoft-graph"></a>Начало работы с защитой идентификации Azure Active Directory и Microsoft Graph
@@ -82,7 +82,7 @@ Microsoft Graph — это конечная точка Unified API (Майкро
 
     a. В текстовом поле **Имя** введите имя приложения (например, приложение API события риска AADIP).
    
-    2. В качестве **типа** выберите **Веб-приложение и/или веб-API**.
+    2\. В качестве **типа** выберите **Веб-приложение и/или веб-API**.
    
     c. В текстовом поле **URL-адрес входа** введите `http://localhost`.
 
@@ -141,7 +141,7 @@ Microsoft Graph — это конечная точка Unified API (Майкро
 
     a. В текстовом поле **Описание ключа** введите описание (например, *Событие риска AADIP*).
     
-    2. Для параметра **Длительность** выберите значение **Через один год**.
+    2\. Для параметра **Длительность** выберите значение **Через один год**.
 
     c. Выберите команду **Сохранить**.
    

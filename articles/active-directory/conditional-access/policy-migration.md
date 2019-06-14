@@ -19,10 +19,10 @@ ms.author: joflore
 ms.reviewer: nigu
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: f3246a7efa36e6c6ef0dac93e659a73dac17090a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: MT
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60301682"
 ---
 # <a name="what-is-a-policy-migration-in-azure-active-directory-conditional-access"></a>Перенос политик условного доступа в Azure Active Directory 
@@ -51,7 +51,7 @@ ms.locfileid: "60301682"
 - портала службы "Защита приложений Intune".
 
 
-На странице **Условный доступ** вы можете перейти к своим классическим политикам, щелкнув [**Classic policies (preview)**](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ConditionalAccessBlade/ClassicPolicies) (Классические политики (предварительная версия)) в разделе **Управление**. 
+На странице **Условный доступ** вы можете перейти к своим классическим политикам, щелкнув [**Classic policies (preview)** ](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ConditionalAccessBlade/ClassicPolicies) (Классические политики (предварительная версия)) в разделе **Управление**. 
 
 
 ![Azure Active Directory](./media/policy-migration/71.png)
@@ -84,7 +84,7 @@ ms.locfileid: "60301682"
 
 Всеми политиками можно управлять централизованно, с помощью службы условного доступа на портале Azure. Так как реализация условного доступа значительно изменилась, перед переносом классических политик рекомендуется ознакомиться с основными понятиями.
 
-См.:
+Пример
 
 - [Условный доступ в Azure Active Directory](../active-directory-conditional-access-azure-portal.md): получите дополнительные сведения об основных понятиях и терминологии.
 

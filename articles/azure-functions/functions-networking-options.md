@@ -8,12 +8,12 @@ ms.service: azure-functions
 ms.topic: conceptual
 ms.date: 4/11/2019
 ms.author: alkarche
-ms.openlocfilehash: f13e498859986d5ee697cbd67907fd344147ed0c
-ms.sourcegitcommit: 600d5b140dae979f029c43c033757652cddc2029
+ms.openlocfilehash: a0bb34f8a43199a5d3a18064bce92ef4bec543af
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66492842"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67050640"
 ---
 # <a name="azure-functions-networking-options"></a>Функции Azure, вариантах сетевого взаимодействия
 
@@ -25,13 +25,13 @@ ms.locfileid: "66492842"
 
 * Есть ряд параметров плана, которые выполняются на мультитенантную инфраструктуру, с различными уровнями подключение к виртуальной сети и их масштабирование:
     * [План потребления](functions-scale.md#consumption-plan), которой может масштабироваться динамически в ответ для загрузки и предлагает параметры минимальной сетевой изоляции.
-    * [План "премиум"](functions-scale.md#premium-plan-public-preview), которая также пропорционально увеличивает динамически, предлагая более полный сетевой изоляции.
+    * [План "премиум"](functions-scale.md#premium-plan), которая также пропорционально увеличивает динамически, предлагая более полный сетевой изоляции.
     * Azure [план службы приложений](functions-scale.md#app-service-plan), который работает на фиксированный масштаб и предлагает аналогичные сетевой изоляции в план уровня "премиум".
 * Функции можно запустить [среды службы приложений](../app-service/environment/intro.md). Этот метод развертывает функции в виртуальной сети и предлагает полный сетевой контроль и Улучшенная изоляция.
 
 ## <a name="matrix-of-networking-features"></a>Матрица возможностей работы в сети
 
-|                |[План потребления](functions-scale.md#consumption-plan)|[План "премиум" (Предварительная версия)](functions-scale.md#premium-plan-public-preview)|[План обслуживания приложения](functions-scale.md#app-service-plan)|[Среда службы приложений](../app-service/environment/intro.md)|
+|                |[План потребления](functions-scale.md#consumption-plan)|[План "премиум" (Предварительная версия)](functions-scale.md#premium-plan)|[План обслуживания приложения](functions-scale.md#app-service-plan)|[Среда службы приложений](../app-service/environment/intro.md)|
 |----------------|-----------|----------------|---------|-----------------------|  
 |[Входящий ограничения IP-адресов](#inbound-ip-restrictions)|✅Yes|✅Yes|✅Yes|✅Yes|
 |[Ограничения исходящего IP-адресов](#private-site-access)|❌No| ❌No|❌No|✅Yes|

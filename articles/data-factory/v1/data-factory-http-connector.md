@@ -13,15 +13,15 @@ ms.date: 05/22/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: f7e070788d2fc11addcafc30d9f232f194f44782
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60318484"
 ---
 # <a name="move-data-from-an-http-source-by-using-azure-data-factory"></a>Перемещение данных из источника HTTP с помощью фабрики данных Azure
 
-> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
+> [!div class="op_single_selector" title1="Выберите версию службы фабрики данных, которую вы используете:"]
 > * [Версия 1](data-factory-http-connector.md)
 > * [Версия 2 (текущая)](../connector-http.md)
 
@@ -56,9 +56,9 @@ ms.locfileid: "60318484"
 | type | Свойству **Тип** необходимо задать значение **Http**. | Yes |
 | url | Базовый URL-адрес веб-сервера. | Yes |
 | authenticationType | Указывает тип проверки подлинности. Допустимые значения **Anonymous**, **Basic** , **Digest**, **Windows** и **ClientCertificate**. <br><br> С дополнительными свойствами и примерами JSON этих типов проверки подлинности ознакомьтесь в последующих разделах этой статьи. | Yes |
-| enableServerCertificateValidation | Указывает, следует ли включать проверку SSL-сертификата на сервере, если источником является веб-сервер HTTPS. Если ваш сервер HTTPS использует самозаверенный сертификат, установите значение **false**. | Нет <br /> (значение по умолчанию **true**) |
+| enableServerCertificateValidation | Указывает, следует ли включать проверку SSL-сертификата на сервере, если источником является веб-сервер HTTPS. Если ваш сервер HTTPS использует самозаверенный сертификат, установите значение **false**. | Нет<br /> (значение по умолчанию **true**) |
 | gatewayName | Имя экземпляра шлюза управления данными для подключения к локальному источнику HTTP. | Да, если вы копируете данные из локального источника HTTP |
-| encryptedCredential | Зашифрованные учетные данные для доступа к конечной точке HTTP. Значение создается автоматически при настройке сведений для проверки подлинности в мастере копирования или в диалоговом окне **ClickOnce**. | Нет <br /> (применимо, только когда копирование данных выполняется с локального HTTP-сервера) |
+| encryptedCredential | Зашифрованные учетные данные для доступа к конечной точке HTTP. Значение создается автоматически при настройке сведений для проверки подлинности в мастере копирования или в диалоговом окне **ClickOnce**. | Нет<br /> (применимо, только когда копирование данных выполняется с локального HTTP-сервера) |
 
 Дополнительные сведения о настройке учетных данных для локального источника данных соединителя HTTP см. в статье [Перемещение данных между локальными источниками и облаком используя шлюз управления данными](data-factory-move-data-between-onprem-and-cloud.md).
 
@@ -98,7 +98,7 @@ ms.locfileid: "60318484"
 | --- | --- | --- |
 | embeddedCertData | Содержимое двоичных данных PFX-файла с кодировкой Base64. | Укажите либо **embeddedCertData** или **certThumbprint** |
 | certThumbprint | Отпечаток сертификата, который был установлен в хранилище сертификатов на компьютере шлюза. Применимо, только когда копирование данных выполняется из локального источника HTTP. | Укажите либо **embeddedCertData** или **certThumbprint** |
-| password | Пароль, связанный с сертификатом. | Нет  |
+| password | Пароль, связанный с сертификатом. | Нет |
 
 Используя **certThumbprint** для проверки подлинности и установив сертификат в личном хранилище локального компьютера, предоставьте разрешение на чтение для службы шлюза:
 
@@ -161,12 +161,12 @@ ms.locfileid: "60318484"
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | type | Свойство **type** для набора данных должно иметь значение **Http**. | Yes |
-| relativeUrl | Относительный URL-адрес ресурса, который содержит данные. Если путь не задан, используется только URL-адрес, указанный в определении связанной службы. <br><br> Для создания динамического URL-адреса можно использовать [функции фабрики данных и системные переменные](data-factory-functions-variables.md). Пример: **relativeUrl**: **$$Text.Format('/my/report?month={0:yyyy}-{0:MM}&fmt=csv', SliceStart)** . | Нет  |
-| requestMethod | Метод HTTP. Допустимые значения: **GET** и **POST**. | Нет  <br />(значение по умолчанию — **GET**) |
-| additionalHeaders | Дополнительные заголовки HTTP-запроса. | Нет  |
-| requestBody | Текст HTTP-запроса. | Нет  |
-| format | Если вы хотите *извлечь данные из конечной точки HTTP "как есть"*  — без анализа, пропустите параметр **format**. <br><br> Для выполнения анализа содержимого ответа HTTP в процессе копирования поддерживаются следующие типы форматов: **TextFormat**, **JsonFormat**, **AvroFormat**, **OrcFormat** и **ParquetFormat**. Дополнительные сведения см. в разделах о [Текстовый формат](data-factory-supported-file-and-compression-formats.md#text-format), [Формат JSON](data-factory-supported-file-and-compression-formats.md#json-format), [Формат Avro](data-factory-supported-file-and-compression-formats.md#avro-format), [Формат ORC](data-factory-supported-file-and-compression-formats.md#orc-format) и [Формат Parquet](data-factory-supported-file-and-compression-formats.md#parquet-format). |Нет  |
-| compression | Укажите тип и уровень сжатия данных. Поддерживаемые типы: **GZip**, **Deflate**, **BZip2** и **ZipDeflate**. Поддерживаемые уровни: **Оптимальный** и **Самый быстрый**. Узнайте больше о [форматах файлов и сжатия данных в фабрике данных Azure](data-factory-supported-file-and-compression-formats.md#compression-support). |Нет  |
+| relativeUrl | Относительный URL-адрес ресурса, который содержит данные. Если путь не задан, используется только URL-адрес, указанный в определении связанной службы. <br><br> Для создания динамического URL-адреса можно использовать [функции фабрики данных и системные переменные](data-factory-functions-variables.md). Пример: **relativeUrl**: **$$Text.Format('/my/report?month={0:yyyy}-{0:MM}&fmt=csv', SliceStart)** . | Нет |
+| requestMethod | Метод HTTP. Допустимые значения: **GET** и **POST**. | Нет <br />(значение по умолчанию — **GET**) |
+| additionalHeaders | Дополнительные заголовки HTTP-запроса. | Нет |
+| requestBody | Текст HTTP-запроса. | Нет |
+| format | Если вы хотите *извлечь данные из конечной точки HTTP "как есть"*  — без анализа, пропустите параметр **format**. <br><br> Для выполнения анализа содержимого ответа HTTP в процессе копирования поддерживаются следующие типы форматов: **TextFormat**, **JsonFormat**, **AvroFormat**, **OrcFormat** и **ParquetFormat**. Дополнительные сведения см. в разделах о [Текстовый формат](data-factory-supported-file-and-compression-formats.md#text-format), [Формат JSON](data-factory-supported-file-and-compression-formats.md#json-format), [Формат Avro](data-factory-supported-file-and-compression-formats.md#avro-format), [Формат ORC](data-factory-supported-file-and-compression-formats.md#orc-format) и [Формат Parquet](data-factory-supported-file-and-compression-formats.md#parquet-format). |Нет |
+| compression | Укажите тип и уровень сжатия данных. Поддерживаемые типы: **GZip**, **Deflate**, **BZip2** и **ZipDeflate**. Поддерживаемые уровни: **Оптимальный** и **Самый быстрый**. Узнайте больше о [форматах файлов и сжатия данных в фабрике данных Azure](data-factory-supported-file-and-compression-formats.md#compression-support). |Нет |
 
 **Пример. Использование метода GET (по умолчанию)**
 
@@ -223,7 +223,7 @@ ms.locfileid: "60318484"
 
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 | -------- | ----------- | -------- |
-| httpRequestTimeout | Время ожидания (значение **Временной диапазон**) ответа для HTTP-запроса. Это интервал времени для получения ответа, а не считывания данных ответа. | Нет <br />(значение по умолчанию: **00:01:40**) |
+| httpRequestTimeout | Время ожидания (значение **Временной диапазон**) ответа для HTTP-запроса. Это интервал времени для получения ответа, а не считывания данных ответа. | Нет<br />(значение по умолчанию: **00:01:40**) |
 
 ## <a name="supported-file-and-compression-formats"></a>Поддерживаемые форматы файлов и сжатия
 

@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 9/7/2018
 ms.author: saurse
 ms.openlocfilehash: d58b51f06c21c787e4aa720c803ab6533544d55c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60238624"
 ---
 # <a name="restore-files-to-windows-by-using-the-azure-resource-manager-deployment-model"></a>Восстановление файлов в Windows с помощью модели развертывания Azure Resource Manager
@@ -44,7 +44,7 @@ ms.locfileid: "60238624"
 
     ![Снимок экрана Azure Backup с выделенным элементом "Восстановить данные"](./media/backup-azure-restore-windows-server/recover.png)
 
-3. Чтобы восстановить данные на тот же сервер или компьютер, в области **Приступая к работе** выберите **Этот сервер (`<server name>`)** > **Далее**.
+3. Чтобы восстановить данные на тот же сервер или компьютер, в области **Приступая к работе** выберите **Этот сервер (`<server name>`)**  > **Далее**.
 
     ![Снимок экрана страницы "Приступая к работе" мастера восстановления данных](./media/backup-azure-restore-windows-server/samemachine_gettingstarted_instantrestore.png)
 

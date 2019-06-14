@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 04/18/2019
 ms.author: aelnably
 ms.custom: ''
-ms.openlocfilehash: 27b5dc9ccee8647d4fbb617063865df18b80bc5d
-ms.sourcegitcommit: cfbc8db6a3e3744062a533803e664ccee19f6d63
+ms.openlocfilehash: ce57aae1119261c0545b59a037226fdc12ec115f
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65990276"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67050663"
 ---
 # <a name="continuous-delivery-using-azure-devops"></a>Непрерывная доставка с помощью DevOps в Azure
 
@@ -36,9 +36,7 @@ ms.locfileid: "65990276"
 Следующий пример можно использовать для создания файла YAML для создания приложения для .NET.
 
 ```yaml
-jobs:
-  - job: Build
-    pool:
+pool:
       vmImage: 'VS2017-Win2016'
 steps:
 - script: |
@@ -69,9 +67,7 @@ steps:
 Следующий пример можно использовать для создания файла YAML для создания приложения JavaScript:
 
 ```yaml
-jobs:
-  - job: Build
-    pool:
+pool:
       vmImage: ubuntu-16.04 # Use 'VS2017-Win2016' if you have Windows native +Node modules
 steps:
 - bash: |
@@ -99,9 +95,7 @@ steps:
 Следующий пример можно использовать для создания файла YAML для создания приложения Python, Python поддерживается только для функций Azure Linux:
 
 ```yaml
-jobs:
-  - job: Build
-    pool:
+pool:
       vmImage: ubuntu-16.04
 steps:
 - task: UsePythonVersion@0
@@ -118,6 +112,25 @@ steps:
     source worker_venv/bin/activate
     pip3.6 install setuptools
     pip3.6 install -r requirements.txt
+- task: ArchiveFiles@2
+  displayName: "Archive files"
+  inputs:
+    rootFolderOrFile: "$(System.DefaultWorkingDirectory)"
+    includeRootFolder: false
+    archiveFile: "$(System.DefaultWorkingDirectory)/build$(Build.BuildId).zip"
+- task: PublishBuildArtifacts@1
+  inputs:
+    PathtoPublish: '$(System.DefaultWorkingDirectory)/build$(Build.BuildId).zip'
+    name: 'drop'
+```
+#### <a name="powershell"></a>PowerShell
+
+Следующий пример можно использовать для создания файла YAML для упаковки приложения PowerShell, PowerShell поддерживается только для функций Windows Azure:
+
+```yaml
+pool:
+      vmImage: 'VS2017-Win2016'
+steps:
 - task: ArchiveFiles@2
   displayName: "Archive files"
   inputs:
@@ -175,6 +188,10 @@ steps:
 
 ![Шаблоны сборок функций Azure](media/functions-how-to-azure-devops/build-templates.png)
 
+В некоторых случаях артефакты сборки имеют определенную структуру папок и необходимо проверить **имени корневой папки добавленное путей к архивам** параметр.
+
+![Добавить в начало корневую папку](media/functions-how-to-azure-devops/prepend-root-folder.png)
+
 #### <a name="javascript-apps"></a>Приложения JavaScript
 
 Если приложение JavaScript с зависимостями от собственных модулей Windows, необходимо обновить:
@@ -182,10 +199,6 @@ steps:
 - Версия, пул агентов **размещается в VS2017**
 
   ![Изменение агента сборки ОС](media/functions-how-to-azure-devops/change-agent.png)
-
-- Скрипт в **сборки расширений** шаг в шаблоне, чтобы `IF EXIST *.csproj dotnet build extensions.csproj --output ./bin`
-
-  ![Скрипт изменений](media/functions-how-to-azure-devops/change-script.png)
 
 ### <a name="deploy-your-app"></a>Развертывание приложения
 
@@ -206,7 +219,7 @@ steps:
 
     - Имеется разрешение на создание маркера личного доступа GitHub с достаточными разрешениями. [Требования к разрешениям личный маркер доступа GitHub.](https://aka.ms/azure-devops-source-repos)
 
-    - Вы имеете право фиксация в главной ветви в репозитории GitHub, чтобы зафиксировать yaml-файл создан.
+    - Вы имеете право фиксация в главной ветви в репозитории GitHub для фиксации автоматически сгенерированных yaml-файл.
 
 - Если код находится в репозитории Azure:
 

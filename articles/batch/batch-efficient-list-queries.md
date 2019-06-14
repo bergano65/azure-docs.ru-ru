@@ -15,12 +15,12 @@ ms.workload: big-compute
 ms.date: 12/07/2018
 ms.author: lahugh
 ms.custom: seodec18
-ms.openlocfilehash: ff3e95a603b8f9a188c7839578cd12287935de90
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 9d9e30bb8b31939b14d347369bbe88e23fcec49c
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60778260"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67050527"
 ---
 # <a name="create-queries-to-list-batch-resources-efficiently"></a>Эффективное создание запросов на вывод списка ресурсов пакетной службы
 
@@ -74,7 +74,7 @@ IPagedEnumerable<CloudTask> completedTasks =
 * Несколько выражений можно объединить с помощью логических операторов `and` и `or`.
 * В этом примере строка фильтра выводит только запущенные задачи отрисовки: `(state eq 'running') and startswith(id, 'renderTask')`.
 
-### <a name="select"></a>Выберите
+### <a name="select"></a>Выберите пункт
 Строка выборки (select) позволяет ограничить значения свойств, которые требуется вернуть для каждого элемента. Вы указываете список имен свойств, после чего в результатах запроса возвращаются только значения указанных свойств для соответствующих элементов.
 
 * Строка выборки содержит список имен свойств, разделенных запятыми. Для запрашиваемого типа сущности можно указать любые свойства.
@@ -89,7 +89,7 @@ IPagedEnumerable<CloudTask> completedTasks =
 * Далее приведен пример строки развертывания, которая предписывает, что для каждого элемента в списке необходимо вернуть статистические данные: `stats`.
 
 > [!NOTE]
-> При создании какого-либо из трех типов строк запроса (filter, select или expand) необходимо убедиться, что имена свойств и регистр совпадают с аналогичными элементами REST API. Например, при работе с классом [CloudTask](/dotnet/api/microsoft.azure.batch.cloudtask#microsoft_azure_batch_cloudtask) в .NET необходимо указывать свойство **state**, а не **State**, несмотря на то что в .NET используется свойство [CloudTask.State](/dotnet/api/microsoft.azure.batch.cloudtask#microsoft_azure_batch_cloudtask.state). Сопоставление свойств API для .NET и REST см. в таблице ниже.
+> При создании какого-либо из трех типов строк запроса (filter, select или expand) необходимо убедиться, что имена свойств и регистр совпадают с аналогичными элементами REST API. Например, при работе с классом [CloudTask](/dotnet/api/microsoft.azure.batch.cloudtask) в .NET необходимо указывать свойство **state**, а не **State**, несмотря на то что в .NET используется свойство [CloudTask.State](/dotnet/api/microsoft.azure.batch.cloudtask.state#Microsoft_Azure_Batch_CloudTask_State). Сопоставление свойств API для .NET и REST см. в таблице ниже.
 > 
 > 
 
@@ -110,7 +110,7 @@ IPagedEnumerable<CloudTask> completedTasks =
 * [ODATADetailLevel][odata].[SelectClause][odata_select]: определяет, значения каких свойств необходимо вернуть для каждого элемента.
 * [ODATADetailLevel][odata].[ExpandClause][odata_expand]: извлекает данные по всем элементам за один вызов API вместо того, чтобы выполнять отдельные вызовы для каждого элемента.
 
-Ниже приведен фрагмент кода, который с помощью API пакетной службы для .NET отправляет эффективный запрос пакетной службе для получения статистики по определенному набору пулов. В этом сценарии у пользователя пакетной службы есть как тестовые, так и рабочие пулы. Идентификаторы тестовых пулов имеют префикс "test", а рабочих пулов — "prod". В приведенном фрагменте *myBatchClient* является правильно инициализированным экземпляром класса [BatchClient](/dotnet/api/microsoft.azure.batch.batchclient#microsoft_azure_batch_batchclient) .
+Ниже приведен фрагмент кода, который с помощью API пакетной службы для .NET отправляет эффективный запрос пакетной службе для получения статистики по определенному набору пулов. В этом сценарии у пользователя пакетной службы есть как тестовые, так и рабочие пулы. Идентификаторы тестовых пулов имеют префикс "test", а рабочих пулов — "prod". В приведенном фрагменте *myBatchClient* является правильно инициализированным экземпляром класса [BatchClient](/dotnet/api/microsoft.azure.batch.batchclient) .
 
 ```csharp
 // First we need an ODATADetailLevel instance on which to set the filter, select,
@@ -139,7 +139,7 @@ List<CloudPool> testPools =
 ```
 
 > [!TIP]
-> Экземпляр [ODATADetailLevel][odata] с предложениями Select и Expand также можно передать в соответствующие методы Get для ограничения объема возвращаемых данных, например в метод [PoolOperations.GetPool](/dotnet/api/microsoft.azure.batch.pooloperations#Microsoft_Azure_Batch_PoolOperations_GetPool_System_String_Microsoft_Azure_Batch_DetailLevel_System_Collections_Generic_IEnumerable_Microsoft_Azure_Batch_BatchClientBehavior__).
+> Экземпляр [ODATADetailLevel][odata] с предложениями Select и Expand также можно передать в соответствующие методы Get для ограничения объема возвращаемых данных, например в метод [PoolOperations.GetPool](/dotnet/api/microsoft.azure.batch.pooloperations.getpool#Microsoft_Azure_Batch_PoolOperations_GetPool_System_String_Microsoft_Azure_Batch_DetailLevel_System_Collections_Generic_IEnumerable_Microsoft_Azure_Batch_BatchClientBehavior__).
 > 
 > 
 

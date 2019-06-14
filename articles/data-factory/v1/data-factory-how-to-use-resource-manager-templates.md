@@ -15,10 +15,10 @@ ms.date: 01/10/2018
 ms.author: shlo
 robots: noindex
 ms.openlocfilehash: ca8b3930b9d9f708d83dc760be3ee89737b074dc
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60583372"
 ---
 # <a name="use-templates-to-create-azure-data-factory-entities"></a>Создание сущностей фабрики данных Azure с помощью шаблонов
@@ -37,11 +37,11 @@ ms.locfileid: "60583372"
 ## <a name="templating-with-azure-resource-manager"></a>Использование шаблонов с помощью Azure Resource Manager
 [Шаблоны Azure Resource Manager](../../azure-resource-manager/resource-group-overview.md#template-deployment) — отличный способ реализации возможности использования шаблонов в фабрике данных Azure. Они определяют инфраструктуру и конфигурацию решения Azure в JSON-файле. Так как шаблоны Azure Resource Manager совместимы почти со всеми службами Azure, с их помощью можно упростить управление всеми ресурсами Azure. Общие сведения о шаблонах Azure Resource Manager см. в статье [Создание шаблонов диспетчера ресурсов Azure](../../azure-resource-manager/resource-group-authoring-templates.md).
 
-## <a name="tutorials"></a>Учебники
+## <a name="tutorials"></a>Руководства
 Пошаговые инструкции по созданию сущностей фабрики данных с помощью шаблонов Resource Manager см. в следующих руководствах:
 
-* [Руководство Tutorial: Create a pipeline to copy data by using Azure Resource Manager template](data-factory-copy-activity-tutorial-using-azure-resource-manager-template.md) (Руководство. Создание конвейера для копирования данных с помощью шаблона Azure Resource Manager)
-* [Руководство Tutorial: Create a pipeline to process data by using Azure Resource Manager template](data-factory-build-your-first-pipeline.md) (Руководство. Создание конвейера для обработки данных с помощью шаблона Azure Resource Manager)
+* [Учебник. Tutorial: Create a pipeline to copy data by using Azure Resource Manager template](data-factory-copy-activity-tutorial-using-azure-resource-manager-template.md) (Руководство. Создание конвейера для копирования данных с помощью шаблона Azure Resource Manager)
+* [Учебник. Tutorial: Create a pipeline to process data by using Azure Resource Manager template](data-factory-build-your-first-pipeline.md) (Руководство. Создание конвейера для обработки данных с помощью шаблона Azure Resource Manager)
 
 ## <a name="data-factory-templates-on-github"></a>Шаблоны фабрики данных на сайте GitHub
 Ознакомьтесь со следующими шаблонами быстрого запуска Azure на сайте GitHub:

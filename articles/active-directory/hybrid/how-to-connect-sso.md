@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7c34d8de3dfd06540dd50542ab19da0c1d9b1567
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60242239"
 ---
 # <a name="azure-active-directory-seamless-single-sign-on"></a>Простой единый вход Azure Active Directory
@@ -63,11 +63,11 @@ ms.locfileid: "60242239"
 
 | Операционная система и браузер |Internet Explorer|Microsoft Edge|Google Chrome|Mozilla Firefox|Safari|
 | --- | --- |--- | --- | --- | -- 
-|Windows 10|Да\*|Нет |Yes|Да\*\*\*|Н/Д
-|Windows 8.1|Да\*|Н/Д|Yes|Да\*\*\*|Н/Д
-|Windows 8|Да\*|Н/Д|Yes|Да\*\*\*|Н/Д
-|Windows 7|Да\*|Н/Д|Yes|Да\*\*\*|Н/Д
-|Windows Server 2012 R2 или более поздней версии|Да\*\*|Н/Д|Yes|Да\*\*\*|Н/Д
+|Windows 10|Да\*|Нет|Да|Да\*\*\*|Н/Д
+|Windows 8.1|Да\*|Н/Д|Да|Да\*\*\*|Н/Д
+|Windows 8|Да\*|Н/Д|Да|Да\*\*\*|Н/Д
+|Windows 7|Да\*|Н/Д|Да|Да\*\*\*|Н/Д
+|Windows Server 2012 R2 или более поздней версии|Да\*\*|Н/Д|Да|Да\*\*\*|Н/Д
 |Mac OS X|Н/Д|Н/Д|Да\*\*\*|Да\*\*\*|Да\*\*\*
 
 

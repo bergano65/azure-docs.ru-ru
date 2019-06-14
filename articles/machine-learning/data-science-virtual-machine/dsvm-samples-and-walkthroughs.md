@@ -17,10 +17,10 @@ ms.topic: conceptual
 ms.date: 09/24/2018
 ms.author: gokuma
 ms.openlocfilehash: e61f0f4ba30b29fea1b2fd5f2a2ab253d3a6710c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60502920"
 ---
 # <a name="samples-on-data-science-virtual-machines"></a>Примеры для Виртуальных машин для обработки и анализа данных
@@ -30,7 +30,7 @@ ms.locfileid: "60502920"
 > Дополнительные сведения о том, как запустить записные книжки Jupyter на виртуальных машинах для обработки и анализа данных, см. в разделе [Доступ к Jupyter](#access-jupyter).
 
 ## <a name="quick-reference-of-samples"></a>Краткий справочник примеров
-| Категории примеров | ОПИСАНИЕ | Расположения |
+| Категории примеров | Описание | Расположения |
 | ------------- | ------------- | ------------- |
 | Язык R  | В примерах на языке R объясняются сценарии, такие как подключение к облачным хранилищам данных Azure. В них также объясняется сравнение между языками R с открытым кодом и Microsoft R и поясняется, как использовать модели в Microsoft R Server или SQL Server. <br/> [Язык R](#r-language) | <br/>`~notebooks` <br/> <br/> `~samples/MicrosoftR` <br/> <br/> `~samples/RSqlDemo` <br/> <br/> `~samples/SQLRServices`<br/> <br/>|
 | Язык Python  | В примерах на Python рассматриваются такие сценарии, как подключение к облачным хранилищам данных Azure и работа с Машинным обучением Azure.  <br/> [Язык Python](#python-language) | <br/>`~notebooks` <br/><br/>|

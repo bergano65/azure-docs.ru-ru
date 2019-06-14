@@ -15,10 +15,10 @@ ms.reviewer: jeffsta
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 1e7a3f80067adb3093bd27e34a45b3afd72b4993
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60247645"
 ---
 # <a name="assign-or-remove-licenses-using-the-azure-active-directory-portal"></a>Назначение или удаление лицензий с помощью портала Azure Active Directory
@@ -62,7 +62,7 @@ ms.locfileid: "60247645"
 >Групповое лицензирование — это предварительная версия функции, доступная в рамках любого платного плана лицензирования Azure AD. См. подробные сведения о [дополнительных условиях использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).<br><br>Подробные сведения о добавлении пользователей см. в разделе [Добавление или удаление пользователей в Azure Active Directory](add-users-azure-active-directory.md). Подробные сведения о том, как создавать группы и добавлять участников, см. в разделе [Создание простой группы и добавление в нее участников](active-directory-groups-create-azure-portal.md).
 
 ### <a name="to-assign-a-license-to-a-specific-user"></a>Назначение лицензии конкретному пользователю
-1. На странице **Продукты** выберите название выпуска, который вы хотите назначить пользователю. Например, _Azure Active Directory Premium (план 2)_.
+1. На странице **Продукты** выберите название выпуска, который вы хотите назначить пользователю. Например, _Azure Active Directory Premium (план 2)_ .
 
     ![Страница "Продукты" с выделенным выпуском продукта](media/license-users-groups/license-products-blade-with-product-highlight.png)
 
@@ -88,7 +88,7 @@ ms.locfileid: "60247645"
     Пользователь добавляется в список лицензированных пользователей и получает доступ к входящим в лицензию службам Azure AD.
 
 ### <a name="to-assign-a-license-to-an-entire-group"></a>Назначение лицензии всей группе
-1. На странице **Продукты** выберите название выпуска, который вы хотите назначить пользователю. Например, _Azure Active Directory Premium (план 2)_.
+1. На странице **Продукты** выберите название выпуска, который вы хотите назначить пользователю. Например, _Azure Active Directory Premium (план 2)_ .
 
     ![Колонка "Продукты" с выделенным выпуском продукта](media/license-users-groups/license-products-blade-with-product-highlight.png)
 

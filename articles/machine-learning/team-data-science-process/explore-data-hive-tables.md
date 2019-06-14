@@ -12,10 +12,10 @@ ms.date: 11/09/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: c9761ade493641b6445cf151424f9598ab25e384
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60303652"
 ---
 # <a name="explore-data-in-hive-tables-with-hive-queries"></a>Просмотр данных в таблицах Hive с помощью запросов Hive
@@ -36,7 +36,7 @@ ms.locfileid: "60303652"
 ## <a name="example-hive-query-scripts-for-data-exploration"></a>Пример сценариев запроса Hive для просмотра данных
 1. Узнайте количество наблюдений на раздел `SELECT <partitionfieldname>, count(*) from <databasename>.<tablename> group by <partitionfieldname>;`
 2. Узнайте количество наблюдений в день `SELECT to_date(<date_columnname>), count(*) from <databasename>.<tablename> group by to_date(<date_columnname>);`
-3. Получение уровней в столбце категорий   
+3. Получение уровней в столбце категорий  
     `SELECT  distinct <column_name> from <databasename>.<tablename>`
 4. Узнайте число уровней в сочетании двух столбцов категорий `SELECT <column_a>, <column_b>, count(*) from <databasename>.<tablename> group by <column_a>, <column_b>`
 5. Получение распределения для числовых столбцов  

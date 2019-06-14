@@ -16,10 +16,10 @@ ms.topic: conceptual
 ms.date: 08/01/2018
 ms.author: ergreenl
 ms.openlocfilehash: df189e405dcd5277c1ccbd94e9d5d302660be79b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60359864"
 ---
 # <a name="enable-secure-ldap-ldaps-for-an-azure-ad-domain-services-managed-domain"></a>Включение защищенного протокола LDAP (LDAPS) для управляемого домена доменных служб Azure AD
@@ -31,7 +31,7 @@ ms.locfileid: "60359864"
 ## <a name="task-3-enable-secure-ldap-for-the-managed-domain-using-the-azure-portal"></a>Задача 3. Включение защищенного протокола LDAP для управляемого домена с помощью портала Azure
 Выполните следующие действия по настройке, чтобы включить защищенный протокол LDAP.
 
-1. Перейдите на **[портал Azure](https://portal.azure.com)**.
+1. Перейдите на **[портал Azure](https://portal.azure.com)** .
 
 2. В поле **Поиск ресурсов** введите "доменные службы". В списке результатов выберите **Доменные службы Azure AD**. На странице **Доменные службы Azure AD** будет указан ваш управляемый домен.
 

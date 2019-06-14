@@ -12,10 +12,10 @@ ms.date: 02/08/2019
 ms.author: pafarley
 ms.custom: seodec18
 ms.openlocfilehash: e4b64e00f71768a8821c83a73b019f77089e1b3a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60368091"
 ---
 # <a name="detect-domain-specific-content"></a>Обнаружение содержимого, связанного с определенными предметными областями
@@ -100,7 +100,7 @@ ms.locfileid: "60368091"
 
 Сейчас Компьютерное зрение поддерживает следующие модели для предметной области.
 
-| Name | ОПИСАНИЕ |
+| Name | Описание |
 |------|-------------|
 | celebrities | Распознавание знаменитостей; поддерживается для изображений, которые были классифицированы как относящиеся к категории `people_` |
 | landmarks | Распознавание ориентиров; поддерживается для изображений, которые были классифицированы как относящиеся к категории `outdoor_` или `building_` |

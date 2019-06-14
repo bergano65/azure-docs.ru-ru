@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 04/18/2019
 ms.author: kasing
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 3d9bf155f24c947f8a27a38af01aedcf0b041b94
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.openlocfilehash: d0d0c3683d8855418bdafa204325525c4cd3943c
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65966048"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67050786"
 ---
 # <a name="vertically-scale-azure-linux-virtual-machine-with-azure-automation"></a>Вертикальное масштабирование виртуальной машины Linux в Azure c помощью службы автоматизации Azure
 Вертикальное масштабирование — это процесс увеличения или уменьшения объема ресурсов виртуальной машины в зависимости от рабочей нагрузки. В Azure это можно сделать, изменив размер виртуальной машины. Вертикальное масштабирование можно использовать в следующих сценариях:
@@ -83,6 +83,7 @@ ms.locfileid: "65966048"
 > | Standard_ND6s |Standard_ND24s |
 > | Standard_NV6 |Standard_NV24 |
 > | Standard_NV6s_v2 |Standard_NV24s_v2 |
+> | Standard_NV12s_v3 |Standard_NV48s_v3 |
 
 ## <a name="setup-azure-automation-to-access-your-virtual-machines"></a>Настройка службы автоматизации Azure для доступа к виртуальным машинам.
 Сначала необходимо создать учетную запись службы автоматизации Azure, в которой будут размещаться модули Runbook, используемые для масштабирования набора виртуальных машин. Недавно в службе автоматизации появилась функция "Запуск от имени...", которая упрощает настройку субъекта-службы для автоматического запуска модулей Runbook от имени пользователя. Дополнительные сведения об этом см. в следующей статье:

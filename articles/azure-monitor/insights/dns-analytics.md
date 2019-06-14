@@ -14,10 +14,10 @@ ms.topic: conceptual
 ms.date: 03/20/2018
 ms.author: magoedte
 ms.openlocfilehash: 6dd5872d5ec3e79e3c76b1807aea946015fb0eac
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60496497"
 ---
 # <a name="gather-insights-about-your-dns-infrastructure-with-the-dns-analytics-preview-solution"></a>Сбор сведений об инфраструктуре DNS с помощью решения аналитики DNS (предварительной версии)
@@ -42,10 +42,10 @@ ms.locfileid: "60496497"
 
 | **Подключенный источник** | **Поддержка** | **Описание** |
 | --- | --- | --- |
-| [Агенты Windows](../platform/agent-windows.md) | Yes | Решение собирает сведения о DNS из агентов Windows. |
-| [Агенты Linux](../learn/quick-collect-linux-computer.md) | Нет  | Решение не собирает сведения о DNS из прямых агентов Linux. |
-| [Группа управления System Center Operations Manager](../platform/om-agents.md) | Yes | Решение собирает сведения о DNS из агентов в подключенной группе управления Operations Manager. Прямое подключение агента Operations Manager к Azure Monitor не требуется. Данные пересылаются из группы управления в рабочую область Log Analytics. |
-| [Учетная запись хранения Azure](../platform/collect-azure-metrics-logs.md) | Нет  | Решение не использует службу хранилища Azure. |
+| [Агенты Windows](../platform/agent-windows.md) | Да | Решение собирает сведения о DNS из агентов Windows. |
+| [Агенты Linux](../learn/quick-collect-linux-computer.md) | Нет | Решение не собирает сведения о DNS из прямых агентов Linux. |
+| [Группа управления System Center Operations Manager](../platform/om-agents.md) | Да | Решение собирает сведения о DNS из агентов в подключенной группе управления Operations Manager. Прямое подключение агента Operations Manager к Azure Monitor не требуется. Данные пересылаются из группы управления в рабочую область Log Analytics. |
+| [Учетная запись хранения Azure](../platform/collect-azure-metrics-logs.md) | Нет | Решение не использует службу хранилища Azure. |
 
 ### <a name="data-collection-details"></a>Сведения о сборе данных
 
@@ -172,7 +172,7 @@ ms.locfileid: "60496497"
 
     a. Чтобы просмотреть данные журнала о запросах поиска, отфильтруйте **подтип** по значению **LookUpQuery**, используя элемент управления в левой части экрана. Отобразится таблица, содержащая все события запросов поиска за выбранный период времени.
 
-    2. Чтобы просмотреть данные журнала о динамических регистрациях, отфильтруйте **подтип** по значению **DynamicRegistration**, используя элемент управления в левой части экрана. Отобразится таблица, содержащая все события динамической регистрации за выбранный период времени.
+    2\. Чтобы просмотреть данные журнала о динамических регистрациях, отфильтруйте **подтип** по значению **DynamicRegistration**, используя элемент управления в левой части экрана. Отобразится таблица, содержащая все события динамической регистрации за выбранный период времени.
 
     c. Чтобы просмотреть данные журнала об изменениях конфигурации, отфильтруйте **подтип** по значению **ConfigurationChange**, используя элемент управления в левой части экрана. Отобразится таблица, содержащая все события изменения конфигурации за выбранный период времени.
 

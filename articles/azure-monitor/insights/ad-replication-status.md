@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 01/24/2018
 ms.author: magoedte
 ms.openlocfilehash: f7bbde98c6ef35021cc03b2646193d3601ca1cff
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60495173"
 ---
 # <a name="monitor-active-directory-replication-status-with-azure-monitor"></a>Мониторинг состояния репликации Active Directory с помощью Azure Monitor
@@ -54,7 +54,7 @@ Active Directory является ключевым компонентом в к�
 
 | платформа | Direct Agent | Агент SCOM | Хранилище Azure | Нужен ли SCOM? | Отправка данных агента SCOM через группу управления | Частота сбора |
 | --- | --- | --- | --- | --- | --- | --- |
-|  Windows |&#8226; |&#8226; |  |  |&#8226; |Каждые пять дней |
+| Windows |&#8226; |&#8226; |  |  |&#8226; |Каждые пять дней |
 
 
 

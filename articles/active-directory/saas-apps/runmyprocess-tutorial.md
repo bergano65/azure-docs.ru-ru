@@ -16,10 +16,10 @@ ms.date: 07/12/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: dfef1371b7ac61712c0f70efd48c0e791c4c729d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60518274"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-runmyprocess"></a>Руководство по Интеграция Azure Active Directory с RunMyProcess
@@ -142,7 +142,7 @@ ms.locfileid: "60518274"
 
     a. Для параметра **Method** (Метод) выберите значение **SSO with Samlv2** (Единый вход с помощью SAML версии 2). 
 
-    2. В текстовое поле **SSO redirect** (Перенаправление для единого входа) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
+    2\. В текстовое поле **SSO redirect** (Перенаправление для единого входа) вставьте значение **SAML Single Sign-On Service URL** (URL-адрес службы единого входа SAML), скопированное на портале Azure.
 
     c. В текстовое поле **Logout redirect** (Перенаправление для выхода) вставьте значение **URL-адрес выхода**, скопированное на портале Azure.
 
@@ -181,7 +181,7 @@ ms.locfileid: "60518274"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    2. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    2\. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 
@@ -205,7 +205,7 @@ ms.locfileid: "60518274"
   
     a. Заполните текстовые поля **Name** (Имя) и **E-mail** (Электронная почта) данными действительной учетной записи Azure AD, которую необходимо подготовить. 
 
-    2. Выберите значения параметров **IDE language** (Язык интегрированной среды разработки), **Language** (Язык) и **Profile** (Профиль). 
+    2\. Выберите значения параметров **IDE language** (Язык интегрированной среды разработки), **Language** (Язык) и **Profile** (Профиль). 
 
     c. Установите флажок **Отправить сообщение о создании учетной записи**. 
 

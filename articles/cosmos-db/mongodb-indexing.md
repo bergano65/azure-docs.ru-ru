@@ -5,15 +5,14 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-mongo
 ms.devlang: nodejs
 ms.topic: conceptual
-origin.date: 12/26/2018
-ms.date: 01/21/2019
-author: rockboyfor
-ms.author: v-yeche
+ms.date: 12/26/2018
+author: sivethe
+ms.author: sivethe
 ms.openlocfilehash: de037316efa50dd25ea04c370fa0e5878fb52ba1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60448509"
 ---
 # <a name="indexing-using-azure-cosmos-dbs-api-for-mongodb"></a>Индексирование с помощью API Azure Cosmos DB для MongoDB
@@ -80,14 +79,14 @@ globaldb:PRIMARY> db.coll.createIndex( { "student_id" : 1, "university" : 1 }, {
 ## <a name="ttl-indexes"></a>Индексы срока жизни
 
 Чтобы установить срок действия документа в определенной коллекции, нужно создать [индекс срока жизни](../cosmos-db/time-to-live.md). Это индекс для поля _ts со значением "expireAfterSeconds".
-
+ 
 Пример:
 ```JavaScript
 globaldb:PRIMARY> db.coll.createIndex({"_ts":1}, {expireAfterSeconds: 10})
 ```
 
 Предыдущая команда приведет к удалению всех документов коллекции ```db.coll```, которые не менялись последние 10 секунд. 
-
+ 
 > [!NOTE]
 > **_ts** является специфическим полем Cosmos DB и не доступно клиентам MongoDB. Это зарезервированное (системное) свойство, содержащее метку времени последнего изменения документа.
 >
@@ -99,5 +98,3 @@ globaldb:PRIMARY> db.coll.createIndex({"_ts":1}, {expireAfterSeconds: 10})
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Индексирование в Azure Cosmos DB](../cosmos-db/index-policy.md)
 * [Автоматическое завершение срока действия данных в Azure Cosmos DB с использованием срока жизни](../cosmos-db/time-to-live.md)
-
-<!-- Update_Description: update meta properties  -->

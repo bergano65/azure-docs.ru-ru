@@ -10,12 +10,12 @@ ms.custom: vs-azure
 ms.topic: conceptual
 ms.date: 10/08/2018
 ms.author: glenga
-ms.openlocfilehash: 4366f09ccc9a3b2335e0aa84b7fb7398825cb87e
-ms.sourcegitcommit: 4c2b9bc9cc704652cc77f33a870c4ec2d0579451
+ms.openlocfilehash: c6104a977a02211dcab17a5f232991d0d9cbb852
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
-ms.locfileid: "65864532"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67050721"
 ---
 # <a name="develop-azure-functions-using-visual-studio"></a>Разработка Функций Azure с помощью Visual Studio  
 
@@ -89,7 +89,7 @@ ms.locfileid: "65864532"
 
 ## <a name="configure-the-project-for-local-development"></a>Настройка проекта для локальной разработки
 
-Среде выполнения Функций Azure необходима учетная запись хранения Azure для внутреннего использования. Для всех типов триггеров, кроме HTTP и веб-перехватчиков, необходимо задать в качестве ключа **Values.AzureWebJobsStorage** допустимую строку подключения к учетной записи хранения Azure. Приложение-функция может также использовать [эмулятор службы хранилища Azure](../storage/common/storage-use-emulator.md) для параметра подключения **AzureWebJobsStorage**, который необходим для проекта. Чтобы использовать эмулятор, установите значение **AzureWebJobsStorage** для `UseDevelopmentStorage=true`. Перед развертыванием этот параметр необходимо изменить на параметр фактического подключения к хранилищу.
+Среде выполнения Функций Azure необходима учетная запись хранения Azure для внутреннего использования. Для всех типов триггеров, кроме HTTP и веб-перехватчиков, необходимо задать в качестве ключа **Values.AzureWebJobsStorage** допустимую строку подключения к учетной записи хранения Azure. Приложение-функция может также использовать [эмулятор службы хранилища Azure](../storage/common/storage-use-emulator.md) для параметра подключения **AzureWebJobsStorage**, который необходим для проекта. Чтобы использовать эмулятор, установите значение **AzureWebJobsStorage** для `UseDevelopmentStorage=true`. Измените этот параметр для подключения к фактическое хранилище до развертывания.
 
 Чтобы задать строку подключения к учетной записи хранения, выполните следующие действия:
 
@@ -181,15 +181,19 @@ For an example of how to test a queue triggered function, see the [queue trigger
 
 Дополнительные сведения об использовании основных инструментов Функций Azure см. в статье [Как программировать и тестировать функции Azure в локальной среде](functions-run-local.md).
 
-## <a name="publish-to-azure"></a>Опубликовать в Azure
+## <a name="publish-to-azure"></a>Публикация в Azure
 
 [!INCLUDE [Publish the project to Azure](../../includes/functions-vstools-publish.md)]
+
+### <a name="deployment-technology"></a>Технологии развертывания
+
+При публикации из Visual Studio, одна из двух технологий используется для выполнения развертывания. [Веб-развертывание](functions-deployment-technologies.md#web-deploy-msdeploy) и [Zip развертывание с помощью выполнения-с-Package включено (рекомендуется)](functions-deployment-technologies.md#zip-deploy).
 
 ## <a name="function-app-settings"></a>Параметры приложения-функции
 
 Все параметры, которые вы добавили в файл local.settings.json, необходимо также добавить в приложение-функцию в Azure. Эти параметры не передаются автоматически при публикации проекта.
 
-Проще всего передать необходимые параметры в приложение-функцию в Azure с помощью ссылки **Управление параметрами приложения…**, которая появляется после успешной публикации проекта.
+Проще всего передать необходимые параметры в приложение-функцию в Azure с помощью ссылки **Управление параметрами приложения…** , которая появляется после успешной публикации проекта.
 
 ![](./media/functions-develop-vs/functions-vstools-app-settings.png)
 

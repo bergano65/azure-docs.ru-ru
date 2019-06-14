@@ -9,10 +9,10 @@ ms.topic: reference
 ms.date: 3/5/2019
 ms.author: moderakh
 ms.openlocfilehash: 356838f16f7f13506657326bae5dbe994d54bdd5
-ms.sourcegitcommit: dd1a9f38c69954f15ff5c166e456fda37ae1cdf2
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/07/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "57570102"
 ---
 # <a name="azure-cosmos-db-async-java-sdk-for-sql-api-release-notes-and-resources"></a>Пакет SDK Async Java в Azure Cosmos DB для API-интерфейса SQL: заметки о выпуске и материалы
@@ -144,7 +144,7 @@ ms.locfileid: "57570102"
 
 <br/>
 
-| Version (версия) | Дата выпуска | Дата вывода |
+| Version | Дата выпуска | Дата вывода |
 | --- | --- | --- |
 | [2.4.3](#2.4.3) |5 марта 2019 г.|--- |
 | [2.4.2](#2.4.2) |1 марта 2019 г.|--- |

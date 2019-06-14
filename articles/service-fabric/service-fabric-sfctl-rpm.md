@@ -15,10 +15,10 @@ ms.workload: multiple
 ms.date: 12/06/2018
 ms.author: bikang
 ms.openlocfilehash: 04080d75042bfa8a07533336936165e0abef051b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60556361"
 ---
 # <a name="sfctl-rpm"></a>sfctl rpm
@@ -29,8 +29,8 @@ ms.locfileid: "60556361"
 |Команда|Описание|
 | --- | --- |
 | approve-force | Вызывает принудительное утверждение заданной задачи исправления. |
-| удалить | Удаляет завершенную задачу исправления. |
-| список | Возвращает список задач исправления, соответствующих заданным фильтрам. |
+| delete | Удаляет завершенную задачу исправления. |
+| list | Возвращает список задач исправления, соответствующих заданным фильтрам. |
 
 ## <a name="sfctl-rpm-approve-force"></a>sfctl rpm approve-force
 Вызывает принудительное утверждение заданной задачи исправления.

@@ -14,10 +14,10 @@ ms.topic: conceptual
 ms.date: 05/24/2018
 ms.author: v-jysur
 ms.openlocfilehash: abbd26779cefaf52c6f2247a5d27db25f280c930
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60395871"
 ---
 # <a name="connect-azure-to-itsm-tools-using-it-service-management-connector"></a>Подключение Azure к инструментам ITSM с помощью соединителя управления ИТ-услугами
@@ -89,7 +89,7 @@ ms.locfileid: "60395871"
 
 Подготовив инструмент ITSM, выполните приведенные ниже шаги, чтобы создать подключение.
 
-1. Перейдите к разделу **Все ресурсы** и найдите элемент **ServiceDesk(имя_вашей_рабочей_области)**.
+1. Перейдите к разделу **Все ресурсы** и найдите элемент **ServiceDesk(имя_вашей_рабочей_области)** .
 2. В области слева в разделе **Источники данных рабочей области** щелкните **Подключения ITSM**.
    ![Подключения ITSM](media/itsmc-overview/itsm-connections.png)
 
@@ -164,7 +164,7 @@ ms.locfileid: "60395871"
 Дополнительные сведения: [Схема услуги](../../azure-monitor/insights/service-map.md)
 
 
-## <a name="additional-information"></a>Дополнительная информация
+## <a name="additional-information"></a>Дополнительные сведения
 
 ### <a name="data-synced-from-itsm-product"></a>Данные, синхронизированные из продукта ITSM
 Инциденты и запросы на изменение синхронизируются из продукта ITSM с рабочей областью Log Analytics на основе конфигурации подключения.
@@ -190,11 +190,11 @@ ServiceDeskWorkItemType_s="Incident"
 - "Кем создано";
 - "Кем разрешено";
 - Closed By (Кем закрыто);
-- Источник
+- source
 - Кому назначено
-- Category
+- Категория
 - Название
-- ОПИСАНИЕ
+- Описание
 - "Дата создания";
 - Closed Date (Дата закрытия);
 - Resolved Date (Дата разрешения);
@@ -211,11 +211,11 @@ ServiceDeskWorkItemType_s="ChangeRequest"
 - "Идентификатор службы поддержки";
 - "Кем создано";
 - Closed By (Кем закрыто);
-- Источник
+- source
 - Кому назначено
 - Название
 - type
-- Category
+- Категория
 - Состояние
 - Escalation (Эскалация);
 - Conflict Status (Состояние конфликта);
@@ -232,7 +232,7 @@ ServiceDeskWorkItemType_s="ChangeRequest"
 - Planned End Date (Планируемая дата окончания);
 - Work Start Date (Дата начала работы);
 - Work End Date (Дата окончания работы);
-- ОПИСАНИЕ
+- Описание
 - Computer
 
 ## <a name="output-data-for-a-servicenow-incident"></a>Выходные данные инцидента ServiceNow
@@ -249,7 +249,7 @@ ServiceDeskWorkItemType_s="ChangeRequest"
 | ClosedBy_s  | Closed By (Кем закрыто) |
 | Source_s| Contact type (Тип контакта) |
 | AssignedTo_s | Кому назначено  |
-| Category_s | Category |
+| Category_s | Категория |
 | Title_s|  Краткое описание |
 | Description_s|  Примечания |
 | CreatedDate_t|  Opened (Открыто) |
@@ -267,7 +267,7 @@ ServiceDeskWorkItemType_s="ChangeRequest"
 | AssignedTo_s | Кому назначено  |
 | Title_s|  Краткое описание |
 | Type_s|  type |
-| Category_s|  Category |
+| Category_s|  Категория |
 | CRState_s|  Состояние|
 | Urgency_s|  "Срочность"; |
 | Priority_s| Приоритет|
@@ -279,13 +279,13 @@ ServiceDeskWorkItemType_s="ChangeRequest"
 | PlannedEndDate_t  |   Planned End Date (Планируемая дата окончания) |
 | WorkStartDate_t  | Actual start date (Фактическая дата начала) |
 | WorkEndDate_t | Actual end date (Фактическая дата окончания)|
-| Description_s | ОПИСАНИЕ |
+| Description_s | Описание |
 | Computer  | Элемент конфигурации |
 
 
 ## <a name="troubleshoot-itsm-connections"></a>Устранение неполадок с подключениями ITSM
 1. Если сбой подключения происходит из пользовательского интерфейса подключенного источника с сообщением **Ошибка при сохранении подключения**, сделайте следующее:
-   - При использовании подключений ServiceNow, Cherwell и Provance   
+   - При использовании подключений ServiceNow, Cherwell и Provance  
    - проверьте правильность ввода ими пользователя и пароля, а также идентификатора и секрета клиента каждого подключения.  
    - Проверьте наличие необходимых прав в соответствующем продукте ITSM, чтобы установить подключение.  
    - При использовании Service Manager  

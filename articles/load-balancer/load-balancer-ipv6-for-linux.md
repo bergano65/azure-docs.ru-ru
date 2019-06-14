@@ -15,10 +15,10 @@ ms.workload: infrastructure-services
 ms.date: 03/22/2019
 ms.author: kumud
 ms.openlocfilehash: 66777ec314e95d81a4be57082f06ef16dc170186
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60516557"
 ---
 # <a name="configure-dhcpv6-for-linux-vms"></a>Настройка DHCPv6 для виртуальных машин Linux
@@ -56,7 +56,7 @@ ms.locfileid: "60516557"
     ```
 Начиная с Ubuntu 17.10, механизм настройки сети по умолчанию является [NETPLAN]( https://netplan.io).  Во время установки или создания экземпляра NETPLAN считывает конфигурацию сети из файлов конфигурации YAML в этом месте: / {lib,etc,run}/netplan/*.yaml.
 
-Пожалуйста, включите *dhcp6:true* инструкции для каждого интерфейса ethernet в конфигурации.  Например: 
+Пожалуйста, включите *dhcp6:true* инструкции для каждого интерфейса ethernet в конфигурации.  Пример:
   
         network:
           version: 2

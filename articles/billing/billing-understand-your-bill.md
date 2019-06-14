@@ -16,10 +16,10 @@ ms.workload: na
 ms.date: 02/19/2019
 ms.author: banders
 ms.openlocfilehash: 4303b79a7ee69d029504bf6ca2359f6e6070e5b8
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60370192"
 ---
 # <a name="understand-your-microsoft-azure-bill"></a>Расшифровка счета за Microsoft Azure

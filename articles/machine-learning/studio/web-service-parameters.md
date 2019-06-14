@@ -16,10 +16,10 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 01/12/2017
 ms.openlocfilehash: a236043d5622e5a2e1ffd572c887fb5ffac2174a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60345453"
 ---
 # <a name="use-azure-machine-learning-studio-web-service-parameters"></a>Использование параметров веб-службы Студии машинного обучения Azure
@@ -66,7 +66,7 @@ ms.locfileid: "60345453"
 5. Чтобы предоставить значение по умолчанию для параметра веб-службы, щелкните значок справа от имени, выберите "Предоставить значение по умолчанию", введите значение (например, "контейнер1/выход1.csv"), после чего нажмите клавишу **ВВОД** .
    
    ![Параметр веб-службы](./media/web-service-parameters/parameter.png)
-6. Щелкните **Выполнить**. 
+6. Нажмите кнопку **Запустить**. 
 7. Щелкните **Deploy Web Service** (Развернуть веб-службу) и выберите **Deploy Web Service [Classic]** (Развернуть веб-службу [классическую]) или **Deploy Web Service [New]** (Развернуть веб-службу [новую]), чтобы развернуть ее.
 
 > [!NOTE] 

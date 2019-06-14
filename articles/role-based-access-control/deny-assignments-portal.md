@@ -15,10 +15,10 @@ ms.date: 03/13/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.openlocfilehash: 2dcbcbec9054b31312043ef6642f59fa64728b30
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: MT
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60194367"
 ---
 # <a name="view-deny-assignments-for-azure-resources-using-the-azure-portal"></a>Просмотр запрещающих назначений для ресурсов Azure с помощью портала Azure
@@ -42,7 +42,7 @@ ms.locfileid: "60194367"
 
 1. Выберите группу управления или подписку, которую вы хотите просмотреть.
 
-1. Щелкните **Управление доступом (IAM)**.
+1. Щелкните **Управление доступом (IAM)** .
 
 1. Щелкните вкладку **Deny assignments** (Запрещающие назначения) (или нажмите кнопку **Просмотр** на плитке "View deny assignments" (Просмотр запрещающих назначений)).
 
@@ -90,7 +90,7 @@ ms.locfileid: "60194367"
 
     ![Запрещающее назначение. Запрещенные разрешения](./media/deny-assignments-portal/deny-assignment-denied-permissions.png)
 
-    | Тип действия | ОПИСАНИЕ |
+    | Тип действия | Описание |
     | --- | --- |
     | **Действия**  | Запрещенные операции управления. |
     | **NotActions** | Операции управления, для которых действует исключение из запрета операций управления. |

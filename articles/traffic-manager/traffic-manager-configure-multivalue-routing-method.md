@@ -3,20 +3,21 @@ title: Настройка метода маршрутизации трафика
 description: В этой статье объясняется, как настроить диспетчер трафика для маршрутизации трафика в конечные точки A/AAAA.
 services: traffic-manager
 documentationcenter: ''
-author: KumudD
+author: asudbring
+manager: twooley
 ms.service: traffic-manager
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/10/2018
-ms.author: kumud
-ms.openlocfilehash: de7288e2062fdfab363c46749b34c7afcacbb6e1
-ms.sourcegitcommit: 2d0fb4f3fc8086d61e2d8e506d5c2b930ba525a7
+ms.author: allensu
+ms.openlocfilehash: 5db8e2932a43a2d6c6cb8a99c4f32b37a4a5a3f8
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 03/18/2019
-ms.locfileid: "58094809"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67050907"
 ---
 # <a name="configure-multivalue-routing-method-in-traffic-manager"></a>Настройка метода маршрутизации MultiValue в диспетчере трафика
 
@@ -42,7 +43,7 @@ ms.locfileid: "58094809"
     
     | Параметр                 | Значение                                              |
     | ---                     | ---                                                |
-    | ИМЯ                   | Оно должно быть уникальным в пределах зоны trafficmanager.net. В результате будет создано DNS-имя trafficmanager.net, которое будет использоваться для доступа к профилю диспетчера трафика.                                   |
+    | Name                   | Оно должно быть уникальным в пределах зоны trafficmanager.net. В результате будет создано DNS-имя trafficmanager.net, которое будет использоваться для доступа к профилю диспетчера трафика.                                   |
     | Метод маршрутизации          | Выберите метод маршрутизации **MultiValue**.                                       |
     | Подписка            | Выберите свою подписку.                          |
     | Группа ресурсов          | Выберите *myResourceGroupTM1*. |
@@ -62,7 +63,7 @@ ms.locfileid: "58094809"
     | Параметр                 | Значение                                              |
     | ---                     | ---                                                |
     | type                    | Внешняя конечная точка                                   |
-    | ИМЯ           | myEndpoint1                                        |
+    | Name           | myEndpoint1                                        |
     | Полное доменное имя (FQDN) или IP-адрес           | Введите общедоступный IP-адрес конечной точки, которую необходимо добавить в этот профиль диспетчера трафика.                         |
     |        |           |
 

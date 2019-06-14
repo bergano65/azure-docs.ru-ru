@@ -18,10 +18,10 @@ ms.topic: conceptual
 ms.date: 07/16/2018
 ms.author: gokuma
 ms.openlocfilehash: 6e8883870cc0f035df5122e91449f04203836218
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60516858"
 ---
 # <a name="data-science-with-a-linux-data-science-virtual-machine-on-azure"></a>Обработка и анализ данных с помощью виртуальной машины для обработки и анализа данных Linux в Azure
@@ -35,7 +35,7 @@ ms.locfileid: "60516858"
 Перед использованием виртуальной машины Linux для обработки и анализа данных необходимо убедиться в наличии следующих компонентов:
 
 * **Подписка Azure**. Если у вас ее нет, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/).
-* [**Виртуальная машина Linux для обработки и анализа данных.**](https://azure.microsoft.com/marketplace/partners/microsoft-ads/linux-data-science-vm) Сведения о подготовке этой ВМ приведены в статье [Подготовка виртуальной машины Linux для обработки и анализа данных](linux-dsvm-intro.md).
+* [**Виртуальная машина Linux для обработки и анализа данных.** ](https://azure.microsoft.com/marketplace/partners/microsoft-ads/linux-data-science-vm) Сведения о подготовке этой ВМ приведены в статье [Подготовка виртуальной машины Linux для обработки и анализа данных](linux-dsvm-intro.md).
 * Клиент [X2Go](https://wiki.x2go.org/doku.php), установленный на компьютере, и открытый сеанс XFCE. Сведения об установке и настройке **клиента X2Go** см. в разделе [Установка и настройка клиента X2Go](linux-dsvm-intro.md#installing-and-configuring-x2go-client).
 * Чтобы прокрутка лучше работала, переключите флаг gfx.xrender.enabled в положение about:config в обозревателе FireFox виртуальных машин. [Дополнительные сведения](https://www.reddit.com/r/firefox/comments/4nfmvp/ff_47_unbearable_slow_over_remote_x11/). Также попробуйте установить для фильтра *mousewheel.enable_pixel_scrolling* значение False. [Инструкции см. здесь.](https://support.mozilla.org/en-US/questions/981140)
 * **Учетная запись машинного обучения Azure**. Если у вас ее нет, зарегистрируйте учетную запись на [домашней странице Машинного обучения Azure](https://studio.azureml.net/). Для новичков предусмотрен период бесплатного использования.

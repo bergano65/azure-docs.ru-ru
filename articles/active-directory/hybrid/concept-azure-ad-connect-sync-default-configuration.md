@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b42a6b667a8708aeb2edeb0c80a5ab747b6c60a9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60246203"
 ---
 # <a name="azure-ad-connect-sync-understanding-the-default-configuration"></a>Синхронизация Azure AD Connect: Общие сведения о конфигурации по умолчанию
@@ -52,7 +52,7 @@ ms.locfileid: "60246203"
   * `(Left([sAMAccountName], 4) = "CAS_" && (InStr([sAMAccountName], "}")> 0))`
 * Не синхронизируйте объекты, которые не будут работать в Exchange Online.
   `CBool(IIF(IsPresent([msExchRecipientTypeDetails]),BitAnd([msExchRecipientTypeDetails],&H21C07000) > 0,NULL))`  
-   Эта битовая маска (&H21C07000) будет отфильтровывать следующие объекты:
+  Эта битовая маска (&H21C07000) будет отфильтровывать следующие объекты:
   * общая папка с поддержкой электронной почты (в предварительной версии начиная с версии 1.1.524.0);
   * почтовый ящик системного помощника;
   * почтовый ящик базы данных почтовых ящиков (системный почтовый ящик);
@@ -148,7 +148,7 @@ ms.locfileid: "60246203"
 
 Правило синхронизации имеет четыре раздела конфигурации: описание, преобразование, правила объединения и фильтр области действия.
 
-#### <a name="description"></a>ОПИСАНИЕ
+#### <a name="description"></a>Описание
 Первый раздел содержит основные сведения, такие как имя и описание.
 
 ![Вкладка "Описание" в редакторе правил синхронизации](./media/concept-azure-ad-connect-sync-default-configuration/syncruledescription.png)
@@ -220,7 +220,7 @@ NULL
 ### <a name="putting-it-all-together"></a>Сборка
 Теперь мы знаем достаточно о правилах синхронизации, чтобы понимать работу конфигураций с различными правилами синхронизации. Правила в отношении пользователя и атрибутов, добавляемых в метавселенную, применяются в следующем порядке:
 
-| Name | Комментарий |
+| ИМЯ | Комментарий |
 |:--- |:--- |
 | In from AD – User Join |Правило для присоединения к метавселенной объектов из пространства соединителя. |
 | Поступление из AD — учетная запись включена |Атрибуты, необходимые для входа в Azure AD и Office 365. Эти атрибуты нужно перенести из включенной учетной записи. |

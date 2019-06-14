@@ -9,10 +9,10 @@ ms.date: 02/25/2019
 ms.author: cherylmc
 ms.custom: seodec18
 ms.openlocfilehash: 11a84d4ced3232102d262352b84abe1f813e2406
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60365199"
 ---
 # <a name="move-expressroute-circuits-from-classic-to-resource-manager-deployment-model-using-powershell"></a>Перемещение каналов ExpressRoute из классической модели развертывания в модель развертывания с помощью Resource Manager с использованием PowerShell
@@ -41,7 +41,7 @@ ms.locfileid: "60365199"
    Add-AzureAccount
    ```
 
-2.  Выберите соответствующую подписку Azure.
+2. Выберите соответствующую подписку Azure.
 
    ```powershell
    Select-AzureSubscription "<Enter Subscription Name here>"
@@ -70,7 +70,7 @@ ms.locfileid: "60365199"
    Connect-AzAccount
    ```
 
-2.  Выберите соответствующую подписку Azure.
+2. Выберите соответствующую подписку Azure.
 
    ```powershell
    Get-AzSubscription -SubscriptionName "<Enter Subscription Name here>" | Select-AzSubscription

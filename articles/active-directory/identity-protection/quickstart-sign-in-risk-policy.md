@@ -18,10 +18,10 @@ ms.author: joflore
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 4f5127342f97a90103ef56efbd7465832440ec0f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: MT
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60381824"
 ---
 # <a name="quickstart-block-access-when-a-session-risk-is-detected-with-azure-active-directory-identity-protection"></a>Краткое руководство. Блокировка доступа в случае обнаружения угроз сеанса с помощью Защиты идентификации Azure Active Directory  
@@ -67,7 +67,7 @@ ms.locfileid: "60381824"
 
 В этом разделе показано, как создать необходимую политику условного доступа для рисков при входе. В политике задайте следующие значения.
 
-|Параметр |Value|
+|Параметр |Значение|
 |---     | --- |
 | Пользователи  | Alain Charon  |
 | Условия | Риск при входе, средний и выше |

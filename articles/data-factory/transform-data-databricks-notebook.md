@@ -13,10 +13,10 @@ author: sharonlo101
 ms.author: shlo
 manager: craigg
 ms.openlocfilehash: 8036a8694bb8c8d0db236eba831f13dc2bf47d0a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60311671"
 ---
 # <a name="transform-data-by-running-a-databricks-notebook"></a>Преобразование данных с помощью записной книжки Databricks
@@ -59,13 +59,13 @@ ms.locfileid: "60311671"
 
 |Свойство|ОПИСАНИЕ|Обязательно для заполнения|
 |---|---|---|
-|name|Имя действия в конвейере.|Yes|
-|description|Описание действия.|Нет |
-|Тип|Тип действия Databricks Notebook — DatabricksNotebook.|Yes|
-|linkedServiceName|Имя связанной службы Databricks, в которой запускается записная книжка Databricks. Дополнительные сведения об этой связанной службе см. в статье  [Вычислительные среды, поддерживаемые фабрикой данных Azure](compute-linked-services.md) .|Yes|
-|notebookPath|Абсолютный путь записной книжки, которая будет запущена в рабочей области Databricks. Этот путь должен начинаться с косой черты.|Yes|
-|baseParameters|Массив пар "ключ-значение". Для каждого выполнения действия можно использовать базовые параметры. Если записная книжка принимает параметр, который не был указан, используется значение по умолчанию из записной книжки. Дополнительные сведения о параметрах Databricks Notebook см. [здесь](https://docs.databricks.com/api/latest/jobs.html#jobsparampair).|Нет |
-|libraries|Список библиотек, которые должны быть установлены на кластере, на котором будет выполнено задание. Массив объектов \<строка, объект>.|Нет |
+|name|Имя действия в конвейере.|Да|
+|description|Описание действия.|Нет|
+|type|Тип действия Databricks Notebook — DatabricksNotebook.|Да|
+|linkedServiceName|Имя связанной службы Databricks, в которой запускается записная книжка Databricks. Дополнительные сведения об этой связанной службе см. в статье  [Вычислительные среды, поддерживаемые фабрикой данных Azure](compute-linked-services.md) .|Да|
+|notebookPath|Абсолютный путь записной книжки, которая будет запущена в рабочей области Databricks. Этот путь должен начинаться с косой черты.|Да|
+|baseParameters|Массив пар "ключ-значение". Для каждого выполнения действия можно использовать базовые параметры. Если записная книжка принимает параметр, который не был указан, используется значение по умолчанию из записной книжки. Дополнительные сведения о параметрах Databricks Notebook см. [здесь](https://docs.databricks.com/api/latest/jobs.html#jobsparampair).|Нет|
+|libraries|Список библиотек, которые должны быть установлены на кластере, на котором будет выполнено задание. Массив объектов \<строка, объект>.|Нет|
 
 
 ## <a name="supported-libraries-for-databricks-activities"></a>Поддерживаемые библиотеки для действий Databricks

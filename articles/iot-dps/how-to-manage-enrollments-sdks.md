@@ -9,10 +9,10 @@ ms.service: iot-dps
 services: iot-dps
 manager: arjmands
 ms.openlocfilehash: c73a40e46d86632732454ae16ea4f83e3ffa0281
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60627275"
 ---
 # <a name="how-to-manage-device-enrollments-with-azure-device-provisioning-service-sdks"></a>Как управлять регистрациями устройств с помощью пакетов SDK службы подготовки устройств Azure
@@ -21,7 +21,7 @@ ms.locfileid: "60627275"
 ## <a name="prerequisites"></a>Технические условия
 * Получите строку подключения из экземпляра службы подготовки устройств.
 * Получите артефакты безопасности устройства для используемого [механизма аттестации](concepts-security.md#attestation-mechanism).
-    * [**Доверенный платформенный модуль(TPM)**](/azure/iot-dps/concepts-security#trusted-platform-module).
+    * [**Доверенный платформенный модуль(TPM)** ](/azure/iot-dps/concepts-security#trusted-platform-module).
         * Отдельная регистрация. Идентификатор регистрации и ключ подтверждения доверенного платформенного модуля (TPM) физического устройства или симулятора TPM.
         * Группа регистрации не применяется к аттестации TPM.
     * [**X.509**](/azure/iot-dps/concepts-security):

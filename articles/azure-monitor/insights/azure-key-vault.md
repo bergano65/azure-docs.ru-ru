@@ -14,10 +14,10 @@ ms.topic: conceptual
 ms.date: 03/27/2019
 ms.author: bwren
 ms.openlocfilehash: 481b643f2f7201a2a1745c7aef9ddd81883da020
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60498531"
 ---
 # <a name="azure-key-vault-analytics-solution-in-azure-monitor"></a>Решение Azure Key Vault Analytics в Azure Monitor
@@ -31,7 +31,7 @@ ms.locfileid: "60498531"
 Чтобы использовать решение, необходимо включить ведение журнала диагностики хранилища ключей Azure и направить диагностику в рабочую область Log Analytics. Необязательно записывать журналы в хранилище BLOB-объектов Azure.
 
 > [!NOTE]
-> В январе 2017 г. поддерживаемый способ отправки журналов из Key Vault в Log Analytics был изменен. Если в используемом вами решении Key Vault в названии отображается *(не рекомендуется)*, то выполните действия, описанные в разделе [Миграция из устаревшего решения Key Vault](#migrating-from-the-old-key-vault-solution).
+> В январе 2017 г. поддерживаемый способ отправки журналов из Key Vault в Log Analytics был изменен. Если в используемом вами решении Key Vault в названии отображается *(не рекомендуется)* , то выполните действия, описанные в разделе [Миграция из устаревшего решения Key Vault](#migrating-from-the-old-key-vault-solution).
 >
 >
 
@@ -103,12 +103,12 @@ Set-AzDiagnosticSetting -ResourceId $kv.ResourceId  -WorkspaceId $workspaceId -E
 ## <a name="azure-monitor-log-records"></a>Записи журнала Azure Monitor
 Решение хранилища ключей Azure анализирует записи типа **KeyVaults**, полученные из [журналов AuditEvent](../../key-vault/key-vault-logging.md) системы диагностики Azure.  Свойства этих записей приведены в таблице ниже.  
 
-| Свойство | ОПИСАНИЕ |
+| Свойство | Description |
 |:--- |:--- |
 | type |*AzureDiagnostics* |
 | SourceSystem |*Таблицы Azure* |
 | CallerIpAddress |IP-адрес клиента, отправившего запрос. |
-| Category | *AuditEvent* |
+| Категория | *AuditEvent* |
 | CorrelationId |Необязательный GUID, который клиент может передавать для сопоставления журналов на стороне клиента с журналами на стороне службы (хранилища ключей). |
 | DurationMs |Время обслуживания запроса REST API в миллисекундах. Это время не включает в себя задержку сети, поэтому время, зарегистрированное на стороне клиента, может не соответствовать этому значению. |
 | HttpStatusCode_d |Код состояния HTTP, возвращаемый запросом (например, *200*) |
@@ -119,7 +119,7 @@ Set-AzDiagnosticSetting -ResourceId $kv.ResourceId  -WorkspaceId $workspaceId -E
 | requestUri_s |URI запроса |
 | Ресурс |Имя хранилища ключей. |
 | ResourceGroup |Группа ресурсов хранилища ключей. |
-| resourceId |Идентификатор ресурса диспетчера ресурсов Azure. Для журналов хранилища ключей это идентификатор ресурса хранилища ключей. |
+| ResourceId |Идентификатор ресурса диспетчера ресурсов Azure. Для журналов хранилища ключей это идентификатор ресурса хранилища ключей. |
 | ResourceProvider |*MICROSOFT.KEYVAULT* |
 | ResourceType | *VAULTS* |
 | ResultSignature |Код состояния HTTP (например, *ОК*) |
@@ -145,7 +145,7 @@ Set-AzDiagnosticSetting -ResourceId $kv.ResourceId  -WorkspaceId $workspaceId -E
    + Для любого поля, имя которого содержит суффикс \_o, данные разбиваются на отдельные поля на основе имен вложенных полей. Например, имя участника-пользователя вызывающего объекта сохраняется в поле `identity_claim_http_schemas_xmlsoap_org_ws_2005_05_identity_claims_upn_s`.
    + Поле CallerIpAddress меняется на CallerIPAddress.
    + Поле RemoteIPCountry больше не используется.
-4. Удалите устаревшее решение *Key Vault Analytics (не рекомендуется)*. Если используется PowerShell, то выполните следующую команду: `Set-AzureOperationalInsightsIntelligencePack -ResourceGroupName <resource group that the workspace is in> -WorkspaceName <name of the log analytics workspace> -IntelligencePackName "KeyVault" -Enabled $false`
+4. Удалите устаревшее решение *Key Vault Analytics (не рекомендуется)* . Если используется PowerShell, то выполните следующую команду: `Set-AzureOperationalInsightsIntelligencePack -ResourceGroupName <resource group that the workspace is in> -WorkspaceName <name of the log analytics workspace> -IntelligencePackName "KeyVault" -Enabled $false`
 
 Данные, собранные до этого изменения, не отображаются в новом решении. Эти данные по-прежнему можно запрашивать с помощью старых имен типов и полей.
 

@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 04/17/2018
 ms.author: spelluru
 ms.openlocfilehash: 2fe31271fa84bc4170bd431a4aadbcafc0df9086
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60311526"
 ---
 # <a name="post-an-announcement-to-a-lab-in-azure-devtest-labs"></a>Публикация объявления в лабораторию в Azure DevTest Labs
@@ -82,7 +82,7 @@ ms.locfileid: "60311526"
 
 [!INCLUDE [devtest-lab-try-it-out](../../includes/devtest-lab-try-it-out.md)]
 
-## <a name="azure-resource-manager-template"></a>Шаблон Azure Resource Manager
+## <a name="azure-resource-manager-template"></a>Шаблон диспетчера ресурсов Azure
 Объявление можно указать как часть шаблона Azure Resource Manager, как показано в следующем примере:
 
 ```json

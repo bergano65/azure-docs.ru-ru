@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 3/28/2019
 ms.author: amitsriva
-ms.openlocfilehash: 367da8a1948b9feb42bc82d85762ae314fe165a0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: a8b0ee159b1c4a4072ce5a86f9fb925744a415b3
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66135492"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67048712"
 ---
 # <a name="back-end-health-diagnostic-logs-and-metrics-for-application-gateway"></a>Работоспособность серверной части, журналы диагностики и метрики для шлюза приложений
 
@@ -155,8 +155,7 @@ az network application-gateway show-backend-health --resource-group AdatumAppGat
 
 ### <a name="access-log"></a>журнал доступа;
 
-Журнал доступа создается, только если он включен для каждого экземпляра шлюза приложений, как описано выше. Данные хранятся в учетной записи хранения, указанной при включении ведения журнала. Каждая операция доступа шлюза приложений регистрируется в журнале в формате JSON, как показано в примере ниже.
-
+Журнал доступа создается, только если он включен для каждого экземпляра шлюза приложений, как описано выше. Данные хранятся в учетной записи хранения, указанной при включении ведения журнала. Каждая операция доступа шлюза приложений регистрируется в формате JSON, как показано в следующем примере для версии 1.
 
 |Значение  |ОПИСАНИЕ  |
 |---------|---------|
@@ -193,6 +192,58 @@ az network application-gateway show-backend-health --resource-group AdatumAppGat
         "sentBytes": 553,
         "timeTaken": 205,
         "sslEnabled": "off"
+    }
+}
+```
+Для шлюза приложений с WAF v2 немного сведений отражается в журналах:
+
+|Значение  |ОПИСАНИЕ  |
+|---------|---------|
+|instanceId     | Экземпляр шлюза приложений, который обрабатывает запрос.        |
+|clientIP     | IP-адрес источника запроса.        |
+|clientPort     | Порт источника запроса.       |
+|httpMethod     | Метод HTTP, используемый для запроса.       |
+|requestUri     | URI полученного запроса.        |
+|RequestQuery     | **Server-Routed**. Экземпляр внутреннего пула, из которого отправлен запрос.</br>**X-AzureApplicationGateway-LOG-ID**. Идентификатор корреляции, использованный для запроса. Он может использоваться для устранения неполадок с трафиком на внутренних серверах. </br>**SERVER-STATUS**. Код отклика HTTP, полученный Шлюзом приложений из серверной части.       |
+|UserAgent     | Агент пользователя из заголовка HTTP-запроса.        |
+|httpStatus     | Код состояния HTTP, возвращаемый клиенту из шлюза приложений.       |
+|httpVersion     | Версия HTTP для запроса.        |
+|receivedBytes     | Размер полученного пакета (в байтах).        |
+|sentBytes| Размер отправленного пакета (в байтах).|
+|timeTaken| Время (в миллисекундах), необходимое для обработки запроса и отправки ответа. Вычисляется как промежуток времени от момента, когда шлюз приложений получает первый байт HTTP-запроса, до завершения отправки ответа. Важно отметить, что в поле Time-Taken обычно указывается время передачи пакетов запросов и ответов по сети. |
+|sslEnabled| Определяет, используется ли SSL для обмена данными с внутренними пулами. Допустимые значения: on и off.|
+|sslCipher| Комплект шифров, используется для взаимодействие по протоколу SSL (если протокол SSL включен).|
+|sslProtocol| Протокол SSL используется (если протокол SSL включен).|
+|serverRouted| На внутреннем сервере, шлюз приложений направляет запрос на.|
+|serverStatus| Код состояния HTTP внутреннего сервера.|
+|serverResponseLatency| Задержка ответа от сервера базы данных.|
+|host| Адрес, который отображается в заголовке узла запроса.|
+```json
+{
+    "resourceId": "/SUBSCRIPTIONS/{subscriptionId}/RESOURCEGROUPS/PEERINGTEST/PROVIDERS/MICROSOFT.NETWORK/APPLICATIONGATEWAYS/{applicationGatewayName}",
+    "operationName": "ApplicationGatewayAccess",
+    "time": "2017-04-26T19:27:38Z",
+    "category": "ApplicationGatewayAccessLog",
+    "properties": {
+        "instanceId": "ApplicationGatewayRole_IN_0",
+        "clientIP": "191.96.249.97",
+        "clientPort": 46886,
+        "httpMethod": "GET",
+        "requestUri": "/phpmyadmin/scripts/setup.php",
+        "requestQuery": "X-AzureApplicationGateway-CACHE-HIT=0&SERVER-ROUTED=10.4.0.4&X-AzureApplicationGateway-LOG-ID=874f1f0f-6807-41c9-b7bc-f3cfa74aa0b1&SERVER-STATUS=404",
+        "userAgent": "-",
+        "httpStatus": 404,
+        "httpVersion": "HTTP/1.0",
+        "receivedBytes": 65,
+        "sentBytes": 553,
+        "timeTaken": 205,
+        "sslEnabled": "off"
+        "sslCipher": "",
+        "sslProtocol": "",
+        "serverRouted": "104.41.114.59:80",
+        "serverStatus": "200",
+        "serverResponseLatency": "0.023",
+        "host": "52.231.230.101"
     }
 }
 ```

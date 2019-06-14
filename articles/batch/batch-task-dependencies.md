@@ -16,10 +16,10 @@ ms.date: 05/22/2017
 ms.author: lahugh
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: ca6918b809a9b4ede3fffb151c7fa5183ae03b47
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60550401"
 ---
 # <a name="create-task-dependencies-to-run-tasks-that-depend-on-other-tasks"></a>Создание зависимостей для выполнения задач, которые зависят от других задач
@@ -77,8 +77,8 @@ new CloudTask("Flowers", "cmd.exe /c echo Flowers")
 
 | Сценарий&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | Пример |  |
 |:---:| --- | --- |
-|  [Один к одному](#one-to-one) |Задача *taskB* зависит от задачи *taskA*. <p/> Выполнение задачи *taskB* не начнется, пока задача *taskA* не будет успешно выполнена. |![Схема: зависимость задач "один к одному"][1] |
-|  [Один ко многим](#one-to-many) |Задача *taskC* зависит от задач *taskA* и *taskB*. <p/> Выполнение задачи *taskC* не начнется, пока задачи *taskA* и *taskB* не будут успешно выполнены). |![Схема: зависимость задач "один ко многим"][2] |
+|  [Один к одному](#one-to-one) |Задача *taskB* зависит от задачи *taskA*. <p/> Выполнение задачи *taskB* не начнется, пока задача *taskA* не будет успешно выполнена. |![Схема: зависимость задач один к одному][1] |
+|  [Один ко многим](#one-to-many) |Задача *taskC* зависит от задач *taskA* и *taskB*. <p/> Выполнение задачи *taskC* не начнется, пока задачи *taskA* и *taskB* не будут успешно выполнены). |![Схема: зависимость задач один ко многим][2] |
 |  [Диапазон идентификаторов задач](#task-id-range) |Задача *taskD* зависит от ряда задач. <p/> Выполнение задачи *taskD* не начнется, пока не будут успешно выполнены задачи с идентификаторами от *1* до *10*. |![Схема: зависимость диапазона идентификаторов задач][3] |
 
 > [!TIP]
@@ -237,6 +237,6 @@ new CloudTask("B", "cmd.exe /c echo B")
 [net_usestaskdependencies]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.cloudjob.usestaskdependencies.aspx
 [net_taskdependencies]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.taskdependencies.aspx
 
-[1]: ./media/batch-task-dependency/01_one_to_one.png "Схема: зависимость "один к одному""
-[2]: ./media/batch-task-dependency/02_one_to_many.png "Схема: зависимость "один ко многим""
+[1]: ./media/batch-task-dependency/01_one_to_one.png "Схема: зависимость один к одному"
+[2]: ./media/batch-task-dependency/02_one_to_many.png "Схема: зависимость один ко многим"
 [3]: ./media/batch-task-dependency/03_task_id_range.png "Схема: зависимость диапазона идентификаторов задач"

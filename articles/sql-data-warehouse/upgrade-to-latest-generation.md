@@ -11,10 +11,10 @@ ms.date: 02/19/2019
 ms.author: martinle
 ms.reviewer: jrasnick
 ms.openlocfilehash: a8bd260db7a141ce845ce7fb5b7e10f642907b82
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60310371"
 ---
 # <a name="optimize-performance-by-upgrading-sql-data-warehouse"></a>Оптимизация производительности путем обновления хранилища данных SQL
@@ -27,7 +27,7 @@ ms.locfileid: "60310371"
 
 > [!VIDEO https://www.youtube.com/embed/9B2F0gLoyss]
 
-## <a name="applies-to"></a>Применяется к
+## <a name="applies-to"></a>Применимо к
 
 Это обновление применяется к хранилищам данных 1-го поколения ценовой категории "Оптимизировано для вычислений" в [поддерживаемых регионах](gen2-migration-schedule.md#automated-schedule-and-region-availability-table).
 

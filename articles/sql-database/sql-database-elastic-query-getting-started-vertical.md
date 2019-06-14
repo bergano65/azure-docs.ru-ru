@@ -13,10 +13,10 @@ ms.reviewer: ''
 manager: craigg
 ms.date: 01/25/2019
 ms.openlocfilehash: 116a465a0ddc913e342e0ffcc1fb29f5bf969419
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60307450"
 ---
 # <a name="get-started-with-cross-database-queries-vertical-partitioning-preview"></a>Приступая к работе с межбазовыми запросами (вертикальное секционирование) (предварительная версия)
@@ -105,7 +105,7 @@ ms.locfileid: "60307450"
     INNER JOIN CustomerInformation
     ON CustomerInformation.CustomerID = OrderInformation.CustomerID
 
-## <a name="cost"></a>Стоимость
+## <a name="cost"></a>Затраты
 
 В настоящее время функция запроса к эластичной базе данных включена в стоимость Базы данных SQL Azure.  
 

@@ -15,10 +15,10 @@ ms.workload: multiple
 ms.date: 12/06/2018
 ms.author: bikang
 ms.openlocfilehash: d0a7199ff0e9cb17c3fbc179a9b37a6620f521f9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60544676"
 ---
 # <a name="sfctl-replica"></a>sfctl replica
@@ -30,12 +30,12 @@ ms.locfileid: "60544676"
 | --- | --- |
 | deployed | Возвращает сведения о реплике, развернутой на узле Service Fabric. |
 | deployed-list | Возвращает сведения о репликах, развернутых на узле Service Fabric. |
-| Здравоохранение | Возвращает сведения о работоспособности реплики службы с отслеживанием состояния или экземпляра службы без отслеживания состояния Service Fabric. |
-| информация | Возвращает сведения реплике секции Service Fabric. |
-| список | Возвращает сведения репликах секции службы Service Fabric. |
+| health | Возвращает сведения о работоспособности реплики службы с отслеживанием состояния или экземпляра службы без отслеживания состояния Service Fabric. |
+| info | Возвращает сведения реплике секции Service Fabric. |
+| list | Возвращает сведения репликах секции службы Service Fabric. |
 | remove | Удаляет реплику службы, работающую на узле. |
 | report-health | Отправляет отчет о работоспособности реплики Service Fabric. |
-| перезагрузить | Перезапускает реплику сохраненной службы, работающую на узле. |
+| restart | Перезапускает реплику сохраненной службы, работающую на узле. |
 
 ## <a name="sfctl-replica-deployed"></a>sfctl replica deployed
 Возвращает сведения о реплике, развернутой на узле Service Fabric.

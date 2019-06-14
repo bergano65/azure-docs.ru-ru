@@ -2,7 +2,7 @@
 title: Событие завершения выполнения задачи пакетной службы Azure | Документы Майкрософт
 description: Справочник по событию завершения выполнения задачи пакетной службы.
 services: batch
-author: dlepow
+author: laurenhughes
 manager: jeconnoc
 ms.assetid: ''
 ms.service: batch
@@ -10,14 +10,13 @@ ms.devlang: multiple
 ms.topic: article
 ms.tgt_pltfrm: ''
 ms.workload: big-compute
-origin.date: 04/20/2017
-ms.date: 05/14/2018
-ms.author: v-junlch
+ms.date: 04/20/2017
+ms.author: lahugh
 ms.openlocfilehash: b5fd1a8020c8e95323bc2333c0583dafe58e8456
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60549977"
 ---
 # <a name="task-complete-event"></a>Событие завершения выполнения задачи
@@ -92,5 +91,3 @@ ms.locfileid: "60549977"
 |exitCode|Int32|Код выхода задачи.|
 |retryCount|Int32|Число повторных попыток выполнения задачи пакетной службой. Повторная попытка выполнения задачи предпринимается в случае ненулевого кода выхода, вплоть до указанного предела MaxTaskRetryCount.|
 |requeueCount|Int32|Число повторных постановок задачи в очередь пакетной службой в результате запроса пользователя.<br /><br /> Когда пользователь удаляет узлы из пула (путем его сжатия или изменения размера) или отключается задание, пользователь может указать, что запущенные на узлах задачи нужно повторно поставить в очередь для выполнения. Этот счетчик отслеживает, сколько раз задача была повторно поставлена в очередь в описанной ситуации.|
-
-<!-- Update_Description: update metedata properties -->

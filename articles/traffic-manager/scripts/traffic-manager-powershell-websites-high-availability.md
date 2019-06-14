@@ -3,8 +3,8 @@ title: Пример сценария Azure PowerShell для маршрутиз�
 description: Пример сценария Azure PowerShell для маршрутизации трафика для обеспечения высокого уровня доступности приложений.
 services: traffic-manager
 documentationcenter: traffic-manager
-author: KumudD
-manager: jeconnoc
+author: asudbring
+manager: twooley
 editor: ''
 tags: azure-infrastructure
 ms.assetid: ''
@@ -14,13 +14,13 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: traffic-manager
 ms.date: 04/26/2018
-ms.author: kumud
-ms.openlocfilehash: db84de194832180b8e153cf6aa7e6c9fab5e6d61
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.author: allensu
+ms.openlocfilehash: 1c04859e2fe8841eb679f0b3e22b54ce71f88230
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "66147437"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67050973"
 ---
 # <a name="route-traffic-for-high-availability-of-applications-using-azure-powershell"></a>Маршрутизация трафика для обеспечения высокого уровня доступности приложений с помощью Azure PowerShell
 

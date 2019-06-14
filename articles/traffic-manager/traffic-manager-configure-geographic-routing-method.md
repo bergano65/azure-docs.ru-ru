@@ -2,20 +2,21 @@
 title: Настройка метода маршрутизации трафика по географическому расположению с помощью диспетчера трафика Azure
 description: В этой статье объясняется, как настроить метод маршрутизации трафика по географическому расположению с помощью диспетчера трафика Azure
 services: traffic-manager
-author: kumudd
+author: asudbring
+manager: twooley
 ms.service: traffic-manager
 ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/22/2017
-ms.author: kumud
-ms.openlocfilehash: 47cc56aac7d3e0147ef8577aac19776c6cacf7a9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.author: allensu
+ms.openlocfilehash: bd01849e33d4c061b25c27a5391701876861b76b
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60884161"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67051076"
 ---
 # <a name="configure-the-geographic-traffic-routing-method-using-traffic-manager"></a>Настройка метода маршрутизации трафика по географическому расположению с помощью диспетчера трафика
 
@@ -32,9 +33,9 @@ ms.locfileid: "60884161"
     4. Используйте существующую группу ресурсов или создайте группу ресурсов, в которую следует поместить этот профиль. Если вы решили создать группу ресурсов, используйте раскрывающийся список **Расположение группы ресурсов**, чтобы указать ее расположение. Этот параметр задает расположение группы ресурсов и не влияет на профиль диспетчера трафика, который развернут глобально.
     5. После нажатия кнопки **Создать** профиль диспетчера трафика будет создан и глобально развернут.
 
-![Создать профиль диспетчера трафика](./media/traffic-manager-geographic-routing-method/create-traffic-manager-profile.png)
+![Создание профиля диспетчера трафика](./media/traffic-manager-geographic-routing-method/create-traffic-manager-profile.png)
 
-## <a name="add-endpoints"></a>Добавить конечные точки
+## <a name="add-endpoints"></a>Добавление конечных точек
 
 1. Найдите имя созданного профиля диспетчера трафика, введя его в строке поиска портала, и щелкните результат, когда оно появится.
 2. В диспетчере трафика выберите **Параметры** -> **Конечные точки**.

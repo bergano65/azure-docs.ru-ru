@@ -13,10 +13,10 @@ ms.reviewer: carlrab
 manager: craigg
 ms.date: 12/20/2018
 ms.openlocfilehash: adb8917605a00208b328e7fd15f96d28c7838988
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60201669"
 ---
 # <a name="data-sync-agent-for-azure-sql-data-sync"></a>Агент синхронизации данных для синхронизации данных SQL Azure
@@ -149,7 +149,7 @@ msiexec /i "SQLDataSyncAgent-2.0-x86-ENU.msi" TARGETDIR="C:\Program Files (x86)\
 
   1. Найдите службу агента клиента синхронизации данных SQL.  
     a. Щелкните **Запуск**.  
-    2. В поле поиска введите **services.msc**.  
+    2\. В поле поиска введите **services.msc**.  
     c. В результатах поиска щелкните **Службы**.  
     d. В окне **Службы** прокрутите список до записи **Агент синхронизации данных SQL**.  
   1. Щелкните правой кнопкой мыши **Агент синхронизации данных SQL**, а затем выберите **Остановить**.
@@ -215,7 +215,7 @@ msiexec /i "SQLDataSyncAgent-2.0-x86-ENU.msi" TARGETDIR="C:\Program Files (x86)\
   1. Выйдите из приложения.  
   1. Откройте панель "Службы компонентов".  
     a. В поле поиска на панели задач введите **services.msc**.  
-    2. В результатах поиска дважды щелкните **Службы**.  
+    2\. В результатах поиска дважды щелкните **Службы**.  
   1. Остановите работу службы **синхронизации данных SQL**.
   1. Перезапустите службу **синхронизации данных SQL**.  
   1. Повторно откройте приложение.

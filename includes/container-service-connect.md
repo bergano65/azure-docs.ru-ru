@@ -2,14 +2,14 @@
 author: dlepow
 ms.service: container-service
 ms.topic: include
-ms.date: 11/09/2018
+ms.date: 06/05/2019
 ms.author: danlep
-ms.openlocfilehash: 48deeec7a2c8767ab5dbb81b622e6d40483ed455
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: fb6dec606169eb0bf2bfbeff042700cff441560b
+ms.sourcegitcommit: f9448a4d87226362a02b14d88290ad6b1aea9d82
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60202827"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66808906"
 ---
 # <a name="make-a-remote-connection-to-a-kubernetes-dcos-or-docker-swarm-cluster"></a>Создание удаленного подключения к кластеру Kubernetes, DC/OS или Docker Swarm
 После создания кластера службы контейнеров Azure необходимо подключиться к кластеру, чтобы развертывать рабочие нагрузки и управлять ими. В этой статье описывается подключение к главной виртуальной машине кластера с удаленного компьютера. 
@@ -32,7 +32,7 @@ ms.locfileid: "60202827"
 > 
 
 ### <a name="install-kubectl"></a>Установка kubectl
-Один из способов установить это средство является использование `az acs kubernetes install-cli` команду Azure CLI. Чтобы выполнить эту команду, убедитесь, что вы [установлен](/cli/azure/install-az-cli2) последнюю версию Azure CLI и вы вошли в учетную запись Azure (`az login`).
+Один из способов установить это средство является использование `az acs kubernetes install-cli` команду Azure CLI. Для выполнения этой команды [установите Azure CLI](/cli/azure/install-azure-cli) и войдите в учетную запись Azure с помощью `az login`.
 
 ```azurecli
 # Linux or macOS
@@ -53,7 +53,7 @@ az acs kubernetes get-credentials --resource-group=<cluster-resource-group> --na
 
 Эта команда загрузит учетные данные кластера в папку `$HOME/.kube/config`, где средство `kubectl` будет их искать.
 
-Вы также можете с помощью `scp` безопасно скопировать файл на локальный компьютер из папки `$HOME/.kube/config` на главной виртуальной машине. Например: 
+Вы также можете с помощью `scp` безопасно скопировать файл на локальный компьютер из папки `$HOME/.kube/config` на главной виртуальной машине. Пример:
 
 ```bash
 mkdir $HOME/.kube
@@ -78,7 +78,7 @@ kubectl proxy
 
 Теперь пользовательский интерфейс Kubernetes доступен по адресу `http://localhost:8001/ui`.
 
-Дополнительные сведения см. в статье о [быстром запуске Kubernetes](http://kubernetes.io/docs/user-guide/quick-start/).
+Дополнительные сведения см. в разделе [краткое руководство по Kubernetes](http://kubernetes.io/docs/user-guide/quick-start/).
 
 ## <a name="connect-to-a-dcos-or-swarm-cluster"></a>Подключение к кластеру DC/OS или Swarm
 
@@ -158,7 +158,7 @@ ssh -fNL 2375:localhost:2375 -p 2200 azureuser@acsexamplemgmt.japaneast.cloudapp
 export DOCKER_HOST=:2375
 ```
 
-Выполните команды Docker, открывающие туннель к кластеру Docker Swarm. Например: 
+Выполните команды Docker, открывающие туннель к кластеру Docker Swarm. Пример:
 
 ```bash
 docker info

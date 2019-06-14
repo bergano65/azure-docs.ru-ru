@@ -15,10 +15,10 @@ ms.author: rolyon
 ms.custom: pim
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 651dc4efa653e7a4eb77f153280579ffd87fe8f7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60290050"
 ---
 # <a name="start-using-pim"></a>Начало работы с PIM
@@ -102,7 +102,7 @@ ms.locfileid: "60290050"
 
 ![Задачи верхнего уровня для управления привилегированными пользователями — снимок экрана](./media/pim-getting-started/pim-quickstart-tasks.png)
 
-| Задача и управление | ОПИСАНИЕ |
+| Задача и управление | Описание |
 | --- | --- |
 | **Мои роли**  | Отображается список назначенных вам действительных и активных ролей. Здесь можно активировать все действительные назначенные роли. |
 | **Мои запросы** | Отображаются все запросы, ожидающие активации назначения действительных ролей. |

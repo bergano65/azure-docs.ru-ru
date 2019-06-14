@@ -14,14 +14,14 @@ ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: d22318f4d9e233a57d521fe36f0827b9fc3af3e0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60610742"
 ---
 # <a name="move-data-from-teradata-using-azure-data-factory"></a>Перемещение данных из Teradata с помощью фабрики данных Azure
-> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
+> [!div class="op_single_selector" title1="Выберите версию службы фабрики данных, которую вы используете:"]
 > * [Версия 1](data-factory-onprem-teradata-connector.md)
 > * [Версия 2 (текущая)](../connector-teradata.md)
 
@@ -67,7 +67,7 @@ ms.locfileid: "60610742"
 | type |Свойству type необходимо задать значение **OnPremisesTeradata**. |Yes |
 | server |Имя сервера Teradata. |Yes |
 | authenticationType |Тип проверки подлинности, используемый для подключения к базе данных Teradata. Возможные значения: Anonymous, Basic и Windows. |Yes |
-| username |При использовании обычной проверки подлинности или проверки подлинности Windows укажите имя пользователя. |Нет |
+| имя пользователя |При использовании обычной проверки подлинности или проверки подлинности Windows укажите имя пользователя. |Нет |
 | password |Введите пароль для учетной записи пользователя, указанной для выбранного имени пользователя. |Нет |
 | gatewayName |Имя шлюза, который следует использовать службе фабрики данных для подключения к локальной базе данных Teradata. |Yes |
 

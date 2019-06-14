@@ -5,31 +5,31 @@ services: active-directory
 keywords: учетная запись AD DS, учетная запись Active Directory, пароль
 documentationcenter: ''
 author: billmath
-manager: mtillman
+manager: daveba
 editor: ''
 ms.assetid: 76b19162-8b16-4960-9e22-bd64e6675ecc
 ms.service: active-directory
 ms.workload: identity
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.topic: article
-origin.date: 07/12/2017
-ms.date: 11/09/2018
-ms.component: hybrid
-ms.author: v-junlch
+ms.topic: conceptual
+ms.date: 07/12/2017
+ms.subservice: hybrid
+ms.author: billmath
+ms.collection: M365-identity-device-management
 ms.openlocfilehash: 35e04be046e20883f60c576745a29342add68a81
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60241598"
 ---
 # <a name="changing-the-ad-ds-account-password"></a>Изменение пароля учетной записи AD DS
 Учетная запись AD DS — это учетная запись пользователя, которая используется службой Azure AD Connect для взаимодействия с локальным каталогом Active Directory. В случае изменения пароля учетной записи AD DS необходимо также обновить пароль в службе синхронизации Azure AD Connect. В противном случае служба синхронизации больше не сможет правильно синхронизировать данные с локальным каталогом Active Directory. При этом будут возникать следующие ошибки:
 
-- В Synchronization Service Manager любая операция импорта или экспорта с использованием локального каталога AD завершается ошибкой **no-start-credentials**.
+* В Synchronization Service Manager любая операция импорта или экспорта с использованием локального каталога AD завершается ошибкой **no-start-credentials**.
 
-- В средстве просмотра событий Windows журнал событий приложения содержит ошибку с **идентификатором события 6000** и сообщением об ошибке **Не удалось выполнить управляющий агент "contoso.com", так как учетные данные были недопустимыми**.
+* В средстве просмотра событий Windows журнал событий приложения содержит ошибку с **идентификатором события 6000** и сообщением об ошибке **Не удалось выполнить управляющий агент "contoso.com", так как учетные данные были недопустимыми**.
 
 
 ## <a name="how-to-update-the-synchronization-service-with-new-password-for-ad-ds-account"></a>Как обновить пароль в службе синхронизации в случае изменения пароля учетной записи AD DS
@@ -55,7 +55,6 @@ ms.locfileid: "60241598"
 ## <a name="next-steps"></a>Дальнейшие действия
 **Обзорные статьи**
 
-- [Синхронизация Azure AD Connect: общие сведений о синхронизации и ее настройка](how-to-connect-sync-whatis.md)
+* [Синхронизация Azure AD Connect: общие сведений о синхронизации и ее настройка](how-to-connect-sync-whatis.md)
 
-- [Интеграция локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md)
-
+* [Интеграция локальных удостоверений с Azure Active Directory](whatis-hybrid-identity.md)

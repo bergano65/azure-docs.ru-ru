@@ -11,10 +11,10 @@ ms.topic: article
 ms.assetid: e06311bc-29eb-49df-9273-1f05bbb2395c
 ms.date: 01/31/2018
 ms.openlocfilehash: 89e0294db3178cedd3b14aada0b505787b17c75e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60303695"
 ---
 # <a name="common-scenarios-examples-tutorials-and-walkthroughs-for-azure-logic-apps"></a>Распространенные сценарии, примеры, учебники и пошаговые руководства для Azure Logic Apps
@@ -59,7 +59,7 @@ ms.locfileid: "60303695"
 * [Настройка длительных действий для запусков рабочего процесса](../logic-apps/logic-apps-create-api-app.md)
 * [Реагирование на внешние события и действия с помощью объектов webhook](../logic-apps/logic-apps-create-api-app.md)
 * [Вызов, активация или вложение рабочих процессов с использованием синхронных ответов на HTTP-запросы](../logic-apps/logic-apps-http-endpoint.md)
-* [Руководство Создайте на основе ии панели мониторинга социальных сетей за несколько минут с помощью Logic Apps и Power BI](https://aka.ms/logicappsdemo)
+* [Учебник. Создайте на основе ии панели мониторинга социальных сетей за несколько минут с помощью Logic Apps и Power BI](https://aka.ms/logicappsdemo)
 * [Video: Ответ на веб-перехватчиков Twilio SMS и отправка текстового ответа](https://channel9.msdn.com/Blogs/Windows-Azure/Azure-Logic-Apps-Walkthrough-Webhook-Functions-and-an-SMS-Bot)
 
 ## <a name="control-flow-error-handling-and-logging-capabilities"></a>Возможности для потока управления, обработки ошибок и ведения журнала
@@ -96,10 +96,10 @@ ms.locfileid: "60303695"
 
 * [Создание панели мониторинга сведений о клиентах в режиме реального времени с помощью Функций Azure и Azure Logic Apps](../logic-apps/logic-apps-scenario-social-serverless.md)
 * [Вызов Функций Azure из приложений логики](../logic-apps/logic-apps-azure-functions.md)
-* [Руководство Запуск приложения логики с помощью функций Azure](../logic-apps/logic-apps-scenario-function-sb-trigger.md)
-* [Руководство Отслеживание изменений виртуальной машины с помощью сетки событий Azure и Logic Apps](../event-grid/monitor-virtual-machine-changes-event-grid-logic-app.md)
-* [Руководство Создание функции, интегрируемой с Azure Logic Apps и Microsoft Cognitive Services для анализа мнений пользователей Twitter post](../azure-functions/functions-twitter-email.md)
-* [Руководство Удаленный мониторинг и Интернета уведомлений с помощью Azure Logic Apps подключения центра Интернета вещей и почтовым ящиком](../iot-hub/iot-hub-monitoring-notifications-with-azure-logic-apps.md)
+* [Учебник. Запуск приложения логики с помощью функций Azure](../logic-apps/logic-apps-scenario-function-sb-trigger.md)
+* [Учебник. Отслеживание изменений виртуальной машины с помощью сетки событий Azure и Logic Apps](../event-grid/monitor-virtual-machine-changes-event-grid-logic-app.md)
+* [Учебник. Создание функции, интегрируемой с Azure Logic Apps и Microsoft Cognitive Services для анализа мнений пользователей Twitter post](../azure-functions/functions-twitter-email.md)
+* [Учебник. Удаленный мониторинг и Интернета уведомлений с помощью Azure Logic Apps подключения центра Интернета вещей и почтовым ящиком](../iot-hub/iot-hub-monitoring-notifications-with-azure-logic-apps.md)
 * [Блог. Вызов конечных точек SOAP из приложений логики](https://blogs.msdn.microsoft.com/logicapps/2016/04/07/using-soap-services-with-logic-apps/)
 
 ## <a name="end-to-end-scenarios"></a>Комплексные сценарии

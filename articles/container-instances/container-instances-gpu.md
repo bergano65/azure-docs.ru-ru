@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 04/17/2019
 ms.author: danlep
 ms.openlocfilehash: 5073b68f6ef3de330671e3ea25056e0cae976360
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60583840"
 ---
 # <a name="deploy-container-instances-that-use-gpu-resources"></a>Развертывание экземпляров контейнеров, использующих ресурсы GPU
@@ -211,7 +211,7 @@ Adding run metadata for 999
 
 ## <a name="clean-up-resources"></a>Очистка ресурсов
 
-Так как использование ресурсов GPU может быть дорогостоящим, следите, чтобы ваши контейнеры не работали в течение длительного времени. Отслеживайте свои контейнеры на портале Azure или проверяйте состояние группы контейнеров с помощью команды [az container show][az-container-show]. Пример.
+Так как использование ресурсов GPU может быть дорогостоящим, следите, чтобы ваши контейнеры не работали в течение длительного времени. Отслеживайте свои контейнеры на портале Azure или проверяйте состояние группы контейнеров с помощью команды [az container show][az-container-show]. Пример:
 
 ```azurecli
 az container show --resource-group myResourceGroup --name gpucontainergroup --output table

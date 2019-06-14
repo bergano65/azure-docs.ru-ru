@@ -9,10 +9,10 @@ ms.date: 04/18/2019
 ms.author: johnkem
 ms.subservice: logs
 ms.openlocfilehash: b17978da3195b364f868d33ab7ad9faa1544e9ec
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60238021"
 ---
 # <a name="stream-azure-diagnostic-logs-to-log-analytics-workspace-in-azure-monitor"></a>Stream журналов диагностики в рабочую область Log Analytics в Azure Monitor
@@ -107,7 +107,7 @@ az monitor diagnostic-settings create --name <diagnostic name> \
  
 В таблице AzureDiagnostics будет выглядеть следующим образом, с демонстрационными данными:  
  
-| ResourceProvider | Category | A | b | C | D | E | F | G. | H | I |
+| ResourceProvider | Категория | A | b | C | D | E | F | G. | H | I |
 | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- | -- |
 | Microsoft.Resource1 | AuditLogs | x1 | y1 | z1 |
 | Microsoft.Resource2 | ErrorLogs | | | | Вопрос 1 | W1 | e1 |

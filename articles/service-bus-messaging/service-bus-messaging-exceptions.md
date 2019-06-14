@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 09/21/2018
 ms.author: aschhab
 ms.openlocfilehash: b90e87310bf6dec505176b7f4d4cb9e15ac57c20
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60307783"
 ---
 # <a name="service-bus-messaging-exceptions"></a>Исключения обмена сообщениями служебной шины
@@ -78,7 +78,7 @@ Message: The maximum entity size has been reached or exceeded for Topic: ‘xxx-
 
 ### <a name="namespaces"></a>Пространства имен
 
-Для пространств имен исключение [QuotaExceededException](/dotnet/api/microsoft.azure.servicebus.quotaexceededexception) может указывать на то, что приложение превысило максимально возможное количество подключений к пространству имен. Например: 
+Для пространств имен исключение [QuotaExceededException](/dotnet/api/microsoft.azure.servicebus.quotaexceededexception) может указывать на то, что приложение превысило максимально возможное количество подключений к пространству имен. Пример:
 
 ```Output
 Microsoft.ServiceBus.Messaging.QuotaExceededException: ConnectionsQuotaExceeded for namespace xxx.

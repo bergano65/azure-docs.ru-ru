@@ -15,10 +15,10 @@ ms.workload: multiple
 ms.date: 12/06/2018
 ms.author: bikang
 ms.openlocfilehash: c195d0c4250022102e735cf584370278e354bc41
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60545050"
 ---
 # <a name="sfctl"></a>sfctl
@@ -27,7 +27,7 @@ ms.locfileid: "60545050"
 В командах используется шаблон "существительное — глагол". Дополнительные сведения см. в подгруппах.
 
 ## <a name="subgroups"></a>Подгруппы
-|Подгруппа|ОПИСАНИЕ|
+|Подгруппа|Описание|
 | --- | --- |
 | [application](service-fabric-sfctl-application.md) | Создание и удаление приложений и типов приложений, а также управление ими. |
 | [chaos](service-fabric-sfctl-chaos.md) | Запуск и остановка службы хаотического тестирования, а также вывод отчета о ее работе. |

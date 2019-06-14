@@ -18,10 +18,10 @@ ms.date: 10/25/2018
 ms.author: joflore
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a77cf89b7697b7b6b08dead34339ae50dbba8518
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60296322"
 ---
 # <a name="settings-and-data-roaming-faq"></a>Часто задаваемые вопросы о перемещении параметров и данных
@@ -75,8 +75,8 @@ ms.locfileid: "60296322"
 ## <a name="do-settings-sync-for-azure-ad-accounts-from-multiple-tenants"></a>Поддерживается ли синхронизация параметров для учетных записей Azure AD из нескольких клиентов?
 Если на устройстве есть несколько учетных записей Azure AD из разных клиентов Azure AD, то необходимо обновить реестр устройства, чтобы каждый клиент Azure AD смог обмениваться данными со службой Azure Rights Management.  
 
-1. Найдите идентификатор GUID для каждого клиента Azure AD. Перейдите на портал Azure и выберите клиент Azure AD. Идентификатор GUID для клиента можно найти на странице свойств выбранного клиента (https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Properties)). Он снабжен меткой **Идентификатор каталога**. 
-2. После того, как найден GUID, необходимо добавить раздел реестра **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\SettingSync\WinMSIPC\<GUID_клиента>**.
+1. Найдите идентификатор GUID для каждого клиента Azure AD. Перейдите на портал Azure и выберите клиент Azure AD. Идентификатор GUID для клиента можно найти на странице свойств выбранного клиента (https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Properties) ). Он снабжен меткой **Идентификатор каталога**. 
+2. После того, как найден GUID, необходимо добавить раздел реестра **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\SettingSync\WinMSIPC\<GUID_клиента>** .
    Из раздела **GUID_клиента** создайте новое многострочное значение (REG-MULTI-SZ) **AllowedRMSServerUrls**. В качестве его данных укажите URL-адреса точек распространения лицензий других клиентов Azure, к которым обращается устройство.
 3. Чтобы получить URL-адреса точек распространения лицензий, выполните командлет **Get-AadrmConfiguration** из модуля AADRM. Если значения **LicensingIntranetDistributionPointUrl** и **LicensingExtranetDistributionPointUrl** отличаются, укажите оба эти значения. Если значения совпадают, достаточно указать значение один раз.
 

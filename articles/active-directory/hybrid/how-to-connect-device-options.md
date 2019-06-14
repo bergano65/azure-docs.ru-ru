@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b8f397401581cc1bc947f1b19ce248c17fba26f4
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: MT
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60245604"
 ---
 # <a name="azure-ad-connect-device-options"></a>Azure AD Connect выполняет следующие функции: Параметры устройств
@@ -35,7 +35,7 @@ ms.locfileid: "60245604"
     ![Настройка параметров устройств](./media/how-to-connect-device-options/deviceoptions.png) 
 
     На странице **Обзор** приводятся подробные сведения.
-    ![Обзор](./media/how-to-connect-device-options/deviceoverview.png)
+    ![Обзор набора средств Visual Studio для Unity](./media/how-to-connect-device-options/deviceoverview.png)
 
     >[!NOTE]
     > Новая функция настройки параметров устройств доступна только в версии 1.1.819.0 и более поздних.

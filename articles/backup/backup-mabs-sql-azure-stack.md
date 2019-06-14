@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 6/8/2018
 ms.author: adigan
 ms.openlocfilehash: fb064c39fa014515fb2a3f4ccc96ce216f2f7b2e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60254476"
 ---
 # <a name="back-up-sql-server-on-stack"></a>Резервное копирование SQL Server в Stack
@@ -41,7 +41,7 @@ ms.locfileid: "60254476"
 
     ![Выбор типа для группы защиты — «Серверы»](./media/backup-azure-backup-sql/pg-servers.png)
 
-4. На экране **Выбор элементов группы** в списке "Доступные элементы" показаны различные источники данных. Щелкните элемент **+**, чтобы развернуть папку и отобразить подпапки. Установите флажок, чтобы выбрать нужный элемент.
+4. На экране **Выбор элементов группы** в списке "Доступные элементы" показаны различные источники данных. Щелкните элемент **+** , чтобы развернуть папку и отобразить подпапки. Установите флажок, чтобы выбрать нужный элемент.
 
     ![Выбор базы данных SQL](./media/backup-azure-backup-sql/pg-databases.png)
 

@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 03/01/2019
 ms.author: erhopf
 ms.openlocfilehash: 90bc2bf4c207f3bb2727d76c2e6b4fd5597539b1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60336786"
 ---
 # <a name="authenticate-requests-to-azure-cognitive-services"></a>Проверка подлинности запросов к Azure Cognitive Services
@@ -34,7 +34,7 @@ ms.locfileid: "60336786"
 
 Давайте кратко рассмотрим заголовки проверки подлинности, которые доступны для использования с Azure Cognitive Services.
 
-| Верхний колонтитул | ОПИСАНИЕ |
+| Верхний колонтитул | Описание |
 |--------|-------------|
 | Ocp-Apim-Subscription-Key | Используйте этот заголовок для проверки подлинности по ключу подписки для конкретной службы или для нескольких служб. |
 | Ocp-Apim-Subscription-Region | Этот заголовок является обязательным, только если используется ключ подписки для нескольких служб с [API перевода текстов](./Translator/reference/v3-0-reference.md). Используйте этот заголовок, чтобы указать регион подписки. |

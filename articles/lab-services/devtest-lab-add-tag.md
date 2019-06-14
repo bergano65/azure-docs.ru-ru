@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 04/17/2018
 ms.author: spelluru
 ms.openlocfilehash: e4d9aeb527461cc7292235fef1de0abdfa4242bd
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60311374"
 ---
 # <a name="add-tags-to-a-lab-in-azure-devtest-labs"></a>Добавление тегов в лабораторию в Azure DevTest Labs
@@ -29,9 +29,9 @@ ms.locfileid: "60311374"
 
 * вычислительные виртуальные машины;
 * сетевые карты;
-* IP-адреса;
+* IP-адреса
 * Балансировщики нагрузки
-* учетные записи хранения;
+* Учетные записи хранения
 * Управляемые диски
 
 Теги можно применить при [создании лаборатории](devtest-lab-create-lab.md), а затем управлять ими, используя колонку "Теги" в разделе параметров и конфигурации.

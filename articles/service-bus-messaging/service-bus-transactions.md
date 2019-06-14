@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 09/22/2018
 ms.author: aschhab
 ms.openlocfilehash: a839a4cad824a74bde388317cf3aaddf9c5bd47f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60332352"
 ---
 # <a name="overview-of-service-bus-transaction-processing"></a>Обзор обработки транзакций в служебной шине
@@ -37,8 +37,8 @@ ms.locfileid: "60332352"
 
 Далее приведены операции, которые могут выполняться в области транзакций.
 
-* **[QueueClient](/dotnet/api/microsoft.azure.servicebus.queueclient), [MessageSender](/dotnet/api/microsoft.azure.servicebus.core.messagesender), [TopicClient](/dotnet/api/microsoft.azure.servicebus.topicclient)**: Send, SendAsync, SendBatch, SendBatchAsync 
-* **[BrokeredMessage](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage)**: Complete, CompleteAsync, Abandon, AbandonAsync, Deadletter, DeadletterAsync, Defer, DeferAsync, RenewLock, RenewLockAsync 
+* **[QueueClient](/dotnet/api/microsoft.azure.servicebus.queueclient), [MessageSender](/dotnet/api/microsoft.azure.servicebus.core.messagesender), [TopicClient](/dotnet/api/microsoft.azure.servicebus.topicclient)** : Send, SendAsync, SendBatch, SendBatchAsync 
+* **[BrokeredMessage](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage)** : Complete, CompleteAsync, Abandon, AbandonAsync, Deadletter, DeadletterAsync, Defer, DeferAsync, RenewLock, RenewLockAsync 
 
 Операции получения не указаны, так как предполагается, что приложение получает сообщения с помощью режима [ReceiveMode.PeekLock](/dotnet/api/microsoft.azure.servicebus.receivemode), внутри некоторого цикла получения или с помощью с обратного вызова [OnMessage](/dotnet/api/microsoft.servicebus.messaging.queueclient.onmessage) и только затем открывает область транзакций для обработки сообщения.
 
@@ -52,7 +52,7 @@ ms.locfileid: "60332352"
 
 ### <a name="see-it-in-code"></a>Пример кода
 
-Для настройки таких передач вы создаете отправитель сообщений, сориентированный на очередь назначения через очередь передачи. Также есть получатель, который извлекает сообщения из той же очереди. Например: 
+Для настройки таких передач вы создаете отправитель сообщений, сориентированный на очередь назначения через очередь передачи. Также есть получатель, который извлекает сообщения из той же очереди. Пример:
 
 ```csharp
 var connection = new ServiceBusConnection(connectionString);

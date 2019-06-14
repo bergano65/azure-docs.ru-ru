@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 06/27/2018
 ms.author: mamccrea
 ms.openlocfilehash: c57550a8b683ad8f184884374c4f09216417fc40
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60236348"
 ---
 # <a name="connect-to-azure-databricks-from-excel-python-or-r"></a>Подключение к Azure Databricks из Excel, Python или R
@@ -54,7 +54,7 @@ ms.locfileid: "60236348"
 
     В следующей таблице содержатся сведения о значениях, которые необходимо указать в диалоговом окне.
     
-    |Поле  | Value  |
+    |Поле  | Значение  |
     |---------|---------|
     |**Имя источника данных**     | Укажите имя источника данных.        |
     |**Узлы**     | Укажите скопированное из рабочей области Databricks значение *имени узла сервера*.        |

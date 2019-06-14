@@ -4,12 +4,12 @@ ms.service: virtual-machines-linux
 ms.topic: include
 ms.date: 11/25/2018
 ms.author: cynthn
-ms.openlocfilehash: 94f662cea5f20485659a7b93549b758fdd7770f6
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 25e67a5a6c3abebbac2e0489ff636ca1457b62ea
+ms.sourcegitcommit: f9448a4d87226362a02b14d88290ad6b1aea9d82
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61476274"
+ms.lasthandoff: 06/07/2019
+ms.locfileid: "66807732"
 ---
 Когда диск данных, подключенный к виртуальной машине, больше не нужен, его можно легко отключить. При отсоединении диска от виртуальной машины он не удаляется из хранилища. Если вы хотите снова использовать существующие данные на диске, его можно легко повторно подключить как к той же самой, так и к другой виртуальной машине.  
 

@@ -14,10 +14,10 @@ ms.topic: conceptual
 ms.date: 01/23/2018
 ms.author: v-jysur
 ms.openlocfilehash: 64769ebb1bd9a5fb0f051cc6eca4e59cd41fccc9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60395022"
 ---
 # <a name="create-service-manager-web-app-using-the-automated-script"></a>Создание веб-приложения Service Manager с помощью автоматизированного скрипта
@@ -28,7 +28,7 @@ ms.locfileid: "60395022"
 
 - сведения о подписке Azure;
 - Имя группы ресурсов
-- Location
+- Расположение
 - сведения о сервере Service Manager (имя сервера, домен, имя пользователя и пароль);
 - префикс имени сайта для веб-приложения;
 - пространство имен ServiceBus.

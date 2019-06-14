@@ -15,10 +15,10 @@ ms.topic: troubleshooting
 ms.date: 10/31/2018
 ms.author: genli
 ms.openlocfilehash: 769305cc3d838832f8f445ac9623a1724603f968
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60307937"
 ---
 # <a name="azure-performance-diagnostics-vm-extension-for-windows"></a>Расширение виртуальной машины для диагностики производительности Azure для Windows
@@ -69,9 +69,9 @@ ms.locfileid: "60307937"
 
 |   **Имя**   |**Значение и пример**|       **Описание**      |
 |--------------|-------------------|----------------------------|
-|версия_API|2015-06-15|Версия API.
+|apiVersion|2015-06-15|Версия API.
 |publisher|Microsoft.Azure.Performance.Diagnostics|Пространство имен издателя для расширения.
-|Тип|AzurePerformanceDiagnostics|Тип расширения виртуальной машины.
+|type|AzurePerformanceDiagnostics|Тип расширения виртуальной машины.
 |typeHandlerVersion|1.0|Версия обработчика расширения.
 |performanceScenario|basic|Сценарий производительности, для которого требуется собрать данные. Допустимые значения: **basic**, **vmslow**, **azurefiles** и **custom**.
 |traceDurationInSeconds|300|Длительность трассировки, если выбран любой из параметров трассировки.
@@ -113,7 +113,7 @@ ms.locfileid: "60307937"
 Чтобы удалить расширение с виртуальной машины, сделайте следующее:
 
 1. Войдите на [портал Azure](https://portal.azure.com), выберите виртуальную машину, из которой вы хотите удалить расширение, а затем выберите колонку **Расширения**. 
-2. Выберите (**...**) из списка строки для расширения системы диагностики производительности, а затем выберите **Удалить**.
+2. Выберите ( **...** ) из списка строки для расширения системы диагностики производительности, а затем выберите **Удалить**.
 
     ![Снимок экрана: колонка "Расширения" с выделенным пунктом меню "Удалить"](media/performance-diagnostics-vm-extension/uninstall-the-extension.png)
 
@@ -234,7 +234,7 @@ Set-AzVMExtension -ExtensionName "AzurePerformanceDiagnostics" `
 
 ## <a name="view-and-share-the-results"></a>Просмотр результатов и предоставление к ним общего доступа
 
-Выходные данные расширения можно найти в ZIP-файле, который передается в учетную запись хранения, указанную во время установки. Его можно совместно использовать на протяжении 30 дней с помощью [подписанного URL-адреса (SAS)](../../storage/common/storage-dotnet-shared-access-signature-part-1.md). Этот ZIP-файл содержит журналы диагностики и отчет с результатами и рекомендациями. Ссылка SAS на ZIP-файл с выходными данными содержится в текстовом файле с именем *zipfilename*_saslink.txt в папке **C:\Packages\Plugins\Microsoft.Azure.Performance.Diagnostics.AzurePerformanceDiagnostics\\\<version>**. Любой пользователь, у которого есть эта ссылка, может скачать ZIP-файл.
+Выходные данные расширения можно найти в ZIP-файле, который передается в учетную запись хранения, указанную во время установки. Его можно совместно использовать на протяжении 30 дней с помощью [подписанного URL-адреса (SAS)](../../storage/common/storage-dotnet-shared-access-signature-part-1.md). Этот ZIP-файл содержит журналы диагностики и отчет с результатами и рекомендациями. Ссылка SAS на ZIP-файл с выходными данными содержится в текстовом файле с именем *zipfilename*_saslink.txt в папке **C:\Packages\Plugins\Microsoft.Azure.Performance.Diagnostics.AzurePerformanceDiagnostics\\\<version>** . Любой пользователь, у которого есть эта ссылка, может скачать ZIP-файл.
 
 Чтобы помочь сотрудникам службы поддержки, которые работают над вашим запросом, корпорация Майкрософт может использовать ссылку SAS для скачивания данных диагностики.
 
