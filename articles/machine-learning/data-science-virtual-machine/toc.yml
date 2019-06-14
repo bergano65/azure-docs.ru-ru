@@ -9,7 +9,7 @@
       href: deep-learning-dsvm-overview.md
     - name: Что такое Geo AI Data Science VM?
       href: geo-ai-dsvm-overview.md
-- name: Быстрое начало работы
+- name: Краткие руководства
   expanded: true
   items:
     - name: Создание виртуальной машины Windows для обработки и анализа данных
@@ -30,7 +30,7 @@
       href: dsvm-deep-learning-ai-frameworks.md
     - name: Машинное обучение и инструменты обработки и анализа данных
       href: dsvm-ml-data-science-tools.md
-    - name: Languages
+    - name: Языки
       href: dsvm-languages.md
     - name: Инструменты разработки
       href: dsvm-tools-development.md
@@ -65,11 +65,10 @@
 - name: Ресурсы
   items:
     - name: "Руководство по разработке на\_R"
-      href: /azure/architecture/data-guide/technology-choices/r-developers-guide
-      maintainContext: true
+      href: /azure/architecture/data-guide/technology-choices/r-developers-guide?context=azure/machine-learning/data-science-virtual-machine/context/ml-context
     - name: Блог
       href: 'https://blogs.technet.microsoft.com/machinelearning/tag/dsvm/'
     - name: Форум MSDN
       href: 'https://social.microsoft.com/Forums/en-US/home?forum=dsvm'
-    - name: Переполнение стека
+    - name: Stack Overflow
       href: 'https://stackoverflow.com/search?q=dsvm'

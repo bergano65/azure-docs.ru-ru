@@ -80,30 +80,23 @@
       href: environment-setup.md
       items:
         - name: Учетные записи хранения Azure
-          href: ../../storage/common/storage-create-storage-account.md
-          maintainContext: true
+          href: /azure/storage/common/storage-create-storage-account?context=azure/machine-learning/team-data-science-process/context/ml-context
         - name: Платформы и инструменты
           href: platforms-and-tools.md
         - name: Использование R и Python в кластерах HDInsight
           items:
             - name: Общие сведения о Spark в HDInsight
-              href: ../../hdinsight/spark/apache-spark-overview.md
-              maintainContext: true
+              href: /azure/hdinsight/spark/apache-spark-overview?context=azure/machine-learning/team-data-science-process/context/ml-context
             - name: Создание кластера Apache Spark в Azure HDInsight
-              href: ../../hdinsight/spark/apache-spark-jupyter-spark-sql.md
-              maintainContext: true
+              href: /azure/hdinsight/spark/apache-spark-jupyter-spark-sql?context=azure/machine-learning/team-data-science-process/context/ml-context
             - name: Программные ядра PySpark для записной книжки Jupyter
-              href: ../../hdinsight/spark/apache-spark-jupyter-notebook-kernels.md
-              maintainContext: true
+              href: /azure/hdinsight/spark/apache-spark-jupyter-notebook-kernels?context=azure/machine-learning/team-data-science-process/context/ml-context
             - name: R Server в HDInsight
-              href: ../../hdinsight/r-server/r-server-overview.md
-              maintainContext: true
+              href: /azure/hdinsight/r-server/r-server-overview?context=azure/machine-learning/team-data-science-process/context/ml-context
             - name: Приступая к работе с R Server в HDInsight
-              href: ../../hdinsight/r-server/r-server-get-started.md
-              maintainContext: true
+              href: /azure/hdinsight/r-server/r-server-get-started?context=azure/machine-learning/team-data-science-process/context/ml-context
         - name: Рабочая область службы "Машинное обучение Azure"
-          href: ../studio/create-workspace.md
-          maintainContext: true
+          href: /azure/machine-learning/studio/create-workspace?context=azure/machine-learning/team-data-science-process/context/ml-context
     - name: Анализ потребностей бизнеса
       items:
         - name: Определение своего сценария
@@ -124,8 +117,7 @@
                 - name: Использование AzCopy
                   href: move-data-to-azure-blob-using-azcopy.md
                 - name: Использование Python
-                  href: ../../storage/blobs/storage-python-how-to-use-blob-storage.md
-                  maintainContext: true
+                  href: /azure/storage/blobs/storage-python-how-to-use-blob-storage?context=azure/machine-learning/team-data-science-process/context/ml-context
                 - name: Использование SSIS
                   href: move-data-to-azure-blob-using-ssis.md
             - name: Перемещение данных в SQL на виртуальной машине
@@ -193,11 +185,9 @@
         - name: Создание и обучение моделей
           items:
             - name: Выбор алгоритмов
-              href: ../studio/algorithm-choice.md
-              maintainContext: true
+              href: /azure/machine-learning/studio/algorithm-choice?context=azure/machine-learning/team-data-science-process/context/ml-context
             - name: Памятка по алгоритмам
-              href: ../studio/algorithm-cheat-sheet.md
-              maintainContext: true
+              href: /azure/machine-learning/studio/algorithm-cheat-sheet?context=azure/machine-learning/team-data-science-process/context/ml-context
     - name: Развертывание моделей в рабочей среде
       href: deploy-models-in-production.md
 - name: Сопутствующие материалы
@@ -246,7 +236,7 @@
       items:
         - name: Форум MSDN
           href: 'https://social.msdn.microsoft.com/forums/azure/home?forum=MachineLearning'
-        - name: Переполнение стека
+        - name: Stack Overflow
           href: 'https://stackoverflow.com/questions/tagged/azure-machine-learning'
-        - name: Видеоролики
+        - name: Видео
           href: 'https://azure.microsoft.com/resources/videos/index/?services=machine-learning'

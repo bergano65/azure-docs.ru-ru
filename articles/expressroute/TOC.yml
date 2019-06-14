@@ -50,13 +50,15 @@
           href: ../networking/connectivty-interoperability-preface.md?toc=%2fazure%2fexpressroute%2ftoc.json
         - name: Параметры конфигурации для настройки теста
           href: ../networking/connectivty-interoperability-configuration.md?toc=%2fazure%2fexpressroute%2ftoc.json
-        - name: Анализ на уровне управления
+        - name: Анализ в плоскости управления
           href: ../networking/connectivty-interoperability-control-plane.md?toc=%2fazure%2fexpressroute%2ftoc.json
         - name: Анализ на уровне данных
           href: ../networking/connectivty-interoperability-data-plane.md?toc=%2fazure%2fexpressroute%2ftoc.json
     - name: Возможность подключения нескольких сетей
       href: cross-network-connectivity.md
-- name: Инструкции
+    - name: Общие атрибуты безопасности Azure
+      href: expressroute-security-attributes.md
+- name: Практические руководства
   items:
     - name: Создание и изменение канала
       items:

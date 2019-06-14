@@ -1,0 +1,79 @@
+- name: Azure
+  tocHref: /azure/
+  topicHref: /azure/index
+  items:
+    - name: Машинное обучение
+      tocHref: /azure/storage/
+      topicHref: /azure/machine-learning/index
+      items:
+        - name: Процесс обработки и анализа данных группы
+          tocHref: /azure/storage/
+          topicHref: /azure/machine-learning/team-data-science-process/index
+          items:
+            - name: Хранилище
+              tocHref: /azure/storage/blobs/
+              topicHref: /azure/storage/index
+              items:
+                - name: Большие двоичные объекты
+                  tocHref: /azure/storage/blobs/
+                  topicHref: /azure/storage/blobs/index
+            - name: Хранилище
+              tocHref: /azure/storage/common/
+              topicHref: /azure/storage/index
+              items:
+                - name: Большие двоичные объекты
+                  tocHref: /azure/storage/common/
+                  topicHref: /azure/storage/blobs/index
+- name: Azure
+  tocHref: /studio/
+  topicHref: /azure/index
+  items:
+    - name: Машинное обучение
+      tocHref: /azure/machine-learning/
+      topicHref: /azure/machine-learning/index
+      items:
+        - name: Процесс обработки и анализа данных группы
+          tocHref: /azure/machine-learning/
+          topicHref: /azure/machine-learning/team-data-science-process/index
+          items:
+            - name: Студия
+              tocHref: /azure/machine-learning/studio/
+              topicHref: /azure/machine-learning/studio/index
+- name: Azure
+  tocHref: /azure/
+  topicHref: /azure/index
+  items:
+    - name: Машинное обучение
+      tocHref: /azure/hdinsight/
+      topicHref: /azure/machine-learning/index
+      items:
+        - name: Процесс обработки и анализа данных группы
+          tocHref: /azure/hdinsight/spark/
+          topicHref: /azure/machine-learning/team-data-science-process/index
+          items:
+            - name: HDInsight
+              tocHref: /azure/hdinsight/spark/
+              topicHref: /azure/hdinsight/index
+              items:
+                - name: Spark
+                  tocHref: /azure/hdinsight/spark/
+                  topicHref: /azure/hdinsight/spark/index
+- name: Azure
+  tocHref: /azure/
+  topicHref: /azure/index
+  items:
+    - name: Машинное обучение
+      tocHref: /azure/hdinsight/
+      topicHref: /azure/machine-learning/index
+      items:
+        - name: Процесс обработки и анализа данных группы
+          tocHref: /azure/hdinsight/spark/
+          topicHref: /azure/machine-learning/team-data-science-process/index
+          items:
+            - name: HDInsight
+              tocHref: /azure/hdinsight/spark/
+              topicHref: /azure/hdinsight/index
+              items:
+                - name: Службы машинного обучения
+                  tocHref: /azure/hdinsight/r-server/
+                  topicHref: /azure/hdinsight/r-server/index

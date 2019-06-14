@@ -6,10 +6,9 @@
     - name: Студия машинного обучения
       displayName: overview
       href: what-is-ml-studio.md
-    - name: Сравнить наши продукты Машинного обучения
-      href: /azure/architecture/data-guide/technology-choices/data-science-and-machine-learning
-      maintainContext: true
-- name: Учебники
+    - name: Сравнение наших продуктов Машинного обучения
+      href: /azure/architecture/data-guide/technology-choices/data-science-and-machine-learning?context=azure/machine-learning/studio/context/ml-context
+- name: Руководства
   items:
     - name: Создание первого эксперимента
       displayName: quickstart
@@ -51,7 +50,7 @@
       items:
         - name: Создание
           href: create-workspace.md
-        - name: управление
+        - name: Управление
           href: manage-workspace.md
         - name: Устранение неполадок
           href: troubleshooting-creating-ml-workspace.md
@@ -182,7 +181,7 @@
       href: support-aml-studio.md
     - name: Стратегия развития Azure
       href: 'https://azure.microsoft.com/roadmap/'
-    - name: Доступ по регионам
+    - name: Доступность по регионам
       href: 'https://azure.microsoft.com/regions/services/'
     - name: Цены
       href: 'https://azure.microsoft.com/pricing/details/machine-learning/'

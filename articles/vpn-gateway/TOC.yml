@@ -4,7 +4,7 @@
   items:
     - name: Основные сведения о VPN-шлюзах Azure
       href: vpn-gateway-about-vpngateways.md
-- name: Учебники
+- name: Руководства
   items:
     - name: Создание и администрирование VPN-шлюза
       href: vpn-gateway-tutorial-create-gateway-powershell.md
@@ -38,10 +38,12 @@
           href: ../networking/connectivty-interoperability-preface.md?toc=%2fazure%2fvpn-gateway%2ftoc.json
         - name: Параметры конфигурации для настройки теста
           href: ../networking/connectivty-interoperability-configuration.md?toc=%2fazure%2fvpn-gateway%2ftoc.json
-        - name: Анализ на уровне управления
+        - name: Анализ в плоскости управления
           href: ../networking/connectivty-interoperability-control-plane.md?toc=%2fazure%2fvpn-gateway%2ftoc.json
-        - name: Анализ на уровне данных
+        - name: Анализ в плоскости данных
           href: ../networking/connectivty-interoperability-data-plane.md?toc=%2fazure%2fvpn-gateway%2ftoc.json
+    - name: Атрибуты безопасности
+      href: vpn-gateway-security-attributes.md
 - name: Практические руководства
   items:
     - name: Создание и администрирование VPN-шлюза
@@ -160,7 +162,7 @@
               href: vpn-gateway-about-forced-tunneling.md
         - name: Настройка транзита шлюза для пиринга виртуальных сетей
           href: vpn-gateway-peering-gateway-transit.md
-    - name: 'Изменение шлюза локальной сети '
+    - name: Изменение шлюза локальной сети
       items:
         - name: Портал Azure
           href: vpn-gateway-modify-local-network-gateway-portal.md
@@ -251,5 +253,5 @@
       href: 'https://azure.microsoft.com/pricing/calculator/'
     - name: Соглашение об уровне обслуживания
       href: 'https://azure.microsoft.com/support/legal/sla'
-    - name: Видеоролики
+    - name: Видео
       href: 'https://azure.microsoft.com/documentation/videos/index/?services=vpn-gateway'

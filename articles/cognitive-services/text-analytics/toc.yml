@@ -8,6 +8,7 @@
     - name: Примеры пользовательских сценариев
       href: text-analytics-user-scenarios.md
 - name: Краткие руководства
+  expanded: true
   items:
     - name: "REST\_API"
       items:
@@ -33,6 +34,8 @@
           href: quickstarts/go-sdk.md
         - name: Ruby
           href: quickstarts/ruby-sdk.md
+        - name: Node.js
+          href: quickstarts/nodejs-sdk.md
 - name: Руководства
   items:
     - name: "Интеграция Power\_BI для анализа отзывов пользователей"
