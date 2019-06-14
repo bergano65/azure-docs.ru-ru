@@ -15,10 +15,10 @@ ms.workload: infrastructure-services
 ms.date: 04/02/2018
 ms.author: ajaycode
 ms.openlocfilehash: 77cacd7f94d8ddd92fcd7383d2d0a7929734eaeb
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60401414"
 ---
 # <a name="pricing-changes-for-azure-network-performance-monitor"></a>Изменения в ценообразовании для Монитора производительности сети Azure
@@ -32,7 +32,7 @@ ms.locfileid: "60401414"
 
 В следующих разделах описываются изменения в ценообразовании для компонентов NPM.
 
-## <a name="performance-monitor"></a>Мониторинг производительности
+## <a name="performance-monitor"></a>Системный монитор
 
 **Как оплачивалось использование мониторинга производительности в прежней модели?**
 
@@ -117,7 +117,7 @@ ms.locfileid: "60401414"
 
 Ознакомьтесь с разделом о [мониторинге подключения](https://azure.microsoft.com/pricing/details/network-watcher/), чтобы узнать о стоимости использования мониторинга конечной точки в месяц. Для Log Analytics плата за данные доступна на [странице цен](https://azure.microsoft.com/pricing/details/log-analytics/) в разделе о приеме данных.
 
-## <a name="references"></a>Ссылки
+## <a name="references"></a>Справочники
 
 [Цены на Log Analytics.](https://azure.microsoft.com/pricing/details/log-analytics/) В разделе с часто задаваемыми вопросами содержатся сведения об уровнях "Бесплатный", "На узел" и другие сведения о ценообразовании.
 

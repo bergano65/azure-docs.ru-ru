@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 11/17/2015
 ms.author: mbullwin
 ms.openlocfilehash: 3c0decaa89b4ecc503157a32fcb1e5b4d249ccfb
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60254634"
 ---
 # <a name="using-powershell-to-set-up-application-insights-for-an-azure-web-app"></a>Настройка Application Insights для веб-приложения Azure с помощью PowerShell
@@ -49,7 +49,7 @@ ms.locfileid: "60254634"
 * `myWebAppName` — идентификатор веб-приложения.
 
 ## <a name="enable-diagnostics-extension-as-part-of-deploying-a-cloud-service"></a>Включение расширения диагностики как части развертывания облачной службы
-Параметр `ExtensionConfiguration` командлета `New-AzureDeployment` принимает массив значений для конфигурации диагностики. Их можно создать с помощью командлета `New-AzureServiceDiagnosticsExtensionConfig` . Например: 
+Параметр `ExtensionConfiguration` командлета `New-AzureDeployment` принимает массив значений для конфигурации диагностики. Их можно создать с помощью командлета `New-AzureServiceDiagnosticsExtensionConfig` . Пример:
 
 ```ps
 

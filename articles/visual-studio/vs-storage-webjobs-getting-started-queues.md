@@ -13,10 +13,10 @@ ms.topic: article
 ms.date: 12/02/2016
 ms.author: ghogen
 ms.openlocfilehash: f6f1a3a7f0a406e1dbb40f4bfc6a358da7ac68fa
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60391235"
 ---
 # <a name="getting-started-with-azure-queue-storage-and-visual-studio-connected-services-webjob-projects"></a>Приступая к работе с подключенными службами хранилища очередей Azure и Visual Studio (проекты веб-заданий)
@@ -216,7 +216,7 @@ public static void CreateQueueMessage(
 Пакет SDK автоматически выполняет сериализацию объекта в формат JSON. Сообщение очереди создается всегда, даже если объект имеет значение null.
 
 ### <a name="create-multiple-messages-or-in-async-functions"></a>Создание нескольких сообщений или сообщений в асинхронных функциях
-Чтобы создать несколько сообщений, установите для очереди вывода тип параметра **ICollector<T>** или **IAsyncCollector<T>**, как показано в следующем примере.
+Чтобы создать несколько сообщений, установите для очереди вывода тип параметра **ICollector<T>** или **IAsyncCollector<T>** , как показано в следующем примере.
 
 ```csharp
 public static void CreateQueueMessages(
@@ -342,7 +342,7 @@ logQueue.AddMessage(queueMessage);
 ### <a name="automatic-poison-message-handling"></a>Автоматическая обработка сообщений
 Пакет SDK вызывает функцию обработки сообщения очереди до 5 раз. В случае сбоя во время пятой попытки сообщение перемещается в очередь подозрительных сообщений. Как настроить максимальное число повторных попыток описывается в разделе [Установка параметров конфигурации](#how-to-set-configuration-options).
 
-Очередь подозрительных сообщений называется *{originalqueuename}*-poison. Можно написать функции для обработки сообщений из очереди подозрительных сообщений путем внесения их в журнал или отправки уведомления о необходимости ручного вмешательства.
+Очередь подозрительных сообщений называется *{originalqueuename}* -poison. Можно написать функции для обработки сообщений из очереди подозрительных сообщений путем внесения их в журнал или отправки уведомления о необходимости ручного вмешательства.
 
 В следующем примере функция **CopyBlob** завершится ошибкой, если сообщение очереди содержит имя несуществующего большого двоичного объекта. В таком случае сообщение перемещается из очереди copyblobqueue в очередь copyblobqueue-poison. Затем функция **ProcessPoisonMessage** записывает подозрительное сообщение в журнал.
 
@@ -544,7 +544,7 @@ public static void WriteLog(
 
 ![Переключить выходные данные](./media/vs-storage-webjobs-getting-started-queues/dashboardapplogs.png)
 
-Журналы приложений для непрерывных веб-заданий находятся по пути data/jobs/continuous/*{имя_веб-задания}*/job_log.txt в файловой системе веб-приложения.
+Журналы приложений для непрерывных веб-заданий находятся по пути data/jobs/continuous/ *{имя_веб-задания}* /job_log.txt в файловой системе веб-приложения.
 
         [09/26/2014 21:01:13 > 491e54: INFO] Console.Write - Hello world!
         [09/26/2014 21:01:13 > 491e54: ERR ] Console.Error - Hello world!

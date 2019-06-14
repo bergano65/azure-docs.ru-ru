@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 11/27/2018
 ms.author: mayg
 ms.openlocfilehash: d227b8d038dd686bde9b031ca2c58adc7dd6d76b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60718127"
 ---
 # <a name="overview-of-multi-tenant-support-for-vmware-disaster-recovery-to-azure-with-csp"></a>Общие сведения о поддержке мультитенантности для аварийного восстановления VMware в Azure с помощью CSP
@@ -91,8 +91,8 @@ ms.locfileid: "60718127"
 
 >| Object | Роль | Примечания |
 >| --- | --- | --- |
->| vCenter | Только чтение | Эта роль используется, только чтобы предоставить vCenter доступ для управления разными объектами. Если эту учетную запись не планируют предоставлять клиенту или использовать для любых операций управления на сервере vCenter, это разрешение можно удалить. |
->| Datacenter | Azure_Site_Recovery |  |
+>| vCenter | Только для чтения | Эта роль используется, только чтобы предоставить vCenter доступ для управления разными объектами. Если эту учетную запись не планируют предоставлять клиенту или использовать для любых операций управления на сервере vCenter, это разрешение можно удалить. |
+>| Центр обработки данных | Azure_Site_Recovery |  |
 >| Узел и кластер узлов | Azure_Site_Recovery | Предоставляет доступ на уровне объектов, чтобы перед отработкой отказа и после восстановления размещения виртуальные машины клиента имели доступ только к этим узлам. |
 >| Хранилище данных и кластер хранилища данных | Azure_Site_Recovery | То же, что и выше. |
 >| Сеть | Azure_Site_Recovery |  |

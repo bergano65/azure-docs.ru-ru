@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 03/11/2019
 ms.author: diberry
 ms.openlocfilehash: 383ce4c4248f7e21f745f503c74a29cb613983e2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60813991"
 ---
 # <a name="prediction-scores-indicate-prediction-accuracy-for-intent-and-entities"></a>Оценки прогнозирования отражают точность прогнозирования намерения и сущностей
@@ -24,10 +24,10 @@ ms.locfileid: "60813991"
 
 Оценка прогнозирования находится в диапазоне от нуля (0) до единицы (1). Пример оценки прогнозирования LUIS с высокой степенью достоверности — 0,99. Пример оценки прогнозирования LUIS с низкой достоверностью — 0,01. 
 
-|Значение оценки|Достоверность|
+|Значение оценки|Confidence|
 |--|--|
 |1|Точное соответствие|
-|0.99|Высокая степень достоверности|
+|0,99|Высокая степень достоверности|
 |0,01|Низкая степень достоверности|
 |0|Точное несоответствие|
 

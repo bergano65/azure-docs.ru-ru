@@ -10,10 +10,10 @@ ms.date: 03/05/2019
 ms.topic: conceptual
 manager: carmonm
 ms.openlocfilehash: 7a3990366814beda83852fc7c07c896445388c23
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60737165"
 ---
 # <a name="azure-automation-runbook-types"></a>Типы модулей Runbook в службе автоматизации Azure
@@ -69,7 +69,7 @@ ms.locfileid: "60737165"
 Ниже перечислены проблемы с модулями Runbook PowerShell, известные на данный момент.
 
 * Модули Runbook PowerShell не могут извлечь незашифрованный [переменный ресурс](automation-variables.md) со значением NULL.
-* Модули Runbook PowerShell не имеют возможности извлекать [ресурс переменной](automation-variables.md), в имени которого есть символ *~*.
+* Модули Runbook PowerShell не имеют возможности извлекать [ресурс переменной](automation-variables.md), в имени которого есть символ *~* .
 * Модуль Get-Process в цикле в модуле Runbook PowerShell может аварийно завершить работу после примерно 80 итераций.
 * Модуль Runbook PowerShell может завершиться ошибкой, если попытается записать слишком большой объем данных в поток вывода за один раз.   Обычно эту проблему можно обойти, выводя при работе с большими объектами только необходимые данные.  Например, вместо использования метода *Get-Process* можно вывести только требуемые поля, указав *Get-Process | Select ProcessName, CPU*.
 

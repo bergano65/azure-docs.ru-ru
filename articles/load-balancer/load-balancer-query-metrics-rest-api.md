@@ -12,10 +12,10 @@ ms.topic: article
 ms.date: 06/06/2017
 ms.author: KumudD
 ms.openlocfilehash: 9f5206ef5348ee8fd7b3fe981a9cfe4afc1367fb
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60734547"
 ---
 # <a name="get-load-balancer-utilization-metrics-using-the-rest-api"></a>Получение метрик использования Load Balancer с помощью REST API
@@ -38,8 +38,8 @@ GET https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 
 |Заголовок запроса|Описание|  
 |--------------------|-----------------|  
-|*Content-Type:*|Обязательный. Задайте значение `application/json`.|  
-|*Authorization:*|Обязательный. Задайте в качестве значения [допустимый токен доступа](/rest/api/azure/#authorization-code-grant-interactive-clients) `Bearer`. |  
+|*Content-Type:*|Обязательный элемент. Задайте значение `application/json`.|  
+|*Authorization:*|Обязательный элемент. Задайте в качестве значения [допустимый токен доступа](/rest/api/azure/#authorization-code-grant-interactive-clients) `Bearer`. |  
 
 ### <a name="uri-parameters"></a>Параметры универсального кода ресурса (URI)
 

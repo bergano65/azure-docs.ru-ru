@@ -15,10 +15,10 @@ ms.date: 03/20/2017
 ms.author: bwren
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: ef1af4d3d27bc098341a4de716e293557baa946a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60595810"
 ---
 # <a name="design-and-build-a-management-solution-in-azure-preview"></a>Проектирование и сборка решения по управлению в Azure (предварительная версия)
@@ -34,7 +34,7 @@ ms.locfileid: "60595810"
 Основная стратегия заключается в том, что решение по управлению запускается при создании отдельных компонентов в среде Azure.  Если все компоненты работают правильно, вы можете упаковать их в [файл решения по управлению]( solutions-solution-file.md). 
 
 
-## <a name="design-your-solution"></a>Создайте свое решение
+## <a name="design-your-solution"></a>Разработка решения
 Самый распространенный шаблон для решения по управлению показан на следующей схеме.  Разные компоненты этого шаблона описываются ниже.
 
 ![Обзор решения для управления](media/solutions-creating/solution-overview.png)

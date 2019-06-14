@@ -16,10 +16,10 @@ ms.date: 09/14/2017
 ms.author: markvi
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 1cb96f4aaef461d049ca496780d542ad7db229e2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60307766"
 ---
 # <a name="configure-managed-identities-for-azure-resources-on-an-azure-vm-using-a-templates"></a>Настройка управляемых удостоверений для ресурсов Azure на виртуальной машине Azure с помощью шаблонов
@@ -32,7 +32,7 @@ ms.locfileid: "60307766"
 
 ## <a name="prerequisites"></a>Технические условия
 
-- Если вы еще не использовали шаблоны развертывания Azure Resource Manager, прочитайте этот [обзор](overview.md). **Обратите внимание на [различие между управляемыми удостоверениями, назначаемыми системой и назначаемыми пользователями](overview.md#how-does-it-work)**.
+- Если вы еще не использовали шаблоны развертывания Azure Resource Manager, прочитайте этот [обзор](overview.md). **Обратите внимание на [различие между управляемыми удостоверениями, назначаемыми системой и назначаемыми пользователями](overview.md#how-does-it-work)** .
 - Если у вас нет учетной записи Azure, [зарегистрируйтесь для получения бесплатной пробной учетной записи](https://azure.microsoft.com/free/), прежде чем продолжать.
 
 ## <a name="azure-resource-manager-templates"></a>Шаблоны Azure Resource Manager

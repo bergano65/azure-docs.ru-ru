@@ -16,10 +16,10 @@ ms.date: 07/11/2017
 ms.author: celested
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 2fcb77fe257a1b99525d009a1756a473e7e61a5d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60291897"
 ---
 # <a name="how-to-configure-federated-single-sign-on-for-a-non-gallery-application"></a>Настройка федеративного единого входа для приложения не из коллекции
@@ -79,7 +79,7 @@ ms.locfileid: "60291897"
 
     2. Нажмите кнопку **Сохранить**. Новый атрибут появится в таблице.
 
-14. Щелкните **Настроить &lt;имя приложения&gt;**, чтобы открыть документацию по настройке единого входа для приложения. Кроме того, у вас есть URL-адреса Azure AD и сертификат, необходимые для приложения.
+14. Щелкните **Настроить &lt;имя приложения&gt;** , чтобы открыть документацию по настройке единого входа для приложения. Кроме того, у вас есть URL-адреса Azure AD и сертификат, необходимые для приложения.
 
 15. [Назначение пользователей для приложения.](#assign-users-to-the-application)
 

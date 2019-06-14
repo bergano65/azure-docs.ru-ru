@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 04/17/2019
 ms.author: magoedte
 ms.openlocfilehash: 66fc55d8c3dbb8487d1e796d5f30b08a94f717f6
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60494783"
 ---
 # <a name="how-to-query-logs-from-azure-monitor-for-containers"></a>Как запрашивать данные журналов из Azure Monitor для контейнеров
@@ -53,7 +53,7 @@ Azure Monitor для контейнеров собирает метрики пр
 ### <a name="example-log-search-queries"></a>Примеры запросов для поиска по журналам
 При создании запросов часто бывает полезно начать с одного-двух примеров, внося затем в них изменения в соответствии со своими требованиями. Можно поэкспериментировать с приведенными ниже примерами запросов, чтобы научиться создавать более сложные запросы.
 
-| Запрос | ОПИСАНИЕ | 
+| Запрос | Описание | 
 |-------|-------------|
 | ContainerInventory<br> &#124; project Computer, Name, Image, ImageTag, ContainerState, CreatedTime, StartedTime, FinishedTime<br> &#124; render table | Вывод всех сведений о жизненном цикле контейнера| 
 | KubeEvents_CL<br> &#124; where not(isempty(Namespace_s))<br> &#124; sort by TimeGenerated desc<br> &#124; render table | События Kubernetes|

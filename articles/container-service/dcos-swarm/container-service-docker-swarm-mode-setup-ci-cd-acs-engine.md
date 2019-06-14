@@ -10,10 +10,10 @@ ms.date: 05/27/2017
 ms.author: diegomrtnzg
 ms.custom: mvc
 ms.openlocfilehash: 8aa62e4ed65f8223071786ac165f8343cb6901d5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60430671"
 ---
 # <a name="deprecated-full-cicd-pipeline-to-deploy-a-multi-container-application-on-azure-container-service-with-acs-engine-and-docker-swarm-mode-using-azure-devops"></a>(УСТАРЕЛО) Реализация полного конвейера CI/CD для многоконтейнерного приложения в Службе контейнеров Azure с обработчиком ACS и Docker Swarm Mode при помощи Azure DevOps
@@ -197,7 +197,7 @@ Azure DevOps позволяет [управлять выпусками в раз
 
 ### <a name="initial-release-setup"></a>Начальная настройка выпуска
 
-1. Чтобы создать конвейер выпуска, щелкните **Выпуски** > **+ Release** (+ Выпуск).
+1. Чтобы создать конвейер выпуска, щелкните **Выпуски** >  **+ Release** (+ Выпуск).
 
 2. Чтобы настроить источник артефакта, выберите **Артефакты** > **Link an artifact source** (Связать источник артефакта). Свяжите этот новый конвейер выпуска со сборкой, указанной на предыдущем шаге. После этого файл docker-compose.yml появится в процессе выпуска.
 

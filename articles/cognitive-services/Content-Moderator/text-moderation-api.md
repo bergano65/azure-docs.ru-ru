@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 01/10/2019
 ms.author: sajagtap
 ms.openlocfilehash: 5a1007f2408b48c96f5eeaf585b94c8caa7ceb45
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60607123"
 ---
 # <a name="learn-text-moderation-concepts"></a>Изучение концепций модерации текста
@@ -67,7 +67,7 @@ ms.locfileid: "60607123"
         }
     }
 
-### <a name="explanation"></a>Пояснение
+### <a name="explanation"></a>Объяснение
 
 - `Category1` обозначает потенциальное наличие лексики, которая в некоторых обстоятельствах может считаться сексуально откровенной или предназначенной только для взрослых.
 - `Category2` обозначает потенциальное наличие лексики, которая в некоторых обстоятельствах может считаться сексуально окрашенной или не предназначенной для детей.

@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 06/20/2018
 ms.author: dlap
 ms.openlocfilehash: bb186ab2700b147bee3a7dd81474409ccafb76fc
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60607924"
 ---
 # <a name="trusted-internet-connections-guidance"></a>Руководство по доверенным интернет-соединениям
@@ -153,7 +153,7 @@ Azure предоставляет несколько способов аудит�
 |Управляемый экземпляр Базы данных SQL Azure   | Общедоступная предварительная версия   |
 |Служба Azure Kubernetes (AKS)        | Общедоступная предварительная версия   |
 |Azure Service Fabric                  | GA               |
-|Cлужба управления Azure API                   | GA               |
+|Cлужба управления Azure API                  | GA               |
 |Azure Active Directory                | GA               |
 |Пакетная служба Azure                           | GA               |
 |Среда службы приложений               | GA               |

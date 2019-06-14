@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 05/08/2018
 ms.author: jomolesk
 ms.openlocfilehash: 1ba5b813843ce2f5d31f337ab4d3d94e521b0e0c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60586140"
 ---
 # <a name="azure-security-and-compliance-blueprint-iaas-web-application-for-fedramp"></a>Схема безопасности и соответствия требованиям Azure. Веб-приложение IaaS для FedRAMP
@@ -59,7 +59,7 @@ ms.locfileid: "60586140"
     - (1) Виртуальные сети размером в /16.
     - (5) Подсети размером в /24.
     - Параметры DNS настроены на двух контроллерах доменов.
-- Балансировщик нагрузки Azure
+- Azure Load Balancer
 - Шлюз приложений Azure
     - (1) Включенный шлюз приложений с брандмауэром веб-приложения:
         - режим брандмауэра — предотвращение;
@@ -68,8 +68,8 @@ ms.locfileid: "60586140"
 - Хранилище Azure
     - (7) Учетная запись хранения для геоизбыточного хранилища.
 - Облако-свидетель Azure.
-- Хранилище служб восстановления
-- Хранилище Azure Key Vault
+- Хранилище Служб восстановления
+- Хранилище ключей Azure
 - Azure Active Directory (Azure AD)
 - Azure Resource Manager
 - Azure Monitor (журналы)
@@ -137,7 +137,7 @@ ms.locfileid: "60586140"
 - [брандмауэр веб-приложения](https://docs.microsoft.com/azure/application-gateway/application-gateway-web-application-firewall-overview) (режим WAF);
 - [режим предотвращения](https://docs.microsoft.com/azure/application-gateway/application-gateway-web-application-firewall-portal) с набором правил OWASP 3.0.
 
-### <a name="business-continuity"></a>Непрерывная работа
+### <a name="business-continuity"></a>Непрерывность бизнес-процессов
 
 **Высокий уровень доступности**. Во время планового или внепланового технического обслуживания доступна как минимум одна виртуальная машина, что соответствует соглашению об уровне обслуживания Azure, гарантирующему доступность в течение 99,95 % времени. Решение позволяет развернуть все виртуальные машины веб-уровня и уровня данных в [группе доступности](https://docs.microsoft.com/azure/virtual-machines/windows/tutorial-availability-sets). Группа доступности распределяет виртуальные машины между несколькими изолированными аппаратными кластерами, чтобы повысить уровень доступности. Более того, это решение позволяет развернуть виртуальные машины SQL Server в группе доступности в качестве [группы доступности AlwaysOn](https://docs.microsoft.com/azure/virtual-machines/windows/sql/virtual-machines-windows-portal-sql-availability-group-overview). Группа доступности Always On предоставляет возможности, обеспечивающие высокий уровень доступности, и возможности аварийного восстановления.
 
@@ -164,7 +164,7 @@ ms.locfileid: "60586140"
 -   [Журналы действий Azure](https://docs.microsoft.com/azure/log-analytics/log-analytics-activity). Решение "Аналитика журнала действий" помогает анализировать журналы действий Azure во всех подписках Azure для клиента.
 -   [Отслеживание изменений](https://docs.microsoft.com/azure/log-analytics/log-analytics-activity). Решение "Отслеживание изменений" позволяет клиентам легко определять изменения в среде.
 
-**Azure Monitor.**
+**Azure Monitor.** 
 [Azure Monitor](https://docs.microsoft.com/azure/monitoring-and-diagnostics/) помогает пользователям отслеживать производительность, поддерживать безопасность и выявлять тенденции. Решение предоставляет организациям возможность аудита, создания оповещений и архивации данных, включая отслеживание вызовов API в ресурсах Azure клиентов.
 
 ## <a name="threat-model"></a>Модель рисков

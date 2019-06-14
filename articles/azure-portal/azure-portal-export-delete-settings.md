@@ -11,10 +11,10 @@ ms.custom: ''
 manager: mtillman
 ms.author: kfollis
 ms.openlocfilehash: fde7ffbaa3ef4d47eea48302a99948932aeb4f00
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60551673"
 ---
 # <a name="export-or-delete-user-settings"></a>Экспорт или удаление параметров пользователя
@@ -42,7 +42,7 @@ ms.locfileid: "60551673"
 
       В следующей таблице описаны эти действия.
 
-      | Действие | ОПИСАНИЕ |
+      | Действие | Описание |
       | --- | --- |
       | **Export all settings** (Экспортировать все параметры) | Создает JSON-файл, содержащий настройки пользователя, как цветовая тема, Избранное и частные панели мониторинга.|
       | **Delete all settings and private dashboards** (Удалить все параметры и частные панели мониторинга) | Удаляет все ссылки на частные панели мониторинга и другие пользовательские настройки, сделанные на портал. |

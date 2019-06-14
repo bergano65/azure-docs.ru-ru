@@ -13,10 +13,10 @@ ms.reviewer: vanto
 manager: craigg
 ms.date: 10/08/2018
 ms.openlocfilehash: ccb78e201b90dfc27f52523348e76da57087bcc8
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60614182"
 ---
 # <a name="using-multi-factor-aad-authentication-with-azure-sql-database-and-azure-sql-data-warehouse-ssms-support-for-mfa"></a>С помощью AAD многофакторной проверки подлинности базы данных SQL Azure и хранилище данных SQL Azure (поддержка SSMS для MFA)
@@ -70,7 +70,7 @@ Azure MFA помогает защитить доступ к данным и пр
 
 - Инструкции по настройке см. в разделе [Настройка Многофакторной идентификации Базы данных SQL Azure для SQL Server Management Studio](sql-database-ssms-mfa-authentication-configure.md).
 - Предоставьте другим пользователям доступ к базе данных: [Контроль и предоставление доступа к Базе данных SQL и Хранилищу данных SQL](sql-database-manage-logins.md)  
-- Убедитесь, что другие пользователи могут подключаться через брандмауэр. [Создание и управление правилами брандмауэра уровня сервера базы данных SQL Azure с помощью портала Azure](sql-database-configure-firewall-settings.md)  
+- Убедитесь, что другие пользователи могут подключаться через брандмауэр. [Создание и управление правилами брандмауэра уровня сервера Базы данных SQL Azure с помощью портала Azure](sql-database-configure-firewall-settings.md)  
 - [Настройка аутентификации Azure Active Directory и управление ею с использованием базы данных SQL или хранилища данных SQL](sql-database-aad-authentication-configure.md)  
 - [Платформа приложения уровня данных Microsoft® SQL Server® (17.0.0 GA)](https://www.microsoft.com/download/details.aspx?id=55088)  
 - [SQLPackage.exe](https://docs.microsoft.com/sql/tools/sqlpackage)  

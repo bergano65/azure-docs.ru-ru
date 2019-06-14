@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 11/14/2018
 ms.author: apimpm
 ms.openlocfilehash: bc791fea1dfd184749e84cb7b7a912972c6a9f12
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60657625"
 ---
 # <a name="create-subscriptions-in-azure-api-management"></a>Создание подписок в службе управления API Azure
@@ -33,7 +33,7 @@ ms.locfileid: "60657625"
 + [Создание экземпляра службы управления API Azure](get-started-create-service-instance.md).
 + Общие сведения о [подписках в службе управления API](api-management-subscriptions.md).
 
-## <a name="create-a-new-subscription"></a>Создать подписку
+## <a name="create-a-new-subscription"></a>Создание подписки
 
 1. Выберите **Подписки** в меню слева.
 2. Выберите **Добавить подписку**.

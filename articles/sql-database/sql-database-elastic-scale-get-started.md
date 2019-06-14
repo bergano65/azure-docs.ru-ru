@@ -13,10 +13,10 @@ ms.reviewer: sstein
 manager: craigg
 ms.date: 01/25/2019
 ms.openlocfilehash: 7c2e3b2bea7ddef3dfbf69f85b499d9a60158689
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60585020"
 ---
 # <a name="get-started-with-elastic-database-tools"></a>Начало работы с инструментами эластичных баз данных
@@ -84,7 +84,7 @@ ms.locfileid: "60585020"
 
 1. Скачайте образец [Elastic DB Tools for Azure SQL — Getting Started](https://code.msdn.microsoft.com/windowsapps/Elastic-Scale-with-Azure-a80d8dc6) (Инструменты эластичной базы данных SQL Azure — приступая к работе) с сайта MSDN. Распакуйте пример в выбранное расположение.
 
-2. Чтобы создать проект, откройте решение *ElasticScaleStarterKit.sln* из каталога *C#*.
+2. Чтобы создать проект, откройте решение *ElasticScaleStarterKit.sln* из каталога *C#* .
 
 3. В решении для примера проекта откройте файл *app.config*. Следуйте приведенным там указаниям, чтобы добавить имя сервера Базы данных SQL Azure и учетные данные (имя пользователя и пароль).
 

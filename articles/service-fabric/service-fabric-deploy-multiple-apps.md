@@ -15,13 +15,13 @@ ms.workload: NA
 ms.date: 02/23/2018
 ms.author: mikhegn
 ms.openlocfilehash: 69df9eff85d96c9cc6ca7fa1d3aabd2c54fae416
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60583871"
 ---
-# <a name="deploy-multiple-guest-executables"></a>Развертывание нескольких гостевых приложений
+# <a name="deploy-multiple-guest-executables"></a>Развертывание нескольких пользовательских приложений
 В этой статье показано, как упаковать и развернуть несколько гостевых исполняемых файлов в Azure Service Fabric. Чтобы выполнить сборку и развертывание отдельного пакета Service Fabric вручную, ознакомьтесь с [развертыванием гостевого исполняемого файла в Service Fabric](service-fabric-deploy-existing-app.md).
 
 Хотя в этом пошаговом руководстве показано, как развернуть приложение с клиентом Node.js и MongoDB в качестве хранилища данных, эти действия можно применить к любому приложению, которое зависит от другого приложения.   

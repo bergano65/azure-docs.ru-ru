@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 04/02/2019
 ms.author: anroth
 ms.openlocfilehash: 1ee6edbf49bbcd2014afcf29ed3b737168a3b5bc
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60816748"
 ---
 # <a name="use-your-model-with-the-prediction-api"></a>Использование модели с помощью API-интерфейса прогнозирования
@@ -137,7 +137,7 @@ ms.locfileid: "60816748"
 В этом руководстве вы узнали, как отправлять изображения для пользовательского образа классификатора/средства обнаружения и получение ответа программным образом с помощью C# пакета SDK. Узнайте, как для выполнения сценариев end-to-end с C#, или приступить к использованию на другом языке SDK.
 
 * [Краткое руководство: Пакет SDK для .NET](csharp-tutorial.md)
-* [Краткое руководство. Пакет SDK для Python](python-tutorial.md)
-* [Краткое руководство. Java SDK](java-tutorial.md)
-* [Краткое руководство. Пакет SDK для node](node-tutorial.md)
-* [Краткое руководство. Пакет SDK для go](go-tutorial.md)
+* [Краткое руководство Пакет SDK для Python](python-tutorial.md)
+* [Краткое руководство Java SDK](java-tutorial.md)
+* [Краткое руководство Пакет SDK для node](node-tutorial.md)
+* [Краткое руководство Пакет SDK для go](go-tutorial.md)

@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 01/23/2017
 ms.author: genli
 ms.openlocfilehash: ef6aac0d97c38798f826304475779ea8059875c7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60848559"
 ---
 # <a name="get-started-creating-an-internal-load-balancer-classic-using-powershell"></a>Приступая к созданию внутреннего балансировщика нагрузки (классическая модель) с помощью PowerShell
@@ -61,7 +61,7 @@ Add-AzureInternalLoadBalancer -ServiceName $svc -InternalLoadBalancerName $ilb �
 
 ### <a name="step-2-add-endpoints-to-the-internal-load-balancing-instance"></a>Шаг 2. Добавление конечных точек в экземпляр внутренней подсистемы балансировки нагрузки
 
-Вот пример: 
+Вот пример:
 
 ```powershell
 $svc="mytestcloud"
@@ -86,7 +86,7 @@ $svc="<Cloud Service Name>"
 Get-AzureService -ServiceName $svc | Get-AzureInternalLoadBalancer
 ```
 
-Чтобы использовать эти команды, заполните значения и удалите символы < и >. Вот пример: 
+Чтобы использовать эти команды, заполните значения и удалите символы < и >. Вот пример:
 
 ```powershell
 $svc="mytestcloud"
@@ -147,7 +147,7 @@ Get-AzureVM -ServiceName $svc -Name $vmname | Remove-AzureEndpoint -Name $epname
 
 Чтобы использовать эти команды, заполните значения и удалите символы < и >.
 
-Вот пример: 
+Вот пример:
 
 ```powershell
 $svc="mytestcloud"
@@ -165,7 +165,7 @@ Remove-AzureInternalLoadBalancer -ServiceName $svc
 
 Чтобы использовать эти команды, заполните значения и удалите символы < и >.
 
-Вот пример: 
+Вот пример:
 
 ```powershell
 $svc="mytestcloud"

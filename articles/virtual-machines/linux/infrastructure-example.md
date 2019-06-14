@@ -17,10 +17,10 @@ ms.date: 12/15/2017
 ms.author: cynthn
 ms.custom: H1Hack27Feb2017
 ms.openlocfilehash: 00357641f51be703d2e5c52c5b9cc6187ce05ff6
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60543075"
 ---
 # <a name="example-azure-infrastructure-walkthrough-for-linux-vms"></a>Пошаговое руководство по примеру инфраструктуры Azure для виртуальных машин Linux
@@ -55,8 +55,8 @@ Adventure Works Cycles хочет создать приложение интер
 * В Adventure Works Cycles используется префикс **[рабочая нагрузка ИТ-среды]-[расположение]-[ресурс Azure]** .
   * Например, **azos** (интернет-магазин Azure) — это имя рабочей нагрузки ИТ-среды, а **use** (восточная часть США 2) — это расположение.
 * Для виртуальных сетей используется формат AZOS-USE-VN<strong>[номер]</strong>.
-* Для групп доступности используется формат azos-use-as-**[роль]**.
-* Для имен виртуальных машин используется формат use azos-use-vm-**[имя_виртуальной_машины]**.
+* Для групп доступности используется формат azos-use-as- **[роль]** .
+* Для имен виртуальных машин используется формат use azos-use-vm- **[имя_виртуальной_машины]** .
 
 ## <a name="azure-subscriptions-and-accounts"></a>Подписки и учетные записи Azure
 Компания Adventure Works Cycles использует подписку Enterprise Subscription под названием "Adventure Works Enterprise Subscription" для выставления счетов за эту рабочую нагрузку ИТ-среды.
@@ -73,10 +73,10 @@ Adventure Works Cycles хочет создать приложение интер
 Облачная виртуальная сеть создана на портале Azure с указанием следующих параметров:
 
 * Имя: AZOS-USE-VN01
-* Расположение: Восток США 2
+* Расположение. Восток США 2
 * Диапазон адресов виртуальной сети: 10.0.0.0/8
 * Первая подсеть:
-  * Имя: Интерфейсный
+  * Имя: FrontEnd
   * Диапазон адресов: 10.0.1.0/24
 * Вторая подсеть:
   * Имя: BackEnd

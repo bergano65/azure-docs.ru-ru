@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 03/19/2019
 ms.author: mbaldwin
 ms.openlocfilehash: ecc87e03a80ce10bedbe26b3ebb452ec704eefcb
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60461371"
 ---
 # <a name="how-to-use-key-vault-soft-delete-with-powershell"></a>Как использовать обратимое удаление в Key Vault с помощью PowerShell
@@ -38,7 +38,7 @@ ms.locfileid: "60461371"
 
 Операции Key Vault контролируются отдельно, посредством разрешений управления доступом на основе ролей (RBAC). Это осуществляется следующим образом.
 
-| Операция | ОПИСАНИЕ | Разрешение пользователя |
+| Операция | Описание | Разрешение пользователя |
 |:--|:--|:--|
 |список|Выводит список удаленных хранилищ ключей.|Microsoft.KeyVault/deletedVaults/read|
 |Recover|Восстанавливает удаленное хранилище ключей.|Microsoft.KeyVault/vaults/write|
@@ -250,7 +250,7 @@ New-AzKeyVault -Name ContosoVault -ResourceGroupName ContosoRG -Location westus 
 Set-AzResource -resourceid $resource.ResourceId -Properties $resource.Properties
 ```
 
-## <a name="other-resources"></a>Другие ресурсы:
+## <a name="other-resources"></a>Другие ресурсы
 
 - Обзор функции обратимого удаления Key Vault см. в разделе [Общие сведения об обратимом удалении в Azure Key Vault](key-vault-ovw-soft-delete.md).
 - Общие сведения об использовании хранилища ключей Azure, см. в разделе [что такое хранилище ключей Azure?](key-vault-overview.md). ate = успешное выполнение}

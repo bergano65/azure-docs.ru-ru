@@ -16,10 +16,10 @@ ms.workload: infrastructure-services
 ms.date: 02/14/2018
 ms.author: cherylmc
 ms.openlocfilehash: e18f37b31b7f0a49717e174d8a20d56388ad4808
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60411837"
 ---
 # <a name="configure-a-vnet-to-vnet-vpn-gateway-connection-using-azure-cli"></a>Настройка подключения VPN-шлюза между виртуальными сетями с помощью Azure CLI
@@ -232,7 +232,7 @@ ms.locfileid: "60411837"
    "ipConfigurations":
    ```
 
-   Скопируйте значения в кавычках после **"id":**.
+   Скопируйте значения в кавычках после **"id":** .
 
    ```
    "id": "/subscriptions/d6ff83d6-713d-41f6-a025-5eb76334fda9/resourceGroups/TestRG1/providers/Microsoft.Network/virtualNetworkGateways/VNet1GW"
@@ -338,7 +338,7 @@ ms.locfileid: "60411837"
 
 ### <a name="connections5"></a>Шаг 8. Создание подключений
 
-Так как шлюзы находятся в разных подписках, мы разделили этот шаг на два сеанса интерфейса командной строки, обозначенные **[Подписка 1]** и **[Подписка 5]**. Для переключения между подписками `az account list --all` списка подписок, доступных в учетной записи, затем с помощью `az account set --subscription <subscriptionID>` переключиться на ту, которую вы хотите использовать.
+Так как шлюзы находятся в разных подписках, мы разделили этот шаг на два сеанса интерфейса командной строки, обозначенные **[Подписка 1]** и **[Подписка 5]** . Для переключения между подписками `az account list --all` списка подписок, доступных в учетной записи, затем с помощью `az account set --subscription <subscriptionID>` переключиться на ту, которую вы хотите использовать.
 
 1. **[Подписка 1].** Войдите в систему и подключитесь к подписке 1. Чтобы получить имя и идентификатор шлюза из выходных данных, выполните следующую команду:
 

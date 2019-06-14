@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 04/04/2019
 ms.author: apimpm
 ms.openlocfilehash: d22da92355616c208c7616b4b0e8c26b7f9e7006
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60658197"
 ---
 # <a name="how-to-deploy-an-azure-api-management-service-instance-to-multiple-azure-regions"></a>Развертывание экземпляра службы управления Azure API в различных регионах Azure
@@ -42,7 +42,7 @@ ms.locfileid: "60658197"
 
 Чтобы развернуть службу в новом регионе, щелкните **+ Add region** (+ Добавить регион) на панели инструментов.
 
-![Добавить регион][api-management-add-region]
+![Добавление региона][api-management-add-region]
 
 Выберите расположение из раскрывающегося списка и задайте число единиц с помощью ползунка.
 

@@ -12,10 +12,10 @@ author: gauravmalhot
 ms.author: gamal
 manager: craigg
 ms.openlocfilehash: 4bd38991b2452bdda65a7647f844dcc17fdfb125
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60786976"
 ---
 # <a name="templates"></a>Шаблоны
@@ -30,7 +30,7 @@ ms.locfileid: "60786976"
 
     ![Открытие коллекции шаблонов на странице Overview (Обзор)](media/solution-templates-introduction/templates-intro-image1.png)
 
-1.  На вкладке Author (Автор) в обозревателе ресурсов выберите **+**, затем **Pipeline from template** (Конвейер из шаблона), чтобы открыть коллекцию шаблонов.
+1.  На вкладке Author (Автор) в обозревателе ресурсов выберите **+** , затем **Pipeline from template** (Конвейер из шаблона), чтобы открыть коллекцию шаблонов.
 
     ![Открытие коллекции шаблонов на вкладке Author (Автор)](media/solution-templates-introduction/templates-intro-image2.png)
 

@@ -9,17 +9,17 @@ ms.topic: conceptual
 ms.date: 07/03/2017
 ms.author: robinsh
 ms.openlocfilehash: bd7cc37b8fc81fc9d4109826743f2243913d0604
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60735055"
 ---
 # <a name="configure-iot-hub-file-uploads-using-the-azure-portal"></a>Настройка отправки файлов Центра Интернета вещей с помощью портала Azure
 
 [!INCLUDE [iot-hub-file-upload-selector](../../includes/iot-hub-file-upload-selector.md)]
 
-## <a name="file-upload"></a>Отправка файла
+## <a name="file-upload"></a>Передача файла
 
 Чтобы использовать [функции передачи файлов в Центре Интернета вещей](iot-hub-devguide-file-upload.md), сначала необходимо связать учетную запись хранения Azure с центром. Выберите **Отправка файла**, чтобы отобразить список свойств передачи файлов для Центра Интернета вещей, который вы изменяете.
 

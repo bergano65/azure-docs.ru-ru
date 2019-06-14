@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 04/14/2019
 ms.author: ramamill
 ms.openlocfilehash: 35c317c4b73e9a22e3b0d6192abcfc2a596066b8
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60598267"
 ---
 # <a name="automate-mobility-service-installation-with-system-center-configuration-manager"></a>Автоматизация установки Mobility Service с помощью System Center Configuration Manager
@@ -172,7 +172,7 @@ IF NOT %ERRORLEVEL% EQU 0 (
 
    | **Имя параметра** | **Значение** |
    |--|--|
-   | ИМЯ | Установка Microsoft Azure Mobility Service (Windows) |
+   | Name | Установка Microsoft Azure Mobility Service (Windows) |
    | Командная строка | install.bat |
    | Программа может запускаться | Независимо от входа пользователя в систему |
 
@@ -191,7 +191,7 @@ IF NOT %ERRORLEVEL% EQU 0 (
 ### <a name="deploy-the-package"></a>Развертывание пакета
 1. В консоли Configuration Manager щелкните пакет правой кнопкой мыши и выберите команду **Распространить содержимое**.
    ![Снимок экрана с консолью Configuration Manager](./media/vmware-azure-mobility-install-configuration-mgr/sccm_distribute.png)
-2. Выберите **[Точки распространения](https://technet.microsoft.com/library/gg712321.aspx#BKMK_PlanForDistributionPoints)**, на которые следует скопировать эти пакеты.
+2. Выберите **[Точки распространения](https://technet.microsoft.com/library/gg712321.aspx#BKMK_PlanForDistributionPoints)** , на которые следует скопировать эти пакеты.
 3. Завершите работу мастера. Теперь пакет будет реплицироваться на выбранные точки распространения.
 4. Когда распространение пакета завершится, щелкните пакет правой кнопкой мыши и выберите **Развернуть**.
    ![Снимок экрана с консолью Configuration Manager](./media/vmware-azure-mobility-install-configuration-mgr/sccm_deploy.png)
@@ -210,7 +210,7 @@ IF NOT %ERRORLEVEL% EQU 0 (
 > [!TIP]
 > Чтобы избежать лишних перезагрузок, запланируйте установку пакета на период ежемесячного обслуживания или обновления программного обеспечения.
 
-Ход развертывания можно отслеживать с помощью консоли Configuration Manager. Последовательно выберите пункты **Мониторинг** > **Развертывания** > *[имя пакета]*.
+Ход развертывания можно отслеживать с помощью консоли Configuration Manager. Последовательно выберите пункты **Мониторинг** > **Развертывания** >  *[имя пакета]* .
 
   ![Снимок экрана с настройкой отслеживания расписания в Configuration Manager](./media/vmware-azure-mobility-install-configuration-mgr/report.PNG)
 
@@ -414,7 +414,7 @@ cd /tmp
 ### <a name="deploy-the-package"></a>Развертывание пакета
 1. В консоли Configuration Manager щелкните пакет правой кнопкой мыши и выберите команду **Распространить содержимое**.
    ![Снимок экрана с консолью Configuration Manager](./media/vmware-azure-mobility-install-configuration-mgr/sccm_distribute.png)
-2. Выберите **[Точки распространения](https://technet.microsoft.com/library/gg712321.aspx#BKMK_PlanForDistributionPoints)**, на которые следует скопировать эти пакеты.
+2. Выберите **[Точки распространения](https://technet.microsoft.com/library/gg712321.aspx#BKMK_PlanForDistributionPoints)** , на которые следует скопировать эти пакеты.
 3. Завершите работу мастера. Теперь пакет будет реплицироваться на выбранные точки распространения.
 4. Когда распространение пакета завершится, щелкните пакет правой кнопкой мыши и выберите **Развернуть**.
    ![Снимок экрана с консолью Configuration Manager](./media/vmware-azure-mobility-install-configuration-mgr/sccm_deploy.png)

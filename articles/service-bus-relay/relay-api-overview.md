@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 05/02/2018
 ms.author: spelluru
 ms.openlocfilehash: 05d7ac56d6c1c48125eb458d0eee852ba396b300
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60593341"
 ---
 # <a name="available-relay-apis"></a>Доступные интерфейсы API ретранслятора
@@ -31,9 +31,9 @@ ms.locfileid: "60593341"
 
 | Язык или платформа | Доступная функция | Пакет клиента | Репозиторий |
 | --- | --- | --- | --- |
-| .NET Standard | Гибридные подключения | [Microsoft.Azure.Relay](https://www.nuget.org/packages/Microsoft.Azure.Relay/) | [GitHub](https://github.com/azure/azure-relay-dotnet) |
+| .NET Standard | через гибридные подключения | [Microsoft.Azure.Relay](https://www.nuget.org/packages/Microsoft.Azure.Relay/) | [GitHub](https://github.com/azure/azure-relay-dotnet) |
 | .NET Framework | Ретранслятор WCF | [WindowsAzure.ServiceBus](https://www.nuget.org/packages/WindowsAzure.ServiceBus/) | Н/Д |
-| Узел | Гибридные подключения | [Подключения Websocket: `hyco-ws`](https://www.npmjs.com/package/hyco-ws)<br/>[Подключения Websocket: `hyco-websocket`](https://www.npmjs.com/package/hyco-websocket)<br/>[HTTP-запросы: `hyco-https`](https://www.npmjs.com/package/hyco-https) | [GitHub](https://github.com/Azure/azure-relay-node) |
+| Узел | через гибридные подключения | [Подключения Websocket: `hyco-ws`](https://www.npmjs.com/package/hyco-ws)<br/>[Подключения Websocket: `hyco-websocket`](https://www.npmjs.com/package/hyco-websocket)<br/>[HTTP-запросы: `hyco-https`](https://www.npmjs.com/package/hyco-https) | [GitHub](https://github.com/Azure/azure-relay-node) |
 
 ### <a name="additional-information"></a>Дополнительные сведения
 

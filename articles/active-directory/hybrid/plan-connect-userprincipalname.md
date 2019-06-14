@@ -11,10 +11,10 @@ ms.service: active-directory
 manager: daveba
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c198b329f07c5c7459f25165b2dc0a3bfa032276
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60382135"
 ---
 # <a name="azure-ad-userprincipalname-population"></a>Указание атрибута UserPrincipalName в Azure AD
@@ -25,7 +25,7 @@ ms.locfileid: "60382135"
 ## <a name="upn-terminology"></a>Терминология имени участника-пользователя
 В этом руководстве используется следующая терминология:
 
-|Термин|ОПИСАНИЕ|
+|Термин|Описание|
 |-----|-----|
 |Исходный домен|Домен по умолчанию (onmicrosoft.com) в клиенте Azure AD. Например, contoso.onmicrosoft.com.|
 |Адрес маршрутизации электронной почты Microsoft Online (MOERA)|В Azure AD MOERA определяется по атрибуту MailNickName Azure AD, а исходный домен Azure AD указывается в формате &lt;MailNickName&gt;@&lt;исходный домен&gt;.|

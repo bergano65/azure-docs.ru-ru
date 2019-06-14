@@ -13,10 +13,10 @@ ms.reviewer: mbullwin
 ms.date: 08/06/2018
 ms.author: cweining
 ms.openlocfilehash: 8ad472b9c92e3bc2164146191a63985fd26becab
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60306384"
 ---
 # <a name="profile-live-azure-cloud-services-with-application-insights"></a>Профилирование облачных служб реального времени Azure с помощью Application Insights
@@ -49,7 +49,7 @@ Application Insights Profiler поставляется с расширением
 
       Если вы не можете найти файл, см. статью [Настройка системы диагностики для облачных служб и виртуальных машин Azure](https://docs.microsoft.com/azure/vs-azure-tools-diagnostics-for-cloud-services-and-virtual-machines).
 
-    2. Добавьте следующий раздел `SinksConfig` в качестве дочернего элемента `WadCfg`:  
+    2\. Добавьте следующий раздел `SinksConfig` в качестве дочернего элемента `WadCfg`:  
 
       ```xml
       <WadCfg>

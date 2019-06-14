@@ -11,10 +11,10 @@ ms.reviewer: klam, divswa, LADocs
 ms.suite: integration
 tags: connectors
 ms.openlocfilehash: d677c0eae9c92f90783ed4ebd95a528b34c872ec
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60847482"
 ---
 # <a name="connect-to-sap-systems-from-azure-logic-apps"></a>Подключение к системам SAP из Azure Logic Apps
@@ -84,7 +84,7 @@ ms.locfileid: "60847482"
 
 1. В конструкторе приложений логики выберите под триггером пункты **Новый шаг** > **Добавить действие**.
 
-   ![Добавить действие](./media/logic-apps-using-sap-connector-old/add-action.png) 
+   ![Добавление действия](./media/logic-apps-using-sap-connector-old/add-action.png) 
 
 2. В поле поиска введите фильтр "sap server". В списке действий выберите действие для сервера SAP: 
 

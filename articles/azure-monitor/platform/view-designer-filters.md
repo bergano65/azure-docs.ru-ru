@@ -14,10 +14,10 @@ ms.topic: conceptual
 ms.date: 06/22/2018
 ms.author: bwren
 ms.openlocfilehash: 31a902302ba806889854330c6517d9f5745f1c0c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60551744"
 ---
 # <a name="filters-in-azure-monitor-views"></a>Фильтры в представлениях Azure Monitor
@@ -28,7 +28,7 @@ ms.locfileid: "60551744"
 
 ![Пример фильтра](media/view-designer-filters/filters-example-time.png)
 
-Щелкните **+**, чтобы добавить фильтр с помощью настраиваемых фильтров, определенных для представления. Выберите значение для фильтра в раскрывающемся списке или введите его самостоятельно. Продолжайте добавлять фильтры, щелкая **+**. 
+Щелкните **+** , чтобы добавить фильтр с помощью настраиваемых фильтров, определенных для представления. Выберите значение для фильтра в раскрывающемся списке или введите его самостоятельно. Продолжайте добавлять фильтры, щелкая **+** . 
 
 
 ![Пример фильтра](media/view-designer-filters/filters-example-custom.png)
@@ -44,7 +44,7 @@ ms.locfileid: "60551744"
 
 В следующей таблице описаны параметры фильтра.
 
-| Параметр | ОПИСАНИЕ |
+| Параметр | Описание |
 |:---|:---|
 | Имя поля | Имя поля, используемого для фильтрации.  Это поле должно соответствовать полю summarize в **запрос значений**. |
 | Запрос значений | Запрос, выполняемый для заполнения раскрывающегося списка фильтров для пользователя.  Этот запрос должен использовать либо [суммировать](/azure/kusto/query/summarizeoperator) или [distinct](/azure/kusto/query/distinctoperator) для предоставления уникальных значений для определенного поля и он должен соответствовать **имя поля**.  Можно использовать оператор [sort](/azure/kusto/query/sortoperator) для сортировки значений, отображаемых для пользователя. |
@@ -57,8 +57,8 @@ ms.locfileid: "60551744"
 | Имя поля | Запрос значений | Тег |
 |:--|:--|:--|
 | Computer   | Heartbeat &#124; distinct Computer &#124; sort by Computer asc | Компьютеры |
-| EventLevelName | Event &#124; distinct EventLevelName | Уровень серьезности |
-| SeverityLevel | Syslog &#124; distinct SeverityLevel | Уровень серьезности |
+| EventLevelName | Event &#124; distinct EventLevelName | Severity |
+| SeverityLevel | Syslog &#124; distinct SeverityLevel | Severity |
 | SvcChangeType | ConfigurationChange &#124; distinct svcChangeType | ChangeType |
 
 

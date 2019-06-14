@@ -11,17 +11,17 @@ ms.topic: conceptual
 ms.date: 03/23/2017
 ms.author: alch
 ms.openlocfilehash: 183a307159adb5dfdb248eb0cf4862462a626db6
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60498752"
 ---
 # <a name="conference-instance-entity"></a>Экземпляр сущности конференции
 
 <sub> *Следующие атрибуты относятся к экземпляру сущности конференции. (Ty = '4') </sub>
 
-Name    |ОПИСАНИЕ                            |type       | Операции
+ИМЯ    |Описание                            |type       | Операции
 ------- | ------------------------------------- | --------- | ----------------------------
 Идентификатор      |Идентификатор сущности                              |Int64      |Равно
 CIN     |Нормализованное имя экземпляра конференции ({ConferenceSeriesNormalizedName} {ConferenceInstanceYear})        |String     |Равно
@@ -43,6 +43,6 @@ ECC     |Общее количество подсчитанного цитиро
 
 ## <a name="extended-metadata-attributes"></a>Расширенные атрибуты метаданных ##
 
-Name    | ОПИСАНИЕ               
+Name    | Описание               
 --------|---------------------------    
 FN      | Полное имя экземпляра конференции

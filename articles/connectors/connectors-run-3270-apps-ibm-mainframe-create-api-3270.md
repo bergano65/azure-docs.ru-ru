@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 03/06/2019
 tags: connectors
 ms.openlocfilehash: 7388dc0c61dad9c31da0c178febcee4c8481bc50
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60538915"
 ---
 # <a name="integrate-3270-screen-driven-apps-on-ibm-mainframes-with-azure-by-using-azure-logic-apps-and-ibm-3270-connector"></a>Интеграция 3270 приложений на основе экрана на мэйнфреймах IBM с Azure с помощью соединителя Azure Logic Apps и IBM 3270
@@ -221,7 +221,7 @@ ms.locfileid: "60538915"
 
 * MSG-10
 * Добро пожаловать CICS
-* Очистить
+* Empty
 * WBGB_1 (ввода)
 * WBGB_2 (ошибка)
 * Empty_1
@@ -355,7 +355,7 @@ ms.locfileid: "60538915"
    ![Выберите действие 3270](./media/connectors-create-api-3270/select-3270-action.png)
 
    Чтобы добавить действие между шагами, переместите указатель на стрелку между шагами. 
-   Выберите появившийся знак "плюс" (**+**), а затем щелкните **Добавить действие**.
+   Выберите появившийся знак "плюс" ( **+** ), а затем щелкните **Добавить действие**.
 
 1. Если подключение не еще не создана, введите необходимую информацию для подключения и выберите **создать**.
 
@@ -373,7 +373,7 @@ ms.locfileid: "60538915"
    | **Проверяет узел SSL-сертификат?** | Нет | Включить или отключить | Включить или отключить проверку для сертификата сервера. |
    ||||
 
-   Пример.
+   Пример:
 
    ![Свойства подключения](./media/connectors-create-api-3270/connection-properties.png)
 
@@ -385,7 +385,7 @@ ms.locfileid: "60538915"
    | **Имя метода** | Да | <*Имя метода*> | Выберите метод в файле HIDX, который вы хотите использовать. После выбора метода **добавьте параметр** отобразится список, поэтому его можно выбрать параметры для использования с помощью этого метода. |
    ||||
 
-   Пример.
+   Пример:
 
    **Выберите файл HIDX**
 
@@ -393,7 +393,7 @@ ms.locfileid: "60538915"
 
    **Выбор метода**
 
-   ![Выбор метода](./media/connectors-create-api-3270/select-method.png)
+   ![Выбор метода](./media/connectors-create-api-3270/select-method.png)
 
    **Выбор параметров**
 

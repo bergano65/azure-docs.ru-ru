@@ -7,12 +7,12 @@ ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 07/07/2017
 ms.author: rajram
-ms.component: autoscale
+ms.subservice: autoscale
 ms.openlocfilehash: 0535c84a8ee0776c2c35a46d3c7510a2cd615cf6
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60788592"
 ---
 # <a name="get-started-with-autoscale-in-azure"></a>Начало работы с автомасштабированием в Azure
@@ -50,7 +50,7 @@ Azure Monitor дает возможность обнаружить все рес
 
     a. Щелкните **Добавить правило**.
 
-    2. Для параметра **Оператор** установите значение **Меньше, чем**.
+    2\. Для параметра **Оператор** установите значение **Меньше, чем**.
 
     c. Для параметра **Пороговое значение** задайте значение **20**.
 
@@ -88,7 +88,7 @@ Azure Monitor дает возможность обнаружить все рес
 ### <a name="view-the-scale-history-of-your-resource"></a>Просмотр журнала масштабирования ресурса
 Каждый раз, когда масштабируется ресурс, в журнале действий регистрируется событие. Вы можете просмотреть журнал масштабирования ресурса за последние 24 часа, открыв вкладку **Журнал запусков**.
 
-![Выполнения][11]
+![Журнал выполнения][11]
 
 Если вы хотите просмотреть полный журнал масштабирования (до 90 дней), выберите действие **Щелкните здесь, чтобы просмотреть дополнительные сведения**. Откроется журнал действий автомасштабирования, в котором уже выбраны нужный ресурс и категория.
 
@@ -133,3 +133,4 @@ Azure Monitor дает возможность обнаружить все рес
 [12]: ./media/autoscale-get-started/scale-definition-json.png
 [13]: ./media/autoscale-get-started/disable-autoscale.png
 [14]: ./media/autoscale-get-started/set-manualscale.png
+

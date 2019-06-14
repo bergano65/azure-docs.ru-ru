@@ -10,10 +10,10 @@ ms.assetid: 07830b36-2fe3-4809-a846-129cf67b6a9e
 ms.topic: conceptual
 ms.date: 06/18/2017
 ms.openlocfilehash: f2a4b98404139abead411c20648b82d9081481f9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60614987"
 ---
 # <a name="manage-azure-data-lake-analytics-using-a-java-app"></a>Управление Azure Data Lake Analytics с помощью приложения Java
@@ -33,7 +33,7 @@ ms.locfileid: "60614987"
 ## <a name="create-a-java-application"></a>Создание приложения Java
 1. Откройте IntelliJ и создайте проект Java с помощью шаблона **приложения командной строки**.
 2. Щелкните правой кнопкой мыши проект в левой части экрана и выберите пункт **Add Framework Support**(Добавить поддержку платформы). Выберите **Maven** и нажмите кнопку **ОК**.
-3. Откройте только что созданный файл **pom.xml** и добавьте следующий фрагмент текста между тегами **\<version>** и **\<project>**:
+3. Откройте только что созданный файл **pom.xml** и добавьте следующий фрагмент текста между тегами **\<version>** и **\<project>** :
 
 ```
 <repositories>

@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 01/15/2019
 ms.author: jegeib
 ms.openlocfilehash: bdf8b701567aaa3a0d9006333557bcec4f312723
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60586462"
 ---
 # <a name="threat-modeling-tool-ga-release-71509112---9122018"></a>Threat Modeling Tool, общедоступный выпуск 7.1.50911.2 от 12.09.2018
@@ -85,7 +85,7 @@ ms.locfileid: "60586462"
 
 ![Обновления набора элементов Azure в клиенте 2016](./media/azure-security-threat-modeling-tool-releases-71509112/tmt_azure_stencils-300x212.png)
 
-## <a name="system-requirements"></a>Системные требования
+## <a name="system-requirements"></a>Требования к системе
 
 - Поддерживаемые операционные системы
   - Microsoft Windows 10.

@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: twooley
 ms.openlocfilehash: bb67c1769510710b368bef4dc0b501f939b3427e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60879583"
 ---
 # <a name="use-azure-data-lake-storage-gen1-to-capture-data-from-event-hubs"></a>Сбор данных из Центров событий с помощью Azure Data Lake Storage 1-го поколения
@@ -49,7 +49,7 @@ ms.locfileid: "60879583"
 
     ![Назначение разрешений в корневой папке Data Lake Storage 1-го поколения](./media/data-lake-store-archive-eventhub-capture/data-lake-store-assign-permissions-to-root.png "Assign permissions for the Data Lake Storage Gen1 root")
 
-    2. В разделе **Доступ** выберите **Добавить**, щелкните **Выберите пользователя или группу**, а затем найдите `Microsoft.EventHubs`. 
+    2\. В разделе **Доступ** выберите **Добавить**, щелкните **Выберите пользователя или группу**, а затем найдите `Microsoft.EventHubs`. 
 
     ![Назначение разрешений в корневой папке Data Lake Storage 1-го поколения](./media/data-lake-store-archive-eventhub-capture/data-lake-store-assign-eventhub-sp.png "Assign permissions for the Data Lake Storage Gen1 root")
     
@@ -70,7 +70,7 @@ ms.locfileid: "60879583"
 
     ![Назначение разрешений в папке Data Lake Storage 1-го поколения](./media/data-lake-store-archive-eventhub-capture/data-lake-store-assign-permissions-to-folder.png "Assign permissions for the Data Lake Storage Gen1 folder")
 
-    2. В разделе **Доступ** выберите **Добавить**, щелкните **Выберите пользователя или группу**, а затем найдите `Microsoft.EventHubs`. 
+    2\. В разделе **Доступ** выберите **Добавить**, щелкните **Выберите пользователя или группу**, а затем найдите `Microsoft.EventHubs`. 
 
     ![Назначение разрешений в папке Data Lake Storage 1-го поколения](./media/data-lake-store-archive-eventhub-capture/data-lake-store-assign-eventhub-sp.png "Assign permissions for the Data Lake Storage Gen1 folder")
     
@@ -96,7 +96,7 @@ ms.locfileid: "60879583"
 
     a. Укажите имя концентратора событий.
     
-    2. В этом руководстве задайте для параметров **Количество разделов** и **Хранение сообщений** значения по умолчанию.
+    2\. В этом руководстве задайте для параметров **Количество разделов** и **Хранение сообщений** значения по умолчанию.
     
     c. Установите для параметра **Запись** значение **Включено**. Задайте **окно времени** (частота выполнения записи) и **окно размера** (размер данных для записи). 
     

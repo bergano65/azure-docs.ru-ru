@@ -2,18 +2,17 @@
 title: Управление приложениями Azure Service Fabric с помощью интерфейса командной строки Azure Service Fabric (sfctl)
 description: Узнайте, как развертывать приложения в кластере Azure Service Fabric и удалять их из него с помощью интерфейса командной строки Azure Service Fabric.
 services: service-fabric
-author: rockboyfor
-manager: digimobile
+author: Christina-Kang
+manager: chackdan
 ms.service: service-fabric
 ms.topic: conceptual
-origin.date: 07/31/2018
-ms.date: 04/29/2019
-ms.author: v-yeche
+ms.date: 07/31/2018
+ms.author: bikang
 ms.openlocfilehash: 9b0f785a6a43f984708645084a8a8036326d3d24
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60621383"
 ---
 # <a name="manage-an-azure-service-fabric-application-by-using-azure-service-fabric-cli-sfctl"></a>Управление приложениями Azure Service Fabric с помощью интерфейса командной строки Azure Service Fabric (sfctl)
@@ -171,5 +170,3 @@ sfctl application upgrade --app-id TestApp --app-version 2.0.0 --parameters "{\"
 * [Azure Service Fabric command line](service-fabric-cli.md) (Командная строка Azure Service Fabric)
 * [Подготовка среды разработки в Linux](service-fabric-get-started-linux.md)
 * [Обновление приложения Service Fabric](service-fabric-application-upgrade.md)
-
-<!--Update_Description: update meta properties -->

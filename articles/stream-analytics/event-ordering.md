@@ -9,10 +9,10 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 03/12/2019
 ms.openlocfilehash: 970eeb871775e24abb87c8b977e214645e514d3b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60789490"
 ---
 # <a name="configuring-event-ordering-policies-for-azure-stream-analytics"></a>Настройка событий, упорядочения политики для Azure Stream Analytics
@@ -73,7 +73,9 @@ ms.locfileid: "60789490"
 <br><code>
 {"message Time":"2/3/2019 8:54:16 PM UTC","message":"Input Partition [2] does not have additional data for more than [5] minute(s). Partition will not progress until either events arrive or late arrival threshold is met.","type":"InputPartitionNotProgressing","correlation ID":"2328d411-52c7-4100-ba01-1e860c757fc2"} 
 </code><br><br>
-Это сообщение, чтобы сообщить о том, что по крайней мере одну секцию в входных данных пуста и приведет к задержке выходных данных с поздним прибытия пороговое значение. Чтобы избежать этого, рекомендуется, вы либо: 1. Убедитесь, что все секции концентратора событий центра и Интернета вещей получения входных данных. 2. Используйте Partition by PartitionID предложение в запросе. 
+Это сообщение, чтобы сообщить о том, что по крайней мере одну секцию в входных данных пуста и приведет к задержке выходных данных с поздним прибытия пороговое значение. Чтобы избежать этого, рекомендуется, вы либо: 
+1. Убедитесь, что все секции концентратора событий центра и Интернета вещей получения входных данных. 
+2. Используйте Partition by PartitionID предложение в запросе. 
 
 ## <a name="next-steps"></a>Дальнейшие действия
 * [Рекомендации по обработке по времени](stream-analytics-time-handling.md)

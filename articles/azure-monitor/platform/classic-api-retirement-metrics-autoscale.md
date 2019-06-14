@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 11/19/2018
 ms.author: robb
 ms.openlocfilehash: ce54b63aa7831ed40a8592d536c43fc83fdc5567
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60709989"
 ---
 # <a name="azure-monitor-retirement-of-classic-deployment-model-apis-for-metrics-and-autoscale"></a>Прекращается поддержка API классической модели развертывания для метрик и автомасштабирования в Azure Monitor
@@ -79,7 +79,7 @@ ms.locfileid: "60709989"
 
 Для метрик: *Этот API не рекомендуется. Используйте портал Azure, пакет SDK для Azure Monitor, PowerShell или интерфейс командной строки для запрашивания метрик*".
 
-## <a name="email-notifications"></a>Уведомления по электронной почте
+## <a name="email-notifications"></a>Уведомления по почте
 
 Было отправлено уведомление о прекращении поддержки на электронные адреса для следующих ролей учетной записи: 
 
@@ -88,7 +88,7 @@ ms.locfileid: "60709989"
 
 Если у вас возникли какие-либо вопросы, пишите нам на адрес MonitorClassicAPIhelp@microsoft.com.  
 
-## <a name="references"></a>Ссылки
+## <a name="references"></a>Справочники
 
 - [Более новые REST API для Azure Monitor](https://docs.microsoft.com/rest/api/monitor/) 
 - [Более новый пакет SDK для Azure Monitor](https://www.nuget.org/packages/Microsoft.Azure.Management.Monitor/)

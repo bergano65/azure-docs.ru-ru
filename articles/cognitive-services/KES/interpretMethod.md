@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 03/26/2016
 ms.author: paulhsu
 ms.openlocfilehash: 88776e2f4167c950d60c0405dcf950b5173fb989
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60814133"
 ---
 # <a name="interpret-method"></a>Метод interpret
@@ -25,7 +25,7 @@ ms.locfileid: "60814133"
 
 `http://<host>/interpret?query=<query>[&<options>]`
 
-ИМЯ|Value| ОПИСАНИЕ
+Name|Значение| Описание
 ----|----|----
 query    | Текстовая строка | Запрос, введенный пользователем.  Если для параметра complete установлено значение 1, запрос будет интерпретироваться как префикс для создания автозавершения запросов.        
 complete | 0 (по умолчанию) или 1 | Значение 1 означает, что предложения автозавершения создаются на основе грамматики и данных индекса.         
@@ -37,7 +37,7 @@ timeout  | Число (по умолчанию — 1000) | Время ожида
 
 ## <a name="response-json"></a>Ответ (JSON)
 
-JSONPath     | ОПИСАНИЕ
+JSONPath     | Описание
 ---------|---------
 $.query |Параметр *query* из запроса.
 $.interpretations   |Массив, содержащий 0 или более способов сопоставления входного запроса и грамматики.

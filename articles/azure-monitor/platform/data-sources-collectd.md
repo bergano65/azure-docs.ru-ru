@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 11/27/2018
 ms.author: magoedte
 ms.openlocfilehash: 2118f137f2c0d32f891a170c3509bceee7ba13ed
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60764960"
 ---
 # <a name="collect-data-from-collectd-on-linux-agents-in-azure-monitor"></a>Сбор данных CollectD с помощью агентов Linux в Azure Monitor
@@ -114,7 +114,7 @@ ms.locfileid: "60764960"
 |:--|:--|
 | `host` | Computer |
 | `plugin` | Нет |
-| `plugin_instance` | Имя экземпляра<br>Если **plugin_instance** имеет значение *null*, то InstanceName="*_Total*" |
+| `plugin_instance` | Имя экземпляра<br>Если **plugin_instance** имеет значение *null*, то InstanceName=" *_Total*" |
 | `type` | ObjectName |
 | `type_instance` | CounterName<br>Если **type_instance** имеет значение *null*, то CounterName=**blank** |
 | `dsnames[]` | CounterName |

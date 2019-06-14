@@ -16,17 +16,17 @@ ms.workload: data-services
 ms.date: 01/23/2019
 ms.author: aschhab
 ms.openlocfilehash: 7d4cb8e55c5d1561c09cf85122550a66e3671f17
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60714138"
 ---
 # <a name="service-bus-diagnostic-logs"></a>Журналы диагностики служебной шины
 
 Для служебной шины Azure можно просмотреть журналы двух типов.
-* **[Журналы действий](../azure-monitor/platform/activity-logs-overview.md)**. Эти журналы содержат сведения об операциях, выполненных с заданием. Данные журналы всегда включены.
-* **[Журналы диагностики](../azure-monitor/platform/diagnostic-logs-overview.md)**. Вы можете настроить журналы диагностики, чтобы получать более подробные сведения обо всем, что происходит с заданием. Журналы диагностики охватывают действия с момента создания задания до его удаления, включая обновления и действия, которые происходят во время выполнения задания.
+* **[Журналы действий](../azure-monitor/platform/activity-logs-overview.md)** . Эти журналы содержат сведения об операциях, выполненных с заданием. Данные журналы всегда включены.
+* **[Журналы диагностики](../azure-monitor/platform/diagnostic-logs-overview.md)** . Вы можете настроить журналы диагностики, чтобы получать более подробные сведения обо всем, что происходит с заданием. Журналы диагностики охватывают действия с момента создания задания до его удаления, включая обновления и действия, которые происходят во время выполнения задания.
 
 ## <a name="turn-on-diagnostic-logs"></a>Включение журналов диагностики
 
@@ -72,7 +72,7 @@ resourceId | Идентификатор ресурса Azure Resource Manager
 SubscriptionId | Идентификатор подписки
 EventTimeString | Время операции
 EventProperties | Свойства операции
-Статус | Состояние операции
+Status | Состояние операции
 Caller | Объект, вызвавший операцию (портал Azure или клиент управления)
 category | OperationalLogs
 

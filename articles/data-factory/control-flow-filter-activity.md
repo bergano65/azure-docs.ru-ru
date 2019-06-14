@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 05/04/2018
 ms.author: shlo
 ms.openlocfilehash: 787c9393e2700bd7ed349b501e70abc4a0687b9c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60554853"
 ---
 # <a name="filter-activity-in-azure-data-factory"></a>Действие Filter в фабрике данных Azure
@@ -41,8 +41,8 @@ ms.locfileid: "60554853"
 -------- | ----------- | -------------- | --------
 name | Имя действия `Filter`. | String | Да
 type | Должно быть задано значение **filter**. | String | Да
-условие | Условие, которое можно использовать для фильтрации входных данных. | Выражение | Да
-элементы | Входной массив, к которому должен применяться фильтр. | Выражение | Да
+condition | Условие, которое можно использовать для фильтрации входных данных. | Expression | Да
+items | Входной массив, к которому должен применяться фильтр. | Expression | Да
 
 ## <a name="example"></a>Пример
 

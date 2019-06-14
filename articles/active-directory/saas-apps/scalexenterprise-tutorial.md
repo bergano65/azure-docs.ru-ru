@@ -16,10 +16,10 @@ ms.date: 04/20/2017
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 64edf2aa47211c1d2a598417a7b2edc00f260075
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60321389"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-scalex-enterprise"></a>Руководство. Интеграция Azure Active Directory со ScaleX Enterprise
@@ -115,7 +115,7 @@ ms.locfileid: "60321389"
 
     a. В текстовом поле **Идентификатор** введите значение в следующем формате: `https://platform.rescale.com/saml2/<company id>/`.
 
-    2. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://platform.rescale.com/saml2/<company id>/acs/`.
+    2\. В текстовом поле **URL-адрес ответа** введите URL-адрес в следующем формате: `https://platform.rescale.com/saml2/<company id>/acs/`.
 
 1. Установите флажок **Показать дополнительные параметры URL-адресов**, если вы хотите настроить приложение для работы в режиме, инициируемом **поставщиком услуг**.
 
@@ -134,11 +134,11 @@ ms.locfileid: "60321389"
 
     ![Настройка единого входа](./media/scalexenterprise-tutorial/delete_attribute_name.png)
 
-    2. Щелкните атрибут **emailaddress**, чтобы открыть окно "Изменить атрибут". Измените его значение с **user.mail** на **user.userprincipalname** и нажмите кнопку "ОК".
+    2\. Щелкните атрибут **emailaddress**, чтобы открыть окно "Изменить атрибут". Измените его значение с **user.mail** на **user.userprincipalname** и нажмите кнопку "ОК".
 
     ![Настройка единого входа](./media/scalexenterprise-tutorial/edit_email_attribute.png) 
     
-1. В разделе **Сертификат подписи SAML** щелкните **Сертификат (Base64)**, а затем сохраните файл сертификата на компьютере.
+1. В разделе **Сертификат подписи SAML** щелкните **Сертификат (Base64)** , а затем сохраните файл сертификата на компьютере.
 
     ![Настройка единого входа](./media/scalexenterprise-tutorial/tutorial_scalexenterprise_certificate.png) 
 
@@ -169,7 +169,7 @@ ms.locfileid: "60321389"
     
     a. Выберите **Create any user who can authenticate with SSO** (Создание любого пользователя, который может выполнить проверку подлинности с помощью единого входа).
 
-    2. **Service Provider SAML** (Поставщик услуг SAML). Вставьте значение ***urn:oasis:names:tc:SAML:2.0:nameid-format:persistent***.
+    2\. **Service Provider SAML** (Поставщик услуг SAML). Вставьте значение ***urn:oasis:names:tc:SAML:2.0:nameid-format:persistent***.
 
     c. **Name of Identity Provider email field in ACS response** (Имя поля электронного адреса поставщика удостоверений в ответе ACS). Вставьте значение `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress`.
 
@@ -212,7 +212,7 @@ ms.locfileid: "60321389"
 
     a. В текстовом поле **Имя** введите **BrittaSimon**.
 
-    2. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
+    2\. В текстовом поле **Имя пользователя** введите **адрес электронной почты** учетной записи BrittaSimon.
 
     c. Выберите **Показать пароль** и запишите значение поля **Пароль**.
 

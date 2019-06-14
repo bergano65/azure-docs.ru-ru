@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 03/25/2019
 ms.author: ramamill
 ms.openlocfilehash: 929a4e4366c9e94ed4e1915406914991624f6baa
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60565588"
 ---
 # <a name="about-the-mobility-service-for-vmware-vms-and-physical-servers"></a>Сведения о службе Mobility Service на виртуальных машинах и физических серверах VMware
@@ -45,7 +45,7 @@ ms.locfileid: "60565588"
 4. Если установка агента выполнена успешно, но не удается установить поставщик VSS, состояние задания помечается как «Warning». Это не влияет на создание точки согласованности аварийного завершения.
 
     a. Создавать согласованные точки приложения, см. в статье [наше руководство](vmware-physical-manage-mobility-service.md#install-site-recovery-vss-provider-on-source-machine) для завершения установки поставщика Site Recovery VSS вручную. </br>
-    2.  Если вы не желаете согласованные точки приложения будет создан, [изменить политику репликации](vmware-azure-set-up-replication.md#create-a-policy) отключение согласованные точки приложения.
+    2\.  Если вы не желаете согласованные точки приложения будет создан, [изменить политику репликации](vmware-azure-set-up-replication.md#create-a-policy) отключение согласованные точки приложения.
 
 ### <a name="before-922-versions"></a>Прежде чем 9.22 версий
 
@@ -55,7 +55,7 @@ ms.locfileid: "60565588"
 
 ## <a name="install-mobility-agent-through-ui"></a>Установка агента mobility через пользовательский Интерфейс
 
-### <a name="prerequisite"></a>Необходимое условие
+### <a name="prerequisite"></a>Предварительные требования
 
 - Убедитесь, что все конфигурации серверов не попадает под [Матрица поддержки VMware к сценарию аварийного восстановления Azure](vmware-physical-azure-support-matrix.md).
 - [Найдите установщик](#locate-installer-files) зависимости от операционной системы сервера.
@@ -83,7 +83,7 @@ ms.locfileid: "60565588"
 
 ## <a name="install-mobility-agent-through-command-prompt"></a>Установка агента mobility с помощью командной строки
 
-### <a name="prerequisite"></a>Необходимое условие
+### <a name="prerequisite"></a>Предварительные требования
 
 - Убедитесь, что все конфигурации серверов не попадает под [Матрица поддержки VMware к сценарию аварийного восстановления Azure](vmware-physical-azure-support-matrix.md).
 - [Найдите установщик](#locate-installer-files) зависимости от операционной системы сервера.

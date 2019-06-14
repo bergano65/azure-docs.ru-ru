@@ -16,10 +16,10 @@ ms.workload: infrastructure-services
 ms.date: 02/14/2017
 ms.author: dennisg
 ms.openlocfilehash: 6e02f5a5b42da9c99a08782903cdc05ee32ec9d4
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60743332"
 ---
 # <a name="network-watcher-agent-virtual-machine-extension-for-windows"></a>Расширение виртуальной машины агента Наблюдателя за сетями для Windows
@@ -67,9 +67,9 @@ ms.locfileid: "60743332"
 
 | ИМЯ | Значение и пример |
 | ---- | ---- |
-| версия_API | 2015-06-15 |
+| apiVersion | 2015-06-15 |
 | publisher | Microsoft.Azure.NetworkWatcher |
-| тип | NetworkWatcherAgentWindows |
+| type | NetworkWatcherAgentWindows |
 | typeHandlerVersion | 1.4 |
 
 

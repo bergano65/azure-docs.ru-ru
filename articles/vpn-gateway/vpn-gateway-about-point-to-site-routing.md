@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 01/28/2019
 ms.author: anzaman
 ms.openlocfilehash: 486a910226db5dc7b36aaf873e7bb8115eb78805
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60653618"
 ---
 # <a name="about-point-to-site-vpn-routing"></a>Сведения о маршрутизации VPN-подключений типа "точка — сеть"
@@ -34,7 +34,7 @@ ms.locfileid: "60653618"
 
 ![Маршрутизация в изолированной виртуальной сети](./media/vpn-gateway-about-point-to-site-routing/1.jpg "isolated VNet routing")
 
-### <a name="address-space"></a>Адресное пространство
+### <a name="address-space"></a>Пространство адресов
 
 * VNet1: 10.1.0.0/16
 
@@ -88,7 +88,7 @@ ms.locfileid: "60653618"
 
 ![Несколько виртуальных сетей с подключениями типа "сеть — сеть"](./media/vpn-gateway-about-point-to-site-routing/3.jpg "multiple VNets and S2S")
 
-### <a name="address-space"></a>Адресное пространство
+### <a name="address-space"></a>Пространство адресов
 
 * VNet1: 10.1.0.0/16
 
@@ -116,7 +116,7 @@ ms.locfileid: "60653618"
 
 ![Несколько виртуальных сетей с подключениями типа "сеть — сеть" (BGP)](./media/vpn-gateway-about-point-to-site-routing/4.jpg "multiple VNets and S2S BGP")
 
-### <a name="address-space"></a>Адресное пространство
+### <a name="address-space"></a>Пространство адресов
 
 * VNet1: 10.1.0.0/16
 
@@ -144,7 +144,7 @@ ms.locfileid: "60653618"
 
 ![Маршрутизация для виртуальной сети и филиала](./media/vpn-gateway-about-point-to-site-routing/5.jpg "routing with a VNet and a branch office")
 
-### <a name="address-space"></a>Адресное пространство
+### <a name="address-space"></a>Пространство адресов
 
 * VNet1: 10.1.0.0/16
 
@@ -170,7 +170,7 @@ ms.locfileid: "60653618"
 
 ![Одна виртуальная сеть и филиал (BGP)](./media/vpn-gateway-about-point-to-site-routing/6.jpg "one VNet and a branch office")
 
-### <a name="address-space"></a>Адресное пространство
+### <a name="address-space"></a>Пространство адресов
 
 * VNet1: 10.1.0.0/16
 
@@ -197,7 +197,7 @@ ms.locfileid: "60653618"
 
 ![Несколько виртуальных сетей, соединенных с помощью подключений типа "сеть — сеть", и филиал](./media/vpn-gateway-about-point-to-site-routing/7.jpg "multi-VNet S2S and branch office")
 
-### <a name="address-space"></a>Адресное пространство
+### <a name="address-space"></a>Пространство адресов
 
 * VNet1: 10.1.0.0/16
 
@@ -227,7 +227,7 @@ ms.locfileid: "60653618"
 
 ![Несколько виртуальных сетей, соединенных с помощью подключений типа "сеть — сеть", и филиал](./media/vpn-gateway-about-point-to-site-routing/8.jpg "multi-VNet S2S and branch office")
 
-### <a name="address-space"></a>Адресное пространство
+### <a name="address-space"></a>Пространство адресов
 
 * VNet1: 10.1.0.0/16
 

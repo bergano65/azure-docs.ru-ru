@@ -17,10 +17,10 @@ ms.date: 04/09/2019
 ms.author: rolyon
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 74607f6a746558238ead65036d708b515d370035
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60441450"
 ---
 # <a name="view-activity-and-audit-history-for-azure-resource-roles-in-pim"></a>Просмотр журнала аудита и действий для ролей ресурсов Azure в PIM
@@ -89,7 +89,7 @@ ms.locfileid: "60441450"
 
     ![Сведения о действиях](media/azure-pim-resource-rbac/rbac-audit-activity.png)
 
-1. В разделе **Действие** щелкните **(действие)**, чтобы пользователь мог просмотреть сведения о своих действиях в ресурсах Azure.
+1. В разделе **Действие** щелкните **(действие)** , чтобы пользователь мог просмотреть сведения о своих действиях в ресурсах Azure.
 
     ![Сведения о действиях пользователя](media/azure-pim-resource-rbac/rbac-audit-activity-details.png)
 

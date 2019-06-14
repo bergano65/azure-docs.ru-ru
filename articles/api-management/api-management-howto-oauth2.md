@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 08/10/2018
 ms.author: apimpm
 ms.openlocfilehash: b195271edeea6cd5ea527454ad1615ac85a32138
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60658689"
 ---
 # <a name="how-to-authorize-developer-accounts-using-oauth-20-in-azure-api-management"></a>Авторизация учетных записей разработчиков с помощью протокола OAuth 2.0 в службе управления Azure API
@@ -97,7 +97,7 @@ ms.locfileid: "60658689"
 
 Настроив сервер авторизации OAuth 2.0 и его использование интерфейсом API, вы можете протестировать сервер, перейдя на портал разработчика и вызвав интерфейс API.  Щелкните **Портал разработчика** в верхнем меню страницы **Обзор** экземпляра службы управления API Azure.
 
-![Портал разработчика][api-management-developer-portal-menu]
+![Developer portal][api-management-developer-portal-menu]
 
 Щелкните **APIs** в меню вверху и выберите **Echo API**.
 

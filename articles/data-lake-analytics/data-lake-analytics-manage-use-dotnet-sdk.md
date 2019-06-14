@@ -10,10 +10,10 @@ ms.service: data-lake-analytics
 ms.topic: conceptual
 ms.date: 06/18/2017
 ms.openlocfilehash: 0a10af73d754596e9b5bb34b2974d7f1647d06f8
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60617713"
 ---
 # <a name="manage-azure-data-lake-analytics-a-net-app"></a>Управление Azure Data Lake Analytics с помощью приложения .NET
@@ -25,12 +25,12 @@ ms.locfileid: "60617713"
 ## <a name="prerequisites"></a>Технические условия
 
 * **Visual Studio 2015, Visual Studio 2013 с обновлением 4 или Visual Studio 2012 с установленным Visual C++**
-* **Microsoft Azure SDK для .NET (версии 2.5 или выше)**.  Вы можете установить его с помощью [установщика веб-платформы](https://www.microsoft.com/web/downloads/platform.aspx).
+* **Microsoft Azure SDK для .NET (версии 2.5 или выше)** .  Вы можете установить его с помощью [установщика веб-платформы](https://www.microsoft.com/web/downloads/platform.aspx).
 * **Необходимые пакеты Nuget**
 
 ### <a name="install-nuget-packages"></a>Установка пакетов Nuget
 
-|Package|Version|
+|Пакет|Version|
 |-------|-------|
 |[Microsoft.Rest.ClientRuntime.Azure.Authentication](https://www.nuget.org/packages/Microsoft.Rest.ClientRuntime.Azure.Authentication)| 2.3.1|
 |[Microsoft.Azure.Management.DataLake.Analytics](https://www.nuget.org/packages/Microsoft.Azure.Management.DataLake.Analytics)|3.0.0|

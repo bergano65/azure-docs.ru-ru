@@ -12,10 +12,10 @@ ms.date: 09/18/2018
 ms.author: zhouwang
 ROBOTS: NOINDEX,NOFOLLOW
 ms.openlocfilehash: 09b7e8961e59bd6fad49408c28e9ee9a4a209cae
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60515292"
 ---
 # <a name="quickstart-use-the-bing-speech-recognition-api-in-objective-c-on-ios"></a>Краткое руководство. Использование API распознавания речи Bing в Objective-C на платформе iOS
@@ -141,7 +141,7 @@ Speech API — элемент Cognitive Services (ранее Project Oxford). В
   * В режиме `SpeechRecognitionMode_LongDictation` обработчик событий может вызываться несколько раз в зависимости от того, где служба распознает паузы в предложении.
   * **Для каждого из самых лучших вариантов** возвращаются значение достоверности и несколько различных форм распознанного текста. Для получения дополнительных сведений см. раздел [Формат выходных данных](../Concepts.md#output-format).
 
-## <a name="related-topics"></a>Связанные разделы
+## <a name="related-topics"></a>См. также
 
 * [SpeechSDK-1_0-for-iOS Reference](https://cdn.rawgit.com/Microsoft/Cognitive-Speech-STT-iOS/master/com.Microsoft.SpeechSDK-1_0-for-iOS.docset/Contents/Resources/Documents/index.html) (Справка по SpeechSDK-1_0-for-iOS)
 * [Начало работы с API распознавания речи Microsoft в Java на Android](GetStartedJavaAndroid.md)

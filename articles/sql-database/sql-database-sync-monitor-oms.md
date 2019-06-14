@@ -13,10 +13,10 @@ ms.reviewer: carlrab
 manager: craigg
 ms.date: 12/20/2018
 ms.openlocfilehash: 6e94aac47ce5b45e700e2413d2e86d5f36596348
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60614955"
 ---
 # <a name="monitor-sql-data-sync-with-azure-monitor-logs"></a>Мониторинг синхронизации данных SQL с помощью журналов Azure Monitor 
@@ -136,7 +136,7 @@ ms.locfileid: "60614955"
 
 1.  На портале Azure выберите **Поиск по журналу**.
 
-2.  Создайте запрос, чтобы выбрать ошибки и предупреждения по группе синхронизации в течение выбранного интервала. Например: 
+2.  Создайте запрос, чтобы выбрать ошибки и предупреждения по группе синхронизации в течение выбранного интервала. Пример:
 
     `Type=DataSyncLog\_CL LogLevel\_s!=Success| measure count() by SyncGroupName\_s interval 60minute`
 

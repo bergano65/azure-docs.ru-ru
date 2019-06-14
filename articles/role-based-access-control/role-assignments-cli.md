@@ -15,10 +15,10 @@ ms.date: 04/17/2019
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.openlocfilehash: 1cc3d3eca4063a8120851a9d3de1a85292eacb11
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60344569"
 ---
 # <a name="manage-access-to-azure-resources-using-rbac-and-azure-cli"></a>Управление доступом к ресурсам Azure с помощью RBAC и Azure CLI
@@ -339,5 +339,5 @@ az role assignment delete --assignee 22222222-2222-2222-2222-222222222222 --role
 
 ## <a name="next-steps"></a>Дальнейшие действия
 
-- [Руководство Создание пользовательских ролей для ресурсов Azure с помощью Azure CLI](tutorial-custom-role-cli.md)
+- [Учебник. Создание пользовательских ролей для ресурсов Azure с помощью Azure CLI](tutorial-custom-role-cli.md)
 - [Управление ресурсами и группами ресурсов Azure с помощью интерфейса командной строки Azure](../azure-resource-manager/cli-azure-resource-manager.md)

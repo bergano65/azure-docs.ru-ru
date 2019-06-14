@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 931865803328189d89c0fbae15caa801c3f7f7c6
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60455236"
 ---
 # <a name="troubleshoot-an-object-that-is-not-synchronizing-with-azure-active-directory"></a>Устранение неполадок синхронизации объекта с Azure Active Directory
@@ -73,7 +73,7 @@ ms.locfileid: "60455236"
 
 Столбец **Status** (Состояние) содержит самую важную информацию, он показывает наиболее серьезные проблемы при выполнении. Ниже приводится краткая сводка наиболее распространенных состояний в порядке приоритета исследования (где * означает, что возможно несколько строк ошибки).
 
-| Статус | Комментарий |
+| Status | Комментарий |
 | --- | --- |
 | stopped-* |Не удалось завершить выполнение. Это могло случиться, например, по причине того, что удаленная система не работает и с ней не удается связаться. |
 | stopped-error-limit |Обнаружено более 5000 ошибок. Выполнение было автоматически остановлено из-за большого количества ошибок. |
@@ -91,7 +91,7 @@ ms.locfileid: "60455236"
 
 Щелкните правой кнопкой мыши поле **Call Stack Information** (Сведения о стеке вызовов), после этого щелкните **Select All** (Выбрать все), а затем **Copy** (Копировать). После этого скопируйте стек и просмотрите ошибку в любом редакторе на ваше усмотрение, например в Блокноте.
 
-Если получена ошибка из **SyncRulesEngine**, сведения о стеке вызовов сначала показывают список всех атрибутов объекта. Прокрутите вниз до заголовка **InnerException =>**.  
+Если получена ошибка из **SyncRulesEngine**, сведения о стеке вызовов сначала показывают список всех атрибутов объекта. Прокрутите вниз до заголовка **InnerException =>** .  
 
   ![Снимок экрана Synchronization Service Manager со сведениями об ошибке после заголовка InnerException =>](./media/tshoot-connect-object-not-syncing/errorinnerexception.png)
   

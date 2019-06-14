@@ -10,10 +10,10 @@ ms.reviewer: estfan, jonfan, LADocs
 ms.topic: article
 ms.date: 01/16/2019
 ms.openlocfilehash: c33b1d46ecf710f050fc998ce27f6448337c6b78
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60683773"
 ---
 # <a name="send-receive-and-batch-process-messages-in-azure-logic-apps"></a>Отправка, получение и пакетная обработка сообщений в Azure Logic Apps
@@ -90,7 +90,7 @@ ms.locfileid: "60683773"
 
    3. Выбор действия **Отправка электронного сообщения — <*поставщик услуг электронной почты*>**
 
-      Пример.
+      Пример:
 
       ![Выбор действия "Отправить электронное письмо" для поставщика электронной почты](./media/logic-apps-batch-process-send-receive-messages/batch-receiver-send-email-action.png)
 
@@ -163,7 +163,7 @@ ms.locfileid: "60683773"
       > 
       > Если вы используете Visual Studio и не видите доступных для выбора получателей пакетов, убедитесь, что вы развернули получатель пакетов в Azure. В противном случае изучите инструкции по [развертыванию приложения логики для получения пакетов в Azure](../logic-apps/quickstart-create-logic-apps-with-visual-studio.md#deploy-logic-app-to-azure). 
 
-   4. Выбор действия **Batch_messages — <*получатель_пакетов*>**.
+   4. Выбор действия **Batch_messages — <*получатель_пакетов*>** .
 
       ![Выбор действия Выбор действия "Batch_messages — <приложение_логики>"](./media/logic-apps-batch-process-send-receive-messages/batch-sender-select-batch.png)
 

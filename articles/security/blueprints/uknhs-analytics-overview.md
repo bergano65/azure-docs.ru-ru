@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 06/15/2018
 ms.author: jomolesk
 ms.openlocfilehash: d2e3b4b199065510d244d384ff69d5231bef5919
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60609043"
 ---
 # <a name="azure-security-and-compliance-blueprint-data-analytics-for-uk-nhs"></a>Схема безопасности и соответствия требованиям Azure. Анализ данных для Отделения часть соединенного Королевства
@@ -53,7 +53,7 @@ Azure предоставляет клиентам множество служб 
 - Хранилище ключей Azure
 - Azure Monitor
 - Центр безопасности Azure
-- Базы данных SQL Azure
+- База данных SQL Azure
 - Хранилище Azure
 - Виртуальная сеть Azure
     - (1) Сеть /16
@@ -185,7 +185,7 @@ Azure по умолчанию шифрует весь обмен данными 
 ### <a name="azure-active-directory-setup"></a>Настройка Azure Active Directory
 Служба [Azure Active Directory](https://docs.microsoft.com/azure/active-directory/active-directory-whatis) играет важную роль в управлении развертыванием и подготовкой доступа для персонала, взаимодействующего со средой. Windows Server Active Directory можно интегрировать с Azure Active Directory [с помощью четырех простых действий](https://docs.microsoft.com/azure/active-directory/connect/active-directory-aadconnect-get-started-express). Клиенты также могут привязать развернутую инфраструктуру Active Directory (контроллеры домена) к существующей службе Azure Active Directory, сделав развернутую инфраструктуру Active Directory дочерним доменом леса Azure Active Directory.
 
-## <a name="disclaimer"></a>Отказ от ответственности
+## <a name="disclaimer"></a>Заявление об отказе
 
  - Этот документ является исключительно информационным. МАЙКРОСОФТ НЕ ПРЕДОСТАВЛЯЕТ НИКАКИХ ГАРАНТИЙ, ЯВНЫХ, КОСВЕННЫХ ИЛИ ПРЕДУСМОТРЕННЫХ ЗАКОНОМ, В ОТНОШЕНИИ ИНФОРМАЦИИ В ЭТОМ ДОКУМЕНТЕ. Данный документ предоставляется "как есть". Сведения и мнения, представленные в данном документе, включая URL-адреса и ссылки на другие веб-сайты, могут быть изменены без предварительного уведомления. Клиенты, читающие этот документ, берут ответственность за его использование на себя.
  - Настоящий документ не предоставляет клиентам юридических прав на интеллектуальную собственность в отношении продуктов или решений корпорации Майкрософт.

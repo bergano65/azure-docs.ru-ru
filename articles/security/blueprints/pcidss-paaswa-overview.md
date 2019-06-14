@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 07/03/2018
 ms.author: meladie
 ms.openlocfilehash: 5452a1adb419a2f57e2124d5aac49f9cdcff615a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60609982"
 ---
 # <a name="azure-security-and-compliance-blueprint-paas-web-application-for-pci-dss"></a>Схема безопасности и соответствия требованиям Azure. Веб-приложение PaaS для PCI DSS
@@ -59,8 +59,8 @@ ms.locfileid: "60609982"
 - Azure Active Directory
 - Служба автоматизации Azure
 - Azure DNS
-- Хранилище Azure Key Vault
-- Балансировщик нагрузки Azure
+- Хранилище ключей Azure
+- Azure Load Balancer
 - Azure Monitor
 - Azure Resource Manager
 - Центр безопасности Azure

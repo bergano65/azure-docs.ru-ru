@@ -16,10 +16,10 @@ ms.workload: tbd
 ms.date: 06/15/2018
 ms.author: v-six
 ms.openlocfilehash: d2daae2a3317d3b48748262d87ab8d7f7e13f2b0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60653393"
 ---
 # <a name="troubleshoot-cloud-service-roles-that-fail-to-start"></a>Устранение неполадок, если роли облачной службы не запускаются
@@ -78,7 +78,7 @@ ms.locfileid: "60653393"
 * Описание: Произошло необработанное исключение во время выполнения текущего веб-запроса. Чтобы получить дополнительную информацию об ошибке и ее источнике в коде, изучите трассировку стека.
 * Сведения об исключении: System.IO.FIleNotFoundException: Не удалось загрузить файл или сборку "Microsoft.WindowsAzure.StorageClient, Version = 1.1.0.0, Culture = neutral, PublicKeyToken = 31bf856ad364e35" или одну из ее зависимостей. Системе не удается найти указанный файл.
 
-Пример.
+Пример:
 
 ![Явная ошибка сервера в приложении «/».](./media/cloud-services-troubleshoot-roles-that-fail-start/ic503389.png)
 

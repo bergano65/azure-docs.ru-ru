@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 03/25/2019
 ms.author: jowargo
 ms.openlocfilehash: 9a9db9f05895569b050e56cdeec1ee2ee25af0df
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60237816"
 ---
 # <a name="configure-apple-push-notification-service-apns-settings-for-a-notification-hub-in-the-azure-portal"></a>Настройка параметров Apple Push Notification Service (APNS) для концентратора уведомлений на портале Azure
@@ -38,7 +38,7 @@ ms.locfileid: "60237816"
 
      ![Снимок экрана настройки сертификата APNS на портале Azure](./media/notification-hubs-ios-get-started/notification-hubs-apple-config-cert.png)
 
-   2. Если вы выбрали **Токен**:
+   2\. Если вы выбрали **Токен**:
 
    * Введите значения для параметров **Идентификатор ключа**, **Идентификатор набора**, **Идентификатор команды** и **Токен**.
    * Выберите режим **Песочница**. Если нужно отправлять push-уведомления пользователям, которые приобрели приложение в магазине, выберите режим **Рабочий**.

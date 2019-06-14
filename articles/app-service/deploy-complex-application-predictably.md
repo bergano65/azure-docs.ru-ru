@@ -16,10 +16,10 @@ ms.date: 01/06/2016
 ms.author: cephalin
 ms.custom: seodec18
 ms.openlocfilehash: e6d18222e15f62f12592362827b6dbc4a3d7dfbc
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60766925"
 ---
 # <a name="provision-and-deploy-microservices-predictably-in-azure"></a>Предсказуемые подготовка и развертывание микрослужб в Azure
@@ -103,7 +103,7 @@ ms.locfileid: "60766925"
 ### <a name="resources"></a>Ресурсы
 В узле "Ресурсы" можно видеть, что определены четыре ресурса верхнего уровня, включая экземпляр SQL Server, план службы приложений и два приложения. 
 
-#### <a name="app-service-plan"></a>план службы приложений
+#### <a name="app-service-plan"></a>План службы приложений
 Начнем с простого ресурса корневого уровня в JSON. В структуре JSON щелкните план службы приложений с именем **[hostingPlanName]** , чтобы выделить соответствующий код JSON. 
 
 ![](./media/app-service-deploy-complex-application-predictably/examinejson-3-appserviceplan.png)
@@ -140,7 +140,7 @@ ms.locfileid: "60766925"
 
 ![](./media/app-service-deploy-complex-application-predictably/examinejson-5-webapproot.png)
 
-##### <a name="app-settings"></a>Параметры приложений
+##### <a name="app-settings"></a>Параметры приложения
 Параметры приложения также определены в качестве вложенного ресурса.
 
 ![](./media/app-service-deploy-complex-application-predictably/examinejson-6-webappsettings.png)
@@ -193,7 +193,7 @@ ms.locfileid: "60766925"
 Кнопка **Развертывание в Azure** — это отлично, но она позволяет развернуть шаблон группы ресурсов в azuredeploy.json только в том случае, если azuredeploy.json уже помещен в GitHub. Пакет SDK для Azure .NET также предоставляет средства для развертывания любого файла шаблона JSON непосредственно с локального компьютера. Для этого сделайте следующее.
 
 1. В Visual Studio выберите **Файл** > **Создать** > **Проект**.
-2. Выберите **Visual C#** > **Облако** > **Группа ресурсов Azure**, а затем нажмите кнопку **ОК**.
+2. Выберите **Visual C#**  > **Облако** > **Группа ресурсов Azure**, а затем нажмите кнопку **ОК**.
    
    ![](./media/app-service-deploy-complex-application-predictably/deploy-1-vsproject.png)
 3. В разделе **Выберите шаблон Azure** выберите **Пустой шаблон** и нажмите кнопку **ОК**.

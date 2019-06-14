@@ -17,10 +17,10 @@ ms.date: 09/27/2018
 ms.author: szark
 ms.subservice: disks
 ms.openlocfilehash: 08f98775360b8c0a82f68f322053cb71f0e79af3
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60739086"
 ---
 # <a name="configure-lvm-on-a-linux-vm-in-azure"></a>Настройка диспетчера логических томов на виртуальной машине Linux в Azure
@@ -66,7 +66,7 @@ ms.locfileid: "60739086"
     LVM_ACTIVATED_ON_DISCOVERED="enable" 
     ```
 
-## <a name="configure-lvm"></a>Настройка LVM
+## <a name="configure-lvm"></a>Настройка диспетчера логических томов
 В этом руководстве предполагается, что подключены три диска данных с именами `/dev/sdc`, `/dev/sdd` и `/dev/sde`. Эти пути могут не совпадать с именами путей к дискам для вашей виртуальной машины. Запустите команду`sudo fdisk -l`или подобную, чтобы просмотреть список доступных дисков.
 
 1. Подготовьте физические тома.

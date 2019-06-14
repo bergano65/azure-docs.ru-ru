@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 02/25/2019
 ms.author: kraigb
 ms.openlocfilehash: b8c21b908ca9162a7e44c7af1e222babc6ee1eb7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60631981"
 ---
 # <a name="your-profile-and-user-id-for-azure-notebooks"></a>Профиль и идентификатор пользователя в службе "Записные книжки Azure"
@@ -57,7 +57,7 @@ ms.locfileid: "60631981"
 
 Чтобы изменить профиль, воспользуйтесь командой **Edit Profile Information** (Изменить сведения профиля) на странице профиля. Ниже приведены разделы профиля.
 
-| Раздел | Оглавление |
+| `Section` | Оглавление |
 | --- | --- |
 | Profile photo (Фотография профиля) | Изображение, отображаемое на странице профиля. |
 | Сведения об учетной записи | Отображаемое имя, идентификатор пользователя и публичная учетная запись электронной почты. Учетная запись электронной почты предоставляет другим пользователям способ связи с вами и может отличаться от почты [учетной записи](azure-notebooks-user-account.md), которую вы используете для входа в службу "Записные книжки Azure". |

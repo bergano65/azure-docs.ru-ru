@@ -13,14 +13,14 @@ ms.topic: conceptual
 ms.date: 04/19/2019
 ms.author: jingwang
 ms.openlocfilehash: 6056df9aa9079887bfb06ca20ad564eb52baff38
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60546578"
 ---
 # <a name="copy-data-from-and-to-salesforce-by-using-azure-data-factory"></a>Копирование данных в Salesforce и обратно с помощью фабрики данных Azure
-> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
+> [!div class="op_single_selector" title1="Выберите версию службы фабрики данных, которую вы используете:"]
 > * [Версия 1](v1/data-factory-salesforce-connector.md)
 > * [Текущая версия](connector-salesforce.md)
 
@@ -63,7 +63,7 @@ ms.locfileid: "60546578"
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | type |Для свойства type нужно задать значение **Salesforce**. |Yes |
-| environmentUrl | Укажите URL-адрес экземпляра Salesforce. <br> Значение по умолчанию — `"https://login.salesforce.com"`. <br> Чтобы скопировать данные из песочницы, укажите `"https://test.salesforce.com"`. <br> Чтобы скопировать данные из пользовательского домена, укажите URL-адрес, например `"https://[domain].my.salesforce.com"`. |Нет  |
+| environmentUrl | Укажите URL-адрес экземпляра Salesforce. <br> Значение по умолчанию — `"https://login.salesforce.com"`. <br> Чтобы скопировать данные из песочницы, укажите `"https://test.salesforce.com"`. <br> Чтобы скопировать данные из пользовательского домена, укажите URL-адрес, например `"https://[domain].my.salesforce.com"`. |Нет |
 | username |Укажите имя пользователя для учетной записи пользователя. |Yes |
 | password |Укажите пароль для учетной записи пользователя.<br/><br/>Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). |Yes |
 | securityToken |Укажите маркер безопасности для учетной записи пользователя. Инструкции по получению и сбросу маркера безопасности см. в [этом разделе](https://help.salesforce.com/apex/HTViewHelpDoc?id=user_security_token.htm). Общие сведения о маркере безопасности см. в статье [Security and the API](https://developer.salesforce.com/docs/atlas.en-us.api.meta/api/sforce_api_concepts_security.htm) (Безопасность и API).<br/><br/>Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). |Yes |
@@ -186,7 +186,7 @@ ms.locfileid: "60546578"
 |:--- |:--- |:--- |
 | type | Свойство type источника действия копирования должно иметь значение **SalesforceSource**. | Yes |
 | query |Используйте пользовательский запрос для чтения данных. Вы можете использовать запрос, написанный на [объектно-ориентированном языке запросов Salesforce (SOQL)](https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql.htm), или запрос SQL-92. Дополнительные советы см. в разделе [Советы по запросам](#query-tips). Если запрос не указан, будут извлечены все данные объекта Salesforce, заданного в наборе данных в свойстве objectApiName. | Нет (если в наборе данных задано свойство objectApiName) |
-| readBehavior | Указывает, следует ли запрашивать существующие записи или все записи, включая удаленные. Если значение не задано, по умолчанию используется первое значение. <br>Допустимые значения: **query** (по умолчанию), **queryAll**.  | Нет  |
+| readBehavior | Указывает, следует ли запрашивать существующие записи или все записи, включая удаленные. Если значение не задано, по умолчанию используется первое значение. <br>Допустимые значения: **query** (по умолчанию), **queryAll**.  | Нет |
 
 > [!IMPORTANT]
 > Для любых настраиваемых объектов **имя API** должно содержать приставку "__c".
@@ -300,7 +300,7 @@ ms.locfileid: "60546578"
 
 ### <a name="retrieve-data-by-using-a-where-clause-on-the-datetime-column"></a>Извлечение данных с использованием предложения where для столбца даты и времени
 
-При указании запроса SOQL или SQL обратите внимание на различие в формате даты и времени. Например: 
+При указании запроса SOQL или SQL обратите внимание на различие в формате даты и времени. Например:
 
 * **Пример SOQL**: `SELECT Id, Name, BillingCity FROM Account WHERE LastModifiedDate >= @{formatDateTime(pipeline().parameters.StartTime,'yyyy-MM-ddTHH:mm:ssZ')} AND LastModifiedDate < @{formatDateTime(pipeline().parameters.EndTime,'yyyy-MM-ddTHH:mm:ssZ')}`
 * **Пример SQL**: `SELECT * FROM Account WHERE LastModifiedDate >= {ts'@{formatDateTime(pipeline().parameters.StartTime,'yyyy-MM-dd HH:mm:ss')}'} AND LastModifiedDate < {ts'@{formatDateTime(pipeline().parameters.EndTime,'yyyy-MM-dd HH:mm:ss')}'}`
@@ -316,24 +316,24 @@ ms.locfileid: "60546578"
 | Тип данных Salesforce | Тип промежуточных данных фабрики данных |
 |:--- |:--- |
 | Auto Number |String |
-| Checkbox |Boolean |
-| Currency |Decimal |
-| Date |DateTime |
-| Date/Time |DateTime |
+| Флажок |Boolean |
+| Валюта |Decimal |
+| Дата |Datetime |
+| Дата и время |Datetime |
 | Email |String |
-| Id |String |
-| Lookup Relationship |String |
-| Multi-Select Picklist |String |
+| Идентификатор |String |
+| Связь для подстановки |String |
+| Список множественного выбора |String |
 | Number |Decimal |
-| Percent |Decimal |
-| Phone |String |
-| Picklist |String |
+| Процент |Decimal |
+| Номер телефона |String |
+| Список выбора |String |
 | Text |String |
-| Text Area |String |
-| Text Area (Long) |String |
-| Text Area (Rich) |String |
-| Text (Encrypted) |String |
-| URL |String |
+| Текстовое поле |String |
+| Текстовое поле (длинное) |String |
+| Текстовое поле (расширенное) |String |
+| Текст (зашифрованный) |String |
+| URL-адрес |String |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 В таблице [Поддерживаемые хранилища данных и форматы](copy-activity-overview.md#supported-data-stores-and-formats) приведен список хранилищ данных, которые поддерживаются в качестве источников и приемников для действия копирования в фабрике данных.

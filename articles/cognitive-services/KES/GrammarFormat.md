@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 03/26/2016
 ms.author: paulhsu
 ms.openlocfilehash: 844bd9a88c52fd398fc66c71e59da513c0d7d90d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60814872"
 ---
 # <a name="grammar-format"></a>Формат грамматики
@@ -126,11 +126,11 @@ before <attrref uri="academic#Year" op="lt" name="year"/
 
 В приведенной ниже таблице перечислены поддерживаемые значения `op` для каждого типа атрибута.  Для их использования в определение атрибута схемы необходимо включить соответствующую операцию индекса.
 
-| Тип атрибута | Значение op | ОПИСАНИЕ | Операция индекса
+| Тип атрибута | Значение op | Описание | Операция индекса
 |----|----|----|----|
-| String | eq | Точное совпадение строки | equals (равно) |
+| String | eq | Точное совпадение строки | equals |
 | String | starts_with | Совпадение префикса строки | starts_with |
-| Int32, Int64, Double | eq |  Проверка на числовое равенство | equals (равно) |
+| Int32, Int64, Double | eq |  Проверка на числовое равенство | equals |
 | Int32, Int64, Double | lt, le, gt, ge | Проверка на числовое неравенство(<, <=, >, >=) | is_between |
 | Int32, Int64, Double | starts_with | Совпадение префикса значения в десятичном представлении | starts_with |
 

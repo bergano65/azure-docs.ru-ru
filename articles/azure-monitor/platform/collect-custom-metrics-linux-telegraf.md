@@ -1,18 +1,18 @@
 ---
 title: Сбор пользовательских метрик для виртуальной машины Linux с помощью агента Telegraf InfluxData
 description: Сбор пользовательских метрик для виртуальной машины Linux с помощью агента Telegraf InfluxData
-author: lingliw
+author: anirudhcavale
 services: azure-monitor
 ms.service: azure-monitor
-ms.topic: howto
-ms.date: 01/21/19
-ms.author: v-lingwu
+ms.topic: conceptual
+ms.date: 09/24/2018
+ms.author: ancav
 ms.subservice: metrics
 ms.openlocfilehash: 14415b88cd6036642442ef9ae23e8dee301bb908
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60741611"
 ---
 # <a name="collect-custom-metrics-for-a-linux-vm-with-the-influxdata-telegraf-agent"></a>Сбор пользовательских метрик для виртуальной машины Linux с помощью агента Telegraf InfluxData
@@ -47,7 +47,7 @@ Azure Monitor позволяет собирать пользовательски
 
     ![Обзор агента Telegraph. Размер виртуальной машины](./media/collect-custom-metrics-linux-telegraf/vm-size.png)
 
-1. На странице  **Параметры**  щелкните  **Сеть** > **Группа безопасности сети** > **Выберите общедоступные входящие порты** и укажите  **HTTP**  и  **SSH (22)**. Сохраните остальные значения по умолчанию и нажмите кнопку  **ОК**. 
+1. На странице  **Параметры**  щелкните  **Сеть** > **Группа безопасности сети** > **Выберите общедоступные входящие порты** и укажите  **HTTP**  и  **SSH (22)** . Сохраните остальные значения по умолчанию и нажмите кнопку  **ОК**. 
 
 1. На странице сводной информации выберите  **Создать** , чтобы начать развертывание виртуальной машины. 
 
@@ -132,5 +132,6 @@ sudo systemctl start telegraf
 
 ## <a name="next-steps"></a>Дальнейшие действия
 - Дополнительные сведения о настраиваемых метриках см. в [этой статье](metrics-custom-overview.md).
+
 
 

@@ -3,21 +3,20 @@ title: Копирование данных из Базы данных Azure дл
 description: Узнайте, как копировать данные из Базы данных Azure для MariaDB на поддерживаемые приемники хранилища данных с помощью действия копирования в конвейере Фабрики данных Azure.
 services: data-factory
 documentationcenter: ''
-author: WenJason
-manager: digimobile
+author: linda33wj
+manager: craigg
 ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-origin.date: 02/01/2019
-ms.date: 04/22/2019
-ms.author: v-jay
+ms.date: 02/01/2019
+ms.author: jingwang
 ms.openlocfilehash: cd46e99b89b4081dcf0d67509edaabf168da4ba0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60387891"
 ---
 # <a name="copy-data-from-azure-database-for-mariadb-using-azure-data-factory"></a>Копирование данных из Базы данных Azure для MariaDB с помощью Фабрики данных Azure 
@@ -42,9 +41,9 @@ ms.locfileid: "60387891"
 
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Свойству type необходимо задать значение **MariaDB** | Yes |
+| type | Свойству type необходимо задать значение **MariaDB** | Да |
 | connectionString | Строка подключения к Базе данных Azure для MariaDB. Ее можно найти на портале Azure -> База данных Azure для MariaDB -> Строки подключения -> ADO.NET. <br/>Пометьте это поле как SecureString, чтобы безопасно хранить его в Фабрике данных. Вы можете также поместить пароль в Azure Key Vault и извлечь конфигурацию `pwd` из строки подключения. Ознакомьтесь с приведенными ниже примерами и подробными сведениями в статье [Хранение учетных данных в Azure Key Vault](store-credentials-in-key-vault.md). | Yes |
-| connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Вы можете использовать локальную среду выполнения интеграции или среду выполнения интеграции Azure (если хранилище данных является общедоступным). Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. |Нет  |
+| connectVia | [Среда выполнения интеграции](concepts-integration-runtime.md), используемая для подключения к хранилищу данных. Вы можете использовать локальную среду выполнения интеграции или среду выполнения интеграции Azure (если хранилище данных является общедоступным). Если не указано другое, по умолчанию используется интегрированная среда выполнения Azure. |Нет |
 
 **Пример.**
 
@@ -56,7 +55,7 @@ ms.locfileid: "60387891"
         "typeProperties": {
             "connectionString": {
                 "type": "SecureString",
-                "value": "Server={your_server}.mariadb.database.azure.cn; Port=3306; Database={your_database}; Uid={your_user}@{your_server}; Pwd={your_password}; SslMode=Preferred;"
+                "value": "Server={your_server}.mariadb.database.azure.com; Port=3306; Database={your_database}; Uid={your_user}@{your_server}; Pwd={your_password}; SslMode=Preferred;"
             }
         },
         "connectVia": {
@@ -77,7 +76,7 @@ ms.locfileid: "60387891"
         "typeProperties": {
             "connectionString": {
                  "type": "SecureString",
-                 "value": "Server={your_server}.mariadb.database.azure.cn; Port=3306; Database={your_database}; Uid={your_user}@{your_server}; SslMode=Preferred;"
+                 "value": "Server={your_server}.mariadb.database.azure.com; Port=3306; Database={your_database}; Uid={your_user}@{your_server}; SslMode=Preferred;"
             },
             "pwd": { 
                 "type": "AzureKeyVaultSecret", 
@@ -104,7 +103,7 @@ ms.locfileid: "60387891"
 
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Для свойства type набора данных необходимо задать следующее значение: **MariaDBTable** | Yes |
+| type | Для свойства type набора данных необходимо задать следующее значение: **MariaDBTable** | Да |
 | tableName | Имя таблицы. | Нет (если свойство query указано в источнике действия) |
 
 **Пример**
@@ -133,7 +132,7 @@ ms.locfileid: "60387891"
 
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Свойству type источника действия копирования необходимо задать значение **MariaDBSource** | Yes |
+| type | Свойству type источника действия копирования необходимо задать значение **MariaDBSource** | Да |
 | query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM MyTable"`. | Нет (если для набора данных задано свойство tableName) |
 
 **Пример.**

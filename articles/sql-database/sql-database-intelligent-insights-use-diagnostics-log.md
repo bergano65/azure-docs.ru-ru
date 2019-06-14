@@ -13,10 +13,10 @@ ms.reviewer: jrasnik, carlrab
 manager: craigg
 ms.date: 12/19/2018
 ms.openlocfilehash: 264d4cfc6b09813f34501a0e51d3100f4d2bce78
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60703172"
 ---
 # <a name="use-the-intelligent-insights-azure-sql-database-performance-diagnostics-log"></a>Использование журнала диагностики производительности Intelligent Insights для базы данных SQL Azure
@@ -94,7 +94,7 @@ ms.locfileid: "60703172"
 | Медленная работа клиента | <li>Хэши запросов</li><li>Время ожидания</li> |
 | Переход на более низкую ценовую категорию | <li>Текстовое уведомление</li> |
 
-### <a name="impact"></a>Воздействие
+### <a name="impact"></a>Влияние
 
 Свойство влияния (impact) показывает, насколько база данных подвержена выявленной проблеме по шкале от 1 до 3, где 3 — это наибольшая подверженность, 2 — умеренная, а 1 — наименьшая. Значение impact может использоваться в качестве входных данных для автоматизации настраиваемых оповещений, в зависимости от конкретных потребностей. Свойство затронутых запросов (QueryHashes) содержит список хэшей запросов, затронутых выявленной проблемой.
 
@@ -114,7 +114,7 @@ ms.locfileid: "60703172"
 }]
 ```
 
-### <a name="metrics"></a>Метрики
+### <a name="metrics"></a>metrics
 
 Единицы измерения каждой полученной метрики предоставляются в свойстве метрики (metric). Его возможные значения: seconds, number и percentage. Значение измеряемой метрики указывается в свойстве значения (value).
 

@@ -16,10 +16,10 @@ ms.date: 07/06/2018
 ms.author: jeedes
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 5b367befb90ec28ece963d67b479749e1c8ad363
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60340003"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-securew2-joinnow-connector"></a>Руководство по Интеграция Azure Active Directory с SecureW2 JoinNow Connector
@@ -197,7 +197,7 @@ ms.locfileid: "60340003"
 
 a. Откройте клиент SecureW2 JoinNow Connector, выберите соответствующее устройство в списке и нажмите кнопку **Вход**.
 
-2. Открывается браузер по умолчанию, и выполняется переход на портал Azure для проверки подлинности.
+2\. Открывается браузер по умолчанию, и выполняется переход на портал Azure для проверки подлинности.
 
 c. После прохождения проверки должен быть выполнен возврат на начальную целевую страницу SecureW2 JoinNow Connector.
 

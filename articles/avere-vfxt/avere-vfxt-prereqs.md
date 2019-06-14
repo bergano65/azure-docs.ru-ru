@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 02/20/2019
 ms.author: v-erkell
 ms.openlocfilehash: 352833b12c00abbefcf7016d27dfb580ee25e450
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60409264"
 ---
 # <a name="prepare-to-create-the-avere-vfxt"></a>Подготовка к созданию Avere vFXT
@@ -52,7 +52,7 @@ ms.locfileid: "60409264"
 |----------|-----------|
 |Виртуальные машины|3 E32s_v3 или более|
 |Хранилище SSD (цен. категория "Премиум")|200 ГБ пространства ОС плюс от 1 до 4 ТБ объема кэша на узел |
-|Учетная запись хранения (необязательно) |версия 2|
+|Учетная запись хранения (необязательно) |Версия 2|
 |Серверное хранилище данных (необязательно) |Один новый контейнер больших двоичных объектов в LRS |
 
 ## <a name="accept-software-terms"></a>Принятие условий программного обеспечения

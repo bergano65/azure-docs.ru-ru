@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 08/29/2017
 ms.author: yizhon
 ms.openlocfilehash: dd3b693271326c85688a275a65b67ad6257220e3
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60400700"
 ---
 # <a name="azure-iot-device-sdk-for-c--more-about-iothubclient"></a>Пакет SDK для устройств Azure IoT для C — дополнительные сведения о библиотеке IoTHubClient
@@ -237,7 +237,7 @@ HostName=IOTHUBNAME.IOTHUBSUFFIX;DeviceId=DEVICEID;SharedAccessKey=SHAREDACCESSK
 
 Существует четыре части сведений о данной строки: Имя центра Интернета вещей, суффикс центра Интернета вещей, идентификатор устройства и ключ общего доступа. При создании экземпляра центра IoT на портале Azure вы получаете полное доменное имя (FQDN) центра IoT. Из этого имени мы получаем имя центра IoT (первая часть FQDN) и суффикс центра IoT (остальная часть FQDN). Идентификатор устройства и общий ключ доступа получаются при регистрации устройства в Центре Интернета вещей (см. [предыдущую статью](iot-hub-device-sdk-c-intro.md)).
 
-**IoTHubClient\_CreateFromConnectionString** — это всего лишь один из способов инициализации библиотеки. При желании вы можете создать дескриптор **IOTHUB\_CLIENT\_HANDLE**, используя вместо строки подключения устройства отдельные параметры. Для этого используется такой код:
+**IoTHubClient\_CreateFromConnectionString** — это всего лишь один из способов инициализации библиотеки. При желании вы можете создать дескриптор **IOTHUB\_CLIENT\_HANDLE**, используя вместо строки подключения устройства отдельные параметры. Это достигается следующим кодом:
 
 ```C
 IOTHUB_CLIENT_CONFIG iotHubClientConfig;

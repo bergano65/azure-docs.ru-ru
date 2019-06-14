@@ -15,10 +15,10 @@ ms.topic: conceptual
 ms.date: 11/27/2018
 ms.author: apimpm
 ms.openlocfilehash: a0459eb67b5a79219e556cb03473a5ddf691b49d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60527451"
 ---
 # <a name="add-caching-to-improve-performance-in-azure-api-management"></a>Добавление кэширования для повышения производительности в службе управления API Azure
@@ -57,7 +57,7 @@ ms.locfileid: "60527451"
 4. В списке API выберите **Demo Conference API**.
 5. Выберите **GetSpeakers**.
 6. В верхней части экрана выберите вкладку **Конструктор**.
-7. В разделе **Обработка входящих запросов** щелкните значок **</>**.
+7. В разделе **Обработка входящих запросов** щелкните значок **</>** .
 
     ![Редактор кода](media/api-management-howto-cache/code-editor.png)
 

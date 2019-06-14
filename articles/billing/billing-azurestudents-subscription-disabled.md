@@ -16,10 +16,10 @@ ms.date: 03/01/2018
 ms.author: banders
 ROBOTS: NOINDEX
 ms.openlocfilehash: 7d41e9b7774bf8840db9e729d3aa9371f5bac04f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60615945"
 ---
 # <a name="why-is-my-azure-for-students-subscription-disabled-and-how-do-i-reactivate-it"></a>Почему подписка "Azure для учащихся" отключена и как активировать ее повторно?
@@ -55,6 +55,6 @@ ms.locfileid: "60615945"
 
 Если вы случайно отменили подписку "Azure для учащихся", ее можно повторно активировать, обратившись в службу [поддержки Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade). После повторной активации у вас останется доступ к оставшимся средствам на счете и бесплатным службам на протяжении 12 месяцев с даты регистрации.
 
-## <a name="need-help-contact-us"></a>Нужна помощь? Связаться с нами.
+## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
 
 Если у вас есть вопросы или нужна помощь, [создать запрос в службу поддержки](https://go.microsoft.com/fwlink/?linkid=2083458).

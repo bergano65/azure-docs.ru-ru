@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.workload: big-data
 ms.date: 07/03/2018
 ms.openlocfilehash: 4532e0c6e8095c9d64897410e0492e2135d8a478
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60630111"
 ---
 # <a name="test-your-azure-data-lake-analytics-code"></a>Тестирование кода Azure Data Lake Analytics
@@ -113,7 +113,7 @@ Azure Data Lake предоставляет язык U-SQL, который объ
 
 ## <a name="run-test-cases-in-azure-devops"></a>Запуск тестовых случаев в Azure DevOps
 
-Оба проекта, **тестовые проекты сценария U-SQL** и **тестовые проекты UDO C#**, наследуют проекты модульного теста C#. Эти тестовые случаи можно выполнять с помощью [задачи тестирования Visual Studio](https://docs.microsoft.com/azure/devops/pipelines/test/getting-started-with-continuous-testing?view=vsts) в Azure DevOps. 
+Оба проекта, **тестовые проекты сценария U-SQL** и **тестовые проекты UDO C#** , наследуют проекты модульного теста C#. Эти тестовые случаи можно выполнять с помощью [задачи тестирования Visual Studio](https://docs.microsoft.com/azure/devops/pipelines/test/getting-started-with-continuous-testing?view=vsts) в Azure DevOps. 
 
 ### <a name="run-u-sql-test-cases-in-azure-devops"></a>Запуск тестовых случаев U-SQL в Azure DevOps
 

@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 07/03/2017
 ms.author: alkohli
 ms.openlocfilehash: 45c521fd044fa258b8052a3f0de48784cf4160e8
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60584445"
 ---
 # <a name="fail-over-to-your-storsimple-cloud-appliance"></a>Отработка отказа на облачное устройство StorSimple
@@ -46,15 +46,15 @@ ms.locfileid: "60584445"
     ![Выбор устройства](./media/storsimple-8000-device-failover-disaster-recovery/failover-cloud-dev1.png)
 3. Выберите и щелкните исходное устройство. Исходное устройство содержит контейнеры томов, для которых необходимо выполнить отработку отказа. Последовательно выберите пункты **Параметры > Контейнеры томов**.
 
-    ![Выберите устройство](./media/storsimple-8000-device-failover-disaster-recovery/failover-cloud-dev2.png)
+    ![Выбор устройства](./media/storsimple-8000-device-failover-disaster-recovery/failover-cloud-dev2.png)
     
 4. Выберите контейнер томов, для которого следует выполнить отработку отказа на другое устройство. Щелкните контейнер томов, чтобы открыть список томов в контейнере. Выберите том, щелкните его правой кнопкой мыши и выберите **Отключить**, чтобы отключить том.
 
-    ![Выберите устройство](./media/storsimple-8000-device-failover-disaster-recovery/failover-cloud-dev5.png)
+    ![Выбор устройства](./media/storsimple-8000-device-failover-disaster-recovery/failover-cloud-dev5.png)
 
 5. Повторите эту процедуру для всех томов в контейнере томов.
 
-     ![Выберите устройство](./media/storsimple-8000-device-failover-disaster-recovery/failover-cloud-dev7.png)
+     ![Выбор устройства](./media/storsimple-8000-device-failover-disaster-recovery/failover-cloud-dev7.png)
 
 6. Повторите предыдущий шаг для всех контейнеров томов, для которых необходимо выполнить отработку отказа на другое устройство.
 
@@ -67,7 +67,7 @@ ms.locfileid: "60584445"
         ![Выбрать источник](./media/storsimple-8000-device-failover-disaster-recovery/failover-cloud-dev11.png)
     2. Щелкните **Цель**. Выберите целевое облачное устройство из раскрывающегося списка доступных устройств. **В списке отображаются только те устройства, емкость которых достаточна для размещения исходных контейнеров томов.**
 
-        ![Выбор целевого объекта](./media/storsimple-8000-device-failover-disaster-recovery/failover-cloud-dev12.png)
+        ![Выбор цели](./media/storsimple-8000-device-failover-disaster-recovery/failover-cloud-dev12.png)
 
     3. Просмотрите параметры отработки отказа в разделе **Сводка** и установите флажок, указывающий, что тома в выбранных контейнерах томов находятся в автономном режиме. 
 
@@ -81,7 +81,7 @@ ms.locfileid: "60584445"
 
     1. Выберите устройство, которое было использовано в качестве целевого при отработке отказа.
 
-       ![Выберите устройство](./media/storsimple-8000-device-failover-disaster-recovery/failover-phy-dev14.png)
+       ![Выбор устройства](./media/storsimple-8000-device-failover-disaster-recovery/failover-phy-dev14.png)
 
     2. Щелкните **Контейнеры томов**. В списке должны отобразиться все контейнеры томов, а также тома со старого устройства.
 

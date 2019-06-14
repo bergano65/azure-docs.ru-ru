@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 02/01/2019
 ms.author: aahi
 ms.openlocfilehash: 9e2a4075436145a0cc185b7ab1b406fa8d27b8e3
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60309340"
 ---
 # <a name="using-ranking-to-display-entity-search-results"></a>Использование ранжирования для отображения результатов поиска сущностей  
@@ -24,7 +24,7 @@ ms.locfileid: "60309340"
 В каждой группе есть массив [Items](https://docs.microsoft.com/rest/api/cognitiveservices/bing-web-api-v7-reference#rankinggroup-items), который определяет порядок отображения содержимого. Каждый элемент предоставляет два метода для идентификации результатов.  
  
 
-|Поле | ОПИСАНИЕ  |
+|Поле | Описание  |
 |---------|---------|
 |`answerType` и `resultIndex` | Поле `answerType` идентифицирует тип ответа (Entity или Place), а поле `resultIndex` идентифицирует результат в этом ответе (например, обнаруженную сущность). Индекс начинается с 0.|
 |`value`    | Поле `value` содержит идентификатор, который обозначает некоторый ответ или результат в этом ответе. Идентификатор может встречаться только в ответе или только в результате. |

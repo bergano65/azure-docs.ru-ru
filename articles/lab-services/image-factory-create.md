@@ -13,10 +13,10 @@ ms.topic: article
 ms.date: 03/25/2019
 ms.author: spelluru
 ms.openlocfilehash: cf1bb31614c04d6073bc40c510fc43b2f8e4e189
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60622649"
 ---
 # <a name="create-a-custom-image-factory-in-azure-devtest-labs"></a>Создание фабрики пользовательского образа в Azure DevTest Labs
@@ -42,7 +42,7 @@ ms.locfileid: "60622649"
 Существует [расширения VSTS для DevTest Labs](https://marketplace.visualstudio.com/items?itemName=ms-azuredevtestlabs.tasks) , позволяющий выполнить эти отдельные действия:
 
 - Создание пользовательского образа
-- Создать VM
+- Создание виртуальной машины
 - Удаление виртуальной Машины
 - Создание среды
 - Удаление среды

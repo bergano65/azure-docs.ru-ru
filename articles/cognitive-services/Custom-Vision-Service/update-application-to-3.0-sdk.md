@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 04/04/2019
 ms.author: areddish
 ms.openlocfilehash: 9dd473aadd7123cafc27209f5c34322fdbcffb71
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60816452"
 ---
 # <a name="migrate-to-the-30-api"></a>Перенос 3.0 API
@@ -30,17 +30,17 @@ Custom Vision теперь вышла общедоступная и произо
 
 ## <a name="use-the-updated-prediction-api"></a>Использовать обновленный API прогноза
 
-2.x API-интерфейсы используется один и тот же вызов прогноза для классификаторов, что и объект обнаружения проектов. Оба проекта типы были приемлемым для **PredictImage** и **PredictImageUrl** вызовов. Начиная с 3.0, мы разделили этот API, что необходимость в соответствии с типом проекта к вызову:
+2\.x API-интерфейсы используется один и тот же вызов прогноза для классификаторов, что и объект обнаружения проектов. Оба проекта типы были приемлемым для **PredictImage** и **PredictImageUrl** вызовов. Начиная с 3.0, мы разделили этот API, что необходимость в соответствии с типом проекта к вызову:
 
 * Используйте **[ClassifyImage](https://southcentralus.dev.cognitive.microsoft.com/docs/services/Custom_Vision_Prediction_3.0/operations/5c82db60bf6a2b11a8247c15)** и **[ClassifyImageUrl](https://southcentralus.dev.cognitive.microsoft.com/docs/services/Custom_Vision_Prediction_3.0/operations/5c82db60bf6a2b11a8247c14)** для получения прогнозов для проектов классификации изображений.
 * Используйте **[DetectImage](https://southcentralus.dev.cognitive.microsoft.com/docs/services/Custom_Vision_Prediction_3.0/operations/5c82db60bf6a2b11a8247c19)** и **[DetectImageUrl](https://southcentralus.dev.cognitive.microsoft.com/docs/services/Custom_Vision_Prediction_3.0/operations/5c82db60bf6a2b11a8247c18)** для получения прогнозов для проектов обнаружения объекта.
 
 ## <a name="use-the-new-iteration-publishing-workflow"></a>Используйте новый рабочий процесс публикации, итерации
 
-2.x API-интерфейсы позволяют выбрать итерацию, которую требуется использовать для прогнозирования итерации по умолчанию или идентификатор определенной итерации. Начиная с версии 3.0, мы приняли поток публикации, при котором сначала опубликовать итерации под указанным именем из API обучения. Затем передайте имя методам прогноза для указания какой итерации для использования.
+2\.x API-интерфейсы позволяют выбрать итерацию, которую требуется использовать для прогнозирования итерации по умолчанию или идентификатор определенной итерации. Начиная с версии 3.0, мы приняли поток публикации, при котором сначала опубликовать итерации под указанным именем из API обучения. Затем передайте имя методам прогноза для указания какой итерации для использования.
 
 > [!IMPORTANT]
-> 3.0 API не используют возможности итерации по умолчанию. Пока мы отказаться от старых API хостинга, вы можете назначить 2.x API-интерфейсы для переключения итерации по умолчанию. Эти API-интерфейсы будут поддерживаться в течение заданного времени, и вы можете вызвать **[UpdateIteration](https://southcentralus.dev.cognitive.microsoft.com/docs/services/Custom_Vision_Training_3.0/operations/5c771cdcbf6a2b18a0c3b818)** метод, чтобы пометить итерации по умолчанию.
+> 3\.0 API не используют возможности итерации по умолчанию. Пока мы отказаться от старых API хостинга, вы можете назначить 2.x API-интерфейсы для переключения итерации по умолчанию. Эти API-интерфейсы будут поддерживаться в течение заданного времени, и вы можете вызвать **[UpdateIteration](https://southcentralus.dev.cognitive.microsoft.com/docs/services/Custom_Vision_Training_3.0/operations/5c771cdcbf6a2b18a0c3b818)** метод, чтобы пометить итерации по умолчанию.
 
 ### <a name="publish-an-iteration"></a>Публикация итерации
 

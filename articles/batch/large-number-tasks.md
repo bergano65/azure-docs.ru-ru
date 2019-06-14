@@ -16,10 +16,10 @@ ms.date: 08/24/2018
 ms.author: lahugh
 ms.custom: ''
 ms.openlocfilehash: ed04774969f72f1d6037a350f019d81d812d73f6
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60549671"
 ---
 # <a name="submit-a-large-number-of-tasks-to-a-batch-job"></a>Отправка большого количества задач в пакетное задание
@@ -65,7 +65,7 @@ ms.locfileid: "60549671"
 
 В следующих фрагментах кода C# показаны параметры, которые нужно настроить при добавлении большого количества задач с помощью API .NET пакетной службы.
 
-Чтобы увеличить пропускную способность задачи, увеличьте значение свойства [MaxDegreeOfParallelism](/dotnet/api/microsoft.azure.batch.batchclientparalleloptions.maxdegreeofparallelism) в [BatchClient](/dotnet/api/microsoft.azure.batch.batchclient?view=azure-dotnet). Например: 
+Чтобы увеличить пропускную способность задачи, увеличьте значение свойства [MaxDegreeOfParallelism](/dotnet/api/microsoft.azure.batch.batchclientparalleloptions.maxdegreeofparallelism) в [BatchClient](/dotnet/api/microsoft.azure.batch.batchclient?view=azure-dotnet). Пример:
 
 ```csharp
 BatchClientParallelOptions parallelOptions = new BatchClientParallelOptions()
@@ -75,7 +75,7 @@ BatchClientParallelOptions parallelOptions = new BatchClientParallelOptions()
 ...
 ```
 Добавьте коллекцию задач в задание, используя соответствующую перегрузку метода [AddTaskAsync](/dotnet/api/microsoft.azure.batch.cloudjob.addtaskasync?view=azure-dotnet) или [AddTask](/dotnet/api/microsoft.azure.batch.cloudjob.addtask?view=azure-dotnet
-). Например: 
+). Пример:
 
 ```csharp
 // Add a list of tasks as a collection
@@ -145,7 +145,7 @@ client = batch.BatchExtensionsClient(base_url=BATCH_ACCOUNT_URL, resource_group=
 ...
 ```
 
-Создайте коллекцию задач для добавления в задание. Например: 
+Создайте коллекцию задач для добавления в задание. Пример:
 
 
 ```python

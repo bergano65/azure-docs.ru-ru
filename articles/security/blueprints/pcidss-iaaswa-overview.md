@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 07/03/2018
 ms.author: meladie
 ms.openlocfilehash: 361d7683790128aafb11d6581c6e672b68ad893f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60609233"
 ---
 # <a name="azure-security-and-compliance-blueprint-iaas-web-application-for-pci-dss"></a>Схема безопасности и соответствия требованиям Azure. IaaS веб-приложение для PCI DSS
@@ -43,8 +43,8 @@ ms.locfileid: "60609233"
         - режим брандмауэра — предотвращение;
         - Набор правил: OWASP 3.0
         - Порт прослушивания: 443
-- Хранилище Azure Key Vault
-- Балансировщик нагрузки Azure
+- Хранилище ключей Azure
+- Azure Load Balancer
 - Azure Monitor
 - Azure Resource Manager
 - Центр безопасности Azure
@@ -157,7 +157,7 @@ Azure по умолчанию шифрует весь обмен данными 
 - [пользовательские пробы работоспособности](https://docs.microsoft.com/azure/application-gateway/application-gateway-create-gateway-portal);
 - [Центр безопасности Azure](https://azure.microsoft.com/services/security-center) и [Помощник Azure](https://docs.microsoft.com/azure/advisor/advisor-security-recommendations) обеспечивают дополнительную защиту и уведомления. Центр безопасности Azure также предоставляет систему репутации.
 
-### <a name="business-continuity"></a>Непрерывная работа
+### <a name="business-continuity"></a>Непрерывность бизнес-процессов
 
 **Высокий уровень доступности**. Решение развертывает все виртуальные машины в группе доступности. Дополнительные сведения см. в [этом руководстве](https://docs.microsoft.com/azure/virtual-machines/windows/tutorial-availability-sets). Группа доступности распределяет виртуальные машины между несколькими изолированными аппаратными кластерами, чтобы повысить уровень доступности. Во время планового или внепланового технического обслуживания доступна как минимум одна виртуальная машина, что соответствует соглашению об уровне обслуживания Azure, гарантирующему доступность в течение 99,95 % времени.
 

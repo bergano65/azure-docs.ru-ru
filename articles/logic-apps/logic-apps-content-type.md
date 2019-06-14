@@ -11,10 +11,10 @@ ms.date: 07/20/2018
 ms.reviewer: klam, LADocs
 ms.suite: integration
 ms.openlocfilehash: 2a9318317d5a01136a42b4fb6d580bafaf53ec4e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60685771"
 ---
 # <a name="handle-content-types-in-azure-logic-apps"></a>Обработка типов содержимого в Azure Logic Apps
@@ -63,7 +63,7 @@ ms.locfileid: "60685771"
   
   1. В триггере запросов выберите **Использовать пример полезной нагрузки, чтобы создать схему**.  
   
-  2. В разделе **Введение или вставка примера полезных данных JSON** предоставьте пример полезных данных, а затем выберите **Готово**. Например:  
+  2. В разделе **Введение или вставка примера полезных данных JSON** предоставьте пример полезных данных, а затем выберите **Готово**. Пример: 
 
      ![Предоставление примера полезных данных JSON](./media/logic-apps-content-type/request-trigger.png)
 

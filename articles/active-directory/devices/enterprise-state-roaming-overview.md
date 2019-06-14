@@ -18,10 +18,10 @@ ms.date: 10/25/2018
 ms.author: joflore
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d3a2a81bd8aa3fc99d033564e8a8782c79261305
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60353148"
 ---
 # <a name="what-is-enterprise-state-roaming"></a>Служба Enterprise State Roaming
@@ -34,7 +34,7 @@ ms.locfileid: "60353148"
 
 Служба Enterprise State Roaming доступна в различных регионах Azure. Обновленный список доступных регионов см. на странице [Регионы Azure — Службы по региону](https://azure.microsoft.com/regions/#services) в разделе Azure Active Directory.
 
-| Статья | ОПИСАНИЕ |
+| Статья | Описание |
 | --- | --- |
 | [Включение службы Enterprise State Roaming в Azure Active Directory](enterprise-state-roaming-enable.md) |Служба Enterprise State Roaming доступна для любой компании с подпиской Azure Active Directory Premium (Azure AD). Дополнительные сведения о том, как получить подписку Azure AD, см. на странице продукта [Azure Active Directory](https://azure.microsoft.com/services/active-directory). |
 | [Часто задаваемые вопросы о перемещении параметров и данных](enterprise-state-roaming-faqs.md) |В этой статье содержится информация о синхронизации параметров и данных приложений, которая может быть полезной для ИТ-администраторов. |

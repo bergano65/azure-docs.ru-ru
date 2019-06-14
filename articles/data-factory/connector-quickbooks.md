@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: jingwang
 ms.openlocfilehash: 8f5e3958588a597bde04ae1c8e4873006b281458
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60405823"
 ---
 # <a name="copy-data-from-quickbooks-online-using-azure-data-factory-preview"></a>Копирование данных из QuickBooks Online с помощью Фабрики данных Azure (предварительная версия)
@@ -46,14 +46,14 @@ ms.locfileid: "60405823"
 
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Для свойства type необходимо задать значение **QuickBooks**. | Yes |
-| endpoint | Конечная точка сервера QuickBooks Online. (это quickbooks.api.intuit.com).  | Yes |
-| companyId | Идентификатор компании QuickBooks для авторизации. Сведения о том, как найти идентификатор компании см. в [этой статье](https://quickbooks.intuit.com/community/Getting-Started/How-do-I-find-my-Company-ID/m-p/185551). | Yes |
-| consumerKey | Ключ объекта-получателя для аутентификации OAuth 1.0. | Yes |
-| consumerSecret | Секрет объекта-получателя для аутентификации OAuth 1.0. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Yes |
-| accessToken | Маркер доступа для аутентификации OAuth 1.0. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Yes |
-| accessTokenSecret | Секрет маркера доступа для аутентификации OAuth 1.0. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Yes |
-| useEncryptedEndpoints | Указывает, шифруются ли конечные точки источника данных с помощью протокола HTTPS. По умолчанию используется значение true.  | Нет  |
+| type | Для свойства type необходимо задать значение **QuickBooks**. | Да |
+| endpoint | Конечная точка сервера QuickBooks Online. (это quickbooks.api.intuit.com).  | Да |
+| companyId | Идентификатор компании QuickBooks для авторизации. Сведения о том, как найти идентификатор компании см. в [этой статье](https://quickbooks.intuit.com/community/Getting-Started/How-do-I-find-my-Company-ID/m-p/185551). | Да |
+| consumerKey | Ключ объекта-получателя для аутентификации OAuth 1.0. | Да |
+| consumerSecret | Секрет объекта-получателя для аутентификации OAuth 1.0. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
+| accessToken | Маркер доступа для аутентификации OAuth 1.0. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
+| accessTokenSecret | Секрет маркера доступа для аутентификации OAuth 1.0. Пометьте это поле как SecureString, чтобы безопасно хранить его в фабрике данных, или [добавьте ссылку на секрет, хранящийся в Azure Key Vault](store-credentials-in-key-vault.md). | Да |
+| useEncryptedEndpoints | Указывает, шифруются ли конечные точки источника данных с помощью протокола HTTPS. По умолчанию используется значение true.  | Нет |
 
 **Пример.**
 
@@ -92,7 +92,7 @@ ms.locfileid: "60405823"
 
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Свойство type для набора данных должно иметь значение **QuickBooksObject**. | Yes |
+| type | Свойство type для набора данных должно иметь значение **QuickBooksObject**. | Да |
 | tableName | Имя таблицы. | Нет (если свойство query указано в источнике действия) |
 
 **Пример**
@@ -121,7 +121,7 @@ ms.locfileid: "60405823"
 
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
-| type | Свойство type источника действия копирования должно иметь значение **QuickBooksSource**. | Yes |
+| type | Свойство type источника действия копирования должно иметь значение **QuickBooksSource**. | Да |
 | query | Используйте пользовательский SQL-запрос для чтения данных. Например, `"SELECT * FROM "Bill" WHERE Id = '123'"`. | Нет (если для набора данных задано свойство tableName) |
 
 **Пример.**

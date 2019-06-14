@@ -11,10 +11,10 @@ ms.topic: troubleshooting
 ms.date: 10/31/2018
 ms.author: delhan
 ms.openlocfilehash: 59602977c1b7f6dd0524c6535d8458d3eb1a3f26
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60505913"
 ---
 # <a name="how-to-use-boot-diagnostics-to-troubleshoot-virtual-machines-in-azure"></a>Как устранять неполадки виртуальных машин в Azure с помощью диагностики загрузки
@@ -25,7 +25,7 @@ ms.locfileid: "60505913"
 
 Можно выбрать параметр **Диагностика загрузки**, чтобы просмотреть журнал и снимок экрана.
 
-![Диспетчер ресурсов](./media/virtual-machines-common-boot-diagnostics/screenshot1.png)
+![Resource Manager](./media/virtual-machines-common-boot-diagnostics/screenshot1.png)
 
 ## <a name="common-boot-errors"></a>Распространенные ошибки загрузки
 

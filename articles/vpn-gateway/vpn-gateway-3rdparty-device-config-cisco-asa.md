@@ -2,17 +2,16 @@
 title: Пример конфигурации для подключения устройства Cisco ASA к VPN-шлюзам Azure | Документация Майкрософт
 description: В этой статье приведен пример конфигурации для подключения устройства Cisco ASA к VPN-шлюзам Azure.
 services: vpn-gateway
-author: WenJason
+author: yushwang
 ms.service: vpn-gateway
 ms.topic: article
-origin.date: 10/19/2018
-ms.date: 03/04/2019
-ms.author: v-jay
+ms.date: 10/19/2018
+ms.author: yushwang
 ms.openlocfilehash: e575fac61a1c5d9351391d39d200b87e34ff26cd
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60648759"
 ---
 # <a name="sample-configuration-cisco-asa-device-ikev2no-bgp"></a>Образец конфигурации: Устройство Cisco ASA (IKEv2, без BGP)
@@ -28,7 +27,7 @@ ms.locfileid: "60648759"
 | Проверенная модель           | ASA 5505                          |
 | Проверенные версии         | 9.2                               |
 | Версия IKE            | IKEv2                             |
-| BGP                    | Нет                                 |
+| BGP                    | Нет                                |
 | Тип VPN-шлюза Azure | Пример VPN-шлюза на основе маршрута           |
 |                        |                                   |
 
@@ -303,4 +302,3 @@ sysopt connection tcpmss 1350
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Инструкции по настройке распределенных подключений (локальных и между виртуальными сетями) с конфигурацией "активный — активный" см. в статье [Настройка VPN-подключений типа "сеть — сеть" в режиме "активный — активный" для VPN-шлюзов Azure](vpn-gateway-activeactive-rm-powershell.md).
-<!--Update_Description: wording update -->

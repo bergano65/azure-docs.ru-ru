@@ -13,10 +13,10 @@ ms.reviewer: vanto, carlrab
 manager: craigg
 ms.date: 03/12/2019
 ms.openlocfilehash: abb4a43176026fca5a80409ade13af1f8f96d9f1
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60390585"
 ---
 # <a name="configure-and-manage-azure-active-directory-authentication-with-sql"></a>Настройка и администрирование аутентификации Azure Active Directory с помощью SQL

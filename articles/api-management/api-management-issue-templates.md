@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 01/09/2017
 ms.author: apimpm
 ms.openlocfilehash: c70e88a572bc261ad9d25f9a742b1987d0c19b44
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60656715"
 ---
 # <a name="issue-templates-in-azure-api-management"></a>Шаблоны проблем в службе управления API Azure
@@ -97,7 +97,7 @@ ms.locfileid: "60656715"
   
 ### <a name="data-model"></a>Модель данных  
   
-|Свойство|type|ОПИСАНИЕ|  
+|Свойство|type|Описание|  
 |--------------|----------|-----------------|  
 |`Issues`|Коллекция сущностей [проблем](api-management-template-data-model-reference.md#Issue).|Проблемы, которые отображаются для текущего пользователя.|  
 |`Paging`|Сущность [разбиения по страницам](api-management-template-data-model-reference.md#Paging).|Сведения о разбиении по страницам для коллекции приложений.|  

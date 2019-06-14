@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 6/5/2018
 ms.author: adigan
 ms.openlocfilehash: 67d79f2aa41bab8a14d693098538d22ffeb05a4e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60848759"
 ---
 # <a name="back-up-files-on-azure-stack"></a>Архивация файлов в Azure Stack
@@ -45,7 +45,7 @@ ms.locfileid: "60848759"
 
     ![Открытое окно мастера создания группы защиты](./media/backup-mabs-files-applications-azure-stack/4-opening-screen-choose-servers.png)
 
-3. На экране **Выбор членов группы** щелкните **+**, чтобы развернуть список вложенных элементов. Установите флажок для всех элементов, которые нужно защитить. Завершив выбор элементов, щелкните **Далее**.
+3. На экране **Выбор членов группы** щелкните **+** , чтобы развернуть список вложенных элементов. Установите флажок для всех элементов, которые нужно защитить. Завершив выбор элементов, щелкните **Далее**.
 
     ![Открытое окно мастера создания группы защиты](./media/backup-mabs-files-applications-azure-stack/5-select-group-members.png)
 

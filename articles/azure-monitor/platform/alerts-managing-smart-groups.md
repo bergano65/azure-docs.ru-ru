@@ -1,18 +1,18 @@
 ---
 title: Управление смарт-группами
 description: Управление смарт-группами, созданными на основе экземпляров оповещений
-author: lingliw
+author: anantr
 services: monitoring
 ms.service: azure-monitor
 ms.topic: conceptual
-ms.date: 01/21/19
-ms.author: v-lingwu
+ms.date: 09/24/2018
+ms.author: anantr
 ms.subservice: alerts
 ms.openlocfilehash: a9434bebe82687b14f45b3c375572717d71d0e55
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60713380"
 ---
 # <a name="manage-smart-groups"></a>Управление смарт-группами
@@ -26,4 +26,5 @@ ms.locfileid: "60713380"
 ![Мониторинг](./media/alerts-managing-smart-groups/sg-list.jpg)
 3.  При щелчке смарт-группы откроется страница со сведениями о ней, такими как критерий группировки, а также списком всех оповещений в группе. Такое объединение позволяет сконцентрироваться на отдельных группах оповещений, а не работать со множеством индивидуальных оповещений.   
 ![Мониторинг](./media/alerts-managing-smart-groups/sg-details.jpg)
+
 

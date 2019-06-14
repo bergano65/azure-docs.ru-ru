@@ -17,10 +17,10 @@ ms.date: 06/01/2017
 ms.author: mathoma
 ms.reviewer: jroth
 ms.openlocfilehash: 3b3bb206286629a68c14b6444f3f88ffa0af50dd
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60583270"
 ---
 # <a name="use-azure-premium-storage-with-sql-server-on-virtual-machines"></a>Использование хранилища Azure Premium Storage с SQL Server на виртуальных машинах
@@ -96,7 +96,7 @@ ms.locfileid: "60583270"
 </VirtualNetworkSite>
 ```
 
-### <a name="storage-accounts"></a>учетные записи хранения;
+### <a name="storage-accounts"></a>Учетные записи хранения
 
 Вам необходимо создать учетную запись хранения, настроенную для хранилища класса Premium. Обратите внимание, что использование хранилища Premium Storage настраивается в учетной записи хранения, а не на отдельных виртуальных жестких дисках. Тем не менее при использовании виртуальной машины серии DS* вы можете подключать виртуальные жесткие диски из учетных записей хранения Premium и Standard. Вы можете воспользоваться таким решением, если не хотите размещать виртуальный жесткий диск ОС на учетной записи хранения Premium.
 
@@ -625,7 +625,7 @@ $vmConfigsl2 | New-AzureVM –ServiceName $destcloudsvc -VNetName $vnet
 ### <a name="environment"></a>Среда
 
 * Windows 2k12 / SQL 2k12
-* 1 файл БД на SP 
+* 1 файл БД на SP
 * 2 x пулы носителей на каждом узле
 
 ![Приложение1][11]

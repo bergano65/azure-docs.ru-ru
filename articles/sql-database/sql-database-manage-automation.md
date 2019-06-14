@@ -13,17 +13,17 @@ ms.reviewer: carlrab
 manager: craigg
 ms.date: 03/12/2019
 ms.openlocfilehash: e488e742fc49102f7c58d132a66bca2347ad575c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60702101"
 ---
 # <a name="managing-azure-sql-databases-using-azure-automation"></a>Управление базами данных SQL Azure с помощью службы автоматизации Azure
 
 В этом руководстве будет представлена служба автоматизации Azure и способы ее использования для упрощения управления базами данных SQL Azure.
 
-## <a name="what-is-azure-automation"></a>Что собой представляет служба автоматизации Azure?
+## <a name="what-is-azure-automation"></a>Что такое служба автоматизации Azure
 
 [Служба автоматизации Azure](https://azure.microsoft.com/services/automation/) — это служба Azure для упрощения управления облаком путем автоматизации процессов. С помощью службы автоматизации Azure можно автоматизировать длительные, выполняемые вручную, ненадежные и часто повторяющиеся задачи для повышения надежности, эффективности и ускорения вывода продукта на рынок.
 

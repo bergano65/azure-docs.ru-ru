@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 07/23/2018
 ms.author: spelluru
 ms.openlocfilehash: 090236ec3647c7c3e38eb862780a615f854e952b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60562265"
 ---
 # <a name="specify-mandatory-artifacts-for-your-lab-in-azure-devtest-labs"></a>Укажите обязательные артефакты для лаборатории в Azure DevTest Labs
@@ -49,7 +49,7 @@ ms.locfileid: "60562265"
     
     ![Страница "Обязательные артефакты": артефакты Windows и Linux](media/devtest-lab-mandatory-artifacts/windows-linux-artifacts.png)
 9. Чтобы **удалить** артефакт из списка, выберите **...(многоточие)** в конце строки, а затем выберите **Удалить**. 
-10. Чтобы **переупорядочить** артефакты в списке, выберите **...(многоточие)**, находящееся в начале строки, и перетащите его в новое положение. 
+10. Чтобы **переупорядочить** артефакты в списке, выберите **...(многоточие)** , находящееся в начале строки, и перетащите его в новое положение. 
 11. Чтобы сохранить обязательные артефакты лаборатории, выберите **Сохранить**. 
 
     ![Страница "Обязательные артефакты": сохранение артефактов в лаборатории](media/devtest-lab-mandatory-artifacts/save-to-lab.png)

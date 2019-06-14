@@ -3,21 +3,20 @@ title: Копирование данных в SAP Cloud for Customer или из
 description: Узнайте, как копировать данные SAP Cloud for Customer в поддерживаемые хранилища данных-приемники или из поддерживаемых исходных хранилищ данных в SAP Cloud for Customer с помощью фабрики данных.
 services: data-factory
 documentationcenter: ''
-author: WenJason
-manager: digimobile
+author: linda33wj
+manager: craigg
 ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.tgt_pltfrm: na
 ms.topic: conceptual
-origin.date: 04/17/2018
-ms.date: 04/22/2019
-ms.author: v-jay
+ms.date: 04/17/2018
+ms.author: jingwang
 ms.openlocfilehash: e4625b934f9e1cf98254f3dee59f9c26e8e16fb5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60578714"
 ---
 # <a name="copy-data-from-sap-cloud-for-customer-c4c-using-azure-data-factory"></a>Копирование данных из SAP Cloud for Customer (C4C) с помощью фабрики данных Azure
@@ -59,7 +58,7 @@ ms.locfileid: "60578714"
     "properties": {
         "type": "SapCloudForCustomer",
         "typeProperties": {
-            "url": "https://<tenantname>.crm.ondemand.cn/sap/c4c/odata/v1/c4codata/" ,
+            "url": "https://<tenantname>.crm.ondemand.com/sap/c4c/odata/v1/c4codata/" ,
             "username": "<username>",
             "password": {
                 "type": "SecureString",
@@ -114,7 +113,7 @@ ms.locfileid: "60578714"
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 |:--- |:--- |:--- |
 | type | Свойству type необходимо задать значение **SapCloudForCustomerSource**.  | Yes |
-| query | Укажите пользовательский запрос OData для чтения данных. | Нет  |
+| query | Укажите пользовательский запрос OData для чтения данных. | Нет |
 
 Образец запроса для получения данных за определенный день: `"query": "$filter=CreatedOn ge datetimeoffset'2017-07-31T10:02:06.4202620Z' and CreatedOn le datetimeoffset'2017-08-01T10:02:06.4202620Z'"`
 
@@ -206,7 +205,7 @@ ms.locfileid: "60578714"
 | Тип данных OData SAP C4C | Тип промежуточных данных фабрики данных |
 |:--- |:--- |
 | Edm.Binary | Byte[] |
-| Edm.Boolean | Bool |
+| Edm.Boolean | Логический |
 | Edm.Byte | Byte[] |
 | Edm.DateTime | DateTime |
 | Edm.Decimal | Decimal |

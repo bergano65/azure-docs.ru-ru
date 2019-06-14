@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 10/01/2018
 ms.author: gracez
 ms.openlocfilehash: 6324da55c8af4934185fa39a106939844788adba
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60653722"
 ---
 # <a name="migrate-from-bing-speech-to-the-speech-service"></a>Перенос из службы "Распознавание речи Bing" в службу "Речь"
@@ -37,7 +37,7 @@ ms.locfileid: "60653722"
 
 Службы речи, во многом аналогичны распознавания речи Bing, со следующими отличиями.
 
-Функция | API распознавания речи Bing | Службы распознавания речи | Сведения
+Компонент | API распознавания речи Bing | Служба "Речь" | Сведения
 -|-|-|-
 SDK C++ | :heavy_minus_sign: | :heavy_check_mark: | Службы речи поддерживает Windows и Linux.
 Пакет SDK для Java | :heavy_check_mark: | :heavy_check_mark: | Службы речи поддерживает Android и речевых устройств.
@@ -90,7 +90,7 @@ SDK C++ | :heavy_minus_sign: | :heavy_check_mark: | Службы речи под
 ## <a name="next-steps"></a>Дальнейшие действия
 
 * [Бесплатная пробная версия служб речи](get-started.md)
-* [Краткое руководство. Распознавание речи в приложении UWP с помощью пакета SDK для службы "Речь"](quickstart-csharp-uwp.md)
+* [Краткое руководство Распознавание речи в приложении UWP с помощью пакета SDK для службы "Речь"](quickstart-csharp-uwp.md)
 
 ## <a name="see-also"></a>См. также
 * [Заметки о выпуске служб речи](releasenotes.md)

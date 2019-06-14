@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako;cenkdin
 ms.openlocfilehash: 5b023a152cf93ec6ff688674e991ad55db215965
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60767818"
 ---
 # <a name="creating-filters-with-azure-media-services-rest-api"></a>Создание фильтров с помощью с помощью API REST служб мультимедиа 
@@ -217,7 +217,7 @@ ms.locfileid: "60767818"
     Host: media.windows.net 
     Content-Length: 384
 
-Текст запроса: 
+Тело запроса: 
 
     { 
        "Tracks":[   
@@ -256,7 +256,7 @@ ms.locfileid: "60767818"
     x-ms-client-request-id: 00000000-0000-0000-0000-000000000000 
     Host: media.windows.net 
 
-Текст запроса: 
+Тело запроса: 
 
     { 
        "Tracks":[   

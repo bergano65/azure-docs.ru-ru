@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 04/17/2018
 ms.author: spelluru
 ms.openlocfilehash: 3c187d104334fe75ec9e0ce41a3fdc14b508dfb2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60623429"
 ---
 # <a name="upload-vhd-file-to-labs-storage-account-using-microsoft-azure-storage-explorer"></a>Загрузка VHD-файла в учетную запись хранения лаборатории с помощью обозревателя хранилищ Microsoft Azure

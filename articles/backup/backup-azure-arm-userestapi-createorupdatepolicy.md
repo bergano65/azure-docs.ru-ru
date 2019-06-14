@@ -11,10 +11,10 @@ ms.date: 08/21/2018
 ms.author: pullabhk
 ms.assetid: 5ffc4115-0ae5-4b85-a18c-8a942f6d4870
 ms.openlocfilehash: 657a777da0e984a145c1c617a6194bf4ef56306e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60648811"
 ---
 # <a name="create-azure-recovery-services-backup-policies-using-rest-api"></a>Создание политик резервного копирования Служб восстановления Azure с помощью REST API
@@ -50,10 +50,10 @@ PUT https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{
 
 Например, чтобы создать политику для восстановления диска из резервной копии виртуальной машины Azure, выполните компоненты текста запроса.
 
-|ИМЯ  |Обязательно для заполнения  |type  |ОПИСАНИЕ  |
+|ИМЯ  |Обязательно для заполнения  |type  |Описание  |
 |---------|---------|---------|---------|
 |properties     |   Истина      |  ProtectionPolicy:[AzureIaaSVMProtectionPolicy](https://docs.microsoft.com/rest/api/backup/protectionpolicies/createorupdate#azureiaasvmprotectionpolicy)      | Свойства ProtectionPolicyResource        |
-|tags     |         | Object        |  Теги ресурсов       |
+|теги     |         | Object        |  Теги ресурсов       |
 
 Полный список определений в тексте запроса см. в [документе REST API о политике резервного копирования](https://docs.microsoft.com/rest/api/backup/protectionpolicies/createorupdate).
 
@@ -152,13 +152,13 @@ PUT https://management.azure.com/Subscriptions/{subscriptionId}/resourceGroups/{
 > [!IMPORTANT]
 > Форматы времени для расписания и хранения поддерживают только DateTime. Они не поддерживают только формат времени.
 
-## <a name="responses"></a>Ответы
+## <a name="responses"></a>Responses
 
 Создание и обновление политики резервного копирования является [асинхронной операцией](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-async-operations). Это означает, что такая операция создает другую операцию, которая должна отслеживаться отдельно.
 
 Она возвращает два ответа: 202 (принято), когда создается другая операция, и 200 (ОК), когда эта операция завершается.
 
-|ИМЯ  |Тип  |ОПИСАНИЕ  |
+|Name  |Тип  |Описание  |
 |---------|---------|---------|
 |200 ОК     |    [ProtectionPolicyResource](https://docs.microsoft.com/rest/api/backup/protectionpolicies/createorupdate#protectionpolicyresource)     |  OК       |
 |202 — принято     |         |     Принято    |

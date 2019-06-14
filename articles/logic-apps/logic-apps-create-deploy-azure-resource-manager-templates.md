@@ -11,10 +11,10 @@ ms.topic: article
 ms.assetid: 7574cc7c-e5a1-4b7c-97f6-0cffb1a5d536
 ms.date: 10/15/2017
 ms.openlocfilehash: 21603ff213bc8babb4145209a76aee0b4150cc12
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60681761"
 ---
 # <a name="deploy-logic-apps-with-azure-resource-manager-templates"></a>Развертывание приложений логики с помощью шаблонов Azure Resource Manager
@@ -67,12 +67,12 @@ New-AzDeployment -Location <location> -TemplateUri https://raw.githubusercontent
 ```
 
 * [Развертывание ресурсов с использованием шаблонов Resource Manager и Azure PowerShell](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-template-deploy)
-* [`New-AzResourceGroupDeployment`](https://docs.microsoft.com/powershell/module/azurerm.resources/new-azurermresourcegroupdeployment)
+* [`New-AzResourceGroupDeployment`](/powershell/module/az.resources/new-azresourcegroupdeployment)
 * [`New-AzDeployment`](/powershell/module/az.resources/new-azdeployment)
 
 <a name="cli"></a>
 
-## <a name="deploy-with-azure-cli"></a>Развертывание с помощью Azure CLI
+## <a name="deploy-with-azure-cli"></a>Развертывание с помощью интерфейса командной строки Azure
 
 Для развертывания с конкретными *группы ресурсов Azure*, используйте следующую команду:
 

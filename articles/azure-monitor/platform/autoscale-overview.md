@@ -7,12 +7,12 @@ ms.service: azure-monitor
 ms.topic: conceptual
 ms.date: 09/24/2018
 ms.author: robb
-ms.component: autoscale
+ms.subservice: autoscale
 ms.openlocfilehash: 05f20aec536ebdb702caea37051a65af9bbc659f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60787605"
 ---
 # <a name="overview-of-autoscale-in-microsoft-azure-virtual-machines-cloud-services-and-web-apps"></a>Обзор автомасштабирования в виртуальных машинах, облачных службах и веб-приложениях Microsoft Azure
@@ -69,7 +69,7 @@ ms.locfileid: "60787605"
   - **Профиль автомасштабирования** — это комбинация следующих компонентов:
 
     - **параметр емкости**, который определяет минимальное, максимальное и стандартное значение числа экземпляров;
-    - **набор правил,**, каждый из которых включает триггер (время или метрика) и действие масштабирования (увеличение или уменьшение);
+    - **набор правил,** , каждый из которых включает триггер (время или метрика) и действие масштабирования (увеличение или уменьшение);
     - сведения о **повторении**, которые определяют, когда именно функция автомасштабирования должна активировать тот или иной профиль.
 
       На случай, если одни требования частично дублируются другими требованиями, можно создать несколько профилей. У вас может быть несколько профилей автомасштабирования, предназначенных, например, для разных дней недели или разного времени суток.
@@ -102,7 +102,6 @@ ms.locfileid: "60787605"
 * [Azure Monitor REST API](https://msdn.microsoft.com/library/azure/dn931953.aspx)
 
 ## <a name="supported-services-for-autoscale"></a>Службы, поддерживающие автомасштабирование
-
 | Service | Схемы и документы |
 | --- | --- |
 | Веб-приложения |[Scaling Web Apps (Масштабирование веб-приложения)](../../azure-monitor/platform/autoscale-get-started.md) |
@@ -121,3 +120,4 @@ ms.locfileid: "60787605"
 * [Использование действий автомасштабирования для отправки электронной почты и уведомлений об оповещениях веб-перехватчика в Azure Insights](../../azure-monitor/platform/autoscale-webhook-email.md)
 * [Create or update an autoscale setting in Azure Insights REST API (Создание и изменение параметров автомасштабирования в REST API Azure Insights)](https://msdn.microsoft.com/library/dn931953.aspx)
 * [Устранение неполадок при автомасштабировании масштабируемых наборов виртуальных машин](../../virtual-machine-scale-sets/virtual-machine-scale-sets-troubleshoot.md)
+

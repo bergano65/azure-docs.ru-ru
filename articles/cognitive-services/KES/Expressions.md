@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 03/26/2016
 ms.author: paulhsu
 ms.openlocfilehash: a544cdca1ef4be56fcf368a39040f4ee85076a9e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60815102"
 ---
 # <a name="structured-query-expression"></a>Структурированное выражение запроса
@@ -31,15 +31,15 @@ ms.locfileid: "60815102"
 
 | type | Операция | Примеры |
 |------|-------------|------------|
-| String | equals (равно) | Title='latent semantic analysis'  (каноническое значение и синонимы) |
-| String | equals (равно) | Author.Name=='susan t dumais'  (только каноническое значение)|
+| String | equals | Title='latent semantic analysis'  (каноническое значение и синонимы) |
+| String | equals | Author.Name=='susan t dumais'  (только каноническое значение)|
 | String | starts_with | Title='latent s'... |
-| Int32, Int64, Double | equals (равно) | Year=2000 |
+| Int32, Int64, Double | equals | Year=2000 |
 | Int32, Int64, Double | starts_with | Year='20'... (любое десятичное число, начинающееся с "20") |
 | Int32, Int64, Double | is_between | Year&lt;2000 <br/> Year&lt;=2000 <br/> Year&gt;2000 <br/> Year&gt;=2000 <br/> Year=[2010,2012] *(включает только левое граничное значение: 2010, 2011)* <br/> Year=[2000,2012] *(включает оба граничных значения: 2010, 2011, 2012)* |
-| Дата | equals (равно) | BirthDate='1984-05-14' |
+| Дата | equals | BirthDate='1984-05-14' |
 | Дата | is_between | BirthDate&lt;='2008/03/14' <br/> PublishDate=['2000-01-01','2009-12-31'] |
-| Guid | equals (равно) | Id='602DD052-CC47-4B23-A16A-26B52D30C05B' |
+| Guid | equals | Id='602DD052-CC47-4B23-A16A-26B52D30C05B' |
 
 
 Например, выражение "Title='latent s'..." соответствует всем научным публикациям, название которых начинается со строки "latent s".  Для вычисления этого выражения атрибут Title должен задавать операцию starts_with в схеме, используемой для создания индекса.

@@ -13,10 +13,10 @@ ms.workload: na
 ms.date: 04/13/2019
 ms.author: banders
 ms.openlocfilehash: 54578746ea8029a760663edc456660f98358abc5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60615998"
 ---
 # <a name="self-service-exchanges-and-refunds-for-azure-reservations"></a>Обмен самообслуживания и возмещения для резервирования Azure
@@ -79,7 +79,7 @@ Money добавляется денежных обязательств для о
 
 Можно организовать обмен приобретенных для размера виртуальной Машины, который не поддерживает хранилище уровня "премиум" для соответствующего размера виртуальной Машины, который выполняет резервирование. Например _F1_ для _F1s_. Для этого обмена, перейдите к сведения о резервировании и щелкните **Exchange**. Exchange не сбросить термин зарезервированного экземпляра или создать новую транзакцию.
 
-## <a name="need-help-contact-us"></a>Нужна помощь? Связаться с нами.
+## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
 
 Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
 
