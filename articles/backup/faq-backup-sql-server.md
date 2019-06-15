@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: sachdevaswati
 ms.openlocfilehash: 649e50634d901ab48f1cb36c39d7331401c0cc51
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64700171"
 ---
 # <a name="faq-about-sql-server-databases-that-are-running-on-an-azure-vm-backup"></a>Часто задаваемые вопросы о базах данных SQL Server, работающих под управлением на резервную копию виртуальной Машины Azure
@@ -37,7 +37,7 @@ ms.locfileid: "64700171"
 Автоматическое восстановление возможность для всех пользователей включено по умолчанию. Тем не менее в случае, если вы решили отказаться от его, затем выполните ниже:
 
   * На экземпляре SQL Server в *C:\Program Files\Azure рабочей нагрузки Backup\bin* папки, создание или изменение **ExtensionSettingsOverrides.json** файла.
-  * В **ExtensionSettingsOverrides.json**, задайте *{«EnableAutoHealer»: false}*.
+  * В **ExtensionSettingsOverrides.json**, задайте *{«EnableAutoHealer»: false}* .
   * Сохраните изменения и закройте файл.
   * На экземпляре SQL Server, откройте **задач управления** , а затем перезапустите **AzureWLBackupCoordinatorSvc** службы.  
 

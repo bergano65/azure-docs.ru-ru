@@ -11,10 +11,10 @@ ms.tgt_pltfrm: arduino
 ms.date: 04/11/2018
 ms.author: robinsh
 ms.openlocfilehash: ffc2e5fb588ce6861f5df6cefdf810c1a015c043
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61441089"
 ---
 # <a name="weather-forecast-using-the-sensor-data-from-your-iot-hub-in-azure-machine-learning"></a>Прогнозирование погоды в машинном обучении Azure с помощью данных от датчиков Центра Интернета вещей
@@ -76,7 +76,7 @@ ms.locfileid: "61441089"
 
 ### <a name="create-a-stream-analytics-job"></a>Создание задания Stream Analytics
 
-1. На [портале Azure](https://portal.azure.com/) последовательно выберите **Создать ресурс** > **"Интернет вещей"** > **Stream Analytics job** (Задание Stream Analytics).
+1. На [портале Azure](https://portal.azure.com/) последовательно выберите **Создать ресурс** >  **"Интернет вещей"**  > **Stream Analytics job** (Задание Stream Analytics).
 1. Введите представленные ниже сведения для задания.
 
    **Имя задания.** Имя задания. Оно должно быть глобально уникальным.

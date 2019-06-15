@@ -8,14 +8,13 @@ keywords: ''
 ms.service: azure-functions
 ms.devlang: multiple
 ms.topic: conceptual
-origin.date: 12/07/2018
-ms.date: 03/19/2019
-ms.author: v-junlch
+ms.date: 12/07/2018
+ms.author: azfuncdf
 ms.openlocfilehash: ee96bc5e17051ab37be34eecbb8e4fe35599cd5d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60730775"
 ---
 # <a name="manage-instances-in-durable-functions-in-azure"></a>Управление экземплярами в Устойчивых функциях в Azure
@@ -87,11 +86,11 @@ module.exports = async function(context, input) {
 
 Можно также запустить экземпляр напрямую с помощью [основных инструментов функций Azure](../functions-run-local.md) `durable start-new` команды. Она принимает следующие параметры.
 
-* **`function-name` (обязательный)**. Имя функции для запуска.
-* **`input` (необязательный)**. Входные данные, функции, либо в процессе или JSON-файле. Для файлов, добавьте префикс к пути к файлу с `@`, такие как `@path/to/file.json`.
-* **`id` (необязательный)**. Идентификатор экземпляра оркестрации. Если этот параметр не задан, команда использует случайный идентификатор GUID.
-* **`connection-string-setting` (необязательный)**. Имя параметра приложения, содержащего нужную строку подключения к хранилищу. По умолчанию используется AzureWebJobsStorage.
-* **`task-hub-name` (необязательный)**. Имя центра задач устойчивых функций для использования. По умолчанию используется DurableFunctionsHub. Вы можете также задать в [host.json](durable-functions-bindings.md#host-json) с помощью durableTask:HubName.
+* **`function-name` (обязательный)** . Имя функции для запуска.
+* **`input` (необязательный)** . Входные данные, функции, либо в процессе или JSON-файле. Для файлов, добавьте префикс к пути к файлу с `@`, такие как `@path/to/file.json`.
+* **`id` (необязательный)** . Идентификатор экземпляра оркестрации. Если этот параметр не задан, команда использует случайный идентификатор GUID.
+* **`connection-string-setting` (необязательный)** . Имя параметра приложения, содержащего нужную строку подключения к хранилищу. По умолчанию используется AzureWebJobsStorage.
+* **`task-hub-name` (необязательный)** . Имя центра задач устойчивых функций для использования. По умолчанию используется DurableFunctionsHub. Вы можете также задать в [host.json](durable-functions-bindings.md#host-json) с помощью durableTask:HubName.
 
 > [!NOTE]
 > Основные средства команды предполагается, что вы используете их в корневом каталоге приложения-функции. Если указаны явным образом `connection-string-setting` и `task-hub-name` параметров, можно выполнить команды из любого каталога. Несмотря на то, что эти команды могут выполняться без узел приложения функции, под управлением, может оказаться, что не может отслеживать некоторые эффекты, если узел не работает. Например `start-new` команда помещает в очередь сообщение запуска в центр задач целевой объект, но оркестрации не выполнялся при отсутствии функции приложения хост-процессе под управлением, который может обработать сообщение.
@@ -110,9 +109,9 @@ func durable start-new --function-name HelloWorld --input @counter-data.json --t
 
 Он принимает параметры `instanceId` (обязательный), `showHistory` (необязательный), `showHistoryOutput` (необязательный) и `showInput` (необязательный, только для .NET).
 
-* **`showHistory`**. Если значение `true`, ответ содержит журнал выполнения.
-* **`showHistoryOutput`**. Если значение `true`, журнал выполнения содержит выходные данные действия.
-* **`showInput`**. Если значение `false`, ответ не будет содержать входные данные функции. По умолчанию используется значение `true`. (Только для .NET.)
+* **`showHistory`** . Если значение `true`, ответ содержит журнал выполнения.
+* **`showHistoryOutput`** . Если значение `true`, журнал выполнения содержит выходные данные действия.
+* **`showInput`** . Если значение `false`, ответ не будет содержать входные данные функции. По умолчанию используется значение `true`. (Только для .NET.)
 
 Метод возвращает объект JSON со следующими свойствами:
 
@@ -164,11 +163,11 @@ module.exports = async function(context, instanceId) {
 
 Можно также для получения состояния экземпляра оркестрации напрямую, с помощью [основных инструментов функций Azure](../functions-run-local.md) `durable get-runtime-status` команды. Она принимает следующие параметры.
 
-* **`id` (обязательный)**. Идентификатор экземпляра оркестрации.
-* **`show-input` (необязательный)**. Если значение `true`, ответ содержит входные данные функции. По умолчанию используется значение `false`.
-* **`show-output` (необязательный)**. Если значение `true`, ответ содержит выходные данные функции. Значение по умолчанию — `false`.
-* **`connection-string-setting` (необязательный)**. Имя параметра приложения, содержащего нужную строку подключения к хранилищу. Значение по умолчанию — `AzureWebJobsStorage`.
-* **`task-hub-name` (необязательный)**. Имя центра задач устойчивых функций для использования. Значение по умолчанию — `DurableFunctionsHub`. Его также можно задать [host.json](durable-functions-bindings.md#host-json), с помощью durableTask:HubName.
+* **`id` (обязательный)** . Идентификатор экземпляра оркестрации.
+* **`show-input` (необязательный)** . Если значение `true`, ответ содержит входные данные функции. По умолчанию используется значение `false`.
+* **`show-output` (необязательный)** . Если значение `true`, ответ содержит выходные данные функции. По умолчанию используется значение `false`.
+* **`connection-string-setting` (необязательный)** . Имя параметра приложения, содержащего нужную строку подключения к хранилищу. Значение по умолчанию — `AzureWebJobsStorage`.
+* **`task-hub-name` (необязательный)** . Имя центра задач устойчивых функций для использования. Значение по умолчанию — `DurableFunctionsHub`. Его также можно задать [host.json](durable-functions-bindings.md#host-json), с помощью durableTask:HubName.
 
 Следующая команда извлекает состояние экземпляра с Идентификатором экземпляра оркестрации 0ab8c55a66644d68a3a8b220b12d209c (включая входные и выходные данные). Предполагается, что вы используете `func` команду из корневого каталога приложения-функции:
 
@@ -178,9 +177,9 @@ func durable get-runtime-status --id 0ab8c55a66644d68a3a8b220b12d209c --show-inp
 
 Можно использовать `durable get-history` команду, чтобы получить журнал экземпляра оркестрации. Она принимает следующие параметры.
 
-* **`id` (обязательный)**. Идентификатор экземпляра оркестрации.
-* **`connection-string-setting` (необязательный)**. Имя параметра приложения, содержащего нужную строку подключения к хранилищу. Значение по умолчанию — `AzureWebJobsStorage`.
-* **`task-hub-name` (необязательный)**. Имя центра задач устойчивых функций для использования. Значение по умолчанию — `DurableFunctionsHub`. Его также можно задать в файле host.json, с помощью durableTask:HubName.
+* **`id` (обязательный)** . Идентификатор экземпляра оркестрации.
+* **`connection-string-setting` (необязательный)** . Имя параметра приложения, содержащего нужную строку подключения к хранилищу. Значение по умолчанию — `AzureWebJobsStorage`.
+* **`task-hub-name` (необязательный)** . Имя центра задач устойчивых функций для использования. Значение по умолчанию — `DurableFunctionsHub`. Его также можно задать в файле host.json, с помощью durableTask:HubName.
 
 ```bash
 func durable get-history --id 0ab8c55a66644d68a3a8b220b12d209c
@@ -228,10 +227,10 @@ module.exports = async function(context, req) {
 
 Имеется также возможность напрямую, экземпляры запросов с помощью [основных инструментов функций Azure](../functions-run-local.md) `durable get-instances` команды. Она принимает следующие параметры.
 
-* **`top` (необязательный)**. Эта команда поддерживает разбиение на страницы. Этот параметр соответствует количеству экземпляров, получаемых по запросу. По умолчанию задано значение 10.
-* **`continuation-token` (необязательный)**. Токен, чтобы указать, какая страница или части извлекаемых экземпляров. Каждое выполнение `get-instances` возвращает маркер для извлечения следующего набора экземпляров.
-* **`connection-string-setting` (необязательный)**. Имя параметра приложения, содержащего нужную строку подключения к хранилищу. Значение по умолчанию — `AzureWebJobsStorage`.
-* **`task-hub-name` (необязательный)**. Имя центра задач устойчивых функций для использования. Значение по умолчанию — `DurableFunctionsHub`. Его также можно задать [host.json](durable-functions-bindings.md#host-json), с помощью durableTask:HubName.
+* **`top` (необязательный)** . Эта команда поддерживает разбиение на страницы. Этот параметр соответствует количеству экземпляров, получаемых по запросу. По умолчанию задано значение 10.
+* **`continuation-token` (необязательный)** . Токен, чтобы указать, какая страница или части извлекаемых экземпляров. Каждое выполнение `get-instances` возвращает маркер для извлечения следующего набора экземпляров.
+* **`connection-string-setting` (необязательный)** . Имя параметра приложения, содержащего нужную строку подключения к хранилищу. Значение по умолчанию — `AzureWebJobsStorage`.
+* **`task-hub-name` (необязательный)** . Имя центра задач устойчивых функций для использования. Значение по умолчанию — `DurableFunctionsHub`. Его также можно задать [host.json](durable-functions-bindings.md#host-json), с помощью durableTask:HubName.
 
 ```bash
 func durable get-instances
@@ -295,13 +294,13 @@ module.exports = async function(context, req) {
 
 В основных инструментов функций Azure можно также использовать `durable get-instances` команду с фильтрами. Помимо упомянутых выше `top`, `continuation-token`, `connection-string-setting`, и `task-hub-name` параметров, можно использовать три параметры фильтра (`created-after`, `created-before`, и `runtime-status`).
 
-* **`created-after` (необязательный)**. Получение экземпляров, созданных после этой даты и времени в формате UTC. Принимаются значения даты и времени в формате ISO 8601.
-* **`created-before` (необязательный)**. Получение экземпляров, созданных до этой даты и времени в формате UTC. Принимаются значения даты и времени в формате ISO 8601.
-* **`runtime-status` (необязательный)**. Получить экземпляры с определенным состоянием (например, запущенных или завершенных). Можно указать несколько состояний (через пробел).
-* **`top` (необязательный)**. Количество экземпляров, получаемых по запросу. По умолчанию задано значение 10.
-* **`continuation-token` (необязательный)**. Токен, чтобы указать, какая страница или части извлекаемых экземпляров. Каждое выполнение `get-instances` возвращает маркер для извлечения следующего набора экземпляров.
-* **`connection-string-setting` (необязательный)**. Имя параметра приложения, содержащего нужную строку подключения к хранилищу. Значение по умолчанию — `AzureWebJobsStorage`.
-* **`task-hub-name` (необязательный)**. Имя центра задач устойчивых функций для использования. Значение по умолчанию — `DurableFunctionsHub`. Его также можно задать [host.json](durable-functions-bindings.md#host-json), с помощью durableTask:HubName.
+* **`created-after` (необязательный)** . Получение экземпляров, созданных после этой даты и времени в формате UTC. Принимаются значения даты и времени в формате ISO 8601.
+* **`created-before` (необязательный)** . Получение экземпляров, созданных до этой даты и времени в формате UTC. Принимаются значения даты и времени в формате ISO 8601.
+* **`runtime-status` (необязательный)** . Получить экземпляры с определенным состоянием (например, запущенных или завершенных). Можно указать несколько состояний (через пробел).
+* **`top` (необязательный)** . Количество экземпляров, получаемых по запросу. По умолчанию задано значение 10.
+* **`continuation-token` (необязательный)** . Токен, чтобы указать, какая страница или части извлекаемых экземпляров. Каждое выполнение `get-instances` возвращает маркер для извлечения следующего набора экземпляров.
+* **`connection-string-setting` (необязательный)** . Имя параметра приложения, содержащего нужную строку подключения к хранилищу. Значение по умолчанию — `AzureWebJobsStorage`.
+* **`task-hub-name` (необязательный)** . Имя центра задач устойчивых функций для использования. Значение по умолчанию — `DurableFunctionsHub`. Его также можно задать [host.json](durable-functions-bindings.md#host-json), с помощью durableTask:HubName.
 
 Если не указать какие-либо фильтры (`created-after`, `created-before`, или `runtime-status`), команда просто извлекает `top` экземпляров, независимо от времени состояние или создания среды выполнения.
 
@@ -348,10 +347,10 @@ module.exports = async function(context, instanceId) {
 
 Можно также завершить экземпляр оркестрации напрямую, с помощью [основных инструментов функций Azure](../functions-run-local.md) `durable terminate` команды. Она принимает следующие параметры.
 
-* **`id` (обязательный)**. Идентификатор экземпляра оркестрации для завершения.
-* **`reason` (необязательный)**. Причина завершения.
-* **`connection-string-setting` (необязательный)**. Имя параметра приложения, содержащего нужную строку подключения к хранилищу. Значение по умолчанию — `AzureWebJobsStorage`.
-* **`task-hub-name` (необязательный)**. Имя центра задач устойчивых функций для использования. Значение по умолчанию — `DurableFunctionsHub`. Его также можно задать [host.json](durable-functions-bindings.md#host-json), с помощью durableTask:HubName.
+* **`id` (обязательный)** . Идентификатор экземпляра оркестрации для завершения.
+* **`reason` (необязательный)** . Причина завершения.
+* **`connection-string-setting` (необязательный)** . Имя параметра приложения, содержащего нужную строку подключения к хранилищу. Значение по умолчанию — `AzureWebJobsStorage`.
+* **`task-hub-name` (необязательный)** . Имя центра задач устойчивых функций для использования. Значение по умолчанию — `DurableFunctionsHub`. Его также можно задать [host.json](durable-functions-bindings.md#host-json), с помощью durableTask:HubName.
 
 Следующая команда завершает экземпляр оркестрации с Идентификатором 0ab8c55a66644d68a3a8b220b12d209c:
 
@@ -404,11 +403,11 @@ module.exports = async function(context, instanceId) {
 
 Можно также вызвать событие в экземпляр оркестрации напрямую, с помощью [основных инструментов функций Azure](../functions-run-local.md) `durable raise-event` команды. Она принимает следующие параметры.
 
-* **`id` (обязательный)**. Идентификатор экземпляра оркестрации.
-* **`event-name` (необязательный)**. Имя порождаемого события. Значение по умолчанию — `$"Event_{RandomGUID}"`.
-* **`event-data` (необязательный)**. Данные, отправляемые в экземпляр оркестрации. Это может быть путь к JSON-файл, или вы можете предоставить данные непосредственно в командной строке.
-* **`connection-string-setting` (необязательный)**. Имя параметра приложения, содержащего нужную строку подключения к хранилищу. Значение по умолчанию — `AzureWebJobsStorage`.
-* **`task-hub-name` (необязательный)**. Имя центра задач устойчивых функций для использования. Значение по умолчанию — `DurableFunctionsHub`. Его также можно задать [host.json](durable-functions-bindings.md#host-json), с помощью durableTask:HubName.
+* **`id` (обязательный)** . Идентификатор экземпляра оркестрации.
+* **`event-name` (необязательный)** . Имя порождаемого события. Значение по умолчанию — `$"Event_{RandomGUID}"`.
+* **`event-data` (необязательный)** . Данные, отправляемые в экземпляр оркестрации. Это может быть путь к JSON-файл, или вы можете предоставить данные непосредственно в командной строке.
+* **`connection-string-setting` (необязательный)** . Имя параметра приложения, содержащего нужную строку подключения к хранилищу. Значение по умолчанию — `AzureWebJobsStorage`.
+* **`task-hub-name` (необязательный)** . Имя центра задач устойчивых функций для использования. Значение по умолчанию — `DurableFunctionsHub`. Его также можно задать [host.json](durable-functions-bindings.md#host-json), с помощью durableTask:HubName.
 
 ```bash
 func durable raise-event --id 0ab8c55a66644d68a3a8b220b12d209c --event-name MyEvent --event-data @eventdata.json
@@ -426,91 +425,9 @@ func durable raise-event --id 1234567 --event-name MyOtherEvent --event-data 3
 
 Ниже приведен пример функции HTTP-триггера, в котором показано, как использовать этот API:
 
-```C#
-// Copyright (c) .NET Foundation. All rights reserved.
-// Licensed under the MIT License. See LICENSE in the project root for license information.
+[!code-csharp[Main](~/samples-durable-functions/samples/precompiled/HttpSyncStart.cs)]
 
-using System;
-using System.Net.Http;
-using System.Threading.Tasks;
-using Microsoft.Azure.WebJobs;
-using Microsoft.Azure.WebJobs.Extensions.Http;
-using Microsoft.Extensions.Logging;
-
-namespace VSSample
-{
-    public static class HttpSyncStart
-    {
-        private const string Timeout = "timeout";
-        private const string RetryInterval = "retryInterval";
-
-        [FunctionName("HttpSyncStart")]
-        public static async Task<HttpResponseMessage> Run(
-            [HttpTrigger(AuthorizationLevel.Function, methods: "post", Route = "orchestrators/{functionName}/wait")]
-            HttpRequestMessage req,
-            [OrchestrationClient] DurableOrchestrationClientBase starter,
-            string functionName,
-            ILogger log)
-        {
-            // Function input comes from the request content.
-            dynamic eventData = await req.Content.ReadAsAsync<object>();
-            string instanceId = await starter.StartNewAsync(functionName, eventData);
-
-            log.LogInformation($"Started orchestration with ID = '{instanceId}'.");
-
-            TimeSpan timeout = GetTimeSpan(req, Timeout) ?? TimeSpan.FromSeconds(30);
-            TimeSpan retryInterval = GetTimeSpan(req, RetryInterval) ?? TimeSpan.FromSeconds(1);
-            
-            return await starter.WaitForCompletionOrCreateCheckStatusResponseAsync(
-                req,
-                instanceId,
-                timeout,
-                retryInterval);
-        }
-
-        private static TimeSpan? GetTimeSpan(HttpRequestMessage request, string queryParameterName)
-        {
-            string queryParameterStringValue = request.RequestUri.ParseQueryString()[queryParameterName];
-            if (string.IsNullOrEmpty(queryParameterStringValue))
-            {
-                return null;
-            }
-
-            return TimeSpan.FromSeconds(double.Parse(queryParameterStringValue));
-        }
-    }
-}
-```
-
-```Javascript
-const df = require("durable-functions");
-
-const timeout = "timeout";
-const retryInterval = "retryInterval";
-
-module.exports = async function (context, req) {
-    const client = df.getClient(context);
-    const instanceId = await client.startNew(req.params.functionName, undefined, req.body);
-
-    context.log(`Started orchestration with ID = '${instanceId}'.`);
-
-    const timeoutInMilliseconds = getTimeInSeconds(req, timeout) || 30000;
-    const retryIntervalInMilliseconds = getTimeInSeconds(req, retryInterval) || 1000;
-
-    return client.waitForCompletionOrCreateCheckStatusResponse(
-        context.bindingData.req,
-        instanceId,
-        timeoutInMilliseconds,
-        retryIntervalInMilliseconds);
-};
-
-function getTimeInSeconds (req, queryParameterName) {
-    const queryValue = req.query[queryParameterName];
-    return queryValue
-        ? queryValue // expected to be in seconds
-        * 1000 : undefined;
-}
-```
+[!code-javascript[Main](~/samples-durable-functions/samples/javascript/HttpSyncStart/index.js)]
 
 Вызовите функцию со следующей строкой. Используйте 2 секунд времени ожидания и 0,5 секунд интервал повторных попыток:
 
@@ -658,10 +575,10 @@ module.exports = async function(context, instanceId) {
 
 Также можно перемотать экземпляр оркестрации напрямую с помощью [основных инструментов функций Azure](../functions-run-local.md) `durable rewind` команды. Она принимает следующие параметры.
 
-* **`id` (обязательный)**. Идентификатор экземпляра оркестрации.
-* **`reason` (необязательный)**. Причина для перемотки экземпляра оркестрации.
-* **`connection-string-setting` (необязательный)**. Имя параметра приложения, содержащего нужную строку подключения к хранилищу. Значение по умолчанию — `AzureWebJobsStorage`.
-* **`task-hub-name` (необязательный)**. Имя центра задач устойчивых функций для использования. Значение по умолчанию — `DurableFunctionsHub`. Его также можно задать [host.json](durable-functions-bindings.md#host-json), с помощью durableTask:HubName.
+* **`id` (обязательный)** . Идентификатор экземпляра оркестрации.
+* **`reason` (необязательный)** . Причина для перемотки экземпляра оркестрации.
+* **`connection-string-setting` (необязательный)** . Имя параметра приложения, содержащего нужную строку подключения к хранилищу. Значение по умолчанию — `AzureWebJobsStorage`.
+* **`task-hub-name` (необязательный)** . Имя центра задач устойчивых функций для использования. Значение по умолчанию — `DurableFunctionsHub`. Его также можно задать [host.json](durable-functions-bindings.md#host-json), с помощью durableTask:HubName.
 
 ```bash
 func durable rewind --id 0ab8c55a66644d68a3a8b220b12d209c --reason "Orchestrator failed and needs to be revived."
@@ -711,11 +628,11 @@ public static Task Run(
 
 Можно очистить журнал экземпляра оркестрации с помощью [основных инструментов функций Azure](../functions-run-local.md) `durable purge-history` команды. Аналогично второй C# примере в предыдущем разделе, он выполняет очистку журнала для всех экземпляров оркестрации, созданные во время указанного временного интервала. Удаленных экземпляров можно отфильтровать по состоянию среды выполнения. Команда имеет несколько параметров:
 
-* **`created-after` (необязательный)**. Удаление из журнала экземпляров, созданных после этой даты и времени в формате UTC. Принимаются значения даты и времени в формате ISO 8601.
-* **`created-before` (необязательный)**. Удаление из журнала экземпляров, созданных до этой даты и времени в формате UTC. Принимаются значения даты и времени в формате ISO 8601.
-* **`runtime-status` (необязательный)**. Очистить журнал экземпляров с определенным состоянием (например, запущенных или завершенных). Можно указать несколько состояний (через пробел).
-* **`connection-string-setting` (необязательный)**. Имя параметра приложения, содержащего нужную строку подключения к хранилищу. Значение по умолчанию — `AzureWebJobsStorage`.
-* **`task-hub-name` (необязательный)**. Имя центра задач устойчивых функций для использования. Значение по умолчанию — `DurableFunctionsHub`. Его также можно задать [host.json](durable-functions-bindings.md#host-json), с помощью durableTask:HubName.
+* **`created-after` (необязательный)** . Удаление из журнала экземпляров, созданных после этой даты и времени в формате UTC. Принимаются значения даты и времени в формате ISO 8601.
+* **`created-before` (необязательный)** . Удаление из журнала экземпляров, созданных до этой даты и времени в формате UTC. Принимаются значения даты и времени в формате ISO 8601.
+* **`runtime-status` (необязательный)** . Очистить журнал экземпляров с определенным состоянием (например, запущенных или завершенных). Можно указать несколько состояний (через пробел).
+* **`connection-string-setting` (необязательный)** . Имя параметра приложения, содержащего нужную строку подключения к хранилищу. Значение по умолчанию — `AzureWebJobsStorage`.
+* **`task-hub-name` (необязательный)** . Имя центра задач устойчивых функций для использования. Значение по умолчанию — `DurableFunctionsHub`. Его также можно задать [host.json](durable-functions-bindings.md#host-json), с помощью durableTask:HubName.
 
 Следующая команда удаляет журнал всех неудачных экземпляров, созданных до 14 ноября 2018 г., в 19:35:00 (UTC).
 
@@ -727,8 +644,8 @@ func durable purge-history --created-before 2018-11-14T19:35:00.0000000Z --runti
 
 С помощью [основных инструментов функций Azure](../functions-run-local.md) `durable delete-task-hub` команды можно удалить все хранилища артефактов, связанных с конкретной задачей концентратора. К ним относятся таблицы, очереди и большие двоичные объекты службы хранилища Azure. Команда имеет два параметра:
 
-* **`connection-string-setting` (необязательный)**. Имя параметра приложения, содержащего нужную строку подключения к хранилищу. Значение по умолчанию — `AzureWebJobsStorage`.
-* **`task-hub-name` (необязательный)**. Имя центра задач устойчивых функций для использования. Значение по умолчанию — `DurableFunctionsHub`. Его также можно задать [host.json](durable-functions-bindings.md#host-json), с помощью durableTask:HubName.
+* **`connection-string-setting` (необязательный)** . Имя параметра приложения, содержащего нужную строку подключения к хранилищу. Значение по умолчанию — `AzureWebJobsStorage`.
+* **`task-hub-name` (необязательный)** . Имя центра задач устойчивых функций для использования. Значение по умолчанию — `DurableFunctionsHub`. Его также можно задать [host.json](durable-functions-bindings.md#host-json), с помощью durableTask:HubName.
 
 Следующая команда удаляет все данные хранилища Azure, связанные с `UserTest` центр задач.
 
@@ -740,5 +657,3 @@ func durable delete-task-hub --task-hub-name UserTest
 
 > [!div class="nextstepaction"]
 > Узнайте, как использовать [HTTP-интерфейсы API для управления экземплярами](durable-functions-http-api.md)
-
-<!-- Update_Description: wording update -->

@@ -13,10 +13,10 @@ ms.reviewer: vanto
 manager: craigg
 ms.date: 01/03/2019
 ms.openlocfilehash: 0fefe01e413e30e4aa3c1fa90de77cbdece39c38
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61417394"
 ---
 # <a name="sql-database-audit-log-format"></a>Формат журнала аудита базы данных SQL
@@ -43,7 +43,7 @@ ms.locfileid: "61417394"
 
 ## <a id="subheading-1"></a>Поля журнала аудита
 
-| Имя (Blob) | Имя (событий концентраторов и Log Analytics) | Описание | Тип BLOB-объекта | События концентраторов/Log Analytics типа |
+| Имя (Blob) | Имя (событий концентраторов и Log Analytics) | Описание | Тип большого двоичного объекта | События концентраторов/Log Analytics типа |
 |-------------|---------------------------------|-------------|-----------|-------------------------------|
 | action_id | action_id_s | Идентификатор действия | varchar(4) | string |
 | action_name | action_name_s | Имя действия | Н/Д | string |
@@ -79,7 +79,7 @@ ms.locfileid: "61417394"
 | session_id | session_id_d | Идентификатор сеанса, в котором произошло событие | smallint | int |
 | session_server_principal_name | session_server_principal_name_s | Участник на уровне сервера для сеанса | sysname | string |
 | инструкция | statement_s | Инструкции T-SQL, которая была выполнена (если таковые имеются) | nvarchar(4000) | string |
-| успешно | succeeded_s | Указывает, успешно ли выполнено действие, которое вызвало событие. Для событий, отличных от имени входа и пакетной службы это только сообщает, успешно ли выполнено не операцию проверки разрешения. 1 = успешное завершение, 0 = неуспешное завершение | bit | string |
+| выполнено успешно | succeeded_s | Указывает, успешно ли выполнено действие, которое вызвало событие. Для событий, отличных от имени входа и пакетной службы это только сообщает, успешно ли выполнено не операцию проверки разрешения. 1 = успешное завершение, 0 = неуспешное завершение | bit | string |
 | target_database_principal_id | target_database_principal_id_d | Участник базы данных на выполняется операция GRANT/DENY/REVOKE. 0, если не применимо | int | int |
 | target_database_principal_name | target_database_principal_name_s | Целевой пользователь действия. Значение NULL, если не применимо | string | string |
 | target_server_principal_id | target_server_principal_id_d | Участника на уровне сервера, на которой выполняется операция GRANT/DENY/REVOKE. Возвращает 0, если не применимо | int | int |

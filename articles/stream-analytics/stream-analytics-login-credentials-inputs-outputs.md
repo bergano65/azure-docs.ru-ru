@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 12/07/2018
 ms.custom: seodec18
 ms.openlocfilehash: 14e24c1e9a61eb7ea73a949e17ffbf8c5b768f05
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61479667"
 ---
 # <a name="rotate-login-credentials-for-inputs-and-outputs-of-a-stream-analytics-job"></a>Смена учетных данных для источников входных данных и мест назначения выходных данных задания Stream Analytics
@@ -36,7 +36,7 @@ ms.locfileid: "61479667"
    ![Уведомления после редактирования ключа](media/stream-analytics-login-credentials-inputs-outputs/edited-key-notifications.png)
 8. Перейдите к разделу [Запуск задания с момента последней остановки](#start-your-job-from-the-last-stopped-time).
 
-### <a name="event-hubs"></a>Концентраторы событий
+### <a name="event-hubs"></a>Центры событий
 
 1. Перейдите на портал Azure и войдите в концентратор событий, используемый в качестве входного или выходного для задания Stream Analytics.    
 2. В разделе параметров щелкните **Политики общего доступа** и выберите необходимую политику доступа. На выбор предлагаются **первичный** и **вторичный** ключи. Выберите тот, который не используется заданием, и создайте его повторно:  

@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 03/15/2019
 ms.author: sajagtap
 ms.openlocfilehash: f88ccbabc925b651abbc06f571a9d4220ed8aeb2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61285551"
 ---
 # <a name="configure-the-review-tool"></a>Настройка средства проверки
@@ -64,7 +64,7 @@ ms.locfileid: "61285551"
 
 ![Переключение между подкомандами](images/3-review-image-subteam-2.png)
 
-## <a name="tags"></a>Теги
+## <a name="tags"></a>Tags
 
 **Теги** вкладка позволяет определять пользовательские модерации теги в дополнение к теги Модерация два заданных по умолчанию&mdash;**isadult** (**a**) и **isracy**  (**r**). Когда вы создаете пользовательский тег, становится доступным при проверке наряду с теги по умолчанию. Можно выбрать, какие теги отображаются при проверке путем переключения их параметров видимости.
 
@@ -94,10 +94,10 @@ ms.locfileid: "61285551"
 
 [Средство проверки](./human-in-the-loop.md) включает в себя следующие соединители:
 
-- API распознавания эмоций
-- API распознавания лиц
+- API Распознавания эмоций
+- API Распознавания лиц
 - облачная служба PhotoDNA.
-- API анализа текста
+- API Анализа текста
 
 ### <a name="add-a-connector"></a>Добавление соединителя
 

@@ -7,10 +7,10 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 05/20/2019
 ms.openlocfilehash: e58a8cd286e4d416dd5f4e6d3fddedf1897fed1c
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65954169"
 ---
 # <a name="global-data-distribution-with-azure-cosmos-db---overview"></a>Общие сведения о глобальном распределении данных с помощью Azure Cosmos DB
@@ -27,7 +27,7 @@ Azure Cosmos DB — это глобально распределенная сл
 
 ## <a name="key-benefits-of-global-distribution"></a>Ключевые преимущества глобального распределения
 
-**Создание глобальных приложений "активный — активный"**. С его протокола репликации с несколькими хозяевами novel каждого региона поддерживает чтения и записи. Функция с несколькими хозяевами также позволяет:
+**Создание глобальных приложений "активный — активный"** . С его протокола репликации с несколькими хозяевами novel каждого региона поддерживает чтения и записи. Функция с несколькими хозяевами также позволяет:
 
 - Неограниченное количество эластичных баз данных, записи и чтения масштабируемости. 
 - доступность для чтения и записи на 99,999 % по всему миру;

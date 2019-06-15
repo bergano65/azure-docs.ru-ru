@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 01/18/2017
 ms.author: alch
 ms.openlocfilehash: 7f692c08f8af322bf7e6ab576e2e6f516594a6c4
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61336523"
 ---
 # <a name="similarity-method"></a>Метод сходства
@@ -29,17 +29,17 @@ https://westus.api.cognitive.microsoft.com/academic/v1.0/similarity?
 
 ## <a name="request-parameters"></a>Параметры запроса
 
-Параметр        |Тип данных      |Обязательно для заполнения | ОПИСАНИЕ
+Параметр        |Тип данных      |Обязательно для заполнения | Описание
 ----------|----------|----------|------------
-**s1**        |String   |Yes  |Строка* для сравнения
-**s2**        |String   |Yes  |Строка* для сравнения
+**s1**        |String   |Да  |Строка* для сравнения
+**s2**        |String   |Да  |Строка* для сравнения
 
 <sub> *Строки для сравнения имеют максимальную длину 1 МБ. </sub>
 <br>
 
-## <a name="response"></a>Отклик
+## <a name="response"></a>Ответ
 
-ИМЯ | ОПИСАНИЕ
+Name | Описание
 --------|---------
 **SimilarityScore**        |Значение с плавающей запятой, представляющее косинус,подобный s1 и s2, со значениями, близкими к 1.0, означает более похожие и близкие значения к -1.0, что означает меньше
 
@@ -47,7 +47,7 @@ https://westus.api.cognitive.microsoft.com/academic/v1.0/similarity?
 
 ## <a name="successerror-conditions"></a>Условия успеха или ошибки
 
-Состояние HTTP | Причина | Отклик
+Состояние HTTP | `Reason` | Ответ
 -----------|----------|--------
 **200**         |Успешно | Число с плавающей запятой
 **400**         | Ошибочный или недопустимый запрос | Сообщение об ошибке      

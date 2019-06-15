@@ -10,10 +10,10 @@ ms.topic: article
 ms.date: 01/23/2019
 ms.author: aschhab
 ms.openlocfilehash: 8461764a3f1f682ffb97420a4efdf2803f518872
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64707136"
 ---
 # <a name="service-bus-faq"></a>Часто задаваемые вопросы о служебной шине
@@ -51,7 +51,7 @@ ms.locfileid: "64707136"
 
 См. в следующей таблице исходящие порты, которые необходимо открыть, чтобы использовать эти протоколы для взаимодействия с концентраторами событий Azure. 
 
-| Protocol | порты; | Сведения | 
+| Протокол | порты; | Сведения | 
 | -------- | ----- | ------- | 
 | AMQP | 5671 и 5672 | См. в разделе [руководство по использованию протокола AMQP](service-bus-amqp-protocol-guide.md) | 
 | SBMP | 9350-9354 | См. в разделе [режим подключения](/dotnet/api/microsoft.servicebus.connectivitymode?view=azure-dotnet) |

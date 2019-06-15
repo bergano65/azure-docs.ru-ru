@@ -16,11 +16,11 @@ ms.workload: na
 ms.date: 02/28/2019
 ms.author: cshoe
 ms.openlocfilehash: f0d4a607676285ed4f0f91d8ce8c83ddf1313b89
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60306839"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64511134"
 ---
 # <a name="signalr-service-bindings-for-azure-functions"></a>Привязки службы SignalR для службы "Функции Azure"
 
@@ -597,7 +597,7 @@ public SignalRGroupAction removeFromGroup(
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `SignalRConnectionInfo`.
 
-|свойство function.json | Свойство атрибута |ОПИСАНИЕ|
+|свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
 |**type**|| Нужно задать значение `signalRConnectionInfo`.|
 |**direction**|| Нужно задать значение `in`.|
@@ -610,7 +610,7 @@ public SignalRGroupAction removeFromGroup(
 
 В следующей таблице описываются свойства конфигурации привязки, которые задаются в файле *function.json* и атрибуте `SignalR`.
 
-|свойство function.json | Свойство атрибута |ОПИСАНИЕ|
+|свойство function.json | Свойство атрибута |Описание|
 |---------|---------|----------------------|
 |**type**|| Нужно задать значение `signalR`.|
 |**direction**|| Нужно задать значение `out`.|
@@ -626,4 +626,4 @@ public SignalRGroupAction removeFromGroup(
 > [Основные понятия триггеров и привязок в Функциях Azure](functions-triggers-bindings.md)
 
 > [!div class="nextstepaction"]
-> [Azure разработки функций и конфигурации с помощью службы Azure SignalR](../azure-signalr/signalr-concept-serverless-development-config.md)
+> [Azure Functions development and configuration with Azure SignalR Service](../azure-signalr/signalr-concept-serverless-development-config.md) (Разработка и настройка функций Azure с помощью Службы Azure SignalR)

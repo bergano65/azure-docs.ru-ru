@@ -3,7 +3,7 @@ title: Создание задач подготовки и завершения 
 description: Используйте задачи подготовки на уровне задания для минимизации передачи данных на вычислительные узлы пакетной службы Azure и задачи снятия для очистки узла после завершения задания.
 services: batch
 documentationcenter: .net
-author: dlepow
+author: laurenhughes
 manager: jeconnoc
 editor: ''
 ms.assetid: 63d9d4f1-8521-4bbb-b95a-c4cad73692d3
@@ -12,15 +12,14 @@ ms.devlang: multiple
 ms.topic: article
 ms.tgt_pltfrm: ''
 ms.workload: big-compute
-origin.date: 02/27/2017
-ms.date: 06/29/2018
-ms.author: v-junlch
-ms.custom: H1Hack27Feb2017
+ms.date: 02/27/2017
+ms.author: lahugh
+ms.custom: seodec18
 ms.openlocfilehash: 517ac0f612b9e5fc5909a7f0fe2ce088c9b367d9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60776208"
 ---
 # <a name="run-job-preparation-and-job-release-tasks-on-batch-compute-nodes"></a>Выполнение задач подготовки и задач завершения заданий на вычислительных узлах пакетной службы
@@ -69,7 +68,7 @@ ms.locfileid: "60776208"
 > 
 > 
 
-## <a name="job-release-task"></a>Задача прекращения задания
+## <a name="job-release-task"></a>задачи снятия задания
 Когда задание будет отмечено как завершенное, на каждом узле в пуле, на котором была выполнена хотя бы одна задача, выполняется задача снятия задания. Чтобы пометить задание как завершенное, нужно направить запрос прекращения. После этого пакетная служба устанавливает состояние задания *Прекращение*, прекращает все активные или запущенные задачи, связанные с заданием, и запускает задачу снятия задания. Затем состояние задания меняется на *Завершено* .
 
 > [!NOTE]
@@ -196,11 +195,11 @@ Sample complete, hit ENTER to exit...
 
 Эта публикация написана одним из участников команды разработчиков пакетной службы Azure. В ней приведены несколько методов, которые можно использовать при развертывании приложений и данных на вычислительных узлах.
 
-[api_net]: http://msdn.microsoft.com/library/azure/mt348682.aspx
+[api_net]: https://msdn.microsoft.com/library/azure/mt348682.aspx
 [api_net_listjobs]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.joboperations.listjobs.aspx
-[api_rest]: http://msdn.microsoft.com/library/azure/dn820158.aspx
-[azure_storage]: https://www.azure.cn/home/features/storage/
-[portal]: https://portal.azure.cn
+[api_rest]: https://msdn.microsoft.com/library/azure/dn820158.aspx
+[azure_storage]: https://azure.microsoft.com/services/storage/
+[portal]: https://portal.azure.com
 [job_prep_release_sample]: https://github.com/Azure/azure-batch-samples/tree/master/CSharp/ArticleProjects/JobPrepRelease
 [forum_post]: https://social.msdn.microsoft.com/Forums/en-US/87b19671-1bdf-427a-972c-2af7e5ba82d9/installing-applications-and-staging-data-on-batch-compute-nodes?forum=azurebatch
 [net_batch_client]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.batchclient.aspx
@@ -226,5 +225,3 @@ Sample complete, hit ENTER to exit...
 [net_list_tasks]: https://msdn.microsoft.com/library/azure/microsoft.azure.batch.joboperations.listtasks.aspx
 
 [1]: ./media/batch-job-prep-release/portal-jobprep-01.png
-
-<!-- Update_Description: wording update -->

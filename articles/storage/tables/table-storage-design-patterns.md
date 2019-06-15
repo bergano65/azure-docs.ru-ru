@@ -2,18 +2,17 @@
 title: Конструктивные шаблоны таблиц в службе хранилища Azure | Документация Майкрософт
 description: Использование шаблонов для решений для службы таблиц Azure.
 services: storage
-author: WenJason
+author: tamram
 ms.service: storage
 ms.topic: article
-origin.date: 04/08/2019
-ms.date: 04/22/2019
-ms.author: v-jay
+ms.date: 04/08/2019
+ms.author: tamram
 ms.subservice: tables
 ms.openlocfilehash: a428abd95f955a16d03c4ab86f05644f6db65da5
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62101437"
 ---
 # <a name="table-design-patterns"></a>Шаблоны для разработки таблиц
@@ -264,7 +263,7 @@ ms.locfileid: "62101437"
 ![Сущность отдела и сущность сотрудника](media/storage-table-design-guide/storage-table-design-IMAGE16.png)
 
 ### <a name="solution"></a>Решение
-Вместо хранения данных в двух отдельных сущностях денормализуйте данные и сохраните копию со сведениями о руководителе в сущности отдела. Пример.  
+Вместо хранения данных в двух отдельных сущностях денормализуйте данные и сохраните копию со сведениями о руководителе в сущности отдела. Пример:  
 
 ![Сущность отдела](media/storage-table-design-guide/storage-table-design-IMAGE17.png)
 
@@ -349,7 +348,7 @@ $filter=(PartitionKey eq 'Sales') and (RowKey ge 'empid_000123') and (RowKey lt 
 
 Табличный запрос выглядит следующим образом.  
 
-`https://myaccount.table.core.chinacloudapi.cn/EmployeeExpense(PartitionKey='empid')?$top=10`  
+`https://myaccount.table.core.windows.net/EmployeeExpense(PartitionKey='empid')?$top=10`  
 
 ### <a name="issues-and-considerations"></a>Проблемы и рекомендации
 При принятии решения о реализации этого шаблона необходимо учитывать следующие моменты.  
@@ -724,8 +723,8 @@ foreach (var e in entities)
 <tr>
 <th>FirstName</th>
 <th>LastName</th>
-<th>Возраст</th>
-<th>Электронная почта</th>
+<th>Age</th>
+<th>Email</th>
 </tr>
 <tr>
 <td></td>
@@ -744,8 +743,8 @@ foreach (var e in entities)
 <tr>
 <th>FirstName</th>
 <th>LastName</th>
-<th>Возраст</th>
-<th>Электронная почта</th>
+<th>Age</th>
+<th>Email</th>
 </tr>
 <tr>
 <td></td>
@@ -762,7 +761,7 @@ foreach (var e in entities)
 <td>
 <table>
 <tr>
-<th>Название отдела</th>
+<th>DepartmentName</th>
 <th>EmployeeCount</th>
 </tr>
 <tr>
@@ -781,8 +780,8 @@ foreach (var e in entities)
 <tr>
 <th>FirstName</th>
 <th>LastName</th>
-<th>Возраст</th>
-<th>Электронная почта</th>
+<th>Age</th>
+<th>Email</th>
 </tr>
 <tr>
 <td></td>
@@ -817,8 +816,8 @@ foreach (var e in entities)
 <th>EntityType</th>
 <th>FirstName</th>
 <th>LastName</th>
-<th>Возраст</th>
-<th>Электронная почта</th>
+<th>Age</th>
+<th>Email</th>
 </tr>
 <tr>
 <td>Employee</td>
@@ -839,8 +838,8 @@ foreach (var e in entities)
 <th>EntityType</th>
 <th>FirstName</th>
 <th>LastName</th>
-<th>Возраст</th>
-<th>Электронная почта</th>
+<th>Age</th>
+<th>Email</th>
 </tr>
 <tr>
 <td>Employee</td>
@@ -859,11 +858,11 @@ foreach (var e in entities)
 <table>
 <tr>
 <th>EntityType</th>
-<th>Название отдела</th>
+<th>DepartmentName</th>
 <th>EmployeeCount</th>
 </tr>
 <tr>
-<td>Отдел</td>
+<td>Department</td>
 <td></td>
 <td></td>
 </tr>
@@ -880,8 +879,8 @@ foreach (var e in entities)
 <th>EntityType</th>
 <th>FirstName</th>
 <th>LastName</th>
-<th>Возраст</th>
-<th>Электронная почта</th>
+<th>Age</th>
+<th>Email</th>
 </tr>
 <tr>
 <td>Employee</td>

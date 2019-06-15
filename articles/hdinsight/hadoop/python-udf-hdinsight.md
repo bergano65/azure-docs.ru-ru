@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 03/15/2019
 ms.custom: H1Hack27Feb2017,hdinsightactive
 ms.openlocfilehash: 6f3140f412f9d36ca36cef440bd4e60f1a9197d4
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64702229"
 ---
 # <a name="use-python-user-defined-functions-udf-with-apache-hive-and-apache-pig-in-hdinsight"></a>Использование определяемых пользователем функций Python с Apache Hive и Apache Pig в HDInsight
@@ -27,7 +27,7 @@ ms.locfileid: "64702229"
 
 ## <a name="prerequisites"></a>Технические условия
 
-* **Кластер Hadoop в HDInsight**. См. в разделе [начало работы с HDInsight на платформе Linux](apache-hadoop-linux-tutorial-get-started.md).
+* **Кластер Hadoop в HDInsight**. Ознакомьтесь со статьей [Краткое руководство. Использование Apache Hadoop и Apache Hive в Azure HDInsight с шаблоном Resource Manager](apache-hadoop-linux-tutorial-get-started.md).
 * **Клиент SSH**. Дополнительные сведения см. в руководстве по [подключению к HDInsight (Apache Hadoop) с помощью SSH](../hdinsight-hadoop-linux-use-ssh-unix.md).
 * [Схема URI](../hdinsight-hadoop-linux-information.md#URI-and-scheme) для основного хранилища кластеров. Это было бы wasb: / / для службы хранилища Azure, abfs: / / для Gen2 хранилища Озера данных Azure или adl: / / для Gen1 хранилища Озера данных Azure. Если безопасной передачи включена для службы хранилища Azure или Gen2 хранилища Data Lake, URI будет wasbs: / / или abfss: / /, соответственно см. также [безопасное перемещение](../../storage/common/storage-require-secure-transfer.md).
 * **Возможные изменения конфигурации хранилища.**  См. в разделе [конфигурации хранилища](#storage-configuration) при использовании типа учетной записи хранения `BlobStorage`.

@@ -16,13 +16,13 @@ ms.date: 09/07/2016
 ms.author: stefsch
 ms.custom: seodec18
 ms.openlocfilehash: 769e6b9936ad6d3cb963e208cec4c49813f2b6d3
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62130727"
 ---
-# <a name="geo-distributed-scale-with-app-service-environments"></a>Географически распределенное масштабирование с использованием сред службы приложений
+# <a name="geo-distributed-scale-with-app-service-environments"></a>Географически распределенное масштабирование с использованием Среды службы приложений
 ## <a name="overview"></a>Обзор
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
@@ -97,7 +97,7 @@ ms.locfileid: "62130727"
 
 В этом примере пользовательский домен является `www.scalableasedemo.com`, и каждый экземпляр приложения имеет личного домена, связанные с ней.
 
-![Пользовательский домен][CustomDomain] 
+![Личный домен][CustomDomain] 
 
 Краткую информацию о регистрации личного домена в приложениях Службы приложений Azure см. в [этой статье о регистрации личных доменов][RegisterCustomDomain].
 

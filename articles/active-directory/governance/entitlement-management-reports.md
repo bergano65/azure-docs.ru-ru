@@ -17,22 +17,22 @@ ms.author: rolyon
 ms.reviewer: jocastel
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 60a61a581574c77a57939ea23fdadc7b060b82af
-ms.sourcegitcommit: 9ad75f83bbf0fc4623b7995794f33bbf823b31c0
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/26/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64541545"
 ---
 # <a name="view-reports-and-logs-in-azure-ad-entitlement-management-preview"></a>Просмотр отчетов и журналов в управление правами Azure AD (Предварительная версия)
 
 > [!IMPORTANT]
-> Управление правами Azure Active Directory (Azure AD) в настоящее время находится в общедоступной предварительной версии.
+> Управление правами Azure Active Directory (Azure AD) сейчас предоставляется в общедоступной предварительной версии.
 > Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
 > Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 ## <a name="view-resources-a-user-has-access-to"></a>Просмотр ресурсов, которым пользователь имеет доступ
 
-1. Нажмите кнопку **Azure Active Directory** и нажмите кнопку **функции управления удостоверениями**.
+1. Щелкните **Azure Active Directory** и выберите **Управление удостоверениями**.
 
 1. В меню слева щелкните **отчет назначения пользователей**.
 
@@ -62,7 +62,7 @@ ms.locfileid: "64541545"
 
 Azure AD будет записывать дополнительные записи запроса во время выполнения, включая:
 
-| Category | Действие | Request status (Состояние запроса) |
+| Категория | Действие | Request status (Состояние запроса) |
 | :---- | :------------ | :------------ |
 | `EntitlementManagement` | `Auto approve access package assignment request` | Запрос не требует утверждения |
 | `UserManagement` | `Create request approval` | Запрос требует утверждения |

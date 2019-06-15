@@ -15,10 +15,10 @@ ms.workload: infrastructure-services
 ms.date: 03/28/2019
 ms.author: kumud
 ms.openlocfilehash: 266630cb7c9601af69073a6c9beb7d7ada9b8034
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65957485"
 ---
 # <a name="azure-standard-load-balancer-overview"></a>Обзор Azure Load Balancer (цен. категория "Стандартный")
@@ -204,7 +204,7 @@ Load Balancer поддерживает несколько правил с нес
 >
 >Необходимо использовать соответствующие номера SKU для Load Balancer и общедоступных IP-ресурсов. Невозможно объединить ресурсы номера SKU уровня "Базовый" и "Стандартный". Изолированные виртуальные машины, виртуальные машины в ресурсе группы доступности и ресурсы масштабируемого набора виртуальных машин нельзя подключить к обоим SKU одновременно.
 
-## <a name="region-availability"></a>Доступность в регионах
+## <a name="region-availability"></a>Доступность по регионам
 
 Load Balancer (цен. категория "Стандартный") сейчас доступен во всех регионах общедоступного облака.
 

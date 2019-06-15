@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 10/01/2016
 ms.author: crdun
 ms.openlocfilehash: b6f93cc3c35ab18ecd50ccd6b3090985497baabf
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62122461"
 ---
 # <a name="how-to-use-ios-client-library-for-azure-mobile-apps"></a>Использование клиентской библиотеки iOS для мобильных приложений Azure
@@ -565,7 +565,7 @@ if (error.code == MSErrorPreconditionFailed) {
    * Замените строку **INSERT-AUTHORITY-HERE** именем клиента, в котором подготовлено приложение. Его необходимо указать в формате https://login.microsoftonline.com/contoso.onmicrosoft.com. Это значение можно скопировать на вкладке "Домен" в разделе Azure Active Directory на [портал Azure].
    * Замените текст **INSERT-RESOURCE-ID-HERE** идентификатором клиента для серверной части мобильного приложения. Идентификатор клиента можно скопировать на портале в разделе **Настройки Azure Active Directory** на вкладке **Дополнительно**.
    * Замените текст **INSERT-CLIENT-ID-HERE** идентификатором клиента, скопированным из собственного клиентского приложения.
-   * Замените текст **INSERT-REDIRECT-URI-HERE** конечной точкой сайта */.auth/login/done* , используя схему HTTPS. Это значение должно быть аналогично *https://contoso.azurewebsites.net/.auth/login/done*.
+   * Замените текст **INSERT-REDIRECT-URI-HERE** конечной точкой сайта */.auth/login/done* , используя схему HTTPS. Это значение должно быть аналогично *https://contoso.azurewebsites.net/.auth/login/done* .
 
 **Objective-C**:
 

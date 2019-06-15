@@ -16,10 +16,10 @@ ms.topic: article
 ms.date: 11/18/2016
 ms.author: mikejo
 ms.openlocfilehash: 40ba5814bce08037b9e4d0787defbab4d02e58df
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62128572"
 ---
 # <a name="testing-the-performance-of-a-cloud-service-locally-in-the-azure-compute-emulator-using-the-visual-studio-profiler"></a>Локальное тестирование производительности облачной службы в эмуляторе вычислений Azure с помощью профилировщика Visual Studio
@@ -77,7 +77,7 @@ private async Task RunAsync(CancellationToken cancellationToken)
 
 Выполните сборку и запуск облачной службы локально без отладки (Ctrl + F5) и с установленным в конфигурации решения параметром **Выпуск**. Это гарантирует, что все файлы и папки будут созданы для локального запуска приложения, а также гарантирует, что запущены все эмуляторы. Из панели задач запустите пользовательский интерфейс эмулятора вычислений, чтобы проверить, запускается ли рабочая роль.
 
-## <a name="2-attach-to-a-process"></a>2. Присоединение к процессу
+## <a name="2-attach-to-a-process"></a>2\. Присоединение к процессу
 Вместо профилирования приложения с помощью его запуска в интегрированной среде разработки Visual Studio 2010 необходимо присоединить профилировщик к выполняющемуся процессу. 
 
 Чтобы присоединить профилировщик к процессу, в меню **Анализ** выберите **Профилировщик**, а затем — **Присоединить/отсоединить**.

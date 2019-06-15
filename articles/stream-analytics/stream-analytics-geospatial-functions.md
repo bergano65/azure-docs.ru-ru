@@ -9,10 +9,10 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.openlocfilehash: ad789a597da759b9a2d58138c7ed441389a12adb
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61479989"
 ---
 # <a name="introduction-to-stream-analytics-geospatial-functions"></a>Сведения о геопространственных функциях Azure Stream Analytics
@@ -23,13 +23,13 @@ ms.locfileid: "61479989"
 
 * Совместное использование в поездке
 * Управление автотранспортным парком
-* Отслеживание ресурсов
+* Отслеживание данных ресурсов
 * Установка геозон
 * Отслеживание телефона на сотовых веб-сайтах
 
 Язык запросов Stream Analytics содержит семь встроенных геопространственных функций: **CreateLineString**, **CreatePoint**, **CreatePolygon**, **ST_DISTANCE**, **ST_OVERLAPS**, **ST_ Пересекается с** и **ST_WITHIN**.
 
-## <a name="createlinestring"></a>CreateLineString;
+## <a name="createlinestring"></a>CreateLineString
 
 Функция `CreateLineString` принимает точки и возвращает объект GeoJSON LineString, который может отображаться в виде линии на карте. Для создания экземпляра LineString необходимо иметь по крайней мере две точки. Точки LineString будут соединены по порядку.
 
@@ -56,7 +56,7 @@ FROM input
 
 Дополнительные сведения см. по ссылке [CreateLineString](https://msdn.microsoft.com/azure/stream-analytics/reference/createlinestring).
 
-## <a name="createpoint"></a>CreatePoint;
+## <a name="createpoint"></a>CreatePoint
 
 Функция `CreatePoint` принимает широту и долготу и возвращает точки GeoJSON, которые можно отображать на карте. Широта и долгота должны быть типом данных **float**.
 
@@ -83,7 +83,7 @@ FROM input
 
 Дополнительные сведения см. по ссылке [CreatePoint](https://msdn.microsoft.com/azure/stream-analytics/reference/createpoint).
 
-## <a name="createpolygon"></a>CreatePolygon;
+## <a name="createpolygon"></a>CreatePolygon
 
 Функция `CreatePolygon` принимает точки и возвращает запись многоугольника GeoJSON. Порядок точек должен соответствовать ориентации справа налево или против часовой стрелки. Представьте, что вы двигаетесь от одной точки к другой по порядку, в котором они были объявлены. Центр многоугольника все время будет находиться слева.
 
@@ -111,7 +111,7 @@ FROM input
 Дополнительные сведения см. по ссылке [CreatePolygon](https://msdn.microsoft.com/azure/stream-analytics/reference/createpolygon).
 
 
-## <a name="stdistance"></a>ST_DISTANCE;
+## <a name="stdistance"></a>ST_DISTANCE
 Функция `ST_DISTANCE` возвращает расстояние между двумя точками в метрах. 
 
 В следующем запросе используется `ST_DISTANCE` для создания события о заправке, которая находится меньше 10 км от автомобиля.
@@ -124,7 +124,7 @@ JOIN Station s ON ST_DISTANCE(c.Location, s.Location) < 10 * 1000
 
 Дополнительные сведения см. по ссылке [ST_DISTANCE](https://msdn.microsoft.com/azure/stream-analytics/reference/st-distance).
 
-## <a name="stoverlaps"></a>ST_OVERLAPS;
+## <a name="stoverlaps"></a>ST_OVERLAPS
 Функция `ST_OVERLAPS` сравнивает два многоугольника. Если многоугольники перекрываются, функция возвращает значение 1. Если многоугольники не перекрываются, функция возвращает значение 0. 
 
 В следующем запросе используется `ST_OVERLAPS` для создания события, когда здание находится в пределах возможной зоны затопления.
@@ -145,7 +145,7 @@ JOIN Storm s ON ST_OVERLAPS(c.Location, s.Course)
 
 Дополнительные сведения см. по ссылке [ST_OVERLAPS](https://msdn.microsoft.com/azure/stream-analytics/reference/st-overlaps).
 
-## <a name="stintersects"></a>ST_INTERSECTS.
+## <a name="stintersects"></a>ST_INTERSECTS
 Функция `ST_INTERSECTS` сравнивает два LineString. Если LineString пересекаются, функция возвращает 1. Если LineString не пересекаются, функция возвращает 0.
 
 Следующий пример запроса использует `ST_INTERSECTS`, чтобы определить, пересекает ли асфальтированная дорога грунтовую.
@@ -171,7 +171,7 @@ FROM input
 
 Дополнительные сведения см. по ссылке [ST_INTERSECTS](https://msdn.microsoft.com/azure/stream-analytics/reference/st-intersects).
 
-## <a name="stwithin"></a>ST_WITHIN;
+## <a name="stwithin"></a>ST_WITHIN
 Функция `ST_WITHIN` определяет есть ли точки или многоугольник внутри многоугольника. Если многоугольник содержит точки или многоугольник, функция возвращает значение 1. Функция возвращает значение 0, если точки или многоугольник не находятся в пределах объявленного многоугольника.
 
 В следующем примере используется запрос `ST_WITHIN`, чтобы определить, находится ли точка назначения доставки внутри данного складского многоугольника.

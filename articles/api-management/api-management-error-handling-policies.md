@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 06/19/2018
 ms.author: apimpm
-ms.openlocfilehash: 2bde63bb668188936b3dd3cf5ecbf3b8c604eb95
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 87693caa5343e359bb3ab424de489c2270bbca62
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60564329"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64704441"
 ---
 # <a name="error-handling-in-api-management-policies"></a>Обработка ошибок в политиках управления API
 
@@ -77,8 +77,8 @@ ms.locfileid: "60564329"
 
  Когда возникает ошибка и управление переходит к разделу политики `on-error`, информация об ошибке сохраняется в свойстве [context.LastError](api-management-policy-expressions.md#ContextVariables), к которому могут обратиться политики, определенные в разделе `on-error`. LastError имеет следующие свойства.  
   
-| ИМЯ     | Тип   | Описание                                                                                               | Обязательно для заполнения |
-|----------|--------|-----------------------------------------------------------------------------------------------------------|----------|
+| Name       | Тип   | Описание                                                                                               | Обязательно для заполнения |
+|------------|--------|-----------------------------------------------------------------------------------------------------------|----------|
 | `Source`   | string | Указывает имя элемента, в котором произошла ошибка. Это может быть имя политики или встроенного шага конвейера.     | Да      |
 | `Reason`   | string | Код ошибки в машинном формате, который удобно использовать для обработки ошибок.                                       | Нет       |
 | `Message`  | string | Описание ошибки в понятном для человека формате.                                                                         | Да      |
@@ -98,9 +98,9 @@ ms.locfileid: "60564329"
   
 | `Source`        | Условие                                 | `Reason`                  | `Message`                                                                                                                |
 |---------------|-------------------------------------------|-------------------------|------------------------------------------------------------------------------------------------------------------------|
-| конфигурация | URI не соответствует ни одному API или операции | OperationNotFound       | Unable to match incoming request to an operation. (Не удалось сопоставить входящий запрос с операцией.)                                                                      |
-| авторизация | Не предоставлен ключ подписки             | SubscriptionKeyNotFound | Access denied due to missing subscription key. Make sure to include subscription key when making requests to this API. (Доступ запрещен из-за отсутствия ключа подписки. Обязательно включайте ключ подписки в запросы к этому API.) |
-| авторизация | Недопустимое значение ключа подписки         | SubscriptionKeyInvalid  | Access denied due to invalid subscription key. Make sure to provide a valid key for an active subscription. (Доступ запрещен из-за недопустимого ключа подписки. Укажите допустимый ключ активной подписки.)            |
+| настройка | URI не соответствует ни одному API или операции | OperationNotFound       | Unable to match incoming request to an operation. (Не удалось сопоставить входящий запрос с операцией.)                                                                      |
+| authorization | Не предоставлен ключ подписки             | SubscriptionKeyNotFound | Access denied due to missing subscription key. Make sure to include subscription key when making requests to this API. (Доступ запрещен из-за отсутствия ключа подписки. Обязательно включайте ключ подписки в запросы к этому API.) |
+| authorization | Недопустимое значение ключа подписки         | SubscriptionKeyInvalid  | Access denied due to invalid subscription key. Make sure to provide a valid key for an active subscription. (Доступ запрещен из-за недопустимого ключа подписки. Укажите допустимый ключ активной подписки.)            |
   
 ## <a name="predefined-errors-for-policies"></a>Стандартные ошибки для политик  
  Далее перечислены стандартные ошибки, которые могут возникнуть во время оценки политик.  
@@ -108,7 +108,7 @@ ms.locfileid: "60564329"
 | `Source`       | Условие                                                       | `Reason`                    | `Message`                                                                                                                              |
 |--------------|-----------------------------------------------------------------|---------------------------|--------------------------------------------------------------------------------------------------------------------------------------|
 | rate-limit   | Превышено ограничение скорости                                             | RateLimitExceeded         | Rate limit is exceeded (Превышено ограничение скорости)                                                                                                               |
-| квота        | Превышена квота                                                  | QuotaExceeded             | превышена квота на количество вызовов. Quota will be replenished in xx:xx:xx. (Квота будет пополнена в xx:xx:xx.) -или- Out of bandwidth quota. (Превышена квота пропускной способности.) Quota will be replenished in xx:xx:xx. (Квота будет пополнена в xx:xx:xx.) |
+| quota        | Превышена квота                                                  | QuotaExceeded             | превышена квота на количество вызовов. Quota will be replenished in xx:xx:xx. (Квота будет пополнена в xx:xx:xx.) -или- Out of bandwidth quota. (Превышена квота пропускной способности.) Quota will be replenished in xx:xx:xx. (Квота будет пополнена в xx:xx:xx.) |
 | jsonp        | Недопустимое значение параметра обратного вызова (содержит неправильные символы) | CallbackParameterInvalid  | Value of callback parameter {callback-parameter-name} is not a valid JavaScript identifier. (Значение параметра обратного вызова {имя параметра обратного вызова} не является допустимым идентификатором JavaScript.)                                          |
 | ip-filter    | Не удалось проанализировать IP-адрес вызывающего объекта из запроса                          | FailedToParseCallerIP     | Failed to establish IP address for the caller. Access denied. (Не удалось установить IP-адрес вызывающего объекта. Доступ запрещен.)                                                                        |
 | ip-filter    | IP-адрес вызывающего объекта не входит в список разрешенных                                | CallerIpNotAllowed        | Caller IP address {ip-address} is not allowed. Access denied. (Недопустимый IP-адрес вызывающего объекта: {IP-адрес}. Доступ запрещен.)                                                                        |

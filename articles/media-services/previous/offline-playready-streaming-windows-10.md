@@ -15,15 +15,15 @@ ms.topic: article
 ms.date: 04/16/2019
 ms.author: willzhan
 ms.openlocfilehash: 76008cdf0121ac3c9e4a2fc30d2e9fbcc561ff1d
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64939537"
 ---
 # <a name="offline-playready-streaming-for-windows-10"></a>Потоковая передача содержимого с технологией PlayReady для Windows 10 (автономный режим)  
 
-> [!div class="op_single_selector" title1="Select the version of Media Services that you are using:"]
+> [!div class="op_single_selector" title1="Выберите версию служб мультимедиа, в которых используется:"]
 > * [Версия 3](../latest/offline-plaready-streaming-for-windows-10.md)
 > * [Версия 2](offline-playready-streaming-windows-10.md)
 

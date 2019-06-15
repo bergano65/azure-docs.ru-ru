@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 11/27/2018
 ms.author: sutalasi
 ms.openlocfilehash: 5fbe4fd5f85026cd62f1bd10e36561b312464054
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64690569"
 ---
 # <a name="set-up-disaster-recovery-to-azure-for-hyper-v-vms-using-powershell-and-azure-resource-manager"></a>Настройка аварийного восстановления виртуальных машин Hyper-V в Azure с помощью PowerShell и Azure Resource Manager
@@ -49,7 +49,7 @@ Azure PowerShell предоставляет командлеты для упра
 
 1. Откройте консоль PowerShell и выполните следующую команду, чтобы войти в учетную запись Azure. Этот командлет открывает веб-станицу, на которой пользователю предлагается ввести данные для входа в учетную запись — **Подключение AzAccount**.
     - Кроме того, учетные данные можно добавить в качестве параметра в командлет **Connect-AzAccount**, используя параметр **-Credential**.
-    - Если вы — партнер-поставщик облачных услуг, работающий от имени клиента, вам потребуется указать заказчика в качестве клиента. Для этого нужно ввести идентификатор или основное доменное имя клиента. Например:  **Connect-AzAccount-Tenant "fabrikam.com"**
+    - Если вы — партнер-поставщик облачных услуг, работающий от имени клиента, вам потребуется указать заказчика в качестве клиента. Для этого нужно ввести идентификатор или основное доменное имя клиента. Пример: **Connect-AzAccount-Tenant "fabrikam.com"**
 2. Свяжите подписку, которую собираетесь использовать, с учетной записью, так как последняя может иметь несколько подписок:
 
     `Select-AzSubscription -SubscriptionName $SubscriptionName`

@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 03/26/2019
 ms.author: tulasim
 ms.openlocfilehash: 8fcc3ea8340a8645a1983eebb4a619904f884a19
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61379676"
 ---
 # <a name="data-sources-for-qna-maker-content"></a>Источники данных для содержимого QnA Maker
@@ -141,7 +141,7 @@ Answer2
 
 При импорте базы знаний содержимое существующей базы знаний полностью заменяется. Для импорта нужно предоставить структурированный TSV-файл с информацией об источнике данных. Эти сведения помогают QnA Maker сгруппировать пары "вопрос — ответ" и сопоставить их с конкретным источником данных.
 
-| Вопрос  | Ответ  | Источник| Метаданные (клавиша 1: значение 1) |          
+| Вопрос  | Ответ  | source| Метаданные (клавиша 1: значение 1) |          
 |-----------|---------|----|---------------------|
 | Question1 | Answer1 | Url1 | <code>Key1:Value1 &#124; Key2:Value2</code> |
 | Question2 | Answer2 | Редактирование|    `Key:Value`       |

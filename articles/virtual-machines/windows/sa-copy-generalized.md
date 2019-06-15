@@ -17,11 +17,11 @@ ms.date: 05/23/2017
 ms.author: cynthn
 ROBOTS: NOINDEX
 ms.openlocfilehash: e1ed419892412c1fb9334fed74b82c53154723ed
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60252416"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64708416"
 ---
 # <a name="how-to-create-an-unmanaged-vm-image-from-an-azure-vm"></a>Создание неуправляемого образа виртуальной машины на основе виртуальной машины Azure
 
@@ -89,7 +89,7 @@ ms.locfileid: "60252416"
     Stop-AzVM -ResourceGroupName <resourceGroup> -Name <vmName>
     ```
    
-    *Состояние* виртуальной машины на портале Azure изменится с **Остановлено** на **Остановлено (освобождено)**.
+    *Состояние* виртуальной машины на портале Azure изменится с **Остановлено** на **Остановлено (освобождено)** .
 2. Теперь задайте для виртуальной машины состояние **Generalized**(Универсальная). 
    
     ```powershell
