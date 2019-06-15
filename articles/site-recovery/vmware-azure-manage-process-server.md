@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 04/28/2019
 ms.author: ramamill
 ms.openlocfilehash: 2c27779719c73adf4d7fc1a61a0c77d03df71815
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64925629"
 ---
 # <a name="manage-process-servers"></a>Управление серверами обработки
@@ -61,7 +61,7 @@ ms.locfileid: "64925629"
 3. Щелкните сервер обработки, из которого нужно выполнить переключение рабочей нагрузки.
 4. Щелкните **коммутатора**, Выбор целевого сервера обработки, к которому вы хотите переместить рабочую нагрузку. Нажмите кнопку **ОК**
 
-    ![Switch](media/vmware-azure-manage-process-server/Switch.PNG)
+    ![Параметр](media/vmware-azure-manage-process-server/Switch.PNG)
 
 5. В хранилище, отслеживать ход выполнения задания в разделе **мониторинг** > **задания Site Recovery**.
 
@@ -125,4 +125,4 @@ ms.locfileid: "64925629"
 - C:\ProgramData\ASRSetupLogs.
 - C:\ProgramData\LogUploadServiceLogs.
 - C:\ProgramData\Microsoft Azure Site Recovery.
-- Каталог установки сервера обработки. Например:  C:\Program Files (x86)\Microsoft Azure Site Recovery
+- Каталог установки сервера обработки. Пример: C:\Program Files (x86)\Microsoft Azure Site Recovery

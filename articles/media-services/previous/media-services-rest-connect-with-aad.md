@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: willzhan;juliako;johndeu
 ms.openlocfilehash: 6284a1aa0cc3a49291553309b058e4d9f65b24c6
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64701015"
 ---
 # <a name="use-azure-ad-authentication-to-access-the-media-services-api-with-rest"></a>Использование аутентификации Azure AD для доступа к API Служб мультимедиа с помощью REST
@@ -61,7 +61,7 @@ ms.locfileid: "64701015"
 
 Чтобы получить доступ к API служб мультимедиа, необходимо собрать следующие данные.
 
-|Параметр|Пример|ОПИСАНИЕ|
+|Параметр|Пример|Описание|
 |---|-------|-----|
 |Домен клиента Azure Active Directory|microsoft.onmicrosoft.com|Azure AD в качестве конечной точки службы токенов безопасности (STS) создается в следующем формате: <https://login.microsoftonline.com/{your-ad-tenant-name.onmicrosoft.com}/oauth2/token>. Azure AD выдает маркер JWT для доступа к ресурсам (маркер доступа).|
 |Конечная точка REST API|<https://amshelloworld.restv2.westus.media.azure.net/api/>|Это конечная точка, к которой отправляются все вызовы REST API служб мультимедиа в вашем приложении.|

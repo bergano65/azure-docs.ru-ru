@@ -10,10 +10,10 @@ ms.date: 04/04/2019
 ms.topic: conceptual
 manager: carmonm
 ms.openlocfilehash: 483f9092d29fc40937ed9d54510269af2af30872
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62128810"
 ---
 # <a name="scheduling-a-runbook-in-azure-automation"></a>Создание расписания для Runbook в службе автоматизации Azure
@@ -23,7 +23,7 @@ ms.locfileid: "62128810"
 > [!NOTE]
 > В настоящее время расписания не поддерживают конфигурации Azure Automation DSC.
 
-## <a name="powershell-cmdlets"></a>Командлеты PowerShell
+## <a name="powershell-cmdlets"></a>Командлеты Powershell
 
 Командлеты, представленные в следующей таблице используются для создания расписаний и управление ими с помощью PowerShell в службе автоматизации Azure. Они входят в состав [модуля Azure PowerShell](/powershell/azure/overview).
 

@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 03/29/2019
 ms.author: bwren
 ms.openlocfilehash: 974a3391c592a1caf7bdcc6d9e01032f0c73aaa6
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61461941"
 ---
 # <a name="create-custom-fields-in-a-log-analytics-workspace-in-azure-monitor"></a>Создание настраиваемых полей в рабочей области Log Analytics в Azure Monitor
@@ -75,7 +75,7 @@ ms.locfileid: "61461941"
 ## <a name="viewing-custom-fields"></a>Просмотр настраиваемых полей
 Список всех настраиваемых полей в группе управления можно просмотреть из меню **Дополнительные параметры** рабочей области Log Analytics на портале Azure.  Выберите вкладку **Данные**, а затем — раздел **Настраиваемые поля**, чтобы просмотреть список всех настраиваемых полей в рабочей области.  
 
-![Пользовательские поля](media/custom-fields/list.png)
+![Настраиваемые поля](media/custom-fields/list.png)
 
 ## <a name="removing-a-custom-field"></a>Удаление настраиваемого поля
 Настраиваемое поле можно удалить двумя способами.  Первый способ — использовать параметр **Удалить** для каждого поля при просмотре полного списка (процедура его открытия описана выше).  Второй способ — извлечь запись , нажать кнопку слева от поля  и в открывшемся меню выбрать пункт удаления настраиваемого поля.

@@ -15,10 +15,10 @@ ms.workload: infrastructure-services
 ms.date: 02/11/2019
 ms.author: roiyz
 ms.openlocfilehash: 5a184c72da8af0d451902a164c8b71a94a01883f
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64683174"
 ---
 # <a name="nvidia-gpu-driver-extension-for-linux"></a>Расширение драйвера GPU NVIDIA для Linux
@@ -71,18 +71,18 @@ ms.locfileid: "64683174"
 
 ### <a name="properties"></a>properties
 
-| ИМЯ | Значение и пример | Тип данных |
+| Name | Значение и пример | Тип данных |
 | ---- | ---- | ---- |
-| версия_API | 2015-06-15 | date |
+| apiVersion | 2015-06-15 | date |
 | publisher | Microsoft.HpcCompute | string |
-| Тип | NvidiaGpuDriverLinux | string |
+| type | NvidiaGpuDriverLinux | string |
 | typeHandlerVersion | 1.2 | int |
 
 ### <a name="settings"></a>Параметры
 
 Все эти параметры не являются обязательными. По умолчанию ядро не обновляется (если это не требуется для установки драйвера), устанавливается последний поддерживаемый драйвер и набор инструментов CUDA Toolkit (если это применимо).
 
-| ИМЯ | ОПИСАНИЕ | По умолчанию | Допустимые значения | Тип данных |
+| Name | Описание | Значение по умолчанию | Допустимые значения | Тип данных |
 | ---- | ---- | ---- | ---- | ---- |
 | updateOS | Обновление ядра, даже если для установки драйвера это не требуется | false | true, false | Логическое |
 | driverVersion | NV: версия драйвера GRID.<br> NC/ND: версия набора инструментов CUDA Toolkit. Последние версии драйверов для выбранного набора CUDA Toolkit устанавливаются автоматически. | последняя | GRID: "418.70", "410.92", "410.71", "390.75", "390.57", "390.42"<br> CUDA: 10.0.130, 9.2.88, 9.1.85. | string |

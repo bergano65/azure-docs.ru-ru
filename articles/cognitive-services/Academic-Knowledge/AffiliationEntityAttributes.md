@@ -11,17 +11,17 @@ ms.topic: conceptual
 ms.date: 03/23/2017
 ms.author: alch
 ms.openlocfilehash: 82e6a5b66342e58e62da029d617cbd1d74c28149
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61340525"
 ---
 # <a name="affiliation-entity"></a>Сущность принадлежности
 
 <sub> *Следующие атрибуты относятся к сущностям принадлежности. (Ty = '5') </sub>
 
-ИМЯ    |ОПИСАНИЕ                            |type       | Операции
+Name    |Описание                            |type       | Операции
 ------- | ------------------------------------- | --------- | ----------------------------
 Идентификатор      |Идентификатор сущности                              |Int64      |Равно
 AfN     |Нормализованное имя принадлежности        |String     |Равно
@@ -31,6 +31,6 @@ ECC     |Общий расчетный показатель цитируемос
 
 ## <a name="extended-metadata-attributes"></a>Расширенные атрибуты метаданных ##
 
-ИМЯ    | ОПИСАНИЕ               
+Name    | Описание               
 --------|---------------------------    
 PC      |Количество публикаций по принадлежности

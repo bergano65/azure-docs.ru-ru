@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 10/25/2018
 ms.author: hrasheed
 ms.openlocfilehash: d1f2b79ff3ae33adb0b6e3ce5a6d96ad38fb1562
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64693127"
 ---
 # <a name="migrate-on-premises-apache-hadoop-clusters-to-azure-hdinsight---architecture-best-practices"></a>Миграция локальных кластеров Apache Hadoop в Azure HDInsight — рекомендации по архитектуре
@@ -30,8 +30,8 @@ ms.locfileid: "64693127"
 |Пакетная обработка (ETL/ELT)|Hadoop, Spark|
 |Хранение данных|Hadoop, Spark, Interactive Query|
 |Центр Интернета вещей или потоковая передача|Kafka, Storm, Spark|
-|Обработка транзакций NoSQL|hbase|
-|Кэширование в памяти для обеспечения интерактивных и ускоренных запросов|Interactive Query|
+|Обработка транзакций NoSQL|HBase|
+|Кэширование в памяти для обеспечения интерактивных и ускоренных запросов|Интерактивные запросы|
 |Обработка и анализ данных|Службы машинного обучения, Spark|
 
 В приведенной ниже таблице представлены различные способы создания кластера HDInsight.

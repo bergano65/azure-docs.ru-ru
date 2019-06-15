@@ -15,10 +15,10 @@ ms.workload: infrastructure-services
 ms.date: 10/19/2016
 ms.author: rclaus
 ms.openlocfilehash: ae8315b2a484cddc500b5c2dd02a019cb4f46d8e
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62127095"
 ---
 # <a name="dns-name-resolution-options-for-linux-virtual-machines-in-azure"></a>Параметры разрешения DNS-имен для виртуальных машин Linux в Azure
@@ -72,7 +72,7 @@ Azure по умолчанию предоставляет разрешение DN
 **Ubuntu (используется пакет resolvconf)**
   * Установите пакет dnsmasq ("sudo apt-get install dnsmasq").
 
-**SUSE (используется пакет netconf)**:
+**SUSE (используется пакет netconf)** :
 1. Установите пакет dnsmasq ("sudo zypper install dnsmasq").
 2. Активируйте службу dnsmasq ("systemctl enable dnsmasq.service").
 3. Запустите службу dnsmasq ("systemctl start dnsmasq.service").

@@ -11,10 +11,10 @@ manager: yuvalm
 description: Быстрая разработка в Kubernetes с использованием контейнеров и микрослужб в Azure
 keywords: Docker, Kubernetes, Azure, AKS, Azure Container Service, containers
 ms.openlocfilehash: 983af0dd75e6ae62630c85d04ac3819c7e260439
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60687373"
 ---
 # <a name="use-cicd-with-azure-dev-spaces"></a>Использование CI/CD в Azure Dev Spaces
@@ -33,7 +33,7 @@ ms.locfileid: "60687373"
     * Доступные данные [учетной записи администратора](../../container-registry/container-registry-authentication.md#admin-account) Реестра контейнеров Azure.
 * [Кластер AKS с разрешениями на извлечение данных из Реестра контейнеров Azure](../../container-registry/container-registry-auth-aks.md).
 
-## <a name="download-sample-code"></a>Загрузить пример кода
+## <a name="download-sample-code"></a>Скачивание примера кода
 Ради экономии времени создадим вилку примера кода из репозитория GitHub. Перейдите на страницу https://github.com/Azure/dev-spaces и щелкните **Fork** (Вилка). После создания вилки **клонируйте** версию вилки репозитория локально. По умолчанию будет извлечена ветвь _master_, но мы включили несколько изменений в ветвь _azds_updates_, которую также следует перенести во время создания вилки. Эти изменения позволят сэкономить время. Ветвь _azds_updates_ содержит обновления, которые следует внести вручную, как описано в разделах руководства по Dev Spaces, а также некоторые готовые файлы YAML и JSON для оптимизации развертывания системы CI/CD. С помощью команды `git checkout -b azds_updates origin/azds_updates` можно извлечь ветвь _azds_updates_ в локальном репозитории.
 
 ## <a name="dev-spaces-setup"></a>Настройка Dev Spaces
@@ -43,7 +43,7 @@ ms.locfileid: "60687373"
 azds space select -n dev
 ```
 
-При появлении запроса на выбор родительского пространства выберите _\<none\>_.
+При появлении запроса на выбор родительского пространства выберите _\<none\>_ .
 
 После создания модуля разработки, необходимо определить суффикс узла. Используйте `azds show-context` команду, чтобы показать суффикс узла контроллеру входящего трафика Azure Dev пробелы.
 

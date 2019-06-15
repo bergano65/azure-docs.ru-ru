@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 01/19/2018
 ms.author: ashishth
 ms.openlocfilehash: 7d9aafeb920eab7f6a87061a135bf2e464add436
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64697995"
 ---
 # <a name="apache-phoenix-in-hdinsight"></a>Apache Phoenix в HDInsight
@@ -40,7 +40,7 @@ CREATE INDEX ix_purchasetype on SALTEDWEBLOGS (purchasetype, transactiondate) IN
 
 Такой подход может повысить производительность при выполнении одноиндексных запросов. Этот тип вторичного индекса является **охватывающим индексом**, содержащим все столбцы, включенные в запрос. Поэтому просмотр таблицы не нужен. Индекс удовлетворяет весь запрос.
 
-### <a name="views"></a>Views
+### <a name="views"></a>Представления
 
 Представления Phoenix дают возможность преодолеть ограничение HBase, когда при создании более 100 физических таблиц производительность начинает ухудшаться. Представления Phoenix позволяют нескольким *виртуальным таблицам* совместно использовать одну базовую физическую таблицу HBase.
 

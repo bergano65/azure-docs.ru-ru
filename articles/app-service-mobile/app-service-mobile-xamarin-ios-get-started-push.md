@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 10/12/2016
 ms.author: crdun
 ms.openlocfilehash: de24b64ecd95eec79d7508f978acda9f0ae5a8d6
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62097540"
 ---
 # <a name="add-push-notifications-to-your-xamarinios-app"></a>Добавление push-уведомлений в приложение Xamarin.iOS
@@ -52,7 +52,7 @@ ms.locfileid: "62097540"
 
 [!INCLUDE [app-service-mobile-xamarin-ios-configure-project](../../includes/app-service-mobile-xamarin-ios-configure-project.md)]
 
-## <a name="add-push-notifications-to-your-app"></a>Добавьте в приложения возможность использования push-уведомлений
+## <a name="add-push-notifications-to-your-app"></a>Добавление push-уведомлений в приложение
 
 1. В **QSTodoService** добавьте приведенное ниже свойство, чтобы **AppDelegate** мог получить мобильный клиент.
 
@@ -147,7 +147,7 @@ ms.locfileid: "62097540"
    > [!NOTE]
    > Необходимо явно разрешить прием push-уведомлений от вашего приложения. Этот запрос отображается только при первом запуске приложения.
 
-2. В приложении введите задачу, а затем щелкните значок плюса (**+**).
+2. В приложении введите задачу, а затем щелкните значок плюса ( **+** ).
 3. Убедитесь, что уведомление получено, а затем нажмите кнопку **ОК** , чтобы закрыть его.
 4. Повторите шаг 2 и сразу закройте приложение, затем убедитесь, что уведомление отображается.
 

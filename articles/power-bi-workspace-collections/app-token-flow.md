@@ -9,10 +9,10 @@ ms.topic: article
 ms.workload: powerbi
 ms.date: 09/20/2017
 ms.openlocfilehash: 5fbe08bb9ebc355074a790f7732c9de10eaad859
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64707110"
 ---
 # <a name="authenticating-and-authorizing-with-power-bi-workspace-collections"></a>Аутентификация и авторизация в коллекциях рабочих областей Power BI
@@ -36,7 +36,7 @@ ms.locfileid: "64707110"
 
 Маркер приложения может содержать следующие утверждения:
 
-| Утверждение | ОПИСАНИЕ |    
+| Утверждение | Описание |    
 | --- | --- |
 | **ver** |Версия маркера приложения. Текущая версия — 0.2.0. |
 | **aud** |Целевой получатель маркера. Для коллекций рабочих областей Power BI используйте адрес *https:\//analysis.windows.net/powerbi/api*. |
@@ -92,7 +92,7 @@ Body
 
 Ниже приведены доступные области применения коллекций рабочих областей Power BI.
 
-|Область|ОПИСАНИЕ|
+|`Scope`|Описание|
 |---|---|
 |Dataset.Read|Предоставляет разрешение на чтение указанного набора данных.|
 |Dataset.Write|Предоставляет разрешение на запись в указанном наборе данных.|

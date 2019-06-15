@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 07/11/2017
 ms.author: kumud
 ms.openlocfilehash: 9510905f67ee943b4b1dfa5a14c2753efac39da7
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64705818"
 ---
 # <a name="introduction-to-connection-troubleshoot-in-azure-network-watcher"></a>Общие сведения об устранении неполадок подключения в службе "Наблюдатель за сетями Azure"
@@ -27,11 +27,11 @@ ms.locfileid: "64705818"
 > [!IMPORTANT]
 > Чтобы устранить неполадки подключения на виртуальной машине, установите на ней расширение `AzureNetworkWatcherExtension`. Информацию об установке расширения для виртуальной машины Windows см. в статье [Расширение виртуальной машины агента Наблюдателя за сетями для Windows](../virtual-machines/windows/extensions-nwa.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json), а для виртуальной машины Linux — в статье [Расширение виртуальной машины агента Наблюдателя за сетями для Linux](../virtual-machines/linux/extensions-nwa.md?toc=%2fazure%2fnetwork-watcher%2ftoc.json). Эта расширение не нужно устанавливать на целевой конечной точке.
 
-## <a name="response"></a>Отклик
+## <a name="response"></a>Ответ
 
 В таблице ниже приведены свойства, возвращаемые после устранения неполадок подключения.
 
-|Свойство  |ОПИСАНИЕ  |
+|Свойство  |Описание  |
 |---------|---------|
 |ConnectionStatus     | Состояние проверки подключения. Возможные результаты: **Reachable** и **Unreachable**.        |
 |AvgLatencyInMs     | Среднее время задержки при проверке подключения в миллисекундах. (Возвращается, только если подключение доступно.)        |
@@ -48,7 +48,7 @@ ms.locfileid: "64705818"
 |Hops[].Issues | Набор проблем, возникших во время проверки этого прыжка. Если проблем не обнаружено, значение будет пустым.|
 |Hops[].Issues[].Origin | Текущий прыжок, где возникла проблем. Возможные значения:<br/> **Inbound**. Проблема обнаружена в пути от предыдущего прыжка к текущему.<br/>**Outbound**. Проблема обнаружена в пути от текущего прыжка к следующему.<br/>**Local**. Проблема возникла на текущем прыжке.|
 |Hops[].Issues[].Severity | Степень серьезности обнаруженной проблемы. Возможные значения: **Error** и **Warning**. |
-|Hops[].Issues[].Type |Тип обнаруженной проблемы. Возможные значения: <br/>**ЦП**<br/>**Память**<br/>**GuestFirewall**<br/>**DnsResolution**<br/>**NetworkSecurityRule**<br/>**UserDefinedRoute** |
+|Hops[].Issues[].Type |Тип обнаруженной проблемы. Возможные значения: <br/>**CPU**<br/>**Память**<br/>**GuestFirewall**<br/>**DnsResolution**<br/>**NetworkSecurityRule**<br/>**UserDefinedRoute** |
 |Hops[].Issues[].Context |Сведения об обнаруженной проблеме.|
 |Hops[].Issues[].Context[].key |Возвращенный ключ из пары "ключ — значение".|
 |Hops[].Issues[].Context[].value |Возвращенное значение из пары "ключ — значение".|
@@ -74,7 +74,7 @@ ms.locfileid: "64705818"
 
 Устранение неполадок подключения возвращает типы ошибок подключения. Следующая таблица предоставляет список возвращаемых типов текущих ошибок.
 
-|type  |ОПИСАНИЕ  |
+|type  |Описание  |
 |---------|---------|
 |ЦП     | Высокая загрузка ЦП.       |
 |Память     | Высокий уровень использования памяти.       |

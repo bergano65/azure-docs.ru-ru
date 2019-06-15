@@ -13,10 +13,10 @@ ms.workload: infrastructure-services
 ms.date: 03/15/2016
 ms.author: genli
 ms.openlocfilehash: 2f71dc2bcd5463f81ae286bbe3099124eb3fa539
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62107984"
 ---
 # <a name="configure-private-ip-addresses-for-a-virtual-machine-classic-using-the-azure-classic-cli"></a>Настройка частных IP-адресов для классической виртуальной машины с помощью классического Azure CLI
@@ -64,10 +64,10 @@ ms.locfileid: "62107984"
         info:    OK
         info:    vm create command OK
    
-   * **-l (или --location)**. Регион Azure для создания виртуальной машины. В данном сценарии это *centralus*.
-   * **-n (или --vm-name)**. Имя создаваемой виртуальной машины.
-   * **-w (или --virtual-network-name)**. Имя виртуальной сети, в которой будет создана виртуальная машина. 
-   * **-S (или --static-ip)**. Статический частный IP-адрес для виртуальной машины.
+   * **-l (или --location)** . Регион Azure для создания виртуальной машины. В данном сценарии это *centralus*.
+   * **-n (или --vm-name)** . Имя создаваемой виртуальной машины.
+   * **-w (или --virtual-network-name)** . Имя виртуальной сети, в которой будет создана виртуальная машина. 
+   * **-S (или --static-ip)** . Статический частный IP-адрес для виртуальной машины.
    * **TestService**. Имя облачной службы, в которой будет создана виртуальная машина.
    * **bd507d3a70934695bc2128e3e5a255ba__RightImage-Windows-2012R2-x64-v14.2.** Образ, используемый для создания виртуальной машины.
    * **adminuser**. Локальный администратор виртуальной машины Windows.

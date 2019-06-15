@@ -8,14 +8,13 @@ keywords: ''
 ms.service: azure-functions
 ms.devlang: multiple
 ms.topic: conceptual
-origin.date: 12/07/2017
-ms.date: 02/21/2019
-ms.author: v-junlch
+ms.date: 12/07/2017
+ms.author: azfuncdf
 ms.openlocfilehash: 596eedab39ff926fcdc880c82c49ac464b7ff23b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60730279"
 ---
 # <a name="task-hubs-in-durable-functions-azure-functions"></a>Центры задач в устойчивых функциях (Функции Azure)
@@ -30,11 +29,11 @@ ms.locfileid: "60730279"
 
 Центр задач состоит из следующих ресурсов хранилища:
 
-- Одна или несколько очередей элементов управления.
-- Одна очередь рабочих элементов.
-- Одна таблица журнала.
-- одна таблица экземпляров.
-- Один контейнер хранилища, содержащий один или несколько арендуемых больших двоичных объектов.
+* Одна или несколько очередей элементов управления.
+* Одна очередь рабочих элементов.
+* Одна таблица журнала.
+* одна таблица экземпляров.
+* Один контейнер хранилища, содержащий один или несколько арендуемых больших двоичных объектов.
 
 Все эти ресурсы создаются автоматически в учетной записи хранилища Azure по умолчанию, когда функции оркестраторов и действий выполняются или запланированы к выполнению. В статье [Производительность и масштабирование в устойчивых функциях (Функции Azure)](durable-functions-perf-and-scale.md) объясняется, как используются эти ресурсы.
 
@@ -141,5 +140,3 @@ public static async Task<HttpResponseMessage> Run(
 
 > [!div class="nextstepaction"]
 > [Сведения об обработке управления версиями](durable-functions-versioning.md)
-
-<!-- Update_Description: wording update -->

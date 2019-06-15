@@ -15,10 +15,10 @@ ms.workload: TBD
 ms.date: 01/16/2018
 ms.author: alkohli
 ms.openlocfilehash: cdaf991c25c23dee4f87b44142c1482bf892bcf2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60723806"
 ---
 # <a name="change-a-blob-path-from-the-default-path"></a>Изменение пути к большому двоичному объекту по умолчанию
@@ -62,7 +62,7 @@ ms.locfileid: "60723806"
 
     ![Щелкните + New function (+ Создать функцию)](./media/storsimple-data-manager-change-default-blob-path/create-new-function.png)
 
-6. В качестве языка выберите **C#**. В массиве элементов шаблонов выберите язык **C#** в элементе**QueueTrigger-CSharp**.
+6. В качестве языка выберите **C#** . В массиве элементов шаблонов выберите язык **C#** в элементе**QueueTrigger-CSharp**.
 
 7. В окне **Queue trigger** (Триггер очередей):
 

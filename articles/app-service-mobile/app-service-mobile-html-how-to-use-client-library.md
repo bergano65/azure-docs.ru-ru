@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 10/30/2016
 ms.author: crdun
 ms.openlocfilehash: 16871bdc59d141334bc2c95f26929f270d7971cf
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62106750"
 ---
 # <a name="how-to-use-the-javascript-client-library-for-azure-mobile-apps"></a>Как использовать клиентскую библиотеку JavaScript для мобильных приложений Azure
@@ -40,7 +40,7 @@ ms.locfileid: "62106750"
 npm install azure-mobile-apps-client --save
 ```
 
-Библиотеку также можно использовать как модуль ES2015 в средах CommonJS, таких как Browserify и Webpack, а также как библиотеку AMD.  Пример.
+Библиотеку также можно использовать как модуль ES2015 в средах CommonJS, таких как Browserify и Webpack, а также как библиотеку AMD.  Пример:
 
 ```javascript
 // For ECMAScript 5.1 CommonJS

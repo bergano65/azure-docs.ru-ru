@@ -9,10 +9,10 @@ ms.service: iot-central
 services: iot-central
 manager: peterpr
 ms.openlocfilehash: 3e77494eacaf16ac23a531cb7a16fe8bf6117006
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64714415"
 ---
 # <a name="connect-a-raspberry-pi-to-your-azure-iot-central-application-c"></a>Подключение Raspberry Pi к приложению Azure IoT Central (C#)
@@ -340,7 +340,7 @@ ms.locfileid: "64714415"
 
 Числовые параметры
 
-| Отображаемое имя | Имя поля | Units | Число десятичных знаков | Минимальная | Максимальная | Initial |
+| `Display name` | Имя поля | Units | Число десятичных знаков | Минимальная | Максимальная | Initial |
 | ------------ | ---------- | ----- | -------------- | ------- | ------- | ------- |
 | Напряжение      | setVoltage | В | 0              | 0       | 240     | 0       |
 | Текущее значение      | setCurrent | Амперы  | 0              | 0       | 100     | 0       |
@@ -348,16 +348,16 @@ ms.locfileid: "64714415"
 
 Параметры переключения
 
-| Отображаемое имя | Имя поля | Включение текста | Отключение текста | Initial |
+| `Display name` | Имя поля | Включение текста | Отключение текста | Initial |
 | ------------ | ---------- | ------- | -------- | ------- |
 | IR           | activateIR | ВКЛ      | ВЫКЛ.      | Отключить     |
 
 ### <a name="properties"></a>properties
 
-| type            | Отображаемое имя | Имя поля | Тип данных |
+| type            | `Display name` | Имя поля | Тип данных |
 | --------------- | ------------ | ---------- | --------- |
-| Свойство устройства | Серийный номер   | dieNumber  | number    |
-| Text            | Location     | location   | Н/Д       |
+| Свойство устройства | Серийный номер   | dieNumber  | номер    |
+| Text            | Расположение     | location   | Н/Д       |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

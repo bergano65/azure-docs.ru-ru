@@ -8,16 +8,16 @@ ms.topic: conceptual
 ms.date: 04/08/2019
 ms.author: sutalasi
 ms.openlocfilehash: b60d8a8fb9b9300a6914ad33b2f760fb5adde3b4
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60723515"
 ---
 # <a name="configure-and-manage-replication-policies-for-vmware-disaster-recovery-to-azure"></a>Настройка и администрирование политик репликации для аварийного восстановления VMware в Azure
 Из этой статьи вы узнаете, как настроить политику репликации при репликации виртуальных машин VMware в Azure с помощью [Azure Site Recovery](site-recovery-overview.md).
 
-## <a name="create-a-policy"></a>Создать политику
+## <a name="create-a-policy"></a>Создание политики
 
 1. Выберите **Управление** > **Site Recovery Infrastructure** (Инфраструктура Site Recovery).
 2. В разделе **For VMware and Physical machines** (Для виртуальных машин VMware и физических компьютеров) выберите **Политики репликации**.
@@ -52,5 +52,5 @@ ms.locfileid: "60723515"
 
 1. Выберите политику репликации.
     a. Чтобы отменить связь между политикой и сервером конфигурации, убедитесь, что реплицируемые виртуальные машины не используют эту политику. Затем щелкните **Отменить связь**.
-    2. Чтобы удалить политику, убедитесь что она не связана с сервером конфигурации. Затем щелкните **Удалить**. Удаление занимает 30–60 секунд.
+    2\. Чтобы удалить политику, убедитесь что она не связана с сервером конфигурации. Затем щелкните **Удалить**. Удаление занимает 30–60 секунд.
 2. Последовательно выберите **ОК**.

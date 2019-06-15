@@ -13,10 +13,10 @@ ms.topic: article
 ms.date: 12/19/2016
 ms.author: stewu
 ms.openlocfilehash: 8066a759cf80be6e9ca232bcd3693a5fa4d2f2f9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61436483"
 ---
 # <a name="performance-tuning-guidance-for-storm-on-hdinsight-and-azure-data-lake-storage-gen1"></a>Рекомендации по настройке производительности для Storm в HDInsight и Azure Data Lake Storage 1-го поколения
@@ -132,7 +132,7 @@ ms.locfileid: "61436483"
 
 Чтобы проверить, применяется ли для вас регулирование, включите ведение журнала отладки на стороне клиента.
 
-1. В разделе **Ambari** > **Storm** > **Config** (Настройка) > **Advanced storm-worker-log4j** (Расширенные параметры storm-worker-log4j) измените значение **&lt;root level="info"&gt;** на **&lt;root level=”debug”&gt;**. Перезапустите все узлы и службы, чтобы изменения конфигурации вступили в силу.
+1. В разделе **Ambari** > **Storm** > **Config** (Настройка) > **Advanced storm-worker-log4j** (Расширенные параметры storm-worker-log4j) измените значение **&lt;root level="info"&gt;** на **&lt;root level=”debug”&gt;** . Перезапустите все узлы и службы, чтобы изменения конфигурации вступили в силу.
 2. Отслеживайте журналы топологии на рабочих узлах Storm (в разделе /var/log/storm/worker-artifacts/&lt;TopologyName&gt;/&lt;port&gt;/worker.log) на предмет наличия исключений регулирования Data Lake Storage 1-го поколения.
 
 ## <a name="next-steps"></a>Дальнейшие действия

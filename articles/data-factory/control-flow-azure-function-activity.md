@@ -12,10 +12,10 @@ author: sharonlo101
 ms.author: shlo
 manager: craigg
 ms.openlocfilehash: 82786b8f01ce409179f4ddd37127679f9357cd0e
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
-ms.translationtype: MT
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64727055"
 ---
 # <a name="azure-function-activity-in-azure-data-factory"></a>Действие функции Azure в Фабрике данных Azure
@@ -32,7 +32,7 @@ ms.locfileid: "64727055"
 
 | **Свойство** | **Описание** | **Обязательный** |
 | --- | --- | --- |
-| Тип   | Свойству type необходимо задать значение: **AzureFunction** | Да |
+| type   | Свойству type необходимо задать значение: **AzureFunction** | Да |
 | function app url | URL-адрес для приложения-функции Azure. Формат – `https://<accountname>.azurewebsites.net`. Этот URL-адрес – это значение в разделе **URL** при просмотре приложения-функции на портале Azure  | Да |
 | function key | Ключ доступа для функции Azure. Щелкните раздел **Управление** для соответствующей функции и скопируйте **Function Key** (ключ функции) или **Host key** (ключ хоста). Дополнительные сведения см. в статье [Триггеры и привязки HTTP в службе "Функции Azure"](../azure-functions/functions-bindings-http-webhook.md#authorization-keys) | Да |
 |   |   |   |
@@ -41,12 +41,12 @@ ms.locfileid: "64727055"
 
 | **Свойство**  | **Описание** | **Допустимые значения** | **Обязательный** |
 | --- | --- | --- | --- |
-| name  | Имя действия в конвейере.  | Строка | Да |
-| Тип  | Тип действия – "AzureFunctionActivity" | Строка | Да |
+| name  | Имя действия в конвейере.  | String | Да |
+| type  | Тип действия – "AzureFunctionActivity" | String | Да |
 | linked service | Связанная служба функции Azure для соответствующего приложения-функции Azure  | Ссылка на связанную службу | Да |
-| function name  | Имя функции, которую вызывает это действие в приложении-функции Azure | Строка | Да |
-| method  | Метод REST API для вызова функции | Поддерживаемые типы строки: "GET", "POST", "PUT"   | Да |
-| Верхний колонтитул  | Заголовки, которые отправляются в запрос. Например, задать язык и тип в запросе: "headers": { "Accept-Language": "en-us", "Content-Type": "application/json" } | Строка (или выражение с типом результата "строка") | Нет  |
+| function name  | Имя функции, которую вызывает это действие в приложении-функции Azure | String | Да |
+| метод  | Метод REST API для вызова функции | Поддерживаемые типы строки: "GET", "POST", "PUT"   | Да |
+| Верхний колонтитул  | Заголовки, которые отправляются в запрос. Например, задать язык и тип в запросе: "headers": { "Accept-Language": "en-us", "Content-Type": "application/json" } | Строка (или выражение с типом результата "строка") | Нет |
 | текст  | Текст, который отправляется вместе с запросом для функции метода API  | Строка (или выражение с типом результата "строка") или объект.   | Необходимо для методов PUT или POST |
 |   |   |   | |
 

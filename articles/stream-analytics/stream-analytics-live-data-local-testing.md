@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 12/07/2018
 ms.custom: seodec18
 ms.openlocfilehash: ea55d2f96a87503d43a69d288ce85dcff32a39ce
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61479836"
 ---
 # <a name="test-live-data-locally-using-azure-stream-analytics-tools-for-visual-studio-preview"></a>Тестирование реальных данных в локальной среде с помощью инструментов Azure Stream Analytics для Visual Studio (предварительная версия)
@@ -27,8 +27,8 @@ ms.locfileid: "61479836"
 |**Входные данные**  |**Выходные данные**  |**Тип задания**  |
 |---------|---------|---------|
 |Локальные статические данные   |  Локальные статические данные   |   Облако или Edge |
-|Реальные входные данные   |  Локальные статические данные   |   В облаке |
-|Реальные входные данные   |  Реальные выходные данные   |   В облаке |
+|Реальные входные данные   |  Локальные статические данные   |   Облако |
+|Реальные входные данные   |  Реальные выходные данные   |   Облако |
 
 ## <a name="local-testing-with-live-data"></a>Локальное тестирование с помощью реальных данных
 

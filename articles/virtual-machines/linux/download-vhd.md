@@ -16,10 +16,10 @@ ms.topic: article
 ms.date: 06/01/2018
 ms.author: cynthn
 ms.openlocfilehash: f72d49a3ab204ce64eb89d0f05630b640c138e0a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61390374"
 ---
 # <a name="download-a-linux-vhd-from-azure"></a>Скачивание виртуального жесткого диска Linux из Azure
@@ -72,7 +72,7 @@ VHD невозможно скачать из Azure, если он подключ
 2.  Выберите диск операционной системы для виртуальной машины и щелкните **Экспорт**.
 3.  Нажмите кнопку **Создать URL-адрес**.
 
-    ![Создать URL-адрес](./media/download-vhd/export-generate.png)
+    ![Создание URL-адреса](./media/download-vhd/export-generate.png)
 
 ## <a name="download-vhd"></a>Скачивание VHD
 

@@ -13,10 +13,10 @@ ms.date: 04/08/2019
 ms.author: juliako
 ms.custom: seodec18
 ms.openlocfilehash: 28c880e8709074d808a41d9920361eaa2b20ecc4
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60732371"
 ---
 # <a name="filtering-ordering-paging-of-media-services-entities"></a>Фильтрация, упорядочивание и разбиение по страницам сущностей Служб мультимедиа
@@ -48,15 +48,15 @@ ms.locfileid: "60732371"
 > [!TIP]
 > Для перечисления коллекции всегда нужно использовать следующую ссылку, которая не зависит от конкретного размера страницы.
 
-## <a name="assets"></a>Ресурсы
+## <a name="assets"></a>Активы
 
 ### <a name="filteringordering"></a>Фильтрация и упорядочение
 
 В следующей таблице показано, как параметры фильтрации и упорядочения могут быть применены к свойствам [ресурса](https://docs.microsoft.com/rest/api/media/assets). 
 
-|ИМЯ|Фильтр|Порядок|
+|Name|Фильтр|Порядок|
 |---|---|---|
-|идентификатор|||
+|id|||
 |name|eq, gt, lt| По возрастанию и убыванию.|
 |properties.alternateId |eq||
 |properties.assetId |eq||
@@ -66,7 +66,7 @@ ms.locfileid: "60732371"
 |properties.lastModified |||
 |properties.storageAccountName |||
 |properties.storageEncryptionFormat | ||
-|тип|||
+|type|||
 
 В следующем примере C# выполняется фильтрация по дате создания:
 
@@ -141,18 +141,18 @@ https://management.azure.com/subscriptions/00000000-3761-485c-81bb-c50b291ce214/
 
 В следующей таблице показано, как можно применить эти параметры к свойствам [политик ключей содержимого](https://docs.microsoft.com/rest/api/media/contentkeypolicies). 
 
-|ИМЯ|Фильтр|Порядок|
+|Name|Фильтр|Порядок|
 |---|---|---|
-|идентификатор|||
+|id|||
 |name|eq, ne, ge, le, gt, lt|По возрастанию и убыванию.|
 |properties.created |eq, ne, ge, le,  gt, lt|По возрастанию и убыванию.|
 |properties.description |eq, ne, ge, le, gt, lt||
 |properties.lastModified|eq, ne, ge, le, gt, lt|По возрастанию и убыванию.|
 |properties.options |||
 |properties.policyId|eq, ne||
-|тип|||
+|type|||
 
-### <a name="pagination"></a>Разбивка на страницы
+### <a name="pagination"></a>Разбиение на страницы
 
 Для каждого из четырех порядков сортировки поддерживается разбиение на страницы. В настоящее время размер страницы составляет 10.
 
@@ -176,14 +176,14 @@ while (currentPage.NextPageLink != null)
 
 В следующей таблице показано, как эти параметры могут быть применены к свойствам [заданий](https://docs.microsoft.com/rest/api/media/jobs). 
 
-| ИМЯ    | Фильтр                        | Порядок |
+| Name    | Фильтр                        | Порядок |
 |---------|-------------------------------|-------|
 | name                    | eq            | По возрастанию и убыванию.|
 | properties.state        | eq, ne        |                         |
 | properties.created      | gt, ge, lt, le| По возрастанию и убыванию.|
 | properties.lastModified | gt, ge, lt, le | По возрастанию и убыванию.| 
 
-### <a name="pagination"></a>Разбивка на страницы
+### <a name="pagination"></a>Разбиение на страницы
 
 В Службах мультимедиа версии 3 поддерживается разбиение заданий на страницы.
 
@@ -223,9 +223,9 @@ while (!exit);
 
 В следующей таблице показано, как можно применить эти параметры к свойствам StreamingLocator: 
 
-|ИМЯ|Фильтр|Порядок|
+|Name|Фильтр|Порядок|
 |---|---|---|
-|идентификатор |||
+|id |||
 |name|eq, ne, ge, le, gt, lt|По возрастанию и убыванию.|
 |properties.alternativeMediaId  |||
 |properties.assetName   |||
@@ -236,9 +236,9 @@ while (!exit);
 |properties.startTime   |||
 |properties.streamingLocatorId  |||
 |properties.streamingPolicyName |||
-|тип   |||
+|type   |||
 
-### <a name="pagination"></a>Разбивка на страницы
+### <a name="pagination"></a>Разбиение на страницы
 
 Для каждого из четырех порядков сортировки поддерживается разбиение на страницы. В настоящее время размер страницы составляет 10.
 
@@ -264,7 +264,7 @@ while (currentPage.NextPageLink != null)
 
 |ИМЯ|Фильтр|Порядок|
 |---|---|---|
-|идентификатор|||
+|id|||
 |name|eq, ne, ge, le, gt, lt|По возрастанию и убыванию.|
 |properties.commonEncryptionCbcs|||
 |properties.commonEncryptionCenc|||
@@ -272,9 +272,9 @@ while (currentPage.NextPageLink != null)
 |properties.defaultContentKeyPolicyName |||
 |properties.envelopeEncryption|||
 |properties.noEncryption|||
-|тип|||
+|type|||
 
-### <a name="pagination"></a>Разбивка на страницы
+### <a name="pagination"></a>Разбиение на страницы
 
 Для каждого из четырех порядков сортировки поддерживается разбиение на страницы. В настоящее время размер страницы составляет 10.
 
@@ -298,7 +298,7 @@ while (currentPage.NextPageLink != null)
 
 В следующей таблице показано, как эти параметры могут быть применены к свойствам [преобразований](https://docs.microsoft.com/rest/api/media/transforms). 
 
-| ИМЯ    | Фильтр                        | Порядок |
+| Name    | Фильтр                        | Порядок |
 |---------|-------------------------------|-------|
 | name                    | eq            | По возрастанию и убыванию.|
 | properties.created      | gt, ge, lt, le| По возрастанию и убыванию.|

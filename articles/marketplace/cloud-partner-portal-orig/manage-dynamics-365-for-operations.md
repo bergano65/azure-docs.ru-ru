@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 09/13/2018
 ms.author: pabutler
 ms.openlocfilehash: a9ada25641e2a56beb9083b145a507c8fd41a46f
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64935109"
 ---
 # <a name="how-to-create-dynamics-365-for-operations-offer-via-cloud-partner-portal"></a>Создание предложения Dynamics 365 for Operations с помощью портала Cloud Partner
@@ -51,7 +51,7 @@ ms.locfileid: "64935109"
 
 Этот раскрывающийся список позволяет выбрать профиль издателя, используемый для публикации этого предложения. После активации предложения это поле блокируется.
 
-ИМЯ
+Name
 
 Это отображаемое имя для предложения. Это же имя будет отображаться в [AppSource](https://appsource.microsoft.com). Его длина не должна превышать 50 символов.
 

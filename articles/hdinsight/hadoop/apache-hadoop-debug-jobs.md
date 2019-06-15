@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 11/14/2017
 ms.author: ashishth
 ms.openlocfilehash: f96171e1c75676a185edf4a1901ef65b7181135a
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64720992"
 ---
 # <a name="analyze-apache-hadoop-logs"></a>Анализ журналов Apache Hadoop
@@ -32,7 +32,7 @@ ms.locfileid: "64720992"
 * ambariserverlog
 * ambariagentlog
 
-Имена файлов таблиц имеют **u\<Имя_кластера > DDMonYYYYatHHMMSSsss\<имя_таблицы >**.
+Имена файлов таблиц имеют **u\<Имя_кластера > DDMonYYYYatHHMMSSsss\<имя_таблицы >** .
 
 Эти таблицы содержат следующие поля:
 
@@ -41,7 +41,7 @@ ms.locfileid: "64720992"
 * EventTimestamp
 * Узел
 * MALoggingHash
-* Сообщение
+* `Message`
 * Нет
 * PreciseTimeStamp
 * Роль
@@ -89,7 +89,7 @@ Power Query можно установить со страницы скачива
 3. В **Cloud Explorer** выберите **Типы ресурсов**.  Другой доступный вариант — **Группы ресурсов**.
 4. Разверните **Учетные записи хранения**, выберите учетную запись хранения по умолчанию для кластера, а затем выберите **Таблицы**.
 5. Дважды щелкните **hadoopservicelog**.
-6. Добавьте фильтр. Например: 
+6. Добавьте фильтр. Пример:
    
         TraceLevel eq 'ERROR'
    

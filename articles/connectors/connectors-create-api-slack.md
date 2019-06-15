@@ -12,10 +12,10 @@ ms.topic: article
 tags: connectors
 ms.date: 08/25/2018
 ms.openlocfilehash: 675e37120b06af3add58b564495f22875647a0fa
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62105655"
 ---
 # <a name="monitor-and-manage-slack-with-azure-logic-apps"></a>Мониторинг приложения Slack и управление им с помощью Azure Logic Apps
@@ -56,7 +56,7 @@ ms.locfileid: "62105655"
    В списке действий выберите любое необходимое действие.
 
    Чтобы добавить действие между шагами, переместите указатель на стрелку между шагами. 
-   Выберите появившийся знак "плюс" (**+**), а затем щелкните **Добавить действие**.
+   Выберите появившийся знак "плюс" ( **+** ), а затем щелкните **Добавить действие**.
 
 1. Если будет предложено войти в Slack, войдите в рабочую область Slack. 
 

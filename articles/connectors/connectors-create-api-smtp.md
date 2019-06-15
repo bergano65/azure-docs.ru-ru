@@ -12,10 +12,10 @@ ms.topic: article
 tags: connectors
 ms.date: 08/25/2018
 ms.openlocfilehash: 78b1eb6272fa97ef392e97723454d29cf56bb4bf
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62106156"
 ---
 # <a name="send-email-from-your-smtp-account-with-azure-logic-apps"></a>Отправка сообщений электронной почты из учетной записи SMTP с помощью Azure Logic Apps
@@ -47,7 +47,7 @@ ms.locfileid: "62106156"
 1. На последнем шаге, в котором необходимо добавить действие SMTP, выберите **Новый шаг**. 
 
    Чтобы добавить действие между шагами, переместите указатель на стрелку между шагами. 
-   Выберите появившийся знак "плюс" (**+**), а затем щелкните **Добавить действие**.
+   Выберите появившийся знак "плюс" ( **+** ), а затем щелкните **Добавить действие**.
 
 1. В поле поиска введите слово smtp в качестве фильтра. В списке действий выберите любое необходимое действие.
 

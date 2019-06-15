@@ -16,10 +16,10 @@ ms.workload: infrastructure
 ms.date: 08/02/2018
 ms.author: rogirdh
 ms.openlocfilehash: c5a76b9cee8fd6eb09ee4d24c1380202fd17cc6d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: MT
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60836357"
 ---
 # <a name="design-and-implement-an-oracle-database-in-azure"></a>Разработка базы данных Oracle и ее реализация в Azure
@@ -61,11 +61,11 @@ ms.locfileid: "60836357"
 - Определите скорость увеличения и размер базы данных.
 - Определите требования к числу операций ввода-вывода, которое можно рассчитать на основе отчета Oracle AWR или других средств мониторинга сети.
 
-## <a name="configuration-options"></a>Параметры конфигурации
+## <a name="configuration-options"></a>Варианты настройки
 
 В среде Azure есть четыре области, которые можно настроить для повышения производительности:
 
-- Размер виртуальной машины
+- размер виртуальной машины;
 - Пропускная способность сети
 - Типы дисков и их конфигурации
 - Настройки кэша дисков.
@@ -91,7 +91,7 @@ SQL> @?/rdbms/admin/awrrpt.sql
 - общее число ядер;
 - тактовая частота процессора;
 - общий объем памяти в ГБ;
-- Загрузка ЦП
+- загрузка ЦП;
 - пиковая частота передачи данных;
 - частота изменения числа операций ввода-вывода (чтение и запись);
 - скорость записи в журнал повторяемых операций (Мбит/с);
@@ -100,7 +100,7 @@ SQL> @?/rdbms/admin/awrrpt.sql
 - размер базы данных (в ГБ);
 - число байт, полученных через SQL*Net из клиента и поступивших него.
 
-### <a name="virtual-machine-size"></a>Размер виртуальной машины
+### <a name="virtual-machine-size"></a>размер виртуальной машины;
 
 #### <a name="1-estimate-vm-size-based-on-cpu-memory-and-io-usage-from-the-awr-report"></a>1. Оценка необходимого размера виртуальных машин на основе использования ЦП, памяти или операций ввода-вывода из отчета AWR
 

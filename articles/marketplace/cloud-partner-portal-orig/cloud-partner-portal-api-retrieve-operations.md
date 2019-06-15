@@ -8,10 +8,10 @@ ms.topic: reference
 ms.date: 09/14/2018
 ms.author: pabutler
 ms.openlocfilehash: 1fbcc1d50dbc4488c4123be64e85de612233ccc3
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64935780"
 ---
 <a name="retrieve-operations"></a>Получение операций
@@ -33,10 +33,10 @@ ms.locfileid: "64935780"
 
 |  **Имя**          |      **Описание**                                                                                           | **Тип данных** |
 |  ----------------  |     --------------------------------------------------------------------------------------------------------   |  -----------  |
-|  publisherid       |  Идентификатор издателя, например `Contoso`                                                                   |  Строка       |
-|  offerId           |  Идентификатор предложения                                                                                              |  Строка       |
+|  publisherid       |  Идентификатор издателя, например `Contoso`                                                                   |  String       |
+|  offerId           |  Идентификатор предложения                                                                                              |  String       |
 |  operationId       |  Глобальный уникальный идентификатор (GUID) идентифицирует предложение. OperationId можно получить с помощью этого API, а также она возвращается в заголовок ответа HTTP для любой долго выполняющиеся операции, например, [публикации предложения](./cloud-partner-portal-api-publish-offer.md) API.  |   Guid   |
-|  filteredStatus    | Дополнительный параметр запроса используется для фильтрации по состоянию (например `running`) для коллекции, возвращаемой этим API.  |   Строка |
+|  filteredStatus    | Дополнительный параметр запроса используется для фильтрации по состоянию (например `running`) для коллекции, возвращаемой этим API.  |   String |
 |  api-version       | API последней версии                                                                                           |    Дата      |
 |  |  |  |
 
@@ -54,7 +54,7 @@ ms.locfileid: "64935780"
 <a name="body-example"></a>Пример текста запроса
 ------------
 
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
 
 #### <a name="get-operations"></a>Операции GET
 

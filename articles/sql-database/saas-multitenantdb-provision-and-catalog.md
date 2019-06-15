@@ -13,10 +13,10 @@ ms.reviewer: billgib,andrela,stein
 manager: craigg
 ms.date: 09/24/2018
 ms.openlocfilehash: d29baaad6090cea5eb31f5f50bba444cb3771155
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61485978"
 ---
 # <a name="provision-and-catalog-new-tenants-in-a-saas-application-using-a-sharded-multi-tenant-azure-sql-database"></a>Подготовка новых клиентов и их каталогизация в приложении SaaS с помощью сегментированной мультитенантной базы данных SQL Azure
@@ -161,7 +161,7 @@ ms.locfileid: "61485978"
    - **$VenueType** = **blues** — один из предопределенных типов мест проведения: blues, classicalmusic, dance, jazz, judo, motorracing, multipurpose, opera, rockmusic, soccer (строчными буквами, без пробелов).
    - Задайте **$DemoScenario** = **1**, чтобы подготовить клиент в базе данных, используемой совместно с другими клиентами.
 
-2. Добавьте точку останова, поместив курсор в любом месте строки 38, содержащей *New-Tenant `*, а затем нажмите клавишу **F9**.
+2. Добавьте точку останова, поместив курсор в любом месте строки 38, содержащей *New-Tenant `* , а затем нажмите клавишу **F9**.
 
    ![точка останова](media/saas-multitenantdb-provision-and-catalog/breakpoint.png)
 
@@ -201,7 +201,7 @@ ms.locfileid: "61485978"
    - **$VenueType** = **soccer** — один из предопределенных типов мест проведения: blues, classicalmusic, dance, jazz, judo, motorracing, multipurpose, opera, rockmusic, soccer (строчными буквами, без пробелов).
    - Задайте **$DemoScenario** = **2**, чтобы подготовить клиент в собственной базе данных.
 
-2. Добавьте новую точку останова, поместив курсор в любом месте строки 57, содержащей *&&nbsp;$PSScriptRoot\New-TenantAndDatabase `*, и нажмите клавишу **F9**.
+2. Добавьте новую точку останова, поместив курсор в любом месте строки 57, содержащей *&&nbsp;$PSScriptRoot\New-TenantAndDatabase `* , и нажмите клавишу **F9**.
 
    ![точка останова](media/saas-multitenantdb-provision-and-catalog/breakpoint2.png)
 
@@ -220,7 +220,7 @@ ms.locfileid: "61485978"
 
 ### <a name="verify-the-deployed-set-of-tenants"></a>Проверка развернутого набора клиентов 
 
-На этом этапе у вас есть клиенты, развернутые в общей базе данных, и клиенты, развернутые в собственных базах данных. С помощью портала Azure можно просмотреть созданные базы данных. На [портале Azure](https://portal.azure.com) откройте сервер **tenants1-mt-\<Пользователь\>**, перейдя к списку серверов SQL.  Список **баз данных SQL** должен включать общую базу данных **tenants1** и базы данных для клиентов, которые расположены в собственных базах данных.
+На этом этапе у вас есть клиенты, развернутые в общей базе данных, и клиенты, развернутые в собственных базах данных. С помощью портала Azure можно просмотреть созданные базы данных. На [портале Azure](https://portal.azure.com) откройте сервер **tenants1-mt-\<Пользователь\>** , перейдя к списку серверов SQL.  Список **баз данных SQL** должен включать общую базу данных **tenants1** и базы данных для клиентов, которые расположены в собственных базах данных.
 
    ![список баз данных](media/saas-multitenantdb-provision-and-catalog/Databases.png)
 

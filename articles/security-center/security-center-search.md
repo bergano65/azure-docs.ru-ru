@@ -14,14 +14,18 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/11/2017
 ms.author: rkarlin
-ms.openlocfilehash: 6cbf3d70bd835ce1b838b19c93507f7d9487a418
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 90dbb33fa516d3a831d4e60969ac6b6c8312d539
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60332604"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64574146"
 ---
 # <a name="azure-security-center-search"></a>Поиск в центре безопасности Azure
+
+> [!NOTE]
+> Панель мониторинга поиска центра безопасности будет прекращена 31 июля 2019 г. Дополнительные сведения и альтернативные службы, см. в разделе [вывода из эксплуатации центра безопасности функций (июль 2019)](security-center-features-retirement-july2019.md#menu_search).
+
 Центр безопасности Azure использует [монитор Azure журналы поиска](../log-analytics/log-analytics-log-searches.md) получает и анализирует данные безопасности. Журналы Azure Monitor поддерживает язык запросов для быстрого получения и консолидации данных. В центре безопасности вы можете использовать поиск в журналах Azure Monitor для создания запросов и анализа собранных данных.
 
 Поиск доступен в ценовой категории "Бесплатный" и "Стандартный" центра безопасности.  Данные, доступные в поисковых запросах, зависят от категории рабочей области.  Дополнительные сведения см. на странице [цен на центр безопасности](../security-center/security-center-pricing.md).
@@ -45,7 +49,7 @@ ms.locfileid: "60332604"
 
    SecurityEvent | where EventID == 4625 | summarize count() by TargetAccount
 
-   В результатах содержатся все учетные записи, в которые не удалось выполнить вход (событие 4625).
+   Результат показывает все учетные записи, которые не удалось выполнить вход (событие 4625).
 
    ![Результаты поиска][3]
 

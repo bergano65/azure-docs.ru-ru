@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 04/08/2019
 ms.author: hrasheed
 ms.openlocfilehash: 732cb118b7a0eebdbf28c7d7fe6ced435ce7920e
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64713721"
 ---
 # <a name="migrate-on-premises-apache-hadoop-clusters-to-azure-hdinsight---data-migration-best-practices"></a>Миграция локальных кластеров Apache Hadoop в HDInsight Azure — рекомендации по использованию миграции данных
@@ -35,7 +35,7 @@ ms.locfileid: "64713721"
 |**Количество данных**|**Сеть Bandwidth**||||
 |---|---|---|---|---|
 || **45 Мбит/с (T3)**|**100 Мбит/с**|**1 Гбит/с**|**10 Гбит/с**|
-|1 TБ|2 дня|1 день| 2 ч|14 минут|
+|1 ТБ|2 дня|1 день| 2 ч|14 минут|
 |10 ТБ|22 дня|10 дней|1 день|2 ч|
 |35 ТБ|76 дней|34 дня|3 дня|8 ч|
 |80 ТБ|173 дня|78 дней|8 дней|19 часов|

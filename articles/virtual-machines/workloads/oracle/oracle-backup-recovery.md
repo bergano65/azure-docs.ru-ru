@@ -16,10 +16,10 @@ ms.workload: infrastructure
 ms.date: 08/02/2018
 ms.author: rogirdh
 ms.openlocfilehash: c41f13a6437f69121d3bbb387c96d8e13f2be0b3
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60567081"
 ---
 # <a name="back-up-and-recover-an-oracle-database-12c-database-on-an-azure-linux-virtual-machine"></a>Создание резервных копий и восстановление базы данных Oracle Database 12c на виртуальной машине Linux в Azure
@@ -170,7 +170,7 @@ ms.locfileid: "60567081"
 
 4. Измените файл JSON.
 
-    Измените файл VMSnapshotScriptPluginConfig.json, добавив в него параметры `PreScriptLocation` и `PostScriptlocation`. Пример.
+    Измените файл VMSnapshotScriptPluginConfig.json, добавив в него параметры `PreScriptLocation` и `PostScriptlocation`. Пример:
 
     ```azurecli
     {
@@ -303,7 +303,7 @@ ms.locfileid: "60567081"
 
     ![Страница сведений о хранилище myVault в хранилищах служб восстановления](./media/oracle-backup-recovery/recovery_service_08.png)
 
-9.  В колонке **Backup Items (Azure Virtual Machine)** (Элементы архивации (виртуальная машина Azure)) в правой части страницы щелкните многоточие (**...**) и выберите **Создать резервную копию**.
+9.  В колонке **Backup Items (Azure Virtual Machine)** (Элементы архивации (виртуальная машина Azure)) в правой части страницы щелкните многоточие ( **...** ) и выберите **Создать резервную копию**.
 
     ![Команда "Создать резервную копию" в хранилищах служб восстановления](./media/oracle-backup-recovery/recovery_service_09.png)
 
@@ -351,7 +351,7 @@ ms.locfileid: "60567081"
 
     ![Число элементов архивации виртуальной машины Azure в хранилищах служб восстановления](./media/oracle-backup-recovery/recovery_service_13.png)
 
-3. В колонке **myvm1** щелкните **Восстановление файлов (предварительная версия)**.
+3. В колонке **myvm1** щелкните **Восстановление файлов (предварительная версия)** .
 
     ![Снимок экрана страницы восстановления файлов в хранилищах служб восстановления](./media/oracle-backup-recovery/recovery_service_14.png)
 
@@ -472,7 +472,7 @@ ms.locfileid: "60567081"
 
     ![Страница восстановления виртуальной машины](./media/oracle-backup-recovery/recover_vm_04.png)
 
-4.  В колонке **myvm1** нажмите кнопку с многоточием (**...**), а затем щелкните **Восстановить виртуальную машину**.
+4.  В колонке **myvm1** нажмите кнопку с многоточием ( **...** ), а затем щелкните **Восстановить виртуальную машину**.
 
     ![Команда восстановления виртуальной машины](./media/oracle-backup-recovery/recover_vm_05.png)
 

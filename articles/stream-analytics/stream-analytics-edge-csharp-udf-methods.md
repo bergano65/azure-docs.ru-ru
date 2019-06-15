@@ -10,12 +10,12 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 12/06/2018
 ms.custom: seodec18
-ms.openlocfilehash: 5df4c9dfe18b02ade3a37717da9c68acbfcf1853
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: 40035b946d0f2b09929f8c7f1ac27231546e6746
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61481029"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64692915"
 ---
 # <a name="develop-net-standard-user-defined-functions-for-azure-stream-analytics-edge-jobs-preview"></a>Разработка пользовательских функций .NET Standard для заданий Edge в Azure Stream Analytics (предварительная версия)
 
@@ -38,13 +38,13 @@ Azure Stream Analytics предлагает язык запросов, анал�
 
 |**Тип пользовательской функции (C#)**  |**Тип Azure Stream Analytics**  |
 |---------|---------|
-|длинное целое число  |  bigint   |
-|Double  |  Double   |
+|long  |  bigint   |
+|double  |  double   |
 |string  |  nvarchar(max)   |
 |dateTime  |  dateTime   |
 |struct  |  IRecord   |
 |object  |  IRecord   |
-|Массив<object>  |  IArray   |
+|Массив\<объекта >  |  IArray   |
 |dictionary<string, object>  |  IRecord   |
 
 ## <a name="codebehind"></a>CodeBehind
@@ -114,7 +114,7 @@ Azure Stream Analytics предлагает язык запросов, анал�
  |**Параметр**  |**Рекомендуемое значение**  |
  |---------|---------|
  |Источник сборки  | Имеющиеся пакеты сборки из облака    |
- |Resource  |  Выберите данные текущей учетной записи   |
+ |Ресурс  |  Выберите данные текущей учетной записи   |
  |Подписка  |  Выберите свою подписку.   |
  |Учетная запись хранения  |  Выберите учетную запись хранения.   |
  |Контейнер  |  Выберите контейнер, созданный в учетной записи хранения.   |

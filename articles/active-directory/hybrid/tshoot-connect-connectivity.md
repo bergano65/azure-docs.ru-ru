@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7519f47037d2d7ff37564ab27c1cc58b65ff6c14
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64572779"
 ---
 # <a name="troubleshoot-azure-ad-connectivity"></a>Устранение неполадок подключения Azure AD
@@ -43,7 +43,7 @@ Azure AD Connect использует для аутентификации сов
 
 Для этих URL-адресов в приведенной ниже таблице показаны минимальные условия, которые должны соблюдаться для подключения к Azure AD. Этот список не включает дополнительные функции, такие как обратная запись паролей или Azure AD Connect Health. Он предназначен только для поиска и устранения неполадок, связанных с начальной конфигурацией.
 
-| URL-адрес | Порт | ОПИСАНИЕ |
+| URL-адрес | Port | Описание |
 | --- | --- | --- |
 | mscrl.microsoft.com |HTTP/80 |Используется для загрузки списков CRL. |
 | \*.verisign.com |HTTP/80 |Используется для загрузки списков CRL. |

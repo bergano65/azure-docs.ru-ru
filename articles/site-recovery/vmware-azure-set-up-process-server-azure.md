@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 11/27/2018
 ms.author: ramamill
 ms.openlocfilehash: 037f0ff64b114ce9341702564147825099695aa0
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62110036"
 ---
 # <a name="set-up-a-process-server-in-azure-for-failback"></a>Настройка сервера обработки в Azure для восстановления размещения
@@ -28,7 +28,7 @@ ms.locfileid: "62110036"
 
 ## <a name="deploy-a-process-server-in-azure"></a>Развертывание сервера обработки в Azure
 
-1. В хранилище последовательно выберите **Site Recovery Infrastructure (Инфраструктура Site Recovery)**> **Управление** > **Серверы конфигурации** и укажите требуемый сервер конфигурации.
+1. В хранилище последовательно выберите **Site Recovery Infrastructure (Инфраструктура Site Recovery)** > **Управление** > **Серверы конфигурации** и укажите требуемый сервер конфигурации.
 2. На странице сервера щелкните **+ Сервер обработки**.
 3. На странице **Добавление сервера обработки** выберите развертывание сервера обработки в Azure.
 4. Укажите параметры Azure, включая используемую для отработки отказа подписку, группу ресурсов, используемый для отработки отказа регион Azure и виртуальную сеть, в которой находятся виртуальные машины Azure. Если применяется несколько сетей Azure, вам нужен сервер обработки в каждой из них.

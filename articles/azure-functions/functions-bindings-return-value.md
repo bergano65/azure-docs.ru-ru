@@ -8,14 +8,13 @@ manager: jeconnoc
 ms.service: azure-functions
 ms.devlang: multiple
 ms.topic: reference
-origin.date: 01/14/2019
-ms.date: 03/04/2019
-ms.author: v-junlch
+ms.date: 01/14/2019
+ms.author: cshoe
 ms.openlocfilehash: 4ccfe192eaea94cb9b199bd3c6f0bdacf1685519
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61437724"
 ---
 # <a name="using-the-azure-function-return-value"></a>Использование возвращаемого значения функции Azure
@@ -24,8 +23,8 @@ ms.locfileid: "61437724"
 
 В языках, которые должны иметь возвращаемого значения, можно привязать функцию [выходная привязка](./functions-triggers-bindings.md#binding-direction) к возвращаемому значению:
 
-- В библиотеке классов C# примените атрибут выходной привязки к возвращаемому значению метода.
-- В других языках задайте для свойства `name` значение `$return` в файле *function.json*.
+* В библиотеке классов C# примените атрибут выходной привязки к возвращаемому значению метода.
+* В других языках задайте для свойства `name` значение `$return` в файле *function.json*.
 
 При наличии нескольких выходных привязок используйте возвращаемое значение только для одной из них.
 
@@ -33,11 +32,11 @@ ms.locfileid: "61437724"
 
 Ознакомьтесь с примером использования возвращаемого значения для требуемого языка:
 
-- [C#](#c-example)
-- [Скрипт C# (CSX)](#c-script-example)
-- [F#](#f-example)
-- [JavaScript](#javascript-example)
-- [Python](#python-example)
+* [C#](#c-example)
+* [Скрипт C# (CSX)](#c-script-example)
+* [F#](#f-example)
+* [JavaScript](#javascript-example)
+* [Python](#python-example)
 
 ## <a name="c-example"></a>Пример C#
 
@@ -170,4 +169,3 @@ def main(input: azure.functions.InputStream) -> str:
 
 > [!div class="nextstepaction"]
 > [Обработка ошибок привязки функций Azure](./functions-bindings-errors.md)
-

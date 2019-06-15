@@ -38,7 +38,7 @@ sections:
           - title: Автоматизация заданий
             href: /azure/sql-database/sql-database-job-automation-overview
             html: <p>Планирование повторяющихся задач с помощью агента SQL и эластичных заданий.</p>
-          - title: Темпоральные таблицы
+          - title: Временные таблицы
             href: /azure/sql-database/sql-database-temporal-tables
             html: <p>Отслеживать и анализировать полный журнал изменений в данных.</p>
   - title: Дополнительные ресурсы

@@ -9,10 +9,10 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 09/24/2018
 ms.openlocfilehash: 2be67c604bebbe9b4c4356e241d1480ca0778d4a
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64688548"
 ---
 # <a name="synchronize-azure-active-directory-users-to-an-hdinsight-cluster"></a>Синхронизация пользователей Azure Active Directory с кластером HDInsight
@@ -45,7 +45,7 @@ ms.locfileid: "64688548"
 
 Следующий метод использует POST с REST API Ambari. Дополнительные сведения см. в статье [Управление кластерами HDInsight с помощью REST API Ambari](hdinsight-hadoop-manage-ambari-rest-api.md).
 
-1. [Подключитесь к кластеру, используя протокол SSH](hdinsight-hadoop-linux-use-ssh-unix.md). В области обзора для кластера на портале Azure нажмите кнопку **Безопасная оболочка (SSH)**.
+1. [Подключитесь к кластеру, используя протокол SSH](hdinsight-hadoop-linux-use-ssh-unix.md). В области обзора для кластера на портале Azure нажмите кнопку **Безопасная оболочка (SSH)** .
 
     ![Безопасная оболочка (SSH)](./media/hdinsight-sync-aad-users-to-cluster/ssh.png)
 
@@ -127,7 +127,7 @@ ms.locfileid: "64688548"
 
 ## <a name="verify-the-newly-added-azure-ad-user"></a>Проверка только что добавленного пользователя Azure AD
 
-Откройте [веб-интерфейс Apache Ambari](hdinsight-hadoop-manage-ambari.md) и убедитесь, что новый пользователь Azure AD добавлен. Получите доступ к веб-интерфейсу Ambari, перейдя к **`https://<YOUR CLUSTER NAME>.azurehdinsight.net`**. Укажите имя администратора и пароль кластера.
+Откройте [веб-интерфейс Apache Ambari](hdinsight-hadoop-manage-ambari.md) и убедитесь, что новый пользователь Azure AD добавлен. Получите доступ к веб-интерфейсу Ambari, перейдя к **`https://<YOUR CLUSTER NAME>.azurehdinsight.net`** . Укажите имя администратора и пароль кластера.
 
 1. На панели мониторинга Ambari выберите **Manage Ambari** (Управление Ambari) в меню **admin**.
 

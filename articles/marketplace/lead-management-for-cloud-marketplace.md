@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 10/05/2018
 ms.author: yijenj
 ms.openlocfilehash: 4055b1a30c1868f701de281b5de8d648d576219e
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64937901"
 ---
 # <a name="lead-management-for-cloud-marketplace"></a>Управление интересами облачного Marketplace
@@ -58,7 +58,7 @@ ms.locfileid: "64937901"
 > Если выбрано аутентификацию O365, проверьте допустимость учетной записи пользователя и пароля. Если выбрано AAD, проверьте, соответствуют ли идентификатор клиента, идентификатор приложения и секретный ключ приложения тем, что были настроены на AAD. Следуйте [этим](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-dynamics) инструкциям. Если имя пользователя/пароль учетной записи является допустимым, убедитесь, что она имеет доступ к Dynamics 365, и ему присвоено лицензию (шаги 11–15, если при использовании пользователя Office используются Azure Active Directory или параметры безопасности). 
 
  
-**Не удалось сохранить интерес в Dynamics CRM. У пользователя нет разрешений на создание атрибута leadourcecode в объекте интереса**  
+**Не удалось сохранить интерес в Dynamics CRM. У пользователя нет разрешений на создание атрибута leadourcecode в объекте интереса** 
 
 > В приложения/пользователя нет роли (ролей) безопасности для автора интересов Microsoft Marketplace. Выполните шаги 11–15, если при использовании пользователя Office используются Azure Active Directory или параметры безопасности, [здесь](https://docs.microsoft.com/azure/marketplace/cloud-partner-portal-orig/cloud-partner-portal-lead-management-instructions-dynamics).
 

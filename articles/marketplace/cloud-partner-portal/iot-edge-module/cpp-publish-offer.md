@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 10/18/2018
 ms.author: pabutler
 ms.openlocfilehash: c853bd3bad9f02f6824c26fb5d18e9e59d921fe8
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64942044"
 ---
 # <a name="publish-iot-edge-module-offer"></a>Публикация предложения модуля IoT Edge
@@ -28,7 +28,7 @@ ms.locfileid: "64942044"
 <!-- P2: we need to tell them that if an offer seems stuck in a step, to know that they should file a support ticket (link to support ticket doc) -->
 
 
-|  **Шаг публикации**           | **Время**    | **Описание**                                                            |
+|  **Шаг публикации**           | **Time**    | **Описание**                                                            |
 |  -------------------           | --------    | ---------------                                                            |
 | Проверка необходимых компонентов         | 15 мин.   | Информация и параметры предложения — проверенные.                        |
 | Сертификация                  | 2 недели | Команда сертификации Azure анализирует предложение. На этом шаге выполняется проверка на вирусы, вредоносные программы, соответствие стандартам безопасности и проблемы безопасности. Будет проверено соответствие предложения модуля IoT Edge всем критериям (см. в разделе [Предварительные требования](./cpp-prerequisites.md) и [Создание технических ресурсов для модуля IoT Edge](./cpp-create-technical-assets.md)). Отзывы предоставляются в случае обнаружения проблемы. |

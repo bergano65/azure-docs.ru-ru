@@ -15,10 +15,10 @@ ms.date: 02/10/2019
 ms.author: juliako
 ms.custom: seodec18
 ms.openlocfilehash: c25c32f35adc1c017f0f4c012c82bd7e0af8d452
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60733323"
 ---
 #  <a name="encode-with-an-auto-generated-bitrate-ladder"></a>Кодирование с помощью автоматически созданной схемы скоростей
@@ -45,7 +45,7 @@ ms.locfileid: "60733323"
 |1|1080|1920|6780|
 |2|720|1280|3520|
 |3|540|960|2210|
-|4.|360|640|1150|
+|4\.|360|640|1150|
 |5|270|480|720|
 |6|180|320|380|
 
@@ -57,7 +57,7 @@ ms.locfileid: "60733323"
 |1|720|1280|2940|
 |2|540|960|1850|
 |3|360|640|960|
-|4.|270|480|600|
+|4\.|270|480|600|
 |5|180|320|320|
 
 ### <a name="example-3"></a>Пример 3

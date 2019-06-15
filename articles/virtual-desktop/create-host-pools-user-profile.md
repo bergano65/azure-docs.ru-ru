@@ -8,10 +8,10 @@ ms.topic: how-to
 ms.date: 04/05/2019
 ms.author: helohr
 ms.openlocfilehash: f6516e37107a16d80c4d9eb9514782bdbcc44184
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64925211"
 ---
 # <a name="set-up-a-user-profile-share-for-a-host-pool"></a>Настройка общей папки профиля пользователя в пуле узлов
@@ -62,7 +62,7 @@ ms.locfileid: "64925211"
 6. Создайте ключ с именем **профили**.
 7. Создайте следующие значения для ключа профили:
 
-| ИМЯ                | type               | Данные значение                        |
+| Name                | type               | Данные значение                        |
 |---------------------|--------------------|-----------------------------------|
 | Enabled             | DWORD              | 1                                 |
 | VHDLocations        | Мультистроковый параметр | «Сетевой путь для общего файлового ресурса»     |

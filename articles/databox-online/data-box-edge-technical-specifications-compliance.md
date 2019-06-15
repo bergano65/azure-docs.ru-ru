@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 03/25/2019
 ms.author: alkohli
 ms.openlocfilehash: 52fb32a8b34c62fe94ab35e2c051d996ab8bef10
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60755140"
 ---
 # <a name="azure-data-box-edge-technical-specifications"></a>Технические спецификации Azure Edge поле данных
@@ -38,7 +38,7 @@ The following table lists the typical power consumption data (actual values may 
 
 Край поля данных имеют 10 X 2.5" NVMe SSD, каждый из которых емкость 1,6 ТБ. Среди этих SSDs 2, дисков операционной системы, и других 8 дисков данных. Общая доступная емкость для устройства — примерно 12,5 ТБ. В следующей таблице приведены подробные сведения о емкости хранилища устройства.
 
-|     Спецификация                          |     Value             |
+|     Спецификация                          |     Значение             |
 |--------------------------------------------|-----------------------|
 |    Количество твердотельных накопителей (SSD)     |    8                  |
 |    Емкость одного твердотельного накопителя (SSD)                     |    1,6 TБ             |

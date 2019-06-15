@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 01/07/2019
 ms.author: mbaldwin
 ms.openlocfilehash: 3d86960e726ae18fba8d171ab9f85d7c991b4e40
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64729232"
 ---
 # <a name="monitor-and-manage-certificate-creation"></a>Мониторинг и администрирование процесса создания сертификатов
@@ -59,7 +59,7 @@ ms.locfileid: "64729232"
 }
 ```
 
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
 
 ```
 StatusCode: 202, ReasonPhrase: 'Accepted'
@@ -82,7 +82,7 @@ Location: “https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api
 
 |Метод|URI запроса|
 |------------|-----------------|
-|ПОЛУЧЕНИЕ|`https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}`|
+|GET|`https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}`|
 
 ### <a name="request"></a>Запрос
 GET `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}&request_id=a76827a18b63421c917da80f28e9913d"`
@@ -94,7 +94,7 @@ GET `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-vers
 > [!NOTE]
 > Если *request_id* указан в запросе, он действует как фильтр. Если *request_id* в запросе и ожидающем объекте различается, возвращается код состояния HTTP 404.
 
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
 
 ```
 StatusCode: 200, ReasonPhrase: 'OK'
@@ -118,7 +118,7 @@ StatusCode: 200, ReasonPhrase: 'OK'
 
 |Метод|URI запроса|
 |------------|-----------------|
-|ПОЛУЧЕНИЕ|`https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}`|
+|GET|`https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}`|
 
 GET `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}&request_id=a76827a18b63421c917da80f28e9913d"`
 
@@ -126,7 +126,7 @@ GET `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-vers
 
 GET `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}"`
 
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
 
 ```
 StatusCode: 200, ReasonPhrase: 'OK'
@@ -150,7 +150,7 @@ StatusCode: 200, ReasonPhrase: 'OK'
 
 |Метод|URI запроса|
 |------------|-----------------|
-|ПОЛУЧЕНИЕ|`https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}`|
+|GET|`https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}`|
 
 GET `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}&request_id=a76827a18b63421c917da80f28e9913d"`
 
@@ -158,7 +158,7 @@ GET `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-vers
 
 GET `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}"`
 
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
 
 ```
 StatusCode: 200, ReasonPhrase: 'OK'
@@ -188,7 +188,7 @@ StatusCode: 200, ReasonPhrase: 'OK'
 
 |Метод|URI запроса|
 |------------|-----------------|
-|ПОЛУЧЕНИЕ|`https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}`|
+|GET|`https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}`|
 
 ### <a name="request"></a>Запрос
 GET `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}&request_id=a76827a18b63421c917da80f28e9913d"`
@@ -197,7 +197,7 @@ GET `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-vers
 
 GET `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}"`
 
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
 
 ```
 StatusCode: 404, ReasonPhrase: 'Not Found'
@@ -243,7 +243,7 @@ StatusCode: 404, ReasonPhrase: 'Not Found'
 }
 ```
 
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
 
 ```
 StatusCode: 409, ReasonPhrase: 'Conflict'
@@ -274,7 +274,7 @@ StatusCode: 409, ReasonPhrase: 'Conflict'
 
 ```
 
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
 
 ```json
 StatusCode: 403, ReasonPhrase: 'Forbidden'
@@ -308,7 +308,7 @@ PATCH `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-ve
 
 ```
 
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
 
 ```
 StatusCode: 200, ReasonPhrase: 'OK'
@@ -332,7 +332,7 @@ StatusCode: 200, ReasonPhrase: 'OK'
 
 |Метод|URI запроса|
 |------------|-----------------|
-|УДАЛИТЬ|`https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}`|
+|DELETE|`https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}`|
 
 ### <a name="request"></a>Запрос
 DELETE `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}&request_id=a76827a18b63421c917da80f28e9913d"`
@@ -341,7 +341,7 @@ DELETE `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-v
 
 DELETE `“https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api-version={api-version}"`
 
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
 
 ```
 StatusCode: 200, ReasonPhrase: 'OK'
@@ -380,7 +380,7 @@ StatusCode: 200, ReasonPhrase: 'OK'
 
 ```
 
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
 
 ```
 StatusCode: 202, ReasonPhrase: 'Accepted'
@@ -413,11 +413,11 @@ Location: “https://mykeyvault.vault.azure.net/certificates/mycert1/pending?api
 
 ```
 
-|Имя элемента|Обязательно для заполнения|type|Version|ОПИСАНИЕ|
+|Имя элемента|Обязательно для заполнения|type|Version|Описание|
 |------------------|--------------|----------|-------------|-----------------|
-|x5c|Yes|array|\<общие сведения о версии>|Цепочка сертификатов X509 как массив строк в кодировке Base 64.|
+|x5c|Да|массив|\<общие сведения о версии>|Цепочка сертификатов X509 как массив строк в кодировке Base 64.|
 
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
 
 ```
 StatusCode: 201, ReasonPhrase: 'Created'

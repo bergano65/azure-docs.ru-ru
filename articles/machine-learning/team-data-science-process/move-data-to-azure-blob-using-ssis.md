@@ -12,10 +12,10 @@ ms.date: 11/04/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 688ef059387dc4c312873051c7c9d1eae259b1ae
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61429899"
 ---
 # <a name="move-data-to-or-from-azure-blob-storage-using-ssis-connectors"></a>Перемещение данных в хранилище BLOB-объектов Azure и из него с помощью соединителей SSIS
@@ -42,7 +42,7 @@ ms.locfileid: "61429899"
 
 Чтобы использовать **Соединители SSIS**, необходимо загрузить следующие компоненты:
 
-* **SQL Server 2014 или SQL Server 2016 Standard (или более поздний выпуск)**. При установке также устанавливаются службы SQL Server Integration Services.
+* **SQL Server 2014 или SQL Server 2016 Standard (или более поздний выпуск)** . При установке также устанавливаются службы SQL Server Integration Services.
 * **Пакет дополнительных компонентов для служб Microsoft SQL Server 2014 или Microsoft SQL Server 2016 Integration Services для Azure**. Их можно загрузить на страницах [SQL Server 2014 Integration Services](https://www.microsoft.com/download/details.aspx?id=47366) и [SQL Server 2016 Integration Services](https://www.microsoft.com/download/details.aspx?id=49492), соответственно.
 
 > [!NOTE]

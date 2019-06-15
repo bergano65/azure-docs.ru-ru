@@ -13,10 +13,10 @@ ms.workload: identity
 ms.date: 04/05/2019
 ms.author: dugill
 ms.openlocfilehash: ae405d5dd99a0e2acced924ccccab292b4489cde
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61063298"
 ---
 # <a name="use-resource-manager-authentication-api-to-access-subscriptions"></a>Использование API аутентификации Resource Manager для доступа к подпискам
@@ -59,7 +59,7 @@ ms.locfileid: "61063298"
 
 Предоставьте приложению доступ к своим подпискам Azure.
 
-![Разрешить доступ](./media/resource-manager-api-authentication/sample-ux-4.png)
+![Предоставление доступа](./media/resource-manager-api-authentication/sample-ux-4.png)
 
 Управляйте своими подключенными подписками.
 

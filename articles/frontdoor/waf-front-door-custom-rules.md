@@ -10,10 +10,10 @@ ms.workload: infrastructure-services
 ms.date: 04/07/2019
 ms.author: kumud;tyao
 ms.openlocfilehash: 744c6fb9235c9daa2d5239ef9fd13679db943650
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61459714"
 ---
 #  <a name="custom-rules-for-web-application-firewall-with-azure-front-door"></a>Настраиваемые правила для брандмауэра веб-приложения с помощью передовой Azure
@@ -44,7 +44,7 @@ ms.locfileid: "61459714"
     - Любой: часто используется для определения действие по умолчанию, если правила не совпадают. Любой оператор all совпадает.
     - IPMatch: ограничения IP-адресов для переменной RemoteAddr определить
     - GeoMatch: географическая Фильтрация для переменной RemoteAddr определить
-    - Равные
+    - Равно
     - Содержит
     - LessThan: ограничение размера
     - GreaterThan: ограничение размера

@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.workload: powerbi
 ms.date: 09/25/2017
 ms.openlocfilehash: d1011a8fd8f181233be8e1fa27c3bfaea3d86141
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64685169"
 ---
 # <a name="get-started-with-microsoft-power-bi-workspace-collections"></a>Начало работы с коллекциями рабочих областей Microsoft Power BI
@@ -86,7 +86,7 @@ ms.locfileid: "64685169"
 
 Ниже описаны различия между **импортом** и **DirectQuery**.
 
-| Импорт | DirectQuery |
+| Импортировать | DirectQuery |
 | --- | --- |
 | Таблицы, столбцы *и данные* импортируются или копируются в **Power BI Desktop**. При работе с представлениями **Power BI Desktop** запрашивает копию данных. Чтобы определить изменения в базовых данных, вам нужно повторно обновить или импортировать готовый текущий набор данных. |В *Power BI Desktop* импортируются или копируются только **таблицы и столбцы**. При работе с представлениями **Power BI Desktop** запрашивает базовый источник данных (это значит, что вы всегда просматриваете актуальные данные). |
 
