@@ -16,10 +16,10 @@ ms.author: mimart
 ms.reviewer: japere
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c97729cf7d88ebdeefb44c83eb571bb6d7ebd0ed
-ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65825599"
 ---
 # <a name="working-with-claims-aware-apps-in-application-proxy"></a>Работа с приложениями, поддерживающими утверждения, в прокси приложения
@@ -38,7 +38,7 @@ ms.locfileid: "65825599"
 
 AD FS можно настроить для приложений, поддерживающих утверждения, одним из двух способов. Первый — с помощью личных доменов. Второй — с помощью WS-Federation. 
 
-### <a name="option-1-custom-domains"></a>Вариант 1. Пользовательские домены
+### <a name="option-1-custom-domains"></a>Вариант 1. Личные домены
 
 Если все внутренние URL-адреса для приложений представляют собой полные доменные имена, то для этих приложений можно настроить [личные домены](application-proxy-configure-custom-domain.md). Используйте личные домены для создания внешних URL-адресов, совпадающих с внутренними URL-адресами. Когда внешние URL-адреса совпадают с внутренними, перенаправления STS будут выполняться независимо от того, работают ли пользователи локально или удаленно. 
 

@@ -14,10 +14,10 @@ ms.reviewer: kexia
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 277e7663c978e64ee1440e14583e884b768b3139
-ms.sourcegitcommit: 4891f404c1816ebd247467a12d7789b9a38cee7e
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65441635"
 ---
 # <a name="add-branding-to-your-organizations-azure-active-directory-sign-in-page"></a>Добавление фирменной символики организации на страницу входа в Azure Active Directory
@@ -27,7 +27,7 @@ ms.locfileid: "65441635"
 >Для добавления пользовательской фирменной символики необходимо использовать Azure Active Directory выпуска Premium 1, Premium 2 или Basic, или иметь лицензию на Office 365. Дополнительные сведения о лицензировании и выпусках см. в разделе [Регистрация для использования Azure AD Premium](active-directory-get-started-premium.md).<br><br>Выпуски Azure AD Premium и Basic доступны для клиентов в Китае, использующих доступный по всему миру экземпляр Azure Active Directory. Эти выпуски в настоящее время не поддерживаются службой Azure под управлением 21Vianet в Китае. Чтобы получить дополнительные сведения, обратитесь к нам через [форум Azure Active Directory](https://feedback.azure.com/forums/169401-azure-active-directory/).
 
 ## <a name="customize-your-azure-ad-sign-in-page"></a>Настройка страницы входа в Azure AD
-Вы можете настроить страницы входа в Azure AD, которые отображаются при входе пользователей приложения вашей организации, зависящие от клиента, такие как [*https://outlook.com/contoso.com*](https://outlook.com/contoso.com), или при передаче переменной домена, например [*https://passwordreset.microsoftonline.com/?whr=contoso.com*](https://passwordreset.microsoftonline.com/?whr=contoso.com).
+Вы можете настроить страницы входа в Azure AD, которые отображаются при входе пользователей приложения вашей организации, зависящие от клиента, такие как [ *https://outlook.com/contoso.com* ](https://outlook.com/contoso.com), или при передаче переменной домена, например [ *https://passwordreset.microsoftonline.com/?whr=contoso.com* ](https://passwordreset.microsoftonline.com/?whr=contoso.com).
 
 Индивидуальная фирменная символика не будет отображаться непосредственно пользователям перейти на сайты, например, www\.office.com. Для появления настраиваемой фирменной символики пользователю необходимо выполнить вход.
 

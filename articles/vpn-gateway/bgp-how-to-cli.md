@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 09/25/2018
 ms.author: yushwang
 ms.openlocfilehash: 51402196c8429797b644357822a1e3c08982b384
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65209506"
 ---
 # <a name="how-to-configure-bgp-on-an-azure-vpn-gateway-by-using-cli"></a>Настройка BGP на VPN-шлюзе Azure с помощью интерфейса командной строки
@@ -225,7 +225,7 @@ eBGP Multihop        : Ensure the "multihop" option for eBGP is enabled on your 
 
 В этом примере виртуальные сети относятся к одной подписке. Вы можете создавать подключения между виртуальным сетями из разных подписок. Дополнительные сведения см. в статье [Настройка подключения VPN-шлюза между виртуальными сетями с помощью Azure CLI](vpn-gateway-howto-vnet-vnet-cli.md). Чтобы использовать для подключения протокол BGP, обязательно укажите параметр `-EnableBgp $True` при создании подключения.
 
-#### <a name="1-create-a-new-resource-group"></a>1. Создать группу ресурсов
+#### <a name="1-create-a-new-resource-group"></a>1. Создание новой группы ресурсов
 
 ```azurecli
 az group create -n TestBGPRG2 -l westus

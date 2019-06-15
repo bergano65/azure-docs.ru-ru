@@ -13,10 +13,10 @@ ms.reviewer: ''
 manager: craigg
 ms.date: 09/24/2018
 ms.openlocfilehash: 803d05e1aaf4d9c26a6132bde30f101ce3905924
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61388365"
 ---
 # <a name="learn-how-to-provision-new-tenants-and-register-them-in-the-catalog"></a>Сведения о подготовке новых клиентов и их регистрации в каталоге
@@ -84,7 +84,7 @@ ms.locfileid: "61388365"
    * **$VenueType** — один из предопределенных типов мест проведения: _blues_, classicalmusic, dance, jazz, judo, motorracing, multipurpose, opera, rockmusic, soccer.
    * Для параметра **$DemoScenario** =  установите значение **1**, чтобы *подготовить один клиент*.
 
-2. Добавьте точку останова, поместив курсор в любом месте строки, содержащей *New-Tenant `*. Нажмите клавишу F9.
+2. Добавьте точку останова, поместив курсор в любом месте строки, содержащей *New-Tenant `* . Нажмите клавишу F9.
 
    ![Точка останова](media/saas-dbpertenant-provision-and-catalog/breakpoint.png)
 

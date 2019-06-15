@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 05/15/2019
 ms.author: anzaman
 ms.openlocfilehash: 6c4980536eddd0226fac422ae17ddb717e34630d
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65799466"
 ---
 # <a name="customize-a-person-model-with-the-video-indexer-api"></a>Настройка модели пользователя с помощью API Индексатора видео
@@ -37,7 +37,7 @@ ms.locfileid: "65799466"
 
 Создайте новую модель пользователя в указанной учетной записи. 
 
-### <a name="request-url"></a>URL-адрес запроса
+### <a name="request-url"></a>Request URL (URL-адрес запроса)
 
 Это запрос POST.
 
@@ -66,7 +66,7 @@ curl -v -X POST "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cus
 
 Для этого вызова больше не требуется текст запроса.
 
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
 
 Ответ предоставляет имя и идентификатор модели пользователя, которую вы создали используя формат из примера приведенного ниже.
 
@@ -85,7 +85,7 @@ curl -v -X POST "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cus
 
 После успешного удаления модели пользователя, индекс ваших видео, который использовал удаленную модель, измениться только после переиндексации. После переиндексации лица, имена которых находились в удаленной модели, не будут распознаваться Индексатором видео в ваших видео индексированных с помощью этой модели. Тем не менее эти лица все же будут обнаруживаться. Ваши видео, индексирование с помощью удаленной модели, будут использовать модель пользователя вашей учетной записи по умолчанию. Если имена лиц с удаленной модели также подсоединены к вашей модели учетной записи по умолчанию, то они все же будут распознаваться в видео.
 
-### <a name="request-url"></a>URL-адрес запроса
+### <a name="request-url"></a>Request URL (URL-адрес запроса)
 
 ```
 https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/PersonModels/{id}?accessToken={accessToken}
@@ -104,14 +104,14 @@ curl -v -X DELETE "https://api.videoindexer.ai/{location}/Accounts/{accountId}/C
 |---|---|---|---|
 |location|string|Да|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
 |accountId|string|Да|Глобальный уникальный идентификатор для учетной записи|
-|идентификатор|string|Да|Идентификатор модели пользователя (создан вместе с моделью пользователя)|
+|id|string|Да|Идентификатор модели пользователя (создан вместе с моделью пользователя)|
 |accessToken|string|Да|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
 
 ### <a name="request-body"></a>Текст запроса
 
 Для этого вызова больше не требуется текст запроса.
 
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
 
 При успешном удалении языковой модели содержимое не возвращается.
 
@@ -147,7 +147,7 @@ curl -v -X GET "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cust
 
 Для этого вызова больше не требуется текст запроса.
 
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
 
 В ответе содержится список всех моделей пользователя в вашей учетной записи (включая модель пользователя по умолчанию в указанной учетной записи), а также их имена и идентификаторы используя формат из примера приведенного ниже.
 
@@ -197,7 +197,7 @@ curl -v -X PUT "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Vide
 |location|string|Да|Регион Azure, в который должен быть направлен вызов. Дополнительные сведения см. в статье [Azure regions in which Video Indexer exists](regions.md) (Регионы Azure, в которых существует Индексатор видео).|
 |accountId|string|Да|Глобальный уникальный идентификатор для учетной записи|
 |videoId|string|Да|Идентификатор для видео, в которых присутствует лицо, информацию о котором вы желаете обновить. Оно создается во время отправки и индексации.|
-|faceId|integer|Да|Идентификатор для лица, информацию о котором вы будете обновлять. Вы можете получить faceId в индексе видео|
+|faceId|целое число|Да|Идентификатор для лица, информацию о котором вы будете обновлять. Вы можете получить faceId в индексе видео|
 |accessToken|string|Да|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
 |name|string|Да|Новое имя обновляемого лица.|
 
@@ -207,7 +207,7 @@ curl -v -X PUT "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Vide
 
 Для этого вызова больше не требуется текст запроса.
 
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
 
 При успешном обновлении языковой модели содержимое не возвращается.
 

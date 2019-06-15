@@ -17,10 +17,10 @@ ms.author: rolyon
 ms.reviewer: skwan
 ms.custom: it-pro
 ms.openlocfilehash: d919453816436366c00dde506210a2ed38cc69b7
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65952212"
 ---
 # <a name="manage-access-to-azure-resources-for-external-users-using-rbac"></a>Управление доступом к ресурсам Azure для внешних пользователей с использованием RBAC
@@ -44,7 +44,7 @@ ms.locfileid: "65952212"
 Войдите на портал Azure как администратор. Выберите "Подписки", а затем выберите необходимую подписку.
 ![Колонка подписки на портале Azure](./media/role-assignments-external-users/0.png) По умолчанию администратору, который приобрел подписку Azure, назначается роль **администратора учетной записи**. Дополнительные сведения о ролях подписки Azure см. в статье [Добавление или изменение администраторов подписки Azure](../billing/billing-add-change-azure-subscription-administrator.md).
 
-В этом примере пользователь alflanigan@outlook.com является **владельцем** бесплатной пробной версии подписки в клиенте AAD (каталог Default tenant Azure (Клиент Azure по умолчанию)). Так как этот пользователь создал подписку Azure, используя начальную учетную запись Microsoft Outlook, после добавления других пользователей в этот клиент к их учетной записи будет добавляться следующее доменное имя (по умолчанию): **"\@alflaniganuoutlook.onmicrosoft.com"**. Новое доменное имя состоит из имени пользователя и доменного имени пользователя, создавшего клиент, а также расширения **.onmicrosoft.com**.
+В этом примере пользователь alflanigan@outlook.com является **владельцем** бесплатной пробной версии подписки в клиенте AAD (каталог Default tenant Azure (Клиент Azure по умолчанию)). Так как этот пользователь создал подписку Azure, используя начальную учетную запись Microsoft Outlook, после добавления других пользователей в этот клиент к их учетной записи будет добавляться следующее доменное имя (по умолчанию): **"\@alflaniganuoutlook.onmicrosoft.com"** . Новое доменное имя состоит из имени пользователя и доменного имени пользователя, создавшего клиент, а также расширения **.onmicrosoft.com**.
 Кроме того, пользователи могут войти в систему, используя имя личного домена в клиенте. Для этого сначала необходимо добавить это имя в новый клиент, а затем проверить. Дополнительные сведения о проверке имени личного домена в клиенте Azure Active Directory см. в [этой статье](../active-directory/fundamentals/add-custom-domain.md).
 
 В этом примере в каталоге Default tenant Azure (Клиент Azure по умолчанию) содержатся только пользователи с доменным именем "\@alflanigan.onmicrosoft.com".

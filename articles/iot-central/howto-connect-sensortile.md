@@ -9,10 +9,10 @@ ms.service: iot-central
 services: iot-central
 manager: sandeep.pujar
 ms.openlocfilehash: 8c1b4a4ab834b2203a7e0b6e4e9e366c3fc38774
-ms.sourcegitcommit: 399db0671f58c879c1a729230254f12bc4ebff59
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65472171"
 ---
 # <a name="connect-sensortilebox-device-to-your-azure-iot-central-application"></a>Подключение устройства SensorTile.box к приложению Azure IoT Central
@@ -37,7 +37,7 @@ ms.locfileid: "65472171"
     * Введите в нижнем регистре **идентификатор устройства**, или используйте предложенные **идентификатор устройства**.
     * Введите **имя_устройства**, или используйте предложенное имя
 
-    ![Добавить устройство](media/howto-connect-sensortile/real-device.png)
+    ![Add Device (Добавление устройства)](media/howto-connect-sensortile/real-device.png)
 
 1. Чтобы получить сведения о подключении устройства **идентификатор области**, **идентификатор устройства**, и **первичный ключ**выберите **Connect** на странице "устройства".
 
@@ -51,7 +51,7 @@ ms.locfileid: "65472171"
 
 1. Откройте приложение BLE датчик ST и нажмите клавишу **создать новое приложение** кнопки.
 
-    ![Создать приложение](media/howto-connect-sensortile/create-app.png)
+    ![Создание приложения](media/howto-connect-sensortile/create-app.png)
 
 1. Выберите **показатель связанности** приложения.
 1. Нажмите кнопку upload.
@@ -84,7 +84,7 @@ ms.locfileid: "65472171"
 
 ### <a name="telemetry"></a>Телеметрия
 
-| Имя поля     | Единицы  | Минимум | Максимум | Число десятичных знаков |
+| Имя поля     | Units  | Минимальная | Максимальная | Число десятичных знаков |
 | -------------- | ------ | ------- | ------- | -------------- |
 | Влажность       | %      | 30       | 90     | 1              |
 | temp           | °C     | 0     | 40     | 1              |

@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
 ms.openlocfilehash: 618acae10b874eb5ebd5b6da7fe081368528dbd8
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61217531"
 ---
 # <a name="develop-azure-functions-with-media-services"></a>Разработка Функций Azure с помощью служб мультимедиа
@@ -64,11 +64,11 @@ ms.locfileid: "61217531"
 2. Выберите язык **C#** и сценарий **Обработка данных**.
 3. Выберите шаблон **BlobTrigger**. Эта функция активируется каждый раз, когда в контейнер **input** передается большой двоичный объект. На следующем шаге в **Path** указывается имя **input**.
 
-    ![файлов](./media/media-services-azure-functions/media-services-azure-functions004.png)
+    ![files](./media/media-services-azure-functions/media-services-azure-functions004.png)
 
 4. После выбора **BlobTrigger** на странице появится несколько дополнительных элементов управления.
 
-    ![файлов](./media/media-services-azure-functions/media-services-azure-functions005.png)
+    ![files](./media/media-services-azure-functions/media-services-azure-functions005.png)
 
 4. Нажмите кнопку **Создать**. 
 
@@ -76,7 +76,7 @@ ms.locfileid: "61217531"
 
 Функция Azure связана с файлами кода и другими файлами, описание которых представлено в данной статье. При создании функции с помощью портала Azure файлы **function.json** и **run.csx** создаются автоматически. Вам потребуется добавить или отправить файл **project.json**. В оставшейся части этого раздела содержится краткое описание и определение каждого из этих файлов.
 
-![файлов](./media/media-services-azure-functions/media-services-azure-functions003.png)
+![files](./media/media-services-azure-functions/media-services-azure-functions003.png)
 
 ### <a name="functionjson"></a>function.json
 

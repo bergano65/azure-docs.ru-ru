@@ -13,10 +13,10 @@ ms.reviewer: MightyPen
 manager: craigg
 ms.date: 11/07/2018
 ms.openlocfilehash: 03e5540e34cd99d2b201bc763f13b42c7fa20bf7
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65785316"
 ---
 # <a name="use-in-memory-oltp-to-improve-your-application-performance-in-sql-database"></a>Повышение производительности приложений в базе данных SQL с помощью выполняющейся в памяти OLTP
@@ -37,7 +37,7 @@ ms.locfileid: "65785316"
 SELECT DatabasePropertyEx(Db_Name(), 'IsXTPSupported');
 ```
 
-Сокращение *XTP* обозначает технологию *экстремальной обработки транзакций (Extreme Transaction Processing)*.
+Сокращение *XTP* обозначает технологию *экстремальной обработки транзакций (Extreme Transaction Processing)* .
 
 
 
@@ -80,7 +80,7 @@ SELECT DatabasePropertyEx(Db_Name(), 'IsXTPSupported');
 2. В **обозревателе объектов** щелкните правой кнопкой мыши таблицу, а затем выберите пункт **Memory Optimization Advisor** (Помощник по оптимизации памяти).
    
    * Отобразится мастер **Помощник по оптимизации памяти таблицы** .
-3. В окне мастера щелкните **Проверка переноса** (или нажмите кнопку **Далее**). Так вы узнаете, содержит ли таблица функции, которые не поддерживаются в оптимизированных для памяти таблицах. Дополнительные сведения можно найти в разделе 
+3. В окне мастера щелкните **Проверка переноса** (или нажмите кнопку **Далее**). Так вы узнаете, содержит ли таблица функции, которые не поддерживаются в оптимизированных для памяти таблицах. Дополнительные сведения можно найти в разделе
    
    * *Контрольный список оптимизации памяти* в [помощнике по оптимизации памяти](https://msdn.microsoft.com/library/dn284308.aspx).
    * [Конструкции языка Transact-SQL не поддерживаются компонентом In-Memory OLTP](https://msdn.microsoft.com/library/dn246937.aspx).

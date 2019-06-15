@@ -14,14 +14,14 @@ ms.date: 06/07/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: 0a3adbd082c68121e762fd03c2221a0c800f0bc5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60823986"
 ---
 # <a name="move-data-from-an-on-premises-cassandra-database-using-azure-data-factory"></a>Перемещение данных из локальной базы данных Cassandra с помощью фабрики данных Azure
-> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
+> [!div class="op_single_selector" title1="Выберите версию службы фабрики данных, которую вы используете:"]
 > * [Версия 1](data-factory-onprem-cassandra-connector.md)
 > * [Версия 2 (текущая)](../connector-cassandra.md)
 
@@ -67,10 +67,10 @@ ms.locfileid: "60823986"
 | Свойство | ОПИСАНИЕ | Обязательно для заполнения |
 | --- | --- | --- |
 | type |Свойству type необходимо задать значение **OnPremisesCassandra** |Да |
-| узел |Один или несколько IP-адресов или имен узлов серверов Cassandra.<br/><br/>Укажите через запятую список IP-адресов или имен узлов для одновременного подключения ко всем серверам. |Да |
-| порт |TCP-порт, используемый сервером Cassandra для прослушивания клиентских подключений |Нет, значение по умолчанию — 9042. |
+| host |Один или несколько IP-адресов или имен узлов серверов Cassandra.<br/><br/>Укажите через запятую список IP-адресов или имен узлов для одновременного подключения ко всем серверам. |Да |
+| port |TCP-порт, используемый сервером Cassandra для прослушивания клиентских подключений |Нет, значение по умолчанию — 9042. |
 | authenticationType |Укажите тип Basic или Anonymous |Да |
-| имя пользователя |Укажите имя пользователя для учетной записи пользователя |Да (если для свойства authenticationType задано значение Basic) |
+| username |Укажите имя пользователя для учетной записи пользователя |Да (если для свойства authenticationType задано значение Basic) |
 | password |Укажите пароль для учетной записи пользователя. |Да (если для свойства authenticationType задано значение Basic) |
 | gatewayName |Имя шлюза, который используется для подключения к локальной базе данных Cassandra. |Да |
 | encryptedCredential |Учетные данные, зашифрованные шлюзом |Нет |
@@ -265,9 +265,9 @@ ms.locfileid: "60823986"
 | ASCII |String |
 | BIGINT |Int64 |
 | BLOB |Byte[] |
-| BOOLEAN |BOOLEAN |
+| Boolean |Boolean |
 | DECIMAL |Decimal |
-| DOUBLE |DOUBLE |
+| Double |Double |
 | FLOAT |Single |
 | INET |String |
 | INT |Int32 |

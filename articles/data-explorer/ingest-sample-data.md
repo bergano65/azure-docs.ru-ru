@@ -8,10 +8,10 @@ ms.service: data-explorer
 ms.topic: conceptual
 ms.date: 09/24/2018
 ms.openlocfilehash: e80322cda671e2145cf3e65aa1457f1fa1827737
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60759287"
 ---
 # <a name="ingest-sample-data-into-azure-data-explorer"></a>Прием демонстрационных данных в обозреватель данных Azure
@@ -25,7 +25,7 @@ ms.locfileid: "60759287"
 
 [Тестовый кластер и база данных](create-cluster-database-portal.md)
 
-## <a name="ingest-data"></a>Импорт данных
+## <a name="ingest-data"></a>Прием данных
 
 Набор демонстрационных данных **StormEvents** содержит данные о погоде из [Национальных центров Соединенных Штатов по экологической информации](https://www.ncdc.noaa.gov/stormevents/).
 
@@ -57,7 +57,7 @@ ms.locfileid: "60759287"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 > [!div class="nextstepaction"]
-> [Краткое руководство. Запрос данных в Azure Data Explorer](web-query-data.md)
+> [Краткое руководство Запрос данных в Azure Data Explorer](web-query-data.md)
 
 > [!div class="nextstepaction"]
 > [Написание запросов](write-queries.md)

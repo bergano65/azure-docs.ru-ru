@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 01/19/2019
 ms.author: mayg
 ms.openlocfilehash: f86ded99ef5280a4e6929c39a9fd323d1b61f6f0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60773935"
 ---
 # <a name="exclude-disks-from-replication"></a>Исключение дисков из репликации
@@ -22,7 +22,7 @@ ms.locfileid: "60773935"
 
 **Возможность** | **VMware в VMware** | **Hyper-V в Azure** | **Из Azure в Azure**| **Из Hyper-V в Hyper-V** 
 --|--|--|--|--
-Исключение диска | Да | Да | Нет  | Нет
+Исключение диска | Да | Да | Нет | Нет
 
 ## <a name="why-exclude-disks-from-replication"></a>Зачем исключать диски из репликации
 Исключение дисков из репликации часто бывает необходимо:
@@ -60,7 +60,7 @@ ms.locfileid: "60773935"
 - Диск с файлом tempdb SQL Server.
 - Диск с файлом подкачки (pagefile.sys).
 
-## <a name="example-1-exclude-the-sql-server-tempdb-disk"></a>Пример 1: Исключение диска с файлом tempdb SQL Server
+## <a name="example-1-exclude-the-sql-server-tempdb-disk"></a>Пример 1 Исключение диска с файлом tempdb SQL Server
 Рассмотрим виртуальную машину SQL Server с диском tempdb, который может быть исключен из репликации.
 
 Имя виртуального диска — SalesDB.
@@ -163,7 +163,7 @@ DB-Disk2 (исключенный из репликации) | Диск 2 | E:\ 
 DB-Disk3 (исключенный из репликации) | Диск 3 | F:\ | База данных tempdb SQL (путь к папке — F:\MSSQL\Data\)
 DB-Disk4 | Диск 4 | G:\ | База данных пользователя Database2
 
-## <a name="example-2-exclude-the-paging-file-pagefilesys-disk"></a>Пример 2: Исключение диска с файлом подкачки (pagefile.sys)
+## <a name="example-2-exclude-the-paging-file-pagefilesys-disk"></a>Пример 2 Исключение диска с файлом подкачки (pagefile.sys)
 
 Рассмотрим виртуальную машину с диском с файлом подкачки, который можно исключить из репликации.
 Есть два способа.

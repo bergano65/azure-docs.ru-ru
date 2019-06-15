@@ -14,10 +14,10 @@ ms.topic: conceptual
 ms.date: 01/16/2018
 ms.author: magoedte
 ms.openlocfilehash: 7e0dbb4c3cd8ae4bb552e7b7f0748f1bde2f51de
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65232783"
 ---
 # <a name="monitor-surface-hubs-with-azure-monitor-to-track-their-health"></a>Мониторинг устройств Surface Hub с помощью Azure Monitor для отслеживания работоспособности
@@ -38,7 +38,7 @@ ms.locfileid: "65232783"
 * автоматически с помощью InTune;
 * вручную в приложении **Settings** на устройстве Surface Hub.
 
-## <a name="set-up-monitoring"></a>Настройте мониторинг
+## <a name="set-up-monitoring"></a>Настройка мониторинга
 Вы можете отслеживать работоспособность и активность устройства Surface Hub с помощью Azure Monitor. Устройство Surface Hub можно зарегистрировать с помощью Intune или локально, с помощью **параметров** устройства Surface Hub.
 
 ## <a name="connect-surface-hubs-to-azure-monitor-through-intune"></a>Подключение устройств Surface Hub к Azure Monitor с помощью Intune
@@ -47,7 +47,7 @@ ms.locfileid: "65232783"
 Intune — это продукт Microsoft, который позволяет централизованно управлять параметрами конфигурации рабочей области Log Analytics, применяемыми к одному или нескольким устройствам. Чтобы настроить устройства через Intune, выполните следующие действия:
 
 1. Войдите в Intune.
-2. Перейдите в раздел **Settings (Параметры)** > **Connected Sources (Подключенные источники)**.
+2. Перейдите в раздел **Settings (Параметры)**  > **Connected Sources (Подключенные источники)** .
 3. Создайте или отредактируйте политику на основе шаблона Surface Hub.
 4. Перейдите к разделу политики "Оперативная аналитика Azure" и добавьте в нее *идентификатор рабочей области* и *ключ рабочей области* Log Analytics.
 5. Сохраните политику.

@@ -13,10 +13,10 @@ ms.reviewer: sstein
 manager: craigg
 ms.date: 10/30/2018
 ms.openlocfilehash: d4c5a2ca88f982626c8c2a8b37e4a7d6dfdbe599
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61485829"
 ---
 # <a name="run-ad-hoc-analytics-queries-across-multiple-azure-sql-databases"></a>Выполнение запросов автоматизированной системы отчетности к нескольким базам данных SQL Azure
@@ -96,7 +96,7 @@ ms.locfileid: "61485829"
 
     ![Создание внешнего источника данных](media/saas-multitenantdb-adhoc-reporting/create-external-data-source.png)
 
-   В определении внешних таблиц, которые ссылаются на клиентские таблицы, указан параметр **DISTRIBUTION = SHARDED(VenueId)**. Эта инструкция перенаправляет запрос для определенного значения *VenueId* в соответствующую базу данных, что во многих сценариях повышает производительность запроса, как показано в следующем разделе.
+   В определении внешних таблиц, которые ссылаются на клиентские таблицы, указан параметр **DISTRIBUTION = SHARDED(VenueId)** . Эта инструкция перенаправляет запрос для определенного значения *VenueId* в соответствующую базу данных, что во многих сценариях повышает производительность запроса, как показано в следующем разделе.
 
     ![Создание внешних таблиц](media/saas-multitenantdb-adhoc-reporting/external-tables.png)
 

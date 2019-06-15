@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.service: iot-accelerators
 services: iot-accelerators
 ms.openlocfilehash: 021f18f588613817110539d408f9260fb9247895
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61449500"
 ---
 # <a name="integrate-the-remote-monitoring-solution-with-azure-data-lake-store"></a>Интеграция решения для удаленного мониторинга с Azure Data Lake Store
@@ -69,7 +69,7 @@ az iot hub consumer-group create --hub-name contoso-rm30263 --name streamanalyti
 
 1. Нажмите кнопку **Создать**.
 
-    ![Создать задание Stream Analytics](./media/iot-accelerators-integrate-data-lake/create-stream-analytics-job.png)
+    ![Создание задания Stream Analytics](./media/iot-accelerators-integrate-data-lake/create-stream-analytics-job.png)
 
 ## <a name="configure-the-stream-analytics-job"></a>Настройка задания Stream Analytics
 
@@ -103,7 +103,7 @@ az iot hub consumer-group create --hub-name contoso-rm30263 --name streamanalyti
 
 1. Выберите учетную запись Data Lake Store, созданную ранее, и укажите структуру папок для потоковой передачи данных в хранилище.
 
-1. В поле формата даты введите **/streaming/{дата}/{время}**. Оставьте стандартные значения формата даты (ГГГГ/ММ/ДД) и формата времени (ЧЧ).
+1. В поле формата даты введите **/streaming/{дата}/{время}** . Оставьте стандартные значения формата даты (ГГГГ/ММ/ДД) и формата времени (ЧЧ).
 
     ![Указание структуры папок](./media/iot-accelerators-integrate-data-lake/stream-analytics-new-output.png)
 

@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 04/08/2019
 ms.author: zhshang
 ms.openlocfilehash: f7cc05c8c2a299d809c4386d119fef58fa2548d5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61269503"
 ---
 # <a name="performance-guide-for-azure-signalr-service"></a>Руководства по повышению производительности для службы Azure SignalR
@@ -160,7 +160,7 @@ WebSocket — это двунаправленный и протокол связ
 | Трансляция  | Размер сообщения | Входящих сообщений в секунду | Подключения | Отправить интервалов |
 |---|---------------------|--------------------------|-------------|-------------------------|
 | 1 | 20 КБ                | 1                        | 100 000     | 5 секунд                      |
-| 2 | 256 КБ               | 1                        | 8000       | 5 секунд                      |
+| 2 | 256 KB               | 1                        | 8000       | 5 секунд                      |
 
 Следующая формула легко определить по предыдущей формуле:
 
@@ -370,7 +370,7 @@ outboundConnections = outboundBandwidth * sendInterval / messageSize
 |   echo           | Unit1 | Unit2 | Unit5 | Unit10 | Unit20 | Unit50 | Unit100 |
 |------------------|-------|-------|-------|--------|--------|--------|---------|
 | Подключения      | 1000 | 2 000 | 5 000 | 10 000 | 20 000 | 50 000 | 100 000 |
-| Число серверов приложений | 2     | 2     | 4.     | 4.      | 8      | 32      | 40       |
+| Число серверов приложений | 2     | 2     | 4\.     | 4\.      | 8      | 32      | 40       |
 
 В следующей таблице приведены число предлагаемых web app для ASP.NET SignalR **вещания**.
 
@@ -384,7 +384,7 @@ outboundConnections = outboundBandwidth * sendInterval / messageSize
 |  Отправить небольшой группе     | Unit1 | Unit2 | Unit5 | Unit10 | Unit20 | Unit50 | Unit100 |
 |------------------|-------|-------|-------|--------|--------|--------|---------|
 | Подключения      | 1000 | 2 000 | 5 000 | 10 000 | 20 000 | 50 000 | 100 000 |
-| Число серверов приложений | 2     | 2     | 4.     | 4.      | 8      | 32      | 40       |
+| Число серверов приложений | 2     | 2     | 4\.     | 4\.      | 8      | 32      | 40       |
 
 ### <a name="serverless-mode"></a>Режим без сервера
 
@@ -434,5 +434,5 @@ outboundConnections = outboundBandwidth * sendInterval / messageSize
 
 Получить сведения о внутренних компонентов службы, а также масштабирование для него, см. следующие руководства:
 
-* [Внутренних компонентах Azure служба SignalR](signalr-concept-internals.md)
+* [Azure SignalR Service internals](signalr-concept-internals.md) (Внутренние компоненты Службы Azure SignalR)
 * [Служба Azure SignalR масштабирование](signalr-howto-scale-multi-instances.md)

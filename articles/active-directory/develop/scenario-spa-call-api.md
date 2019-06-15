@@ -16,10 +16,10 @@ ms.author: ryanwi
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 77a4ed01ac55a1153a62c672b33056a543b912ed
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65545614"
 ---
 # <a name="single-page-application---call-a-web-api"></a>Одностраничное приложение - вызов в веб-API
@@ -30,7 +30,7 @@ ms.locfileid: "65545614"
 
 ### <a name="javascript"></a>JavaScript
 
-Используйте маркер доступа, полученные как носителя в HTTP-запрос для вызова веб-API, например Microsoft Graph API. Например:
+Используйте маркер доступа, полученные как носителя в HTTP-запрос для вызова веб-API, например Microsoft Graph API. Пример:
 
 ```javascript
     var headers = new Headers();

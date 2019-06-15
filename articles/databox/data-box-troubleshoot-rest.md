@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 04/19/2019
 ms.author: alkohli
 ms.openlocfilehash: c5ceeb2e6419cab7945454087edd4c821db28343
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65204216"
 ---
 # <a name="troubleshoot-issues-related-to-azure-data-box-blob-storage"></a>Устранение неполадок, относящиеся к хранилищу BLOB-объектов Azure Data Box
@@ -55,7 +55,7 @@ ms.locfileid: "65204216"
 |Сообщение об ошибке  |Рекомендуемое действие |
 |---------|---------|
 |Значение для одного из заголовков HTTP не в правильном формате. |Установленная версия библиотека хранилища Microsoft Azure для Python не поддерживается Data Box. См. в разделе Требования к хранилищу BLOB-объектов Azure Data Box для поддерживаемых версий.|
-|… [SSL: CERTIFICATE_VERIFY_FAILED]...|Прежде чем запускать Python, значение переменной среды REQUESTS_CA_BUNDLE путь к файлу сертификата SSL в кодировке base 64 (см. в разделе Практическое [Загрузите сертификат](data-box-deploy-copy-data-via-rest.md#download-certificate)). <br>Например: <br>`export REQUESTS_CA_BUNDLE=/tmp/mycert.cer` <br>`python` <br>Можно также добавить сертификат в хранилище сертификатов компьютера и затем задать переменную среды для пути хранилища. <br> Например в Ubuntu: <br>`export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt` <br>`python`|
+|… [SSL: CERTIFICATE_VERIFY_FAILED]...|Прежде чем запускать Python, значение переменной среды REQUESTS_CA_BUNDLE путь к файлу сертификата SSL в кодировке base 64 (см. в разделе Практическое [Загрузите сертификат](data-box-deploy-copy-data-via-rest.md#download-certificate)). <br>Пример:<br>`export REQUESTS_CA_BUNDLE=/tmp/mycert.cer` <br>`python` <br>Можно также добавить сертификат в хранилище сертификатов компьютера и затем задать переменную среды для пути хранилища. <br> Например в Ubuntu: <br>`export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt` <br>`python`|
 
 
 ## <a name="common-errors"></a>Распространенные ошибки

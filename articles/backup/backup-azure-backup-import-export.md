@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 05/17/2018
 ms.author: saurse
 ms.openlocfilehash: b6f0ce1939b2a78ca191d2feb0140506d130b9b0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60648419"
 ---
 # <a name="offline-backup-workflow-in-azure-backup"></a>Автономное резервное копирование в службе архивации Azure
@@ -102,7 +102,7 @@ ms.locfileid: "60648419"
 ## <a name="prepare-sata-drives-and-ship-to-azure"></a>Подготовка дисков SATA и их отправка в Azure
 Служебная программа *AzureOfflineBackupDiskPrep* выполняет подготовку дисков SATA, которые отправляются в ближайший центр обработки данных Azure. Эта программа находится в следующем каталоге установки агента Azure Backup:
 
-   *\Microsoft Azure Recovery Services Agent\Utils\\*.
+   *\Microsoft Azure Recovery Services Agent\Utils\\* .
 
 1. Перейдите в это расположение и скопируйте каталог **AzureOfflineBackupDiskPrep** на другой компьютер, к которому подключены диски SATA. На компьютере с подключенными дисками SATA сделайте следующее:
 

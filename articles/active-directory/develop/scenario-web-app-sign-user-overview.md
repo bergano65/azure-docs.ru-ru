@@ -16,13 +16,13 @@ ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6ce534c6eeecba220fd829be829caa679df52055
-ms.sourcegitcommit: 3ced637c8f1f24256dd6ac8e180fff62a444b03c
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65833100"
 ---
-# <a name="scenario-web-app-that-signs-in-users"></a>Сценарий: Веб-приложение, которое поддерживает вход пользователей
+# <a name="scenario-web-app-that-signs-in-users"></a>Сценарий. Веб-приложение, которое поддерживает вход пользователей
 
 Узнайте все необходимое для создания веб-приложения, что пользователи выполняет вход с платформой Microsoft identity.
 

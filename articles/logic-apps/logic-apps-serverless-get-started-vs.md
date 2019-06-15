@@ -11,10 +11,10 @@ ms.custom: vs-azure
 ms.topic: article
 ms.date: 04/25/2019
 ms.openlocfilehash: fb071ac056355a056e5333284808417a258515de
-ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65467450"
 ---
 # <a name="build-your-first-serverless-app-with-azure-logic-apps-and-azure-functions---visual-studio"></a>Создание первого бессерверного приложения на основе Azure Logic Apps и Функций Azure (Visual Studio)
@@ -88,7 +88,7 @@ ms.locfileid: "65467450"
    > [!TIP]
    > В сценариях, где вы не хотите заранее развертывать решения в группе ресурсов Azure, можно использовать пустую **приложение логики** шаблона, который просто создает пустое приложение логики.
 
-1. Из **Показать шаблоны из этого расположения** выберите **быстрого запуска Azure (github.com/Azure/azure-quickstart-templates)**.
+1. Из **Показать шаблоны из этого расположения** выберите **быстрого запуска Azure (github.com/Azure/azure-quickstart-templates)** .
 
 1. В поле поиска введите «приложение логики» в качестве фильтра. В результатах выберите этот шаблон: **101-logic-app-and-function-app**.
 

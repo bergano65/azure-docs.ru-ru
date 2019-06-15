@@ -13,10 +13,10 @@ ms.reviewer: vanto
 manager: craigg
 ms.date: 03/22/2019
 ms.openlocfilehash: e451b7837a1cff4bbeaecd1573dc860524caf4d3
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65142658"
 ---
 # <a name="azure-sql-database-and-sql-data-warehouse-data-discovery--classification"></a>Azure базы данных SQL и хранилища данных SQL обнаружение и классификация данных
@@ -77,7 +77,7 @@ ms.locfileid: "65142658"
 
 1. Перейдите на [портал Azure](https://portal.azure.com).
 
-2. Перейдите к разделу **Расширенная защита данных** под заголовком "Безопасность" в области "База данных SQL Azure". Щелкните, чтобы включить службу "Расширенная защита данных", и выберите карту **Обнаружение и классификация данных (предварительная версия)**.
+2. Перейдите к разделу **Расширенная защита данных** под заголовком "Безопасность" в области "База данных SQL Azure". Щелкните, чтобы включить службу "Расширенная защита данных", и выберите карту **Обнаружение и классификация данных (предварительная версия)** .
 
    ![Проверка базы данных](./media/sql-data-discovery-and-classification/data_classification.png)
 

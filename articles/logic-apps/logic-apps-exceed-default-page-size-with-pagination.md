@@ -10,10 +10,10 @@ ms.reviewer: klam, LADocs
 ms.topic: article
 ms.date: 04/11/2019
 ms.openlocfilehash: 2d1bcf2cf83fab106f79120c3caacc424f839836
-ms.sourcegitcommit: daf6538427ea6effef898f2ee3d857e5fa2dccbc
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/25/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64476546"
 ---
 # <a name="get-more-data-items-or-records-by-using-pagination-in-azure-logic-apps"></a>Получить дополнительные данные, элементов или записей с помощью разбиения на страницы в Azure Logic Apps
@@ -51,7 +51,7 @@ ms.locfileid: "64476546"
 
 Чтобы определить, поддерживает ли действие разбиения на страницы в конструкторе приложений логики, проверьте параметры действия для **разбиение на страницы** параметр. В этом примере показано, как включить разбиение на страницы в SQL Server **получить строки** действие.
 
-1. В правом верхнем углу действия, нажмите кнопку с многоточием (**...** ) и выберите **параметры**.
+1. В правом верхнем углу действия, нажмите кнопку с многоточием ( **...** ) и выберите **параметры**.
 
    ![Откройте параметры действия](./media/logic-apps-exceed-default-page-size-with-pagination/sql-action-settings.png)
 

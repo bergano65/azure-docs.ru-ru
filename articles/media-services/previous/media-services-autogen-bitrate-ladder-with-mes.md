@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 03/14/2019
 ms.author: juliako
 ms.openlocfilehash: bbaf4d490fcebb4cd741a9b83ffc5d7e85699755
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61224350"
 ---
 #  <a name="use-azure-media-encoder-standard-to-auto-generate-a-bitrate-ladder"></a>Использование стандартной версии кодировщика мультимедиа Azure для автоматического создания схемы скоростей  
@@ -179,7 +179,7 @@ namespace AdaptiveStreamingMESPresest
 |1|1080|1920|6780|
 |2|720|1280|3520|
 |3|540|960|2210|
-|4.|360|640|1150|
+|4\.|360|640|1150|
 |5|270|480|720|
 |6|180|320|380|
 
@@ -191,7 +191,7 @@ namespace AdaptiveStreamingMESPresest
 |1|720|1280|2940|
 |2|540|960|1850|
 |3|360|640|960|
-|4.|270|480|600|
+|4\.|270|480|600|
 |5|180|320|320|
 
 ### <a name="example-3"></a>Пример 3

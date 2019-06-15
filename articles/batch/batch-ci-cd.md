@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.custom: fasttrack-new
 services: batch
 ms.openlocfilehash: a811a9cb1b124aff7c64d25cf71a1b84bff0c173
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65541749"
 ---
 # <a name="use-azure-pipelines-to-build-and-deploy-hpc-solutions"></a>Используйте Azure конвейеры для создания и развертывания решения HPC
@@ -327,7 +327,7 @@ ms.locfileid: "65541749"
 
     a. [С помощью визуального конструктора](https://docs.microsoft.com/azure/devops/pipelines/get-started-designer?view=azure-devops&tabs=new-nav). Для этого щелкните «Использовать визуальный конструктор» **новый конвейер** страницы.
 
-    2. [Использование YAML сборок](https://docs.microsoft.com/azure/devops/pipelines/get-started-yaml?view=azure-devops). Новый конвейер yaml-ФАЙЛ можно создать, щелкнув в репозитории Azure или параметр GitHub на новой странице конвейера. Кроме того можно хранить в приведенном ниже примере в системе управления версиями и ссылаться на существующий файл YAML, щелкнув визуальный конструктор и затем с помощью шаблона YAML.
+    2\. [Использование YAML сборок](https://docs.microsoft.com/azure/devops/pipelines/get-started-yaml?view=azure-devops). Новый конвейер yaml-ФАЙЛ можно создать, щелкнув в репозитории Azure или параметр GitHub на новой странице конвейера. Кроме того можно хранить в приведенном ниже примере в системе управления версиями и ссылаться на существующий файл YAML, щелкнув визуальный конструктор и затем с помощью шаблона YAML.
 
     ```yml
     # To publish an application into Azure Batch, we need to
@@ -418,16 +418,16 @@ ms.locfileid: "65541749"
     * **Действие**: Создание или изменение группы ресурсов
     * **Группа ресурсов**: $(resourceGroupName)
     * **Расположение**: $(location)
-    * **Шаблон**: $(System.ArtifactsDirectory)/**{YourAzureRepoArtifactSourceAlias}**/arm-templates/storageAccount.json
+    * **Шаблон**: $(System.ArtifactsDirectory)/ **{YourAzureRepoArtifactSourceAlias}** /arm-templates/storageAccount.json
     * **Переопределить параметры шаблона**: - accountName $(storageAccountName)
 
 1. Отправьте артефакты из системы управления версиями в учетной записи хранения. Для этого выполняется Azure конвейера. В рамках этой задачи URL-адрес контейнера учетной записи хранения и маркер SAS можно выводимые переменной в конвейерах Azure. Это означает, что он может многократно использоваться на протяжении всего этого этапа агента.
 
     Добавить **копирование файлов Azure** задач и задайте следующие свойства:
-    * **Источник:** $(System.ArtifactsDirectory)/**{YourAzureRepoArtifactSourceAlias}**/arm-templates /
+    * **Источник:** $(System.ArtifactsDirectory)/ **{YourAzureRepoArtifactSourceAlias}** /arm-templates /
     * **Тип подключения к Azure**: Azure Resource Manager
     * **Подписка Azure:** Выберите соответствующую подписку Azure
-    * **Тип назначения**: BLOB-объект Azure
+    * **Тип назначения**: большом двоичном объекте Azure
     * **Учетная запись хранения диспетчера Ресурсов**: $(storageAccountName)
     * **Имя контейнера**: шаблоны
     * **URI контейнера хранилища**: templateContainerUri
@@ -441,7 +441,7 @@ ms.locfileid: "65541749"
     * **Действие**: Создание или изменение группы ресурсов
     * **Группа ресурсов**: $(resourceGroupName)
     * **Расположение**: $(location)
-    * **Шаблон**: $(System.ArtifactsDirectory)/**{YourAzureRepoArtifactSourceAlias}**/arm-templates/deployment.json
+    * **Шаблон**: $(System.ArtifactsDirectory)/ **{YourAzureRepoArtifactSourceAlias}** /arm-templates/deployment.json
     * **Переопределить параметры шаблона**: ```-templateContainerUri $(templateContainerUri) -templateContainerSasToken $(templateContainerSasToken) -batchAccountName $(batchAccountName) -batchAccountPoolName $(batchAccountPoolName) -applicationStorageAccountName $(applicationStorageAccountName)```
 
 Распространенной практикой является использование Azure Key Vault задач. Если субъект-служба (подключение к подписке Azure) имеет набор политик соответствующие права доступа, его можно загрузить секреты из хранилища ключей Azure и использовать в качестве переменных в конвейере. Имя секрета устанавливается с помощью связанного значения. Например может ссылаться на секрета sshPassword с $(sshPassword) в определении выпуска.

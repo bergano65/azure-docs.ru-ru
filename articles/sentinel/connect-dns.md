@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 04/07/2019
 ms.author: rkarlin
 ms.openlocfilehash: 6429568b33ece3ed4f26614e55e8c3069dd65d71
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65204405"
 ---
 # <a name="connect-your-domain-name-server"></a>Подключение к DNS-сервера
@@ -51,12 +51,12 @@ ms.locfileid: "65204405"
 
 2. Если компьютер DNS виртуальной Машины Azure:
     1. Нажмите кнопку **скачайте и установите агент для виртуальных машин Windows, отличных от Azure**.
-    1. В **Direct agent** окно, выберите пункт **агента загрузки Windows (64-разрядная версия)** или **агента загрузки Windows (32-разрядная версия)**.
+    1. В **Direct agent** окно, выберите пункт **агента загрузки Windows (64-разрядная версия)** или **агента загрузки Windows (32-разрядная версия)** .
     1. Установите агент на компьютере DNS. Копировать **Ид_рабочей_области**, **первичный ключ**, и **вторичный ключ** и использовать их при появлении запроса во время установки.
 
 3. Чтобы использовать соответствующей схемы в Log Analytics для журналов DNS, поиск **DnsEvents**.
 
-## <a name="validate"></a>Проверка 
+## <a name="validate"></a>Проверить 
 
 В Log Analytics, найти схему **DnsEvents** и убедитесь, что события.
 

@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c204029557a73dc3f02015afb92c0fdbf0d4d50e
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64571331"
 ---
 # <a name="next-steps-and-how-to-manage-azure-ad-connect"></a>Дальнейшие действия и управление Azure AD Connect
@@ -72,7 +72,7 @@ ms.locfileid: "64571331"
 
 ![Список дополнительных задач](./media/how-to-connect-post-installation/addtasks2.png)
 
-| Дополнительная задача | ОПИСАНИЕ |
+| Дополнительная задача | Описание |
 | --- | --- |
 |**Параметры конфиденциальности**|Просмотрите, какие данные телеметрии передаются в Майкрософт.|
 |**Просмотр текущей конфигурации**|Просмотр текущего решения Azure AD Connect.  Включает общие параметры, синхронизированные каталоги и параметры синхронизации. |

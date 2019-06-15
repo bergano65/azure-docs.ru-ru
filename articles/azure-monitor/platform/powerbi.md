@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 05/01/219
 ms.author: bwren
 ms.openlocfilehash: 2db6ddf57802f6fcf38cfc3ad7094ed94eaca3d8
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65234202"
 ---
 # <a name="import-azure-monitor-log-data-into-power-bi"></a>Импорт данных журнала в Azure Monitor в Power BI
@@ -36,7 +36,7 @@ ms.locfileid: "65234202"
 Начните с создания [запроса журнала](../log-query/log-query-overview.md) , возвращающее данные, вам нужно заполнить набор данных Power BI.  Затем экспортируйте этот запрос в [язык Power Query (M)](https://msdn.microsoft.com/library/mt807488.aspx), который может использоваться в Power BI Desktop.
 
 1. [Создание запроса к журналу в Log Analytics](../log-query/get-started-portal.md) для извлечения данных для набора данных.
-2. Выберите **Экспорт** > **Power BI Query (M)**.  Запрос будет экспортирован в текстовый файл с именем **PowerBIQuery.txt**. 
+2. Выберите **Экспорт** > **Power BI Query (M)** .  Запрос будет экспортирован в текстовый файл с именем **PowerBIQuery.txt**. 
 
     ![Экспорт поиска по журналам](media/powerbi/export-analytics.png)
 

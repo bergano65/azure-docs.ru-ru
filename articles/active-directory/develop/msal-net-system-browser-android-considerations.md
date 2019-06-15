@@ -18,10 +18,10 @@ ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: c57feb33967732481d78e0ddaba5e90f4f82f327
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65544428"
 ---
 # <a name="xamarin-android-specific-considerations-with-msalnet"></a>Рекомендации по относящихся к Xamarin Android с помощью MSAL.NET
@@ -56,16 +56,16 @@ ms.locfileid: "65544428"
 
 | | браузер&ast;     |  Результат  | 
 | ------------- |:-------------:|:-----:|
-| Huawei / один + | Chrome&ast; | Этап|
-| Huawei / один + | Edge&ast; | Этап|
-| Huawei / один + | Firefox&ast; | Этап|
-| Huawei / один + | Хватит смелости&ast; | Этап|
-| Один + | Ecosia&ast; | Этап|
-| Один + | Поставщик Киви&ast; | Этап|
-| Huawei / один + | Opera | Этап|
-| Huawei | OperaMini | Этап|
-| Huawei / один + | InBrowser | Этап|
-| Один + | Maxthon — дополнительный модуль | Этап|
+| Huawei / один + | Chrome&ast; | Pass;|
+| Huawei / один + | Edge&ast; | Pass;|
+| Huawei / один + | Firefox&ast; | Pass;|
+| Huawei / один + | Хватит смелости&ast; | Pass;|
+| Один + | Ecosia&ast; | Pass;|
+| Один + | Поставщик Киви&ast; | Pass;|
+| Huawei / один + | Opera | Pass;|
+| Huawei | OperaMini | Pass;|
+| Huawei / один + | InBrowser | Pass;|
+| Один + | Maxthon — дополнительный модуль | Pass;|
 | Huawei / один + | DuckDuckGo | Отменено пользователем проверки подлинности|
 | Huawei / один + | Браузера UC Browser | Отменено пользователем проверки подлинности|
 | Один + | Дельфин | Отменено пользователем проверки подлинности|

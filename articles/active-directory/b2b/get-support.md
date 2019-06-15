@@ -13,10 +13,10 @@ ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: a7b9ebefb9762b663adcd17fb1fdd656cb4f2ec2
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65768429"
 ---
 # <a name="getting-support-for-b2b-collaboration"></a>Получение поддержки для службы совместной работы B2B
@@ -24,7 +24,7 @@ ms.locfileid: "65768429"
 Вы внимательно прочитали документацию, все сделали правильно, но что-то все равно не работает? Откройте запрос в службу поддержки (требуется план поддержки).
 
 1. На [портале Azure](https://portal.azure.com) перейдите в колонку "Справка и поддержка" и щелкните "Новый запрос на поддержку".
-   - Тип проблемы. Техническая
+   - Тип проблемы. Технические требования
    - Подписка: выберите затронутую подписку.
      - Служба: Active Directory
      - План поддержки: выберите соответствующий план поддержки.

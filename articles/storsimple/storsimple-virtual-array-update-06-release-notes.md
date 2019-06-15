@@ -15,10 +15,10 @@ ms.workload: NA
 ms.date: 05/24/2017
 ms.author: alkohli
 ms.openlocfilehash: e984531feced2d61332e4c399848c12cd245a34a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60870712"
 ---
 # <a name="storsimple-virtual-array-update-06-release-notes"></a>Заметки о выпуске обновления 0.6 для виртуального массива StorSimple
@@ -55,7 +55,7 @@ ms.locfileid: "60870712"
 | № | Компонент | Проблема |
 | --- | --- | --- |
 | 1 |Безопасность| Этот выпуск содержит важные обновления для системы безопасности Windows. Мы рекомендуем установить это обновление немедленно.|
-| 2 |Восстановление| Во время восстановления возникало состояние гонки, которое блокировало завершение задания восстановления. Исправление ошибки устраняет такое состояние гонки.|
+| 2 |восстановление;| Во время восстановления возникало состояние гонки, которое блокировало завершение задания восстановления. Исправление ошибки устраняет такое состояние гонки.|
 
 
 ## <a name="known-issues-in-the-update-06"></a>Известные проблемы в обновлении 0.6
@@ -85,7 +85,7 @@ ms.locfileid: "60870712"
 ## <a name="next-step"></a>Дальнейшие действия
 [Установка обновления 0.6](storsimple-virtual-array-install-update-06.md) для виртуального массива StorSimple
 
-## <a name="references"></a>Ссылки
+## <a name="references"></a>Справочники
 Ищите заметки о более старом выпуске? Справочные ресурсы:
 
 * [Заметки о выпуске обновления 0.5 для виртуального массива StorSimple](storsimple-virtual-array-update-05-release-notes.md)

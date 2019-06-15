@@ -2,24 +2,18 @@
 title: Обработка ошибок в графических модулях Runbook в службе автоматизации Azure
 description: В этой статье описывается, как реализовать логику обработки ошибок в графических модулях Runbook в службе автоматизации Azure.
 services: automation
-documentationcenter: ''
-author: yunan2016
-manager: digimobile
-editor: tysonn
-ms.assetid: ''
 ms.service: automation
-ms.workload: tbd
-ms.tgt_pltfrm: na
-ms.devlang: na
-ms.topic: article
-origin.date: 03/16/2018
-ms.date: 05/14/2018
-ms.author: v-nany
+ms.subservice: process-automation
+author: georgewallace
+ms.author: gwallace
+ms.date: 03/16/2018
+ms.topic: conceptual
+manager: carmonm
 ms.openlocfilehash: d7fe38334b71334d4dae9235643117efdf5fbd5d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61233126"
 ---
 # <a name="error-handling-in-azure-automation-graphical-runbooks"></a>Обработка ошибок в графических модулях Runbook в службе автоматизации Azure
@@ -75,3 +69,4 @@ ms.locfileid: "61233126"
 * Дополнительные сведения о ссылках и их типах в графических модулях Runbook см. в статье [Графическая разработка в службе автоматизации Azure](automation-graphical-authoring-intro.md#links-and-workflow).
 
 * Дополнительные сведения о выполнении модулей Runbook, отслеживании заданий модуля Runbook и других технических деталях см. в статье [Выполнение модуля Runbook в службе автоматизации Azure](automation-runbook-execution.md).
+

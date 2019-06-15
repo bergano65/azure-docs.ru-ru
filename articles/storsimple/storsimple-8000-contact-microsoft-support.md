@@ -15,13 +15,13 @@ ms.workload: na
 ms.date: 01/09/2018
 ms.author: alkohli;
 ms.openlocfilehash: 77050ad37862394785cf348a242f585cc089ba26
-ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65606861"
 ---
-# <a name="contact-microsoft-support"></a>Обратитесь в службу поддержки Майкрософт
+# <a name="contact-microsoft-support"></a>Обращение в службу поддержки Майкрософт
 
 Диспетчер устройств StorSimple предоставляет возможность **регистрации новых запросов в службу поддержки** в колонке сводных данных о службе. Если у вас возникли проблемы с решением StorSimple, можно обратиться за помощью в службу технической поддержки. В ходе общения со специалистом технической поддержки также может потребоваться запустить сеанс поддержки на устройстве StorSimple. В этой статье описаны следующие операции.
 
@@ -80,11 +80,11 @@ ms.locfileid: "65606861"
 
 1. Чтобы открыть страницу справки и поддержки, последовательно щелкните **Обзор > Справка и поддержка**.
 
-    ![Управление запросами в службу поддержки](./media/storsimple-8000-contact-microsoft-support/managesupport1.png)
+    ![Управление запросами на поддержку](./media/storsimple-8000-contact-microsoft-support/managesupport1.png)
 
 2. Список всех запросов на поддержку в виде таблицы отображается в колонке **Справка и поддержка**.
 
-    ![Управление запросами в службу поддержки](./media/storsimple-8000-contact-microsoft-support/managesupport2.png)
+    ![Управление запросами на поддержку](./media/storsimple-8000-contact-microsoft-support/managesupport2.png)
 
 3. Выберите и щелкните запрос на поддержку. Для запроса можно просмотреть состояние и подробные сведения. Щелкните **+ Новое сообщение**, если нужно следить за этим запросом.
 

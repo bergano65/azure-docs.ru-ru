@@ -16,13 +16,13 @@ ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 497134b7f3cc535f7b3f180db13cd04ef56787db
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65075405"
 ---
-# <a name="scenario-web-api-that-calls-web-apis"></a>Сценарий. Веб-API, который вызывает веб-API
+# <a name="scenario-web-api-that-calls-web-apis"></a>Сценарий. Веб-API, которые вызывают веб-API
 
 Узнайте все необходимое для создания веб-API, которые вызывает веб-API-интерфейсы.
 

@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 05/15/2019
 ms.author: anzaman
 ms.openlocfilehash: 4ef5354a94ae707df8dd1f2767efe04dfbacd7ad
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65799593"
 ---
 # <a name="customize-a-language-model-with-the-video-indexer-apis"></a>Настройка языковой модели с помощью API Индексатора видео
@@ -32,7 +32,7 @@ ms.locfileid: "65799593"
 > [!NOTE]
 > По-прежнему следует провести обучение модели с поддержкой файлов для модели, чтобы освоить содержимое из файлов. Направления по обучению языку находятся в следующем разделе.
 
-### <a name="request-url"></a>URL-адрес запроса
+### <a name="request-url"></a>Request URL (URL-адрес запроса)
 
 Это запрос POST.
 
@@ -58,7 +58,7 @@ curl -v -X POST "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cus
 |accountId|string|Да|Глобальный уникальный идентификатор для учетной записи|
 |accessToken|string|Да|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
 |modelName|string|Да|Имя языковой модели|
-|Язык|string|Да|Язык языковой модели <br/>Параметру **язык** необходимо присвоить язык в формате BCP-47 "тег языка – регион" (например, en-US). Поддерживаемые языки: английский (en-US), немецкий (de-DE), испанский (es-SP), арабский (ar-EG), французский (fr-FR), хинди (hi-HI), итальянский (it-IT), японский (ja-JP), португальский (pt-BR), русский (ru-RU) и китайский (zh-CN).  |
+|language|string|Да|Язык языковой модели <br/>Параметру **язык** необходимо присвоить язык в формате BCP-47 "тег языка – регион" (например, en-US). Поддерживаемые языки: английский (en-US), немецкий (de-DE), испанский (es-SP), арабский (ar-EG), французский (fr-FR), хинди (hi-HI), итальянский (it-IT), японский (ja-JP), португальский (pt-BR), русский (ru-RU) и китайский (zh-CN).  |
 
 ### <a name="request-body"></a>Текст запроса
 
@@ -67,7 +67,7 @@ curl -v -X POST "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cus
 1. Ключом будет имя файла, а значением будет TXT-файл.
 2. Ключом будет имя файла, а значением будет URL-адрес текстового файла.
 
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
 
 В ответе содержатся метаданные для вновь созданной языковой модели вместе с метаданными для каждого файла модели, используя формат в примере выходных данных JSON.
 
@@ -105,7 +105,7 @@ curl -v -X POST "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cus
 > [!NOTE]
 > Сначала необходимо создать языковую модель и передать ее файлы. Передавать файлы можно либо при создании языковой модели, либо путем обновления языковой модели. 
 
-### <a name="request-url"></a>URL-адрес запроса
+### <a name="request-url"></a>Request URL (URL-адрес запроса)
 
 Это запрос PUT.
 
@@ -134,7 +134,7 @@ curl -v -X PUT "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cust
 
 Для этого вызова больше не требуется текст запроса.
 
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
 
 В ответе содержатся метаданные для только что обученной языковой модели вместе с метаданными для каждого файла модели, используя формат в примере выходных данных JSON.
 
@@ -170,7 +170,7 @@ curl -v -X PUT "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cust
 
 Следующая команда удаляет пользовательскую языковую модель из указанной учетной записи. Любое видео, в котором использовалась удаленная языковая модель, будет хранить тот же индекс, пока вы не выполните повторную индексацию. При повторной индексации вы можете назначить новую языковую модель для видео. В противном случае для повторной индексации видео Индексатор видео будет использовать модель по умолчанию.
 
-### <a name="request-url"></a>URL-адрес запроса
+### <a name="request-url"></a>Request URL (URL-адрес запроса)
 
 Это запрос DELETE.
 
@@ -199,7 +199,7 @@ curl -v -X DELETE "https://api.videoindexer.ai/{location}/Accounts/{accountId}/C
 
 Для этого вызова больше не требуется текст запроса.
 
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
 
 При успешном удалении языковой модели содержимое не возвращается.
 
@@ -210,7 +210,7 @@ curl -v -X DELETE "https://api.videoindexer.ai/{location}/Accounts/{accountId}/C
 > [!NOTE]
 > Должна быть создана языковая модель. Этот вызов можно использовать, чтобы включить или отключить все файлы в модели, обновить имя языковой модели и передать файлы для добавления в языковую модель.
 
-### <a name="request-url"></a>URL-адрес запроса
+### <a name="request-url"></a>Request URL (URL-адрес запроса)
 
 Это запрос PUT.
 
@@ -237,7 +237,7 @@ curl -v -X PUT "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cust
 |modelId|string|Да|Идентификатор языковой модели (создается при создании языковой модели)|
 |accessToken|string|Да|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
 |modelName|string|Нет|Новое имя, которое можно предоставить к модели|
-|включить|Логическое|Нет|Выберите, все ли файлы этой модели включены (true) или отключены (false)|
+|enable|Логическое|Нет|Выберите, все ли файлы этой модели включены (true) или отключены (false)|
 
 ### <a name="request-body"></a>Текст запроса
 
@@ -246,7 +246,7 @@ curl -v -X PUT "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cust
 1. Ключом будет имя файла, а значением будет TXT-файл.
 2. Ключом будет имя файла, а значением будет URL-адрес текстового файла.
 
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
 
 В ответе содержатся метаданные для только что обученной языковой модели вместе с метаданными для каждого файла модели, используя формат в примере выходных данных JSON.
 
@@ -281,7 +281,7 @@ curl -v -X PUT "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cust
 
 Следующая команда позволяет обновить имя и состояние **включения** файла пользовательской языковой модели в указанной учетной записи.
 
-### <a name="request-url"></a>URL-адрес запроса
+### <a name="request-url"></a>Request URL (URL-адрес запроса)
 
 Это запрос PUT.
 
@@ -307,13 +307,13 @@ curl -v -X PUT "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cust
 |fileId|string|Да|Идентификатор файла, который обновляется (созданный при передачи файла во время создания или обновления языковой модели)|
 |accessToken|string|Да|Маркер доступа (должен быть в области [маркера доступа к учетной записи](https://api-portal.videoindexer.ai/docs/services/authorization/operations/Get-Account-Access-Token?)) для проверки подлинности вызова. Срок действия маркеров доступа истекает в течение 1 часа.|
 |fileName|string|Нет|Имя обновляемого файла|
-|включить|Логическое|Нет|Обновление, является ли этот файл включен (true) или отключен (false) в языковой модели|
+|enable|Логическое|Нет|Обновление, является ли этот файл включен (true) или отключен (false) в языковой модели|
 
 ### <a name="request-body"></a>Текст запроса
 
 Для этого вызова больше не требуется текст запроса.
 
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
 
 В ответе содержатся метаданные файла, который был обновлен в соответствии с форматом выходных данных JSON, приведенных в примере ниже.
 
@@ -332,7 +332,7 @@ curl -v -X PUT "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cust
 
 Следующая команда возвращает сведения об указанной языковой модели в указанной учетной записи, например язык и файлы, которые находятся в языковой модели. 
 
-### <a name="request-url"></a>URL-адрес запроса
+### <a name="request-url"></a>Request URL (URL-адрес запроса)
 
 Это запрос GET.
 ```
@@ -360,7 +360,7 @@ curl -v -X GET "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cust
 
 Для этого вызова больше не требуется текст запроса.
 
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
 
 В ответе содержатся метаданные для указанной языковой модели вместе с метаданными для каждого файла модели, используя формат выходных данных JSON, приведенных в примере ниже.
 
@@ -396,7 +396,7 @@ curl -v -X GET "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cust
 
 Следующая команда возвращает все пользовательские языковые модели в указанной учетной записи в списке.
 
-### <a name="request-url"></a>URL-адрес запроса
+### <a name="request-url"></a>Request URL (URL-адрес запроса)
 
 Это запрос GET.
 
@@ -424,7 +424,7 @@ curl -v -X GET "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cust
 
 Для этого вызова больше не требуется текст запроса.
 
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
 
 В ответе содержатся метаданные для конкретной языковой модели вместе с метаданными для каждого файла модели, используя формат выходных данных JSON, приведенных в примере ниже.
 
@@ -468,7 +468,7 @@ curl -v -X GET "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cust
 
 Следующая команда удаляет указанный файл из указанной языковой модели в указанной учетной записи. 
 
-### <a name="request-url"></a>URL-адрес запроса
+### <a name="request-url"></a>Request URL (URL-адрес запроса)
 
 Это запрос DELETE.
 ```
@@ -497,7 +497,7 @@ curl -v -X DELETE "https://api.videoindexer.ai/{location}/Accounts/{accountId}/C
 
 Для этого вызова больше не требуется текст запроса.
 
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
 
 При успешном удалении файла из языковой модели содержимое не возвращается.
 
@@ -505,7 +505,7 @@ curl -v -X DELETE "https://api.videoindexer.ai/{location}/Accounts/{accountId}/C
 
 Это возвращает содержимое и метаданные указанного файла из выбранной языковой модели в вашей учетной записи.
 
-### <a name="request-url"></a>URL-адрес запроса
+### <a name="request-url"></a>Request URL (URL-адрес запроса)
 
 Это запрос GET.
 
@@ -534,7 +534,7 @@ curl -v -X GET "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cust
 
 Для этого вызова больше не требуется текст запроса.
 
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
 
 Ответ предоставляет содержимое и метаданные файла в формате JSON следующего вида.
 
@@ -556,7 +556,7 @@ curl -v -X GET "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cust
 
 Следующая команда загружает текстовый файл, содержащий содержимое указанного файла, из указанной языковой модели в указанной учетной записи. Этот текстовый файл должен соответствовать содержимому текстового файла, который был изначально передан.
 
-### <a name="request-url"></a>URL-адрес запроса
+### <a name="request-url"></a>Request URL (URL-адрес запроса)
 ```
 https://api.videoindexer.ai/{location}/Accounts/{accountId}/Customization/Language/{modelId}/Files/{fileId}/download?accessToken={accessToken}
 ```
@@ -583,7 +583,7 @@ curl -v -X GET "https://api.videoindexer.ai/{location}/Accounts/{accountId}/Cust
 
 Для этого вызова больше не требуется текст запроса.
 
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
 
 Ответом будет загрузка текстового файла с содержимым файла в формате JSON. 
 

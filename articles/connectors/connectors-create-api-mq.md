@@ -11,10 +11,10 @@ ms.reviewer: klam, LADocs
 ms.suite: integration
 tags: connectors
 ms.openlocfilehash: 9e6ae5cb0afd75a1e87fe4d4d0cf307abab5a02a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60688833"
 ---
 # <a name="connect-to-an-ibm-mq-server-from-logic-apps-using-the-mq-connector"></a>Подключение к серверу IBM MQ из приложения логики с помощью соединителя MQ
@@ -107,7 +107,7 @@ ms.locfileid: "60688833"
 Если при выполнении действия просмотра или получения в очереди не будет сообщений, то действие завершится сбоем и отобразятся следующие выходные данные:  
 ![Ошибка MQ при отсутствии сообщений](media/connectors-create-api-mq/MQ_No_Msg_Error.png)
 
-## <a name="send-a-message"></a>Написать нам
+## <a name="send-a-message"></a>Отправка сообщения
 1. При добавлении действия **Отправить сообщение** по умолчанию выбирается подключение, которое было настроено первым. Щелкните **Изменить подключение**, чтобы создать подключение или выбрать другое существующее подключение. Допустимые **типы сообщений**: **датаграмма**, **ответ** и **запрос**.  
 ![Свойства отправки сообщения](media/connectors-create-api-mq/Send_Msg_Props.png)
 

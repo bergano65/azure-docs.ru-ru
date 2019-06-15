@@ -15,10 +15,10 @@ ms.workload: TBD
 ms.date: 06/02/2017
 ms.author: alkohli
 ms.openlocfilehash: 33becd46747f957cce67fb7b2ace170a9aa402ff
-ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65606935"
 ---
 # <a name="technical-specifications-and-compliance-for-the-storsimple-device"></a>Технические характеристики и информация о соответствии нормативным требованиям для устройства StorSimple
@@ -72,7 +72,7 @@ ms.locfileid: "65606935"
 | Модель устройства/емкость | 8100 | 8600 |
 | --- | --- | --- |
 | Количество жестких дисков (HDD) |8 |19 |
-| Количество твердотельных накопителей (SSD) |4. |5 |
+| Количество твердотельных накопителей (SSD) |4\. |5 |
 | Емкость одного жесткого диска (HDD) |4 TБ |4 TБ |
 | Емкость одного твердотельного накопителя (SSD) |400 ГБ |800 ГБ |
 | Свободное место |4 TБ |4 TБ |

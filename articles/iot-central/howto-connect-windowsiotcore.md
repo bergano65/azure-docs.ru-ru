@@ -9,10 +9,10 @@ ms.service: iot-central
 services: iot-central
 manager: peterpr
 ms.openlocfilehash: e8d4ab46c598580a3a87f4344202f2700926bf5c
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65510328"
 ---
 # <a name="connect-a-windows-iot-core-device-to-your-azure-iot-central-application"></a>Подключение устройства Windows IoT Core к приложению Azure IoT Central
@@ -74,7 +74,7 @@ ms.locfileid: "65510328"
 [Windows Device Portal](https://docs.microsoft.com/windows/iot-core/manage-your-device/deviceportal) включает средства, которые можно использовать для устранения неполадок устройства:
 
 - **Apps manager** страница предназначена для управления приложениями, установленной на устройстве.
-- Если у вас нет монитор, подключенный к устройству, можно использовать **параметры устройства** страницы, чтобы сделать снимки экрана с устройства. Например:
+- Если у вас нет монитор, подключенный к устройству, можно использовать **параметры устройства** страницы, чтобы сделать снимки экрана с устройства. Пример:
 
     ![Снимок экрана приложения](media/howto-connect-windowsiotcore/iot-hub-foreground-client.png)
 
@@ -88,7 +88,7 @@ ms.locfileid: "65510328"
 
 ### <a name="telemetry-measurements"></a>Измерения телеметрии
 
-| Имя поля     | Единицы  | Минимум | Максимум | Число десятичных знаков |
+| Имя поля     | Units  | Минимальная | Максимальная | Число десятичных знаков |
 | -------------- | ------ | ------- | ------- | -------------- |
 | Влажность       | %      | 0       | 100     | 0              |
 | temp           | °C     | –40     | 120     | 0              |
@@ -98,7 +98,7 @@ ms.locfileid: "65510328"
 
 Числовые параметры
 
-| `Display name` | Имя поля | Единицы | Число десятичных знаков | Минимум | Максимум | Initial |
+| `Display name` | Имя поля | Units | Число десятичных знаков | Минимальная | Максимальная | Initial |
 | ------------ | ---------- | ----- | -------------- | ------- | ------- | ------- |
 | Скорость вращения вентилятора    | fanSpeed   | Об/мин   | 0              | 0       | 1000    | 0       |
 

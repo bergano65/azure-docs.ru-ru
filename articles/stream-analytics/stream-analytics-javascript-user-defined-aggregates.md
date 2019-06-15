@@ -10,10 +10,10 @@ ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 10/28/2017
 ms.openlocfilehash: 6663e3fc48408de83e92f39e8c8070005818852d
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61479564"
 ---
 # <a name="azure-stream-analytics-javascript-user-defined-aggregates-preview"></a>Пользовательские статистические выражения JavaScript в Azure Stream Analytics (предварительная версия)
@@ -175,7 +175,7 @@ function main() {
 
 ## <a name="calling-javascript-uda-in-asa-query"></a>Вызов пользовательского статистического выражения JavaScript в запросе ASA
 
-На портале Azure откройте задание, измените запрос и вызовите функцию TWA() с обязательным префиксом "uda". Пример.
+На портале Azure откройте задание, измените запрос и вызовите функцию TWA() с обязательным префиксом "uda". Пример:
 
 ```SQL
 WITH value AS

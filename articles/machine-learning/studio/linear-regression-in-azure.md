@@ -11,10 +11,10 @@ ms.author: amlstudiodocs
 ms.custom: previous-author=heatherbshapiro, previous-ms.author=hshapiro
 ms.date: 03/20/2017
 ms.openlocfilehash: f6b2f4ef9a4f3f1615081a422a16ea9f2e156571
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60861120"
 ---
 # <a name="migrate-analytics-from-excel-to-azure-machine-learning-studio"></a>Перенос аналитики из Excel в Студию машинного обучения Azure
@@ -76,7 +76,7 @@ ms.locfileid: "60861120"
 | Параметры ученика |Н/Д |Значения по умолчанию |Метод наименьших квадратов<br />L2 = 0,005 |
 | Набор данных |26 строк, 3 признака, 1 метка. Все значения числовые. |—||— |—||— |
 | Разделение: Обучение |Обучение Excel выполнено по первым 18 строкам, тестирование — по последним 8 строкам. |—||— |—||— |
-| Разделение: Тестирование |Формула регрессии Excel применяется к последним 8 строкам. |—||— |—||— |
+| Разделение: Тест |Формула регрессии Excel применяется к последним 8 строкам. |—||— |—||— |
 | **Производительность** | | | |
 | Скорректированный коэффициент детерминации R-квадрат |0,96 |Н/Д | |
 | Коэффициент детерминации |Н/Д |0,78 |0,952049 |

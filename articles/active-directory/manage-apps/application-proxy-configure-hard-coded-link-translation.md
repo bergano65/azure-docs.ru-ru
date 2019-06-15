@@ -17,10 +17,10 @@ ms.reviewer: harshja
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b0899a127566c4d06de7d42443a956c2660a7a6d
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65956902"
 ---
 # <a name="redirect-hardcoded-links-for-apps-published-with-azure-ad-application-proxy"></a>Перенаправление встроенных ссылок для приложений, опубликованных с помощью прокси приложения Azure AD
@@ -47,7 +47,7 @@ ms.locfileid: "65956902"
 > А если преобразование ссылок необходимо настроить в приложении SharePoint, то см. статью [Настройка альтернативных сопоставлений доступа для SharePoint 2013](https://technet.microsoft.com/library/cc263208.aspx), где описан другой подход к сопоставлению ссылок. 
 
  
-### <a name="option-1-intune-managed-browser-integration"></a>Вариант 1: Интеграция с Intune Managed Browser 
+### <a name="option-1-intune-managed-browser-integration"></a>Вариант 1. Интеграция с Intune Managed Browser 
 
 Intune Managed Browser можно использовать для обеспечения дополнительной защиты приложения и содержимого. Для работы с таким решением необходимо рекомендовать пользователям или требовать от них, чтобы доступ к приложению осуществлялся через Intune Managed Browser. Все внутренние URL-адреса, опубликованные с помощью Application Proxy, будут распознаваться Managed Browser и перенаправляться на соответствующий внешний URL-адрес. Это гарантирует работоспособность всех жестко заданных внутренних URL-адресов. Кроме того, если пользователь введет внутренний URL-адрес в браузере, этот адрес будет работать всегда, независимо от местонахождения пользователя.  
 
@@ -84,7 +84,7 @@ Intune Managed Browser можно использовать для обеспеч
 - **Встроенные внутренние ссылки** на другие локальные приложения, такие как `http://expenses`, или опубликованные файлы, например `http://expenses/logo.jpg`. Функция преобразования ссылок работает со встроенными внутренними ссылками и изменяет их для указания на внешние URL-адреса, по которым могут пройти удаленные пользователи.
 
 Полный список тегов кода HTML, что прокси приложения поддерживает преобразование ссылок для метода include:
-* а
+* a
 * audio
 * Base
 * кнопка
@@ -96,15 +96,15 @@ Intune Managed Browser можно использовать для обеспеч
 * html
 * IFRAME
 * Рисунок
-* ввод
-* Ссылка
+* input
+* link
 * MenuItem
 * Meta
 * object
 * script
 * source
 * Отслеживание
-* видео
+* video
 
 Кроме того в CSS атрибут URL-адрес также преобразуется.
 

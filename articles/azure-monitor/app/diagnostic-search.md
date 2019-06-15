@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 09/20/2018
 ms.author: mbullwin
 ms.openlocfilehash: dfbaabd3d27804909334a7a370bcc89115e625c4
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60900268"
 ---
 # <a name="using-search-in-application-insights"></a>Поиск в Application Insights
@@ -114,7 +114,7 @@ ms.locfileid: "60900268"
 
 | string | *не* найдена по словам | но найдена по словам |
 | --- | --- | --- |
-| HomeController.About |home<br/>controller<br/>out | homecontroller<br/>сведения<br/>"homecontroller.about"|
+| HomeController.About |home<br/>controller<br/>out | homecontroller<br/>about<br/>"homecontroller.about"|
 |США|Сое<br/>диненные|соединенные<br/>штаты<br/>соединенные AND штаты<br/>"соединенные штаты"
 
 Вот доступные поисковые выражения:
@@ -131,7 +131,7 @@ ms.locfileid: "60900268"
 
 [Дополнительная информация о выборке](../../azure-monitor/app/sampling.md).
 
-## <a name="create-work-item"></a>Создать рабочий элемент
+## <a name="create-work-item"></a>Создание рабочего элемента
 В GitHub или Azure DevOps можно создать ошибку и указать в ней сведения из любого элемента телеметрии. 
 
 ![Щелкните "Создать рабочий элемент", отредактируйте поля и нажмите кнопку "ОК".](./media/diagnostic-search/42.png)

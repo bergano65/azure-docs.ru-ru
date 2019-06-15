@@ -17,10 +17,10 @@ ms.date: 12/12/2017
 ms.author: markvi
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 1a6797c7bd0c6bd8ce8d3f51b42cb4c2b1338fd6
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
-ms.translationtype: MT
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65950480"
 ---
 # <a name="faqs-and-known-issues-with-managed-identities-for-azure-resources"></a>Часто задаваемые вопросы об управляемых удостоверениях для ресурсов Azure, а также известные проблемы в их работе
@@ -84,8 +84,8 @@ ms.locfileid: "65950480"
 
 ### <a name="what-azure-rbac-permissions-are-required-to-managed-identity-on-a-resource"></a>Azure RBAC разрешениях, необходимых для управляемого удостоверения ресурса? 
 
-- Назначенный системой управляемого удостоверения: Вам требуются разрешения на запись ресурса. Например: Microsoft.Compute/virtualMachines/write или это действие входит в ресурсе, определенные встроенные роли, такие как [участник виртуальных машин](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#virtual-machine-contributor).
-- Назначаемое пользователем управляемое удостоверение: Вам требуются разрешения на запись ресурса. Например: Microsoft.Compute/virtualMachines/write. В дополнение к [оператор управляемого удостоверения](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#managed-identity-operator) назначение роли за управляемым удостоверением. 
+- Назначенный системой управляемого удостоверения: Вам требуются разрешения на запись ресурса. Пример: Microsoft.Compute/virtualMachines/write или это действие входит в ресурсе, определенные встроенные роли, такие как [участник виртуальных машин](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#virtual-machine-contributor).
+- Назначаемое пользователем управляемое удостоверение: Вам требуются разрешения на запись ресурса. Пример: Microsoft.Compute/virtualMachines/write. В дополнение к [оператор управляемого удостоверения](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#managed-identity-operator) назначение роли за управляемым удостоверением. 
 
 ### <a name="how-do-you-restart-the-managed-identities-for-azure-resources-extension"></a>Как перезапустить расширение управляемых удостоверений для ресурсов Azure?
 При завершении работы расширения в Windows и некоторых версиях Linux вы можете перезапустить его вручную с помощью следующего командлета:

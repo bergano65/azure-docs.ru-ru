@@ -19,10 +19,10 @@ ms.custom: aaddev
 ms.reviewer: hirsin
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 593f07b27fec16c3df90a073479effb130bc5721
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65545285"
 ---
 # <a name="single-sign-on-saml-protocol"></a>Протокол единого входа SAML
@@ -103,7 +103,7 @@ Azure AD игнорирует атрибут `AllowCreate` .
 ### <a name="subject"></a>Subject
 Azure AD игнорирует элемент `Subject` элементов `AuthnRequest`.
 
-## <a name="response"></a>Отклик
+## <a name="response"></a>Ответ
 После успешного выполнения запрошенного входа Azure AD отправляет ответ в облачную службу. Ответ на успешную попытку входа может выглядеть следующим образом:
 
 ```
@@ -149,7 +149,7 @@ Azure AD игнорирует элемент `Subject` элементов `Authn
 </samlp:Response>
 ```
 
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
 
 Элемент `Response` включает результат запроса на авторизацию. Azure AD устанавливает значения `ID`, `Version` и `IssueInstant` для элемента `Response`. Он также задает следующие атрибуты:
 

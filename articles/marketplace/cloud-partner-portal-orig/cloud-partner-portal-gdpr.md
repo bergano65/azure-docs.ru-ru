@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 09/13/2018
 ms.author: pabutler
 ms.openlocfilehash: 221f559dde2017c9b5d13dd4e06a140a6bcb5e2e
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64935423"
 ---
 <a name="cloud-partner-portal-gdpr-compliance"></a>Соответствия GDPR и портала Cloud Partner
@@ -26,7 +26,7 @@ ms.locfileid: "64935423"
 
 Портал Cloud Partner предоставляет доступ ко всем данным на вкладке "Пользователи". Здесь можно определить персональные данные. Как добавлять или удалять пользователей, см. в [документациях](./cloud-partner-portal-manage-users.md).
 
-<a name="manage"></a>управление
+<a name="manage"></a>Управление
 ------
 
 Вы можете управлять вашим персональными данными, нажав клавишу "Удалить" в учетной записи пользователя на вкладке "Пользователи". Доступны роли **Владелец** и **Участник**, которые можно назначить каждому пользователю, и их можно назначить, скопировать, обновить или удалить.

@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 04/09/2019
 ms.author: iainfou
 ms.openlocfilehash: 8d4ed8f791858747814972bcf16a9672a7f12610
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65901456"
 ---
 # <a name="quotas-virtual-machine-size-restrictions-and-region-availability-in-azure-kubernetes-service-aks"></a>Квоты, ограничения на размер виртуальной машины и доступность по регионам в службе Azure Kubernetes (AKS)
@@ -45,7 +45,7 @@ ms.locfileid: "65901456"
 
 Дополнительные сведения о типах и их вычислительные ресурсы, см. в разделе [размеры виртуальных машин в Azure][vm-skus].
 
-## <a name="region-availability"></a>Доступность в регионах
+## <a name="region-availability"></a>Доступность по регионам
 
 Обновленный список where можно развернуть и запускайте кластеры, см. в разделе [доступности области AKS][region-availability].
 

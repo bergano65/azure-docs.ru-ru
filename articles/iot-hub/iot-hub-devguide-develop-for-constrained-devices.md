@@ -1,25 +1,17 @@
 ---
 title: Разработка Центра Интернета вещей Azure для ограниченных устройств с использованием пакета SDK Azure IoT для C | Документация Майкрософт
 description: Руководство разработчика. Сведения о разработке приложений для устройств с ограниченным ресурсами с помощью пакетов SDK для Azure IoT.
-services: iot-hub
-documentationcenter: c
 author: yzhong94
-manager: timlt
-editor: ''
-ms.assetid: 979136db-c92d-4288-870c-f305e8777bdd
 ms.service: iot-hub
-ms.devlang: multiple
-ms.topic: article
-ms.tgt_pltfrm: na
-ms.workload: na
-origin.date: 05/24/2018
-ms.date: 04/29/2019
-ms.author: v-yiso
+services: iot-hub
+ms.topic: conceptual
+ms.date: 05/24/2018
+ms.author: yizhon
 ms.openlocfilehash: 7788bca621a59ec8cdfe36edf73a99efca8c460c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61320956"
 ---
 # <a name="develop-for-constrained-devices-using-azure-iot-c-sdk"></a>Разработка устройств с ограниченными ресурсами с помощью пакета SDK Azure IoT для C
@@ -52,6 +44,7 @@ cmake -Duse_amqp=OFF -Duse_http=OFF <Path_to_cmake>
 ### <a name="remove-sdk-logging-capability"></a>Удаление возможности ведения журналов пакета SDK
 
 Пакет SDK для C предоставляет журнал с подробными сведениями, что помогает в процессе отладки. Вы можете удалить возможность ведения журналов рабочих устройств с помощью следующей команды CMake:
+
 ```
 cmake -Dno_logging=OFF <Path_to_cmake>
 ```
@@ -87,15 +80,7 @@ strip -s <Path_to_executable>
 Другой набор API-интерфейсов без индекса _LL_ называется удобным слоем, на котором автоматически запускается рабочий поток. Например, API-интерфейсы удобного слоя для клиента устройства можно найти в этом [файле заголовка клиентского пакета для устройств Интернета вещей](https://github.com/Azure/azure-iot-sdk-c/blob/master/iothub_client/inc/iothub_device_client.h). Для устройств с ограниченными ресурсами, на которых поток может потреблять значительный объем системных ресурсов, советуем использовать API-интерфейсы с индексом _LL_.
 
 ## <a name="next-steps"></a>Дальнейшие действия
-Дополнительные сведения об архитектуре пакетов SDK для Azure IoT для C см. в следующих источниках:
-- [Исходный код пакета SDK для Интернета вещей Azure для C](https://github.com/Azure/azure-iot-sdk-c/)
-- [Пакет SDK для устройств Azure IoT для C](iot-hub-device-sdk-c-intro.md)
 
-------
-[lnk-cmake]: https://cmake.org/
-[lnk-devbox-setup]:  https://github.com/Azure/azure-iot-sdk-c/blob/master/doc/devbox_setup.md
-[lnk-choosing-protocol]: iot-hub-devguide-protocols.md
-[lnk-hub-file-upload]: iot-hub-devguide-file-upload.md
-[lnk-strip]: https://en.wikipedia.org/wiki/Strip_(Unix)
-[lnk-serializer]: https://github.com/Azure/azure-iot-sdk-c/tree/master/serializer
-[lnk-parson]: https://github.com/kgabis/parson
+Дополнительные сведения об архитектуре пакетов SDK для Azure IoT для C см. в следующих источниках:
+-   [Исходный код пакета SDK для Интернета вещей Azure для C](https://github.com/Azure/azure-iot-sdk-c/)
+-   [Пакет SDK для устройств Azure IoT для C](iot-hub-device-sdk-c-intro.md)

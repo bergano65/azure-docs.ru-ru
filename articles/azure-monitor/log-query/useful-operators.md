@@ -14,10 +14,10 @@ ms.topic: conceptual
 ms.date: 08/21/2018
 ms.author: bwren
 ms.openlocfilehash: d11445c3f31f9aced6fdb9783575d10a026de1f0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61424144"
 ---
 # <a name="useful-operators-in-azure-monitor-log-queries"></a>Полезные операторы в запросах журнала Azure Monitor
@@ -26,7 +26,7 @@ ms.locfileid: "61424144"
 
 ## <a name="useful-operators"></a>Полезные операторы
 
-Category                                |Соответствующая аналитическая функция
+Категория                                |Соответствующая аналитическая функция
 ----------------------------------------|----------------------------------------
 Псевдонимы выделений и столбцов            |`project`, `project-away`, `extend`
 Временные таблицы и константы          |`let scalar_alias_name = …;` <br> `let table_alias_name =  …  …  … ;`| 

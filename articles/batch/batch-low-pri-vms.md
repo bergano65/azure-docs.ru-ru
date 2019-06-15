@@ -13,10 +13,10 @@ ms.date: 03/19/2018
 ms.author: markscu
 ms.custom: seodec18
 ms.openlocfilehash: 17668470be3e997c215aacc4cc2c32c80de2dd81
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60776140"
 ---
 # <a name="use-low-priority-vms-with-batch"></a>Использование низкоприоритетных виртуальных машин в пакетной службе
@@ -138,11 +138,11 @@ pool.Resize(targetDedicatedComputeNodes: 0, targetLowPriorityComputeNodes: 25);
 
 Формула автомасштабирования пула реализует поддержку низкоприоритетных виртуальных машин следующим образом:
 
--   Вы можете получить или задать значение переменной, определяемой службой (**$TargetLowPriorityNodes**).
+-   Вы можете получить или задать значение переменной, определяемой службой ( **$TargetLowPriorityNodes**).
 
--   Вы можете получить значение переменной, определяемой службой (**$CurrentLowPriorityNodes**).
+-   Вы можете получить значение переменной, определяемой службой ( **$CurrentLowPriorityNodes**).
 
--   Вы можете получить значение переменной, определяемой службой (**$PreemptedNodeCount**). 
+-   Вы можете получить значение переменной, определяемой службой ( **$PreemptedNodeCount**). 
     Эта переменная возвращает количество узлов в состоянии "Отложено" и позволяет масштабировать число выделенных узлов в зависимости от числа недоступных замещенных узлов.
 
 ## <a name="jobs-and-tasks"></a>Задания и задачи

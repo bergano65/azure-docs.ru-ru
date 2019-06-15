@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 10/30/2016
 ms.author: crdun
 ms.openlocfilehash: 23b5967782cf237ed5af2b802aabbbf9c2f781e7
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62114216"
 ---
 # <a name="add-authentication-to-your-apache-cordova-app"></a>Добавление проверки подлинности в приложение Apache Cordova
@@ -52,7 +52,7 @@ ms.locfileid: "62114216"
    | Azure Active Directory | aad | https://login.microsoftonline.com |
    | Facebook | Facebook | https://www.facebook.com |
    | Google | Google | https://accounts.google.com |
-   | Microsoft | microsoftaccount | https://login.live.com |
+   | Майкрософт | microsoftaccount | https://login.live.com |
    | Twitter | Twitter | https://api.twitter.com |
 
     Пример политики безопасности содержимого (для Azure Active Directory):

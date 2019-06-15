@@ -13,10 +13,10 @@ ms.reviewer: vanto
 manager: craigg
 ms.date: 04/16/2019
 ms.openlocfilehash: 3efdf5c256a22529c9d19e9ae1dce5d2db9516a5
-ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65827775"
 ---
 # <a name="get-started-with-sql-database-auditing"></a>Приступая к работе с аудитом базы данных SQL
@@ -231,7 +231,7 @@ ms.locfileid: "65827775"
 
 ## <a id="subheading-7"></a>Управление аудитом базы данных SQL с помощью Azure PowerShell
 
-**Командлеты PowerShell (включая поддержку предложения WHERE для дополнительной фильтрации)**.
+**Командлеты PowerShell (включая поддержку предложения WHERE для дополнительной фильтрации)** .
 
 - [Создание или обновление политики (Set-AzSqlDatabaseAuditing) аудита базы данных](https://docs.microsoft.com/powershell/module/az.sql/set-azsqldatabaseauditing)
 - [Создание или обновление политики аудита сервера (Set-AzSqlServerAuditing)](https://docs.microsoft.com/powershell/module/az.sql/set-azsqlserverauditing)

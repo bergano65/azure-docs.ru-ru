@@ -14,10 +14,10 @@ ms.date: 08/15/2018
 ms.author: sumeet.mittal
 ms.custom: ''
 ms.openlocfilehash: 73621c3bbab7f0c49feacab29e1e5de1792b80e4
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: MT
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.translationtype: HT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61032583"
 ---
 # <a name="virtual-network-service-endpoints"></a>Конечные точки служб для виртуальной сети
@@ -28,21 +28,21 @@ ms.locfileid: "61032583"
 
 **Общедоступная версия**
 
-- **[Служба хранилища Azure](../storage/common/storage-network-security.md?toc=%2fazure%2fvirtual-network%2ftoc.json#grant-access-from-a-virtual-network)**: общедоступная версия во всех регионах Azure.
-- **[База данных SQL Azure](../sql-database/sql-database-vnet-service-endpoint-rule-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json)**: общедоступная версия во всех регионах Azure.
-- **[Хранилище данных SQL Azure](../sql-database/sql-database-vnet-service-endpoint-rule-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json)**: общедоступная версия во всех регионах Azure.
-- **[Сервер Базы данных Azure для PostgreSQL](../postgresql/howto-manage-vnet-using-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json)**: общедоступная версия в регионах Azure, в которых доступна служба базы данных.
-- **[Сервер Базы данных Azure для MySQL](../mysql/howto-manage-vnet-using-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json)**: общедоступная версия в регионах Azure, в которых доступна служба базы данных.
-- **[Базы данных Azure для MariaDB](https://docs.microsoft.com/azure/mariadb/concepts-data-access-security-vnet)**. общедоступная версия в регионах Azure, в которых доступна служба базы данных.
-- **[Azure Cosmos DB](../cosmos-db/vnet-service-endpoint.md?toc=%2fazure%2fvirtual-network%2ftoc.json)**: общедоступная версия во всех регионах Azure.
-- **[Azure Key Vault](../key-vault/key-vault-overview-vnet-service-endpoints.md)**: общедоступная версия во всех регионах Azure.
-- **[Служебная шина Azure](../service-bus-messaging/service-bus-service-endpoints.md?toc=%2fazure%2fvirtual-network%2ftoc.json)**: общедоступная версия во всех регионах Azure.
-- **[Центры событий Azure](../event-hubs/event-hubs-service-endpoints.md?toc=%2fazure%2fvirtual-network%2ftoc.json)**: общедоступная версия во всех регионах Azure.
-- **[Azure Data Lake Store 1-го поколения](../data-lake-store/data-lake-store-network-security.md?toc=%2fazure%2fvirtual-network%2ftoc.json)**: общедоступная версия во всех регионах Azure, в которых доступна ADLS 1-го поколения.
+- **[Служба хранилища Azure](../storage/common/storage-network-security.md?toc=%2fazure%2fvirtual-network%2ftoc.json#grant-access-from-a-virtual-network)** : общедоступная версия во всех регионах Azure.
+- **[База данных SQL Azure](../sql-database/sql-database-vnet-service-endpoint-rule-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** : общедоступная версия во всех регионах Azure.
+- **[Хранилище данных SQL Azure](../sql-database/sql-database-vnet-service-endpoint-rule-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** : общедоступная версия во всех регионах Azure.
+- **[Сервер Базы данных Azure для PostgreSQL](../postgresql/howto-manage-vnet-using-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** : общедоступная версия в регионах Azure, в которых доступна служба базы данных.
+- **[Сервер Базы данных Azure для MySQL](../mysql/howto-manage-vnet-using-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** : общедоступная версия в регионах Azure, в которых доступна служба базы данных.
+- **[Базы данных Azure для MariaDB](https://docs.microsoft.com/azure/mariadb/concepts-data-access-security-vnet)** . общедоступная версия в регионах Azure, в которых доступна служба базы данных.
+- **[Azure Cosmos DB](../cosmos-db/vnet-service-endpoint.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** : общедоступная версия во всех регионах Azure.
+- **[Azure Key Vault](../key-vault/key-vault-overview-vnet-service-endpoints.md)** : общедоступная версия во всех регионах Azure.
+- **[Служебная шина Azure](../service-bus-messaging/service-bus-service-endpoints.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** : общедоступная версия во всех регионах Azure.
+- **[Центры событий Azure](../event-hubs/event-hubs-service-endpoints.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** : общедоступная версия во всех регионах Azure.
+- **[Azure Data Lake Store 1-го поколения](../data-lake-store/data-lake-store-network-security.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** : общедоступная версия во всех регионах Azure, в которых доступна ADLS 1-го поколения.
 
 **Общедоступная предварительная версия**
 
-- **[Реестр контейнеров Azure](../container-registry/container-registry-vnet.md)**: Предварительный просмотр доступен во всех регионах Azure, где доступны реестр контейнеров Azure.
+- **[Реестр контейнеров Azure](../container-registry/container-registry-vnet.md)** : Предварительный просмотр доступен во всех регионах Azure, где доступны реестр контейнеров Azure.
 
 Самые актуальные уведомления доступны на странице [обновлений виртуальной сети Azure](https://azure.microsoft.com/updates/?product=virtual-network).
 

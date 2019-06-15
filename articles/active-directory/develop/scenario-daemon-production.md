@@ -17,10 +17,10 @@ ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 627dab0cb23800664c5fb5b3df9c61f5071d4b87
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65545404"
 ---
 # <a name="daemon-app-that-calls-web-apis---move-to-production"></a>Управляющая программа приложение, которое вызывает веб-интерфейсы API — переносу в рабочую среду
@@ -51,15 +51,15 @@ ms.locfileid: "65545404"
 - Другие примеры и учебники:
   - [Microsoft-identity платформа консоль daemon](https://github.com/Azure-Samples/microsoft-identity-platform-console-daemon) функции простой управляющей программы консольного приложения .NET Core, отображающий пользователей клиента запрос Microsoft Graph.
 
-    ![Топология](media/scenario-daemon-app/daemon-app-sample.svg)
+    ![топология](media/scenario-daemon-app/daemon-app-sample.svg)
 
     Одного примера также иллюстрирует вариант с использованием сертификатов.
 
-    ![Топология](media/scenario-daemon-app/daemon-app-sample-with-certificate.svg)
+    ![топология](media/scenario-daemon-app/daemon-app-sample-with-certificate.svg)
 
   - [Microsoft-Identity-Platform-ASPNET-webapp-Daemon](https://github.com/Azure-Samples/microsoft-identity-platform-aspnet-webapp-daemon) функции веб-приложения ASP.NET MVC, который синхронизирует данные из Microsoft Graph с использованием удостоверения приложения, а не от имени пользователя. Пример также иллюстрирует процесс согласия администратора.
 
-    ![Топология](media/scenario-daemon-app/damon-app-sample-web.svg)
+    ![топология](media/scenario-daemon-app/damon-app-sample-web.svg)
 
 ### <a name="python"></a>Python
 

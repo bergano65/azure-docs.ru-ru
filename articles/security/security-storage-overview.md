@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 04/28/2019
 ms.author: terrylan
 ms.openlocfilehash: 74c24e05d974c4b3bb15a242185b645231f74580
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65792785"
 ---
 # <a name="azure-storage-security-overview"></a>Общие сведения о безопасности службы хранилища Azure
@@ -79,7 +79,7 @@ SAS — это URI, который в своих параметрах запро
 * [Шифрование службы хранилища Azure](https://azure.microsoft.com/services/storage/) доступно для [хранилища BLOB-объектов Azure](https://azure.microsoft.com/services/storage/blobs/). Сведения о других типах хранилищ Azure приведены в описании таких хранилищ, как [Файлы Azure](https://azure.microsoft.com/services/storage/files/), [Хранилище таблиц](https://azure.microsoft.com/services/storage/tables/) и [Хранилище очередей](https://azure.microsoft.com/services/storage/queues/).
 * [Шифрование службы хранилища Azure для неактивных данных (предварительная версия)](../storage/common/storage-service-encryption.md)
 
-## <a name="azure-disk-encryption"></a>Шифрование диска Azure
+## <a name="azure-disk-encryption"></a>Дисковое шифрование Azure
 
 Шифрование дисков Azure для виртуальных машин помогает соблюсти требования организации к безопасности и соответствию. Эта служба шифрует диски виртуальной машины (в том числе загрузочные диски и диски данных), используя ключи и политики, которыми можно управлять в [Azure Key Vault](https://azure.microsoft.com/services/key-vault/).
 
@@ -109,7 +109,7 @@ Data Box Edge и Шлюз Data Box являются продуктами для 
 * [Что представляет собой Azure Data Box Edge (ознакомительная версия)?](../databox-online/data-box-edge-overview.md)
 * [Что такое Шлюз Azure Data Box (предварительная версия)?](..//databox-online/data-box-gateway-overview.md)
 
-## <a name="advanced-threat-protection"></a>Advanced Threat Protection
+## <a name="advanced-threat-protection"></a>Расширенная защита от угроз
 
 Служба хранилища Azure предоставляет службу "Расширенная защита от угроз Azure" (для дополнительного уровня безопасности), которая обнаруживает необычные и потенциально опасные попытки доступа или использования вашей учетной записи хранения. Расширенная защита от угроз отслеживает журналы диагностики службы хранилища Azure на наличие подозрительных запросов на чтение, запись или удаление к хранилищу BLOB-объектов.
 

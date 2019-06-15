@@ -8,10 +8,10 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.openlocfilehash: 9cb0f89b4a48d7139adb35dcef48c0115b005c57
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65205611"
 ---
 # <a name="best-practices-to-use-azure-maps-search-service"></a>Советы и рекомендации для использования службы поиска Azure Maps
@@ -286,7 +286,7 @@ C++:
 curl_easy_escape(query)
 ```
 
-PHP:
+PHP.
 ```PHP
 urlencode(query)
 ```
@@ -683,7 +683,7 @@ https://atlas.microsoft.com/search/address/json?subscription-key={subscription-k
 }
 ```
 
-### <a name="geometry"></a>Геометрия
+### <a name="geometry"></a>Geometry
 
 Если тип ответа — **Geometry**, он может включать идентификатор geometry, который возвращается в **источников данных** объекта, находящегося под «геометрия» и «id». Например [службе получить многоугольника](https://docs.microsoft.com/rest/api/maps/search/getsearchpolygon) позволяет запрашивать геометрические данные в формате GeoJSON, например города или аэропорта структуры для набора сущностей. Можно использовать эти данные границ для [Geofencing](https://docs.microsoft.com/azure/azure-maps/tutorial-geofence) или [Геозоне поиска внутри геометрии](https://docs.microsoft.com/rest/api/maps/search/postsearchinsidegeometry).
 

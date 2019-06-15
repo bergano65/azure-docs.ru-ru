@@ -8,10 +8,10 @@ ms.custom: hdinsightactive
 ms.topic: conceptual
 ms.date: 06/19/2017
 ms.openlocfilehash: 78ea29b9b37c55a588a44f8d4b69486b89ee2fee
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64684827"
 ---
 # <a name="combine-scaler-and-sparkr-in-hdinsight"></a>Совместное использование ScaleR и SparkR в HDInsight
@@ -111,7 +111,7 @@ sqlContext <- sparkRSQL.init(sc)
 - "WindSpeed"
 - "Altimeter"
 
-Затем добавьте код аэропорта, связанного с метеостанцией, и преобразуйте значения местного времени в формат UTC. 
+Затем добавьте код аэропорта, связанного с метеостанцией, и преобразуйте значения местного времени в формат UTC.
 
 Начните с создания файла для сопоставления сведений о метеостанции (WBAN) с кодом аэропорта. Следующий код считывает каждый почасовой необработанный файл данных по погоде, выполняет подстановку в необходимые столбцы, объединяет файл сопоставления метеостанции, преобразует дату и время измерений в формат UTC, а затем записывает новую версию файла:
 

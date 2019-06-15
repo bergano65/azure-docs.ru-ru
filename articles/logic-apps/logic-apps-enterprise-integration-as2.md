@@ -10,10 +10,10 @@ ms.reviewer: jonfan, estfan, LADocs
 ms.topic: article
 ms.date: 04/22/2019
 ms.openlocfilehash: b494f6524e5105a95bc8a24a6fa2521abcca3f7b
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64729393"
 ---
 # <a name="exchange-as2-messages-for-b2b-enterprise-integration-in-azure-logic-apps-with-enterprise-integration-pack"></a>Обмен сообщениями AS2 для интеграции с предприятием B2B в Azure Logic Apps с помощью Пакета интеграции Enterprise
@@ -73,7 +73,7 @@ ms.locfileid: "64729393"
 
 1. В конструкторе добавьте новое действие приложения логики. 
 
-1. В разделе **выбрать действие** и поиска, выберите **все**. В поле поиска введите «кодирования as2» и выберите действие: **Кодирование в сообщение AS2**.
+1. В разделе **Выберите действие** под полем поиска выберите **Все**. В поле поиска введите «кодирования as2» и выберите действие: **Кодирование в сообщение AS2**.
 
    ![Выберите «Encode AS2 сообщение»](./media/logic-apps-enterprise-integration-as2/select-as2-encode.png)
 
@@ -83,14 +83,14 @@ ms.locfileid: "64729393"
  
 1. Теперь содержат сведения для следующих свойств:
 
-   | Свойство | ОПИСАНИЕ |
+   | Свойство | Описание |
    |----------|-------------|
    | **AS2-от** | Идентификатор отправителя сообщения, как указано в соглашении AS2 |
    | **AS2-к** | Идентификатор для получателя сообщения, как указано в соглашении AS2 |
    | **body** | Полезные данные сообщения |
    |||
 
-   Например: 
+   Пример:
 
    ![Свойства кодирования сообщений](./media/logic-apps-enterprise-integration-as2/as2-message-encoding-details.png)
 
@@ -102,7 +102,7 @@ ms.locfileid: "64729393"
 
 1. В конструкторе добавьте новое действие приложения логики. 
 
-1. В разделе **выбрать действие** и поиска, выберите **все**. В поле поиска введите «декодирования as2» и выберите действие: **Декодирование сообщения AS2**
+1. В разделе **Выберите действие** под полем поиска выберите **Все**. В поле поиска введите «декодирования as2» и выберите действие: **Декодирование сообщения AS2**
 
    ![Выберите «Decode AS2 message»](media/logic-apps-enterprise-integration-as2/select-as2-decode.png)
 

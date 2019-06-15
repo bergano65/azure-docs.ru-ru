@@ -8,10 +8,10 @@ ms.author: markscu
 ms.date: 08/02/2018
 ms.topic: conceptual
 ms.openlocfilehash: be6c0f9a8874507433606903bcbd58c7723d6a8a
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62118693"
 ---
 # <a name="azure-batch-rendering-capabilities"></a>Возможности рендеринга в пакетной службе Azure
@@ -30,10 +30,10 @@ ms.locfileid: "62118693"
 
 Пример конфигурации пула см. в [руководстве по отрисовке с использованием Azure CLI](https://docs.microsoft.com/azure/batch/tutorial-rendering-cli).  Портал Azure и Batch Explorer предоставляют средства графического пользовательского интерфейса для выбора образа виртуальной машины для рендеринга при создании пула.  В случае использования API пакетной службы при создании пула укажите следующие значения свойств для [ImageReference](https://docs.microsoft.com/rest/api/batchservice/pool/add#imagereference):
 
-| Издатель | Предложение | Sku | Version |
+| Издатель | ПРЕДЛОЖЕНИЕ | Sku | Version |
 |---------|---------|---------|--------|
-| пакетная_служба | rendering-centos73 | rendering | latest |
-| пакетная_служба | rendering-windows2016 | rendering | latest |
+| пакет (1) | rendering-centos73 | rendering | последняя |
+| пакет (1) | rendering-windows2016 | rendering | последняя |
 
 Если на виртуальных машинах пула необходимы дополнительные приложения, то доступны другие варианты:
 

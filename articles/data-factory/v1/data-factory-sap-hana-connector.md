@@ -14,14 +14,14 @@ ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: 96d16552cfadca9b345d0f0cd0a344249897f571
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61258442"
 ---
 # <a name="move-data-from-sap-hana-using-azure-data-factory"></a>Перемещение данных из SAP HANA с помощью фабрики данных Azure
-> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
+> [!div class="op_single_selector" title1="Выберите версию службы фабрики данных, которую вы используете:"]
 > * [Версия 1](data-factory-sap-hana-connector.md)
 > * [Версия 2 (текущая)](../connector-sap-hana.md)
 
@@ -60,9 +60,9 @@ ms.locfileid: "61258442"
 
 Свойство | ОПИСАНИЕ | Допустимые значения | Обязательно для заполнения
 -------- | ----------- | -------------- | --------
-сервер | Имя сервера, на котором размещен экземпляр SAP HANA. Если ваш сервер использует настроенный порт, укажите `server:port`. | string | Да
+server | Имя сервера, на котором размещен экземпляр SAP HANA. Если ваш сервер использует настроенный порт, укажите `server:port`. | string | Да
 authenticationType | Тип проверки подлинности. | string. Basic или Windows. | Да 
-имя пользователя | Имя пользователя, имеющего доступ к серверу SAP. | string | Да
+username | Имя пользователя, имеющего доступ к серверу SAP. | string | Да
 password | Пароль для пользователя | string | Да
 gatewayName | Имя шлюза, который следует использовать службе фабрики данных для подключения к локальному экземпляру SAP HANA. | string | Да
 encryptedCredential | Строка зашифрованных учетных данных. | string | Нет
@@ -299,7 +299,7 @@ ALPHANUM | String
 BLOB | Byte[]
 DATE | DateTime
 TIME | TimeSpan
-ВРЕМЕННАЯ МЕТКА | DateTime
+TIMESTAMP | DateTime
 SECONDDATE | DateTime
 
 ## <a name="known-limitations"></a>Известные ограничения

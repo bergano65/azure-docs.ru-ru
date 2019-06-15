@@ -10,10 +10,10 @@ ms.topic: troubleshooting
 ms.date: 12/03/2018
 ms.author: genli
 ms.openlocfilehash: 826a38dd80db7cd0e6e500949d2c259c3808c0a9
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64914944"
 ---
 # <a name="troubleshoot-azure-backup-failure-issues-with-the-agent-or-extension"></a>Устранение неполадок службы Azure Backup. Проблемы с агентом или расширением
@@ -30,9 +30,9 @@ ms.locfileid: "64914944"
 **Сообщение об ошибке** Агенту виртуальной машины не удается установить связь со службой Azure Backup<br>
 
 После регистрации виртуальной машины в службе Backup и добавления ее в расписание служба Backup инициирует задание, взаимодействуя с агентом виртуальной машины, чтобы создать моментальный снимок. Любое из указанных ниже условий может помешать активации создания моментального снимка, что может привести к сбою службы Backup. Выполните следующие шаги про устранению неполадок в указанном порядке, а затем повторите операцию:<br>
-**Причина 1. [Агент установлен на виртуальной машине, но не отвечает (для виртуальных машин Windows)](#the-agent-installed-in-the-vm-but-unresponsive-for-windows-vms)**    
+**Причина 1. [Агент установлен на виртуальной машине, но не отвечает (для виртуальных машин Windows)](#the-agent-installed-in-the-vm-but-unresponsive-for-windows-vms)**     
 **Причина 2. [Устарел агент, установленный на виртуальной машине (для виртуальных машин Linux)](#the-agent-installed-in-the-vm-is-out-of-date-for-linux-vms)**  
-**Причина 3. [Не удалось получить состояние моментального снимка или создать моментальный снимок](#the-snapshot-status-cannot-be-retrieved-or-a-snapshot-cannot-be-taken)**    
+**Причина 3. [Не удалось получить состояние моментального снимка или создать моментальный снимок](#the-snapshot-status-cannot-be-retrieved-or-a-snapshot-cannot-be-taken)**     
 **Причина 4. [Не удалось обновить или загрузить расширение резервного копирования](#the-backup-extension-fails-to-update-or-load)**  
 **Причина 5. [Виртуальная машина не подключена к Интернету](#the-vm-has-no-internet-access)**
 
@@ -180,7 +180,7 @@ ms.locfileid: "64914944"
 
 Если нам потребуется подробное ведение журнала для waagent, выполните следующие действия.
 
-1. В файле /etc/waagent.conf найдите следующую строку: **Enable verbose logging (y|n)**.
+1. В файле /etc/waagent.conf найдите следующую строку: **Enable verbose logging (y|n)** .
 2. Для параметра **Logs.Verbose** измените значение с *n* на *y*.
 3. Сохраните изменения и перезапустите waagent, выполнив шаги, описанные выше в этом разделе.
 

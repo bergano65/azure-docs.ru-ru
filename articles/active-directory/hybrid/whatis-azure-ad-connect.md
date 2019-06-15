@@ -12,10 +12,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 48b81d508711f35a75efe1c93fe0a5556c5bb960
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65784464"
 ---
 # <a name="what-is-azure-ad-connect"></a>Что такое Azure AD Connect?
@@ -64,7 +64,7 @@ Azure AD Connect Health для AD FS поддерживает AD FS 2.0 в Windo
 |Удобство работы для пользователей|Панель мониторинга на портале Azure.</br>[Оповещения по электронной почте](how-to-connect-health-adfs.md#alerts-for-ad-fs).|
 
 
-## <a name="license-requirements-for-using-azure-ad-connect"></a>Требования к лицензиям для использования Azure AD Connect
+## <a name="license-requirements-for-using-azure-ad-connect"></a>Лицензионные требования для Azure AD Connect
 
 [!INCLUDE [active-directory-free-license.md](../../../includes/active-directory-free-license.md)]
 

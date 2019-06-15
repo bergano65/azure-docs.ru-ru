@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 05/15/2019
 ms.author: spelluru
 ms.openlocfilehash: b4bfdd3e9cdf99314dc55907ba163adc6cd39423
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65952885"
 ---
 # <a name="event-grid-message-delivery-and-retry"></a>Доставка и повторные попытки доставки сообщений сетки событий
@@ -74,7 +74,7 @@ ms.locfileid: "65952885"
 
 - 400 — недопустимый запрос
 - 401 — недостаточно прав
-- 404 Не найдено
+- 404 — не найдено
 - 408 — истекло время ожидания запроса
 - 413 — размер запрашиваемой сущности слишком большой
 - 414 — слишком длинный универсальный код ресурса (URI)

@@ -5,14 +5,13 @@ services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: article
-origin.date: 02/14/2019
-ms.date: 02/26/2019
-ms.author: v-junlch
+ms.date: 2/14/2019
+ms.author: victorh
 ms.openlocfilehash: abfe33ff679bef125d9bf5b78e1790a1a4c64863
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60832053"
 ---
 # <a name="create-application-gateway-custom-error-pages"></a>Создание пользовательских страниц ошибок с помощью службы "Шлюз приложений"
@@ -35,6 +34,7 @@ ms.locfileid: "60832053"
 - **Оба**. Пользовательская страница ошибки, определенная на уровне прослушивателя, переопределяет ту, которая была задана на глобальном уровне.
 
 Чтобы создать пользовательскую страницу ошибки, требуется:
+
 - код состояния ответа HTTP;
 - расположение соответствующей страницы ошибки; 
 - общедоступный большой двоичный объект хранилища Azure для расположения;
@@ -48,10 +48,10 @@ ms.locfileid: "60832053"
 
 1. Перейдите к службе "Шлюз приложений" на портале и выберите шлюз приложений.
 
-    ![Обзор шлюза приложений](./media/custom-error/ag-overview.png)
+    ![Обзор шлюза приложений](media/custom-error/ag-overview.png)
 2. Выберите **Прослушиватели** и перейдите к определенному прослушивателю, в котором нужно указать страницу ошибки.
 
-    ![Прослушиватели службы "Шлюз приложений"](./media/custom-error/ag-listener.png)
+    ![Прослушиватели службы "Шлюз приложений"](media/custom-error/ag-listener.png)
 3. Настройте пользовательскую страницу ошибки для ошибки 403 WAF или страницу обслуживания 502 на уровне прослушивателя.
 
     > [!NOTE]
@@ -59,7 +59,7 @@ ms.locfileid: "60832053"
 
 4. Укажите URL-адрес общедоступного большого двоичного объекта для кода состояния данной ошибки и щелкните **Сохранить**. В службе "Шлюз приложений" теперь настроена пользовательская страница ошибки.
 
-   ![Коды ошибок службы "Шлюз приложений"](./media/custom-error/ag-error-codes.png)
+   ![Коды ошибок службы "Шлюз приложений"](media/custom-error/ag-error-codes.png)
 
 ## <a name="azure-powershell-configuration"></a>Настройка Azure PowerShell
 
@@ -76,5 +76,3 @@ ms.locfileid: "60832053"
 ## <a name="next-steps"></a>Дальнейшие действия
 
 Сведения о диагностике службы "Шлюз приложений" см. в статье [Работоспособность серверной части, журналы диагностики и метрики для шлюза приложений](application-gateway-diagnostics.md).
-
-<!-- Update_Description: wording update -->

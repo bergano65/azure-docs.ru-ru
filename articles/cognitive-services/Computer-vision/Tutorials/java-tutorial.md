@@ -12,10 +12,10 @@ ms.author: kefre
 ms.custom: seodec18
 ms.date: 04/30/2019
 ms.openlocfilehash: a22308e0c7ff924205f715692d011a4572b2bdb8
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65232628"
 ---
 # <a name="use-computer-vision-features-with-the-rest-api-and-java"></a>Используйте возможности компьютерного зрения с REST API и Java
@@ -60,11 +60,11 @@ ms.locfileid: "65232628"
 
 Импортируйте файл **cognitive-services-java-computer-vision-tutorial-master.zip** в NetBeans.
 
-1. В среде разработки NetBeans щелкните **Файл** > **Импорт проекта** > **из ZIP...**. Откроется диалоговое окно **Импорт проектов из ZIP**.
+1. В среде разработки NetBeans щелкните **Файл** > **Импорт проекта** > **из ZIP...** . Откроется диалоговое окно **Импорт проектов из ZIP**.
 1. В поле **ZIP-файл:** нажмите кнопку **Обзор**, чтобы разместить файл **cognitive-services-java-computer-vision-tutorial-master.zip**, а затем щелкните **Открыть**.
 1. В диалоговом окне **Импорт проектов из ZIP** щелкните **Импортировать**.
-1. На панели **Проекты**, разверните **ComputerVision** > **Исходные пакеты** > **&lt;Пакет по умолчанию&gt;**. 
-   В некоторых версиях NetBeans используйте **src** вместо **Исходных пакетов** > **&lt;Пакет по умолчанию&gt;**. В этом случае разверните **src**.
+1. На панели **Проекты**, разверните **ComputerVision** > **Исходные пакеты** >  **&lt;Пакет по умолчанию&gt;** . 
+   В некоторых версиях NetBeans используйте **src** вместо **Исходных пакетов** >  **&lt;Пакет по умолчанию&gt;** . В этом случае разверните **src**.
 1. Дважды щелкните **MainFrame.java**, чтобы загрузить файл в редакторе NetBeans. Отобразится вкладка **Разработки** файла **MainFrame.java**.
 1. Щелкните вкладку **Источник**, чтобы просмотреть исходный код Java.
 

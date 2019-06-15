@@ -15,13 +15,13 @@ ms.topic: article
 ms.date: 10/01/2016
 ms.author: crdun
 ms.openlocfilehash: 6a43ed0a50082cc37587752631c707bf9b5059ab
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62097461"
 ---
-# <a name="enable-offline-sync-for-your-xamarinios-mobile-app"></a>Включение автономной синхронизации мобильного приложения Xamarin.iOS
+# <a name="enable-offline-sync-for-your-xamarinios-mobile-app"></a>Включение автономной синхронизации для мобильного приложения Xamarin.iOS
 [!INCLUDE [app-service-mobile-selector-offline](../../includes/app-service-mobile-selector-offline.md)]
 
 ## <a name="overview"></a>Обзор

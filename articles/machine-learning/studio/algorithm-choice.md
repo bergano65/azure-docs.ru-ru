@@ -11,10 +11,10 @@ ms.author: amlstudiodocs
 ms.custom: previous-ms.author=pakalra, previous-author=pakalra
 ms.date: 03/04/2019
 ms.openlocfilehash: 3bb88f2f9546ec25433061a0704bd144730bd34c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60752978"
 ---
 # <a name="how-to-choose-algorithms-for-azure-machine-learning-studio"></a>Выбор алгоритмов студии машинного обучения Azure
@@ -41,7 +41,7 @@ ms.locfileid: "60752978"
 
 ### <a name="how-to-use-the-cheat-sheet"></a>Как пользоваться памяткой
 
-Обозначения пути и алгоритма на схеме следует читать как "для *&lt;обозначения пути&gt;* используйте *&lt;алгоритм&gt;*". Например, "для *скорости* используйте *двухклассную логистическую регрессию*". Иногда может использоваться более одной ветви алгоритма.
+Обозначения пути и алгоритма на схеме следует читать как "для *&lt;обозначения пути&gt;* используйте *&lt;алгоритм&gt;* ". Например, "для *скорости* используйте *двухклассную логистическую регрессию*". Иногда может использоваться более одной ветви алгоритма.
 Иногда ни одна из ветвей алгоритма не подходит идеально. Эти рекомендации приближенные, поэтому не нужно беспокоиться о том, что они не являются точными.
 Некоторые специалисты по данным, которые мы уже упоминали ранее с помощью указанного, которые только надежный способ определить наилучший алгоритм является попробовать их все.
 
@@ -122,7 +122,7 @@ ms.locfileid: "60752978"
 | [джунгли решений](/azure/machine-learning/studio-module-reference/two-class-decision-jungle) |● |○ | |6 |Низкий объем памяти |
 | [увеличивающееся дерево решений](/azure/machine-learning/studio-module-reference/two-class-boosted-decision-tree) |● |○ | |6 |Большой объем памяти |
 | [нейронная сеть](/azure/machine-learning/studio-module-reference/two-class-neural-network) |● | | |9 |[Возможна дополнительная настройка](azure-ml-netsharp-reference-guide.md) |
-| [усредненное восприятие](/azure/machine-learning/studio-module-reference/two-class-averaged-perceptron) |○ |○ |● |4. | |
+| [усредненное восприятие](/azure/machine-learning/studio-module-reference/two-class-averaged-perceptron) |○ |○ |● |4\. | |
 | [метод опорных векторов](/azure/machine-learning/studio-module-reference/two-class-support-vector-machine) | |○ |● |5 |Подходит для больших наборов функций |
 | [локально глубокий метод опорных векторов](/azure/machine-learning/studio-module-reference/two-class-locally-deep-support-vector-machine) |○ | | |8 |Подходит для больших наборов функций |
 | [точечная машина Байеса](/azure/machine-learning/studio-module-reference/two-class-bayes-point-machine) | |○ |● |3 | |
@@ -133,7 +133,7 @@ ms.locfileid: "60752978"
 | [нейронная сеть](/azure/machine-learning/studio-module-reference/multiclass-neural-network) |● | | |9 |[Возможна дополнительная настройка](azure-ml-netsharp-reference-guide.md) |
 | [one-v-all](/azure/machine-learning/studio-module-reference/one-vs-all-multiclass) |- |- |- |- |Просмотрите свойства выбранного двухклассового метода |
 | **Регрессия** | | | | | |
-| [линейная](/azure/machine-learning/studio-module-reference/linear-regression) | |● |● |4. | |
+| [линейная](/azure/machine-learning/studio-module-reference/linear-regression) | |● |● |4\. | |
 | [Байесовская линейная](/azure/machine-learning/studio-module-reference/bayesian-linear-regression) | |○ |● |2 | |
 | [лес решений](/azure/machine-learning/studio-module-reference/decision-forest-regression) |● |○ | |6 | |
 | [увеличивающееся дерево решений](/azure/machine-learning/studio-module-reference/boosted-decision-tree-regression) |● |○ | |5 |Большой объем памяти |
@@ -144,7 +144,7 @@ ms.locfileid: "60752978"
 | **Обнаружение аномалий** | | | | | |
 | [метод опорных векторов](/azure/machine-learning/studio-module-reference/one-class-support-vector-machine) |○ |○ | |2 |Особенно полезна для больших наборов функций |
 | [Обнаружение аномалий на основе анализа первичных компонентов](/azure/machine-learning/studio-module-reference/pca-based-anomaly-detection) | |○ |● |3 | |
-| [K-средних](/azure/machine-learning/studio-module-reference/k-means-clustering) | |○ |● |4. |Алгоритм кластеризации |
+| [K-средних](/azure/machine-learning/studio-module-reference/k-means-clustering) | |○ |● |4\. |Алгоритм кластеризации |
 
 **Свойства алгоритма:**
 

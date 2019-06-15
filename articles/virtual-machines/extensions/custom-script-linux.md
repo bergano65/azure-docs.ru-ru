@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 04/25/2018
 ms.author: roiyz
-ms.openlocfilehash: 19637a1fe49550d0ed7aea7e3a596f1f77f5984b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: b9bc3ef0cf5dd54802d32058afb904800c364c19
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60869883"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64725247"
 ---
 # <a name="use-the-azure-custom-script-extension-version-2-with-linux-virtual-machines"></a>Использование расширения настраиваемых скриптов Azure версии 2 на виртуальных машинах Linux
 Расширение настраиваемых скриптов версии 2 скачивает и выполняет скрипты на виртуальных машинах Azure. Это расширение можно использовать для настройки после развертывания, установки программного обеспечения и других задач настройки или управления. Сценарии можно скачать из службы хранилища Azure или другого расположения, доступного из Интернета, или передать в среду выполнения расширения. 
@@ -50,7 +50,7 @@ ms.locfileid: "60869883"
 
 Если скрипт расположен на локальном сервере, вам по-прежнему может потребоваться открыть дополнительные порты брандмауэра или группы безопасности сети.
 
-### <a name="tips-and-tricks"></a>Советы и хитрости
+### <a name="tips-and-tricks"></a>Советы и рекомендации
 * Высокий процент сбоев этого расширения связан с синтаксическими ошибками в скрипте. Чтобы упростить поиск точки сбоя, протестируйте запуски скрипта без ошибок и включите в скрипт дополнительные возможности ведения журнала.
 * Пишите идемпотентные скрипты, чтобы их случайные повторные запуски не приводили к изменениям системы.
 * Выполняемые скрипты не должны запрашивать ввод данных пользователем.
@@ -109,12 +109,12 @@ ms.locfileid: "60869883"
 
 | ИМЯ | Значение и пример | Тип данных | 
 | ---- | ---- | ---- |
-| версия_API | 2015-06-15 | date |
+| apiVersion | 2015-06-15 | date |
 | publisher | Microsoft.Compute.Extensions | string |
-| тип | CustomScript | string |
+| type | CustomScript | string |
 | typeHandlerVersion | 2.0 | int |
 | fileUris (пример) | https://github.com/MyProject/Archive/MyPythonScript.py | массив |
-| commandToExecute (пример) | python MyPythonScript.py <my-param1> | string |
+| commandToExecute (пример) | Python MyPythonScript.py \<Мои param1 > | string |
 | script | IyEvYmluL3NoCmVjaG8gIlVwZGF0aW5nIHBhY2thZ2VzIC4uLiIKYXB0IHVwZGF0ZQphcHQgdXBncmFkZSAteQo= | string |
 | skipDos2Unix (например) | false | Логическое |
 | метка времени (например) | 123456789 | 32-битное целое число |
@@ -258,7 +258,7 @@ az vm extension set \
   --protected-settings '{"fileUris": ["https://raw.githubusercontent.com/Microsoft/dotnet-core-sample-templates/master/dotnet-core-music-linux/scripts/config-music.sh"],"commandToExecute": "./config-music.sh"}'
 ```
 
-### <a name="azure-cli-examples"></a>Примеры с использованием интерфейса командной строки Azure
+### <a name="azure-cli-examples"></a>Примеры использования интерфейса командной строки Azure
 
 #### <a name="public-configuration-with-script-file"></a>Открытая конфигурация с файлом сценария
 

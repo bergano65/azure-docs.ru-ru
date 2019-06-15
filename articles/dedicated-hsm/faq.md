@@ -14,10 +14,10 @@ ms.topic: conceptual
 ms.date: 5/8/2019
 ms.author: barclayn
 ms.openlocfilehash: b73b6bdc0158591565281ca2e86a9a474c4196d9
-ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65467725"
 ---
 # <a name="frequently-asked-questions-faq"></a>Часто задаваемые вопросы
@@ -183,7 +183,7 @@ PKCS#11, Java (JCA/JCE), Microsoft CAPI и CNG, OpenSSL
 
 Да. Вы можете отправлять журналы с устройства HSM на сервер системных журналов
 
-## <a name="high-availability"></a>Высокая надежность
+## <a name="high-availability"></a>Высокий уровень доступности
 
 ### <a name="q-is-it-possible-to-configure-high-availability-in-the-same-region-or-across-multiple-regions"></a>Вопрос. Это можно настроить высокий уровень доступности в одном регионе или в нескольких регионах?
 

@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 08/10/2018
 ms.author: mbullwin
 ms.openlocfilehash: a57393918992019844e2ff4ccc13d671f0b90ed5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60900399"
 ---
 # <a name="feed-power-bi-from-application-insights"></a>Использование данных Application Insights в Power BI
@@ -42,7 +42,7 @@ ms.locfileid: "60900399"
 ### <a name="export-an-analytics-query"></a>Экспорт запроса аналитики
 1. [Откройте средство аналитики и напишите запрос](../../azure-monitor/log-query/get-started-portal.md).
 2. Протестируйте запрос и откорректируйте его до необходимой степени. Прежде чем экспортировать запрос, убедитесь, что он выполняется в Analytics надлежащим образом.
-3. В меню **Export** (Экспорт) выберите пункт **Power BI (M)**. Сохраните текстовый файл.
+3. В меню **Export** (Экспорт) выберите пункт **Power BI (M)** . Сохраните текстовый файл.
    
     ![Снимок экрана Analytics, на котором выделено меню "Экспорт"](./media/export-power-bi/analytics-export-power-bi.png)
 4. Откройте Power BI Desktop и выберите **Получение данных** > **Пустой запрос**. Затем в редакторе запросов в разделе **Вид**выберите **Расширенный редактор**.

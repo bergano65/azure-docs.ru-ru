@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 10/30/2016
 ms.author: crdun
 ms.openlocfilehash: 44c54b570a38eb1a3b9ca773893599d1d497dfa2
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62110989"
 ---
 # <a name="enable-offline-sync-for-your-cordova-mobile-app"></a>Включение автономной синхронизации для мобильного приложения Cordova
@@ -128,7 +128,7 @@ ms.locfileid: "62110989"
           syncContext.pull(new WindowsAzure.Query('todoitem'));
         }
 
-    Изменения в серверную часть мобильного приложения можно отправить в любое время, вызвав **syncContext.push()**. Например, можно вызвать **syncBackend** в обработчике событий кнопки, привязанной к кнопке синхронизации.
+    Изменения в серверную часть мобильного приложения можно отправить в любое время, вызвав **syncContext.push()** . Например, можно вызвать **syncBackend** в обработчике событий кнопки, привязанной к кнопке синхронизации.
 
 ## <a name="offline-sync-considerations"></a>Рекомендации по автономной синхронизации
 

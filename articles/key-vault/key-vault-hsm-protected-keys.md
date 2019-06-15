@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 02/12/2019
 ms.author: barclayn
 ms.openlocfilehash: 1ae94718aa41c58f4d5e397942492ad8ed643ae3
-ms.sourcegitcommit: 9e8dfa1169a55c3c8af93a6c5f4e0dace4de48b2
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/13/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65556207"
 ---
 # <a name="how-to-generate-and-transfer-hsm-protected-keys-for-azure-key-vault"></a>Создание ключей, защищенных аппаратным модулем безопасности, и их передача в хранилище ключей Azure
@@ -162,7 +162,7 @@ KeyVault-BYOK-Tools-Australia.zip
 CD0FB7365053DEF8C35116D7C92D203C64A3D3EE2452A025223EEB166901C40A
 
 - - -
-[**Azure для государственных организаций:**](https://azure.microsoft.com/features/gov/)
+[**Azure для государственных организаций:** ](https://azure.microsoft.com/features/gov/)
 
 KeyVault-BYOK-Tools-USGovCloud.zip
 
@@ -236,7 +236,7 @@ KeyVault-BYOK-Tools-UnitedKingdom.zip
 
 Установите программное обеспечение поддержки nCipher на компьютере Windows и затем подключите nCipher nShield HSM на этом компьютере.
 
-Убедитесь, что средства nCipher находятся в пути (**%nfast_home%\bin**). Например, введите следующую команду:
+Убедитесь, что средства nCipher находятся в пути ( **%nfast_home%\bin**). Например, введите следующую команду:
 
   ```cmd
   set PATH=%PATH%;"%nfast_home%\bin"
@@ -369,7 +369,7 @@ KeyVault-BYOK-Tools-UnitedKingdom.zip
 * Замените значение *contosokey* для параметров **ident** и **plainname** любым строковым значением. Чтобы минимизировать административные затраты и снизить риск возникновения ошибок, рекомендуется использовать для обоих параметров одно и то же значение. Значение параметра **Ident** должно содержать только цифры, тире и буквы нижнего регистра.
 * В данном примере значение параметра pubexp остается пустым (по умолчанию), но можно указать и конкретные значения. Дополнительные сведения см. в разделе [nCipher документации.](https://www.ncipher.com/resources/solution-briefs/protect-sensitive-data-rest-and-use-across-premises-and-azure-based)
 
-Эта команда создает файл ключа с маркером в папке %NFAST_KMDATA%\local с именем, начинающимся с **key_simple_**, за которым следует значение параметра **ident**, указанное в команде. Пример: **key_simple_contosokey**. Этот файл содержит зашифрованный ключ.
+Эта команда создает файл ключа с маркером в папке %NFAST_KMDATA%\local с именем, начинающимся с **key_simple_** , за которым следует значение параметра **ident**, указанное в команде. Пример: **key_simple_contosokey**. Этот файл содержит зашифрованный ключ.
 
 Создайте резервную копию файла ключа с токеном в безопасном расположении.
 

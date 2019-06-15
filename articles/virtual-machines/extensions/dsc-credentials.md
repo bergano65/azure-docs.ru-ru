@@ -16,18 +16,18 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: na
 ms.date: 05/02/2018
 ms.author: robreed
-ms.openlocfilehash: 6618906f7b1b063de18a4f8a418c1c2744ca1533
-ms.sourcegitcommit: 943af92555ba640288464c11d84e01da948db5c0
-ms.translationtype: HT
+ms.openlocfilehash: 723d0cfe6e292c4b8013de4da55779a6c675d610
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 02/09/2019
-ms.locfileid: "55975790"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64705927"
 ---
 # <a name="pass-credentials-to-the-azure-dscextension-handler"></a>Передача учетных данных в обработчик Azure DSCExtension
 
 В этой статье описывается расширение Desired State Configuration (DSC) для Azure. Обзор обработчика расширения DSC см. в статье [Общие сведения об обработчике расширения Desired State Configuration в Azure](dsc-overview.md).
 
-[!INCLUDE [updated-for-az-vm.md](../../../includes/updated-for-az-vm.md)]
+[!INCLUDE [updated-for-az.md](../../../includes/updated-for-az.md)]
 
 ## <a name="pass-in-credentials"></a>Передача учетных данных
 
@@ -61,7 +61,7 @@ configuration Main
 }
 ```
 
-Важно включить **node localhost** в конфигурацию. Обработчик расширений специально ищет инструкцию **node localhost**. Если эта инструкция отсутствует, следующие шаги не работают. Важно также добавить приведение типа **[PsCredential]**, так как этот конкретный тип активирует в расширении шифрование учетных данных.
+Важно включить **node localhost** в конфигурацию. Обработчик расширений специально ищет инструкцию **node localhost**. Если эта инструкция отсутствует, следующие шаги не работают. Важно также добавить приведение типа **[PsCredential]** , так как этот конкретный тип активирует в расширении шифрование учетных данных.
 
 Для публикации этого скрипта в хранилище BLOB-объектов Azure:
 
@@ -84,9 +84,9 @@ $vm | Update-AzVM
 
 При выполнении этого кода запрашиваются учетные данные. После предоставления учетных данных они недолго хранятся в памяти. При публикации с помощью командлета **Set-AzVMDscExtension** учетные данные передаются на виртуальную машину по протоколу HTTPS, где Azure сохраняет их в зашифрованном виде на диске с использованием локального сертификата виртуальной машины. Затем они быстро расшифровываются в памяти и повторно шифруются для передачи в DSC.
 
-Этот процесс отличается от [использования безопасных конфигураций без обработчика расширений](/powershell/dsc/securemof). Среда Azure предоставляет способ безопасной передачи данных конфигурации с помощью сертификатов. При использовании обработчика расширений DSC нет необходимости указывать запись **$CertificatePath** либо **$CertificateID**/ **$Thumbprint** в **ConfigurationData**.
+Этот процесс отличается от [использования безопасных конфигураций без обработчика расширений](/powershell/dsc/securemof). Среда Azure предоставляет способ безопасной передачи данных конфигурации с помощью сертификатов. При использовании обработчика расширений DSC нет необходимости указывать запись **$CertificatePath** либо **$CertificateID**/  **$Thumbprint** в **ConfigurationData**.
 
-## <a name="next-steps"></a>Дополнительная информация
+## <a name="next-steps"></a>Дальнейшие действия
 
 - Ознакомьтесь с [общими сведениями об обработчике расширения Desired State Configuration в Azure](dsc-overview.md).
 - Изучите [шаблон Azure Resource Manager для расширения DSC](dsc-template.md).

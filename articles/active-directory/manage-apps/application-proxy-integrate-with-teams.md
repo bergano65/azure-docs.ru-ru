@@ -17,10 +17,10 @@ ms.reviewer: harshja
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9e9b043b27f624a3d9f38fb2299f9e49f0ffedda
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65783420"
 ---
 # <a name="access-your-on-premises-applications-through-microsoft-teams"></a>Доступ к приложениям в локальной среде через Microsoft Teams
@@ -40,7 +40,7 @@ ms.locfileid: "65783420"
 
 После публикации приложения через прокси приложения сообщите пользователям о том, что они могут добавить его в виде вкладки прямо в свои каналы Teams. После этого приложение станет доступно для всех пользователей в команде. Для этого им потребуется выполнить следующие три шага:
 
-1. Перейдите к каналу Teams, в который необходимо добавить это приложение, и нажмите **+**, чтобы добавить вкладку.
+1. Перейдите к каналу Teams, в который необходимо добавить это приложение, и нажмите **+** , чтобы добавить вкладку.
 
    ![Выберите "Добавить вкладку"](./media/application-proxy-integrate-with-teams/add-tab.png)
 

@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 01/16/2018
 ms.author: apimpm
 ms.openlocfilehash: d267ff3a43438d9fe6e4e21f0ac023cfa6675f19
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65956306"
 ---
 # <a name="authorize-developer-accounts-by-using-azure-active-directory-in-azure-api-management"></a>Авторизация учетных записей разработчиков с помощью Azure Active Directory в управлении API Azure
@@ -34,7 +34,7 @@ ms.locfileid: "65956306"
 ## <a name="authorize-developer-accounts-by-using-azure-ad"></a>Авторизация учетных записей разработчиков с помощью Azure AD
 
 1. Войдите на [портале Azure](https://portal.azure.com). 
-2. Выбор ![Стрелка](./media/api-management-howto-aad/arrow.png).
+2. Выберите пункт ![Стрелка](./media/api-management-howto-aad/arrow.png).
 3. В поле поиска введите **api**.
 4. Выберите **Службы управления API**.
 5. Выберите экземпляр службы управления API.
@@ -73,7 +73,7 @@ ms.locfileid: "65956306"
 
 > [!NOTE]
 > В разделе **Разрешенные клиенты** можно указать несколько доменов. Прежде чем какой-либо пользователь сможет выполнить вход из домена, отличного от домена, в котором было зарегистрировано приложение, глобальный администратор этого другого домена должен предоставить разрешение для доступа приложения к данным каталога. Чтобы предоставить разрешение, глобальный администратор должен:. Перейдите на страницу `https://<URL of your developer portal>/aadadminconsent` (например, https://contoso.portal.azure-api.net/aadadminconsent).
-> 2. Ввести имя домена клиента Azure AD, к которому требуется предоставить доступ.
+> 2\. Ввести имя домена клиента Azure AD, к которому требуется предоставить доступ.
 > c. Нажмите кнопку **Submit** (Отправить). 
 
 20.  После указания требуемой конфигурации выберите **Добавить**.

@@ -14,14 +14,14 @@ ms.author: abnarain
 manager: craigg
 robots: noindex
 ms.openlocfilehash: f7e3b1496890a4b97fc435b49ab9bf282134d1a6
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65910814"
 ---
 # <a name="use-custom-activities-in-an-azure-data-factory-pipeline"></a>Использование настраиваемых действий в конвейере фабрики данных Azure
-> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
+> [!div class="op_single_selector" title1="Выберите версию службы фабрики данных, которую вы используете:"]
 > * [Версия 1](data-factory-use-custom-activities.md)
 > * [Версия 2 (текущая)](../transform-data-using-dotnet-custom-activity.md)
 
@@ -544,7 +544,7 @@ test custom activity Microsoft test custom activity Microsoft
     }
     ```
 
-     Выходное расположение — **adftutorial/customactivityoutput/**, а имя выходного файла — ГГГГ-ММ-ДД-ЧЧ.txt (где ГГГГ, ММ, ДД и ЧЧ — год, месяц, день и час создания среза). Подробную информацию см. в [справочнике разработчика фабрики данных Azure][adf-developer-reference].
+     Выходное расположение — **adftutorial/customactivityoutput/** , а имя выходного файла — ГГГГ-ММ-ДД-ЧЧ.txt (где ГГГГ, ММ, ДД и ЧЧ — год, месяц, день и час создания среза). Подробную информацию см. в [справочнике разработчика фабрики данных Azure][adf-developer-reference].
 
     Для каждого входного среза данных создается выходной большой двоичный объект или файл. Ниже в таблице приведены имена, которые даются выходным файлам для каждого среза. Все выходные файлы создаются в одной выходной папке: **adftutorial\customactivityoutput**.
 
@@ -553,7 +553,7 @@ test custom activity Microsoft test custom activity Microsoft
    | 1 |2016-11-16T00:00:00 |2016-11-16-00.txt |
    | 2 |2016-11-16T01:00:00 |2016-11-16-01.txt |
    | 3 |2016-11-16T02:00:00 |2016-11-16-02.txt |
-   | 4. |2016-11-16T03:00:00 |2016-11-16-03.txt |
+   | 4\. |2016-11-16T03:00:00 |2016-11-16-03.txt |
    | 5 |2016-11-16T04:00:00 |2016-11-16-04.txt |
 
     Помните, что все файлы во входной папке являются частью среза со значениями времени начала, указанными выше. Во время обработки этого среза пользовательское действие сканирует каждый файл и создает строку в выходном файле с количеством вхождений условия поиска (Microsoft). Если в папке inputfolder находятся три файла, в выходном файле будут содержаться три строки для каждого почасового среза: 2016-11-16-00.txt, 2016-11-16:01:00:00.txt и т. д.

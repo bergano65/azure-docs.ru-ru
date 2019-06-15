@@ -1,5 +1,5 @@
 ---
-title: Получение пакета SDK для речевых устройств
+title: Получение пакета SDK для устройств, подключаемых к службе "Речь"
 titleSuffix: Azure Cognitive Services
 description: Служба "Речь" поддерживает широкий ряд устройств и источников звука. Теперь ваши речевые приложения могут стать еще эффективнее благодаря соответствующему оборудованию и программному обеспечению. В этой статье вы узнаете, как получить доступ к устройствам Speech SDK и приступить к разработке.
 services: cognitive-services
@@ -12,10 +12,10 @@ ms.date: 05/02/2019
 ms.author: erhopf
 ms.custom: seodec18
 ms.openlocfilehash: b9a0890000cda0b3663ac29bee61fc1c702f6254
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65410688"
 ---
 # <a name="get-the-cognitive-services-speech-devices-sdk"></a>Получение пакета SDK для речевых устройств в Cognitive Services

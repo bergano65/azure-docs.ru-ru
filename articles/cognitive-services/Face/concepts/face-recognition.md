@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: pafarley
 ms.openlocfilehash: fa38c492530cb8938e49bc15e13fdd39ed5b6f1c
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65890882"
 ---
 # <a name="face-recognition-concepts"></a>Основные понятия распознавания лиц
@@ -37,7 +37,7 @@ ms.locfileid: "65890882"
 
 В этом разделе подробно описано, как четыре операции распознавания использовать структуры данных, в описанных выше. Общее описание каждой операции распознавания, см. в разделе [Обзор](../Overview.md).
 
-### <a name="verify"></a>Проверьте
+### <a name="verify"></a>Проверка
 
 [Verify](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f3039523a) операция принимает face ID от DetectedFace или PersistedFace и другой face ID или объект Person и определяет, принадлежат ли они одному человеку. Если передать объект Person, при необходимости можно передать в каждой группе людей, к которой принадлежит этот пользователь, для повышения производительности.
 
@@ -45,7 +45,7 @@ ms.locfileid: "65890882"
 
 [Поиск похожих](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395237) операция принимает face ID из DetectedFace или PersistedFace и FaceList или массив идентификаторы других лиц. С FaceList он возвращает меньше FaceList лиц, которые похожи на заданной поверхности. Массив идентификаторы лиц точно так же возвращает меньшего размера массива.
 
-### <a name="group"></a>Группировать
+### <a name="group"></a>Группа
 
 [Группы](https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395238) операция принимает массив различные идентификаторы лиц из DetectedFace или PersistedFace и возвращает те же идентификаторы разделить на несколько небольших массивов. Каждый массив «groups», содержит идентификаторы, которые отображаются как лиц. В одном «messyGroup» массив содержит идентификаторы лиц для которого нет сходства не найдены.
 

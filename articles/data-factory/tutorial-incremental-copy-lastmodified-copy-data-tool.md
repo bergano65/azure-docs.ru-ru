@@ -14,10 +14,10 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 1/24/2019
 ms.openlocfilehash: 3865bb10346c4a55adbf94a7df225eacf2c11252
-ms.sourcegitcommit: 17411cbf03c3fa3602e624e641099196769d718b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65519134"
 ---
 # <a name="incrementally-copy-new-and-changed-files-based-on-lastmodifieddate-by-using-the-copy-data-tool"></a>Добавочное копирование новых и измененных файлов, основанный на Дата последнего изменения с помощью средства копирования данных
@@ -63,7 +63,7 @@ ms.locfileid: "65519134"
    
    ![Сообщение об ошибке фабрики данных](./media/tutorial-copy-data-tool/name-not-available-error.png)
 
-   Если вы увидите следующую ошибку касательно значения имени, введите другое имя фабрики данных. Например, _**ваше_имя**_**ADFTutorialDataFactory**. Правила именования артефактов службы "Фабрика данных" см. в [этой](naming-rules.md) статье.
+   Если вы увидите следующую ошибку касательно значения имени, введите другое имя фабрики данных. Например, _**ваше_имя**_ **ADFTutorialDataFactory**. Правила именования артефактов службы "Фабрика данных" см. в [этой](naming-rules.md) статье.
 3. Выберите Azure **подписки** в которой создается новая фабрика данных. 
 4. Для **группы ресурсов** выполните одно из следующих действий:
      
@@ -95,7 +95,7 @@ ms.locfileid: "65519134"
 
     a. В разделе **имя задачи**, введите **DeltaCopyFromBlobPipeline**.
 
-    2. В разделе **периодичность задачи** или **расписании задач**выберите **регулярно запускаться по расписанию**.
+    2\. В разделе **периодичность задачи** или **расписании задач**выберите **регулярно запускаться по расписанию**.
 
     c. В разделе **тип триггера**выберите **"переворачивающегося" окна**.
     
@@ -113,7 +113,7 @@ ms.locfileid: "65519134"
     
     ![Страница исходного хранилища данных](./media/tutorial-incremental-copy-lastmodified-copy-data-tool/source-data-store-page.png)
 
-    2. Выберите **хранилище BLOB-объектов** из коллекции, а затем выберите **Продолжить**.
+    2\. Выберите **хранилище BLOB-объектов** из коллекции, а затем выберите **Продолжить**.
     
     ![Страница исходного хранилища данных](./media/tutorial-incremental-copy-lastmodified-copy-data-tool/source-data-store-page-select-blob.png)
 
@@ -131,7 +131,7 @@ ms.locfileid: "65519134"
     
     ![Выбор файла или папки входных данных](./media/tutorial-incremental-copy-lastmodified-copy-data-tool/choose-input-file-folder.png)
     
-    2. В разделе **поведения при загрузке файла**выберите **добавочную загрузку: Дата последнего изменения**.
+    2\. В разделе **поведения при загрузке файла**выберите **добавочную загрузку: Дата последнего изменения**.
     
     ![Выбор файла или папки входных данных](./media/tutorial-incremental-copy-lastmodified-copy-data-tool/choose-loading-behavior.png)
     
@@ -149,7 +149,7 @@ ms.locfileid: "65519134"
     
     ![Выбор целевого файла или папки](./media/tutorial-incremental-copy-lastmodified-copy-data-tool/choose-output-file-folder.png)
     
-    2. Щелкните **Далее**.
+    2\. Щелкните **Далее**.
     
      ![Выбор целевого файла или папки](./media/tutorial-incremental-copy-lastmodified-copy-data-tool/click-next-after-output-folder.png)
     

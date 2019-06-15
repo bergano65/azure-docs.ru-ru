@@ -15,10 +15,10 @@ ms.date: 02/12/2019
 ms.author: mathoma
 ms.reviewer: jroth
 ms.openlocfilehash: 5efbe874bbf3c1c4081eb7a2c76c1be5a3358ec8
-ms.sourcegitcommit: 17411cbf03c3fa3602e624e641099196769d718b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65518976"
 ---
 # <a name="use-azure-sql-vm-cli-to-configure-always-on-availability-group-for-sql-server-on-an-azure-vm"></a>Настройка группы доступности AlwaysOn для SQL Server на виртуальной Машине Azure с помощью CLI виртуальной Машины SQL Azure
@@ -125,7 +125,7 @@ az network lb create --name sqlILB -g <resource group name> --sku Standard `
    1. Перейдите к группе ресурсов в [портала Azure](https://portal.azure.com). 
    1. Выберите ресурс виртуальной сети. 
    1. Выберите **свойства** в **параметры** области. 
-   1. Определить идентификатор ресурса для виртуальной сети и добавление `/subnets/<subnetname>`в конец его, чтобы создать идентификатор ресурса подсети. Например:
+   1. Определить идентификатор ресурса для виртуальной сети и добавление `/subnets/<subnetname>`в конец его, чтобы создать идентификатор ресурса подсети. Пример:
         - — Идентификатор ресурса виртуальной сети: `/subscriptions/a1a1-1a11a/resourceGroups/SQLVM-RG/providers/Microsoft.Network/virtualNetworks/SQLVMvNet`
         - Меня зовут подсети `default`.
         - Таким образом является идентификатор ресурса подсети: `/subscriptions/a1a1-1a11a/resourceGroups/SQLVM-RG/providers/Microsoft.Network/virtualNetworks/SQLVMvNet/subnets/default`

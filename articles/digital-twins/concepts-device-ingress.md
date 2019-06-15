@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 12/14/2018
 ms.author: alinast
 ms.openlocfilehash: 35d12d0114f9677905c85a9df94ecd074e5f8f75
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60926085"
 ---
 # <a name="device-connectivity-and-telemetry-ingress"></a>Возможность подключения устройств и входящие данные телеметрии
@@ -67,7 +67,7 @@ YOUR_MANAGEMENT_API_URL/devices?hardwareIds=YOUR_DEVICE_HARDWARE_ID&includes=Con
 
  Содержимое полезных данных **сообщения** может быть произвольными данными размером до 256 КБ. Существует ряд требований, ожидаемый для свойств типа [`Message.Properties`](https://docs.microsoft.com/dotnet/api/microsoft.azure.devices.client.message.properties?view=azure-dotnet). В таблице показаны обязательные и необязательные свойства, поддерживаемые системой.
 
-| Имя свойства | Value | Обязательно для заполнения | Описание |
+| Имя свойства | Значение | Обязательно для заполнения | Описание |
 |---|---|---|---|
 | **DigitalTwins-Telemetry** | 1.0 | Да | Постоянное значение, которое идентифицирует сообщение в системе. |
 | **DigitalTwins-SensorHardwareId** | `string(72)` | Да | Уникальный идентификатор датчика, отправляющего **сообщение**. Это значение должно соответствовать свойству **HardwareId** объекта, чтобы система могла его обработать. Например, `00FF0643BE88-CO2`. |

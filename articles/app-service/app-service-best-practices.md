@@ -16,13 +16,13 @@ ms.date: 07/01/2016
 ms.author: dariagrigoriu
 ms.custom: seodec18
 ms.openlocfilehash: fc3749a9ebfbf0319a57b471b6fce9f62042ba27
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60852688"
 ---
-# <a name="best-practices-for-azure-app-service"></a>Рекомендации по использованию службы приложений Azure
+# <a name="best-practices-for-azure-app-service"></a>Рекомендации по использованию Службы приложений Azure
 В этой статье собраны рекомендации по использованию [службы приложений Azure](https://go.microsoft.com/fwlink/?LinkId=529714). 
 
 ## <a name="colocation"></a>Совместное размещение

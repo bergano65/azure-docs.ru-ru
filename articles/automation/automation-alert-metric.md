@@ -9,10 +9,10 @@ ms.date: 11/01/2018
 ms.topic: article
 manager: carmonm
 ms.openlocfilehash: 7932d057a348957d369ba325044055ac8dfe3428
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62119900"
 ---
 # <a name="monitoring-runbooks-with-metric-alerts"></a>Мониторинг модулей runbook с помощью оповещений метрик
@@ -21,9 +21,9 @@ ms.locfileid: "62119900"
 
 ## <a name="sign-in-to-azure"></a>Вход в Azure
 
-Войдите в Azure (https://portal.azure.com).
+Войдите в Azure (https://portal.azure.com ).
 
-## <a name="create-alert"></a>Создать оповещение
+## <a name="create-alert"></a>Создание оповещения
 
 Оповещения позволяют определить условия мониторинга и действие, предпринимаемое при соблюдении этого условия.
 

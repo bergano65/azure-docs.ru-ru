@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 04/25/2019
 ms.author: alkaplan
 ms.openlocfilehash: c94d589875195207ec6f71c35ad077cac281fda5
-ms.sourcegitcommit: 9e8dfa1169a55c3c8af93a6c5f4e0dace4de48b2
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/13/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65555836"
 ---
 # <a name="zero-instrumentation-application-monitoring-for-kubernetes-hosted-applications"></a>Мониторинг приложений ноль инструментирования для Kubernetes размещенных приложений
@@ -78,13 +78,13 @@ kubectl label namespace <my-app-namespace> istio-injection=enabled
 3. Изменить *application-insights-istio-mixer-adapter-deployment.yaml*
     - изменить значение *ISTIO_MIXER_PLUGIN_AI_INSTRUMENTATIONKEY* переменную среды, чтобы содержать ключ инструментирования ресурса Application Insights на портале Azure для хранения данных телеметрии.
     - При необходимости измените значение *ISTIO_MIXER_PLUGIN_WATCHLIST_NAMESPACES* переменную среды, чтобы содержать разделенный запятыми список пространств имен, для которого вы хотите включить мониторинг. Оставьте пустым, чтобы отслеживать все пространства имен.
-4. Применить *каждые* yaml-файл, найти в разделе *src/kubernetes/* , выполнив следующую (необходимо быть по-прежнему внутри */src/kubernetes/*):
+4. Применить *каждые* yaml-файл, найти в разделе *src/kubernetes/* , выполнив следующую (необходимо быть по-прежнему внутри */src/kubernetes/* ):
 
    ```console
    kubectl apply -f .
    ```
 
-### <a name="verify-deployment"></a>Проверить развертывание
+### <a name="verify-deployment"></a>Проверка развертывания
 
 - Убедитесь, что адаптер Application Insights будет развернута.
 

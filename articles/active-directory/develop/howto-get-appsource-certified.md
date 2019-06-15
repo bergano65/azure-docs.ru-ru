@@ -19,10 +19,10 @@ ms.reviewer: andret
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 0b820068f7bd59941346c8d2a3e8ede15252d58b
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65540269"
 ---
 # <a name="how-to-get-appsource-certified-for-azure-active-directory"></a>Как получить сертификат AppSource для Azure Active Directory
@@ -40,7 +40,7 @@ ms.locfileid: "65540269"
 Приложение, принимающее вход пользователя из любой компании или организации с Azure AD, не требуя отдельного экземпляра, конфигурации или развертывания, называется *мультитенантным*. AppSource рекомендует реализовать поддержку мультитенантности в приложениях, чтобы добавить бесплатную пробную версию возможности входа *одним щелчком*.
 
 Чтобы включить мультитенантность в приложении, сделайте следующее.
-1. При введении регистрационной информации приложения на [портале Azure](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps) задайте для свойства `Multi-Tenanted` значение `Yes`. По умолчанию все приложения, созданные на портале Azure, настроены как *[приложения с одним клиентом](#single-tenant-applications)*.
+1. При введении регистрационной информации приложения на [портале Azure](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RegisteredApps) задайте для свойства `Multi-Tenanted` значение `Yes`. По умолчанию все приложения, созданные на портале Azure, настроены как *[приложения с одним клиентом](#single-tenant-applications)* .
 1. Обновите код для отправки запросов в конечную точку `common`. Чтобы сделать это, обновите конечную точку из `https://login.microsoftonline.com/{yourtenant}` в `https://login.microsoftonline.com/common*`.
 1. Для некоторых платформ, например ASP .NET, необходимо также обновить код, чтобы принимать несколько издателей.
 

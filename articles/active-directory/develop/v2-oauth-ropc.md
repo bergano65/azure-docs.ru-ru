@@ -18,10 +18,10 @@ ms.reviewer: hirsin
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 04d2be76072866da2b21718f60fd0c9a5923b15b
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65545111"
 ---
 # <a name="microsoft-identity-platform-and-the-oauth-20-resource-owner-password-credential"></a>Платформа Microsoft identity и пароль владельца ресурса OAuth 2.0
@@ -89,7 +89,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 
 | Параметр | Формат | Описание |
 | --------- | ------ | ----------- |
-| `token_type` | Строка | Всегда имеет значение `Bearer`. |
+| `token_type` | String | Всегда имеет значение `Bearer`. |
 | `scope` | Строки, разделенные пробелами | Если возвращен маркер доступа, этот параметр содержит список областей, для которых действует этот маркер. |
 | `expires_in`| int | Количество секунд, в течение которых действует предоставленный маркер доступа. |
 | `access_token`| Непрозрачная строка | Выдается для запрошенных [областей](v2-permissions-and-consent.md). |

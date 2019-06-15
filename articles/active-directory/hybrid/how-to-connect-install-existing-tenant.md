@@ -17,10 +17,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 1495c14ae4c588661452aa3696019da00be47548
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64571380"
 ---
 # <a name="azure-ad-connect-when-you-have-an-existent-tenant"></a>Azure AD Connect выполняет следующие функции: при наличии существующего клиента Azure AD
@@ -34,7 +34,7 @@ ms.locfileid: "64571380"
 Если вы начали управлять пользователями в Azure AD, и некоторые пользователи также имеются в локальной среде AD, и вам потребовалось использовать Connect, то следует учесть некоторые дополнительные моменты.
 
 ## <a name="sync-with-existing-users-in-azure-ad"></a>Синхронизация с существующими пользователями в Azure AD
-Когда вы установите Azure AD Connect и начнете синхронизацию, служба синхронизации Azure AD (в Azure AD) будет проверять каждый новый объект и пытаться найти существующий объект для сопоставления. Для этого используются три атрибута: **userPrincipalName**, **proxyAddresses** и **sourceAnchor**/**immutableID**. Сопоставление по **userPrincipalName** и **proxyAddresses** называется **нестрогим сопоставлением**. Сопоставление по**sourceAnchor** называется **строгим сопоставлением**. Для оценки по атрибуту **proxyAddresses** используются только значения с **SMTP:**, представляющие собой основной электронный адрес.
+Когда вы установите Azure AD Connect и начнете синхронизацию, служба синхронизации Azure AD (в Azure AD) будет проверять каждый новый объект и пытаться найти существующий объект для сопоставления. Для этого используются три атрибута: **userPrincipalName**, **proxyAddresses** и **sourceAnchor**/**immutableID**. Сопоставление по **userPrincipalName** и **proxyAddresses** называется **нестрогим сопоставлением**. Сопоставление по**sourceAnchor** называется **строгим сопоставлением**. Для оценки по атрибуту **proxyAddresses** используются только значения с **SMTP:** , представляющие собой основной электронный адрес.
 
 Соответствие оценивается только для новых объектов, поступающих из Connect. Если изменить существующий объект, чтобы он соответствовал какому-либо из этих атрибутов, то появится сообщение об ошибке.
 

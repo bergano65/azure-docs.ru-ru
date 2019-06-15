@@ -8,10 +8,10 @@ ms.topic: reference
 ms.date: 09/13/2018
 ms.author: pabutler
 ms.openlocfilehash: ac56f86bad132f3e00a4b5c2507d65c0722c628c
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64935493"
 ---
 <a name="go-live"></a>Запуск
@@ -26,8 +26,8 @@ ms.locfileid: "64935493"
 
 |  **Имя**      |   **Описание**                                                           | **Тип данных** |
 |  --------      |   ---------------                                                           | ------------- |
-| publisherid    | Идентификатор издателя для извлечения предложения, например `contoso`.       |  Строка       |
-| offerId        | Идентификатор извлекаемой записи предложения.                                   |  Строка       |
+| publisherid    | Идентификатор издателя для извлечения предложения, например `contoso`.       |  String       |
+| offerId        | Идентификатор извлекаемой записи предложения.                                   |  String       |
 | api-version    | Последняя версия API                                                   |  Дата         |
 |  |  |  |
 
@@ -45,7 +45,7 @@ ms.locfileid: "64935493"
 <a name="body-example"></a>Пример текста запроса
 ------------
 
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
 
 `Operation-Location: https://cloudpartner.azure.com/api/publishers/contoso/offers/contoso-virtualmachineoffer/operations/56615b67-2185-49fe-80d2-c4ddf77bb2e8`
 

@@ -11,10 +11,10 @@ ms.date: 05/02/2019
 ms.author: jlembicz
 ms.custom: seodec2018
 ms.openlocfilehash: bc183cb8ac2155b8dd31dc603d70506ad3d5e20a
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65797482"
 ---
 # <a name="how-full-text-search-works-in-azure-search"></a>Как работает полнотекстовый поиск в службе поиска Azure
@@ -258,10 +258,10 @@ Spacious,||air-condition*+"Ocean view"
 | atman | 1 |
 | beach | 2 |
 | hotel | 1, 3 |
-| ocean | 4.  |
+| ocean | 4\.  |
 | playa | 3 |
 | resort | 3 |
-| retreat | 4. |
+| retreat | 4\. |
 
 В поле заголовка только *hotel* встречается в двух документах — 1 и 3.
 
@@ -270,7 +270,7 @@ Spacious,||air-condition*+"Ocean view"
 | Термин | Список документов |
 |------|---------------|
 | air | 3
-| и | 4.
+| и | 4\.
 | beach | 1
 | conditioned | 3
 | comfortable | 3
@@ -281,17 +281,17 @@ Spacious,||air-condition*+"Ocean view"
 | north | 2
 | ocean | 1, 2, 3
 | of | 2
-| на |2
-| quiet | 4.
+| on |2
+| quiet | 4\.
 | rooms  | 1, 3
-| secluded | 4.
+| secluded | 4\.
 | shore | 2
 | spacious | 1
 | the | 1, 2
 | до | 1
 | view | 1, 2, 3
 | walking | 1
-| с | 3
+| на | 3
 
 
 **Соответствие терминов запроса индексированным терминам**

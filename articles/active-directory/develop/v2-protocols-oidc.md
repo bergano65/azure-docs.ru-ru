@@ -19,10 +19,10 @@ ms.reviewer: hirsin
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 23a8eaaf095be1d59944791bd793047886dda40c
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65544811"
 ---
 # <a name="microsoft-identity-platform-and-openid-connect-protocol"></a>Платформой Microsoft identity и протокол OpenID Connect
@@ -48,11 +48,11 @@ OpenID Connect описывает документ метаданных, кот�
 https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration
 ```
 > [!TIP]
-> Попробовать! Щелкните [https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration](https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration) для просмотра конфигурации клиентов `common`.
+> Тестирование Щелкните [https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration](https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration) для просмотра конфигурации клиентов `common`.
 
 `{tenant}` может принимать одно из четырех значений.
 
-| Value | Описание |
+| Значение | Описание |
 | --- | --- |
 | `common` |Пользователи с личной учетной записи Майкрософт и рабочей или учебной учетной записи из Azure AD могут входить в приложение. |
 | `organizations` |Вход в приложение могут выполнять только пользователи с рабочими или учебными учетными записями Azure AD. |
@@ -91,7 +91,7 @@ https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration
 > [!IMPORTANT]
 > Для успешного запроса идентификатора маркера из конечной точки /authorization, зарегистрированного приложения в [портал регистрации](https://portal.azure.com) должен иметь неявное предоставление включена на вкладке "Проверка подлинности" маркеры "id_token" (присваивающего `oauth2AllowIdTokenImplicitFlow`флаг в [манифест приложения](reference-app-manifest.md) для `true`). Если он не включен, `unsupported_response` будет возвращена ошибка: «Указанное значение входного параметра «response_type» не является допустимым для данного клиента. Expected value is 'code'" (Указанное значение параметра response_type запрещено для данного клиента. Ожидаемое значение: code).
 
-Например:
+Пример:
 
 ```
 // Line breaks are for legibility only.

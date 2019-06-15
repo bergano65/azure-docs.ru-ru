@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 04/30/2019
 ms.author: shants
 ms.openlocfilehash: 40ae8f0fb9c0c5980c4db1471b2bbad56a57d486
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65410499"
 ---
 # <a name="handling-planned-maintenance-notifications-for-linux-virtual-machines"></a>Обработка уведомлений о плановом обслуживании для виртуальных машин Linux
@@ -84,7 +84,7 @@ az vm get-instance-view -g rgName -n vmName
 
 В разделе MaintenanceRedeployStatus возвращаются следующие значения. 
 
-| Value | Описание   |
+| Значение | Описание   |
 |-------|---------------|
 | IsCustomerInitiatedMaintenanceAllowed | Указывает, можно ли сейчас запустить обслуживание на виртуальной машине |
 | PreMaintenanceWindowStartTime         | Начало периода самообслуживания, когда можно инициировать обслуживание на виртуальной машине |

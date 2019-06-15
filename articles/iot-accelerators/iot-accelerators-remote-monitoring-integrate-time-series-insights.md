@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.service: iot-accelerators
 services: iot-accelerators
 ms.openlocfilehash: 4cc9b0051eaa12eee07f067352126ad159107a83
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61443033"
 ---
 # <a name="integrate-azure-time-series-insights-with-remote-monitoring"></a>Интеграция службы "Аналитика временных рядов Azure" с решением удаленного мониторинга
@@ -136,7 +136,7 @@ az iot hub consumer-group create --hub-name contosorm30526 --name timeseriesinsi
 
 1. Выберите группу ресурсов **ContosoRM**.
 
-1. В списке ресурсов найдите задание потоковой передачи Azure Stream Analytics (ASA). Имя ресурса начинается со **streamingjobs-**.
+1. В списке ресурсов найдите задание потоковой передачи Azure Stream Analytics (ASA). Имя ресурса начинается со **streamingjobs-** .
 
 1. В верхней части страницы нажмите кнопку, чтобы остановить задания потоковой передачи ASA.
 

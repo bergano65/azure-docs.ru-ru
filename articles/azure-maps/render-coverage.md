@@ -9,10 +9,10 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.openlocfilehash: 7feea92d48a826000fd8aa878b95658b79d6d908
-ms.sourcegitcommit: e7d4881105ef17e6f10e8e11043a31262cfcf3b7
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64869996"
 ---
 # <a name="azure-maps-render-coverage"></a>Покрытие для отображения в службе "Карты Azure"
@@ -75,7 +75,7 @@ ms.locfileid: "64869996"
 | Реюньон                          | ✓ | ✓ |
 | Руанда                           | ✓ | ✓ |
 | Острова Св. Елены, Вознесения и Тристан-да-Кунья | ✓ | Ø |
-| Сан-Томе и Принсипи            | ✓ | Ø |
+| Сан-томе и Принсипи            | ✓ | Ø |
 | Сенегал                          | ✓ | ✓ |
 | Сьерра-Леоне                     | ✓ | ✓ |
 | Сомали                          | ✓ | ✓ |

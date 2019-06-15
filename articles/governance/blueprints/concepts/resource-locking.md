@@ -9,10 +9,10 @@ ms.service: blueprints
 manager: carmonm
 ms.custom: seodec18
 ms.openlocfilehash: db0b5bbe1261c7bdf76393c69a1189d2a850cd07
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64719752"
 ---
 # <a name="understand-resource-locking-in-azure-blueprints"></a>Общие сведения о блокировке ресурсов в Azure Blueprint
@@ -26,7 +26,7 @@ ms.locfileid: "64719752"
 
 Ресурсы, созданные артефактами в составе назначения схемы, имеют четыре состояния: **Не заблокировано**, **Только чтение**, **Невозможно изменить/удалить** или **Cannot Delete** (Невозможно удалить). Каждый тип артефакта может находиться в состоянии **Не заблокировано**. Следующую таблицу можно использовать для определения состояния ресурса:
 
-|Mode|Тип ресурса артефакта|Состояние|ОПИСАНИЕ|
+|Режим|Тип ресурса артефакта|Состояние|Описание|
 |-|-|-|-|
 |Не блокировать|*|Не заблокировано|Ресурсы не защищены службой Blueprints. Это состояние также используется для ресурсов, добавленных к артефакту группы ресурсов **Только чтение** или **Do Not Delete** (Не удалять) за пределами назначения схемы.|
 |Только чтение|Группа ресурсов|Невозможно изменить/удалить|Группа ресурсов доступна только для чтения, и теги в этой группе недоступны для изменения. Ресурсы с состоянием **Не заблокировано** можно добавлять, перемещать, изменять или удалять из этой группы ресурсов.|
@@ -56,7 +56,7 @@ ms.locfileid: "64719752"
 
 [Запретить назначение свойства](../../../role-based-access-control/deny-assignments.md#deny-assignment-properties) для каждого из режимов, следующим образом:
 
-|Mode |Permissions.Actions |Permissions.NotActions |Субъекты [i]. Тип |ExcludePrincipals [i]. Идентификатор | DoNotApplyToChildScopes |
+|Режим |Permissions.Actions |Permissions.NotActions |Субъекты [i]. Тип |ExcludePrincipals [i]. Идентификатор | DoNotApplyToChildScopes |
 |-|-|-|-|-|-|
 |Только чтение |**\*** |**\*/ чтение** |SystemDefined («все») |Схема назначения и определяемых пользователем в **excludedPrincipals** |Группа ресурсов — _true_; Ресурс - _false_ |
 |Не удалять |**\*/ DELETE** | |SystemDefined («все») |Схема назначения и определяемых пользователем в **excludedPrincipals** |Группа ресурсов — _true_; Ресурс - _false_ |

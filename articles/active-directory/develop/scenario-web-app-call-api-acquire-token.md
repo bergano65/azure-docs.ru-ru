@@ -16,10 +16,10 @@ ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 653db995000308bb3ef78a9183696cd9d8ed1056
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65074805"
 ---
 # <a name="web-app-that-calls-web-apis---acquire-a-token-for-the-app"></a>Веб-приложение, вызывающее веб-интерфейсы API — получение маркера для приложения
@@ -29,7 +29,7 @@ ms.locfileid: "65074805"
 - Получение маркера для веб-API с помощью кэша маркера. Для этого вызовите `AcquireTokenSilent`
 - Вызов API, защищенный маркером доступа
 
-## <a name="aspnet-core"></a>ASP.NET Core;
+## <a name="aspnet-core"></a>ASP.NET Core
 
 Методы контроллера защищены с помощью `[Authorize]` атрибут, который вынуждает пользователей станут проверенными для использования веб-приложения. Ниже приведен код, который вызывает Microsoft Graph
 

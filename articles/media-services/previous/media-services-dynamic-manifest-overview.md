@@ -15,15 +15,15 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: cenkd;juliako
 ms.openlocfilehash: 68eeb40e905d089601208d9fc181042c7b434843
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65956799"
 ---
 # <a name="filters-and-dynamic-manifests"></a>Фильтры и динамические манифесты
 
-> [!div class="op_single_selector" title1="Select the version of Media Services that you are using:"]
+> [!div class="op_single_selector" title1="Выберите версию служб мультимедиа, в которых используется:"]
 > * [Версия 2](media-services-dynamic-manifest-overview.md)
 > * [Версия 3](../latest/filters-dynamic-manifest-overview.md)
 
@@ -73,14 +73,14 @@ ms.locfileid: "65956799"
     </SmoothStreamingMedia>
 
 ### <a name="dynamic-manifests"></a>Динамические манифесты
-Существуют [сценарии](media-services-dynamic-manifest-overview.md#scenarios) , когда клиенту требуется больше гибкости, чем описано в файле манифеста актива по умолчанию. Например:
+Существуют [сценарии](media-services-dynamic-manifest-overview.md#scenarios) , когда клиенту требуется больше гибкости, чем описано в файле манифеста актива по умолчанию. Пример:
 
 * Для определенного устройства: доставка только указанных представлений и (или) языков дорожек, поддерживаемых устройством, на котором воспроизводится содержимое ("фильтрация представлений"). 
 * Сокращение манифеста для отображения субклипа текущего события ("фильтрация субклипов").
 * Обрезка начала видео ("обрезка видео").
 * Настройка окна представления (DVR) для предоставления ограниченной длительности окна DVR в проигрывателе ("настройка окна представления").
 
-Для достижения такой гибкости службы мультимедиа предоставляют **динамические манифесты** на основе предварительно определенных [фильтров](media-services-dynamic-manifest-overview.md#filters).  После определения фильтров клиенты могут использовать их для потоковой передачи определенного представления или субклипов видео. Фильтры указываются в URL-адресе потоковой передачи. Фильтры можно применять к протоколам потоковой передачи с переменной скоростью, которые поддерживаются [динамической упаковкой](media-services-dynamic-packaging-overview.md): HLS, MPEG-DASH и Smooth Streaming. Например:
+Для достижения такой гибкости службы мультимедиа предоставляют **динамические манифесты** на основе предварительно определенных [фильтров](media-services-dynamic-manifest-overview.md#filters).  После определения фильтров клиенты могут использовать их для потоковой передачи определенного представления или субклипов видео. Фильтры указываются в URL-адресе потоковой передачи. Фильтры можно применять к протоколам потоковой передачи с переменной скоростью, которые поддерживаются [динамической упаковкой](media-services-dynamic-packaging-overview.md): HLS, MPEG-DASH и Smooth Streaming. Пример:
 
 URL-адрес MPEG DASH с фильтром
 

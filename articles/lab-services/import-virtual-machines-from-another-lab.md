@@ -13,10 +13,10 @@ ms.topic: article
 ms.date: 03/21/2019
 ms.author: spelluru
 ms.openlocfilehash: ca6ed58cfabb5027830828812c4820c1b586875c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61322882"
 ---
 # <a name="import-virtual-machines-from-another-lab-in-azure-devtest-labs"></a>Импорт виртуальных машин из другой лабораторию в Azure DevTest Labs
@@ -62,7 +62,7 @@ ms.locfileid: "61322882"
 ```
 
 ### <a name="use-powershell-to-import-all-vms-in-the-source-lab"></a>Чтобы импортировать все виртуальные машины в лаборатории источника с помощью PowerShell
-Если исходная виртуальная машина не указан, сценарий автоматически импортирует все виртуальные машины в DevTest Labs.  Пример.
+Если исходная виртуальная машина не указан, сценарий автоматически импортирует все виртуальные машины в DevTest Labs.  Пример:
 
 ```powershell
 ./ImportVirtualMachines.ps1 -SourceSubscriptionId "<ID of the subscription that contains the source lab>" `

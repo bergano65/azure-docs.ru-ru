@@ -16,10 +16,10 @@ ms.reviewer: harshja
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 039f8c9f114dfd3542fefa7b1a1eea8656cbb9c4
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65782971"
 ---
 # <a name="remove-personal-data-for-azure-active-directory-application-proxy"></a>Удаление персональных данных в Azure Active Directory Application Proxy  
@@ -60,9 +60,9 @@ ms.locfileid: "65782971"
 
 Чтобы найти персональные данные, записанные приложением, которое использует ограниченное делегирование Kerberos, выполните поиск приведенных ниже компонентов типа username:
 
-- Локальное имя субъекта-пользователя
+- имя локального участника-пользователя;
 - компонент, содержащий имя пользователя, в имени участника-пользователя;
-- Компонент, содержащий имя пользователя, в локальном имени субъекта-пользователя
+- компонент, содержащий имя пользователя, в имени локального участника-пользователя;
 - учетная запись локального диспетчера учетных записей безопасности (SAM). 
 
 

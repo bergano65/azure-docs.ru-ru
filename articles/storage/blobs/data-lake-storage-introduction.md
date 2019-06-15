@@ -10,10 +10,10 @@ ms.author: normesta
 ms.reviewer: jamesbak
 ms.subservice: data-lake-storage-gen2
 ms.openlocfilehash: daa5efcf1be075e81e402edff56239a7cf21db18
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64939228"
 ---
 # <a name="introduction-to-azure-data-lake-storage-gen2"></a>Общие сведения о хранилище Azure Data Lake Storage 2-го поколения
@@ -38,7 +38,7 @@ Data Lake Storage 2-го поколения использует службу х
 
 ## <a name="key-features-of-data-lake-storage-gen2"></a>Основные функции Data Lake Storage Gen2
 
--   **Доступ, совместимый с Hadoop**. Хранилище Data Lake Storage 2-го поколения позволяет получать доступ к данным и управлять ими так же, как и в [распределенной файловой системе Hadoop (HDFS)](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html). Во всех средах Apache Hadoop, в том числе [Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/index)*,* [Azure Databricks](https://docs.microsoft.com/azure/azure-databricks/index) и [Хранилище данных SQL](https://docs.microsoft.com/azure/sql-data-warehouse/), доступен новый [драйвер ABFS](data-lake-storage-abfs-driver.md), который позволяет получать доступ к данным в Data Lake Storage 2-го поколения.
+-   **Доступ, совместимый с Hadoop**. Хранилище Data Lake Storage 2-го поколения позволяет получать доступ к данным и управлять ими так же, как и в [распределенной файловой системе Hadoop (HDFS)](https://hadoop.apache.org/docs/current/hadoop-project-dist/hadoop-hdfs/HdfsDesign.html). Во всех средах Apache Hadoop, в том числе [Azure HDInsight](https://docs.microsoft.com/azure/hdinsight/index) *,* [Azure Databricks](https://docs.microsoft.com/azure/azure-databricks/index) и [Хранилище данных SQL](https://docs.microsoft.com/azure/sql-data-warehouse/), доступен новый [драйвер ABFS](data-lake-storage-abfs-driver.md), который позволяет получать доступ к данным в Data Lake Storage 2-го поколения.
 
 -   **Супермножество разрешений POSIX**. Модель безопасности Data Lake 2-го поколения поддерживает разрешения ACL и POSIX, а также некоторую дополнительную детализацию, относящуюся к Data Lake Storage 2-го поколения. Параметры могут быть настроены через Обозреватель службы хранилища или с помощью платформ, таких как Hive и Spark.
 

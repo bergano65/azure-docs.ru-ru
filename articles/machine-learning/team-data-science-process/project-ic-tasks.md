@@ -11,10 +11,10 @@ ms.date: 11/13/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 6a52907fa6c0e2483479031fbb3d1ad68a121d95
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61043353"
 ---
 # <a name="tasks-for-an-individual-contributor-in-the-team-data-science-process"></a>Задачи отдельного участника в командном процессе обработки и анализа данных
@@ -90,7 +90,7 @@ ms.locfileid: "61043353"
     git clone <the SSH URL of the TeamUtilities repository>
     git clone <the SSH URL of the Project repository>
 
-![4.](./media/project-ic-tasks/project-ic-4-clone-three-repo-to_ic-linux.png)
+![4\.](./media/project-ic-tasks/project-ic-4-clone-three-repo-to_ic-linux.png)
 
 Убедитесь, что это три папки отображаются в каталоге проекта.
 

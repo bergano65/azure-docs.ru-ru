@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 05/13/2019
 ms.author: tomfitz
 ms.openlocfilehash: 58d22e3fcae5c30e5d7dcc39b317afeef4a693ee
-ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65606000"
 ---
 # <a name="view-deployment-history-with-azure-resource-manager"></a>Просмотр журнала развертывания с помощью Azure Resource Manager
@@ -40,7 +40,7 @@ Azure Resource Manager позволяет просматривать истор�
 
 1. Чтобы просмотреть шаблон, используемый для развертывания, выберите **шаблона**. Вы можете скачать шаблон для повторного использования.
 
-    ![Отобразить шаблон](./media/resource-manager-deployment-operations/show-template-from-history.png)
+    ![Отображение шаблона](./media/resource-manager-deployment-operations/show-template-from-history.png)
 
 1. Если произошел сбой развертывания, вы увидите сообщение об ошибке. Выберите сообщение об ошибке для получения дополнительных сведений.
 

@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 03/27/2018
 ms.author: magoedte
 ms.openlocfilehash: 2e3e39ef24d82393d981c0ce276b3338419e0b2d
-ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65521773"
 ---
 # <a name="troubleshooting-azure-monitor-for-containers"></a>Устранение неполадок с Azure Monitor для контейнеров
@@ -34,7 +34,7 @@ ms.locfileid: "65521773"
 1. Войдите на [портале Azure](https://portal.azure.com). 
 2. На портале Azure щелкните **Все службы** в нижнем левом углу. В списке ресурсов введите **Kubernetes**. Как только вы начнете вводить символы, список отфильтруется соответствующим образом. Выберите **Azure Kubernetes**.
 3. В списке кластеров Kubernetes выберите его из списка.
-2. В меню слева щелкните **управление доступом (IAM)**.
+2. В меню слева щелкните **управление доступом (IAM)** .
 3. Выберите **+ добавить** назначение роли и выберите **мониторинг метрик издателя** роли и в разделе **выберите** поле типа **AKS** для Фильтр, результаты в только что кластерах службы субъектов, определенным в подписке. Выберите из списка, относящиеся к этому кластеру.
 4. Выберите **Сохранить**, чтобы завершить назначение роли. 
 

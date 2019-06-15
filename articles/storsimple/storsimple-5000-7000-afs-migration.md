@@ -14,10 +14,10 @@ ms.workload: NA
 ms.date: 04/19/2019
 ms.author: alkohli
 ms.openlocfilehash: b46e9ee8fc3e14981a01cc2425a8ce55d06c5a9a
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65150742"
 ---
 # <a name="migrate-data-from-storsimple-5000-7000-series-to-azure-file-sync"></a>Перенос данных с устройств StorSimple серий 5000–7000 в службу "Синхронизация файлов Azure"
@@ -56,7 +56,7 @@ ms.locfileid: "65150742"
 - Тома StorSimple подключаются на узле и содержат общие файловые ресурсы.
 - В локальном хранилище узла достаточно места для хранения локально кэшированных данных.
 - Права владельца для доступа к подписке Azure, которую вы будете использовать для развертывания службы "Синхронизация файлов Azure". При создании облачной конечной точки для группы синхронизации могут возникнуть проблемы, если у вас нет прав владельца или администратора.
-- Получите доступ к [учетной записи хранения общего назначения версии 2](https://docs.microsoft.com/azure/storage/common/storage-account-overview) с общим файловым ресурсом Azure, с которым нужно выполнить синхронизацию. Дополнительные сведения см. в разделе [Создание учетной записи хранения](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account).
+- Получите доступ к [учетной записи хранения общего назначения версии 2](https://docs.microsoft.com/azure/storage/common/storage-account-overview) с общим файловым ресурсом Azure, с которым нужно выполнить синхронизацию. Дополнительные сведения см. в разделе [создать учетную запись хранилища](https://docs.microsoft.com/azure/storage/common/storage-quickstart-create-account).
   - [Создание общей папки с помощью портала Azure](https://docs.microsoft.com/azure/storage/files/storage-how-to-create-file-share).
 
 ## <a name="migration-process"></a>Процесс миграции

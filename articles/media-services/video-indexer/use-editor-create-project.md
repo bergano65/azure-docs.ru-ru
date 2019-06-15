@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 04/02/2019
 ms.author: juliako
 ms.openlocfilehash: 725e265bb7f8c98db19971c50e690974cb38a0d2
-ms.sourcegitcommit: 17411cbf03c3fa3602e624e641099196769d718b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65518139"
 ---
 # <a name="use-the-video-indexer-editor-to-create-projects"></a>Используйте редактор индексатора видео для создания проектов
@@ -73,7 +73,7 @@ ms.locfileid: "65518139"
 
 1. Выберите **просмотреть аналитические сведения** настроить какие insights требуется см. в разделе, и что вы не хотите см. в разделе. 
 
-    ![Просмотреть аналитические сведения](./media/video-indexer-view-edit/insights.png)
+    ![Просмотреть аналитику](./media/video-indexer-view-edit/insights.png)
 1. Для создания запросов для конкретных клипы, используйте поле поиска, который говорит: «Поиск в записи разговоров, visual текста, людей и метки».
 1. Добавьте фильтры для дальнейшего указания сведений на какие сцен, который вы ищете, выбрав **параметры фильтра**.
 

@@ -13,17 +13,17 @@ ms.reviewer: jrasnik, carlrab
 manager: craigg
 ms.date: 02/26/2019
 ms.openlocfilehash: c3b9fecd3ad404385732e55a9cf3aa65a6e388b8
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61483067"
 ---
 # <a name="use-resource-health-to-troubleshoot-connectivity-for-azure-sql-database"></a>Устранение неполадок подключения для Базы данных SQL Azure с помощью службы "Работоспособность ресурсов Azure"
 
 ## <a name="overview"></a>Обзор
 
-[Работоспособность ресурсов Azure](../service-health/resource-health-overview.md#getting-started) для Базы данных SQL поможет выполнить диагностику и получить необходимую поддержку, если неполадки Azure влияют на ресурсы SQL. Вы будете осведомлены о текущих и прошлых проблемах работоспособности ресурсов и сможете устранить их. Эта служба обеспечивает техническую поддержку при проблемах со службой Azure.
+[Работоспособность ресурсов Azure](../service-health/resource-health-overview.md#getting-started) для Базы данных SQL поможет выполнить диагностику и получить необходимую поддержку, если неполадки Azure влияют на ресурсы SQL. Она представляет сведения о текущем состоянии работоспособности ресурсов и о состоянии работоспособности ресурсов за прошедший период, а также помогает устранить проблемы. Служба работоспособности ресурсов обеспечивает поддержку, если вам необходима помощь в решении проблемы со службой Azure.
 
 ![Обзор](./media/sql-database-resource-health/sql-resource-health-overview.jpg)
 
@@ -33,23 +33,23 @@ ms.locfileid: "61483067"
 
 ## <a name="health-states"></a>Состояния работоспособности
 
-### <a name="available"></a>Доступно
+### <a name="available"></a>Доступна
 
 Состояние **Доступно** означает, что служба "Работоспособность ресурсов Azure" не обнаружила неудачные операции входа из-за системных ошибок в ресурсе SQL.
 
-![Доступно](./media/sql-database-resource-health/sql-resource-health-available.jpg)
+![Доступна](./media/sql-database-resource-health/sql-resource-health-available.jpg)
 
-### <a name="degraded"></a>Понижено
+### <a name="degraded"></a>Деградация
 
 Состояние **Деградация** означает, что служба "Работоспособность ресурсов Azure" обнаружила большую часть успешных и некоторые неудачные операции входа. Это скорее всего временные ошибки входа. Чтобы уменьшить влияние проблем с подключением, вызванных временными ошибками входа, реализуйте в коде [логику повторных подключений](./sql-database-connectivity-issues.md#retry-logic-for-transient-errors).
 
-![Понижено](./media/sql-database-resource-health/sql-resource-health-degraded.jpg)
+![Деградация](./media/sql-database-resource-health/sql-resource-health-degraded.jpg)
 
-### <a name="unavailable"></a>Недоступно
+### <a name="unavailable"></a>Рекомендации недоступны
 
 Состояние **Недоступно** означает, что служба "Работоспособность ресурсов Azure" обнаружила согласованные неудачные операции входа в ресурс SQL. Если ресурс остается в этом состоянии в течение длительного времени, обратитесь в службу поддержки.
 
-![Недоступно](./media/sql-database-resource-health/sql-resource-health-unavailable.jpg)
+![Рекомендации недоступны](./media/sql-database-resource-health/sql-resource-health-unavailable.jpg)
 
 ### <a name="unknown"></a>Unknown
 

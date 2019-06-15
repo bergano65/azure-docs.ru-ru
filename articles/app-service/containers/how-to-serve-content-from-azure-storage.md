@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 2/04/2019
 ms.author: msangapu-msft
 ms.openlocfilehash: 6b4e145a693aabbf1a00d732e2fd602e7c887a03
-ms.sourcegitcommit: 24fd3f9de6c73b01b0cee3bcd587c267898cbbee
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65956009"
 ---
 # <a name="serve-content-from-azure-storage-in-app-service-on-linux"></a>Обработка содержимого из службы хранилища Azure в Службе приложений на платформе Linux
@@ -62,7 +62,7 @@ az webapp config storage-account add --resource-group <group_name> --name <app_n
 
 Для всех остальных каталогов, которые вы хотите связать с учетной записью хранения, следует сделать то же самое.
 
-## <a name="verify"></a>Проверьте
+## <a name="verify"></a>Проверка
 
 Проверить, связан ли контейнер хранилища с веб-приложением, можно, выполнив следующую команду.
 
@@ -74,7 +74,7 @@ az webapp config storage-account list --resource-group <resource_group> --name <
 
 Служба хранилища Azure можно подключить с многоконтейнерных приложений с помощью пользовательских id. Чтобы просмотреть имя custom-id, выполните [ `az webapp config storage-account list --name <app_name> --resource-group <resource_group>` ](/cli/azure/webapp/config/storage-account?view=azure-cli-latest#az-webapp-config-storage-account-list).
 
-В вашей *docker-compose.yml* файл "," Карта `volumes` равным `custom-id`. Например:
+В вашей *docker-compose.yml* файл "," Карта `volumes` равным `custom-id`. Пример:
 
 ```yaml
 wordpress:

@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 02/15/2018
 ms.author: damaerte
 ms.openlocfilehash: 8fd88221818d28c227c33719c03e522e815a408b
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62097062"
 ---
 # <a name="limitations-of-azure-cloud-shell"></a>Ограничения Azure Cloud Shell
@@ -47,7 +47,7 @@ Cloud Shell поддерживает последние версии Microsoft E
 
 Пользователи могут запускать только один тип оболочки одновременно, **Bash** или **PowerShell**. Однако можно запустить несколько экземпляров Bash или PowerShell одновременно. Переключение между Bash или PowerShell с помощью меню приводит к Cloud Shell перезапустить, которая завершение существующих сеансов. Кроме того, вы можете запустить bash внутри PowerShell, введя `bash`, и вы можете запустить PowerShell в bash, введя `pwsh`.
 
-### <a name="usage-limits"></a>Ограничения на использование
+### <a name="usage-limits"></a>Ограничения использования
 
 Cloud Shell предназначен для интерактивного использования. В результате любые длительные неинтерактивные сеансы завершаются без предупреждения.
 

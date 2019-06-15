@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 3/14/2019
 ms.author: mayg
 ms.openlocfilehash: 8a36a80903a47bb4163666baf86ed8dac13a00de
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61471129"
 ---
 # <a name="review-the-cost-estimation-report-in-the-site-recovery-deployment-planner-for-vmware-disaster-recovery-to-azure"></a>Просмотр отчета об оценке затрат в планировщике развертывания Azure Site Recovery для аварийного восстановления VMware в Azure
@@ -110,7 +110,7 @@ ms.locfileid: "61471129"
 * общий размер хранилища виртуальной машины (ГБ);
 * число операций тестирования DR в год; 
 * длительность каждой операции тестирования DR (в днях); 
-* Тип ОС
+* тип ОС;
 * Избыточность данных 
 * Преимущество гибридного использования Azure
 
@@ -156,7 +156,7 @@ eastus, eastus2, westus, centralus, northcentralus, southcentralus, northeurope,
 ## <a name="supported-currencies"></a>Поддерживаемые валюты
 При помощи планировщика развертывания Azure Site Recovery можно создать отчет с использованием любой из следующих валют:
 
-|Валюта|ИМЯ||Валюта|ИМЯ||Валюта|ИМЯ|
+|Валюта|ИМЯ||Валюта|Name||Валюта|Name|
 |---|---|---|---|---|---|---|---|
 |ARS|Аргентинское песо ($)||AUD|Австралийский доллар ($)||BRL|Бразильский реал (R$)|
 |CAD|Канадский доллар ($)||CHF|Швейцарский франк (chf)||DKK|Датская крона (kr)|

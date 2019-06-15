@@ -9,10 +9,10 @@ ms.service: vmware
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: 9b3b95db24f4b0f9a0cf8f5102dfeea5dc51e29f
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/26/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64577575"
 ---
 # <a name="quickstart---create-service"></a>Краткое руководство. Создание службы
@@ -71,7 +71,7 @@ ms.locfileid: "64577575"
 
 Служба создается и добавляется в список служб.
 
-## <a name="purchase-nodes"></a>Приобрести узлов
+## <a name="purchase-nodes"></a>Покупка узлов
 
 Настройте оплаты как то перейдите емкость для среды CloudSimple частного облака, необходимо сначала подготовить узлы на портале Azure.
 

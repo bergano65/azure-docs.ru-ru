@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 11/05/2018
 ms.author: magoedte
 ms.openlocfilehash: 0f35ea3e35277ee7f1afd8278a31f45ed20c6995
-ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65522123"
 ---
 # <a name="how-to-disable-monitoring-of-your-virtual-machines-with-azure-monitor-for-vms-preview"></a>Как отключить мониторинг виртуальных машин с помощью Azure Monitor для виртуальных машин (предварительная версия)
@@ -53,8 +53,8 @@ ms.locfileid: "65522123"
 2. На портале Azure щелкните **Все службы**. В списке ресурсов введите Log Analytics. Как только вы начнете вводить символы, список отфильтруется соответствующим образом. Выберите **Log Analytics**.
 3. В списке рабочих областей Log Analytics выберите рабочую область, которая была выбрана при подключении Azure Monitor для виртуальных машин.
 4. В левой области выберите **Решения**.  
-5. В списке решений выберите **InfrastructureInsights(имя рабочей области)**, а затем страницу **Обзор** для решения и щелкните **Удалить**.  При появлении запроса на подтверждение щелкните **Yes**(Да).  
-6. В списке решений выберите **ServiceMap(имя рабочей области)**, а затем страницу **Обзор** для решения и щелкните **Удалить**.  При появлении запроса на подтверждение щелкните **Yes**(Да).  
+5. В списке решений выберите **InfrastructureInsights(имя рабочей области)** , а затем страницу **Обзор** для решения и щелкните **Удалить**.  При появлении запроса на подтверждение щелкните **Yes**(Да).  
+6. В списке решений выберите **ServiceMap(имя рабочей области)** , а затем страницу **Обзор** для решения и щелкните **Удалить**.  При появлении запроса на подтверждение щелкните **Yes**(Да).  
 
 Если перед подключением Azure Monitor для виртуальных машин вы не [собирали данные счетчиков производительности, включенных](vminsights-enable-overview.md#performance-counters-enabled) для виртуальных машин на платформе Windows или Linux в рабочей области, то вам необходимо отключить эти правила, выполнив описанные [здесь](../platform/data-sources-performance-counters.md#configuring-performance-counters) действия для Windows и Linux.
 

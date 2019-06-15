@@ -12,13 +12,13 @@ ms.date: 05/18/2018
 ms.author: v-jansko
 ROBOTS: NOINDEX,NOFOLLOW
 ms.openlocfilehash: 7498ba08b9ce7b6aae10f38a393eb8cba37f3f4e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60827907"
 ---
-# <a name="translator-speech-api-languages"></a>API перевода речи: Languages
+# <a name="translator-speech-api-languages"></a>API перевода речи: Языки
 
 [!INCLUDE [Deprecation note](../../../includes/cognitive-services-translator-speech-deprecation-note.md)]
 
@@ -132,13 +132,13 @@ Langagues { speech (object, optional), text (object, optional), tts (object, opt
 
 ### <a name="headers"></a>Заголовки
 
-|Верхний колонтитул|ОПИСАНИЕ|type|
+|Верхний колонтитул|Описание|type|
 :--|:--|:--|
 X-RequestId|Значение, которое создается сервером для идентификации запроса и используется для устранения неполадок.|string|
 
 ### <a name="parameters"></a>Параметры
 
-|Параметр|ОПИСАНИЕ|Тип параметра|Тип данных|
+|Параметр|Описание|Тип параметра|Тип данных|
 |:--|:--|:--|:--|
 |api-version    |Версия API, запрошенная клиентом. Допустимые значения: `1.0`.|query|string|
 |scope  |Установка списка поддерживаемых языков или голосов, который будет передан клиенту. Этот параметр содержит список ключевых слов, разделенных запятыми. Доступны следующие ключевые слова:<ul><li>`speech`: возвращает набор языков, поддерживаемых для расшифровки речи;</li><li>`tts`: возвращает набор голосов, поддерживаемых для преобразования текста в речь;</li><li>`text`: возвращает набор языков, поддерживаемых для перевода текста.</li></ul>Если значение не указано, для `scope` по умолчанию используется значение `text`.|query|string|
@@ -147,7 +147,7 @@ X-RequestId|Значение, которое создается сервером
 
 ### <a name="response-messages"></a>Ответные сообщения
 
-|Код состояния HTTP|Причина|
+|Код состояния HTTP|`Reason`|
 |:--|:--|
 |400|Недопустимый запрос. Проверьте входные параметры, чтобы убедиться, что они являются допустимыми. Объект ответа включает более подробное описание ошибки.|
 |429|Слишком много запросов.|

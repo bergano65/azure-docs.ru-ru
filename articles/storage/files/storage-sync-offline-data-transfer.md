@@ -9,10 +9,10 @@ ms.date: 02/12/2019
 ms.author: rogarana
 ms.subservice: files
 ms.openlocfilehash: d1ec5168b898d0aa75c12e6eb435e20c09de1929
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64700268"
 ---
 # <a name="migrate-bulk-data-to-azure-file-sync"></a>Перенос массовых данных в службу синхронизации файлов Azure
@@ -51,7 +51,7 @@ ms.locfileid: "64700268"
 
 | Шаг | Описание |
 |---|---------------------------------------------------------------------------------------|
-| ![Шаг 1](media/storage-sync-files-offline-data-transfer/bullet_1.png) | [Заказ Data Box](../../databox/data-box-deploy-ordered.md). Предложения семейства Data Box [нескольких продуктов](https://azure.microsoft.com/services/storage/databox/data) в соответствии с требованиями. При получении данных Box, выполните его [документации для копирования данных](../../databox/data-box-deploy-copy-data.md#copy-data-to-data-box) это UNC-путь в поле:  *\\< DeviceIPAddres\>\<StorageAccountName_AzFile\> \<ShareName\>*. Здесь *ShareName* — это имя промежуточной папки. Отправьте Data Box обратно в Azure. |
+| ![Шаг 1](media/storage-sync-files-offline-data-transfer/bullet_1.png) | [Заказ Data Box](../../databox/data-box-deploy-ordered.md). Предложения семейства Data Box [нескольких продуктов](https://azure.microsoft.com/services/storage/databox/data) в соответствии с требованиями. При получении данных Box, выполните его [документации для копирования данных](../../databox/data-box-deploy-copy-data.md#copy-data-to-data-box) это UNC-путь в поле:  *\\< DeviceIPAddres\>\<StorageAccountName_AzFile\> \<ShareName\>* . Здесь *ShareName* — это имя промежуточной папки. Отправьте Data Box обратно в Azure. |
 | ![Шаг 2](media/storage-sync-files-offline-data-transfer/bullet_2.png) | Подождите, пока файлы отображаются в файловые ресурсы Azure, которые были выбраны в качестве временного размещения общих ресурсов. *Не включайте синхронизации для этих общих папках.* |
 | ![Шаг 3.](media/storage-sync-files-offline-data-transfer/bullet_3.png) | Создайте новую пустую общую папку для каждой общей папки, созданное поле данных. Этот новый ресурс должен быть в той же учетной записи хранения общего ресурса Data Box. [Создание общей папки в службе файлов Azure](storage-how-to-create-file-share.md). |
 | ![Шаг 4.](media/storage-sync-files-offline-data-transfer/bullet_4.png) | [Создать группу синхронизации](storage-sync-files-deployment-guide.md#create-a-sync-group-and-a-cloud-endpoint) в службе синхронизации хранилища. Ссылка на пустой ресурс в качестве облачной конечной точкой. Повторите этот шаг для каждой общей папки Data Box. [Настройка синхронизации файлов Azure](storage-sync-files-deployment-guide.md). |

@@ -13,10 +13,10 @@ ms.workload: infrastructure
 ms.date: 09/18/2018
 ms.author: kumud
 ms.openlocfilehash: b1d2d04e74828323166810d93c52a60671bf71e8
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64710909"
 ---
 # <a name="create-change-or-delete-service-endpoint-policy-using-the-azure-portal"></a>Создание, изменение или удаление политик конечной точки службы с помощью портала Azure
@@ -73,7 +73,7 @@ ms.locfileid: "64710909"
  
 ## <a name="view-endpoint-policies"></a>Просмотр политик конечной точки службы 
 
-1. В поле *Все службы* на портале начните вводить текст *service endpoint policies*. Выберите **Service Endpoint Policies (Preview)**.
+1. В поле *Все службы* на портале начните вводить текст *service endpoint policies*. Выберите **Service Endpoint Policies (Preview)** .
 2. В разделе **Подписки** выберите подписку и группу ресурсов, как показано на следующем рисунке.
 
    ![Отображение политики](./media/virtual-network-service-endpoint-policies-portal/virtual-network-endpoint-policies-viewpolicies.PNG)

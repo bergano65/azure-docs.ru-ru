@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 02/26/2019
 ms.author: vinigam
 ms.openlocfilehash: 491f19abfd87c28ede45e98a24f31fe7e599b18b
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64691418"
 ---
 # <a name="schema-and-data-aggregation-in-traffic-analytics"></a>Схема и данные агрегирование в аналитике трафика
@@ -91,7 +91,7 @@ ms.locfileid: "64691418"
 | LoadBalancer2_s | \<Идентификатор подписки > /\<ResourceGroupName > /\<LoadBalancerName > | Подсистема балансировки нагрузки, связанная с IP-адрес назначения в потоке |
 | LocalNetworkGateway1_s | \<Идентификатор подписки > /\<ResourceGroupName > /\<LocalNetworkGatewayName > | Шлюз локальной сети, связанные с IP-адрес источника в потоке |
 | LocalNetworkGateway2_s | \<Идентификатор подписки > /\<ResourceGroupName > /\<LocalNetworkGatewayName > | Шлюз локальной сети, связанные с IP-адрес назначения в потоке |
-| ConnectionType_s | Возможные значения: VNetPeering VpnGateway и ExpressRoute |    Тип подключения |
+| ConnectionType_s | Возможные значения: VNetPeering VpnGateway и ExpressRoute |    Тип соединения |
 | ConnectionName_s | \<Идентификатор подписки > /\<ResourceGroupName > /\<имя_подключения > | Имя подключения |
 | ConnectingVNets_s | Разделенные пробелом список имен виртуальной сети | В случае звездообразной топологии здесь будут заполнены концентратора виртуальных сетей |
 | Country_s | Двухбуквенный код страны (ISO 3166-1 альфа-версия 2) | Заполняется для типа потока ExternalPublic. Все IP-адреса в поле PublicIPs_s будут совместно использовать один и тот же код страны |

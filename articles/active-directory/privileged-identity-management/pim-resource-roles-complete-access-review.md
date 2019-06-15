@@ -16,10 +16,10 @@ ms.author: rolyon
 ms.custom: pim
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: aee8ac3c2638ede559f8a1f9c51f2d6e62604998
-ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65602298"
 ---
 # <a name="complete-an-access-review-of-azure-resource-roles-in-pim"></a>Завершение проверки доступа для ролей ресурсов Azure в PIM
@@ -44,7 +44,7 @@ ms.locfileid: "65602298"
 ### <a name="stop"></a>Остановить
 Все проверки доступа имеют дату окончания, но можно воспользоваться кнопкой **Остановить** , чтобы завершить их выполнение раньше. Все пользователи, по которым еще не закончилась проверка к этому времени, не смогут ее пройти после остановки. Нельзя перезапустить проверку после ее остановки.
 
-### <a name="reset"></a>Сброс
+### <a name="reset"></a>Reset
 Вы можете сбросить проверку доступа, чтобы удалить все соответствующие решения. После сброса проверки доступа все пользователи будут отмечены как непросмотренные. 
 
 ### <a name="apply"></a>Применить

@@ -14,14 +14,14 @@ ms.author: abnarain
 manager: craigg
 robots: noindex
 ms.openlocfilehash: 5835c37363c7e9d2dd3253c08ab97f17852725f5
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61248153"
 ---
 # <a name="transform-data-by-running-u-sql-scripts-on-azure-data-lake-analytics"></a>Преобразование данных с помощью сценариев U-SQL в Azure Data Lake Analytics 
-> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
+> [!div class="op_single_selector" title1="Выберите версию службы фабрики данных, которую вы используете:"]
 > * [Версия 1](data-factory-usql-activity.md)
 > * [Версия 2 (текущая)](../transform-data-using-data-lake-analytics.md)
 
@@ -208,7 +208,7 @@ if (linkedService.Properties.TypeProperties is AzureDataLakeStoreLinkedService |
 
 | Свойство            | ОПИСАНИЕ                              | Обязательно для заполнения                                 |
 | :------------------ | :--------------------------------------- | :--------------------------------------- |
-| тип                | Для свойства type нужно задать значение **DataLakeAnalyticsU-SQL**. | Да                                      |
+| type                | Для свойства type нужно задать значение **DataLakeAnalyticsU-SQL**. | Да                                      |
 | linkedServiceName   | Ссылка на службу Azure Data Lake Analytics, зарегистрированную в качестве связанной службы в фабрике данных | Да                                      |
 | scriptPath          | Путь к папке, содержащей скрипт U-SQL В имени файла учитывается регистр. | Нет (если используется скрипт)                   |
 | scriptLinkedService | Связанная служба, которая связывает хранилище, содержащее скрипт, с фабрикой данных | Нет (если используется скрипт)                   |
@@ -331,7 +331,7 @@ OUTPUT @rs1
 }
 ```
 
-Вместо этого можно использовать динамические параметры. Пример. 
+Вместо этого можно использовать динамические параметры. Пример: 
 
 ```json
 "parameters": {

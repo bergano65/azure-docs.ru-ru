@@ -12,10 +12,10 @@ author: Blackmist
 ms.date: 02/20/2019
 ms.custom: seodec18
 ms.openlocfilehash: 2410787c3307136f827ea7fc34df9a545a59cbf4
-ms.sourcegitcommit: 16cb78a0766f9b3efbaf12426519ddab2774b815
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65850906"
 ---
 # <a name="manage-access-to-an-azure-machine-learning-workspace"></a>Управление доступом к рабочей области машинного обучения Azure
@@ -58,7 +58,7 @@ az ml workspace share -n <workspace_name> -g <resource_group_name> --role <role_
 az ml workspace share -n my_workspace -g my_resource_group --role Contributor --user jdoe@contoson.com
 ```
 
-## <a name="create-custom-role"></a>Создание настраиваемой роли
+## <a name="create-custom-role"></a>Создание пользовательской роли
 
 Если встроенные роли недостаточно, можно создать пользовательские роли. Пользовательские роли может быть чтение, запись, удаление и вычислительных ресурсов разрешения в этой рабочей области. Вы можете предоставить роли на уровне определенную рабочую область, конкретный ресурс группы или уровнем конкретной подписки.
 

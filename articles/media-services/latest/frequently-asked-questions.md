@@ -12,10 +12,10 @@ ms.topic: article
 ms.date: 04/24/2019
 ms.author: juliako
 ms.openlocfilehash: 98e8c0ccd150776341e644f7565696e8fbd63e99
-ms.sourcegitcommit: 9e8dfa1169a55c3c8af93a6c5f4e0dace4de48b2
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/13/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65556265"
 ---
 # <a name="azure-media-services-v3-frequently-asked-questions"></a>Часто задаваемые вопросы о Службах мультимедиа Azure версии 3
@@ -46,7 +46,7 @@ ms.locfileid: "65556265"
 
 Дополнительные сведения см. в разделе [компонентов пропуски по отношению к версии 2 API-интерфейсы](migrate-from-v2-to-v3.md#feature-gaps-with-respect-to-v2-apis).
 
-## <a name="live-streaming"></a>Потоковая трансляция 
+## <a name="live-streaming"></a>Потоковая передача в реальном времени 
 
 ###  <a name="how-to-insert-breaksvideos-and-image-slates-during-live-stream"></a>Как вставлять паузы, видео или баннеры во время передачи динамического потока?
 
@@ -72,7 +72,7 @@ ms.locfileid: "65556265"
 
 Использование API служб мультимедиа Azure для настройки лицензий и ключа доставки и шифрования ресурсов-контейнеров (как показано в [в этом примере](https://github.com/Azure-Samples/media-services-v3-dotnet-tutorials/blob/master/AMSV3Tutorials/EncryptWithAES/Program.cs)).
 
-Дополнительные сведения можно найти в разделе 
+Дополнительные сведения можно найти в разделе
 
 - [Обзор системы защиты содержимого](content-protection-overview.md)
 - [Проектирование системы для защиты содержимого с несколькими подсистемами DRM и управлением доступом](design-multi-drm-system-with-access-control.md)

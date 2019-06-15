@@ -16,10 +16,10 @@ ms.workload: infrastructure-services
 ms.date: 07/24/2017
 ms.author: kumud
 ms.openlocfilehash: 4582f7be8e48e493a1adcb8ffc6c3a8bfe43a58e
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65506378"
 ---
 # <a name="add-change-or-remove-ip-addresses-for-an-azure-network-interface"></a>Добавление, изменение и удаление IP-адресов для сетевого интерфейса Azure
@@ -53,7 +53,7 @@ ms.locfileid: "65506378"
 
    |Параметр|Обязательный?|Сведения|
    |---|---|---|
-   |ИМЯ|Да|Должно быть уникальным для сетевого интерфейса.|
+   |Name|Да|Должно быть уникальным для сетевого интерфейса.|
    |type|Да|Так как вы добавляете IP-конфигурацию к существующему сетевому интерфейсу и каждый сетевой интерфейс должен иметь [основную](#primary) IP-конфигурацию, единственным вариантом является параметр **Вторичный**.|
    |"Private IP address assignment method" (Способ назначения общедоступных IP-адресов)|Да|[**Динамически**](#dynamic). В Azure назначается первый доступный адрес из диапазона адресов подсети, в которой развернут этот сетевой интерфейс. [**Статически**](#static). Вы назначаете любой свободный адрес из диапазона адресов подсети, в которой развернут этот сетевой интерфейс.|
    |Общедоступный IP-адрес|Нет|**Отключено**. Сейчас с IP-конфигурацией не связан ресурс общедоступного IP-адреса. **Включено**. Выберите существующий общедоступный IPv4-адрес или создайте его. Дополнительные сведения о создании общедоступного IP-адреса см. в [этом разделе](virtual-network-public-ip-address.md#create-a-public-ip-address).|
@@ -61,7 +61,7 @@ ms.locfileid: "65506378"
 
 **Команды**
 
-|Tool|Команда|
+|Средство|Команда|
 |---|---|
 |Интерфейс командной строки|[az network nic ip-config create](/cli/azure/network/nic/ip-config)|
 |PowerShell|[Добавить AzNetworkInterfaceIpConfig](/powershell/module/az.network/add-aznetworkinterfaceipconfig)|
@@ -82,7 +82,7 @@ ms.locfileid: "65506378"
 
 **Команды**
 
-|Tool|Команда|
+|Средство|Команда|
 |---|---|
 |Интерфейс командной строки|[az network nic ip-config update](/cli/azure/network/nic/ip-config)|
 |PowerShell|[Set-AzNetworkInterfaceIpConfig](/powershell/module/az.network/set-aznetworkinterfaceipconfig)|
@@ -98,7 +98,7 @@ ms.locfileid: "65506378"
 
 **Команды**
 
-|Tool|Команда|
+|Средство|Команда|
 |---|---|
 |Интерфейс командной строки|[az network nic ip-config delete](/cli/azure/network/nic/ip-config)|
 |PowerShell|[Remove-AzNetworkInterfaceIpConfig](/powershell/module/az.network/remove-aznetworkinterfaceipconfig)|
@@ -107,14 +107,14 @@ ms.locfileid: "65506378"
 
 [Частный](#private) и (необязательно) [общедоступный](#public) IP-адреса назначаются одной или нескольким IP-конфигурациям, назначенным сетевому интерфейсу. Существуют два типа IP-конфигураций.
 
-### <a name="primary"></a>Основной
+### <a name="primary"></a>Первичный
 
 Каждому сетевому интерфейсу назначается основная IP-конфигурация. Особенности основной IP-конфигурации:
 
 - Ей назначается [частный](#private) [IPv4](#ipv4)-адрес. Ей невозможно назначить частный [IPv6](#ipv6)-адрес.
 - Ей также может быть назначен [общедоступный](#public) IPv4-адрес. Общедоступный IPv6-адрес невозможно назначить основной или дополнительной IP-конфигурации. Однако вы можете назначить общедоступный IPv6-адрес Azure Load Balancer, который может распределять нагрузку трафика для частного IPv6-адреса виртуальной машины. Дополнительные сведения см. в разделе [Подробные сведения и ограничения](../load-balancer/load-balancer-ipv6-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json#details-and-limitations).
 
-### <a name="secondary"></a>Дополнительный
+### <a name="secondary"></a>Вторичная
 
 Помимо основной IP-конфигурации сетевому интерфейсу может быть назначено несколько дополнительных IP-конфигураций (не обязательно). Особенности дополнительной IP-конфигурации:
 
@@ -129,7 +129,7 @@ ms.locfileid: "65506378"
 
 Можно назначить [IP-конфигурации](#ip-configurations) IP-адреса для следующих типов.
 
-### <a name="private"></a>Закрытый
+### <a name="private"></a>Private
 
 Частные [IPv4](#ipv4)-адреса позволяют виртуальной машине взаимодействовать с другими ресурсами в виртуальной сети или других подключенных к ней сетях. Невозможно передавать входящий трафик на виртуальную машину, а также виртуальная машина не может передавать трафик с помощью частного [IPv6](#ipv6)-адреса, за одним исключением. Виртуальная машина может взаимодействовать с Azure Load Balancer с помощью IPv6-адреса. Дополнительные сведения см. в разделе [Подробные сведения и ограничения](../load-balancer/load-balancer-ipv6-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json#details-and-limitations).
 
@@ -163,7 +163,7 @@ ms.locfileid: "65506378"
 
 Общедоступные и частные IP-адреса можно назначать любым из следующих способов:
 
-### <a name="dynamic"></a>Динамическое
+### <a name="dynamic"></a>Динамический
 
 Динамические частные и общедоступные IPv4- и IPv6-адреса (необязательно) назначаются по умолчанию.
 
@@ -204,7 +204,7 @@ ms.locfileid: "65506378"
 ## <a name="next-steps"></a>Дальнейшие действия
 Чтобы создать виртуальную машину с разными IP-конфигурациями, ознакомьтесь со следующими статьями:
 
-|Задача|Tool|
+|Задача|Средство|
 |---|---|
 |Создание виртуальной машины с несколькими сетевыми интерфейсами|[Интерфейс командной строки](../virtual-machines/linux/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json), [PowerShell](../virtual-machines/windows/multiple-nics.md?toc=%2fazure%2fvirtual-network%2ftoc.json)|
 |Создание виртуальной машины с одним сетевым адаптером, которому назначено несколько IPv4-адресов|[Интерфейс командной строки](virtual-network-multiple-ip-addresses-cli.md), [PowerShell](virtual-network-multiple-ip-addresses-powershell.md)|

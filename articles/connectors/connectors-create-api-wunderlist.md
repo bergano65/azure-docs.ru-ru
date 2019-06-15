@@ -12,10 +12,10 @@ ms.topic: article
 tags: connectors
 ms.date: 08/25/2018
 ms.openlocfilehash: e3570ab1227ca388ac62bffdc74bb68b1ddc41d1
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62105672"
 ---
 # <a name="monitor-and-manage-wunderlist-by-using-azure-logic-apps"></a>Мониторинг Wunderlist и управление им с помощью Azure Logic Apps
@@ -61,7 +61,7 @@ ms.locfileid: "62105672"
        -или-
 
      * Между шагами, в которых вы хотите добавить действие, переместите указатель на стрелку между шагами. 
-     Выберите появившийся знак "плюс" (**+**), а затем щелкните **Добавить действие**.
+     Выберите появившийся знак "плюс" ( **+** ), а затем щелкните **Добавить действие**.
      
        В поле поиска введите wunderlist в качестве фильтра. 
        В списке действий выберите любое необходимое действие.

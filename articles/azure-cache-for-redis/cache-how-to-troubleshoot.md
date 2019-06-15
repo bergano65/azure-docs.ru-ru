@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 03/15/2019
 ms.author: yegu
 ms.openlocfilehash: 66361871d365068a90a2eeab70d92adb6b246a83
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60830013"
 ---
 # <a name="how-to-troubleshoot-azure-cache-for-redis"></a>Как устранить неполадки кэша Redis для Azure
@@ -207,7 +207,7 @@ StackExchange.Redis использует параметр конфигураци
 | qs |Указывает, что 67 выполняемых операций отправлено на сервер, но ответ еще не доступна. Ответ может быть таким: `Not yet sent by the server` или `sent by the server but not yet processed by the client.` |
 | qc |0 или выполняемых операций отправлены ответы, но еще не были отмечены как завершенные, так как пользователь ждет окончания в цикле выполнения |
 | wr |Нет байтов/activewriters активных модулей записи (то есть 6 неотправленных запросов не игнорируются) |
-| в папке |Указывает, что отсутствуют активные модули чтения и нет байтов для чтения для bytes/activereaders сетевой карты. |
+| больше |Указывает, что отсутствуют активные модули чтения и нет байтов для чтения для bytes/activereaders сетевой карты. |
 
 ### <a name="steps-to-investigate"></a>Действия для обнаружения проблем
 

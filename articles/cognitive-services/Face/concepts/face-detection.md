@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 04/26/2019
 ms.author: pafarley
 ms.openlocfilehash: e61048eeab9d7061c18f3237db22fc87ca52f526
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65891149"
 ---
 # <a name="face-detection-and-attributes"></a>Обнаружение лиц и атрибуты
@@ -80,4 +80,4 @@ Face ID является строкой уникального идентифи�
 
 Теперь, когда вы знакомы с основными понятиями обнаружения лиц, вы можете научиться писать сценарий, который определяет лиц в данного изображения.
 
-* [Обнаружение лиц на изображении](../Face-API-How-to-Topics/HowtoDetectFacesinImage.md)
+* [Определение лиц на изображении](../Face-API-How-to-Topics/HowtoDetectFacesinImage.md)

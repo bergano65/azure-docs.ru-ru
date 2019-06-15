@@ -13,10 +13,10 @@ ms.author: mimart
 ms.reviewer: arvindh, japere
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 51b3066a529183d7a8a13e4673d7879136aa0d7a
-ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65824168"
 ---
 # <a name="single-sign-on-to-applications-in-azure-active-directory"></a>Единый вход в приложениях в Azure Active Directory
@@ -53,7 +53,7 @@ ms.locfileid: "65824168"
 ## <a name="openid-connect-and-oauth"></a>OpenID Connect и OAuth
 При разработке новых приложений используйте современные протоколы, такие как OpenID Connect и OAuth, чтобы оптимально использовать единый вход для своего приложения на различных платформах устройств. OAuth позволяет пользователям и администраторам [дать согласие](configure-user-consent.md) для защищенных ресурсов, таких как [Microsoft Graph](/graph/overview). Вы получаете средства для простой настройки [пакета SDK](../develop/reference-v2-libraries.md) в соответствии с требованиями своего приложения. Кроме того, приложение будет готово к использованию [Microsoft Graph](/graph/overview).
 
-Дополнительные сведения можно найти в разделе 
+Дополнительные сведения можно найти в разделе
 
 - [OAuth 2.0](../develop/v2-oauth2-auth-code-flow.md)
 - [OpenID Connect 1.0](../develop/v2-protocols-oidc.md)
@@ -175,7 +175,7 @@ ms.locfileid: "65824168"
 
 Сведения о настройке аутентификации на основе заголовков см. в статье [Публикация приложений с поддержкой аутентификации на основе заголовков с использованием прокси приложения Azure AD и PingAccess](application-proxy-configure-single-sign-on-with-ping-access.md). 
 
-### <a name="what-is-pingaccess-for-azure-ad"></a>Что такое PingAccess для Azure AD?
+### <a name="what-is-pingaccess-for-azure-ad"></a>Что такое PingAccess для Azure AD?
 
 Используя PingAccess для Azure AD, пользователи могут получать доступ и выполнять единый вход в приложения, использующие заголовки для проверки подлинности. Прокси приложения обрабатывает такие приложения, как и любые другие, используя Azure AD для аутентификации доступа и передавая трафик через службу соединителя. После проверки подлинности служба PingAccess переводит маркер доступа Azure AD в формат заголовка, отправляемого приложению.
 

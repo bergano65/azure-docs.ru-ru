@@ -13,10 +13,10 @@ ms.workload: na
 ms.date: 04/12/2019
 ms.author: banders
 ms.openlocfilehash: e15dcdbbcaed32d836bb751ef93ce17e90bd6905
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60771249"
 ---
 # <a name="prepay-for-azure-software-plans"></a>Предварительная оплата планов программного обеспечения Azure
@@ -63,7 +63,7 @@ RedHat плана скидки применяются только к разме
 
 Ее нельзя отменить или exchange SUSE или RedHat план, который вы приобрели. Проверьте использование, чтобы убедиться в том, что вы приобретаете подходящей план. Чтобы определить, что нужно приобрести помощь, см. в разделе [сведения о применении скидки план программного обеспечения](../../billing/billing-understand-suse-reservation-charges.md).
 
-## <a name="need-help-contact-us"></a>Нужна помощь? Связаться с нами.
+## <a name="need-help-contact-us"></a>Требуется помощь? Свяжитесь с нами.
 
 Если у вас есть вопросы или вам нужна помощь, [создайте запрос в службу поддержки](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
 

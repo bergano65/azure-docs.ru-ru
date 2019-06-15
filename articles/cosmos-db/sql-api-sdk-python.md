@@ -1,5 +1,5 @@
 ---
-title: 'Azure Cosmos DB: API, пакет SDK и ресурсы для SQL Python'
+title: Azure Cosmos DB — API, пакет SDK и ресурсы для SQL Python
 description: Сведения о пакете SDK и интерфейсах API SQL для Python, включая даты выхода и прекращения использования, а также изменения, внесенные в каждую версию пакета SDK для Azure Cosmos DB на Python.
 author: SnehaGunda
 ms.service: cosmos-db
@@ -9,10 +9,10 @@ ms.topic: reference
 ms.date: 11/29/2018
 ms.author: sngun
 ms.openlocfilehash: 9903339cbf0958893fb0d11a8c1b6ab7d156aae7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60626797"
 ---
 # <a name="azure-cosmos-db-python-sdk-for-sql-api-release-notes-and-resources"></a>Пакет SDK для Azure Cosmos DB на Python для API SQL. Заметки о выпуске и материалы
@@ -160,7 +160,7 @@ ms.locfileid: "60626797"
 | [2.3.1](#2.3.1) |21 декабря 2017 г. |--- |
 | [2.3.0](#2.3.0) |10 ноября 2017 г. |--- |
 | [2.2.1](#2.2.1) |29 сентября 2017 г. |--- |
-| [2.2.0](#2.2.0) |10 мая 2017 года |--- |
+| [2.2.0](#2.2.0) |10 мая 2017 г. |--- |
 | [2.1.0](#2.1.0) |1 мая 2017 г. |--- |
 | [2.0.1](#2.0.1) |30 октября 2016 г. |--- |
 | [2.0.0](#2.0.0) |29 сентября 2016 г. |--- |

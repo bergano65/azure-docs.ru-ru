@@ -15,10 +15,10 @@ ms.topic: conceptual
 ms.date: 04/22/2019
 ms.author: b-juche
 ms.openlocfilehash: 1f9c427045c9d42f6a11cc4bcc798cfc47a4428c
-ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65523104"
 ---
 # <a name="service-levels-for-azure-netapp-files"></a>Уровни обслуживания для Azure NetApp Files
@@ -26,7 +26,7 @@ ms.locfileid: "65523104"
 
 ## <a name="supported-service-levels"></a>Уровни обслуживания, поддерживаемых
 
-Служба файлов Azure NetApp поддерживает три уровня обслуживания: *Ultra*, *уровня "премиум"*, и *стандартный*. 
+Служба файлов Azure NetApp поддерживает три уровня обслуживания: *Ultra*, *уровня "премиум"* , и *стандартный*. 
 
 * <a name="Ultra"></a>Ultra хранилища
 

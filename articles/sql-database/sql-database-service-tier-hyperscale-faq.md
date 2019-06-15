@@ -13,10 +13,10 @@ ms.reviewer: ''
 manager: craigg
 ms.date: 05/06/2019
 ms.openlocfilehash: 38d9ad007b67756bdca0c6f98267aa16ba38ee9d
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65791431"
 ---
 # <a name="faq-about-azure-sql-hyperscale-databases"></a>Часто задаваемые вопросы о базах данных SQL Azure уровня "Гипермасштабирование"
@@ -170,7 +170,7 @@ ms.locfileid: "65791431"
 
 ### <a name="what-is-the-smallest-database-size-that-sql-database-hyperscale-supports-or-starts-with"></a>Каков минимальный и начальный поддерживаемый размер на уровне "Гипермасштабирование" Базы данных SQL
 
-10 GB
+10 ГБ
 
 ### <a name="in-what-increments-does-my-database-size-grow"></a>На сколько увеличивается размер базы данных за раз
 
@@ -182,11 +182,11 @@ ms.locfileid: "65791431"
 
 ### <a name="can-i-manage-or-define-files-or-filegroups-with-hyperscale"></a>Можно ли управлять файлами или файловыми группами или определять их на уровне "Гипермасштабирование"
 
-Нет 
+Нет
   
 ### <a name="can-i-provision-a-hard-cap-on-the-data-growth-for-my-database"></a>Можно ли задать жестко фиксированное увеличение объема данных в базе данных
 
-Нет 
+Нет
 
 ### <a name="how-are-data-files-laid-out-with-sql-database-hyperscale"></a>Как файлы данных располагаются на уровне "Гипермасштабирование" Базы данных SQL
 
@@ -194,7 +194,7 @@ ms.locfileid: "65791431"
 
 ### <a name="is-database-shrink-supported"></a>Поддерживается ли уменьшение базы данных
 
-Нет 
+Нет
 
 ### <a name="is-database-compression-supported"></a>Поддерживается ли сжатие базы данных
 

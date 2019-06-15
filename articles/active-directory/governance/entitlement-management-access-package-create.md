@@ -17,16 +17,16 @@ ms.author: rolyon
 ms.reviewer: ''
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 312658bd653d94f3e1a32204b3c5ae4ae290558e
-ms.sourcegitcommit: 3ced637c8f1f24256dd6ac8e180fff62a444b03c
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65832756"
 ---
 # <a name="create-a-new-access-package-in-azure-ad-entitlement-management-preview"></a>Создание нового пакета доступ в управление правами Azure AD (Предварительная версия)
 
 > [!IMPORTANT]
-> Управление правами Azure Active Directory (Azure AD) в настоящее время находится в общедоступной предварительной версии.
+> Управление правами Azure Active Directory (Azure AD) сейчас предоставляется в общедоступной предварительной версии.
 > Эта предварительная версия предоставляется без соглашения об уровне обслуживания и не рекомендована для использования рабочей среде. Некоторые функции могут не поддерживаться или их возможности могут быть ограничены.
 > Дополнительные сведения см. в статье [Дополнительные условия использования предварительных выпусков Microsoft Azure](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
@@ -44,19 +44,19 @@ ms.locfileid: "65832756"
 
 ## <a name="start-new-access-package"></a>Запуск нового пакета доступа
 
-**Готовности к установке роли:** Администратор или владелец каталога
+**Требуемая роль:** Администратор или владелец каталога
 
 1. Войдите на [портале Azure](https://portal.azure.com).
 
-1. Нажмите кнопку **Azure Active Directory** и нажмите кнопку **функции управления удостоверениями**.
+1. Щелкните **Azure Active Directory** и выберите **Управление удостоверениями**.
 
-1. В меню слева щелкните **доступа к пакетам**.
+1. В меню слева щелкните **Пакеты для доступа**.
 
     ![Управление правами на портале Azure](./media/entitlement-management-shared/elm-access-packages.png)
 
-1. Нажмите кнопку **новый пакет доступа**.
+1. Щелкните **Создать пакет для доступа**.
 
-## <a name="basics"></a>Основные сведения
+## <a name="basics"></a>Основы
 
 На **основы** вкладке доступа пакета имя а также указать для создания пакета доступа в каком каталоге.
 

@@ -13,10 +13,10 @@ ms.reviewer: sstein, carlrab, srbozovi, bonova
 manager: craigg
 ms.date: 02/18/2019
 ms.openlocfilehash: 59088ad53e923f1303c0e800df9c25f70e63812f
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60701933"
 ---
 # <a name="quickstart-configure-azure-vm-to-connect-to-an-azure-sql-database-managed-instance"></a>Краткое руководство. Настройка виртуальной машины Azure для подключения к Управляемому экземпляру Базы данных SQL Azure
@@ -27,7 +27,7 @@ ms.locfileid: "60701933"
 
 В качестве начальной точки используются ресурсы, созданные в кратком руководстве [Создание Управляемого экземпляра Базы данных SQL Azure](sql-database-managed-instance-get-started.md).
 
-## <a name="sign-in-to-the-azure-portal"></a>Войдите на портал Azure
+## <a name="sign-in-to-the-azure-portal"></a>Вход на портал Azure
 
 Войдите на [портале Azure](https://portal.azure.com/).
 
@@ -78,12 +78,12 @@ ms.locfileid: "60701933"
    | ---------------- | ----------------- | ----------- |
    | **Подписка** | Допустимая подписка | Необходимо использовать подписку, в которой есть разрешение на создание ресурсов. |
    | **Группа ресурсов** |Группа ресурсов, указанная в кратком руководстве по [созданию Управляемого экземпляра](sql-database-managed-instance-get-started.md).|Необходимо использовать группу ресурсов, в которой находится виртуальная сеть.|
-   | **Местоположение.** | Расположение группы ресурсов | Это значение заполняется на основе выбранной группы ресурсов. |
+   | **Location** | Расположение группы ресурсов | Это значение заполняется на основе выбранной группы ресурсов. |
    | **Имя виртуальной машины**  | Любое допустимое имя | Сведения о допустимых именах см. в статье [Соглашения об именовании](https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions).|
    |**Имя администратора**|Любое допустимое имя пользователя|Сведения о допустимых именах см. в статье [Соглашения об именовании](https://docs.microsoft.com/azure/architecture/best-practices/naming-conventions). Не используйте serveradmin. Это имя зарезервировано для роли уровня сервера.<br>Используйте это имя пользователя каждый раз при [подключении к виртуальной машине](#connect-to-virtual-machine).|
    |**Пароль**|Любой допустимый пароль|Пароль должен включать минимум 12 символов и соответствовать [определенным требованиям к сложности](../virtual-machines/windows/faq.md#what-are-the-password-requirements-when-creating-a-vm).<br>Используйте этот пароль каждый раз при [подключении к виртуальной машине](#connect-to-virtual-machine).|
    | **Размер виртуальной машины** | Любой допустимый размер | Размера по умолчанию в этом шаблоне **Standard_B2s** достаточно для работы с этим руководством. |
-   | **Местоположение.**|[resourceGroup().location].| Не меняйте это значение. |
+   | **Location**|[resourceGroup().location].| Не меняйте это значение. |
    | **Имя виртуальной сети**|Виртуальная сеть, в которой вы создали управляемый экземпляр.|
    | **Имя подсети**|Имя подсети, созданной при выполнении предыдущей процедуры| Не выбирайте подсеть, в которой создан Управляемый экземпляр.|
    | **artifacts Location** (Расположение артефактов) | [deployment().properties.templateLink.uri] | Не меняйте это значение. |
@@ -106,7 +106,7 @@ ms.locfileid: "60701933"
 
 1. После завершения развертывания перейдите в ресурс виртуальной машины.
 
-    ![Виртуальная машина](./media/sql-database-managed-instance-configure-vm/vm.png)  
+    ![ВМ](./media/sql-database-managed-instance-configure-vm/vm.png)  
 
 2. Нажмите кнопку **Подключиться**.
 
