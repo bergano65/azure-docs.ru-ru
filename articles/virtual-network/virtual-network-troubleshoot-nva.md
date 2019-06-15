@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/26/2018
 ms.author: genli
-ms.openlocfilehash: b7ac96d3588923727a71cf6152ba36481ef44545
-ms.sourcegitcommit: 1c2cf60ff7da5e1e01952ed18ea9a85ba333774c
+ms.openlocfilehash: 00393395745ca96ae14269ae80e4f3d25673fbfa
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/12/2019
-ms.locfileid: "59526662"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64723005"
 ---
 # <a name="network-virtual-appliance-issues-in-azure"></a>Неполадки сетевого виртуального модуля в Azure
 
@@ -74,7 +74,14 @@ ms.locfileid: "59526662"
 3. Проверьте, чтобы было включено свойство **EnableIPForwarding**.
 4. Если IP-пересылка отключена, выполните следующие команды, чтобы включить ее:
 
-   $nic2 = Get-AzNetworkInterface - ResourceGroupName <ResourceGroupName> -имя <NicName> nic2 долл. США. EnableIPForwarding = 1 Set AzNetworkInterface - NetworkInterface $nic2 выполнения: $nic2 #and проверить наличие ожидаемые выходные данные: EnableIPForwarding: Значение true, NetworkSecurityGroup: null
+   ```powershell
+   $nic2 = Get-AzNetworkInterface -ResourceGroupName <ResourceGroupName> -Name <NicName>
+   $nic2.EnableIPForwarding = 1
+   Set-AzNetworkInterface -NetworkInterface $nic2
+   Execute: $nic2 #and check for an expected output:
+   EnableIPForwarding   : True
+   NetworkSecurityGroup : null
+   ```
 
 **Проверьте группы безопасности сети, при использовании стандартных SKU Pubilc IP-адреса** при использовании уровня "стандартный" и общедоступные IP-адреса, должен существовать созданную группу безопасности сети и явные правила, чтобы разрешить трафик на виртуальное сетевое устройство.
 

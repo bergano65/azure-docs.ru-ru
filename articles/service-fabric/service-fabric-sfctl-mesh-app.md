@@ -15,10 +15,10 @@ ms.workload: multiple
 ms.date: 12/06/2018
 ms.author: bikang
 ms.openlocfilehash: fb812412c7dd07800c1e2231c9472a122ab7d7d4
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60837289"
 ---
 # <a name="sfctl-mesh-app"></a>sfctl mesh app
@@ -28,9 +28,9 @@ ms.locfileid: "60837289"
 
 |Команда|Описание|
 | --- | --- |
-| удалить | Удаляет ресурс приложения. |
-| список | Выводит список всех ресурсов приложения. |
-| показать | Получает ресурс приложения с заданным именем. |
+| delete | Удаляет ресурс приложения. |
+| list | Выводит список всех ресурсов приложения. |
+| show | Получает ресурс приложения с заданным именем. |
 
 ## <a name="sfctl-mesh-app-delete"></a>sfctl mesh app delete
 Удаляет ресурс приложения.

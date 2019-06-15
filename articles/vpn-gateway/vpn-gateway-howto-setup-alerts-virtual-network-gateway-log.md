@@ -5,18 +5,26 @@ services: vpn-gateway
 author: anzaman
 ms.service: vpn-gateway
 ms.topic: conceptional
-ms.date: 04/22/2019
+ms.date: 06/12/2019
 ms.author: alzam
-ms.openlocfilehash: 3880c847c54136dfd3ba1ecfe0178565091e229f
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.openlocfilehash: 48725ed8cdf3df30f8df31966aa632bfb2a4ef1f
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
-ms.locfileid: "65510203"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67066892"
 ---
 # <a name="set-up-alerts-on-diagnostic-log-events-from-vpn-gateway"></a>Настраивать оповещения для событий журнала диагностики из VPN-шлюза
 
-Эта статья поможет вам настроить оповещения на основе событий журнала диагностики из VPN-шлюза Azure.
+Эта статья поможет вам настроить оповещения на основе событий журнала диагностики из VPN-шлюза Azure. Доступны следующие журналы.
+
+|***Имя*** | ***Описание*** |
+|---        | ---               |
+|GatewayDiagnosticLog | Содержит журналы диагностики для событий конфигурации шлюза, основные изменения и мероприятиях обслуживания |
+|TunnelDiagnosticLog | Содержит события изменения состояния туннеля. Туннель подключение или отключение события имеют сводные причину для изменения состояния, если применимо |
+|RouteDiagnosticLog | Журналы изменений статические маршруты и BGP событий, происходящих в шлюз |
+|IKEDiagnosticLog | Журналы сообщений IKE элемента управления и события DHCP на шлюз |
+|P2SDiagnosticLog | Записывает в журнал сообщения точка сеть управления и события DHCP на шлюз |
 
 ## <a name="setup"></a>Настройка оповещений
 

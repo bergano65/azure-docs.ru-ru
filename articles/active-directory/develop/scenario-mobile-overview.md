@@ -16,14 +16,14 @@ ms.author: jmprieur
 ms.reviwer: brandwe
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: df5b53ccdcd33e2542834769baff5b759ff7b170
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.openlocfilehash: 0f007ad1d5bf99136328ec5706f7ccbb5f6593c8
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65962366"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67111228"
 ---
-# <a name="scenario-mobile-application-that-calls-web-apis"></a>Сценарий: Мобильных приложений, что вызовы веб-API
+# <a name="scenario-mobile-application-that-calls-web-apis"></a>Сценарий. Мобильных приложений, что вызовы веб-API
 
 Узнайте все что нужно знать для создания мобильное приложение, которое вызывает веб-API.
 
@@ -52,7 +52,7 @@ ms.locfileid: "65962366"
 
 - **Взаимодействие с пользователем является ключом**: Разрешить пользователям видеть значение приложения перед запросом для входа в систему и запросить только необходимые разрешения.
 - **Поддерживает все конфигурации пользователя**: Многие мобильные корпоративные пользователи находятся под условного доступа и политики соответствия устройств. Убедитесь в том, что для поддержки следующих ключевых сценариев.
-- **Реализовать единый вход (SSO)**: MSAL и платформе Microsoft identity упрощают Включение единого входа через браузер на устройстве или проверка подлинности Microsoft (и корпоративный портал Intune для Android).
+- **Реализовать единый вход (SSO)** : MSAL и платформе Microsoft identity упрощают Включение единого входа через браузер на устройстве или проверка подлинности Microsoft (и корпоративный портал Intune для Android).
 
 ## <a name="specifics"></a>Особенности
 

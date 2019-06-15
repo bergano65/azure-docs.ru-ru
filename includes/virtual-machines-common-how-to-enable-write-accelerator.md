@@ -9,10 +9,10 @@ ms.date: 05/23/2019
 ms.author: raiye
 ms.custom: include file
 ms.openlocfilehash: 7b9b30f1598f7e50d25b15aaf2fda896ee9e5012
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66248918"
 ---
 # <a name="enable-write-accelerator"></a>Включение ускорителя записи
@@ -51,7 +51,7 @@ ms.locfileid: "66248918"
 | M208ms_v2 M208s_v2| 8 | 10 000 |
 | M128ms, 128s | 16 | 20 000 |
 | M64ms, M64ls, M64s | 8 | 10 000 |
-| M32ms, M32ls, M32ts, M32s | 4. | 5000 |
+| M32ms, M32ls, M32ts, M32s | 4\. | 5000 |
 | M16ms, M16s | 2 | 2500 |
 | M8ms, M8s | 1 | 1250 |
 

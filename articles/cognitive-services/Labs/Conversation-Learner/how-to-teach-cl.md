@@ -11,10 +11,10 @@ ms.topic: article
 ms.date: 04/30/2018
 ms.author: nitinme
 ms.openlocfilehash: 9e5e6594a74219a22d67af18827bfe2b7cbd0fb8
-ms.sourcegitcommit: 3d4121badd265e99d1177a7c78edfa55ed7a9626
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66385273"
 ---
 # <a name="how-to-teach-with-conversation-learner"></a>Использование приложения Conversation Learner (Обучение диалогам) 
@@ -52,8 +52,8 @@ ms.locfileid: "66385273"
 Является ли это первым случаем | 1 |
 Точное совпадение слов в текущей фразе пользователя | 2 | 
 Слова со схожим значением в текущей фразе пользователя | 3 | 
-Действия системы перед предыдущим случаем | 4. |
-Сущности, присутствующие в предыдущих случаях | 4. | 
+Действия системы перед предыдущим случаем | 4\. |
+Сущности, присутствующие в предыдущих случаях | 4\. | 
 Пользовательские фразы до текущего случая | 5 | 
 
 > [!NOTE]

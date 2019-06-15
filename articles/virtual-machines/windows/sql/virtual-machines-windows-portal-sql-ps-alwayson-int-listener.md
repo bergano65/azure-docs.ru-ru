@@ -15,10 +15,10 @@ ms.workload: iaas-sql-server
 ms.date: 02/06/2019
 ms.author: mikeray
 ms.openlocfilehash: 5b647af7925ceb81c524deb0accf90f9e895080e
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66165794"
 ---
 # <a name="configure-one-or-more-always-on-availability-group-listeners---resource-manager"></a>Настройка одного или нескольких прослушивателей групп доступности AlwaysOn в модели Resource Manager
@@ -68,7 +68,7 @@ ms.locfileid: "66165794"
 $ILB= New-AzLoadBalancer -Location $Location -Name $ILBName -ResourceGroupName $ResourceGroupName -FrontendIpConfiguration $FEConfig -BackendAddressPool $BEConfig -LoadBalancingRule $ILBRule -Probe $SQLHealthProbe -sku Standard
 ```
 
-Чтобы создать Load Balancer (цен. категория "Базовый"), из строки ее создания необходимо удалить сценарий `-sku Standard`. Например:
+Чтобы создать Load Balancer (цен. категория "Базовый"), из строки ее создания необходимо удалить сценарий `-sku Standard`. Пример:
 
 ```powershell
 $ILB= New-AzLoadBalancer -Location $Location -Name $ILBName -ResourceGroupName $ResourceGroupName -FrontendIpConfiguration $FEConfig -BackendAddressPool $BEConfig -LoadBalancingRule $ILBRule -Probe $SQLHealthProbe
@@ -227,7 +227,7 @@ sqlcmd автоматически подключается к любому эк�
 
 * Ограничивая доступ с помощью группы безопасности сети Azure, убедитесь, что правило разрешения включает IP-адреса виртуальных машин SQL Server и динамический IP-адрес балансировщика нагрузки для прослушивателя AG и IP-адрес основного кластера, если они применяются.
 
-## <a name="for-more-information"></a>Для получения дополнительных сведений
+## <a name="for-more-information"></a>Дополнительные сведения
 Дополнительные сведения см. в статье [Введение в группы доступности AlwaysOn SQL Server на виртуальных машинах Azure](virtual-machines-windows-portal-sql-availability-group-tutorial.md).
 
 ## <a name="powershell-cmdlets"></a>Командлеты PowerShell

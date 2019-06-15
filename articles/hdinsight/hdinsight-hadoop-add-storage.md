@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 04/08/2019
 ms.author: hrasheed
 ms.openlocfilehash: 6b9577bcf8b527abb0cb7b8720ed83ec8321655b
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64724476"
 ---
 # <a name="add-additional-storage-accounts-to-hdinsight"></a>Добавление дополнительных учетных записей хранения в HDInsight
@@ -23,7 +23,7 @@ ms.locfileid: "64724476"
 
 ## <a name="prerequisites"></a>Технические условия
 
-* Кластер Hadoop в HDInsight. См. в разделе [начало работы с HDInsight на платформе Linux](./hadoop/apache-hadoop-linux-tutorial-get-started.md).
+* Кластер Hadoop в HDInsight. Ознакомьтесь со статьей [Краткое руководство. Использование Apache Hadoop и Apache Hive в Azure HDInsight с шаблоном Resource Manager](./hadoop/apache-hadoop-linux-tutorial-get-started.md).
 * Имя учетной записи хранения и ключ. См. в разделе [Управление параметрами учетной записи хранения на портале Azure](../storage/common/storage-account-manage.md).
 * [Имя кластера правильно верблюжьим](hdinsight-hadoop-manage-ambari-rest-api.md#identify-correctly-cased-cluster-name).
 * Если с помощью PowerShell, вам потребуется модуль AZ.  См. в разделе [Общие сведения об Azure PowerShell](https://docs.microsoft.com/powershell/azure/overview).

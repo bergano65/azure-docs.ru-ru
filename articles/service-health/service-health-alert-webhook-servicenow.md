@@ -1,23 +1,24 @@
 ---
-title: Настройка оповещений о работоспособности служб Azure для ServiceNow | Документация Майкрософт
+title: Отправка оповещений о работоспособности служб Azure с ServiceNow с помощью веб-перехватчиков
 description: Передача в экземпляр ServiceNow персонализированных уведомлений о событиях работоспособности служб.
 author: stephbaron
 ms.author: stbaron
 ms.topic: article
 ms.service: service-health
-ms.date: 11/14/2017
-ms.openlocfilehash: f17215a5695128bf2ea507efa0c12fdbba9467d2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.date: 06/10/2019
+ms.openlocfilehash: e32a32e4961043e0cd967247c8c13420ca8a1969
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60620946"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67067119"
 ---
-# <a name="configure-service-health-alerts-with-servicenow"></a>Настройка оповещений о работоспособности служб для ServiceNow
+# <a name="send-azure-service-health-alerts-with-servicenow-using-webhooks"></a>Отправка оповещений о работоспособности служб Azure с ServiceNow с помощью веб-перехватчиков
 
 В этой статье показано, как с помощью веб-перехватчика интегрировать ServiceNow с оповещениями о работоспособности служб Azure. Если вы настроите интеграцию веб-перехватчика с экземпляром ServiceNow, в вашу привычную среду уведомлений будут поступать оповещения о проблемах со службами Azure, которые могут вас затронуть. Каждый раз, когда срабатывает оповещение службы работоспособности служб Azure, вызывается веб-перехватчик через REST API ServiceNow на основе скриптов.
 
 ## <a name="creating-a-scripted-rest-api-in-servicenow"></a>Создание REST API на основе скриптов в ServiceNow
+
 1.  Убедитесь, что у вас есть учетная запись [ServiceNow](https://www.servicenow.com/) и выполните вход в нее.
 
 1.  Перейдите к разделу **System Web Services** (Системные веб-службы) в ServiceNow и выберите элемент **Scripted REST APIs** (REST API на основе скриптов).
@@ -154,7 +155,7 @@ ms.locfileid: "60620946"
 
     a. **Тип действия:** *webhook*
 
-    2. **Подробности:** **URL-адрес интеграции ServiceNow**, который вы сохранили ранее.
+    2\. **Подробности:** **URL-адрес интеграции ServiceNow**, который вы сохранили ранее.
 
     c. **Имя:** имя, псевдоним или идентификатор веб-перехватчика.
 
@@ -171,7 +172,7 @@ ms.locfileid: "60620946"
 
     a. **Тип действия:** *webhook*
 
-    2. **Подробности:** **URL-адрес интеграции ServiceNow**, который вы сохранили ранее.
+    2\. **Подробности:** **URL-адрес интеграции ServiceNow**, который вы сохранили ранее.
 
     c. **Имя:** имя, псевдоним или идентификатор веб-перехватчика.
 

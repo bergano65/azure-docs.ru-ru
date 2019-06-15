@@ -9,14 +9,14 @@ ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: article
-ms.date: 04/08/2019
+ms.date: 06/11/2019
 ms.author: tulasim
-ms.openlocfilehash: 85b0004288a06a834b61f6e3d50017d35d66ce86
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: b3bae01d65685aa9ea7bfc95d1f1454741d37b5e
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60599041"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67053223"
 ---
 # <a name="tutorial-create-a-qna-bot-with-azure-bot-service-v4"></a>Руководство по Создание программы-робота, QnA с помощью Azure Служба программ-роботов v4
 
@@ -47,15 +47,15 @@ ms.locfileid: "60599041"
 
 1.  Введите параметры для создания программ-роботов.
 
-    |Параметр|Value|Назначение|
+    |Параметр|Значение|Назначение|
     |--|--|--|
     |Имя бота|`my-tutorial-kb-bot`|Это имя ресурса Azure, программ-роботов.|
     |Подписка|См. в разделе назначения.|Выберите подписку, которая использовалась для создания ресурсов QnA Maker.|
     |Группа ресурсов|`my-tutorial-rg`|Группу ресурсов, используемую для всех связанных с программ-роботов Azure ресурсов.|
-    |Location|`west us`|Расположение ресурсов Azure bot.|
-    |Ценовой уровень|`F0`|Уровень "бесплатный" Служба Azure bot.|
+    |Расположение|`west us`|Расположение ресурсов Azure bot.|
+    |Ценовая категория|`F0`|Уровень "бесплатный" Служба Azure bot.|
     |Имя приложения.|`my-tutorial-kb-bot-app`|Это веб-приложения для поддержки только бота. Это будет имя приложения не как служба QnA Maker уже использует. Совместное использование QnA Maker веб-приложения с любой другой ресурс не поддерживается.|
-    |Пакет SDK для языка|C#|Это базовый язык программирования, используемый bot framework SDK. В такой ситуации C# или Node.js.|
+    |Пакет SDK для языка|C#|Это базовый язык программирования, используемый bot framework SDK. В такой ситуации [ C# ](https://github.com/Microsoft/botbuilder-dotnet) или [Node.js](https://github.com/Microsoft/botbuilder-js).|
     |ключ проверки подлинности QnA;|**Не изменяйте**|Это значение заполняется автоматически.|
     |расположение или план службы приложений;|**Не изменяйте**|В этом учебнике расположение не имеет значения.|
     |Хранилище Azure|**Не изменяйте**|Диалог данные хранятся в таблицах хранилища Azure.|

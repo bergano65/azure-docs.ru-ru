@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 05/13/2019
 ms.author: jhakulin
-ms.openlocfilehash: 80ec606fee30c239d47bca94188d3b9cbb7c82d5
-ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
+ms.openlocfilehash: f0838d345abfcfdf69ca6ea44d3206c23010b457
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65604409"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67073086"
 ---
 # <a name="transcribe-multi-participant-conversations-with-the-speech-sdk"></a>Транскрипция нескольких участников беседы с пакетом SDK для распознавания речи
 
@@ -43,7 +43,7 @@ ms.locfileid: "65604409"
 * Файл входной звуковой волны для создания подписи голоса должны иметь примеры 16-разрядных, 16 кГц частота выборки и формат один канал (Mono).
 * Рекомендуемая длина для каждой аудиовыборки — от 30 секунд до двух минут.
 
-В следующем примере показано два разных способа создания голосовой подписи, используя [REST API.] (https://aka.ms/cts/signaturegenservice) из C#:
+В следующем примере показано два разных способа создания подписи голоса по [с помощью REST API](https://aka.ms/cts/signaturegenservice) из C#:
 
 ```csharp
 class Program

@@ -16,12 +16,12 @@ ms.author: jmprieur
 ms.reviwer: brandwe
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 81770b6ec4eacad10cd88978952688c29eff452d
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.openlocfilehash: 590184c25fa0aa3cb3219aa9c185a31e62090ba9
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65962422"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67111143"
 ---
 # <a name="mobile-app-that-calls-web-apis---get-a-token"></a>Мобильное приложение, которое вызывает веб-интерфейсы API — получение маркера
 
@@ -167,7 +167,7 @@ catch(MsalUiRequiredException e)
 
 При использовании протокола для получения маркеров для мобильных приложений, необходимо внести два запроса: получение кода авторизации и его обмена на маркер.
 
-#### <a name="get-authorization-code"></a>Получить код авторизации
+#### <a name="get-authorization-code"></a>Получение кода авторизации
 
 ```Text
 https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize?

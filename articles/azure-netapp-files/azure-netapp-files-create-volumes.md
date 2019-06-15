@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 4/23/2019
+ms.date: 6/6/2019
 ms.author: b-juche
-ms.openlocfilehash: 53b2742cf92f3a3df346ba3557c718b8d7a11a4e
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.openlocfilehash: 657bacc153b5721d5a9f34792eaf4796cb477755
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64719435"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "66808878"
 ---
 # <a name="create-a-volume-for-azure-netapp-files"></a>Создание тома для Azure NetApp Files
 
@@ -69,7 +69,7 @@ ms.locfileid: "64719435"
     
         ![Создание подсети](../media/azure-netapp-files/azure-netapp-files-create-subnet.png)
 
-4. Нажмите кнопку **протокола**, а затем выберите **NFS** как тип протокола для тома.   
+4. Нажмите кнопку **Протокол**, а затем для типа протокола тома выберите **NFS**.   
     * Укажите **путь к файлу** , будет использоваться для создания пути экспорта нового тома. Путь экспорта используется для подключения и получения доступа к тому.
 
         Имя пути к файлу может содержать только буквы, цифры и дефисы. Длина имени находится в диапазоне от 16 до 40 знаков. 
@@ -90,34 +90,36 @@ ms.locfileid: "64719435"
 
 Служба файлов Azure NetApp поддерживает SMBv3 тома. Вам нужно создать подключения Active Directory перед добавлением на диск SMB. 
 
+### <a name="requirements-for-active-directory-connections"></a>Требования для подключений Active Directory
+
+ Далее приведены требования для подключений Active Directory. 
+
+* Используемая учетная запись администратора должен быть возможность создавать учетные записи компьютера в пути подразделения (OU), который нужно будет указать.  
+
+* Соответствующие порты необходимо открыть на соответствующий сервер Windows Active Directory (AD).  
+    Ниже приведены необходимые порты. 
+
+    |     Service           |     Port     |     Протокол     |
+    |-----------------------|--------------|------------------|
+    |    AD веб-служб    |    9389      |    TCP           |
+    |    DNS                |    53        |    TCP           |
+    |    DNS                |    53        |    UDP           |
+    |    ICMPv4             |    Н/Д       |    Echo Reply    |
+    |    Kerberos           |    464       |    TCP           |
+    |    Kerberos           |    464       |    UDP           |
+    |    Kerberos           |    88        |    TCP           |
+    |    Kerberos           |    88        |    UDP           |
+    |    LDAP               |    389       |    TCP           |
+    |    LDAP               |    389       |    UDP           |
+    |    LDAP               |    3268      |    TCP           |
+    |    NetBIOS-имя       |    138       |    UDP           |
+    |    SAM И LSA            |    445       |    TCP           |
+    |    SAM И LSA            |    445       |    UDP           |
+    |    Защищенный протокол LDAP        |    636       |    TCP           |
+    |    Защищенный протокол LDAP        |    3269      |    TCP           |
+    |    служба W32Time            |    123       |    UDP           |
+
 ### <a name="create-an-active-directory-connection"></a>Создание подключения к Active Directory
-
-1. Убедитесь, что выполнены следующие requiements: 
-
-    * Используемая учетная запись администратора должен быть возможность создавать учетные записи компьютера в пути подразделения (OU), который нужно будет указать.
-    * Соответствующие порты необходимо открыть на соответствующий сервер Windows Active Directory (AD).  
-        Ниже приведены необходимые порты. 
-
-        |     Service           |     Порт     |     Protocol     |
-        |-----------------------|--------------|------------------|
-        |    AD веб-служб    |    9389      |    TCP           |
-        |    DNS                |    53        |    TCP           |
-        |    DNS                |    53        |    UDP           |
-        |    ICMPv4             |    Н/Д       |    Echo Reply    |
-        |    Kerberos           |    464       |    TCP           |
-        |    Kerberos           |    464       |    UDP           |
-        |    Kerberos           |    88        |    TCP           |
-        |    Kerberos           |    88        |    UDP           |
-        |    LDAP               |    389       |    TCP           |
-        |    LDAP               |    389       |    UDP           |
-        |    LDAP               |    3268      |    TCP           |
-        |    NetBIOS-имя       |    138       |    UDP           |
-        |    SAM И LSA            |    445       |    TCP           |
-        |    SAM И LSA            |    445       |    UDP           |
-        |    Защищенный протокол LDAP        |    636       |    TCP           |
-        |    Защищенный протокол LDAP        |    3269      |    TCP           |
-        |    служба W32Time            |    123       |    UDP           |
-
 
 1. В учетной записи NetApp щелкните **подключений Active Directory**, нажмите кнопку **Join**.  
 
@@ -125,10 +127,10 @@ ms.locfileid: "64719435"
 
 2. В окне присоединиться к Active Directory укажите следующие сведения:
 
-    * **Основной DNS-сервер**   
-        Это IP-адрес контроллера домена для предпочтительных доменных служб Active Directory для использования с файлами Azure NetApp. 
-    * **Дополнительный DNS-сервер**  
-        Это IP-адрес контроллера домена для вторичного доменных служб Active Directory для использования с файлами Azure NetApp. 
+    * **Основной DNS-сервер**  
+        Это служба DNS, которая требуется для проверки подлинности операций SMB и присоединения к домену Active Directory. 
+    * **Дополнительный DNS-сервер**   
+        Это дополнительный DNS-сервер для обеспечения избыточности службы имен. 
     * **Домен**  
         Это имя домена Active Directory доменных служб, которые нужно соединить.
     * **Префикс SMB-сервера (учетная запись компьютера)**  
@@ -142,7 +144,7 @@ ms.locfileid: "64719435"
         Это путь LDAP к организационное подразделение (OU), где создаются учетные записи компьютера сервера SMB. То есть, OU = второго уровня, OU = первого уровня. 
     * Учетные данные, включая ваши **username** и **пароль**
 
-    ![Присоединение каталога Active Directory.](../media/azure-netapp-files/azure-netapp-files-join-active-directory.png)
+    ![Присоединиться к Active Directory](../media/azure-netapp-files/azure-netapp-files-join-active-directory.png)
 
 3. Щелкните **Соединить**.  
 
@@ -204,5 +206,5 @@ ms.locfileid: "64719435"
 ## <a name="next-steps"></a>Дальнейшие действия  
 
 * [Подключения или отключения тома для виртуальных машин Windows или Linux](azure-netapp-files-mount-unmount-volumes-for-virtual-machines.md)
-* [Настройка политики экспорта для тома NFS](azure-netapp-files-configure-export-policy.md)
+* [Configure export policy for an NFS volume](azure-netapp-files-configure-export-policy.md) (Настройка политики экспорта для тома NFS)
 * [Узнайте об интеграции виртуальной сети для служб Azure](https://docs.microsoft.com/azure/virtual-network/virtual-network-for-azure-services)

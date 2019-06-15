@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 02/07/2017
 ms.author: jegeib
 ms.openlocfilehash: c922556417ac92cc3667927fc8f846ace960a14a
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64935883"
 ---
 # <a name="security-frame-authorization--mitigations"></a>Механизм безопасности. Авторизация | Устранение рисков 
@@ -393,7 +393,7 @@ return result;
 
 | Название                   | Сведения      |
 | ----------------------- | ------------ |
-| **Компонент**               | Веб-интерфейс API | 
+| **Компонент**               | Веб-API | 
 | **Этап SDL**               | Создание |  
 | **Применимые технологии** | Универсальные, MVC 5 |
 | **Атрибуты**              | Н/Д, поставщик удостоверений — ADFS или Azure AD |

@@ -18,10 +18,10 @@ ms.reviewer: saeeda
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: b5e175a8cdd1622add90bd80df63303fe914ab9c
-ms.sourcegitcommit: 087ee51483b7180f9e897431e83f37b08ec890ae
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/31/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "66430807"
 ---
 # <a name="application-configuration-options"></a>Параметры настройки приложения
@@ -38,7 +38,7 @@ ms.locfileid: "66430807"
 ## <a name="authority"></a>Authority
 Администратор не указывает каталог, MSAL может запрашивать маркеры из URL-адрес. Распространенные центры являются:
 
-- https://login.microsoftonline.com/&lt; клиента&gt;/, где &lt;клиента&gt; — это идентификатор клиента Azure Active Directory (Azure AD) клиент или домен, связанный с этим клиентом Azure AD. Используется только для входа пользователей из определенной организации.
+- https://login.microsoftonline.com/&lt ; клиента&gt; /, где &lt; клиента&gt; — это идентификатор клиента Azure Active Directory (Azure AD) клиент или домен, связанный с этим клиентом Azure AD. Используется только для входа пользователей из определенной организации.
 - https://login.microsoftonline.com/common/. Используется для входа в систему с помощью рабочих и учебных учетных записей или личных учетных записей Майкрософт.
 - https://login.microsoftonline.com/organizations/. Используется для входа в систему с помощью рабочих и учебных учетных записей.
 - https://login.microsoftonline.com/consumers/. Используется для входа в систему с помощью только личных учетных записей Майкрософт (ранее известные как учетные записи Windows Live ID).

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: conceptual
 ms.date: 11/13/2018
 ms.author: magoedte
-ms.openlocfilehash: b79f8a44f0fc38dd7e5f9ae7e3ac1fe6e9f6b7b8
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.openlocfilehash: 83f9cc050694344cdc5f4f5a2070bc875fcba3d9
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60776039"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67071657"
 ---
 # <a name="how-to-troubleshoot-issues-with-the-log-analytics-agent-for-linux"></a>Устранение неполадок с агентом Log Analytics для Linux 
 
@@ -60,7 +60,7 @@ ms.locfileid: "60776039"
 | NOT_DEFINED | Подключаемый модуль auoms auditd не будет установлен, так как не установлены необходимые зависимости | Установить auoms не удалось, установите пакет auditd. |
 | 2 | Набору оболочки предоставлен недопустимый параметр. Запустите `sudo sh ./omsagent-*.universal*.sh --help` для информации об использовании |
 | 3 | Набору оболочки не предоставлен параметр. Выполните `sudo sh ./omsagent-*.universal*.sh --help`, чтобы получить сведения об использовании. |
-| 4. | Недопустимый тип пакета ИЛИ недопустимые настройки прокси-сервера; пакеты omsagent-*rpm*.sh можно установить только в системах на базе RPM, а пакеты omsagent-*deb*.sh — только в системах на базе Debian. Мы рекомендуем использовать универсальный установщик из [последнего выпуска](../../azure-monitor/learn/quick-collect-linux-computer.md#install-the-agent-for-linux). Кроме того, просмотрите и проверьте настройки прокси-сервера. |
+| 4\. | Недопустимый тип пакета ИЛИ недопустимые настройки прокси-сервера; пакеты omsagent-*rpm*.sh можно установить только в системах на базе RPM, а пакеты omsagent-*deb*.sh — только в системах на базе Debian. Мы рекомендуем использовать универсальный установщик из [последнего выпуска](../../azure-monitor/learn/quick-collect-linux-computer.md#install-the-agent-for-linux). Кроме того, просмотрите и проверьте настройки прокси-сервера. |
 | 5 | Набор оболочки должен выполняться от имени привилегированного пользователя, ИЛИ получена ошибка 403 во время подключения. Выполните команду с использованием `sudo`. |
 | 6 | Недопустимая архитектура пакета, ИЛИ получена ошибка 200 во время подключения; пакеты omsagent-*x64.sh можно установить только в 64-разрядных системах, а пакеты omsagent-* x86.sh — только в 32-разрядных системах. Скачайте правильный пакет для используемой архитектуры из [последнего выпуска](https://github.com/Microsoft/OMS-Agent-for-Linux/releases/latest). |
 | 17 | Не удалось установить пакет OMS. Просмотрите выходные данные команды, чтобы определить причину сбоя. |
@@ -83,7 +83,7 @@ ms.locfileid: "60776039"
 | --- | --- |
 | 2 | Скрипту omsadmin предоставлен недопустимый параметр. Выполните `sudo sh /opt/microsoft/omsagent/bin/omsadmin.sh -h`, чтобы получить сведения об использовании. |
 | 3 | Скрипту omsadmin предоставлена недопустимая конфигурация. Выполните `sudo sh /opt/microsoft/omsagent/bin/omsadmin.sh -h`, чтобы получить сведения об использовании. |
-| 4. | Скрипту omsadmin предоставлена недопустимый прокси-сервер. Проверьте прокси-сервер и изучите [документацию по использованию прокси-сервера HTTP](log-analytics-agent.md#network-firewall-requirements). |
+| 4\. | Скрипту omsadmin предоставлена недопустимый прокси-сервер. Проверьте прокси-сервер и изучите [документацию по использованию прокси-сервера HTTP](log-analytics-agent.md#network-firewall-requirements). |
 | 5 | Ошибка 403 HTTP получен из Azure Monitor. Изучите выходные данные скрипта omsadmin, чтобы получить подробные сведения. |
 | 6 | Ошибка HTTP Non-200, полученных из Azure Monitor. Изучите выходные данные скрипта omsadmin, чтобы получить подробные сведения. |
 | 7 | Не удалось подключиться к Azure Monitor. Изучите выходные данные скрипта omsadmin, чтобы получить подробные сведения. |
@@ -187,6 +187,33 @@ Success sending oms.syslog.authpriv.info x 1 in 0.91s
 
 ## <a name="issue-you-see-a-500-and-404-error-in-the-log-file-right-after-onboarding"></a>Проблема Сразу после подключения в файле журнала появляются ошибки 500 и 404
 Это известная проблема, которая возникает при первой передаче данных Linux в рабочую область Log Analytics. Это не влияет на отправляемые данные и не мешает работе службы.
+
+
+## <a name="issue-you-see-omiagent-using-100-cpu"></a>Проблема Вы увидите omiagent, используя 100% ресурсов ЦП
+
+### <a name="probable-causes"></a>Возможные причины
+Регрессия в пакете nss pem [v1.0.3 5.el7](https://centos.pkgs.org/7/centos-x86_64/nss-pem-1.0.3-5.el7.x86_64.rpm.html) вызвало проблему производительности, мы видели гораздо отобразились в дистрибутивах Redhat и Centos 7.x. Дополнительные сведения об этой проблеме, см. в следующей документации: Ошибка [1667121 регрессии производительности в libcurl](https://bugzilla.redhat.com/show_bug.cgi?id=1667121).
+
+Ошибки происходят постоянно и являются очень трудно воспроизвести, связанных с производительностью. При возникновении такой проблемы с omiagent следует использовать omiHighCPUDiagnostics.sh скрипт, который соберет omiagent трассировка стека, при превышении определенного порогового значения.
+
+1. Скачайте сценарий <br/>
+`wget https://raw.githubusercontent.com/microsoft/OMS-Agent-for-Linux/master/tools/LogCollector/source/omiHighCPUDiagnostics.sh`
+
+2. Выполните диагностику в течение 24 часов с пороговым значением 30% ЦП <br/>
+`bash omiHighCPUDiagnostics.sh --runtime-in-min 1440 --cpu-threshold 30`
+
+3. Стек вызовов будут записаны в файле omiagent_trace, заметив многие Curl и вызовы функций NSS, выполните следующие шаги разрешения.
+
+### <a name="resolution-step-by-step"></a>Разрешения (шаг за шагом)
+
+1. Обновление пакета nss pem [v1.0.3 5.el7_6.1](https://centos.pkgs.org/7/centos-updates-x86_64/nss-pem-1.0.3-5.el7_6.1.x86_64.rpm.html). <br/>
+`sudo yum upgrade nss-pem`
+
+2. Если nss pem недоступен для обновления (главным образом происходит на виртуальной машине Centos), затем понизить curl с 7.29.0-46. Если по ошибке «yum обновления», curl будет обновлена до 7.29.0-51 и снова произойдет проблема. <br/>
+`sudo yum downgrade curl libcurl`
+
+3. Перезапустите OMI: <br/>
+`sudo scxadmin -restart`
 
 ## <a name="issue-you-are-not-seeing-any-data-in-the-azure-portal"></a>Проблема На портале Azure не отображаются данные
 

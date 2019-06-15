@@ -15,12 +15,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f3f21f552add551ac2434618b184eb18c53ad5be
-ms.sourcegitcommit: 45e4466eac6cfd6a30da9facd8fe6afba64f6f50
+ms.openlocfilehash: 21136046bad8cb58432de367f0de06d1d0457eec
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 06/07/2019
-ms.locfileid: "66752233"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67083787"
 ---
 # <a name="administrator-roles-by-admin-task-in-azure-active-directory"></a>Роли администратора для задач администратора в Azure Active Directory
 
@@ -270,7 +270,7 @@ Disable application proxy (Отключение прокси приложени�
 Настройка методов проверки подлинности | глобального администратора; | 
 Чтение всех конфигураций | глобального администратора; | 
 
-## <a name="security---conditional-access"></a>Безопасность — условный доступ
+## <a name="security---conditional-access"></a>Безопасность — условного доступа
 
 Задача | Наименее привилегированная роль | Дополнительные роли
 ---- | --------------------- | ----------------

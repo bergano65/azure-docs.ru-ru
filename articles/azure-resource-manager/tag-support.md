@@ -4,14 +4,14 @@ description: В этой статье описываются типы ресур
 author: tfitzmac
 ms.service: azure-resource-manager
 ms.topic: reference
-ms.date: 05/10/2019
+ms.date: 06/07/2019
 ms.author: tomfitz
-ms.openlocfilehash: 7ef37323fb8150e3a6b52800bfafa2585ae328c2
-ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
+ms.openlocfilehash: 8b7e6d234984e84f5b238d657281dd8b1b9ec423
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2019
-ms.locfileid: "65523221"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "67056883"
 ---
 # <a name="tag-support-for-azure-resources"></a>Поддержка тегов для ресурсов Azure
 В этой статье приводятся сведения о поддержке типом ресурса функции [тегов](resource-group-using-tags.md). Столбец с меткой **поддерживает теги** указывает, имеет ли тип ресурса свойство для тега. Столбец с меткой **тег в отчет о стоимости** указывает, передает ли этот тип ресурса тега отчет о стоимости.
@@ -42,9 +42,9 @@ ms.locfileid: "65523221"
 | addsservices | Нет |  Нет |
 | agents | Нет |  Нет |
 | anonymousapiusers | Нет |  Нет |
-| конфигурация | Нет |  Нет |
-| журналы | Нет |  Нет |
-| Отчеты | Нет |  Нет |
+| настройка | Нет |  Нет |
+| logs | Нет |  Нет |
+| reports | Нет |  Нет |
 | services; | Нет |  Нет |
 
 ## <a name="microsoftadvisor"></a>Microsoft.Advisor
@@ -52,14 +52,14 @@ ms.locfileid: "65523221"
 | ------------- | ----------- | ----------- |
 | конфигурации | Нет |  Нет |
 | generateRecommendations | Нет |  Нет |
-| рекомендации | Нет |  Нет |
+| к просмотру фильмов | Нет |  Нет |
 | suppressions | Нет |  Нет |
 
 ## <a name="microsoftalertsmanagement"></a>Microsoft.AlertsManagement
 | Тип ресурса | Поддержка тегов | Пометка в отчет о стоимости |
 | ------------- | ----------- | ----------- |
 | actionRules | Нет |  Нет |
-| оповещений | Нет |  Нет |
+| оповещения | Нет |  Нет |
 | alertsList | Нет |  Нет |
 | alertsSummary | Нет |  Нет |
 | alertsSummaryList | Нет |  Нет |
@@ -70,7 +70,7 @@ ms.locfileid: "65523221"
 ## <a name="microsoftanalysisservices"></a>Microsoft.AnalysisServices
 | Тип ресурса | Поддержка тегов | Пометка в отчет о стоимости |
 | ------------- | ----------- | ----------- |
-| серверы | Да | Да |
+| servers | Да | Да |
 
 ## <a name="microsoftapimanagement"></a>Microsoft.ApiManagement
 | Тип ресурса | Поддержка тегов | Пометка в отчет о стоимости |
@@ -91,7 +91,7 @@ ms.locfileid: "65523221"
 | denyAssignments | Нет |  Нет |
 | elevateAccess | Нет |  Нет |
 | locks | Нет |  Нет |
-| разрешения | Нет |  Нет |
+| permissions | Нет |  Нет |
 | policyAssignments | Нет |  Нет |
 | policyDefinitions | Нет |  Нет |
 | policySetDefinitions | Нет |  Нет |
@@ -239,7 +239,7 @@ ms.locfileid: "65523221"
 | reservationOrders/split | Нет |  Нет |
 | reservationOrders/swap | Нет |  Нет |
 | reservations | Нет |  Нет |
-| ресурсы | Нет |  Нет |
+| ресурсов | Нет |  Нет |
 | validateReservationOrder | Нет |  Нет |
 
 ## <a name="microsoftcdn"></a>Microsoft.Cdn
@@ -301,8 +301,8 @@ ms.locfileid: "65523221"
 | Тип ресурса | Поддержка тегов | Пометка в отчет о стоимости |
 | ------------- | ----------- | ----------- |
 | capabilities | Нет |  Нет |
-| диски | Нет |  Нет |
-| образы | Нет |  Нет |
+| disks | Нет |  Нет |
+| images | Нет |  Нет |
 | osImages | Нет |  Нет |
 | osPlatformImages | Нет |  Нет |
 | publicImages | Нет |  Нет |
@@ -316,7 +316,7 @@ ms.locfileid: "65523221"
 ## <a name="microsoftcognitiveservices"></a>Microsoft.CognitiveServices
 | Тип ресурса | Поддержка тегов | Пометка в отчет о стоимости |
 | ------------- | ----------- | ----------- |
-| учетные записи | Да | Да |
+| accounts | Да | Да |
 
 ## <a name="microsoftcommerce"></a>Microsoft.Commerce
 | Тип ресурса | Поддержка тегов | Пометка в отчет о стоимости |
@@ -328,13 +328,13 @@ ms.locfileid: "65523221"
 | Тип ресурса | Поддержка тегов | Пометка в отчет о стоимости |
 | ------------- | ----------- | ----------- |
 | availabilitySets | Да | Да |
-| диски | Да | Да |
-| образы | Да | Да |
+| disks | Да | Да |
+| images | Да | Да |
 | restorePointCollections | Да | Да |
 | restorePointCollections/restorePoints | Нет |  Нет |
 | sharedVMImages | Да | Да |
 | sharedVMImages/versions | Да | Да |
-| моментальные снимки | Да | Да |
+| snapshots | Да | Да |
 | virtualMachines | Да | Да |
 | virtualMachines/diagnosticSettings | Нет |  Нет |
 | virtualMachines/extensions | Да | Да |
@@ -350,7 +350,7 @@ ms.locfileid: "65523221"
 | ------------- | ----------- | ----------- |
 | AggregatedCost | Нет |  Нет |
 | сведения о балансе. | Нет |  Нет |
-| Бюджеты | Нет |  Нет |
+| сведения о бюджете; | Нет |  Нет |
 | Расходы | Нет |  Нет |
 | CostTags | Нет |  Нет |
 | credits | Нет |  Нет |
@@ -365,7 +365,7 @@ ms.locfileid: "65523221"
 | ReservationSummaries | Нет |  Нет |
 | ReservationTransactions | Нет |  Нет |
 | Tags | Нет |  Нет |
-| Условия | Нет |  Нет |
+| Термины | Нет |  Нет |
 | UsageDetails | Нет |  Нет |
 
 ## <a name="microsoftcontainerinstance"></a>Microsoft.ContainerInstance
@@ -409,13 +409,13 @@ ms.locfileid: "65523221"
 ## <a name="microsoftcontentmoderator"></a>Microsoft.ContentModerator
 | Тип ресурса | Поддержка тегов | Пометка в отчет о стоимости |
 | ------------- | ----------- | ----------- |
-| приложения | Да | Да |
+| веб-масштабированием; | Да | Да |
 | updateCommunicationPreference | Нет |  Нет |
 
 ## <a name="microsoftcortanaanalytics"></a>Microsoft.CortanaAnalytics
 | Тип ресурса | Поддержка тегов | Пометка в отчет о стоимости |
 | ------------- | ----------- | ----------- |
-| учетные записи | Да | Да |
+| accounts | Да | Да |
 
 ## <a name="microsoftcostmanagement"></a>Microsoft.CostManagement
 | Тип ресурса | Поддержка тегов | Пометка в отчет о стоимости |
@@ -424,7 +424,7 @@ ms.locfileid: "65523221"
 | BillingAccounts | Нет |  Нет |
 | Соединители | Да | Да |
 | Departments | Нет |  Нет |
-| Размеры | Нет |  Нет |
+| Измерения | Нет |  Нет |
 | EnrollmentAccounts | Нет |  Нет |
 | Запрос | Нет |  Нет |
 | регистрация | Нет |  Нет |
@@ -451,7 +451,7 @@ ms.locfileid: "65523221"
 ## <a name="microsoftdatabox"></a>Microsoft.DataBox
 | Тип ресурса | Поддержка тегов | Пометка в отчет о стоимости |
 | ------------- | ----------- | ----------- |
-| задания | Да | Да |
+| jobs | Да | Да |
 
 ## <a name="microsoftdataboxedge"></a>Microsoft.DataBoxEdge
 | Тип ресурса | Поддержка тегов | Пометка в отчет о стоимости |
@@ -486,7 +486,7 @@ ms.locfileid: "65523221"
 ## <a name="microsoftdatalakeanalytics"></a>Microsoft.DataLakeAnalytics
 | Тип ресурса | Поддержка тегов | Пометка в отчет о стоимости |
 | ------------- | ----------- | ----------- |
-| учетные записи | Да | Да |
+| accounts | Да | Да |
 | accounts/dataLakeStoreAccounts | Нет |  Нет |
 | accounts/storageAccounts | Нет |  Нет |
 | accounts/storageAccounts/containers | Нет |  Нет |
@@ -494,7 +494,7 @@ ms.locfileid: "65523221"
 ## <a name="microsoftdatalakestore"></a>Microsoft.DataLakeStore
 | Тип ресурса | Поддержка тегов | Пометка в отчет о стоимости |
 | ------------- | ----------- | ----------- |
-| учетные записи | Да | Да |
+| accounts | Да | Да |
 | accounts/eventGridFilters | Нет |  Нет |
 | accounts/firewallRules | Нет |  Нет |
 
@@ -507,21 +507,21 @@ ms.locfileid: "65523221"
 ## <a name="microsoftdbformariadb"></a>Microsoft.DBforMariaDB
 | Тип ресурса | Поддержка тегов | Пометка в отчет о стоимости |
 | ------------- | ----------- | ----------- |
-| серверы | Да | Да |
+| servers | Да | Да |
 | servers/recoverableServers | Нет |  Нет |
 | servers/virtualNetworkRules | Нет |  Нет |
 
 ## <a name="microsoftdbformysql"></a>Microsoft.DBforMySQL
 | Тип ресурса | Поддержка тегов | Пометка в отчет о стоимости |
 | ------------- | ----------- | ----------- |
-| серверы | Да | Да |
+| servers | Да | Да |
 | servers/recoverableServers | Нет |  Нет |
 | servers/virtualNetworkRules | Нет |  Нет |
 
 ## <a name="microsoftdbforpostgresql"></a>Microsoft.DBforPostgreSQL
 | Тип ресурса | Поддержка тегов | Пометка в отчет о стоимости |
 | ------------- | ----------- | ----------- |
-| серверы | Да | Да |
+| servers | Да | Да |
 | servers/advisors | Нет |  Нет |
 | servers/queryTexts | Нет |  Нет |
 | servers/recoverableServers | Нет |  Нет |
@@ -586,7 +586,7 @@ ms.locfileid: "65523221"
 | Тип ресурса | Поддержка тегов | Пометка в отчет о стоимости |
 | ------------- | ----------- | ----------- |
 | clusters | Да | Нет |
-| пространства имен | Да | Нет |
+| namespaces | Да | Нет |
 | namespaces/authorizationrules | Нет |  Нет |
 | namespaces/disasterrecoveryconfigs | Нет |  Нет |
 | namespaces/eventhubs | Нет |  Нет |
@@ -612,7 +612,7 @@ ms.locfileid: "65523221"
 | myareas/areas/galleryitems | Нет |  Нет |
 | myareas/galleryitems | Нет |  Нет |
 | регистрация | Нет |  Нет |
-| ресурсы | Нет |  Нет |
+| ресурсов | Нет |  Нет |
 | retrieveresourcesbyid | Нет |  Нет |
 
 ## <a name="microsoftguestconfiguration"></a>Microsoft.GuestConfiguration
@@ -635,7 +635,7 @@ ms.locfileid: "65523221"
 ## <a name="microsoftimportexport"></a>Microsoft.ImportExport
 | Тип ресурса | Поддержка тегов | Пометка в отчет о стоимости |
 | ------------- | ----------- | ----------- |
-| задания | Да | Да |
+| jobs | Да | Да |
 
 ## <a name="microsoftinformationprotection"></a>Microsoft.InformationProtection
 | Тип ресурса | Поддержка тегов | Пометка в отчет о стоимости |
@@ -667,7 +667,7 @@ ms.locfileid: "65523221"
 | extendedDiagnosticSettings | Нет |  Нет |
 | logDefinitions | Нет |  Нет |
 | logprofiles | Нет |  Нет |
-| журналы | Нет |  Нет |
+| logs | Нет |  Нет |
 | metricAlerts | Да | Да |
 | migrateToNewPricingModel | Нет |  Нет |
 | myWorkbooks | Нет |  Нет |
@@ -676,7 +676,7 @@ ms.locfileid: "65523221"
 | scheduledqueryrules | Да | Да |
 | vmInsightsOnboardingStatuses | Нет |  Нет |
 | webtests | Да | Да |
-| книги | Да | Да |
+| workbooks | Да | Да |
 
 ## <a name="microsoftintune"></a>Microsoft.Intune
 | Тип ресурса | Поддержка тегов | Пометка в отчет о стоимости |
@@ -692,7 +692,7 @@ ms.locfileid: "65523221"
 ## <a name="microsoftiotspaces"></a>Microsoft.IoTSpaces
 | Тип ресурса | Поддержка тегов | Пометка в отчет о стоимости |
 | ------------- | ----------- | ----------- |
-| Граф | Да | Да |
+| График | Да | Да |
 
 ## <a name="microsoftkeyvault"></a>Microsoft.KeyVault
 | Тип ресурса | Поддержка тегов | Пометка в отчет о стоимости |
@@ -714,22 +714,22 @@ ms.locfileid: "65523221"
 | Тип ресурса | Поддержка тегов | Пометка в отчет о стоимости |
 | ------------- | ----------- | ----------- |
 | labaccounts | Да | Да |
-| пользователей | Нет |  Нет |
+| users | Нет |  Нет |
 
 ## <a name="microsoftlocationbasedservices"></a>Microsoft.LocationBasedServices
 | Тип ресурса | Поддержка тегов | Пометка в отчет о стоимости |
 | ------------- | ----------- | ----------- |
-| учетные записи | Да | Да |
+| accounts | Да | Да |
 
 ## <a name="microsoftlocationservices"></a>Microsoft.LocationServices
 | Тип ресурса | Поддержка тегов | Пометка в отчет о стоимости |
 | ------------- | ----------- | ----------- |
-| учетные записи | Да | Да |
+| accounts | Да | Да |
 
 ## <a name="microsoftloganalytics"></a>Microsoft.LogAnalytics
 | Тип ресурса | Поддержка тегов | Пометка в отчет о стоимости |
 | ------------- | ----------- | ----------- |
-| журналы | Нет |  Нет |
+| logs | Нет |  Нет |
 
 ## <a name="microsoftlogic"></a>Microsoft.Logic
 | Тип ресурса | Поддержка тегов | Пометка в отчет о стоимости |
@@ -747,7 +747,7 @@ ms.locfileid: "65523221"
 ## <a name="microsoftmachinelearningexperimentation"></a>Microsoft.MachineLearningExperimentation
 | Тип ресурса | Поддержка тегов | Пометка в отчет о стоимости |
 | ------------- | ----------- | ----------- |
-| учетные записи | Да | Да |
+| accounts | Да | Да |
 | accounts/workspaces | Да | Да |
 | accounts/workspaces/projects | Да | Да |
 | teamAccounts | Да | Да |
@@ -757,7 +757,7 @@ ms.locfileid: "65523221"
 ## <a name="microsoftmachinelearningmodelmanagement"></a>Microsoft.MachineLearningModelManagement
 | Тип ресурса | Поддержка тегов | Пометка в отчет о стоимости |
 | ------------- | ----------- | ----------- |
-| учетные записи | Да | Да |
+| accounts | Да | Да |
 
 ## <a name="microsoftmachinelearningservices"></a>Microsoft.MachineLearningServices
 | Тип ресурса | Поддержка тегов | Пометка в отчет о стоимости |
@@ -768,7 +768,7 @@ ms.locfileid: "65523221"
 ## <a name="microsoftmanagedidentity"></a>Microsoft.ManagedIdentity
 | Тип ресурса | Поддержка тегов | Пометка в отчет о стоимости |
 | ------------- | ----------- | ----------- |
-| Удостоверения | Нет |  Нет |
+| Identities | Нет |  Нет |
 | userAssignedIdentities | Да | 
 
 ## <a name="microsoftmanagement"></a>Microsoft.Management
@@ -776,14 +776,14 @@ ms.locfileid: "65523221"
 | ------------- | ----------- | ----------- |
 | getEntities | Нет |  Нет |
 | managementGroups | Нет |  Нет |
-| ресурсы | Нет |  Нет |
+| ресурсов | Нет |  Нет |
 | startTenantBackfill | Нет |  Нет |
 | tenantBackfillStatus | Нет |  Нет |
 
 ## <a name="microsoftmaps"></a>Microsoft.Maps
 | Тип ресурса | Поддержка тегов | Пометка в отчет о стоимости |
 | ------------- | ----------- | ----------- |
-| учетные записи | Да | Да |
+| accounts | Да | Да |
 | accounts/eventGridFilters | Нет |  Нет |
 
 ## <a name="microsoftmarketplace"></a>Microsoft.Marketplace
@@ -845,7 +845,7 @@ ms.locfileid: "65523221"
 | azureFirewallFqdnTags | Нет |  Нет |
 | azureFirewalls | Да | Нет |
 | bgpServiceCommunities | Нет |  Нет |
-| подключения | Да | Да |
+| connections | Да | Да |
 | ddosCustomPolicies | Да | Да |
 | ddosProtectionPlans | Да | Да |
 | dnsOperationStatuses | Нет |  Нет |
@@ -864,7 +864,7 @@ ms.locfileid: "65523221"
 | dnszones/TXT | Нет |  Нет |
 | expressRouteCircuits | Да  | Нет |
 | expressRouteServiceProviders | Нет |  Нет |
-| frontdoor | Да | Да |
+| frontdoors | Да | Да |
 | frontdoorWebApplicationFirewallPolicies | Да | Да |
 | getDnsResourceReference | Нет |  Нет |
 | interfaceEndpoints | Да | Да |
@@ -902,7 +902,7 @@ ms.locfileid: "65523221"
 ## <a name="microsoftnotificationhubs"></a>Microsoft.NotificationHubs
 | Тип ресурса | Поддержка тегов | Пометка в отчет о стоимости |
 | ------------- | ----------- | ----------- |
-| пространства имен | Да | Нет |
+| namespaces | Да | Нет |
 | namespaces/notificationHubs | Да | Нет |
 
 ## <a name="microsoftoperationalinsights"></a>Microsoft.OperationalInsights
@@ -922,7 +922,7 @@ ms.locfileid: "65523221"
 | managementassociations | Нет |  Нет |
 | managementconfigurations | Да | Да |
 | solutions | Да | Да |
-| просмотры | Да | Да |
+| узел "Представления" | Да | Да |
 
 ## <a name="microsoftpolicyinsights"></a>Microsoft.PolicyInsights
 | Тип ресурса | Поддержка тегов | Пометка в отчет о стоимости |
@@ -952,7 +952,7 @@ ms.locfileid: "65523221"
 ## <a name="microsoftprojectoxford"></a>Microsoft.ProjectOxford
 | Тип ресурса | Поддержка тегов | Пометка в отчет о стоимости |
 | ------------- | ----------- | ----------- |
-| учетные записи | Да | Да |
+| accounts | Да | Да |
 
 ## <a name="microsoftrecoveryservices"></a>Microsoft.RecoveryServices
 | Тип ресурса | Поддержка тегов | Пометка в отчет о стоимости |
@@ -963,7 +963,7 @@ ms.locfileid: "65523221"
 ## <a name="microsoftrelay"></a>Microsoft.Relay
 | Тип ресурса | Поддержка тегов | Пометка в отчет о стоимости |
 | ------------- | ----------- | ----------- |
-| пространства имен | Да | Да |
+| namespaces | Да | Да |
 | namespaces/authorizationrules | Нет |  Нет |
 | namespaces/hybridconnections | Нет |  Нет |
 | namespaces/hybridconnections/authorizationrules | Нет |  Нет |
@@ -973,7 +973,7 @@ ms.locfileid: "65523221"
 ## <a name="microsoftresourcegraph"></a>Microsoft.ResourceGraph
 | Тип ресурса | Поддержка тегов | Пометка в отчет о стоимости |
 | ------------- | ----------- | ----------- |
-| ресурсы | Нет |  Нет |
+| ресурсов | Нет |  Нет |
 | subscriptionsStatus | Нет |  Нет |
 
 ## <a name="microsoftresourcehealth"></a>Microsoft.ResourceHealth
@@ -984,19 +984,19 @@ ms.locfileid: "65523221"
 | childResources | Нет |  Нет |
 | события | Нет |  Нет |
 | impactedResources | Нет |  Нет |
-| уведомления | Нет |  Нет |
+| Уведомления | Нет |  Нет |
 
 ## <a name="microsoftresources"></a>Microsoft.Resources
 | Тип ресурса | Поддержка тегов | Пометка в отчет о стоимости |
 | ------------- | ----------- | ----------- |
-| развертывания | Нет |  Нет |
+| deployments | Нет |  Нет |
 | deployments/operations | Нет |  Нет |
 | links | Нет |  Нет |
 | notifyResourceJobs | Нет |  Нет |
 | providers | Нет |  Нет |
 | resourceGroups | Нет |  Нет |
-| ресурсы | Нет |  Нет |
-| — подписки | Нет |  Нет |
+| ресурсов | Нет |  Нет |
+| subscriptions | Нет |  Нет |
 | subscriptions/providers | Нет |  Нет |
 | subscriptions/resourceGroups | Нет |  Нет |
 | subscriptions/resourcegroups/resources | Нет |  Нет |
@@ -1008,13 +1008,13 @@ ms.locfileid: "65523221"
 ## <a name="microsoftsaas"></a>Microsoft.SaaS
 | Тип ресурса | Поддержка тегов | Пометка в отчет о стоимости |
 | ------------- | ----------- | ----------- |
-| приложения | Да | Да |
+| веб-масштабированием; | Да | Да |
 | saasresources | Нет |  Нет |
 
 ## <a name="microsoftscheduler"></a>Microsoft.Scheduler
 | Тип ресурса | Поддержка тегов | Пометка в отчет о стоимости |
 | ------------- | ----------- | ----------- |
-| Потоки | Да | Да |
+| flows | Да | Да |
 | jobcollections | Да | Да |
 
 ## <a name="microsoftsearch"></a>Microsoft.Search
@@ -1027,7 +1027,7 @@ ms.locfileid: "65523221"
 | Тип ресурса | Поддержка тегов | Пометка в отчет о стоимости |
 | ------------- | ----------- | ----------- |
 | advancedThreatProtectionSettings | Нет |  Нет |
-| оповещений | Нет |  Нет |
+| оповещения | Нет |  Нет |
 | allowedConnections | Нет |  Нет |
 | appliances | Нет |  Нет |
 | applicationWhitelistings | Нет |  Нет |
@@ -1053,7 +1053,7 @@ ms.locfileid: "65523221"
 | securityStatus/virtualMachines | Нет |  Нет |
 | securityStatuses | Нет |  Нет |
 | securityStatusesSummaries | Нет |  Нет |
-| параметры | Нет |  Нет |
+| Параметры | Нет |  Нет |
 | задачи; | Нет |  Нет |
 | topologies | Нет |  Нет |
 | workspaceSettings | Нет |  Нет |
@@ -1067,7 +1067,7 @@ ms.locfileid: "65523221"
 ## <a name="microsoftservicebus"></a>Microsoft.ServiceBus
 | Тип ресурса | Поддержка тегов | Пометка в отчет о стоимости |
 | ------------- | ----------- | ----------- |
-| пространства имен | Да | Нет |
+| namespaces | Да | Нет |
 | namespaces/authorizationrules | Нет |  Нет |
 | namespaces/disasterrecoveryconfigs | Нет |  Нет |
 | namespaces/eventgridfilters | Нет |  Нет |
@@ -1088,11 +1088,11 @@ ms.locfileid: "65523221"
 ## <a name="microsoftservicefabricmesh"></a>Microsoft.ServiceFabricMesh
 | Тип ресурса | Поддержка тегов | Пометка в отчет о стоимости |
 | ------------- | ----------- | ----------- |
-| приложения | Да | Да |
+| веб-масштабированием; | Да | Да |
 | gateways | Да | Да |
-| Сети | Да | Да |
-| секреты | Да | Да |
-| тома | Да | Да |
+| networks | Да | Да |
+| секретные коды | Да | Да |
+| volumes. | Да | Да |
 
 ## <a name="microsoftsignalrservice"></a>Microsoft.SignalRService
 | Тип ресурса | Поддержка тегов | Пометка в отчет о стоимости |
@@ -1105,7 +1105,7 @@ ms.locfileid: "65523221"
 | applianceDefinitions | Да | Да |
 | appliances | Да | Да |
 | applicationDefinitions | Да | Да |
-| приложения | Да | Да |
+| веб-масштабированием; | Да | Да |
 | jitRequests | Да | Да |
 
 ## <a name="microsoftsql"></a>Microsoft.SQL
@@ -1121,7 +1121,7 @@ ms.locfileid: "65523221"
 | managedInstances/keys | Нет | Нет |
 | managedInstances/restorableDroppedDatabases/backupShortTermRetentionPolicies | Нет | Нет |
 | managedInstances/vulnerabilityAssessments | Нет | Нет |
-| серверы | Да | Да |
+| servers | Да | Да |
 | servers/administrators | Нет |  Нет |
 | servers/communicationLinks | Нет |  Нет |
 | servers/databases | Да (см. примечание ниже) | Да |
@@ -1194,7 +1194,7 @@ ms.locfileid: "65523221"
 | Тип ресурса | Поддержка тегов | Пометка в отчет о стоимости |
 | ------------- | ----------- | ----------- |
 | providerRegistrations | Да | Да |
-| ресурсы | Да | Да |
+| ресурсов | Да | Да |
 
 ## <a name="microsofttimeseriesinsights"></a>Microsoft.TimeSeriesInsights
 | Тип ресурса | Поддержка тегов | Пометка в отчет о стоимости |
@@ -1225,24 +1225,24 @@ ms.locfileid: "65523221"
 | apiManagementAccounts/connectionAcls | Нет |  Нет |
 | apiManagementAccounts/connections | Нет |  Нет |
 | billingMeters | Нет |  Нет |
-| сертификаты | Да | Да |
+| certificates | Да | Да |
 | connectionGateways | Да | Да |
-| подключения | Да | Да |
+| connections | Да | Да |
 | customApis | Да | Да |
 | deletedSites | Нет |  Нет |
 | функции | Нет |  Нет |
-| hostingEnvironments | Да | Нет |
+| hostingEnvironments | Да | Да |
 | hostingEnvironments/multiRolePools | Нет |  Нет |
 | hostingEnvironments/multiRolePools/instances | Нет |  Нет |
 | hostingEnvironments/workerPools | Нет |  Нет |
 | hostingEnvironments/workerPools/instances | Нет |  Нет |
 | publishingUsers | Нет |  Нет |
-| рекомендации | Нет |  Нет |
+| к просмотру фильмов | Нет |  Нет |
 | resourceHealthMetadata | Нет |  Нет |
 | runtimes | Нет |  Нет |
 | serverFarms | Да | Да |
 | serverFarms/workers | Нет |  Нет |
-| сайты | Да | Да |
+| sites | Да | Да |
 | sites/domainOwnershipIdentifiers | Нет |  Нет |
 | sites/hostNameBindings | Нет |  Нет |
 | sites/instances | Нет |  Нет |
@@ -1277,7 +1277,7 @@ ms.locfileid: "65523221"
 | monitorInstances | Нет |  Нет |
 | monitorInstancesSummary | Нет |  Нет |
 | monitors | Нет |  Нет |
-| notificationSettings | Нет |  Нет  |
+| notificationSettings | Нет |  Нет |
 
 ## <a name="next-steps"></a>Дальнейшие действия
 Сведения о том, как применить теги к ресурсам, см. в статье, посвященной [использованию тегов для организации ресурсов Azure](resource-group-using-tags.md).

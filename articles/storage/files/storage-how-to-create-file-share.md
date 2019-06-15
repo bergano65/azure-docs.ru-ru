@@ -9,10 +9,10 @@ ms.date: 09/19/2017
 ms.author: rogarana
 ms.subservice: files
 ms.openlocfilehash: d945d5b79c274aa8e142203c56b27eb673e36741
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65510515"
 ---
 # <a name="create-a-file-share-in-azure-files"></a>Создание общей папки в службе файлов Azure
@@ -28,7 +28,7 @@ ms.locfileid: "65510515"
 1. **Перейдите в колонку учетной записи хранения на портале Azure**:    
     ![Колонка учетной записи хранения](./media/storage-how-to-create-file-share/create-file-share-portal1.png)
 
-2. **Нажмите кнопку "Общая папка"**:    
+2. **Нажмите кнопку "Общая папка"** :    
     ![Кнопка "Общая папка"](./media/storage-how-to-create-file-share/create-file-share-portal2.png)
 
 3. **Укажите имя и квоту. Текущее максимальное значение квоты — 5 Тиб**:    
