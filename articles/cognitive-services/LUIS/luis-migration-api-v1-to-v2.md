@@ -12,10 +12,10 @@ ms.topic: article
 ms.date: 04/02/2019
 ms.author: diberry
 ms.openlocfilehash: a4e176552fcbab9d54da696439c7e46750be3944
-ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65522365"
 ---
 # <a name="api-v1-to-v2-migration-guide-for-luis-apps"></a>Руководство по переходу с API версии 1 на API версии 2 для приложений на основе LUIS
@@ -28,7 +28,7 @@ API-интерфейсы [конечных точек](https://aka.ms/v1-endpoin
 Маршрут API разработки был изменен с **prog** на**api**.
 
 
-| version | маршрут |
+| версия | маршрут |
 |--|--|
 |1|/luis/v1.0/**prog**/apps|
 |2|/luis/**api**/v2.0/apps|
@@ -37,7 +37,7 @@ API-интерфейсы [конечных точек](https://aka.ms/v1-endpoin
 ## <a name="endpoint-route-changes"></a>Изменения в маршруте конечных точек
 Конечная точка API имеет новые параметры строки запроса, а также другой ответ. Если флаг verbose установлен, то наряду с максимальной оценкой topScoringIntent возвращаются все намерения независимо от оценок (в массиве intents).
 
-| version | Маршрут GET |
+| версия | Маршрут GET |
 |--|--|
 |1|/luis/v1/application?ID={идентификатор_приложения}&q={запрос}|
 |2|/luis/v2.0/apps/{идентификатор_приложения}?q={запрос}[&timezoneOffset][&verbose][&spellCheck][&staging][&bing-spell-check-subscription-key][&log]|
@@ -107,17 +107,17 @@ API-интерфейсы [конечных точек](https://aka.ms/v1-endpoin
 ## <a name="key-management-no-longer-in-api"></a>Управление ключами больше не осуществляется не в API
 API ключей конечных точек подписок устарели, возвращая 410 GONE.
 
-| version | маршрут |
+| версия | маршрут |
 |--|--|
 |1|/luis/v1.0/prog/subscriptions|
 |1|/luis/v1.0/prog/subscriptions/{ключ_подписки}|
 
-[Ключи конечных точек](luis-how-to-azure-subscription.md) Azure создаются на портале Azure. Вы назначаете ключ приложению LUIS на странице **[Публикация](luis-how-to-azure-subscription.md)**. Фактическое значение ключа знать не требуется. Для назначения LUIS использует имя подписки. 
+[Ключи конечных точек](luis-how-to-azure-subscription.md) Azure создаются на портале Azure. Вы назначаете ключ приложению LUIS на странице **[Публикация](luis-how-to-azure-subscription.md)** . Фактическое значение ключа знать не требуется. Для назначения LUIS использует имя подписки. 
 
 ## <a name="new-versioning-route"></a>Новый маршрут для управления версиями
 Модель версии 2 теперь содержится в параметре [version](luis-how-to-manage-versions.md). Длина имени версии в маршруте — 10 символов. Версия по умолчанию — "0.1".
 
-| version | маршрут |
+| версия | маршрут |
 |--|--|
 |1|/luis/v1.0/**prog**/apps/{идентификатор_приложения}/entities|
 |2|/luis/**api**/v2.0/apps/{идентификатор_приложения}/**versions**/{идентификатор_версии}/entities|
@@ -134,9 +134,9 @@ API ключей конечных точек подписок устарели, 
 
 
 ## <a name="sample-renamed-to-suggest"></a>"Пример" переименован в "предложение"
-LUIS предлагает высказывания из существующих [высказываний конечных точек](luis-how-to-review-endpoint-utterances.md), которые могут улучшить модель. В предыдущей версии предложения назывались **примерами**. В новой версии "примеры" называются **предложениями**. На веб-сайте LUIS это называется **[Просмотрами высказываний конечных точек](luis-how-to-review-endpoint-utterances.md)**.
+LUIS предлагает высказывания из существующих [высказываний конечных точек](luis-how-to-review-endpoint-utterances.md), которые могут улучшить модель. В предыдущей версии предложения назывались **примерами**. В новой версии "примеры" называются **предложениями**. На веб-сайте LUIS это называется **[Просмотрами высказываний конечных точек](luis-how-to-review-endpoint-utterances.md)** .
 
-| version | маршрут |
+| версия | маршрут |
 |--|--|
 |1|/luis/v1.0/**prog**/apps/{идентификатор_приложения}/entities/{идентификатор_сущности}/**sample**|
 |1|/luis/v1.0/**prog**/apps/{идентификатор_приложения}/intents/{идентификатор_намерения}/**sample**|

@@ -13,10 +13,10 @@ ms.reviewer: mathoma, carlrab
 manager: craigg
 ms.date: 04/30/2019
 ms.openlocfilehash: 47bf59adb33f3685b31430c652b31880d383833e
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65232641"
 ---
 # <a name="recover-an-azure-sql-database-using-automated-database-backups"></a>Восстановление базы данных Azure SQL с помощью создаваемых автоматически резервных копий
@@ -61,7 +61,7 @@ ms.locfileid: "65232641"
 | | **Максимальное количество одновременно обрабатываемых запросов** | **Максимальное количество одновременно отправляемых запросов** |
 | :--- | --: | --: |
 |Отдельная база данных (на подписку)|10|60|
-|Эластичный пул (на пул)|4.|200|
+|Эластичный пул (на пул)|4\.|200|
 ||||
 
 В настоящий момент отсутствует встроенный метод для восстановления всего сервера. Для примера выполнения этой задачи ознакомьтесь со скриптом в разделе [База данных SQL Azure: Полное восстановление сервера](https://gallery.technet.microsoft.com/Azure-SQL-Database-Full-82941666) сценарий является примером о выполнении этой задачи.

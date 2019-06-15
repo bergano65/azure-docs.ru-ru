@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 11/16/2017
 ms.author: alkohli
 ms.openlocfilehash: e290feb278a1cddf1cfecfcb66458d8290ec122a
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64943593"
 ---
 # <a name="available-regions-for-your-storsimple"></a>Доступные регионы для StorSimple
@@ -72,7 +72,7 @@ ms.locfileid: "64943593"
 | 1  | Австралия             | 16 | Гонконг, САР      | 31 | Новая Зеландия         | 46 | ЮАР               |
 | 2  | Австрия               | 17 | Венгрия            | 32 | Нигерия             | 47 | Южная Корея                |
 | 3  | Бахрейн               | 18 | Исландия            | 33 | Норвегия              | 48 | Испания                      |
-| 4.  | Бельгия               | 19 | Индия              | 34 | Перу                | 49 | Шри-Ланка                  |
+| 4\.  | Бельгия               | 19 | Индия              | 34 | Перу                | 49 | Шри-Ланка                  |
 | 5  | Бразилия                | 20 | Индонезия          | 35 | Филиппины         | 50 | Швеция                     |
 | 6  | Канада                | 21 | Ирландия            | 36 | Польша              | 51 | Швейцария                |
 | 7  | Чили                 | 22 | Израиль             | 37 | Португалия            | 52 | Тайвань                     |

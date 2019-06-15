@@ -10,10 +10,10 @@ ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
 ms.openlocfilehash: 94a385b7e41dd4a7664dc40418456b304ebef509
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65150013"
 ---
 # <a name="initiate-a-storage-account-failover-preview"></a>Инициация отработки отказа учетной записи хранения (предварительная версия)
@@ -55,7 +55,7 @@ ms.locfileid: "65150013"
 
 3. Убедитесь, что ваша учетная запись хранения настроена для использования геоизбыточного хранилища (GRS) или геоизбыточного хранилища с доступом для чтения (RA-GRS). Если это не так, то выберите **Конфигурация** под разделом **Параметры**, чтобы обновить учетную запись до геоизбыточной. 
 4. Свойство **Время последней синхронизации** указывает на расстояние между дополнительным и основным регионами. **Время последней синхронизации** дает возможность оценить объем потери данных после завершения отработки отказа.
-5. Выберите **Подготовка к отработке отказа (предварительная версия)**. 
+5. Выберите **Подготовка к отработке отказа (предварительная версия)** . 
 6. Просмотрите диалоговое окно подтверждения. Когда будете готовы, введите **Да**, чтобы подтвердить и запустить отработку отказа.
 
     ![Снимок экрана, отображающий диалоговое окно подтверждения в случае отработки отказа учетной записи](media/storage-initiate-account-failover/portal-failover-confirm.png)
@@ -109,4 +109,4 @@ az storage account failover \ --name accountName
 
 - [Disaster recovery and storage account failover (preview) in Azure Storage](storage-disaster-recovery-guidance.md) (Аварийное восстановление и отработка отказа учетной записи хранения (предварительная версия) в службе хранилища Azure)
 - [Проектирование высокодоступных приложений с использованием RA-GRS](storage-designing-ha-apps-with-ragrs.md)
-- [Руководство Создание высокодоступного приложения с помощью хранилища BLOB-объектов](../blobs/storage-create-geo-redundant-storage.md). 
+- [Учебник. Создание высокодоступного приложения с помощью хранилища BLOB-объектов](../blobs/storage-create-geo-redundant-storage.md). 

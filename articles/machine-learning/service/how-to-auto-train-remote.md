@@ -13,10 +13,10 @@ ms.topic: conceptual
 ms.date: 12/04/2018
 ms.custom: seodec18
 ms.openlocfilehash: 6a18bdf3a2a1ccd60ff20d21ebd99f4f6e15e38f
-ms.sourcegitcommit: f013c433b18de2788bf09b98926c7136b15d36f1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/13/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65551338"
 ---
 # <a name="train-models-with-automated-machine-learning-in-the-cloud"></a>Обучение моделей с помощью автоматического машинного обучения в облаке
@@ -37,7 +37,7 @@ ms.locfileid: "65551338"
 ws = Workspace.from_config()
 ```
 
-## <a name="create-resource"></a>Создать ресурс
+## <a name="create-resource"></a>Создайте ресурс
 
 Создайте целевую AmlCompute в рабочей области (`ws`), если он еще не существует.  
 
@@ -207,7 +207,7 @@ RunDetails(remote_run).show()
 
 Мини-приложение показывает URL-адрес, который можно использовать для просмотра и изучения данных отдельного прогона.
  
-### <a name="view-logs"></a>Просмотреть журналы
+### <a name="view-logs"></a>Просмотр журналов
 
 Найдите журналы на DSVM в каталоге `/tmp/azureml_run/{iterationid}/azureml-logs`.
 

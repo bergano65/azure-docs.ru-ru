@@ -12,10 +12,10 @@ ms.topic: article
 ms.date: 03/19/2019
 ms.author: diberry
 ms.openlocfilehash: 8f067bc005c4de9ddc87ed598b1717f8fbb29a6a
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65072381"
 ---
 # <a name="language-and-region-support-for-luis"></a>Поддержка языков и регионов в LUIS
@@ -49,14 +49,14 @@ ms.locfileid: "65072381"
 
 Языковая поддержка зависит от [готовых сущностей](luis-reference-prebuilt-entities.md) и [готовых предметных областей](luis-reference-prebuilt-domains.md).
 
-### <a name="chinese-support-notes"></a>* Примечания о поддержке китайского языка
+### <a name="chinese-support-notes"></a>\* Примечания о поддержке китайского языка
 
  - В языке и региональных параметрах `zh-cn` служба LUIS ожидает упрощенную кодировку китайского языка вместо традиционной кодировки.
  - Имена намерений, сущностей, свойств и регулярных выражений можно указывать китайскими или латинскими символами.
  - См. в разделе [ссылку предварительно созданных доменов](luis-reference-prebuilt-domains.md) сведения, на котором предварительно созданных доменов поддерживаются в `zh-cn` языка и региональных параметров.
 <!--- When writing regular expressions in Chinese, do not insert whitespace between Chinese characters.-->
 
-### <a name="japanese-support-notes"></a>* Примечания о поддержке японского языка
+### <a name="japanese-support-notes"></a>\* Примечания о поддержке японского языка
 
  - Поскольку служба LUIS не обеспечивает синтаксический анализ и не может понять разницу между почтительной и неформальной речью, необходимо включить различные уровни формальности в качестве примеров обучения для ваших приложений.
      - でございます не равно です.

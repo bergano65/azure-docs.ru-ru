@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 01/29/2019
 ms.author: pabutler
 ms.openlocfilehash: 702be34a5be69c050b809713a5742c2189892a27
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64943322"
 ---
 # <a name="create-a-power-bi-app-offer"></a>Создание предложения приложения Power BI
@@ -20,7 +20,7 @@ ms.locfileid: "64943322"
 
 Группы основных ресурсов описаны в таблице ниже.
 
-|   Группа ресурсов      | ОПИСАНИЕ                                                                         |
+|   Группа ресурсов      | Описание                                                                         |
 | ----------------   | ----------------                                                                    |
 | Параметры предложения     | Первичные идентифицирующие данные и название предложения.                                      |
 | Технические сведения     | URL-адрес установщика, используемый для установки приложения в рабочей области Power BI клиента. Дополнительные сведения о создании этого URL-адреса см. в [документации по приложениям Power BI](https://go.microsoft.com/fwlink/?linkid=2028636). |

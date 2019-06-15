@@ -12,10 +12,10 @@ ms.date: 01/29/2017
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
 ms.openlocfilehash: 578f7a01c22bd5aafd4e4ac08c9f5ab78e340a34
-ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65606517"
 ---
 # <a name="the-team-data-science-process-in-action-using-sql-server"></a>Процесс обработки и анализа данных группы на практике: использование SQL Server
@@ -376,7 +376,7 @@ ms.locfileid: "65606517"
 ![График #8][8]
 
 ### <a name="sub-sampling-the-data-in-sql"></a>Вложенная выборка данных в SQL
-Подготавливая данные к созданию модели в [Студии машинного обучения Azure](https://studio.azureml.net), вы можете определить **SQL-запрос для использования непосредственно в модуле импорта данных** или сохранить спроектированные и выбранные данные в новой таблице, которую можно использовать в модуле [Импорт данных][import-data] с помощью простого запроса **SELECT * FROM <имя\_вашей\_новой\_таблицы>**.
+Подготавливая данные к созданию модели в [Студии машинного обучения Azure](https://studio.azureml.net), вы можете определить **SQL-запрос для использования непосредственно в модуле импорта данных** или сохранить спроектированные и выбранные данные в новой таблице, которую можно использовать в модуле [Импорт данных][import-data] с помощью простого запроса **SELECT * FROM <имя\_вашей\_новой\_таблицы>** .
 
 В этом разделе мы создадим новую таблицу для размещения выбранных и спроектированных данных. Пример прямого SQL-запроса для построения модели содержится в разделе [Просмотр данных и проектирование характеристик в SQL Server](#dbexplore) .
 
@@ -621,7 +621,7 @@ ms.locfileid: "65606517"
 ### <a name="license-information"></a>Сведения о лицензии
 Этот образец пошагового руководства и сопровождающие его сценарии и файлы IPython Notebook предоставлены корпорацией Майкрософт на условиях лицензии MIT. Дополнительные сведения см. в файле LICENSE.txt каталога примеров кода на сайте GitHub.
 
-### <a name="references"></a>Ссылки
+### <a name="references"></a>Справочники
 •    [Страница Андреса Монройя для скачивания данных о поездках в такси Нью-Йорка](https://www.andresmh.com/nyctaxitrips/)  
 •    [Получение данных о поездках такси Нью-Йорка на основании FOIL (Chris Whong)](https://chriswhong.com/open-data/foil_nyc_taxi/)   
 •    [Статистические данные о комиссионных сборах за аренду такси и лимузинов Нью-Йорка](https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page)

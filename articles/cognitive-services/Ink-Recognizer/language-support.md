@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: aahi
 ms.openlocfilehash: 98962182da86fceb0b6fcc8540422f93bc0058f5
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65026303"
 ---
 # <a name="language-and-region-support-for-the-ink-recognizer-api"></a>Язык и регион поддержку API распознавания рукописного ввода
@@ -30,8 +30,8 @@ ms.locfileid: "65026303"
 | Баскский                                     |     `eu-ES`     |
 | Боснийский (латиница)                            | `bs-Latn-BA`    |
 | Каталанский                                    |     `ca-ES`     |
-| Китайский (упрощенное письмо, Китай)                |     `zh-CN`     |
-| Китайский (традиционное письмо, Тайвань)              |     `zh-TW`     |
+| Китайский (упрощенное письмо)                |     `zh-CN`     |
+| Китайский (традиционный, Тайвань)              |     `zh-TW`     |
 | Хорватский (Хорватия)                         |     `hr-HR`     |
 | Чешский                                      |     `cs-CZ`     |
 | Датский                                     |     `da-DK`     |
@@ -65,7 +65,7 @@ ms.locfileid: "65026303"
 | Польский                                     |     `pl-PL`     |
 | Португальский (Бразилия)                        |     `pt-BR`     |
 | Португальский (Португалия)                      |     `pt-PT`     |
-| Ретороманский                                    |     `rm-CH`     |
+| Romansh                                    |     `rm-CH`     |
 | Румынский                                   |     `ro-RO`     |
 | Русский                                    |     `ru-RU`     |
 | Гэльский                            |     `gd-GB`     |
@@ -86,10 +86,10 @@ ms.locfileid: "65026303"
 | Турецкий                                    |     `tr-TR`     |
 | Валлийский                                      |     `cy-GB`     |
 | Волоф                                      |     `wo-SN`     |
-| Коса                                      |     `xh-ZA`     |
-| Зулусский                                       |     `zu-ZA`     |
+| Xhosa                                      |     `xh-ZA`     |
+| зулусский                                       |     `zu-ZA`     |
 
 ## <a name="see-also"></a>См. также
 
-* [Что такое API распознавания рукописного ввода?](overview.md)
+* [Что такое API Распознавателя рукописного текста?](overview.md)
 * [Отправка цифровых рукописных штрихов в API распознавания рукописного ввода](concepts/send-ink-data.md)

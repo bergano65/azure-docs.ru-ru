@@ -9,15 +9,15 @@ manager: jeconnoc
 ms.author: tarcher
 ms.date: 04/30/2019
 ms.openlocfilehash: b3396b2f4639cc7298b77810dbaafadd308d6b24
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65230982"
 ---
 # <a name="ansible-module-and-version-matrix"></a>Таблица версий и модулей Ansible
 
-Ansible содержит набор модулей для подготовки и настройки ресурсов Azure. Эти ресурсы включают виртуальные машины, масштабируемые наборы, сетевых служб и служб контейнеров. В этой статье перечислены различные модули Ansible для Azure и версий Ansible, в которых они входят.
+Ansible содержит набор модулей для подготовки и настройки ресурсов Azure. Эти ресурсы включают в себя виртуальные машины, масштабируемые наборы, сетевые службы и службы контейнеров. В этой статье перечислены различные модули Ansible для Azure и версий Ansible, в которых они входят.
 
 ## <a name="ansible-modules-for-azure"></a>Модули Ansible для Azure
 

@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 03/26/2019
 ms.author: mlottner
 ms.openlocfilehash: 973b0044844fbdf38eefde2072631586a8ace593
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65192611"
 ---
 # <a name="azure-security-center-for-iot-prerequisites"></a>Центр безопасности Azure для Интернета вещей необходимых компонентов
@@ -41,7 +41,7 @@ ms.locfileid: "65192611"
 
 ASC для Интернета вещей аналитических данных и отчетов доступны с помощью центра Интернета вещей Azure и центр безопасности Azure. Чтобы включить ASC для Интернета вещей в центре Интернета вещей Azure, учетная запись с **владельца** прав доступа уровня является обязательным. После включения ASC для Интернета вещей в центре Интернета вещей, ASC для аналитика Интернета вещей отображаются в виде **безопасности** компонентов в центре Интернета вещей Azure и как **IoT** в центре безопасности Azure. 
 
-## <a name="supported-service-regions"></a>Поддерживаемые службы регионов 
+## <a name="supported-service-regions"></a>Поддерживаемые регионы для службы 
 
 ASC для Интернета вещей в настоящее время поддерживается для центров Интернета вещей в следующих регионах Azure:
   - Центральный регион США
@@ -62,7 +62,7 @@ ASC для Интернета вещей в настоящее время под
 ASC для агентов Интернета вещей поддерживает растущих список устройств и платформ. См. в разделе [платформы список поддерживаемых](how-to-deploy-agent.md) проверяемый имеющейся или планируемой устройства библиотеки.  
 
 ## <a name="next-steps"></a>Дальнейшие действия
-- [Обзор](overview.md)
+- [Обзор набора средств Visual Studio для Unity](overview.md)
 - [Включить службу](quickstart-onboard-iot-hub.md)
 - [ASC для Интернета вещей часто задаваемые вопросы](resources-frequently-asked-questions.md)
 - [Основные сведения о ASC для Интернета вещей оповещений](concept-security-alerts.md)

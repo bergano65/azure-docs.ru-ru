@@ -15,10 +15,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e25060152577e7947a78aa0e8d78c85cc7fd2fad
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65138342"
 ---
 #  <a name="use-a-saml-20-identity-provider-idp-for-single-sign-on"></a>Использование поставщика удостоверений (IdP) SAML 2.0 для единого входа
@@ -77,7 +77,7 @@ ms.locfileid: "65138342"
 ## <a name="required-attributes"></a>Требуемые атрибуты
 В таблице ниже приведены требования к определенным атрибутам в сообщении SAML 2.0.
  
-|Атрибут|ОПИСАНИЕ|
+|Атрибут|Описание|
 | ----- | ----- |
 |NameID|Значение этого утверждения должно совпадать с идентификатором ImmutableID пользователя в Azure AD. Это должно быть буквенно-цифровое значение длиной до 64 символов. Все небезопасные знаки HTML должны кодироваться, например, знак "+" должен быть представлен как ".2B".|
 |IDPEmail|Имя субъекта-пользователя (UPN) приводится в ответе SAML в виде элемента с именем IDPEmail. Это атрибут UserPrincipalName (UPN) пользователя в Azure AD и Office 365. Имя субъекта-пользователя указывается в формате адреса электронной почты. Значение UPN в Windows Office 365 (Azure Active Directory).|

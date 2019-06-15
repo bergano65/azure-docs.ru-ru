@@ -16,10 +16,10 @@ ms.topic: article
 ms.date: 05/07/2019
 ms.author: zchia
 ms.openlocfilehash: f79bc083105f997b08f7cfa6f8e08a8f4f455455
-ms.sourcegitcommit: 399db0671f58c879c1a729230254f12bc4ebff59
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65470556"
 ---
 # <a name="tutorial-configure-dynamic-signal-for-automatic-user-provisioning"></a>Руководство по Настройка Dynamic Signal для автоматической подготовки пользователей
@@ -45,7 +45,7 @@ ms.locfileid: "65470556"
 
 **Чтобы добавить Dynamic Signal из коллекции приложений Azure AD, выполните следующие действия:**
 
-1. В  **[портала Azure](https://portal.azure.com)**, на панели навигации слева выберите **Azure Active Directory**.
+1. В  **[портала Azure](https://portal.azure.com)** , на панели навигации слева выберите **Azure Active Directory**.
 
     ![Кнопка Azure Active Directory](common/select-azuread.png)
 
@@ -116,7 +116,7 @@ Azure Active Directory используется концепция, называ
 
 8. В поле **Почтовое уведомление** введите адрес электронной почты пользователя или группы, которые должны получать уведомления об ошибках подготовки, а также установите флажок **Send an email notification when a failure occurs** (Отправить уведомление по электронной почте при сбое).
 
-    ![Почтовое уведомление](common/provisioning-notification-email.png)
+    ![Уведомление по электронной почте](common/provisioning-notification-email.png)
 
 9. Выберите команду **Сохранить**.
 

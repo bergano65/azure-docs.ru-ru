@@ -16,10 +16,10 @@ ms.author: nacanuma
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: e6a04f5d62ec750cfbe44765e833552bd694654d
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65075015"
 ---
 # <a name="single-page-application---move-to-production"></a>Одностраничное приложение - перемещения в рабочую среду
@@ -30,11 +30,11 @@ ms.locfileid: "65075015"
 
 Выполните шаги, необходимые для подготовки к рабочие приложения.
 
-- [Включение ведения журнала](msal-logging.md) в приложении.
+- [Включите ведение журнала](msal-logging.md) в приложении.
 
 ## <a name="test-your-integration"></a>Проверили интеграцию
 
-- Проверили интеграцию, следуя [контрольный список для интеграции платформы удостоверений Microsoft](identity-platform-integration-checklist.md).
+- Протестируйте интеграцию согласно [контрольному списку для интеграции платформы удостоверений Майкрософт](identity-platform-integration-checklist.md).
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

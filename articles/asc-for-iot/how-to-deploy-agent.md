@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 03/27/2019
 ms.author: mlottner
 ms.openlocfilehash: 5c76cce5a3d9add8a1dcd8acc439a70c4a8655a9
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65200571"
 ---
 # <a name="select-and-deploy-a-security-agent-on-your-iot-device"></a>Выберите и разверните агент безопасности на устройстве Интернета вещей
@@ -48,16 +48,16 @@ ms.locfileid: "65200571"
 | --- | ----------- | --------- |
 | Открытый исходный код | Доступны в разделе [лицензии MIT](https://en.wikipedia.org/wiki/MIT_License) в [Github](https://aka.ms/iot-security-github-cs) | Доступны в разделе [лицензии MIT](https://en.wikipedia.org/wiki/MIT_License) в [Github](https://aka.ms/iot-security-github-c) |
 | Язык разработки    | C | C# |
-| Поддерживаемые платформы Windows? | Нет  | Yes |
+| Поддерживаемые платформы Windows? | Нет | Да |
 | Предварительные требования для Windows | --- | [WMI](https://docs.microsoft.com/windows/desktop/wmisdk/) |
 | Поддерживаемые платформы Linux? | Да, x64 и x86 | Да, только x64 |
 | Предварительные требования для Linux | libunwind8, libcurl3, среда выполнения uuid, auditd, подключаемые модули audispd | libunwind8, libcurl3, uuid-runtime, auditd, audispd-plugins, sudo, netstat, iptables |
 | Дискового пространства | 10.5 МБ | 90 МБ |
 | Объем памяти (в среднем) | 5.5 МБ | 33 МБ |
-| [Проверка подлинности](concept-security-agent-authentication-methods.md) к центру Интернета вещей | Yes | Yes |
-| Данные безопасности [коллекции](how-to-agent-configuration.md#supported-security-events) | Yes | Yes |
-| Агрегация событий | Yes | Yes |
-| Конфигурация удаленного через [двойник модуля безопасности](concept-security-module.md) | Yes | Yes |
+| [Проверка подлинности](concept-security-agent-authentication-methods.md) к центру Интернета вещей | Да | Да |
+| Данные безопасности [коллекции](how-to-agent-configuration.md#supported-security-events) | Да | Да |
+| Агрегация событий | Да | Да |
+| Конфигурация удаленного через [двойник модуля безопасности](concept-security-module.md) | Да | Да |
 
 
 ## <a name="choose-an-agent-flavor"></a>Выберите конфигурация агента 
@@ -86,10 +86,10 @@ ms.locfileid: "65200571"
 
 |ASC для Интернета вещей агента |Операционная система |Архитектура |
 |--------------|------------|--------------|
-|C|Ubuntu 16.04. |   x64|
+|C|Ubuntu 16.04 |   x64|
 |C|Ubuntu 18.04 |   x64|
 |C|Debian 9 |   x64, x86|
-|C#|Ubuntu 16.04.    |x64|
+|C#|Ubuntu 16.04    |x64|
 |C#|Ubuntu 18.04    |x64|
 |C#|Debian 9    |x64|
 |C#|Windows Server 2016|    X64|

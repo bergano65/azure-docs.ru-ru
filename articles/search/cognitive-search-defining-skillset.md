@@ -11,10 +11,10 @@ ms.date: 05/02/2019
 ms.author: luisca
 ms.custom: seodec2018
 ms.openlocfilehash: 010880304c5011bd5a767650aa0ae6b6103bdde2
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65540859"
 ---
 # <a name="how-to-create-a-skillset-in-an-enrichment-pipeline"></a>Создание набора навыков в конвейере обогащения
@@ -173,7 +173,7 @@ Content-Type: application/json
 
 * Навык имеет один выходной параметр с именем ```"organizations"```. Выходные данные существуют только во время обработки. Для связывания этого выходного параметра со входным параметром нижестоящего навыка можно ссылаться на выходной параметр как на ```"/document/organizations"```.
 
-* Для определенного документа значение ```"/document/organizations"``` представляет массив организаций, извлеченный из текста. Например:
+* Для определенного документа значение ```"/document/organizations"``` представляет массив организаций, извлеченный из текста. Пример:
 
   ```json
   ["Microsoft", "LinkedIn"]

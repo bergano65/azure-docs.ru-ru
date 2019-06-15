@@ -12,10 +12,10 @@ ms.topic: article
 ms.date: 05/08/2019
 ms.author: juliako
 ms.openlocfilehash: 01b386c820a09af0e616698aabc58a886c30bb09
-ms.sourcegitcommit: f013c433b18de2788bf09b98926c7136b15d36f1
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/13/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65550929"
 ---
 # <a name="transforms-and-jobs"></a>Преобразования и задания
@@ -73,7 +73,7 @@ ms.locfileid: "65550929"
 
 <a href="./media/api-diagrams/transform-large.png" target="_blank"><img src="./media/api-diagrams/transform-small.png"></a> 
 
-## <a name="jobs"></a>Задания (job)
+## <a name="jobs"></a>Задания
 
 Объект **задание** содержит фактический запрос к Службам мультимедиа, который применяет **преобразование** к указанному видео- и (или) аудиосодержимому. После создания преобразования можно отправлять задания с помощью API Служб мультимедиа или любого из опубликованных пакетов SDK. **Задание** указывает такую информацию, как расположение входного и выходного видео. Расположение входного видео можно указать с помощью: URL-адресов HTTPS, URL-адресов SAS или [ресурсов](https://docs.microsoft.com/rest/api/media/assets).  
 

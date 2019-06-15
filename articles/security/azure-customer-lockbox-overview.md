@@ -8,10 +8,10 @@ ms.author: cabailey
 manager: barbkess
 ms.date: 05/07/2019
 ms.openlocfilehash: 468e392cd2c45d79cbb24f8d737a6e83fbcd2725
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65079275"
 ---
 # <a name="customer-lockbox-for-microsoft-azure"></a>Защищенное хранилище клиента для Microsoft Azure
@@ -64,7 +64,7 @@ ms.locfileid: "65079275"
     
     ![Защищенное хранилище Azure клиента - Просмотр ожидающий запрос](./media/azure-customer-lockbox/customer-lockbox-pending-requests.png)
 
-10. Можно также выбрать назначенный утверждающий **идентификатор ЗАПРОСА службы** просмотреть запрос запрос в службу поддержки, который был создан исходный пользователь. Эти сведения позволят контекст для почему улучшением поддержки Майкрософт, а также журнал обнаруженной проблемы. Например: 
+10. Можно также выбрать назначенный утверждающий **идентификатор ЗАПРОСА службы** просмотреть запрос запрос в службу поддержки, который был создан исходный пользователь. Эти сведения позволят контекст для почему улучшением поддержки Майкрософт, а также журнал обнаруженной проблемы. Пример:
     
     ![Защищенное хранилище Azure клиента - просмотреть запрос билета](./media/azure-customer-lockbox/customer-lockbox-support-ticket.png)
 

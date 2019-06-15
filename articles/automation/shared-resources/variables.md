@@ -10,10 +10,10 @@ ms.date: 05/14/2019
 ms.topic: conceptual
 manager: carmonm
 ms.openlocfilehash: 0ac34f1d1e7fc2a967c7608f31f3b943f9380d01
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65786193"
 ---
 # <a name="variable-assets-in-azure-automation"></a>Средства переменных в службе автоматизации Azure
@@ -41,11 +41,11 @@ ms.locfileid: "65786193"
 
 Ниже перечислены типы переменных, которые доступны в службе автоматизации.
 
-* Строка
+* String
 * Integer
 * DateTime
 * Boolean
-* NULL
+* Null
 
 ## <a name="azurerm-powershell-cmdlets"></a>Командлеты PowerShell для AzureRM
 
@@ -58,11 +58,11 @@ ms.locfileid: "65786193"
 |[Remove-AzureRmAutomationVariable](/powershell/module/AzureRM.Automation/Remove-AzureRmAutomationVariable)|Удаляет существующую переменную.|
 |[Set-AzureRmAutomationVariable](/powershell/module/AzureRM.Automation/Set-AzureRmAutomationVariable)|Получает значение существующей переменной.|
 
-## <a name="activities"></a>Операции
+## <a name="activities"></a>Действия
 
 Действия в следующей таблице используются для доступа к учетным данным в модуле Runbook и конфигурациях DSC.
 
-| Операции | Описание |
+| Действия | Описание |
 |:---|:---|
 |Get-AutomationVariable|Получает значение существующей переменной.|
 |Set-AutomationVariable|Получает значение существующей переменной.|

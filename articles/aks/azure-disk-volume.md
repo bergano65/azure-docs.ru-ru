@@ -7,11 +7,11 @@ ms.service: container-service
 ms.topic: article
 ms.date: 03/01/2019
 ms.author: iainfou
-ms.openlocfilehash: 02a863a4ddf59fb36c5f2ae7f3092896d2e1d860
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: b166f70186b063782fb2c2245e351d6dfca6f978
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65072159"
 ---
 # <a name="manually-create-and-use-a-volume-with-azure-disks-in-azure-kubernetes-service-aks"></a>Создание вручную и использование тома с дисками в Службе Azure Kubernetes (AKS)
@@ -41,12 +41,12 @@ $ az aks show --resource-group myResourceGroup --name myAKSCluster --query nodeR
 MC_myResourceGroup_myAKSCluster_eastus
 ```
 
-Создайте диск, выполнив команду [az disk create][az-disk-create]. Укажите имя группы ресурсов узла, полученное в предыдущей команде, а затем имя ресурса диска, например *myAKSDisk*. В следующем примере создается *20*Гиб диска и идентификатор выходных данных после ее создания диска:
+Создайте диск, выполнив команду [az disk create][az-disk-create]. Укажите имя группы ресурсов узла, полученное в предыдущей команде, а затем имя ресурса диска, например *myAKSDisk*. В следующем примере создается *20*Гиб диска и выходных данных идентификатор диска после ее создания. Если вам нужно создать диск для использования с контейнерами Windows Server (в настоящее время в предварительной версии в AKS), добавьте `--os-type windows` параметр, чтобы правильно отформатировать диск.
 
 ```azurecli-interactive
 az disk create \
   --resource-group MC_myResourceGroup_myAKSCluster_eastus \
-  --name myAKSDisk  \
+  --name myAKSDisk \
   --size-gb 20 \
   --query id --output tsv
 ```
@@ -62,7 +62,7 @@ az disk create \
 
 ## <a name="mount-disk-as-volume"></a>Подключите диска в качестве тома
 
-Чтобы установить диск Azure в pod, настройте том в спецификации контейнера. Создайте файл `azure-disk-pod.yaml` со следующим содержимым. Обновите `diskName`, указав имя диска, созданного на предыдущем шаге, и `diskURI`, указав идентификатор диска, содержащийся в выходных данных команды создания диска. При необходимости обновите `mountPath`. Это путь, по которому диск Azure подключен в pod.
+Чтобы установить диск Azure в pod, настройте том в спецификации контейнера. Создайте файл `azure-disk-pod.yaml` со следующим содержимым. Обновите `diskName`, указав имя диска, созданного на предыдущем шаге, и `diskURI`, указав идентификатор диска, содержащийся в выходных данных команды создания диска. При необходимости обновите `mountPath`. Это путь, по которому диск Azure подключен в pod. Укажите контейнеры (сейчас в предварительной версии в AKS), Windows Server *mountPath* используя соглашение путь Windows, таких как *«D:»* .
 
 ```yaml
 apiVersion: v1

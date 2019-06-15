@@ -17,13 +17,13 @@ ms.reviewer: jlu
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6fe1517cce8a1f9b1024085340ffb927b282f0fb
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65540290"
 ---
-# <a name="how-to-reactivate-disabled-access-control-service-namespaces"></a>Практическое руководство: Повторная активация отключенных пространств имен Службы контроля доступа
+# <a name="how-to-reactivate-disabled-access-control-service-namespaces"></a>Практическое руководство: Повторная активация отключенных пространств имен службы контроля доступа
 
 В ноябре 2017 года мы объявили, что служба контроля доступа Microsoft Azure (ACS), относящаяся к Azure Active Directory (Azure AD), прекратит функционирование 7 ноября 2018 года.
 
@@ -93,7 +93,7 @@ ms.locfileid: "65540290"
 1. Войдите на портал Azure и создайте [новый запрос на поддержку](https://portal.azure.com/#create/Microsoft.Support).
 1. Заполните новую форму запроса на поддержку, как показано в следующем примере.
 
-    | Поле запроса на поддержку | Value |
+    | Поле запроса на поддержку | Значение |
     |-----------------------|--------------------|
     | **Тип проблемы** | `Technical` |
     | **Подписка** | Задается вашей подписке |

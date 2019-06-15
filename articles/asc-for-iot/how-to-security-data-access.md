@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 03/25/2019
 ms.author: mlottner
 ms.openlocfilehash: 1ec6a174d05f8707bbffcc9fb013a98c2eb9196c
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65200544"
 ---
 # <a name="access-your-security-data"></a>Доступ к данным безопасности 
@@ -69,7 +69,7 @@ SecurityAlert
 | take 3
 ```
 
-| TimeGenerated           | IoTHubId                                                                                                       | deviceId      | AlertSeverity | DisplayName                           | ОПИСАНИЕ                                             | ExtendedProperties                                                                                                                                                             |
+| TimeGenerated           | IoTHubId                                                                                                       | deviceId      | AlertSeverity | DisplayName                           | Описание                                             | ExtendedProperties                                                                                                                                                             |
 |-------------------------|----------------------------------------------------------------------------------------------------------------|---------------|---------------|---------------------------------------|---------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | 2018 Г.-11-18T18:10:29.000 | /subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | < имя_устройства > | Высокая          | Успешно выполнена Атака методом подбора           | Против атак методом подбора на устройстве успешно.        |    {«Полный исходный адрес»: «[\"10.165.12.18:\"]», «Имена пользователей»: «[\"\"]», «идентификатор» устройства: "IoT-Device-Linux" }                                                                       |
 | 2018 Г.-11-19T12:40:31.000 | /subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | < имя_устройства > | Высокая          | Успешно локальное имя входа на устройстве      | Обнаружено успешное локальное имя входа на устройство     | {«Удаленный адрес»: «?», «Удаленный порт»: «», «Локальный порт»: «», «Оболочка входа»: «/ bin/su», «Идентификатор процесса входа в систему»: «28207», «имя пользователя»: «злоумышленник», «идентификатор» устройства: "IoT-Device-Linux" } |
@@ -97,7 +97,7 @@ SecurityAlert
 | /subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | < имя_устройства > | Высокая          | Успешно выполнена Атака методом подбора           | 9   |   
 | /subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | < имя_устройства > | Средние        | Сбой попытки локальное имя входа на устройстве  | 242 |    
 | /subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | < имя_устройства > | Высокая          | Успешно локальное имя входа на устройстве      | 31  |
-| /subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | < имя_устройства > | Средние        | Работа средства шифрования монеты                     | 4.   |
+| /subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | < имя_устройства > | Средние        | Работа средства шифрования монеты                     | 4\.   |
 
 ### <a name="iot-hub-summary"></a>Сводка центра Интернета вещей
 
@@ -149,10 +149,10 @@ SecurityRecommendation
 | take 2
 ```
     
-| TimeGenerated | IoTHubId | deviceId | RecommendationSeverity | RecommendationState | RecommendationDisplayName | ОПИСАНИЕ | RecommendationAdditionalData |
+| TimeGenerated | IoTHubId | deviceId | RecommendationSeverity | RecommendationState | RecommendationDisplayName | Описание | RecommendationAdditionalData |
 |---------------|----------|----------|------------------------|---------------------|---------------------------|-------------|------------------------------|
-| 2019-03-22T10:21:06.060 | /subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | < имя_устройства > | Средние | Активен | Правило брандмауэра широкие права в цепочке входной найдено | Обнаружено правило брандмауэра, которое содержит разрешительный шаблон для широкого диапазона IP-адресов или портов. | {«Правила»: "[{\"SourceAddress\":\"\",\"SourcePort\":\"\",\"DestinationAddress\":\" \" \"Порт_назначения\":\"1337\"}]»} |
-| 2019-03-22T10:50:27.237 | /subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | < имя_устройства > | Средние | Активен | Правило брандмауэра широкие права в цепочке входной найдено | Обнаружено правило брандмауэра, которое содержит разрешительный шаблон для широкого диапазона IP-адресов или портов. | {«Правила»: "[{\"SourceAddress\":\"\",\"SourcePort\":\"\",\"DestinationAddress\":\" \" \"Порт_назначения\":\"1337\"}]»} |
+| 2019-03-22T10:21:06.060 | /subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | < имя_устройства > | Средние | Активен | Правило брандмауэра широкие права в цепочке входной найдено | Правило в брандмауэре были обнаружены, содержащее широкие шаблон для широкого диапазона IP-адресов или портов | {«Правила»: "[{\"SourceAddress\":\"\",\"SourcePort\":\"\",\"DestinationAddress\":\" \" \"Порт_назначения\":\"1337\"}]»} |
+| 2019-03-22T10:50:27.237 | /subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | < имя_устройства > | Средние | Активен | Правило брандмауэра широкие права в цепочке входной найдено | Правило в брандмауэре были обнаружены, содержащее широкие шаблон для широкого диапазона IP-адресов или портов | {«Правила»: "[{\"SourceAddress\":\"\",\"SourcePort\":\"\",\"DestinationAddress\":\" \" \"Порт_назначения\":\"1337\"}]»} |
 
 ### <a name="device-summary"></a>Сводки по устройству
 
@@ -174,7 +174,7 @@ SecurityRecommendation
 | /subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | < имя_устройства > | Высокая          | 2   |    
 | /subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | < имя_устройства > | Средние        | 1 |  
 | /subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | < имя_устройства > | Высокая          | 1  |
-| /subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | < имя_устройства > | Средние        | 4.   |
+| /subscriptions/<subscription_id>/resourceGroups/<resource_group>/providers/Microsoft.Devices/IotHubs/<iot_hub> | < имя_устройства > | Средние        | 4\.   |
 
 
 ## <a name="next-steps"></a>Дальнейшие действия

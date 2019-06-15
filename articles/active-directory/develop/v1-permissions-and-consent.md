@@ -19,10 +19,10 @@ ms.reviewer: jesakowi, justhu
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 6fb4342e024d826c65ed33184aaf33012d09190a
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65545193"
 ---
 # <a name="permissions-and-consent-in-the-azure-active-directory-v10-endpoint"></a>Разрешения и согласие в конечной точке Azure Active Directory версии 1.0
@@ -106,7 +106,7 @@ Azure AD определяет два типа разрешений:
   - `Permission` соответствует действию, которое пользователь может применить к этим данным.
   - `Modifier` используется для описания специализаций другого разрешения.
     
-    Например:
+    Пример:
   - Mail.Read позволяет пользователям читать письма электронной почты.
   - Mail.ReadWrite позволяет пользователям читать и писать письма.
   - Mail.ReadWrite.All предоставляет администратору или пользователю доступ ко всем письмам в организации.

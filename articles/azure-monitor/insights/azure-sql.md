@@ -11,10 +11,10 @@ ms.reviewer: carlrab
 manager: craigg
 ms.date: 12/17/2018
 ms.openlocfilehash: 0617dc617309d49cdc7c8cddd4e91619b873b914
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65785686"
 ---
 # <a name="monitor-azure-sql-database-using-azure-sql-analytics-preview"></a>Мониторинг базы данных SQL Azure с помощью решения "Аналитика SQL Azure" (предварительная версия)
@@ -37,10 +37,10 @@ ms.locfileid: "65785686"
 | Подключенный источник | Поддерживаются | ОПИСАНИЕ |
 | --- | --- | --- |
 | [Система диагностики Azure](../platform/collect-azure-metrics-logs.md) | **Да** | Данные метрик и журнала Azure отправляются к журналам монитора Azure непосредственно из Azure. |
-| [Учетная запись хранения Azure](../platform/collect-azure-metrics-logs.md) | Нет  | Azure Monitor не считывает данные из учетной записи хранения. |
-| [Агенты Windows](../platform/agent-windows.md) | Нет  | Решение не использует прямые агенты Windows. |
-| [Агенты Linux](../learn/quick-collect-linux-computer.md) | Нет  | Решение не использует прямые агенты Linux. |
-| [Группа управления System Center Operations Manager](../platform/om-agents.md) | Нет  | Решение не использует прямое подключение из агента Operations Manager к Azure Monitor. |
+| [Учетная запись хранения Azure](../platform/collect-azure-metrics-logs.md) | Нет | Azure Monitor не считывает данные из учетной записи хранения. |
+| [Агенты Windows](../platform/agent-windows.md) | Нет | Решение не использует прямые агенты Windows. |
+| [Агенты Linux](../learn/quick-collect-linux-computer.md) | Нет | Решение не использует прямые агенты Linux. |
+| [Группа управления System Center Operations Manager](../platform/om-agents.md) | Нет | Решение не использует прямое подключение из агента Operations Manager к Azure Monitor. |
 
 ## <a name="configuration"></a>Параметр Configuration
 Использовать процесс, описанный в [решения добавьте Azure Monitor из коллекции решений](../../azure-monitor/insights/solutions.md) добавить решение для анализа SQL Azure (Предварительная версия) в рабочую область Log Analytics.
@@ -106,8 +106,8 @@ ms.locfileid: "65785686"
 | Resource by type (Ресурсы по типу) | Перспектива, в которой представлено число всех отслеживаемых ресурсов. | Yes | Yes |
 | Аналитика | Предоставляет подробные сведения о производительности Intelligent Insights в иерархическом виде. | Yes | Yes |
 | Errors | Предоставляет подробные данные об ошибках SQL, возникших в базах данных, в иерархическом виде. | Yes | Yes |
-| Время ожидания | Предоставляет подробные данные о времени ожидания SQL в базах данных в иерархическом виде. | Yes | Нет  |
-| Blockings (Блокировки) | Предоставляет подробные данные о блокировках SQL в базах данных в иерархическом виде. | Yes | Нет  |
+| Время ожидания | Предоставляет подробные данные о времени ожидания SQL в базах данных в иерархическом виде. | Yes | Нет |
+| Blockings (Блокировки) | Предоставляет подробные данные о блокировках SQL в базах данных в иерархическом виде. | Yes | Нет |
 | Database waits (Время ожидания базы данных) | Предоставляет подробную статистику времени ожидания SQL на уровне базы данных в иерархическом виде. Включает сводку по общему времени ожидания и времени ожидания для каждого типа ожидания. |Yes | Yes |
 | Query duration (Длительность запросов) | Предоставляет подробную статистику о выполнении запросов, такую как продолжительность запроса, загрузку ЦП, число операций ввода-вывода данных, число операций ввода-вывода журнала, в иерархическом виде. | Yes | Yes |
 | Query waits (Время ожидания запроса) | Предоставляет подробную статистику времени ожидании запросов по категории ожидания в иерархическом виде. | Yes | Yes |

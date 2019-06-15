@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 03/02/2019
 ms.author: ellacroi
 ms.openlocfilehash: 152be044b5696a0d9017729d731e080ed9163828
-ms.sourcegitcommit: e9a46b4d22113655181a3e219d16397367e8492d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/21/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65964048"
 ---
 # <a name="marketplace-faqs"></a>Часто задаваемые вопросы о Marketplace
@@ -35,8 +35,8 @@ Azure Marketplace предназначен для ИТ-специалистов 
 Azure Marketplace предлагает технические решения и службы корпорации Майкрософт и ее партнеров, созданные для расширения номенклатуры продуктов и служб Azure. Каталог продуктов содержит несколько категорий, включая, но не ограничиваясь следующим:
 
 * базовая операционная система;
-* — базы данных
-* безопасность
+* databases
+* security
 * identity
 * networking
 * блокчейн;
@@ -216,7 +216,7 @@ MOSP - [Microsoft Online Subscription Program](https://azure.microsoft.com/suppo
 
 Сведения можно найти на [портале управления Microsoft Azure](https://portal.azure.com/). Такие сведения могут не включать последнее действие и основываться на предполагаемых показателях, полученных во время предыдущего использования. В течение действия предварительной версии этот вариант может не распространяться на покупку всех продуктов и зависеть от типа продукта.
 
-### <a name="customer-support"></a>Поддержка пользователей
+### <a name="customer-support"></a>Поддержка клиентов
 
 **С кем можно связаться по общим вопросам поддержки в Azure Marketplace?**
 
@@ -400,7 +400,7 @@ Azure Marketplace — это магазин, в котором партнеры
 1.  Войдите на сайт [https://sellerdashboard.microsoft.com](https://sellerdashboard.microsoft.com) с помощью учетной записи разработчика.
 1.  Отзовите надстройку.
 
-ПРИМЕЧАНИЕ. Приложение исчезнет для имеющегося списка через 90 дней.
+Примечание. Приложение исчезнет для имеющегося списка через 90 дней.
 
 Приложения Power BI
 * Контактные данные: [Анжана Сомпур (Anjana Sompur) (Slalom Consulting LLC)](mailto:v-ansomp@microsoft.com).

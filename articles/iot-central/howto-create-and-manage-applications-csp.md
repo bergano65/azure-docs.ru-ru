@@ -9,10 +9,10 @@ ms.date: 04/03/2019
 ms.topic: conceptual
 manager: philmea
 ms.openlocfilehash: 43fe0047022173cc20f58688920fa95b95cc6c22
-ms.sourcegitcommit: 399db0671f58c879c1a729230254f12bc4ebff59
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65473541"
 ---
 # <a name="as-a-csp-create-and-manage-an-azure-iot-central-application-on-behalf-of-your-customer"></a>Создание приложения Azure IoT Central и управление им поставщиком облачных решений от имени клиента 
@@ -43,7 +43,7 @@ Azure IoT Central отображается как служба, доступна
 
 Поставщик CSP может создавать только приложения с оплатой по мере использования. Чтобы продемонстрировать Azure IoT Central клиенту, отдельно создайте пробную версию приложения. Дополнительные сведения о пробных версиях приложений и версий с оплатой по мере использования см. [на странице с ценами на Azure IoT Central](https://azure.microsoft.com/pricing/details/iot-central/).
 
-## <a name="application-name"></a>Название приложения
+## <a name="application-name"></a>Имя приложения
 
 Имя приложения отображается на странице **диспетчера приложений** и в пределах каждого приложения Azure IoT Central. Приложению можно присвоить любое имя. Выберите имя, которое является понятным для вас и других участников организации.
 
@@ -61,7 +61,7 @@ URL-адрес приложения будет создан автоматиче
 
 Дополнительные сведения см. в [документации по Azure Active Directory](https://docs.microsoft.com/azure/active-directory/).
 
-## <a name="azure-subscription"></a>Подписка Azure
+## <a name="azure-subscription"></a>Подписка Azure.
 
 Подписка Azure позволяет создавать экземпляры служб Azure. Azure IoT Central автоматически обнаруживает все подписки Azure клиента, к которым у вас есть доступ, и отображает их в раскрывающемся списке на странице **Создание приложения**. Выберите подписку Azure, чтобы создать приложение Azure IoT Central.
 

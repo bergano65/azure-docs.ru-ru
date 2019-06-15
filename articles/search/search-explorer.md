@@ -10,10 +10,10 @@ ms.date: 05/02/2019
 ms.author: heidist
 ms.custom: seodec2018
 ms.openlocfilehash: 392699182859a090c13304f63d28a78b95a65ec7
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65024024"
 ---
 # <a name="search-explorer-for-querying-data-in-azure-search"></a>Проводник поиска для запроса в Поиске Azure 
@@ -70,7 +70,7 @@ ms.locfileid: "65024024"
 
 ### <a name="example-4---restrict-fields-in-search-results"></a>Пример 4. Ограничение полей в результатах поиска
 
-Добавьте **$select**, чтобы результаты содержали только явно указанные поля. Это позволит сделать понятнее выходные данные в **проводнике поиска**. Чтобы сохранить строку поиска и **$count=true**, добавьте к аргументам префикс **&**. 
+Добавьте **$select**, чтобы результаты содержали только явно указанные поля. Это позволит сделать понятнее выходные данные в **проводнике поиска**. Чтобы сохранить строку поиска и **$count=true**, добавьте к аргументам префикс **&** . 
 
    ```Input
    search=seattle condo&$select=listingId,beds,baths,description,street,city,price&$count=true

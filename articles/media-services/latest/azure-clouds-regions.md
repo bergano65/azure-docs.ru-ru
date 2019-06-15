@@ -12,10 +12,10 @@ ms.topic: article
 ms.date: 05/07/2019
 ms.author: juliako
 ms.openlocfilehash: 7b2691f543cf38a56eefb1e8521169aeccbf3221
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65409282"
 ---
 # <a name="clouds-and-regions-in-which-azure-media-services-v3-exists"></a>Облака и регионы, в которых существуют Службы мультимедиа Azure версии 3
@@ -26,9 +26,9 @@ ms.locfileid: "65409282"
 
 | Компонент|Глобальные регионы Azure | Azure Government|Azure для Германии|Azure China 21Vianet|
 | --- | --- | --- | --- | --- |
-| [Azure EventGrid](reacting-to-media-services-events.md) | Доступна | Недоступен | Недоступен | Недоступен |
-| [VideoAnalyzerPreset](analyzing-video-audio-files-concept.md) |  Доступна | Недоступен | Недоступен | Недоступен |
-| [AudioAnalyzerPreset](analyzing-video-audio-files-concept.md) |  Доступна | Недоступен | Недоступен | Недоступен |
+| [Azure EventGrid](reacting-to-media-services-events.md) | Доступна | Недоступно | Недоступно | Недоступно |
+| [VideoAnalyzerPreset](analyzing-video-audio-files-concept.md) |  Доступна | Недоступно | Недоступно | Недоступно |
+| [AudioAnalyzerPreset](analyzing-video-audio-files-concept.md) |  Доступна | Недоступно | Недоступно | Недоступно |
 | [StandardEncoderPreset](encoding-concept.md) | Доступна | Доступна | Доступна | Доступна |
 | [LiveEvents](live-streaming-overview.md) | Доступна | Доступна | Доступна | Доступна |
 | [StreamingEndpoints](streaming-endpoint-concept.md) | Доступна | Доступна | Доступна | Доступна |

@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.service: iot-accelerators
 services: iot-accelerators
 ms.openlocfilehash: 5d20adc11e0d679e12fd060e719593a50180db8e
-ms.sourcegitcommit: 3ced637c8f1f24256dd6ac8e180fff62a444b03c
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65834867"
 ---
 # <a name="use-time-series-insights-to-visualize-telemetry-sent-from-the-device-simulation-solution-accelerator"></a>Использование службы "Аналитика временных рядов Azure" для визуализации данных телеметрии, отправленных из акселератора решений для имитации устройств
@@ -95,7 +95,7 @@ ms.locfileid: "65834867"
 
 1. Чтобы настроить Центр Интернета вещей в качестве нового источника событий, используйте значения в следующей таблице:
 
-    | Параметр | Value |
+    | Параметр | Значение |
     | ------- | ----- |
     | Имя источника событий | На следующем снимке экрана используется имя **contoso-iot-hub**. Используйте собственное уникальное имя после завершения этого шага. |
     | Источник | **Центр Интернета вещей** |
@@ -151,7 +151,7 @@ ms.locfileid: "65834867"
 
     ![Представление "Перспектива" в обозревателе службы "Аналитика временных рядов"](./media/iot-accelerators-device-simulation-time-series-insights/time-series-insights-explorer-perspective.png)
 
-1. Щелкните **+**, чтобы добавить новый запрос в перспективу:
+1. Щелкните **+** , чтобы добавить новый запрос в перспективу:
 
     ![Добавление запроса в обозревателе службы "Аналитика временных рядов"](./media/iot-accelerators-device-simulation-time-series-insights/time-series-insights-new-query.png)
 

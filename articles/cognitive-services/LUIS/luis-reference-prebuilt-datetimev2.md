@@ -12,10 +12,10 @@ ms.topic: article
 ms.date: 05/07/2019
 ms.author: diberry
 ms.openlocfilehash: e7577dcf4859b1192121fe0406d0efb63a9f5990
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65148639"
 ---
 # <a name="datetimev2-prebuilt-entity-for-a-luis-app"></a>Предварительно созданная сущность datetimeV2 для приложения LUIS
@@ -53,7 +53,7 @@ ms.locfileid: "65148639"
 |Имя свойства |Тип и описание свойства|
 |---|---|
 |Сущность|**Строка.** Текст, извлеченный из фразы, с типом даты, времени, диапазоном дат или времени.|
-|Тип|**Строка.** Один из [подтипов сущности datetimeV2](#subtypes-of-datetimev2).
+|type|**Строка.** Один из [подтипов сущности datetimeV2](#subtypes-of-datetimev2).
 |startIndex|**Целое число.** Индекс во фразе, в которой начинается сущность.|
 |endIndex|**Целое число.** Индекс во фразе, в которой заканчивается сущность.|
 |resolution|Имеет массив `values` с одним, двумя или четырьмя [значениями разрешения](#values-of-resolution).|
@@ -82,7 +82,7 @@ ms.locfileid: "65148639"
 |Имя свойства|Описание свойства|
 |--|--|
 |timex|Время, дата или диапазон дат, выраженные в формате TIMEX, который соответствует [стандарту ISO 8601](https://en.wikipedia.org/wiki/ISO_8601), и в атрибутах TIMEX3 заметки с помощью языка TimeML. Эта заметка описана в [рекомендациях TIMEX](http://www.timeml.org/tempeval2/tempeval2-trial/guidelines/timex3guidelines-072009.pdf).|
-|Тип|Подтип, может принимать одно из следующих элементов: `datetime`, `date`, `time`, `daterange`, `timerange`, `datetimerange`, `duration`, `set`.|
+|type|Подтип, может принимать одно из следующих элементов: `datetime`, `date`, `time`, `daterange`, `timerange`, `datetimerange`, `duration`, `set`.|
 |value|**Необязательный параметр.** Объект datetime в формате гггг:ММ:дд (дата), ЧЧ:мм:сс (время) гггг:ММ:дд ЧЧ:мм:сс (дата и время). Если свойство `type` имеет значение `duration`, в качестве значения указывается количество секунд (длительность). <br/> Используется, только если свойство `type` имеет значение `datetime` или `date`, `time` или `duration.|
 
 ## <a name="valid-date-values"></a>Допустимые значения даты

@@ -11,10 +11,10 @@ ms.service: azure-blockchain
 ms.reviewer: seal
 manager: femila
 ms.openlocfilehash: 616e342f1d52179c40c225c5dafc9de13ce85e06
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65028220"
 ---
 # <a name="how-to-configure-azure-active-directory-access"></a>Настройка доступа к Azure Active Directory
@@ -90,7 +90,7 @@ git clone https://github.com/Microsoft/azure-blockchain-connector.git
 connector.exe -remote <myBlockchainEndpoint>  -method aadclient -client-id <myClientID> -client-secret "<myClientSecret>" -tenant-id <myAADDirectory>
 ```
 
-| Параметр | ОПИСАНИЕ |
+| Параметр | Описание |
 |-----------|-------------|
 | Идентификатор клиента | Домен Azure AD, например, `yourdomain.onmicrosoft.com`
 | Идентификатор клиента | Идентификатор клиента для зарегистрированного приложения в Azure AD

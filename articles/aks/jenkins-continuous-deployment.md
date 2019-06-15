@@ -7,11 +7,11 @@ author: zr-msft
 ms.author: zarhoads
 ms.topic: article
 ms.date: 01/09/2019
-ms.openlocfilehash: 703aa081c8acf41f9206e2b0ccff45571367d2e8
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: 7a81f26b4dad5f7257e5c3fd012dffaf06d573bb
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65073780"
 ---
 # <a name="tutorial-deploy-from-github-to-azure-kubernetes-service-aks-with-jenkins-continuous-integration-and-deployment"></a>Руководство по Развертывание из GitHub в Службе Azure Kubernetes (AKS) с использованием непрерывной интеграции и непрерывного развертывания Jenkins
@@ -48,6 +48,9 @@ ms.locfileid: "65073780"
 ## <a name="prepare-your-app"></a>Подготовка приложения
 
 Для работы с этой статьей используется пример приложения для голосования Azure, которое содержит веб-интерфейс, размещенный в одном или нескольких pod, и еще один pod с размещенной службой Redis для хранения временных данных. Прежде чем интегрировать Jenkins и AKS для автоматических развертываний, вручную подготовьте и разверните приложение для голосования Azure в кластере AKS. Приложение, развернутое вручную, представляет собой первую версию приложения. Это позволяет увидеть приложение в действии.
+
+> [!NOTE]
+> Приложения для голосования Azure в примере приложения используется pod Linux, которое планируется запустить на узле Linux. Поток, описанный в этой статье также подходит для Windows Server pod, планируется на узле Windows Server.
 
 Создайте вилку следующего репозитория GitHub для примера приложения: [https://github.com/Azure-Samples/azure-voting-app-redis](https://github.com/Azure-Samples/azure-voting-app-redis). Чтобы создать разветвление репозитория для своей учетной записи GitHub, нажмите кнопку **Fork** (Разветвление) в правом верхнем углу.
 
@@ -208,7 +211,7 @@ az role assignment create --assignee 626dd8ea-042d-4043-a8df-4ef56273670f --role
 
 Создав назначения ролей в Azure, сохраните учетные данные ACR в объекте учетных данных Jenkins. Эти учетные данные указываются во время выполнения задания сборки Jenkins.
 
-В левой части портала Jenkins и выберите **Credentials** > **Jenkins** > **Global credentials (unrestricted)** > **Add Credentials** (Учетные данные > Jenkins > Глобальные учетные данные (без ограничений) > Добавить учетные данные).
+В левой части портала Jenkins и выберите **Credentials** > **Jenkins** > **Global credentials (unrestricted)**  > **Add Credentials** (Учетные данные > Jenkins > Глобальные учетные данные (без ограничений) > Добавить учетные данные).
 
 Убедитесь, что выбран тип учетных данных **Username with password** (Имя пользователя с паролем), и введите следующие данные.
 

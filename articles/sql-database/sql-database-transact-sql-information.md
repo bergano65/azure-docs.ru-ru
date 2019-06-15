@@ -13,10 +13,10 @@ ms.reviewer: ''
 manager: craigg
 ms.date: 12/03/2018
 ms.openlocfilehash: 84b93005941acf625d05a48f0df7b685e1bea0bd
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65785499"
 ---
 # <a name="resolving-transact-sql-differences-during-migration-to-sql-database"></a>Отличия Transact-SQL базы данных SQL Azure
@@ -83,7 +83,7 @@ ms.locfileid: "65785499"
 
 ### <a name="about-the-applies-to-tags"></a>Сведения о тегах "Относится к"
 
-Справочник по Transact-SQL включает в себя статьи, относящиеся к версиям SQL Server с 2008 по текущую. Под заголовком статьи есть панель значков, на которой указаны четыре платформы SQL Server и их применимость. Например, группы доступности появились в SQL Server 2012. Статья  [CREATE AVAILABILITY GROUP (Transact-SQL)](https://msdn.microsoft.com/library/ff878399.aspx) указывает, что эта инструкция применяется в  **SQL Server (начиная с версии 2012)**. Инструкция не применяется в SQL Server 2008, SQL Server 2008 R2, Базе данных SQL Azure, хранилище данных SQL Azure или Parallel Data Warehouse.
+Справочник по Transact-SQL включает в себя статьи, относящиеся к версиям SQL Server с 2008 по текущую. Под заголовком статьи есть панель значков, на которой указаны четыре платформы SQL Server и их применимость. Например, группы доступности появились в SQL Server 2012. Статья  [CREATE AVAILABILITY GROUP (Transact-SQL)](https://msdn.microsoft.com/library/ff878399.aspx) указывает, что эта инструкция применяется в  **SQL Server (начиная с версии 2012)** . Инструкция не применяется в SQL Server 2008, SQL Server 2008 R2, Базе данных SQL Azure, хранилище данных SQL Azure или Parallel Data Warehouse.
 
 В некоторых случаях в продукте используется общая Тема статьи, но есть незначительные отличия между продуктами. Эти различия отмечаются по мере изложения материала. В некоторых случаях в продукте используется общая Тема статьи, но есть незначительные отличия между продуктами. Эти различия отмечаются по мере изложения материала. Например, статья CREATE TRIGGER доступна в базе данных SQL. Но параметр **ALL SERVER** для триггеров уровня сервера указывает, что триггеры уровня сервера нельзя использовать в базе данных SQL. Вместо них следует использовать триггеры уровня базы данных.
 

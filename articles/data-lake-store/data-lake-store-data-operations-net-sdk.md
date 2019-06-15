@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 05/29/2018
 ms.author: twooley
 ms.openlocfilehash: 0771c9c5311e264fb996bbac1c540f9ed11873cb
-ms.sourcegitcommit: 67625c53d466c7b04993e995a0d5f87acf7da121
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/20/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65908074"
 ---
 # <a name="filesystem-operations-on-azure-data-lake-storage-gen1-using-net-sdk"></a>Операции файловой системы в Azure Data Lake Storage 1-го поколения с использованием пакета SDK для .NET
@@ -42,7 +42,7 @@ ms.locfileid: "65908074"
 На [сайте GitHub](https://github.com/Azure-Samples/data-lake-store-adls-dot-net-get-started/tree/master/AdlsSDKGettingStarted) доступен пример кода, который используется для создания файлов в хранилище, объединения и скачивания файлов, а также для удаления файлов из хранилища. В этом разделе статьи рассматриваются основные части этого кода.
 
 1. В Visual Studio выберите **файл** меню **New**, а затем **проекта**.
-2. Выберите **консольное приложение (.NET Framework)**, а затем выберите **Далее**.
+2. Выберите **консольное приложение (.NET Framework)** , а затем выберите **Далее**.
 3. В **имя_проекта**, введите `CreateADLApplication`, а затем выберите **создать**.
 
 4. Добавьте пакеты NuGet в проект.
@@ -131,7 +131,7 @@ ms.locfileid: "65908074"
         }
     }
 
-## <a name="get-file-properties"></a>Получить свойства файла
+## <a name="get-file-properties"></a>Получение свойств файла
 Следующий фрагмент кода возвращает свойства, связанные с файлом или каталогом.
 
     // Get file properties

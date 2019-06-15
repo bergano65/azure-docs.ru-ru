@@ -11,10 +11,10 @@ ms.author: mhopkins
 ms.reviewer: cbrooks
 ms.subservice: queues
 ms.openlocfilehash: 01afe1ab7b9028f3f77d52f7d6f8ced27f6a79c7
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65142709"
 ---
 # <a name="how-to-use-queue-storage-from-nodejs"></a>Использование хранилища очередей из Node.js
@@ -64,7 +64,7 @@ var azure = require('azure-storage');
 ## <a name="setup-an-azure-storage-connection"></a>Настройка подключения к службе хранилища Azure
 Модуль Azure считывает переменные среды AZURE\_STORAGE\_ACCOUNT и AZURE\_STORAGE\_ACCESS\_KEY или AZURE\_STORAGE\_CONNECTION\_STRING, чтобы получить информацию, необходимую для подключения к учетной записи хранения Azure. Если эти переменные среды не заданы, при вызове **createQueueService**необходимо указать сведения об учетной записи.
 
-## <a name="how-to-create-a-queue"></a>Практическое руководство. Создание очереди
+## <a name="how-to-create-a-queue"></a>Как Создание очереди
 Следующий пример кода создает объект **QueueService** , который позволяет работать с очередями.
 
 ```javascript
@@ -105,7 +105,7 @@ var retryOperations = new azure.ExponentialRetryPolicyFilter();
 var queueSvc = azure.createQueueService().withFilter(retryOperations);
 ```
 
-## <a name="how-to-insert-a-message-into-a-queue"></a>Практическое руководство. Вставка сообщения в очередь
+## <a name="how-to-insert-a-message-into-a-queue"></a>Как Вставка сообщения в очередь
 Чтобы создать сообщение и вставить его в очередь, используйте метод **createMessage** .
 
 ```javascript
@@ -116,7 +116,7 @@ queueSvc.createMessage('myqueue', "Hello world!", function(error, results, respo
 });
 ```
 
-## <a name="how-to-peek-at-the-next-message"></a>Практическое руководство. Просмотр следующего сообщения
+## <a name="how-to-peek-at-the-next-message"></a>Как Просмотр следующего сообщения
 Вы можете просмотреть сообщение в начале очереди, не удаляя его из нее, вызвав метод **peekMessages** . По умолчанию **peekMessages** просматривает одно сообщение.
 
 ```javascript
@@ -134,7 +134,7 @@ queueSvc.peekMessages('myqueue', function(error, results, response){
 > 
 > 
 
-## <a name="how-to-dequeue-the-next-message"></a>Практическое руководство. Удаление следующего сообщения из очереди
+## <a name="how-to-dequeue-the-next-message"></a>Как Удаление следующего сообщения из очереди
 Обработка сообщения выполняется двухэтапным процессом:
 
 1. удаление сообщения из очереди.
@@ -164,7 +164,7 @@ queueSvc.getMessages('myqueue', function(error, results, response){
 > 
 > 
 
-## <a name="how-to-change-the-contents-of-a-queued-message"></a>Практическое руководство. Изменение содержимого сообщения в очереди
+## <a name="how-to-change-the-contents-of-a-queued-message"></a>Как Изменение содержимого сообщения в очереди
 Вы можете изменить содержимое сообщения непосредственно в очереди с помощью **updateMessage**. Следующий пример обновляет текст сообщения:
 
 ```javascript
@@ -181,7 +181,7 @@ queueSvc.getMessages('myqueue', function(error, getResults, getResponse){
 });
 ```
 
-## <a name="how-to-additional-options-for-dequeuing-messages"></a>Практическое руководство. Дополнительные варианты удаления сообщений из очереди
+## <a name="how-to-additional-options-for-dequeuing-messages"></a>Как Дополнительные варианты удаления сообщений из очереди
 Существует два способа настройки извлечения сообщения из очереди:
 
 * `options.numOfMessages` — извлекает пакет сообщений (до 32).
@@ -206,7 +206,7 @@ queueSvc.getMessages('myqueue', {numOfMessages: 15, visibilityTimeout: 5 * 60}, 
 });
 ```
 
-## <a name="how-to-get-the-queue-length"></a>Практическое руководство. Получение длины очереди
+## <a name="how-to-get-the-queue-length"></a>Как Получение длины очереди
 Метод **getQueueMetadata** возвращает метаданные очереди, в том числе приблизительное количество сообщений, ожидающих в очереди.
 
 ```javascript
@@ -217,7 +217,7 @@ queueSvc.getQueueMetadata('myqueue', function(error, results, response){
 });
 ```
 
-## <a name="how-to-list-queues"></a>Практическое руководство. Перечисление очередей
+## <a name="how-to-list-queues"></a>Как Перечисление очередей
 Чтобы извлечь список очередей, используйте **listQueuesSegmented**. Чтобы извлечь список, отфильтрованный по определенному префиксу, используйте **listQueuesSegmentedWithPrefix**.
 
 ```javascript
@@ -230,7 +230,7 @@ queueSvc.listQueuesSegmented(null, function(error, results, response){
 
 Если не удается вернуть все очереди, атрибут `result.continuationToken` можно использовать в качестве первого параметра метода **listQueuesSegmented** или второго параметра метода **listQueuesSegmentedWithPrefix** для получения дополнительных результатов.
 
-## <a name="how-to-delete-a-queue"></a>Практическое руководство. Удаление очереди
+## <a name="how-to-delete-a-queue"></a>Как Удаление очереди
 Чтобы удалить очередь и все сообщения в ней, вызовите метод **deleteQueue** для объекта очереди.
 
 ```javascript

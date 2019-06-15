@@ -14,10 +14,10 @@ ms.topic: conceptual
 ms.date: 01/11/2019
 ms.author: bwren
 ms.openlocfilehash: 6fae245e4d72f7f6f7809d85da17023deb1518e5
-ms.sourcegitcommit: 179918af242d52664d3274370c6fdaec6c783eb6
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/13/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65560853"
 ---
 # <a name="azure-monitor-log-queries"></a>Запросы к журналу в Azure Monitor
@@ -48,7 +48,7 @@ ms.locfileid: "65560853"
 
 
 
-## <a name="lessons"></a>Занятия
+## <a name="lessons"></a>Уроки
 
 - В статье о [работе со строками в запросах к журналам Azure Monitor](string-operations.md) описано использование строковых данных.
 - В статье о [работе со значениями даты и времени в запросах к журналам Azure Monitor](datetime-operations.md) описано использование данных в формате даты и времени. 

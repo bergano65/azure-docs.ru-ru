@@ -11,10 +11,10 @@ ms.author: zhanxia
 ms.date: 05/06/2019
 ROBOTS: NOINDEX
 ms.openlocfilehash: 40a8247c22da1f7a057e222565ffb2ec4c6b7fb3
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65028745"
 ---
 # <a name="evaluate-model-module"></a>Модуль модели оценки
@@ -81,7 +81,7 @@ ms.locfileid: "65028745"
 
 Поскольку это модели кластеризации, результаты оценки, отличаются от по сравнению с оценки двух моделей регрессии, или по сравнению с двух моделей классификации. Тем не менее общее представление одинаков. 
 
-## <a name="metrics"></a>Метрики
+## <a name="metrics"></a>metrics
 
 В этом разделе описываются метрики, возвращаемые для определенных типов моделей для использования с **Evaluate Model**:
 

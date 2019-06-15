@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 03/14/2019
 ms.author: lahugh
 ms.openlocfilehash: 113faffb0ebac50a67c96ce21e0ee2c1564bb4fc
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65405640"
 ---
 # <a name="creating-and-using-resource-files"></a>Создание и использование файлов ресурсов
@@ -80,7 +80,7 @@ ResourceFile inputFile = ResourceFile.FromStorageContainerUrl(containerSasUrl);
 ResourceFile inputFile = ResourceFile.FromAutoStorageContainer(containerName);
 ```
 
-### <a name="web-endpoint"></a>Конечная веб-точка
+### <a name="web-endpoint"></a>Веб-точку
 
 Данные, которые не передаются в хранилище Azure по-прежнему может использоваться для создания файлов ресурсов. Можно указать любой допустимый URL-адрес HTTP содержащий входные данные. URL-адрес предоставляется API пакетной службы, а затем данные используется для создания файла ресурсов.
 

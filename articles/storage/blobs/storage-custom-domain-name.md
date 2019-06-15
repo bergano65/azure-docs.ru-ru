@@ -10,10 +10,10 @@ ms.author: normesta
 ms.reviewer: seguler
 ms.subservice: blobs
 ms.openlocfilehash: 4f6776a5f15cf391f3a65aceb6e9e783d87a2078
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65148929"
 ---
 # <a name="configure-a-custom-domain-name-for-your-azure-storage-account"></a>Настройка имени личного домена для учетной записи хранения Azure
@@ -36,8 +36,8 @@ ms.locfileid: "65148929"
 | --- | --- | --- |
 | Учетная запись хранения | http://mystorageaccount.blob.core.windows.net | http://www.contoso.com |
 | BLOB-объект |http://mystorageaccount.blob.core.windows.net/mycontainer/myblob | http://www.contoso.com/mycontainer/myblob |
-| Корневой контейнер | http://mystorageaccount.blob.core.windows.net/myblob или http://mystorageaccount.blob.core.windows.net/$root/myblob| http://www.contoso.com/myblob или http://www.contoso.com/$root/myblob |
-| Интернет |  http://mystorageaccount.[zone].web.core.windows.net/$web/[indexdoc] или http://mystorageaccount.[zone].web.core.windows.net/[indexdoc] или http://mystorageaccount.[zone].web.core.windows.net/$web или http://mystorageaccount.[zone].web.core.windows.net/ | http://www.contoso.com/$web или http://www.contoso.com/ или http://www.contoso.com/$web/[indexdoc] или http://www.contoso.com/[indexdoc] |
+| Корневой контейнер | http://mystorageaccount.blob.core.windows.net/myblob или http://mystorageaccount.blob.core.windows.net/ $root/myblob| http://www.contoso.com/myblob или http://www.contoso.com/ $root/myblob |
+| Интернет |  http://mystorageaccount.[zone].web.core.windows.net/$web/[indexdoc] или http://mystorageaccount.[zone].web.core.windows.net/[indexdoc] или http://mystorageaccount.[zone].web.core.windows.net/$web или http://mystorageaccount.[zone].web.core.windows.net/ | http://www.contoso.com/ $web или http://www.contoso.com/ или http://www.contoso.com/ $web/[indexdoc] или http://www.contoso.com/ [indexdoc] |
 
 > [!NOTE]  
 > Как показано в следующих разделах, все примеры для конечной точки службы BLOB-объектов распространяются и на конечную точку веб-службы.

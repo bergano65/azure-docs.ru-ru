@@ -7,11 +7,11 @@ ms.service: container-service
 ms.topic: conceptual
 ms.date: 11/26/2018
 ms.author: zarhoads
-ms.openlocfilehash: aebade14f3a8a1095925d17325ce99b78031dc32
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.openlocfilehash: 69f60036bd718264174bf1befe832305e250e77c
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65073947"
 ---
 # <a name="best-practices-for-application-developers-to-manage-resources-in-azure-kubernetes-service-aks"></a>Рекомендации для разработчиков приложений по управлению ресурсами в службе Azure Kubernetes (AKS)
@@ -74,6 +74,8 @@ Azure Dev Spaces позволяет разрабатывать, отлажива
 
 Этот интегрированный процесс разработки и тестирования с помощью Dev Spaces избавляет от необходимости использовать локальные среды тестирования, такие как [minikube][minikube]. Вы разрабатываете и тестируете приложение в кластере AKS. Этот кластер можно защитить и изолировать, как отмечалось в предыдущем разделе об использовании пространств имен для логической изоляции кластера. Когда ваши приложения будут готовы к развертыванию в рабочей среде, можете уверенно их развертывать, так как разработка выполнялась в реальном кластере AKS.
 
+Azure пробелы разработки предназначен для использования с приложениями под управлением Linux таким же группам и узлы.
+
 ## <a name="use-the-visual-studio-code-extension-for-kubernetes"></a>Использование расширения Visual Studio Code для Kubernetes
 
 **Рекомендация**. Установите и используйте расширение VS Code для Kubernetes при написании манифестов YAML. Вы также можете использовать расширение для интегрированного решения по развертыванию, которое поможет владельцам приложений, которые редко взаимодействуют с кластером AKS.
@@ -87,6 +89,8 @@ Azure Dev Spaces позволяет разрабатывать, отлажива
 **Советы и рекомендации** -регулярно запускать последнюю версию `kube-advisor` инструмент с открытым кодом для обнаружения проблем в кластере. Если вы применяете квоты ресурсов в существующем кластере AKS, сначала запустите `kube-advisor`, чтобы найти контейнеры pod без запросов и ограничений ресурсов.
 
 [Kube-advisor] [ kube-advisor] средство — связанный проект с открытым кодом AKS, просматривают кластер Kubernetes и сообщают о проблемах, которые она находит. Полезная проверка — поиск контейнеров pod без установленных запросов и ограничений ресурсов.
+
+Kube-помощник может отчетов на запросом ресурсов и ограничения, отсутствующие в PodSpecs для Windows-приложений, а также приложений Linux, а само средство kube помощника должно быть назначено на Linux pod. Вы можете запланировать pod для запуска в пуле узлов с определенной операционной системы с помощью [селектор узла] [ k8s-node-selector] в конфигурации pod.
 
 В кластере AKS с большим количеством групп разработчиков и приложений может быть сложно отслеживать контейнеры pod без установленных запросов и ограничений ресурсов. Рекомендуем регулярно запускать `kube-advisor` в кластерах AKS.
 
@@ -110,3 +114,4 @@ Azure Dev Spaces позволяет разрабатывать, отлажива
 [dev-spaces]: ../dev-spaces/get-started-netcore.md
 [operator-best-practices-isolation]: operator-best-practices-cluster-isolation.md
 [resource-quotas]: operator-best-practices-scheduler.md#enforce-resource-quotas
+[k8s-node-selector]: concepts-clusters-workloads.md#node-selectors

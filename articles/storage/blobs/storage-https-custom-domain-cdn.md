@@ -10,10 +10,10 @@ ms.author: normesta
 ms.reviewer: seguler
 ms.subservice: blobs
 ms.openlocfilehash: da3a6dcb0d125ac4666bc375e843c57cf12fb2fc
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65148409"
 ---
 # <a name="use-azure-cdn-to-access-blobs-with-custom-domains-over-https"></a>Получение доступа к большим двоичным объектам с помощью личных доменов по HTTPS с использованием Azure CDN
@@ -25,7 +25,7 @@ Azure CDN помогает защитить конфиденциальность
 > [!NOTE]  
 > Помимо предоставления поддержки SSL для имен личных доменов Azure CDN помогает масштабировать приложение для доставки содержимого по сети с высокой пропускной способностью по всему миру. Дополнительные сведения см. в [обзоре Azure CDN](../../cdn/cdn-overview.md).
 
-## <a name="quickstart"></a>Быстрый запуск
+## <a name="quickstart"></a>Краткое руководство
 
 Чтобы включить HTTPS для пользовательской конечной точки хранилища BLOB-объектов, сделайте следующее:
 

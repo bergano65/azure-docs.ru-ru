@@ -11,10 +11,10 @@ ms.author: amlstudiodocs
 ms.custom: seodec18, previous-ms.author=yahajiza, previous-author=YasinMSFT
 ms.date: 02/14/2019
 ms.openlocfilehash: b636883ee1f08fa0fb6d080b6980cd07553dde1b
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65234040"
 ---
 # <a name="retrain-and-deploy-a-classic-studio-web-service"></a>Повторное обучение и развертывание классической веб-службы Студии
@@ -53,7 +53,7 @@ ms.locfileid: "65234040"
 
 ### <a name="retrieve-patch-url"></a>Извлечение URL-адреса PATCH
 
-### <a name="option-1-programmatically"></a>Вариант 1: Программным образом
+### <a name="option-1-programmatically"></a>Вариант 1. Программным образом
 
 Чтобы получить правильный URL-адрес PATCH программным образом, выполните перечисленные ниже действия.
 
@@ -134,7 +134,7 @@ ms.locfileid: "65234040"
 1. Войдите на [портале Azure](https://portal.azure.com).
 1. В меню слева щелкните **Машинное обучение**.
 1. В поле "Имя" выберите рабочую область, а затем щелкните **Веб-службы**.
-1. В поле "Имя" щелкните **Модель ценза [predictive exp.]**.
+1. В поле "Имя" щелкните **Модель ценза [predictive exp.]** .
 1. Щелкните новую добавленную конечную точку.
 1. На панели мониторинга конечной точки щелкните **Обновить ресурс**.
 1. На странице документации по API обновления ресурсов для веб-службы можно найти **имя ресурса** в разделе **обновляемых ресурсов**.

@@ -16,13 +16,13 @@ ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ce45f11a697b72ebdd0fe01166a70e7b47aa8e9f
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65076305"
 ---
-# <a name="scenario-web-app-that-calls-web-apis"></a>Сценарий. Веб-приложения, что вызовы веб-API
+# <a name="scenario-web-app-that-calls-web-apis"></a>Сценарий. Веб-приложение, которое вызывает веб-API
 
 Сведения о создании пользователей при входе в систему веб-приложения на платформе Microsoft identity и вызовы веб-API от имени выполнившего вход пользователя.
 
@@ -39,7 +39,7 @@ ms.locfileid: "65076305"
 
 Добавление проверки подлинности в веб-приложения, который могут входить пользователи, а также вызывает веб-API от имени выполнившего вход пользователя.
 
-![Веб-приложения, что вызовы веб-API](./media/scenario-webapp/web-app.svg)
+![Веб-приложение, которое вызывает веб-API](./media/scenario-webapp/web-app.svg)
 
 Веб-приложений, которые вызывает веб-API:
 

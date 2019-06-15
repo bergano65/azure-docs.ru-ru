@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 03/28/2019
 ms.author: longl
 ms.openlocfilehash: 88b0ac853c64e1e32a2d1c429bdf8655158f030d
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65411487"
 ---
 # <a name="specify-a-face-recognition-model"></a>Указание модели распознавания лиц
@@ -108,7 +108,7 @@ await faceServiceClient.FaceList.CreateAsync(faceListId, "My face collection", r
 
 В этой статье вы узнали, как указать модель распознавания для использования с другой API службы распознавания лиц. Затем следует выполните краткое руководство поможет приступить к использованию обнаружения лиц.
 
-* [Обнаружение лиц на изображении](../quickstarts/csharp-detect-sdk.md)
+* [Определение лиц на изображении](../quickstarts/csharp-detect-sdk.md)
 
 [Лиц — обнаружения]: https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d
 [Распознавания лиц — Найти сходные]: https://westus.dev.cognitive.microsoft.com/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395237

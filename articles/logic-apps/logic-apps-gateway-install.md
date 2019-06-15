@@ -10,10 +10,10 @@ ms.reviewer: arthii, LADocs
 ms.topic: article
 ms.date: 10/01/2018
 ms.openlocfilehash: 10a6e5c33f6a3c23d98e6eb3380de0d6dc6ac216
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65544492"
 ---
 # <a name="install-on-premises-data-gateway-for-azure-logic-apps"></a>Установка локального шлюза данных для Azure Logic Apps
@@ -32,7 +32,7 @@ ms.locfileid: "65544492"
 *   IBM Informix
 *   IBM MQ
 *   MySQL
-*   Oracle Database
+*   База данных Oracle
 *   PostgreSQL
 *   сервер приложений SAP; 
 *   сервер сообщений SAP;
@@ -238,7 +238,7 @@ TcpTestSucceeded       : True
 
 Шлюзом используются следующие полные доменные имена.
 
-| Доменные имена | Исходящие порты | Описание | 
+| Имена доменов | Исходящие порты | Описание | 
 | ------------ | -------------- | ----------- | 
 | *.analysis.windows.net | 443 | HTTPS | 
 | *.core.windows.net | 443 | HTTPS | 
@@ -430,7 +430,7 @@ TcpTestSucceeded       : True
 Чтобы найти журналы событий шлюза, выполните следующие действия.
 
 1. На компьютере, где установлен шлюз, откройте средство **Просмотр событий**. 
-2. Разверните **Просмотр событий (локально)** > **Applications and Services Logs** (Журналы приложений и служб). 
+2. Разверните **Просмотр событий (локально)**  > **Applications and Services Logs** (Журналы приложений и служб). 
 3. Установите флажок **On-premises data gateway service** (служба "Локальный шлюз данных").
 
    ![Просмотр журналов событий шлюза](./media/logic-apps-gateway-install/event-viewer.png)
@@ -485,7 +485,7 @@ TcpTestSucceeded       : True
 
    2. Чтобы найти запрос, выполните поиск типа активности. Пример. 
 
-      | Тип действия | Описание | 
+      | тип действия; | Описание | 
       |---------------|-------------| 
       | MGEQ | Запросы, выполняемые через ADO.NET. | 
       | MGEO | Запросы, выполняемые через OLEDB. | 

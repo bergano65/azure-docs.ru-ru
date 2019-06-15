@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 05/01/2019
 ms.author: evanhi
 ms.openlocfilehash: bbfb10f612690af0f4fd3683e0f58986a21048d8
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65159860"
 ---
 # <a name="azure-custom-providers-preview-overview"></a>Общие сведения о предварительной версии настраиваемые поставщики Azure
@@ -88,4 +88,4 @@ ms.locfileid: "65159860"
 В этой статье вы узнали о настраиваемых поставщиков. Перейдите к следующей статье, чтобы создать пользовательский поставщик.
 
 > [!div class="nextstepaction"]
-> [Руководство Создание пользовательского поставщика и развертывание настраиваемых ресурсов](create-custom-provider.md)
+> [Учебник. Создание пользовательского поставщика и развертывание настраиваемых ресурсов](create-custom-provider.md)

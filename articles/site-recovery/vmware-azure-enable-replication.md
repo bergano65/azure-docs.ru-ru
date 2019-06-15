@@ -7,10 +7,10 @@ ms.date: 05/10/2019
 ms.topic: conceptual
 ms.author: ramamill
 ms.openlocfilehash: add0f8252bdae6857b28deeb7de4c1d09973e452
-ms.sourcegitcommit: f6c85922b9e70bb83879e52c2aec6307c99a0cac
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/11/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65540754"
 ---
 # <a name="enable-replication-to-azure-for-vmware-vms"></a>Включение репликации в Azure для виртуальных машин VMware
@@ -46,7 +46,7 @@ ms.locfileid: "65540754"
 2. На странице **Источник** щелкните **Источник** и выберите нужный сервер конфигурации.
 3. Для **тип компьютера**выберите **виртуальных машин** или **физических компьютеров**.
 4. В поле **vCenter/vSphere Hypervisor** (Гипервизор vCenter или vSphere) выберите сервер vCenter, который управляет узлом vSphere, или сам узел. Этот параметр не учитывается, если вы реплицируете физические компьютеры.
-5. Выберите сервер обработки. Если нет дополнительных серверов обработки создан, сервер приемникам без встроенных возможностей обработки сервера конфигурации появится в раскрывающемся списке. Состояние работоспособности каждого процесса сервера указывается согласно рекомендуемые ограничения и другие параметры. Выберите сервер обработки работоспособное. Объект [критических](vmware-physical-azure-monitor-process-server.md#process-server-alerts) нельзя выбрать сервер обработки. Вы можете либо [решения](vmware-physical-azure-troubleshoot-process-server.md) ошибки **или** Настройка [сервера обработки масштабирования](vmware-azure-set-up-process-server-scale.md).
+5. Выберите сервер обработки. Если нет дополнительных серверов обработки создан, сервер приемникам без встроенных возможностей обработки сервера конфигурации появится в раскрывающемся списке. Состояние работоспособности каждого сервера обработки указывается с учетом рекомендуемых ограничений и других параметров. Выберите работоспособный сервер обработки. Объект сервер обработки [критически важных операций](vmware-physical-azure-monitor-process-server.md#process-server-alerts) выбрать нельзя. Вы можете [устранить неполадки и ошибки](vmware-physical-azure-troubleshoot-process-server.md) **или** [настроить сервер обработки масштабирования](vmware-azure-set-up-process-server-scale.md).
     ![Включить окно источника репликации](media/vmware-azure-enable-replication/ps-selection.png)
 
 > [!NOTE]

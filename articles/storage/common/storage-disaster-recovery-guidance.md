@@ -10,10 +10,10 @@ ms.author: tamram
 ms.reviewer: cbrooks
 ms.subservice: common
 ms.openlocfilehash: f9d68af12f6b2e98c77d0bd1b65a82c69588f203
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65147618"
 ---
 # <a name="disaster-recovery-and-storage-account-failover-preview-in-azure-storage"></a>Аварийное восстановление и отработка отказа учетной записи хранения (предварительная версия) в службе хранилища Azure
@@ -47,7 +47,7 @@ ms.locfileid: "65147618"
 * [Проектирование устойчивых приложений для Azure](https://docs.microsoft.com/azure/architecture/resiliency/). Обзор основных понятий, применимых при разработке в Azure приложений с высоким уровнем доступности.
 * [Контрольный список для обеспечения доступности](https://docs.microsoft.com/azure/architecture/checklist/availability). Контрольный список, позволяющий проверить соблюдение в приложении передовых рекомендаций по разработке для обеспечения доступности.
 * [Проектирование высокодоступных приложений с использованием RA-GRS](storage-designing-ha-apps-with-ragrs.md). Руководство по проектированию, позволяющее применить в приложениях преимущества RA-GRS.
-* [Руководство Создание высокодоступного приложения с помощью хранилища BLOB-объектов](../blobs/storage-create-geo-redundant-storage.md). В этом руководстве показано, как создавать приложения с высоким уровнем доступности, которые автоматически переключаются между конечными точками при моделировании сбоев и восстановления работоспособности. 
+* [Учебник. Создание высокодоступного приложения с помощью хранилища BLOB-объектов](../blobs/storage-create-geo-redundant-storage.md). В этом руководстве показано, как создавать приложения с высоким уровнем доступности, которые автоматически переключаются между конечными точками при моделировании сбоев и восстановления работоспособности. 
 
 Кроме того, учитывайте следующие рекомендации, которые помогут поддерживать высокий уровень доступности для данных в хранилище Azure.
 
@@ -182,4 +182,4 @@ Get-AzProviderFeature -FeatureName CustomerControlledFailover -ProviderNamespace
 
 * [Initiate a storage account failover (preview)](storage-initiate-account-failover.md) (Запуск отработки отказа учетной записи (предварительная версия))
 * [Проектирование высокодоступных приложений с использованием RA-GRS](storage-designing-ha-apps-with-ragrs.md)
-* [Руководство Создание высокодоступного приложения с помощью хранилища BLOB-объектов](../blobs/storage-create-geo-redundant-storage.md). 
+* [Учебник. Создание высокодоступного приложения с помощью хранилища BLOB-объектов](../blobs/storage-create-geo-redundant-storage.md). 

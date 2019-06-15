@@ -10,10 +10,10 @@ ms.topic: troubleshooting
 ms.service: service-fabric-mesh
 manager: jeanpaul.connock
 ms.openlocfilehash: 950f9ac89b9d3224db29b32fe2d1e403ccc98116
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65143287"
 ---
 # <a name="commonly-asked-service-fabric-mesh-questions"></a>Распространенные вопросы о службе "Сетка Service Fabric"
@@ -49,7 +49,7 @@ ms.locfileid: "65143287"
 
 Если приложение было отключено, вы можете проверить, было ли это сделано системой, с помощью команды `az mesh app show` в Azure CLI. Выполните команду, чтобы увидеть, вернется ли результат `"status": "Failed", "statusDetails": "Stopped resource due to max lifetime policies for an application during preview. Delete the resource to continue."`. 
 
-Например:  
+Пример: 
 
 ```cli
 ~$ az mesh app show --resource-group myResourceGroup --name helloWorldApp
@@ -110,7 +110,7 @@ ms.locfileid: "65143287"
 
 - Используйте обновление Windows Fall Creators (версии 1709) или выше как базовый образ контейнера.
 - Если само имя службы не работает, попробуйте полное имя: ServiceName.ApplicationName.
-- В файле Docker своей службы добавьте `EXPOSE <port>`, где port означает порт, через который вы предоставляете свою службу. Например: 
+- В файле Docker своей службы добавьте `EXPOSE <port>`, где port означает порт, через который вы предоставляете свою службу. Пример:
 
 ```Dockerfile
 EXPOSE 80

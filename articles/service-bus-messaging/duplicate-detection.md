@@ -14,10 +14,10 @@ ms.topic: article
 ms.date: 01/23/2019
 ms.author: aschhab
 ms.openlocfilehash: d9f814a49924ca95078f3b3decca4f3922c74c2b
-ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65413656"
 ---
 # <a name="duplicate-detection"></a>Обнаружение дубликатов
@@ -39,7 +39,7 @@ ms.locfileid: "65413656"
 > [!NOTE]
 > Если включен поиск повторяющихся и ключ сеанса идентификатор или секции не заданы, идентификатор сообщения используется в качестве ключа секции. Если идентификатор сообщения не задано, библиотеки .NET и AMQP автоматически создавать идентификатор сообщения для сообщения. Дополнительные сведения см. в разделе [использование ключей раздел](service-bus-partitioning.md#use-of-partition-keys).
 
-## <a name="enable-duplicate-detection"></a>Включить обнаружение повторений
+## <a name="enable-duplicate-detection"></a>Включение поиска повторяющихся сообщений
 
 На портале эта функция включается во время создания сущности с помощью флажка **Включить обнаружение повторений**, который снят по умолчанию. Аналогичный параметр доступен при создании разделов.
 

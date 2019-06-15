@@ -7,10 +7,10 @@ ms.service: postgresql
 ms.topic: conceptual
 ms.date: 5/6/2019
 ms.openlocfilehash: ce6188732720bc43c5849fa492237c7ab98487c6
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65067498"
 ---
 # <a name="create-users-in-azure-database-for-postgresql---single-server"></a>Создать пользователей в базе данных Azure для PostgreSQL — один сервер
@@ -64,7 +64,7 @@ ms.locfileid: "65067498"
    GRANT CONNECT ON DATABASE <newdb> TO <db_user>;
    ```
 
-4. При использовании учетной записи администратора вам может потребоваться предоставить дополнительные права для безопасности объектов в базе данных. См. [документацию PostgreSQL](https://www.postgresql.org/docs/current/static/ddl-priv.html) для получения дальнейших сведений о ролях базы данных и правах доступа. Например:  
+4. При использовании учетной записи администратора вам может потребоваться предоставить дополнительные права для безопасности объектов в базе данных. См. [документацию PostgreSQL](https://www.postgresql.org/docs/current/static/ddl-priv.html) для получения дальнейших сведений о ролях базы данных и правах доступа. Пример: 
    ```sql
    GRANT ALL PRIVILEGES ON DATABASE <newdb> TO <db_user>;
    ```

@@ -13,10 +13,10 @@ ms.reviewer: jrasnik
 manager: craigg
 ms.date: 12/19/2018
 ms.openlocfilehash: 7f742b094575b78f453fb735b23cc5319a27fa7e
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65206650"
 ---
 # <a name="extended-events-in-sql-database"></a>Расширенные события в Базе данных SQL
@@ -90,7 +90,7 @@ ms.locfileid: "65206650"
 | **sys.database_event_session_targets** |Возвращает строку для каждого целевого объекта события в сеансе событий. |
 | **sys.database_event_sessions** |Возвращает строку для каждого сеанса событий в Базе данных SQL. |
 
-В Microsoft SQL Server аналогичные представления каталогов имеют имена, содержащие *.server\_* вместо *.database\_*. Шаблон имени выглядит как **sys.server_event_%**.
+В Microsoft SQL Server аналогичные представления каталогов имеют имена, содержащие *.server\_* вместо *.database\_* . Шаблон имени выглядит как **sys.server_event_%** .
 
 ## <a name="new-dynamic-management-views-dmvshttpsmsdnmicrosoftcomlibraryms188754aspx"></a>Новые динамические административные представления [(DMV)](https://msdn.microsoft.com/library/ms188754.aspx)
 
@@ -170,8 +170,8 @@ API [трассировки событий для Windows (ETW)](https://msdn.mi
 
 Маркер SAS, сформированный для вашего контейнера хранилища Azure, должен указывать **rwl** для разрешений. Значение **rwl** обеспечивает следующие разрешения:
 
-- прочтены
-- Запись
+- Чтение
+- запись
 - список
 
 ## <a name="performance-considerations"></a>Рекомендации по производительности
@@ -183,7 +183,7 @@ API [трассировки событий для Windows (ETW)](https://msdn.mi
 - уменьшить количество одновременно запущенных сеансов событий;
 - уменьшить объем памяти, заданный в предложении **MAX\_MEMORY**, с помощью операторов **CREATE** и **ALTER**.
 
-### <a name="network-latency"></a>Сетевая задержка
+### <a name="network-latency"></a>Задержки сети
 
 Целевой объект **Файл событий** может столкнуться с медленной работой или отказами сети при сохранении данных в большие двоичные объекты хранилища Azure. Другие события в Базе данных SQL могут откладываться до установки подключения к сети. Такая задержка может замедлить вашу работу.
 

@@ -12,10 +12,10 @@ ms.date: 05/02/2019
 ms.author: luisca
 ms.custom: seojan2018
 ms.openlocfilehash: e5f7ee172563a81d45e3a35da2cfc7e8731de48d
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65023853"
 ---
 # <a name="custom-web-api-skill"></a>Пользовательский навык веб-API
@@ -36,7 +36,7 @@ Microsoft.Skills.Custom.WebApiSkill
 
 Параметры зависят от регистра.
 
-| Имя параметра     | ОПИСАНИЕ |
+| Имя параметра     | Описание |
 |--------------------|-------------|
 | uri | URI веб-API, к которому _JSON_ полезные данные будут отправляться. Допускается только схема URI **HTTPS**. |
 | httpMethod | Метод, используемый при отправке полезных данных. Допустимые методы: `PUT` или `POST`. |

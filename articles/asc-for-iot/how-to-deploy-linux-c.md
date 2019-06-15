@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 03/28/2019
 ms.author: mlottner
 ms.openlocfilehash: 49ebb5932e1e918330625fd0df98811873dd5cd5
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65200657"
 ---
 # <a name="deploy-azure-security-center-for-iot-c-based-security-agent-for-linux"></a>Развертывание центра безопасности для безопасности на основе Интернета вещей C агента для Linux
@@ -31,7 +31,7 @@ ms.locfileid: "65200657"
 
 Из этого руководства вы узнаете, как выполнить следующие задачи: 
 > [!div class="checklist"]
-> * Install
+> * Установка
 > * Проверка развертывания
 > * Удаление агента.
 > * Устранение неполадок 

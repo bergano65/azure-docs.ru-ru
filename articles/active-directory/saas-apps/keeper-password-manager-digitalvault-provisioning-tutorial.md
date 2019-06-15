@@ -16,10 +16,10 @@ ms.topic: article
 ms.date: 05/07/2019
 ms.author: zchia
 ms.openlocfilehash: 445579eb780b49f536ef1a9e13e5ca43db6f98f6
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65508567"
 ---
 # <a name="tutorial-configure-keeper-password-manager--digital-vault-for-automatic-user-provisioning"></a>Руководство по Настроить Keeper Password Manager & Digital Vault для автоматической подготовки пользователей
@@ -45,7 +45,7 @@ ms.locfileid: "65508567"
 
 **Чтобы добавить Keeper Password Manager & Digital Vault из коллекции приложений Azure AD, выполните следующие действия:**
 
-1. В  **[портала Azure](https://portal.azure.com)**, на панели навигации слева выберите **Azure Active Directory**.
+1. В  **[портала Azure](https://portal.azure.com)** , на панели навигации слева выберите **Azure Active Directory**.
 
     ![Кнопка Azure Active Directory](common/select-azuread.png)
 
@@ -124,7 +124,7 @@ Azure Active Directory используется концепция, называ
 
 8. В поле **Почтовое уведомление** введите адрес электронной почты пользователя или группы, которые должны получать уведомления об ошибках подготовки, а также установите флажок **Send an email notification when a failure occurs** (Отправить уведомление по электронной почте при сбое).
 
-    ![Почтовое уведомление](common/provisioning-notification-email.png)
+    ![Уведомление по электронной почте](common/provisioning-notification-email.png)
 
 9. Выберите команду **Сохранить**.
 

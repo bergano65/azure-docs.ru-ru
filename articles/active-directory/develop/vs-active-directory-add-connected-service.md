@@ -15,10 +15,10 @@ ms.date: 03/12/2018
 ms.author: ghogen
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 9bea0a870a6ef0685f4f4bce5ad3b0d1ff1f616a
-ms.sourcegitcommit: 300cd05584101affac1060c2863200f1ebda76b7
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65414011"
 ---
 # <a name="adding-an-azure-active-directory-by-using-connected-services-in-visual-studio"></a>Добавление Azure Active Directory с помощью подключенных служб в Visual Studio
@@ -48,7 +48,7 @@ Azure Active Directory (Azure AD) позволяет обеспечить еди
 
     ![Страница "Введение"](./media/vs-azure-active-directory/configure-azure-ad-wizard-1.png)
 
-1. На странице **Единый вход** выберите домен из раскрывающегося списка **Домены**. Этот список содержит все домены, доступные для учетных записей, перечисленных в диалоговом окне параметров учетной записи в Visual Studio (**Файл > Параметры учетной записи...**). Если вы не нашли искомый домен, введите имя домена, например `mydomain.onmicrosoft.com`, вручную. Вы можете создать новое приложение Azure Active Directory или использовать параметры уже существующего приложения Azure Active Directory. По завершении нажмите кнопку **Далее**.
+1. На странице **Единый вход** выберите домен из раскрывающегося списка **Домены**. Этот список содержит все домены, доступные для учетных записей, перечисленных в диалоговом окне параметров учетной записи в Visual Studio (**Файл > Параметры учетной записи...** ). Если вы не нашли искомый домен, введите имя домена, например `mydomain.onmicrosoft.com`, вручную. Вы можете создать новое приложение Azure Active Directory или использовать параметры уже существующего приложения Azure Active Directory. По завершении нажмите кнопку **Далее**.
 
     ![Страница "Единый вход"](./media/vs-azure-active-directory/configure-azure-ad-wizard-2.png)
 

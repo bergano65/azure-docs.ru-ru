@@ -13,10 +13,10 @@ ms.reviewer: ''
 manager: craigg
 ms.date: 04/26/2019
 ms.openlocfilehash: 057c764a46508804bee6aa8f9912fdedc69e811f
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65762696"
 ---
 # <a name="azure-sql-database-glossary-of-terms"></a>Глоссарий терминов для Базы данных SQL Azure
@@ -25,7 +25,7 @@ ms.locfileid: "65762696"
 |:---|:---|:---|
 |Имя службы Azure|База данных SQL Azure или База данных SQL|[Служба Базы данных SQL Azure](sql-database-technical-overview.md)|
 |Уровень вычислений|Независимые от сервера (Предварительная версия)|[Уровень бессерверных вычислений](sql-database-serverless.md)
-||Подготовлена|[Уровень бессерверных вычислений](sql-database-serverless.md)
+||Подготовлено|[Уровень бессерверных вычислений](sql-database-serverless.md)
 |Варианты развертывания |Отдельная база данных|[Отдельные базы данных](sql-database-single-database.md)|
 ||Эластичный пул|[Эластичный пул](sql-database-elastic-pool.md)|
 ||Управляемый экземпляр|[Управляемый экземпляр](sql-database-managed-instance.md)|

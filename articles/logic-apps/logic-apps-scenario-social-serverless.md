@@ -11,10 +11,10 @@ ms.assetid: d565873c-6b1b-4057-9250-cf81a96180ae
 ms.topic: article
 ms.date: 03/15/2018
 ms.openlocfilehash: 5dd9d8eac7d65815d7c98a28b0d5af55f19cec47
-ms.sourcegitcommit: e6d53649bfb37d01335b6bcfb9de88ac50af23bd
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65464430"
 ---
 # <a name="create-streaming-customer-insights-dashboard-with-azure-logic-apps-and-azure-functions"></a>Создание панели мониторинга потоковой передачи сведений о клиентах с помощью Функций Azure и Azure Logic Apps
@@ -75,7 +75,7 @@ Azure Logic Apps представляет беcсерверный обработ
 В конце функции верните в приложение логики ответ с данными, например, простое логическое значение, такое как `containsKeyword`, или cоставной объект.
 
 > [!TIP]
-> При доступе к сложному ответу от функции в приложении логики **используйте действие "Анализ JSON"**.
+> При доступе к сложному ответу от функции в приложении логики **используйте действие "Анализ JSON"** .
 
 Когда вы закончите, сохраните функцию, а затем добавьте ее в качестве действия в приложение логики, которое вы создаете.
 

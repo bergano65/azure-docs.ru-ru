@@ -13,10 +13,10 @@ ms.topic: article
 ms.date: 05/02/2019
 ms.author: spelluru
 ms.openlocfilehash: 2ad81ae97414abbf3266cc5728febf9abe836151
-ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65522962"
 ---
 # <a name="automate-adding-a-lab-user-to-a-lab-in-azure-devtest-labs"></a>Автоматизировать добавление пользователь лаборатории в лабораторию в Azure DevTest Labs
@@ -121,7 +121,7 @@ $dtlUserRoleDefId = (Get-AzRoleDefinition -Name "DevTest Labs User").Id
 "devTestLabUserRoleId": "[concat('/subscriptions/', subscription().subscriptionId, '/providers/Microsoft.Authorization/roleDefinitions/111111111-0000-0000-11111111111111111')]",
 ```
 
-### <a name="principal-id"></a>Идентификатор субъекта
+### <a name="principal-id"></a>Идентификатор участника
 Идентификатор участника — идентификатор объекта пользователя Active Directory, группы или субъекта-службы, который требуется добавить в качестве пользователя лаборатории в лаборатории. В шаблоне используется `ObjectId` как параметр.
 
 ObjectId можно получить с помощью [Get-AzureRMADUser](/powershell/module/azurerm.resources/get-azurermaduser?view=azurermps-6.13.0), [Get-AzureRMADGroup, или [Get-AzureRMADServicePrincipal](/powershell/module/azurerm.resources/get-azurermadserviceprincipal?view=azurermps-6.13.0) командлеты PowerShell. Эти командлеты возвращают один или списки объектов Active Directory, которые содержат свойства ID, это идентификатор объекта, который требуется. Приведенный ниже показано, как получить идентификатор объекта отдельного пользователя в компании.

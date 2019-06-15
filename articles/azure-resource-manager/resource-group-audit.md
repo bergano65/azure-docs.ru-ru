@@ -7,10 +7,10 @@ ms.topic: conceptual
 ms.date: 05/13/2019
 ms.author: tomfitz
 ms.openlocfilehash: 7ff45be4eea5c6e8ab83093847164ede0e94579a
-ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65606578"
 ---
 # <a name="view-activity-logs-to-monitor-actions-on-resources"></a>Просмотр журналов действий для отслеживания действий с ресурсами
@@ -73,7 +73,7 @@ ms.locfileid: "65606578"
 
 1. На портале можно просмотреть изменения к ресурсу. Перейдите по умолчанию в монитор и выберите операцию, которая участвует в изменении ресурса.
 
-    ![Выбор операции](./media/resource-group-audit/select-operation.png)
+    ![Выберите операцию](./media/resource-group-audit/select-operation.png)
 
 1. Выберите **журнал (Предварительная версия) изменений** и выбрать одну из доступных операций.
 

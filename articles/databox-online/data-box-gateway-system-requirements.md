@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 05/08/2019
 ms.author: alkohli
 ms.openlocfilehash: e8932097bcdef782b1a551d386c2872e02d8abfd
-ms.sourcegitcommit: 4891f404c1816ebd247467a12d7789b9a38cee7e
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65442381"
 ---
 # <a name="azure-data-box-gateway-system-requirements"></a>Требования к системе Azure шлюз поле данных
@@ -34,8 +34,8 @@ ms.locfileid: "65442381"
 | Виртуальные процессоры (ядра)   | Минимум 4 |
 | Память  | Минимум 8 ГБ|
 | Доступность|Один узел|
-| Диски| Диск ОС: 250 ГБ <br> Диск данных: минимум 2 ТБ, с тонкой подготовкой, с использованием дисков SSD|
-| сетевые интерфейсы|Один или несколько виртуальных сетевых интерфейсов|
+| диски;| Диск ОС: 250 ГБ <br> Диск данных: минимум 2 ТБ, с тонкой подготовкой, с использованием дисков SSD|
+| Сетевые интерфейсы|Один или несколько виртуальных сетевых интерфейсов|
 
 
 ## <a name="supported-os-for-clients-connected-to-device"></a>Поддерживаемая ОС для клиентов, подключенных к устройству

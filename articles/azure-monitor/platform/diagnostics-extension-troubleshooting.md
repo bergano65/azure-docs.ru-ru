@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 05/08/2019
 ms.author: robb
 ms.openlocfilehash: 99ac4ffc288773e52183d371ef2c20f6153bc0f3
-ms.sourcegitcommit: 399db0671f58c879c1a729230254f12bc4ebff59
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65471781"
 ---
 # <a name="azure-diagnostics-troubleshooting"></a>Устранение неполадок с помощью системы диагностики Azure
@@ -29,7 +29,7 @@ ms.locfileid: "65471781"
 В таблицах ниже приведены расположения некоторых важных журналов и артефактов. Эти сведения используются в остальной части документа.
 
 ### <a name="azure-cloud-services"></a>Облачные службы Azure
-| Артефакт | `Path` |
+| Артефакт | Путь |
 | --- | --- |
 | **Файл конфигурации системы диагностики Azure** | %SystemDrive%\Packages\Plugins\Microsoft.Azure.Diagnostics.PaaSDiagnostics\<версия>\Config.txt |
 | **Файлы журналов** | C:\Logs\Plugins\Microsoft.Azure.Diagnostics.PaaSDiagnostics\<версия>\ |
@@ -39,8 +39,8 @@ ms.locfileid: "65471781"
 | **Путь к служебной программе сбора журналов** | %SystemDrive%\Packages\GuestAgent\ |
 | **Файл журнала MonAgentHost** | C:\Resources\Directory\<ИД_разверт._облачн._службы>.\<имя_роли>.DiagnosticStore\WAD0107\Configuration\MonAgentHost.<текущ._номер>.log |
 
-### <a name="virtual-machines"></a>ВМ
-| Артефакт | `Path` |
+### <a name="virtual-machines"></a>Виртуальные машины
+| Артефакт | Путь |
 | --- | --- |
 | **Файл конфигурации системы диагностики Azure** | C:\Packages\Plugins\Microsoft.Azure.Diagnostics.IaaSDiagnostics\<версия>\RuntimeSettings |
 | **Файлы журналов** | C:\WindowsAzure\Logs\Plugins\Microsoft.Azure.Diagnostics.IaaSDiagnostics\<DiagnosticsVersion>\ |
@@ -167,7 +167,7 @@ DiagnosticsPluginLauncher.exe Information: 0 : [4/16/2016 6:24:15 AM] Diagnostic
             tableName = "WAD" + eventDestination;
 ```
 
-Вот пример: 
+Вот пример:
 
 ```XML
         <EtwEventSourceProviderConfiguration provider="prov1">
@@ -214,7 +214,7 @@ DiagnosticsPluginLauncher.exe Information: 0 : [4/16/2016 6:24:15 AM] Diagnostic
 | provider=”prov1” &lt;DefaultEvents /&gt; |WADDefault+MD5(“prov1”) |
 | provider=”prov2” &lt;DefaultEvents eventDestination=”dest2” /&gt; |WADdest2 |
 
-## <a name="references"></a>Ссылки
+## <a name="references"></a>Справочники
 
 ### <a name="how-to-check-diagnostics-extension-configuration"></a>Как проверить конфигурацию расширения системы диагностики
 Самый простой способ проверить конфигурацию расширения — перейти в [обозреватель ресурсов Azure](http://resources.azure.com) и выбрать виртуальную машину или облачную службу, где выполняется расширение системы диагностики Azure (IaaSDiagnostics или PaaDiagnostics).
@@ -230,7 +230,7 @@ DiagnosticsPluginLauncher.exe Information: 0 : [4/16/2016 6:24:15 AM] Diagnostic
 ### <a name="azure-diagnostics-plugin-exit-codes"></a>Коды выхода подключаемого модуля системы диагностики Azure
 Подключаемый модуль возвращает следующие коды выхода:
 
-| Код завершения | Описание |
+| Код выхода | Описание |
 | --- | --- |
 | 0 |Успешно. |
 | -1 |Общая ошибка. |

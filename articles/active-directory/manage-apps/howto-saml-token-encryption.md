@@ -17,10 +17,10 @@ ms.author: mimart
 ms.reviewer: paulgarn
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 75f8b785b8eadd21f1f94cf82fe137d6f747e738
-ms.sourcegitcommit: be9fcaace62709cea55beb49a5bebf4f9701f7c6
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65824756"
 ---
 # <a name="how-to-configure-azure-ad-saml-token-encryption-preview"></a>Практическое руководство: настройка шифрования токенов SAML в Azure AD (предварительная версия)
@@ -81,7 +81,7 @@ ms.locfileid: "65824756"
 
 1. На портале Azure перейдите в колонку **Azure Active Directory > Корпоративные приложения** и выберите приложение, в котором включено шифрование токенов SAML.
 
-1. На странице приложения щелкните **Шифрование токенов**, найдите сертификат, а затем щелкните **...**, чтобы открыть раскрывающееся меню.
+1. На странице приложения щелкните **Шифрование токенов**, найдите сертификат, а затем щелкните **...** , чтобы открыть раскрывающееся меню.
 
 1. Щелкните **Deactivate token encryption** (Деактивировать шифрование токенов).
 

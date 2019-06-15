@@ -16,10 +16,10 @@ ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: d41ad2518f885bbaa02dda3b01f0c02e9fc1d217
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65074715"
 ---
 # <a name="web-app-that-signs-in-users---move-to-production"></a>Веб-приложение, которое выполняет вход пользователей - переносу в рабочую среду
@@ -35,7 +35,7 @@ ms.locfileid: "65074715"
 Один раз пользователей веб-приложение выполняет вход, он может вызвать веб-API от имени вошедшего в систему пользователей. Вызов веб-API из веб-приложения является объектом следующего сценария:
 
 > [!div class="nextstepaction"]
-> [Веб-приложения, что вызовы веб-API](scenario-web-app-call-api-overview.md)
+> [Веб-приложение, которое вызывает веб-API](scenario-web-app-call-api-overview.md)
 
 ### <a name="deep-dive---web-app-tutorial"></a>Глубокое погружение, учебник по web app
 

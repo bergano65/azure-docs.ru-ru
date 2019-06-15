@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 05/06/2019
 ms.author: magoedte
 ms.openlocfilehash: f4e15c4fc7bd7b786c5204153fe64f010e5ffe85
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65148854"
 ---
 # <a name="how-to-update-azure-monitor-for-containers-to-enable-metrics"></a>Как обновить Azure Monitor для контейнеров, чтобы включить метрики
@@ -25,7 +25,7 @@ Azure Monitor для контейнеров предоставляет подд�
 
 В рамках этой функции будут доступны следующие метрики:
 
-| Пространство имен метрик | Метрика | ОПИСАНИЕ |
+| Пространство имен метрик | Метрика | Описание |
 |------------------|--------|-------------|
 | Insights.Container/nodes | cpuUsageMillicores, cpuUsagePercentage, memoryRssBytes, memoryRssPercentage, memoryWorkingSetBytes, memoryWorkingSetPercentage, nodesCount | Это *узел* метрик и включают *узла* как измерения и они также включают<br> Имя узла в качестве значения для *узла* измерения. |
 | Insights.Container/PODS | podCount | Это *pod* метрик и включают следующее как измерения - Имя_контроллера, пространств имен Kubernetes, имя, этап. |

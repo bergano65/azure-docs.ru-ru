@@ -11,10 +11,10 @@ ms.service: azure-blockchain
 ms.reviewer: seal
 manager: femila
 ms.openlocfilehash: dffeb81ae1eb244c38639a1241c0581e6fcdf94a
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65027965"
 ---
 # <a name="configure-azure-blockchain-service-transaction-nodes"></a>Настройка службы Azure Blockchain транзакции узлов
@@ -23,7 +23,7 @@ ms.locfileid: "65027965"
 
 ## <a name="prerequisites"></a>Технические условия
 
-* [Создать элемент Azure Blockchain](create-member.md)
+* [Создайте участника службы "Блокчейн Azure".](create-member.md)
 
 ## <a name="transaction-node-overview"></a>Обзор узла транзакций
 
@@ -32,9 +32,9 @@ ms.locfileid: "65027965"
 Чтобы просмотреть сведения об узле транзакций по умолчанию:
 
 1. Войдите на [портале Azure](https://portal.azure.com).
-1. Перейдите к вашей службе Azure Blockchain член. Выберите **узлы транзакции**.
+1. Перейдите в область участника службы "Блокчейн Azure". Выберите **узлы транзакции**.
 
-    ![Выберите узел транзакций по умолчанию](./media/configure-transaction-nodes/nodes.png)
+    ![Выбор узла транзакций по умолчанию](./media/configure-transaction-nodes/nodes.png)
 
     Сведений о включают адреса общедоступной конечной точки и открытый ключ.
 
@@ -51,12 +51,12 @@ ms.locfileid: "65027965"
 
     | Параметр | ОПИСАНИЕ |
     |---------|-------------|
-    | ИМЯ | Имя узла транзакции. Имя используется для создания DNS-адрес для конечной точки узла транзакции. Например, `newnode-myblockchainmember.blockchain.azure.com`. Имя узла не может изменяться после ее создания. |
+    | Name | Имя узла транзакций. Имя, используемое при создании адреса DNS для конечной точки узла транзакций. Например, `newnode-myblockchainmember.blockchain.azure.com`. Имя узла не может изменяться после ее создания. |
     | Пароль | Задайте надежный пароль. Используйте пароль для доступа к конечной точке узла транзакции с обычной проверкой подлинности.
 
 1. Нажмите кнопку **Создать**.
 
-    Подготовка нового узла транзакций занимает около 10 минут. Узлы дополнительных транзакций затратам. Дополнительные сведения о стоимости см. в разделе [цены на Azure](https://aka.ms/ABSPricing).
+    Подготовка нового узла транзакций занимает около 10 минут. Узлы дополнительных транзакций затратам. Дополнительные сведения о стоимости см. в разделе [цены на Azure](https://aka.ms/ABSPricing).
 
 ## <a name="endpoints"></a>Конечные точки
 

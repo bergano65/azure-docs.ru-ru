@@ -10,10 +10,10 @@ ms.service: iot-edge
 services: iot-edge
 ms.custom: seodec18
 ms.openlocfilehash: 66aca7be9a2df93d846d7e78bc64c93279afc2d1
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65160700"
 ---
 # <a name="how-to-install-iot-edge-on-kubernetes-preview"></a>Инструкции по установке IoT Edge на Kubernetes (Предварительная версия)
@@ -78,7 +78,7 @@ IoT Edge можно интегрировать с Kubernetes, используя
     minikube dashboard
     ```
 
-    В разделе пространства имен кластера, вы увидите, другой — для устройства IoT Edge в соответствии со стандартом *msiot -\<iothub-name > —\<edgedevice-name >*. В этом пространстве имен модулей POD iotedged и агент Edge Интернета вещей следует приступить к работе.
+    В разделе пространства имен кластера, вы увидите, другой — для устройства IoT Edge в соответствии со стандартом *msiot -\<iothub-name > —\<edgedevice-name >* . В этом пространстве имен модулей POD iotedged и агент Edge Интернета вещей следует приступить к работе.
 
 1. Добавление имитированный модуль датчика температуры, следуя указаниям в [развертывание модуля](quickstart-linux.md#deploy-a-module) раздел быстрого запуска. Управление модуля IoT Edge осуществляется на портале центра Интернета вещей, так же, как и любое другое устройство IoT Edge. Внесение локальных изменений в конфигурации модуля с помощью средств Kubernetes не рекомендуется, так как они могут быть перезаписаны.
 

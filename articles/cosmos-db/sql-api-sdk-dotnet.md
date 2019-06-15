@@ -9,10 +9,10 @@ ms.topic: reference
 ms.date: 03/09/2018
 ms.author: sngun
 ms.openlocfilehash: 3c420882b734883039ec95d609c155617359fa25
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65510723"
 ---
 # <a name="azure-cosmos-db-net-sdk-for-sql-api-download-and-release-notes"></a>Пакет SDK .NET для Azure Cosmos DB для API SQL: скачивание и заметки о выпуске
@@ -307,7 +307,7 @@ ms.locfileid: "65510723"
   * Оператор Take, позволяющий выполнить операцию SELECT TOP в LINQ.
   * Оператор CompareTo, позволяющий сравнивать диапазоны строк.
   * Условный оператор (?) и оператор объединения (??).
-* **[Исправлено]**. Порождение исключения ArgumentOutOfRangeException при комбинировании проекции Model с Where-In в запросе LINQ. [№ 81](https://github.com/Azure/azure-documentdb-dotnet/issues/81)
+* **[Исправлено]** . Порождение исключения ArgumentOutOfRangeException при комбинировании проекции Model с Where-In в запросе LINQ. [№ 81](https://github.com/Azure/azure-documentdb-dotnet/issues/81)
 
 ### <a name="a-name151151"></a><a name="1.5.1"/>1.5.1
 * **[Исправлено]** Если операция Select не является последней, поставщик LINQ не использовал проекции и неверно определял операцию SELECT *.  [#58](https://github.com/Azure/azure-documentdb-dotnet/issues/58)
@@ -316,12 +316,12 @@ ms.locfileid: "65510723"
 * Реализован метод Upsert, добавлен метод UpsertXXXAsync.
 * Повышение производительности для всех запросов.
 * Поддержка поставщиком LINQ условных операций, функций объединения и методов CompareTo для строковых значений.
-* **[Исправлено]**. Поставщик LINQ: реализация метода Contains для списков для создания таких же запросов SQL, как для IEnumerable и массивов.
+* **[Исправлено]** . Поставщик LINQ: реализация метода Contains для списков для создания таких же запросов SQL, как для IEnumerable и массивов.
 * **[Исправлено]** BackoffRetryUtility повторно использует то же сообщение HttpRequestMessage вместо создания нового при повторной попытке.
-* **[Устарело]**. UriFactory.CreateCollection: теперь следует использовать UriFactory.CreateDocumentCollection.
+* **[Устарело]** . UriFactory.CreateCollection: теперь следует использовать UriFactory.CreateDocumentCollection.
 
 ### <a name="a-name141141"></a><a name="1.4.1"/>1.4.1
-* **[Исправлено]**. Проблемы локализации при использовании региональных параметров, отличных от en, например nl-NL и т. д. 
+* **[Исправлено]** . Проблемы локализации при использовании региональных параметров, отличных от en, например nl-NL и т. д. 
 
 ### <a name="a-name140140"></a><a name="1.4.0"/>1.4.0
 * Добавлена маршрутизация на основе идентификаторов

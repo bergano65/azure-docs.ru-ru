@@ -10,10 +10,10 @@ ms.date: 04/29/2019
 ms.author: danlep
 ms.custom: ''
 ms.openlocfilehash: dc516277d79e37500e73e1aee6b88c908acb9b1c
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64944001"
 ---
 # <a name="security-considerations-for-azure-container-instances"></a>Вопросы безопасности для экземпляров контейнеров Azure
@@ -115,7 +115,7 @@ ms.locfileid: "64944001"
 
 * [Azure Monitor для контейнеров](../azure-monitor/insights/container-insights-overview.md) для наблюдения за производительностью рабочих нагрузок, развернутых для сред Kubernetes, размещенных в службе Azure Kubernetes (AKS). С помощью Azure Monitor для контейнеров можно отслеживать производительность, собирая данные метрик памяти и процессора из контроллеров, узлов и контейнеров, доступных в Kubernetes, используя API метрик. 
 
-* [Решение для мониторинга контейнеров Azure](../azure-monitor/insights/containers.md) помогает просматривать и управлять другими Docker и Windows узлов контейнеров в одном месте. Например: 
+* [Решение для мониторинга контейнеров Azure](../azure-monitor/insights/containers.md) помогает просматривать и управлять другими Docker и Windows узлов контейнеров в одном месте. Пример:
 
   * Просмотр подробных сведений аудита, который показывает команды, используемые с контейнерами. 
   * Устранять неполадки контейнеров, просмотра и поиска централизованные журналы без необходимости удаленного просмотра узлов Docker или Windows.  

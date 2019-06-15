@@ -9,10 +9,10 @@ ms.service: iot-central
 services: iot-central
 manager: peterpr
 ms.openlocfilehash: 00d40b9910f9b549443373c84b079c543037ce62
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65236319"
 ---
 # <a name="manage-your-application-preferences"></a>Управление настройками приложений
@@ -32,7 +32,7 @@ IoT Central поддерживается на нескольких языках.
 ![Средство выбора темы в IoT Central](media/howto-manage-preferences/settings.png)
 
 > [!NOTE]
-> Возможность выбора между светлой и темной темы будет недоступен, если администратор настроил пользовательской темы для приложения.
+> Возможность выбора между светлой и темной темами будет недоступен, если администратор настроил пользовательскую тему для приложения.
 
 ## <a name="next-steps"></a>Дальнейшие действия
 

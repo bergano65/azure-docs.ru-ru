@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 04/01/2019
 ms.author: diberry
 ms.openlocfilehash: 318e71b68bbabeeef34c75a412f9fdd5b6db754a
-ms.sourcegitcommit: 509e1583c3a3dde34c8090d2149d255cb92fe991
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/27/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65073022"
 ---
 # <a name="entity-roles-for-contextual-subtypes"></a>Сущности роли для контекстных подтипы
@@ -37,8 +37,8 @@ buy a ticket from New York to London
 
 |Тип сущности|Имя сущности|Роль|Назначение|
 |--|--|--|--|
-|Простой|Расположение|источник|откуда вылетает самолет|
-|Простой|Расположение|назначение|куда прилетает самолет|
+|Простая|Расположение|origin|откуда вылетает самолет|
+|Простая|Расположение|destination|куда прилетает самолет|
 
 ## <a name="non-machine-learned-entity-example-of-roles"></a>Пример сущности без машин узнали ролей
 
@@ -48,7 +48,7 @@ buy a ticket from New York to London
 Schedule the meeting from 8 to 9
 ```
 
-|Тип сущности|Имя роли|Value|
+|Тип сущности|Имя роли|Значение|
 |--|--|--|
 |Предварительно созданная сущность datetimeV2|время начала|8|
 |Предварительно созданная сущность datetimeV2|время окончания|9|

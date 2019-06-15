@@ -8,10 +8,10 @@ ms.topic: reference
 ms.service: blueprints
 manager: carmonm
 ms.openlocfilehash: dc72113a8f5ed978d64d35c43e94dc9e19e4cdb1
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65209410"
 ---
 # <a name="functions-for-use-with-azure-blueprints"></a>Функции для использования с Azure чертежей
@@ -107,13 +107,13 @@ ms.locfileid: "65209410"
 
 Некоторые примеры извлечения данных из _myTemplateArtifact_ пример являются:
 
-| Выражение | type | Value |
+| Expression | type | Значение |
 |:---|:---|:---|
-|`[artifacts("myTemplateArtifact").outputs.myArray]` | Массив | \[«Первый», «second»\] |
-|`[artifacts("myTemplateArtifact").outputs.myArray[0]]` | Строка | «Первый» |
-|`[artifacts("myTemplateArtifact").outputs.myString]` | Строка | «Мой строковое значение» |
+|`[artifacts("myTemplateArtifact").outputs.myArray]` | Массив, | \[«Первый», «second»\] |
+|`[artifacts("myTemplateArtifact").outputs.myArray[0]]` | String | «Первый» |
+|`[artifacts("myTemplateArtifact").outputs.myString]` | String | «Мой строковое значение» |
 |`[artifacts("myTemplateArtifact").outputs.myObject]` | Object | { "myproperty": "my value", "anotherProperty": true } |
-|`[artifacts("myTemplateArtifact").outputs.myObject.myProperty]` | Строка | «Мой value» |
+|`[artifacts("myTemplateArtifact").outputs.myObject.myProperty]` | String | «Мой value» |
 |`[artifacts("myTemplateArtifact").outputs.myObject.anotherProperty]` | Логический | Истина |
 
 ## <a name="concat"></a>concat

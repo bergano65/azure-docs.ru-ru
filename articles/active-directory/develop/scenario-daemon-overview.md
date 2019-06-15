@@ -17,10 +17,10 @@ ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 578b7cdb38b7df3fab5885d773354a36f76a4cfb
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65075885"
 ---
 # <a name="scenario-daemon-application-that-calls-web-apis"></a>Сценарий. Управляющая программа, что вызовы веб-API
@@ -35,7 +35,7 @@ ms.locfileid: "65075885"
 
 Приложение может получить токен для вызова веб-API от имени самого (не от имени пользователя). Этот сценарий полезен для приложений управляющей программы. Она использует стандартные OAuth 2.0 [учетные данные клиента](v2-oauth2-client-creds-grant-flow.md) предоставить.
 
-![Управляющая программа](./media/scenario-daemon-app/daemon-app.svg)
+![Управляющие программы](./media/scenario-daemon-app/daemon-app.svg)
 
 Ниже приведены некоторые примеры вариантов использования для приложений управляющей программы:
 

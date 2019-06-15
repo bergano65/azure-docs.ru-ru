@@ -9,10 +9,10 @@ ms.service: vmware
 ms.reviewer: cynthn
 manager: dikamath
 ms.openlocfilehash: e1fc7809ad94d589483b87c638d027a39098164e
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65209536"
 ---
 # <a name="quickstart---configure-a-private-cloud-environment"></a>Краткое руководство. Настройка среды с частным облаком
@@ -64,7 +64,7 @@ ms.locfileid: "65209536"
 
 VPN-подключения между сайтами — это самый простой способ подключения к частным облаком с вашего компьютера. Используйте VPN-подключение между сайтами, если вы подключаетесь к частному облаку, удаленно.  Для быстрого доступа к частным облаком выполните следующие действия.  Доступ к области CloudSimple из вашей локальной сети можно сделать с помощью [сеть-сеть VPN](https://docs.azure.cloudsimple.com/vpn-gateway/) или [Azure ExpressRoute](https://docs.azure.cloudsimple.com/on-premises-connection/).
 
-### <a name="create-gateway"></a>Создать шлюз
+### <a name="create-gateway"></a>Создание шлюза
 
 1. Запустите CloudSimple портала и выберите **сети**.
 2. Выберите **VPN-шлюз**.
@@ -104,7 +104,7 @@ VPN-клиента необходим для подключения к CloudSimp
 4. Выберите **Пользователи**.
 5. Щелкните **загрузки моей конфигурации VPN**
 
-    ![Скачать конфигурацию VPN](media/download-p2s-vpn-configuration.png)
+    ![Загрузка конфигурации VPN](media/download-p2s-vpn-configuration.png)
 
 6. Импорт конфигурации на VPN-клиента
 

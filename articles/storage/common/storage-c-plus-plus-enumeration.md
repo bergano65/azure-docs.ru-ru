@@ -10,10 +10,10 @@ ms.author: mhopkins
 ms.reviewer: dineshm
 ms.subservice: common
 ms.openlocfilehash: edf50b97ff25a67b41bad266df9236145f288409
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65146880"
 ---
 # <a name="list-azure-storage-resources-in-c"></a>Перечисление ресурсов хранилища Azure в C++
@@ -35,7 +35,7 @@ ms.locfileid: "65146880"
 Каждый из этих методов продемонстрирован с использованием различных перегрузок для разных сценариев.
 
 ## <a name="asynchronous-versus-synchronous"></a>Асинхронный или синхронный
-Так как клиентская библиотека хранилища для C++ основана на [библиотеке C++ REST](https://github.com/Microsoft/cpprestsdk), мы поддерживаем асинхронные операции с использованием [pplx::task](https://microsoft.github.io/cpprestsdk/classpplx_1_1task.html). Например: 
+Так как клиентская библиотека хранилища для C++ основана на [библиотеке C++ REST](https://github.com/Microsoft/cpprestsdk), мы поддерживаем асинхронные операции с использованием [pplx::task](https://microsoft.github.io/cpprestsdk/classpplx_1_1task.html). Пример:
 
 ```cpp
 pplx::task<list_blob_item_segment> list_blobs_segmented_async(continuation_token& token) const;

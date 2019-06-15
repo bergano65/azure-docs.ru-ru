@@ -11,10 +11,10 @@ ms.author: tamram
 ms.reviewer: seguler
 ms.subservice: common
 ms.openlocfilehash: ea7e4757aac0fccf60a44c70e9de6a63c1ec9498
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65147006"
 ---
 # <a name="using-the-azure-cli-with-azure-storage"></a>Использование интерфейса командной строки (CLI) Azure со службой хранилища Azure
@@ -30,7 +30,7 @@ ms.locfileid: "65147006"
 ## <a name="prerequisites"></a>Технические условия
 В этом руководстве предполагается, что вам знакомы основные понятия службы хранилища Azure. Также предполагается, что вы можете выполнить требования для создания учетной записи и службы хранилища Azure. Эти требования перечислены ниже.
 
-### <a name="accounts"></a>учетные записи;
+### <a name="accounts"></a>Учетные записи
 * **Учетная запись Azure.** Если у вас еще нет подписки Azure, [создайте бесплатную учетную запись Azure](https://azure.microsoft.com/free/).
 * **Учетная запись хранения**. См. статью [Создание учетной записи хранения](storage-quickstart-create-account.md) в документации [по учетным записям хранения Azure](storage-create-storage-account.md).
 
@@ -134,12 +134,12 @@ echo "Done"
 
 2. После этого обновите переменные скрипта в соответствии с параметрами конфигурации. Замените следующие значения соответствующим образом.
 
-   * **\<storage_account_name\>**: имя вашей учетной записи хранения.
-   * **\<storage_account_key\>**: первичный или вторичный ключ доступа к вашей учетной записи хранения.
-   * **\<container_name\>**: имя нового контейнера, который необходимо создать, например azure-cli-sample-container.
-   * **\<blob_name\>**: имя целевого большого двоичного объекта в контейнере.
-   * **\<file_to_upload\>**: путь к небольшому файлу на локальном компьютере, например ~/images/HelloWorld.png.
-   * **\<destination_file\>**: путь к конечному файлу, например ~/downloadedImage.png.
+   * **\<storage_account_name\>** : имя вашей учетной записи хранения.
+   * **\<storage_account_key\>** : первичный или вторичный ключ доступа к вашей учетной записи хранения.
+   * **\<container_name\>** : имя нового контейнера, который необходимо создать, например azure-cli-sample-container.
+   * **\<blob_name\>** : имя целевого большого двоичного объекта в контейнере.
+   * **\<file_to_upload\>** : путь к небольшому файлу на локальном компьютере, например ~/images/HelloWorld.png.
+   * **\<destination_file\>** : путь к конечному файлу, например ~/downloadedImage.png.
 
 3. После обновления необходимых переменных сохраните скрипт и выйдите из редактора. В описанных ниже действиях предполагается, что скрипту присвоено имя **my_storage_sample.sh**.
 

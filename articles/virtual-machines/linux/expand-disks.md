@@ -16,10 +16,10 @@ ms.date: 10/15/2018
 ms.author: rogarana
 ms.subservice: disks
 ms.openlocfilehash: 4113d582647b5bea86980824714936d24dafc870
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65511150"
 ---
 # <a name="expand-virtual-hard-disks-on-a-linux-vm-with-the-azure-cli"></a>Расширение виртуальных жестких дисков на виртуальной машине Linux с помощью Azure CLI
@@ -90,7 +90,7 @@ ms.locfileid: "65511150"
     sudo umount /dev/sdc1
     ```
 
-    2. Чтобы просмотреть сведения о диске и изменить размер раздела, используйте команду `parted`.
+    2\. Чтобы просмотреть сведения о диске и изменить размер раздела, используйте команду `parted`.
 
     ```bash
     sudo parted /dev/sdc
@@ -141,7 +141,7 @@ ms.locfileid: "65511150"
     sudo mount /dev/sdc1 /datadrive
     ```
 
-1. Чтобы проверить, изменился ли размер диска данных, используйте `df -h`. В следующем примере выходных данных показано, что теперь размер основного раздела (*/dev/sdc1*) составляет 200 ГБ:
+1. Чтобы проверить, изменился ли размер диска данных, используйте `df -h`. В следующем примере выходных данных показано, что теперь размер основного раздела ( */dev/sdc1*) составляет 200 ГБ:
 
     ```bash
     Filesystem      Size   Used  Avail Use% Mounted on

@@ -11,10 +11,10 @@ ms.date: 03/05/2019
 ms.author: pullabhk
 ms.assetid: 86ebeb03-f5fa-4794-8a5f-aa5cbbf68a81
 ms.openlocfilehash: ab7d2c0af4bc71733a7995b7e781f0facbfbb29f
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65236436"
 ---
 # <a name="monitoring-azure-backup-workloads"></a>Мониторинг рабочих нагрузок Azure Backup
@@ -48,8 +48,8 @@ ms.locfileid: "65236436"
 ### <a name="alert-scenarios"></a>Сценарии оповещений
 Приведенные ниже определяются службой как извещающие сценариев.
 
-  - Сбои резервного копирования и восстановления
-  - Архивация успешно завершена с предупреждениями для агента Azure Backup (MAB)
+  - Сбои при резервном копировании и восстановлении
+  - Резервное копирование выполнено с предупреждениями, связанными с Azure Backup Agent (MAB)
   - Отключите защиту хранящихся данных и остановка защиты с удалением данных
 
 ### <a name="exceptions-when-an-alert-is-not-raised"></a>Исключения, если не создано предупреждение
@@ -63,9 +63,9 @@ ms.locfileid: "65236436"
 
 ### <a name="alerts-from-the-following-azure-backup-solutions-are-shown-here"></a>Предупреждения из следующих решений для резервного копирования Azure, показаны ниже:
 
-  - Резервное копирование виртуальной Машины Azure
-  - Azure резервные копии файлов
-  - Резервные копии рабочей нагрузки Azure, таких как SQL
+  - Резервное копирование виртуальных машин Azure
+  - Резервное копирование файлов Azure
+  - Резервные копии рабочей нагрузки Azure, например SQL
   - Агент Azure Backup (MAB)
 
 > [!NOTE]

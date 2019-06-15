@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 05/07/2018
 ms.author: hrasheed
 ms.openlocfilehash: 3286ca3b9c85236ff322eb19324bc5ac7a904e22
-ms.sourcegitcommit: 6ea7f0a6e9add35547c77eef26f34d2504796565
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/14/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65605456"
 ---
 # <a name="use-the-azure-data-lake-tools-for-visual-studio-with-the-hortonworks-sandbox"></a>Использование средств Azure Data Lake для Visual Studio с песочницей Hortonworks
@@ -120,7 +120,7 @@ Hive предоставляет язык запросов по типу SQL (Hiv
 
 1. Откройте Visual Studio, выберите **Файл**, **Создать**, а затем **Проект**.
 
-2. В списке проектов разверните список **Шаблоны**, раздел **Azure Data Lake**, а затем выберите **HIVE (HDInsight)**. В списке шаблонов выберите **Hive Sample** (Пример Hive). Введите имя и расположение, а затем нажмите кнопку **ОК**.
+2. В списке проектов разверните список **Шаблоны**, раздел **Azure Data Lake**, а затем выберите **HIVE (HDInsight)** . В списке шаблонов выберите **Hive Sample** (Пример Hive). Введите имя и расположение, а затем нажмите кнопку **ОК**.
 
     ![Снимок экрана; окно нового проекта с выделенными элементами "Azure Data Lake", "HIVE", "Пример Hive" и "ОК"](./media/hdinsight-hadoop-emulator-visual-studio/new-hive-project.png)
 
@@ -130,7 +130,7 @@ Hive предоставляет язык запросов по типу SQL (Hiv
 
 Тогда как Hive предоставляет язык по типу SQL для работы со структурированными данными, Pig работает, преобразуя данные. Pig предоставляет язык (Pig Latin), с помощью которого можно разрабатывать конвейер преобразований. Чтобы использовать Pig в локальном кластере, выполните указанные ниже действия.
 
-1. Откройте Visual Studio, выберите **Файл**, **Создать**, а затем — **Проект**. В списке проектов разверните список **Шаблоны**, разверните **Azure Data Lake**, а затем выберите **Pig (HDInsight)**. В списке шаблонов выберите **Pig Application** (Приложение Pig). Введите имя и расположение, а затем нажмите кнопку **ОК**.
+1. Откройте Visual Studio, выберите **Файл**, **Создать**, а затем — **Проект**. В списке проектов разверните список **Шаблоны**, разверните **Azure Data Lake**, а затем выберите **Pig (HDInsight)** . В списке шаблонов выберите **Pig Application** (Приложение Pig). Введите имя и расположение, а затем нажмите кнопку **ОК**.
 
     ![Снимок экрана; окно нового проекта с выделенными элементами "Azure Data Lake", "Pig", "Приложение Pig" и "ОК"](./media/hdinsight-hadoop-emulator-visual-studio/new-pig.png)
 

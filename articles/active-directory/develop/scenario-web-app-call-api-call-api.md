@@ -16,17 +16,17 @@ ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: dd44dda06b2f6fc48538f2fb74c0bf8e04d0362b
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65074640"
 ---
 # <a name="web-app-that-calls-web-apis---call-a-web-api"></a>Веб-приложение, которое вызывает веб-API - вызов веб-API
 
 Теперь, когда у вас есть маркер, можно вызвать защищенный веб-API.
 
-## <a name="aspnet-core"></a>ASP.NET Core;
+## <a name="aspnet-core"></a>ASP.NET Core
 
 Ниже приведен упрощенный код действия `HomeController`. Этот код получает токен для вызова Microsoft Graph. Этот код времени была добавлена, показывающий, как для вызова Microsoft Graph, как REST API.
 

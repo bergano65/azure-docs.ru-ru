@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 07/13/2017
 ms.author: yegu
 ms.openlocfilehash: 2cfd5a99144af1120afbf06fe6222228a9332bb6
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65787427"
 ---
 # <a name="how-to-monitor-azure-cache-for-redis"></a>Как отслеживать кэш Azure для Redis
@@ -61,7 +61,7 @@ ms.locfileid: "65787427"
 <a name="how-to-view-metrics-and-customize-chart"></a>
 <a name="enable-cache-diagnostics"></a>
 ## <a name="export-cache-metrics"></a>Экспорт метрик кэша
-По умолчанию в Azure Monitor метрики кэша [хранятся в течение 30 дней](../azure-monitor/platform/data-platform-metrics.md), а затем удаляются. Чтобы хранить метрики кэша дольше 30 дней, назначьте для метрик кэша [выделенную учетную запись хранения](../azure-monitor/platform/archive-diagnostic-logs.md) и укажите для них политику **Хранение (дни)**. 
+По умолчанию в Azure Monitor метрики кэша [хранятся в течение 30 дней](../azure-monitor/platform/data-platform-metrics.md), а затем удаляются. Чтобы хранить метрики кэша дольше 30 дней, назначьте для метрик кэша [выделенную учетную запись хранения](../azure-monitor/platform/archive-diagnostic-logs.md) и укажите для них политику **Хранение (дни)** . 
 
 Чтобы настроить учетную запись хранения для метрик кэша, сделайте следующее:
 
@@ -69,7 +69,7 @@ ms.locfileid: "65787427"
 2. Щелкните **Вкл.**
 3. Установите флажок **Архивировать в учетной записи хранения**.
 4. Выберите учетную запись хранения, в которой будут храниться метрики кэша.
-5. Установите флажок **1 минута** и укажите политику **Хранение (дни)**. Если вы не хотите применять политику хранения, а предпочитаете хранить данные неограниченное время, укажите для параметра **Хранение (дни)** значение **0**;
+5. Установите флажок **1 минута** и укажите политику **Хранение (дни)** . Если вы не хотите применять политику хранения, а предпочитаете хранить данные неограниченное время, укажите для параметра **Хранение (дни)** значение **0**;
 6. Выберите команду **Сохранить**.
 
 ![Диагностика Redis](./media/cache-how-to-monitor/redis-cache-diagnostics.png)

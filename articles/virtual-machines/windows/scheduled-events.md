@@ -16,10 +16,10 @@ ms.workload: infrastructure-services
 ms.date: 02/22/2018
 ms.author: ericrad
 ms.openlocfilehash: e6a376803d8617e01ee279e40a33f6c1c3b748fd
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65508197"
 ---
 # <a name="azure-metadata-service-scheduled-events-for-windows-vms"></a>Служба метаданных Azure: подслужба "Запланированные события" для виртуальных машин Windows
@@ -131,8 +131,8 @@ DocumentIncarnation — это тег сущности, который позв�
 |EventType  | Минимальное время уведомления |
 | - | - |
 | Freeze| 15 минут |
-| Перезагрузить | 15 минут |
-| Повторить развертывание | 10 минут |
+| Reboot | 15 минут |
+| Повторное развертывание | 10 минут |
 | Прерывание | 30 секунд |
 
 ### <a name="event-scope"></a>Область события     

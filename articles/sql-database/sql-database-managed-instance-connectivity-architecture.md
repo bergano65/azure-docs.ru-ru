@@ -13,10 +13,10 @@ ms.reviewer: sstein, bonova, carlrab
 manager: craigg
 ms.date: 04/16/2019
 ms.openlocfilehash: dbb5ee122e715aeaa66d786f02966beedd2447c3
-ms.sourcegitcommit: bb85a238f7dbe1ef2b1acf1b6d368d2abdc89f10
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/10/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65522332"
 ---
 # <a name="connectivity-architecture-for-a-managed-instance-in-azure-sql-database"></a>Архитектура подключений к для управляемого экземпляра базы данных SQL Azure
@@ -97,18 +97,18 @@ ms.locfileid: "65522332"
 
 ### <a name="mandatory-inbound-security-rules"></a>Обязательные правила безопасности для входящего трафика
 
-| ИМЯ       |Port                        |Протокол|`Source`           |Место назначения|Действие|
+| Name       |Port                        |Протокол|source           |Место назначения|Действие|
 |------------|----------------------------|--------|-----------------|-----------|------|
-|управление  |9000, 9003, 1438, 1440, 1452|TCP     |Все              |MI SUBNET  |Allow |
-|mi_subnet   |Все                         |Все     |MI SUBNET        |MI SUBNET  |Allow |
-|health_probe|Все                         |Все     |AzureLoadBalancer|MI SUBNET  |Allow |
+|управление  |9000, 9003, 1438, 1440, 1452|TCP     |Любой              |MI SUBNET  |Allow |
+|mi_subnet   |Любой                         |Любой     |MI SUBNET        |MI SUBNET  |Allow |
+|health_probe|Любой                         |Любой     |AzureLoadBalancer|MI SUBNET  |Allow |
 
 ### <a name="mandatory-outbound-security-rules"></a>Обязательные правила безопасности для исходящего трафика
 
-| ИМЯ       |Port          |Протокол|`Source`           |Место назначения|Действие|
+| Name       |Port          |Протокол|source           |Место назначения|Действие|
 |------------|--------------|--------|-----------------|-----------|------|
 |управление  |80, 443, 12000|TCP     |MI SUBNET        |AzureCloud; |Allow |
-|mi_subnet   |Все           |Все     |MI SUBNET        |MI SUBNET  |Allow |
+|mi_subnet   |Любой           |Любой     |MI SUBNET        |MI SUBNET  |Allow |
 
 > [!IMPORTANT]
 > Убедитесь, имеется только одно входящее правило для порта 9000 9003, 1438, 1440, 1452 и одно правило исходящего трафика для порта 80, 443, 12000. Управляемый экземпляр подготовки через Azure Resource Manager развертываний завершится ошибкой, если правила входящего и исходящего настраиваются отдельно для каждого порта. Если эти порты находятся в отдельных правил, развертывание завершится ошибкой с кодом ошибки `VnetSubnetConflictWithIntendedPolicy`
@@ -122,7 +122,7 @@ ms.locfileid: "65522332"
 
 ### <a name="user-defined-routes"></a>Определяемые пользователем маршруты
 
-|ИМЯ|Префикс адреса|Next Hop|
+|Name|Префикс адреса|Next Hop|
 |----|--------------|-------|
 |subnet_to_vnetlocal|MI SUBNET|Виртуальная сеть|
 |mi-13-64-11-nexthop-Internet|13.64.0.0/11|Интернет|

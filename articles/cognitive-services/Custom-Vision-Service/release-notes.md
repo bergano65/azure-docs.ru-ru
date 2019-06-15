@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 04/03/2019
 ms.author: anroth
 ms.openlocfilehash: 4b4e449b9260debbe90523141cacc4ed76219490
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65787953"
 ---
 # <a name="custom-vision-service-release-notes"></a>Заметки о выпуске Пользовательской службы визуального распознавания
@@ -40,7 +40,7 @@ ms.locfileid: "65787953"
 
 - Пользовательская служба визуального распознавания вошел в общедоступной версии в Azure!
 - Добавлена функция Advanced обучения с помощью новой машинного обучения серверной части для повышения производительности, особенно для сложных наборов данных и точное классификации. Этот углубленный курс можно указать, бюджет время вычислений для обучения и Custom Vision эксперименте общая будет определить оптимальные параметры обучения и с изменениями. Для быстрого итераций можно продолжать использовать существующие быстрого обучения.
-- 3.0 появился API-интерфейсы. Объявлено о ближайшие устаревании API-интерфейсы pre-3.0 на 1 октября 2019 г. См. краткие руководства по документации для [.Net](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/csharp-tutorial), [Python](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/python-tutorial), [узел](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/node-tutorial), [Java](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/java-tutorial), или [Go](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/go-tutorial) примеры о том, как приступить к работе.
+- 3\.0 появился API-интерфейсы. Объявлено о ближайшие устаревании API-интерфейсы pre-3.0 на 1 октября 2019 г. См. краткие руководства по документации для [.Net](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/csharp-tutorial), [Python](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/python-tutorial), [узел](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/node-tutorial), [Java](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/java-tutorial), или [Go](https://docs.microsoft.com/azure/cognitive-services/custom-vision-service/go-tutorial) примеры о том, как приступить к работе.
 - Заменить «По умолчанию итераций» с публикация, Отмена публикации 3.0 интерфейсы API.
 - Были добавлены новые цели экспорта модели. Экспорт файла Dockerfile будет обновлен для поддержки ARM для Raspberry Pi 3. Добавлена поддержка экспорта для [пакет средств разработки концепции искусственного Интеллекта.](https://visionaidevkit.com/).
 - Увеличение ограничения тегов проекта до 500 для уровня S0. Допустимое количество увеличено до изображения каждого проекта до 100 000 для уровня S0.

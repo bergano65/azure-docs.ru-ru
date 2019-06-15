@@ -10,10 +10,10 @@ ms.tgt_pltfrm: arduino
 ms.date: 04/11/2018
 ms.author: wesmc
 ms.openlocfilehash: 00d0e3a749c4af8faacfed5f725ce16e0492c399
-ms.sourcegitcommit: 6f043a4da4454d5cb673377bb6c4ddd0ed30672d
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/08/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65409081"
 ---
 # <a name="connect-adafruit-feather-huzzah-esp8266-to-azure-iot-hub-in-the-cloud"></a>Подключение Adafruit Feather HUZZAH ESP8266 к Центру Интернета вещей Azure в облаке
@@ -186,7 +186,7 @@ ms.locfileid: "65409081"
 
 13. Введите `F1`, затем введите **Arduino** и выберите **Arduino: Плата Config**.
 
-14. Установите флажок **Selected Board:** (Выбранная плата) и введите **esp8266**, а затем выберите **Adafruit HUZZAH ESP8266 (esp8266)**.
+14. Установите флажок **Selected Board:** (Выбранная плата) и введите **esp8266**, а затем выберите **Adafruit HUZZAH ESP8266 (esp8266)** .
 
     ![Выбор платы esp8266](media/iot-hub-arduino-huzzah-esp8266-get-started/14_vscode-select-esp8266.png)
 
@@ -224,7 +224,7 @@ ms.locfileid: "65409081"
 
 2. Введите `F1`, затем введите **Arduino** и выберите **Arduino: Отправка** построение и развертывание примера приложения для Feather HUZZAH ESP8266.
 
-### <a name="enter-your-credentials"></a>Введите учетные данные
+### <a name="enter-your-credentials"></a>Ввод учетных данных
 
 После успешного завершения загрузки введите учетные данные следующим образом:
 

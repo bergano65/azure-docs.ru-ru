@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 07/05/2018
 ms.author: spelluru
 ms.openlocfilehash: 144fd11e9c1ee3e00412320840e864a3190ccdb0
-ms.sourcegitcommit: 3ced637c8f1f24256dd6ac8e180fff62a444b03c
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/17/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65833984"
 ---
 # <a name="create-multi-vm-environments-and-paas-resources-with-azure-resource-manager-templates"></a>Создание сред со множеством виртуальных машин и ресурсов PaaS с помощью шаблонов Azure Resource Manager
@@ -99,7 +99,7 @@ Azure DevTest Labs имеет [общедоступный репозиторий
 1. Войдите на [портале Azure](https://go.microsoft.com/fwlink/p/?LinkID=525040).
 1. Щелкните **Все службы** и выберите в списке **DevTest Labs**.
 1. Из списка лабораторий выберите нужную лабораторию.   
-1. В области лаборатории щелкните **Добавить+**.
+1. В области лаборатории щелкните **Добавить+** .
 1. В области **Выбор базы** в начале списка отображаются базовые образы, которые можно использовать с шаблонами Azure Resource Manager. Выберите нужный шаблон Azure Resource Manager.
 
     ![Выбор основы](./media/devtest-lab-create-environment-from-arm/choose-a-base.png)

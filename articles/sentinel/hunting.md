@@ -16,10 +16,10 @@ ms.workload: na
 ms.date: 2/28/2019
 ms.author: rkarlin
 ms.openlocfilehash: 754722508de248294667ee9e923e8faf3ad67f61
-ms.sourcegitcommit: 2ce4f275bc45ef1fb061932634ac0cf04183f181
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/07/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65236286"
 ---
 # <a name="hunt-for-threats-with-in-azure-sentinel-preview"></a>Слежения для угроз в предварительной версии Sentinel Azure
@@ -121,7 +121,7 @@ ms.locfileid: "65236286"
 
 Можно создать или изменить запрос и сохраните его как собственный запрос или поделиться им с пользователями, которые находятся в одном клиенте.
 
-   ![Сохранить запрос](./media/tutorial-hunting/save-query.png)
+   ![Сохранение запроса](./media/tutorial-hunting/save-query.png)
 
 Создайте новый запрос поможет при покупке:
 

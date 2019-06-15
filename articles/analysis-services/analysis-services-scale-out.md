@@ -9,10 +9,10 @@ ms.date: 05/06/2019
 ms.author: owend
 ms.reviewer: minewiskan
 ms.openlocfilehash: 5524645153db0468076cc9b567965bff79d915cb
-ms.sourcegitcommit: 0568c7aefd67185fd8e1400aed84c5af4f1597f9
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65192319"
 ---
 # <a name="azure-analysis-services-scale-out"></a>Горизонтальное масштабирование служб Azure Analysis Services
@@ -108,14 +108,14 @@ ms.locfileid: "65192319"
 Возвращаемые коды состояния:
 
 
-|Код  |ОПИСАНИЕ  |
+|Код  |Описание  |
 |---------|---------|
 |-1     |  Недействительно       |
-|0     | Выполняется репликация        |
+|0     | Репликация        |
 |1     |  Восстановление       |
 |2     |   Завершено       |
 |3     |   Сбой      |
-|4.     |    Завершение     |
+|4\.     |    Завершение     |
 |||
 
 

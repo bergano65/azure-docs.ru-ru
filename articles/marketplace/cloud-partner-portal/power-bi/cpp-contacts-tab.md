@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 04/24/2019
 ms.author: pabutler
 ms.openlocfilehash: f659ad2f75f9dad390c37f0e1736af5991a32dfc
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64943239"
 ---
 # <a name="power-bi-app-contacts-tab"></a>Вкладка контактов приложения Power BI
@@ -25,7 +25,7 @@ ms.locfileid: "64943239"
 
 Следующая таблица описывает назначение каждого поля.  Обязательные поля помечены звездочкой (*). 
 
-|   Поле               |   ОПИСАНИЕ                                                            |
+|   Поле               |   Описание                                                            |
 |-----------------------|--------------------------------------------------------------------------|
 | *Контакт по техническим вопросам* | Контактное лицо для связи по техническим вопросам между AppSource и вашей организацией.    |
 | **Имя\***              | Имя лица или группы, предоставляющей техническую или инженерную поддержку. |

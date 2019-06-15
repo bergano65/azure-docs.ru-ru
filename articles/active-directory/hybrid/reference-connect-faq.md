@@ -16,10 +16,10 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 2caca430de5ad666f4f4341e0723bc3173d6d91a
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65137787"
 ---
 # <a name="azure-active-directory-connect-faq"></a>Часто задаваемые вопросы по Azure Active Directory Connect
@@ -62,7 +62,7 @@ ms.locfileid: "65137787"
 **Вопрос. Поддерживается ли использование нескольких соединителей для одного домена Active Directory в Azure AD Connect?**  
 Нет, несколько соединителей для одного домена AD не поддерживаются. 
 
-**Вопрос. Можно ли переместить базу данных Azure AD Connect из локальной базы данных на удаленный экземпляр SQL Server?**   
+**Вопрос. Можно ли переместить базу данных Azure AD Connect из локальной базы данных на удаленный экземпляр SQL Server?**    
 Да, ниже приведены общие рекомендации о том, как это сделать. Сейчас мы работаем над созданием более подробного документа.
 1. Архивирование базы данных ADSync LocalDB.
 Для этого проще всего использовать SQL Server Management Studio, установленный на том же компьютере, что и Azure AD Connect. Подключитесь к *(LocalDb).\ADSync*, затем создайте резервную копию базы данных ADSync.

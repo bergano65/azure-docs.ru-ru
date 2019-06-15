@@ -15,10 +15,10 @@ ms.workload: tbd
 ms.date: 04/22/2018
 ms.author: yegu
 ms.openlocfilehash: a93d21b07dc486f743694ee99f60018ed4ef517c
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64943873"
 ---
 # <a name="aspnet-output-cache-provider-for-azure-cache-for-redis"></a>Поставщик кэша вывода ASP.NET для кэша Azure для Redis
@@ -59,7 +59,7 @@ Install-Package Microsoft.Web.RedisOutputCacheProvider
 
 Задайте для атрибутов значения из колонки своего кэша на портале Microsoft Azure и настройте другие параметры по своему усмотрению. Инструкции по доступу к свойствам кэша см. в разделе [Настройка параметров кэша Azure для Redis](cache-configure.md#configure-azure-cache-for-redis-settings).
 
-| Атрибут | type | значение по умолчанию | ОПИСАНИЕ |
+| Атрибут | type | значение по умолчанию | Описание |
 | --------- | ---- | ------- | ----------- |
 | *узел* | string | «localhost» | Redis server IP-адрес или имя |
 | *port* | положительное целое число | 6379 (без SSL)<br/>6380 (SSL) | Порт сервера redis |

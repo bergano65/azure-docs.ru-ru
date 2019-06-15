@@ -2,7 +2,7 @@
 title: Управление секретами приложения "Сетка Azure Service Fabric" | Документация Майкрософт
 description: Управляйте секретами приложений, чтобы безопасно создать и развернуть приложение "Сетка Service Fabric".
 services: service-fabric-mesh
-keywords: секреты
+keywords: секретные коды
 author: aljo-microsoft
 ms.author: aljo
 ms.date: 4/2/2019
@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.service: service-fabric-mesh
 manager: chackdan
 ms.openlocfilehash: 251611e814f890e3cebf0fda2d33ab548a8ff213
-ms.sourcegitcommit: 8fc5f676285020379304e3869f01de0653e39466
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/09/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65506450"
 ---
 # <a name="manage-service-fabric-mesh-application-secrets"></a>Управление секретами приложения "Сетка Service Fabric"
@@ -206,7 +206,7 @@ az mesh deployment create –-<template-file> or --<template-uri>
 ```
 Передайте или **template-file**, или **template-uri** (но не оба).
 
-Например:
+Пример:
 - az mesh deployment create — c:\MyMeshTemplates\SecretTemplate1.txt
 - az mesh deployment create — https://www.fabrikam.com/MyMeshTemplates/SecretTemplate1.txt
 

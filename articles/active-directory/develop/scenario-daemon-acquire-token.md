@@ -17,10 +17,10 @@ ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: aa4f5dc7a5aceaf81f71eacd36d131471a57e5c0
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65075375"
 ---
 # <a name="daemon-app-that-calls-web-apis---acquire-a-token"></a>Управляющая программа приложение, которое вызывает веб-интерфейсы API — получение маркера
@@ -65,7 +65,7 @@ public final static String KEYVAULT_DEFAULT_SCOPE = "https://vault.azure.net/.de
 
 > [!IMPORTANT]
 > Для MSAL (конечная точка версии 2.0), запрос маркера доступа для ресурса, принимая маркер доступа версии 1.0 Azure AD выполняет синтаксический анализ нужную аудиторию из запрошенной области все, что предшествует последний символ косой черты и использовать ее в качестве идентификатора ресурса.
-> Таким образом Если, например Azure SQL (**https://database.windows.net**) ресурс ожидает аудитории заканчивается косой чертой (для Azure SQL: `https://database.windows.net/`), вам потребуется запросить область `https://database.windows.net//.default` (Обратите внимание, двойная косая черта). См. также MSAL.NET проблема [#747](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/747): Опущен ресурса url завершающую косую черту, которое вызвало сбой проверки подлинности sql.
+> Таким образом Если, например Azure SQL ( **https://database.windows.net** ) ресурс ожидает аудитории заканчивается косой чертой (для Azure SQL: `https://database.windows.net/` ), вам потребуется запросить область `https://database.windows.net//.default` (Обратите внимание, двойная косая черта). См. также MSAL.NET проблема [#747](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/issues/747): Опущен ресурса url завершающую косую черту, которое вызвало сбой проверки подлинности sql.
 
 ## <a name="acquiretokenforclient-api"></a>AcquireTokenForClient API
 

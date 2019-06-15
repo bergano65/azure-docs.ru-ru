@@ -13,10 +13,10 @@ ms.author: glenga
 ms.reviewer: sunayv
 ms.custom: ''
 ms.openlocfilehash: 26f6502f63b39d3f1ecf8dfeb09c8df4daa63b68
-ms.sourcegitcommit: 36c50860e75d86f0d0e2be9e3213ffa9a06f4150
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/16/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65786119"
 ---
 # <a name="call-a-function-from-powerapps"></a>Вызов функции из PowerApps
@@ -160,7 +160,7 @@ ms.locfileid: "65786119"
 
     ![Выбранный элемент](media/functions-powerapps-scenario/selected-item.png)
 
-1. В приложении не требуется исходное окно. В области слева наведите указатель мыши на раздел **Экран1**, щелкните **...**, а затем **Удалить**.
+1. В приложении не требуется исходное окно. В области слева наведите указатель мыши на раздел **Экран1**, щелкните **...** , а затем **Удалить**.
 
     ![Удаление окна](media/functions-powerapps-scenario/delete-screen.png)
 

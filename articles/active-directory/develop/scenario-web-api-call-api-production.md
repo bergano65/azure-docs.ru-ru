@@ -16,10 +16,10 @@ ms.author: jmprieur
 ms.custom: aaddev
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: 7de892a0851e556c5046fe4b3691f39b42a9d237
-ms.sourcegitcommit: 0ae3139c7e2f9d27e8200ae02e6eed6f52aca476
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65074760"
 ---
 # <a name="web-api-that-calls-web-apis---move-to-production"></a>Веб-API, который вызывает веб-API - переносу в рабочую среду
@@ -32,6 +32,6 @@ ms.locfileid: "65074760"
 
 Теперь, когда вы знаете основы для вызова веб-API из собственных веб-API, будет интересно узнать это руководство, в котором описывается код, который используется для создания защищенного веб-API вызывает веб-API.
 
-| Образец | платформа | ОПИСАНИЕ |
+| Образец | платформа | Описание |
 |--------|----------|-------------|
 | [active-directory-aspnetcore-webapi-tutorial-v2](https://github.com/Azure-Samples/active-directory-dotnet-native-aspnetcore-v2/tree/master/2.%20Web%20API%20now%20calls%20Microsoft%20Graph) | ASP.NET Core 2.2 веб-API, рабочий стол (WPF) | Веб-API ASP.NET Core 2.2 вызова Microsoft Graph, сам вызвать из приложения WPF с помощью платформы удостоверений Microsoft (версии 2.0) |

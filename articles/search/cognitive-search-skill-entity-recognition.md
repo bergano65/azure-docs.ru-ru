@@ -12,10 +12,10 @@ ms.date: 05/02/2019
 ms.author: luisca
 ms.custom: seodec2018
 ms.openlocfilehash: f05161dbbfd9293cd7b1cbf447bb7ca1c313250c
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65023446"
 ---
 #    <a name="entity-recognition-cognitive-skill"></a>Когнитивный навык распознавания сущностей
@@ -23,9 +23,9 @@ ms.locfileid: "65023446"
 Навык **распознавания сущностей** извлекает сущности различных типов из текста. Этот навык использует модели машинного обучения, предоставляемые функцией [Анализ текста](https://docs.microsoft.com/azure/cognitive-services/text-analytics/overview) в Cognitive Services.
 
 > [!NOTE]
-> Как расширить область путем увеличения частоты обработки, добавление большего количества документов, или добавлять дополнительные алгоритмы ии, вам нужно будет [присоединить оплачиваемых ресурса Cognitive Services](cognitive-search-attach-cognitive-services.md). Плата взимается при вызове API в Cognitive Services и извлечении изображений при открытии документов в службе "Поиск Azure". За извлечение текста из документов плата не взимается.
+> По мере расширения области путем увеличения частоты обработки и добавления большего количества документов или дополнительных алгоритмов ИИ, вам нужно будет [присоединить оплачиваемый ресурс Cognitive Services](cognitive-search-attach-cognitive-services.md). Плата взимается при вызове API в Cognitive Services и извлечении изображений при открытии документов в службе "Поиск Azure". За извлечение текста из документов плата не взимается.
 >
-> Выполнение встроенных навыков оплачивается по существующий [Cognitive Services оплаты как то перейти цена](https://azure.microsoft.com/pricing/details/cognitive-services/). Цены на извлечение образа описан на [странице с ценами на службу поиска Azure](https://go.microsoft.com/fwlink/?linkid=2042400).
+> Плата за выполнение встроенных навыков взимается в рамках существующей [модели оплаты Cognitive Services по мере использования](https://azure.microsoft.com/pricing/details/cognitive-services/). Плата за извлечение изображений указана на [странице с ценами на Поиск Azure](https://go.microsoft.com/fwlink/?linkid=2042400).
 
 
 ## <a name="odatatype"></a>@odata.type  
@@ -38,7 +38,7 @@ Microsoft.Skills.Text.EntityRecognitionSkill
 
 Все параметры чувствительны к регистру и являются необязательными.
 
-| Имя параметра     | ОПИСАНИЕ |
+| Имя параметра     | Описание |
 |--------------------|-------------|
 | Категории    | Массив категорий, который следует извлекать.  Возможные типы категорий: `"Person"`, `"Location"`, `"Organization"`, `"Quantity"`, `"Datetime"`, `"URL"`, `"Email"`. Если категория не указана, возвращаются все типы.|
 |defaultLanguageCode |  Код языка вводимого текста. Поддерживается следующие языки: `de, en, es, fr, it`.|
@@ -49,7 +49,7 @@ Microsoft.Skills.Text.EntityRecognitionSkill
 
 ## <a name="skill-inputs"></a>Входные данные навыков
 
-| Ввод имени      | ОПИСАНИЕ                   |
+| Ввод имени      | Описание                   |
 |---------------|-------------------------------|
 | languageCode  | Необязательный элемент. Значение по умолчанию — `"en"`.  |
 | Text          | Текст для анализа.          |
@@ -59,7 +59,7 @@ Microsoft.Skills.Text.EntityRecognitionSkill
 > [!NOTE]
 > Для некоторых языков категории сущностей не поддерживаются. Только языки _en_, _es_ поддерживают извлечение типов `"Quantity"`, `"Datetime"`, `"URL"`, `"Email"`.
 
-| Имя вывода     | ОПИСАНИЕ                   |
+| Имя вывода     | Описание                   |
 |---------------|-------------------------------|
 | Люди      | Массив строк, где каждая строка представляет имя человека. |
 | Расположения  | Массив строк, где каждая строка представляет расположение. |

@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 04/24/2019
 ms.author: pabutler
 ms.openlocfilehash: f2d735662fcd177f64d1ebc71a25b7d7629db3ce
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64942664"
 ---
 # <a name="container-marketplace-tab"></a>Вкладка Marketplace для контейнера
@@ -26,7 +26,7 @@ ms.locfileid: "64942664"
 
 В следующей таблице описаны назначение и содержимое этих полей. Обязательные поля помечены звездочкой (*).
 
-|    Поле                  |       ОПИСАНИЕ                                                            |
+|    Поле                  |       Описание                                                            |
 |  ---------                |     ---------------                                                          |
 | **Заголовок\***                 | Заголовок предложения. Он будет отображаться на видном месте в Marketplace.  Максимальная длина составляет 50 символов. |
 | **Сводка\***               | Краткое описание предложения. Максимальная длина составляет 100 символов. |

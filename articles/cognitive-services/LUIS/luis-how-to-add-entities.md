@@ -12,10 +12,10 @@ ms.topic: article
 ms.date: 04/01/2019
 ms.author: diberry
 ms.openlocfilehash: 241e89ac7fa78184e7c55f9e8065e1534cea9143
-ms.sourcegitcommit: f6ba5c5a4b1ec4e35c41a4e799fb669ad5099522
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/06/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65148729"
 ---
 # <a name="create-entities-without-utterances"></a>Создание сущностей без высказываний
@@ -86,7 +86,7 @@ ms.locfileid: "65148729"
 
 1. В **Дочерний №1** выберите сущность **number** из списка.
 
-1. В **Дочерний №2** выберите из списка сущность **Имя формы "Отдел кадров"**. 
+1. В **Дочерний №2** выберите из списка сущность **Имя формы "Отдел кадров"** . 
 
 1. Нажмите кнопку **Готово**.
 

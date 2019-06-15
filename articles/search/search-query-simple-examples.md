@@ -11,10 +11,10 @@ ms.date: 05/02/2019
 ms.author: heidist
 ms.custom: seodec2018
 ms.openlocfilehash: 0c47212e51725e7d4a173c441709dca739d4e357
-ms.sourcegitcommit: 4b9c06dad94dfb3a103feb2ee0da5a6202c910cc
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 05/02/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "65024533"
 ---
 # <a name="query-examples-using-the-simple-search-syntax-in-azure-search"></a>Примеры запросов, используя синтаксис «простой» поиск в службе поиска Azure
@@ -35,7 +35,7 @@ ms.locfileid: "65024533"
 
 2. Добавьте элемент **api-key** и задайте для него следующую строку: `252044BE3886FE4A8E3BAA4F595114BB`. Это ключ запроса для службы поиска в песочнице, в которой размещен индекс поиска вакансий Нью-Йорка.
 
-Настроенный заголовок запроса можно многократно использовать для всех запросов в этой статье, только заменяя строку **search=**. 
+Настроенный заголовок запроса можно многократно использовать для всех запросов в этой статье, только заменяя строку **search=** . 
 
   ![Заголовок запроса Postman](media/search-query-lucene-examples/postman-header.png)
 
