@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 09/14/2018
 ms.author: pabutler
 ms.openlocfilehash: c3e483a33d986eff767b3529e30208319ad90b23
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64934999"
 ---
 <a name="get-customer-leads"></a>Получение интересов
@@ -87,7 +87,7 @@ ms.locfileid: "64934999"
 - Адрес электронной почты: jsmith\@microsoft.com.
 - Телефон: 1234567890
 - Страна: США
-- Компании: Microsoft
+- Компании: Майкрософт
 - Заголовок. ТЕХНИЧЕСКИЙ ДИРЕКТОР
 
 >[!Note]

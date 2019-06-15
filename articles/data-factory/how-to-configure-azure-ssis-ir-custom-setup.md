@@ -13,10 +13,10 @@ ms.author: sawinark
 ms.reviewer: douglasl
 manager: craigg
 ms.openlocfilehash: cfa9d6a1a287281bec91facf04c73506db81f84a
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64711569"
 ---
 # <a name="customize-setup-for-the-azure-ssis-integration-runtime"></a>Пользовательская установка для среды выполнения интеграции Azure–SSIS
@@ -105,7 +105,7 @@ ms.locfileid: "64711569"
 
       ![Ввод подписанного URL-адреса.](media/tutorial-create-azure-ssis-runtime-portal/advanced-settings.png)
 
-      При подготовке или перенастройке Azure SSIS IR с помощью PowerShell, прежде чем запустить Azure SSIS IR, выполните командлет `Set-AzDataFactoryV2IntegrationRuntime` с URI SAS контейнера в качестве значения нового параметра `SetupScriptContainerSasUri`. Например: 
+      При подготовке или перенастройке Azure SSIS IR с помощью PowerShell, прежде чем запустить Azure SSIS IR, выполните командлет `Set-AzDataFactoryV2IntegrationRuntime` с URI SAS контейнера в качестве значения нового параметра `SetupScriptContainerSasUri`. Пример:
 
       ```powershell
       Set-AzDataFactoryV2IntegrationRuntime -DataFactoryName $MyDataFactoryName `
@@ -126,7 +126,7 @@ ms.locfileid: "64711569"
 
       ![Подключение к хранилищу Azure с помощью подписанного URL-адреса](media/how-to-configure-azure-ssis-ir-custom-setup/custom-setup-image9.png)
 
-   2.  Выберите **Use a SAS URI** (Использовать URI SAS) и введите следующий URI SAS для контейнера общедоступной предварительной версии. Нажмите кнопку **Далее**, а затем — **Подключить**.
+   2\.  Выберите **Use a SAS URI** (Использовать URI SAS) и введите следующий URI SAS для контейнера общедоступной предварительной версии. Нажмите кнопку **Далее**, а затем — **Подключить**.
 
       `https://ssisazurefileshare.blob.core.windows.net/publicpreview?sp=rl&st=2018-04-08T14%3A10%3A00Z&se=2020-04-10T14%3A10%3A00Z&sv=2017-04-17&sig=mFxBSnaYoIlMmWfxu9iMlgKIvydn85moOnOch6%2F%2BheE%3D&sr=c`
 

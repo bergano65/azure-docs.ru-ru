@@ -13,10 +13,10 @@ author: nabhishek
 ms.author: abnarain
 manager: craigg
 ms.openlocfilehash: d299a785d50657ef40c0c49cb2dce33b8939fd02
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60860994"
 ---
 # <a name="transform-data-by-running-a-jar-activity-in-azure-databricks"></a>Преобразование данных с помощью выполнения действий Jar в Azure Databricks
@@ -60,7 +60,7 @@ ms.locfileid: "60860994"
 |:--|---|:-:|
 |name|Имя действия в конвейере.|Да|
 |description|Описание действия.|Нет|
-|тип|Тип действия Jar в Databricks — DatabricksSparkJar.|Да|
+|type|Тип действия Jar в Databricks — DatabricksSparkJar.|Да|
 |linkedServiceName|Имя связанной службы Databricks, в которой выполняется действие Jar. Дополнительные сведения об этой связанной службе см. в статье  [Вычислительные среды, поддерживаемые фабрикой данных Azure](compute-linked-services.md) .|Да|
 |mainClassName|Полное имя класса, содержащего метод main, который будет выполнен. Этот класс должен содержаться в файле JAR, предоставляемом в виде библиотеки.|Да|
 |parameters|Параметры, которые будут переданы в метод main.  Массив строк.|Нет|

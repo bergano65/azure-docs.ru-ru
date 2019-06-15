@@ -15,10 +15,10 @@ ms.workload: infrastructure-services
 ms.date: 11/06/2018
 ms.author: genli
 ms.openlocfilehash: baed2b23a321c53a614303d3085fbb3a4bf6ad0b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60831101"
 ---
 # <a name="back-end-server-certificate-is-not-whitelisted-for-an-application-gateway-using-an-internal-load-balancer-with-an-app-service-environment"></a>Отсутствие сертификата внутреннего сервера в списке разрешений для Шлюза приложений, использующего внутреннюю подсистему балансировки нагрузки и Среду службы приложений
@@ -31,7 +31,7 @@ ms.locfileid: "60831101"
 
 **Конфигурация Шлюза приложений:**
 
-- **Прослушиватель**. Многосайтовый
+- **Прослушиватель**. Многосайтовые подключения
 - **Port.** 443
 - **Имя узла:** test.appgwtestase.com
 - **SSL-сертификат:** CN=test.appgwtestase.com
@@ -70,6 +70,6 @@ ms.locfileid: "60831101"
 
 Для уменьшения издержек можно передать сертификат ILB в параметры HTTP, активировав путь пробы. (Этот шаг предназначен только для списка разрешений. Он не будет использоваться для SSL-подключения.) Вы можете извлечь сертификат ILB, получив доступ к ILB с помощью его IP-адреса с вашего браузера по HTTPS, затем экспортировав SSL-сертификат в формате CER с кодировкой Base-64 и отправив его в соответствующие параметры HTTP.
 
-## <a name="need-help-contact-support"></a>Нужна помощь? Обращение в службу поддержки
+## <a name="need-help-contact-support"></a>Требуется помощь? Обратитесь в службу поддержки.
 
 Если вам все еще нужна помощь, [обратитесь в службу поддержки](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade), которая поможет быстро устранить проблему.

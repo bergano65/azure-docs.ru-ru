@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 11/30/2018
 ms.author: pabutler
 ms.openlocfilehash: a393620f28d45ec494c4e899f01e7e9a92b3ceba
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64938287"
 ---
 # <a name="deploy-a-vm-from-your-vhds"></a>Развертывание виртуальной машины из дисков VHD
@@ -64,7 +64,7 @@ ms.locfileid: "64938287"
    | Пароль администратора              | Пароль учетной записи администратора для новой виртуальной машины                                  |
    | тип ОС;                     | Операционная система виртуальной машины: `Windows` \| `Linux`                                    |
    | Идентификатор подписки             | Идентификатор выбранной подписки                                      |
-   | Location                    | Географическое расположение развертывания                                        |
+   | Расположение                    | Географическое расположение развертывания                                        |
    | Размер виртуальной машины                     | [Размер виртуальной машины Azure](https://docs.microsoft.com/azure/virtual-machines/windows/sizes), например `Standard_A2` |
    | Имя общедоступного IP-адреса      | Имя общедоступного IP-адреса                                               |
    | Имя виртуальной машины                     | Имя новой виртуальной машины                                                           |

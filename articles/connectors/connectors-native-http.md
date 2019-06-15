@@ -12,10 +12,10 @@ ms.topic: article
 tags: connectors
 ms.date: 08/25/2018
 ms.openlocfilehash: 22b21512c78a06f2639ca9339f3b7a20c7f5bfa3
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64713816"
 ---
 # <a name="call-http-or-https-endpoints-with-azure-logic-apps"></a>Вызов конечных точек HTTP или HTTPS с помощью Azure Logic Apps
@@ -71,7 +71,7 @@ ms.locfileid: "64713816"
    ![Выбор действия HTTP](./media/connectors-native-http/select-http-action.png)
 
    Чтобы добавить действие между шагами, переместите указатель на стрелку между шагами. 
-   Выберите появившийся знак "плюс" (**+**), а затем щелкните **Добавить действие**.
+   Выберите появившийся знак "плюс" ( **+** ), а затем щелкните **Добавить действие**.
 
 1. Укажите [параметры и значения действия HTTP](../logic-apps/logic-apps-workflow-actions-triggers.md##http-action), которые необходимо включить в вызов целевой конечной точки. 
 

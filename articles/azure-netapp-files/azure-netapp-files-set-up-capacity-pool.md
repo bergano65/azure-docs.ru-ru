@@ -15,10 +15,10 @@ ms.topic: conceptual
 ms.date: 02/15/2019
 ms.author: b-juche
 ms.openlocfilehash: 8f50b2ad34c705c8d3831d8243f136c41d750dc0
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60691104"
 ---
 # <a name="set-up-a-capacity-pool"></a>Настройка пула емкости
@@ -47,7 +47,7 @@ ms.locfileid: "60691104"
 
    * **Уровень службы**   
      В этом поле отображается целевая производительность пула емкости.  
-     Выберите уровень обслуживания для пула емкости: [**"Премиум"**](azure-netapp-files-service-levels.md#Premium) или [**"Стандартный"**](azure-netapp-files-service-levels.md#Standard).
+     Выберите уровень обслуживания для пула емкости: [ **"Премиум"** ](azure-netapp-files-service-levels.md#Premium) или [ **"Стандартный"** ](azure-netapp-files-service-levels.md#Standard).
 
    * **Размер**      
      Укажите приобретаемый размер пула емкости.        

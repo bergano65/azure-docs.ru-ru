@@ -12,10 +12,10 @@ ms.topic: article
 ms.date: 04/23/2019
 ms.author: aschhab
 ms.openlocfilehash: 540435e3e018ae77477030ae8b9f727d71782121
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64704587"
 ---
 # <a name="use-firewall-rules"></a>Использование правил брандмауэра
@@ -72,7 +72,7 @@ ms.locfileid: "64704587"
 > Хотя запрещающие правила отсутствуют, в шаблоне Azure Resource Manager для действия по умолчанию установлено значение **Allow**, которое не ограничивает подключения.
 > При создании правил виртуальной сети или брандмауэров необходимо изменить значение параметра ***defaultAction***.
 > 
-> from
+> От
 > ```json
 > "defaultAction": "Allow"
 > ```
@@ -149,7 +149,7 @@ ms.locfileid: "64704587"
 
 Инструкции по ограничению доступа к Служебной шине из виртуальных сетей Azure, см. по следующей ссылке:
 
-- [Use Virtual Network service endpoints with Azure Service Bus][lnk-vnet] (Использование конечных точек виртуальной сети для Служебной шины Azure)
+- [Use Virtual Network service endpoints with Azure Service Bus][lnk-vnet] (Использование конечных точек служб для виртуальной сети для Служебной шины Azure)
 
 <!-- Links -->
 

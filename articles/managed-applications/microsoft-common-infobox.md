@@ -14,11 +14,11 @@ ms.workload: na
 ms.date: 06/15/2018
 ms.author: tomfitz
 ms.openlocfilehash: 2330197b4512dfdd72de3529145103b644594e25
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60252097"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64711218"
 ---
 # <a name="microsoftcommoninfobox-ui-element"></a>Элемент пользовательского интерфейса Microsoft.Common.InfoBox
 Элемент управления, который добавляет поле сведений. Поле содержит важный текст или предупреждения, которые помогают пользователям понять, какие значения нужно указать. Он также может быть связан с URI, по которому можно получить более подробную информацию.

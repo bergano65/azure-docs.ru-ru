@@ -16,10 +16,10 @@ ms.date: 12/12/2018
 ms.author: mathoma
 ms.reviewer: jroth
 ms.openlocfilehash: 99c4f0f99af61196cf1a12f2f68a7d10d8b2e6c7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "61477167"
 ---
 # <a name="what-is-sql-server-on-azure-virtual-machines-windows"></a>Что собой представляет SQL Server на виртуальных машинах Azure (Windows)
@@ -36,7 +36,7 @@ ms.locfileid: "61477167"
 
 Виртуальные машины Azure SQL Server также поддерживают [автоматическую установку исправлений](virtual-machines-windows-sql-automated-patching.md), функцию, которая позволяет планировать график автоматической установки важных обновлений для Windows и SQL Server.
 
-## <a name="automated-backups"></a>Автоматически создаваемые резервные копии
+## <a name="automated-backups"></a>Автоматическое резервное копирование
 
 Виртуальные машины Azure SQL Server поддерживают [автоматическое резервное копирование](virtual-machines-windows-sql-automated-backup-v2.md), при котором в хранилище BLOB-объектов регулярно создаются резервные копии базы данных. Это также можно выполнять вручную. Дополнительные сведения см. в статье [Использование службы хранилища Azure для архивации и восстановления SQL Server](virtual-machines-windows-use-storage-sql-server-backup-restore.md).
 
@@ -74,7 +74,7 @@ ms.locfileid: "61477167"
 ### <a id="BYOL"></a> Использование собственной лицензии
 Вы также можете использовать собственную лицензию (BYOL). В этом сценарии вы платите только за виртуальную машину и не несете расходы на лицензирование SQL Server.  Использование технологии BYOL со временем позволяет снизить расходы на использование непрерывных производственных рабочих нагрузок. Требования для использования этой возможности см. в [руководстве по выбору ценовой категории для виртуальных машин Azure SQL Server](virtual-machines-windows-sql-server-pricing-guidance.md#byol).
 
-Чтобы использовать собственную лицензию, вы можете сменить существующую модель лицензирования с оплатой за использование для виртуальной машины SQL или развернуть образ с префиксом **{BYOL}**. Дополнительные сведения о переходе с модели лицензирования с оплатой за использование на BYOL см. в статье [How to change the licensing model for a SQL virtual machine in Azure](virtual-machines-windows-sql-ahb.md) (Изменение модели лицензирования для виртуальной машины SQL в Azure). 
+Чтобы использовать собственную лицензию, вы можете сменить существующую модель лицензирования с оплатой за использование для виртуальной машины SQL или развернуть образ с префиксом **{BYOL}** . Дополнительные сведения о переходе с модели лицензирования с оплатой за использование на BYOL см. в статье [How to change the licensing model for a SQL virtual machine in Azure](virtual-machines-windows-sql-ahb.md) (Изменение модели лицензирования для виртуальной машины SQL в Azure). 
 
 | Version | Операционная система | Выпуск |
 | --- | --- | --- |

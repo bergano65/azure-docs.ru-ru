@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 09/13/2018
 ms.author: pabutler
 ms.openlocfilehash: ff822e87bfec5daa161172c0d47975eb06cc2808
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64935649"
 ---
 # <a name="appsource-package-preparation"></a>Подготовка пакета AppSource
@@ -73,7 +73,7 @@ ms.locfileid: "64935649"
 
 ![CRMScreenShot4](media/CRMScreenShot4.png)
 
-## <a name="b-create-an-appsource-package"></a>2. Создание пакета AppSource
+## <a name="b-create-an-appsource-package"></a>2\. Создание пакета AppSource
 
 Для пакета AppSource требуется несколько дополнительных файлов.
 

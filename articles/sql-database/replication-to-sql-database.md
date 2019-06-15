@@ -13,10 +13,10 @@ ms.reviewer: mathoma
 manager: craigg
 ms.date: 01/25/2019
 ms.openlocfilehash: b9d6569504b5352c6187afe12d903c986019c517
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60646814"
 ---
 # <a name="replication-to-sql-database-single-and-pooled-databases"></a>Репликация в отдельную базу данных и в базы данных в пуле службы "База данных SQL Azure"
@@ -104,10 +104,10 @@ ms.locfileid: "60646814"
 
 ## <a name="examples"></a>Примеры
 
-Создайте публикацию и принудительную подписку. Дополнительные сведения можно найти в разделе 
+Создайте публикацию и принудительную подписку. Дополнительные сведения можно найти в разделе
   
 - [Создание публикации](https://docs.microsoft.com/sql/relational-databases/replication/publish/create-a-publication)
-- [Создание принудительной подписки](https://docs.microsoft.com/sql/relational-databases/replication/create-a-push-subscription/) с использованием имени сервера Базы данных SQL Azure в качестве подписчика (например, **N'azuresqldbdns.database.windows.net'**) и имени базы данных SQL Azure в качестве целевой базы данных (например, **AdventureWorks**).  
+- [Создание принудительной подписки](https://docs.microsoft.com/sql/relational-databases/replication/create-a-push-subscription/) с использованием имени сервера Базы данных SQL Azure в качестве подписчика (например, **N'azuresqldbdns.database.windows.net'** ) и имени базы данных SQL Azure в качестве целевой базы данных (например, **AdventureWorks**).  
 
 ## <a name="see-also"></a>См. также  
 

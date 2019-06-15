@@ -16,10 +16,10 @@ ms.date: 04/19/2018
 ms.author: mahender
 ms.custom: seodec18
 ms.openlocfilehash: 50905b86924e0f564eaf4867c2906ad8740ddbaf
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60851192"
 ---
 # <a name="how-to-configure-your-app-service-application-to-use-google-login"></a>Как настроить приложение службы приложений для использования имени для входа Google
@@ -35,7 +35,7 @@ ms.locfileid: "60851192"
 3. После создания проекта выберите его. На панели мониторинга проекта выберите **Go to APIs overview** (Перейти к обзору API-интерфейсов).
 4. Выберите **Enable APIs and services** (Включить API-интерфейсы и службы). Выполните поиск **API Google+** и выберите его. Затем щелкните **Включить**.
 5. В области навигации слева выберите **Учетные данные** > **OAuth consent screen** (Экран согласия OAuth), выберите свой **адрес электронной почты**, введите **имя продукта** и щелкните **Сохранить**.
-6. На вкладке **Учетные данные** щелкните **Create credentials (Создать учетные данные)** > **OAuth client ID (Идентификатор клиента OAuth)**.
+6. На вкладке **Учетные данные** щелкните **Create credentials (Создать учетные данные)**  > **OAuth client ID (Идентификатор клиента OAuth)** .
 7. На экране для создания идентификатора клиента выберите **Веб-приложение**.
 8. Вставьте скопированный ранее **URL-адрес** службы приложений в поле **Authorized JavaScript Origins** (Разрешенные источники JavaScript) и вставьте универсальный код ресурса (URI) перенаправления в поле **Authorized Redirect URI** (Разрешенный код URI перенаправления). Универсальный код ресурса (URI) перенаправления — это URL-адрес приложения, дополненный путем */.auth/login/google/callback*. Например, `https://contoso.azurewebsites.net/.auth/login/google/callback`. Убедитесь, что используете схему HTTPS. Затем щелкните **Создать**.
 9. На следующем экране запишите идентификатор клиента и секрет клиента.

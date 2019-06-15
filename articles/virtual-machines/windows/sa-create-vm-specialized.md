@@ -17,11 +17,11 @@ ms.date: 05/23/2017
 ms.author: cynthn
 ROBOTS: NOINDEX
 ms.openlocfilehash: f2110a749c41f59b11a6d400faa2e42e751305fe
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60251080"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64693816"
 ---
 # <a name="create-a-vm-from-a-specialized-vhd-in-a-storage-account"></a>Создание виртуальной машины на основе специализированного VHD в учетной записи хранения
 
@@ -126,7 +126,7 @@ C:\Users\Public\Doc...  https://mystorageaccount.blob.core.windows.net/mycontain
 Stop-AzVM -ResourceGroupName myResourceGroup -Name myVM
 ```
 
-**Состояние** виртуальной машины на портале Azure изменится с **Остановлено** на **Остановлено (освобождено)**.
+**Состояние** виртуальной машины на портале Azure изменится с **Остановлено** на **Остановлено (освобождено)** .
 
 ### <a name="get-the-storage-account-urls"></a>Получение URL-адресов учетной записи хранения
 Необходимо получить URL-адреса исходной и целевой учетных записей хранения. URL-адреса выглядят следующим образом: `https://<storageaccount>.blob.core.windows.net/<containerName>/`. Если вы уже знаете имена учетной записи хранения и контейнера, то можете просто подставить эти данные в скобки, чтобы создать URL-адрес. 

@@ -11,10 +11,10 @@ ms.service: cost-management
 manager: ormaoz
 ms.custom: ''
 ms.openlocfilehash: 007b6c409dde248a4dde7a15fd16b543add234bc
-ms.sourcegitcommit: e7d4881105ef17e6f10e8e11043a31262cfcf3b7
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64870317"
 ---
 # <a name="manage-aws-costs-and-usage-in-azure"></a>Управление на AWS и использовании в Azure
@@ -78,12 +78,12 @@ _Перед началом_: Если вы не знакомы с анализа
 | Измерение | Заголовок ВАЛ Amazon | Области действия | Комментарии |
 | --- | --- | --- | --- |
 | Зона доступности | LineItem/AvailabilityZone | Все |   |
-| Location | продукт или регион | Все |   |
+| Расположение | продукт или регион | Все |   |
 | средство измерения. |   | Все |   |
-| Категория измерения | lineItem/ProductCode | Все |   |
-| Подкатегория измерения | LineItem/UsageType | Все |   |
+| Категория единицы измерения | lineItem/ProductCode | Все |   |
+| Подкатегория единицы измерения | LineItem/UsageType | Все |   |
 | Операция | lineItem/операции | Все |   |
-| Resource | lineItem/ResourceId | Все |   |
+| Ресурс | lineItem/ResourceId | Все |   |
 | Тип ресурса | продукта/instanceType | Все | Если продукт/instanceType имеет значение null, используется lineItem/UsageType. |
 | ResourceGuid | Н/Д | Все | Счетчиков Azure GUID. |
 | Имя службы | продукта/ProductName | Все | Если продукт/ProductName имеет значение null, используется lineItem/ProductCode. |

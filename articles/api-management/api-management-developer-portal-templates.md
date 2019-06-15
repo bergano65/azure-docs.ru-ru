@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 01/09/2017
 ms.author: apimpm
 ms.openlocfilehash: 00d5e3df78e85d19a519786dad1a1b176ad7fa08
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60837237"
 ---
 # <a name="how-to-customize-the-azure-api-management-developer-portal-using-templates"></a>Настройка портала разработчика в службе управления API Azure с помощью шаблонов
@@ -132,7 +132,7 @@ ms.locfileid: "60837237"
 ## <a name="to-save-a-template"></a>Сохранение шаблона
 Чтобы сохранить шаблон, нажмите кнопку "Сохранить" в редакторе шаблона.
 
-![Сохранить шаблон][api-management-save-template]
+![Сохранение шаблона][api-management-save-template]
 
 Сохраненные изменения не отобразятся на портале разработчика, пока шаблон не будет опубликован.
 
@@ -162,7 +162,7 @@ ms.locfileid: "60837237"
 
 Нажмите кнопку **Да** для подтверждения.
 
-![Подтвердить][api-management-revert-template-confirm]
+![Подтверждение][api-management-revert-template-confirm]
 
 Ранее опубликованная версия шаблона станет активной на портале разработчика после завершения операции восстановления.
 
@@ -175,7 +175,7 @@ ms.locfileid: "60837237"
 
 Нажмите кнопку **Да** для подтверждения.
 
-![Подтвердить][api-management-reset-template-confirm]
+![Подтверждение][api-management-reset-template-confirm]
 
 Чтобы восстановить все шаблоны до версии по умолчанию, нажмите кнопку **Восстановить шаблоны по умолчанию** в списке шаблонов.
 

@@ -13,10 +13,10 @@ ms.reviewer: sstein
 manager: craigg
 ms.date: 01/25/2019
 ms.openlocfilehash: b6f0d25f621768f79e8262f38617152e91692a23
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62129856"
 ---
 # <a name="disaster-recovery-for-a-multi-tenant-saas-application-using-database-geo-replication"></a>Аварийное восстановление мультитенантных приложений SaaS с использованием георепликации базы данных
@@ -90,9 +90,9 @@ ms.locfileid: "62129856"
 ## <a name="review-the-healthy-state-of-the-application"></a>Проверка состояния работоспособности приложения
 
 Перед тем как начать процесс восстановления, проверьте состояние работоспособности приложения.
-1. В веб-браузере откройте концентратор событий Wingtip Tickets по адресу http://events.wingtip-dpt.&lt;пользователь&gt;.trafficmanager.net, где &lt;пользователь&gt; — это имя пользователя для вашего развертывания.
+1. В веб-браузере откройте концентратор событий Wingtip Tickets по адресу http://events.wingtip-dpt.&lt ;пользователь&gt;.trafficmanager.net, где &lt; пользователь&gt; — это имя пользователя для вашего развертывания.
     * Прокрутите страницу вниз и обратите внимание на имя и расположение сервера каталогов в нижнем колонтитуле. Расположение — это регион, в котором вы развернули приложение.
-    *СОВЕТ. Наведите указатель мыши на расположение, чтобы увеличить изображение.*
+    *СОВЕТ. Наведите указатель мыши на расположение, чтобы увеличить изображение.* 
     ![Состояние работоспособности концентратора событий в исходном регионе](media/saas-dbpertenant-dr-geo-replication/events-hub-original-region.png)
 
 2. Щелкните клиент Contoso Concert Hall и откройте его страницу событий.
@@ -207,7 +207,7 @@ ms.locfileid: "62129856"
  
      ![Автономный режим концентратора событий](media/saas-dbpertenant-dr-geo-replication/events-hub-offlinemode.png) 
 
-   * Если вы открываете страницу событий автономного клиента напрямую, она отображает уведомление "клиент в автономном режиме". Например, если Contoso Concert Hall находится в автономном режиме, попробуйте открыть страницу http://events.wingtip-dpt.&lt;пользователь&gt;.trafficmanager.net/contosoconcerthall. ![Страница Contoso в автономном режиме](media/saas-dbpertenant-dr-geo-replication/dr-in-progress-offline-contosoconcerthall.png) 
+   * Если вы открываете страницу событий автономного клиента напрямую, она отображает уведомление "клиент в автономном режиме". Например, если Contoso Concert Hall находится в автономном режиме, попробуйте открыть страницу http://events.wingtip-dpt.&lt ;пользователь&gt;.trafficmanager.net/contosoconcerthall. ![ Страница Contoso в автономном режиме](media/saas-dbpertenant-dr-geo-replication/dr-in-progress-offline-contosoconcerthall.png) 
 
 ### <a name="provision-a-new-tenant-in-the-recovery-region"></a>Подготовка нового клиента в регионе восстановления
 Даже до отработки отказа всех существующих баз данных клиентов, вы можете подготовить новые клиенты в регионе восстановления.  
@@ -256,7 +256,7 @@ ms.locfileid: "62129856"
 2. В *интегрированной среде сценариев PowerShell* откройте скрипт ...\Learning Modules\Business Continuity and Disaster Recovery\DR-FailoverToReplica\Demo-FailoverToReplica.ps1 и установите следующее значение:
     * **$DemoScenario = 5**. Удаление события из клиента в регионе восстановления.
 3. Нажмите клавишу **F5**, чтобы выполнить скрипт.
-4. Обновите страницу событий Contoso Concert Hall http://events.wingtip-dpt.&lt;пользователь&gt;.trafficmanager.net/contosoconcerthall, где &lt;пользователь&gt; — это имя пользователя для вашего развертывания. Обратите внимание, что последнее событие удалено.
+4. Обновите страницу событий Contoso Concert Hall http://events.wingtip-dpt.&lt ;пользователь&gt;.trafficmanager.net/contosoconcerthall, где &lt; пользователь&gt; — это имя пользователя для вашего развертывания. Обратите внимание, что последнее событие удалено.
 
 ## <a name="repatriate-the-application-to-its-original-production-region"></a>Репатриация приложения в исходный рабочий регион
 
@@ -289,7 +289,7 @@ ms.locfileid: "62129856"
     * Нажмите клавишу **F5**, чтобы запустить скрипт восстановления в новом окне PowerShell.  Репатриация займет несколько минут и может контролироваться в окне PowerShell.
     ![Процесс репатриации](media/saas-dbpertenant-dr-geo-replication/repatriation-process.png)
 
-4. Пока выполняется скрипт, обновите страницу концентратора событий (http://events.wingtip-dpt.&lt;пользователь&gt;.trafficmanager.net).
+4. Пока выполняется скрипт, обновите страницу концентратора событий (http://events.wingtip-dpt.&lt ;пользователь&gt;.trafficmanager.net).
     * Обратите внимание, что все клиенты находятся в оперативном режиме и доступны на протяжении всего процесса.
 
 5. По завершении репатриации обновите концентратор событий и откройте страницу событий Hawthorn Hall. Обратите внимание, что эта база данных была репатриирована в исходный регион.

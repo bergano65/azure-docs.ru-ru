@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: alkohli
 ms.openlocfilehash: 54f6473954c73de6ec29602c3d1563579b3e8cc6
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60754445"
 ---
 # <a name="troubleshoot-your-azure-data-box-gateway-issues"></a>Устранение неполадок в Шлюзе Azure Data Box 
@@ -20,7 +20,7 @@ ms.locfileid: "60754445"
 В этой статье описывается устранение неполадок в Шлюзе Azure Data Box. В этой статье раскрываются следующие темы:
 
 > [!div class="checklist"]
-> * Выполнить диагностику
+> * Запуск диагностики
 > * Сбор пакета поддержки.
 > * Использование журналов для устранения неполадок.
 

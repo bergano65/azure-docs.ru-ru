@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 02/22/2018
 ms.author: hrasheed
 ms.openlocfilehash: 85eaa81a0cfd7ccfe8ad3ae818f89966280d279e
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64730360"
 ---
 # <a name="create-apache-hbase-clusters-on-hdinsight-in-azure-virtual-network"></a>Создание кластеров Apache HBase в HDInsight в виртуальной сети Azure
@@ -34,7 +34,7 @@ ms.locfileid: "64730360"
 В этом разделе описывается, как создать кластер Apache HBase под управлением Linux с зависимой учетной записью службы хранилища Azure в виртуальной сети Azure c помощью [шаблона Azure Resource Manager](../../azure-resource-manager/resource-group-template-deploy.md). Сведения о других способах создания кластеров и их параметрах см. в статье [Создание кластеров Hadoop под управлением Linux в HDInsight](../hdinsight-hadoop-provision-linux-clusters.md). Дополнительные сведения о создании в HDInsight кластеров Apache Hadoop с помощью шаблонов см. в [этой статье](../hdinsight-hadoop-create-linux-clusters-arm-templates.md).
 
 > [!NOTE]  
-> Некоторые свойства жестко заданы в шаблоне. Например: 
+> Некоторые свойства жестко заданы в шаблоне. Пример:
 >
 > * **Расположение**: Восток США 2
 > * **Версия кластера**: 3.6
@@ -93,7 +93,7 @@ ms.locfileid: "64730360"
         curl -u <username>:<password> -k https://<clustername>.azurehdinsight.net/ambari/api/v1/clusters/<clustername>.azurehdinsight.net/services/hbase/components/hbrest
      ```
 
-     В возвращенных данных JSON найдите запись «host_name». Она содержит полные доменные имена узлов в кластере. Например: 
+     В возвращенных данных JSON найдите запись «host_name». Она содержит полные доменные имена узлов в кластере. Пример:
 
          ...
          "host_name": "wordkernode0.<clustername>.b1.cloudapp.net
@@ -222,7 +222,7 @@ ms.locfileid: "64730360"
 
 Чтобы проверить обмен данными между виртуальной машиной и кластером HBase, используйте следующую команду `ping headnode0.<dns suffix>` на виртуальной машине. Например, ping headnode0.mycluster.b1.cloudapp.net.
 
-Чтобы использовать эту информацию в Java-приложении, создайте приложение, выполнив шаги, представленные в статье [Создание приложений Java для Apache HBase](./apache-hbase-build-java-maven-linux.md). Чтобы приложение подключилось к удаленному серверу HBase, измените файл **hbase-site.xml** в этом примере, чтобы использовать полное доменное имя для ZooKeeper. Например: 
+Чтобы использовать эту информацию в Java-приложении, создайте приложение, выполнив шаги, представленные в статье [Создание приложений Java для Apache HBase](./apache-hbase-build-java-maven-linux.md). Чтобы приложение подключилось к удаленному серверу HBase, измените файл **hbase-site.xml** в этом примере, чтобы использовать полное доменное имя для ZooKeeper. Пример:
 
     <property>
         <name>hbase.zookeeper.quorum</name>

@@ -3,16 +3,16 @@ title: Основные понятия повторной подготовки �
 description: Описание основных понятий повторной подготовки устройств для службы подготовки устройств к добавлению в центр Интернета вещей Azure
 author: wesmc7777
 ms.author: wesmc
-ms.date: 11/14/2018
+ms.date: 04/04/2019
 ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
-manager: timlt
+manager: philmea
 ms.openlocfilehash: fa8cb29f145c7658227f93d08a990c98563a0cfc
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60730016"
 ---
 # <a name="iot-hub-device-reprovisioning-concepts"></a>Основные понятия повторной подготовки устройств к добавлению в центр Интернета вещей
@@ -81,7 +81,7 @@ ms.locfileid: "60730016"
 
 В следующей таблице приводятся версии API до появления собственной поддержки повторной подготовки в службе подготовки устройств:
 
-| REST API | Пакет C SDK | Пакет Python SDK |  Пакет Node SDK | Пакет Java SDK | SDK .NET |
+| REST API | Пакет C SDK | Пакет SDK для Python |  Пакет SDK для Node | Пакет SDK для Java | Пакет SDK для .NET |
 | -------- | ----- | ---------- | --------- | -------- | -------- |
 | [2018-04-01 и более ранние версии](/rest/api/iot-dps/createorupdateindividualenrollment/createorupdateindividualenrollment#uri-parameters) | [1.2.8 и более ранние версии](https://github.com/Azure/azure-iot-sdk-c/blob/master/version.txt) | [1.4.2 и более ранние версии](https://github.com/Azure/azure-iot-sdk-python/blob/0a549f21f7f4fc24bc036c1d2d5614e9544a9667/device/iothub_client_python/src/iothub_client_python.cpp#L53) | [1.7.3 или более ранние версии](https://github.com/Azure/azure-iot-sdk-node/blob/074c1ac135aebb520d401b942acfad2d58fdc07f/common/core/package.json#L3) | [1.13.0 или более ранние версии](https://github.com/Azure/azure-iot-sdk-java/blob/794c128000358b8ed1c4cecfbf21734dd6824de9/device/iot-device-client/pom.xml#L7) | [1.1.0 или более ранние версии](https://github.com/Azure/azure-iot-sdk-csharp/blob/9f7269f4f61cff3536708cf3dc412a7316ed6236/provisioning/device/src/Microsoft.Azure.Devices.Provisioning.Client.csproj#L20)
 

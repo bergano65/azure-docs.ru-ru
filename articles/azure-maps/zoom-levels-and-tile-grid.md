@@ -9,10 +9,10 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.openlocfilehash: e7dcdb960fbd9196aca8b667269a4c6e5a1fb8f9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60794956"
 ---
 # <a name="zoom-levels-and-tile-grid"></a>Уровни увеличения и параметры сетки
@@ -40,7 +40,7 @@ ms.locfileid: "60794956"
 |1|78 271,5|20 037 504|
 |2|39 135,8|10 018 764,8|
 |3|19 567,9|5 009 382,4|
-|4.|9783,9|2 504 678,4|
+|4\.|9783,9|2 504 678,4|
 |5|4892|1 252 352|
 |6|2446|626 176|
 |7|1223|313 088|

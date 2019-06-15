@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 01/31/2019
 ms.author: kasinh
 ms.openlocfilehash: ef976667ec580ea75dd1b8566c7bdddf35eeb0fc
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60647270"
 ---
 # <a name="back-up-an-exchange-server-to-azure-backup-with-system-center-2012-r2-dpm"></a>Резервное копирование Exchange Server в службу архивации Azure с помощью System Center 2012 R2 DPM
@@ -67,7 +67,7 @@ ms.locfileid: "60647270"
     После этого проверка согласованности резервного копирования будет выполняться на сервере DPM, что позволит исключить операции ввода-вывода при выполнении команды **eseutil** на сервере Exchange.
 
    > [!NOTE]
-   > Чтобы использовать этот параметр, скопируйте файлы Ese.dll и Eseutil.exe в каталог C:\Program Files\Microsoft System Center 2012 R2\DPM\DPM\bin на сервере DPM. В противном случае возникнет следующая ошибка:   
+   > Чтобы использовать этот параметр, скопируйте файлы Ese.dll и Eseutil.exe в каталог C:\Program Files\Microsoft System Center 2012 R2\DPM\DPM\bin на сервере DPM. В противном случае возникнет следующая ошибка:  
    > ![ошибка Eseutil](./media/backup-azure-backup-exchange-server/eseutil-error.png)
    >
    >
@@ -82,10 +82,10 @@ ms.locfileid: "60647270"
 11. Проверьте, есть ли на диске свободное место, и нажмите кнопку **Далее**.
 12. Выберите время создания сервером DPM начальной репликации и нажмите кнопку **Далее**.
 13. Выберите параметры проверки согласованности и нажмите кнопку **Далее**.
-14. Выберите базу данных для резервного копирования в Azure и нажмите кнопку **Далее**. Пример.
+14. Выберите базу данных для резервного копирования в Azure и нажмите кнопку **Далее**. Пример:
 
     ![Выбор оперативной защиты данных](./media/backup-azure-backup-exchange-server/specify-online-protection-data.png)
-15. Определите расписание для **службы архивации Azure** и нажмите кнопку **Далее**. Пример.
+15. Определите расписание для **службы архивации Azure** и нажмите кнопку **Далее**. Пример:
 
     ![Выбор расписания оперативного резервного копирования](./media/backup-azure-backup-exchange-server/specify-online-backup-schedule.png)
 

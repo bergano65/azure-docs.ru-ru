@@ -8,10 +8,10 @@ ms.topic: conceptual
 ms.date: 04/03/2019
 ms.author: hrasheed
 ms.openlocfilehash: dcfcd4b55f848e1725e286e6ef2a87a2c36e5a71
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64684933"
 ---
 # <a name="use-the-apache-beeline-client-with-apache-hive"></a>Использование клиента Apache Beeline с Apache Hive
@@ -95,7 +95,7 @@ beeline -u 'jdbc:hive2://headnodehost:10002/;transportMode=http'
 
 ## <a id="prereq"></a>Предварительные требования
 
-* Кластер Hadoop в HDInsight. См. в разделе [начало работы с HDInsight на платформе Linux](./apache-hadoop-linux-tutorial-get-started.md).
+* Кластер Hadoop в HDInsight. Ознакомьтесь со статьей [Краткое руководство. Использование Apache Hadoop и Apache Hive в Azure HDInsight с шаблоном Resource Manager](./apache-hadoop-linux-tutorial-get-started.md).
 
 * Обратите внимание, что [схема URI](../hdinsight-hadoop-linux-information.md#URI-and-scheme) для основного хранилища кластера. Например `wasb://` для службы хранилища Azure, `abfs://` для Gen2 хранилища Озера данных Azure, или `adl://` для Gen1 хранилища Озера данных Azure. Если безопасной передачи включено для службы хранилища Azure или Gen2 хранилища Озера данных, URL-адрес является `wasbs://` или `abfss://`, соответственно. Дополнительные сведения см. в разделе [безопасное перемещение](../../storage/common/storage-require-secure-transfer.md).
 
@@ -187,7 +187,7 @@ beeline -u 'jdbc:hive2://headnodehost:10002/;transportMode=http'
 
     * `STORED AS TEXTFILE LOCATION`. Указывает расположение для хранения данных и их формат.
 
-    * `SELECT`. Подсчитывает количество строк, в которых столбец **t4** содержит значение **[ERROR]**. Этот запрос должен вернуть значение **3**, так как таблица содержит три строки с данным значением.
+    * `SELECT`. Подсчитывает количество строк, в которых столбец **t4** содержит значение **[ERROR]** . Этот запрос должен вернуть значение **3**, так как таблица содержит три строки с данным значением.
 
     * `INPUT__FILE__NAME LIKE '%.log'`. Hive пытается применить схему ко всем файлам в каталоге. В этом случае каталог содержит файлы, которые не соответствуют схеме. Чтобы исключить лишние данные в результатах, эта инструкция указывает Hive возвращать данные только из файлов, заканчивающихся на .log.
 
@@ -243,12 +243,12 @@ beeline -u 'jdbc:hive2://headnodehost:10002/;transportMode=http'
 
    * **CREATE TABLE IF NOT EXISTS** — создание таблицы, если ее не существует. Так как не используется ключевое слово **EXTERNAL**, эта инструкция создает внутреннюю таблицу. Внутренние таблицы хранятся в хранилище данных Hive и полностью управляются Hive.
    * **STORED AS ORC** : хранение данных в формате ORC (Optimized Row Columnar). Это высокооптимизированный и эффективный формат для хранения данных Hive.
-   * **INSERT OVERWRITE ... SELECT**: выбирает строки из таблицы **log4jLogs**, которые содержат значение **[ERROR]**, а затем вставляет данные в таблицу **errorLogs**.
+   * **INSERT OVERWRITE ... SELECT**: выбирает строки из таблицы **log4jLogs**, которые содержат значение **[ERROR]** , а затем вставляет данные в таблицу **errorLogs**.
 
     > [!NOTE]  
     > В отличие от внешних таблиц, удаление внутренней таблицы приводит к удалению базовых данных.
 
-3. Чтобы сохранить файл, нажмите клавиши **CTRL**+**+X**, введите **Y** и нажмите клавишу **ВВОД**.
+3. Чтобы сохранить файл, нажмите клавиши **CTRL**+ **+X**, введите **Y** и нажмите клавишу **ВВОД**.
 
 4. Запустите файл с помощью Beeline, используя следующую команду:
 

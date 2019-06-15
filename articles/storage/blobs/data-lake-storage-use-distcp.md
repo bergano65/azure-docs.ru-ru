@@ -10,10 +10,10 @@ ms.date: 12/06/2018
 ms.author: normesta
 ms.reviewer: seguler
 ms.openlocfilehash: 0e85d2b2c7e9a3022e7fea2063ffa0aa915abb53
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64939056"
 ---
 # <a name="use-distcp-to-copy-data-between-azure-storage-blobs-and-azure-data-lake-storage-gen2"></a>Использование средства DistCp для копирования данных между Azure Storage Blob и Azure Data Lake Storage 2-го поколения
@@ -25,7 +25,7 @@ DistCp предоставляет различные параметры кома
 ## <a name="prerequisites"></a>Технические условия
 
 * **Подписка Azure**. См. страницу [бесплатной пробной версии Azure](https://azure.microsoft.com/pricing/free-trial/).
-* **Существующая учетная запись хранения Azure без включенных возможностей Data Lake Storage 2-го поколения (иерархическое пространство имен)**.
+* **Существующая учетная запись хранения Azure без включенных возможностей Data Lake Storage 2-го поколения (иерархическое пространство имен)** .
 * **Учетная запись службы хранилища Azure с включенной функцией хранилища Data Lake Storage 2-го поколения**. Сведения по созданию учетной записи см. в статье [Краткое руководство. Создание поддерживаемой учетной записи хранения Azure Data Lake Storage 2-го поколения](data-lake-storage-quickstart-create-account.md).
 * **Файловая система**, созданная в учетной записи хранения с включенным иерархическим пространством имен.
 * **Кластер Azure HDInsight** с доступом к учетной записи хранения с поддержкой Data Lake Storage 2-го поколения. См. раздел [Use Azure Data Lake Storage Gen2 with Azure HDInsight clusters](https://docs.microsoft.com/azure/hdinsight/hdinsight-hadoop-use-data-lake-storage-gen2?toc=%2fazure%2fstorage%2fblobs%2ftoc.json) (Использование хранилища Azure Data Lake поколения 2 с кластерами Azure HDInsight). Убедитесь, что вы включили удаленный рабочий стол для кластера.
@@ -52,7 +52,7 @@ DistCp предоставляет различные параметры кома
 
         hadoop distcp wasbs://<CONTAINER_NAME>@<STORAGE_ACCOUNT_NAME>.blob.core.windows.net/example/data/gutenberg abfss://<FILE_SYSTEM_NAME>@<STORAGE_ACCOUNT_NAME>.dfs.core.windows.net/myfolder
 
-    Эта команда копирует содержимое папки **/example/data/gutenberg/**, расположенной в хранилище BLOB-объектов, в папку **/myfolder**, расположенную в учетной записи хранилища Azure Data Lake.
+    Эта команда копирует содержимое папки **/example/data/gutenberg/** , расположенной в хранилище BLOB-объектов, в папку **/myfolder**, расположенную в учетной записи хранилища Azure Data Lake.
 
 5. Аналогичным образом используйте DistCp для копирования данных из учетной записи хранилища Azure Data Lake в хранилище BLOB-объектов (WASB).
 

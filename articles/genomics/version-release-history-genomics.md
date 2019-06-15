@@ -10,17 +10,17 @@ ms.service: genomics
 ms.topic: article
 ms.date: 01/11/2019
 ms.openlocfilehash: 2037bcf173951769f1627f809352ef60afce2d50
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60780956"
 ---
 # <a name="version-release-history"></a>Журнал выпуска версий
 Команда Microsoft Genomics регулярно выпускает обновления для клиента Python Microsoft Genomics, связанные с исправлениями и новыми функциями. 
 
 ## <a name="latest-release"></a>Последний выпуск
-0.8.1 — версия текущего клиента Python. Она была выпущена 3 декабря 2018 г.; поддерживает выполнение рабочих процессов с использованием GATK 3.5 и GATK4. Также поддерживается вывод данных gVCF.
+0\.8.1 — версия текущего клиента Python. Она была выпущена 3 декабря 2018 г.; поддерживает выполнение рабочих процессов с использованием GATK 3.5 и GATK4. Также поддерживается вывод данных gVCF.
 
 
 ## <a name="release-history"></a>Журнал выпуска версий 

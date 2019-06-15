@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 01/19/2018
 ms.author: bwren
 ms.openlocfilehash: 06532369efb802606eb13a4b38a8579a3528f999
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60777039"
 ---
 # <a name="alert-management-solution-in-azure-log-analytics"></a>Решение "Управление оповещениями" в Azure Log Analytics
@@ -87,7 +87,7 @@ ms.locfileid: "60777039"
 
 Решение импортирует оповещения из System Center Operations Manager и создает соответствующую запись для каждого оповещения, для которого указан тип **Alert**, а SourceSystem имеет значение **OpsManager**.  У этих записей есть свойства, приведенные в таблице ниже.  
 
-| Свойство | ОПИСАНИЕ |
+| Свойство | Description |
 |:--- |:--- |
 | type |*Предупреждение* |
 | SourceSystem |*OpsManager* |
@@ -117,11 +117,11 @@ ms.locfileid: "60777039"
 |:---|:---|
 | Alert &#124; where SourceSystem == "OpsManager" and AlertSeverity == "error" and TimeRaised > ago(24h) |Критические оповещения, созданные за последние 24 часа. |
 | Alert &#124; where AlertSeverity == "warning" and TimeRaised > ago(24h) |Предупредительные оповещения, созданные за последние 24 часа. |
-| Alert &#124; where SourceSystem == "OpsManager" and AlertState != "Closed" and TimeRaised > ago(24h) &#124; summarize Count = count() by SourceDisplayName |Источники с активными предупреждениями, вызванными за последние 24 часа |
+| Alert &#124; where SourceSystem == "OpsManager" and AlertState != "Closed" and TimeRaised > ago(24h) &#124; summarize Count = count() by SourceDisplayName |Источники с активными оповещениями, возникшие за последние 24 часа. |
 | Alert &#124; where SourceSystem == "OpsManager" and AlertSeverity == "error" and TimeRaised > ago(24h) and AlertState != "Closed" |Все критические оповещения, созданные за последние 24 часа и остающиеся активными. |
 | Alert &#124; where SourceSystem == "OpsManager" and TimeRaised > ago(24h) and AlertState == "Closed" |Все критические оповещения, созданные за последние 24 часа и уже закрытые. |
-| Alert &#124; where SourceSystem == "OpsManager" and TimeRaised > ago(1d) &#124; summarize Count = count() by AlertSeverity |Предупреждения, вызванные за последний день, сгруппированные по серьезности |
-| Alert &#124; where SourceSystem == "OpsManager" and TimeRaised > ago(1d) &#124; sort by RepeatCount desc |Предупреждения, вызванные за последний день, отсортированные по повторяющемуся значению счетчика |
+| Alert &#124; where SourceSystem == "OpsManager" and TimeRaised > ago(1d) &#124; summarize Count = count() by AlertSeverity |Оповещения, созданные за последние 1 день и сгруппированные по уровню серьезности. |
+| Alert &#124; where SourceSystem == "OpsManager" and TimeRaised > ago(1d) &#124; sort by RepeatCount desc |Оповещения, созданные за последние 1 день и сгруппированные по числу повторений. |
 
 
 

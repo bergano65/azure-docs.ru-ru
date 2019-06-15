@@ -8,10 +8,10 @@ ms.topic: article
 ms.service: azure
 ms.assetid: 58a0ca9d-86d2-469a-9714-3b8320c33cf5
 ms.openlocfilehash: d98d0637c6d520193b11f4267c59016772ef063a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60809819"
 ---
 # <a name="azure-role-based-access-control-rbac-to-control-access-rights-to-create-and-manage-support-requests"></a>Контроль прав доступа для создания запросов в службу поддержки и управления ими с помощью управления доступом на основе ролей (RBAC) Azure
@@ -89,7 +89,7 @@ ms.locfileid: "60809819"
 
 7. Если он нажмет "Новый запрос в службу поддержки" в колонке "Справка и поддержка", то сможет создать запросы на поддержку для Visual Studio Ultimate с подпиской MSDN.
 
-    ![Новый запрос в службу поддержки](./media/create-manage-support-requests-using-access-control/new-support-request.png)
+    ![Новый запрос на техническую поддержку](./media/create-manage-support-requests-using-access-control/new-support-request.png)
 
 8. Щелкнув "Все запросы на поддержку", Дмитрий может просмотреть список запросов на поддержку, созданных для этой подписки. ![Представление сведений об обращении](./media/create-manage-support-requests-using-access-control/case-details-view.png)
 

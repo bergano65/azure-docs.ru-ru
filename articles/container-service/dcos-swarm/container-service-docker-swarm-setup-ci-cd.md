@@ -10,10 +10,10 @@ ms.date: 12/08/2016
 ms.author: jucoriol
 ms.custom: mvc
 ms.openlocfilehash: f28ea3dd2837a241c538057bd118409d4f5b858a
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60643772"
 ---
 # <a name="deprecated-full-cicd-pipeline-to-deploy-a-multi-container-application-on-azure-container-service-with-docker-swarm-using-azure-devops-services"></a>Полный конвейер средств непрерывной интеграции и доставки для развертывания многоконтейнерного приложения в Службе контейнеров Azure с Docker Swarm с использованием Azure DevOps Services (не рекомендуется)
@@ -166,7 +166,7 @@ ms.locfileid: "60643772"
 
     ![Azure DevOps Services — обновление файла Compose](./media/container-service-docker-swarm-setup-ci-cd/vsts-build-replace-build-number.png)
 
-    2. Задача, которая удаляет обновленный файл Compose в качестве артефакта сборки, чтобы его можно было использовать в выпуске. Подробнее показано на следующем снимке экрана.
+    2\. Задача, которая удаляет обновленный файл Compose в качестве артефакта сборки, чтобы его можно было использовать в выпуске. Подробнее показано на следующем снимке экрана.
 
     ![Azure DevOps Services — публикация файла Compose](./media/container-service-docker-swarm-setup-ci-cd/vsts-publish-compose.png) 
 
@@ -180,7 +180,7 @@ Azure DevOps Services позволяет [управлять выпусками 
 
 ### <a name="initial-release-setup"></a>Начальная настройка выпуска
 
-1. Чтобы создать конвейер выпуска, щелкните **Выпуски** > **+ Release** (+ Выпуск).
+1. Чтобы создать конвейер выпуска, щелкните **Выпуски** >  **+ Release** (+ Выпуск).
 
 1. Чтобы настроить источник артефакта, выберите **Артефакты** > **Link an artifact source** (Связать источник артефакта). Свяжите этот новый конвейер выпуска со сборкой, указанной на предыдущем шаге. После этого файл docker-compose.yml появится в процессе выпуска.
 

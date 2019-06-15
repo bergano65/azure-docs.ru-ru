@@ -3,19 +3,18 @@ title: Границы, квоты и пороговые значения в пл
 description: Сведения о границах, квотах, значениях по умолчанию и пороговых значениях регулирования для планировщика Azure.
 services: scheduler
 ms.service: scheduler
-author: WenJason
-ms.author: v-jay
+author: derek1ee
+ms.author: deli
 ms.reviewer: klam
 ms.assetid: 88f4a3e9-6dbd-4943-8543-f0649d423061
 ms.topic: article
-origin.date: 08/18/2016
-ms.date: 11/12/2018
+ms.date: 08/18/2016
 ms.openlocfilehash: 478afb20f3dabec74d66d00bec325408ce6604fc
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60531278"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64713744"
 ---
 # <a name="limits-quotas-and-throttle-thresholds-in-azure-scheduler"></a>Границы, квоты и пороговые значения регулирования в планировщике Azure
 

@@ -16,10 +16,10 @@ ms.date: 03/19/2019
 ms.author: srrengar
 ms.custom: mvc, devcenter
 ms.openlocfilehash: 36c9a5d75c4a72365638619ab85d451df647feb3
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64939819"
 ---
 # <a name="monitoring-and-diagnostics"></a>Мониторинг и диагностика.
@@ -52,7 +52,7 @@ az mesh code-package-log get --resource-group <nameOfRG> --application-name SbzV
 
 Среде сетки предоставляет небольшое число метрик, указывающее, как выполняется контейнеров. Доступны следующие метрики через Azure портала и Azure отслеживать интерфейса командной строки:
 
-| Метрика | ОПИСАНИЕ | Units|
+| Метрика | Описание | Units|
 |----|----|----|
 | CpuUtilization | ActualCpu/AllocatedCpu в процентах | % |
 | MemoryUtilization | ActualMem/AllocatedMem в процентах | % |

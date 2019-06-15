@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 02/26/2019
 ms.author: diberry
 ms.openlocfilehash: 9a6f9d54c52f36b8f709eacaf25d3fea31dbe516
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60812912"
 ---
 # <a name="best-practices-for-building-a-language-understanding-app-with-cognitive-services"></a>Рекомендации по созданию приложения для распознавания речи с использованием Cognitive Services
@@ -23,7 +23,7 @@ ms.locfileid: "60812912"
 
 * Создайте языковую модель
 * Добавьте несколько примеров высказываний для обучения (по 10–15 на каждое намерение)
-* Опубликовать 
+* Публикация 
 * Проведите тестирование из конечной точки 
 * Добавьте функции
 
@@ -126,7 +126,7 @@ ms.locfileid: "60812912"
 
 Дополнительные сведения
 * Концепция. [Основные сведения о включении активного обучения путем проверки фраз конечной точки](luis-concept-review-endpoint-utterances.md)
-* Руководство по [Руководство Исправление неточных прогнозов с помощью проверки высказываний конечной точки](luis-tutorial-review-endpoint-utterances.md)
+* Руководство по [Учебник. Исправление неточных прогнозов с помощью проверки высказываний конечной точки](luis-tutorial-review-endpoint-utterances.md)
 * Практическое руководство. [Сведения о проверке фрагментов речи конечной точки на портале LUIS](luis-how-to-review-endpoint-utterances.md)
 
 ## <a name="do-monitor-the-performance-of-your-app"></a>Отслеживайте производительность своего приложения

@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 04/16/2019
 ms.author: diberry
 ms.openlocfilehash: 1333aefc145e95223624f42a28ec0bb31ab70065
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60828128"
 ---
 # <a name="configure-text-analytics-docker-containers"></a>Настройка контейнеров Docker API анализа текста
@@ -51,7 +51,7 @@ ms.locfileid: "60828128"
 
 Необходимо добавить `text/analytics/v2.0` маршрутизации URI конечной точки, как показано в следующем примере BILLING_ENDPOINT_URI.
 
-|Обязательно для заполнения| ИМЯ | Тип данных | ОПИСАНИЕ |
+|Обязательно для заполнения| ИМЯ | Тип данных | Описание |
 |--|------|-----------|-------------|
 |Да| `Billing` | String | URI конечной точки выставления счетов<br><br>Пример:<br>`Billing=https://westus.api.cognitive.microsoft.com/text/analytics/v2.1` |
 
@@ -79,7 +79,7 @@ ms.locfileid: "60828128"
 
 Точный синтаксис расположения подключения к узлу зависит от операционной системы узла. Кроме того,расположение подключения на [главном компьютере](how-tos/text-analytics-how-to-install-containers.md#the-host-computer) может оказаться недоступным из-за конфликта между разрешениями для учетной записи службы Docker и расположения подключения к узлу. 
 
-|Необязательно| ИМЯ | Тип данных | ОПИСАНИЕ |
+|Необязательно| Name | Тип данных | Описание |
 |-------|------|-----------|-------------|
 |Не разрешено| `Input` | String | Контейнеры API анализа текста не используют этот элемент.|
 |Необязательно| `Output` | String | Цель выходного подключения. По умолчанию используется значение `/output`. Это расположение файлов журналов. Сюда входят журналы контейнера. <br><br>Пример:<br>`--mount type=bind,src=c:\output,target=/output`|
@@ -95,7 +95,7 @@ ms.locfileid: "60828128"
 
 Замените строку {_имя_аргумента_} собственными значениями.
 
-| Placeholder | Value | Формат или пример |
+| Placeholder | Значение | Формат или пример |
 |-------------|-------|---|
 |{BILLING_KEY} | Ключ конечной точки `Cognitive Services` ресурсов, доступных на Azure `Cognitive Services` страницы "ключи". |xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx|
 |{BILLING_ENDPOINT_URI} | Значение конечной точки выставления счетов можно найти в Azure `Cognitive Services` странице "Обзор".|`https://westus.api.cognitive.microsoft.com/text/analytics/v2.1`|

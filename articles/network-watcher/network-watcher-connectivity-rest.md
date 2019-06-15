@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 08/02/2017
 ms.author: kumud
 ms.openlocfilehash: 7fbe36d9ee15ffbdaa2ba978aabf3cc4f5db3889
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64694063"
 ---
 # <a name="troubleshoot-connections-with-azure-network-watcher-using-the-azure-rest-api"></a>Устранение неполадок подключений в службе "Наблюдатель за сетями Azure" с помощью Azure REST API
@@ -131,7 +131,7 @@ Date: Fri, 02 Jun 2017 20:21:16 GMT
 null
 ```
 
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
 
 Следующий ответ взят из предыдущего примера.  В этом ответе параметр `ConnectionStatus` имеет значение **Unreachable** (Недоступно). Как видите, все отправленные пробы завершились неудачей. Попытка подключения завершилась сбоем в виртуальном модуле из-за пользовательского правила `NetworkSecurityRule` с именем **UserRule_Port80**, настроенного на блокировку входящего трафика на порту 80. Эти сведения можно использовать для анализа проблем с подключением.
 
@@ -247,7 +247,7 @@ Date: Fri, 02 Jun 2017 20:26:05 GMT
 null
 ```
 
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
 
 В следующем примере состояние `connectionStatus` отображается как **Unreachable** (Недоступно). В блоке `hops` в разделе `issues` видно, что трафик заблокирован из-за `UserDefinedRoute`.
 
@@ -343,7 +343,7 @@ Date: Fri, 02 Jun 2017 20:31:00 GMT
 null
 ```
 
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
 
 В следующем ответе видно, что параметр `connectionStatus` отображается со значением **Reachable** (Достижимо). Когда подключение будет установлено, отобразятся значения задержки.
 
@@ -430,7 +430,7 @@ Date: Fri, 02 Jun 2017 20:05:03 GMT
 null
 ```
 
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
 
 Ниже представлен пример ответа на выполнение предыдущего вызова API. Так как проверка выполнена успешно, свойство `connectionStatus` отображается со значением **Reachable** (Достижимо).  Также отображаются сведения о числе прыжков, необходимых для доступа к BLOB-объекту в хранилище, а также о задержке.
 

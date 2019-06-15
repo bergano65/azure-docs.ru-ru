@@ -14,10 +14,10 @@ ms.topic: conceptual
 ms.date: 03/22/2018
 ms.author: magoedte
 ms.openlocfilehash: 26ddb0cdd2728f9dff5d45494a14841cdc1a20cd
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64922885"
 ---
 # <a name="connect-configuration-manager-to-azure-monitor"></a>Подключение Configuration Manager к Azure Monitor
@@ -49,7 +49,7 @@ Azure Monitor поддерживает текущей ветви System Center C
 
 1. На портале Azure щелкните **Все службы** в нижнем левом углу. В списке ресурсов введите **Log Analytics**. Как только вы начнете вводить символы, список отфильтруется соответствующим образом. Выберите **Log Analytics**.
 2. В списке рабочих областей Log Analytics выберите рабочую область, которую требуется изменить.
-3. В области слева выберите **Управление доступом (IAM)**.
+3. В области слева выберите **Управление доступом (IAM)** .
 4. На странице "Управление доступом (IAM)" щелкните **Добавить назначение ролей** , после чего откроется **соответствующая область**.
 5. В области **Добавить назначение ролей**  из раскрывающегося списка **Роли** выберите роль **Участник**.  
 6. Из раскрывающегося списка **Назначение доступа к** выберите приложение Configuration Manager, ранее созданное в AD, и нажмите кнопку **ОК**.  

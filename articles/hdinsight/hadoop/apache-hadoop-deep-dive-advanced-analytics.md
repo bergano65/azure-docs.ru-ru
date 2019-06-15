@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.date: 11/14/2017
 ms.author: ashishth
 ms.openlocfilehash: ac0edf2de4337154b665b8f3898134a7c2fd1f4c
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64712397"
 ---
 # <a name="deep-dive---advanced-analytics"></a>Подробный обзор расширенной аналитики
@@ -98,7 +98,7 @@ HDInsight имеет несколько вариантов машинного о
 
 В этом примере используется набор изображений CIFAR-10, скомпилированный и распространенный Алексом Крижевским (Alex Krizhevsky), Винодом Наиром (Vinod Nair) и Джеффри Хинтоном (Geoffrey Hinton). Набор данных CIFAR-10 содержит 60 000 цветных изображений размером 32 × 32, принадлежащих к 10 взаимоисключающим классам:
 
-![Образы](./media/apache-hadoop-deep-dive-advanced-analytics/ml-images.png)
+![Изображений](./media/apache-hadoop-deep-dive-advanced-analytics/ml-images.png)
 
 Дополнительные сведения о наборе данных см. в работе Алекса Крижевского [Learning Multiple Layers of Features from Tiny Images](https://www.cs.toronto.edu/~kriz/learning-features-2009-TR.pdf) (Обучение нескольким слоям признаков на основе небольших изображений).
 

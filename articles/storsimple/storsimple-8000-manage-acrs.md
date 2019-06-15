@@ -15,11 +15,11 @@ ms.workload: na
 ms.date: 05/31/2017
 ms.author: alkohli
 ms.openlocfilehash: ade7da25d2307a382c17e7a3cbb26b601c34ef78
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60321626"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64693240"
 ---
 # <a name="use-the-storsimple-manager-service-to-manage-access-control-records"></a>Использование службы StorSimple Manager для управления записями контроля доступа
 
@@ -59,7 +59,7 @@ ms.locfileid: "60321626"
 
     1. Введите имя для записи контроля доступа.
     
-    2. Введите имя IQN нужного узла Windows Server в строке **Имя инициатора iSCSI (IQN)**.
+    2. Введите имя IQN нужного узла Windows Server в строке **Имя инициатора iSCSI (IQN)** .
 
     3. Нажмите кнопку **Добавить**, чтобы создать запись контроля доступа.
 

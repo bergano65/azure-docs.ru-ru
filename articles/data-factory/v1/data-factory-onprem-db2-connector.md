@@ -14,14 +14,14 @@ ms.date: 01/10/2018
 ms.author: jingwang
 robots: noindex
 ms.openlocfilehash: 72c88ef10bf1df217ec6e24ac744d0b30386b4a3
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60824020"
 ---
 # <a name="move-data-from-db2-by-using-azure-data-factory-copy-activity"></a>Перемещение данных из DB2 с помощью действия копирования в фабрике данных Azure
-> [!div class="op_single_selector" title1="Select the version of Data Factory service you are using:"]
+> [!div class="op_single_selector" title1="Выберите версию службы фабрики данных, которую вы используете:"]
 > * [Версия 1](data-factory-onprem-db2-connector.md)
 > * [Версия 2 (текущая)](../connector-db2.md)
 
@@ -309,7 +309,7 @@ ms.locfileid: "60824020"
 | Тип базы данных DB2 | Тип .NET Framework |
 | --- | --- |
 | SmallInt |Int16 |
-| Целое число  |Int32 |
+| Integer |Int32 |
 | BigInt |Int64 |
 | Real |Single |
 | Double |Double |
@@ -320,7 +320,7 @@ ms.locfileid: "60824020"
 | Дата |DateTime |
 | Время |TimeSpan |
 | Timestamp |Datetime |
-| Xml |Byte[] |
+| xml |Byte[] |
 | Char |String |
 | VarChar |String |
 | LongVarChar |String |
@@ -332,10 +332,10 @@ ms.locfileid: "60824020"
 | VarGraphic |String |
 | LongVarGraphic |String |
 | Clob |String |
-| BLOB-объекты |Byte[] |
+| BLOB-объект |Byte[] |
 | DbClob |String |
 | SmallInt |Int16 |
-| Целое число  |Int32 |
+| Integer |Int32 |
 | BigInt |Int64 |
 | Real |Single |
 | Double |Double |
@@ -346,7 +346,7 @@ ms.locfileid: "60824020"
 | Дата |DateTime |
 | Время |TimeSpan |
 | Timestamp |Datetime |
-| Xml |Byte[] |
+| xml |Byte[] |
 | Char |String |
 
 ## <a name="map-source-to-sink-columns"></a>Сопоставление столбцов источника и приемника

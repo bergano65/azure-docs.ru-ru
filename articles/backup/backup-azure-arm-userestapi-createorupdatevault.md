@@ -11,10 +11,10 @@ ms.date: 08/21/2018
 ms.author: pullabhk
 ms.assetid: e54750b4-4518-4262-8f23-ca2f0c7c0439
 ms.openlocfilehash: 4f18b10ee3f4148badc8e53a9660c9f5c998aef7
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60646713"
 ---
 # <a name="create-azure-recovery-services-vault-using-rest-api"></a>Создание хранилища Служб восстановления Azure с помощью REST API
@@ -35,8 +35,8 @@ PUT https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 
 | Заголовок запроса   | Описание |
 |------------------|-----------------|
-| *Content-Type:*  | Обязательный. Задайте значение `application/json`. |
-| *Authorization:* | Обязательный. Задайте в качестве значения [допустимый токен доступа](https://docs.microsoft.com/rest/api/azure/#authorization-code-grant-interactive-clients) `Bearer`. |
+| *Content-Type:*  | Обязательный элемент. Задайте значение `application/json`. |
+| *Authorization:* | Обязательный элемент. Задайте в качестве значения [допустимый токен доступа](https://docs.microsoft.com/rest/api/azure/#authorization-code-grant-interactive-clients) `Bearer`. |
 
 Дополнительные сведения по созданию запросов см. в разделе [Components of a REST API request/response](/rest/api/azure/#components-of-a-rest-api-requestresponse) (Компоненты запроса или ответа REST API).
 
@@ -44,7 +44,7 @@ PUT https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 
 Для создания текста запроса используются следующие общие определения.
 
-|ИМЯ  |Обязательно для заполнения  |type  |Описание  |
+|Name  |Обязательно для заполнения  |type  |Описание  |
 |---------|---------|---------|---------|
 |eTag     |         |   String      |  Необязательный eTag       |
 |location     |  Да       |String         |   Расположение ресурса      |
@@ -68,7 +68,7 @@ PUT https://management.azure.com/subscriptions/{subscriptionId}/resourceGroups/{
 }
 ```
 
-## <a name="responses"></a>Ответы
+## <a name="responses"></a>Responses
 
 Есть два успешных ответа для операции по созданию или обновлению хранилища Служб восстановления:
 

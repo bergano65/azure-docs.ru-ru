@@ -13,10 +13,10 @@ ms.date: 12/07/2018
 ms.author: lahugh
 ms.custom: seodec18
 ms.openlocfilehash: 80d2e995a18a2d6dafbb8d92fdd5996b10eab17c
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60783744"
 ---
 # <a name="use-azure-batch-cli-templates-and-file-transfer"></a>Использование шаблонов интерфейса командной строки для пакетной службы Azure и передачи файлов
@@ -144,7 +144,7 @@ az extension add --name azure-batch-cli-extensions
 az batch pool create --template pool-ffmpeg.json
 ```
 
-От CLI вы получите запрос ввести значения для параметров `poolId` и `nodeCount`. Можно также указать параметры в файле JSON. Пример.
+От CLI вы получите запрос ввести значения для параметров `poolId` и `nodeCount`. Можно также указать параметры в файле JSON. Пример:
 
 ```json
 {

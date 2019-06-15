@@ -11,10 +11,10 @@ ms.topic: conceptual
 ms.date: 05/10/2018
 ms.author: marossi
 ms.openlocfilehash: b5f8c853218a1db53f4dd23e7254b35990a7132b
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60829180"
 ---
 # <a name="experimentation"></a>Экспериментирование
@@ -36,7 +36,7 @@ ms.locfileid: "60829180"
 * Выполняет граничную проверку.
 * Проверяет функции квадратичного взаимодействия:
    * **этап подбора**: проверяет все сочетания с парами `--q_bruteforce_terms` (или меньше);
-   * **этап "жадности"**: добавляет наиболее соответствующие пары, пока циклы `--q_greedy_stop` не перестают обеспечивать улучшение.
+   * **этап "жадности"** : добавляет наиболее соответствующие пары, пока циклы `--q_greedy_stop` не перестают обеспечивать улучшение.
 * Выполняет второй проход по гиперпараметрам (`learning rate`, `L1 regularization` и `power_t`).
 
 Этими действиями управляют параметры с аргументами Vowpal Wabbit.
@@ -77,7 +77,7 @@ python Experimentation.py [-h] -f FILE_PATH [-b BASE_COMMAND] [-p N_PROC]
 Журнал результатов добавляется в файл *mwt-ds/DataScience/experiments.csv*.
 
 ### <a name="parameters"></a>Параметры
-| Входные данные | ОПИСАНИЕ | значение по умолчанию |
+| Вход | Описание | значение по умолчанию |
 | --- | --- | --- |
 | `-h`, `--help` | Отображение справочного сообщения и выход. | |
 | `-f FILE_PATH`, `--file_path FILE_PATH` | Путь к файлу данных (в формате `.json` или `.json.gz`, каждая строка — `dsjson`). | Обязательно для заполнения |  

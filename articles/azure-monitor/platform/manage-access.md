@@ -14,10 +14,10 @@ ms.topic: conceptual
 ms.date: 03/27/2019
 ms.author: magoedte
 ms.openlocfilehash: 27db27d79a05f24461e63242c0395cfd81315432
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60782808"
 ---
 # <a name="manage-log-data-and-workspaces-in-azure-monitor"></a>Управление данными журнала и рабочими областями в Azure Monitor
@@ -180,7 +180,7 @@ Set-AzResource -ResourceId $_.ResourceId -Properties $_.Properties -Force
 Чтобы настроить режим доступа в шаблоне Azure Resource Manager, установите **enableLogAccessUsingOnlyResourcePermissions** компонентов флаг в рабочей области для одного из следующих значений.
 
 - **False**: Задайте рабочую область, ориентированных на рабочей области разрешений. Это параметр по умолчанию, если флаг не установлен.
-- **Значение true,**: Задайте рабочую область, ориентированных на ресурс разрешения.
+- **Значение true,** : Задайте рабочую область, ориентированных на ресурс разрешения.
 
 
 ## <a name="manage-accounts-and-users"></a>Управление учетными записями и пользователями
@@ -267,7 +267,7 @@ Set-AzResource -ResourceId $_.ResourceId -Properties $_.Properties -Force
 
 | Разрешение | Описание |
 | ---------- | ----------- |
-| `Microsoft.Insights/logs/<tableName>/read`<br><br>Примеры.<br>`Microsoft.Insights/logs/*/read`<br>`Microsoft.Insights/logs/Heartbeat/read` | Возможность просматривать все данные журнала для ресурса.  |
+| `Microsoft.Insights/logs/<tableName>/read`<br><br>Примеры:<br>`Microsoft.Insights/logs/*/read`<br>`Microsoft.Insights/logs/Heartbeat/read` | Возможность просматривать все данные журнала для ресурса.  |
 
 
 Это разрешение обычно предоставляется из роли, которая включает  _\*/чтение или_ _\*_ разрешений, таких как встроенная [чтения](../../role-based-access-control/built-in-roles.md#reader) и [ Участник](../../role-based-access-control/built-in-roles.md#contributor) ролей. Обратите внимание, что пользовательские роли, которые содержат определенные действия или выделенные встроенные роли могут не включать это разрешение.

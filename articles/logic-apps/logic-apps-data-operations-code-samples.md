@@ -4,18 +4,17 @@ description: Примеры кода для определения действ�
 services: logic-apps
 ms.service: logic-apps
 author: ecfan
-ms.author: v-yiso
+ms.author: estfan
 manager: jeconnoc
 ms.topic: reference
-origin.date: 07/25/2018
-ms.date: 12/10/2018
+ms.date: 07/25/2018
 ms.reviewer: klam, LADocs
 ms.suite: integration
 ms.openlocfilehash: 8de70e8df50b79f27c19c74307d9321ff8cd1eb5
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62128555"
 ---
 # <a name="data-operation-code-samples-for-azure-logic-apps"></a>Примеры кода операций с данными для Azure Logic Apps
@@ -26,7 +25,7 @@ ms.locfileid: "62128555"
 
 <a name="compose-action-example"></a>
 
-## <a name="compose"></a>Создание
+## <a name="compose"></a>Docker Compose
 
 Ниже приведены определения действия, которые можно использовать, чтобы попробовать [пример действия **Создать**](../logic-apps/logic-apps-perform-data-operations.md#compose-action).
 
@@ -186,7 +185,7 @@ ms.locfileid: "62128555"
 
 <a name="filter-array-action-example"></a>
 
-## <a name="filter-array"></a>Фильтр массива
+## <a name="filter-array"></a>Фильтрация массива
 
 Ниже приведены определения действия, которые можно использовать, чтобы попробовать [пример действия **Фильтровать массив**](../logic-apps/logic-apps-perform-data-operations.md#filter-array-action).
 
@@ -268,7 +267,7 @@ ms.locfileid: "62128555"
 
 <a name="parse-json-action-example"></a>
 
-## <a name="parse-json"></a>Анализ JSON
+## <a name="parse-json"></a>Parse JSON
 
 Ниже приведены определения действия, которые можно использовать, чтобы попробовать [пример действия **Анализ JSON**](../logic-apps/logic-apps-perform-data-operations.md#parse-json-action).
 
@@ -327,7 +326,7 @@ ms.locfileid: "62128555"
 
 <a name="select-action-example"></a>
 
-## <a name="select"></a>Выберите
+## <a name="select"></a>Выберите пункт
 
 Ниже приведены определения действия, которые можно использовать, чтобы попробовать [пример действия **Выбрать пункт**](../logic-apps/logic-apps-perform-data-operations.md#select-action).
 

@@ -16,10 +16,10 @@ ms.workload: infrastructure-services
 ms.date: 03/30/2018
 ms.author: roiyz
 ms.openlocfilehash: d17d7c9d7b57e6ca040e4f81c9665789c8bc26e2
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60799774"
 ---
 # <a name="azure-virtual-machine-agent-overview"></a>Обзор агента виртуальной машины Azure
@@ -27,7 +27,7 @@ ms.locfileid: "60799774"
 
 В этой статье описаны процессы установки, обнаружения и удаления агента виртуальной машины Azure.
 
-## <a name="install-the-vm-agent"></a>Установить агент ВМ
+## <a name="install-the-vm-agent"></a>"Установить агент виртуальной машины"
 
 ### <a name="azure-marketplace-image"></a>Образ из Azure Marketplace
 

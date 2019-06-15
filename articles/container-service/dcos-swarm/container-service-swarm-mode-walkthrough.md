@@ -10,10 +10,10 @@ ms.date: 07/16/2018
 ms.author: iainfou
 ms.custom: ''
 ms.openlocfilehash: a7a7455ce9167a9c480d317d50fdce49e2ef06a9
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60721799"
 ---
 # <a name="deprecated-deploy-docker-ce-cluster"></a>Развертывание кластера Docker CE (устаревшие материалы)
@@ -28,7 +28,7 @@ ms.locfileid: "60721799"
 
 Если вы решили установить и использовать CLI локально, для выполнения инструкций в этом руководстве вам понадобится Azure CLI 2.0.4 или более поздней версии. Чтобы узнать версию, выполните команду `az --version`. Если вам необходимо выполнить установку или обновление, см. статью [Установка Azure CLI]( /cli/azure/install-azure-cli).
 
-## <a name="create-a-resource-group"></a>Создать группу ресурсов
+## <a name="create-a-resource-group"></a>Создание группы ресурсов
 
 Создайте группу ресурсов с помощью команды [az group create](/cli/azure/group#az-group-create). Группа ресурсов Azure — это логическая группа, в которой выполняется развертывание и администрирование ресурсов Azure.
 
@@ -154,14 +154,14 @@ lg99i4hy68r9        azure-vote_azure-vote-back.1    redis:latest                
 
 ![Изображение перехода к приложению Azure для голосования](media/container-service-docker-swarm-mode-walkthrough/azure-vote.png)
 
-## <a name="delete-cluster"></a>Удалить кластер
+## <a name="delete-cluster"></a>Удаление кластера
 Чтобы удалить ненужные кластер, группу ресурсов, службу контейнеров и все связанные с ней ресурсы, выполните команду [az group delete](/cli/azure/group#az-group-delete).
 
 ```azurecli-interactive
 az group delete --name myResourceGroup --yes --no-wait
 ```
 
-## <a name="get-the-code"></a>Получить код
+## <a name="get-the-code"></a>Получение кода
 
 В этом кратком руководстве для создания службы Docker используются предварительно созданные образы контейнеров. Связанный с приложением код, Dockerfile и файл Compose доступны на сайте GitHub.
 

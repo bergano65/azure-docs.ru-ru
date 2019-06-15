@@ -15,10 +15,10 @@ ms.workload: na
 ms.date: 04/28/2019
 ms.author: terrylan
 ms.openlocfilehash: 3467050214cba6ce5723c2747d2c13e40e86609b
-ms.sourcegitcommit: 8a681ba0aaba07965a2adba84a8407282b5762b2
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/29/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64872029"
 ---
 # <a name="azure-virtual-machines-security-overview"></a>Общие сведения о безопасности при использовании виртуальных машин Azure
@@ -157,7 +157,7 @@ Site Recovery выполняет следующие задачи.
 * [Центр безопасности Azure: часто задаваемые вопросы](../security-center/security-center-faq.md)
 * [Руководство по планированию использования центра безопасности Azure и работе в нем](../security-center/security-center-planning-and-operations-guide.md)
 
-## <a name="compliance"></a>Соответствие нормативным требованиям
+## <a name="compliance"></a>Соответствие требованиям
 
 Виртуальные машины Azure сертифицированы в соответствии со стандартами FISMA, FedRAMP, HIPAA, PCI DSS (уровень 1), а также другими ключевыми стандартами. Сертификация упрощает обеспечение соответствия для приложений, а также позволяет соблюдать многочисленные местные и международные нормативные требования.
 

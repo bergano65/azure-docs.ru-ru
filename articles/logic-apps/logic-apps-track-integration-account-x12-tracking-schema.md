@@ -11,10 +11,10 @@ ms.topic: article
 ms.assetid: a5413f80-eaad-4bcf-b371-2ad0ef629c3d
 ms.date: 01/27/2017
 ms.openlocfilehash: 1db324006e1e6332b5fdd8afd28ebed8a32ac707
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60845772"
 ---
 # <a name="create-schemas-for-tracking-x12-messages-in-integration-accounts-for-azure-logic-apps"></a>Создание схемы отслеживания сообщений X12 в учетных записях интеграции Azure Logic Apps
@@ -76,7 +76,7 @@ ms.locfileid: "60845772"
 | isTechnicalAcknowledgmentExpected | Boolean | Указывает, настроено ли в соглашении X12 техническое подтверждение. (обязательный параметр) |
 | isFunctionalAcknowledgmentExpected | Boolean | Указывает, настроено ли в соглашении X12 функциональное подтверждение. (обязательный параметр) |
 | needAk2LoopForValidMessages | Boolean | Указывает, требуется ли цикл AK2 для допустимого сообщения. (обязательный параметр) |
-| segmentsCount | Integer | Число сегментов в наборе транзакций X12. (Дополнительно) |
+| segmentsCount | Целое число | Число сегментов в наборе транзакций X12. (Дополнительно) |
 ||||
 
 ## <a name="x12-transaction-set-acknowledgement-tracking-schema"></a>Схема отслеживания подтверждения набора транзакций X12

@@ -8,10 +8,10 @@ ms.topic: reference
 ms.date: 09/13/2018
 ms.author: pabutler
 ms.openlocfilehash: 117a4e5e238e754524ff813ce25ebc1105e2153c
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64934976"
 ---
 <a name="publish-an-offer"></a>Публикация предложения
@@ -26,8 +26,8 @@ ms.locfileid: "64934976"
 
 |  **Имя**      |    **Описание**                               |  **Тип данных** |
 |  ------------- |  ------------------------------------            |   -----------  |
-|  publisherid   | Идентификатор издателя, например `contoso`      |   Строка       |
-|  offerId       | Идентификатор предложения                                 |   Строка       |
+|  publisherid   | Идентификатор издателя, например `contoso`      |   String       |
+|  offerId       | Идентификатор предложения                                 |   String       |
 |  api-version   | Последняя версия API                        |   Дата         |
 |  |  |
 
@@ -64,7 +64,7 @@ ms.locfileid: "64934976"
 |  |  |
 
 
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
 
    `Operation-Location: /api/operations/contoso$56615b67-2185-49fe-80d2-c4ddf77bb2e8$2$preview?api-version=2017-10-31`
 

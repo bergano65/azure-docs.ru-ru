@@ -14,10 +14,10 @@ ms.workload: infrastructure-services
 ms.date: 07/11/2017
 ms.author: kumud
 ms.openlocfilehash: 568d3fe774bd2ec810bd3aa386fb151518e6a581
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64720849"
 ---
 # <a name="troubleshoot-connections-with-azure-network-watcher-using-the-azure-cli"></a>Устранение неполадок подключений с помощью службы "Наблюдатель за сетями Azure" в Azure CLI
@@ -49,7 +49,7 @@ ms.locfileid: "64720849"
 az network watcher test-connectivity --resource-group ContosoRG --source-resource MultiTierApp0 --dest-resource Database0 --dest-port 80
 ```
 
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
 
 Следующий ответ взят из предыдущего примера.  В этом ответе параметр `ConnectionStatus` имеет значение **Unreachable** (Недоступно). Как видите, все отправленные пробы завершились неудачей. Попытка подключения завершилась сбоем в виртуальном модуле из-за пользовательского правила `NetworkSecurityRule` с именем **UserRule_Port80**, настроенного на блокировку входящего трафика на порту 80. Эти сведения можно использовать для анализа проблем с подключением.
 
@@ -130,7 +130,7 @@ Nic0/ipConfigurations/ipconfig1",
 az network watcher test-connectivity --resource-group ContosoRG --source-resource MultiTierApp0 --dest-address 13.107.21.200 --dest-port 80
 ```
 
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
 
 В следующем примере состояние `connectionStatus` отображается как **Unreachable** (Недоступно). В блоке `hops` в разделе `issues` видно, что трафик заблокирован из-за `UserDefinedRoute`.
 
@@ -188,7 +188,7 @@ pNic0/ipConfigurations/ipconfig1",
 az network watcher test-connectivity --resource-group ContosoRG --source-resource MultiTierApp0 --dest-address https://bing.com --dest-port 80
 ```
 
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
 
 В следующем ответе видно, что параметр `connectionStatus` отображается со значением **Reachable** (Достижимо). Когда подключение будет установлено, отобразятся значения задержки.
 
@@ -234,7 +234,7 @@ pNic0/ipConfigurations/ipconfig1",
 az network watcher test-connectivity --resource-group ContosoRG --source-resource MultiTierApp0 --dest-address https://contosoexamplesa.blob.core.windows.net/
 ```
 
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
 
 JSON-код ниже — это пример ответа на предыдущий командлет. Так как проверка выполнена успешно, свойство `connectionStatus` отображается со значением **Reachable** (Достижимо).  Также отображаются сведения о числе прыжков, необходимых для доступа к BLOB-объекту в хранилище, а также о задержке.
 

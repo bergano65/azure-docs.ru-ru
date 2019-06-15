@@ -14,16 +14,19 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 3/20/2019
 ms.author: rkarlin
-ms.openlocfilehash: c0c37724e61490c8c33b5e2d37879549bbc6d7ce
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
-ms.translationtype: HT
+ms.openlocfilehash: d9dc9f3a4ab964b66e3a2cb03f4aad442c5665e9
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
+ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "60705501"
+ms.lasthandoff: 06/13/2019
+ms.locfileid: "64573606"
 ---
 # <a name="customize-os-security-configurations-in-azure-security-center-preview"></a>Настройка конфигураций безопасности операционной системы в центре безопасности Azure (предварительная версия)
 
 В этом пошаговом руководстве описано, как настроить внутренние оценки конфигурации безопасности операционной системы в центре безопасности Azure.
+
+> [!NOTE]
+> Возможность настройки конфигураций безопасности Операционной системы будет прекращена 31 июля 2019 г. Дополнительные сведения и альтернативные службы, см. в разделе [вывода из эксплуатации центра безопасности функций (июль 2019)](security-center-features-retirement-july2019.md#menu_securityconfigurations).
 
 ## <a name="what-are-os-security-configurations"></a>Конфигурации безопасности операционной системы
 
@@ -275,7 +278,7 @@ ms.locfileid: "60705501"
 
 | **Ошибка**                                | **Описание**                                                                                                                              |
 |------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------|
-| BaselineConfigurationSchemaVersionError  | Свойство *schemaVersion* недопустимое или пустое. Допустимое значение: *{0}*.                                                         |
+| BaselineConfigurationSchemaVersionError  | Свойство *schemaVersion* недопустимое или пустое. Допустимое значение: *{0}* .                                                         |
 | BaselineInvalidStringError               | Свойство *{0}* не может содержать символ *\\n*.                                                                                                         |
 | BaselineNullRuleError                    | Список базовых правил конфигурации содержит правило со значением *NULL*.                                                                         |
 | BaselineRuleCceIdNotUniqueError          | Идентификатор CCE-ID *{0}* не уникален.                                                                                                                  |
@@ -290,12 +293,12 @@ ms.locfileid: "60705501"
 | BaselineRuleNotInPlace                   | Правило соответствует правилу по умолчанию с типом {0} и внесено в список {1}.                                                                       |
 | BaselineRulePropertyTooLong              | Свойство *{0}* слишком длинное. Максимально допустимая длина: {1}.                                                                                        |
 | BaselineRuleRegTypeInvalidError          | Ожидаемое значение *{0}* не совпадает с определенным типом значения реестра.                                                              |
-| BaselineRulesetAdded                     | Не удалось найти набор правил с идентификатором *{0}* в конфигурации по умолчанию. Набор правил нельзя добавить.                                               |
+| BaselineRulesetAdded                     | Набор правил с идентификатором *{0}* не найден в конфигурации по умолчанию. Набор правил нельзя добавить.                                               |
 | BaselineRulesetIdMustBeUnique            | Указанный базовый набор правил *{0}* должен быть уникальным.                                                                                           |
-| BaselineRulesetNotFound                  | Не удалось найти набор правил с идентификатором *{0}* и именем *{1}* в указанной конфигурации. Набор правил нельзя удалить.                                |
-| BaselineRuleSourceNotMatch               | Правило с идентификатором *{0}* уже определено.                                                                                                       |
-| BaselineRuleTypeDoesntMatch              | Тип правила по умолчанию — *{0}*.                                                                                                              |
-| BaselineRuleTypeDoesntMatchError         | Фактический тип правила — *{0}*, но свойство *ruleType* имеет тип *{1}*.                                                                          |
+| BaselineRulesetNotFound                  | Набор правил с идентификатором *{0}* и имя *{1}* не найден в указанной конфигурации. Набор правил нельзя удалить.                                |
+| BaselineRuleSourceNotMatch               | Правило с идентификатором *{0}* уже определен.                                                                                                       |
+| BaselineRuleTypeDoesntMatch              | Тип правила по умолчанию — *{0}* .                                                                                                              |
+| BaselineRuleTypeDoesntMatchError         | Фактический тип правила — *{0}* , но свойство *ruleType* имеет тип *{1}* .                                                                          |
 | BaselineRuleUnpermittedChangesError      | Изменить можно только свойства *expectedValue* и *state*.                                                                       |
 | BaselineTooManyRules                     | Максимально допустимое число настраиваемых правил — {0}. Указанная конфигурация содержит: правила ({1}), правила по умолчанию ({2}) и настраиваемые правила ({3}). |
 | ErrorNoConfigurationStatus               | Состояние конфигурации не найдено. Требуемое состояние конфигурации: *Default* или *Custom*.                                    |

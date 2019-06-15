@@ -8,10 +8,10 @@ ms.topic: reference
 ms.date: 09/13/2018
 ms.author: pabutler
 ms.openlocfilehash: 70ffd13be4ba934b423e3bb5344eea0a9c36886c
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64935562"
 ---
 # <a name="cancel-operation"></a>Отмена операции 
@@ -27,8 +27,8 @@ ms.locfileid: "64935562"
 
 |  **Имя**    |      **Описание**                                  |    **Тип данных**  |
 | ------------ |     ----------------                                  |     -----------   |
-| publisherid  |  Идентификатор издателя, например `contoso`         |   Строка          |
-| offerId      |  Идентификатор предложения                                     |   Строка          |
+| publisherid  |  Идентификатор издателя, например `contoso`         |   String          |
+| offerId      |  Идентификатор предложения                                     |   String          |
 | api-version  |  Текущая версия клиента API                               |    Дата           |
 |  |  |  |
 
@@ -64,7 +64,7 @@ ms.locfileid: "64935562"
 |  |  |
 
 
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
 
   `Operation-Location: https://cloudpartner.azure.com/api/publishers/contoso/offers/contoso-virtualmachineoffer/operations/56615b67-2185-49fe-80d2-c4ddf77bb2e8`
 

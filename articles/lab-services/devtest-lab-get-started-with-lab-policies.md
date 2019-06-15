@@ -15,10 +15,10 @@ ms.topic: article
 ms.date: 04/17/2018
 ms.author: spelluru
 ms.openlocfilehash: 8cc529fbf9b24335be1bec07f81c732ced7a2b72
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60773848"
 ---
 # <a name="manage-basic-policies-for-a-lab-in-azure-devtest-labs"></a>Управление базовыми политиками лаборатории в Azure DevTest Labs
@@ -60,7 +60,7 @@ Azure DevTest Labs позволяет контролировать расход�
 
 1. В области **Конфигурация и политики** лаборатории выберите **Автозавершение работы**.
    
-    ![Автозавершение работы](./media/devtest-lab-set-lab-policy/auto-shutdown.png)
+    ![Auto-shutdown](./media/devtest-lab-set-lab-policy/auto-shutdown.png)
 
 1. Щелкните **On** (Вкл.), чтобы включить эту политику, или **Off** (Выкл.), чтобы отключить ее.
 

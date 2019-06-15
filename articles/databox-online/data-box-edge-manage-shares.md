@@ -9,10 +9,10 @@ ms.topic: article
 ms.date: 03/25/2019
 ms.author: alkohli
 ms.openlocfilehash: 73bff460db8428332a92d8deb68bf062ca4134ae
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60759187"
 ---
 # <a name="use-the-azure-portal-to-manage-shares-on-your-azure-data-box-edge"></a>Управление общими папками в Azure Data Box Edge с помощью портала Azure
@@ -29,13 +29,13 @@ ms.locfileid: "60759187"
 В этой статье раскрываются следующие темы:
 
 > [!div class="checklist"]
-> * Добавить общий файловый ресурс
+> * Добавление общей папки
 > * Удаление общей папки
 > * Обновление общих папок
 > * Синхронизация ключа хранилища
 
 
-## <a name="add-a-share"></a>Добавить общий файловый ресурс
+## <a name="add-a-share"></a>Добавление общей папки
 
 Чтобы создать общую папку, выполните следующие действия на портале Azure.
 
@@ -104,7 +104,7 @@ ms.locfileid: "60759187"
 
 1. На портале Azure выберите ресурс Data Box Edge и перейдите в раздел **Шлюз > Общие папки**. В списке общих папок выберите ту, которую необходимо подключить. Для выбранной общей папки в столбце **Используется для вычислений** отобразится состояние **Отключено**.
 
-    ![Выберите общую папку](media/data-box-edge-manage-shares/select-share-mount.png)
+    ![Выбор общей папки](media/data-box-edge-manage-shares/select-share-mount.png)
 
 2. Выберите **Подключить**.
 
@@ -128,7 +128,7 @@ ms.locfileid: "60759187"
 
 1. На портале Azure выберите ресурс Data Box Edge и перейдите в раздел **Шлюз > Общие папки**.
 
-    ![Выберите общую папку](media/data-box-edge-manage-shares/select-share-unmount.png)
+    ![Выбор общей папки](media/data-box-edge-manage-shares/select-share-unmount.png)
 
 2. В списке общих папок выберите папку, которую требуется отключить. Убедитесь, что она не используется модулем. Если же общая папка используется модулем, это приведет к возникновению проблем с модулем. Выберите **Отключить**.
 
@@ -148,7 +148,7 @@ ms.locfileid: "60759187"
 
 1. В списке общих папок выберите и щелкните папку, которую требуется удалить.
 
-    ![Выберите общую папку](media/data-box-edge-manage-shares/delete-share-1.png)
+    ![Выбор общей папки](media/data-box-edge-manage-shares/delete-share-1.png)
 
 2. Нажмите кнопку **Delete**(Удалить).
 
@@ -156,7 +156,7 @@ ms.locfileid: "60759187"
 
 3. При появлении запроса на подтверждение нажмите кнопку **Да**.
 
-    ![Подтвердите удаление](media/data-box-edge-manage-shares/delete-share-3.png)
+    ![Подтверждение удаления](media/data-box-edge-manage-shares/delete-share-3.png)
 
 Список общих папок обновляется с учетом удаления.
 

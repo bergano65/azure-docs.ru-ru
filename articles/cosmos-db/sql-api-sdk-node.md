@@ -1,5 +1,5 @@
 ---
-title: 'Azure Cosmos DB: интерфейсы API, пакет SDK и ресурсы для SQL Node.js'
+title: Azure Cosmos DB — интерфейсы API, пакет SDK и ресурсы для SQL Node.js
 description: Сведения об API и пакете SDK для SQL Node.js, включая даты выхода, даты выбытия и изменения, внесенные в каждую версию пакета SDK для Node.js для Azure Cosmos DB.
 author: deborahc
 ms.service: cosmos-db
@@ -9,10 +9,10 @@ ms.topic: reference
 ms.date: 09/24/2018
 ms.author: dech
 ms.openlocfilehash: 1cb6889305e5f6bce5728039712a1834dc2e9353
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: 41ca82b5f95d2e07b0c7f9025b912daf0ab21909
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60626746"
 ---
 # <a name="azure-cosmos-db-nodejs-sdk-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB: заметки о выпуске и материалы по пакету SDK для Node.js для API-интерфейса SQL
@@ -30,10 +30,10 @@ ms.locfileid: "60626746"
 > * [BulkExecutor — .NET](sql-api-sdk-bulk-executor-dot-net.md)
 > * [BulkExecutor — Java](sql-api-sdk-bulk-executor-java.md)
 
-|Resource  |Связать  |
+|Ресурс  |Ссылка  |
 |---------|---------|
-|Загрузка пакета SDK  |   [NPM](https://www.npmjs.com/package/@azure/cosmos) 
-|Документация по API-интерфейсам  |  [Справочная документация по пакету SDK для JavaScript](https://docs.microsoft.com/javascript/api/%40azure/cosmos/?view=azure-node-latest)
+|Пакет SDK для скачивания  |   [NPM](https://www.npmjs.com/package/@azure/cosmos) 
+|Документация по API  |  [Справочная документация по пакету SDK для JavaScript](https://docs.microsoft.com/javascript/api/%40azure/cosmos/?view=azure-node-latest)
 |Инструкции по установке пакета SDK  |  [Инструкции по установке](https://github.com/Azure/azure-cosmos-js#installation)
 |Участие в разработке пакета SDK | [GitHub](https://github.com/Azure/azure-cosmos-js/tree/master)
 | Примеры | [Примеры кода Node.js](sql-api-nodejs-samples.md)
@@ -223,7 +223,7 @@ ms.locfileid: "60626746"
 | [1.13.0](#1.13.0) |11 октября 2017 г. |--- |
 | [1.12.2](#1.12.2) |10 августа 2017 г. |--- |
 | [1.12.1](#1.12.1) |10 августа 2017 г. |--- |
-| [1.12.0](#1.12.0) |10 мая 2017 года |--- |
+| [1.12.0](#1.12.0) |10 мая 2017 г. |--- |
 | [1.11.0](#1.11.0) |16 марта 2017 г. |--- |
 | [1.10.2](#1.10.2) |27 января 2017 г. |--- |
 | [1.10.1](#1.10.1) |22 декабря 2016 г. |--- |

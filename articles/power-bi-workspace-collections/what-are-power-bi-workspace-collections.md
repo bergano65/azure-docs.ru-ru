@@ -11,10 +11,10 @@ ms.workload: powerbi
 ms.date: 09/20/2017
 ms.author: rkarlin
 ms.openlocfilehash: 7f23856363b337a361f329ed54e2152842faf26e
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64705127"
 ---
 # <a name="what-are-power-bi-workspace-collections"></a>Что такое коллекции рабочих областей Power BI?
@@ -60,7 +60,7 @@ ms.locfileid: "64705127"
 
 ## <a name="authentication-and-authorization-with-app-tokens"></a>Проверка подлинности и авторизация с маркерами приложений
 
-Служба **коллекций рабочих областей Microsoft Power BI** делегирует все операции аутентификации и авторизации вашему приложению. При этом явно не требуется, чтобы ваши пользователи использовали Azure Active Directory (Azure AD).  Вместо этого приложение использует авторизацию службы **коллекций рабочих областей Microsoft Power BI** для формирования отчета Power BI помощью **маркеров аутентификации приложения (маркеров приложения)**.  Эти **маркеры приложения** создаются по мере необходимости при подготовке отчета к отрисовке.
+Служба **коллекций рабочих областей Microsoft Power BI** делегирует все операции аутентификации и авторизации вашему приложению. При этом явно не требуется, чтобы ваши пользователи использовали Azure Active Directory (Azure AD).  Вместо этого приложение использует авторизацию службы **коллекций рабочих областей Microsoft Power BI** для формирования отчета Power BI помощью **маркеров аутентификации приложения (маркеров приложения)** .  Эти **маркеры приложения** создаются по мере необходимости при подготовке отчета к отрисовке.
 
 ![Схема использования маркеров приложения](media/what-are-power-bi-workspace-collections/app-tokens.png)
 

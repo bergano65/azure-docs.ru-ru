@@ -10,10 +10,10 @@ ms.topic: conceptual
 ms.date: 01/10/2019
 ms.author: barclayn
 ms.openlocfilehash: d7d76458601b2afecafc1313e334215bf08b6545
-ms.sourcegitcommit: 44a85a2ed288f484cc3cdf71d9b51bc0be64cc33
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/28/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64713834"
 ---
 # <a name="manage-key-vault-using-the-azure-cli"></a>Управление Key Vault с помощью интерфейса командной строки Azure 
@@ -147,7 +147,7 @@ az keyvault key create --vault-name "ContosoKeyVault" --name "ContosoFirstKey" -
 az keyvault key import --vault-name "ContosoKeyVault" --name "ContosoFirstKey" --pem-file "./softkey.pem" --pem-password "hVFkk965BuUv" --protection software
 ```
 
-Теперь для доступа к ключу, созданному или загруженному в хранилище ключей Azure, вы сможете использовать его URI. **https://ContosoKeyVault.vault.azure.net/keys/ContosoFirstKey** всегда предоставляет актуальную версию. https://[keyvault-name].vault.azure.net/keys/[keyname]/[key-unique-id] предоставляет эту конкретную версию. (например, **https://ContosoKeyVault.vault.azure.net/keys/ContosoFirstKey/cgacf4f763ar42ffb0a1gca546aygd87**). 
+Теперь для доступа к ключу, созданному или загруженному в хранилище ключей Azure, вы сможете использовать его URI. **https://ContosoKeyVault.vault.azure.net/keys/ContosoFirstKey** всегда предоставляет актуальную версию. https://[keyvault-name].vault.azure.net/keys/[keyname]/[key-unique-id] предоставляет эту конкретную версию. (например, **https://ContosoKeyVault.vault.azure.net/keys/ContosoFirstKey/cgacf4f763ar42ffb0a1gca546aygd87** ). 
 
 Добавьте в Azure Key Vault секрет, который представляет собой пароль с именем SQLPassword и значением Pa$$hVFkk965BuUv. 
 
@@ -155,7 +155,7 @@ az keyvault key import --vault-name "ContosoKeyVault" --name "ContosoFirstKey" -
 az keyvault secret set --vault-name "ContosoKeyVault" --name "SQLPassword" --value "hVFkk965BuUv "
 ```
 
-Ссылайтесь на этот пароль с помощью URI. **https://ContosoVault.vault.azure.net/secrets/SQLPassword** всегда предоставляет актуальную версию, а https://[keyvault-name].vault.azure.net/secret/[secret-name]/[secret-unique-id] предоставляет эту конкретную версию. (например, **https://ContosoVault.vault.azure.net/secrets/SQLPassword/90018dbb96a84117a0d2847ef8e7189d**).
+Ссылайтесь на этот пароль с помощью URI. **https://ContosoVault.vault.azure.net/secrets/SQLPassword** всегда предоставляет актуальную версию, а https://[keyvault-name].vault.azure.net/secret/[secret-name]/[secret-unique-id] предоставляет эту конкретную версию. (например, **https://ContosoVault.vault.azure.net/secrets/SQLPassword/90018dbb96a84117a0d2847ef8e7189d** ).
 
 Импортируйте сертификат в хранилище с помощью PEM- или PFX-файла.
 

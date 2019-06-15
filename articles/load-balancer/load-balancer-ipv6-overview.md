@@ -15,10 +15,10 @@ ms.workload: infrastructure-services
 ms.date: 08/24/2018
 ms.author: kumud
 ms.openlocfilehash: 894a56c2e51e8fa8a2d72253563d218416ace4cb
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60861961"
 ---
 # <a name="overview-of-ipv6-for-azure-load-balancer"></a>Общие сведения о поддержке IPv6 для Azure Load Balancer
@@ -38,7 +38,7 @@ ms.locfileid: "60861961"
 
 После развертывания Интернет-клиент с поддержкой IPv4 или IPv6 может взаимодействовать с общедоступными IPv4 или IPv6-адресами (или именами узлов) балансировщика нагрузки Azure Load Balancer для Интернета. Балансировщик нагрузки маршрутизирует пакеты IPv6 на частные IPv6-адреса виртуальных машин с помощью преобразования сетевых адресов (NAT). Интернет-клиент с поддержкой IPv6 не может напрямую взаимодействовать с IPv6-адресами виртуальных машин.
 
-## <a name="features"></a>Компоненты
+## <a name="features"></a>Функции
 
 Встроенная поддержка IPv6 для виртуальных машин, развернутых с помощью Azure Resource Manager, предоставляет следующие возможности:
 

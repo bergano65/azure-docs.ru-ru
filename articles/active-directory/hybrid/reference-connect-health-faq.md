@@ -16,10 +16,10 @@ ms.date: 07/18/2017
 ms.author: billmath
 ms.collection: M365-identity-device-management
 ms.openlocfilehash: ec88caafa9a6168860a8e9e2ff9e2abe0cfd0e77
-ms.sourcegitcommit: 61c8de2e95011c094af18fdf679d5efe5069197b
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "62096130"
 ---
 # <a name="azure-ad-connect-health-frequently-asked-questions"></a>Часто задаваемые вопросы об Azure AD Connect Health
@@ -58,14 +58,14 @@ ms.locfileid: "62096130"
 | 1 | 1 | 1 сервер Azure AD Connect |
 | 2 | 26| 1 сервер Azure AD Connect и 1 контроллер домена |
 | 3 | 51 | 1 сервер служб федерации Active Directory (AD FS), 1 прокси-сервер AD FS и 1 контроллер домена |
-| 4. | 76 | 1 сервер AD FS, 1 прокси-сервер AD FS и 2 контроллера домена |
+| 4\. | 76 | 1 сервер AD FS, 1 прокси-сервер AD FS и 2 контроллера домена |
 | 5 | 101 | 1 сервер Azure AD Connect, 1 сервер AD FS, 1 прокси-сервер AD FS и 2 контроллера домена |
 
 **Вопрос. Поддерживает ли расширение Azure AD Connect Health облако Azure для Германии?**
 
 Azure AD Connect Health не поддерживается в облаке для Германии, кроме [функции отчетов об ошибках синхронизации](how-to-connect-health-sync.md#object-level-synchronization-error-report).
 
-| Роли | Компоненты | Поддерживается в облаке для Германии |
+| Роли | Функции | Поддерживается в облаке для Германии |
 | ------ | --------------- | --- |
 | Connect Health для синхронизации | Мониторинг, аналитика, оповещения, анализ | Нет |
 |  | Отчет об ошибках синхронизации | Да |

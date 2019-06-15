@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.date: 04/04/2019
 ms.author: glenga
 ms.openlocfilehash: fecf6759dd7b277dda10fa2656e6ae9407490370
-ms.sourcegitcommit: 2028fc790f1d265dc96cf12d1ee9f1437955ad87
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64922962"
 ---
 # <a name="monitor-azure-functions"></a>Мониторинг Функций Azure
@@ -166,7 +166,7 @@ Application Insights можно использовать без пользова
 |Отладка       | 1 |
 |Информация | 2 |
 |Предупреждение     | 3 |
-|Ошибка       | 4. |
+|Ошибка       | 4\. |
 |критические ошибки.    | 5 |
 |Нет        | 6 |
 

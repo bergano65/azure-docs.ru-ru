@@ -8,10 +8,10 @@ ms.topic: reference
 ms.date: 09/13/2018
 ms.author: pabutler
 ms.openlocfilehash: 67109c3605ea96123ff41cb88d5ac328a09991e6
-ms.sourcegitcommit: c53a800d6c2e5baad800c1247dce94bdbf2ad324
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/30/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "64935331"
 ---
 <a name="retrieve-offers"></a>Получение предложений
@@ -27,7 +27,7 @@ ms.locfileid: "64935331"
 
 | **Имя**         |  **Описание**                         |  **Тип данных** |
 | -------------    |  ------------------------------------    |  -----------   |
-|  publisherid     | Идентификатор издателя, например `contoso` |   Строка    |
+|  publisherid     | Идентификатор издателя, например `contoso` |   String    |
 |  api-version     | API последней версии                    |    Дата        |
 |  |  |
 
@@ -45,7 +45,7 @@ ms.locfileid: "64935331"
 <a name="body-example"></a>Пример текста запроса
 ------------
 
-### <a name="response"></a>Отклик
+### <a name="response"></a>Ответ
 
 ``` json
   200 OK 

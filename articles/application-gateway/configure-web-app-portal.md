@@ -8,10 +8,10 @@ ms.topic: article
 ms.date: 3/11/2019
 ms.author: absha
 ms.openlocfilehash: 4dae04c14f9132c54dcc0575ccb2841a4742a626
-ms.sourcegitcommit: 3102f886aa962842303c8753fe8fa5324a52834a
+ms.sourcegitcommit: d4dfbc34a1f03488e1b7bc5e711a11b72c717ada
 ms.translationtype: MT
 ms.contentlocale: ru-RU
-ms.lasthandoff: 04/23/2019
+ms.lasthandoff: 06/13/2019
 ms.locfileid: "60831219"
 ---
 # <a name="configure-app-service-with-application-gateway"></a>Настройка службы приложений с помощью шлюза приложений
@@ -72,7 +72,7 @@ ms.locfileid: "60831219"
 
 5. Нажмите кнопку **ОК** сохранить это правило.
 
-   ![Правило](./media/configure-web-app-portal/rule.png)
+   ![правило;](./media/configure-web-app-portal/rule.png)
 
 ## <a name="restrict-access"></a>Ограничение доступа
 
